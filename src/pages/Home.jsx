@@ -37,8 +37,8 @@ export default function Home() {
             <span className="text-text">{t('hero.title')}</span>
           </h1>
 
-          {/* Subtitle with gradient */}
-          <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-muted animate-fade-in-up stagger-2">
+          {/* Subtitle */}
+          <p className="mt-6 text-base md:text-lg max-w-xl mx-auto leading-relaxed text-muted/80 animate-fade-in-up stagger-2">
             {t('hero.subtitle')}
           </p>
 

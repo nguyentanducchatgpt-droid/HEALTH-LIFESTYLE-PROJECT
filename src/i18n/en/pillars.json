@@ -66,6 +66,28 @@
           "Don't train when feverish, acutely injured, or exhausted",
           "Stop immediately if chest pain, dizziness, or shortness of breath"
         ]
+      },
+      {
+        "title": "Technique & Common Errors",
+        "items": [
+          "Squat: knees collapse in, heels lift → 'Knees follow toes — heels planted — chest open'",
+          "Hinge: rounding back instead of hinging hips → 'Push hips back — long spine — light core'",
+          "Push: sagging back, neck strain → 'Body like a plank — long neck — push the floor away'",
+          "Pull: shrugging shoulders, hunching → 'Pull elbows back — gentle squeeze — ears away from shoulders'",
+          "Core: holding breath, arched back → 'Light belly draw — breathe steadily — neutral spine'",
+          "Breath: chest breathing vs diaphragm → 'Belly expands on inhale — slow exhale through mouth'"
+        ]
+      },
+      {
+        "title": "Progressive Overload Ladder",
+        "items": [
+          "Step 1: Increase reps — from 8 → 12 reps per set",
+          "Step 2: Increase sets — from 2 → 3 sets",
+          "Step 3: Increase difficulty — Sit-to-Stand → Squat → Goblet Squat",
+          "Step 4: Add weight or resistance band",
+          "Step 5: Reduce rest time to build endurance",
+          "Golden rule: change only 1 variable at a time — prevent injury"
+        ]
       }
     ],
     "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
@@ -126,6 +148,27 @@
           "Control sweets — choose 1–2 times/week instead of daily",
           "Handle cheat meals: return to track immediately the next day",
           "Budget-friendly: eggs, legumes, fish, seasonal vegetables"
+        ]
+      },
+      {
+        "title": "Calories by Training Intensity",
+        "items": [
+          "Heavy training day (gym + cardio + swimming): ~3,000 kcal",
+          "Medium training day (gym or swimming): ~2,800 kcal",
+          "Rest or light day: ~2,700 kcal",
+          "Protein: 140–160g/day (1.6–2g/kg × 77–80kg body weight)",
+          "Carbs: prioritize on heavy training days, reduce on rest days",
+          "Fat: 80–100g/day from olive oil, nuts, avocado, salmon"
+        ]
+      },
+      {
+        "title": "Hand Portion Method (No Scale Needed)",
+        "items": [
+          "Palm = 1 serving of protein (meat/fish/eggs) per meal",
+          "Fist = 1 serving of carbs (rice/potato/whole-grain bread)",
+          "Cupped hand = 1 serving of fat (nuts/oil/butter)",
+          "2 fists = 1 serving of vegetables — aim to increase this",
+          "Adjust by feeling: hungry? add protein. Tired? add carbs."
         ]
       }
     ],
@@ -226,6 +269,17 @@
           "Build small but lasting habits: 2-minute rule (start with just 2 minutes)",
           "Track progress: mark a streak on a calendar for visual momentum"
         ]
+      },
+      {
+        "title": "5-Line Daily Journal",
+        "items": [
+          "Line 1: How's my mood before and after today's session? (1–10)",
+          "Line 2: What did I do today? (training, eating, sleep)",
+          "Line 3: Duration and RPE (perceived exertion)?",
+          "Line 4: Any unusual pain or discomfort?",
+          "Line 5: What should I increase, decrease, or maintain next time?",
+          "Handwriting is better than typing — 5 min each evening before sleep"
+        ]
       }
     ],
     "videos": ["BREATH"]
@@ -266,6 +320,17 @@
           "Sleep 7–9 hours nightly — insufficient sleep raises disease risk significantly",
           "Manage chronic stress — meditation, exercise, social connection",
           "Annual health checkup even with no symptoms"
+        ]
+      },
+      {
+        "title": "⛔ Stop Training Immediately If You Experience",
+        "items": [
+          "Sharp, sudden pain — not normal muscle soreness",
+          "Sudden numbness or weakness in arms or legs",
+          "Chest pain or heavy pressure in the chest during exercise",
+          "Dizziness, loss of balance, or blurred vision while training",
+          "Shortness of breath disproportionate to exercise intensity",
+          "→ See a doctor before resuming training"
         ]
       }
     ],
@@ -318,6 +383,16 @@
           "Flexibility test: standing straight, can you touch the floor?",
           "Measure waist and body weight (morning, before eating)",
           "Record results and compare at week 4, 8, and 12"
+        ]
+      },
+      {
+        "title": "Training Log (5 Questions After Each Session)",
+        "items": [
+          "1. What exercises did I do today? (brief list)",
+          "2. How many minutes?",
+          "3. Perceived exertion RPE 1–10?",
+          "4. Any unusual pain or discomfort?",
+          "5. Next session: increase reps, sets, difficulty, or maintain?"
         ]
       }
     ],

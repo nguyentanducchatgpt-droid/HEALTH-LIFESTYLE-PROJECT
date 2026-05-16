@@ -66,6 +66,28 @@
           "Nicht trainieren bei Fieber, akuten Verletzungen oder Erschöpfung",
           "Sofort aufhören bei Brustschmerzen, Schwindel oder Atemnot"
         ]
+      },
+      {
+        "title": "Technik & Häufige Fehler",
+        "items": [
+          "Kniebeuge: Knie knicken ein, Fersen heben ab → 'Knie folgen Zehen — Fersen fest — Brust offen'",
+          "Hinge: Rücken runden statt Hüfte beugen → 'Hüfte zurückschieben — langer Rücken — leicht Bauch anspannen'",
+          "Push: Hohlkreuz, Nackenspannung → 'Körper wie ein Brett — langer Hals — Boden wegdrücken'",
+          "Pull: Schultern hochziehen, gebückter Rücken → 'Ellbogen zurückziehen — Schulterblätter sanft zusammen'",
+          "Core: Atem anhalten, Hohlkreuz → 'Bauch leicht einziehen — gleichmäßig atmen — neutraler Rücken'",
+          "Atmung: Brustatmung statt Bauchatmung → 'Bauch hebt sich beim Einatmen — langsam durch Mund ausatmen'"
+        ]
+      },
+      {
+        "title": "Progressive Überlastungs-Leiter",
+        "items": [
+          "Schritt 1: Wiederholungen erhöhen — von 8 → 12 pro Satz",
+          "Schritt 2: Sätze erhöhen — von 2 → 3 Sätze",
+          "Schritt 3: Schwierigkeit steigern — Stuhlaufstehen → Kniebeuge → Goblet Squat",
+          "Schritt 4: Gewicht oder Widerstandsband hinzufügen",
+          "Schritt 5: Pausenzeit reduzieren für mehr Ausdauer",
+          "Goldene Regel: nur 1 Variable auf einmal ändern — Verletzungen vermeiden"
+        ]
       }
     ],
     "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
@@ -126,6 +148,27 @@
           "Süßes kontrollieren — 1–2 Mal/Woche statt täglich",
           "Ausrutscher handhaben: sofort am nächsten Tag wieder einsteigen",
           "Günstige Ernährung: Eier, Hülsenfrüchte, Fisch, saisonales Gemüse"
+        ]
+      },
+      {
+        "title": "Kalorien nach Trainingsintensität",
+        "items": [
+          "Schwerer Trainingstag (Gym + Cardio + Schwimmen): ~3.000 kcal",
+          "Mittlerer Trainingstag (Gym oder Schwimmen): ~2.800 kcal",
+          "Ruhe- oder leichter Tag: ~2.700 kcal",
+          "Protein: 140–160g/Tag (1,6–2g/kg × 77–80kg Körpergewicht)",
+          "Kohlenhydrate: Priorität an schweren Trainingstagen, reduzieren an Ruhetagen",
+          "Fett: 80–100g/Tag aus Olivenöl, Nüssen, Avocado, Lachs"
+        ]
+      },
+      {
+        "title": "Hand-Portions-Methode (Ohne Waage)",
+        "items": [
+          "Handfläche = 1 Portion Protein (Fleisch/Fisch/Eier) pro Mahlzeit",
+          "Faust = 1 Portion Kohlenhydrate (Reis/Kartoffel/Vollkornbrot)",
+          "Hohle Hand = 1 Portion Fett (Nüsse/Öl/Butter)",
+          "2 Fäuste = 1 Portion Gemüse — diese Menge erhöhen",
+          "Anpassung nach Gefühl: Hunger? Mehr Protein. Müde? Mehr Kohlenhydrate."
         ]
       }
     ],
@@ -226,6 +269,17 @@
           "Kleine, aber dauerhafte Gewohnheiten: 2-Minuten-Regel (nur mit 2 Min anfangen)",
           "Fortschritt verfolgen: Streak auf dem Kalender markieren für visuellen Schwung"
         ]
+      },
+      {
+        "title": "5-Zeilen-Tagesjournal",
+        "items": [
+          "Zeile 1: Wie ist meine Stimmung vor und nach dem Training? (1–10)",
+          "Zeile 2: Was habe ich heute gemacht? (Training, Ernährung, Schlaf)",
+          "Zeile 3: Dauer und RPE (wahrgenommene Anstrengung)?",
+          "Zeile 4: Ungewöhnliche Schmerzen oder Beschwerden?",
+          "Zeile 5: Was sollte ich nächstes Mal steigern, reduzieren oder beibehalten?",
+          "Handschrift ist besser als Tippen — 5 Min abends vor dem Schlafen"
+        ]
       }
     ],
     "videos": ["BREATH"]
@@ -266,6 +320,17 @@
           "7–9 Stunden Schlaf täglich — Schlafmangel erhöht das Krankheitsrisiko erheblich",
           "Chronischen Stress managen — Meditation, Sport, soziale Kontakte",
           "Jährliche Gesundheitskontrolle auch ohne Symptome"
+        ]
+      },
+      {
+        "title": "⛔ Training Sofort Abbrechen Bei Diesen Zeichen",
+        "items": [
+          "Scharfer, plötzlicher Schmerz — kein normaler Muskelkater",
+          "Plötzliche Taubheit oder Schwäche in Armen oder Beinen",
+          "Brustschmerzen oder Druckgefühl in der Brust beim Sport",
+          "Schwindel, Gleichgewichtsverlust oder Sehstörungen beim Training",
+          "Atemnot, die nicht zur Trainingsintensität passt",
+          "→ Arzt aufsuchen bevor das Training fortgesetzt wird"
         ]
       }
     ],
@@ -318,6 +383,16 @@
           "Flexibilitätstest: aufrecht stehen, können Sie den Boden berühren?",
           "Taillenumfang und Körpergewicht messen (morgens, vor dem Essen)",
           "Ergebnisse aufzeichnen und in Woche 4, 8 und 12 vergleichen"
+        ]
+      },
+      {
+        "title": "Trainingsprotokoll (5 Fragen Nach Jeder Session)",
+        "items": [
+          "1. Welche Übungen habe ich heute gemacht? (kurze Liste)",
+          "2. Wie viele Minuten?",
+          "3. Wahrgenommene Anstrengung RPE 1–10?",
+          "4. Ungewöhnliche Schmerzen oder Beschwerden?",
+          "5. Nächste Session: Wdh., Sätze, Schwierigkeit steigern oder beibehalten?"
         ]
       }
     ],

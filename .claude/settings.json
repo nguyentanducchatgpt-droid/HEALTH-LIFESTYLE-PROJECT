@@ -7,7 +7,10 @@
       "Bash(awk '{print \"SECRETS:\"$1}')",
       "Bash(git commit *)",
       "Bash(git push *)",
-      "Bash(awk -F/ '{ *)"
+      "Bash(awk -F/ '{ *)",
+      "Bash(python3 -c \"import docx; print\\('python-docx is available'\\)\")",
+      "Bash(python -c \"from docx import Document; doc = Document\\('/c/Users/Admin/Desktop/Projects/suckhoevadoisong/Coder/HEALTH-LIFESTYLE-PROJECT/Documents/suc khoe va doi song.docx'\\); print\\('\\\\n'.join\\([p.text for p in doc.paragraphs[:100]]\\)\\)\")",
+      "Bash(python)"
     ]
   }
 }

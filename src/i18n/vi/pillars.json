@@ -66,6 +66,28 @@
           "Không tập khi sốt, chấn thương cấp, mệt kiệt sức",
           "Dừng ngay nếu có đau ngực, chóng mặt, khó thở"
         ]
+      },
+      {
+        "title": "Kỹ Thuật & Lỗi Thường Gặp",
+        "items": [
+          "Squat: gối đổ vào trong, gót nhấc → 'Đầu gối theo ngón chân — gót chắc sàn — ngực mở'",
+          "Hinge: cong lưng thay vì gập hông → 'Đẩy hông ra sau — cột sống dài — nhẹ căng bụng'",
+          "Push: lưng vòm, cổ căng → 'Người thẳng như ván — cổ dài — đẩy sàn ra xa'",
+          "Pull: vai nhún, lưng gù → 'Kéo khuỷu ra sau — vai về — tai xa vai'",
+          "Core: nín thở, lưng cong → 'Nhẹ hút bụng — thở đều — cột sống trung tính'",
+          "Thở: thở ngực thay bụng → 'Hít vào bụng phồng — thở ra chậm qua miệng'"
+        ]
+      },
+      {
+        "title": "Bậc Thang Tiến Bộ (Progressive Overload)",
+        "items": [
+          "Bước 1: Tăng số reps — từ 8 → 12 lần/set",
+          "Bước 2: Tăng số set — từ 2 → 3 set",
+          "Bước 3: Tăng độ khó — Sit-to-Stand → Squat → Goblet Squat",
+          "Bước 4: Thêm tạ hoặc dây kháng lực",
+          "Bước 5: Giảm thời gian nghỉ để tăng độ bền",
+          "Nguyên tắc vàng: chỉ thay đổi 1 biến mỗi lần — tránh chấn thương"
+        ]
       }
     ],
     "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
@@ -126,6 +148,27 @@
           "Kiểm soát đồ ngọt — chọn 1–2 lần/tuần thay vì hàng ngày",
           "Xử lý bữa ăn lỡ tay: quay về track bình thường ngay hôm sau",
           "Thực đơn tiết kiệm: trứng, đậu, cá, rau củ theo mùa"
+        ]
+      },
+      {
+        "title": "Năng Lượng Theo Cường Độ Ngày",
+        "items": [
+          "Ngày tập nặng (gym + cardio + bơi): ~3,000 kcal",
+          "Ngày tập vừa (gym hoặc bơi): ~2,800 kcal",
+          "Ngày nghỉ hoặc tập nhẹ: ~2,700 kcal",
+          "Protein: 140–160g/ngày (1.6–2g/kg × 77–80kg)",
+          "Carb: ưu tiên ngày tập nặng, giảm ngày nghỉ",
+          "Fat: 80–100g/ngày từ dầu oliu, hạt, bơ, cá hồi"
+        ]
+      },
+      {
+        "title": "Phương Pháp Đĩa Tay (Không Cần Cân)",
+        "items": [
+          "Lòng bàn tay = 1 phần đạm (thịt/cá/trứng) mỗi bữa",
+          "Nắm tay = 1 phần tinh bột (cơm/khoai/bánh nguyên cám)",
+          "Bàn tay chụm = 1 phần chất béo (hạt/dầu/bơ)",
+          "2 nắm tay = 1 phần rau xanh — ưu tiên tăng phần này",
+          "Điều chỉnh theo cảm giác no: nếu đói thêm đạm, nếu mệt thêm carb"
         ]
       }
     ],
@@ -226,6 +269,17 @@
           "Xây thói quen nhỏ nhưng bền: 2-minute rule (bắt đầu với 2 phút)",
           "Theo dõi: đánh dấu streak trên lịch tạo cảm giác đà tiến"
         ]
+      },
+      {
+        "title": "Nhật Ký 5 Dòng Hàng Ngày",
+        "items": [
+          "Dòng 1: Tâm trạng hôm nay trước và sau tập (1–10)?",
+          "Dòng 2: Tôi đã làm gì hôm nay? (tập, ăn, ngủ)",
+          "Dòng 3: Thời gian và RPE (cảm giác cường độ)?",
+          "Dòng 4: Có đau hoặc khó chịu bất thường nào không?",
+          "Dòng 5: Lần sau tôi muốn tăng/giảm/duy trì điều gì?",
+          "Viết tay tốt hơn điện thoại — 5 phút mỗi tối trước ngủ"
+        ]
       }
     ],
     "videos": ["BREATH"]
@@ -266,6 +320,17 @@
           "Ngủ 7–9h mỗi đêm — thiếu ngủ tăng nguy cơ nhiều bệnh",
           "Quản lý stress mãn tính — thiền, tập luyện, kết nối xã hội",
           "Khám sức khỏe định kỳ 1 lần/năm dù không có triệu chứng"
+        ]
+      },
+      {
+        "title": "⛔ Dừng Tập Ngay Khi Có Dấu Hiệu Này",
+        "items": [
+          "Đau sắc nét, đột ngột — không phải mỏi cơ bình thường",
+          "Tê bì hoặc yếu cơ bắt đầu đột ngột ở tay/chân",
+          "Đau ngực hoặc cảm giác đè nặng ở ngực khi vận động",
+          "Chóng mặt, mất thăng bằng, nhìn mờ khi đang tập",
+          "Khó thở không tương xứng với cường độ bài tập",
+          "→ Gặp bác sĩ trước khi tiếp tục tập luyện"
         ]
       }
     ],
@@ -318,6 +383,16 @@
           "Test linh hoạt: chạm ngón tay sàn khi đứng thẳng",
           "Đo vòng eo, cân nặng vào sáng sớm (trước ăn)",
           "Ghi lại kết quả và so sánh sau 4 tuần, 8 tuần, 12 tuần"
+        ]
+      },
+      {
+        "title": "Nhật Ký Buổi Tập (5 Câu Hỏi Sau Mỗi Session)",
+        "items": [
+          "1. Hôm nay tập bài gì? (liệt kê ngắn gọn)",
+          "2. Bao nhiêu phút?",
+          "3. Cảm giác cường độ RPE 1–10?",
+          "4. Có đau bất thường nào không?",
+          "5. Lần sau tăng reps, tăng set, tăng độ khó, hay duy trì?"
         ]
       }
     ],

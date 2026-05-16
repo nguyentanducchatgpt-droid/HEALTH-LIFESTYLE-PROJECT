@@ -5,7 +5,7 @@ export default function LocalVideoCard({ src, title, description }) {
   return (
     <div className="bg-surface border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-colors">
       <video
-        className="w-full aspect-video object-cover bg-black"
+        className="w-full aspect-[9/16] object-cover bg-black"
         autoPlay
         loop
         muted

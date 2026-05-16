@@ -1,0 +1,52 @@
+{
+  "lang": { "vi": "Tiếng Việt", "en": "English", "de": "Deutsch" },
+  "nav": {
+    "home": "Startseite",
+    "pillars": "6 Säulen",
+    "videos": "Videos",
+    "contact": "Kontakt",
+    "donate": "Unterstützen"
+  },
+  "hero": {
+    "title": "Gesundheit & Lebensstil",
+    "subtitle": "Ein einfaches, wissenschaftlich fundiertes Ökosystem für ein gesundes Leben – jeden Tag anwendbar",
+    "cta": "Jetzt Starten",
+    "pillars_title": "6 Säulen eines gesunden Lebens"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "email_label": "E-Mail",
+    "zalo_label": "Zalo",
+    "email": "nguyentanducchatgpt@gmail.com",
+    "zalo": "0913723667"
+  },
+  "donate": {
+    "title": "Autor Unterstützen",
+    "subtitle": "Wenn Ihnen dieser Inhalt hilft, können Sie den Autor unterstützen, um weiterhin hochwertige Inhalte zu erstellen.",
+    "placeholder": "Bankverbindungsdaten werden bald aktualisiert.",
+    "thanks": "Vielen Dank für Ihre Unterstützung!"
+  },
+  "footer": {
+    "copyright": "© 2026 Gesundheit & Lebensstil. Alle Rechte vorbehalten.",
+    "disclaimer": "Die Inhalte dienen nur zur allgemeinen Information und ersetzen keine professionelle medizinische Beratung."
+  },
+  "video": {
+    "title": "Videobibliothek",
+    "subtitle": "Kurze Übungs-Tutorial-Videos und YouTube-Inhalte aus dem Gesundheitsprogramm.",
+    "local_section": "Übungs-Tutorial-Videos",
+    "youtube_section": "YouTube-Videos",
+    "youtube_placeholder": "YouTube-Videos werden bald aktualisiert.",
+    "SQUAT": "Kniebeuge — Grundlegende Technik",
+    "PUSH": "Push — Korrekte Liegestütze",
+    "PULL": "Pull — Korrekte Zugbewegung",
+    "HINGE": "Hinge — Hüftangeltechnik",
+    "CORE": "Core — Rumpfkraft",
+    "BREATH": "Atem — Atemtechnik"
+  },
+  "common": {
+    "learn_more": "Mehr Erfahren",
+    "back": "Zurück",
+    "loading": "Wird geladen...",
+    "safety_note": "⚠️ Sofort aufhören bei Brustschmerzen, Schwindel oder Atemnot — gehen Sie zum Arzt."
+  }
+}

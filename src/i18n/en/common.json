@@ -1,0 +1,52 @@
+{
+  "lang": { "vi": "Tiếng Việt", "en": "English", "de": "Deutsch" },
+  "nav": {
+    "home": "Home",
+    "pillars": "6 Pillars",
+    "videos": "Videos",
+    "contact": "Contact",
+    "donate": "Support"
+  },
+  "hero": {
+    "title": "Health & Lifestyle",
+    "subtitle": "A simple, science-based healthy living ecosystem you can apply every day",
+    "cta": "Get Started",
+    "pillars_title": "6 Pillars of Healthy Living"
+  },
+  "contact": {
+    "title": "Contact",
+    "email_label": "Email",
+    "zalo_label": "Zalo",
+    "email": "nguyentanducchatgpt@gmail.com",
+    "zalo": "0913723667"
+  },
+  "donate": {
+    "title": "Support the Author",
+    "subtitle": "If this content helps you, consider supporting the author to keep creating quality content.",
+    "placeholder": "Bank account information will be updated soon.",
+    "thanks": "Thank you for your support!"
+  },
+  "footer": {
+    "copyright": "© 2026 Health & Lifestyle. All rights reserved.",
+    "disclaimer": "Content is for general information only and does not replace professional medical advice."
+  },
+  "video": {
+    "title": "Video Library",
+    "subtitle": "Short exercise tutorial videos and YouTube content from the health program.",
+    "local_section": "Exercise Tutorial Videos",
+    "youtube_section": "YouTube Videos",
+    "youtube_placeholder": "YouTube videos will be updated soon.",
+    "SQUAT": "Squat — Basic technique",
+    "PUSH": "Push — Proper push-up",
+    "PULL": "Pull — Proper pulling",
+    "HINGE": "Hinge — Hip hinge technique",
+    "CORE": "Core — Core strength",
+    "BREATH": "Breath — Breathing technique"
+  },
+  "common": {
+    "learn_more": "Learn More",
+    "back": "Back",
+    "loading": "Loading...",
+    "safety_note": "⚠️ Stop immediately if you feel chest pain, dizziness, or difficulty breathing — see a doctor."
+  }
+}

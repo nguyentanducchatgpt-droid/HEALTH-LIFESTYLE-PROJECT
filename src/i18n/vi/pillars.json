@@ -1,0 +1,228 @@
+{
+  "pillarA": {
+    "id": "a",
+    "title": "Vận Động & Tập Luyện",
+    "subtitle": "Daily Training",
+    "description": "Xây dựng thói quen vận động khoa học, phù hợp mọi cấp độ từ người mới đến nâng cao.",
+    "icon": "🏃",
+    "color": "green",
+    "sections": [
+      {
+        "title": "Nền Tảng",
+        "items": [
+          "Khởi động & giãn cơ đúng cách",
+          "Kỹ thuật cơ bản: Squat, Hinge, Push, Pull, Core, Thở",
+          "Chọn mức độ phù hợp: RPE, nhịp tim, test nói chuyện"
+        ]
+      },
+      {
+        "title": "Lộ Trình Theo Mục Tiêu",
+        "items": [
+          "Giảm mỡ — cardio + thâm hụt calo",
+          "Tăng cơ — sức mạnh + đủ protein",
+          "Tăng sức bền — cardio/chạy bộ tiến dần",
+          "Dẻo dai & mobility",
+          "Phòng/giảm đau cổ vai gáy, lưng, gối"
+        ]
+      },
+      {
+        "title": "Chương Trình Theo Bối Cảnh",
+        "items": [
+          "10 phút/ngày (siêu bận)",
+          "20–30 phút/ngày (chuẩn)",
+          "Tập tại nhà không dụng cụ",
+          "Tập với tạ đơn/dây kháng lực",
+          "Tập ngoài trời"
+        ]
+      },
+      {
+        "title": "Theo Dõi Tiến Bộ",
+        "items": [
+          "Tăng dần (progressive overload)",
+          "Test hàng tháng: sức bền, sức mạnh, linh hoạt",
+          "Nhật ký tập luyện"
+        ]
+      }
+    ],
+    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
+  },
+  "pillarB": {
+    "id": "b",
+    "title": "Dinh Dưỡng & Thực Đơn",
+    "subtitle": "Nutrition",
+    "description": "Ăn đúng, đủ, cân bằng — không cần nhịn hay ăn kiêng cực đoan.",
+    "icon": "🥗",
+    "color": "lime",
+    "sections": [
+      {
+        "title": "Kiến Thức Nền",
+        "items": [
+          "Năng lượng: TDEE, thâm hụt/duy trì/thặng dư",
+          "Macro: Protein – Carb – Fat",
+          "Chất xơ, nước, vi chất"
+        ]
+      },
+      {
+        "title": "Ứng Dụng Thực Tế",
+        "items": [
+          "Đĩa ăn lành mạnh — ½ rau, ¼ đạm, ¼ tinh bột",
+          "Ăn theo mục tiêu: giảm mỡ / tăng cơ / sức bền",
+          "Meal prep cho người bận",
+          "Thực đơn ăn ngoài quán vẫn khỏe"
+        ]
+      },
+      {
+        "title": "Thói Quen Ăn Uống",
+        "items": [
+          "Ăn chậm, đúng giờ, kiểm soát đồ ngọt",
+          "Xử lý bữa ăn lỡ tay",
+          "Thực đơn tiết kiệm, dễ mua"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  "pillarC": {
+    "id": "c",
+    "title": "Lối Sống Khỏe",
+    "subtitle": "Lifestyle",
+    "description": "Những thói quen nhỏ tạo nên sức khỏe bền vững mỗi ngày.",
+    "icon": "🌿",
+    "color": "teal",
+    "sections": [
+      {
+        "title": "Giấc Ngủ",
+        "items": [
+          "Vệ sinh giấc ngủ — môi trường, nhiệt độ, ánh sáng",
+          "Routine trước ngủ 30–60 phút",
+          "Cách sửa thói quen ngủ muộn"
+        ]
+      },
+      {
+        "title": "Năng Lượng & Nhịp Sống",
+        "items": [
+          "Thói quen buổi sáng",
+          "NEAT — đi bộ, đứng, cử động nhỏ",
+          "Ánh nắng và nhịp sinh học"
+        ]
+      },
+      {
+        "title": "Phục Hồi",
+        "items": [
+          "Deload và nghỉ ngơi chủ động",
+          "Thở, giãn cơ, massage cơ bản"
+        ]
+      }
+    ],
+    "videos": ["BREATH"]
+  },
+  "pillarD": {
+    "id": "d",
+    "title": "Tâm Trí An Nhiên",
+    "subtitle": "Mind & Calm",
+    "description": "Quản lý stress, xây dựng tư duy tích cực và kỷ luật mềm.",
+    "icon": "🧘",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Nền Tảng",
+        "items": [
+          "Stress là gì và cơ chế cơ bản",
+          "Vòng lặp lo âu — thói quen"
+        ]
+      },
+      {
+        "title": "Thực Hành",
+        "items": [
+          "Thiền 3–10 phút/ngày",
+          "Journaling: 5 dòng mỗi ngày",
+          "Box breathing (4-4-4-4) và thở 4-7-8",
+          "Digital detox"
+        ]
+      },
+      {
+        "title": "Tư Duy Sống Tốt",
+        "items": [
+          "Tối giản mục tiêu",
+          "Kỷ luật mềm (gentle discipline)",
+          "Xây thói quen nhỏ nhưng bền"
+        ]
+      }
+    ],
+    "videos": ["BREATH"]
+  },
+  "pillarE": {
+    "id": "e",
+    "title": "Kiến Thức Sức Khỏe",
+    "subtitle": "Health Literacy",
+    "description": "Hiểu cơ thể, nhận biết dấu hiệu, phòng bệnh chủ động.",
+    "icon": "📚",
+    "color": "blue",
+    "sections": [
+      {
+        "title": "Chỉ Số Cần Biết",
+        "items": [
+          "BMI và vòng eo",
+          "Huyết áp bình thường",
+          "Đường huyết và mỡ máu cơ bản"
+        ]
+      },
+      {
+        "title": "Dấu Hiệu Cần Đi Khám",
+        "items": [
+          "Đau ngực, khó thở nhiều",
+          "Chóng mặt khi vận động",
+          "Chấn thương cấp — dừng ngay"
+        ]
+      },
+      {
+        "title": "Phòng Bệnh",
+        "items": [
+          "Vận động đều đặn",
+          "Dinh dưỡng cân bằng",
+          "Ngủ đủ giấc",
+          "Quản lý stress"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  "pillarF": {
+    "id": "f",
+    "title": "Công Cụ & Tài Nguyên",
+    "subtitle": "Tools",
+    "description": "Checklist, template và bộ test để theo dõi hành trình sống khỏe.",
+    "icon": "🛠️",
+    "color": "orange",
+    "sections": [
+      {
+        "title": "Checklist Hàng Ngày",
+        "items": [
+          "10–20 phút vận động",
+          "2 nắm rau/bữa",
+          "1 nguồn đạm/bữa chính",
+          "Ngủ sớm hơn 30 phút",
+          "1 phút thở/thiền"
+        ]
+      },
+      {
+        "title": "Template",
+        "items": [
+          "Nhật ký tập luyện tuần",
+          "Template lên thực đơn 7 ngày",
+          "Routine buổi sáng/tối"
+        ]
+      },
+      {
+        "title": "Bộ Test Tiến Bộ 4 Tuần",
+        "items": [
+          "Test sức bền: đi bộ nhanh 6 phút",
+          "Test sức mạnh: max squat / chống đẩy",
+          "Test linh hoạt: chạm ngón tay sàn",
+          "Đo vòng eo, cân nặng"
+        ]
+      }
+    ],
+    "videos": []
+  }
+}

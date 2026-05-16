@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Đang chuyển hướng...</title>
+  <script>
+    // GitHub Pages SPA redirect: preserve hash navigation
+    // Hash router handles all routing via #/ so this is mainly a safety net
+    var repo = 'HEALTH-LIFESTYLE-PROJECT';
+    var origin = window.location.origin;
+    var path = window.location.pathname.replace('/' + repo, '') || '/';
+    var search = window.location.search;
+    var hash = window.location.hash;
+    // Redirect preserving hash
+    window.location.replace(
+      origin + '/' + repo + '/' + (hash || ('?r=' + encodeURIComponent(path + search)))
+    );
+  </script>
+</head>
+<body style="background:#0a0a0a;color:#6b7280;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0">
+  <p>Đang chuyển hướng...</p>
+</body>
+</html>

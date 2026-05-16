@@ -1,0 +1,52 @@
+{
+  "lang": { "vi": "Tiếng Việt", "en": "English", "de": "Deutsch" },
+  "nav": {
+    "home": "Trang Chủ",
+    "pillars": "6 Trụ Cột",
+    "videos": "Video",
+    "contact": "Liên Hệ",
+    "donate": "Ủng Hộ"
+  },
+  "hero": {
+    "title": "Sức Khỏe và Đời Sống",
+    "subtitle": "Hệ sinh thái sống khỏe đơn giản, khoa học, dễ áp dụng mỗi ngày",
+    "cta": "Bắt Đầu Ngay",
+    "pillars_title": "6 Trụ Cột Sống Khỏe"
+  },
+  "contact": {
+    "title": "Liên Hệ",
+    "email_label": "Email",
+    "zalo_label": "Zalo",
+    "email": "nguyentanducchatgpt@gmail.com",
+    "zalo": "0913723667"
+  },
+  "donate": {
+    "title": "Ủng Hộ Tác Giả",
+    "subtitle": "Nếu nội dung có ích, bạn có thể ủng hộ để tác giả tiếp tục tạo nội dung chất lượng.",
+    "placeholder": "Thông tin tài khoản ngân hàng sẽ được cập nhật sớm.",
+    "thanks": "Cảm ơn sự ủng hộ của bạn!"
+  },
+  "footer": {
+    "copyright": "© 2026 Sức Khỏe và Đời Sống. Mọi quyền được bảo lưu.",
+    "disclaimer": "Nội dung mang tính phổ thông, không thay thế tư vấn y tế chuyên nghiệp."
+  },
+  "video": {
+    "title": "Thư Viện Video",
+    "subtitle": "Các video hướng dẫn bài tập ngắn và video YouTube từ chương trình sức khỏe.",
+    "local_section": "Video Hướng Dẫn Bài Tập",
+    "youtube_section": "Video YouTube",
+    "youtube_placeholder": "Video YouTube sẽ được cập nhật sớm.",
+    "SQUAT": "Squat — Kỹ thuật cơ bản",
+    "PUSH": "Push — Chống đẩy đúng cách",
+    "PULL": "Pull — Kéo đúng cách",
+    "HINGE": "Hinge — Gập hông đúng cách",
+    "CORE": "Core — Lõi cơ thể",
+    "BREATH": "Breath — Kỹ thuật thở"
+  },
+  "common": {
+    "learn_more": "Tìm Hiểu Thêm",
+    "back": "Quay Lại",
+    "loading": "Đang tải...",
+    "safety_note": "⚠️ Dừng ngay nếu có đau ngực, chóng mặt, khó thở — hãy đi khám ngay."
+  }
+}

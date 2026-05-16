@@ -1,0 +1,228 @@
+{
+  "pillarA": {
+    "id": "a",
+    "title": "Bewegung & Training",
+    "subtitle": "Daily Training",
+    "description": "Bauen Sie eine wissenschaftlich fundierte Trainingsroutine auf, die für alle Niveaus geeignet ist.",
+    "icon": "🏃",
+    "color": "green",
+    "sections": [
+      {
+        "title": "Grundlagen",
+        "items": [
+          "Richtiges Aufwärmen & Dehnen",
+          "Grundtechniken: Kniebeuge, Hinge, Push, Pull, Core, Atmung",
+          "Richtige Intensität wählen: RPE, Herzfrequenz, Sprechtest"
+        ]
+      },
+      {
+        "title": "Zielorientierte Programme",
+        "items": [
+          "Fettabbau — Cardio + Kaloriendefizit",
+          "Muskelaufbau — Kraft + ausreichend Protein",
+          "Ausdauer — progressives Cardio/Laufen",
+          "Flexibilität & Mobilität",
+          "Nacken-, Schulter-, Rücken- und Knieschmerzen vorbeugen/lindern"
+        ]
+      },
+      {
+        "title": "Kontextbasierte Programme",
+        "items": [
+          "10 Min/Tag (sehr beschäftigt)",
+          "20–30 Min/Tag (Standard)",
+          "Heimtraining — ohne Geräte",
+          "Mit Kurzhanteln/Widerstandsbändern",
+          "Outdoor-Training"
+        ]
+      },
+      {
+        "title": "Fortschritt Verfolgen",
+        "items": [
+          "Progressive Überlastung",
+          "Monatliche Tests: Ausdauer, Kraft, Flexibilität",
+          "Trainingstagebuch"
+        ]
+      }
+    ],
+    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
+  },
+  "pillarB": {
+    "id": "b",
+    "title": "Ernährung & Mahlzeiten",
+    "subtitle": "Nutrition",
+    "description": "Richtig, ausreichend und ausgewogen essen — kein extremes Fasten oder Diäten nötig.",
+    "icon": "🥗",
+    "color": "lime",
+    "sections": [
+      {
+        "title": "Grundwissen",
+        "items": [
+          "Energie: TDEE, Defizit/Erhaltung/Überschuss",
+          "Makros: Protein – Kohlenhydrate – Fett",
+          "Ballaststoffe, Wasser, Mikronährstoffe"
+        ]
+      },
+      {
+        "title": "Praktische Anwendung",
+        "items": [
+          "Gesunder Teller — ½ Gemüse, ¼ Protein, ¼ Kohlenhydrate",
+          "Zielorientiert essen: Fettabbau / Muskelaufbau / Ausdauer",
+          "Meal Prep für Vielbeschäftigte",
+          "Gesund essen gehen"
+        ]
+      },
+      {
+        "title": "Essgewohnheiten",
+        "items": [
+          "Langsam essen, regelmäßig, Süßes kontrollieren",
+          "Ausrutscher handhaben",
+          "Günstige Ernährungspläne"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  "pillarC": {
+    "id": "c",
+    "title": "Gesunder Lebensstil",
+    "subtitle": "Lifestyle",
+    "description": "Kleine tägliche Gewohnheiten, die dauerhaft Gesundheit aufbauen.",
+    "icon": "🌿",
+    "color": "teal",
+    "sections": [
+      {
+        "title": "Schlaf",
+        "items": [
+          "Schlafhygiene — Umgebung, Temperatur, Licht",
+          "Abendroutine 30–60 Minuten vor dem Schlafen",
+          "Spätes Schlafen abgewöhnen"
+        ]
+      },
+      {
+        "title": "Energie & Rhythmus",
+        "items": [
+          "Morgenroutine",
+          "NEAT — Gehen, Stehen, kleine Bewegungen",
+          "Sonnenlicht und zirkadianer Rhythmus"
+        ]
+      },
+      {
+        "title": "Erholung",
+        "items": [
+          "Deload und aktive Erholung",
+          "Atmung, Dehnen, einfache Selbstmassage"
+        ]
+      }
+    ],
+    "videos": ["BREATH"]
+  },
+  "pillarD": {
+    "id": "d",
+    "title": "Innere Ruhe",
+    "subtitle": "Mind & Calm",
+    "description": "Stress managen, positive Denkweise aufbauen und sanfte Disziplin praktizieren.",
+    "icon": "🧘",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Grundlagen",
+        "items": [
+          "Was ist Stress und seine Grundmechanismen",
+          "Die Angst-Gewohnheits-Schleife"
+        ]
+      },
+      {
+        "title": "Praxis",
+        "items": [
+          "Meditation 3–10 Min/Tag",
+          "Journaling: 5 Zeilen täglich",
+          "Box-Atmung (4-4-4-4) und 4-7-8-Atmung",
+          "Digital Detox"
+        ]
+      },
+      {
+        "title": "Gesunde Denkweise",
+        "items": [
+          "Ziele vereinfachen",
+          "Sanfte Disziplin",
+          "Kleine, aber dauerhafte Gewohnheiten aufbauen"
+        ]
+      }
+    ],
+    "videos": ["BREATH"]
+  },
+  "pillarE": {
+    "id": "e",
+    "title": "Gesundheitswissen",
+    "subtitle": "Health Literacy",
+    "description": "Den Körper verstehen, Warnsignale erkennen, Krankheiten proaktiv vorbeugen.",
+    "icon": "📚",
+    "color": "blue",
+    "sections": [
+      {
+        "title": "Wichtige Werte",
+        "items": [
+          "BMI und Taillenumfang",
+          "Normaler Blutdruck",
+          "Grundlegende Blutzucker- und Cholesterinwerte"
+        ]
+      },
+      {
+        "title": "Wann zum Arzt",
+        "items": [
+          "Brustschmerzen, schwere Atemnot",
+          "Schwindel beim Sport",
+          "Akute Verletzung — sofort aufhören"
+        ]
+      },
+      {
+        "title": "Krankheitsvorbeugung",
+        "items": [
+          "Regelmäßige Bewegung",
+          "Ausgewogene Ernährung",
+          "Ausreichend Schlaf",
+          "Stressbewältigung"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  "pillarF": {
+    "id": "f",
+    "title": "Werkzeuge & Ressourcen",
+    "subtitle": "Tools",
+    "description": "Checklisten, Vorlagen und Fortschrittstests für Ihre Gesundheitsreise.",
+    "icon": "🛠️",
+    "color": "orange",
+    "sections": [
+      {
+        "title": "Tägliche Checkliste",
+        "items": [
+          "10–20 Minuten Bewegung",
+          "2 Handvoll Gemüse pro Mahlzeit",
+          "1 Proteinquelle pro Hauptmahlzeit",
+          "30 Minuten früher schlafen",
+          "1 Minute Atmung/Meditation"
+        ]
+      },
+      {
+        "title": "Vorlagen",
+        "items": [
+          "Wöchentliches Trainingstagebuch",
+          "7-Tage-Ernährungsplan-Vorlage",
+          "Morgen-/Abendroutine"
+        ]
+      },
+      {
+        "title": "4-Wochen-Fortschrittstest",
+        "items": [
+          "Ausdauertest: 6-Minuten-Gehtest",
+          "Krafttest: Max Kniebeugen / Liegestütze",
+          "Flexibilitätstest: Fingerspitzen zum Boden",
+          "Taillenumfang und Körpergewicht messen"
+        ]
+      }
+    ],
+    "videos": []
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "pillarA": {
+    "id": "a",
+    "title": "Exercise & Training",
+    "subtitle": "Daily Training",
+    "description": "Build a scientific exercise routine suitable for all levels, from beginner to advanced.",
+    "icon": "🏃",
+    "color": "green",
+    "sections": [
+      {
+        "title": "Foundation",
+        "items": [
+          "Proper warm-up & stretching",
+          "Basic techniques: Squat, Hinge, Push, Pull, Core, Breathing",
+          "Choose the right intensity: RPE, heart rate, talk test"
+        ]
+      },
+      {
+        "title": "Goal-Based Programs",
+        "items": [
+          "Fat loss — cardio + caloric deficit",
+          "Muscle gain — strength + adequate protein",
+          "Endurance — progressive cardio/running",
+          "Flexibility & mobility",
+          "Prevent/reduce neck, shoulder, back, knee pain"
+        ]
+      },
+      {
+        "title": "Context-Based Programs",
+        "items": [
+          "10 min/day (super busy)",
+          "20–30 min/day (standard)",
+          "Home workout — no equipment",
+          "With dumbbells/resistance bands",
+          "Outdoor training"
+        ]
+      },
+      {
+        "title": "Track Progress",
+        "items": [
+          "Progressive overload",
+          "Monthly tests: endurance, strength, flexibility",
+          "Training journal"
+        ]
+      }
+    ],
+    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
+  },
+  "pillarB": {
+    "id": "b",
+    "title": "Nutrition & Meal Plans",
+    "subtitle": "Nutrition",
+    "description": "Eat right, enough, balanced — no extreme fasting or dieting needed.",
+    "icon": "🥗",
+    "color": "lime",
+    "sections": [
+      {
+        "title": "Core Knowledge",
+        "items": [
+          "Energy: TDEE, deficit/maintenance/surplus",
+          "Macros: Protein – Carb – Fat",
+          "Fiber, water, micronutrients"
+        ]
+      },
+      {
+        "title": "Practical Application",
+        "items": [
+          "Healthy plate — ½ vegetables, ¼ protein, ¼ carbs",
+          "Eat for your goal: fat loss / muscle gain / endurance",
+          "Meal prep for busy people",
+          "Eating out and staying healthy"
+        ]
+      },
+      {
+        "title": "Eating Habits",
+        "items": [
+          "Eat slowly, on schedule, control sweets",
+          "Handle cheat meals",
+          "Budget-friendly meal plans"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  "pillarC": {
+    "id": "c",
+    "title": "Healthy Lifestyle",
+    "subtitle": "Lifestyle",
+    "description": "Small daily habits that build lasting health.",
+    "icon": "🌿",
+    "color": "teal",
+    "sections": [
+      {
+        "title": "Sleep",
+        "items": [
+          "Sleep hygiene — environment, temperature, light",
+          "Pre-sleep routine 30–60 minutes",
+          "Fix late-night sleeping habits"
+        ]
+      },
+      {
+        "title": "Energy & Rhythm",
+        "items": [
+          "Morning routine",
+          "NEAT — walking, standing, small movements",
+          "Sunlight and circadian rhythm"
+        ]
+      },
+      {
+        "title": "Recovery",
+        "items": [
+          "Deload and active rest",
+          "Breathing, stretching, basic self-massage"
+        ]
+      }
+    ],
+    "videos": ["BREATH"]
+  },
+  "pillarD": {
+    "id": "d",
+    "title": "Mind & Calm",
+    "subtitle": "Mind & Calm",
+    "description": "Manage stress, build a positive mindset, and practice gentle discipline.",
+    "icon": "🧘",
+    "color": "purple",
+    "sections": [
+      {
+        "title": "Foundation",
+        "items": [
+          "What is stress and its basic mechanisms",
+          "The anxiety-habit loop"
+        ]
+      },
+      {
+        "title": "Practice",
+        "items": [
+          "Meditation 3–10 min/day",
+          "Journaling: 5 lines a day",
+          "Box breathing (4-4-4-4) and 4-7-8 breathing",
+          "Digital detox"
+        ]
+      },
+      {
+        "title": "Healthy Mindset",
+        "items": [
+          "Simplify goals",
+          "Gentle discipline",
+          "Build small but lasting habits"
+        ]
+      }
+    ],
+    "videos": ["BREATH"]
+  },
+  "pillarE": {
+    "id": "e",
+    "title": "Health Knowledge",
+    "subtitle": "Health Literacy",
+    "description": "Understand your body, recognize warning signs, prevent disease proactively.",
+    "icon": "📚",
+    "color": "blue",
+    "sections": [
+      {
+        "title": "Key Metrics",
+        "items": [
+          "BMI and waist circumference",
+          "Normal blood pressure",
+          "Basic blood sugar and cholesterol"
+        ]
+      },
+      {
+        "title": "When to See a Doctor",
+        "items": [
+          "Chest pain, severe shortness of breath",
+          "Dizziness during exercise",
+          "Acute injury — stop immediately"
+        ]
+      },
+      {
+        "title": "Disease Prevention",
+        "items": [
+          "Regular exercise",
+          "Balanced nutrition",
+          "Adequate sleep",
+          "Stress management"
+        ]
+      }
+    ],
+    "videos": []
+  },
+  "pillarF": {
+    "id": "f",
+    "title": "Tools & Resources",
+    "subtitle": "Tools",
+    "description": "Checklists, templates, and progress tests to track your healthy journey.",
+    "icon": "🛠️",
+    "color": "orange",
+    "sections": [
+      {
+        "title": "Daily Checklist",
+        "items": [
+          "10–20 minutes of movement",
+          "2 handfuls of vegetables per meal",
+          "1 protein source per main meal",
+          "Sleep 30 minutes earlier",
+          "1 minute breathing/meditation"
+        ]
+      },
+      {
+        "title": "Templates",
+        "items": [
+          "Weekly training journal",
+          "7-day meal plan template",
+          "Morning/evening routine"
+        ]
+      },
+      {
+        "title": "4-Week Progress Test",
+        "items": [
+          "Endurance test: 6-minute fast walk",
+          "Strength test: max squat / push-ups",
+          "Flexibility test: fingertip-to-floor",
+          "Measure waist, body weight"
+        ]
+      }
+    ],
+    "videos": []
+  }
+}

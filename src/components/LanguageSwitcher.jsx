@@ -1,30 +1,67 @@
+import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const LANGS = [
-  { code: 'vi', label: 'Tiếng Việt' },
-  { code: 'en', label: 'English' },
-  { code: 'de', label: 'Deutsch' },
+  { code: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
+  { code: 'en', label: 'English',    flag: '🇬🇧' },
+  { code: 'de', label: 'Deutsch',    flag: '🇩🇪' },
 ];
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const current = (i18n.language || 'vi').slice(0, 2);
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  const currentLang = LANGS.find((l) => l.code === current) || LANGS[0];
+
+  useEffect(() => {
+    const onMouseDown = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    };
+    document.addEventListener('mousedown', onMouseDown);
+    return () => document.removeEventListener('mousedown', onMouseDown);
+  }, []);
 
   return (
-    <div className="relative">
-      <select
-        value={current}
-        onChange={(e) => i18n.changeLanguage(e.target.value)}
-        className="appearance-none bg-surface border border-border text-text text-xs font-medium rounded-lg pl-3 pr-7 py-1.5 cursor-pointer hover:border-accent focus:border-accent focus:outline-none transition-colors"
-        aria-label="Select language"
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="flex items-center gap-2 bg-surface-2 border border-border hover:border-accent/50 text-text text-xs font-medium rounded-xl px-3 py-1.5 transition-all duration-200 hover:shadow-[0_0_12px_rgba(34,197,94,0.1)]"
+        aria-haspopup="listbox"
+        aria-expanded={open}
       >
-        {LANGS.map(({ code, label }) => (
-          <option key={code} value={code}>
-            {label}
-          </option>
-        ))}
-      </select>
-      <span className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-muted text-xs select-none">▾</span>
+        <span className="text-base leading-none">{currentLang.flag}</span>
+        <span className="hidden sm:inline text-muted group-hover:text-text">{currentLang.label}</span>
+        <span className="sm:hidden text-muted">{current.toUpperCase()}</span>
+        <span className={`text-muted text-[10px] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>▾</span>
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full mt-2 w-48 glass border border-border-bright rounded-2xl shadow-2xl overflow-hidden z-50 animate-scale-in">
+          <div className="p-1.5">
+            {LANGS.map(({ code, label, flag }) => (
+              <button
+                key={code}
+                role="option"
+                aria-selected={current === code}
+                onClick={() => { i18n.changeLanguage(code); setOpen(false); }}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-150 ${
+                  current === code
+                    ? 'bg-accent/10 text-accent font-semibold'
+                    : 'text-muted hover:text-text hover:bg-white/4'
+                }`}
+              >
+                <span className="text-xl leading-none">{flag}</span>
+                <span>{label}</span>
+                {current === code && (
+                  <span className="ml-auto text-accent text-xs font-bold">✓</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

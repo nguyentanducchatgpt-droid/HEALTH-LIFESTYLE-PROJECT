@@ -6,17 +6,133 @@ html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
+/* ─── Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
 ::-webkit-scrollbar-thumb {
-  background: #22c55e;
-  border-radius: 3px;
+  background: linear-gradient(180deg, #22c55e, #16a34a);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: #22c55e; }
+
+* { -webkit-tap-highlight-color: transparent; }
+
+/* ─── Gradient text ──────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-* {
-  -webkit-tap-highlight-color: transparent;
+.text-shimmer {
+  background: linear-gradient(90deg, #22c55e 0%, #86efac 40%, #22c55e 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
 }
+
+/* ─── Glass morphism ─────────────────────────────── */
+.glass {
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ─── Glow effects ───────────────────────────────── */
+.glow-green {
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.2), 0 0 60px rgba(34, 197, 94, 0.08);
+}
+
+.glow-green-sm {
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+}
+
+/* ─── Grid dot pattern ───────────────────────────── */
+.grid-dots {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ─── Animated gradient border ───────────────────── */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.4), rgba(16,185,129,0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ─── Pillar card color glow utilities ───────────── */
+.card-glow-green:hover  { box-shadow: 0 8px 40px rgba(34,197,94,0.12),  0 2px 8px rgba(0,0,0,0.4); }
+.card-glow-lime:hover   { box-shadow: 0 8px 40px rgba(132,204,22,0.12), 0 2px 8px rgba(0,0,0,0.4); }
+.card-glow-teal:hover   { box-shadow: 0 8px 40px rgba(20,184,166,0.12), 0 2px 8px rgba(0,0,0,0.4); }
+.card-glow-purple:hover { box-shadow: 0 8px 40px rgba(168,85,247,0.12), 0 2px 8px rgba(0,0,0,0.4); }
+.card-glow-blue:hover   { box-shadow: 0 8px 40px rgba(59,130,246,0.12),  0 2px 8px rgba(0,0,0,0.4); }
+.card-glow-orange:hover { box-shadow: 0 8px 40px rgba(249,115,22,0.12), 0 2px 8px rgba(0,0,0,0.4); }
+
+/* ─── Reveal animation on scroll ────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Button shimmer effect ──────────────────────── */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.6s ease;
+}
+.btn-shimmer:hover::after {
+  left: 130%;
+}
+
+/* ─── Timeline connector ─────────────────────────── */
+.timeline-line {
+  background: linear-gradient(180deg, #22c55e 0%, rgba(34,197,94,0.2) 70%, transparent 100%);
+}
+
+/* ─── Section fade-in stagger ────────────────────── */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }

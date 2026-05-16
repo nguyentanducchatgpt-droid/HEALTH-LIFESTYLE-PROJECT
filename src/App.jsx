@@ -8,6 +8,7 @@ import PillarD from './pages/PillarD';
 import PillarE from './pages/PillarE';
 import PillarF from './pages/PillarF';
 import VideoLibrary from './pages/VideoLibrary';
+import Program from './pages/Program';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/pillar/d" element={<PillarD />} />
           <Route path="/pillar/e" element={<PillarE />} />
           <Route path="/pillar/f" element={<PillarF />} />
+          <Route path="/program" element={<Program />} />
           <Route path="/videos" element={<VideoLibrary />} />
           <Route path="*" element={<Home />} />
         </Routes>

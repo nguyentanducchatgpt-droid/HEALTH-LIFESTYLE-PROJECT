@@ -4,6 +4,7 @@
     "home": "Startseite",
     "pillars": "6 Säulen",
     "videos": "Videos",
+    "program": "Programm",
     "contact": "Kontakt",
     "donate": "Unterstützen"
   },
@@ -12,6 +13,78 @@
     "subtitle": "Ein einfaches, wissenschaftlich fundiertes Ökosystem für ein gesundes Leben – jeden Tag anwendbar",
     "cta": "Jetzt Starten",
     "pillars_title": "6 Säulen eines gesunden Lebens"
+  },
+  "home": {
+    "stats": [
+      { "value": "10 Min", "label": "Reicht, um täglich eine Gewohnheit zu starten" },
+      { "value": "6 Säulen", "label": "Umfassendes, evidenzbasiertes System" },
+      { "value": "12 Wochen", "label": "Strukturierter Fahrplan vom Anfänger zum Fortgeschrittenen" }
+    ],
+    "quote": "Sie müssen nicht perfekt sein. Sie müssen nur konsequent sein.",
+    "quote_author": "— Gesundheit & Lebensstil"
+  },
+  "program": {
+    "title": "12-Wochen-Programm",
+    "subtitle": "Vom Anfänger zu nachhaltigen Gewohnheiten — Schritt für Schritt, Woche für Woche",
+    "roadmap_title": "Wöchentlicher Fahrplan",
+    "daily_title": "Idealer Tagesrahmen (20–40 Min)",
+    "weekly_title": "Empfohlener Wochenrhythmus",
+    "phases": [
+      {
+        "weeks": "Woche 1–2",
+        "name": "Grundlagen",
+        "tag": "Foundation",
+        "color": "green",
+        "goal": "Bewegung lernen, grundlegende Gewohnheiten aufbauen",
+        "items": [
+          "6 Grundbewegungen meistern: Kniebeuge, Hinge, Push, Pull, Core, Atmung",
+          "3 Einheiten/Woche trainieren · 20 Min/Einheit",
+          "Korrekte Form über Quantität stellen",
+          "Vor 23 Uhr schlafen und ausreichend Protein essen",
+          "Ziel: 6 Einheiten in 2 Wochen abschließen"
+        ]
+      },
+      {
+        "weeks": "Woche 3–6",
+        "name": "Basis Aufbauen",
+        "tag": "Build Base",
+        "color": "lime",
+        "goal": "Trainingsvolumen erhöhen, Ausdauer aufbauen",
+        "items": [
+          "1–2 Sätze pro Übung hinzufügen, schwierigere Variationen",
+          "2 leichte Cardio-Einheiten/Woche (20–30 Min Gehen)",
+          "Trainingstagebuch führen: Sätze, Wdh., Gefühle",
+          "Schlaf und Energielevel täglich verfolgen",
+          "Ziel: 4–5 Einheiten/Woche, maximal 1 verpassen"
+        ]
+      },
+      {
+        "weeks": "Woche 7–12",
+        "name": "Personalisieren",
+        "tag": "Personalize",
+        "color": "purple",
+        "goal": "An Ihre Ziele und Vorlieben anpassen",
+        "items": [
+          "Richtung wählen: Fettabbau / Muskelaufbau / Ausdauer",
+          "Intensität gemäß gewähltem Ziel steigern",
+          "Fortschrittstest in Woche 8 und Woche 12",
+          "Ernährungsplan passend zum Ziel erstellen",
+          "Ziel: nächste Woche selbst planen können"
+        ]
+      }
+    ],
+    "daily_blocks": [
+      { "time": "5 Min", "name": "Aufwärmen", "desc": "Gelenkbeweglichkeit, Körpertemperatur erhöhen", "icon": "🔥" },
+      { "time": "10–20 Min", "name": "Haupttraining", "desc": "Kraftübungen oder Cardio", "icon": "💪" },
+      { "time": "5–10 Min", "name": "Abkühlen & Erholung", "desc": "Dehnen, Körpertemperatur senken", "icon": "🧘" },
+      { "time": "5 Min", "name": "Mind Reset", "desc": "Tiefes Atmen oder kurze Meditation", "icon": "🌿" }
+    ],
+    "weekly_days": [
+      { "days": "Mo · Mi · Fr", "type": "Kraft", "desc": "Kniebeuge, Hinge, Push, Pull, Core — 20–30 Min", "color": "green" },
+      { "days": "Di · Do", "type": "Leichtes Cardio", "desc": "Schnelles Gehen, Radfahren, Treppen — 20–30 Min", "color": "blue" },
+      { "days": "Sa", "type": "Aktive Erholung", "desc": "Dehnen, Yoga, entspanntes Gehen", "color": "teal" },
+      { "days": "So", "type": "Ruhetag", "desc": "Vollständige Erholung oder leichte Bewegung", "color": "purple" }
+    ]
   },
   "contact": {
     "title": "Kontakt",

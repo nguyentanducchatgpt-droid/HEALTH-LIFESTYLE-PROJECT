@@ -4,6 +4,7 @@
     "home": "Trang Chủ",
     "pillars": "6 Trụ Cột",
     "videos": "Video",
+    "program": "Lộ Trình",
     "contact": "Liên Hệ",
     "donate": "Ủng Hộ"
   },
@@ -12,6 +13,78 @@
     "subtitle": "Hệ sinh thái sống khỏe đơn giản, khoa học, dễ áp dụng mỗi ngày",
     "cta": "Bắt Đầu Ngay",
     "pillars_title": "6 Trụ Cột Sống Khỏe"
+  },
+  "home": {
+    "stats": [
+      { "value": "10 phút", "label": "Đủ để bắt đầu thói quen mỗi ngày" },
+      { "value": "6 trụ cột", "label": "Hệ thống toàn diện đã được kiểm chứng" },
+      { "value": "12 tuần", "label": "Lộ trình có cấu trúc từ mới → nâng cao" }
+    ],
+    "quote": "Không cần hoàn hảo. Chỉ cần nhất quán.",
+    "quote_author": "— Sức Khỏe & Đời Sống"
+  },
+  "program": {
+    "title": "Lộ Trình 12 Tuần",
+    "subtitle": "Từ người mới đến thói quen bền vững — từng bước, từng tuần",
+    "roadmap_title": "Lộ Trình Theo Tuần",
+    "daily_title": "Khung Ngày Lý Tưởng (20–40 Phút)",
+    "weekly_title": "Nhịp Tuần Gợi Ý",
+    "phases": [
+      {
+        "weeks": "Tuần 1–2",
+        "name": "Khởi Động",
+        "tag": "Foundation",
+        "color": "green",
+        "goal": "Học kỹ thuật, xây thói quen cơ bản",
+        "items": [
+          "Học 6 chuyển động nền: Squat, Hinge, Push, Pull, Core, Thở",
+          "Tập 3 buổi/tuần · 20 phút/buổi",
+          "Ưu tiên hình thức đúng hơn số lượng",
+          "Bắt đầu ngủ trước 23h và ăn đủ đạm",
+          "Mục tiêu: hoàn thành 6 buổi trong 2 tuần"
+        ]
+      },
+      {
+        "weeks": "Tuần 3–6",
+        "name": "Tăng Nền",
+        "tag": "Build Base",
+        "color": "lime",
+        "goal": "Tăng khối lượng tập, xây sức bền",
+        "items": [
+          "Tăng thêm 1–2 set/bài, thêm biến thể khó hơn",
+          "Thêm cardio nhẹ 2 buổi/tuần (đi bộ 20–30 phút)",
+          "Bắt đầu ghi nhật ký tập: sets, reps, cảm giác",
+          "Theo dõi giấc ngủ và năng lượng mỗi ngày",
+          "Mục tiêu: 4–5 buổi/tuần, không bỏ quá 1 buổi"
+        ]
+      },
+      {
+        "weeks": "Tuần 7–12",
+        "name": "Cá Nhân Hóa",
+        "tag": "Personalize",
+        "color": "purple",
+        "goal": "Điều chỉnh theo mục tiêu và sở thích cá nhân",
+        "items": [
+          "Chọn hướng: giảm mỡ / tăng cơ / tăng sức bền",
+          "Tăng cường độ theo mục tiêu đã chọn",
+          "Test tiến bộ cuối tuần 8 và tuần 12",
+          "Xây thực đơn phù hợp mục tiêu",
+          "Mục tiêu: có thể tự lập kế hoạch tập cho tuần sau"
+        ]
+      }
+    ],
+    "daily_blocks": [
+      { "time": "5 phút", "name": "Khởi Động", "desc": "Vận động khớp, tăng nhiệt cơ thể", "icon": "🔥" },
+      { "time": "10–20 phút", "name": "Vận Động Chính", "desc": "Bài tập sức mạnh hoặc cardio", "icon": "💪" },
+      { "time": "5–10 phút", "name": "Giãn Cơ & Phục Hồi", "desc": "Kéo giãn, hạ nhiệt cơ thể", "icon": "🧘" },
+      { "time": "5 phút", "name": "Mind Reset", "desc": "Thở sâu hoặc thiền ngắn", "icon": "🌿" }
+    ],
+    "weekly_days": [
+      { "days": "Thứ 2 · 4 · 6", "type": "Sức Mạnh", "desc": "Squat, Hinge, Push, Pull, Core — 20–30 phút", "color": "green" },
+      { "days": "Thứ 3 · 5", "type": "Cardio Nhẹ", "desc": "Đi bộ nhanh, đạp xe, leo thang — 20–30 phút", "color": "blue" },
+      { "days": "Thứ 7", "type": "Phục Hồi Tích Cực", "desc": "Giãn cơ, yoga, đi dạo thư giãn", "color": "teal" },
+      { "days": "Chủ Nhật", "type": "Nghỉ Ngơi", "desc": "Nghỉ hoàn toàn hoặc vận động nhẹ theo ý thích", "color": "purple" }
+    ]
   },
   "contact": {
     "title": "Liên Hệ",

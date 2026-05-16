@@ -5,6 +5,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 
 const NAV_LINKS = [
   { key: 'nav.home', to: '/' },
+  { key: 'nav.program', to: '/program' },
   { key: 'nav.videos', to: '/videos' },
 ];
 

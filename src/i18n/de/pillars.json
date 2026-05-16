@@ -8,39 +8,63 @@
     "color": "green",
     "sections": [
       {
-        "title": "Grundlagen",
+        "title": "6 Grundlegende Bewegungen",
         "items": [
-          "Richtiges Aufwärmen & Dehnen",
-          "Grundtechniken: Kniebeuge, Hinge, Push, Pull, Core, Atmung",
-          "Richtige Intensität wählen: RPE, Herzfrequenz, Sprechtest"
+          "Richtiges Aufwärmen & Dehnen vor und nach jeder Einheit",
+          "Kniebeuge — grundlegende Bein- und Gesäßbewegung",
+          "Hinge — korrekter Hüftbeuger, schützt den unteren Rücken",
+          "Push — Liegestütze, trainiert Brust und Schultern",
+          "Pull — Zugbewegungen, trainiert Rücken und Bizeps",
+          "Core — Rumpfstabilität, schützt die Wirbelsäule",
+          "Atmung — korrekte Atemtechnik während und nach dem Training"
+        ]
+      },
+      {
+        "title": "Tages-Trainingsrahmen (20–40 Min)",
+        "items": [
+          "5 Min — Aufwärmen: Gelenkbeweglichkeit, Körpertemperatur erhöhen",
+          "10–20 Min — Haupttraining: Kraftübungen oder Cardio",
+          "5–10 Min — Abkühlen: Dehnen der gerade trainierten Muskeln",
+          "5 Min — Mind Reset: tiefes Atmen, kurze Meditation oder leichter Spaziergang"
+        ]
+      },
+      {
+        "title": "Empfohlener Wochenrhythmus",
+        "items": [
+          "Mo · Mi · Fr — Kraft: Kniebeuge, Hinge, Push, Pull, Core",
+          "Di · Do — Leichtes Cardio: zügiges Gehen 20–30 Min",
+          "Sa — Aktive Erholung: Dehnen, Mobilität, entspannter Spaziergang",
+          "So — Vollständige Ruhe oder leichte Bewegung nach Wunsch"
         ]
       },
       {
         "title": "Zielorientierte Programme",
         "items": [
-          "Fettabbau — Cardio + Kaloriendefizit",
-          "Muskelaufbau — Kraft + ausreichend Protein",
-          "Ausdauer — progressives Cardio/Laufen",
-          "Flexibilität & Mobilität",
-          "Nacken-, Schulter-, Rücken- und Knieschmerzen vorbeugen/lindern"
+          "Fettabbau — Cardio + Kaloriendefizit 300–500 kcal/Tag",
+          "Muskelaufbau — progressive Überlastung + Protein 1,6–2g/kg",
+          "Ausdauer — progressives Cardio/Laufen Woche für Woche",
+          "Flexibilität & Mobilität — Yoga, Foam Rolling, statisches Dehnen",
+          "Nacken-, Schulter-, Rücken- und Knieschmerzen vorbeugen — Mobilität + Core"
         ]
       },
       {
         "title": "Kontextbasierte Programme",
         "items": [
-          "10 Min/Tag (sehr beschäftigt)",
-          "20–30 Min/Tag (Standard)",
-          "Heimtraining — ohne Geräte",
-          "Mit Kurzhanteln/Widerstandsbändern",
-          "Outdoor-Training"
+          "10 Min/Tag (sehr beschäftigt) — 3 Übungen: Kniebeuge, Liegestütze, Plank",
+          "20–30 Min/Tag (Standard) — Ganzkörper oder Ober-/Unterkörper-Split",
+          "Heimtraining — nur Körpergewicht, kein Gerät nötig",
+          "Mit Kurzhanteln/Widerstandsbändern — progressive Belastung hinzufügen",
+          "Outdoor-Training — Gehen, Laufen, Calisthenics"
         ]
       },
       {
-        "title": "Fortschritt Verfolgen",
+        "title": "Sicherheitsprinzipien",
         "items": [
-          "Progressive Überlastung",
-          "Monatliche Tests: Ausdauer, Kraft, Flexibilität",
-          "Trainingstagebuch"
+          "Immer aufwärmen — niemals überspringen, auch bei Zeitmangel",
+          "Belastung schrittweise erhöhen — nicht mehr als 10% pro Woche",
+          "Bei Schmerzen pausieren (Schmerz ≠ Unwohlsein) — auf den Körper hören",
+          "Nicht trainieren bei Fieber, akuten Verletzungen oder Erschöpfung",
+          "Sofort aufhören bei Brustschmerzen, Schwindel oder Atemnot"
         ]
       }
     ],
@@ -57,26 +81,51 @@
       {
         "title": "Grundwissen",
         "items": [
-          "Energie: TDEE, Defizit/Erhaltung/Überschuss",
-          "Makros: Protein – Kohlenhydrate – Fett",
-          "Ballaststoffe, Wasser, Mikronährstoffe"
+          "TDEE — gesamter täglicher Energieverbrauch (wie viel Sie essen müssen)",
+          "Kaloriendefizit (Fettabbau) / Erhaltung / Überschuss (Muskelaufbau)",
+          "Makros: Protein 1,6–2g/kg · Kohlenhydrate für Energie · Fett 0,8–1g/kg",
+          "Ballaststoffe: 25–35g/Tag aus Gemüse, Vollkornprodukten",
+          "Wasser: 1,5–2 Liter/Tag, mehr beim Sport"
         ]
       },
       {
-        "title": "Praktische Anwendung",
+        "title": "Der Gesunde Teller",
         "items": [
-          "Gesunder Teller — ½ Gemüse, ¼ Protein, ¼ Kohlenhydrate",
-          "Zielorientiert essen: Fettabbau / Muskelaufbau / Ausdauer",
-          "Meal Prep für Vielbeschäftigte",
-          "Gesund essen gehen"
+          "½ Teller — Gemüse: Blattgemüse, Karotten, Kohl, Gurke",
+          "¼ Teller — Protein: Hühnchen/Schwein/Rind, Fisch, Eier, Tofu, Garnelen",
+          "¼ Teller — Kohlenhydrate: Braunreis, Süßkartoffel, Vollkornbrot",
+          "Gesunde Fette hinzufügen: Olivenöl, Avocado, Nüsse, Kokosöl",
+          "Begrenzen: gebratene Speisen, Zuckergetränke, verarbeitete Lebensmittel"
+        ]
+      },
+      {
+        "title": "Beispiel-Tagesmahlzeiten",
+        "items": [
+          "Frühstück: Reis + Spiegelei + gedünstetes Gemüse | oder Brot + Ei + Salat",
+          "Mittagessen: Reis + Fleisch/Fisch + Gemüsepfanne + Suppe + 1 Portion Obst",
+          "Abendessen: Weniger Reis + Fisch/Tofu + viel Gemüse + kein süßes Dessert",
+          "Gesunde Snacks: Naturjoghurt, Cashews, frisches Obst",
+          "Getränke: Wasser, grüner Tee, ungesüßte Milch — kein Limonade"
+        ]
+      },
+      {
+        "title": "Ernährung Vor & Nach dem Training",
+        "items": [
+          "1–2 Stunden vorher: leichte Mahlzeit mit Kohlenhydraten + Protein (Banane + Milch)",
+          "30–60 Min nach dem Training: Protein zur Muskelregeneration",
+          "Nicht auf nüchternen Magen bei hoher Intensität (>70% Max) trainieren",
+          "Hydration: während des gesamten Trainings gleichmäßig trinken",
+          "Kurz vor dem Training nicht zu satt essen — verursacht Blähungen"
         ]
       },
       {
         "title": "Essgewohnheiten",
         "items": [
-          "Langsam essen, regelmäßig, Süßes kontrollieren",
-          "Ausrutscher handhaben",
-          "Günstige Ernährungspläne"
+          "Langsam essen 15–20 Min, gut kauen — Sättigungsgefühl nach 20 Min",
+          "Regelmäßig essen, Frühstück nicht überspringen",
+          "Süßes kontrollieren — 1–2 Mal/Woche statt täglich",
+          "Ausrutscher handhaben: sofort am nächsten Tag wieder einsteigen",
+          "Günstige Ernährung: Eier, Hülsenfrüchte, Fisch, saisonales Gemüse"
         ]
       }
     ],
@@ -93,24 +142,31 @@
       {
         "title": "Schlaf",
         "items": [
-          "Schlafhygiene — Umgebung, Temperatur, Licht",
-          "Abendroutine 30–60 Minuten vor dem Schlafen",
-          "Spätes Schlafen abgewöhnen"
+          "Ziel: 7–9 Stunden/Nacht, konsistente Schlaf- und Aufwachzeiten",
+          "Schlafhygiene: dunkles, kühles (~22°C), ruhiges Zimmer",
+          "1 Stunde vor dem Schlafen keine Bildschirme mit blauem Licht",
+          "Abendroutine: warme Dusche, Lesen, entspannendes Atmen",
+          "Spätes Schlafen abgewöhnen: Schlafzeit jede Woche 15 Min früher verschieben"
         ]
       },
       {
         "title": "Energie & Rhythmus",
         "items": [
-          "Morgenroutine",
-          "NEAT — Gehen, Stehen, kleine Bewegungen",
-          "Sonnenlicht und zirkadianer Rhythmus"
+          "Morgenroutine: Wasser trinken, natürliches Licht, leichte Bewegung",
+          "NEAT — Gehen, Treppen nehmen, Stehen verbrennt 200–400 extra kcal/Tag",
+          "10–20 Min Morgensonne hilft, den Biorhythmus zu regulieren",
+          "Koffein nach 14 Uhr meiden, um den Schlaf nicht zu beeinträchtigen",
+          "Mikropausen: alle 45–60 Min aufstehen beim langen Sitzen"
         ]
       },
       {
         "title": "Erholung",
         "items": [
-          "Deload und aktive Erholung",
-          "Atmung, Dehnen, einfache Selbstmassage"
+          "Deload alle 4–6 Wochen: Trainingsvolumen um 50% reduzieren",
+          "Aktive Erholung: leichtes Gehen, Schwimmen statt ganzen Tag liegen",
+          "Zwerchfellatmung: einatmen 4s, halten 2s, ausatmen 6s × 10 Mal",
+          "Dehnen: 5–10 Min nach dem Training, Fokus auf trainierte Muskeln",
+          "Einfache Selbstmassage: Foam Roller oder Tennisball für Verspannungen"
         ]
       }
     ],
@@ -125,27 +181,50 @@
     "color": "purple",
     "sections": [
       {
-        "title": "Grundlagen",
+        "title": "Stress Verstehen",
         "items": [
-          "Was ist Stress und seine Grundmechanismen",
-          "Die Angst-Gewohnheits-Schleife"
+          "Akuter Stress (kurzfristig) kann nützlich sein — schärft die Konzentration",
+          "Chronischer Stress ist schädlich: erhöht Cortisol, stört Schlaf, schwächt Immunsystem",
+          "Die Angst-Schleife: Situation → negativer Gedanke → Emotion → Verhalten",
+          "Frühe Stresssignale erkennen: Schultern-Verspannung, schlechter Schlaf, Reizbarkeit"
         ]
       },
       {
-        "title": "Praxis",
+        "title": "3-Schritte Meditationsanleitung (3–5 Min)",
         "items": [
-          "Meditation 3–10 Min/Tag",
-          "Journaling: 5 Zeilen täglich",
-          "Box-Atmung (4-4-4-4) und 4-7-8-Atmung",
-          "Digital Detox"
+          "Schritt 1 — Ankommen: Bequem sitzen, Augen schließen, Schultern und Kiefer entspannen",
+          "Schritt 2 — Atmen: Einatmen 4 zählen, halten 2, ausatmen 6 zählen (5–10 Mal)",
+          "Schritt 3 — Beobachten: Bei Gedanken, sanft bemerken und zum Atem zurückkehren",
+          "Kein Lotus-Sitz nötig — Stuhl, Boden oder Liegend funktionieren alle",
+          "Hilfreiche Apps: Insight Timer (kostenlos), Calm, Headspace"
+        ]
+      },
+      {
+        "title": "Box-Atmung 4-4-4-4",
+        "items": [
+          "Durch die Nase einatmen — langsam bis 4 zählen",
+          "Atem anhalten — langsam bis 4 zählen (entspannt, nicht angespannt)",
+          "Durch den Mund ausatmen — langsam bis 4 zählen",
+          "Pause (nicht atmen) — bis 4 zählen → 4 Runden wiederholen",
+          "Anwenden bei: Stress, vor Meetings/Präsentationen, vor dem Schlafen"
+        ]
+      },
+      {
+        "title": "Tägliche Praxis",
+        "items": [
+          "Morgens 3–10 Min meditieren, bevor Sie das Handy checken",
+          "Journaling: 3 Dankbarkeiten + 1 Ziel für heute (5 Min)",
+          "Digital Detox: 1 Stunde nach dem Aufwachen und 1 Stunde vor dem Schlafen",
+          "Spaziergang ohne Handy 10–20 Min — Meditation in Bewegung"
         ]
       },
       {
         "title": "Gesunde Denkweise",
         "items": [
-          "Ziele vereinfachen",
-          "Sanfte Disziplin",
-          "Kleine, aber dauerhafte Gewohnheiten aufbauen"
+          "Ziele vereinfachen: 1–3 Kerngewohnheiten statt 10 auf einmal",
+          "Sanfte Disziplin: sich nicht bestrafen, wenn ein Tag fehlt — einfach zurückkehren",
+          "Kleine, aber dauerhafte Gewohnheiten: 2-Minuten-Regel (nur mit 2 Min anfangen)",
+          "Fortschritt verfolgen: Streak auf dem Kalender markieren für visuellen Schwung"
         ]
       }
     ],
@@ -160,28 +239,33 @@
     "color": "blue",
     "sections": [
       {
-        "title": "Wichtige Werte",
+        "title": "Wichtige Gesundheitswerte",
         "items": [
-          "BMI und Taillenumfang",
-          "Normaler Blutdruck",
-          "Grundlegende Blutzucker- und Cholesterinwerte"
+          "BMI 18,5–24,9 = normal (BMI = Gewicht kg / Größe m²)",
+          "Taillenumfang <90cm (Männer) und <80cm (Frauen) — geringes Herzrisiko",
+          "Normaler Blutdruck: 90–120 / 60–80 mmHg",
+          "Nüchternblutzucker normal: 3,9–5,6 mmol/L (<100 mg/dL)",
+          "Ruheherzfrequenz normal: 60–100 bpm (Sportler: 40–60)"
         ]
       },
       {
         "title": "Wann zum Arzt",
         "items": [
-          "Brustschmerzen, schwere Atemnot",
-          "Schwindel beim Sport",
-          "Akute Verletzung — sofort aufhören"
+          "Brustschmerzen oder Brustenge — besonders beim Sport",
+          "Ungewöhnliche Atemnot in Ruhe oder bei leichter Aktivität",
+          "Schwindel oder Ohnmacht während oder nach dem Sport",
+          "Gelenk- oder Muskelschmerzen länger als 2 Wochen ohne Besserung",
+          "Chronische Müdigkeit trotz ausreichend Schlaf"
         ]
       },
       {
-        "title": "Krankheitsvorbeugung",
+        "title": "Proaktive Krankheitsvorbeugung",
         "items": [
-          "Regelmäßige Bewegung",
-          "Ausgewogene Ernährung",
-          "Ausreichend Schlaf",
-          "Stressbewältigung"
+          "Regelmäßige Bewegung — 150 Min/Woche moderate Aktivität (WHO)",
+          "Ausgewogene Ernährung, ausreichend Mikronährstoffe, weniger Fertigprodukte",
+          "7–9 Stunden Schlaf täglich — Schlafmangel erhöht das Krankheitsrisiko erheblich",
+          "Chronischen Stress managen — Meditation, Sport, soziale Kontakte",
+          "Jährliche Gesundheitskontrolle auch ohne Symptome"
         ]
       }
     ],
@@ -198,30 +282,53 @@
       {
         "title": "Tägliche Checkliste",
         "items": [
-          "10–20 Minuten Bewegung",
-          "2 Handvoll Gemüse pro Mahlzeit",
-          "1 Proteinquelle pro Hauptmahlzeit",
-          "30 Minuten früher schlafen",
-          "1 Minute Atmung/Meditation"
+          "10–20 Minuten Bewegung (Training, Gehen, Dehnen)",
+          "2 Handvoll Gemüse pro Mahlzeit — frisch und abwechslungsreich",
+          "1 Proteinquelle pro Hauptmahlzeit — Fleisch, Fisch, Eier, Tofu",
+          "1,5–2 Liter Wasser trinken",
+          "7–8 Stunden schlafen, vor 23 Uhr ins Bett",
+          "5 Minuten Atmen oder Meditieren — jederzeit",
+          "30 Minuten vor dem Schlafen kein Handy"
+        ]
+      },
+      {
+        "title": "Wöchentliche Checkliste",
+        "items": [
+          "3–5 geplante Trainingseinheiten abschließen",
+          "Essen für die Woche vorbereiten (Meal Prep 1–2 Stunden am Wochenende)",
+          "Fortschritt prüfen: Gewicht, Taillenumfang, allgemeines Wohlbefinden",
+          "Nächste Woche einplanen — konkrete Tage/Zeiten bestätigen",
+          "1 Stunde für eine entspannende Lieblingsaktivität einplanen"
         ]
       },
       {
         "title": "Vorlagen",
         "items": [
-          "Wöchentliches Trainingstagebuch",
-          "7-Tage-Ernährungsplan-Vorlage",
-          "Morgen-/Abendroutine"
+          "Trainingstagebuch: Datum · Übung · Sätze · Wdh. · Gefühl",
+          "7-Tage-Ernährungsplan: Frühstück/Mittagessen/Abendessen + Snacks",
+          "15-Min-Morgenroutine: Wasser · Sonnenlicht · Bewegung · Meditation",
+          "20-Min-Abendroutine: Dusche · Lesen/Schreiben · kein Bildschirm"
         ]
       },
       {
         "title": "4-Wochen-Fortschrittstest",
         "items": [
-          "Ausdauertest: 6-Minuten-Gehtest",
-          "Krafttest: Max Kniebeugen / Liegestütze",
-          "Flexibilitätstest: Fingerspitzen zum Boden",
-          "Taillenumfang und Körpergewicht messen"
+          "Ausdauertest: 6-Minuten-Schnellgehtest — zurückgelegte Strecke messen",
+          "Krafttest: maximale Liegestütze + maximale Kniebeugen in 1 Satz",
+          "Flexibilitätstest: aufrecht stehen, können Sie den Boden berühren?",
+          "Taillenumfang und Körpergewicht messen (morgens, vor dem Essen)",
+          "Ergebnisse aufzeichnen und in Woche 4, 8 und 12 vergleichen"
         ]
       }
+    ],
+    "checklist_items": [
+      "10–20 Minuten Bewegung",
+      "2 Handvoll Gemüse pro Mahlzeit",
+      "1 Proteinquelle pro Hauptmahlzeit",
+      "1,5–2 Liter Wasser trinken",
+      "7–8 Stunden schlafen",
+      "5 Minuten Atmen oder Meditieren",
+      "30 Min vor dem Schlafen kein Handy"
     ],
     "videos": []
   }

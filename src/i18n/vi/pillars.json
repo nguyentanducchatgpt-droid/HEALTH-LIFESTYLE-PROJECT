@@ -8,39 +8,63 @@
     "color": "green",
     "sections": [
       {
-        "title": "Nền Tảng",
+        "title": "Nền Tảng 6 Chuyển Động",
         "items": [
-          "Khởi động & giãn cơ đúng cách",
-          "Kỹ thuật cơ bản: Squat, Hinge, Push, Pull, Core, Thở",
-          "Chọn mức độ phù hợp: RPE, nhịp tim, test nói chuyện"
+          "Khởi động & giãn cơ đúng cách trước và sau tập",
+          "Squat — bài tập chân và mông nền tảng",
+          "Hinge — gập hông đúng cách, bảo vệ lưng dưới",
+          "Push — chống đẩy, tập ngực và vai",
+          "Pull — kéo, tập lưng và bắp tay",
+          "Core — ổn định lõi cơ thể, bảo vệ cột sống",
+          "Thở — kỹ thuật thở đúng trong và ngoài tập"
+        ]
+      },
+      {
+        "title": "Khung Ngày Tập 20–40 Phút",
+        "items": [
+          "5 phút — Khởi động: vận động khớp, tăng nhiệt cơ thể",
+          "10–20 phút — Vận động chính: bài sức mạnh hoặc cardio",
+          "5–10 phút — Giãn cơ & hạ nhiệt: kéo giãn cơ đã tập",
+          "5 phút — Mind Reset: thở sâu, thiền ngắn hoặc đi bộ nhẹ"
+        ]
+      },
+      {
+        "title": "Nhịp Tuần Gợi Ý",
+        "items": [
+          "Thứ 2 · 4 · 6 — Sức mạnh: Squat, Hinge, Push, Pull, Core",
+          "Thứ 3 · 5 — Cardio nhẹ: đi bộ nhanh 20–30 phút",
+          "Thứ 7 — Phục hồi tích cực: giãn cơ, mobility, đi dạo",
+          "Chủ nhật — Nghỉ hoàn toàn hoặc vận động nhẹ"
         ]
       },
       {
         "title": "Lộ Trình Theo Mục Tiêu",
         "items": [
-          "Giảm mỡ — cardio + thâm hụt calo",
-          "Tăng cơ — sức mạnh + đủ protein",
-          "Tăng sức bền — cardio/chạy bộ tiến dần",
-          "Dẻo dai & mobility",
-          "Phòng/giảm đau cổ vai gáy, lưng, gối"
+          "Giảm mỡ — cardio + thâm hụt calo 300–500 kcal/ngày",
+          "Tăng cơ — sức mạnh progressive overload + đủ protein 1.6–2g/kg",
+          "Tăng sức bền — cardio/chạy bộ tiến dần theo tuần",
+          "Dẻo dai & mobility — yoga, foam roll, giãn cơ tĩnh",
+          "Phòng/giảm đau cổ vai gáy, lưng, gối — mobility + core"
         ]
       },
       {
         "title": "Chương Trình Theo Bối Cảnh",
         "items": [
-          "10 phút/ngày (siêu bận)",
-          "20–30 phút/ngày (chuẩn)",
-          "Tập tại nhà không dụng cụ",
-          "Tập với tạ đơn/dây kháng lực",
-          "Tập ngoài trời"
+          "10 phút/ngày (siêu bận) — 3 bài: Squat, Push, Plank",
+          "20–30 phút/ngày (chuẩn) — full body hoặc upper/lower split",
+          "Tập tại nhà không dụng cụ — bodyweight full",
+          "Tập với tạ đơn/dây kháng lực — thêm sức cản tiến bộ",
+          "Tập ngoài trời — đi bộ, chạy, calisthenics"
         ]
       },
       {
-        "title": "Theo Dõi Tiến Bộ",
+        "title": "Nguyên Tắc An Toàn",
         "items": [
-          "Tăng dần (progressive overload)",
-          "Test hàng tháng: sức bền, sức mạnh, linh hoạt",
-          "Nhật ký tập luyện"
+          "Luôn khởi động, không bỏ qua dù vội",
+          "Tăng tải từ từ — không tăng quá 10%/tuần",
+          "Nghỉ khi đau (pain ≠ discomfort) — lắng nghe cơ thể",
+          "Không tập khi sốt, chấn thương cấp, mệt kiệt sức",
+          "Dừng ngay nếu có đau ngực, chóng mặt, khó thở"
         ]
       }
     ],
@@ -57,26 +81,51 @@
       {
         "title": "Kiến Thức Nền",
         "items": [
-          "Năng lượng: TDEE, thâm hụt/duy trì/thặng dư",
-          "Macro: Protein – Carb – Fat",
-          "Chất xơ, nước, vi chất"
+          "TDEE — tổng năng lượng tiêu hao mỗi ngày (cần ăn bao nhiêu?)",
+          "Thâm hụt calo (giảm mỡ) / Duy trì / Thặng dư (tăng cơ)",
+          "Macro: Protein 1.6–2g/kg thể trọng · Carb năng lượng chính · Fat 0.8–1g/kg",
+          "Chất xơ: 25–35g/ngày từ rau củ, ngũ cốc nguyên hạt",
+          "Nước: 1.5–2 lít/ngày, thêm khi tập luyện"
         ]
       },
       {
-        "title": "Ứng Dụng Thực Tế",
+        "title": "Đĩa Ăn Lành Mạnh",
         "items": [
-          "Đĩa ăn lành mạnh — ½ rau, ¼ đạm, ¼ tinh bột",
-          "Ăn theo mục tiêu: giảm mỡ / tăng cơ / sức bền",
-          "Meal prep cho người bận",
-          "Thực đơn ăn ngoài quán vẫn khỏe"
+          "½ đĩa — Rau củ: rau xanh, cà rốt, bắp cải, dưa leo",
+          "¼ đĩa — Đạm: thịt gà/heo/bò, cá, trứng, đậu hũ, tôm",
+          "¼ đĩa — Tinh bột: cơm gạo lứt, khoai lang, bánh mì nguyên cám",
+          "Thêm chất béo tốt: dầu oliu, bơ, hạt, dầu dừa",
+          "Hạn chế: đồ chiên rán, nước ngọt, đồ ăn chế biến sẵn"
+        ]
+      },
+      {
+        "title": "Thực Đơn Mẫu Ngày Thường",
+        "items": [
+          "Sáng: Cơm + trứng chiên + rau luộc | hoặc Bánh mì + trứng ốp + salad",
+          "Trưa: Cơm + thịt/cá + rau xào + canh + 1 phần trái cây",
+          "Tối: Cơm ít hơn + cá/đậu hũ + rau nhiều + không dessert ngọt",
+          "Ăn vặt lành mạnh: sữa chua không đường, hạt điều, trái cây tươi",
+          "Uống: nước lọc, trà xanh, sữa không đường — tránh nước ngọt"
+        ]
+      },
+      {
+        "title": "Bữa Ăn Trước & Sau Tập",
+        "items": [
+          "Trước tập 1–2h: bữa nhẹ có carb + protein (chuối + sữa, bánh + trứng)",
+          "Sau tập trong 30–60 phút: bổ sung protein để phục hồi cơ",
+          "Không tập bụng rỗng nếu cường độ cao (>70% max)",
+          "Hydration: uống nước đều trong suốt buổi tập",
+          "Tránh ăn quá no ngay trước tập — gây ợ hơi, nặng bụng"
         ]
       },
       {
         "title": "Thói Quen Ăn Uống",
         "items": [
-          "Ăn chậm, đúng giờ, kiểm soát đồ ngọt",
-          "Xử lý bữa ăn lỡ tay",
-          "Thực đơn tiết kiệm, dễ mua"
+          "Ăn chậm 15–20 phút, nhai kỹ — não nhận no sau 20 phút",
+          "Ăn đúng giờ, không bỏ bữa sáng",
+          "Kiểm soát đồ ngọt — chọn 1–2 lần/tuần thay vì hàng ngày",
+          "Xử lý bữa ăn lỡ tay: quay về track bình thường ngay hôm sau",
+          "Thực đơn tiết kiệm: trứng, đậu, cá, rau củ theo mùa"
         ]
       }
     ],
@@ -93,24 +142,31 @@
       {
         "title": "Giấc Ngủ",
         "items": [
-          "Vệ sinh giấc ngủ — môi trường, nhiệt độ, ánh sáng",
-          "Routine trước ngủ 30–60 phút",
-          "Cách sửa thói quen ngủ muộn"
+          "Mục tiêu: 7–9 tiếng/đêm, ngủ và dậy đúng giờ",
+          "Vệ sinh giấc ngủ: phòng tối, mát (~22°C), yên tĩnh",
+          "Tránh màn hình xanh (điện thoại, máy tính) 1h trước ngủ",
+          "Routine trước ngủ: tắm nước ấm, đọc sách, thở thư giãn",
+          "Cách sửa ngủ muộn: dịch giờ ngủ sớm hơn 15 phút/tuần"
         ]
       },
       {
         "title": "Năng Lượng & Nhịp Sống",
         "items": [
-          "Thói quen buổi sáng",
-          "NEAT — đi bộ, đứng, cử động nhỏ",
-          "Ánh nắng và nhịp sinh học"
+          "Thói quen buổi sáng: uống nước, ánh sáng tự nhiên, vận động nhẹ",
+          "NEAT — đi bộ, leo thang, đứng thay ngồi giúp đốt thêm 200–400 kcal/ngày",
+          "Ra nắng buổi sáng 10–20 phút giúp điều hòa nhịp sinh học",
+          "Tránh caffeine sau 14h để không ảnh hưởng giấc ngủ",
+          "Micro-breaks: đứng dậy mỗi 45–60 phút khi ngồi lâu"
         ]
       },
       {
         "title": "Phục Hồi",
         "items": [
-          "Deload và nghỉ ngơi chủ động",
-          "Thở, giãn cơ, massage cơ bản"
+          "Deload mỗi 4–6 tuần: giảm 50% khối lượng tập để cơ thể hồi phục",
+          "Nghỉ tích cực: đi bộ, bơi nhẹ thay vì nằm cả ngày",
+          "Thở bụng sâu: hít 4s, giữ 2s, thở ra 6s × 10 lần",
+          "Giãn cơ: 5–10 phút sau tập, tập trung cơ vừa làm việc",
+          "Massage cơ bản: foam roller hoặc bóng tennis cho điểm đau"
         ]
       }
     ],
@@ -125,27 +181,50 @@
     "color": "purple",
     "sections": [
       {
-        "title": "Nền Tảng",
+        "title": "Hiểu Stress",
         "items": [
-          "Stress là gì và cơ chế cơ bản",
-          "Vòng lặp lo âu — thói quen"
+          "Stress cấp tính (ngắn hạn) có thể có ích — kích hoạt sự tập trung",
+          "Stress mãn tính gây hại: tăng cortisol, mất ngủ, suy giảm miễn dịch",
+          "Vòng lặp lo âu: tình huống → suy nghĩ tiêu cực → cảm xúc → hành động",
+          "Nhận biết dấu hiệu stress sớm: căng vai, khó ngủ, mệt mỏi, cáu gắt"
         ]
       },
       {
-        "title": "Thực Hành",
+        "title": "Hướng Dẫn Thiền 3 Bước (3–5 Phút)",
         "items": [
-          "Thiền 3–10 phút/ngày",
-          "Journaling: 5 dòng mỗi ngày",
-          "Box breathing (4-4-4-4) và thở 4-7-8",
-          "Digital detox"
+          "Bước 1 — Ổn định: Ngồi thoải mái, nhắm mắt, thả lỏng vai và hàm",
+          "Bước 2 — Hơi thở: Hít vào đếm 4, giữ 2, thở ra đếm 6 (lặp 5–10 lần)",
+          "Bước 3 — Quan sát: Khi có suy nghĩ, nhẹ nhàng nhận biết và quay về hơi thở",
+          "Không cần ngồi hoa sen — ghế, sàn, hoặc nằm đều được",
+          "Dùng app hỗ trợ: Insight Timer (miễn phí), Calm, Headspace"
+        ]
+      },
+      {
+        "title": "Box Breathing 4-4-4-4",
+        "items": [
+          "Hít vào qua mũi — đếm 4 giây chậm",
+          "Giữ hơi thở — đếm 4 giây (không căng thẳng)",
+          "Thở ra qua miệng — đếm 4 giây nhẹ nhàng",
+          "Nghỉ (không thở) — đếm 4 giây → lặp 4 vòng",
+          "Dùng khi: căng thẳng, trước họp/thuyết trình, trước khi ngủ"
+        ]
+      },
+      {
+        "title": "Thực Hành Hàng Ngày",
+        "items": [
+          "Thiền 3–10 phút buổi sáng trước khi xem điện thoại",
+          "Journaling: 3 điều biết ơn + 1 mục tiêu ngày hôm nay (5 phút)",
+          "Digital detox: không điện thoại 1h sau khi dậy và 1h trước ngủ",
+          "Đi bộ không điện thoại 10–20 phút — meditation in motion"
         ]
       },
       {
         "title": "Tư Duy Sống Tốt",
         "items": [
-          "Tối giản mục tiêu",
-          "Kỷ luật mềm (gentle discipline)",
-          "Xây thói quen nhỏ nhưng bền"
+          "Tối giản mục tiêu: chọn 1–3 habit cốt lõi thay vì 10 thứ cùng lúc",
+          "Kỷ luật mềm: không phạt bản thân khi bỏ lỡ — chỉ cần quay lại",
+          "Xây thói quen nhỏ nhưng bền: 2-minute rule (bắt đầu với 2 phút)",
+          "Theo dõi: đánh dấu streak trên lịch tạo cảm giác đà tiến"
         ]
       }
     ],
@@ -162,26 +241,31 @@
       {
         "title": "Chỉ Số Cần Biết",
         "items": [
-          "BMI và vòng eo",
-          "Huyết áp bình thường",
-          "Đường huyết và mỡ máu cơ bản"
+          "BMI 18.5–24.9 = bình thường (BMI = cân nặng / chiều cao²)",
+          "Vòng eo <90cm (nam) và <80cm (nữ) — nguy cơ tim mạch thấp",
+          "Huyết áp bình thường: 90–120 / 60–80 mmHg",
+          "Đường huyết đói bình thường: 3.9–5.6 mmol/L (<100 mg/dL)",
+          "Nhịp tim nghỉ ngơi bình thường: 60–100 bpm (vận động viên: 40–60)"
         ]
       },
       {
         "title": "Dấu Hiệu Cần Đi Khám",
         "items": [
-          "Đau ngực, khó thở nhiều",
-          "Chóng mặt khi vận động",
-          "Chấn thương cấp — dừng ngay"
+          "Đau ngực, nặng ngực — đặc biệt khi vận động",
+          "Khó thở bất thường khi nghỉ ngơi hoặc vận động nhẹ",
+          "Chóng mặt, ngất xỉu trong hoặc sau tập",
+          "Đau khớp/cơ kéo dài >2 tuần không cải thiện",
+          "Mệt mỏi mãn tính dù ngủ đủ giấc"
         ]
       },
       {
-        "title": "Phòng Bệnh",
+        "title": "Phòng Bệnh Chủ Động",
         "items": [
-          "Vận động đều đặn",
-          "Dinh dưỡng cân bằng",
-          "Ngủ đủ giấc",
-          "Quản lý stress"
+          "Vận động đều đặn 150 phút/tuần (WHO guidelines)",
+          "Dinh dưỡng cân bằng, đủ vi chất, ít thực phẩm chế biến",
+          "Ngủ 7–9h mỗi đêm — thiếu ngủ tăng nguy cơ nhiều bệnh",
+          "Quản lý stress mãn tính — thiền, tập luyện, kết nối xã hội",
+          "Khám sức khỏe định kỳ 1 lần/năm dù không có triệu chứng"
         ]
       }
     ],
@@ -198,30 +282,53 @@
       {
         "title": "Checklist Hàng Ngày",
         "items": [
-          "10–20 phút vận động",
-          "2 nắm rau/bữa",
-          "1 nguồn đạm/bữa chính",
-          "Ngủ sớm hơn 30 phút",
-          "1 phút thở/thiền"
+          "10–20 phút vận động (tập, đi bộ, giãn cơ)",
+          "2 nắm rau/bữa — rau xanh, củ quả tươi",
+          "1 nguồn đạm/bữa chính — thịt, cá, trứng, đậu hũ",
+          "Uống đủ 1.5–2 lít nước",
+          "Ngủ đủ 7–8 tiếng, đi ngủ trước 23h",
+          "5 phút thở hoặc thiền — bất kỳ lúc nào",
+          "Tránh điện thoại 30 phút trước khi ngủ"
+        ]
+      },
+      {
+        "title": "Checklist Hàng Tuần",
+        "items": [
+          "Hoàn thành 3–5 buổi tập như đã lên kế hoạch",
+          "Chuẩn bị thực phẩm cho tuần (meal prep 1–2h cuối tuần)",
+          "Kiểm tra tiến bộ: cân nặng, vòng eo, cảm giác chung",
+          "Lên lịch tập tuần tới — xác nhận ngày/giờ cụ thể",
+          "Dành 1h cho hoạt động thư giãn yêu thích (đọc sách, đi dạo)"
         ]
       },
       {
         "title": "Template",
         "items": [
-          "Nhật ký tập luyện tuần",
-          "Template lên thực đơn 7 ngày",
-          "Routine buổi sáng/tối"
+          "Nhật ký tập luyện: ngày · bài tập · sets · reps · cảm giác",
+          "Template lên thực đơn 7 ngày: sáng/trưa/tối + ăn vặt",
+          "Routine buổi sáng 15 phút: nước · ánh sáng · vận động · thiền",
+          "Routine buổi tối 20 phút: tắm · đọc/ghi chép · không điện thoại"
         ]
       },
       {
         "title": "Bộ Test Tiến Bộ 4 Tuần",
         "items": [
-          "Test sức bền: đi bộ nhanh 6 phút",
-          "Test sức mạnh: max squat / chống đẩy",
-          "Test linh hoạt: chạm ngón tay sàn",
-          "Đo vòng eo, cân nặng"
+          "Test sức bền: đi bộ nhanh 6 phút — đo quãng đường",
+          "Test sức mạnh: số lần chống đẩy tối đa + squat tối đa",
+          "Test linh hoạt: chạm ngón tay sàn khi đứng thẳng",
+          "Đo vòng eo, cân nặng vào sáng sớm (trước ăn)",
+          "Ghi lại kết quả và so sánh sau 4 tuần, 8 tuần, 12 tuần"
         ]
       }
+    ],
+    "checklist_items": [
+      "10–20 phút vận động",
+      "2 nắm rau mỗi bữa",
+      "1 nguồn đạm mỗi bữa chính",
+      "Uống đủ 1.5–2 lít nước",
+      "Ngủ đủ 7–8 tiếng",
+      "5 phút thở hoặc thiền",
+      "Không điện thoại 30 phút trước ngủ"
     ],
     "videos": []
   }

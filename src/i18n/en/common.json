@@ -4,6 +4,7 @@
     "home": "Home",
     "pillars": "6 Pillars",
     "videos": "Videos",
+    "program": "Program",
     "contact": "Contact",
     "donate": "Support"
   },
@@ -12,6 +13,78 @@
     "subtitle": "A simple, science-based healthy living ecosystem you can apply every day",
     "cta": "Get Started",
     "pillars_title": "6 Pillars of Healthy Living"
+  },
+  "home": {
+    "stats": [
+      { "value": "10 min", "label": "Enough to start a daily habit" },
+      { "value": "6 pillars", "label": "A comprehensive, evidence-based system" },
+      { "value": "12 weeks", "label": "Structured roadmap from beginner to advanced" }
+    ],
+    "quote": "You don't need to be perfect. You just need to be consistent.",
+    "quote_author": "— Health & Lifestyle"
+  },
+  "program": {
+    "title": "12-Week Program",
+    "subtitle": "From beginner to sustainable habits — step by step, week by week",
+    "roadmap_title": "Weekly Roadmap",
+    "daily_title": "Ideal Daily Framework (20–40 Min)",
+    "weekly_title": "Suggested Weekly Rhythm",
+    "phases": [
+      {
+        "weeks": "Week 1–2",
+        "name": "Foundation",
+        "tag": "Foundation",
+        "color": "green",
+        "goal": "Learn movements, build basic habits",
+        "items": [
+          "Master 6 fundamental movements: Squat, Hinge, Push, Pull, Core, Breath",
+          "Train 3 sessions/week · 20 min/session",
+          "Prioritize proper form over quantity",
+          "Start sleeping before 11 PM and eating enough protein",
+          "Goal: complete 6 sessions in 2 weeks"
+        ]
+      },
+      {
+        "weeks": "Week 3–6",
+        "name": "Build Base",
+        "tag": "Build Base",
+        "color": "lime",
+        "goal": "Increase training volume, build endurance",
+        "items": [
+          "Add 1–2 sets per exercise, try harder variations",
+          "Add 2 light cardio sessions/week (20–30 min walking)",
+          "Start a training journal: sets, reps, how you felt",
+          "Track sleep quality and energy levels daily",
+          "Goal: 4–5 sessions/week, miss no more than 1"
+        ]
+      },
+      {
+        "weeks": "Week 7–12",
+        "name": "Personalize",
+        "tag": "Personalize",
+        "color": "purple",
+        "goal": "Customize to your goals and preferences",
+        "items": [
+          "Choose your direction: fat loss / muscle gain / endurance",
+          "Increase intensity according to your chosen goal",
+          "Progress test at week 8 and week 12",
+          "Build a meal plan suited to your goal",
+          "Goal: be able to plan next week's training yourself"
+        ]
+      }
+    ],
+    "daily_blocks": [
+      { "time": "5 min", "name": "Warm Up", "desc": "Joint mobility, raise body temperature", "icon": "🔥" },
+      { "time": "10–20 min", "name": "Main Workout", "desc": "Strength exercises or cardio", "icon": "💪" },
+      { "time": "5–10 min", "name": "Cool Down & Recovery", "desc": "Stretching, lower body temperature", "icon": "🧘" },
+      { "time": "5 min", "name": "Mind Reset", "desc": "Deep breathing or short meditation", "icon": "🌿" }
+    ],
+    "weekly_days": [
+      { "days": "Mon · Wed · Fri", "type": "Strength", "desc": "Squat, Hinge, Push, Pull, Core — 20–30 min", "color": "green" },
+      { "days": "Tue · Thu", "type": "Light Cardio", "desc": "Brisk walking, cycling, stairs — 20–30 min", "color": "blue" },
+      { "days": "Sat", "type": "Active Recovery", "desc": "Stretching, yoga, relaxed walking", "color": "teal" },
+      { "days": "Sun", "type": "Rest", "desc": "Full rest or light movement as preferred", "color": "purple" }
+    ]
   },
   "contact": {
     "title": "Contact",

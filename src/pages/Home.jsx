@@ -36,6 +36,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats bar */}
+      {(() => {
+        const stats = t('home.stats', { returnObjects: true });
+        return Array.isArray(stats) ? (
+          <div className="grid grid-cols-3 gap-4 mb-12">
+            {stats.map((stat, i) => (
+              <div key={i} className="bg-surface border border-border rounded-xl p-4 text-center">
+                <p className="text-accent font-bold text-xl md:text-2xl">{stat.value}</p>
+                <p className="text-muted text-xs mt-1 leading-snug">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        ) : null;
+      })()}
+
       {/* Safety note */}
       <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-12 text-sm text-yellow-400 text-center">
         {t('common.safety_note')}
@@ -52,6 +67,14 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Quote block */}
+      <div className="mb-20 bg-accent/5 border border-accent/20 rounded-2xl p-8 text-center">
+        <p className="text-text text-lg md:text-xl font-medium italic leading-relaxed">
+          "{t('home.quote')}"
+        </p>
+        <p className="text-muted text-sm mt-3">{t('home.quote_author')}</p>
+      </div>
 
       <ContactSection />
       <DonateSection />

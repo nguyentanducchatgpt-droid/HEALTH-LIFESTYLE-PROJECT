@@ -8,39 +8,63 @@
     "color": "green",
     "sections": [
       {
-        "title": "Foundation",
+        "title": "6 Fundamental Movements",
         "items": [
-          "Proper warm-up & stretching",
-          "Basic techniques: Squat, Hinge, Push, Pull, Core, Breathing",
-          "Choose the right intensity: RPE, heart rate, talk test"
+          "Proper warm-up & stretching before and after every session",
+          "Squat — foundational leg and glute movement",
+          "Hinge — proper hip hinge, protects lower back",
+          "Push — push-ups, trains chest and shoulders",
+          "Pull — pulling movements, trains back and biceps",
+          "Core — core stability, protects spine",
+          "Breath — proper breathing technique during and after training"
+        ]
+      },
+      {
+        "title": "Daily Training Framework (20–40 Min)",
+        "items": [
+          "5 min — Warm Up: joint mobility, raise body temperature",
+          "10–20 min — Main Workout: strength exercises or cardio",
+          "5–10 min — Cool Down: stretch muscles you just worked",
+          "5 min — Mind Reset: deep breathing, short meditation or light walk"
+        ]
+      },
+      {
+        "title": "Suggested Weekly Rhythm",
+        "items": [
+          "Mon · Wed · Fri — Strength: Squat, Hinge, Push, Pull, Core",
+          "Tue · Thu — Light Cardio: brisk walking 20–30 min",
+          "Sat — Active Recovery: stretching, mobility, leisure walk",
+          "Sun — Full Rest or light movement as preferred"
         ]
       },
       {
         "title": "Goal-Based Programs",
         "items": [
-          "Fat loss — cardio + caloric deficit",
-          "Muscle gain — strength + adequate protein",
-          "Endurance — progressive cardio/running",
-          "Flexibility & mobility",
-          "Prevent/reduce neck, shoulder, back, knee pain"
+          "Fat loss — cardio + caloric deficit of 300–500 kcal/day",
+          "Muscle gain — progressive overload + protein 1.6–2g/kg body weight",
+          "Endurance — progressive cardio/running week by week",
+          "Flexibility & mobility — yoga, foam rolling, static stretching",
+          "Prevent/reduce neck, shoulder, back, knee pain — mobility + core"
         ]
       },
       {
         "title": "Context-Based Programs",
         "items": [
-          "10 min/day (super busy)",
-          "20–30 min/day (standard)",
-          "Home workout — no equipment",
-          "With dumbbells/resistance bands",
-          "Outdoor training"
+          "10 min/day (super busy) — 3 moves: Squat, Push, Plank",
+          "20–30 min/day (standard) — full body or upper/lower split",
+          "Home workout — no equipment, bodyweight only",
+          "With dumbbells/resistance bands — add progressive resistance",
+          "Outdoor training — walking, running, calisthenics"
         ]
       },
       {
-        "title": "Track Progress",
+        "title": "Safety Principles",
         "items": [
-          "Progressive overload",
-          "Monthly tests: endurance, strength, flexibility",
-          "Training journal"
+          "Always warm up — never skip it even when short on time",
+          "Increase load gradually — no more than 10% per week",
+          "Rest when you feel pain (pain ≠ discomfort) — listen to your body",
+          "Don't train when feverish, acutely injured, or exhausted",
+          "Stop immediately if chest pain, dizziness, or shortness of breath"
         ]
       }
     ],
@@ -57,26 +81,51 @@
       {
         "title": "Core Knowledge",
         "items": [
-          "Energy: TDEE, deficit/maintenance/surplus",
-          "Macros: Protein – Carb – Fat",
-          "Fiber, water, micronutrients"
+          "TDEE — total daily energy expenditure (how much you need to eat)",
+          "Caloric deficit (fat loss) / Maintenance / Surplus (muscle gain)",
+          "Macros: Protein 1.6–2g/kg · Carbs for energy · Fat 0.8–1g/kg",
+          "Fiber: 25–35g/day from vegetables, whole grains",
+          "Water: 1.5–2 liters/day, more during exercise"
         ]
       },
       {
-        "title": "Practical Application",
+        "title": "The Healthy Plate",
         "items": [
-          "Healthy plate — ½ vegetables, ¼ protein, ¼ carbs",
-          "Eat for your goal: fat loss / muscle gain / endurance",
-          "Meal prep for busy people",
-          "Eating out and staying healthy"
+          "½ plate — Vegetables: leafy greens, carrots, cabbage, cucumber",
+          "¼ plate — Protein: chicken/pork/beef, fish, eggs, tofu, shrimp",
+          "¼ plate — Carbs: brown rice, sweet potato, whole-grain bread",
+          "Add healthy fats: olive oil, avocado, nuts, coconut oil",
+          "Limit: fried foods, sugary drinks, processed/packaged foods"
+        ]
+      },
+      {
+        "title": "Sample Daily Meals",
+        "items": [
+          "Breakfast: Rice + fried egg + steamed vegetables | or bread + fried egg + salad",
+          "Lunch: Rice + meat/fish + stir-fried veggies + soup + 1 piece of fruit",
+          "Dinner: Less rice + fish/tofu + lots of vegetables + no sweet dessert",
+          "Healthy snacks: plain yogurt, cashews, fresh fruit",
+          "Drinks: water, green tea, unsweetened milk — avoid soda"
+        ]
+      },
+      {
+        "title": "Pre & Post Workout Nutrition",
+        "items": [
+          "1–2 hours before: light meal with carbs + protein (banana + milk, bread + egg)",
+          "Within 30–60 min after: protein to support muscle recovery",
+          "Don't train on empty stomach at high intensity (>70% max)",
+          "Hydration: drink water consistently throughout the session",
+          "Avoid eating too full right before training — causes bloating"
         ]
       },
       {
         "title": "Eating Habits",
         "items": [
-          "Eat slowly, on schedule, control sweets",
-          "Handle cheat meals",
-          "Budget-friendly meal plans"
+          "Eat slowly 15–20 min, chew well — brain signals fullness after 20 min",
+          "Eat on schedule, don't skip breakfast",
+          "Control sweets — choose 1–2 times/week instead of daily",
+          "Handle cheat meals: return to track immediately the next day",
+          "Budget-friendly: eggs, legumes, fish, seasonal vegetables"
         ]
       }
     ],
@@ -93,24 +142,31 @@
       {
         "title": "Sleep",
         "items": [
-          "Sleep hygiene — environment, temperature, light",
-          "Pre-sleep routine 30–60 minutes",
-          "Fix late-night sleeping habits"
+          "Target: 7–9 hours/night, consistent sleep and wake times",
+          "Sleep hygiene: dark, cool (~22°C), quiet room",
+          "Avoid blue light screens 1 hour before bed",
+          "Pre-sleep routine: warm shower, reading, relaxation breathing",
+          "Fix late sleeping: shift bedtime earlier by 15 min each week"
         ]
       },
       {
         "title": "Energy & Rhythm",
         "items": [
-          "Morning routine",
-          "NEAT — walking, standing, small movements",
-          "Sunlight and circadian rhythm"
+          "Morning routine: water, natural light, light movement",
+          "NEAT — walking, taking stairs, standing burns 200–400 extra kcal/day",
+          "Morning sunlight 10–20 min helps regulate your circadian rhythm",
+          "Avoid caffeine after 2 PM to protect sleep quality",
+          "Micro-breaks: stand up every 45–60 min when sitting for long periods"
         ]
       },
       {
         "title": "Recovery",
         "items": [
-          "Deload and active rest",
-          "Breathing, stretching, basic self-massage"
+          "Deload every 4–6 weeks: reduce training load by 50% for full recovery",
+          "Active rest: light walking, swimming instead of lying down all day",
+          "Diaphragmatic breathing: inhale 4s, hold 2s, exhale 6s × 10 reps",
+          "Stretching: 5–10 min post-workout, focus on muscles just used",
+          "Basic self-massage: foam roller or tennis ball for sore spots"
         ]
       }
     ],
@@ -125,27 +181,50 @@
     "color": "purple",
     "sections": [
       {
-        "title": "Foundation",
+        "title": "Understanding Stress",
         "items": [
-          "What is stress and its basic mechanisms",
-          "The anxiety-habit loop"
+          "Acute stress (short-term) can be useful — it sharpens focus",
+          "Chronic stress is harmful: raises cortisol, disrupts sleep, weakens immunity",
+          "The anxiety loop: situation → negative thought → emotion → behavior",
+          "Spot early stress signals: shoulder tension, poor sleep, fatigue, irritability"
         ]
       },
       {
-        "title": "Practice",
+        "title": "3-Step Meditation Guide (3–5 Min)",
         "items": [
-          "Meditation 3–10 min/day",
-          "Journaling: 5 lines a day",
-          "Box breathing (4-4-4-4) and 4-7-8 breathing",
-          "Digital detox"
+          "Step 1 — Settle: Sit comfortably, close eyes, relax shoulders and jaw",
+          "Step 2 — Breathe: Inhale count 4, hold 2, exhale count 6 (repeat 5–10 times)",
+          "Step 3 — Observe: When thoughts arise, gently notice them and return to breath",
+          "No lotus pose needed — chair, floor, or lying down all work",
+          "Apps to help: Insight Timer (free), Calm, Headspace"
+        ]
+      },
+      {
+        "title": "Box Breathing 4-4-4-4",
+        "items": [
+          "Inhale through nose — count slowly to 4",
+          "Hold your breath — count slowly to 4 (relaxed, not tense)",
+          "Exhale through mouth — count slowly to 4",
+          "Pause (no breath) — count to 4 → repeat 4 rounds",
+          "Use when: stressed, before a meeting/presentation, or before sleep"
+        ]
+      },
+      {
+        "title": "Daily Practice",
+        "items": [
+          "Meditate 3–10 min in the morning before checking your phone",
+          "Journaling: 3 things I'm grateful for + 1 goal for today (5 min)",
+          "Digital detox: no phone for 1 hour after waking and 1 hour before sleep",
+          "Phone-free walk 10–20 min — meditation in motion"
         ]
       },
       {
         "title": "Healthy Mindset",
         "items": [
-          "Simplify goals",
-          "Gentle discipline",
-          "Build small but lasting habits"
+          "Simplify goals: choose 1–3 core habits instead of 10 things at once",
+          "Gentle discipline: don't punish yourself for missing a day — just return",
+          "Build small but lasting habits: 2-minute rule (start with just 2 minutes)",
+          "Track progress: mark a streak on a calendar for visual momentum"
         ]
       }
     ],
@@ -160,28 +239,33 @@
     "color": "blue",
     "sections": [
       {
-        "title": "Key Metrics",
+        "title": "Key Health Metrics",
         "items": [
-          "BMI and waist circumference",
-          "Normal blood pressure",
-          "Basic blood sugar and cholesterol"
+          "BMI 18.5–24.9 = normal (BMI = weight kg / height m²)",
+          "Waist <90cm (men) and <80cm (women) — lower cardiovascular risk",
+          "Normal blood pressure: 90–120 / 60–80 mmHg",
+          "Fasting blood sugar normal: 3.9–5.6 mmol/L (<100 mg/dL)",
+          "Resting heart rate normal: 60–100 bpm (athletes: 40–60)"
         ]
       },
       {
         "title": "When to See a Doctor",
         "items": [
-          "Chest pain, severe shortness of breath",
-          "Dizziness during exercise",
-          "Acute injury — stop immediately"
+          "Chest pain or chest heaviness — especially during exercise",
+          "Unusual shortness of breath at rest or with light activity",
+          "Dizziness or fainting during or after exercise",
+          "Joint or muscle pain lasting >2 weeks without improvement",
+          "Chronic fatigue despite getting adequate sleep"
         ]
       },
       {
-        "title": "Disease Prevention",
+        "title": "Proactive Disease Prevention",
         "items": [
-          "Regular exercise",
-          "Balanced nutrition",
-          "Adequate sleep",
-          "Stress management"
+          "Regular exercise — 150 min/week moderate activity (WHO guidelines)",
+          "Balanced nutrition, adequate micronutrients, less processed food",
+          "Sleep 7–9 hours nightly — insufficient sleep raises disease risk significantly",
+          "Manage chronic stress — meditation, exercise, social connection",
+          "Annual health checkup even with no symptoms"
         ]
       }
     ],
@@ -198,30 +282,53 @@
       {
         "title": "Daily Checklist",
         "items": [
-          "10–20 minutes of movement",
-          "2 handfuls of vegetables per meal",
-          "1 protein source per main meal",
-          "Sleep 30 minutes earlier",
-          "1 minute breathing/meditation"
+          "10–20 minutes of movement (training, walking, stretching)",
+          "2 handfuls of vegetables per meal — fresh, varied",
+          "1 protein source per main meal — meat, fish, eggs, tofu",
+          "Drink 1.5–2 liters of water",
+          "Sleep 7–8 hours, in bed before 11 PM",
+          "5 minutes of breathing or meditation — any time of day",
+          "No phone for 30 minutes before sleep"
+        ]
+      },
+      {
+        "title": "Weekly Checklist",
+        "items": [
+          "Complete 3–5 planned training sessions",
+          "Prepare food for the week (meal prep 1–2 hours on weekends)",
+          "Check progress: weight, waist measurement, overall feeling",
+          "Schedule next week's sessions — confirm specific days/times",
+          "Spend 1 hour on a relaxing activity you enjoy (reading, walking)"
         ]
       },
       {
         "title": "Templates",
         "items": [
-          "Weekly training journal",
-          "7-day meal plan template",
-          "Morning/evening routine"
+          "Training journal: date · exercise · sets · reps · how it felt",
+          "7-day meal plan: breakfast/lunch/dinner + snacks",
+          "15-min morning routine: water · sunlight · movement · meditation",
+          "20-min evening routine: shower · reading/journaling · no screens"
         ]
       },
       {
         "title": "4-Week Progress Test",
         "items": [
-          "Endurance test: 6-minute fast walk",
-          "Strength test: max squat / push-ups",
-          "Flexibility test: fingertip-to-floor",
-          "Measure waist, body weight"
+          "Endurance test: 6-minute fast walk — measure distance covered",
+          "Strength test: max push-ups + max squats in 1 set",
+          "Flexibility test: standing straight, can you touch the floor?",
+          "Measure waist and body weight (morning, before eating)",
+          "Record results and compare at week 4, 8, and 12"
         ]
       }
+    ],
+    "checklist_items": [
+      "10–20 minutes of movement",
+      "2 handfuls of vegetables per meal",
+      "1 protein source per main meal",
+      "Drink 1.5–2 liters of water",
+      "Sleep 7–8 hours",
+      "5 minutes breathing or meditation",
+      "No phone 30 min before sleep"
     ],
     "videos": []
   }

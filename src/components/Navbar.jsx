@@ -13,11 +13,12 @@ const PILLARS = [
 ];
 
 const NAV_LINKS = [
-  { key: 'nav.home',    to: '/' },
-  { key: 'nav.program', to: '/program' },
-  { key: 'nav.videos',  to: '/videos' },
-  { key: 'nav.contact', to: '/contact' },
-  { key: 'nav.donate',  to: '/donate' },
+  { key: 'nav.home',            to: '/' },
+  { key: 'nav.program',         to: '/program' },
+  { key: 'nav.sample_programs', to: '/sample-programs' },
+  { key: 'nav.videos',          to: '/videos' },
+  { key: 'nav.contact',         to: '/contact' },
+  { key: 'nav.donate',          to: '/donate' },
 ];
 
 export default function Navbar() {

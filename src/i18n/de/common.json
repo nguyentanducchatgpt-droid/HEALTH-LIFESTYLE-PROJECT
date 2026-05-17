@@ -88,16 +88,71 @@
   },
   "contact": {
     "title": "Kontakt",
+    "intro": "Haben Sie Fragen oder möchten Sie Ihren Fortschritt teilen? Ich höre immer gerne zu.",
+    "bio_name": "Nguyen Tan Duc",
+    "bio_role": "Gesundheit & Lebensstil Creator",
+    "bio_desc": "Wissenschaftlich fundiertes Gesundheitswissen – einfach und für jeden leicht umsetzbar",
+    "story_title": "Über den Autor",
+    "story_text": "Ich bin Duc — ein Enthusiast für Gesundheit und Sportwissenschaft. Nach Jahren der Eigenforschung, Praxis und Synthese aus wissenschaftlicher Literatur habe ich diese Website erstellt, um das praktischste Wissen zu teilen — ohne Komplexität, ohne Werbung, völlig kostenlos.",
+    "mission": "Mission: Gesundheitswissen einfach, kostenlos und für alle zugänglich machen.",
     "email_label": "E-Mail",
+    "email_response": "Antwort innerhalb von 24–48 Stunden",
     "zalo_label": "Zalo",
+    "zalo_avail": "Verfügbar: 7:00–22:00 Uhr täglich",
     "email": "nguyentanducchatgpt@gmail.com",
-    "zalo": "0913723667"
+    "zalo": "0913723667",
+    "topics_title": "Sie können sich melden zu",
+    "topics": [
+      "Fragen zu Übungen und Technik",
+      "Feedback zum Website-Inhalt",
+      "Ihren Fortschritt teilen",
+      "Zusammenarbeit und Inhaltsvorschläge",
+      "Fehler oder technische Probleme melden",
+      "Neue Themen anfragen"
+    ],
+    "faq_title": "Häufig Gestellte Fragen",
+    "faq": [
+      { "q": "Kann ich persönliches Coaching erhalten?", "a": "Ich biete derzeit kein 1-zu-1-Coaching an, aber Sie können per E-Mail oder Zalo fragen und ich antworte nach besten Kräften. Die Website-Inhalte sind auch zur Selbstanwendung konzipiert." },
+      { "q": "Wie schnell antworten Sie?", "a": "E-Mail: 24–48 Stunden an Werktagen. Zalo: schneller, meist am gleichen Tag. Wenn ich beschäftigt bin, antworte ich so bald wie möglich." },
+      { "q": "Darf der Inhalt für kommerzielle Zwecke genutzt werden?", "a": "Nein — alle Inhalte sind nur für den persönlichen und nicht-kommerziellen Gebrauch. Kontaktieren Sie mich bitte, wenn Sie zusammenarbeiten möchten." },
+      { "q": "Kann ich Inhalte beitragen?", "a": "Sehr willkommen! Wenn Sie Wissen oder Erfahrungen teilen möchten, kontaktieren Sie mich per E-Mail für weitere Gespräche." }
+    ],
+    "cta": "Ich freue mich, von Ihnen zu hören — ob Frage, Feedback oder Fortschrittsbericht!"
   },
   "donate": {
     "title": "Autor Unterstützen",
-    "subtitle": "Wenn Ihnen dieser Inhalt hilft, können Sie den Autor unterstützen, um weiterhin hochwertige Inhalte zu erstellen.",
-    "placeholder": "Bankverbindungsdaten werden bald aktualisiert.",
-    "thanks": "Vielen Dank für Ihre Unterstützung!"
+    "subtitle": "Wenn Ihnen dieser Inhalt hilft, unterstützen Sie den Autor, um weiterhin hochwertige Inhalte zu erstellen",
+    "impact_title": "Ihre Unterstützung hilft dabei",
+    "impact_items": [
+      "Hochwertige Inhalte regelmäßig zu pflegen und zu aktualisieren",
+      "Weitere detaillierte Übungs-Tutorial-Videos zu produzieren",
+      "Neueste wissenschaftliche Literatur zu recherchieren und zusammenzufassen",
+      "Diese Website für die Gemeinschaft vollständig kostenlos zu halten"
+    ],
+    "impact_stats": [
+      { "value": "100%", "label": "Inhalte völlig kostenlos" },
+      { "value": "6", "label": "Umfassende Gesundheitssäulen" },
+      { "value": "12 Wochen", "label": "Strukturierter Fahrplan" }
+    ],
+    "uses_title": "Wofür Wird Ihre Unterstützung Verwendet?",
+    "uses": [
+      { "icon": "🎬", "title": "Videoproduktion", "desc": "Aufnahme und Bearbeitung hochwertiger Übungs-Tutorial-Videos, die visuell und leicht zu verfolgen sind" },
+      { "icon": "📚", "title": "Recherche & Materialien", "desc": "Kauf wissenschaftlicher Artikel und Fachbücher, um genaue und aktuelle Inhalte zu gewährleisten" },
+      { "icon": "🌐", "title": "Website-Wartung", "desc": "Hosting-, Domain- und Entwicklungswerkzeugkosten, damit die Website reibungslos läuft" },
+      { "icon": "✍️", "title": "Neue Inhalte erstellen", "desc": "Zeit und Mühe für Recherche, Schreiben und Gestaltung weiterer hilfreicher Inhalte" }
+    ],
+    "bank_title": "Unterstützungsinformationen",
+    "bank_placeholder": "Bankverbindungsdaten werden bald aktualisiert",
+    "qr_placeholder": "QR-Code kommt bald",
+    "faq_title": "Häufig Gestellte Fragen",
+    "faq": [
+      { "q": "Wie viel sollte ich beitragen?", "a": "Jeder Betrag wird sehr geschätzt. Selbst ein kleiner Beitrag ist bedeutsam — was am meisten zählt, ist Ihre Unterstützung." },
+      { "q": "Erhalte ich nach der Spende etwas?", "a": "Alle Inhalte bleiben für jeden kostenlos — es gibt keine Premium-Stufe. Dies ist ein freiwilliger Beitrag, damit ich weiterhin pflegen und entwickeln kann." },
+      { "q": "Ist die Zahlung sicher?", "a": "Direktüberweisung — kein Drittanbieter, völlig transparent." },
+      { "q": "Kann ich stornieren oder eine Rückerstattung erhalten?", "a": "Dies ist ein einmaliger freiwilliger Beitrag, daher gibt es keine Rückerstattungsrichtlinie. Kontaktieren Sie mich jedoch, wenn es ein Problem gibt." }
+    ],
+    "thanks": "Vielen herzlichen Dank!",
+    "thanks_note": "Jeder Beitrag, egal wie klein, ist bedeutsam — 100% zur Pflege und Entwicklung der Inhalte verwendet"
   },
   "footer": {
     "copyright": "© 2026 Gesundheit & Lebensstil. Alle Rechte vorbehalten.",

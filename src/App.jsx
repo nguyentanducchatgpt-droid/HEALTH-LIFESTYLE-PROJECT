@@ -9,6 +9,8 @@ import PillarE from './pages/PillarE';
 import PillarF from './pages/PillarF';
 import VideoLibrary from './pages/VideoLibrary';
 import Program from './pages/Program';
+import Contact from './pages/Contact';
+import Donate from './pages/Donate';
 
 export default function App() {
   return (
@@ -24,6 +26,8 @@ export default function App() {
           <Route path="/pillar/f" element={<PillarF />} />
           <Route path="/program" element={<Program />} />
           <Route path="/videos" element={<VideoLibrary />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/donate" element={<Donate />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Layout>

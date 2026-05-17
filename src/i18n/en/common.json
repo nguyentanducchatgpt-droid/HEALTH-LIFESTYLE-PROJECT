@@ -88,16 +88,71 @@
   },
   "contact": {
     "title": "Contact",
+    "intro": "Have a question or want to share your progress? I'm always here to listen.",
+    "bio_name": "Nguyen Tan Duc",
+    "bio_role": "Health & Lifestyle Creator",
+    "bio_desc": "Sharing science-based health knowledge that's simple and easy to apply for everyone",
+    "story_title": "About the Author",
+    "story_text": "I'm Duc — a health and exercise science enthusiast. After years of self-research, practice, and synthesis from scientific literature, I created this website to share the most practical knowledge — no complexity, no ads, completely free.",
+    "mission": "Mission: Make health knowledge simple, free, and accessible to everyone.",
     "email_label": "Email",
+    "email_response": "Response within 24–48 hours",
     "zalo_label": "Zalo",
+    "zalo_avail": "Available: 7:00 AM – 10:00 PM daily",
     "email": "nguyentanducchatgpt@gmail.com",
-    "zalo": "0913723667"
+    "zalo": "0913723667",
+    "topics_title": "You can reach out about",
+    "topics": [
+      "Questions about exercises and technique",
+      "Feedback on website content",
+      "Sharing your progress",
+      "Collaboration and content suggestions",
+      "Reporting bugs or technical issues",
+      "Requesting new topics"
+    ],
+    "faq_title": "Frequently Asked Questions",
+    "faq": [
+      { "q": "Can I get personal coaching?", "a": "I don't currently offer 1-on-1 coaching, but you can ask via email or Zalo and I'll respond as best I can. The website content is also designed for self-application." },
+      { "q": "How quickly do you respond?", "a": "Email: 24–48 hours on weekdays. Zalo: faster, usually same day. If I'm busy, I'll reply as soon as possible." },
+      { "q": "Can the content be used for commercial purposes?", "a": "No — all content is for personal and non-commercial use only. Please contact me if you'd like to collaborate." },
+      { "q": "Can I contribute content?", "a": "Absolutely welcome! If you have knowledge or experience to share, reach out via email to discuss further." }
+    ],
+    "cta": "I'd love to hear from you — whether it's a question, feedback, or sharing your progress!"
   },
   "donate": {
     "title": "Support the Author",
-    "subtitle": "If this content helps you, consider supporting the author to keep creating quality content.",
-    "placeholder": "Bank account information will be updated soon.",
-    "thanks": "Thank you for your support!"
+    "subtitle": "If this content helps you, consider supporting the author to keep creating quality content",
+    "impact_title": "Your support helps",
+    "impact_items": [
+      "Maintain and regularly update high-quality content",
+      "Produce more detailed exercise tutorial videos",
+      "Research and synthesize the latest scientific literature",
+      "Keep this website completely free for the community"
+    ],
+    "impact_stats": [
+      { "value": "100%", "label": "Content completely free" },
+      { "value": "6", "label": "Comprehensive health pillars" },
+      { "value": "12 weeks", "label": "Structured roadmap" }
+    ],
+    "uses_title": "How Your Support Is Used",
+    "uses": [
+      { "icon": "🎬", "title": "Video production", "desc": "Filming and editing high-quality exercise tutorial videos that are visual and easy to follow" },
+      { "icon": "📚", "title": "Research & materials", "desc": "Purchasing scientific papers and specialist books to ensure content is accurate and up-to-date" },
+      { "icon": "🌐", "title": "Website maintenance", "desc": "Hosting, domain, and development tool costs to keep the website running smoothly" },
+      { "icon": "✍️", "title": "Creating new content", "desc": "Time and effort to research, write, and design additional helpful content" }
+    ],
+    "bank_title": "Support Information",
+    "bank_placeholder": "Bank account information will be updated soon",
+    "qr_placeholder": "QR Code coming soon",
+    "faq_title": "Frequently Asked Questions",
+    "faq": [
+      { "q": "How much should I contribute?", "a": "Any amount is deeply appreciated. Even a small contribution is meaningful — what matters most is your support." },
+      { "q": "Do I receive anything after donating?", "a": "All content remains free for everyone — there's no premium tier. This is a voluntary contribution to help me continue maintaining and developing the site." },
+      { "q": "Is the payment safe?", "a": "Direct bank transfer — no third-party intermediary, completely transparent." },
+      { "q": "Can I cancel or get a refund?", "a": "This is a one-time voluntary contribution, so there's no refund policy. However, please contact me if there's any issue." }
+    ],
+    "thanks": "Thank you so much!",
+    "thanks_note": "Every contribution, however small, means a lot — 100% used to maintain and develop content"
   },
   "footer": {
     "copyright": "© 2026 Health & Lifestyle. All rights reserved.",

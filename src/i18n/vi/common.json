@@ -88,16 +88,71 @@
   },
   "contact": {
     "title": "Liên Hệ",
+    "intro": "Có câu hỏi hoặc muốn chia sẻ tiến bộ? Mình luôn sẵn sàng lắng nghe.",
+    "bio_name": "Nguyễn Tấn Đức",
+    "bio_role": "Health & Lifestyle Creator",
+    "bio_desc": "Chia sẻ kiến thức sức khỏe khoa học, đơn giản, dễ áp dụng cho mọi người",
+    "story_title": "Về Tác Giả",
+    "story_text": "Mình là Đức — một người yêu thích sức khỏe và khoa học thể dục. Sau nhiều năm tự nghiên cứu, thực hành và đúc kết từ nhiều nguồn tài liệu khoa học, mình tạo ra trang web này để chia sẻ những kiến thức thiết thực nhất — không phức tạp, không quảng cáo, hoàn toàn miễn phí.",
+    "mission": "Sứ mệnh: Làm cho kiến thức sức khỏe trở nên đơn giản, miễn phí và dễ áp dụng cho tất cả mọi người.",
     "email_label": "Email",
+    "email_response": "Phản hồi trong 24–48 giờ",
     "zalo_label": "Zalo",
+    "zalo_avail": "Có mặt: 7:00–22:00 hàng ngày",
     "email": "nguyentanducchatgpt@gmail.com",
-    "zalo": "0913723667"
+    "zalo": "0913723667",
+    "topics_title": "Bạn có thể liên hệ về",
+    "topics": [
+      "Câu hỏi về bài tập và kỹ thuật",
+      "Góp ý về nội dung trang web",
+      "Chia sẻ tiến bộ của bạn",
+      "Hợp tác và đề xuất nội dung",
+      "Báo lỗi hoặc vấn đề kỹ thuật",
+      "Yêu cầu chủ đề mới"
+    ],
+    "faq_title": "Câu Hỏi Thường Gặp",
+    "faq": [
+      { "q": "Mình có thể được tư vấn cá nhân không?", "a": "Hiện tại mình chưa cung cấp dịch vụ tư vấn 1-1, nhưng bạn có thể hỏi qua email hoặc Zalo và mình sẽ trả lời theo khả năng. Nội dung trên web cũng được thiết kế để tự áp dụng." },
+      { "q": "Mình phản hồi trong bao lâu?", "a": "Email: 24–48 giờ trong ngày làm việc. Zalo: nhanh hơn, thường trong cùng ngày. Nếu bận mình sẽ trả lời sớm nhất có thể." },
+      { "q": "Nội dung có thể dùng cho mục đích thương mại không?", "a": "Không — toàn bộ nội dung chỉ dành cho mục đích cá nhân và phi thương mại. Vui lòng liên hệ nếu muốn hợp tác." },
+      { "q": "Mình có thể đóng góp nội dung không?", "a": "Rất hoan nghênh! Nếu bạn có kiến thức hoặc kinh nghiệm muốn chia sẻ, hãy liên hệ qua email để bàn thêm." }
+    ],
+    "cta": "Mình rất vui được nghe từ bạn — dù là câu hỏi, góp ý, hay chia sẻ tiến bộ của bạn!"
   },
   "donate": {
     "title": "Ủng Hộ Tác Giả",
-    "subtitle": "Nếu nội dung có ích, bạn có thể ủng hộ để tác giả tiếp tục tạo nội dung chất lượng.",
-    "placeholder": "Thông tin tài khoản ngân hàng sẽ được cập nhật sớm.",
-    "thanks": "Cảm ơn sự ủng hộ của bạn!"
+    "subtitle": "Nếu nội dung này hữu ích với bạn, hãy cân nhắc ủng hộ để mình tiếp tục tạo thêm nội dung chất lượng",
+    "impact_title": "Mỗi đóng góp của bạn giúp",
+    "impact_items": [
+      "Duy trì và cập nhật nội dung chất lượng cao thường xuyên",
+      "Sản xuất thêm video hướng dẫn bài tập chi tiết",
+      "Nghiên cứu và tổng hợp tài liệu khoa học mới nhất",
+      "Giữ trang web hoàn toàn miễn phí cho cộng đồng"
+    ],
+    "impact_stats": [
+      { "value": "100%", "label": "Nội dung hoàn toàn miễn phí" },
+      { "value": "6", "label": "Trụ cột sức khỏe toàn diện" },
+      { "value": "12 tuần", "label": "Lộ trình có cấu trúc" }
+    ],
+    "uses_title": "Tiền Ủng Hộ Dùng Để Làm Gì?",
+    "uses": [
+      { "icon": "🎬", "title": "Sản xuất video", "desc": "Quay và biên tập video hướng dẫn bài tập chất lượng cao, trực quan và dễ theo" },
+      { "icon": "📚", "title": "Nghiên cứu & tài liệu", "desc": "Mua tài liệu khoa học, sách chuyên ngành để đảm bảo nội dung chính xác và cập nhật" },
+      { "icon": "🌐", "title": "Duy trì website", "desc": "Chi phí hosting, domain và công cụ phát triển để web luôn hoạt động tốt" },
+      { "icon": "✍️", "title": "Tạo nội dung mới", "desc": "Thời gian và công sức để nghiên cứu, viết và thiết kế thêm nội dung hữu ích" }
+    ],
+    "bank_title": "Thông Tin Ủng Hộ",
+    "bank_placeholder": "Thông tin tài khoản ngân hàng sẽ được cập nhật sớm",
+    "qr_placeholder": "QR Code sẽ có sớm",
+    "faq_title": "Câu Hỏi Thường Gặp",
+    "faq": [
+      { "q": "Ủng hộ bao nhiêu là phù hợp?", "a": "Bất kỳ số tiền nào đều được trân trọng. Ngay cả 10,000 VNĐ cũng có ý nghĩa to lớn — điều quan trọng là sự đồng hành của bạn." },
+      { "q": "Tôi có nhận được gì sau khi ủng hộ không?", "a": "Nội dung luôn miễn phí cho tất cả mọi người, không có gói premium. Đây là sự ủng hộ tự nguyện để mình tiếp tục duy trì và phát triển." },
+      { "q": "Thanh toán có an toàn không?", "a": "Chuyển khoản ngân hàng trực tiếp — không qua bên thứ ba, hoàn toàn minh bạch." },
+      { "q": "Tôi có thể hủy hoặc hoàn tiền không?", "a": "Đây là ủng hộ tự nguyện một lần nên không có chính sách hoàn tiền. Tuy nhiên bạn có thể liên hệ mình nếu có vấn đề." }
+    ],
+    "thanks": "Cảm ơn bạn rất nhiều!",
+    "thanks_note": "Mỗi đóng góp dù nhỏ đều có ý nghĩa to lớn — 100% dùng để duy trì và phát triển nội dung"
   },
   "footer": {
     "copyright": "© 2026 Sức Khỏe và Đời Sống. Mọi quyền được bảo lưu.",

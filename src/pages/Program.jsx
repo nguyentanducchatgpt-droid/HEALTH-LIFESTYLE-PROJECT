@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { GOAL_TYPES, PROGRAM_PHASES, WEEKLY_SCHEDULE } from '../data/programData';
 
 /* ─── Phase image/color config ────────────────────────── */
 const PHASE_CFG = [
@@ -22,7 +23,6 @@ const TABS = [
     id: 'roadmap',
     icon: '🗓️',
     activeColor: 'text-green-400',
-    activeBg:    'bg-green-500/10',
     activeBorder:'border-green-500/50',
     bar:         'bg-green-500',
     num:         'bg-green-500/15 border-green-500/40 text-green-400',
@@ -31,7 +31,6 @@ const TABS = [
     id: 'daily',
     icon: '⏱️',
     activeColor: 'text-accent',
-    activeBg:    'bg-accent/10',
     activeBorder:'border-accent/50',
     bar:         'bg-accent',
     num:         'bg-accent/15 border-accent/40 text-accent',
@@ -40,7 +39,6 @@ const TABS = [
     id: 'weekly',
     icon: '📅',
     activeColor: 'text-blue-400',
-    activeBg:    'bg-blue-500/10',
     activeBorder:'border-blue-500/50',
     bar:         'bg-blue-500',
     num:         'bg-blue-500/15 border-blue-500/40 text-blue-400',
@@ -49,7 +47,6 @@ const TABS = [
     id: 'tips',
     icon: '💡',
     activeColor: 'text-yellow-400',
-    activeBg:    'bg-yellow-500/10',
     activeBorder:'border-yellow-500/50',
     bar:         'bg-yellow-500',
     num:         'bg-yellow-500/15 border-yellow-500/40 text-yellow-400',
@@ -58,13 +55,175 @@ const TABS = [
     id: 'progress',
     icon: '📈',
     activeColor: 'text-purple-400',
-    activeBg:    'bg-purple-500/10',
     activeBorder:'border-purple-500/50',
     bar:         'bg-purple-500',
     num:         'bg-purple-500/15 border-purple-500/40 text-purple-400',
   },
+  {
+    id: 'samples',
+    icon: '🗂️',
+    activeColor: 'text-pink-400',
+    activeBorder:'border-pink-500/50',
+    bar:         'bg-pink-500',
+    num:         'bg-pink-500/15 border-pink-500/40 text-pink-400',
+  },
 ];
 
+/* ─── ProgramDetail sub-component ─────────────────────── */
+function ProgramDetail({ goalId, weeks }) {
+  const goal    = GOAL_TYPES.find(g => g.id === goalId);
+  const phases  = PROGRAM_PHASES[goalId] || [];
+  const sched   = WEEKLY_SCHEDULE[goalId] || [];
+
+  const activePhs = phases.filter(p => p.range[0] <= weeks);
+  const curPhase  = activePhs[activePhs.length - 1];
+  if (!goal || !curPhase) return null;
+
+  const phaseColors = [
+    'bg-green-500', 'bg-lime-500', 'bg-teal-500',
+    'bg-blue-500',  'bg-purple-500', 'bg-pink-500',
+  ];
+
+  return (
+    <div className="animate-fade-in-up">
+      {/* ── Header card ── */}
+      <div className={`relative overflow-hidden rounded-3xl border ${goal.border} mb-6`}>
+        <img
+          src={goal.image}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: 0.12 }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 grid-dots opacity-20 pointer-events-none" />
+        <div className="relative p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5">
+          <div className={`w-16 h-16 rounded-2xl ${goal.bg} border ${goal.border} flex items-center justify-center text-3xl shrink-0`}>
+            {goal.icon}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <h2 className="font-bold text-xl text-text">{goal.title}</h2>
+              <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${goal.badge}`}>
+                {weeks} tuần
+              </span>
+              <span className="text-xs px-2.5 py-0.5 rounded-full bg-surface border border-border text-muted">
+                {goal.rpe}
+              </span>
+            </div>
+            <p className={`text-sm ${goal.text} font-medium`}>{goal.subtitle}</p>
+            <p className="text-xs text-muted mt-1">
+              {activePhs.length} giai đoạn · Đang ở: <span className={`font-semibold ${goal.text}`}>{curPhase.name}</span>
+            </p>
+          </div>
+          {/* Current phase highlight */}
+          <div className={`shrink-0 text-center px-5 py-3 rounded-2xl ${goal.bg} border ${goal.border} hidden md:block`}>
+            <div className="text-2xl mb-1">{curPhase.icon}</div>
+            <div className={`text-xs font-bold ${goal.text}`}>{curPhase.name}</div>
+            <div className="text-[10px] text-muted mt-0.5">Tuần {curPhase.range[0]}–{Math.min(curPhase.range[1], weeks)}</div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Phase timeline ── */}
+      <div className="mb-6">
+        <h3 className="text-xs font-bold text-muted uppercase tracking-widest mb-3">Lộ trình {weeks} tuần</h3>
+        <div className="flex gap-1.5 mb-3">
+          {phases.map((ph, i) => {
+            const isActive  = ph.range[0] <= weeks;
+            const isCurrent = ph === curPhase;
+            return (
+              <div key={i} className="flex-1 relative group" style={{ flex: Math.min(ph.range[1], weeks) - ph.range[0] + (isActive ? 1 : 0) }}>
+                <div className={`h-2 rounded-full transition-all duration-300 ${
+                  isCurrent ? goal.bar :
+                  isActive  ? `${phaseColors[i]} opacity-50` :
+                  'bg-border/40'
+                }`} />
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap bg-surface border border-border rounded-lg px-2 py-1 text-[10px] font-medium text-text z-10 shadow-lg">
+                  {ph.name} (T{ph.range[0]}–{ph.range[1]})
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* Phase labels */}
+        <div className="flex gap-1 overflow-x-auto scrollbar-hide">
+          {phases.map((ph, i) => {
+            const isActive  = ph.range[0] <= weeks;
+            const isCurrent = ph === curPhase;
+            return (
+              <div key={i} className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border text-[10px] font-semibold transition-all duration-200 ${
+                isCurrent ? `${goal.bg} ${goal.border} ${goal.text}` :
+                isActive  ? 'bg-surface/60 border-border/60 text-muted' :
+                'bg-transparent border-border/30 text-muted/30'
+              }`}>
+                <span>{ph.icon}</span>
+                <span className="hidden sm:inline whitespace-nowrap">{ph.name}</span>
+                <span className="text-[9px] opacity-70 whitespace-nowrap">T{ph.range[0]}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ── Current phase detail ── */}
+      <div className="grid md:grid-cols-2 gap-4 mb-6">
+        {/* Focus */}
+        <div className={`rounded-2xl border ${goal.border} ${goal.bg} p-5`}>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-xl">{curPhase.icon}</span>
+            <div>
+              <h3 className={`font-bold text-sm ${goal.text}`}>{curPhase.name}</h3>
+              <span className="text-[10px] text-muted">{curPhase.intensity} · Tuần {curPhase.range[0]}–{Math.min(curPhase.range[1], weeks)}</span>
+            </div>
+          </div>
+          <p className="text-xs text-muted leading-relaxed mb-3">{curPhase.desc}</p>
+          <div className="bg-bg/60 rounded-xl p-3 border border-border/40">
+            <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1.5">🏋️ Tập trọng tâm</p>
+            <p className="text-xs text-text leading-relaxed">{curPhase.focus}</p>
+          </div>
+        </div>
+
+        {/* Nutrition + Milestone */}
+        <div className="flex flex-col gap-4">
+          <div className="flex-1 rounded-2xl border border-border bg-surface p-5">
+            <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">🥗 Dinh dưỡng giai đoạn này</p>
+            <p className="text-xs text-text leading-relaxed">{curPhase.nutrition}</p>
+          </div>
+          <div className={`rounded-2xl border ${goal.border} bg-surface p-5`}>
+            <p className={`text-[10px] font-bold uppercase tracking-wider mb-2 ${goal.text}`}>🏁 Mốc đánh dấu</p>
+            <p className="text-xs text-text leading-relaxed">{curPhase.milestone}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Sample week schedule ── */}
+      <div>
+        <h3 className="text-xs font-bold text-muted uppercase tracking-widest mb-3">Lịch mẫu 1 tuần</h3>
+        <div className="grid grid-cols-1 gap-2">
+          {sched.map((s, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-3 bg-surface border border-border rounded-xl px-4 py-3 hover:border-border-bright transition-colors duration-200 group animate-fade-in-up"
+              style={{ animationDelay: `${i * 50}ms` }}
+            >
+              <div className={`w-10 shrink-0 text-center text-xs font-bold px-2 py-1.5 rounded-lg border ${s.c.bg}`}>
+                {s.day}
+              </div>
+              <span className="text-lg shrink-0">{s.icon}</span>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-semibold text-text leading-tight">{s.type}</p>
+                <p className="text-[11px] text-muted mt-0.5 leading-snug truncate">{s.detail}</p>
+              </div>
+              <div className={`w-2 h-2 rounded-full shrink-0 ${s.c.dot} opacity-50 group-hover:opacity-100 transition-opacity`} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Main Program component ──────────────────────────── */
 export default function Program() {
   const { t } = useTranslation();
   const phases       = t('program.phases',        { returnObjects: true });
@@ -79,10 +238,17 @@ export default function Program() {
     t('program.weekly_title'),
     t('program.tips_title'),
     t('program.progress_title'),
+    t('program.samples_title') || 'Lộ trình mẫu',
   ];
 
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab,    setActiveTab]    = useState(0);
+  const [goalType,     setGoalType]     = useState(null);
+  const [weekDuration, setWeekDuration] = useState(null);
+
   const tab = TABS[activeTab];
+
+  /* Week options 1-24 */
+  const WEEKS = Array.from({ length: 24 }, (_, i) => i + 1);
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -107,7 +273,7 @@ export default function Program() {
           <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight mb-3">{t('program.title')}</h1>
           <p className="text-muted text-base leading-relaxed max-w-xl">{t('program.subtitle')}</p>
           <div className="flex flex-wrap gap-3 mt-7">
-            {[{l:'12',s:'tuần'},{l:'3',s:'giai đoạn'},{l:'6',s:'trụ cột'},{l:'20+',s:'phút/ngày'}].map(s=>(
+            {[{l:'24',s:'tuần mẫu'},{l:'6',s:'mục tiêu'},{l:'6',s:'trụ cột'},{l:'20+',s:'phút/ngày'}].map(s=>(
               <div key={s.l} className="flex items-baseline gap-1.5 bg-surface/80 border border-border backdrop-blur-sm px-4 py-2 rounded-full">
                 <span className="text-gradient font-extrabold text-lg">{s.l}</span>
                 <span className="text-muted text-xs">{s.s}</span>
@@ -134,7 +300,6 @@ export default function Program() {
                       : 'text-muted border-transparent hover:text-text hover:border-border'
                   }`}
                 >
-                  {/* Colored num badge */}
                   <span className={`w-5 h-5 rounded-full border text-[10px] font-bold flex items-center justify-center shrink-0 transition-all duration-200 ${
                     active ? t_.num : 'bg-surface border-border text-muted/50'
                   }`}>
@@ -201,7 +366,6 @@ export default function Program() {
         {/* ─ Tab 1: Daily Framework ─────────────────────── */}
         {activeTab === 1 && (
           <div>
-            {/* Time bar */}
             <div className="flex h-2.5 rounded-full overflow-hidden mb-8 bg-border/30">
               {[{f:1,c:'bg-green-500/60'},{f:3,c:'bg-accent/60'},{f:2,c:'bg-teal-500/60'},{f:1,c:'bg-purple-500/60'}].map((seg,i)=>(
                 <div key={i} className={`${seg.c} hover:brightness-125 transition-all duration-300`} style={{flex:seg.f}} />
@@ -275,8 +439,8 @@ export default function Program() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border">
-                      <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">{t('pillarF.col_capability') || 'Chỉ số'}</th>
-                      <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">{t('pillarF.col_test') || 'Bài test'}</th>
+                      <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">Chỉ số</th>
+                      <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">Bài test</th>
                       <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">Tuần 4</th>
                       <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">Tuần 12</th>
                     </tr>
@@ -298,6 +462,128 @@ export default function Program() {
                 </table>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* ─ Tab 5: Sample Programs ─────────────────────── */}
+        {activeTab === 5 && (
+          <div>
+            {/* Intro banner */}
+            <div className="relative overflow-hidden rounded-2xl border border-pink-500/20 bg-pink-500/5 p-5 mb-8">
+              <div className="absolute inset-0 grid-dots opacity-15 pointer-events-none" />
+              <div className="relative flex items-start gap-4">
+                <span className="text-3xl shrink-0">🗂️</span>
+                <div>
+                  <h2 className="font-bold text-text mb-1">Lộ trình mẫu theo mục tiêu &amp; thời gian</h2>
+                  <p className="text-xs text-muted leading-relaxed">
+                    Chọn mục tiêu phù hợp với bạn, sau đó chọn số tuần để xem lộ trình chi tiết — từ 1 tuần đến 24 tuần.
+                    Mỗi lộ trình dựa trên nguyên tắc: học form đúng → tăng volume → tăng cường độ → cá nhân hóa.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 1: Goal selector */}
+            <div className="mb-8">
+              <p className="text-xs font-bold text-muted uppercase tracking-widest mb-4 flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-400 text-[10px] font-bold flex items-center justify-center">1</span>
+                Chọn mục tiêu
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                {GOAL_TYPES.map(g => {
+                  const active = goalType === g.id;
+                  return (
+                    <button
+                      key={g.id}
+                      type="button"
+                      onClick={() => { setGoalType(g.id); setWeekDuration(null); }}
+                      className={`relative p-4 rounded-2xl border-2 text-center transition-all duration-200 group hover:-translate-y-0.5 hover:shadow-lg ${
+                        active
+                          ? `${g.border} ${g.bg} ring-2 ${g.ring}`
+                          : 'border-border bg-surface hover:border-border-bright hover:shadow-[0_4px_20px_rgba(255,255,255,0.04)]'
+                      }`}
+                    >
+                      <span className="text-2xl block mb-2 group-hover:scale-110 transition-transform duration-200">{g.icon}</span>
+                      <span className={`text-xs font-bold block leading-tight ${active ? g.text : 'text-text'}`}>{g.title}</span>
+                      <span className="text-[10px] text-muted mt-1 block leading-tight">{g.subtitle}</span>
+                      {active && (
+                        <span className={`absolute -top-1.5 -right-1.5 w-3.5 h-3.5 rounded-full ${g.bar} border-2 border-bg flex items-center justify-center`}>
+                          <span className="text-[7px] text-bg font-black">✓</span>
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Step 2: Duration grid (1-24 weeks) */}
+            {goalType && (
+              <div className="mb-8 animate-fade-in-up">
+                <p className="text-xs font-bold text-muted uppercase tracking-widest mb-4 flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-400 text-[10px] font-bold flex items-center justify-center">2</span>
+                  Chọn số tuần (1 – 24)
+                </p>
+                {(() => {
+                  const g = GOAL_TYPES.find(x => x.id === goalType);
+                  return (
+                    <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 gap-2">
+                      {WEEKS.map(w => {
+                        const isActive = weekDuration === w;
+                        /* Find which phase this week falls in */
+                        const phases = PROGRAM_PHASES[goalType] || [];
+                        const ph = phases.find(p => p.range[0] <= w && w <= p.range[1]);
+                        return (
+                          <button
+                            key={w}
+                            type="button"
+                            onClick={() => setWeekDuration(w)}
+                            title={ph ? ph.name : ''}
+                            className={`relative aspect-square rounded-xl text-xs font-bold transition-all duration-150 border flex flex-col items-center justify-center gap-0.5 group ${
+                              isActive
+                                ? `${g.bg} ${g.border} ${g.text} ring-2 ${g.ring} shadow-lg`
+                                : 'bg-surface border-border text-muted hover:border-border-bright hover:text-text hover:-translate-y-0.5'
+                            }`}
+                          >
+                            <span className="text-sm leading-none">{w}</span>
+                            <span className={`text-[8px] font-normal leading-none ${isActive ? g.text : 'text-muted/50'}`}>T</span>
+                            {/* Phase color dot */}
+                            {ph && (
+                              <span className={`absolute bottom-1 right-1 w-1 h-1 rounded-full ${isActive ? 'bg-current' : 'bg-muted/30'}`} />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  );
+                })()}
+                {/* Phase legend */}
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {(PROGRAM_PHASES[goalType] || []).map((ph, i) => (
+                    <span key={i} className="flex items-center gap-1.5 text-[10px] text-muted">
+                      <span className="text-sm">{ph.icon}</span>
+                      <span>T{ph.range[0]}–{ph.range[1]}: {ph.name}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Program detail */}
+            {goalType && weekDuration && (
+              <div className="animate-fade-in-up">
+                <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
+                <ProgramDetail goalId={goalType} weeks={weekDuration} />
+              </div>
+            )}
+
+            {/* Empty state when nothing selected */}
+            {!goalType && (
+              <div className="py-16 text-center">
+                <div className="text-5xl mb-4 opacity-40">🗂️</div>
+                <p className="text-muted text-sm">Chọn mục tiêu ở trên để bắt đầu</p>
+              </div>
+            )}
           </div>
         )}
 

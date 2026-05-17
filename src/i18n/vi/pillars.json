@@ -2,7 +2,7 @@
   "pillarA": {
     "id": "a",
     "title": "Vận Động & Tập Luyện",
-    "subtitle": "Daily Training",
+    "subtitle": "Luyện Tập Hằng Ngày",
     "description": "Xây dựng thói quen vận động khoa học, phù hợp mọi cấp độ từ người mới đến nâng cao.",
     "icon": "🏃",
     "color": "green",
@@ -11,11 +11,11 @@
         "title": "Nền Tảng 6 Chuyển Động",
         "items": [
           "Khởi động & giãn cơ đúng cách trước và sau tập",
-          "Squat — bài tập chân và mông nền tảng",
-          "Hinge — gập hông đúng cách, bảo vệ lưng dưới",
-          "Push — chống đẩy, tập ngực và vai",
-          "Pull — kéo, tập lưng và bắp tay",
-          "Core — ổn định lõi cơ thể, bảo vệ cột sống",
+          "Gập Chân — bài tập chân và mông nền tảng",
+          "Gập Hông — gập hông đúng cách, bảo vệ lưng dưới",
+          "Chống Đẩy — tập ngực và vai",
+          "Kéo — tập lưng và bắp tay",
+          "Cơ Lõi — ổn định lõi cơ thể, bảo vệ cột sống",
           "Thở — kỹ thuật thở đúng trong và ngoài tập"
         ]
       },
@@ -23,38 +23,38 @@
         "title": "Khung Ngày Tập 20–40 Phút",
         "items": [
           "5 phút — Khởi động: vận động khớp, tăng nhiệt cơ thể",
-          "10–20 phút — Vận động chính: bài sức mạnh hoặc cardio",
+          "10–20 phút — Vận động chính: bài sức mạnh hoặc tim mạch",
           "5–10 phút — Giãn cơ & hạ nhiệt: kéo giãn cơ đã tập",
-          "5 phút — Mind Reset: thở sâu, thiền ngắn hoặc đi bộ nhẹ"
+          "5 phút — Tĩnh Tâm: thở sâu, thiền ngắn hoặc đi bộ nhẹ"
         ]
       },
       {
         "title": "Nhịp Tuần Gợi Ý",
         "items": [
-          "Thứ 2 · 4 · 6 — Sức mạnh: Squat, Hinge, Push, Pull, Core",
-          "Thứ 3 · 5 — Cardio nhẹ: đi bộ nhanh 20–30 phút",
-          "Thứ 7 — Phục hồi tích cực: giãn cơ, mobility, đi dạo",
+          "Thứ 2 · 4 · 6 — Sức mạnh: Gập chân, Gập hông, Chống đẩy, Kéo, Cơ lõi",
+          "Thứ 3 · 5 — Tim mạch nhẹ: đi bộ nhanh 20–30 phút",
+          "Thứ 7 — Phục hồi tích cực: giãn cơ, vận động linh hoạt, đi dạo",
           "Chủ nhật — Nghỉ hoàn toàn hoặc vận động nhẹ"
         ]
       },
       {
         "title": "Lộ Trình Theo Mục Tiêu",
         "items": [
-          "Giảm mỡ — cardio + thâm hụt calo 300–500 kcal/ngày",
-          "Tăng cơ — sức mạnh progressive overload + đủ protein 1.6–2g/kg",
-          "Tăng sức bền — cardio/chạy bộ tiến dần theo tuần",
-          "Dẻo dai & mobility — yoga, foam roll, giãn cơ tĩnh",
-          "Phòng/giảm đau cổ vai gáy, lưng, gối — mobility + core"
+          "Giảm mỡ — tim mạch + thâm hụt calo 300–500 kcal/ngày",
+          "Tăng cơ — sức mạnh tăng tải dần đều + đủ protein 1.6–2g/kg",
+          "Tăng sức bền — tim mạch/chạy bộ tiến dần theo tuần",
+          "Dẻo dai & linh hoạt — yoga, lăn cơ, giãn cơ tĩnh",
+          "Phòng/giảm đau cổ vai gáy, lưng, gối — linh hoạt + cơ lõi"
         ]
       },
       {
         "title": "Chương Trình Theo Bối Cảnh",
         "items": [
-          "10 phút/ngày (siêu bận) — 3 bài: Squat, Push, Plank",
-          "20–30 phút/ngày (chuẩn) — full body hoặc upper/lower split",
-          "Tập tại nhà không dụng cụ — bodyweight full",
+          "10 phút/ngày (siêu bận) — 3 bài: Gập chân, Chống đẩy, Tư thế ván",
+          "20–30 phút/ngày (chuẩn) — toàn thân hoặc chia trên/dưới",
+          "Tập tại nhà không dụng cụ — trọng lượng cơ thể",
           "Tập với tạ đơn/dây kháng lực — thêm sức cản tiến bộ",
-          "Tập ngoài trời — đi bộ, chạy, calisthenics"
+          "Tập ngoài trời — đi bộ, chạy, thể dục thể hình"
         ]
       },
       {
@@ -62,7 +62,7 @@
         "items": [
           "Luôn khởi động, không bỏ qua dù vội",
           "Tăng tải từ từ — không tăng quá 10%/tuần",
-          "Nghỉ khi đau (pain ≠ discomfort) — lắng nghe cơ thể",
+          "Nghỉ khi đau (đau ≠ khó chịu bình thường) — lắng nghe cơ thể",
           "Không tập khi sốt, chấn thương cấp, mệt kiệt sức",
           "Dừng ngay nếu có đau ngực, chóng mặt, khó thở"
         ]
@@ -70,20 +70,20 @@
       {
         "title": "Kỹ Thuật & Lỗi Thường Gặp",
         "items": [
-          "Squat: gối đổ vào trong, gót nhấc → 'Đầu gối theo ngón chân — gót chắc sàn — ngực mở'",
-          "Hinge: cong lưng thay vì gập hông → 'Đẩy hông ra sau — cột sống dài — nhẹ căng bụng'",
-          "Push: lưng vòm, cổ căng → 'Người thẳng như ván — cổ dài — đẩy sàn ra xa'",
-          "Pull: vai nhún, lưng gù → 'Kéo khuỷu ra sau — vai về — tai xa vai'",
-          "Core: nín thở, lưng cong → 'Nhẹ hút bụng — thở đều — cột sống trung tính'",
+          "Gập Chân: gối đổ vào trong, gót nhấc → 'Đầu gối theo ngón chân — gót chắc sàn — ngực mở'",
+          "Gập Hông: cong lưng thay vì gập hông → 'Đẩy hông ra sau — cột sống dài — nhẹ căng bụng'",
+          "Chống Đẩy: lưng vòm, cổ căng → 'Người thẳng như ván — cổ dài — đẩy sàn ra xa'",
+          "Kéo: vai nhún, lưng gù → 'Kéo khuỷu ra sau — vai về — tai xa vai'",
+          "Cơ Lõi: nín thở, lưng cong → 'Nhẹ hút bụng — thở đều — cột sống trung tính'",
           "Thở: thở ngực thay bụng → 'Hít vào bụng phồng — thở ra chậm qua miệng'"
         ]
       },
       {
-        "title": "Bậc Thang Tiến Bộ (Progressive Overload)",
+        "title": "Bậc Thang Tiến Bộ (Tăng Tải Dần Đều)",
         "items": [
-          "Bước 1: Tăng số reps — từ 8 → 12 lần/set",
-          "Bước 2: Tăng số set — từ 2 → 3 set",
-          "Bước 3: Tăng độ khó — Sit-to-Stand → Squat → Goblet Squat",
+          "Bước 1: Tăng số lần — từ 8 → 12 lần/hiệp",
+          "Bước 2: Tăng số hiệp — từ 2 → 3 hiệp",
+          "Bước 3: Tăng độ khó — Đứng lên ngồi xuống → Gập chân → Gập chân tạ tay",
           "Bước 4: Thêm tạ hoặc dây kháng lực",
           "Bước 5: Giảm thời gian nghỉ để tăng độ bền",
           "Nguyên tắc vàng: chỉ thay đổi 1 biến mỗi lần — tránh chấn thương"
@@ -93,96 +93,96 @@
     "warmup_title": "Khởi Động Chuẩn (5–8 phút)",
     "warmup": [
       { "exercise": "Thở cơ hoành", "how": "Đặt tay lên bụng, hít vào bụng phồng nhẹ, thở ra chậm qua miệng", "duration": "4–6 nhịp" },
-      { "exercise": "March in Place", "how": "Đi bộ tại chỗ, nâng gối vừa phải, vai thả lỏng", "duration": "60 giây" },
-      { "exercise": "Shoulder Roll", "how": "Xoay vai ra sau nhẹ nhàng, không rút cổ", "duration": "10 vòng" },
-      { "exercise": "Scapular Squeeze", "how": "Kéo nhẹ hai bờ vai về sau, mở ngực", "duration": "10 lần" },
-      { "exercise": "Hip Hinge Drill", "how": "Đẩy hông ra sau, lưng thẳng, gối hơi chùng", "duration": "8 lần" },
-      { "exercise": "Squat to Chair", "how": "Ngồi xuống ghế rồi đứng lên, kiểm soát gối", "duration": "8 lần" }
+      { "exercise": "Đi Bộ Tại Chỗ", "how": "Đi bộ tại chỗ, nâng gối vừa phải, vai thả lỏng", "duration": "60 giây" },
+      { "exercise": "Xoay Vai", "how": "Xoay vai ra sau nhẹ nhàng, không rút cổ", "duration": "10 vòng" },
+      { "exercise": "Ép Bờ Vai", "how": "Kéo nhẹ hai bờ vai về sau, mở ngực", "duration": "10 lần" },
+      { "exercise": "Tập Gập Hông", "how": "Đẩy hông ra sau, lưng thẳng, gối hơi chùng", "duration": "8 lần" },
+      { "exercise": "Ngồi Xuống Ghế", "how": "Ngồi xuống ghế rồi đứng lên, kiểm soát gối", "duration": "8 lần" }
     ],
     "cooldown_title": "Giãn Cơ Sau Tập (4–6 phút)",
     "cooldown": [
-      { "exercise": "Hip Flexor Stretch", "how": "Quỳ một chân, đẩy hông nhẹ về trước", "duration": "30 giây/bên" },
-      { "exercise": "Hamstring Stretch", "how": "Duỗi một chân, gập người nhẹ, lưng không gù quá mức", "duration": "30 giây/bên" },
-      { "exercise": "Chest Opener", "how": "Dan tay sau lưng hoặc chống tay vào cửa, mở ngực", "duration": "30 giây" },
-      { "exercise": "Child Pose", "how": "Ngồi về gót, vươn tay ra trước, thở chậm", "duration": "30–60 giây" },
+      { "exercise": "Giãn Gấp Hông", "how": "Quỳ một chân, đẩy hông nhẹ về trước", "duration": "30 giây/bên" },
+      { "exercise": "Giãn Đùi Sau", "how": "Duỗi một chân, gập người nhẹ, lưng không gù quá mức", "duration": "30 giây/bên" },
+      { "exercise": "Mở Ngực", "how": "Dan tay sau lưng hoặc chống tay vào cửa, mở ngực", "duration": "30 giây" },
+      { "exercise": "Tư Thế Em Bé", "how": "Ngồi về gót, vươn tay ra trước, thở chậm", "duration": "30–60 giây" },
       { "exercise": "Thở chậm", "how": "Hít 4 giây, thở ra 6 giây", "duration": "4–6 nhịp" }
     ],
     "movements_title": "6 Mẫu Vận Động Chi Tiết",
     "movements_detail": [
       {
-        "id": "squat", "name": "Squat", "icon": "🦵", "color": "green",
+        "id": "squat", "name": "Gập Chân", "icon": "🦵", "color": "green",
         "goal": "Tăng sức mạnh đùi trước, mông, cải thiện khả năng đứng lên/ngồi xuống, hỗ trợ sinh hoạt hằng ngày.",
-        "basic": "Sit-to-Stand", "prescription": "2–3 hiệp × 8–12 lần",
+        "basic": "Đứng Lên Ngồi Xuống", "prescription": "2–3 hiệp × 8–12 lần",
         "basic_how": "Ngồi trên ghế, hai chân rộng bằng hông. Hơi nghiêng người về trước, đẩy chân xuống sàn để đứng lên. Từ từ ngồi xuống, không 'rơi' xuống ghế.",
         "cue": "Gối theo ngón chân · Gót bám sàn · Ngực mở",
         "levels": [
-          { "label": "Người Mới", "exercise": "Sit-to-Stand với ghế" },
-          { "label": "Chuẩn", "exercise": "Bodyweight Squat" },
-          { "label": "Nâng Cao", "exercise": "Goblet Squat hoặc Tempo Squat 3 giây" }
+          { "label": "Người Mới", "exercise": "Đứng lên ngồi xuống với ghế" },
+          { "label": "Chuẩn", "exercise": "Gập Chân Trọng Lượng Cơ Thể" },
+          { "label": "Nâng Cao", "exercise": "Gập Chân Tạ Tay hoặc Gập Chân Chậm 3 giây" }
         ],
         "errors": "Gối sập vào trong, gót nhấc khỏi sàn, lưng gù, xuống quá sâu khi chưa kiểm soát"
       },
       {
-        "id": "hinge", "name": "Hinge", "icon": "🔄", "color": "lime",
+        "id": "hinge", "name": "Gập Hông", "icon": "🔄", "color": "lime",
         "goal": "Học cách gập hông đúng, bảo vệ lưng khi cúi người, tập mông và đùi sau.",
-        "basic": "Hip Hinge", "prescription": "2–3 hiệp × 8–12 lần",
+        "basic": "Gập Hông Cơ Bản", "prescription": "2–3 hiệp × 8–12 lần",
         "basic_how": "Đứng thẳng, hai tay đặt lên hông. Hơi chùng gối, đẩy mông ra sau như muốn chạm tường phía sau. Lưng giữ trung tính, không gù. Khi cảm thấy căng nhẹ ở đùi sau thì đứng thẳng lại.",
         "cue": "Đẩy hông ra sau · Cột sống dài · Bụng siết nhẹ",
         "levels": [
-          { "label": "Người Mới", "exercise": "Hip Hinge tay đặt hông" },
-          { "label": "Chuẩn", "exercise": "Good Morning" },
-          { "label": "Nâng Cao", "exercise": "Romanian Deadlift với tạ/dây kháng lực" }
+          { "label": "Người Mới", "exercise": "Gập Hông Tay Đặt Hông" },
+          { "label": "Chuẩn", "exercise": "Cúi Người (Good Morning)" },
+          { "label": "Nâng Cao", "exercise": "Nhấc Đơn Kiểu Romania với tạ/dây" }
         ],
         "errors": "Cúi bằng lưng thay vì gập hông, gù lưng, khóa cứng gối, ngửa cổ quá mức"
       },
       {
-        "id": "push", "name": "Push", "icon": "💪", "color": "blue",
+        "id": "push", "name": "Chống Đẩy", "icon": "💪", "color": "blue",
         "goal": "Tăng sức mạnh thân trên, cải thiện khả năng chống đẩy, đẩy cửa, nâng vật.",
-        "basic": "Wall Push-up", "prescription": "2–3 hiệp × 8–12 lần",
+        "basic": "Chống Đẩy Tường", "prescription": "2–3 hiệp × 8–12 lần",
         "basic_how": "Đứng cách tường khoảng một cánh tay. Hai tay chống lên tường ngang ngực. Gập khuỷu tay đưa ngực gần tường, sau đó đẩy người ra lại. Giữ thân người thẳng, không vòng lưng.",
         "cue": "Người thẳng như tấm ván · Cổ dài · Đẩy sàn/tường ra xa",
         "levels": [
-          { "label": "Người Mới", "exercise": "Wall Push-up" },
-          { "label": "Chuẩn", "exercise": "Knee Push-up" },
-          { "label": "Nâng Cao", "exercise": "Standard Push-up hoặc Tempo Push-up" }
+          { "label": "Người Mới", "exercise": "Chống Đẩy Tường" },
+          { "label": "Chuẩn", "exercise": "Chống Đẩy Gối" },
+          { "label": "Nâng Cao", "exercise": "Chống Đẩy Chuẩn hoặc Chống Đẩy Chậm" }
         ],
         "errors": "Vòng lưng, rút cổ, khuỷu tay xòe quá rộng, chỉ gập cổ mà thân không di chuyển"
       },
       {
-        "id": "pull", "name": "Pull", "icon": "🏋️", "color": "teal",
+        "id": "pull", "name": "Kéo", "icon": "🏋️", "color": "teal",
         "goal": "Cân bằng với nhóm đẩy, cải thiện tư thế gù vai, tăng sức mạnh lưng trên.",
-        "basic": "Towel Row", "prescription": "2–3 hiệp × 10–12 lần",
+        "basic": "Kéo Bằng Khăn", "prescription": "2–3 hiệp × 10–12 lần",
         "basic_how": "Cố định dây trước mặt. Cầm hai đầu dây, kéo khuỷu tay về sau, ép nhẹ bờ vai. Sau đó thả chậm về vị trí ban đầu. Ngực mở, vai không nhún lên tai.",
         "cue": "Kéo khuỷu về sau · Ép nhẹ bờ vai · Vai xa tai",
         "levels": [
-          { "label": "Người Mới", "exercise": "Towel Row" },
-          { "label": "Chuẩn", "exercise": "Band Row" },
-          { "label": "Nâng Cao", "exercise": "One-arm Dumbbell Row hoặc Band Row nặng hơn" }
+          { "label": "Người Mới", "exercise": "Kéo Bằng Khăn" },
+          { "label": "Chuẩn", "exercise": "Kéo Bằng Dây Kháng Lực" },
+          { "label": "Nâng Cao", "exercise": "Kéo Tạ Đơn Một Tay hoặc Kéo Dây Nặng Hơn" }
         ],
         "errors": "Nhún vai, cong lưng, kéo bằng cổ tay thay vì kéo bằng lưng, thả dây quá nhanh"
       },
       {
-        "id": "core", "name": "Core", "icon": "🎯", "color": "purple",
+        "id": "core", "name": "Cơ Lõi", "icon": "🎯", "color": "purple",
         "goal": "Tăng khả năng giữ thân người ổn định, hỗ trợ lưng, cải thiện tư thế.",
-        "basic": "Dead Bug", "prescription": "2–3 hiệp × 6–10 lần mỗi bên",
+        "basic": "Bài Con Bọ", "prescription": "2–3 hiệp × 6–10 lần mỗi bên",
         "basic_how": "Nằm ngửa, hai tay đưa lên, gối gập 90°. Siết bụng nhẹ để lưng dưới không uốn quá mức. Duỗi chậm tay phải và chân trái, sau đó đổi bên.",
         "cue": "Bụng ôm nhẹ · Thở đều · Cột sống trung tính",
         "levels": [
-          { "label": "Người Mới", "exercise": "Dead Bug chậm, Plank gối" },
-          { "label": "Chuẩn", "exercise": "Plank thường ngắn, Side Plank gối" },
-          { "label": "Nâng Cao", "exercise": "Side Plank, Anti-rotation Band" }
+          { "label": "Người Mới", "exercise": "Bài Con Bọ Chậm, Tư Thế Ván Gối" },
+          { "label": "Chuẩn", "exercise": "Tư Thế Ván Ngắn, Tư Thế Ván Bên Gối" },
+          { "label": "Nâng Cao", "exercise": "Tư Thế Ván Bên, Kéo Dây Chống Xoay" }
         ],
         "errors": "Nín thở, vòng lưng, nâng mông quá cao, gồng cổ"
       },
       {
-        "id": "breath", "name": "Breath", "icon": "🌬️", "color": "orange",
+        "id": "breath", "name": "Thở", "icon": "🌬️", "color": "orange",
         "goal": "Giúp ổn định thân người khi tập, giảm căng thẳng, hỗ trợ phục hồi.",
         "basic": "Thở cơ hoành", "prescription": "1–3 phút",
         "basic_how": "Một tay đặt lên ngực, một tay đặt lên bụng. Hít vào mũi để bụng phồng nhẹ, thở ra chậm bằng miệng. Ngực không nâng quá nhiều.",
         "cue": "Bụng phồng khi hít vào · Thở ra chậm · Ngực thả lỏng",
         "levels": [
-          { "label": "Cơ bản", "exercise": "Thở cơ hoành (diaphragmatic breathing)" },
-          { "label": "Nâng cao", "exercise": "Box Breathing: hít 4s — giữ 4s — thở 4s — giữ 4s" }
+          { "label": "Cơ bản", "exercise": "Thở Cơ Hoành" },
+          { "label": "Nâng cao", "exercise": "Thở Hộp: hít 4s — giữ 4s — thở 4s — giữ 4s" }
         ],
         "errors": "Thở ngực thay bụng, nín thở trong khi tập, thở quá nhanh"
       }
@@ -193,51 +193,51 @@
         "id": "busy", "name": "10 Phút/Ngày", "tag": "Siêu Bận", "color": "orange",
         "type": "blocks",
         "blocks": [
-          { "phase": "Khởi động", "time": "2 phút", "content": "Warm-up nhanh: march in place, shoulder roll" },
-          { "phase": "Vận động chính", "time": "6 phút", "content": "Squat 30s · Push-up 30s · Glute Bridge 30s · Plank 20–30s — lặp 2 vòng" },
-          { "phase": "Giãn cơ", "time": "2 phút", "content": "Cooldown + thở sâu" }
+          { "phase": "Khởi động", "time": "2 phút", "content": "Khởi động nhanh: đi bộ tại chỗ, xoay vai" },
+          { "phase": "Vận động chính", "time": "6 phút", "content": "Gập chân 30s · Chống đẩy 30s · Cầu mông 30s · Tư thế ván 20–30s — lặp 2 vòng" },
+          { "phase": "Giãn cơ", "time": "2 phút", "content": "Hạ nhiệt + thở sâu" }
         ]
       },
       {
         "id": "fat_loss", "name": "Giảm Mỡ", "tag": "20 Phút", "color": "green",
         "type": "blocks",
         "blocks": [
-          { "phase": "Khởi động", "time": "3 phút", "content": "March in place, shoulder roll, squat to chair" },
-          { "phase": "Vận động chính", "time": "14 phút", "content": "Squat 40s · Push-up 30s · Row 40s · Glute Bridge 40s · March in place 40s — nghỉ 20s giữa bài, làm 2 vòng" },
-          { "phase": "Giãn cơ", "time": "3 phút", "content": "Giãn hông, ngực, child pose" }
+          { "phase": "Khởi động", "time": "3 phút", "content": "Đi bộ tại chỗ, xoay vai, ngồi xuống ghế" },
+          { "phase": "Vận động chính", "time": "14 phút", "content": "Gập chân 40s · Chống đẩy 30s · Kéo 40s · Cầu mông 40s · Đi bộ tại chỗ 40s — nghỉ 20s giữa bài, làm 2 vòng" },
+          { "phase": "Giãn cơ", "time": "3 phút", "content": "Giãn hông, ngực, tư thế em bé" }
         ]
       },
       {
         "id": "muscle", "name": "Tăng Cơ", "tag": "30 Phút", "color": "purple",
         "type": "exercises",
         "exercises": [
-          { "name": "Squat hoặc Goblet Squat", "sets": "3 × 8–12 lần" },
-          { "name": "Push-up level phù hợp", "sets": "3 × 8–12 lần" },
-          { "name": "Band Row hoặc Dumbbell Row", "sets": "3 × 10–12 lần" },
-          { "name": "Glute Bridge / Hip Thrust", "sets": "3 × 12–15 lần" },
-          { "name": "Plank", "sets": "3 × 20–40 giây" }
+          { "name": "Gập Chân hoặc Gập Chân Tạ Tay", "sets": "3 × 8–12 lần" },
+          { "name": "Chống Đẩy mức phù hợp", "sets": "3 × 8–12 lần" },
+          { "name": "Kéo Dây hoặc Kéo Tạ Đơn", "sets": "3 × 10–12 lần" },
+          { "name": "Cầu Mông / Đẩy Hông", "sets": "3 × 12–15 lần" },
+          { "name": "Tư Thế Ván", "sets": "3 × 20–40 giây" }
         ]
       },
       {
         "id": "mobility", "name": "Dẻo Dai", "tag": "10 Phút", "color": "teal",
         "type": "exercises",
         "exercises": [
-          { "name": "Chin Tuck", "sets": "8–10 lần" },
-          { "name": "Shoulder Roll", "sets": "10 vòng" },
-          { "name": "Doorway Stretch", "sets": "30 giây" },
-          { "name": "Thoracic Twist", "sets": "6 lần/bên" },
-          { "name": "Hip Flexor Stretch", "sets": "30 giây/bên" },
-          { "name": "Hamstring Stretch", "sets": "30 giây/bên" },
-          { "name": "Child Pose + thở chậm", "sets": "60 giây" }
+          { "name": "Gật Cằm", "sets": "8–10 lần" },
+          { "name": "Xoay Vai", "sets": "10 vòng" },
+          { "name": "Giãn Cơ Ở Cửa", "sets": "30 giây" },
+          { "name": "Xoay Lưng Trên", "sets": "6 lần/bên" },
+          { "name": "Giãn Gấp Hông", "sets": "30 giây/bên" },
+          { "name": "Giãn Đùi Sau", "sets": "30 giây/bên" },
+          { "name": "Tư Thế Em Bé + thở chậm", "sets": "60 giây" }
         ]
       }
     ],
     "tests_title": "Kiểm Tra Tiến Bộ Hàng Tháng",
     "progress_tests": [
-      { "capability": "Sức mạnh chân", "test": "Sit-to-stand tối đa trong 1 phút" },
-      { "capability": "Core", "test": "Plank gối hoặc plank thường — giữ tối đa" },
+      { "capability": "Sức mạnh chân", "test": "Đứng lên ngồi xuống tối đa trong 1 phút" },
+      { "capability": "Cơ Lõi", "test": "Tư thế ván gối hoặc tư thế ván thường — giữ tối đa" },
       { "capability": "Sức bền", "test": "Đi bộ nhanh 6 phút — đo quãng đường" },
-      { "capability": "Mobility", "test": "Kiểm tra gập hông, xoay vai, squat biên độ đầy đủ" },
+      { "capability": "Linh Hoạt", "test": "Kiểm tra gập hông, xoay vai, gập chân biên độ đầy đủ" },
       { "capability": "Thói quen", "test": "Số buổi tập/tuần · số bước trung bình · cảm giác năng lượng" }
     ],
     "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
@@ -245,7 +245,7 @@
   "pillarB": {
     "id": "b",
     "title": "Dinh Dưỡng & Thực Đơn",
-    "subtitle": "Nutrition",
+    "subtitle": "Dinh Dưỡng",
     "description": "Ăn đúng, đủ, cân bằng — không cần nhịn hay ăn kiêng cực đoan.",
     "icon": "🥗",
     "color": "lime",
@@ -255,7 +255,7 @@
         "items": [
           "TDEE — tổng năng lượng tiêu hao mỗi ngày (cần ăn bao nhiêu?)",
           "Thâm hụt calo (giảm mỡ) / Duy trì / Thặng dư (tăng cơ)",
-          "Macro: Protein 1.6–2g/kg thể trọng · Carb năng lượng chính · Fat 0.8–1g/kg",
+          "Đa lượng: Protein 1.6–2g/kg thể trọng · Carb năng lượng chính · Chất béo 0.8–1g/kg",
           "Chất xơ: 25–35g/ngày từ rau củ, ngũ cốc nguyên hạt",
           "Nước: 1.5–2 lít/ngày, thêm khi tập luyện"
         ]
@@ -275,7 +275,7 @@
         "items": [
           "Sáng: Cơm + trứng chiên + rau luộc | hoặc Bánh mì + trứng ốp + salad",
           "Trưa: Cơm + thịt/cá + rau xào + canh + 1 phần trái cây",
-          "Tối: Cơm ít hơn + cá/đậu hũ + rau nhiều + không dessert ngọt",
+          "Tối: Cơm ít hơn + cá/đậu hũ + rau nhiều + không tráng miệng ngọt",
           "Ăn vặt lành mạnh: sữa chua không đường, hạt điều, trái cây tươi",
           "Uống: nước lọc, trà xanh, sữa không đường — tránh nước ngọt"
         ]
@@ -285,8 +285,8 @@
         "items": [
           "Trước tập 1–2h: bữa nhẹ có carb + protein (chuối + sữa, bánh + trứng)",
           "Sau tập trong 30–60 phút: bổ sung protein để phục hồi cơ",
-          "Không tập bụng rỗng nếu cường độ cao (>70% max)",
-          "Hydration: uống nước đều trong suốt buổi tập",
+          "Không tập bụng rỗng nếu cường độ cao (>70% tối đa)",
+          "Uống nước: uống nước đều trong suốt buổi tập",
           "Tránh ăn quá no ngay trước tập — gây ợ hơi, nặng bụng"
         ]
       },
@@ -296,19 +296,19 @@
           "Ăn chậm 15–20 phút, nhai kỹ — não nhận no sau 20 phút",
           "Ăn đúng giờ, không bỏ bữa sáng",
           "Kiểm soát đồ ngọt — chọn 1–2 lần/tuần thay vì hàng ngày",
-          "Xử lý bữa ăn lỡ tay: quay về track bình thường ngay hôm sau",
+          "Xử lý bữa ăn lỡ tay: quay về chế độ bình thường ngay hôm sau",
           "Thực đơn tiết kiệm: trứng, đậu, cá, rau củ theo mùa"
         ]
       },
       {
         "title": "Năng Lượng Theo Cường Độ Ngày",
         "items": [
-          "Ngày tập nặng (gym + cardio + bơi): ~3,000 kcal",
+          "Ngày tập nặng (gym + tim mạch + bơi): ~3,000 kcal",
           "Ngày tập vừa (gym hoặc bơi): ~2,800 kcal",
           "Ngày nghỉ hoặc tập nhẹ: ~2,700 kcal",
           "Protein: 140–160g/ngày (1.6–2g/kg × 77–80kg)",
           "Carb: ưu tiên ngày tập nặng, giảm ngày nghỉ",
-          "Fat: 80–100g/ngày từ dầu oliu, hạt, bơ, cá hồi"
+          "Chất béo: 80–100g/ngày từ dầu oliu, hạt, bơ, cá hồi"
         ]
       },
       {
@@ -318,7 +318,7 @@
           "Nắm tay = 1 phần tinh bột (cơm/khoai/bánh nguyên cám)",
           "Bàn tay chụm = 1 phần chất béo (hạt/dầu/bơ)",
           "2 nắm tay = 1 phần rau xanh — ưu tiên tăng phần này",
-          "Điều chỉnh theo cảm giác no: nếu đói thêm đạm, nếu mệt thêm carb"
+          "Điều chỉnh theo cảm giác no: nếu đói thêm đạm, nếu mệt thêm tinh bột"
         ]
       }
     ],
@@ -327,7 +327,7 @@
   "pillarC": {
     "id": "c",
     "title": "Lối Sống Khỏe",
-    "subtitle": "Lifestyle",
+    "subtitle": "Lối Sống",
     "description": "Những thói quen nhỏ tạo nên sức khỏe bền vững mỗi ngày.",
     "icon": "🌿",
     "color": "teal",
@@ -338,7 +338,7 @@
           "Mục tiêu: 7–9 tiếng/đêm, ngủ và dậy đúng giờ",
           "Vệ sinh giấc ngủ: phòng tối, mát (~22°C), yên tĩnh",
           "Tránh màn hình xanh (điện thoại, máy tính) 1h trước ngủ",
-          "Routine trước ngủ: tắm nước ấm, đọc sách, thở thư giãn",
+          "Thói quen trước ngủ: tắm nước ấm, đọc sách, thở thư giãn",
           "Cách sửa ngủ muộn: dịch giờ ngủ sớm hơn 15 phút/tuần"
         ]
       },
@@ -346,20 +346,20 @@
         "title": "Năng Lượng & Nhịp Sống",
         "items": [
           "Thói quen buổi sáng: uống nước, ánh sáng tự nhiên, vận động nhẹ",
-          "NEAT — đi bộ, leo thang, đứng thay ngồi giúp đốt thêm 200–400 kcal/ngày",
+          "Vận động không chủ đích — đi bộ, leo thang, đứng thay ngồi giúp đốt thêm 200–400 kcal/ngày",
           "Ra nắng buổi sáng 10–20 phút giúp điều hòa nhịp sinh học",
           "Tránh caffeine sau 14h để không ảnh hưởng giấc ngủ",
-          "Micro-breaks: đứng dậy mỗi 45–60 phút khi ngồi lâu"
+          "Nghỉ ngắn: đứng dậy mỗi 45–60 phút khi ngồi lâu"
         ]
       },
       {
         "title": "Phục Hồi",
         "items": [
-          "Deload mỗi 4–6 tuần: giảm 50% khối lượng tập để cơ thể hồi phục",
+          "Giảm tải mỗi 4–6 tuần: giảm 50% khối lượng tập để cơ thể hồi phục",
           "Nghỉ tích cực: đi bộ, bơi nhẹ thay vì nằm cả ngày",
           "Thở bụng sâu: hít 4s, giữ 2s, thở ra 6s × 10 lần",
           "Giãn cơ: 5–10 phút sau tập, tập trung cơ vừa làm việc",
-          "Massage cơ bản: foam roller hoặc bóng tennis cho điểm đau"
+          "Xoa bóp cơ bản: con lăn cơ hoặc bóng tennis cho điểm đau"
         ]
       }
     ],
@@ -368,7 +368,7 @@
   "pillarD": {
     "id": "d",
     "title": "Tâm Trí An Nhiên",
-    "subtitle": "Mind & Calm",
+    "subtitle": "Tâm Trí & Bình An",
     "description": "Quản lý stress, xây dựng tư duy tích cực và kỷ luật mềm.",
     "icon": "🧘",
     "color": "purple",
@@ -389,11 +389,11 @@
           "Bước 2 — Hơi thở: Hít vào đếm 4, giữ 2, thở ra đếm 6 (lặp 5–10 lần)",
           "Bước 3 — Quan sát: Khi có suy nghĩ, nhẹ nhàng nhận biết và quay về hơi thở",
           "Không cần ngồi hoa sen — ghế, sàn, hoặc nằm đều được",
-          "Dùng app hỗ trợ: Insight Timer (miễn phí), Calm, Headspace"
+          "Dùng ứng dụng hỗ trợ: Insight Timer (miễn phí), Calm, Headspace"
         ]
       },
       {
-        "title": "Box Breathing 4-4-4-4",
+        "title": "Thở Hộp 4-4-4-4",
         "items": [
           "Hít vào qua mũi — đếm 4 giây chậm",
           "Giữ hơi thở — đếm 4 giây (không căng thẳng)",
@@ -406,18 +406,18 @@
         "title": "Thực Hành Hàng Ngày",
         "items": [
           "Thiền 3–10 phút buổi sáng trước khi xem điện thoại",
-          "Journaling: 3 điều biết ơn + 1 mục tiêu ngày hôm nay (5 phút)",
-          "Digital detox: không điện thoại 1h sau khi dậy và 1h trước ngủ",
-          "Đi bộ không điện thoại 10–20 phút — meditation in motion"
+          "Nhật ký: 3 điều biết ơn + 1 mục tiêu ngày hôm nay (5 phút)",
+          "Tách xa màn hình: không điện thoại 1h sau khi dậy và 1h trước ngủ",
+          "Đi bộ không điện thoại 10–20 phút — thiền trong vận động"
         ]
       },
       {
         "title": "Tư Duy Sống Tốt",
         "items": [
-          "Tối giản mục tiêu: chọn 1–3 habit cốt lõi thay vì 10 thứ cùng lúc",
+          "Tối giản mục tiêu: chọn 1–3 thói quen cốt lõi thay vì 10 thứ cùng lúc",
           "Kỷ luật mềm: không phạt bản thân khi bỏ lỡ — chỉ cần quay lại",
-          "Xây thói quen nhỏ nhưng bền: 2-minute rule (bắt đầu với 2 phút)",
-          "Theo dõi: đánh dấu streak trên lịch tạo cảm giác đà tiến"
+          "Xây thói quen nhỏ nhưng bền: quy tắc 2 phút (bắt đầu với 2 phút)",
+          "Theo dõi: đánh dấu chuỗi ngày trên lịch tạo cảm giác đà tiến"
         ]
       },
       {
@@ -425,7 +425,7 @@
         "items": [
           "Dòng 1: Tâm trạng hôm nay trước và sau tập (1–10)?",
           "Dòng 2: Tôi đã làm gì hôm nay? (tập, ăn, ngủ)",
-          "Dòng 3: Thời gian và RPE (cảm giác cường độ)?",
+          "Dòng 3: Thời gian và mức cảm giác gắng sức?",
           "Dòng 4: Có đau hoặc khó chịu bất thường nào không?",
           "Dòng 5: Lần sau tôi muốn tăng/giảm/duy trì điều gì?",
           "Viết tay tốt hơn điện thoại — 5 phút mỗi tối trước ngủ"
@@ -437,7 +437,7 @@
   "pillarE": {
     "id": "e",
     "title": "Kiến Thức Sức Khỏe",
-    "subtitle": "Health Literacy",
+    "subtitle": "Kiến Thức Sức Khỏe",
     "description": "Hiểu cơ thể, nhận biết dấu hiệu, phòng bệnh chủ động.",
     "icon": "📚",
     "color": "blue",
@@ -465,7 +465,7 @@
       {
         "title": "Phòng Bệnh Chủ Động",
         "items": [
-          "Vận động đều đặn 150 phút/tuần (WHO guidelines)",
+          "Vận động đều đặn 150 phút/tuần (theo khuyến nghị WHO)",
           "Dinh dưỡng cân bằng, đủ vi chất, ít thực phẩm chế biến",
           "Ngủ 7–9h mỗi đêm — thiếu ngủ tăng nguy cơ nhiều bệnh",
           "Quản lý stress mãn tính — thiền, tập luyện, kết nối xã hội",
@@ -489,8 +489,8 @@
   "pillarF": {
     "id": "f",
     "title": "Công Cụ & Tài Nguyên",
-    "subtitle": "Tools",
-    "description": "Checklist, template và bộ test để theo dõi hành trình sống khỏe.",
+    "subtitle": "Công Cụ",
+    "description": "Checklist, mẫu và bộ test để theo dõi hành trình sống khỏe.",
     "icon": "🛠️",
     "color": "orange",
     "sections": [
@@ -510,39 +510,39 @@
         "title": "Checklist Hàng Tuần",
         "items": [
           "Hoàn thành 3–5 buổi tập như đã lên kế hoạch",
-          "Chuẩn bị thực phẩm cho tuần (meal prep 1–2h cuối tuần)",
+          "Chuẩn bị bữa ăn sẵn 1–2h cuối tuần",
           "Kiểm tra tiến bộ: cân nặng, vòng eo, cảm giác chung",
           "Lên lịch tập tuần tới — xác nhận ngày/giờ cụ thể",
           "Dành 1h cho hoạt động thư giãn yêu thích (đọc sách, đi dạo)"
         ]
       },
       {
-        "title": "Template",
+        "title": "Mẫu Theo Dõi",
         "items": [
-          "Nhật ký tập luyện: ngày · bài tập · sets · reps · cảm giác",
-          "Template lên thực đơn 7 ngày: sáng/trưa/tối + ăn vặt",
-          "Routine buổi sáng 15 phút: nước · ánh sáng · vận động · thiền",
-          "Routine buổi tối 20 phút: tắm · đọc/ghi chép · không điện thoại"
+          "Nhật ký tập luyện: ngày · bài tập · hiệp · lần · cảm giác",
+          "Mẫu lên thực đơn 7 ngày: sáng/trưa/tối + ăn vặt",
+          "Thói quen buổi sáng 15 phút: nước · ánh sáng · vận động · thiền",
+          "Thói quen buổi tối 20 phút: tắm · đọc/ghi chép · không điện thoại"
         ]
       },
       {
         "title": "Bộ Test Tiến Bộ 4 Tuần",
         "items": [
           "Test sức bền: đi bộ nhanh 6 phút — đo quãng đường",
-          "Test sức mạnh: số lần chống đẩy tối đa + squat tối đa",
+          "Test sức mạnh: số lần chống đẩy tối đa + gập chân tối đa",
           "Test linh hoạt: chạm ngón tay sàn khi đứng thẳng",
           "Đo vòng eo, cân nặng vào sáng sớm (trước ăn)",
           "Ghi lại kết quả và so sánh sau 4 tuần, 8 tuần, 12 tuần"
         ]
       },
       {
-        "title": "Nhật Ký Buổi Tập (5 Câu Hỏi Sau Mỗi Session)",
+        "title": "Nhật Ký Buổi Tập (5 Câu Hỏi Sau Mỗi Buổi)",
         "items": [
           "1. Hôm nay tập bài gì? (liệt kê ngắn gọn)",
           "2. Bao nhiêu phút?",
-          "3. Cảm giác cường độ RPE 1–10?",
+          "3. Cảm giác cường độ 1–10?",
           "4. Có đau bất thường nào không?",
-          "5. Lần sau tăng reps, tăng set, tăng độ khó, hay duy trì?"
+          "5. Lần sau tăng số lần, tăng số hiệp, tăng độ khó, hay duy trì?"
         ]
       }
     ],

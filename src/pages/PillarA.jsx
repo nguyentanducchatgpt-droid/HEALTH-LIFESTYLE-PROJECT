@@ -89,6 +89,21 @@ export default function PillarA() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-12" />
 
+      {/* Hero image */}
+      <div className="relative rounded-3xl overflow-hidden mb-12 h-48 md:h-60">
+        <img
+          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&q=70"
+          alt="exercise"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
+        <div className="absolute bottom-4 left-4">
+          <span className="text-xs font-bold text-white/70 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full">
+            Vận động & Tập luyện
+          </span>
+        </div>
+      </div>
+
       {/* ── Standard sections ───────────────────────── */}
       {Array.isArray(pillar.sections) && (
         <div className="space-y-5 mb-16">

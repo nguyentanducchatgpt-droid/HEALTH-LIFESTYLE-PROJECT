@@ -19,6 +19,14 @@ export default function Home() {
           <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-green-500/6 rounded-full blur-[100px] animate-orb-float" />
           <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[80px] animate-orb-float-delay" />
         </div>
+        {/* Hero background image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=60"
+            alt=""
+            className="w-full h-full object-cover opacity-[0.04]"
+          />
+        </div>
         {/* Grid dot overlay */}
         <div className="absolute inset-0 grid-dots pointer-events-none opacity-40" />
 

@@ -81,9 +81,11 @@ export default function Navbar() {
             onMouseEnter={openDropdown}
             onMouseLeave={startClose}
           >
-            <button
+            <Link
+              to="/pillars"
+              onClick={() => setPillarsOpen(false)}
               className={`relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                isPillarActive
+                isPillarActive || location.pathname === '/pillars'
                   ? 'text-accent bg-accent/8'
                   : 'text-muted hover:text-text hover:bg-white/4'
               }`}
@@ -98,7 +100,7 @@ export default function Navbar() {
               {isPillarActive && (
                 <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-3 h-0.5 bg-accent rounded-full" />
               )}
-            </button>
+            </Link>
 
             {/* Dropdown panel */}
             {pillarsOpen && (

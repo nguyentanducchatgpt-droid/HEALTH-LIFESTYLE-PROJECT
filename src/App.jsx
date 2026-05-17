@@ -9,6 +9,7 @@ import PillarE from './pages/PillarE';
 import PillarF from './pages/PillarF';
 import VideoLibrary from './pages/VideoLibrary';
 import Program from './pages/Program';
+import Pillars from './pages/Pillars';
 import Contact from './pages/Contact';
 import Donate from './pages/Donate';
 
@@ -18,6 +19,7 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pillars" element={<Pillars />} />
           <Route path="/pillar/a" element={<PillarA />} />
           <Route path="/pillar/b" element={<PillarB />} />
           <Route path="/pillar/c" element={<PillarC />} />

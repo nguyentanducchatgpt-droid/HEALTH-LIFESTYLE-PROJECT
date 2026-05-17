@@ -75,7 +75,7 @@ export default function ContactSection() {
               <div>
                 <p className="text-xs text-muted font-medium">{t('contact.zalo_label')}</p>
                 <p className="text-sm font-semibold text-text group-hover:text-blue-400 transition-colors mt-0.5">
-                  {zalo}
+                  Zalo Chat
                 </p>
               </div>
             </div>

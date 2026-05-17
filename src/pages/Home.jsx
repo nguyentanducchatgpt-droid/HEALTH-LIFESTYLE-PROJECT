@@ -1,52 +1,61 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import PillarCard from '../components/PillarCard';
-import ContactSection from '../components/ContactSection';
-import DonateSection from '../components/DonateSection';
 
 const PILLARS = ['pillarA', 'pillarB', 'pillarC', 'pillarD', 'pillarE', 'pillarF'];
 
+const PILLAR_IMAGES = [
+  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=70',
+  'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=70',
+  'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=70',
+  'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=600&q=70',
+  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=70',
+  'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=70',
+];
+
+const PILLAR_COLORS = ['green', 'lime', 'teal', 'purple', 'blue', 'orange'];
+const PILLAR_ROUTES = ['/pillar/a', '/pillar/b', '/pillar/c', '/pillar/d', '/pillar/e', '/pillar/f'];
+const PILLAR_ICONS  = ['🏃', '🥗', '🌿', '🧘', '📚', '🛠️'];
+
 export default function Home() {
-  const { t } = useTranslation();
-  const stats = t('home.stats', { returnObjects: true });
+  const { t }      = useTranslation();
+  const { t: tP }  = useTranslation('pillars');
+  const stats      = t('home.stats', { returnObjects: true });
+  const pillarKeys = ['pillarA', 'pillarB', 'pillarC', 'pillarD', 'pillarE', 'pillarF'];
 
   return (
     <div>
       {/* ── Hero ──────────────────────────────────────── */}
-      <section className="relative py-20 md:py-32 text-center overflow-hidden">
-        {/* Background orbs */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-green-500/6 rounded-full blur-[100px] animate-orb-float" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[80px] animate-orb-float-delay" />
-        </div>
-        {/* Hero background image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=60"
-            alt=""
-            className="w-full h-full object-cover opacity-[0.04]"
-          />
-        </div>
-        {/* Grid dot overlay */}
-        <div className="absolute inset-0 grid-dots pointer-events-none opacity-40" />
+      <section className="relative -mx-4 md:-mx-8 mb-16 overflow-hidden" style={{ minHeight: '560px' }}>
+        {/* Full-bleed hero image */}
+        <img
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=70"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ opacity: 0.12 }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/30 to-bg pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/60 via-transparent to-bg/60 pointer-events-none" />
+        {/* Grid dots */}
+        <div className="absolute inset-0 grid-dots opacity-30 pointer-events-none" />
+        {/* Green orbs */}
+        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-green-500/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[80px] pointer-events-none" />
 
-        <div className="relative z-10">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-20 pb-24">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-semibold px-4 py-1.5 rounded-full mb-8 animate-fade-in">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
             {t('hero.badge')}
           </div>
 
-          {/* Icon */}
-          <div className="text-6xl md:text-7xl mb-6 animate-float">🌿</div>
-
-          {/* Heading */}
+          {/* Icon + Heading */}
+          <div className="text-5xl md:text-6xl mb-5 animate-float">🌿</div>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight animate-fade-in-up">
             <span className="text-text">{t('hero.title')}</span>
           </h1>
-
-          {/* Subtitle */}
-          <p className="mt-6 text-base md:text-lg max-w-xl mx-auto leading-relaxed text-muted/80 animate-fade-in-up stagger-2">
+          <p className="mt-5 text-base md:text-lg max-w-xl mx-auto leading-relaxed text-muted/80 animate-fade-in-up stagger-2">
             {t('hero.subtitle')}
           </p>
 
@@ -56,45 +65,67 @@ export default function Home() {
               href="#pillars"
               className="btn-shimmer inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-sm shadow-[0_0_30px_rgba(34,197,94,0.25)] hover:shadow-[0_0_40px_rgba(34,197,94,0.4)] hover:-translate-y-0.5"
             >
-              {t('hero.cta')}
-              <span>↓</span>
+              {t('hero.cta')} <span>↓</span>
             </a>
             <Link
               to="/program"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-accent/40 hover:border-accent text-accent hover:bg-accent/8 font-semibold rounded-xl transition-all duration-200 text-sm hover:-translate-y-0.5"
             >
-              {t('nav.program')}
-              <span>→</span>
+              {t('nav.program')} <span>→</span>
             </Link>
           </div>
+
+          {/* Stats row — inside hero, bottom */}
+          {Array.isArray(stats) && (
+            <div className="mt-14 grid grid-cols-3 gap-4 w-full max-w-2xl">
+              {stats.map((stat, i) => (
+                <div key={i} className="text-center">
+                  <p className="text-gradient font-extrabold text-xl md:text-2xl">{stat.value}</p>
+                  <p className="text-muted text-[11px] mt-1 leading-snug">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {/* ── Stats bar ─────────────────────────────────── */}
-      {Array.isArray(stats) && (
-        <div className="grid grid-cols-3 gap-3 mb-14 animate-fade-in-up stagger-4">
-          {stats.map((stat, i) => (
-            <div
-              key={i}
-              className="relative bg-surface border border-border rounded-2xl p-5 text-center overflow-hidden group hover:border-accent/30 transition-all duration-300"
-            >
-              <div className="absolute inset-0 bg-gradient-to-b from-accent/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <p className="text-gradient font-extrabold text-2xl md:text-3xl">{stat.value}</p>
-              <p className="text-muted text-xs mt-1.5 leading-snug">{stat.label}</p>
-            </div>
-          ))}
+      {/* ── Visual image strip (6 pillar thumbnails) ── */}
+      <div className="overflow-x-auto scrollbar-hide mb-16 -mx-4 md:-mx-8 px-4 md:px-8">
+        <div className="flex gap-3 pb-1" style={{ width: 'max-content' }}>
+          {pillarKeys.map((key, i) => {
+            const p = tP(key, { returnObjects: true });
+            const colorMap = { green: '#22c55e', lime: '#84cc16', teal: '#14b8a6', purple: '#a855f7', blue: '#3b82f6', orange: '#f97316' };
+            const color = colorMap[p?.color] || '#22c55e';
+            return (
+              <Link
+                key={key}
+                to={PILLAR_ROUTES[i]}
+                className="relative rounded-2xl overflow-hidden shrink-0 group cursor-pointer"
+                style={{ width: '180px', height: '220px' }}
+              >
+                <img
+                  src={PILLAR_IMAGES[i]}
+                  alt={p?.title || key}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <div className="text-xl mb-1">{PILLAR_ICONS[i]}</div>
+                  <p className="text-white text-xs font-bold leading-snug">{p?.title || key}</p>
+                </div>
+                <div
+                  className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }}
+                />
+              </Link>
+            );
+          })}
         </div>
-      )}
-
-      {/* ── Safety note ───────────────────────────────── */}
-      <div className="flex items-start gap-3 bg-yellow-500/6 border border-yellow-500/20 rounded-2xl p-4 mb-14">
-        <span className="text-yellow-400 text-lg shrink-0 mt-0.5">⚠️</span>
-        <p className="text-yellow-300/80 text-sm leading-relaxed">{t('common.safety_note').replace('⚠️ ', '')}</p>
       </div>
 
-      {/* ── 6 Pillars ─────────────────────────────────── */}
+      {/* ── 6 Pillars grid ───────────────────────────── */}
       <section id="pillars" className="mb-20 scroll-mt-20">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-text">{t('hero.pillars_title')}</h2>
           <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
         </div>
@@ -106,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* ── Quote block ───────────────────────────────── */}
-      <div className="relative mb-20 overflow-hidden rounded-3xl">
+      <div className="relative mb-12 overflow-hidden rounded-3xl">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/8 via-transparent to-teal-500/5 pointer-events-none" />
         <div className="absolute inset-0 grid-dots opacity-20 pointer-events-none" />
         <div className="relative border border-accent/15 rounded-3xl p-10 md:p-14 text-center">
@@ -118,8 +149,21 @@ export default function Home() {
         </div>
       </div>
 
-      <ContactSection />
-      <DonateSection />
+      {/* ── Compact contact CTA ──────────────────────── */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-10 mb-6">
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-2 px-6 py-2.5 border border-border hover:border-accent/40 text-muted hover:text-accent rounded-xl transition-all duration-200 text-sm"
+        >
+          ✉️ {t('nav.contact')}
+        </Link>
+        <Link
+          to="/donate"
+          className="inline-flex items-center gap-2 px-6 py-2.5 border border-border hover:border-accent/40 text-muted hover:text-accent rounded-xl transition-all duration-200 text-sm"
+        >
+          🙏 {t('nav.donate')}
+        </Link>
+      </div>
     </div>
   );
 }

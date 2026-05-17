@@ -2,18 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
-const PILLAR_LINKS = [
-  { to: '/pillar/a', icon: '🏃', key: 'pillarA' },
-  { to: '/pillar/b', icon: '🥗', key: 'pillarB' },
-  { to: '/pillar/c', icon: '🌿', key: 'pillarC' },
-  { to: '/pillar/d', icon: '🧘', key: 'pillarD' },
-  { to: '/pillar/e', icon: '📚', key: 'pillarE' },
-  { to: '/pillar/f', icon: '🛠️', key: 'pillarF' },
-];
-
 export default function Layout({ children }) {
   const { t } = useTranslation();
-  const { t: tPillars } = useTranslation('pillars');
 
   return (
     <div className="min-h-screen bg-bg text-text flex flex-col">
@@ -42,6 +32,7 @@ export default function Layout({ children }) {
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               {[
                 { to: '/', label: t('nav.home') },
+                { to: '/pillars', label: t('nav.pillars') },
                 { to: '/program', label: t('nav.program') },
                 { to: '/videos', label: t('nav.videos') },
                 { to: '/contact', label: t('nav.contact') },
@@ -49,18 +40,6 @@ export default function Layout({ children }) {
               ].map(({ to, label }) => (
                 <Link key={to} to={to} className="text-xs text-muted hover:text-accent transition-colors duration-150">
                   {label}
-                </Link>
-              ))}
-            </div>
-
-            {/* Separator */}
-            <div className="hidden md:block h-4 w-px bg-border shrink-0" />
-
-            {/* Pillar links */}
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              {PILLAR_LINKS.map(({ to, key }) => (
-                <Link key={to} to={to} className="text-xs text-muted hover:text-accent transition-colors duration-150">
-                  {tPillars(`${key}.title`) || key}
                 </Link>
               ))}
             </div>

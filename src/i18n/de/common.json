@@ -1,5 +1,9 @@
 {
-  "lang": { "vi": "Tiếng Việt", "en": "English", "de": "Deutsch" },
+  "lang": {
+    "vi": "Tiếng Việt",
+    "en": "English",
+    "de": "Deutsch"
+  },
   "nav": {
     "home": "Startseite",
     "pillars": "6 Säulen",
@@ -22,9 +26,18 @@
   },
   "home": {
     "stats": [
-      { "value": "10 Min", "label": "Reicht, um täglich eine Gewohnheit zu starten" },
-      { "value": "6 Säulen", "label": "Umfassendes, evidenzbasiertes System" },
-      { "value": "12 Wochen", "label": "Strukturierter Fahrplan vom Anfänger zum Fortgeschrittenen" }
+      {
+        "value": "10 Min",
+        "label": "Reicht, um täglich eine Gewohnheit zu starten"
+      },
+      {
+        "value": "6 Säulen",
+        "label": "Umfassendes, evidenzbasiertes System"
+      },
+      {
+        "value": "12 Wochen",
+        "label": "Strukturierter Fahrplan vom Anfänger zum Fortgeschrittenen"
+      }
     ],
     "quote": "Sie müssen nicht perfekt sein. Sie müssen nur konsequent sein.",
     "quote_author": "— Gesundheit & Lebensstil"
@@ -80,16 +93,56 @@
       }
     ],
     "daily_blocks": [
-      { "time": "5 Min", "name": "Aufwärmen", "desc": "Gelenkbeweglichkeit, Körpertemperatur erhöhen", "icon": "🔥" },
-      { "time": "10–20 Min", "name": "Haupttraining", "desc": "Kraftübungen oder Cardio", "icon": "💪" },
-      { "time": "5–10 Min", "name": "Abkühlen & Erholung", "desc": "Dehnen, Körpertemperatur senken", "icon": "🧘" },
-      { "time": "5 Min", "name": "Mind Reset", "desc": "Tiefes Atmen oder kurze Meditation", "icon": "🌿" }
+      {
+        "time": "5 Min",
+        "name": "Aufwärmen",
+        "desc": "Gelenkbeweglichkeit, Körpertemperatur erhöhen",
+        "icon": "🔥"
+      },
+      {
+        "time": "10–20 Min",
+        "name": "Haupttraining",
+        "desc": "Kraftübungen oder Cardio",
+        "icon": "💪"
+      },
+      {
+        "time": "5–10 Min",
+        "name": "Abkühlen & Erholung",
+        "desc": "Dehnen, Körpertemperatur senken",
+        "icon": "🧘"
+      },
+      {
+        "time": "5 Min",
+        "name": "Mind Reset",
+        "desc": "Tiefes Atmen oder kurze Meditation",
+        "icon": "🌿"
+      }
     ],
     "weekly_days": [
-      { "days": "Mo · Mi · Fr", "type": "Kraft", "desc": "Kniebeuge, Hinge, Push, Pull, Core — 20–30 Min", "color": "green" },
-      { "days": "Di · Do", "type": "Leichtes Cardio", "desc": "Schnelles Gehen, Radfahren, Treppen — 20–30 Min", "color": "blue" },
-      { "days": "Sa", "type": "Aktive Erholung", "desc": "Dehnen, Yoga, entspanntes Gehen", "color": "teal" },
-      { "days": "So", "type": "Ruhetag", "desc": "Vollständige Erholung oder leichte Bewegung", "color": "purple" }
+      {
+        "days": "Mo · Mi · Fr",
+        "type": "Kraft",
+        "desc": "Kniebeuge, Hinge, Push, Pull, Core — 20–30 Min",
+        "color": "green"
+      },
+      {
+        "days": "Di · Do",
+        "type": "Leichtes Cardio",
+        "desc": "Schnelles Gehen, Radfahren, Treppen — 20–30 Min",
+        "color": "blue"
+      },
+      {
+        "days": "Sa",
+        "type": "Aktive Erholung",
+        "desc": "Dehnen, Yoga, entspanntes Gehen",
+        "color": "teal"
+      },
+      {
+        "days": "So",
+        "type": "Ruhetag",
+        "desc": "Vollständige Erholung oder leichte Bewegung",
+        "color": "purple"
+      }
     ]
   },
   "contact": {
@@ -118,10 +171,22 @@
     ],
     "faq_title": "Häufig Gestellte Fragen",
     "faq": [
-      { "q": "Kann ich persönliches Coaching erhalten?", "a": "Ich biete derzeit kein 1-zu-1-Coaching an, aber Sie können per E-Mail oder Zalo fragen und ich antworte nach besten Kräften. Die Website-Inhalte sind auch zur Selbstanwendung konzipiert." },
-      { "q": "Wie schnell antworten Sie?", "a": "E-Mail: 24–48 Stunden an Werktagen. Zalo: schneller, meist am gleichen Tag. Wenn ich beschäftigt bin, antworte ich so bald wie möglich." },
-      { "q": "Darf der Inhalt für kommerzielle Zwecke genutzt werden?", "a": "Nein — alle Inhalte sind nur für den persönlichen und nicht-kommerziellen Gebrauch. Kontaktieren Sie mich bitte, wenn Sie zusammenarbeiten möchten." },
-      { "q": "Kann ich Inhalte beitragen?", "a": "Sehr willkommen! Wenn Sie Wissen oder Erfahrungen teilen möchten, kontaktieren Sie mich per E-Mail für weitere Gespräche." }
+      {
+        "q": "Kann ich persönliches Coaching erhalten?",
+        "a": "Ich biete derzeit kein 1-zu-1-Coaching an, aber Sie können per E-Mail oder Zalo fragen und ich antworte nach besten Kräften. Die Website-Inhalte sind auch zur Selbstanwendung konzipiert."
+      },
+      {
+        "q": "Wie schnell antworten Sie?",
+        "a": "E-Mail: 24–48 Stunden an Werktagen. Zalo: schneller, meist am gleichen Tag. Wenn ich beschäftigt bin, antworte ich so bald wie möglich."
+      },
+      {
+        "q": "Darf der Inhalt für kommerzielle Zwecke genutzt werden?",
+        "a": "Nein — alle Inhalte sind nur für den persönlichen und nicht-kommerziellen Gebrauch. Kontaktieren Sie mich bitte, wenn Sie zusammenarbeiten möchten."
+      },
+      {
+        "q": "Kann ich Inhalte beitragen?",
+        "a": "Sehr willkommen! Wenn Sie Wissen oder Erfahrungen teilen möchten, kontaktieren Sie mich per E-Mail für weitere Gespräche."
+      }
     ],
     "cta": "Ich freue mich, von Ihnen zu hören — ob Frage, Feedback oder Fortschrittsbericht!"
   },
@@ -136,26 +201,63 @@
       "Diese Website für die Gemeinschaft vollständig kostenlos zu halten"
     ],
     "impact_stats": [
-      { "value": "100%", "label": "Inhalte völlig kostenlos" },
-      { "value": "6", "label": "Umfassende Gesundheitssäulen" },
-      { "value": "12 Wochen", "label": "Strukturierter Fahrplan" }
+      {
+        "value": "100%",
+        "label": "Inhalte völlig kostenlos"
+      },
+      {
+        "value": "6",
+        "label": "Umfassende Gesundheitssäulen"
+      },
+      {
+        "value": "12 Wochen",
+        "label": "Strukturierter Fahrplan"
+      }
     ],
     "uses_title": "Wofür Wird Ihre Unterstützung Verwendet?",
     "uses": [
-      { "icon": "🎬", "title": "Videoproduktion", "desc": "Aufnahme und Bearbeitung hochwertiger Übungs-Tutorial-Videos, die visuell und leicht zu verfolgen sind" },
-      { "icon": "📚", "title": "Recherche & Materialien", "desc": "Kauf wissenschaftlicher Artikel und Fachbücher, um genaue und aktuelle Inhalte zu gewährleisten" },
-      { "icon": "🌐", "title": "Website-Wartung", "desc": "Hosting-, Domain- und Entwicklungswerkzeugkosten, damit die Website reibungslos läuft" },
-      { "icon": "✍️", "title": "Neue Inhalte erstellen", "desc": "Zeit und Mühe für Recherche, Schreiben und Gestaltung weiterer hilfreicher Inhalte" }
+      {
+        "icon": "🎬",
+        "title": "Videoproduktion",
+        "desc": "Aufnahme und Bearbeitung hochwertiger Übungs-Tutorial-Videos, die visuell und leicht zu verfolgen sind"
+      },
+      {
+        "icon": "📚",
+        "title": "Recherche & Materialien",
+        "desc": "Kauf wissenschaftlicher Artikel und Fachbücher, um genaue und aktuelle Inhalte zu gewährleisten"
+      },
+      {
+        "icon": "🌐",
+        "title": "Website-Wartung",
+        "desc": "Hosting-, Domain- und Entwicklungswerkzeugkosten, damit die Website reibungslos läuft"
+      },
+      {
+        "icon": "✍️",
+        "title": "Neue Inhalte erstellen",
+        "desc": "Zeit und Mühe für Recherche, Schreiben und Gestaltung weiterer hilfreicher Inhalte"
+      }
     ],
     "bank_title": "Unterstützungsinformationen",
     "bank_placeholder": "Bankverbindungsdaten werden bald aktualisiert",
     "qr_placeholder": "QR-Code kommt bald",
     "faq_title": "Häufig Gestellte Fragen",
     "faq": [
-      { "q": "Wie viel sollte ich beitragen?", "a": "Jeder Betrag wird sehr geschätzt. Selbst ein kleiner Beitrag ist bedeutsam — was am meisten zählt, ist Ihre Unterstützung." },
-      { "q": "Erhalte ich nach der Spende etwas?", "a": "Alle Inhalte bleiben für jeden kostenlos — es gibt keine Premium-Stufe. Dies ist ein freiwilliger Beitrag, damit ich weiterhin pflegen und entwickeln kann." },
-      { "q": "Ist die Zahlung sicher?", "a": "Direktüberweisung — kein Drittanbieter, völlig transparent." },
-      { "q": "Kann ich stornieren oder eine Rückerstattung erhalten?", "a": "Dies ist ein einmaliger freiwilliger Beitrag, daher gibt es keine Rückerstattungsrichtlinie. Kontaktieren Sie mich jedoch, wenn es ein Problem gibt." }
+      {
+        "q": "Wie viel sollte ich beitragen?",
+        "a": "Jeder Betrag wird sehr geschätzt. Selbst ein kleiner Beitrag ist bedeutsam — was am meisten zählt, ist Ihre Unterstützung."
+      },
+      {
+        "q": "Erhalte ich nach der Spende etwas?",
+        "a": "Alle Inhalte bleiben für jeden kostenlos — es gibt keine Premium-Stufe. Dies ist ein freiwilliger Beitrag, damit ich weiterhin pflegen und entwickeln kann."
+      },
+      {
+        "q": "Ist die Zahlung sicher?",
+        "a": "Direktüberweisung — kein Drittanbieter, völlig transparent."
+      },
+      {
+        "q": "Kann ich stornieren oder eine Rückerstattung erhalten?",
+        "a": "Dies ist ein einmaliger freiwilliger Beitrag, daher gibt es keine Rückerstattungsrichtlinie. Kontaktieren Sie mich jedoch, wenn es ein Problem gibt."
+      }
     ],
     "thanks": "Vielen herzlichen Dank!",
     "thanks_note": "Jeder Beitrag, egal wie klein, ist bedeutsam — 100% zur Pflege und Entwicklung der Inhalte verwendet"
@@ -175,7 +277,8 @@
     "PULL": "Pull — Korrekte Zugbewegung",
     "HINGE": "Hinge — Hüftangeltechnik",
     "CORE": "Core — Rumpfkraft",
-    "BREATH": "Atem — Atemtechnik"
+    "BREATH": "Atem — Atemtechnik",
+    "click_to_play": "Video zum Abspielen anklicken"
   },
   "common": {
     "learn_more": "Mehr Erfahren",

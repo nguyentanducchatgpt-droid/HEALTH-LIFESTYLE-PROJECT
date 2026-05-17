@@ -1,5 +1,9 @@
 {
-  "lang": { "vi": "Tiếng Việt", "en": "English", "de": "Deutsch" },
+  "lang": {
+    "vi": "Tiếng Việt",
+    "en": "English",
+    "de": "Deutsch"
+  },
   "nav": {
     "home": "Trang Chủ",
     "pillars": "6 Trụ Cột",
@@ -22,9 +26,18 @@
   },
   "home": {
     "stats": [
-      { "value": "10 phút", "label": "Đủ để bắt đầu thói quen mỗi ngày" },
-      { "value": "6 trụ cột", "label": "Hệ thống toàn diện đã được kiểm chứng" },
-      { "value": "12 tuần", "label": "Lộ trình có cấu trúc từ mới → nâng cao" }
+      {
+        "value": "10 phút",
+        "label": "Đủ để bắt đầu thói quen mỗi ngày"
+      },
+      {
+        "value": "6 trụ cột",
+        "label": "Hệ thống toàn diện đã được kiểm chứng"
+      },
+      {
+        "value": "12 tuần",
+        "label": "Lộ trình có cấu trúc từ mới → nâng cao"
+      }
     ],
     "quote": "Không cần hoàn hảo. Chỉ cần nhất quán.",
     "quote_author": "— Sức Khỏe & Đời Sống"
@@ -80,16 +93,56 @@
       }
     ],
     "daily_blocks": [
-      { "time": "5 phút", "name": "Khởi Động", "desc": "Vận động khớp, tăng nhiệt cơ thể", "icon": "🔥" },
-      { "time": "10–20 phút", "name": "Vận Động Chính", "desc": "Bài tập sức mạnh hoặc cardio", "icon": "💪" },
-      { "time": "5–10 phút", "name": "Giãn Cơ & Phục Hồi", "desc": "Kéo giãn, hạ nhiệt cơ thể", "icon": "🧘" },
-      { "time": "5 phút", "name": "Mind Reset", "desc": "Thở sâu hoặc thiền ngắn", "icon": "🌿" }
+      {
+        "time": "5 phút",
+        "name": "Khởi Động",
+        "desc": "Vận động khớp, tăng nhiệt cơ thể",
+        "icon": "🔥"
+      },
+      {
+        "time": "10–20 phút",
+        "name": "Vận Động Chính",
+        "desc": "Bài tập sức mạnh hoặc cardio",
+        "icon": "💪"
+      },
+      {
+        "time": "5–10 phút",
+        "name": "Giãn Cơ & Phục Hồi",
+        "desc": "Kéo giãn, hạ nhiệt cơ thể",
+        "icon": "🧘"
+      },
+      {
+        "time": "5 phút",
+        "name": "Mind Reset",
+        "desc": "Thở sâu hoặc thiền ngắn",
+        "icon": "🌿"
+      }
     ],
     "weekly_days": [
-      { "days": "Thứ 2 · 4 · 6", "type": "Sức Mạnh", "desc": "Squat, Hinge, Push, Pull, Core — 20–30 phút", "color": "green" },
-      { "days": "Thứ 3 · 5", "type": "Cardio Nhẹ", "desc": "Đi bộ nhanh, đạp xe, leo thang — 20–30 phút", "color": "blue" },
-      { "days": "Thứ 7", "type": "Phục Hồi Tích Cực", "desc": "Giãn cơ, yoga, đi dạo thư giãn", "color": "teal" },
-      { "days": "Chủ Nhật", "type": "Nghỉ Ngơi", "desc": "Nghỉ hoàn toàn hoặc vận động nhẹ theo ý thích", "color": "purple" }
+      {
+        "days": "Thứ 2 · 4 · 6",
+        "type": "Sức Mạnh",
+        "desc": "Squat, Hinge, Push, Pull, Core — 20–30 phút",
+        "color": "green"
+      },
+      {
+        "days": "Thứ 3 · 5",
+        "type": "Cardio Nhẹ",
+        "desc": "Đi bộ nhanh, đạp xe, leo thang — 20–30 phút",
+        "color": "blue"
+      },
+      {
+        "days": "Thứ 7",
+        "type": "Phục Hồi Tích Cực",
+        "desc": "Giãn cơ, yoga, đi dạo thư giãn",
+        "color": "teal"
+      },
+      {
+        "days": "Chủ Nhật",
+        "type": "Nghỉ Ngơi",
+        "desc": "Nghỉ hoàn toàn hoặc vận động nhẹ theo ý thích",
+        "color": "purple"
+      }
     ]
   },
   "contact": {
@@ -118,10 +171,22 @@
     ],
     "faq_title": "Câu Hỏi Thường Gặp",
     "faq": [
-      { "q": "Mình có thể được tư vấn cá nhân không?", "a": "Hiện tại mình chưa cung cấp dịch vụ tư vấn 1-1, nhưng bạn có thể hỏi qua email hoặc Zalo và mình sẽ trả lời theo khả năng. Nội dung trên web cũng được thiết kế để tự áp dụng." },
-      { "q": "Mình phản hồi trong bao lâu?", "a": "Email: 24–48 giờ trong ngày làm việc. Zalo: nhanh hơn, thường trong cùng ngày. Nếu bận mình sẽ trả lời sớm nhất có thể." },
-      { "q": "Nội dung có thể dùng cho mục đích thương mại không?", "a": "Không — toàn bộ nội dung chỉ dành cho mục đích cá nhân và phi thương mại. Vui lòng liên hệ nếu muốn hợp tác." },
-      { "q": "Mình có thể đóng góp nội dung không?", "a": "Rất hoan nghênh! Nếu bạn có kiến thức hoặc kinh nghiệm muốn chia sẻ, hãy liên hệ qua email để bàn thêm." }
+      {
+        "q": "Mình có thể được tư vấn cá nhân không?",
+        "a": "Hiện tại mình chưa cung cấp dịch vụ tư vấn 1-1, nhưng bạn có thể hỏi qua email hoặc Zalo và mình sẽ trả lời theo khả năng. Nội dung trên web cũng được thiết kế để tự áp dụng."
+      },
+      {
+        "q": "Mình phản hồi trong bao lâu?",
+        "a": "Email: 24–48 giờ trong ngày làm việc. Zalo: nhanh hơn, thường trong cùng ngày. Nếu bận mình sẽ trả lời sớm nhất có thể."
+      },
+      {
+        "q": "Nội dung có thể dùng cho mục đích thương mại không?",
+        "a": "Không — toàn bộ nội dung chỉ dành cho mục đích cá nhân và phi thương mại. Vui lòng liên hệ nếu muốn hợp tác."
+      },
+      {
+        "q": "Mình có thể đóng góp nội dung không?",
+        "a": "Rất hoan nghênh! Nếu bạn có kiến thức hoặc kinh nghiệm muốn chia sẻ, hãy liên hệ qua email để bàn thêm."
+      }
     ],
     "cta": "Mình rất vui được nghe từ bạn — dù là câu hỏi, góp ý, hay chia sẻ tiến bộ của bạn!"
   },
@@ -136,26 +201,63 @@
       "Giữ trang web hoàn toàn miễn phí cho cộng đồng"
     ],
     "impact_stats": [
-      { "value": "100%", "label": "Nội dung hoàn toàn miễn phí" },
-      { "value": "6", "label": "Trụ cột sức khỏe toàn diện" },
-      { "value": "12 tuần", "label": "Lộ trình có cấu trúc" }
+      {
+        "value": "100%",
+        "label": "Nội dung hoàn toàn miễn phí"
+      },
+      {
+        "value": "6",
+        "label": "Trụ cột sức khỏe toàn diện"
+      },
+      {
+        "value": "12 tuần",
+        "label": "Lộ trình có cấu trúc"
+      }
     ],
     "uses_title": "Tiền Ủng Hộ Dùng Để Làm Gì?",
     "uses": [
-      { "icon": "🎬", "title": "Sản xuất video", "desc": "Quay và biên tập video hướng dẫn bài tập chất lượng cao, trực quan và dễ theo" },
-      { "icon": "📚", "title": "Nghiên cứu & tài liệu", "desc": "Mua tài liệu khoa học, sách chuyên ngành để đảm bảo nội dung chính xác và cập nhật" },
-      { "icon": "🌐", "title": "Duy trì website", "desc": "Chi phí hosting, domain và công cụ phát triển để web luôn hoạt động tốt" },
-      { "icon": "✍️", "title": "Tạo nội dung mới", "desc": "Thời gian và công sức để nghiên cứu, viết và thiết kế thêm nội dung hữu ích" }
+      {
+        "icon": "🎬",
+        "title": "Sản xuất video",
+        "desc": "Quay và biên tập video hướng dẫn bài tập chất lượng cao, trực quan và dễ theo"
+      },
+      {
+        "icon": "📚",
+        "title": "Nghiên cứu & tài liệu",
+        "desc": "Mua tài liệu khoa học, sách chuyên ngành để đảm bảo nội dung chính xác và cập nhật"
+      },
+      {
+        "icon": "🌐",
+        "title": "Duy trì website",
+        "desc": "Chi phí hosting, domain và công cụ phát triển để web luôn hoạt động tốt"
+      },
+      {
+        "icon": "✍️",
+        "title": "Tạo nội dung mới",
+        "desc": "Thời gian và công sức để nghiên cứu, viết và thiết kế thêm nội dung hữu ích"
+      }
     ],
     "bank_title": "Thông Tin Ủng Hộ",
     "bank_placeholder": "Thông tin tài khoản ngân hàng sẽ được cập nhật sớm",
     "qr_placeholder": "QR Code sẽ có sớm",
     "faq_title": "Câu Hỏi Thường Gặp",
     "faq": [
-      { "q": "Ủng hộ bao nhiêu là phù hợp?", "a": "Bất kỳ số tiền nào đều được trân trọng. Ngay cả 10,000 VNĐ cũng có ý nghĩa to lớn — điều quan trọng là sự đồng hành của bạn." },
-      { "q": "Tôi có nhận được gì sau khi ủng hộ không?", "a": "Nội dung luôn miễn phí cho tất cả mọi người, không có gói premium. Đây là sự ủng hộ tự nguyện để mình tiếp tục duy trì và phát triển." },
-      { "q": "Thanh toán có an toàn không?", "a": "Chuyển khoản ngân hàng trực tiếp — không qua bên thứ ba, hoàn toàn minh bạch." },
-      { "q": "Tôi có thể hủy hoặc hoàn tiền không?", "a": "Đây là ủng hộ tự nguyện một lần nên không có chính sách hoàn tiền. Tuy nhiên bạn có thể liên hệ mình nếu có vấn đề." }
+      {
+        "q": "Ủng hộ bao nhiêu là phù hợp?",
+        "a": "Bất kỳ số tiền nào đều được trân trọng. Ngay cả 10,000 VNĐ cũng có ý nghĩa to lớn — điều quan trọng là sự đồng hành của bạn."
+      },
+      {
+        "q": "Tôi có nhận được gì sau khi ủng hộ không?",
+        "a": "Nội dung luôn miễn phí cho tất cả mọi người, không có gói premium. Đây là sự ủng hộ tự nguyện để mình tiếp tục duy trì và phát triển."
+      },
+      {
+        "q": "Thanh toán có an toàn không?",
+        "a": "Chuyển khoản ngân hàng trực tiếp — không qua bên thứ ba, hoàn toàn minh bạch."
+      },
+      {
+        "q": "Tôi có thể hủy hoặc hoàn tiền không?",
+        "a": "Đây là ủng hộ tự nguyện một lần nên không có chính sách hoàn tiền. Tuy nhiên bạn có thể liên hệ mình nếu có vấn đề."
+      }
     ],
     "thanks": "Cảm ơn bạn rất nhiều!",
     "thanks_note": "Mỗi đóng góp dù nhỏ đều có ý nghĩa to lớn — 100% dùng để duy trì và phát triển nội dung"
@@ -175,7 +277,8 @@
     "PULL": "Pull — Kéo đúng cách",
     "HINGE": "Hinge — Gập hông đúng cách",
     "CORE": "Core — Lõi cơ thể",
-    "BREATH": "Breath — Kỹ thuật thở"
+    "BREATH": "Breath — Kỹ thuật thở",
+    "click_to_play": "Nhấn vào video để xem"
   },
   "common": {
     "learn_more": "Tìm Hiểu Thêm",

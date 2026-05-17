@@ -99,25 +99,28 @@ export default function Program() {
       </div>
 
       {/* ── Jump links ─────────────────────────────────────── */}
-      <div className="flex flex-wrap gap-2 mb-14">
-        {['#roadmap','#daily','#weekly','#tips','#progress'].map((href, i) => {
-          const labels = [
-            t('program.roadmap_title'),
-            t('program.daily_title'),
-            t('program.weekly_title'),
-            t('program.tips_title'),
-            t('program.progress_title'),
-          ];
-          return (
+      <div className="overflow-x-auto scrollbar-hide mb-14 -mx-1 px-1">
+        <div className="flex gap-2 pb-1" style={{ width: 'max-content' }}>
+          {[
+            { href: '#roadmap',  icon: '🗓️', label: t('program.roadmap_title'),  color: 'text-green-400  bg-green-500/8  border-green-500/20  hover:border-green-500/50  hover:bg-green-500/12',  num: 'bg-green-500/15  border-green-500/30  text-green-400'  },
+            { href: '#daily',    icon: '⏱️', label: t('program.daily_title'),    color: 'text-accent     bg-accent/8     border-accent/20     hover:border-accent/50     hover:bg-accent/12',     num: 'bg-accent/15     border-accent/30     text-accent'     },
+            { href: '#weekly',   icon: '📅', label: t('program.weekly_title'),   color: 'text-blue-400   bg-blue-500/8   border-blue-500/20   hover:border-blue-500/50   hover:bg-blue-500/12',   num: 'bg-blue-500/15   border-blue-500/30   text-blue-400'   },
+            { href: '#tips',     icon: '💡', label: t('program.tips_title'),     color: 'text-yellow-400 bg-yellow-500/8 border-yellow-500/20 hover:border-yellow-500/50 hover:bg-yellow-500/12', num: 'bg-yellow-500/15 border-yellow-500/30 text-yellow-400' },
+            { href: '#progress', icon: '📈', label: t('program.progress_title'), color: 'text-purple-400 bg-purple-500/8 border-purple-500/20 hover:border-purple-500/50 hover:bg-purple-500/12', num: 'bg-purple-500/15 border-purple-500/30 text-purple-400' },
+          ].map(({ href, icon, label, color, num }, i) => (
             <a
               key={href}
               href={href}
-              className="text-xs font-medium px-3 py-1.5 rounded-lg border border-border text-muted hover:text-accent hover:border-accent/40 transition-all duration-150"
+              className={`group flex items-center gap-2.5 px-4 py-2.5 rounded-xl border font-medium text-xs transition-all duration-200 hover:-translate-y-0.5 ${color}`}
             >
-              {i + 1}. {labels[i]}
+              <span className={`w-5 h-5 rounded-full border text-[10px] font-bold flex items-center justify-center shrink-0 ${num}`}>
+                {i + 1}
+              </span>
+              <span className="text-sm">{icon}</span>
+              <span className="whitespace-nowrap">{label}</span>
             </a>
-          );
-        })}
+          ))}
+        </div>
       </div>
 
       {/* ── 1. 12-Week Roadmap ─────────────────────────────── */}

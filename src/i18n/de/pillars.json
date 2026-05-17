@@ -90,6 +90,156 @@
         ]
       }
     ],
+    "warmup_title": "Aufwärmen (5–8 Min)",
+    "warmup": [
+      { "exercise": "Zwerchfellatmung", "how": "Hand auf den Bauch, einatmen und Bauch sanft ausdehnen, langsam ausatmen", "duration": "4–6 Atemzüge" },
+      { "exercise": "Auf der Stelle gehen", "how": "Auf der Stelle gehen, Knie mäßig heben, Schultern entspannt", "duration": "60 Sek" },
+      { "exercise": "Schulterkreisen", "how": "Schultern nach hinten kreisen, Nacken nicht einziehen", "duration": "10 Kreise" },
+      { "exercise": "Schulterblatt-Squeeze", "how": "Schulterblätter sanft zusammenziehen, Brust öffnen", "duration": "10 Wdh" },
+      { "exercise": "Hüftangel-Drill", "how": "Hüften nach hinten schieben, Wirbelsäule neutral, Knie leicht gebeugt", "duration": "8 Wdh" },
+      { "exercise": "Stuhl-Squat", "how": "Auf Stuhl setzen und aufstehen, Knie kontrollieren", "duration": "8 Wdh" }
+    ],
+    "cooldown_title": "Abkühlen nach dem Training (4–6 Min)",
+    "cooldown": [
+      { "exercise": "Hüftbeuger-Dehnung", "how": "Ein Knie beugen, Hüfte sanft nach vorne drücken", "duration": "30 Sek/Seite" },
+      { "exercise": "Hamstring-Dehnung", "how": "Ein Bein ausstrecken, sanft nach vorne beugen, Rücken neutral", "duration": "30 Sek/Seite" },
+      { "exercise": "Brust-Öffner", "how": "Arme hinter dem Rücken oder Hände am Türrahmen, Brust öffnen", "duration": "30 Sek" },
+      { "exercise": "Kind-Pose", "how": "Auf Fersen setzen, Arme nach vorne strecken, langsam atmen", "duration": "30–60 Sek" },
+      { "exercise": "Langsames Atmen", "how": "Einatmen 4s, ausatmen 6s", "duration": "4–6 Atemzüge" }
+    ],
+    "movements_title": "6 Bewegungsmuster — Detaillierter Leitfaden",
+    "movements_detail": [
+      {
+        "id": "squat", "name": "Squat", "icon": "🦵", "color": "green",
+        "goal": "Kraft der Oberschenkel und Gesäßmuskeln aufbauen; Fähigkeit zum Aufstehen/Hinsetzen verbessern.",
+        "basic": "Stuhl-Squat", "prescription": "2–3 Sätze × 8–12 Wdh",
+        "basic_how": "Auf einem Stuhl sitzen, Füße hüftbreit. Leicht nach vorne lehnen, Füße in den Boden drücken um aufzustehen. Langsam zurücksetzen — nicht fallen lassen.",
+        "cue": "Knie folgen Zehen · Fersen am Boden · Brust offen",
+        "levels": [
+          { "label": "Anfänger", "exercise": "Stuhl-Squat" },
+          { "label": "Standard", "exercise": "Bodyweight Squat" },
+          { "label": "Fortgeschritten", "exercise": "Goblet Squat oder Tempo Squat (3s runter)" }
+        ],
+        "errors": "Knie fallen einwärts, Fersen heben sich, Rücken rundet, zu tief ohne Kontrolle"
+      },
+      {
+        "id": "hinge", "name": "Hinge", "icon": "🔄", "color": "lime",
+        "goal": "Richtiges Hüftangeln lernen; Rücken beim Bücken schützen; Gesäß und Hamstrings trainieren.",
+        "basic": "Hüftangel", "prescription": "2–3 Sätze × 8–12 Wdh",
+        "basic_how": "Aufrecht stehen, Hände auf Hüften. Knie leicht beugen, Hüfte nach hinten schieben als würden Sie eine Wand dahinter berühren. Wirbelsäule neutral halten.",
+        "cue": "Hüfte nach hinten schieben · Wirbelsäule lang · Leichter Rumpf",
+        "levels": [
+          { "label": "Anfänger", "exercise": "Hüftangel mit Händen auf Hüften" },
+          { "label": "Standard", "exercise": "Good Morning" },
+          { "label": "Fortgeschritten", "exercise": "Romanian Deadlift mit Hanteln/Band" }
+        ],
+        "errors": "Wirbelsäule statt Hüfte beugen, Rücken runden, Knie sperren, Nacken überstrecken"
+      },
+      {
+        "id": "push", "name": "Push", "icon": "💪", "color": "blue",
+        "goal": "Oberkörper-Druckkraft aufbauen; Fähigkeit verbessern Türen zu schieben, Gegenstände zu heben.",
+        "basic": "Wand-Liegestütz", "prescription": "2–3 Sätze × 8–12 Wdh",
+        "basic_how": "Eine Armlänge von der Wand entfernt stehen, Hände auf Brusthöhe. Ellbogen beugen bis Brust nah an Wand kommt, dann wegdrücken. Körper gerade halten.",
+        "cue": "Körper wie ein Brett · Langer Nacken · Boden/Wand wegdrücken",
+        "levels": [
+          { "label": "Anfänger", "exercise": "Wand-Liegestütz" },
+          { "label": "Standard", "exercise": "Knie-Liegestütz" },
+          { "label": "Fortgeschritten", "exercise": "Standard Liegestütz oder Tempo Liegestütz" }
+        ],
+        "errors": "Rücken durchhängen, Nacken einziehen, Ellbogen zu weit ausfächern"
+      },
+      {
+        "id": "pull", "name": "Pull", "icon": "🏋️", "color": "teal",
+        "goal": "Druckmuskeln ausgleichen; Rundrücken verbessern; oberen Rücken stärken.",
+        "basic": "Handtuch-Rudern", "prescription": "2–3 Sätze × 10–12 Wdh",
+        "basic_how": "Band auf Brusthöhe befestigen. Beide Enden greifen, Ellbogen nach hinten ziehen, Schulterblätter sanft zusammendrücken. Langsam loslassen. Schultern von Ohren fernhalten.",
+        "cue": "Ellbogen nach hinten ziehen · Schulterblätter sanft zusammen · Ohren von Schultern fern",
+        "levels": [
+          { "label": "Anfänger", "exercise": "Handtuch-Rudern" },
+          { "label": "Standard", "exercise": "Band-Rudern" },
+          { "label": "Fortgeschritten", "exercise": "Einarm-Hantelrudern oder schwereres Band" }
+        ],
+        "errors": "Schultern hochziehen, Rücken runden, mit Handgelenken statt Rücken ziehen"
+      },
+      {
+        "id": "core", "name": "Core", "icon": "🎯", "color": "purple",
+        "goal": "Rumpfstabilität verbessern; Rücken unterstützen; Haltung korrigieren.",
+        "basic": "Dead Bug", "prescription": "2–3 Sätze × 6–10 Wdh/Seite",
+        "basic_how": "Auf den Rücken legen, Arme nach oben, Knie 90°. Rumpf leicht anspannen. Langsam gegenüberliegenden Arm und Bein ausstrecken, dann wechseln.",
+        "cue": "Sanfter Bauchzug · Gleichmäßig atmen · Neutrale Wirbelsäule",
+        "levels": [
+          { "label": "Anfänger", "exercise": "Dead Bug (langsam), Knie-Plank" },
+          { "label": "Standard", "exercise": "Kurzer Plank, Seiten-Plank auf Knien" },
+          { "label": "Fortgeschritten", "exercise": "Seiten-Plank, Anti-Rotations-Band" }
+        ],
+        "errors": "Atem anhalten, Rücken durchbiegen, Gesäß zu hoch, Nackenverspannung"
+      },
+      {
+        "id": "breath", "name": "Atem", "icon": "🌬️", "color": "orange",
+        "goal": "Rumpf beim Training stabilisieren; Stress reduzieren; Erholung unterstützen.",
+        "basic": "Zwerchfellatmung", "prescription": "1–3 Min",
+        "basic_how": "Eine Hand auf Brust, eine auf Bauch. Durch die Nase einatmen, Bauch ausdehnen (nicht Brust), langsam durch den Mund ausatmen.",
+        "cue": "Bauch dehnt sich beim Einatmen · Langsam ausatmen · Brust entspannt",
+        "levels": [
+          { "label": "Grundlegend", "exercise": "Zwerchfellatmung (Bauchatmung)" },
+          { "label": "Fortgeschritten", "exercise": "Box-Atmung: einatmen 4s — halten 4s — ausatmen 4s — halten 4s" }
+        ],
+        "errors": "Brustatmung statt Bauchatmung, Atem während Training anhalten, zu schnell atmen"
+      }
+    ],
+    "plans_title": "Trainingseinheiten nach Ziel",
+    "workout_plans": [
+      {
+        "id": "busy", "name": "10 Min/Tag", "tag": "Super Busy", "color": "orange",
+        "type": "blocks",
+        "blocks": [
+          { "phase": "Aufwärmen", "time": "2 Min", "content": "Schnelles Aufwärmen: auf der Stelle gehen, Schulterkreisen" },
+          { "phase": "Haupttraining", "time": "6 Min", "content": "Squat 30s · Liegestütz 30s · Glute Bridge 30s · Plank 20–30s — 2 Runden" },
+          { "phase": "Abkühlen", "time": "2 Min", "content": "Abkühlen + tiefes Atmen" }
+        ]
+      },
+      {
+        "id": "fat_loss", "name": "Fettabbau", "tag": "20 Min", "color": "green",
+        "type": "blocks",
+        "blocks": [
+          { "phase": "Aufwärmen", "time": "3 Min", "content": "Auf der Stelle gehen, Schulterkreisen, Stuhl-Squat" },
+          { "phase": "Haupttraining", "time": "14 Min", "content": "Squat 40s · Liegestütz 30s · Rudern 40s · Glute Bridge 40s · Gehen 40s — 20s Pause zwischen Übungen, 2 Runden" },
+          { "phase": "Abkühlen", "time": "3 Min", "content": "Hüfte dehnen, Brust öffnen, Kind-Pose" }
+        ]
+      },
+      {
+        "id": "muscle", "name": "Muskelaufbau", "tag": "30 Min", "color": "purple",
+        "type": "exercises",
+        "exercises": [
+          { "name": "Squat oder Goblet Squat", "sets": "3 × 8–12 Wdh" },
+          { "name": "Liegestütz (passendes Level)", "sets": "3 × 8–12 Wdh" },
+          { "name": "Band-Rudern oder Hantel-Rudern", "sets": "3 × 10–12 Wdh" },
+          { "name": "Glute Bridge / Hip Thrust", "sets": "3 × 12–15 Wdh" },
+          { "name": "Plank", "sets": "3 × 20–40 Sek" }
+        ]
+      },
+      {
+        "id": "mobility", "name": "Beweglichkeit", "tag": "10 Min", "color": "teal",
+        "type": "exercises",
+        "exercises": [
+          { "name": "Kinneinzug", "sets": "8–10 Wdh" },
+          { "name": "Schulterkreisen", "sets": "10 Kreise" },
+          { "name": "Türrahmen-Dehnung", "sets": "30 Sek" },
+          { "name": "Brustwirbel-Rotation", "sets": "6 Wdh/Seite" },
+          { "name": "Hüftbeuger-Dehnung", "sets": "30 Sek/Seite" },
+          { "name": "Hamstring-Dehnung", "sets": "30 Sek/Seite" },
+          { "name": "Kind-Pose + langsames Atmen", "sets": "60 Sek" }
+        ]
+      }
+    ],
+    "tests_title": "Monatliche Fortschrittstests",
+    "progress_tests": [
+      { "capability": "Beinkraft", "test": "Maximale Stuhl-Squats in 1 Minute" },
+      { "capability": "Core", "test": "Knie-Plank oder normaler Plank — maximale Haltezeit" },
+      { "capability": "Ausdauer", "test": "6-Minuten-Gehtest — zurückgelegte Strecke messen" },
+      { "capability": "Beweglichkeit", "test": "Hüftangeln, Schulterrotation, volle Squat-Tiefe prüfen" },
+      { "capability": "Gewohnheit", "test": "Einheiten/Woche · durchschnittliche Schritte · Energielevel" }
+    ],
     "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
   },
   "pillarB": {

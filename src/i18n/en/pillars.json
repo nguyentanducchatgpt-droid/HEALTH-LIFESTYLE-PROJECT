@@ -90,6 +90,156 @@
         ]
       }
     ],
+    "warmup_title": "Standard Warm-Up (5–8 min)",
+    "warmup": [
+      { "exercise": "Diaphragmatic Breath", "how": "Hand on belly, inhale to expand belly gently, exhale slowly through mouth", "duration": "4–6 breaths" },
+      { "exercise": "March in Place", "how": "Walk in place, raise knees moderately, shoulders relaxed", "duration": "60 sec" },
+      { "exercise": "Shoulder Roll", "how": "Roll shoulders backward gently, don't hunch neck", "duration": "10 circles" },
+      { "exercise": "Scapular Squeeze", "how": "Gently draw shoulder blades back, open chest", "duration": "10 reps" },
+      { "exercise": "Hip Hinge Drill", "how": "Push hips back, spine neutral, knees slightly soft", "duration": "8 reps" },
+      { "exercise": "Squat to Chair", "how": "Sit to chair and stand back up, controlling knees", "duration": "8 reps" }
+    ],
+    "cooldown_title": "Post-Workout Cool-Down (4–6 min)",
+    "cooldown": [
+      { "exercise": "Hip Flexor Stretch", "how": "Kneel one leg, gently push hip forward", "duration": "30 sec/side" },
+      { "exercise": "Hamstring Stretch", "how": "Extend one leg, fold gently forward, keep back neutral", "duration": "30 sec/side" },
+      { "exercise": "Chest Opener", "how": "Arms behind back or hands on doorframe, open chest", "duration": "30 sec" },
+      { "exercise": "Child Pose", "how": "Sit back on heels, reach arms forward, breathe slowly", "duration": "30–60 sec" },
+      { "exercise": "Slow Breathing", "how": "Inhale 4s, exhale 6s", "duration": "4–6 breaths" }
+    ],
+    "movements_title": "6 Movement Patterns — Detailed Guide",
+    "movements_detail": [
+      {
+        "id": "squat", "name": "Squat", "icon": "🦵", "color": "green",
+        "goal": "Build quad, glute and knee strength; improve ability to stand/sit; support daily activities.",
+        "basic": "Sit-to-Stand", "prescription": "2–3 sets × 8–12 reps",
+        "basic_how": "Sit on a chair, feet hip-width apart. Lean slightly forward, push feet into floor to stand. Lower back down slowly — don't drop.",
+        "cue": "Knees track toes · Heels planted · Chest open",
+        "levels": [
+          { "label": "Beginner", "exercise": "Sit-to-Stand with chair" },
+          { "label": "Standard", "exercise": "Bodyweight Squat" },
+          { "label": "Advanced", "exercise": "Goblet Squat or Tempo Squat (3s down)" }
+        ],
+        "errors": "Knees caving in, heels lifting, rounding back, going too deep before ready"
+      },
+      {
+        "id": "hinge", "name": "Hinge", "icon": "🔄", "color": "lime",
+        "goal": "Learn proper hip hinge; protect the lower back when bending; train glutes and hamstrings.",
+        "basic": "Hip Hinge", "prescription": "2–3 sets × 8–12 reps",
+        "basic_how": "Stand upright, hands on hips. Soft knees, push hips back as if reaching for a wall behind. Keep spine neutral. When you feel a gentle hamstring pull, stand back up.",
+        "cue": "Push hips back · Long spine · Light core brace",
+        "levels": [
+          { "label": "Beginner", "exercise": "Hip Hinge with hands on hips" },
+          { "label": "Standard", "exercise": "Good Morning" },
+          { "label": "Advanced", "exercise": "Romanian Deadlift with dumbbells/band" }
+        ],
+        "errors": "Bending at spine instead of hips, rounding back, locking knees, neck hyperextension"
+      },
+      {
+        "id": "push", "name": "Push", "icon": "💪", "color": "blue",
+        "goal": "Build upper body pushing strength; improve ability to push doors, lift objects overhead.",
+        "basic": "Wall Push-up", "prescription": "2–3 sets × 8–12 reps",
+        "basic_how": "Stand an arm's length from wall, hands at chest height. Bend elbows to bring chest toward wall, then push back. Keep body in a straight line — no sagging.",
+        "cue": "Body like a plank · Long neck · Push the floor/wall away",
+        "levels": [
+          { "label": "Beginner", "exercise": "Wall Push-up" },
+          { "label": "Standard", "exercise": "Knee Push-up" },
+          { "label": "Advanced", "exercise": "Standard Push-up or Tempo Push-up" }
+        ],
+        "errors": "Sagging back, craning neck, elbows flaring wide, only moving head not torso"
+      },
+      {
+        "id": "pull", "name": "Pull", "icon": "🏋️", "color": "teal",
+        "goal": "Balance push muscles; improve rounded shoulder posture; strengthen upper back.",
+        "basic": "Towel Row", "prescription": "2–3 sets × 10–12 reps",
+        "basic_how": "Anchor a band or towel at chest height. Grip both ends, pull elbows back, gently squeeze shoulder blades. Release slowly. Chest open, shoulders away from ears.",
+        "cue": "Pull elbows back · Gentle shoulder squeeze · Ears away from shoulders",
+        "levels": [
+          { "label": "Beginner", "exercise": "Towel Row" },
+          { "label": "Standard", "exercise": "Band Row" },
+          { "label": "Advanced", "exercise": "One-arm Dumbbell Row or heavier Band Row" }
+        ],
+        "errors": "Shrugging shoulders, rounding back, pulling with wrists instead of back, releasing too fast"
+      },
+      {
+        "id": "core", "name": "Core", "icon": "🎯", "color": "purple",
+        "goal": "Improve trunk stability; support the lower back; correct posture.",
+        "basic": "Dead Bug", "prescription": "2–3 sets × 6–10 reps/side",
+        "basic_how": "Lie on back, arms reaching up, knees at 90°. Gently brace core so lower back doesn't arch. Slowly extend opposite arm and leg, then switch.",
+        "cue": "Gentle belly draw · Breathe steadily · Neutral spine",
+        "levels": [
+          { "label": "Beginner", "exercise": "Dead Bug (slow), Knee Plank" },
+          { "label": "Standard", "exercise": "Short Plank, Side Plank on knees" },
+          { "label": "Advanced", "exercise": "Side Plank, Anti-rotation Band" }
+        ],
+        "errors": "Holding breath, arching lower back, hips too high in plank, neck tension"
+      },
+      {
+        "id": "breath", "name": "Breath", "icon": "🌬️", "color": "orange",
+        "goal": "Stabilize the trunk during exercise; reduce stress; support recovery.",
+        "basic": "Diaphragmatic Breathing", "prescription": "1–3 min",
+        "basic_how": "One hand on chest, one on belly. Inhale through nose to expand belly (not chest), exhale slowly through mouth.",
+        "cue": "Belly expands on inhale · Slow exhale · Chest relaxed",
+        "levels": [
+          { "label": "Basic", "exercise": "Diaphragmatic breathing (belly breathing)" },
+          { "label": "Advanced", "exercise": "Box Breathing: inhale 4s — hold 4s — exhale 4s — hold 4s" }
+        ],
+        "errors": "Chest breathing instead of belly, breath-holding during exercise, breathing too fast"
+      }
+    ],
+    "plans_title": "Goal-Based Workout Sessions",
+    "workout_plans": [
+      {
+        "id": "busy", "name": "10 Min/Day", "tag": "Super Busy", "color": "orange",
+        "type": "blocks",
+        "blocks": [
+          { "phase": "Warm Up", "time": "2 min", "content": "Quick warm-up: march in place, shoulder roll" },
+          { "phase": "Main Workout", "time": "6 min", "content": "Squat 30s · Push-up 30s · Glute Bridge 30s · Plank 20–30s — repeat 2 rounds" },
+          { "phase": "Cool Down", "time": "2 min", "content": "Cool-down + deep breathing" }
+        ]
+      },
+      {
+        "id": "fat_loss", "name": "Fat Loss", "tag": "20 Min", "color": "green",
+        "type": "blocks",
+        "blocks": [
+          { "phase": "Warm Up", "time": "3 min", "content": "March in place, shoulder roll, squat to chair" },
+          { "phase": "Main Workout", "time": "14 min", "content": "Squat 40s · Push-up 30s · Row 40s · Glute Bridge 40s · March in place 40s — rest 20s between, do 2 rounds" },
+          { "phase": "Cool Down", "time": "3 min", "content": "Hip stretch, chest opener, child pose" }
+        ]
+      },
+      {
+        "id": "muscle", "name": "Muscle Gain", "tag": "30 Min", "color": "purple",
+        "type": "exercises",
+        "exercises": [
+          { "name": "Squat or Goblet Squat", "sets": "3 × 8–12 reps" },
+          { "name": "Push-up (appropriate level)", "sets": "3 × 8–12 reps" },
+          { "name": "Band Row or Dumbbell Row", "sets": "3 × 10–12 reps" },
+          { "name": "Glute Bridge / Hip Thrust", "sets": "3 × 12–15 reps" },
+          { "name": "Plank", "sets": "3 × 20–40 sec" }
+        ]
+      },
+      {
+        "id": "mobility", "name": "Flexibility", "tag": "10 Min", "color": "teal",
+        "type": "exercises",
+        "exercises": [
+          { "name": "Chin Tuck", "sets": "8–10 reps" },
+          { "name": "Shoulder Roll", "sets": "10 circles" },
+          { "name": "Doorway Stretch", "sets": "30 sec" },
+          { "name": "Thoracic Twist", "sets": "6 reps/side" },
+          { "name": "Hip Flexor Stretch", "sets": "30 sec/side" },
+          { "name": "Hamstring Stretch", "sets": "30 sec/side" },
+          { "name": "Child Pose + slow breathing", "sets": "60 sec" }
+        ]
+      }
+    ],
+    "tests_title": "Monthly Progress Tests",
+    "progress_tests": [
+      { "capability": "Leg Strength", "test": "Max sit-to-stand in 1 minute" },
+      { "capability": "Core", "test": "Knee plank or full plank — max hold time" },
+      { "capability": "Endurance", "test": "6-minute brisk walk — measure distance covered" },
+      { "capability": "Mobility", "test": "Hip hinge, shoulder rotation, squat depth check" },
+      { "capability": "Habit", "test": "Sessions/week · average daily steps · energy level" }
+    ],
     "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
   },
   "pillarB": {

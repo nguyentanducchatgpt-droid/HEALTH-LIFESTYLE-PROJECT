@@ -11,34 +11,16 @@ const SECTION_ACCENT = [
   'text-cyan-400 bg-cyan-500/10 border-cyan-500/30',
 ];
 
-const MACROS = [
-  {
-    emoji: '🥩',
-    title: 'Protein',
-    dose: '1.6–2g / kg cân nặng',
-    desc: 'Xây cơ & phục hồi',
-    color: 'text-lime-400 bg-lime-500/10 border-lime-500/30',
-  },
-  {
-    emoji: '🌾',
-    title: 'Tinh bột',
-    dose: '~45–65% tổng calo',
-    desc: 'Năng lượng chính',
-    color: 'text-orange-400 bg-orange-500/10 border-orange-500/30',
-  },
-  {
-    emoji: '🫒',
-    title: 'Chất béo',
-    dose: '0.8–1g / kg',
-    desc: 'Hormone & hấp thu',
-    color: 'text-yellow-400 bg-yellow-500/10 border-yellow-500/30',
-  },
+const MACRO_COLORS = [
+  'text-lime-400 bg-lime-500/10 border-lime-500/30',
+  'text-orange-400 bg-orange-500/10 border-orange-500/30',
+  'text-yellow-400 bg-yellow-500/10 border-yellow-500/30',
 ];
 
-const PLATE_BARS = [
-  { label: 'Rau củ', pct: 50, bg: 'bg-green-500', text: 'text-green-400' },
-  { label: 'Đạm', pct: 25, bg: 'bg-lime-500', text: 'text-lime-400' },
-  { label: 'Tinh bột', pct: 25, bg: 'bg-orange-500', text: 'text-orange-400' },
+const BAR_STYLES = [
+  { bg: 'bg-green-500', text: 'text-green-400' },
+  { bg: 'bg-lime-500',  text: 'text-lime-400' },
+  { bg: 'bg-orange-500', text: 'text-orange-400' },
 ];
 
 export default function PillarB() {
@@ -58,7 +40,11 @@ export default function PillarB() {
     );
   }
 
-  const sections = tPillars('pillarB.sections', { returnObjects: true });
+  const sections  = tPillars('pillarB.sections',           { returnObjects: true });
+  const macros    = tPillars('pillarB.macros',             { returnObjects: true }) || [];
+  const plateBars = tPillars('pillarB.plate_bars',         { returnObjects: true }) || [];
+  const preItems  = tPillars('pillarB.pre_workout_items',  { returnObjects: true }) || [];
+  const postItems = tPillars('pillarB.post_workout_items', { returnObjects: true }) || [];
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -104,7 +90,7 @@ export default function PillarB() {
         <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
         <div className="absolute bottom-4 left-6">
           <span className="text-lime-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-lime-500/20">
-            Dinh Dưỡng Khoa Học
+            {tPillars('pillarB.image_caption')}
           </span>
         </div>
       </div>
@@ -116,13 +102,13 @@ export default function PillarB() {
       <div className="mb-10">
         <h2 className="text-lg font-bold text-text mb-5 flex items-center gap-2">
           <span className="w-6 h-6 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-400 text-xs flex items-center justify-center font-bold">★</span>
-          Đa Lượng Dinh Dưỡng
+          {tPillars('pillarB.macros_title')}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {MACROS.map((m) => (
+          {macros.map((m, idx) => (
             <div
               key={m.title}
-              className={`bg-surface border rounded-2xl p-5 text-center transition-all duration-300 hover:border-border-bright ${m.color}`}
+              className={`bg-surface border rounded-2xl p-5 text-center transition-all duration-300 hover:border-border-bright ${MACRO_COLORS[idx % MACRO_COLORS.length]}`}
             >
               <div className="text-4xl mb-3">{m.emoji}</div>
               <div className="font-bold text-text text-base mb-1">{m.title}</div>
@@ -135,47 +121,56 @@ export default function PillarB() {
 
       {/* Visual Plate Method */}
       <div className="bg-surface border border-border rounded-2xl p-6 mb-10 transition-all duration-300 hover:border-border-bright">
-        <h2 className="text-base font-bold text-text mb-5">🍽️ Đĩa Ăn Chuẩn</h2>
+        <h2 className="text-base font-bold text-text mb-5">{tPillars('pillarB.plate_title')}</h2>
         <div className="space-y-3">
-          {PLATE_BARS.map((bar) => (
-            <div key={bar.label} className="flex items-center gap-3">
-              <div className={`w-24 text-xs font-semibold shrink-0 ${bar.text}`}>{bar.label}</div>
-              <div className="flex-1 bg-border rounded-full h-5 overflow-hidden">
-                <div
-                  className={`${bar.bg} h-full rounded-full flex items-center justify-end pr-2 transition-all duration-700`}
-                  style={{ width: `${bar.pct}%` }}
-                >
-                  <span className="text-white text-[10px] font-bold">{bar.pct}%</span>
+          {plateBars.map((bar, idx) => {
+            const style = BAR_STYLES[idx % BAR_STYLES.length];
+            return (
+              <div key={bar.label} className="flex items-center gap-3">
+                <div className={`w-24 text-xs font-semibold shrink-0 ${style.text}`}>{bar.label}</div>
+                <div className="flex-1 bg-border rounded-full h-5 overflow-hidden">
+                  <div
+                    className={`${style.bg} h-full rounded-full flex items-center justify-end pr-2 transition-all duration-700`}
+                    style={{ width: `${bar.pct}%` }}
+                  >
+                    <span className="text-white text-[10px] font-bold">{bar.pct}%</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <p className="text-xs text-muted mt-4">
-          Chia đĩa ăn theo tỷ lệ: ½ rau củ · ¼ đạm · ¼ tinh bột — không cần cân đo chính xác.
+          {tPillars('pillarB.plate_note')}
         </p>
       </div>
 
       {/* Pre/Post Workout Callout */}
       <div className="bg-yellow-500/6 border border-yellow-500/20 rounded-2xl p-5 mb-10">
-        <h2 className="text-base font-bold text-yellow-400 mb-4">⚡ Dinh Dưỡng Quanh Buổi Tập</h2>
+        <h2 className="text-base font-bold text-yellow-400 mb-4">{tPillars('pillarB.workout_nutrition_title')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-surface/60 border border-border rounded-xl p-4">
-            <div className="text-xs font-bold text-yellow-400 uppercase tracking-wider mb-2">Trước tập (1–2h)</div>
+            <div className="text-xs font-bold text-yellow-400 uppercase tracking-wider mb-2">
+              {tPillars('pillarB.pre_workout_label')}
+            </div>
             <ul className="space-y-1.5 text-sm text-muted">
-              <li className="flex items-start gap-2"><span className="text-yellow-400 mt-0.5">·</span>Bữa nhẹ carb + protein</li>
-              <li className="flex items-start gap-2"><span className="text-yellow-400 mt-0.5">·</span>Chuối + sữa, bánh + trứng</li>
-              <li className="flex items-start gap-2"><span className="text-yellow-400 mt-0.5">·</span>Không tập bụng rỗng (cường độ cao)</li>
-              <li className="flex items-start gap-2"><span className="text-yellow-400 mt-0.5">·</span>Uống 300–500ml nước</li>
+              {preItems.map((item, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="text-yellow-400 mt-0.5">·</span>{item}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="bg-surface/60 border border-border rounded-xl p-4">
-            <div className="text-xs font-bold text-lime-400 uppercase tracking-wider mb-2">Sau tập (30–60 phút)</div>
+            <div className="text-xs font-bold text-lime-400 uppercase tracking-wider mb-2">
+              {tPillars('pillarB.post_workout_label')}
+            </div>
             <ul className="space-y-1.5 text-sm text-muted">
-              <li className="flex items-start gap-2"><span className="text-lime-400 mt-0.5">·</span>Bổ sung protein phục hồi cơ</li>
-              <li className="flex items-start gap-2"><span className="text-lime-400 mt-0.5">·</span>Thêm carb nếu tập nặng</li>
-              <li className="flex items-start gap-2"><span className="text-lime-400 mt-0.5">·</span>Bù nước + điện giải</li>
-              <li className="flex items-start gap-2"><span className="text-lime-400 mt-0.5">·</span>Tránh ăn quá no ngay sau tập</li>
+              {postItems.map((item, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="text-lime-400 mt-0.5">·</span>{item}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -225,7 +220,8 @@ export default function PillarB() {
 
       {/* Bottom note */}
       <div className="border border-lime-500/20 bg-lime-500/5 rounded-2xl p-5 text-sm text-muted text-center">
-        <span className="text-lime-400 font-semibold">Lưu ý:</span> Thông tin dinh dưỡng mang tính tham khảo. Hãy điều chỉnh theo cơ địa và tham khảo chuyên gia nếu có bệnh lý nền.
+        <span className="text-lime-400 font-semibold">{tPillars('pillarB.note_label')}</span>{' '}
+        {tPillars('pillarB.note')}
       </div>
     </div>
   );

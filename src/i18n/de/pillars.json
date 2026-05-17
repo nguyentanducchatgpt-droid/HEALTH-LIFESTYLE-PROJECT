@@ -322,6 +322,27 @@
         ]
       }
     ],
+    "image_caption": "Wissenschaftliche Ernährung",
+    "macros_title": "Makronährstoffe",
+    "plate_title": "🍽️ Standard-Tellermethode",
+    "plate_note": "Teller aufteilen: ½ Gemüse · ¼ Protein · ¼ Kohlenhydrate — kein genaues Abwiegen nötig.",
+    "workout_nutrition_title": "⚡ Sporternährung",
+    "pre_workout_label": "Vor dem Training (1–2h)",
+    "pre_workout_items": ["Leichter Kohlenhydrat- + Protein-Snack","Banane + Milch, Brot + Eier","Nicht auf nüchternen Magen trainieren (hohe Intensität)","300–500ml Wasser trinken"],
+    "post_workout_label": "Nach dem Training (30–60 Min)",
+    "post_workout_items": ["Protein zur Muskelregeneration","Kohlenhydrate bei schwerem Training","Rehydrieren + Elektrolyte","Nicht direkt nach dem Training zu viel essen"],
+    "note_label": "Hinweis:",
+    "note": "Ernährungsinfos sind Richtwerte. Bitte anpassen und bei Vorerkrankungen einen Fachmann konsultieren.",
+    "macros": [
+      {"emoji":"🥩","title":"Protein","dose":"1,6–2g / kg Körpergewicht","desc":"Muskelaufbau & Erholung"},
+      {"emoji":"🌾","title":"Kohlenhydrate","dose":"~45–65% Gesamtkalorien","desc":"Primäre Energiequelle"},
+      {"emoji":"🫒","title":"Fette","dose":"0,8–1g / kg","desc":"Hormone & Absorption"}
+    ],
+    "plate_bars": [
+      {"label":"Gemüse","pct":50},
+      {"label":"Protein","pct":25},
+      {"label":"Kohlenhydrate","pct":25}
+    ],
     "videos": []
   },
   "pillarC": {
@@ -362,6 +383,31 @@
           "Einfache Selbstmassage: Foam Roller oder Tennisball für Verspannungen"
         ]
       }
+    ],
+    "image_caption": "Gesunder Lebensstil",
+    "sleep_title": "🌙 Idealer Schlafrhythmus",
+    "sleep_note": "An persönlichen Zeitplan anpassen. Wichtigste Regel: täglich zur gleichen Zeit schlafen und aufwachen, auch am Wochenende.",
+    "morning_title": "Morgenroutine",
+    "recovery_title": "🔄 Erholungsprotokoll nach dem Training",
+    "note_label": "Denk daran:",
+    "note": "Kleine, konsequent durchgeführte Gewohnheiten bewirken große Veränderungen. Mit einer Gewohnheit beginnen, dann schrittweise aufbauen.",
+    "sleep_stages": [
+      {"time":"22:00","label":"Vorbereitung"},
+      {"time":"23:00","label":"Schlaf"},
+      {"time":"01:00","label":"Tiefschlaf"},
+      {"time":"05:00","label":"REM"},
+      {"time":"06:30","label":"Aufwachen"}
+    ],
+    "morning_routine": [
+      {"emoji":"💧","time":"06:30","desc":"300ml Wasser gleich nach dem Aufwachen trinken"},
+      {"emoji":"☀️","time":"07:00","desc":"10–15 Min Sonnenlicht, ohne Brille"},
+      {"emoji":"🏃","time":"07:15","desc":"Leichte Bewegung 10–15 Min"}
+    ],
+    "recovery_steps": [
+      {"step":1,"text":"5–10 Min Dehnen nach dem Training"},
+      {"step":2,"text":"Wasser trinken + Elektrolyte auffüllen"},
+      {"step":3,"text":"Protein innerhalb von 30–60 Min essen"},
+      {"step":4,"text":"Ausruhen oder leicht spazieren gehen"}
     ],
     "videos": ["BREATH"]
   },
@@ -432,6 +478,35 @@
         ]
       }
     ],
+    "image_caption": "Der Atem ist der Anker — er bringt dich in den gegenwärtigen Moment",
+    "breathing_title": "🌬️ Box-Atmung 4-4-4-4",
+    "breathing_subtitle": "Einatmen · Halten · Ausatmen · Halten — je 4 Sekunden",
+    "ready_label": "Bereit",
+    "click_start": "Tippen zum Starten",
+    "stop_btn": "⏹ Stopp",
+    "start_btn": "▶ Start",
+    "meditation_title": "3-Schritte-Meditationsanleitung",
+    "step_label": "Schritt",
+    "journal_title": "📓 5-Zeilen-Tagesjournal",
+    "journal_subtitle": "Handschrift schlägt Handy — 5 Min jeden Abend vor dem Schlafen",
+    "phases": [
+      {"key":"inhale","label":"Einatmen"},
+      {"key":"hold1","label":"Halten"},
+      {"key":"exhale","label":"Ausatmen"},
+      {"key":"hold2","label":"Halten"}
+    ],
+    "meditation_steps": [
+      {"num":"1","icon":"🪑","title":"Ankommen","desc":"Bequem sitzen, Augen schließen, Schultern und Kiefer entspannen. 1–2 Minuten.","bar":"from-purple-500/60"},
+      {"num":"2","icon":"💨","title":"Atmen","desc":"4 Sek einatmen, 2 Sek halten, 6 Sek ausatmen. 5–10-mal wiederholen.","bar":"from-indigo-500/60"},
+      {"num":"3","icon":"👁️","title":"Beobachten","desc":"Wenn Gedanken kommen, ruhig wahrnehmen und zum Atem zurückkehren.","bar":"from-violet-500/60"}
+    ],
+    "journal_lines": [
+      "Zeile 1: Stimmung heute vor und nach dem Training (1–10)?",
+      "Zeile 2: Was habe ich getan? (Training, Essen, Schlafen)",
+      "Zeile 3: Zeit und gefühlte Anstrengung?",
+      "Zeile 4: Schmerzen oder Beschwerden?",
+      "Zeile 5: Was möchte ich beim nächsten Mal verbessern?"
+    ],
     "videos": ["BREATH"]
   },
   "pillarE": {
@@ -483,6 +558,34 @@
           "→ Arzt aufsuchen bevor das Training fortgesetzt wird"
         ]
       }
+    ],
+    "image_caption": "Den eigenen Körper zu verstehen ist der erste Schritt zum Schutz der Gesundheit",
+    "metrics_title": "Gesundheitsreferenzwerte",
+    "warning_title": "TRAINING STOPPEN — Arzt aufsuchen",
+    "warning_subtitle": "Bei einem der folgenden Zeichen",
+    "warning_cta": "→ Arzt aufsuchen, bevor du das Training fortsetzt",
+    "prevention_title": "Aktive Krankheitsvorbeugung",
+    "prevention_subtitle": "Vorsorge schlägt Nachsorge — täglich kleine Gewohnheiten aufbauen",
+    "health_metrics": [
+      {"unit":"BMI","value":"18,5 – 24,9","label":"Körpermasseindex","status":"Normal"},
+      {"unit":"Taillenumfang","value":"<90 cm (M)  <80 cm (F)","label":"Herzkreislauf-Risiko","status":"Niedrig"},
+      {"unit":"Blutdruck","value":"90–120 / 60–80","label":"mmHg","status":"Normal"},
+      {"unit":"Nüchternblutzucker","value":"3,9–5,6 mmol/L","label":"<100 mg/dL","status":"Normal"},
+      {"unit":"Ruhepuls","value":"60–100 bpm","label":"Sportler: 40–60 bpm","status":"Normal"}
+    ],
+    "warning_signs": [
+      "Scharfer, plötzlicher Schmerz (kein normaler Muskelkater)",
+      "Plötzliche Taubheit oder Muskelschwäche in Armen/Beinen",
+      "Brustschmerzen oder Druckgefühl beim Sport",
+      "Schwindel, Gleichgewichtsverlust, Sehstörungen",
+      "Atemnot unverhältnismäßig zur Belastung"
+    ],
+    "prevention_habits": [
+      "150 Min/Woche Sport gemäß WHO-Empfehlung",
+      "Abwechslungsreich essen, Mikronährstoffe, wenig Verarbeitetes",
+      "7–9h/Nacht schlafen — Schlafmangel erhöht Risiko chronischer Erkrankungen",
+      "Stress managen: Meditation, Training, soziale Kontakte",
+      "Einmal jährlich zur Vorsorgeuntersuchung"
     ],
     "videos": []
   },
@@ -554,6 +657,28 @@
       "7–8 Stunden schlafen",
       "5 Minuten Atmen oder Meditieren",
       "30 Min vor dem Schlafen kein Handy"
+    ],
+    "image_caption": "🛠️ Werkzeuge & Ressourcen",
+    "checklist_title": "☀️ Tages-Checkliste",
+    "reset_btn": "Zurücksetzen",
+    "all_done_msg": "Ausgezeichnet! Du hast heute alles geschafft!",
+    "progress_title": "4-Wochen-Fortschrittstest",
+    "col_capability": "Fähigkeit",
+    "col_test": "Test",
+    "col_week1": "Woche 1",
+    "col_week4": "Woche 4",
+    "template_cards": [
+      {"icon":"📔","title":"Trainingstagebuch","desc":"Datum · Übung · Sätze · Wiederholungen · Befinden"},
+      {"icon":"🍽️","title":"7-Tage-Ernährungsplan","desc":"Frühstück / Mittagessen / Abendessen + gesunde Snacks"},
+      {"icon":"🌅","title":"15-Min-Morgenroutine","desc":"Wasser · Sonnenlicht · Bewegung · Meditation"},
+      {"icon":"🌙","title":"20-Min-Abendroutine","desc":"Duschen · Lesen · Kein Handy"}
+    ],
+    "progress_tests": [
+      {"capability":"Ausdauer","test":"6-Minuten-Schnellgang","week1":"___ m","week4":"___ m"},
+      {"capability":"Oberkörperkraft","test":"Maximale Liegestütze","week1":"___ Wdh.","week4":"___ Wdh."},
+      {"capability":"Unterkörperkraft","test":"Aufstehen & Hinsetzen 1 Min","week1":"___ Wdh.","week4":"___ Wdh."},
+      {"capability":"Flexibilität","test":"Boden mit Fingern berühren","week1":"Nein/Ja","week4":"Nein/Ja"},
+      {"capability":"Gewohnheit","test":"Trainingseinheiten/Woche","week1":"___ Einh.","week4":"___ Einh."}
     ],
     "videos": []
   }

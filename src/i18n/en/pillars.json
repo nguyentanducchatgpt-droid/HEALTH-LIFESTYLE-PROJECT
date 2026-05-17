@@ -322,6 +322,27 @@
         ]
       }
     ],
+    "image_caption": "Scientific Nutrition",
+    "macros_title": "Macronutrients",
+    "plate_title": "🍽️ Standard Plate Method",
+    "plate_note": "Divide your plate: ½ vegetables · ¼ protein · ¼ carbs — no precise measuring needed.",
+    "workout_nutrition_title": "⚡ Workout Nutrition",
+    "pre_workout_label": "Pre-workout (1–2h)",
+    "pre_workout_items": ["Light carb + protein snack","Banana + milk, bread + eggs","Don't train on empty (high intensity)","Drink 300–500ml water"],
+    "post_workout_label": "Post-workout (30–60 min)",
+    "post_workout_items": ["Add protein for muscle recovery","Add carbs if training heavy","Rehydrate + electrolytes","Avoid overeating right after"],
+    "note_label": "Note:",
+    "note": "Nutrition info is for reference. Adjust for your body type and consult a specialist if you have underlying conditions.",
+    "macros": [
+      {"emoji":"🥩","title":"Protein","dose":"1.6–2g / kg body weight","desc":"Build muscle & recover"},
+      {"emoji":"🌾","title":"Carbohydrates","dose":"~45–65% total calories","desc":"Primary energy source"},
+      {"emoji":"🫒","title":"Fats","dose":"0.8–1g / kg","desc":"Hormones & absorption"}
+    ],
+    "plate_bars": [
+      {"label":"Vegetables","pct":50},
+      {"label":"Protein","pct":25},
+      {"label":"Carbs","pct":25}
+    ],
     "videos": []
   },
   "pillarC": {
@@ -362,6 +383,31 @@
           "Basic self-massage: foam roller or tennis ball for sore spots"
         ]
       }
+    ],
+    "image_caption": "Healthy Lifestyle",
+    "sleep_title": "🌙 Ideal Sleep Schedule",
+    "sleep_note": "Adjust to your personal schedule. Most important: sleep and wake at the same time daily, including weekends.",
+    "morning_title": "Morning Routine",
+    "recovery_title": "🔄 Post-Workout Recovery Protocol",
+    "note_label": "Remember:",
+    "note": "Small habits practiced consistently create big change. Start with one habit, then build step by step.",
+    "sleep_stages": [
+      {"time":"22:00","label":"Prepare"},
+      {"time":"23:00","label":"Sleep"},
+      {"time":"01:00","label":"Deepest"},
+      {"time":"05:00","label":"REM"},
+      {"time":"06:30","label":"Wake Up"}
+    ],
+    "morning_routine": [
+      {"emoji":"💧","time":"06:30","desc":"Drink 300ml water upon waking"},
+      {"emoji":"☀️","time":"07:00","desc":"Get 10–15 min sunlight, no glasses"},
+      {"emoji":"🏃","time":"07:15","desc":"Light movement 10–15 min"}
+    ],
+    "recovery_steps": [
+      {"step":1,"text":"Stretch 5–10 min after training"},
+      {"step":2,"text":"Drink water + replenish electrolytes"},
+      {"step":3,"text":"Eat protein within 30–60 min"},
+      {"step":4,"text":"Rest or take a light walk"}
     ],
     "videos": ["BREATH"]
   },
@@ -432,6 +478,35 @@
         ]
       }
     ],
+    "image_caption": "Breath is the anchor — it brings you back to the present moment",
+    "breathing_title": "🌬️ Box Breathing 4-4-4-4",
+    "breathing_subtitle": "Inhale · Hold · Exhale · Hold — 4 seconds each phase",
+    "ready_label": "Ready",
+    "click_start": "tap to start",
+    "stop_btn": "⏹ Stop",
+    "start_btn": "▶ Start",
+    "meditation_title": "3-Step Meditation Guide",
+    "step_label": "Step",
+    "journal_title": "📓 5-Line Daily Journal",
+    "journal_subtitle": "Handwriting beats phone — 5 min each evening before bed",
+    "phases": [
+      {"key":"inhale","label":"Inhale"},
+      {"key":"hold1","label":"Hold"},
+      {"key":"exhale","label":"Exhale"},
+      {"key":"hold2","label":"Hold"}
+    ],
+    "meditation_steps": [
+      {"num":"1","icon":"🪑","title":"Settle","desc":"Sit comfortably, close eyes, relax shoulders and jaw. 1–2 minutes.","bar":"from-purple-500/60"},
+      {"num":"2","icon":"💨","title":"Breathe","desc":"Inhale 4 sec, hold 2 sec, exhale 6 sec. Repeat 5–10 times.","bar":"from-indigo-500/60"},
+      {"num":"3","icon":"👁️","title":"Observe","desc":"When thoughts arise, gently notice and return to breath.","bar":"from-violet-500/60"}
+    ],
+    "journal_lines": [
+      "Line 1: Mood today before and after training (1–10)?",
+      "Line 2: What did I do? (training, eating, sleeping)",
+      "Line 3: Time and perceived exertion level?",
+      "Line 4: Any pain or discomfort?",
+      "Line 5: What do I want to improve next time?"
+    ],
     "videos": ["BREATH"]
   },
   "pillarE": {
@@ -483,6 +558,34 @@
           "→ See a doctor before resuming training"
         ]
       }
+    ],
+    "image_caption": "Understanding your body is the first step to protecting your health",
+    "metrics_title": "Health Reference Metrics",
+    "warning_title": "STOP TRAINING — See a Doctor",
+    "warning_subtitle": "If any of the following signs appear",
+    "warning_cta": "→ See a doctor before resuming training",
+    "prevention_title": "Active Disease Prevention Habits",
+    "prevention_subtitle": "Prevention beats cure — build small habits daily",
+    "health_metrics": [
+      {"unit":"BMI","value":"18.5 – 24.9","label":"Body mass index","status":"Normal"},
+      {"unit":"Waist","value":"<90 cm (M)  <80 cm (F)","label":"Cardiovascular risk","status":"Low"},
+      {"unit":"Blood Pressure","value":"90–120 / 60–80","label":"mmHg","status":"Normal"},
+      {"unit":"Blood Sugar","value":"3.9–5.6 mmol/L","label":"<100 mg/dL fasting","status":"Normal"},
+      {"unit":"Resting HR","value":"60–100 bpm","label":"Athletes: 40–60 bpm","status":"Normal"}
+    ],
+    "warning_signs": [
+      "Sharp, sudden pain (not normal muscle soreness)",
+      "Sudden numbness or muscle weakness in arms/legs",
+      "Chest pain or heavy pressure during exercise",
+      "Dizziness, loss of balance, blurred vision",
+      "Shortness of breath disproportionate to effort"
+    ],
+    "prevention_habits": [
+      "Exercise 150 min/week per WHO guidelines",
+      "Eat diversely, enough micronutrients, less processed food",
+      "Sleep 7–9h/night — poor sleep increases chronic disease risk",
+      "Manage stress: meditation, training, social connection",
+      "Annual health check-up once per year"
     ],
     "videos": []
   },
@@ -554,6 +657,28 @@
       "Sleep 7–8 hours",
       "5 minutes breathing or meditation",
       "No phone 30 min before sleep"
+    ],
+    "image_caption": "🛠️ Tools & Resources",
+    "checklist_title": "☀️ Daily Checklist",
+    "reset_btn": "Reset",
+    "all_done_msg": "Excellent! You completed everything today!",
+    "progress_title": "4-Week Progress Test",
+    "col_capability": "Capability",
+    "col_test": "Test",
+    "col_week1": "Week 1",
+    "col_week4": "Week 4",
+    "template_cards": [
+      {"icon":"📔","title":"Training Journal","desc":"Date · Exercise · Sets · Reps · How you felt"},
+      {"icon":"🍽️","title":"7-Day Meal Plan","desc":"Breakfast / Lunch / Dinner + Healthy Snacks"},
+      {"icon":"🌅","title":"15-min Morning Routine","desc":"Water · Sunlight · Movement · Meditation"},
+      {"icon":"🌙","title":"20-min Evening Routine","desc":"Shower · Reading · No phone"}
+    ],
+    "progress_tests": [
+      {"capability":"Endurance","test":"6-minute fast walk","week1":"___ m","week4":"___ m"},
+      {"capability":"Upper Strength","test":"Max push-ups","week1":"___ reps","week4":"___ reps"},
+      {"capability":"Lower Strength","test":"Sit-to-stand 1 min","week1":"___ reps","week4":"___ reps"},
+      {"capability":"Flexibility","test":"Touch floor with fingers","week1":"No/Yes","week4":"No/Yes"},
+      {"capability":"Habit","test":"Sessions per week","week1":"___ sessions","week4":"___ sessions"}
     ],
     "videos": []
   }

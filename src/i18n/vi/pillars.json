@@ -322,6 +322,27 @@
         ]
       }
     ],
+    "image_caption": "Dinh Dưỡng Khoa Học",
+    "macros_title": "Đa Lượng Dinh Dưỡng",
+    "plate_title": "🍽️ Đĩa Ăn Chuẩn",
+    "plate_note": "Chia đĩa ăn theo tỷ lệ: ½ rau củ · ¼ đạm · ¼ tinh bột — không cần cân đo chính xác.",
+    "workout_nutrition_title": "⚡ Dinh Dưỡng Quanh Buổi Tập",
+    "pre_workout_label": "Trước tập (1–2h)",
+    "pre_workout_items": ["Bữa nhẹ carb + protein","Chuối + sữa, bánh + trứng","Không tập bụng rỗng (cường độ cao)","Uống 300–500ml nước"],
+    "post_workout_label": "Sau tập (30–60 phút)",
+    "post_workout_items": ["Bổ sung protein phục hồi cơ","Thêm carb nếu tập nặng","Bù nước + điện giải","Tránh ăn quá no ngay sau tập"],
+    "note_label": "Lưu ý:",
+    "note": "Thông tin dinh dưỡng mang tính tham khảo. Hãy điều chỉnh theo cơ địa và tham khảo chuyên gia nếu có bệnh lý nền.",
+    "macros": [
+      {"emoji":"🥩","title":"Protein","dose":"1.6–2g / kg cân nặng","desc":"Xây cơ & phục hồi"},
+      {"emoji":"🌾","title":"Tinh bột","dose":"~45–65% tổng calo","desc":"Năng lượng chính"},
+      {"emoji":"🫒","title":"Chất béo","dose":"0.8–1g / kg","desc":"Hormone & hấp thu"}
+    ],
+    "plate_bars": [
+      {"label":"Rau củ","pct":50},
+      {"label":"Đạm","pct":25},
+      {"label":"Tinh bột","pct":25}
+    ],
     "videos": []
   },
   "pillarC": {
@@ -362,6 +383,31 @@
           "Xoa bóp cơ bản: con lăn cơ hoặc bóng tennis cho điểm đau"
         ]
       }
+    ],
+    "image_caption": "Lối Sống Khỏe",
+    "sleep_title": "🌙 Lịch Trình Giấc Ngủ Lý Tưởng",
+    "sleep_note": "Điều chỉnh theo lịch cá nhân. Quan trọng nhất là ngủ và dậy đúng giờ mỗi ngày, kể cả cuối tuần.",
+    "morning_title": "Thói Quen Buổi Sáng",
+    "recovery_title": "🔄 Quy Trình Phục Hồi Sau Tập",
+    "note_label": "Nhớ rằng:",
+    "note": "Những thói quen nhỏ thực hiện đều đặn tạo ra sự thay đổi lớn. Bắt đầu với một thói quen, rồi xây tiếp từng bước.",
+    "sleep_stages": [
+      {"time":"22:00","label":"Chuẩn bị"},
+      {"time":"23:00","label":"Ngủ"},
+      {"time":"01:00","label":"Sâu nhất"},
+      {"time":"05:00","label":"REM"},
+      {"time":"06:30","label":"Thức dậy"}
+    ],
+    "morning_routine": [
+      {"emoji":"💧","time":"06:30","desc":"Uống 300ml nước ngay khi thức"},
+      {"emoji":"☀️","time":"07:00","desc":"Ra nắng 10–15 phút, không đeo kính"},
+      {"emoji":"🏃","time":"07:15","desc":"Vận động nhẹ 10–15 phút"}
+    ],
+    "recovery_steps": [
+      {"step":1,"text":"Giãn cơ 5–10 phút sau tập"},
+      {"step":2,"text":"Uống nước bổ sung điện giải"},
+      {"step":3,"text":"Ăn protein trong 30–60 phút"},
+      {"step":4,"text":"Nghỉ ngơi hoặc đi bộ nhẹ"}
     ],
     "videos": ["BREATH"]
   },
@@ -432,6 +478,35 @@
         ]
       }
     ],
+    "image_caption": "Hơi thở là neo — kéo bạn về khoảnh khắc hiện tại",
+    "breathing_title": "🌬️ Thở Hộp 4-4-4-4",
+    "breathing_subtitle": "Hít vào · Giữ · Thở ra · Giữ — mỗi nhịp 4 giây",
+    "ready_label": "Sẵn sàng",
+    "click_start": "nhấn bắt đầu",
+    "stop_btn": "⏹ Dừng lại",
+    "start_btn": "▶ Bắt đầu",
+    "meditation_title": "Hướng Dẫn Thiền 3 Bước",
+    "step_label": "Bước",
+    "journal_title": "📓 Nhật Ký 5 Dòng Hàng Ngày",
+    "journal_subtitle": "Viết tay tốt hơn điện thoại — 5 phút mỗi tối trước ngủ",
+    "phases": [
+      {"key":"inhale","label":"Hít vào"},
+      {"key":"hold1","label":"Giữ"},
+      {"key":"exhale","label":"Thở ra"},
+      {"key":"hold2","label":"Giữ"}
+    ],
+    "meditation_steps": [
+      {"num":"1","icon":"🪑","title":"Ổn định","desc":"Ngồi thoải mái, nhắm mắt, thả lỏng vai và hàm. 1–2 phút.","bar":"from-purple-500/60"},
+      {"num":"2","icon":"💨","title":"Hơi thở","desc":"Hít vào 4 giây, giữ 2 giây, thở ra 6 giây. Lặp 5–10 lần.","bar":"from-indigo-500/60"},
+      {"num":"3","icon":"👁️","title":"Quan sát","desc":"Khi có suy nghĩ, nhẹ nhàng nhận biết và quay về hơi thở.","bar":"from-violet-500/60"}
+    ],
+    "journal_lines": [
+      "Dòng 1: Tâm trạng hôm nay trước và sau tập (1–10)?",
+      "Dòng 2: Tôi đã làm gì? (tập, ăn, ngủ)",
+      "Dòng 3: Thời gian và mức cảm giác gắng sức?",
+      "Dòng 4: Có đau hoặc khó chịu không?",
+      "Dòng 5: Lần sau tôi muốn cải thiện điều gì?"
+    ],
     "videos": ["BREATH"]
   },
   "pillarE": {
@@ -483,6 +558,34 @@
           "→ Gặp bác sĩ trước khi tiếp tục tập luyện"
         ]
       }
+    ],
+    "image_caption": "Hiểu cơ thể là bước đầu tiên để bảo vệ sức khỏe",
+    "metrics_title": "Chỉ Số Sức Khỏe Tham Chiếu",
+    "warning_title": "DỪNG TẬP NGAY – Đến Gặp Bác Sĩ",
+    "warning_subtitle": "Khi xuất hiện bất kỳ dấu hiệu nào dưới đây",
+    "warning_cta": "→ Gặp bác sĩ trước khi tiếp tục tập luyện",
+    "prevention_title": "Thói Quen Phòng Bệnh Chủ Động",
+    "prevention_subtitle": "Phòng bệnh hơn chữa bệnh — xây từng thói quen nhỏ mỗi ngày",
+    "health_metrics": [
+      {"unit":"BMI","value":"18.5 – 24.9","label":"Chỉ số khối cơ thể","status":"Bình thường"},
+      {"unit":"Vòng eo","value":"<90 cm (nam)  <80 cm (nữ)","label":"Nguy cơ tim mạch","status":"Thấp"},
+      {"unit":"Huyết áp","value":"90–120 / 60–80","label":"mmHg","status":"Bình thường"},
+      {"unit":"Đường huyết đói","value":"3.9–5.6 mmol/L","label":"<100 mg/dL","status":"Bình thường"},
+      {"unit":"Nhịp tim nghỉ","value":"60–100 bpm","label":"VĐV: 40–60 bpm","status":"Bình thường"}
+    ],
+    "warning_signs": [
+      "Đau sắc nét, đột ngột (không phải mỏi cơ bình thường)",
+      "Tê bì hoặc yếu cơ đột ngột ở tay/chân",
+      "Đau ngực hoặc cảm giác đè nặng khi vận động",
+      "Chóng mặt, mất thăng bằng, nhìn mờ",
+      "Khó thở không tương xứng với cường độ tập"
+    ],
+    "prevention_habits": [
+      "Vận động 150 phút/tuần theo khuyến nghị WHO",
+      "Ăn đa dạng, đủ vi chất, ít thực phẩm chế biến",
+      "Ngủ 7–9h/đêm — thiếu ngủ tăng nguy cơ bệnh mãn tính",
+      "Quản lý stress: thiền, tập luyện, kết nối xã hội",
+      "Khám sức khỏe định kỳ 1 lần/năm"
     ],
     "videos": []
   },
@@ -554,6 +657,28 @@
       "Ngủ đủ 7–8 tiếng",
       "5 phút thở hoặc thiền",
       "Không điện thoại 30 phút trước ngủ"
+    ],
+    "image_caption": "🛠️ Công Cụ & Tài Nguyên",
+    "checklist_title": "☀️ Checklist Hàng Ngày",
+    "reset_btn": "Đặt lại",
+    "all_done_msg": "Tuyệt vời! Bạn đã hoàn thành mọi mục hôm nay!",
+    "progress_title": "Bộ Test Tiến Bộ 4 Tuần",
+    "col_capability": "Năng lực",
+    "col_test": "Bài test",
+    "col_week1": "Tuần 1",
+    "col_week4": "Tuần 4",
+    "template_cards": [
+      {"icon":"📔","title":"Nhật Ký Tập Luyện","desc":"Ngày · Bài tập · Hiệp · Lần · Cảm giác"},
+      {"icon":"🍽️","title":"Thực Đơn 7 Ngày","desc":"Sáng / Trưa / Tối + Ăn vặt lành mạnh"},
+      {"icon":"🌅","title":"Thói Quen Sáng 15 phút","desc":"Nước · Ánh sáng · Vận động · Thiền"},
+      {"icon":"🌙","title":"Thói Quen Tối 20 phút","desc":"Tắm · Đọc sách · Không điện thoại"}
+    ],
+    "progress_tests": [
+      {"capability":"Sức bền","test":"Đi bộ nhanh 6 phút","week1":"___ m","week4":"___ m"},
+      {"capability":"Sức mạnh tay","test":"Chống đẩy tối đa","week1":"___ lần","week4":"___ lần"},
+      {"capability":"Sức mạnh chân","test":"Đứng lên ngồi xuống 1 phút","week1":"___ lần","week4":"___ lần"},
+      {"capability":"Linh hoạt","test":"Chạm ngón tay sàn","week1":"Không/Có","week4":"Không/Có"},
+      {"capability":"Thói quen","test":"Số buổi tập/tuần","week1":"___ buổi","week4":"___ buổi"}
     ],
     "videos": []
   }

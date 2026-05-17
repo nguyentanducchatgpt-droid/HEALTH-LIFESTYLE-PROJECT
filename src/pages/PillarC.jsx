@@ -9,40 +9,18 @@ const SECTION_ACCENT = [
   'text-indigo-400 bg-indigo-500/10 border-indigo-500/30',
 ];
 
-const SLEEP_STAGES = [
-  { time: '22:00', label: 'Chuẩn bị', bg: 'bg-teal-500/20 border-teal-500/30 text-teal-400' },
-  { time: '23:00', label: 'Ngủ', bg: 'bg-blue-500/20 border-blue-500/30 text-blue-400' },
-  { time: '01:00', label: 'Sâu nhất', bg: 'bg-purple-500/20 border-purple-500/30 text-purple-400' },
-  { time: '05:00', label: 'REM', bg: 'bg-indigo-500/20 border-indigo-500/30 text-indigo-400' },
-  { time: '06:30', label: 'Thức dậy', bg: 'bg-orange-500/20 border-orange-500/30 text-orange-400' },
+const SLEEP_STAGE_STYLES = [
+  'bg-teal-500/20 border-teal-500/30 text-teal-400',
+  'bg-blue-500/20 border-blue-500/30 text-blue-400',
+  'bg-purple-500/20 border-purple-500/30 text-purple-400',
+  'bg-indigo-500/20 border-indigo-500/30 text-indigo-400',
+  'bg-orange-500/20 border-orange-500/30 text-orange-400',
 ];
 
-const MORNING_ROUTINE = [
-  {
-    emoji: '💧',
-    time: '06:30',
-    desc: 'Uống 300ml nước ngay khi thức',
-    color: 'text-teal-400 bg-teal-500/10 border-teal-500/30',
-  },
-  {
-    emoji: '☀️',
-    time: '07:00',
-    desc: 'Ra nắng 10–15 phút, không đeo kính',
-    color: 'text-yellow-400 bg-yellow-500/10 border-yellow-500/30',
-  },
-  {
-    emoji: '🏃',
-    time: '07:15',
-    desc: 'Vận động nhẹ 10–15 phút',
-    color: 'text-green-400 bg-green-500/10 border-green-500/30',
-  },
-];
-
-const RECOVERY_STEPS = [
-  { step: 1, text: 'Giãn cơ 5–10 phút sau tập' },
-  { step: 2, text: 'Uống nước bổ sung điện giải' },
-  { step: 3, text: 'Ăn protein trong 30–60 phút' },
-  { step: 4, text: 'Nghỉ ngơi hoặc đi bộ nhẹ' },
+const MORNING_COLORS = [
+  'text-teal-400 bg-teal-500/10 border-teal-500/30',
+  'text-yellow-400 bg-yellow-500/10 border-yellow-500/30',
+  'text-green-400 bg-green-500/10 border-green-500/30',
 ];
 
 export default function PillarC() {
@@ -62,7 +40,10 @@ export default function PillarC() {
     );
   }
 
-  const sections = tPillars('pillarC.sections', { returnObjects: true });
+  const sections      = tPillars('pillarC.sections',       { returnObjects: true });
+  const sleepStages   = tPillars('pillarC.sleep_stages',   { returnObjects: true }) || [];
+  const morningRoutine = tPillars('pillarC.morning_routine', { returnObjects: true }) || [];
+  const recoverySteps  = tPillars('pillarC.recovery_steps',  { returnObjects: true }) || [];
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -108,7 +89,7 @@ export default function PillarC() {
         <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
         <div className="absolute bottom-4 left-6">
           <span className="text-teal-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-teal-500/20">
-            Lối Sống Khỏe
+            {tPillars('pillarC.image_caption')}
           </span>
         </div>
       </div>
@@ -118,22 +99,22 @@ export default function PillarC() {
 
       {/* Sleep Quality Timeline */}
       <div className="bg-surface border border-border rounded-2xl p-6 mb-10 transition-all duration-300 hover:border-border-bright">
-        <h2 className="text-base font-bold text-text mb-5">🌙 Lịch Trình Giấc Ngủ Lý Tưởng</h2>
+        <h2 className="text-base font-bold text-text mb-5">{tPillars('pillarC.sleep_title')}</h2>
         <div className="flex flex-wrap items-center gap-2">
-          {SLEEP_STAGES.map((stage, i) => (
+          {sleepStages.map((stage, i) => (
             <div key={stage.time} className="flex items-center gap-2">
-              <div className={`bg-surface border rounded-xl px-3 py-2 text-center text-xs ${stage.bg}`}>
+              <div className={`bg-surface border rounded-xl px-3 py-2 text-center text-xs ${SLEEP_STAGE_STYLES[i % SLEEP_STAGE_STYLES.length]}`}>
                 <div className="font-bold">{stage.time}</div>
                 <div className="text-[10px] mt-0.5 opacity-80">{stage.label}</div>
               </div>
-              {i < SLEEP_STAGES.length - 1 && (
+              {i < sleepStages.length - 1 && (
                 <span className="text-muted text-xs">→</span>
               )}
             </div>
           ))}
         </div>
         <p className="text-xs text-muted mt-4">
-          Điều chỉnh theo lịch cá nhân. Quan trọng nhất là ngủ và dậy đúng giờ mỗi ngày, kể cả cuối tuần.
+          {tPillars('pillarC.sleep_note')}
         </p>
       </div>
 
@@ -141,13 +122,13 @@ export default function PillarC() {
       <div className="mb-10">
         <h2 className="text-lg font-bold text-text mb-5 flex items-center gap-2">
           <span className="w-6 h-6 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xs flex items-center justify-center font-bold">★</span>
-          Thói Quen Buổi Sáng
+          {tPillars('pillarC.morning_title')}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {MORNING_ROUTINE.map((r) => (
+          {morningRoutine.map((r, idx) => (
             <div
               key={r.time}
-              className={`bg-surface border rounded-2xl p-4 transition-all duration-300 hover:border-border-bright ${r.color}`}
+              className={`bg-surface border rounded-2xl p-4 transition-all duration-300 hover:border-border-bright ${MORNING_COLORS[idx % MORNING_COLORS.length]}`}
             >
               <div className="text-3xl mb-2">{r.emoji}</div>
               <div className="text-[11px] font-bold uppercase tracking-wider mb-1 opacity-80">{r.time}</div>
@@ -159,9 +140,9 @@ export default function PillarC() {
 
       {/* Recovery Protocol Steps */}
       <div className="bg-surface border border-border rounded-2xl p-6 mb-10 transition-all duration-300 hover:border-border-bright">
-        <h2 className="text-base font-bold text-text mb-5">🔄 Quy Trình Phục Hồi Sau Tập</h2>
+        <h2 className="text-base font-bold text-text mb-5">{tPillars('pillarC.recovery_title')}</h2>
         <div className="space-y-0">
-          {RECOVERY_STEPS.map((s, i) => (
+          {recoverySteps.map((s, i) => (
             <div key={s.step}>
               <div className="flex items-center gap-4 py-3">
                 <div className="w-8 h-8 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-sm font-bold flex items-center justify-center shrink-0">
@@ -169,7 +150,7 @@ export default function PillarC() {
                 </div>
                 <span className="text-sm text-muted">{s.text}</span>
               </div>
-              {i < RECOVERY_STEPS.length - 1 && (
+              {i < recoverySteps.length - 1 && (
                 <div className="h-px bg-border ml-12" />
               )}
             </div>
@@ -221,7 +202,8 @@ export default function PillarC() {
 
       {/* Bottom note */}
       <div className="border border-teal-500/20 bg-teal-500/5 rounded-2xl p-5 text-sm text-muted text-center">
-        <span className="text-teal-400 font-semibold">Nhớ rằng:</span> Những thói quen nhỏ thực hiện đều đặn tạo ra sự thay đổi lớn. Bắt đầu với một thói quen, rồi xây tiếp từng bước.
+        <span className="text-teal-400 font-semibold">{tPillars('pillarC.note_label')}</span>{' '}
+        {tPillars('pillarC.note')}
       </div>
     </div>
   );

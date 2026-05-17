@@ -11,44 +11,15 @@ const SECTION_ACCENT = [
   'text-yellow-300 bg-yellow-500/10 border-yellow-400/30',
 ];
 
-const TEMPLATE_CARDS = [
-  {
-    icon: '📔',
-    title: 'Nhật Ký Tập Luyện',
-    desc: 'Ngày · Bài tập · Hiệp · Lần · Cảm giác',
-  },
-  {
-    icon: '🍽️',
-    title: 'Thực Đơn 7 Ngày',
-    desc: 'Sáng / Trưa / Tối + Ăn vặt lành mạnh',
-  },
-  {
-    icon: '🌅',
-    title: 'Thói Quen Sáng 15 phút',
-    desc: 'Nước · Ánh sáng · Vận động · Thiền',
-  },
-  {
-    icon: '🌙',
-    title: 'Thói Quen Tối 20 phút',
-    desc: 'Tắm · Đọc sách · Không điện thoại',
-  },
-];
-
-const PROGRESS_TESTS = [
-  { capability: 'Sức bền',       test: 'Đi bộ nhanh 6 phút',         week1: '___ m',    week4: '___ m' },
-  { capability: 'Sức mạnh tay',  test: 'Chống đẩy tối đa',            week1: '___ lần',  week4: '___ lần' },
-  { capability: 'Sức mạnh chân', test: 'Đứng lên ngồi xuống 1 phút',  week1: '___ lần',  week4: '___ lần' },
-  { capability: 'Linh hoạt',     test: 'Chạm ngón tay sàn',           week1: 'Không/Có', week4: 'Không/Có' },
-  { capability: 'Thói quen',     test: 'Số buổi tập/tuần',            week1: '___ buổi', week4: '___ buổi' },
-];
-
 export default function PillarF() {
   const { t: tCommon } = useTranslation('common');
   const { t: tPillars } = useTranslation('pillars');
 
-  const pillar         = tPillars('pillarF',               { returnObjects: true });
+  const pillar         = tPillars('pillarF',                 { returnObjects: true });
   const checklistItems = tPillars('pillarF.checklist_items', { returnObjects: true });
-  const sections       = tPillars('pillarF.sections',       { returnObjects: true });
+  const sections       = tPillars('pillarF.sections',        { returnObjects: true });
+  const templateCards  = tPillars('pillarF.template_cards',  { returnObjects: true }) || [];
+  const progressTests  = tPillars('pillarF.progress_tests',  { returnObjects: true }) || [];
 
   const [checked, setChecked] = useState({});
 
@@ -109,7 +80,7 @@ export default function PillarF() {
         <div className="absolute inset-0 bg-gradient-to-r from-orange-900/30 to-transparent" />
         <div className="absolute bottom-4 left-4 flex items-center gap-2">
           <span className="text-xs font-bold text-white/80 bg-orange-500/40 backdrop-blur-sm px-3 py-1 rounded-full border border-orange-500/30">
-            🛠️ Công Cụ & Tài Nguyên
+            {tPillars('pillarF.image_caption')}
           </span>
         </div>
       </div>
@@ -121,7 +92,7 @@ export default function PillarF() {
         {/* Header row */}
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-bold text-text text-base flex items-center gap-2">
-            ☀️ Checklist Hàng Ngày
+            {tPillars('pillarF.checklist_title')}
             <span className="text-xs font-semibold text-orange-400 bg-orange-500/10 border border-orange-500/20 px-2 py-0.5 rounded-full">
               {doneCount}/{items.length}
             </span>
@@ -131,7 +102,7 @@ export default function PillarF() {
               onClick={reset}
               className="text-xs text-muted hover:text-orange-400 transition-colors duration-200 px-3 py-1 border border-border hover:border-orange-500/30 rounded-lg"
             >
-              Đặt lại
+              {tPillars('pillarF.reset_btn')}
             </button>
           )}
         </div>
@@ -182,7 +153,7 @@ export default function PillarF() {
           <div className="mt-5 flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 rounded-xl px-4 py-3">
             <span className="text-base">🎉</span>
             <p className="text-sm font-semibold text-orange-300">
-              Tuyệt vời! Bạn đã hoàn thành mọi mục hôm nay!
+              {tPillars('pillarF.all_done_msg')}
             </p>
           </div>
         )}
@@ -190,7 +161,7 @@ export default function PillarF() {
 
       {/* ── Template Cards 2×2 ──────────────────────── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-        {TEMPLATE_CARDS.map((card) => (
+        {templateCards.map((card) => (
           <div
             key={card.title}
             className="bg-surface border border-border rounded-2xl p-5 hover:border-orange-500/30 transition-all duration-300 group"
@@ -212,7 +183,7 @@ export default function PillarF() {
       <div className="mb-12">
         <h2 className="text-xl font-bold text-text mb-6 flex items-center gap-2">
           <span className="text-2xl">📈</span>
-          Bộ Test Tiến Bộ 4 Tuần
+          {tPillars('pillarF.progress_title')}
         </h2>
         <div className="bg-surface border border-border rounded-2xl overflow-hidden">
           <div className="h-[2px] bg-gradient-to-r from-orange-500/60 via-orange-500/20 to-transparent" />
@@ -221,21 +192,21 @@ export default function PillarF() {
               <thead>
                 <tr className="border-b border-border">
                   <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">
-                    Năng lực
+                    {tPillars('pillarF.col_capability')}
                   </th>
                   <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">
-                    Bài test
+                    {tPillars('pillarF.col_test')}
                   </th>
                   <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">
-                    Tuần 1
+                    {tPillars('pillarF.col_week1')}
                   </th>
                   <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">
-                    Tuần 4
+                    {tPillars('pillarF.col_week4')}
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {PROGRESS_TESTS.map((row, i) => (
+                {progressTests.map((row, i) => (
                   <tr
                     key={i}
                     className="border-b border-border/50 hover:bg-orange-500/3 transition-colors duration-150 last:border-0"

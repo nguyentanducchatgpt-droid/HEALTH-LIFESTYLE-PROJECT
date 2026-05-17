@@ -11,12 +11,7 @@ const SECTION_ACCENT = [
   'text-purple-400 bg-purple-500/10 border-purple-500/30',
 ];
 
-const PHASES = [
-  { key: 'inhale', label: 'Hít vào', duration: 4 },
-  { key: 'hold1',  label: 'Giữ',     duration: 4 },
-  { key: 'exhale', label: 'Thở ra',  duration: 4 },
-  { key: 'hold2',  label: 'Giữ',     duration: 4 },
-];
+const PHASE_DURATIONS = { inhale: 4, hold1: 4, exhale: 4, hold2: 4 };
 
 const PHASE_STYLE = {
   inhale: 'scale-110 bg-purple-500/20 border-purple-400',
@@ -26,39 +21,10 @@ const PHASE_STYLE = {
   idle:   'scale-100 bg-purple-500/10 border-purple-500/30',
 };
 
-const MEDITATION_STEPS = [
-  {
-    num: '1',
-    icon: '🪑',
-    title: 'Ổn định',
-    desc: 'Ngồi thoải mái, nhắm mắt, thả lỏng vai và hàm. 1–2 phút.',
-    accent: 'text-purple-400 bg-purple-500/10 border-purple-500/30',
-    bar: 'from-purple-500/60',
-  },
-  {
-    num: '2',
-    icon: '💨',
-    title: 'Hơi thở',
-    desc: 'Hít vào 4 giây, giữ 2 giây, thở ra 6 giây. Lặp 5–10 lần.',
-    accent: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/30',
-    bar: 'from-indigo-500/60',
-  },
-  {
-    num: '3',
-    icon: '👁️',
-    title: 'Quan sát',
-    desc: 'Khi có suy nghĩ, nhẹ nhàng nhận biết và quay về hơi thở.',
-    accent: 'text-violet-400 bg-violet-500/10 border-violet-500/30',
-    bar: 'from-violet-500/60',
-  },
-];
-
-const JOURNAL_LINES = [
-  'Dòng 1: Tâm trạng hôm nay trước và sau tập (1–10)?',
-  'Dòng 2: Tôi đã làm gì? (tập, ăn, ngủ)',
-  'Dòng 3: Thời gian và mức cảm giác gắng sức?',
-  'Dòng 4: Có đau hoặc khó chịu không?',
-  'Dòng 5: Lần sau tôi muốn cải thiện điều gì?',
+const MEDITATION_ACCENTS = [
+  'text-purple-400 bg-purple-500/10 border-purple-500/30',
+  'text-indigo-400 bg-indigo-500/10 border-indigo-500/30',
+  'text-violet-400 bg-violet-500/10 border-violet-500/30',
 ];
 
 export default function PillarD() {
@@ -67,22 +33,27 @@ export default function PillarD() {
 
   const pillar = tPillars('pillarD', { returnObjects: true });
 
+  const phases          = tPillars('pillarD.phases',          { returnObjects: true }) || [];
+  const meditationSteps = tPillars('pillarD.meditation_steps', { returnObjects: true }) || [];
+  const journalLines    = tPillars('pillarD.journal_lines',   { returnObjects: true }) || [];
+
   const [phase,   setPhase]   = useState('idle');
   const [count,   setCount]   = useState(4);
   const [running, setRunning] = useState(false);
 
   useEffect(() => {
     if (!running) return;
+    const phaseKeys = ['inhale', 'hold1', 'exhale', 'hold2'];
     let phaseIdx  = 0;
-    let remaining = PHASES[0].duration;
-    setPhase(PHASES[0].key);
+    let remaining = PHASE_DURATIONS[phaseKeys[0]];
+    setPhase(phaseKeys[0]);
     setCount(remaining);
     const interval = setInterval(() => {
       remaining--;
       if (remaining <= 0) {
         phaseIdx  = (phaseIdx + 1) % 4;
-        remaining = PHASES[phaseIdx].duration;
-        setPhase(PHASES[phaseIdx].key);
+        remaining = PHASE_DURATIONS[phaseKeys[phaseIdx]];
+        setPhase(phaseKeys[phaseIdx]);
       }
       setCount(remaining);
     }, 1000);
@@ -107,7 +78,9 @@ export default function PillarD() {
     );
   }
 
-  const currentLabel = running ? (PHASES.find(p => p.key === phase)?.label ?? '') : '';
+  const currentLabel = running
+    ? (phases.find(p => p.key === phase)?.label ?? '')
+    : '';
   const circleStyle  = PHASE_STYLE[phase] ?? PHASE_STYLE.idle;
 
   return (
@@ -152,7 +125,7 @@ export default function PillarD() {
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <p className="text-purple-300 text-sm font-medium">
-            Hơi thở là neo — kéo bạn về khoảnh khắc hiện tại
+            {tPillars('pillarD.image_caption')}
           </p>
         </div>
       </div>
@@ -162,10 +135,10 @@ export default function PillarD() {
       {/* Box Breathing Component */}
       <div className="bg-surface border border-border rounded-3xl p-8 text-center mb-10">
         <h2 className="text-xl font-bold text-text mb-1 flex items-center justify-center gap-2">
-          <span>🌬️</span> Thở Hộp 4-4-4-4
+          <span>🌬️</span> {tPillars('pillarD.breathing_title')}
         </h2>
         <p className="text-muted text-sm mb-8">
-          Hít vào · Giữ · Thở ra · Giữ — mỗi nhịp 4 giây
+          {tPillars('pillarD.breathing_subtitle')}
         </p>
 
         {/* Animated circle */}
@@ -182,20 +155,20 @@ export default function PillarD() {
               <div className="absolute inset-0 rounded-full border border-purple-400/20 animate-ping" />
             )}
             <span className="text-purple-300 text-lg font-semibold">
-              {running ? currentLabel : 'Sẵn sàng'}
+              {running ? currentLabel : tPillars('pillarD.ready_label')}
             </span>
             <span className="text-4xl font-bold text-purple-400 mt-1">
               {running ? count : ''}
             </span>
             {!running && (
-              <span className="text-muted text-xs mt-1">nhấn bắt đầu</span>
+              <span className="text-muted text-xs mt-1">{tPillars('pillarD.click_start')}</span>
             )}
           </div>
 
           {/* Phase indicator row */}
           {running && (
             <div className="flex items-center gap-2">
-              {PHASES.map((p) => (
+              {phases.map((p) => (
                 <div
                   key={p.key}
                   className={`h-1.5 w-10 rounded-full transition-all duration-500 ${
@@ -217,7 +190,7 @@ export default function PillarD() {
               }
             `}
           >
-            {running ? '⏹ Dừng lại' : '▶ Bắt đầu'}
+            {running ? tPillars('pillarD.stop_btn') : tPillars('pillarD.start_btn')}
           </button>
         </div>
       </div>
@@ -226,37 +199,38 @@ export default function PillarD() {
       <div className="mb-10">
         <h2 className="text-xl font-bold text-text mb-6 flex items-center gap-2">
           <span className="text-2xl">🧘</span>
-          Hướng Dẫn Thiền 3 Bước
+          {tPillars('pillarD.meditation_title')}
         </h2>
         <div className="space-y-4">
-          {MEDITATION_STEPS.map((step) => (
-            <div
-              key={step.num}
-              className={`relative bg-surface border ${step.accent.split(' ').find(c => c.startsWith('border-'))} rounded-2xl overflow-hidden`}
-            >
-              <div className={`h-[2px] bg-gradient-to-r ${step.bar} to-transparent`} />
-              <div className="flex items-start gap-5 p-5">
-                <div
-                  className={`shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl ${
-                    step.accent.split(' ').filter(c => c.startsWith('bg-') || c.startsWith('border')).join(' ')
-                  }`}
-                >
-                  {step.icon}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span
-                      className={`text-xs font-bold px-2 py-0.5 rounded-full border ${step.accent}`}
-                    >
-                      Bước {step.num}
-                    </span>
-                    <span className="font-bold text-text text-base">{step.title}</span>
+          {meditationSteps.map((step, idx) => {
+            const accent = MEDITATION_ACCENTS[idx % MEDITATION_ACCENTS.length];
+            const borderClass = accent.split(' ').find(c => c.startsWith('border-'));
+            const bgBorderClasses = accent.split(' ').filter(c => c.startsWith('bg-') || c.startsWith('border')).join(' ');
+            return (
+              <div
+                key={step.num}
+                className={`relative bg-surface border ${borderClass} rounded-2xl overflow-hidden`}
+              >
+                <div className={`h-[2px] bg-gradient-to-r ${step.bar} to-transparent`} />
+                <div className="flex items-start gap-5 p-5">
+                  <div
+                    className={`shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl ${bgBorderClasses}`}
+                  >
+                    {step.icon}
                   </div>
-                  <p className="text-muted text-sm leading-relaxed">{step.desc}</p>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${accent}`}>
+                        {tPillars('pillarD.step_label')} {step.num}
+                      </span>
+                      <span className="font-bold text-text text-base">{step.title}</span>
+                    </div>
+                    <p className="text-muted text-sm leading-relaxed">{step.desc}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -264,13 +238,13 @@ export default function PillarD() {
       <div className="mb-12">
         <div className="bg-surface border border-purple-500/20 rounded-2xl p-6">
           <h2 className="text-lg font-bold text-text mb-1 flex items-center gap-2">
-            <span>📓</span> Nhật Ký 5 Dòng Hàng Ngày
+            <span>📓</span> {tPillars('pillarD.journal_title')}
           </h2>
           <p className="text-muted text-xs mb-5">
-            Viết tay tốt hơn điện thoại — 5 phút mỗi tối trước ngủ
+            {tPillars('pillarD.journal_subtitle')}
           </p>
           <div className="space-y-3">
-            {JOURNAL_LINES.map((line, i) => (
+            {journalLines.map((line, i) => (
               <div
                 key={i}
                 className="bg-bg border border-border/50 rounded-xl px-4 py-3 text-sm text-muted flex items-center gap-3 cursor-text hover:border-purple-500/30 transition-colors duration-200"

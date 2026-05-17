@@ -8,8 +8,14 @@
     "contact": "Contact",
     "donate": "Support"
   },
+  "brand": {
+    "part1": "Health",
+    "part2": "Lifestyle",
+    "short": "H&L"
+  },
   "hero": {
     "title": "Health & Lifestyle",
+    "badge": "Science · Simple · Effective",
     "subtitle": "A simple, science-based healthy living ecosystem you can apply every day",
     "cta": "Get Started",
     "pillars_title": "6 Pillars of Healthy Living"

@@ -26,7 +26,7 @@ export default function Home() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-semibold px-4 py-1.5 rounded-full mb-8 animate-fade-in">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
-            Khoa học · Đơn giản · Hiệu quả
+            {t('hero.badge')}
           </div>
 
           {/* Icon */}

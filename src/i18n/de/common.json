@@ -8,8 +8,14 @@
     "contact": "Kontakt",
     "donate": "Unterstützen"
   },
+  "brand": {
+    "part1": "Gesundheit",
+    "part2": "Lebensstil",
+    "short": "G&L"
+  },
   "hero": {
     "title": "Gesundheit & Lebensstil",
+    "badge": "Wissenschaft · Einfach · Effektiv",
     "subtitle": "Ein einfaches, wissenschaftlich fundiertes Ökosystem für ein gesundes Leben – jeden Tag anwendbar",
     "cta": "Jetzt Starten",
     "pillars_title": "6 Säulen eines gesunden Lebens"

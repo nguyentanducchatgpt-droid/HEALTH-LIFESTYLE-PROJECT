@@ -21,7 +21,7 @@ export default function Layout({ children }) {
             {/* Logo */}
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="text-2xl">🌿</span>
-              <span className="font-bold text-text text-sm">Sức Khỏe & Đời Sống</span>
+              <span className="font-bold text-text text-sm">{t('brand.part1')} & {t('brand.part2')}</span>
             </div>
 
             {/* Links row */}

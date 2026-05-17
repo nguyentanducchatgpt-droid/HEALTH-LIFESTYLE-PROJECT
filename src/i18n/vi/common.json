@@ -8,8 +8,14 @@
     "contact": "Liên Hệ",
     "donate": "Ủng Hộ"
   },
+  "brand": {
+    "part1": "Sức Khỏe",
+    "part2": "Đời Sống",
+    "short": "SK&ĐS"
+  },
   "hero": {
     "title": "Sức Khỏe và Đời Sống",
+    "badge": "Khoa học · Đơn giản · Hiệu quả",
     "subtitle": "Hệ sinh thái sống khỏe đơn giản, khoa học, dễ áp dụng mỗi ngày",
     "cta": "Bắt Đầu Ngay",
     "pillars_title": "6 Trụ Cột Sống Khỏe"

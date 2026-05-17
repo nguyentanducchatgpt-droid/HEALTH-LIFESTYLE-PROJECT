@@ -143,7 +143,77 @@
         "desc": "Nghỉ hoàn toàn hoặc vận động nhẹ theo ý thích",
         "color": "purple"
       }
-    ]
+    ],
+    "tips_title": "Nguyên Tắc Để Thành Công",
+    "tips": [
+      {
+        "icon": "🔁",
+        "title": "Nhất quán hơn cường độ",
+        "desc": "Tập đều 3–5 buổi/tuần quan trọng hơn tập nặng rồi nghỉ dài. Một buổi 20 phút mỗi ngày thắng một buổi 2 tiếng mỗi tháng."
+      },
+      {
+        "icon": "📈",
+        "title": "Tăng tải từ từ",
+        "desc": "Tăng không quá 10% khối lượng hoặc số set mỗi tuần. Áp dụng quy tắc này để tránh chấn thương và kiệt sức."
+      },
+      {
+        "icon": "😴",
+        "title": "Ngủ là liều thuốc phục hồi",
+        "desc": "7–9h mỗi đêm. Cơ bắp phát triển trong khi ngủ, không phải lúc tập. Thiếu ngủ làm giảm 20–30% hiệu suất."
+      },
+      {
+        "icon": "🥗",
+        "title": "Ăn đủ đạm mỗi ngày",
+        "desc": "1.6–2g protein/kg cân nặng. Ưu tiên thực phẩm toàn phần: trứng, thịt nạc, đậu hũ, sữa chua Hy Lạp."
+      },
+      {
+        "icon": "📓",
+        "title": "Ghi nhật ký tập",
+        "desc": "Chỉ cần 5 phút mỗi buổi: ghi số set, số lần, cảm giác. Nhật ký giúp bạn thấy tiến bộ khi cơ thể không thể."
+      },
+      {
+        "icon": "🧠",
+        "title": "Kiên nhẫn với kết quả",
+        "desc": "Kết quả thực sự đến sau 4–8 tuần tập đều. Những tuần đầu cơ thể đang học, không phải lười biếng."
+      }
+    ],
+    "progress_title": "Bộ Test Tiến Bộ (Tuần 4 & 12)",
+    "progress_note": "Đo vào buổi sáng, sau khi ngủ dậy, chưa ăn sáng. Ghi lại và so sánh giữa các mốc.",
+    "progress_rows": [
+      {
+        "metric": "Sức bền tim mạch",
+        "test": "Đi bộ nhanh 6 phút",
+        "unit": "m"
+      },
+      {
+        "metric": "Sức mạnh tay",
+        "test": "Chống đẩy liên tục tối đa",
+        "unit": "lần"
+      },
+      {
+        "metric": "Sức mạnh chân",
+        "test": "Ngồi xuống – đứng lên 1 phút",
+        "unit": "lần"
+      },
+      {
+        "metric": "Linh hoạt",
+        "test": "Cúi người, chạm ngón tay sàn",
+        "unit": "Không / Có"
+      },
+      {
+        "metric": "Cân nặng",
+        "test": "Cân sau thức dậy, chưa ăn",
+        "unit": "kg"
+      },
+      {
+        "metric": "Nhịp tim nghỉ",
+        "test": "Đo sau 5 phút nằm yên",
+        "unit": "bpm"
+      }
+    ],
+    "cta_title": "Sẵn Sàng Bắt Đầu?",
+    "cta_text": "Mỗi hành trình lớn đều bắt đầu từ một bước nhỏ. Hôm nay là ngày đầu tiên của tuần 1.",
+    "cta_btn": "Xem Bài Tập"
   },
   "contact": {
     "title": "Liên Hệ",

@@ -143,7 +143,77 @@
         "desc": "Full rest or light movement as preferred",
         "color": "purple"
       }
-    ]
+    ],
+    "tips_title": "Principles for Success",
+    "tips": [
+      {
+        "icon": "🔁",
+        "title": "Consistency over intensity",
+        "desc": "Training 3–5 times/week consistently beats heavy sessions followed by long breaks. 20 min daily beats 2 hours monthly."
+      },
+      {
+        "icon": "📈",
+        "title": "Progressive overload",
+        "desc": "Increase no more than 10% volume or sets per week. This rule prevents injury and burnout over the long term."
+      },
+      {
+        "icon": "😴",
+        "title": "Sleep is the recovery drug",
+        "desc": "7–9h every night. Muscles grow while you sleep, not while you train. Sleep deprivation reduces performance by 20–30%."
+      },
+      {
+        "icon": "🥗",
+        "title": "Hit your protein daily",
+        "desc": "1.6–2g protein/kg bodyweight. Prioritize whole foods: eggs, lean meat, tofu, Greek yogurt."
+      },
+      {
+        "icon": "📓",
+        "title": "Keep a training journal",
+        "desc": "Just 5 min per session: log sets, reps, how you felt. Journals let you see progress when your body cannot."
+      },
+      {
+        "icon": "🧠",
+        "title": "Be patient with results",
+        "desc": "Real results come after 4–8 weeks of consistent training. The early weeks are your body learning, not being lazy."
+      }
+    ],
+    "progress_title": "4-Week & 12-Week Progress Test",
+    "progress_note": "Test in the morning after waking, before eating. Record and compare across checkpoints.",
+    "progress_rows": [
+      {
+        "metric": "Cardiovascular endurance",
+        "test": "6-minute fast walk",
+        "unit": "m"
+      },
+      {
+        "metric": "Upper body strength",
+        "test": "Max consecutive push-ups",
+        "unit": "reps"
+      },
+      {
+        "metric": "Lower body strength",
+        "test": "Sit-to-stand 1 minute",
+        "unit": "reps"
+      },
+      {
+        "metric": "Flexibility",
+        "test": "Bend and touch floor with fingers",
+        "unit": "No / Yes"
+      },
+      {
+        "metric": "Body weight",
+        "test": "Morning weigh-in, before eating",
+        "unit": "kg"
+      },
+      {
+        "metric": "Resting heart rate",
+        "test": "After 5 min lying still",
+        "unit": "bpm"
+      }
+    ],
+    "cta_title": "Ready to Start?",
+    "cta_text": "Every great journey begins with one small step. Today is day one of week one.",
+    "cta_btn": "See Exercises"
   },
   "contact": {
     "title": "Contact",

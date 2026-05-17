@@ -143,7 +143,77 @@
         "desc": "Vollständige Erholung oder leichte Bewegung",
         "color": "purple"
       }
-    ]
+    ],
+    "tips_title": "Prinzipien für den Erfolg",
+    "tips": [
+      {
+        "icon": "🔁",
+        "title": "Konstanz schlägt Intensität",
+        "desc": "3–5-mal pro Woche regelmäßig zu trainieren ist wichtiger als intensive Sessions mit langen Pausen."
+      },
+      {
+        "icon": "📈",
+        "title": "Progressiver Aufbau",
+        "desc": "Nicht mehr als 10% Volumen oder Sätze pro Woche steigern. Diese Regel verhindert Verletzungen langfristig."
+      },
+      {
+        "icon": "😴",
+        "title": "Schlaf ist die Erholungsmedizin",
+        "desc": "7–9h jede Nacht. Muskeln wachsen im Schlaf, nicht beim Training. Schlafmangel reduziert die Leistung um 20–30%."
+      },
+      {
+        "icon": "🥗",
+        "title": "Täglich genug Protein",
+        "desc": "1,6–2g Protein/kg Körpergewicht. Vollwertige Lebensmittel bevorzugen: Eier, mageres Fleisch, Tofu, griechischer Joghurt."
+      },
+      {
+        "icon": "📓",
+        "title": "Trainingstagebuch führen",
+        "desc": "Nur 5 Min pro Einheit: Sätze, Wiederholungen, Befinden aufschreiben. Das Tagebuch zeigt Fortschritte, die man sonst nicht sieht."
+      },
+      {
+        "icon": "🧠",
+        "title": "Geduld mit Ergebnissen",
+        "desc": "Echte Ergebnisse kommen nach 4–8 Wochen konsequentem Training. Die ersten Wochen lernt der Körper — er ist nicht faul."
+      }
+    ],
+    "progress_title": "Fortschrittstest (Woche 4 & 12)",
+    "progress_note": "Morgens nach dem Aufwachen testen, vor dem Frühstück. Ergebnisse notieren und vergleichen.",
+    "progress_rows": [
+      {
+        "metric": "Kardiovaskuläre Ausdauer",
+        "test": "6-Minuten-Schnellgang",
+        "unit": "m"
+      },
+      {
+        "metric": "Oberkörperkraft",
+        "test": "Maximale Liegestütze",
+        "unit": "Wdh."
+      },
+      {
+        "metric": "Unterkörperkraft",
+        "test": "Aufstehen-Hinsetzen 1 Minute",
+        "unit": "Wdh."
+      },
+      {
+        "metric": "Flexibilität",
+        "test": "Bücken, Boden mit Fingern berühren",
+        "unit": "Nein / Ja"
+      },
+      {
+        "metric": "Körpergewicht",
+        "test": "Morgens nüchtern wiegen",
+        "unit": "kg"
+      },
+      {
+        "metric": "Ruhepuls",
+        "test": "Nach 5 Min ruhig Liegen",
+        "unit": "bpm"
+      }
+    ],
+    "cta_title": "Bereit loszulegen?",
+    "cta_text": "Jede große Reise beginnt mit einem kleinen Schritt. Heute ist Tag eins von Woche eins.",
+    "cta_btn": "Übungen ansehen"
   },
   "contact": {
     "title": "Kontakt",

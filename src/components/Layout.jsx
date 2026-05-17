@@ -42,9 +42,6 @@ export default function Layout({ children }) {
 
             {/* Quick links */}
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-muted mb-4">
-                {t('nav.home')}
-              </p>
               <div className="flex flex-col gap-2">
                 {[
                   { to: '/', label: t('nav.home') },
@@ -65,16 +62,17 @@ export default function Layout({ children }) {
               <p className="text-xs font-bold uppercase tracking-widest text-muted mb-4">
                 {t('nav.pillars')}
               </p>
-              <div className="flex flex-col gap-2">
-                {PILLAR_LINKS.map(({ to, icon, key }) => {
-                  const pillar = tPillars(key, { returnObjects: true });
-                  return (
-                    <Link key={to} to={to} className="flex items-center gap-2 text-xs text-muted hover:text-accent transition-colors duration-150 group">
-                      <span className="text-sm">{icon}</span>
-                      <span>{pillar?.title || key}</span>
-                    </Link>
-                  );
-                })}
+              <div className="flex flex-wrap gap-2">
+                {PILLAR_LINKS.map(({ to, icon, key }) => (
+                  <Link
+                    key={to}
+                    to={to}
+                    title={tPillars(`${key}.title`) || key}
+                    className="w-9 h-9 flex items-center justify-center rounded-xl bg-surface border border-border hover:border-accent/40 hover:bg-accent/8 text-base transition-all duration-200"
+                  >
+                    {icon}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

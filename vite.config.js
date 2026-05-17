@@ -6,7 +6,7 @@ import { resolve, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-const BASE = '/HEALTH-LIFESTYLE-PROJECT/';
+const BASE = '/';
 
 export default defineConfig({
   base: BASE,

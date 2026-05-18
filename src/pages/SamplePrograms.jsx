@@ -99,7 +99,6 @@ function ProgramDetail({ goalId, weeks }) {
   const card    = GOAL_CARDS[goalId];
   const phases  = PROGRAM_PHASES[goalId] || [];
   const sched   = WEEKLY_SCHEDULE[goalId] || [];
-  const [detRef, detInView] = useInView(0.1);
 
   const activePhs = phases.filter(p => p.range[0] <= weeks);
   const curPhase  = activePhs[activePhs.length - 1];
@@ -109,10 +108,7 @@ function ProgramDetail({ goalId, weeks }) {
   const pCol  = PHASE_COLORS[phIdx] || PHASE_COLORS[0];
 
   return (
-    <div
-      ref={detRef}
-      className={`transition-all duration-700 ${detInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-    >
+    <div className="animate-fade-in-up">
       {/* ── Immersive header card ── */}
       <div className="relative overflow-hidden rounded-3xl mb-6 group">
         <img
@@ -286,10 +282,17 @@ export default function SamplePrograms() {
 
   const [heroRef,  heroInView]  = useInView(0.1);
   const [step1Ref, step1InView] = useInView(0.15);
-  const [step2Ref, step2InView] = useInView(0.15);
+  const step2Ref = useRef(null);
 
   const selectedGoal = GOAL_TYPES.find(g => g.id === goalType);
   const selectedCard = goalType ? GOAL_CARDS[goalType] : null;
+
+  /* Auto-scroll to week selector when goal is picked */
+  useEffect(() => {
+    if (goalType && step2Ref.current) {
+      setTimeout(() => step2Ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+    }
+  }, [goalType]);
 
   /* Get phase name for a given week */
   const getPhaseFor = (gId, w) => {
@@ -479,7 +482,7 @@ export default function SamplePrograms() {
       {goalType && (
         <section
           ref={step2Ref}
-          className={`mb-16 transition-all duration-700 ${step2InView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className="mb-16 animate-fade-in-up"
         >
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-3">

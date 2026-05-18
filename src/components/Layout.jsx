@@ -34,7 +34,6 @@ export default function Layout({ children }) {
                 { to: '/', label: t('nav.home') },
                 { to: '/pillars', label: t('nav.pillars') },
                 { to: '/program', label: t('nav.program') },
-                { to: '/sample-programs', label: t('nav.sample_programs') || 'Lộ trình mẫu' },
                 { to: '/videos', label: t('nav.videos') },
                 { to: '/contact', label: t('nav.contact') },
                 { to: '/donate', label: t('nav.donate') },

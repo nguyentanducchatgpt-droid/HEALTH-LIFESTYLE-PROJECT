@@ -717,22 +717,6 @@ export default function PillarA() {
         </section>
       )}
 
-      {/* ── SECTION 10: VIDEOS ──────────────────────────────────────────────── */}
-      {Array.isArray(pillar.videos) && pillar.videos.length > 0 && (
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
-            <h2 className="text-lg font-bold text-text px-4">{tCommon('video.local_section')}</h2>
-            <div className="h-px flex-1 bg-gradient-to-l from-border to-transparent" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {pillar.videos.map(videoKey => (
-              <LocalVideoCard key={videoKey} src={videoKey} title={tCommon(`video.${videoKey}`)} />
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* ── SECTION 11: CTA LINKS ───────────────────────────────────────────── */}
       <section className="mb-4">
         <div className="grid md:grid-cols-2 gap-4">

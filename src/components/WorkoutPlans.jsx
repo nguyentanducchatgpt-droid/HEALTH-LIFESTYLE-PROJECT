@@ -114,7 +114,7 @@ const PLANS = [
     heroImg: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=900&q=70',
     badge: 'Phổ biến nhất',
     rpe: 'RPE 6–7',
-    forWho: ['Thừa cân nhẹ (BMI 23–27)', 'Muốn giảm mỡ bền vững không yo-yo', 'Có thể đi bộ hoặc đạp xe 30 phút', 'Chấp nhận ăn kiêng không cực đoan'],
+    forWho: ['Thừa cân nhẹ (BMI 23–27)', 'Muốn giảm mỡ bền vững không yo-yo', 'Có thể đi bộ nhanh, chạy bộ nhẹ hoặc đạp xe', 'Chấp nhận ăn kiêng không cực đoan'],
     notFor: 'Muốn thấy kết quả trong 2 tuần — giảm mỡ lành mạnh cần 8–12 tuần+',
     commitment: '5 ngày/tuần × 30–40 phút (3 strength + 2 cardio Zone 2)',
     philosophy: 'Thâm hụt calo vừa phải (200–400 kcal/ngày) + strength giữ cơ + Zone 2 đốt mỡ. Không nhịn ăn, không tập quá sức.',
@@ -137,16 +137,16 @@ const PLANS = [
           ],
         },
         {
-          phase: 'LISS Cardio Zone 2', time: '15 phút', color: 'teal', icon: '🚶',
-          note: 'Nhịp tim 120–140 bpm. Còn nói được = đúng vùng Zone 2.',
-          exercises: ['Đi bộ nhanh hoặc đạp xe nhẹ 15\'', 'Không nghe podcast — chú ý hơi thở', 'Kết thúc: giãn cơ toàn thân 5\''],
+          phase: 'LISS Cardio Zone 2', time: '15 phút', color: 'teal', icon: '🏃',
+          note: 'Nhịp tim 120–140 bpm. Còn nói được câu ngắn = đúng Zone 2.',
+          exercises: ['Chạy bộ nhẹ (jogging) Zone 2, đi bộ nhanh, hoặc đạp xe 15\'', 'Chạy bộ: bắt đầu bằng xen kẽ chạy 1\' + đi bộ 1\' nếu chưa quen', 'Nhịp tim > 145: bước sang đi bộ ngay, không cố chạy', 'Kết thúc: giãn bắp chân + đùi sau 5\''],
         },
       ],
     },
     progression: [
       { week: '1–4', text: '3 strength + 2 cardio Zone 2 (30 phút). Ghi vòng eo ban đầu.' },
       { week: '5–8', text: 'Cardio tăng 5 phút/tuần. Thêm 2000–3000 bước/ngày (NEAT).' },
-      { week: '9–12', text: 'Giới thiệu 1 buổi interval nhẹ: 5 × 2 phút nhanh + 2 phút chậm.' },
+      { week: '9–12', text: 'Interval nhẹ: 5 × 2\' nhanh + 2\' chậm. Nếu đã chạy bộ được — thay bằng jogging 20\' Zone 2 liên tục.' },
     ],
     nutrition: 'Thâm hụt calo 200–400 kcal/ngày. Protein ≥ 1.6g/kg. Carb thông minh: ăn trước/sau tập, giảm buổi tối. Uống 2–2.5L nước.',
     progress: ['Vòng eo giảm 0.5–1cm/tuần (mục tiêu lành mạnh)', 'Leo cầu thang dễ hơn sau 4 tuần', 'Năng lượng buổi chiều tốt hơn'],
@@ -209,7 +209,7 @@ const PLANS = [
     heroImg: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=900&q=70',
     badge: 'Cardio Zone 2',
     rpe: 'RPE 5–7',
-    forWho: ['Muốn cải thiện tim phổi', 'Chuẩn bị cho sự kiện: 5km, 10km, đạp xe', 'Hay hụt hơi khi leo cầu thang', 'Thích đi bộ/đạp xe nhưng muốn có cấu trúc'],
+    forWho: ['Muốn cải thiện tim phổi', 'Chuẩn bị cho sự kiện: 5km, 10km, đạp xe', 'Hay hụt hơi khi leo cầu thang', 'Thích đi bộ/đạp xe nhưng muốn có cấu trúc', 'Muốn bắt đầu chạy bộ từ con số 0 (C25K style)'],
     notFor: 'Muốn tăng cơ nhiều — cần thêm strength training',
     commitment: '5 ngày/tuần × 30–60 phút (3 cardio + 2 strength tối thiểu)',
     philosophy: '80% Zone 2 (nói chuyện được) + 20% Zone 4 (interval). Xây nền aerobic trước — tốc độ đến sau.',
@@ -217,12 +217,14 @@ const PLANS = [
       title: 'Buổi Zone 2 + Strength Tối Thiểu',
       blocks: [
         {
-          phase: 'Cardio Zone 2', time: '35–40 phút', color: 'teal', icon: '🚴',
+          phase: 'Cardio Zone 2', time: '35–40 phút', color: 'teal', icon: '🏃',
           note: 'Nhịp tim 60–70% HRmax. Kiểm tra: còn hát nhẹ được = đúng Zone 2.',
           exercises: [
-            'Đi bộ nhanh hoặc đạp xe tốc độ vừa',
-            'Giữ nhịp tim ổn định — không push nhanh rồi chậm',
-            'Nếu nhịp tim > 140: chậm lại, đừng tự ái',
+            'Chạy bộ nhẹ (jogging) Zone 2 — đây là lựa chọn chính để xây nền sức bền',
+            'Mới bắt đầu: xen kẽ chạy 1\' + đi bộ 2\' — lặp 10–12 vòng',
+            'Sau 4 tuần: tăng dần chạy liên tục 5\' → 10\' → 20\' không dừng',
+            'Thay thế: đi bộ nhanh hoặc đạp xe Zone 2 nếu đầu gối đang phục hồi',
+            'Nhịp tim > 145: bước sang đi bộ, đừng cố push — tốc độ đến sau',
           ],
         },
         {
@@ -242,13 +244,13 @@ const PLANS = [
       ],
     },
     progression: [
-      { week: '1–4', text: 'Zone 2 30 phút × 3 buổi. Không thêm interval.' },
-      { week: '5–8', text: 'Thêm 5 phút/tuần. 1 buổi interval: 4 × 2 phút nhanh + 2 phút chậm.' },
-      { week: '9–12', text: '1 buổi dài cuối tuần: 50–60 phút Zone 2.' },
-      { week: '13+', text: 'Tempo run/ride: 20 phút Zone 3 liên tục.' },
+      { week: '1–4', text: 'Zone 2 30 phút × 3 buổi. Chạy bộ: xen kẽ chạy 1\' + đi bộ 2\' — lặp 10 vòng. Không thêm interval.' },
+      { week: '5–8', text: 'Tăng thời gian chạy liên tục: 5\' → 8\' → 10\'. Thêm 1 buổi interval: 4 × 2\' nhanh + 2\' chậm.' },
+      { week: '9–12', text: 'Chạy liên tục 15–20\' Zone 2. 1 buổi dài cuối tuần 50–60 phút (kết hợp chạy + đi bộ).' },
+      { week: '13+', text: 'Mục tiêu chạy 5km liên tục. Tempo run: 20 phút Zone 3. Cân nhắc đăng ký sự kiện 5km.' },
     ],
     nutrition: 'Carb đủ để có năng lượng. Uống 2–2.5L + thêm điện giải khi mồ hôi nhiều. Protein sau buổi tập dài để phục hồi cơ.',
-    progress: ['Leo cầu thang 3–4 tầng không hụt hơi sau 4 tuần', 'Nhịp tim khi nghỉ (resting HR) giảm 3–5 bpm sau 8 tuần', 'Hoàn thành 5km đi bộ dưới 45 phút'],
+    progress: ['Leo cầu thang 3–4 tầng không hụt hơi sau 4 tuần', 'Nhịp tim khi nghỉ (resting HR) giảm 3–5 bpm sau 8 tuần', 'Chạy bộ liên tục 5km không dừng sau 12 tuần'],
     tip: 'Đeo đồng hồ hoặc dùng app đo nhịp tim. Tập Zone 2 mà nhịp tim đúng vùng quan trọng hơn tốc độ hay quãng đường.',
   },
   {
@@ -268,9 +270,9 @@ const PLANS = [
       title: 'Thứ 2 — Đạp Xe + Upper Gym + Bơi',
       blocks: [
         {
-          phase: 'Đạp Xe Zone 2', time: '40 phút', color: 'teal', icon: '🚴',
+          phase: 'Cardio Zone 2', time: '40 phút', color: 'teal', icon: '🏃',
           note: 'Zone 2 làm nền aerobic trước gym — không push nhanh.',
-          exercises: ['Đạp xe 40\' nhịp tim 120–135 bpm', 'Cadence 80–90 rpm nếu có đồng hồ', 'Uống 400–500ml nước trong buổi đạp'],
+          exercises: ['Chạy bộ Zone 2 40\' nhịp tim 120–135 bpm (pace ~6–7 phút/km)', 'Hoặc: đạp xe 40\' cadence 80–90 rpm — tùy điều kiện ngày hôm đó', 'Uống 400–500ml nước trong buổi tập'],
         },
         {
           phase: 'Upper Gym', time: '30 phút', color: 'purple', icon: '💪',

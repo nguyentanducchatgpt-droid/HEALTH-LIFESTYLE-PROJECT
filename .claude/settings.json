@@ -10,7 +10,31 @@
       "Bash(awk -F/ '{ *)",
       "Bash(python3 -c \"import docx; print\\('python-docx is available'\\)\")",
       "Bash(python -c \"from docx import Document; doc = Document\\('/c/Users/Admin/Desktop/Projects/suckhoevadoisong/Coder/HEALTH-LIFESTYLE-PROJECT/Documents/suc khoe va doi song.docx'\\); print\\('\\\\n'.join\\([p.text for p in doc.paragraphs[:100]]\\)\\)\")",
-      "Bash(python)"
+      "Bash(python)",
+      "Bash(python3 \"%USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"contact page health wellness\" --domain product)",
+      "Bash(python3 \"%USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"dark glassmorphism donation support page\" --domain style)",
+      "Bash(python3 -c ' *)",
+      "Bash(powershell -Command ' *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({k:d[k] for k in ['nav','hero','home'] if k in d}, ensure_ascii=False, indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.get\\('pillarE',{}\\).keys\\(\\)\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./src/i18n/en/pillars.json'\\); ['pillarB','pillarC','pillarD','pillarE','pillarF'].forEach\\(k=>console.log\\(k,Object.keys\\(d[k]||{}\\)\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./src/i18n/vi/pillars.json'\\); console.log\\(JSON.stringify\\(Object.keys\\(d.pillarB||{}\\)\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./src/i18n/de/pillars.json'\\); console.log\\(JSON.stringify\\(Object.keys\\(d.pillarB||{}\\)\\)\\)\")",
+      "Bash(python3 \"%USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"health wellness landing page\" --domain product)",
+      "Bash(python3 \"%USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"minimalist dark hero fullbleed imagery\" --domain style)",
+      "Bash(node -e \"const d=require\\('./src/i18n/en/common.json'\\); const v=Object.entries\\(d\\).filter\\(\\([k]\\)=>k.startsWith\\('video'\\)\\); console.log\\(JSON.stringify\\(Object.fromEntries\\(v\\),null,2\\)\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(node -e \"const d=require\\('./src/i18n/vi/common.json'\\); console.log\\(JSON.stringify\\(d.program,null,2\\)\\)\")",
+      "Bash(python3 \"%USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"fitness training program timeline\" --domain product)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"fitness health training app\" --domain product)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"dark immersive editorial sport\" --domain style)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"bold athletic energy\" --domain typography)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"fitness wellness\" --domain color)",
+      "Bash(npx vite *)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"fitness training app\" --domain product)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"dark dashboard interactive timeline\" --domain style)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"energetic dynamic athletic\" --domain typography)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"health fitness\" --domain color)"
     ]
   }
 }

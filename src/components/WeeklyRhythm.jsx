@@ -1,418 +1,376 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-const S = {
-  green:  { text:'text-green-400',  bg:'bg-green-500/12',  border:'border-green-500/30',  bar:'bg-green-500',  ring:'ring-green-500/40',  glow:'rgba(34,197,94,0.25)',   hex:'#22c55e', dot:'bg-green-400'  },
-  lime:   { text:'text-lime-400',   bg:'bg-lime-500/12',   border:'border-lime-500/30',   bar:'bg-lime-500',   ring:'ring-lime-500/40',   glow:'rgba(163,230,53,0.25)',  hex:'#a3e635', dot:'bg-lime-400'   },
-  teal:   { text:'text-teal-400',   bg:'bg-teal-500/12',   border:'border-teal-500/30',   bar:'bg-teal-500',   ring:'ring-teal-500/40',   glow:'rgba(20,184,166,0.25)',  hex:'#14b8a6', dot:'bg-teal-400'   },
-  blue:   { text:'text-blue-400',   bg:'bg-blue-500/12',   border:'border-blue-500/30',   bar:'bg-blue-500',   ring:'ring-blue-500/40',   glow:'rgba(59,130,246,0.25)',  hex:'#3b82f6', dot:'bg-blue-400'   },
-  purple: { text:'text-purple-400', bg:'bg-purple-500/12', border:'border-purple-500/30', bar:'bg-purple-500', ring:'ring-purple-500/40', glow:'rgba(168,85,247,0.25)',  hex:'#a855f7', dot:'bg-purple-400' },
-  orange: { text:'text-orange-400', bg:'bg-orange-500/12', border:'border-orange-500/30', bar:'bg-orange-500', ring:'ring-orange-500/40', glow:'rgba(249,115,22,0.25)',  hex:'#f97316', dot:'bg-orange-400' },
-  gray:   { text:'text-muted',      bg:'bg-surface',       border:'border-border',        bar:'bg-muted/40',   ring:'ring-muted/20',     glow:'rgba(100,100,100,0.15)', hex:'#6b7280', dot:'bg-muted/50'   },
-  yellow: { text:'text-yellow-400', bg:'bg-yellow-500/12', border:'border-yellow-500/30', bar:'bg-yellow-500', ring:'ring-yellow-500/40', glow:'rgba(234,179,8,0.25)',   hex:'#eab308', dot:'bg-yellow-400' },
+/* ── Color palette ── */
+const C = {
+  green:  { text:'text-green-400',  bg:'bg-green-500/10',  border:'border-green-500/30',  bar:'bg-green-500',  dot:'bg-green-400',  hex:'#22c55e', glow:'rgba(34,197,94,0.2)'   },
+  lime:   { text:'text-lime-400',   bg:'bg-lime-500/10',   border:'border-lime-500/30',   bar:'bg-lime-500',   dot:'bg-lime-400',   hex:'#a3e635', glow:'rgba(163,230,53,0.2)'  },
+  teal:   { text:'text-teal-400',   bg:'bg-teal-500/10',   border:'border-teal-500/30',   bar:'bg-teal-500',   dot:'bg-teal-400',   hex:'#14b8a6', glow:'rgba(20,184,166,0.2)'  },
+  blue:   { text:'text-blue-400',   bg:'bg-blue-500/10',   border:'border-blue-500/30',   bar:'bg-blue-500',   dot:'bg-blue-400',   hex:'#3b82f6', glow:'rgba(59,130,246,0.2)'  },
+  purple: { text:'text-purple-400', bg:'bg-purple-500/10', border:'border-purple-500/30', bar:'bg-purple-500', dot:'bg-purple-400', hex:'#a855f7', glow:'rgba(168,85,247,0.2)'  },
+  orange: { text:'text-orange-400', bg:'bg-orange-500/10', border:'border-orange-500/30', bar:'bg-orange-500', dot:'bg-orange-400', hex:'#f97316', glow:'rgba(249,115,22,0.2)'  },
+  gray:   { text:'text-muted',      bg:'bg-white/3',       border:'border-border',        bar:'bg-muted/30',   dot:'bg-muted/40',   hex:'#6b7280', glow:'rgba(100,100,100,0.1)' },
 };
 
-const TYPE_IMG = {
-  strength: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=65',
-  cardio:   'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=65',
-  hiit:     'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=600&q=65',
-  mobility: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=65',
-  recovery: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=65',
-  rest:     'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=65',
+/* ── Day-type images ── */
+const IMG = {
+  strength: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&q=65',
+  cardio:   'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=500&q=65',
+  hiit:     'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=500&q=65',
+  mobility: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&q=65',
+  recovery: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=65',
+  rest:     'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&q=65',
 };
 
+/* ── Weekly schedule data — 3 phases × 7 days ── */
 const PHASES = [
   {
-    id: 0,
-    label: 'Nền Tảng',
-    sub: 'Tuần 1–4',
-    icon: '🌱',
-    color: 'green',
-    sessions: 3,
-    volume: 60,
-    intensity: 'RPE 5–6',
-    focus: 'Học form đúng · Xây thói quen · Tập đều hơn tập nhiều',
-    tip: 'Ưu tiên CHẤT LƯỢNG hơn số lượng — 1 buổi tập đúng form tốt hơn 3 buổi tập sai. Cơ thể cần 4–6 tuần để thần kinh cơ học cách điều phối.',
+    id: 0, label: 'Nền Tảng', sub: 'Tuần 1–4', icon: '🌱', color: 'green',
+    stats: [
+      { label: 'Strength', value: '3 buổi/tuần',   icon: '🏋️' },
+      { label: 'Cardio',   value: '2 buổi/tuần',   icon: '🚶' },
+      { label: 'Cường độ', value: 'RPE 5–6',        icon: '⚡' },
+      { label: 'Thể tích', value: '60% max',        icon: '📊' },
+    ],
+    focus: 'Học form đúng trước — tập đều hơn tập nhiều',
+    tip: 'Cơ thể cần 4–6 tuần để thần kinh cơ học cách điều phối. 1 buổi đúng form tốt hơn 3 buổi sai tư thế.',
     days: [
-      {
-        day: 'T2', label: 'Thứ 2', type: 'Strength A', icon: '🏋️', color: 'green', imgType: 'strength',
-        duration: '20–25\'', intensity: 'RPE 5–6',
-        exercises: ['Squat to chair 3×10', 'Wall push-up 3×10', 'Glute bridge 3×12', 'Dead bug 3×8 mỗi bên'],
-        tip: 'Focus vào hông xuống thẳng — chưa cần sâu, chỉ cần đúng.',
-      },
-      {
-        day: 'T3', label: 'Thứ 3', type: 'Cardio nhẹ', icon: '🚶', color: 'teal', imgType: 'cardio',
-        duration: '20–25\'', intensity: 'Zone 2',
-        exercises: ['Đi bộ nhanh 20–25\'', 'Còn nói được câu ngắn = đúng nhịp', 'Kết thúc: giãn bắp chân, đùi'],
-        tip: 'Nếu thở dốc không nói được → đi chậm lại. Zone 2 mới đốt mỡ hiệu quả.',
-      },
-      {
-        day: 'T4', label: 'Thứ 4', type: 'Strength B', icon: '🏋️', color: 'green', imgType: 'strength',
-        duration: '20–25\'', intensity: 'RPE 5–6',
-        exercises: ['Hip hinge 3×12 (tập deadlift nhẹ)', 'Towel row 3×10', 'Bird-dog 3×8/bên', 'Calf raise 3×15'],
-        tip: 'Hip hinge: lưng thẳng, hông đẩy ra sau, gối hơi cong — không gập lưng.',
-      },
-      {
-        day: 'T5', label: 'Thứ 5', type: 'Mobility', icon: '🧘', color: 'purple', imgType: 'mobility',
-        duration: '15–20\'', intensity: 'Nhẹ nhàng',
-        exercises: ['Giãn hông 90/90 2\'', 'Pigeon pose 1\'/bên', 'Thoracic rotation 10 lần', 'Calf stretch 30s/bên'],
-        tip: 'Giữ mỗi tư thế ≥ 30s, thở đều, không gắng sức. Ngày này phục hồi.',
-      },
-      {
-        day: 'T6', label: 'Thứ 6', type: 'Strength C', icon: '🏋️', color: 'green', imgType: 'strength',
-        duration: '20–25\'', intensity: 'RPE 5–6',
-        exercises: ['Sit-to-stand 3×10', 'Scapular squeeze 3×12', 'Glute bridge march 3×10', 'Plank gối 3×20s'],
-        tip: 'Plank: đừng nín thở — thở nhịp nhàng, giữ bụng căng, không trễ hông.',
-      },
-      {
-        day: 'T7', label: 'Thứ 7', type: 'Cardio', icon: '🌳', color: 'teal', imgType: 'cardio',
-        duration: '25–30\'', intensity: 'Zone 2',
-        exercises: ['Đi bộ ngoài trời 25–30\'', 'Tốc độ thoải mái, nghe podcast/nhạc', 'Ghi nhật ký: cảm giác tuần này'],
-        tip: 'Đi bộ ngoài trời giúp tinh thần khỏe hơn trong nhà. Ánh sáng tự nhiên reset đồng hồ sinh học.',
-      },
-      {
-        day: 'CN', label: 'Chủ Nhật', type: 'Nghỉ ngơi', icon: '💆', color: 'gray', imgType: 'rest',
-        duration: 'Tự do', intensity: '—',
-        exercises: ['Review tuần vừa qua 5 phút', 'Chuẩn bị lịch tuần sau', 'Ngủ đủ 7–8 tiếng tối nay', 'Ăn uống lành mạnh, hydrate tốt'],
-        tip: 'Cơ phát triển trong lúc nghỉ, không phải lúc tập. Ngày này quan trọng như ngày tập.',
-      },
+      { day:'T2', type:'Strength A', icon:'🏋️', color:'green', img:'strength', duration:'20–25\'',
+        exercises:['Squat to chair 3×10 — hông xuống thẳng, gối theo hướng ngón chân','Wall push-up 3×10 — giữ thân thẳng, không đổ hông','Glute bridge 3×12 — bóp mông ở đỉnh, giữ 2s','Dead bug 3×8/bên — lưng dán sàn, thở ra khi hạ tay/chân'],
+        tip:'Squat: chưa cần xuống sâu — đúng form quan trọng hơn độ sâu.' },
+      { day:'T3', type:'Cardio Zone 2', icon:'🚶', color:'teal', img:'cardio', duration:'20–25\'',
+        exercises:['Đi bộ nhanh 20–25\' — tốc độ vừa phải, còn nói được câu ngắn','Nhịp tim mục tiêu: 60–70% HR max (120–135 bpm nếu 30 tuổi)','Kết thúc: giãn bắp chân 30s/bên + đùi trước 30s/bên'],
+        tip:'Zone 2 = "cardio nói chuyện được" — đây là ngưỡng đốt mỡ và phục hồi tốt nhất.' },
+      { day:'T4', type:'Strength B', icon:'🏋️', color:'green', img:'strength', duration:'20–25\'',
+        exercises:['Hip hinge 3×12 — lưng thẳng, hông đẩy sau, không cúi đầu gối','Towel row 3×10 — khuỷu tay siết về phía hông, không nhún vai','Bird-dog 3×8/bên — duỗi tay và chân đối diện, giữ hông thẳng','Calf raise 3×15 — đứng chậm lên và xuống, giữ 1s ở đỉnh'],
+        tip:'Hip hinge là nền tảng của deadlift — cảm nhận kéo căng sau đùi mới đúng.' },
+      { day:'T5', type:'Mobility', icon:'🧘', color:'purple', img:'mobility', duration:'15–20\'',
+        exercises:['Giãn hông 90/90: 1–2\'/bên — thở sâu, không ép gắng sức','Pigeon pose: 1\'/bên — cảm giác căng nhẹ là bình thường, đau nhói → dừng','Thoracic rotation: 10 lần/bên — xoay lưng trên, hông giữ nguyên','Calf stretch + ankle circle: 30s/bên'],
+        tip:'Ngày mobility KHÔNG phải ngày nghỉ lười — đây là đầu tư phục hồi quan trọng.' },
+      { day:'T6', type:'Strength C', icon:'🏋️', color:'green', img:'strength', duration:'20–25\'',
+        exercises:['Sit-to-stand 3×10 — đứng lên ngồi xuống không dùng tay','Scapular squeeze 3×12 — kéo hai vai ra sau, giữ 2s','Glute bridge march 3×10 — giữ hông trên cao, nâng chân xen kẽ','Plank gối 3×20s — thở nhịp nhàng, không nín thở, không trễ hông'],
+        tip:'Plank: focus vào bụng, không vào thời gian. 15s đúng tốt hơn 60s sai.' },
+      { day:'T7', type:'Cardio + Thiên nhiên', icon:'🌳', color:'teal', img:'cardio', duration:'25–30\'',
+        exercises:['Đi bộ ngoài trời 25–30\' — không vừa đi vừa nhìn điện thoại','Cảnh vật xung quanh → kích thích thị giác → giảm stress hiệu quả','Sau đi bộ: ghi 5 dòng nhật ký về cảm giác tuần vừa rồi'],
+        tip:'Ánh sáng tự nhiên buổi sáng reset đồng hồ sinh học — giúp ngủ ngon hơn tối hôm đó.' },
+      { day:'CN', type:'Nghỉ ngơi', icon:'💆', color:'gray', img:'rest', duration:'Tự do',
+        exercises:['Review: hoàn thành bao nhiêu buổi trong 7 ngày?','Chuẩn bị lịch + bữa ăn cho tuần sau (meal prep nhỏ)','Ngủ đủ 7–8 tiếng — đây LÀ buổi tập (cơ phục hồi trong giấc ngủ)','Uống đủ nước: 2–2.5L/ngày mục tiêu'],
+        tip:'Cơ phát triển TRONG LÚC NGHỈ, không phải lúc tập. Đừng bỏ ngày này.' },
     ],
   },
   {
-    id: 1,
-    label: 'Xây Nền',
-    sub: 'Tuần 5–8',
-    icon: '📈',
-    color: 'lime',
-    sessions: 4,
-    volume: 75,
-    intensity: 'RPE 6–7',
-    focus: 'Progressive overload · Tăng thể tích từ từ · Giới thiệu dụng cụ nhẹ',
-    tip: 'Quy tắc 2 lần: nếu bài tập cảm thấy quá dễ 2 buổi liên tiếp → tăng tải 5–10% hoặc thêm 1–2 reps. Đừng tăng đột ngột.',
+    id: 1, label: 'Xây Nền', sub: 'Tuần 5–8', icon: '📈', color: 'lime',
+    stats: [
+      { label: 'Strength', value: '4 buổi/tuần',   icon: '🏋️' },
+      { label: 'Cardio',   value: '2 buổi/tuần',   icon: '🏃' },
+      { label: 'Cường độ', value: 'RPE 6–7',        icon: '⚡' },
+      { label: 'Thể tích', value: '75% max',        icon: '📊' },
+    ],
+    focus: 'Progressive overload — tăng đều đặn mỗi tuần 5–10%',
+    tip: 'Quy tắc 2 lần: nếu bài tập dễ 2 buổi liên tiếp → tăng tải 5–10% hoặc thêm 1–2 reps. Không tăng đột ngột.',
     days: [
-      {
-        day: 'T2', label: 'Thứ 2', type: 'Strength A', icon: '🏋️', color: 'lime', imgType: 'strength',
-        duration: '25–30\'', intensity: 'RPE 6',
-        exercises: ['Goblet squat 3×10 (tạ nhẹ)', 'Push-up chuẩn 3×8–10', 'Band row 3×12', 'Plank 3×25–30s'],
-        tip: 'Goblet squat: giữ tạ sát ngực, khuỷu tay trong track — hông xuống giữa 2 gót.',
-      },
-      {
-        day: 'T3', label: 'Thứ 3', type: 'Cardio Z2', icon: '🏃', color: 'blue', imgType: 'cardio',
-        duration: '30\'', intensity: 'Zone 2',
-        exercises: ['Đi bộ nhanh/đạp xe 30\'', 'Nhịp tim 120–140 bpm (hoặc còn nói được)', 'Kết thúc: 5\' giãn cơ'],
-        tip: 'Nếu có đồng hồ: giữ nhịp tim 60–70% max HR. Không có? Kiểm tra bằng "talk test".',
-      },
-      {
-        day: 'T4', label: 'Thứ 4', type: 'Strength B', icon: '🏋️', color: 'lime', imgType: 'strength',
-        duration: '25–30\'', intensity: 'RPE 6',
-        exercises: ['Romanian DL 3×10 (tạ/dây)', 'Split squat 3×8/chân', 'Dead bug 3×10', 'Hip thrust 3×12'],
-        tip: 'RDL: cảm nhận kéo căng hamstring (sau đùi) — nếu không cảm thấy, chưa đủ sâu.',
-      },
-      {
-        day: 'T5', label: 'Thứ 5', type: 'Active Recovery', icon: '🌿', color: 'teal', imgType: 'mobility',
-        duration: '15–20\'', intensity: 'Nhẹ',
-        exercises: ['Giãn toàn thân 10–15\'', 'Đi bộ nhẹ 10\' (không bắt buộc)', 'Foam roll nếu có: đùi, lưng, bắp chân'],
-        tip: 'Active recovery giảm đau cơ DOMS nhanh hơn nghỉ hoàn toàn — máu lưu thông tốt hơn.',
-      },
-      {
-        day: 'T6', label: 'Thứ 6', type: 'Strength + Circuit', icon: '⚡', color: 'orange', imgType: 'hiit',
-        duration: '30–35\'', intensity: 'RPE 6–7',
-        exercises: ['Squat → Push-up → Row circuit 3 vòng', 'Mỗi bài 10 reps, nghỉ 30s giữa vòng', 'Core: plank 30s + bird-dog 8/bên', 'Finisher: 2\' đi bộ tại chỗ'],
-        tip: 'Circuit training tăng nhịp tim và đốt calo hiệu quả. Ưu tiên form dù mệt.',
-      },
-      {
-        day: 'T7', label: 'Thứ 7', type: 'Cardio dài', icon: '🚴', color: 'blue', imgType: 'cardio',
-        duration: '35–40\'', intensity: 'Zone 2',
-        exercises: ['Đi bộ nhanh hoặc đạp xe 35–40\'', 'Tăng thêm 5\' so với tuần trước', 'Kết thúc: ghi nhật ký tiến bộ'],
-        tip: 'Tăng 5 phút/tuần là ngưỡng an toàn tránh chấn thương. Đừng tăng đột ngột 15–20\'.',
-      },
-      {
-        day: 'CN', label: 'Chủ Nhật', type: 'Nghỉ + Meal Prep', icon: '🍳', color: 'gray', imgType: 'rest',
-        duration: 'Tự do', intensity: '—',
-        exercises: ['Meal prep 2–3 bữa cho tuần sau', 'Review cân nặng / vòng eo sáng sớm', 'Lên lịch tập tuần sau', 'Ngủ đủ giấc — quan trọng như tập'],
-        tip: 'Meal prep cuối tuần là "bí quyết" của người giảm mỡ thành công — giảm quyết định bốc đồng.',
-      },
+      { day:'T2', type:'Strength A', icon:'🏋️', color:'lime', img:'strength', duration:'25–30\'',
+        exercises:['Goblet squat 3×10 (tạ nhẹ 4–8kg) — giữ tạ sát ngực, khuỷu tay vào trong','Push-up chuẩn 3×8–10 — thân thẳng như ván, không đổ hông xuống','Band row 3×12 — kéo khuỷu tay về phía hông, bóp lưng giữa 2s','Plank thẳng 3×25–30s — hông ngang vai, thở bình thường'],
+        tip:'Goblet squat: hông xuống giữa 2 gót chân — cảm nhận kéo căng háng nội.' },
+      { day:'T3', type:'Cardio Z2', icon:'🏃', color:'blue', img:'cardio', duration:'30\'',
+        exercises:['Đi bộ nhanh hoặc đạp xe 30\' liên tục','Nhịp tim: 120–140 bpm — nếu cao hơn → chậm lại','Option: 5\' warm-up chậm + 20\' Zone 2 + 5\' cool-down giãn cơ'],
+        tip:'Có đồng hồ: giữ 60–70% HRmax. Không có: test bằng "còn hát được không?"' },
+      { day:'T4', type:'Strength B', icon:'🏋️', color:'lime', img:'strength', duration:'25–30\'',
+        exercises:['Romanian DL 3×10 (tạ/dây) — cảm nhận kéo căng sau đùi, lưng thẳng','Split squat 3×8/chân — gối sau gần sàn, trọng lượng vào chân trước','Dead bug 3×10 — lưng hoàn toàn dán sàn, di chuyển chậm từng bên','Hip thrust 3×12 — dùng ghế/sofa, bóp mông ở đỉnh, giữ 2s'],
+        tip:'RDL: nếu không cảm nhận được sau đùi → nghĩa là chưa đủ sâu hoặc gối quá thẳng.' },
+      { day:'T5', type:'Active Recovery', icon:'🌿', color:'teal', img:'recovery', duration:'15–20\'',
+        exercises:['Giãn toàn thân nhẹ nhàng 10–15\' — không stretch đến mức đau','Đi bộ chậm 10\' tùy chọn — tăng lưu thông máu, giảm DOMS','Foam roll: đùi trước, đùi sau, lưng dưới — 30s–1\' mỗi vùng'],
+        tip:'Active recovery giảm đau cơ DOMS 20–30% so với nghỉ hoàn toàn — máu lưu thông tốt hơn.' },
+      { day:'T6', type:'Strength + Circuit', icon:'⚡', color:'orange', img:'hiit', duration:'30–35\'',
+        exercises:['Circuit 3 vòng: Squat 10 → Push-up 8 → Row 10 — nghỉ 30s giữa vòng','Core finisher: Plank 30s + Side plank 20s/bên + Bird-dog 8/bên','2\' cool-down đi bộ tại chỗ + 5\' giãn cơ vai và hông'],
+        tip:'Circuit tăng nhịp tim và đốt calo hiệu quả. Ưu tiên form đúng dù có mệt.' },
+      { day:'T7', type:'Cardio dài', icon:'🚴', color:'blue', img:'cardio', duration:'35–40\'',
+        exercises:['Đi bộ nhanh hoặc đạp xe 35–40\' (tăng thêm 5\' so với tuần trước)','Nhịp tim giữ ổn định Zone 2 suốt buổi — không push nhanh','Kết thúc: ghi nhật ký tiến bộ — cân nặng, vòng eo, cảm giác năng lượng'],
+        tip:'Tăng 5 phút/tuần là ngưỡng an toàn. Đừng tăng 15–20\' đột ngột để tránh chấn thương.' },
+      { day:'CN', type:'Nghỉ + Meal Prep', icon:'🍳', color:'gray', img:'rest', duration:'Tự do',
+        exercises:['Meal prep 2–3 bữa ăn đạm cho tuần sau (trứng luộc, thịt nạc, đậu hũ)','Review cân nặng sáng sớm + đo vòng eo (nếu theo dõi)','Lên lịch 4 buổi tập + 2 buổi cardio cho tuần sau','Ngủ đủ giấc — quan trọng ngang buổi tập nặng nhất'],
+        tip:'Meal prep cuối tuần là bí quyết của người tập thành công — giảm quyết định bốc đồng.' },
     ],
   },
   {
-    id: 2,
-    label: 'Cá Nhân Hóa',
-    sub: 'Tuần 9–12',
-    icon: '🎯',
-    color: 'purple',
-    sessions: 4,
-    volume: 88,
-    intensity: 'RPE 7–8',
-    focus: 'Upper/Lower split · Tăng cường độ · Theo dõi & điều chỉnh linh hoạt',
-    tip: 'Tự lắng nghe cơ thể: HRV thấp + ngủ kém + tâm trạng xấu → giảm cường độ hoặc nghỉ thêm 1 ngày. Overtrain không giúp bạn tiến nhanh hơn — nó kéo bạn lùi.',
+    id: 2, label: 'Cá Nhân Hóa', sub: 'Tuần 9–12', icon: '🎯', color: 'purple',
+    stats: [
+      { label: 'Strength', value: '4 buổi/tuần',   icon: '🏋️' },
+      { label: 'Cardio',   value: '2–3 buổi/tuần', icon: '🏃' },
+      { label: 'Cường độ', value: 'RPE 7–8',        icon: '⚡' },
+      { label: 'Thể tích', value: '85–90% max',     icon: '📊' },
+    ],
+    focus: 'Upper/Lower split — tăng cường độ có kiểm soát',
+    tip: 'Giai đoạn này: tự lắng nghe cơ thể. HRV thấp + ngủ kém + tâm trạng xấu → giảm cường độ hoặc nghỉ thêm 1 ngày. Overtrain kéo bạn lùi.',
     days: [
-      {
-        day: 'T2', label: 'Thứ 2', type: 'Upper A', icon: '💪', color: 'purple', imgType: 'strength',
-        duration: '35–40\'', intensity: 'RPE 7',
-        exercises: ['Bench press / Push-up nâng cao 4×8–10', 'Dumbbell row 4×10', 'OHP 3×10', 'Face pull / band 3×15'],
-        tip: 'Upper A focus ngực + lưng. Kết thúc với 1 bài cô lập: curl hoặc tricep dip.',
-      },
-      {
-        day: 'T3', label: 'Thứ 3', type: 'Lower A', icon: '🦵', color: 'blue', imgType: 'strength',
-        duration: '35–40\'', intensity: 'RPE 7',
-        exercises: ['Squat 4×8–10 (nâng tải)', 'Romanian DL 3×10', 'Hip thrust 3×12', 'Calf raise 3×15'],
-        tip: 'Squat sâu = hamstring + glute kích hoạt tốt hơn. Đừng dừng lại khi đùi song song.',
-      },
-      {
-        day: 'T4', label: 'Thứ 4', type: 'Interval Cardio', icon: '⚡', color: 'orange', imgType: 'hiit',
-        duration: '30–35\'', intensity: 'Zone 3–4',
-        exercises: ['Warm-up 5\' chậm', '5 vòng: 2\' nhanh + 2\' chậm', 'Cool-down 5\' + giãn cơ 5\'', 'Option: thêm core 5\' cuối'],
-        tip: 'Interval tăng VO₂max và đốt mỡ hiệu quả sau khi tập. Ngày này không nên bỏ.',
-      },
-      {
-        day: 'T5', label: 'Thứ 5', type: 'Upper B', icon: '💪', color: 'purple', imgType: 'strength',
-        duration: '35–40\'', intensity: 'RPE 7–8',
-        exercises: ['Incline push / chest fly 3×10', 'Pull-up / lat pulldown 4×6–8', 'Lateral raise 3×12', 'Tricep dip / pushdown 3×12'],
-        tip: 'Pull-up: nếu chưa làm được, dùng band hỗ trợ hoặc lat pulldown — đừng nhảy lên.',
-      },
-      {
-        day: 'T6', label: 'Thứ 6', type: 'Lower B + Core', icon: '🦵', color: 'blue', imgType: 'strength',
-        duration: '35–40\'', intensity: 'RPE 7–8',
-        exercises: ['Deadlift 4×6–8', 'Walking lunge 3×10/chân', 'Nordic curl / leg curl 3×8', 'Plank + side plank 30s/bên'],
-        tip: 'Deadlift là "bài vua" — tập đúng sẽ kiểm tra toàn bộ chuỗi sau cơ thể. Không bao giờ tập khi lưng đang đau.',
-      },
-      {
-        day: 'T7', label: 'Thứ 7', type: 'Long Cardio + Mobility', icon: '🏃', color: 'teal', imgType: 'cardio',
-        duration: '45–55\'', intensity: 'Zone 2 + Stretch',
-        exercises: ['Zone 2 cardio 35–40\' (đi bộ nhanh / đạp / bơi)', 'Mobility toàn thân 10–15\'', 'Focus: hông, đùi sau, lưng dưới, vai'],
-        tip: 'Buổi dài cuối tuần xây nền aerobic bền vững — quan trọng như buổi strength.',
-      },
-      {
-        day: 'CN', label: 'Chủ Nhật', type: 'Nghỉ chủ động', icon: '💆', color: 'gray', imgType: 'recovery',
-        duration: '10–15\'', intensity: '—',
-        exercises: ['Mobility nhẹ 10–15\' nếu muốn', 'Đi bộ chậm < 20\'', 'Review tiến bộ tuần: vòng eo, số reps, cảm giác', 'Ngủ + nghỉ ngơi = đầu tư cho tuần sau'],
-        tip: 'Giai đoạn này cơ thể bạn đang tái tạo nhiều — nghỉ đủ là bắt buộc, không phải lười biếng.',
-      },
+      { day:'T2', type:'Upper A', icon:'💪', color:'purple', img:'strength', duration:'35–40\'',
+        exercises:['Bench/Push-up nâng cao 4×8–10 — thân thẳng, khuỷu tay 45°','Dumbbell row 4×10 — lưng thẳng, kéo khuỷu về hông, không nhún vai','Overhead press 3×10 — đẩy thẳng lên trời, không ưỡn lưng','Face pull/Band pull-apart 3×15 — sức khỏe khớp vai, không bỏ bài này'],
+        tip:'Upper A: chest + back là cặp đối kháng — kéo đủ bằng đẩy để tránh mất cân bằng vai.' },
+      { day:'T3', type:'Lower A', icon:'🦵', color:'blue', img:'strength', duration:'35–40\'',
+        exercises:['Squat 4×8–10 (tăng tải so với tuần trước) — sâu dưới đùi song song','Romanian DL 3×10 (tạ nặng hơn) — kiểm soát xuống 2–3s','Hip thrust 3×12 — thêm tạ lên hông nếu bodyweight quá dễ','Calf raise 3×15 + Plank 3×30s'],
+        tip:'Squat sâu = glute và hamstring kích hoạt nhiều hơn. Đùi song song là tối thiểu.' },
+      { day:'T4', type:'Interval Cardio', icon:'⚡', color:'orange', img:'hiit', duration:'30–35\'',
+        exercises:['Warm-up: 5\' đi bộ/đạp chậm','5 vòng: 2\' nhanh (Zone 3–4) + 2\' chậm (Zone 1–2) = 20\'','Cool-down: 5\' chậm + giãn cơ toàn thân 5\'','Option: thêm 5\' core (plank variation) cuối buổi'],
+        tip:'Interval tăng VO₂max và đốt mỡ sau tập (EPOC). Ngày này không nên bỏ.' },
+      { day:'T5', type:'Upper B', icon:'💪', color:'purple', img:'strength', duration:'35–40\'',
+        exercises:['Incline push/Chest fly 3×10 — góc 30–45°, focus ngực trên','Pull-up/Lat pulldown 4×6–8 — kéo xương bả vai xuống trước khi kéo tay','Lateral raise 3×12 — tạ nhẹ, dừng ở ngang vai, không swing','Tricep dip/Pushdown 3×12 — khuỷu tay gần người, không mở rộng'],
+        tip:'Pull-up: nếu chưa làm được → dùng band hỗ trợ hoặc lat pulldown. Đừng nhảy lên.' },
+      { day:'T6', type:'Lower B + Core', icon:'🦵', color:'blue', img:'strength', duration:'35–40\'',
+        exercises:['Deadlift 4×6–8 — "bài vua", kéo cả người lên bằng mông và đùi','Walking lunge 3×10/chân — bước dài, gối sau gần sàn, thân thẳng','Nordic curl/Leg curl 3×8 — eccentric hamstring, quan trọng cho đầu gối','Side plank 30s/bên + Dead bug 10 reps'],
+        tip:'Deadlift: không bao giờ tập khi lưng đang đau. Kỹ thuật trước, tải trọng sau.' },
+      { day:'T7', type:'Long Cardio + Mobility', icon:'🏃', color:'teal', img:'cardio', duration:'45–55\'',
+        exercises:['Zone 2 cardio 35–40\' (đi bộ nhanh / đạp xe / bơi lội)','Mobility toàn thân 10–15\': hông, đùi sau, lưng dưới, vai + cổ','Focus đặc biệt vào vùng cơ đang tight từ các buổi tập tuần này'],
+        tip:'Buổi cardio dài cuối tuần xây nền aerobic bền vững — quan trọng như buổi strength.' },
+      { day:'CN', type:'Nghỉ chủ động', icon:'💆', color:'gray', img:'recovery', duration:'10–15\'',
+        exercises:['Mobility nhẹ 10–15\' tùy ý (không bắt buộc)','Review tiến bộ tuần: số reps, cân nặng tạ, vòng eo, cảm giác năng lượng','Test 4 tuần: vào Chủ Nhật tuần 12 — plank, squat, đi bộ 12\'','Lên kế hoạch chu kỳ tập tiếp theo dựa trên tiến bộ đã đạt'],
+        tip:'Cơ thể đang tái tạo nhiều nhất giai đoạn này — nghỉ đủ là bắt buộc, không phải lười.' },
     ],
   },
 ];
 
-const STAT_ICONS = { sessions: '🏋️', volume: '📊', intensity: '⚡', focus: '🎯' };
+/* ── Small fade hook to trigger CSS animation cleanly ── */
+function useFadeKey(dep) {
+  const [fadeKey, setFadeKey] = useState(0);
+  const prev = useRef(dep);
+  useEffect(() => {
+    if (dep !== prev.current) {
+      setFadeKey(k => k + 1);
+      prev.current = dep;
+    }
+  }, [dep]);
+  return fadeKey;
+}
 
+/* ── Main component ── */
 export default function WeeklyRhythm() {
   const [activePhase, setActivePhase] = useState(0);
   const [activeDay,   setActiveDay]   = useState(null);
+  const fadeKey = useFadeKey(activePhase);
 
   const phase = PHASES[activePhase];
-  const ps    = S[phase.color];
+  const pc    = C[phase.color];
+
+  function switchPhase(idx) {
+    setActivePhase(idx);
+    setActiveDay(null);
+  }
 
   return (
     <section className="mb-16">
-      {/* ── Header ─────────────────────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-end gap-4 mb-8">
-        <div>
-          <h2 className="text-2xl font-black text-text flex items-center gap-3">
-            <span>📅</span> Nhịp Tuần Gợi Ý
-          </h2>
-          <p className="text-muted text-sm mt-1">
-            Cấu trúc tuần theo từng giai đoạn — click vào ngày để xem chi tiết bài tập
-          </p>
-        </div>
+
+      {/* ── Header ── */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-black text-text flex items-center gap-3 mb-1">
+          <span>📅</span> Nhịp Tuần Gợi Ý
+        </h2>
+        <p className="text-muted text-sm">
+          3 giai đoạn tiến bộ — chọn giai đoạn, click từng ngày để xem bài tập chi tiết
+        </p>
       </div>
 
-      {/* ── Phase selector ─────────────────────────────────────────────── */}
-      <div className="flex gap-2 p-1.5 bg-surface border border-border rounded-2xl w-fit mb-8 flex-wrap">
+      {/* ── Phase tabs ── */}
+      <div className="flex flex-wrap gap-2 p-1.5 bg-surface border border-border rounded-2xl w-fit mb-8">
         {PHASES.map((ph) => {
-          const cs      = S[ph.color];
+          const cs       = C[ph.color];
           const isActive = activePhase === ph.id;
           return (
             <button
               key={ph.id}
-              onClick={() => { setActivePhase(ph.id); setActiveDay(null); }}
-              className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 ${
+              onClick={() => switchPhase(ph.id)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 ${
                 isActive
                   ? `${cs.bg} ${cs.text} border ${cs.border}`
                   : 'text-muted hover:text-text hover:bg-white/4 border border-transparent'
               }`}
-              style={isActive ? { boxShadow: `0 2px 16px ${cs.glow}` } : undefined}
+              style={isActive ? { boxShadow: `0 2px 20px ${cs.glow}` } : undefined}
             >
               <span className="text-base">{ph.icon}</span>
               <span>{ph.label}</span>
-              <span className={`text-[10px] px-1.5 py-0.5 rounded-full border ml-0.5 ${
+              <span className={`text-[10px] px-2 py-0.5 rounded-full border font-semibold ${
                 isActive
-                  ? 'bg-white/10 border-white/20 text-white/70'
-                  : 'bg-bg border-border/60 text-muted/60'
+                  ? 'bg-white/10 border-white/20 text-white/60'
+                  : 'bg-bg border-border/50 text-muted/50'
               }`}>{ph.sub}</span>
             </button>
           );
         })}
       </div>
 
-      {/* ── Phase stats bar ─────────────────────────────────────────────── */}
-      <div
-        key={activePhase}
-        className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 animate-fade-in-up"
-      >
-        {[
-          { icon: STAT_ICONS.sessions,  label: 'Buổi strength/tuần', value: `${phase.sessions} buổi` },
-          { icon: STAT_ICONS.volume,    label: 'Thể tích',            value: `${phase.volume}%` },
-          { icon: STAT_ICONS.intensity, label: 'Cường độ',            value: phase.intensity },
-          { icon: STAT_ICONS.focus,     label: 'Focus',               value: phase.focus.split('·')[0].trim() },
-        ].map((stat, i) => (
-          <div key={i} className={`glass rounded-xl border ${ps.border} px-4 py-3 flex items-center gap-3`}>
-            <span className="text-xl shrink-0">{stat.icon}</span>
-            <div className="min-w-0">
-              <p className="text-[10px] text-muted/70 truncate">{stat.label}</p>
-              <p className={`text-sm font-black ${ps.text} truncate`}>{stat.value}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* ── Phase content (single keyed wrapper — one key change → one remount) ── */}
+      <div key={fadeKey} className="animate-fade-in-up">
 
-      {/* ── Week color strip ────────────────────────────────────────────── */}
-      <div className="flex gap-0.5 h-2 rounded-full overflow-hidden mb-6">
-        {phase.days.map((d, i) => {
-          const ds = S[d.color];
-          return (
+        {/* ── Stats row (4 cards, current phase only) ── */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          {phase.stats.map((s, i) => (
             <div
               key={i}
-              onClick={() => setActiveDay(activeDay === i ? null : i)}
-              className={`${ds.bar} flex-1 rounded-full cursor-pointer transition-all duration-200 hover:brightness-125 hover:scale-y-125`}
-              title={`${d.label}: ${d.type}`}
-            />
-          );
-        })}
-      </div>
-
-      {/* ── 7-day grid ─────────────────────────────────────────────────── */}
-      <div key={activePhase} className="grid grid-cols-7 gap-1.5 sm:gap-2 mb-6 animate-fade-in-up">
-        {phase.days.map((d, i) => {
-          const ds       = S[d.color];
-          const expanded = activeDay === i;
-          const img      = TYPE_IMG[d.imgType] || TYPE_IMG.rest;
-
-          return (
-            <div
-              key={i}
-              onClick={() => setActiveDay(expanded ? null : i)}
-              className={`group relative overflow-hidden rounded-2xl border cursor-pointer transition-all duration-250 ${
-                expanded
-                  ? `${ds.border} ${ds.bg} ring-1 ${ds.ring}`
-                  : 'border-border hover:border-white/20 bg-surface/50 hover:bg-surface'
-              }`}
-              style={{ boxShadow: expanded ? `0 6px 24px ${ds.glow}` : undefined }}
+              className={`relative overflow-hidden glass rounded-xl border ${pc.border} px-4 py-3 flex items-center gap-3`}
             >
-              {/* Image backdrop */}
-              <div className="h-16 sm:h-20 relative overflow-hidden">
-                <img
-                  src={img}
-                  alt=""
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  style={{ opacity: expanded ? 0.32 : 0.18 }}
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t ${
-                  d.color === 'gray'
-                    ? 'from-surface/95 via-surface/60 to-transparent'
-                    : `from-bg/95 via-bg/50 to-transparent`
-                }`} />
-                {/* Day label */}
-                <div className="absolute top-1.5 left-0 right-0 flex justify-center">
-                  <span className="text-[9px] font-black text-white/60">{d.day}</span>
-                </div>
-                {/* Icon */}
-                <div className="absolute bottom-1.5 left-0 right-0 flex justify-center">
-                  <span className="text-lg sm:text-xl drop-shadow-lg">{d.icon}</span>
-                </div>
-              </div>
-
-              {/* Card body */}
-              <div className="px-1.5 pb-2 pt-1 text-center">
-                <p className={`text-[10px] font-black leading-tight ${expanded ? ds.text : 'text-text/80'}`}>
-                  {d.type}
-                </p>
-                <p className="text-[9px] text-muted/60 mt-0.5 hidden sm:block">{d.duration}</p>
-                {/* Expand indicator */}
-                <div className={`mt-1.5 mx-auto w-4 h-0.5 rounded-full transition-all duration-200 ${
-                  expanded ? `${ds.bar} opacity-70` : 'bg-muted/20'
-                }`} />
+              <div className="absolute inset-0 opacity-5 pointer-events-none"
+                style={{ background: `radial-gradient(circle at 80% 50%, ${pc.hex}, transparent 70%)` }} />
+              <span className="text-xl shrink-0">{s.icon}</span>
+              <div className="min-w-0 relative">
+                <p className="text-[10px] text-muted/70 truncate">{s.label}</p>
+                <p className={`text-sm font-black ${pc.text} truncate`}>{s.value}</p>
               </div>
             </div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
 
-      {/* ── Day detail panel ────────────────────────────────────────────── */}
-      {activeDay !== null && (() => {
-        const d  = phase.days[activeDay];
-        const ds = S[d.color];
-        const img = TYPE_IMG[d.imgType] || TYPE_IMG.rest;
-        return (
-          <div
-            key={`${activePhase}-${activeDay}`}
-            className={`relative overflow-hidden rounded-2xl border ${ds.border} mb-6 animate-fade-in-up`}
-            style={{ boxShadow: `0 8px 32px ${ds.glow}` }}
-          >
-            {/* Header image strip */}
-            <div className="relative h-28 sm:h-32 overflow-hidden">
-              <img src={img} alt="" className="w-full h-full object-cover" style={{ opacity: 0.3 }} />
-              <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/60 to-transparent" />
-              <div className="absolute inset-0 flex items-center px-5 gap-4">
-                <span className="text-4xl drop-shadow-2xl">{d.icon}</span>
-                <div>
-                  <p className="text-[10px] text-muted/60 mb-0.5">{d.label} · {phase.label}</p>
-                  <h3 className={`text-xl font-black ${ds.text}`}>{d.type}</h3>
-                  <div className="flex items-center gap-2 mt-1">
-                    <span className={`text-[10px] px-2 py-0.5 rounded-full border ${ds.bg} ${ds.border} ${ds.text} font-bold`}>
-                      ⏱ {d.duration}
-                    </span>
-                    <span className={`text-[10px] px-2 py-0.5 rounded-full border ${ds.bg} ${ds.border} ${ds.text} font-bold`}>
-                      ⚡ {d.intensity}
-                    </span>
+        {/* ── Focus tag + week color strip ── */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-5">
+          <span className={`inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full border ${pc.bg} ${pc.border} ${pc.text} shrink-0`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${pc.dot}`} />
+            {phase.focus}
+          </span>
+          <div className="flex gap-1 flex-1 h-2 rounded-full overflow-hidden">
+            {phase.days.map((d, i) => {
+              const dc = C[d.color];
+              return (
+                <button
+                  key={i}
+                  onClick={() => setActiveDay(activeDay === i ? null : i)}
+                  className={`flex-1 ${dc.bar} rounded-full transition-all duration-200 hover:brightness-125 hover:scale-y-150 ${
+                    activeDay === i ? 'brightness-150 scale-y-150' : ''
+                  }`}
+                  title={`${d.day}: ${d.type}`}
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ── 7-day grid ── */}
+        <div className="grid grid-cols-7 gap-2 mb-4">
+          {phase.days.map((d, i) => {
+            const dc       = C[d.color];
+            const isActive = activeDay === i;
+            return (
+              <button
+                key={i}
+                onClick={() => setActiveDay(isActive ? null : i)}
+                className={`group relative overflow-hidden rounded-2xl border transition-all duration-200 text-left ${
+                  isActive
+                    ? `${dc.border} ${dc.bg}`
+                    : 'border-border bg-surface/60 hover:border-white/15 hover:bg-surface'
+                }`}
+                style={isActive ? { boxShadow: `0 4px 20px ${dc.glow}` } : undefined}
+              >
+                {/* Day image backdrop */}
+                <div className="relative h-14 sm:h-20 overflow-hidden rounded-t-2xl">
+                  <img
+                    src={IMG[d.img]}
+                    alt=""
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ opacity: isActive ? 0.35 : 0.15 }}
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/40 to-transparent" />
+                  <span className="absolute top-1 left-0 right-0 text-center text-[9px] font-black text-white/50">
+                    {d.day}
+                  </span>
+                  <span className="absolute bottom-1 left-0 right-0 text-center text-lg sm:text-xl leading-none">
+                    {d.icon}
+                  </span>
+                </div>
+
+                {/* Card label */}
+                <div className="px-1 pb-2.5 pt-1.5 text-center">
+                  <p className={`text-[9px] sm:text-[10px] font-black leading-tight line-clamp-2 ${
+                    isActive ? dc.text : 'text-text/75'
+                  }`}>
+                    {d.type}
+                  </p>
+                  <p className="text-[8px] text-muted/50 mt-0.5">{d.duration}</p>
+                </div>
+
+                {/* Active indicator bar */}
+                <div className={`h-0.5 rounded-full mx-2 mb-1.5 transition-all duration-200 ${
+                  isActive ? dc.bar : 'bg-transparent'
+                }`} />
+              </button>
+            );
+          })}
+        </div>
+
+        {/* ── Day detail panel ── */}
+        {activeDay !== null && (() => {
+          const d  = phase.days[activeDay];
+          const dc = C[d.color];
+          return (
+            <div
+              className={`relative overflow-hidden rounded-2xl border ${dc.border} mb-6 animate-fade-in-up`}
+              style={{ boxShadow: `0 8px 40px ${dc.glow}` }}
+            >
+              {/* Header banner */}
+              <div className="relative h-24 sm:h-28 overflow-hidden">
+                <img
+                  src={IMG[d.img]}
+                  alt=""
+                  className="w-full h-full object-cover"
+                  style={{ opacity: 0.28 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/70 to-transparent" />
+                <div className="absolute inset-0 flex items-center px-5 gap-4">
+                  <span className="text-4xl shrink-0 drop-shadow-2xl">{d.icon}</span>
+                  <div>
+                    <p className="text-[10px] text-muted/60 mb-0.5">
+                      {d.day} · {phase.label}
+                    </p>
+                    <h3 className={`text-lg sm:text-xl font-black ${dc.text}`}>{d.type}</h3>
+                    <div className="flex flex-wrap gap-1.5 mt-1">
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full border font-bold ${dc.bg} ${dc.border} ${dc.text}`}>
+                        ⏱ {d.duration}
+                      </span>
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full border font-bold ${dc.bg} ${dc.border} ${dc.text}`}>
+                        ⚡ {d.intensity || phase.stats[2].value}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* Exercise list */}
+              <div className="p-4 sm:p-5 grid sm:grid-cols-2 gap-2">
+                {d.exercises.map((ex, j) => (
+                  <div
+                    key={j}
+                    className="flex items-start gap-3 bg-bg/60 border border-border/40 rounded-xl px-4 py-3"
+                  >
+                    <span className={`shrink-0 w-5 h-5 rounded-full ${dc.bg} border ${dc.border} ${dc.text} text-[10px] font-black flex items-center justify-center mt-0.5`}>
+                      {j + 1}
+                    </span>
+                    <p className="text-xs text-text/90 leading-relaxed">{ex}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tip */}
+              <div className={`mx-4 sm:mx-5 mb-4 sm:mb-5 flex gap-3 items-start rounded-xl border ${dc.border} ${dc.bg} px-4 py-3`}>
+                <span className="text-sm shrink-0 mt-0.5">💡</span>
+                <p className={`text-xs ${dc.text} leading-relaxed`}>{d.tip}</p>
+              </div>
             </div>
+          );
+        })()}
 
-            {/* Exercises list */}
-            <div className="p-5 grid sm:grid-cols-2 gap-2">
-              {d.exercises.map((ex, j) => (
-                <div
-                  key={j}
-                  className="flex items-start gap-3 bg-bg/60 border border-border/40 rounded-xl px-4 py-3"
-                >
-                  <span className={`shrink-0 w-5 h-5 rounded-full ${ds.bg} border ${ds.border} ${ds.text} text-[10px] font-black flex items-center justify-center mt-0.5`}>
-                    {j + 1}
-                  </span>
-                  <p className="text-xs text-text/90 leading-relaxed">{ex}</p>
-                </div>
-              ))}
+        {/* ── Phase tip callout ── */}
+        <div className={`relative overflow-hidden rounded-2xl border ${pc.border} ${pc.bg} p-5`}>
+          <div
+            className="absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl opacity-8 pointer-events-none"
+            style={{ background: pc.hex }}
+          />
+          <div className="relative flex gap-3 items-start">
+            <span className="text-2xl shrink-0">{phase.icon}</span>
+            <div>
+              <p className={`text-xs font-black ${pc.text} mb-1`}>
+                Coach tip — {phase.sub}
+              </p>
+              <p className="text-sm text-muted/90 leading-relaxed">{phase.tip}</p>
             </div>
-
-            {/* Tip callout */}
-            <div className={`mx-5 mb-5 flex gap-3 items-start rounded-xl border ${ds.border} ${ds.bg} px-4 py-3`}>
-              <span className="text-sm shrink-0 mt-0.5">💡</span>
-              <p className={`text-xs ${ds.text} leading-relaxed`}>{d.tip}</p>
-            </div>
-          </div>
-        );
-      })()}
-
-      {/* ── Phase focus strip ───────────────────────────────────────────── */}
-      <div className={`flex flex-wrap gap-2 mb-5`}>
-        {phase.focus.split('·').map((f, i) => (
-          <span key={i} className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full border ${ps.bg} ${ps.border} ${ps.text}`}>
-            <span className={`w-1.5 h-1.5 rounded-full ${ps.dot}`} />
-            {f.trim()}
-          </span>
-        ))}
-      </div>
-
-      {/* ── Phase tip callout ───────────────────────────────────────────── */}
-      <div className={`relative overflow-hidden rounded-2xl border ${ps.border} ${ps.bg} p-5`}>
-        <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl opacity-10"
-          style={{ background: ps.hex }} />
-        <div className="relative flex gap-3">
-          <span className="text-xl shrink-0">{phase.icon}</span>
-          <div>
-            <p className={`text-xs font-black ${ps.text} mb-1`}>Lời khuyên giai đoạn {phase.sub}</p>
-            <p className="text-sm text-muted/90 leading-relaxed">{phase.tip}</p>
           </div>
         </div>
-      </div>
+
+      </div>{/* end keyed fade wrapper */}
     </section>
   );
 }

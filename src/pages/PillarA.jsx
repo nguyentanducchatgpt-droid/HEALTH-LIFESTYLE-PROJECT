@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LocalVideoCard from '../components/LocalVideoCard';
@@ -72,6 +72,65 @@ const LEVEL_COLORS = [
   'text-blue-400 bg-blue-500/10 border-blue-500/30',
   'text-purple-400 bg-purple-500/10 border-purple-500/30',
 ];
+
+const MOVE_VIDEO = {
+  squat:  'SQUAT',
+  hinge:  'HINGE',
+  push:   'PUSH',
+  pull:   'PULL',
+  core:   'CORE',
+  breath: 'BREATH',
+};
+
+// ─── Video thumbnail player (click-to-play, no autoplay) ──────────────────────
+
+function MovementVideoPlayer({ videoKey, s }) {
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+  const src = `${import.meta.env.BASE_URL}videos/${videoKey}.mp4#t=0.5`;
+
+  const handlePlay = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = false;
+    el.play().catch(() => {});
+    setPlaying(true);
+  };
+
+  return (
+    <div className="relative rounded-2xl overflow-hidden bg-black" style={{ aspectRatio: '9/16' }}>
+      <video
+        ref={videoRef}
+        className="w-full h-full object-cover"
+        muted
+        playsInline
+        preload="metadata"
+        src={src}
+        controls={playing}
+      />
+      {!playing && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
+          <button
+            type="button"
+            onClick={handlePlay}
+            className="absolute inset-0 flex flex-col items-center justify-center gap-3 group focus:outline-none"
+          >
+            <div
+              className={`w-16 h-16 rounded-full bg-white/10 border-2 ${s.border} flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-white/20`}
+              style={{ boxShadow: `0 0 40px ${s.glow}` }}
+            >
+              <svg className={`w-7 h-7 ${s.text} ml-1`} viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <span className="text-white/50 text-xs font-medium">Nhấn để xem</span>
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -262,137 +321,117 @@ export default function PillarA() {
         <p className="text-muted/50 text-xs mt-4 text-center">{tCommon('common.safety_note')}</p>
       </section>
 
-      {/* ── SECTION 4: 6 MOVEMENTS PHOTO GRID + DETAIL EXPLORER ────────────── */}
+      {/* ── SECTION 4: 6 MOVEMENTS — TAB + VIDEO ───────────────────────────── */}
       {Array.isArray(movementsDetail) && (
         <section className="mb-16">
           <h2 className="text-2xl font-black text-text mb-2">6 Mẫu Vận Động Nền Tảng</h2>
-          <p className="text-muted text-sm mb-8">Chọn một để xem hướng dẫn chi tiết</p>
+          <p className="text-muted text-sm mb-6">Chọn bài tập để xem video minh họa và hướng dẫn chi tiết</p>
 
-          {/* Movement photo grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
-            {movementsDetail.map((m, i) => {
-              const s       = MOVE_STYLE[m.color] || MOVE_STYLE.green;
-              const img     = MOVE_IMG[m.id] || MOVE_IMG.squat;
-              const isSelected = activeMove === i;
-              return (
-                <button
-                  key={m.id}
-                  type="button"
-                  onClick={() => setActiveMove(i)}
-                  className={`group relative overflow-hidden rounded-2xl text-left transition-all duration-300 focus:outline-none ${
-                    isSelected ? `ring-2 ${s.ring} scale-[1.02]` : 'hover:scale-[1.01]'
-                  }`}
-                  style={{
-                    aspectRatio: '16/9',
-                    boxShadow: isSelected ? `0 16px 48px ${s.glow}` : undefined,
-                  }}
-                >
-                  <img
-                    src={img}
-                    alt={m.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                    loading={i < 3 ? 'eager' : 'lazy'}
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${s.overlay}`} />
-
-                  {/* Selected checkmark */}
-                  {isSelected && (
-                    <div className={`absolute top-3 right-3 w-6 h-6 rounded-full ${s.bar} flex items-center justify-center shrink-0`}>
-                      <span className="text-bg text-[10px] font-black">✓</span>
-                    </div>
-                  )}
-
-                  {/* Bottom content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <span className="text-xl block mb-1 group-hover:scale-110 transition-transform">{m.icon}</span>
-                    <h3 className="font-black text-white text-sm leading-tight">{m.name}</h3>
-                    <p className={`text-[10px] ${s.text} mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200`}>
-                      {m.prescription}
-                    </p>
-                  </div>
-
-                  {/* Selected border highlight */}
-                  {isSelected && (
-                    <div className={`absolute inset-0 rounded-2xl border-2 ${s.border} pointer-events-none`} />
-                  )}
-                </button>
-              );
-            })}
+          {/* ── Scrollable tab bar ── */}
+          <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-6">
+            <div className="flex gap-1.5 min-w-max md:min-w-0 md:flex-wrap pb-0.5">
+              {movementsDetail.map((m, i) => {
+                const s = MOVE_STYLE[m.color] || MOVE_STYLE.green;
+                const isActive = activeMove === i;
+                return (
+                  <button
+                    key={m.id}
+                    type="button"
+                    onClick={() => setActiveMove(i)}
+                    className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap transition-all duration-200 focus:outline-none ${
+                      isActive
+                        ? `${s.bg} ${s.text} border ${s.border}`
+                        : 'text-muted border border-transparent hover:border-border hover:text-text hover:bg-white/4'
+                    }`}
+                  >
+                    <span className="text-base leading-none">{m.icon}</span>
+                    <span>{m.name}</span>
+                    {isActive && (
+                      <span className={`absolute bottom-0 inset-x-3 h-0.5 ${s.bar} rounded-full`} />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Detail panel for selected movement */}
+          {/* ── Tab content ── */}
           {currentMove && (() => {
             const s   = MOVE_STYLE[currentMove.color] || MOVE_STYLE.green;
-            const img = MOVE_IMG[currentMove.id] || MOVE_IMG.squat;
+            const vid = MOVE_VIDEO[currentMove.id];
             return (
-              <div className={`relative overflow-hidden rounded-3xl border ${s.border} animate-fade-in-up`}>
-                {/* Header image strip */}
-                <div className="relative h-36 overflow-hidden">
-                  <img src={img} alt="" className="w-full h-full object-cover" style={{ opacity: 0.3 }} />
-                  <div className={`absolute inset-0 bg-gradient-to-r ${s.overlay}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
+              <div
+                key={currentMove.id}
+                className={`relative overflow-hidden rounded-3xl border ${s.border} animate-fade-in-up`}
+              >
+                {/* Accent top bar */}
+                <div className="h-0.5 w-full" style={{ background: `linear-gradient(90deg, ${s.glow.replace('0.3)', '0.5)')}, transparent)` }} />
 
-                  {/* Glow orb */}
-                  <div
-                    className="absolute -top-10 -left-10 w-48 h-48 rounded-full blur-[60px] pointer-events-none"
-                    style={{ background: s.glow.replace('0.3)', '0.25)') }}
-                  />
+                <div className="p-5 md:p-6">
+                  <div className="grid md:grid-cols-[300px_1fr] gap-6">
 
-                  {/* Header meta */}
-                  <div className="absolute bottom-4 left-6 right-6 flex items-end gap-4">
-                    <div className={`w-12 h-12 rounded-2xl ${s.bg} border ${s.border} flex items-center justify-center text-2xl shrink-0`}>
-                      {currentMove.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className={`text-xl font-black ${s.text}`}>{currentMove.name}</h3>
-                      <p className="text-white/50 text-xs leading-snug line-clamp-1">{currentMove.goal}</p>
-                    </div>
-                    <div className={`shrink-0 text-xs font-bold px-3 py-1 rounded-full border ${s.bg} ${s.border} ${s.text}`}>
-                      {currentMove.prescription}
-                    </div>
-                  </div>
-                </div>
+                    {/* ── LEFT: video + movement meta ── */}
+                    <div className="space-y-4">
+                      {/* Movement label row */}
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-xl ${s.bg} border ${s.border} flex items-center justify-center text-xl shrink-0`}>
+                          {currentMove.icon}
+                        </div>
+                        <div>
+                          <h3 className={`font-black text-base ${s.text}`}>{currentMove.name}</h3>
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border inline-block mt-0.5 ${s.bg} ${s.border} ${s.text}`}>
+                            {currentMove.prescription}
+                          </span>
+                        </div>
+                      </div>
 
-                {/* Body */}
-                <div className="p-6 grid md:grid-cols-2 gap-5">
-                  {/* Left: basic exercise + cue */}
-                  <div className="space-y-4">
-                    <div className={`${s.bg} border ${s.border} rounded-xl p-4`}>
-                      <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">Bài cơ bản</p>
-                      <p className={`font-bold ${s.text} mb-2`}>{currentMove.basic}</p>
-                      <p className="text-xs text-muted leading-relaxed">{currentMove.basic_how}</p>
-                    </div>
+                      {/* Click-to-play video thumbnail */}
+                      {vid && <MovementVideoPlayer key={vid} videoKey={vid} s={s} />}
 
-                    {/* Technique cue */}
-                    <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-4">
-                      <div
-                        className="absolute top-0 left-0 w-1 h-full rounded-l-xl"
-                        style={{ background: `linear-gradient(180deg, ${s.glow}, transparent)` }}
-                      />
-                      <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">💡 Cue kỹ thuật</p>
-                      <p className={`text-sm font-bold ${s.text} leading-relaxed`}>{currentMove.cue}</p>
-                    </div>
-                  </div>
-
-                  {/* Right: levels + errors */}
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-3">Cấp độ tiến bộ</p>
-                      <div className="space-y-2">
-                        {Array.isArray(currentMove.levels) && currentMove.levels.map((lvl, li) => (
-                          <div key={li} className="flex items-center gap-3 bg-bg border border-border rounded-xl px-4 py-3">
-                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${LEVEL_COLORS[li % 3]}`}>
-                              {lvl.label}
-                            </span>
-                            <span className="text-sm text-text">{lvl.exercise}</span>
-                          </div>
-                        ))}
+                      {/* Goal box */}
+                      <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-4">
+                        <div className="absolute top-0 left-0 w-0.5 h-full" style={{ background: `linear-gradient(180deg, ${s.glow}, transparent)` }} />
+                        <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1.5">🎯 Mục tiêu</p>
+                        <p className="text-xs text-text leading-relaxed">{currentMove.goal}</p>
                       </div>
                     </div>
 
-                    <div className="bg-yellow-500/6 border border-yellow-500/20 rounded-xl p-4">
-                      <p className="text-[10px] font-bold text-yellow-400/80 uppercase tracking-wider mb-2">⚠ Lỗi thường gặp</p>
-                      <p className="text-xs text-yellow-300/70 leading-relaxed">{currentMove.errors}</p>
+                    {/* ── RIGHT: instruction details ── */}
+                    <div className="space-y-4">
+                      {/* Basic exercise */}
+                      <div className={`${s.bg} border ${s.border} rounded-xl p-4`}>
+                        <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">Bài cơ bản</p>
+                        <p className={`font-bold ${s.text} mb-2`}>{currentMove.basic}</p>
+                        <p className="text-xs text-muted leading-relaxed">{currentMove.basic_how}</p>
+                      </div>
+
+                      {/* Technique cue */}
+                      <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-4">
+                        <div className="absolute top-0 left-0 w-0.5 h-full" style={{ background: `linear-gradient(180deg, ${s.glow}, transparent)` }} />
+                        <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">💡 Cue kỹ thuật</p>
+                        <p className={`text-sm font-bold ${s.text} leading-relaxed`}>{currentMove.cue}</p>
+                      </div>
+
+                      {/* Progression levels */}
+                      <div>
+                        <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-3">Cấp độ tiến bộ</p>
+                        <div className="space-y-2">
+                          {Array.isArray(currentMove.levels) && currentMove.levels.map((lvl, li) => (
+                            <div key={li} className="flex items-center gap-3 bg-bg border border-border rounded-xl px-4 py-3">
+                              <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${LEVEL_COLORS[li % 3]}`}>
+                                {lvl.label}
+                              </span>
+                              <span className="text-sm text-text">{lvl.exercise}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Common errors */}
+                      <div className="bg-yellow-500/6 border border-yellow-500/20 rounded-xl p-4">
+                        <p className="text-[10px] font-bold text-yellow-400/80 uppercase tracking-wider mb-2">⚠ Lỗi thường gặp</p>
+                        <p className="text-xs text-yellow-300/70 leading-relaxed">{currentMove.errors}</p>
+                      </div>
                     </div>
                   </div>
                 </div>

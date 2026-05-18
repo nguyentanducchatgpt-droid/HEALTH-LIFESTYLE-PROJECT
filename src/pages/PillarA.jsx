@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import LocalVideoCard from '../components/LocalVideoCard';
 import WorkoutFramework from '../components/WorkoutFramework';
 import WeeklyRhythm from '../components/WeeklyRhythm';
+import WorkoutPlans from '../components/WorkoutPlans';
 
 // ─── Static config ─────────────────────────────────────────────────────────────
 
@@ -25,12 +26,6 @@ const MOVE_STYLE = {
   orange: { text: 'text-orange-400', bg: 'bg-orange-500/10', border: 'border-orange-500/30', bar: 'bg-orange-500', ring: 'ring-orange-500/40', glow: 'rgba(249,115,22,0.3)',  overlay: 'from-orange-950/90 via-orange-900/60 to-transparent' },
 };
 
-const PLAN_STYLE = {
-  orange: { text: 'text-orange-400', bg: 'bg-orange-500/10', border: 'border-orange-500/30', bar: 'bg-orange-500' },
-  green:  { text: 'text-green-400',  bg: 'bg-green-500/10',  border: 'border-green-500/30',  bar: 'bg-green-500' },
-  purple: { text: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/30', bar: 'bg-purple-500' },
-  teal:   { text: 'text-teal-400',   bg: 'bg-teal-500/10',   border: 'border-teal-500/30',   bar: 'bg-teal-500' },
-};
 
 const WARMUP_IMGS = [
   'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=300&q=70',
@@ -176,12 +171,6 @@ const PROG_STEPS = [
   { n: 5, label: 'Giảm nghỉ',    desc: 'Tăng sức bền và mật độ',         icon: '⏱️' },
 ];
 
-const PLAN_IMAGES = {
-  busy:     'https://images.unsplash.com/photo-1485727749690-d091e8284ef3?w=800&q=60',
-  fat_loss: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800&q=60',
-  muscle:   'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=60',
-  mobility: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=60',
-};
 
 const LEVEL_COLORS = [
   'text-green-400 bg-green-500/10 border-green-500/30',
@@ -248,13 +237,11 @@ export default function PillarA() {
 
   const pillar          = tPillars('pillarA',                  { returnObjects: true });
   const movementsDetail = tPillars('pillarA.movements_detail', { returnObjects: true });
-  const workoutPlans    = tPillars('pillarA.workout_plans',    { returnObjects: true });
   const progressTests   = tPillars('pillarA.progress_tests',  { returnObjects: true });
   const warmup          = tPillars('pillarA.warmup',           { returnObjects: true });
   const cooldown        = tPillars('pillarA.cooldown',         { returnObjects: true });
 
   const [activeMove,     setActiveMove]     = useState(0);
-  const [activePlan,     setActivePlan]     = useState(0);
   const [activeWarmup,   setActiveWarmup]   = useState('warmup');
   const [activeDayBlock, setActiveDayBlock] = useState(0);
 
@@ -267,7 +254,6 @@ export default function PillarA() {
   }
 
   const currentMove = Array.isArray(movementsDetail) ? movementsDetail[activeMove] : null;
-  const currentPlan = Array.isArray(workoutPlans)    ? workoutPlans[activePlan]    : null;
 
   // Fallback exercise lists for warm-up/cool-down tabs
   const wuExercises = Array.isArray(warmup) && warmup.length > 0
@@ -694,81 +680,7 @@ export default function PillarA() {
       <WeeklyRhythm />
 
       {/* ── WORKOUT PLANS ─────────────────────────────────────────────────────── */}
-      {Array.isArray(workoutPlans) && currentPlan && (
-        <section className="mb-16">
-          <h2 className="text-2xl font-black text-text mb-2 flex items-center gap-3">
-            <span>📋</span> {tPillars('pillarA.plans_title')}
-          </h2>
-          <p className="text-muted text-sm mb-6">Chọn kế hoạch phù hợp với mục tiêu và thời gian của bạn</p>
-
-          <div className="flex flex-wrap gap-2 mb-5">
-            {workoutPlans.map((plan, i) => {
-              const s = PLAN_STYLE[plan.color] || PLAN_STYLE.green;
-              return (
-                <button
-                  key={plan.id}
-                  onClick={() => setActivePlan(i)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold border transition-all duration-200 ${
-                    activePlan === i
-                      ? `${s.bg} ${s.text} ${s.border}`
-                      : 'bg-surface border-border text-muted hover:border-accent/30 hover:text-text'
-                  }`}
-                >
-                  {plan.name}
-                  <span className={`text-[10px] ${activePlan === i ? 'opacity-70' : 'opacity-40'}`}>· {plan.tag}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {(() => {
-            const ps = PLAN_STYLE[currentPlan.color] || PLAN_STYLE.green;
-            return (
-              <div className={`relative overflow-hidden rounded-2xl border ${ps.border} animate-fade-in-up`}>
-                <div className="relative h-24 overflow-hidden">
-                  <img src={PLAN_IMAGES[currentPlan.id] || PLAN_IMAGES.busy} alt="" className="w-full h-full object-cover" style={{ opacity: 0.25 }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg to-transparent" />
-                  <div className="absolute bottom-3 left-5 flex items-center gap-2">
-                    <span className={`text-xs font-bold px-3 py-1 rounded-full border ${ps.bg} ${ps.text} ${ps.border}`}>{currentPlan.name}</span>
-                    <span className="text-xs text-white/40">· {currentPlan.tag}</span>
-                  </div>
-                </div>
-                <div className="p-5">
-                  {currentPlan.type === 'blocks' && Array.isArray(currentPlan.blocks) && (
-                    <div className="space-y-3">
-                      {currentPlan.blocks.map((block, i) => (
-                        <div key={i} className="flex gap-4 items-start bg-bg border border-border rounded-xl px-5 py-4 hover:border-border-bright transition-colors">
-                          <div className="shrink-0 text-right min-w-[60px]">
-                            <span className={`text-xs font-black ${ps.text}`}>{block.time}</span>
-                          </div>
-                          <div className={`w-px self-stretch ${ps.bar} opacity-30 shrink-0`} />
-                          <div>
-                            <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1">{block.phase}</p>
-                            <p className="text-sm text-text leading-relaxed">{block.content}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {currentPlan.type === 'exercises' && Array.isArray(currentPlan.exercises) && (
-                    <div className="space-y-2">
-                      {currentPlan.exercises.map((ex, i) => (
-                        <div key={i} className="flex items-center justify-between bg-bg border border-border rounded-xl px-4 py-3 hover:border-border-bright transition-colors">
-                          <div className="flex items-center gap-3">
-                            <span className={`w-6 h-6 rounded-full ${ps.bg} border ${ps.border} ${ps.text} text-[10px] font-black flex items-center justify-center shrink-0`}>{i + 1}</span>
-                            <span className="text-sm text-text">{ex.name}</span>
-                          </div>
-                          <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${ps.bg} ${ps.text} ${ps.border} whitespace-nowrap`}>{ex.sets}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })()}
-        </section>
-      )}
+      <WorkoutPlans />
 
       {/* ── PROGRESSION STAIRCASE ─────────────────────────────────────────────── */}
       <section className="mb-16">

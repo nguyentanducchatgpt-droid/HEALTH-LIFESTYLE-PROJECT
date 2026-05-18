@@ -5,6 +5,8 @@ import LocalVideoCard from '../components/LocalVideoCard';
 import WorkoutFramework from '../components/WorkoutFramework';
 import WeeklyRhythm from '../components/WeeklyRhythm';
 import WorkoutPlans from '../components/WorkoutPlans';
+import ProgressionStaircase from '../components/ProgressionStaircase';
+import MonthlyProgressCheck from '../components/MonthlyProgressCheck';
 
 // ─── Static config ─────────────────────────────────────────────────────────────
 
@@ -683,28 +685,7 @@ export default function PillarA() {
       <WorkoutPlans />
 
       {/* ── PROGRESSION STAIRCASE ─────────────────────────────────────────────── */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-black text-text mb-2 flex items-center gap-3">
-          <span>📈</span> Bậc Thang Tiến Bộ
-        </h2>
-        <p className="text-muted text-sm mb-8">Nguyên tắc vàng: chỉ thay đổi 1 biến mỗi lần — tránh chấn thương</p>
-        <div className="relative">
-          <div className="absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent md:hidden" />
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
-            {PROG_STEPS.map((step, i) => (
-              <div key={i} className="group relative flex md:flex-col items-start md:items-center gap-3 bg-surface border border-border rounded-2xl p-4 hover:border-accent/30 hover:bg-accent/4 transition-all duration-200">
-                <div className="shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/25 text-accent font-black text-sm flex items-center justify-center">
-                  {step.n}
-                </div>
-                <div className="md:text-center">
-                  <p className="font-bold text-text text-sm">{step.label}</p>
-                  <p className="text-muted text-[11px] mt-0.5">{step.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProgressionStaircase />
 
       {/* ── SAFETY PRINCIPLES ─────────────────────────────────────────────────── */}
       {pillar.sections && Array.isArray(pillar.sections) && pillar.sections[5] && (
@@ -730,29 +711,7 @@ export default function PillarA() {
       )}
 
       {/* ── PROGRESS TESTS ────────────────────────────────────────────────────── */}
-      {Array.isArray(progressTests) && (
-        <section className="mb-16">
-          <h2 className="text-2xl font-black text-text mb-6 flex items-center gap-3">
-            <span>📊</span> {tPillars('pillarA.tests_title')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {progressTests.map((row, i) => {
-              const colors = ['green', 'blue', 'purple', 'teal', 'orange'];
-              const s = MOVE_STYLE[colors[i % 5]] || MOVE_STYLE.green;
-              return (
-                <div key={i} className={`relative overflow-hidden rounded-2xl border ${s.border} ${s.bg} p-5 hover:scale-[1.01] transition-all duration-200`}>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="w-7 h-7 rounded-full bg-white/5 border border-white/10 text-white/40 text-xs font-black flex items-center justify-center">{i + 1}</span>
-                    <span className={`w-2 h-2 rounded-full ${s.bar}`} />
-                  </div>
-                  <h3 className={`font-bold text-sm ${s.text} mb-2`}>{row.capability}</h3>
-                  <p className="text-muted text-xs leading-relaxed">{row.test}</p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
+      <MonthlyProgressCheck />
 
       {/* ── CTA LINKS ─────────────────────────────────────────────────────────── */}
       <section className="mb-4">

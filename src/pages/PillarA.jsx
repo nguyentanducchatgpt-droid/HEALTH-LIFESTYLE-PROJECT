@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LocalVideoCard from '../components/LocalVideoCard';
 import WorkoutFramework from '../components/WorkoutFramework';
+import WeeklyRhythm from '../components/WeeklyRhythm';
 
 // ─── Static config ─────────────────────────────────────────────────────────────
 
@@ -166,16 +167,6 @@ const DAILY_BLOCKS = [
   },
 ];
 
-const WEEKLY = [
-  { days: 'T2 · T4 · T6', type: 'Sức Mạnh',  icon: '🏋️', color: 'green',  desc: 'Gập chân, Gập hông, Chống đẩy, Kéo, Cơ lõi — 20–30 phút',
-    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=65' },
-  { days: 'T3 · T5',       type: 'Tim Mạch',  icon: '🚶', color: 'blue',   desc: 'Đi bộ nhanh, đạp xe, leo cầu thang — 20–30 phút',
-    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=400&q=65' },
-  { days: 'Thứ 7',         type: 'Phục Hồi',  icon: '🌿', color: 'teal',   desc: 'Giãn cơ, yoga nhẹ, đi dạo thư giãn',
-    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=65' },
-  { days: 'Chủ Nhật',      type: 'Nghỉ Ngơi', icon: '🌙', color: 'purple', desc: 'Nghỉ hoàn toàn hoặc vận động rất nhẹ theo sở thích',
-    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=65' },
-];
 
 const PROG_STEPS = [
   { n: 1, label: 'Tăng số lần',  desc: 'Từ 8 → 12 lần/hiệp',            icon: '🔢' },
@@ -700,32 +691,7 @@ export default function PillarA() {
       <WorkoutFramework />
 
       {/* ── WEEKLY RHYTHM ─────────────────────────────────────────────────────── */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-black text-text mb-8 flex items-center gap-3">
-          <span>📅</span> Nhịp Tuần Gợi Ý
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {WEEKLY.map((w, i) => {
-            const s = MOVE_STYLE[w.color] || MOVE_STYLE.green;
-            return (
-              <div key={i} className={`group relative overflow-hidden rounded-2xl border ${s.border} ${s.bg} p-4 hover:scale-[1.01] transition-all duration-300`}>
-                <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                  <img src={w.img} alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.08]" style={{ opacity: 0.12 }} />
-                </div>
-                <div className="relative">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-2xl">{w.icon}</span>
-                    <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${s.bg} ${s.border} ${s.text}`}>{w.days}</span>
-                  </div>
-                  <h3 className={`font-black text-sm ${s.text} mb-1`}>{w.type}</h3>
-                  <p className="text-muted text-[11px] leading-snug">{w.desc}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <p className="text-muted/50 text-xs mt-4 text-center">{tCommon('common.safety_note')}</p>
-      </section>
+      <WeeklyRhythm />
 
       {/* ── WORKOUT PLANS ─────────────────────────────────────────────────────── */}
       {Array.isArray(workoutPlans) && currentPlan && (

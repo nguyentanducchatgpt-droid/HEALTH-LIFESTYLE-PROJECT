@@ -31,14 +31,91 @@ const PLAN_STYLE = {
 };
 
 const DAILY_BLOCKS = [
-  { time: '5 phút',       name: 'Khởi Động',          desc: 'Vận động khớp, tăng nhiệt cơ thể',  icon: '🔥', color: 'orange',
-    img: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=400&q=65' },
-  { time: '10–20 phút',   name: 'Vận Động Chính',      desc: 'Bài sức mạnh hoặc tim mạch',        icon: '💪', color: 'green',
-    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=65' },
-  { time: '5–10 phút',    name: 'Giãn Cơ & Hạ Nhiệt', desc: 'Kéo giãn, hạ nhiệt độ cơ thể',     icon: '🧘', color: 'teal',
-    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=65' },
-  { time: '5 phút',       name: 'Tĩnh Tâm',            desc: 'Thở sâu, thiền ngắn hoặc đi dạo',  icon: '🌿', color: 'purple',
-    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=65' },
+  {
+    time: '5 phút', name: 'Khởi Động', desc: 'Vận động khớp, tăng nhiệt cơ thể', icon: '🔥', color: 'orange',
+    img: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=400&q=65',
+    goal: 'Tăng nhiệt cơ thể, bôi trơn khớp, kích hoạt hệ thần kinh — giảm nguy cơ chấn thương',
+    steps: [
+      { name: 'Thở cơ hoành',       how: 'Tay đặt lên bụng, bụng phồng khi hít vào, thở ra chậm qua miệng', duration: '4–6 nhịp' },
+      { name: 'Đi bộ tại chỗ',      how: 'Nâng gối vừa phải, vai thả lỏng, nhịp nhàng đều đặn',              duration: '60 giây' },
+      { name: 'Xoay vai',            how: 'Xoay chậm về phía sau, không rút cổ, cảm nhận sự giãn ra',         duration: '10 vòng' },
+      { name: 'Ép bờ vai',           how: 'Kéo nhẹ hai vai về sau, mở ngực, giữ 1–2 giây mỗi lần',            duration: '10 lần' },
+      { name: 'Gập hông cơ bản',     how: 'Đẩy hông ra sau, lưng thẳng, gối hơi chùng — không cúi bằng lưng', duration: '8 lần' },
+      { name: 'Ngồi xuống ghế',      how: 'Ngồi xuống rồi đứng lên kiểm soát, không "rơi" xuống ghế',         duration: '8 lần' },
+    ],
+    tips: [
+      'Không bỏ qua dù đang vội — 5 phút này giảm đáng kể nguy cơ chấn thương',
+      'Cơ thể cần 3–5 phút để tăng nhiệt độ cơ lên mức an toàn (38°C)',
+      'Thở sâu đầu tiên giúp "bật" hệ thần kinh phó giao cảm → cơ thả lỏng tốt hơn',
+    ],
+  },
+  {
+    time: '10–20 phút', name: 'Vận Động Chính', desc: 'Bài sức mạnh hoặc tim mạch', icon: '💪', color: 'green',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=65',
+    goal: 'Kích thích cơ bắp & hệ tim mạch — đây là phần tạo ra sự thích nghi và tiến bộ',
+    options: [
+      {
+        name: 'Sức Mạnh', icon: '🏋️', days: 'T2 · T4 · T6',
+        exercises: [
+          { name: 'Gập chân (Squat)',        sets: '2–3 × 10–12 lần' },
+          { name: 'Chống đẩy (Push)',         sets: '2–3 × 8–12 lần'  },
+          { name: 'Kéo dây / khăn (Pull)',    sets: '2–3 × 10–12 lần' },
+          { name: 'Cầu mông / Gập hông',      sets: '2–3 × 12–15 lần' },
+          { name: 'Tư thế ván (Core)',         sets: '2–3 × 20–40 giây'},
+        ],
+        note: 'Nghỉ 60–90 giây giữa các hiệp. Tăng tải ≤ 10%/tuần.',
+      },
+      {
+        name: 'Tim Mạch', icon: '🚶', days: 'T3 · T5',
+        exercises: [
+          { name: 'Đi bộ nhanh ngoài trời',  sets: '15–20 phút' },
+          { name: 'Đạp xe nhẹ',               sets: '15–20 phút' },
+          { name: 'Leo cầu thang',             sets: '10–15 phút' },
+          { name: 'Nhịp tim mục tiêu',         sets: '50–70% HRmax' },
+        ],
+        note: 'HRmax ≈ 220 − tuổi. Có thể nói chuyện được là đúng vùng.',
+      },
+    ],
+    tips: [
+      'Chất lượng > số lượng — form chuẩn trước, tăng tải sau',
+      'Uống nước ngay khi khát, đừng chờ đến khi rất khát',
+      'Nếu quá mệt sau bài: giảm 1 hiệp hoặc giảm tải — tiến bộ dần đều mới bền vững',
+    ],
+  },
+  {
+    time: '5–10 phút', name: 'Giãn Cơ & Hạ Nhiệt', desc: 'Kéo giãn, hạ nhiệt độ cơ thể', icon: '🧘', color: 'teal',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=65',
+    goal: 'Phục hồi nhịp tim, tăng linh hoạt, giảm đau cơ hôm sau — không bỏ qua bước này',
+    steps: [
+      { name: 'Giãn gấp hông',   how: 'Quỳ một chân, đẩy hông nhẹ về trước — cảm nhận căng trước đùi',    duration: '30 giây/bên' },
+      { name: 'Giãn đùi sau',    how: 'Duỗi một chân, gập người nhẹ, lưng không gù quá mức',               duration: '30 giây/bên' },
+      { name: 'Mở ngực',         how: 'Dan hai tay sau lưng hoặc chống tay vào cửa, ngực mở ra trước',      duration: '30 giây'     },
+      { name: 'Tư thế em bé',    how: 'Ngồi về gót, vươn tay ra trước, thở chậm, cảm nhận lưng giãn',      duration: '30–60 giây'  },
+      { name: 'Thở chậm',        how: 'Hít vào 4 giây, thở ra 6 giây — chú ý bụng phồng xẹp',              duration: '4–6 nhịp'    },
+    ],
+    tips: [
+      'Giữ mỗi động tác ≥ 20 giây để cơ thực sự được kéo giãn',
+      'Không nín thở — thở đều đặn giúp cơ mềm và dễ giãn hơn',
+      'Cảm giác căng nhẹ là bình thường — đau nhói là dừng ngay',
+    ],
+  },
+  {
+    time: '5 phút', name: 'Tĩnh Tâm', desc: 'Thở sâu, thiền ngắn hoặc đi dạo', icon: '🌿', color: 'purple',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=65',
+    goal: 'Hạ cortisol, củng cố ký ức vận động, chuyển não từ chế độ "nỗ lực" sang "phục hồi"',
+    steps: [
+      { name: 'Ngồi/nằm thoải mái',  how: 'Đặt tay lên bụng, nhắm mắt nhẹ hoặc nhìn xuống',                                   duration: '30 giây'  },
+      { name: 'Thở hộp (Box)',        how: 'Hít vào 4s → giữ 4s → thở ra 4s → giữ 4s — lặp 2–3 vòng',                          duration: '2–3 phút' },
+      { name: 'Quét cơ thể',          how: 'Nhận biết từng vùng từ đầu đến chân — cảm nhận không phán xét',                      duration: '1 phút'   },
+      { name: 'Ghi nhận tích cực',    how: 'Nghĩ đến 1 điều tốt trong buổi tập: đã hoàn thành, cảm thấy khỏe, bước tiến nào đó', duration: '30 giây'  },
+      { name: 'Đặt ý định',           how: 'Quyết định 1 điều muốn làm tốt trong phần còn lại của ngày',                         duration: '30 giây'  },
+    ],
+    tips: [
+      'Không cần "đầu óc trống rỗng" — chỉ cần quan sát, không phán xét',
+      '5 phút thiền sau tập giúp cortisol giảm 15–20%',
+      'Đây là lúc não bộ củng cố và ghi nhớ các vận động mới học — đừng lướt điện thoại ngay',
+    ],
+  },
 ];
 
 const WEEKLY = [
@@ -145,8 +222,9 @@ export default function PillarA() {
   const warmup          = tPillars('pillarA.warmup',           { returnObjects: true });
   const cooldown        = tPillars('pillarA.cooldown',         { returnObjects: true });
 
-  const [activeMove, setActiveMove] = useState(0);
-  const [activePlan, setActivePlan] = useState(0);
+  const [activeMove,  setActiveMove]  = useState(0);
+  const [activePlan,  setActivePlan]  = useState(0);
+  const [activeBlock, setActiveBlock] = useState(null);
 
   if (!pillar || typeof pillar !== 'object') {
     return (
@@ -235,27 +313,38 @@ export default function PillarA() {
           <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
         </div>
 
+        {/* ── 4 clickable phase cards ── */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {DAILY_BLOCKS.map((b, i) => {
-            const s = MOVE_STYLE[b.color] || MOVE_STYLE.green;
+            const s        = MOVE_STYLE[b.color] || MOVE_STYLE.green;
+            const isActive = activeBlock === i;
             return (
-              <div
+              <button
                 key={i}
-                className={`group relative overflow-hidden rounded-2xl border ${s.border} hover:scale-[1.02] transition-all duration-300`}
-                style={{ aspectRatio: '3/4' }}
+                type="button"
+                onClick={() => setActiveBlock(isActive ? null : i)}
+                className={`group relative overflow-hidden rounded-2xl text-left transition-all duration-300 focus:outline-none ${
+                  isActive ? `ring-2 ${s.ring} scale-[1.02]` : 'hover:scale-[1.02]'
+                }`}
+                style={{
+                  aspectRatio: '3/4',
+                  boxShadow: isActive ? `0 12px 40px ${s.glow}` : undefined,
+                }}
               >
                 <img
                   src={b.img}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                  style={{ opacity: 0.22 }}
+                  style={{ opacity: isActive ? 0.3 : 0.22 }}
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t ${s.overlay} pointer-events-none`} />
                 <div className="absolute inset-0 bg-gradient-to-b from-bg/50 to-transparent pointer-events-none" />
 
-                {/* Step badge */}
-                <div className="absolute top-3 left-3 w-6 h-6 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-[10px] font-black text-white/60">
-                  {i + 1}
+                {/* Step / checkmark */}
+                <div className={`absolute top-3 left-3 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black transition-all duration-300 ${
+                  isActive ? `${s.bar} text-bg` : 'bg-white/10 border border-white/15 text-white/60'
+                }`}>
+                  {isActive ? '✓' : i + 1}
                 </div>
 
                 {/* Time badge */}
@@ -267,18 +356,125 @@ export default function PillarA() {
 
                 {/* Center icon */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-4xl group-hover:scale-110 transition-transform duration-300">{b.icon}</span>
+                  <span className={`text-4xl transition-all duration-300 ${isActive ? 'scale-125' : 'group-hover:scale-110'}`}>
+                    {b.icon}
+                  </span>
                 </div>
 
                 {/* Bottom text */}
                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="font-black text-white text-sm leading-tight mb-1">{b.name}</h3>
+                  <h3 className={`font-black text-sm leading-tight mb-1 transition-colors ${isActive ? 'text-white' : 'text-white/90'}`}>
+                    {b.name}
+                  </h3>
                   <p className="text-white/50 text-[10px] leading-snug">{b.desc}</p>
+                  {!isActive && (
+                    <p className={`text-[9px] ${s.text} mt-1 opacity-60`}>Nhấn để xem chi tiết →</p>
+                  )}
                 </div>
-              </div>
+
+                {/* Selected border */}
+                {isActive && <div className={`absolute inset-0 rounded-2xl border-2 ${s.border} pointer-events-none`} />}
+              </button>
             );
           })}
         </div>
+
+        {/* ── Detail panel (slides in when a block is selected) ── */}
+        {activeBlock !== null && (() => {
+          const b = DAILY_BLOCKS[activeBlock];
+          const s = MOVE_STYLE[b.color] || MOVE_STYLE.green;
+          return (
+            <div key={activeBlock} className={`mt-4 relative overflow-hidden rounded-3xl border ${s.border} animate-fade-in-up`}>
+              {/* Accent line */}
+              <div className="h-0.5 w-full" style={{ background: `linear-gradient(90deg, ${s.glow.replace('0.3)', '0.6)')}, transparent)` }} />
+
+              <div className="p-5 md:p-6">
+                {/* Detail header */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className={`w-11 h-11 rounded-xl ${s.bg} border ${s.border} flex items-center justify-center text-2xl shrink-0`}>
+                    {b.icon}
+                  </div>
+                  <div>
+                    <h3 className={`font-black text-lg ${s.text}`}>{b.name}</h3>
+                    <p className="text-muted text-xs leading-snug max-w-lg">{b.goal}</p>
+                  </div>
+                  <span className={`ml-auto shrink-0 text-[10px] font-bold px-3 py-1 rounded-full border ${s.bg} ${s.border} ${s.text}`}>
+                    {b.time}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setActiveBlock(null)}
+                    className="shrink-0 w-7 h-7 rounded-lg border border-border text-muted hover:text-text hover:border-border-bright transition-all flex items-center justify-center text-xs"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                {/* ── Block 2: two option columns ── */}
+                {b.options ? (
+                  <>
+                    <div className="grid md:grid-cols-2 gap-4 mb-5">
+                      {b.options.map((opt, oi) => (
+                        <div key={oi} className={`rounded-2xl border ${s.border} ${s.bg} overflow-hidden`}>
+                          <div className="px-4 py-3 border-b border-border/50 flex items-center gap-2">
+                            <span className="text-lg">{opt.icon}</span>
+                            <h4 className={`font-black text-sm ${s.text}`}>{opt.name}</h4>
+                            <span className="ml-auto text-[10px] text-muted font-medium">{opt.days}</span>
+                          </div>
+                          <div className="p-3 space-y-2">
+                            {opt.exercises.map((ex, ei) => (
+                              <div key={ei} className="flex items-center justify-between bg-bg/70 border border-border/40 rounded-xl px-3 py-2.5 hover:border-border-bright transition-colors">
+                                <span className="text-xs text-text">{ex.name}</span>
+                                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ml-2 ${s.bg} ${s.border} ${s.text}`}>
+                                  {ex.sets}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="px-4 pb-3">
+                            <p className="text-[10px] text-muted/60 italic">{opt.note}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  /* ── Blocks 1, 3, 4: numbered step list ── */
+                  <div className="space-y-2 mb-5">
+                    {b.steps.map((step, si) => (
+                      <div key={si} className="flex items-start gap-3 bg-bg/60 border border-border/40 rounded-xl px-4 py-3 hover:border-border-bright transition-colors duration-150">
+                        <span className={`w-6 h-6 rounded-full ${s.bg} border ${s.border} ${s.text} text-[10px] font-black flex items-center justify-center shrink-0 mt-0.5`}>
+                          {si + 1}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-semibold text-text">{step.name}</p>
+                          <p className="text-[10px] text-muted mt-0.5 leading-snug">{step.how}</p>
+                        </div>
+                        <span className={`shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border whitespace-nowrap mt-0.5 ${s.bg} ${s.border} ${s.text}`}>
+                          {step.duration}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* ── Tips callout ── */}
+                <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-4">
+                  <div className="absolute top-0 left-0 w-0.5 h-full" style={{ background: `linear-gradient(180deg, ${s.glow}, transparent)` }} />
+                  <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-3">💡 Lưu ý quan trọng</p>
+                  <ul className="space-y-2">
+                    {b.tips.map((tip, ti) => (
+                      <li key={ti} className="flex items-start gap-2 text-xs text-text/80 leading-relaxed">
+                        <span className={`${s.text} shrink-0 mt-0.5 font-bold`}>·</span>
+                        {tip}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </section>
 
       {/* ── SECTION 3: WEEKLY RHYTHM ────────────────────────────────────────── */}

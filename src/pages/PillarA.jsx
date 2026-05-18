@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LocalVideoCard from '../components/LocalVideoCard';
+import WorkoutFramework from '../components/WorkoutFramework';
 
 // ─── Static config ─────────────────────────────────────────────────────────────
 
@@ -694,6 +695,9 @@ export default function PillarA() {
           );
         })()}
       </section>
+
+      {/* ── WORKOUT FRAMEWORK — 8 durations ──────────────────────────────────── */}
+      <WorkoutFramework />
 
       {/* ── WEEKLY RHYTHM ─────────────────────────────────────────────────────── */}
       <section className="mb-16">

@@ -80,22 +80,60 @@ const MOVE_VIDEO = { squat:'SQUAT', hinge:'HINGE', push:'PUSH', pull:'PULL', cor
 
 // ─── Click-to-play video ────────────────────────────────────────────────────────
 
+const VIDEO_POSTERS = {
+  SQUAT: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=70',
+  HINGE: 'https://images.unsplash.com/photo-1517343985841-f8b2d55d5aa8?w=400&q=70',
+  PUSH:  'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70',
+  PULL:  'https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=400&q=70',
+  CORE:  'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=400&q=70',
+  BREATH:'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=70',
+};
+
 function MovementVideoPlayer({ videoKey, s }) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
-  const src = `${import.meta.env.BASE_URL}videos/${videoKey}.mp4#t=0.5`;
+  const [error, setError] = useState(false);
+  // No #t= fragment — some CDN/browser combos reject it; poster handles thumbnail
+  const src = `${import.meta.env.BASE_URL}videos/${videoKey}.mp4`;
 
-  const handlePlay = () => {
+  // React's `muted` JSX prop has a known DOM-sync bug; manage via DOM directly
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.muted = true;
+  }, []);
+
+  const handlePlay = async () => {
     const el = videoRef.current;
     if (!el) return;
     el.muted = false;
-    el.play().catch(() => {});
-    setPlaying(true);
+    try {
+      await el.play();
+      setPlaying(true);
+    } catch {
+      // fallback: try muted autoplay if browser blocks unmuted
+      el.muted = true;
+      try { await el.play(); setPlaying(true); } catch { setError(true); }
+    }
   };
+
+  if (error) {
+    return (
+      <div className={`rounded-2xl border ${s.border} bg-surface flex items-center justify-center`} style={{ aspectRatio: '9/16' }}>
+        <p className="text-xs text-muted text-center px-4">Video không tải được.<br />Kiểm tra kết nối.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="relative rounded-2xl overflow-hidden bg-black" style={{ aspectRatio: '9/16' }}>
-      <video ref={videoRef} className="w-full h-full object-cover" muted playsInline preload="metadata" src={src} controls={playing} />
+      <video
+        ref={videoRef}
+        className="w-full h-full object-cover"
+        playsInline
+        preload="metadata"
+        src={src}
+        poster={VIDEO_POSTERS[videoKey]}
+        controls={playing}
+      />
       {!playing && (
         <>
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />

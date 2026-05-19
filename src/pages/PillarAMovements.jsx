@@ -80,40 +80,19 @@ const MOVE_VIDEO = { squat:'SQUAT', hinge:'HINGE', push:'PUSH', pull:'PULL', cor
 
 // ─── Click-to-play video ────────────────────────────────────────────────────────
 
-const VIDEO_POSTERS = {
-  SQUAT: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=70',
-  HINGE: 'https://images.unsplash.com/photo-1517343985841-f8b2d55d5aa8?w=400&q=70',
-  PUSH:  'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70',
-  PULL:  'https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=400&q=70',
-  CORE:  'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=400&q=70',
-  BREATH:'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=70',
-};
 
 function MovementVideoPlayer({ videoKey, s }) {
   const videoRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
   const [error, setError] = useState(false);
-  // No #t= fragment — some CDN/browser combos reject it; poster handles thumbnail
   const src = `${import.meta.env.BASE_URL}videos/${videoKey}.mp4`;
 
-  // React's `muted` JSX prop has a known DOM-sync bug; manage via DOM directly
+  // Set muted via DOM (React muted prop has a known sync bug)
   useEffect(() => {
-    if (videoRef.current) videoRef.current.muted = true;
-  }, []);
-
-  const handlePlay = async () => {
     const el = videoRef.current;
     if (!el) return;
-    el.muted = false;
-    try {
-      await el.play();
-      setPlaying(true);
-    } catch {
-      // fallback: try muted autoplay if browser blocks unmuted
-      el.muted = true;
-      try { await el.play(); setPlaying(true); } catch { setError(true); }
-    }
-  };
+    el.muted = true;
+    el.play().catch(() => {}); // autoplay — ignore browser block silently
+  }, []);
 
   if (error) {
     return (
@@ -129,31 +108,12 @@ function MovementVideoPlayer({ videoKey, s }) {
         ref={videoRef}
         className="w-full h-full object-cover"
         playsInline
-        preload="metadata"
+        loop
+        controls
+        preload="auto"
         src={src}
-        poster={VIDEO_POSTERS[videoKey]}
-        controls={playing}
+        onError={() => setError(true)}
       />
-      {!playing && (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
-          <button
-            type="button"
-            onClick={handlePlay}
-            className="absolute inset-0 flex flex-col items-center justify-center gap-3 group focus:outline-none"
-          >
-            <div
-              className={`w-16 h-16 rounded-full bg-white/10 border-2 ${s.border} flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-white/20`}
-              style={{ boxShadow: `0 0 40px ${s.glow}` }}
-            >
-              <svg className={`w-7 h-7 ${s.text} ml-1`} viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-            <span className="text-white/50 text-xs font-medium">Nhấn để xem</span>
-          </button>
-        </>
-      )}
     </div>
   );
 }

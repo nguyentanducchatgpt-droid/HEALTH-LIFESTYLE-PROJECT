@@ -2,6 +2,10 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import PillarA from './pages/PillarA';
+import PillarAMovements from './pages/PillarAMovements';
+import PillarAFramework from './pages/PillarAFramework';
+import PillarAWeekly from './pages/PillarAWeekly';
+import PillarAProgress from './pages/PillarAProgress';
 import PillarB from './pages/PillarB';
 import PillarC from './pages/PillarC';
 import PillarD from './pages/PillarD';
@@ -22,6 +26,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pillars" element={<Pillars />} />
           <Route path="/pillar/a" element={<PillarA />} />
+          <Route path="/pillar/a/movements" element={<PillarAMovements />} />
+          <Route path="/pillar/a/framework" element={<PillarAFramework />} />
+          <Route path="/pillar/a/weekly" element={<PillarAWeekly />} />
+          <Route path="/pillar/a/progress" element={<PillarAProgress />} />
           <Route path="/pillar/b" element={<PillarB />} />
           <Route path="/pillar/c" element={<PillarC />} />
           <Route path="/pillar/d" element={<PillarD />} />

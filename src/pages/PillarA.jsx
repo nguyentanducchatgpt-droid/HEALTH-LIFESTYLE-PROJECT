@@ -494,22 +494,7 @@ export default function PillarA() {
             Xây nền thể lực<br />
             <span className="text-gradient">từng ngày, từng bước</span>
           </h1>
-          <p className="text-muted text-base leading-relaxed max-w-xl mb-10">{pillar.description}</p>
-          <div className="flex flex-wrap gap-3">
-            {TABS.map(t => (
-              <button
-                key={t.n}
-                onClick={() => { switchTab(TABS.indexOf(t)); window.scrollTo({ top: 420, behavior: 'smooth' }); }}
-                className="flex items-center gap-2 bg-surface/70 backdrop-blur-sm border border-border/80 px-4 py-2.5 rounded-xl hover:border-border transition-all duration-200 hover:-translate-y-0.5 group"
-              >
-                <span className="text-base">{t.icon}</span>
-                <div>
-                  <span className={`${t.text} font-extrabold text-xs block leading-none`}>{t.n}</span>
-                  <span className="text-muted text-[10px] leading-none line-clamp-1 max-w-[80px] md:max-w-none">{t.title.split(' ').slice(0,3).join(' ')}</span>
-                </div>
-              </button>
-            ))}
-          </div>
+          <p className="text-muted text-base leading-relaxed max-w-xl mb-6">{pillar.description}</p>
         </div>
 
         {/* Scroll indicator */}

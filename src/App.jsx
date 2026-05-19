@@ -1,11 +1,5 @@
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
-  return null;
-}
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import PillarA from './pages/PillarA';
@@ -24,6 +18,21 @@ import SamplePrograms from './pages/SamplePrograms';
 import Pillars from './pages/Pillars';
 import Contact from './pages/Contact';
 import Donate from './pages/Donate';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    // Temporarily disable smooth scroll so jump is instant
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    // Restore smooth scroll after navigation
+    const t = setTimeout(() => {
+      document.documentElement.style.scrollBehavior = '';
+    }, 50);
+    return () => clearTimeout(t);
+  }, [pathname]);
+  return null;
+}
 
 export default function App() {
   return (

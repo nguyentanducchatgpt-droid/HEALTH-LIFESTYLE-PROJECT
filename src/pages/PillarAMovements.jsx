@@ -116,14 +116,15 @@ function MovementVideoPlayer({ videoKey, s }) {
         onPause={() => setPlaying(false)}
       />
       {!playing && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-[1px] transition-opacity">
-          <div className={`w-16 h-16 rounded-full flex items-center justify-center border-2 ${s.border} bg-black/50 shadow-lg`}
-            style={{ boxShadow: `0 0 24px ${s.glow}` }}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center transition-opacity">
+          <div className={`w-16 h-16 rounded-full flex items-center justify-center border-2 ${s.border} shadow-lg`}
+            style={{ background: 'rgba(0,0,0,0.55)', boxShadow: `0 0 28px ${s.glow}` }}>
             <svg className={`w-7 h-7 ${s.text} ml-1`} fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z"/>
             </svg>
           </div>
-          <span className={`mt-3 text-xs font-medium ${s.text} opacity-80`}>Nhấn để xem</span>
+          <span className={`mt-3 text-xs font-semibold ${s.text}`}
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>Nhấn để xem</span>
         </div>
       )}
     </div>

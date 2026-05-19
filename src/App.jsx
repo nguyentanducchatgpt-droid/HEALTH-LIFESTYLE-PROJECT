@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -21,14 +21,15 @@ import Donate from './pages/Donate';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => {
-    // Temporarily disable smooth scroll so jump is instant
+  // useLayoutEffect fires before browser paint — no flash at old scroll position
+  useLayoutEffect(() => {
     document.documentElement.style.scrollBehavior = 'auto';
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    // Restore smooth scroll after navigation
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
     const t = setTimeout(() => {
       document.documentElement.style.scrollBehavior = '';
-    }, 50);
+    }, 100);
     return () => clearTimeout(t);
   }, [pathname]);
   return null;

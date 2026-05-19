@@ -598,16 +598,11 @@ export default function PillarA() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {TABS.map((t, i) => (
-              <button
+              <div
                 key={t.n}
-                type="button"
                 ref={el => { stepRefs.current[i] = el; }}
                 onMouseEnter={() => fireJetOnHover(i)}
-                onClick={() => {
-                  switchTab(i);
-                  setTimeout(() => document.getElementById('tab-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
-                }}
-                className="group relative flex flex-col items-center text-center p-4 rounded-2xl border border-border/30 hover:border-border/60 bg-surface/10 hover:bg-surface/30 transition-all duration-300 hover:-translate-y-0.5 focus:outline-none"
+                className="group relative flex flex-col items-center text-center p-4"
               >
                 {/* Step circle */}
                 <div
@@ -627,7 +622,7 @@ export default function PillarA() {
                 <p className="text-[9px] leading-tight" style={{ color: `${t.color}80` }}>
                   {t.sub.length > 22 ? t.sub.slice(0, 22) + '…' : t.sub}
                 </p>
-              </button>
+              </div>
             ))}
           </div>
 

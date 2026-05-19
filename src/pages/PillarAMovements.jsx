@@ -86,12 +86,19 @@ function MovementVideoPlayer({ videoKey, s }) {
   const [error, setError] = useState(false);
   const src = `${import.meta.env.BASE_URL}videos/${videoKey}.mp4`;
 
-  // Set muted via DOM (React muted prop has a known sync bug)
+  // Ensure muted+autoplay via DOM (belt-and-suspenders: JSX props + DOM + IntersectionObserver)
   useEffect(() => {
     const el = videoRef.current;
     if (!el) return;
     el.muted = true;
-    el.play().catch(() => {}); // autoplay — ignore browser block silently
+    el.play().catch(() => {});
+
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) el.play().catch(() => {}); },
+      { threshold: 0.25 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
 
   if (error) {
@@ -107,6 +114,8 @@ function MovementVideoPlayer({ videoKey, s }) {
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
+        autoPlay
+        muted
         playsInline
         loop
         controls

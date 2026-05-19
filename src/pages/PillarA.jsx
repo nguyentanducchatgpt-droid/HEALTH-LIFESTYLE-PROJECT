@@ -376,6 +376,7 @@ export default function PillarA() {
 
   const [activeTab, setActiveTab] = useState(0);
   const [tabKey, setTabKey] = useState(0);
+  const tabBarRef = useRef(null);
   const journeyRef = useRef(null);
   const stepRefs = useRef([]);
   const [jets, setJets] = useState([]);
@@ -442,6 +443,14 @@ export default function PillarA() {
     if (i === activeTab) return;
     setActiveTab(i);
     setTabKey(k => k + 1);
+  }, [activeTab]);
+
+  // Keep active tab card visible on mobile when switching
+  useEffect(() => {
+    const bar = tabBarRef.current;
+    if (!bar) return;
+    const btn = bar.children[activeTab];
+    if (btn) btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   }, [activeTab]);
 
   const [scrolled, setScrolled] = useState(false);
@@ -617,6 +626,49 @@ export default function PillarA() {
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           <p className="text-[10px] font-bold text-muted uppercase tracking-[0.25em] whitespace-nowrap">4 chủ đề luyện tập</p>
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        </div>
+
+        {/* Tab cards */}
+        <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-4">
+          <div ref={tabBarRef} className="flex gap-3 min-w-max md:min-w-0 md:grid md:grid-cols-4">
+            {TABS.map((t, i) => {
+              const isActive = activeTab === i;
+              return (
+                <button
+                  key={t.n}
+                  type="button"
+                  onClick={() => switchTab(i)}
+                  className={`relative group flex flex-col p-4 md:p-5 rounded-2xl border text-left transition-all duration-300 focus:outline-none shrink-0 md:shrink w-44 md:w-auto
+                    ${!isActive ? 'border-border/40 bg-surface/20 hover:border-border/70 hover:bg-surface/40 hover:-translate-y-0.5' : ''}`}
+                  style={isActive ? {
+                    borderColor: `${t.color}45`,
+                    background: `${t.color}07`,
+                    boxShadow: `0 4px 28px ${t.glow}, inset 0 1px 0 ${t.color}15`,
+                  } : undefined}
+                >
+                  <div className="flex items-center gap-1.5 mb-3">
+                    <span className="text-[9px] font-black transition-colors" style={{ color: isActive ? t.color : '#6b7280' }}>{t.n} /04</span>
+                    {isActive && <span className="w-1 h-1 rounded-full animate-pulse" style={{ background: t.color }} />}
+                  </div>
+                  <div
+                    className="text-2xl mb-3 transition-all duration-200 group-hover:scale-105 w-fit"
+                    style={isActive ? { filter: `drop-shadow(0 0 8px ${t.color}80)` } : undefined}
+                  >
+                    {t.icon}
+                  </div>
+                  <p className={`text-xs font-bold leading-snug mb-1 transition-colors ${isActive ? 'text-text' : 'text-muted group-hover:text-text/70'}`}>
+                    {t.title}
+                  </p>
+                  <p className="text-[9px] leading-tight transition-all duration-300 line-clamp-1"
+                    style={{ color: isActive ? `${t.color}cc` : 'transparent' }}>
+                    {t.sub}
+                  </p>
+                  <div className="absolute bottom-0 left-4 right-4 h-[1.5px] rounded-full transition-all duration-300"
+                    style={{ background: isActive ? t.color : 'transparent' }} />
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Tab panel — re-mounts on tab switch to re-trigger animation */}

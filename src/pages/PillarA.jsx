@@ -445,8 +445,10 @@ export default function PillarA() {
     setTabKey(k => k + 1);
   }, [activeTab]);
 
-  // Keep active tab card visible on mobile when switching
+  // Keep active tab card visible on mobile when switching (skip on initial mount)
+  const didMountTab = useRef(false);
   useEffect(() => {
+    if (!didMountTab.current) { didMountTab.current = true; return; }
     const bar = tabBarRef.current;
     if (!bar) return;
     const btn = bar.children[activeTab];

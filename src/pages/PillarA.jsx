@@ -429,12 +429,21 @@ export default function PillarA() {
     setTimeout(() => setJets(prev => prev.filter(j => !j.id.startsWith(String(batch)))), 950);
   }, []);
 
+  // Cooldown ref — prevent refiring same step within 550ms
+  const hoverCooldown = useRef({});
+  const fireJetOnHover = useCallback((i) => {
+    if (i >= TABS.length - 1) return; // last step has no next
+    const now = Date.now();
+    if (hoverCooldown.current[i] && now - hoverCooldown.current[i] < 550) return;
+    hoverCooldown.current[i] = now;
+    fireJet(i, i + 1);
+  }, [fireJet]);
+
   const switchTab = useCallback((i) => {
     if (i === activeTab) return;
-    fireJet(activeTab, i);
     setActiveTab(i);
     setTabKey(k => k + 1);
-  }, [activeTab, fireJet]);
+  }, [activeTab]);
 
   // Scroll active tab into view on mobile
   useEffect(() => {
@@ -593,6 +602,7 @@ export default function PillarA() {
                 key={t.n}
                 type="button"
                 ref={el => { stepRefs.current[i] = el; }}
+                onMouseEnter={() => fireJetOnHover(i)}
                 onClick={() => {
                   switchTab(i);
                   setTimeout(() => document.getElementById('tab-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);

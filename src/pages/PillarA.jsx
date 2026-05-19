@@ -377,12 +377,64 @@ export default function PillarA() {
   const [activeTab, setActiveTab] = useState(0);
   const [tabKey, setTabKey] = useState(0);
   const tabBarRef = useRef(null);
+  const journeyRef = useRef(null);
+  const stepRefs = useRef([]);
+  const [jets, setJets] = useState([]);
+
+  // Inject water-jet keyframe once
+  useEffect(() => {
+    const id = 'wj-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @keyframes wjFly {
+        0%   { transform: translate(0px, var(--wy,0px)) scale(1);    opacity: 0.95; }
+        38%  { transform: translate(calc(var(--wx)*0.38), calc(var(--wy,0px) + var(--wa,-18px))) scale(0.72); opacity: 0.85; }
+        100% { transform: translate(var(--wx), var(--wy,0px)) scale(0.1); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
+  const fireJet = useCallback((fromIdx, toIdx) => {
+    const fromEl = stepRefs.current[fromIdx];
+    const toEl   = stepRefs.current[toIdx];
+    const cnt    = journeyRef.current;
+    if (!fromEl || !toEl || !cnt) return;
+
+    const fR = fromEl.getBoundingClientRect();
+    const tR = toEl.getBoundingClientRect();
+    const cR = cnt.getBoundingClientRect();
+
+    const ox = fR.left + fR.width  / 2 - cR.left;
+    const oy = fR.top  + 18         - cR.top;   // 18 = half of 36px circle
+    const dx = tR.left + tR.width  / 2 - cR.left - ox;
+
+    const batch = Date.now();
+    const color = TABS[fromIdx].color;
+
+    const newJets = Array.from({ length: 14 }, (_, k) => ({
+      id:    `${batch}-${k}`,
+      ox,    oy,    dx,
+      arc:   -(6 + Math.random() * 30),
+      ys:    (Math.random() - 0.5) * 20,
+      color,
+      size:  2.5 + Math.random() * 4,
+      delay: k * 22,
+      dur:   340 + Math.random() * 210,
+    }));
+
+    setJets(prev => [...prev, ...newJets]);
+    setTimeout(() => setJets(prev => prev.filter(j => !j.id.startsWith(String(batch)))), 950);
+  }, []);
 
   const switchTab = useCallback((i) => {
     if (i === activeTab) return;
+    fireJet(activeTab, i);
     setActiveTab(i);
     setTabKey(k => k + 1);
-  }, [activeTab]);
+  }, [activeTab, fireJet]);
 
   // Scroll active tab into view on mobile
   useEffect(() => {
@@ -506,18 +558,41 @@ export default function PillarA() {
         </div>
 
         {/* 4-step journey flow */}
-        <div className="relative">
+        <div className="relative" ref={journeyRef}>
           <p className="text-center text-[9px] font-bold text-muted/50 uppercase tracking-[0.25em] mb-5">Hành trình 4 bước</p>
 
-          {/* Connecting gradient line (desktop) */}
-          <div className="hidden md:block absolute top-[52px] left-[calc(12.5%+8px)] right-[calc(12.5%+8px)] h-px pointer-events-none"
-            style={{ background: 'linear-gradient(90deg, #22c55e50, #f9731650, #14b8a650, #a855f750)' }} />
+          {/* Particle overlay */}
+          <div className="absolute inset-0 pointer-events-none z-30" style={{ overflow: 'visible' }}>
+            {jets.map(j => (
+              <div
+                key={j.id}
+                className="absolute rounded-full"
+                style={{
+                  left:  j.ox + j.ys * 0.25,
+                  top:   j.oy + j.ys * 0.6,
+                  width:  j.size,
+                  height: j.size,
+                  background: j.color,
+                  boxShadow: `0 0 ${j.size * 2}px ${j.color}`,
+                  animationName: 'wjFly',
+                  animationDuration: `${j.dur}ms`,
+                  animationDelay: `${j.delay}ms`,
+                  animationTimingFunction: 'ease-in',
+                  animationFillMode: 'both',
+                  '--wx': `${j.dx}px`,
+                  '--wy': `${j.ys * 0.4}px`,
+                  '--wa': `${j.arc}px`,
+                }}
+              />
+            ))}
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {TABS.map((t, i) => (
               <button
                 key={t.n}
                 type="button"
+                ref={el => { stepRefs.current[i] = el; }}
                 onClick={() => {
                   switchTab(i);
                   setTimeout(() => document.getElementById('tab-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
@@ -542,11 +617,6 @@ export default function PillarA() {
                 <p className="text-[9px] leading-tight" style={{ color: `${t.color}80` }}>
                   {t.sub.length > 22 ? t.sub.slice(0, 22) + '…' : t.sub}
                 </p>
-
-                {/* Arrow connector (desktop, not last) */}
-                {i < 3 && (
-                  <div className="hidden md:block absolute -right-1.5 top-[50px] text-border/40 text-xs z-20">›</div>
-                )}
               </button>
             ))}
           </div>

@@ -491,9 +491,9 @@ export default function PillarA() {
         <div className="absolute top-[50%] right-[15%] w-64 h-64 bg-purple-500/4 rounded-full blur-[90px] pointer-events-none" style={{ animation: 'pulse 8s ease-in-out 2s infinite' }} />
 
         <div className="relative z-10 px-4 md:px-8 pt-14 pb-16 animate-fade-in-up">
-          <Link to="/" className="inline-flex items-center gap-1.5 text-muted hover:text-accent text-xs transition-colors mb-8 group">
+          <Link to="/pillars" className="inline-flex items-center gap-1.5 text-muted hover:text-accent text-xs transition-colors mb-8 group">
             <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-            Trang chủ
+            6 Trụ Cột
           </Link>
           <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-bold px-4 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />

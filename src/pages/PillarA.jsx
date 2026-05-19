@@ -143,11 +143,22 @@ const TABS = [
   },
 ];
 
-const STATS = [
-  { value: 6,  suffix: '',      label: 'bài tập nền tảng',    icon: '⚡', color: 'text-green-400'  },
-  { value: 20, suffix: ' phút', label: 'mỗi ngày là đủ',      icon: '⏱', color: 'text-orange-400' },
-  { value: 3,  suffix: '',      label: 'giai đoạn nhịp tuần', icon: '📅', color: 'text-teal-400'   },
-  { value: 12, suffix: ' tuần', label: 'lộ trình chuẩn',      icon: '🏆', color: 'text-purple-400' },
+const PRINCIPLES = [
+  {
+    icon: '🎯',
+    title: 'Kỹ thuật đúng là nền tảng',
+    body: 'Học đúng từ đầu tiết kiệm hàng năm tập sai. 6 mẫu vận động cơ bản bao phủ 95% mọi bài tập bạn cần trong cuộc đời — không cần thiết bị phức tạp.',
+  },
+  {
+    icon: '🔁',
+    title: 'Nhất quán quan trọng hơn cường độ',
+    body: 'Não bộ xây thói quen qua lặp lại đều đặn. 3 buổi/tuần duy trì 12 tuần tốt hơn 7 buổi/tuần rồi burnout sau 3 tuần — cơ thể cần thời gian thích nghi.',
+  },
+  {
+    icon: '📊',
+    title: 'Đo để không lạc hướng',
+    body: 'Tiến bộ mà không thấy được thì dễ nản lòng. Mốc rõ ràng mỗi 4 tuần cho bạn biết chính xác mình đang ở đâu và cần điều chỉnh gì tiếp theo.',
+  },
 ];
 
 // ─── Hooks ──────────────────────────────────────────────────────────────────────
@@ -168,26 +179,6 @@ function useScrollReveal(threshold = 0.12) {
   return [ref, visible];
 }
 
-function useCounter(target, duration = 1100) {
-  const [val, setVal] = useState(0);
-  const [started, setStarted] = useState(false);
-  const start = useCallback(() => setStarted(true), []);
-  useEffect(() => {
-    if (!started) return;
-    let raf;
-    const t0 = performance.now();
-    const tick = (now) => {
-      const p = Math.min((now - t0) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setVal(Math.round(eased * target));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [started, target, duration]);
-  return [val, start];
-}
-
 // ─── Sub-components ─────────────────────────────────────────────────────────────
 
 function RevealBlock({ children, delay = 0, className = '' }) {
@@ -203,29 +194,6 @@ function RevealBlock({ children, delay = 0, className = '' }) {
       }}
     >
       {children}
-    </div>
-  );
-}
-
-function StatCard({ stat, delay }) {
-  const [ref, visible] = useScrollReveal(0.3);
-  const [val, startCount] = useCounter(stat.value);
-  useEffect(() => { if (visible) startCount(); }, [visible, startCount]);
-
-  return (
-    <div
-      ref={ref}
-      className="relative overflow-hidden rounded-2xl border border-border/50 bg-surface/50 p-5 text-center hover:border-border transition-colors duration-300"
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'scale(1)' : 'scale(0.9)',
-        transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`,
-      }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" />
-      <div className="text-xl mb-2">{stat.icon}</div>
-      <div className={`text-3xl font-black ${stat.color} leading-none mb-1`}>{val}{stat.suffix}</div>
-      <div className="text-[10px] text-muted">{stat.label}</div>
     </div>
   );
 }
@@ -504,24 +472,94 @@ export default function PillarA() {
         </div>
       </div>
 
-      {/* ── STATS STRIP ─────────────────────────────────────────────────────────── */}
-      <RevealBlock className="mb-16">
-        <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-surface/20">
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/3 via-transparent to-purple-500/3 pointer-events-none" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
-            {STATS.map((s, i) => (
-              <div key={s.label} className={[
-                i < STATS.length - 1 ? 'md:border-r border-border/30' : '',
-                i < 2 ? 'border-b md:border-b-0 border-border/30' : '',
-              ].join(' ')}>
-                <StatCard stat={s} delay={i * 90} />
+      {/* ── NARRATIVE INTRO ────────────────────────────────────────────────────── */}
+      <RevealBlock className="mb-14">
+
+        {/* Opening statement */}
+        <div className="text-center mb-10 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl font-semibold text-text/85 leading-relaxed mb-3">
+            Tập luyện hiệu quả không phải là tập <em>nhiều hơn</em> —<br className="hidden md:block" />
+            mà là tập <span className="text-accent font-bold not-italic">đúng hơn</span>.
+          </p>
+          <p className="text-sm text-muted leading-relaxed">
+            4 chủ đề dưới đây được sắp xếp theo thứ tự logic: từ kỹ thuật nền tảng,
+            xây cấu trúc buổi tập, tổ chức nhịp tuần, cho đến đo lường và điều chỉnh tiến bộ.
+            Mỗi bước chuẩn bị cho bước tiếp theo.
+          </p>
+        </div>
+
+        {/* 3 core principles */}
+        <div className="grid md:grid-cols-3 gap-4 mb-12">
+          {PRINCIPLES.map((p, i) => (
+            <div
+              key={i}
+              className="flex gap-4 p-5 rounded-2xl border border-border/40 bg-surface/20 hover:bg-surface/35 hover:border-border/60 transition-all duration-300 group animate-fade-in-up"
+              style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
+            >
+              <span className="text-2xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">{p.icon}</span>
+              <div>
+                <p className="text-sm font-bold text-text mb-1.5">{p.title}</p>
+                <p className="text-[11px] text-muted leading-relaxed">{p.body}</p>
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 4-step journey flow */}
+        <div className="relative">
+          <p className="text-center text-[9px] font-bold text-muted/50 uppercase tracking-[0.25em] mb-5">Hành trình 4 bước</p>
+
+          {/* Connecting gradient line (desktop) */}
+          <div className="hidden md:block absolute top-[52px] left-[calc(12.5%+8px)] right-[calc(12.5%+8px)] h-px pointer-events-none"
+            style={{ background: 'linear-gradient(90deg, #22c55e50, #f9731650, #14b8a650, #a855f750)' }} />
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {TABS.map((t, i) => (
+              <button
+                key={t.n}
+                type="button"
+                onClick={() => {
+                  switchTab(i);
+                  setTimeout(() => document.getElementById('tab-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+                }}
+                className="group relative flex flex-col items-center text-center p-4 rounded-2xl border border-border/30 hover:border-border/60 bg-surface/10 hover:bg-surface/30 transition-all duration-300 hover:-translate-y-0.5 focus:outline-none"
+              >
+                {/* Step circle */}
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black border mb-3 transition-all duration-300 group-hover:scale-110 relative z-10"
+                  style={{ background: `${t.color}12`, borderColor: `${t.color}40`, color: t.color }}
+                >
+                  {i + 1}
+                </div>
+
+                {/* Icon */}
+                <span className="text-xl mb-2">{t.icon}</span>
+
+                {/* Title */}
+                <p className="text-[11px] font-bold text-text/80 group-hover:text-text leading-snug mb-1 transition-colors">{t.title}</p>
+
+                {/* Sub in tab color */}
+                <p className="text-[9px] leading-tight" style={{ color: `${t.color}80` }}>
+                  {t.sub.length > 22 ? t.sub.slice(0, 22) + '…' : t.sub}
+                </p>
+
+                {/* Arrow connector (desktop, not last) */}
+                {i < 3 && (
+                  <div className="hidden md:block absolute -right-1.5 top-[50px] text-border/40 text-xs z-20">›</div>
+                )}
+              </button>
             ))}
           </div>
+
+          <p className="text-center text-[10px] text-muted/40 mt-5">
+            Chọn bất kỳ chủ đề nào bên dưới để bắt đầu khám phá →
+          </p>
         </div>
+
       </RevealBlock>
 
       {/* ── TAB NAVIGATION ──────────────────────────────────────────────────────── */}
+      <div id="tab-section" className="scroll-mt-4">
       <RevealBlock className="mb-0">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-6">
@@ -591,6 +629,7 @@ export default function PillarA() {
           <TabPanel tab={tab} />
         </div>
       </RevealBlock>
+      </div>{/* /tab-section */}
 
       {/* ── GUIDE: Bắt đầu từ đâu? ─────────────────────────────────────────────── */}
       <RevealBlock className="mt-10 mb-16">

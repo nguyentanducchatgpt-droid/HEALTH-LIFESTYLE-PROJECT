@@ -18,6 +18,13 @@ const TABS = [
       { icon: '📊', title: '3 cấp độ/bài tập',  desc: 'Từ cơ bản đến nâng cao — tiến bộ từng bước rõ ràng' },
       { icon: '🔥', title: 'Khởi động chuẩn khoa học', desc: 'Giảm nguy cơ chấn thương và tăng hiệu suất 15–20%' },
     ],
+    quote: 'Thành thạo 6 mẫu chuyển động cơ bản — bạn có nền tảng cho 95% mọi bài tập trong cuộc đời.',
+    quoteContext: 'Nguyên lý sinh cơ học hiện đại',
+    details: [
+      { icon: '🦴', title: 'Tại sao chỉ 6 mẫu?', body: 'Các nhà sinh cơ học phân tích hàng nghìn bài tập và tìm thấy chúng đều là biến thể của 6 mẫu cơ bản. Thành thạo 6 mẫu = nền tảng vĩnh cửu cho mọi chương trình.' },
+      { icon: '🔄', title: 'Biến thể không giới hạn', body: 'Mỗi mẫu có 5–10+ biến thể từ siêu dễ đến nâng cao. Squat vào ghế → Pistol squat. Không cần thiết bị — tư thế đúng là tất cả.' },
+      { icon: '⚖️', title: 'Cân bằng cơ thể toàn diện', body: 'Push + Pull cân bằng cơ trước/sau. Squat + Hinge phát triển toàn hạ bộ. Core ổn định cột sống. Breath kiểm soát toàn bộ hệ thống — đây là vòng lặp hoàn hảo.' },
+    ],
     tabStats: [{ n: '6', label: 'Bài tập' }, { n: '3×', label: 'Cấp độ/bài' }, { n: '15\'', label: 'Khởi + Giãn' }],
     previewItems: ['Squat', 'Hinge', 'Push-up', 'Pull/Row', 'Core', 'Thở & Tim mạch', 'Khởi động 5–8\'', 'Giãn cơ 5–10\''],
     cta: 'Học động tác',
@@ -44,6 +51,13 @@ const TABS = [
       { icon: '⚡', title: '4 khối thời gian chuẩn', desc: 'Cấu trúc khoa học cho mỗi buổi tập' },
       { icon: '📐', title: '8 mức: 20–180 phút',      desc: 'Từ siêu bận đến chuyên sâu — đều có lịch' },
       { icon: '💡', title: 'Chi tiết từng phút',       desc: 'Biết chính xác làm gì trong mỗi khoảng thời gian' },
+    ],
+    quote: 'Cấu trúc tốt quan trọng hơn thời gian dài. 20 phút có kế hoạch hiệu quả hơn 1 giờ tự do.',
+    quoteContext: 'Khoa học hành vi tập luyện',
+    details: [
+      { icon: '🧠', title: 'Não bộ cần cấu trúc', body: 'Giảm quyết định trong buổi tập giúp tập trung vào chất lượng động tác, không phải "tập gì tiếp theo". Cấu trúc rõ ràng = ít burnout hơn và nhất quán hơn theo thời gian.' },
+      { icon: '⚡', title: '4 khối — một cấu trúc vạn năng', body: 'Khởi động → Vận động chính → Giãn cơ → Tĩnh tâm. Buổi 20 phút hay 180 phút đều dùng cùng cấu trúc này, chỉ thay đổi tỉ lệ thời gian giữa các khối.' },
+      { icon: '🌙', title: 'Tĩnh tâm 5 phút — không phải xa xỉ', body: '5 phút thở có kiểm soát sau tập giảm cortisol 15% và cải thiện giấc ngủ đêm. Đây là đầu tư nhỏ nhất với lợi ích phục hồi lớn nhất trong ngày.' },
     ],
     tabStats: [{ n: '4', label: 'Khối/ngày' }, { n: '8', label: 'Mức thời gian' }, { n: '20\'', label: 'Tối thiểu' }],
     previewItems: ['Khởi động 5\'', 'Sức mạnh 10–20\'', 'Tim mạch 15–35\'', 'Giãn cơ 5–10\'', 'Tĩnh tâm 5\'', '7 kcal/phút max'],
@@ -72,6 +86,13 @@ const TABS = [
       { icon: '🎯', title: '6 lộ trình theo mục tiêu', desc: 'Từ siêu bận đến vận động viên chuyên sâu' },
       { icon: '😴', title: 'Nghỉ đúng cách',          desc: 'Phục hồi là phần thiết yếu, không phải lười biếng' },
     ],
+    quote: 'Cơ thể phát triển trong thời gian nghỉ ngơi — không phải trong buổi tập. Nhịp tuần là nghệ thuật biết lúc nào dừng.',
+    quoteContext: 'Sinh lý học tập luyện',
+    details: [
+      { icon: '🔬', title: 'Cửa sổ phục hồi 48–72 giờ', body: 'Cơ bắp cần 48–72 giờ để sửa chữa vi chấn thương và tăng trưởng. Thiết kế nhịp tuần đúng tạo đủ khoảng cách giữa các buổi cùng nhóm cơ — đây là nền tảng của progressive overload.' },
+      { icon: '📈', title: '3 giai đoạn thích nghi dần', body: 'Giai đoạn 1 (tuần 1–2): 3 buổi/tuần — cơ thể học nhận diện tải. Giai đoạn 2 (tuần 3–6): 4 buổi — xây nền sức mạnh. Giai đoạn 3 (tuần 7+): 5–6 buổi — cá nhân hóa theo mục tiêu.' },
+      { icon: '🎯', title: 'Chọn nhịp bền vững, không phải lý tưởng', body: '6 lộ trình từ 2 buổi/tuần (siêu bận) đến 6 buổi/tuần (vận động viên). Nhịp tốt nhất không phải nhịp cao nhất — là nhịp bạn duy trì được 12 tuần liên tục.' },
+    ],
     tabStats: [{ n: '3', label: 'Giai đoạn' }, { n: '6', label: 'Lộ trình' }, { n: '7', label: 'Ngày/tuần' }],
     previewItems: ['Sức mạnh T2/T4/T6', 'Cardio T3/T5', 'Phục hồi T7', 'Người mới', 'Giảm mỡ', 'Tăng cơ', 'Sức bền', 'Nâng cao'],
     cta: 'Lên lịch tuần',
@@ -98,6 +119,13 @@ const TABS = [
       { icon: '🪜', title: 'Bậc thang rõ ràng',     desc: 'Biết chính xác bước tiếp theo trong hành trình' },
       { icon: '🎯', title: 'Test định kỳ 3 kỳ',     desc: 'Kiểm tra tuần 4, tuần 8 và tuần 12' },
       { icon: '📊', title: 'Radar chart 4 chiều',   desc: 'Sức mạnh · Sức bền · Linh hoạt · Phục hồi' },
+    ],
+    quote: 'Những gì không đo được thì không cải thiện được. Tiến bộ nhỏ, đo được, nhất quán — đó là công thức thật sự.',
+    quoteContext: 'Nguyên lý quản lý hiệu suất',
+    details: [
+      { icon: '📋', title: 'Test công bằng — không phải ngẫu hứng', body: '3 kỳ test (Tuần 4, 8, 12) được lên kế hoạch khi cơ thể đã phục hồi hoàn toàn — không phải sau buổi tập nặng. Điều kiện test nhất quán cho kết quả đáng tin cậy.' },
+      { icon: '🕸️', title: 'Radar chart 4 chiều — thấy điểm yếu ẩn', body: 'Sức mạnh · Sức bền · Linh hoạt · Phục hồi. Nhiều người mạnh về sức mạnh nhưng kém linh hoạt — đây là nguy cơ chấn thương ẩn mà chỉ nhìn một chỉ số không thấy được.' },
+      { icon: '🪜', title: '5 bậc — biết rõ vị trí và đích đến', body: 'Bậc 1 (Hoạt động cơ bản) đến Bậc 5 (Vận động viên). Mỗi bậc có tiêu chí rõ ràng: bài tập nào, reps/sets bao nhiêu, thời gian phục hồi. Không còn cảm giác "không biết tập đến đâu rồi".' },
     ],
     tabStats: [{ n: '6', label: 'Lộ trình' }, { n: '5', label: 'Bậc/lộ trình' }, { n: '4', label: 'Chiều đánh giá' }],
     previewItems: ['Tuần 4 test', 'Tuần 8 test', 'Tuần 12 test', 'Radar chart', '6 mục tiêu cá nhân', 'Điểm A/B/C/D', 'Coach notes'],
@@ -202,94 +230,163 @@ function StatCard({ stat, delay }) {
   );
 }
 
+function AnimatedStat({ n, label, color }) {
+  const numericPart = parseFloat(n.replace(/[^0-9.]/g, ''));
+  const suffix = n.replace(/[0-9.]/g, '');
+  const [val, setVal] = useState(0);
+
+  useEffect(() => {
+    if (!numericPart) return;
+    let raf;
+    const t0 = performance.now();
+    const delay = setTimeout(() => {
+      const tick = (now) => {
+        const p = Math.min((now - t0) / 900, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setVal(Math.round(eased * numericPart));
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    }, 350);
+    return () => { clearTimeout(delay); cancelAnimationFrame(raf); };
+  }, []); // runs on mount — TabPanel remounts on every tab switch
+
+  const display = numericPart > 0 ? `${val}${suffix}` : n;
+  return (
+    <div className="bg-bg/85 backdrop-blur-md border border-white/10 rounded-xl p-2.5 text-center">
+      <div className="text-lg font-black leading-none mb-0.5" style={{ color }}>{display}</div>
+      <div className="text-[9px] text-muted leading-snug">{label}</div>
+    </div>
+  );
+}
+
 // ─── Tab content panel ──────────────────────────────────────────────────────────
 
 function TabPanel({ tab }) {
   return (
-    <div className={`relative overflow-hidden rounded-3xl border ${tab.border} mt-[-1px]`}>
-      {/* Top accent */}
-      <div className="h-[2px] w-full bg-gradient-to-r" style={{ backgroundImage: `linear-gradient(90deg, ${tab.color}cc, transparent)` }} />
+    <div className={`relative overflow-hidden rounded-3xl border ${tab.border}`} style={{ background: `${tab.color}03` }}>
+      {/* Top accent gradient line */}
+      <div className="h-[2px] w-full" style={{ background: `linear-gradient(90deg, ${tab.color}ee, ${tab.color}40, transparent)` }} />
 
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img src={tab.img} alt="" className="w-full h-full object-cover" style={{ opacity: 0.08 }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/85 to-bg/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/60 via-transparent to-transparent" />
+      {/* Ambient background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img src={tab.img} alt="" className="w-full h-full object-cover" style={{ opacity: 0.05 }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/10 via-bg/60 to-bg/95" />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-[120px]" style={{ background: tab.glow }} />
+        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-[80px]" style={{ background: `${tab.color}06` }} />
       </div>
-      {/* Ambient glow */}
-      <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: tab.glow }} />
 
-      <div className="relative z-10 p-6 md:p-8 grid md:grid-cols-[55%_45%] gap-8">
-        {/* ── Left column ── */}
-        <div>
+      {/* ── QUOTE BLOCK (full width) ── */}
+      <div className="relative z-10 px-7 md:px-10 pt-8 pb-6 border-b" style={{ borderColor: `${tab.color}18` }}>
+        <div className="flex items-start gap-4">
+          <span className="text-5xl font-black leading-[0.7] shrink-0 select-none" style={{ color: `${tab.color}40` }}>"</span>
+          <div>
+            <p className="text-base md:text-lg font-semibold text-text/90 leading-relaxed italic mb-2">{tab.quote}</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: `${tab.color}80` }}>— {tab.quoteContext}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN GRID ── */}
+      <div className="relative z-10 p-7 md:p-10 grid md:grid-cols-[58%_42%] gap-8 md:gap-10">
+        {/* ── LEFT ── */}
+        <div className="flex flex-col">
           {/* Badge */}
-          <div className={`inline-flex items-center gap-2 border text-xs font-bold px-3 py-1.5 rounded-full mb-5 ${tab.badge}`}>
-            <span className={`w-1.5 h-1.5 rounded-full ${tab.dot} shrink-0`} />
+          <div className={`inline-flex items-center gap-2 border text-[10px] font-bold px-3 py-1.5 rounded-full mb-5 self-start ${tab.badge}`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${tab.dot}`} />
             {tab.n} / 04 · {tab.sub}
           </div>
 
           <h2 className="text-2xl md:text-3xl font-black text-text leading-tight mb-2">{tab.title}</h2>
-          <p className={`text-xs font-semibold ${tab.text} mb-5 opacity-80`}>{tab.sub}</p>
+          <p className={`text-xs font-bold ${tab.text} mb-4 opacity-80`}>{tab.sub}</p>
           <p className="text-muted text-sm leading-relaxed mb-7">{tab.longDesc}</p>
 
-          {/* Highlights */}
-          <div className="space-y-3.5 mb-8">
+          {/* Highlights — staggered fade in */}
+          <div className="space-y-3 mb-6">
+            <p className="text-[9px] font-bold uppercase tracking-widest text-muted/60 mb-2">Điểm nổi bật</p>
             {tab.highlights.map((h, i) => (
-              <div key={i} className="flex items-start gap-3.5 group">
+              <div
+                key={i}
+                className="flex items-start gap-3 group animate-fade-in-up"
+                style={{ animationDelay: `${i * 70 + 80}ms`, animationFillMode: 'both' }}
+              >
                 <div
-                  className={`w-9 h-9 rounded-xl flex items-center justify-center text-base shrink-0 border transition-all duration-200 group-hover:scale-105`}
-                  style={{ background: `${tab.color}12`, borderColor: `${tab.color}30` }}
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-sm shrink-0 border transition-all duration-200 group-hover:scale-110"
+                  style={{ background: `${tab.color}10`, borderColor: `${tab.color}25` }}
                 >
                   {h.icon}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text leading-tight">{h.title}</p>
+                  <p className="text-xs font-bold text-text leading-tight">{h.title}</p>
                   <p className="text-[11px] text-muted mt-0.5">{h.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Divider */}
+          <div className="h-px mb-6" style={{ background: `linear-gradient(90deg, ${tab.color}20, transparent)` }} />
+
+          {/* Details — staggered, with colored left border */}
+          <div className="space-y-4 mb-8">
+            <p className="text-[9px] font-bold uppercase tracking-widest text-muted/60 mb-2">Hiểu sâu hơn</p>
+            {tab.details.map((d, i) => (
+              <div
+                key={i}
+                className="flex gap-3.5 animate-fade-in-up"
+                style={{ animationDelay: `${i * 90 + 280}ms`, animationFillMode: 'both' }}
+              >
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-sm shrink-0 border mt-0.5"
+                  style={{ background: `${tab.color}08`, borderColor: `${tab.color}20` }}
+                >
+                  {d.icon}
+                </div>
+                <div className="flex-1 pl-3 border-l" style={{ borderColor: `${tab.color}25` }}>
+                  <p className="text-xs font-bold text-text/90 leading-tight mb-1">{d.title}</p>
+                  <p className="text-[11px] text-muted leading-relaxed">{d.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* CTA button */}
-          <Link
-            to={tab.path}
-            className={`inline-flex items-center gap-2.5 font-bold text-sm px-7 py-3.5 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group`}
-            style={{
-              background: `${tab.color}12`,
-              borderColor: `${tab.color}40`,
-              color: tab.color,
-              boxShadow: `0 0 0 rgba(0,0,0,0)`,
-            }}
-            onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 8px 32px ${tab.glow}`; e.currentTarget.style.background = `${tab.color}20`; }}
-            onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 0 0 rgba(0,0,0,0)'; e.currentTarget.style.background = `${tab.color}12`; }}
-          >
-            {tab.cta}
-            <span className="group-hover:translate-x-0.5 transition-transform">→</span>
-          </Link>
+          <div className="mt-auto">
+            <Link
+              to={tab.path}
+              className="inline-flex items-center gap-2.5 font-bold text-sm px-7 py-3.5 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group"
+              style={{ background: `${tab.color}12`, borderColor: `${tab.color}40`, color: tab.color }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 8px 32px ${tab.glow}`; e.currentTarget.style.background = `${tab.color}20`; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.background = `${tab.color}12`; }}
+            >
+              {tab.cta}
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
+          </div>
         </div>
 
-        {/* ── Right column ── */}
-        <div>
-          {/* Image with stats overlay */}
-          <div className="relative rounded-2xl overflow-hidden mb-4" style={{ aspectRatio: '4/3' }}>
-            <img src={tab.img} alt="" className="w-full h-full object-cover" style={{ opacity: 0.45 }} />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/50 to-transparent" />
-            <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${tab.color}08, transparent)` }} />
+        {/* ── RIGHT ── */}
+        <div className="flex flex-col gap-5">
+          {/* Hero image with animated stats */}
+          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
+            <img src={tab.img} alt={tab.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" style={{ opacity: 0.5 }} />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
+            <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${tab.color}0a, transparent 60%)` }} />
 
-            {/* Stats overlay */}
+            {/* Tab number watermark */}
+            <div className="absolute top-3 right-4 font-black text-6xl leading-none select-none pointer-events-none" style={{ color: `${tab.color}15` }}>{tab.n}</div>
+
+            {/* Animated stats overlay */}
             <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-2">
               {tab.tabStats.map((s, i) => (
-                <div key={i} className="bg-bg/85 backdrop-blur-md border border-white/10 rounded-xl p-2.5 text-center">
-                  <div className="text-lg font-black leading-none mb-0.5" style={{ color: tab.color }}>{s.n}</div>
-                  <div className="text-[9px] text-muted leading-snug">{s.label}</div>
-                </div>
+                <AnimatedStat key={i} n={s.n} label={s.label} color={tab.color} />
               ))}
             </div>
           </div>
 
-          {/* Preview items */}
+          {/* Content chips */}
           <div>
-            <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2.5">Nội dung bên trong</p>
+            <p className="text-[9px] font-bold text-muted/60 uppercase tracking-widest mb-2">Nội dung bên trong</p>
             <div className="flex flex-wrap gap-1.5">
               {tab.previewItems.map(item => (
                 <span key={item} className={`text-[10px] font-medium px-2.5 py-1 rounded-full border ${tab.chip}`}>{item}</span>
@@ -426,74 +523,66 @@ export default function PillarA() {
 
       {/* ── TAB NAVIGATION ──────────────────────────────────────────────────────── */}
       <RevealBlock className="mb-0">
-        <div className="mb-6">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.25em] whitespace-nowrap">4 chủ đề luyện tập</p>
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          </div>
+        {/* Section header */}
+        <div className="flex items-center gap-4 mb-6">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.25em] whitespace-nowrap">4 chủ đề luyện tập</p>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        </div>
 
-          {/* Tab bar */}
-          <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
-            <div
-              ref={tabBarRef}
-              className="flex min-w-max md:min-w-0 md:grid md:grid-cols-4 border border-border rounded-2xl overflow-hidden"
-            >
-              {TABS.map((t, i) => {
-                const isActive = activeTab === i;
-                return (
-                  <button
-                    key={t.n}
-                    type="button"
-                    onClick={() => switchTab(i)}
-                    className={`relative flex items-center gap-3 p-4 text-left transition-all duration-200 border-r border-border/50 last:border-r-0 focus:outline-none shrink-0 md:shrink
-                      ${isActive ? t.tabBg : 'hover:bg-white/[0.03]'}`}
+        {/* Tab cards */}
+        <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-4">
+          <div ref={tabBarRef} className="flex gap-3 min-w-max md:min-w-0 md:grid md:grid-cols-4">
+            {TABS.map((t, i) => {
+              const isActive = activeTab === i;
+              return (
+                <button
+                  key={t.n}
+                  type="button"
+                  onClick={() => switchTab(i)}
+                  className={`relative group flex flex-col p-4 md:p-5 rounded-2xl border text-left transition-all duration-300 focus:outline-none shrink-0 md:shrink w-44 md:w-auto
+                    ${!isActive ? 'border-border/40 bg-surface/20 hover:border-border/70 hover:bg-surface/40 hover:-translate-y-0.5' : ''}`}
+                  style={isActive ? {
+                    borderColor: `${t.color}45`,
+                    background: `${t.color}07`,
+                    boxShadow: `0 4px 28px ${t.glow}, inset 0 1px 0 ${t.color}15`,
+                  } : undefined}
+                >
+                  {/* Step */}
+                  <div className="flex items-center gap-1.5 mb-3">
+                    <span className="text-[9px] font-black transition-colors" style={{ color: isActive ? t.color : '#6b7280' }}>{t.n} /04</span>
+                    {isActive && <span className="w-1 h-1 rounded-full animate-pulse" style={{ background: t.color }} />}
+                  </div>
+
+                  {/* Icon with glow on active */}
+                  <div
+                    className="text-2xl mb-3 transition-all duration-200 group-hover:scale-105 w-fit"
+                    style={isActive ? { filter: `drop-shadow(0 0 8px ${t.color}80)` } : undefined}
                   >
-                    {/* Active bottom line */}
-                    {isActive && (
-                      <div
-                        className="absolute bottom-0 inset-x-0 h-[2px]"
-                        style={{ background: `linear-gradient(90deg, ${t.color}, transparent)` }}
-                      />
-                    )}
-                    {/* Active left accent (mobile) */}
-                    {isActive && (
-                      <div
-                        className="md:hidden absolute inset-y-0 left-0 w-[2px]"
-                        style={{ background: t.color }}
-                      />
-                    )}
+                    {t.icon}
+                  </div>
 
-                    {/* Icon bubble */}
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0 transition-all duration-200 border"
-                      style={{
-                        background: isActive ? `${t.color}15` : 'transparent',
-                        borderColor: isActive ? `${t.color}35` : 'var(--color-border)',
-                        transform: isActive ? 'scale(1.05)' : 'scale(1)',
-                      }}
-                    >
-                      {t.icon}
-                    </div>
+                  {/* Title */}
+                  <p className={`text-xs font-bold leading-snug mb-1 transition-colors ${isActive ? 'text-text' : 'text-muted group-hover:text-text/70'}`}>
+                    {t.title}
+                  </p>
 
-                    {/* Text */}
-                    <div className="min-w-0 hidden md:block">
-                      <div className="flex items-center gap-1.5 mb-0.5">
-                        <span className="text-[9px] font-black" style={{ color: isActive ? t.color : '#6b7280' }}>{t.n}</span>
-                      </div>
-                      <p className={`text-[13px] font-bold leading-tight truncate transition-colors ${isActive ? 'text-text' : 'text-muted'}`}>{t.title}</p>
-                      <p className="text-[10px] leading-tight mt-0.5 transition-colors truncate" style={{ color: isActive ? t.color : 'transparent' }}>{t.sub}</p>
-                    </div>
+                  {/* Subtitle — visible only on active */}
+                  <p
+                    className="text-[9px] leading-tight transition-all duration-300 line-clamp-1"
+                    style={{ color: isActive ? `${t.color}cc` : 'transparent' }}
+                  >
+                    {t.sub}
+                  </p>
 
-                    {/* Mobile: number label */}
-                    <div className="md:hidden">
-                      <span className="text-[9px] font-black block mb-0.5" style={{ color: isActive ? t.color : '#6b7280' }}>{t.n}</span>
-                      <p className={`text-[11px] font-bold leading-tight transition-colors ${isActive ? 'text-text' : 'text-muted'}`}>{t.title.split(' ').slice(0,2).join(' ')}</p>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+                  {/* Bottom accent bar */}
+                  <div
+                    className="absolute bottom-0 left-4 right-4 h-[1.5px] rounded-full transition-all duration-300"
+                    style={{ background: isActive ? t.color : 'transparent' }}
+                  />
+                </button>
+              );
+            })}
           </div>
         </div>
 

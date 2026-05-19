@@ -80,26 +80,18 @@ const MOVE_VIDEO = { squat:'SQUAT', hinge:'HINGE', push:'PUSH', pull:'PULL', cor
 
 // ─── Click-to-play video ────────────────────────────────────────────────────────
 
-
 function MovementVideoPlayer({ videoKey, s }) {
   const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
   const [error, setError] = useState(false);
   const src = `${import.meta.env.BASE_URL}videos/${videoKey}.mp4`;
 
-  // Ensure muted+autoplay via DOM (belt-and-suspenders: JSX props + DOM + IntersectionObserver)
-  useEffect(() => {
+  const handlePlay = () => {
     const el = videoRef.current;
     if (!el) return;
-    el.muted = true;
     el.play().catch(() => {});
-
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) el.play().catch(() => {}); },
-      { threshold: 0.25 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+    setPlaying(true);
+  };
 
   if (error) {
     return (
@@ -110,19 +102,30 @@ function MovementVideoPlayer({ videoKey, s }) {
   }
 
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-black" style={{ aspectRatio: '9/16' }}>
+    <div className="relative rounded-2xl overflow-hidden bg-black cursor-pointer" style={{ aspectRatio: '9/16' }} onClick={!playing ? handlePlay : undefined}>
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
-        autoPlay
-        muted
         playsInline
         loop
-        controls
-        preload="auto"
+        controls={playing}
+        preload="metadata"
         src={src}
         onError={() => setError(true)}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
       />
+      {!playing && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-[1px] transition-opacity">
+          <div className={`w-16 h-16 rounded-full flex items-center justify-center border-2 ${s.border} bg-black/50 shadow-lg`}
+            style={{ boxShadow: `0 0 24px ${s.glow}` }}>
+            <svg className={`w-7 h-7 ${s.text} ml-1`} fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <span className={`mt-3 text-xs font-medium ${s.text} opacity-80`}>Nhấn để xem</span>
+        </div>
+      )}
     </div>
   );
 }

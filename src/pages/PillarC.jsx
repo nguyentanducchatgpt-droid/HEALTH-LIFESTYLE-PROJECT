@@ -114,29 +114,10 @@ export default function PillarC() {
       {/* ── Hero card with orbit glow border ── */}
       <div className="pc-orbit-ring rounded-3xl p-[1.5px] mb-16 animate-fade-in-up" style={{ animationDelay: '60ms', animationFillMode: 'both' }}>
         <div className="rounded-3xl overflow-hidden" style={{ background: '#0d0d0d' }}>
-          <div className="grid md:grid-cols-[420px_1fr]">
+          <div className="grid md:grid-cols-[1fr_420px]">
 
-            {/* LEFT: Lifestyle image */}
-            <div className="relative h-[260px] md:h-auto overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=75"
-                alt="Healthy lifestyle meditation"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-[#0d0d0d]/85 hidden md:block pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/70 to-transparent md:hidden pointer-events-none" />
-              {/* Top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, #14b8a6 0%, #0d9488 60%, transparent 100%)' }} />
-              {/* Badge */}
-              <div className="absolute top-4 left-4">
-                <span className="text-[10px] font-black text-teal-400 bg-black/65 backdrop-blur-sm px-3 py-1.5 rounded-full border border-teal-500/40 tracking-widest">
-                  TRỤ CỘT C
-                </span>
-              </div>
-            </div>
-
-            {/* RIGHT: Content */}
-            <div className="p-7 md:p-10 flex flex-col justify-center">
+            {/* LEFT: Content */}
+            <div className="p-7 md:p-10 flex flex-col justify-center order-2 md:order-1">
 
               {/* Icon + Title */}
               <div className="flex items-center gap-4 mb-4">
@@ -198,6 +179,26 @@ export default function PillarC() {
               </div>
 
             </div>
+
+            {/* RIGHT: Lifestyle image */}
+            <div className="relative h-[260px] md:h-auto overflow-hidden order-1 md:order-2">
+              <img
+                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=75"
+                alt="Healthy lifestyle meditation"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/10 to-[#0d0d0d]/85 hidden md:block pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/70 to-transparent md:hidden pointer-events-none" />
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(270deg, #14b8a6 0%, #0d9488 60%, transparent 100%)' }} />
+              {/* Badge */}
+              <div className="absolute top-4 right-4">
+                <span className="text-[10px] font-black text-teal-400 bg-black/65 backdrop-blur-sm px-3 py-1.5 rounded-full border border-teal-500/40 tracking-widest">
+                  TRỤ CỘT C
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

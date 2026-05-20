@@ -1166,34 +1166,36 @@ function buildCloud(W, H) {
 }
 
 // ─── Thought-bubble tooltip — auto-scales to text content ────────────────────
+const TB_TEXT_W = 168; // fixed text column width (px) — measurement and foreignObject must match
+
 function ThoughtBubble({ text, idx }) {
   const measureRef = useRef(null);
-  const [dims, setDims] = useState({ w: 162, h: 50 });
+  const [textH, setTextH] = useState(54);
 
   useEffect(() => {
     if (!measureRef.current) return;
-    const r = measureRef.current.getBoundingClientRect();
-    if (r.width > 0) setDims({ w: Math.ceil(r.width), h: Math.ceil(r.height) });
+    const h = measureRef.current.getBoundingClientRect().height;
+    if (h > 0) setTextH(Math.ceil(h));
   }, [text]);
 
   const fid = `tbf${idx}`;
   const kid = `tba${idx}`;
-  const PX = 22, PY = 16, BH = 10;
-  const W  = dims.w + PX * 2;
-  const H  = dims.h + PY * 2;
+  const PX = 20, PY = 20, BH = 10;
+  const W  = TB_TEXT_W + PX * 2;
+  const H  = textH + PY * 2;
   const cloud = buildCloud(W, H);
   const perim = (W + H) * 2 + 60;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      {/* Hidden text-measurement div */}
+      {/* Measurement div — fixed so parent transforms don't affect it */}
       <div
         ref={measureRef}
         style={{
-          position: 'absolute', left: '-9999px', top: '-9999px',
+          position: 'fixed', top: 0, left: '-9999px',
+          width: `${TB_TEXT_W}px`,
           fontSize: '9.5px', fontWeight: 500, lineHeight: '1.65',
-          maxWidth: '170px', padding: '0 6px', whiteSpace: 'normal',
-          pointerEvents: 'none', visibility: 'hidden',
+          visibility: 'hidden', pointerEvents: 'none',
         }}
       >
         {text}
@@ -1220,15 +1222,14 @@ function ThoughtBubble({ text, idx }) {
           style={{ animation: `${kid} 2.8s linear infinite` }}
         />
 
-        {/* Text centered in cloud body */}
-        <foreignObject x={PX} y={PY} width={dims.w} height={dims.h + 10}>
+        {/* Text — same width as measurement div so wrapping is identical */}
+        <foreignObject x={PX} y={PY} width={TB_TEXT_W} height={textH + 20}>
           <div
             xmlns="http://www.w3.org/1999/xhtml"
             style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              height: '100%',
+              width: `${TB_TEXT_W}px`,
               fontSize: '9.5px', color: '#c8f59a', lineHeight: '1.65',
-              textAlign: 'center', fontWeight: 500, padding: '0 4px',
+              textAlign: 'center', fontWeight: 500,
             }}
           >
             {text}

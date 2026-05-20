@@ -55,9 +55,8 @@ const MANTRAS = [
 
 const TABS = [
   {
-    id: 'foundation',
-    label: 'Nền Tảng',
-    short: 'B1',
+    id: 'foundation', label: 'Nền Tảng', short: 'B1',
+    color: '#84cc16', rgb: '132,204,22', frameClass: 'pb-frame-0',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
         <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
@@ -65,9 +64,8 @@ const TABS = [
     ),
   },
   {
-    id: 'plate',
-    label: 'Đĩa Ăn',
-    short: 'B2',
+    id: 'plate', label: 'Đĩa Ăn', short: 'B2',
+    color: '#22c55e', rgb: '34,197,94', frameClass: 'pb-frame-1',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
         <circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M2 12h20"/>
@@ -75,9 +73,8 @@ const TABS = [
     ),
   },
   {
-    id: 'goals',
-    label: 'Mục Tiêu',
-    short: 'B3',
+    id: 'goals', label: 'Mục Tiêu', short: 'B3',
+    color: '#f97316', rgb: '249,115,22', frameClass: 'pb-frame-2',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
         <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
@@ -85,9 +82,8 @@ const TABS = [
     ),
   },
   {
-    id: 'meals',
-    label: 'Thực Đơn',
-    short: 'B4',
+    id: 'meals', label: 'Thực Đơn', short: 'B4',
+    color: '#06b6d4', rgb: '6,182,212', frameClass: 'pb-frame-3',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
         <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3z"/>
@@ -95,9 +91,8 @@ const TABS = [
     ),
   },
   {
-    id: 'tracking',
-    label: 'Theo Dõi',
-    short: 'B5',
+    id: 'tracking', label: 'Theo Dõi', short: 'B5',
+    color: '#a855f7', rgb: '168,85,247', frameClass: 'pb-frame-4',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
@@ -1635,6 +1630,22 @@ export default function PillarB() {
           rgba(249,115,22,0.0) 115deg, transparent 125deg, transparent 360deg);
         animation: btOrangeSpin 3.6s linear infinite;
       }
+      /* ── Per-tab unified frame orbit rings ── */
+      @property --pbt0 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --pbt1 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --pbt2 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --pbt3 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --pbt4 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @keyframes pbt0Spin { to { --pbt0: 360deg; } }
+      @keyframes pbt1Spin { to { --pbt1: 360deg; } }
+      @keyframes pbt2Spin { to { --pbt2: 360deg; } }
+      @keyframes pbt3Spin { to { --pbt3: 360deg; } }
+      @keyframes pbt4Spin { to { --pbt4: 360deg; } }
+      .pb-frame-0 { background: conic-gradient(from var(--pbt0), transparent 0deg, transparent 50deg, rgba(132,204,22,0) 62deg, rgba(132,204,22,0.8) 82deg, rgba(255,255,255,0.95) 90deg, rgba(132,204,22,0.8) 98deg, rgba(132,204,22,0) 110deg, transparent 122deg, transparent 360deg); animation: pbt0Spin 4s linear infinite; }
+      .pb-frame-1 { background: conic-gradient(from var(--pbt1), transparent 0deg, transparent 50deg, rgba(34,197,94,0)  62deg, rgba(34,197,94,0.8)  82deg, rgba(255,255,255,0.95) 90deg, rgba(34,197,94,0.8)  98deg, rgba(34,197,94,0)  110deg, transparent 122deg, transparent 360deg); animation: pbt1Spin 4.4s linear infinite; }
+      .pb-frame-2 { background: conic-gradient(from var(--pbt2), transparent 0deg, transparent 50deg, rgba(249,115,22,0) 62deg, rgba(249,115,22,0.8) 82deg, rgba(255,255,255,0.95) 90deg, rgba(249,115,22,0.8) 98deg, rgba(249,115,22,0) 110deg, transparent 122deg, transparent 360deg); animation: pbt2Spin 3.8s linear infinite; }
+      .pb-frame-3 { background: conic-gradient(from var(--pbt3), transparent 0deg, transparent 50deg, rgba(6,182,212,0)   62deg, rgba(6,182,212,0.8)   82deg, rgba(255,255,255,0.95) 90deg, rgba(6,182,212,0.8)   98deg, rgba(6,182,212,0)   110deg, transparent 122deg, transparent 360deg); animation: pbt3Spin 3.5s linear infinite; }
+      .pb-frame-4 { background: conic-gradient(from var(--pbt4), transparent 0deg, transparent 50deg, rgba(168,85,247,0)  62deg, rgba(168,85,247,0.8)  82deg, rgba(255,255,255,0.95) 90deg, rgba(168,85,247,0.8)  98deg, rgba(168,85,247,0)  110deg, transparent 122deg, transparent 360deg); animation: pbt4Spin 4.2s linear infinite; }
     `;
     document.head.appendChild(s);
   }, []);
@@ -1825,66 +1836,93 @@ export default function PillarB() {
       </RevealBlock>
 
       {/* ══════════════════════════════════════════════════════════════════════
-          TAB SECTION
+          TAB SECTION — unified frame
       ══════════════════════════════════════════════════════════════════════ */}
       <div id="tabs" className="scroll-mt-4 mb-16">
         <RevealBlock>
-          {/* Section header */}
-          <div className="flex items-center gap-4 mb-6">
+          {/* Section label */}
+          <div className="flex items-center gap-4 mb-5">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
             <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] whitespace-nowrap">5 chủ đề dinh dưỡng</p>
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           </div>
 
-          {/* Tab bar */}
-          <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-5">
-            <div ref={tabBarRef} className="flex gap-2 min-w-max md:min-w-0 md:flex-wrap">
-              {TABS.map((t, i) => {
-                const isActive = activeTab === i;
-                return (
-                  <button
-                    key={t.id}
-                    type="button"
-                    onClick={() => switchTab(i)}
-                    className={`group relative flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap
-                      ${isActive
-                        ? 'border-lime-500/40 bg-lime-500/10 text-lime-400'
-                        : 'border-border/40 bg-surface/20 text-muted hover:border-border/70 hover:text-text/80 hover:bg-surface/35'
-                      }`}
-                    style={isActive ? { boxShadow: `0 2px 16px ${LIME_GLOW}` } : undefined}
-                  >
-                    <span className={`transition-colors ${isActive ? 'text-lime-400' : 'text-muted/60 group-hover:text-muted'}`}>
-                      {t.icon}
-                    </span>
-                    {t.short}
-                    <span className="hidden sm:inline">— {t.label}</span>
-                    {isActive && (
-                      <span className="w-1 h-1 rounded-full bg-lime-400 animate-pulse" />
-                    )}
-                    <div
-                      className="absolute bottom-0 left-3 right-3 h-[1.5px] rounded-full transition-all duration-300"
-                      style={{ background: isActive ? LIME : 'transparent' }}
-                    />
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          {/* ── Unified orbit-ring frame ── */}
+          <div className={`rounded-2xl p-[1.5px] transition-all duration-700 ${TABS[activeTab].frameClass}`}>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#0a0a0a' }}>
 
-          {/* Tab panel */}
-          <div
-            key={tabKey}
-            className="relative rounded-3xl border border-lime-500/12 overflow-hidden animate-fade-in-up"
-            style={{ background: `${LIME}03` }}
-          >
-            {/* Top accent line */}
-            <div className="h-[2px]" style={{ background: `linear-gradient(90deg, ${LIME}cc, ${LIME}30, transparent)` }} />
+              {/* Tab strip */}
+              <div className="overflow-x-auto scrollbar-none">
+                <div
+                  ref={tabBarRef}
+                  className="flex items-stretch min-w-max md:min-w-0"
+                >
+                  {TABS.map((t, i) => {
+                    const isActive = activeTab === i;
+                    const activeColor = TABS[activeTab].color;
+                    const tc = t.color;
+                    return (
+                      <button
+                        key={t.id}
+                        type="button"
+                        onClick={() => switchTab(i)}
+                        className="group relative flex items-center gap-2 px-4 py-3 text-xs font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap flex-1 md:flex-none justify-center md:justify-start"
+                        style={{
+                          color: isActive ? tc : 'rgba(100,116,139,0.65)',
+                          background: isActive ? `${tc}09` : 'transparent',
+                          borderBottom: isActive
+                            ? `2px solid ${tc}`
+                            : '2px solid rgba(255,255,255,0.05)',
+                        }}
+                      >
+                        <span
+                          className="transition-all duration-200"
+                          style={{ color: isActive ? tc : 'rgba(100,116,139,0.5)' }}
+                        >
+                          {t.icon}
+                        </span>
+                        <span className="font-black">{t.short}</span>
+                        <span className="hidden sm:inline opacity-80">— {t.label}</span>
+                        {isActive && (
+                          <span
+                            className="w-1.5 h-1.5 rounded-full animate-pulse ml-0.5"
+                            style={{ background: tc }}
+                          />
+                        )}
+                        {/* Hover underline for inactive */}
+                        {!isActive && (
+                          <div
+                            className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                            style={{ background: `${tc}40` }}
+                          />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
 
-            {/* Ambient glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 rounded-full blur-[120px] pointer-events-none" style={{ background: LIME_GLOW }} />
+              {/* Divider between tabs and content */}
+              <div
+                className="h-px transition-all duration-700"
+                style={{ background: `linear-gradient(90deg, transparent, ${TABS[activeTab].color}35 20%, ${TABS[activeTab].color}35 80%, transparent)` }}
+              />
 
-            <div className="relative z-10 p-6 md:p-8">
-              {PANELS[activeTab]}
+              {/* Content panel */}
+              <div
+                key={tabKey}
+                className="relative overflow-hidden animate-fade-in-up"
+              >
+                {/* Ambient glow top-right */}
+                <div
+                  className="absolute top-0 right-0 w-80 h-80 rounded-full blur-[120px] pointer-events-none transition-all duration-700"
+                  style={{ background: `${TABS[activeTab].color}12` }}
+                />
+                <div className="relative z-10 p-6 md:p-8">
+                  {PANELS[activeTab]}
+                </div>
+              </div>
+
             </div>
           </div>
         </RevealBlock>

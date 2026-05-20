@@ -1630,7 +1630,7 @@ export default function PillarB() {
           rgba(249,115,22,0.0) 115deg, transparent 125deg, transparent 360deg);
         animation: btOrangeSpin 3.6s linear infinite;
       }
-      /* ── Per-tab unified frame orbit rings ── */
+      /* ── Per-tab unified frame — solid border + narrow running spark ── */
       @property --pbt0 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
       @property --pbt1 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
       @property --pbt2 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
@@ -1641,11 +1641,12 @@ export default function PillarB() {
       @keyframes pbt2Spin { to { --pbt2: 360deg; } }
       @keyframes pbt3Spin { to { --pbt3: 360deg; } }
       @keyframes pbt4Spin { to { --pbt4: 360deg; } }
-      .pb-frame-0 { background: conic-gradient(from var(--pbt0), transparent 0deg, transparent 50deg, rgba(132,204,22,0) 62deg, rgba(132,204,22,0.8) 82deg, rgba(255,255,255,0.95) 90deg, rgba(132,204,22,0.8) 98deg, rgba(132,204,22,0) 110deg, transparent 122deg, transparent 360deg); animation: pbt0Spin 4s linear infinite; }
-      .pb-frame-1 { background: conic-gradient(from var(--pbt1), transparent 0deg, transparent 50deg, rgba(34,197,94,0)  62deg, rgba(34,197,94,0.8)  82deg, rgba(255,255,255,0.95) 90deg, rgba(34,197,94,0.8)  98deg, rgba(34,197,94,0)  110deg, transparent 122deg, transparent 360deg); animation: pbt1Spin 4.4s linear infinite; }
-      .pb-frame-2 { background: conic-gradient(from var(--pbt2), transparent 0deg, transparent 50deg, rgba(249,115,22,0) 62deg, rgba(249,115,22,0.8) 82deg, rgba(255,255,255,0.95) 90deg, rgba(249,115,22,0.8) 98deg, rgba(249,115,22,0) 110deg, transparent 122deg, transparent 360deg); animation: pbt2Spin 3.8s linear infinite; }
-      .pb-frame-3 { background: conic-gradient(from var(--pbt3), transparent 0deg, transparent 50deg, rgba(6,182,212,0)   62deg, rgba(6,182,212,0.8)   82deg, rgba(255,255,255,0.95) 90deg, rgba(6,182,212,0.8)   98deg, rgba(6,182,212,0)   110deg, transparent 122deg, transparent 360deg); animation: pbt3Spin 3.5s linear infinite; }
-      .pb-frame-4 { background: conic-gradient(from var(--pbt4), transparent 0deg, transparent 50deg, rgba(168,85,247,0)  62deg, rgba(168,85,247,0.8)  82deg, rgba(255,255,255,0.95) 90deg, rgba(168,85,247,0.8)  98deg, rgba(168,85,247,0)  110deg, transparent 122deg, transparent 360deg); animation: pbt4Spin 4.2s linear infinite; }
+      /* base = dim solid color all the way round; spark = 8-deg white peak sweeps on top */
+      .pb-frame-0 { background: conic-gradient(from var(--pbt0), rgba(132,204,22,0.28) 0deg, rgba(132,204,22,0.28) 353deg, rgba(132,204,22,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(132,204,22,0.55) 361deg, rgba(132,204,22,0.28) 363deg, rgba(132,204,22,0.28) 360deg); animation: pbt0Spin 4s linear infinite; }
+      .pb-frame-1 { background: conic-gradient(from var(--pbt1), rgba(34,197,94,0.28)   0deg, rgba(34,197,94,0.28)   353deg, rgba(34,197,94,0.55)   355deg, rgba(255,255,255,0.92) 358deg, rgba(34,197,94,0.55)   361deg, rgba(34,197,94,0.28)   363deg, rgba(34,197,94,0.28)   360deg); animation: pbt1Spin 4.4s linear infinite; }
+      .pb-frame-2 { background: conic-gradient(from var(--pbt2), rgba(249,115,22,0.28)  0deg, rgba(249,115,22,0.28)  353deg, rgba(249,115,22,0.55)  355deg, rgba(255,255,255,0.92) 358deg, rgba(249,115,22,0.55)  361deg, rgba(249,115,22,0.28)  363deg, rgba(249,115,22,0.28)  360deg); animation: pbt2Spin 3.8s linear infinite; }
+      .pb-frame-3 { background: conic-gradient(from var(--pbt3), rgba(6,182,212,0.28)   0deg, rgba(6,182,212,0.28)   353deg, rgba(6,182,212,0.55)   355deg, rgba(255,255,255,0.92) 358deg, rgba(6,182,212,0.55)   361deg, rgba(6,182,212,0.28)   363deg, rgba(6,182,212,0.28)   360deg); animation: pbt3Spin 3.5s linear infinite; }
+      .pb-frame-4 { background: conic-gradient(from var(--pbt4), rgba(168,85,247,0.28)  0deg, rgba(168,85,247,0.28)  353deg, rgba(168,85,247,0.55)  355deg, rgba(255,255,255,0.92) 358deg, rgba(168,85,247,0.55)  361deg, rgba(168,85,247,0.28)  363deg, rgba(168,85,247,0.28)  360deg); animation: pbt4Spin 4.2s linear infinite; }
     `;
     document.head.appendChild(s);
   }, []);

@@ -1276,12 +1276,13 @@ export default function PillarB() {
       <RevealBlock className="mb-16">
 
         {/* ── Quote block ── */}
-        <div className="relative rounded-3xl border border-lime-500/15 bg-lime-500/4 p-7 md:p-10 mb-10 overflow-hidden group hover:border-lime-500/30 transition-all duration-500">
-          {/* Ambient glows */}
-          <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-[140px] pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity duration-700" style={{ background: `${LIME}08` }} />
-          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-[100px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: `${LIME}05` }} />
-          {/* Large decorative quote mark */}
-          <div className="absolute -top-4 left-6 font-black text-[130px] leading-none select-none pointer-events-none" style={{ color: `${LIME}07` }}>"</div>
+        <div className="relative rounded-3xl border border-lime-500/15 bg-lime-500/4 p-7 md:p-10 mb-10 group hover:border-lime-500/30 transition-all duration-500">
+          {/* Decorative layer — clipped independently so tooltips can overflow */}
+          <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+            <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-[140px] opacity-60 group-hover:opacity-100 transition-opacity duration-700" style={{ background: `${LIME}08` }} />
+            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: `${LIME}05` }} />
+            <div className="absolute -top-4 left-6 font-black text-[130px] leading-none select-none" style={{ color: `${LIME}07` }}>"</div>
+          </div>
 
           {/* Quote text */}
           <div className="relative z-10 max-w-2xl mx-auto mb-7 text-center">
@@ -1303,32 +1304,61 @@ export default function PillarB() {
               },
               {
                 n: '80/20', unit: '', label: 'Quy tắc bền vững',
-                tooltip: '80% thời gian ăn uống lành mạnh + 20% linh hoạt — tỷ lệ thực tế nhất để duy trì lâu dài mà không cảm thấy bị tước đoạt.',
+                tooltip: '80% ăn lành mạnh + 20% linh hoạt — tỷ lệ thực tế nhất để duy trì lâu dài mà không cảm thấy bị tước đoạt.',
               },
               {
                 n: '21+', unit: 'ngày', label: 'Hình thành thói quen',
-                tooltip: 'Não bộ cần 21–66 ngày lặp lại để hình thành thói quen tự động. Kiên trì qua tuần 2–3 là giai đoạn khó nhất và quyết định nhất.',
+                tooltip: 'Não bộ cần 21–66 ngày lặp lại để hình thành thói quen tự động. Kiên trì qua tuần 2–3 là giai đoạn khó và quyết định nhất.',
               },
               {
                 n: '1.6g', unit: '/kg', label: 'Protein tối thiểu',
-                tooltip: '1.6g protein/kg thể trọng là ngưỡng tối thiểu để bảo vệ cơ bắp khi giảm mỡ. Tăng lên 2.2g/kg nếu tập luyện cường độ cao.',
+                tooltip: '1.6g protein/kg thể trọng bảo vệ cơ bắp khi giảm mỡ. Tăng lên 2.2g/kg nếu tập luyện cường độ cao.',
               },
             ].map((s, i) => (
               <div
                 key={i}
-                className="group/stat bg-bg/50 backdrop-blur-sm rounded-xl p-3.5 border border-lime-500/10 hover:border-lime-500/35 transition-all duration-300 animate-fade-in-up cursor-default"
+                className="group/stat relative bg-bg/50 backdrop-blur-sm rounded-xl p-3.5 border border-lime-500/10 hover:border-lime-500/35 transition-all duration-300 animate-fade-in-up cursor-default"
                 style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
               >
+                {/* ── Thought-bubble tooltip ── */}
+                <div className="
+                  absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none
+                  opacity-0 group-hover/stat:opacity-100
+                  scale-90 group-hover/stat:scale-100
+                  -translate-y-1 group-hover/stat:translate-y-0
+                  transition-all duration-200 origin-bottom
+                ">
+                  {/* Cloud body */}
+                  <div className="relative rounded-2xl px-3.5 py-2.5"
+                    style={{
+                      background: 'rgba(8,8,8,0.97)',
+                      border: `1px solid rgba(132,204,22,0.28)`,
+                      minWidth: '155px', maxWidth: '195px',
+                      boxShadow: '0 8px 28px rgba(0,0,0,0.75), 0 0 0 1px rgba(132,204,22,0.06)',
+                    }}>
+                    {/* Bumps across the top */}
+                    <div className="absolute -top-2.5 left-0 right-0 flex justify-around px-5 pointer-events-none">
+                      {[10, 14, 10, 14, 10].map((s, k) => (
+                        <div key={k} className="rounded-full"
+                          style={{ width: s, height: s, background: 'rgba(8,8,8,0.97)', border: '1px solid rgba(132,204,22,0.22)', marginTop: k % 2 === 0 ? 4 : 0 }} />
+                      ))}
+                    </div>
+                    <p className="text-[9px] leading-relaxed text-center" style={{ color: 'rgba(195,195,195,0.9)' }}>
+                      {s.tooltip}
+                    </p>
+                  </div>
+                  {/* Thought dots */}
+                  <div className="flex justify-center items-end gap-1 mt-1">
+                    <div className="w-2 h-2 rounded-full" style={{ background: 'rgba(8,8,8,0.97)', border: '1px solid rgba(132,204,22,0.25)' }} />
+                    <div className="w-1.5 h-1.5 rounded-full mb-0.5" style={{ background: 'rgba(8,8,8,0.97)', border: '1px solid rgba(132,204,22,0.18)' }} />
+                    <div className="w-1 h-1 rounded-full mb-1" style={{ background: 'rgba(8,8,8,0.97)', border: '1px solid rgba(132,204,22,0.12)' }} />
+                  </div>
+                </div>
+
                 <div className="font-black text-xl leading-none mb-0.5" style={{ color: LIME }}>
                   {s.n}<span className="text-xs font-bold opacity-60 ml-0.5">{s.unit}</span>
                 </div>
-                <div className="text-[10px] text-muted group-hover/stat:text-muted/80 transition-colors duration-200 mb-0">{s.label}</div>
-                {/* Tooltip slides in below label */}
-                <div className="max-h-0 group-hover/stat:max-h-20 overflow-hidden transition-all duration-350 ease-in-out">
-                  <p className="text-[9px] leading-relaxed pt-2 mt-1.5 border-t" style={{ color: `${LIME}70`, borderColor: `${LIME}20` }}>
-                    {s.tooltip}
-                  </p>
-                </div>
+                <div className="text-[10px] text-muted">{s.label}</div>
               </div>
             ))}
           </div>

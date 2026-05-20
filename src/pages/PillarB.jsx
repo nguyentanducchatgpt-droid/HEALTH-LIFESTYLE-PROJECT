@@ -1187,119 +1187,60 @@ export default function PillarB() {
     <div className="max-w-5xl mx-auto -mt-4">
 
       {/* ══════════════════════════════════════════════════════════════════════
-          HERO — card-style with orbiting glow border
+          HERO
       ══════════════════════════════════════════════════════════════════════ */}
 
       {/* Breadcrumb */}
-      <div className="mb-6 animate-fade-in-up">
+      <div className="mb-10">
         <Link
           to="/pillars"
-          className="inline-flex items-center gap-1.5 text-muted hover:text-lime-400 text-xs transition-colors group"
+          className="inline-flex items-center gap-2 text-muted hover:text-lime-400 text-sm transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           6 Trụ Cột
-          <span className="text-border/60 mx-1">•</span>
-          <span className="text-lime-400/70">Trụ Cột B — Dinh Dưỡng &amp; Thực Đơn</span>
         </Link>
       </div>
 
-      {/* Orbit-border wrapper — p-[1.5px] reveals the rotating conic ring */}
-      <div className="pb-orbit-ring rounded-3xl p-[1.5px] mb-16 animate-fade-in-up" style={{ animationDelay: '60ms', animationFillMode: 'both' }}>
-        <div className="rounded-3xl overflow-hidden" style={{ background: '#0d0d0d' }}>
-          <div className="grid md:grid-cols-[420px_1fr]">
-
-            {/* ── LEFT: Food image ── */}
-            <div className="relative h-[260px] md:h-auto overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=75"
-                alt="Healthy meal bowl"
-                className="w-full h-full object-cover"
-              />
-              {/* Blend into dark right panel */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-[#0d0d0d]/85 hidden md:block pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/70 to-transparent md:hidden pointer-events-none" />
-              {/* Top-left lime line accent (like image 1) */}
-              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, #84cc16 0%, #22c55e 60%, transparent 100%)' }} />
-              {/* Badge */}
-              <div className="absolute top-4 left-4">
-                <span className="text-[10px] font-black text-lime-400 bg-black/65 backdrop-blur-sm px-3 py-1.5 rounded-full border border-lime-500/40 tracking-widest">
-                  TRỤ CỘT B
-                </span>
-              </div>
-            </div>
-
-            {/* ── RIGHT: Content ── */}
-            <div className="p-7 md:p-10 flex flex-col justify-center">
-
-              {/* Icon + Title */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shrink-0 border border-lime-500/20"
-                  style={{ background: 'rgba(132,204,22,0.08)' }}>
-                  🥗
-                </div>
-                <div>
-                  <h1 className="text-2xl md:text-[28px] font-black text-text leading-tight">
-                    Dinh Dưỡng &amp; Thực Đơn
-                  </h1>
-                  <div className="inline-flex items-center gap-1.5 bg-lime-500/10 border border-lime-500/20 text-lime-400 text-[10px] font-black px-3 py-0.5 rounded-full mt-2 tracking-[0.18em]">
-                    <span className="w-1 h-1 rounded-full bg-lime-400 animate-pulse" />
-                    DINH DƯỠNG
-                  </div>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-muted text-sm leading-relaxed mb-5 max-w-md">
-                Ăn đúng, đủ, đều — không cần nhịn đói hay kiêng cực đoan.
-                Xây nền dinh dưỡng bền vững theo từng mục tiêu cá nhân.
-              </p>
-
-              {/* 3 numbered key points */}
-              <div className="space-y-2.5 mb-6">
-                {[
-                  'TDEE — nhu cầu năng lượng hàng ngày của cơ thể bạn',
-                  'Thâm hụt (giảm mỡ) / Duy trì / Thặng dư (tăng cơ)',
-                  'Protein 1.6–2g/kg · Carb là nhiên liệu · Fat là điều hòa',
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-400 text-[10px] font-black flex items-center justify-center shrink-0 mt-0.5 leading-none">
-                      {i + 1}
-                    </div>
-                    <p className="text-sm text-muted leading-snug">{item}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Mini stats chips */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {HERO_STATS.map(s => (
-                  <div key={s.label} className="flex items-center gap-1.5 bg-white/[0.04] border border-white/8 px-3 py-1.5 rounded-xl">
-                    <span className="text-lime-400 font-extrabold text-sm leading-none">{s.n}</span>
-                    <span className="text-muted text-[10px] leading-none">{s.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA */}
-              <div className="flex items-center gap-4 flex-wrap">
-                <button
-                  type="button"
-                  onClick={() => { const el = document.getElementById('tab-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
-                  className="flex items-center gap-2 border border-lime-500/35 text-lime-400 font-bold text-sm px-5 py-2.5 rounded-xl transition-all duration-200 hover:bg-lime-500/10 hover:border-lime-500/60"
-                  style={{ background: 'rgba(132,204,22,0.06)' }}
-                >
-                  Khám Phá Ngay
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-                <span className="text-xs text-muted">7 chủ đề · 5 mục tiêu</span>
-              </div>
-
-            </div>
+      {/* Icon + Title */}
+      <div className="mb-10 relative">
+        <div className="absolute -top-8 -left-8 w-64 h-64 bg-lime-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative flex items-start gap-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-5xl bg-surface border border-lime-500/20 shrink-0 animate-float">
+            🥗
+          </div>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
+              {tPillars('pillarB.title')}
+            </h1>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-lime-400 mt-3 mb-4 px-3 py-1 bg-lime-500/10 border border-lime-500/20 rounded-full">
+              {tPillars('pillarB.subtitle')}
+            </span>
+            <p className="text-muted text-base leading-relaxed max-w-2xl">
+              {tPillars('pillarB.description')}
+            </p>
           </div>
         </div>
       </div>
+
+      {/* Contextual image with orbit glow border */}
+      <div className="pb-orbit-ring rounded-3xl p-[1.5px] mb-12">
+        <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=70"
+            alt="nutrition"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
+          <div className="absolute bottom-4 left-6">
+            <span className="text-lime-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-lime-500/20">
+              {tPillars('pillarB.image_caption')}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       {/* ══════════════════════════════════════════════════════════════════════
           PHILOSOPHY

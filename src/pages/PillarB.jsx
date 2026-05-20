@@ -1284,11 +1284,11 @@ export default function PillarB() {
           <div className="absolute -top-4 left-6 font-black text-[130px] leading-none select-none pointer-events-none" style={{ color: `${LIME}07` }}>"</div>
 
           {/* Quote text */}
-          <div className="relative z-10 max-w-2xl mb-7">
+          <div className="relative z-10 max-w-2xl mx-auto mb-7 text-center">
             <p className="text-xl md:text-2xl font-bold text-text/90 leading-relaxed italic mb-4">
               Ăn đủ — ăn đều — ăn thật —<br className="hidden md:block" /> ăn theo mục tiêu — sống được lâu dài
             </p>
-            <div className="h-px bg-gradient-to-r from-lime-500/50 via-lime-500/20 to-transparent mb-4" />
+            <div className="h-px bg-gradient-to-r from-transparent via-lime-500/50 to-transparent mb-4" />
             <p className="text-sm text-lime-400/80 font-medium">
               Ăn tốt hơn hôm qua một chút, và đủ dễ để ngày mai còn làm tiếp.
             </p>

@@ -1122,6 +1122,40 @@ export default function PillarB() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Inject orbit-border CSS keyframes once
+  useEffect(() => {
+    const id = 'pb-orbit-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @property --orbit-angle {
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+      }
+      @keyframes orbitSpin {
+        to { --orbit-angle: 360deg; }
+      }
+      .pb-orbit-ring {
+        background: conic-gradient(
+          from var(--orbit-angle),
+          transparent 0deg,
+          transparent 55deg,
+          rgba(132,204,22,0.0) 65deg,
+          rgba(132,204,22,0.7) 85deg,
+          rgba(255,255,255,0.95) 92deg,
+          rgba(132,204,22,0.7) 99deg,
+          rgba(34,197,94,0.0) 115deg,
+          transparent 125deg,
+          transparent 360deg
+        );
+        animation: orbitSpin 3.5s linear infinite;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   const switchTab = useCallback((i) => {
     if (i === activeTab) return;
     setActiveTab(i);
@@ -1153,76 +1187,116 @@ export default function PillarB() {
     <div className="max-w-5xl mx-auto -mt-4">
 
       {/* ══════════════════════════════════════════════════════════════════════
-          HERO
+          HERO — card-style with orbiting glow border
       ══════════════════════════════════════════════════════════════════════ */}
-      <div className="relative -mx-4 md:-mx-8 overflow-hidden mb-16" style={{ minHeight: 480 }}>
-        {/* Background image */}
-        <img
-          src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1400&q=60"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 0.12 }}
-        />
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/30 via-bg/60 to-bg pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-transparent to-bg/80 pointer-events-none" />
-        <div className="absolute inset-0 grid-dots opacity-15 pointer-events-none" />
-        {/* Glow blobs */}
-        <div className="absolute top-[25%] left-[18%] w-[380px] h-[380px] rounded-full blur-[130px] pointer-events-none" style={{ background: `${LIME}06`, animation: 'pulse 7s ease-in-out infinite' }} />
-        <div className="absolute bottom-[20%] right-[12%] w-[280px] h-[280px] rounded-full blur-[100px] pointer-events-none" style={{ background: 'rgba(34,197,94,0.05)', animation: 'pulse 9s ease-in-out 2s infinite' }} />
 
-        <div className="relative z-10 px-4 md:px-8 pt-14 pb-16 animate-fade-in-up">
-          {/* Breadcrumb */}
-          <Link
-            to="/pillars"
-            className="inline-flex items-center gap-1.5 text-muted hover:text-lime-400 text-xs transition-colors mb-8 group"
-          >
-            <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-            6 Trụ Cột
-            <span className="text-border/60 mx-1">•</span>
-            <span className="text-lime-400/70">Trụ Cột B — Dinh Dưỡng &amp; Thực Đơn</span>
-          </Link>
-
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-lime-500/8 border border-lime-500/20 text-lime-400 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse shrink-0" />
-            TRỤ CỘT B — DINH DƯỠNG &amp; THỰC ĐƠN
-          </div>
-
-          {/* Title */}
-          <h1 className="text-5xl md:text-[62px] font-black text-text leading-[1.02] mb-5 tracking-tight">
-            Ăn đúng để<br />
-            <span style={{
-              background: 'linear-gradient(135deg, #84cc16 0%, #22c55e 50%, #10b981 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>
-              sống khỏe bền
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-muted text-base leading-relaxed max-w-xl mb-8">
-            Dinh dưỡng không phải ăn kiêng. Ăn đủ, ăn đều, ăn thật, ăn theo mục tiêu.
-          </p>
-
-          {/* Stats row */}
-          <div className="flex items-center gap-8 md:gap-12 flex-wrap">
-            {HERO_STATS.map(s => (
-              <HeroCounter key={s.label} n={s.n} suffix={s.suffix} label={s.label} />
-            ))}
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div
-          className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 pointer-events-none transition-opacity duration-500"
-          style={{ opacity: scrolled ? 0 : 0.4 }}
+      {/* Breadcrumb */}
+      <div className="mb-6 animate-fade-in-up">
+        <Link
+          to="/pillars"
+          className="inline-flex items-center gap-1.5 text-muted hover:text-lime-400 text-xs transition-colors group"
         >
-          <span className="text-[9px] text-muted font-medium tracking-widest uppercase">Cuộn xuống</span>
-          <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1.5">
-            <div className="w-1 h-1.5 bg-white/40 rounded-full animate-bounce" />
+          <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
+          6 Trụ Cột
+          <span className="text-border/60 mx-1">•</span>
+          <span className="text-lime-400/70">Trụ Cột B — Dinh Dưỡng &amp; Thực Đơn</span>
+        </Link>
+      </div>
+
+      {/* Orbit-border wrapper — p-[1.5px] reveals the rotating conic ring */}
+      <div className="pb-orbit-ring rounded-3xl p-[1.5px] mb-16 animate-fade-in-up" style={{ animationDelay: '60ms', animationFillMode: 'both' }}>
+        <div className="rounded-3xl overflow-hidden" style={{ background: '#0d0d0d' }}>
+          <div className="grid md:grid-cols-[420px_1fr]">
+
+            {/* ── LEFT: Food image ── */}
+            <div className="relative h-[260px] md:h-auto overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=75"
+                alt="Healthy meal bowl"
+                className="w-full h-full object-cover"
+              />
+              {/* Blend into dark right panel */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-[#0d0d0d]/85 hidden md:block pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/70 to-transparent md:hidden pointer-events-none" />
+              {/* Top-left lime line accent (like image 1) */}
+              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, #84cc16 0%, #22c55e 60%, transparent 100%)' }} />
+              {/* Badge */}
+              <div className="absolute top-4 left-4">
+                <span className="text-[10px] font-black text-lime-400 bg-black/65 backdrop-blur-sm px-3 py-1.5 rounded-full border border-lime-500/40 tracking-widest">
+                  TRỤ CỘT B
+                </span>
+              </div>
+            </div>
+
+            {/* ── RIGHT: Content ── */}
+            <div className="p-7 md:p-10 flex flex-col justify-center">
+
+              {/* Icon + Title */}
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shrink-0 border border-lime-500/20"
+                  style={{ background: 'rgba(132,204,22,0.08)' }}>
+                  🥗
+                </div>
+                <div>
+                  <h1 className="text-2xl md:text-[28px] font-black text-text leading-tight">
+                    Dinh Dưỡng &amp; Thực Đơn
+                  </h1>
+                  <div className="inline-flex items-center gap-1.5 bg-lime-500/10 border border-lime-500/20 text-lime-400 text-[10px] font-black px-3 py-0.5 rounded-full mt-2 tracking-[0.18em]">
+                    <span className="w-1 h-1 rounded-full bg-lime-400 animate-pulse" />
+                    DINH DƯỠNG
+                  </div>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-muted text-sm leading-relaxed mb-5 max-w-md">
+                Ăn đúng, đủ, đều — không cần nhịn đói hay kiêng cực đoan.
+                Xây nền dinh dưỡng bền vững theo từng mục tiêu cá nhân.
+              </p>
+
+              {/* 3 numbered key points */}
+              <div className="space-y-2.5 mb-6">
+                {[
+                  'TDEE — nhu cầu năng lượng hàng ngày của cơ thể bạn',
+                  'Thâm hụt (giảm mỡ) / Duy trì / Thặng dư (tăng cơ)',
+                  'Protein 1.6–2g/kg · Carb là nhiên liệu · Fat là điều hòa',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-400 text-[10px] font-black flex items-center justify-center shrink-0 mt-0.5 leading-none">
+                      {i + 1}
+                    </div>
+                    <p className="text-sm text-muted leading-snug">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Mini stats chips */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {HERO_STATS.map(s => (
+                  <div key={s.label} className="flex items-center gap-1.5 bg-white/[0.04] border border-white/8 px-3 py-1.5 rounded-xl">
+                    <span className="text-lime-400 font-extrabold text-sm leading-none">{s.n}</span>
+                    <span className="text-muted text-[10px] leading-none">{s.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="flex items-center gap-4 flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => { const el = document.getElementById('tab-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="flex items-center gap-2 border border-lime-500/35 text-lime-400 font-bold text-sm px-5 py-2.5 rounded-xl transition-all duration-200 hover:bg-lime-500/10 hover:border-lime-500/60"
+                  style={{ background: 'rgba(132,204,22,0.06)' }}
+                >
+                  Khám Phá Ngay
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                <span className="text-xs text-muted">7 chủ đề · 5 mục tiêu</span>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>

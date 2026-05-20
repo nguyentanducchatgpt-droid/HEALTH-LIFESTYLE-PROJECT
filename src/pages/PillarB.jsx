@@ -1131,6 +1131,59 @@ function TrackingPanel() {
   );
 }
 
+// ─── Thought-bubble tooltip (SVG cloud + animated spark border) ──────────────
+
+const CLOUD = `M 25,82 C 5,82 3,64 6,50 C 6,30 22,17 42,20 C 44,7 58,-2 74,3 C 80,-4 96,-4 102,3 C 109,-4 128,-1 133,14 C 146,8 168,22 165,42 C 172,54 168,72 153,79 L 47,83 Z`;
+
+function ThoughtBubble({ text, idx }) {
+  const fid = `tbf${idx}`;
+  const kid = `tba${idx}`;
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 205 }}>
+      <svg viewBox="0 0 200 92" width="205" height="95" style={{ overflow: 'visible' }}>
+        <defs>
+          <filter id={fid} x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <style>{`
+            @keyframes ${kid} { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -620; } }
+          `}</style>
+        </defs>
+
+        {/* Cloud fill + base border */}
+        <path d={CLOUD} fill="rgba(6,6,6,0.97)" stroke="rgba(132,204,22,0.18)" strokeWidth="1.5" />
+
+        {/* Animated spark running around border */}
+        <path d={CLOUD} fill="none"
+          stroke={LIME} strokeWidth="2.5" strokeLinecap="round"
+          strokeDasharray="28 592"
+          filter={`url(#${fid})`}
+          style={{ animation: `${kid} 2.4s linear infinite` }}
+        />
+
+        {/* Text content */}
+        <foreignObject x="16" y="12" width="168" height="68">
+          <div xmlns="http://www.w3.org/1999/xhtml"
+            style={{ fontSize: '9px', color: 'rgba(200,200,200,0.92)', lineHeight: '1.6', textAlign: 'center', padding: '0 4px' }}>
+            {text}
+          </div>
+        </foreignObject>
+      </svg>
+
+      {/* Thought dots */}
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '4px', marginTop: '3px' }}>
+        <div style={{ width: 9, height: 9, borderRadius: '50%', background: 'rgba(6,6,6,0.97)', border: '1px solid rgba(132,204,22,0.28)' }} />
+        <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'rgba(6,6,6,0.97)', border: '1px solid rgba(132,204,22,0.20)', marginBottom: 2 }} />
+        <div style={{ width: 4, height: 4, borderRadius: '50%', background: 'rgba(6,6,6,0.97)', border: '1px solid rgba(132,204,22,0.14)', marginBottom: 5 }} />
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function PillarB() {
@@ -1321,38 +1374,8 @@ export default function PillarB() {
                 style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
               >
                 {/* ── Thought-bubble tooltip ── */}
-                <div className="
-                  absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none
-                  opacity-0 group-hover/stat:opacity-100
-                  scale-90 group-hover/stat:scale-100
-                  -translate-y-1 group-hover/stat:translate-y-0
-                  transition-all duration-200 origin-bottom
-                ">
-                  {/* Cloud body */}
-                  <div className="relative rounded-2xl px-3.5 py-2.5"
-                    style={{
-                      background: 'rgba(8,8,8,0.97)',
-                      border: `1px solid rgba(132,204,22,0.28)`,
-                      minWidth: '155px', maxWidth: '195px',
-                      boxShadow: '0 8px 28px rgba(0,0,0,0.75), 0 0 0 1px rgba(132,204,22,0.06)',
-                    }}>
-                    {/* Bumps across the top */}
-                    <div className="absolute -top-2.5 left-0 right-0 flex justify-around px-5 pointer-events-none">
-                      {[10, 14, 10, 14, 10].map((s, k) => (
-                        <div key={k} className="rounded-full"
-                          style={{ width: s, height: s, background: 'rgba(8,8,8,0.97)', border: '1px solid rgba(132,204,22,0.22)', marginTop: k % 2 === 0 ? 4 : 0 }} />
-                      ))}
-                    </div>
-                    <p className="text-[9px] leading-relaxed text-center" style={{ color: 'rgba(195,195,195,0.9)' }}>
-                      {s.tooltip}
-                    </p>
-                  </div>
-                  {/* Thought dots */}
-                  <div className="flex justify-center items-end gap-1 mt-1">
-                    <div className="w-2 h-2 rounded-full" style={{ background: 'rgba(8,8,8,0.97)', border: '1px solid rgba(132,204,22,0.25)' }} />
-                    <div className="w-1.5 h-1.5 rounded-full mb-0.5" style={{ background: 'rgba(8,8,8,0.97)', border: '1px solid rgba(132,204,22,0.18)' }} />
-                    <div className="w-1 h-1 rounded-full mb-1" style={{ background: 'rgba(8,8,8,0.97)', border: '1px solid rgba(132,204,22,0.12)' }} />
-                  </div>
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/stat:opacity-100 scale-90 group-hover/stat:scale-100 -translate-y-1 group-hover/stat:translate-y-0 transition-all duration-200 origin-bottom">
+                  <ThoughtBubble text={s.tooltip} idx={i} />
                 </div>
 
                 <div className="font-black text-xl leading-none mb-0.5" style={{ color: LIME }}>

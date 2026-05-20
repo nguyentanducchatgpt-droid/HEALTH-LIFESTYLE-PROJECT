@@ -1131,54 +1131,79 @@ function TrackingPanel() {
   );
 }
 
-// ─── Thought-bubble tooltip (SVG cloud + animated spark border) ──────────────
-
-const CLOUD = `M 25,82 C 5,82 3,64 6,50 C 6,30 22,17 42,20 C 44,7 58,-2 74,3 C 80,-4 96,-4 102,3 C 109,-4 128,-1 133,14 C 146,8 168,22 165,42 C 172,54 168,72 153,79 L 47,83 Z`;
+// ─── Thought-bubble tooltip (SVG cloud — bumps on all 4 sides) ───────────────
+//
+// ViewBox 0 0 240 162. Clockwise from bottom-left:
+//   bottom bumps (3) → right side bump → top bumps (4) → left side bump → close
+const CLOUD = `
+  M 32,132
+  C 26,144 44,158 62,150
+  C 72,158 90,158 104,150
+  C 118,158 136,158 150,150
+  C 162,156 178,144 186,130
+  C 198,126 218,112 216,90
+  C 218,72 206,54 192,50
+  C 186,34 170,20 152,26
+  C 144,10 128,2 110,10
+  C 100,2 86,2 76,10
+  C 64,4 48,10 40,24
+  C 24,28 8,44 10,64
+  C 4,78 4,96 16,110
+  C 20,122 28,130 32,132
+  Z
+`;
 
 function ThoughtBubble({ text, idx }) {
   const fid = `tbf${idx}`;
   const kid = `tba${idx}`;
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 205 }}>
-      <svg viewBox="0 0 200 92" width="205" height="95" style={{ overflow: 'visible' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 242 }}>
+      <svg viewBox="0 0 240 162" width="242" height="163" style={{ overflow: 'visible' }}>
         <defs>
           <filter id={fid} x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
           <style>{`
-            @keyframes ${kid} { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -620; } }
+            @keyframes ${kid} { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -820; } }
           `}</style>
         </defs>
 
-        {/* Cloud fill + base border */}
-        <path d={CLOUD} fill="rgba(6,6,6,0.97)" stroke="rgba(132,204,22,0.18)" strokeWidth="1.5" />
+        {/* Cloud fill + subtle base border */}
+        <path d={CLOUD} fill="rgba(5,5,5,0.97)" stroke="rgba(132,204,22,0.15)" strokeWidth="1.5" />
 
-        {/* Animated spark running around border */}
+        {/* Animated spark running around all 4 sides */}
         <path d={CLOUD} fill="none"
-          stroke={LIME} strokeWidth="2.5" strokeLinecap="round"
-          strokeDasharray="28 592"
+          stroke={LIME} strokeWidth="2.8" strokeLinecap="round"
+          strokeDasharray="30 790"
           filter={`url(#${fid})`}
-          style={{ animation: `${kid} 2.4s linear infinite` }}
+          style={{ animation: `${kid} 2.6s linear infinite` }}
         />
 
-        {/* Text content */}
-        <foreignObject x="16" y="12" width="168" height="68">
+        {/* Text — lime-tinted bright for visibility */}
+        <foreignObject x="30" y="26" width="180" height="108">
           <div xmlns="http://www.w3.org/1999/xhtml"
-            style={{ fontSize: '9px', color: 'rgba(200,200,200,0.92)', lineHeight: '1.6', textAlign: 'center', padding: '0 4px' }}>
+            style={{
+              fontSize: '9.5px',
+              color: '#c8f59a',
+              lineHeight: '1.65',
+              textAlign: 'center',
+              padding: '0 6px',
+              fontWeight: 500,
+            }}>
             {text}
           </div>
         </foreignObject>
       </svg>
 
-      {/* Thought dots */}
-      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '4px', marginTop: '3px' }}>
-        <div style={{ width: 9, height: 9, borderRadius: '50%', background: 'rgba(6,6,6,0.97)', border: '1px solid rgba(132,204,22,0.28)' }} />
-        <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'rgba(6,6,6,0.97)', border: '1px solid rgba(132,204,22,0.20)', marginBottom: 2 }} />
-        <div style={{ width: 4, height: 4, borderRadius: '50%', background: 'rgba(6,6,6,0.97)', border: '1px solid rgba(132,204,22,0.14)', marginBottom: 5 }} />
+      {/* Thought dots — descending from cloud bottom-center */}
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '5px', marginTop: '2px' }}>
+        <div style={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(5,5,5,0.97)', border: '1.5px solid rgba(132,204,22,0.35)' }} />
+        <div style={{ width: 7, height: 7, borderRadius: '50%', background: 'rgba(5,5,5,0.97)', border: '1px solid rgba(132,204,22,0.25)', marginBottom: 3 }} />
+        <div style={{ width: 4, height: 4, borderRadius: '50%', background: 'rgba(5,5,5,0.97)', border: '1px solid rgba(132,204,22,0.18)', marginBottom: 7 }} />
       </div>
     </div>
   );

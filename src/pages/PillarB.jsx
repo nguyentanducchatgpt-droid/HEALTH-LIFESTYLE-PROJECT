@@ -1133,6 +1133,134 @@ function TrackingPanel() {
 }
 
 
+// ─── MantraCard — 3D tilt + gleam sweep + mouse spotlight ────────────────────
+function MantraCard({ m, i }) {
+  const ref  = useRef(null);
+  const [hov, setHov]   = useState(false);
+  const [gleam, setGleam] = useState(0);
+
+  const onMove = useCallback((e) => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top)  / r.height;
+    el.style.setProperty('--mx', `${Math.round(x * 100)}%`);
+    el.style.setProperty('--my', `${Math.round(y * 100)}%`);
+    el.style.setProperty('--tx', `${(x - 0.5) * -10}deg`);
+    el.style.setProperty('--ty', `${(y - 0.5) *  8}deg`);
+  }, []);
+
+  const onEnter = useCallback(() => { setHov(true);  setGleam(g => g + 1); }, []);
+  const onLeave = useCallback(() => {
+    setHov(false);
+    const el = ref.current;
+    if (el) { el.style.setProperty('--tx', '0deg'); el.style.setProperty('--ty', '0deg'); }
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={onMove}
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      className="relative flex flex-col rounded-2xl border animate-fade-in-up overflow-hidden cursor-default"
+      style={{
+        animationDelay: `${i * 70}ms`,
+        animationFillMode: 'both',
+        borderColor: hov ? `${LIME}70` : 'rgba(255,255,255,0.08)',
+        background:  hov ? `${LIME}07` : 'rgba(255,255,255,0.03)',
+        transform: 'perspective(800px) rotateY(var(--tx,0deg)) rotateX(var(--ty,0deg))',
+        transition: 'transform 0.15s ease-out, border-color 0.3s, background 0.3s, box-shadow 0.3s',
+        boxShadow: hov
+          ? `0 20px 40px rgba(0,0,0,0.45), 0 0 0 1px ${LIME}28, inset 0 1px 0 rgba(255,255,255,0.07), 0 0 35px ${LIME}0d`
+          : '0 2px 8px rgba(0,0,0,0.2)',
+      }}
+    >
+      {/* Top accent bar */}
+      <div
+        className="h-[2px] shrink-0 transition-all duration-500 ease-out"
+        style={{ width: hov ? '100%' : '0%', background: `linear-gradient(90deg,${LIME}dd,${LIME}20)` }}
+      />
+
+      {/* Gleam sweep — re-fires every hover-enter */}
+      <div key={gleam} className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+        {hov && (
+          <div
+            className="absolute inset-y-0"
+            style={{
+              width: '55%', left: '-55%',
+              background: `linear-gradient(105deg,transparent 30%,rgba(255,255,255,0.055) 50%,${LIME}09 55%,transparent 70%)`,
+              animation: 'pbGleam 0.95s ease-out forwards',
+            }}
+          />
+        )}
+      </div>
+
+      {/* Mouse spotlight */}
+      <div
+        className="absolute inset-0 pointer-events-none rounded-2xl transition-opacity duration-300"
+        style={{
+          opacity: hov ? 1 : 0,
+          background: `radial-gradient(circle at var(--mx,50%) var(--my,50%),${LIME}10 0%,transparent 55%)`,
+        }}
+      />
+
+      <div className="p-5 flex flex-col flex-1 relative z-10">
+        <div className="flex items-center justify-between mb-3">
+          <span
+            className="text-[9px] font-black transition-colors duration-200"
+            style={{ color: hov ? `${LIME}88` : 'rgba(160,160,160,0.35)' }}
+          >{m.n}</span>
+          <span
+            className="text-xl w-9 h-9 flex items-center justify-center rounded-xl border transition-all duration-300"
+            style={{
+              borderColor: hov ? `${LIME}45` : 'rgba(255,255,255,0.1)',
+              background:   hov ? `${LIME}14` : 'rgba(255,255,255,0.04)',
+              transform:    hov ? 'scale(1.1)' : 'scale(1)',
+            }}
+          >{m.icon}</span>
+        </div>
+
+        <p
+          className="text-sm font-bold leading-snug mb-1 transition-colors duration-200"
+          style={{ color: hov ? '#bef264' : '#e2e8f0' }}
+        >{m.text}</p>
+
+        <p
+          className="text-[11px] leading-relaxed mb-3 transition-colors duration-200"
+          style={{ color: hov ? 'rgba(210,210,210,0.85)' : 'rgba(160,160,160,0.65)' }}
+        >{m.sub}</p>
+
+        <p
+          className="text-[11px] leading-relaxed flex-1 transition-colors duration-300"
+          style={{ color: hov ? 'rgba(200,200,200,0.88)' : 'rgba(150,150,150,0.5)' }}
+        >{m.desc}</p>
+
+        <div
+          className="overflow-hidden transition-all duration-400 ease-in-out"
+          style={{ maxHeight: hov ? '160px' : '0px' }}
+        >
+          <div className="border-t border-border/40 mt-3 pt-3 space-y-1.5">
+            {m.tips.map((tip, j) => (
+              <div key={j} className="flex items-start gap-1.5">
+                <span className="text-[10px] font-bold mt-0.5 shrink-0" style={{ color: LIME }}>✓</span>
+                <span className="text-[10px] leading-relaxed" style={{ color: 'rgba(185,185,185,0.82)' }}>{tip}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom ambient glow */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none transition-opacity duration-500"
+        style={{ opacity: hov ? 1 : 0, background: `linear-gradient(to top,${LIME}12,transparent)` }}
+      />
+    </div>
+  );
+}
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function PillarB() {
@@ -1159,6 +1287,12 @@ export default function PillarB() {
     const s = document.createElement('style');
     s.id = id;
     s.textContent = `
+      @keyframes pbGleam {
+        0%   { transform: translateX(-60%) skewX(-12deg); opacity: 0; }
+        18%  { opacity: 1; }
+        80%  { opacity: 0.7; }
+        100% { transform: translateX(320%) skewX(-12deg); opacity: 0; }
+      }
       @property --orbit-angle {
         syntax: '<angle>';
         initial-value: 0deg;
@@ -1346,52 +1480,7 @@ export default function PillarB() {
         {/* ── Mantra cards (3 col) ── */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {MANTRAS.map((m, i) => (
-            <div
-              key={m.n}
-              className="group relative flex flex-col rounded-2xl border border-border/40 bg-surface/15 hover:border-lime-500/30 transition-all duration-300 animate-fade-in-up overflow-hidden cursor-default"
-              style={{ animationDelay: `${i * 70}ms`, animationFillMode: 'both' }}
-            >
-              {/* Top accent bar slides in on hover */}
-              <div
-                className="h-[2px] w-0 group-hover:w-full transition-all duration-500 ease-out shrink-0"
-                style={{ background: `linear-gradient(90deg, ${LIME}dd, ${LIME}20)` }}
-              />
-
-              <div className="p-5 flex flex-col flex-1">
-                {/* Number + icon */}
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[9px] font-black text-muted/40 group-hover:text-lime-400/50 transition-colors duration-200">{m.n}</span>
-                  <span
-                    className="text-xl w-9 h-9 flex items-center justify-center rounded-xl border border-border/50 bg-surface/50 group-hover:border-lime-500/25 group-hover:bg-lime-500/8 transition-all duration-300"
-                  >{m.icon}</span>
-                </div>
-
-                {/* Title */}
-                <p className="text-sm font-bold text-text leading-snug mb-1 group-hover:text-lime-300 transition-colors duration-200">{m.text}</p>
-                {/* Sub */}
-                <p className="text-[11px] text-muted/70 leading-relaxed mb-3">{m.sub}</p>
-                {/* Description */}
-                <p className="text-[11px] text-muted/55 leading-relaxed flex-1 group-hover:text-muted/80 transition-colors duration-300">{m.desc}</p>
-
-                {/* Tips — slide down on hover */}
-                <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-400 ease-in-out">
-                  <div className="border-t border-border/40 mt-3 pt-3 space-y-1.5">
-                    {m.tips.map((tip, j) => (
-                      <div key={j} className="flex items-start gap-1.5">
-                        <span className="text-[10px] font-bold mt-0.5 shrink-0" style={{ color: LIME }}>✓</span>
-                        <span className="text-[10px] text-muted/70 leading-relaxed">{tip}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom ambient glow */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: `linear-gradient(to top, ${LIME}08, transparent)` }}
-              />
-            </div>
+            <MantraCard key={m.n} m={m} i={i} />
           ))}
 
           {/* Spirit card */}

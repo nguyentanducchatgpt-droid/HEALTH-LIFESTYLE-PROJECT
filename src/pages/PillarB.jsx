@@ -1131,75 +1131,112 @@ function TrackingPanel() {
   );
 }
 
-// ─── Thought-bubble tooltip (SVG cloud — bumps on all 4 sides) ───────────────
-//
-// ViewBox 0 0 240 162. Clockwise from bottom-left:
-//   bottom bumps (3) → right side bump → top bumps (4) → left side bump → close
-const CLOUD = `
-  M 32,132
-  C 26,144 44,158 62,150
-  C 72,158 90,158 104,150
-  C 118,158 136,158 150,150
-  C 162,156 178,144 186,130
-  C 198,126 218,112 216,90
-  C 218,72 206,54 192,50
-  C 186,34 170,20 152,26
-  C 144,10 128,2 110,10
-  C 100,2 86,2 76,10
-  C 64,4 48,10 40,24
-  C 24,28 8,44 10,64
-  C 4,78 4,96 16,110
-  C 20,122 28,130 32,132
-  Z
-`;
+// ─── Cloud path generator — bumps on top & bottom, scales to any W×H ────────
+function buildCloud(W, H) {
+  const r  = Math.min(14, W * 0.08, H * 0.16);
+  const bh = 10;
+  const bw = Math.max(14, W * 0.11);
 
+  const topBumps = [W * 0.22, W * 0.44, W * 0.66, W * 0.83];
+  const botBumps = [W * 0.28, W * 0.54, W * 0.76];
+
+  let d = `M ${r} 0 `;
+
+  let cur = r;
+  for (const cx of topBumps) {
+    const x0 = cx - bw / 2, x1 = cx + bw / 2;
+    if (x0 > cur + 0.5) d += `L ${x0} 0 `;
+    d += `C ${x0 + bw * 0.3} ${-bh} ${x1 - bw * 0.3} ${-bh} ${x1} 0 `;
+    cur = x1;
+  }
+  if (W - r > cur + 0.5) d += `L ${W - r} 0 `;
+  d += `Q ${W} 0 ${W} ${r} L ${W} ${H - r} Q ${W} ${H} ${W - r} ${H} `;
+
+  cur = W - r;
+  for (const cx of [...botBumps].reverse()) {
+    const x0 = cx - bw / 2, x1 = cx + bw / 2;
+    if (x1 < cur - 0.5) d += `L ${x1} ${H} `;
+    d += `C ${x1 - bw * 0.3} ${H + bh} ${x0 + bw * 0.3} ${H + bh} ${x0} ${H} `;
+    cur = x0;
+  }
+  if (r < cur - 0.5) d += `L ${r} ${H} `;
+  d += `Q 0 ${H} 0 ${H - r} L 0 ${r} Q 0 0 ${r} 0 Z`;
+
+  return d;
+}
+
+// ─── Thought-bubble tooltip — auto-scales to text content ────────────────────
 function ThoughtBubble({ text, idx }) {
+  const measureRef = useRef(null);
+  const [dims, setDims] = useState({ w: 162, h: 50 });
+
+  useEffect(() => {
+    if (!measureRef.current) return;
+    const r = measureRef.current.getBoundingClientRect();
+    if (r.width > 0) setDims({ w: Math.ceil(r.width), h: Math.ceil(r.height) });
+  }, [text]);
+
   const fid = `tbf${idx}`;
   const kid = `tba${idx}`;
+  const PX = 22, PY = 16, BH = 10;
+  const W  = dims.w + PX * 2;
+  const H  = dims.h + PY * 2;
+  const cloud = buildCloud(W, H);
+  const perim = (W + H) * 2 + 60;
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 242 }}>
-      <svg viewBox="0 0 240 162" width="242" height="163" style={{ overflow: 'visible' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      {/* Hidden text-measurement div */}
+      <div
+        ref={measureRef}
+        style={{
+          position: 'absolute', left: '-9999px', top: '-9999px',
+          fontSize: '9.5px', fontWeight: 500, lineHeight: '1.65',
+          maxWidth: '170px', padding: '0 6px', whiteSpace: 'normal',
+          pointerEvents: 'none', visibility: 'hidden',
+        }}
+      >
+        {text}
+      </div>
+
+      <svg
+        viewBox={`-5 ${-(BH + 5)} ${W + 10} ${H + BH * 2 + 10}`}
+        width={W + 10}
+        height={H + BH * 2 + 10}
+        style={{ overflow: 'visible', display: 'block' }}
+      >
         <defs>
-          <filter id={fid} x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
+          <filter id={fid} x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
           </filter>
-          <style>{`
-            @keyframes ${kid} { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -820; } }
-          `}</style>
+          <style>{`@keyframes ${kid}{from{stroke-dashoffset:0}to{stroke-dashoffset:-${perim + 30}}}`}</style>
         </defs>
 
-        {/* Cloud fill + subtle base border */}
-        <path d={CLOUD} fill="rgba(5,5,5,0.97)" stroke="rgba(132,204,22,0.15)" strokeWidth="1.5" />
-
-        {/* Animated spark running around all 4 sides */}
-        <path d={CLOUD} fill="none"
-          stroke={LIME} strokeWidth="2.8" strokeLinecap="round"
-          strokeDasharray="30 790"
+        <path d={cloud} fill="rgba(5,5,5,0.97)" stroke="rgba(132,204,22,0.18)" strokeWidth="1.5" />
+        <path d={cloud} fill="none" stroke={LIME} strokeWidth="2.5" strokeLinecap="round"
+          strokeDasharray={`28 ${perim - 8}`}
           filter={`url(#${fid})`}
-          style={{ animation: `${kid} 2.6s linear infinite` }}
+          style={{ animation: `${kid} 2.8s linear infinite` }}
         />
 
-        {/* Text — lime-tinted bright for visibility */}
-        <foreignObject x="30" y="26" width="180" height="108">
-          <div xmlns="http://www.w3.org/1999/xhtml"
+        {/* Text centered in cloud body */}
+        <foreignObject x={PX} y={PY} width={dims.w} height={dims.h + 10}>
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
             style={{
-              fontSize: '9.5px',
-              color: '#c8f59a',
-              lineHeight: '1.65',
-              textAlign: 'center',
-              padding: '0 6px',
-              fontWeight: 500,
-            }}>
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              height: '100%',
+              fontSize: '9.5px', color: '#c8f59a', lineHeight: '1.65',
+              textAlign: 'center', fontWeight: 500, padding: '0 4px',
+            }}
+          >
             {text}
           </div>
         </foreignObject>
       </svg>
 
-      {/* Thought dots — descending from cloud bottom-center */}
+      {/* Thought dots */}
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: '5px', marginTop: '2px' }}>
         <div style={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(5,5,5,0.97)', border: '1.5px solid rgba(132,204,22,0.35)' }} />
         <div style={{ width: 7, height: 7, borderRadius: '50%', background: 'rgba(5,5,5,0.97)', border: '1px solid rgba(132,204,22,0.25)', marginBottom: 3 }} />

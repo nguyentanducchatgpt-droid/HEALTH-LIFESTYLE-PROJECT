@@ -511,6 +511,57 @@ const TIERS = [
   },
 ];
 
+const TRACKING_SECTIONS = [
+  {
+    id: 'daily',
+    label: 'Checklist Hàng Ngày',
+    badge: '7 mục tiêu',
+    emoji: '✅',
+    color: '#84cc16',
+    orbitClass: 'bt-orbit-lime',
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=70',
+    desc: 'Theo dõi 7 thói quen dinh dưỡng mỗi ngày để xây nền tảng vững chắc',
+  },
+  {
+    id: 'weekly',
+    label: 'Theo Dõi Hàng Tuần',
+    badge: '6 chỉ số',
+    emoji: '📊',
+    color: '#06b6d4',
+    orbitClass: 'bt-orbit-cyan',
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=70',
+    desc: 'Đo lường 6 chỉ số quan trọng mỗi tuần để theo dõi tiến độ thực sự',
+  },
+  {
+    id: 'adjust',
+    label: 'Điều Chỉnh & Tối Ưu',
+    badge: 'Không tiến bộ?',
+    emoji: '⚡',
+    color: '#f97316',
+    orbitClass: 'bt-orbit-orange',
+    image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=600&q=70',
+    desc: 'Hướng dẫn điều chỉnh khi kết quả không như mong đợi sau 2–4 tuần',
+  },
+];
+
+const TRACKING_WEEKLY_RICH = [
+  { label: 'Cân nặng', sub: 'Buổi sáng, sau vệ sinh', icon: '⚖️', color: '#84cc16', tip: 'Biến động ±1kg/tuần là bình thường' },
+  { label: 'Vòng eo', sub: 'Đo lúc đói', icon: '📏', color: '#06b6d4', tip: 'Giảm 0.5–1cm/tuần là tiến độ tốt' },
+  { label: 'Mức năng lượng', sub: 'Thang điểm 1–10', icon: '⚡', color: '#f97316', tip: 'Dưới 5 liên tục → cần xem lại calo/ngủ' },
+  { label: 'Giấc ngủ', sub: 'Chất lượng & thời gian', icon: '💤', color: '#a855f7', tip: '7–9h mỗi đêm là mục tiêu tối ưu' },
+  { label: 'Hiệu suất tập', sub: 'So với tuần trước', icon: '🏋️', color: '#22c55e', tip: 'Tăng được 1 rep/set là tiến bộ rõ' },
+  { label: 'Tâm trạng & Tiêu hóa', sub: 'Tổng quan hàng tuần', icon: '😊', color: '#eab308', tip: 'Tiêu hóa kém → kiểm tra chất xơ & nước' },
+];
+
+const ADJUST_STEPS = [
+  { n: '01', color: '#f97316', text: 'Kiểm tra lại TDEE — cân nặng thay đổi thì nhu cầu calo cũng thay đổi theo' },
+  { n: '02', color: '#eab308', text: 'Protein đủ chưa? Thử tăng lên 2g/kg và duy trì nhất quán 2 tuần' },
+  { n: '03', color: '#a855f7', text: 'Ngủ đủ giấc chưa? 7–9h mỗi đêm — thiếu ngủ cản giảm mỡ và tăng cơ' },
+  { n: '04', color: '#22c55e', text: 'Tập luyện đang tăng tải dần chưa? Progressive overload là chìa khóa' },
+  { n: '05', color: '#06b6d4', text: 'Stress cao không? Cortisol cao kéo dài làm cơ thể giữ mỡ bụng cứng đầu' },
+  { n: '06', color: '#84cc16', text: 'Kiên nhẫn: thay đổi thấy rõ cần 4–8 tuần — đừng đánh giá quá sớm' },
+];
+
 // ─── Hooks ───────────────────────────────────────────────────────────────────
 
 function useScrollReveal(threshold = 0.1) {
@@ -1033,7 +1084,311 @@ function MealsPanel() {
   );
 }
 
+// ─── Tracking Tab Card — orbit ring + 3D tilt + gleam ────────────────────────
+function TrackingTabCard({ section, active, onClick }) {
+  const ref = useRef(null);
+  const [hov, setHov] = useState(false);
+  const [gleam, setGleam] = useState(0);
+
+  const onMove = useCallback((e) => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top)  / r.height;
+    el.style.setProperty('--mx', `${Math.round(x * 100)}%`);
+    el.style.setProperty('--my', `${Math.round(y * 100)}%`);
+    el.style.setProperty('--tx', `${(x - 0.5) * -9}deg`);
+    el.style.setProperty('--ty', `${(y - 0.5) *  7}deg`);
+  }, []);
+
+  const onEnter = useCallback(() => { setHov(true); setGleam(g => g + 1); }, []);
+  const onLeave = useCallback(() => {
+    setHov(false);
+    const el = ref.current;
+    if (el) { el.style.setProperty('--tx', '0deg'); el.style.setProperty('--ty', '0deg'); }
+  }, []);
+
+  const c = section.color;
+  const showOrbit = active || hov;
+
+  // Light title color per section when active
+  const titleColor = active
+    ? (c === '#84cc16' ? '#bef264' : c === '#06b6d4' ? '#67e8f9' : '#fed7aa')
+    : (hov ? '#f1f5f9' : '#94a3b8');
+
+  return (
+    <div
+      className={`rounded-2xl p-[1.5px] cursor-pointer transition-all duration-300 ${showOrbit ? section.orbitClass : ''}`}
+      style={!showOrbit ? { background: active ? `${c}30` : 'rgba(255,255,255,0.07)' } : undefined}
+      onClick={onClick}
+    >
+      <div
+        ref={ref}
+        onMouseMove={onMove}
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
+        className="rounded-2xl overflow-hidden relative"
+        style={{
+          background: active ? `color-mix(in srgb, ${c} 6%, #0a0a0a)` : '#0d0d0d',
+          transform: 'perspective(700px) rotateY(var(--tx,0deg)) rotateX(var(--ty,0deg))',
+          transition: 'transform 0.15s ease-out, background 0.3s, box-shadow 0.3s',
+          boxShadow: active
+            ? `0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px ${c}20, 0 0 32px ${c}18`
+            : hov
+              ? `0 8px 24px rgba(0,0,0,0.35), 0 0 18px ${c}12`
+              : 'none',
+        }}
+      >
+        {/* Gleam sweep */}
+        <div key={gleam} className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl z-10">
+          {hov && (
+            <div
+              className="absolute inset-y-0"
+              style={{
+                width: '55%', left: '-55%',
+                background: `linear-gradient(105deg,transparent 30%,rgba(255,255,255,0.05) 50%,${c}09 55%,transparent 70%)`,
+                animation: 'pbGleam 0.95s ease-out forwards',
+              }}
+            />
+          )}
+        </div>
+
+        {/* Mouse spotlight */}
+        <div
+          className="absolute inset-0 pointer-events-none rounded-2xl z-10 transition-opacity duration-300"
+          style={{
+            opacity: hov ? 1 : 0,
+            background: `radial-gradient(circle at var(--mx,50%) var(--my,50%),${c}1a 0%,transparent 58%)`,
+          }}
+        />
+
+        {/* Image header */}
+        <div className="relative h-28 overflow-hidden">
+          <img
+            src={section.image}
+            alt={section.label}
+            className="w-full h-full object-cover transition-all duration-500"
+            style={{
+              filter: `brightness(${active ? 0.7 : hov ? 0.55 : 0.38}) saturate(${active ? 1.1 : 0.8})`,
+              transform: hov ? 'scale(1.05)' : 'scale(1)',
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: `linear-gradient(to bottom, transparent 30%, ${active ? c + '22' : 'rgba(13,13,13,0.88)'} 100%)` }}
+          />
+
+          {/* Emoji badge */}
+          <div
+            className="absolute top-2.5 right-2.5 w-8 h-8 rounded-xl flex items-center justify-center text-base transition-all duration-300"
+            style={{
+              background: `${c}22`,
+              border: `1px solid ${c}45`,
+              backdropFilter: 'blur(6px)',
+              transform: active ? 'scale(1.1) rotate(-5deg)' : 'scale(1)',
+            }}
+          >
+            {section.emoji}
+          </div>
+
+          {/* Active live dot */}
+          {active && (
+            <div
+              className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2 py-0.5 rounded-full"
+              style={{ background: `${c}20`, border: `1px solid ${c}40`, backdropFilter: 'blur(4px)' }}
+            >
+              <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: c }} />
+              <span className="text-[9px] font-bold" style={{ color: c }}>ACTIVE</span>
+            </div>
+          )}
+
+          {/* Bottom color bleed */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-8 transition-opacity duration-300"
+            style={{ opacity: active ? 1 : 0, background: `linear-gradient(to top, ${c}14, transparent)` }}
+          />
+        </div>
+
+        {/* Card body */}
+        <div className="p-4 relative z-10">
+          <div className="flex items-start justify-between gap-2 mb-1.5">
+            <p className="text-xs font-bold leading-snug transition-colors duration-200" style={{ color: titleColor }}>
+              {section.label}
+            </p>
+            <span
+              className="text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0 transition-all duration-200"
+              style={{ color: c, background: `${c}18`, border: `1px solid ${c}35` }}
+            >
+              {section.badge}
+            </span>
+          </div>
+          <p className="text-[10px] text-muted leading-relaxed">{section.desc}</p>
+
+          {!active && (
+            <div className="mt-3 flex items-center gap-1" style={{ color: `${c}70` }}>
+              <span className="text-[10px] font-semibold">Xem chi tiết</span>
+              <span className="text-xs">→</span>
+            </div>
+          )}
+        </div>
+
+        {/* Bottom accent bar */}
+        <div
+          className="h-[2px] transition-all duration-500"
+          style={{ background: active ? `linear-gradient(90deg,${c}cc,${c}22)` : 'transparent' }}
+        />
+      </div>
+    </div>
+  );
+}
+
+// ─── Tracking Sub-Panels ──────────────────────────────────────────────────────
+function DailyChecklistContent({ checked, toggle, checkedCount }) {
+  const allDone = checkedCount === TRACKING_DAILY.length;
+  return (
+    <div className="rounded-2xl border border-lime-500/20 bg-lime-500/4 overflow-hidden">
+      <div className="h-[2px] bg-gradient-to-r from-lime-500/70 via-lime-500/20 to-transparent" />
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-xl bg-lime-500/12 border border-lime-500/30 flex items-center justify-center text-sm">✅</div>
+            <span className="text-sm font-bold text-text">Checklist Hàng Ngày</span>
+          </div>
+          <span className="text-xs font-black text-lime-400 bg-lime-500/10 border border-lime-500/25 px-2.5 py-0.5 rounded-full">
+            {checkedCount}/{TRACKING_DAILY.length}
+          </span>
+        </div>
+        <div className="h-1.5 bg-white/5 rounded-full overflow-hidden mb-5">
+          <div
+            className="h-full rounded-full transition-all duration-700"
+            style={{
+              width: `${(checkedCount / TRACKING_DAILY.length) * 100}%`,
+              background: 'linear-gradient(90deg, #84cc16, #22c55e)',
+              boxShadow: '0 0 8px rgba(132,204,22,0.4)',
+            }}
+          />
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-2">
+          {TRACKING_DAILY.map((item, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => toggle(i)}
+              className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-200 cursor-pointer group/ci ${
+                checked[i]
+                  ? 'border-lime-500/35 bg-lime-500/8'
+                  : 'border-border/35 bg-white/[0.02] hover:border-lime-500/20 hover:bg-lime-500/4'
+              }`}
+            >
+              <div
+                className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-200 ${
+                  checked[i] ? 'border-lime-400 bg-lime-500' : 'border-border/50'
+                }`}
+              >
+                {checked[i] && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                )}
+              </div>
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: item.color }} />
+                <span className={`text-[11px] transition-colors leading-snug ${checked[i] ? 'line-through text-muted/50' : 'text-muted'}`}>
+                  {item.label}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {allDone && (
+          <div className="mt-5 flex items-center gap-3 bg-lime-500/10 border border-lime-500/25 rounded-xl px-4 py-3">
+            <span className="text-xl">🎉</span>
+            <p className="text-sm font-bold text-lime-300">Hoàn thành! Thói quen nhỏ mỗi ngày tạo nên kết quả lớn.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function WeeklyMetricsContent() {
+  return (
+    <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/4 overflow-hidden">
+      <div className="h-[2px] bg-gradient-to-r from-cyan-500/70 via-cyan-500/20 to-transparent" />
+      <div className="p-6">
+        <div className="flex items-center gap-2 mb-5">
+          <div className="w-7 h-7 rounded-xl bg-cyan-500/12 border border-cyan-500/30 flex items-center justify-center text-sm">📊</div>
+          <span className="text-sm font-bold text-text">Theo Dõi Hàng Tuần</span>
+          <span className="ml-auto text-[10px] text-cyan-400/70 font-medium">Đo mỗi tuần 1 lần</span>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {TRACKING_WEEKLY_RICH.map((item, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-3 p-3.5 rounded-xl border transition-all duration-200 hover:scale-[1.02] cursor-default"
+              style={{
+                borderColor: `${item.color}30`,
+                background: `${item.color}07`,
+              }}
+            >
+              <span className="text-xl shrink-0 mt-0.5">{item.icon}</span>
+              <div className="min-w-0">
+                <p className="text-xs font-bold leading-snug" style={{ color: item.color }}>{item.label}</p>
+                <p className="text-[10px] text-muted mt-0.5 mb-2">{item.sub}</p>
+                <div
+                  className="text-[10px] leading-relaxed px-2 py-1.5 rounded-lg"
+                  style={{ background: `${item.color}10`, color: `${item.color}cc`, border: `1px solid ${item.color}20` }}
+                >
+                  💡 {item.tip}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AdjustmentContent() {
+  return (
+    <div className="rounded-2xl border border-orange-500/20 bg-orange-500/4 overflow-hidden">
+      <div className="h-[2px] bg-gradient-to-r from-orange-500/70 via-orange-500/20 to-transparent" />
+      <div className="p-6">
+        <div className="flex items-center gap-2 mb-5">
+          <div className="w-7 h-7 rounded-xl bg-orange-500/12 border border-orange-500/30 flex items-center justify-center text-sm">⚡</div>
+          <div>
+            <span className="text-sm font-bold text-text">Điều Chỉnh & Tối Ưu</span>
+            <p className="text-[10px] text-orange-400/70">Áp dụng khi sau 2–4 tuần không có tiến bộ</p>
+          </div>
+        </div>
+        <div className="space-y-3">
+          {ADJUST_STEPS.map((s, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-4 p-4 rounded-xl border transition-all duration-200 hover:scale-[1.01] hover:-translate-y-0.5 cursor-default"
+              style={{ borderColor: `${s.color}28`, background: `${s.color}06` }}
+            >
+              <div
+                className="w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black shrink-0"
+                style={{ color: s.color, background: `${s.color}18`, border: `1px solid ${s.color}35` }}
+              >
+                {s.n}
+              </div>
+              <p className="text-[11px] text-muted leading-relaxed pt-1.5">{s.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function TrackingPanel() {
+  const [activeSection, setActiveSection] = useState(0);
   const [checked, setChecked] = useState({});
 
   const toggle = useCallback((i) => {
@@ -1043,90 +1398,29 @@ function TrackingPanel() {
   const checkedCount = Object.values(checked).filter(Boolean).length;
 
   return (
-    <div className="grid md:grid-cols-2 gap-8">
-      {/* Daily checklist */}
-      <div>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Checklist Hàng Ngày</p>
+    <div className="space-y-5">
+      {/* Section heading */}
+      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">5 Chủ Đề Theo Dõi</p>
 
-        {/* Progress bar */}
-        <div className="mb-5">
-          <div className="flex justify-between text-[10px] mb-1.5">
-            <span className="text-muted">Hoàn thành hôm nay</span>
-            <span className="text-lime-400 font-bold">{checkedCount}/{TRACKING_DAILY.length}</span>
-          </div>
-          <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-lime-500 rounded-full transition-all duration-500"
-              style={{ width: `${(checkedCount / TRACKING_DAILY.length) * 100}%` }}
-            />
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          {TRACKING_DAILY.map((item, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => toggle(i)}
-              className={`w-full flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-200 cursor-pointer
-                ${checked[i]
-                  ? 'border-lime-500/30 bg-lime-500/8'
-                  : 'border-border/40 bg-surface/15 hover:border-border/70'
-                }`}
-            >
-              <div
-                className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-200 ${
-                  checked[i] ? 'border-lime-400 bg-lime-500' : 'border-border/60'
-                }`}
-              >
-                {checked[i] && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                )}
-              </div>
-              <span className={`text-[11px] transition-colors ${checked[i] ? 'text-lime-300 line-through opacity-70' : 'text-muted'}`}>
-                {item.label}
-              </span>
-            </button>
-          ))}
-        </div>
+      {/* 3 tab cards */}
+      <div className="grid grid-cols-3 gap-3">
+        {TRACKING_SECTIONS.map((s, i) => (
+          <TrackingTabCard
+            key={s.id}
+            section={s}
+            active={activeSection === i}
+            onClick={() => setActiveSection(i)}
+          />
+        ))}
       </div>
 
-      {/* Weekly & adjustments */}
-      <div className="space-y-5">
-        <div>
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Theo Dõi Hàng Tuần</p>
-          <div className="space-y-2.5">
-            {TRACKING_WEEKLY.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 p-3 rounded-xl border border-border/30 bg-surface/10"
-              >
-                <span className="text-base">{item.icon}</span>
-                <span className="text-[11px] text-muted">{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
-          <p className="text-xs font-bold text-orange-400 mb-3">Nếu sau 2–4 tuần không tiến bộ</p>
-          <ul className="space-y-2">
-            {[
-              'Kiểm tra lại TDEE — cân nặng thay đổi?',
-              'Protein đủ chưa? Tăng lên 2g/kg thử',
-              'Ngủ đủ giấc chưa? (7–9h mỗi đêm)',
-              'Tập luyện đang tăng tải dần chưa?',
-              'Stress cao không? Cortisol cản giảm mỡ',
-              'Kiên nhẫn: thay đổi thấy rõ cần 4–8 tuần',
-            ].map((t, i) => (
-              <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
-                <span className="text-orange-400 font-bold shrink-0 mt-0.5">{i + 1}.</span>{t}
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Content panel — animate on tab switch */}
+      <div key={activeSection} className="animate-fade-in-up">
+        {activeSection === 0 && (
+          <DailyChecklistContent checked={checked} toggle={toggle} checkedCount={checkedCount} />
+        )}
+        {activeSection === 1 && <WeeklyMetricsContent />}
+        {activeSection === 2 && <AdjustmentContent />}
       </div>
     </div>
   );
@@ -1304,17 +1598,42 @@ export default function PillarB() {
       .pb-orbit-ring {
         background: conic-gradient(
           from var(--orbit-angle),
-          transparent 0deg,
-          transparent 55deg,
-          rgba(132,204,22,0.0) 65deg,
-          rgba(132,204,22,0.7) 85deg,
-          rgba(255,255,255,0.95) 92deg,
-          rgba(132,204,22,0.7) 99deg,
-          rgba(34,197,94,0.0) 115deg,
-          transparent 125deg,
-          transparent 360deg
+          transparent 0deg, transparent 55deg,
+          rgba(132,204,22,0.0) 65deg, rgba(132,204,22,0.7) 85deg,
+          rgba(255,255,255,0.95) 92deg, rgba(132,204,22,0.7) 99deg,
+          rgba(34,197,94,0.0) 115deg, transparent 125deg, transparent 360deg
         );
         animation: orbitSpin 3.5s linear infinite;
+      }
+      @property --bt-lime-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --bt-cyan-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --bt-orange-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @keyframes btLimeSpin   { to { --bt-lime-angle:   360deg; } }
+      @keyframes btCyanSpin   { to { --bt-cyan-angle:   360deg; } }
+      @keyframes btOrangeSpin { to { --bt-orange-angle: 360deg; } }
+      .bt-orbit-lime {
+        background: conic-gradient(from var(--bt-lime-angle),
+          transparent 0deg, transparent 55deg,
+          rgba(132,204,22,0.0) 65deg, rgba(132,204,22,0.85) 85deg,
+          rgba(255,255,255,0.95) 92deg, rgba(132,204,22,0.85) 99deg,
+          rgba(132,204,22,0.0) 115deg, transparent 125deg, transparent 360deg);
+        animation: btLimeSpin 2.8s linear infinite;
+      }
+      .bt-orbit-cyan {
+        background: conic-gradient(from var(--bt-cyan-angle),
+          transparent 0deg, transparent 55deg,
+          rgba(6,182,212,0.0) 65deg, rgba(6,182,212,0.85) 85deg,
+          rgba(255,255,255,0.95) 92deg, rgba(6,182,212,0.85) 99deg,
+          rgba(6,182,212,0.0) 115deg, transparent 125deg, transparent 360deg);
+        animation: btCyanSpin 3.2s linear infinite;
+      }
+      .bt-orbit-orange {
+        background: conic-gradient(from var(--bt-orange-angle),
+          transparent 0deg, transparent 55deg,
+          rgba(249,115,22,0.0) 65deg, rgba(249,115,22,0.85) 85deg,
+          rgba(255,255,255,0.95) 92deg, rgba(249,115,22,0.85) 99deg,
+          rgba(249,115,22,0.0) 115deg, transparent 125deg, transparent 360deg);
+        animation: btOrangeSpin 3.6s linear infinite;
       }
     `;
     document.head.appendChild(s);

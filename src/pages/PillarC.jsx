@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -29,6 +30,28 @@ export default function PillarC() {
 
   const pillar = tPillars('pillarC', { returnObjects: true });
 
+  useEffect(() => {
+    const id = 'pc-orbit-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @property --pc-orbit-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @keyframes pcOrbitSpin { to { --pc-orbit-angle: 360deg; } }
+      .pc-orbit-ring {
+        background: conic-gradient(
+          from var(--pc-orbit-angle),
+          transparent 0deg, transparent 55deg,
+          rgba(20,184,166,0.0) 65deg, rgba(20,184,166,0.75) 85deg,
+          rgba(255,255,255,0.9) 92deg, rgba(20,184,166,0.75) 99deg,
+          rgba(20,184,166,0.0) 115deg, transparent 125deg, transparent 360deg
+        );
+        animation: pcOrbitSpin 3.5s linear infinite;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   if (!pillar || typeof pillar !== 'object') {
     return (
       <div className="flex items-center justify-center py-20">
@@ -50,11 +73,11 @@ export default function PillarC() {
       {/* Breadcrumb */}
       <div className="mb-10">
         <Link
-          to="/"
+          to="/pillars"
           className="inline-flex items-center gap-2 text-muted hover:text-teal-400 text-sm transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          {tCommon('back')}
+          6 Trụ Cột
         </Link>
       </div>
 
@@ -80,17 +103,19 @@ export default function PillarC() {
       </div>
 
       {/* Contextual image */}
-      <div className="relative rounded-3xl overflow-hidden mb-12 h-52 md:h-64">
-        <img
-          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=70"
-          alt="lifestyle"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-        <div className="absolute bottom-4 left-6">
-          <span className="text-teal-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-teal-500/20">
-            {tPillars('pillarC.image_caption')}
-          </span>
+      <div className="pc-orbit-ring rounded-3xl p-[1.5px] mb-12">
+        <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
+          <img
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=70"
+            alt="lifestyle"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
+          <div className="absolute bottom-4 left-6">
+            <span className="text-teal-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-teal-500/20">
+              {tPillars('pillarC.image_caption')}
+            </span>
+          </div>
         </div>
       </div>
 

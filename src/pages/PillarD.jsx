@@ -60,6 +60,28 @@ export default function PillarD() {
     return () => clearInterval(interval);
   }, [running]);
 
+  useEffect(() => {
+    const id = 'pd-orbit-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @property --pd-orbit-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @keyframes pdOrbitSpin { to { --pd-orbit-angle: 360deg; } }
+      .pd-orbit-ring {
+        background: conic-gradient(
+          from var(--pd-orbit-angle),
+          transparent 0deg, transparent 55deg,
+          rgba(168,85,247,0.0) 65deg, rgba(168,85,247,0.75) 85deg,
+          rgba(255,255,255,0.9) 92deg, rgba(168,85,247,0.75) 99deg,
+          rgba(168,85,247,0.0) 115deg, transparent 125deg, transparent 360deg
+        );
+        animation: pdOrbitSpin 3.5s linear infinite;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   const handleToggle = () => {
     if (running) {
       setRunning(false);
@@ -88,49 +110,51 @@ export default function PillarD() {
       {/* Breadcrumb */}
       <div className="mb-10">
         <Link
-          to="/"
+          to="/pillars"
           className="inline-flex items-center gap-2 text-muted hover:text-purple-400 text-sm transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          {t('back')}
+          6 Trụ Cột
         </Link>
       </div>
 
-      {/* Hero */}
-      <div className="mb-14 relative">
-        <div className="absolute -top-8 -left-8 w-56 h-56 bg-purple-500/8 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-4 right-0 w-40 h-40 bg-violet-500/6 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-5xl bg-surface border border-purple-500/30 mb-6 animate-fade-in">
+      {/* Icon + Title */}
+      <div className="mb-10 relative">
+        <div className="absolute -top-8 -left-8 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative flex items-start gap-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-5xl bg-surface border border-purple-500/20 shrink-0 animate-float">
             {pillar.icon}
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
-            {pillar.title}
-          </h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-purple-400 mt-3 mb-4 px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full">
-            {pillar.subtitle}
-          </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">{pillar.description}</p>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
+              {pillar.title}
+            </h1>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-purple-400 mt-3 mb-4 px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full">
+              {pillar.subtitle}
+            </span>
+            <p className="text-muted text-base leading-relaxed max-w-2xl">{pillar.description}</p>
+          </div>
         </div>
       </div>
 
-      {/* Contextual image */}
-      <div className="relative rounded-3xl overflow-hidden mb-14 border border-purple-500/20">
-        <img
-          src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=1200&q=70"
-          alt="Meditation and calm"
-          className="w-full h-64 md:h-80 object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <p className="text-purple-300 text-sm font-medium">
-            {tPillars('pillarD.image_caption')}
-          </p>
+      {/* Wide image with orbit glow border */}
+      <div className="pd-orbit-ring rounded-3xl p-[1.5px] mb-12">
+        <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
+          <img
+            src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=1200&q=70"
+            alt="Meditation and calm"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
+          <div className="absolute bottom-4 left-6">
+            <span className="text-purple-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-purple-500/20">
+              {tPillars('pillarD.image_caption')}
+            </span>
+          </div>
         </div>
       </div>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent mb-12" />
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       {/* Box Breathing Component */}
       <div className="bg-surface border border-border rounded-3xl p-8 text-center mb-10">

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LocalVideoCard from '../components/LocalVideoCard';
@@ -23,6 +23,28 @@ export default function PillarF() {
 
   const [checked, setChecked] = useState({});
 
+  useEffect(() => {
+    const id = 'pf-orbit-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @property --pf-orbit-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @keyframes pfOrbitSpin { to { --pf-orbit-angle: 360deg; } }
+      .pf-orbit-ring {
+        background: conic-gradient(
+          from var(--pf-orbit-angle),
+          transparent 0deg, transparent 55deg,
+          rgba(249,115,22,0.0) 65deg, rgba(249,115,22,0.75) 85deg,
+          rgba(255,255,255,0.9) 92deg, rgba(249,115,22,0.75) 99deg,
+          rgba(249,115,22,0.0) 115deg, transparent 125deg, transparent 360deg
+        );
+        animation: pfOrbitSpin 3.5s linear infinite;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   if (!pillar || typeof pillar !== 'object') {
     return (
       <div className="flex items-center justify-center py-20">
@@ -44,48 +66,51 @@ export default function PillarF() {
       {/* Breadcrumb */}
       <div className="mb-10">
         <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-muted hover:text-accent text-sm transition-colors duration-200 group"
+          to="/pillars"
+          className="inline-flex items-center gap-2 text-muted hover:text-orange-400 text-sm transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          {tCommon('back')}
+          6 Trụ Cột
         </Link>
       </div>
 
-      {/* ── Header ──────────────────────────────────── */}
-      <div className="mb-14 relative">
-        <div className="absolute -top-8 -left-8 w-48 h-48 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-5xl bg-surface border border-orange-500/20 mb-6 animate-fade-in">
+      {/* Icon + Title */}
+      <div className="mb-10 relative">
+        <div className="absolute -top-8 -left-8 w-64 h-64 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative flex items-start gap-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-5xl bg-surface border border-orange-500/20 shrink-0 animate-float">
             {pillar.icon}
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
-            {pillar.title}
-          </h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-orange-400 mt-3 mb-4 px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-full">
-            {pillar.subtitle}
-          </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">{pillar.description}</p>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
+              {pillar.title}
+            </h1>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-orange-400 mt-3 mb-4 px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-full">
+              {pillar.subtitle}
+            </span>
+            <p className="text-muted text-base leading-relaxed max-w-2xl">{pillar.description}</p>
+          </div>
         </div>
       </div>
 
-      {/* ── Hero image ───────────────────────────────── */}
-      <div className="relative rounded-3xl overflow-hidden mb-12 h-48 md:h-64">
-        <img
-          src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=70"
-          alt="tools and resources"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/30 to-transparent" />
-        <div className="absolute bottom-4 left-4 flex items-center gap-2">
-          <span className="text-xs font-bold text-white/80 bg-orange-500/40 backdrop-blur-sm px-3 py-1 rounded-full border border-orange-500/30">
-            {tPillars('pillarF.image_caption')}
-          </span>
+      {/* Wide image with orbit glow border */}
+      <div className="pf-orbit-ring rounded-3xl p-[1.5px] mb-12">
+        <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
+          <img
+            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=70"
+            alt="tools and resources"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
+          <div className="absolute bottom-4 left-6">
+            <span className="text-orange-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-orange-500/20">
+              {tPillars('pillarF.image_caption')}
+            </span>
+          </div>
         </div>
       </div>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent mb-12" />
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       {/* ── Interactive Daily Checklist ──────────────── */}
       <div className="bg-surface border border-orange-500/20 rounded-2xl p-6 mb-8">

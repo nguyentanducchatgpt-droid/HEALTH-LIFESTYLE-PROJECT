@@ -397,6 +397,40 @@ export default function PillarA() {
     document.head.appendChild(s);
   }, []);
 
+  // Inject orbit-border keyframe once
+  useEffect(() => {
+    const id = 'pa-orbit-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @property --pa-orbit-angle {
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+      }
+      @keyframes paOrbitSpin {
+        to { --pa-orbit-angle: 360deg; }
+      }
+      .pa-orbit-ring {
+        background: conic-gradient(
+          from var(--pa-orbit-angle),
+          transparent 0deg,
+          transparent 55deg,
+          rgba(34,197,94,0.0) 65deg,
+          rgba(34,197,94,0.75) 85deg,
+          rgba(255,255,255,0.9) 92deg,
+          rgba(34,197,94,0.75) 99deg,
+          rgba(34,197,94,0.0) 115deg,
+          transparent 125deg,
+          transparent 360deg
+        );
+        animation: paOrbitSpin 3.5s linear infinite;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   const fireJet = useCallback((fromIdx, toIdx) => {
     const fromEl = stepRefs.current[fromIdx];
     const toEl   = stepRefs.current[toIdx];
@@ -476,49 +510,58 @@ export default function PillarA() {
     <div className="max-w-5xl mx-auto -mt-4">
 
       {/* ── HERO ────────────────────────────────────────────────────────────────── */}
-      <div className="relative -mx-4 md:-mx-8 overflow-hidden mb-16" style={{ minHeight: 460 }}>
-        <div className="absolute inset-0 grid grid-cols-3">
-          {[
-            'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=45',
-            'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=45',
-            'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=45',
-          ].map((src, i) => (
-            <img key={i} src={src} alt="" className="w-full h-full object-cover" style={{ opacity: 0.15 }} />
-          ))}
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/55 to-bg pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-transparent to-bg/80 pointer-events-none" />
-        <div className="absolute inset-0 grid-dots opacity-20 pointer-events-none" />
-        <div className="absolute top-[30%] left-[20%] w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" style={{ animation: 'pulse 6s ease-in-out infinite' }} />
-        <div className="absolute top-[50%] right-[15%] w-64 h-64 bg-purple-500/4 rounded-full blur-[90px] pointer-events-none" style={{ animation: 'pulse 8s ease-in-out 2s infinite' }} />
 
-        <div className="relative z-10 px-4 md:px-8 pt-14 pb-16 animate-fade-in-up">
-          <Link to="/pillars" className="inline-flex items-center gap-1.5 text-muted hover:text-accent text-xs transition-colors mb-8 group">
-            <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-            6 Trụ Cột
-          </Link>
-          <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-bold px-4 py-1.5 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />
-            🏃 Trụ Cột A — Vận Động &amp; Tập Luyện
-          </div>
-          <h1 className="text-5xl md:text-[62px] font-black text-text leading-[1.02] mb-5 tracking-tight">
-            Xây nền thể lực<br />
-            <span className="text-gradient">từng ngày, từng bước</span>
-          </h1>
-          <p className="text-muted text-base leading-relaxed max-w-xl mb-6">{pillar.description}</p>
-        </div>
-
-        {/* Scroll indicator */}
-        <div
-          className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 pointer-events-none transition-opacity duration-500"
-          style={{ opacity: scrolled ? 0 : 0.45 }}
+      {/* Breadcrumb */}
+      <div className="mb-10">
+        <Link
+          to="/pillars"
+          className="inline-flex items-center gap-2 text-muted hover:text-accent text-sm transition-colors duration-200 group"
         >
-          <span className="text-[9px] text-muted font-medium tracking-widest uppercase">Cuộn xuống</span>
-          <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1.5">
-            <div className="w-1 h-1.5 bg-white/40 rounded-full animate-bounce" />
+          <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
+          6 Trụ Cột
+        </Link>
+      </div>
+
+      {/* Icon + Title */}
+      <div className="mb-10 relative">
+        <div className="absolute -top-8 -left-8 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative flex items-start gap-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-5xl bg-surface border border-accent/20 shrink-0 animate-float">
+            🏃
+          </div>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
+              {pillar.title}
+            </h1>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent mt-3 mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
+              {pillar.subtitle}
+            </span>
+            <p className="text-muted text-base leading-relaxed max-w-2xl">
+              {pillar.description}
+            </p>
           </div>
         </div>
       </div>
+
+      {/* Wide image with orbit glow border */}
+      <div className="pa-orbit-ring rounded-3xl p-[1.5px] mb-12">
+        <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
+          <img
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1400&q=70"
+            alt="exercise training"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
+          <div className="absolute bottom-4 left-6">
+            <span className="text-accent text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-accent/20">
+              Luyện Tập Hằng Ngày
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       {/* ── NARRATIVE INTRO ────────────────────────────────────────────────────── */}
       <RevealBlock className="mb-14">

@@ -1297,20 +1297,38 @@ export default function PillarB() {
           {/* Key stats row */}
           <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { n: '3',    unit: 'bữa/ngày', label: 'Nhịp ăn tối ưu' },
-              { n: '80/20', unit: '',         label: 'Quy tắc bền vững' },
-              { n: '21+',  unit: 'ngày',      label: 'Hình thành thói quen' },
-              { n: '1.6g', unit: '/kg',        label: 'Protein tối thiểu' },
+              {
+                n: '3', unit: 'bữa/ngày', label: 'Nhịp ăn tối ưu',
+                tooltip: '3 bữa chính/ngày giúp ổn định đường huyết và giảm thèm ăn vặt hiệu quả hơn so với nhịn hoặc ăn nhiều bữa không kiểm soát.',
+              },
+              {
+                n: '80/20', unit: '', label: 'Quy tắc bền vững',
+                tooltip: '80% thời gian ăn uống lành mạnh + 20% linh hoạt — tỷ lệ thực tế nhất để duy trì lâu dài mà không cảm thấy bị tước đoạt.',
+              },
+              {
+                n: '21+', unit: 'ngày', label: 'Hình thành thói quen',
+                tooltip: 'Não bộ cần 21–66 ngày lặp lại để hình thành thói quen tự động. Kiên trì qua tuần 2–3 là giai đoạn khó nhất và quyết định nhất.',
+              },
+              {
+                n: '1.6g', unit: '/kg', label: 'Protein tối thiểu',
+                tooltip: '1.6g protein/kg thể trọng là ngưỡng tối thiểu để bảo vệ cơ bắp khi giảm mỡ. Tăng lên 2.2g/kg nếu tập luyện cường độ cao.',
+              },
             ].map((s, i) => (
               <div
                 key={i}
-                className="bg-bg/50 backdrop-blur-sm rounded-xl p-3.5 border border-lime-500/10 group-hover:border-lime-500/25 transition-all duration-400 animate-fade-in-up"
+                className="group/stat bg-bg/50 backdrop-blur-sm rounded-xl p-3.5 border border-lime-500/10 hover:border-lime-500/35 transition-all duration-300 animate-fade-in-up cursor-default"
                 style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
               >
                 <div className="font-black text-xl leading-none mb-0.5" style={{ color: LIME }}>
                   {s.n}<span className="text-xs font-bold opacity-60 ml-0.5">{s.unit}</span>
                 </div>
-                <div className="text-[10px] text-muted">{s.label}</div>
+                <div className="text-[10px] text-muted group-hover/stat:text-muted/80 transition-colors duration-200 mb-0">{s.label}</div>
+                {/* Tooltip slides in below label */}
+                <div className="max-h-0 group-hover/stat:max-h-20 overflow-hidden transition-all duration-350 ease-in-out">
+                  <p className="text-[9px] leading-relaxed pt-2 mt-1.5 border-t" style={{ color: `${LIME}70`, borderColor: `${LIME}20` }}>
+                    {s.tooltip}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

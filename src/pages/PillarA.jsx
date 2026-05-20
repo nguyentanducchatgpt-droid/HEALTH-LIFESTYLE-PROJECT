@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import ThoughtBubble from '../components/ThoughtBubble';
 
 // ─── Tab data ───────────────────────────────────────────────────────────────────
 
@@ -25,7 +26,11 @@ const TABS = [
       { icon: '🔄', title: 'Biến thể không giới hạn', body: 'Mỗi mẫu có 5–10+ biến thể từ siêu dễ đến nâng cao. Squat vào ghế → Pistol squat. Không cần thiết bị — tư thế đúng là tất cả.' },
       { icon: '⚖️', title: 'Cân bằng cơ thể toàn diện', body: 'Push + Pull cân bằng cơ trước/sau. Squat + Hinge phát triển toàn hạ bộ. Core ổn định cột sống. Breath kiểm soát toàn bộ hệ thống — đây là vòng lặp hoàn hảo.' },
     ],
-    tabStats: [{ n: '6', label: 'Bài tập' }, { n: '3×', label: 'Cấp độ/bài' }, { n: '15\'', label: 'Khởi + Giãn' }],
+    tabStats: [
+      { n: '6', label: 'Bài tập', tooltip: '6 mẫu vận động cơ bản: Squat, Hinge, Push, Pull, Core, Thở — bao phủ 95% mọi bài tập bạn cần trong cuộc đời.' },
+      { n: '3×', label: 'Cấp độ/bài', tooltip: 'Mỗi bài có 3 cấp: cơ bản, trung cấp, nâng cao. Bắt đầu dễ, tiến dần — không cần thiết bị phức tạp.' },
+      { n: "15'", label: 'Khởi + Giãn', tooltip: 'Khởi động 5–8 phút trước tập giảm nguy cơ chấn thương, giãn cơ 5–10 phút sau tập tăng tốc phục hồi 20–30%.' },
+    ],
     previewItems: ['Squat', 'Hinge', 'Push-up', 'Pull/Row', 'Core', 'Thở & Tim mạch', 'Khởi động 5–8\'', 'Giãn cơ 5–10\''],
     cta: 'Học động tác',
     color: '#22c55e',
@@ -59,7 +64,11 @@ const TABS = [
       { icon: '⚡', title: '4 khối — một cấu trúc vạn năng', body: 'Khởi động → Vận động chính → Giãn cơ → Tĩnh tâm. Buổi 20 phút hay 180 phút đều dùng cùng cấu trúc này, chỉ thay đổi tỉ lệ thời gian giữa các khối.' },
       { icon: '🌙', title: 'Tĩnh tâm 5 phút — không phải xa xỉ', body: '5 phút thở có kiểm soát sau tập giảm cortisol 15% và cải thiện giấc ngủ đêm. Đây là đầu tư nhỏ nhất với lợi ích phục hồi lớn nhất trong ngày.' },
     ],
-    tabStats: [{ n: '4', label: 'Khối/ngày' }, { n: '8', label: 'Mức thời gian' }, { n: '20\'', label: 'Tối thiểu' }],
+    tabStats: [
+      { n: '4', label: 'Khối/ngày', tooltip: '4 khối chuẩn: Khởi động → Vận động chính → Giãn cơ → Tĩnh tâm. Cấu trúc này áp dụng cho buổi 20 phút hay 3 giờ đều phù hợp.' },
+      { n: '8', label: 'Mức thời gian', tooltip: '8 mức lịch từ 20 phút (siêu bận) đến 3 giờ (chuyên sâu) — mỗi phút đều có kế hoạch rõ ràng, không lãng phí.' },
+      { n: "20'", label: 'Tối thiểu', tooltip: '20 phút đủ để hoàn thành một buổi tập có ý nghĩa. Não cần cấu trúc, không cần thời gian dài.' },
+    ],
     previewItems: ['Khởi động 5\'', 'Sức mạnh 10–20\'', 'Tim mạch 15–35\'', 'Giãn cơ 5–10\'', 'Tĩnh tâm 5\'', '7 kcal/phút max'],
     cta: 'Xây khung ngày',
     color: '#f97316',
@@ -93,7 +102,11 @@ const TABS = [
       { icon: '📈', title: '3 giai đoạn thích nghi dần', body: 'Giai đoạn 1 (tuần 1–2): 3 buổi/tuần — cơ thể học nhận diện tải. Giai đoạn 2 (tuần 3–6): 4 buổi — xây nền sức mạnh. Giai đoạn 3 (tuần 7+): 5–6 buổi — cá nhân hóa theo mục tiêu.' },
       { icon: '🎯', title: 'Chọn nhịp bền vững, không phải lý tưởng', body: '6 lộ trình từ 2 buổi/tuần (siêu bận) đến 6 buổi/tuần (vận động viên). Nhịp tốt nhất không phải nhịp cao nhất — là nhịp bạn duy trì được 12 tuần liên tục.' },
     ],
-    tabStats: [{ n: '3', label: 'Giai đoạn' }, { n: '6', label: 'Lộ trình' }, { n: '7', label: 'Ngày/tuần' }],
+    tabStats: [
+      { n: '3', label: 'Giai đoạn', tooltip: 'G1 (tuần 1–2): 3 buổi/tuần cơ bản. G2 (tuần 3–6): 4 buổi xây nền. G3 (tuần 7+): 5–6 buổi nâng cao cá nhân hóa.' },
+      { n: '6', label: 'Lộ trình', tooltip: '6 lộ trình theo mục tiêu: người mới · giảm mỡ · tăng cơ · sức bền · vận động viên · siêu bận. Chọn 1 phù hợp hoàn cảnh.' },
+      { n: '7', label: 'Ngày/tuần', tooltip: '7 ngày = 3 buổi sức mạnh + 2 buổi cardio + 2 ngày nghỉ/phục hồi. Nghỉ đúng là phần thiết yếu, không phải lười biếng.' },
+    ],
     previewItems: ['Sức mạnh T2/T4/T6', 'Cardio T3/T5', 'Phục hồi T7', 'Người mới', 'Giảm mỡ', 'Tăng cơ', 'Sức bền', 'Nâng cao'],
     cta: 'Lên lịch tuần',
     color: '#14b8a6',
@@ -127,7 +140,11 @@ const TABS = [
       { icon: '🕸️', title: 'Radar chart 4 chiều — thấy điểm yếu ẩn', body: 'Sức mạnh · Sức bền · Linh hoạt · Phục hồi. Nhiều người mạnh về sức mạnh nhưng kém linh hoạt — đây là nguy cơ chấn thương ẩn mà chỉ nhìn một chỉ số không thấy được.' },
       { icon: '🪜', title: '5 bậc — biết rõ vị trí và đích đến', body: 'Bậc 1 (Hoạt động cơ bản) đến Bậc 5 (Vận động viên). Mỗi bậc có tiêu chí rõ ràng: bài tập nào, reps/sets bao nhiêu, thời gian phục hồi. Không còn cảm giác "không biết tập đến đâu rồi".' },
     ],
-    tabStats: [{ n: '6', label: 'Lộ trình' }, { n: '5', label: 'Bậc/lộ trình' }, { n: '4', label: 'Chiều đánh giá' }],
+    tabStats: [
+      { n: '6', label: 'Lộ trình', tooltip: '6 lộ trình từ 2 buổi/tuần (siêu bận) đến 6 buổi/tuần (vận động viên). Nhịp tốt nhất là nhịp duy trì được 12 tuần.' },
+      { n: '5', label: 'Bậc/lộ trình', tooltip: '5 bậc từ Hoạt động cơ bản đến Vận động viên. Mỗi bậc có tiêu chí rõ ràng — bài tập, reps, thời gian phục hồi.' },
+      { n: '4', label: 'Chiều đánh giá', tooltip: 'Radar chart 4 chiều: Sức mạnh · Sức bền · Linh hoạt · Phục hồi. Thấy được điểm yếu ẩn mà chỉ một chỉ số không thể hiện.' },
+    ],
     previewItems: ['Tuần 4 test', 'Tuần 8 test', 'Tuần 12 test', 'Radar chart', '6 mục tiêu cá nhân', 'Điểm A/B/C/D', 'Coach notes'],
     cta: 'Theo dõi tiến bộ',
     color: '#a855f7',
@@ -198,7 +215,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
-function AnimatedStat({ n, label, color }) {
+function AnimatedStat({ n, label, color, tooltip }) {
   const numericPart = parseFloat(n.replace(/[^0-9.]/g, ''));
   const suffix = n.replace(/[0-9.]/g, '');
   const [val, setVal] = useState(0);
@@ -217,11 +234,16 @@ function AnimatedStat({ n, label, color }) {
       raf = requestAnimationFrame(tick);
     }, 350);
     return () => { clearTimeout(delay); cancelAnimationFrame(raf); };
-  }, []); // runs on mount — TabPanel remounts on every tab switch
+  }, []);
 
   const display = numericPart > 0 ? `${val}${suffix}` : n;
   return (
-    <div className="bg-bg/85 backdrop-blur-md border border-white/10 rounded-xl p-2.5 text-center">
+    <div className="group/astat relative bg-bg/85 backdrop-blur-md border border-white/10 rounded-xl p-2.5 text-center">
+      {tooltip && (
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/astat:opacity-100 scale-90 group-hover/astat:scale-100 -translate-y-1 group-hover/astat:translate-y-0 transition-all duration-200 origin-bottom">
+          <ThoughtBubble text={tooltip} idx={`a-${n}-${label}`} color={color} />
+        </div>
+      )}
       <div className="text-lg font-black leading-none mb-0.5" style={{ color }}>{display}</div>
       <div className="text-[9px] text-muted leading-snug">{label}</div>
     </div>
@@ -347,7 +369,7 @@ function TabPanel({ tab }) {
             {/* Animated stats overlay */}
             <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-2">
               {tab.tabStats.map((s, i) => (
-                <AnimatedStat key={i} n={s.n} label={s.label} color={tab.color} />
+                <AnimatedStat key={i} n={s.n} label={s.label} color={tab.color} tooltip={s.tooltip} />
               ))}
             </div>
           </div>

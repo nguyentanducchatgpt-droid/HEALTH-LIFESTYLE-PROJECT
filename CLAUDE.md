@@ -50,6 +50,52 @@ Each pillar injects its own `<style>` tag via `useEffect` (id: `p{a-f}-orbit-kf`
 | E | Knowledge | blue | `59,130,246` |
 | F | Tools | orange | `249,115,22` |
 
+## ThoughtBubble Tooltip Pattern
+
+Reusable animated cloud tooltip for hover-state stat/metric explanations.
+
+### Component
+
+`src/components/ThoughtBubble.jsx` — accepts `text`, `idx` (unique string/number), `color` (hex, default `#84cc16`).
+
+- Cloud shape auto-scales to text via hidden measurement div (`position: fixed; left: -9999px`)
+- SVG parametric bezier cloud: 4 bumps on top, 3 on bottom, adapts to any W×H
+- Animated spark: `stroke-dasharray` + `stroke-dashoffset` keyframe on the cloud path
+- Text color: per-pillar light tint (`LIGHT_TEXT` map in component)
+
+### Usage pattern
+
+```jsx
+import ThoughtBubble from '../components/ThoughtBubble';
+
+// Wrap the stat element in a named group:
+<div className="group/stat relative">
+  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none
+    opacity-0 group-hover/stat:opacity-100
+    scale-90 group-hover/stat:scale-100
+    -translate-y-1 group-hover/stat:translate-y-0
+    transition-all duration-200 origin-bottom">
+    <ThoughtBubble text="Tooltip text here" idx="unique-id" color="#22c55e" />
+  </div>
+  {/* stat content */}
+</div>
+```
+
+### Pages using it
+
+| Page | Elements | Color |
+|------|----------|-------|
+| Home.jsx | Hero stats row (3 items) | `#22c55e` green |
+| PillarA.jsx | Tab stats overlay (4 tabs × 3 stats) | per-tab color |
+| PillarB.jsx | Stats row (4 items) | `#84cc16` lime |
+| PillarE.jsx | Health metrics cards (5 items) | `#3b82f6` blue |
+| Program.jsx | Hero badge stats (4 items) | `#a855f7` purple |
+
+### Rules
+- `idx` must be unique per page to avoid SVG filter ID collisions
+- Tooltip text is hardcoded in each page as a constant (not i18n) — keep in Vietnamese
+- Do NOT add `overflow-hidden` to any ancestor of a tooltip container
+
 ## Tech Stack
 
 - Vite 5 + React 18 + Tailwind CSS v3 (dark theme `#0a0a0a`)

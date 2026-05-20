@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import ThoughtBubble from '../components/ThoughtBubble';
 
 const SECTION_ACCENT = [
   'text-blue-400 bg-blue-500/10 border-blue-500/30',
@@ -9,6 +10,14 @@ const SECTION_ACCENT = [
   'text-teal-400 bg-teal-500/10 border-teal-500/30',
   'text-blue-400 bg-blue-500/10 border-blue-500/30',
   'text-cyan-400 bg-cyan-500/10 border-cyan-500/30',
+];
+
+const METRIC_TOOLTIPS = [
+  'BMI 18.5–24.9 là khoảng lý tưởng cho đa số người trưởng thành. Dưới 18.5 = thiếu cân, trên 25 = thừa cân. BMI không phân biệt cơ và mỡ — đo thêm vòng eo để đánh giá chính xác hơn.',
+  'Vòng eo là chỉ số dự báo nguy cơ tim mạch tốt hơn BMI. Mỡ bụng nội tạng (>90cm nam, >80cm nữ) làm tăng nguy cơ đái tháo đường và bệnh tim mạch đáng kể.',
+  'Huyết áp lý tưởng: 90–120 mmHg (tâm thu) / 60–80 mmHg (tâm trương). Trên 130/80 = tăng huyết áp giai đoạn 1 — cần theo dõi và điều chỉnh lối sống.',
+  'Đường huyết lúc đói 3.9–5.6 mmol/L là bình thường. 5.6–6.9 = tiền đái tháo đường. Tập luyện đều đặn và giảm tinh bột tinh chế có thể cải thiện đáng kể chỉ số này.',
+  'Nhịp tim nghỉ ngơi 60–100 bpm là bình thường. Vận động viên thường 40–60 bpm do tim khỏe hơn. Nhịp tim nghỉ thấp = tim bơm hiệu quả hơn, giảm stress tim.',
 ];
 
 export default function PillarE() {
@@ -110,20 +119,22 @@ export default function PillarE() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {healthMetrics.map((metric, i) => (
-            <div
-              key={i}
-              className="bg-surface border border-border rounded-2xl p-5 hover:border-blue-500/30 transition-all duration-300 group"
-            >
-              <p className="text-xs font-bold text-muted uppercase tracking-wider mb-2">
-                {metric.unit}
-              </p>
-              <p className="text-blue-400 font-bold text-lg leading-tight mb-1">
-                {metric.value}
-              </p>
-              <p className="text-muted text-xs mb-3">{metric.label}</p>
-              <div className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
-                <span className="text-green-400 text-xs font-semibold">{metric.status}</span>
+            <div key={i} className="group/metric relative">
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/metric:opacity-100 scale-90 group-hover/metric:scale-100 -translate-y-1 group-hover/metric:translate-y-0 transition-all duration-200 origin-bottom">
+                <ThoughtBubble text={METRIC_TOOLTIPS[i] || ''} idx={`e${i}`} color="#3b82f6" />
+              </div>
+              <div className="bg-surface border border-border rounded-2xl p-5 hover:border-blue-500/30 transition-all duration-300">
+                <p className="text-xs font-bold text-muted uppercase tracking-wider mb-2">
+                  {metric.unit}
+                </p>
+                <p className="text-blue-400 font-bold text-lg leading-tight mb-1">
+                  {metric.value}
+                </p>
+                <p className="text-muted text-xs mb-3">{metric.label}</p>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
+                  <span className="text-green-400 text-xs font-semibold">{metric.status}</span>
+                </div>
               </div>
             </div>
           ))}

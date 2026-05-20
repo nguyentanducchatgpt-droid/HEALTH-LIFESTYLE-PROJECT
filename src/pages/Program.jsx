@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import ThoughtBubble from '../components/ThoughtBubble';
 
 /* ─── Phase image/color config ────────────────────────── */
 const PHASE_CFG = [
@@ -102,10 +103,20 @@ export default function Program() {
           <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight mb-3">{t('program.title')}</h1>
           <p className="text-muted text-base leading-relaxed max-w-xl">{t('program.subtitle')}</p>
           <div className="flex flex-wrap gap-3 mt-7">
-            {[{l:'12',s:'tuần'},{l:'3',s:'giai đoạn'},{l:'6',s:'trụ cột'},{l:'20+',s:'phút/ngày'}].map(s=>(
-              <div key={s.l} className="flex items-baseline gap-1.5 bg-surface/80 border border-border backdrop-blur-sm px-4 py-2 rounded-full">
-                <span className="text-gradient font-extrabold text-lg">{s.l}</span>
-                <span className="text-muted text-xs">{s.s}</span>
+            {[
+              { l:'12', s:'tuần',       t:'Chương trình 12 tuần chia 3 giai đoạn: Khởi Động (1–2) → Tăng Nền (3–6) → Cá Nhân Hóa (7–12). Đủ thời gian để thay đổi thói quen não bộ.' },
+              { l:'3',  s:'giai đoạn',  t:'3 giai đoạn thích nghi dần: G1 học kỹ thuật + xây thói quen, G2 tăng khối lượng tập + sức bền, G3 cá nhân hóa theo mục tiêu riêng.' },
+              { l:'6',  s:'trụ cột',    t:'6 trụ cột sức khỏe: Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — phối hợp đồng thời cho kết quả bền vững.' },
+              { l:'20+',s:'phút/ngày',  t:'20 phút mỗi ngày là ngưỡng tối thiểu để tạo sự thay đổi. Cấu trúc 4 khối (Khởi động → Chính → Giãn → Tĩnh tâm) tối ưu mọi thời lượng.' },
+            ].map((s, i) => (
+              <div key={s.l} className="group/prog relative">
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/prog:opacity-100 scale-90 group-hover/prog:scale-100 -translate-y-1 group-hover/prog:translate-y-0 transition-all duration-200 origin-bottom">
+                  <ThoughtBubble text={s.t} idx={`prog${i}`} color="#a855f7" />
+                </div>
+                <div className="flex items-baseline gap-1.5 bg-surface/80 border border-border backdrop-blur-sm px-4 py-2 rounded-full cursor-default hover:border-purple-500/30 transition-colors duration-200">
+                  <span className="text-gradient font-extrabold text-lg">{s.l}</span>
+                  <span className="text-muted text-xs">{s.s}</span>
+                </div>
               </div>
             ))}
           </div>

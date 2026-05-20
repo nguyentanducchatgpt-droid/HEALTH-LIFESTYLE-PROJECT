@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import PillarCard from '../components/PillarCard';
+import ThoughtBubble from '../components/ThoughtBubble';
 
 const PILLARS = ['pillarA', 'pillarB', 'pillarC', 'pillarD', 'pillarE', 'pillarF'];
 
@@ -16,6 +18,12 @@ const PILLAR_IMAGES = [
 const PILLAR_COLORS = ['green', 'lime', 'teal', 'purple', 'blue', 'orange'];
 const PILLAR_ROUTES = ['/pillar/a', '/pillar/b', '/pillar/c', '/pillar/d', '/pillar/e', '/pillar/f'];
 const PILLAR_ICONS  = ['🏃', '🥗', '🌿', '🧘', '📚', '🛠️'];
+
+const HOME_STAT_TOOLTIPS = [
+  '10 phút/ngày đủ để bắt đầu xây thói quen. Não cần tính nhất quán, không phải thời gian dài — 10 phút × 30 ngày hiệu quả hơn 3 giờ × 1 lần/tuần.',
+  '6 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ. Hệ thống toàn diện đảm bảo không bỏ sót bất kỳ góc độ nào của sức khỏe.',
+  '12 tuần là đủ để xây nền thói quen bền vững — từ người chưa tập đến duy trì đều đặn. Chia 3 giai đoạn: Khởi Động · Tăng Nền · Cá Nhân Hóa.',
+];
 
 export default function Home() {
   const { t }      = useTranslation();
@@ -79,8 +87,11 @@ export default function Home() {
           {Array.isArray(stats) && (
             <div className="mt-14 grid grid-cols-3 gap-4 w-full max-w-2xl">
               {stats.map((stat, i) => (
-                <div key={i} className="text-center">
-                  <p className="text-gradient font-extrabold text-xl md:text-2xl">{stat.value}</p>
+                <div key={i} className="group/hstat relative text-center">
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/hstat:opacity-100 scale-90 group-hover/hstat:scale-100 -translate-y-1 group-hover/hstat:translate-y-0 transition-all duration-200 origin-bottom">
+                    <ThoughtBubble text={HOME_STAT_TOOLTIPS[i]} idx={`h${i}`} color="#22c55e" />
+                  </div>
+                  <p className="text-gradient font-extrabold text-xl md:text-2xl cursor-default">{stat.value}</p>
                   <p className="text-muted text-[11px] mt-1 leading-snug">{stat.label}</p>
                 </div>
               ))}

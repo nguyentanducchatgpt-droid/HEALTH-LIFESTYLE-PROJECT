@@ -1848,82 +1848,54 @@ export default function PillarB() {
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           </div>
 
-          {/* ── Unified orbit-ring frame ── */}
-          <div className={`rounded-2xl p-[1.5px] transition-all duration-700 ${TABS[activeTab].frameClass}`}>
-            <div className="rounded-2xl overflow-hidden" style={{ background: '#0a0a0a' }}>
+          {/* ── Tab buttons (outside orbit, each self-contained) ── */}
+          <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-3">
+            <div ref={tabBarRef} className="flex gap-2 min-w-max md:min-w-0 md:flex-wrap">
+              {TABS.map((t, i) => {
+                const isActive = activeTab === i;
+                const tc = t.color;
+                return (
+                  <button
+                    key={t.id}
+                    type="button"
+                    onClick={() => switchTab(i)}
+                    className="group relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap border"
+                    style={{
+                      color: isActive ? tc : 'rgba(100,116,139,0.65)',
+                      background: isActive ? `${tc}0d` : 'rgba(255,255,255,0.02)',
+                      borderColor: isActive ? `${tc}50` : 'rgba(255,255,255,0.07)',
+                      boxShadow: isActive
+                        ? `0 0 0 1px ${tc}20, 0 0 14px ${tc}20, 0 2px 8px rgba(0,0,0,0.35)`
+                        : 'none',
+                    }}
+                  >
+                    <span style={{ color: isActive ? tc : 'rgba(100,116,139,0.45)' }}>{t.icon}</span>
+                    <span className="font-black">{t.short}</span>
+                    <span className="hidden sm:inline opacity-75">— {t.label}</span>
+                    {isActive && (
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse ml-0.5" style={{ background: tc }} />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-              {/* Tab strip */}
-              <div className="overflow-x-auto scrollbar-none">
-                <div
-                  ref={tabBarRef}
-                  className="flex items-stretch min-w-max md:min-w-0"
-                >
-                  {TABS.map((t, i) => {
-                    const isActive = activeTab === i;
-                    const activeColor = TABS[activeTab].color;
-                    const tc = t.color;
-                    return (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() => switchTab(i)}
-                        className="group relative flex items-center gap-2 px-4 py-3 text-xs font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap flex-1 md:flex-none justify-center md:justify-start"
-                        style={{
-                          color: isActive ? tc : 'rgba(100,116,139,0.65)',
-                          background: isActive ? `${tc}09` : 'transparent',
-                          borderBottom: isActive
-                            ? `2px solid ${tc}`
-                            : '2px solid rgba(255,255,255,0.05)',
-                        }}
-                      >
-                        <span
-                          className="transition-all duration-200"
-                          style={{ color: isActive ? tc : 'rgba(100,116,139,0.5)' }}
-                        >
-                          {t.icon}
-                        </span>
-                        <span className="font-black">{t.short}</span>
-                        <span className="hidden sm:inline opacity-80">— {t.label}</span>
-                        {isActive && (
-                          <span
-                            className="w-1.5 h-1.5 rounded-full animate-pulse ml-0.5"
-                            style={{ background: tc }}
-                          />
-                        )}
-                        {/* Hover underline for inactive */}
-                        {!isActive && (
-                          <div
-                            className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                            style={{ background: `${tc}40` }}
-                          />
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Divider between tabs and content */}
+          {/* ── Content panel — orbit ring here only ── */}
+          <div className={`rounded-2xl p-[1.5px] ${TABS[activeTab].frameClass}`}>
+            <div
+              key={tabKey}
+              className="rounded-2xl overflow-hidden relative animate-fade-in-up"
+              style={{ background: '#0a0a0a' }}
+            >
+              {/* Ambient corner glow */}
               <div
-                className="h-px transition-all duration-700"
-                style={{ background: `linear-gradient(90deg, transparent, ${TABS[activeTab].color}35 20%, ${TABS[activeTab].color}35 80%, transparent)` }}
+                className="absolute top-0 right-0 w-80 h-80 rounded-full blur-[120px] pointer-events-none transition-all duration-700"
+                style={{ background: `${TABS[activeTab].color}0f` }}
               />
-
-              {/* Content panel */}
-              <div
-                key={tabKey}
-                className="relative overflow-hidden animate-fade-in-up"
-              >
-                {/* Ambient glow top-right */}
-                <div
-                  className="absolute top-0 right-0 w-80 h-80 rounded-full blur-[120px] pointer-events-none transition-all duration-700"
-                  style={{ background: `${TABS[activeTab].color}12` }}
-                />
-                <div className="relative z-10 p-6 md:p-8">
-                  {PANELS[activeTab]}
-                </div>
+              <div className="relative z-10 p-6 md:p-8">
+                {PANELS[activeTab]}
               </div>
-
             </div>
           </div>
         </RevealBlock>

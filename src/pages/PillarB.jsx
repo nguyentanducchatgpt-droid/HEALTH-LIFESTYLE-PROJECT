@@ -15,13 +15,41 @@ const HERO_STATS = [
 ];
 
 const MANTRAS = [
-  { n: '01', text: 'Ăn đủ',          sub: 'không ăn kiệt sức hay cắt quá mức' },
-  { n: '02', text: 'Ăn đều',         sub: 'không theo cảm hứng, không bỏ bữa' },
-  { n: '03', text: 'Ăn thật',        sub: 'hạn chế đồ siêu chế biến, ít phụ gia' },
-  { n: '04', text: 'Ăn theo mục tiêu', sub: 'không theo phong trào hay quảng cáo' },
-  { n: '05', text: 'Protein là nền', sub: 'rau là bạn, carb là nhiên liệu' },
-  { n: '06', text: 'Một bữa lệch',   sub: 'không phá hỏng hành trình dài hạn' },
-  { n: '07', text: 'Duy trì được',   sub: 'dinh dưỡng tốt nhất là cái bạn giữ được' },
+  {
+    n: '01', icon: '⚖️', text: 'Ăn đủ', sub: 'Không ăn kiệt sức hay cắt quá mức',
+    desc: 'Cơ thể cần đủ năng lượng để vận hành, phục hồi và xây dựng cơ bắp. Cắt calo quá mức làm chậm trao đổi chất và gây mất cơ ngoài ý muốn.',
+    tips: ['1,600–2,400 kcal/ngày tùy hoạt động', 'Không bỏ bữa sáng liên tục', 'Ăn chậm — não cần 20 phút để cảm nhận no'],
+  },
+  {
+    n: '02', icon: '⏰', text: 'Ăn đều', sub: 'Không theo cảm hứng, không bỏ bữa',
+    desc: 'Nhịp sinh học hoạt động tốt nhất khi được nuôi đúng giờ. Ăn đều giờ ổn định đường huyết và kiểm soát cảm giác thèm ăn bất thường.',
+    tips: ['3 bữa chính cùng khung giờ mỗi ngày', 'Không nhịn quá 5 tiếng liên tục', 'Chuẩn bị thực phẩm sẵn để không bỏ bữa'],
+  },
+  {
+    n: '03', icon: '🌿', text: 'Ăn thật', sub: 'Hạn chế đồ siêu chế biến, ít phụ gia',
+    desc: 'Thực phẩm nguyên dạng giữ nguyên vi chất, chất xơ và enzyme tự nhiên. Đồ siêu chế biến kích thích ăn quá mức qua cơ chế thần kinh.',
+    tips: ['Ưu tiên rau củ, thịt tươi, trứng, cá', 'Đọc nhãn thành phần trước khi mua', 'Nguyên tắc: dưới 5 thành phần/sản phẩm'],
+  },
+  {
+    n: '04', icon: '🎯', text: 'Ăn theo mục tiêu', sub: 'Không theo phong trào hay quảng cáo',
+    desc: 'Keto, IF, Low-carb đều có thể hiệu quả — nhưng chỉ khi phù hợp với cơ thể, lịch sống và mục tiêu cụ thể của bạn. Không có chế độ ăn nào phù hợp cho tất cả.',
+    tips: ['Xác định mục tiêu rõ ràng trước', 'Thử nghiệm nhất quán ít nhất 4 tuần', 'Đo kết quả khách quan bằng số liệu'],
+  },
+  {
+    n: '05', icon: '💪', text: 'Protein là nền', sub: 'Rau là bạn, carb là nhiên liệu',
+    desc: 'Protein (1.6–2.2g/kg thể trọng) bảo vệ cơ bắp, tăng cảm giác no lâu và đốt thêm calo qua quá trình tiêu hóa. Đây là macro quan trọng nhất trong mọi mục tiêu.',
+    tips: ['1.6–2.2g protein/kg thể trọng/ngày', 'Mỗi bữa ăn đều có nguồn protein', 'Trứng, thịt, đậu, sữa chua Hy Lạp'],
+  },
+  {
+    n: '06', icon: '🔄', text: 'Một bữa lệch', sub: 'Không phá hỏng hành trình dài hạn',
+    desc: 'Một bữa pizza không làm bạn béo, giống như một bữa salad không làm bạn gầy. Kết quả đến từ thói quen hàng tuần, không phải từ một bữa ăn đơn lẻ.',
+    tips: ['1–2 bữa linh hoạt/tuần là bình thường', 'Quay lại thói quen bình thường ngay sau', 'Không "bù đắp" bằng cách nhịn ăn'],
+  },
+  {
+    n: '07', icon: '🏃', text: 'Duy trì được', sub: 'Dinh dưỡng tốt nhất là cái bạn giữ được',
+    desc: 'Chế độ ăn hoàn hảo trên lý thuyết nhưng không thể duy trì trong thực tế thì bằng không. 80% nhất quán trong 1 năm luôn tốt hơn 100% hoàn hảo trong 3 tuần rồi bỏ.',
+    tips: ['Bắt đầu với 1 thay đổi nhỏ nhất', 'Xây hệ thống — không phụ thuộc ý chí', 'Điều chỉnh món ăn yêu thích thay vì bỏ'],
+  },
 ];
 
 const TABS = [
@@ -1246,47 +1274,124 @@ export default function PillarB() {
           PHILOSOPHY
       ══════════════════════════════════════════════════════════════════════ */}
       <RevealBlock className="mb-16">
-        {/* Main slogan */}
-        <div className="relative rounded-3xl border border-lime-500/15 bg-lime-500/4 p-7 md:p-10 mb-8 overflow-hidden">
-          <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] pointer-events-none" style={{ background: `${LIME}06` }} />
-          <div className="absolute -top-2 left-8 font-black text-[100px] leading-none select-none pointer-events-none" style={{ color: `${LIME}08` }}>"</div>
-          <div className="relative z-10 max-w-2xl">
-            <p className="text-lg md:text-xl font-bold text-text/90 leading-relaxed italic mb-3">
-              Ăn đủ — ăn đều — ăn thật — ăn theo mục tiêu — sống được lâu dài
+
+        {/* ── Quote block ── */}
+        <div className="relative rounded-3xl border border-lime-500/15 bg-lime-500/4 p-7 md:p-10 mb-10 overflow-hidden group hover:border-lime-500/30 transition-all duration-500">
+          {/* Ambient glows */}
+          <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-[140px] pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity duration-700" style={{ background: `${LIME}08` }} />
+          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-[100px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: `${LIME}05` }} />
+          {/* Large decorative quote mark */}
+          <div className="absolute -top-4 left-6 font-black text-[130px] leading-none select-none pointer-events-none" style={{ color: `${LIME}07` }}>"</div>
+
+          {/* Quote text */}
+          <div className="relative z-10 max-w-2xl mb-7">
+            <p className="text-xl md:text-2xl font-bold text-text/90 leading-relaxed italic mb-4">
+              Ăn đủ — ăn đều — ăn thật —<br className="hidden md:block" /> ăn theo mục tiêu — sống được lâu dài
             </p>
-            <div className="h-px bg-gradient-to-r from-lime-500/40 to-transparent mb-3" />
+            <div className="h-px bg-gradient-to-r from-lime-500/50 via-lime-500/20 to-transparent mb-4" />
             <p className="text-sm text-lime-400/80 font-medium">
               Ăn tốt hơn hôm qua một chút, và đủ dễ để ngày mai còn làm tiếp.
             </p>
           </div>
+
+          {/* Key stats row */}
+          <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { n: '3',    unit: 'bữa/ngày', label: 'Nhịp ăn tối ưu' },
+              { n: '80/20', unit: '',         label: 'Quy tắc bền vững' },
+              { n: '21+',  unit: 'ngày',      label: 'Hình thành thói quen' },
+              { n: '1.6g', unit: '/kg',        label: 'Protein tối thiểu' },
+            ].map((s, i) => (
+              <div
+                key={i}
+                className="bg-bg/50 backdrop-blur-sm rounded-xl p-3.5 border border-lime-500/10 group-hover:border-lime-500/25 transition-all duration-400 animate-fade-in-up"
+                style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
+              >
+                <div className="font-black text-xl leading-none mb-0.5" style={{ color: LIME }}>
+                  {s.n}<span className="text-xs font-bold opacity-60 ml-0.5">{s.unit}</span>
+                </div>
+                <div className="text-[10px] text-muted">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* 7 mantras */}
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">7 Nguyên Tắc Cốt Lõi</p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+        {/* ── Section header ── */}
+        <div className="flex items-center gap-3 mb-7">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] whitespace-nowrap">7 Nguyên Tắc Cốt Lõi</p>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        </div>
+
+        {/* ── Mantra cards (3 col) ── */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {MANTRAS.map((m, i) => (
             <div
               key={m.n}
-              className="group relative flex flex-col p-4 rounded-2xl border border-border/40 bg-surface/15 hover:border-lime-500/25 hover:bg-lime-500/4 transition-all duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${i * 60}ms`, animationFillMode: 'both' }}
+              className="group relative flex flex-col rounded-2xl border border-border/40 bg-surface/15 hover:border-lime-500/30 transition-all duration-300 animate-fade-in-up overflow-hidden cursor-default"
+              style={{ animationDelay: `${i * 70}ms`, animationFillMode: 'both' }}
             >
-              <span className="text-[9px] font-black text-muted/50 mb-2 group-hover:text-lime-400/60 transition-colors">{m.n}</span>
-              <p className="text-sm font-bold text-text leading-snug mb-1.5 group-hover:text-lime-300 transition-colors">{m.text}</p>
-              <p className="text-[11px] text-muted leading-relaxed">{m.sub}</p>
+              {/* Top accent bar slides in on hover */}
               <div
-                className="absolute bottom-0 left-4 right-4 h-[1px] rounded-full transition-all duration-500"
-                style={{ background: `${LIME}00` }}
-                onMouseEnter={e => { e.currentTarget.style.background = `${LIME}60`; }}
-                onMouseLeave={e => { e.currentTarget.style.background = `${LIME}00`; }}
+                className="h-[2px] w-0 group-hover:w-full transition-all duration-500 ease-out shrink-0"
+                style={{ background: `linear-gradient(90deg, ${LIME}dd, ${LIME}20)` }}
+              />
+
+              <div className="p-5 flex flex-col flex-1">
+                {/* Number + icon */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[9px] font-black text-muted/40 group-hover:text-lime-400/50 transition-colors duration-200">{m.n}</span>
+                  <span
+                    className="text-xl w-9 h-9 flex items-center justify-center rounded-xl border border-border/50 bg-surface/50 group-hover:border-lime-500/25 group-hover:bg-lime-500/8 transition-all duration-300"
+                  >{m.icon}</span>
+                </div>
+
+                {/* Title */}
+                <p className="text-sm font-bold text-text leading-snug mb-1 group-hover:text-lime-300 transition-colors duration-200">{m.text}</p>
+                {/* Sub */}
+                <p className="text-[11px] text-muted/70 leading-relaxed mb-3">{m.sub}</p>
+                {/* Description */}
+                <p className="text-[11px] text-muted/55 leading-relaxed flex-1 group-hover:text-muted/80 transition-colors duration-300">{m.desc}</p>
+
+                {/* Tips — slide down on hover */}
+                <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-400 ease-in-out">
+                  <div className="border-t border-border/40 mt-3 pt-3 space-y-1.5">
+                    {m.tips.map((tip, j) => (
+                      <div key={j} className="flex items-start gap-1.5">
+                        <span className="text-[10px] font-bold mt-0.5 shrink-0" style={{ color: LIME }}>✓</span>
+                        <span className="text-[10px] text-muted/70 leading-relaxed">{tip}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom ambient glow */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: `linear-gradient(to top, ${LIME}08, transparent)` }}
               />
             </div>
           ))}
 
-          {/* 8th card — full width quote */}
-          <div className="sm:col-span-2 lg:col-span-3 xl:col-span-1 group flex flex-col p-4 rounded-2xl border border-lime-500/20 bg-lime-500/6 transition-all duration-300 hover:bg-lime-500/10 animate-fade-in-up"
-            style={{ animationDelay: `${7 * 60}ms`, animationFillMode: 'both' }}>
-            <span className="text-[9px] font-black text-lime-400/60 mb-2">TINH THẦN</span>
-            <p className="text-xs font-bold text-lime-300 leading-relaxed flex-1">Đều quan trọng hơn hoàn hảo. Kỷ luật là biết quay lại đúng đường sau khi lệch một chút.</p>
+          {/* Spirit card */}
+          <div
+            className="group relative flex flex-col rounded-2xl border border-lime-500/25 bg-lime-500/5 hover:border-lime-500/45 hover:bg-lime-500/9 transition-all duration-300 animate-fade-in-up overflow-hidden cursor-default"
+            style={{ animationDelay: `${7 * 70}ms`, animationFillMode: 'both' }}
+          >
+            <div className="h-[2px] w-full" style={{ background: `linear-gradient(90deg, ${LIME}90, ${LIME}15)` }} />
+            <div className="p-5 flex flex-col flex-1">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[9px] font-black" style={{ color: `${LIME}70` }}>TINH THẦN</span>
+                <span className="text-xl w-9 h-9 flex items-center justify-center rounded-xl border bg-lime-500/10 border-lime-500/25">✨</span>
+              </div>
+              <p className="text-xs font-bold text-lime-300 leading-relaxed mb-3">
+                Đều quan trọng hơn hoàn hảo. Kỷ luật là biết quay lại đúng đường sau khi lệch một chút.
+              </p>
+              <p className="text-[11px] leading-relaxed flex-1" style={{ color: `${LIME}70` }}>
+                Bạn không thất bại vì một bữa lệch — bạn thất bại vì bỏ cuộc sau đó. Sự nhất quán mới là siêu năng lực thực sự.
+              </p>
+            </div>
           </div>
         </div>
       </RevealBlock>

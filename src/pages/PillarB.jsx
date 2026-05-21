@@ -1609,6 +1609,13 @@ function TrackingPanel() {
 }
 
 
+const CALC_TOOLTIPS = [
+  'BMR (Basal Metabolic Rate) — lượng calo cơ thể cần để duy trì chức năng sống cơ bản khi nằm yên hoàn toàn: tim đập, hô hấp, nhiệt độ cơ thể, não hoạt động. Chiếm 60–75% tổng TDEE, phụ thuộc vào cân nặng, chiều cao, tuổi và giới tính.',
+  'Năng lượng tiêu thụ thêm từ hoạt động thể chất mỗi ngày — bao gồm cả tập luyện lẫn đi lại, làm việc, sinh hoạt. Được tính bằng cách nhân BMR với hệ số hoạt động tương ứng (1.2 → 1.9).',
+  'Lượng calo nên nạp mỗi ngày để đạt mục tiêu đã chọn. Giảm mỡ = TDEE trừ 300–500 kcal (thâm hụt). Duy trì = ±100 kcal so với TDEE. Tăng cơ = TDEE cộng 150–300 kcal (thặng dư). Điều chỉnh từng bước 100–200 kcal nếu không có tiến bộ sau 2 tuần.',
+  'Trung bình mỗi giờ cơ thể đốt bao nhiêu calo. Con số này giúp bạn ước tính: ngủ 8 tiếng tiêu ~1/3 TDEE, ngồi làm việc tiêu ít hơn TDEE/24, tập 1 tiếng tăng đáng kể. Hữu ích để lên kế hoạch bữa ăn trước/sau tập.',
+];
+
 // ─── CalcPanel (B0) — Interactive TDEE calculator ───────────────────────────
 function CalcPanel() {
   const [weight, setWeight]       = useState(70);
@@ -1815,12 +1822,18 @@ function CalcPanel() {
             { label: 'Hoạt động', value: `+${(tdee - bmr).toLocaleString()} kcal`, sub: activity.label, icon: '🏃', color: '#06b6d4' },
             { label: 'Mục tiêu',  value: `${targetKcal.toLocaleString()} kcal`, sub: selectedGoal.label, icon: '🎯', color: selectedGoal.color },
             { label: 'Mỗi giờ',  value: `~${Math.round(tdee / 24)} kcal`, sub: 'Tiêu thụ trung bình', icon: '⏱️', color: '#22c55e' },
-          ].map(item => (
-            <div key={item.label} className="rounded-2xl border p-4 text-center transition-all duration-200 hover:scale-[1.03]" style={{ borderColor: `${item.color}25`, background: `${item.color}07` }}>
-              <span className="text-xl">{item.icon}</span>
-              <p className="text-sm font-black mt-1.5 mb-0.5" style={{ color: item.color }}>{item.value}</p>
-              <p className="text-[9px] font-bold text-text/70 mb-0.5">{item.label}</p>
-              <p className="text-[9px] text-muted leading-snug">{item.sub}</p>
+          ].map((item, i) => (
+            <div key={item.label} className="group/calcstat relative">
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/calcstat:opacity-100 scale-90 group-hover/calcstat:scale-100 -translate-y-1 group-hover/calcstat:translate-y-0 transition-all duration-200 origin-bottom">
+                <ThoughtBubble text={CALC_TOOLTIPS[i]} idx={`calc${i}`} color={item.color} />
+              </div>
+              <div className="rounded-2xl border p-4 text-center transition-all duration-200 hover:scale-[1.03] cursor-help" style={{ borderColor: `${item.color}25`, background: `${item.color}07` }}>
+                <span className="text-xl">{item.icon}</span>
+                <p className="text-sm font-black mt-1.5 mb-0.5" style={{ color: item.color }}>{item.value}</p>
+                <p className="text-[9px] font-bold text-text/70 mb-0.5">{item.label}</p>
+                <p className="text-[9px] text-muted leading-snug">{item.sub}</p>
+                <p className="text-[8px] text-muted/40 mt-1.5">Hover để xem chi tiết</p>
+              </div>
             </div>
           ))}
         </div>

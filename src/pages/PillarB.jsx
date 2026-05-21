@@ -1609,6 +1609,12 @@ function TrackingPanel() {
 }
 
 
+const TDEE_COMPONENT_TOOLTIPS = [
+  'BMR (Basal Metabolic Rate) — trao đổi chất cơ bản. Lượng calo tối thiểu để duy trì sự sống khi nằm yên 24 giờ: tim đập, thở, não hoạt động, nhiệt độ cơ thể. Phụ thuộc vào cân nặng, chiều cao, tuổi và giới tính — không thể thay đổi ngay, nhưng tăng cơ bắp sẽ nâng BMR lâu dài.',
+  'TEA (Thermic Effect of Activity) — nhiệt lượng sinh ra từ hoạt động thể chất. Đây là thành phần biến động nhất: ngồi cả ngày = 20% TDEE, vận động viên chuyên nghiệp có thể đạt 50%. Tăng TEA = cách nhanh nhất để tăng tổng năng lượng tiêu thụ mỗi ngày.',
+  'TEF (Thermic Effect of Food) — năng lượng dùng để tiêu hóa và hấp thu thức ăn. Protein có TEF cao nhất (~25–30%), carb ~6–8%, chất béo ~2–3%. Ăn nhiều protein không chỉ giúp tăng cơ mà còn đốt thêm calo ngay trong quá trình tiêu hóa.',
+];
+
 const CALC_TOOLTIPS = [
   'BMR (Basal Metabolic Rate) — lượng calo cơ thể cần để duy trì chức năng sống cơ bản khi nằm yên hoàn toàn: tim đập, hô hấp, nhiệt độ cơ thể, não hoạt động. Chiếm 60–75% tổng TDEE, phụ thuộc vào cân nặng, chiều cao, tuổi và giới tính.',
   'Năng lượng tiêu thụ thêm từ hoạt động thể chất mỗi ngày — bao gồm cả tập luyện lẫn đi lại, làm việc, sinh hoạt. Được tính bằng cách nhân BMR với hệ số hoạt động tương ứng (1.2 → 1.9).',
@@ -1673,12 +1679,17 @@ function CalcPanel() {
                 { label: 'BMR', sub: 'Trao đổi chất cơ bản', pct: '60–75%', icon: '💤', color: '#8b5cf6' },
                 { label: 'TEA', sub: 'Hoạt động thể chất', pct: '15–30%', icon: '🏃', color: '#06b6d4' },
                 { label: 'TEF', sub: 'Tiêu hóa thức ăn', pct: '5–10%', icon: '🍽️', color: '#22c55e' },
-              ].map(c => (
-                <div key={c.label} className="rounded-xl p-3 text-center" style={{ background: `${c.color}0c`, border: `1px solid ${c.color}25` }}>
-                  <span className="text-base">{c.icon}</span>
-                  <p className="text-xs font-black mt-1" style={{ color: c.color }}>{c.label}</p>
-                  <p className="text-[9px] text-muted leading-snug mt-0.5">{c.sub}</p>
-                  <p className="text-[9px] font-bold mt-1" style={{ color: `${c.color}cc` }}>{c.pct}</p>
+              ].map((c, i) => (
+                <div key={c.label} className="group/tdeec relative">
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/tdeec:opacity-100 scale-90 group-hover/tdeec:scale-100 -translate-y-1 group-hover/tdeec:translate-y-0 transition-all duration-200 origin-bottom">
+                    <ThoughtBubble text={TDEE_COMPONENT_TOOLTIPS[i]} idx={`tdeec${i}`} color={c.color} />
+                  </div>
+                  <div className="rounded-xl p-3 text-center cursor-help transition-all duration-200 hover:scale-[1.04]" style={{ background: `${c.color}0c`, border: `1px solid ${c.color}25` }}>
+                    <span className="text-base">{c.icon}</span>
+                    <p className="text-xs font-black mt-1" style={{ color: c.color }}>{c.label}</p>
+                    <p className="text-[9px] text-muted leading-snug mt-0.5">{c.sub}</p>
+                    <p className="text-[9px] font-bold mt-1" style={{ color: `${c.color}cc` }}>{c.pct}</p>
+                  </div>
                 </div>
               ))}
             </div>

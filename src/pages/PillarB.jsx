@@ -1619,10 +1619,12 @@ function CalcPanel() {
   const [goalKey, setGoalKey]     = useState('recomp');
 
   const activity = ACTIVITY_LEVELS.find(a => a.key === activityKey) || ACTIVITY_LEVELS[2];
-  const bmr = sex === 'male'
+  const bmr = Math.round(sex === 'male'
     ? 10 * weight + 6.25 * height - 5 * age + 5
-    : 10 * weight + 6.25 * height - 5 * age - 161;
+    : 10 * weight + 6.25 * height - 5 * age - 161);
   const tdee = Math.round(bmr * activity.mult);
+  const selectedGoal = GOAL_MODIFIERS.find(g => g.key === goalKey) || GOAL_MODIFIERS[1];
+  const targetKcal = tdee + selectedGoal.delta;
 
   const numInput = (val, set, min, max) => (
     <div className="flex items-center gap-1">
@@ -1649,6 +1651,34 @@ function CalcPanel() {
 
   return (
     <div className="space-y-8">
+
+      {/* ── TDEE explainer banner ── */}
+      <div className="rounded-2xl border border-violet-500/20 bg-violet-500/5 p-5">
+        <div className="flex items-start gap-4">
+          <div className="w-9 h-9 rounded-xl bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-lg shrink-0">🔬</div>
+          <div>
+            <p className="text-sm font-bold text-violet-300 mb-1.5">TDEE là gì?</p>
+            <p className="text-[12px] text-muted leading-relaxed">
+              <span className="text-text/90 font-semibold">TDEE</span> (Total Daily Energy Expenditure) là tổng lượng calo cơ thể đốt cháy mỗi ngày — gồm 3 thành phần:
+            </p>
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              {[
+                { label: 'BMR', sub: 'Trao đổi chất cơ bản', pct: '60–75%', icon: '💤', color: '#8b5cf6' },
+                { label: 'TEA', sub: 'Hoạt động thể chất', pct: '15–30%', icon: '🏃', color: '#06b6d4' },
+                { label: 'TEF', sub: 'Tiêu hóa thức ăn', pct: '5–10%', icon: '🍽️', color: '#22c55e' },
+              ].map(c => (
+                <div key={c.label} className="rounded-xl p-3 text-center" style={{ background: `${c.color}0c`, border: `1px solid ${c.color}25` }}>
+                  <span className="text-base">{c.icon}</span>
+                  <p className="text-xs font-black mt-1" style={{ color: c.color }}>{c.label}</p>
+                  <p className="text-[9px] text-muted leading-snug mt-0.5">{c.sub}</p>
+                  <p className="text-[9px] font-bold mt-1" style={{ color: `${c.color}cc` }}>{c.pct}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left: inputs */}
         <div className="space-y-5">
@@ -1722,6 +1752,14 @@ function CalcPanel() {
             <p className="text-[10px] text-muted mb-1 uppercase tracking-widest">TDEE ước tính</p>
             <p className="text-4xl font-black" style={{ color: '#8b5cf6' }}>{tdee.toLocaleString()}</p>
             <p className="text-xs text-muted mt-1">kcal / ngày</p>
+            <div className="mt-4 pt-3 border-t border-violet-500/15 flex items-center justify-center flex-wrap gap-1.5 text-[10px]">
+              <span className="px-2 py-0.5 rounded-lg font-bold" style={{ background: '#8b5cf615', border: '1px solid #8b5cf630', color: '#c4b5fd' }}>BMR {bmr.toLocaleString()}</span>
+              <span className="text-muted">×</span>
+              <span className="px-2 py-0.5 rounded-lg font-bold" style={{ background: '#06b6d415', border: '1px solid #06b6d430', color: '#67e8f9' }}>{activity.mult}</span>
+              <span className="text-muted">=</span>
+              <span className="px-2 py-0.5 rounded-lg font-black" style={{ background: '#8b5cf620', border: '1px solid #8b5cf640', color: '#a78bfa' }}>{tdee.toLocaleString()}</span>
+            </div>
+            <p className="text-[9px] text-muted/40 mt-1.5">Mifflin-St Jeor × Hệ số hoạt động</p>
           </div>
 
           {/* Goal cards */}
@@ -1768,8 +1806,62 @@ function CalcPanel() {
         </div>
       </div>
 
-      {/* Meal split rules */}
+      {/* ── Analysis section ── */}
+      <RevealBlock delay={50}>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Phân Tích Chi Tiết</p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {[
+            { label: 'BMR',       value: `${bmr.toLocaleString()} kcal`, sub: 'Nghỉ ngơi hoàn toàn', icon: '💤', color: '#8b5cf6' },
+            { label: 'Hoạt động', value: `+${(tdee - bmr).toLocaleString()} kcal`, sub: activity.label, icon: '🏃', color: '#06b6d4' },
+            { label: 'Mục tiêu',  value: `${targetKcal.toLocaleString()} kcal`, sub: selectedGoal.label, icon: '🎯', color: selectedGoal.color },
+            { label: 'Mỗi giờ',  value: `~${Math.round(tdee / 24)} kcal`, sub: 'Tiêu thụ trung bình', icon: '⏱️', color: '#22c55e' },
+          ].map(item => (
+            <div key={item.label} className="rounded-2xl border p-4 text-center transition-all duration-200 hover:scale-[1.03]" style={{ borderColor: `${item.color}25`, background: `${item.color}07` }}>
+              <span className="text-xl">{item.icon}</span>
+              <p className="text-sm font-black mt-1.5 mb-0.5" style={{ color: item.color }}>{item.value}</p>
+              <p className="text-[9px] font-bold text-text/70 mb-0.5">{item.label}</p>
+              <p className="text-[9px] text-muted leading-snug">{item.sub}</p>
+            </div>
+          ))}
+        </div>
+      </RevealBlock>
+
+      {/* ── Benefits section ── */}
+      <RevealBlock delay={80}>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Lợi Ích Khi Biết TDEE</p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { icon: '🎯', title: 'Ăn đúng theo mục tiêu', desc: 'Biết chính xác cần bao nhiêu kcal/ngày — không đoán mò khi muốn giảm mỡ, tăng cơ hay duy trì cân nặng.', color: '#8b5cf6' },
+            { icon: '⚡', title: 'Tránh thiếu / thừa năng lượng', desc: 'Ăn đủ để giữ năng lượng và cơ bắp, tránh "crash" khi cắt calo quá mạnh hoặc tích mỡ khi ăn thừa.', color: '#f97316' },
+            { icon: '📈', title: 'Điều chỉnh đúng điểm', desc: 'Không tiến bộ sau 2 tuần? Tăng/giảm chính xác 100–200 kcal thay vì thay đổi toàn bộ chế độ ăn.', color: '#22c55e' },
+            { icon: '🔄', title: 'Cập nhật theo thể trạng', desc: 'TDEE thay đổi khi cân nặng thay đổi. Tính lại sau mỗi 4 tuần để duy trì hiệu quả liên tục.', color: '#06b6d4' },
+          ].map(b => (
+            <div key={b.icon} className="flex items-start gap-3 p-4 rounded-2xl border transition-all duration-200 hover:scale-[1.01] hover:-translate-y-0.5" style={{ borderColor: `${b.color}20`, background: `${b.color}06` }}>
+              <span className="text-xl shrink-0 mt-0.5">{b.icon}</span>
+              <div>
+                <p className="text-xs font-bold mb-1" style={{ color: b.color }}>{b.title}</p>
+                <p className="text-[11px] text-muted leading-relaxed">{b.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </RevealBlock>
+
+      {/* ── Accuracy note ── */}
       <RevealBlock delay={100}>
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 flex items-start gap-3">
+          <span className="text-lg shrink-0 mt-0.5">⚠️</span>
+          <div>
+            <p className="text-xs font-bold text-amber-300 mb-1.5">Độ chính xác & Lưu ý</p>
+            <p className="text-[11px] text-muted leading-relaxed">
+              Công thức Mifflin-St Jeor có sai số <span className="text-text/80 font-semibold">±10–15%</span> vì không tính được tỷ lệ cơ/mỡ. Dùng TDEE như điểm khởi đầu — theo dõi cân nặng 1–2 tuần, nếu cân không đổi thì lượng bạn đang ăn chính là <span className="text-amber-300/90 font-semibold">TDEE thực tế</span> của bạn.
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* Meal split rules */}
+      <RevealBlock delay={130}>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">5 Nguyên Tắc Chia Bữa</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {MEAL_SPLIT_RULES.map(r => (

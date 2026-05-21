@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ThoughtBubble from '../components/ThoughtBubble';
@@ -1017,11 +1017,37 @@ function GoalCard({ goal, active, onClick }) {
   );
 }
 
+// ─── PersonalizedBar ─────────────────────────────────────────────────────────
+
+function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông số của bạn' }) {
+  return (
+    <div className="rounded-xl border mb-6 px-4 py-3" style={{ borderColor: `${color}22`, background: `${color}07` }}>
+      <p className="text-[9px] font-bold uppercase tracking-[0.18em] mb-2.5" style={{ color: `${color}80` }}>{label}</p>
+      <div className="flex flex-wrap gap-x-6 gap-y-2">
+        {items.map(item => (
+          <div key={item.label} className="flex items-baseline gap-1.5">
+            <span className="text-base font-black leading-none" style={{ color }}>{item.value}</span>
+            <span className="text-[10px] text-muted leading-none">{item.label}</span>
+            {item.note && <span className="text-[9px] leading-none" style={{ color: `${color}80` }}>({item.note})</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Tab Panels ──────────────────────────────────────────────────────────────
 
-function FoundationPanel() {
+function FoundationPanel({ s }) {
   return (
     <div className="space-y-8">
+      <PersonalizedBar color="#84cc16" items={[
+        { label: 'TDEE', value: `${s.tdee.toLocaleString()} kcal`, note: 'duy trì' },
+        { label: 'Mục tiêu', value: `${s.targetKcal.toLocaleString()} kcal`, note: s.goal.label.toLowerCase() },
+        { label: 'Protein', value: `${s.proteinG}g`, note: `/ngày` },
+        { label: 'Nước', value: `${s.waterMl}ml`, note: `/ngày` },
+        { label: 'Chất xơ', value: `${s.fiberG}g`, note: `/ngày` },
+      ]} />
       {/* TDEE */}
       <RevealBlock>
         <div className="rounded-2xl border border-border/40 bg-surface/15 p-6">
@@ -1051,12 +1077,41 @@ function FoundationPanel() {
               </div>
             ))}
           </div>
+          <div className="mt-4 pt-4 border-t border-white/6 grid grid-cols-3 gap-3 text-center">
+            <div>
+              <p className="text-[10px] text-muted mb-0.5">Giảm mỡ của bạn</p>
+              <p className="text-sm font-black text-orange-400">{(s.tdee - 400).toLocaleString()} kcal</p>
+            </div>
+            <div>
+              <p className="text-[10px] text-muted mb-0.5">Duy trì của bạn</p>
+              <p className="text-sm font-black text-lime-400">{s.tdee.toLocaleString()} kcal</p>
+            </div>
+            <div>
+              <p className="text-[10px] text-muted mb-0.5">Tăng cơ của bạn</p>
+              <p className="text-sm font-black text-cyan-400">{(s.tdee + 250).toLocaleString()} kcal</p>
+            </div>
+          </div>
         </div>
       </RevealBlock>
 
       {/* Macro grid */}
       <RevealBlock delay={80}>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">5 Nhóm Dinh Dưỡng Cốt Lõi</p>
+        <div className="flex flex-wrap gap-3 mb-4">
+          {[
+            { label: 'Protein', value: `${s.proteinG}g`, color: '#84cc16', note: `${s.proteinPct}% tổng kcal` },
+            { label: 'Carb', value: `${s.carbG}g`, color: '#f97316', note: `${s.carbPct}% tổng kcal` },
+            { label: 'Fat', value: `${s.fatG}g`, color: '#facc15', note: `${s.fatPct}% tổng kcal` },
+          ].map(m => (
+            <div key={m.label} className="flex items-center gap-2 px-3 py-1.5 rounded-lg border" style={{ borderColor: `${m.color}25`, background: `${m.color}08` }}>
+              <span className="text-sm font-black" style={{ color: m.color }}>{m.value}</span>
+              <div>
+                <p className="text-[9px] font-bold" style={{ color: m.color }}>{m.label}</p>
+                <p className="text-[9px] text-muted">{m.note}</p>
+              </div>
+            </div>
+          ))}
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {MACROS.map((m, i) => (
             <MacroBar key={m.name} macro={m} delay={i * 120} />
@@ -1067,78 +1122,92 @@ function FoundationPanel() {
   );
 }
 
-function PlatePanel() {
+function PlatePanel({ s }) {
   const [ref, visible] = useScrollReveal(0.15);
 
   return (
-    <div ref={ref} className="grid md:grid-cols-2 gap-8 items-start">
-      {/* Left: diagram */}
-      <div>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Phương Pháp Đĩa Ăn</p>
-        <PlateDiagram animate={visible} />
-      </div>
-
-      {/* Right: tips */}
-      <div className="space-y-4">
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Áp Dụng Thực Tế</p>
-
-        <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-5">
-          <p className="text-xs font-bold text-lime-400 mb-3">Tại nhà</p>
-          <ul className="space-y-2">
-            {[
-              'Dùng đĩa 23–26cm làm chuẩn',
-              'Bắt đầu bằng rau trước khi thêm carb',
-              'Đạm = lòng bàn tay của bạn',
-              'Cơm = nắm tay của bạn',
-            ].map((t, i) => (
-              <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
-                <span className="text-lime-400 font-bold shrink-0">✓</span>{t}
-              </li>
-            ))}
-          </ul>
+    <div>
+      <PersonalizedBar color="#22c55e" items={[
+        { label: 'Protein', value: `${s.proteinG}g`, note: `${s.proteinPct}%` },
+        { label: 'Carb', value: `${s.carbG}g`, note: `${s.carbPct}%` },
+        { label: 'Fat', value: `${s.fatG}g`, note: `${s.fatPct}%` },
+        { label: 'Tổng kcal', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal/ngày' },
+      ]} />
+      <div ref={ref} className="grid md:grid-cols-2 gap-8 items-start">
+        {/* Left: diagram */}
+        <div>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Phương Pháp Đĩa Ăn</p>
+          <PlateDiagram animate={visible} />
         </div>
 
-        <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
-          <p className="text-xs font-bold text-orange-400 mb-3">Ăn ngoài hàng</p>
-          <ul className="space-y-2">
-            {[
-              'Chọn phần có cả đạm + rau + carb',
-              'Gọi thêm rau hoặc salad riêng',
-              'Tránh nước chấm nhiều muối/đường',
-              'Bún/phở: ít bún, nhiều rau, thêm trứng',
-            ].map((t, i) => (
-              <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
-                <span className="text-orange-400 font-bold shrink-0">✓</span>{t}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Right: tips */}
+        <div className="space-y-4">
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Áp Dụng Thực Tế</p>
 
-        <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5">
-          <p className="text-xs font-bold text-cyan-400 mb-3">Meal Prep bận rộn</p>
-          <ul className="space-y-2">
-            {[
-              'Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)',
-              'Nấu lượng cơm 2–3 ngày một lần',
-              'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày',
-              'Yến mạch overnight cho sáng bận rộn',
-            ].map((t, i) => (
-              <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
-                <span className="text-cyan-400 font-bold shrink-0">✓</span>{t}
-              </li>
-            ))}
-          </ul>
+          <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-5">
+            <p className="text-xs font-bold text-lime-400 mb-3">Tại nhà</p>
+            <ul className="space-y-2">
+              {[
+                'Dùng đĩa 23–26cm làm chuẩn',
+                'Bắt đầu bằng rau trước khi thêm carb',
+                'Đạm = lòng bàn tay của bạn',
+                'Cơm = nắm tay của bạn',
+              ].map((t, i) => (
+                <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
+                  <span className="text-lime-400 font-bold shrink-0">✓</span>{t}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
+            <p className="text-xs font-bold text-orange-400 mb-3">Ăn ngoài hàng</p>
+            <ul className="space-y-2">
+              {[
+                'Chọn phần có cả đạm + rau + carb',
+                'Gọi thêm rau hoặc salad riêng',
+                'Tránh nước chấm nhiều muối/đường',
+                'Bún/phở: ít bún, nhiều rau, thêm trứng',
+              ].map((t, i) => (
+                <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
+                  <span className="text-orange-400 font-bold shrink-0">✓</span>{t}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5">
+            <p className="text-xs font-bold text-cyan-400 mb-3">Meal Prep bận rộn</p>
+            <ul className="space-y-2">
+              {[
+                'Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)',
+                'Nấu lượng cơm 2–3 ngày một lần',
+                'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày',
+                'Yến mạch overnight cho sáng bận rộn',
+              ].map((t, i) => (
+                <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
+                  <span className="text-cyan-400 font-bold shrink-0">✓</span>{t}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-function GoalsPanel() {
+function GoalsPanel({ s }) {
   const [activeGoal, setActiveGoal] = useState('fat-loss');
 
   return (
     <div>
+      <PersonalizedBar color="#f97316" items={[
+        { label: 'Mục tiêu hiện tại', value: s.goal.label },
+        { label: 'Kcal/ngày', value: `${s.targetKcal.toLocaleString()}` },
+        { label: 'Điều chỉnh', value: `${s.goal.delta > 0 ? '+' : ''}${s.goal.delta} kcal`, note: 'so với TDEE' },
+        ...(s.goal.key !== 'recomp' ? [{ label: 'Tốc độ', value: `~${s.kgPerWeek}kg`, note: 'mỗi tuần' }] : [{ label: 'Cân bằng', value: '±100 kcal', note: 'linh hoạt' }]),
+      ]} />
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Chọn Mục Tiêu Của Bạn</p>
       <div className="grid sm:grid-cols-2 gap-4">
         {GOALS.map(g => (
@@ -1159,11 +1228,18 @@ function GoalsPanel() {
   );
 }
 
-function MealsPanel() {
+function MealsPanel({ s }) {
   const [activeDay, setActiveDay] = useState(0);
 
   return (
     <div>
+      <PersonalizedBar color="#06b6d4" label="Phân Bổ Bữa Ăn Theo Thông Số Của Bạn" items={[
+        { label: 'Sáng', value: `${s.breakfastKcal}`, note: 'kcal (25%)' },
+        { label: 'Trưa', value: `${s.lunchKcal}`, note: 'kcal (35%)' },
+        { label: 'Tối', value: `${s.dinnerKcal}`, note: 'kcal (30%)' },
+        { label: 'Snack', value: `${s.snackKcal}`, note: 'kcal (10%)' },
+        { label: 'Tổng', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal/ngày' },
+      ]} />
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Thực Đơn Mẫu 3 Ngày — Người Mới</p>
 
       {/* Day selector */}
@@ -1569,7 +1645,7 @@ function AdjustmentContent() {
   );
 }
 
-function TrackingPanel() {
+function TrackingPanel({ s }) {
   const [activeSection, setActiveSection] = useState(0);
   const [checked, setChecked] = useState({});
 
@@ -1581,15 +1657,21 @@ function TrackingPanel() {
 
   return (
     <div className="space-y-5">
+      <PersonalizedBar color="#a855f7" items={[
+        { label: 'Protein cần đạt', value: `${s.proteinG}g`, note: '/ngày' },
+        { label: 'Nước uống', value: `${s.waterMl}ml`, note: `(${Math.round(s.waterMl/250)} ly)` },
+        { label: 'Calo mục tiêu', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal' },
+        { label: 'Chất xơ', value: `${s.fiberG}g`, note: '/ngày' },
+      ]} />
       {/* Section heading */}
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">5 Chủ Đề Theo Dõi</p>
 
       {/* 3 tab cards */}
       <div className="grid grid-cols-3 gap-3">
-        {TRACKING_SECTIONS.map((s, i) => (
+        {TRACKING_SECTIONS.map((sec, i) => (
           <TrackingTabCard
-            key={s.id}
-            section={s}
+            key={sec.id}
+            section={sec}
             active={activeSection === i}
             onClick={() => setActiveSection(i)}
           />
@@ -1623,21 +1705,8 @@ const CALC_TOOLTIPS = [
 ];
 
 // ─── CalcPanel (B0) — Interactive TDEE calculator ───────────────────────────
-function CalcPanel() {
-  const [weight, setWeight]       = useState(70);
-  const [height, setHeight]       = useState(170);
-  const [age, setAge]             = useState(30);
-  const [sex, setSex]             = useState('male');
-  const [activityKey, setActivityKey] = useState('moderate');
-  const [goalKey, setGoalKey]     = useState('recomp');
-
-  const activity = ACTIVITY_LEVELS.find(a => a.key === activityKey) || ACTIVITY_LEVELS[2];
-  const bmr = Math.round(sex === 'male'
-    ? 10 * weight + 6.25 * height - 5 * age + 5
-    : 10 * weight + 6.25 * height - 5 * age - 161);
-  const tdee = Math.round(bmr * activity.mult);
-  const selectedGoal = GOAL_MODIFIERS.find(g => g.key === goalKey) || GOAL_MODIFIERS[1];
-  const targetKcal = tdee + selectedGoal.delta;
+function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s }) {
+  const { activity, bmr, tdee, goal: selectedGoal, targetKcal } = s;
 
   const numInput = (val, set, min, max) => (
     <div className="flex items-center gap-1">
@@ -1907,7 +1976,7 @@ function CalcPanel() {
 }
 
 // ─── SevenDayPanel (B6) ──────────────────────────────────────────────────────
-function SevenDayPanel() {
+function SevenDayPanel({ s }) {
   const [activeDay, setActiveDay]       = useState(0);
   const [showShopping, setShowShopping] = useState(false);
 
@@ -1915,6 +1984,12 @@ function SevenDayPanel() {
 
   return (
     <div className="space-y-8">
+      <PersonalizedBar color="#ec4899" items={[
+        { label: 'Mục tiêu mỗi ngày', value: `${s.targetKcal.toLocaleString()} kcal` },
+        { label: 'Protein', value: `${s.proteinG}g`, note: '/ngày' },
+        { label: 'Carb', value: `${s.carbG}g`, note: '/ngày' },
+        { label: 'Fat', value: `${s.fatG}g`, note: '/ngày' },
+      ]} />
       {/* Day selector */}
       <div className="overflow-x-auto scrollbar-none -mx-1 px-1">
         <div className="flex gap-2 min-w-max">
@@ -2036,9 +2111,15 @@ function SevenDayPanel() {
 }
 
 // ─── AdvancedPanel (B7) ──────────────────────────────────────────────────────
-function AdvancedPanel() {
+function AdvancedPanel({ s }) {
   return (
     <div className="space-y-10">
+      <PersonalizedBar color="#f59e0b" label="Macro Theo Thể Trạng Của Bạn" items={[
+        { label: 'Protein nền', value: `${s.proteinG}g`, note: `${(s.proteinG / s.weight).toFixed(1)}g/kg` },
+        { label: 'Ngày nặng', value: `${Math.round(s.proteinG * 1.15)}g`, note: 'protein (+15%)' },
+        { label: 'Ngày nhẹ', value: `${Math.round(s.proteinG * 0.85)}g`, note: 'protein (-15%)' },
+        { label: 'TDEE base', value: `${s.tdee.toLocaleString()}`, note: 'kcal' },
+      ]} />
       {/* Training day types */}
       <div>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Dinh Dưỡng Theo Loại Ngày Tập</p>
@@ -2266,6 +2347,43 @@ export default function PillarB() {
   const [scrolled, setScrolled]   = useState(false);
   const tabBarRef = useRef(null);
 
+  // ── Calculator state (shared with all panels)
+  const [weight, setWeight]           = useState(70);
+  const [height, setHeight]           = useState(170);
+  const [age, setAge]                 = useState(30);
+  const [sex, setSex]                 = useState('male');
+  const [activityKey, setActivityKey] = useState('moderate');
+  const [goalKey, setGoalKey]         = useState('recomp');
+
+  const userStats = useMemo(() => {
+    const activity = ACTIVITY_LEVELS.find(a => a.key === activityKey) || ACTIVITY_LEVELS[2];
+    const bmr = Math.round(sex === 'male'
+      ? 10 * weight + 6.25 * height - 5 * age + 5
+      : 10 * weight + 6.25 * height - 5 * age - 161);
+    const tdee = Math.round(bmr * activity.mult);
+    const goal = GOAL_MODIFIERS.find(g => g.key === goalKey) || GOAL_MODIFIERS[1];
+    const targetKcal = tdee + goal.delta;
+    const proteinG = Math.round(weight * (goalKey === 'loss' ? 2.0 : 1.8));
+    const fatG = Math.round(targetKcal * 0.25 / 9);
+    const carbG = Math.round((targetKcal - proteinG * 4 - fatG * 9) / 4);
+    const waterMl = Math.round(weight * 35);
+    const fiberG = sex === 'male' ? 38 : 25;
+    const kgPerWeek = parseFloat(((Math.abs(goal.delta) * 7) / 7700).toFixed(2));
+    const breakfastKcal = Math.round(targetKcal * 0.25);
+    const lunchKcal = Math.round(targetKcal * 0.35);
+    const dinnerKcal = Math.round(targetKcal * 0.30);
+    const snackKcal = targetKcal - breakfastKcal - lunchKcal - dinnerKcal;
+    const proteinPct = Math.round((proteinG * 4 / targetKcal) * 100);
+    const fatPct = Math.round((fatG * 9 / targetKcal) * 100);
+    const carbPct = 100 - proteinPct - fatPct;
+    return {
+      weight, height, age, sex, activity, bmr, tdee, goal, targetKcal,
+      proteinG, fatG, carbG, waterMl, fiberG, kgPerWeek,
+      breakfastKcal, lunchKcal, dinnerKcal, snackKcal,
+      proteinPct, fatPct, carbPct,
+    };
+  }, [weight, height, age, sex, activityKey, goalKey]);
+
   const pillar = tPillars('pillarB', { returnObjects: true });
 
   useEffect(() => {
@@ -2378,15 +2496,16 @@ export default function PillarB() {
     );
   }
 
+  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats };
   const PANELS = [
-    <CalcPanel key="calc" />,
-    <FoundationPanel key="foundation" />,
-    <PlatePanel key="plate" />,
-    <GoalsPanel key="goals" />,
-    <MealsPanel key="meals" />,
-    <TrackingPanel key="tracking" />,
-    <SevenDayPanel key="sevenday" />,
-    <AdvancedPanel key="advanced" />,
+    <CalcPanel key="calc" {...calcProps} />,
+    <FoundationPanel key="foundation" s={userStats} />,
+    <PlatePanel key="plate" s={userStats} />,
+    <GoalsPanel key="goals" s={userStats} />,
+    <MealsPanel key="meals" s={userStats} />,
+    <TrackingPanel key="tracking" s={userStats} />,
+    <SevenDayPanel key="sevenday" s={userStats} />,
+    <AdvancedPanel key="advanced" s={userStats} />,
   ];
 
   return (

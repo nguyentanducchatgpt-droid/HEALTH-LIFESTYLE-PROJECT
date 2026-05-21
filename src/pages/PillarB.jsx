@@ -1681,7 +1681,7 @@ function CalcPanel() {
                 { label: 'TEF', sub: 'Tiêu hóa thức ăn', pct: '5–10%', icon: '🍽️', color: '#22c55e' },
               ].map((c, i) => (
                 <div key={c.label} className="group/tdeec relative">
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/tdeec:opacity-100 scale-90 group-hover/tdeec:scale-100 -translate-y-1 group-hover/tdeec:translate-y-0 transition-all duration-200 origin-bottom">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 z-50 pointer-events-none opacity-0 group-hover/tdeec:opacity-100 scale-90 group-hover/tdeec:scale-100 translate-y-1 group-hover/tdeec:translate-y-0 transition-all duration-200 origin-top">
                     <ThoughtBubble text={TDEE_COMPONENT_TOOLTIPS[i]} idx={`tdeec${i}`} color={c.color} />
                   </div>
                   <div className="rounded-xl p-3 text-center cursor-help transition-all duration-200 hover:scale-[1.04]" style={{ background: `${c.color}0c`, border: `1px solid ${c.color}25` }}>

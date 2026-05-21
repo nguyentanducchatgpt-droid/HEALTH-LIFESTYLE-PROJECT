@@ -1019,16 +1019,30 @@ function GoalCard({ goal, active, onClick }) {
 
 // ─── PersonalizedBar ─────────────────────────────────────────────────────────
 
-function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông số của bạn' }) {
+function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông số của bạn', source, panelId = 'p' }) {
   return (
-    <div className="rounded-xl border mb-6 px-4 py-3" style={{ borderColor: `${color}22`, background: `${color}07` }}>
-      <p className="text-[9px] font-bold uppercase tracking-[0.18em] mb-2.5" style={{ color: `${color}80` }}>{label}</p>
-      <div className="flex flex-wrap gap-x-6 gap-y-2">
-        {items.map(item => (
-          <div key={item.label} className="flex items-baseline gap-1.5">
-            <span className="text-base font-black leading-none" style={{ color }}>{item.value}</span>
-            <span className="text-[10px] text-muted leading-none">{item.label}</span>
-            {item.note && <span className="text-[9px] leading-none" style={{ color: `${color}80` }}>({item.note})</span>}
+    <div className="rounded-xl border mb-6 px-4 py-3.5" style={{ borderColor: `${color}22`, background: `${color}07` }}>
+      <div className="flex items-center justify-between mb-3">
+        <p className="text-[9px] font-bold uppercase tracking-[0.18em]" style={{ color: `${color}80` }}>{label}</p>
+        {source && (
+          <p className="text-[9px] text-muted/40 font-medium">← Tính từ {source}</p>
+        )}
+      </div>
+      <div className="flex flex-wrap gap-x-5 gap-y-3">
+        {items.map((item, i) => (
+          <div key={item.label} className="group/pbitem relative">
+            {item.tip && (
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/pbitem:opacity-100 scale-90 group-hover/pbitem:scale-100 -translate-y-1 group-hover/pbitem:translate-y-0 transition-all duration-200 origin-bottom">
+                <ThoughtBubble text={item.tip} idx={`${panelId}pb${i}`} color={color} />
+              </div>
+            )}
+            <div className={`flex items-start gap-1.5 ${item.tip ? 'cursor-help' : ''}`}>
+              <div>
+                <p className="text-[15px] font-black leading-none" style={{ color }}>{item.value}</p>
+                {item.note && <p className="text-[9px] leading-none mt-0.5" style={{ color: `${color}70` }}>{item.note}</p>}
+              </div>
+              <p className="text-[10px] text-muted/80 leading-none pt-0.5">{item.label}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -1041,12 +1055,14 @@ function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông
 function FoundationPanel({ s }) {
   return (
     <div className="space-y-8">
-      <PersonalizedBar color="#84cc16" items={[
-        { label: 'TDEE', value: `${s.tdee.toLocaleString()} kcal`, note: 'duy trì' },
-        { label: 'Mục tiêu', value: `${s.targetKcal.toLocaleString()} kcal`, note: s.goal.label.toLowerCase() },
-        { label: 'Protein', value: `${s.proteinG}g`, note: `/ngày` },
-        { label: 'Nước', value: `${s.waterMl}ml`, note: `/ngày` },
-        { label: 'Chất xơ', value: `${s.fiberG}g`, note: `/ngày` },
+      <PersonalizedBar panelId="b1" color="#84cc16" source="B0 (TDEE Calculator)" items={[
+        { label: 'TDEE', value: `${s.tdee.toLocaleString()} kcal`, note: 'duy trì cân', tip: `TDEE = BMR (${s.bmr.toLocaleString()} kcal) × hệ số hoạt động (${s.activity.mult}). Đây là lượng calo cơ thể đốt nếu bạn giữ nguyên mức vận động hiện tại. Ăn bằng con số này = giữ cân.` },
+        { label: 'Mục tiêu', value: `${s.targetKcal.toLocaleString()} kcal`, note: s.goal.label.toLowerCase(), tip: `${s.goal.label}: TDEE ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} kcal = ${s.targetKcal.toLocaleString()} kcal/ngày. ${s.goal.note}` },
+        { label: 'Protein', value: `${s.proteinG}g`, note: `${(s.proteinG/s.weight).toFixed(1)}g/kg`, tip: `${s.proteinG}g = ${(s.proteinG/s.weight).toFixed(1)}g × ${s.weight}kg cân nặng. ${s.goalKey === 'loss' ? 'Tăng lên 2.0g/kg khi giảm cân để giữ cơ bắp.' : '1.8g/kg là đủ để duy trì và phát triển cơ.'} Chiếm ${s.proteinPct}% tổng calo.` },
+        { label: 'Carb', value: `${s.carbG}g`, note: `${s.carbPct}% kcal`, tip: `Carb = (${s.targetKcal} - ${s.proteinG}×4 - ${s.fatG}×9) ÷ 4 = ${s.carbG}g/ngày. Nguồn năng lượng chính cho não và cơ bắp. Ưu tiên: cơm, khoai lang, yến mạch, hoa quả.` },
+        { label: 'Fat', value: `${s.fatG}g`, note: `${s.fatPct}% kcal`, tip: `Fat = ${s.targetKcal} × 25% ÷ 9 = ${s.fatG}g/ngày. Thiết yếu cho hormone, hấp thu vitamin A/D/E/K. Không nên cắt dưới 0.5g/kg cân nặng (= ${Math.round(s.weight * 0.5)}g).` },
+        { label: 'Nước', value: `${s.waterMl}ml`, note: `${Math.round(s.waterMl/250)} ly`, tip: `${s.waterMl}ml = ${s.weight}kg × 35ml. Tối thiểu mỗi ngày khi nghỉ ngơi. Tăng thêm 400–600ml cho mỗi 1 giờ tập luyện.` },
+        { label: 'Chất xơ', value: `${s.fiberG}g`, note: '/ngày', tip: `${s.fiberG}g/ngày theo khuyến nghị ${s.sex === 'male' ? 'nam' : 'nữ'} trưởng thành. Chất xơ hòa tan làm chậm hấp thu đường, chất xơ không tan hỗ trợ tiêu hóa. Nguồn: rau xanh, đậu, ngũ cốc nguyên cám.` },
       ]} />
       {/* TDEE */}
       <RevealBlock>
@@ -1127,11 +1143,11 @@ function PlatePanel({ s }) {
 
   return (
     <div>
-      <PersonalizedBar color="#22c55e" items={[
-        { label: 'Protein', value: `${s.proteinG}g`, note: `${s.proteinPct}%` },
-        { label: 'Carb', value: `${s.carbG}g`, note: `${s.carbPct}%` },
-        { label: 'Fat', value: `${s.fatG}g`, note: `${s.fatPct}%` },
-        { label: 'Tổng kcal', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal/ngày' },
+      <PersonalizedBar panelId="b2" color="#22c55e" source="B0 + B1 (TDEE & Macros)" items={[
+        { label: 'Protein/bữa', value: `${s.perMealProteinG}g`, note: `≈${s.chickenG}g ức gà`, tip: `${s.proteinG}g protein/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealProteinG}g/bữa. Tương đương ~${s.chickenG}g ức gà luộc (31g protein/100g). Phân đều protein qua các bữa giúp tổng hợp cơ tốt hơn so với dồn vào 1 bữa.` },
+        { label: 'Carb/bữa', value: `${s.perMealCarbG}g`, note: `≈${s.riceG}g cơm`, tip: `${s.carbG}g carb/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealCarbG}g/bữa. Tương đương ~${s.riceG}g cơm đã nấu (28g carb/100g). Ưu tiên nhiều carb nhất vào bữa trưa (${s.lunchCarbG}g) — thời điểm cơ thể dùng năng lượng nhiều nhất.` },
+        { label: 'Fat/bữa', value: `${s.perMealFatG}g`, note: `≈${s.oliveOilMl}ml dầu`, tip: `${s.fatG}g fat/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealFatG}g/bữa. Tương đương ~${s.oliveOilMl}ml dầu ô-liu (90% fat). Không cần đếm chính xác — chất béo từ thực phẩm tự nhiên (cá, trứng, hạt) là tốt nhất.` },
+        { label: 'Kcal/bữa', value: `${s.perMealKcal}`, note: 'kcal', tip: `${s.targetKcal.toLocaleString()} kcal/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealKcal} kcal/bữa chính. Con số tham khảo — thực tế bữa trưa nên lớn nhất (~${s.lunchKcal} kcal), bữa tối vừa (~${s.dinnerKcal} kcal), sáng nhỏ nhất (~${s.breakfastKcal} kcal).` },
       ]} />
       <div ref={ref} className="grid md:grid-cols-2 gap-8 items-start">
         {/* Left: diagram */}
@@ -1202,11 +1218,12 @@ function GoalsPanel({ s }) {
 
   return (
     <div>
-      <PersonalizedBar color="#f97316" items={[
-        { label: 'Mục tiêu hiện tại', value: s.goal.label },
-        { label: 'Kcal/ngày', value: `${s.targetKcal.toLocaleString()}` },
-        { label: 'Điều chỉnh', value: `${s.goal.delta > 0 ? '+' : ''}${s.goal.delta} kcal`, note: 'so với TDEE' },
-        ...(s.goal.key !== 'recomp' ? [{ label: 'Tốc độ', value: `~${s.kgPerWeek}kg`, note: 'mỗi tuần' }] : [{ label: 'Cân bằng', value: '±100 kcal', note: 'linh hoạt' }]),
+      <PersonalizedBar panelId="b3" color="#f97316" source="B0 + B1 + B2 (Inputs & Macros & Plate)" items={[
+        { label: 'Mục tiêu', value: s.goal.label, tip: `Mục tiêu đang chọn ở B0. Thay đổi mục tiêu trong tab B0 để cập nhật toàn bộ kế hoạch.` },
+        { label: 'Điều chỉnh', value: `${s.goal.delta > 0 ? '+' : ''}${s.goal.delta} kcal`, note: 'so với TDEE', tip: `TDEE của bạn: ${s.tdee.toLocaleString()} kcal. Mục tiêu ${s.goal.label}: ${s.tdee.toLocaleString()} ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} = ${s.targetKcal.toLocaleString()} kcal/ngày.` },
+        ...(s.kgPerWeek > 0 ? [{ label: 'Tốc độ', value: `~${s.kgPerWeek}kg`, note: 'mỗi tuần', tip: `${Math.abs(s.goal.delta * 7).toLocaleString()} kcal thâm hụt/tuần ÷ 7700 kcal/kg mỡ = ${s.kgPerWeek}kg/tuần. Mức an toàn: 0.25–0.75kg/tuần. Quá nhanh sẽ mất cơ, quá chậm dễ chán.` }] : [{ label: 'Cân bằng', value: '±100 kcal', note: 'linh hoạt', tip: `Duy trì = ăn xung quanh TDEE ±100 kcal mỗi ngày. Không cần chính xác tuyệt đối — tổng calo trong tuần mới quan trọng hơn calo mỗi ngày.` }]),
+        ...(s.weeksTo5kg ? [{ label: 'Đến -5kg', value: `~${s.weeksTo5kg} tuần`, note: `≈${Math.round(s.weeksTo5kg/4.3)} tháng`, tip: `Ở tốc độ ${s.kgPerWeek}kg/tuần, cần khoảng ${s.weeksTo5kg} tuần để giảm 5kg. Đây là ước tính lý tưởng — trên thực tế cơ thể thích nghi dần, cần điều chỉnh sau mỗi 4 tuần.` }] : []),
+        { label: 'Protein/tuần', value: `${s.weeklyProteinG}g`, note: `${s.proteinG}g × 7`, tip: `Tổng protein cần đạt trong 7 ngày. Nếu 1–2 ngày ăn ít hơn, có thể bù vào ngày khác — nhưng tốt nhất là đạt đều đặn mỗi ngày để tổng hợp cơ liên tục.` },
       ]} />
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Chọn Mục Tiêu Của Bạn</p>
       <div className="grid sm:grid-cols-2 gap-4">
@@ -1233,12 +1250,12 @@ function MealsPanel({ s }) {
 
   return (
     <div>
-      <PersonalizedBar color="#06b6d4" label="Phân Bổ Bữa Ăn Theo Thông Số Của Bạn" items={[
-        { label: 'Sáng', value: `${s.breakfastKcal}`, note: 'kcal (25%)' },
-        { label: 'Trưa', value: `${s.lunchKcal}`, note: 'kcal (35%)' },
-        { label: 'Tối', value: `${s.dinnerKcal}`, note: 'kcal (30%)' },
-        { label: 'Snack', value: `${s.snackKcal}`, note: 'kcal (10%)' },
-        { label: 'Tổng', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal/ngày' },
+      <PersonalizedBar panelId="b4" color="#06b6d4" label="Phân Bổ Dinh Dưỡng Theo Bữa" source="B0 + B1 + B2 + B3" items={[
+        { label: '🌅 Sáng', value: `${s.breakfastKcal}`, note: `${s.breakfastProteinG}g P · ${s.breakfastCarbG}g C`, tip: `25% tổng kcal = ${s.breakfastKcal} kcal. Protein: ${s.breakfastProteinG}g, Carb: ${s.breakfastCarbG}g. Bữa sáng khởi động trao đổi chất, ổn định đường huyết cả buổi sáng. Ví dụ: ${Math.round(s.breakfastProteinG/0.13)}g trứng + ${Math.round(s.breakfastCarbG/0.7)}g bánh mì đen.` },
+        { label: '☀️ Trưa', value: `${s.lunchKcal}`, note: `${s.lunchProteinG}g P · ${s.lunchCarbG}g C`, tip: `35% tổng kcal = ${s.lunchKcal} kcal. Protein: ${s.lunchProteinG}g, Carb: ${s.lunchCarbG}g. Bữa lớn nhất vì cơ thể cần năng lượng cho buổi chiều. Carb nhiều nhất ở đây để não và cơ hoạt động hiệu quả.` },
+        { label: '🌙 Tối', value: `${s.dinnerKcal}`, note: `${s.dinnerProteinG}g P · ${s.dinnerCarbG}g C`, tip: `30% tổng kcal = ${s.dinnerKcal} kcal. Protein: ${s.dinnerProteinG}g, Carb: ${s.dinnerCarbG}g. Giảm carb hơn bữa trưa vì ít vận động về tối. Tăng rau xanh và protein để no lâu qua đêm mà không nặng bụng.` },
+        { label: '🍎 Snack', value: `${s.snackKcal}`, note: `${s.snackProteinG}g P`, tip: `10% tổng kcal = ${s.snackKcal} kcal, ${s.snackProteinG}g protein. Ăn giữa các bữa chính để tránh đói, ổn định đường huyết và tránh ăn quá nhiều ở bữa kế tiếp. Ví dụ: 1 hũ sữa chua + 1 nắm hạt.` },
+        { label: 'Tổng/ngày', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal', tip: `Tổng từ 4 bữa: ${s.breakfastKcal} + ${s.lunchKcal} + ${s.dinnerKcal} + ${s.snackKcal} = ${s.targetKcal.toLocaleString()} kcal. Sai số ±100 kcal/ngày là bình thường — quan trọng là trung bình tuần gần đúng mục tiêu.` },
       ]} />
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Thực Đơn Mẫu 3 Ngày — Người Mới</p>
 
@@ -1657,11 +1674,12 @@ function TrackingPanel({ s }) {
 
   return (
     <div className="space-y-5">
-      <PersonalizedBar color="#a855f7" items={[
-        { label: 'Protein cần đạt', value: `${s.proteinG}g`, note: '/ngày' },
-        { label: 'Nước uống', value: `${s.waterMl}ml`, note: `(${Math.round(s.waterMl/250)} ly)` },
-        { label: 'Calo mục tiêu', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal' },
-        { label: 'Chất xơ', value: `${s.fiberG}g`, note: '/ngày' },
+      <PersonalizedBar panelId="b5" color="#a855f7" source="B0 → B1 → B2 → B3 → B4" items={[
+        { label: 'Protein/ngày', value: `${s.proteinG}g`, note: 'mục tiêu', tip: `${s.proteinG}g/ngày = ${(s.proteinG/s.weight).toFixed(1)}g × ${s.weight}kg. Đây là mục tiêu ưu tiên số 1 — đạt đủ protein mỗi ngày quan trọng hơn đếm calo. Phân đều: sáng ${s.breakfastProteinG}g · trưa ${s.lunchProteinG}g · tối ${s.dinnerProteinG}g · snack ${s.snackProteinG}g.` },
+        { label: 'Nước uống', value: `${s.waterMl}ml`, note: `${Math.round(s.waterMl/250)} ly 250ml`, tip: `${s.waterMl}ml = ${s.weight}kg × 35ml/kg. Mất nước 1–2% thể trọng làm giảm hiệu suất tập luyện 10–20%. Uống đều trong ngày, không uống ồ ạt 1 lần. Tăng thêm khi tập hoặc trời nóng.` },
+        { label: 'Bước chân', value: `${s.dailySteps.toLocaleString()}`, note: 'bước/ngày', tip: `Mục tiêu bước chân tương ứng mức hoạt động ${s.activity.label} của bạn. Mỗi 1000 bước thêm ≈ 40–50 kcal. ${s.dailySteps.toLocaleString()} bước ≈ ${Math.round(s.dailySteps/1400)}km đi bộ mỗi ngày.` },
+        { label: 'Tập luyện', value: `${s.weeklyWorkoutMins}`, note: 'phút/tuần', tip: `${s.weeklyWorkoutMins} phút/tuần tương ứng mức hoạt động ${s.activity.label}. WHO khuyến nghị tối thiểu 150 phút vừa hoặc 75 phút mạnh/tuần cho sức khỏe tim mạch. Phân đều thành ${s.trainingDays > 0 ? s.trainingDays : 3} buổi tốt hơn dồn vào 1–2 buổi dài.` },
+        { label: 'Kcal mục tiêu', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal/ngày', tip: `Con số cần kiểm tra hàng tuần: nếu cân không thay đổi theo kỳ vọng sau 2 tuần, điều chỉnh ±100–200 kcal. Cân vào buổi sáng sau khi đi vệ sinh, cùng ngày mỗi tuần để có kết quả nhất quán.` },
       ]} />
       {/* Section heading */}
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">5 Chủ Đề Theo Dõi</p>
@@ -1984,11 +2002,11 @@ function SevenDayPanel({ s }) {
 
   return (
     <div className="space-y-8">
-      <PersonalizedBar color="#ec4899" items={[
-        { label: 'Mục tiêu mỗi ngày', value: `${s.targetKcal.toLocaleString()} kcal` },
-        { label: 'Protein', value: `${s.proteinG}g`, note: '/ngày' },
-        { label: 'Carb', value: `${s.carbG}g`, note: '/ngày' },
-        { label: 'Fat', value: `${s.fatG}g`, note: '/ngày' },
+      <PersonalizedBar panelId="b6" color="#ec4899" source="B0 → B1 → B2 → B3 → B4 → B5" items={[
+        { label: 'Ngày tập', value: `${s.trainingDayKcal.toLocaleString()} kcal`, note: `${s.trainingDays} ngày/tuần`, tip: `Ngày tập: TDEE (${s.tdee.toLocaleString()}) + 100 kcal = ${s.trainingDayKcal.toLocaleString()} kcal. Tăng nhẹ để bù năng lượng cho buổi tập và hỗ trợ phục hồi. Carb nên tăng lên ~${s.trainingDayCarb}g vào ngày tập.` },
+        { label: 'Ngày nghỉ', value: `${s.restDayKcal.toLocaleString()} kcal`, note: `${s.restDays} ngày/tuần`, tip: `Ngày nghỉ: TDEE (${s.tdee.toLocaleString()}) - 100 kcal = ${s.restDayKcal.toLocaleString()} kcal. Nhu cầu thấp hơn vì không tập. Có thể giảm carb xuống ~${s.restDayCarb}g và tăng rau xanh để no mà không thừa calo.` },
+        { label: 'Tổng tuần', value: `${s.weeklyKcalTotal.toLocaleString()}`, note: 'kcal/7 ngày', tip: `${s.trainingDayKcal} × ${s.trainingDays} ngày tập + ${s.restDayKcal} × ${s.restDays} ngày nghỉ = ${s.weeklyKcalTotal.toLocaleString()} kcal/tuần. Tổng tuần quan trọng hơn từng ngày — có thể linh hoạt ±200 kcal/ngày miễn tổng tuần đúng mục tiêu.` },
+        { label: 'Protein/ngày', value: `${s.proteinG}g`, note: 'cả tập & nghỉ', tip: `Duy trì ${s.proteinG}g protein cả ngày tập và ngày nghỉ. Ngày nghỉ protein quan trọng không kém ngày tập — cơ thể phục hồi và tổng hợp cơ chủ yếu vào các ngày nghỉ.` },
       ]} />
       {/* Day selector */}
       <div className="overflow-x-auto scrollbar-none -mx-1 px-1">
@@ -2114,11 +2132,13 @@ function SevenDayPanel({ s }) {
 function AdvancedPanel({ s }) {
   return (
     <div className="space-y-10">
-      <PersonalizedBar color="#f59e0b" label="Macro Theo Thể Trạng Của Bạn" items={[
-        { label: 'Protein nền', value: `${s.proteinG}g`, note: `${(s.proteinG / s.weight).toFixed(1)}g/kg` },
-        { label: 'Ngày nặng', value: `${Math.round(s.proteinG * 1.15)}g`, note: 'protein (+15%)' },
-        { label: 'Ngày nhẹ', value: `${Math.round(s.proteinG * 0.85)}g`, note: 'protein (-15%)' },
-        { label: 'TDEE base', value: `${s.tdee.toLocaleString()}`, note: 'kcal' },
+      <PersonalizedBar panelId="b7" color="#f59e0b" label="Macro Cá Nhân Hóa Theo Loại Buổi Tập" source="B0 → B1 → ... → B6 (Toàn Bộ)" items={[
+        { label: 'Protein nặng', value: `${s.heavyDayProteinG}g`, note: `${(s.heavyDayProteinG/s.weight).toFixed(1)}g/kg`, tip: `Ngày tập nặng (squat, deadlift, bench): ${s.heavyDayProteinG}g = ${s.weight}kg × ${(s.heavyDayProteinG/s.weight).toFixed(1)}g/kg. Tăng 10–20% so với protein nền (${s.proteinG}g) để hỗ trợ phục hồi và tổng hợp cơ sau stress cao.` },
+        { label: 'Protein nhẹ', value: `${s.lightDayProteinG}g`, note: `${(s.lightDayProteinG/s.weight).toFixed(1)}g/kg`, tip: `Ngày tập nhẹ hoặc nghỉ: ${s.lightDayProteinG}g = ${s.weight}kg × ${(s.lightDayProteinG/s.weight).toFixed(1)}g/kg. Giảm nhẹ so với protein nền nhưng không nên xuống dưới 1.4g/kg để không mất cơ.` },
+        { label: 'Carb ngày nặng', value: `${s.heavyDayCarbG}g`, note: '+40% vs nền', tip: `Ngày tập nặng cần ${s.heavyDayCarbG}g carb (= ${s.carbG}g × 1.4). Tăng carb để nạp đủ glycogen cho buổi tập cường độ cao. Phân bổ: ~${s.preWorkoutCarbG}g trước tập, phần còn lại rải đều.` },
+        { label: 'Carb ngày nhẹ', value: `${s.lightDayCarbG}g`, note: '-40% vs nền', tip: `Ngày nghỉ hoặc tập nhẹ chỉ cần ${s.lightDayCarbG}g carb (= ${s.carbG}g × 0.6). Giảm carb ngày nghỉ giúp tổng calo tuần đúng mục tiêu mà vẫn có carb cao cho ngày tập quan trọng.` },
+        { label: 'Pre-workout carb', value: `${s.preWorkoutCarbG}g`, note: '30–60 phút trước', tip: `${s.preWorkoutCarbG}g carb ≈ 15% lượng carb ngày nặng (${s.heavyDayCarbG}g). Ăn 30–60 phút trước tập: chuối, bánh gạo, hoặc cơm nhỏ. Cung cấp glucose tức thì cho não và cơ, cải thiện hiệu suất 5–10%.` },
+        { label: 'Post-workout P', value: `${s.postWorkoutProteinG}g`, note: 'trong 2h sau tập', tip: `${s.postWorkoutProteinG}g = ${s.weight}kg × 0.3g/kg. Trong 2 giờ sau tập, cửa sổ tổng hợp protein mở rộng nhất. Kết hợp với ${s.postWorkoutCarbG}g carb (${s.weight}kg × 0.5g/kg) để tối ưu phục hồi glycogen và tổng hợp cơ.` },
       ]} />
       {/* Training day types */}
       <div>
@@ -2356,7 +2376,10 @@ export default function PillarB() {
   const [goalKey, setGoalKey]         = useState('recomp');
 
   const userStats = useMemo(() => {
+    // ── B0: Raw inputs
     const activity = ACTIVITY_LEVELS.find(a => a.key === activityKey) || ACTIVITY_LEVELS[2];
+
+    // ── B1: Foundation (from B0)
     const bmr = Math.round(sex === 'male'
       ? 10 * weight + 6.25 * height - 5 * age + 5
       : 10 * weight + 6.25 * height - 5 * age - 161);
@@ -2368,19 +2391,77 @@ export default function PillarB() {
     const carbG = Math.round((targetKcal - proteinG * 4 - fatG * 9) / 4);
     const waterMl = Math.round(weight * 35);
     const fiberG = sex === 'male' ? 38 : 25;
-    const kgPerWeek = parseFloat(((Math.abs(goal.delta) * 7) / 7700).toFixed(2));
+    const proteinPct = Math.round(proteinG * 4 / targetKcal * 100);
+    const fatPct = Math.round(fatG * 9 / targetKcal * 100);
+    const carbPct = 100 - proteinPct - fatPct;
+
+    // ── B2: Plate (from B1 macros)
+    const mealsPerDay = 3;
+    const perMealProteinG = Math.round(proteinG / mealsPerDay);
+    const perMealCarbG = Math.round(carbG / mealsPerDay);
+    const perMealFatG = Math.round(fatG / mealsPerDay);
+    const perMealKcal = Math.round(targetKcal / mealsPerDay);
+    const chickenG = Math.round(perMealProteinG / 0.31);
+    const riceG = Math.round(perMealCarbG / 0.28);
+    const oliveOilMl = Math.round(perMealFatG / 0.9);
+
+    // ── B3: Goals (from B2 plate sizes)
+    const weeklyKcalDelta = goal.delta * 7;
+    const kgPerWeek = parseFloat((Math.abs(weeklyKcalDelta) / 7700).toFixed(2));
+    const weeksTo5kg = kgPerWeek > 0 ? Math.round(5 / kgPerWeek) : null;
+    const weeksTo10kg = kgPerWeek > 0 ? Math.round(10 / kgPerWeek) : null;
+    const weeklyProteinG = proteinG * 7;
+    const weeklyKcalBudget = targetKcal * 7;
+
+    // ── B4: Meals (from B3 targets)
     const breakfastKcal = Math.round(targetKcal * 0.25);
     const lunchKcal = Math.round(targetKcal * 0.35);
     const dinnerKcal = Math.round(targetKcal * 0.30);
     const snackKcal = targetKcal - breakfastKcal - lunchKcal - dinnerKcal;
-    const proteinPct = Math.round((proteinG * 4 / targetKcal) * 100);
-    const fatPct = Math.round((fatG * 9 / targetKcal) * 100);
-    const carbPct = 100 - proteinPct - fatPct;
+    const breakfastProteinG = Math.round(proteinG * 0.25);
+    const lunchProteinG = Math.round(proteinG * 0.35);
+    const dinnerProteinG = Math.round(proteinG * 0.30);
+    const snackProteinG = proteinG - breakfastProteinG - lunchProteinG - dinnerProteinG;
+    const breakfastCarbG = Math.round(carbG * 0.25);
+    const lunchCarbG = Math.round(carbG * 0.40);
+    const dinnerCarbG = Math.round(carbG * 0.25);
+    const snackCarbG = carbG - breakfastCarbG - lunchCarbG - dinnerCarbG;
+
+    // ── B5: Tracking (from B4 meal plan)
+    const dailySteps = activityKey === 'sedentary' ? 6000 : activityKey === 'light' ? 8000 : activityKey === 'moderate' ? 10000 : activityKey === 'active' ? 12000 : 15000;
+    const weeklyWorkoutMins = activityKey === 'sedentary' ? 0 : activityKey === 'light' ? 90 : activityKey === 'moderate' ? 150 : activityKey === 'active' ? 300 : 450;
+
+    // ── B6: 7-Day (from B5 activity)
+    const trainingDays = activityKey === 'sedentary' ? 0 : activityKey === 'light' ? 2 : activityKey === 'moderate' ? 3 : activityKey === 'active' ? 5 : 6;
+    const restDays = 7 - trainingDays;
+    const trainingDayKcal = Math.round(targetKcal + (trainingDays > 0 ? 100 : 0));
+    const restDayKcal = Math.round(targetKcal - (trainingDays > 0 ? 100 : 0));
+    const weeklyKcalTotal = trainingDayKcal * trainingDays + restDayKcal * restDays;
+    const trainingDayCarb = Math.round(carbG * 1.2);
+    const restDayCarb = Math.round(carbG * 0.8);
+
+    // ── B7: Advanced (from B6 training plan)
+    const heavyDayProteinG = Math.round(weight * (goalKey === 'loss' ? 2.2 : 2.0));
+    const lightDayProteinG = Math.round(weight * (goalKey === 'loss' ? 1.8 : 1.6));
+    const heavyDayCarbG = Math.round(carbG * 1.4);
+    const lightDayCarbG = Math.round(carbG * 0.6);
+    const preWorkoutCarbG = Math.round(carbG * 0.15);
+    const postWorkoutProteinG = Math.round(weight * 0.3);
+    const postWorkoutCarbG = Math.round(weight * 0.5);
+
     return {
-      weight, height, age, sex, activity, bmr, tdee, goal, targetKcal,
-      proteinG, fatG, carbG, waterMl, fiberG, kgPerWeek,
+      weight, height, age, sex, activity, activityKey, goalKey,
+      bmr, tdee, goal, targetKcal,
+      proteinG, fatG, carbG, waterMl, fiberG, proteinPct, fatPct, carbPct,
+      mealsPerDay, perMealProteinG, perMealCarbG, perMealFatG, perMealKcal, chickenG, riceG, oliveOilMl,
+      weeklyKcalDelta, kgPerWeek, weeksTo5kg, weeksTo10kg, weeklyProteinG, weeklyKcalBudget,
       breakfastKcal, lunchKcal, dinnerKcal, snackKcal,
-      proteinPct, fatPct, carbPct,
+      breakfastProteinG, lunchProteinG, dinnerProteinG, snackProteinG,
+      breakfastCarbG, lunchCarbG, dinnerCarbG, snackCarbG,
+      dailySteps, weeklyWorkoutMins,
+      trainingDays, restDays, trainingDayKcal, restDayKcal, weeklyKcalTotal, trainingDayCarb, restDayCarb,
+      heavyDayProteinG, lightDayProteinG, heavyDayCarbG, lightDayCarbG,
+      preWorkoutCarbG, postWorkoutProteinG, postWorkoutCarbG,
     };
   }, [weight, height, age, sex, activityKey, goalKey]);
 

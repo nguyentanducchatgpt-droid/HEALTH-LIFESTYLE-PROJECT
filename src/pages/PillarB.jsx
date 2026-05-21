@@ -1032,7 +1032,7 @@ function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông
         {items.map((item, i) => (
           <div key={item.label} className="group/pbitem relative">
             {item.tip && (
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/pbitem:opacity-100 scale-90 group-hover/pbitem:scale-100 -translate-y-1 group-hover/pbitem:translate-y-0 transition-all duration-200 origin-bottom">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 z-50 pointer-events-none opacity-0 group-hover/pbitem:opacity-100 scale-90 group-hover/pbitem:scale-100 translate-y-1 group-hover/pbitem:translate-y-0 transition-all duration-200 origin-top">
                 <ThoughtBubble text={item.tip} idx={`${panelId}pb${i}`} color={color} />
               </div>
             )}

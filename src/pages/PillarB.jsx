@@ -55,6 +55,15 @@ const MANTRAS = [
 
 const TABS = [
   {
+    id: 'calc', label: 'Tính TDEE', short: 'B0',
+    color: '#8b5cf6', rgb: '139,92,246', frameClass: 'pb-frame-5',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+        <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/>
+      </svg>
+    ),
+  },
+  {
     id: 'foundation', label: 'Nền Tảng', short: 'B1',
     color: '#84cc16', rgb: '132,204,22', frameClass: 'pb-frame-0',
     icon: (
@@ -96,6 +105,24 @@ const TABS = [
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    ),
+  },
+  {
+    id: 'sevenday', label: '7 Ngày', short: 'B6',
+    color: '#ec4899', rgb: '236,72,153', frameClass: 'pb-frame-6',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+    ),
+  },
+  {
+    id: 'advanced', label: 'Nâng Cao', short: 'B7',
+    color: '#f59e0b', rgb: '245,158,11', frameClass: 'pb-frame-7',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
       </svg>
     ),
   },
@@ -555,6 +582,166 @@ const ADJUST_STEPS = [
   { n: '04', color: '#22c55e', text: 'Tập luyện đang tăng tải dần chưa? Progressive overload là chìa khóa' },
   { n: '05', color: '#06b6d4', text: 'Stress cao không? Cortisol cao kéo dài làm cơ thể giữ mỡ bụng cứng đầu' },
   { n: '06', color: '#84cc16', text: 'Kiên nhẫn: thay đổi thấy rõ cần 4–8 tuần — đừng đánh giá quá sớm' },
+];
+
+// ── B0: TDEE Calculator data ──
+const ACTIVITY_LEVELS = [
+  { key: 'sedentary',   label: 'Ít vận động',         mult: 1.2   },
+  { key: 'light',       label: 'Nhẹ (1–3 ngày/tuần)', mult: 1.375 },
+  { key: 'moderate',    label: 'Vừa (3–5 ngày/tuần)', mult: 1.55  },
+  { key: 'active',      label: 'Nhiều (6–7 ngày)',     mult: 1.725 },
+  { key: 'very_active', label: 'Rất nhiều / 2 buổi',  mult: 1.9   },
+];
+const GOAL_MODIFIERS = [
+  { key: 'loss',   label: 'Giảm mỡ',  delta: -400, color: '#f97316', note: 'Thâm hụt 300–500 kcal' },
+  { key: 'recomp', label: 'Duy trì',  delta:    0, color: '#84cc16', note: 'Ăn quanh TDEE ± 100'  },
+  { key: 'gain',   label: 'Tăng cơ',  delta: +250, color: '#22c55e', note: 'Thặng dư 150–300 kcal' },
+];
+const MEAL_SPLIT_RULES = [
+  { n: '1', title: 'Không bỏ bữa sáng',      desc: 'Bữa sáng kích hoạt trao đổi chất và ổn định đường huyết cả ngày.' },
+  { n: '2', title: 'Mỗi bữa có protein',      desc: 'Protein giúp no lâu, bảo vệ cơ và đốt thêm calo khi tiêu hóa.' },
+  { n: '3', title: 'Ăn rau trước carb',        desc: 'Rau làm chậm hấp thu đường, giảm đỉnh insulin sau bữa ăn.' },
+  { n: '4', title: 'Khoảng cách bữa hợp lý',  desc: 'Không nhịn quá 5 tiếng — tránh ăn bù quá nhiều ở bữa kế.' },
+  { n: '5', title: 'Bữa tối dễ tiêu',          desc: 'Giảm tinh bột buổi tối nếu không tập, tăng rau và protein.' },
+];
+
+// ── B6: 7-Day Meal Plan data ──
+const SEVEN_DAY_PLAN = [
+  {
+    day: 'Ngày 1', theme: 'Bắt đầu — Đủ bữa', color: '#84cc16',
+    meals: [
+      { time: 'Sáng',       items: ['Cháo yến mạch + sữa không đường', 'Trứng luộc ×2', 'Chuối nhỏ'], kcal: '~380', protein: '~20g' },
+      { time: 'Phụ sáng',  items: ['Sữa chua không đường'], kcal: '~80',  protein: '~5g'  },
+      { time: 'Trưa',       items: ['Cơm trắng', 'Cá kho tiêu', 'Rau cải luộc', 'Canh rau'], kcal: '~520', protein: '~30g' },
+      { time: 'Phụ chiều', items: ['1 quả táo hoặc ổi'], kcal: '~70',  protein: '~1g'  },
+      { time: 'Tối',        items: ['Ức gà luộc', 'Rau xào ít dầu', 'Khoai lang hấp'], kcal: '~420', protein: '~35g' },
+    ],
+    note: 'Đủ bữa, đủ đạm — không cần tính calo hôm nay.',
+  },
+  {
+    day: 'Ngày 2', theme: 'Sáng no lâu', color: '#22c55e',
+    meals: [
+      { time: 'Sáng',       items: ['Yến mạch rolled oats + sữa', 'Chuối + hạt chia', 'Trứng ốp la ×1'], kcal: '~420', protein: '~22g' },
+      { time: 'Phụ sáng',  items: ['Sữa đậu nành không đường'], kcal: '~90',  protein: '~6g'  },
+      { time: 'Trưa',       items: ['Cơm trắng', 'Gà luộc sả', 'Canh bí đỏ', 'Rau sống'], kcal: '~500', protein: '~35g' },
+      { time: 'Phụ chiều', items: ['Sữa chua + 1 quả cam'], kcal: '~120', protein: '~5g'  },
+      { time: 'Tối',        items: ['Bún tươi ít', 'Đậu hũ sốt cà', 'Rau thơm + giá', 'Soup nhẹ'], kcal: '~360', protein: '~20g' },
+    ],
+    note: 'Yến mạch sáng giúp no tới tận trưa, hạn chế thèm đường buổi xế.',
+  },
+  {
+    day: 'Ngày 3', theme: 'Ăn ngoài thông minh', color: '#06b6d4',
+    meals: [
+      { time: 'Sáng',         items: ['Bánh mì nguyên cám', 'Trứng ốp la', 'Cà chua + dưa leo', 'Sữa tươi'], kcal: '~420', protein: '~22g' },
+      { time: 'Trưa (ngoài)', items: ['Phở bò nạc', 'Thêm rau/giá', 'Ít bánh phở'], kcal: '~480', protein: '~30g' },
+      { time: 'Phụ chiều',   items: ['Hạt điều nhỏ + sữa chua'], kcal: '~130', protein: '~6g' },
+      { time: 'Tối',          items: ['Cơm gạo lứt nhỏ', 'Cá hấp gừng', 'Canh rau ngót', 'Dưa leo'], kcal: '~380', protein: '~28g' },
+    ],
+    note: 'Ăn ngoài: chọn đạm + rau + tinh bột vừa. Không uống nước ngọt.',
+  },
+  {
+    day: 'Ngày 4', theme: 'Ngày nhiều rau', color: '#10b981',
+    meals: [
+      { time: 'Sáng',       items: ['Sữa chua không đường', 'Yến mạch', 'Trái cây + hạt'], kcal: '~340', protein: '~18g' },
+      { time: 'Phụ sáng',  items: ['Trứng luộc ×1'], kcal: '~80', protein: '~6g' },
+      { time: 'Trưa',       items: ['Cơm vừa', 'Cá kho nhạt', 'Canh chua', 'Rau luộc ×2 phần'], kcal: '~490', protein: '~32g' },
+      { time: 'Phụ chiều', items: ['Ổi / thanh long'], kcal: '~70', protein: '~1g' },
+      { time: 'Tối',        items: ['Salad lớn: rau + trứng + gà', 'Khoai lang hoặc bắp'], kcal: '~380', protein: '~28g' },
+    ],
+    note: 'Ngày tăng chất xơ. Nếu đói tối, thêm đạm — không thêm bánh kẹo.',
+  },
+  {
+    day: 'Ngày 5', theme: 'Ngày tập luyện', color: '#f97316',
+    meals: [
+      { time: 'Sáng',       items: ['Cơm nhỏ / bánh mì nguyên cám', 'Trứng + rau'], kcal: '~380', protein: '~20g' },
+      { time: 'Trước tập',  items: ['1 quả chuối hoặc khoai nhỏ'], kcal: '~90', protein: '~1g' },
+      { time: 'Trưa',       items: ['Cơm + gà/cá/thịt nạc', 'Rau xào ít dầu', 'Canh'], kcal: '~520', protein: '~35g' },
+      { time: 'Phụ chiều', items: ['Sữa chua + trái cây'], kcal: '~130', protein: '~5g' },
+      { time: 'Tối',        items: ['Tôm / cá / gà', 'Nhiều rau', 'Cơm/khoai vừa'], kcal: '~440', protein: '~32g' },
+    ],
+    note: 'Ngày tập: không nhịn tinh bột. Carb đúng lúc cho năng lượng tập tốt hơn.',
+  },
+  {
+    day: 'Ngày 6', theme: 'Meal prep cuối tuần', color: '#a855f7',
+    meals: [
+      { time: 'Sáng',       items: ['Bún/phở gà nạc', 'Thêm rau giá', 'Không uống hết nước béo'], kcal: '~420', protein: '~28g' },
+      { time: 'Phụ sáng',  items: ['Trái cây'], kcal: '~70', protein: '~1g' },
+      { time: 'Trưa',       items: ['Cơm nhà: thịt/cá/đậu hũ', '2 loại rau', 'Canh'], kcal: '~500', protein: '~30g' },
+      { time: 'Phụ chiều', items: ['Hạt + sữa chua hoặc sữa'], kcal: '~130', protein: '~6g' },
+      { time: 'Tối',        items: ['Lẩu rau/nấm/đậu hũ/thịt nạc', 'Hạn chế viên thả lẩu'], kcal: '~400', protein: '~28g' },
+    ],
+    note: 'Chuẩn bị trước cho 2–3 ngày: trứng luộc, gà áp chảo, khoai hấp, cơm sẵn.',
+  },
+  {
+    day: 'Ngày 7', theme: 'Recovery — dễ tiêu', color: '#eab308',
+    meals: [
+      { time: 'Sáng',       items: ['Cháo yến mạch / cháo cá', 'Rau thơm'], kcal: '~300', protein: '~15g' },
+      { time: 'Phụ sáng',  items: ['1 quả trái cây'], kcal: '~70', protein: '~1g' },
+      { time: 'Trưa',       items: ['Cơm', 'Cá/đậu hũ', 'Canh rau', 'Rau luộc'], kcal: '~460', protein: '~28g' },
+      { time: 'Phụ chiều', items: ['Sữa chua không đường'], kcal: '~80', protein: '~5g' },
+      { time: 'Tối',        items: ['Trứng/đậu hũ/cá', 'Nhiều rau', 'Ít cơm/khoai'], kcal: '~350', protein: '~22g' },
+    ],
+    note: 'Ngày hồi phục: dễ tiêu, ngủ tốt, chuẩn bị tuần mới. Không ăn quá ít.',
+  },
+];
+const SHOPPING_GROUPS = [
+  { name: 'Đạm',           color: '#84cc16', items: ['Trứng 10–14 quả', 'Ức gà / đùi gà bỏ da', 'Cá basa / cá thu / cá hồi', 'Thịt nạc heo / bò', 'Tôm', 'Đậu hũ', 'Sữa chua không đường', 'Sữa tươi không đường'] },
+  { name: 'Tinh bột',      color: '#f97316', items: ['Gạo trắng / gạo lứt', 'Khoai lang', 'Yến mạch', 'Bánh mì nguyên cám', 'Bún / phở / miến'] },
+  { name: 'Rau',           color: '#22c55e', items: ['Cải xanh, cải thìa, rau muống', 'Dưa leo, cà chua, xà lách', 'Bí đỏ, cà rốt, nấm', 'Rau thơm, hành, giá đỗ'] },
+  { name: 'Trái cây',      color: '#06b6d4', items: ['Chuối', 'Táo', 'Cam / quýt', 'Ổi', 'Thanh long / đu đủ'] },
+  { name: 'Chất béo tốt', color: '#eab308', items: ['Hạt điều / hạnh nhân nhỏ', 'Dầu olive lượng nhỏ', 'Bơ đậu phộng ít đường', 'Mè / vừng'] },
+];
+const MEAL_PREP_STEPS = [
+  { icon: '🥚', text: 'Luộc 6–8 quả trứng để sẵn trong tủ', color: '#84cc16' },
+  { icon: '🍠', text: 'Hấp 4–6 củ khoai lang nhỏ', color: '#f97316' },
+  { icon: '🍗', text: 'Áp chảo / nướng 3–4 phần gà hoặc cá', color: '#22c55e' },
+  { icon: '🥦', text: 'Rửa, cắt sẵn rau sống đựng trong hộp', color: '#10b981' },
+  { icon: '🍚', text: 'Nấu sẵn 2–3 phần cơm đựng hộp kín', color: '#06b6d4' },
+  { icon: '🫙', text: 'Chuẩn bị 3 hộp snack: trái cây + sữa chua + hạt', color: '#a855f7' },
+];
+
+// ── B7: Advanced Performance data ──
+const TRAINING_DAY_TYPES = [
+  {
+    type: 'Rất nặng', sub: 'Double/Triple Training',
+    color: '#ef4444', bg: '#ef444410', border: '#ef444430',
+    kcal: '3.000–3.300', protein: '150–170g', carb: '380–460g', fat: '80–100g', water: '3–4.5L',
+    desc: 'Sáng đạp xe / chạy interval — chiều gym — tối bơi kỹ thuật.',
+  },
+  {
+    type: 'Nặng vừa', sub: 'Strength + Cardio',
+    color: '#f97316', bg: '#f9731610', border: '#f9731630',
+    kcal: '2.700–3.000', protein: '150–165g', carb: '320–400g', fat: '75–95g', water: '2.5–3.5L',
+    desc: 'Sáng gym lower / full body — chiều bơi 45–60ph hoặc chạy nhẹ 40ph.',
+  },
+  {
+    type: 'Sức bền dài', sub: 'Long Ride / Long Run',
+    color: '#eab308', bg: '#eab30810', border: '#eab30830',
+    kcal: '3.000–3.500', protein: '140–160g', carb: '430–550g', fat: '70–95g', water: '3.5–5L',
+    desc: 'Đạp xe 2–4 giờ / Chạy dài 75–120ph. Nạp 30–60g carb/giờ trong buổi.',
+  },
+  {
+    type: 'Hồi phục', sub: 'Recovery Day',
+    color: '#22c55e', bg: '#22c55e10', border: '#22c55e30',
+    kcal: '2.300–2.600', protein: '150–165g', carb: '220–300g', fat: '80–95g', water: '2–3L',
+    desc: 'Đi bộ / Đạp Zone 1–2 / Bơi thả lỏng / Mobility. Không cắt protein.',
+  },
+];
+const TIMING_SCHEDULE = [
+  { time: '05:30',       label: 'Trước đạp/chạy',   foods: 'Chuối + cà phê / sữa + nước', color: '#f97316' },
+  { time: '06:00–07:30', label: 'Trong buổi tập',    foods: 'Nước + điện giải + carb nếu >60 phút', color: '#eab308' },
+  { time: '08:00',       label: 'Sau buổi sáng',     foods: 'Cơm/yến mạch/bánh mì + trứng / sữa / gà', color: '#22c55e' },
+  { time: '12:00',       label: 'Bữa trưa',          foods: 'Cơm/khoai + thịt/cá/đậu + rau + canh', color: '#84cc16' },
+  { time: '15:30',       label: 'Trước gym/bơi',     foods: 'Sữa chua + trái cây hoặc bánh mì + trứng', color: '#06b6d4' },
+  { time: '18:30',       label: 'Sau tập chiều',      foods: 'Bữa tối đủ carb + protein nạc + rau', color: '#8b5cf6' },
+  { time: '21:30',       label: 'Trước ngủ',          foods: 'Sữa chua Hy Lạp / sữa / đậu hũ non nếu cần', color: '#a855f7' },
+];
+const ATHLETE_PRINCIPLES = [
+  { icon: '⚡', title: 'Periodized Nutrition',   desc: 'Ngày tập nặng ăn nhiều hơn, ngày nhẹ ăn vừa, ngày nghỉ vẫn đủ protein & vi chất.' },
+  { icon: '💪', title: 'Protein không cắt',      desc: 'Ngày recovery vẫn phải đủ protein 1.8–2.2g/kg — cơ phục hồi và xây dựng khi nghỉ.' },
+  { icon: '🔋', title: 'Carb là nhiên liệu',     desc: 'Sợ carb → tập hụt hơi, pace giảm, gym không tăng lực, dễ thèm ngọt tối.' },
+  { icon: '💧', title: 'Điện giải quan trọng',   desc: 'Mồ hôi nhiều → bổ sung natri + kali + magie, không chỉ uống nước lọc.' },
+  { icon: '😴', title: 'Ngủ = thuốc phục hồi',  desc: '7–9h mỗi đêm. Thiếu ngủ cản phục hồi cơ, tăng cortisol, giảm hiệu suất tập.' },
 ];
 
 // ─── Hooks ───────────────────────────────────────────────────────────────────
@@ -1422,6 +1609,408 @@ function TrackingPanel() {
 }
 
 
+// ─── CalcPanel (B0) — Interactive TDEE calculator ───────────────────────────
+function CalcPanel() {
+  const [weight, setWeight]       = useState(70);
+  const [height, setHeight]       = useState(170);
+  const [age, setAge]             = useState(30);
+  const [sex, setSex]             = useState('male');
+  const [activityKey, setActivityKey] = useState('moderate');
+  const [goalKey, setGoalKey]     = useState('recomp');
+
+  const activity = ACTIVITY_LEVELS.find(a => a.key === activityKey) || ACTIVITY_LEVELS[2];
+  const bmr = sex === 'male'
+    ? 10 * weight + 6.25 * height - 5 * age + 5
+    : 10 * weight + 6.25 * height - 5 * age - 161;
+  const tdee = Math.round(bmr * activity.mult);
+
+  const numInput = (val, set, min, max) => (
+    <div className="flex items-center gap-1">
+      <button
+        type="button"
+        onClick={() => set(v => Math.max(min, v - 1))}
+        className="w-7 h-7 rounded-lg border border-border/50 bg-white/[0.04] text-muted hover:text-text hover:border-violet-500/40 transition-all duration-150 flex items-center justify-center text-sm font-bold cursor-pointer"
+      >−</button>
+      <input
+        type="number"
+        min={min}
+        max={max}
+        value={val}
+        onChange={e => set(Math.max(min, Math.min(max, Number(e.target.value))))}
+        className="w-16 text-center bg-white/[0.04] border border-border/50 rounded-lg py-1 text-sm font-bold text-text focus:outline-none focus:border-violet-500/60"
+      />
+      <button
+        type="button"
+        onClick={() => set(v => Math.min(max, v + 1))}
+        className="w-7 h-7 rounded-lg border border-border/50 bg-white/[0.04] text-muted hover:text-text hover:border-violet-500/40 transition-all duration-150 flex items-center justify-center text-sm font-bold cursor-pointer"
+      >+</button>
+    </div>
+  );
+
+  return (
+    <div className="space-y-8">
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Left: inputs */}
+        <div className="space-y-5">
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Nhập Thông Số</p>
+
+          {/* Weight */}
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-muted">Cân nặng (kg)</span>
+            {numInput(weight, setWeight, 30, 200)}
+          </div>
+          {/* Height */}
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-muted">Chiều cao (cm)</span>
+            {numInput(height, setHeight, 100, 250)}
+          </div>
+          {/* Age */}
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-muted">Tuổi</span>
+            {numInput(age, setAge, 10, 100)}
+          </div>
+
+          {/* Sex toggle */}
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-muted">Giới tính</span>
+            <div className="flex gap-2">
+              {['male', 'female'].map(s => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => setSex(s)}
+                  className={`px-3 py-1 rounded-lg text-xs font-bold border transition-all duration-200 cursor-pointer ${
+                    sex === s
+                      ? 'bg-violet-500/15 border-violet-500/50 text-violet-300'
+                      : 'border-border/40 text-muted hover:border-border/70'
+                  }`}
+                >
+                  {s === 'male' ? 'Nam' : 'Nữ'}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Activity */}
+          <div>
+            <p className="text-xs text-muted mb-2">Mức hoạt động</p>
+            <div className="space-y-1.5">
+              {ACTIVITY_LEVELS.map(a => (
+                <button
+                  key={a.key}
+                  type="button"
+                  onClick={() => setActivityKey(a.key)}
+                  className={`w-full text-left px-3 py-2 rounded-xl text-[11px] border transition-all duration-200 cursor-pointer ${
+                    activityKey === a.key
+                      ? 'bg-violet-500/12 border-violet-500/45 text-violet-300'
+                      : 'border-border/35 text-muted hover:border-border/60 hover:text-text/80'
+                  }`}
+                >
+                  {a.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right: output */}
+        <div className="space-y-4">
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Kết Quả TDEE</p>
+
+          {/* TDEE display */}
+          <div className="rounded-2xl border border-violet-500/25 bg-violet-500/8 p-5 text-center">
+            <p className="text-[10px] text-muted mb-1 uppercase tracking-widest">TDEE ước tính</p>
+            <p className="text-4xl font-black" style={{ color: '#8b5cf6' }}>{tdee.toLocaleString()}</p>
+            <p className="text-xs text-muted mt-1">kcal / ngày</p>
+          </div>
+
+          {/* Goal cards */}
+          <div className="space-y-3">
+            {GOAL_MODIFIERS.map(g => {
+              const kcal = tdee + g.delta;
+              const proteinG = Math.round(weight * (g.key === 'loss' ? 2.0 : 1.8));
+              const fatG = Math.round(kcal * 0.25 / 9);
+              const carbG = Math.round((kcal - proteinG * 4 - fatG * 9) / 4);
+              const isActive = goalKey === g.key;
+              return (
+                <button
+                  key={g.key}
+                  type="button"
+                  onClick={() => setGoalKey(g.key)}
+                  className={`w-full text-left rounded-2xl border p-4 transition-all duration-200 cursor-pointer ${
+                    isActive ? 'border-current' : 'border-border/35 hover:border-border/60'
+                  }`}
+                  style={isActive ? { borderColor: `${g.color}50`, background: `${g.color}08` } : undefined}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-bold" style={{ color: g.color }}>{g.label}</span>
+                    <span className="text-xs font-black text-text">{kcal.toLocaleString()} kcal</span>
+                  </div>
+                  {isActive && (
+                    <div className="grid grid-cols-3 gap-2 mt-3">
+                      {[
+                        { k: 'Protein', v: `${proteinG}g` },
+                        { k: 'Carb', v: `${carbG}g` },
+                        { k: 'Fat', v: `${fatG}g` },
+                      ].map(item => (
+                        <div key={item.k} className="text-center rounded-lg p-2" style={{ background: `${g.color}10`, border: `1px solid ${g.color}25` }}>
+                          <p className="text-[9px] font-bold mb-0.5" style={{ color: g.color }}>{item.k}</p>
+                          <p className="text-[11px] font-black text-text">{item.v}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <p className="text-[10px] text-muted mt-2">{g.note}</p>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Meal split rules */}
+      <RevealBlock delay={100}>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">5 Nguyên Tắc Chia Bữa</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {MEAL_SPLIT_RULES.map(r => (
+            <div
+              key={r.n}
+              className="rounded-2xl border border-violet-500/15 bg-violet-500/5 p-4 hover:border-violet-500/30 transition-all duration-200"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-6 h-6 rounded-lg flex items-center justify-center text-[10px] font-black shrink-0" style={{ color: '#8b5cf6', background: '#8b5cf615', border: '1px solid #8b5cf630' }}>{r.n}</span>
+                <p className="text-xs font-bold text-text">{r.title}</p>
+              </div>
+              <p className="text-[11px] text-muted leading-relaxed">{r.desc}</p>
+            </div>
+          ))}
+        </div>
+      </RevealBlock>
+    </div>
+  );
+}
+
+// ─── SevenDayPanel (B6) ──────────────────────────────────────────────────────
+function SevenDayPanel() {
+  const [activeDay, setActiveDay]       = useState(0);
+  const [showShopping, setShowShopping] = useState(false);
+
+  const day = SEVEN_DAY_PLAN[activeDay];
+
+  return (
+    <div className="space-y-8">
+      {/* Day selector */}
+      <div className="overflow-x-auto scrollbar-none -mx-1 px-1">
+        <div className="flex gap-2 min-w-max">
+          {SEVEN_DAY_PLAN.map((d, i) => (
+            <button
+              key={d.day}
+              type="button"
+              onClick={() => setActiveDay(i)}
+              className={`px-3 py-2 rounded-xl text-xs font-bold border transition-all duration-200 whitespace-nowrap cursor-pointer ${
+                activeDay === i
+                  ? 'border-pink-500/50 text-pink-300'
+                  : 'border-border/40 text-muted hover:border-border/70 hover:text-text/80'
+              }`}
+              style={activeDay === i ? { background: '#ec489910' } : undefined}
+            >
+              <span className="font-black">{d.day.replace('Ngày ', 'N')}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Active day content */}
+      <div key={activeDay} className="animate-fade-in-up space-y-4">
+        {/* Theme badge */}
+        <div className="flex items-center gap-3">
+          <span
+            className="text-xs font-bold px-3 py-1 rounded-full border"
+            style={{ color: day.color, background: `${day.color}12`, borderColor: `${day.color}35` }}
+          >
+            {day.day} — {day.theme}
+          </span>
+        </div>
+
+        {/* Meals grid */}
+        <div className="space-y-3">
+          {day.meals.map((meal, i) => (
+            <div
+              key={meal.time}
+              className="rounded-2xl border border-border/35 bg-surface/10 overflow-hidden"
+            >
+              <div className="h-[1.5px]" style={{ background: `linear-gradient(90deg, ${day.color}80, transparent)` }} />
+              <div className="p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <span
+                    className="text-[10px] font-bold px-2.5 py-0.5 rounded-full border"
+                    style={{ color: day.color, background: `${day.color}12`, borderColor: `${day.color}35` }}
+                  >
+                    {meal.time}
+                  </span>
+                  <div className="flex gap-2">
+                    <span className="text-[10px] font-bold text-pink-300 bg-pink-500/8 border border-pink-500/20 px-2 py-0.5 rounded-lg">P {meal.protein}</span>
+                    <span className="text-[10px] font-bold text-orange-400 bg-orange-500/8 border border-orange-500/20 px-2 py-0.5 rounded-lg">{meal.kcal} kcal</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {meal.items.map(item => (
+                    <span key={item} className="text-[11px] text-text/80 bg-white/[0.04] border border-white/8 px-2 py-0.5 rounded-lg">{item}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Note */}
+        <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-3 flex items-start gap-2">
+          <span className="text-yellow-400 text-sm shrink-0">💡</span>
+          <p className="text-[11px] text-muted leading-relaxed">{day.note}</p>
+        </div>
+      </div>
+
+      {/* Shopping list */}
+      <RevealBlock delay={80}>
+        <button
+          type="button"
+          onClick={() => setShowShopping(s => !s)}
+          className="w-full flex items-center justify-between px-5 py-3 rounded-2xl border border-pink-500/20 bg-pink-500/5 hover:border-pink-500/35 transition-all duration-200 cursor-pointer"
+        >
+          <span className="text-sm font-bold text-pink-300">Danh Sách Mua Sắm Tuần</span>
+          <span className="text-muted text-lg transition-transform duration-200" style={{ transform: showShopping ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
+        </button>
+        {showShopping && (
+          <div className="mt-3 grid sm:grid-cols-2 gap-3 animate-fade-in-up">
+            {SHOPPING_GROUPS.map(g => (
+              <div key={g.name} className="rounded-2xl border p-4" style={{ borderColor: `${g.color}25`, background: `${g.color}06` }}>
+                <p className="text-xs font-bold mb-3" style={{ color: g.color }}>{g.name}</p>
+                <ul className="space-y-1">
+                  {g.items.map(item => (
+                    <li key={item} className="flex items-start gap-2 text-[11px] text-muted">
+                      <span className="shrink-0 font-bold mt-0.5" style={{ color: g.color }}>·</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+      </RevealBlock>
+
+      {/* Meal prep steps */}
+      <RevealBlock delay={120}>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Meal Prep Cuối Tuần — 6 Bước</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {MEAL_PREP_STEPS.map((s, i) => (
+            <div
+              key={i}
+              className="rounded-2xl border p-4 flex items-start gap-3 hover:scale-[1.02] transition-all duration-200"
+              style={{ borderColor: `${s.color}25`, background: `${s.color}06` }}
+            >
+              <span className="text-xl shrink-0">{s.icon}</span>
+              <p className="text-[11px] text-muted leading-relaxed">{s.text}</p>
+            </div>
+          ))}
+        </div>
+      </RevealBlock>
+    </div>
+  );
+}
+
+// ─── AdvancedPanel (B7) ──────────────────────────────────────────────────────
+function AdvancedPanel() {
+  return (
+    <div className="space-y-10">
+      {/* Training day types */}
+      <div>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Dinh Dưỡng Theo Loại Ngày Tập</p>
+        <div className="grid md:grid-cols-2 gap-4">
+          {TRAINING_DAY_TYPES.map(d => (
+            <RevealBlock key={d.type}>
+              <div
+                className="rounded-2xl p-5 border hover:scale-[1.01] transition-all duration-200"
+                style={{ borderColor: d.border, background: d.bg }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-sm font-black" style={{ color: d.color }}>{d.type}</span>
+                  <span
+                    className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                    style={{ color: d.color, background: `${d.color}15`, border: `1px solid ${d.color}30` }}
+                  >
+                    {d.sub}
+                  </span>
+                </div>
+                <p className="text-[11px] text-muted leading-relaxed mb-4">{d.desc}</p>
+                <div className="rounded-xl overflow-hidden border" style={{ borderColor: d.border }}>
+                  {[
+                    { k: 'Calo', v: d.kcal },
+                    { k: 'Protein', v: d.protein },
+                    { k: 'Carb', v: d.carb },
+                    { k: 'Fat', v: d.fat },
+                    { k: 'Nước', v: d.water },
+                  ].map((row, i) => (
+                    <div
+                      key={row.k}
+                      className="flex items-center justify-between px-3 py-2 text-[11px]"
+                      style={{ background: i % 2 === 0 ? `${d.color}06` : 'transparent' }}
+                    >
+                      <span className="text-muted font-medium">{row.k}</span>
+                      <span className="font-bold" style={{ color: d.color }}>{row.v}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </RevealBlock>
+          ))}
+        </div>
+      </div>
+
+      {/* Timing schedule */}
+      <RevealBlock delay={80}>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Lịch Nạp Dinh Dưỡng Trong Ngày Tập Đôi</p>
+        <div className="rounded-2xl border border-border/30 bg-surface/10 overflow-hidden">
+          {TIMING_SCHEDULE.map((t, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-4 px-5 py-4 border-b border-border/20 last:border-b-0 hover:bg-white/[0.02] transition-colors duration-150"
+            >
+              <div className="shrink-0 w-24 text-right">
+                <span className="text-[10px] font-black" style={{ color: t.color }}>{t.time}</span>
+              </div>
+              <div className="w-px self-stretch" style={{ background: `${t.color}40` }} />
+              <div className="flex-1">
+                <p className="text-xs font-bold text-text mb-0.5">{t.label}</p>
+                <p className="text-[11px] text-muted leading-relaxed">{t.foods}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </RevealBlock>
+
+      {/* Athlete principles */}
+      <RevealBlock delay={120}>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">5 Nguyên Tắc Vận Động Viên</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {ATHLETE_PRINCIPLES.map((p, i) => (
+            <div
+              key={i}
+              className="rounded-2xl border border-amber-500/15 bg-amber-500/5 p-4 hover:border-amber-500/30 transition-all duration-200"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xl">{p.icon}</span>
+                <p className="text-xs font-bold text-amber-300">{p.title}</p>
+              </div>
+              <p className="text-[11px] text-muted leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </RevealBlock>
+    </div>
+  );
+}
+
 // ─── MantraCard — 3D tilt + gleam sweep + mouse spotlight ────────────────────
 function MantraCard({ m, i }) {
   const ref  = useRef(null);
@@ -1647,6 +2236,9 @@ export default function PillarB() {
       .pb-frame-2 { background: conic-gradient(from var(--pbt2), rgba(249,115,22,0.28)  0deg, rgba(249,115,22,0.28)  353deg, rgba(249,115,22,0.55)  355deg, rgba(255,255,255,0.92) 358deg, rgba(249,115,22,0.55)  361deg, rgba(249,115,22,0.28)  363deg, rgba(249,115,22,0.28)  360deg); animation: pbt2Spin 3.8s linear infinite; }
       .pb-frame-3 { background: conic-gradient(from var(--pbt3), rgba(6,182,212,0.28)   0deg, rgba(6,182,212,0.28)   353deg, rgba(6,182,212,0.55)   355deg, rgba(255,255,255,0.92) 358deg, rgba(6,182,212,0.55)   361deg, rgba(6,182,212,0.28)   363deg, rgba(6,182,212,0.28)   360deg); animation: pbt3Spin 3.5s linear infinite; }
       .pb-frame-4 { background: conic-gradient(from var(--pbt4), rgba(168,85,247,0.28)  0deg, rgba(168,85,247,0.28)  353deg, rgba(168,85,247,0.55)  355deg, rgba(255,255,255,0.92) 358deg, rgba(168,85,247,0.55)  361deg, rgba(168,85,247,0.28)  363deg, rgba(168,85,247,0.28)  360deg); animation: pbt4Spin 4.2s linear infinite; }
+      .pb-frame-5 { background: conic-gradient(from var(--pbt0), rgba(139,92,246,0.28) 0deg, rgba(139,92,246,0.28) 353deg, rgba(139,92,246,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(139,92,246,0.55) 361deg, rgba(139,92,246,0.28) 363deg, rgba(139,92,246,0.28) 360deg); animation: pbt0Spin 3.7s linear infinite; }
+      .pb-frame-6 { background: conic-gradient(from var(--pbt1), rgba(236,72,153,0.28) 0deg, rgba(236,72,153,0.28) 353deg, rgba(236,72,153,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(236,72,153,0.55) 361deg, rgba(236,72,153,0.28) 363deg, rgba(236,72,153,0.28) 360deg); animation: pbt1Spin 4.6s linear infinite; }
+      .pb-frame-7 { background: conic-gradient(from var(--pbt2), rgba(245,158,11,0.28) 0deg, rgba(245,158,11,0.28) 353deg, rgba(245,158,11,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(245,158,11,0.55) 361deg, rgba(245,158,11,0.28) 363deg, rgba(245,158,11,0.28) 360deg); animation: pbt2Spin 3.9s linear infinite; }
     `;
     document.head.appendChild(s);
   }, []);
@@ -1671,11 +2263,14 @@ export default function PillarB() {
   }
 
   const PANELS = [
+    <CalcPanel key="calc" />,
     <FoundationPanel key="foundation" />,
     <PlatePanel key="plate" />,
     <GoalsPanel key="goals" />,
     <MealsPanel key="meals" />,
     <TrackingPanel key="tracking" />,
+    <SevenDayPanel key="sevenday" />,
+    <AdvancedPanel key="advanced" />,
   ];
 
   return (
@@ -1844,7 +2439,7 @@ export default function PillarB() {
           {/* Section label */}
           <div className="flex items-center gap-4 mb-5">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] whitespace-nowrap">5 chủ đề dinh dưỡng</p>
+            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] whitespace-nowrap">8 chủ đề dinh dưỡng</p>
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           </div>
 

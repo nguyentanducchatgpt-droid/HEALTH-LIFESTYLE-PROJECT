@@ -34,7 +34,27 @@
       "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"fitness training app\" --domain product)",
       "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"dark dashboard interactive timeline\" --domain style)",
       "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"energetic dynamic athletic\" --domain typography)",
-      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"health fitness\" --domain color)"
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"health fitness\" --domain color)",
+      "Bash(grep -E \"\\\\.\\(jsx|json\\)$\")",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"fitness progress tracker dashboard\" --domain product)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"progress steps achievement milestones\" --domain style)",
+      "Bash(python3 C:/Users/Admin/.claude/skills/ui-ux-pro-max/scripts/search.py \"health fitness interactive component\" --domain product)",
+      "Bash(python3 C:/Users/Admin/.claude/skills/ui-ux-pro-max/scripts/search.py \"dark glassmorphism progression staircase\" --domain style)",
+      "Bash(python3 \"C:/Users/Admin/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"health fitness\" --domain product)",
+      "Bash(awk -F'/' '{if \\($0 ~ /\\\\.jsx$|\\\\.js$|\\\\.ts$|\\\\.tsx$/\\) print \"code:\"$0}')",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"fitness health app\" --domain product)",
+      "Bash(python3 %USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py \"dark premium tabbed interface\" --domain style)",
+      "Bash(python3 \"%USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"nutrition meal plans health app\" --domain product)",
+      "Bash(python3 \"%USERPROFILE%/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"dark glassmorphism food health\" --domain style)",
+      "PowerShell(Get-Command python, python3, py 2>$null)",
+      "PowerShell(Get-Command py -ErrorAction SilentlyContinue)",
+      "Bash(python3 \"C:/Users/Admin/.claude/skills/ui-ux-pro-max/scripts/search.py\" \"health nutrition meal plan\" --domain product)",
+      "Read(//c/Users/Admin/Desktop/Projects/suckhoevadoisong/**)",
+      "Bash(python3 -c \"import docx; print\\('python-docx available'\\)\")",
+      "Bash(python3 -m pip install python-docx -q)",
+      "Bash(python3 -c \"import docx; print\\('installed'\\)\")",
+      "Bash(python -c \"import docx; print\\('python-docx available'\\)\")",
+      "Read(//c/Users/Admin/Desktop/**)"
     ]
   }
 }

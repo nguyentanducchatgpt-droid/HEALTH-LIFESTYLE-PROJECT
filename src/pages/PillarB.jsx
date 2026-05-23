@@ -2895,6 +2895,118 @@ function TrackingTabCard({ section, active, onClick }) {
   );
 }
 
+// ─── Checklist Item — 3D tilt + mouse-follow glow ────────────────────────────
+function ChecklistItem3D({ item, checked, onClick }) {
+  const ref = useRef(null);
+  const [hov, setHov] = useState(false);
+  const [gleam, setGleam] = useState(0);
+
+  const onMove = useCallback((e) => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top)  / r.height;
+    el.style.setProperty('--mx', `${Math.round(x * 100)}%`);
+    el.style.setProperty('--my', `${Math.round(y * 100)}%`);
+    el.style.setProperty('--tx', `${(x - 0.5) * -10}deg`);
+    el.style.setProperty('--ty', `${(y - 0.5) *   7}deg`);
+  }, []);
+
+  const onEnter = useCallback(() => { setHov(true); setGleam(g => g + 1); }, []);
+  const onLeave = useCallback(() => {
+    setHov(false);
+    const el = ref.current;
+    if (el) { el.style.setProperty('--tx', '0deg'); el.style.setProperty('--ty', '0deg'); }
+  }, []);
+
+  const c = item.color;
+
+  return (
+    <button
+      ref={ref}
+      type="button"
+      onClick={onClick}
+      onMouseMove={onMove}
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      className="relative flex items-center gap-3 p-3.5 rounded-xl border text-left cursor-pointer overflow-hidden"
+      style={{
+        borderColor: hov ? `${c}70` : checked ? `${c}45` : 'rgba(255,255,255,0.08)',
+        background: hov
+          ? `color-mix(in srgb, ${c} 9%, #0d0d0d)`
+          : checked
+            ? `${c}09`
+            : 'rgba(255,255,255,0.015)',
+        transform: 'perspective(500px) rotateY(var(--tx,0deg)) rotateX(var(--ty,0deg))',
+        transition: 'border-color 0.18s, background 0.18s, box-shadow 0.18s, transform 0.1s ease-out',
+        boxShadow: hov
+          ? `0 10px 28px rgba(0,0,0,0.45), 0 0 24px ${c}22, inset 0 1px 0 ${c}18`
+          : checked
+            ? `0 0 14px ${c}15`
+            : 'none',
+      }}
+    >
+      {/* Mouse-follow radial light */}
+      {hov && (
+        <div className="absolute inset-0 pointer-events-none rounded-xl z-0"
+          style={{ background: `radial-gradient(circle at var(--mx,50%) var(--my,50%), ${c}22 0%, transparent 65%)` }} />
+      )}
+
+      {/* Gleam streak on enter */}
+      <div key={gleam} className="absolute inset-0 pointer-events-none rounded-xl overflow-hidden z-0"
+        style={{ animation: gleam > 0 ? 'ci-gleam 0.55s ease-out forwards' : 'none' }}>
+        <div className="absolute top-0 bottom-0 w-8 -skew-x-12"
+          style={{ background: `linear-gradient(90deg, transparent, ${c}28, transparent)`, left: '-2rem', animation: gleam > 0 ? 'ci-streak 0.55s ease-out forwards' : 'none' }} />
+      </div>
+
+      {/* Check circle */}
+      <div className="relative z-10 shrink-0 transition-all duration-200"
+        style={{
+          width: '20px', height: '20px', borderRadius: '50%',
+          border: `2px solid ${checked ? c : hov ? `${c}90` : 'rgba(255,255,255,0.2)'}`,
+          background: checked ? c : 'transparent',
+          boxShadow: checked ? `0 0 10px ${c}60` : hov ? `0 0 8px ${c}35` : 'none',
+          transform: checked ? 'scale(1.1)' : hov ? 'scale(1.05)' : 'scale(1)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+        {checked && (
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '10px', height: '10px' }}>
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        )}
+      </div>
+
+      {/* Dot + label */}
+      <div className="relative z-10 flex items-center gap-2 flex-1 min-w-0">
+        <div className="rounded-full shrink-0 transition-all duration-200"
+          style={{
+            width: hov ? '9px' : '6px',
+            height: hov ? '9px' : '6px',
+            background: c,
+            boxShadow: hov ? `0 0 10px ${c}90` : checked ? `0 0 5px ${c}55` : 'none',
+            transition: 'width 0.2s, height 0.2s, box-shadow 0.2s',
+          }} />
+        <span style={{
+          fontSize: '11px',
+          lineHeight: '1.4',
+          fontWeight: hov && !checked ? 700 : 500,
+          color: checked
+            ? 'rgba(100,100,100,0.45)'
+            : hov
+              ? c
+              : 'rgba(160,160,160,0.85)',
+          textDecoration: checked ? 'line-through' : 'none',
+          textShadow: hov && !checked ? `0 0 14px ${c}90` : 'none',
+          transition: 'color 0.18s, text-shadow 0.18s, font-weight 0.18s',
+        }}>
+          {item.label}
+        </span>
+      </div>
+    </button>
+  );
+}
+
 // ─── Tracking Sub-Panels ──────────────────────────────────────────────────────
 
 const DAILY_SCIENCE = [
@@ -2961,20 +3073,7 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
           </div>
           <div className="grid sm:grid-cols-2 gap-2">
             {TRACKING_DAILY.map((item, i) => (
-              <button key={i} type="button" onClick={() => toggle(i)}
-                className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
-                  checked[i] ? 'border-lime-500/35 bg-lime-500/8' : 'border-border/35 bg-white/[0.02] hover:border-lime-500/20 hover:bg-lime-500/4'
-                }`}>
-                <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-200 ${checked[i] ? 'border-lime-400 bg-lime-500' : 'border-border/50'}`}>
-                  {checked[i] && (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  )}
-                </div>
-                <div className="flex items-center gap-2 flex-1 min-w-0">
-                  <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: item.color }} />
-                  <span className={`text-[11px] transition-colors leading-snug ${checked[i] ? 'line-through text-muted/50' : 'text-muted'}`}>{item.label}</span>
-                </div>
-              </button>
+              <ChecklistItem3D key={i} item={item} checked={!!checked[i]} onClick={() => toggle(i)} />
             ))}
           </div>
           {allDone && (
@@ -4493,6 +4592,12 @@ export default function PillarB() {
         18%  { opacity: 1; }
         80%  { opacity: 0.7; }
         100% { transform: translateX(320%) skewX(-12deg); opacity: 0; }
+      }
+      @keyframes ci-streak {
+        0%   { left: -2rem; opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 0.6; }
+        100% { left: calc(100% + 2rem); opacity: 0; }
       }
       @property --orbit-angle {
         syntax: '<angle>';

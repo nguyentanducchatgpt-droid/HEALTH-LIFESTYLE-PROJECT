@@ -2183,6 +2183,65 @@ const GOAL_ANALYSIS = {
   },
 };
 
+const GOAL_MEAL_ADAPTATIONS = {
+  'fat-loss': {
+    color: '#f97316',
+    label: '🔥 Giảm Mỡ',
+    headline: 'Điều chỉnh thực đơn cho mục tiêu Giảm Mỡ',
+    summary: 'Thâm hụt ~400 kcal. Tăng protein, giảm carb tinh, ưu tiên chất xơ và rau để no lâu hơn với ít calo hơn.',
+    tweaks: [
+      { meal: '🌅 Sáng', icon: '⬇️', text: 'Bỏ hoặc giảm cơm/bánh mì — thay bằng trứng + rau xào. Ưu tiên protein để no lâu.' },
+      { meal: '🍎 Snack', icon: '✅', text: 'Giữ snack nhẹ: 1 quả trứng luộc / hũ sữa chua Hy Lạp không đường. Tránh hoa quả nhiều đường.' },
+      { meal: '☀️ Trưa', icon: '⬇️', text: 'Giảm cơm 1/3 khẩu phần. Tăng rau hấp/luộc. Protein giữ nguyên hoặc tăng nhẹ.' },
+      { meal: '🍵 Snack xế', icon: '⬇️', text: 'Chỉ nên uống nước ấm / trà xanh không đường nếu không đói thật sự.' },
+      { meal: '🌙 Tối', icon: '⬆️', text: 'Không ăn carb sau 19h — chỉ protein + rau. Ức đùi gà hấp + salad rau + súp rong biển.' },
+    ],
+    note: 'Tổng kcal thực tế nên thấp hơn TDEE của bạn ~400 kcal. Điều chỉnh khẩu phần theo số tính từ B0.',
+  },
+  'muscle-gain': {
+    color: '#22c55e',
+    label: '💪 Tăng Cơ',
+    headline: 'Điều chỉnh thực đơn cho mục tiêu Tăng Cơ',
+    summary: 'Thặng dư ~250 kcal. Tăng carb chất lượng quanh buổi tập, giữ protein cao, đảm bảo 4–5 bữa protein/ngày.',
+    tweaks: [
+      { meal: '🌅 Sáng', icon: '⬆️', text: 'Thêm 1 bát cháo yến mạch hoặc 1 phần bánh mì nguyên cám. Uống sữa tươi hoặc protein shake.' },
+      { meal: '🍎 Snack sáng', icon: '⬆️', text: '1 nắm hạt hỗn hợp + 2 lát phô mai. Cung cấp chất béo tốt và protein cho buổi tập.' },
+      { meal: '☀️ Trưa', icon: '⬆️', text: 'Tăng cơm lên 1.5 bát. Thêm nguồn protein thứ 2: đậu phụ hoặc cá ngừ bên cạnh thịt.' },
+      { meal: '🍵 Snack xế', icon: '⬆️', text: 'Trước tập: chuối + 1 muỗng bơ đậu phộng / hoặc protein shake. Sau tập: sữa tươi không đường.' },
+      { meal: '🌙 Tối', icon: '⬆️', text: 'Vẫn cần carb vừa sau tập chiều. Cơm gạo lứt + thịt bò / ức gà + bông cải xào tỏi.' },
+    ],
+    note: 'Mỗi bữa cần ≥20g protein. Chia protein đều 4–5 bữa hiệu quả hơn gộp vào 1–2 bữa.',
+  },
+  'endurance': {
+    color: '#06b6d4',
+    label: '🚴 Sức Bền',
+    headline: 'Điều chỉnh thực đơn cho mục tiêu Sức Bền',
+    summary: 'Cân bằng calo. Tăng carb phức vào ngày tập nặng, bổ sung điện giải, protein vừa đủ để phục hồi cơ.',
+    tweaks: [
+      { meal: '🌅 Sáng', icon: '⬆️', text: 'Carb phức là ưu tiên số 1: cháo yến mạch + chuối + mật ong. Tránh đồ chiên rán nặng bụng.' },
+      { meal: '🍎 Snack sáng', icon: '✅', text: '1 gói nho khô / 1 miếng bánh nướng nguyên cám. Nạp nhanh glucose cho buổi tập dài.' },
+      { meal: '☀️ Trưa', icon: '⬆️', text: 'Bữa chính nhất: cơm gạo lứt đầy đủ + protein + rau đa dạng + canh điện giải (muối + kali).' },
+      { meal: '🍵 Snack xế', icon: '⬆️', text: 'Trong/sau tập dài >60 phút: uống nước điện giải + ăn 1 chuối mỗi 45 phút.' },
+      { meal: '🌙 Tối', icon: '✅', text: 'Phục hồi: protein nhẹ + carb phức nhỏ + nhiều rau. Sữa chua Hy Lạp + granola trước ngủ.' },
+    ],
+    note: 'Ngày thi/tập dài >90 phút: tăng carb thêm 20–30%. Không thử đồ mới trước ngày thi đấu.',
+  },
+  'maintenance': {
+    color: '#84cc16',
+    label: '⚖️ Duy Trì',
+    headline: 'Điều chỉnh thực đơn cho mục tiêu Duy Trì',
+    summary: 'Cân bằng TDEE. Tập trung vào chất lượng và đa dạng thực phẩm, linh hoạt 80/20, không cần đếm calo chặt chẽ.',
+    tweaks: [
+      { meal: '🌅 Sáng', icon: '✅', text: 'Bữa sáng đa dạng mỗi ngày: thay đổi giữa trứng / cháo / bún / phở. Giữ thói quen ăn sáng đúng giờ.' },
+      { meal: '🍎 Snack sáng', icon: '✅', text: '1 loại trái cây tươi theo mùa. Không cần tính calo — ưu tiên thực phẩm tự nhiên, ít chế biến.' },
+      { meal: '☀️ Trưa', icon: '✅', text: 'Bữa cơm đầy đủ. 80/20 rule: 80% lành mạnh, 20% linh hoạt (có thể ăn nhà hàng 1–2 lần/tuần).' },
+      { meal: '🍵 Snack xế', icon: '✅', text: 'Trà / cà phê đen / sữa chua. Ăn khi thật sự đói — không ăn vì thói quen hay buồn chán.' },
+      { meal: '🌙 Tối', icon: '✅', text: 'Tối nhẹ hơn trưa. Ít carb tinh, nhiều rau và protein. Tránh ăn khuya sau 21h.' },
+    ],
+    note: 'Cân 1 lần/tuần, cùng giờ, cùng điều kiện. Nếu cân tăng/giảm >2kg liên tục → điều chỉnh khẩu phần.',
+  },
+};
+
 function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [macroBars, setMacroBars] = useState([0, 0, 0]);
@@ -2504,11 +2563,12 @@ function b4MetricDetail(key, s) {
   return map[key] || null;
 }
 
-function MealsPanel({ s }) {
+function MealsPanel({ s, activeGoal = 'maintenance' }) {
   const [activeDay, setActiveDay] = useState(0);
   const [selectedMetric, setSelectedMetric] = useState(null);
   const detail = selectedMetric ? b4MetricDetail(selectedMetric, s) : null;
   const day = MEAL_DAYS[activeDay];
+  const adaptation = GOAL_MEAL_ADAPTATIONS[activeGoal] || GOAL_MEAL_ADAPTATIONS['maintenance'];
 
   return (
     <div>
@@ -2522,6 +2582,38 @@ function MealsPanel({ s }) {
         { key: 'daily_total', label: 'Tổng/ngày', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal', tip: `${s.breakfastKcal}+${s.lunchKcal}+${s.dinnerKcal}+${s.snackKcal} = ${s.targetKcal.toLocaleString()} kcal.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#06b6d4" onClose={() => setSelectedMetric(null)} />}
+
+      {/* ── Goal-adaptive meal guide ── */}
+      <div key={activeGoal} className="rounded-2xl border mb-6 overflow-hidden animate-fade-in-up"
+        style={{ borderColor: `${adaptation.color}30`, background: `${adaptation.color}05` }}>
+        <div className="h-[2px]" style={{ background: `linear-gradient(90deg, ${adaptation.color}99, transparent)` }} />
+        <div className="p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xs font-black px-2.5 py-0.5 rounded-full border"
+              style={{ color: adaptation.color, background: `${adaptation.color}12`, borderColor: `${adaptation.color}35` }}>
+              {adaptation.label}
+            </span>
+            <p className="text-[10px] font-bold text-text leading-snug">{adaptation.headline}</p>
+          </div>
+          <p className="text-[10px] text-muted leading-relaxed mb-3">{adaptation.summary}</p>
+          <div className="space-y-2">
+            {adaptation.tweaks.map((t, i) => (
+              <div key={i} className="flex items-start gap-2.5 rounded-xl p-2.5"
+                style={{ background: `${adaptation.color}08`, border: `1px solid ${adaptation.color}15` }}>
+                <span className="text-sm shrink-0 leading-none mt-0.5">{t.icon}</span>
+                <div>
+                  <span className="text-[10px] font-bold mr-1.5" style={{ color: adaptation.color }}>{t.meal}</span>
+                  <span className="text-[10px] text-muted leading-relaxed">{t.text}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-start gap-2 mt-3 rounded-xl p-2.5 border" style={{ borderColor: 'rgba(234,179,8,0.2)', background: 'rgba(234,179,8,0.05)' }}>
+            <span className="text-xs shrink-0">📌</span>
+            <p className="text-[10px] text-yellow-300/70 leading-relaxed">{adaptation.note}</p>
+          </div>
+        </div>
+      </div>
 
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Thực Đơn Mẫu 7 Ngày — Có Snack</p>
 
@@ -4225,7 +4317,7 @@ export default function PillarB() {
     <FoundationPanel key="foundation" s={userStats} onGoalKeyChange={handleGoalKeyChange} />,
     <PlatePanel key="plate" s={userStats} />,
     <GoalsPanel key="goals" s={userStats} activeGoal={activeGoal} onActiveGoalChange={handleActiveGoalChange} />,
-    <MealsPanel key="meals" s={userStats} />,
+    <MealsPanel key="meals" s={userStats} activeGoal={activeGoal} />,
     <TrackingPanel key="tracking" s={userStats} />,
     <SevenDayPanel key="sevenday" s={userStats} />,
     <AdvancedPanel key="advanced" s={userStats} />,

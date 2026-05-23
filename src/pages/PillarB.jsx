@@ -746,19 +746,24 @@ const SEVEN_DAY_PLAN = [
   },
 ];
 const SHOPPING_GROUPS = [
-  { name: 'Đạm',           color: '#84cc16', items: ['Trứng 10–14 quả', 'Ức gà / đùi gà bỏ da', 'Cá basa / cá thu / cá hồi', 'Thịt nạc heo / bò', 'Tôm', 'Đậu hũ', 'Sữa chua không đường', 'Sữa tươi không đường'] },
-  { name: 'Tinh bột',      color: '#f97316', items: ['Gạo trắng / gạo lứt', 'Khoai lang', 'Yến mạch', 'Bánh mì nguyên cám', 'Bún / phở / miến'] },
-  { name: 'Rau',           color: '#22c55e', items: ['Cải xanh, cải thìa, rau muống', 'Dưa leo, cà chua, xà lách', 'Bí đỏ, cà rốt, nấm', 'Rau thơm, hành, giá đỗ'] },
-  { name: 'Trái cây',      color: '#06b6d4', items: ['Chuối', 'Táo', 'Cam / quýt', 'Ổi', 'Thanh long / đu đủ'] },
-  { name: 'Chất béo tốt', color: '#eab308', items: ['Hạt điều / hạnh nhân nhỏ', 'Dầu olive lượng nhỏ', 'Bơ đậu phộng ít đường', 'Mè / vừng'] },
+  { name: 'Đạm', color: '#84cc16', tip: '~220.000₫',
+    items: ['Trứng 10–14 quả (~1 vỉ)', 'Ức gà / đùi gà bỏ da (400–500g)', 'Cá basa / cá thu / cá hồi (400g)', 'Thịt nạc heo hoặc bò (300g)', 'Tôm tươi (200g, tùy chọn)', 'Đậu hũ 2 miếng', 'Sữa chua không đường 4 hũ (400g)', 'Sữa tươi không đường (500ml)'] },
+  { name: 'Tinh bột', color: '#f97316', tip: '~80.000₫',
+    items: ['Gạo trắng / gạo lứt (1kg)', 'Khoai lang 4–6 củ (~600g)', 'Yến mạch rolled oats (250g)', 'Bánh mì nguyên cám 1 ổ', 'Bún / phở / miến (khi cần)'] },
+  { name: 'Rau', color: '#22c55e', tip: '~60.000₫',
+    items: ['Cải xanh, cải thìa, rau muống (3 bó)', 'Dưa leo 4 quả, cà chua 5–6 quả', 'Bí đỏ 1 quả nhỏ, cà rốt 2–3 củ', 'Nấm các loại (200g)', 'Rau thơm, hành lá, giá đỗ'] },
+  { name: 'Trái cây', color: '#06b6d4', tip: '~60.000₫',
+    items: ['Chuối 1 nải (~8 quả)', 'Táo 4–5 quả', 'Cam / quýt 4–5 quả', 'Ổi 3–4 quả', 'Thanh long / đu đủ (1 quả nhỏ)'] },
+  { name: 'Chất béo tốt', color: '#eab308', tip: '~70.000₫',
+    items: ['Hạt điều / hạnh nhân (100g)', 'Dầu olive hoặc dầu nành (250ml, dùng 3–4 tuần)', 'Bơ đậu phộng ít đường (1 hũ nhỏ)', 'Mè / vừng (50g)'] },
 ];
 const MEAL_PREP_STEPS = [
-  { icon: '🥚', text: 'Luộc 6–8 quả trứng để sẵn trong tủ', color: '#84cc16' },
-  { icon: '🍠', text: 'Hấp 4–6 củ khoai lang nhỏ', color: '#f97316' },
-  { icon: '🍗', text: 'Áp chảo / nướng 3–4 phần gà hoặc cá', color: '#22c55e' },
-  { icon: '🥦', text: 'Rửa, cắt sẵn rau sống đựng trong hộp', color: '#10b981' },
-  { icon: '🍚', text: 'Nấu sẵn 2–3 phần cơm đựng hộp kín', color: '#06b6d4' },
-  { icon: '🫙', text: 'Chuẩn bị 3 hộp snack: trái cây + sữa chua + hạt', color: '#a855f7' },
+  { icon: '🥚', text: 'Luộc 6–8 quả trứng để sẵn trong tủ', color: '#84cc16', tip: 'Để nguyên vỏ — bảo quản được 1 tuần trong tủ lạnh.' },
+  { icon: '🍠', text: 'Hấp 4–6 củ khoai lang nhỏ', color: '#f97316', tip: 'Hộp kín — để được 4–5 ngày. Ăn nóng hoặc nguội đều ổn.' },
+  { icon: '🍗', text: 'Áp chảo / nướng 3–4 phần gà hoặc cá', color: '#22c55e', tip: 'Ướp trước 30 phút — chia sẵn ~150g/hộp, bảo quản 3–4 ngày.' },
+  { icon: '🥦', text: 'Rửa, cắt sẵn rau sống đựng trong hộp', color: '#10b981', tip: 'Giấy bếp lót đáy hộp hút ẩm — rau tươi 3–4 ngày.' },
+  { icon: '🍚', text: 'Nấu sẵn 2–3 phần cơm đựng hộp kín', color: '#06b6d4', tip: 'Để nguội hoàn toàn trước khi đậy nắp — không bị ướt hơi.' },
+  { icon: '🫙', text: 'Chuẩn bị 3 hộp snack: trái cây + sữa chua + hạt', color: '#a855f7', tip: 'Chia sẵn 3 hộp cho T2–T4 = không đói khi ra ngoài.' },
 ];
 
 // ── B7: Advanced Performance data ──
@@ -4531,6 +4536,140 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
   );
 }
 
+// ─── B6 helpers ──────────────────────────────────────────────────────────────
+
+function getWeekPattern(trainingDays) {
+  const n = Math.min(7, Math.max(0, trainingDays));
+  const patterns = {
+    0: [0,0,0,0,0,0,0],
+    1: [0,0,0,1,0,0,0],
+    2: [1,0,0,0,1,0,0],
+    3: [1,0,1,0,1,0,0],
+    4: [1,0,1,0,1,1,0],
+    5: [1,1,1,0,1,1,0],
+    6: [1,1,1,1,1,1,0],
+    7: [1,1,1,1,1,1,1],
+  };
+  return (patterns[n] || patterns[4]).map(v => v ? 'training' : 'rest');
+}
+
+function WeeklyWaveChart({ s }) {
+  const pattern = getWeekPattern(s.trainingDays);
+  const W = 480, H = 90, PAD_T = 20, PAD_B = 42, PAD_LR = 22;
+  const slotW = (W - PAD_LR * 2) / 7;
+  const BAR_W = slotW * 0.55;
+  const maxKcal = s.trainingDayKcal;
+  const minKcal = s.restDayKcal;
+  const yRange = maxKcal - minKcal;
+  const safeRange = yRange > 0 ? yRange : 200;
+
+  const kcalFor = t => t === 'training' ? s.trainingDayKcal : s.restDayKcal;
+  const carbFor = t => t === 'training' ? s.trainingDayCarb : s.restDayCarb;
+  const yOf = kcal => PAD_T + H * (1 - (kcal - minKcal + safeRange * 0.1) / (safeRange * 1.2));
+
+  const pts = pattern.map((type, i) => ({
+    type, x: PAD_LR + slotW * i + slotW / 2,
+    kcal: kcalFor(type), carb: carbFor(type),
+  }));
+  const ys = pts.map(p => yOf(p.kcal));
+  const lineD = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${ys[i].toFixed(1)}`).join(' ');
+  const tdeeY = yOf(s.tdee);
+  const totalH = PAD_T + H + PAD_B;
+
+  return (
+    <svg viewBox={`0 0 ${W} ${totalH}`} width="100%" style={{ overflow: 'visible' }}>
+      <line x1={PAD_LR} y1={tdeeY} x2={W - PAD_LR} y2={tdeeY}
+        stroke="#ffffff18" strokeWidth="1" strokeDasharray="4 3" />
+      <text x={W - PAD_LR + 4} y={tdeeY + 3} fontSize="7" fill="#ffffff30">TDEE</text>
+      {pts.map((p, i) => (
+        <rect key={i} x={p.x - BAR_W / 2} y={ys[i]}
+          width={BAR_W} height={PAD_T + H - ys[i]}
+          fill={p.type === 'training' ? '#ec489916' : '#06b6d416'} rx="3" />
+      ))}
+      <path d={lineD} fill="none" stroke="#ec489945" strokeWidth="1.5" />
+      {pts.map((p, i) => (
+        <g key={i}>
+          <circle cx={p.x} cy={ys[i]} r={5} fill={p.type === 'training' ? '#ec489930' : '#06b6d430'} />
+          <circle cx={p.x} cy={ys[i]} r={2.5} fill={p.type === 'training' ? '#ec4899' : '#06b6d4'} />
+        </g>
+      ))}
+      {pts.map((p, i) => (
+        <text key={i} x={p.x} y={ys[i] - 9} textAnchor="middle"
+          fontSize="8" fontWeight="700" fill={p.type === 'training' ? '#ec4899cc' : '#06b6d4cc'}>
+          {(p.kcal / 1000).toFixed(1)}k
+        </text>
+      ))}
+      {pts.map((p, i) => (
+        <text key={i} x={p.x} y={PAD_T + H + 13} textAnchor="middle" fontSize="8" fill="#6b728088">N{i + 1}</text>
+      ))}
+      {pts.map((p, i) => (
+        <text key={i} x={p.x} y={PAD_T + H + 25} textAnchor="middle" fontSize="7.5"
+          fill={p.type === 'training' ? '#ec489968' : '#06b6d468'}>
+          {p.type === 'training' ? 'Tập' : 'Nghỉ'}
+        </text>
+      ))}
+      {pts.map((p, i) => (
+        <text key={i} x={p.x} y={PAD_T + H + 37} textAnchor="middle" fontSize="7"
+          fill={p.type === 'training' ? '#ec489948' : '#06b6d448'}>
+          {p.carb}g C
+        </text>
+      ))}
+    </svg>
+  );
+}
+
+function CarbCycleFormula({ s }) {
+  return (
+    <div className="grid grid-cols-3 gap-2">
+      <div className="rounded-xl border border-border/30 bg-surface/5 p-3">
+        <p className="text-[9px] font-bold text-muted uppercase tracking-widest mb-2">TDEE Nền</p>
+        <p className="text-xl font-black text-text leading-none">
+          {(s.tdee / 1000).toFixed(1)}<span className="text-xs font-normal text-muted">k</span>
+        </p>
+        <p className="text-[9px] text-muted mt-0.5">kcal/ngày</p>
+        <div className="mt-2.5 space-y-0.5">
+          {[['Protein', `${s.proteinG}g`], ['Carb', `${s.carbG}g`], ['Fat', `${s.fatG}g`]].map(([k, v]) => (
+            <div key={k} className="flex justify-between text-[9px]">
+              <span className="text-muted">{k}</span>
+              <span className="text-text/70 font-mono">{v}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="rounded-xl border border-pink-500/30 bg-pink-500/5 p-3">
+        <p className="text-[9px] font-bold text-pink-400 uppercase tracking-widest mb-2">Ngày Tập 🏋️</p>
+        <p className="text-xl font-black text-pink-300 leading-none">
+          {(s.trainingDayKcal / 1000).toFixed(1)}<span className="text-xs font-normal text-pink-400">k</span>
+        </p>
+        <p className="text-[9px] text-pink-400 mt-0.5">= TDEE + 100</p>
+        <div className="mt-2.5 space-y-0.5">
+          {[['Protein', `${s.proteinG}g`, '='], ['Carb', `${s.trainingDayCarb}g`, '↑+20%']].map(([k, v, tag]) => (
+            <div key={k} className="flex justify-between text-[9px]">
+              <span className="text-pink-400/70">{k}</span>
+              <span className="text-pink-300 font-mono">{v} <span className="text-pink-500/70">{tag}</span></span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-3">
+        <p className="text-[9px] font-bold text-cyan-400 uppercase tracking-widest mb-2">Ngày Nghỉ 🛋️</p>
+        <p className="text-xl font-black text-cyan-300 leading-none">
+          {(s.restDayKcal / 1000).toFixed(1)}<span className="text-xs font-normal text-cyan-400">k</span>
+        </p>
+        <p className="text-[9px] text-cyan-400 mt-0.5">= TDEE − 100</p>
+        <div className="mt-2.5 space-y-0.5">
+          {[['Protein', `${s.proteinG}g`, '='], ['Carb', `${s.restDayCarb}g`, '↓−20%']].map(([k, v, tag]) => (
+            <div key={k} className="flex justify-between text-[9px]">
+              <span className="text-cyan-400/70">{k}</span>
+              <span className="text-cyan-300 font-mono">{v} <span className="text-cyan-500/70">{tag}</span></span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function b6MetricDetail(key, s) {
   const map = {
     training_day: {
@@ -4597,6 +4736,7 @@ function SevenDayPanel({ s }) {
   const detail = selectedMetric ? b6MetricDetail(selectedMetric, s) : null;
 
   const day = SEVEN_DAY_PLAN[activeDay];
+  const weekPattern = getWeekPattern(s.trainingDays);
 
   return (
     <div className="space-y-8">
@@ -4609,42 +4749,118 @@ function SevenDayPanel({ s }) {
         { key: 'weekly_protein_b6', label: 'Protein/ngày', value: `${s.proteinG}g`, note: 'cả tập & nghỉ', tip: `Duy trì ${s.proteinG}g protein cả ngày tập và ngày nghỉ.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#ec4899" onClose={() => setSelectedMetric(null)} />}
+
+      {/* ── Nhịp Calo Tuần ── */}
+      <RevealBlock>
+        <div className="rounded-2xl border border-pink-500/18 bg-pink-500/4 p-5">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">Nhịp Calo Tuần</p>
+              <p className="text-sm font-bold text-text mt-0.5">
+                Carb Cycling — {s.trainingDays} ngày tập / {s.restDays} ngày nghỉ
+              </p>
+            </div>
+            <div className="flex gap-3 text-[10px] text-muted">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-pink-500 inline-block" />Tập
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-cyan-500 inline-block" />Nghỉ
+              </span>
+            </div>
+          </div>
+          <WeeklyWaveChart s={s} />
+
+          {/* Formula */}
+          <div className="mt-5">
+            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em] mb-3">Công Thức Tính Macro</p>
+            <CarbCycleFormula s={s} />
+          </div>
+
+          {/* Insight */}
+          <div className="mt-4 rounded-xl border border-yellow-500/15 bg-yellow-500/5 p-3 flex gap-2">
+            <span className="text-yellow-400 shrink-0 text-sm">💡</span>
+            <p className="text-[11px] text-muted leading-relaxed">
+              <span className="font-bold text-yellow-300">Carb Cycling:</span>{' '}
+              Protein không đổi ({s.proteinG}g) — chỉ điều chỉnh carb ±20% theo ngày.
+              Ngày tập: {s.trainingDayCarb}g carb nạp đầy glycogen cơ.
+              Ngày nghỉ: {s.restDayCarb}g carb khuyến khích đốt mỡ dự trữ.
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* ── Context image ── */}
+      <RevealBlock delay={40}>
+        <div className="rounded-2xl overflow-hidden h-40 relative border border-pink-500/15">
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700&q=75&auto=format&fit=crop"
+            alt="Meal prep containers"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/65 to-bg/20" />
+          <div className="absolute inset-0 flex flex-col justify-center p-5">
+            <p className="text-sm font-bold text-pink-300 mb-1">Meal Prep = Thành Công 70%</p>
+            <p className="text-[11px] text-muted/90 leading-relaxed max-w-xs">
+              Chuẩn bị sẵn 2–3 ngày thức ăn vào cuối tuần loại bỏ lý do "không biết ăn gì" —
+              quyết định đúng đắn nhất ngày thường là quyết định đã được lên kế hoạch từ trước.
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* Day selector */}
       <div className="overflow-x-auto scrollbar-none -mx-1 px-1">
         <div className="flex gap-2 min-w-max">
-          {SEVEN_DAY_PLAN.map((d, i) => (
-            <button
-              key={d.day}
-              type="button"
-              onClick={() => setActiveDay(i)}
-              className={`px-3 py-2 rounded-xl text-xs font-bold border transition-all duration-200 whitespace-nowrap cursor-pointer ${
-                activeDay === i
-                  ? 'border-pink-500/50 text-pink-300'
-                  : 'border-border/40 text-muted hover:border-border/70 hover:text-text/80'
-              }`}
-              style={activeDay === i ? { background: '#ec489910' } : undefined}
-            >
-              <span className="font-black">{d.day.replace('Ngày ', 'N')}</span>
-            </button>
-          ))}
+          {SEVEN_DAY_PLAN.map((d, i) => {
+            const dayType = weekPattern[i];
+            return (
+              <button
+                key={d.day}
+                type="button"
+                onClick={() => setActiveDay(i)}
+                className={`px-3 py-2 rounded-xl text-xs font-bold border transition-all duration-200 whitespace-nowrap cursor-pointer ${
+                  activeDay === i
+                    ? 'border-pink-500/50 text-pink-300'
+                    : 'border-border/40 text-muted hover:border-border/70 hover:text-text/80'
+                }`}
+                style={activeDay === i ? { background: '#ec489910' } : undefined}
+              >
+                <span className="font-black">{d.day.replace('Ngày ', 'N')}</span>
+                <span className="ml-1.5 text-[9px]" style={{ color: dayType === 'training' ? '#ec489980' : '#06b6d480' }}>
+                  {dayType === 'training' ? '🏋️' : '🌙'}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
       {/* Active day content */}
       <div key={activeDay} className="animate-fade-in-up space-y-4">
-        {/* Theme badge */}
-        <div className="flex items-center gap-3">
+        {/* Theme + day type badges */}
+        <div className="flex items-center gap-2 flex-wrap">
           <span
             className="text-xs font-bold px-3 py-1 rounded-full border"
             style={{ color: day.color, background: `${day.color}12`, borderColor: `${day.color}35` }}
           >
             {day.day} — {day.theme}
           </span>
+          {weekPattern[activeDay] === 'training' ? (
+            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full border border-pink-500/30 text-pink-400 bg-pink-500/8">
+              🏋️ Ngày Tập — {s.trainingDayKcal.toLocaleString()} kcal | Carb {s.trainingDayCarb}g
+            </span>
+          ) : (
+            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/8">
+              🌙 Ngày Nghỉ — {s.restDayKcal.toLocaleString()} kcal | Carb {s.restDayCarb}g
+            </span>
+          )}
         </div>
 
         {/* Meals grid */}
         <div className="space-y-3">
-          {day.meals.map((meal, i) => (
+          {day.meals.map((meal) => (
             <div
               key={meal.time}
               className="rounded-2xl border border-border/35 bg-surface/10 overflow-hidden"
@@ -4680,21 +4896,51 @@ function SevenDayPanel({ s }) {
         </div>
       </div>
 
+      {/* ── Công thức ước lượng thực phẩm ── */}
+      <RevealBlock delay={50}>
+        <div className="rounded-2xl border border-border/25 p-5 space-y-4">
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">Công Thức Ước Lượng Thực Phẩm</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { icon: '🥩', label: 'Thịt / Cá sống → Protein', formula: 'g thịt = Protein ÷ 0.22', example: `${s.proteinG}g protein → ~${Math.round(s.proteinG / 0.22)}g thịt`, color: '#84cc16' },
+              { icon: '🍚', label: 'Cơm chín → Carb', formula: 'g cơm = Carb ÷ 0.28', example: `${s.trainingDayCarb}g carb (ngày tập) → ~${Math.round(s.trainingDayCarb / 0.28)}g cơm`, color: '#f97316' },
+              { icon: '🥚', label: 'Trứng gà (1 quả ≈ 6g protein)', formula: 'Số quả = Protein ÷ 6', example: `${s.proteinG}g protein → ~${Math.round(s.proteinG / 6)} quả trứng/ngày`, color: '#eab308' },
+              { icon: '💧', label: 'Nước uống hằng ngày', formula: 'ml = Cân nặng × 35', example: `${s.weight}kg × 35 = ${(s.weight * 35 / 1000).toFixed(1)}L nước/ngày`, color: '#06b6d4' },
+            ].map(({ icon, label, formula, example, color }) => (
+              <div key={label} className="rounded-xl border p-3.5 flex gap-3" style={{ borderColor: `${color}20`, background: `${color}06` }}>
+                <span className="text-2xl shrink-0 leading-none mt-0.5">{icon}</span>
+                <div>
+                  <p className="text-xs font-bold text-text/80 mb-1">{label}</p>
+                  <p className="text-[10px] text-muted font-mono mb-1.5">{formula}</p>
+                  <p className="text-[10px] font-bold" style={{ color }}>{example}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* Shopping list */}
       <RevealBlock delay={80}>
         <button
           type="button"
-          onClick={() => setShowShopping(s => !s)}
+          onClick={() => setShowShopping(prev => !prev)}
           className="w-full flex items-center justify-between px-5 py-3 rounded-2xl border border-pink-500/20 bg-pink-500/5 hover:border-pink-500/35 transition-all duration-200 cursor-pointer"
         >
-          <span className="text-sm font-bold text-pink-300">Danh Sách Mua Sắm Tuần</span>
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-bold text-pink-300">Danh Sách Mua Sắm Tuần</span>
+            <span className="text-[10px] text-muted border border-border/30 rounded-full px-2 py-0.5">~490.000₫/tuần</span>
+          </div>
           <span className="text-muted text-lg transition-transform duration-200" style={{ transform: showShopping ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
         </button>
         {showShopping && (
           <div className="mt-3 grid sm:grid-cols-2 gap-3 animate-fade-in-up">
             {SHOPPING_GROUPS.map(g => (
               <div key={g.name} className="rounded-2xl border p-4" style={{ borderColor: `${g.color}25`, background: `${g.color}06` }}>
-                <p className="text-xs font-bold mb-3" style={{ color: g.color }}>{g.name}</p>
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-xs font-bold" style={{ color: g.color }}>{g.name}</p>
+                  {g.tip && <span className="text-[9px] text-muted">{g.tip}</span>}
+                </div>
                 <ul className="space-y-1">
                   {g.items.map(item => (
                     <li key={item} className="flex items-start gap-2 text-[11px] text-muted">
@@ -4713,14 +4959,19 @@ function SevenDayPanel({ s }) {
       <RevealBlock delay={120}>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Meal Prep Cuối Tuần — 6 Bước</p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {MEAL_PREP_STEPS.map((s, i) => (
+          {MEAL_PREP_STEPS.map((step, i) => (
             <div
               key={i}
-              className="rounded-2xl border p-4 flex items-start gap-3 hover:scale-[1.02] transition-all duration-200"
-              style={{ borderColor: `${s.color}25`, background: `${s.color}06` }}
+              className="rounded-2xl border p-4 flex flex-col gap-2 hover:scale-[1.02] transition-all duration-200"
+              style={{ borderColor: `${step.color}25`, background: `${step.color}06` }}
             >
-              <span className="text-xl shrink-0">{s.icon}</span>
-              <p className="text-[11px] text-muted leading-relaxed">{s.text}</p>
+              <div className="flex items-start gap-2">
+                <span className="text-xl shrink-0">{step.icon}</span>
+                <p className="text-[11px] text-muted leading-relaxed">{step.text}</p>
+              </div>
+              {step.tip && (
+                <p className="text-[10px] leading-relaxed pl-7" style={{ color: `${step.color}99` }}>{step.tip}</p>
+              )}
             </div>
           ))}
         </div>

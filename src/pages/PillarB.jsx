@@ -2896,144 +2896,418 @@ function TrackingTabCard({ section, active, onClick }) {
 }
 
 // ─── Tracking Sub-Panels ──────────────────────────────────────────────────────
+
+const DAILY_SCIENCE = [
+  {
+    icon: '💪', color: '#84cc16',
+    title: 'Protein → TEF cao nhất',
+    formula: 'TEF protein = 25–30% kcal nạp vào',
+    text: 'Mỗi 100g protein nạp vào → cơ thể đốt thêm 25–30 kcal ngay khi tiêu hóa. Ăn đủ protein = đốt calo liên tục suốt ngày, không cần tập thêm.',
+  },
+  {
+    icon: '🌿', color: '#22c55e',
+    title: 'Chất xơ → no lâu tự nhiên',
+    formula: '2 phần rau ≈ 6–10g chất xơ/ngày',
+    text: 'Mục tiêu: 25–35g chất xơ/ngày. Chất xơ làm chậm hấp thu đường → ổn định insulin → giảm thèm ăn xế chiều. Rau củ chứa 3–5g chất xơ/100g.',
+  },
+  {
+    icon: '💧', color: '#06b6d4',
+    title: 'Nước → hiệu suất não & cơ',
+    formula: 'Thiếu 1–2% nước → giảm 10–15% sức mạnh',
+    text: 'Nước tiểu vàng nhạt như nước chanh nhạt = đủ nước. Vàng đậm = thiếu. Uống 1 ly ngay khi thức dậy, 1 ly trước mỗi bữa, 1 ly sau tập.',
+  },
+  {
+    icon: '🧮', color: '#a855f7',
+    title: 'Vi điều chỉnh — không đại tu',
+    formula: 'Không tiến bộ 2 tuần → ±100–150 kcal',
+    text: '"Đều quan trọng hơn hoàn hảo." 70–80% kế hoạch trong 6 tháng luôn tốt hơn 100% trong 7 ngày rồi bỏ. Chỉ thay đổi 1 biến tại một thời điểm.',
+  },
+];
+
+const DAILY_FORMULAS = [
+  { label: 'Protein mục tiêu', formula: 'Cân nặng (kg) × 1.6–2.0', unit: 'g/ngày', color: '#84cc16', example: 'VD: 70kg × 1.8 = 126g/ngày' },
+  { label: 'Nước uống', formula: 'Cân nặng (kg) × 35ml', unit: 'ml/ngày', color: '#06b6d4', example: 'VD: 70kg × 35 = 2,450ml = ~10 ly' },
+  { label: 'Kcal tối thiểu', formula: 'TDEE − 500 kcal', unit: 'kcal/ngày', color: '#f97316', example: 'Không nên ăn dưới TDEE − 500' },
+  { label: 'Số bữa protein', formula: '4–5 bữa, mỗi bữa ≥20g', unit: 'bữa/ngày', color: '#a855f7', example: 'Phân đều tốt hơn dồn 1–2 bữa' },
+];
+
 function DailyChecklistContent({ checked, toggle, checkedCount }) {
   const allDone = checkedCount === TRACKING_DAILY.length;
-  return (
-    <div className="rounded-2xl border border-lime-500/20 bg-lime-500/4 overflow-hidden">
-      <div className="h-[2px] bg-gradient-to-r from-lime-500/70 via-lime-500/20 to-transparent" />
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-xl bg-lime-500/12 border border-lime-500/30 flex items-center justify-center text-sm">✅</div>
-            <span className="text-sm font-bold text-text">Checklist Hàng Ngày</span>
-          </div>
-          <span className="text-xs font-black text-lime-400 bg-lime-500/10 border border-lime-500/25 px-2.5 py-0.5 rounded-full">
-            {checkedCount}/{TRACKING_DAILY.length}
-          </span>
-        </div>
-        <div className="h-1.5 bg-white/5 rounded-full overflow-hidden mb-5">
-          <div
-            className="h-full rounded-full transition-all duration-700"
-            style={{
-              width: `${(checkedCount / TRACKING_DAILY.length) * 100}%`,
-              background: 'linear-gradient(90deg, #84cc16, #22c55e)',
-              boxShadow: '0 0 8px rgba(132,204,22,0.4)',
-            }}
-          />
-        </div>
+  const scorePct = Math.round((checkedCount / TRACKING_DAILY.length) * 100);
+  const scoreLabel = scorePct === 100 ? 'Hoàn hảo 🏆' : scorePct >= 71 ? 'Tốt ✅' : scorePct >= 43 ? 'Khá 📈' : 'Đang xây dựng 🌱';
+  const scoreColor = scorePct === 100 ? '#84cc16' : scorePct >= 71 ? '#22c55e' : scorePct >= 43 ? '#06b6d4' : '#f97316';
 
-        <div className="grid sm:grid-cols-2 gap-2">
-          {TRACKING_DAILY.map((item, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => toggle(i)}
-              className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-200 cursor-pointer group/ci ${
-                checked[i]
-                  ? 'border-lime-500/35 bg-lime-500/8'
-                  : 'border-border/35 bg-white/[0.02] hover:border-lime-500/20 hover:bg-lime-500/4'
-              }`}
-            >
-              <div
-                className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-200 ${
-                  checked[i] ? 'border-lime-400 bg-lime-500' : 'border-border/50'
-                }`}
-              >
-                {checked[i] && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                )}
+  return (
+    <div className="space-y-4">
+      {/* ── Checklist card ── */}
+      <div className="rounded-2xl border border-lime-500/20 bg-lime-500/4 overflow-hidden">
+        <div className="h-[2px] bg-gradient-to-r from-lime-500/70 via-lime-500/20 to-transparent" />
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-lime-500/12 border border-lime-500/30 flex items-center justify-center text-sm">✅</div>
+              <span className="text-sm font-bold text-text">Checklist Hàng Ngày</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: scoreColor, background: `${scoreColor}12`, border: `1px solid ${scoreColor}30` }}>{scoreLabel}</span>
+              <span className="text-xs font-black text-lime-400 bg-lime-500/10 border border-lime-500/25 px-2.5 py-0.5 rounded-full">
+                {checkedCount}/{TRACKING_DAILY.length}
+              </span>
+            </div>
+          </div>
+          <div className="h-1.5 bg-white/5 rounded-full overflow-hidden mb-5">
+            <div className="h-full rounded-full transition-all duration-700"
+              style={{ width: `${scorePct}%`, background: 'linear-gradient(90deg, #84cc16, #22c55e)', boxShadow: '0 0 8px rgba(132,204,22,0.4)' }} />
+          </div>
+          <div className="grid sm:grid-cols-2 gap-2">
+            {TRACKING_DAILY.map((item, i) => (
+              <button key={i} type="button" onClick={() => toggle(i)}
+                className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
+                  checked[i] ? 'border-lime-500/35 bg-lime-500/8' : 'border-border/35 bg-white/[0.02] hover:border-lime-500/20 hover:bg-lime-500/4'
+                }`}>
+                <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-200 ${checked[i] ? 'border-lime-400 bg-lime-500' : 'border-border/50'}`}>
+                  {checked[i] && (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="w-2.5 h-2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  )}
+                </div>
+                <div className="flex items-center gap-2 flex-1 min-w-0">
+                  <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: item.color }} />
+                  <span className={`text-[11px] transition-colors leading-snug ${checked[i] ? 'line-through text-muted/50' : 'text-muted'}`}>{item.label}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+          {allDone && (
+            <div className="mt-5 flex items-center gap-3 bg-lime-500/10 border border-lime-500/25 rounded-xl px-4 py-3">
+              <span className="text-xl">🎉</span>
+              <p className="text-sm font-bold text-lime-300">Hoàn thành! Thói quen nhỏ mỗi ngày tạo nên kết quả lớn.</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* ── Contextual image ── */}
+      <div className="relative rounded-2xl overflow-hidden h-36">
+        <img
+          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=75&fit=crop"
+          alt="Healthy meal prep"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/40 to-transparent" />
+        <div className="absolute inset-0 p-5 flex flex-col justify-center">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lime-400/80 mb-1">Triết lý cốt lõi</p>
+          <p className="text-sm font-black text-text leading-snug max-w-xs">"Ăn tốt hơn hôm qua một chút,<br/>đủ dễ để ngày mai còn làm tiếp."</p>
+          <p className="text-[10px] text-muted/70 mt-1.5">70% nhất quán trong 6 tháng &gt; 100% trong 7 ngày</p>
+        </div>
+      </div>
+
+      {/* ── Science behind each habit ── */}
+      <div>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Khoa Học Đằng Sau</p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {DAILY_SCIENCE.map((item, i) => (
+            <div key={i} className="rounded-2xl border p-4 hover:scale-[1.01] transition-all duration-200"
+              style={{ borderColor: `${item.color}25`, background: `${item.color}06` }}>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-lg">{item.icon}</span>
+                <p className="text-xs font-bold leading-snug" style={{ color: item.color }}>{item.title}</p>
               </div>
-              <div className="flex items-center gap-2 flex-1 min-w-0">
-                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: item.color }} />
-                <span className={`text-[11px] transition-colors leading-snug ${checked[i] ? 'line-through text-muted/50' : 'text-muted'}`}>
-                  {item.label}
-                </span>
+              <div className="text-[9px] font-bold px-2 py-1 rounded-lg mb-2 font-mono"
+                style={{ color: item.color, background: `${item.color}12`, border: `1px solid ${item.color}20` }}>
+                📐 {item.formula}
               </div>
-            </button>
+              <p className="text-[10px] text-muted leading-relaxed">{item.text}</p>
+            </div>
           ))}
         </div>
+      </div>
 
-        {allDone && (
-          <div className="mt-5 flex items-center gap-3 bg-lime-500/10 border border-lime-500/25 rounded-xl px-4 py-3">
-            <span className="text-xl">🎉</span>
-            <p className="text-sm font-bold text-lime-300">Hoàn thành! Thói quen nhỏ mỗi ngày tạo nên kết quả lớn.</p>
-          </div>
-        )}
+      {/* ── Quick formula reference ── */}
+      <div>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Công Thức Tham Khảo Nhanh</p>
+        <div className="grid grid-cols-2 gap-2">
+          {DAILY_FORMULAS.map((f, i) => (
+            <div key={i} className="rounded-xl border p-3" style={{ borderColor: `${f.color}22`, background: `${f.color}05` }}>
+              <p className="text-[9px] text-muted mb-1">{f.label}</p>
+              <p className="text-[10px] font-black font-mono mb-1" style={{ color: f.color }}>{f.formula}</p>
+              <p className="text-[8px] text-muted/60 leading-snug">{f.example}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
+
+const WEEKLY_PROTOCOL = [
+  { step: '1', icon: '⏰', color: '#06b6d4', title: 'Cùng ngày, cùng giờ', text: 'Cân mỗi tuần 1 lần vào buổi sáng, sau vệ sinh, trước ăn sáng. Cùng ngày trong tuần (VD: thứ Hai).' },
+  { step: '2', icon: '⚖️', color: '#84cc16', title: 'Trung bình 3 buổi', text: 'Đo 3 buổi liên tiếp (T2, T3, T4 sáng) → lấy giá trị trung bình. Giảm nhiễu do muối/nước giữ lại.' },
+  { step: '3', icon: '📏', color: '#f97316', title: 'Đo vòng eo đúng điểm', text: 'Ngang rốn, thở ra nhẹ, không hút bụng. Đo 2 lần lấy trung bình. Biến đổi vòng eo đáng tin hơn cân số.' },
+  { step: '4', icon: '📓', color: '#a855f7', title: 'Ghi vào 1 nơi cố định', text: 'App Notes / Google Sheets / sổ tay. Ghi: cân nặng + vòng eo + năng lượng 1–10 + ngủ mấy tiếng.' },
+];
+
+const WEEKLY_THRESHOLDS = [
+  { metric: 'Cân nặng', icon: '⚖️', color: '#84cc16',
+    ok:   { range: '±1kg/tuần',         label: 'Bình thường',    color: '#84cc16' },
+    good: { range: '−0.3–0.5kg/tuần',   label: 'Giảm mỡ đúng tốc độ', color: '#22c55e' },
+    warn: { range: '−1kg+/tuần',         label: 'Quá nhanh → mất cơ', color: '#f97316' },
+  },
+  { metric: 'Vòng eo', icon: '📏', color: '#06b6d4',
+    ok:   { range: 'Không đổi 2 tuần',  label: 'Tái đánh giá kế hoạch', color: '#84cc16' },
+    good: { range: '−0.5–1cm/tuần',     label: 'Tiến bộ rõ ràng', color: '#22c55e' },
+    warn: { range: 'Tăng liên tục',      label: 'Ăn thừa / stress cao', color: '#f97316' },
+  },
+  { metric: 'Năng lượng', icon: '⚡', color: '#f97316',
+    ok:   { range: '6–7/10',            label: 'Trong vùng an toàn', color: '#84cc16' },
+    good: { range: '8–10/10',           label: 'Chế độ đang phù hợp', color: '#22c55e' },
+    warn: { range: '<5/10 ≥3 ngày',     label: 'Thiếu calo/ngủ/phục hồi', color: '#f97316' },
+  },
+];
 
 function WeeklyMetricsContent() {
   return (
-    <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/4 overflow-hidden">
-      <div className="h-[2px] bg-gradient-to-r from-cyan-500/70 via-cyan-500/20 to-transparent" />
-      <div className="p-6">
-        <div className="flex items-center gap-2 mb-5">
-          <div className="w-7 h-7 rounded-xl bg-cyan-500/12 border border-cyan-500/30 flex items-center justify-center text-sm">📊</div>
-          <span className="text-sm font-bold text-text">Theo Dõi Hàng Tuần</span>
-          <span className="ml-auto text-[10px] text-cyan-400/70 font-medium">Đo mỗi tuần 1 lần</span>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-3">
-          {TRACKING_WEEKLY_RICH.map((item, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 p-3.5 rounded-xl border transition-all duration-200 hover:scale-[1.02] cursor-default"
-              style={{
-                borderColor: `${item.color}30`,
-                background: `${item.color}07`,
-              }}
-            >
-              <span className="text-xl shrink-0 mt-0.5">{item.icon}</span>
-              <div className="min-w-0">
-                <p className="text-xs font-bold leading-snug" style={{ color: item.color }}>{item.label}</p>
-                <p className="text-[10px] text-muted mt-0.5 mb-2">{item.sub}</p>
-                <div
-                  className="text-[10px] leading-relaxed px-2 py-1.5 rounded-lg"
-                  style={{ background: `${item.color}10`, color: `${item.color}cc`, border: `1px solid ${item.color}20` }}
-                >
-                  💡 {item.tip}
+    <div className="space-y-4">
+      {/* ── Main metric cards ── */}
+      <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/4 overflow-hidden">
+        <div className="h-[2px] bg-gradient-to-r from-cyan-500/70 via-cyan-500/20 to-transparent" />
+        <div className="p-6">
+          <div className="flex items-center gap-2 mb-5">
+            <div className="w-7 h-7 rounded-xl bg-cyan-500/12 border border-cyan-500/30 flex items-center justify-center text-sm">📊</div>
+            <span className="text-sm font-bold text-text">Theo Dõi Hàng Tuần</span>
+            <span className="ml-auto text-[10px] text-cyan-400/70 font-medium">Đo mỗi tuần 1 lần</span>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {TRACKING_WEEKLY_RICH.map((item, i) => (
+              <div key={i} className="flex items-start gap-3 p-3.5 rounded-xl border transition-all duration-200 hover:scale-[1.02] cursor-default"
+                style={{ borderColor: `${item.color}30`, background: `${item.color}07` }}>
+                <span className="text-xl shrink-0 mt-0.5">{item.icon}</span>
+                <div className="min-w-0">
+                  <p className="text-xs font-bold leading-snug" style={{ color: item.color }}>{item.label}</p>
+                  <p className="text-[10px] text-muted mt-0.5 mb-2">{item.sub}</p>
+                  <div className="text-[10px] leading-relaxed px-2 py-1.5 rounded-lg"
+                    style={{ background: `${item.color}10`, color: `${item.color}cc`, border: `1px solid ${item.color}20` }}>
+                    💡 {item.tip}
+                  </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Contextual image ── */}
+      <div className="relative rounded-2xl overflow-hidden h-36">
+        <img
+          src="https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=900&q=75&fit=crop"
+          alt="Tracking progress"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/50 to-transparent" />
+        <div className="absolute inset-0 p-5 flex flex-col justify-center">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400/80 mb-1">Nguyên tắc vàng</p>
+          <p className="text-sm font-black text-text leading-snug max-w-xs">Đo trung bình 3 buổi sáng liên tiếp — không đánh giá bởi 1 con số duy nhất.</p>
+          <p className="text-[10px] text-muted/70 mt-1.5">Cân nặng biến động ±1–2kg/ngày là bình thường do muối & nước</p>
+        </div>
+      </div>
+
+      {/* ── Measurement protocol ── */}
+      <div>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Giao Thức Đo Chuẩn</p>
+        <div className="grid sm:grid-cols-2 gap-2">
+          {WEEKLY_PROTOCOL.map((p, i) => (
+            <div key={i} className="flex items-start gap-3 p-3.5 rounded-xl border"
+              style={{ borderColor: `${p.color}22`, background: `${p.color}05` }}>
+              <div className="w-7 h-7 rounded-xl flex items-center justify-center text-xs font-black shrink-0"
+                style={{ color: p.color, background: `${p.color}15`, border: `1px solid ${p.color}30` }}>
+                {p.step}
+              </div>
+              <div>
+                <p className="text-[11px] font-bold mb-0.5" style={{ color: p.color }}>{p.icon} {p.title}</p>
+                <p className="text-[10px] text-muted leading-relaxed">{p.text}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* ── Result interpretation ── */}
+      <div>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Giải Đọc Kết Quả</p>
+        <div className="space-y-2">
+          {WEEKLY_THRESHOLDS.map((t, i) => (
+            <div key={i} className="rounded-2xl border p-4 overflow-hidden" style={{ borderColor: `${t.color}20`, background: `${t.color}04` }}>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-base">{t.icon}</span>
+                <p className="text-xs font-bold" style={{ color: t.color }}>{t.metric}</p>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {[t.ok, t.good, t.warn].map((band, j) => (
+                  <div key={j} className="rounded-xl p-2.5 text-center" style={{ background: `${band.color}10`, border: `1px solid ${band.color}22` }}>
+                    <p className="text-[10px] font-black font-mono mb-1" style={{ color: band.color }}>{band.range}</p>
+                    <p className="text-[9px] text-muted leading-snug">{band.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── 4-week mini test ── */}
+      <div className="rounded-2xl border border-yellow-500/20 bg-yellow-500/4 p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-base">🧪</span>
+          <p className="text-xs font-bold text-yellow-300">Test 4 Tuần — Đánh Giá Tiến Bộ Thực Sự</p>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-2 text-[10px] text-muted">
+          {[
+            { week: 'Tuần 1–2', text: 'Thiết lập baseline. Ghi nhận cân nặng, vòng eo, mức năng lượng. Không thay đổi gì — chỉ quan sát.', color: '#84cc16' },
+            { week: 'Tuần 3–4', text: 'Áp dụng kế hoạch đầy đủ. So sánh với baseline. Chỉ điều chỉnh nếu sau 2 tuần không có thay đổi.', color: '#06b6d4' },
+          ].map((w, i) => (
+            <div key={i} className="rounded-xl p-3 border" style={{ borderColor: `${w.color}20`, background: `${w.color}07` }}>
+              <p className="font-black text-[10px] mb-1" style={{ color: w.color }}>{w.week}</p>
+              <p className="leading-relaxed">{w.text}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-[9px] text-yellow-300/60 mt-3 flex items-start gap-1.5">
+          <span>📌</span>
+          <span>Công thức: "Điều chỉnh 1 biến, chờ 2 tuần, đo lại." Không thay đổi nhiều thứ cùng lúc — không biết yếu tố nào đang tác động.</span>
+        </p>
+      </div>
     </div>
   );
 }
 
+const ADJUST_DECISION = [
+  {
+    condition: 'Cân không giảm sau 2 tuần đầy đủ',
+    icon: '⚖️', color: '#f97316',
+    action: 'Giảm 100–150 kcal/ngày. Không cắt 500 kcal ngay.',
+    formula: 'Calo mới = TDEE hiện tại − 150 kcal',
+    note: 'Cắt quá nhiều = mất cơ + mệt + không bền.',
+  },
+  {
+    condition: 'Năng lượng <5/10 liên tục ≥3 ngày',
+    icon: '⚡', color: '#eab308',
+    action: 'Tăng carb buổi sáng và trước tập. Kiểm tra ngủ.',
+    formula: '+50g carb phức (yến mạch / chuối) trước tập 30–60 phút',
+    note: 'Thiếu carb khi tập cường độ cao = kiệt sức sớm.',
+  },
+  {
+    condition: 'Cân giảm nhưng vòng eo không giảm',
+    icon: '📏', color: '#a855f7',
+    action: 'Tăng protein → 2g/kg. Giảm carb lỏng, kiểm tra ngủ & stress.',
+    formula: 'Cortisol cao (stress/thiếu ngủ) → giữ mỡ bụng dai dẳng',
+    note: 'Cardio thấp cường độ đều đặn (đi bộ nhanh 30 phút/ngày) giúp nhiều hơn bạn nghĩ.',
+  },
+  {
+    condition: 'Cơ không phát triển sau 4 tuần',
+    icon: '💪', color: '#22c55e',
+    action: 'Kiểm tra: tải tăng mỗi tuần chưa? Calo đủ chưa? Ngủ 7–9h chưa?',
+    formula: 'Calo tăng cơ = TDEE + 150–250 kcal. Protein = 1.8–2.0g/kg',
+    note: 'Không có progressive overload → cơ không có lý do để lớn.',
+  },
+];
+
+const NON_SCALE_VICTORIES = [
+  { icon: '🧘', text: 'Ngủ ngon hơn, dễ vào giấc hơn', color: '#a855f7' },
+  { icon: '⚡', text: 'Năng lượng buổi chiều ổn định hơn', color: '#eab308' },
+  { icon: '💪', text: 'Tập được nhiều hơn hoặc nặng hơn tuần trước', color: '#22c55e' },
+  { icon: '🍽️', text: 'Ít thèm đồ ngọt / đồ chiên hơn', color: '#f97316' },
+  { icon: '🧠', text: 'Tập trung và tâm trạng tốt hơn', color: '#06b6d4' },
+  { icon: '👕', text: 'Quần áo rộng hơn ở eo / bắp tay căng hơn', color: '#84cc16' },
+];
+
 function AdjustmentContent() {
   return (
-    <div className="rounded-2xl border border-orange-500/20 bg-orange-500/4 overflow-hidden">
-      <div className="h-[2px] bg-gradient-to-r from-orange-500/70 via-orange-500/20 to-transparent" />
-      <div className="p-6">
-        <div className="flex items-center gap-2 mb-5">
-          <div className="w-7 h-7 rounded-xl bg-orange-500/12 border border-orange-500/30 flex items-center justify-center text-sm">⚡</div>
-          <div>
-            <span className="text-sm font-bold text-text">Điều Chỉnh & Tối Ưu</span>
-            <p className="text-[10px] text-orange-400/70">Áp dụng khi sau 2–4 tuần không có tiến bộ</p>
+    <div className="space-y-4">
+      {/* ── 6-step checklist ── */}
+      <div className="rounded-2xl border border-orange-500/20 bg-orange-500/4 overflow-hidden">
+        <div className="h-[2px] bg-gradient-to-r from-orange-500/70 via-orange-500/20 to-transparent" />
+        <div className="p-6">
+          <div className="flex items-center gap-2 mb-5">
+            <div className="w-7 h-7 rounded-xl bg-orange-500/12 border border-orange-500/30 flex items-center justify-center text-sm">⚡</div>
+            <div>
+              <span className="text-sm font-bold text-text">Điều Chỉnh & Tối Ưu</span>
+              <p className="text-[10px] text-orange-400/70">Áp dụng khi sau 2–4 tuần không có tiến bộ</p>
+            </div>
+          </div>
+          <div className="space-y-3">
+            {ADJUST_STEPS.map((s, i) => (
+              <div key={i} className="flex items-start gap-4 p-4 rounded-xl border transition-all duration-200 hover:scale-[1.01] hover:-translate-y-0.5 cursor-default"
+                style={{ borderColor: `${s.color}28`, background: `${s.color}06` }}>
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black shrink-0"
+                  style={{ color: s.color, background: `${s.color}18`, border: `1px solid ${s.color}35` }}>
+                  {s.n}
+                </div>
+                <p className="text-[11px] text-muted leading-relaxed pt-1.5">{s.text}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
+
+      {/* ── Contextual image ── */}
+      <div className="relative rounded-2xl overflow-hidden h-36">
+        <img
+          src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=900&q=75&fit=crop"
+          alt="Optimization analysis"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/50 to-transparent" />
+        <div className="absolute inset-0 p-5 flex flex-col justify-center">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-orange-400/80 mb-1">Quy tắc điều chỉnh</p>
+          <p className="text-sm font-black text-text leading-snug max-w-xs">Thay đổi 1 biến, đợi 2 tuần, đo lại — không thay đổi nhiều thứ cùng lúc.</p>
+          <p className="text-[10px] text-muted/70 mt-1.5">Vi điều chỉnh (±100–150 kcal) bền vững hơn đại tu</p>
+        </div>
+      </div>
+
+      {/* ── Decision tree ── */}
+      <div>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Sơ Đồ Quyết Định — "Nếu… Thì…"</p>
         <div className="space-y-3">
-          {ADJUST_STEPS.map((s, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-4 p-4 rounded-xl border transition-all duration-200 hover:scale-[1.01] hover:-translate-y-0.5 cursor-default"
-              style={{ borderColor: `${s.color}28`, background: `${s.color}06` }}
-            >
-              <div
-                className="w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black shrink-0"
-                style={{ color: s.color, background: `${s.color}18`, border: `1px solid ${s.color}35` }}
-              >
-                {s.n}
+          {ADJUST_DECISION.map((d, i) => (
+            <div key={i} className="rounded-2xl border overflow-hidden" style={{ borderColor: `${d.color}25`, background: `${d.color}04` }}>
+              <div className="flex items-center gap-2 px-4 pt-3 pb-2">
+                <span className="text-base shrink-0">{d.icon}</span>
+                <p className="text-[10px] font-bold text-muted">Nếu: <span className="text-text/80">{d.condition}</span></p>
               </div>
-              <p className="text-[11px] text-muted leading-relaxed pt-1.5">{s.text}</p>
+              <div className="px-4 pb-3 space-y-1.5">
+                <div className="flex items-start gap-2">
+                  <span className="text-[10px] font-black shrink-0 mt-0.5" style={{ color: d.color }}>→</span>
+                  <p className="text-[11px] font-semibold text-text/90">{d.action}</p>
+                </div>
+                <div className="rounded-lg px-3 py-2 font-mono text-[9px] font-bold"
+                  style={{ color: d.color, background: `${d.color}10`, border: `1px solid ${d.color}20` }}>
+                  📐 {d.formula}
+                </div>
+                <p className="text-[9px] text-muted/60 italic">{d.note}</p>
+              </div>
             </div>
           ))}
         </div>
+      </div>
+
+      {/* ── Non-scale victories ── */}
+      <div className="rounded-2xl border border-lime-500/15 bg-lime-500/3 p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-base">🏅</span>
+          <p className="text-xs font-bold text-lime-300">Tiến Bộ Không Cần Cân Số</p>
+          <p className="text-[9px] text-muted ml-auto">Đây mới là tiến bộ thực sự</p>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {NON_SCALE_VICTORIES.map((v, i) => (
+            <div key={i} className="flex items-center gap-2 rounded-xl p-2.5 border"
+              style={{ borderColor: `${v.color}20`, background: `${v.color}06` }}>
+              <span className="text-sm shrink-0">{v.icon}</span>
+              <p className="text-[9px] text-muted leading-snug">{v.text}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-[9px] text-lime-400/50 mt-3">
+          Cân là 1 công cụ trong nhiều công cụ. Tiến bộ thực sự đến từ tổng hợp nhiều chỉ số — không phải chỉ một con số trên bàn cân.
+        </p>
       </div>
     </div>
   );

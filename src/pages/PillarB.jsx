@@ -2070,7 +2070,31 @@ function b3MetricDetail(key, s) {
 function GoalsPanel({ s }) {
   const [activeGoal, setActiveGoal] = useState('fat-loss');
   const [selectedMetric, setSelectedMetric] = useState(null);
+  const [macroBars, setMacroBars] = useState([0, 0, 0]);
   const detail = selectedMetric ? b3MetricDetail(selectedMetric, s) : null;
+
+  useEffect(() => {
+    const t = setTimeout(() => setMacroBars([s.proteinPct, s.carbPct, s.fatPct]), 350);
+    return () => clearTimeout(t);
+  }, [s]);
+
+  const macroRows = [
+    { label: 'Protein', g: s.proteinG, pct: s.proteinPct, color: '#f97316', formula: `${s.weight}kg × ${s.goalKey === 'loss' ? '2.0' : '1.8'}g/kg`, example: 'ức gà, cá, trứng, đậu hũ' },
+    { label: 'Carbohydrate', g: s.carbG, pct: s.carbPct, color: '#22c55e', formula: `(${s.targetKcal} − P×4 − F×9) ÷ 4`, example: 'cơm, khoai, yến mạch' },
+    { label: 'Chất béo', g: s.fatG, pct: s.fatPct, color: '#a855f7', formula: `${s.targetKcal} × 25% ÷ 9 kcal/g`, example: 'dầu olive, hạt, cá béo' },
+  ];
+
+  const milestones = s.kgPerWeek > 0
+    ? [1, 2, 5, 10].map(kg => ({ kg, weeks: Math.round(kg / s.kgPerWeek), months: parseFloat((kg / s.kgPerWeek / 4.3).toFixed(1)) }))
+    : [];
+
+  const secDivider = (label) => (
+    <div className="flex items-center gap-3 my-7">
+      <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(249,115,22,0.3))' }} />
+      <p className="text-[10px] font-bold uppercase tracking-[0.22em] whitespace-nowrap shrink-0" style={{ color: 'rgba(249,115,22,0.6)' }}>{label}</p>
+      <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(249,115,22,0.3))' }} />
+    </div>
+  );
 
   return (
     <div>
@@ -2086,21 +2110,160 @@ function GoalsPanel({ s }) {
         { key: 'weekly_protein', label: 'Protein/tuần', value: `${s.weeklyProteinG}g`, note: `${s.proteinG}g × 7`, tip: `Tổng protein cần đạt trong 7 ngày.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#f97316" onClose={() => setSelectedMetric(null)} />}
+
+      {/* ── Goal selector ── */}
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Chọn Mục Tiêu Của Bạn</p>
       <div className="grid sm:grid-cols-2 gap-4">
         {GOALS.map(g => (
-          <GoalCard
-            key={g.id}
-            goal={g}
-            active={activeGoal === g.id}
-            onClick={() => setActiveGoal(g.id)}
-          />
+          <GoalCard key={g.id} goal={g} active={activeGoal === g.id} onClick={() => setActiveGoal(g.id)} />
         ))}
       </div>
       <div className="mt-5 rounded-2xl border border-white/6 bg-white/[0.015] p-4">
         <p className="text-[11px] text-muted leading-relaxed">
           <span className="text-lime-400 font-bold">Lưu ý:</span> Các con số là điểm xuất phát, không phải quy tắc cứng nhắc. Cơ thể của mỗi người phản ứng khác nhau — theo dõi 2–4 tuần rồi điều chỉnh là cách tốt nhất.
         </p>
+      </div>
+
+      {/* ── Energy balance formula ── */}
+      {secDivider('Công thức năng lượng')}
+      <div className="rounded-2xl border p-5 mb-2" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.03)' }}>
+        <p className="text-[10px] text-muted mb-4 text-center">Cách tính calo mục tiêu của bạn từ dữ liệu B0</p>
+        <div className="flex flex-col sm:flex-row items-stretch gap-2">
+          {/* BMR */}
+          <div className="flex-1 text-center rounded-xl border p-3.5" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.05)' }}>
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-muted mb-1.5">BMR</p>
+            <p className="text-2xl font-black leading-none" style={{ color: '#f97316' }}>{s.bmr.toLocaleString()}</p>
+            <p className="text-[9px] text-muted mt-1">kcal cơ bản/ngày</p>
+            <div className="mt-2 text-[8px] text-muted/50 leading-relaxed border-t border-white/5 pt-2">
+              Mifflin-StJeor<br/>
+              {s.sex === 'male'
+                ? `10×${s.weight} + 6.25×${s.height} − 5×${s.age} + 5`
+                : `10×${s.weight} + 6.25×${s.height} − 5×${s.age} − 161`}
+            </div>
+          </div>
+          {/* Arrow 1 */}
+          <div className="flex sm:flex-col items-center justify-center px-1 py-1 sm:py-0">
+            <div className="text-[8px] text-muted/50 mr-1 sm:mr-0 sm:mb-0.5">×{s.activity.mult.toFixed(2)}</div>
+            <div className="text-xl" style={{ color: '#f97316' }}>→</div>
+            <div className="text-[8px] text-muted/40 ml-1 sm:ml-0 sm:mt-0.5 max-w-[60px] text-center leading-tight hidden sm:block">{s.activity.label}</div>
+          </div>
+          {/* TDEE */}
+          <div className="flex-1 text-center rounded-xl border p-3.5" style={{ borderColor: 'rgba(249,115,22,0.3)', background: 'rgba(249,115,22,0.07)' }}>
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-muted mb-1.5">TDEE</p>
+            <p className="text-2xl font-black leading-none" style={{ color: '#f97316' }}>{s.tdee.toLocaleString()}</p>
+            <p className="text-[9px] text-muted mt-1">kcal duy trì/ngày</p>
+            <div className="mt-2 text-[8px] text-muted/50 leading-relaxed border-t border-white/5 pt-2">
+              BMR × {s.activity.mult.toFixed(2)}<br/>
+              {s.bmr.toLocaleString()} × {s.activity.mult.toFixed(2)} = {s.tdee.toLocaleString()}
+            </div>
+          </div>
+          {/* Arrow 2 */}
+          <div className="flex sm:flex-col items-center justify-center px-1 py-1 sm:py-0">
+            <div className="text-[8px] font-bold mr-1 sm:mr-0 sm:mb-0.5" style={{ color: s.goal.delta > 0 ? '#22c55e' : s.goal.delta < 0 ? '#f97316' : '#84cc16' }}>
+              {s.goal.delta > 0 ? `+${s.goal.delta}` : s.goal.delta === 0 ? '±0' : s.goal.delta}
+            </div>
+            <div className="text-xl" style={{ color: '#f97316' }}>→</div>
+            <div className="text-[8px] text-muted/40 ml-1 sm:ml-0 sm:mt-0.5 max-w-[60px] text-center leading-tight hidden sm:block">{s.goal.label}</div>
+          </div>
+          {/* Target */}
+          <div className="flex-1 text-center rounded-xl border-2 p-3.5" style={{ borderColor: '#f97316', background: 'rgba(249,115,22,0.1)' }}>
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-orange-400 mb-1.5">Mục tiêu</p>
+            <p className="text-2xl font-black leading-none text-white">{s.targetKcal.toLocaleString()}</p>
+            <p className="text-[9px] text-orange-400/70 mt-1">kcal/ngày</p>
+            <div className="mt-2 text-[8px] text-muted/50 leading-relaxed border-t border-orange-500/20 pt-2">
+              {s.tdee.toLocaleString()} {s.goal.delta >= 0 ? '+' : ''}{s.goal.delta}<br/>
+              = {s.targetKcal.toLocaleString()} kcal
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Macro phân bổ ── */}
+      {secDivider('Phân bổ Macro cá nhân hóa')}
+      <div className="space-y-3 mb-2">
+        {macroRows.map((m, i) => (
+          <div key={m.label} className="rounded-xl border p-4" style={{ borderColor: `${m.color}22`, background: `${m.color}05` }}>
+            <div className="flex items-start justify-between mb-2.5">
+              <div>
+                <p className="text-xs font-bold text-text">{m.label}</p>
+                <p className="text-[9px] text-muted/60 mt-0.5">{m.formula}</p>
+              </div>
+              <div className="text-right">
+                <div className="flex items-baseline gap-0.5 justify-end">
+                  <span className="text-xl font-black leading-none" style={{ color: m.color }}>{m.g}</span>
+                  <span className="text-[10px] text-muted">g</span>
+                </div>
+                <p className="text-[9px] text-muted/50">{m.pct}% kcal</p>
+              </div>
+            </div>
+            <div className="h-1.5 rounded-full bg-white/5 mb-2 overflow-hidden">
+              <div className="h-full rounded-full transition-all duration-700 ease-out" style={{ width: `${macroBars[i]}%`, background: m.color, opacity: 0.8 }} />
+            </div>
+            <p className="text-[9px] text-muted/50">Nguồn thực phẩm: {m.example}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Timeline ── */}
+      {milestones.length > 0 && (<>
+        {secDivider('Lộ trình ước tính')}
+        <div className="rounded-2xl border p-5" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.03)' }}>
+          <div className="flex items-center justify-between mb-1">
+            <p className="text-sm font-bold text-text">Tiến độ theo mốc cân nặng</p>
+            <span className="text-[9px] px-2 py-0.5 rounded-full font-bold" style={{ background: 'rgba(249,115,22,0.12)', color: '#f97316' }}>{s.kgPerWeek}kg/tuần</span>
+          </div>
+          <p className="text-[10px] text-muted mb-5">{s.goalKey === 'loss' ? 'Thâm hụt' : 'Thặng dư'} {Math.abs(s.goal.delta)} kcal/ngày → {Math.abs(s.goal.delta * 7).toLocaleString()} kcal/tuần ÷ 7700 = {s.kgPerWeek}kg/tuần</p>
+          {/* Progress track */}
+          <div className="relative mb-5">
+            <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+              <div className="h-full rounded-full" style={{ width: '100%', background: 'linear-gradient(90deg, #f97316 0%, #fbbf24 50%, #22c55e 100%)', opacity: 0.5 }} />
+            </div>
+            <div className="absolute -top-0.5 flex justify-between w-full">
+              {milestones.map((m, i) => (
+                <div key={m.kg} className="w-2.5 h-2.5 rounded-full border-2 border-bg" style={{ background: i === milestones.length - 1 ? '#22c55e' : '#f97316' }} />
+              ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-2 text-center">
+            {milestones.map(m => (
+              <div key={m.kg} className="rounded-lg p-2.5 border" style={{ borderColor: 'rgba(249,115,22,0.15)', background: 'rgba(249,115,22,0.05)' }}>
+                <p className="text-base font-black leading-none" style={{ color: '#f97316' }}>{s.goalKey === 'loss' ? '−' : '+'}{m.kg}kg</p>
+                <p className="text-[9px] text-muted mt-1">~{m.weeks} tuần</p>
+                <p className="text-[8px] text-muted/40">≈{m.months}th</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>)}
+
+      {/* ── Contextual image ── */}
+      <div className="relative rounded-3xl overflow-hidden h-40 mt-8 mb-6">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=70"
+          alt="meal prep"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/50 to-transparent" />
+        <div className="absolute inset-0 flex flex-col justify-end p-5">
+          <p className="text-[9px] font-bold uppercase tracking-[0.3em] mb-1" style={{ color: '#f97316' }}>Triết lý dự án</p>
+          <p className="text-sm font-bold text-white leading-snug max-w-sm italic">
+            "Ăn tốt hơn hôm qua một chút — đủ dễ để ngày mai còn làm tiếp."
+          </p>
+        </div>
+      </div>
+
+      {/* ── Consistency + 80/20 cards ── */}
+      <div className="grid sm:grid-cols-2 gap-4 mb-2">
+        <div className="rounded-2xl border p-4" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.04)' }}>
+          <p className="text-3xl font-black leading-none mb-2" style={{ color: '#f97316' }}>70%</p>
+          <p className="text-xs font-bold text-text mb-1.5">Kiên trì vừa phải đủ thắng</p>
+          <p className="text-[10px] text-muted leading-relaxed">Người duy trì 70–80% kế hoạch trong 6 tháng thường có kết quả tốt hơn người làm 100% trong 7 ngày rồi bỏ cuộc.</p>
+        </div>
+        <div className="rounded-2xl border p-4" style={{ borderColor: 'rgba(34,197,94,0.2)', background: 'rgba(34,197,94,0.04)' }}>
+          <p className="text-3xl font-black leading-none mb-2" style={{ color: '#22c55e' }}>80/20</p>
+          <p className="text-xs font-bold text-text mb-1.5">Quy tắc linh hoạt bền vững</p>
+          <p className="text-[10px] text-muted leading-relaxed">80% thực phẩm lành mạnh — 20% linh hoạt. Không nhất thiết phải ăn hoàn hảo mỗi ngày để có kết quả tốt dài hạn.</p>
+        </div>
       </div>
     </div>
   );

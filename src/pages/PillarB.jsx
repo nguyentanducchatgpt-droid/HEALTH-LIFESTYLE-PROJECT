@@ -3146,20 +3146,62 @@ const WEEKLY_PROTOCOL = [
 ];
 
 const WEEKLY_THRESHOLDS = [
-  { metric: 'Cân nặng', icon: '⚖️', color: '#84cc16',
-    ok:   { range: '±1kg/tuần',         label: 'Bình thường',    color: '#84cc16' },
-    good: { range: '−0.3–0.5kg/tuần',   label: 'Giảm mỡ đúng tốc độ', color: '#22c55e' },
-    warn: { range: '−1kg+/tuần',         label: 'Quá nhanh → mất cơ', color: '#f97316' },
+  {
+    metric: 'Cân nặng', icon: '⚖️', color: '#84cc16',
+    context: 'Cân biến động ±1–2kg/ngày do nước, muối và glycogen — hoàn toàn bình thường. Chỉ nhìn xu hướng qua 3–4 tuần, không đánh giá từng ngày.',
+    ok: {
+      range: '±1kg/tuần', label: 'Dao động bình thường', color: '#84cc16',
+      desc: 'Biến động tự nhiên do nước, muối và chu kỳ tiêu hóa. Không phản ánh thay đổi mỡ thật — giữ nguyên kế hoạch, không cần điều chỉnh.',
+      action: '→ Tiếp tục bình thường.',
+    },
+    good: {
+      range: '−0.3–0.5kg/tuần', label: 'Tốc độ giảm mỡ lý tưởng', color: '#22c55e',
+      desc: 'Thâm hụt ~400 kcal/ngày × 7 = 2,800 kcal ≈ 0.37kg mỡ/tuần. Đủ nhanh để thấy kết quả, đủ chậm để không mất cơ.',
+      action: '→ Giữ nguyên kế hoạch. Đây là vùng lý tưởng.',
+    },
+    warn: {
+      range: '−1kg+/tuần', label: 'Quá nhanh — rủi ro cao', color: '#f97316',
+      desc: 'Phần lớn là mất nước + mất cơ, không phải mỡ. Hệ quả: rụng tóc, mệt mỏi mãn tính, trao đổi chất chậm lại dài hạn.',
+      action: '→ Tăng calo 150–200 kcal/ngày. Kiểm tra lại khẩu phần.',
+    },
   },
-  { metric: 'Vòng eo', icon: '📏', color: '#06b6d4',
-    ok:   { range: 'Không đổi 2 tuần',  label: 'Tái đánh giá kế hoạch', color: '#84cc16' },
-    good: { range: '−0.5–1cm/tuần',     label: 'Tiến bộ rõ ràng', color: '#22c55e' },
-    warn: { range: 'Tăng liên tục',      label: 'Ăn thừa / stress cao', color: '#f97316' },
+  {
+    metric: 'Vòng eo', icon: '📏', color: '#06b6d4',
+    context: 'Vòng eo đáng tin cậy hơn cân số vì không bị ảnh hưởng bởi nước giữ lại. Giảm eo = giảm mỡ nội tạng thật sự.',
+    ok: {
+      range: 'Không đổi sau 2 tuần', label: 'Cần tái đánh giá', color: '#84cc16',
+      desc: 'Có thể đang ăn đúng nhưng body recomposition (giảm mỡ + tăng cơ cùng lúc) — cân không đổi nhưng cơ thể đang thay đổi. Kiểm tra thêm ảnh và quần áo.',
+      action: '→ Giữ thêm 1–2 tuần. Nếu vẫn không đổi → giảm calo thêm 100 kcal.',
+    },
+    good: {
+      range: '−0.5–1cm/tuần', label: 'Giảm mỡ bụng thật sự', color: '#22c55e',
+      desc: 'Giảm vòng eo là chỉ số trực tiếp nhất của giảm mỡ nội tạng — loại mỡ nguy hiểm nhất cho tim mạch và chuyển hóa.',
+      action: '→ Tiếp tục kế hoạch. Kết hợp cardio nhẹ để duy trì tốc độ.',
+    },
+    warn: {
+      range: 'Tăng liên tục ≥2 tuần', label: 'Ăn thừa hoặc stress cao', color: '#f97316',
+      desc: 'Cortisol cao (stress mãn tính, thiếu ngủ) kích thích tích mỡ bụng ngay cả khi calo kiểm soát tốt. Kiểm tra cả hai yếu tố.',
+      action: '→ Giảm carb lỏng (trà sữa, nước ngọt). Ưu tiên ngủ 7–9h. Giảm stress.',
+    },
   },
-  { metric: 'Năng lượng', icon: '⚡', color: '#f97316',
-    ok:   { range: '6–7/10',            label: 'Trong vùng an toàn', color: '#84cc16' },
-    good: { range: '8–10/10',           label: 'Chế độ đang phù hợp', color: '#22c55e' },
-    warn: { range: '<5/10 ≥3 ngày',     label: 'Thiếu calo/ngủ/phục hồi', color: '#f97316' },
+  {
+    metric: 'Mức năng lượng', icon: '⚡', color: '#f97316',
+    context: 'Năng lượng chủ quan (1–10) phản ánh sự cân bằng giữa calo nạp vào, chất lượng ngủ và mức độ phục hồi — thường là dấu hiệu sớm nhất khi kế hoạch đang có vấn đề.',
+    ok: {
+      range: '6–7/10', label: 'Trong vùng an toàn', color: '#84cc16',
+      desc: 'Mức nền ổn định. Cơ thể đang thích nghi với kế hoạch. Có thể có buổi thấp năng lượng nhưng không liên tục.',
+      action: '→ Bình thường. Đảm bảo ngủ đủ giấc và không cắt calo quá sâu.',
+    },
+    good: {
+      range: '8–10/10', label: 'Chế độ đang phù hợp', color: '#22c55e',
+      desc: 'Calo đủ, ngủ tốt, phục hồi tốt. Đây là trạng thái lý tưởng để tập luyện hiệu quả và tiến bộ bền vững.',
+      action: '→ Giữ nguyên nhịp. Đây là dấu hiệu mọi thứ đang hoạt động tốt.',
+    },
+    warn: {
+      range: '<5/10 liên tục ≥3 ngày', label: 'Dấu hiệu cần điều chỉnh', color: '#f97316',
+      desc: '3 nguyên nhân phổ biến nhất: (1) cắt calo quá sâu, (2) ngủ <6h/đêm, (3) tập quá nhiều không phục hồi đủ.',
+      action: '→ Tăng calo 100–150 kcal. Ưu tiên ngủ. Giảm cường độ tập 1 tuần.',
+    },
   },
 ];
 
@@ -3232,18 +3274,34 @@ function WeeklyMetricsContent() {
       {/* ── Result interpretation ── */}
       <div>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Giải Đọc Kết Quả</p>
-        <div className="space-y-2">
+        <div className="space-y-3">
           {WEEKLY_THRESHOLDS.map((t, i) => (
-            <div key={i} className="rounded-2xl border p-4 overflow-hidden" style={{ borderColor: `${t.color}20`, background: `${t.color}04` }}>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-base">{t.icon}</span>
-                <p className="text-xs font-bold" style={{ color: t.color }}>{t.metric}</p>
+            <div key={i} className="rounded-2xl border overflow-hidden" style={{ borderColor: `${t.color}22`, background: `${t.color}04` }}>
+              {/* Metric header */}
+              <div className="px-4 pt-4 pb-3 border-b" style={{ borderColor: `${t.color}14` }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-base">{t.icon}</span>
+                  <p className="text-xs font-bold" style={{ color: t.color }}>{t.metric}</p>
+                </div>
+                <p className="text-[10px] text-muted leading-relaxed">{t.context}</p>
               </div>
-              <div className="grid grid-cols-3 gap-2">
+              {/* Band rows */}
+              <div className="divide-y" style={{ borderColor: `${t.color}10` }}>
                 {[t.ok, t.good, t.warn].map((band, j) => (
-                  <div key={j} className="rounded-xl p-2.5 text-center" style={{ background: `${band.color}10`, border: `1px solid ${band.color}22` }}>
-                    <p className="text-[10px] font-black font-mono mb-1" style={{ color: band.color }}>{band.range}</p>
-                    <p className="text-[9px] text-muted leading-snug">{band.label}</p>
+                  <div key={j} className="px-4 py-3 flex gap-3 items-start">
+                    {/* Status dot */}
+                    <div className="w-2 h-2 rounded-full mt-1 shrink-0" style={{ background: band.color, boxShadow: `0 0 6px ${band.color}80` }} />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap mb-1">
+                        <span className="text-[11px] font-black font-mono" style={{ color: band.color }}>{band.range}</span>
+                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full"
+                          style={{ color: band.color, background: `${band.color}14`, border: `1px solid ${band.color}28` }}>
+                          {band.label}
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-muted leading-relaxed mb-1">{band.desc}</p>
+                      <p className="text-[9px] font-semibold leading-snug" style={{ color: `${band.color}cc` }}>{band.action}</p>
+                    </div>
                   </div>
                 ))}
               </div>

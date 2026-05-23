@@ -3145,65 +3145,198 @@ const WEEKLY_PROTOCOL = [
   { step: '4', icon: '📓', color: '#a855f7', title: 'Ghi vào 1 nơi cố định', text: 'App Notes / Google Sheets / sổ tay. Ghi: cân nặng + vòng eo + năng lượng 1–10 + ngủ mấy tiếng.' },
 ];
 
-const WEEKLY_THRESHOLDS = [
-  {
-    metric: 'Cân nặng', icon: '⚖️', color: '#84cc16',
-    context: 'Cân biến động ±1–2kg/ngày do nước, muối và glycogen — hoàn toàn bình thường. Chỉ nhìn xu hướng qua 3–4 tuần, không đánh giá từng ngày.',
-    ok: {
-      range: '±1kg/tuần', label: 'Dao động bình thường', color: '#84cc16',
-      desc: 'Biến động tự nhiên do nước, muối và chu kỳ tiêu hóa. Không phản ánh thay đổi mỡ thật — giữ nguyên kế hoạch, không cần điều chỉnh.',
-      action: '→ Tiếp tục bình thường.',
+const GOAL_WEEKLY_THRESHOLDS = {
+  'fat-loss': [
+    {
+      metric: 'Cân nặng', icon: '⚖️', color: '#84cc16',
+      context: 'Cân dao động ±1–2kg/ngày do nước, muối, glycogen — hoàn toàn bình thường. Chỉ nhìn xu hướng trung bình 3–4 tuần, không đánh giá từng ngày.',
+      ok: {
+        range: '±1kg/tuần', label: 'Dao động bình thường', color: '#84cc16',
+        desc: 'Biến động do nước, muối và chu kỳ tiêu hóa. Không phản ánh thay đổi mỡ thật — giữ nguyên kế hoạch.',
+        action: '→ Tiếp tục bình thường.',
+      },
+      good: {
+        range: '−0.3–0.5kg/tuần', label: 'Tốc độ giảm mỡ lý tưởng ✓', color: '#22c55e',
+        desc: 'Thâm hụt ~400 kcal/ngày × 7 = 2,800 kcal ≈ 0.37kg mỡ/tuần. Đủ nhanh để thấy kết quả, đủ chậm để không mất cơ.',
+        action: '→ Giữ nguyên. Đây là vùng giảm mỡ bền vững.',
+      },
+      warn: {
+        range: '−1kg+/tuần', label: 'Quá nhanh — rủi ro mất cơ', color: '#f97316',
+        desc: 'Phần lớn là mất nước + mất cơ, không phải mỡ. Hệ quả lâu dài: rụng tóc, mệt mỏi mãn tính, trao đổi chất chậm lại.',
+        action: '→ Tăng calo 150–200 kcal/ngày. Kiểm tra lại khẩu phần.',
+      },
     },
-    good: {
-      range: '−0.3–0.5kg/tuần', label: 'Tốc độ giảm mỡ lý tưởng', color: '#22c55e',
-      desc: 'Thâm hụt ~400 kcal/ngày × 7 = 2,800 kcal ≈ 0.37kg mỡ/tuần. Đủ nhanh để thấy kết quả, đủ chậm để không mất cơ.',
-      action: '→ Giữ nguyên kế hoạch. Đây là vùng lý tưởng.',
+    {
+      metric: 'Vòng eo', icon: '📏', color: '#06b6d4',
+      context: 'Vòng eo đáng tin cậy hơn cân số vì không bị ảnh hưởng bởi nước giữ lại. Giảm eo = tín hiệu giảm mỡ nội tạng thật sự.',
+      ok: {
+        range: 'Không đổi 2 tuần', label: 'Cần tái đánh giá', color: '#84cc16',
+        desc: 'Có thể đang recomposition (giảm mỡ + tăng cơ cùng lúc) — cân không đổi nhưng cơ thể đang thay đổi. Kiểm tra thêm ảnh và quần áo.',
+        action: '→ Giữ thêm 1–2 tuần. Vẫn không đổi → giảm calo thêm 100 kcal.',
+      },
+      good: {
+        range: '−0.5–1cm/tuần', label: 'Giảm mỡ nội tạng thật sự ✓', color: '#22c55e',
+        desc: 'Đây là chỉ số trực tiếp nhất của giảm mỡ nội tạng — loại mỡ nguy hiểm nhất cho tim mạch và chuyển hóa.',
+        action: '→ Tiếp tục kế hoạch. Kết hợp cardio nhẹ để duy trì tốc độ.',
+      },
+      warn: {
+        range: 'Tăng liên tục ≥2 tuần', label: 'Ăn thừa hoặc stress cao', color: '#f97316',
+        desc: 'Cortisol cao (stress mãn tính, thiếu ngủ) kích thích tích mỡ bụng ngay cả khi calo kiểm soát tốt.',
+        action: '→ Giảm carb lỏng (trà sữa, nước ngọt). Ưu tiên ngủ 7–9h. Giảm stress.',
+      },
     },
-    warn: {
-      range: '−1kg+/tuần', label: 'Quá nhanh — rủi ro cao', color: '#f97316',
-      desc: 'Phần lớn là mất nước + mất cơ, không phải mỡ. Hệ quả: rụng tóc, mệt mỏi mãn tính, trao đổi chất chậm lại dài hạn.',
-      action: '→ Tăng calo 150–200 kcal/ngày. Kiểm tra lại khẩu phần.',
+    {
+      metric: 'Mức năng lượng', icon: '⚡', color: '#f97316',
+      context: 'Năng lượng chủ quan (1–10) phản ánh calo nạp vào, chất lượng ngủ và phục hồi — dấu hiệu sớm nhất khi kế hoạch giảm mỡ đang có vấn đề.',
+      ok: { range: '6–7/10', label: 'Trong vùng an toàn', color: '#84cc16', desc: 'Cơ thể đang thích nghi với thâm hụt calo. Bình thường có buổi thấp năng lượng nhưng không liên tục.', action: '→ Ổn. Đảm bảo ngủ đủ và không cắt calo quá sâu.' },
+      good: { range: '8–10/10', label: 'Giảm mỡ bền vững ✓', color: '#22c55e', desc: 'Calo đủ để tập và phục hồi. Thâm hụt nhẹ đang hoạt động tốt — cơ thể không bị stress.', action: '→ Giữ nguyên nhịp.' },
+      warn: { range: '<5/10 liên tục ≥3 ngày', label: 'Thâm hụt calo quá sâu', color: '#f97316', desc: 'Khi cắt calo quá nhiều, cơ thể ưu tiên phân giải cơ để tạo năng lượng — năng lượng sụt mạnh là cảnh báo.', action: '→ Tăng calo 100–150 kcal. Kiểm tra protein ≥1.6g/kg. Giảm cường độ tập.' },
     },
-  },
-  {
-    metric: 'Vòng eo', icon: '📏', color: '#06b6d4',
-    context: 'Vòng eo đáng tin cậy hơn cân số vì không bị ảnh hưởng bởi nước giữ lại. Giảm eo = giảm mỡ nội tạng thật sự.',
-    ok: {
-      range: 'Không đổi sau 2 tuần', label: 'Cần tái đánh giá', color: '#84cc16',
-      desc: 'Có thể đang ăn đúng nhưng body recomposition (giảm mỡ + tăng cơ cùng lúc) — cân không đổi nhưng cơ thể đang thay đổi. Kiểm tra thêm ảnh và quần áo.',
-      action: '→ Giữ thêm 1–2 tuần. Nếu vẫn không đổi → giảm calo thêm 100 kcal.',
+  ],
+  'muscle-gain': [
+    {
+      metric: 'Cân nặng', icon: '⚖️', color: '#22c55e',
+      context: 'Tăng cơ cần thặng dư calo nhẹ — cân phải tăng dần. Mục tiêu là tăng cơ, hạn chế tích mỡ. Kiểm tra cả cân nặng lẫn vòng eo để phân biệt tăng cơ vs tăng mỡ.',
+      ok: {
+        range: '±1kg/tuần', label: 'Dao động bình thường', color: '#84cc16',
+        desc: 'Biến động do nước, glycogen cơ bắp (mỗi gram glycogen giữ 3g nước) — đặc biệt cao khi tập nặng.',
+        action: '→ Tiếp tục bình thường.',
+      },
+      good: {
+        range: '+0.2–0.4kg/tuần', label: 'Lean bulk lý tưởng ✓', color: '#22c55e',
+        desc: 'Thặng dư ~300–400 kcal/ngày. Tốc độ này tối ưu: cơ thể tổng hợp protein cơ bắp hiệu quả mà không tích mỡ quá nhanh.',
+        action: '→ Giữ nguyên khẩu phần và lịch tập.',
+      },
+      warn: {
+        range: '+0.5kg+/tuần', label: 'Đang tích mỡ quá nhanh', color: '#f97316',
+        desc: 'Thặng dư calo vượt ngưỡng tổng hợp cơ bắp — phần dư được chuyển thành mỡ. Kiểm tra thêm vòng eo để xác nhận.',
+        action: '→ Giảm calo 100–200 kcal/ngày. Ưu tiên ăn đúng bữa quanh buổi tập.',
+      },
     },
-    good: {
-      range: '−0.5–1cm/tuần', label: 'Giảm mỡ bụng thật sự', color: '#22c55e',
-      desc: 'Giảm vòng eo là chỉ số trực tiếp nhất của giảm mỡ nội tạng — loại mỡ nguy hiểm nhất cho tim mạch và chuyển hóa.',
-      action: '→ Tiếp tục kế hoạch. Kết hợp cardio nhẹ để duy trì tốc độ.',
+    {
+      metric: 'Vòng eo', icon: '📏', color: '#06b6d4',
+      context: 'Khi bulk, vòng eo là chỉ số phân biệt "tăng cơ" vs "tăng mỡ bụng". Vòng eo ổn định khi cân tăng = đang tăng cơ tốt.',
+      ok: {
+        range: 'Không đổi (cân đang tăng)', label: 'Đang tăng cơ thuần ✓', color: '#22c55e',
+        desc: 'Cân tăng nhưng eo không tăng = cơ thể đang phân bổ calo vào cơ bắp, không vào mỡ bụng. Đây là dấu hiệu tốt nhất khi tăng cơ.',
+        action: '→ Tiếp tục. Đây là vùng lý tưởng của lean bulk.',
+      },
+      good: {
+        range: '±0.3cm/tuần', label: 'Bulk kiểm soát tốt', color: '#84cc16',
+        desc: 'Biến động nhỏ trong vòng eo khi bulk là bình thường — do tăng glycogen, nước trong cơ và khối lượng bữa ăn.',
+        action: '→ Theo dõi thêm 2 tuần. Nếu xu hướng tăng đều → điều chỉnh calo.',
+      },
+      warn: {
+        range: '+1cm+/tuần', label: 'Đang tích mỡ bụng', color: '#f97316',
+        desc: 'Vòng eo tăng nhanh khi bulk = thặng dư calo đang chuyển thành mỡ nội tạng nhiều hơn cơ bắp. Cần điều chỉnh ngay.',
+        action: '→ Giảm calo 200 kcal/ngày. Kiểm tra lại carb, đặc biệt đường đơn và carb lỏng.',
+      },
     },
-    warn: {
-      range: 'Tăng liên tục ≥2 tuần', label: 'Ăn thừa hoặc stress cao', color: '#f97316',
-      desc: 'Cortisol cao (stress mãn tính, thiếu ngủ) kích thích tích mỡ bụng ngay cả khi calo kiểm soát tốt. Kiểm tra cả hai yếu tố.',
-      action: '→ Giảm carb lỏng (trà sữa, nước ngọt). Ưu tiên ngủ 7–9h. Giảm stress.',
+    {
+      metric: 'Mức năng lượng', icon: '⚡', color: '#f97316',
+      context: 'Khi tăng cơ, năng lượng cao là dấu hiệu đang ăn đủ calo và protein. Mệt mỏi kéo dài khi tập nặng thường do thiếu carb trước tập hoặc ngủ không đủ.',
+      ok: { range: '6–7/10', label: 'Trong vùng chấp nhận được', color: '#84cc16', desc: 'Cơ thể đang thích nghi với lịch tập nặng và khẩu phần tăng. Năng lượng có thể dao động theo ngày tập/ngày nghỉ.', action: '→ Ổn. Đảm bảo carb đủ trước tập và ngủ 7–9h.' },
+      good: { range: '8–10/10', label: 'Nền tảng tăng cơ tốt nhất ✓', color: '#22c55e', desc: 'Calo và macro đủ cho tập luyện cường độ cao. Năng lượng cao = có thể tập tiến bộ hơn tuần trước.', action: '→ Đây là tín hiệu để tăng tải tập luyện (thêm tạ, thêm set).' },
+      warn: { range: '<5/10 liên tục ≥3 ngày', label: 'Thiếu năng lượng khi tăng cơ', color: '#f97316', desc: '3 nguyên nhân chính: (1) thiếu carb trước tập, (2) ngủ <7h, (3) tập quá nhiều không phục hồi đủ — đều cản trở tổng hợp protein cơ bắp.', action: '→ Tăng carb trước tập. Ưu tiên ngủ. Xem lại lịch tập/nghỉ.' },
     },
-  },
-  {
-    metric: 'Mức năng lượng', icon: '⚡', color: '#f97316',
-    context: 'Năng lượng chủ quan (1–10) phản ánh sự cân bằng giữa calo nạp vào, chất lượng ngủ và mức độ phục hồi — thường là dấu hiệu sớm nhất khi kế hoạch đang có vấn đề.',
-    ok: {
-      range: '6–7/10', label: 'Trong vùng an toàn', color: '#84cc16',
-      desc: 'Mức nền ổn định. Cơ thể đang thích nghi với kế hoạch. Có thể có buổi thấp năng lượng nhưng không liên tục.',
-      action: '→ Bình thường. Đảm bảo ngủ đủ giấc và không cắt calo quá sâu.',
+  ],
+  'endurance': [
+    {
+      metric: 'Cân nặng', icon: '⚖️', color: '#06b6d4',
+      context: 'Với sức bền, cân ổn định là lý tưởng — quá nặng giảm hiệu suất tốc độ, quá nhẹ mất sức. Cân có thể giảm nhẹ khi bắt đầu chương trình nhờ giảm mỡ nhẹ.',
+      ok: {
+        range: '±0.5kg/tuần', label: 'Dao động bình thường', color: '#84cc16',
+        desc: 'Biến động nhỏ do nước và glycogen — đặc biệt sau buổi chạy/đạp xe dài, cơ thể giữ thêm glycogen và nước.',
+        action: '→ Tiếp tục bình thường.',
+      },
+      good: {
+        range: '0 đến −0.2kg/tuần', label: 'Cân lý tưởng cho sức bền ✓', color: '#22c55e',
+        desc: 'Cân ổn định hoặc giảm rất nhẹ = cơ thể đang tối ưu hóa thành phần cơ thể mà không mất năng lượng cho tập luyện.',
+        action: '→ Giữ nguyên chế độ ăn. Đây là vùng hiệu suất tối ưu.',
+      },
+      warn: {
+        range: '−0.5kg+/tuần', label: 'Giảm quá nhanh — hụt nhiên liệu', color: '#f97316',
+        desc: 'Khi cân giảm nhanh, cơ thể thiếu glycogen cho buổi tập cardio dài — hiệu suất giảm rõ, dễ chóng mặt, hụt hơi sớm hơn.',
+        action: '→ Tăng carb (đặc biệt trước buổi tập dài). Kiểm tra tổng calo nạp vào.',
+      },
     },
-    good: {
-      range: '8–10/10', label: 'Chế độ đang phù hợp', color: '#22c55e',
-      desc: 'Calo đủ, ngủ tốt, phục hồi tốt. Đây là trạng thái lý tưởng để tập luyện hiệu quả và tiến bộ bền vững.',
-      action: '→ Giữ nguyên nhịp. Đây là dấu hiệu mọi thứ đang hoạt động tốt.',
+    {
+      metric: 'Vòng eo', icon: '📏', color: '#06b6d4',
+      context: 'Cardio đều đặn là một trong những cách hiệu quả nhất để giảm mỡ nội tạng. Vòng eo giảm dần khi tập sức bền = cơ thể đang chuyển hóa tốt.',
+      ok: {
+        range: 'Không đổi 2 tuần', label: 'Đang giữ ổn định', color: '#84cc16',
+        desc: 'Cơ thể đang thích nghi với lịch tập. Có thể đang recomposition — mỡ giảm nhưng cơ tăng bù lại.',
+        action: '→ Giữ thêm 1–2 tuần. Kiểm tra bằng ảnh và cảm giác khi mặc quần áo.',
+      },
+      good: {
+        range: '−0.5–1cm/tuần', label: 'Cardio đang có tác dụng ✓', color: '#22c55e',
+        desc: 'Giảm vòng eo khi tập sức bền = đang đốt mỡ nội tạng thật sự. Mỡ nội tạng là loại đầu tiên được huy động khi cardio cường độ vừa (zone 2).',
+        action: '→ Tiếp tục lịch tập và chế độ ăn hiện tại.',
+      },
+      warn: {
+        range: 'Tăng liên tục ≥2 tuần', label: 'Ăn bù thừa sau tập', color: '#f97316',
+        desc: 'Nghiên cứu cho thấy nhiều người ăn nhiều hơn sau khi tập cardio do cơn đói tăng. Kiểm tra khẩu phần sau tập, đặc biệt là đồ ngọt và nước có đường.',
+        action: '→ Ghi nhật ký ăn uống sau tập 1 tuần. Giảm carb đơn sau tập.',
+      },
     },
-    warn: {
-      range: '<5/10 liên tục ≥3 ngày', label: 'Dấu hiệu cần điều chỉnh', color: '#f97316',
-      desc: '3 nguyên nhân phổ biến nhất: (1) cắt calo quá sâu, (2) ngủ <6h/đêm, (3) tập quá nhiều không phục hồi đủ.',
-      action: '→ Tăng calo 100–150 kcal. Ưu tiên ngủ. Giảm cường độ tập 1 tuần.',
+    {
+      metric: 'Mức năng lượng', icon: '⚡', color: '#f97316',
+      context: 'Năng lượng là chỉ số số một cho người tập sức bền. Hụt năng lượng = thiếu carb hoặc thiếu phục hồi — ảnh hưởng trực tiếp đến hiệu suất tốc độ và thời gian.',
+      ok: { range: '6–7/10', label: 'Có thể tập — chưa tối ưu', color: '#84cc16', desc: 'Đủ để hoàn thành buổi tập nhưng hiệu suất không cao nhất. Kiểm tra carb trước tập và chất lượng ngủ.', action: '→ Tăng carb phức (yến mạch, gạo lứt, khoai) vào bữa trước tập.' },
+      good: { range: '8–10/10', label: 'Hiệu suất sức bền tốt nhất ✓', color: '#22c55e', desc: 'Glycogen đầy, phục hồi tốt, ngủ đủ — ba yếu tố này cùng cao = năng lượng 8–10. Đây là trạng thái lý tưởng để phá kỷ lục cá nhân.', action: '→ Đây là ngày tốt nhất để chạy dài/đạp xa/tập cường độ cao.' },
+      warn: { range: '<5/10 liên tục ≥3 ngày', label: 'Thiếu glycogen hoặc chưa phục hồi', color: '#f97316', desc: 'Tập sức bền cường độ cao tiêu hao glycogen rất nhanh. Nếu không nạp lại đủ carb sau tập, glycogen tích lũy thiếu hụt qua từng ngày.', action: '→ Tăng carb 50–100g/ngày. Ưu tiên ngủ 8h. Có 1 ngày nghỉ hoàn toàn trong tuần.' },
     },
-  },
-];
+  ],
+  'maintenance': [
+    {
+      metric: 'Cân nặng', icon: '⚖️', color: '#a855f7',
+      context: 'Duy trì cân nặng không có nghĩa là cố định một con số — mà là giữ trong một "vùng lành mạnh" ổn định. Biến động ±1kg là hoàn toàn bình thường.',
+      ok: {
+        range: '±1kg/tuần', label: 'Dao động tự nhiên ✓', color: '#22c55e',
+        desc: 'Biến động trong ngưỡng này hoàn toàn bình thường. Cơ thể tự điều chỉnh theo lượng nước, muối, carb và chu kỳ sinh học.',
+        action: '→ Không cần làm gì. Đây là mục tiêu duy trì đang đạt được.',
+      },
+      good: {
+        range: '±0.5kg/tuần (trung bình 4 tuần)', label: 'Cân ổn định hoàn toàn ✓', color: '#84cc16',
+        desc: 'Xu hướng trung bình không thay đổi qua 4 tuần = chế độ ăn và vận động đang cân bằng với nhu cầu cơ thể.',
+        action: '→ Giữ nguyên thói quen. Đây là sự ổn định lý tưởng.',
+      },
+      warn: {
+        range: '±1.5kg+ liên tục ≥3 tuần', label: 'Cân đang dịch chuyển', color: '#f97316',
+        desc: 'Xu hướng tăng hoặc giảm liên tục qua 3 tuần = calo đang không cân bằng với mức vận động. Cần kiểm tra lại.',
+        action: '→ Xem xét thay đổi nào trong khẩu phần hoặc vận động. Điều chỉnh nhẹ 100–150 kcal/ngày.',
+      },
+    },
+    {
+      metric: 'Vòng eo', icon: '📏', color: '#06b6d4',
+      context: 'Khi duy trì, vòng eo ổn định là mục tiêu chính — đặc biệt quan trọng sau tuổi 35 khi mỡ bụng có xu hướng tích tụ dù cân không đổi.',
+      ok: {
+        range: '±0.5cm/tuần', label: 'Ổn định bình thường ✓', color: '#22c55e',
+        desc: 'Biến động nhỏ trong vòng eo là bình thường. Mục tiêu duy trì là giữ xu hướng không tăng dài hạn.',
+        action: '→ Tiếp tục thói quen hiện tại.',
+      },
+      good: {
+        range: 'Không đổi qua 4 tuần', label: 'Duy trì hoàn hảo ✓', color: '#84cc16',
+        desc: 'Vòng eo không thay đổi qua 4 tuần = cơ thể đang ở trạng thái cân bằng thật sự — không tích mỡ bụng dù duy trì không nhịn ăn.',
+        action: '→ Đây là mục tiêu lý tưởng. Duy trì lối sống hiện tại.',
+      },
+      warn: {
+        range: '+1cm liên tục ≥2 tuần', label: 'Đang tích mỡ bụng dần', color: '#f97316',
+        desc: 'Vòng eo tăng dần dù cân không đổi = đang mất cơ và tích mỡ cùng lúc (sarcopenic obesity). Phổ biến sau tuổi 40 khi ít vận động.',
+        action: '→ Tăng tập sức mạnh 2–3 lần/tuần. Kiểm tra protein ≥1.2g/kg/ngày.',
+      },
+    },
+    {
+      metric: 'Mức năng lượng', icon: '⚡', color: '#f97316',
+      context: 'Khi duy trì sức khỏe, năng lượng ổn định và cao là mục tiêu lâu dài — quan trọng hơn con số cân nặng. Năng lượng thấp kéo dài là dấu hiệu chất lượng sống đang kém.',
+      ok: { range: '6–7/10', label: 'Trong vùng bình thường', color: '#84cc16', desc: 'Đủ để làm việc và vận động bình thường. Có thể cải thiện bằng cách chú ý hơn đến giấc ngủ và dinh dưỡng.', action: '→ Thử thêm rau, protein và ngủ đúng giờ. Năng lượng nên tăng sau 2 tuần.' },
+      good: { range: '8–10/10', label: 'Chất lượng sống tốt ✓', color: '#22c55e', desc: 'Năng lượng cao ổn định = cơ thể đang được nuôi dưỡng và vận động đúng mức. Đây là mục tiêu thật sự của duy trì sức khỏe.', action: '→ Ghi nhận thói quen đang làm tốt để duy trì lâu dài.' },
+      warn: { range: '<5/10 liên tục ≥3 ngày', label: 'Sức khỏe nền đang kém', color: '#f97316', desc: 'Năng lượng thấp mãn tính khi không có lý do rõ ràng thường do: thiếu ngủ, thiếu sắt, thiếu vitamin D, hoặc quá nhiều stress tích lũy.', action: '→ Kiểm tra giấc ngủ, dinh dưỡng và cân bằng công việc/nghỉ ngơi. Nếu kéo dài >2 tuần, tham khảo bác sĩ.' },
+    },
+  ],
+};
+
+const WEEKLY_THRESHOLDS = GOAL_WEEKLY_THRESHOLDS['fat-loss'];
 
 // ─── B5 SVG Charts ────────────────────────────────────────────────────────────
 
@@ -3618,7 +3751,8 @@ function BodyCompositionChart() {
   );
 }
 
-function WeeklyMetricsContent() {
+function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
+  const thresholds = GOAL_WEEKLY_THRESHOLDS[activeGoal] || GOAL_WEEKLY_THRESHOLDS['fat-loss'];
   return (
     <div className="space-y-4">
       {/* ── Main metric cards ── */}
@@ -3686,9 +3820,15 @@ function WeeklyMetricsContent() {
 
       {/* ── Result interpretation ── */}
       <div>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Giải Đọc Kết Quả</p>
+        <div className="flex items-center gap-2 mb-3">
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Giải Đọc Kết Quả</p>
+          <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border"
+            style={{ color: thresholds[0].color, background: `${thresholds[0].color}12`, borderColor: `${thresholds[0].color}28` }}>
+            {{ 'fat-loss': '🔥 Giảm Mỡ', 'muscle-gain': '💪 Tăng Cơ', 'endurance': '🏃 Sức Bền', 'maintenance': '⚖️ Duy Trì' }[activeGoal]}
+          </span>
+        </div>
         <div className="space-y-3">
-          {WEEKLY_THRESHOLDS.map((t, i) => (
+          {thresholds.map((t, i) => (
             <div key={i} className="rounded-2xl border overflow-hidden" style={{ borderColor: `${t.color}22`, background: `${t.color}04` }}>
               {/* Metric header */}
               <div className="px-4 pt-4 pb-3 border-b" style={{ borderColor: `${t.color}14` }}>
@@ -3963,7 +4103,7 @@ function b5MetricDetail(key, s) {
   return map[key] || null;
 }
 
-function TrackingPanel({ s }) {
+function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
   const [activeSection, setActiveSection] = useState(0);
   const [checked, setChecked] = useState({});
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -4007,7 +4147,7 @@ function TrackingPanel({ s }) {
         {activeSection === 0 && (
           <DailyChecklistContent checked={checked} toggle={toggle} checkedCount={checkedCount} />
         )}
-        {activeSection === 1 && <WeeklyMetricsContent />}
+        {activeSection === 1 && <WeeklyMetricsContent activeGoal={activeGoal} />}
         {activeSection === 2 && <AdjustmentContent />}
       </div>
     </div>
@@ -5178,7 +5318,7 @@ export default function PillarB() {
     <PlatePanel key="plate" s={userStats} />,
     <GoalsPanel key="goals" s={userStats} activeGoal={activeGoal} onActiveGoalChange={handleActiveGoalChange} />,
     <MealsPanel key="meals" s={userStats} activeGoal={activeGoal} />,
-    <TrackingPanel key="tracking" s={userStats} />,
+    <TrackingPanel key="tracking" s={userStats} activeGoal={activeGoal} />,
     <SevenDayPanel key="sevenday" s={userStats} />,
     <AdvancedPanel key="advanced" s={userStats} />,
   ];

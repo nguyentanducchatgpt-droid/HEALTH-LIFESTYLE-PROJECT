@@ -1757,7 +1757,31 @@ function b2MetricDetail(key, s) {
 function PlatePanel({ s }) {
   const [ref, visible] = useScrollReveal(0.15);
   const [selectedMetric, setSelectedMetric] = useState(null);
+  const [proteinBars, setProteinBars] = useState([0, 0, 0, 0]);
+  const [carbBars, setCarbBars] = useState([0, 0, 0, 0]);
   const detail = selectedMetric ? b2MetricDetail(selectedMetric, s) : null;
+
+  const proteinRows = [
+    { meal: '🌅 Sáng', g: s.breakfastProteinG, pct: 25, note: 'trứng + sữa chua' },
+    { meal: '☀️ Trưa', g: s.lunchProteinG,     pct: 35, note: 'ức gà / cá / đậu hũ' },
+    { meal: '🌙 Tối',  g: s.dinnerProteinG,    pct: 30, note: 'cá / thịt / trứng' },
+    { meal: '🍎 Snack',g: s.snackProteinG,     pct: 10, note: 'sữa chua Hy Lạp' },
+  ];
+  const carbRows = [
+    { meal: '🌅 Sáng', g: s.breakfastCarbG, pct: 25, note: 'ổn định đường huyết' },
+    { meal: '☀️ Trưa', g: s.lunchCarbG,     pct: 40, note: 'năng lượng cao nhất', hi: true },
+    { meal: '🌙 Tối',  g: s.dinnerCarbG,    pct: 25, note: 'giảm nếu không tập tối' },
+    { meal: '🍎 Snack',g: s.snackCarbG,     pct: 10, note: 'trái cây, yến mạch' },
+  ];
+
+  // animate bars on mount
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setProteinBars(proteinRows.map(r => r.pct));
+      setCarbBars(carbRows.map(r => r.pct));
+    }, 300);
+    return () => clearTimeout(t);
+  }, [s]);
 
   return (
     <div>
@@ -1770,58 +1794,39 @@ function PlatePanel({ s }) {
         { key: 'meal_kcal',    label: 'Kcal/bữa', value: `${s.perMealKcal}`, note: 'kcal', tip: `${s.targetKcal.toLocaleString()} kcal/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealKcal} kcal/bữa.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#22c55e" onClose={() => setSelectedMetric(null)} />}
-      <div ref={ref} className="grid md:grid-cols-2 gap-8 items-start">
-        {/* Left: diagram */}
+
+      {/* ── Diagram + Tips ───────────────────────────────────────────── */}
+      <div ref={ref} className="grid md:grid-cols-2 gap-8 items-start mb-10">
         <div>
           <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Phương Pháp Đĩa Ăn</p>
           <PlateDiagram animate={visible} />
         </div>
-
-        {/* Right: tips */}
         <div className="space-y-4">
           <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Áp Dụng Thực Tế</p>
-
           <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-5">
-            <p className="text-xs font-bold text-lime-400 mb-3">Tại nhà</p>
+            <p className="text-xs font-bold text-lime-400 mb-3">🏠 Tại nhà</p>
             <ul className="space-y-2">
-              {[
-                'Dùng đĩa 23–26cm làm chuẩn',
-                'Bắt đầu bằng rau trước khi thêm carb',
-                'Đạm = lòng bàn tay của bạn',
-                'Cơm = nắm tay của bạn',
-              ].map((t, i) => (
+              {['Dùng đĩa 23–26cm làm chuẩn', 'Bắt đầu bằng rau trước khi thêm carb', 'Đạm = lòng bàn tay của bạn', 'Cơm = nắm tay của bạn'].map((t, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
                   <span className="text-lime-400 font-bold shrink-0">✓</span>{t}
                 </li>
               ))}
             </ul>
           </div>
-
           <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
-            <p className="text-xs font-bold text-orange-400 mb-3">Ăn ngoài hàng</p>
+            <p className="text-xs font-bold text-orange-400 mb-3">🍜 Ăn ngoài hàng</p>
             <ul className="space-y-2">
-              {[
-                'Chọn phần có cả đạm + rau + carb',
-                'Gọi thêm rau hoặc salad riêng',
-                'Tránh nước chấm nhiều muối/đường',
-                'Bún/phở: ít bún, nhiều rau, thêm trứng',
-              ].map((t, i) => (
+              {['Chọn phần có cả đạm + rau + carb', 'Gọi thêm rau hoặc salad riêng', 'Tránh nước chấm nhiều muối/đường', 'Bún/phở: ít bún, nhiều rau, thêm trứng'].map((t, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
                   <span className="text-orange-400 font-bold shrink-0">✓</span>{t}
                 </li>
               ))}
             </ul>
           </div>
-
           <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5">
-            <p className="text-xs font-bold text-cyan-400 mb-3">Meal Prep bận rộn</p>
+            <p className="text-xs font-bold text-cyan-400 mb-3">📦 Meal Prep bận rộn</p>
             <ul className="space-y-2">
-              {[
-                'Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)',
-                'Nấu lượng cơm 2–3 ngày một lần',
-                'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày',
-                'Yến mạch overnight cho sáng bận rộn',
-              ].map((t, i) => (
+              {['Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)', 'Nấu lượng cơm 2–3 ngày một lần', 'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày', 'Yến mạch overnight cho sáng bận rộn'].map((t, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
                   <span className="text-cyan-400 font-bold shrink-0">✓</span>{t}
                 </li>
@@ -1830,6 +1835,176 @@ function PlatePanel({ s }) {
           </div>
         </div>
       </div>
+
+      {/* ── Contextual image banner ───────────────────────────────────── */}
+      <RevealBlock>
+        <div className="rounded-2xl overflow-hidden mb-8 relative h-44 md:h-56">
+          <img
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=70"
+            alt="Healthy balanced meal prep"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,10,0.92) 40%, rgba(10,10,10,0.3) 100%)' }} />
+          <div className="absolute inset-y-0 left-0 px-7 flex flex-col justify-center max-w-sm">
+            <span className="text-[9px] font-bold text-green-400 uppercase tracking-[0.25em] mb-1.5">Nguyên tắc vàng</span>
+            <p className="text-xl font-black text-text leading-tight mb-1.5">Đạm → Rau → Tinh bột</p>
+            <p className="text-[11px] text-muted leading-relaxed">Thứ tự ăn quyết định tốc độ tăng đường huyết — ăn đạm và rau trước giúp hấp thu tinh bột chậm hơn.</p>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* ── Hand portion formula ─────────────────────────────────────── */}
+      <RevealBlock delay={40}>
+        <div className="rounded-2xl border border-border/25 p-6 mb-8" style={{ background: 'rgba(255,255,255,0.015)' }}>
+          <div className="flex items-start gap-3 mb-5">
+            <div className="w-9 h-9 rounded-xl bg-lime-500/15 border border-lime-500/25 flex items-center justify-center text-xl shrink-0">✋</div>
+            <div>
+              <h3 className="text-sm font-bold text-text">Công Thức Khẩu Phần Theo Tay — Không Cần Cân</h3>
+              <p className="text-[10px] text-muted mt-0.5">Ước lượng khẩu phần từng bữa dựa trên kích thước bàn tay bạn</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+            {[
+              { hand: '🤜', label: 'Đạm', portion: '1 lòng bàn tay', calc: `≈ ${s.perMealProteinG}g protein`, example: `${s.chickenG}g ức gà`, color: '#84cc16' },
+              { hand: '✊', label: 'Tinh bột', portion: '1 nắm tay', calc: `≈ ${s.riceG}g cơm`, example: 'hoặc 1 củ khoai lang', color: '#f97316' },
+              { hand: '🤲', label: 'Rau xanh', portion: '2 nắm tay', calc: '≈ 150–200g rau', example: 'luộc hoặc xào ít dầu', color: '#22c55e' },
+              { hand: '👍', label: 'Chất béo', portion: '1 ngón cái', calc: `≈ ${s.perMealFatG}g fat`, example: 'dầu olive / bơ / hạt', color: '#eab308' },
+            ].map((p, i) => (
+              <div key={i} className="rounded-xl border p-3.5 text-center" style={{ borderColor: `${p.color}28`, background: `${p.color}07` }}>
+                <div className="text-3xl mb-2">{p.hand}</div>
+                <p className="text-[11px] font-bold mb-0.5" style={{ color: p.color }}>{p.label}</p>
+                <p className="text-[9px] text-muted mb-1.5 leading-snug">{p.portion}</p>
+                <p className="text-[11px] font-black text-text">{p.calc}</p>
+                <p className="text-[9px] text-muted/70 mt-0.5">{p.example}</p>
+              </div>
+            ))}
+          </div>
+          {/* Personalized formula bar */}
+          <div className="rounded-xl px-4 py-3 border" style={{ background: 'rgba(132,204,22,0.05)', borderColor: 'rgba(132,204,22,0.18)' }}>
+            <p className="text-[10px] text-muted mb-0.5">
+              <span className="text-lime-400 font-bold">Công thức bữa của bạn</span>
+              <span className="text-muted/60 ml-1">({s.perMealKcal} kcal/bữa · {s.mealsPerDay} bữa/ngày)</span>
+            </p>
+            <p className="text-[11px] text-text font-semibold leading-relaxed">
+              {s.chickenG}g ức gà <span className="text-lime-400">({s.perMealProteinG}g đạm)</span>
+              {' + '}{s.riceG}g cơm <span className="text-orange-400">({s.perMealCarbG}g carb)</span>
+              {' + '}<span className="text-green-400">2 nắm rau</span>
+              {' + '}{s.perMealFatG}g chất béo tốt
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* ── Protein anchor + Carb timing 2-col ──────────────────────── */}
+      <div className="grid sm:grid-cols-2 gap-5 mb-8">
+        {/* Protein anchor */}
+        <RevealBlock delay={60}>
+          <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-5 h-full">
+            <h3 className="text-sm font-bold text-lime-400 mb-0.5 flex items-center gap-2">💪 Protein — "Neo" Mỗi Bữa</h3>
+            <p className="text-[10px] text-muted mb-4">Xây bữa ăn từ đạm trước, sau đó thêm carb và rau</p>
+            <div className="space-y-3">
+              {proteinRows.map((r, i) => (
+                <div key={i}>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-[11px] font-semibold text-text">{r.meal}</span>
+                    <span className="text-[10px] text-muted">{r.note}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full rounded-full bg-lime-500" style={{ width: `${proteinBars[i]}%`, transition: `width 0.8s cubic-bezier(0.34,1.56,0.64,1) ${i * 120}ms` }} />
+                    </div>
+                    <span className="text-[11px] font-black text-lime-400 w-10 text-right shrink-0">{r.g}g</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 pt-3 border-t border-lime-500/10 flex items-center justify-between">
+              <p className="text-[10px] text-muted">Tổng protein</p>
+              <p className="text-[11px] font-black text-lime-400">{s.proteinG}g/ngày · {(s.proteinG/s.weight).toFixed(1)}g/kg</p>
+            </div>
+          </div>
+        </RevealBlock>
+
+        {/* Carb timing */}
+        <RevealBlock delay={100}>
+          <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5 h-full">
+            <h3 className="text-sm font-bold text-orange-400 mb-0.5 flex items-center gap-2">⚡ Carb Đúng Thời Điểm</h3>
+            <p className="text-[10px] text-muted mb-4">Ưu tiên tinh bột vào bữa trưa — giảm dần về tối</p>
+            <div className="space-y-3">
+              {carbRows.map((r, i) => (
+                <div key={i}>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-[11px] font-semibold text-text">{r.meal}</span>
+                    <span className="text-[9px] text-muted">{r.note}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full rounded-full" style={{ background: r.hi ? '#f97316' : 'rgba(249,115,22,0.55)', width: `${carbBars[i] * 2}%`, transition: `width 0.8s cubic-bezier(0.34,1.56,0.64,1) ${i * 120}ms` }} />
+                    </div>
+                    <span className={`text-[11px] font-black w-10 text-right shrink-0 ${r.hi ? 'text-orange-300' : 'text-orange-400/70'}`}>{r.g}g</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 pt-3 border-t border-orange-500/10 flex items-center justify-between">
+              <p className="text-[10px] text-muted">Tổng carb</p>
+              <p className="text-[11px] font-black text-orange-400">{s.carbG}g/ngày · Trưa: {s.lunchCarbG}g</p>
+            </div>
+          </div>
+        </RevealBlock>
+      </div>
+
+      {/* ── 80/20 rule ───────────────────────────────────────────────── */}
+      <RevealBlock delay={120}>
+        <div className="rounded-2xl border border-white/8 p-6 mb-2" style={{ background: 'rgba(255,255,255,0.02)' }}>
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl border flex items-center justify-center text-xl shrink-0" style={{ background: 'rgba(168,85,247,0.12)', borderColor: 'rgba(168,85,247,0.25)' }}>🎯</div>
+            <div>
+              <h3 className="text-sm font-bold text-text">Nguyên Tắc 80/20 — Linh Hoạt Để Bền Vững</h3>
+              <p className="text-[10px] text-muted">Kỷ luật không phải là cấm tất cả — là biết cách quay lại</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-5 mb-5">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="h-1.5 w-full rounded-full bg-green-500/25 overflow-hidden">
+                  <div className="h-full rounded-full bg-green-500 w-4/5" />
+                </div>
+                <span className="text-xs font-black text-green-400 shrink-0">80%</span>
+              </div>
+              <p className="text-[10px] font-bold text-green-400 uppercase tracking-wider mb-2.5">Ăn đúng nền tảng</p>
+              <ul className="space-y-1.5">
+                {['Đủ đạm, đủ rau, đủ nước mỗi bữa', `Ăn đúng ${s.targetKcal.toLocaleString()} kcal ±100`, 'Hạn chế đồ uống có đường', 'Meal prep 1–2 lần/tuần'].map((t, i) => (
+                  <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
+                    <span className="text-green-400 font-bold shrink-0 mt-px">✓</span>{t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="h-1.5 w-full rounded-full bg-purple-500/25 overflow-hidden">
+                  <div className="h-full rounded-full bg-purple-500 w-1/5" />
+                </div>
+                <span className="text-xs font-black text-purple-400 shrink-0">20%</span>
+              </div>
+              <p className="text-[10px] font-bold text-purple-400 uppercase tracking-wider mb-2.5">Linh hoạt đời thực</p>
+              <ul className="space-y-1.5">
+                {['Ăn ngoài, tiệc, sum họp gia đình', 'Món yêu thích 1–2 lần/tuần', 'Khi lỡ ăn nhiều — chỉnh bữa sau', 'Không tự trách bản thân'].map((t, i) => (
+                  <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
+                    <span className="text-purple-400 shrink-0 mt-px">●</span>{t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="rounded-xl border px-4 py-3" style={{ background: 'rgba(168,85,247,0.05)', borderColor: 'rgba(168,85,247,0.18)' }}>
+            <p className="text-[11px] text-muted/80 italic leading-relaxed">
+              "Một bữa lệch kế hoạch <span className="text-purple-400 font-semibold not-italic">không phá hỏng hành trình</span>. Điều phá hỏng hành trình là tâm lý <span className="text-red-400 font-semibold not-italic">'lỡ rồi bỏ luôn'</span>."
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
     </div>
   );
 }
@@ -3862,10 +4037,31 @@ export default function PillarB() {
       <div id="tabs" className="scroll-mt-4 mb-16">
         <RevealBlock>
           {/* Section label */}
-          <div className="flex items-center gap-4 mb-5">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] whitespace-nowrap">8 chủ đề dinh dưỡng</p>
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <div className="flex flex-col items-center gap-3 mb-8">
+            {/* top rule */}
+            <div className="flex items-center gap-3 w-full">
+              <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.35))' }} />
+              <span className="w-1 h-1 rounded-full bg-lime-500/50" />
+              <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(132,204,22,0.35))' }} />
+            </div>
+
+            {/* hero number + title */}
+            <div className="flex items-end gap-4 select-none">
+              <span className="text-[72px] font-black leading-none"
+                style={{
+                  background: 'linear-gradient(145deg, #84cc16 0%, #22c55e 55%, #84cc16 100%)',
+                  WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                  filter: 'drop-shadow(0 0 18px rgba(132,204,22,0.45))',
+                  letterSpacing: '-0.04em',
+                }}>8</span>
+              <div className="pb-3">
+                <p className="text-[9px] font-bold uppercase tracking-[0.35em] leading-none mb-1.5" style={{ color: 'rgba(132,204,22,0.55)' }}>chuyên mục</p>
+                <p className="text-2xl font-black text-text uppercase tracking-[0.1em] leading-none">Dinh Dưỡng</p>
+              </div>
+            </div>
+
+            {/* glow underline */}
+            <div className="h-[2px] w-28 rounded-full" style={{ background: 'linear-gradient(90deg, transparent, #84cc16, transparent)' }} />
           </div>
 
           {/* ── Single orbit-ring frame: tab strip + content as one block ── */}

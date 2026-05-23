@@ -655,6 +655,9 @@ const GOAL_MODIFIERS = [
   { key: 'recomp', label: 'Duy trì',  delta:    0, color: '#84cc16', note: 'Ăn quanh TDEE ± 100'  },
   { key: 'gain',   label: 'Tăng cơ',  delta: +250, color: '#22c55e', note: 'Thặng dư 150–300 kcal' },
 ];
+// Bidirectional mapping: goalKey (B0/B1) ↔ activeGoal id (B3)
+const GOAL_KEY_TO_ID = { loss: 'fat-loss', gain: 'muscle-gain', recomp: 'maintenance' };
+const GOAL_ID_TO_KEY = { 'fat-loss': 'loss', 'muscle-gain': 'gain', 'endurance': 'recomp', 'maintenance': 'recomp' };
 const MEAL_SPLIT_RULES = [
   { n: '1', title: 'Không bỏ bữa sáng',      desc: 'Bữa sáng kích hoạt trao đổi chất và ổn định đường huyết cả ngày.' },
   { n: '2', title: 'Mỗi bữa có protein',      desc: 'Protein giúp no lâu, bảo vệ cơ và đốt thêm calo khi tiêu hóa.' },
@@ -1558,7 +1561,7 @@ function buildDynamicMacros(s, kcal) {
   });
 }
 
-function FoundationPanel({ s }) {
+function FoundationPanel({ s, onGoalKeyChange }) {
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [previewGoalKey, setPreviewGoalKey] = useState(s.goalKey ?? 'recomp');
   const [expandedMacro, setExpandedMacro]   = useState(null);
@@ -1634,7 +1637,7 @@ function FoundationPanel({ s }) {
               const kcal = s.tdee + DELTAS[m.goalKey];
               return (
                 <button key={m.goalKey} type="button"
-                  onClick={() => setPreviewGoalKey(m.goalKey)}
+                  onClick={() => { setPreviewGoalKey(m.goalKey); onGoalKeyChange?.(m.goalKey); }}
                   className={`relative rounded-xl border overflow-hidden p-4 text-center cursor-pointer focus:outline-none group transition-all duration-300`}
                   style={{
                     borderColor: isActive ? `${m.color}70` : `${m.color}22`,
@@ -2180,8 +2183,7 @@ const GOAL_ANALYSIS = {
   },
 };
 
-function GoalsPanel({ s }) {
-  const [activeGoal, setActiveGoal] = useState('fat-loss');
+function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [macroBars, setMacroBars] = useState([0, 0, 0]);
   const detail = selectedMetric ? b3MetricDetail(selectedMetric, s) : null;
@@ -2248,7 +2250,7 @@ function GoalsPanel({ s }) {
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Chọn Mục Tiêu Của Bạn</p>
       <div className="grid sm:grid-cols-2 gap-4">
         {GOALS.map(g => (
-          <GoalCard key={g.id} goal={g} active={activeGoal === g.id} onClick={() => setActiveGoal(g.id)} />
+          <GoalCard key={g.id} goal={g} active={activeGoal === g.id} onClick={() => onActiveGoalChange(g.id)} />
         ))}
       </div>
       <div className="mt-5 rounded-2xl border border-white/6 bg-white/[0.015] p-4">
@@ -4003,6 +4005,17 @@ export default function PillarB() {
   const [sex, setSex]                 = useState('male');
   const [activityKey, setActivityKey] = useState('moderate');
   const [goalKey, setGoalKey]         = useState('recomp');
+  const [activeGoal, setActiveGoal]   = useState('maintenance');
+
+  // Keep goalKey and activeGoal in sync
+  const handleGoalKeyChange = (key) => {
+    setGoalKey(key);
+    setActiveGoal(GOAL_KEY_TO_ID[key] || 'maintenance');
+  };
+  const handleActiveGoalChange = (id) => {
+    setActiveGoal(id);
+    setGoalKey(GOAL_ID_TO_KEY[id] || 'recomp');
+  };
 
   const userStats = useMemo(() => {
     // ── B0: Raw inputs
@@ -4206,12 +4219,12 @@ export default function PillarB() {
     );
   }
 
-  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats };
+  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey: handleGoalKeyChange, userStats };
   const PANELS = [
     <CalcPanel key="calc" {...calcProps} />,
-    <FoundationPanel key="foundation" s={userStats} />,
+    <FoundationPanel key="foundation" s={userStats} onGoalKeyChange={handleGoalKeyChange} />,
     <PlatePanel key="plate" s={userStats} />,
-    <GoalsPanel key="goals" s={userStats} />,
+    <GoalsPanel key="goals" s={userStats} activeGoal={activeGoal} onActiveGoalChange={handleActiveGoalChange} />,
     <MealsPanel key="meals" s={userStats} />,
     <TrackingPanel key="tracking" s={userStats} />,
     <SevenDayPanel key="sevenday" s={userStats} />,

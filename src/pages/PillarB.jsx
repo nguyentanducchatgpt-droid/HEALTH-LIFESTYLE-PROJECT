@@ -3820,40 +3820,104 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
 
       {/* ── Result interpretation ── */}
       <div>
-        <div className="flex items-center gap-2 mb-3">
+        {/* Section heading with goal context badge */}
+        <div className="flex items-center gap-2 mb-4">
           <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Giải Đọc Kết Quả</p>
           <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border"
             style={{ color: thresholds[0].color, background: `${thresholds[0].color}12`, borderColor: `${thresholds[0].color}28` }}>
             {{ 'fat-loss': '🔥 Giảm Mỡ', 'muscle-gain': '💪 Tăng Cơ', 'endurance': '🏃 Sức Bền', 'maintenance': '⚖️ Duy Trì' }[activeGoal]}
           </span>
+          <span className="text-[9px] text-muted/60 italic">Di chuột vào thẻ để xem giải thích</span>
         </div>
-        <div className="space-y-3">
+
+        <div className="space-y-5">
           {thresholds.map((t, i) => (
-            <div key={i} className="rounded-2xl border overflow-hidden" style={{ borderColor: `${t.color}22`, background: `${t.color}04` }}>
-              {/* Metric header */}
-              <div className="px-4 pt-4 pb-3 border-b" style={{ borderColor: `${t.color}14` }}>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-base">{t.icon}</span>
-                  <p className="text-xs font-bold" style={{ color: t.color }}>{t.metric}</p>
+            <div key={i} className="rounded-2xl overflow-hidden border" style={{ borderColor: `${t.color}18`, background: `${t.color}03` }}>
+
+              {/* ── Metric header ── */}
+              <div className="px-4 pt-4 pb-3 flex items-start gap-3" style={{ borderBottom: `1px solid ${t.color}12` }}>
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center text-base shrink-0"
+                  style={{ background: `${t.color}14`, border: `1px solid ${t.color}22` }}>
+                  {t.icon}
                 </div>
-                <p className="text-[10px] text-muted leading-relaxed">{t.context}</p>
+                <div>
+                  <p className="text-xs font-black mb-0.5" style={{ color: t.color }}>{t.metric}</p>
+                  <p className="text-[10px] text-muted leading-relaxed">{t.context}</p>
+                </div>
               </div>
-              {/* Band rows */}
-              <div className="divide-y" style={{ borderColor: `${t.color}10` }}>
+
+              {/* ── Spectrum bar ── */}
+              <div className="px-4 pt-3 pb-1">
+                <div className="flex gap-0.5 h-1 rounded-full overflow-hidden">
+                  <div className="flex-1 rounded-l-full opacity-60" style={{ background: t.ok.color }} />
+                  <div className="flex-[2] opacity-90" style={{ background: t.good.color }} />
+                  <div className="flex-1 rounded-r-full opacity-60" style={{ background: t.warn.color }} />
+                </div>
+                <div className="flex justify-between mt-0.5">
+                  <span className="text-[8px] text-muted/50">ổn định</span>
+                  <span className="text-[8px] font-bold" style={{ color: t.good.color }}>lý tưởng</span>
+                  <span className="text-[8px] text-muted/50">cảnh báo</span>
+                </div>
+              </div>
+
+              {/* ── Zone cards grid ── */}
+              <div className="grid grid-cols-3 gap-2 px-3 pb-3 pt-1">
                 {[t.ok, t.good, t.warn].map((band, j) => (
-                  <div key={j} className="px-4 py-3 flex gap-3 items-start">
-                    {/* Status dot */}
-                    <div className="w-2 h-2 rounded-full mt-1 shrink-0" style={{ background: band.color, boxShadow: `0 0 6px ${band.color}80` }} />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <span className="text-[11px] font-black font-mono" style={{ color: band.color }}>{band.range}</span>
-                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full"
-                          style={{ color: band.color, background: `${band.color}14`, border: `1px solid ${band.color}28` }}>
-                          {band.label}
-                        </span>
+                  <div key={j} className="group/band relative cursor-default select-none">
+
+                    {/* ThoughtBubble tooltip — full desc + action */}
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none
+                      opacity-0 group-hover/band:opacity-100
+                      scale-90 group-hover/band:scale-100
+                      -translate-y-1 group-hover/band:translate-y-0
+                      transition-all duration-200 origin-bottom w-52">
+                      <ThoughtBubble
+                        text={`${band.desc} ${band.action}`}
+                        idx={`wt-${i}-${j}`}
+                        color={band.color}
+                      />
+                    </div>
+
+                    {/* Zone card */}
+                    <div className="rounded-xl p-2.5 transition-all duration-200
+                      group-hover/band:scale-[1.03] group-hover/band:shadow-lg"
+                      style={{
+                        background: `${band.color}08`,
+                        border: `1px solid ${band.color}${j === 1 ? '35' : '18'}`,
+                        boxShadow: j === 1 ? `0 0 12px ${band.color}18` : 'none',
+                      }}>
+
+                      {/* Status indicator row */}
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-1.5 h-1.5 rounded-full shrink-0"
+                          style={{ background: band.color, boxShadow: `0 0 5px ${band.color}` }} />
+                        {j === 1 && (
+                          <span className="text-[7px] font-black uppercase tracking-widest"
+                            style={{ color: band.color }}>Lý tưởng</span>
+                        )}
+                        {j === 2 && (
+                          <span className="text-[7px] font-black uppercase tracking-widest text-orange-400/70">Cảnh báo</span>
+                        )}
                       </div>
-                      <p className="text-[10px] text-muted leading-relaxed mb-1">{band.desc}</p>
-                      <p className="text-[9px] font-semibold leading-snug" style={{ color: `${band.color}cc` }}>{band.action}</p>
+
+                      {/* Range — hero number */}
+                      <p className="text-[10px] font-black font-mono leading-tight mb-1.5"
+                        style={{ color: band.color }}>
+                        {band.range}
+                      </p>
+
+                      {/* Label badge */}
+                      <span className="inline-block text-[8px] font-bold px-1.5 py-0.5 rounded-full leading-none"
+                        style={{ color: band.color, background: `${band.color}16`, border: `1px solid ${band.color}28` }}>
+                        {band.label}
+                      </span>
+
+                      {/* Action — visible on hover */}
+                      <p className="text-[8px] font-semibold mt-2 leading-snug
+                        opacity-0 group-hover/band:opacity-100 transition-opacity duration-150 max-h-0 group-hover/band:max-h-20 overflow-hidden"
+                        style={{ color: `${band.color}cc` }}>
+                        {band.action}
+                      </p>
                     </div>
                   </div>
                 ))}

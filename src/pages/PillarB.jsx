@@ -3997,10 +3997,26 @@ export default function PillarB() {
         </div>
 
         {/* ── Section header ── */}
-        <div className="flex items-center gap-3 mb-7">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] whitespace-nowrap">7 Nguyên Tắc Cốt Lõi</p>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="flex flex-col items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 w-full">
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.35))' }} />
+            <span className="w-1 h-1 rounded-full bg-lime-500/50" />
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(132,204,22,0.35))' }} />
+          </div>
+          <div className="flex items-end gap-4 select-none">
+            <span className="text-[72px] font-black leading-none"
+              style={{
+                background: 'linear-gradient(145deg, #84cc16 0%, #22c55e 55%, #84cc16 100%)',
+                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                filter: 'drop-shadow(0 0 18px rgba(132,204,22,0.45))',
+                letterSpacing: '-0.04em',
+              }}>7</span>
+            <div className="pb-3">
+              <p className="text-[9px] font-bold uppercase tracking-[0.35em] leading-none mb-1.5" style={{ color: 'rgba(132,204,22,0.55)' }}>nguyên tắc</p>
+              <p className="text-2xl font-black text-text uppercase tracking-[0.1em] leading-none">Cốt Lõi</p>
+            </div>
+          </div>
+          <div className="h-[2px] w-28 rounded-full" style={{ background: 'linear-gradient(90deg, transparent, #84cc16, transparent)' }} />
         </div>
 
         {/* ── Mantra cards (3 col) ── */}

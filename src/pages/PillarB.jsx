@@ -591,6 +591,122 @@ const TIERS = [
   },
 ];
 
+const PHILOSOPHY_7 = [
+  { icon: '✋', title: 'Ăn đủ, không ăn kiệt sức', body: 'Cơ thể cần đủ calo để tập, làm việc và phục hồi. Ăn quá ít liên tục làm giảm chuyển hóa cơ bản và mất cơ bắp.' },
+  { icon: '🔄', title: 'Ăn đều, không theo cảm hứng', body: 'Bữa ăn đúng giờ giữ đường huyết ổn định, giảm cơn thèm và tránh ăn bù quá mức khi đói dồn dập.' },
+  { icon: '🥦', title: 'Ăn thật, hạn chế siêu chế biến', body: 'Thực phẩm nguyên dạng — thịt, cá, trứng, rau, gạo — cung cấp vi chất và no lâu tốt hơn đồ đóng gói.' },
+  { icon: '🎯', title: 'Ăn theo mục tiêu, không theo phong trào', body: 'Người giảm mỡ ăn khác người tập sức bền. Không có thực đơn đúng cho tất cả — chỉ có thực đơn phù hợp với bạn.' },
+  { icon: '🧩', title: 'Protein là nền, rau là bạn, carb là nhiên liệu', body: 'Ba nhóm đều cần thiết. Cắt bỏ hoàn toàn bất kỳ nhóm nào đều làm mất cân bằng và khó duy trì lâu dài.' },
+  { icon: '🔁', title: 'Một bữa lệch không phá hỏng hành trình', body: 'Điều phá hỏng là tâm lý "lỡ rồi bỏ luôn". Biết cách quay lại bữa kế tiếp mới là kỹ năng quan trọng nhất.' },
+  { icon: '📏', title: 'Đo để điều chỉnh, không để tự phán xét', body: 'Số liệu là bản đồ, không phải bản án. Dùng TDEE và macro để hiểu cơ thể — không để gây áp lực.' },
+];
+
+const MEAL_CHECK_QUESTIONS = [
+  { icon: '🥩', q: 'Bữa này có đạm chưa?', color: '#84cc16', example: 'Thịt, cá, trứng, đậu hũ, sữa chua' },
+  { icon: '🥬', q: 'Có rau hoặc canh chưa?', color: '#22c55e', example: 'Ít nhất 1–2 nắm rau luộc, xào hoặc canh' },
+  { icon: '🍚', q: 'Tinh bột có vừa với mức vận động?', color: '#f97316', example: 'Ngày tập: thêm cơm. Ngày nghỉ: bớt cơm' },
+  { icon: '🚫', q: 'Không quá nhiều chiên/ngọt/nước ngọt?', color: '#ef4444', example: 'Nếu có → cân bằng ở bữa tiếp theo' },
+];
+
+const FOOD_SWAP_TABLE = {
+  protein: {
+    label: 'Đạm', color: '#84cc16', icon: '🥩',
+    items: [
+      { main: 'Ức gà 150g', swap: 'Đùi gà 130g', protein: '~32g', kcal: '~165', note: 'Đùi có fat cao hơn một chút' },
+      { main: 'Cá hồi 120g', swap: 'Cá thu 130g', protein: '~28g', kcal: '~180', note: 'Cá thu rẻ hơn 3–4 lần' },
+      { main: '3 quả trứng', swap: 'Đậu hũ 200g', protein: '~18g', kcal: '~145', note: 'Đậu hũ ít fat, có xơ' },
+      { main: 'Thịt bò nạc 120g', swap: 'Tôm 150g', protein: '~26g', kcal: '~130', note: 'Tôm ít calo hơn nhiều' },
+      { main: 'Whey 1 muỗng', swap: 'Sữa chua Hy Lạp 200g', protein: '~22g', kcal: '~120', note: 'Có thêm men vi sinh' },
+    ],
+  },
+  carb: {
+    label: 'Tinh bột', color: '#f97316', icon: '🍚',
+    items: [
+      { main: 'Cơm trắng 150g', swap: 'Cơm gạo lứt 150g', protein: '4g', kcal: '~175', note: 'Nhiều xơ hơn 3 lần' },
+      { main: 'Cơm trắng 150g', swap: 'Khoai lang 200g', protein: '3g', kcal: '~160', note: 'Chỉ số GI thấp hơn' },
+      { main: 'Bún 150g', swap: 'Yến mạch 60g khô', protein: '8g', kcal: '~220', note: 'No lâu hơn nhiều' },
+      { main: 'Bánh mì trắng 2 lát', swap: 'Bánh mì nguyên cám 2 lát', protein: '7g', kcal: '~160', note: 'Nhiều xơ và vi chất' },
+      { main: 'Mì tôm 1 gói', swap: 'Phở bò ít bún thêm thịt', protein: '15g+', kcal: '~280', note: 'Nhiều đạm hơn đáng kể' },
+    ],
+  },
+  veg: {
+    label: 'Rau củ', color: '#22c55e', icon: '🥦',
+    items: [
+      { main: 'Bông cải xanh', swap: 'Súp lơ trắng / bắp cải', protein: '~3g', kcal: '~25', note: 'Đều giàu xơ như nhau' },
+      { main: 'Rau muống', swap: 'Rau cải ngọt / rau lang', protein: '~2g', kcal: '~20', note: 'Rau Việt dễ kiếm, rẻ' },
+      { main: 'Cà chua', swap: 'Ớt chuông / dưa leo', protein: '~1g', kcal: '~20', note: 'Giàu vitamin C' },
+      { main: 'Đậu que', swap: 'Đậu bắp / bí zucchini', protein: '~2g', kcal: '~30', note: 'Chất xơ hòa tan tốt' },
+      { main: 'Cà rốt', swap: 'Bí đỏ / su hào', protein: '~1g', kcal: '~35', note: 'Ngọt tự nhiên, ít GI' },
+    ],
+  },
+};
+
+const EATING_OUT_GUIDE = [
+  {
+    name: 'Cơm văn phòng / cơm bình dân',
+    icon: '🍱', color: '#22c55e',
+    rules: ['Chọn 1–2 món có đạm (cá kho, thịt luộc, trứng bác)', 'Xin thêm rau luộc hoặc canh thay vì thêm cơm', 'Giảm hoặc bỏ nước sốt mặn/ngọt'],
+    avoid: 'Tránh combo thịt chiên + cơm nhiều + nước ngọt',
+  },
+  {
+    name: 'Bún / Phở / Hủ tiếu',
+    icon: '🍜', color: '#f97316',
+    rules: ['Gọi "ít bún/phở" và nhiều thịt nạc', 'Thêm rau giá sống / rau thơm tự do', 'Gọi nước dùng trong thay vì loại đặc béo'],
+    avoid: 'Không thêm sa tế/tương ngọt quá nhiều — natri và đường ẩn cao',
+  },
+  {
+    name: 'Cơm tấm / Cơm sườn',
+    icon: '🥩', color: '#06b6d4',
+    rules: ['Chọn sườn nạc, bỏ qua bì chả nhiều fat', 'Xin thêm dưa leo/canh thay vì thêm trứng ốp', 'Ăn chậm — cơm tấm dễ ăn nhanh vì ngon'],
+    avoid: 'Hạn chế mỡ hành và nước mắm ngọt — calo ẩn đáng kể',
+  },
+  {
+    name: 'Gà rán / FastFood',
+    icon: '🍗', color: '#eab308',
+    rules: ['Gọi gà nướng thay gà rán (giảm 40% calo)', 'Thay khoai chiên bằng salad hoặc ngô luộc', 'Nước lọc hoặc trà không đường thay nước ngọt'],
+    avoid: 'Combo burger lớn + khoai chiên + nước ngọt ≈ gần TDEE cả ngày',
+  },
+];
+
+const OFF_PLAN_RULES = [
+  { icon: '🚫', rule: 'Không bỏ bữa sau để "trả nợ"', reason: 'Nhịn bù làm đói dồn dập → ăn bù quá mức và cảm giác thất bại chồng chất.' },
+  { icon: '🏋️', rule: 'Không tập phạt cơ thể sau khi ăn lỡ', reason: '"Tập để xóa calo" là tư duy sai — tập vì cơ thể cần, không phải để trừng phạt.' },
+  { icon: '⏭️', rule: 'Không buông cả ngày còn lại vì lỡ 1 bữa', reason: 'Một bữa ăn sai không phá hỏng kết quả. Buông toàn ngày mới là điều thực sự phá kế hoạch.' },
+];
+
+const EATING_HABITS = [
+  {
+    icon: '🐌', title: 'Ăn Chậm — No Đúng Lúc',
+    color: '#22c55e',
+    tips: [
+      'Ăn trong 15–20 phút — não cần 15 phút mới nhận được tín hiệu no từ dạ dày.',
+      'Đặt đũa xuống sau mỗi vài miếng, không cầm liên tục.',
+      'Dừng ở mức no 7/10 — không ăn đến khi căng bụng.',
+    ],
+    note: 'Nghiên cứu: ăn chậm giúp giảm tổng lượng calo trong bữa 10–15% không cần nỗ lực.',
+  },
+  {
+    icon: '⏰', title: 'Ăn Đúng Giờ Tương Đối',
+    color: '#06b6d4',
+    tips: [
+      'Không cần đúng giờ tuyệt đối, nhưng nên có nhịp: sáng 7–9h, trưa 11–13h, tối 17–19h.',
+      'Khoảng cách bữa tốt nhất là 3–5 giờ — đủ tiêu hóa, không đói quá.',
+      'Không bỏ bữa rồi ăn bù quá nhiều — mất ổn định đường huyết cả ngày.',
+    ],
+    note: 'Ăn đúng nhịp giúp duy trì insulin ổn định và giảm thèm ăn vặt buổi chiều.',
+  },
+  {
+    icon: '🍬', title: 'Kiểm Soát Đồ Ngọt Thông Minh',
+    color: '#f59e0b',
+    tips: [
+      'Không cấm tuyệt đối — cấm tạo cơn thèm dồn nén. Cho phép 1–2 lần/tuần.',
+      'Ăn đồ ngọt sau bữa chính thay vì khi đói — insulin đã tăng sẵn, tác động nhỏ hơn.',
+      'Giảm tần suất trước khi giảm lượng — bước nhỏ dễ duy trì hơn.',
+    ],
+    note: 'Mục tiêu thực tế: từ 7 lần/tuần → 3–4 lần → 1–2 lần/tuần trong 4–6 tuần.',
+  },
+];
+
 const TRACKING_SECTIONS = [
   {
     id: 'daily',
@@ -1753,6 +1869,42 @@ function FoundationPanel({ s, onGoalKeyChange }) {
           ))}
         </div>
       </RevealBlock>
+
+      {/* ── SECTION 4: 7 Triết Lý Dinh Dưỡng ─────────────── */}
+      <RevealBlock delay={130}>
+        <div className="mt-2">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-lime-500/12 border border-lime-500/25 flex items-center justify-center text-xl shrink-0">💎</div>
+            <div>
+              <p className="text-sm font-bold text-text">7 Công Thức Triết Lý Dinh Dưỡng</p>
+              <p className="text-[10px] text-muted">Nền tảng tư duy để duy trì bền vững — không phụ thuộc ý chí</p>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 px-5 py-3.5 mb-5 text-center">
+            <p className="text-sm font-bold text-lime-400 italic leading-relaxed">
+              "Ăn đủ — ăn đều — ăn thật — ăn theo mục tiêu — sống được lâu dài."
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {PHILOSOPHY_7.map((p, i) => (
+              <RevealBlock key={i} delay={i * 55}>
+                <div className="rounded-xl border border-white/6 bg-white/[0.018] p-4 flex items-start gap-3 hover:bg-white/[0.035] hover:border-lime-500/20 transition-all duration-200">
+                  <span className="text-xl shrink-0 mt-0.5">{p.icon}</span>
+                  <div>
+                    <p className="text-[11px] font-bold text-text mb-1">{p.title}</p>
+                    <p className="text-[10px] text-muted leading-relaxed">{p.body}</p>
+                  </div>
+                </div>
+              </RevealBlock>
+            ))}
+          </div>
+          <div className="mt-4 rounded-2xl border border-lime-500/15 bg-lime-500/5 p-4 text-center">
+            <p className="text-[11px] font-bold text-lime-400 italic">
+              "Dinh dưỡng tốt nhất là dinh dưỡng bạn hiểu, thích nghi được, và duy trì được."
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
     </div>
   );
 }
@@ -2065,6 +2217,116 @@ function PlatePanel({ s }) {
             <p className="text-[11px] text-muted/80 italic leading-relaxed">
               "Một bữa lệch kế hoạch <span className="text-purple-400 font-semibold not-italic">không phá hỏng hành trình</span>. Điều phá hỏng hành trình là tâm lý <span className="text-red-400 font-semibold not-italic">'lỡ rồi bỏ luôn'</span>."
             </p>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* ── 4 Câu Hỏi Kiểm Tra Mỗi Bữa ─────────────────────── */}
+      <RevealBlock delay={140}>
+        <div className="rounded-2xl border border-border/25 p-6 mb-8" style={{ background: 'rgba(255,255,255,0.015)' }}>
+          <div className="flex items-start gap-3 mb-5">
+            <div className="w-9 h-9 rounded-xl bg-green-500/12 border border-green-500/20 flex items-center justify-center text-xl shrink-0">❓</div>
+            <div>
+              <h3 className="text-sm font-bold text-text">4 Câu Hỏi Kiểm Tra Mỗi Bữa</h3>
+              <p className="text-[10px] text-muted mt-0.5">Thói quen đơn giản để mỗi bữa đều đạt chuẩn dinh dưỡng — không cần đếm calo</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {MEAL_CHECK_QUESTIONS.map((q, i) => (
+              <RevealBlock key={i} delay={i * 50}>
+                <div className="rounded-xl border p-4 flex items-start gap-3" style={{ borderColor: `${q.color}25`, background: `${q.color}06` }}>
+                  <span className="text-2xl shrink-0">{q.icon}</span>
+                  <div className="flex-1">
+                    <p className="text-[11px] font-bold text-text mb-1.5">{q.q}</p>
+                    <p className="text-[10px] leading-relaxed" style={{ color: q.color }}>{q.example}</p>
+                  </div>
+                  <div className="w-5 h-5 rounded-full border-2 shrink-0 mt-0.5 flex items-center justify-center" style={{ borderColor: `${q.color}50` }}>
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: `${q.color}60` }} />
+                  </div>
+                </div>
+              </RevealBlock>
+            ))}
+          </div>
+          <div className="mt-4 rounded-xl px-4 py-3 border border-green-500/15 bg-green-500/5">
+            <p className="text-[10px] text-muted leading-relaxed">
+              <span className="font-bold text-green-400">💡 Cách dùng:</span> Trước mỗi bữa ăn, hỏi qua 4 câu này. Nếu bữa hiện tại thiếu một điều gì đó — bổ sung ngay hoặc điều chỉnh ở bữa tiếp theo. Không cần hoàn hảo, chỉ cần nhận thức.
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* ── Bảng Thay Thế Thực Phẩm ─────────────────────────── */}
+      <RevealBlock delay={160}>
+        <div className="mb-8">
+          <div className="flex items-start gap-3 mb-5">
+            <div className="w-9 h-9 rounded-xl bg-cyan-500/12 border border-cyan-500/20 flex items-center justify-center text-xl shrink-0">🔀</div>
+            <div>
+              <h3 className="text-sm font-bold text-text">Bảng Thay Thế Thực Phẩm</h3>
+              <p className="text-[10px] text-muted mt-0.5">Hoán đổi linh hoạt khi không có nguyên liệu — giữ nguyên lượng đạm và calo</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {Object.values(FOOD_SWAP_TABLE).map((group) => (
+              <RevealBlock key={group.label}>
+                <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${group.color}25`, background: `${group.color}05` }}>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-xl">{group.icon}</span>
+                    <p className="text-xs font-bold" style={{ color: group.color }}>{group.label}</p>
+                  </div>
+                  <div className="space-y-3">
+                    {group.items.map((item, j) => (
+                      <div key={j} className="rounded-xl border p-2.5" style={{ borderColor: `${group.color}15`, background: `${group.color}04` }}>
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <span className="text-[10px] font-bold text-text">{item.main}</span>
+                          <span className="text-muted/40 text-[9px]">→</span>
+                          <span className="text-[10px] font-bold" style={{ color: group.color }}>{item.swap}</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-[9px] text-muted">
+                          <span>P: <b className="text-text">{item.protein}</b></span>
+                          <span>Kcal: <b className="text-text">{item.kcal}</b></span>
+                        </div>
+                        <p className="text-[9px] text-muted/60 mt-1 italic">{item.note}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </RevealBlock>
+            ))}
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* ── Ăn Ngoài Khỏe Với 3 Quy Tắc ────────────────────── */}
+      <RevealBlock delay={180}>
+        <div className="mb-2">
+          <div className="flex items-start gap-3 mb-5">
+            <div className="w-9 h-9 rounded-xl bg-orange-500/12 border border-orange-500/20 flex items-center justify-center text-xl shrink-0">🏪</div>
+            <div>
+              <h3 className="text-sm font-bold text-text">Ăn Ngoài Vẫn Khỏe — Quy Tắc 3 Chọn</h3>
+              <p className="text-[10px] text-muted mt-0.5">Khi ăn ngoài: chọn đạm trước → thêm rau/canh → điều chỉnh tinh bột theo mục tiêu</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {EATING_OUT_GUIDE.map((g, i) => (
+              <RevealBlock key={i} delay={i * 60}>
+                <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${g.color}22`, background: `${g.color}05` }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-2xl">{g.icon}</span>
+                    <p className="text-xs font-bold text-text">{g.name}</p>
+                  </div>
+                  <ul className="space-y-1.5 mb-3">
+                    {g.rules.map((r, j) => (
+                      <li key={j} className="flex items-start gap-2 text-[10px] text-muted">
+                        <span className="font-bold shrink-0 mt-px" style={{ color: g.color }}>✓</span>{r}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="rounded-lg px-2.5 py-1.5 border text-[9px] text-muted/70" style={{ borderColor: `${g.color}15`, background: `${g.color}08` }}>
+                    ⚠️ {g.avoid}
+                  </div>
+                </div>
+              </RevealBlock>
+            ))}
           </div>
         </div>
       </RevealBlock>
@@ -4247,6 +4509,100 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
         {activeSection === 1 && <WeeklyMetricsContent activeGoal={activeGoal} />}
         {activeSection === 2 && <AdjustmentContent />}
       </div>
+
+      {/* ── Thói Quen Ăn Uống Bền Vững ──────────────────────── */}
+      <RevealBlock delay={60}>
+        <div className="mt-4">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-9 h-9 rounded-xl bg-purple-500/12 border border-purple-500/20 flex items-center justify-center text-xl shrink-0">🌱</div>
+            <div>
+              <p className="text-sm font-bold text-text">Thói Quen Ăn Uống Bền Vững</p>
+              <p className="text-[10px] text-muted">3 hành vi nhỏ — tác động lớn lên kết quả dài hạn</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {EATING_HABITS.map((h, i) => (
+              <RevealBlock key={i} delay={i * 60}>
+                <div className="rounded-2xl border p-5 h-full" style={{ borderColor: `${h.color}22`, background: `${h.color}05` }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-2xl">{h.icon}</span>
+                    <p className="text-xs font-bold" style={{ color: h.color }}>{h.title}</p>
+                  </div>
+                  <ul className="space-y-2 mb-3">
+                    {h.tips.map((tip, j) => (
+                      <li key={j} className="flex items-start gap-2 text-[10px] text-muted">
+                        <span className="font-bold shrink-0 mt-px" style={{ color: h.color }}>→</span>
+                        <span className="leading-relaxed">{tip}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="rounded-xl px-3 py-2 border text-[9px] leading-relaxed" style={{ borderColor: `${h.color}20`, background: `${h.color}08`, color: `${h.color}cc` }}>
+                    💡 {h.note}
+                  </div>
+                </div>
+              </RevealBlock>
+            ))}
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* ── Quy Tắc 3 Không Khi Bữa Lỡ + Quy Tắc Quay Lại ─── */}
+      <RevealBlock delay={100}>
+        <div className="grid sm:grid-cols-2 gap-4 mt-2">
+          {/* Quy tắc 3 không */}
+          <div className="rounded-2xl border border-red-500/20 bg-red-500/5 p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-2xl">🚨</span>
+              <div>
+                <p className="text-sm font-bold text-red-300">Quy Tắc 3 Không</p>
+                <p className="text-[10px] text-muted">Khi ăn lỡ tay hoặc ăn không đúng kế hoạch</p>
+              </div>
+            </div>
+            <div className="space-y-3">
+              {OFF_PLAN_RULES.map((r, i) => (
+                <div key={i} className="rounded-xl border border-red-500/15 bg-red-500/5 p-3">
+                  <div className="flex items-start gap-2">
+                    <span className="text-base shrink-0">{r.icon}</span>
+                    <div>
+                      <p className="text-[11px] font-bold text-red-300 mb-1">{r.rule}</p>
+                      <p className="text-[10px] text-muted leading-relaxed">{r.reason}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Quy tắc quay lại */}
+          <div className="rounded-2xl border border-green-500/20 bg-green-500/5 p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-2xl">✅</span>
+              <div>
+                <p className="text-sm font-bold text-green-300">Quy Tắc Quay Lại</p>
+                <p className="text-[10px] text-muted">4 bước để reset sau bữa lệch kế hoạch</p>
+              </div>
+            </div>
+            <div className="space-y-3">
+              {[
+                { step: '01', text: 'Bữa sau ăn bình thường — không cắt calo bù', color: '#22c55e' },
+                { step: '02', text: 'Uống đủ nước — giúp cơ thể xử lý lượng muối và calo dư', color: '#06b6d4' },
+                { step: '03', text: 'Đi bộ nhẹ 10–20 phút — giúp tiêu hóa và cải thiện tâm trạng', color: '#a855f7' },
+                { step: '04', text: 'Ngủ đủ giấc — đêm đó quan trọng hơn việc tập bù', color: '#f59e0b' },
+              ].map((s) => (
+                <div key={s.step} className="flex items-start gap-3 rounded-xl border border-green-500/10 bg-green-500/5 p-3">
+                  <span className="text-[9px] font-black w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ background: `${s.color}20`, color: s.color }}>{s.step}</span>
+                  <p className="text-[10px] text-muted leading-relaxed flex-1">{s.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 rounded-xl px-3 py-2 border border-green-500/15 bg-green-500/8">
+              <p className="text-[9px] text-green-400/80 italic leading-relaxed">
+                "Một bữa ăn sai không phá hỏng cả quá trình. Bỏ cuộc mới phá hỏng."
+              </p>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
     </div>
   );
 }

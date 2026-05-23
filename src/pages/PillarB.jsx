@@ -3832,7 +3832,7 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
 
         <div className="space-y-5">
           {thresholds.map((t, i) => (
-            <div key={i} className="rounded-2xl overflow-hidden border" style={{ borderColor: `${t.color}18`, background: `${t.color}03` }}>
+            <div key={i} className="rounded-2xl border" style={{ borderColor: `${t.color}18`, background: `${t.color}03` }}>
 
               {/* ── Metric header ── */}
               <div className="px-4 pt-4 pb-3 flex items-start gap-3" style={{ borderBottom: `1px solid ${t.color}12` }}>

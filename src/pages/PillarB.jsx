@@ -5182,6 +5182,235 @@ function b7MetricDetail(key, s) {
   return map[key] ?? null;
 }
 
+// ─── B7 helper components ────────────────────────────────────────────────────
+
+function FormulaRow({ label, formula, result, color }) {
+  return (
+    <div className="flex items-center gap-2 text-[10px]">
+      <span className="font-bold text-muted w-14 shrink-0">{label}</span>
+      <span className="text-muted/60 font-mono flex-1 leading-relaxed">{formula}</span>
+      <span className="font-black shrink-0" style={{ color }}>= {result}</span>
+    </div>
+  );
+}
+
+function MacroFormulaChain({ s }) {
+  const bmrFormula = s.sex === 'male'
+    ? `10×${s.weight} + 6.25×${s.height} − 5×${s.age} + 5`
+    : `10×${s.weight} + 6.25×${s.height} − 5×${s.age} − 161`;
+
+  const steps = [
+    { label: 'BMR', value: s.bmr.toLocaleString(), unit: 'kcal/ngày', formula: bmrFormula, color: '#8b5cf6' },
+    { label: 'TDEE', value: s.tdee.toLocaleString(), unit: 'kcal/ngày', formula: `${s.bmr.toLocaleString()} × ${s.activity.mult}`, color: '#f59e0b' },
+    { label: 'Mục Tiêu', value: s.targetKcal.toLocaleString(), unit: 'kcal/ngày', formula: `${s.tdee.toLocaleString()} ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} (${s.goal.label})`, color: '#ec4899' },
+  ];
+  const macros = [
+    { label: 'Protein', value: `${s.proteinG}g`, formula: `${s.weight}kg × ${(s.proteinG / s.weight).toFixed(1)}g/kg`, pct: s.proteinPct, color: '#84cc16' },
+    { label: 'Fat', value: `${s.fatG}g`, formula: `${s.targetKcal} × 25% ÷ 9`, pct: s.fatPct, color: '#eab308' },
+    { label: 'Carb', value: `${s.carbG}g`, formula: `(${s.targetKcal} − ${s.proteinG * 4} − ${s.fatG * 9}) ÷ 4`, pct: s.carbPct, color: '#f97316' },
+  ];
+
+  return (
+    <div className="space-y-3">
+      <div className="grid grid-cols-3 gap-2">
+        {steps.map((step, i) => (
+          <div key={step.label} className="rounded-xl border p-3 text-center relative" style={{ borderColor: `${step.color}30`, background: `${step.color}08` }}>
+            {i < steps.length - 1 && (
+              <span className="absolute -right-1.5 top-1/2 -translate-y-1/2 text-muted/30 text-xs z-10 hidden sm:block">→</span>
+            )}
+            <p className="text-[9px] font-bold text-muted uppercase tracking-widest mb-1.5">{step.label}</p>
+            <p className="text-xl font-black leading-none mb-1" style={{ color: step.color }}>{step.value}</p>
+            <p className="text-[9px] text-muted">{step.unit}</p>
+            <p className="text-[9px] font-mono text-muted/50 mt-1.5 leading-relaxed break-all">{step.formula}</p>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center text-[10px] text-muted/40">↓ Phân bổ macro từ kcal mục tiêu</div>
+      <div className="grid grid-cols-3 gap-2">
+        {macros.map((m) => (
+          <div key={m.label} className="rounded-xl border p-3 text-center" style={{ borderColor: `${m.color}30`, background: `${m.color}08` }}>
+            <p className="text-[9px] font-bold text-muted uppercase tracking-widest mb-1.5">{m.label}</p>
+            <p className="text-xl font-black leading-none mb-1" style={{ color: m.color }}>{m.value}</p>
+            <p className="text-[9px] font-bold" style={{ color: m.color }}>{m.pct}% kcal</p>
+            <p className="text-[9px] font-mono text-muted/50 mt-1.5 leading-relaxed break-all">{m.formula}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MacroCycleBarChart({ s }) {
+  const types = [
+    { label: 'Ngày Nghỉ', sub: '×0.90', mult: 0.90, color: '#22c55e' },
+    { label: 'Tập Nhẹ',   sub: '×0.95', mult: 0.95, color: '#06b6d4' },
+    { label: 'Tập Vừa',   sub: '×1.00', mult: 1.00, color: '#f59e0b' },
+    { label: 'Tập Nặng',  sub: '×1.07', mult: 1.07, color: '#ef4444' },
+  ];
+  const kcals = types.map(t => Math.round(s.tdee * t.mult));
+  const W = 460, H = 100, PAD_T = 22, PAD_B = 42, PAD_LR = 16;
+  const slotW = (W - PAD_LR * 2) / 4;
+  const BAR_W = slotW * 0.52;
+  const maxKcal = Math.max(...kcals);
+  const minKcal = Math.min(...kcals) * 0.91;
+  const safeRange = maxKcal * 1.02 - minKcal;
+  const yOf = k => PAD_T + H * (1 - (k - minKcal) / safeRange);
+  const tdeeY = yOf(s.tdee);
+  const totalH = PAD_T + H + PAD_B;
+
+  return (
+    <svg viewBox={`0 0 ${W} ${totalH}`} width="100%" style={{ overflow: 'visible' }}>
+      <line x1={PAD_LR} y1={tdeeY} x2={W - PAD_LR} y2={tdeeY}
+        stroke="#ffffff18" strokeWidth="1" strokeDasharray="4 3" />
+      <text x={W - PAD_LR + 4} y={tdeeY + 3} fontSize="7" fill="#ffffff28">TDEE</text>
+      {types.map((t, i) => {
+        const x = PAD_LR + slotW * i + slotW / 2;
+        const kcal = kcals[i];
+        const y = yOf(kcal);
+        const diffPct = Math.round((t.mult - 1) * 100);
+        return (
+          <g key={i}>
+            <rect x={x - BAR_W / 2} y={y} width={BAR_W} height={PAD_T + H - y + 2} fill={`${t.color}18`} rx="4" />
+            <rect x={x - BAR_W / 2} y={y} width={BAR_W} height={4} fill={t.color} rx="3" opacity="0.75" />
+            <text x={x} y={y - 9} textAnchor="middle" fontSize="8.5" fontWeight="700" fill={`${t.color}dd`}>
+              {(kcal / 1000).toFixed(1)}k
+            </text>
+            <text x={x} y={PAD_T + H + 14} textAnchor="middle" fontSize="8" fill="#9ca3af70">{t.label}</text>
+            <text x={x} y={PAD_T + H + 28} textAnchor="middle" fontSize="7.5" fill={`${t.color}90`}>
+              {diffPct === 0 ? 'TDEE' : `${diffPct > 0 ? '+' : ''}${diffPct}%`}
+            </text>
+            <text x={x} y={PAD_T + H + 40} textAnchor="middle" fontSize="7" fill={`${t.color}55`}>
+              {(kcal / 1000).toFixed(2)}k kcal
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+function PrePostWorkoutProtocol({ s }) {
+  const preCarb = [Math.round(s.weight * 0.5), Math.round(s.weight * 1.0)];
+  const preProtein = [Math.round(s.weight * 0.2), Math.round(s.weight * 0.3)];
+  const postProtein = [Math.round(s.weight * 0.25), Math.round(s.weight * 0.4)];
+  const postCarb = [Math.round(s.weight * 0.5), Math.round(s.weight * 1.0)];
+  const postWater = [Math.round(s.weight * 0.3 * 10) / 10, Math.round(s.weight * 0.5 * 10) / 10];
+
+  return (
+    <div className="grid sm:grid-cols-2 gap-4">
+      <div className="rounded-2xl border border-orange-500/25 bg-orange-500/5 p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-2xl">⚡</span>
+          <div>
+            <p className="text-sm font-bold text-orange-300">Pre-Workout</p>
+            <p className="text-[10px] text-muted">60–120 phút trước tập</p>
+          </div>
+        </div>
+        <div className="space-y-2 mb-4">
+          <FormulaRow label="Carb" formula={`${s.weight}kg × 0.5–1g/kg`} result={`${preCarb[0]}–${preCarb[1]}g`} color="#f97316" />
+          <FormulaRow label="Protein" formula={`${s.weight}kg × 0.2–0.3g/kg`} result={`${preProtein[0]}–${preProtein[1]}g`} color="#84cc16" />
+          <FormulaRow label="Fat" formula="Hạn chế (nặng bụng)" result="< 10g" color="#eab308" />
+        </div>
+        <div className="border-t border-orange-500/15 pt-3">
+          <p className="text-[9px] font-bold text-orange-400 uppercase mb-2">Gợi ý thực phẩm</p>
+          <div className="flex flex-wrap gap-1">
+            {['Chuối + sữa chua', 'Bánh mì + trứng', 'Yến mạch + sữa', 'Cơm nhỏ + gà'].map(f => (
+              <span key={f} className="text-[10px] text-orange-300/80 bg-orange-500/10 border border-orange-500/20 px-1.5 py-0.5 rounded-lg">{f}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-green-500/25 bg-green-500/5 p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-2xl">💪</span>
+          <div>
+            <p className="text-sm font-bold text-green-300">Post-Workout</p>
+            <p className="text-[10px] text-muted">Trong 1–2 giờ sau tập</p>
+          </div>
+        </div>
+        <div className="space-y-2 mb-4">
+          <FormulaRow label="Protein" formula={`${s.weight}kg × 0.25–0.4g/kg`} result={`${postProtein[0]}–${postProtein[1]}g`} color="#84cc16" />
+          <FormulaRow label="Carb" formula={`${s.weight}kg × 0.5–1g/kg`} result={`${postCarb[0]}–${postCarb[1]}g`} color="#f97316" />
+          <FormulaRow label="Nước" formula={`${s.weight}kg × 0.3–0.5L`} result={`${postWater[0]}–${postWater[1]}L bù`} color="#06b6d4" />
+        </div>
+        <div className="border-t border-green-500/15 pt-3">
+          <p className="text-[9px] font-bold text-green-400 uppercase mb-2">Gợi ý thực phẩm</p>
+          <div className="flex flex-wrap gap-1">
+            {['Cơm + gà/cá/bò', 'Trứng + bánh mì', 'Sữa + chuối', 'Whey + khoai'].map(f => (
+              <span key={f} className="text-[10px] text-green-300/80 bg-green-500/10 border border-green-500/20 px-1.5 py-0.5 rounded-lg">{f}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function EnduranceFuelingGuide({ s }) {
+  const zones = [
+    {
+      icon: '🏃', duration: '< 60 phút',
+      carb: 'Không cần', carbExample: null,
+      water: '400–600ml', electrolyte: 'Không cần',
+      color: '#22c55e',
+      note: 'Nước là đủ. Bữa ăn trước đủ carb là quan trọng nhất.',
+    },
+    {
+      icon: '🚴', duration: '60–120 phút',
+      carb: '30–60g/giờ', carbExample: `${Math.round(s.weight * 0.4)}–${Math.round(s.weight * 0.8)}g/h`,
+      water: '400–800ml/giờ', electrolyte: 'Nên dùng',
+      color: '#f59e0b',
+      note: `Bắt đầu nạp từ phút 30–45, không chờ đói. Ví dụ ${s.weight}kg: ${Math.round(s.weight * 0.4)}–${Math.round(s.weight * 0.8)}g carb/h.`,
+    },
+    {
+      icon: '🏊', duration: '> 120 phút',
+      carb: '60–90g/giờ', carbExample: `${Math.round(s.weight * 0.8)}–${Math.round(s.weight * 1.2)}g/h`,
+      water: '500–1000ml/giờ', electrolyte: 'Bắt buộc',
+      color: '#ef4444',
+      note: 'Gel + nước dừa + điện giải. Tránh chuột rút do mất natri/kali.',
+    },
+  ];
+
+  return (
+    <div className="grid md:grid-cols-3 gap-3">
+      {zones.map((z, i) => (
+        <RevealBlock key={i} delay={i * 60}>
+          <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${z.color}25`, background: `${z.color}06` }}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">{z.icon}</span>
+              <span className="text-xs font-black" style={{ color: z.color }}>{z.duration}</span>
+            </div>
+            <div className="space-y-2 mb-3">
+              <div className="flex justify-between text-[10px]">
+                <span className="text-muted">Carb/giờ</span>
+                <span className="font-bold" style={{ color: z.color }}>{z.carb}</span>
+              </div>
+              {z.carbExample && (
+                <div className="flex justify-between text-[10px]">
+                  <span className="text-muted">{s.weight}kg:</span>
+                  <span className="font-bold text-text/70">{z.carbExample}</span>
+                </div>
+              )}
+              <div className="flex justify-between text-[10px]">
+                <span className="text-muted">Nước/giờ</span>
+                <span className="font-bold text-cyan-400/80">{z.water}</span>
+              </div>
+              <div className="flex justify-between text-[10px]">
+                <span className="text-muted">Điện giải</span>
+                <span className="font-bold" style={{ color: z.electrolyte === 'Bắt buộc' ? '#ef4444' : z.electrolyte === 'Nên dùng' ? '#f59e0b' : '#22c55e' }}>{z.electrolyte}</span>
+              </div>
+            </div>
+            <div className="pt-3 border-t" style={{ borderColor: `${z.color}20` }}>
+              <p className="text-[10px] text-muted leading-relaxed">{z.note}</p>
+            </div>
+          </div>
+        </RevealBlock>
+      ))}
+    </div>
+  );
+}
+
 // ─── AdvancedPanel (B7) ──────────────────────────────────────────────────────
 function AdvancedPanel({ s }) {
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -5200,8 +5429,123 @@ function AdvancedPanel({ s }) {
           { key: 'postworkout_protein', label: 'Post-workout P', value: `${s.postWorkoutProteinG}g`, note: 'trong 2h sau tập',                               tip: `${s.postWorkoutProteinG}g = ${s.weight}kg × 0.3g/kg. Trong 2 giờ sau tập, cửa sổ tổng hợp protein mở rộng nhất. Kết hợp với ${s.postWorkoutCarbG}g carb (${s.weight}kg × 0.5g/kg) để tối ưu phục hồi glycogen và tổng hợp cơ.` },
         ]} />
       {detail && <MetricDetailCard detail={detail} color="#f59e0b" onClose={() => setSelectedMetric(null)} />}
+
+      {/* Context image */}
+      <RevealBlock>
+        <div className="pb-orbit-ring rounded-3xl p-[1.5px]">
+          <div className="relative rounded-3xl overflow-hidden h-52 md:h-64">
+            <img
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=75&auto=format&fit=crop"
+              alt="Advanced athletic nutrition"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
+            <div className="absolute bottom-4 left-6 flex items-center gap-3">
+              <span className="text-amber-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-amber-500/20">
+                Dinh Dưỡng Vận Động Viên
+              </span>
+              <span className="text-[10px] text-muted/60 bg-bg/40 px-2 py-1 rounded-full">
+                Tối ưu hiệu suất & phục hồi
+              </span>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* Macro formula chain */}
+      <RevealBlock>
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-6">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="text-2xl">🧮</span>
+            <div>
+              <p className="text-sm font-bold text-amber-300">Chuỗi Tính Toán Macro</p>
+              <p className="text-[10px] text-muted">BMR → TDEE → Mục Tiêu → Protein / Fat / Carb</p>
+            </div>
+          </div>
+          <MacroFormulaChain s={s} />
+          <div className="mt-4 rounded-xl bg-amber-500/8 border border-amber-500/15 p-3">
+            <p className="text-[10px] text-amber-400/80 leading-relaxed">
+              <span className="font-bold">📌 Lưu ý:</span> Công thức Mifflin-St Jeor cho sai số ±100–150 kcal so với thực tế. Dùng làm điểm xuất phát, sau 2 tuần điều chỉnh theo cân nặng: cân không giảm → giảm 100–200 kcal; cân giảm &gt; 1kg/tuần → tăng 100–200 kcal.
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* Macro cycle bar chart */}
+      <RevealBlock delay={40}>
+        <div className="rounded-2xl border border-border/25 bg-surface/5 p-5">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">📊</span>
+              <div>
+                <p className="text-sm font-bold text-text">Biểu Đồ Chu Kỳ Calo Theo Ngày</p>
+                <p className="text-[10px] text-muted">Điều chỉnh TDEE × hệ số theo cường độ buổi tập</p>
+              </div>
+            </div>
+            <span className="text-[10px] text-muted/50 bg-surface/40 px-2 py-1 rounded-full border border-border/20">
+              TDEE = {s.tdee.toLocaleString()} kcal
+            </span>
+          </div>
+          <div className="mt-3">
+            <MacroCycleBarChart s={s} />
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
+            {[
+              { label: 'Ngày Nghỉ', mult: 0.90, kcal: Math.round(s.tdee * 0.90), color: '#22c55e', note: 'Carb thấp, fat cao hơn' },
+              { label: 'Tập Nhẹ',  mult: 0.95, kcal: Math.round(s.tdee * 0.95), color: '#06b6d4', note: 'Duy trì, cardio nhẹ' },
+              { label: 'Tập Vừa', mult: 1.00, kcal: Math.round(s.tdee * 1.00), color: '#f59e0b', note: 'Bằng TDEE, cân bằng' },
+              { label: 'Tập Nặng', mult: 1.07, kcal: Math.round(s.tdee * 1.07), color: '#ef4444', note: 'Nạp carb tối đa' },
+            ].map(d => (
+              <div key={d.label} className="rounded-xl p-3 text-center" style={{ background: `${d.color}08`, border: `1px solid ${d.color}20` }}>
+                <p className="text-[9px] font-bold uppercase tracking-wider mb-1" style={{ color: d.color }}>{d.label}</p>
+                <p className="text-base font-black leading-none mb-1" style={{ color: d.color }}>{(d.kcal / 1000).toFixed(1)}k</p>
+                <p className="text-[9px] text-muted">{d.note}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* Pre/Post workout protocol */}
+      <RevealBlock delay={60}>
+        <div className="space-y-3">
+          <div className="flex items-center gap-3 mb-1">
+            <span className="text-2xl">⚡</span>
+            <div>
+              <p className="text-sm font-bold text-text">Giao Thức Dinh Dưỡng Quanh Buổi Tập</p>
+              <p className="text-[10px] text-muted">Tính theo cân nặng {s.weight}kg — từ tài liệu nghiên cứu thực hành</p>
+            </div>
+          </div>
+          <PrePostWorkoutProtocol s={s} />
+          <div className="rounded-xl bg-surface/10 border border-border/20 p-3">
+            <p className="text-[10px] text-muted leading-relaxed">
+              <span className="font-bold text-amber-400">⏱ Timing tối ưu:</span> Pre-workout ăn sớm 60–120 phút → cơ thể đã tiêu hóa xong khi tập. Nếu chỉ có 30 phút, chọn carb đơn giản (chuối, bánh gạo). Post-workout: 30 phút đầu là lý tưởng nhất — insulin nhạy cao, mTOR kích hoạt mạnh.
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* Endurance fueling guide */}
+      <RevealBlock delay={80}>
+        <div className="space-y-3">
+          <div className="flex items-center gap-3 mb-1">
+            <span className="text-2xl">🏁</span>
+            <div>
+              <p className="text-sm font-bold text-text">Hướng Dẫn Nạp Nhiên Liệu Sức Bền</p>
+              <p className="text-[10px] text-muted">3 vùng thời gian — chiến lược carb + nước + điện giải</p>
+            </div>
+          </div>
+          <EnduranceFuelingGuide s={s} />
+          <div className="rounded-xl bg-cyan-500/5 border border-cyan-500/20 p-3">
+            <p className="text-[10px] text-cyan-400/80 leading-relaxed">
+              <span className="font-bold">💡 Quy tắc 30-45:</span> Bắt đầu nạp carb từ phút thứ 30–45 của buổi tập sức bền, <em>không chờ đến khi cảm thấy mệt</em> — lúc đó đã trễ. Mỗi 15–20 phút nạp thêm 1 lần: gel năng lượng, nước dừa, hoặc chuối.
+            </p>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* Training day types */}
-      <div>
+      <RevealBlock delay={100}>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Dinh Dưỡng Theo Loại Ngày Tập</p>
         <div className="grid md:grid-cols-2 gap-4">
           {TRAINING_DAY_TYPES.map(d => (
@@ -5242,10 +5586,10 @@ function AdvancedPanel({ s }) {
             </RevealBlock>
           ))}
         </div>
-      </div>
+      </RevealBlock>
 
       {/* Timing schedule */}
-      <RevealBlock delay={80}>
+      <RevealBlock delay={120}>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Lịch Nạp Dinh Dưỡng Trong Ngày Tập Đôi</p>
         <div className="rounded-2xl border border-border/30 bg-surface/10 overflow-hidden">
           {TIMING_SCHEDULE.map((t, i) => (
@@ -5267,7 +5611,7 @@ function AdvancedPanel({ s }) {
       </RevealBlock>
 
       {/* Athlete principles */}
-      <RevealBlock delay={120}>
+      <RevealBlock delay={140}>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">5 Nguyên Tắc Vận Động Viên</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {ATHLETE_PRINCIPLES.map((p, i) => (

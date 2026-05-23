@@ -384,81 +384,136 @@ const GOALS = [
 
 const MEAL_DAYS = [
   {
-    day: 'Ngày 1',
+    day: 'Ngày 1', theme: 'Bắt đầu — Cân bằng', color: '#f97316',
+    totalKcal: '~1.480', totalProtein: '~82g',
+    analysis: {
+      headline: 'Ngày đầu — thiết lập thói quen nền tảng',
+      fiber: 'Rau muống + canh + chuối = ~10g chất xơ',
+      highlight: 'Protein phân bổ đều 5 bữa (sáng/snack/trưa/snack/tối). Tổng ~82g đạt 90% nhu cầu cơ bản — dễ duy trì và không cảm giác đói giữa bữa.',
+      tip: 'Cá kho tiêu giàu omega-3; hạt điều buổi xế cung cấp chất béo tốt + magie tự nhiên giúp thư giãn cơ bắp sau ngày dài.',
+      benefits: ['Ổn định đường huyết suốt ngày nhờ 5 bữa nhỏ', 'Đạm đa dạng: trứng + cá + sữa chua', 'Nhẹ bụng về tối với cháo — dễ ngủ ngon'],
+      score: { label: 'Dễ thực hiện', pct: 95 },
+    },
     meals: [
-      {
-        time: 'Sáng',
-        items: ['Cơm trắng', 'Trứng luộc ×2', 'Rau muống luộc', 'Nước lọc'],
-        note: 'Bận: bánh mì nguyên cám + trứng luộc',
-        protein: '~20g',
-        kcal: '~380',
-      },
-      {
-        time: 'Trưa',
-        items: ['Cơm trắng', 'Cá kho tiêu', 'Rau cải xào tỏi', 'Canh rau'],
-        note: 'Bận: cơm văn phòng chọn đĩa có cá/thịt + rau',
-        protein: '~30g',
-        kcal: '~520',
-      },
-      {
-        time: 'Tối',
-        items: ['Cháo yến mạch', 'Sữa chua không đường', 'Chuối 1 quả'],
-        note: 'Bận: yến mạch instant + protein shake',
-        protein: '~18g',
-        kcal: '~340',
-      },
+      { time: 'Sáng', timeColor: '#f97316', items: ['Cơm trắng', 'Trứng luộc ×2', 'Rau muống luộc', 'Nước lọc'], note: 'Bận: bánh mì nguyên cám + trứng luộc', protein: '~20g', kcal: '~380' },
+      { time: 'Snack sáng', timeColor: '#eab308', items: ['Sữa chua không đường', 'Chuối nhỏ ½'], note: 'Bận: 1 hộp sữa chua mua sẵn tiện lợi', protein: '~8g', kcal: '~120' },
+      { time: 'Trưa', timeColor: '#84cc16', items: ['Cơm trắng', 'Cá kho tiêu', 'Rau cải xào tỏi', 'Canh rau'], note: 'Bận: cơm văn phòng chọn đĩa có cá/thịt + rau', protein: '~30g', kcal: '~520' },
+      { time: 'Snack xế', timeColor: '#06b6d4', items: ['Hạt điều / hạnh nhân ~20g', 'Nước lọc'], note: 'Bận: gói hạt nhỏ mua sẵn giữ trong túi', protein: '~4g', kcal: '~120' },
+      { time: 'Tối', timeColor: '#a855f7', items: ['Cháo yến mạch', 'Sữa chua không đường', 'Chuối 1 quả'], note: 'Bận: yến mạch instant + protein shake', protein: '~18g', kcal: '~340' },
     ],
   },
   {
-    day: 'Ngày 2',
+    day: 'Ngày 2', theme: 'Protein nền tảng', color: '#22c55e',
+    totalKcal: '~1.480', totalProtein: '~94g',
+    analysis: {
+      headline: 'Hôm nay ưu tiên protein cao — đa dạng nguồn',
+      fiber: 'Rau sống + bắp cải + canh bí = ~11g chất xơ',
+      highlight: 'Gà luộc + trứng + đậu hũ + sữa đậu nành phân bổ đạm đều 5 bữa. Protein ~94g — lý tưởng cho ngày tập nhẹ hoặc phục hồi sau tập hôm qua.',
+      tip: 'Bánh mì nguyên cám sáng ổn định đường huyết đến trưa. Soup miso tối cung cấp probiotic tự nhiên và điện giải — giúp ngủ sâu và phục hồi tốt.',
+      benefits: ['Đạm phong phú từ 4 nguồn khác nhau trong ngày', 'Probiotic từ miso tối hỗ trợ hệ tiêu hoá', 'Bún + đậu hũ tối nhẹ bụng — không nặng khi đi ngủ'],
+      score: { label: 'Dinh dưỡng cao', pct: 92 },
+    },
     meals: [
-      {
-        time: 'Sáng',
-        items: ['Bánh mì nguyên cám', 'Trứng ốp la', 'Cà chua + dưa leo', 'Sữa tươi không đường'],
-        note: 'Bận: sandwich trứng mua ngoài',
-        protein: '~22g',
-        kcal: '~420',
-      },
-      {
-        time: 'Trưa',
-        items: ['Cơm trắng', 'Gà luộc sả', 'Canh bí đỏ', 'Rau sống'],
-        note: 'Bận: cơm gà luộc — bỏ nước chấm nhiều muối',
-        protein: '~35g',
-        kcal: '~500',
-      },
-      {
-        time: 'Tối',
-        items: ['Bún tươi', 'Đậu hũ chiên sả', 'Rau thơm + giá', 'Soup miso nhẹ'],
-        note: 'Bận: bún đậu mua ngoài, ít bún thêm rau',
-        protein: '~20g',
-        kcal: '~360',
-      },
+      { time: 'Sáng', timeColor: '#f97316', items: ['Bánh mì nguyên cám', 'Trứng ốp la', 'Cà chua + dưa leo', 'Sữa tươi không đường'], note: 'Bận: sandwich trứng mua ngoài', protein: '~22g', kcal: '~420' },
+      { time: 'Snack sáng', timeColor: '#eab308', items: ['Trứng luộc ×1', 'Trái cây nhỏ (táo/ổi)'], note: 'Bận: trứng luộc chuẩn bị sẵn đêm trước', protein: '~7g', kcal: '~110' },
+      { time: 'Trưa', timeColor: '#84cc16', items: ['Cơm trắng', 'Gà luộc sả', 'Canh bí đỏ', 'Rau sống'], note: 'Bận: cơm gà luộc — bỏ nước chấm nhiều muối', protein: '~35g', kcal: '~500' },
+      { time: 'Snack xế', timeColor: '#06b6d4', items: ['Sữa đậu nành không đường 200ml'], note: 'Bận: hộp sữa đậu nành tiện lợi', protein: '~7g', kcal: '~90' },
+      { time: 'Tối', timeColor: '#a855f7', items: ['Bún tươi', 'Đậu hũ chiên sả', 'Rau thơm + giá', 'Soup miso nhẹ'], note: 'Bận: bún đậu mua ngoài, ít bún thêm rau', protein: '~20g', kcal: '~360' },
     ],
   },
   {
-    day: 'Ngày 3',
+    day: 'Ngày 3', theme: 'Tinh bột phức hợp', color: '#06b6d4',
+    totalKcal: '~1.440', totalProtein: '~76g',
+    analysis: {
+      headline: 'Ngày tập trung vào tinh bột chất lượng cao',
+      fiber: 'Yến mạch + hạt chia + rau luộc + canh chua = ~14g chất xơ',
+      highlight: 'Yến mạch, gạo lứt, khoai lang — ba loại tinh bột phức hợp chỉ số GI thấp giúp năng lượng ổn định 4–5 tiếng, không đột ngột tăng rồi tụt đường huyết.',
+      tip: 'Hạt chia trong yến mạch cung cấp omega-3 thực vật và tạo gel trong dạ dày giúp no lâu hơn. Cá hấp gừng nhẹ hơn chiên 40% calo — hấp thu protein tốt hơn.',
+      benefits: ['Tinh bột phức hợp GI thấp tránh đột biến đường huyết', 'Omega-3 từ cá hấp + hạt chia bảo vệ tim mạch', 'Khoai lang xế chiều ngăn đói bụng trước bữa tối'],
+      score: { label: 'Bền năng lượng', pct: 90 },
+    },
     meals: [
-      {
-        time: 'Sáng',
-        items: ['Yến mạch rolled oats', 'Chuối 1 quả', 'Sữa hạt', 'Hạt chia 1 thìa'],
-        note: 'Bận: overnight oats chuẩn bị tối hôm trước',
-        protein: '~12g',
-        kcal: '~350',
-      },
-      {
-        time: 'Trưa',
-        items: ['Cơm gạo lứt', 'Cá hấp gừng', 'Rau luộc chấm muối mè', 'Canh chua'],
-        note: 'Bận: cơm phần có cá, thêm canh là đủ',
-        protein: '~32g',
-        kcal: '~490',
-      },
-      {
-        time: 'Tối',
-        items: ['Cơm trắng nhỏ', 'Trứng chiên tỏi', 'Canh rau ngót thịt', 'Dưa leo'],
-        note: 'Bận: cơm trứng đơn giản, thêm 1 bát canh',
-        protein: '~22g',
-        kcal: '~380',
-      },
+      { time: 'Sáng', timeColor: '#f97316', items: ['Yến mạch rolled oats', 'Chuối 1 quả', 'Sữa hạt', 'Hạt chia 1 thìa'], note: 'Bận: overnight oats chuẩn bị tối hôm trước', protein: '~12g', kcal: '~350' },
+      { time: 'Snack sáng', timeColor: '#eab308', items: ['Sữa chua Hy Lạp', 'Mật ong ¼ thìa'], note: 'Bận: hộp Greek yogurt tiện lợi bất kỳ nơi nào', protein: '~10g', kcal: '~130' },
+      { time: 'Trưa', timeColor: '#84cc16', items: ['Cơm gạo lứt', 'Cá hấp gừng', 'Rau luộc chấm muối mè', 'Canh chua'], note: 'Bận: cơm phần có cá, thêm canh là đủ', protein: '~32g', kcal: '~490' },
+      { time: 'Snack xế', timeColor: '#06b6d4', items: ['Khoai lang hấp nhỏ ~100g', 'Nước lọc'], note: 'Bận: khoai lang hấp chuẩn bị sẵn cho tuần', protein: '~2g', kcal: '~90' },
+      { time: 'Tối', timeColor: '#a855f7', items: ['Cơm trắng nhỏ', 'Trứng chiên tỏi', 'Canh rau ngót thịt', 'Dưa leo'], note: 'Bận: cơm trứng đơn giản, thêm 1 bát canh', protein: '~22g', kcal: '~380' },
+    ],
+  },
+  {
+    day: 'Ngày 4', theme: 'Ngày nhiều rau & chất xơ', color: '#10b981',
+    totalKcal: '~1.280', totalProtein: '~76g',
+    analysis: {
+      headline: 'Ngày tăng cường rau xanh — tiêu hoá nghỉ ngơi',
+      fiber: 'Rau + trái cây + canh cải = ~16g chất xơ — vượt khuyến nghị hàng ngày',
+      highlight: 'Ngày cao chất xơ giúp hệ tiêu hoá làm sạch nhẹ nhàng, ổn định vi khuẩn đường ruột và giảm cảm giác thèm đồ ngọt. Calo thấp nhất tuần — phù hợp ngày nghỉ hoặc ít vận động.',
+      tip: 'Sữa chua + yến mạch sáng = probiotic + prebiotic đồng thời — bộ đôi tốt nhất cho đường ruột. Canh cải đắng trưa hỗ trợ chức năng gan nhẹ nhàng.',
+      benefits: ['Chất xơ cao nhất tuần: no lâu + tiêu hoá tốt', 'Probiotic + prebiotic đồng thời từ sáng sớm', 'Ít calo phù hợp ngày nghỉ tập — không dư thừa'],
+      score: { label: 'Thải độc nhẹ', pct: 88 },
+    },
+    meals: [
+      { time: 'Sáng', timeColor: '#f97316', items: ['Sữa chua không đường', 'Yến mạch', 'Trái cây hỗn hợp', 'Hạt điều nhỏ'], note: 'Bận: parfait yến mạch + sữa chua mua sẵn', protein: '~18g', kcal: '~340' },
+      { time: 'Snack sáng', timeColor: '#eab308', items: ['Trứng luộc ×1', 'Cà chua bi 5 quả'], note: 'Bận: trứng luộc + cà chua chuẩn bị sẵn', protein: '~7g', kcal: '~90' },
+      { time: 'Trưa', timeColor: '#84cc16', items: ['Cơm gạo lứt', 'Đậu hũ kho nấm', 'Canh cải đắng', 'Rau sống nhiều'], note: 'Bận: cơm đậu hũ phần có nhiều rau xanh', protein: '~28g', kcal: '~480' },
+      { time: 'Snack xế', timeColor: '#06b6d4', items: ['Dưa hấu / thanh long / ổi ~200g'], note: 'Bận: trái cây cắt sẵn mua ở cửa hàng tiện lợi', protein: '~1g', kcal: '~80' },
+      { time: 'Tối', timeColor: '#a855f7', items: ['Súp gà rau củ', 'Bánh mì nguyên cám nhỏ', 'Sữa chua ít đường'], note: 'Bận: súp đóng hộp thêm rau + gà xé sẵn', protein: '~22g', kcal: '~340' },
+    ],
+  },
+  {
+    day: 'Ngày 5', theme: 'Ngày tập — Carb cao', color: '#f97316',
+    totalKcal: '~1.800', totalProtein: '~113g',
+    analysis: {
+      headline: 'Ngày tập luyện — nạp carb + protein tối đa',
+      fiber: 'Rau + chuối + yến mạch = ~9g chất xơ đủ dùng',
+      highlight: 'Calo cao nhất tuần (+30% so với ngày nghỉ) để glycogen cơ luôn đầy trước và sau tập. Protein ~113g = 1.6g/kg (70kg) đảm bảo tổng hợp cơ tối đa trong 24–48h sau tập.',
+      tip: 'Chuối trước tập 30–60 phút = fructose + glucose hấp thu nhanh, không nặng bụng. Sữa chua Hy Lạp + chuối ngay sau tập = bộ đôi protein + carb phục hồi cổ điển.',
+      benefits: ['Carb cao trước tập: năng lượng bùng nổ, không bị tụt giữa set', 'Protein sau tập trong 30 phút: kích hoạt tổng hợp cơ tốt nhất', 'Cá hồi tối: omega-3 chống viêm cơ sau tập nặng'],
+      score: { label: 'Tối ưu tập luyện', pct: 97 },
+    },
+    meals: [
+      { time: 'Sáng', timeColor: '#f97316', items: ['Cơm trắng vừa', 'Trứng ×2', 'Rau xào nhẹ', 'Sữa tươi'], note: 'Bận: cơm + trứng chiên — nhanh, đủ carb', protein: '~25g', kcal: '~480' },
+      { time: 'Snack trước tập', timeColor: '#eab308', items: ['Chuối 1 quả', 'Khoai lang nhỏ hoặc 1 lát bánh mì'], note: 'Bận: chuối + bánh mì sandwich nhỏ', protein: '~3g', kcal: '~180' },
+      { time: 'Trưa', timeColor: '#84cc16', items: ['Cơm trắng (nhiều hơn)', 'Ức gà áp chảo', 'Bắp cải luộc', 'Canh rau'], note: 'Bận: cơm gà văn phòng — thêm cơm hơn bình thường', protein: '~40g', kcal: '~580' },
+      { time: 'Snack sau tập', timeColor: '#06b6d4', items: ['Sữa chua Hy Lạp', 'Chuối 1 quả', 'Whey shake (nếu có)'], note: 'Bận: whey + chuối blender ngay sau tập', protein: '~20g', kcal: '~220' },
+      { time: 'Tối', timeColor: '#a855f7', items: ['Cơm nhỏ', 'Cá hồi / cá thu kho', 'Rau luộc nhiều'], note: 'Bận: cơm cá mua ngoài, thêm rau là đủ', protein: '~30g', kcal: '~420' },
+    ],
+  },
+  {
+    day: 'Ngày 6', theme: 'Meal prep cuối tuần', color: '#a855f7',
+    totalKcal: '~1.390', totalProtein: '~97g',
+    analysis: {
+      headline: 'Cuối tuần — chuẩn bị thực phẩm cho cả tuần tới',
+      fiber: 'Rau giá + rau thơm + salad + canh = ~12g chất xơ',
+      highlight: 'Ngày cuối tuần lý tưởng để meal prep: luộc trứng, nấu gà, hấp khoai, nấu cơm gạo lứt — chuẩn bị cho 2–3 ngày tới, tiết kiệm 45–60 phút mỗi ngày trong tuần.',
+      tip: 'Phở/bún gà sáng là "ăn ngoài thông minh" — chọn ít bánh, nhiều rau giá, thịt gà nạc, không uống hết nước dùng béo. Cháo gà tối dễ tiêu giúp ngủ ngon.',
+      benefits: ['Meal prep tiết kiệm 45–60 phút/ngày trong tuần', 'Phở gà ít chất béo bão hoà hơn phở bò ~30%', 'Kiểm soát calo tốt hơn khi chuẩn bị sẵn đồ ăn'],
+      score: { label: 'Tiết kiệm & thực tế', pct: 85 },
+    },
+    meals: [
+      { time: 'Sáng', timeColor: '#f97316', items: ['Phở/bún gà nạc', 'Thêm rau giá nhiều', 'Ít bánh phở', 'Không uống hết nước béo'], note: 'Bận: phở mua ngoài — gọi thêm rau, bỏ quẩy', protein: '~28g', kcal: '~420' },
+      { time: 'Snack sáng', timeColor: '#eab308', items: ['Trái cây theo mùa', 'Hạt mixed nuts ~15g'], note: 'Bận: túi hạt nhỏ + trái cây cắt sẵn', protein: '~4g', kcal: '~110' },
+      { time: 'Trưa', timeColor: '#84cc16', items: ['Cơm gạo lứt', 'Gà áp chảo (meal prep)', 'Salad rau trộn dầu olive', 'Trứng luộc ×1'], note: 'Bận: meal prep sẵn — lấy ra hâm nóng là xong', protein: '~43g', kcal: '~520' },
+      { time: 'Snack xế', timeColor: '#06b6d4', items: ['Sữa chua không đường', 'Granola nhỏ ~20g'], note: 'Bận: hộp sữa chua + granola tiện lợi', protein: '~8g', kcal: '~150' },
+      { time: 'Tối', timeColor: '#a855f7', items: ['Cháo gà đơn giản', 'Gừng + hành lá', 'Dưa cải muối nhẹ'], note: 'Bận: cháo ăn liền + ức gà xé sẵn từ meal prep', protein: '~22g', kcal: '~320' },
+    ],
+  },
+  {
+    day: 'Ngày 7', theme: 'Recovery — dễ tiêu', color: '#eab308',
+    totalKcal: '~1.230', totalProtein: '~70g',
+    analysis: {
+      headline: 'Ngày phục hồi — nhẹ bụng, hệ tiêu hoá nghỉ ngơi',
+      fiber: 'Cháo + rau luộc + trái cây = ~9g chất xơ nhẹ nhàng',
+      highlight: 'Ngày cuối tuần hoặc ngày nghỉ tập hoàn toàn: giảm tổng calo 10–15% so với ngày tập, ưu tiên thực phẩm dễ tiêu hoá để cơ thể tập trung vào sửa chữa và phục hồi.',
+      tip: 'Cháo cá/cháo yến mạch là "thực phẩm phục hồi" cổ điển Á Đông — dễ tiêu, nhẹ dạ dày, cung cấp đủ tinh bột và đạm nhẹ. Súp miso tối = điện giải + probiotic tự nhiên cho ngủ sâu.',
+      benefits: ['Calo thấp nhất tuần — để cơ thể tập trung hồi phục', 'Thực phẩm mềm, dễ tiêu giúp đường ruột nghỉ ngơi', 'Reset cảm giác đói tự nhiên, sẵn sàng cho tuần mới'],
+      score: { label: 'Phục hồi tối ưu', pct: 82 },
+    },
+    meals: [
+      { time: 'Sáng', timeColor: '#f97316', items: ['Cháo yến mạch loãng', 'Trứng luộc ×1', 'Rau thơm', 'Nước lọc ấm'], note: 'Bận: cháo instant nhẹ + trứng luộc', protein: '~15g', kcal: '~300' },
+      { time: 'Snack sáng', timeColor: '#eab308', items: ['Táo / lê / ổi 1 quả vừa'], note: 'Bận: trái cây cắt sẵn dễ mang theo', protein: '~1g', kcal: '~70' },
+      { time: 'Trưa', timeColor: '#84cc16', items: ['Cơm trắng nhỏ', 'Thịt heo luộc nạc', 'Rau muống / cải thìa luộc', 'Canh bí'], note: 'Bận: cơm văn phòng phần nhỏ hơn bình thường', protein: '~28g', kcal: '~430' },
+      { time: 'Snack xế', timeColor: '#06b6d4', items: ['Sữa chua ít béo', 'Mật ong ¼ thìa'], note: 'Bận: sữa chua tiện lợi mua sẵn', protein: '~8g', kcal: '~110' },
+      { time: 'Tối', timeColor: '#a855f7', items: ['Súp miso + đậu hũ mềm', 'Cơm trắng rất nhỏ', 'Rau luộc'], note: 'Bận: súp miso gói + đậu hũ non mua sẵn', protein: '~18g', kcal: '~320' },
     ],
   },
 ];
@@ -2451,116 +2506,137 @@ function MealsPanel({ s }) {
   const [activeDay, setActiveDay] = useState(0);
   const [selectedMetric, setSelectedMetric] = useState(null);
   const detail = selectedMetric ? b4MetricDetail(selectedMetric, s) : null;
+  const day = MEAL_DAYS[activeDay];
 
   return (
     <div>
       <PersonalizedBar panelId="b4" color="#06b6d4" label="Phân Bổ Dinh Dưỡng Theo Bữa" source="B0 + B1 + B2 + B3"
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-        { key: 'breakfast',  label: '🌅 Sáng', value: `${s.breakfastKcal}`, note: `${s.breakfastProteinG}g P · ${s.breakfastCarbG}g C`, tip: `25% tổng kcal = ${s.breakfastKcal} kcal.` },
-        { key: 'lunch',      label: '☀️ Trưa', value: `${s.lunchKcal}`, note: `${s.lunchProteinG}g P · ${s.lunchCarbG}g C`, tip: `35% tổng kcal = ${s.lunchKcal} kcal. Bữa lớn nhất.` },
-        { key: 'dinner',     label: '🌙 Tối', value: `${s.dinnerKcal}`, note: `${s.dinnerProteinG}g P · ${s.dinnerCarbG}g C`, tip: `30% tổng kcal = ${s.dinnerKcal} kcal. Ít carb hơn trưa.` },
-        { key: 'snack',      label: '🍎 Snack', value: `${s.snackKcal}`, note: `${s.snackProteinG}g P`, tip: `10% tổng kcal = ${s.snackKcal} kcal.` },
-        { key: 'daily_total', label: 'Tổng/ngày', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal', tip: `${s.breakfastKcal} + ${s.lunchKcal} + ${s.dinnerKcal} + ${s.snackKcal} = ${s.targetKcal.toLocaleString()} kcal.` },
+        { key: 'breakfast',   label: '🌅 Sáng',   value: `${s.breakfastKcal}`,  note: `${s.breakfastProteinG}g P · ${s.breakfastCarbG}g C`, tip: `25% tổng kcal = ${s.breakfastKcal} kcal.` },
+        { key: 'lunch',       label: '☀️ Trưa',   value: `${s.lunchKcal}`,      note: `${s.lunchProteinG}g P · ${s.lunchCarbG}g C`, tip: `35% tổng kcal = ${s.lunchKcal} kcal. Bữa lớn nhất.` },
+        { key: 'dinner',      label: '🌙 Tối',    value: `${s.dinnerKcal}`,     note: `${s.dinnerProteinG}g P · ${s.dinnerCarbG}g C`, tip: `30% tổng kcal = ${s.dinnerKcal} kcal. Ít carb hơn trưa.` },
+        { key: 'snack',       label: '🍎 Snack',  value: `${s.snackKcal}`,      note: `${s.snackProteinG}g P`, tip: `10% tổng kcal = ${s.snackKcal} kcal. Chia 2 lần xế/sáng.` },
+        { key: 'daily_total', label: 'Tổng/ngày', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal', tip: `${s.breakfastKcal}+${s.lunchKcal}+${s.dinnerKcal}+${s.snackKcal} = ${s.targetKcal.toLocaleString()} kcal.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#06b6d4" onClose={() => setSelectedMetric(null)} />}
-      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Thực Đơn Mẫu 3 Ngày — Người Mới</p>
 
-      {/* Day selector */}
-      <div className="flex gap-2 mb-6">
+      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Thực Đơn Mẫu 7 Ngày — Có Snack</p>
+
+      {/* Day selector — scrollable */}
+      <div className="flex gap-2 mb-6 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none' }}>
         {MEAL_DAYS.map((d, i) => (
           <button
             key={d.day}
             type="button"
             onClick={() => setActiveDay(i)}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border cursor-pointer
-              ${activeDay === i
-                ? 'bg-lime-500/15 border-lime-500/40 text-lime-400'
-                : 'border-border/40 text-muted hover:border-border/70 hover:text-text/80'
-              }`}
+            className="px-3 py-2 rounded-xl text-[10px] font-bold transition-all duration-200 border cursor-pointer shrink-0 text-center"
+            style={activeDay === i
+              ? { background: `${d.color}15`, borderColor: `${d.color}50`, color: d.color }
+              : { borderColor: 'rgba(255,255,255,0.1)', color: 'rgba(160,160,160,0.7)' }}
           >
-            {d.day}
+            <span className="block text-[8px] opacity-60 mb-0.5">{d.day}</span>
+            <span>{d.theme.split(' — ')[0]}</span>
           </button>
         ))}
       </div>
 
-      {/* Meals for active day */}
-      <div key={activeDay} className="space-y-4 animate-fade-in-up">
-        {MEAL_DAYS[activeDay].meals.map((meal, i) => (
-          <div
-            key={meal.time}
-            className="rounded-2xl border border-border/40 bg-surface/15 overflow-hidden"
-            style={{ animationDelay: `${i * 60}ms`, animationFillMode: 'both' }}
-          >
-            <div className="h-[1.5px]" style={{
-              background: i === 0
-                ? 'linear-gradient(90deg, #f97316aa, transparent)'
-                : i === 1
-                  ? 'linear-gradient(90deg, #84cc16aa, transparent)'
-                  : 'linear-gradient(90deg, #06b6d4aa, transparent)',
-            }} />
-            <div className="p-5">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2.5">
-                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${
-                    i === 0
-                      ? 'text-orange-400 bg-orange-500/10 border-orange-500/25'
-                      : i === 1
-                        ? 'text-lime-400 bg-lime-500/10 border-lime-500/25'
-                        : 'text-cyan-400 bg-cyan-500/10 border-cyan-500/25'
-                  }`}>
+      {/* Active day content */}
+      <div key={activeDay} className="animate-fade-in-up">
+
+        {/* Day header badge */}
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: day.color }} />
+          <span className="text-xs font-bold text-text">{day.day}</span>
+          <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: day.color, background: `${day.color}12`, border: `1px solid ${day.color}30` }}>{day.theme}</span>
+        </div>
+
+        {/* Meals */}
+        <div className="space-y-3 mb-5">
+          {day.meals.map((meal, i) => (
+            <div
+              key={meal.time}
+              className="rounded-2xl border border-border/40 bg-surface/15 overflow-hidden"
+              style={{ animationDelay: `${i * 45}ms`, animationFillMode: 'both' }}
+            >
+              <div className="h-[1.5px]" style={{ background: `linear-gradient(90deg, ${meal.timeColor}99, transparent)` }} />
+              <div className="p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold px-2.5 py-1 rounded-full border"
+                    style={{ color: meal.timeColor, background: `${meal.timeColor}12`, borderColor: `${meal.timeColor}35` }}>
                     {meal.time}
                   </span>
+                  <div className="flex gap-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg" style={{ color: '#84cc16', background: 'rgba(132,204,22,0.08)', border: '1px solid rgba(132,204,22,0.2)' }}>
+                      P {meal.protein}
+                    </span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg" style={{ color: '#f97316', background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.2)' }}>
+                      {meal.kcal} kcal
+                    </span>
+                  </div>
                 </div>
-                <div className="flex gap-3">
-                  <span className="text-[10px] text-lime-400 font-bold bg-lime-500/8 border border-lime-500/20 px-2 py-0.5 rounded-lg">
-                    P {meal.protein}
-                  </span>
-                  <span className="text-[10px] text-orange-400 font-bold bg-orange-500/8 border border-orange-500/20 px-2 py-0.5 rounded-lg">
-                    {meal.kcal} kcal
-                  </span>
+                <div className="flex flex-wrap gap-1.5 mb-2.5">
+                  {meal.items.map(item => (
+                    <span key={item} className="text-[11px] text-text/80 bg-white/[0.04] border border-white/8 px-2.5 py-1 rounded-lg">{item}</span>
+                  ))}
                 </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mb-3">
-                {meal.items.map(item => (
-                  <span
-                    key={item}
-                    className="text-[11px] text-text/80 bg-white/[0.04] border border-white/8 px-2.5 py-1 rounded-lg"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex items-start gap-2 text-[10px] text-muted">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 mt-0.5 text-yellow-400 shrink-0">
-                  <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-                </svg>
-                <span><span className="text-yellow-400 font-semibold">Bận rộn:</span> {meal.note}</span>
+                <div className="flex items-start gap-2 text-[10px] text-muted">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 mt-0.5 text-yellow-400 shrink-0">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                  </svg>
+                  <span><span className="text-yellow-400 font-semibold">Bận rộn:</span> {meal.note}</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Daily total */}
-      <div className="mt-5 rounded-2xl border border-lime-500/20 bg-lime-500/5 p-4 flex items-center gap-4 flex-wrap">
-        <div className="flex items-center gap-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" />
-          <span className="text-xs font-bold text-lime-400">Tổng ngày</span>
+          ))}
         </div>
-        {[
-          { k: 'Kcal', v: '~1.240' },
-          { k: 'Protein', v: '~70g' },
-          { k: 'Meals', v: '3 bữa' },
-        ].map(item => (
-          <div key={item.k} className="text-center">
-            <span className="text-[10px] text-muted">{item.k}: </span>
-            <span className="text-[11px] font-bold text-text">{item.v}</span>
+
+        {/* Daily total */}
+        <div className="rounded-2xl border p-4 mb-6 flex items-center gap-4 flex-wrap" style={{ borderColor: `${day.color}30`, background: `${day.color}06` }}>
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: day.color }} />
+            <span className="text-xs font-bold" style={{ color: day.color }}>Tổng ngày</span>
           </div>
-        ))}
-        <p className="text-[10px] text-muted ml-auto">Thêm 1–2 bữa phụ nếu hoạt động nhiều</p>
+          {[
+            { k: 'Kcal', v: day.totalKcal },
+            { k: 'Protein', v: day.totalProtein },
+            { k: 'Bữa', v: `${day.meals.length} bữa` },
+          ].map(item => (
+            <div key={item.k}>
+              <span className="text-[10px] text-muted">{item.k}: </span>
+              <span className="text-[11px] font-bold text-text">{item.v}</span>
+            </div>
+          ))}
+          <p className="text-[10px] text-muted/50 ml-auto hidden sm:block">Điều chỉnh lượng theo TDEE của bạn ở B0</p>
+        </div>
+
+        {/* Daily analysis */}
+        <div className="rounded-2xl border p-5" style={{ borderColor: `${day.color}22`, background: `${day.color}04` }}>
+          <div className="flex items-start justify-between mb-3">
+            <p className="text-sm font-bold text-text leading-snug pr-3">{day.analysis.headline}</p>
+            <div className="shrink-0 text-right">
+              <p className="text-[9px] text-muted mb-1">{day.analysis.score.label}</p>
+              <div className="w-16 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                <div className="h-full rounded-full transition-all duration-700" style={{ width: `${day.analysis.score.pct}%`, background: day.color }} />
+              </div>
+              <p className="text-[10px] font-black mt-0.5" style={{ color: day.color }}>{day.analysis.score.pct}%</p>
+            </div>
+          </div>
+          <p className="text-[9px] font-bold mb-2.5" style={{ color: `${day.color}99` }}>🌿 {day.analysis.fiber}</p>
+          <p className="text-[10px] text-muted leading-relaxed mb-4">{day.analysis.highlight}</p>
+          <ul className="space-y-1.5 mb-4">
+            {day.analysis.benefits.map((b, i) => (
+              <li key={i} className="flex items-start gap-2 text-[10px] text-muted">
+                <span className="font-bold shrink-0 mt-0.5" style={{ color: day.color }}>✓</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex items-start gap-2.5 rounded-xl border p-3" style={{ borderColor: `${day.color}18`, background: `${day.color}06` }}>
+            <span className="text-base shrink-0">💡</span>
+            <p className="text-[10px] text-muted leading-relaxed">{day.analysis.tip}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

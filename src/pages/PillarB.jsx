@@ -2067,34 +2067,112 @@ function b3MetricDetail(key, s) {
   return map[key] || null;
 }
 
+const GOAL_PREVIEW_MAP = {
+  'fat-loss':    { delta: -400, proteinMult: 2.0, sign: '−', kLabel: 'Thâm hụt' },
+  'muscle-gain': { delta: +250, proteinMult: 1.8, sign: '+', kLabel: 'Thặng dư' },
+  'endurance':   { delta: 0,    proteinMult: 1.5, sign: '±', kLabel: 'Cân bằng' },
+  'maintenance': { delta: 0,    proteinMult: 1.7, sign: '±', kLabel: 'Cân bằng' },
+};
+
+const GOAL_ANALYSIS = {
+  'fat-loss': {
+    headline: 'Đốt mỡ bền vững — giữ trọn cơ bắp',
+    science: 'Thâm hụt 300–500 kcal/ngày là vùng tối ưu: đủ nhanh để thấy kết quả trong 4 tuần, đủ nhỏ để cơ thể không phá cơ làm năng lượng.',
+    benefits: [
+      { icon: '🔥', title: 'Tốc độ giảm lý tưởng', desc: 'Thâm hụt −400 kcal = ~0.37kg mỡ/tuần. Bền vững hơn ép cân cấp tốc mà không kiệt sức.' },
+      { icon: '💪', title: 'Protein cao bảo vệ cơ', desc: '2.0g/kg đảm bảo cơ thể ưu tiên đốt mỡ thay vì phá cơ khi năng lượng thiếu hụt.' },
+      { icon: '🩸', title: 'Ổn định đường huyết', desc: 'Giảm carb tinh, tăng chất xơ → insulin ổn định → giảm tích mỡ mới sau bữa ăn.' },
+      { icon: '⚡', title: 'Vẫn đủ sức tập', desc: 'Không cắt calo quá sâu — duy trì được cường độ cardio và gym để tối ưu đốt mỡ.' },
+    ],
+    caution: 'Không nên thâm hụt >600 kcal/ngày — nguy cơ mất cơ, rụng tóc và mệt mỏi mãn tính cao.',
+    timeframe: '4–8 tuần thấy kết quả rõ trên cân và gương.',
+  },
+  'muscle-gain': {
+    headline: 'Tăng cơ chất lượng — ít tích mỡ',
+    science: 'Thặng dư +200–300 kcal/ngày là "lean bulk" — cung cấp đủ vật liệu xây cơ trong khi hạn chế tích mỡ thừa.',
+    benefits: [
+      { icon: '🏗️', title: 'Lean bulk hiệu quả', desc: '+250 kcal thặng dư nhẹ giúp tăng cơ từ từ và chất lượng, không kéo theo tăng mỡ nhanh.' },
+      { icon: '🍚', title: 'Carb quanh buổi tập', desc: 'Nạp carb trước tập (năng lượng) và sau tập (phục hồi glycogen) tối đa hóa tổng hợp cơ.' },
+      { icon: '😴', title: 'Cơ lớn khi ngủ', desc: 'GH và testosterone đỉnh điểm trong giấc ngủ sâu 7–9h. Thiếu ngủ cản quá trình tăng cơ.' },
+      { icon: '📈', title: 'Progressive overload là chìa khoá', desc: 'Tăng tải dần mỗi tuần song song với dinh dưỡng đủ — không có tải tăng thì cơ không có lý do lớn.' },
+    ],
+    caution: 'Protein nên chia đều 4–5 bữa/ngày (20–40g/bữa) — quan trọng hơn tổng lượng ăn dồn 1–2 bữa.',
+    timeframe: '8–12 tuần thấy thay đổi rõ về cơ bắp và sức mạnh cơ.',
+  },
+  'endurance': {
+    headline: 'Tối ưu sức bền — hiệu suất đường dài',
+    science: 'Carbohydrate là nhiên liệu ưu tiên cho hoạt động cardio >60 phút. Thiếu carb = chuột rút, tụt đường huyết, kiệt sức sớm.',
+    benefits: [
+      { icon: '🚴', title: 'Carb = nhiên liệu tốc độ', desc: 'Tăng carb vào ngày tập nặng để glycogen cơ và gan luôn đầy trước sự kiện dài.' },
+      { icon: '💧', title: 'Điện giải quyết định hiệu suất', desc: 'Natri + kali + magie giữ co cơ ổn định, ngăn chuột rút và duy trì sức bền.' },
+      { icon: '🔧', title: 'Protein phục hồi sau cardio', desc: '1.5g/kg đủ để sửa chữa vi tổn thương sợi cơ sau cardio dài mà không nặng bụng hay làm chậm tiêu hoá.' },
+      { icon: '🧪', title: 'Không thử đồ mới trước thi', desc: 'Giữ chế độ ăn quen thuộc 48h trước thi đấu — đồ ăn lạ có thể gây rối loạn tiêu hoá.' },
+    ],
+    caution: 'Cắt carb khi đang luyện sức bền cường độ cao gây kiệt sức và giảm hiệu suất nghiêm trọng.',
+    timeframe: '6–10 tuần cải thiện rõ về sức bền và thời gian phục hồi giữa các buổi.',
+  },
+  'maintenance': {
+    headline: 'Duy trì lâu dài — tự do không lo sợ',
+    science: 'Giai đoạn duy trì thường bị bỏ qua nhưng cực kỳ quan trọng: giúp cơ thể "thiết lập lại" set point và hormone sau phase giảm/tăng.',
+    benefits: [
+      { icon: '⚖️', title: 'Ổn định cân nặng thật', desc: 'Ăn quanh TDEE ±100 kcal giúp cơ thể giữ cân bằng nội môi và chuyển hoá không bị ức chế.' },
+      { icon: '🧘', title: 'Không áp lực số calo', desc: '80/20 rule: 80% thực phẩm lành mạnh, 20% linh hoạt — đủ để sống được lâu dài không mệt mỏi.' },
+      { icon: '📊', title: 'Check-in định kỳ đủ rồi', desc: 'Cân 1 lần/tuần cùng giờ cùng điều kiện — chỉ cần phát hiện xu hướng lệch ±2kg để điều chỉnh sớm.' },
+      { icon: '🌱', title: 'Nền tảng cho mục tiêu tiếp', desc: 'Duy trì tốt 8–12 tuần tạo "sàn" ổn định trước khi bước vào phase giảm hoặc tăng tiếp theo.' },
+    ],
+    caution: 'Duy trì không có nghĩa là "ăn gì cũng được" — cần giữ thói quen nền: protein đủ, rau đủ, ít đường lỏng.',
+    timeframe: 'Nên duy trì ít nhất 8–12 tuần sau mỗi phase giảm/tăng trước khi bắt đầu chu kỳ mới.',
+  },
+};
+
 function GoalsPanel({ s }) {
   const [activeGoal, setActiveGoal] = useState('fat-loss');
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [macroBars, setMacroBars] = useState([0, 0, 0]);
   const detail = selectedMetric ? b3MetricDetail(selectedMetric, s) : null;
 
+  const preview = useMemo(() => {
+    const gm = GOAL_PREVIEW_MAP[activeGoal] || GOAL_PREVIEW_MAP['maintenance'];
+    const targetKcal = Math.max(1200, s.tdee + gm.delta);
+    const proteinG = Math.round(s.weight * gm.proteinMult);
+    const fatG = Math.round(targetKcal * 0.25 / 9);
+    const carbG = Math.max(0, Math.round((targetKcal - proteinG * 4 - fatG * 9) / 4));
+    const proteinPct = Math.round(proteinG * 4 / targetKcal * 100);
+    const fatPct = Math.round(fatG * 9 / targetKcal * 100);
+    const carbPct = Math.max(0, 100 - proteinPct - fatPct);
+    const kgPerWeek = gm.delta !== 0 ? parseFloat((Math.abs(gm.delta * 7) / 7700).toFixed(2)) : 0;
+    return { ...gm, targetKcal, proteinG, fatG, carbG, proteinPct, fatPct, carbPct, kgPerWeek };
+  }, [activeGoal, s.tdee, s.weight]);
+
   useEffect(() => {
-    const t = setTimeout(() => setMacroBars([s.proteinPct, s.carbPct, s.fatPct]), 350);
+    setMacroBars([0, 0, 0]);
+    const t = setTimeout(() => setMacroBars([preview.proteinPct, preview.carbPct, preview.fatPct]), 80);
     return () => clearTimeout(t);
-  }, [s]);
+  }, [preview]);
+
+  const activeG = GOALS.find(g => g.id === activeGoal);
+  const analysis = GOAL_ANALYSIS[activeGoal];
 
   const macroRows = [
-    { label: 'Protein', g: s.proteinG, pct: s.proteinPct, color: '#f97316', formula: `${s.weight}kg × ${s.goalKey === 'loss' ? '2.0' : '1.8'}g/kg`, example: 'ức gà, cá, trứng, đậu hũ' },
-    { label: 'Carbohydrate', g: s.carbG, pct: s.carbPct, color: '#22c55e', formula: `(${s.targetKcal} − P×4 − F×9) ÷ 4`, example: 'cơm, khoai, yến mạch' },
-    { label: 'Chất béo', g: s.fatG, pct: s.fatPct, color: '#a855f7', formula: `${s.targetKcal} × 25% ÷ 9 kcal/g`, example: 'dầu olive, hạt, cá béo' },
+    { label: 'Protein', g: preview.proteinG, pct: preview.proteinPct, color: '#f97316', formula: `${s.weight}kg × ${preview.proteinMult}g/kg`, example: 'ức gà, cá, trứng, đậu hũ' },
+    { label: 'Carbohydrate', g: preview.carbG, pct: preview.carbPct, color: '#22c55e', formula: `(${preview.targetKcal} − P×4 − F×9) ÷ 4`, example: 'cơm, khoai, yến mạch' },
+    { label: 'Chất béo', g: preview.fatG, pct: preview.fatPct, color: '#a855f7', formula: `${preview.targetKcal} × 25% ÷ 9 kcal/g`, example: 'dầu olive, hạt, cá béo' },
   ];
 
-  const milestones = s.kgPerWeek > 0
-    ? [1, 2, 5, 10].map(kg => ({ kg, weeks: Math.round(kg / s.kgPerWeek), months: parseFloat((kg / s.kgPerWeek / 4.3).toFixed(1)) }))
+  const milestones = preview.kgPerWeek > 0
+    ? [1, 2, 5, 10].map(kg => ({ kg, weeks: Math.round(kg / preview.kgPerWeek), months: parseFloat((kg / preview.kgPerWeek / 4.3).toFixed(1)) }))
     : [];
 
-  const secDivider = (label) => (
-    <div className="flex items-center gap-3 my-7">
-      <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(249,115,22,0.3))' }} />
-      <p className="text-[10px] font-bold uppercase tracking-[0.22em] whitespace-nowrap shrink-0" style={{ color: 'rgba(249,115,22,0.6)' }}>{label}</p>
-      <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(249,115,22,0.3))' }} />
-    </div>
-  );
+  const secDivider = (label, hex = '#f97316') => {
+    const rgb = hex === '#22c55e' ? '34,197,94' : hex === '#3b82f6' ? '59,130,246' : hex === '#14b8a6' ? '20,184,166' : '249,115,22';
+    return (
+      <div className="flex items-center gap-3 my-7">
+        <div className="flex-1 h-px" style={{ background: `linear-gradient(to right, transparent, rgba(${rgb},0.3))` }} />
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] whitespace-nowrap shrink-0" style={{ color: `rgba(${rgb},0.65)` }}>{label}</p>
+        <div className="flex-1 h-px" style={{ background: `linear-gradient(to left, transparent, rgba(${rgb},0.3))` }} />
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -2124,10 +2202,38 @@ function GoalsPanel({ s }) {
         </p>
       </div>
 
+      {/* ── Goal analysis ── */}
+      {secDivider('Hiệu quả & Lợi ích', activeG?.color)}
+      <div key={activeGoal} className="animate-fade-in-up">
+        <div className="rounded-2xl border p-5 mb-4" style={{ borderColor: `${activeG?.color}22`, background: `${activeG?.color}05` }}>
+          <p className="text-sm font-bold text-text mb-1.5">{analysis.headline}</p>
+          <p className="text-[10px] text-muted leading-relaxed">{analysis.science}</p>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-3 mb-4">
+          {analysis.benefits.map((b, i) => (
+            <div key={i} className="rounded-xl border p-3.5" style={{ borderColor: `${activeG?.color}18`, background: `${activeG?.color}04` }}>
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="text-base leading-none">{b.icon}</span>
+                <p className="text-[11px] font-bold text-text">{b.title}</p>
+              </div>
+              <p className="text-[10px] text-muted leading-relaxed">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex gap-3 items-start rounded-xl border p-3.5 mb-2" style={{ borderColor: 'rgba(234,179,8,0.2)', background: 'rgba(234,179,8,0.04)' }}>
+          <span className="text-sm shrink-0 mt-0.5">⚠️</span>
+          <div>
+            <p className="text-[9px] font-bold uppercase tracking-wide text-yellow-400 mb-0.5">Lưu ý quan trọng</p>
+            <p className="text-[10px] text-muted leading-relaxed">{analysis.caution}</p>
+          </div>
+        </div>
+        <p className="text-[9px] text-muted/50 text-right">⏱ {analysis.timeframe}</p>
+      </div>
+
       {/* ── Energy balance formula ── */}
       {secDivider('Công thức năng lượng')}
       <div className="rounded-2xl border p-5 mb-2" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.03)' }}>
-        <p className="text-[10px] text-muted mb-4 text-center">Cách tính calo mục tiêu của bạn từ dữ liệu B0</p>
+        <p className="text-[10px] text-muted mb-4 text-center">Cách tính calo mục tiêu theo <span className="font-bold" style={{ color: activeG?.color }}>{activeG?.label}</span> từ dữ liệu B0</p>
         <div className="flex flex-col sm:flex-row items-stretch gap-2">
           {/* BMR */}
           <div className="flex-1 text-center rounded-xl border p-3.5" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.05)' }}>
@@ -2159,20 +2265,20 @@ function GoalsPanel({ s }) {
           </div>
           {/* Arrow 2 */}
           <div className="flex sm:flex-col items-center justify-center px-1 py-1 sm:py-0">
-            <div className="text-[8px] font-bold mr-1 sm:mr-0 sm:mb-0.5" style={{ color: s.goal.delta > 0 ? '#22c55e' : s.goal.delta < 0 ? '#f97316' : '#84cc16' }}>
-              {s.goal.delta > 0 ? `+${s.goal.delta}` : s.goal.delta === 0 ? '±0' : s.goal.delta}
+            <div className="text-[8px] font-bold mr-1 sm:mr-0 sm:mb-0.5" style={{ color: preview.delta > 0 ? '#22c55e' : preview.delta < 0 ? '#f97316' : '#84cc16' }}>
+              {preview.delta > 0 ? `+${preview.delta}` : preview.delta === 0 ? '±0' : preview.delta}
             </div>
-            <div className="text-xl" style={{ color: '#f97316' }}>→</div>
-            <div className="text-[8px] text-muted/40 ml-1 sm:ml-0 sm:mt-0.5 max-w-[60px] text-center leading-tight hidden sm:block">{s.goal.label}</div>
+            <div className="text-xl" style={{ color: activeG?.color ?? '#f97316' }}>→</div>
+            <div className="text-[8px] text-muted/40 ml-1 sm:ml-0 sm:mt-0.5 max-w-[60px] text-center leading-tight hidden sm:block">{activeG?.label}</div>
           </div>
           {/* Target */}
-          <div className="flex-1 text-center rounded-xl border-2 p-3.5" style={{ borderColor: '#f97316', background: 'rgba(249,115,22,0.1)' }}>
-            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-orange-400 mb-1.5">Mục tiêu</p>
-            <p className="text-2xl font-black leading-none text-white">{s.targetKcal.toLocaleString()}</p>
-            <p className="text-[9px] text-orange-400/70 mt-1">kcal/ngày</p>
-            <div className="mt-2 text-[8px] text-muted/50 leading-relaxed border-t border-orange-500/20 pt-2">
-              {s.tdee.toLocaleString()} {s.goal.delta >= 0 ? '+' : ''}{s.goal.delta}<br/>
-              = {s.targetKcal.toLocaleString()} kcal
+          <div className="flex-1 text-center rounded-xl border-2 p-3.5 transition-all duration-300" style={{ borderColor: activeG?.color ?? '#f97316', background: `${activeG?.color ?? '#f97316'}18` }}>
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: activeG?.color ?? '#f97316' }}>Mục tiêu</p>
+            <p className="text-2xl font-black leading-none text-white">{preview.targetKcal.toLocaleString()}</p>
+            <p className="text-[9px] mt-1" style={{ color: `${activeG?.color ?? '#f97316'}99` }}>kcal/ngày</p>
+            <div className="mt-2 text-[8px] text-muted/50 leading-relaxed border-t border-white/8 pt-2">
+              {s.tdee.toLocaleString()} {preview.delta >= 0 ? '+' : ''}{preview.delta}<br/>
+              = {preview.targetKcal.toLocaleString()} kcal
             </div>
           </div>
         </div>
@@ -2210,9 +2316,9 @@ function GoalsPanel({ s }) {
         <div className="rounded-2xl border p-5" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.03)' }}>
           <div className="flex items-center justify-between mb-1">
             <p className="text-sm font-bold text-text">Tiến độ theo mốc cân nặng</p>
-            <span className="text-[9px] px-2 py-0.5 rounded-full font-bold" style={{ background: 'rgba(249,115,22,0.12)', color: '#f97316' }}>{s.kgPerWeek}kg/tuần</span>
+            <span className="text-[9px] px-2 py-0.5 rounded-full font-bold" style={{ background: `${activeG?.color ?? '#f97316'}18`, color: activeG?.color ?? '#f97316' }}>{preview.kgPerWeek}kg/tuần</span>
           </div>
-          <p className="text-[10px] text-muted mb-5">{s.goalKey === 'loss' ? 'Thâm hụt' : 'Thặng dư'} {Math.abs(s.goal.delta)} kcal/ngày → {Math.abs(s.goal.delta * 7).toLocaleString()} kcal/tuần ÷ 7700 = {s.kgPerWeek}kg/tuần</p>
+          <p className="text-[10px] text-muted mb-5">{preview.kLabel} {Math.abs(preview.delta)} kcal/ngày → {Math.abs(preview.delta * 7).toLocaleString()} kcal/tuần ÷ 7700 = {preview.kgPerWeek}kg/tuần</p>
           {/* Progress track */}
           <div className="relative mb-5">
             <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
@@ -2227,7 +2333,7 @@ function GoalsPanel({ s }) {
           <div className="grid grid-cols-4 gap-2 text-center">
             {milestones.map(m => (
               <div key={m.kg} className="rounded-lg p-2.5 border" style={{ borderColor: 'rgba(249,115,22,0.15)', background: 'rgba(249,115,22,0.05)' }}>
-                <p className="text-base font-black leading-none" style={{ color: '#f97316' }}>{s.goalKey === 'loss' ? '−' : '+'}{m.kg}kg</p>
+                <p className="text-base font-black leading-none" style={{ color: activeG?.color ?? '#f97316' }}>{preview.delta < 0 ? '−' : '+'}{m.kg}kg</p>
                 <p className="text-[9px] text-muted mt-1">~{m.weeks} tuần</p>
                 <p className="text-[8px] text-muted/40">≈{m.months}th</p>
               </div>

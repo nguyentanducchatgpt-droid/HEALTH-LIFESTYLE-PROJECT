@@ -3205,6 +3205,419 @@ const WEEKLY_THRESHOLDS = [
   },
 ];
 
+// ─── B5 SVG Charts ────────────────────────────────────────────────────────────
+
+function ProgressLineChart() {
+  const [hoverWeek, setHoverWeek] = useState(null);
+  const [entered, setEntered] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setEntered(true), 250); return () => clearTimeout(t); }, []);
+
+  const W = 520, H = 200;
+  const PL = 46, PR = 14, PT = 30, PB = 34;
+  const cw = W - PL - PR, ch = H - PT - PB;
+  const WKS = 12, YMX = 0.65, YMN = -5.5, YR = YMX - YMN;
+  const xs = (i) => PL + (i / WKS) * cw;
+  const ys = (v) => PT + ((YMX - v) / YR) * ch;
+
+  const ideal      = [0,-0.38,-0.75,-1.11,-1.46,-1.80,-2.13,-2.45,-2.76,-3.06,-3.35,-3.63,-3.90];
+  const aggressive = [0,-0.85,-1.65,-2.38,-3.05,-3.66,-4.20,-4.68,-5.10,-5.35,-5.45,-5.48,-5.50];
+  const maintain   = [0, 0.12,-0.08, 0.15,-0.05, 0.09,-0.11, 0.14,-0.07, 0.09,-0.09, 0.11,-0.05];
+  const toD = (arr) => arr.map((v, i) => `${i===0?'M':'L'} ${xs(i).toFixed(1)} ${ys(Math.max(YMN,v)).toFixed(1)}`).join(' ');
+  const DASH = 800;
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-1">
+        <span className="text-sm">📉</span>
+        <p className="text-xs font-bold text-text">Biểu Đồ Đường Cong Tiến Bộ — 12 Tuần</p>
+      </div>
+      <p className="text-[10px] text-muted leading-relaxed mb-2">
+        So sánh 3 kịch bản thay đổi cân nặng. <span className="text-lime-400/90">Hover vào đường lime để xem mức giảm từng tuần.</span> Vùng tô màu là vùng an toàn / nguy hiểm.
+      </p>
+      <div className="rounded-xl border border-white/7 bg-[#080b06] overflow-hidden">
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ display: 'block' }}>
+          {/* Grid lines */}
+          {[-5,-4,-3,-2,-1,0].map(v => (
+            <g key={v}>
+              <line x1={PL} y1={ys(v)} x2={W-PR} y2={ys(v)}
+                stroke={v===0 ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,0.04)'}
+                strokeWidth={v===0 ? 1 : 0.7} strokeDasharray={v===0 ? '0' : '2 6'} />
+              <text x={PL-5} y={ys(v)+3.5} textAnchor="end" fontSize="8" fill="#3a3a3a" fontFamily="monospace">{v}</text>
+            </g>
+          ))}
+          {[0,3,6,9,12].map(w_ => (
+            <g key={w_}>
+              <line x1={xs(w_)} y1={PT} x2={xs(w_)} y2={H-PB+3} stroke="rgba(255,255,255,0.04)" strokeWidth="0.7" />
+              <text x={xs(w_)} y={H-PB+13} textAnchor="middle" fontSize="8" fill="#3a3a3a">T{w_}</text>
+            </g>
+          ))}
+          {/* Axis labels */}
+          <text x={PL-2} y={H-PB+13} textAnchor="middle" fontSize="7.5" fill="#2a2a2a">kg</text>
+          <text x={W-PR} y={H-PB+13} textAnchor="end" fontSize="7.5" fill="#2a2a2a">tuần</text>
+
+          {/* Safe zone fill (between 0 and ideal) */}
+          <path d={`${toD(ideal)} L ${xs(12).toFixed(1)} ${ys(0).toFixed(1)} L ${xs(0).toFixed(1)} ${ys(0).toFixed(1)} Z`}
+            fill="rgba(132,204,22,0.07)" />
+          {/* Danger zone fill (below aggressive) */}
+          <path d={`${toD(aggressive)} L ${xs(12).toFixed(1)} ${ys(YMN).toFixed(1)} L ${xs(0).toFixed(1)} ${ys(YMN).toFixed(1)} Z`}
+            fill="rgba(249,115,22,0.06)" />
+
+          {/* Maintain (dashed teal) */}
+          <path d={toD(maintain)} fill="none" stroke="#06b6d4" strokeWidth="1.5" strokeDasharray="4 5" opacity="0.5"
+            style={{ strokeDashoffset: entered ? 0 : DASH, transition: 'stroke-dashoffset 1.3s ease-out 0.4s' }} />
+          {/* Aggressive */}
+          <path d={toD(aggressive)} fill="none" stroke="#f97316" strokeWidth="2" strokeDasharray={DASH}
+            style={{ strokeDashoffset: entered ? 0 : DASH, transition: 'stroke-dashoffset 1.6s ease-out 0.2s' }} />
+          {/* Ideal */}
+          <path d={toD(ideal)} fill="none" stroke="#84cc16" strokeWidth="2.5" strokeDasharray={DASH}
+            style={{ strokeDashoffset: entered ? 0 : DASH, transition: 'stroke-dashoffset 1.4s ease-out 0.1s' }} />
+
+          {/* Hover zones + dots on ideal line */}
+          {ideal.map((v, i) => {
+            const cx = xs(i), cy = ys(v), h = hoverWeek === i;
+            const tipX = i > 9 ? cx - 58 : cx - 2;
+            return (
+              <g key={i}>
+                <rect x={xs(i)-20} y={PT} width={40} height={H-PT-PB}
+                  fill="transparent" style={{ cursor: 'crosshair' }}
+                  onMouseEnter={() => setHoverWeek(i)} onMouseLeave={() => setHoverWeek(null)} />
+                <circle cx={cx} cy={cy} r={h ? 5.5 : 2.5}
+                  fill={h ? '#84cc16' : 'rgba(132,204,22,0.45)'}
+                  stroke={h ? 'rgba(132,204,22,0.25)' : 'none'} strokeWidth="6"
+                  style={{ transition: 'r 0.12s, fill 0.12s' }} pointerEvents="none" />
+                {h && (
+                  <g pointerEvents="none">
+                    <line x1={cx} y1={PT} x2={cx} y2={H-PB} stroke="rgba(132,204,22,0.18)" strokeWidth="1" strokeDasharray="3 4" />
+                    <rect x={tipX} y={cy-38} width="60" height="30" rx="5"
+                      fill="rgba(8,14,4,0.97)" stroke="rgba(132,204,22,0.5)" strokeWidth="1" />
+                    <text x={tipX+30} y={cy-23} textAnchor="middle" fontSize="10.5" fill="#84cc16" fontWeight="bold" fontFamily="monospace">
+                      {v.toFixed(2)} kg
+                    </text>
+                    <text x={tipX+30} y={cy-11} textAnchor="middle" fontSize="8" fill="rgba(132,204,22,0.65)">
+                      Tuần {i}
+                    </text>
+                  </g>
+                )}
+              </g>
+            );
+          })}
+
+          {/* Zone annotation labels */}
+          <text x={xs(7.5)} y={ys(-1.6)} fontSize="8.5" fill="rgba(132,204,22,0.6)" fontStyle="italic">✦ Vùng giảm mỡ bền vững</text>
+          <text x={xs(6.5)} y={ys(-4.8)} fontSize="8.5" fill="rgba(249,115,22,0.6)" fontStyle="italic">⚠ Vùng nguy cơ mất cơ</text>
+        </svg>
+      </div>
+      {/* Legend */}
+      <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-2.5 px-0.5">
+        {[
+          { c: '#84cc16', dash: false, label: 'Giảm mỡ lý tưởng (−0.38 kg/tuần)' },
+          { c: '#f97316', dash: false, label: 'Cắt calo quá mạnh (−0.85 kg/tuần)' },
+          { c: '#06b6d4', dash: true,  label: 'Duy trì cân nặng' },
+        ].map((l, i) => (
+          <div key={i} className="flex items-center gap-1.5">
+            {l.dash
+              ? <div className="w-5 border-b border-dashed" style={{ borderColor: l.c }} />
+              : <div className="w-5 h-[2px] rounded-full" style={{ background: l.c }} />}
+            <span className="text-[9px]" style={{ color: 'rgba(140,140,140,0.85)' }}>{l.label}</span>
+          </div>
+        ))}
+      </div>
+      {/* Science note */}
+      <div className="mt-2.5 rounded-xl border border-lime-500/14 bg-lime-500/4 px-3 py-2.5">
+        <p className="text-[9px] text-muted leading-relaxed">
+          <span className="text-lime-400 font-bold">Công thức: </span>
+          Thâm hụt 400 kcal/ngày × 7 ngày = 2,800 kcal ≈ <strong className="text-lime-400">0.36 kg mỡ/tuần</strong>.
+          Duy trì 12 tuần = giảm ~4.3 kg mỡ trong khi giữ nguyên cơ bắp. Cắt calo quá mạnh = cơ thể đốt thêm cơ để lấy năng lượng — thứ khó lấy lại nhất.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function EnergyBarChart() {
+  const [entered, setEntered] = useState(false);
+  const [hoverDay, setHoverDay] = useState(null);
+  useEffect(() => { const t = setTimeout(() => setEntered(true), 350); return () => clearTimeout(t); }, []);
+
+  const W = 460, H = 180;
+  const PL = 30, PR = 12, PT = 24, PB = 30;
+  const cw = W - PL - PR, ch = H - PT - PB;
+  const days   = ['T2','T3','T4','T5','T6','T7','CN'];
+  const values = [7, 4, 9, 6, 8, 9, 5];
+  const notes  = [
+    'Ổn định — ngủ đủ giấc, ăn đúng giờ',
+    'Thiếu ngủ đêm trước → uể oải cả ngày',
+    'Ngủ tốt + bữa sáng đầy đủ + tập nhẹ',
+    'Bỏ bữa trưa → tụt đường huyết xế chiều',
+    'Ngày tập nặng, carb nạp đủ → bứt phá',
+    'Nghỉ ngơi tốt, meal prep sẵn sàng',
+    'Stress cuối tuần + ngủ muộn → thấp',
+  ];
+  const barColor = (v) => v >= 8 ? '#22c55e' : v >= 6 ? '#eab308' : '#f97316';
+  const zoneLabel = (v) => v >= 8 ? 'Tốt 🟢' : v >= 6 ? 'Ổn 🟡' : 'Thấp 🔴';
+
+  const gap = cw / days.length;
+  const barW = gap * 0.52;
+  const xs = (i) => PL + i * gap + gap / 2;
+  const barTop = (v) => PT + (1 - v / 10) * ch;
+  const barH = (v) => (v / 10) * ch;
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-1">
+        <span className="text-sm">⚡</span>
+        <p className="text-xs font-bold text-text">Biểu Đồ Năng Lượng 7 Ngày — Mẫu Minh Họa</p>
+      </div>
+      <p className="text-[10px] text-muted leading-relaxed mb-2">
+        Một tuần điển hình. Xem chú thích bên dưới để hiểu nguyên nhân thăng giảm. Mục tiêu: luôn ≥6/10.
+      </p>
+      <div className="rounded-xl border border-white/7 bg-[#090909] overflow-hidden">
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ display: 'block' }}>
+          {/* Color zone backgrounds */}
+          <rect x={PL} y={PT} width={cw} height={ch * 0.2} fill="rgba(34,197,94,0.06)" />
+          <rect x={PL} y={PT + ch * 0.2} width={cw} height={ch * 0.2} fill="rgba(234,179,8,0.05)" />
+          <rect x={PL} y={PT + ch * 0.4} width={cw} height={ch * 0.6} fill="rgba(249,115,22,0.04)" />
+
+          {/* Threshold lines */}
+          {[10, 8, 6].map(v => (
+            <g key={v}>
+              <line x1={PL} y1={barTop(v)} x2={W-PR} y2={barTop(v)}
+                stroke={v===8 ? 'rgba(34,197,94,0.3)' : v===6 ? 'rgba(249,115,22,0.3)' : 'rgba(255,255,255,0.09)'}
+                strokeWidth={v===10 ? 0.5 : 1} strokeDasharray={v===10 ? '0' : '3 5'} />
+              <text x={PL-4} y={barTop(v)+3.5} textAnchor="end" fontSize="7.5" fill="#383838" fontFamily="monospace">{v}</text>
+            </g>
+          ))}
+          {/* Zone labels on right */}
+          <text x={W-PR+4} y={PT+ch*0.1+3} fontSize="7.5" fill="rgba(34,197,94,0.5)">Tốt</text>
+          <text x={W-PR+4} y={PT+ch*0.3+3} fontSize="7.5" fill="rgba(234,179,8,0.5)">Ổn</text>
+          <text x={W-PR+4} y={PT+ch*0.7+3} fontSize="7.5" fill="rgba(249,115,22,0.5)">Thấp</text>
+
+          {/* Bars */}
+          {values.map((v, i) => {
+            const bx = xs(i) - barW / 2;
+            const by = barTop(v);
+            const bh = barH(v);
+            const c = barColor(v);
+            const hov = hoverDay === i;
+            return (
+              <g key={i}>
+                <rect x={bx} y={entered ? by : H-PB} width={barW} height={entered ? bh : 0} rx="3"
+                  fill={c} opacity={hov ? 1 : 0.72}
+                  style={{
+                    transformBox: 'fill-box', transformOrigin: '50% 100%',
+                    transform: `scaleY(${entered ? 1 : 0})`,
+                    transition: `transform 0.55s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.07}s`,
+                    filter: hov ? `drop-shadow(0 0 6px ${c}cc)` : 'none',
+                  }} />
+                {/* Glow top cap */}
+                {entered && (
+                  <rect x={bx} y={by} width={barW} height="3" rx="2" fill={c} opacity={hov ? 1 : 0.85} />
+                )}
+                {/* Value label */}
+                {entered && (
+                  <text x={xs(i)} y={by - 4} textAnchor="middle" fontSize="9.5" fill={c} fontWeight="bold" fontFamily="monospace">{v}</text>
+                )}
+                {/* Day label */}
+                <text x={xs(i)} y={H-PB+13} textAnchor="middle" fontSize="8.5"
+                  fill={hov ? c : 'rgba(100,100,100,0.8)'} fontWeight={hov ? 'bold' : 'normal'}
+                  style={{ transition: 'fill 0.15s' }}>{days[i]}</text>
+                {/* Invisible hit area */}
+                <rect x={bx-4} y={PT} width={barW+8} height={H-PT-PB}
+                  fill="transparent" style={{ cursor: 'default' }}
+                  onMouseEnter={() => setHoverDay(i)} onMouseLeave={() => setHoverDay(null)} />
+                {/* Tooltip */}
+                {hov && (
+                  <g pointerEvents="none">
+                    <line x1={xs(i)} y1={by} x2={xs(i)} y2={PT+2} stroke={`${c}30`} strokeWidth="1" strokeDasharray="2 3" />
+                    <rect x={Math.min(xs(i)-62, W-140)} y={PT+4} width="132" height="30" rx="5"
+                      fill="rgba(8,8,8,0.96)" stroke={`${c}50`} strokeWidth="1" />
+                    <text x={Math.min(xs(i)-62, W-140)+66} y={PT+18} textAnchor="middle" fontSize="9" fill={c} fontWeight="bold">
+                      {days[i]}: {v}/10 — {zoneLabel(v)}
+                    </text>
+                    <text x={Math.min(xs(i)-62, W-140)+66} y={PT+28} textAnchor="middle" fontSize="7.5" fill="rgba(120,120,120,0.9)">
+                      {notes[i].substring(0, 30)}{notes[i].length > 30 ? '…' : ''}
+                    </text>
+                  </g>
+                )}
+              </g>
+            );
+          })}
+          {/* Baseline */}
+          <line x1={PL} y1={H-PB} x2={W-PR} y2={H-PB} stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+        </svg>
+      </div>
+      {/* Per-day notes */}
+      <div className="mt-3 grid sm:grid-cols-2 gap-1.5">
+        {values.map((v, i) => (
+          <div key={i} className="flex items-start gap-2 px-1">
+            <span className="text-[9px] font-black w-5 shrink-0 mt-0.5 font-mono" style={{ color: barColor(v) }}>{days[i]}</span>
+            <div className="flex-1">
+              <span className="text-[9px] font-bold mr-1" style={{ color: barColor(v) }}>{v}/10</span>
+              <span className="text-[9px] text-muted leading-snug">{notes[i]}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BodyCompositionChart() {
+  const [entered, setEntered] = useState(false);
+  const [hoverBar, setHoverBar] = useState(null);
+  useEffect(() => { const t = setTimeout(() => setEntered(true), 450); return () => clearTimeout(t); }, []);
+
+  // Illustrative body composition for ~75kg person
+  const scenarios = [
+    { label: 'Trước', sub: 'Ban đầu — 75 kg', color: '#64748b', fat: 16.5, muscle: 35.0, water: 23.5 },
+    { label: 'Cắt bền vững', sub: 'Sau 12T lý tưởng — 70.6 kg', color: '#22c55e', fat: 12.1, muscle: 35.0, water: 23.5 },
+    { label: 'Cắt quá mạnh', sub: 'Sau 12T cực đoan — 64.5 kg', color: '#f97316', fat: 9.5, muscle: 31.5, water: 23.5 },
+  ];
+
+  const W = 440, H = 200;
+  const PL = 14, PR = 70, PT = 28, PB = 46;
+  const cw = W - PL - PR, ch = H - PT - PB;
+  const maxKg = 75;
+  const gap = cw / scenarios.length;
+  const barW = gap * 0.52;
+  const xs = (i) => PL + i * gap + gap / 2;
+  const hs = (v) => (v / maxKg) * ch;
+  const COLORS = { fat: '#f97316', muscle: '#84cc16', water: '#06b6d4' };
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-1">
+        <span className="text-sm">🏗️</span>
+        <p className="text-xs font-bold text-text">Thành Phần Cơ Thể — So Sánh 3 Kịch Bản</p>
+      </div>
+      <p className="text-[10px] text-muted leading-relaxed mb-2">
+        Cùng giảm cân nhưng <span className="text-lime-400">cắt calo đúng tốc độ = giữ được toàn bộ cơ bắp</span>.
+        Cắt quá mạnh = mất thêm 3.5 kg cơ bắp — thứ rất khó lấy lại.
+      </p>
+      <div className="rounded-xl border border-white/7 bg-[#090909] overflow-hidden">
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ display: 'block' }}>
+          {/* Y axis guides */}
+          {[0, 25, 50, 75].map(v => (
+            <g key={v}>
+              <line x1={PL} y1={H-PB-hs(v)} x2={W-PR} y2={H-PB-hs(v)}
+                stroke="rgba(255,255,255,0.04)" strokeWidth="0.7" strokeDasharray="2 5" />
+              <text x={W-PR+5} y={H-PB-hs(v)+3.5} fontSize="7.5" fill="#333" fontFamily="monospace">{v} kg</text>
+            </g>
+          ))}
+          {/* Baseline */}
+          <line x1={PL} y1={H-PB} x2={W-PR} y2={H-PB} stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+
+          {scenarios.map((s, i) => {
+            const total = s.fat + s.muscle + s.water;
+            const waterH = hs(s.water), muscleH = hs(s.muscle), fatH = hs(s.fat);
+            const totalH = hs(total);
+            const bx = xs(i) - barW / 2;
+            const base = H - PB;
+            const hov = hoverBar === i;
+            const delay = `${i * 0.1}s`;
+
+            return (
+              <g key={i}>
+                {/* Water (bottom) */}
+                <rect x={bx} y={base - waterH} width={barW} height={waterH}
+                  fill={COLORS.water} opacity={hov ? 0.85 : 0.6}
+                  style={{ transformBox: 'fill-box', transformOrigin: '50% 100%',
+                    transform: `scaleY(${entered ? 1 : 0})`,
+                    transition: `transform 0.65s ease-out ${delay}` }} />
+                {/* Muscle (middle) */}
+                <rect x={bx} y={base - waterH - muscleH} width={barW} height={muscleH}
+                  fill={COLORS.muscle} opacity={hov ? 0.92 : 0.72}
+                  style={{ transformBox: 'fill-box', transformOrigin: '50% 100%',
+                    transform: `scaleY(${entered ? 1 : 0})`,
+                    transition: `transform 0.65s ease-out ${delay}` }} />
+                {/* Fat (top) */}
+                <rect x={bx} y={base - waterH - muscleH - fatH} width={barW} height={fatH} rx="3"
+                  fill={COLORS.fat} opacity={hov ? 0.92 : 0.72}
+                  style={{ transformBox: 'fill-box', transformOrigin: '50% 100%',
+                    transform: `scaleY(${entered ? 1 : 0})`,
+                    transition: `transform 0.65s ease-out ${delay}` }} />
+
+                {/* Labels inside bars */}
+                {entered && fatH > 14 && (
+                  <text x={xs(i)} y={base-waterH-muscleH-fatH/2+3} textAnchor="middle" fontSize="8" fill="rgba(255,255,255,0.85)" fontFamily="monospace">{s.fat.toFixed(1)}</text>
+                )}
+                {entered && muscleH > 14 && (
+                  <text x={xs(i)} y={base-waterH-muscleH/2+3} textAnchor="middle" fontSize="8" fill="rgba(0,0,0,0.7)" fontFamily="monospace">{s.muscle.toFixed(1)}</text>
+                )}
+
+                {/* Total weight on top */}
+                {entered && (
+                  <text x={xs(i)} y={base-totalH-8} textAnchor="middle" fontSize="10" fill={s.color} fontWeight="bold" fontFamily="monospace">
+                    {total.toFixed(1)} kg
+                  </text>
+                )}
+
+                {/* Scenario label + hit area */}
+                <rect x={bx-6} y={PT} width={barW+12} height={H-PT-PB}
+                  fill="transparent" style={{ cursor: 'default' }}
+                  onMouseEnter={() => setHoverBar(i)} onMouseLeave={() => setHoverBar(null)} />
+                <text x={xs(i)} y={H-PB+14} textAnchor="middle" fontSize="8.5" fill={s.color} fontWeight="bold">{s.label}</text>
+                <text x={xs(i)} y={H-PB+26} textAnchor="middle" fontSize="7.5" fill="rgba(80,80,80,0.85)">{s.sub}</text>
+
+                {/* Hover tooltip */}
+                {hov && entered && (
+                  <g pointerEvents="none">
+                    <rect x={xs(i)-60} y={base-totalH-52} width="120" height="40" rx="5"
+                      fill="rgba(8,8,8,0.97)" stroke={`${s.color}50`} strokeWidth="1" />
+                    <text x={xs(i)} y={base-totalH-37} textAnchor="middle" fontSize="8.5" fill={s.color} fontWeight="bold">
+                      Mỡ: {s.fat.toFixed(1)} kg · Cơ: {s.muscle.toFixed(1)} kg
+                    </text>
+                    <text x={xs(i)} y={base-totalH-25} textAnchor="middle" fontSize="8" fill="rgba(130,130,130,0.9)">
+                      Nước: {s.water.toFixed(1)} kg · Tổng: {total.toFixed(1)} kg
+                    </text>
+                  </g>
+                )}
+              </g>
+            );
+          })}
+
+          {/* Muscle loss arrow annotation */}
+          {entered && (
+            <g pointerEvents="none">
+              <line
+                x1={xs(1) + barW/2 + 3}
+                y1={H - PB - hs(scenarios[1].water) - hs(scenarios[1].muscle) / 2}
+                x2={xs(2) - barW/2 - 3}
+                y2={H - PB - hs(scenarios[2].water) - hs(scenarios[2].muscle) / 2}
+                stroke="rgba(249,115,22,0.5)" strokeWidth="1" strokeDasharray="3 3" />
+              <text
+                x={xs(1) + (xs(2)-xs(1))/2}
+                y={H - PB - hs(scenarios[1].water) - hs(scenarios[1].muscle)/2 - 7}
+                textAnchor="middle" fontSize="8" fill="rgba(249,115,22,0.75)" fontWeight="bold">
+                −3.5 kg cơ ⚠
+              </text>
+            </g>
+          )}
+        </svg>
+      </div>
+      {/* Legend */}
+      <div className="flex gap-5 mt-2.5 px-0.5 flex-wrap">
+        {[
+          { c: COLORS.fat,    label: 'Mỡ cơ thể' },
+          { c: COLORS.muscle, label: 'Khối cơ bắp' },
+          { c: COLORS.water,  label: 'Nước cơ thể' },
+        ].map((l, i) => (
+          <div key={i} className="flex items-center gap-1.5">
+            <div className="w-3 h-3 rounded-sm opacity-75" style={{ background: l.c }} />
+            <span className="text-[9px]" style={{ color: 'rgba(140,140,140,0.85)' }}>{l.label}</span>
+          </div>
+        ))}
+      </div>
+      <div className="mt-2 rounded-xl border border-orange-500/15 bg-orange-500/4 px-3 py-2">
+        <p className="text-[9px] text-muted leading-relaxed">
+          <span className="text-orange-400 font-bold">Tại sao mất cơ khi cắt quá mạnh? </span>
+          Khi thiếu hụt &gt;600 kcal/ngày, cơ thể phân giải protein cơ bắp (gluconeogenesis) để tạo glucose. Đây là lý do protein ≥1.8g/kg và tập luyện duy trì sức mạnh là BẮT BUỘC khi giảm mỡ.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function WeeklyMetricsContent() {
   return (
     <div className="space-y-4">
@@ -3331,6 +3744,16 @@ function WeeklyMetricsContent() {
           <span>📌</span>
           <span>Công thức: "Điều chỉnh 1 biến, chờ 2 tuần, đo lại." Không thay đổi nhiều thứ cùng lúc — không biết yếu tố nào đang tác động.</span>
         </p>
+      </div>
+
+      {/* ── Charts ── */}
+      <div>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Biểu Đồ Minh Họa</p>
+        <div className="space-y-6">
+          <ProgressLineChart />
+          <EnergyBarChart />
+          <BodyCompositionChart />
+        </div>
       </div>
     </div>
   );

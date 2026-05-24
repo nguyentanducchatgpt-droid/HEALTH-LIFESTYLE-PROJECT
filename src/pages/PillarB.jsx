@@ -6116,7 +6116,7 @@ function MantraCard({ m, i }) {
   );
 }
 
-// ─── Nutrition Roadmap (12 & 24 weeks) ───────────────────────────────────────
+// ─── (Nutrition Roadmap moved to NutritionRoadmapPage.jsx) ──────────────────
 
 const ROADMAP_PHASES = [
   {
@@ -6667,6 +6667,13 @@ export default function PillarB() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Persist B0 inputs for the roadmap sub-page
+  useEffect(() => {
+    try {
+      localStorage.setItem('healthapp_b0_inputs', JSON.stringify({ weight, height, age, sex, activityKey, goalKey }));
+    } catch {}
+  }, [weight, height, age, sex, activityKey, goalKey]);
+
   // Inject orbit-border CSS keyframes once
   useEffect(() => {
     const id = 'pb-orbit-kf';
@@ -7101,7 +7108,58 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
-      <NutritionRoadmap s={userStats} />
+      {/* ── ROADMAP TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-lime-500/20">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1000&q=75&auto=format&fit=crop" alt="Nutrition roadmap" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/70 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-lime-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-lime-400 mb-2">🗺️ Lộ Trình Có Cấu Trúc</p>
+                <h3 className="text-2xl font-black text-text mb-2">Lộ Trình Dinh Dưỡng<br />12 & 24 Tuần</h3>
+                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
+                  6 giai đoạn từ xây nền thói quen đến tối ưu hiệu suất. Mọi con số được tính toán theo thông số cá nhân từ B0 của bạn — TDEE <span className="text-lime-400 font-bold">{userStats.tdee.toLocaleString()} kcal</span> · Protein <span className="text-lime-400 font-bold">{userStats.proteinG}g/ngày</span>.
+                </p>
+                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
+                  {[
+                    { icon: '📋', text: 'Thực đơn mẫu mỗi giai đoạn' },
+                    { icon: '📊', text: 'Biểu đồ tuân thủ S-curve' },
+                    { icon: '🔬', text: 'Cơ sở khoa học chi tiết' },
+                    { icon: '✅', text: 'Checklist tiến độ cá nhân' },
+                  ].map((f, i) => (
+                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
+                      <span>{f.icon}</span>{f.text}
+                    </span>
+                  ))}
+                </div>
+                <Link to="/pillar/b/roadmap"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
+                  style={{ background: 'linear-gradient(135deg, #22c55e, #84cc16)' }}>
+                  Xem Lộ Trình Chi Tiết →
+                </Link>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                {[
+                  { label: 'Giai đoạn', value: '6', color: '#22c55e' },
+                  { label: 'Tuần', value: '24', color: '#06b6d4' },
+                  { label: 'Phases miễn phí', value: '✓', color: '#84cc16' },
+                ].map((s, i) => (
+                  <div key={i} className="text-center">
+                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
+                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
 
       {/* ══════════════════════════════════════════════════════════════════════
           SAFETY NOTE

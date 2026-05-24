@@ -9,6 +9,7 @@ import PillarAWeekly from './pages/PillarAWeekly';
 import PillarAProgress from './pages/PillarAProgress';
 import PillarB from './pages/PillarB';
 import NutritionRoadmapPage from './pages/NutritionRoadmapPage';
+import NutritionContentPage from './pages/NutritionContentPage';
 import PillarC from './pages/PillarC';
 import PillarD from './pages/PillarD';
 import PillarE from './pages/PillarE';
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/pillar/a/progress" element={<PillarAProgress />} />
           <Route path="/pillar/b" element={<PillarB />} />
           <Route path="/pillar/b/roadmap" element={<NutritionRoadmapPage />} />
+          <Route path="/pillar/b/content" element={<NutritionContentPage />} />
           <Route path="/pillar/c" element={<PillarC />} />
           <Route path="/pillar/d" element={<PillarD />} />
           <Route path="/pillar/e" element={<PillarE />} />

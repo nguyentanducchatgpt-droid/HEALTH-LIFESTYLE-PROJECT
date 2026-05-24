@@ -6116,6 +6116,429 @@ function MantraCard({ m, i }) {
   );
 }
 
+// ─── Nutrition Roadmap (12 & 24 weeks) ───────────────────────────────────────
+
+const ROADMAP_PHASES = [
+  {
+    phase: 1, weeks: '1–2', weekCount: 2, label: 'Xây Nền', emoji: '🌱',
+    color: '#22c55e', rgb: '34,197,94',
+    goal: 'Tạo thói quen ăn uống cơ bản — không cần đếm calo ngay từ đầu',
+    actions: [
+      'Mỗi bữa có ít nhất 1 nguồn đạm (thịt, cá, trứng, đậu hũ)',
+      'Thêm rau/canh vào ít nhất 2/3 bữa chính mỗi ngày',
+      'Uống 6–8 ly nước (250ml/ly) mỗi ngày',
+      'Giảm nước ngọt, trà sữa — thay bằng trà không đường hoặc nước lọc',
+      'Không bỏ bữa rồi ăn bù quá nhiều ở bữa sau',
+    ],
+    checkpoints: ['Hình thành nhịp ăn 3 bữa ổn định', 'Thấy ít thèm ăn vặt hơn', 'Năng lượng ban ngày cải thiện nhẹ'],
+    outcome: 'Thói quen nền được hình thành. Cơ thể bắt đầu quen với nhịp ăn ổn định và ít đường lỏng hơn.',
+    kcalMult: 0.95, compliance: 62,
+    formula: s => `Protein/bữa ≈ ${s.perMealProteinG}g · Nước ≥ ${Math.round(s.waterMl/250)} ly · ${s.mealsPerDay} bữa/ngày`,
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=70&auto=format&fit=crop',
+  },
+  {
+    phase: 2, weeks: '3–4', weekCount: 2, label: 'Chuẩn Hóa', emoji: '📐',
+    color: '#06b6d4', rgb: '6,182,212',
+    goal: 'Áp dụng đĩa ăn ½–¼–¼ và nhận thức khẩu phần bằng mắt/tay',
+    actions: [
+      'Áp dụng đĩa ½ rau / ¼ đạm / ¼ tinh bột mỗi bữa chính',
+      'Bắt đầu meal prep 1 lần/tuần (đạm + tinh bột sẵn 3 ngày)',
+      'Theo dõi protein hàng ngày bằng app hoặc ghi chú đơn giản',
+      'Học đọc nhãn dinh dưỡng — tìm mục "Protein" và "Calories"',
+      'Ưu tiên thực phẩm chế biến tối thiểu, ít thành phần',
+    ],
+    checkpoints: ['Cân nặng bắt đầu ổn định', 'Nhận ra khẩu phần đúng bằng mắt', 'Tiêu hóa tốt hơn'],
+    outcome: 'Kiểm soát khẩu phần mà không cần cân đo. Bắt đầu thấy thay đổi về năng lượng và cơ thể.',
+    kcalMult: 1.0, compliance: 71,
+    formula: s => `Mục tiêu: ${s.proteinG}g protein · ${s.targetKcal.toLocaleString()} kcal · Đĩa ½-¼-¼ mỗi bữa`,
+    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=70&auto=format&fit=crop',
+  },
+  {
+    phase: 3, weeks: '5–8', weekCount: 4, label: 'Cá Nhân Hóa', emoji: '🎯',
+    color: '#f59e0b', rgb: '245,158,11',
+    goal: 'Điều chỉnh macro theo mục tiêu cụ thể và lịch tập',
+    actions: [
+      'Tính và theo dõi macro (P/C/F) hàng ngày qua app hoặc bảng',
+      'Điều chỉnh calo theo ngày tập nặng/nhẹ/nghỉ',
+      'Xây bữa pre/post workout phù hợp với lịch tập',
+      'Meal prep 2 lần/tuần để tiết kiệm thời gian và đảm bảo đủ macro',
+      'Đánh giá lại sau 2 tuần — điều chỉnh ±100–200 kcal nếu cần',
+    ],
+    checkpoints: ['Cơ thể thay đổi rõ theo mục tiêu', 'Macro được tối ưu từng loại ngày', 'Không còn lo "ăn gì hôm nay"'],
+    outcome: 'Đây là giai đoạn chuyển hóa quan trọng nhất. Kết quả rõ rệt về hình thể và hiệu suất tập.',
+    kcalMult: 1.0, compliance: 80,
+    formula: s => `Ngày tập: ${s.trainingDayKcal.toLocaleString()} kcal · Ngày nghỉ: ${s.restDayKcal.toLocaleString()} kcal · Protein: ${s.proteinG}g cố định`,
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=70&auto=format&fit=crop',
+  },
+  {
+    phase: 4, weeks: '9–12', weekCount: 4, label: 'Tối Ưu & Duy Trì', emoji: '🏆',
+    color: '#a855f7', rgb: '168,85,247',
+    goal: 'Tối ưu hóa chiến lược và xây dựng thói quen bền vững lâu dài',
+    actions: [
+      'Áp dụng carb cycling: cao ngày tập nặng, thấp ngày nghỉ',
+      'Theo dõi body composition (cân Inbody nếu có) mỗi 4 tuần',
+      'Điều chỉnh kế hoạch theo kết quả 4–6 tuần qua',
+      'Thực hành 80/20 rule: 80% đúng nền, 20% linh hoạt',
+      'Chuẩn bị chiến lược cho giai đoạn tiếp theo (tuần 13+)',
+    ],
+    checkpoints: ['Đạt hoặc gần đạt mục tiêu ban đầu', 'Thói quen được tự động hóa', 'Sẵn sàng cho phase 2'],
+    outcome: 'Hoàn thành 12 tuần. Cơ thể và thói quen sẵn sàng cho giai đoạn nâng cao hơn.',
+    kcalMult: 1.02, compliance: 86,
+    formula: s => `Carb cycling: ${s.heavyDayCarbG}g nặng / ${s.lightDayCarbG}g nghỉ · ${(s.proteinG/s.weight).toFixed(1)}g protein/kg`,
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=70&auto=format&fit=crop',
+  },
+  {
+    phase: 5, weeks: '13–18', weekCount: 6, label: 'Nâng Tầm', emoji: '⚡',
+    color: '#ec4899', rgb: '236,72,153',
+    goal: 'Tối ưu hiệu suất và bắt đầu tư duy dinh dưỡng vận động viên',
+    actions: [
+      'Cập nhật TDEE sau mỗi 4 tuần (cân nặng thay đổi → TDEE thay đổi)',
+      'Áp dụng periodized nutrition theo chu kỳ tập mesocycle 4–6 tuần',
+      'Pre/post workout protocol cố định mỗi buổi tập',
+      'Xem xét supplement phù hợp (creatine monohydrate, omega-3)',
+      'Theo dõi biến thể thể thao: sức mạnh, sức bền, thời gian phục hồi',
+    ],
+    checkpoints: ['Hiệu suất tập vượt đỉnh cũ', 'Recovery time rút ngắn', 'Cơ thể vận hành ở mức tối ưu'],
+    outcome: 'Dinh dưỡng trở thành công cụ hiệu suất. Cơ thể đang ở trạng thái tốt nhất từ trước đến nay.',
+    kcalMult: 1.04, compliance: 88,
+    formula: s => `TDEE cập nhật định kỳ · Pre: ${s.preWorkoutCarbG}g carb · Post: ${s.postWorkoutProteinG}g P + ${s.postWorkoutCarbG}g C`,
+    image: 'https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=600&q=70&auto=format&fit=crop',
+  },
+  {
+    phase: 6, weeks: '19–24', weekCount: 6, label: 'Bền Vững Trọn Đời', emoji: '🌟',
+    color: '#84cc16', rgb: '132,204,22',
+    goal: 'Tích hợp dinh dưỡng vào lối sống — không còn cần "cố gắng"',
+    actions: [
+      'Check-in dinh dưỡng định kỳ mỗi tuần, điều chỉnh khi có thay đổi lớn',
+      'Áp dụng intuitive eating có chọn lọc — tin tưởng tín hiệu cơ thể',
+      'Huấn luyện 80/20 rule tự động — không cần theo dõi từng bữa',
+      'Duy trì tư duy "đều quan trọng hơn hoàn hảo" mọi ngày',
+      'Lan tỏa thói quen tốt trong gia đình và cộng đồng',
+    ],
+    checkpoints: ['Không còn cảm giác "đang kiêng"', 'Dinh dưỡng là bản năng', 'Kết quả duy trì tự nhiên'],
+    outcome: 'Dinh dưỡng không còn là gánh nặng — là một phần tự nhiên, bền vững của cuộc sống khỏe.',
+    kcalMult: 1.0, compliance: 91,
+    formula: s => `80% ăn đúng nền + 20% linh hoạt · Protein tuần: ${s.weeklyProteinG}g · Cân nặng ±1kg ổn định`,
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=70&auto=format&fit=crop',
+  },
+];
+
+function RoadmapComplianceChart({ showAll }) {
+  const phases = showAll ? ROADMAP_PHASES : ROADMAP_PHASES.slice(0, 4);
+  const totalWeeks = phases.reduce((a, p) => a + p.weekCount, 0);
+  const W = 520, H = 130, PL = 30, PR = 12, PT = 14, PB = 32;
+  const cW = W - PL - PR, cH = H - PT - PB;
+
+  const points = [];
+  let wCursor = 0;
+  phases.forEach(ph => {
+    const startC = wCursor === 0 ? 52 : points[points.length - 1]?.c ?? 60;
+    for (let w = 1; w <= ph.weekCount; w++) {
+      wCursor++;
+      const t = wCursor / totalWeeks;
+      const c = 50 + 42 / (1 + Math.exp(-9 * (t - 0.35)));
+      points.push({ w: wCursor, c, color: ph.color });
+    }
+  });
+
+  const xOf = w => PL + (w / totalWeeks) * cW;
+  const yOf = c => PT + cH * (1 - (c - 46) / 52);
+  const pathD = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${xOf(p.w)} ${yOf(p.c)}`).join(' ');
+
+  let xScan = 0;
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ overflow: 'visible' }}>
+      <defs>
+        <linearGradient id="rod-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#84cc16" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#84cc16" stopOpacity="0.01" />
+        </linearGradient>
+      </defs>
+      {[60, 70, 80, 90].map(c => (
+        <g key={c}>
+          <line x1={PL} y1={yOf(c)} x2={W - PR} y2={yOf(c)} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+          <text x={PL - 3} y={yOf(c) + 3} textAnchor="end" fontSize="7" fill="#4b5563">{c}%</text>
+        </g>
+      ))}
+      <path d={`${pathD} L ${xOf(totalWeeks)} ${PT + cH} L ${PL} ${PT + cH} Z`} fill="url(#rod-grad)" />
+      <path d={pathD} fill="none" stroke="#84cc16" strokeWidth="2" strokeLinejoin="round" />
+      {phases.map(ph => {
+        const midW = xScan + ph.weekCount / 2;
+        const labelX = xOf(midW);
+        const borderX = xOf(xScan);
+        xScan += ph.weekCount;
+        return (
+          <g key={ph.phase}>
+            {xScan < totalWeeks && (
+              <line x1={xOf(xScan)} y1={PT} x2={xOf(xScan)} y2={PT + cH}
+                stroke={ph.color} strokeWidth="1" strokeDasharray="3 3" opacity="0.35" />
+            )}
+            <text x={labelX} y={PT + cH + 20} textAnchor="middle" fontSize="7.5" fill={`${ph.color}99`}>{ph.emoji}</text>
+            <text x={labelX} y={PT + cH + 30} textAnchor="middle" fontSize="6.5" fill="#6b7280">T{ph.weeks}</text>
+          </g>
+        );
+      })}
+      {points.filter(p => [2, 4, 8, 12, 18, 24].includes(p.w) && p.w <= totalWeeks).map(p => (
+        <circle key={p.w} cx={xOf(p.w)} cy={yOf(p.c)} r="3.5" fill={p.color} stroke={`${p.color}40`} strokeWidth="4" />
+      ))}
+      <text x={W - PR} y={PT - 4} textAnchor="end" fontSize="7" fill="#4b5563">% Tuân thủ kế hoạch</text>
+    </svg>
+  );
+}
+
+function PhaseCalorieBar({ s, showAll }) {
+  const phases = showAll ? ROADMAP_PHASES : ROADMAP_PHASES.slice(0, 4);
+  const W = 520, H = 90, PL = 36, PR = 12, PT = 10, PB = 26;
+  const cW = W - PL - PR, cH = H - PT - PB;
+  const totalWeeks = phases.reduce((a, p) => a + p.weekCount, 0);
+  const kcals = phases.map(p => Math.round(s.targetKcal * p.kcalMult));
+  const maxK = Math.max(...kcals, s.tdee) * 1.06;
+  const minK = Math.min(...kcals, s.tdee) * 0.94;
+  const yOf = k => PT + cH * (1 - (k - minK) / (maxK - minK));
+  const tdeeY = yOf(s.tdee);
+
+  let xScan = PL;
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ overflow: 'visible' }}>
+      <line x1={PL} y1={tdeeY} x2={W - PR} y2={tdeeY}
+        stroke="rgba(255,255,255,0.12)" strokeWidth="1" strokeDasharray="4 3" />
+      <text x={W - PR + 3} y={tdeeY + 3} fontSize="7" fill="rgba(255,255,255,0.25)">TDEE {(s.tdee/1000).toFixed(1)}k</text>
+      {phases.map((ph, i) => {
+        const barW = (ph.weekCount / totalWeeks) * cW - 3;
+        const kcal = kcals[i];
+        const bY = yOf(kcal);
+        const bH = PT + cH - bY;
+        const x = xScan;
+        xScan += (ph.weekCount / totalWeeks) * cW;
+        return (
+          <g key={ph.phase}>
+            <rect x={x + 1} y={bY} width={barW} height={bH} fill={`${ph.color}18`} rx="3" />
+            <rect x={x + 1} y={bY} width={barW} height={4} fill={ph.color} rx="2" opacity="0.75" />
+            <text x={x + barW / 2 + 1} y={bY - 5} textAnchor="middle" fontSize="8" fontWeight="700" fill={`${ph.color}cc`}>
+              {(kcal / 1000).toFixed(1)}k
+            </text>
+            <text x={x + barW / 2 + 1} y={PT + cH + 16} textAnchor="middle" fontSize="7.5" fill="#6b7280">
+              {ph.label.split(' ')[0]}
+            </text>
+          </g>
+        );
+      })}
+      <text x={PL - 3} y={PT + cH / 2 + 3} textAnchor="end" fontSize="6.5" fill="#4b5563">kcal</text>
+    </svg>
+  );
+}
+
+function NutritionRoadmap({ s }) {
+  const [activePhase, setActivePhase] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+  const phases = showAll ? ROADMAP_PHASES : ROADMAP_PHASES.slice(0, 4);
+  const current = phases[Math.min(activePhase, phases.length - 1)];
+
+  return (
+    <RevealBlock className="mb-16">
+      {/* Section header */}
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-lime-500/20 bg-lime-500/5">
+          <span className="text-sm">🗺️</span>
+          <p className="text-[10px] font-bold text-lime-400 uppercase tracking-[0.2em] whitespace-nowrap">
+            Lộ Trình Dinh Dưỡng {showAll ? '24 Tuần' : '12 Tuần'}
+          </p>
+        </div>
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
+
+      {/* Context image */}
+      <div className="pb-orbit-ring rounded-3xl p-[1.5px] mb-8">
+        <div className="relative rounded-3xl overflow-hidden h-44 md:h-56">
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=75&auto=format&fit=crop"
+            alt="Nutrition roadmap healthy lifestyle"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/40 to-transparent" />
+          <div className="absolute inset-y-0 left-0 px-8 flex flex-col justify-center max-w-md">
+            <p className="text-[9px] font-bold text-lime-400 uppercase tracking-[0.25em] mb-1.5">Cá Nhân Hóa Theo B0</p>
+            <h3 className="text-xl font-black text-text leading-tight mb-2">
+              Lộ trình {showAll ? '24' : '12'} tuần của bạn
+            </h3>
+            <p className="text-[11px] text-muted leading-relaxed">
+              TDEE <span className="text-lime-400 font-bold">{s.tdee.toLocaleString()} kcal</span>
+              {' · '}Mục tiêu <span className="text-lime-400 font-bold">{s.targetKcal.toLocaleString()} kcal</span>
+              {' · '}Protein <span className="text-lime-400 font-bold">{s.proteinG}g</span>/ngày
+            </p>
+          </div>
+          <div className="absolute bottom-4 right-6 flex gap-2">
+            {ROADMAP_PHASES.slice(0, 4).map(ph => (
+              <div key={ph.phase} className="w-2 h-2 rounded-full" style={{ background: ph.color, opacity: 0.8 }} />
+            ))}
+            {showAll && ROADMAP_PHASES.slice(4).map(ph => (
+              <div key={ph.phase} className="w-2 h-2 rounded-full" style={{ background: ph.color, opacity: 0.8 }} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Toggle 12/24 weeks */}
+      <div className="flex justify-center mb-8">
+        <div className="inline-flex rounded-xl border border-border/30 bg-surface/20 p-1 gap-1">
+          {[false, true].map(all => (
+            <button key={`${all}`} type="button"
+              onClick={() => { setShowAll(all); setActivePhase(0); }}
+              className="px-4 py-1.5 rounded-lg text-[10px] font-bold transition-all duration-200"
+              style={showAll === all ? { background: '#84cc16', color: '#0a0a0a' } : { color: '#9ca3af' }}>
+              {all ? '24 Tuần (Toàn Bộ)' : '12 Tuần (Cơ Bản)'}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Compliance S-curve chart */}
+      <div className="rounded-2xl border border-border/25 bg-surface/5 p-5 mb-6">
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <p className="text-xs font-bold text-text">Biểu Đồ Tuân Thủ Kế Hoạch Theo Tuần</p>
+            <p className="text-[9px] text-muted mt-0.5">Đường S-curve — tiến bộ tăng dần khi thói quen được hình thành</p>
+          </div>
+          <span className="text-[9px] text-muted/50 bg-surface/40 px-2 py-1 rounded-full border border-border/20">
+            Dự kiến, không phải cam kết
+          </span>
+        </div>
+        <RoadmapComplianceChart showAll={showAll} />
+      </div>
+
+      {/* Calorie bar chart */}
+      <div className="rounded-2xl border border-border/25 bg-surface/5 p-5 mb-8">
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <p className="text-xs font-bold text-text">Calo Mục Tiêu Theo Từng Giai Đoạn</p>
+            <p className="text-[9px] text-muted mt-0.5">Dựa trên TDEE {s.tdee.toLocaleString()} kcal của bạn — điều chỉnh theo mục tiêu từng phase</p>
+          </div>
+        </div>
+        <PhaseCalorieBar s={s} showAll={showAll} />
+      </div>
+
+      {/* Phase selector */}
+      <div className="flex gap-2 flex-wrap mb-6">
+        {phases.map((ph, i) => (
+          <button key={ph.phase} type="button"
+            onClick={() => setActivePhase(i)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-[10px] font-bold transition-all duration-200"
+            style={activePhase === i
+              ? { borderColor: ph.color, background: `${ph.color}18`, color: ph.color }
+              : { borderColor: 'rgba(255,255,255,0.08)', background: 'transparent', color: '#6b7280' }}>
+            <span>{ph.emoji}</span>
+            <span>P{ph.phase}: Tuần {ph.weeks}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Active phase detail */}
+      <div className="grid md:grid-cols-2 gap-5 mb-6">
+        {/* Left: actions + formula */}
+        <div className="rounded-2xl border p-5 space-y-4" style={{ borderColor: `${current.color}25`, background: `${current.color}06` }}>
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">{current.emoji}</span>
+            <div>
+              <p className="text-[9px] font-bold uppercase tracking-widest" style={{ color: current.color }}>
+                Giai Đoạn {current.phase} · Tuần {current.weeks}
+              </p>
+              <p className="text-sm font-bold text-text mt-0.5">{current.label}</p>
+            </div>
+          </div>
+          <p className="text-[11px] text-muted leading-relaxed border-l-2 pl-3" style={{ borderColor: `${current.color}40` }}>
+            {current.goal}
+          </p>
+          <div>
+            <p className="text-[9px] font-bold text-muted uppercase tracking-wider mb-2">5 Hành Động Chính</p>
+            <ul className="space-y-2">
+              {current.actions.map((a, i) => (
+                <li key={i} className="flex items-start gap-2 text-[10px] text-muted">
+                  <span className="font-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                    style={{ background: `${current.color}20`, color: current.color }}>{i + 1}</span>
+                  <span className="leading-relaxed">{a}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-xl px-3 py-2.5 border" style={{ borderColor: `${current.color}20`, background: `${current.color}08` }}>
+            <p className="text-[9px] font-bold uppercase tracking-wider mb-1" style={{ color: current.color }}>Công Thức Cá Nhân Hóa</p>
+            <p className="text-[10px] text-text font-mono leading-relaxed">{current.formula(s)}</p>
+          </div>
+        </div>
+
+        {/* Right: image + checkpoints + outcome */}
+        <div className="space-y-4">
+          <div className="rounded-2xl overflow-hidden h-36 md:h-40 relative">
+            <img src={current.image} alt={current.label} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/85 via-bg/20 to-transparent" />
+            <div className="absolute bottom-3 left-4 flex items-center gap-2">
+              <span className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border"
+                style={{ color: current.color, borderColor: `${current.color}30`, background: 'rgba(10,10,10,0.7)' }}>
+                Giai đoạn {current.phase} / {showAll ? 6 : 4}
+              </span>
+              <span className="text-[9px] text-muted/70 bg-bg/60 px-2 py-1 rounded-full border border-border/20">
+                {current.weekCount} tuần · ~{Math.round(current.compliance)}% tuân thủ
+              </span>
+            </div>
+          </div>
+          <div className="rounded-2xl border p-4 space-y-3" style={{ borderColor: `${current.color}18`, background: `${current.color}04` }}>
+            <p className="text-[9px] font-bold text-muted uppercase tracking-wider">Mốc Kiểm Tra</p>
+            {current.checkpoints.map((cp, i) => (
+              <div key={i} className="flex items-center gap-2.5">
+                <div className="w-5 h-5 rounded-full border flex items-center justify-center shrink-0" style={{ borderColor: `${current.color}40`, background: `${current.color}10` }}>
+                  <div className="w-2 h-2 rounded-full" style={{ background: current.color }} />
+                </div>
+                <p className="text-[10px] text-muted leading-relaxed">{cp}</p>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-xl px-4 py-3 border border-lime-500/15 bg-lime-500/5">
+            <p className="text-[9px] font-bold text-lime-400 uppercase tracking-wider mb-1">Kết Quả Kỳ Vọng</p>
+            <p className="text-[10px] text-muted leading-relaxed">{current.outcome}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Milestone timeline */}
+      <div className="rounded-2xl border border-border/20 bg-surface/5 p-5">
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">
+          Mốc Quan Trọng — {showAll ? '24' : '12'} Tuần
+        </p>
+        <div className="relative">
+          <div className="absolute top-3 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)' }} />
+          <div className="grid grid-cols-4 md:grid-cols-6 gap-2 relative z-10">
+            {(showAll ? [
+              { w: 2, label: 'Kiểm tra đầu tiên', icon: '📋', color: '#22c55e' },
+              { w: 4, label: 'Đánh giá meal plan', icon: '🍽️', color: '#06b6d4' },
+              { w: 8, label: 'Đánh giá hình thể', icon: '📏', color: '#f59e0b' },
+              { w: 12, label: 'Hoàn thành 12T', icon: '🏆', color: '#a855f7' },
+              { w: 18, label: 'Advanced check', icon: '⚡', color: '#ec4899' },
+              { w: 24, label: 'Lifestyle locked', icon: '🌟', color: '#84cc16' },
+            ] : [
+              { w: 2, label: 'Kiểm tra đầu tiên', icon: '📋', color: '#22c55e' },
+              { w: 4, label: 'Chuẩn hóa meal', icon: '🍽️', color: '#06b6d4' },
+              { w: 8, label: 'Đánh giá hình thể', icon: '📏', color: '#f59e0b' },
+              { w: 12, label: 'Hoàn thành!', icon: '🏆', color: '#a855f7' },
+            ]).map(m => (
+              <RevealBlock key={m.w}>
+                <div className="text-center">
+                  <div className="w-7 h-7 rounded-full border-2 flex items-center justify-center text-sm mx-auto mb-2"
+                    style={{ borderColor: m.color, background: `${m.color}15` }}>
+                    {m.icon}
+                  </div>
+                  <p className="text-[9px] font-bold" style={{ color: m.color }}>Tuần {m.w}</p>
+                  <p className="text-[9px] text-muted leading-tight mt-0.5">{m.label}</p>
+                </div>
+              </RevealBlock>
+            ))}
+          </div>
+        </div>
+      </div>
+    </RevealBlock>
+  );
+}
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function PillarB() {
@@ -6677,6 +7100,8 @@ export default function PillarB() {
           ))}
         </div>
       </RevealBlock>
+
+      <NutritionRoadmap s={userStats} />
 
       {/* ══════════════════════════════════════════════════════════════════════
           SAFETY NOTE

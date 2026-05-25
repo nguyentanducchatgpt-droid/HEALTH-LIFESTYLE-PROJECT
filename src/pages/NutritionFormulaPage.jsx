@@ -976,6 +976,730 @@ export default function NutritionFormulaPage() {
       {/* Divider */}
       <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
 
+      {/* ══ NEW SECTION A: Macro theo loại ngày ══ */}
+      <RevealBlock delay={100}>
+        <div className="mb-12">
+          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: GREEN }}>Calorie Cycling nâng cao</div>
+          <h2 className="text-2xl font-bold text-text mb-2">Công Thức Chia Macro Theo Loại Ngày</h2>
+          <p className="text-muted text-sm mb-6">Protein và fat gần như cố định mỗi ngày — chỉ Carb điều chỉnh theo cường độ tập. Đây là chiến lược calorie cycling hiệu quả nhất.</p>
+
+          {/* Macro cycling principle */}
+          <div className="rounded-2xl p-4 border mb-5" style={{ background: 'rgba(34,197,94,0.05)', borderColor: 'rgba(34,197,94,0.2)' }}>
+            <div className="grid grid-cols-3 gap-3 mb-4">
+              {[
+                { macro: 'Protein', rule: 'Cố định', reason: 'Luôn giữ ổn định để bảo vệ cơ bắp', color: GREEN, icon: '💪' },
+                { macro: 'Fat', rule: 'Gần cố định', reason: 'Chỉ ±10g tuỳ ngày, hỗ trợ hormone', color: '#f59e0b', icon: '🫒' },
+                { macro: 'Carb', rule: 'Biến đổi', reason: 'Điều chỉnh theo cường độ tập luyện', color: '#06b6d4', icon: '🌾' },
+              ].map((m, i) => (
+                <div key={i} className="rounded-xl p-3 border text-center" style={{ background: `${m.color}08`, borderColor: `${m.color}25` }}>
+                  <div className="text-xl mb-1">{m.icon}</div>
+                  <div className="text-[10px] font-bold" style={{ color: m.color }}>{m.macro}</div>
+                  <div className="text-[9px] font-semibold mt-0.5 px-1.5 py-0.5 rounded-full border inline-block" style={{ color: m.color, borderColor: `${m.color}40`, background: `${m.color}15` }}>{m.rule}</div>
+                  <div className="text-[8px] text-muted mt-1 leading-tight">{m.reason}</div>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-xl p-3 border font-mono text-xs" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+              <span style={{ color: '#06b6d4' }}>Carb_ngày = Carb_cơ_sở × Hệ_số_ngày</span>
+              <span className="text-muted ml-2">// Protein & Fat không đổi</span>
+            </div>
+          </div>
+
+          {/* Full macro table by day type */}
+          <div className="rounded-2xl border overflow-x-auto" style={{ borderColor: '#1e1e1e' }}>
+            <div className="grid grid-cols-6 text-[9px] font-bold uppercase tracking-wider px-3 py-2.5 min-w-[480px]" style={{ background: '#111', color: '#555' }}>
+              <span>Loại ngày</span><span>Kcal</span><span style={{ color: GREEN }}>Protein</span><span style={{ color: '#f59e0b' }}>Fat</span><span style={{ color: '#06b6d4' }}>Carb</span><span>Hệ số C</span>
+            </div>
+            {[
+              { dt: DAY_TYPES[0], kcalMult: 1.07, carbMult: 1.4 },
+              { dt: DAY_TYPES[1], kcalMult: 1.00, carbMult: 1.0 },
+              { dt: DAY_TYPES[2], kcalMult: 0.95, carbMult: 0.85 },
+              { dt: DAY_TYPES[3], kcalMult: 0.90, carbMult: 0.7 },
+            ].map(({ dt, kcalMult, carbMult }, i) => {
+              const kcal = Math.round(s.targetKcal * kcalMult);
+              const carbDay = Math.round(s.carbG * carbMult);
+              const fatDay = i === 0 ? s.fatG + 5 : i === 3 ? s.fatG - 5 : s.fatG;
+              return (
+                <div key={i} className="grid grid-cols-6 px-3 py-2.5 text-xs border-t min-w-[480px]"
+                  style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
+                  <span className="font-bold" style={{ color: dt.color }}>{dt.emoji} {dt.label}</span>
+                  <span className="font-mono font-bold" style={{ color: dt.color }}>{kcal.toLocaleString()}</span>
+                  <span className="font-mono" style={{ color: GREEN }}>{s.proteinG}g</span>
+                  <span className="font-mono" style={{ color: '#f59e0b' }}>{fatDay}g</span>
+                  <span className="font-mono font-bold" style={{ color: '#06b6d4' }}>{carbDay}g</span>
+                  <span className="font-mono text-muted">×{carbMult}</span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Visual carb range bar */}
+          <div className="mt-5 rounded-2xl p-4 border" style={{ background: '#06b6d408', borderColor: '#06b6d425' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: '#06b6d4' }}>Biên độ Carb trong tuần</div>
+            <div className="relative h-8 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.04)' }}>
+              {(() => {
+                const min = Math.round(s.carbG * 0.7), max = Math.round(s.carbG * 1.4), range = max - min || 1;
+                return [
+                  { g: Math.round(s.carbG * 0.7),  color: '#a855f7', label: 'Nghỉ', pct: 0 },
+                  { g: Math.round(s.carbG * 0.85), color: '#f59e0b', label: 'Nhẹ', pct: Math.round((Math.round(s.carbG*0.85)-min)/(range)*80) },
+                  { g: s.carbG,                    color: '#06b6d4', label: 'Vừa', pct: Math.round((s.carbG-min)/(range)*80) },
+                  { g: Math.round(s.carbG * 1.4),  color: '#22c55e', label: 'Nặng', pct: 80 },
+                ].map((item, idx) => (
+                  <div key={idx} className="absolute top-0 h-full flex items-center justify-center" style={{ left: `${item.pct}%`, width: '20%' }}>
+                    <div className="w-full h-full flex flex-col items-center justify-center rounded-lg" style={{ background: item.color + '30' }}>
+                      <span className="text-[8px] font-bold" style={{ color: item.color }}>{item.g}g</span>
+                      <span className="text-[7px] text-muted">{item.label}</span>
+                    </div>
+                  </div>
+                ));
+              })()}
+            </div>
+            <div className="flex justify-between text-[9px] text-muted mt-2">
+              <span>Tối thiểu: <span className="font-bold text-purple-400">{Math.round(s.carbG * 0.7)}g</span></span>
+              <span>Cơ sở: <span className="font-bold text-cyan-400">{s.carbG}g</span></span>
+              <span>Tối đa: <span className="font-bold text-green-400">{Math.round(s.carbG * 1.4)}g</span></span>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
+
+      {/* ══ NEW SECTION B: Chia kcal theo bữa (chi tiết) ══ */}
+      <RevealBlock delay={100}>
+        <div className="mb-12">
+          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: LIME }}>Phân bổ năng lượng</div>
+          <h2 className="text-2xl font-bold text-text mb-2">Chia Kcal Theo Bữa — Chi Tiết Macro</h2>
+          <p className="text-muted text-sm mb-6">Mỗi bữa ăn không chỉ có tỉ lệ kcal khác nhau mà còn phân bổ macro (P/C/F) theo từng mục đích: sáng kích hoạt, trưa nạp chính, tối phục hồi.</p>
+          {MEAL_MODELS.map((model, mi) => {
+            return (
+              <div key={mi} className="mb-5 rounded-2xl border overflow-hidden" style={{ borderColor: `${model.color}30` }}>
+                <div className="flex items-center gap-3 px-4 py-3" style={{ background: `${model.color}10` }}>
+                  <span className="text-xl">{model.icon}</span>
+                  <div>
+                    <span className="font-bold text-sm" style={{ color: model.color }}>{model.name}</span>
+                    <span className="text-[10px] text-muted ml-2">— {model.best}</span>
+                  </div>
+                </div>
+                <div className="overflow-x-auto">
+                  <div className="grid min-w-[520px]" style={{ gridTemplateColumns: '90px 70px 60px 70px 70px 70px 1fr' }}>
+                    <div className="col-span-7 grid min-w-[520px] text-[9px] font-bold uppercase tracking-wider px-3 py-2" style={{ background: '#0d0d0d', color: '#555', gridTemplateColumns: '90px 70px 60px 70px 70px 70px 1fr' }}>
+                      <span>Bữa</span><span>Giờ</span><span>%</span><span style={{ color: model.color }}>Kcal</span><span style={{ color: GREEN }}>Protein</span><span style={{ color: '#06b6d4' }}>Carb</span><span style={{ color: '#f59e0b' }}>Fat</span>
+                    </div>
+                    {model.meals.map((meal, mli) => {
+                      const mealColors = ['#22c55e','#84cc16','#06b6d4','#f59e0b','#a855f7'];
+                      const c = mealColors[mli % mealColors.length];
+                      const kcal = Math.round(s.targetKcal * meal.pct / 100);
+                      const pG = Math.round(s.proteinG * meal.proteinPct / 100);
+                      const carbG = Math.round(s.carbG * meal.carbPct / 100);
+                      const fatG = Math.round(s.fatG * meal.fatPct / 100);
+                      return (
+                        <div key={mli} className="col-span-7 grid min-w-[520px] px-3 py-2.5 text-xs border-t" style={{ gridTemplateColumns: '90px 70px 60px 70px 70px 70px 1fr', borderColor: '#1a1a1a', background: mli % 2 === 0 ? 'transparent' : '#0a0a0a' }}>
+                          <span className="font-bold" style={{ color: c }}>{meal.name}</span>
+                          <span className="text-muted font-mono text-[10px]">{meal.time}</span>
+                          <span className="text-muted">{meal.pct}%</span>
+                          <span className="font-bold" style={{ color: model.color }}>{kcal}</span>
+                          <span style={{ color: GREEN }}>{pG}g</span>
+                          <span style={{ color: '#06b6d4' }}>{carbG}g</span>
+                          <span style={{ color: '#f59e0b' }}>{fatG}g</span>
+                        </div>
+                      );
+                    })}
+                    <div className="col-span-7 grid min-w-[520px] px-3 py-2.5 text-xs font-bold border-t" style={{ gridTemplateColumns: '90px 70px 60px 70px 70px 70px 1fr', borderColor: '#2a2a2a', background: '#0d0d0d' }}>
+                      <span className="text-muted">Tổng</span><span></span>
+                      <span className="text-muted">100%</span>
+                      <span style={{ color: model.color }}>{s.targetKcal.toLocaleString()}</span>
+                      <span style={{ color: GREEN }}>{s.proteinG}g</span>
+                      <span style={{ color: '#06b6d4' }}>{s.carbG}g</span>
+                      <span style={{ color: '#f59e0b' }}>{s.fatG}g</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          <div className="rounded-2xl p-4 border" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: LIME }}>Nguyên tắc chia bữa</div>
+            <div className="grid sm:grid-cols-2 gap-2 text-xs">
+              {[
+                { icon: '🌅', text: 'Bữa sáng: Protein cao + Carb vừa — kích hoạt cơ thể sau nhịn ăn' },
+                { icon: '☀️', text: 'Bữa trưa: Lớn nhất ngày — cung cấp năng lượng cho chiều tập' },
+                { icon: '⚡', text: 'Pre-workout: Carb cao + Protein vừa — Fat thấp nhất có thể' },
+                { icon: '🌙', text: 'Bữa tối: Protein cao + Carb thấp — hỗ trợ phục hồi ban đêm' },
+              ].map((tip, i) => (
+                <div key={i} className="flex items-start gap-2 p-2 rounded-lg" style={{ background: '#111' }}>
+                  <span className="shrink-0">{tip.icon}</span>
+                  <span className="text-muted text-[10px] leading-relaxed">{tip.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
+
+      {/* ══ NEW SECTION C: Đĩa ăn lành mạnh ══ */}
+      <RevealBlock delay={100}>
+        <div className="mb-12">
+          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#06b6d4' }}>Công cụ nền tảng</div>
+          <h2 className="text-2xl font-bold text-text mb-2">Công Thức "Đĩa Ăn Lành Mạnh"</h2>
+          <p className="text-muted text-sm mb-6">Không cần cân đo — chỉ nhìn vào đĩa là biết đúng hay sai. Mô hình phù hợp với cơm Việt Nam cho người mới bắt đầu đến người tập thể thao.</p>
+          <div className="grid md:grid-cols-[200px_1fr] gap-6 items-center mb-6">
+            {/* Plate SVG */}
+            <div className="flex justify-center">
+              <svg viewBox="0 0 200 200" width="200" height="200" style={{ overflow: 'visible' }}>
+                {/* Plate background */}
+                <circle cx="100" cy="100" r="92" fill="#111" stroke="#1e1e1e" strokeWidth="2"/>
+                <circle cx="100" cy="100" r="88" fill="#0d0d0d"/>
+                {/* ½ Rau — bottom half */}
+                <path d="M 12 100 A 88 88 0 0 0 188 100 L 100 100 Z" fill="rgba(34,197,94,0.25)" stroke="rgba(34,197,94,0.4)" strokeWidth="1"/>
+                {/* ¼ Đạm — top-left */}
+                <path d="M 100 100 L 12 100 A 88 88 0 0 1 56 19 Z" fill="rgba(249,115,22,0.2)" stroke="rgba(249,115,22,0.4)" strokeWidth="1"/>
+                {/* ¼ Tinh bột — top-right */}
+                <path d="M 100 100 L 56 19 A 88 88 0 0 1 188 100 Z" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.4)" strokeWidth="1"/>
+                {/* Labels */}
+                <text x="100" y="145" textAnchor="middle" fill="#22c55e" fontSize="10" fontWeight="700">½ Rau & Canh</text>
+                <text x="50" y="80" textAnchor="middle" fill="#f97316" fontSize="9" fontWeight="700">¼ Đạm</text>
+                <text x="152" y="70" textAnchor="middle" fill="#06b6d4" fontSize="9" fontWeight="700">¼ Tinh bột</text>
+                {/* Center */}
+                <circle cx="100" cy="100" r="16" fill="#0a0a0a" stroke="#1e1e1e" strokeWidth="1"/>
+                <text x="100" y="97" textAnchor="middle" fill="#555" fontSize="7">+</text>
+                <text x="100" y="106" textAnchor="middle" fill="#555" fontSize="6">chất béo</text>
+              </svg>
+            </div>
+            {/* Details */}
+            <div className="space-y-3">
+              {[
+                { pct: '½', label: 'Rau & Canh', color: GREEN, icon: '🥬', g: Math.round(s.proteinG * 0), exGrams: '200–300g', example: 'Rau luộc, rau xào ít dầu, canh, salad. Mục tiêu: 2–4 nắm tay/ngày.', carbNote: '' },
+                { pct: '¼', label: 'Đạm (Protein)', color: '#f97316', icon: '🍗', exGrams: `~${Math.round(s.proteinG / 3 / 0.31)}g thực phẩm`, example: `~${Math.round(s.proteinG / 3)}g protein. Thịt/cá/trứng/đậu hũ/sữa chua.`, carbNote: '' },
+                { pct: '¼', label: 'Tinh bột', color: '#06b6d4', icon: '🍚', exGrams: '150–200g cơm', example: `~${Math.round(s.carbG / 3)}g carb. Cơm, bún, khoai, yến mạch.`, carbNote: '' },
+                { pct: 'nhỏ', label: 'Chất béo tốt', color: '#f59e0b', icon: '🫒', exGrams: '1 muỗng canh', example: `~${s.fatG > 0 ? Math.round(s.fatG / 3) : 10}g fat. Dầu olive, bơ, hạt, cá hồi.`, carbNote: '' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 p-3 rounded-xl border" style={{ background: `${item.color}08`, borderColor: `${item.color}25` }}>
+                  <div className="w-8 h-8 rounded-xl flex items-center justify-center text-base shrink-0" style={{ background: `${item.color}15` }}>{item.icon}</div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <span className="text-[10px] font-bold" style={{ color: item.color }}>{item.pct} đĩa — {item.label}</span>
+                      <span className="text-[9px] px-2 py-0.5 rounded-full border font-mono" style={{ color: item.color, borderColor: `${item.color}40`, background: `${item.color}12` }}>{item.exGrams}</span>
+                    </div>
+                    <p className="text-[10px] text-muted leading-relaxed">{item.example}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Vietnamese food examples */}
+          <div className="rounded-2xl p-4 border" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: LIME }}>Ví dụ đĩa ăn chuẩn — cơm Việt</div>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                { meal: 'Đĩa cơm nhà', items: ['Cơm 1 chén vừa', 'Cá kho hoặc gà luộc', 'Rau muống xào hoặc luộc', 'Canh rau', '1 muỗng dầu nấu ăn'] },
+                { meal: 'Khi ăn ngoài', items: ['Phở: thêm giá, rau thơm, giảm phần tái/gân', 'Cơm tấm: chọn sườn nạc + dưa chua', 'Bún bò: giảm chả + tăng rau', 'Cơm văn phòng: thêm canh + xin thêm rau'] },
+              ].map((ex, i) => (
+                <div key={i} className="rounded-xl p-3 border" style={{ borderColor: '#1e1e1e' }}>
+                  <div className="text-[10px] font-bold mb-2" style={{ color: LIME }}>{ex.meal}</div>
+                  {ex.items.map((it, j) => (
+                    <div key={j} className="flex items-start gap-1.5 text-[10px] text-muted mb-1">
+                      <span style={{ color: GREEN }}>·</span><span>{it}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
+
+      {/* ══ NEW SECTION D: Pre/Post Workout (chi tiết) ══ */}
+      <RevealBlock delay={100}>
+        <div className="mb-12">
+          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#f59e0b' }}>Dinh dưỡng xung quanh buổi tập</div>
+          <h2 className="text-2xl font-bold text-text mb-2">Công Thức Pre-Workout & Post-Workout</h2>
+          <p className="text-muted text-sm mb-6">Ăn đúng trước và sau tập tạo ra sự khác biệt rõ rệt về hiệu suất luyện tập và tốc độ phục hồi cơ bắp.</p>
+
+          <div className="grid md:grid-cols-2 gap-5 mb-6">
+            {/* Pre-workout */}
+            <div className="rounded-2xl p-5 border" style={{ background: 'rgba(245,158,11,0.05)', borderColor: 'rgba(245,158,11,0.25)' }}>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style={{ background: 'rgba(245,158,11,0.15)' }}>⚡</div>
+                <div>
+                  <div className="font-bold text-text text-sm">Pre-Workout</div>
+                  <div className="text-[10px] text-muted">1–2 giờ trước buổi tập</div>
+                </div>
+              </div>
+              <div className="space-y-2 mb-4">
+                <div className="rounded-xl p-3 border font-mono text-xs" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                  <div className="text-muted mb-1">Carb = 0.5–1.0 g/kg</div>
+                  <div style={{ color: '#06b6d4' }}>{s.preCarb}g carb <span className="text-muted">(cho {s.w}kg)</span></div>
+                </div>
+                <div className="rounded-xl p-3 border font-mono text-xs" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                  <div className="text-muted mb-1">Protein = 0.2–0.3 g/kg</div>
+                  <div style={{ color: GREEN }}>{s.preProtein}g protein <span className="text-muted">(cho {s.w}kg)</span></div>
+                </div>
+                <div className="rounded-xl p-3 border font-mono text-xs" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                  <div className="text-muted mb-1">Fat = Tối thiểu (&lt;5g)</div>
+                  <div style={{ color: '#f59e0b' }}>Fat làm chậm tiêu hoá → tránh</div>
+                </div>
+              </div>
+              <div className="rounded-xl p-3 border" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                <div className="text-[10px] font-bold mb-2" style={{ color: '#f59e0b' }}>Thực phẩm gợi ý</div>
+                {['Cơm + ức gà luộc', 'Bánh mì + trứng + chuối', 'Khoai lang + sữa chua không đường', 'Yến mạch + 1 muỗng whey'].map((f, i) => (
+                  <div key={i} className="text-[10px] text-muted flex items-center gap-1.5 mb-1"><span style={{ color: '#f59e0b' }}>·</span>{f}</div>
+                ))}
+              </div>
+            </div>
+
+            {/* Post-workout */}
+            <div className="rounded-2xl p-5 border" style={{ background: 'rgba(34,197,94,0.05)', borderColor: 'rgba(34,197,94,0.25)' }}>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style={{ background: 'rgba(34,197,94,0.15)' }}>💥</div>
+                <div>
+                  <div className="font-bold text-text text-sm">Post-Workout</div>
+                  <div className="text-[10px] text-muted">30–60 phút sau buổi tập</div>
+                </div>
+              </div>
+              <div className="space-y-2 mb-4">
+                <div className="rounded-xl p-3 border font-mono text-xs" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                  <div className="text-muted mb-1">Protein = 0.25–0.4 g/kg</div>
+                  <div style={{ color: GREEN }}>{s.postProtein}g protein <span className="text-muted">(cho {s.w}kg)</span></div>
+                </div>
+                <div className="rounded-xl p-3 border font-mono text-xs" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                  <div className="text-muted mb-1">Carb = 0.5–0.8 g/kg</div>
+                  <div style={{ color: '#06b6d4' }}>{s.postCarb}g carb <span className="text-muted">(cho {s.w}kg)</span></div>
+                </div>
+                <div className="rounded-xl p-3 border font-mono text-xs" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                  <div className="text-muted mb-1">Fat = Thấp (&lt;10g)</div>
+                  <div style={{ color: '#f59e0b' }}>Carb đơn giản nhanh hấp thu nhất</div>
+                </div>
+              </div>
+              <div className="rounded-xl p-3 border" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                <div className="text-[10px] font-bold mb-2" style={{ color: GREEN }}>Thực phẩm gợi ý</div>
+                {['Whey protein + chuối', 'Cơm + ức gà + rau', '200ml sữa tươi + bánh mì trắng', 'Greek yogurt + granola + mật ong'].map((f, i) => (
+                  <div key={i} className="text-[10px] text-muted flex items-center gap-1.5 mb-1"><span style={{ color: GREEN }}>·</span>{f}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Timing window visual */}
+          <div className="rounded-2xl p-4 border" style={{ background: 'rgba(132,204,22,0.04)', borderColor: 'rgba(132,204,22,0.15)' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-4" style={{ color: LIME }}>Timeline xung quanh buổi tập</div>
+            <div className="relative">
+              <div className="absolute top-4 left-0 right-0 h-0.5" style={{ background: 'rgba(255,255,255,0.08)' }} />
+              <div className="flex justify-between relative">
+                {[
+                  { time: '-2h', label: 'Bữa chính', note: 'Đầy đủ', color: '#f59e0b', top: true },
+                  { time: '-60m', label: 'Pre nhỏ', note: 'Carb + P', color: '#84cc16', top: false },
+                  { time: '-15m', label: 'Nước', note: '400ml', color: '#06b6d4', top: true },
+                  { time: 'TẬP', label: 'Nước', note: '400ml/h', color: '#22c55e', top: false },
+                  { time: '+30m', label: 'Post', note: 'P + Carb', color: '#22c55e', top: true },
+                  { time: '+2h', label: 'Bữa tiếp', note: 'Đầy đủ', color: '#84cc16', top: false },
+                ].map((ev, i) => (
+                  <div key={i} className="flex flex-col items-center" style={{ width: '16%' }}>
+                    {ev.top && <div className="text-center mb-1"><div className="text-[8px] font-bold" style={{ color: ev.color }}>{ev.label}</div><div className="text-[7px] text-muted">{ev.note}</div></div>}
+                    {!ev.top && <div className="h-6" />}
+                    <div className="w-2.5 h-2.5 rounded-full border-2 z-10" style={{ borderColor: ev.color, background: ev.color + '30' }} />
+                    <div className="text-[8px] font-mono mt-1 font-bold" style={{ color: ev.color }}>{ev.time}</div>
+                    {!ev.top && <div className="text-center mt-1"><div className="text-[8px] font-bold" style={{ color: ev.color }}>{ev.label}</div><div className="text-[7px] text-muted">{ev.note}</div></div>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
+
+      {/* ══ NEW SECTION E: Sức bền dài ══ */}
+      <RevealBlock delay={100}>
+        <div className="mb-12">
+          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#06b6d4' }}>Endurance — Bền vững</div>
+          <h2 className="text-2xl font-bold text-text mb-2">Công Thức Buổi Tập Sức Bền Dài</h2>
+          <p className="text-muted text-sm mb-6">Áp dụng cho tập &gt;60 phút: đạp xe, bơi lội, chạy bộ dài. Cần chiến lược dinh dưỡng riêng để duy trì hiệu suất và tránh "hit the wall".</p>
+
+          <div className="grid md:grid-cols-3 gap-4 mb-6">
+            {[
+              { title: 'Carb trong khi tập', formula: '30–60g carb/giờ', detail: `Tập ${'>'}60 phút bắt đầu nạp carb`, icon: '⚡', color: '#f59e0b',
+                items: ['Gel năng lượng (1 gói = 25g carb)', 'Chuối (25g carb/quả)', 'Nước tăng lực pha loãng', 'Bánh gạo (15–20g/cái)'] },
+              { title: 'Nước trong khi tập', formula: '400–800ml/giờ', detail: 'Tuỳ nhiệt độ và cường độ', icon: '💧', color: '#06b6d4',
+                items: ['Uống trước khi khát', '150–250ml mỗi 15–20 phút', 'Kiểm tra màu nước tiểu (vàng nhạt = đủ)', 'Cân trước/sau: bù 150% lượng mất'] },
+              { title: 'Điện giải', formula: '500–700mg Natri/giờ', detail: 'Khi tập >2 giờ và đổ mồ hôi nhiều', icon: '⚗️', color: '#a855f7',
+                items: ['Viên muối điện giải', '1/4 muỗng cà phê muối + nước', 'Nước dừa (tự nhiên)', 'Đồ uống thể thao pha loãng'] },
+            ].map((card, i) => (
+              <div key={i} className="rounded-2xl p-4 border" style={{ background: `${card.color}06`, borderColor: `${card.color}25` }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xl">{card.icon}</span>
+                  <div>
+                    <div className="text-[10px] font-bold" style={{ color: card.color }}>{card.title}</div>
+                    <div className="font-mono text-xs font-bold text-text mt-0.5">{card.formula}</div>
+                  </div>
+                </div>
+                <div className="text-[9px] text-muted mb-3">{card.detail}</div>
+                {card.items.map((it, j) => (
+                  <div key={j} className="text-[9px] text-muted flex items-center gap-1.5 mb-1">
+                    <span style={{ color: card.color }}>·</span>{it}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          {/* Carb loading protocol */}
+          <div className="rounded-2xl p-5 border" style={{ background: 'rgba(6,182,212,0.05)', borderColor: 'rgba(6,182,212,0.2)' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: '#06b6d4' }}>Giao thức Carb Loading — Trước sự kiện lớn</div>
+            <div className="grid sm:grid-cols-3 gap-3">
+              {[
+                { period: '3 ngày trước', carb: '8–10g/kg/ngày', protein: 'Bình thường', fat: 'Giảm', note: 'Glycogen tối đa', color: '#06b6d4' },
+                { period: 'Ngày trước', carb: '6–8g/kg', protein: 'Thấp', fat: 'Thấp', note: 'Tiêu hoá nhẹ nhàng', color: LIME },
+                { period: 'Bữa sáng sự kiện', carb: '2–3g/kg (2–4h trước)', protein: '0.3g/kg', fat: 'Tối thiểu', note: 'Dễ tiêu, quen thuộc', color: GREEN },
+              ].map((row, i) => (
+                <div key={i} className="rounded-xl p-3 border" style={{ background: `${row.color}08`, borderColor: `${row.color}25` }}>
+                  <div className="text-[10px] font-bold mb-2" style={{ color: row.color }}>{row.period}</div>
+                  <div className="text-[9px] text-muted space-y-1">
+                    <div>Carb: <span className="font-bold text-text">{row.carb}</span></div>
+                    <div>Protein: <span className="font-bold text-text">{row.protein}</span></div>
+                    <div>Fat: <span className="font-bold text-text">{row.fat}</span></div>
+                    <div className="mt-1 px-2 py-0.5 rounded text-center font-semibold" style={{ background: `${row.color}15`, color: row.color }}>{row.note}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
+
+      {/* ══ NEW SECTION F: Nước, Chất xơ, Rau — mở rộng ══ */}
+      <RevealBlock delay={100}>
+        <div className="mb-12">
+          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#06b6d4' }}>Nền tảng âm thầm</div>
+          <h2 className="text-2xl font-bold text-text mb-2">Công Thức Nước · Chất Xơ · Rau</h2>
+          <p className="text-muted text-sm mb-6">Ít được chú ý nhưng quyết định năng lượng, tiêu hoá, và khả năng phục hồi mỗi ngày.</p>
+
+          <div className="grid gap-4">
+            {/* Water detail */}
+            <div className="rounded-2xl p-5 border" style={{ background: 'rgba(6,182,212,0.05)', borderColor: 'rgba(6,182,212,0.2)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-xl" style={{ background: 'rgba(6,182,212,0.15)' }}>💧</div>
+                <div>
+                  <div className="font-bold text-text">Nước — {(s.waterMl/1000).toFixed(1)}L cơ sở / ngày</div>
+                  <div className="font-mono text-[10px] text-muted">= {s.w}kg × 35ml = {s.waterMl}ml</div>
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3 mb-4">
+                <div className="space-y-2">
+                  <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#06b6d4' }}>Bù nước khi tập</div>
+                  {[
+                    { cond: 'Tập < 60 phút', add: '+300–500ml' },
+                    { cond: 'Tập 60–90 phút', add: '+500–800ml' },
+                    { cond: 'Tập > 90 phút', add: '+1000ml+' },
+                    { cond: 'Thời tiết nóng (>30°C)', add: '+500–1000ml' },
+                  ].map((r, i) => (
+                    <div key={i} className="flex justify-between text-[10px] py-1 border-b" style={{ borderColor: '#1a1a1a' }}>
+                      <span className="text-muted">{r.cond}</span>
+                      <span className="font-bold" style={{ color: '#06b6d4' }}>{r.add}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-2">
+                  <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#06b6d4' }}>Phân bổ theo giờ</div>
+                  {[
+                    { time: 'Thức dậy', ml: '400–500ml', note: 'Kích hoạt trao đổi chất' },
+                    { time: 'Trước bữa ăn', ml: '200–300ml', note: '30 phút trước' },
+                    { time: 'Trong khi tập', ml: '400–800ml/h', note: 'Theo cường độ' },
+                    { time: 'Buổi tối', ml: '300–400ml', note: 'Không quá 21:00' },
+                  ].map((r, i) => (
+                    <div key={i} className="flex justify-between text-[10px] py-1 border-b" style={{ borderColor: '#1a1a1a' }}>
+                      <span className="text-muted">{r.time}</span>
+                      <span className="font-bold" style={{ color: '#06b6d4' }}>{r.ml}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-xl p-3 border text-[10px]" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                <span className="font-bold" style={{ color: '#06b6d4' }}>Kiểm tra nhanh: </span>
+                <span className="text-muted">Nước tiểu màu vàng nhạt như nước chanh = đủ nước. Vàng đậm = thiếu. Hoàn toàn trong = uống quá nhiều.</span>
+              </div>
+            </div>
+
+            {/* Fiber detail */}
+            <div className="rounded-2xl p-5 border" style={{ background: 'rgba(34,197,94,0.05)', borderColor: 'rgba(34,197,94,0.2)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-xl" style={{ background: 'rgba(34,197,94,0.15)' }}>🌿</div>
+                <div>
+                  <div className="font-bold text-text">Chất Xơ — {s.fiberG}g / ngày</div>
+                  <div className="font-mono text-[10px] text-muted">= {s.targetKcal} kcal × (14g / 1000kcal) = {s.fiberG}g</div>
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-2 mb-4">
+                {[
+                  { food: '🥬 Rau muống', fiber: '2.5g/100g', serve: '1 chén luộc' },
+                  { food: '🥦 Bông cải', fiber: '2.6g/100g', serve: '1 chén nhỏ' },
+                  { food: '🫘 Đậu hũ', fiber: '0.3g/100g', serve: 'Ít xơ' },
+                  { food: '🍌 Chuối', fiber: '2.6g/quả', serve: '1 quả vừa' },
+                  { food: '🍎 Táo', fiber: '2.4g/quả', serve: 'Cả vỏ' },
+                  { food: '🌾 Yến mạch', fiber: '10g/100g', serve: '50g khô' },
+                  { food: '🫑 Ớt chuông', fiber: '2.1g/100g', serve: '1/2 quả' },
+                  { food: '🫚 Hạt chia', fiber: '34g/100g', serve: '2 tbsp' },
+                  { food: '🍠 Khoai lang', fiber: '3g/100g', serve: '150g' },
+                ].map((f, i) => (
+                  <div key={i} className="rounded-xl p-2 border text-center" style={{ borderColor: '#1e1e1e', background: '#0d0d0d' }}>
+                    <div className="text-[10px] mb-0.5">{f.food}</div>
+                    <div className="font-bold text-[10px]" style={{ color: GREEN }}>{f.fiber}</div>
+                    <div className="text-[8px] text-muted">{f.serve}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-xl p-3 border" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+                <span className="text-[10px] font-bold" style={{ color: GREEN }}>Mục tiêu thực tế: </span>
+                <span className="text-[10px] text-muted">2–4 nắm tay rau/ngày + 1–2 phần trái cây + chọn ngũ cốc nguyên hạt. Tăng dần để tránh đầy bụng.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
+
+      {/* ══ NEW SECTION G: Quy đổi khẩu phần ══ */}
+      <RevealBlock delay={100}>
+        <div className="mb-12">
+          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#a855f7' }}>Không cần cân</div>
+          <h2 className="text-2xl font-bold text-text mb-2">Công Thức Quy Đổi Khẩu Phần Thực Phẩm</h2>
+          <p className="text-muted text-sm mb-6">Dùng tay, chén, muỗng làm đơn vị đo. Luôn sẵn có, không cần app hay cân — đủ chính xác cho 80% trường hợp.</p>
+
+          {/* Hand measures */}
+          <div className="rounded-2xl p-5 border mb-5" style={{ background: 'rgba(168,85,247,0.05)', borderColor: 'rgba(168,85,247,0.2)' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-4" style={{ color: '#a855f7' }}>✋ Đo bằng tay — nhanh & tiện</div>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                { hand: 'Lòng bàn tay', equiv: '85–100g thịt/cá', color: '#22c55e', example: '~25–30g protein', icon: '🖐️' },
+                { hand: 'Nắm đấm', equiv: '~150–200g cơm/mì đã nấu', color: '#06b6d4', example: '~35–45g carb', icon: '✊' },
+                { hand: '2 lòng bàn tay', equiv: '~150–200g rau sống', color: '#84cc16', example: '~2–4g chất xơ', icon: '🙌' },
+                { hand: 'Ngón tay cái', equiv: '~14g fat (1 tbsp dầu)', color: '#f59e0b', example: '~120–130 kcal', icon: '👍' },
+                { hand: 'Đầu ngón tay', equiv: '~5g fat (1 tsp)', color: '#f97316', example: '~45 kcal', icon: '☝️' },
+                { hand: 'Cuốn tay (fist)', equiv: '1 cup = 240ml', color: '#a855f7', example: 'Tham chiếu thể tích', icon: '✊' },
+              ].map((h, i) => (
+                <div key={i} className="flex items-center gap-3 p-3 rounded-xl border" style={{ borderColor: `${h.color}25`, background: `${h.color}06` }}>
+                  <span className="text-2xl shrink-0">{h.icon}</span>
+                  <div className="flex-1">
+                    <div className="font-bold text-xs" style={{ color: h.color }}>{h.hand}</div>
+                    <div className="text-[10px] text-text mt-0.5">{h.equiv}</div>
+                    <div className="text-[9px] text-muted">{h.example}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Conversion table */}
+          <div className="rounded-2xl border overflow-x-auto mb-5" style={{ borderColor: '#1e1e1e' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest px-4 py-3" style={{ background: '#0d0d0d', color: '#555' }}>Bảng quy đổi thực phẩm phổ biến</div>
+            <div className="grid grid-cols-4 text-[9px] font-bold uppercase tracking-wider px-3 py-2 min-w-[420px]" style={{ background: '#111', color: '#555' }}>
+              <span>Thực phẩm</span><span>1 đơn vị</span><span>Grams</span><span>Macro chính</span>
+            </div>
+            {[
+              { food: '🍚 Cơm trắng', unit: '1 chén con', g: '150g', macro: '~50g carb, 4g P' },
+              { food: '🍳 Trứng gà', unit: '1 quả', g: '55g', macro: '6g P, 5g fat' },
+              { food: '🍗 Ức gà', unit: '1 lát vừa', g: '100g', macro: '31g P, 3.6g fat' },
+              { food: '🐟 Cá phi lê', unit: '1 miếng', g: '120g', macro: '30g P, 3g fat' },
+              { food: '🥚 Trứng luộc', unit: '1 quả M', g: '50g', macro: '6.3g P, 5g fat' },
+              { food: '🫘 Đậu hũ', unit: '1 miếng', g: '100g', macro: '8g P, 4g fat' },
+              { food: '🍌 Chuối', unit: '1 quả', g: '120g', macro: '27g carb, 1g P' },
+              { food: '🥛 Sữa tươi', unit: '1 hộp 200ml', g: '200ml', macro: '6.4g P, 7g carb, 6.4g fat' },
+              { food: '🫒 Dầu olive', unit: '1 muỗng canh', g: '14g', macro: '14g fat (120 kcal)' },
+              { food: '🌾 Yến mạch', unit: '½ chén khô', g: '40g', macro: '27g carb, 5g P, 3g fat' },
+            ].map((row, i) => (
+              <div key={i} className="grid grid-cols-4 px-3 py-2 text-xs border-t min-w-[420px]" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
+                <span className="text-text">{row.food}</span>
+                <span className="text-muted">{row.unit}</span>
+                <span className="font-mono font-bold text-text">{row.g}</span>
+                <span className="text-muted text-[10px]">{row.macro}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Kcal per gram reference */}
+          <div className="rounded-2xl p-4 border" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: LIME }}>Quy đổi năng lượng cơ bản</div>
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { macro: 'Protein', kcal: '4 kcal/g', color: GREEN, example: `${s.proteinG}g = ${s.proteinKcal} kcal` },
+                { macro: 'Carbohydrate', kcal: '4 kcal/g', color: '#06b6d4', example: `${s.carbG}g = ${s.carbKcal} kcal` },
+                { macro: 'Fat', kcal: '9 kcal/g', color: '#f59e0b', example: `${s.fatG}g = ${s.fatKcal} kcal` },
+              ].map((m, i) => (
+                <div key={i} className="rounded-xl p-3 border text-center" style={{ background: `${m.color}08`, borderColor: `${m.color}25` }}>
+                  <div className="text-[10px] font-bold" style={{ color: m.color }}>{m.macro}</div>
+                  <div className="text-lg font-black mt-1" style={{ color: m.color }}>{m.kcal}</div>
+                  <div className="text-[9px] text-muted mt-1">{m.example}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
+
+      {/* ══ NEW SECTION H: Công thức tạo thực đơn tự động ══ */}
+      <RevealBlock delay={100}>
+        <div className="mb-12">
+          <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: GREEN }}>Tự động hoá</div>
+          <h2 className="text-2xl font-bold text-text mb-2">Công Thức Tạo Thực Đơn Tự Động</h2>
+          <p className="text-muted text-sm mb-6">Từ các con số đã tính (protein, carb, fat, kcal từng bữa) — ghép thực phẩm thực tế để đạt mục tiêu. Mẫu ngày tự động dựa theo thông số của bạn.</p>
+
+          {/* Algorithm explanation */}
+          <div className="rounded-2xl p-4 border mb-5" style={{ background: 'rgba(34,197,94,0.04)', borderColor: 'rgba(34,197,94,0.15)' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: GREEN }}>Thuật toán xây thực đơn 4 bước</div>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                { n: 1, step: 'Xác định Protein nguồn', rule: 'Chọn 1–2 thực phẩm đạm/bữa đạt ≥25g protein', color: GREEN },
+                { n: 2, step: 'Thêm Carb phù hợp', rule: 'Cơm/bún/khoai = Kcal bữa − (P×4 + F×9) / 4', color: '#06b6d4' },
+                { n: 3, step: 'Bổ sung Rau & Fat', rule: '½ đĩa rau + 1 muỗng dầu / nắm hạt', color: LIME },
+                { n: 4, step: 'Kiểm tra & Điều chỉnh', rule: 'Tổng kcal ±100 là chấp nhận được', color: '#f59e0b' },
+              ].map((s, i) => (
+                <div key={i} className="flex items-start gap-3 p-3 rounded-xl border" style={{ borderColor: `${s.color}25`, background: `${s.color}08` }}>
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0" style={{ background: s.color, color: '#000' }}>{s.n}</div>
+                  <div>
+                    <div className="text-[10px] font-bold" style={{ color: s.color }}>{s.step}</div>
+                    <div className="text-[9px] text-muted mt-0.5">{s.rule}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Auto-generated sample day */}
+          <div className="rounded-2xl border overflow-hidden" style={{ borderColor: '#1e1e1e' }}>
+            <div className="px-4 py-3 flex items-center justify-between" style={{ background: '#0d0d0d' }}>
+              <div>
+                <div className="font-bold text-sm text-text">Mẫu ngày tự động</div>
+                <div className="text-[10px] text-muted">Tổng mục tiêu: <span style={{ color: LIME }}>{s.targetKcal.toLocaleString()} kcal</span> · P: <span style={{ color: GREEN }}>{s.proteinG}g</span> · C: <span style={{ color: '#06b6d4' }}>{s.carbG}g</span> · F: <span style={{ color: '#f59e0b' }}>{s.fatG}g</span></div>
+              </div>
+              <span className="text-xs px-2 py-1 rounded-full border" style={{ color: GREEN, borderColor: `${GREEN}40`, background: `${GREEN}10` }}>Tự động</span>
+            </div>
+            {(() => {
+              const pBr = Math.round(s.proteinG * 0.25), cBr = Math.round(s.carbG * 0.25), fBr = Math.round(s.fatG * 0.20);
+              const pLu = Math.round(s.proteinG * 0.35), cLu = Math.round(s.carbG * 0.35), fLu = Math.round(s.fatG * 0.35);
+              const pSn = Math.round(s.proteinG * 0.10), cSn = Math.round(s.carbG * 0.10), fSn = Math.round(s.fatG * 0.10);
+              const pDi = s.proteinG - pBr - pLu - pSn, cDi = s.carbG - cBr - cLu - cSn, fDi = s.fatG - fBr - fLu - fSn;
+              const meals = [
+                {
+                  name: '🌅 Bữa Sáng', time: '7:00–8:00', pct: 25,
+                  kcal: Math.round(s.targetKcal * 0.25),
+                  p: pBr, c: cBr, f: fBr,
+                  foods: [
+                    { name: `Ức gà luộc ${Math.round(pBr/0.31)}g`, p: pBr, c: 0, f: Math.round(pBr * 0.12) },
+                    { name: `Yến mạch ${Math.round(cBr/0.67)}g khô`, p: Math.round(cBr * 0.17), c: cBr, f: Math.round(cBr * 0.07) },
+                    { name: '1 quả trứng luộc', p: 6, c: 0, f: 5 },
+                    { name: `Sữa chua không đường 150g`, p: 8, c: 8, f: 2 },
+                  ],
+                  color: '#f59e0b',
+                },
+                {
+                  name: '☀️ Bữa Trưa', time: '12:00–13:00', pct: 35,
+                  kcal: Math.round(s.targetKcal * 0.35),
+                  p: pLu, c: cLu, f: fLu,
+                  foods: [
+                    { name: `Cá phi lê ${Math.round(pLu * 0.6 / 0.25)}g`, p: Math.round(pLu * 0.6), c: 0, f: Math.round(pLu * 0.6 * 0.04) },
+                    { name: `Cơm trắng ${Math.round(cLu / 0.35)}g`, p: 3, c: cLu, f: 0.5 },
+                    { name: 'Rau muống xào 200g', p: 3, c: 6, f: 5 },
+                    { name: 'Dầu olive 1 tbsp', p: 0, c: 0, f: 14 },
+                  ],
+                  color: '#22c55e',
+                },
+                {
+                  name: '🍵 Snack', time: '15:30–16:00', pct: 10,
+                  kcal: Math.round(s.targetKcal * 0.10),
+                  p: pSn, c: cSn, f: fSn,
+                  foods: [
+                    { name: `Greek yogurt ${Math.round(pSn/0.1)}g`, p: pSn, c: Math.round(pSn * 0.8), f: 2 },
+                    { name: '1 quả chuối vừa', p: 1, c: 27, f: 0 },
+                  ],
+                  color: '#84cc16',
+                },
+                {
+                  name: '🌙 Bữa Tối', time: '18:30–19:30', pct: 30,
+                  kcal: Math.round(s.targetKcal * 0.30),
+                  p: pDi, c: Math.max(0, cDi), f: Math.max(0, fDi),
+                  foods: [
+                    { name: `Ức gà ${Math.round(pDi * 0.7 / 0.31)}g`, p: Math.round(pDi * 0.7), c: 0, f: Math.round(pDi * 0.7 * 0.12) },
+                    { name: `Đậu hũ 100g`, p: Math.round(pDi * 0.3), c: 2, f: 5 },
+                    { name: `Cơm ${Math.round(Math.max(0,cDi) / 0.35)}g`, p: 2, c: Math.max(0, cDi), f: 0 },
+                    { name: 'Bông cải hấp 200g', p: 4, c: 10, f: 0 },
+                    { name: '½ quả bơ', p: 2, c: 6, f: 15 },
+                  ],
+                  color: '#a855f7',
+                },
+              ];
+              return meals.map((meal, mi) => (
+                <div key={mi} className="border-t" style={{ borderColor: '#1e1e1e' }}>
+                  <div className="px-4 py-2 flex items-center justify-between" style={{ background: `${meal.color}08` }}>
+                    <div>
+                      <span className="font-bold text-xs" style={{ color: meal.color }}>{meal.name}</span>
+                      <span className="text-muted text-[9px] ml-2">{meal.time} · {meal.pct}%</span>
+                    </div>
+                    <div className="text-[10px] font-mono flex gap-2">
+                      <span style={{ color: meal.color }}>{meal.kcal} kcal</span>
+                      <span style={{ color: GREEN }}>{meal.p}g P</span>
+                      <span style={{ color: '#06b6d4' }}>{meal.c}g C</span>
+                    </div>
+                  </div>
+                  {meal.foods.map((food, fi) => (
+                    <div key={fi} className="flex items-center px-4 py-1.5 border-t" style={{ borderColor: '#111' }}>
+                      <span className="flex-1 text-[10px] text-muted">{food.name}</span>
+                      <div className="flex gap-3 text-[9px] font-mono shrink-0">
+                        <span style={{ color: GREEN }}>{food.p}g</span>
+                        <span style={{ color: '#06b6d4' }}>{food.c}g</span>
+                        <span style={{ color: '#f59e0b' }}>{food.f}g</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ));
+            })()}
+            {/* Total row */}
+            <div className="px-4 py-3 border-t flex items-center justify-between" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
+              <span className="text-xs font-bold text-text">Tổng ngày</span>
+              <div className="flex gap-3 text-xs font-mono">
+                <span style={{ color: LIME }}>{s.targetKcal.toLocaleString()} kcal</span>
+                <span style={{ color: GREEN }}>{s.proteinG}g P</span>
+                <span style={{ color: '#06b6d4' }}>{s.carbG}g C</span>
+                <span style={{ color: '#f59e0b' }}>{s.fatG}g F</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Substitution guide */}
+          <div className="mt-5 rounded-2xl p-4 border" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
+            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: LIME }}>Quy tắc thay thế linh hoạt</div>
+            <div className="grid sm:grid-cols-2 gap-2 text-[10px]">
+              {[
+                { from: 'Ức gà', to: 'Cá ngừ (hộp)', note: '100g cá = 25g P, thay 85g ức gà' },
+                { from: 'Cơm trắng', to: 'Bún/Mì/Bánh mì', note: '1 chén cơm ≈ 1.5 chén bún ≈ 1 ổ bánh mì nhỏ' },
+                { from: 'Dầu olive', to: 'Bơ / Hạt', note: '1 tbsp dầu ≈ 25g bơ ≈ 30g hạt hỗn hợp' },
+                { from: 'Greek yogurt', to: 'Trứng luộc ×2', note: '150g yogurt ≈ 2 trứng (protein tương đương)' },
+              ].map((s, i) => (
+                <div key={i} className="flex items-center gap-2 p-2 rounded-lg" style={{ background: '#111' }}>
+                  <span className="font-bold text-text shrink-0">{s.from}</span>
+                  <span className="text-muted">→</span>
+                  <span style={{ color: GREEN }}>{s.to}</span>
+                  <span className="text-muted text-[9px] hidden sm:block ml-auto">{s.note}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
+      {/* Divider */}
+      <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.3), transparent)' }} />
+
       {/* Section 6: Adjustment Rules */}
       <RevealBlock delay={100}>
         <div className="mb-12">

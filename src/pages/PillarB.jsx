@@ -7373,6 +7373,59 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
+      {/* ── 7-DAY PLAN TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-orange-500/20">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1000&q=75&auto=format&fit=crop" alt="7-day meal plan" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-orange-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-orange-400 mb-2">🗓️ Thực Đơn Mẫu · 7 Ngày</p>
+                <h3 className="text-2xl font-black text-text mb-2">Meal Plan 7 Ngày<br />Bản Nền Cho Người Mới</h3>
+                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
+                  35 bữa ăn đầy đủ, danh sách mua sắm tương tác, hướng dẫn meal prep 60–90 phút, checklist hàng ngày và xử lý <span className="text-orange-400 font-bold">bữa ăn lỡ tay</span> — cá nhân hóa từ TDEE của bạn.
+                </p>
+                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
+                  {[
+                    { icon: '🗓️', text: '7 ngày đủ bữa' },
+                    { icon: '🛒', text: 'Shopping list tương tác' },
+                    { icon: '📦', text: 'Meal prep hướng dẫn' },
+                    { icon: '✅', text: 'Checklist hàng ngày' },
+                  ].map((f, i) => (
+                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
+                      <span>{f.icon}</span>{f.text}
+                    </span>
+                  ))}
+                </div>
+                <Link to="/pillar/b/7day"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
+                  style={{ background: 'linear-gradient(135deg, #f97316, #ea580c)' }}>
+                  Xem Meal Plan 7 Ngày →
+                </Link>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                {[
+                  { label: 'Ngày', value: '7', color: '#f97316' },
+                  { label: 'Bữa', value: '35', color: '#84cc16' },
+                  { label: 'Nhóm TP', value: '5', color: '#22c55e' },
+                ].map((s, i) => (
+                  <div key={i} className="text-center">
+                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
+                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* ── MEAL RULES TEASER ── */}
       <RevealBlock className="mb-12">
         <div className="relative rounded-3xl overflow-hidden border border-cyan-500/20">

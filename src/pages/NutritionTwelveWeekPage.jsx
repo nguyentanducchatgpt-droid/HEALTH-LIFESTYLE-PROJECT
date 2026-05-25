@@ -427,11 +427,22 @@ function WeekDetail({ week }) {
       {week.rules && (
         <div className="mt-4">
           <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: c }}>Nguyên tắc</div>
-          <div className="flex flex-wrap gap-2">
-            {week.rules.map((r, i) => (
-              <span key={i} className="text-xs px-2.5 py-1 rounded-full border font-medium" style={{ color: c, borderColor: `rgba(${week.rgb},0.3)`, background: `rgba(${week.rgb},0.08)` }}>{r}</span>
-            ))}
-          </div>
+          {typeof week.rules[0] === 'string' ? (
+            <div className="flex flex-wrap gap-2">
+              {week.rules.map((r, i) => (
+                <span key={i} className="text-xs px-2.5 py-1 rounded-full border font-medium" style={{ color: c, borderColor: `rgba(${week.rgb},0.3)`, background: `rgba(${week.rgb},0.08)` }}>{r}</span>
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-1.5">
+              {week.rules.map((r, i) => (
+                <div key={i} className="flex gap-2 text-sm p-2 rounded-lg border" style={{ borderColor: `rgba(${week.rgb},0.2)`, background: `rgba(${week.rgb},0.04)` }}>
+                  <span className="font-bold shrink-0 min-w-[80px]" style={{ color: c }}>{r.comp}</span>
+                  <span className="text-muted">{r.rule}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
@@ -531,6 +542,48 @@ function WeekDetail({ week }) {
               <div key={i} className="p-2 rounded-lg border text-sm" style={{ borderColor: `rgba(${week.rgb},0.2)`, background: `rgba(${week.rgb},0.04)` }}>
                 <div className="font-bold mb-0.5" style={{ color: c }}>{m.meal}</div>
                 <div className="text-muted text-xs">{m.food}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {week.muscleRules && (
+        <div className="mt-4">
+          <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: c }}>Track Tăng Cơ</div>
+          <div className="space-y-1.5">
+            {week.muscleRules.map((r, i) => (
+              <div key={i} className="flex gap-2 text-sm p-2 rounded-lg border" style={{ borderColor: `rgba(${week.rgb},0.2)`, background: `rgba(${week.rgb},0.04)` }}>
+                <span className="font-bold shrink-0 min-w-[80px]" style={{ color: c }}>{r.comp}</span>
+                <span className="text-muted">{r.rule}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {week.endurance && (
+        <div className="mt-4">
+          <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: c }}>Track Sức Bền</div>
+          <div className="space-y-1.5">
+            {week.endurance.map((e, i) => (
+              <div key={i} className="flex gap-2 text-sm p-2 rounded-lg border" style={{ borderColor: `rgba(${week.rgb},0.2)`, background: `rgba(${week.rgb},0.04)` }}>
+                <span className="font-semibold shrink-0" style={{ color: c }}>{e.time}:</span>
+                <span className="text-muted">{e.food}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {week.preworkout && (
+        <div className="mt-4">
+          <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: c }}>Pre / Post Workout</div>
+          <div className="grid grid-cols-2 gap-2">
+            {week.preworkout.map((p, i) => (
+              <div key={i} className="p-2 rounded-lg border text-sm" style={{ borderColor: `rgba(${week.rgb},0.2)`, background: `rgba(${week.rgb},0.04)` }}>
+                <div className="font-bold mb-0.5 text-xs" style={{ color: c }}>{p.case}</div>
+                <div className="text-muted text-xs">{p.food}</div>
               </div>
             ))}
           </div>

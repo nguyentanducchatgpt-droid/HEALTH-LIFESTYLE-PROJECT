@@ -11,6 +11,7 @@ import PillarB from './pages/PillarB';
 import NutritionRoadmapPage from './pages/NutritionRoadmapPage';
 import NutritionContentPage from './pages/NutritionContentPage';
 import NutritionDataPage from './pages/NutritionDataPage';
+import NutritionFormulaPage from './pages/NutritionFormulaPage';
 import PillarC from './pages/PillarC';
 import PillarD from './pages/PillarD';
 import PillarE from './pages/PillarE';
@@ -55,6 +56,7 @@ export default function App() {
           <Route path="/pillar/b/roadmap" element={<NutritionRoadmapPage />} />
           <Route path="/pillar/b/content" element={<NutritionContentPage />} />
           <Route path="/pillar/b/data" element={<NutritionDataPage />} />
+          <Route path="/pillar/b/formula" element={<NutritionFormulaPage />} />
           <Route path="/pillar/c" element={<PillarC />} />
           <Route path="/pillar/d" element={<PillarD />} />
           <Route path="/pillar/e" element={<PillarE />} />

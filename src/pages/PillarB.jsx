@@ -7373,6 +7373,52 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
+      {/* ── 12-WEEK ROADMAP TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-teal-500/20">
+          <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1000&q=75&auto=format&fit=crop" alt="12-week nutrition roadmap" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-teal-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-teal-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới · Lộ Trình</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-teal-500/30 to-transparent" />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[9px] font-bold text-teal-500 uppercase tracking-widest bg-teal-500/10 border border-teal-500/20 rounded-full px-2 py-0.5">🗓️ Lộ Trình</span>
+                </div>
+                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Lộ Trình Nutrition <span className="text-teal-400">12 Tuần</span></h3>
+                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">Từ nhận thức → đĩa ăn → meal prep → cá nhân hóa → phục hồi → tự vận hành. Hệ thống 6 giai đoạn giúp bạn xây thói quen dinh dưỡng bền vững — không diet cực đoan, không đếm từng gram.</p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {['6 Giai Đoạn', 'Nutrition Score', 'Cá Nhân Hóa', 'TDEE Calculator', 'Menu Cá Nhân', 'Kế Hoạch 90 Ngày'].map(f => (
+                    <span key={f} className="text-[9px] font-semibold text-teal-300 bg-teal-500/10 border border-teal-500/20 rounded-full px-2 py-0.5">{f}</span>
+                  ))}
+                </div>
+                <Link to="/pillar/b/12week" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-500 text-bg text-xs font-bold hover:bg-teal-400 transition-all duration-200 shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 hover:-translate-y-0.5">
+                  Xem Lộ Trình <span>→</span>
+                </Link>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                <div className="text-center">
+                  <div className="text-3xl font-black text-teal-400">12</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Tuần</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-teal-400">6</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Giai Đoạn</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-teal-400">100</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Điểm/Ngày</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* ── ADVANCED PLAN TEASER ── */}
       <RevealBlock className="mb-12">
         <div className="relative rounded-3xl overflow-hidden border border-red-500/20">

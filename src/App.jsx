@@ -17,6 +17,7 @@ import NutritionMealRulesPage from './pages/NutritionMealRulesPage';
 import NutritionSevenDayPage from './pages/NutritionSevenDayPage';
 import NutritionGoalPlanPage from './pages/NutritionGoalPlanPage';
 import NutritionAdvancedPlanPage from './pages/NutritionAdvancedPlanPage';
+import NutritionTwelveWeekPage from './pages/NutritionTwelveWeekPage';
 import PillarC from './pages/PillarC';
 import PillarD from './pages/PillarD';
 import PillarE from './pages/PillarE';
@@ -67,6 +68,7 @@ export default function App() {
           <Route path="/pillar/b/7day" element={<NutritionSevenDayPage />} />
           <Route path="/pillar/b/goal-plan" element={<NutritionGoalPlanPage />} />
           <Route path="/pillar/b/advanced-plan" element={<NutritionAdvancedPlanPage />} />
+          <Route path="/pillar/b/12week" element={<NutritionTwelveWeekPage />} />
           <Route path="/pillar/c" element={<PillarC />} />
           <Route path="/pillar/d" element={<PillarD />} />
           <Route path="/pillar/e" element={<PillarE />} />

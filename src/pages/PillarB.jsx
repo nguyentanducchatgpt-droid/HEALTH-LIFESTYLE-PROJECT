@@ -7267,6 +7267,59 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
+      {/* ── PROTEIN TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-green-500/20">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&q=75&auto=format&fit=crop" alt="Protein foods" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-green-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-green-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-green-500/30 to-transparent" />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-green-400 mb-2">💪 Protein — Nền Tảng Dinh Dưỡng</p>
+                <h3 className="text-2xl font-black text-text mb-2">Công Thức Tính Protein<br />Cá Nhân Hoá</h3>
+                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
+                  Tính lượng protein theo mục tiêu (giảm mỡ/tăng cơ/sức bền), <span className="text-green-400 font-bold">12+ nguồn thực phẩm Việt Nam</span>, protein timing tối ưu, máy tính theo dõi hằng ngày và 5 sự thật khoa học về đạm.
+                </p>
+                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
+                  {[
+                    { icon: '📐', text: 'Công thức g/kg' },
+                    { icon: '🍗', text: '12+ nguồn đạm VN' },
+                    { icon: '⏰', text: 'Protein timing' },
+                    { icon: '🎯', text: 'Tracker hằng ngày' },
+                  ].map((f, i) => (
+                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
+                      <span>{f.icon}</span>{f.text}
+                    </span>
+                  ))}
+                </div>
+                <Link to="/pillar/b/protein"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
+                  style={{ background: 'linear-gradient(135deg, #22c55e, #16a34a)' }}>
+                  Xem Công Thức Protein →
+                </Link>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                {[
+                  { label: 'Nguồn đạm', value: '12+', color: '#22c55e' },
+                  { label: 'Mục tiêu', value: '5', color: '#84cc16' },
+                  { label: 'Timing', value: '5', color: '#06b6d4' },
+                ].map((s, i) => (
+                  <div key={i} className="text-center">
+                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
+                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* ── FORMULA TEASER ── */}
       <RevealBlock className="mb-12">
         <div className="relative rounded-3xl overflow-hidden border border-green-500/20">

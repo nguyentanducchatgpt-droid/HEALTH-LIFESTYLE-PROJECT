@@ -7373,6 +7373,52 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
+      {/* ── TEMPLATE MEAL PLAN TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-rose-500/20">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1000&q=75&auto=format&fit=crop" alt="Template Meal Plan" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-rose-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-rose-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Template Chuẩn · Meal Plan · Cá Nhân Hóa</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-rose-500/30 to-transparent" />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[9px] font-bold text-rose-500 uppercase tracking-widest bg-rose-500/10 border border-rose-500/20 rounded-full px-2 py-0.5">📋 Standard Template</span>
+                </div>
+                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Template Meal Plan <span className="text-rose-400">Chuẩn Cho Dự Án</span></h3>
+                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">Bộ template hoàn chỉnh: tính BMR/TDEE, chia macro, cấu trúc đĩa ăn, thư viện món, template 7 ngày, điều chỉnh theo lịch tập, checklist 10 tiêu chí và mẫu báo cáo tuần.</p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {['BMR/TDEE Calculator', 'Macro Donut', 'Plate Builder', 'Food Library', '7-day Planner', '10 Tiêu Chí'].map(f => (
+                    <span key={f} className="text-[9px] font-semibold text-rose-300 bg-rose-500/10 border border-rose-500/20 rounded-full px-2 py-0.5">{f}</span>
+                  ))}
+                </div>
+                <Link to="/pillar/b/template" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-500 text-bg text-xs font-bold hover:bg-rose-400 transition-all duration-200 shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:-translate-y-0.5">
+                  Mở Template <span>→</span>
+                </Link>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                <div className="text-center">
+                  <div className="text-3xl font-black text-rose-400">7</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Bước</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-rose-400">10</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Tiêu Chí</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-rose-400">∞</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Cá Nhân</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* ── DAILY CHECKLIST TEASER ── */}
       <RevealBlock className="mb-12">
         <div className="relative rounded-3xl overflow-hidden border border-emerald-500/20">

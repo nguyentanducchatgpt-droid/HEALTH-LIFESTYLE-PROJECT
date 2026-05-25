@@ -7419,6 +7419,52 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
+      {/* ── 24-WEEK ROADMAP TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-amber-500/20">
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-amber-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Lộ Trình Dài Hạn · 24 Tuần</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[9px] font-bold text-amber-500 uppercase tracking-widest bg-amber-500/10 border border-amber-500/20 rounded-full px-2 py-0.5">🗓️ Lộ Trình</span>
+                </div>
+                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Lộ Trình Nutrition <span className="text-amber-400">24 Tuần</span></h3>
+                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">Từ nhận thức → kiểm soát năng lượng → cá nhân hóa → đời sống thật → tối ưu hiệu suất → tự vận hành. Hệ thống giúp bạn xây thói quen dinh dưỡng bền vững không phụ thuộc vào ý chí.</p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {['6 Giai Đoạn', '24 Tuần', 'Habit Score', 'Cá Nhân Hóa B0', 'Meal Prep', 'Tự Vận Hành'].map(f => (
+                    <span key={f} className="text-[9px] font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-full px-2 py-0.5">{f}</span>
+                  ))}
+                </div>
+                <Link to="/pillar/b/24week" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-bg text-xs font-bold hover:opacity-90 transition-all duration-200 shadow-lg"
+                  style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)', boxShadow: '0 8px 24px rgba(245,158,11,0.25)' }}>
+                  Xem Lộ Trình 24 Tuần <span>→</span>
+                </Link>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                <div className="text-center">
+                  <div className="text-3xl font-black text-amber-400">24</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Tuần</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-amber-400">6</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Giai Đoạn</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-amber-400">85+</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Điểm Mục Tiêu</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* ── ADVANCED PLAN TEASER ── */}
       <RevealBlock className="mb-12">
         <div className="relative rounded-3xl overflow-hidden border border-red-500/20">

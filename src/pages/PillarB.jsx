@@ -7373,6 +7373,52 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
+      {/* ── DAILY CHECKLIST TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-emerald-500/20">
+          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1000&q=75&auto=format&fit=crop" alt="Daily nutrition checklist" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Công Cụ Hằng Ngày · Checklist</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[9px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-500/10 border border-emerald-500/20 rounded-full px-2 py-0.5">✅ Daily Tracker</span>
+                </div>
+                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Checklist Nutrition <span className="text-emerald-400">Hằng Ngày</span></h3>
+                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">Không bắt bạn ăn hoàn hảo — chỉ 9 tiêu chí, 100 điểm, 5 câu hỏi mỗi ngày. Chọn loại ngày, theo dõi nước, điểm số tự động, lưu kết quả hàng ngày và hàng tuần.</p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {['9 Tiêu Chí', '100 Điểm/Ngày', 'Cá Nhân Hóa B0', 'Water Tracker', '7 Mục Tuần', 'Lưu Offline'].map(f => (
+                    <span key={f} className="text-[9px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-2 py-0.5">{f}</span>
+                  ))}
+                </div>
+                <Link to="/pillar/b/checklist" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 text-bg text-xs font-bold hover:bg-emerald-400 transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5">
+                  Mở Checklist <span>→</span>
+                </Link>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                <div className="text-center">
+                  <div className="text-3xl font-black text-emerald-400">9</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Tiêu Chí</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-emerald-400">100</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Điểm</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-emerald-400">7</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Buổi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* ── 12-WEEK ROADMAP TEASER ── */}
       <RevealBlock className="mb-12">
         <div className="relative rounded-3xl overflow-hidden border border-teal-500/20">

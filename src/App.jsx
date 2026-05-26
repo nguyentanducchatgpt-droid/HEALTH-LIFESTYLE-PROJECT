@@ -50,6 +50,18 @@ import MindChecklistPage from './pages/MindChecklistPage';
 import MindAssessmentPage from './pages/MindAssessmentPage';
 import MindRoadmapPage from './pages/MindRoadmapPage';
 import PillarE from './pages/PillarE';
+import HealthBMIPage from './pages/HealthBMIPage';
+import HealthBPPage from './pages/HealthBPPage';
+import HealthBloodSugarPage from './pages/HealthBloodSugarPage';
+import HealthLipidsPage from './pages/HealthLipidsPage';
+import HealthRedFlagsPage from './pages/HealthRedFlagsPage';
+import HealthMedSafetyPage from './pages/HealthMedSafetyPage';
+import HealthMediaLiteracyPage from './pages/HealthMediaLiteracyPage';
+import HealthPreventionPage from './pages/HealthPreventionPage';
+import HealthSelfMonitoringPage from './pages/HealthSelfMonitoringPage';
+import HealthCheckupPage from './pages/HealthCheckupPage';
+import HealthAssessmentPage from './pages/HealthAssessmentPage';
+import HealthRoadmapPage from './pages/HealthRoadmapPage';
 import PillarF from './pages/PillarF';
 import VideoLibrary from './pages/VideoLibrary';
 import Program from './pages/Program';
@@ -130,6 +142,18 @@ export default function App() {
           <Route path="/pillar/d/assessment" element={<MindAssessmentPage />} />
           <Route path="/pillar/d/roadmap" element={<MindRoadmapPage />} />
           <Route path="/pillar/e" element={<PillarE />} />
+          <Route path="/pillar/e/bmi" element={<HealthBMIPage />} />
+          <Route path="/pillar/e/blood-pressure" element={<HealthBPPage />} />
+          <Route path="/pillar/e/blood-sugar" element={<HealthBloodSugarPage />} />
+          <Route path="/pillar/e/lipids" element={<HealthLipidsPage />} />
+          <Route path="/pillar/e/red-flags" element={<HealthRedFlagsPage />} />
+          <Route path="/pillar/e/medication" element={<HealthMedSafetyPage />} />
+          <Route path="/pillar/e/media-literacy" element={<HealthMediaLiteracyPage />} />
+          <Route path="/pillar/e/prevention" element={<HealthPreventionPage />} />
+          <Route path="/pillar/e/self-monitoring" element={<HealthSelfMonitoringPage />} />
+          <Route path="/pillar/e/checkup" element={<HealthCheckupPage />} />
+          <Route path="/pillar/e/assessment" element={<HealthAssessmentPage />} />
+          <Route path="/pillar/e/roadmap" element={<HealthRoadmapPage />} />
           <Route path="/pillar/f" element={<PillarF />} />
           <Route path="/program" element={<Program />} />
           <Route path="/sample-programs" element={<SamplePrograms />} />

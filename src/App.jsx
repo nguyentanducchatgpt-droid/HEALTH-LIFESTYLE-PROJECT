@@ -24,6 +24,18 @@ import NutritionTemplatePage from './pages/NutritionTemplatePage';
 import NutritionMealPrepPage from './pages/NutritionMealPrepPage';
 import NutritionSafetyPage from './pages/NutritionSafetyPage';
 import PillarC from './pages/PillarC';
+import LifestyleSleepPage from './pages/LifestyleSleepPage';
+import LifestyleSleepRoutinePage from './pages/LifestyleSleepRoutinePage';
+import LifestyleCircadianPage from './pages/LifestyleCircadianPage';
+import LifestyleMorningPage from './pages/LifestyleMorningPage';
+import LifestyleNeatPage from './pages/LifestyleNeatPage';
+import LifestyleRecoveryPage from './pages/LifestyleRecoveryPage';
+import LifestyleDeloadPage from './pages/LifestyleDeloadPage';
+import LifestyleBreathingPage from './pages/LifestyleBreathingPage';
+import LifestyleEnvironmentPage from './pages/LifestyleEnvironmentPage';
+import LifestyleChecklistPage from './pages/LifestyleChecklistPage';
+import LifestyleAssessmentPage from './pages/LifestyleAssessmentPage';
+import LifestyleRoadmapPage from './pages/LifestyleRoadmapPage';
 import PillarD from './pages/PillarD';
 import PillarE from './pages/PillarE';
 import PillarF from './pages/PillarF';
@@ -80,6 +92,18 @@ export default function App() {
           <Route path="/pillar/b/mealprep" element={<NutritionMealPrepPage />} />
           <Route path="/pillar/b/safety" element={<NutritionSafetyPage />} />
           <Route path="/pillar/c" element={<PillarC />} />
+          <Route path="/pillar/c/sleep" element={<LifestyleSleepPage />} />
+          <Route path="/pillar/c/sleep-routine" element={<LifestyleSleepRoutinePage />} />
+          <Route path="/pillar/c/circadian" element={<LifestyleCircadianPage />} />
+          <Route path="/pillar/c/morning" element={<LifestyleMorningPage />} />
+          <Route path="/pillar/c/neat" element={<LifestyleNeatPage />} />
+          <Route path="/pillar/c/recovery" element={<LifestyleRecoveryPage />} />
+          <Route path="/pillar/c/deload" element={<LifestyleDeloadPage />} />
+          <Route path="/pillar/c/breathing" element={<LifestyleBreathingPage />} />
+          <Route path="/pillar/c/environment" element={<LifestyleEnvironmentPage />} />
+          <Route path="/pillar/c/checklist" element={<LifestyleChecklistPage />} />
+          <Route path="/pillar/c/assessment" element={<LifestyleAssessmentPage />} />
+          <Route path="/pillar/c/roadmap" element={<LifestyleRoadmapPage />} />
           <Route path="/pillar/d" element={<PillarD />} />
           <Route path="/pillar/e" element={<PillarE />} />
           <Route path="/pillar/f" element={<PillarF />} />

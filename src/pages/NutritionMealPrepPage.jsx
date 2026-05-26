@@ -123,6 +123,57 @@ const SAUCES = [
   { name: 'Sốt Mè Gừng', icon: '🌰', kcal: 35, color: '#fb923c', pairs: 'Cơm gà, rau luộc, đậu phụ', recipe: ['1m dầu mè rang', '1M nước tương ít muối', 'Gừng tươi băm nhỏ', 'Chanh tươi', '1–2M nước lọc', 'Mè rang để phủ lên'] },
 ];
 
+/* ── ingredient sample for 3 days (from docx section 6 + 7) ── */
+const SAMPLE_PROTEINS = [
+  { name: 'Ức gà / Đùi gà bỏ da', qty: '600g', icon: '🍗', note: 'Dễ nấu, ngon, giá hợp lý — lựa chọn số 1' },
+  { name: 'Cá basa / Cá thu / Cá nục', qty: '400–500g', icon: '🐟', note: 'Tùy ngân sách; cá hồi nếu muốn cao cấp hơn' },
+  { name: 'Trứng gà', qty: '6 quả', icon: '🥚', note: 'Luộc sẵn, ăn kèm hoặc làm bữa phụ nhanh' },
+  { name: 'Đậu phụ / Đậu hũ', qty: '3 miếng (300g)', icon: '🟨', note: 'Tốt cho người ăn chay hoặc muốn đổi vị' },
+  { name: 'Thịt nạc heo / Bò nạc', qty: '300–400g', icon: '🥩', note: 'Chọn phần thăn hoặc mông để ít mỡ' },
+];
+const SAMPLE_CARBS = [
+  { name: 'Gạo trắng / Gạo lứt', icon: '🍚', note: 'Nấu 1 nồi, dùng cả 3 ngày' },
+  { name: 'Khoai lang', icon: '🍠', note: 'Hấp vi sóng 5 phút — nhanh nhất' },
+  { name: 'Bún gạo', icon: '🍜', note: 'Ngâm nước sôi 5 phút là dùng được' },
+  { name: 'Yến mạch', icon: '🥣', note: 'Bữa sáng nhanh, không cần nấu nhiều' },
+  { name: 'Nui / Mì nguyên cám', icon: '🍝', note: 'Luộc trước, giữ tủ lạnh 3 ngày' },
+  { name: 'Ngô / Bắp', icon: '🌽', note: 'Luộc 10 phút, dùng thay tinh bột buổi tối' },
+];
+const SAMPLE_VEGS = [
+  { name: 'Bông cải xanh', icon: '🥦', cookTime: '3–4 phút', method: 'Luộc/hấp' },
+  { name: 'Cà rốt', icon: '🥕', cookTime: '4–5 phút', method: 'Luộc/hấp' },
+  { name: 'Bí đỏ', icon: '🎃', cookTime: '5–7 phút', method: 'Hấp/luộc' },
+  { name: 'Đậu que', icon: '🫛', cookTime: '3–4 phút', method: 'Luộc/xào' },
+  { name: 'Cải thìa', icon: '🥬', cookTime: '2–3 phút', method: 'Luộc/xào' },
+  { name: 'Rau muống', icon: '🌿', cookTime: '2–3 phút', method: 'Luộc/xào' },
+  { name: 'Dưa leo', icon: '🥒', cookTime: 'Không cần', method: 'Rau sống' },
+  { name: 'Xà lách', icon: '🥗', cookTime: 'Không cần', method: 'Rau sống' },
+  { name: 'Cà chua', icon: '🍅', cookTime: 'Không cần', method: 'Rau sống' },
+  { name: 'Nấm các loại', icon: '🍄', cookTime: '3–5 phút', method: 'Xào/luộc' },
+];
+const SAMPLE_FATS = [
+  { name: 'Dầu olive / Dầu mè', use: 'Nấu ăn và làm sốt' },
+  { name: 'Mè rang', use: 'Rắc lên hộp, thêm hương vị' },
+  { name: 'Bơ đậu phộng ít đường', use: 'Sốt bơ đậu phộng hoặc ăn kèm bánh mì sáng' },
+  { name: 'Sốt sữa chua không đường', use: 'Làm sốt salad hoặc dipping' },
+];
+const SAMPLE_SNACKS = [
+  { name: 'Sữa chua không đường', qty: '3–6 hộp', icon: '🥛' },
+  { name: 'Trái cây: chuối, táo, cam, ổi', qty: '3–6 phần', icon: '🍎' },
+  { name: 'Hạt: hạnh nhân, điều, óc chó', qty: '50–80g', icon: '🥜' },
+  { name: 'Trứng luộc (nấu sẵn từ batch)', qty: '3–6 quả', icon: '🥚' },
+  { name: 'Sữa tươi không đường', qty: '3 hộp', icon: '🍼' },
+  { name: 'Whey protein (nếu tập nặng)', qty: 'Tùy nhu cầu', icon: '💊' },
+];
+/* Bộ nền cụ thể (công thức bản nền từ docx section 7) */
+const BASE_PACK = [
+  { group: 'Đạm', icon: '🍗', qty1: '600g ức gà + 3 trứng', qty2: '1.2kg gà + 6 trứng', note: 'Áp chảo gà 10 phút + luộc trứng song song' },
+  { group: 'Tinh bột', icon: '🍚', qty1: '3 chén cơm chín hoặc 3 củ khoai lang', qty2: '6 chén cơm hoặc 6 củ khoai', note: 'Nấu cơm trước khi bắt đầu để tiết kiệm thời gian' },
+  { group: 'Rau', icon: '🥦', qty1: '300g bông cải + 300g cà rốt + 300g cải thìa/dưa leo', qty2: 'Nhân đôi tất cả', note: 'Luộc/hấp bông cải + cà rốt; dưa leo để sống' },
+  { group: 'Sốt', icon: '🧴', qty1: 'Chanh + tỏi + tiêu + nước tương ít muối + dầu olive/mè', qty2: 'Làm 2 lọ', note: 'Làm 1 lọ chanh tỏi để 5–7 ngày trong tủ lạnh' },
+  { group: 'Snack', icon: '🍱', qty1: '3 hộp sữa chua không đường + 3 trái cây', qty2: '6 hộp sữa chua + 6 trái cây', note: 'Để sẵn ngoài tủ cho buổi sáng và xế' },
+];
+
 /* ── shopping list ── */
 const SHOPPING = [
   { group: 'Đạm chính', items: [{ name: 'Ức gà hoặc đùi bỏ da', qty1: '600–750g', qty2: '1.2–1.5kg' }, { name: 'Trứng gà', qty1: '6 quả', qty2: '12 quả' }], color: '#f43f5e' },
@@ -203,6 +254,14 @@ export default function NutritionMealPrepPage() {
 
   /* shopping person */
   const [shopPerson, setShopPerson] = useState(1);
+
+  /* ingredient sample selectors */
+  const [selProteins, setSelProteins] = useState([0, 2]); // default: gà + trứng
+  const [selCarbs, setSelCarbs] = useState([0, 1]);       // default: gạo + khoai
+  const [selVegs, setSelVegs] = useState([0, 1, 4]);      // default: bông cải + cà rốt + cải thìa
+  const toggleProtein = (i) => setSelProteins(p => p.includes(i) ? p.filter(x => x !== i) : p.length < 2 ? [...p, i] : p);
+  const toggleCarb = (i) => setSelCarbs(p => p.includes(i) ? p.filter(x => x !== i) : p.length < 2 ? [...p, i] : p);
+  const toggleVeg = (i) => setSelVegs(p => p.includes(i) ? p.filter(x => x !== i) : p.length < 3 ? [...p, i] : p);
 
   /* checklist */
   const [checkState, setCheckState] = useState({});
@@ -696,6 +755,221 @@ export default function NutritionMealPrepPage() {
                 💰 <strong style={{ color: C }}>Chi phí ước tính:</strong> 150.000–250.000 VNĐ/người/3 ngày (tùy loại protein chọn). Bình quân <strong style={{ color: C }}>~70.000–90.000 VNĐ/ngày</strong> — thấp hơn ăn ngoài 1 bữa.
               </div>
             </div>
+          </div>
+
+          {/* ── Bộ nguyên liệu mẫu cho 3 ngày ── */}
+          <div className="mt-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-3 whitespace-nowrap" style={{ color: C }}>Bộ Nguyên Liệu Mẫu Cho 3 Ngày</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
+            </div>
+            <p className="text-xs text-muted mb-5">Tự chọn nguyên liệu phù hợp khẩu vị và ngân sách. Mỗi nhóm có giới hạn chọn (gợi ý từ tài liệu dự án).</p>
+
+            {/* Bộ nền cụ thể */}
+            <div className="rounded-2xl border mb-5 overflow-hidden" style={{ borderColor: 'rgba(99,102,241,.25)' }}>
+              <div className="px-4 py-3 border-b border-border flex items-center gap-2" style={{ background: 'rgba(99,102,241,.06)' }}>
+                <span className="text-base">📦</span>
+                <div>
+                  <div className="text-xs font-bold" style={{ color: C }}>Công Thức Bản Nền (1 người · 3 ngày)</div>
+                  <div className="text-[9px] text-muted">3 ngày ăn khỏe: Gà áp chảo + trứng luộc + rau củ + cơm/khoai</div>
+                </div>
+              </div>
+              <div className="divide-y divide-border">
+                {BASE_PACK.map((b, i) => (
+                  <div key={i} className="grid grid-cols-12 gap-0 hover:bg-indigo-500/5 transition-colors">
+                    <div className="col-span-1 flex items-center justify-center py-3 border-r border-border text-lg">{b.icon}</div>
+                    <div className="col-span-2 flex items-center px-3 py-3 border-r border-border">
+                      <span className="text-[10px] font-bold" style={{ color: C }}>{b.group}</span>
+                    </div>
+                    <div className="col-span-5 flex items-center px-3 py-3 border-r border-border">
+                      <span className="text-[10px] text-text font-medium">{shopPerson === 1 ? b.qty1 : b.qty2}</span>
+                    </div>
+                    <div className="col-span-4 flex items-center px-3 py-3">
+                      <span className="text-[9px] text-muted italic">{b.note}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="px-4 py-2.5 border-t border-border" style={{ background: 'rgba(99,102,241,.04)' }}>
+                <div className="text-[10px] text-muted">✅ <strong style={{ color: C }}>Thành phẩm sau 30 phút:</strong> 3 phần gà · 3 trứng luộc · 3 phần cơm/khoai · 3–6 phần rau · 1 lọ sốt · 3 snack</div>
+              </div>
+            </div>
+
+            {/* Interactive selectors */}
+            {/* Protein selector — chọn tối đa 2 */}
+            <div className="rounded-2xl border border-border bg-surface overflow-hidden mb-4">
+              <div className="px-4 py-3 border-b border-border flex items-center justify-between" style={{ background: 'rgba(244,63,94,.05)' }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-base">🍗</span>
+                  <div>
+                    <div className="text-xs font-bold text-rose-400">Chọn Nguồn Đạm</div>
+                    <div className="text-[9px] text-muted">Chọn tối đa 2 loại cho cả 3 ngày</div>
+                  </div>
+                </div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-400">{selProteins.length}/2</span>
+              </div>
+              <div className="p-3 grid grid-cols-1 gap-2">
+                {SAMPLE_PROTEINS.map((p, i) => {
+                  const sel = selProteins.includes(i);
+                  return (
+                    <button key={i} onClick={() => toggleProtein(i)}
+                      className="flex items-center gap-3 p-3 rounded-xl border text-left transition-all"
+                      style={{ borderColor: sel ? '#f43f5e' : 'transparent', background: sel ? 'rgba(244,63,94,.08)' : 'rgba(255,255,255,.03)' }}>
+                      <span className="text-xl shrink-0">{p.icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-semibold" style={{ color: sel ? '#f43f5e' : '#d1d5db' }}>{p.name}</span>
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full shrink-0" style={{ background: sel ? 'rgba(244,63,94,.15)' : '#1f2937', color: sel ? '#f43f5e' : '#6b7280' }}>{p.qty}</span>
+                        </div>
+                        <div className="text-[9px] text-muted mt-0.5">{p.note}</div>
+                      </div>
+                      <div className="w-4 h-4 rounded-full border shrink-0 flex items-center justify-center transition-all"
+                        style={{ background: sel ? '#f43f5e' : 'transparent', borderColor: sel ? '#f43f5e' : '#374151' }}>
+                        {sel && <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4l1.5 1.5 3.5-3.5" stroke="white" strokeWidth="1.2" fill="none" strokeLinecap="round" /></svg>}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+              {selProteins.length > 0 && (
+                <div className="px-4 py-2.5 border-t border-border" style={{ background: 'rgba(244,63,94,.04)' }}>
+                  <div className="text-[10px]" style={{ color: '#f43f5e' }}>
+                    ✓ Đã chọn: {selProteins.map(i => SAMPLE_PROTEINS[i].name).join(' + ')}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Carb selector — chọn tối đa 2 */}
+            <div className="rounded-2xl border border-border bg-surface overflow-hidden mb-4">
+              <div className="px-4 py-3 border-b border-border flex items-center justify-between" style={{ background: 'rgba(251,146,60,.05)' }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-base">🍚</span>
+                  <div>
+                    <div className="text-xs font-bold text-orange-400">Chọn Tinh Bột</div>
+                    <div className="text-[9px] text-muted">Chọn 1–2 loại, đổi vị mỗi ngày</div>
+                  </div>
+                </div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-orange-500/15 text-orange-400">{selCarbs.length}/2</span>
+              </div>
+              <div className="p-3 grid grid-cols-2 md:grid-cols-3 gap-2">
+                {SAMPLE_CARBS.map((c, i) => {
+                  const sel = selCarbs.includes(i);
+                  return (
+                    <button key={i} onClick={() => toggleCarb(i)}
+                      className="flex flex-col items-center gap-1.5 p-3 rounded-xl border transition-all text-center"
+                      style={{ borderColor: sel ? '#fb923c' : 'transparent', background: sel ? 'rgba(251,146,60,.1)' : 'rgba(255,255,255,.03)' }}>
+                      <span className="text-2xl">{c.icon}</span>
+                      <span className="text-[10px] font-semibold" style={{ color: sel ? '#fb923c' : '#d1d5db' }}>{c.name}</span>
+                      <span className="text-[8px] text-muted">{c.note}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              {selCarbs.length > 0 && (
+                <div className="px-4 py-2.5 border-t border-border" style={{ background: 'rgba(251,146,60,.04)' }}>
+                  <div className="text-[10px] text-orange-400">✓ Đã chọn: {selCarbs.map(i => SAMPLE_CARBS[i].name).join(' + ')}</div>
+                </div>
+              )}
+            </div>
+
+            {/* Veg selector — chọn tối đa 3 */}
+            <div className="rounded-2xl border border-border bg-surface overflow-hidden mb-4">
+              <div className="px-4 py-3 border-b border-border flex items-center justify-between" style={{ background: 'rgba(74,222,128,.05)' }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-base">🥦</span>
+                  <div>
+                    <div className="text-xs font-bold text-green-400">Chọn Rau Củ</div>
+                    <div className="text-[9px] text-muted">Chọn 3 loại để không ngán — đổi tuần sau</div>
+                  </div>
+                </div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-500/15 text-green-400">{selVegs.length}/3</span>
+              </div>
+              <div className="p-3 grid grid-cols-2 md:grid-cols-5 gap-2">
+                {SAMPLE_VEGS.map((v, i) => {
+                  const sel = selVegs.includes(i);
+                  return (
+                    <button key={i} onClick={() => toggleVeg(i)}
+                      className="flex flex-col items-center gap-1 p-2.5 rounded-xl border transition-all text-center"
+                      style={{ borderColor: sel ? '#4ade80' : 'transparent', background: sel ? 'rgba(74,222,128,.1)' : 'rgba(255,255,255,.03)' }}>
+                      <span className="text-2xl">{v.icon}</span>
+                      <span className="text-[9px] font-semibold" style={{ color: sel ? '#4ade80' : '#d1d5db' }}>{v.name}</span>
+                      <span className="text-[8px] text-muted">{v.method}</span>
+                      <span className="text-[8px] px-1 py-0.5 rounded" style={{ background: v.cookTime === 'Không cần' ? 'rgba(74,222,128,.15)' : 'rgba(255,255,255,.05)', color: v.cookTime === 'Không cần' ? '#4ade80' : '#6b7280' }}>{v.cookTime}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              {selVegs.length > 0 && (
+                <div className="px-4 py-2.5 border-t border-border" style={{ background: 'rgba(74,222,128,.04)' }}>
+                  <div className="text-[10px] text-green-400">✓ Đã chọn: {selVegs.map(i => SAMPLE_VEGS[i].name).join(' · ')}</div>
+                </div>
+              )}
+            </div>
+
+            {/* Fat & Snack */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="rounded-2xl border border-border bg-surface overflow-hidden">
+                <div className="px-4 py-3 border-b border-border" style={{ background: 'rgba(250,204,21,.05)' }}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-base">🫒</span>
+                    <div className="text-xs font-bold text-yellow-400">Chất Béo Tốt & Sốt Nền</div>
+                  </div>
+                </div>
+                <div className="p-3 space-y-2">
+                  {SAMPLE_FATS.map((f, i) => (
+                    <div key={i} className="flex gap-2.5 p-2 rounded-lg hover:bg-yellow-500/5 transition-colors">
+                      <span className="text-yellow-400 shrink-0 text-sm">•</span>
+                      <div>
+                        <div className="text-[10px] font-semibold text-text">{f.name}</div>
+                        <div className="text-[9px] text-muted">{f.use}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-surface overflow-hidden">
+                <div className="px-4 py-3 border-b border-border" style={{ background: 'rgba(167,139,250,.05)' }}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-base">🍎</span>
+                    <div className="text-xs font-bold text-violet-400">Snack Lành Mạnh</div>
+                  </div>
+                </div>
+                <div className="p-3 space-y-2">
+                  {SAMPLE_SNACKS.map((s, i) => (
+                    <div key={i} className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-violet-500/5 transition-colors">
+                      <span className="text-lg shrink-0">{s.icon}</span>
+                      <div className="flex-1">
+                        <div className="text-[10px] font-semibold text-text">{s.name}</div>
+                      </div>
+                      <span className="text-[9px] px-1.5 py-0.5 rounded-full shrink-0" style={{ background: 'rgba(167,139,250,.15)', color: '#a78bfa' }}>{s.qty}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Selection summary */}
+            {(selProteins.length > 0 || selVegs.length >= 3) && (
+              <div className="mt-4 rounded-2xl border p-4" style={{ borderColor: 'rgba(99,102,241,.3)', background: 'rgba(99,102,241,.04)' }}>
+                <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: C }}>📋 Tổng Hợp Lựa Chọn Của Bạn ({shopPerson === 1 ? '1 người' : '2 người'} · 3 ngày)</div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  {[
+                    { label: '🍗 Đạm', val: selProteins.length ? selProteins.map(i => SAMPLE_PROTEINS[i].name).join(' + ') : '— chưa chọn', color: '#f43f5e' },
+                    { label: '🍚 Tinh bột', val: selCarbs.length ? selCarbs.map(i => SAMPLE_CARBS[i].name).join(' + ') : '— chưa chọn', color: '#fb923c' },
+                    { label: '🥦 Rau', val: selVegs.length ? selVegs.map(i => SAMPLE_VEGS[i].name).join(' · ') : '— chưa chọn', color: '#4ade80' },
+                    { label: '⏱️ Thời gian ước tính', val: selVegs.some(i => SAMPLE_VEGS[i].cookTime === 'Không cần') ? '25–28 phút' : '28–32 phút', color: C },
+                  ].map(s => (
+                    <div key={s.label} className="p-2.5 rounded-xl bg-surface border border-border">
+                      <div className="text-[9px] font-bold mb-1" style={{ color: s.color }}>{s.label}</div>
+                      <div className="text-[9px] text-muted leading-relaxed">{s.val}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </RevealBlock>
 

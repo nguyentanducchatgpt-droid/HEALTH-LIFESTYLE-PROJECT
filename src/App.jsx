@@ -37,6 +37,18 @@ import LifestyleChecklistPage from './pages/LifestyleChecklistPage';
 import LifestyleAssessmentPage from './pages/LifestyleAssessmentPage';
 import LifestyleRoadmapPage from './pages/LifestyleRoadmapPage';
 import PillarD from './pages/PillarD';
+import MindStressPage from './pages/MindStressPage';
+import MindBreathingPage from './pages/MindBreathingPage';
+import MindMeditationPage from './pages/MindMeditationPage';
+import MindBodyScanPage from './pages/MindBodyScanPage';
+import MindJournalingPage from './pages/MindJournalingPage';
+import MindBrainDumpPage from './pages/MindBrainDumpPage';
+import MindDigitalDetoxPage from './pages/MindDigitalDetoxPage';
+import MindGentleDisciplinePage from './pages/MindGentleDisciplinePage';
+import MindHabitsPage from './pages/MindHabitsPage';
+import MindChecklistPage from './pages/MindChecklistPage';
+import MindAssessmentPage from './pages/MindAssessmentPage';
+import MindRoadmapPage from './pages/MindRoadmapPage';
 import PillarE from './pages/PillarE';
 import PillarF from './pages/PillarF';
 import VideoLibrary from './pages/VideoLibrary';
@@ -105,6 +117,18 @@ export default function App() {
           <Route path="/pillar/c/assessment" element={<LifestyleAssessmentPage />} />
           <Route path="/pillar/c/roadmap" element={<LifestyleRoadmapPage />} />
           <Route path="/pillar/d" element={<PillarD />} />
+          <Route path="/pillar/d/stress" element={<MindStressPage />} />
+          <Route path="/pillar/d/breathing" element={<MindBreathingPage />} />
+          <Route path="/pillar/d/meditation" element={<MindMeditationPage />} />
+          <Route path="/pillar/d/body-scan" element={<MindBodyScanPage />} />
+          <Route path="/pillar/d/journaling" element={<MindJournalingPage />} />
+          <Route path="/pillar/d/brain-dump" element={<MindBrainDumpPage />} />
+          <Route path="/pillar/d/digital-detox" element={<MindDigitalDetoxPage />} />
+          <Route path="/pillar/d/gentle-discipline" element={<MindGentleDisciplinePage />} />
+          <Route path="/pillar/d/habits" element={<MindHabitsPage />} />
+          <Route path="/pillar/d/checklist" element={<MindChecklistPage />} />
+          <Route path="/pillar/d/assessment" element={<MindAssessmentPage />} />
+          <Route path="/pillar/d/roadmap" element={<MindRoadmapPage />} />
           <Route path="/pillar/e" element={<PillarE />} />
           <Route path="/pillar/f" element={<PillarF />} />
           <Route path="/program" element={<Program />} />

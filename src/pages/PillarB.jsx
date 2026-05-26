@@ -7373,6 +7373,41 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
+      {/* ── SAFETY TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-sky-500/20">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1000&q=75&auto=format&fit=crop" alt="Quy tắc an toàn" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-sky-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">An Toàn · Bảo Vệ · Đúng Cách</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">🛡️ Quy Tắc An Toàn</h3>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {['20 quy tắc', '3 nhóm người dùng', 'Checklist hằng ngày', 'Dấu hiệu nguy hiểm'].map(tag => (
+                <span key={tag} className="text-xs px-2.5 py-1 rounded-full font-medium bg-sky-500/10 text-sky-300 border border-sky-500/20">{tag}</span>
+              ))}
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-lg">
+              Bộ quy tắc an toàn toàn diện cho dự án Nutrition — phân tầng người dùng xanh/vàng/đỏ, quy tắc năng lượng, macro, bảo quản thực phẩm và checklist tự kiểm tra hằng ngày.
+            </p>
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              {[['20', 'Quy tắc'], ['3', 'Nhóm người dùng'], ['13', 'Câu hỏi tiền meal plan']].map(([n, lbl]) => (
+                <div key={lbl} className="text-center">
+                  <div className="text-2xl font-bold text-sky-400">{n}</div>
+                  <div className="text-xs text-gray-400">{lbl}</div>
+                </div>
+              ))}
+            </div>
+            <Link to="/pillar/b/safety" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all hover:scale-105" style={{ background: 'rgba(14,165,233,0.15)', color: '#0ea5e9', border: '1px solid rgba(14,165,233,0.3)' }}>
+              🛡️ Xem Quy Tắc An Toàn →
+            </Link>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* ── MEAL PREP TEASER ── */}
       <RevealBlock className="mb-12">
         <div className="relative rounded-3xl overflow-hidden border border-indigo-500/20">

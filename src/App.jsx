@@ -22,6 +22,7 @@ import NutritionTwentyFourWeekPage from './pages/NutritionTwentyFourWeekPage';
 import NutritionChecklistPage from './pages/NutritionChecklistPage';
 import NutritionTemplatePage from './pages/NutritionTemplatePage';
 import NutritionMealPrepPage from './pages/NutritionMealPrepPage';
+import NutritionSafetyPage from './pages/NutritionSafetyPage';
 import PillarC from './pages/PillarC';
 import PillarD from './pages/PillarD';
 import PillarE from './pages/PillarE';
@@ -77,6 +78,7 @@ export default function App() {
           <Route path="/pillar/b/checklist" element={<NutritionChecklistPage />} />
           <Route path="/pillar/b/template" element={<NutritionTemplatePage />} />
           <Route path="/pillar/b/mealprep" element={<NutritionMealPrepPage />} />
+          <Route path="/pillar/b/safety" element={<NutritionSafetyPage />} />
           <Route path="/pillar/c" element={<PillarC />} />
           <Route path="/pillar/d" element={<PillarD />} />
           <Route path="/pillar/e" element={<PillarE />} />

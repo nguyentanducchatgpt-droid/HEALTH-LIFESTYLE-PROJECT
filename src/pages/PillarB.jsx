@@ -961,6 +961,111 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
+// ─── Teaser Section Divider ───────────────────────────────────────────────────
+
+function TeaserSection({ label, count }) {
+  return (
+    <div className="flex items-center gap-4 mb-6 mt-10">
+      <div className="h-px flex-1" style={{ background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.07))' }} />
+      <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gray-600 whitespace-nowrap">{label}</span>
+      {count && <span className="text-[9px] font-bold text-gray-700 bg-white/5 px-2 py-0.5 rounded-full">{count}</span>}
+      <div className="h-px flex-1" style={{ background: 'linear-gradient(to left, transparent, rgba(255,255,255,0.07))' }} />
+    </div>
+  );
+}
+
+// ─── Elegant Teaser Card ──────────────────────────────────────────────────────
+
+function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, features, stats, image, imageAlt, cta }) {
+  return (
+    <RevealBlock className="mb-7">
+      <Link
+        to={to}
+        className="group block relative rounded-3xl overflow-hidden border transition-all duration-500 hover:-translate-y-0.5"
+        style={{ borderColor: `rgba(${rgb},0.18)`, background: 'rgba(10,10,10,0.95)' }}
+      >
+        {/* Desktop image panel — right 42% */}
+        <div className="hidden md:block absolute inset-y-0 right-0 w-[42%] overflow-hidden pointer-events-none">
+          <img
+            src={image}
+            alt={imageAlt}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            style={{ opacity: 0.3 }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0.55) 38%, rgba(10,10,10,0.1) 100%)' }}
+          />
+        </div>
+
+        {/* Mobile image banner */}
+        <div className="md:hidden relative h-28 overflow-hidden">
+          <img src={image} alt={imageAlt} className="w-full h-full object-cover" style={{ opacity: 0.22 }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(10,10,10,0.97) 100%)' }} />
+        </div>
+
+        {/* Content area */}
+        <div className="relative md:w-[60%] px-7 py-8 md:px-10 md:py-10">
+          {/* Category chip */}
+          <div className="mb-5">
+            <span
+              className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
+              style={{ color, background: `rgba(${rgb},0.1)`, border: `1px solid rgba(${rgb},0.22)` }}
+            >
+              {icon} {category}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h3 className="text-2xl md:text-3xl font-black text-white leading-snug mb-3">
+            {title}{accent && <> <span style={{ color }}>{accent}</span></>}
+          </h3>
+
+          {/* Description */}
+          <p className="text-sm text-gray-400 leading-relaxed mb-6 max-w-lg">{desc}</p>
+
+          {/* Feature pills */}
+          <div className="flex flex-wrap gap-2 mb-7">
+            {features.map((f, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full font-medium"
+                style={{ color, background: `rgba(${rgb},0.08)`, border: `1px solid rgba(${rgb},0.14)` }}
+              >
+                {f.icon} {f.text}
+              </span>
+            ))}
+          </div>
+
+          {/* CTA + Stats row */}
+          <div className="flex items-center gap-7 flex-wrap">
+            <span
+              className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 group-hover:gap-3 shrink-0"
+              style={{ color, background: `rgba(${rgb},0.12)`, border: `1px solid rgba(${rgb},0.28)` }}
+            >
+              {cta} <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+            </span>
+            <div className="flex gap-6">
+              {stats.map((s, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-xl md:text-2xl font-black leading-none" style={{ color }}>{s.value}</div>
+                  <div className="text-[9px] text-gray-600 uppercase tracking-wider mt-0.5">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Hover glow ring */}
+        <div
+          className="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style={{ boxShadow: `inset 0 0 0 1px rgba(${rgb},0.38), 0 4px 40px rgba(${rgb},0.06)` }}
+        />
+      </Link>
+    </RevealBlock>
+  );
+}
+
 // ─── Animated Hero Counter ────────────────────────────────────────────────────
 
 function HeroCounter({ n, suffix, label }) {
@@ -7108,747 +7213,351 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
-      {/* ── ROADMAP TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-lime-500/20">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1000&q=75&auto=format&fit=crop" alt="Nutrition roadmap" className="absolute inset-0 w-full h-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/70 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-lime-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-lime-400 mb-2">🗺️ Lộ Trình Có Cấu Trúc</p>
-                <h3 className="text-2xl font-black text-text mb-2">Lộ Trình Dinh Dưỡng<br />12 & 24 Tuần</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  6 giai đoạn từ xây nền thói quen đến tối ưu hiệu suất. Mọi con số được tính toán theo thông số cá nhân từ B0 của bạn — TDEE <span className="text-lime-400 font-bold">{userStats.tdee.toLocaleString()} kcal</span> · Protein <span className="text-lime-400 font-bold">{userStats.proteinG}g/ngày</span>.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '📋', text: 'Thực đơn mẫu mỗi giai đoạn' },
-                    { icon: '📊', text: 'Biểu đồ tuân thủ S-curve' },
-                    { icon: '🔬', text: 'Cơ sở khoa học chi tiết' },
-                    { icon: '✅', text: 'Checklist tiến độ cá nhân' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/roadmap"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #22c55e, #84cc16)' }}>
-                  Xem Lộ Trình Chi Tiết →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Giai đoạn', value: '6', color: '#22c55e' },
-                  { label: 'Tuần', value: '24', color: '#06b6d4' },
-                  { label: 'Phases miễn phí', value: '✓', color: '#84cc16' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      {/* ══════════════════════════════════════════════════════
+          ── TEASER CARDS: all sub-pages ──
+      ══════════════════════════════════════════════════════ */}
 
-      {/* ── CONTENT PRODUCT TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-cyan-500/20">
-          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&q=75&auto=format&fit=crop" alt="Nutrition content structure" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-cyan-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-cyan-400 mb-2">🏗️ Cấu Trúc Hệ Thống</p>
-                <h3 className="text-2xl font-black text-text mb-2">Cấu Trúc Sản Phẩm<br />Nội Dung Dinh Dưỡng</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  8 module B0–B7 từ đánh giá ban đầu đến tối ưu hiệu suất. Công thức tính toán đầy đủ, biểu đồ minh họa trực quan, cơ sở dữ liệu thực phẩm và hành trình người dùng 7 bước — dựa trên BMI <span className="text-cyan-400 font-bold">{(userStats.weight * 10000 / (userStats.height * userStats.height)).toFixed(1)}</span> · TDEE <span className="text-cyan-400 font-bold">{userStats.tdee.toLocaleString()} kcal</span>.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '📐', text: 'Công thức 7 bước chi tiết' },
-                    { icon: '📊', text: 'Biểu đồ macro & BMI' },
-                    { icon: '🎥', text: '12 video hướng dẫn' },
-                    { icon: '📚', text: '8 bài viết khoa học' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/content"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)' }}>
-                  Khám Phá Cấu Trúc Nội Dung →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Module', value: '8', color: '#06b6d4' },
-                  { label: 'Video', value: '12', color: '#22c55e' },
-                  { label: 'Công cụ', value: '6', color: '#84cc16' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      {/* ── NỀN TẢNG ── */}
+      <TeaserSection label="Nền Tảng & Cấu Trúc" count="5 trang" />
 
-      {/* ── DATA STRUCTURE TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-purple-500/20">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=75&auto=format&fit=crop" alt="Data structure" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-purple-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-purple-400 mb-2">🗄️ Database & Tracking</p>
-                <h3 className="text-2xl font-black text-text mb-2">Cấu Trúc Dữ Liệu<br />App / Notion / Google Sheet</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  4 database hoàn chỉnh: Nutrition Profile, Meal Library, Daily Log, Weekly Review. Công thức Google Sheet sẵn dùng, Notion formula, thư viện <span className="text-purple-400 font-bold">15+ thực phẩm</span> và máy tính điểm tuân thủ <span className="text-purple-400 font-bold">100 điểm</span>.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '🗄️', text: '4 databases chi tiết' },
-                    { icon: '📊', text: 'Google Sheet formulas' },
-                    { icon: '📐', text: 'Notion properties' },
-                    { icon: '🏆', text: 'Nutrition Score 100đ' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/data"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #a855f7, #7c3aed)' }}>
-                  Xem Cấu Trúc Dữ Liệu →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Database', value: '4', color: '#a855f7' },
-                  { label: 'Formulas', value: '10', color: '#06b6d4' },
-                  { label: 'Thực phẩm', value: '15+', color: '#84cc16' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/roadmap"
+        color="#84cc16" rgb="132,204,22"
+        icon="🗺️" category="Lộ Trình Có Cấu Trúc"
+        title="Lộ Trình Dinh Dưỡng" accent="12 & 24 Tuần"
+        desc={<>6 giai đoạn từ xây nền thói quen đến tối ưu hiệu suất. Mọi con số được tính toán theo thông số cá nhân từ B0 của bạn — TDEE <span className="font-bold text-lime-400">{userStats.tdee.toLocaleString()} kcal</span> · Protein <span className="font-bold text-lime-400">{userStats.proteinG}g/ngày</span>.</>}
+        features={[
+          { icon: '📋', text: 'Thực đơn mẫu mỗi giai đoạn' },
+          { icon: '📊', text: 'Biểu đồ tuân thủ S-curve' },
+          { icon: '🔬', text: 'Cơ sở khoa học chi tiết' },
+          { icon: '✅', text: 'Checklist tiến độ cá nhân' },
+        ]}
+        stats={[
+          { value: '6', label: 'Giai đoạn' },
+          { value: '24', label: 'Tuần' },
+          { value: '✓', label: 'Miễn phí' },
+        ]}
+        image="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80"
+        imageAlt="Nutrition roadmap"
+        cta="Xem Lộ Trình Chi Tiết"
+      />
 
-      {/* ── PROTEIN TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-green-500/20">
-          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&q=75&auto=format&fit=crop" alt="Protein foods" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-green-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-green-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-green-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-green-400 mb-2">💪 Protein — Nền Tảng Dinh Dưỡng</p>
-                <h3 className="text-2xl font-black text-text mb-2">Công Thức Tính Protein<br />Cá Nhân Hoá</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  Tính lượng protein theo mục tiêu (giảm mỡ/tăng cơ/sức bền), <span className="text-green-400 font-bold">12+ nguồn thực phẩm Việt Nam</span>, protein timing tối ưu, máy tính theo dõi hằng ngày và 5 sự thật khoa học về đạm.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '📐', text: 'Công thức g/kg' },
-                    { icon: '🍗', text: '12+ nguồn đạm VN' },
-                    { icon: '⏰', text: 'Protein timing' },
-                    { icon: '🎯', text: 'Tracker hằng ngày' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/protein"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #22c55e, #16a34a)' }}>
-                  Xem Công Thức Protein →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Nguồn đạm', value: '12+', color: '#22c55e' },
-                  { label: 'Mục tiêu', value: '5', color: '#84cc16' },
-                  { label: 'Timing', value: '5', color: '#06b6d4' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/content"
+        color="#06b6d4" rgb="6,182,212"
+        icon="🏗️" category="Cấu Trúc Hệ Thống"
+        title="Cấu Trúc Sản Phẩm" accent="Nội Dung Dinh Dưỡng"
+        desc={<>8 module B0–B7 từ đánh giá ban đầu đến tối ưu hiệu suất. Công thức tính toán đầy đủ, biểu đồ minh họa trực quan, cơ sở dữ liệu thực phẩm — dựa trên BMI <span className="font-bold text-cyan-400">{(userStats.weight * 10000 / (userStats.height * userStats.height)).toFixed(1)}</span> · TDEE <span className="font-bold text-cyan-400">{userStats.tdee.toLocaleString()} kcal</span>.</>}
+        features={[
+          { icon: '📐', text: 'Công thức 7 bước chi tiết' },
+          { icon: '📊', text: 'Biểu đồ macro & BMI' },
+          { icon: '🎥', text: '12 video hướng dẫn' },
+          { icon: '📚', text: '8 bài viết khoa học' },
+        ]}
+        stats={[
+          { value: '8', label: 'Module' },
+          { value: '12', label: 'Video' },
+          { value: '6', label: 'Công cụ' },
+        ]}
+        image="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1200&q=80"
+        imageAlt="Nutrition content structure"
+        cta="Khám Phá Cấu Trúc"
+      />
 
-      {/* ── FORMULA TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-green-500/20">
-          <img src="https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?w=1000&q=75&auto=format&fit=crop" alt="Formula calculation" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-green-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-green-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-green-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-green-400 mb-2">📐 Công Thức & Tính Toán</p>
-                <h3 className="text-2xl font-black text-text mb-2">Công Thức Tính<br />Meal Plan Cá Nhân</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  10 bước tính toán đầy đủ: BMI → BMR → TDEE → Kcal mục tiêu → Protein → Fat → Carb → Chia bữa → Lịch luyện tập. Máy tính <span className="text-green-400 font-bold">tương tác 10 bước</span>, biểu đồ macro, calorie cycling theo ngày tập.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '📐', text: '10 bước tính toán' },
-                    { icon: '📊', text: 'MacroDonut biểu đồ' },
-                    { icon: '🔄', text: 'Calorie cycling' },
-                    { icon: '🍽️', text: '3 mô hình bữa ăn' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/formula"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #22c55e, #84cc16)' }}>
-                  Xem Công Thức Chi Tiết →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Bước tính', value: '10', color: '#22c55e' },
-                  { label: 'Mô hình', value: '3', color: '#84cc16' },
-                  { label: 'Công thức', value: '12+', color: '#06b6d4' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/data"
+        color="#a855f7" rgb="168,85,247"
+        icon="🗄️" category="Database & Tracking"
+        title="Cấu Trúc Dữ Liệu" accent="App / Notion / Google Sheet"
+        desc="4 database hoàn chỉnh: Nutrition Profile, Meal Library, Daily Log, Weekly Review. Công thức Google Sheet sẵn dùng, Notion formula, thư viện 15+ thực phẩm và máy tính điểm tuân thủ 100 điểm."
+        features={[
+          { icon: '🗄️', text: '4 databases chi tiết' },
+          { icon: '📊', text: 'Google Sheet formulas' },
+          { icon: '📐', text: 'Notion properties' },
+          { icon: '🏆', text: 'Nutrition Score 100đ' },
+        ]}
+        stats={[
+          { value: '4', label: 'Database' },
+          { value: '10', label: 'Formulas' },
+          { value: '15+', label: 'Thực phẩm' },
+        ]}
+        image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+        imageAlt="Data structure"
+        cta="Xem Cấu Trúc Dữ Liệu"
+      />
 
-      {/* ── SAFETY TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-sky-500/20">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1000&q=75&auto=format&fit=crop" alt="Quy tắc an toàn" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-sky-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">An Toàn · Bảo Vệ · Đúng Cách</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-sky-500/30 to-transparent" />
-            </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">🛡️ Quy Tắc An Toàn</h3>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {['20 quy tắc', '3 nhóm người dùng', 'Checklist hằng ngày', 'Dấu hiệu nguy hiểm'].map(tag => (
-                <span key={tag} className="text-xs px-2.5 py-1 rounded-full font-medium bg-sky-500/10 text-sky-300 border border-sky-500/20">{tag}</span>
-              ))}
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-lg">
-              Bộ quy tắc an toàn toàn diện cho dự án Nutrition — phân tầng người dùng xanh/vàng/đỏ, quy tắc năng lượng, macro, bảo quản thực phẩm và checklist tự kiểm tra hằng ngày.
-            </p>
-            <div className="grid grid-cols-3 gap-4 mb-6">
-              {[['20', 'Quy tắc'], ['3', 'Nhóm người dùng'], ['13', 'Câu hỏi tiền meal plan']].map(([n, lbl]) => (
-                <div key={lbl} className="text-center">
-                  <div className="text-2xl font-bold text-sky-400">{n}</div>
-                  <div className="text-xs text-gray-400">{lbl}</div>
-                </div>
-              ))}
-            </div>
-            <Link to="/pillar/b/safety" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all hover:scale-105" style={{ background: 'rgba(14,165,233,0.15)', color: '#0ea5e9', border: '1px solid rgba(14,165,233,0.3)' }}>
-              🛡️ Xem Quy Tắc An Toàn →
-            </Link>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/protein"
+        color="#22c55e" rgb="34,197,94"
+        icon="💪" category="Protein — Nền Tảng Dinh Dưỡng"
+        title="Công Thức Tính Protein" accent="Cá Nhân Hoá"
+        desc="Tính lượng protein theo mục tiêu (giảm mỡ/tăng cơ/sức bền), 12+ nguồn thực phẩm Việt Nam, protein timing tối ưu, máy tính theo dõi hằng ngày và 5 sự thật khoa học về đạm."
+        features={[
+          { icon: '📐', text: 'Công thức g/kg' },
+          { icon: '🍗', text: '12+ nguồn đạm VN' },
+          { icon: '⏰', text: 'Protein timing' },
+          { icon: '🎯', text: 'Tracker hằng ngày' },
+        ]}
+        stats={[
+          { value: '12+', label: 'Nguồn đạm' },
+          { value: '5', label: 'Mục tiêu' },
+          { value: '5', label: 'Timing' },
+        ]}
+        image="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=1200&q=80"
+        imageAlt="Protein foods"
+        cta="Xem Công Thức Protein"
+      />
 
-      {/* ── MEAL PREP TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-indigo-500/20">
-          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&q=75&auto=format&fit=crop" alt="Meal prep 30 phút" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-indigo-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Meal Prep · 30 Phút · 3 Ngày</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[9px] font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 border border-indigo-500/20 rounded-full px-2 py-0.5">⏱️ Batch Cooking</span>
-                </div>
-                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Bộ Meal Prep <span className="text-indigo-400">30 Phút cho 3 Ngày</span></h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">1 lần nấu — 3 ngày ăn chủ động. Timeline 6 bước song song, công thức hộp theo mục tiêu, thực đơn 3 ngày đổi vị, 4 tuần xoay vòng không ngán, checklist mua sắm và an toàn thực phẩm.</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {['Timer 30 Phút', '3 Ngày Thực Đơn', '4 Tuần Xoay', '3 Sốt Chuẩn', 'Shopping List', 'Rescue Combos'].map(f => (
-                    <span key={f} className="text-[9px] font-semibold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-2 py-0.5">{f}</span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/mealprep" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-500 text-bg text-xs font-bold hover:bg-indigo-400 transition-all duration-200 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5">
-                  Bắt Đầu Meal Prep <span>→</span>
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                <div className="text-center">
-                  <div className="text-3xl font-black text-indigo-400">30</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Phút</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-indigo-400">3</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Ngày</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-indigo-400">6</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Hộp</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/formula"
+        color="#84cc16" rgb="132,204,22"
+        icon="📐" category="Công Thức & Tính Toán"
+        title="Công Thức Tính" accent="Meal Plan Cá Nhân"
+        desc="10 bước tính toán đầy đủ: BMI → BMR → TDEE → Kcal mục tiêu → Protein → Fat → Carb → Chia bữa → Lịch luyện tập. Máy tính tương tác 10 bước, biểu đồ macro, calorie cycling theo ngày tập."
+        features={[
+          { icon: '📐', text: '10 bước tính toán' },
+          { icon: '📊', text: 'MacroDonut biểu đồ' },
+          { icon: '🔄', text: 'Calorie cycling' },
+          { icon: '🍽️', text: '3 mô hình bữa ăn' },
+        ]}
+        stats={[
+          { value: '10', label: 'Bước tính' },
+          { value: '3', label: 'Mô hình' },
+          { value: '12+', label: 'Công thức' },
+        ]}
+        image="https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?w=1200&q=80"
+        imageAlt="Formula calculation"
+        cta="Xem Công Thức Chi Tiết"
+      />
 
-      {/* ── TEMPLATE MEAL PLAN TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-rose-500/20">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1000&q=75&auto=format&fit=crop" alt="Template Meal Plan" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-rose-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-rose-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Template Chuẩn · Meal Plan · Cá Nhân Hóa</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-rose-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[9px] font-bold text-rose-500 uppercase tracking-widest bg-rose-500/10 border border-rose-500/20 rounded-full px-2 py-0.5">📋 Standard Template</span>
-                </div>
-                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Template Meal Plan <span className="text-rose-400">Chuẩn Cho Dự Án</span></h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">Bộ template hoàn chỉnh: tính BMR/TDEE, chia macro, cấu trúc đĩa ăn, thư viện món, template 7 ngày, điều chỉnh theo lịch tập, checklist 10 tiêu chí và mẫu báo cáo tuần.</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {['BMR/TDEE Calculator', 'Macro Donut', 'Plate Builder', 'Food Library', '7-day Planner', '10 Tiêu Chí'].map(f => (
-                    <span key={f} className="text-[9px] font-semibold text-rose-300 bg-rose-500/10 border border-rose-500/20 rounded-full px-2 py-0.5">{f}</span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/template" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-500 text-bg text-xs font-bold hover:bg-rose-400 transition-all duration-200 shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:-translate-y-0.5">
-                  Mở Template <span>→</span>
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                <div className="text-center">
-                  <div className="text-3xl font-black text-rose-400">7</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Bước</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-rose-400">10</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Tiêu Chí</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-rose-400">∞</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Cá Nhân</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      {/* ── KẾ HOẠCH THỰC ĐƠN ── */}
+      <TeaserSection label="Kế Hoạch Thực Đơn" count="4 trang" />
 
-      {/* ── DAILY CHECKLIST TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-emerald-500/20">
-          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1000&q=75&auto=format&fit=crop" alt="Daily nutrition checklist" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Công Cụ Hằng Ngày · Checklist</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[9px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-500/10 border border-emerald-500/20 rounded-full px-2 py-0.5">✅ Daily Tracker</span>
-                </div>
-                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Checklist Nutrition <span className="text-emerald-400">Hằng Ngày</span></h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">Không bắt bạn ăn hoàn hảo — chỉ 9 tiêu chí, 100 điểm, 5 câu hỏi mỗi ngày. Chọn loại ngày, theo dõi nước, điểm số tự động, lưu kết quả hàng ngày và hàng tuần.</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {['9 Tiêu Chí', '100 Điểm/Ngày', 'Cá Nhân Hóa B0', 'Water Tracker', '7 Mục Tuần', 'Lưu Offline'].map(f => (
-                    <span key={f} className="text-[9px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-2 py-0.5">{f}</span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/checklist" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 text-bg text-xs font-bold hover:bg-emerald-400 transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5">
-                  Mở Checklist <span>→</span>
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                <div className="text-center">
-                  <div className="text-3xl font-black text-emerald-400">9</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Tiêu Chí</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-emerald-400">100</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Điểm</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-emerald-400">7</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Buổi</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/meals"
+        color="#06b6d4" rgb="6,182,212"
+        icon="🍱" category="Chia Bữa & Đĩa Ăn"
+        title="Quy Tắc Chia Bữa" accent="Cho Toàn Dự Án"
+        desc="4 mô hình bữa ăn, 10 quy tắc vàng, biểu đồ đĩa ăn tương tác, lịch carb theo ngày tập, và máy tính bữa ăn cá nhân hóa từ dữ liệu TDEE của bạn."
+        features={[
+          { icon: '🍽️', text: '4 mô hình bữa' },
+          { icon: '📊', text: 'Đĩa ăn SVG tương tác' },
+          { icon: '📅', text: 'Carb cycling theo ngày' },
+          { icon: '🎯', text: '3 mục tiêu dinh dưỡng' },
+        ]}
+        stats={[
+          { value: '4', label: 'Mô hình' },
+          { value: '10', label: 'Quy tắc' },
+          { value: '3', label: 'Mục tiêu' },
+        ]}
+        image="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80"
+        imageAlt="Meal rules"
+        cta="Xem Quy Tắc Chia Bữa"
+      />
 
-      {/* ── 12-WEEK ROADMAP TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-teal-500/20">
-          <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1000&q=75&auto=format&fit=crop" alt="12-week nutrition roadmap" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-teal-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-teal-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới · Lộ Trình</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-teal-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[9px] font-bold text-teal-500 uppercase tracking-widest bg-teal-500/10 border border-teal-500/20 rounded-full px-2 py-0.5">🗓️ Lộ Trình</span>
-                </div>
-                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Lộ Trình Nutrition <span className="text-teal-400">12 Tuần</span></h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">Từ nhận thức → đĩa ăn → meal prep → cá nhân hóa → phục hồi → tự vận hành. Hệ thống 6 giai đoạn giúp bạn xây thói quen dinh dưỡng bền vững — không diet cực đoan, không đếm từng gram.</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {['6 Giai Đoạn', 'Nutrition Score', 'Cá Nhân Hóa', 'TDEE Calculator', 'Menu Cá Nhân', 'Kế Hoạch 90 Ngày'].map(f => (
-                    <span key={f} className="text-[9px] font-semibold text-teal-300 bg-teal-500/10 border border-teal-500/20 rounded-full px-2 py-0.5">{f}</span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/12week" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-500 text-bg text-xs font-bold hover:bg-teal-400 transition-all duration-200 shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 hover:-translate-y-0.5">
-                  Xem Lộ Trình <span>→</span>
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                <div className="text-center">
-                  <div className="text-3xl font-black text-teal-400">12</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Tuần</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-teal-400">6</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Giai Đoạn</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-teal-400">100</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Điểm/Ngày</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/7day"
+        color="#f97316" rgb="249,115,22"
+        icon="🗓️" category="Thực Đơn Mẫu · 7 Ngày"
+        title="Meal Plan 7 Ngày" accent="Bản Nền Cho Người Mới"
+        desc="35 bữa ăn đầy đủ, danh sách mua sắm tương tác, hướng dẫn meal prep 60–90 phút, checklist hàng ngày và xử lý bữa ăn lỡ tay — cá nhân hóa từ TDEE của bạn."
+        features={[
+          { icon: '🗓️', text: '7 ngày đủ bữa' },
+          { icon: '🛒', text: 'Shopping list tương tác' },
+          { icon: '📦', text: 'Meal prep hướng dẫn' },
+          { icon: '✅', text: 'Checklist hàng ngày' },
+        ]}
+        stats={[
+          { value: '7', label: 'Ngày' },
+          { value: '35', label: 'Bữa' },
+          { value: '5', label: 'Nhóm TP' },
+        ]}
+        image="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80"
+        imageAlt="7-day meal plan"
+        cta="Xem Meal Plan 7 Ngày"
+      />
 
-      {/* ── 24-WEEK ROADMAP TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-amber-500/20">
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-amber-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Lộ Trình Dài Hạn · 24 Tuần</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[9px] font-bold text-amber-500 uppercase tracking-widest bg-amber-500/10 border border-amber-500/20 rounded-full px-2 py-0.5">🗓️ Lộ Trình</span>
-                </div>
-                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Lộ Trình Nutrition <span className="text-amber-400">24 Tuần</span></h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">Từ nhận thức → kiểm soát năng lượng → cá nhân hóa → đời sống thật → tối ưu hiệu suất → tự vận hành. Hệ thống giúp bạn xây thói quen dinh dưỡng bền vững không phụ thuộc vào ý chí.</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {['6 Giai Đoạn', '24 Tuần', 'Habit Score', 'Cá Nhân Hóa B0', 'Meal Prep', 'Tự Vận Hành'].map(f => (
-                    <span key={f} className="text-[9px] font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-full px-2 py-0.5">{f}</span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/24week" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-bg text-xs font-bold hover:opacity-90 transition-all duration-200 shadow-lg"
-                  style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)', boxShadow: '0 8px 24px rgba(245,158,11,0.25)' }}>
-                  Xem Lộ Trình 24 Tuần <span>→</span>
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                <div className="text-center">
-                  <div className="text-3xl font-black text-amber-400">24</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Tuần</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-amber-400">6</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Giai Đoạn</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-amber-400">85+</div>
-                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Điểm Mục Tiêu</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/goal-plan"
+        color="#a855f7" rgb="168,85,247"
+        icon="🎯" category="Cá Nhân Hóa Theo Mục Tiêu"
+        title="Meal Plan Theo" accent="Mục Tiêu Của Bạn"
+        desc="7 hướng dinh dưỡng cho 7 mục tiêu khác nhau: sống khỏe nền, giảm mỡ, tăng cơ, recomp, sức bền, phục hồi, người bận. Máy tính macro cá nhân hóa và khung tuần cụ thể."
+        features={[
+          { icon: '🎯', text: '7 mục tiêu' },
+          { icon: '📐', text: 'Macro calculator' },
+          { icon: '📅', text: 'Khung tuần per goal' },
+          { icon: '⚙️', text: '12 quy tắc điều chỉnh' },
+        ]}
+        stats={[
+          { value: '7', label: 'Mục tiêu' },
+          { value: '12', label: 'Quy tắc' },
+          { value: '5', label: 'Câu hỏi nền' },
+        ]}
+        image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80"
+        imageAlt="Goal-based meal plan"
+        cta="Xem Meal Plan Theo Mục Tiêu"
+      />
 
-      {/* ── ADVANCED PLAN TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-red-500/20">
-          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1000&q=75&auto=format&fit=crop" alt="Advanced training nutrition" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-red-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới · Nâng Cao</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-red-400 mb-2">⚡ Đạp Xe · Gym · Bơi · Chạy Bộ</p>
-                <h3 className="text-2xl font-black text-text mb-2">Plan Nâng Cao<br />Cho Người Tập Nhiều</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  Periodized nutrition cho 4 loại ngày tập, fueling chi tiết từng môn, 7 ngày mẫu, carb cycling chart và macro calculator <span className="text-red-400 font-bold">cá nhân hóa</span> theo cân nặng.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '⚡', text: '4 loại ngày tập' },
-                    { icon: '🚴', text: '4 môn thể thao' },
-                    { icon: '📊', text: 'Carb cycling chart' },
-                    { icon: '💧', text: 'Nước & điện giải' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/advanced-plan"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)' }}>
-                  Xem Plan Nâng Cao →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Loại ngày', value: '4', color: '#ef4444' },
-                  { label: 'Môn thể thao', value: '4', color: '#f97316' },
-                  { label: 'Ngày mẫu', value: '7', color: '#84cc16' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/advanced-plan"
+        color="#ef4444" rgb="239,68,68"
+        icon="⚡" category="Đạp Xe · Gym · Bơi · Chạy Bộ"
+        title="Plan Nâng Cao" accent="Cho Người Tập Nhiều"
+        desc="Periodized nutrition cho 4 loại ngày tập, fueling chi tiết từng môn, 7 ngày mẫu, carb cycling chart và macro calculator cá nhân hóa theo cân nặng."
+        features={[
+          { icon: '⚡', text: '4 loại ngày tập' },
+          { icon: '🚴', text: '4 môn thể thao' },
+          { icon: '📊', text: 'Carb cycling chart' },
+          { icon: '💧', text: 'Nước & điện giải' },
+        ]}
+        stats={[
+          { value: '4', label: 'Loại ngày' },
+          { value: '4', label: 'Môn thể thao' },
+          { value: '7', label: 'Ngày mẫu' },
+        ]}
+        image="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80"
+        imageAlt="Advanced training nutrition"
+        cta="Xem Plan Nâng Cao"
+      />
 
-      {/* ── GOAL PLAN TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-purple-500/20">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1000&q=75&auto=format&fit=crop" alt="Goal-based meal plan" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-purple-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-purple-400 mb-2">🎯 Cá Nhân Hóa Theo Mục Tiêu</p>
-                <h3 className="text-2xl font-black text-text mb-2">Meal Plan Theo<br />Mục Tiêu Của Bạn</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  7 hướng dinh dưỡng cho 7 mục tiêu khác nhau: sống khỏe nền, giảm mỡ, tăng cơ, recomp, sức bền, phục hồi, người bận. Máy tính macro <span className="text-purple-400 font-bold">cá nhân hóa</span> và khung tuần cụ thể.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '🎯', text: '7 mục tiêu' },
-                    { icon: '📐', text: 'Macro calculator' },
-                    { icon: '📅', text: 'Khung tuần per goal' },
-                    { icon: '⚙️', text: '12 quy tắc điều chỉnh' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/goal-plan"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #a855f7, #7c3aed)' }}>
-                  Xem Meal Plan Theo Mục Tiêu →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Mục tiêu', value: '7', color: '#a855f7' },
-                  { label: 'Quy tắc chỉnh', value: '12', color: '#84cc16' },
-                  { label: 'Câu hỏi nền', value: '5', color: '#22c55e' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      {/* ── CÔNG CỤ HẰNG NGÀY ── */}
+      <TeaserSection label="Công Cụ Hằng Ngày" count="4 trang" />
 
-      {/* ── 7-DAY PLAN TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-orange-500/20">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1000&q=75&auto=format&fit=crop" alt="7-day meal plan" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-orange-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-orange-400 mb-2">🗓️ Thực Đơn Mẫu · 7 Ngày</p>
-                <h3 className="text-2xl font-black text-text mb-2">Meal Plan 7 Ngày<br />Bản Nền Cho Người Mới</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  35 bữa ăn đầy đủ, danh sách mua sắm tương tác, hướng dẫn meal prep 60–90 phút, checklist hàng ngày và xử lý <span className="text-orange-400 font-bold">bữa ăn lỡ tay</span> — cá nhân hóa từ TDEE của bạn.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '🗓️', text: '7 ngày đủ bữa' },
-                    { icon: '🛒', text: 'Shopping list tương tác' },
-                    { icon: '📦', text: 'Meal prep hướng dẫn' },
-                    { icon: '✅', text: 'Checklist hàng ngày' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/7day"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #f97316, #ea580c)' }}>
-                  Xem Meal Plan 7 Ngày →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Ngày', value: '7', color: '#f97316' },
-                  { label: 'Bữa', value: '35', color: '#84cc16' },
-                  { label: 'Nhóm TP', value: '5', color: '#22c55e' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/safety"
+        color="#0ea5e9" rgb="14,165,233"
+        icon="🛡️" category="An Toàn · Bảo Vệ · Đúng Cách"
+        title="Quy Tắc An Toàn"
+        desc="Bộ quy tắc an toàn toàn diện cho dự án Nutrition — phân tầng người dùng xanh/vàng/đỏ, quy tắc năng lượng, macro, bảo quản thực phẩm và checklist tự kiểm tra hằng ngày."
+        features={[
+          { icon: '🚦', text: '3 nhóm người dùng' },
+          { icon: '📋', text: '20 quy tắc chi tiết' },
+          { icon: '✅', text: 'Checklist hằng ngày' },
+          { icon: '🚨', text: 'Dấu hiệu nguy hiểm' },
+        ]}
+        stats={[
+          { value: '20', label: 'Quy tắc' },
+          { value: '3', label: 'Nhóm ND' },
+          { value: '13', label: 'Câu hỏi' },
+        ]}
+        image="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80"
+        imageAlt="Safety rules"
+        cta="Xem Quy Tắc An Toàn"
+      />
 
-      {/* ── MEAL RULES TEASER ── */}
-      <RevealBlock className="mb-12">
-        <div className="relative rounded-3xl overflow-hidden border border-cyan-500/20">
-          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&q=75&auto=format&fit=crop" alt="Meal rules" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
-          <div className="relative p-7 md:p-9">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
-              <span className="text-[9px] font-bold text-cyan-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Trang Con Mới</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-cyan-400 mb-2">🍱 Chia Bữa & Đĩa Ăn</p>
-                <h3 className="text-2xl font-black text-text mb-2">Quy Tắc Chia Bữa<br />Cho Toàn Dự Án</h3>
-                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-md">
-                  4 mô hình bữa ăn, 10 quy tắc vàng, biểu đồ đĩa ăn tương tác, lịch carb theo ngày tập, và máy tính bữa ăn <span className="text-cyan-400 font-bold">cá nhân hóa</span> từ dữ liệu TDEE của bạn.
-                </p>
-                <div className="flex flex-wrap gap-3 text-[9px] text-muted mb-5">
-                  {[
-                    { icon: '🍽️', text: '4 mô hình bữa' },
-                    { icon: '📊', text: 'Đĩa ăn SVG tương tác' },
-                    { icon: '📅', text: 'Carb cycling theo ngày' },
-                    { icon: '🎯', text: '3 mục tiêu dinh dưỡng' },
-                  ].map((f, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border/20 bg-surface/20">
-                      <span>{f.icon}</span>{f.text}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/pillar/b/meals"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-all duration-200"
-                  style={{ background: 'linear-gradient(135deg, #06b6d4, #0891b2)' }}>
-                  Xem Quy Tắc Chia Bữa →
-                </Link>
-              </div>
-              <div className="flex gap-4 shrink-0">
-                {[
-                  { label: 'Mô hình', value: '4', color: '#06b6d4' },
-                  { label: 'Quy tắc', value: '10', color: '#84cc16' },
-                  { label: 'Mục tiêu', value: '3', color: '#22c55e' },
-                ].map((s, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
-                    <p className="text-[8px] text-muted uppercase tracking-wider mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </RevealBlock>
+      <TeaserCard
+        to="/pillar/b/checklist"
+        color="#10b981" rgb="16,185,129"
+        icon="✅" category="Daily Tracker"
+        title="Checklist Nutrition" accent="Hằng Ngày"
+        desc="Không bắt bạn ăn hoàn hảo — chỉ 9 tiêu chí, 100 điểm, 5 câu hỏi mỗi ngày. Chọn loại ngày, theo dõi nước, điểm số tự động, lưu kết quả hàng ngày và hàng tuần."
+        features={[
+          { icon: '📊', text: '9 tiêu chí' },
+          { icon: '💯', text: '100 điểm/ngày' },
+          { icon: '💧', text: 'Water tracker' },
+          { icon: '💾', text: 'Lưu offline' },
+        ]}
+        stats={[
+          { value: '9', label: 'Tiêu chí' },
+          { value: '100', label: 'Điểm' },
+          { value: '7', label: 'Buổi' },
+        ]}
+        image="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&q=80"
+        imageAlt="Daily nutrition checklist"
+        cta="Mở Checklist"
+      />
+
+      <TeaserCard
+        to="/pillar/b/template"
+        color="#f43f5e" rgb="244,63,94"
+        icon="📋" category="Standard Template"
+        title="Template Meal Plan" accent="Chuẩn Cho Dự Án"
+        desc="Bộ template hoàn chỉnh: tính BMR/TDEE, chia macro, cấu trúc đĩa ăn, thư viện món, template 7 ngày, điều chỉnh theo lịch tập, checklist 10 tiêu chí và mẫu báo cáo tuần."
+        features={[
+          { icon: '⚙️', text: 'BMR/TDEE Calculator' },
+          { icon: '🍩', text: 'Macro Donut' },
+          { icon: '🍽️', text: 'Plate Builder' },
+          { icon: '📅', text: '7-day Planner' },
+        ]}
+        stats={[
+          { value: '7', label: 'Bước' },
+          { value: '10', label: 'Tiêu chí' },
+          { value: '∞', label: 'Cá nhân' },
+        ]}
+        image="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80"
+        imageAlt="Template meal plan"
+        cta="Mở Template"
+      />
+
+      <TeaserCard
+        to="/pillar/b/mealprep"
+        color="#6366f1" rgb="99,102,241"
+        icon="⏱️" category="Batch Cooking"
+        title="Bộ Meal Prep" accent="30 Phút cho 3 Ngày"
+        desc="1 lần nấu — 3 ngày ăn chủ động. Timeline 6 bước song song, công thức hộp theo mục tiêu, thực đơn 3 ngày đổi vị, 4 tuần xoay vòng không ngán, checklist mua sắm và an toàn thực phẩm."
+        features={[
+          { icon: '⏱️', text: 'Timer 30 phút' },
+          { icon: '📦', text: '3 ngày thực đơn' },
+          { icon: '🔄', text: '4 tuần xoay vòng' },
+          { icon: '🍲', text: '3 sốt chuẩn' },
+        ]}
+        stats={[
+          { value: '30', label: 'Phút' },
+          { value: '3', label: 'Ngày' },
+          { value: '6', label: 'Hộp' },
+        ]}
+        image="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80"
+        imageAlt="Meal prep 30 phút"
+        cta="Bắt Đầu Meal Prep"
+      />
+
+      {/* ── LỘ TRÌNH ── */}
+      <TeaserSection label="Lộ Trình Dài Hạn" count="2 trang" />
+
+      <TeaserCard
+        to="/pillar/b/12week"
+        color="#14b8a6" rgb="20,184,166"
+        icon="🗓️" category="Lộ Trình · 12 Tuần"
+        title="Lộ Trình Nutrition" accent="12 Tuần"
+        desc="Từ nhận thức → đĩa ăn → meal prep → cá nhân hóa → phục hồi → tự vận hành. Hệ thống 6 giai đoạn giúp bạn xây thói quen dinh dưỡng bền vững — không diet cực đoan, không đếm từng gram."
+        features={[
+          { icon: '📈', text: '6 giai đoạn' },
+          { icon: '🏆', text: 'Nutrition Score' },
+          { icon: '🎯', text: 'Cá nhân hóa' },
+          { icon: '📅', text: 'Kế hoạch 90 ngày' },
+        ]}
+        stats={[
+          { value: '12', label: 'Tuần' },
+          { value: '6', label: 'Giai đoạn' },
+          { value: '100', label: 'Điểm/ngày' },
+        ]}
+        image="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1200&q=80"
+        imageAlt="12-week nutrition roadmap"
+        cta="Xem Lộ Trình"
+      />
+
+      <TeaserCard
+        to="/pillar/b/24week"
+        color="#f59e0b" rgb="245,158,11"
+        icon="🗓️" category="Lộ Trình Dài Hạn · 24 Tuần"
+        title="Lộ Trình Nutrition" accent="24 Tuần"
+        desc="Từ nhận thức → kiểm soát năng lượng → cá nhân hóa → đời sống thật → tối ưu hiệu suất → tự vận hành. Hệ thống giúp bạn xây thói quen dinh dưỡng bền vững không phụ thuộc vào ý chí."
+        features={[
+          { icon: '📈', text: '6 giai đoạn' },
+          { icon: '📊', text: 'Habit Score' },
+          { icon: '🎯', text: 'Cá nhân hóa B0' },
+          { icon: '🤖', text: 'Tự vận hành' },
+        ]}
+        stats={[
+          { value: '24', label: 'Tuần' },
+          { value: '6', label: 'Giai đoạn' },
+          { value: '85+', label: 'Điểm MĐ' },
+        ]}
+        image="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?w=1200&q=80"
+        imageAlt="24-week nutrition roadmap"
+        cta="Xem Lộ Trình 24 Tuần"
+      />
 
       {/* ══════════════════════════════════════════════════════════════════════
           SAFETY NOTE

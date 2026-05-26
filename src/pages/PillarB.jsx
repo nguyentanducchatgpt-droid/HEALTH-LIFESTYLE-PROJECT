@@ -769,7 +769,7 @@ const ACTIVITY_LEVELS = [
 const GOAL_MODIFIERS = [
   { key: 'loss',   label: 'Giảm mỡ',  delta: -400, color: '#f97316', note: 'Thâm hụt 300–500 kcal' },
   { key: 'recomp', label: 'Duy trì',  delta:    0, color: '#84cc16', note: 'Ăn quanh TDEE ± 100'  },
-  { key: 'gain',   label: 'Tăng cơ',  delta: +250, color: '#22c55e', note: 'Thặng dư 150–300 kcal' },
+  { key: 'gain',   label: 'Tăng cơ',  delta: +300, color: '#22c55e', note: 'Thặng dư 200–400 kcal' },
 ];
 // Bidirectional mapping: goalKey (B0/B1) ↔ activeGoal id (B3)
 const GOAL_KEY_TO_ID = { loss: 'fat-loss', gain: 'muscle-gain', recomp: 'maintenance' };
@@ -1859,7 +1859,7 @@ function FoundationPanel({ s, onGoalKeyChange }) {
           <div className="px-4 pb-4 grid grid-cols-3 gap-3">
             {TDEE_MODES.map(m => {
               const isActive = previewGoalKey === m.goalKey;
-              const DELTAS = { loss: -400, recomp: 0, gain: 250 };
+              const DELTAS = { loss: -400, recomp: 0, gain: 300 };
               const kcal = s.tdee + DELTAS[m.goalKey];
               return (
                 <button key={m.goalKey} type="button"
@@ -2499,7 +2499,7 @@ function b3MetricDetail(key, s) {
 
 const GOAL_PREVIEW_MAP = {
   'fat-loss':    { delta: -400, proteinMult: 2.0, sign: '−', kLabel: 'Thâm hụt' },
-  'muscle-gain': { delta: +250, proteinMult: 1.8, sign: '+', kLabel: 'Thặng dư' },
+  'muscle-gain': { delta: +300, proteinMult: 1.8, sign: '+', kLabel: 'Thặng dư' },
   'endurance':   { delta: 0,    proteinMult: 1.5, sign: '±', kLabel: 'Cân bằng' },
   'maintenance': { delta: 0,    proteinMult: 1.7, sign: '±', kLabel: 'Cân bằng' },
 };

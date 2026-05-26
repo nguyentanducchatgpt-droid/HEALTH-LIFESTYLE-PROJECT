@@ -10,7 +10,7 @@ const ACTIVITY_LEVELS = [
   { key: 'light',      label: 'Nhẹ',            sub: '1–2 ngày/tuần',          mult: 1.375 },
   { key: 'moderate',   label: 'Vừa phải',       sub: '3–5 ngày/tuần',          mult: 1.55  },
   { key: 'active',     label: 'Năng động',      sub: '6–7 ngày/tuần',          mult: 1.725 },
-  { key: 'veryactive', label: 'Rất năng động',  sub: 'Tập 2 lần/ngày',         mult: 1.9   },
+  { key: 'very_active', label: 'Rất năng động',  sub: 'Tập 2 lần/ngày',         mult: 1.9   },
 ];
 
 const GOAL_MODIFIERS = [

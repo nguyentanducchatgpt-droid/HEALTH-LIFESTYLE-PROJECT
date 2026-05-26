@@ -46,14 +46,16 @@ function RevealBlock({ children, className = '', delay = 0 }) {
 
 /* ── B0 personalized ── */
 const B0_KEY = 'healthapp_b0_inputs';
-const ACT_C = { sedentary: 1.2, light: 1.375, moderate: 1.55, heavy: 1.725, athlete: 1.9 };
-const GOAL_C = { maintain: 1, lose_light: 0.9, lose: 0.825, gain: 1.075, athlete: 1.1 };
+const ACT_C = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, very_active: 1.9 };
+const GOAL_DELTA = { loss: -400, recomp: 0, gain: 300 };
+const GOAL_BOX = { loss: 'lose', recomp: 'maintain', gain: 'gain' };
 function calcB0(inp) {
-  const w = +inp.weight || 70, h = +inp.height || 170, a = +inp.age || 30;
-  const bmr = inp.sex === 'female' ? 10 * w + 6.25 * h - 5 * a - 161 : 10 * w + 6.25 * h - 5 * a + 5;
-  const tdee = bmr * (ACT_C[inp.activity] || 1.55);
-  const kcal = Math.round(tdee * (GOAL_C[inp.goal] || 1));
-  return { w, kcal, protein: Math.round(w * (inp.goal === 'lose' ? 2 : 1.6)), goal: inp.goal || 'maintain' };
+  const w = +inp.weight || 70, h = +inp.height || 170, age = +inp.age || 30;
+  const bmr = inp.sex === 'female' ? 10 * w + 6.25 * h - 5 * age - 161 : 10 * w + 6.25 * h - 5 * age + 5;
+  const tdee = bmr * (ACT_C[inp.activityKey] || 1.55);
+  const goalKey = inp.goalKey || 'recomp';
+  const kcal = Math.round(tdee + (GOAL_DELTA[goalKey] ?? 0));
+  return { w, kcal, protein: Math.round(w * (goalKey === 'loss' || goalKey === 'gain' ? 2.0 : 1.6)), goal: GOAL_BOX[goalKey] || 'maintain' };
 }
 
 /* ── timer steps ── */

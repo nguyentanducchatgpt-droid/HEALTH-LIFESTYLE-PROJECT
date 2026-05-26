@@ -48,16 +48,18 @@ function RevealBlock({ children, className = '' }) {
 }
 
 /* ─── B0 helpers ─── */
+const ACT_MULT = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, very_active: 1.9 };
+const GOAL_KEY_MAP = { loss: 'loss', recomp: 'recomp', gain: 'gain' };
 function computeStats(inp, goalOverride) {
-  const w = Number(inp.w) || 65;
-  const h = Number(inp.h) || 170;
-  const a = Number(inp.a) || 1.55;
+  const w = Number(inp.weight || inp.w) || 65;
+  const h = Number(inp.height || inp.h) || 170;
+  const a = ACT_MULT[inp.activityKey] || Number(inp.a) || 1.55;
   const age = Number(inp.age) || 30;
-  const bmr = (inp.sx || 'male') === 'female'
+  const bmr = (inp.sex || inp.sx || 'male') === 'female'
     ? 10 * w + 6.25 * h - 5 * age - 161
     : 10 * w + 6.25 * h - 5 * age + 5;
   const tdee = Math.round(bmr * a);
-  const g = goalOverride || inp.goal || 'recomp';
+  const g = goalOverride || GOAL_KEY_MAP[inp.goalKey] || inp.goal || 'recomp';
   const kcalMap = {
     healthy: Math.round(tdee * 0.97),
     loss: Math.round(tdee * 0.82),

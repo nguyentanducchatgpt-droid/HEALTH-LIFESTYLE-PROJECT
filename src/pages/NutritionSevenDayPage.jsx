@@ -48,15 +48,17 @@ function RevealBlock({ children, className = '' }) {
 }
 
 /* ─── B0 helpers ─── */
+const ACT_MULT = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, very_active: 1.9 };
 function computeStats(inp) {
-  const w = Number(inp.w) || 65;
-  const h = Number(inp.h) || 170;
-  const a = Number(inp.a) || 1.55;
-  const bmr = (inp.sx || 'male') === 'female'
-    ? 10 * w + 6.25 * h - 5 * 30 - 161
-    : 10 * w + 6.25 * h - 5 * 30 + 5;
+  const w = Number(inp.weight || inp.w) || 65;
+  const h = Number(inp.height || inp.h) || 170;
+  const a = ACT_MULT[inp.activityKey] || Number(inp.a) || 1.55;
+  const age = Number(inp.age) || 30;
+  const bmr = (inp.sex || inp.sx || 'male') === 'female'
+    ? 10 * w + 6.25 * h - 5 * age - 161
+    : 10 * w + 6.25 * h - 5 * age + 5;
   const tdee = bmr * a;
-  const goal = inp.goal || 'healthy';
+  const goal = inp.goalKey || inp.goal || 'healthy';
   const targetKcal = goal === 'loss' ? tdee * 0.82 : goal === 'gain' ? tdee * 1.08 : tdee * 0.97;
   const proteinG = w * (goal === 'loss' || goal === 'gain' ? 2.0 : 1.4);
   const fatG = (targetKcal * 0.28) / 9;

@@ -7373,6 +7373,52 @@ export default function PillarB() {
         </div>
       </RevealBlock>
 
+      {/* ── MEAL PREP TEASER ── */}
+      <RevealBlock className="mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-indigo-500/20">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&q=75&auto=format&fit=crop" alt="Meal prep 30 phút" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 to-bg/30" />
+          <div className="relative p-7 md:p-9">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
+              <span className="text-[9px] font-bold text-indigo-400 uppercase tracking-[0.2em] whitespace-nowrap px-3">Meal Prep · 30 Phút · 3 Ngày</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[9px] font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 border border-indigo-500/20 rounded-full px-2 py-0.5">⏱️ Batch Cooking</span>
+                </div>
+                <h3 className="text-2xl font-black text-text mb-2 leading-tight">Bộ Meal Prep <span className="text-indigo-400">30 Phút cho 3 Ngày</span></h3>
+                <p className="text-[10px] text-muted leading-relaxed mb-4 max-w-lg">1 lần nấu — 3 ngày ăn chủ động. Timeline 6 bước song song, công thức hộp theo mục tiêu, thực đơn 3 ngày đổi vị, 4 tuần xoay vòng không ngán, checklist mua sắm và an toàn thực phẩm.</p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {['Timer 30 Phút', '3 Ngày Thực Đơn', '4 Tuần Xoay', '3 Sốt Chuẩn', 'Shopping List', 'Rescue Combos'].map(f => (
+                    <span key={f} className="text-[9px] font-semibold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-2 py-0.5">{f}</span>
+                  ))}
+                </div>
+                <Link to="/pillar/b/mealprep" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-500 text-bg text-xs font-bold hover:bg-indigo-400 transition-all duration-200 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5">
+                  Bắt Đầu Meal Prep <span>→</span>
+                </Link>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                <div className="text-center">
+                  <div className="text-3xl font-black text-indigo-400">30</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Phút</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-indigo-400">3</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Ngày</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-black text-indigo-400">6</div>
+                  <div className="text-[9px] text-muted uppercase tracking-widest mt-0.5">Hộp</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
+
       {/* ── TEMPLATE MEAL PLAN TEASER ── */}
       <RevealBlock className="mb-12">
         <div className="relative rounded-3xl overflow-hidden border border-rose-500/20">

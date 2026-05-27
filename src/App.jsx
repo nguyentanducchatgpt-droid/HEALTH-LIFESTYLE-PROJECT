@@ -63,6 +63,17 @@ import HealthCheckupPage from './pages/HealthCheckupPage';
 import HealthAssessmentPage from './pages/HealthAssessmentPage';
 import HealthRoadmapPage from './pages/HealthRoadmapPage';
 import PillarF from './pages/PillarF';
+import ToolsChecklistPage from './pages/ToolsChecklistPage';
+import ToolsWorkoutLogPage from './pages/ToolsWorkoutLogPage';
+import ToolsMealPlanPage from './pages/ToolsMealPlanPage';
+import ToolsLifestyleTrackerPage from './pages/ToolsLifestyleTrackerPage';
+import ToolsMindTrackerPage from './pages/ToolsMindTrackerPage';
+import ToolsHealthScorePage from './pages/ToolsHealthScorePage';
+import ToolsQuickWorkoutsPage from './pages/ToolsQuickWorkoutsPage';
+import ToolsMealPrepPage from './pages/ToolsMealPrepPage';
+import ToolsResetProtocolPage from './pages/ToolsResetProtocolPage';
+import ToolsProgressTestPage from './pages/ToolsProgressTestPage';
+import ToolsRoadmapPage from './pages/ToolsRoadmapPage';
 import VideoLibrary from './pages/VideoLibrary';
 import Program from './pages/Program';
 import SamplePrograms from './pages/SamplePrograms';
@@ -155,6 +166,17 @@ export default function App() {
           <Route path="/pillar/e/assessment" element={<HealthAssessmentPage />} />
           <Route path="/pillar/e/roadmap" element={<HealthRoadmapPage />} />
           <Route path="/pillar/f" element={<PillarF />} />
+          <Route path="/pillar/f/checklist" element={<ToolsChecklistPage />} />
+          <Route path="/pillar/f/workout-log" element={<ToolsWorkoutLogPage />} />
+          <Route path="/pillar/f/meal-plan" element={<ToolsMealPlanPage />} />
+          <Route path="/pillar/f/lifestyle-tracker" element={<ToolsLifestyleTrackerPage />} />
+          <Route path="/pillar/f/mind-tracker" element={<ToolsMindTrackerPage />} />
+          <Route path="/pillar/f/health-score" element={<ToolsHealthScorePage />} />
+          <Route path="/pillar/f/quick-workouts" element={<ToolsQuickWorkoutsPage />} />
+          <Route path="/pillar/f/meal-prep" element={<ToolsMealPrepPage />} />
+          <Route path="/pillar/f/reset-protocol" element={<ToolsResetProtocolPage />} />
+          <Route path="/pillar/f/progress-test" element={<ToolsProgressTestPage />} />
+          <Route path="/pillar/f/roadmap" element={<ToolsRoadmapPage />} />
           <Route path="/program" element={<Program />} />
           <Route path="/sample-programs" element={<SamplePrograms />} />
           <Route path="/videos" element={<VideoLibrary />} />

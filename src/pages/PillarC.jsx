@@ -266,7 +266,7 @@ export default function PillarC() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillars" className="inline-flex items-center gap-2 text-muted text-sm mb-8 hover:text-teal-400 transition-colors">
-        ← 6 Trụ Cột
+        ← Sống Khỏe 360
       </Link>
 
       {/* Hero */}
@@ -864,7 +864,7 @@ export default function PillarC() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border">
-        <Link to="/pillars" className="text-muted hover:text-teal-400 transition-colors text-sm">← Về 6 Trụ Cột</Link>
+        <Link to="/pillars" className="text-muted hover:text-teal-400 transition-colors text-sm">← Sống Khỏe 360</Link>
       </div>
     </div>
   );

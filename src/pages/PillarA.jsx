@@ -540,7 +540,7 @@ export default function PillarA() {
           className="inline-flex items-center gap-2 text-muted hover:text-accent text-sm transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          6 Trụ Cột
+          Sống Khỏe 360
         </Link>
       </div>
 

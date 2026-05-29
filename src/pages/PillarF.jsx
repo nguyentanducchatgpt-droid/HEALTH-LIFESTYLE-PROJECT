@@ -683,7 +683,7 @@ export default function PillarF() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillars" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← 6 Trụ Cột</Link>
+      <Link to="/pillars" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Sống Khỏe 360</Link>
 
       {/* Hero */}
       <div className="flex items-start gap-6 mb-10 relative">

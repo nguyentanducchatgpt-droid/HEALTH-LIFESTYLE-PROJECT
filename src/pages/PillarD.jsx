@@ -458,6 +458,30 @@ export default function PillarD() {
           animation: ${t.frame}Spin 4s linear infinite;
         }
       `).join('')}
+      @keyframes pdTitleShimmer {
+        0%   { background-position: -300% center; }
+        100% { background-position: 300% center; }
+      }
+      @keyframes pdCalmBreathe {
+        0%, 100% { filter: drop-shadow(0 0 5px rgba(168,85,247,0.3)) drop-shadow(0 0 12px rgba(192,132,252,0.2)); letter-spacing: 0em; }
+        50%       { filter: drop-shadow(0 0 16px rgba(168,85,247,0.8)) drop-shadow(0 0 32px rgba(216,180,254,0.4)); letter-spacing: 0.02em; }
+      }
+      .pd-title-mind {
+        background: linear-gradient(90deg,
+          #ffffff 0%, #ffffff 22%,
+          #c084fc 38%, #a855f7 50%, #d8b4fe 60%,
+          #ffffff 76%, #ffffff 100%
+        );
+        background-size: 320% auto;
+        -webkit-background-clip: text; background-clip: text;
+        -webkit-text-fill-color: transparent; color: transparent;
+        animation: pdTitleShimmer 8s ease-in-out infinite;
+      }
+      .pd-title-calm {
+        -webkit-text-fill-color: #e9d5ff; color: #e9d5ff;
+        display: inline-block;
+        animation: pdCalmBreathe 4s ease-in-out infinite;
+      }
     `;
     document.head.appendChild(style);
     return () => document.getElementById(ORBIT_ID)?.remove();
@@ -486,7 +510,9 @@ export default function PillarD() {
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${PURPLE_RGB},0.06)` }} />
         <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)` }}>🧘</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Tâm Trí An Nhiên</h1>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+            <span className="pd-title-mind">Tâm Trí </span><span className="pd-title-calm">An Nhiên</span>
+          </h1>
           <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: PURPLE, background: `rgba(${PURPLE_RGB},0.1)`, borderColor: `rgba(${PURPLE_RGB},0.2)` }}>Trụ Cột D · Mind & Calm</span>
           <p className="text-muted text-base leading-relaxed max-w-2xl">An nhiên không phải là không có áp lực. An nhiên là biết dừng lại, thở, nhìn rõ vấn đề, chọn một bước nhỏ và tiếp tục. Không cần trở thành người luôn bình tĩnh — chỉ cần biết cách quay lại trạng thái ổn định nhanh hơn.</p>
         </div>

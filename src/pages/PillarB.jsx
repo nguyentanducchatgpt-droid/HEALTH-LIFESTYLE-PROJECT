@@ -6866,6 +6866,30 @@ export default function PillarB() {
       .pb-frame-5 { background: conic-gradient(from var(--pbt0), rgba(139,92,246,0.28) 0deg, rgba(139,92,246,0.28) 353deg, rgba(139,92,246,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(139,92,246,0.55) 361deg, rgba(139,92,246,0.28) 363deg, rgba(139,92,246,0.28) 360deg); animation: pbt0Spin 3.7s linear infinite; }
       .pb-frame-6 { background: conic-gradient(from var(--pbt1), rgba(236,72,153,0.28) 0deg, rgba(236,72,153,0.28) 353deg, rgba(236,72,153,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(236,72,153,0.55) 361deg, rgba(236,72,153,0.28) 363deg, rgba(236,72,153,0.28) 360deg); animation: pbt1Spin 4.6s linear infinite; }
       .pb-frame-7 { background: conic-gradient(from var(--pbt2), rgba(245,158,11,0.28) 0deg, rgba(245,158,11,0.28) 353deg, rgba(245,158,11,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(245,158,11,0.55) 361deg, rgba(245,158,11,0.28) 363deg, rgba(245,158,11,0.28) 360deg); animation: pbt2Spin 3.9s linear infinite; }
+      @keyframes pbTitleShimmer {
+        0%   { background-position: -280% center; }
+        100% { background-position: 280% center; }
+      }
+      @keyframes pbAmpBounce {
+        0%, 100% { filter: drop-shadow(0 0 6px rgba(132,204,22,0.4)) drop-shadow(0 0 14px rgba(200,230,60,0.3)); transform: scaleY(1); }
+        50%       { filter: drop-shadow(0 0 18px rgba(132,204,22,1)) drop-shadow(0 0 32px rgba(200,230,60,0.6)); transform: scaleY(1.08); }
+      }
+      .pb-title-word {
+        background: linear-gradient(90deg,
+          #ffffff 0%, #ffffff 25%,
+          #bef264 40%, #84cc16 50%, #a3e635 58%,
+          #ffffff 73%, #ffffff 100%
+        );
+        background-size: 320% auto;
+        -webkit-background-clip: text; background-clip: text;
+        -webkit-text-fill-color: transparent; color: transparent;
+        animation: pbTitleShimmer 6s linear infinite;
+      }
+      .pb-title-amp {
+        -webkit-text-fill-color: #a3e635; color: #a3e635;
+        display: inline-block;
+        animation: pbAmpBounce 2.8s ease-in-out infinite;
+      }
     `;
     document.head.appendChild(s);
   }, []);
@@ -6927,8 +6951,13 @@ export default function PillarB() {
             🥗
           </div>
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
-              {tPillars('pillarB.title')}
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+              {(() => {
+                const s = tPillars('pillarB.title');
+                const i = s.indexOf('&');
+                if (i === -1) return <span className="pb-title-word">{s}</span>;
+                return (<><span className="pb-title-word">{s.slice(0, i)}</span><span className="pb-title-amp">&</span><span className="pb-title-word">{s.slice(i + 1)}</span></>);
+              })()}
             </h1>
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-lime-400 mt-3 mb-4 px-3 py-1 bg-lime-500/10 border border-lime-500/20 rounded-full">
               {tPillars('pillarB.subtitle')}

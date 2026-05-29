@@ -21,6 +21,30 @@ const ORBIT_CSS = `
   }
   @keyframes pb-frame-f0 { 0%,100% { border-color: rgba(249,115,22,0.15); } 50% { border-color: rgba(249,115,22,0.45); } }
   @keyframes pb-frame-f1 { 0%,100% { border-color: rgba(249,115,22,0.15); } 50% { border-color: rgba(249,115,22,0.4); } }
+  @keyframes pfTitleShimmer {
+    0%   { background-position: -280% center; }
+    100% { background-position: 280% center; }
+  }
+  @keyframes pfAmpFire {
+    0%, 100% { filter: drop-shadow(0 0 6px rgba(249,115,22,0.5)) drop-shadow(0 0 14px rgba(251,146,60,0.3)); transform: rotate(-3deg) scale(1); }
+    50%       { filter: drop-shadow(0 0 20px rgba(249,115,22,1)) drop-shadow(0 0 36px rgba(253,186,116,0.6)); transform: rotate(3deg) scale(1.12); }
+  }
+  .pf-title-word {
+    background: linear-gradient(90deg,
+      #ffffff 0%, #ffffff 22%,
+      #fdba74 36%, #f97316 48%, #fbbf24 57%, #fb923c 65%,
+      #ffffff 80%, #ffffff 100%
+    );
+    background-size: 310% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+    animation: pfTitleShimmer 5.5s linear infinite;
+  }
+  .pf-title-amp {
+    -webkit-text-fill-color: #fb923c; color: #fb923c;
+    display: inline-block;
+    animation: pfAmpFire 2s ease-in-out infinite;
+  }
 `;
 
 const TABS = [
@@ -690,7 +714,13 @@ export default function PillarF() {
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🛠️</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Công Cụ & Tài Nguyên</h1>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+            {(() => {
+              const s = 'Công Cụ & Tài Nguyên';
+              const i = s.indexOf('&');
+              return (<><span className="pf-title-word">{s.slice(0, i)}</span><span className="pf-title-amp">&</span><span className="pf-title-word">{s.slice(i + 1)}</span></>);
+            })()}
+          </h1>
           <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Trụ Cột F · Hệ thống vận hành sức khỏe cá nhân
           </span>

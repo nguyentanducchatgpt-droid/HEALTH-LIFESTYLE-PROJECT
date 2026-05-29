@@ -461,6 +461,31 @@ export default function PillarE() {
         @keyframes peFSpin${i} { to { --pe-fa-${i}: 360deg; } }
         .${t.frameClass} { background: conic-gradient(from var(--pe-fa-${i}), transparent 0deg, transparent 70deg, rgba(${t.rgb},0.5) 85deg, rgba(255,255,255,0.8) 90deg, rgba(${t.rgb},0.5) 95deg, transparent 110deg, transparent 360deg); animation: peFSpin${i} 4s linear infinite; }
       `).join('')}
+      @keyframes peScanMove {
+        0%   { background-position: -350% center; }
+        100% { background-position: 350% center; }
+      }
+      @keyframes pePulse {
+        0%, 100% { filter: drop-shadow(0 0 4px rgba(59,130,246,0.35)) drop-shadow(0 0 10px rgba(96,165,250,0.2)); }
+        40%       { filter: drop-shadow(0 0 14px rgba(59,130,246,0.8)) drop-shadow(0 0 28px rgba(147,197,253,0.5)); }
+        60%       { filter: drop-shadow(0 0 14px rgba(59,130,246,0.8)) drop-shadow(0 0 28px rgba(147,197,253,0.5)); }
+      }
+      .pe-title-know {
+        background: linear-gradient(90deg,
+          #ffffff 0%, #ffffff 20%,
+          #93c5fd 35%, #3b82f6 46%, #67e8f9 54%, #93c5fd 63%,
+          #ffffff 78%, #ffffff 100%
+        );
+        background-size: 360% auto;
+        -webkit-background-clip: text; background-clip: text;
+        -webkit-text-fill-color: transparent; color: transparent;
+        animation: peScanMove 5s linear infinite;
+      }
+      .pe-title-health {
+        -webkit-text-fill-color: #93c5fd; color: #93c5fd;
+        display: inline-block;
+        animation: pePulse 2.5s ease-in-out infinite;
+      }
     `;
     document.head.appendChild(s);
     return () => { const el = document.getElementById(ORBIT_ID); if (el) el.remove(); };
@@ -476,7 +501,9 @@ export default function PillarE() {
         <div className="absolute -top-8 -left-8 w-72 h-72 rounded-full blur-3xl pointer-events-none" style={{ background: `${COLOR}07` }} />
         <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}25` }}>🏥</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Kiến Thức Sức Khỏe</h1>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+            <span className="pe-title-know">Kiến Thức </span><span className="pe-title-health">Sức Khỏe</span>
+          </h1>
           <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>Trụ Cột E · Health Literacy</span>
           <p className="text-muted text-base leading-relaxed max-w-2xl">Hiểu cơ thể mình bằng ngôn ngữ đơn giản — biết theo dõi chỉ số quan trọng, nhận ra dấu hiệu nguy hiểm và ra quyết định chăm sóc sức khỏe an toàn hơn mỗi ngày.</p>
           <div className="flex flex-wrap gap-6 mt-6">

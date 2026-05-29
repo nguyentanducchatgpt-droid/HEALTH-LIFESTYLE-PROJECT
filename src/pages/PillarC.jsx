@@ -245,6 +245,29 @@ export default function PillarC() {
           border-radius: 1rem; padding: 1.5px;
         }
       `).join('')}
+      @keyframes pcTitleWave {
+        0%   { background-position: -300% center; }
+        100% { background-position: 300% center; }
+      }
+      @keyframes pcKeyGlow {
+        0%, 100% { filter: drop-shadow(0 0 6px rgba(20,184,166,0.4)); opacity: 0.9; }
+        50%       { filter: drop-shadow(0 0 20px rgba(20,184,166,0.9)) drop-shadow(0 0 36px rgba(94,234,212,0.4)); opacity: 1; }
+      }
+      .pc-title-main {
+        background: linear-gradient(90deg,
+          #ffffff 0%, #ffffff 28%,
+          #5eead4 43%, #14b8a6 52%, #2dd4bf 60%,
+          #ffffff 75%, #ffffff 100%
+        );
+        background-size: 330% auto;
+        -webkit-background-clip: text; background-clip: text;
+        -webkit-text-fill-color: transparent; color: transparent;
+        animation: pcTitleWave 7s linear infinite;
+      }
+      .pc-title-key {
+        -webkit-text-fill-color: #2dd4bf; color: #2dd4bf;
+        animation: pcKeyGlow 3s ease-in-out infinite;
+      }
     `;
     document.head.appendChild(s);
     return () => { const el = document.getElementById(id); if (el) el.remove(); };
@@ -278,8 +301,8 @@ export default function PillarC() {
           🌿
         </div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
-            Lối Sống Khỏe
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+            <span className="pc-title-main">Lối Sống </span><span className="pc-title-key">Khỏe</span>
           </h1>
           <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: TEAL, background: `rgba(${TEAL_RGB},0.1)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>

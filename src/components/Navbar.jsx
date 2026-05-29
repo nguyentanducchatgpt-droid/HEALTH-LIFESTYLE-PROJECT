@@ -51,8 +51,9 @@ export default function Navbar() {
         >
           <span className="text-xl group-hover:animate-float">🌿</span>
           <span className="hidden sm:inline text-sm font-bold tracking-tight">
-            <span className="text-text">{t('brand.part1')} </span>
-            <span className="sk360-num">{t('brand.part2')}</span>
+            <span className="text-text">{t('brand.part1')}</span>
+            <span className="text-accent"> & </span>
+            <span className="text-text">{t('brand.part2')}</span>
           </span>
           <span className="sm:hidden text-xs font-bold text-text">{t('brand.short')}</span>
         </Link>
@@ -89,7 +90,7 @@ export default function Navbar() {
                   : 'text-muted hover:text-text hover:bg-white/4'
               }`}
             >
-              {t('nav.pillars')}
+              {(() => { const s = t('nav.pillars'); const i = s.lastIndexOf('360'); return i === -1 ? s : <>{s.slice(0,i)}<span className="sk360-num">360</span></>; })()}
               <svg
                 className={`w-3 h-3 transition-transform duration-200 ${pillarsOpen ? 'rotate-180' : ''}`}
                 fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"
@@ -202,7 +203,7 @@ export default function Navbar() {
               isPillarActive ? 'bg-accent/10 text-accent' : 'text-muted hover:text-text hover:bg-white/4'
             }`}
           >
-            <span>{t('nav.pillars')}</span>
+            <span>{(() => { const s = t('nav.pillars'); const i = s.lastIndexOf('360'); return i === -1 ? s : <>{s.slice(0,i)}<span className="sk360-num">360</span></>; })()}</span>
             <svg
               className={`w-3.5 h-3.5 transition-transform duration-200 ${mobilePillars ? 'rotate-180' : ''}`}
               fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"

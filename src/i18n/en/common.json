@@ -6,7 +6,7 @@
   },
   "nav": {
     "home": "Home",
-    "pillars": "6 Pillars",
+    "pillars": "Healthy Living 360",
     "videos": "Videos",
     "program": "Program",
     "sample_programs": "Sample Programs",
@@ -14,9 +14,9 @@
     "donate": "Support"
   },
   "brand": {
-    "part1": "Healthy Living",
-    "part2": "360",
-    "short": "HL360"
+    "part1": "Health",
+    "part2": "Lifestyle",
+    "short": "H&L"
   },
   "hero": {
     "title": "Health & Lifestyle",

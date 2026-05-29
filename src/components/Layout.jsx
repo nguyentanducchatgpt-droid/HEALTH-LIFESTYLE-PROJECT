@@ -22,10 +22,7 @@ export default function Layout({ children }) {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 shrink-0">
               <span className="text-xl">🌿</span>
-              <span className="font-bold text-sm">
-                <span className="text-text">{t('brand.part1')} </span>
-                <span className="sk360-num">{t('brand.part2')}</span>
-              </span>
+              <span className="font-bold text-text text-sm">{t('brand.part1')} & {t('brand.part2')}</span>
             </Link>
 
             {/* Separator */}

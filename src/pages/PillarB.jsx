@@ -7337,7 +7337,7 @@ export default function PillarB() {
         to="/pillar/b/meals"
         color="#06b6d4" rgb="6,182,212"
         icon="🍱" category="Chia Bữa & Đĩa Ăn"
-        title="Quy Tắc Chia Bữa" accent="Cho Toàn Dự Án"
+        title="Quy Tắc Chia Bữa" accent="4 mô hình · 10 quy tắc vàng · Carb cycling"
         desc="4 mô hình bữa ăn, 10 quy tắc vàng, biểu đồ đĩa ăn tương tác, lịch carb theo ngày tập, và máy tính bữa ăn cá nhân hóa từ dữ liệu TDEE của bạn."
         features={[
           { icon: '🍽️', text: '4 mô hình bữa' },

@@ -449,6 +449,32 @@ export default function PillarA() {
         );
         animation: paOrbitSpin 3.5s linear infinite;
       }
+      @keyframes paTitleShimmer {
+        0%   { background-position: -250% center; }
+        100% { background-position: 250% center; }
+      }
+      @keyframes paAmpPulse {
+        0%, 100% { filter: drop-shadow(0 0 8px rgba(34,197,94,0.45)); }
+        50%       { filter: drop-shadow(0 0 22px rgba(34,197,94,0.95)); }
+      }
+      .pa-title-word {
+        background: linear-gradient(90deg,
+          #ffffff 0%, #ffffff 30%,
+          #4ade80 45%, #86efac 52%,
+          #ffffff 67%, #ffffff 100%
+        );
+        background-size: 300% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        animation: paTitleShimmer 5s linear infinite;
+      }
+      .pa-title-amp {
+        -webkit-text-fill-color: #22c55e;
+        color: #22c55e;
+        animation: paAmpPulse 2.2s ease-in-out infinite;
+      }
     `;
     document.head.appendChild(s);
   }, []);
@@ -552,8 +578,19 @@ export default function PillarA() {
             🏃
           </div>
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">
-              {pillar.title}
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+              {(() => {
+                const s = pillar.title;
+                const i = s.indexOf('&');
+                if (i === -1) return <span className="pa-title-word">{s}</span>;
+                return (
+                  <>
+                    <span className="pa-title-word">{s.slice(0, i)}</span>
+                    <span className="pa-title-amp">&</span>
+                    <span className="pa-title-word">{s.slice(i + 1)}</span>
+                  </>
+                );
+              })()}
             </h1>
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent mt-3 mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
               {pillar.subtitle}

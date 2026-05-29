@@ -51,9 +51,8 @@ export default function Navbar() {
         >
           <span className="text-xl group-hover:animate-float">🌿</span>
           <span className="hidden sm:inline text-sm font-bold tracking-tight">
-            <span className="text-text">{t('brand.part1')}</span>
-            <span className="text-accent"> & </span>
-            <span className="text-text">{t('brand.part2')}</span>
+            <span className="text-text">{t('brand.part1')} </span>
+            <span className="sk360-num">{t('brand.part2')}</span>
           </span>
           <span className="sm:hidden text-xs font-bold text-text">{t('brand.short')}</span>
         </Link>

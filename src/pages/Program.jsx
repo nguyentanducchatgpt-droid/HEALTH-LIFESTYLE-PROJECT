@@ -763,7 +763,7 @@ export default function Program() {
             ].map(link => (
               <Link key={link.to} to={link.to}
                 className="flex items-start gap-3 p-3.5 rounded-2xl border border-border bg-surface hover:border-[var(--lc)] hover:-translate-y-0.5 transition-all duration-200 group"
-                style={{ '--lc': `rgba(${link.color.replace('#','').match(/.{2}/g).map(x=>parseInt(x,16)).join(',')},0.35)` } as any}
+                style={{ '--lc': `rgba(${link.color.replace('#','').match(/.{2}/g).map(x=>parseInt(x,16)).join(',')},0.35)` }}
               >
                 <span className="text-xl shrink-0">{link.icon}</span>
                 <div className="min-w-0">

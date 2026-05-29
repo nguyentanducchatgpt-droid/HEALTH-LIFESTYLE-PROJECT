@@ -137,7 +137,14 @@ export default function Home() {
       {/* ── 6 Pillars grid ───────────────────────────── */}
       <section id="pillars" className="mb-20 scroll-mt-20">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-text">{t('hero.pillars_title')}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text">
+            {(() => {
+              const title = t('hero.pillars_title');
+              const idx = title.lastIndexOf('360');
+              if (idx === -1) return title;
+              return <>{title.slice(0, idx)}<span className="sk360-num">360</span></>;
+            })()}
+          </h2>
           <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

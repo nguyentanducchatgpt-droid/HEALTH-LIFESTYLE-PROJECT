@@ -101,7 +101,12 @@ export default function Pillars() {
             {t('hero.badge')}
           </span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight text-text mb-3">
-            {t('hero.pillars_title')}
+            {(() => {
+              const title = t('hero.pillars_title');
+              const idx = title.lastIndexOf('360');
+              if (idx === -1) return title;
+              return <>{title.slice(0, idx)}<span className="sk360-num">360</span></>;
+            })()}
           </h1>
           <p className="text-muted text-sm md:text-base max-w-lg mx-auto leading-relaxed">
             {t('hero.subtitle')}

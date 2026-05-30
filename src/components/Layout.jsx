@@ -57,18 +57,6 @@ export default function Layout({ children }) {
               <p className="text-muted text-xs leading-relaxed mb-5 max-w-[220px]">
                 Hệ sinh thái sống khỏe khoa học, đơn giản, dễ áp dụng mỗi ngày — hoàn toàn miễn phí.
               </p>
-              {/* contact quick */}
-              <div className="flex flex-col gap-2">
-                <a href="mailto:nguyentanducchatgpt@gmail.com"
-                   className="inline-flex items-center gap-2 text-xs text-muted hover:text-accent transition-colors duration-150 group/c">
-                  <span className="w-7 h-7 rounded-lg flex items-center justify-center bg-white/4 group-hover/c:bg-accent/10 transition-colors duration-150 text-sm">✉️</span>
-                  nguyentanducchatgpt@gmail.com
-                </a>
-                <div className="inline-flex items-center gap-2 text-xs text-muted">
-                  <span className="w-7 h-7 rounded-lg flex items-center justify-center bg-white/4 text-sm">📱</span>
-                  Zalo: 0913723667
-                </div>
-              </div>
             </div>
 
             {/* Col 2 — Navigation */}

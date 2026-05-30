@@ -47,7 +47,8 @@ export default function Layout({ children }) {
             {/* Brand */}
             <div className="shrink-0">
               <Link to="/" className="inline-flex items-center gap-2.5 mb-4 group">
-                <span className="text-2xl">🌿</span>
+                <img src="/logo.svg" alt="" className="h-7 w-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  style={{ filter: 'brightness(0) invert(1)', opacity: 0.88 }} />
                 <div>
                   <span className="font-bold text-text text-base">{t('brand.part1')}</span>
                   <span className="text-accent font-bold text-base"> & </span>

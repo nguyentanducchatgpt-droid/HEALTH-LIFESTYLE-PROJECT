@@ -49,7 +49,12 @@ export default function Navbar() {
           onClick={closeMenu}
           className="flex items-center gap-2 font-bold text-accent shrink-0 group"
         >
-          <span className="text-xl group-hover:animate-float">🌿</span>
+          <img
+            src="/logo.svg"
+            alt="Sức Khỏe & Đời Sống"
+            className="h-8 w-8 shrink-0 transition-all duration-300 group-hover:scale-110"
+            style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }}
+          />
           <span className="hidden sm:inline text-sm font-bold tracking-tight">
             <span className="text-text">{t('brand.part1')}</span>
             <span className="text-accent"> & </span>

@@ -219,7 +219,10 @@ export default function Home() {
           <div className="relative mb-5">
             <div className="ht-icon-ring absolute inset-0 rounded-full pointer-events-none"
               style={{ background: 'rgba(34,197,94,0.1)', filter: 'blur(24px)', transform: 'scale(2.8)' }} />
-            <div className="ht-icon relative z-10 text-5xl md:text-6xl leading-none select-none">🌿</div>
+            <div className="ht-icon relative z-10 select-none">
+              <img src="/logo.svg" alt="" className="h-16 w-16 md:h-20 md:w-20"
+                style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
+            </div>
           </div>
 
           {/* Title */}

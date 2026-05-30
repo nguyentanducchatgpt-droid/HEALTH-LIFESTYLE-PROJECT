@@ -202,7 +202,6 @@ export default function Home() {
       {/* ── 6 Pillars grid ─────────────────────────────── */}
       <section id="pillars" className="mb-20 scroll-mt-20">
         <RevealBlock className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">6 Trụ Cột Sức Khỏe</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text">
             {(() => {
               const title = t('hero.pillars_title');

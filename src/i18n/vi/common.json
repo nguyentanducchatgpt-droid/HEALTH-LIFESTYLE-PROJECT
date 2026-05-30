@@ -28,16 +28,16 @@
   "home": {
     "stats": [
       {
-        "value": "10 phút",
-        "label": "Đủ để bắt đầu thói quen mỗi ngày"
+        "value": "3 hành trình",
+        "label": "7 ngày · 12 tuần · 24 tuần"
       },
       {
         "value": "6 trụ cột",
-        "label": "Hệ thống toàn diện đã được kiểm chứng"
+        "label": "Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ"
       },
       {
-        "value": "12 tuần",
-        "label": "Lộ trình có cấu trúc từ mới → nâng cao"
+        "value": "Miễn phí",
+        "label": "Không đăng ký · Không ẩn phí · Mãi mãi"
       }
     ],
     "quote": "Không cần hoàn hảo. Chỉ cần nhất quán.",

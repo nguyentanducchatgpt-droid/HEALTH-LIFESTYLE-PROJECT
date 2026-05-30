@@ -28,16 +28,16 @@
   "home": {
     "stats": [
       {
-        "value": "10 Min",
-        "label": "Reicht, um täglich eine Gewohnheit zu starten"
+        "value": "3 Wege",
+        "label": "7 Tage · 12 Wochen · 24 Wochen"
       },
       {
         "value": "6 Säulen",
-        "label": "Umfassendes, evidenzbasiertes System"
+        "label": "Bewegung · Ernährung · Lebensstil · Geist · Wissen · Werkzeuge"
       },
       {
-        "value": "12 Wochen",
-        "label": "Strukturierter Fahrplan vom Anfänger zum Fortgeschrittenen"
+        "value": "Kostenlos",
+        "label": "Keine Anmeldung · Keine versteckten Kosten"
       }
     ],
     "quote": "Sie müssen nicht perfekt sein. Sie müssen nur konsequent sein.",

@@ -50,9 +50,9 @@ const PILLAR_DATA = [
 const COLOR_MAP = { green:'#22c55e', lime:'#84cc16', teal:'#14b8a6', purple:'#a855f7', blue:'#3b82f6', orange:'#f97316' };
 
 const STAT_TIPS = [
-  '10 phút/ngày đủ để bắt đầu xây thói quen. Não cần tính nhất quán — 10 phút × 30 ngày hiệu quả hơn 3 giờ × 1 lần/tuần.',
-  '6 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ. Hệ thống đảm bảo không bỏ sót góc độ nào.',
-  '12 tuần đủ xây nền thói quen bền vững. 3 giai đoạn: Khởi Động → Tăng Nền → Cá Nhân Hóa.',
+  '3 hành trình phù hợp mọi cấp độ: 7 ngày khởi động nhẹ nhàng, 12 tuần xây nền bền vững (3 giai đoạn), 24 tuần nâng cao toàn diện.',
+  'Hệ thống 6 trụ cột toàn diện: Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — đảm bảo không bỏ sót bất kỳ góc độ nào.',
+  'Toàn bộ nội dung hoàn toàn miễn phí — không cần đăng ký, không quảng cáo, không ẩn phí. Mãi mãi.',
 ];
 
 const JOURNEY_CARDS = [

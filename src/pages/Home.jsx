@@ -56,9 +56,30 @@ const STAT_TIPS = [
 ];
 
 const JOURNEY_CARDS = [
-  { id:'7d',  label:'7 Ngày Khởi Động',  icon:'🌱', color:'#22c55e', rgb:'34,197,94',   tag:'BẮT ĐẦU',   desc:'4 trụ cột/ngày · 20 phút · từng bước nhỏ xây thói quen đầu tiên' },
-  { id:'12w', label:'12 Tuần Cơ Bản',   icon:'📈', color:'#84cc16', rgb:'132,204,22',  tag:'PHỔ BIẾN',  desc:'3 giai đoạn: Khởi Động → Xây Nền → Cá Nhân Hóa thói quen bền vững' },
-  { id:'24w', label:'24 Tuần Nâng Cao', icon:'🎓', color:'#a855f7', rgb:'168,85,247',  tag:'TOÀN DIỆN', desc:'6 giai đoạn · carb cycling · supplement · làm chủ sức khỏe hoàn toàn' },
+  {
+    id:'7d', num:'01', label:'7 Ngày Khởi Động', icon:'🌱',
+    color:'#22c55e', rgb:'34,197,94', tag:'BẮT ĐẦU',
+    img:'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=700&q=75',
+    tagline:'Nhẹ nhàng · Từng bước · Không áp lực',
+    desc:'Bắt đầu từ con số 0 — 20 phút mỗi ngày tích hợp đủ 4 trụ cột. Đơn giản đến mức không thể từ chối.',
+    features:['Vận động 20 phút/ngày','Dinh dưỡng không kiêng cực đoan','Giấc ngủ & thói quen sáng','3 hơi thở sâu mỗi ngày'],
+  },
+  {
+    id:'12w', num:'02', label:'12 Tuần Cơ Bản', icon:'📈',
+    color:'#84cc16', rgb:'132,204,22', tag:'PHỔ BIẾN',
+    img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=75',
+    tagline:'Có cấu trúc · 3 giai đoạn · Thay đổi thật sự',
+    desc:'Khởi Động → Xây Nền → Cá Nhân Hóa. 12 tuần đủ để não bộ hình thành thói quen bền vững vĩnh viễn.',
+    features:['Khởi Động tuần 1–4','Xây Nền tuần 5–8','Cá Nhân Hóa tuần 9–12','Test tiến bộ tuần 4 & 12'],
+  },
+  {
+    id:'24w', num:'03', label:'24 Tuần Nâng Cao', icon:'🎓',
+    color:'#a855f7', rgb:'168,85,247', tag:'TOÀN DIỆN',
+    img:'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=700&q=75',
+    tagline:'6 giai đoạn · Carb cycling · Làm chủ hoàn toàn',
+    desc:'Từ nền tảng đến làm chủ hệ thống sức khỏe cá nhân. 24 tuần biến thói quen thành bản sắc không thể đảo ngược.',
+    features:['Nền tảng 12 tuần đầu','Tối ưu hóa 12 tuần sau','Carb cycling & supplement','Tự lập kế hoạch cá nhân'],
+  },
 ];
 
 const WHY_ITEMS = [
@@ -190,31 +211,78 @@ export default function Home() {
       </div>
 
       {/* ── Journey teaser ─────────────────────────────── */}
-      <RevealBlock className="mb-16">
-        <div className="text-center mb-8">
+      <section className="mb-20">
+        <RevealBlock className="text-center mb-10">
           <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">Hành Trình Sống Khỏe</p>
           <h2 className="text-2xl md:text-3xl font-bold text-text">Bắt Đầu Từ Đâu?</h2>
           <p className="text-muted text-sm mt-2 max-w-md mx-auto">Chọn hành trình phù hợp — từ 7 ngày thử thách đến 24 tuần làm chủ sức khỏe</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        </RevealBlock>
+
+        <div className="flex flex-col gap-5">
           {JOURNEY_CARDS.map((j, idx) => (
-            <Link key={j.id} to="/program"
-              className="block relative rounded-2xl border p-5 group cursor-pointer transition-all duration-300 hover:-translate-y-1"
-              style={{ borderColor: `rgba(${j.rgb},0.20)`, background: `rgba(${j.rgb},0.04)`, transitionDelay: `${idx * 60}ms` }}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" style={{ background: `radial-gradient(ellipse at top left, rgba(${j.rgb},0.12), transparent 65%)` }} />
-              <div className="relative">
-                <div className="flex items-start justify-between mb-3">
-                  <span className="text-3xl">{j.icon}</span>
-                  <span className="text-[9px] font-extrabold tracking-widest px-2 py-0.5 rounded-full border" style={{ color: j.color, borderColor: `rgba(${j.rgb},0.35)`, background: `rgba(${j.rgb},0.1)` }}>{j.tag}</span>
+            <RevealBlock key={j.id} delay={idx * 100}>
+              <Link
+                to="/program"
+                className="group block rounded-2xl border overflow-hidden transition-all duration-350 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
+                style={{ borderColor: `rgba(${j.rgb},0.18)`, background: `rgba(${j.rgb},0.03)` }}
+              >
+                <div className="flex flex-col md:flex-row">
+                  {/* ── Image panel ── */}
+                  <div className="relative md:w-[38%] shrink-0" style={{ minHeight: '220px' }}>
+                    <img
+                      src={j.img}
+                      alt={j.label}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                    {/* gradients */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60 md:hidden" />
+                    <div className="absolute inset-0 hidden md:block" style={{ background: `linear-gradient(to right, transparent 40%, rgba(${j.rgb},0.08) 100%), linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.5))` }} />
+                    {/* color top line */}
+                    <div className="absolute top-0 left-0 right-0 h-[2.5px] w-0 group-hover:w-full transition-all duration-500 ease-out" style={{ background: `linear-gradient(90deg, ${j.color}, rgba(${j.rgb},0.4))` }} />
+                    {/* big number watermark */}
+                    <div className="absolute bottom-2 right-3 font-black leading-none select-none pointer-events-none" style={{ fontSize: '72px', color: `rgba(${j.rgb},0.18)` }}>{j.num}</div>
+                    {/* tag badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="text-[9px] font-extrabold uppercase tracking-[0.15em] px-3 py-1 rounded-full backdrop-blur-sm" style={{ color: j.color, background: 'rgba(0,0,0,0.55)', border: `1px solid rgba(${j.rgb},0.5)` }}>{j.tag}</span>
+                    </div>
+                    {/* icon bottom-left mobile */}
+                    <div className="absolute bottom-4 left-4 md:hidden text-3xl">{j.icon}</div>
+                  </div>
+
+                  {/* ── Content panel ── */}
+                  <div className="flex-1 p-6 md:p-7 flex flex-col justify-center">
+                    {/* icon + tagline */}
+                    <div className="flex items-center gap-2.5 mb-3">
+                      <span className="hidden md:block text-2xl">{j.icon}</span>
+                      <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: j.color }}>{j.tagline}</p>
+                    </div>
+                    {/* title */}
+                    <h3 className="font-bold text-text text-lg md:text-xl mb-2 leading-tight transition-colors duration-200" style={{ color: j.color }}>
+                      {j.label}
+                    </h3>
+                    {/* description */}
+                    <p className="text-sm text-muted leading-relaxed mb-5 max-w-xl">{j.desc}</p>
+                    {/* feature checklist */}
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 mb-6">
+                      {j.features.map(f => (
+                        <div key={f} className="flex items-center gap-1.5 text-xs text-muted">
+                          <span className="font-bold shrink-0" style={{ color: j.color }}>✓</span>
+                          <span>{f}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {/* CTA */}
+                    <div className="flex items-center gap-2 text-sm font-bold group-hover:gap-3 transition-all duration-200" style={{ color: j.color }}>
+                      Xem hành trình
+                      <span className="group-hover:translate-x-1 transition-transform duration-200 text-base">→</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-bold text-text text-sm mb-1.5">{j.label}</h3>
-                <p className="text-xs text-muted leading-relaxed">{j.desc}</p>
-                <div className="mt-4 text-[11px] font-semibold flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: j.color }}>Xem chi tiết <span>→</span></div>
-              </div>
-            </Link>
+              </Link>
+            </RevealBlock>
           ))}
         </div>
-      </RevealBlock>
+      </section>
 
       {/* ── 6 Pillars — rich image cards ───────────────── */}
       <section id="pillars" className="mb-20 scroll-mt-20">

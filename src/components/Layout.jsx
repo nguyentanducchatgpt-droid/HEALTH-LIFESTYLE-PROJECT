@@ -73,19 +73,6 @@ export default function Layout({ children }) {
               </div>
             </div>
 
-            {/* Col 3 — 6 Pillars */}
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-4">6 Trụ Cột</p>
-              <div className="flex flex-col gap-2">
-                {PILLARS_QUICK.map(p => (
-                  <Link key={p.to} to={p.to}
-                    className="text-xs text-muted hover:text-text transition-colors duration-150 flex items-center gap-2 group/p">
-                    <span className="w-1.5 h-1.5 rounded-full shrink-0 transition-all duration-150 group-hover/p:scale-125" style={{ background: p.color }} />
-                    {p.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Divider */}

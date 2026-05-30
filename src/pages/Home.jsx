@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import PillarCard from '../components/PillarCard';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 function RevealBlock({ children, delay = 0, className = '' }) {
@@ -20,7 +19,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
-const PILLAR_IMAGES = [
+// strip thumbnails (horizontal scroll)
+const STRIP_IMAGES = [
   'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=70',
   'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=70',
   'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=70',
@@ -28,9 +28,26 @@ const PILLAR_IMAGES = [
   'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=70',
   'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=70',
 ];
-const COLOR_MAP = { green:'#22c55e', lime:'#84cc16', teal:'#14b8a6', purple:'#a855f7', blue:'#3b82f6', orange:'#f97316' };
 const PILLAR_ROUTES = ['/pillar/a','/pillar/b','/pillar/c','/pillar/d','/pillar/e','/pillar/f'];
 const PILLAR_ICONS  = ['🏃','🥗','🌿','🧘','📚','🛠️'];
+
+// rich card data with context-matched images
+const PILLAR_DATA = [
+  { key:'pillarA', route:'/pillar/a', color:'#22c55e', rgb:'34,197,94',
+    img:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=700&q=75' },
+  { key:'pillarB', route:'/pillar/b', color:'#84cc16', rgb:'132,204,22',
+    img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700&q=75' },
+  { key:'pillarC', route:'/pillar/c', color:'#14b8a6', rgb:'20,184,166',
+    img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=75' },
+  { key:'pillarD', route:'/pillar/d', color:'#a855f7', rgb:'168,85,247',
+    img:'https://images.unsplash.com/photo-1545389336-cf090694435e?w=700&q=75' },
+  { key:'pillarE', route:'/pillar/e', color:'#3b82f6', rgb:'59,130,246',
+    img:'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=75' },
+  { key:'pillarF', route:'/pillar/f', color:'#f97316', rgb:'249,115,22',
+    img:'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=700&q=75' },
+];
+
+const COLOR_MAP = { green:'#22c55e', lime:'#84cc16', teal:'#14b8a6', purple:'#a855f7', blue:'#3b82f6', orange:'#f97316' };
 
 const STAT_TIPS = [
   '10 phút/ngày đủ để bắt đầu xây thói quen. Não cần tính nhất quán — 10 phút × 30 ngày hiệu quả hơn 3 giờ × 1 lần/tuần.',
@@ -51,7 +68,7 @@ const WHY_ITEMS = [
   { icon:'🔄', title:'Toàn Diện 360°',        desc:'Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — không bỏ sót bất kỳ góc độ nào', color:'#a855f7', rgb:'168,85,247'  },
 ];
 
-const PILLARS = ['pillarA','pillarB','pillarC','pillarD','pillarE','pillarF'];
+const PILLARS_KEYS = ['pillarA','pillarB','pillarC','pillarD','pillarE','pillarF'];
 
 export default function Home() {
   const { t }     = useTranslation();
@@ -154,12 +171,12 @@ export default function Home() {
       {/* ── Visual image strip ─────────────────────────── */}
       <div className="overflow-x-auto scrollbar-hide mb-16 -mx-4 md:-mx-8 px-4 md:px-8">
         <div className="flex gap-3 pb-1" style={{ width: 'max-content' }}>
-          {PILLARS.map((key, i) => {
+          {PILLARS_KEYS.map((key, i) => {
             const p = tP(key, { returnObjects: true });
             const color = COLOR_MAP[p?.color] || '#22c55e';
             return (
               <Link key={key} to={PILLAR_ROUTES[i]} className="relative rounded-2xl overflow-hidden shrink-0 group cursor-pointer" style={{ width: '180px', height: '220px' }}>
-                <img src={PILLAR_IMAGES[i]} alt={p?.title || key} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={STRIP_IMAGES[i]} alt={p?.title || key} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3">
                   <div className="text-xl mb-1">{PILLAR_ICONS[i]}</div>
@@ -199,7 +216,7 @@ export default function Home() {
         </div>
       </RevealBlock>
 
-      {/* ── 6 Pillars grid ─────────────────────────────── */}
+      {/* ── 6 Pillars — rich image cards ───────────────── */}
       <section id="pillars" className="mb-20 scroll-mt-20">
         <RevealBlock className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-text">
@@ -213,10 +230,62 @@ export default function Home() {
           <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
           <p className="text-muted text-sm mt-3 max-w-lg mx-auto">Hệ thống sức khỏe toàn diện — mỗi trụ cột là một góc độ không thể thiếu cho cuộc sống khỏe mạnh</p>
         </RevealBlock>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {PILLARS.map((key, i) => (
-            <PillarCard key={key} pillarKey={key} delay={i * 80} />
-          ))}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {PILLAR_DATA.map((pd, i) => {
+            const p = tP(pd.key, { returnObjects: true });
+            if (!p || typeof p !== 'object') return null;
+            return (
+              <RevealBlock key={pd.key} delay={i * 70}>
+                <Link
+                  to={pd.route}
+                  className="block group rounded-2xl bg-surface border transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+                  style={{ borderColor: `rgba(${pd.rgb},0.14)` }}
+                >
+                  {/* Image */}
+                  <div className="relative rounded-t-2xl overflow-hidden" style={{ height: '176px' }}>
+                    <img
+                      src={pd.img}
+                      alt={p.title}
+                      className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.06]"
+                    />
+                    {/* gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    {/* hover overlay tint */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: `linear-gradient(to top, rgba(${pd.rgb},0.25), transparent 60%)` }} />
+                    {/* animated top line */}
+                    <div className="absolute top-0 left-0 h-[2.5px] w-0 group-hover:w-full transition-all duration-500 ease-out rounded-t-2xl" style={{ background: pd.color }} />
+                    {/* subtitle badge bottom-left */}
+                    <div className="absolute bottom-3 left-3">
+                      <span className="text-[9px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full backdrop-blur-sm" style={{ color: pd.color, background: 'rgba(0,0,0,0.55)', border: `1px solid rgba(${pd.rgb},0.45)` }}>
+                        {p.subtitle}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-5">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0 transition-transform duration-300 group-hover:scale-110"
+                        style={{ background: `rgba(${pd.rgb},0.12)`, border: `1px solid rgba(${pd.rgb},0.22)` }}
+                      >
+                        {p.icon}
+                      </div>
+                      <h3 className="font-bold text-sm leading-tight transition-colors duration-200" style={{ color: pd.color }}>
+                        {p.title}
+                      </h3>
+                    </div>
+                    <p className="text-xs text-muted leading-relaxed line-clamp-2">{p.description}</p>
+                    <div className="mt-4 flex items-center gap-1.5 text-[11px] font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: pd.color }}>
+                      Tìm Hiểu Thêm
+                      <span className="transition-transform duration-200 group-hover:translate-x-0.5 text-xs">→</span>
+                    </div>
+                  </div>
+                </Link>
+              </RevealBlock>
+            );
+          })}
         </div>
       </section>
 

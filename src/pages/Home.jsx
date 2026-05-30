@@ -226,14 +226,6 @@ export default function Home() {
             <span className="ht-part2">Đời Sống</span>
           </h1>
 
-          {/* Domain */}
-          <div className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.3em] mb-5"
-            style={{ color: 'rgba(255,255,255,0.20)' }}>
-            <span className="inline-block w-14 h-px bg-gradient-to-r from-transparent to-accent/28" />
-            healthandlifestyle.io.vn
-            <span className="inline-block w-14 h-px bg-gradient-to-l from-transparent to-accent/28" />
-          </div>
-
           {/* Subtitle */}
           <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10"
             style={{ color: 'rgba(255,255,255,0.52)' }}>

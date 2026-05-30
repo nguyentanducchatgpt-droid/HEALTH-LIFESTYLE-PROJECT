@@ -251,7 +251,7 @@ export default function Home() {
 
           {/* Stats row */}
           {Array.isArray(stats) && (
-            <div className="mt-14 w-full max-w-2xl mx-auto">
+            <div className="mt-14 w-full max-w-3xl mx-auto">
               <div className="flex items-stretch rounded-2xl overflow-hidden"
                 style={{ background: 'rgba(255,255,255,0.022)', border: '1px solid rgba(255,255,255,0.052)' }}>
                 {stats.map((stat, i) => {
@@ -296,7 +296,7 @@ export default function Home() {
                       </div>
 
                       {/* Value */}
-                      <p className="font-extrabold text-lg md:text-xl leading-none mb-1.5 transition-all duration-250"
+                      <p className="font-extrabold text-base md:text-lg leading-none mb-1.5 transition-all duration-250 whitespace-nowrap"
                         style={{
                           color: active ? color : 'rgba(255,255,255,0.9)',
                           filter: active ? `drop-shadow(0 0 10px rgba(${rgb},0.55))` : 'none',

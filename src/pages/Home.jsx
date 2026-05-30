@@ -83,10 +83,22 @@ const JOURNEY_CARDS = [
 ];
 
 const WHY_ITEMS = [
-  { icon:'🧬', title:'Dựa Trên Khoa Học',     desc:'Tổng hợp từ nghiên cứu y khoa tin cậy — không phải mẹo vặt hay xu hướng nhất thời',                   color:'#22c55e', rgb:'34,197,94'   },
-  { icon:'⚡', title:'Đơn Giản & Thực Chiến', desc:'10 phút/ngày là đủ để bắt đầu. Mọi hướng dẫn thiết kế cho người bận rộn trong thực tế',                color:'#84cc16', rgb:'132,204,22'  },
-  { icon:'🎯', title:'Lộ Trình Rõ Ràng',      desc:'7 ngày → 12 tuần → 24 tuần. Từng bước nhỏ, không bao giờ cảm thấy choáng ngợp hay bỏ cuộc',           color:'#14b8a6', rgb:'20,184,166'  },
-  { icon:'🔄', title:'Toàn Diện 360°',        desc:'Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — không bỏ sót bất kỳ góc độ nào', color:'#a855f7', rgb:'168,85,247'  },
+  { icon:'🧬', title:'Dựa Trên Khoa Học',     stat:'Evidence',  statSub:'Based',
+    desc:'Tổng hợp từ nghiên cứu y khoa tin cậy — không phải mẹo vặt hay xu hướng nhất thời.',
+    color:'#22c55e', rgb:'34,197,94',
+    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=75' },
+  { icon:'⚡', title:'Đơn Giản & Thực Chiến', stat:'10',        statSub:'phút/ngày',
+    desc:'10 phút mỗi ngày là đủ để bắt đầu. Mọi hướng dẫn thiết kế riêng cho người bận rộn.',
+    color:'#84cc16', rgb:'132,204,22',
+    img:'https://images.unsplash.com/photo-1434682881908-b43d0467b798?w=600&q=75' },
+  { icon:'🎯', title:'Lộ Trình Rõ Ràng',      stat:'3',         statSub:'mốc tiến bộ',
+    desc:'7 ngày → 12 tuần → 24 tuần. Từng bước nhỏ, không bao giờ cảm thấy choáng ngợp hay bỏ cuộc.',
+    color:'#14b8a6', rgb:'20,184,166',
+    img:'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=75' },
+  { icon:'🔄', title:'Toàn Diện 360°',        stat:'6',         statSub:'trụ cột',
+    desc:'Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — không bỏ sót bất kỳ góc độ nào.',
+    color:'#a855f7', rgb:'168,85,247',
+    img:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=75' },
 ];
 
 const PILLARS_KEYS = ['pillarA','pillarB','pillarC','pillarD','pillarE','pillarF'];
@@ -358,18 +370,59 @@ export default function Home() {
       </section>
 
       {/* ── Why section ────────────────────────────────── */}
-      <section className="mb-16">
-        <RevealBlock className="text-center mb-8">
+      <section className="mb-20">
+        <RevealBlock className="text-center mb-10">
           <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">Tại Sao Chọn Chúng Tôi</p>
           <h2 className="text-2xl md:text-3xl font-bold text-text">Khoa Học · Đơn Giản · Hiệu Quả</h2>
+          <p className="text-muted text-sm mt-2 max-w-md mx-auto">Bốn nguyên tắc cốt lõi làm nền tảng cho mọi nội dung trên trang web này</p>
         </RevealBlock>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {WHY_ITEMS.map((item, i) => (
-            <RevealBlock key={item.title} delay={i * 90} className="rounded-2xl border border-border bg-surface p-5 transition-all duration-300 group cursor-default">
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 text-xl" style={{ background: `rgba(${item.rgb},0.10)`, border: `1px solid rgba(${item.rgb},0.20)` }}>{item.icon}</div>
-                <div>
-                  <h3 className="font-bold text-sm mb-1" style={{ color: item.color }}>{item.title}</h3>
+            <RevealBlock key={item.title} delay={i * 90}>
+              <div
+                className="group rounded-2xl border overflow-hidden cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(0,0,0,0.4)]"
+                style={{ borderColor: `rgba(${item.rgb},0.16)`, background: `rgba(${item.rgb},0.03)` }}
+              >
+                {/* Image strip */}
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                    style={{ opacity: 0.45 }}
+                  />
+                  {/* dark + color gradient overlay */}
+                  <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, rgba(0,0,0,0.75) 30%, rgba(${item.rgb},0.25) 100%)` }} />
+                  {/* hover tint */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: `rgba(${item.rgb},0.10)` }} />
+                  {/* animated top line */}
+                  <div className="absolute top-0 left-0 h-[2.5px] w-0 group-hover:w-full transition-all duration-500 ease-out" style={{ background: item.color }} />
+
+                  {/* Big stat — top right */}
+                  <div className="absolute top-5 right-5 text-right">
+                    <div className="font-black leading-none" style={{ fontSize: '44px', color: item.color, textShadow: `0 0 30px rgba(${item.rgb},0.6)` }}>
+                      {item.stat}
+                    </div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest mt-0.5" style={{ color: `rgba(${item.rgb === '34,197,94' ? '255,255,255' : '255,255,255'},0.55)` }}>
+                      {item.statSub}
+                    </div>
+                  </div>
+
+                  {/* Icon badge — bottom left */}
+                  <div
+                    className="absolute bottom-4 left-4 w-11 h-11 rounded-xl flex items-center justify-center text-xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-110"
+                    style={{ background: `rgba(${item.rgb},0.22)`, border: `1.5px solid rgba(${item.rgb},0.5)` }}
+                  >
+                    {item.icon}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-5">
+                  <h3 className="font-bold text-sm mb-2 transition-colors duration-200" style={{ color: item.color }}>
+                    {item.title}
+                  </h3>
                   <p className="text-xs text-muted leading-relaxed">{item.desc}</p>
                 </div>
               </div>

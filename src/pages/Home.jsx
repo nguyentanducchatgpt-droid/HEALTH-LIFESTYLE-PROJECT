@@ -449,15 +449,31 @@ export default function Home() {
         </div>
       </RevealBlock>
 
-      {/* ── Footer CTA ─────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-10 mb-6">
-        <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-2.5 border border-border hover:border-accent/40 text-muted hover:text-accent rounded-xl transition-all duration-200 text-sm">
-          ✉️ {t('nav.contact')}
-        </Link>
-        <Link to="/donate" className="inline-flex items-center gap-2 px-6 py-2.5 border border-border hover:border-accent/40 text-muted hover:text-accent rounded-xl transition-all duration-200 text-sm">
-          🙏 {t('nav.donate')}
-        </Link>
-      </div>
+      {/* ── Final CTA ──────────────────────────────────── */}
+      <RevealBlock className="mb-6">
+        <div className="relative rounded-3xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/6 via-transparent to-purple-500/5 pointer-events-none" />
+          <div className="absolute inset-0 grid-dots opacity-15 pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-72 h-72 bg-green-500/5 rounded-full blur-[60px] pointer-events-none" />
+          <div className="relative border border-border/50 rounded-3xl px-8 py-10 md:py-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">Sẵn Sàng Chưa?</p>
+              <h2 className="text-xl md:text-2xl font-bold text-text mb-2">Hành Trình Bắt Đầu Từ Hôm Nay</h2>
+              <p className="text-muted text-sm max-w-sm leading-relaxed">Mỗi thay đổi lớn đều bắt đầu từ một quyết định nhỏ. Bước đầu tiên luôn là dễ nhất.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <Link to="/program"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-sm shadow-[0_0_24px_rgba(34,197,94,0.25)] hover:shadow-[0_0_36px_rgba(34,197,94,0.4)] hover:-translate-y-0.5 whitespace-nowrap">
+                🌿 Bắt Đầu Hành Trình
+              </Link>
+              <Link to="/contact"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border hover:border-accent/40 text-muted hover:text-accent rounded-xl transition-all duration-200 text-sm whitespace-nowrap">
+                ✉️ {t('nav.contact')}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </RevealBlock>
     </div>
   );
 }

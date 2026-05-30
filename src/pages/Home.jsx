@@ -107,6 +107,8 @@ export default function Home() {
   const { t }     = useTranslation();
   const { t: tP } = useTranslation('pillars');
   const stats     = t('home.stats', { returnObjects: true });
+  const heroRef   = useRef(null);
+  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
 
   useEffect(() => {
     const id = 'home-title-kf';
@@ -121,7 +123,10 @@ export default function Home() {
         50%{filter:drop-shadow(0 0 22px rgba(34,197,94,1));opacity:0.75}
       }
       @keyframes htFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
-      @keyframes htBadge { 0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.35)} 50%{box-shadow:0 0 0 5px rgba(34,197,94,0)} }
+      @keyframes htScan { 0%{top:0%;opacity:0} 8%{opacity:1} 92%{opacity:0.6} 100%{top:100%;opacity:0} }
+      @keyframes htBtnSweep { 0%{transform:translateX(-130%) skewX(-14deg)} 100%{transform:translateX(260%) skewX(-14deg)} }
+      @keyframes htScrollBall { 0%,100%{transform:translateY(-3px);opacity:0.15} 55%{transform:translateY(9px);opacity:0.9} }
+      @keyframes htRingPulse { 0%,100%{opacity:0.15;transform:scale(1)} 50%{opacity:0.35;transform:scale(1.18)} }
       .ht-part1 {
         background: linear-gradient(110deg,#22c55e 0%,#86efac 28%,#ffffff 50%,#86efac 72%,#22c55e 100%);
         background-size: 300% 100%;
@@ -136,68 +141,144 @@ export default function Home() {
       }
       .ht-amp { -webkit-text-fill-color:#22c55e; color:#22c55e; animation: htAmpPulse 2.5s ease-in-out infinite; display:inline-block; }
       .ht-icon { animation: htFloat 3.2s ease-in-out infinite; display:inline-block; }
-      .ht-badge { animation: htBadge 2s ease-in-out infinite; }
+      .ht-icon-ring { animation: htRingPulse 3s ease-in-out infinite; }
+      .ht-scan { animation: htScan 8s ease-in-out infinite 1s; }
+      .ht-btn-sweep { background: linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.28) 50%,transparent 100%); animation: htBtnSweep 3.2s ease-in-out infinite; }
+      .ht-scroll-ball { animation: htScrollBall 1.8s ease-in-out infinite; }
+      .ht-btn-primary { box-shadow:0 0 32px rgba(34,197,94,0.28),0 4px 20px rgba(0,0,0,0.4); transition:box-shadow 0.25s,transform 0.2s; }
+      .ht-btn-primary:hover { box-shadow:0 0 55px rgba(34,197,94,0.48),0 8px 28px rgba(0,0,0,0.5); transform:translateY(-2px); }
+      .ht-btn-outline { border:1px solid rgba(34,197,94,0.32); color:#22c55e; background:rgba(34,197,94,0.04); transition:border-color 0.2s,background 0.2s,transform 0.2s,box-shadow 0.2s; }
+      .ht-btn-outline:hover { border-color:rgba(34,197,94,0.65); background:rgba(34,197,94,0.1); transform:translateY(-2px); box-shadow:0 0 22px rgba(34,197,94,0.14); }
+      .ht-btn-arrow { display:inline-block; transition:transform 0.2s; }
+      .ht-btn-outline:hover .ht-btn-arrow { transform:translateX(4px); }
     `;
     document.head.appendChild(s);
+  }, []);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    const onMove = (e) => {
+      const r = el.getBoundingClientRect();
+      setMousePos({ x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height });
+    };
+    el.addEventListener('mousemove', onMove);
+    return () => el.removeEventListener('mousemove', onMove);
   }, []);
 
   return (
     <div>
       {/* ── Hero ───────────────────────────────────────── */}
-      <section className="relative -mx-4 md:-mx-8 mb-16 overflow-hidden" style={{ minHeight: '620px' }}>
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=70" alt="" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.10 }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/30 to-bg pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/70 via-transparent to-bg/70 pointer-events-none" />
-        <div className="absolute inset-0 grid-dots opacity-25 pointer-events-none" />
-        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-green-500/6 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[90px] pointer-events-none" />
+      <section ref={heroRef} className="relative -mx-4 md:-mx-8 mb-16 overflow-hidden" style={{ minHeight: '700px' }}>
+        {/* BG image */}
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=70" alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.08 }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/15 via-bg/45 to-bg pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-transparent to-bg/80 pointer-events-none" />
+        <div className="absolute inset-0 grid-dots opacity-18 pointer-events-none" />
 
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-20 pb-24">
-          <div className="ht-badge inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-semibold px-4 py-1.5 rounded-full mb-8 animate-fade-in">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
-            {t('hero.badge')}
+        {/* Mouse-tracking ambient glows */}
+        <div className="absolute w-[820px] h-[820px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(34,197,94,0.09) 0%, transparent 65%)',
+            filter: 'blur(140px)',
+            top: `calc(${mousePos.y * 100}% - 410px)`,
+            left: `calc(${mousePos.x * 100}% - 410px)`,
+            transition: 'top 0.9s cubic-bezier(0.2,0,0.2,1), left 0.9s cubic-bezier(0.2,0,0.2,1)',
+          }} />
+        <div className="absolute w-[500px] h-[500px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 65%)',
+            filter: 'blur(110px)',
+            top: `calc(${(1 - mousePos.y) * 75 + 12}% - 250px)`,
+            left: `calc(${(1 - mousePos.x) * 75 + 12}% - 250px)`,
+            transition: 'top 1.3s cubic-bezier(0.2,0,0.2,1), left 1.3s cubic-bezier(0.2,0,0.2,1)',
+          }} />
+
+        {/* Scan line */}
+        <div className="ht-scan absolute w-full h-[1px] pointer-events-none"
+          style={{ background: 'linear-gradient(90deg,transparent 0%,rgba(34,197,94,0.13) 25%,rgba(34,197,94,0.22) 50%,rgba(34,197,94,0.13) 75%,transparent 100%)' }} />
+
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-24 pb-28">
+
+          {/* Badge */}
+          <div className="relative inline-flex items-center mb-9">
+            <div className="ht-icon-ring absolute inset-0 rounded-full pointer-events-none"
+              style={{ background: 'radial-gradient(ellipse, rgba(34,197,94,0.18) 0%, transparent 70%)', filter: 'blur(8px)', transform: 'scale(1.4)' }} />
+            <div className="relative inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-semibold tracking-wide"
+              style={{ background: 'rgba(8,8,8,0.72)', backdropFilter: 'blur(14px)', border: '1px solid rgba(34,197,94,0.30)', color: '#86efac' }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse shrink-0" />
+              {t('hero.badge')}
+            </div>
           </div>
 
-          <div className="ht-icon text-5xl md:text-6xl mb-5">🌿</div>
+          {/* Icon with ambient glow ring */}
+          <div className="relative mb-5">
+            <div className="ht-icon-ring absolute inset-0 rounded-full pointer-events-none"
+              style={{ background: 'rgba(34,197,94,0.1)', filter: 'blur(24px)', transform: 'scale(2.8)' }} />
+            <div className="ht-icon relative z-10 text-5xl md:text-6xl leading-none select-none">🌿</div>
+          </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight animate-fade-in-up mb-3">
+          {/* Title */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-3">
             <span className="ht-part1">Sức Khỏe</span>
             <span className="ht-amp"> &amp; </span>
             <span className="ht-part2">Đời Sống</span>
           </h1>
 
-          <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted/50 mb-4">
-            <span className="inline-block w-8 h-px bg-gradient-to-r from-transparent to-border" />
+          {/* Domain */}
+          <div className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.3em] mb-5"
+            style={{ color: 'rgba(255,255,255,0.20)' }}>
+            <span className="inline-block w-14 h-px bg-gradient-to-r from-transparent to-accent/28" />
             healthandlifestyle.io.vn
-            <span className="inline-block w-8 h-px bg-gradient-to-l from-transparent to-border" />
+            <span className="inline-block w-14 h-px bg-gradient-to-l from-transparent to-accent/28" />
           </div>
 
-          <p className="mt-1 text-base md:text-lg max-w-xl mx-auto leading-relaxed text-muted/80 animate-fade-in-up stagger-2">
+          {/* Subtitle */}
+          <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10"
+            style={{ color: 'rgba(255,255,255,0.52)' }}>
             {t('hero.subtitle')}
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up stagger-3">
-            <a href="#pillars" className="btn-shimmer inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-sm shadow-[0_0_30px_rgba(34,197,94,0.25)] hover:shadow-[0_0_40px_rgba(34,197,94,0.4)] hover:-translate-y-0.5">
-              {t('hero.cta')} <span>↓</span>
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="#pillars"
+              className="ht-btn-primary relative overflow-hidden inline-flex items-center justify-center gap-2 px-9 py-3.5 bg-accent text-bg font-bold rounded-xl text-sm cursor-pointer">
+              <span className="ht-btn-sweep absolute inset-0 pointer-events-none" />
+              <span className="relative z-10">{t('hero.cta')}</span>
+              <span className="relative z-10 text-base">↓</span>
             </a>
-            <Link to="/program" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-accent/40 hover:border-accent text-accent hover:bg-accent/8 font-semibold rounded-xl transition-all duration-200 text-sm hover:-translate-y-0.5">
-              {t('nav.program')} <span>→</span>
+            <Link to="/program"
+              className="ht-btn-outline inline-flex items-center justify-center gap-2 px-9 py-3.5 font-semibold rounded-xl text-sm">
+              {t('nav.program')} <span className="ht-btn-arrow">→</span>
             </Link>
           </div>
 
+          {/* Stats row */}
           {Array.isArray(stats) && (
-            <div className="mt-14 grid grid-cols-3 gap-4 w-full max-w-2xl">
-              {stats.map((stat, i) => (
-                <div key={i} className="group/hstat relative text-center">
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/hstat:opacity-100 scale-90 group-hover/hstat:scale-100 -translate-y-1 group-hover/hstat:translate-y-0 transition-all duration-200 origin-bottom">
-                    <ThoughtBubble text={STAT_TIPS[i]} idx={`h${i}`} color="#22c55e" />
+            <div className="mt-14 w-full max-w-lg mx-auto">
+              <div className="flex items-stretch rounded-2xl overflow-hidden"
+                style={{ background: 'rgba(255,255,255,0.024)', border: '1px solid rgba(255,255,255,0.055)' }}>
+                {stats.map((stat, i) => (
+                  <div key={i} className="group/hstat relative flex-1 text-center px-4 py-5 cursor-default">
+                    {i > 0 && <div className="absolute left-0 top-[22%] bottom-[22%] w-px" style={{ background: 'rgba(255,255,255,0.07)' }} />}
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none opacity-0 group-hover/hstat:opacity-100 scale-90 group-hover/hstat:scale-100 -translate-y-1 group-hover/hstat:translate-y-0 transition-all duration-200 origin-bottom">
+                      <ThoughtBubble text={STAT_TIPS[i]} idx={`h${i}`} color="#22c55e" />
+                    </div>
+                    <p className="text-gradient font-extrabold text-2xl md:text-3xl leading-none mb-1.5">{stat.value}</p>
+                    <p className="text-[11px] leading-snug" style={{ color: 'rgba(255,255,255,0.38)' }}>{stat.label}</p>
                   </div>
-                  <p className="text-gradient font-extrabold text-xl md:text-2xl cursor-default">{stat.value}</p>
-                  <p className="text-muted text-[11px] mt-1 leading-snug">{stat.label}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
+
+          {/* Scroll indicator */}
+          <div className="mt-10 flex flex-col items-center opacity-30 select-none">
+            <div className="w-[1.5px] h-5 rounded-full overflow-hidden relative" style={{ background: 'rgba(34,197,94,0.15)' }}>
+              <div className="ht-scroll-ball absolute top-0 inset-x-0 h-2.5 rounded-full bg-accent" />
+            </div>
+          </div>
         </div>
       </section>
 

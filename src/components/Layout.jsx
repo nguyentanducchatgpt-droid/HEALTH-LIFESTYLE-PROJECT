@@ -41,11 +41,11 @@ export default function Layout({ children }) {
 
         <div className="max-w-6xl mx-auto px-4 md:px-8 pt-14 pb-8">
 
-          {/* Main footer grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+          {/* Brand + Nav row */}
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-12">
 
-            {/* Col 1 — Brand */}
-            <div>
+            {/* Brand */}
+            <div className="shrink-0">
               <Link to="/" className="inline-flex items-center gap-2.5 mb-4 group">
                 <span className="text-2xl">🌿</span>
                 <div>
@@ -54,23 +54,20 @@ export default function Layout({ children }) {
                   <span className="font-bold text-text text-base">{t('brand.part2')}</span>
                 </div>
               </Link>
-              <p className="text-muted text-xs leading-relaxed mb-5 max-w-[220px]">
+              <p className="text-muted text-xs leading-relaxed max-w-[220px]">
                 Hệ sinh thái sống khỏe khoa học, đơn giản, dễ áp dụng mỗi ngày — hoàn toàn miễn phí.
               </p>
             </div>
 
-            {/* Col 2 — Navigation */}
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-4">Điều Hướng</p>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
-                {[...NAV_COL, ...NAV_COL2].map(({ to, key }) => (
-                  <Link key={to} to={to}
-                    className="text-xs text-muted hover:text-accent transition-colors duration-150 flex items-center gap-1.5 group/n">
-                    <span className="w-1 h-1 rounded-full bg-border group-hover/n:bg-accent transition-colors duration-150 shrink-0" />
-                    {t(key)}
-                  </Link>
-                ))}
-              </div>
+            {/* Navigation — single row */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+              {[...NAV_COL, ...NAV_COL2].map(({ to, key }) => (
+                <Link key={to} to={to}
+                  className="text-xs text-muted hover:text-accent transition-colors duration-150 flex items-center gap-1.5 group/n">
+                  <span className="w-1 h-1 rounded-full bg-border group-hover/n:bg-accent transition-colors duration-150 shrink-0" />
+                  {t(key)}
+                </Link>
+              ))}
             </div>
 
           </div>

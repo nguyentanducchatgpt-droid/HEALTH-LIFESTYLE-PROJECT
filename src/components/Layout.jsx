@@ -106,7 +106,7 @@ export default function Layout({ children }) {
           {/* Bottom bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-muted/60 text-xs">{t('footer.copyright')}</p>
-            <p className="text-muted/40 text-xs text-center sm:text-right max-w-sm leading-relaxed">{t('footer.disclaimer')}</p>
+            <p className="text-muted/40 text-xs text-center sm:text-right whitespace-nowrap">{t('footer.disclaimer')}</p>
           </div>
         </div>
       </footer>

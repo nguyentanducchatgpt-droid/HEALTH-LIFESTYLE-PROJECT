@@ -220,7 +220,7 @@ export default function Home() {
             <div className="ht-icon-ring absolute inset-0 rounded-full pointer-events-none"
               style={{ background: 'rgba(34,197,94,0.1)', filter: 'blur(24px)', transform: 'scale(2.8)' }} />
             <div className="ht-icon relative z-10 select-none">
-              <img src="/logo.svg" alt="" className="h-16 w-16 md:h-20 md:w-20" />
+              <img src="/logo.png" alt="" className="h-16 w-16 md:h-20 md:w-20" />
             </div>
           </div>
 

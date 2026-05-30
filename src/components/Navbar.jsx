@@ -50,7 +50,7 @@ export default function Navbar() {
           className="flex items-center gap-2 font-bold text-accent shrink-0 group"
         >
           <img
-            src="/logo.svg"
+            src="/logo.png"
             alt="Sức Khỏe & Đời Sống"
             className="h-8 w-8 shrink-0 transition-transform duration-300 group-hover:scale-110"
           />

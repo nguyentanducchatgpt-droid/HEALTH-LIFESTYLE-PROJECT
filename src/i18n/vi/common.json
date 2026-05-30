@@ -28,16 +28,16 @@
   "home": {
     "stats": [
       {
-        "value": "3 hành trình",
-        "label": "7 ngày · 12 tuần · 24 tuần"
+        "value": "10 phút",
+        "label": "Đủ để bắt đầu thói quen"
       },
       {
-        "value": "6 trụ cột",
-        "label": "Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ"
+        "value": "Sống khỏe 360",
+        "label": "Hệ thống toàn diện phù hợp mọi lứa tuổi"
       },
       {
-        "value": "Miễn phí",
-        "label": "Không đăng ký · Không ẩn phí · Mãi mãi"
+        "value": "Hành trình sống khỏe",
+        "label": "Từ người mới đến thói quen bền vững"
       }
     ],
     "quote": "Không cần hoàn hảo. Chỉ cần nhất quán.",

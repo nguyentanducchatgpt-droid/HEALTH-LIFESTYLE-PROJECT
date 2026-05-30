@@ -50,10 +50,12 @@ const PILLAR_DATA = [
 const COLOR_MAP = { green:'#22c55e', lime:'#84cc16', teal:'#14b8a6', purple:'#a855f7', blue:'#3b82f6', orange:'#f97316' };
 
 const STAT_TIPS = [
-  '3 hành trình phù hợp mọi cấp độ: 7 ngày khởi động nhẹ nhàng, 12 tuần xây nền bền vững (3 giai đoạn), 24 tuần nâng cao toàn diện.',
-  'Hệ thống 6 trụ cột toàn diện: Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — đảm bảo không bỏ sót bất kỳ góc độ nào.',
-  'Toàn bộ nội dung hoàn toàn miễn phí — không cần đăng ký, không quảng cáo, không ẩn phí. Mãi mãi.',
+  '10 phút mỗi ngày là điểm khởi đầu hoàn hảo. Nhất quán mỗi ngày hiệu quả hơn tập luyện cường độ cao nhưng bỏ giữa chừng.',
+  'Hệ thống Sống Khỏe 360° bao phủ toàn diện 6 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — phù hợp mọi lứa tuổi.',
+  'Hành trình 3 cấp độ: 7 ngày khởi động → 12 tuần xây nền → 24 tuần nâng cao. Từng bước rõ ràng, không bao giờ cảm thấy choáng ngợp.',
 ];
+const STAT_COLORS = ['#22c55e', '#14b8a6', '#a855f7'];
+const STAT_RGBS   = ['34,197,94', '20,184,166', '168,85,247'];
 
 const JOURNEY_CARDS = [
   {
@@ -106,9 +108,10 @@ const PILLARS_KEYS = ['pillarA','pillarB','pillarC','pillarD','pillarE','pillarF
 export default function Home() {
   const { t }     = useTranslation();
   const { t: tP } = useTranslation('pillars');
-  const stats     = t('home.stats', { returnObjects: true });
-  const heroRef   = useRef(null);
-  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
+  const stats        = t('home.stats', { returnObjects: true });
+  const heroRef      = useRef(null);
+  const [mousePos,   setMousePos]   = useState({ x: 0.5, y: 0.5 });
+  const [hoveredStat, setHoveredStat] = useState(null);
 
   useEffect(() => {
     const id = 'home-title-kf';
@@ -248,19 +251,69 @@ export default function Home() {
 
           {/* Stats row */}
           {Array.isArray(stats) && (
-            <div className="mt-14 w-full max-w-lg mx-auto">
+            <div className="mt-14 w-full max-w-2xl mx-auto">
               <div className="flex items-stretch rounded-2xl overflow-hidden"
-                style={{ background: 'rgba(255,255,255,0.024)', border: '1px solid rgba(255,255,255,0.055)' }}>
-                {stats.map((stat, i) => (
-                  <div key={i} className="group/hstat relative flex-1 text-center px-4 py-5 cursor-default">
-                    {i > 0 && <div className="absolute left-0 top-[22%] bottom-[22%] w-px" style={{ background: 'rgba(255,255,255,0.07)' }} />}
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none opacity-0 group-hover/hstat:opacity-100 scale-90 group-hover/hstat:scale-100 -translate-y-1 group-hover/hstat:translate-y-0 transition-all duration-200 origin-bottom">
-                      <ThoughtBubble text={STAT_TIPS[i]} idx={`h${i}`} color="#22c55e" />
+                style={{ background: 'rgba(255,255,255,0.022)', border: '1px solid rgba(255,255,255,0.052)' }}>
+                {stats.map((stat, i) => {
+                  const active = hoveredStat === i;
+                  const color  = STAT_COLORS[i];
+                  const rgb    = STAT_RGBS[i];
+                  return (
+                    <div key={i}
+                      className="group/hstat relative flex-1 text-center px-4 py-5 cursor-default overflow-hidden"
+                      style={{ transition: 'background 0.3s' }}
+                      onMouseEnter={() => setHoveredStat(i)}
+                      onMouseLeave={() => setHoveredStat(null)}
+                    >
+                      {/* Radial hover bg */}
+                      <div className="absolute inset-0 pointer-events-none"
+                        style={{
+                          background: `radial-gradient(ellipse at 50% 80%, rgba(${rgb},0.11) 0%, transparent 72%)`,
+                          opacity: active ? 1 : 0,
+                          transition: 'opacity 0.3s',
+                        }} />
+
+                      {/* Vertical divider */}
+                      {i > 0 && (
+                        <div className="absolute left-0 top-[20%] bottom-[20%] w-px pointer-events-none"
+                          style={{
+                            background: active ? `rgba(${rgb},0.3)` : 'rgba(255,255,255,0.07)',
+                            transition: 'background 0.3s',
+                          }} />
+                      )}
+
+                      {/* Bottom sweep bar */}
+                      <div className="absolute bottom-0 left-0 h-[2px] pointer-events-none rounded-full"
+                        style={{
+                          width: active ? '100%' : '0%',
+                          background: `linear-gradient(90deg, transparent, ${color}, transparent)`,
+                          transition: 'width 0.4s cubic-bezier(0.22,1,0.36,1)',
+                        }} />
+
+                      {/* ThoughtBubble tooltip */}
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none opacity-0 group-hover/hstat:opacity-100 scale-90 group-hover/hstat:scale-100 -translate-y-1 group-hover/hstat:translate-y-0 transition-all duration-200 origin-bottom">
+                        <ThoughtBubble text={STAT_TIPS[i]} idx={`h${i}`} color={color} />
+                      </div>
+
+                      {/* Value */}
+                      <p className="font-extrabold text-lg md:text-xl leading-none mb-1.5 transition-all duration-250"
+                        style={{
+                          color: active ? color : 'rgba(255,255,255,0.9)',
+                          filter: active ? `drop-shadow(0 0 10px rgba(${rgb},0.55))` : 'none',
+                          transform: active ? 'scale(1.07)' : 'scale(1)',
+                          display: 'block',
+                        }}>
+                        {stat.value}
+                      </p>
+
+                      {/* Label */}
+                      <p className="text-[11px] leading-snug transition-colors duration-250"
+                        style={{ color: active ? `rgba(${rgb},0.75)` : 'rgba(255,255,255,0.36)' }}>
+                        {stat.label}
+                      </p>
                     </div>
-                    <p className="text-gradient font-extrabold text-2xl md:text-3xl leading-none mb-1.5">{stat.value}</p>
-                    <p className="text-[11px] leading-snug" style={{ color: 'rgba(255,255,255,0.38)' }}>{stat.label}</p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}

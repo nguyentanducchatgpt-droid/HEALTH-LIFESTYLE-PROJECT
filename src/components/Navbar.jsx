@@ -52,8 +52,7 @@ export default function Navbar() {
           <img
             src="/logo.svg"
             alt="Sức Khỏe & Đời Sống"
-            className="h-8 w-8 shrink-0 transition-all duration-300 group-hover:scale-110"
-            style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }}
+            className="h-8 w-8 shrink-0 transition-transform duration-300 group-hover:scale-110"
           />
           <span className="hidden sm:inline text-sm font-bold tracking-tight">
             <span className="text-text">{t('brand.part1')}</span>

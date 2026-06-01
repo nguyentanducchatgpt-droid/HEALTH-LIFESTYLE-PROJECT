@@ -204,17 +204,6 @@ export default function Home() {
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-24 pb-28">
 
-          {/* Badge */}
-          <div className="relative inline-flex items-center mb-9">
-            <div className="ht-icon-ring absolute inset-0 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(ellipse, rgba(34,197,94,0.18) 0%, transparent 70%)', filter: 'blur(8px)', transform: 'scale(1.4)' }} />
-            <div className="relative inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-semibold tracking-wide"
-              style={{ background: 'rgba(8,8,8,0.72)', backdropFilter: 'blur(14px)', border: '1px solid rgba(34,197,94,0.30)', color: '#86efac' }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse shrink-0" />
-              {t('hero.badge')}
-            </div>
-          </div>
-
           {/* Icon with ambient glow ring */}
           <div className="relative mb-5">
             <div className="ht-icon-ring absolute inset-0 rounded-full pointer-events-none"

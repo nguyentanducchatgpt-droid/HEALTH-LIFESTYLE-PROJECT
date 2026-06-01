@@ -45,22 +45,38 @@ export default function Navbar() {
     const s = document.createElement('style');
     s.id = id;
     s.textContent = `
-      @keyframes nbGlow1 {
-        0%,100% { text-shadow: 0 0 3px rgba(34,197,94,0.15); color:#86efac; }
-        50%      { text-shadow: 0 0 12px rgba(34,197,94,0.6), 0 0 24px rgba(34,197,94,0.2); color:#bbf7d0; }
+      @keyframes nbReveal {
+        from { opacity:0; letter-spacing:0.14em; transform:translateY(-4px); }
+        to   { opacity:1; letter-spacing:normal;  transform:translateY(0); }
       }
-      @keyframes nbGlow2 {
-        0%,100% { text-shadow: 0 0 3px rgba(20,184,166,0.15); color:#5eead4; }
-        50%      { text-shadow: 0 0 12px rgba(20,184,166,0.6), 0 0 24px rgba(20,184,166,0.2); color:#99f6e4; }
+      @keyframes nbSweep {
+        0%   { left:-110%; opacity:0; }
+        20%  { opacity:1; }
+        80%  { opacity:1; }
+        100% { left:110%; opacity:0; }
       }
-      @keyframes nbAmpBeat {
-        0%,100% { transform:scale(1);   color:#22c55e; text-shadow:none; }
-        40%      { transform:scale(1.18); color:#4ade80; text-shadow:0 0 10px rgba(34,197,94,0.7); }
-        60%      { transform:scale(1.12); }
+      .nb-brand {
+        position:relative;
+        animation: nbReveal 0.55s cubic-bezier(0.25,0.46,0.45,0.94) both;
+        animation-delay: 0.1s;
       }
-      .nb-p1  { color:#86efac; animation: nbGlow1 4s ease-in-out infinite; }
-      .nb-p2  { color:#5eead4; animation: nbGlow2 4s ease-in-out infinite 2s; }
-      .nb-amp { display:inline-block; font-weight:900; animation: nbAmpBeat 3.5s ease-in-out infinite 1s; }
+      .nb-brand::after {
+        content:'';
+        position:absolute; top:0; bottom:0; width:30px;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+        transform: skewX(-18deg);
+        opacity:0; pointer-events:none;
+        left:-110%;
+      }
+      .group:hover .nb-brand::after {
+        animation: nbSweep 0.7s ease-in-out forwards;
+      }
+      .nb-p1  { color:#86efac; transition:color 0.25s, text-shadow 0.25s; }
+      .nb-p2  { color:#5eead4; transition:color 0.25s, text-shadow 0.25s; }
+      .nb-amp { color:#22c55e; font-weight:900; display:inline-block; transition:transform 0.2s; }
+      .group:hover .nb-p1  { color:#bbf7d0; text-shadow:0 0 12px rgba(34,197,94,0.45); }
+      .group:hover .nb-p2  { color:#99f6e4; text-shadow:0 0 12px rgba(20,184,166,0.45); }
+      .group:hover .nb-amp { transform:scale(1.15); }
     `;
     document.head.appendChild(s);
   }, []);
@@ -80,12 +96,12 @@ export default function Navbar() {
             alt="Sức Khỏe & Đời Sống"
             className="h-8 w-8 shrink-0 transition-transform duration-300 group-hover:scale-110"
           />
-          <span className="hidden sm:inline font-bold tracking-wide text-sm leading-none">
+          <span className="nb-brand hidden sm:inline font-bold tracking-wide text-sm leading-none overflow-hidden">
             <span className="nb-p1">{t('brand.part1')}</span>
             <span className="nb-amp"> &amp; </span>
             <span className="nb-p2">{t('brand.part2')}</span>
           </span>
-          <span className="sm:hidden font-bold tracking-wide text-xs leading-none">
+          <span className="nb-brand sm:hidden font-bold tracking-wide text-xs leading-none overflow-hidden">
             <span className="nb-p1">{t('brand.short')}</span>
           </span>
         </Link>

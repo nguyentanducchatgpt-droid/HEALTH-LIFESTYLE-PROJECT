@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -39,6 +39,36 @@ export default function Navbar() {
   const openDropdown  = () => { clearTimeout(closeTimer.current); setPillarsOpen(true); };
   const startClose    = () => { closeTimer.current = setTimeout(() => setPillarsOpen(false), 150); };
 
+  useEffect(() => {
+    const id = 'nb-brand-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @keyframes nbSh1 { 0%{background-position:200% center} 100%{background-position:-200% center} }
+      @keyframes nbSh2 { 0%{background-position:-200% center} 100%{background-position:200% center} }
+      @keyframes nbAmp { 0%,100%{opacity:0.85;filter:drop-shadow(0 0 0px transparent)} 50%{opacity:1;filter:drop-shadow(0 0 6px rgba(34,197,94,0.7))} }
+      .nb-p1 {
+        background: linear-gradient(110deg,#c8f5d8 0%,#86efac 30%,#ffffff 50%,#86efac 70%,#c8f5d8 100%);
+        background-size: 260% 100%;
+        -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        animation: nbSh1 5s linear infinite;
+      }
+      .nb-p2 {
+        background: linear-gradient(110deg,#ccf9f4 0%,#5eead4 30%,#ffffff 50%,#5eead4 70%,#ccf9f4 100%);
+        background-size: 260% 100%;
+        -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        animation: nbSh2 6s linear infinite;
+      }
+      .nb-amp {
+        -webkit-text-fill-color:#22c55e; color:#22c55e;
+        animation: nbAmp 2.8s ease-in-out infinite;
+        display:inline-block; font-weight:900;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   return (
     <nav className="sticky top-0 z-50 glass border-b border-border/60">
       <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
@@ -54,12 +84,14 @@ export default function Navbar() {
             alt="Sức Khỏe & Đời Sống"
             className="h-8 w-8 shrink-0 transition-transform duration-300 group-hover:scale-110"
           />
-          <span className="hidden sm:inline text-sm font-bold tracking-tight">
-            <span className="text-text">{t('brand.part1')}</span>
-            <span className="text-accent"> & </span>
-            <span className="text-text">{t('brand.part2')}</span>
+          <span className="hidden sm:inline font-bold tracking-wide text-sm leading-none">
+            <span className="nb-p1">{t('brand.part1')}</span>
+            <span className="nb-amp"> &amp; </span>
+            <span className="nb-p2">{t('brand.part2')}</span>
           </span>
-          <span className="sm:hidden text-xs font-bold text-text">{t('brand.short')}</span>
+          <span className="sm:hidden font-bold tracking-wide text-xs leading-none">
+            <span className="nb-p1">{t('brand.short')}</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}

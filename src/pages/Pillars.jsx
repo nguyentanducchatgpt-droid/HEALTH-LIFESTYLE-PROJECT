@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -87,20 +87,65 @@ export default function Pillars() {
   const { meta: m, data: p } = pillars[activeTab];
   const sections = Array.isArray(p?.sections) ? p.sections : [];
 
+  useEffect(() => {
+    const id = 'pll-header-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @keyframes pllReveal {
+        from { opacity:0; transform: translateY(22px) scale(0.96); filter: blur(6px); }
+        to   { opacity:1; transform: translateY(0)    scale(1);    filter: blur(0);  }
+      }
+      @keyframes pllLineGrow {
+        from { transform: scaleX(0); opacity:0; }
+        to   { transform: scaleX(1); opacity:1; }
+      }
+      @keyframes pllBadgePop {
+        from { opacity:0; transform: scale(0.75) translateY(10px); }
+        to   { opacity:1; transform: scale(1)    translateY(0); }
+      }
+      @keyframes pllGlowDrift {
+        0%,100% { transform: translateX(0)   translateY(0)   scale(1);   }
+        33%     { transform: translateX(30px) translateY(-20px) scale(1.08); }
+        66%     { transform: translateX(-20px) translateY(15px) scale(0.94); }
+      }
+      .pll-title {
+        animation: pllReveal 0.7s cubic-bezier(0.25,0.46,0.45,0.94) both;
+      }
+      .pll-line {
+        transform-origin: center;
+        animation: pllLineGrow 0.9s cubic-bezier(0.25,0.46,0.45,0.94) both;
+        animation-delay: 0.35s;
+      }
+      .pll-badge {
+        animation: pllBadgePop 0.55s cubic-bezier(0.34,1.56,0.64,1) both;
+        animation-delay: 0.6s;
+      }
+      .pll-glow-a {
+        animation: pllGlowDrift 9s ease-in-out infinite;
+      }
+      .pll-glow-b {
+        animation: pllGlowDrift 12s ease-in-out infinite reverse;
+        animation-delay: -4s;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   return (
     <div className="max-w-5xl mx-auto">
 
       {/* ── Page Header ───────────────────────────────── */}
       <div className="text-center mb-10 relative">
+        {/* Ambient glow blobs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 left-1/3 w-96 h-96 bg-accent/4 rounded-full blur-[100px]" />
+          <div className="pll-glow-a absolute top-0 left-1/4 w-[500px] h-[300px] bg-accent/5 rounded-full blur-[100px]" />
+          <div className="pll-glow-b absolute top-0 right-1/4 w-[360px] h-[240px] bg-green-400/3 rounded-full blur-[80px]" />
         </div>
         <div className="relative">
-          <span className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-semibold px-4 py-1.5 rounded-full mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
-            {t('hero.badge')}
-          </span>
-          <h1 className="text-3xl md:text-5xl font-black tracking-tight text-text mb-3">
+          {/* Title */}
+          <h1 className="pll-title text-3xl md:text-5xl font-black tracking-tight text-text mb-4">
             {(() => {
               const title = t('hero.pillars_title');
               const idx = title.lastIndexOf('360');
@@ -108,9 +153,16 @@ export default function Pillars() {
               return <>{title.slice(0, idx)}<span className="sk360-num">360</span></>;
             })()}
           </h1>
-          <p className="text-muted text-sm md:text-base max-w-lg mx-auto leading-relaxed">
-            {t('hero.subtitle')}
-          </p>
+
+          {/* Gradient underline */}
+          <div className="pll-line mx-auto mb-5 h-[3px] w-24 rounded-full"
+            style={{ background: 'linear-gradient(90deg, #22c55e, #5eead4, #a855f7)' }} />
+
+          {/* Badge (moved here from top) */}
+          <span className="pll-badge inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-semibold px-4 py-1.5 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
+            {t('hero.badge')}
+          </span>
         </div>
       </div>
 

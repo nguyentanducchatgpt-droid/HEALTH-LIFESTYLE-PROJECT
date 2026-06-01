@@ -80,6 +80,15 @@ export default function VideoLibrary() {
   const { t } = useTranslation();
   const [playing, setPlaying] = useState(null); // { src, title }
 
+  const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
+  const headerRef = useRef(null);
+
+  const handleMouseMove = useCallback((e) => {
+    const r = headerRef.current?.getBoundingClientRect();
+    if (!r) return;
+    setMouse({ x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height });
+  }, []);
+
   useEffect(() => {
     const id = 'vl-header-kf';
     if (document.getElementById(id)) return;
@@ -87,38 +96,57 @@ export default function VideoLibrary() {
     s.id = id;
     s.textContent = `
       @keyframes vlLabelIn {
-        from { opacity:0; transform:translateX(-14px); }
-        to   { opacity:1; transform:translateX(0); }
+        from { opacity:0; transform:translateY(-10px) scale(0.9); }
+        to   { opacity:1; transform:translateY(0)     scale(1); }
       }
       @keyframes vlTitleIn {
-        from { opacity:0; transform:translateY(26px) scale(0.95); filter:blur(6px); }
+        from { opacity:0; transform:translateY(30px) scale(0.94); filter:blur(8px); }
         to   { opacity:1; transform:translateY(0)    scale(1);    filter:blur(0); }
       }
       @keyframes vlSubIn {
-        from { opacity:0; transform:translateX(-10px); }
-        to   { opacity:1; transform:translateX(0); }
+        from { opacity:0; transform:translateY(14px); }
+        to   { opacity:1; transform:translateY(0); }
       }
       @keyframes vlLineGrow {
         from { transform:scaleX(0); opacity:0; }
         to   { transform:scaleX(1); opacity:1; }
       }
+      @keyframes vlShimmer {
+        0%   { background-position:200% center; }
+        100% { background-position:-200% center; }
+      }
       @keyframes vlDotPulse {
-        0%,100% { transform:scale(1);    opacity:0.7; }
-        50%     { transform:scale(1.35); opacity:1; }
+        0%,100% { transform:scale(1);    opacity:0.65; }
+        50%     { transform:scale(1.5);  opacity:1; }
       }
       @keyframes vlGlowDrift {
-        0%,100% { transform:translateX(0)    translateY(0);    opacity:0.35; }
-        40%     { transform:translateX(28px) translateY(-18px); opacity:0.6; }
-        70%     { transform:translateX(-18px) translateY(12px); opacity:0.42; }
+        0%,100% { opacity:0.4; transform:scale(1); }
+        50%     { opacity:0.7; transform:scale(1.15); }
       }
-      .vl-label  { animation:vlLabelIn  0.5s ease both; }
-      .vl-title  { animation:vlTitleIn  0.7s cubic-bezier(0.25,0.46,0.45,0.94) both 0.1s; }
-      .vl-line   { transform-origin:left; animation:vlLineGrow 0.9s ease both 0.3s; }
-      .vl-sub    { animation:vlSubIn    0.6s ease both 0.38s; }
-      .vl-dot    { animation:vlDotPulse 2.8s ease-in-out infinite; }
-      .vl-dot:nth-child(2){ animation-delay:0.4s; }
-      .vl-dot:nth-child(3){ animation-delay:0.8s; }
-      .vl-glow   { animation:vlGlowDrift 9s ease-in-out infinite; }
+      @keyframes vlHintPop {
+        from { opacity:0; transform:scale(0.85) translateY(8px); }
+        to   { opacity:1; transform:scale(1) translateY(0); }
+      }
+      .vl-label  { animation:vlLabelIn  0.5s cubic-bezier(0.34,1.56,0.64,1) both; }
+      .vl-title  { animation:vlTitleIn  0.72s cubic-bezier(0.25,0.46,0.45,0.94) both 0.1s; }
+      .vl-line   { transform-origin:center; animation:vlLineGrow 1s ease both 0.32s; }
+      .vl-sub    { animation:vlSubIn    0.6s ease both 0.4s; }
+      .vl-hint   { animation:vlHintPop  0.5s cubic-bezier(0.34,1.56,0.64,1) both 0.62s; }
+      .vl-dot    { animation:vlDotPulse 2.6s ease-in-out infinite; }
+      .vl-dot:nth-child(2){ animation-delay:0.5s; }
+      .vl-dot:nth-child(3){ animation-delay:1s; }
+      .vl-glow-a { animation:vlGlowDrift 8s ease-in-out infinite; }
+      .vl-glow-b { animation:vlGlowDrift 11s ease-in-out infinite reverse; animation-delay:-4s; }
+      .vl-word {
+        display:inline-block;
+        transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), text-shadow 0.25s ease;
+      }
+      .vl-word:hover { transform:scale(1.06) translateY(-3px); }
+      .vl-underline-shimmer {
+        background: linear-gradient(90deg, #22c55e 0%, #5eead4 30%, #ffffff 50%, #a855f7 70%, #22c55e 100%);
+        background-size: 300% auto;
+        animation: vlLineGrow 1s ease both 0.32s, vlShimmer 4s linear 1.3s infinite;
+      }
     `;
     document.head.appendChild(s);
   }, []);
@@ -134,48 +162,65 @@ export default function VideoLibrary() {
 
       <div className="max-w-5xl mx-auto">
         {/* ── Header ────────────────────────────────── */}
-        <div className="mb-12 relative">
-          {/* Drifting glow blobs */}
-          <div className="vl-glow absolute -top-8 -left-12 w-80 h-80 bg-accent/6 rounded-full blur-[90px] pointer-events-none" />
-          <div className="absolute top-0 left-1/2 w-64 h-48 bg-teal-500/4 rounded-full blur-[70px] pointer-events-none" />
+        <div ref={headerRef} onMouseMove={handleMouseMove}
+          className="mb-12 relative text-center overflow-hidden rounded-3xl py-14 px-6"
+          style={{ background:'rgba(255,255,255,0.015)' }}>
+
+          {/* Mouse-tracking glow */}
+          <div className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{
+            background:`radial-gradient(ellipse 520px 320px at ${mouse.x*100}% ${mouse.y*100}%, rgba(34,197,94,0.09), transparent 70%)`,
+          }} />
+
+          {/* Static ambient blobs */}
+          <div className="vl-glow-a absolute top-1/4 left-1/4  w-72 h-56 bg-accent/5    rounded-full blur-[80px] pointer-events-none" />
+          <div className="vl-glow-b absolute top-0   right-1/4 w-56 h-44 bg-purple-500/4 rounded-full blur-[70px] pointer-events-none" />
+
+          {/* Subtle top border */}
+          <div className="absolute top-0 left-0 right-0 h-px" style={{ background:'linear-gradient(90deg,transparent,rgba(34,197,94,0.25),rgba(168,85,247,0.2),transparent)' }} />
 
           <div className="relative">
-            {/* Label row */}
-            <div className="vl-label flex items-center gap-2.5 mb-6">
-              {/* Pulsing dots */}
-              <span className="vl-dot w-2 h-2 rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 6px rgba(34,197,94,0.7)' }} />
-              <span className="vl-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 5px rgba(94,234,212,0.6)' }} />
-              <span className="vl-dot w-1 h-1 rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 4px rgba(168,85,247,0.5)' }} />
-              <span className="text-[10px] font-extrabold tracking-[0.2em] uppercase text-muted/60 ml-1">
+            {/* Pulsing dots label */}
+            <div className="vl-label inline-flex items-center gap-2 mb-6">
+              <span className="vl-dot w-2   h-2   rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 7px rgba(34,197,94,0.8)' }} />
+              <span className="vl-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 6px rgba(94,234,212,0.7)' }} />
+              <span className="vl-dot w-1   h-1   rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 5px rgba(168,85,247,0.6)' }} />
+              <span className="text-[10px] font-extrabold tracking-[0.22em] uppercase text-muted/55 mx-2">
                 Hướng Dẫn Bài Tập
               </span>
+              <span className="vl-dot w-1   h-1   rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 5px rgba(168,85,247,0.6)' }} />
+              <span className="vl-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 6px rgba(94,234,212,0.7)' }} />
+              <span className="vl-dot w-2   h-2   rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 7px rgba(34,197,94,0.8)' }} />
             </div>
 
-            {/* Title */}
-            <h1 className="vl-title font-black leading-tight tracking-tight mb-5" style={{ fontSize:'clamp(2.6rem,5.5vw,4rem)' }}>
-              <span className="text-text">Thư Viện </span>
-              <span style={{
+            {/* Title — each word lifts on hover */}
+            <h1 className="vl-title font-black leading-tight tracking-tight mb-5" style={{ fontSize:'clamp(2.8rem,6vw,4.2rem)' }}>
+              <span className="vl-word text-text cursor-default select-none">Thư </span>
+              <span className="vl-word text-text cursor-default select-none">Viện </span>
+              <span className="vl-word cursor-default select-none" style={{
                 background:'linear-gradient(135deg,#22c55e 0%,#5eead4 50%,#a855f7 100%)',
                 WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent',
               }}>Video</span>
             </h1>
 
-            {/* Animated underline */}
-            <div className="vl-line mb-6 h-[2.5px] w-20 rounded-full"
-              style={{ background:'linear-gradient(90deg,#22c55e,#5eead4,#a855f7)' }} />
+            {/* Shimmer underline */}
+            <div className="vl-underline-shimmer mx-auto mb-7 h-[2.5px] w-24 rounded-full" />
 
             {/* Subtitle */}
-            <p className="vl-sub text-muted/75 text-sm md:text-base leading-relaxed max-w-md mb-7">
+            <p className="vl-sub text-muted/70 text-sm md:text-base leading-relaxed max-w-sm mx-auto mb-8">
               {t('video.subtitle')}
             </p>
 
-            {/* Play hint — styled pill */}
-            <div className="vl-sub inline-flex items-center gap-2.5 border rounded-full px-4 py-2 cursor-default"
-              style={{ borderColor:'rgba(34,197,94,0.18)', background:'rgba(34,197,94,0.05)' }}>
-              <span className="w-5 h-5 rounded-full border border-accent/40 flex items-center justify-center shrink-0">
+            {/* Play hint pill */}
+            <div className="vl-hint inline-flex items-center gap-2.5 border rounded-full px-5 py-2.5 cursor-default
+              transition-all duration-200 hover:border-accent/40 hover:bg-accent/8 group/hint"
+              style={{ borderColor:'rgba(34,197,94,0.2)', background:'rgba(34,197,94,0.04)' }}>
+              <span className="w-5 h-5 rounded-full border border-accent/40 flex items-center justify-center shrink-0
+                transition-colors duration-200 group-hover/hint:border-accent group-hover/hint:bg-accent/15">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-2.5 h-2.5 text-accent"><path d="M8 5v14l11-7z"/></svg>
               </span>
-              <span className="text-xs text-muted/70">{t('video.click_to_play') || 'Nhấn vào video để xem'}</span>
+              <span className="text-xs text-muted/65 group-hover/hint:text-muted/90 transition-colors duration-200">
+                {t('video.click_to_play') || 'Nhấn vào video để xem'}
+              </span>
             </div>
           </div>
         </div>

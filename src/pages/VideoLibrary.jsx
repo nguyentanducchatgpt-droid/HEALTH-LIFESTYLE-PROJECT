@@ -80,6 +80,49 @@ export default function VideoLibrary() {
   const { t } = useTranslation();
   const [playing, setPlaying] = useState(null); // { src, title }
 
+  useEffect(() => {
+    const id = 'vl-header-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @keyframes vlLabelIn {
+        from { opacity:0; transform:translateX(-14px); }
+        to   { opacity:1; transform:translateX(0); }
+      }
+      @keyframes vlTitleIn {
+        from { opacity:0; transform:translateY(26px) scale(0.95); filter:blur(6px); }
+        to   { opacity:1; transform:translateY(0)    scale(1);    filter:blur(0); }
+      }
+      @keyframes vlSubIn {
+        from { opacity:0; transform:translateX(-10px); }
+        to   { opacity:1; transform:translateX(0); }
+      }
+      @keyframes vlLineGrow {
+        from { transform:scaleX(0); opacity:0; }
+        to   { transform:scaleX(1); opacity:1; }
+      }
+      @keyframes vlDotPulse {
+        0%,100% { transform:scale(1);    opacity:0.7; }
+        50%     { transform:scale(1.35); opacity:1; }
+      }
+      @keyframes vlGlowDrift {
+        0%,100% { transform:translateX(0)    translateY(0);    opacity:0.35; }
+        40%     { transform:translateX(28px) translateY(-18px); opacity:0.6; }
+        70%     { transform:translateX(-18px) translateY(12px); opacity:0.42; }
+      }
+      .vl-label  { animation:vlLabelIn  0.5s ease both; }
+      .vl-title  { animation:vlTitleIn  0.7s cubic-bezier(0.25,0.46,0.45,0.94) both 0.1s; }
+      .vl-line   { transform-origin:left; animation:vlLineGrow 0.9s ease both 0.3s; }
+      .vl-sub    { animation:vlSubIn    0.6s ease both 0.38s; }
+      .vl-dot    { animation:vlDotPulse 2.8s ease-in-out infinite; }
+      .vl-dot:nth-child(2){ animation-delay:0.4s; }
+      .vl-dot:nth-child(3){ animation-delay:0.8s; }
+      .vl-glow   { animation:vlGlowDrift 9s ease-in-out infinite; }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   const openVideo  = useCallback((src, title) => setPlaying({ src, title }), []);
   const closeVideo = useCallback(() => setPlaying(null), []);
 
@@ -91,24 +134,50 @@ export default function VideoLibrary() {
 
       <div className="max-w-5xl mx-auto">
         {/* ── Header ────────────────────────────────── */}
-        <div className="mb-14 relative">
-          <div className="absolute -top-10 -left-10 w-72 h-72 bg-accent/5 rounded-full blur-[80px] pointer-events-none" />
-          <div className="relative">
-            <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-bold px-4 py-1.5 rounded-full mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
-              {LOCAL_VIDEOS.length} {t('video.local_section')}
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-text mb-4">{t('video.title')}</h1>
-            <p className="text-muted text-base leading-relaxed max-w-lg">{t('video.subtitle')}</p>
-          </div>
-        </div>
+        <div className="mb-12 relative">
+          {/* Drifting glow blobs */}
+          <div className="vl-glow absolute -top-8 -left-12 w-80 h-80 bg-accent/6 rounded-full blur-[90px] pointer-events-none" />
+          <div className="absolute top-0 left-1/2 w-64 h-48 bg-teal-500/4 rounded-full blur-[70px] pointer-events-none" />
 
-        {/* ── Click-to-play hint ────────────────────── */}
-        <div className="flex items-center gap-2 mb-8 text-muted text-xs">
-          <span className="w-5 h-5 rounded-full border border-border flex items-center justify-center shrink-0">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-2.5 h-2.5"><path d="M8 5v14l11-7z"/></svg>
-          </span>
-          <span>{t('video.click_to_play') || 'Nhấn vào video để xem'}</span>
+          <div className="relative">
+            {/* Label row */}
+            <div className="vl-label flex items-center gap-2.5 mb-6">
+              {/* Pulsing dots */}
+              <span className="vl-dot w-2 h-2 rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 6px rgba(34,197,94,0.7)' }} />
+              <span className="vl-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 5px rgba(94,234,212,0.6)' }} />
+              <span className="vl-dot w-1 h-1 rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 4px rgba(168,85,247,0.5)' }} />
+              <span className="text-[10px] font-extrabold tracking-[0.2em] uppercase text-muted/60 ml-1">
+                Hướng Dẫn Bài Tập
+              </span>
+            </div>
+
+            {/* Title */}
+            <h1 className="vl-title font-black leading-tight tracking-tight mb-5" style={{ fontSize:'clamp(2.6rem,5.5vw,4rem)' }}>
+              <span className="text-text">Thư Viện </span>
+              <span style={{
+                background:'linear-gradient(135deg,#22c55e 0%,#5eead4 50%,#a855f7 100%)',
+                WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent',
+              }}>Video</span>
+            </h1>
+
+            {/* Animated underline */}
+            <div className="vl-line mb-6 h-[2.5px] w-20 rounded-full"
+              style={{ background:'linear-gradient(90deg,#22c55e,#5eead4,#a855f7)' }} />
+
+            {/* Subtitle */}
+            <p className="vl-sub text-muted/75 text-sm md:text-base leading-relaxed max-w-md mb-7">
+              {t('video.subtitle')}
+            </p>
+
+            {/* Play hint — styled pill */}
+            <div className="vl-sub inline-flex items-center gap-2.5 border rounded-full px-4 py-2 cursor-default"
+              style={{ borderColor:'rgba(34,197,94,0.18)', background:'rgba(34,197,94,0.05)' }}>
+              <span className="w-5 h-5 rounded-full border border-accent/40 flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-2.5 h-2.5 text-accent"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span className="text-xs text-muted/70">{t('video.click_to_play') || 'Nhấn vào video để xem'}</span>
+            </div>
+          </div>
         </div>
 
         {/* ── Video grid ───────────────────────────── */}

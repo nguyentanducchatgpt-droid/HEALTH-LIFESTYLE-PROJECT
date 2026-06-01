@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
@@ -25,6 +26,46 @@ const PILLARS_QUICK = [
 export default function Layout({ children }) {
   const { t } = useTranslation();
 
+  useEffect(() => {
+    const id = 'ft-brand-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      .ft-wrap {
+        position:relative; display:inline-block;
+      }
+      .ft-wrap::after {
+        content:'';
+        position:absolute; bottom:-3px; left:50%; right:50%;
+        height:1.5px; border-radius:2px;
+        background: linear-gradient(90deg, #22c55e, #5eead4, #22c55e);
+        transition: left 0.4s cubic-bezier(0.25,0.46,0.45,0.94),
+                    right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+      }
+      .group:hover .ft-wrap::after { left:0; right:0; }
+      .ft-p1 {
+        background: linear-gradient(135deg, #22c55e 0%, #86efac 100%);
+        -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        transition: filter 0.25s;
+      }
+      .ft-p2 {
+        background: linear-gradient(135deg, #14b8a6 0%, #5eead4 100%);
+        -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        transition: filter 0.25s;
+      }
+      .ft-amp {
+        -webkit-text-fill-color:#4ade80; color:#4ade80;
+        display:inline-block;
+        transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1);
+      }
+      .group:hover .ft-p1 { filter: brightness(1.2); }
+      .group:hover .ft-p2 { filter: brightness(1.2); }
+      .group:hover .ft-amp { transform: scale(1.25) rotate(-8deg); }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   return (
     <div className="min-h-screen bg-bg text-text flex flex-col">
       <Navbar />
@@ -48,11 +89,11 @@ export default function Layout({ children }) {
             <div className="shrink-0">
               <Link to="/" className="inline-flex items-center gap-2.5 mb-4 group">
                 <img src="/logo.png" alt="" className="h-7 w-7 shrink-0 transition-transform duration-300 group-hover:scale-110" />
-                <div>
-                  <span className="font-bold text-text text-base">{t('brand.part1')}</span>
-                  <span className="text-accent font-bold text-base"> & </span>
-                  <span className="font-bold text-text text-base">{t('brand.part2')}</span>
-                </div>
+                <span className="ft-wrap font-bold text-base">
+                  <span className="ft-p1">{t('brand.part1')}</span>
+                  <span className="ft-amp"> &amp; </span>
+                  <span className="ft-p2">{t('brand.part2')}</span>
+                </span>
               </Link>
               <p className="text-muted text-xs leading-relaxed max-w-[220px]">
                 Hệ sinh thái sống khỏe khoa học, đơn giản, dễ áp dụng mỗi ngày — hoàn toàn miễn phí.

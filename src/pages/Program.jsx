@@ -379,6 +379,51 @@ export default function Program() {
 
   const phases12 = journey === '12w' ? TWELVE_PHASES : TWENTY_FOUR_PHASES;
 
+  useEffect(() => {
+    const id = 'pg-hero-kf';
+    if (document.getElementById(id)) return;
+    const s = document.createElement('style');
+    s.id = id;
+    s.textContent = `
+      @keyframes pgLabelIn {
+        from { opacity:0; letter-spacing:0.35em; transform:translateY(-8px); }
+        to   { opacity:1; letter-spacing:0.22em; transform:translateY(0); }
+      }
+      @keyframes pgTitleIn {
+        from { opacity:0; transform:translateY(30px) scale(0.96); filter:blur(8px); }
+        to   { opacity:1; transform:translateY(0)    scale(1);    filter:blur(0); }
+      }
+      @keyframes pgSubIn {
+        from { opacity:0; transform:translateX(-16px); }
+        to   { opacity:1; transform:translateX(0); }
+      }
+      @keyframes pgLineGrow {
+        from { transform:scaleX(0); opacity:0; }
+        to   { transform:scaleX(1); opacity:1; }
+      }
+      @keyframes pgStatPop {
+        from { opacity:0; transform:scale(0.8) translateY(10px); }
+        to   { opacity:1; transform:scale(1)   translateY(0); }
+      }
+      @keyframes pgGlowPulse {
+        0%,100% { opacity:0.35; transform:scale(1); }
+        50%     { opacity:0.65; transform:scale(1.18); }
+      }
+      .pg-label    { animation:pgLabelIn 0.55s ease both; }
+      .pg-title    { animation:pgTitleIn 0.7s cubic-bezier(0.25,0.46,0.45,0.94) both 0.1s; }
+      .pg-sub      { animation:pgSubIn  0.6s ease both 0.3s; }
+      .pg-divider  { transform-origin:left; animation:pgLineGrow 0.9s ease both 0.28s; }
+      .pg-stat     { animation:pgStatPop 0.55s cubic-bezier(0.34,1.56,0.64,1) both; }
+      .pg-stat:nth-child(1){ animation-delay:0.5s; }
+      .pg-stat:nth-child(2){ animation-delay:0.62s; }
+      .pg-stat:nth-child(3){ animation-delay:0.74s; }
+      .pg-stat:nth-child(4){ animation-delay:0.86s; }
+      .pg-glow { animation:pgGlowPulse 7s ease-in-out infinite; }
+      .pg-glow2{ animation:pgGlowPulse 10s ease-in-out infinite reverse; animation-delay:-3s; }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   const heroStats = [
     { l:'12', s:'tuần', tip:'Chương trình 12 tuần: Khởi Động (1–4) → Xây Nền (5–8) → Cá Nhân Hóa (9–12). Đủ thời gian thay đổi thói quen não bộ.' },
     { l:'3',  s:'giai đoạn', tip:'3 giai đoạn thích nghi dần: G1 học kỹ thuật + xây thói quen, G2 tăng volume + sức bền, G3 cá nhân hóa mục tiêu.' },
@@ -390,32 +435,59 @@ export default function Program() {
     <div className="max-w-4xl mx-auto">
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <div className="relative -mx-4 md:-mx-8 mb-10 overflow-hidden rounded-b-3xl" style={{ minHeight: 280 }}>
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=65" alt="" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.10 }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/40 to-bg pointer-events-none" />
-        <div className="absolute inset-0 grid-dots opacity-25 pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="relative -mx-4 md:-mx-8 mb-10 overflow-hidden rounded-b-3xl" style={{ minHeight: 300 }}>
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=65" alt="" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.08 }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/10 via-bg/55 to-bg pointer-events-none" />
+        <div className="absolute inset-0 grid-dots opacity-20 pointer-events-none" />
+        {/* Ambient glow blobs */}
+        <div className="pg-glow  absolute top-1/4 left-1/5  w-[480px] h-[380px] bg-accent/6   rounded-full blur-[110px] pointer-events-none" />
+        <div className="pg-glow2 absolute top-0   right-1/5 w-[320px] h-[280px] bg-purple-500/4 rounded-full blur-[90px]  pointer-events-none" />
 
-        <div className="relative z-10 px-4 md:px-8 pt-14 pb-12">
-          <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-bold px-4 py-1.5 rounded-full mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
-            12 {t('program.phases_label') || 'tuần · 3 giai đoạn'}
+        <div className="relative z-10 px-4 md:px-8 pt-14 pb-14">
+
+          {/* Label row */}
+          <div className="pg-label flex items-center gap-3 mb-6">
+            <div className="h-px w-6 rounded-full bg-accent/60" />
+            <span className="text-accent text-[10px] font-extrabold tracking-[0.22em] uppercase">Chương Trình Sức Khỏe</span>
+            <div className="pg-divider h-px flex-1 max-w-[80px] rounded-full" style={{ background: 'linear-gradient(90deg, rgba(34,197,94,0.5), transparent)' }} />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight mb-3">{t('program.title')}</h1>
-          <p className="text-muted text-base leading-relaxed max-w-xl">{t('program.subtitle')}</p>
-          <div className="flex flex-wrap gap-3 mt-7">
-            {heroStats.map((s,i) => (
-              <div key={s.l} className="group/prog relative">
+
+          {/* Title */}
+          <h1 className="pg-title font-black leading-[1.1] tracking-tight mb-4" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)' }}>
+            <span className="text-text block">Hành Trình Sống Khỏe</span>
+            <span className="block" style={{
+              background: 'linear-gradient(135deg, #22c55e 0%, #5eead4 45%, #a855f7 100%)',
+              WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
+            }}>12 Tuần</span>
+          </h1>
+
+          {/* Divider */}
+          <div className="pg-divider mb-5 h-[2px] w-16 rounded-full" style={{ background: 'linear-gradient(90deg,#22c55e,#5eead4)' }} />
+
+          {/* Subtitle */}
+          <p className="pg-sub text-muted/80 text-sm md:text-base leading-relaxed max-w-md mb-8">
+            {t('program.subtitle')}
+          </p>
+
+          {/* Stats */}
+          <div className="flex flex-wrap gap-2.5">
+            {heroStats.map((s, i) => (
+              <div key={s.l} className="pg-stat group/prog relative">
                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/prog:opacity-100 scale-90 group-hover/prog:scale-100 -translate-y-1 group-hover/prog:translate-y-0 transition-all duration-200 origin-bottom">
                   <ThoughtBubble text={s.tip} idx={`prog${i}`} color="#a855f7" />
                 </div>
-                <div className="flex items-baseline gap-1.5 bg-surface/80 border border-border backdrop-blur-sm px-4 py-2 rounded-full cursor-default hover:border-purple-500/30 transition-colors duration-200">
-                  <span className="text-gradient font-extrabold text-lg">{s.l}</span>
-                  <span className="text-muted text-xs">{s.s}</span>
+                <div className="flex items-baseline gap-1.5 border backdrop-blur-sm px-4 py-2 rounded-full cursor-default transition-all duration-200"
+                  style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.09)' }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor='rgba(168,85,247,0.35)'; e.currentTarget.style.background='rgba(168,85,247,0.06)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,0.09)'; e.currentTarget.style.background='rgba(255,255,255,0.03)'; }}
+                >
+                  <span className="font-extrabold text-lg" style={{ background:'linear-gradient(135deg,#22c55e,#5eead4)', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent' }}>{s.l}</span>
+                  <span className="text-muted/70 text-xs">{s.s}</span>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
 

@@ -193,9 +193,9 @@ export default function VideoLibrary() {
             </div>
 
             {/* Title — each word lifts on hover */}
-            <h1 className="vl-title font-black leading-tight tracking-tight mb-5" style={{ fontSize:'clamp(2.8rem,6vw,4.2rem)' }}>
-              <span className="vl-word text-text cursor-default select-none">Thư </span>
-              <span className="vl-word text-text cursor-default select-none">Viện </span>
+            <h1 className="vl-title font-black leading-tight tracking-tight mb-5 flex items-baseline justify-center gap-[0.22em]" style={{ fontSize:'clamp(2.8rem,6vw,4.2rem)' }}>
+              <span className="vl-word text-text cursor-default select-none">Thư</span>
+              <span className="vl-word text-text cursor-default select-none">Viện</span>
               <span className="vl-word cursor-default select-none" style={{
                 background:'linear-gradient(135deg,#22c55e 0%,#5eead4 50%,#a855f7 100%)',
                 WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent',

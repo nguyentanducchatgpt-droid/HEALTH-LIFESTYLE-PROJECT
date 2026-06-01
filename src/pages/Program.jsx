@@ -463,7 +463,7 @@ export default function Program() {
           </div>
 
           {/* Title */}
-          <h1 className="pg-title font-black leading-[1.05] tracking-tight mb-5" style={{ fontSize:'clamp(2.4rem,5.5vw,3.8rem)' }}>
+          <h1 className="pg-title font-black leading-[1.05] tracking-tight mb-6" style={{ fontSize:'clamp(2.8rem,6vw,4.5rem)' }}>
             <span style={{
               background:'linear-gradient(135deg, #f0fdf4 0%, #ffffff 30%, #86efac 60%, #5eead4 85%, #c4b5fd 100%)',
               WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent',
@@ -473,37 +473,18 @@ export default function Program() {
           </h1>
 
           {/* Gradient underline */}
-          <div className="pg-divider mb-6 h-[2.5px] w-24 rounded-full"
+          <div className="pg-divider mb-7 h-[2.5px] w-28 rounded-full"
             style={{ background:'linear-gradient(90deg,#22c55e,#5eead4,#a855f7)' }} />
 
-          {/* Subtitle — references all 3 journey modes */}
-          <p className="pg-sub text-muted/75 text-sm md:text-base leading-relaxed max-w-[420px] mb-3">
+          {/* Subtitle */}
+          <p className="pg-sub text-muted/75 text-sm md:text-base leading-relaxed max-w-[440px] mb-4">
             Ba hành trình linh hoạt, một hệ thống nhất quán
           </p>
-          <div className="pg-sub flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5 mb-9">
+          <div className="pg-sub flex flex-wrap justify-center items-center gap-x-5 gap-y-2">
             {[['🌱','7 ngày khởi động','#22c55e'],['📈','12 tuần xây nền','#84cc16'],['🎓','24 tuần nâng cao','#a855f7']].map(([icon,label,color]) => (
-              <span key={label} className="flex items-center gap-1.5 text-xs font-medium" style={{ color }}>
+              <span key={label} className="flex items-center gap-1.5 text-xs font-semibold" style={{ color }}>
                 <span>{icon}</span>{label}
               </span>
-            ))}
-          </div>
-
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {heroStats.map((s, i) => (
-              <div key={s.l} className="pg-stat group/prog relative">
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/prog:opacity-100 scale-90 group-hover/prog:scale-100 -translate-y-1 group-hover/prog:translate-y-0 transition-all duration-200 origin-bottom">
-                  <ThoughtBubble text={s.tip} idx={`prog${i}`} color="#a855f7" />
-                </div>
-                <div className="flex items-baseline gap-1.5 border backdrop-blur-sm px-4 py-2 rounded-full cursor-default transition-all duration-200"
-                  style={{ background:'rgba(255,255,255,0.03)', borderColor:'rgba(255,255,255,0.09)' }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor='rgba(168,85,247,0.35)'; e.currentTarget.style.background='rgba(168,85,247,0.06)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,0.09)'; e.currentTarget.style.background='rgba(255,255,255,0.03)'; }}
-                >
-                  <span className="font-extrabold text-lg" style={{ background:'linear-gradient(135deg,#22c55e,#5eead4)', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent' }}>{s.l}</span>
-                  <span className="text-muted/70 text-xs">{s.s}</span>
-                </div>
-              </div>
             ))}
           </div>
 

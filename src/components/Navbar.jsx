@@ -45,26 +45,22 @@ export default function Navbar() {
     const s = document.createElement('style');
     s.id = id;
     s.textContent = `
-      @keyframes nbSh1 { 0%{background-position:200% center} 100%{background-position:-200% center} }
-      @keyframes nbSh2 { 0%{background-position:-200% center} 100%{background-position:200% center} }
-      @keyframes nbAmp { 0%,100%{opacity:0.85;filter:drop-shadow(0 0 0px transparent)} 50%{opacity:1;filter:drop-shadow(0 0 6px rgba(34,197,94,0.7))} }
-      .nb-p1 {
-        background: linear-gradient(110deg,#c8f5d8 0%,#86efac 30%,#ffffff 50%,#86efac 70%,#c8f5d8 100%);
-        background-size: 260% 100%;
-        -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-        animation: nbSh1 5s linear infinite;
+      @keyframes nbGlow1 {
+        0%,100% { text-shadow: 0 0 3px rgba(34,197,94,0.15); color:#86efac; }
+        50%      { text-shadow: 0 0 12px rgba(34,197,94,0.6), 0 0 24px rgba(34,197,94,0.2); color:#bbf7d0; }
       }
-      .nb-p2 {
-        background: linear-gradient(110deg,#ccf9f4 0%,#5eead4 30%,#ffffff 50%,#5eead4 70%,#ccf9f4 100%);
-        background-size: 260% 100%;
-        -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-        animation: nbSh2 6s linear infinite;
+      @keyframes nbGlow2 {
+        0%,100% { text-shadow: 0 0 3px rgba(20,184,166,0.15); color:#5eead4; }
+        50%      { text-shadow: 0 0 12px rgba(20,184,166,0.6), 0 0 24px rgba(20,184,166,0.2); color:#99f6e4; }
       }
-      .nb-amp {
-        -webkit-text-fill-color:#22c55e; color:#22c55e;
-        animation: nbAmp 2.8s ease-in-out infinite;
-        display:inline-block; font-weight:900;
+      @keyframes nbAmpBeat {
+        0%,100% { transform:scale(1);   color:#22c55e; text-shadow:none; }
+        40%      { transform:scale(1.18); color:#4ade80; text-shadow:0 0 10px rgba(34,197,94,0.7); }
+        60%      { transform:scale(1.12); }
       }
+      .nb-p1  { color:#86efac; animation: nbGlow1 4s ease-in-out infinite; }
+      .nb-p2  { color:#5eead4; animation: nbGlow2 4s ease-in-out infinite 2s; }
+      .nb-amp { display:inline-block; font-weight:900; animation: nbAmpBeat 3.5s ease-in-out infinite 1s; }
     `;
     document.head.appendChild(s);
   }, []);

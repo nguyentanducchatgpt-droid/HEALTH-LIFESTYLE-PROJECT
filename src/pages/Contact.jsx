@@ -359,7 +359,7 @@ export default function Contact() {
                 </div>
                 <div className="pt-0.5">
                   <p className="text-[11px] text-muted font-bold uppercase tracking-widest mb-1">{t('contact.zalo_label')}</p>
-                  <p className="text-sm font-bold text-text group-hover:text-blue-400 transition-colors duration-200">{zalo}</p>
+                  <p className="text-sm font-bold text-text group-hover:text-blue-400 transition-colors duration-200">Nhắn tin trực tiếp</p>
                 </div>
               </div>
 

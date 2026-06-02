@@ -1,237 +1,203 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-// ── FAQ Data ────────────────────────────────────────────────────────────────
+// ── Scroll reveal ────────────────────────────────────────────────────────────
+function RevealBlock({ children, delay = 0, className = '' }) {
+  const ref = useRef(null);
+  const [vis, setVis] = useState(false);
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(true); obs.disconnect(); } }, { threshold: 0.06 });
+    obs.observe(el); return () => obs.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className={className}
+      style={{ opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(24px)', transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms` }}>
+      {children}
+    </div>
+  );
+}
+
+// ── Animated counter ─────────────────────────────────────────────────────────
+function AnimatedCounter({ target, suffix = '', duration = 1200 }) {
+  const [val, setVal] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !started.current) {
+        started.current = true;
+        const t0 = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - t0) / duration, 1);
+          const ease = 1 - Math.pow(1 - p, 3);
+          setVal(Math.round(ease * target));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        obs.disconnect();
+      }
+    }, { threshold: 0.3 });
+    obs.observe(el); return () => obs.disconnect();
+  }, [target, duration]);
+  return <span ref={ref}>{val}{suffix}</span>;
+}
+
+// ── FAQ data ─────────────────────────────────────────────────────────────────
 const CATEGORIES = [
-  { id: 'all',  label: 'Tất Cả',             color: '#94a3b8', rgb: '148,163,184' },
-  { id: 'gen',  label: 'Tổng Quan',           color: '#22c55e', rgb: '34,197,94'   },
-  { id: 'move', label: 'Vận Động',            color: '#22c55e', rgb: '34,197,94'   },
-  { id: 'food', label: 'Dinh Dưỡng',          color: '#84cc16', rgb: '132,204,22'  },
-  { id: 'life', label: 'Lối Sống',            color: '#14b8a6', rgb: '20,184,166'  },
-  { id: 'mind', label: 'Tâm Trí',             color: '#a855f7', rgb: '168,85,247'  },
-  { id: 'prog', label: 'Hành Trình',          color: '#3b82f6', rgb: '59,130,246'  },
+  { id: 'all',  label: 'Tất Cả',   icon: '✦', color: '#94a3b8', rgb: '148,163,184', img: '' },
+  { id: 'gen',  label: 'Tổng Quan', icon: '🌐', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=70',
+    desc: 'Website, nội dung, cách sử dụng' },
+  { id: 'move', label: 'Vận Động',  icon: '🏃', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=70',
+    desc: 'Bài tập, tần suất, chuyển động' },
+  { id: 'food', label: 'Dinh Dưỡng', icon: '🥗', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=70',
+    desc: 'Calo, thực đơn, dinh dưỡng cân bằng' },
+  { id: 'life', label: 'Lối Sống',  icon: '🌿', color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=70',
+    desc: 'Giấc ngủ, thói quen, phục hồi' },
+  { id: 'mind', label: 'Tâm Trí',   icon: '🧘', color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=70',
+    desc: 'Thiền định, hơi thở, cảm xúc' },
+  { id: 'prog', label: 'Hành Trình', icon: '📈', color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&q=70',
+    desc: 'Lộ trình 7 ngày, 12 tuần, 24 tuần' },
 ];
 
 const FAQS = [
-  // Tổng Quan
-  {
-    cat: 'gen', color: '#22c55e', rgb: '34,197,94',
-    q: 'Website Sức Khỏe & Đời Sống dành cho ai?',
-    a: 'Website dành cho bất kỳ ai muốn cải thiện sức khỏe — từ người hoàn toàn mới bắt đầu đến người đã có nền tảng nhưng muốn hệ thống hóa lại. Không cần kinh nghiệm, không cần thiết bị đặc biệt, không cần chế độ ăn kiêng khắt khe. Chỉ cần 20 phút mỗi ngày và sự kiên trì.',
-  },
-  {
-    cat: 'gen', color: '#22c55e', rgb: '34,197,94',
-    q: 'Nội dung trên website có hoàn toàn miễn phí không?',
-    a: 'Có — 100% miễn phí. Toàn bộ 6 trụ cột, lộ trình 7 ngày / 12 tuần / 24 tuần, video hướng dẫn, checklist, công cụ theo dõi và tài nguyên đều không tính phí. Mục tiêu của chúng tôi là phổ cập kiến thức sức khỏe khoa học đến mọi người mà không có rào cản tài chính.',
-  },
-  {
-    cat: 'gen', color: '#22c55e', rgb: '34,197,94',
-    q: 'Tôi nên bắt đầu từ đâu nếu là người hoàn toàn mới?',
-    a: 'Bắt đầu bằng trang "Hành Trình Sống Khỏe" → chọn "7 Ngày Khởi Động". Bảy ngày đầu được thiết kế để bạn làm quen dần với cả 4 trụ cột cốt lõi (vận động · dinh dưỡng · lối sống · tâm trí) mà không bị choáng ngợp. Mỗi ngày chỉ cần 20–30 phút.',
-  },
-  {
-    cat: 'gen', color: '#22c55e', rgb: '34,197,94',
-    q: 'Nội dung có dựa trên bằng chứng khoa học không?',
-    a: 'Có. Tất cả nội dung được xây dựng dựa trên các nghiên cứu y học hiện đại và hướng dẫn từ các tổ chức uy tín (WHO, ACSM, AHA). Tuy nhiên, website này mang tính giáo dục — không thay thế cho tư vấn y tế cá nhân. Nếu có vấn đề sức khỏe cụ thể, hãy tham khảo bác sĩ.',
-  },
-  {
-    cat: 'gen', color: '#22c55e', rgb: '34,197,94',
-    q: '6 trụ cột sức khỏe 360° bao gồm những gì?',
-    a: '6 trụ cột tạo thành hệ thống sức khỏe toàn diện: (A) Vận Động & Tập Luyện — cơ thể mạnh khỏe; (B) Dinh Dưỡng & Thực Đơn — nhiên liệu đúng; (C) Lối Sống Khỏe — ngủ, bước chân, phục hồi; (D) Tâm Trí An Nhiên — cân bằng cảm xúc; (E) Kiến Thức Sức Khỏe — hiểu cơ thể; (F) Công Cụ & Tài Nguyên — theo dõi và duy trì. Sáu trụ cột hoạt động cùng nhau — thiếu một trụ sẽ ảnh hưởng đến cả hệ thống.',
-  },
-
-  // Vận Động
-  {
-    cat: 'move', color: '#22c55e', rgb: '34,197,94',
-    q: 'Tôi nên tập luyện bao nhiêu lần mỗi tuần?',
-    a: 'Với người mới, 3 buổi/tuần (cách ngày) là lý tưởng. Cấu trúc khuyến nghị: 3 buổi sức mạnh · 2 buổi cardio nhẹ · 2 ngày phục hồi tích cực. Quan trọng hơn số buổi là tính nhất quán — 3 buổi đều đặn trong 12 tuần tốt hơn 5 buổi/tuần trong 2 tuần rồi bỏ cuộc.',
-  },
-  {
-    cat: 'move', color: '#22c55e', rgb: '34,197,94',
-    q: '6 chuyển động cơ bản là gì và tại sao quan trọng?',
-    a: '6 pattern vận động nền tảng: Squat (gập gối), Hinge (gập hông), Push (đẩy), Pull (kéo), Core (lõi) và Thở. Đây là 6 nhóm cơ vận động mà cơ thể người thực hiện hàng ngày. Thành thạo 6 động tác này với form đúng trước khi tăng tải là nguyên tắc số 1 để tránh chấn thương và tạo nền tảng bền vững.',
-  },
-  {
-    cat: 'move', color: '#22c55e', rgb: '34,197,94',
-    q: 'Không có dụng cụ tập luyện, có áp dụng được không?',
-    a: 'Hoàn toàn được. Toàn bộ chương trình giai đoạn 1 (7 ngày + 4 tuần đầu) sử dụng 100% bodyweight — không cần thiết bị. Từ tuần 5 trở đi bạn có thể dùng tạ đơn hoặc dây kháng lực nếu muốn tăng thách thức, nhưng không bắt buộc. Vận động thể chất tốt nhất là vận động bạn thực sự làm được mỗi ngày.',
-  },
-  {
-    cat: 'move', color: '#22c55e', rgb: '34,197,94',
-    q: 'Tôi đau lưng mãn tính, có thể tập luyện theo hướng dẫn không?',
-    a: 'Phụ thuộc vào nguyên nhân và mức độ. Chương trình có phần "Phục Hồi Tích Cực" và "Giãn Cơ" phù hợp với người đau lưng nhẹ. Tuy nhiên, nếu đau lưng do bệnh lý đốt sống, thoát vị đĩa đệm hoặc đang điều trị, hãy tham khảo bác sĩ hoặc vật lý trị liệu trước khi bắt đầu. Quy tắc vàng: đau cấp tính = nghỉ ngơi; đau mãn tính nhẹ = vận động nhẹ có kiểm soát.',
-  },
-
-  // Dinh Dưỡng
-  {
-    cat: 'food', color: '#84cc16', rgb: '132,204,22',
-    q: 'Tôi có bắt buộc phải đếm calo không?',
-    a: 'Không bắt buộc, đặc biệt trong giai đoạn đầu. Mô hình "Đĩa Ăn" (½ rau · ¼ đạm · ¼ tinh bột) và quy tắc "1 lòng bàn tay đạm mỗi bữa" giúp bạn ăn đúng mà không cần đếm số. Tính calo chỉ hữu ích ở giai đoạn nâng cao (từ tuần 5 trở đi) khi bạn muốn tối ưu hóa chính xác hơn.',
-  },
-  {
-    cat: 'food', color: '#84cc16', rgb: '132,204,22',
-    q: 'TDEE là gì và tôi có cần tính không?',
-    a: 'TDEE (Total Daily Energy Expenditure) là tổng lượng calo cơ thể đốt mỗi ngày, bao gồm cả hoạt động. Công thức tính TDEE có trong Bộ Công Cụ B0 của trang Dinh Dưỡng. Biết TDEE giúp bạn ăn đúng lượng cho mục tiêu: giảm cân (TDEE − 400 kcal), duy trì (= TDEE), tăng cơ (TDEE + 300 kcal). Bạn không cần tính ngay từ ngày đầu — hãy làm quen với chất lượng bữa ăn trước.',
-  },
-  {
-    cat: 'food', color: '#84cc16', rgb: '132,204,22',
-    q: 'Tôi ăn ngoài nhiều vì công việc, có áp dụng được không?',
-    a: 'Có. Công thức ăn ngoài thông minh: "1 protein + 2 rau + tinh bột vừa phải". Áp dụng tại nhà hàng: gọi thêm rau hoặc salad, chọn protein nướng/hấp thay vì chiên, kiểm soát phần tinh bột. Không cần từ chối bữa xã giao — chỉ cần chiến lược đơn giản. Phần "Ăn Ngoài Thông Minh" trong ngày 3 của lộ trình 7 ngày có hướng dẫn chi tiết.',
-  },
-  {
-    cat: 'food', color: '#84cc16', rgb: '132,204,22',
-    q: 'Tôi có cần dùng thực phẩm bổ sung (supplement) không?',
-    a: 'Không cần trong giai đoạn đầu. Thực phẩm nguyên bản luôn là nền tảng — supplement chỉ có tác dụng khi nền dinh dưỡng đã vững. Nếu được cân nhắc: Vitamin D3 (nếu ít ra nắng), Omega-3 (nếu ít ăn cá), Protein Whey (nếu khó đủ đạm từ thực phẩm). Tham khảo bác sĩ trước khi dùng bất kỳ supplement nào.',
-  },
-  {
-    cat: 'food', color: '#84cc16', rgb: '132,204,22',
-    q: 'Tôi cần uống bao nhiêu nước mỗi ngày?',
-    a: 'Công thức đơn giản: cân nặng (kg) × 35ml. Ví dụ: 60kg → 2,1 lít/ngày. Dấu hiệu đủ nước: nước tiểu vàng nhạt như chanh. Tăng thêm 500ml khi tập luyện. Uống đều trong ngày thay vì uống nhiều một lúc. Bắt đầu ngày với 1 ly nước lớn ngay sau khi thức dậy — đây là thói quen đơn giản nhất để bắt đầu.',
-  },
-
-  // Lối Sống
-  {
-    cat: 'life', color: '#14b8a6', rgb: '20,184,166',
-    q: 'Tôi cần ngủ bao nhiêu tiếng là đủ?',
-    a: '7–9 tiếng là khuyến nghị cho người trưởng thành (WHO). Quan trọng hơn số giờ là chất lượng giấc ngủ và tính đều đặn — ngủ và dậy cùng giờ mỗi ngày (kể cả cuối tuần) quan trọng hơn là ngủ nhiều vào cuối tuần bù lại. Giấc ngủ sâu (deep sleep) xảy ra trong 2 giờ đầu — nên ngủ trước 23h để tận dụng tối đa.',
-  },
-  {
-    cat: 'life', color: '#14b8a6', rgb: '20,184,166',
-    q: 'NEAT là gì và tại sao lại quan trọng hơn tôi nghĩ?',
-    a: 'NEAT (Non-Exercise Activity Thermogenesis) là năng lượng đốt từ mọi hoạt động ngoài tập luyện — đi bộ, đứng, leo cầu thang, làm việc nhà. NEAT có thể chiếm 15–50% tổng calo đốt hàng ngày, nhiều hơn cả 1 buổi tập 1 tiếng. Mục tiêu: 8.000–10.000 bước/ngày. Thay thang máy bằng cầu thang, dừng xe xa hơn 200m, đứng trong cuộc họp — những thay đổi nhỏ cộng dồn lớn.',
-  },
-  {
-    cat: 'life', color: '#14b8a6', rgb: '20,184,166',
-    q: 'Morning routine tối thiểu cần những gì?',
-    a: 'Morning routine 10 phút đủ để tạo khác biệt: (1) Uống 1 ly nước lớn ngay khi thức dậy; (2) Ra tiếp xúc ánh sáng mặt trời 5 phút (reset đồng hồ sinh học); (3) Viết 1 mục tiêu cho ngày hôm đó. Không cần dậy sớm 5h sáng — chỉ cần làm đều đặn. Sau khi quen, bạn có thể mở rộng dần thêm.',
-  },
-  {
-    cat: 'life', color: '#14b8a6', rgb: '20,184,166',
-    q: 'Làm sao cải thiện chất lượng giấc ngủ một cách nhanh nhất?',
-    a: 'Ba can thiệp hiệu quả nhất: (1) Không dùng thiết bị màn hình 30 phút trước ngủ (ánh sáng xanh ức chế melatonin 50%); (2) Giữ phòng ngủ 18–22°C và tối hoàn toàn; (3) Không uống caffeine sau 14h (caffeine có half-life 5–7 tiếng). Áp dụng đúng 3 điều này trong 7 ngày — bạn sẽ nhận thấy sự khác biệt rõ rệt.',
-  },
-
-  // Tâm Trí
-  {
-    cat: 'mind', color: '#a855f7', rgb: '168,85,247',
-    q: 'Tôi chưa bao giờ thiền, bắt đầu như thế nào?',
-    a: 'Thiền đơn giản nhất: ngồi thoải mái, nhắm mắt, chú ý đến hơi thở trong 5 phút. Khi tâm trí lang thang (luôn xảy ra), nhẹ nhàng đưa sự chú ý về hơi thở — không phán xét. Đó là thiền. Bắt đầu 5 phút mỗi sáng, tăng dần lên 10–15 phút sau 2 tuần. Không cần "không suy nghĩ" — nhận ra và quay lại chính là bài tập.',
-  },
-  {
-    cat: 'mind', color: '#a855f7', rgb: '168,85,247',
-    q: 'Box Breathing là gì và khi nào nên dùng?',
-    a: 'Box Breathing (thở hộp): Hít vào 4 giây → Giữ 4 giây → Thở ra 4 giây → Giữ 4 giây → lặp lại. Kỹ thuật này kích hoạt hệ thần kinh phó giao cảm, giảm cortisol và nhịp tim trong 2–3 phút. Dùng khi: căng thẳng trước cuộc họp quan trọng, khó ngủ, cảm thấy overwhelmed, hoặc trước buổi tập để tập trung. Đây là công cụ được Navy SEALs sử dụng.',
-  },
-  {
-    cat: 'mind', color: '#a855f7', rgb: '168,85,247',
-    q: 'Tôi không có thời gian thiền, có cách nào không?',
-    a: 'Thiền không nhất thiết là ngồi im mắt nhắm. "Micro-meditation" hiệu quả trong cuộc sống bận rộn: (1) 3 hơi thở sâu có ý thức mỗi buổi sáng (30 giây); (2) Chú tâm hoàn toàn vào bữa ăn một bữa/ngày — không điện thoại; (3) Đi bộ có ý thức 5 phút giữa ngày. Những khoảnh khắc nhỏ này cộng dồn tạo nền tảng tâm lý vững chắc.',
-  },
-  {
-    cat: 'mind', color: '#a855f7', rgb: '168,85,247',
-    q: 'Nhật ký sức khỏe (health journal) nên viết những gì?',
-    a: 'Công thức nhật ký 3 dòng tối (chỉ cần 3–5 phút): (1) "Hôm nay tôi làm tốt..." — ghi nhận 1 điều tích cực dù nhỏ; (2) "Tôi học được..." — 1 bài học hoặc quan sát; (3) "Ngày mai tôi sẽ..." — 1 hành động cụ thể. Không cần hay, không cần dài — chỉ cần thật. Sau 4 tuần, nhìn lại bạn sẽ thấy pattern của bản thân rõ ràng hơn.',
-  },
-
-  // Hành Trình
-  {
-    cat: 'prog', color: '#3b82f6', rgb: '59,130,246',
-    q: 'Sự khác nhau giữa 7 ngày, 12 tuần và 24 tuần là gì?',
-    a: '7 Ngày Khởi Động: Làm quen 4 trụ cột, hình thành thói quen nền, tự tin rằng bạn có thể làm được. 12 Tuần Cơ Bản: 3 giai đoạn xây dựng nền tảng → tăng tải → cá nhân hóa. Đủ thời gian để não bộ tái lập mạng thần kinh thói quen. 24 Tuần Nâng Cao: Mở rộng sang cả 6 trụ cột đầy đủ, bao gồm kiến thức y tế, sử dụng công cụ chuyên sâu và carb cycling.',
-  },
-  {
-    cat: 'prog', color: '#3b82f6', rgb: '59,130,246',
-    q: 'Tôi có thể bỏ qua 7 ngày và bắt đầu 12 tuần luôn không?',
-    a: 'Được, nhưng không khuyến nghị. 7 ngày đầu không phải "bước đệm" mà là "bước nền" — giúp bạn hiểu cơ thể phản ứng thế nào với sự thay đổi, xác định điểm yếu và tạo đà tâm lý. Người bỏ qua 7 ngày thường bỏ cuộc sớm hơn. Nếu bạn đã có nền tảng tốt (tập đều 6+ tháng), bạn có thể bắt đầu từ giai đoạn 2 của 12 tuần.',
-  },
-  {
-    cat: 'prog', color: '#3b82f6', rgb: '59,130,246',
-    q: 'Mỗi ngày tôi cần dành bao nhiêu thời gian?',
-    a: 'Cấu trúc Daily Core 20–40 phút: 5 phút khởi động · 10–20 phút tập chính · 5–10 phút giãn cơ · 5 phút mind reset. Ngoài ra: morning routine 10 phút + nhật ký tối 5 phút. Tổng: 35–55 phút/ngày. Trong ngày phục hồi: chỉ cần 15 phút giãn cơ + đi bộ. Không có ngày nào yêu cầu hơn 1 tiếng.',
-  },
-  {
-    cat: 'prog', color: '#3b82f6', rgb: '59,130,246',
-    q: 'Tôi đã tập luyện 2 năm, chương trình này có phù hợp không?',
-    a: 'Có, nhưng hãy chọn điểm vào phù hợp. Nếu đã có nền tảng tốt: bắt đầu từ giai đoạn 2 (Tuần 5–8) của 12 tuần, tập trung vào các trụ cột bạn còn yếu (thường là Tâm Trí hoặc Kiến Thức Sức Khỏe). Chương trình 24 tuần có phần "Carb Cycling" và "Supplement Protocol" phù hợp cho người trung cấp–nâng cao hơn.',
-  },
-  {
-    cat: 'prog', color: '#3b82f6', rgb: '59,130,246',
-    q: 'Tôi lỡ 1–2 ngày trong lộ trình thì phải làm gì?',
-    a: 'Không sao cả — điều này xảy ra với 100% người. Nguyên tắc: "Không bao giờ bỏ 2 lần liên tiếp". Bỏ 1 ngày → tiếp tục từ ngày tiếp theo, không cần làm bù. Bỏ 1 tuần → quay lại từ đầu tuần đó, không cần quay về ngày 1. Sự hoàn hảo không quan trọng bằng sự nhất quán theo thời gian. 80% nhất quán trong 12 tuần > 100% trong 3 tuần rồi bỏ.',
-  },
+  { cat:'gen', color:'#22c55e', rgb:'34,197,94', featured:true,
+    q:'Website Sức Khỏe & Đời Sống dành cho ai?',
+    a:'Website dành cho bất kỳ ai muốn cải thiện sức khỏe — từ người hoàn toàn mới bắt đầu đến người đã có nền tảng nhưng muốn hệ thống hóa lại. Không cần kinh nghiệm, không cần thiết bị đặc biệt, không cần chế độ ăn kiêng khắt khe. Chỉ cần 20 phút mỗi ngày và sự kiên trì.' },
+  { cat:'gen', color:'#22c55e', rgb:'34,197,94',
+    q:'Nội dung trên website có hoàn toàn miễn phí không?',
+    a:'Có — 100% miễn phí. Toàn bộ 6 trụ cột, lộ trình 7 ngày / 12 tuần / 24 tuần, video hướng dẫn, checklist, công cụ theo dõi và tài nguyên đều không tính phí. Mục tiêu của chúng tôi là phổ cập kiến thức sức khỏe khoa học đến mọi người mà không có rào cản tài chính.' },
+  { cat:'gen', color:'#22c55e', rgb:'34,197,94', featured:true,
+    q:'Tôi nên bắt đầu từ đâu nếu là người hoàn toàn mới?',
+    a:'Bắt đầu bằng trang "Lộ Trình" → chọn "7 Ngày Khởi Động". Bảy ngày đầu được thiết kế để bạn làm quen dần với cả 4 trụ cột cốt lõi (vận động · dinh dưỡng · lối sống · tâm trí) mà không bị choáng ngợp. Mỗi ngày chỉ cần 20–30 phút.' },
+  { cat:'gen', color:'#22c55e', rgb:'34,197,94',
+    q:'Nội dung có dựa trên bằng chứng khoa học không?',
+    a:'Có. Tất cả nội dung được xây dựng dựa trên các nghiên cứu y học hiện đại và hướng dẫn từ các tổ chức uy tín (WHO, ACSM, AHA). Tuy nhiên, website này mang tính giáo dục — không thay thế cho tư vấn y tế cá nhân. Nếu có vấn đề sức khỏe cụ thể, hãy tham khảo bác sĩ.' },
+  { cat:'gen', color:'#22c55e', rgb:'34,197,94',
+    q:'6 trụ cột sức khỏe 360° bao gồm những gì?',
+    a:'6 trụ cột tạo thành hệ thống sức khỏe toàn diện: (A) Vận Động & Tập Luyện — cơ thể mạnh khỏe; (B) Dinh Dưỡng & Thực Đơn — nhiên liệu đúng; (C) Lối Sống Khỏe — ngủ, bước chân, phục hồi; (D) Tâm Trí An Nhiên — cân bằng cảm xúc; (E) Kiến Thức Sức Khỏe — hiểu cơ thể; (F) Công Cụ & Tài Nguyên — theo dõi và duy trì.' },
+  { cat:'move', color:'#22c55e', rgb:'34,197,94',
+    q:'Tôi nên tập luyện bao nhiêu lần mỗi tuần?',
+    a:'Với người mới, 3 buổi/tuần (cách ngày) là lý tưởng. Cấu trúc khuyến nghị: 3 buổi sức mạnh · 2 buổi cardio nhẹ · 2 ngày phục hồi tích cực. Quan trọng hơn số buổi là tính nhất quán — 3 buổi đều đặn trong 12 tuần tốt hơn 5 buổi/tuần trong 2 tuần rồi bỏ cuộc.' },
+  { cat:'move', color:'#22c55e', rgb:'34,197,94', featured:true,
+    q:'6 chuyển động cơ bản là gì và tại sao quan trọng?',
+    a:'6 pattern vận động nền tảng: Squat (gập gối), Hinge (gập hông), Push (đẩy), Pull (kéo), Core (lõi) và Thở. Đây là 6 nhóm cơ vận động mà cơ thể người thực hiện hàng ngày. Thành thạo 6 động tác này với form đúng trước khi tăng tải là nguyên tắc số 1 để tránh chấn thương và tạo nền tảng bền vững.' },
+  { cat:'move', color:'#22c55e', rgb:'34,197,94',
+    q:'Không có dụng cụ tập luyện, có áp dụng được không?',
+    a:'Hoàn toàn được. Toàn bộ chương trình giai đoạn 1 (7 ngày + 4 tuần đầu) sử dụng 100% bodyweight — không cần thiết bị. Từ tuần 5 trở đi bạn có thể dùng tạ đơn hoặc dây kháng lực nếu muốn tăng thách thức, nhưng không bắt buộc.' },
+  { cat:'move', color:'#22c55e', rgb:'34,197,94',
+    q:'Tôi đau lưng mãn tính, có thể tập luyện theo hướng dẫn không?',
+    a:'Phụ thuộc vào nguyên nhân và mức độ. Chương trình có phần "Phục Hồi Tích Cực" và "Giãn Cơ" phù hợp với người đau lưng nhẹ. Tuy nhiên, nếu đau lưng do bệnh lý đốt sống hoặc đang điều trị, hãy tham khảo bác sĩ hoặc vật lý trị liệu trước. Quy tắc vàng: đau cấp tính = nghỉ ngơi; đau mãn tính nhẹ = vận động nhẹ có kiểm soát.' },
+  { cat:'food', color:'#84cc16', rgb:'132,204,22',
+    q:'Tôi có bắt buộc phải đếm calo không?',
+    a:'Không bắt buộc, đặc biệt trong giai đoạn đầu. Mô hình "Đĩa Ăn" (½ rau · ¼ đạm · ¼ tinh bột) và quy tắc "1 lòng bàn tay đạm mỗi bữa" giúp bạn ăn đúng mà không cần đếm số. Tính calo chỉ hữu ích ở giai đoạn nâng cao khi bạn muốn tối ưu hóa chính xác hơn.' },
+  { cat:'food', color:'#84cc16', rgb:'132,204,22', featured:true,
+    q:'TDEE là gì và tôi có cần tính không?',
+    a:'TDEE (Total Daily Energy Expenditure) là tổng lượng calo cơ thể đốt mỗi ngày. Biết TDEE giúp bạn ăn đúng lượng cho mục tiêu: giảm cân (TDEE − 400 kcal), duy trì (= TDEE), tăng cơ (TDEE + 300 kcal). Công thức tính TDEE có trong Bộ Công Cụ B0 của trang Dinh Dưỡng.' },
+  { cat:'food', color:'#84cc16', rgb:'132,204,22',
+    q:'Tôi ăn ngoài nhiều vì công việc, có áp dụng được không?',
+    a:'Có. Công thức ăn ngoài thông minh: "1 protein + 2 rau + tinh bột vừa phải". Tại nhà hàng: gọi thêm rau hoặc salad, chọn protein nướng/hấp thay vì chiên, kiểm soát phần tinh bột. Không cần từ chối bữa xã giao — chỉ cần chiến lược đơn giản.' },
+  { cat:'food', color:'#84cc16', rgb:'132,204,22',
+    q:'Tôi có cần dùng thực phẩm bổ sung (supplement) không?',
+    a:'Không cần trong giai đoạn đầu. Thực phẩm nguyên bản luôn là nền tảng — supplement chỉ có tác dụng khi nền dinh dưỡng đã vững. Nếu được cân nhắc: Vitamin D3 (nếu ít ra nắng), Omega-3 (nếu ít ăn cá), Protein Whey (nếu khó đủ đạm từ thực phẩm). Tham khảo bác sĩ trước khi dùng bất kỳ supplement nào.' },
+  { cat:'food', color:'#84cc16', rgb:'132,204,22',
+    q:'Tôi cần uống bao nhiêu nước mỗi ngày?',
+    a:'Công thức đơn giản: cân nặng (kg) × 35ml. Ví dụ: 60kg → 2,1 lít/ngày. Dấu hiệu đủ nước: nước tiểu vàng nhạt như chanh. Tăng thêm 500ml khi tập luyện. Uống đều trong ngày và bắt đầu ngày với 1 ly nước lớn ngay khi thức dậy.' },
+  { cat:'life', color:'#14b8a6', rgb:'20,184,166',
+    q:'Tôi cần ngủ bao nhiêu tiếng là đủ?',
+    a:'7–9 tiếng là khuyến nghị cho người trưởng thành (WHO). Quan trọng hơn số giờ là chất lượng giấc ngủ và tính đều đặn — ngủ và dậy cùng giờ mỗi ngày (kể cả cuối tuần) quan trọng hơn là ngủ nhiều vào cuối tuần bù lại.' },
+  { cat:'life', color:'#14b8a6', rgb:'20,184,166',
+    q:'NEAT là gì và tại sao lại quan trọng hơn tôi nghĩ?',
+    a:'NEAT (Non-Exercise Activity Thermogenesis) là năng lượng đốt từ mọi hoạt động ngoài tập luyện — đi bộ, đứng, leo cầu thang, làm việc nhà. NEAT có thể chiếm 15–50% tổng calo đốt hàng ngày. Mục tiêu: 8.000–10.000 bước/ngày.' },
+  { cat:'life', color:'#14b8a6', rgb:'20,184,166',
+    q:'Morning routine tối thiểu cần những gì?',
+    a:'Morning routine 10 phút đủ để tạo khác biệt: (1) Uống 1 ly nước lớn; (2) Ra tiếp xúc ánh sáng mặt trời 5 phút; (3) Viết 1 mục tiêu cho ngày hôm đó. Không cần dậy sớm 5h sáng — chỉ cần làm đều đặn.' },
+  { cat:'life', color:'#14b8a6', rgb:'20,184,166',
+    q:'Làm sao cải thiện chất lượng giấc ngủ một cách nhanh nhất?',
+    a:'Ba can thiệp hiệu quả nhất: (1) Không dùng màn hình 30 phút trước ngủ; (2) Giữ phòng ngủ 18–22°C và tối hoàn toàn; (3) Không uống caffeine sau 14h. Áp dụng đúng 3 điều này trong 7 ngày — bạn sẽ nhận thấy sự khác biệt rõ rệt.' },
+  { cat:'mind', color:'#a855f7', rgb:'168,85,247',
+    q:'Tôi chưa bao giờ thiền, bắt đầu như thế nào?',
+    a:'Thiền đơn giản nhất: ngồi thoải mái, nhắm mắt, chú ý đến hơi thở trong 5 phút. Khi tâm trí lang thang, nhẹ nhàng đưa sự chú ý về hơi thở — không phán xét. Bắt đầu 5 phút mỗi sáng, tăng dần lên 10–15 phút sau 2 tuần.' },
+  { cat:'mind', color:'#a855f7', rgb:'168,85,247',
+    q:'Box Breathing là gì và khi nào nên dùng?',
+    a:'Box Breathing: Hít vào 4 giây → Giữ 4 giây → Thở ra 4 giây → Giữ 4 giây → lặp lại. Kỹ thuật này kích hoạt hệ thần kinh phó giao cảm, giảm cortisol và nhịp tim trong 2–3 phút. Dùng khi: căng thẳng trước cuộc họp, khó ngủ, hoặc trước buổi tập.' },
+  { cat:'mind', color:'#a855f7', rgb:'168,85,247',
+    q:'Tôi không có thời gian thiền, có cách nào không?',
+    a:'"Micro-meditation" hiệu quả trong cuộc sống bận rộn: (1) 3 hơi thở sâu có ý thức mỗi buổi sáng (30 giây); (2) Chú tâm hoàn toàn vào bữa ăn — không điện thoại; (3) Đi bộ có ý thức 5 phút giữa ngày. Những khoảnh khắc nhỏ này cộng dồn tạo nền tảng tâm lý vững chắc.' },
+  { cat:'mind', color:'#a855f7', rgb:'168,85,247',
+    q:'Nhật ký sức khỏe (health journal) nên viết những gì?',
+    a:'Công thức nhật ký 3 dòng tối (3–5 phút): (1) "Hôm nay tôi làm tốt..." — ghi nhận 1 điều tích cực; (2) "Tôi học được..." — 1 bài học hoặc quan sát; (3) "Ngày mai tôi sẽ..." — 1 hành động cụ thể. Sau 4 tuần, nhìn lại bạn sẽ thấy pattern của bản thân rõ ràng hơn.' },
+  { cat:'prog', color:'#3b82f6', rgb:'59,130,246',
+    q:'Sự khác nhau giữa 7 ngày, 12 tuần và 24 tuần là gì?',
+    a:'7 Ngày Khởi Động: Làm quen 4 trụ cột, hình thành thói quen nền. 12 Tuần Cơ Bản: 3 giai đoạn xây dựng nền tảng → tăng tải → cá nhân hóa. 24 Tuần Nâng Cao: Mở rộng sang cả 6 trụ cột đầy đủ, bao gồm kiến thức y tế và carb cycling.' },
+  { cat:'prog', color:'#3b82f6', rgb:'59,130,246', featured:true,
+    q:'Mỗi ngày tôi cần dành bao nhiêu thời gian?',
+    a:'Cấu trúc Daily Core 20–40 phút: 5 phút khởi động · 10–20 phút tập chính · 5–10 phút giãn cơ · 5 phút mind reset. Ngoài ra: morning routine 10 phút + nhật ký tối 5 phút. Tổng: 35–55 phút/ngày. Không có ngày nào yêu cầu hơn 1 tiếng.' },
+  { cat:'prog', color:'#3b82f6', rgb:'59,130,246',
+    q:'Tôi có thể bỏ qua 7 ngày và bắt đầu 12 tuần luôn không?',
+    a:'Được, nhưng không khuyến nghị. 7 ngày đầu giúp bạn hiểu cơ thể phản ứng thế nào với sự thay đổi, xác định điểm yếu và tạo đà tâm lý. Người bỏ qua 7 ngày thường bỏ cuộc sớm hơn. Nếu đã có nền tảng tốt (tập đều 6+ tháng), bạn có thể bắt đầu từ giai đoạn 2 của 12 tuần.' },
+  { cat:'prog', color:'#3b82f6', rgb:'59,130,246',
+    q:'Tôi lỡ 1–2 ngày trong lộ trình thì phải làm gì?',
+    a:'Không sao cả. Nguyên tắc: "Không bao giờ bỏ 2 lần liên tiếp". Bỏ 1 ngày → tiếp tục từ ngày tiếp theo, không cần làm bù. Bỏ 1 tuần → quay lại từ đầu tuần đó. 80% nhất quán trong 12 tuần > 100% trong 3 tuần rồi bỏ.' },
 ];
 
 // ── AccordionItem ────────────────────────────────────────────────────────────
 function AccordionItem({ item, isOpen, onToggle, idx }) {
   const contentRef = useRef(null);
-  const [height, setHeight] = useState(0);
-
+  const [h, setH] = useState(0);
   useEffect(() => {
-    if (contentRef.current) {
-      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
-    }
+    setH(isOpen && contentRef.current ? contentRef.current.scrollHeight : 0);
   }, [isOpen]);
 
   return (
-    <div
-      className="group border rounded-2xl overflow-hidden transition-all duration-300"
+    <div className="group/acc border rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
       style={{
-        borderColor: isOpen ? `rgba(${item.rgb},0.35)` : 'rgba(255,255,255,0.07)',
-        background: isOpen ? `rgba(${item.rgb},0.04)` : 'rgba(255,255,255,0.015)',
+        borderColor: isOpen ? `rgba(${item.rgb},0.4)` : 'rgba(255,255,255,0.07)',
+        background: isOpen ? `rgba(${item.rgb},0.04)` : 'rgba(255,255,255,0.018)',
+        boxShadow: isOpen ? `0 0 30px rgba(${item.rgb},0.08)` : 'none',
       }}
+      onClick={onToggle}
     >
-      {/* Top accent line on open */}
-      <div
-        className="h-[2px] transition-all duration-500"
-        style={{ background: isOpen ? `linear-gradient(90deg, rgba(${item.rgb},0.8), rgba(${item.rgb},0.2))` : 'transparent' }}
-      />
+      {/* Color bar */}
+      <div className="h-[2px] transition-all duration-500"
+        style={{ background: isOpen ? `linear-gradient(90deg, rgba(${item.rgb},0.9), rgba(${item.rgb},0.2))` : 'transparent' }} />
 
       {/* Question row */}
-      <button
-        onClick={onToggle}
-        className="w-full text-left px-5 py-4 flex items-start gap-4 cursor-pointer"
-      >
-        {/* Number badge */}
-        <span
-          className="shrink-0 w-7 h-7 rounded-lg text-xs font-black flex items-center justify-center mt-0.5 transition-all duration-300"
+      <div className="px-5 py-4 flex items-start gap-4">
+        <span className="shrink-0 w-8 h-8 rounded-xl text-xs font-black flex items-center justify-center mt-0.5 transition-all duration-300"
           style={{
-            background: isOpen ? `rgba(${item.rgb},0.18)` : 'rgba(255,255,255,0.05)',
-            color: isOpen ? item.color : '#64748b',
-            border: `1px solid ${isOpen ? `rgba(${item.rgb},0.3)` : 'rgba(255,255,255,0.08)'}`,
-          }}
-        >
+            background: isOpen ? `rgba(${item.rgb},0.2)` : 'rgba(255,255,255,0.05)',
+            color: isOpen ? item.color : '#475569',
+            border: `1px solid ${isOpen ? `rgba(${item.rgb},0.35)` : 'rgba(255,255,255,0.08)'}`,
+          }}>
           {String(idx + 1).padStart(2, '0')}
         </span>
-
-        {/* Question text */}
-        <span
-          className="flex-1 font-semibold text-sm md:text-base leading-snug transition-colors duration-200 pt-0.5"
-          style={{ color: isOpen ? '#f1f5f9' : '#94a3b8' }}
-        >
+        <span className="flex-1 font-semibold text-sm md:text-base leading-snug pt-1 transition-colors duration-200"
+          style={{ color: isOpen ? '#f1f5f9' : '#94a3b8' }}>
           {item.q}
         </span>
-
-        {/* Toggle icon */}
-        <span
-          className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center mt-0.5 transition-all duration-300"
+        <span className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center mt-1 transition-all duration-300"
           style={{
-            background: isOpen ? `rgba(${item.rgb},0.15)` : 'rgba(255,255,255,0.05)',
-            transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-          }}
-        >
+            background: isOpen ? `rgba(${item.rgb},0.18)` : 'rgba(255,255,255,0.05)',
+            transform: isOpen ? 'rotate(45deg)' : 'none',
+          }}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5"
-            style={{ color: isOpen ? item.color : '#64748b' }}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
+            style={{ color: isOpen ? item.color : '#475569' }}>
+            <path strokeLinecap="round" d="M12 5v14M5 12h14" />
           </svg>
         </span>
-      </button>
+      </div>
 
       {/* Answer */}
-      <div
-        className="overflow-hidden transition-all duration-400 ease-in-out"
-        style={{ height, opacity: isOpen ? 1 : 0, transition: 'height 0.38s ease, opacity 0.3s ease' }}
-      >
-        <div ref={contentRef} className="px-5 pb-5 pl-16">
+      <div style={{ height: h, overflow: 'hidden', transition: 'height 0.4s ease, opacity 0.3s ease', opacity: isOpen ? 1 : 0 }}>
+        <div ref={contentRef} className="px-5 pb-5 pl-[68px]">
           <p className="text-muted/80 text-sm leading-relaxed">{item.a}</p>
         </div>
       </div>
@@ -239,12 +205,12 @@ function AccordionItem({ item, isOpen, onToggle, idx }) {
   );
 }
 
-// ── Main Component ───────────────────────────────────────────────────────────
+// ── Main ─────────────────────────────────────────────────────────────────────
 export default function FAQ() {
-  const [openIdx, setOpenIdx]     = useState(null);
+  const [openIdx, setOpenIdx] = useState(null);
   const [activeCat, setActiveCat] = useState('all');
-  const [search, setSearch]       = useState('');
-  const [mouse, setMouse]         = useState({ x: 0.5, y: 0.3 });
+  const [search, setSearch] = useState('');
+  const [mouse, setMouse] = useState({ x: 0.5, y: 0.4 });
   const headerRef = useRef(null);
 
   const handleMouseMove = useCallback((e) => {
@@ -254,54 +220,72 @@ export default function FAQ() {
   }, []);
 
   useEffect(() => {
-    const id = 'faq-kf';
+    const id = 'faq2-kf';
     if (document.getElementById(id)) return;
     const s = document.createElement('style');
     s.id = id;
     s.textContent = `
-      @keyframes faqReveal {
-        from { opacity:0; transform:translateY(28px) scale(0.95); filter:blur(7px); }
+      @keyframes faq2Reveal {
+        from { opacity:0; transform:translateY(32px) scale(0.94); filter:blur(8px); }
         to   { opacity:1; transform:translateY(0)    scale(1);    filter:blur(0); }
       }
-      @keyframes faqSubIn {
-        from { opacity:0; transform:translateY(16px); }
+      @keyframes faq2Sub {
+        from { opacity:0; transform:translateY(18px); }
         to   { opacity:1; transform:translateY(0); }
       }
-      @keyframes faqLineGrow {
+      @keyframes faq2Line {
         from { transform:scaleX(0); opacity:0; }
         to   { transform:scaleX(1); opacity:1; }
       }
-      @keyframes faqDotPulse {
-        0%,100% { transform:scale(1);   opacity:0.6; }
-        50%     { transform:scale(1.5); opacity:1; }
+      @keyframes faq2DotPulse {
+        0%,100% { transform:scale(1);   opacity:0.55; }
+        50%     { transform:scale(1.6); opacity:1; }
       }
-      @keyframes faqGlow {
-        0%,100% { opacity:0.4; transform:scale(1); }
-        50%     { opacity:0.7; transform:scale(1.2); }
+      @keyframes faq2GlowDrift {
+        0%,100% { opacity:0.35; transform:scale(1) translate(0,0); }
+        50%     { opacity:0.65; transform:scale(1.2) translate(15px,-10px); }
       }
-      @keyframes faqFloat {
+      @keyframes faq2Float {
         0%,100% { transform:translateY(0)    rotate(0deg); }
-        33%     { transform:translateY(-8px) rotate(3deg); }
-        66%     { transform:translateY(5px)  rotate(-2deg); }
+        40%     { transform:translateY(-10px) rotate(4deg); }
+        70%     { transform:translateY(6px)   rotate(-3deg); }
       }
-      @keyframes faqIconSpin {
-        0%,100% { transform:rotate(-5deg) scale(1); }
-        50%     { transform:rotate(5deg) scale(1.08); }
+      @keyframes faq2CatReveal {
+        from { opacity:0; transform:translateY(20px) scale(0.92); }
+        to   { opacity:1; transform:translateY(0)    scale(1); }
       }
-      .faq-title  { animation:faqReveal  0.72s cubic-bezier(0.25,0.46,0.45,0.94) both 0.05s; }
-      .faq-line   { transform-origin:center; animation:faqLineGrow 1s ease both 0.3s; }
-      .faq-sub    { animation:faqSubIn   0.6s ease both 0.38s; }
-      .faq-search { animation:faqSubIn   0.6s ease both 0.5s; }
-      .faq-dot    { animation:faqDotPulse 2.4s ease-in-out infinite; }
-      .faq-dot:nth-child(2){ animation-delay:0.5s; }
-      .faq-dot:nth-child(3){ animation-delay:1s; }
-      .faq-glow-a { animation:faqGlow 7s ease-in-out infinite; }
-      .faq-glow-b { animation:faqGlow 9s ease-in-out infinite reverse; animation-delay:-3.5s; }
-      .faq-icon   { animation:faqFloat 5s ease-in-out infinite; }
-      .faq-icon:nth-child(2){ animation-delay:-1.5s; animation-duration:6.5s; }
-      .faq-icon:nth-child(3){ animation-delay:-3s;   animation-duration:5.5s; }
-      .faq-word { display:inline-block; transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1); }
-      .faq-word:hover { transform:translateY(-4px) scale(1.04); }
+      @keyframes faq2Shimmer {
+        0%   { background-position: 200% center; }
+        100% { background-position: -200% center; }
+      }
+      .faq2-title  { animation: faq2Reveal 0.75s cubic-bezier(0.25,0.46,0.45,0.94) both 0.05s; }
+      .faq2-sub    { animation: faq2Sub    0.65s ease both 0.3s; }
+      .faq2-search { animation: faq2Sub    0.65s ease both 0.48s; }
+      .faq2-line   { transform-origin:center; animation: faq2Line 1s ease both 0.32s; }
+      .faq2-dot    { animation: faq2DotPulse 2.5s ease-in-out infinite; }
+      .faq2-dot:nth-child(2){ animation-delay:0.5s; }
+      .faq2-dot:nth-child(3){ animation-delay:1s; }
+      .faq2-glow-a { animation: faq2GlowDrift 8s ease-in-out infinite; }
+      .faq2-glow-b { animation: faq2GlowDrift 11s ease-in-out infinite reverse; animation-delay:-4.5s; }
+      .faq2-float  { animation: faq2Float 5.5s ease-in-out infinite; }
+      .faq2-float:nth-child(2){ animation-delay:-2s; animation-duration:7s; }
+      .faq2-float:nth-child(3){ animation-delay:-4s; animation-duration:6.2s; }
+      .faq2-float:nth-child(4){ animation-delay:-1s; animation-duration:8s; }
+      .faq2-float:nth-child(5){ animation-delay:-3s; animation-duration:5.8s; }
+      .faq2-float:nth-child(6){ animation-delay:-5s; animation-duration:7.5s; }
+      .faq2-word { display:inline-block; transition:transform 0.28s cubic-bezier(0.34,1.56,0.64,1), text-shadow 0.28s ease; cursor:default; user-select:none; }
+      .faq2-word:hover { transform:translateY(-5px) scale(1.05); }
+      .faq2-cat-card { transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; cursor:pointer; }
+      .faq2-cat-card:hover { transform:translateY(-4px); }
+      .faq2-cat-img { transition:transform 0.5s ease; }
+      .faq2-cat-card:hover .faq2-cat-img { transform:scale(1.08); }
+      .faq2-shimmer-line {
+        background: linear-gradient(90deg, #22c55e 0%, #5eead4 25%, #ffffff 50%, #a855f7 75%, #22c55e 100%);
+        background-size: 300% auto;
+        animation: faq2Line 1s ease both 0.32s, faq2Shimmer 4s linear 1.4s infinite;
+      }
+      .faq2-feat-card { transition:transform 0.25s ease, box-shadow 0.25s ease; cursor:pointer; }
+      .faq2-feat-card:hover { transform:translateY(-3px); }
     `;
     document.head.appendChild(s);
   }, []);
@@ -310,99 +294,97 @@ export default function FAQ() {
     const q = search.toLowerCase().trim();
     return FAQS.filter(f => {
       const catOk = activeCat === 'all' || f.cat === activeCat;
-      const searchOk = !q || f.q.toLowerCase().includes(q) || f.a.toLowerCase().includes(q);
-      return catOk && searchOk;
+      const srchOk = !q || f.q.toLowerCase().includes(q) || f.a.toLowerCase().includes(q);
+      return catOk && srchOk;
     });
   }, [activeCat, search]);
 
-  const toggle = (i) => setOpenIdx(prev => prev === i ? null : i);
+  const featured = useMemo(() => FAQS.filter(f => f.featured).slice(0, 3), []);
 
-  const activeCatColor = CATEGORIES.find(c => c.id === activeCat)?.color || '#22c55e';
-  const activeCatRgb   = CATEGORIES.find(c => c.id === activeCat)?.rgb   || '34,197,94';
+  const toggle = (i) => setOpenIdx(prev => prev === i ? null : i);
 
   return (
     <div className="max-w-4xl mx-auto">
 
-      {/* ── Hero Header ──────────────────────────────────────────── */}
-      <div
-        ref={headerRef}
-        onMouseMove={handleMouseMove}
-        className="relative text-center rounded-3xl py-16 px-6 mb-10 overflow-hidden"
-        style={{ background: 'rgba(255,255,255,0.015)' }}
-      >
+      {/* ── Hero ──────────────────────────────────────────────────── */}
+      <div ref={headerRef} onMouseMove={handleMouseMove}
+        className="relative -mx-4 md:-mx-8 mb-12 overflow-hidden rounded-b-3xl text-center"
+        style={{ minHeight: 340 }}>
+        {/* Background image */}
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=65"
+          alt="" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/60 to-bg pointer-events-none" />
+
         {/* Mouse-tracking glow */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: `radial-gradient(ellipse 600px 350px at ${mouse.x*100}% ${mouse.y*100}%, rgba(34,197,94,0.08), transparent 70%)`,
+          background: `radial-gradient(ellipse 600px 380px at ${mouse.x*100}% ${mouse.y*100}%, rgba(34,197,94,0.1), transparent 70%)`,
         }} />
 
         {/* Ambient blobs */}
-        <div className="faq-glow-a absolute top-1/4 left-1/5  w-80 h-60 bg-green-500/5   rounded-full blur-[90px] pointer-events-none" />
-        <div className="faq-glow-b absolute top-0   right-1/5 w-64 h-52 bg-purple-500/4  rounded-full blur-[80px] pointer-events-none" />
+        <div className="faq2-glow-a absolute top-1/4 left-1/5  w-96 h-72 bg-green-500/6   rounded-full blur-[100px] pointer-events-none" />
+        <div className="faq2-glow-b absolute top-0   right-1/5 w-72 h-56 bg-purple-500/5  rounded-full blur-[80px]  pointer-events-none" />
 
-        {/* Top border accent */}
-        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(34,197,94,0.3),rgba(168,85,247,0.2),transparent)' }} />
-
-        {/* Floating icons */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <span className="faq-icon absolute top-8 left-12 text-2xl opacity-10 select-none">🏃</span>
-          <span className="faq-icon absolute top-12 right-16 text-2xl opacity-10 select-none">🥗</span>
-          <span className="faq-icon absolute bottom-10 left-1/4 text-xl opacity-10 select-none">🧘</span>
-          <span className="faq-icon absolute bottom-8 right-1/4 text-2xl opacity-10 select-none">💡</span>
-          <span className="faq-icon absolute top-1/2 left-8 text-lg opacity-8 select-none">🌿</span>
-          <span className="faq-icon absolute top-1/3 right-10 text-lg opacity-8 select-none">📊</span>
+        {/* Floating emoji icons */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+          <span className="faq2-float absolute top-10  left-[8%]  text-3xl opacity-8">🏃</span>
+          <span className="faq2-float absolute top-14  right-[9%] text-2xl opacity-8">🥗</span>
+          <span className="faq2-float absolute top-[45%] left-[5%]  text-2xl opacity-7">🧘</span>
+          <span className="faq2-float absolute top-[40%] right-[6%] text-3xl opacity-7">💡</span>
+          <span className="faq2-float absolute bottom-14 left-[14%] text-xl opacity-6">🌿</span>
+          <span className="faq2-float absolute bottom-12 right-[13%] text-xl opacity-6">📊</span>
         </div>
 
-        <div className="relative">
-          {/* Pulsing dots */}
-          <div className="inline-flex items-center gap-2 mb-7">
-            <span className="faq-dot w-2   h-2   rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 7px rgba(34,197,94,0.8)' }} />
-            <span className="faq-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 6px rgba(94,234,212,0.7)' }} />
-            <span className="faq-dot w-1   h-1   rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 5px rgba(168,85,247,0.6)' }} />
-            <span className="text-[10px] font-extrabold tracking-[0.22em] uppercase text-muted/50 mx-2">Câu Hỏi Thường Gặp</span>
-            <span className="faq-dot w-1   h-1   rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 5px rgba(168,85,247,0.6)' }} />
-            <span className="faq-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 6px rgba(94,234,212,0.7)' }} />
-            <span className="faq-dot w-2   h-2   rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 7px rgba(34,197,94,0.8)' }} />
+        {/* Top border */}
+        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(34,197,94,0.35),rgba(168,85,247,0.25),transparent)' }} />
+
+        <div className="relative z-10 px-4 md:px-8 pt-16 pb-14 flex flex-col items-center">
+          {/* Pulsing trio */}
+          <div className="inline-flex items-center gap-2.5 mb-8">
+            <span className="faq2-dot w-2   h-2   rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 8px rgba(34,197,94,0.9)' }} />
+            <span className="faq2-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 7px rgba(94,234,212,0.8)' }} />
+            <span className="faq2-dot w-1   h-1   rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 6px rgba(168,85,247,0.7)' }} />
+            <span className="text-[10px] font-extrabold tracking-[0.25em] uppercase text-muted/45 mx-2">Câu Hỏi Thường Gặp</span>
+            <span className="faq2-dot w-1   h-1   rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 6px rgba(168,85,247,0.7)' }} />
+            <span className="faq2-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 7px rgba(94,234,212,0.8)' }} />
+            <span className="faq2-dot w-2   h-2   rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 8px rgba(34,197,94,0.9)' }} />
           </div>
 
           {/* Title */}
-          <h1 className="faq-title font-black leading-tight tracking-tight mb-5 flex items-baseline justify-center gap-[0.2em]" style={{ fontSize: 'clamp(2.6rem,5.5vw,4rem)' }}>
-            <span className="faq-word text-text cursor-default select-none">FAQ</span>
-            <span className="faq-word cursor-default select-none" style={{
-              background: 'linear-gradient(135deg,#22c55e 0%,#5eead4 50%,#a855f7 100%)',
+          <h1 className="faq2-title font-black leading-tight tracking-tight mb-5 flex items-baseline justify-center flex-wrap gap-x-[0.2em]"
+            style={{ fontSize: 'clamp(2.8rem,6vw,4.4rem)' }}>
+            <span className="faq2-word text-text">FAQ</span>
+            <span className="faq2-word" style={{
+              background: 'linear-gradient(135deg, #f0fdf4 0%, #86efac 30%, #5eead4 60%, #c4b5fd 100%)',
               WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
             }}>Sức Khỏe</span>
           </h1>
 
-          {/* Underline */}
-          <div className="faq-line mx-auto mb-6 h-[2.5px] w-24 rounded-full"
-            style={{ background: 'linear-gradient(90deg,#22c55e,#5eead4,#a855f7)' }} />
+          {/* Shimmer underline */}
+          <div className="faq2-shimmer-line mx-auto mb-6 h-[2.5px] w-28 rounded-full" />
 
           {/* Subtitle */}
-          <p className="faq-sub text-muted/70 text-sm md:text-base leading-relaxed max-w-md mx-auto mb-3">
+          <p className="faq2-sub text-muted/70 text-sm md:text-base leading-relaxed max-w-sm mx-auto mb-2">
             Giải đáp những thắc mắc phổ biến nhất về hành trình sống khỏe
           </p>
-          <p className="faq-sub text-muted/45 text-xs mx-auto mb-8">
+          <p className="faq2-sub text-muted/40 text-xs mx-auto mb-9">
             {FAQS.length} câu hỏi · 6 chủ đề · cập nhật thường xuyên
           </p>
 
           {/* Search */}
-          <div className="faq-search relative max-w-sm mx-auto">
+          <div className="faq2-search relative max-w-sm w-full mx-auto">
             <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-muted/40">
                 <circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="m21 21-4.35-4.35"/>
               </svg>
             </div>
-            <input
-              type="text"
-              value={search}
+            <input type="text" value={search}
               onChange={e => { setSearch(e.target.value); setOpenIdx(null); }}
               placeholder="Tìm kiếm câu hỏi..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm bg-white/4 border border-white/10 text-text placeholder-muted/40
-                focus:outline-none focus:border-accent/40 focus:bg-white/6 transition-all duration-200"
+              className="w-full pl-10 pr-4 py-3 rounded-2xl text-sm bg-white/5 border border-white/12 text-text placeholder-muted/40 focus:outline-none focus:border-accent/50 focus:bg-white/8 transition-all duration-250"
             />
             {search && (
               <button onClick={() => setSearch('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted/50 hover:text-muted transition-colors">
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-muted/50 hover:text-muted transition-colors">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5">
                   <path strokeLinecap="round" d="M18 6 6 18M6 6l12 12"/>
                 </svg>
@@ -412,95 +394,193 @@ export default function FAQ() {
         </div>
       </div>
 
-      {/* ── Category Filter ───────────────────────────────────────── */}
-      <div className="flex flex-wrap gap-2 mb-8 justify-center">
-        {CATEGORIES.map(cat => {
-          const active = activeCat === cat.id;
-          return (
-            <button
-              key={cat.id}
-              onClick={() => { setActiveCat(cat.id); setOpenIdx(null); }}
-              className="px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 border cursor-pointer"
-              style={{
-                background: active ? `rgba(${cat.rgb},0.15)` : 'rgba(255,255,255,0.04)',
-                borderColor: active ? `rgba(${cat.rgb},0.45)` : 'rgba(255,255,255,0.08)',
-                color: active ? cat.color : '#64748b',
-                boxShadow: active ? `0 0 12px rgba(${cat.rgb},0.2)` : 'none',
-              }}
-            >
-              {cat.label}
-              {cat.id !== 'all' && (
-                <span className="ml-1.5 opacity-60 font-normal">
-                  {FAQS.filter(f => f.cat === cat.id).length}
-                </span>
-              )}
-            </button>
-          );
-        })}
-      </div>
+      {/* ── Category cards ───────────────────────────────────────── */}
+      <RevealBlock className="mb-12">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+          {CATEGORIES.filter(c => c.id !== 'all').map((cat, ci) => {
+            const active = activeCat === cat.id;
+            const count  = FAQS.filter(f => f.cat === cat.id).length;
+            return (
+              <div key={cat.id}
+                className="faq2-cat-card relative rounded-2xl overflow-hidden border"
+                style={{
+                  borderColor: active ? `rgba(${cat.rgb},0.55)` : 'rgba(255,255,255,0.07)',
+                  boxShadow: active ? `0 0 24px rgba(${cat.rgb},0.2)` : 'none',
+                  animationDelay: `${ci * 80}ms`,
+                }}
+                onClick={() => { setActiveCat(active ? 'all' : cat.id); setOpenIdx(null); }}
+              >
+                {/* Image */}
+                {cat.img && (
+                  <div className="relative h-16 overflow-hidden">
+                    <img src={cat.img} alt={cat.label} className="faq2-cat-img w-full h-full object-cover" style={{ opacity: 0.45 }} />
+                    <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 30%, rgba(10,10,10,0.85))` }} />
+                  </div>
+                )}
+                {/* Label */}
+                <div className="p-3 pt-2">
+                  <div className="text-xl mb-1">{cat.icon}</div>
+                  <div className="text-[10px] font-bold leading-tight" style={{ color: active ? cat.color : '#64748b' }}>
+                    {cat.label}
+                  </div>
+                  <div className="text-[9px] text-muted/40 mt-0.5">{count} câu</div>
+                </div>
+                {/* Active glow */}
+                {active && (
+                  <div className="absolute inset-0 pointer-events-none rounded-2xl" style={{ background: `rgba(${cat.rgb},0.08)` }} />
+                )}
+              </div>
+            );
+          })}
+        </div>
+        {/* All / Reset pill */}
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={() => { setActiveCat('all'); setOpenIdx(null); }}
+            className="px-5 py-1.5 rounded-full text-xs font-medium border transition-all duration-200"
+            style={{
+              background: activeCat === 'all' ? 'rgba(34,197,94,0.12)' : 'rgba(255,255,255,0.04)',
+              borderColor: activeCat === 'all' ? 'rgba(34,197,94,0.4)' : 'rgba(255,255,255,0.08)',
+              color: activeCat === 'all' ? '#22c55e' : '#64748b',
+            }}>
+            ✦ Tất Cả ({FAQS.length})
+          </button>
+        </div>
+      </RevealBlock>
 
-      {/* ── FAQ List ──────────────────────────────────────────────── */}
-      <div className="space-y-2.5 mb-14">
-        {filtered.length === 0 ? (
-          <div className="text-center py-16 text-muted/50 text-sm">
-            <div className="text-3xl mb-3">🔍</div>
-            Không tìm thấy câu hỏi phù hợp. Thử từ khóa khác.
+      {/* ── Featured Q&As ───────────────────────────────────────── */}
+      {!search && activeCat === 'all' && (
+        <RevealBlock className="mb-12">
+          <h2 className="text-xs font-extrabold uppercase tracking-[0.2em] text-muted/50 mb-4 text-center">
+            ★ Câu Hỏi Nổi Bật
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {featured.map((item, i) => {
+              const cat = CATEGORIES.find(c => c.id === item.cat);
+              return (
+                <div key={i}
+                  className="faq2-feat-card relative rounded-2xl overflow-hidden border p-5"
+                  style={{ borderColor: `rgba(${item.rgb},0.22)`, background: `rgba(${item.rgb},0.05)`, boxShadow: `0 0 20px rgba(${item.rgb},0.06)` }}
+                  onClick={() => {
+                    setActiveCat(item.cat);
+                    setSearch('');
+                    setOpenIdx(null);
+                    setTimeout(() => {
+                      const idx = FAQS.filter(f => f.cat === item.cat).findIndex(f => f.q === item.q);
+                      setOpenIdx(idx);
+                    }, 100);
+                  }}
+                >
+                  {/* Top bar */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, rgba(${item.rgb},0.8), rgba(${item.rgb},0.2))` }} />
+                  <div className="text-xl mb-3">{cat?.icon}</div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: item.color }}>{cat?.label}</div>
+                  <p className="text-sm font-semibold text-text/90 leading-snug mb-2">{item.q}</p>
+                  <p className="text-xs text-muted/60 leading-relaxed line-clamp-2">{item.a}</p>
+                  <div className="mt-3 text-[10px] font-bold" style={{ color: item.color }}>Đọc thêm →</div>
+                </div>
+              );
+            })}
           </div>
-        ) : (
-          filtered.map((item, i) => (
-            <AccordionItem
-              key={`${activeCat}-${i}`}
-              item={item}
-              idx={i}
-              isOpen={openIdx === i}
-              onToggle={() => toggle(i)}
-            />
-          ))
-        )}
-      </div>
+        </RevealBlock>
+      )}
 
-      {/* ── Stats bar ─────────────────────────────────────────────── */}
-      <div className="grid grid-cols-3 gap-3 mb-14">
-        {[
-          { v: FAQS.length, l: 'Câu hỏi', color: '#22c55e', rgb: '34,197,94' },
-          { v: '6', l: 'Chủ đề', color: '#5eead4', rgb: '94,234,212' },
-          { v: '100%', l: 'Miễn phí', color: '#a855f7', rgb: '168,85,247' },
-        ].map(s => (
-          <div key={s.l} className="text-center rounded-2xl py-5 border"
-            style={{ background: `rgba(${s.rgb},0.05)`, borderColor: `rgba(${s.rgb},0.18)` }}>
-            <div className="text-2xl font-black mb-0.5" style={{
-              background: `linear-gradient(135deg, ${s.color}, rgba(${s.rgb},0.6))`,
-              WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>{s.v}</div>
-            <div className="text-xs text-muted/60">{s.l}</div>
-          </div>
-        ))}
-      </div>
+      {/* ── Active category header ───────────────────────────────── */}
+      {activeCat !== 'all' && (() => {
+        const cat = CATEGORIES.find(c => c.id === activeCat);
+        return (
+          <RevealBlock className="mb-6">
+            <div className="relative rounded-2xl overflow-hidden border h-32 flex items-end p-5"
+              style={{ borderColor: `rgba(${cat.rgb},0.3)` }}>
+              <img src={cat.img} alt={cat.label} className="absolute inset-0 w-full h-full object-cover" style={{ opacity: 0.15 }} />
+              <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, rgba(${cat.rgb},0.1), rgba(10,10,10,0.8))` }} />
+              <div className="relative z-10">
+                <div className="text-2xl mb-1">{cat.icon}</div>
+                <h2 className="text-lg font-black text-text">{cat.label}</h2>
+                <p className="text-xs text-muted/60">{cat.desc} · {FAQS.filter(f => f.cat === activeCat).length} câu hỏi</p>
+              </div>
+            </div>
+          </RevealBlock>
+        );
+      })()}
 
-      {/* ── Still have questions? CTA ─────────────────────────────── */}
-      <div className="relative rounded-3xl overflow-hidden border border-border/40 p-8 text-center mb-4">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-purple-500/5 pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(34,197,94,0.3),transparent)' }} />
-        <div className="relative">
-          <div className="text-2xl mb-3 select-none">💬</div>
-          <h2 className="text-lg font-bold text-text mb-2">Vẫn còn thắc mắc?</h2>
-          <p className="text-muted/70 text-sm mb-6 max-w-xs mx-auto leading-relaxed">
-            Không tìm thấy câu trả lời? Liên hệ trực tiếp — chúng tôi luôn sẵn lòng hỗ trợ.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link to="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold border transition-all duration-200 hover:scale-105"
-              style={{ background: 'rgba(34,197,94,0.1)', borderColor: 'rgba(34,197,94,0.35)', color: '#22c55e' }}>
-              Liên Hệ Chúng Tôi →
-            </Link>
-            <Link to="/program"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold border transition-all duration-200 hover:scale-105"
-              style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)', color: '#94a3b8' }}>
-              Xem Lộ Trình
-            </Link>
+      {/* ── FAQ Accordion ────────────────────────────────────────── */}
+      <RevealBlock>
+        <div className="space-y-2.5 mb-14">
+          {filtered.length === 0 ? (
+            <div className="text-center py-16 text-muted/50 text-sm">
+              <div className="text-4xl mb-4">🔍</div>
+              Không tìm thấy câu hỏi phù hợp. Thử từ khóa khác.
+            </div>
+          ) : (
+            filtered.map((item, i) => (
+              <AccordionItem key={`${activeCat}-${i}`} item={item} idx={i} isOpen={openIdx === i} onToggle={() => toggle(i)} />
+            ))
+          )}
+        </div>
+      </RevealBlock>
+
+      {/* ── Stats ────────────────────────────────────────────────── */}
+      <RevealBlock className="mb-14">
+        <div className="grid grid-cols-3 gap-4">
+          {[
+            { target: FAQS.length, suffix: '+', label: 'Câu hỏi', sub: 'được giải đáp', color: '#22c55e', rgb: '34,197,94' },
+            { target: 6,  suffix: '',   label: 'Chủ đề',  sub: 'sức khỏe toàn diện', color: '#5eead4', rgb: '94,234,212' },
+            { target: 100, suffix: '%', label: 'Miễn phí', sub: 'không điều kiện', color: '#a855f7', rgb: '168,85,247' },
+          ].map(s => (
+            <div key={s.label} className="text-center rounded-2xl py-6 border relative overflow-hidden"
+              style={{ background: `rgba(${s.rgb},0.05)`, borderColor: `rgba(${s.rgb},0.18)` }}>
+              <div className="absolute inset-0 opacity-20" style={{ background: `radial-gradient(ellipse at center top, rgba(${s.rgb},0.3), transparent 70%)` }} />
+              <div className="text-3xl font-black mb-0.5 relative" style={{
+                background: `linear-gradient(135deg, ${s.color}, rgba(${s.rgb},0.55))`,
+                WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
+              }}>
+                <AnimatedCounter target={s.target} suffix={s.suffix} />
+              </div>
+              <div className="text-sm font-bold text-text/90 relative">{s.label}</div>
+              <div className="text-[10px] text-muted/50 mt-0.5 relative">{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </RevealBlock>
+
+      {/* ── Bottom CTA ───────────────────────────────────────────── */}
+      <RevealBlock delay={100}>
+        <div className="relative rounded-3xl overflow-hidden border border-border/30">
+          {/* BG image */}
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=65"
+            alt="" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.06 }} />
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/8 via-transparent to-purple-500/8 pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(34,197,94,0.4),rgba(168,85,247,0.3),transparent)' }} />
+
+          <div className="relative p-8 md:p-10 text-center">
+            <div className="text-3xl mb-4 select-none">💬</div>
+            <h2 className="text-xl font-black text-text mb-3">Vẫn còn thắc mắc?</h2>
+            <p className="text-muted/65 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
+              Không tìm thấy câu trả lời phù hợp? Chúng tôi luôn sẵn sàng hỗ trợ trực tiếp qua email hoặc Zalo.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold border transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                style={{ background: 'rgba(34,197,94,0.12)', borderColor: 'rgba(34,197,94,0.4)', color: '#22c55e' }}
+                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(34,197,94,0.2)'; }}
+                onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; }}>
+                ✉ Liên Hệ Chúng Tôi
+              </Link>
+              <Link to="/program"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold border transition-all duration-200 hover:scale-105"
+                style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)', color: '#94a3b8' }}>
+                📈 Xem Lộ Trình
+              </Link>
+              <Link to="/pillars"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold border transition-all duration-200 hover:scale-105"
+                style={{ background: 'rgba(168,85,247,0.08)', borderColor: 'rgba(168,85,247,0.3)', color: '#a855f7' }}>
+                ⬡ 6 Trụ Cột
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </RevealBlock>
 
     </div>
   );

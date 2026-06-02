@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { key: 'nav.home',    to: '/' },
   { key: 'nav.program', to: '/program' },
   { key: 'nav.videos',  to: '/videos' },
+  { key: 'nav.faq',     to: '/faq' },
   { key: 'nav.contact', to: '/contact' },
   { key: 'nav.donate',  to: '/donate' },
 ];

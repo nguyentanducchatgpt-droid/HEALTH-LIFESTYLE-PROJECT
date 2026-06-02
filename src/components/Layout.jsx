@@ -8,6 +8,7 @@ const NAV_COL = [
   { to:'/pillars',       key:'nav.pillars' },
   { to:'/program',       key:'nav.program' },
   { to:'/videos',        key:'nav.videos'  },
+  { to:'/faq',           key:'nav.faq'     },
 ];
 const NAV_COL2 = [
   { to:'/contact',       key:'nav.contact' },

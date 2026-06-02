@@ -75,6 +75,7 @@ import ToolsResetProtocolPage from './pages/ToolsResetProtocolPage';
 import ToolsProgressTestPage from './pages/ToolsProgressTestPage';
 import ToolsRoadmapPage from './pages/ToolsRoadmapPage';
 import VideoLibrary from './pages/VideoLibrary';
+import FAQ from './pages/FAQ';
 import Program from './pages/Program';
 import SamplePrograms from './pages/SamplePrograms';
 import Pillars from './pages/Pillars';
@@ -180,6 +181,7 @@ export default function App() {
           <Route path="/program" element={<Program />} />
           <Route path="/sample-programs" element={<SamplePrograms />} />
           <Route path="/videos" element={<VideoLibrary />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="*" element={<Home />} />

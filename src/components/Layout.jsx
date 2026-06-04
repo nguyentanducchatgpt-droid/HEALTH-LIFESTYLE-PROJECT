@@ -97,7 +97,7 @@ export default function Layout({ children }) {
                 </span>
               </Link>
               <p className="text-muted text-xs leading-relaxed max-w-[220px]">
-                Hệ sinh thái sống khỏe khoa học, đơn giản, dễ áp dụng mỗi ngày — hoàn toàn miễn phí.
+                {t('footer.tagline')}
               </p>
             </div>
 

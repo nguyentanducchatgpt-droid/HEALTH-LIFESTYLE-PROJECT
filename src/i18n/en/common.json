@@ -452,10 +452,6 @@
       { "q": "What should I do if I miss 1–2 days in the program?", "a": "No worries. The rule: \"Never miss twice in a row\". Miss 1 day → continue from the next day, no need to make up. Miss 1 week → restart from the beginning of that week. 80% consistency over 12 weeks beats 100% for 3 weeks then quitting." }
     ]
   },
-  "footer": {
-    "copyright": "© 2026 Health & Lifestyle. All rights reserved.",
-    "disclaimer": "Content is for general information only and does not replace professional medical advice."
-  },
   "video": {
     "title": "Video Library",
     "subtitle": "Short exercise tutorial videos and YouTube content from the health program.",
@@ -476,6 +472,11 @@
     "back": "Back",
     "loading": "Loading...",
     "safety_note": "⚠️ Stop immediately if you feel chest pain, dizziness, or difficulty breathing — see a doctor."
+  },
+  "footer": {
+    "copyright": "© 2026 Health & Lifestyle. All rights reserved.",
+    "disclaimer": "Content is for general information only and does not replace professional medical advice.",
+    "tagline": "A free, science-based healthy living ecosystem — simple and practical every day."
   },
   "pillars_page": {
     "cta_start": "Start with",

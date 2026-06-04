@@ -6939,7 +6939,7 @@ export default function PillarB() {
           className="inline-flex items-center gap-2 text-muted hover:text-lime-400 text-sm transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          Sống Khỏe 360
+          {tCommon('nav.pillars')}
         </Link>
       </div>
 

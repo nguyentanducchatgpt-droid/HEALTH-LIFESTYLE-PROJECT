@@ -566,7 +566,7 @@ export default function PillarA() {
           className="inline-flex items-center gap-2 text-muted hover:text-accent text-sm transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          Sống Khỏe 360
+          {tCommon('nav.pillars')}
         </Link>
       </div>
 
@@ -613,7 +613,7 @@ export default function PillarA() {
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
             <span className="text-accent text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-accent/20">
-              Luyện Tập Hằng Ngày
+              {pillar?.subtitle || 'Daily Training'}
             </span>
           </div>
         </div>

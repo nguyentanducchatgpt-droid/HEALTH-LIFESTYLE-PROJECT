@@ -68,18 +68,13 @@ const IconArrow = () => (
   </svg>
 );
 
-// ── FAQ preview items (static, not i18n) ──────────────────────────────────────
-const FAQ_PREVIEW = [
-  'Website có hoàn toàn miễn phí không?',
-  'Tôi nên bắt đầu từ đâu nếu là người mới?',
-  'Lộ trình 12 tuần dành cho ai?',
-];
 
 export default function Contact() {
   const { t } = useTranslation();
-  const email  = t('contact.email');
-  const zalo   = t('contact.zalo');
-  const topics = t('contact.topics', { returnObjects: true });
+  const email      = t('contact.email');
+  const zalo       = t('contact.zalo');
+  const topics     = t('contact.topics', { returnObjects: true });
+  const faqPreview = t('contact.faq_preview', { returnObjects: true });
 
   // Mouse tracking for hero glow
   const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
@@ -170,17 +165,17 @@ export default function Contact() {
         {/* Floating tags */}
         <div className="absolute top-8 left-8 ct2-float opacity-60 pointer-events-none hidden md:block">
           <span className="flex items-center gap-1.5 bg-surface/70 border border-accent/20 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-medium text-accent">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" /> Kết nối ngay
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" /> {t('contact.floating_connect')}
           </span>
         </div>
         <div className="absolute top-12 right-10 ct2-float-2 opacity-50 pointer-events-none hidden md:block">
           <span className="flex items-center gap-1.5 bg-surface/70 border border-teal-500/20 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-medium text-teal-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400" /> Phản hồi 24h
+            <span className="w-1.5 h-1.5 rounded-full bg-teal-400" /> {t('contact.floating_response')}
           </span>
         </div>
         <div className="absolute bottom-10 right-16 ct2-float-3 opacity-45 pointer-events-none hidden md:block">
           <span className="flex items-center gap-1.5 bg-surface/70 border border-blue-500/20 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-medium text-blue-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400" /> 100% Miễn phí
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400" /> {t('contact.floating_free')}
           </span>
         </div>
 
@@ -274,9 +269,9 @@ export default function Contact() {
       <RevealBlock className="mb-8">
         <div className="grid grid-cols-3 gap-3">
           {[
-            { val: 24, suffix: 'h', label: 'Thời gian phản hồi', color: '#22c55e' },
-            { val: 100, suffix: '%', label: 'Nội dung miễn phí', color: '#14b8a6' },
-            { val: 6, suffix: '+', label: 'Năm nghiên cứu', color: '#a855f7' },
+            { val: 24, suffix: 'h', label: t('contact.stat_response'), color: '#22c55e' },
+            { val: 100, suffix: '%', label: t('contact.stat_free'), color: '#14b8a6' },
+            { val: 6, suffix: '+', label: t('contact.stat_years'), color: '#a855f7' },
           ].map((s, i) => (
             <div
               key={i}
@@ -359,7 +354,7 @@ export default function Contact() {
                 </div>
                 <div className="pt-0.5">
                   <p className="text-[11px] text-muted font-bold uppercase tracking-widest mb-1">{t('contact.zalo_label')}</p>
-                  <p className="text-sm font-bold text-text group-hover:text-blue-400 transition-colors duration-200">Nhắn tin trực tiếp</p>
+                  <p className="text-sm font-bold text-text group-hover:text-blue-400 transition-colors duration-200">{t('contact.zalo_direct')}</p>
                 </div>
               </div>
 
@@ -414,14 +409,14 @@ export default function Contact() {
               {/* Left */}
               <div className="flex-1">
                 <div className="inline-flex items-center gap-1.5 bg-accent/8 border border-accent/20 text-accent text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                  <span className="w-1 h-1 rounded-full bg-accent" /> Câu Hỏi Thường Gặp
+                  <span className="w-1 h-1 rounded-full bg-accent" /> {t('contact.faq_teaser_badge')}
                 </div>
-                <h3 className="text-lg font-black text-text mb-2">Bạn có thắc mắc?</h3>
-                <p className="text-muted text-sm leading-relaxed mb-4">Chúng tôi đã tổng hợp 26+ câu hỏi phổ biến nhất từ người dùng về website, bài tập, dinh dưỡng, và lộ trình sức khỏe.</p>
+                <h3 className="text-lg font-black text-text mb-2">{t('contact.faq_teaser_title')}</h3>
+                <p className="text-muted text-sm leading-relaxed mb-4">{t('contact.faq_teaser_desc')}</p>
 
                 {/* Preview questions */}
                 <div className="space-y-2 mb-5">
-                  {FAQ_PREVIEW.map((q, i) => (
+                  {Array.isArray(faqPreview) && faqPreview.map((q, i) => (
                     <div key={i} className="flex items-start gap-2">
                       <span className="w-4 h-4 rounded-full bg-surface border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/60" />
@@ -435,7 +430,7 @@ export default function Contact() {
                   to="/faq"
                   className="inline-flex items-center gap-2 bg-accent/10 hover:bg-accent/18 border border-accent/30 hover:border-accent/60 text-accent text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 group/link"
                 >
-                  Xem tất cả câu hỏi
+                  {t('contact.faq_teaser_cta')}
                   <span className="group-hover/link:translate-x-1 transition-transform duration-200"><IconArrow /></span>
                 </Link>
               </div>
@@ -443,7 +438,7 @@ export default function Contact() {
               {/* Right: stat */}
               <div className="flex flex-col items-center justify-center gap-1 shrink-0 bg-accent/5 border border-accent/15 rounded-2xl px-8 py-6 md:py-8">
                 <span className="text-4xl font-black text-accent">26+</span>
-                <span className="text-xs text-muted text-center">câu hỏi<br/>đã giải đáp</span>
+                <span className="text-xs text-muted text-center">{t('contact.faq_stat_label1')}<br/>{t('contact.faq_stat_label2')}</span>
               </div>
             </div>
           </div>

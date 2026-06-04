@@ -108,7 +108,9 @@ const PILLARS_KEYS = ['pillarA','pillarB','pillarC','pillarD','pillarE','pillarF
 export default function Home() {
   const { t }     = useTranslation();
   const { t: tP } = useTranslation('pillars');
-  const stats        = t('home.stats', { returnObjects: true });
+  const stats        = t('home.stats',    { returnObjects: true });
+  const journeysTr   = t('home.journeys', { returnObjects: true });
+  const whyItemsTr   = t('home.why_items',{ returnObjects: true });
   const heroRef      = useRef(null);
   const [mousePos,   setMousePos]   = useState({ x: 0.5, y: 0.5 });
   const [hoveredStat, setHoveredStat] = useState(null);
@@ -215,9 +217,9 @@ export default function Home() {
 
           {/* Title */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-3">
-            <span className="ht-part1">Sức Khỏe</span>
+            <span className="ht-part1">{t('hero.title_part1')}</span>
             <span className="ht-amp"> &amp; </span>
-            <span className="ht-part2">Đời Sống</span>
+            <span className="ht-part2">{t('hero.title_part2')}</span>
           </h1>
 
           {/* Subtitle */}
@@ -342,13 +344,15 @@ export default function Home() {
       {/* ── Journey teaser ─────────────────────────────── */}
       <section className="mb-20">
         <RevealBlock className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">Hành Trình Sống Khỏe</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-text">Bắt Đầu Từ Đâu?</h2>
-          <p className="text-muted text-sm mt-2 max-w-md mx-auto">Chọn hành trình phù hợp — từ 7 ngày thử thách đến 24 tuần làm chủ sức khỏe</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">{t('home.journey_badge')}</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-text">{t('home.journey_title')}</h2>
+          <p className="text-muted text-sm mt-2 max-w-md mx-auto">{t('home.journey_sub')}</p>
         </RevealBlock>
 
         <div className="flex flex-col gap-5">
-          {JOURNEY_CARDS.map((j, idx) => (
+          {JOURNEY_CARDS.map((j, idx) => {
+            const jt = Array.isArray(journeysTr) && journeysTr[idx] ? journeysTr[idx] : j;
+            return (
             <RevealBlock key={j.id} delay={idx * 100}>
               <Link
                 to="/program"
@@ -372,7 +376,7 @@ export default function Home() {
                     <div className="absolute bottom-2 right-3 font-black leading-none select-none pointer-events-none" style={{ fontSize: '72px', color: `rgba(${j.rgb},0.18)` }}>{j.num}</div>
                     {/* tag badge */}
                     <div className="absolute top-4 left-4">
-                      <span className="text-[9px] font-extrabold uppercase tracking-[0.15em] px-3 py-1 rounded-full backdrop-blur-sm" style={{ color: j.color, background: 'rgba(0,0,0,0.55)', border: `1px solid rgba(${j.rgb},0.5)` }}>{j.tag}</span>
+                      <span className="text-[9px] font-extrabold uppercase tracking-[0.15em] px-3 py-1 rounded-full backdrop-blur-sm" style={{ color: j.color, background: 'rgba(0,0,0,0.55)', border: `1px solid rgba(${j.rgb},0.5)` }}>{jt.tag || j.tag}</span>
                     </div>
                     {/* icon bottom-left mobile */}
                     <div className="absolute bottom-4 left-4 md:hidden text-3xl">{j.icon}</div>
@@ -383,18 +387,18 @@ export default function Home() {
                     {/* icon + tagline */}
                     <div className="flex items-center gap-2.5 mb-3">
                       <span className="hidden md:block text-2xl">{j.icon}</span>
-                      <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: j.color }}>{j.tagline}</p>
+                      <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: j.color }}>{jt.tagline || j.tagline}</p>
                     </div>
                     {/* title */}
                     <h3 className="font-bold text-text text-lg md:text-xl mb-2 leading-tight transition-colors duration-200" style={{ color: j.color }}>
-                      {j.label}
+                      {jt.label || j.label}
                     </h3>
                     {/* description */}
-                    <p className="text-sm text-muted leading-relaxed mb-5 max-w-xl">{j.desc}</p>
+                    <p className="text-sm text-muted leading-relaxed mb-5 max-w-xl">{jt.desc || j.desc}</p>
                     {/* feature checklist */}
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 mb-6">
-                      {j.features.map(f => (
-                        <div key={f} className="flex items-center gap-1.5 text-xs text-muted">
+                      {(jt.features || j.features).map((f, fi) => (
+                        <div key={fi} className="flex items-center gap-1.5 text-xs text-muted">
                           <span className="font-bold shrink-0" style={{ color: j.color }}>✓</span>
                           <span>{f}</span>
                         </div>
@@ -402,14 +406,15 @@ export default function Home() {
                     </div>
                     {/* CTA */}
                     <div className="flex items-center gap-2 text-sm font-bold group-hover:gap-3 transition-all duration-200" style={{ color: j.color }}>
-                      Xem hành trình
+                      {t('home.journey_cta')}
                       <span className="group-hover:translate-x-1 transition-transform duration-200 text-base">→</span>
                     </div>
                   </div>
                 </div>
               </Link>
             </RevealBlock>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -425,7 +430,7 @@ export default function Home() {
             })()}
           </h2>
           <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
-          <p className="text-muted text-sm mt-3 max-w-lg mx-auto">Hệ thống sức khỏe toàn diện — mỗi trụ cột là một góc độ không thể thiếu cho cuộc sống khỏe mạnh</p>
+          <p className="text-muted text-sm mt-3 max-w-lg mx-auto">{t('home.pillars_sub')}</p>
         </RevealBlock>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -475,7 +480,7 @@ export default function Home() {
                     </div>
                     <p className="text-xs text-muted leading-relaxed line-clamp-2">{p.description}</p>
                     <div className="mt-4 flex items-center gap-1.5 text-[11px] font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: pd.color }}>
-                      Tìm Hiểu Thêm
+                      {t('home.pillars_cta')}
                       <span className="transition-transform duration-200 group-hover:translate-x-0.5 text-xs">→</span>
                     </div>
                   </div>
@@ -489,14 +494,16 @@ export default function Home() {
       {/* ── Why section ────────────────────────────────── */}
       <section className="mb-20">
         <RevealBlock className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">Tại Sao Chọn Chúng Tôi</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-text">Khoa Học · Đơn Giản · Hiệu Quả</h2>
-          <p className="text-muted text-sm mt-2 max-w-md mx-auto">Bốn nguyên tắc cốt lõi làm nền tảng cho mọi nội dung trên trang web này</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">{t('home.why_badge')}</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-text">{t('home.why_title')}</h2>
+          <p className="text-muted text-sm mt-2 max-w-md mx-auto">{t('home.why_sub')}</p>
         </RevealBlock>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {WHY_ITEMS.map((item, i) => (
-            <RevealBlock key={item.title} delay={i * 90}>
+          {WHY_ITEMS.map((item, i) => {
+            const wt = Array.isArray(whyItemsTr) && whyItemsTr[i] ? whyItemsTr[i] : item;
+            return (
+            <RevealBlock key={item.icon} delay={i * 90}>
               <div
                 className="group rounded-2xl border overflow-hidden cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(0,0,0,0.4)]"
                 style={{ borderColor: `rgba(${item.rgb},0.16)`, background: `rgba(${item.rgb},0.03)` }}
@@ -521,8 +528,8 @@ export default function Home() {
                     <div className="font-black leading-none" style={{ fontSize: '44px', color: item.color, textShadow: `0 0 30px rgba(${item.rgb},0.6)` }}>
                       {item.stat}
                     </div>
-                    <div className="text-[10px] font-bold uppercase tracking-widest mt-0.5" style={{ color: `rgba(${item.rgb === '34,197,94' ? '255,255,255' : '255,255,255'},0.55)` }}>
-                      {item.statSub}
+                    <div className="text-[10px] font-bold uppercase tracking-widest mt-0.5" style={{ color: `rgba(255,255,255,0.55)` }}>
+                      {wt.statSub || item.statSub}
                     </div>
                   </div>
 
@@ -538,13 +545,14 @@ export default function Home() {
                 {/* Content */}
                 <div className="p-5">
                   <h3 className="font-bold text-sm mb-2 transition-colors duration-200" style={{ color: item.color }}>
-                    {item.title}
+                    {wt.title || item.title}
                   </h3>
-                  <p className="text-xs text-muted leading-relaxed">{item.desc}</p>
+                  <p className="text-xs text-muted leading-relaxed">{wt.desc || item.desc}</p>
                 </div>
               </div>
             </RevealBlock>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -575,13 +583,13 @@ export default function Home() {
             <div className="h-px bg-gradient-to-r from-transparent via-border/50 to-transparent mb-10 max-w-xs mx-auto" />
 
             {/* CTA */}
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-5">Bắt Đầu Ngay Hôm Nay</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-5">{t('home.cta_badge')}</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 to="/program"
                 className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-sm shadow-[0_0_28px_rgba(34,197,94,0.28)] hover:shadow-[0_0_42px_rgba(34,197,94,0.45)] hover:-translate-y-0.5"
               >
-                🌿 Xem Hành Trình
+                🌿 {t('home.cta_program')}
               </Link>
               <Link
                 to="/contact"

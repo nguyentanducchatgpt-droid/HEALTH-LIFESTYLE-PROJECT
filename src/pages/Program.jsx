@@ -468,7 +468,7 @@ export default function Program() {
               background:'linear-gradient(135deg, #f0fdf4 0%, #ffffff 30%, #86efac 60%, #5eead4 85%, #c4b5fd 100%)',
               WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent',
             }}>
-              Hành Trình Sống Khỏe
+              {t('program.hero_title')}
             </span>
           </h1>
 
@@ -478,10 +478,10 @@ export default function Program() {
 
           {/* Subtitle */}
           <p className="pg-sub text-muted/75 text-sm md:text-base leading-relaxed max-w-[440px] mb-4">
-            Ba hành trình linh hoạt, một hệ thống nhất quán
+            {t('program.hero_sub')}
           </p>
           <div className="pg-sub flex flex-wrap justify-center items-center gap-x-5 gap-y-2">
-            {[['🌱','7 ngày khởi động','#22c55e'],['📈','12 tuần xây nền','#84cc16'],['🎓','24 tuần nâng cao','#a855f7']].map(([icon,label,color]) => (
+            {[['🌱', t('program.j7d'), '#22c55e'],['📈', t('program.j12w'), '#84cc16'],['🎓', t('program.j24w'), '#a855f7']].map(([icon,label,color]) => (
               <span key={label} className="flex items-center gap-1.5 text-xs font-semibold" style={{ color }}>
                 <span>{icon}</span>{label}
               </span>
@@ -493,7 +493,7 @@ export default function Program() {
 
       {/* ── Journey Mode Selector ─────────────────────────────── */}
       <RevealBlock className="mb-10">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-muted mb-4 text-center">Chọn Hành Trình Của Bạn</h2>
+        <h2 className="text-xs font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.choose')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {JOURNEYS.map(j => {
             const active = journey === j.id;

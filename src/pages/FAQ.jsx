@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // ── Scroll reveal ────────────────────────────────────────────────────────────
 function RevealBlock({ children, delay = 0, className = '' }) {
@@ -207,6 +208,27 @@ function AccordionItem({ item, isOpen, onToggle, idx }) {
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 export default function FAQ() {
+  const { t } = useTranslation();
+
+  const CATEGORIESi18n = useMemo(() => {
+    const catTexts = t('faq_page.cats', { returnObjects: true });
+    const faqUI = t('faq_page.ui', { returnObjects: true });
+    return CATEGORIES.map(c =>
+      c.id === 'all'
+        ? { ...c, label: faqUI?.all_btn || c.label }
+        : { ...c, label: catTexts[c.id]?.label || c.label, desc: catTexts[c.id]?.desc || c.desc }
+    );
+  }, [t]);
+
+  const FAQSi18n = useMemo(() => {
+    const faqTexts = t('faq_page.faqs', { returnObjects: true });
+    return FAQS.map((f, i) => ({
+      ...f,
+      q: Array.isArray(faqTexts) && faqTexts[i]?.q ? faqTexts[i].q : f.q,
+      a: Array.isArray(faqTexts) && faqTexts[i]?.a ? faqTexts[i].a : f.a,
+    }));
+  }, [t]);
+
   const [openIdx, setOpenIdx] = useState(null);
   const [activeCat, setActiveCat] = useState('all');
   const [search, setSearch] = useState('');
@@ -292,14 +314,14 @@ export default function FAQ() {
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim();
-    return FAQS.filter(f => {
+    return FAQSi18n.filter(f => {
       const catOk = activeCat === 'all' || f.cat === activeCat;
       const srchOk = !q || f.q.toLowerCase().includes(q) || f.a.toLowerCase().includes(q);
       return catOk && srchOk;
     });
-  }, [activeCat, search]);
+  }, [activeCat, search, FAQSi18n]);
 
-  const featured = useMemo(() => FAQS.filter(f => f.featured).slice(0, 3), []);
+  const featured = useMemo(() => FAQSi18n.filter(f => f.featured).slice(0, 3), [FAQSi18n]);
 
   const toggle = (i) => setOpenIdx(prev => prev === i ? null : i);
 
@@ -343,7 +365,7 @@ export default function FAQ() {
             <span className="faq2-dot w-2   h-2   rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 8px rgba(34,197,94,0.9)' }} />
             <span className="faq2-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 7px rgba(94,234,212,0.8)' }} />
             <span className="faq2-dot w-1   h-1   rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 6px rgba(168,85,247,0.7)' }} />
-            <span className="text-[10px] font-extrabold tracking-[0.25em] uppercase text-muted/45 mx-2">Câu Hỏi Thường Gặp</span>
+            <span className="text-[10px] font-extrabold tracking-[0.25em] uppercase text-muted/45 mx-2">{t('faq_page.ui.badge')}</span>
             <span className="faq2-dot w-1   h-1   rounded-full" style={{ background:'#a855f7', boxShadow:'0 0 6px rgba(168,85,247,0.7)' }} />
             <span className="faq2-dot w-1.5 h-1.5 rounded-full" style={{ background:'#5eead4', boxShadow:'0 0 7px rgba(94,234,212,0.8)' }} />
             <span className="faq2-dot w-2   h-2   rounded-full" style={{ background:'#22c55e', boxShadow:'0 0 8px rgba(34,197,94,0.9)' }} />
@@ -356,7 +378,7 @@ export default function FAQ() {
             <span className="faq2-word" style={{
               background: 'linear-gradient(135deg, #f0fdf4 0%, #86efac 30%, #5eead4 60%, #c4b5fd 100%)',
               WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>Sức Khỏe</span>
+            }}>{t('faq_page.ui.title2')}</span>
           </h1>
 
           {/* Shimmer underline */}
@@ -364,10 +386,10 @@ export default function FAQ() {
 
           {/* Subtitle */}
           <p className="faq2-sub text-muted/70 text-sm md:text-base leading-relaxed max-w-sm mx-auto mb-2">
-            Giải đáp những thắc mắc phổ biến nhất về hành trình sống khỏe
+            {t('faq_page.ui.subtitle')}
           </p>
           <p className="faq2-sub text-muted/40 text-xs mx-auto mb-9">
-            {FAQS.length} câu hỏi · 6 chủ đề · cập nhật thường xuyên
+            {FAQSi18n.length} {t('faq_page.ui.count_suffix')}
           </p>
 
           {/* Search */}
@@ -379,7 +401,7 @@ export default function FAQ() {
             </div>
             <input type="text" value={search}
               onChange={e => { setSearch(e.target.value); setOpenIdx(null); }}
-              placeholder="Tìm kiếm câu hỏi..."
+              placeholder={t('faq_page.ui.search_placeholder')}
               className="w-full pl-10 pr-4 py-3 rounded-2xl text-sm bg-white/5 border border-white/12 text-text placeholder-muted/40 focus:outline-none focus:border-accent/50 focus:bg-white/8 transition-all duration-250"
             />
             {search && (
@@ -397,9 +419,9 @@ export default function FAQ() {
       {/* ── Category cards ───────────────────────────────────────── */}
       <RevealBlock className="mb-12">
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
-          {CATEGORIES.filter(c => c.id !== 'all').map((cat, ci) => {
+          {CATEGORIESi18n.filter(c => c.id !== 'all').map((cat, ci) => {
             const active = activeCat === cat.id;
-            const count  = FAQS.filter(f => f.cat === cat.id).length;
+            const count  = FAQSi18n.filter(f => f.cat === cat.id).length;
             return (
               <div key={cat.id}
                 className="faq2-cat-card relative rounded-2xl overflow-hidden border"
@@ -423,7 +445,7 @@ export default function FAQ() {
                   <div className="text-[10px] font-bold leading-tight" style={{ color: active ? cat.color : '#64748b' }}>
                     {cat.label}
                   </div>
-                  <div className="text-[9px] text-muted/40 mt-0.5">{count} câu</div>
+                  <div className="text-[9px] text-muted/40 mt-0.5">{count} {t('faq_page.ui.cat_count')}</div>
                 </div>
                 {/* Active glow */}
                 {active && (
@@ -443,7 +465,7 @@ export default function FAQ() {
               borderColor: activeCat === 'all' ? 'rgba(34,197,94,0.4)' : 'rgba(255,255,255,0.08)',
               color: activeCat === 'all' ? '#22c55e' : '#64748b',
             }}>
-            ✦ Tất Cả ({FAQS.length})
+            ✦ {t('faq_page.ui.all_btn')} ({FAQSi18n.length})
           </button>
         </div>
       </RevealBlock>
@@ -452,11 +474,11 @@ export default function FAQ() {
       {!search && activeCat === 'all' && (
         <RevealBlock className="mb-12">
           <h2 className="text-xs font-extrabold uppercase tracking-[0.2em] text-muted/50 mb-4 text-center">
-            ★ Câu Hỏi Nổi Bật
+            ★ {t('faq_page.ui.featured_title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {featured.map((item, i) => {
-              const cat = CATEGORIES.find(c => c.id === item.cat);
+              const cat = CATEGORIESi18n.find(c => c.id === item.cat);
               return (
                 <div key={i}
                   className="faq2-feat-card relative rounded-2xl overflow-hidden border p-5"
@@ -466,7 +488,7 @@ export default function FAQ() {
                     setSearch('');
                     setOpenIdx(null);
                     setTimeout(() => {
-                      const idx = FAQS.filter(f => f.cat === item.cat).findIndex(f => f.q === item.q);
+                      const idx = FAQSi18n.filter(f => f.cat === item.cat).findIndex(f => f.q === item.q);
                       setOpenIdx(idx);
                     }, 100);
                   }}
@@ -477,7 +499,7 @@ export default function FAQ() {
                   <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: item.color }}>{cat?.label}</div>
                   <p className="text-sm font-semibold text-text/90 leading-snug mb-2">{item.q}</p>
                   <p className="text-xs text-muted/60 leading-relaxed line-clamp-2">{item.a}</p>
-                  <div className="mt-3 text-[10px] font-bold" style={{ color: item.color }}>Đọc thêm →</div>
+                  <div className="mt-3 text-[10px] font-bold" style={{ color: item.color }}>{t('faq_page.ui.read_more')}</div>
                 </div>
               );
             })}
@@ -487,7 +509,7 @@ export default function FAQ() {
 
       {/* ── Active category header ───────────────────────────────── */}
       {activeCat !== 'all' && (() => {
-        const cat = CATEGORIES.find(c => c.id === activeCat);
+        const cat = CATEGORIESi18n.find(c => c.id === activeCat);
         return (
           <RevealBlock className="mb-6">
             <div className="relative rounded-2xl overflow-hidden border h-32 flex items-end p-5"
@@ -497,7 +519,7 @@ export default function FAQ() {
               <div className="relative z-10">
                 <div className="text-2xl mb-1">{cat.icon}</div>
                 <h2 className="text-lg font-black text-text">{cat.label}</h2>
-                <p className="text-xs text-muted/60">{cat.desc} · {FAQS.filter(f => f.cat === activeCat).length} câu hỏi</p>
+                <p className="text-xs text-muted/60">{cat.desc} · {FAQSi18n.filter(f => f.cat === activeCat).length} {t('faq_page.ui.cat_count')}</p>
               </div>
             </div>
           </RevealBlock>
@@ -510,7 +532,7 @@ export default function FAQ() {
           {filtered.length === 0 ? (
             <div className="text-center py-16 text-muted/50 text-sm">
               <div className="text-4xl mb-4">🔍</div>
-              Không tìm thấy câu hỏi phù hợp. Thử từ khóa khác.
+              {t('faq_page.ui.no_results')}
             </div>
           ) : (
             filtered.map((item, i) => (
@@ -524,9 +546,9 @@ export default function FAQ() {
       <RevealBlock className="mb-14">
         <div className="grid grid-cols-3 gap-4">
           {[
-            { target: FAQS.length, suffix: '+', label: 'Câu hỏi', sub: 'được giải đáp', color: '#22c55e', rgb: '34,197,94' },
-            { target: 6,  suffix: '',   label: 'Chủ đề',  sub: 'sức khỏe toàn diện', color: '#5eead4', rgb: '94,234,212' },
-            { target: 100, suffix: '%', label: 'Miễn phí', sub: 'không điều kiện', color: '#a855f7', rgb: '168,85,247' },
+            { target: FAQSi18n.length, suffix: '+', label: t('faq_page.ui.stat1_label'), sub: t('faq_page.ui.stat1_sub'), color: '#22c55e', rgb: '34,197,94' },
+            { target: 6,  suffix: '',   label: t('faq_page.ui.stat2_label'), sub: t('faq_page.ui.stat2_sub'), color: '#5eead4', rgb: '94,234,212' },
+            { target: 100, suffix: '%', label: t('faq_page.ui.stat3_label'), sub: t('faq_page.ui.stat3_sub'), color: '#a855f7', rgb: '168,85,247' },
           ].map(s => (
             <div key={s.label} className="text-center rounded-2xl py-6 border relative overflow-hidden"
               style={{ background: `rgba(${s.rgb},0.05)`, borderColor: `rgba(${s.rgb},0.18)` }}>
@@ -555,9 +577,9 @@ export default function FAQ() {
 
           <div className="relative p-8 md:p-10 text-center">
             <div className="text-3xl mb-4 select-none">💬</div>
-            <h2 className="text-xl font-black text-text mb-3">Vẫn còn thắc mắc?</h2>
+            <h2 className="text-xl font-black text-text mb-3">{t('faq_page.ui.cta_title')}</h2>
             <p className="text-muted/65 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-              Không tìm thấy câu trả lời phù hợp? Chúng tôi luôn sẵn sàng hỗ trợ trực tiếp qua email hoặc Zalo.
+              {t('faq_page.ui.cta_desc')}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link to="/contact"
@@ -565,17 +587,17 @@ export default function FAQ() {
                 style={{ background: 'rgba(34,197,94,0.12)', borderColor: 'rgba(34,197,94,0.4)', color: '#22c55e' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(34,197,94,0.2)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; }}>
-                ✉ Liên Hệ Chúng Tôi
+                ✉ {t('faq_page.ui.cta_contact')}
               </Link>
               <Link to="/program"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold border transition-all duration-200 hover:scale-105"
                 style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)', color: '#94a3b8' }}>
-                📈 Xem Lộ Trình
+                📈 {t('faq_page.ui.cta_program')}
               </Link>
               <Link to="/pillars"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold border transition-all duration-200 hover:scale-105"
                 style={{ background: 'rgba(168,85,247,0.08)', borderColor: 'rgba(168,85,247,0.3)', color: '#a855f7' }}>
-                ⬡ 6 Trụ Cột
+                ⬡ {t('faq_page.ui.cta_pillars')}
               </Link>
             </div>
           </div>

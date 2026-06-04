@@ -52,17 +52,11 @@ const USES_IMAGES = [
   'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=70&auto=format&fit=crop',
 ];
 
-// ── Impact chain (static, Vietnamese) ────────────────────────────────────────
-const IMPACT_CHAIN = [
-  { icon: '💚', label: 'Đóng góp của bạn' },
-  { icon: '🎬', label: 'Video chất lượng cao' },
-  { icon: '📚', label: 'Nghiên cứu khoa học' },
-  { icon: '🌐', label: 'Website miễn phí' },
-  { icon: '🏃', label: 'Cộng đồng khoẻ mạnh' },
-];
+const IMPACT_ICONS = ['💚', '🎬', '📚', '🌐', '🏃'];
 
 export default function Donate() {
   const { t } = useTranslation();
+  const impactChain = t('donate.impact_chain', { returnObjects: true });
   const impactItems = t('donate.impact_items', { returnObjects: true });
   const impactStats = t('donate.impact_stats', { returnObjects: true });
   const uses        = t('donate.uses',         { returnObjects: true });
@@ -160,17 +154,17 @@ export default function Donate() {
         {/* Floating tags */}
         <div className="absolute top-8 left-8 dn2-float opacity-55 pointer-events-none hidden md:block">
           <span className="flex items-center gap-1.5 bg-surface/70 border border-amber-500/25 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-medium text-amber-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" /> 100% Minh bạch
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" /> {t('donate.floating_transparent')}
           </span>
         </div>
         <div className="absolute top-12 right-10 dn2-float-2 opacity-50 pointer-events-none hidden md:block">
           <span className="flex items-center gap-1.5 bg-surface/70 border border-accent/25 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-medium text-accent">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" /> Nội dung miễn phí
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" /> {t('donate.floating_free_tag')}
           </span>
         </div>
         <div className="absolute bottom-10 left-16 dn2-float-3 opacity-45 pointer-events-none hidden md:block">
           <span className="flex items-center gap-1.5 bg-surface/70 border border-teal-500/25 backdrop-blur-sm rounded-full px-3 py-1.5 text-[11px] font-medium text-teal-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400" /> Cộng đồng sức khỏe
+            <span className="w-1.5 h-1.5 rounded-full bg-teal-400" /> {t('donate.floating_community')}
           </span>
         </div>
 
@@ -215,27 +209,27 @@ export default function Donate() {
 
       {/* ── IMPACT CHAIN ──────────────────────────────────────────────────────── */}
       <RevealBlock className="mb-10">
-        <p className="text-[11px] font-bold text-muted uppercase tracking-widest text-center mb-5">Hành trình tác động của bạn</p>
+        <p className="text-[11px] font-bold text-muted uppercase tracking-widest text-center mb-5">{t('donate.impact_journey')}</p>
         <div className="flex flex-wrap items-center justify-center gap-0">
-          {IMPACT_CHAIN.map((step, i) => (
+          {Array.isArray(impactChain) && impactChain.map((label, i) => (
             <div key={i} className="flex items-center gap-0" style={{ animation: `dn2ChainIn 0.5s ease ${i * 100}ms both` }}>
               <div className="flex flex-col items-center px-3 md:px-4 py-3 rounded-2xl hover:bg-white/3 transition-colors duration-200 cursor-default group">
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center text-xl mb-2 border transition-all duration-300 group-hover:-translate-y-1"
                   style={{
                     background: i === 0
-                      ? 'rgba(245,158,11,0.12)' : i === IMPACT_CHAIN.length - 1
+                      ? 'rgba(245,158,11,0.12)' : i === impactChain.length - 1
                       ? 'rgba(34,197,94,0.12)' : 'rgba(255,255,255,0.04)',
                     borderColor: i === 0
-                      ? 'rgba(245,158,11,0.3)' : i === IMPACT_CHAIN.length - 1
+                      ? 'rgba(245,158,11,0.3)' : i === impactChain.length - 1
                       ? 'rgba(34,197,94,0.3)' : 'rgba(255,255,255,0.08)',
                   }}
                 >
-                  {step.icon}
+                  {IMPACT_ICONS[i] || '•'}
                 </div>
-                <span className="text-[10px] text-muted text-center leading-snug max-w-[70px]">{step.label}</span>
+                <span className="text-[10px] text-muted text-center leading-snug max-w-[70px]">{label}</span>
               </div>
-              {i < IMPACT_CHAIN.length - 1 && (
+              {i < impactChain.length - 1 && (
                 <svg className="w-4 h-4 text-border shrink-0 mx-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -345,7 +339,7 @@ export default function Donate() {
                         <div key={i} className={`w-3 h-3 rounded-sm ${[0,1,2,5,10,14,15,16,17,18,20,21,24].includes(i) ? 'bg-amber-400' : 'bg-transparent'}`} />
                       ))}
                     </div>
-                    <span className="absolute bottom-2 text-[9px] text-muted/50 font-bold uppercase tracking-widest">Sắp cập nhật</span>
+                    <span className="absolute bottom-2 text-[9px] text-muted/50 font-bold uppercase tracking-widest">{t('donate.qr_updating')}</span>
                   </div>
                 </div>
 
@@ -353,7 +347,7 @@ export default function Donate() {
                 <div className="w-full rounded-2xl border border-dashed border-amber-500/20 bg-amber-500/4 p-4 text-center">
                   <div className="inline-flex items-center gap-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full px-3 py-1 mb-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-glow-pulse" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">Đang cập nhật</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">{t('donate.qr_updating')}</span>
                   </div>
                   <p className="text-xs text-muted/60 leading-relaxed">{t('donate.bank_placeholder')}</p>
                 </div>
@@ -367,7 +361,7 @@ export default function Donate() {
       {Array.isArray(uses) && (
         <RevealBlock className="mb-10">
           <h2 className="text-lg font-black text-text mb-1">{t('donate.uses_title')}</h2>
-          <p className="text-muted text-xs mb-6">Mỗi đồng đóng góp đều được sử dụng có mục đích rõ ràng</p>
+          <p className="text-muted text-xs mb-6">{t('donate.uses_subtitle')}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {uses.map((item, i) => (
@@ -407,7 +401,7 @@ export default function Donate() {
       {Array.isArray(faq) && (
         <RevealBlock className="mb-10">
           <h2 className="text-lg font-black text-text mb-1">{t('donate.faq_title')}</h2>
-          <p className="text-muted text-xs mb-6">Những câu hỏi phổ biến về việc ủng hộ</p>
+          <p className="text-muted text-xs mb-6">{t('donate.faq_subtitle')}</p>
 
           <div className="space-y-2">
             {faq.map((item, i) => (
@@ -475,9 +469,9 @@ export default function Donate() {
             {/* Trust badges */}
             <div className="flex flex-wrap items-center justify-center gap-3">
               {[
-                { icon: '🛡️', text: '100% minh bạch' },
-                { icon: '🆓', text: 'Nội dung miễn phí mãi' },
-                { icon: '💚', text: 'Vì cộng đồng' },
+                { icon: '🛡️', text: t('donate.trust_transparent') },
+                { icon: '🆓', text: t('donate.trust_free') },
+                { icon: '💚', text: t('donate.trust_community') },
               ].map((b, i) => (
                 <div
                   key={i}

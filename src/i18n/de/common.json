@@ -21,6 +21,8 @@
   },
   "hero": {
     "title": "Gesundheit & Lebensstil",
+    "title_part1": "Gesundheit",
+    "title_part2": "Lebensstil",
     "badge": "Wissenschaft · Einfach · Effektiv",
     "subtitle": "Ein einfaches, wissenschaftlich fundiertes Ökosystem für ein gesundes Leben – jeden Tag anwendbar",
     "cta": "Jetzt Starten",
@@ -42,7 +44,29 @@
       }
     ],
     "quote": "Sie müssen nicht perfekt sein. Sie müssen nur konsequent sein.",
-    "quote_author": "— Gesundheit & Lebensstil"
+    "quote_author": "— Gesundheit & Lebensstil",
+    "journey_badge": "Gesundheitsreise",
+    "journey_title": "Wo anfangen?",
+    "journey_sub": "Wählen Sie die richtige Reise — von einer 7-Tage-Herausforderung bis zu 24 Wochen Gesundheitsmeisterschaft",
+    "journey_cta": "Reise ansehen",
+    "pillars_sub": "Ein umfassendes Gesundheitssystem — jede Säule ist ein unverzichtbarer Aspekt für ein gesundes Leben",
+    "pillars_cta": "Mehr erfahren",
+    "why_badge": "Warum wir",
+    "why_title": "Wissenschaft · Einfach · Effektiv",
+    "why_sub": "Vier Grundprinzipien, die die Grundlage für alle Inhalte dieser Website bilden",
+    "cta_badge": "Heute beginnen",
+    "cta_program": "Programm ansehen",
+    "journeys": [
+      { "label": "7-Tage-Kickstart", "tag": "START", "tagline": "Sanft · Schritt für Schritt · Kein Druck", "desc": "Von Null starten — 20 Minuten täglich mit allen 4 Säulen. So einfach, dass man nicht Nein sagen kann.", "features": ["20 Min. Bewegung/Tag","Ernährung ohne extreme Einschränkung","Schlaf & Morgengewohnheiten","3 tiefe Atemzüge täglich"] },
+      { "label": "12-Wochen-Grundlage", "tag": "BELIEBT", "tagline": "Strukturiert · 3 Phasen · Echter Wandel", "desc": "Kickstart → Aufbau → Personalisierung. 12 Wochen reichen, damit das Gehirn dauerhafte Gewohnheiten bildet.", "features": ["Kickstart Wochen 1–4","Aufbau Wochen 5–8","Personalisierung Wochen 9–12","Fortschrittstest Woche 4 & 12"] },
+      { "label": "24-Wochen-Fortgeschritten", "tag": "VOLLSTÄNDIG", "tagline": "6 Phasen · Carb Cycling · Vollständige Meisterschaft", "desc": "Von der Grundlage zur Meisterschaft des persönlichen Gesundheitssystems. 24 Wochen machen Gewohnheiten zur Identität.", "features": ["Grundlage erste 12 Wochen","Optimierung nächste 12 Wochen","Carb Cycling & Supplementierung","Eigenen persönlichen Plan erstellen"] }
+    ],
+    "why_items": [
+      { "title": "Wissenschaftlich fundiert", "statSub": "Basiert", "desc": "Aus zuverlässiger medizinischer Forschung zusammengestellt — keine Tricks oder flüchtigen Trends." },
+      { "title": "Einfach & Praktisch", "statSub": "Min./Tag", "desc": "10 Minuten täglich reichen zum Starten. Jede Anleitung wurde speziell für vielbeschäftigte Menschen entwickelt." },
+      { "title": "Klarer Fahrplan", "statSub": "Meilensteine", "desc": "7 Tage → 12 Wochen → 24 Wochen. Kleine Schritte, nie überwältigt fühlen oder aufgeben." },
+      { "title": "360° Vollständig", "statSub": "Säulen", "desc": "Bewegung · Ernährung · Lebensstil · Geist · Wissen · Werkzeuge — kein Aspekt wird vergessen." }
+    ]
   },
   "program": {
     "title": "Gesunde Reise 12 Wochen",
@@ -217,7 +241,13 @@
     ],
     "cta_title": "Bereit loszulegen?",
     "cta_text": "Jede große Reise beginnt mit einem kleinen Schritt. Heute ist Tag eins von Woche eins.",
-    "cta_btn": "Übungen ansehen"
+    "cta_btn": "Übungen ansehen",
+    "hero_title": "Gesundheitsreise",
+    "hero_sub": "Drei flexible Reisen, ein konsistentes System",
+    "choose": "Wählen Sie Ihre Reise",
+    "j7d": "7-Tage-Kickstart",
+    "j12w": "12-Wochen-Grundlage",
+    "j24w": "24-Wochen-Fortgeschritten"
   },
   "contact": {
     "title": "Kontakt",
@@ -262,7 +292,21 @@
         "a": "Sehr willkommen! Wenn Sie Wissen oder Erfahrungen teilen möchten, kontaktieren Sie mich per E-Mail für weitere Gespräche."
       }
     ],
-    "cta": "Ich freue mich, von Ihnen zu hören — ob Frage, Feedback oder Fortschrittsbericht!"
+    "cta": "Ich freue mich, von Ihnen zu hören — ob Frage, Feedback oder Fortschrittsbericht!",
+    "floating_connect": "Jetzt verbinden",
+    "floating_response": "24h Antwort",
+    "floating_free": "100% Kostenlos",
+    "stat_response": "Reaktionszeit",
+    "stat_free": "Kostenlose Inhalte",
+    "stat_years": "Jahre Forschung",
+    "zalo_direct": "Direkte Nachricht",
+    "faq_teaser_badge": "Häufige Fragen",
+    "faq_teaser_title": "Haben Sie eine Frage?",
+    "faq_teaser_desc": "Wir haben 26+ der häufigsten Fragen von Nutzern zu Website, Übungen, Ernährung und Fitnessprogrammen zusammengestellt.",
+    "faq_teaser_cta": "Alle Fragen ansehen",
+    "faq_stat_label1": "Fragen",
+    "faq_stat_label2": "beantwortet",
+    "faq_preview": ["Ist die Website komplett kostenlos?", "Wo soll ich als Anfänger anfangen?", "Für wen ist das 12-Wochen-Programm?"]
   },
   "donate": {
     "title": "Autor Unterstützen",
@@ -334,7 +378,79 @@
       }
     ],
     "thanks": "Vielen herzlichen Dank!",
-    "thanks_note": "Jeder Beitrag, egal wie klein, ist bedeutsam — 100% zur Pflege und Entwicklung der Inhalte verwendet"
+    "thanks_note": "Jeder Beitrag, egal wie klein, ist bedeutsam — 100% zur Pflege und Entwicklung der Inhalte verwendet",
+    "floating_transparent": "100% Transparent",
+    "floating_free_tag": "Kostenlose Inhalte",
+    "floating_community": "Gesundheitsgemeinschaft",
+    "impact_journey": "Der Weg Ihres Beitrags",
+    "impact_chain": ["Ihr Beitrag", "Qualitätsvideos", "Wissenschaftliche Forschung", "Kostenlose Website", "Gesunde Gemeinschaft"],
+    "qr_updating": "Wird aktualisiert",
+    "uses_subtitle": "Jeder Beitrag wird mit einem klaren Zweck verwendet",
+    "faq_subtitle": "Häufige Fragen zur Unterstützung",
+    "trust_transparent": "100% transparent",
+    "trust_free": "Immer kostenlose Inhalte",
+    "trust_community": "Für die Gemeinschaft"
+  },
+  "faq_page": {
+    "ui": {
+      "badge": "Häufig Gestellte Fragen",
+      "title2": "Gesundheit",
+      "subtitle": "Antworten auf die häufigsten Fragen zu Ihrer Gesundheitsreise",
+      "count_suffix": "Fragen · 6 Themen · regelmäßig aktualisiert",
+      "search_placeholder": "Fragen suchen...",
+      "all_btn": "Alle",
+      "cat_count": "Fr.",
+      "featured_title": "Ausgewählte Fragen",
+      "read_more": "Mehr lesen →",
+      "no_results": "Keine passenden Fragen gefunden. Versuchen Sie ein anderes Stichwort.",
+      "cta_title": "Noch Fragen?",
+      "cta_desc": "Keine passende Antwort gefunden? Wir helfen Ihnen gerne direkt per E-Mail oder Zalo.",
+      "cta_contact": "Kontakt aufnehmen",
+      "cta_program": "Programm anzeigen",
+      "cta_pillars": "6 Säulen",
+      "stat1_label": "Fragen",
+      "stat1_sub": "beantwortet",
+      "stat2_label": "Themen",
+      "stat2_sub": "ganzheitliche Gesundheit",
+      "stat3_label": "Kostenlos",
+      "stat3_sub": "ohne Bedingungen"
+    },
+    "cats": {
+      "gen":  { "label": "Überblick",  "desc": "Website, Inhalt, Verwendung" },
+      "move": { "label": "Bewegung",   "desc": "Übungen, Häufigkeit, Bewegungen" },
+      "food": { "label": "Ernährung",  "desc": "Kalorien, Mahlzeitenpläne, Ausgewogenheit" },
+      "life": { "label": "Lebensstil", "desc": "Schlaf, Gewohnheiten, Erholung" },
+      "mind": { "label": "Geist",      "desc": "Meditation, Atmung, Emotionen" },
+      "prog": { "label": "Reise",      "desc": "7-Tage-, 12-Wochen-, 24-Wochen-Programme" }
+    },
+    "faqs": [
+      { "q": "Für wen ist die Health & Lifestyle-Website?", "a": "Die Website richtet sich an alle, die ihre Gesundheit verbessern möchten — von Anfängern bis zu Fortgeschrittenen, die ihre Routine systematisieren möchten. Keine Erfahrung, keine Spezialgeräte, keine strengen Diäten erforderlich. Nur 20 Minuten täglich und Ausdauer." },
+      { "q": "Sind alle Inhalte auf der Website kostenlos?", "a": "Ja — 100% kostenlos. Alle 6 Säulen, 7-Tage / 12-Wochen / 24-Wochen-Programme, Videos, Checklisten, Tracking-Tools und Ressourcen sind komplett kostenlos. Unser Ziel ist es, wissenschaftlich fundiertes Gesundheitswissen ohne finanzielle Barrieren zugänglich zu machen." },
+      { "q": "Wo soll ich als kompletter Anfänger anfangen?", "a": "Beginne auf der \"Reise\"-Seite → wähle \"7-Tage-Kickstart\". Die ersten sieben Tage führen dich schrittweise in alle 4 Kernsäulen ein (Bewegung · Ernährung · Lebensstil · Geist), ohne zu überfordern. Jeder Tag benötigt nur 20–30 Minuten." },
+      { "q": "Sind die Inhalte evidenzbasiert?", "a": "Ja. Alle Inhalte basieren auf moderner medizinischer Forschung und Leitlinien anerkannter Organisationen (WHO, ACSM, AHA). Diese Website dient jedoch nur zu Bildungszwecken — sie ersetzt keine persönliche medizinische Beratung. Bei spezifischen Gesundheitsproblemen konsultiere einen Arzt." },
+      { "q": "Was umfasst das 360°-Gesundheitssystem?", "a": "6 Säulen bilden das umfassende Gesundheitssystem: (A) Bewegung & Training — starker Körper; (B) Ernährung & Mahlplanung — richtiger Treibstoff; (C) Gesunder Lebensstil — Schlaf, Schritte, Erholung; (D) Ruhiger Geist — emotionales Gleichgewicht; (E) Gesundheitswissen — deinen Körper verstehen; (F) Tools & Ressourcen — verfolgen und aufrechterhalten." },
+      { "q": "Wie oft pro Woche soll ich trainieren?", "a": "Für Anfänger sind 3 Einheiten/Woche (jeden zweiten Tag) ideal. Empfohlene Struktur: 3 Krafteinheiten · 2 leichtes Cardio · 2 aktive Erholungstage. Wichtiger als die Häufigkeit ist die Konsequenz — 3 regelmäßige Einheiten über 12 Wochen schlagen 5 Einheiten/Woche für 2 Wochen dann aufhören." },
+      { "q": "Was sind die 6 Grundbewegungen und warum sind sie wichtig?", "a": "6 grundlegende Bewegungsmuster: Squat (Kniebeuge), Hinge (Hüftbeugung), Push (Drücken), Pull (Ziehen), Core (Stabilität) und Atmen. Diese 6 Bewegungsgruppen führt der menschliche Körper täglich aus. Sie mit korrekter Technik zu beherrschen, bevor man die Last erhöht, ist Regel Nr. 1, um Verletzungen zu vermeiden und eine nachhaltige Grundlage aufzubauen." },
+      { "q": "Kann ich das Programm ohne Ausrüstung durchführen?", "a": "Absolut. Das gesamte Phase-1-Programm (7 Tage + erste 4 Wochen) nutzt 100% Körpergewicht — keine Ausrüstung nötig. Ab Woche 5 kannst du Hanteln oder Widerstandsbänder für mehr Herausforderung hinzufügen, aber sie sind nicht erforderlich." },
+      { "q": "Ich habe chronische Rückenschmerzen — kann ich noch trainieren?", "a": "Es hängt von Ursache und Schweregrad ab. Das Programm enthält Abschnitte \"Aktive Erholung\" und \"Dehnung\", die für leichte Rückenschmerzen geeignet sind. Bei Rückenschmerzen durch Wirbelerkrankungen oder unter ärztlicher Behandlung konsultiere zuerst einen Arzt oder Physiotherapeuten. Goldene Regel: akute Schmerzen = Ruhe; leichte chronische Schmerzen = sanfte kontrollierte Bewegung." },
+      { "q": "Muss ich Kalorien zählen?", "a": "Nicht erforderlich, besonders in der Anfangsphase. Das \"Teller-Modell\" (½ Gemüse · ¼ Protein · ¼ Kohlenhydrate) und die Regel \"1 Handteller Protein pro Mahlzeit\" helfen dir richtig zu essen ohne Zahlen zu zählen. Kalorienzählen ist nur in der Fortgeschrittenenstufe sinnvoll." },
+      { "q": "Was ist TDEE und muss ich es berechnen?", "a": "TDEE (Gesamttäglicher Energieverbrauch) sind die Gesamtkalorien, die dein Körper täglich verbrennt. Dein TDEE zu kennen hilft dir, die richtige Menge für dein Ziel zu essen: Gewichtsverlust (TDEE − 400 kcal), Erhaltung (= TDEE), Muskelaufbau (TDEE + 300 kcal). Der TDEE-Rechner ist im B0-Toolkit auf der Ernährungsseite." },
+      { "q": "Ich esse viel auswärts für die Arbeit — kann ich die Ernährungsempfehlungen trotzdem einhalten?", "a": "Ja. Die smarte Auswärts-Formel: \"1 Protein + 2 Gemüse + moderate Kohlenhydrate\". Im Restaurant: extra Gemüse oder Salat bestellen, gegrilltes/gedämpftes Protein statt Frittiertem wählen, Kohlenhydratportionen kontrollieren. Du musst keine sozialen Mahlzeiten ablehnen — wende einfach eine einfache Strategie an." },
+      { "q": "Brauche ich Nahrungsergänzungsmittel?", "a": "Nicht in der Anfangsphase. Vollwertige Lebensmittel sind immer die Grundlage — Nahrungsergänzungsmittel helfen nur, wenn die Ernährung bereits solide ist. Wenn du sie in Betracht ziehst: Vitamin D3 (wenn du selten draußen bist), Omega-3 (bei wenig Fisch), Protein Whey (wenn es schwer fällt, genug Protein aus der Nahrung zu bekommen). Konsultiere vor der Einnahme einen Arzt." },
+      { "q": "Wie viel Wasser soll ich täglich trinken?", "a": "Einfache Formel: Körpergewicht (kg) × 35ml. Beispiel: 60kg → 2,1 Liter/Tag. Zeichen ausreichender Flüssigkeit: blassgelblicher Urin. Beim Sport 500ml extra hinzufügen. Gleichmäßig über den Tag trinken und sofort nach dem Aufwachen mit einem großen Glas Wasser beginnen." },
+      { "q": "Wie viele Stunden Schlaf brauche ich?", "a": "7–9 Stunden ist die Empfehlung für Erwachsene (WHO). Wichtiger als die Stundenzahl ist die Schlafqualität und Regelmäßigkeit — täglich zur gleichen Zeit schlafen und aufwachen (auch am Wochenende) ist wichtiger als am Wochenende Schlaf nachzuholen." },
+      { "q": "Was ist NEAT und warum ist es wichtiger als ich denke?", "a": "NEAT (Non-Exercise Activity Thermogenesis) ist die Energie, die durch alle Aktivitäten außerhalb des formellen Sports verbrannt wird — Gehen, Stehen, Treppensteigen, Hausarbeiten. NEAT kann 15–50% der täglich verbrannten Kalorien ausmachen. Ziel: 8.000–10.000 Schritte/Tag." },
+      { "q": "Was braucht eine minimale Morgenroutine?", "a": "Eine 10-minütige Morgenroutine reicht aus, um einen Unterschied zu machen: (1) Ein großes Glas Wasser trinken; (2) 5 Minuten natürliches Sonnenlicht bekommen; (3) 1 Tagesziel aufschreiben. Kein Müssen um 5 Uhr morgens aufzuwachen — mache es einfach konsequent." },
+      { "q": "Wie kann ich die Schlafqualität am schnellsten verbessern?", "a": "Drei effektivste Interventionen: (1) Keine Bildschirme 30 Minuten vor dem Schlafengehen; (2) Schlafzimmer bei 18–22°C und völlig dunkel halten; (3) Kein Koffein nach 14 Uhr. Wende alle drei Maßnahmen 7 Tage lang an — du wirst einen deutlichen Unterschied merken." },
+      { "q": "Ich habe noch nie meditiert — wie fange ich an?", "a": "Die einfachste Meditation: Bequem sitzen, Augen schließen, 5 Minuten auf den Atem achten. Wenn der Geist wandert, sanft die Aufmerksamkeit zum Atem zurücklenken — ohne Urteil. Mit 5 Minuten jeden Morgen beginnen und nach 2 Wochen langsam auf 10–15 Minuten steigern." },
+      { "q": "Was ist Box-Atmung und wann sollte ich es anwenden?", "a": "Box-Atmung: Einatmen 4s → Halten 4s → Ausatmen 4s → Halten 4s → wiederholen. Diese Technik aktiviert das parasympathische Nervensystem, senkt Cortisol und Herzfrequenz innerhalb von 2–3 Minuten. Anwenden: gestresst vor einem Meeting, beim Einschlafen, oder vor dem Training." },
+      { "q": "Ich habe keine Zeit zum Meditieren — gibt es eine Möglichkeit?", "a": "\"Mikro-Meditation\" funktioniert für ein beschäftigtes Leben: (1) 3 bewusste tiefe Atemzüge jeden Morgen (30 Sekunden); (2) Achtsam essen — kein Telefon; (3) 5-minütiger achtsamer Spaziergang mittags. Diese kleinen Momente summieren sich und bauen eine solide mentale Grundlage auf." },
+      { "q": "Was soll ich in ein Gesundheitstagebuch schreiben?", "a": "Die 3-Zeilen-Abendtagebuch-Formel (3–5 Minuten): (1) \"Heute habe ich gut gemacht...\" — 1 positives Ding notieren; (2) \"Ich habe gelernt...\" — 1 Lektion oder Beobachtung; (3) \"Morgen werde ich...\" — 1 konkrete Aktion. Nach 4 Wochen siehst du beim Zurückblicken deine eigenen Muster viel klarer." },
+      { "q": "Was ist der Unterschied zwischen 7-Tage-, 12-Wochen- und 24-Wochen-Programm?", "a": "7-Tage-Kickstart: Alle 4 Säulen kennenlernen, Grundgewohnheiten bilden. 12-Wochen-Grundlage: 3 Phasen, Grundlage aufbauen → Last steigern → personalisieren. 24-Wochen-Fortgeschritten: Auf alle 6 vollständigen Säulen ausweiten, einschließlich medizinischem Wissen und Kohlenhydrat-Zyklen." },
+      { "q": "Wie viel Zeit brauche ich täglich?", "a": "Daily-Core-Struktur 20–40 Min: 5 Min Aufwärmen · 10–20 Min Haupttraining · 5–10 Min Abkühlen · 5 Min Geist-Reset. Dazu: 10-minütige Morgenroutine + 5-minütiges Abendtagebuch. Gesamt: 35–55 Min/Tag. Kein Tag erfordert mehr als 1 Stunde." },
+      { "q": "Kann ich die 7 Tage überspringen und direkt mit dem 12-Wochen-Programm beginnen?", "a": "Du kannst, aber es wird nicht empfohlen. Die ersten 7 Tage helfen dir zu verstehen, wie dein Körper auf Veränderungen reagiert, Schwächen zu identifizieren und psychologischen Schwung aufzubauen. Personen, die die 7 Tage überspringen, geben in der Regel früher auf. Wenn du bereits eine solide Grundlage hast (regelmäßiges Training seit 6+ Monaten), kannst du mit Phase 2 des 12-Wochen-Programms beginnen." },
+      { "q": "Was soll ich tun, wenn ich 1–2 Tage im Programm verpasst habe?", "a": "Kein Problem. Die Regel: \"Niemals zweimal hintereinander auslassen\". 1 Tag verpasst → weiter vom nächsten Tag, kein Nachholbedarf. 1 Woche verpasst → Neustart vom Anfang dieser Woche. 80% Konsequenz über 12 Wochen schlägt 100% für 3 Wochen dann aufhören." }
+    ]
   },
   "footer": {
     "copyright": "© 2026 Gesundheit & Lebensstil. Alle Rechte vorbehalten.",
@@ -352,7 +468,8 @@
     "HINGE": "Hinge — Hüftangeltechnik",
     "CORE": "Core — Rumpfkraft",
     "BREATH": "Atem — Atemtechnik",
-    "click_to_play": "Video zum Abspielen anklicken"
+    "click_to_play": "Video zum Abspielen anklicken",
+    "exercise_guide": "Trainingsanleitungen"
   },
   "common": {
     "learn_more": "Mehr Erfahren",

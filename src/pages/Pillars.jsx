@@ -330,21 +330,21 @@ export default function Pillars() {
           <div className={`absolute inset-0 bg-gradient-to-r ${m.activeBg} opacity-40 pointer-events-none`} />
           <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <p className="font-bold text-text text-base">Bắt đầu với {p?.title}?</p>
-              <p className="text-muted text-sm mt-0.5">Hướng dẫn chi tiết, bài tập và công cụ thực hành</p>
+              <p className="font-bold text-text text-base">{t('pillars_page.cta_start')} {p?.title}?</p>
+              <p className="text-muted text-sm mt-0.5">{t('pillars_page.cta_detail')}</p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <Link
                 to={`/pillar/${m.id}`}
                 className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold border transition-all duration-200 ${m.btnBg}`}
               >
-                Xem Chi Tiết →
+                {t('pillars_page.view_detail')}
               </Link>
               <Link
                 to="/program"
                 className="text-xs text-muted hover:text-accent transition-colors duration-150 underline underline-offset-2"
               >
-                Lộ trình 12 tuần
+                {t('pillars_page.roadmap_12w')}
               </Link>
             </div>
           </div>
@@ -352,7 +352,7 @@ export default function Pillars() {
 
         {/* ── Other Pillars Quick Nav ────────────────────── */}
         <div className="flex flex-wrap gap-2">
-          <span className="text-xs text-muted self-center mr-1">Trụ cột khác:</span>
+          <span className="text-xs text-muted self-center mr-1">{t('pillars_page.other_pillars')}</span>
           {pillars.filter((_, i) => i !== activeTab).map(({ meta, data }, i) => (
             <button
               key={meta.key}

@@ -476,5 +476,12 @@
     "back": "Zurück",
     "loading": "Wird geladen...",
     "safety_note": "⚠️ Sofort aufhören bei Brustschmerzen, Schwindel oder Atemnot — gehen Sie zum Arzt."
+  },
+  "pillars_page": {
+    "cta_start": "Beginnen Sie mit",
+    "cta_detail": "Detaillierte Anleitungen, Übungen und praktische Werkzeuge",
+    "view_detail": "Details ansehen →",
+    "roadmap_12w": "12-Wochen-Fahrplan",
+    "other_pillars": "Andere Säulen:"
   }
 }

@@ -476,5 +476,12 @@
     "back": "Quay Lại",
     "loading": "Đang tải...",
     "safety_note": "⚠️ Dừng ngay nếu có đau ngực, chóng mặt, khó thở — hãy đi khám ngay."
+  },
+  "pillars_page": {
+    "cta_start": "Bắt đầu với",
+    "cta_detail": "Hướng dẫn chi tiết, bài tập và công cụ thực hành",
+    "view_detail": "Xem Chi Tiết →",
+    "roadmap_12w": "Lộ trình 12 tuần",
+    "other_pillars": "Trụ cột khác:"
   }
 }

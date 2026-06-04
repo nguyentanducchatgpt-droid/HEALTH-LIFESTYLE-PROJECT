@@ -476,5 +476,12 @@
     "back": "Back",
     "loading": "Loading...",
     "safety_note": "⚠️ Stop immediately if you feel chest pain, dizziness, or difficulty breathing — see a doctor."
+  },
+  "pillars_page": {
+    "cta_start": "Start with",
+    "cta_detail": "Detailed guides, exercises and practical tools",
+    "view_detail": "View Details →",
+    "roadmap_12w": "12-week roadmap",
+    "other_pillars": "Other pillars:"
   }
 }

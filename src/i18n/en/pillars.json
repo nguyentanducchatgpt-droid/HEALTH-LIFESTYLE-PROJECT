@@ -257,6 +257,122 @@
       { "title": "Daily Training Framework", "sub": "Choose Your Training Window" },
       { "title": "Suggested Weekly Rhythm", "sub": "Goal-Based Workouts" },
       { "title": "Progress Ladder", "sub": "Monthly Progress Tests" }
+    ],
+    "tabs_label": "4 Training Topics",
+    "highlights_label": "Key Highlights",
+    "details_label": "Deep Dive",
+    "preview_label": "What's Inside",
+    "journey_cta": "Select any topic below to start exploring →",
+    "guide_title": "Where to Start?",
+    "guide_items": [
+      { "who": "🌱 Complete beginner", "where": "Start with" },
+      { "who": "⏱ Have base, need structure", "where": "Go straight to" },
+      { "who": "📅 Need to organize week", "where": "Explore" },
+      { "who": "🏆 Want to track progress", "where": "Try now" }
+    ],
+    "cta_12week_title": "12-Week Program",
+    "cta_12week_desc": "Standard training framework, weekly rhythm, and phase-based progress tests.",
+    "cta_12week_btn": "View program",
+    "cta_sample_title": "Sample Programs",
+    "cta_sample_desc": "6 goals × 24 weeks — find the program that fits you best.",
+    "cta_sample_btn": "Explore",
+    "tabs": [
+      {
+        "title": "6 Fundamental Movement Patterns",
+        "sub": "Warm-Up & Cool-Down",
+        "longDesc": "Learn 6 fundamental movement patterns — the foundation of every effective training program. Each exercise includes a detailed video guide, from correct form to advanced variations. Combined with a 5–8 min warm-up and post-workout cool-down, you get a complete and safe session.",
+        "highlights": [
+          { "icon": "🎬", "title": "HD video per exercise", "desc": "See the angle, technique and correct movement cues clearly" },
+          { "icon": "📊", "title": "3 levels per exercise", "desc": "From beginner to advanced — clear progressive steps" },
+          { "icon": "🔥", "title": "Science-based warm-up", "desc": "Reduces injury risk and improves performance by 15–20%" }
+        ],
+        "quote": "Master 6 fundamental movement patterns — and you have the foundation for 95% of every exercise you'll ever need.",
+        "quoteContext": "Modern biomechanics principle",
+        "details": [
+          { "icon": "🦴", "title": "Why only 6 patterns?", "body": "Biomechanists analyzed thousands of exercises and found they are all variations of 6 fundamental patterns. Master the 6 = a permanent foundation for any program." },
+          { "icon": "🔄", "title": "Unlimited variations", "body": "Each pattern has 5–10+ variations from super easy to advanced. Chair squat → Pistol squat. No equipment needed — correct form is everything." },
+          { "icon": "⚖️", "title": "Full-body balance", "body": "Push + Pull balance front/back muscles. Squat + Hinge develop the full lower body. Core stabilizes the spine. Breath controls the whole system — this is the perfect loop." }
+        ],
+        "tabStats": [
+          { "label": "Exercises" },
+          { "label": "Levels/Ex." },
+          { "label": "Warm+Cool" }
+        ],
+        "previewItems": ["Squat", "Hinge", "Push-up", "Pull/Row", "Core", "Breath & Cardio", "Warm-Up 5–8'", "Cool-Down 5–10'"],
+        "cta": "Learn the moves"
+      },
+      {
+        "title": "Daily Training Framework 20–40 Min",
+        "sub": "Choose Your Training Window",
+        "longDesc": "Sessions don't need to be long — they need the right structure. 4 time blocks (Warm-Up → Main Workout → Cool-Down → Mind Reset) allow purposeful training in any duration. Choose your window — every minute has a clear plan.",
+        "highlights": [
+          { "icon": "⚡", "title": "4 standard time blocks", "desc": "Scientific structure for each session" },
+          { "icon": "📐", "title": "8 levels: 20–180 min", "desc": "From super busy to intensive — all scheduled" },
+          { "icon": "💡", "title": "Minute-by-minute detail", "desc": "Know exactly what to do in each time slot" }
+        ],
+        "quote": "Good structure matters more than long duration. 20 planned minutes is more effective than 1 unstructured hour.",
+        "quoteContext": "Behavioral science of training",
+        "details": [
+          { "icon": "🧠", "title": "The brain needs structure", "body": "Reducing decisions during a session helps focus on movement quality, not 'what to do next.' Clear structure = less burnout and more consistency over time." },
+          { "icon": "⚡", "title": "4 blocks — one universal structure", "body": "Warm-Up → Main Workout → Cool-Down → Mind Reset. A 20-min or 180-min session uses the same structure — only the time ratio between blocks changes." },
+          { "icon": "🌙", "title": "5-min mind reset — not a luxury", "body": "5 minutes of controlled breathing post-workout reduces cortisol by 15% and improves nighttime sleep. Smallest investment with the biggest recovery benefit." }
+        ],
+        "tabStats": [
+          { "label": "Blocks/day" },
+          { "label": "Time levels" },
+          { "label": "Min. session" }
+        ],
+        "previewItems": ["Warm-Up 5'", "Strength 10–20'", "Cardio 15–35'", "Cool-Down 5–10'", "Mind Reset 5'", "7 kcal/min max"],
+        "cta": "Build your day"
+      },
+      {
+        "title": "Suggested Weekly Rhythm",
+        "sub": "Goal-Based Workouts",
+        "longDesc": "Fitness is built over weeks, not days. 3 phases of weekly rhythm (Start → Build → Advance) help the body adapt step by step without burnout. 6 goal-based programs help you choose the right rhythm for your specific situation.",
+        "highlights": [
+          { "icon": "🗓", "title": "3 phases of weekly rhythm", "desc": "Step-by-step progress, no burnout" },
+          { "icon": "🎯", "title": "6 goal-based programs", "desc": "From super busy to advanced athlete" },
+          { "icon": "😴", "title": "Rest the right way", "desc": "Recovery is essential, not laziness" }
+        ],
+        "quote": "The body develops during rest — not during training. Weekly rhythm is the art of knowing when to stop.",
+        "quoteContext": "Exercise physiology",
+        "details": [
+          { "icon": "🔬", "title": "48–72 hour recovery window", "body": "Muscles need 48–72 hours to repair micro-damage and grow. Proper weekly rhythm creates enough space between sessions targeting the same muscle group — this is the foundation of progressive overload." },
+          { "icon": "📈", "title": "3 progressive adaptation phases", "body": "Phase 1 (weeks 1–2): 3 sessions/week — body learns load recognition. Phase 2 (weeks 3–6): 4 sessions — build strength base. Phase 3 (week 7+): 5–6 sessions — personalize by goal." },
+          { "icon": "🎯", "title": "Choose sustainable rhythm, not ideal", "body": "6 programs from 2 sessions/week (super busy) to 6/week (athlete). The best rhythm isn't the highest — it's the one you can maintain for 12 consecutive weeks." }
+        ],
+        "tabStats": [
+          { "label": "Phases" },
+          { "label": "Programs" },
+          { "label": "Days/week" }
+        ],
+        "previewItems": ["Strength Mon/Wed/Fri", "Cardio Tue/Thu", "Recovery Sat", "Beginner", "Fat Loss", "Muscle Gain", "Endurance", "Advanced"],
+        "cta": "Schedule your week"
+      },
+      {
+        "title": "Progress Ladder",
+        "sub": "Monthly Progress Tests",
+        "longDesc": "Progress that can't be measured isn't sustainable. The progress ladder shows you clearly where you are and what to do next. Combined with 3-period tests (Week 4, 8, 12) and a 4-dimension radar chart, you get a complete picture of physical health.",
+        "highlights": [
+          { "icon": "🪜", "title": "Clear ladder structure", "desc": "Know exactly the next step in your journey" },
+          { "icon": "🎯", "title": "Periodic 3-test cycles", "desc": "Tests at week 4, week 8, and week 12" },
+          { "icon": "📊", "title": "4-dimension radar chart", "desc": "Strength · Endurance · Flexibility · Recovery" }
+        ],
+        "quote": "What can't be measured can't be improved. Small, measurable, consistent progress — that's the real formula.",
+        "quoteContext": "Performance management principles",
+        "details": [
+          { "icon": "📋", "title": "Fair testing — not impulsive", "body": "3 test periods (Weeks 4, 8, 12) are planned when fully recovered — not after a hard session. Consistent test conditions give reliable results." },
+          { "icon": "🕸️", "title": "4-dimension radar — see hidden weaknesses", "body": "Strength · Endurance · Flexibility · Recovery. Many are strong but lack flexibility — a hidden injury risk that a single metric can't reveal." },
+          { "icon": "🪜", "title": "5 levels — know your position and destination", "body": "Level 1 (Basic Activity) to Level 5 (Athlete). Each level has clear criteria: exercises, reps/sets, recovery time. No more guessing 'how far have I come?'." }
+        ],
+        "tabStats": [
+          { "label": "Programs" },
+          { "label": "Levels" },
+          { "label": "Dimensions" }
+        ],
+        "previewItems": ["Week 4 test", "Week 8 test", "Week 12 test", "Radar chart", "6 personal goals", "A/B/C/D score", "Coach notes"],
+        "cta": "Track progress"
+      }
     ]
   },
   "pillarB": {

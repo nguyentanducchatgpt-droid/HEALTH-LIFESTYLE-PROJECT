@@ -257,6 +257,122 @@
       { "title": "Trainingsrahmen 20–40 Min", "sub": "Wähle dein Trainingsfenster" },
       { "title": "Vorgeschlagener Wochenrhythmus", "sub": "Zielorientierte Einheiten" },
       { "title": "Fortschrittsleiter", "sub": "Monatliche Fortschrittstests" }
+    ],
+    "tabs_label": "4 Trainingsthemen",
+    "highlights_label": "Highlights",
+    "details_label": "Hintergründe",
+    "preview_label": "Inhalt",
+    "journey_cta": "Wähle ein Thema unten, um zu beginnen →",
+    "guide_title": "Wo anfangen?",
+    "guide_items": [
+      { "who": "🌱 Absoluter Anfänger", "where": "Beginne mit" },
+      { "who": "⏱ Basis vorhanden, Struktur fehlt", "where": "Direkt zu" },
+      { "who": "📅 Woche organisieren", "where": "Erkunde" },
+      { "who": "🏆 Fortschritt messen", "where": "Jetzt ausprobieren" }
+    ],
+    "cta_12week_title": "12-Wochen-Programm",
+    "cta_12week_desc": "Standardtrainingsrahmen, Wochenrhythmus und phasenbasierte Fortschrittstests.",
+    "cta_12week_btn": "Programm ansehen",
+    "cta_sample_title": "Beispielprogramme",
+    "cta_sample_desc": "6 Ziele × 24 Wochen — finde das Programm, das am besten zu dir passt.",
+    "cta_sample_btn": "Entdecken",
+    "tabs": [
+      {
+        "title": "6 Grundlegende Bewegungsmuster",
+        "sub": "Aufwärmen & Abkühlen",
+        "longDesc": "Lerne 6 grundlegende Bewegungsmuster — das Fundament jedes effektiven Trainingsprogramms. Jede Übung enthält ein detailliertes Anleitungsvideo, von der korrekten Form bis zu Fortgeschrittenenvariationen. Kombiniert mit 5–8 Min Aufwärmen und Abkühlen erhältst du eine vollständige und sichere Einheit.",
+        "highlights": [
+          { "icon": "🎬", "title": "HD-Video pro Übung", "desc": "Winkel, Technik und korrekte Bewegungshinweise klar sehen" },
+          { "icon": "📊", "title": "3 Stufen pro Übung", "desc": "Von Anfänger bis Fortgeschritten — klare Fortschrittsschritte" },
+          { "icon": "🔥", "title": "Wissenschaftliches Aufwärmen", "desc": "Reduziert Verletzungsrisiko und verbessert Leistung um 15–20%" }
+        ],
+        "quote": "Meistere 6 grundlegende Bewegungsmuster — und du hast das Fundament für 95% aller Übungen deines Lebens.",
+        "quoteContext": "Modernes biomechanisches Prinzip",
+        "details": [
+          { "icon": "🦴", "title": "Warum nur 6 Muster?", "body": "Biomechaniker analysierten tausende Übungen und fanden, dass alle Variationen von 6 Grundmustern sind. Die 6 meistern = ein dauerhaftes Fundament für jedes Programm." },
+          { "icon": "🔄", "title": "Unbegrenzte Variationen", "body": "Jedes Muster hat 5–10+ Variationen von sehr einfach bis fortgeschritten. Stuhlsquat → Pistol Squat. Kein Equipment nötig — korrekte Form ist alles." },
+          { "icon": "⚖️", "title": "Ganzkörperbalance", "body": "Push + Pull balancieren Vorder-/Rückenmuskulatur. Squat + Hinge entwickeln den ganzen Unterkörper. Core stabilisiert die Wirbelsäule. Atem steuert das gesamte System." }
+        ],
+        "tabStats": [
+          { "label": "Übungen" },
+          { "label": "Stufen/Üb." },
+          { "label": "Warm+Cool" }
+        ],
+        "previewItems": ["Squat", "Hinge", "Push-up", "Pull/Row", "Core", "Atem & Ausdauer", "Aufwärmen 5–8'", "Abkühlen 5–10'"],
+        "cta": "Bewegungen lernen"
+      },
+      {
+        "title": "Tages-Trainingsrahmen 20–40 Min",
+        "sub": "Wähle dein Trainingsfenster",
+        "longDesc": "Einheiten müssen nicht lang sein — sie brauchen die richtige Struktur. 4 Zeitblöcke (Aufwärmen → Haupttraining → Abkühlen → Entspannung) ermöglichen zielgerichtetes Training in jeder Dauer. Wähle dein Fenster — jede Minute hat einen klaren Plan.",
+        "highlights": [
+          { "icon": "⚡", "title": "4 Standard-Zeitblöcke", "desc": "Wissenschaftliche Struktur für jede Einheit" },
+          { "icon": "📐", "title": "8 Stufen: 20–180 Min", "desc": "Von sehr beschäftigt bis intensiv — alle geplant" },
+          { "icon": "💡", "title": "Minutengenauer Plan", "desc": "Weißt genau, was du in jedem Zeitabschnitt tust" }
+        ],
+        "quote": "Gute Struktur ist wichtiger als lange Dauer. 20 geplante Minuten sind effektiver als 1 unstrukturierte Stunde.",
+        "quoteContext": "Verhaltenswissenschaft des Trainings",
+        "details": [
+          { "icon": "🧠", "title": "Das Gehirn braucht Struktur", "body": "Weniger Entscheidungen während der Einheit helfen, sich auf Bewegungsqualität zu konzentrieren. Klare Struktur = weniger Burnout und mehr Konsistenz." },
+          { "icon": "⚡", "title": "4 Blöcke — eine universelle Struktur", "body": "Aufwärmen → Haupttraining → Abkühlen → Entspannung. Ob 20 oder 180 Minuten — dieselbe Struktur, nur das Zeitverhältnis ändert sich." },
+          { "icon": "🌙", "title": "5 Min Entspannung — kein Luxus", "body": "5 Minuten kontrolliertes Atmen nach dem Training senkt Cortisol um 15% und verbessert den Nachtschlaf. Kleinste Investition mit dem größten Erholungsnutzen." }
+        ],
+        "tabStats": [
+          { "label": "Blöcke/Tag" },
+          { "label": "Zeit-Stufen" },
+          { "label": "Min. Einheit" }
+        ],
+        "previewItems": ["Aufwärmen 5'", "Kraft 10–20'", "Ausdauer 15–35'", "Abkühlen 5–10'", "Entspannung 5'", "7 kcal/Min max"],
+        "cta": "Deinen Tag gestalten"
+      },
+      {
+        "title": "Vorgeschlagener Wochenrhythmus",
+        "sub": "Zielorientierte Einheiten",
+        "longDesc": "Fitness wird über Wochen aufgebaut, nicht über Tage. 3 Phasen des Wochenrhythmus (Start → Aufbau → Fortschritt) helfen dem Körper, sich schrittweise anzupassen ohne Burnout. 6 zielorientierte Programme helfen dir, den richtigen Rhythmus für deine Situation zu finden.",
+        "highlights": [
+          { "icon": "🗓", "title": "3 Phasen des Wochenrhythmus", "desc": "Schrittweiser Fortschritt, kein Burnout" },
+          { "icon": "🎯", "title": "6 zielorientierte Programme", "desc": "Von sehr beschäftigt bis Leistungssportler" },
+          { "icon": "😴", "title": "Richtig erholen", "desc": "Erholung ist wichtig, nicht Faulheit" }
+        ],
+        "quote": "Der Körper entwickelt sich in der Ruhe — nicht beim Training. Wochenrhythmus ist die Kunst zu wissen, wann man aufhört.",
+        "quoteContext": "Sportphysiologie",
+        "details": [
+          { "icon": "🔬", "title": "48–72 Stunden Erholungsfenster", "body": "Muskeln brauchen 48–72 Stunden zur Reparatur und zum Wachstum. Richtiger Wochenrhythmus schafft genug Abstand zwischen Einheiten derselben Muskelgruppe — Grundlage des progressiven Overloads." },
+          { "icon": "📈", "title": "3 progressive Anpassungsphasen", "body": "Phase 1 (Wochen 1–2): 3 Einheiten/Woche. Phase 2 (Wochen 3–6): 4 Einheiten — Kraftbasis aufbauen. Phase 3 (Woche 7+): 5–6 Einheiten — nach Ziel personalisieren." },
+          { "icon": "🎯", "title": "Nachhaltigen Rhythmus wählen, nicht den idealen", "body": "6 Programme von 2 Einheiten/Woche (sehr beschäftigt) bis 6/Woche (Sportler). Der beste Rhythmus ist nicht der höchste — sondern der, den du 12 Wochen lang durchhältst." }
+        ],
+        "tabStats": [
+          { "label": "Phasen" },
+          { "label": "Programme" },
+          { "label": "Tage/Woche" }
+        ],
+        "previewItems": ["Kraft Mo/Mi/Fr", "Ausdauer Di/Do", "Erholung Sa", "Anfänger", "Fettabbau", "Muskelaufbau", "Ausdauer", "Fortgeschritten"],
+        "cta": "Woche planen"
+      },
+      {
+        "title": "Fortschrittsleiter",
+        "sub": "Monatliche Fortschrittstests",
+        "longDesc": "Fortschritt, der nicht gemessen werden kann, ist nicht nachhaltig. Die Fortschrittsleiter zeigt dir klar, wo du stehst und was du als nächstes tun musst. Kombiniert mit 3 Testperioden (Woche 4, 8, 12) und einem 4-dimensionalen Radardiagramm erhältst du ein vollständiges Bild deiner körperlichen Gesundheit.",
+        "highlights": [
+          { "icon": "🪜", "title": "Klare Leiterstruktur", "desc": "Weiß genau den nächsten Schritt in deiner Reise" },
+          { "icon": "🎯", "title": "Periodische 3-Test-Zyklen", "desc": "Tests in Woche 4, Woche 8 und Woche 12" },
+          { "icon": "📊", "title": "4-dimensionales Radardiagramm", "desc": "Kraft · Ausdauer · Flexibilität · Erholung" }
+        ],
+        "quote": "Was nicht gemessen werden kann, kann nicht verbessert werden. Kleiner, messbarer, konsistenter Fortschritt — das ist die echte Formel.",
+        "quoteContext": "Leistungsmanagement-Prinzipien",
+        "details": [
+          { "icon": "📋", "title": "Faire Tests — nicht impulsiv", "body": "3 Testperioden (Wochen 4, 8, 12) werden geplant, wenn der Körper vollständig erholt ist — nicht nach einer schweren Einheit. Konsistente Testbedingungen liefern zuverlässige Ergebnisse." },
+          { "icon": "🕸️", "title": "4D-Radar — versteckte Schwächen sehen", "body": "Kraft · Ausdauer · Flexibilität · Erholung. Viele sind stark, aber unflexibel — ein verstecktes Verletzungsrisiko, das ein einzelner Wert nicht zeigen kann." },
+          { "icon": "🪜", "title": "5 Stufen — Position und Ziel kennen", "body": "Stufe 1 (Grundaktivität) bis Stufe 5 (Leistungssportler). Jede Stufe hat klare Kriterien: Übungen, Wiederholungen, Erholungszeit. Kein Rätselraten mehr." }
+        ],
+        "tabStats": [
+          { "label": "Programme" },
+          { "label": "Stufen" },
+          { "label": "Dimensionen" }
+        ],
+        "previewItems": ["Woche 4 Test", "Woche 8 Test", "Woche 12 Test", "Radardiagramm", "6 persönliche Ziele", "A/B/C/D Punkte", "Coach-Notizen"],
+        "cta": "Fortschritt verfolgen"
+      }
     ]
   },
   "pillarB": {

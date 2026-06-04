@@ -257,6 +257,122 @@
       { "title": "Khung Ngày Tập 20–40 Phút", "sub": "Chọn Khung Thời Gian Luyện Tập" },
       { "title": "Nhịp Tuần Gợi Ý", "sub": "Buổi Tập Theo Mục Tiêu" },
       { "title": "Bậc Thang Tiến Bộ", "sub": "Kiểm Tra Tiến Bộ Hàng Tháng" }
+    ],
+    "tabs_label": "4 chủ đề luyện tập",
+    "highlights_label": "Điểm nổi bật",
+    "details_label": "Hiểu sâu hơn",
+    "preview_label": "Nội dung bên trong",
+    "journey_cta": "Chọn bất kỳ chủ đề nào bên dưới để bắt đầu khám phá →",
+    "guide_title": "Bắt đầu từ đâu?",
+    "guide_items": [
+      { "who": "🌱 Mới hoàn toàn", "where": "Bắt đầu với" },
+      { "who": "⏱ Có nền, cần cấu trúc", "where": "Đi thẳng đến" },
+      { "who": "📅 Cần tổ chức tuần", "where": "Khám phá" },
+      { "who": "🏆 Muốn đo tiến bộ", "where": "Thử ngay" }
+    ],
+    "cta_12week_title": "Lộ Trình 12 Tuần",
+    "cta_12week_desc": "Khung ngày chuẩn, nhịp tuần gợi ý, bộ test tiến bộ theo giai đoạn.",
+    "cta_12week_btn": "Xem lộ trình",
+    "cta_sample_title": "Lộ Trình Mẫu",
+    "cta_sample_desc": "6 mục tiêu × 24 tuần — tìm lộ trình phù hợp nhất với bạn.",
+    "cta_sample_btn": "Khám phá",
+    "tabs": [
+      {
+        "title": "6 Mẫu Vận Động Nền Tảng",
+        "sub": "Khởi Động & Giãn Cơ Sau Tập",
+        "longDesc": "Học 6 mẫu chuyển động cơ bản — nền tảng của mọi chương trình tập luyện hiệu quả. Mỗi bài tập có video minh họa chi tiết, từ tư thế chuẩn đến biến thể nâng cao. Kết hợp khởi động 5–8 phút và giãn cơ sau tập, bạn có một buổi hoàn chỉnh và an toàn.",
+        "highlights": [
+          { "icon": "🎬", "title": "Video HD từng bài", "desc": "Xem rõ góc độ, kỹ thuật và cue vận động chuẩn" },
+          { "icon": "📊", "title": "3 cấp độ/bài tập", "desc": "Từ cơ bản đến nâng cao — tiến bộ từng bước rõ ràng" },
+          { "icon": "🔥", "title": "Khởi động chuẩn khoa học", "desc": "Giảm nguy cơ chấn thương và tăng hiệu suất 15–20%" }
+        ],
+        "quote": "Thành thạo 6 mẫu chuyển động cơ bản — bạn có nền tảng cho 95% mọi bài tập trong cuộc đời.",
+        "quoteContext": "Nguyên lý sinh cơ học hiện đại",
+        "details": [
+          { "icon": "🦴", "title": "Tại sao chỉ 6 mẫu?", "body": "Các nhà sinh cơ học phân tích hàng nghìn bài tập và tìm thấy chúng đều là biến thể của 6 mẫu cơ bản. Thành thạo 6 mẫu = nền tảng vĩnh cửu cho mọi chương trình." },
+          { "icon": "🔄", "title": "Biến thể không giới hạn", "body": "Mỗi mẫu có 5–10+ biến thể từ siêu dễ đến nâng cao. Squat vào ghế → Pistol squat. Không cần thiết bị — tư thế đúng là tất cả." },
+          { "icon": "⚖️", "title": "Cân bằng cơ thể toàn diện", "body": "Push + Pull cân bằng cơ trước/sau. Squat + Hinge phát triển toàn hạ bộ. Core ổn định cột sống. Breath kiểm soát toàn bộ hệ thống — đây là vòng lặp hoàn hảo." }
+        ],
+        "tabStats": [
+          { "label": "Bài tập" },
+          { "label": "Cấp độ/bài" },
+          { "label": "Khởi + Giãn" }
+        ],
+        "previewItems": ["Squat", "Hinge", "Push-up", "Pull/Row", "Core", "Thở & Tim mạch", "Khởi động 5–8'", "Giãn cơ 5–10'"],
+        "cta": "Học động tác"
+      },
+      {
+        "title": "Khung Ngày Tập 20–40 Phút",
+        "sub": "Chọn Khung Thời Gian Luyện Tập",
+        "longDesc": "Buổi tập không cần dài — cần đúng cấu trúc. 4 khối thời gian trong ngày (Khởi động → Vận động chính → Giãn cơ → Tĩnh tâm) cho phép tập có mục đích trong bất kỳ thời lượng nào. Chọn khung phù hợp — mỗi phút đều có kế hoạch rõ ràng.",
+        "highlights": [
+          { "icon": "⚡", "title": "4 khối thời gian chuẩn", "desc": "Cấu trúc khoa học cho mỗi buổi tập" },
+          { "icon": "📐", "title": "8 mức: 20–180 phút", "desc": "Từ siêu bận đến chuyên sâu — đều có lịch" },
+          { "icon": "💡", "title": "Chi tiết từng phút", "desc": "Biết chính xác làm gì trong mỗi khoảng thời gian" }
+        ],
+        "quote": "Cấu trúc tốt quan trọng hơn thời gian dài. 20 phút có kế hoạch hiệu quả hơn 1 giờ tự do.",
+        "quoteContext": "Khoa học hành vi tập luyện",
+        "details": [
+          { "icon": "🧠", "title": "Não bộ cần cấu trúc", "body": "Giảm quyết định trong buổi tập giúp tập trung vào chất lượng động tác, không phải 'tập gì tiếp theo'. Cấu trúc rõ ràng = ít burnout hơn và nhất quán hơn theo thời gian." },
+          { "icon": "⚡", "title": "4 khối — một cấu trúc vạn năng", "body": "Khởi động → Vận động chính → Giãn cơ → Tĩnh tâm. Buổi 20 phút hay 180 phút đều dùng cùng cấu trúc này, chỉ thay đổi tỉ lệ thời gian giữa các khối." },
+          { "icon": "🌙", "title": "Tĩnh tâm 5 phút — không phải xa xỉ", "body": "5 phút thở có kiểm soát sau tập giảm cortisol 15% và cải thiện giấc ngủ đêm. Đây là đầu tư nhỏ nhất với lợi ích phục hồi lớn nhất trong ngày." }
+        ],
+        "tabStats": [
+          { "label": "Khối/ngày" },
+          { "label": "Mức thời gian" },
+          { "label": "Tối thiểu" }
+        ],
+        "previewItems": ["Khởi động 5'", "Sức mạnh 10–20'", "Tim mạch 15–35'", "Giãn cơ 5–10'", "Tĩnh tâm 5'", "7 kcal/phút max"],
+        "cta": "Xây khung ngày"
+      },
+      {
+        "title": "Nhịp Tuần Gợi Ý",
+        "sub": "Buổi Tập Theo Mục Tiêu",
+        "longDesc": "Thể lực được xây qua tuần, không phải qua ngày. 3 giai đoạn nhịp tuần (Bắt đầu → Xây nền → Nâng cao) giúp cơ thể thích nghi từng bước mà không burnout. 6 lộ trình theo mục tiêu giúp bạn chọn đúng nhịp cho hoàn cảnh cụ thể của mình.",
+        "highlights": [
+          { "icon": "🗓", "title": "3 giai đoạn nhịp tuần", "desc": "Tiến bộ từng bước, không burnout" },
+          { "icon": "🎯", "title": "6 lộ trình theo mục tiêu", "desc": "Từ siêu bận đến vận động viên chuyên sâu" },
+          { "icon": "😴", "title": "Nghỉ đúng cách", "desc": "Phục hồi là phần thiết yếu, không phải lười biếng" }
+        ],
+        "quote": "Cơ thể phát triển trong thời gian nghỉ ngơi — không phải trong buổi tập. Nhịp tuần là nghệ thuật biết lúc nào dừng.",
+        "quoteContext": "Sinh lý học tập luyện",
+        "details": [
+          { "icon": "🔬", "title": "Cửa sổ phục hồi 48–72 giờ", "body": "Cơ bắp cần 48–72 giờ để sửa chữa vi chấn thương và tăng trưởng. Thiết kế nhịp tuần đúng tạo đủ khoảng cách giữa các buổi cùng nhóm cơ — đây là nền tảng của progressive overload." },
+          { "icon": "📈", "title": "3 giai đoạn thích nghi dần", "body": "Giai đoạn 1 (tuần 1–2): 3 buổi/tuần — cơ thể học nhận diện tải. Giai đoạn 2 (tuần 3–6): 4 buổi — xây nền sức mạnh. Giai đoạn 3 (tuần 7+): 5–6 buổi — cá nhân hóa theo mục tiêu." },
+          { "icon": "🎯", "title": "Chọn nhịp bền vững, không phải lý tưởng", "body": "6 lộ trình từ 2 buổi/tuần (siêu bận) đến 6 buổi/tuần (vận động viên). Nhịp tốt nhất không phải nhịp cao nhất — là nhịp bạn duy trì được 12 tuần liên tục." }
+        ],
+        "tabStats": [
+          { "label": "Giai đoạn" },
+          { "label": "Lộ trình" },
+          { "label": "Ngày/tuần" }
+        ],
+        "previewItems": ["Sức mạnh T2/T4/T6", "Cardio T3/T5", "Phục hồi T7", "Người mới", "Giảm mỡ", "Tăng cơ", "Sức bền", "Nâng cao"],
+        "cta": "Lên lịch tuần"
+      },
+      {
+        "title": "Bậc Thang Tiến Bộ",
+        "sub": "Kiểm Tra Tiến Bộ Hàng Tháng",
+        "longDesc": "Tiến bộ mà không đo được thì không bền vững. Bậc thang tiến bộ cho bạn thấy rõ đang ở đâu và cần làm gì tiếp theo. Kết hợp test 3 kỳ (Tuần 4, 8, 12) và radar chart 4 chiều, bạn có bức tranh toàn diện về sức khỏe thể chất.",
+        "highlights": [
+          { "icon": "🪜", "title": "Bậc thang rõ ràng", "desc": "Biết chính xác bước tiếp theo trong hành trình" },
+          { "icon": "🎯", "title": "Test định kỳ 3 kỳ", "desc": "Kiểm tra tuần 4, tuần 8 và tuần 12" },
+          { "icon": "📊", "title": "Radar chart 4 chiều", "desc": "Sức mạnh · Sức bền · Linh hoạt · Phục hồi" }
+        ],
+        "quote": "Những gì không đo được thì không cải thiện được. Tiến bộ nhỏ, đo được, nhất quán — đó là công thức thật sự.",
+        "quoteContext": "Nguyên lý quản lý hiệu suất",
+        "details": [
+          { "icon": "📋", "title": "Test công bằng — không phải ngẫu hứng", "body": "3 kỳ test (Tuần 4, 8, 12) được lên kế hoạch khi cơ thể đã phục hồi hoàn toàn — không phải sau buổi tập nặng. Điều kiện test nhất quán cho kết quả đáng tin cậy." },
+          { "icon": "🕸️", "title": "Radar chart 4 chiều — thấy điểm yếu ẩn", "body": "Sức mạnh · Sức bền · Linh hoạt · Phục hồi. Nhiều người mạnh về sức mạnh nhưng kém linh hoạt — đây là nguy cơ chấn thương ẩn mà chỉ nhìn một chỉ số không thấy được." },
+          { "icon": "🪜", "title": "5 bậc — biết rõ vị trí và đích đến", "body": "Bậc 1 (Hoạt động cơ bản) đến Bậc 5 (Vận động viên). Mỗi bậc có tiêu chí rõ ràng: bài tập nào, reps/sets bao nhiêu, thời gian phục hồi. Không còn cảm giác 'không biết tập đến đâu rồi'." }
+        ],
+        "tabStats": [
+          { "label": "Lộ trình" },
+          { "label": "Bậc/lộ trình" },
+          { "label": "Chiều đánh giá" }
+        ],
+        "previewItems": ["Tuần 4 test", "Tuần 8 test", "Tuần 12 test", "Radar chart", "6 mục tiêu cá nhân", "Điểm A/B/C/D", "Coach notes"],
+        "cta": "Theo dõi tiến bộ"
+      }
     ]
   },
   "pillarB": {

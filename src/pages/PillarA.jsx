@@ -293,7 +293,7 @@ function TabPanel({ tab }) {
 
           {/* Highlights — staggered fade in */}
           <div className="space-y-3 mb-6">
-            <p className="text-[9px] font-bold uppercase tracking-widest text-muted/60 mb-2">Điểm nổi bật</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-muted/60 mb-2">{tab.highlights_label}</p>
             {tab.highlights.map((h, i) => (
               <div
                 key={i}
@@ -319,7 +319,7 @@ function TabPanel({ tab }) {
 
           {/* Details — staggered, with colored left border */}
           <div className="space-y-4 mb-8">
-            <p className="text-[9px] font-bold uppercase tracking-widest text-muted/60 mb-2">Hiểu sâu hơn</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-muted/60 mb-2">{tab.details_label}</p>
             {tab.details.map((d, i) => (
               <div
                 key={i}
@@ -376,10 +376,10 @@ function TabPanel({ tab }) {
 
           {/* Content chips */}
           <div>
-            <p className="text-[9px] font-bold text-muted/60 uppercase tracking-widest mb-2">Nội dung bên trong</p>
+            <p className="text-[9px] font-bold text-muted/60 uppercase tracking-widest mb-2">{tab.preview_label}</p>
             <div className="flex flex-wrap gap-1.5">
-              {tab.previewItems.map(item => (
-                <span key={item} className={`text-[10px] font-medium px-2.5 py-1 rounded-full border ${tab.chip}`}>{item}</span>
+              {tab.previewItems.map((item, pi) => (
+                <span key={pi} className={`text-[10px] font-medium px-2.5 py-1 rounded-full border ${tab.chip}`}>{item}</span>
               ))}
             </div>
           </div>
@@ -395,6 +395,28 @@ export default function PillarA() {
   const { t: tCommon }  = useTranslation('common');
   const { t: tPillars } = useTranslation('pillars');
   const pillar = tPillars('pillarA', { returnObjects: true });
+
+  // Build merged tab array: static data (colors, paths, icons) + translated text
+  const tabsTr = Array.isArray(pillar?.tabs) ? pillar.tabs : [];
+  const mergedTabs = TABS.map((t, i) => {
+    const tr = tabsTr[i] || {};
+    return {
+      ...t,
+      title:            tr.title            || t.title,
+      sub:              tr.sub              || t.sub,
+      longDesc:         tr.longDesc         || t.longDesc,
+      highlights:       tr.highlights       || t.highlights,
+      quote:            tr.quote            || t.quote,
+      quoteContext:     tr.quoteContext     || t.quoteContext,
+      details:          tr.details          || t.details,
+      tabStats:         t.tabStats.map((s, j) => ({ ...s, label: tr.tabStats?.[j]?.label || s.label })),
+      previewItems:     tr.previewItems     || t.previewItems,
+      cta:              tr.cta              || t.cta,
+      highlights_label: pillar?.highlights_label || 'Điểm nổi bật',
+      details_label:    pillar?.details_label    || 'Hiểu sâu hơn',
+      preview_label:    pillar?.preview_label    || 'Nội dung bên trong',
+    };
+  });
 
   const [activeTab, setActiveTab] = useState(0);
   const [tabKey, setTabKey] = useState(0);
@@ -552,7 +574,7 @@ export default function PillarA() {
     );
   }
 
-  const tab = TABS[activeTab];
+  const tab = mergedTabs[activeTab];
 
   return (
     <div className="max-w-5xl mx-auto -mt-4">
@@ -720,7 +742,7 @@ export default function PillarA() {
           </div>
 
           <p className="text-center text-[10px] text-muted/40 mt-5">
-            Chọn bất kỳ chủ đề nào bên dưới để bắt đầu khám phá →
+            {pillar?.journey_cta || 'Chọn bất kỳ chủ đề nào bên dưới để bắt đầu khám phá →'}
           </p>
         </div>
 
@@ -732,14 +754,14 @@ export default function PillarA() {
         {/* Section header */}
         <div className="flex items-center gap-4 mb-6">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.25em] whitespace-nowrap">4 chủ đề luyện tập</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.25em] whitespace-nowrap">{pillar?.tabs_label || '4 chủ đề luyện tập'}</p>
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
         </div>
 
         {/* Tab cards */}
         <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-4">
           <div ref={tabBarRef} className="flex gap-3 min-w-max md:min-w-0 md:grid md:grid-cols-4">
-            {TABS.map((t, i) => {
+            {mergedTabs.map((t, i) => {
               const isActive = activeTab === i;
               return (
                 <button
@@ -789,14 +811,14 @@ export default function PillarA() {
       {/* ── GUIDE: Bắt đầu từ đâu? ─────────────────────────────────────────────── */}
       <RevealBlock className="mt-10 mb-16">
         <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-white/[0.015] p-5">
-          <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-4">Bắt đầu từ đâu?</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-4">{pillar?.guide_title || 'Bắt đầu từ đâu?'}</p>
           <div className="grid md:grid-cols-2 gap-2">
-            {[
-              { who: '🌱 Mới hoàn toàn',       where: 'Bắt đầu với', tab: TABS[0] },
-              { who: '⏱ Có nền, cần cấu trúc', where: 'Đi thẳng đến', tab: TABS[1] },
-              { who: '📅 Cần tổ chức tuần',     where: 'Khám phá',    tab: TABS[2] },
-              { who: '🏆 Muốn đo tiến bộ',      where: 'Thử ngay',    tab: TABS[3] },
-            ].map((item, i) => (
+            {(Array.isArray(pillar?.guide_items) ? pillar.guide_items : [
+              { who: '🌱 Mới hoàn toàn',       where: 'Bắt đầu với' },
+              { who: '⏱ Có nền, cần cấu trúc', where: 'Đi thẳng đến' },
+              { who: '📅 Cần tổ chức tuần',     where: 'Khám phá' },
+              { who: '🏆 Muốn đo tiến bộ',      where: 'Thử ngay' },
+            ]).map((item, i) => (
               <button
                 key={item.who}
                 onClick={() => { switchTab(i); tabBarRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
@@ -804,7 +826,7 @@ export default function PillarA() {
               >
                 <span className="text-sm font-medium text-muted min-w-[140px] shrink-0">{item.who}</span>
                 <span className="text-[11px] text-muted/50 shrink-0 hidden md:block">{item.where}</span>
-                <span className={`text-[11px] font-bold flex-1 truncate ${item.tab.text}`}>{item.tab.title}</span>
+                <span className={`text-[11px] font-bold flex-1 truncate ${mergedTabs[i].text}`}>{mergedTabs[i].title}</span>
                 <span className="text-muted group-hover:translate-x-0.5 transition-transform shrink-0">→</span>
               </button>
             ))}
@@ -842,18 +864,18 @@ export default function PillarA() {
             <div className="absolute inset-0 grid-dots opacity-10 pointer-events-none" />
             <div className="relative">
               <div className="text-3xl mb-3">🗓️</div>
-              <h3 className="font-black text-text text-base mb-1">Lộ Trình 12 Tuần</h3>
-              <p className="text-muted text-xs leading-relaxed mb-4">Khung ngày chuẩn, nhịp tuần gợi ý, bộ test tiến bộ theo giai đoạn.</p>
-              <span className="inline-flex items-center gap-1.5 text-accent text-xs font-bold group-hover:gap-2.5 transition-all">Xem lộ trình <span>→</span></span>
+              <h3 className="font-black text-text text-base mb-1">{pillar?.cta_12week_title || 'Lộ Trình 12 Tuần'}</h3>
+              <p className="text-muted text-xs leading-relaxed mb-4">{pillar?.cta_12week_desc || 'Khung ngày chuẩn, nhịp tuần gợi ý, bộ test tiến bộ theo giai đoạn.'}</p>
+              <span className="inline-flex items-center gap-1.5 text-accent text-xs font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_12week_btn || 'Xem lộ trình'} <span>→</span></span>
             </div>
           </Link>
           <Link to="/sample-programs" className="group relative overflow-hidden rounded-2xl border border-pink-500/20 bg-pink-500/4 p-6 hover:border-pink-500/40 hover:bg-pink-500/8 transition-all duration-300 hover:-translate-y-0.5">
             <div className="absolute inset-0 grid-dots opacity-10 pointer-events-none" />
             <div className="relative">
               <div className="text-3xl mb-3">🎯</div>
-              <h3 className="font-black text-text text-base mb-1">Lộ Trình Mẫu</h3>
-              <p className="text-muted text-xs leading-relaxed mb-4">6 mục tiêu × 24 tuần — tìm lộ trình phù hợp nhất với bạn.</p>
-              <span className="inline-flex items-center gap-1.5 text-pink-400 text-xs font-bold group-hover:gap-2.5 transition-all">Khám phá <span>→</span></span>
+              <h3 className="font-black text-text text-base mb-1">{pillar?.cta_sample_title || 'Lộ Trình Mẫu'}</h3>
+              <p className="text-muted text-xs leading-relaxed mb-4">{pillar?.cta_sample_desc || '6 mục tiêu × 24 tuần — tìm lộ trình phù hợp nhất với bạn.'}</p>
+              <span className="inline-flex items-center gap-1.5 text-pink-400 text-xs font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_sample_btn || 'Khám phá'} <span>→</span></span>
             </div>
           </Link>
         </div>

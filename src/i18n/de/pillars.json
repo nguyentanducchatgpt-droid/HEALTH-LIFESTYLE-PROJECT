@@ -540,6 +540,67 @@
       "hover_hint": "Hover für Details",
       "benefits_label": "Vorteile des TDEE-Wissens",
       "accuracy_label": "Genauigkeit & Hinweise"
+    },
+    "mantras": [
+      {"text": "Genug essen", "sub": "Kein Aushungern oder extreme Cuts", "desc": "Der Körper braucht genug Energie zum Funktionieren, Erholen und Muskelaufbau. Extreme Kalorienreduktion verlangsamt den Stoffwechsel und verursacht Muskelverlust."},
+      {"text": "Regelmäßig essen", "sub": "Kein Impulsfood, keine ausgelassenen Mahlzeiten", "desc": "Ihr biologischer Rhythmus funktioniert am besten bei geregelten Mahlzeiten. Regelmäßiges Essen stabilisiert den Blutzucker und kontrolliert Heißhunger."},
+      {"text": "Echtes Essen", "sub": "Weniger Verarbeitetes, weniger Zusätze", "desc": "Vollwertige Lebensmittel behalten Mikronährstoffe, Ballaststoffe und natürliche Enzyme. Stark verarbeitete Lebensmittel fördern Überessen durch neurologische Mechanismen."},
+      {"text": "Zielorientiert essen", "sub": "Nicht Trends oder Werbung folgen", "desc": "Keto, IF, Low-Carb können alle funktionieren — aber nur wenn sie zu Ihrem Körper, Lebensstil und Zielen passen. Keine Diät passt für alle."},
+      {"text": "Protein als Fundament", "sub": "Gemüse ist Verbündeter, Carbs sind Treibstoff", "desc": "Protein (1.6–2.2g/kg Körpergewicht) schützt Muskeln, erhöht Sättigung und verbrennt extra Kalorien. Das wichtigste Makronährstoff für jedes Ziel."},
+      {"text": "Eine schlechte Mahlzeit", "sub": "Ruiniert nicht die lange Reise", "desc": "Eine Pizza macht nicht fett, wie ein Salat nicht schlank macht. Ergebnisse kommen aus wöchentlichen Gewohnheiten, nicht einer Mahlzeit."},
+      {"text": "Nachhaltig bleiben", "sub": "Die beste Diät ist die, die man beibehält", "desc": "Eine perfekte Diät die nicht durchhaltbar ist, ist wertlos. 80% konsequent für 1 Jahr schlägt 100% perfekt für 3 Wochen dann aufgeben."}
+    ],
+    "spirit_card": {
+      "label": "MINDSET",
+      "text1": "Konsequenz schlägt Perfektion. Disziplin heißt wissen, wie man nach einem Ausrutscher zurückfindet.",
+      "text2": "Sie scheitern nicht wegen einer schlechten Mahlzeit — Sie scheitern wenn Sie danach aufgeben. Konsequenz ist Ihre wahre Superkraft."
+    },
+    "macros": [
+      {"name": "Protein", "role": "Muskelaufbau, Sättigung, Erholung"},
+      {"name": "Kohlenhydrate", "role": "Gehirn- und Muskelenergie"},
+      {"name": "Fett", "role": "Hormone, Vitaminaufnahme"},
+      {"name": "Ballaststoffe", "role": "Verdauung, Sättigung, Darmflora"},
+      {"name": "Wasser", "role": "Leistung, Erholung, Stoffwechsel"}
+    ],
+    "tdee_modes": [
+      {"label": "Fett abbauen", "delta": "−300–500 kcal", "note": "Leichtes Defizit, viel Protein"},
+      {"label": "Gewicht halten", "delta": "± 0–100 kcal", "note": "Um TDEE essen, flexibel"},
+      {"label": "Muskelaufbau", "delta": "+200–300 kcal", "note": "Kleiner Überschuss, langsam steigern"}
+    ],
+    "plate_sections": [
+      {"label": "½ Gemüse & Suppe", "detail": "Gedünstet, Salat, Suppe, leicht angebraten"},
+      {"label": "¼ Protein", "detail": "Hähnchen, Fisch, Eier, Tofu, Garnelen"},
+      {"label": "¼ Kohlenhydrate", "detail": "Reis, Süßkartoffel, Nudeln, Haferflocken"}
+    ],
+    "b1": {
+      "based_on": "BASIEREND AUF IHREN DATEN",
+      "your_tdee": "Ihr TDEE",
+      "factor": "Faktor",
+      "goal_title": "Ziel wählen — Makros aktualisieren",
+      "macro_daily": "Tägliche Makroverteilung",
+      "kcal_day": "kcal/Tag",
+      "groups_5": "5 Kern-Nährstoffgruppen",
+      "click_hint": "Klicken Sie auf jede Karte für Praxis-Tipps.",
+      "fat": "Fett",
+      "fiber": "Ballaststoffe",
+      "water": "Wasser",
+      "fuel_note": "Hauptbrennstoff",
+      "hormone_note": "Hormone · Vitamine"
+    },
+    "b2": {
+      "based_on": "BASIEREND AUF IHREN DATEN",
+      "plate_method": "Teller-Methode",
+      "apply_title": "Praktische Anwendung",
+      "at_home": "🏠 Zuhause",
+      "at_home_tips": ["23–26cm Teller als Standard", "Erst Gemüse, dann Kohlenhydrate", "Protein = Handflächengröße", "Reis = Faustgröße"],
+      "eating_out": "🍜 Auswärts essen",
+      "eating_out_tips": ["Gericht mit Protein + Gemüse + Carbs wählen", "Extra Gemüse oder Salat bestellen", "Soßen mit viel Salz/Zucker meiden", "Nudeln: weniger Nudeln, mehr Gemüse + Ei"],
+      "meal_prep": "📦 Meal Prep",
+      "meal_prep_tips": ["Protein für die Woche vorbereiten (Hähnchen, Eier, Tofu)", "Reis alle 2–3 Tage kochen", "Gemüse vorkochen, 3 Tage im Kühlschrank", "Overnight Oats für busy Morgen"],
+      "golden_rule": "GOLDENE REGEL",
+      "golden_title": "Protein → Gemüse → Kohlenhydrate",
+      "golden_desc": "Reihenfolge beeinflusst Blutzuckeranstieg — Protein und Gemüse zuerst verlangsamt die Kohlenhydrataufnahme.",
+      "good_fat": "+ Gutes Fett: Etwas Olivenöl, Avocado oder Nüsse — bessere Aufnahme fettlöslicher Vitamine."
     }
   },
   "pillarC": {

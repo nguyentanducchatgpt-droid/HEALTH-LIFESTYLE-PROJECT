@@ -1788,6 +1788,17 @@ function buildDynamicMacros(s, kcal) {
 }
 
 function FoundationPanel({ s, onGoalKeyChange }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillarB = tPillars('pillarB', { returnObjects: true }) || {};
+  const b1tr = pillarB.b1 || {};
+  const tdeeModesTr = Array.isArray(pillarB.tdee_modes) ? pillarB.tdee_modes : [];
+  const goalModsTr  = Array.isArray(pillarB.goal_modifiers) ? pillarB.goal_modifiers : [];
+  const translatedModes = TDEE_MODES.map((m, i) => ({
+    ...m,
+    label: tdeeModesTr[i]?.label || m.label,
+    delta: tdeeModesTr[i]?.delta || m.delta,
+    note:  tdeeModesTr[i]?.note  || m.note,
+  }));
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [previewGoalKey, setPreviewGoalKey] = useState(s.goalKey ?? 'recomp');
   const [expandedMacro, setExpandedMacro]   = useState(null);
@@ -1796,6 +1807,11 @@ function FoundationPanel({ s, onGoalKeyChange }) {
   useEffect(() => { setPreviewGoalKey(s.goalKey ?? 'recomp'); }, [s.goalKey]);
 
   const previewGoal    = GOAL_MODIFIERS.find(g => g.key === previewGoalKey) ?? GOAL_MODIFIERS[1];
+  const translatedPreviewGoal = {
+    ...previewGoal,
+    label: goalModsTr[GOAL_MODIFIERS.indexOf(previewGoal)]?.label || previewGoal.label,
+    note:  goalModsTr[GOAL_MODIFIERS.indexOf(previewGoal)]?.note  || previewGoal.note,
+  };
   const previewKcal    = selectedMetric === 'tdee' ? s.tdee : s.tdee + previewGoal.delta;
   const dynMacros      = useMemo(() => buildDynamicMacros(s, previewKcal), [s, previewKcal]);
   const activeMacroKey = METRIC_TO_MACRO[selectedMetric] ?? null;
@@ -1815,7 +1831,7 @@ function FoundationPanel({ s, onGoalKeyChange }) {
     <div className="space-y-7">
 
       {/* ── PersonalizedBar ─────────────────────────────── */}
-      <PersonalizedBar panelId="b1" color="#84cc16" source="B0 (TDEE Calculator)"
+      <PersonalizedBar panelId="b1" color="#84cc16" source="B0 (TDEE Calculator)" label={b1tr.based_on || 'Dựa trên thông số của bạn'}
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
         { key: 'tdee',    label: 'TDEE',      value: `${s.tdee.toLocaleString()} kcal`, note: 'duy trì cân',                       tip: `TDEE = BMR (${s.bmr.toLocaleString()} kcal) × hệ số hoạt động (${s.activity.mult}). Đây là lượng calo cơ thể đốt nếu bạn giữ nguyên mức vận động hiện tại. Ăn bằng con số này = giữ cân.` },
@@ -1823,8 +1839,8 @@ function FoundationPanel({ s, onGoalKeyChange }) {
         { key: 'protein', label: 'Protein',   value: `${s.proteinG}g`,   note: `${(s.proteinG/s.weight).toFixed(1)}g/kg`,            tip: `${s.proteinG}g = ${(s.proteinG/s.weight).toFixed(1)}g × ${s.weight}kg cân nặng.` },
         { key: 'carb',    label: 'Carb',      value: `${s.carbG}g`,      note: `${s.carbPct}% kcal`,                                 tip: `Carb = (${s.targetKcal} - ${s.proteinG}×4 - ${s.fatG}×9) ÷ 4 = ${s.carbG}g/ngày.` },
         { key: 'fat',     label: 'Fat',       value: `${s.fatG}g`,       note: `${s.fatPct}% kcal`,                                  tip: `Fat = ${s.targetKcal} × 25% ÷ 9 = ${s.fatG}g/ngày.` },
-        { key: 'water',   label: 'Nước',      value: `${s.waterMl}ml`,   note: `${Math.round(s.waterMl/250)} ly`,                    tip: `${s.waterMl}ml = ${s.weight}kg × 35ml.` },
-        { key: 'fiber',   label: 'Chất xơ',   value: `${s.fiberG}g`,     note: '/ngày',                                              tip: `${s.fiberG}g/ngày theo khuyến nghị ${s.sex === 'male' ? 'nam' : 'nữ'} trưởng thành.` },
+        { key: 'water',   label: b1tr.water || 'Nước',      value: `${s.waterMl}ml`,   note: `${Math.round(s.waterMl/250)} ly`,               tip: `${s.waterMl}ml = ${s.weight}kg × 35ml.` },
+        { key: 'fiber',   label: b1tr.fiber || 'Chất xơ',  value: `${s.fiberG}g`,     note: '/ngày',                                         tip: `${s.fiberG}g/ngày theo khuyến nghị ${s.sex === 'male' ? 'nam' : 'nữ'} trưởng thành.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#84cc16" onClose={() => setSelectedMetric(null)} />}
 
@@ -1837,14 +1853,14 @@ function FoundationPanel({ s, onGoalKeyChange }) {
             <div className="flex items-center gap-2">
               <div className="w-1 h-8 rounded-full bg-lime-500/60" />
               <div>
-                <p className="text-[9px] text-muted uppercase tracking-widest font-bold">TDEE của bạn</p>
+                <p className="text-[9px] text-muted uppercase tracking-widest font-bold">{b1tr.your_tdee || 'TDEE của bạn'}</p>
                 <p className="text-base font-black text-lime-400 leading-none">{s.tdee.toLocaleString()} kcal<span className="text-[9px] text-muted font-normal ml-1">/ngày</span></p>
               </div>
             </div>
             <div className="flex items-center gap-3 text-[10px] text-muted">
               <span>BMR <span className="text-text font-semibold">{s.bmr.toLocaleString()}</span></span>
               <span className="text-muted/40">×</span>
-              <span>Hệ số <span className="text-text font-semibold">{s.activity.mult}</span></span>
+              <span>{b1tr.factor || 'Hệ số'} <span className="text-text font-semibold">{s.activity.mult}</span></span>
               <span className="text-muted/40">=</span>
               <span className="font-bold text-lime-400">{s.tdee.toLocaleString()} kcal</span>
             </div>
@@ -1852,12 +1868,12 @@ function FoundationPanel({ s, onGoalKeyChange }) {
 
           {/* Goal selector header */}
           <div className="px-5 pt-4 pb-2">
-            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">Chọn Mục Tiêu — Macro Tự Cập Nhật</p>
+            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">{b1tr.goal_title || 'Chọn Mục Tiêu — Macro Tự Cập Nhật'}</p>
           </div>
 
           {/* 3 goal cards */}
           <div className="px-4 pb-4 grid grid-cols-3 gap-3">
-            {TDEE_MODES.map(m => {
+            {translatedModes.map(m => {
               const isActive = previewGoalKey === m.goalKey;
               const DELTAS = { loss: -400, recomp: 0, gain: 300 };
               const kcal = s.tdee + DELTAS[m.goalKey];
@@ -1898,10 +1914,10 @@ function FoundationPanel({ s, onGoalKeyChange }) {
           <div className="mx-4 mb-4 rounded-xl px-4 py-2.5 transition-all duration-400"
             style={{ background: `${previewGoal.color}08`, border: `1px solid ${previewGoal.color}22` }}>
             <p className="text-[11px] text-muted leading-relaxed">
-              <span className="font-bold" style={{ color: previewGoal.color }}>{previewGoal.label}: </span>
-              {previewGoal.note}
+              <span className="font-bold" style={{ color: previewGoal.color }}>{translatedPreviewGoal.label}: </span>
+              {translatedPreviewGoal.note}
               {' — '}<span className="font-black" style={{ color: previewGoal.color }}>
-                <AnimatedVal value={previewKcal} /> kcal/ngày
+                <AnimatedVal value={previewKcal} /> {b1tr.kcal_day || 'kcal/ngày'}
               </span>
             </p>
           </div>
@@ -1913,7 +1929,7 @@ function FoundationPanel({ s, onGoalKeyChange }) {
         <div className="rounded-2xl border border-border/25 p-5" style={{ background: 'rgba(255,255,255,0.015)' }}>
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
-            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">Phân Bổ Macro Hàng Ngày</p>
+            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">{b1tr.macro_daily || 'Phân Bổ Macro Hàng Ngày'}</p>
             <span className="text-[9px] font-bold px-2 py-0.5 rounded-full transition-all duration-300"
               style={{ color: previewGoal.color, background: `${previewGoal.color}12`, border: `1px solid ${previewGoal.color}28` }}>
               <AnimatedVal value={previewKcal} /> kcal
@@ -1927,8 +1943,8 @@ function FoundationPanel({ s, onGoalKeyChange }) {
           <div className="grid grid-cols-3 gap-3 mt-5">
             {[
               { label: 'Protein',  gram: pG, pct: pW, color: '#84cc16', note: `${(pG/s.weight).toFixed(1)}g/kg · MPS` },
-              { label: 'Carb',     gram: cG, pct: cW, color: '#f97316', note: 'Nhiên liệu chính' },
-              { label: 'Chất béo', gram: fG, pct: fW, color: '#eab308', note: 'Nội tiết · Vitamin' },
+              { label: 'Carb',     gram: cG, pct: cW, color: '#f97316', note: b1tr.fuel_note || 'Nhiên liệu chính' },
+              { label: b1tr.fat || 'Chất béo', gram: fG, pct: fW, color: '#eab308', note: b1tr.hormone_note || 'Nội tiết · Vitamin' },
             ].map(m => {
               const isHighlighted = activeMacroKey === (m.label === 'Carb' ? 'Carbohydrate' : m.label);
               return (
@@ -1954,13 +1970,13 @@ function FoundationPanel({ s, onGoalKeyChange }) {
       {/* ── SECTION 3: 5 Nhóm Dinh Dưỡng Cốt Lõi ──────── */}
       <RevealBlock delay={90}>
         <div className="flex items-center justify-between mb-4">
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">5 Nhóm Dinh Dưỡng Cốt Lõi</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">{b1tr.groups_5 || '5 Nhóm Dinh Dưỡng Cốt Lõi'}</p>
           <span className="text-[9px] font-bold px-2 py-0.5 rounded-full transition-all duration-300"
             style={{ color: previewGoal.color, background: `${previewGoal.color}10`, border: `1px solid ${previewGoal.color}25` }}>
-            {selectedMetric === 'tdee' ? `TDEE — ${s.tdee.toLocaleString()} kcal` : `${previewGoal.label} — ${previewKcal.toLocaleString()} kcal`}
+            {selectedMetric === 'tdee' ? `TDEE — ${s.tdee.toLocaleString()} kcal` : `${translatedPreviewGoal.label} — ${previewKcal.toLocaleString()} kcal`}
           </span>
         </div>
-        <p className="text-[10px] text-muted mb-4">Nhấn vào mỗi thẻ để xem gợi ý thực hành.</p>
+        <p className="text-[10px] text-muted mb-4">{b1tr.click_hint || 'Nhấn vào mỗi thẻ để xem gợi ý thực hành.'}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {dynMacros.map((m, i) => (
             <InteractiveMacroCard
@@ -2075,6 +2091,9 @@ function b2MetricDetail(key, s) {
 }
 
 function PlatePanel({ s }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillarB = tPillars('pillarB', { returnObjects: true }) || {};
+  const b2tr = pillarB.b2 || {};
   const [ref, visible] = useScrollReveal(0.15);
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [proteinBars, setProteinBars] = useState([0, 0, 0, 0]);
@@ -2105,7 +2124,7 @@ function PlatePanel({ s }) {
 
   return (
     <div>
-      <PersonalizedBar panelId="b2" color="#22c55e" source="B0 + B1 (TDEE & Macros)"
+      <PersonalizedBar panelId="b2" color="#22c55e" source="B0 + B1 (TDEE & Macros)" label={b2tr.based_on || 'Dựa trên thông số của bạn'}
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
         { key: 'meal_protein', label: 'Protein/bữa', value: `${s.perMealProteinG}g`, note: `≈${s.chickenG}g ức gà`, tip: `${s.proteinG}g protein/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealProteinG}g/bữa.` },
@@ -2118,37 +2137,37 @@ function PlatePanel({ s }) {
       {/* ── Diagram + Tips ───────────────────────────────────────────── */}
       <div ref={ref} className="grid md:grid-cols-2 gap-8 items-start mb-10">
         <div>
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Phương Pháp Đĩa Ăn</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">{b2tr.plate_method || 'Phương Pháp Đĩa Ăn'}</p>
           <PlateDiagram animate={visible} />
         </div>
         <div className="space-y-4">
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Áp Dụng Thực Tế</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">{b2tr.apply_title || 'Áp Dụng Thực Tế'}</p>
           <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-5">
-            <p className="text-xs font-bold text-lime-400 mb-3">🏠 Tại nhà</p>
+            <p className="text-xs font-bold text-lime-400 mb-3">{b2tr.at_home || '🏠 Tại nhà'}</p>
             <ul className="space-y-2">
-              {['Dùng đĩa 23–26cm làm chuẩn', 'Bắt đầu bằng rau trước khi thêm carb', 'Đạm = lòng bàn tay của bạn', 'Cơm = nắm tay của bạn'].map((t, i) => (
+              {(Array.isArray(b2tr.at_home_tips) ? b2tr.at_home_tips : ['Dùng đĩa 23–26cm làm chuẩn', 'Bắt đầu bằng rau trước khi thêm carb', 'Đạm = lòng bàn tay của bạn', 'Cơm = nắm tay của bạn']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
-                  <span className="text-lime-400 font-bold shrink-0">✓</span>{t}
+                  <span className="text-lime-400 font-bold shrink-0">✓</span>{tip}
                 </li>
               ))}
             </ul>
           </div>
           <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
-            <p className="text-xs font-bold text-orange-400 mb-3">🍜 Ăn ngoài hàng</p>
+            <p className="text-xs font-bold text-orange-400 mb-3">{b2tr.eating_out || '🍜 Ăn ngoài hàng'}</p>
             <ul className="space-y-2">
-              {['Chọn phần có cả đạm + rau + carb', 'Gọi thêm rau hoặc salad riêng', 'Tránh nước chấm nhiều muối/đường', 'Bún/phở: ít bún, nhiều rau, thêm trứng'].map((t, i) => (
+              {(Array.isArray(b2tr.eating_out_tips) ? b2tr.eating_out_tips : ['Chọn phần có cả đạm + rau + carb', 'Gọi thêm rau hoặc salad riêng', 'Tránh nước chấm nhiều muối/đường', 'Bún/phở: ít bún, nhiều rau, thêm trứng']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
-                  <span className="text-orange-400 font-bold shrink-0">✓</span>{t}
+                  <span className="text-orange-400 font-bold shrink-0">✓</span>{tip}
                 </li>
               ))}
             </ul>
           </div>
           <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5">
-            <p className="text-xs font-bold text-cyan-400 mb-3">📦 Meal Prep bận rộn</p>
+            <p className="text-xs font-bold text-cyan-400 mb-3">{b2tr.meal_prep || '📦 Meal Prep bận rộn'}</p>
             <ul className="space-y-2">
-              {['Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)', 'Nấu lượng cơm 2–3 ngày một lần', 'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày', 'Yến mạch overnight cho sáng bận rộn'].map((t, i) => (
+              {(Array.isArray(b2tr.meal_prep_tips) ? b2tr.meal_prep_tips : ['Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)', 'Nấu lượng cơm 2–3 ngày một lần', 'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày', 'Yến mạch overnight cho sáng bận rộn']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
-                  <span className="text-cyan-400 font-bold shrink-0">✓</span>{t}
+                  <span className="text-cyan-400 font-bold shrink-0">✓</span>{tip}
                 </li>
               ))}
             </ul>
@@ -2166,9 +2185,9 @@ function PlatePanel({ s }) {
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,10,0.92) 40%, rgba(10,10,10,0.3) 100%)' }} />
           <div className="absolute inset-y-0 left-0 px-7 flex flex-col justify-center max-w-sm">
-            <span className="text-[9px] font-bold text-green-400 uppercase tracking-[0.25em] mb-1.5">Nguyên tắc vàng</span>
-            <p className="text-xl font-black text-text leading-tight mb-1.5">Đạm → Rau → Tinh bột</p>
-            <p className="text-[11px] text-muted leading-relaxed">Thứ tự ăn quyết định tốc độ tăng đường huyết — ăn đạm và rau trước giúp hấp thu tinh bột chậm hơn.</p>
+            <span className="text-[9px] font-bold text-green-400 uppercase tracking-[0.25em] mb-1.5">{b2tr.golden_rule || 'Nguyên tắc vàng'}</span>
+            <p className="text-xl font-black text-text leading-tight mb-1.5">{b2tr.golden_title || 'Đạm → Rau → Tinh bột'}</p>
+            <p className="text-[11px] text-muted leading-relaxed">{b2tr.golden_desc || 'Thứ tự ăn quyết định tốc độ tăng đường huyết — ăn đạm và rau trước giúp hấp thu tinh bột chậm hơn.'}</p>
           </div>
         </div>
       </RevealBlock>
@@ -6775,6 +6794,14 @@ export default function PillarB() {
 
   const pillar = tPillars('pillarB', { returnObjects: true });
   const tabsTr = Array.isArray(pillar?.tabs) ? pillar.tabs : [];
+  const mantrasTr = Array.isArray(pillar?.mantras) ? pillar.mantras : [];
+  const translatedMantras = MANTRAS.map((m, i) => ({
+    ...m,
+    text: mantrasTr[i]?.text || m.text,
+    sub:  mantrasTr[i]?.sub  || m.sub,
+    desc: mantrasTr[i]?.desc || m.desc,
+  }));
+  const spiritTr = pillar?.spirit_card || {};
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -7087,7 +7114,7 @@ export default function PillarB() {
 
         {/* ── Mantra cards (3 col) ── */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {MANTRAS.map((m, i) => (
+          {translatedMantras.map((m, i) => (
             <MantraCard key={m.n} m={m} i={i} />
           ))}
 
@@ -7099,14 +7126,14 @@ export default function PillarB() {
             <div className="h-[2px] w-full" style={{ background: `linear-gradient(90deg, ${LIME}90, ${LIME}15)` }} />
             <div className="p-5 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-[9px] font-black" style={{ color: `${LIME}70` }}>TINH THẦN</span>
+                <span className="text-[9px] font-black" style={{ color: `${LIME}70` }}>{spiritTr.label || 'TINH THẦN'}</span>
                 <span className="text-xl w-9 h-9 flex items-center justify-center rounded-xl border bg-lime-500/10 border-lime-500/25">✨</span>
               </div>
               <p className="text-xs font-bold text-lime-300 leading-relaxed mb-3">
-                Đều quan trọng hơn hoàn hảo. Kỷ luật là biết quay lại đúng đường sau khi lệch một chút.
+                {spiritTr.text1 || 'Đều quan trọng hơn hoàn hảo. Kỷ luật là biết quay lại đúng đường sau khi lệch một chút.'}
               </p>
               <p className="text-[11px] leading-relaxed flex-1" style={{ color: `${LIME}70` }}>
-                Bạn không thất bại vì một bữa lệch — bạn thất bại vì bỏ cuộc sau đó. Sự nhất quán mới là siêu năng lực thực sự.
+                {spiritTr.text2 || 'Bạn không thất bại vì một bữa lệch — bạn thất bại vì bỏ cuộc sau đó. Sự nhất quán mới là siêu năng lực thực sự.'}
               </p>
             </div>
           </div>

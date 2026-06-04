@@ -540,6 +540,67 @@
       "hover_hint": "Hover để xem chi tiết",
       "benefits_label": "Lợi Ích Khi Biết TDEE",
       "accuracy_label": "Độ chính xác & Lưu ý"
+    },
+    "mantras": [
+      {"text": "Ăn đủ", "sub": "Không ăn kiệt sức hay cắt quá mức", "desc": "Cơ thể cần đủ năng lượng để vận hành, phục hồi và xây dựng cơ bắp. Cắt calo quá mức làm chậm trao đổi chất và gây mất cơ ngoài ý muốn."},
+      {"text": "Ăn đều", "sub": "Không theo cảm hứng, không bỏ bữa", "desc": "Nhịp sinh học hoạt động tốt nhất khi được nuôi đúng giờ. Ăn đều giờ ổn định đường huyết và kiểm soát cảm giác thèm ăn bất thường."},
+      {"text": "Ăn thật", "sub": "Hạn chế đồ siêu chế biến, ít phụ gia", "desc": "Thực phẩm nguyên dạng giữ nguyên vi chất, chất xơ và enzyme tự nhiên. Đồ siêu chế biến kích thích ăn quá mức qua cơ chế thần kinh."},
+      {"text": "Ăn theo mục tiêu", "sub": "Không theo phong trào hay quảng cáo", "desc": "Keto, IF, Low-carb đều có thể hiệu quả — nhưng chỉ khi phù hợp với cơ thể, lịch sống và mục tiêu cụ thể của bạn. Không có chế độ ăn nào phù hợp cho tất cả."},
+      {"text": "Protein là nền", "sub": "Rau là bạn, carb là nhiên liệu", "desc": "Protein (1.6–2.2g/kg thể trọng) bảo vệ cơ bắp, tăng cảm giác no lâu và đốt thêm calo qua quá trình tiêu hóa. Đây là macro quan trọng nhất trong mọi mục tiêu."},
+      {"text": "Một bữa lệch", "sub": "Không phá hỏng hành trình dài hạn", "desc": "Một bữa pizza không làm bạn béo, giống như một bữa salad không làm bạn gầy. Kết quả đến từ thói quen hàng tuần, không phải từ một bữa ăn đơn lẻ."},
+      {"text": "Duy trì được", "sub": "Dinh dưỡng tốt nhất là cái bạn giữ được", "desc": "Chế độ ăn hoàn hảo trên lý thuyết nhưng không thể duy trì trong thực tế thì bằng không. 80% nhất quán trong 1 năm luôn tốt hơn 100% hoàn hảo trong 3 tuần rồi bỏ."}
+    ],
+    "spirit_card": {
+      "label": "TINH THẦN",
+      "text1": "Đều quan trọng hơn hoàn hảo. Kỷ luật là biết quay lại đúng đường sau khi lệch một chút.",
+      "text2": "Bạn không thất bại vì một bữa lệch — bạn thất bại vì bỏ cuộc sau đó. Sự nhất quán mới là siêu năng lực thực sự."
+    },
+    "macros": [
+      {"name": "Protein", "role": "Giữ cơ, no lâu, phục hồi"},
+      {"name": "Carbohydrate", "role": "Năng lượng não & cơ bắp"},
+      {"name": "Chất béo", "role": "Nội tiết, hấp thu vitamin"},
+      {"name": "Chất xơ", "role": "Tiêu hóa, no lâu, hệ vi sinh"},
+      {"name": "Nước", "role": "Hiệu suất, phục hồi, trao đổi chất"}
+    ],
+    "tdee_modes": [
+      {"label": "Giảm mỡ", "delta": "−300–500 kcal", "note": "Thâm hụt nhẹ, giữ protein cao"},
+      {"label": "Duy trì", "delta": "± 0–100 kcal", "note": "Ăn quanh TDEE, linh hoạt"},
+      {"label": "Tăng cơ", "delta": "+200–300 kcal", "note": "Thặng dư nhỏ, tăng dần"}
+    ],
+    "plate_sections": [
+      {"label": "½ Rau & Canh", "detail": "Rau luộc, salad, canh, rau xào ít dầu"},
+      {"label": "¼ Đạm", "detail": "Thịt gà, cá, trứng, đậu hũ, tôm"},
+      {"label": "¼ Tinh bột", "detail": "Cơm, khoai lang, bún, yến mạch"}
+    ],
+    "b1": {
+      "based_on": "DỰA TRÊN THÔNG SỐ CỦA BẠN",
+      "your_tdee": "TDEE của bạn",
+      "factor": "Hệ số",
+      "goal_title": "Chọn Mục Tiêu — Macro Tự Cập Nhật",
+      "macro_daily": "Phân Bổ Macro Hàng Ngày",
+      "kcal_day": "kcal/ngày",
+      "groups_5": "5 Nhóm Dinh Dưỡng Cốt Lõi",
+      "click_hint": "Nhấn vào mỗi thẻ để xem gợi ý thực hành.",
+      "fat": "Chất béo",
+      "fiber": "Chất xơ",
+      "water": "Nước",
+      "fuel_note": "Nhiên liệu chính",
+      "hormone_note": "Nội tiết · Vitamin"
+    },
+    "b2": {
+      "based_on": "DỰA TRÊN THÔNG SỐ CỦA BẠN",
+      "plate_method": "Phương Pháp Đĩa Ăn",
+      "apply_title": "Áp Dụng Thực Tế",
+      "at_home": "🏠 Tại nhà",
+      "at_home_tips": ["Dùng đĩa 23–26cm làm chuẩn", "Bắt đầu bằng rau trước khi thêm carb", "Đạm = lòng bàn tay của bạn", "Cơm = nắm tay của bạn"],
+      "eating_out": "🍜 Ăn ngoài hàng",
+      "eating_out_tips": ["Chọn phần có cả đạm + rau + carb", "Gọi thêm rau hoặc salad riêng", "Tránh nước chấm nhiều muối/đường", "Bún/phở: ít bún, nhiều rau, thêm trứng"],
+      "meal_prep": "📦 Meal Prep bận rộn",
+      "meal_prep_tips": ["Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)", "Nấu lượng cơm 2–3 ngày một lần", "Rau luộc sẵn, bảo quản tủ lạnh 3 ngày", "Yến mạch overnight cho sáng bận rộn"],
+      "golden_rule": "NGUYÊN TẮC VÀNG",
+      "golden_title": "Đạm → Rau → Tinh bột",
+      "golden_desc": "Thứ tự ăn quyết định tốc độ tăng đường huyết — ăn đạm và rau trước giúp hấp thu tinh bột chậm hơn.",
+      "good_fat": "+ Chất béo tốt: Thêm một ít dầu olive, bơ, hay hạt — hấp thu vitamin tan trong dầu tốt hơn."
     }
   },
   "pillarC": {

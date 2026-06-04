@@ -540,6 +540,67 @@
       "hover_hint": "Hover for details",
       "benefits_label": "Benefits of Knowing TDEE",
       "accuracy_label": "Accuracy & Notes"
+    },
+    "mantras": [
+      {"text": "Eat Enough", "sub": "No starvation or extreme cuts", "desc": "The body needs enough energy to function, recover and build muscle. Extreme calorie cuts slow metabolism and cause unwanted muscle loss."},
+      {"text": "Eat Regularly", "sub": "No impulse eating, no skipping", "desc": "Your biological clock works best when fed on schedule. Regular meal timing stabilizes blood sugar and controls unusual cravings."},
+      {"text": "Eat Real Food", "sub": "Minimize ultra-processed, fewer additives", "desc": "Whole foods retain their micronutrients, fiber and natural enzymes. Ultra-processed foods trigger overeating through neurological mechanisms."},
+      {"text": "Eat for Your Goals", "sub": "Not trends or ads", "desc": "Keto, IF, low-carb can all work — but only when suited to your body, lifestyle and specific goals. No single diet fits everyone."},
+      {"text": "Protein is the Foundation", "sub": "Veggies are allies, carbs are fuel", "desc": "Protein (1.6–2.2g/kg body weight) protects muscle, increases satiety and burns extra calories through digestion. The most important macro for any goal."},
+      {"text": "One Off Meal", "sub": "Doesn't ruin a long journey", "desc": "One pizza meal doesn't make you fat, just as one salad doesn't make you lean. Results come from weekly habits, not a single meal."},
+      {"text": "Be Sustainable", "sub": "Best diet is the one you can keep", "desc": "A perfect diet in theory that can't be maintained in practice is worthless. 80% consistent for 1 year always beats 100% perfect for 3 weeks then quitting."}
+    ],
+    "spirit_card": {
+      "label": "MINDSET",
+      "text1": "Consistency beats perfection. Discipline is knowing how to get back on track after one slip.",
+      "text2": "You don't fail because of one off meal — you fail when you quit after it. Consistency is your true superpower."
+    },
+    "macros": [
+      {"name": "Protein", "role": "Build muscle, satiety, recovery"},
+      {"name": "Carbohydrates", "role": "Brain & muscle fuel"},
+      {"name": "Fat", "role": "Hormones, vitamin absorption"},
+      {"name": "Fiber", "role": "Digestion, satiety, gut flora"},
+      {"name": "Water", "role": "Performance, recovery, metabolism"}
+    ],
+    "tdee_modes": [
+      {"label": "Fat Loss", "delta": "−300–500 kcal", "note": "Slight deficit, keep protein high"},
+      {"label": "Maintain", "delta": "± 0–100 kcal", "note": "Eat around TDEE, flexible"},
+      {"label": "Muscle Gain", "delta": "+200–300 kcal", "note": "Small surplus, gradual gains"}
+    ],
+    "plate_sections": [
+      {"label": "½ Veggies & Soup", "detail": "Steamed, salad, soup, lightly sautéed"},
+      {"label": "¼ Protein", "detail": "Chicken, fish, eggs, tofu, shrimp"},
+      {"label": "¼ Carbs", "detail": "Rice, sweet potato, noodles, oats"}
+    ],
+    "b1": {
+      "based_on": "BASED ON YOUR STATS",
+      "your_tdee": "Your TDEE",
+      "factor": "Factor",
+      "goal_title": "Select Goal — Macros Update Live",
+      "macro_daily": "Daily Macro Distribution",
+      "kcal_day": "kcal/day",
+      "groups_5": "5 Core Nutrient Groups",
+      "click_hint": "Click each card to see practice tips.",
+      "fat": "Fat",
+      "fiber": "Fiber",
+      "water": "Water",
+      "fuel_note": "Primary fuel",
+      "hormone_note": "Hormones · Vitamins"
+    },
+    "b2": {
+      "based_on": "BASED ON YOUR STATS",
+      "plate_method": "Plate Method",
+      "apply_title": "Practical Application",
+      "at_home": "🏠 At Home",
+      "at_home_tips": ["Use 23–26cm plate as guide", "Start with veggies before adding carbs", "Protein = palm of your hand", "Rice = closed fist"],
+      "eating_out": "🍜 Eating Out",
+      "eating_out_tips": ["Choose dishes with protein + veg + carbs", "Order extra veg or salad", "Avoid sauces high in salt/sugar", "Noodles: less noodles, more veg + egg"],
+      "meal_prep": "📦 Meal Prep",
+      "meal_prep_tips": ["Batch-cook protein for the week (chicken, eggs, tofu)", "Cook rice every 2–3 days", "Pre-boil veggies, store in fridge 3 days", "Overnight oats for busy mornings"],
+      "golden_rule": "GOLDEN RULE",
+      "golden_title": "Protein → Veggies → Carbs",
+      "golden_desc": "Eating order matters — protein and veggies first slows carb absorption and reduces post-meal insulin spikes.",
+      "good_fat": "+ Good fat: Add olive oil, avocado, or nuts — better absorption of fat-soluble vitamins."
     }
   },
   "pillarC": {

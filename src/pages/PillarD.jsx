@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 const PURPLE = '#a855f7';
@@ -429,6 +430,8 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
 
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function PillarD() {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillar = tPillars('pillarD', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('d0');
 
   useEffect(() => {
@@ -502,7 +505,7 @@ export default function PillarD() {
       {/* Breadcrumb */}
       <Link to="/pillars" className="inline-flex items-center gap-2 text-xs text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        Sống Khỏe 360
+        6 Trụ Cột
       </Link>
 
       {/* Hero */}
@@ -511,10 +514,10 @@ export default function PillarD() {
         <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)` }}>🧘</div>
         <div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
-            <span className="pd-title-mind">Tâm Trí </span><span className="pd-title-calm">An Nhiên</span>
+            {pillar?.title || 'Tâm Trí An Nhiên'}
           </h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: PURPLE, background: `rgba(${PURPLE_RGB},0.1)`, borderColor: `rgba(${PURPLE_RGB},0.2)` }}>Trụ Cột D · Mind & Calm</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">An nhiên không phải là không có áp lực. An nhiên là biết dừng lại, thở, nhìn rõ vấn đề, chọn một bước nhỏ và tiếp tục. Không cần trở thành người luôn bình tĩnh — chỉ cần biết cách quay lại trạng thái ổn định nhanh hơn.</p>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: PURPLE, background: `rgba(${PURPLE_RGB},0.1)`, borderColor: `rgba(${PURPLE_RGB},0.2)` }}>{pillar?.subtitle || 'Mind & Calm'}</span>
+          <p className="text-muted text-base leading-relaxed max-w-2xl">{pillar?.description || 'An nhiên không phải là không có áp lực.'}</p>
         </div>
       </div>
 
@@ -539,7 +542,7 @@ export default function PillarD() {
           <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop" alt="Mind & Calm" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: PURPLE, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${PURPLE_RGB},0.2)` }}>Mind & Calm · 8 Module · 12 Tuần</span>
+            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: PURPLE, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${PURPLE_RGB},0.2)` }}>{pillar?.image_caption || 'Mind & Calm'}</span>
           </div>
         </div>
       </div>

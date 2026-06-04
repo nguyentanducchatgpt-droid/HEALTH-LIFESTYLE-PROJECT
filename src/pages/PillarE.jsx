@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 const COLOR = '#3b82f6';
@@ -441,6 +442,8 @@ function TabE7() {
 const TAB_CONTENT = { e0: TabE0, e1: TabE1, e2: TabE2, e3: TabE3, e4: TabE4, e5: TabE5, e6: TabE6, e7: TabE7 };
 
 export default function PillarE() {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillar = tPillars('pillarE', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('e0');
   const tab = TABS.find(t => t.id === activeTab);
   const TabPanel = TAB_CONTENT[activeTab];
@@ -494,7 +497,7 @@ export default function PillarE() {
   return (
     <div className="px-4 md:px-6 max-w-5xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillars" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">
-        <span>←</span><span>Sống Khỏe 360</span>
+        <span>←</span><span>6 Trụ Cột</span>
       </Link>
 
       <RevealBlock className="flex items-start gap-6 mb-10 relative">
@@ -502,10 +505,10 @@ export default function PillarE() {
         <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}25` }}>🏥</div>
         <div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
-            <span className="pe-title-know">Kiến Thức </span><span className="pe-title-health">Sức Khỏe</span>
+            {pillar?.title || 'Kiến Thức Sức Khỏe'}
           </h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>Trụ Cột E · Health Literacy</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">Hiểu cơ thể mình bằng ngôn ngữ đơn giản — biết theo dõi chỉ số quan trọng, nhận ra dấu hiệu nguy hiểm và ra quyết định chăm sóc sức khỏe an toàn hơn mỗi ngày.</p>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>{pillar?.subtitle || 'Health Literacy'}</span>
+          <p className="text-muted text-base leading-relaxed max-w-2xl">{pillar?.description || 'Hiểu cơ thể mình bằng ngôn ngữ đơn giản.'}</p>
           <div className="flex flex-wrap gap-6 mt-6">
             {['8 Module', '12 Tuần', '5 Chỉ số', '100 điểm'].map((label, i) => (
               <div key={label} className="group/stat relative">
@@ -525,7 +528,7 @@ export default function PillarE() {
             <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop" alt="Health Knowledge" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
             <div className="absolute bottom-4 left-6">
-              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>Hiểu Chỉ Số · Phòng Bệnh · Đi Khám Đúng Lúc</span>
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>{pillar?.image_caption || 'Hiểu Chỉ Số · Phòng Bệnh'}</span>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 const COLOR = '#f97316';
@@ -692,6 +693,8 @@ function F7QuickWorkouts() {
 
 // --- Main component ---
 export default function PillarF() {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillar = tPillars('pillarF', { returnObjects: true });
   const [tab, setTab] = useState('f0');
   const tabBarRef = useRef(null);
 
@@ -707,7 +710,7 @@ export default function PillarF() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillars" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Sống Khỏe 360</Link>
+      <Link to="/pillars" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← 6 Trụ Cột</Link>
 
       {/* Hero */}
       <div className="flex items-start gap-6 mb-10 relative">
@@ -715,16 +718,12 @@ export default function PillarF() {
         <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🛠️</div>
         <div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
-            {(() => {
-              const s = 'Công Cụ & Tài Nguyên';
-              const i = s.indexOf('&');
-              return (<><span className="pf-title-word">{s.slice(0, i)}</span><span className="pf-title-amp">&</span><span className="pf-title-word">{s.slice(i + 1)}</span></>);
-            })()}
+            {pillar?.title || 'Công Cụ & Tài Nguyên'}
           </h1>
           <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Trụ Cột F · Hệ thống vận hành sức khỏe cá nhân
+            {pillar?.subtitle || 'Tools & Resources'}
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">Biến mọi kiến thức A–E thành hành động cụ thể mỗi ngày. Checklist, nhật ký tập, meal plan, tracker, bài nhanh và bộ test tiến bộ — tất cả trong một hệ thống đơn giản, dễ dùng.</p>
+          <p className="text-muted text-base leading-relaxed max-w-2xl">{pillar?.description || 'Biến mọi kiến thức A–E thành hành động cụ thể mỗi ngày.'}</p>
         </div>
       </div>
 
@@ -749,7 +748,7 @@ export default function PillarF() {
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop" alt="Công cụ sống khỏe" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Hệ điều hành sức khỏe cá nhân
+            {pillar?.image_caption || 'Tools & Resources'}
           </span>
         </div>
       </div>

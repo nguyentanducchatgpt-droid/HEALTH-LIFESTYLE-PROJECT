@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -216,6 +217,8 @@ function TeaserSection({ title, children }) {
 // ─── Main component ────────────────────────────────────────────────────────────
 
 export default function PillarC() {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillar = tPillars('pillarC', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('c1');
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
@@ -289,7 +292,7 @@ export default function PillarC() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillars" className="inline-flex items-center gap-2 text-muted text-sm mb-8 hover:text-teal-400 transition-colors">
-        ← Sống Khỏe 360
+        ← 6 Trụ Cột
       </Link>
 
       {/* Hero */}
@@ -302,14 +305,14 @@ export default function PillarC() {
         </div>
         <div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
-            <span className="pc-title-main">Lối Sống </span><span className="pc-title-key">Khỏe</span>
+            {pillar?.title || 'Lối Sống Khỏe'}
           </h1>
           <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: TEAL, background: `rgba(${TEAL_RGB},0.1)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
-            Trụ Cột C — Lifestyle
+            {pillar?.subtitle || 'Lifestyle'}
           </span>
           <p className="text-muted text-base leading-relaxed max-w-2xl">
-            Ngủ tốt hơn, sống có nhịp hơn, phục hồi tốt hơn. Trụ cột C là hệ điều hành của cơ thể — nền sinh hoạt giúp Trụ cột A và B hoạt động bền vững trong đời thật.
+            {pillar?.description || 'Ngủ tốt hơn, sống có nhịp hơn, phục hồi tốt hơn.'}
           </p>
         </div>
       </div>
@@ -347,7 +350,7 @@ export default function PillarC() {
             <div className="absolute bottom-4 left-6">
               <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: TEAL, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
-                Ngủ · Nhịp sống · Phục hồi
+                {pillar?.image_caption || 'Ngủ · Nhịp sống · Phục hồi'}
               </span>
             </div>
           </div>

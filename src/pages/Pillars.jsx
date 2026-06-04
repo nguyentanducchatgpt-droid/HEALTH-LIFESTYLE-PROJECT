@@ -224,7 +224,7 @@ export default function Pillars() {
               {/* Pillar badge on image */}
               <div className="absolute top-4 left-4">
                 <span className={`text-xs font-black tracking-[0.15em] uppercase px-3 py-1.5 rounded-xl backdrop-blur-sm bg-black/50 border ${m.border} ${m.textColor}`}>
-                  TRỤ CỘT {m.label}
+                  {t('pillars_page.pillar_badge')} {m.label}
                 </span>
               </div>
             </div>
@@ -271,11 +271,11 @@ export default function Pillars() {
                   to={`/pillar/${m.id}`}
                   className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border text-sm font-semibold transition-all duration-200 ${m.btnBg}`}
                 >
-                  Xem Toàn Bộ
+                  {t('pillars_page.view_all')}
                   <span>→</span>
                 </Link>
                 <span className={`text-xs ${m.textColor} opacity-60`}>
-                  {sections.length} chủ đề · {sections.reduce((acc, s) => acc + (s.items?.length || 0), 0)} nội dung
+                  {sections.length} {t('pillars_page.topics')} · {sections.reduce((acc, s) => acc + (s.items?.length || 0), 0)} {t('pillars_page.items')}
                 </span>
               </div>
             </div>
@@ -315,7 +315,7 @@ export default function Pillars() {
                     ))}
                     {section.items?.length > 4 && (
                       <li className={`text-xs ${m.textColor} pl-6 opacity-70`}>
-                        +{section.items.length - 4} nội dung khác
+                        +{section.items.length - 4} {t('pillars_page.more_items')}
                       </li>
                     )}
                   </ul>

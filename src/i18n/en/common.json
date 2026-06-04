@@ -483,6 +483,11 @@
     "cta_detail": "Detailed guides, exercises and practical tools",
     "view_detail": "View Details →",
     "roadmap_12w": "12-week roadmap",
-    "other_pillars": "Other pillars:"
+    "other_pillars": "Other pillars:",
+    "pillar_badge": "PILLAR",
+    "view_all": "View All",
+    "topics": "topics",
+    "items": "items",
+    "more_items": "more items"
   }
 }

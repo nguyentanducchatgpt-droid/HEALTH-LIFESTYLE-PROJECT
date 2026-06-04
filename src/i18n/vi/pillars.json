@@ -556,11 +556,11 @@
       "text2": "Bạn không thất bại vì một bữa lệch — bạn thất bại vì bỏ cuộc sau đó. Sự nhất quán mới là siêu năng lực thực sự."
     },
     "macros": [
-      {"name": "Protein", "role": "Giữ cơ, no lâu, phục hồi"},
-      {"name": "Carbohydrate", "role": "Năng lượng não & cơ bắp"},
-      {"name": "Chất béo", "role": "Nội tiết, hấp thu vitamin"},
-      {"name": "Chất xơ", "role": "Tiêu hóa, no lâu, hệ vi sinh"},
-      {"name": "Nước", "role": "Hiệu suất, phục hồi, trao đổi chất"}
+      {"name": "Protein",      "role": "Giữ cơ, no lâu, phục hồi",            "dose": "1.6–2.2 g/kg"},
+      {"name": "Carbohydrate", "role": "Năng lượng não & cơ bắp",              "dose": "40–55% tổng kcal"},
+      {"name": "Chất béo",     "role": "Nội tiết, hấp thu vitamin",            "dose": "20–35% tổng kcal"},
+      {"name": "Chất xơ",      "role": "Tiêu hóa, no lâu, hệ vi sinh",        "dose": "25–38 g/ngày"},
+      {"name": "Nước",         "role": "Hiệu suất, phục hồi, trao đổi chất",  "dose": "35 ml/kg thể trọng"}
     ],
     "tdee_modes": [
       {"label": "Giảm mỡ", "delta": "−300–500 kcal", "note": "Thâm hụt nhẹ, giữ protein cao"},
@@ -574,6 +574,11 @@
     ],
     "b1": {
       "based_on": "DỰA TRÊN THÔNG SỐ CỦA BẠN",
+      "tdee_note": "duy trì cân",
+      "target_label": "Mục tiêu",
+      "per_day": "/ngày",
+      "show": "xem",
+      "hide": "ẩn",
       "your_tdee": "TDEE của bạn",
       "factor": "Hệ số",
       "goal_title": "Chọn Mục Tiêu — Macro Tự Cập Nhật",
@@ -600,7 +605,33 @@
       "golden_rule": "NGUYÊN TẮC VÀNG",
       "golden_title": "Đạm → Rau → Tinh bột",
       "golden_desc": "Thứ tự ăn quyết định tốc độ tăng đường huyết — ăn đạm và rau trước giúp hấp thu tinh bột chậm hơn.",
-      "good_fat": "+ Chất béo tốt: Thêm một ít dầu olive, bơ, hay hạt — hấp thu vitamin tan trong dầu tốt hơn."
+      "good_fat": "+ Chất béo tốt: Thêm một ít dầu olive, bơ, hay hạt — hấp thu vitamin tan trong dầu tốt hơn.",
+      "hand_title": "Công Thức Khẩu Phần Theo Tay — Không Cần Cân",
+      "hand_subtitle": "Ước lượng khẩu phần từng bữa dựa trên kích thước bàn tay bạn",
+      "portions": [
+        {"label": "Đạm",      "portion": "1 lòng bàn tay", "calc_unit": "g protein",  "example_dyn": "g ức gà",         "example": "hoặc 1 củ khoai lang"},
+        {"label": "Tinh bột", "portion": "1 nắm tay",      "calc_unit": "g cơm",      "example": "hoặc 1 củ khoai lang"},
+        {"label": "Rau xanh", "portion": "2 nắm tay",      "calc_static": "≈ 150–200g rau", "example": "luộc hoặc xào ít dầu"},
+        {"label": "Chất béo", "portion": "1 ngón cái",     "calc_unit": "g fat",      "example": "dầu olive / bơ / hạt"}
+      ],
+      "formula_title": "Công thức bữa của bạn",
+      "formula_chicken": "g ức gà",
+      "formula_protein_unit": "g đạm",
+      "formula_rice_unit": "g cơm",
+      "formula_veggie": "nắm rau",
+      "formula_fat_unit": "g chất béo tốt",
+      "kcal_meal": "kcal/bữa",
+      "meals_day": "bữa/ngày",
+      "protein_anchor_title": "💪 Protein — \"Neo\" Mỗi Bữa",
+      "protein_anchor_sub": "Xây bữa ăn từ đạm trước, sau đó thêm carb và rau",
+      "total_protein": "Tổng protein",
+      "total_carb": "Tổng carb",
+      "carb_timing_title": "⚡ Carb Đúng Thời Điểm",
+      "carb_timing_sub": "Ưu tiên tinh bột vào bữa trưa — giảm dần về tối",
+      "meal_times": ["🌅 Sáng", "☀️ Trưa", "🌙 Tối", "🍎 Snack"],
+      "protein_notes": ["trứng + sữa chua", "ức gà / cá / đậu hũ", "cá / thịt / trứng", "sữa chua Hy Lạp"],
+      "carb_notes": ["ổn định đường huyết", "năng lượng cao nhất", "giảm nếu không tập tối", "trái cây, yến mạch"],
+      "lunch_label": "Trưa"
     }
   },
   "pillarC": {

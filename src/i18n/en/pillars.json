@@ -556,11 +556,11 @@
       "text2": "You don't fail because of one off meal — you fail when you quit after it. Consistency is your true superpower."
     },
     "macros": [
-      {"name": "Protein", "role": "Build muscle, satiety, recovery"},
-      {"name": "Carbohydrates", "role": "Brain & muscle fuel"},
-      {"name": "Fat", "role": "Hormones, vitamin absorption"},
-      {"name": "Fiber", "role": "Digestion, satiety, gut flora"},
-      {"name": "Water", "role": "Performance, recovery, metabolism"}
+      {"name": "Protein",       "role": "Build muscle, satiety, recovery",      "dose": "1.6–2.2 g/kg"},
+      {"name": "Carbohydrates", "role": "Brain & muscle fuel",                  "dose": "40–55% total kcal"},
+      {"name": "Fat",           "role": "Hormones, vitamin absorption",          "dose": "20–35% total kcal"},
+      {"name": "Fiber",         "role": "Digestion, satiety, gut flora",         "dose": "25–38 g/day"},
+      {"name": "Water",         "role": "Performance, recovery, metabolism",     "dose": "35 ml/kg body weight"}
     ],
     "tdee_modes": [
       {"label": "Fat Loss", "delta": "−300–500 kcal", "note": "Slight deficit, keep protein high"},
@@ -574,6 +574,11 @@
     ],
     "b1": {
       "based_on": "BASED ON YOUR STATS",
+      "tdee_note": "maintain weight",
+      "target_label": "Goal",
+      "per_day": "/day",
+      "show": "view",
+      "hide": "hide",
       "your_tdee": "Your TDEE",
       "factor": "Factor",
       "goal_title": "Select Goal — Macros Update Live",
@@ -600,7 +605,33 @@
       "golden_rule": "GOLDEN RULE",
       "golden_title": "Protein → Veggies → Carbs",
       "golden_desc": "Eating order matters — protein and veggies first slows carb absorption and reduces post-meal insulin spikes.",
-      "good_fat": "+ Good fat: Add olive oil, avocado, or nuts — better absorption of fat-soluble vitamins."
+      "good_fat": "+ Good fat: Add olive oil, avocado, or nuts — better absorption of fat-soluble vitamins.",
+      "hand_title": "Hand Portion Formula — No Scale Needed",
+      "hand_subtitle": "Estimate per-meal portions using your hand size",
+      "portions": [
+        {"label": "Protein",  "portion": "1 palm",   "calc_unit": "g protein",  "example_dyn": "g chicken breast", "example": "or 1 sweet potato"},
+        {"label": "Carbs",    "portion": "1 fist",   "calc_unit": "g rice",     "example": "or 1 sweet potato"},
+        {"label": "Veggies",  "portion": "2 fists",  "calc_static": "≈ 150–200g veggies", "example": "steamed or lightly sautéed"},
+        {"label": "Fat",      "portion": "1 thumb",  "calc_unit": "g fat",      "example": "olive oil / avocado / nuts"}
+      ],
+      "formula_title": "Your meal formula",
+      "formula_chicken": "g chicken breast",
+      "formula_protein_unit": "g protein",
+      "formula_rice_unit": "g rice",
+      "formula_veggie": "handfuls of veggies",
+      "formula_fat_unit": "g good fat",
+      "kcal_meal": "kcal/meal",
+      "meals_day": "meals/day",
+      "protein_anchor_title": "💪 Protein — Anchor Each Meal",
+      "protein_anchor_sub": "Build each meal around protein first, then add carbs and veggies",
+      "total_protein": "Total protein",
+      "total_carb": "Total carbs",
+      "carb_timing_title": "⚡ Carb Timing",
+      "carb_timing_sub": "Prioritize carbs at lunch — taper toward evening",
+      "meal_times": ["🌅 Morning", "☀️ Lunch", "🌙 Dinner", "🍎 Snack"],
+      "protein_notes": ["eggs + yogurt", "chicken / fish / tofu", "fish / meat / eggs", "Greek yogurt"],
+      "carb_notes": ["stable blood sugar", "peak energy time", "reduce if no evening workout", "fruit, oats"],
+      "lunch_label": "Lunch"
     }
   },
   "pillarC": {

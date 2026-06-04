@@ -1163,9 +1163,14 @@ const MACRO_QUICK_FACTS = {
   'Nước':         { icon: '💧', tip: 'Uống 1 ly (250ml) trước mỗi bữa. Nước lọc tốt nhất; trà xanh không đường.' },
 };
 function InteractiveMacroCard({ macro, delay = 0, highlighted = false, expanded = false, onToggle }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b1tr = tPillars('pillarB.b1', { returnObjects: true }) || {};
   const [width, setWidth] = useState(0);
   const [ref, visible] = useScrollReveal(0.15);
   const fact = MACRO_QUICK_FACTS[macro.name] ?? { icon: '•', tip: '' };
+  const displayName = macro.displayName || macro.name;
+  const displayRole = macro.displayRole || macro.role;
+  const displayDose = macro.displayDose || macro.dose;
 
   useEffect(() => {
     if (!visible) return;
@@ -1200,15 +1205,15 @@ function InteractiveMacroCard({ macro, delay = 0, highlighted = false, expanded 
             {macro.icon}
           </div>
           <div>
-            <p className={`text-sm font-bold ${macro.text}`}>{macro.name}</p>
-            <p className="text-[10px] text-muted leading-none mt-0.5">{macro.dose}</p>
+            <p className={`text-sm font-bold ${macro.text}`}>{displayName}</p>
+            <p className="text-[10px] text-muted leading-none mt-0.5">{displayDose}</p>
           </div>
         </div>
         <div className="text-right">
           <p className={`text-base font-black ${macro.text} leading-none`}>
             <AnimatedVal value={macro.gram ?? macro.pct} /><span className="text-[10px] font-normal ml-0.5">{macro.gramUnit ?? '%'}</span>
           </p>
-          <p className="text-[8px] text-muted mt-0.5">/ngày · {expanded ? '▲ ẩn' : '▼ xem'}</p>
+          <p className="text-[8px] text-muted mt-0.5">{b1tr.per_day || '/ngày'} · {expanded ? `▲ ${b1tr.hide || 'ẩn'}` : `▼ ${b1tr.show || 'xem'}`}</p>
         </div>
       </div>
 
@@ -1219,7 +1224,7 @@ function InteractiveMacroCard({ macro, delay = 0, highlighted = false, expanded 
       </div>
 
       {/* Role */}
-      <p className="text-[11px] text-muted mb-3 leading-relaxed">{macro.role}</p>
+      <p className="text-[11px] text-muted mb-3 leading-relaxed">{displayRole}</p>
 
       {/* Sources */}
       <div className="flex flex-wrap gap-1.5 mb-3">
@@ -1283,8 +1288,8 @@ function MacroBar({ macro, delay = 0, highlighted = false }) {
             {macro.icon}
           </div>
           <div>
-            <p className={`text-sm font-bold ${macro.text}`}>{macro.name}</p>
-            <p className="text-[10px] text-muted">{macro.dose}</p>
+            <p className={`text-sm font-bold ${macro.text}`}>{displayName}</p>
+            <p className="text-[10px] text-muted">{displayDose}</p>
           </div>
         </div>
         <span className={`text-xs font-black ${macro.text}`}>{macro.pct}%</span>
@@ -1298,7 +1303,7 @@ function MacroBar({ macro, delay = 0, highlighted = false }) {
         />
       </div>
 
-      <p className="text-[11px] text-muted mb-3 leading-relaxed">{macro.role}</p>
+      <p className="text-[11px] text-muted mb-3 leading-relaxed">{displayRole}</p>
 
       <div className="flex flex-wrap gap-1.5">
         {macro.sources.map(s => (
@@ -1816,6 +1821,14 @@ function FoundationPanel({ s, onGoalKeyChange }) {
   const dynMacros      = useMemo(() => buildDynamicMacros(s, previewKcal), [s, previewKcal]);
   const activeMacroKey = METRIC_TO_MACRO[selectedMetric] ?? null;
 
+  const macrosTr = Array.isArray(pillarB.macros) ? pillarB.macros : [];
+  const translatedDynMacros = dynMacros.map((m, i) => ({
+    ...m,
+    displayName: macrosTr[i]?.name  || m.name,
+    displayRole: macrosTr[i]?.role  || m.role,
+    displayDose: macrosTr[i]?.dose  || m.dose,
+  }));
+
   const mP = dynMacros.find(m => m.name === 'Protein');
   const mC = dynMacros.find(m => m.name === 'Carbohydrate');
   const mF = dynMacros.find(m => m.name === 'Chất béo');
@@ -1834,8 +1847,8 @@ function FoundationPanel({ s, onGoalKeyChange }) {
       <PersonalizedBar panelId="b1" color="#84cc16" source="B0 (TDEE Calculator)" label={b1tr.based_on || 'Dựa trên thông số của bạn'}
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-        { key: 'tdee',    label: 'TDEE',      value: `${s.tdee.toLocaleString()} kcal`, note: 'duy trì cân',                       tip: `TDEE = BMR (${s.bmr.toLocaleString()} kcal) × hệ số hoạt động (${s.activity.mult}). Đây là lượng calo cơ thể đốt nếu bạn giữ nguyên mức vận động hiện tại. Ăn bằng con số này = giữ cân.` },
-        { key: 'target',  label: 'Mục tiêu',  value: `${s.targetKcal.toLocaleString()} kcal`, note: s.goal.label.toLowerCase(),    tip: `${s.goal.label}: TDEE ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} kcal = ${s.targetKcal.toLocaleString()} kcal/ngày. ${s.goal.note}` },
+        { key: 'tdee',    label: 'TDEE',                             value: `${s.tdee.toLocaleString()} kcal`, note: b1tr.tdee_note || 'duy trì cân',                       tip: `TDEE = BMR (${s.bmr.toLocaleString()} kcal) × hệ số hoạt động (${s.activity.mult}). Đây là lượng calo cơ thể đốt nếu bạn giữ nguyên mức vận động hiện tại. Ăn bằng con số này = giữ cân.` },
+        { key: 'target',  label: b1tr.target_label || 'Mục tiêu',  value: `${s.targetKcal.toLocaleString()} kcal`, note: translatedPreviewGoal.label.toLowerCase(), tip: `${s.goal.label}: TDEE ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} kcal = ${s.targetKcal.toLocaleString()} kcal/ngày. ${s.goal.note}` },
         { key: 'protein', label: 'Protein',   value: `${s.proteinG}g`,   note: `${(s.proteinG/s.weight).toFixed(1)}g/kg`,            tip: `${s.proteinG}g = ${(s.proteinG/s.weight).toFixed(1)}g × ${s.weight}kg cân nặng.` },
         { key: 'carb',    label: 'Carb',      value: `${s.carbG}g`,      note: `${s.carbPct}% kcal`,                                 tip: `Carb = (${s.targetKcal} - ${s.proteinG}×4 - ${s.fatG}×9) ÷ 4 = ${s.carbG}g/ngày.` },
         { key: 'fat',     label: 'Fat',       value: `${s.fatG}g`,       note: `${s.fatPct}% kcal`,                                  tip: `Fat = ${s.targetKcal} × 25% ÷ 9 = ${s.fatG}g/ngày.` },
@@ -1978,7 +1991,7 @@ function FoundationPanel({ s, onGoalKeyChange }) {
         </div>
         <p className="text-[10px] text-muted mb-4">{b1tr.click_hint || 'Nhấn vào mỗi thẻ để xem gợi ý thực hành.'}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {dynMacros.map((m, i) => (
+          {translatedDynMacros.map((m, i) => (
             <InteractiveMacroCard
               key={m.name}
               macro={m}
@@ -2100,17 +2113,22 @@ function PlatePanel({ s }) {
   const [carbBars, setCarbBars] = useState([0, 0, 0, 0]);
   const detail = selectedMetric ? b2MetricDetail(selectedMetric, s) : null;
 
+  const mealTimesTr    = Array.isArray(b2tr.meal_times)    ? b2tr.meal_times    : ['🌅 Sáng', '☀️ Trưa', '🌙 Tối', '🍎 Snack'];
+  const proteinNotesTr = Array.isArray(b2tr.protein_notes) ? b2tr.protein_notes : ['trứng + sữa chua', 'ức gà / cá / đậu hũ', 'cá / thịt / trứng', 'sữa chua Hy Lạp'];
+  const carbNotesTr    = Array.isArray(b2tr.carb_notes)    ? b2tr.carb_notes    : ['ổn định đường huyết', 'năng lượng cao nhất', 'giảm nếu không tập tối', 'trái cây, yến mạch'];
+  const portionsTr     = Array.isArray(b2tr.portions)      ? b2tr.portions      : [];
+
   const proteinRows = [
-    { meal: '🌅 Sáng', g: s.breakfastProteinG, pct: 25, note: 'trứng + sữa chua' },
-    { meal: '☀️ Trưa', g: s.lunchProteinG,     pct: 35, note: 'ức gà / cá / đậu hũ' },
-    { meal: '🌙 Tối',  g: s.dinnerProteinG,    pct: 30, note: 'cá / thịt / trứng' },
-    { meal: '🍎 Snack',g: s.snackProteinG,     pct: 10, note: 'sữa chua Hy Lạp' },
+    { meal: mealTimesTr[0], g: s.breakfastProteinG, pct: 25, note: proteinNotesTr[0] },
+    { meal: mealTimesTr[1], g: s.lunchProteinG,     pct: 35, note: proteinNotesTr[1] },
+    { meal: mealTimesTr[2], g: s.dinnerProteinG,    pct: 30, note: proteinNotesTr[2] },
+    { meal: mealTimesTr[3], g: s.snackProteinG,     pct: 10, note: proteinNotesTr[3] },
   ];
   const carbRows = [
-    { meal: '🌅 Sáng', g: s.breakfastCarbG, pct: 25, note: 'ổn định đường huyết' },
-    { meal: '☀️ Trưa', g: s.lunchCarbG,     pct: 40, note: 'năng lượng cao nhất', hi: true },
-    { meal: '🌙 Tối',  g: s.dinnerCarbG,    pct: 25, note: 'giảm nếu không tập tối' },
-    { meal: '🍎 Snack',g: s.snackCarbG,     pct: 10, note: 'trái cây, yến mạch' },
+    { meal: mealTimesTr[0], g: s.breakfastCarbG, pct: 25, note: carbNotesTr[0] },
+    { meal: mealTimesTr[1], g: s.lunchCarbG,     pct: 40, note: carbNotesTr[1], hi: true },
+    { meal: mealTimesTr[2], g: s.dinnerCarbG,    pct: 25, note: carbNotesTr[2] },
+    { meal: mealTimesTr[3], g: s.snackCarbG,     pct: 10, note: carbNotesTr[3] },
   ];
 
   // animate bars on mount
@@ -2198,16 +2216,16 @@ function PlatePanel({ s }) {
           <div className="flex items-start gap-3 mb-5">
             <div className="w-9 h-9 rounded-xl bg-lime-500/15 border border-lime-500/25 flex items-center justify-center text-xl shrink-0">✋</div>
             <div>
-              <h3 className="text-sm font-bold text-text">Công Thức Khẩu Phần Theo Tay — Không Cần Cân</h3>
-              <p className="text-[10px] text-muted mt-0.5">Ước lượng khẩu phần từng bữa dựa trên kích thước bàn tay bạn</p>
+              <h3 className="text-sm font-bold text-text">{b2tr.hand_title || 'Công Thức Khẩu Phần Theo Tay — Không Cần Cân'}</h3>
+              <p className="text-[10px] text-muted mt-0.5">{b2tr.hand_subtitle || 'Ước lượng khẩu phần từng bữa dựa trên kích thước bàn tay bạn'}</p>
             </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
             {[
-              { hand: '🤜', label: 'Đạm', portion: '1 lòng bàn tay', calc: `≈ ${s.perMealProteinG}g protein`, example: `${s.chickenG}g ức gà`, color: '#84cc16' },
-              { hand: '✊', label: 'Tinh bột', portion: '1 nắm tay', calc: `≈ ${s.riceG}g cơm`, example: 'hoặc 1 củ khoai lang', color: '#f97316' },
-              { hand: '🤲', label: 'Rau xanh', portion: '2 nắm tay', calc: '≈ 150–200g rau', example: 'luộc hoặc xào ít dầu', color: '#22c55e' },
-              { hand: '👍', label: 'Chất béo', portion: '1 ngón cái', calc: `≈ ${s.perMealFatG}g fat`, example: 'dầu olive / bơ / hạt', color: '#eab308' },
+              { hand: '🤜', label: portionsTr[0]?.label || 'Đạm',      portion: portionsTr[0]?.portion || '1 lòng bàn tay', calc: `≈ ${s.perMealProteinG}g protein`,                             example: `${s.chickenG}${portionsTr[0]?.example_dyn || 'g ức gà'}`,      color: '#84cc16' },
+              { hand: '✊', label: portionsTr[1]?.label || 'Tinh bột', portion: portionsTr[1]?.portion || '1 nắm tay',      calc: `≈ ${s.riceG}${portionsTr[1]?.calc_unit ? ' ' + portionsTr[1].calc_unit : 'g cơm'}`, example: portionsTr[1]?.example || 'hoặc 1 củ khoai lang', color: '#f97316' },
+              { hand: '🤲', label: portionsTr[2]?.label || 'Rau xanh', portion: portionsTr[2]?.portion || '2 nắm tay',     calc: portionsTr[2]?.calc_static || '≈ 150–200g rau',                example: portionsTr[2]?.example || 'luộc hoặc xào ít dầu',                color: '#22c55e' },
+              { hand: '👍', label: portionsTr[3]?.label || 'Chất béo', portion: portionsTr[3]?.portion || '1 ngón cái',    calc: `≈ ${s.perMealFatG}g fat`,                                      example: portionsTr[3]?.example || 'dầu olive / bơ / hạt',                color: '#eab308' },
             ].map((p, i) => (
               <div key={i} className="rounded-xl border p-3.5 text-center" style={{ borderColor: `${p.color}28`, background: `${p.color}07` }}>
                 <div className="text-3xl mb-2">{p.hand}</div>
@@ -2221,14 +2239,14 @@ function PlatePanel({ s }) {
           {/* Personalized formula bar */}
           <div className="rounded-xl px-4 py-3 border" style={{ background: 'rgba(132,204,22,0.05)', borderColor: 'rgba(132,204,22,0.18)' }}>
             <p className="text-[10px] text-muted mb-0.5">
-              <span className="text-lime-400 font-bold">Công thức bữa của bạn</span>
-              <span className="text-muted/60 ml-1">({s.perMealKcal} kcal/bữa · {s.mealsPerDay} bữa/ngày)</span>
+              <span className="text-lime-400 font-bold">{b2tr.formula_title || 'Công thức bữa của bạn'}</span>
+              <span className="text-muted/60 ml-1">({s.perMealKcal} {b2tr.kcal_meal || 'kcal/bữa'} · {s.mealsPerDay} {b2tr.meals_day || 'bữa/ngày'})</span>
             </p>
             <p className="text-[11px] text-text font-semibold leading-relaxed">
-              {s.chickenG}g ức gà <span className="text-lime-400">({s.perMealProteinG}g đạm)</span>
-              {' + '}{s.riceG}g cơm <span className="text-orange-400">({s.perMealCarbG}g carb)</span>
-              {' + '}<span className="text-green-400">2 nắm rau</span>
-              {' + '}{s.perMealFatG}g chất béo tốt
+              {s.chickenG}{b2tr.formula_chicken || 'g ức gà'} <span className="text-lime-400">({s.perMealProteinG}{b2tr.formula_protein_unit || 'g đạm'})</span>
+              {' + '}{s.riceG}{b2tr.formula_rice_unit || 'g cơm'} <span className="text-orange-400">({s.perMealCarbG}g carb)</span>
+              {' + '}<span className="text-green-400">2 {b2tr.formula_veggie || 'nắm rau'}</span>
+              {' + '}{s.perMealFatG}{b2tr.formula_fat_unit ? ' ' + b2tr.formula_fat_unit : 'g chất béo tốt'}
             </p>
           </div>
         </div>
@@ -2239,8 +2257,8 @@ function PlatePanel({ s }) {
         {/* Protein anchor */}
         <RevealBlock delay={60}>
           <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-5 h-full">
-            <h3 className="text-sm font-bold text-lime-400 mb-0.5 flex items-center gap-2">💪 Protein — "Neo" Mỗi Bữa</h3>
-            <p className="text-[10px] text-muted mb-4">Xây bữa ăn từ đạm trước, sau đó thêm carb và rau</p>
+            <h3 className="text-sm font-bold text-lime-400 mb-0.5 flex items-center gap-2">{b2tr.protein_anchor_title || '💪 Protein — "Neo" Mỗi Bữa'}</h3>
+            <p className="text-[10px] text-muted mb-4">{b2tr.protein_anchor_sub || 'Xây bữa ăn từ đạm trước, sau đó thêm carb và rau'}</p>
             <div className="space-y-3">
               {proteinRows.map((r, i) => (
                 <div key={i}>
@@ -2258,7 +2276,7 @@ function PlatePanel({ s }) {
               ))}
             </div>
             <div className="mt-4 pt-3 border-t border-lime-500/10 flex items-center justify-between">
-              <p className="text-[10px] text-muted">Tổng protein</p>
+              <p className="text-[10px] text-muted">{b2tr.total_protein || 'Tổng protein'}</p>
               <p className="text-[11px] font-black text-lime-400">{s.proteinG}g/ngày · {(s.proteinG/s.weight).toFixed(1)}g/kg</p>
             </div>
           </div>
@@ -2267,8 +2285,8 @@ function PlatePanel({ s }) {
         {/* Carb timing */}
         <RevealBlock delay={100}>
           <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5 h-full">
-            <h3 className="text-sm font-bold text-orange-400 mb-0.5 flex items-center gap-2">⚡ Carb Đúng Thời Điểm</h3>
-            <p className="text-[10px] text-muted mb-4">Ưu tiên tinh bột vào bữa trưa — giảm dần về tối</p>
+            <h3 className="text-sm font-bold text-orange-400 mb-0.5 flex items-center gap-2">{b2tr.carb_timing_title || '⚡ Carb Đúng Thời Điểm'}</h3>
+            <p className="text-[10px] text-muted mb-4">{b2tr.carb_timing_sub || 'Ưu tiên tinh bột vào bữa trưa — giảm dần về tối'}</p>
             <div className="space-y-3">
               {carbRows.map((r, i) => (
                 <div key={i}>
@@ -2286,8 +2304,8 @@ function PlatePanel({ s }) {
               ))}
             </div>
             <div className="mt-4 pt-3 border-t border-orange-500/10 flex items-center justify-between">
-              <p className="text-[10px] text-muted">Tổng carb</p>
-              <p className="text-[11px] font-black text-orange-400">{s.carbG}g/ngày · Trưa: {s.lunchCarbG}g</p>
+              <p className="text-[10px] text-muted">{b2tr.total_carb || 'Tổng carb'}</p>
+              <p className="text-[11px] font-black text-orange-400">{s.carbG}g/ngày · {b2tr.lunch_label || 'Trưa'}: {s.lunchCarbG}g</p>
             </div>
           </div>
         </RevealBlock>

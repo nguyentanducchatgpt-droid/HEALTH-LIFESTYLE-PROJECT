@@ -628,36 +628,37 @@ export default function PillarA() {
         {/* Opening statement */}
         <div className="text-center mb-10 max-w-2xl mx-auto">
           <p className="text-xl md:text-2xl font-semibold text-text/85 leading-relaxed mb-3">
-            Tập luyện hiệu quả không phải là tập <em>nhiều hơn</em> —<br className="hidden md:block" />
-            mà là tập <span className="text-accent font-bold not-italic">đúng hơn</span>.
+            {pillar?.intro_pt1 || 'Tập luyện hiệu quả không phải là tập '}<em>{pillar?.intro_em || 'nhiều hơn'}</em>{pillar?.intro_pt2 || ' — mà là tập '}<br className="hidden md:block" />
+            <span className="text-accent font-bold not-italic">{pillar?.intro_strong || 'đúng hơn'}</span>.
           </p>
           <p className="text-sm text-muted leading-relaxed">
-            4 chủ đề dưới đây được sắp xếp theo thứ tự logic: từ kỹ thuật nền tảng,
-            xây cấu trúc buổi tập, tổ chức nhịp tuần, cho đến đo lường và điều chỉnh tiến bộ.
-            Mỗi bước chuẩn bị cho bước tiếp theo.
+            {pillar?.intro_sub || '4 chủ đề dưới đây được sắp xếp theo thứ tự logic.'}
           </p>
         </div>
 
         {/* 3 core principles */}
         <div className="grid md:grid-cols-3 gap-4 mb-12">
-          {PRINCIPLES.map((p, i) => (
-            <div
-              key={i}
-              className="flex gap-4 p-5 rounded-2xl border border-border/40 bg-surface/20 hover:bg-surface/35 hover:border-border/60 transition-all duration-300 group animate-fade-in-up"
-              style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
-            >
-              <span className="text-2xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">{p.icon}</span>
-              <div>
-                <p className="text-sm font-bold text-text mb-1.5">{p.title}</p>
-                <p className="text-[11px] text-muted leading-relaxed">{p.body}</p>
+          {PRINCIPLES.map((p, i) => {
+            const pt = Array.isArray(pillar?.principles) && pillar.principles[i] ? pillar.principles[i] : p;
+            return (
+              <div
+                key={i}
+                className="flex gap-4 p-5 rounded-2xl border border-border/40 bg-surface/20 hover:bg-surface/35 hover:border-border/60 transition-all duration-300 group animate-fade-in-up"
+                style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
+              >
+                <span className="text-2xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">{p.icon}</span>
+                <div>
+                  <p className="text-sm font-bold text-text mb-1.5">{pt.title}</p>
+                  <p className="text-[11px] text-muted leading-relaxed">{pt.body}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* 4-step journey flow */}
         <div className="relative" ref={journeyRef}>
-          <p className="text-center text-[9px] font-bold text-muted/50 uppercase tracking-[0.25em] mb-5">Hành trình 4 bước</p>
+          <p className="text-center text-[9px] font-bold text-muted/50 uppercase tracking-[0.25em] mb-5">{pillar?.journey_label || 'Hành trình 4 bước'}</p>
 
           {/* Particle overlay */}
           <div className="absolute inset-0 pointer-events-none z-30" style={{ overflow: 'visible' }}>
@@ -686,7 +687,9 @@ export default function PillarA() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {TABS.map((t, i) => (
+            {TABS.map((t, i) => {
+              const jt = Array.isArray(pillar?.journey) && pillar.journey[i] ? pillar.journey[i] : t;
+              return (
               <div
                 key={t.n}
                 ref={el => { stepRefs.current[i] = el; }}
@@ -705,14 +708,15 @@ export default function PillarA() {
                 <span className="text-xl mb-2">{t.icon}</span>
 
                 {/* Title */}
-                <p className="text-[11px] font-bold text-text/80 group-hover:text-text leading-snug mb-1 transition-colors">{t.title}</p>
+                <p className="text-[11px] font-bold text-text/80 group-hover:text-text leading-snug mb-1 transition-colors">{jt.title}</p>
 
                 {/* Sub in tab color */}
                 <p className="text-[9px] leading-tight" style={{ color: `${t.color}80` }}>
-                  {t.sub.length > 22 ? t.sub.slice(0, 22) + '…' : t.sub}
+                  {jt.sub.length > 22 ? jt.sub.slice(0, 22) + '…' : jt.sub}
                 </p>
               </div>
-            ))}
+              );
+            })}
           </div>
 
           <p className="text-center text-[10px] text-muted/40 mt-5">

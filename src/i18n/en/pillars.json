@@ -240,7 +240,24 @@
       { "capability": "Mobility", "test": "Hip hinge, shoulder rotation, squat depth check" },
       { "capability": "Habit", "test": "Sessions/week · average daily steps · energy level" }
     ],
-    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
+    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"],
+    "intro_pt1": "Effective training is not about training ",
+    "intro_em": "more",
+    "intro_pt2": " — it's about training ",
+    "intro_strong": "smarter",
+    "intro_sub": "The 4 topics below are arranged in logical order: from fundamental technique, building training structure, organizing weekly rhythm, to measuring and adjusting progress. Each step prepares for the next.",
+    "journey_label": "4-Step Journey",
+    "principles": [
+      { "title": "Technique is the foundation", "body": "Learning correctly from the start saves years of wrong training. 6 fundamental movement patterns cover 95% of all exercises you'll ever need — no complex equipment required." },
+      { "title": "Consistency beats intensity", "body": "The brain builds habits through regular repetition. 3 sessions/week for 12 weeks beats 7 sessions/week then burnout after 3 — the body needs time to adapt." },
+      { "title": "Measure to stay on track", "body": "Progress that can't be seen leads to discouragement. Clear milestones every 4 weeks tell you exactly where you are and what to adjust next." }
+    ],
+    "journey": [
+      { "title": "6 Fundamental Movements", "sub": "Warm-Up & Cool-Down" },
+      { "title": "Daily Training Framework", "sub": "Choose Your Training Window" },
+      { "title": "Suggested Weekly Rhythm", "sub": "Goal-Based Workouts" },
+      { "title": "Progress Ladder", "sub": "Monthly Progress Tests" }
+    ]
   },
   "pillarB": {
     "id": "b",

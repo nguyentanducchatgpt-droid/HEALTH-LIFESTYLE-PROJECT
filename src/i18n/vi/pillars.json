@@ -240,7 +240,24 @@
       { "capability": "Linh Hoạt", "test": "Kiểm tra gập hông, xoay vai, gập chân biên độ đầy đủ" },
       { "capability": "Thói quen", "test": "Số buổi tập/tuần · số bước trung bình · cảm giác năng lượng" }
     ],
-    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
+    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"],
+    "intro_pt1": "Tập luyện hiệu quả không phải là tập ",
+    "intro_em": "nhiều hơn",
+    "intro_pt2": " — mà là tập ",
+    "intro_strong": "đúng hơn",
+    "intro_sub": "4 chủ đề dưới đây được sắp xếp theo thứ tự logic: từ kỹ thuật nền tảng, xây cấu trúc buổi tập, tổ chức nhịp tuần, cho đến đo lường và điều chỉnh tiến bộ. Mỗi bước chuẩn bị cho bước tiếp theo.",
+    "journey_label": "Hành trình 4 bước",
+    "principles": [
+      { "title": "Kỹ thuật đúng là nền tảng", "body": "Học đúng từ đầu tiết kiệm hàng năm tập sai. 6 mẫu vận động cơ bản bao phủ 95% mọi bài tập bạn cần trong cuộc đời — không cần thiết bị phức tạp." },
+      { "title": "Nhất quán quan trọng hơn cường độ", "body": "Não bộ xây thói quen qua lặp lại đều đặn. 3 buổi/tuần duy trì 12 tuần tốt hơn 7 buổi/tuần rồi burnout sau 3 tuần — cơ thể cần thời gian thích nghi." },
+      { "title": "Đo để không lạc hướng", "body": "Tiến bộ mà không thấy được thì dễ nản lòng. Mốc rõ ràng mỗi 4 tuần cho bạn biết chính xác mình đang ở đâu và cần điều chỉnh gì tiếp theo." }
+    ],
+    "journey": [
+      { "title": "6 Mẫu Vận Động Nền Tảng", "sub": "Khởi Động & Giãn Cơ Sau Tập" },
+      { "title": "Khung Ngày Tập 20–40 Phút", "sub": "Chọn Khung Thời Gian Luyện Tập" },
+      { "title": "Nhịp Tuần Gợi Ý", "sub": "Buổi Tập Theo Mục Tiêu" },
+      { "title": "Bậc Thang Tiến Bộ", "sub": "Kiểm Tra Tiến Bộ Hàng Tháng" }
+    ]
   },
   "pillarB": {
     "id": "b",

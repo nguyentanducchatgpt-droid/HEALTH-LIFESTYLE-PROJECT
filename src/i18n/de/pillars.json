@@ -240,7 +240,24 @@
       { "capability": "Beweglichkeit", "test": "Hüftangeln, Schulterrotation, volle Squat-Tiefe prüfen" },
       { "capability": "Gewohnheit", "test": "Einheiten/Woche · durchschnittliche Schritte · Energielevel" }
     ],
-    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"]
+    "videos": ["SQUAT", "PUSH", "PULL", "HINGE", "CORE"],
+    "intro_pt1": "Effektives Training bedeutet nicht ",
+    "intro_em": "mehr",
+    "intro_pt2": " zu trainieren — sondern ",
+    "intro_strong": "klüger",
+    "intro_sub": "Die 4 folgenden Themen sind in logischer Reihenfolge angeordnet: von der Grundtechnik über den Trainingsaufbau und den Wochenrhythmus bis zur Messung und Anpassung des Fortschritts.",
+    "journey_label": "4-Schritte-Reise",
+    "principles": [
+      { "title": "Technik ist das Fundament", "body": "Richtiges Lernen von Anfang an spart Jahre falschen Trainings. 6 grundlegende Bewegungsmuster decken 95% aller Übungen ab — kein komplexes Equipment nötig." },
+      { "title": "Konsequenz schlägt Intensität", "body": "Das Gehirn baut Gewohnheiten durch regelmäßige Wiederholung auf. 3 Einheiten/Woche über 12 Wochen schlägt 7 Einheiten/Woche mit Burnout nach 3 Wochen." },
+      { "title": "Messen, um auf Kurs zu bleiben", "body": "Unsichtbarer Fortschritt führt zur Entmutigung. Klare Meilensteine alle 4 Wochen zeigen genau, wo man steht und was angepasst werden muss." }
+    ],
+    "journey": [
+      { "title": "6 Grundlegende Bewegungen", "sub": "Aufwärmen & Abkühlen" },
+      { "title": "Trainingsrahmen 20–40 Min", "sub": "Wähle dein Trainingsfenster" },
+      { "title": "Vorgeschlagener Wochenrhythmus", "sub": "Zielorientierte Einheiten" },
+      { "title": "Fortschrittsleiter", "sub": "Monatliche Fortschrittstests" }
+    ]
   },
   "pillarB": {
     "id": "b",

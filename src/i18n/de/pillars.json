@@ -476,7 +476,71 @@
       {"label":"Protein","pct":25},
       {"label":"Kohlenhydrate","pct":25}
     ],
-    "videos": []
+    "videos": [],
+    "hero_quote": "Genug essen — regelmäßig essen — echtes Essen —\nnach Zielen essen — lange leben",
+    "hero_sub": "Heute ein bisschen besser essen als gestern, leicht genug um morgen weiterzumachen.",
+    "hero_stats": [
+      {"n": "3", "unit": "Mahlz./Tag", "label": "Opt. Rhythmus"},
+      {"n": "80/20", "unit": "", "label": "Nachhaltige Regel"},
+      {"n": "21+", "unit": "Tage", "label": "Gewohnheitsbildung"},
+      {"n": "1.6g", "unit": "/kg", "label": "Min. Protein"}
+    ],
+    "principles_label": "Prinzipien",
+    "principles_title": "Kernprinzipien",
+    "tabs_section_label": "Bereiche",
+    "tabs_section_title": "Ernährung",
+    "tabs": [
+      {"label": "TDEE Rechner"},
+      {"label": "Grundlagen"},
+      {"label": "Ernährungsteller"},
+      {"label": "Ziele"},
+      {"label": "Mahlzeiten"},
+      {"label": "Tracking"},
+      {"label": "7 Tage"},
+      {"label": "Fortgeschritten"}
+    ],
+    "activity_levels": [
+      {"key": "sedentary", "label": "Wenig aktiv"},
+      {"key": "light", "label": "Leicht (1–3 Tage/Woche)"},
+      {"key": "moderate", "label": "Moderat (3–5 Tage/Woche)"},
+      {"key": "active", "label": "Aktiv (6–7 Tage)"},
+      {"key": "very_active", "label": "Sehr aktiv / 2× täglich"}
+    ],
+    "goal_modifiers": [
+      {"key": "loss", "label": "Fett abbauen", "note": "Defizit 300–500 kcal"},
+      {"key": "recomp", "label": "Gewicht halten", "note": "Um TDEE ± 100 kcal"},
+      {"key": "gain", "label": "Muskelaufbau", "note": "Überschuss 200–400 kcal"}
+    ],
+    "b0": {
+      "what": "Was ist TDEE?",
+      "desc_intro": "TDEE",
+      "desc_body": "(Gesamtenergieverbrauch) ist die Gesamtmenge an Kalorien, die täglich verbrannt werden — bestehend aus 3 Teilen:",
+      "bmr_sub": "Grundumsatz",
+      "tea_sub": "Körperliche Aktivität",
+      "tef_sub": "Nahrungsverdauung",
+      "inputs_label": "Daten eingeben",
+      "weight_label": "Gewicht (kg)",
+      "height_label": "Größe (cm)",
+      "age_label": "Alter",
+      "sex_label": "Geschlecht",
+      "male_label": "Männlich",
+      "female_label": "Weiblich",
+      "activity_label": "Aktivitätsniveau",
+      "results_label": "TDEE-Ergebnis",
+      "tdee_est_label": "Geschätzter TDEE",
+      "kcal_per_day": "kcal / Tag",
+      "formula_note": "Mifflin-St Jeor × Aktivitätsfaktor",
+      "analysis_label": "Detailanalyse",
+      "bmr_label": "BMR",
+      "bmr_rest_sub": "Vollständige Ruhe",
+      "activity_contribution_label": "Aktivität",
+      "goal_label": "Ziel",
+      "per_hour_label": "Pro Stunde",
+      "per_hour_sub": "Ø Verbrauch",
+      "hover_hint": "Hover für Details",
+      "benefits_label": "Vorteile des TDEE-Wissens",
+      "accuracy_label": "Genauigkeit & Hinweise"
+    }
   },
   "pillarC": {
     "id": "c",

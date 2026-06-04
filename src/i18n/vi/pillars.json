@@ -476,7 +476,71 @@
       {"label":"Đạm","pct":25},
       {"label":"Tinh bột","pct":25}
     ],
-    "videos": []
+    "videos": [],
+    "hero_quote": "Ăn đủ — ăn đều — ăn thật —\năn theo mục tiêu — sống được lâu dài",
+    "hero_sub": "Ăn tốt hơn hôm qua một chút, và đủ dễ để ngày mai còn làm tiếp.",
+    "hero_stats": [
+      {"n": "3", "unit": "bữa/ngày", "label": "Nhịp ăn tối ưu"},
+      {"n": "80/20", "unit": "", "label": "Quy tắc bền vững"},
+      {"n": "21+", "unit": "ngày", "label": "Hình thành thói quen"},
+      {"n": "1.6g", "unit": "/kg", "label": "Protein tối thiểu"}
+    ],
+    "principles_label": "nguyên tắc",
+    "principles_title": "Cốt Lõi",
+    "tabs_section_label": "chuyên mục",
+    "tabs_section_title": "Dinh Dưỡng",
+    "tabs": [
+      {"label": "Tính TDEE"},
+      {"label": "Nền Tảng"},
+      {"label": "Đĩa Ăn"},
+      {"label": "Mục Tiêu"},
+      {"label": "Thực Đơn"},
+      {"label": "Theo Dõi"},
+      {"label": "7 Ngày"},
+      {"label": "Nâng Cao"}
+    ],
+    "activity_levels": [
+      {"key": "sedentary", "label": "Ít vận động"},
+      {"key": "light", "label": "Nhẹ (1–3 ngày/tuần)"},
+      {"key": "moderate", "label": "Vừa (3–5 ngày/tuần)"},
+      {"key": "active", "label": "Nhiều (6–7 ngày)"},
+      {"key": "very_active", "label": "Rất nhiều / 2 buổi"}
+    ],
+    "goal_modifiers": [
+      {"key": "loss", "label": "Giảm mỡ", "note": "Thâm hụt 300–500 kcal"},
+      {"key": "recomp", "label": "Duy trì", "note": "Ăn quanh TDEE ± 100"},
+      {"key": "gain", "label": "Tăng cơ", "note": "Thặng dư 200–400 kcal"}
+    ],
+    "b0": {
+      "what": "TDEE là gì?",
+      "desc_intro": "TDEE",
+      "desc_body": "(Total Daily Energy Expenditure) là tổng lượng calo cơ thể đốt cháy mỗi ngày — gồm 3 thành phần:",
+      "bmr_sub": "Trao đổi chất cơ bản",
+      "tea_sub": "Hoạt động thể chất",
+      "tef_sub": "Tiêu hóa thức ăn",
+      "inputs_label": "Nhập Thông Số",
+      "weight_label": "Cân nặng (kg)",
+      "height_label": "Chiều cao (cm)",
+      "age_label": "Tuổi",
+      "sex_label": "Giới tính",
+      "male_label": "Nam",
+      "female_label": "Nữ",
+      "activity_label": "Mức hoạt động",
+      "results_label": "Kết Quả TDEE",
+      "tdee_est_label": "TDEE ước tính",
+      "kcal_per_day": "kcal / ngày",
+      "formula_note": "Mifflin-St Jeor × Hệ số hoạt động",
+      "analysis_label": "Phân Tích Chi Tiết",
+      "bmr_label": "BMR",
+      "bmr_rest_sub": "Nghỉ ngơi hoàn toàn",
+      "activity_contribution_label": "Hoạt động",
+      "goal_label": "Mục tiêu",
+      "per_hour_label": "Mỗi giờ",
+      "per_hour_sub": "Tiêu thụ trung bình",
+      "hover_hint": "Hover để xem chi tiết",
+      "benefits_label": "Lợi Ích Khi Biết TDEE",
+      "accuracy_label": "Độ chính xác & Lưu ý"
+    }
   },
   "pillarC": {
     "id": "c",

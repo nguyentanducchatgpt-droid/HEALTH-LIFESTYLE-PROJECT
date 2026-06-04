@@ -4728,6 +4728,15 @@ const CALC_TOOLTIPS = [
 
 // ─── CalcPanel (B0) — Interactive TDEE calculator ───────────────────────────
 function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b0tr = tPillars('pillarB.b0', { returnObjects: true }) || {};
+  const activityTr = tPillars('pillarB.activity_levels', { returnObjects: true }) || [];
+  const goalTr = tPillars('pillarB.goal_modifiers', { returnObjects: true }) || [];
+  const translatedActivityLevels = ACTIVITY_LEVELS.map((a, i) => ({ ...a, label: activityTr[i]?.label || a.label }));
+  const translatedGoalModifiers = GOAL_MODIFIERS.map((g, i) => ({ ...g, label: goalTr[i]?.label || g.label, note: goalTr[i]?.note || g.note }));
+  const translatedActivity = translatedActivityLevels.find(a => a.key === activityKey) || translatedActivityLevels[2];
+  const translatedGoal = translatedGoalModifiers.find(g => g.key === goalKey) || translatedGoalModifiers[1];
+
   const { activity, bmr, tdee, goal: selectedGoal, targetKcal } = s;
 
   const numInput = (val, set, min, max) => (
@@ -4761,15 +4770,15 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
         <div className="flex items-start gap-4">
           <div className="w-9 h-9 rounded-xl bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-lg shrink-0">🔬</div>
           <div>
-            <p className="text-sm font-bold text-violet-300 mb-1.5">TDEE là gì?</p>
+            <p className="text-sm font-bold text-violet-300 mb-1.5">{b0tr.what || 'TDEE là gì?'}</p>
             <p className="text-[12px] text-muted leading-relaxed">
-              <span className="text-text/90 font-semibold">TDEE</span> (Total Daily Energy Expenditure) là tổng lượng calo cơ thể đốt cháy mỗi ngày — gồm 3 thành phần:
+              <span className="text-text/90 font-semibold">{b0tr.desc_intro || 'TDEE'}</span> {b0tr.desc_body || '(Total Daily Energy Expenditure) là tổng lượng calo cơ thể đốt cháy mỗi ngày — gồm 3 thành phần:'}
             </p>
             <div className="mt-3 grid grid-cols-3 gap-2">
               {[
-                { label: 'BMR', sub: 'Trao đổi chất cơ bản', pct: '60–75%', icon: '💤', color: '#8b5cf6' },
-                { label: 'TEA', sub: 'Hoạt động thể chất', pct: '15–30%', icon: '🏃', color: '#06b6d4' },
-                { label: 'TEF', sub: 'Tiêu hóa thức ăn', pct: '5–10%', icon: '🍽️', color: '#22c55e' },
+                { label: 'BMR', sub: b0tr.bmr_sub || 'Trao đổi chất cơ bản', pct: '60–75%', icon: '💤', color: '#8b5cf6' },
+                { label: 'TEA', sub: b0tr.tea_sub || 'Hoạt động thể chất', pct: '15–30%', icon: '🏃', color: '#06b6d4' },
+                { label: 'TEF', sub: b0tr.tef_sub || 'Tiêu hóa thức ăn', pct: '5–10%', icon: '🍽️', color: '#22c55e' },
               ].map((c, i) => (
                 <div key={c.label} className="group/tdeec relative">
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 z-50 pointer-events-none opacity-0 group-hover/tdeec:opacity-100 scale-90 group-hover/tdeec:scale-100 translate-y-1 group-hover/tdeec:translate-y-0 transition-all duration-200 origin-top">
@@ -4791,27 +4800,27 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left: inputs */}
         <div className="space-y-5">
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Nhập Thông Số</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">{b0tr.inputs_label || 'Nhập Thông Số'}</p>
 
           {/* Weight */}
           <div className="flex items-center justify-between">
-            <span className="text-xs text-muted">Cân nặng (kg)</span>
+            <span className="text-xs text-muted">{b0tr.weight_label || 'Cân nặng (kg)'}</span>
             {numInput(weight, setWeight, 30, 200)}
           </div>
           {/* Height */}
           <div className="flex items-center justify-between">
-            <span className="text-xs text-muted">Chiều cao (cm)</span>
+            <span className="text-xs text-muted">{b0tr.height_label || 'Chiều cao (cm)'}</span>
             {numInput(height, setHeight, 100, 250)}
           </div>
           {/* Age */}
           <div className="flex items-center justify-between">
-            <span className="text-xs text-muted">Tuổi</span>
+            <span className="text-xs text-muted">{b0tr.age_label || 'Tuổi'}</span>
             {numInput(age, setAge, 10, 100)}
           </div>
 
           {/* Sex toggle */}
           <div className="flex items-center justify-between">
-            <span className="text-xs text-muted">Giới tính</span>
+            <span className="text-xs text-muted">{b0tr.sex_label || 'Giới tính'}</span>
             <div className="flex gap-2">
               {['male', 'female'].map(s => (
                 <button
@@ -4824,7 +4833,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
                       : 'border-border/40 text-muted hover:border-border/70'
                   }`}
                 >
-                  {s === 'male' ? 'Nam' : 'Nữ'}
+                  {s === 'male' ? (b0tr.male_label || 'Nam') : (b0tr.female_label || 'Nữ')}
                 </button>
               ))}
             </div>
@@ -4832,9 +4841,9 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
 
           {/* Activity */}
           <div>
-            <p className="text-xs text-muted mb-2">Mức hoạt động</p>
+            <p className="text-xs text-muted mb-2">{b0tr.activity_label || 'Mức hoạt động'}</p>
             <div className="space-y-1.5">
-              {ACTIVITY_LEVELS.map(a => (
+              {translatedActivityLevels.map(a => (
                 <button
                   key={a.key}
                   type="button"
@@ -4854,13 +4863,13 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
 
         {/* Right: output */}
         <div className="space-y-4">
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Kết Quả TDEE</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">{b0tr.results_label || 'Kết Quả TDEE'}</p>
 
           {/* TDEE display */}
           <div className="rounded-2xl border border-violet-500/25 bg-violet-500/8 p-5 text-center">
-            <p className="text-[10px] text-muted mb-1 uppercase tracking-widest">TDEE ước tính</p>
+            <p className="text-[10px] text-muted mb-1 uppercase tracking-widest">{b0tr.tdee_est_label || 'TDEE ước tính'}</p>
             <p className="text-4xl font-black" style={{ color: '#8b5cf6' }}>{tdee.toLocaleString()}</p>
-            <p className="text-xs text-muted mt-1">kcal / ngày</p>
+            <p className="text-xs text-muted mt-1">{b0tr.kcal_per_day || 'kcal / ngày'}</p>
             <div className="mt-4 pt-3 border-t border-violet-500/15 flex items-center justify-center flex-wrap gap-1.5 text-[10px]">
               <span className="px-2 py-0.5 rounded-lg font-bold" style={{ background: '#8b5cf615', border: '1px solid #8b5cf630', color: '#c4b5fd' }}>BMR {bmr.toLocaleString()}</span>
               <span className="text-muted">×</span>
@@ -4868,12 +4877,12 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
               <span className="text-muted">=</span>
               <span className="px-2 py-0.5 rounded-lg font-black" style={{ background: '#8b5cf620', border: '1px solid #8b5cf640', color: '#a78bfa' }}>{tdee.toLocaleString()}</span>
             </div>
-            <p className="text-[9px] text-muted/40 mt-1.5">Mifflin-St Jeor × Hệ số hoạt động</p>
+            <p className="text-[9px] text-muted/40 mt-1.5">{b0tr.formula_note || 'Mifflin-St Jeor × Hệ số hoạt động'}</p>
           </div>
 
           {/* Goal cards */}
           <div className="space-y-3">
-            {GOAL_MODIFIERS.map(g => {
+            {translatedGoalModifiers.map(g => {
               const kcal = tdee + g.delta;
               const proteinG = Math.round(weight * (g.key === 'loss' ? 2.0 : 1.8));
               const fatG = Math.round(kcal * 0.25 / 9);
@@ -4917,13 +4926,13 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
 
       {/* ── Analysis section ── */}
       <RevealBlock delay={50}>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Phân Tích Chi Tiết</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b0tr.analysis_label || 'Phân Tích Chi Tiết'}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
-            { label: 'BMR',       value: `${bmr.toLocaleString()} kcal`, sub: 'Nghỉ ngơi hoàn toàn', icon: '💤', color: '#8b5cf6' },
-            { label: 'Hoạt động', value: `+${(tdee - bmr).toLocaleString()} kcal`, sub: activity.label, icon: '🏃', color: '#06b6d4' },
-            { label: 'Mục tiêu',  value: `${targetKcal.toLocaleString()} kcal`, sub: selectedGoal.label, icon: '🎯', color: selectedGoal.color },
-            { label: 'Mỗi giờ',  value: `~${Math.round(tdee / 24)} kcal`, sub: 'Tiêu thụ trung bình', icon: '⏱️', color: '#22c55e' },
+            { label: b0tr.bmr_label || 'BMR',       value: `${bmr.toLocaleString()} kcal`, sub: b0tr.bmr_rest_sub || 'Nghỉ ngơi hoàn toàn', icon: '💤', color: '#8b5cf6' },
+            { label: b0tr.activity_contribution_label || 'Hoạt động', value: `+${(tdee - bmr).toLocaleString()} kcal`, sub: translatedActivity.label, icon: '🏃', color: '#06b6d4' },
+            { label: b0tr.goal_label || 'Mục tiêu',  value: `${targetKcal.toLocaleString()} kcal`, sub: translatedGoal.label, icon: '🎯', color: selectedGoal.color },
+            { label: b0tr.per_hour_label || 'Mỗi giờ',  value: `~${Math.round(tdee / 24)} kcal`, sub: b0tr.per_hour_sub || 'Tiêu thụ trung bình', icon: '⏱️', color: '#22c55e' },
           ].map((item, i) => (
             <div key={item.label} className="group/calcstat relative">
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/calcstat:opacity-100 scale-90 group-hover/calcstat:scale-100 -translate-y-1 group-hover/calcstat:translate-y-0 transition-all duration-200 origin-bottom">
@@ -4934,7 +4943,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
                 <p className="text-sm font-black mt-1.5 mb-0.5" style={{ color: item.color }}>{item.value}</p>
                 <p className="text-[9px] font-bold text-text/70 mb-0.5">{item.label}</p>
                 <p className="text-[9px] text-muted leading-snug">{item.sub}</p>
-                <p className="text-[8px] text-muted/40 mt-1.5">Hover để xem chi tiết</p>
+                <p className="text-[8px] text-muted/40 mt-1.5">{b0tr.hover_hint || 'Hover để xem chi tiết'}</p>
               </div>
             </div>
           ))}
@@ -4943,7 +4952,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
 
       {/* ── Benefits section ── */}
       <RevealBlock delay={80}>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Lợi Ích Khi Biết TDEE</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b0tr.benefits_label || 'Lợi Ích Khi Biết TDEE'}</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {[
             { icon: '🎯', title: 'Ăn đúng theo mục tiêu', desc: 'Biết chính xác cần bao nhiêu kcal/ngày — không đoán mò khi muốn giảm mỡ, tăng cơ hay duy trì cân nặng.', color: '#8b5cf6' },
@@ -4967,7 +4976,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
         <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 flex items-start gap-3">
           <span className="text-lg shrink-0 mt-0.5">⚠️</span>
           <div>
-            <p className="text-xs font-bold text-amber-300 mb-1.5">Độ chính xác & Lưu ý</p>
+            <p className="text-xs font-bold text-amber-300 mb-1.5">{b0tr.accuracy_label || 'Độ chính xác & Lưu ý'}</p>
             <p className="text-[11px] text-muted leading-relaxed">
               Công thức Mifflin-St Jeor có sai số <span className="text-text/80 font-semibold">±10–15%</span> vì không tính được tỷ lệ cơ/mỡ. Dùng TDEE như điểm khởi đầu — theo dõi cân nặng 1–2 tuần, nếu cân không đổi thì lượng bạn đang ăn chính là <span className="text-amber-300/90 font-semibold">TDEE thực tế</span> của bạn.
             </p>
@@ -6765,6 +6774,7 @@ export default function PillarB() {
   }, [weight, height, age, sex, activityKey, goalKey]);
 
   const pillar = tPillars('pillarB', { returnObjects: true });
+  const tabsTr = Array.isArray(pillar?.tabs) ? pillar.tabs : [];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -7006,34 +7016,31 @@ export default function PillarB() {
           {/* Quote text */}
           <div className="relative z-10 max-w-2xl mx-auto mb-7 text-center">
             <p className="text-xl md:text-2xl font-bold text-text/90 leading-relaxed italic mb-4">
-              Ăn đủ — ăn đều — ăn thật —<br className="hidden md:block" /> ăn theo mục tiêu — sống được lâu dài
+              {pillar?.hero_quote || 'Ăn đủ — ăn đều — ăn thật — ăn theo mục tiêu — sống được lâu dài'}
             </p>
             <div className="h-px bg-gradient-to-r from-transparent via-lime-500/50 to-transparent mb-4" />
             <p className="text-sm text-lime-400/80 font-medium">
-              Ăn tốt hơn hôm qua một chút, và đủ dễ để ngày mai còn làm tiếp.
+              {pillar?.hero_sub || 'Ăn tốt hơn hôm qua một chút, và đủ dễ để ngày mai còn làm tiếp.'}
             </p>
           </div>
 
           {/* Key stats row */}
+          {(() => {
+            const heroStats = Array.isArray(pillar?.hero_stats) ? pillar.hero_stats : [
+              { n: '3', unit: 'bữa/ngày', label: 'Nhịp ăn tối ưu' },
+              { n: '80/20', unit: '', label: 'Quy tắc bền vững' },
+              { n: '21+', unit: 'ngày', label: 'Hình thành thói quen' },
+              { n: '1.6g', unit: '/kg', label: 'Protein tối thiểu' },
+            ];
+            const HERO_STAT_TOOLTIPS = [
+              '3 bữa chính/ngày giúp ổn định đường huyết và giảm thèm ăn vặt hiệu quả hơn so với nhịn hoặc ăn nhiều bữa không kiểm soát.',
+              '80% ăn lành mạnh + 20% linh hoạt — tỷ lệ thực tế nhất để duy trì lâu dài mà không cảm thấy bị tước đoạt.',
+              'Não bộ cần 21–66 ngày lặp lại để hình thành thói quen tự động. Kiên trì qua tuần 2–3 là giai đoạn khó và quyết định nhất.',
+              '1.6g protein/kg thể trọng bảo vệ cơ bắp khi giảm mỡ. Tăng lên 2.2g/kg nếu tập luyện cường độ cao.',
+            ];
+            return (
           <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[
-              {
-                n: '3', unit: 'bữa/ngày', label: 'Nhịp ăn tối ưu',
-                tooltip: '3 bữa chính/ngày giúp ổn định đường huyết và giảm thèm ăn vặt hiệu quả hơn so với nhịn hoặc ăn nhiều bữa không kiểm soát.',
-              },
-              {
-                n: '80/20', unit: '', label: 'Quy tắc bền vững',
-                tooltip: '80% ăn lành mạnh + 20% linh hoạt — tỷ lệ thực tế nhất để duy trì lâu dài mà không cảm thấy bị tước đoạt.',
-              },
-              {
-                n: '21+', unit: 'ngày', label: 'Hình thành thói quen',
-                tooltip: 'Não bộ cần 21–66 ngày lặp lại để hình thành thói quen tự động. Kiên trì qua tuần 2–3 là giai đoạn khó và quyết định nhất.',
-              },
-              {
-                n: '1.6g', unit: '/kg', label: 'Protein tối thiểu',
-                tooltip: '1.6g protein/kg thể trọng bảo vệ cơ bắp khi giảm mỡ. Tăng lên 2.2g/kg nếu tập luyện cường độ cao.',
-              },
-            ].map((s, i) => (
+            {heroStats.map((s, i) => (
               <div
                 key={i}
                 className="group/stat relative bg-bg/50 backdrop-blur-sm rounded-xl p-3.5 border border-lime-500/10 hover:border-lime-500/35 transition-all duration-300 animate-fade-in-up cursor-default"
@@ -7041,7 +7048,7 @@ export default function PillarB() {
               >
                 {/* ── Thought-bubble tooltip ── */}
                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/stat:opacity-100 scale-90 group-hover/stat:scale-100 -translate-y-1 group-hover/stat:translate-y-0 transition-all duration-200 origin-bottom">
-                  <ThoughtBubble text={s.tooltip} idx={i} />
+                  <ThoughtBubble text={HERO_STAT_TOOLTIPS[i]} idx={i} />
                 </div>
 
                 <div className="font-black text-xl leading-none mb-0.5" style={{ color: LIME }}>
@@ -7051,6 +7058,8 @@ export default function PillarB() {
               </div>
             ))}
           </div>
+            );
+          })()}
         </div>
 
         {/* ── Section header ── */}
@@ -7069,8 +7078,8 @@ export default function PillarB() {
                 letterSpacing: '-0.04em',
               }}>7</span>
             <div className="pb-3">
-              <p className="text-[9px] font-bold uppercase tracking-[0.35em] leading-none mb-1.5" style={{ color: 'rgba(132,204,22,0.55)' }}>nguyên tắc</p>
-              <p className="text-2xl font-black text-text uppercase tracking-[0.1em] leading-none">Cốt Lõi</p>
+              <p className="text-[9px] font-bold uppercase tracking-[0.35em] leading-none mb-1.5" style={{ color: 'rgba(132,204,22,0.55)' }}>{pillar?.principles_label || 'nguyên tắc'}</p>
+              <p className="text-2xl font-black text-text uppercase tracking-[0.1em] leading-none">{pillar?.principles_title || 'Cốt Lõi'}</p>
             </div>
           </div>
           <div className="h-[2px] w-28 rounded-full" style={{ background: 'linear-gradient(90deg, transparent, #84cc16, transparent)' }} />
@@ -7128,8 +7137,8 @@ export default function PillarB() {
                   letterSpacing: '-0.04em',
                 }}>8</span>
               <div className="pb-3">
-                <p className="text-[9px] font-bold uppercase tracking-[0.35em] leading-none mb-1.5" style={{ color: 'rgba(132,204,22,0.55)' }}>chuyên mục</p>
-                <p className="text-2xl font-black text-text uppercase tracking-[0.1em] leading-none">Dinh Dưỡng</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.35em] leading-none mb-1.5" style={{ color: 'rgba(132,204,22,0.55)' }}>{pillar?.tabs_section_label || 'chuyên mục'}</p>
+                <p className="text-2xl font-black text-text uppercase tracking-[0.1em] leading-none">{pillar?.tabs_section_title || 'Dinh Dưỡng'}</p>
               </div>
             </div>
 
@@ -7160,7 +7169,7 @@ export default function PillarB() {
                       >
                         <span style={{ color: isActive ? tc : 'rgba(100,116,139,0.4)' }}>{t.icon}</span>
                         <span className="font-black">{t.short}</span>
-                        <span className="hidden sm:inline opacity-75">— {t.label}</span>
+                        <span className="hidden sm:inline opacity-75">— {tabsTr[i]?.label || t.label}</span>
                         {isActive && (
                           <span className="w-1.5 h-1.5 rounded-full animate-pulse ml-0.5" style={{ background: tc }} />
                         )}

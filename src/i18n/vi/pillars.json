@@ -556,11 +556,11 @@
       "text2": "Bạn không thất bại vì một bữa lệch — bạn thất bại vì bỏ cuộc sau đó. Sự nhất quán mới là siêu năng lực thực sự."
     },
     "macros": [
-      {"name": "Protein",      "role": "Giữ cơ, no lâu, phục hồi",            "dose": "1.6–2.2 g/kg"},
-      {"name": "Carbohydrate", "role": "Năng lượng não & cơ bắp",              "dose": "40–55% tổng kcal"},
-      {"name": "Chất béo",     "role": "Nội tiết, hấp thu vitamin",            "dose": "20–35% tổng kcal"},
-      {"name": "Chất xơ",      "role": "Tiêu hóa, no lâu, hệ vi sinh",        "dose": "25–38 g/ngày"},
-      {"name": "Nước",         "role": "Hiệu suất, phục hồi, trao đổi chất",  "dose": "35 ml/kg thể trọng"}
+      {"name": "Protein",      "role": "Giữ cơ, no lâu, phục hồi",            "dose": "1.6–2.2 g/kg",       "sources": ["Thịt gà", "Cá", "Trứng", "Đậu hũ", "Whey"]},
+      {"name": "Carbohydrate", "role": "Năng lượng não & cơ bắp",              "dose": "40–55% tổng kcal",   "sources": ["Cơm", "Khoai lang", "Bún", "Yến mạch", "Hoa quả"]},
+      {"name": "Chất béo",     "role": "Nội tiết, hấp thu vitamin",            "dose": "20–35% tổng kcal",   "sources": ["Dầu olive", "Bơ", "Hạt óc chó", "Cá hồi", "Hạt chia"]},
+      {"name": "Chất xơ",      "role": "Tiêu hóa, no lâu, hệ vi sinh",        "dose": "25–38 g/ngày",       "sources": ["Rau xanh", "Đậu lăng", "Cải bông", "Chuối xanh", "Hạt lanh"]},
+      {"name": "Nước",         "role": "Hiệu suất, phục hồi, trao đổi chất",  "dose": "35 ml/kg thể trọng", "sources": ["Nước lọc", "Trà xanh", "Nước dừa", "Canh", "Trái cây"]}
     ],
     "tdee_modes": [
       {"label": "Giảm mỡ", "delta": "−300–500 kcal", "note": "Thâm hụt nhẹ, giữ protein cao"},
@@ -590,7 +590,20 @@
       "fiber": "Chất xơ",
       "water": "Nước",
       "fuel_note": "Nhiên liệu chính",
-      "hormone_note": "Nội tiết · Vitamin"
+      "hormone_note": "Nội tiết · Vitamin",
+      "philosophy_title": "7 Công Thức Triết Lý Dinh Dưỡng",
+      "philosophy_sub": "Nền tảng tư duy để duy trì bền vững — không phụ thuộc ý chí",
+      "philosophy_quote1": "Ăn đủ — ăn đều — ăn thật — ăn theo mục tiêu — sống được lâu dài.",
+      "philosophy_quote2": "Dinh dưỡng tốt nhất là dinh dưỡng bạn hiểu, thích nghi được, và duy trì được.",
+      "philosophy_7": [
+        {"title": "Ăn đủ, không ăn kiệt sức", "body": "Cơ thể cần đủ calo để tập, làm việc và phục hồi. Ăn quá ít liên tục làm giảm chuyển hóa cơ bản và mất cơ bắp."},
+        {"title": "Ăn đều, không theo cảm hứng", "body": "Bữa ăn đúng giờ giữ đường huyết ổn định, giảm cơn thèm và tránh ăn bù quá mức khi đói dồn dập."},
+        {"title": "Ăn thật, hạn chế siêu chế biến", "body": "Thực phẩm nguyên dạng — thịt, cá, trứng, rau, gạo — cung cấp vi chất và no lâu tốt hơn đồ đóng gói."},
+        {"title": "Ăn theo mục tiêu, không theo phong trào", "body": "Người giảm mỡ ăn khác người tập sức bền. Không có thực đơn đúng cho tất cả — chỉ có thực đơn phù hợp với bạn."},
+        {"title": "Protein là nền, rau là bạn, carb là nhiên liệu", "body": "Ba nhóm đều cần thiết. Cắt bỏ hoàn toàn bất kỳ nhóm nào đều làm mất cân bằng và khó duy trì lâu dài."},
+        {"title": "Một bữa lệch không phá hỏng hành trình", "body": "Điều phá hỏng là tâm lý 'lỡ rồi bỏ luôn'. Biết cách quay lại bữa kế tiếp mới là kỹ năng quan trọng nhất."},
+        {"title": "Đo để điều chỉnh, không để tự phán xét", "body": "Số liệu là bản đồ, không phải bản án. Dùng TDEE và macro để hiểu cơ thể — không để gây áp lực."}
+      ]
     },
     "b2": {
       "based_on": "DỰA TRÊN THÔNG SỐ CỦA BẠN",
@@ -631,7 +644,103 @@
       "meal_times": ["🌅 Sáng", "☀️ Trưa", "🌙 Tối", "🍎 Snack"],
       "protein_notes": ["trứng + sữa chua", "ức gà / cá / đậu hũ", "cá / thịt / trứng", "sữa chua Hy Lạp"],
       "carb_notes": ["ổn định đường huyết", "năng lượng cao nhất", "giảm nếu không tập tối", "trái cây, yến mạch"],
-      "lunch_label": "Trưa"
+      "lunch_label": "Trưa",
+      "check_q_title": "4 Câu Hỏi Kiểm Tra Mỗi Bữa",
+      "check_q_sub": "Thói quen đơn giản để mỗi bữa đều đạt chuẩn dinh dưỡng — không cần đếm calo",
+      "check_q_tip_label": "Cách dùng",
+      "check_q_tip": "Trước mỗi bữa ăn, hỏi qua 4 câu này. Nếu bữa hiện tại thiếu một điều gì đó — bổ sung ngay hoặc điều chỉnh ở bữa tiếp theo. Không cần hoàn hảo, chỉ cần nhận thức.",
+      "check_questions": [
+        {"q": "Bữa này có đạm chưa?", "example": "Thịt, cá, trứng, đậu hũ, sữa chua"},
+        {"q": "Có rau hoặc canh chưa?", "example": "Ít nhất 1–2 nắm rau luộc, xào hoặc canh"},
+        {"q": "Tinh bột có vừa với mức vận động?", "example": "Ngày tập: thêm cơm. Ngày nghỉ: bớt cơm"},
+        {"q": "Không quá nhiều chiên/ngọt/nước ngọt?", "example": "Nếu có → cân bằng ở bữa tiếp theo"}
+      ],
+      "swap_title": "Bảng Thay Thế Thực Phẩm",
+      "swap_sub": "Hoán đổi linh hoạt khi không có nguyên liệu — giữ nguyên lượng đạm và calo",
+      "swap_protein_label": "Đạm",
+      "swap_carb_label": "Tinh bột",
+      "swap_veg_label": "Rau củ"
+    },
+    "b3": {
+      "bar_goal": "Mục tiêu",
+      "bar_adjust": "Điều chỉnh",
+      "bar_speed": "Tốc độ",
+      "bar_balance": "Cân bằng",
+      "bar_to_5kg": "Đến -5kg",
+      "bar_weekly_protein": "Protein/tuần",
+      "choose_goal": "Chọn Mục Tiêu Của Bạn",
+      "note_label": "Lưu ý",
+      "note": "Các con số là điểm xuất phát, không phải quy tắc cứng nhắc. Cơ thể của mỗi người phản ứng khác nhau — theo dõi 2–4 tuần rồi điều chỉnh là cách tốt nhất.",
+      "div_effects": "Hiệu quả & Lợi ích",
+      "div_formula": "Công thức năng lượng",
+      "div_macro": "Phân bổ Macro cá nhân hóa",
+      "div_timeline": "Lộ trình ước tính",
+      "warning_label": "Lưu ý quan trọng",
+      "food_source": "Nguồn thực phẩm:",
+      "bmr_per_day": "kcal cơ bản/ngày",
+      "tdee_per_day": "kcal duy trì/ngày",
+      "target_label": "Mục tiêu",
+      "formula_note": "Cách tính calo mục tiêu theo",
+      "fat_label": "Chất béo",
+      "macro_protein_ex": "ức gà, cá, trứng, đậu hũ",
+      "macro_carb_ex": "cơm, khoai, yến mạch",
+      "macro_fat_ex": "dầu olive, hạt, cá béo",
+      "milestone_title": "Tiến độ theo mốc cân nặng",
+      "philosophy_label": "Triết lý dự án",
+      "consistency_title": "Kiên trì vừa phải đủ thắng",
+      "consistency_body": "Người duy trì 70–80% kế hoạch trong 6 tháng thường có kết quả tốt hơn người làm 100% trong 7 ngày rồi bỏ cuộc.",
+      "rule_8020_title": "Quy tắc linh hoạt bền vững",
+      "rule_8020_body": "80% thực phẩm lành mạnh — 20% linh hoạt. Không nhất thiết phải ăn hoàn hảo mỗi ngày để có kết quả tốt dài hạn.",
+      "goal_analysis": {
+        "fat-loss": {
+          "headline": "Đốt mỡ bền vững — giữ trọn cơ bắp",
+          "science": "Thâm hụt 300–500 kcal/ngày là vùng tối ưu: đủ nhanh để thấy kết quả trong 4 tuần, đủ nhỏ để cơ thể không phá cơ làm năng lượng.",
+          "benefits": [
+            {"icon": "🔥", "title": "Tốc độ giảm lý tưởng", "desc": "Thâm hụt −400 kcal = ~0.37kg mỡ/tuần. Bền vững hơn ép cân cấp tốc mà không kiệt sức."},
+            {"icon": "💪", "title": "Protein cao bảo vệ cơ", "desc": "2.0g/kg đảm bảo cơ thể ưu tiên đốt mỡ thay vì phá cơ khi năng lượng thiếu hụt."},
+            {"icon": "🩸", "title": "Ổn định đường huyết", "desc": "Giảm carb tinh, tăng chất xơ → insulin ổn định → giảm tích mỡ mới sau bữa ăn."},
+            {"icon": "⚡", "title": "Vẫn đủ sức tập", "desc": "Không cắt calo quá sâu — duy trì được cường độ cardio và gym để tối ưu đốt mỡ."}
+          ],
+          "caution": "Không nên thâm hụt >600 kcal/ngày — nguy cơ mất cơ, rụng tóc và mệt mỏi mãn tính cao.",
+          "timeframe": "4–8 tuần thấy kết quả rõ trên cân và gương."
+        },
+        "muscle-gain": {
+          "headline": "Tăng cơ chất lượng — ít tích mỡ",
+          "science": "Thặng dư +200–300 kcal/ngày là 'lean bulk' — cung cấp đủ vật liệu xây cơ trong khi hạn chế tích mỡ thừa.",
+          "benefits": [
+            {"icon": "🏗️", "title": "Lean bulk hiệu quả", "desc": "+250 kcal thặng dư nhẹ giúp tăng cơ từ từ và chất lượng, không kéo theo tăng mỡ nhanh."},
+            {"icon": "🍚", "title": "Carb quanh buổi tập", "desc": "Nạp carb trước tập (năng lượng) và sau tập (phục hồi glycogen) tối đa hóa tổng hợp cơ."},
+            {"icon": "😴", "title": "Cơ lớn khi ngủ", "desc": "GH và testosterone đỉnh điểm trong giấc ngủ sâu 7–9h. Thiếu ngủ cản quá trình tăng cơ."},
+            {"icon": "📈", "title": "Progressive overload là chìa khoá", "desc": "Tăng tải dần mỗi tuần song song với dinh dưỡng đủ — không có tải tăng thì cơ không có lý do lớn."}
+          ],
+          "caution": "Protein nên chia đều 4–5 bữa/ngày (20–40g/bữa) — quan trọng hơn tổng lượng ăn dồn 1–2 bữa.",
+          "timeframe": "8–12 tuần thấy thay đổi rõ về cơ bắp và sức mạnh cơ."
+        },
+        "endurance": {
+          "headline": "Tối ưu sức bền — hiệu suất đường dài",
+          "science": "Carbohydrate là nhiên liệu ưu tiên cho hoạt động cardio >60 phút. Thiếu carb = chuột rút, tụt đường huyết, kiệt sức sớm.",
+          "benefits": [
+            {"icon": "🚴", "title": "Carb = nhiên liệu tốc độ", "desc": "Tăng carb vào ngày tập nặng để glycogen cơ và gan luôn đầy trước sự kiện dài."},
+            {"icon": "💧", "title": "Điện giải quyết định hiệu suất", "desc": "Natri + kali + magie giữ co cơ ổn định, ngăn chuột rút và duy trì sức bền."},
+            {"icon": "🔧", "title": "Protein phục hồi sau cardio", "desc": "1.5g/kg đủ để sửa chữa vi tổn thương sợi cơ sau cardio dài mà không nặng bụng hay làm chậm tiêu hoá."},
+            {"icon": "🧪", "title": "Không thử đồ mới trước thi", "desc": "Giữ chế độ ăn quen thuộc 48h trước thi đấu — đồ ăn lạ có thể gây rối loạn tiêu hoá."}
+          ],
+          "caution": "Cắt carb khi đang luyện sức bền cường độ cao gây kiệt sức và giảm hiệu suất nghiêm trọng.",
+          "timeframe": "6–10 tuần cải thiện rõ về sức bền và thời gian phục hồi giữa các buổi."
+        },
+        "maintenance": {
+          "headline": "Duy trì lâu dài — tự do không lo sợ",
+          "science": "Giai đoạn duy trì thường bị bỏ qua nhưng cực kỳ quan trọng: giúp cơ thể thiết lập lại set point và hormone sau phase giảm/tăng.",
+          "benefits": [
+            {"icon": "⚖️", "title": "Ổn định cân nặng thật", "desc": "Ăn quanh TDEE ±100 kcal giúp cơ thể giữ cân bằng nội môi và chuyển hoá không bị ức chế."},
+            {"icon": "🧘", "title": "Không áp lực số calo", "desc": "80/20 rule: 80% thực phẩm lành mạnh, 20% linh hoạt — đủ để sống được lâu dài không mệt mỏi."},
+            {"icon": "📊", "title": "Check-in định kỳ đủ rồi", "desc": "Cân 1 lần/tuần cùng giờ cùng điều kiện — chỉ cần phát hiện xu hướng lệch ±2kg để điều chỉnh sớm."},
+            {"icon": "🌱", "title": "Nền tảng cho mục tiêu tiếp", "desc": "Duy trì tốt 8–12 tuần tạo sàn ổn định trước khi bước vào phase giảm hoặc tăng tiếp theo."}
+          ],
+          "caution": "Duy trì không có nghĩa là ăn gì cũng được — cần giữ thói quen nền: protein đủ, rau đủ, ít đường lỏng.",
+          "timeframe": "Nên duy trì ít nhất 8–12 tuần sau mỗi phase giảm/tăng trước khi bắt đầu chu kỳ mới."
+        }
+      }
     }
   },
   "pillarC": {

@@ -1228,7 +1228,7 @@ function InteractiveMacroCard({ macro, delay = 0, highlighted = false, expanded 
 
       {/* Sources */}
       <div className="flex flex-wrap gap-1.5 mb-3">
-        {macro.sources.map(src => (
+        {(macro.displaySources || macro.sources).map(src => (
           <span key={src} className={`text-[10px] px-2 py-0.5 rounded-full border ${macro.border} ${macro.text}`}
             style={{ background: `${macro.color}06` }}>{src}</span>
         ))}
@@ -1824,9 +1824,10 @@ function FoundationPanel({ s, onGoalKeyChange }) {
   const macrosTr = Array.isArray(pillarB.macros) ? pillarB.macros : [];
   const translatedDynMacros = dynMacros.map((m, i) => ({
     ...m,
-    displayName: macrosTr[i]?.name  || m.name,
-    displayRole: macrosTr[i]?.role  || m.role,
-    displayDose: macrosTr[i]?.dose  || m.dose,
+    displayName:    macrosTr[i]?.name    || m.name,
+    displayRole:    macrosTr[i]?.role    || m.role,
+    displayDose:    macrosTr[i]?.dose    || m.dose,
+    displaySources: macrosTr[i]?.sources || m.sources,
   }));
 
   const mP = dynMacros.find(m => m.name === 'Protein');
@@ -2010,20 +2011,20 @@ function FoundationPanel({ s, onGoalKeyChange }) {
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-xl bg-lime-500/12 border border-lime-500/25 flex items-center justify-center text-xl shrink-0">💎</div>
             <div>
-              <p className="text-sm font-bold text-text">7 Công Thức Triết Lý Dinh Dưỡng</p>
-              <p className="text-[10px] text-muted">Nền tảng tư duy để duy trì bền vững — không phụ thuộc ý chí</p>
+              <p className="text-sm font-bold text-text">{b1tr.philosophy_title || '7 Công Thức Triết Lý Dinh Dưỡng'}</p>
+              <p className="text-[10px] text-muted">{b1tr.philosophy_sub || 'Nền tảng tư duy để duy trì bền vững — không phụ thuộc ý chí'}</p>
             </div>
           </div>
           <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 px-5 py-3.5 mb-5 text-center">
             <p className="text-sm font-bold text-lime-400 italic leading-relaxed">
-              "Ăn đủ — ăn đều — ăn thật — ăn theo mục tiêu — sống được lâu dài."
+              "{b1tr.philosophy_quote1 || 'Ăn đủ — ăn đều — ăn thật — ăn theo mục tiêu — sống được lâu dài.'}"
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
-            {PHILOSOPHY_7.map((p, i) => (
+            {(Array.isArray(b1tr.philosophy_7) ? b1tr.philosophy_7 : PHILOSOPHY_7).map((p, i) => (
               <RevealBlock key={i} delay={i * 55}>
                 <div className="rounded-xl border border-white/6 bg-white/[0.018] p-4 flex items-start gap-3 hover:bg-white/[0.035] hover:border-lime-500/20 transition-all duration-200">
-                  <span className="text-xl shrink-0 mt-0.5">{p.icon}</span>
+                  <span className="text-xl shrink-0 mt-0.5">{PHILOSOPHY_7[i]?.icon || '•'}</span>
                   <div>
                     <p className="text-[11px] font-bold text-text mb-1">{p.title}</p>
                     <p className="text-[10px] text-muted leading-relaxed">{p.body}</p>
@@ -2034,7 +2035,7 @@ function FoundationPanel({ s, onGoalKeyChange }) {
           </div>
           <div className="mt-4 rounded-2xl border border-lime-500/15 bg-lime-500/5 p-4 text-center">
             <p className="text-[11px] font-bold text-lime-400 italic">
-              "Dinh dưỡng tốt nhất là dinh dưỡng bạn hiểu, thích nghi được, và duy trì được."
+              "{b1tr.philosophy_quote2 || 'Dinh dưỡng tốt nhất là dinh dưỡng bạn hiểu, thích nghi được, và duy trì được.'}"
             </p>
           </div>
         </div>
@@ -2369,21 +2370,21 @@ function PlatePanel({ s }) {
           <div className="flex items-start gap-3 mb-5">
             <div className="w-9 h-9 rounded-xl bg-green-500/12 border border-green-500/20 flex items-center justify-center text-xl shrink-0">❓</div>
             <div>
-              <h3 className="text-sm font-bold text-text">4 Câu Hỏi Kiểm Tra Mỗi Bữa</h3>
-              <p className="text-[10px] text-muted mt-0.5">Thói quen đơn giản để mỗi bữa đều đạt chuẩn dinh dưỡng — không cần đếm calo</p>
+              <h3 className="text-sm font-bold text-text">{b2tr.check_q_title || '4 Câu Hỏi Kiểm Tra Mỗi Bữa'}</h3>
+              <p className="text-[10px] text-muted mt-0.5">{b2tr.check_q_sub || 'Thói quen đơn giản để mỗi bữa đều đạt chuẩn dinh dưỡng — không cần đếm calo'}</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
-            {MEAL_CHECK_QUESTIONS.map((q, i) => (
+            {(Array.isArray(b2tr.check_questions) ? b2tr.check_questions : MEAL_CHECK_QUESTIONS).map((q, i) => (
               <RevealBlock key={i} delay={i * 50}>
-                <div className="rounded-xl border p-4 flex items-start gap-3" style={{ borderColor: `${q.color}25`, background: `${q.color}06` }}>
-                  <span className="text-2xl shrink-0">{q.icon}</span>
+                <div className="rounded-xl border p-4 flex items-start gap-3" style={{ borderColor: `${MEAL_CHECK_QUESTIONS[i]?.color || '#84cc16'}25`, background: `${MEAL_CHECK_QUESTIONS[i]?.color || '#84cc16'}06` }}>
+                  <span className="text-2xl shrink-0">{MEAL_CHECK_QUESTIONS[i]?.icon || '•'}</span>
                   <div className="flex-1">
                     <p className="text-[11px] font-bold text-text mb-1.5">{q.q}</p>
-                    <p className="text-[10px] leading-relaxed" style={{ color: q.color }}>{q.example}</p>
+                    <p className="text-[10px] leading-relaxed" style={{ color: MEAL_CHECK_QUESTIONS[i]?.color || '#84cc16' }}>{q.example}</p>
                   </div>
-                  <div className="w-5 h-5 rounded-full border-2 shrink-0 mt-0.5 flex items-center justify-center" style={{ borderColor: `${q.color}50` }}>
-                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: `${q.color}60` }} />
+                  <div className="w-5 h-5 rounded-full border-2 shrink-0 mt-0.5 flex items-center justify-center" style={{ borderColor: `${MEAL_CHECK_QUESTIONS[i]?.color || '#84cc16'}50` }}>
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: `${MEAL_CHECK_QUESTIONS[i]?.color || '#84cc16'}60` }} />
                   </div>
                 </div>
               </RevealBlock>
@@ -2391,7 +2392,7 @@ function PlatePanel({ s }) {
           </div>
           <div className="mt-4 rounded-xl px-4 py-3 border border-green-500/15 bg-green-500/5">
             <p className="text-[10px] text-muted leading-relaxed">
-              <span className="font-bold text-green-400">💡 Cách dùng:</span> Trước mỗi bữa ăn, hỏi qua 4 câu này. Nếu bữa hiện tại thiếu một điều gì đó — bổ sung ngay hoặc điều chỉnh ở bữa tiếp theo. Không cần hoàn hảo, chỉ cần nhận thức.
+              <span className="font-bold text-green-400">💡 {b2tr.check_q_tip_label || 'Cách dùng'}:</span> {b2tr.check_q_tip || 'Trước mỗi bữa ăn, hỏi qua 4 câu này. Nếu bữa hiện tại thiếu một điều gì đó — bổ sung ngay hoặc điều chỉnh ở bữa tiếp theo. Không cần hoàn hảo, chỉ cần nhận thức.'}
             </p>
           </div>
         </div>
@@ -2403,17 +2404,20 @@ function PlatePanel({ s }) {
           <div className="flex items-start gap-3 mb-5">
             <div className="w-9 h-9 rounded-xl bg-cyan-500/12 border border-cyan-500/20 flex items-center justify-center text-xl shrink-0">🔀</div>
             <div>
-              <h3 className="text-sm font-bold text-text">Bảng Thay Thế Thực Phẩm</h3>
-              <p className="text-[10px] text-muted mt-0.5">Hoán đổi linh hoạt khi không có nguyên liệu — giữ nguyên lượng đạm và calo</p>
+              <h3 className="text-sm font-bold text-text">{b2tr.swap_title || 'Bảng Thay Thế Thực Phẩm'}</h3>
+              <p className="text-[10px] text-muted mt-0.5">{b2tr.swap_sub || 'Hoán đổi linh hoạt khi không có nguyên liệu — giữ nguyên lượng đạm và calo'}</p>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
-            {Object.values(FOOD_SWAP_TABLE).map((group) => (
+            {Object.entries(FOOD_SWAP_TABLE).map(([key, group]) => {
+              const labelMap = { protein: b2tr.swap_protein_label, carb: b2tr.swap_carb_label, veg: b2tr.swap_veg_label };
+              const translatedLabel = labelMap[key] || group.label;
+              return (
               <RevealBlock key={group.label}>
                 <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${group.color}25`, background: `${group.color}05` }}>
                   <div className="flex items-center gap-2 mb-4">
                     <span className="text-xl">{group.icon}</span>
-                    <p className="text-xs font-bold" style={{ color: group.color }}>{group.label}</p>
+                    <p className="text-xs font-bold" style={{ color: group.color }}>{translatedLabel}</p>
                   </div>
                   <div className="space-y-3">
                     {group.items.map((item, j) => (
@@ -2433,7 +2437,8 @@ function PlatePanel({ s }) {
                   </div>
                 </div>
               </RevealBlock>
-            ))}
+              );
+            })}
           </div>
         </div>
       </RevealBlock>
@@ -2652,6 +2657,9 @@ const GOAL_MEAL_ADAPTATIONS = {
 };
 
 function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillarB = tPillars('pillarB', { returnObjects: true }) || {};
+  const b3tr = pillarB.b3 || {};
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [macroBars, setMacroBars] = useState([0, 0, 0]);
   const detail = selectedMetric ? b3MetricDetail(selectedMetric, s) : null;
@@ -2676,12 +2684,12 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
   }, [preview]);
 
   const activeG = GOALS.find(g => g.id === activeGoal);
-  const analysis = GOAL_ANALYSIS[activeGoal];
+  const analysis = (b3tr.goal_analysis && b3tr.goal_analysis[activeGoal]) || GOAL_ANALYSIS[activeGoal];
 
   const macroRows = [
-    { label: 'Protein', g: preview.proteinG, pct: preview.proteinPct, color: '#f97316', formula: `${s.weight}kg × ${preview.proteinMult}g/kg`, example: 'ức gà, cá, trứng, đậu hũ' },
-    { label: 'Carbohydrate', g: preview.carbG, pct: preview.carbPct, color: '#22c55e', formula: `(${preview.targetKcal} − P×4 − F×9) ÷ 4`, example: 'cơm, khoai, yến mạch' },
-    { label: 'Chất béo', g: preview.fatG, pct: preview.fatPct, color: '#a855f7', formula: `${preview.targetKcal} × 25% ÷ 9 kcal/g`, example: 'dầu olive, hạt, cá béo' },
+    { label: 'Protein', g: preview.proteinG, pct: preview.proteinPct, color: '#f97316', formula: `${s.weight}kg × ${preview.proteinMult}g/kg`, example: b3tr.macro_protein_ex || 'ức gà, cá, trứng, đậu hũ' },
+    { label: 'Carbohydrate', g: preview.carbG, pct: preview.carbPct, color: '#22c55e', formula: `(${preview.targetKcal} − P×4 − F×9) ÷ 4`, example: b3tr.macro_carb_ex || 'cơm, khoai, yến mạch' },
+    { label: b3tr.fat_label || 'Chất béo', g: preview.fatG, pct: preview.fatPct, color: '#a855f7', formula: `${preview.targetKcal} × 25% ÷ 9 kcal/g`, example: b3tr.macro_fat_ex || 'dầu olive, hạt, cá béo' },
   ];
 
   const milestones = preview.kgPerWeek > 0
@@ -2704,18 +2712,18 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
       <PersonalizedBar panelId="b3" color="#f97316" source="B0 + B1 + B2 (Inputs & Macros & Plate)"
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-        { key: 'goal',    label: 'Mục tiêu', value: s.goal.label, tip: `Mục tiêu đang chọn ở B0.` },
-        { key: 'adjust',  label: 'Điều chỉnh', value: `${s.goal.delta > 0 ? '+' : ''}${s.goal.delta} kcal`, note: 'so với TDEE', tip: `TDEE (${s.tdee.toLocaleString()}) ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} = ${s.targetKcal.toLocaleString()} kcal/ngày.` },
+        { key: 'goal',    label: b3tr.bar_goal || 'Mục tiêu', value: s.goal.label, tip: `Mục tiêu đang chọn ở B0.` },
+        { key: 'adjust',  label: b3tr.bar_adjust || 'Điều chỉnh', value: `${s.goal.delta > 0 ? '+' : ''}${s.goal.delta} kcal`, note: 'vs TDEE', tip: `TDEE (${s.tdee.toLocaleString()}) ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} = ${s.targetKcal.toLocaleString()} kcal/day.` },
         ...(s.kgPerWeek > 0
-          ? [{ key: 'speed', label: 'Tốc độ', value: `~${s.kgPerWeek}kg`, note: 'mỗi tuần', tip: `${Math.abs(s.goal.delta * 7).toLocaleString()} kcal/tuần ÷ 7700 = ${s.kgPerWeek}kg/tuần.` }]
-          : [{ key: 'speed', label: 'Cân bằng', value: '±100 kcal', note: 'linh hoạt', tip: `Duy trì = ăn xung quanh TDEE ±100 kcal mỗi ngày.` }]),
-        ...(s.weeksTo5kg ? [{ label: 'Đến -5kg', value: `~${s.weeksTo5kg} tuần`, note: `≈${Math.round(s.weeksTo5kg/4.3)} tháng`, tip: `Ở tốc độ ${s.kgPerWeek}kg/tuần, cần ~${s.weeksTo5kg} tuần.` }] : []),
-        { key: 'weekly_protein', label: 'Protein/tuần', value: `${s.weeklyProteinG}g`, note: `${s.proteinG}g × 7`, tip: `Tổng protein cần đạt trong 7 ngày.` },
+          ? [{ key: 'speed', label: b3tr.bar_speed || 'Tốc độ', value: `~${s.kgPerWeek}kg`, note: '/week', tip: `${Math.abs(s.goal.delta * 7).toLocaleString()} kcal/week ÷ 7700 = ${s.kgPerWeek}kg/week.` }]
+          : [{ key: 'speed', label: b3tr.bar_balance || 'Cân bằng', value: '±100 kcal', note: 'flexible', tip: `Maintenance = eat around TDEE ±100 kcal/day.` }]),
+        ...(s.weeksTo5kg ? [{ label: b3tr.bar_to_5kg || 'Đến -5kg', value: `~${s.weeksTo5kg} tuần`, note: `≈${Math.round(s.weeksTo5kg/4.3)} tháng`, tip: `Ở tốc độ ${s.kgPerWeek}kg/tuần, cần ~${s.weeksTo5kg} tuần.` }] : []),
+        { key: 'weekly_protein', label: b3tr.bar_weekly_protein || 'Protein/tuần', value: `${s.weeklyProteinG}g`, note: `${s.proteinG}g × 7`, tip: `Tổng protein cần đạt trong 7 ngày.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#f97316" onClose={() => setSelectedMetric(null)} />}
 
       {/* ── Goal selector ── */}
-      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">Chọn Mục Tiêu Của Bạn</p>
+      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">{b3tr.choose_goal || 'Chọn Mục Tiêu Của Bạn'}</p>
       <div className="grid sm:grid-cols-2 gap-4">
         {GOALS.map(g => (
           <GoalCard key={g.id} goal={g} active={activeGoal === g.id} onClick={() => onActiveGoalChange(g.id)} />
@@ -2723,12 +2731,12 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
       </div>
       <div className="mt-5 rounded-2xl border border-white/6 bg-white/[0.015] p-4">
         <p className="text-[11px] text-muted leading-relaxed">
-          <span className="text-lime-400 font-bold">Lưu ý:</span> Các con số là điểm xuất phát, không phải quy tắc cứng nhắc. Cơ thể của mỗi người phản ứng khác nhau — theo dõi 2–4 tuần rồi điều chỉnh là cách tốt nhất.
+          <span className="text-lime-400 font-bold">{b3tr.note_label || 'Lưu ý'}:</span> {b3tr.note || 'Các con số là điểm xuất phát, không phải quy tắc cứng nhắc. Cơ thể của mỗi người phản ứng khác nhau — theo dõi 2–4 tuần rồi điều chỉnh là cách tốt nhất.'}
         </p>
       </div>
 
       {/* ── Goal analysis ── */}
-      {secDivider('Hiệu quả & Lợi ích', activeG?.color)}
+      {secDivider(b3tr.div_effects || 'Hiệu quả & Lợi ích', activeG?.color)}
       <div key={activeGoal} className="animate-fade-in-up">
         <div className="rounded-2xl border p-5 mb-4" style={{ borderColor: `${activeG?.color}22`, background: `${activeG?.color}05` }}>
           <p className="text-sm font-bold text-text mb-1.5">{analysis.headline}</p>
@@ -2748,7 +2756,7 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
         <div className="flex gap-3 items-start rounded-xl border p-3.5 mb-2" style={{ borderColor: 'rgba(234,179,8,0.2)', background: 'rgba(234,179,8,0.04)' }}>
           <span className="text-sm shrink-0 mt-0.5">⚠️</span>
           <div>
-            <p className="text-[9px] font-bold uppercase tracking-wide text-yellow-400 mb-0.5">Lưu ý quan trọng</p>
+            <p className="text-[9px] font-bold uppercase tracking-wide text-yellow-400 mb-0.5">{b3tr.warning_label || 'Lưu ý quan trọng'}</p>
             <p className="text-[10px] text-muted leading-relaxed">{analysis.caution}</p>
           </div>
         </div>
@@ -2756,15 +2764,15 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
       </div>
 
       {/* ── Energy balance formula ── */}
-      {secDivider('Công thức năng lượng')}
+      {secDivider(b3tr.div_formula || 'Công thức năng lượng')}
       <div className="rounded-2xl border p-5 mb-2" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.03)' }}>
-        <p className="text-[10px] text-muted mb-4 text-center">Cách tính calo mục tiêu theo <span className="font-bold" style={{ color: activeG?.color }}>{activeG?.label}</span> từ dữ liệu B0</p>
+        <p className="text-[10px] text-muted mb-4 text-center">{b3tr.formula_note || 'Cách tính calo mục tiêu theo'} <span className="font-bold" style={{ color: activeG?.color }}>{activeG?.label}</span> — B0</p>
         <div className="flex flex-col sm:flex-row items-stretch gap-2">
           {/* BMR */}
           <div className="flex-1 text-center rounded-xl border p-3.5" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.05)' }}>
             <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-muted mb-1.5">BMR</p>
             <p className="text-2xl font-black leading-none" style={{ color: '#f97316' }}>{s.bmr.toLocaleString()}</p>
-            <p className="text-[9px] text-muted mt-1">kcal cơ bản/ngày</p>
+            <p className="text-[9px] text-muted mt-1">{b3tr.bmr_per_day || 'kcal cơ bản/ngày'}</p>
             <div className="mt-2 text-[8px] text-muted/50 leading-relaxed border-t border-white/5 pt-2">
               Mifflin-StJeor<br/>
               {s.sex === 'male'
@@ -2782,7 +2790,7 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
           <div className="flex-1 text-center rounded-xl border p-3.5" style={{ borderColor: 'rgba(249,115,22,0.3)', background: 'rgba(249,115,22,0.07)' }}>
             <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-muted mb-1.5">TDEE</p>
             <p className="text-2xl font-black leading-none" style={{ color: '#f97316' }}>{s.tdee.toLocaleString()}</p>
-            <p className="text-[9px] text-muted mt-1">kcal duy trì/ngày</p>
+            <p className="text-[9px] text-muted mt-1">{b3tr.tdee_per_day || 'kcal duy trì/ngày'}</p>
             <div className="mt-2 text-[8px] text-muted/50 leading-relaxed border-t border-white/5 pt-2">
               BMR × {s.activity.mult.toFixed(2)}<br/>
               {s.bmr.toLocaleString()} × {s.activity.mult.toFixed(2)} = {s.tdee.toLocaleString()}
@@ -2798,7 +2806,7 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
           </div>
           {/* Target */}
           <div className="flex-1 text-center rounded-xl border-2 p-3.5 transition-all duration-300" style={{ borderColor: activeG?.color ?? '#f97316', background: `${activeG?.color ?? '#f97316'}18` }}>
-            <p className="text-[8px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: activeG?.color ?? '#f97316' }}>Mục tiêu</p>
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: activeG?.color ?? '#f97316' }}>{b3tr.target_label || 'Mục tiêu'}</p>
             <p className="text-2xl font-black leading-none text-white">{preview.targetKcal.toLocaleString()}</p>
             <p className="text-[9px] mt-1" style={{ color: `${activeG?.color ?? '#f97316'}99` }}>kcal/ngày</p>
             <div className="mt-2 text-[8px] text-muted/50 leading-relaxed border-t border-white/8 pt-2">
@@ -2810,7 +2818,7 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
       </div>
 
       {/* ── Macro phân bổ ── */}
-      {secDivider('Phân bổ Macro cá nhân hóa')}
+      {secDivider(b3tr.div_macro || 'Phân bổ Macro cá nhân hóa')}
       <div className="space-y-3 mb-2">
         {macroRows.map((m, i) => (
           <div key={m.label} className="rounded-xl border p-4" style={{ borderColor: `${m.color}22`, background: `${m.color}05` }}>
@@ -2830,17 +2838,17 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
             <div className="h-1.5 rounded-full bg-white/5 mb-2 overflow-hidden">
               <div className="h-full rounded-full transition-all duration-700 ease-out" style={{ width: `${macroBars[i]}%`, background: m.color, opacity: 0.8 }} />
             </div>
-            <p className="text-[9px] text-muted/50">Nguồn thực phẩm: {m.example}</p>
+            <p className="text-[9px] text-muted/50">{b3tr.food_source || 'Nguồn thực phẩm:'} {m.example}</p>
           </div>
         ))}
       </div>
 
       {/* ── Timeline ── */}
       {milestones.length > 0 && (<>
-        {secDivider('Lộ trình ước tính')}
+        {secDivider(b3tr.div_timeline || 'Lộ trình ước tính')}
         <div className="rounded-2xl border p-5" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.03)' }}>
           <div className="flex items-center justify-between mb-1">
-            <p className="text-sm font-bold text-text">Tiến độ theo mốc cân nặng</p>
+            <p className="text-sm font-bold text-text">{b3tr.milestone_title || 'Tiến độ theo mốc cân nặng'}</p>
             <span className="text-[9px] px-2 py-0.5 rounded-full font-bold" style={{ background: `${activeG?.color ?? '#f97316'}18`, color: activeG?.color ?? '#f97316' }}>{preview.kgPerWeek}kg/tuần</span>
           </div>
           <p className="text-[10px] text-muted mb-5">{preview.kLabel} {Math.abs(preview.delta)} kcal/ngày → {Math.abs(preview.delta * 7).toLocaleString()} kcal/tuần ÷ 7700 = {preview.kgPerWeek}kg/tuần</p>
@@ -2876,7 +2884,7 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/50 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end p-5">
-          <p className="text-[9px] font-bold uppercase tracking-[0.3em] mb-1" style={{ color: '#f97316' }}>Triết lý dự án</p>
+          <p className="text-[9px] font-bold uppercase tracking-[0.3em] mb-1" style={{ color: '#f97316' }}>{b3tr.philosophy_label || 'Triết lý dự án'}</p>
           <p className="text-sm font-bold text-white leading-snug max-w-sm italic">
             "Ăn tốt hơn hôm qua một chút — đủ dễ để ngày mai còn làm tiếp."
           </p>
@@ -2887,13 +2895,13 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
       <div className="grid sm:grid-cols-2 gap-4 mb-2">
         <div className="rounded-2xl border p-4" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.04)' }}>
           <p className="text-3xl font-black leading-none mb-2" style={{ color: '#f97316' }}>70%</p>
-          <p className="text-xs font-bold text-text mb-1.5">Kiên trì vừa phải đủ thắng</p>
-          <p className="text-[10px] text-muted leading-relaxed">Người duy trì 70–80% kế hoạch trong 6 tháng thường có kết quả tốt hơn người làm 100% trong 7 ngày rồi bỏ cuộc.</p>
+          <p className="text-xs font-bold text-text mb-1.5">{b3tr.consistency_title || 'Kiên trì vừa phải đủ thắng'}</p>
+          <p className="text-[10px] text-muted leading-relaxed">{b3tr.consistency_body || 'Người duy trì 70–80% kế hoạch trong 6 tháng thường có kết quả tốt hơn người làm 100% trong 7 ngày rồi bỏ cuộc.'}</p>
         </div>
         <div className="rounded-2xl border p-4" style={{ borderColor: 'rgba(34,197,94,0.2)', background: 'rgba(34,197,94,0.04)' }}>
           <p className="text-3xl font-black leading-none mb-2" style={{ color: '#22c55e' }}>80/20</p>
-          <p className="text-xs font-bold text-text mb-1.5">Quy tắc linh hoạt bền vững</p>
-          <p className="text-[10px] text-muted leading-relaxed">80% thực phẩm lành mạnh — 20% linh hoạt. Không nhất thiết phải ăn hoàn hảo mỗi ngày để có kết quả tốt dài hạn.</p>
+          <p className="text-xs font-bold text-text mb-1.5">{b3tr.rule_8020_title || 'Quy tắc linh hoạt bền vững'}</p>
+          <p className="text-[10px] text-muted leading-relaxed">{b3tr.rule_8020_body || '80% thực phẩm lành mạnh — 20% linh hoạt. Không nhất thiết phải ăn hoàn hảo mỗi ngày để có kết quả tốt dài hạn.'}</p>
         </div>
       </div>
     </div>

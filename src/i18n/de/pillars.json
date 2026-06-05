@@ -556,11 +556,11 @@
       "text2": "Sie scheitern nicht wegen einer schlechten Mahlzeit — Sie scheitern wenn Sie danach aufgeben. Konsequenz ist Ihre wahre Superkraft."
     },
     "macros": [
-      {"name": "Protein",        "role": "Muskelaufbau, Sättigung, Erholung",   "dose": "1.6–2.2 g/kg"},
-      {"name": "Kohlenhydrate",  "role": "Gehirn- und Muskelenergie",            "dose": "40–55% gesamte kcal"},
-      {"name": "Fett",           "role": "Hormone, Vitaminaufnahme",             "dose": "20–35% gesamte kcal"},
-      {"name": "Ballaststoffe",  "role": "Verdauung, Sättigung, Darmflora",      "dose": "25–38 g/Tag"},
-      {"name": "Wasser",         "role": "Leistung, Erholung, Stoffwechsel",     "dose": "35 ml/kg Körpergewicht"}
+      {"name": "Protein",        "role": "Muskelaufbau, Sättigung, Erholung",   "dose": "1.6–2.2 g/kg",          "sources": ["Hähnchen", "Fisch", "Eier", "Tofu", "Whey"]},
+      {"name": "Kohlenhydrate",  "role": "Gehirn- und Muskelenergie",            "dose": "40–55% gesamte kcal",   "sources": ["Reis", "Süßkartoffel", "Nudeln", "Haferflocken", "Obst"]},
+      {"name": "Fett",           "role": "Hormone, Vitaminaufnahme",             "dose": "20–35% gesamte kcal",   "sources": ["Olivenöl", "Butter", "Walnüsse", "Lachs", "Chiasamen"]},
+      {"name": "Ballaststoffe",  "role": "Verdauung, Sättigung, Darmflora",      "dose": "25–38 g/Tag",           "sources": ["Blattgemüse", "Linsen", "Brokkoli", "grüne Banane", "Leinsamen"]},
+      {"name": "Wasser",         "role": "Leistung, Erholung, Stoffwechsel",     "dose": "35 ml/kg Körpergewicht","sources": ["Wasser", "Grüntee", "Kokosnusswasser", "Suppe", "Obst"]}
     ],
     "tdee_modes": [
       {"label": "Fett abbauen", "delta": "−300–500 kcal", "note": "Leichtes Defizit, viel Protein"},
@@ -590,7 +590,20 @@
       "fiber": "Ballaststoffe",
       "water": "Wasser",
       "fuel_note": "Hauptbrennstoff",
-      "hormone_note": "Hormone · Vitamine"
+      "hormone_note": "Hormone · Vitamine",
+      "philosophy_title": "7 Ernährungsphilosophien",
+      "philosophy_sub": "Das mentale Fundament für langfristige Nachhaltigkeit — keine Willenskraft nötig",
+      "philosophy_quote1": "Genug essen — regelmäßig essen — echtes Essen — für Ihre Ziele essen — lange leben.",
+      "philosophy_quote2": "Die beste Ernährung ist die, die Sie verstehen, sich anpassen und beibehalten können.",
+      "philosophy_7": [
+        {"title": "Genug essen, nicht aushungern", "body": "Der Körper braucht ausreichend Kalorien zum Trainieren, Arbeiten und Erholen. Chronisches Unteressen verlangsamt den Grundumsatz und führt zu Muskelverlust."},
+        {"title": "Regelmäßig essen, nicht impulsiv", "body": "Geplante Mahlzeiten stabilisieren den Blutzucker, reduzieren Heißhunger und verhindern übermäßiges Essen aus angesammeltem Hunger."},
+        {"title": "Echtes Essen, weniger Ultra-verarbeitetes", "body": "Vollwertige Lebensmittel — Fleisch, Fisch, Eier, Gemüse, Reis — liefern Mikronährstoffe und länger anhaltende Sättigung."},
+        {"title": "Für Ihre Ziele essen, nicht für Trends", "body": "Fettabbau und Ausdauersport erfordern unterschiedliche Ernährung. Es gibt keine universell richtige Diät — nur was zu Ihnen passt."},
+        {"title": "Protein ist die Basis, Gemüse ist der Verbündete, Kohlenhydrate sind der Treibstoff", "body": "Alle drei Gruppen sind notwendig. Das vollständige Eliminieren einer Gruppe schafft Ungleichgewicht und erschwert langfristige Einhaltung."},
+        {"title": "Eine schlechte Mahlzeit ruiniert nicht die Reise", "body": "Was ruiniert ist die Mentalität 'schon vermasselt, also ganz aufgeben'. Das Wissen wie man zur nächsten Mahlzeit zurückfindet ist die wichtigste Fähigkeit."},
+        {"title": "Messen um anzupassen, nicht um sich zu beurteilen", "body": "Daten sind eine Karte, kein Urteil. TDEE und Makros nutzen um den Körper zu verstehen — nicht um Druck zu erzeugen."}
+      ]
     },
     "b2": {
       "based_on": "BASIEREND AUF IHREN DATEN",
@@ -631,7 +644,103 @@
       "meal_times": ["🌅 Morgens", "☀️ Mittags", "🌙 Abends", "🍎 Snack"],
       "protein_notes": ["Eier + Joghurt", "Hähnchen / Fisch / Tofu", "Fisch / Fleisch / Eier", "Griechischer Joghurt"],
       "carb_notes": ["stabiler Blutzucker", "maximale Energie", "reduzieren ohne Abendtraining", "Obst, Haferflocken"],
-      "lunch_label": "Mittag"
+      "lunch_label": "Mittag",
+      "check_q_title": "4 Mahlzeiten-Checkliste",
+      "check_q_sub": "Einfache Gewohnheit um jede Mahlzeit ernährungsgerecht zu gestalten — kein Kalorienzählen nötig",
+      "check_q_tip_label": "Verwendung",
+      "check_q_tip": "Vor jeder Mahlzeit diese 4 Fragen durchgehen. Wenn etwas fehlt — jetzt ergänzen oder bei der nächsten Mahlzeit anpassen. Keine Perfektion nötig, nur Bewusstsein.",
+      "check_questions": [
+        {"q": "Hat diese Mahlzeit Protein?", "example": "Fleisch, Fisch, Eier, Tofu, Joghurt"},
+        {"q": "Gibt es Gemüse oder Suppe?", "example": "Mindestens 1–2 Fäuste gedünstetes oder gebratenes Gemüse"},
+        {"q": "Stimmt der Kohlenhydratanteil für Ihre Aktivität?", "example": "Trainingstag: mehr Reis. Ruhetag: weniger Reis"},
+        {"q": "Nicht zu viel Gebratenes / Süßes / Softdrinks?", "example": "Falls ja → bei der nächsten Mahlzeit ausgleichen"}
+      ],
+      "swap_title": "Lebensmittel-Austauschtabelle",
+      "swap_sub": "Flexible Alternativen wenn eine Zutat fehlt — gleicher Protein- und Kaloriengehalt",
+      "swap_protein_label": "Protein",
+      "swap_carb_label": "Kohlenhydrate",
+      "swap_veg_label": "Gemüse"
+    },
+    "b3": {
+      "bar_goal": "Ziel",
+      "bar_adjust": "Anpassung",
+      "bar_speed": "Tempo",
+      "bar_balance": "Balance",
+      "bar_to_5kg": "Bis −5kg",
+      "bar_weekly_protein": "Protein/Woche",
+      "choose_goal": "Ihr Ziel wählen",
+      "note_label": "Hinweis",
+      "note": "Diese Zahlen sind ein Ausgangspunkt, keine starren Regeln. Jeder Körper reagiert anders — 2–4 Wochen beobachten und dann anpassen.",
+      "div_effects": "Effekte & Vorteile",
+      "div_formula": "Energieformel",
+      "div_macro": "Personalisierte Makroverteilung",
+      "div_timeline": "Zeitplan-Schätzung",
+      "warning_label": "Wichtiger Hinweis",
+      "food_source": "Lebensmittelquellen:",
+      "bmr_per_day": "Grund-kcal/Tag",
+      "tdee_per_day": "Erhaltungs-kcal/Tag",
+      "target_label": "Ziel",
+      "formula_note": "Zielkalorien-Berechnung mit",
+      "fat_label": "Fett",
+      "macro_protein_ex": "Hähnchen, Fisch, Eier, Tofu",
+      "macro_carb_ex": "Reis, Kartoffel, Haferflocken",
+      "macro_fat_ex": "Olivenöl, Nüsse, fetthaltiger Fisch",
+      "milestone_title": "Fortschritt nach Gewichtsmeilensteinen",
+      "philosophy_label": "Projekt-Philosophie",
+      "consistency_title": "Moderate Konsequenz gewinnt",
+      "consistency_body": "Menschen, die 70–80% des Plans über 6 Monate einhalten, erzielen generell bessere Ergebnisse als jene, die 100% für 7 Tage machen und dann aufgeben.",
+      "rule_8020_title": "Nachhaltige Flexibilitätsregel",
+      "rule_8020_body": "80% gesunde Lebensmittel — 20% flexibel. Man muss nicht jeden Tag perfekt essen, um langfristig gute Ergebnisse zu erzielen.",
+      "goal_analysis": {
+        "fat-loss": {
+          "headline": "Nachhaltiger Fettabbau — volle Muskelerhaltung",
+          "science": "Ein 300–500 kcal/Tag Defizit ist die optimale Zone: schnell genug um in 4 Wochen Ergebnisse zu sehen, klein genug dass der Körper keine Muskeln abbaut.",
+          "benefits": [
+            {"icon": "🔥", "title": "Ideale Abnahmerate", "desc": "−400 kcal Defizit = ~0,37kg Fett/Woche. Nachhaltiger als Crash-Diäten ohne Erschöpfung."},
+            {"icon": "💪", "title": "Hohes Protein schützt Muskeln", "desc": "2,0g/kg stellt sicher dass der Körper Fett verbrennt statt Muskeln bei Energiemangel abzubauen."},
+            {"icon": "🩸", "title": "Stabiler Blutzucker", "desc": "Raffinierte Carbs reduzieren, Ballaststoffe erhöhen → stabiles Insulin → weniger neue Fettansammlung nach Mahlzeiten."},
+            {"icon": "⚡", "title": "Noch genug Energie zum Training", "desc": "Nicht zu tief schneiden — Cardio- und Gym-Intensität aufrechterhalten um Fettverbrennung zu optimieren."}
+          ],
+          "caution": "Nicht mehr als 600 kcal/Tag Defizit — hohes Risiko für Muskelverlust, Haarausfall und chronische Müdigkeit.",
+          "timeframe": "4–8 Wochen für deutliche Ergebnisse auf der Waage und im Spiegel."
+        },
+        "muscle-gain": {
+          "headline": "Qualitätsmasse aufbauen — minimale Fettansammlung",
+          "science": "Ein +200–300 kcal/Tag Überschuss ist 'Lean Bulk' — genug Material für Muskelaufbau bei begrenzter Fettspeicherung.",
+          "benefits": [
+            {"icon": "🏗️", "title": "Effektiver Lean Bulk", "desc": "+250 kcal leichter Überschuss baut langsam und qualitativ Muskeln auf, ohne schnelle Fettzunahme."},
+            {"icon": "🍚", "title": "Carbs rund ums Training", "desc": "Carbs vor dem Training (Energie) und nach dem Training (Glykogenwiederherstellung) maximieren die Muskelsynthese."},
+            {"icon": "😴", "title": "Muskeln wachsen im Schlaf", "desc": "GH und Testosteron peaken im tiefen Schlaf 7–9h. Schlafentzug blockiert das Muskelwachstum."},
+            {"icon": "📈", "title": "Progressive Überlastung ist der Schlüssel", "desc": "Wöchentlich steigernde Last parallel zu ausreichender Ernährung — ohne erhöhte Last haben Muskeln keinen Grund zu wachsen."}
+          ],
+          "caution": "Protein sollte gleichmäßig auf 4–5 Mahlzeiten/Tag verteilt werden (20–40g/Mahlzeit) — wichtiger als alles in 1–2 Mahlzeiten zu essen.",
+          "timeframe": "8–12 Wochen für deutliche Veränderungen bei Muskelmasse und Kraft."
+        },
+        "endurance": {
+          "headline": "Ausdauer optimieren — Langstrecken-Leistung",
+          "science": "Kohlenhydrate sind der bevorzugte Treibstoff für Cardio-Aktivität >60 Minuten. Zu wenig Carbs = Krämpfe, Blutzuckerabfall, frühe Erschöpfung.",
+          "benefits": [
+            {"icon": "🚴", "title": "Carbs = Geschwindigkeitstreibstoff", "desc": "An intensiven Trainingstagen Carbs erhöhen um Muskel- und Leberglykogen vor langen Einheiten voll zu halten."},
+            {"icon": "💧", "title": "Elektrolyte bestimmen die Leistung", "desc": "Natrium + Kalium + Magnesium stabilisieren Muskelkontraktionen, verhindern Krämpfe und erhalten Ausdauer."},
+            {"icon": "🔧", "title": "Protein für Cardio-Erholung", "desc": "1,5g/kg reicht aus um Mikroverletzungen an Muskelfasern nach langem Cardio zu reparieren ohne Schwere oder langsame Verdauung."},
+            {"icon": "🧪", "title": "Vor Wettkampftag keine neuen Lebensmittel", "desc": "48h vor dem Wettkampf die übliche Ernährung beibehalten — unbekannte Lebensmittel können Verdauungsprobleme verursachen."}
+          ],
+          "caution": "Carbs während hochintensivem Ausdauertraining zu reduzieren verursacht ernsthafte Erschöpfung und schwere Leistungsabnahme.",
+          "timeframe": "6–10 Wochen für deutliche Verbesserung von Ausdauer und Erholungszeit zwischen Einheiten."
+        },
+        "maintenance": {
+          "headline": "Langfristige Erhaltung — Freiheit ohne Angst",
+          "science": "Die Erhaltungsphase wird oft übersehen ist aber kritisch wichtig: sie hilft dem Körper seinen Set-Point und Hormone nach einer Diät- oder Aufbauphase zurückzusetzen.",
+          "benefits": [
+            {"icon": "⚖️", "title": "Echtes stabiles Gewicht", "desc": "Essen um TDEE ±100 kcal hilft dem Körper Homöostase zu erhalten und den Stoffwechsel ungehindert zu lassen."},
+            {"icon": "🧘", "title": "Kein Kaloriendruck", "desc": "80/20 Regel: 80% gesunde Lebensmittel, 20% flexibel — genug für langfristige Nachhaltigkeit ohne Erschöpfung."},
+            {"icon": "📊", "title": "Regelmäßige Check-ins reichen", "desc": "Einmal wöchentlich wiegen, gleiche Zeit und Bedingungen — nur um einen ±2kg Trend frühzeitig zu erkennen und anzupassen."},
+            {"icon": "🌱", "title": "Fundament für das nächste Ziel", "desc": "Gute 8–12 Wochen Erhaltung schafft einen stabilen Boden vor der nächsten Diät- oder Aufbauphase."}
+          ],
+          "caution": "Erhaltung bedeutet nicht 'alles essen' — Kerngewohnheiten beibehalten: ausreichend Protein, ausreichend Gemüse, weniger flüssiger Zucker.",
+          "timeframe": "Mindestens 8–12 Wochen nach jeder Diät-/Aufbauphase erhalten bevor ein neuer Zyklus beginnt."
+        }
+      }
     }
   },
   "pillarC": {

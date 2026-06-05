@@ -556,11 +556,11 @@
       "text2": "You don't fail because of one off meal — you fail when you quit after it. Consistency is your true superpower."
     },
     "macros": [
-      {"name": "Protein",       "role": "Build muscle, satiety, recovery",      "dose": "1.6–2.2 g/kg"},
-      {"name": "Carbohydrates", "role": "Brain & muscle fuel",                  "dose": "40–55% total kcal"},
-      {"name": "Fat",           "role": "Hormones, vitamin absorption",          "dose": "20–35% total kcal"},
-      {"name": "Fiber",         "role": "Digestion, satiety, gut flora",         "dose": "25–38 g/day"},
-      {"name": "Water",         "role": "Performance, recovery, metabolism",     "dose": "35 ml/kg body weight"}
+      {"name": "Protein",       "role": "Build muscle, satiety, recovery",      "dose": "1.6–2.2 g/kg",       "sources": ["Chicken", "Fish", "Eggs", "Tofu", "Whey"]},
+      {"name": "Carbohydrates", "role": "Brain & muscle fuel",                  "dose": "40–55% total kcal",  "sources": ["Rice", "Sweet potato", "Noodles", "Oats", "Fruit"]},
+      {"name": "Fat",           "role": "Hormones, vitamin absorption",          "dose": "20–35% total kcal",  "sources": ["Olive oil", "Butter", "Walnuts", "Salmon", "Chia seeds"]},
+      {"name": "Fiber",         "role": "Digestion, satiety, gut flora",         "dose": "25–38 g/day",        "sources": ["Leafy greens", "Lentils", "Broccoli", "Green banana", "Flaxseed"]},
+      {"name": "Water",         "role": "Performance, recovery, metabolism",     "dose": "35 ml/kg body weight","sources": ["Plain water", "Green tea", "Coconut water", "Soup", "Fruit"]}
     ],
     "tdee_modes": [
       {"label": "Fat Loss", "delta": "−300–500 kcal", "note": "Slight deficit, keep protein high"},
@@ -590,7 +590,20 @@
       "fiber": "Fiber",
       "water": "Water",
       "fuel_note": "Primary fuel",
-      "hormone_note": "Hormones · Vitamins"
+      "hormone_note": "Hormones · Vitamins",
+      "philosophy_title": "7 Core Nutrition Philosophies",
+      "philosophy_sub": "The mental foundation for long-term sustainability — not willpower",
+      "philosophy_quote1": "Eat enough — eat regularly — eat real food — eat for your goals — live long.",
+      "philosophy_quote2": "The best nutrition is the one you understand, can adapt to, and can sustain.",
+      "philosophy_7": [
+        {"title": "Eat enough, not to exhaustion", "body": "The body needs sufficient calories to train, work, and recover. Chronic under-eating slows basal metabolism and causes muscle loss."},
+        {"title": "Eat regularly, not impulsively", "body": "Scheduled meals keep blood sugar stable, reduce cravings, and prevent binge-eating from accumulated hunger."},
+        {"title": "Eat real food, limit ultra-processed", "body": "Whole foods — meat, fish, eggs, vegetables, rice — provide micronutrients and lasting fullness better than packaged alternatives."},
+        {"title": "Eat for your goals, not trends", "body": "Fat-loss eaters and endurance athletes eat differently. No single diet is right for everyone — only what fits you."},
+        {"title": "Protein is base, veggies are allies, carbs are fuel", "body": "All three groups are necessary. Cutting any group completely creates imbalance and makes long-term adherence difficult."},
+        {"title": "One off meal doesn't derail the journey", "body": "What derails you is the 'already ruined, might as well quit' mindset. Knowing how to return next meal is the most important skill."},
+        {"title": "Measure to adjust, not to judge yourself", "body": "Data is a map, not a verdict. Use TDEE and macros to understand your body — not to create pressure."}
+      ]
     },
     "b2": {
       "based_on": "BASED ON YOUR STATS",
@@ -631,7 +644,103 @@
       "meal_times": ["🌅 Morning", "☀️ Lunch", "🌙 Dinner", "🍎 Snack"],
       "protein_notes": ["eggs + yogurt", "chicken / fish / tofu", "fish / meat / eggs", "Greek yogurt"],
       "carb_notes": ["stable blood sugar", "peak energy time", "reduce if no evening workout", "fruit, oats"],
-      "lunch_label": "Lunch"
+      "lunch_label": "Lunch",
+      "check_q_title": "4 Meal Check Questions",
+      "check_q_sub": "Simple habit to ensure every meal meets nutrition standards — no calorie counting needed",
+      "check_q_tip_label": "How to use",
+      "check_q_tip": "Before each meal, run through these 4 questions. If the current meal is missing something — add it now or adjust at the next meal. No need for perfection, just awareness.",
+      "check_questions": [
+        {"q": "Does this meal have protein?", "example": "Meat, fish, eggs, tofu, yogurt"},
+        {"q": "Any vegetables or soup?", "example": "At least 1–2 handfuls of boiled, sautéed veggies or soup"},
+        {"q": "Is the carb level right for your activity?", "example": "Training day: add rice. Rest day: reduce rice"},
+        {"q": "Not too much fried / sweet / sugary drinks?", "example": "If yes → balance at the next meal"}
+      ],
+      "swap_title": "Food Swap Table",
+      "swap_sub": "Flexible swaps when an ingredient is unavailable — same protein and calorie level",
+      "swap_protein_label": "Protein",
+      "swap_carb_label": "Carbs",
+      "swap_veg_label": "Vegetables"
+    },
+    "b3": {
+      "bar_goal": "Goal",
+      "bar_adjust": "Adjustment",
+      "bar_speed": "Rate",
+      "bar_balance": "Balance",
+      "bar_to_5kg": "To −5kg",
+      "bar_weekly_protein": "Protein/week",
+      "choose_goal": "Choose Your Goal",
+      "note_label": "Note",
+      "note": "These numbers are a starting point, not rigid rules. Every body responds differently — track for 2–4 weeks then adjust.",
+      "div_effects": "Effects & Benefits",
+      "div_formula": "Energy Formula",
+      "div_macro": "Personalized Macro Distribution",
+      "div_timeline": "Estimated Timeline",
+      "warning_label": "Important Note",
+      "food_source": "Food sources:",
+      "bmr_per_day": "basic kcal/day",
+      "tdee_per_day": "maintenance kcal/day",
+      "target_label": "Target",
+      "formula_note": "Target calorie calculation using",
+      "fat_label": "Fat",
+      "macro_protein_ex": "chicken, fish, eggs, tofu",
+      "macro_carb_ex": "rice, potato, oats",
+      "macro_fat_ex": "olive oil, nuts, fatty fish",
+      "milestone_title": "Progress by weight milestone",
+      "philosophy_label": "Project philosophy",
+      "consistency_title": "Moderate consistency wins",
+      "consistency_body": "People who maintain 70–80% of the plan for 6 months generally have better results than those who do 100% for 7 days then quit.",
+      "rule_8020_title": "Sustainable flexibility rule",
+      "rule_8020_body": "80% healthy foods — 20% flexible. You don't need to eat perfectly every day to achieve good long-term results.",
+      "goal_analysis": {
+        "fat-loss": {
+          "headline": "Sustainable fat loss — preserve every pound of muscle",
+          "science": "A 300–500 kcal/day deficit is the optimal zone: fast enough to see results in 4 weeks, small enough that the body won't break down muscle for energy.",
+          "benefits": [
+            {"icon": "🔥", "title": "Ideal loss rate", "desc": "−400 kcal deficit = ~0.37kg fat/week. More sustainable than crash dieting without exhaustion."},
+            {"icon": "💪", "title": "High protein protects muscle", "desc": "2.0g/kg ensures the body prioritizes fat burning instead of muscle breakdown when energy is limited."},
+            {"icon": "🩸", "title": "Stable blood sugar", "desc": "Reduce refined carbs, increase fiber → stable insulin → less new fat accumulation after meals."},
+            {"icon": "⚡", "title": "Still enough energy to train", "desc": "Don't cut too deep — maintain cardio and gym intensity to optimize fat burning."}
+          ],
+          "caution": "Don't exceed a 600 kcal/day deficit — high risk of muscle loss, hair loss, and chronic fatigue.",
+          "timeframe": "4–8 weeks to see clear results on the scale and in the mirror."
+        },
+        "muscle-gain": {
+          "headline": "Quality muscle gain — minimal fat accumulation",
+          "science": "A +200–300 kcal/day surplus is 'lean bulk' — enough material to build muscle while limiting excess fat storage.",
+          "benefits": [
+            {"icon": "🏗️", "title": "Effective lean bulk", "desc": "+250 kcal light surplus builds muscle gradually and with quality, without rapid fat gain."},
+            {"icon": "🍚", "title": "Carbs around training", "desc": "Load carbs before training (energy) and after training (glycogen recovery) to maximize muscle synthesis."},
+            {"icon": "😴", "title": "Muscle grows during sleep", "desc": "GH and testosterone peak during deep sleep 7–9h. Sleep deprivation blocks muscle growth."},
+            {"icon": "📈", "title": "Progressive overload is key", "desc": "Increase load progressively each week alongside sufficient nutrition — without increased load, muscles have no reason to grow."}
+          ],
+          "caution": "Protein should be spread evenly across 4–5 meals/day (20–40g/meal) — more important than eating it all in 1–2 meals.",
+          "timeframe": "8–12 weeks to see clear changes in muscle mass and strength."
+        },
+        "endurance": {
+          "headline": "Optimize endurance — long-game performance",
+          "science": "Carbohydrates are the priority fuel for cardio activity >60 minutes. Insufficient carbs = cramping, blood sugar crash, early fatigue.",
+          "benefits": [
+            {"icon": "🚴", "title": "Carbs = speed fuel", "desc": "Increase carbs on heavy training days to keep muscle and liver glycogen full before long events."},
+            {"icon": "💧", "title": "Electrolytes determine performance", "desc": "Sodium + potassium + magnesium keep muscle contractions stable, prevent cramping and maintain endurance."},
+            {"icon": "🔧", "title": "Protein for cardio recovery", "desc": "1.5g/kg is enough to repair micro-damage to muscle fibers after long cardio without heaviness or slow digestion."},
+            {"icon": "🧪", "title": "Don't try new foods before race day", "desc": "Keep your usual diet 48h before competition — unfamiliar foods can cause digestive disruption."}
+          ],
+          "caution": "Cutting carbs during high-intensity endurance training causes serious fatigue and severe performance decline.",
+          "timeframe": "6–10 weeks to clearly improve endurance and recovery time between sessions."
+        },
+        "maintenance": {
+          "headline": "Long-term maintenance — freedom without fear",
+          "science": "The maintenance phase is often overlooked but critically important: it helps the body reset its set point and hormones after a cut or bulk phase.",
+          "benefits": [
+            {"icon": "⚖️", "title": "True stable weight", "desc": "Eating around TDEE ±100 kcal helps the body maintain homeostasis and keeps metabolism unrestrained."},
+            {"icon": "🧘", "title": "No calorie pressure", "desc": "80/20 rule: 80% healthy foods, 20% flexible — enough to sustain long-term without exhaustion."},
+            {"icon": "📊", "title": "Periodic check-ins are enough", "desc": "Weigh once/week, same time and conditions — just to catch a ±2kg trend and adjust early."},
+            {"icon": "🌱", "title": "Foundation for the next goal", "desc": "Good 8–12 week maintenance creates a stable floor before entering the next cut or bulk phase."}
+          ],
+          "caution": "Maintenance doesn't mean 'eat anything' — keep core habits: sufficient protein, sufficient veggies, less liquid sugar.",
+          "timeframe": "Maintain at least 8–12 weeks after each cut/bulk phase before starting a new cycle."
+        }
+      }
     }
   },
   "pillarC": {

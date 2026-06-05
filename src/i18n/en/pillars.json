@@ -539,7 +539,22 @@
       "per_hour_sub": "Avg. consumption",
       "hover_hint": "Hover for details",
       "benefits_label": "Benefits of Knowing TDEE",
-      "accuracy_label": "Accuracy & Notes"
+      "accuracy_label": "Accuracy & Notes",
+      "benefits": [
+        {"title": "Eat on Target", "desc": "Know exactly how many kcal you need per day — no guessing when you want to lose fat, gain muscle, or maintain."},
+        {"title": "Avoid Energy Imbalance", "desc": "Eat enough to maintain energy and muscle, avoid 'crash' from aggressive cuts or fat gain from overeating."},
+        {"title": "Adjust at the Right Moment", "desc": "No progress after 2 weeks? Increase/decrease by exactly 100–200 kcal instead of overhauling the entire diet."},
+        {"title": "Update as Your Body Changes", "desc": "TDEE shifts when weight changes. Recalculate every 4 weeks to stay effective consistently."}
+      ],
+      "accuracy_body": "Mifflin-St Jeor formula has a ±10–15% error margin because it cannot account for muscle-to-fat ratio. Use TDEE as a starting point — track your weight for 1–2 weeks. If stable, what you're currently eating IS your real TDEE.",
+      "meal_split_title": "5 Meal Distribution Principles",
+      "meal_split_rules": [
+        {"title": "Don't Skip Breakfast", "desc": "Breakfast activates metabolism and stabilizes blood sugar throughout the day."},
+        {"title": "Protein at Every Meal", "desc": "Protein keeps you full longer, protects muscle, and burns extra calories during digestion."},
+        {"title": "Eat Vegetables Before Carbs", "desc": "Vegetables slow sugar absorption and reduce the insulin spike after meals."},
+        {"title": "Proper Meal Spacing", "desc": "Don't go more than 5 hours without eating — prevents overeating at the next meal."},
+        {"title": "Light Dinner", "desc": "Reduce starchy carbs at dinner if not training; increase vegetables and protein instead."}
+      ]
     },
     "mantras": [
       {"text": "Eat Enough", "sub": "No starvation or extreme cuts", "desc": "The body needs enough energy to function, recover and build muscle. Extreme calorie cuts slow metabolism and cause unwanted muscle loss."},
@@ -871,7 +886,105 @@
       "peri_title": "Peri-Workout Nutrition Protocol",
       "peri_note": "Optimal timing: eat pre-workout 60–120 min early. If only 30 min, choose simple carbs (banana, rice cake). Post-workout: first 30 min is ideal — peak insulin sensitivity, mTOR strongly activated.",
       "endurance_title": "Endurance Fueling Guide"
-    }
+    },
+    "teaser_sections": [
+      {"label": "Foundation & Structure", "count": "5 pages"},
+      {"label": "Meal Plans", "count": "4 pages"},
+      {"label": "Daily Tools", "count": "4 pages"},
+      {"label": "Long-term Roadmap", "count": "2 pages"}
+    ],
+    "teaser_cards": [
+      {
+        "category": "Structured Roadmap", "title": "Nutrition Roadmap", "accent": "12 & 24 Weeks",
+        "desc_pre": "6 phases from building habits to peak performance. All figures calculated from your B0 stats —",
+        "features": ["Sample meals per phase", "S-curve compliance chart", "Detailed science base", "Personal progress checklist"],
+        "stat_labels": ["Phases", "Weeks", "Free"], "cta": "View Full Roadmap"
+      },
+      {
+        "category": "System Structure", "title": "Product Structure", "accent": "Nutrition Content",
+        "desc_pre": "8 modules B0–B7 from initial assessment to performance optimization. Full formulas, visual charts, food database — based on BMI",
+        "features": ["7-step formula guide", "Macro & BMI charts", "12 instructional videos", "8 science articles"],
+        "stat_labels": ["Modules", "Videos", "Tools"], "cta": "Explore Structure"
+      },
+      {
+        "category": "Database & Tracking", "title": "Data Structure", "accent": "App / Notion / Google Sheet",
+        "desc": "4 complete databases: Nutrition Profile, Meal Library, Daily Log, Weekly Review. Ready-to-use Google Sheet formulas, Notion formulas, 15+ food library and a 100-point compliance score.",
+        "features": ["4 detailed databases", "Google Sheet formulas", "Notion properties", "Nutrition Score 100pts"],
+        "stat_labels": ["Databases", "Formulas", "Foods"], "cta": "View Data Structure"
+      },
+      {
+        "category": "Protein — Nutrition Foundation", "title": "Protein Calculator", "accent": "Personalized",
+        "desc": "Calculate protein by goal (fat loss/muscle gain/endurance), 12+ Vietnamese food sources, optimal protein timing, daily tracker and 5 science facts about protein.",
+        "features": ["g/kg formula", "12+ protein sources", "Protein timing", "Daily tracker"],
+        "stat_labels": ["Sources", "Goals", "Timing"], "cta": "View Protein Formula"
+      },
+      {
+        "category": "Formula & Calculation", "title": "Calculate Your", "accent": "Personal Meal Plan",
+        "desc": "10-step full calculation: BMI → BMR → TDEE → Target kcal → Protein → Fat → Carb → Meal split → Training. Interactive 10-step calculator, macro charts, calorie cycling by training day.",
+        "features": ["10 calculation steps", "MacroDonut chart", "Calorie cycling", "3 meal models"],
+        "stat_labels": ["Steps", "Models", "Formulas"], "cta": "View Formula Guide"
+      },
+      {
+        "category": "Meal Split & Plate Model", "title": "Meal Distribution Rules", "accent": "4 models · 10 golden rules · Carb cycling",
+        "desc": "4 meal models, 10 golden rules, interactive plate chart, carb schedule by training day, and a personalized meal calculator from your TDEE data.",
+        "features": ["4 meal models", "Interactive SVG plate", "Carb cycling by day", "3 nutrition goals"],
+        "stat_labels": ["Models", "Rules", "Goals"], "cta": "View Meal Rules"
+      },
+      {
+        "category": "Sample Menu · 7 Days", "title": "7-Day Meal Plan", "accent": "Beginner-Friendly Base",
+        "desc": "35 complete meals, interactive shopping list, 60–90 min meal prep guide, daily checklist and off-plan recovery — personalized from your TDEE.",
+        "features": ["7 days fully planned", "Interactive shopping list", "Meal prep guide", "Daily checklist"],
+        "stat_labels": ["Days", "Meals", "Food groups"], "cta": "View 7-Day Meal Plan"
+      },
+      {
+        "category": "Personalized by Goal", "title": "Goal-Based", "accent": "Meal Plan",
+        "desc": "7 nutrition approaches for 7 different goals: healthy base, fat loss, muscle gain, recomp, endurance, recovery, busy lifestyle. Personalized macro calculator and weekly framework.",
+        "features": ["7 goals", "Macro calculator", "Weekly framework", "12 adjustment rules"],
+        "stat_labels": ["Goals", "Rules", "Base questions"], "cta": "View Goal-Based Plan"
+      },
+      {
+        "category": "Cycling · Gym · Swimming · Running", "title": "Advanced Plan", "accent": "For High-Volume Trainers",
+        "desc": "Periodized nutrition for 4 training day types, detailed fueling per sport, 7-day sample, carb cycling chart and personalized macro calculator by body weight.",
+        "features": ["4 training day types", "4 sports", "Carb cycling chart", "Water & electrolytes"],
+        "stat_labels": ["Day types", "Sports", "Sample days"], "cta": "View Advanced Plan"
+      },
+      {
+        "category": "Safety · Protection · Correct Method", "title": "Safety Rules",
+        "desc": "Comprehensive safety guide for the Nutrition program — green/yellow/red user tiers, energy rules, macro rules, food storage and daily self-check checklist.",
+        "features": ["3 user groups", "20 detailed rules", "Daily checklist", "Warning signs"],
+        "stat_labels": ["Rules", "User groups", "Questions"], "cta": "View Safety Rules"
+      },
+      {
+        "category": "Daily Tracker", "title": "Nutrition Checklist", "accent": "Daily",
+        "desc": "No need for perfection — just 9 criteria, 100 points, 5 questions per day. Choose your day type, track water, auto-score, save daily and weekly results.",
+        "features": ["9 criteria", "100 pts/day", "Water tracker", "Save offline"],
+        "stat_labels": ["Criteria", "Points", "Sessions"], "cta": "Open Checklist"
+      },
+      {
+        "category": "Standard Template", "title": "Template Meal Plan", "accent": "Project Standard",
+        "desc": "Complete template: BMR/TDEE calculation, macro split, plate structure, meal library, 7-day template, training schedule adjustments, 10-criteria checklist and weekly report.",
+        "features": ["BMR/TDEE Calculator", "Macro Donut", "Plate Builder", "7-day Planner"],
+        "stat_labels": ["Steps", "Criteria", "Personal"], "cta": "Open Template"
+      },
+      {
+        "category": "Batch Cooking", "title": "Meal Prep Kit", "accent": "30 Min for 3 Days",
+        "desc": "Cook once — eat actively for 3 days. 6-step parallel timeline, goal-based container formulas, 3-day rotating menu, 4-week variety, shopping checklist and food safety.",
+        "features": ["30-min timer", "3-day menu", "4-week rotation", "3 signature sauces"],
+        "stat_labels": ["Minutes", "Days", "Containers"], "cta": "Start Meal Prep"
+      },
+      {
+        "category": "Roadmap · 12 Weeks", "title": "Nutrition Roadmap", "accent": "12 Weeks",
+        "desc": "From awareness → plate model → meal prep → personalization → recovery → self-sustaining. A 6-phase system to build lasting nutrition habits — no extreme diets, no gram counting.",
+        "features": ["6 phases", "Nutrition Score", "Personalized", "90-day plan"],
+        "stat_labels": ["Weeks", "Phases", "Points/day"], "cta": "View Roadmap"
+      },
+      {
+        "category": "Long-term Roadmap · 24 Weeks", "title": "Nutrition Roadmap", "accent": "24 Weeks",
+        "desc": "From awareness → energy control → personalization → real life → performance → self-sustaining. Build lasting nutrition habits without relying on willpower.",
+        "features": ["6 phases", "Habit Score", "B0 personalized", "Self-sustaining"],
+        "stat_labels": ["Weeks", "Phases", "Target score"], "cta": "View 24-Week Roadmap"
+      }
+    ]
   },
   "pillarC": {
     "id": "c",

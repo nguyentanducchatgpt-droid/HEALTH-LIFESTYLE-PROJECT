@@ -539,7 +539,22 @@
       "per_hour_sub": "Ø Verbrauch",
       "hover_hint": "Hover für Details",
       "benefits_label": "Vorteile des TDEE-Wissens",
-      "accuracy_label": "Genauigkeit & Hinweise"
+      "accuracy_label": "Genauigkeit & Hinweise",
+      "benefits": [
+        {"title": "Gezielt essen", "desc": "Genau wissen wie viele kcal täglich benötigt werden — kein Raten beim Abnehmen, Muskelaufbau oder Gewicht halten."},
+        {"title": "Energieungleichgewicht vermeiden", "desc": "Genug essen um Energie und Muskeln zu erhalten, einen 'Crash' durch extreme Cuts oder Fettzunahme durch Überessen vermeiden."},
+        {"title": "Im richtigen Moment anpassen", "desc": "Kein Fortschritt nach 2 Wochen? Genau 100–200 kcal erhöhen/senken statt die ganze Ernährung umzustellen."},
+        {"title": "Bei Körperveränderung aktualisieren", "desc": "Der TDEE ändert sich wenn das Gewicht sich ändert. Alle 4 Wochen neu berechnen für konstante Effektivität."}
+      ],
+      "accuracy_body": "Die Mifflin-St Jeor Formel hat eine ±10–15% Fehlertoleranz, da sie das Muskel-Fett-Verhältnis nicht berücksichtigen kann. TDEE als Ausgangspunkt verwenden — Gewicht 1–2 Wochen verfolgen. Wenn stabil, ist die aktuelle Kalorienmenge der echte TDEE.",
+      "meal_split_title": "5 Mahlzeitenverteilungs-Prinzipien",
+      "meal_split_rules": [
+        {"title": "Frühstück nicht auslassen", "desc": "Frühstück aktiviert den Stoffwechsel und stabilisiert den Blutzucker den ganzen Tag."},
+        {"title": "Protein bei jeder Mahlzeit", "desc": "Protein hält länger satt, schützt Muskeln und verbrennt extra Kalorien bei der Verdauung."},
+        {"title": "Gemüse vor Kohlenhydraten essen", "desc": "Gemüse verlangsamt die Zuckeraufnahme und reduziert den Insulinpeak nach den Mahlzeiten."},
+        {"title": "Sinnvoller Mahlzeitenabstand", "desc": "Nicht länger als 5 Stunden fasten — verhindert übermäßiges Essen bei der nächsten Mahlzeit."},
+        {"title": "Leichtes Abendessen", "desc": "Stärkehaltige Kohlenhydrate abends reduzieren wenn nicht trainiert wird, mehr Gemüse und Protein stattdessen."}
+      ]
     },
     "mantras": [
       {"text": "Genug essen", "sub": "Kein Aushungern oder extreme Cuts", "desc": "Der Körper braucht genug Energie zum Funktionieren, Erholen und Muskelaufbau. Extreme Kalorienreduktion verlangsamt den Stoffwechsel und verursacht Muskelverlust."},
@@ -890,7 +905,105 @@
       "peri_title": "Ernährungsprotokoll rund ums Training",
       "peri_note": "Zeitpunkt ist wichtig — Nährstoffe strategisch vor und nach dem Training einsetzen.",
       "endurance_title": "Ausdauertankstellen-Leitfaden"
-    }
+    },
+    "teaser_sections": [
+      {"label": "Grundlagen & Struktur", "count": "5 Seiten"},
+      {"label": "Mahlzeitenpläne", "count": "4 Seiten"},
+      {"label": "Tägliche Tools", "count": "4 Seiten"},
+      {"label": "Langzeit-Roadmap", "count": "2 Seiten"}
+    ],
+    "teaser_cards": [
+      {
+        "category": "Strukturierte Roadmap", "title": "Ernährungs-Roadmap", "accent": "12 & 24 Wochen",
+        "desc_pre": "6 Phasen vom Gewohnheitsaufbau bis zur Spitzenleistung. Alle Zahlen aus Ihren B0-Daten berechnet —",
+        "features": ["Beispielmahlzeiten pro Phase", "S-Kurven-Compliance-Chart", "Detaillierte Wissenschaftsbasis", "Persönliche Fortschrittscheckliste"],
+        "stat_labels": ["Phasen", "Wochen", "Kostenlos"], "cta": "Vollständige Roadmap ansehen"
+      },
+      {
+        "category": "Systemstruktur", "title": "Produktstruktur", "accent": "Ernährungsinhalt",
+        "desc_pre": "8 Module B0–B7 von der Erstbewertung bis zur Leistungsoptimierung. Vollständige Formeln, visuelle Charts, Lebensmitteldatenbank — basierend auf BMI",
+        "features": ["7-Schritte-Formelanleitung", "Makro & BMI Charts", "12 Lehrvideos", "8 Wissenschaftsartikel"],
+        "stat_labels": ["Module", "Videos", "Tools"], "cta": "Struktur erkunden"
+      },
+      {
+        "category": "Datenbank & Tracking", "title": "Datenstruktur", "accent": "App / Notion / Google Sheet",
+        "desc": "4 vollständige Datenbanken: Ernährungsprofil, Mahlzeitenbibliothek, Tagesprotokoll, Wochenbericht. Fertige Google Sheet-Formeln, Notion-Formeln, 15+ Lebensmittelbibliothek und 100-Punkte-Compliance-Score.",
+        "features": ["4 detaillierte Datenbanken", "Google Sheet Formeln", "Notion-Eigenschaften", "Ernährungs-Score 100pts"],
+        "stat_labels": ["Datenbanken", "Formeln", "Lebensmittel"], "cta": "Datenstruktur ansehen"
+      },
+      {
+        "category": "Protein — Ernährungsgrundlage", "title": "Protein-Rechner", "accent": "Personalisiert",
+        "desc": "Protein nach Ziel berechnen (Fettabbau/Muskelaufbau/Ausdauer), 12+ vietnamesische Lebensmittelquellen, optimales Protein-Timing, Tages-Tracker und 5 Wissenschaftsfakten über Protein.",
+        "features": ["g/kg Formel", "12+ Proteinquellen", "Protein-Timing", "Tages-Tracker"],
+        "stat_labels": ["Quellen", "Ziele", "Timing"], "cta": "Proteinformel ansehen"
+      },
+      {
+        "category": "Formel & Berechnung", "title": "Berechnen Sie Ihren", "accent": "Persönlichen Mahlzeitenplan",
+        "desc": "10-Schritte-Vollberechnung: BMI → BMR → TDEE → Ziel-kcal → Protein → Fett → Carbs → Mahlzeitteilung → Training. Interaktiver 10-Schritte-Rechner, Makro-Charts, Carb-Cycling nach Trainingstag.",
+        "features": ["10 Berechnungsschritte", "MacroDonut-Chart", "Carb-Cycling", "3 Mahlzeitenmodelle"],
+        "stat_labels": ["Schritte", "Modelle", "Formeln"], "cta": "Formelanleitung ansehen"
+      },
+      {
+        "category": "Mahlzeitteilung & Tellermodell", "title": "Mahlzeitteilungsregeln", "accent": "4 Modelle · 10 goldene Regeln · Carb Cycling",
+        "desc": "4 Mahlzeitenmodelle, 10 goldene Regeln, interaktives Teller-Chart, Carb-Zeitplan nach Trainingstag und personalisierter Mahlzeitenrechner aus Ihren TDEE-Daten.",
+        "features": ["4 Mahlzeitenmodelle", "Interaktiver SVG-Teller", "Carb-Cycling nach Tag", "3 Ernährungsziele"],
+        "stat_labels": ["Modelle", "Regeln", "Ziele"], "cta": "Mahlzeitregeln ansehen"
+      },
+      {
+        "category": "Beispielmenü · 7 Tage", "title": "7-Tage-Mahlzeitenplan", "accent": "Einsteigerfreundliche Basis",
+        "desc": "35 vollständige Mahlzeiten, interaktive Einkaufsliste, 60–90 Min Meal-Prep-Anleitung, Tageschecklist und Off-Plan-Erholung — personalisiert aus Ihrem TDEE.",
+        "features": ["7 Tage vollgeplant", "Interaktive Einkaufsliste", "Meal-Prep-Anleitung", "Tageschecklist"],
+        "stat_labels": ["Tage", "Mahlzeiten", "Lebensmittelgruppen"], "cta": "7-Tage-Plan ansehen"
+      },
+      {
+        "category": "Personalisiert nach Ziel", "title": "Zielbasierter", "accent": "Mahlzeitenplan",
+        "desc": "7 Ernährungsansätze für 7 verschiedene Ziele: gesunde Basis, Fettabbau, Muskelaufbau, Recomp, Ausdauer, Erholung, geschäftiger Lifestyle. Personalisierter Makro-Rechner und wöchentlicher Rahmen.",
+        "features": ["7 Ziele", "Makro-Rechner", "Wöchentlicher Rahmen", "12 Anpassungsregeln"],
+        "stat_labels": ["Ziele", "Regeln", "Basisfragen"], "cta": "Zielbasierten Plan ansehen"
+      },
+      {
+        "category": "Radfahren · Gym · Schwimmen · Laufen", "title": "Erweiterter Plan", "accent": "Für Hochvolumen-Trainer",
+        "desc": "Periodisierte Ernährung für 4 Trainingstagestypen, detaillierte Kraftstoffversorgung pro Sport, 7-Tage-Muster, Carb-Cycling-Chart und personalisierter Makro-Rechner nach Körpergewicht.",
+        "features": ["4 Trainingstagestypen", "4 Sportarten", "Carb-Cycling-Chart", "Wasser & Elektrolyte"],
+        "stat_labels": ["Tagestypen", "Sportarten", "Mustertage"], "cta": "Erweiterten Plan ansehen"
+      },
+      {
+        "category": "Sicherheit · Schutz · Korrekte Methode", "title": "Sicherheitsregeln",
+        "desc": "Umfassender Sicherheitsleitfaden für das Ernährungsprogramm — grün/gelb/rote Nutzergruppen, Energieregeln, Makroregeln, Lebensmittellagerung und tägliche Selbstcheck-Checkliste.",
+        "features": ["3 Nutzergruppen", "20 detaillierte Regeln", "Tageschecklist", "Warnsignale"],
+        "stat_labels": ["Regeln", "Nutzergruppen", "Fragen"], "cta": "Sicherheitsregeln ansehen"
+      },
+      {
+        "category": "Tages-Tracker", "title": "Ernährungs-Checklist", "accent": "Täglich",
+        "desc": "Keine Perfektion nötig — nur 9 Kriterien, 100 Punkte, 5 Fragen pro Tag. Tagestyp wählen, Wasser tracken, automatisch punkten, Tages- und Wochenergebnisse speichern.",
+        "features": ["9 Kriterien", "100 Pkt/Tag", "Wasser-Tracker", "Offline speichern"],
+        "stat_labels": ["Kriterien", "Punkte", "Sitzungen"], "cta": "Checklist öffnen"
+      },
+      {
+        "category": "Standard-Template", "title": "Template Mahlzeitenplan", "accent": "Projektstandard",
+        "desc": "Komplettes Template: BMR/TDEE-Berechnung, Makro-Aufteilung, Tellerstruktur, Mahlzeitenbibliothek, 7-Tage-Template, Trainingsanpassungen, 10-Kriterien-Checkliste und Wochenbericht.",
+        "features": ["BMR/TDEE-Rechner", "Makro Donut", "Plate Builder", "7-Tage-Planer"],
+        "stat_labels": ["Schritte", "Kriterien", "Persönlich"], "cta": "Template öffnen"
+      },
+      {
+        "category": "Batch-Cooking", "title": "Meal Prep Kit", "accent": "30 Min für 3 Tage",
+        "desc": "Einmal kochen — 3 Tage aktiv essen. Parallele 6-Schritte-Zeitleiste, zielbasierte Behälterformeln, 3-Tage-Rotationsmenü, 4-Wochen-Vielfalt, Einkaufschecklist und Lebensmittelsicherheit.",
+        "features": ["30-Min-Timer", "3-Tage-Menü", "4-Wochen-Rotation", "3 Signature-Saucen"],
+        "stat_labels": ["Minuten", "Tage", "Behälter"], "cta": "Meal Prep starten"
+      },
+      {
+        "category": "Roadmap · 12 Wochen", "title": "Ernährungs-Roadmap", "accent": "12 Wochen",
+        "desc": "Von Bewusstsein → Tellermodell → Meal Prep → Personalisierung → Erholung → selbsterhaltend. Ein 6-Phasen-System zum Aufbau dauerhafter Ernährungsgewohnheiten — keine extremen Diäten.",
+        "features": ["6 Phasen", "Ernährungs-Score", "Personalisiert", "90-Tage-Plan"],
+        "stat_labels": ["Wochen", "Phasen", "Punkte/Tag"], "cta": "Roadmap ansehen"
+      },
+      {
+        "category": "Langzeit-Roadmap · 24 Wochen", "title": "Ernährungs-Roadmap", "accent": "24 Wochen",
+        "desc": "Von Bewusstsein → Energiekontrolle → Personalisierung → reales Leben → Leistung → selbsterhaltend. Dauerhafte Ernährungsgewohnheiten aufbauen ohne Willenskraft.",
+        "features": ["6 Phasen", "Gewohnheits-Score", "B0 personalisiert", "Selbsterhaltend"],
+        "stat_labels": ["Wochen", "Phasen", "Zielpunkte"], "cta": "24-Wochen-Roadmap ansehen"
+      }
+    ]
   },
   "pillarC": {
     "id": "c",

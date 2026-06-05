@@ -539,7 +539,22 @@
       "per_hour_sub": "Tiêu thụ trung bình",
       "hover_hint": "Hover để xem chi tiết",
       "benefits_label": "Lợi Ích Khi Biết TDEE",
-      "accuracy_label": "Độ chính xác & Lưu ý"
+      "accuracy_label": "Độ chính xác & Lưu ý",
+      "benefits": [
+        {"title": "Ăn Đúng Mức Calo", "desc": "Biết chính xác bạn cần bao nhiêu kcal mỗi ngày — không đoán mò khi muốn giảm mỡ, tăng cơ hay duy trì."},
+        {"title": "Tránh Mất Cân Bằng Năng Lượng", "desc": "Ăn đủ để duy trì năng lượng và cơ bắp, tránh 'sụp đổ' do cắt quá nhiều hoặc tích mỡ do ăn quá thừa."},
+        {"title": "Điều Chỉnh Đúng Lúc", "desc": "Không tiến bộ sau 2 tuần? Tăng/giảm chính xác 100–200 kcal thay vì đổi toàn bộ chế độ ăn."},
+        {"title": "Cập Nhật Theo Cơ Thể", "desc": "TDEE thay đổi khi cân nặng thay đổi. Tính lại mỗi 4 tuần để duy trì hiệu quả ổn định."}
+      ],
+      "accuracy_body": "Công thức Mifflin-St Jeor có sai số ±10–15% vì không thể tính đến tỷ lệ cơ/mỡ. Dùng TDEE như điểm khởi đầu — theo dõi cân nặng 1–2 tuần. Nếu cân ổn định, lượng bạn đang ăn CHÍNH LÀ TDEE thực của bạn.",
+      "meal_split_title": "5 Nguyên Tắc Chia Bữa",
+      "meal_split_rules": [
+        {"title": "Không bỏ bữa sáng", "desc": "Bữa sáng kích hoạt trao đổi chất và ổn định đường huyết cả ngày."},
+        {"title": "Mỗi bữa có protein", "desc": "Protein giúp no lâu, bảo vệ cơ và đốt thêm calo khi tiêu hóa."},
+        {"title": "Ăn rau trước carb", "desc": "Rau làm chậm hấp thu đường, giảm đỉnh insulin sau bữa ăn."},
+        {"title": "Khoảng cách bữa hợp lý", "desc": "Không nhịn quá 5 tiếng — tránh ăn bù quá nhiều ở bữa kế."},
+        {"title": "Bữa tối dễ tiêu", "desc": "Giảm tinh bột buổi tối nếu không tập, tăng rau và protein."}
+      ]
     },
     "mantras": [
       {"text": "Ăn đủ", "sub": "Không ăn kiệt sức hay cắt quá mức", "desc": "Cơ thể cần đủ năng lượng để vận hành, phục hồi và xây dựng cơ bắp. Cắt calo quá mức làm chậm trao đổi chất và gây mất cơ ngoài ý muốn."},
@@ -871,7 +886,105 @@
       "peri_title": "Giao Thức Dinh Dưỡng Quanh Buổi Tập",
       "peri_note": "Timing tối ưu: ăn trước tập 60–120 phút sớm. Nếu chỉ có 30 phút, chọn carb đơn giản. Sau tập: 30 phút đầu là lý tưởng nhất.",
       "endurance_title": "Hướng Dẫn Nạp Nhiên Liệu Sức Bền"
-    }
+    },
+    "teaser_sections": [
+      {"label": "Nền Tảng & Cấu Trúc", "count": "5 trang"},
+      {"label": "Kế Hoạch Thực Đơn", "count": "4 trang"},
+      {"label": "Công Cụ Hằng Ngày", "count": "4 trang"},
+      {"label": "Lộ Trình Dài Hạn", "count": "2 trang"}
+    ],
+    "teaser_cards": [
+      {
+        "category": "Lộ Trình Có Cấu Trúc", "title": "Lộ Trình Dinh Dưỡng", "accent": "12 & 24 Tuần",
+        "desc_pre": "6 giai đoạn từ xây nền đến đỉnh cao. Mọi con số được tính từ dữ liệu B0 của bạn —",
+        "features": ["Mẫu bữa ăn theo giai đoạn", "Biểu đồ tuân thủ S-curve", "Nền tảng khoa học chi tiết", "Checklist tiến trình cá nhân"],
+        "stat_labels": ["Giai đoạn", "Tuần", "Miễn phí"], "cta": "Xem Lộ Trình Đầy Đủ"
+      },
+      {
+        "category": "Cấu Trúc Hệ Thống", "title": "Cấu Trúc Sản Phẩm", "accent": "Nội Dung Dinh Dưỡng",
+        "desc_pre": "8 module B0–B7 từ đánh giá ban đầu đến tối ưu hiệu suất. Công thức đầy đủ, biểu đồ trực quan, cơ sở dữ liệu thực phẩm — dựa trên BMI",
+        "features": ["Hướng dẫn công thức 7 bước", "Biểu đồ Macro & BMI", "12 video hướng dẫn", "8 bài viết khoa học"],
+        "stat_labels": ["Module", "Video", "Công cụ"], "cta": "Khám Phá Cấu Trúc"
+      },
+      {
+        "category": "Cơ Sở Dữ Liệu & Theo Dõi", "title": "Cấu Trúc Dữ Liệu", "accent": "App / Notion / Google Sheet",
+        "desc": "4 cơ sở dữ liệu hoàn chỉnh: Hồ Sơ Dinh Dưỡng, Thư Viện Bữa Ăn, Nhật Ký Ngày, Tổng Kết Tuần. Công thức Google Sheet sẵn dùng, công thức Notion, thư viện 15+ thực phẩm và điểm tuân thủ 100 điểm.",
+        "features": ["4 cơ sở dữ liệu chi tiết", "Công thức Google Sheet", "Thuộc tính Notion", "Điểm Dinh Dưỡng 100pts"],
+        "stat_labels": ["Cơ sở DL", "Công thức", "Thực phẩm"], "cta": "Xem Cấu Trúc Dữ Liệu"
+      },
+      {
+        "category": "Protein — Nền Tảng Dinh Dưỡng", "title": "Công Thức Tính Protein", "accent": "Cá Nhân Hoá",
+        "desc": "Tính protein theo mục tiêu (giảm mỡ/tăng cơ/sức bền), 12+ nguồn thực phẩm Việt, timing protein tối ưu, tracker ngày và 5 sự thật khoa học về protein.",
+        "features": ["Công thức g/kg", "12+ nguồn protein", "Protein timing", "Daily tracker"],
+        "stat_labels": ["Nguồn thực phẩm", "Mục tiêu", "Timing"], "cta": "Xem Công Thức Protein"
+      },
+      {
+        "category": "Công Thức & Tính Toán", "title": "Tính Toán", "accent": "Meal Plan Cá Nhân",
+        "desc": "10 bước tính đầy đủ: BMI → BMR → TDEE → Kcal mục tiêu → Protein → Chất béo → Carb → Chia bữa → Tập luyện. Calculator 10 bước tương tác, biểu đồ macro, carb cycling theo ngày tập.",
+        "features": ["10 bước tính", "Biểu đồ MacroDonut", "Carb cycling", "3 mô hình bữa"],
+        "stat_labels": ["Bước", "Mô hình", "Công thức"], "cta": "Xem Hướng Dẫn Công Thức"
+      },
+      {
+        "category": "Chia Bữa & Mô Hình Đĩa Ăn", "title": "Quy Tắc Chia Bữa", "accent": "4 mô hình · 10 quy tắc vàng · Carb cycling",
+        "desc": "4 mô hình chia bữa, 10 quy tắc vàng, biểu đồ đĩa ăn tương tác, lịch carb theo ngày tập và calculator bữa ăn cá nhân từ dữ liệu TDEE của bạn.",
+        "features": ["4 mô hình bữa ăn", "SVG đĩa ăn tương tác", "Carb cycling theo ngày", "3 mục tiêu dinh dưỡng"],
+        "stat_labels": ["Mô hình", "Quy tắc", "Mục tiêu"], "cta": "Xem Quy Tắc Bữa Ăn"
+      },
+      {
+        "category": "Thực Đơn Mẫu · 7 Ngày", "title": "Thực Đơn 7 Ngày", "accent": "Nền Tảng Cho Người Mới",
+        "desc": "35 bữa ăn đầy đủ, danh sách mua hàng tương tác, hướng dẫn meal prep 60–90 phút, checklist ngày và phục hồi off-plan — cá nhân hoá từ TDEE của bạn.",
+        "features": ["7 ngày có kế hoạch", "Danh sách mua hàng", "Hướng dẫn meal prep", "Checklist ngày"],
+        "stat_labels": ["Ngày", "Bữa ăn", "Nhóm thực phẩm"], "cta": "Xem Thực Đơn 7 Ngày"
+      },
+      {
+        "category": "Cá Nhân Hoá Theo Mục Tiêu", "title": "Kế Hoạch", "accent": "Theo Mục Tiêu",
+        "desc": "7 hướng tiếp cận dinh dưỡng cho 7 mục tiêu khác nhau: nền tảng khoẻ, giảm mỡ, tăng cơ, recomp, sức bền, phục hồi, lifestyle bận rộn. Calculator macro cá nhân và khung kế hoạch tuần.",
+        "features": ["7 mục tiêu", "Calculator macro", "Khung kế hoạch tuần", "12 quy tắc điều chỉnh"],
+        "stat_labels": ["Mục tiêu", "Quy tắc", "Câu hỏi nền"], "cta": "Xem Kế Hoạch Theo Mục Tiêu"
+      },
+      {
+        "category": "Đạp Xe · Gym · Bơi · Chạy", "title": "Kế Hoạch Nâng Cao", "accent": "Cho Người Tập Nhiều",
+        "desc": "Dinh dưỡng theo chu kỳ cho 4 loại ngày tập, nạp nhiên liệu chi tiết theo môn thể thao, mẫu 7 ngày, biểu đồ carb cycling và calculator macro cá nhân theo thể trọng.",
+        "features": ["4 loại ngày tập", "4 môn thể thao", "Biểu đồ carb cycling", "Nước & điện giải"],
+        "stat_labels": ["Loại ngày", "Môn thể thao", "Ngày mẫu"], "cta": "Xem Kế Hoạch Nâng Cao"
+      },
+      {
+        "category": "An Toàn · Bảo Vệ · Đúng Cách", "title": "Quy Tắc An Toàn",
+        "desc": "Hướng dẫn an toàn toàn diện cho chương trình Dinh Dưỡng — 3 nhóm người dùng xanh/vàng/đỏ, quy tắc năng lượng, quy tắc macro, bảo quản thực phẩm và checklist tự kiểm tra hàng ngày.",
+        "features": ["3 nhóm người dùng", "20 quy tắc chi tiết", "Checklist hàng ngày", "Dấu hiệu cảnh báo"],
+        "stat_labels": ["Quy tắc", "Nhóm người dùng", "Câu hỏi"], "cta": "Xem Quy Tắc An Toàn"
+      },
+      {
+        "category": "Tracker Hàng Ngày", "title": "Checklist Dinh Dưỡng", "accent": "Hằng Ngày",
+        "desc": "Không cần hoàn hảo — chỉ 9 tiêu chí, 100 điểm, 5 câu hỏi/ngày. Chọn loại ngày, theo dõi nước, tự tính điểm, lưu kết quả ngày và tuần.",
+        "features": ["9 tiêu chí", "100 điểm/ngày", "Theo dõi nước", "Lưu offline"],
+        "stat_labels": ["Tiêu chí", "Điểm", "Phiên"], "cta": "Mở Checklist"
+      },
+      {
+        "category": "Template Chuẩn", "title": "Template Thực Đơn", "accent": "Chuẩn Dự Án",
+        "desc": "Template đầy đủ: tính BMR/TDEE, chia macro, cấu trúc đĩa ăn, thư viện bữa ăn, template 7 ngày, điều chỉnh lịch tập, checklist 10 tiêu chí và báo cáo tuần.",
+        "features": ["Calculator BMR/TDEE", "Macro Donut", "Plate Builder", "Planner 7 ngày"],
+        "stat_labels": ["Bước", "Tiêu chí", "Cá nhân hoá"], "cta": "Mở Template"
+      },
+      {
+        "category": "Nấu Hàng Loạt", "title": "Meal Prep Kit", "accent": "30 Phút Cho 3 Ngày",
+        "desc": "Nấu một lần — ăn chủ động 3 ngày. Timeline song song 6 bước, công thức hộp theo mục tiêu, thực đơn xoay 3 ngày, đa dạng 4 tuần, checklist mua hàng và an toàn thực phẩm.",
+        "features": ["Timer 30 phút", "Thực đơn 3 ngày", "Xoay vòng 4 tuần", "3 sốt đặc trưng"],
+        "stat_labels": ["Phút", "Ngày", "Hộp chứa"], "cta": "Bắt Đầu Meal Prep"
+      },
+      {
+        "category": "Lộ Trình · 12 Tuần", "title": "Lộ Trình Dinh Dưỡng", "accent": "12 Tuần",
+        "desc": "Từ nhận thức → mô hình đĩa ăn → meal prep → cá nhân hoá → phục hồi → tự duy trì. Hệ thống 6 giai đoạn xây thói quen dinh dưỡng bền vững — không ăn kiêng cực đoan, không đếm gram.",
+        "features": ["6 giai đoạn", "Điểm Dinh Dưỡng", "Cá nhân hoá", "Kế hoạch 90 ngày"],
+        "stat_labels": ["Tuần", "Giai đoạn", "Điểm/ngày"], "cta": "Xem Lộ Trình"
+      },
+      {
+        "category": "Lộ Trình Dài Hạn · 24 Tuần", "title": "Lộ Trình Dinh Dưỡng", "accent": "24 Tuần",
+        "desc": "Từ nhận thức → kiểm soát năng lượng → cá nhân hoá → thực tế → hiệu suất → tự duy trì. Xây thói quen dinh dưỡng bền vững không phụ thuộc vào ý chí.",
+        "features": ["6 giai đoạn", "Điểm Thói Quen", "Cá nhân hoá B0", "Tự duy trì"],
+        "stat_labels": ["Tuần", "Giai đoạn", "Điểm mục tiêu"], "cta": "Xem Lộ Trình 24 Tuần"
+      }
+    ]
   },
   "pillarC": {
     "id": "c",

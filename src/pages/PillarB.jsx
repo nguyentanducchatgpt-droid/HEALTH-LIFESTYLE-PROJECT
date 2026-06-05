@@ -5015,15 +5015,18 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
             { icon: '⚡', title: 'Tránh thiếu / thừa năng lượng', desc: 'Ăn đủ để giữ năng lượng và cơ bắp, tránh "crash" khi cắt calo quá mạnh hoặc tích mỡ khi ăn thừa.', color: '#f97316' },
             { icon: '📈', title: 'Điều chỉnh đúng điểm', desc: 'Không tiến bộ sau 2 tuần? Tăng/giảm chính xác 100–200 kcal thay vì thay đổi toàn bộ chế độ ăn.', color: '#22c55e' },
             { icon: '🔄', title: 'Cập nhật theo thể trạng', desc: 'TDEE thay đổi khi cân nặng thay đổi. Tính lại sau mỗi 4 tuần để duy trì hiệu quả liên tục.', color: '#06b6d4' },
-          ].map(b => (
+          ].map((b, i) => {
+            const btr = b0tr.benefits?.[i] || {};
+            return (
             <div key={b.icon} className="flex items-start gap-3 p-4 rounded-2xl border transition-all duration-200 hover:scale-[1.01] hover:-translate-y-0.5" style={{ borderColor: `${b.color}20`, background: `${b.color}06` }}>
               <span className="text-xl shrink-0 mt-0.5">{b.icon}</span>
               <div>
-                <p className="text-xs font-bold mb-1" style={{ color: b.color }}>{b.title}</p>
-                <p className="text-[11px] text-muted leading-relaxed">{b.desc}</p>
+                <p className="text-xs font-bold mb-1" style={{ color: b.color }}>{btr.title || b.title}</p>
+                <p className="text-[11px] text-muted leading-relaxed">{btr.desc || b.desc}</p>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </RevealBlock>
 
@@ -5034,7 +5037,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
           <div>
             <p className="text-xs font-bold text-amber-300 mb-1.5">{b0tr.accuracy_label || 'Độ chính xác & Lưu ý'}</p>
             <p className="text-[11px] text-muted leading-relaxed">
-              Công thức Mifflin-St Jeor có sai số <span className="text-text/80 font-semibold">±10–15%</span> vì không tính được tỷ lệ cơ/mỡ. Dùng TDEE như điểm khởi đầu — theo dõi cân nặng 1–2 tuần, nếu cân không đổi thì lượng bạn đang ăn chính là <span className="text-amber-300/90 font-semibold">TDEE thực tế</span> của bạn.
+              {b0tr.accuracy_body || 'Công thức Mifflin-St Jeor có sai số ±10–15% vì không tính được tỷ lệ cơ/mỡ. Dùng TDEE như điểm khởi đầu — theo dõi cân nặng 1–2 tuần, nếu cân không đổi thì lượng bạn đang ăn chính là TDEE thực tế của bạn.'}
             </p>
           </div>
         </div>
@@ -5042,18 +5045,18 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
 
       {/* Meal split rules */}
       <RevealBlock delay={130}>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">5 Nguyên Tắc Chia Bữa</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b0tr.meal_split_title || '5 Nguyên Tắc Chia Bữa'}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {MEAL_SPLIT_RULES.map(r => (
+          {MEAL_SPLIT_RULES.map((r, i) => (
             <div
               key={r.n}
               className="rounded-2xl border border-violet-500/15 bg-violet-500/5 p-4 hover:border-violet-500/30 transition-all duration-200"
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-6 h-6 rounded-lg flex items-center justify-center text-[10px] font-black shrink-0" style={{ color: '#8b5cf6', background: '#8b5cf615', border: '1px solid #8b5cf630' }}>{r.n}</span>
-                <p className="text-xs font-bold text-text">{r.title}</p>
+                <p className="text-xs font-bold text-text">{b0tr.meal_split_rules?.[i]?.title || r.title}</p>
               </div>
-              <p className="text-[11px] text-muted leading-relaxed">{r.desc}</p>
+              <p className="text-[11px] text-muted leading-relaxed">{b0tr.meal_split_rules?.[i]?.desc || r.desc}</p>
             </div>
           ))}
         </div>
@@ -7323,346 +7326,376 @@ export default function PillarB() {
       ══════════════════════════════════════════════════════ */}
 
       {/* ── NỀN TẢNG ── */}
-      <TeaserSection label="Nền Tảng & Cấu Trúc" count="5 trang" />
+      <TeaserSection label={pillar?.teaser_sections?.[0]?.label || 'Nền Tảng & Cấu Trúc'} count={pillar?.teaser_sections?.[0]?.count || '5 trang'} />
 
+      {(() => { const tc0 = pillar?.teaser_cards?.[0] || {}; return (
       <TeaserCard
         to="/pillar/b/roadmap"
         color="#84cc16" rgb="132,204,22"
-        icon="🗺️" category="Lộ Trình Có Cấu Trúc"
-        title="Lộ Trình Dinh Dưỡng" accent="12 & 24 Tuần"
-        desc={<>6 giai đoạn từ xây nền thói quen đến tối ưu hiệu suất. Mọi con số được tính toán theo thông số cá nhân từ B0 của bạn — TDEE <span className="font-bold text-lime-400">{userStats.tdee.toLocaleString()} kcal</span> · Protein <span className="font-bold text-lime-400">{userStats.proteinG}g/ngày</span>.</>}
+        icon="🗺️" category={tc0.category || 'Lộ Trình Có Cấu Trúc'}
+        title={tc0.title || 'Lộ Trình Dinh Dưỡng'} accent={tc0.accent || '12 & 24 Tuần'}
+        desc={<>{tc0.desc_pre || '6 giai đoạn từ xây nền thói quen đến tối ưu hiệu suất. Mọi con số được tính toán theo thông số cá nhân từ B0 của bạn —'} TDEE <span className="font-bold text-lime-400">{userStats.tdee.toLocaleString()} kcal</span> · Protein <span className="font-bold text-lime-400">{userStats.proteinG}g/ngày</span>.</>}
         features={[
-          { icon: '📋', text: 'Thực đơn mẫu mỗi giai đoạn' },
-          { icon: '📊', text: 'Biểu đồ tuân thủ S-curve' },
-          { icon: '🔬', text: 'Cơ sở khoa học chi tiết' },
-          { icon: '✅', text: 'Checklist tiến độ cá nhân' },
+          { icon: '📋', text: tc0.features?.[0] || 'Thực đơn mẫu mỗi giai đoạn' },
+          { icon: '📊', text: tc0.features?.[1] || 'Biểu đồ tuân thủ S-curve' },
+          { icon: '🔬', text: tc0.features?.[2] || 'Cơ sở khoa học chi tiết' },
+          { icon: '✅', text: tc0.features?.[3] || 'Checklist tiến độ cá nhân' },
         ]}
         stats={[
-          { value: '6', label: 'Giai đoạn' },
-          { value: '24', label: 'Tuần' },
-          { value: '✓', label: 'Miễn phí' },
+          { value: '6', label: tc0.stat_labels?.[0] || 'Giai đoạn' },
+          { value: '24', label: tc0.stat_labels?.[1] || 'Tuần' },
+          { value: '✓', label: tc0.stat_labels?.[2] || 'Miễn phí' },
         ]}
         image="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80"
         imageAlt="Nutrition roadmap"
-        cta="Xem Lộ Trình Chi Tiết"
+        cta={tc0.cta || 'Xem Lộ Trình Chi Tiết'}
       />
+      ); })()}
 
+      {(() => { const tc1 = pillar?.teaser_cards?.[1] || {}; return (
       <TeaserCard
         to="/pillar/b/content"
         color="#06b6d4" rgb="6,182,212"
-        icon="🏗️" category="Cấu Trúc Hệ Thống"
-        title="Cấu Trúc Sản Phẩm" accent="Nội Dung Dinh Dưỡng"
-        desc={<>8 module B0–B7 từ đánh giá ban đầu đến tối ưu hiệu suất. Công thức tính toán đầy đủ, biểu đồ minh họa trực quan, cơ sở dữ liệu thực phẩm — dựa trên BMI <span className="font-bold text-cyan-400">{(userStats.weight * 10000 / (userStats.height * userStats.height)).toFixed(1)}</span> · TDEE <span className="font-bold text-cyan-400">{userStats.tdee.toLocaleString()} kcal</span>.</>}
+        icon="🏗️" category={tc1.category || 'Cấu Trúc Hệ Thống'}
+        title={tc1.title || 'Cấu Trúc Sản Phẩm'} accent={tc1.accent || 'Nội Dung Dinh Dưỡng'}
+        desc={<>{tc1.desc_pre || '8 module B0–B7 từ đánh giá ban đầu đến tối ưu hiệu suất. Công thức tính toán đầy đủ, biểu đồ minh họa trực quan, cơ sở dữ liệu thực phẩm — dựa trên BMI'} <span className="font-bold text-cyan-400">{(userStats.weight * 10000 / (userStats.height * userStats.height)).toFixed(1)}</span> · TDEE <span className="font-bold text-cyan-400">{userStats.tdee.toLocaleString()} kcal</span>.</>}
         features={[
-          { icon: '📐', text: 'Công thức 7 bước chi tiết' },
-          { icon: '📊', text: 'Biểu đồ macro & BMI' },
-          { icon: '🎥', text: '12 video hướng dẫn' },
-          { icon: '📚', text: '8 bài viết khoa học' },
+          { icon: '📐', text: tc1.features?.[0] || 'Công thức 7 bước chi tiết' },
+          { icon: '📊', text: tc1.features?.[1] || 'Biểu đồ macro & BMI' },
+          { icon: '🎥', text: tc1.features?.[2] || '12 video hướng dẫn' },
+          { icon: '📚', text: tc1.features?.[3] || '8 bài viết khoa học' },
         ]}
         stats={[
-          { value: '8', label: 'Module' },
-          { value: '12', label: 'Video' },
-          { value: '6', label: 'Công cụ' },
+          { value: '8', label: tc1.stat_labels?.[0] || 'Module' },
+          { value: '12', label: tc1.stat_labels?.[1] || 'Video' },
+          { value: '6', label: tc1.stat_labels?.[2] || 'Công cụ' },
         ]}
         image="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1200&q=80"
         imageAlt="Nutrition content structure"
-        cta="Khám Phá Cấu Trúc"
+        cta={tc1.cta || 'Khám Phá Cấu Trúc'}
       />
+      ); })()}
 
+      {(() => { const tc2 = pillar?.teaser_cards?.[2] || {}; return (
       <TeaserCard
         to="/pillar/b/data"
         color="#a855f7" rgb="168,85,247"
-        icon="🗄️" category="Database & Tracking"
-        title="Cấu Trúc Dữ Liệu" accent="App / Notion / Google Sheet"
-        desc="4 database hoàn chỉnh: Nutrition Profile, Meal Library, Daily Log, Weekly Review. Công thức Google Sheet sẵn dùng, Notion formula, thư viện 15+ thực phẩm và máy tính điểm tuân thủ 100 điểm."
+        icon="🗄️" category={tc2.category || 'Database & Tracking'}
+        title={tc2.title || 'Cấu Trúc Dữ Liệu'} accent={tc2.accent || 'App / Notion / Google Sheet'}
+        desc={tc2.desc || '4 database hoàn chỉnh: Nutrition Profile, Meal Library, Daily Log, Weekly Review. Công thức Google Sheet sẵn dùng, Notion formula, thư viện 15+ thực phẩm và máy tính điểm tuân thủ 100 điểm.'}
         features={[
-          { icon: '🗄️', text: '4 databases chi tiết' },
-          { icon: '📊', text: 'Google Sheet formulas' },
-          { icon: '📐', text: 'Notion properties' },
-          { icon: '🏆', text: 'Nutrition Score 100đ' },
+          { icon: '🗄️', text: tc2.features?.[0] || '4 databases chi tiết' },
+          { icon: '📊', text: tc2.features?.[1] || 'Google Sheet formulas' },
+          { icon: '📐', text: tc2.features?.[2] || 'Notion properties' },
+          { icon: '🏆', text: tc2.features?.[3] || 'Nutrition Score 100đ' },
         ]}
         stats={[
-          { value: '4', label: 'Database' },
-          { value: '10', label: 'Formulas' },
-          { value: '15+', label: 'Thực phẩm' },
+          { value: '4', label: tc2.stat_labels?.[0] || 'Database' },
+          { value: '10', label: tc2.stat_labels?.[1] || 'Formulas' },
+          { value: '15+', label: tc2.stat_labels?.[2] || 'Thực phẩm' },
         ]}
         image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
         imageAlt="Data structure"
-        cta="Xem Cấu Trúc Dữ Liệu"
+        cta={tc2.cta || 'Xem Cấu Trúc Dữ Liệu'}
       />
+      ); })()}
 
+      {(() => { const tc3 = pillar?.teaser_cards?.[3] || {}; return (
       <TeaserCard
         to="/pillar/b/protein"
         color="#22c55e" rgb="34,197,94"
-        icon="💪" category="Protein — Nền Tảng Dinh Dưỡng"
-        title="Công Thức Tính Protein" accent="Cá Nhân Hoá"
-        desc="Tính lượng protein theo mục tiêu (giảm mỡ/tăng cơ/sức bền), 12+ nguồn thực phẩm Việt Nam, protein timing tối ưu, máy tính theo dõi hằng ngày và 5 sự thật khoa học về đạm."
+        icon="💪" category={tc3.category || 'Protein — Nền Tảng Dinh Dưỡng'}
+        title={tc3.title || 'Công Thức Tính Protein'} accent={tc3.accent || 'Cá Nhân Hoá'}
+        desc={tc3.desc || 'Tính lượng protein theo mục tiêu (giảm mỡ/tăng cơ/sức bền), 12+ nguồn thực phẩm Việt Nam, protein timing tối ưu, máy tính theo dõi hằng ngày và 5 sự thật khoa học về đạm.'}
         features={[
-          { icon: '📐', text: 'Công thức g/kg' },
-          { icon: '🍗', text: '12+ nguồn đạm VN' },
-          { icon: '⏰', text: 'Protein timing' },
-          { icon: '🎯', text: 'Tracker hằng ngày' },
+          { icon: '📐', text: tc3.features?.[0] || 'Công thức g/kg' },
+          { icon: '🍗', text: tc3.features?.[1] || '12+ nguồn đạm VN' },
+          { icon: '⏰', text: tc3.features?.[2] || 'Protein timing' },
+          { icon: '🎯', text: tc3.features?.[3] || 'Tracker hằng ngày' },
         ]}
         stats={[
-          { value: '12+', label: 'Nguồn đạm' },
-          { value: '5', label: 'Mục tiêu' },
-          { value: '5', label: 'Timing' },
+          { value: '12+', label: tc3.stat_labels?.[0] || 'Nguồn đạm' },
+          { value: '5', label: tc3.stat_labels?.[1] || 'Mục tiêu' },
+          { value: '5', label: tc3.stat_labels?.[2] || 'Timing' },
         ]}
         image="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=1200&q=80"
         imageAlt="Protein foods"
-        cta="Xem Công Thức Protein"
+        cta={tc3.cta || 'Xem Công Thức Protein'}
       />
+      ); })()}
 
+      {(() => { const tc4 = pillar?.teaser_cards?.[4] || {}; return (
       <TeaserCard
         to="/pillar/b/formula"
         color="#84cc16" rgb="132,204,22"
-        icon="📐" category="Công Thức & Tính Toán"
-        title="Công Thức Tính" accent="Meal Plan Cá Nhân"
-        desc="10 bước tính toán đầy đủ: BMI → BMR → TDEE → Kcal mục tiêu → Protein → Fat → Carb → Chia bữa → Lịch luyện tập. Máy tính tương tác 10 bước, biểu đồ macro, calorie cycling theo ngày tập."
+        icon="📐" category={tc4.category || 'Công Thức & Tính Toán'}
+        title={tc4.title || 'Công Thức Tính'} accent={tc4.accent || 'Meal Plan Cá Nhân'}
+        desc={tc4.desc || '10 bước tính toán đầy đủ: BMI → BMR → TDEE → Kcal mục tiêu → Protein → Fat → Carb → Chia bữa → Lịch luyện tập. Máy tính tương tác 10 bước, biểu đồ macro, calorie cycling theo ngày tập.'}
         features={[
-          { icon: '📐', text: '10 bước tính toán' },
-          { icon: '📊', text: 'MacroDonut biểu đồ' },
-          { icon: '🔄', text: 'Calorie cycling' },
-          { icon: '🍽️', text: '3 mô hình bữa ăn' },
+          { icon: '📐', text: tc4.features?.[0] || '10 bước tính toán' },
+          { icon: '📊', text: tc4.features?.[1] || 'MacroDonut biểu đồ' },
+          { icon: '🔄', text: tc4.features?.[2] || 'Calorie cycling' },
+          { icon: '🍽️', text: tc4.features?.[3] || '3 mô hình bữa ăn' },
         ]}
         stats={[
-          { value: '10', label: 'Bước tính' },
-          { value: '3', label: 'Mô hình' },
-          { value: '12+', label: 'Công thức' },
+          { value: '10', label: tc4.stat_labels?.[0] || 'Bước tính' },
+          { value: '3', label: tc4.stat_labels?.[1] || 'Mô hình' },
+          { value: '12+', label: tc4.stat_labels?.[2] || 'Công thức' },
         ]}
         image="https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?w=1200&q=80"
         imageAlt="Formula calculation"
-        cta="Xem Công Thức Chi Tiết"
+        cta={tc4.cta || 'Xem Công Thức Chi Tiết'}
       />
+      ); })()}
 
       {/* ── KẾ HOẠCH THỰC ĐƠN ── */}
-      <TeaserSection label="Kế Hoạch Thực Đơn" count="4 trang" />
+      <TeaserSection label={pillar?.teaser_sections?.[1]?.label || 'Kế Hoạch Thực Đơn'} count={pillar?.teaser_sections?.[1]?.count || '4 trang'} />
 
+      {(() => { const tc5 = pillar?.teaser_cards?.[5] || {}; return (
       <TeaserCard
         to="/pillar/b/meals"
         color="#06b6d4" rgb="6,182,212"
-        icon="🍱" category="Chia Bữa & Đĩa Ăn"
-        title="Quy Tắc Chia Bữa" accent="4 mô hình · 10 quy tắc vàng · Carb cycling"
-        desc="4 mô hình bữa ăn, 10 quy tắc vàng, biểu đồ đĩa ăn tương tác, lịch carb theo ngày tập, và máy tính bữa ăn cá nhân hóa từ dữ liệu TDEE của bạn."
+        icon="🍱" category={tc5.category || 'Chia Bữa & Đĩa Ăn'}
+        title={tc5.title || 'Quy Tắc Chia Bữa'} accent={tc5.accent || '4 mô hình · 10 quy tắc vàng · Carb cycling'}
+        desc={tc5.desc || '4 mô hình bữa ăn, 10 quy tắc vàng, biểu đồ đĩa ăn tương tác, lịch carb theo ngày tập, và máy tính bữa ăn cá nhân hóa từ dữ liệu TDEE của bạn.'}
         features={[
-          { icon: '🍽️', text: '4 mô hình bữa' },
-          { icon: '📊', text: 'Đĩa ăn SVG tương tác' },
-          { icon: '📅', text: 'Carb cycling theo ngày' },
-          { icon: '🎯', text: '3 mục tiêu dinh dưỡng' },
+          { icon: '🍽️', text: tc5.features?.[0] || '4 mô hình bữa' },
+          { icon: '📊', text: tc5.features?.[1] || 'Đĩa ăn SVG tương tác' },
+          { icon: '📅', text: tc5.features?.[2] || 'Carb cycling theo ngày' },
+          { icon: '🎯', text: tc5.features?.[3] || '3 mục tiêu dinh dưỡng' },
         ]}
         stats={[
-          { value: '4', label: 'Mô hình' },
-          { value: '10', label: 'Quy tắc' },
-          { value: '3', label: 'Mục tiêu' },
+          { value: '4', label: tc5.stat_labels?.[0] || 'Mô hình' },
+          { value: '10', label: tc5.stat_labels?.[1] || 'Quy tắc' },
+          { value: '3', label: tc5.stat_labels?.[2] || 'Mục tiêu' },
         ]}
         image="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80"
         imageAlt="Meal rules"
-        cta="Xem Quy Tắc Chia Bữa"
+        cta={tc5.cta || 'Xem Quy Tắc Chia Bữa'}
       />
+      ); })()}
 
+      {(() => { const tc6 = pillar?.teaser_cards?.[6] || {}; return (
       <TeaserCard
         to="/pillar/b/7day"
         color="#f97316" rgb="249,115,22"
-        icon="🗓️" category="Thực Đơn Mẫu · 7 Ngày"
-        title="Meal Plan 7 Ngày" accent="Bản Nền Cho Người Mới"
-        desc="35 bữa ăn đầy đủ, danh sách mua sắm tương tác, hướng dẫn meal prep 60–90 phút, checklist hàng ngày và xử lý bữa ăn lỡ tay — cá nhân hóa từ TDEE của bạn."
+        icon="🗓️" category={tc6.category || 'Thực Đơn Mẫu · 7 Ngày'}
+        title={tc6.title || 'Meal Plan 7 Ngày'} accent={tc6.accent || 'Bản Nền Cho Người Mới'}
+        desc={tc6.desc || '35 bữa ăn đầy đủ, danh sách mua sắm tương tác, hướng dẫn meal prep 60–90 phút, checklist hàng ngày và xử lý bữa ăn lỡ tay — cá nhân hóa từ TDEE của bạn.'}
         features={[
-          { icon: '🗓️', text: '7 ngày đủ bữa' },
-          { icon: '🛒', text: 'Shopping list tương tác' },
-          { icon: '📦', text: 'Meal prep hướng dẫn' },
-          { icon: '✅', text: 'Checklist hàng ngày' },
+          { icon: '🗓️', text: tc6.features?.[0] || '7 ngày đủ bữa' },
+          { icon: '🛒', text: tc6.features?.[1] || 'Shopping list tương tác' },
+          { icon: '📦', text: tc6.features?.[2] || 'Meal prep hướng dẫn' },
+          { icon: '✅', text: tc6.features?.[3] || 'Checklist hàng ngày' },
         ]}
         stats={[
-          { value: '7', label: 'Ngày' },
-          { value: '35', label: 'Bữa' },
-          { value: '5', label: 'Nhóm TP' },
+          { value: '7', label: tc6.stat_labels?.[0] || 'Ngày' },
+          { value: '35', label: tc6.stat_labels?.[1] || 'Bữa' },
+          { value: '5', label: tc6.stat_labels?.[2] || 'Nhóm TP' },
         ]}
         image="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80"
         imageAlt="7-day meal plan"
-        cta="Xem Meal Plan 7 Ngày"
+        cta={tc6.cta || 'Xem Meal Plan 7 Ngày'}
       />
+      ); })()}
 
+      {(() => { const tc7 = pillar?.teaser_cards?.[7] || {}; return (
       <TeaserCard
         to="/pillar/b/goal-plan"
         color="#a855f7" rgb="168,85,247"
-        icon="🎯" category="Cá Nhân Hóa Theo Mục Tiêu"
-        title="Meal Plan Theo" accent="Mục Tiêu Của Bạn"
-        desc="7 hướng dinh dưỡng cho 7 mục tiêu khác nhau: sống khỏe nền, giảm mỡ, tăng cơ, recomp, sức bền, phục hồi, người bận. Máy tính macro cá nhân hóa và khung tuần cụ thể."
+        icon="🎯" category={tc7.category || 'Cá Nhân Hóa Theo Mục Tiêu'}
+        title={tc7.title || 'Meal Plan Theo'} accent={tc7.accent || 'Mục Tiêu Của Bạn'}
+        desc={tc7.desc || '7 hướng dinh dưỡng cho 7 mục tiêu khác nhau: sống khỏe nền, giảm mỡ, tăng cơ, recomp, sức bền, phục hồi, người bận. Máy tính macro cá nhân hóa và khung tuần cụ thể.'}
         features={[
-          { icon: '🎯', text: '7 mục tiêu' },
-          { icon: '📐', text: 'Macro calculator' },
-          { icon: '📅', text: 'Khung tuần per goal' },
-          { icon: '⚙️', text: '12 quy tắc điều chỉnh' },
+          { icon: '🎯', text: tc7.features?.[0] || '7 mục tiêu' },
+          { icon: '📐', text: tc7.features?.[1] || 'Macro calculator' },
+          { icon: '📅', text: tc7.features?.[2] || 'Khung tuần per goal' },
+          { icon: '⚙️', text: tc7.features?.[3] || '12 quy tắc điều chỉnh' },
         ]}
         stats={[
-          { value: '7', label: 'Mục tiêu' },
-          { value: '12', label: 'Quy tắc' },
-          { value: '5', label: 'Câu hỏi nền' },
+          { value: '7', label: tc7.stat_labels?.[0] || 'Mục tiêu' },
+          { value: '12', label: tc7.stat_labels?.[1] || 'Quy tắc' },
+          { value: '5', label: tc7.stat_labels?.[2] || 'Câu hỏi nền' },
         ]}
         image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80"
         imageAlt="Goal-based meal plan"
-        cta="Xem Meal Plan Theo Mục Tiêu"
+        cta={tc7.cta || 'Xem Meal Plan Theo Mục Tiêu'}
       />
+      ); })()}
 
+      {(() => { const tc8 = pillar?.teaser_cards?.[8] || {}; return (
       <TeaserCard
         to="/pillar/b/advanced-plan"
         color="#ef4444" rgb="239,68,68"
-        icon="⚡" category="Đạp Xe · Gym · Bơi · Chạy Bộ"
-        title="Plan Nâng Cao" accent="Cho Người Tập Nhiều"
-        desc="Periodized nutrition cho 4 loại ngày tập, fueling chi tiết từng môn, 7 ngày mẫu, carb cycling chart và macro calculator cá nhân hóa theo cân nặng."
+        icon="⚡" category={tc8.category || 'Đạp Xe · Gym · Bơi · Chạy Bộ'}
+        title={tc8.title || 'Plan Nâng Cao'} accent={tc8.accent || 'Cho Người Tập Nhiều'}
+        desc={tc8.desc || 'Periodized nutrition cho 4 loại ngày tập, fueling chi tiết từng môn, 7 ngày mẫu, carb cycling chart và macro calculator cá nhân hóa theo cân nặng.'}
         features={[
-          { icon: '⚡', text: '4 loại ngày tập' },
-          { icon: '🚴', text: '4 môn thể thao' },
-          { icon: '📊', text: 'Carb cycling chart' },
-          { icon: '💧', text: 'Nước & điện giải' },
+          { icon: '⚡', text: tc8.features?.[0] || '4 loại ngày tập' },
+          { icon: '🚴', text: tc8.features?.[1] || '4 môn thể thao' },
+          { icon: '📊', text: tc8.features?.[2] || 'Carb cycling chart' },
+          { icon: '💧', text: tc8.features?.[3] || 'Nước & điện giải' },
         ]}
         stats={[
-          { value: '4', label: 'Loại ngày' },
-          { value: '4', label: 'Môn thể thao' },
-          { value: '7', label: 'Ngày mẫu' },
+          { value: '4', label: tc8.stat_labels?.[0] || 'Loại ngày' },
+          { value: '4', label: tc8.stat_labels?.[1] || 'Môn thể thao' },
+          { value: '7', label: tc8.stat_labels?.[2] || 'Ngày mẫu' },
         ]}
         image="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80"
         imageAlt="Advanced training nutrition"
-        cta="Xem Plan Nâng Cao"
+        cta={tc8.cta || 'Xem Plan Nâng Cao'}
       />
+      ); })()}
 
       {/* ── CÔNG CỤ HẰNG NGÀY ── */}
-      <TeaserSection label="Công Cụ Hằng Ngày" count="4 trang" />
+      <TeaserSection label={pillar?.teaser_sections?.[2]?.label || 'Công Cụ Hằng Ngày'} count={pillar?.teaser_sections?.[2]?.count || '4 trang'} />
 
+      {(() => { const tc9 = pillar?.teaser_cards?.[9] || {}; return (
       <TeaserCard
         to="/pillar/b/safety"
         color="#0ea5e9" rgb="14,165,233"
-        icon="🛡️" category="An Toàn · Bảo Vệ · Đúng Cách"
-        title="Quy Tắc An Toàn"
-        desc="Bộ quy tắc an toàn toàn diện cho dự án Nutrition — phân tầng người dùng xanh/vàng/đỏ, quy tắc năng lượng, macro, bảo quản thực phẩm và checklist tự kiểm tra hằng ngày."
+        icon="🛡️" category={tc9.category || 'An Toàn · Bảo Vệ · Đúng Cách'}
+        title={tc9.title || 'Quy Tắc An Toàn'}
+        desc={tc9.desc || 'Bộ quy tắc an toàn toàn diện cho dự án Nutrition — phân tầng người dùng xanh/vàng/đỏ, quy tắc năng lượng, macro, bảo quản thực phẩm và checklist tự kiểm tra hằng ngày.'}
         features={[
-          { icon: '🚦', text: '3 nhóm người dùng' },
-          { icon: '📋', text: '20 quy tắc chi tiết' },
-          { icon: '✅', text: 'Checklist hằng ngày' },
-          { icon: '🚨', text: 'Dấu hiệu nguy hiểm' },
+          { icon: '🚦', text: tc9.features?.[0] || '3 nhóm người dùng' },
+          { icon: '📋', text: tc9.features?.[1] || '20 quy tắc chi tiết' },
+          { icon: '✅', text: tc9.features?.[2] || 'Checklist hằng ngày' },
+          { icon: '🚨', text: tc9.features?.[3] || 'Dấu hiệu nguy hiểm' },
         ]}
         stats={[
-          { value: '20', label: 'Quy tắc' },
-          { value: '3', label: 'Nhóm ND' },
-          { value: '13', label: 'Câu hỏi' },
+          { value: '20', label: tc9.stat_labels?.[0] || 'Quy tắc' },
+          { value: '3', label: tc9.stat_labels?.[1] || 'Nhóm ND' },
+          { value: '13', label: tc9.stat_labels?.[2] || 'Câu hỏi' },
         ]}
         image="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80"
         imageAlt="Safety rules"
-        cta="Xem Quy Tắc An Toàn"
+        cta={tc9.cta || 'Xem Quy Tắc An Toàn'}
       />
+      ); })()}
 
+      {(() => { const tc10 = pillar?.teaser_cards?.[10] || {}; return (
       <TeaserCard
         to="/pillar/b/checklist"
         color="#10b981" rgb="16,185,129"
-        icon="✅" category="Daily Tracker"
-        title="Checklist Nutrition" accent="Hằng Ngày"
-        desc="Không bắt bạn ăn hoàn hảo — chỉ 9 tiêu chí, 100 điểm, 5 câu hỏi mỗi ngày. Chọn loại ngày, theo dõi nước, điểm số tự động, lưu kết quả hàng ngày và hàng tuần."
+        icon="✅" category={tc10.category || 'Daily Tracker'}
+        title={tc10.title || 'Checklist Nutrition'} accent={tc10.accent || 'Hằng Ngày'}
+        desc={tc10.desc || 'Không bắt bạn ăn hoàn hảo — chỉ 9 tiêu chí, 100 điểm, 5 câu hỏi mỗi ngày. Chọn loại ngày, theo dõi nước, điểm số tự động, lưu kết quả hàng ngày và hàng tuần.'}
         features={[
-          { icon: '📊', text: '9 tiêu chí' },
-          { icon: '💯', text: '100 điểm/ngày' },
-          { icon: '💧', text: 'Water tracker' },
-          { icon: '💾', text: 'Lưu offline' },
+          { icon: '📊', text: tc10.features?.[0] || '9 tiêu chí' },
+          { icon: '💯', text: tc10.features?.[1] || '100 điểm/ngày' },
+          { icon: '💧', text: tc10.features?.[2] || 'Water tracker' },
+          { icon: '💾', text: tc10.features?.[3] || 'Lưu offline' },
         ]}
         stats={[
-          { value: '9', label: 'Tiêu chí' },
-          { value: '100', label: 'Điểm' },
-          { value: '7', label: 'Buổi' },
+          { value: '9', label: tc10.stat_labels?.[0] || 'Tiêu chí' },
+          { value: '100', label: tc10.stat_labels?.[1] || 'Điểm' },
+          { value: '7', label: tc10.stat_labels?.[2] || 'Buổi' },
         ]}
         image="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&q=80"
         imageAlt="Daily nutrition checklist"
-        cta="Mở Checklist"
+        cta={tc10.cta || 'Mở Checklist'}
       />
+      ); })()}
 
+      {(() => { const tc11 = pillar?.teaser_cards?.[11] || {}; return (
       <TeaserCard
         to="/pillar/b/template"
         color="#f43f5e" rgb="244,63,94"
-        icon="📋" category="Standard Template"
-        title="Template Meal Plan" accent="Chuẩn Cho Dự Án"
-        desc="Bộ template hoàn chỉnh: tính BMR/TDEE, chia macro, cấu trúc đĩa ăn, thư viện món, template 7 ngày, điều chỉnh theo lịch tập, checklist 10 tiêu chí và mẫu báo cáo tuần."
+        icon="📋" category={tc11.category || 'Standard Template'}
+        title={tc11.title || 'Template Meal Plan'} accent={tc11.accent || 'Chuẩn Cho Dự Án'}
+        desc={tc11.desc || 'Bộ template hoàn chỉnh: tính BMR/TDEE, chia macro, cấu trúc đĩa ăn, thư viện món, template 7 ngày, điều chỉnh theo lịch tập, checklist 10 tiêu chí và mẫu báo cáo tuần.'}
         features={[
-          { icon: '⚙️', text: 'BMR/TDEE Calculator' },
-          { icon: '🍩', text: 'Macro Donut' },
-          { icon: '🍽️', text: 'Plate Builder' },
-          { icon: '📅', text: '7-day Planner' },
+          { icon: '⚙️', text: tc11.features?.[0] || 'BMR/TDEE Calculator' },
+          { icon: '🍩', text: tc11.features?.[1] || 'Macro Donut' },
+          { icon: '🍽️', text: tc11.features?.[2] || 'Plate Builder' },
+          { icon: '📅', text: tc11.features?.[3] || '7-day Planner' },
         ]}
         stats={[
-          { value: '7', label: 'Bước' },
-          { value: '10', label: 'Tiêu chí' },
-          { value: '∞', label: 'Cá nhân' },
+          { value: '7', label: tc11.stat_labels?.[0] || 'Bước' },
+          { value: '10', label: tc11.stat_labels?.[1] || 'Tiêu chí' },
+          { value: '∞', label: tc11.stat_labels?.[2] || 'Cá nhân' },
         ]}
         image="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80"
         imageAlt="Template meal plan"
-        cta="Mở Template"
+        cta={tc11.cta || 'Mở Template'}
       />
+      ); })()}
 
+      {(() => { const tc12 = pillar?.teaser_cards?.[12] || {}; return (
       <TeaserCard
         to="/pillar/b/mealprep"
         color="#6366f1" rgb="99,102,241"
-        icon="⏱️" category="Batch Cooking"
-        title="Bộ Meal Prep" accent="30 Phút cho 3 Ngày"
-        desc="1 lần nấu — 3 ngày ăn chủ động. Timeline 6 bước song song, công thức hộp theo mục tiêu, thực đơn 3 ngày đổi vị, 4 tuần xoay vòng không ngán, checklist mua sắm và an toàn thực phẩm."
+        icon="⏱️" category={tc12.category || 'Batch Cooking'}
+        title={tc12.title || 'Bộ Meal Prep'} accent={tc12.accent || '30 Phút cho 3 Ngày'}
+        desc={tc12.desc || '1 lần nấu — 3 ngày ăn chủ động. Timeline 6 bước song song, công thức hộp theo mục tiêu, thực đơn 3 ngày đổi vị, 4 tuần xoay vòng không ngán, checklist mua sắm và an toàn thực phẩm.'}
         features={[
-          { icon: '⏱️', text: 'Timer 30 phút' },
-          { icon: '📦', text: '3 ngày thực đơn' },
-          { icon: '🔄', text: '4 tuần xoay vòng' },
-          { icon: '🍲', text: '3 sốt chuẩn' },
+          { icon: '⏱️', text: tc12.features?.[0] || 'Timer 30 phút' },
+          { icon: '📦', text: tc12.features?.[1] || '3 ngày thực đơn' },
+          { icon: '🔄', text: tc12.features?.[2] || '4 tuần xoay vòng' },
+          { icon: '🍲', text: tc12.features?.[3] || '3 sốt chuẩn' },
         ]}
         stats={[
-          { value: '30', label: 'Phút' },
-          { value: '3', label: 'Ngày' },
-          { value: '6', label: 'Hộp' },
+          { value: '30', label: tc12.stat_labels?.[0] || 'Phút' },
+          { value: '3', label: tc12.stat_labels?.[1] || 'Ngày' },
+          { value: '6', label: tc12.stat_labels?.[2] || 'Hộp' },
         ]}
         image="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80"
         imageAlt="Meal prep 30 phút"
-        cta="Bắt Đầu Meal Prep"
+        cta={tc12.cta || 'Bắt Đầu Meal Prep'}
       />
+      ); })()}
 
       {/* ── LỘ TRÌNH ── */}
-      <TeaserSection label="Lộ Trình Dài Hạn" count="2 trang" />
+      <TeaserSection label={pillar?.teaser_sections?.[3]?.label || 'Lộ Trình Dài Hạn'} count={pillar?.teaser_sections?.[3]?.count || '2 trang'} />
 
+      {(() => { const tc13 = pillar?.teaser_cards?.[13] || {}; return (
       <TeaserCard
         to="/pillar/b/12week"
         color="#14b8a6" rgb="20,184,166"
-        icon="🗓️" category="Lộ Trình · 12 Tuần"
-        title="Lộ Trình Nutrition" accent="12 Tuần"
-        desc="Từ nhận thức → đĩa ăn → meal prep → cá nhân hóa → phục hồi → tự vận hành. Hệ thống 6 giai đoạn giúp bạn xây thói quen dinh dưỡng bền vững — không diet cực đoan, không đếm từng gram."
+        icon="🗓️" category={tc13.category || 'Lộ Trình · 12 Tuần'}
+        title={tc13.title || 'Lộ Trình Nutrition'} accent={tc13.accent || '12 Tuần'}
+        desc={tc13.desc || 'Từ nhận thức → đĩa ăn → meal prep → cá nhân hóa → phục hồi → tự vận hành. Hệ thống 6 giai đoạn giúp bạn xây thói quen dinh dưỡng bền vững — không diet cực đoan, không đếm từng gram.'}
         features={[
-          { icon: '📈', text: '6 giai đoạn' },
-          { icon: '🏆', text: 'Nutrition Score' },
-          { icon: '🎯', text: 'Cá nhân hóa' },
-          { icon: '📅', text: 'Kế hoạch 90 ngày' },
+          { icon: '📈', text: tc13.features?.[0] || '6 giai đoạn' },
+          { icon: '🏆', text: tc13.features?.[1] || 'Nutrition Score' },
+          { icon: '🎯', text: tc13.features?.[2] || 'Cá nhân hóa' },
+          { icon: '📅', text: tc13.features?.[3] || 'Kế hoạch 90 ngày' },
         ]}
         stats={[
-          { value: '12', label: 'Tuần' },
-          { value: '6', label: 'Giai đoạn' },
-          { value: '100', label: 'Điểm/ngày' },
+          { value: '12', label: tc13.stat_labels?.[0] || 'Tuần' },
+          { value: '6', label: tc13.stat_labels?.[1] || 'Giai đoạn' },
+          { value: '100', label: tc13.stat_labels?.[2] || 'Điểm/ngày' },
         ]}
         image="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1200&q=80"
         imageAlt="12-week nutrition roadmap"
-        cta="Xem Lộ Trình"
+        cta={tc13.cta || 'Xem Lộ Trình'}
       />
+      ); })()}
 
+      {(() => { const tc14 = pillar?.teaser_cards?.[14] || {}; return (
       <TeaserCard
         to="/pillar/b/24week"
         color="#f59e0b" rgb="245,158,11"
-        icon="🗓️" category="Lộ Trình Dài Hạn · 24 Tuần"
-        title="Lộ Trình Nutrition" accent="24 Tuần"
-        desc="Từ nhận thức → kiểm soát năng lượng → cá nhân hóa → đời sống thật → tối ưu hiệu suất → tự vận hành. Hệ thống giúp bạn xây thói quen dinh dưỡng bền vững không phụ thuộc vào ý chí."
+        icon="🗓️" category={tc14.category || 'Lộ Trình Dài Hạn · 24 Tuần'}
+        title={tc14.title || 'Lộ Trình Nutrition'} accent={tc14.accent || '24 Tuần'}
+        desc={tc14.desc || 'Từ nhận thức → kiểm soát năng lượng → cá nhân hóa → đời sống thật → tối ưu hiệu suất → tự vận hành. Hệ thống giúp bạn xây thói quen dinh dưỡng bền vững không phụ thuộc vào ý chí.'}
         features={[
-          { icon: '📈', text: '6 giai đoạn' },
-          { icon: '📊', text: 'Habit Score' },
-          { icon: '🎯', text: 'Cá nhân hóa B0' },
-          { icon: '🤖', text: 'Tự vận hành' },
+          { icon: '📈', text: tc14.features?.[0] || '6 giai đoạn' },
+          { icon: '📊', text: tc14.features?.[1] || 'Habit Score' },
+          { icon: '🎯', text: tc14.features?.[2] || 'Cá nhân hóa B0' },
+          { icon: '🤖', text: tc14.features?.[3] || 'Tự vận hành' },
         ]}
         stats={[
-          { value: '24', label: 'Tuần' },
-          { value: '6', label: 'Giai đoạn' },
-          { value: '85+', label: 'Điểm MĐ' },
+          { value: '24', label: tc14.stat_labels?.[0] || 'Tuần' },
+          { value: '6', label: tc14.stat_labels?.[1] || 'Giai đoạn' },
+          { value: '85+', label: tc14.stat_labels?.[2] || 'Điểm MĐ' },
         ]}
         image="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?w=1200&q=80"
         imageAlt="24-week nutrition roadmap"
-        cta="Xem Lộ Trình 24 Tuần"
+        cta={tc14.cta || 'Xem Lộ Trình 24 Tuần'}
       />
+      ); })()}
 
       {/* ══════════════════════════════════════════════════════════════════════
           SAFETY NOTE

@@ -741,6 +741,155 @@
           "timeframe": "Mindestens 8–12 Wochen nach jeder Diät-/Aufbauphase erhalten bevor ein neuer Zyklus beginnt."
         }
       }
+    },
+    "b4": {
+      "bar_label": "Mahlzeitenverteilung",
+      "bar_morning": "🌅 Frühstück",
+      "bar_noon": "☀️ Mittagessen",
+      "bar_evening": "🌙 Abendessen",
+      "bar_snack": "🍎 Snack",
+      "bar_daily": "Gesamt/Tag",
+      "menu_title": "7-Tage-Mustermenü — Mit Snacks",
+      "busy_label": "Schnelle Option:",
+      "total_label": "Tagessumme",
+      "meals_label": "Mahlzeiten",
+      "adjust_note": "Portionsgrößen an Ihren TDEE aus B0 anpassen",
+      "goal_adaptations": {
+        "fat-loss": {
+          "label": "🔥 Fettabbau",
+          "headline": "Mahlzeitenanpassungen für Fettabbau",
+          "summary": "~400 kcal Defizit. Mehr Protein, weniger raffinierte Kohlenhydrate, mehr Ballaststoffe und Gemüse.",
+          "note": "Ziel-kcal sollte ~400 unter Ihrem TDEE liegen."
+        },
+        "muscle-gain": {
+          "label": "💪 Muskelaufbau",
+          "headline": "Mahlzeitenanpassungen für Muskelaufbau",
+          "summary": "~250 kcal Überschuss. Mehr Qualitätskohlenhydrate rund ums Training, 4–5 Proteinmahlzeiten täglich.",
+          "note": "Jede Mahlzeit braucht ≥20g Protein."
+        },
+        "endurance": {
+          "label": "🚴 Ausdauer",
+          "headline": "Mahlzeitenanpassungen für Ausdauer",
+          "summary": "Ausgewogene Kalorien. Mehr komplexe Kohlenhydrate an intensiven Trainingstagen, Elektrolyte, moderates Protein.",
+          "note": "Trainingstage >90 min: Kohlenhydrate um 20–30% erhöhen."
+        },
+        "maintenance": {
+          "label": "⚖️ Erhaltung",
+          "headline": "Mahlzeitenanpassungen für Erhaltung",
+          "summary": "TDEE-Gleichgewicht. Fokus auf Lebensmittelqualität, 80/20-Flexibilität, keine strenge Kalorienzählung.",
+          "note": "Wöchentlich wiegen. Gewichtsänderung >2 kg anhaltend → Portionen anpassen."
+        }
+      }
+    },
+    "b5": {
+      "bar_protein": "Protein/Tag",
+      "bar_water": "Wasser",
+      "bar_steps": "Schritte",
+      "bar_workout": "Training",
+      "bar_kcal": "Ziel-kcal",
+      "section_heading": "5 Tracking-Bereiche",
+      "tracking_sections": [
+        {
+          "label": "Mahlzeiten-Tracking",
+          "badge": "Grundlage",
+          "desc": "Protokollieren was Sie essen macht Sie 2× bewusster bei Entscheidungen. Keine strenge Zählung nötig — nur Bewusstsein."
+        },
+        {
+          "label": "Körper-Tracking",
+          "badge": "Langfristig",
+          "desc": "Wöchentliches Wiegen + monatliche Körpermaße (Taille, Hüfte) geben einen objektiven Überblick ohne tägliche Schwankungen."
+        },
+        {
+          "label": "Energie-Tracking",
+          "badge": "Verhalten",
+          "desc": "Energieniveau, Trainingsqualität, Schlaf und Stimmung aufzeichnen — sie verraten ob Ihre Ernährung wirklich funktioniert."
+        }
+      ],
+      "habits_title": "Nachhaltige Essgewohnheiten",
+      "habits_sub": "3 kleine Verhaltensweisen die langfristig wichtiger sind als jede Diät",
+      "no3_title": "Die 3-Nein-Regeln",
+      "no3_sub": "Verhaltensweisen die häufig zum Versagen führen",
+      "reset_title": "Die Comeback-Regel",
+      "reset_sub": "Perfekter Neustart nach einem schlechten Tag oder einer schlechten Woche",
+      "reset_steps": [
+        "Keine Schuldgefühle — ein schlechter Tag ruiniert keinen Monat",
+        "Nicht versuchen den nächsten Tag zu 'kompensieren'",
+        "Nächste Mahlzeit normal essen",
+        "Prüfen was den Ausrutscher verursacht hat",
+        "Strategie für die Zukunft anpassen"
+      ],
+      "reset_quote": "Fortschritt, nicht Perfektion. Ein schlechter Tag von 30 sind 97% Erfolg.",
+      "score_perfect": "Perfekt! Auf Kurs",
+      "score_good": "Sehr gut!",
+      "score_fair": "Im Aufbau",
+      "score_building": "Weiter aufbauen",
+      "checklist_title": "Tages-Checkliste",
+      "done_msg": "Alle Aufgaben erledigt!",
+      "core_philosophy": "Kernphilosophie",
+      "consistency_note": "70% Konsistenz über 12 Wochen schlägt 100% Perfektion über 3 Wochen.",
+      "science_title": "Die Wissenschaft dahinter",
+      "formulas_title": "Schnell-Referenzformeln",
+      "off_plan_rules": [
+        {"rule": "Nächste Mahlzeit nicht auslassen um zu 'kompensieren'"},
+        {"rule": "Körper nicht mit Extra-Training bestrafen"},
+        {"rule": "Den Rest des Tages wegen einer Mahlzeit nicht abschreiben"}
+      ]
+    },
+    "b6": {
+      "bar_training": "Trainingstage",
+      "bar_rest": "Ruhetage",
+      "bar_weekly": "Wochensumme",
+      "bar_protein": "Protein/Tag",
+      "rhythm_title": "Wöchentlicher Kalorienzyklus",
+      "legend_training": "Training",
+      "legend_rest": "Ruhe",
+      "macro_formula_title": "Makro-Berechnungsformel",
+      "carb_cycling_label": "Carb Cycling:",
+      "training_badge": "🏋️ Trainingstag",
+      "rest_badge": "🌙 Ruhetag",
+      "meal_prep_headline": "Meal Prep = 70% Erfolg",
+      "meal_prep_desc": "2 Stunden Vorbereitung am Wochenende spart 5+ Stunden unter der Woche und verhindert ungesunde Impulsentscheidungen.",
+      "estimate_title": "Lebensmittel-Schätzformeln",
+      "food_formulas": [
+        {"label": "Protein (Fleisch/Fisch)", "formula": "1 Handteller = ~25g Protein"},
+        {"label": "Kohlenhydrate (Reis/Nudeln)", "formula": "1 geballte Faust = ~45g Carbs"},
+        {"label": "Fett (Öl/Nüsse)", "formula": "1 Daumen = ~15g Fett"},
+        {"label": "Gemüse", "formula": "2 Fäuste = ausreichende Portion"}
+      ],
+      "shopping_title": "Wöchentliche Einkaufsliste",
+      "shopping_groups": [
+        "🥩 Protein",
+        "🌾 Kohlenhydrate",
+        "🥦 Gemüse & Obst",
+        "🥑 Gesunde Fette",
+        "🧂 Gewürze & Sonstiges"
+      ],
+      "meal_prep_steps_title": "Wochenend-Meal-Prep — 6 Schritte"
+    },
+    "b7": {
+      "bar_label": "Personalisierte Makros nach Trainingstyp",
+      "bar_protein_heavy": "Protein schwer",
+      "bar_protein_light": "Protein leicht",
+      "bar_carb_heavy": "Carbs Schwertag",
+      "bar_carb_light": "Carbs Leichttag",
+      "bar_fat": "Fett täglich",
+      "image_badge": "Sportlerernährung",
+      "image_caption": "Fortgeschrittene Ernährungsoptimierung für Sportler",
+      "chain_title": "Makro-Berechnungskette",
+      "chain_sub": "Schritt für Schritt von TDEE zu Makros",
+      "chain_note": "Diese Werte gelten für moderate bis fortgeschrittene Aktivitätsniveaus. Anfänger beginnen mit einfachen Mengen.",
+      "chart_title": "Täglicher Kalorienzyklusplan",
+      "chart_sub": "Kalorien an Trainingsintensität anpassen",
+      "day_types": [
+        {"label": "Ruhetag", "note": "TDEE − 200 kcal"},
+        {"label": "Leichter Tag", "note": "TDEE − 100 kcal"},
+        {"label": "Moderater Tag", "note": "TDEE"},
+        {"label": "Schwerer Tag", "note": "TDEE + 150 kcal"},
+        {"label": "Wettkampftag", "note": "TDEE + 300 kcal"}
+      ],
+      "peri_title": "Ernährungsprotokoll rund ums Training",
+      "peri_note": "Zeitpunkt ist wichtig — Nährstoffe strategisch vor und nach dem Training einsetzen.",
+      "endurance_title": "Ausdauertankstellen-Leitfaden"
     }
   },
   "pillarC": {

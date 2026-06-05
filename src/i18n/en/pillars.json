@@ -741,6 +741,136 @@
           "timeframe": "Maintain at least 8–12 weeks after each cut/bulk phase before starting a new cycle."
         }
       }
+    },
+    "b4": {
+      "bar_label": "Meal Distribution",
+      "bar_morning": "🌅 Breakfast",
+      "bar_noon": "☀️ Lunch",
+      "bar_evening": "🌙 Dinner",
+      "bar_snack": "🍎 Snack",
+      "bar_daily": "Total/day",
+      "menu_title": "7-Day Sample Menu — With Snacks",
+      "busy_label": "Quick option:",
+      "total_label": "Daily total",
+      "meals_label": "Meals",
+      "adjust_note": "Adjust portions to your TDEE from B0",
+      "goal_adaptations": {
+        "fat-loss": {
+          "label": "🔥 Fat Loss",
+          "headline": "Meal plan adjustments for Fat Loss",
+          "summary": "~400 kcal deficit. More protein, fewer refined carbs, prioritize fiber and veggies to stay full on fewer calories.",
+          "note": "Target kcal should be ~400 below your TDEE. Adjust portions using your B0 numbers."
+        },
+        "muscle-gain": {
+          "label": "💪 Muscle Gain",
+          "headline": "Meal plan adjustments for Muscle Gain",
+          "summary": "~250 kcal surplus. More quality carbs around training, keep protein high, aim for 4–5 protein meals per day.",
+          "note": "Each meal needs ≥20g protein. Spreading protein across 4–5 meals outperforms 1–2 large portions."
+        },
+        "endurance": {
+          "label": "🚴 Endurance",
+          "headline": "Meal plan adjustments for Endurance",
+          "summary": "Balanced calories. More complex carbs on heavy training days, electrolytes, moderate protein for recovery.",
+          "note": "Training/race days >90 min: increase carbs by 20–30%. Never try new foods on race day."
+        },
+        "maintenance": {
+          "label": "⚖️ Maintenance",
+          "headline": "Meal plan adjustments for Maintenance",
+          "summary": "Balanced TDEE. Focus on food quality and variety, 80/20 flexibility, no strict calorie counting needed.",
+          "note": "Weigh weekly, same time and conditions. Weight changes >2 kg consistently → adjust portions."
+        }
+      }
+    },
+    "b5": {
+      "bar_protein": "Protein/day",
+      "bar_water": "Water intake",
+      "bar_steps": "Daily steps",
+      "bar_workout": "Training",
+      "bar_kcal": "Kcal target",
+      "section_heading": "5 Tracking Topics",
+      "habits_title": "Sustainable Eating Habits",
+      "habits_sub": "3 small behaviors — big long-term impact",
+      "no3_title": "3 Don'ts Rule",
+      "no3_sub": "When you eat off-plan or overeat",
+      "reset_title": "Reset Rule",
+      "reset_sub": "4 steps to get back after an off-plan meal",
+      "checklist_title": "Daily Checklist",
+      "science_title": "The Science Behind",
+      "formulas_title": "Quick Formula Reference",
+      "reset_steps": [
+        "Next meal: eat normally — don't cut calories to compensate",
+        "Drink enough water — helps process excess salt and calories",
+        "Walk lightly 10–20 min — aids digestion and lifts mood",
+        "Get enough sleep — that night matters more than an extra workout"
+      ],
+      "reset_quote": "One off-plan meal doesn't ruin the process. Giving up does.",
+      "score_perfect": "Perfect 🏆",
+      "score_good": "Good ✅",
+      "score_fair": "Fair 📈",
+      "score_building": "Building 🌱",
+      "done_msg": "Done! Small daily habits build big results.",
+      "core_philosophy": "Core philosophy",
+      "consistency_note": "70% consistent for 6 months > 100% for 7 days",
+      "tracking_sections": [
+        {"label": "Daily Checklist", "badge": "7 targets", "desc": "Track 7 nutrition habits daily to build a solid foundation"},
+        {"label": "Weekly Tracking", "badge": "6 metrics", "desc": "Measure 6 key metrics weekly to track real progress"},
+        {"label": "Adjust & Optimize", "badge": "No progress?", "desc": "Guidance for adjusting when results fall short after 2–4 weeks"}
+      ],
+      "off_plan_rules": [
+        {"rule": "Don't skip the next meal to 'compensate'"},
+        {"rule": "Don't punish your body with extra exercise"},
+        {"rule": "Don't write off the rest of the day over one meal"}
+      ]
+    },
+    "b6": {
+      "bar_training": "Training day",
+      "bar_rest": "Rest day",
+      "bar_weekly": "Weekly total",
+      "bar_protein": "Protein/day",
+      "rhythm_title": "Weekly Calorie Rhythm",
+      "legend_training": "Training",
+      "legend_rest": "Rest",
+      "macro_formula_title": "Macro Formula",
+      "carb_cycling_label": "Carb Cycling:",
+      "training_badge": "🏋️ Training Day",
+      "rest_badge": "🌙 Rest Day",
+      "meal_prep_headline": "Meal Prep = 70% of Success",
+      "meal_prep_desc": "Preparing 2–3 days of food on weekends eliminates the 'I don't know what to eat' excuse — the best everyday decision is one planned in advance.",
+      "estimate_title": "Food Estimate Formulas",
+      "shopping_title": "Weekly Shopping List",
+      "meal_prep_steps_title": "Weekend Meal Prep — 6 Steps",
+      "food_formulas": [
+        {"label": "Meat / Raw Fish → Protein", "formula": "g meat = Protein ÷ 0.22"},
+        {"label": "Cooked Rice → Carbs", "formula": "g rice = Carbs ÷ 0.28"},
+        {"label": "Chicken egg (1 egg ≈ 6g protein)", "formula": "Count = Protein ÷ 6"},
+        {"label": "Daily water intake", "formula": "ml = Body weight × 35"}
+      ],
+      "shopping_groups": ["Protein", "Carbohydrates", "Vegetables", "Fruits", "Healthy Fats"]
+    },
+    "b7": {
+      "bar_label": "Personalized Macros by Training Type",
+      "bar_heavy_protein": "Heavy day protein",
+      "bar_light_protein": "Light day protein",
+      "bar_heavy_carb": "Heavy day carbs",
+      "bar_light_carb": "Light day carbs",
+      "bar_pre_carb": "Pre-workout carbs",
+      "bar_post_protein": "Post-workout protein",
+      "image_badge": "Athlete Nutrition",
+      "image_caption": "Optimize performance & recovery",
+      "chain_title": "Macro Calculation Chain",
+      "chain_sub": "BMR → TDEE → Target → Protein / Fat / Carb",
+      "chain_note": "Mifflin-St Jeor formula has ±100–150 kcal margin vs. reality. Use as a starting point, then adjust after 2 weeks based on weight trend.",
+      "chart_title": "Daily Calorie Cycle Chart",
+      "chart_sub": "Adjust TDEE × intensity factor by training session type",
+      "day_types": [
+        {"label": "Rest Day", "note": "Low carb, higher fat"},
+        {"label": "Light Training", "note": "Maintenance, light cardio"},
+        {"label": "Moderate Training", "note": "Equal to TDEE, balanced"},
+        {"label": "Heavy Training", "note": "Maximum carb loading"}
+      ],
+      "peri_title": "Peri-Workout Nutrition Protocol",
+      "peri_note": "Optimal timing: eat pre-workout 60–120 min early. If only 30 min, choose simple carbs (banana, rice cake). Post-workout: first 30 min is ideal — peak insulin sensitivity, mTOR strongly activated.",
+      "endurance_title": "Endurance Fueling Guide"
     }
   },
   "pillarC": {

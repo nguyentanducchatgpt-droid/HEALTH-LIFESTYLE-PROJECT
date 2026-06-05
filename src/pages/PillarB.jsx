@@ -2981,6 +2981,8 @@ function b4MetricDetail(key, s) {
 }
 
 function MealsPanel({ s, activeGoal = 'maintenance' }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b4tr = tPillars('pillarB.b4', { returnObjects: true }) || {};
   const [activeDay, setActiveDay] = useState(0);
   const [selectedMetric, setSelectedMetric] = useState(null);
   const detail = selectedMetric ? b4MetricDetail(selectedMetric, s) : null;
@@ -2989,14 +2991,14 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
 
   return (
     <div>
-      <PersonalizedBar panelId="b4" color="#06b6d4" label="Phân Bổ Dinh Dưỡng Theo Bữa" source="B0 + B1 + B2 + B3"
+      <PersonalizedBar panelId="b4" color="#06b6d4" label={b4tr.bar_label || 'Phân Bổ Dinh Dưỡng Theo Bữa'} source="B0 + B1 + B2 + B3"
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-        { key: 'breakfast',   label: '🌅 Sáng',   value: `${s.breakfastKcal}`,  note: `${s.breakfastProteinG}g P · ${s.breakfastCarbG}g C`, tip: `25% tổng kcal = ${s.breakfastKcal} kcal.` },
-        { key: 'lunch',       label: '☀️ Trưa',   value: `${s.lunchKcal}`,      note: `${s.lunchProteinG}g P · ${s.lunchCarbG}g C`, tip: `35% tổng kcal = ${s.lunchKcal} kcal. Bữa lớn nhất.` },
-        { key: 'dinner',      label: '🌙 Tối',    value: `${s.dinnerKcal}`,     note: `${s.dinnerProteinG}g P · ${s.dinnerCarbG}g C`, tip: `30% tổng kcal = ${s.dinnerKcal} kcal. Ít carb hơn trưa.` },
-        { key: 'snack',       label: '🍎 Snack',  value: `${s.snackKcal}`,      note: `${s.snackProteinG}g P`, tip: `10% tổng kcal = ${s.snackKcal} kcal. Chia 2 lần xế/sáng.` },
-        { key: 'daily_total', label: 'Tổng/ngày', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal', tip: `${s.breakfastKcal}+${s.lunchKcal}+${s.dinnerKcal}+${s.snackKcal} = ${s.targetKcal.toLocaleString()} kcal.` },
+        { key: 'breakfast',   label: b4tr.bar_morning || '🌅 Sáng',   value: `${s.breakfastKcal}`,  note: `${s.breakfastProteinG}g P · ${s.breakfastCarbG}g C`, tip: `25% tổng kcal = ${s.breakfastKcal} kcal.` },
+        { key: 'lunch',       label: b4tr.bar_noon || '☀️ Trưa',      value: `${s.lunchKcal}`,      note: `${s.lunchProteinG}g P · ${s.lunchCarbG}g C`, tip: `35% tổng kcal = ${s.lunchKcal} kcal. Bữa lớn nhất.` },
+        { key: 'dinner',      label: b4tr.bar_evening || '🌙 Tối',    value: `${s.dinnerKcal}`,     note: `${s.dinnerProteinG}g P · ${s.dinnerCarbG}g C`, tip: `30% tổng kcal = ${s.dinnerKcal} kcal. Ít carb hơn trưa.` },
+        { key: 'snack',       label: b4tr.bar_snack || '🍎 Snack',    value: `${s.snackKcal}`,      note: `${s.snackProteinG}g P`, tip: `10% tổng kcal = ${s.snackKcal} kcal. Chia 2 lần xế/sáng.` },
+        { key: 'daily_total', label: b4tr.bar_daily || 'Tổng/ngày',   value: `${s.targetKcal.toLocaleString()}`, note: 'kcal', tip: `${s.breakfastKcal}+${s.lunchKcal}+${s.dinnerKcal}+${s.snackKcal} = ${s.targetKcal.toLocaleString()} kcal.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#06b6d4" onClose={() => setSelectedMetric(null)} />}
 
@@ -3008,11 +3010,11 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xs font-black px-2.5 py-0.5 rounded-full border"
               style={{ color: adaptation.color, background: `${adaptation.color}12`, borderColor: `${adaptation.color}35` }}>
-              {adaptation.label}
+              {b4tr.goal_adaptations?.[activeGoal]?.label || adaptation.label}
             </span>
-            <p className="text-[10px] font-bold text-text leading-snug">{adaptation.headline}</p>
+            <p className="text-[10px] font-bold text-text leading-snug">{b4tr.goal_adaptations?.[activeGoal]?.headline || adaptation.headline}</p>
           </div>
-          <p className="text-[10px] text-muted leading-relaxed mb-3">{adaptation.summary}</p>
+          <p className="text-[10px] text-muted leading-relaxed mb-3">{b4tr.goal_adaptations?.[activeGoal]?.summary || adaptation.summary}</p>
           <div className="space-y-2">
             {adaptation.tweaks.map((t, i) => (
               <div key={i} className="flex items-start gap-2.5 rounded-xl p-2.5"
@@ -3027,12 +3029,12 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
           </div>
           <div className="flex items-start gap-2 mt-3 rounded-xl p-2.5 border" style={{ borderColor: 'rgba(234,179,8,0.2)', background: 'rgba(234,179,8,0.05)' }}>
             <span className="text-xs shrink-0">📌</span>
-            <p className="text-[10px] text-yellow-300/70 leading-relaxed">{adaptation.note}</p>
+            <p className="text-[10px] text-yellow-300/70 leading-relaxed">{b4tr.goal_adaptations?.[activeGoal]?.note || adaptation.note}</p>
           </div>
         </div>
       </div>
 
-      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Thực Đơn Mẫu 7 Ngày — Có Snack</p>
+      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b4tr.menu_title || 'Thực Đơn Mẫu 7 Ngày — Có Snack'}</p>
 
       {/* Day selector — scrollable */}
       <div className="flex gap-2 mb-6 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none' }}>
@@ -3095,7 +3097,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 mt-0.5 text-yellow-400 shrink-0">
                     <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
                   </svg>
-                  <span><span className="text-yellow-400 font-semibold">Bận rộn:</span> {meal.note}</span>
+                  <span><span className="text-yellow-400 font-semibold">{b4tr.busy_label || 'Bận rộn:'}</span> {meal.note}</span>
                 </div>
               </div>
             </div>
@@ -3106,19 +3108,19 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
         <div className="rounded-2xl border p-4 mb-6 flex items-center gap-4 flex-wrap" style={{ borderColor: `${day.color}30`, background: `${day.color}06` }}>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: day.color }} />
-            <span className="text-xs font-bold" style={{ color: day.color }}>Tổng ngày</span>
+            <span className="text-xs font-bold" style={{ color: day.color }}>{b4tr.total_label || 'Tổng ngày'}</span>
           </div>
           {[
             { k: 'Kcal', v: day.totalKcal },
             { k: 'Protein', v: day.totalProtein },
-            { k: 'Bữa', v: `${day.meals.length} bữa` },
+            { k: b4tr.meals_label || 'Bữa', v: `${day.meals.length} bữa` },
           ].map(item => (
             <div key={item.k}>
               <span className="text-[10px] text-muted">{item.k}: </span>
               <span className="text-[11px] font-bold text-text">{item.v}</span>
             </div>
           ))}
-          <p className="text-[10px] text-muted/50 ml-auto hidden sm:block">Điều chỉnh lượng theo TDEE của bạn ở B0</p>
+          <p className="text-[10px] text-muted/50 ml-auto hidden sm:block">{b4tr.adjust_note || 'Điều chỉnh lượng theo TDEE của bạn ở B0'}</p>
         </div>
 
         {/* Daily analysis */}
@@ -3461,9 +3463,11 @@ const DAILY_FORMULAS = [
 ];
 
 function DailyChecklistContent({ checked, toggle, checkedCount }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b5tr = tPillars('pillarB.b5', { returnObjects: true }) || {};
   const allDone = checkedCount === TRACKING_DAILY.length;
   const scorePct = Math.round((checkedCount / TRACKING_DAILY.length) * 100);
-  const scoreLabel = scorePct === 100 ? 'Hoàn hảo 🏆' : scorePct >= 71 ? 'Tốt ✅' : scorePct >= 43 ? 'Khá 📈' : 'Đang xây dựng 🌱';
+  const scoreLabel = scorePct === 100 ? (b5tr.score_perfect || 'Hoàn hảo 🏆') : scorePct >= 71 ? (b5tr.score_good || 'Tốt ✅') : scorePct >= 43 ? (b5tr.score_fair || 'Khá 📈') : (b5tr.score_building || 'Đang xây dựng 🌱');
   const scoreColor = scorePct === 100 ? '#84cc16' : scorePct >= 71 ? '#22c55e' : scorePct >= 43 ? '#06b6d4' : '#f97316';
 
   return (
@@ -3475,7 +3479,7 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 rounded-xl bg-lime-500/12 border border-lime-500/30 flex items-center justify-center text-sm">✅</div>
-              <span className="text-sm font-bold text-text">Checklist Hàng Ngày</span>
+              <span className="text-sm font-bold text-text">{b5tr.checklist_title || 'Checklist Hàng Ngày'}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: scoreColor, background: `${scoreColor}12`, border: `1px solid ${scoreColor}30` }}>{scoreLabel}</span>
@@ -3496,7 +3500,7 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
           {allDone && (
             <div className="mt-5 flex items-center gap-3 bg-lime-500/10 border border-lime-500/25 rounded-xl px-4 py-3">
               <span className="text-xl">🎉</span>
-              <p className="text-sm font-bold text-lime-300">Hoàn thành! Thói quen nhỏ mỗi ngày tạo nên kết quả lớn.</p>
+              <p className="text-sm font-bold text-lime-300">{b5tr.done_msg || 'Hoàn thành! Thói quen nhỏ mỗi ngày tạo nên kết quả lớn.'}</p>
             </div>
           )}
         </div>
@@ -3511,15 +3515,15 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/40 to-transparent" />
         <div className="absolute inset-0 p-5 flex flex-col justify-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lime-400/80 mb-1">Triết lý cốt lõi</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lime-400/80 mb-1">{b5tr.core_philosophy || 'Triết lý cốt lõi'}</p>
           <p className="text-sm font-black text-text leading-snug max-w-xs">"Ăn tốt hơn hôm qua một chút,<br/>đủ dễ để ngày mai còn làm tiếp."</p>
-          <p className="text-[10px] text-muted/70 mt-1.5">70% nhất quán trong 6 tháng &gt; 100% trong 7 ngày</p>
+          <p className="text-[10px] text-muted/70 mt-1.5">{b5tr.consistency_note || '70% nhất quán trong 6 tháng > 100% trong 7 ngày'}</p>
         </div>
       </div>
 
       {/* ── Science behind each habit ── */}
       <div>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Khoa Học Đằng Sau</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">{b5tr.science_title || 'Khoa Học Đằng Sau'}</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {DAILY_SCIENCE.map((item, i) => (
             <div key={i} className="rounded-2xl border p-4 hover:scale-[1.01] transition-all duration-200"
@@ -3540,7 +3544,7 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
 
       {/* ── Quick formula reference ── */}
       <div>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Công Thức Tham Khảo Nhanh</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">{b5tr.formulas_title || 'Công Thức Tham Khảo Nhanh'}</p>
         <div className="grid grid-cols-2 gap-2">
           {DAILY_FORMULAS.map((f, i) => (
             <div key={i} className="rounded-xl border p-3" style={{ borderColor: `${f.color}22`, background: `${f.color}05` }}>
@@ -4613,6 +4617,8 @@ function b5MetricDetail(key, s) {
 }
 
 function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b5tr = tPillars('pillarB.b5', { returnObjects: true }) || {};
   const [activeSection, setActiveSection] = useState(0);
   const [checked, setChecked] = useState({});
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -4629,22 +4635,27 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
       <PersonalizedBar panelId="b5" color="#a855f7" source="B0 → B1 → B2 → B3 → B4"
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-        { key: 'daily_protein', label: 'Protein/ngày', value: `${s.proteinG}g`, note: 'mục tiêu', tip: `${s.proteinG}g/ngày = ${(s.proteinG/s.weight).toFixed(1)}g × ${s.weight}kg.` },
-        { key: 'water',         label: 'Nước uống', value: `${s.waterMl}ml`, note: `${Math.round(s.waterMl/250)} ly 250ml`, tip: `${s.waterMl}ml = ${s.weight}kg × 35ml/kg.` },
-        { key: 'steps',         label: 'Bước chân', value: `${s.dailySteps.toLocaleString()}`, note: 'bước/ngày', tip: `Tương ứng mức hoạt động ${s.activity.label}.` },
-        { key: 'workout',       label: 'Tập luyện', value: `${s.weeklyWorkoutMins}`, note: 'phút/tuần', tip: `${s.weeklyWorkoutMins} phút/tuần tương ứng mức hoạt động ${s.activity.label}.` },
-        { key: 'kcal_target',   label: 'Kcal mục tiêu', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal/ngày', tip: `Điều chỉnh ±100–200 kcal nếu cân không thay đổi sau 2 tuần.` },
+        { key: 'daily_protein', label: b5tr.bar_protein || 'Protein/ngày', value: `${s.proteinG}g`, note: 'mục tiêu', tip: `${s.proteinG}g/ngày = ${(s.proteinG/s.weight).toFixed(1)}g × ${s.weight}kg.` },
+        { key: 'water',         label: b5tr.bar_water || 'Nước uống', value: `${s.waterMl}ml`, note: `${Math.round(s.waterMl/250)} ly 250ml`, tip: `${s.waterMl}ml = ${s.weight}kg × 35ml/kg.` },
+        { key: 'steps',         label: b5tr.bar_steps || 'Bước chân', value: `${s.dailySteps.toLocaleString()}`, note: 'bước/ngày', tip: `Tương ứng mức hoạt động ${s.activity.label}.` },
+        { key: 'workout',       label: b5tr.bar_workout || 'Tập luyện', value: `${s.weeklyWorkoutMins}`, note: 'phút/tuần', tip: `${s.weeklyWorkoutMins} phút/tuần tương ứng mức hoạt động ${s.activity.label}.` },
+        { key: 'kcal_target',   label: b5tr.bar_kcal || 'Kcal mục tiêu', value: `${s.targetKcal.toLocaleString()}`, note: 'kcal/ngày', tip: `Điều chỉnh ±100–200 kcal nếu cân không thay đổi sau 2 tuần.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#a855f7" onClose={() => setSelectedMetric(null)} />}
       {/* Section heading */}
-      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">5 Chủ Đề Theo Dõi</p>
+      <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">{b5tr.section_heading || '5 Chủ Đề Theo Dõi'}</p>
 
       {/* 3 tab cards */}
       <div className="grid grid-cols-3 gap-3">
         {TRACKING_SECTIONS.map((sec, i) => (
           <TrackingTabCard
             key={sec.id}
-            section={sec}
+            section={{
+              ...sec,
+              label: b5tr.tracking_sections?.[i]?.label || sec.label,
+              badge: b5tr.tracking_sections?.[i]?.badge || sec.badge,
+              desc: b5tr.tracking_sections?.[i]?.desc || sec.desc,
+            }}
             active={activeSection === i}
             onClick={() => setActiveSection(i)}
           />
@@ -4666,8 +4677,8 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
           <div className="flex items-center gap-3 mb-5">
             <div className="w-9 h-9 rounded-xl bg-purple-500/12 border border-purple-500/20 flex items-center justify-center text-xl shrink-0">🌱</div>
             <div>
-              <p className="text-sm font-bold text-text">Thói Quen Ăn Uống Bền Vững</p>
-              <p className="text-[10px] text-muted">3 hành vi nhỏ — tác động lớn lên kết quả dài hạn</p>
+              <p className="text-sm font-bold text-text">{b5tr.habits_title || 'Thói Quen Ăn Uống Bền Vững'}</p>
+              <p className="text-[10px] text-muted">{b5tr.habits_sub || '3 hành vi nhỏ — tác động lớn lên kết quả dài hạn'}</p>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -4704,8 +4715,8 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
             <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl">🚨</span>
               <div>
-                <p className="text-sm font-bold text-red-300">Quy Tắc 3 Không</p>
-                <p className="text-[10px] text-muted">Khi ăn lỡ tay hoặc ăn không đúng kế hoạch</p>
+                <p className="text-sm font-bold text-red-300">{b5tr.no3_title || 'Quy Tắc 3 Không'}</p>
+                <p className="text-[10px] text-muted">{b5tr.no3_sub || 'Khi ăn lỡ tay hoặc ăn không đúng kế hoạch'}</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -4714,7 +4725,7 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
                   <div className="flex items-start gap-2">
                     <span className="text-base shrink-0">{r.icon}</span>
                     <div>
-                      <p className="text-[11px] font-bold text-red-300 mb-1">{r.rule}</p>
+                      <p className="text-[11px] font-bold text-red-300 mb-1">{b5tr.off_plan_rules?.[i]?.rule || r.rule}</p>
                       <p className="text-[10px] text-muted leading-relaxed">{r.reason}</p>
                     </div>
                   </div>
@@ -4728,16 +4739,16 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
             <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl">✅</span>
               <div>
-                <p className="text-sm font-bold text-green-300">Quy Tắc Quay Lại</p>
-                <p className="text-[10px] text-muted">4 bước để reset sau bữa lệch kế hoạch</p>
+                <p className="text-sm font-bold text-green-300">{b5tr.reset_title || 'Quy Tắc Quay Lại'}</p>
+                <p className="text-[10px] text-muted">{b5tr.reset_sub || '4 bước để reset sau bữa lệch kế hoạch'}</p>
               </div>
             </div>
             <div className="space-y-3">
               {[
-                { step: '01', text: 'Bữa sau ăn bình thường — không cắt calo bù', color: '#22c55e' },
-                { step: '02', text: 'Uống đủ nước — giúp cơ thể xử lý lượng muối và calo dư', color: '#06b6d4' },
-                { step: '03', text: 'Đi bộ nhẹ 10–20 phút — giúp tiêu hóa và cải thiện tâm trạng', color: '#a855f7' },
-                { step: '04', text: 'Ngủ đủ giấc — đêm đó quan trọng hơn việc tập bù', color: '#f59e0b' },
+                { step: '01', text: b5tr.reset_steps?.[0] || 'Bữa sau ăn bình thường — không cắt calo bù', color: '#22c55e' },
+                { step: '02', text: b5tr.reset_steps?.[1] || 'Uống đủ nước — giúp cơ thể xử lý lượng muối và calo dư', color: '#06b6d4' },
+                { step: '03', text: b5tr.reset_steps?.[2] || 'Đi bộ nhẹ 10–20 phút — giúp tiêu hóa và cải thiện tâm trạng', color: '#a855f7' },
+                { step: '04', text: b5tr.reset_steps?.[3] || 'Ngủ đủ giấc — đêm đó quan trọng hơn việc tập bù', color: '#f59e0b' },
               ].map((s) => (
                 <div key={s.step} className="flex items-start gap-3 rounded-xl border border-green-500/10 bg-green-500/5 p-3">
                   <span className="text-[9px] font-black w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ background: `${s.color}20`, color: s.color }}>{s.step}</span>
@@ -4747,7 +4758,7 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
             </div>
             <div className="mt-3 rounded-xl px-3 py-2 border border-green-500/15 bg-green-500/8">
               <p className="text-[9px] text-green-400/80 italic leading-relaxed">
-                "Một bữa ăn sai không phá hỏng cả quá trình. Bỏ cuộc mới phá hỏng."
+                "{b5tr.reset_quote || 'Một bữa ăn sai không phá hỏng cả quá trình. Bỏ cuộc mới phá hỏng.'}"
               </p>
             </div>
           </div>
@@ -5245,6 +5256,8 @@ function b6MetricDetail(key, s) {
 
 // ─── SevenDayPanel (B6) ──────────────────────────────────────────────────────
 function SevenDayPanel({ s }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b6tr = tPillars('pillarB.b6', { returnObjects: true }) || {};
   const [activeDay, setActiveDay]       = useState(0);
   const [showShopping, setShowShopping] = useState(false);
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -5258,10 +5271,10 @@ function SevenDayPanel({ s }) {
       <PersonalizedBar panelId="b6" color="#ec4899" source="B0 → B1 → B2 → B3 → B4 → B5"
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-        { key: 'training_day',      label: 'Ngày tập', value: `${s.trainingDayKcal.toLocaleString()} kcal`, note: `${s.trainingDays} ngày/tuần`, tip: `Ngày tập: TDEE + 100 kcal = ${s.trainingDayKcal.toLocaleString()} kcal.` },
-        { key: 'rest_day',          label: 'Ngày nghỉ', value: `${s.restDayKcal.toLocaleString()} kcal`, note: `${s.restDays} ngày/tuần`, tip: `Ngày nghỉ: TDEE - 100 kcal = ${s.restDayKcal.toLocaleString()} kcal.` },
-        { key: 'weekly_total',      label: 'Tổng tuần', value: `${s.weeklyKcalTotal.toLocaleString()}`, note: 'kcal/7 ngày', tip: `${s.trainingDayKcal} × ${s.trainingDays} + ${s.restDayKcal} × ${s.restDays} = ${s.weeklyKcalTotal.toLocaleString()} kcal/tuần.` },
-        { key: 'weekly_protein_b6', label: 'Protein/ngày', value: `${s.proteinG}g`, note: 'cả tập & nghỉ', tip: `Duy trì ${s.proteinG}g protein cả ngày tập và ngày nghỉ.` },
+        { key: 'training_day',      label: b6tr.bar_training || 'Ngày tập', value: `${s.trainingDayKcal.toLocaleString()} kcal`, note: `${s.trainingDays} ngày/tuần`, tip: `Ngày tập: TDEE + 100 kcal = ${s.trainingDayKcal.toLocaleString()} kcal.` },
+        { key: 'rest_day',          label: b6tr.bar_rest || 'Ngày nghỉ', value: `${s.restDayKcal.toLocaleString()} kcal`, note: `${s.restDays} ngày/tuần`, tip: `Ngày nghỉ: TDEE - 100 kcal = ${s.restDayKcal.toLocaleString()} kcal.` },
+        { key: 'weekly_total',      label: b6tr.bar_weekly || 'Tổng tuần', value: `${s.weeklyKcalTotal.toLocaleString()}`, note: 'kcal/7 ngày', tip: `${s.trainingDayKcal} × ${s.trainingDays} + ${s.restDayKcal} × ${s.restDays} = ${s.weeklyKcalTotal.toLocaleString()} kcal/tuần.` },
+        { key: 'weekly_protein_b6', label: b6tr.bar_protein || 'Protein/ngày', value: `${s.proteinG}g`, note: 'cả tập & nghỉ', tip: `Duy trì ${s.proteinG}g protein cả ngày tập và ngày nghỉ.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#ec4899" onClose={() => setSelectedMetric(null)} />}
 
@@ -5270,17 +5283,17 @@ function SevenDayPanel({ s }) {
         <div className="rounded-2xl border border-pink-500/18 bg-pink-500/4 p-5">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">Nhịp Calo Tuần</p>
+              <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">{b6tr.rhythm_title || 'Nhịp Calo Tuần'}</p>
               <p className="text-sm font-bold text-text mt-0.5">
-                Carb Cycling — {s.trainingDays} ngày tập / {s.restDays} ngày nghỉ
+                {b6tr.carb_cycling_label || 'Carb Cycling'} — {s.trainingDays} ngày tập / {s.restDays} ngày nghỉ
               </p>
             </div>
             <div className="flex gap-3 text-[10px] text-muted">
               <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-pink-500 inline-block" />Tập
+                <span className="w-2 h-2 rounded-full bg-pink-500 inline-block" />{b6tr.legend_training || 'Tập'}
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-cyan-500 inline-block" />Nghỉ
+                <span className="w-2 h-2 rounded-full bg-cyan-500 inline-block" />{b6tr.legend_rest || 'Nghỉ'}
               </span>
             </div>
           </div>
@@ -5288,7 +5301,7 @@ function SevenDayPanel({ s }) {
 
           {/* Formula */}
           <div className="mt-5">
-            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em] mb-3">Công Thức Tính Macro</p>
+            <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em] mb-3">{b6tr.macro_formula_title || 'Công Thức Tính Macro'}</p>
             <CarbCycleFormula s={s} />
           </div>
 
@@ -5316,10 +5329,9 @@ function SevenDayPanel({ s }) {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/65 to-bg/20" />
           <div className="absolute inset-0 flex flex-col justify-center p-5">
-            <p className="text-sm font-bold text-pink-300 mb-1">Meal Prep = Thành Công 70%</p>
+            <p className="text-sm font-bold text-pink-300 mb-1">{b6tr.meal_prep_headline || 'Meal Prep = Thành Công 70%'}</p>
             <p className="text-[11px] text-muted/90 leading-relaxed max-w-xs">
-              Chuẩn bị sẵn 2–3 ngày thức ăn vào cuối tuần loại bỏ lý do "không biết ăn gì" —
-              quyết định đúng đắn nhất ngày thường là quyết định đã được lên kế hoạch từ trước.
+              {b6tr.meal_prep_desc || 'Chuẩn bị sẵn 2–3 ngày thức ăn vào cuối tuần loại bỏ lý do "không biết ăn gì" — quyết định đúng đắn nhất ngày thường là quyết định đã được lên kế hoạch từ trước.'}
             </p>
           </div>
         </div>
@@ -5364,11 +5376,11 @@ function SevenDayPanel({ s }) {
           </span>
           {weekPattern[activeDay] === 'training' ? (
             <span className="text-[10px] font-bold px-2.5 py-1 rounded-full border border-pink-500/30 text-pink-400 bg-pink-500/8">
-              🏋️ Ngày Tập — {s.trainingDayKcal.toLocaleString()} kcal | Carb {s.trainingDayCarb}g
+              {b6tr.training_badge || '🏋️ Ngày Tập'} — {s.trainingDayKcal.toLocaleString()} kcal | Carb {s.trainingDayCarb}g
             </span>
           ) : (
             <span className="text-[10px] font-bold px-2.5 py-1 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/8">
-              🌙 Ngày Nghỉ — {s.restDayKcal.toLocaleString()} kcal | Carb {s.restDayCarb}g
+              {b6tr.rest_badge || '🌙 Ngày Nghỉ'} — {s.restDayKcal.toLocaleString()} kcal | Carb {s.restDayCarb}g
             </span>
           )}
         </div>
@@ -5414,7 +5426,7 @@ function SevenDayPanel({ s }) {
       {/* ── Công thức ước lượng thực phẩm ── */}
       <RevealBlock delay={50}>
         <div className="rounded-2xl border border-border/25 p-5 space-y-4">
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">Công Thức Ước Lượng Thực Phẩm</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">{b6tr.estimate_title || 'Công Thức Ước Lượng Thực Phẩm'}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               { icon: '🥩', label: 'Thịt / Cá sống → Protein', formula: 'g thịt = Protein ÷ 0.22', example: `${s.proteinG}g protein → ~${Math.round(s.proteinG / 0.22)}g thịt`, color: '#84cc16' },
@@ -5443,17 +5455,17 @@ function SevenDayPanel({ s }) {
           className="w-full flex items-center justify-between px-5 py-3 rounded-2xl border border-pink-500/20 bg-pink-500/5 hover:border-pink-500/35 transition-all duration-200 cursor-pointer"
         >
           <div className="flex items-center gap-2">
-            <span className="text-sm font-bold text-pink-300">Danh Sách Mua Sắm Tuần</span>
+            <span className="text-sm font-bold text-pink-300">{b6tr.shopping_title || 'Danh Sách Mua Sắm Tuần'}</span>
             <span className="text-[10px] text-muted border border-border/30 rounded-full px-2 py-0.5">~490.000₫/tuần</span>
           </div>
           <span className="text-muted text-lg transition-transform duration-200" style={{ transform: showShopping ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
         </button>
         {showShopping && (
           <div className="mt-3 grid sm:grid-cols-2 gap-3 animate-fade-in-up">
-            {SHOPPING_GROUPS.map(g => (
+            {SHOPPING_GROUPS.map((g, gi) => (
               <div key={g.name} className="rounded-2xl border p-4" style={{ borderColor: `${g.color}25`, background: `${g.color}06` }}>
                 <div className="flex items-center justify-between mb-3">
-                  <p className="text-xs font-bold" style={{ color: g.color }}>{g.name}</p>
+                  <p className="text-xs font-bold" style={{ color: g.color }}>{b6tr.shopping_groups?.[gi] || g.name}</p>
                   {g.tip && <span className="text-[9px] text-muted">{g.tip}</span>}
                 </div>
                 <ul className="space-y-1">
@@ -5472,7 +5484,7 @@ function SevenDayPanel({ s }) {
 
       {/* Meal prep steps */}
       <RevealBlock delay={120}>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Meal Prep Cuối Tuần — 6 Bước</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b6tr.meal_prep_steps_title || 'Meal Prep Cuối Tuần — 6 Bước'}</p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {MEAL_PREP_STEPS.map((step, i) => (
             <div
@@ -5928,20 +5940,22 @@ function EnduranceFuelingGuide({ s }) {
 
 // ─── AdvancedPanel (B7) ──────────────────────────────────────────────────────
 function AdvancedPanel({ s }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b7tr = tPillars('pillarB.b7', { returnObjects: true }) || {};
   const [selectedMetric, setSelectedMetric] = useState(null);
   const detail = selectedMetric ? b7MetricDetail(selectedMetric, s) : null;
 
   return (
     <div className="space-y-10">
-      <PersonalizedBar panelId="b7" color="#f59e0b" label="Macro Cá Nhân Hóa Theo Loại Buổi Tập" source="B0 → B1 → ... → B6 (Toàn Bộ)"
+      <PersonalizedBar panelId="b7" color="#f59e0b" label={b7tr.bar_label || 'Macro Cá Nhân Hóa Theo Loại Buổi Tập'} source="B0 → B1 → ... → B6 (Toàn Bộ)"
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-          { key: 'heavy_protein',    label: 'Protein nặng',    value: `${s.heavyDayProteinG}g`,   note: `${(s.heavyDayProteinG/s.weight).toFixed(1)}g/kg`,  tip: `Ngày tập nặng (squat, deadlift, bench): ${s.heavyDayProteinG}g = ${s.weight}kg × ${(s.heavyDayProteinG/s.weight).toFixed(1)}g/kg. Tăng 10–20% so với protein nền (${s.proteinG}g) để hỗ trợ phục hồi và tổng hợp cơ sau stress cao.` },
-          { key: 'light_protein',    label: 'Protein nhẹ',     value: `${s.lightDayProteinG}g`,   note: `${(s.lightDayProteinG/s.weight).toFixed(1)}g/kg`,  tip: `Ngày tập nhẹ hoặc nghỉ: ${s.lightDayProteinG}g = ${s.weight}kg × ${(s.lightDayProteinG/s.weight).toFixed(1)}g/kg. Giảm nhẹ so với protein nền nhưng không nên xuống dưới 1.4g/kg để không mất cơ.` },
-          { key: 'heavy_carb',       label: 'Carb ngày nặng',  value: `${s.heavyDayCarbG}g`,      note: '+40% vs nền',                                       tip: `Ngày tập nặng cần ${s.heavyDayCarbG}g carb (= ${s.carbG}g × 1.4). Tăng carb để nạp đủ glycogen cho buổi tập cường độ cao. Phân bổ: ~${s.preWorkoutCarbG}g trước tập, phần còn lại rải đều.` },
-          { key: 'light_carb',       label: 'Carb ngày nhẹ',   value: `${s.lightDayCarbG}g`,      note: '-40% vs nền',                                       tip: `Ngày nghỉ hoặc tập nhẹ chỉ cần ${s.lightDayCarbG}g carb (= ${s.carbG}g × 0.6). Giảm carb ngày nghỉ giúp tổng calo tuần đúng mục tiêu mà vẫn có carb cao cho ngày tập quan trọng.` },
-          { key: 'preworkout_carb',  label: 'Pre-workout carb', value: `${s.preWorkoutCarbG}g`,   note: '30–60 phút trước',                                  tip: `${s.preWorkoutCarbG}g carb ≈ 15% lượng carb ngày nặng (${s.heavyDayCarbG}g). Ăn 30–60 phút trước tập: chuối, bánh gạo, hoặc cơm nhỏ. Cung cấp glucose tức thì cho não và cơ, cải thiện hiệu suất 5–10%.` },
-          { key: 'postworkout_protein', label: 'Post-workout P', value: `${s.postWorkoutProteinG}g`, note: 'trong 2h sau tập',                               tip: `${s.postWorkoutProteinG}g = ${s.weight}kg × 0.3g/kg. Trong 2 giờ sau tập, cửa sổ tổng hợp protein mở rộng nhất. Kết hợp với ${s.postWorkoutCarbG}g carb (${s.weight}kg × 0.5g/kg) để tối ưu phục hồi glycogen và tổng hợp cơ.` },
+          { key: 'heavy_protein',    label: b7tr.bar_heavy_protein || 'Protein nặng',    value: `${s.heavyDayProteinG}g`,   note: `${(s.heavyDayProteinG/s.weight).toFixed(1)}g/kg`,  tip: `Ngày tập nặng (squat, deadlift, bench): ${s.heavyDayProteinG}g = ${s.weight}kg × ${(s.heavyDayProteinG/s.weight).toFixed(1)}g/kg. Tăng 10–20% so với protein nền (${s.proteinG}g) để hỗ trợ phục hồi và tổng hợp cơ sau stress cao.` },
+          { key: 'light_protein',    label: b7tr.bar_light_protein || 'Protein nhẹ',     value: `${s.lightDayProteinG}g`,   note: `${(s.lightDayProteinG/s.weight).toFixed(1)}g/kg`,  tip: `Ngày tập nhẹ hoặc nghỉ: ${s.lightDayProteinG}g = ${s.weight}kg × ${(s.lightDayProteinG/s.weight).toFixed(1)}g/kg. Giảm nhẹ so với protein nền nhưng không nên xuống dưới 1.4g/kg để không mất cơ.` },
+          { key: 'heavy_carb',       label: b7tr.bar_heavy_carb || 'Carb ngày nặng',     value: `${s.heavyDayCarbG}g`,      note: '+40% vs nền',                                       tip: `Ngày tập nặng cần ${s.heavyDayCarbG}g carb (= ${s.carbG}g × 1.4). Tăng carb để nạp đủ glycogen cho buổi tập cường độ cao. Phân bổ: ~${s.preWorkoutCarbG}g trước tập, phần còn lại rải đều.` },
+          { key: 'light_carb',       label: b7tr.bar_light_carb || 'Carb ngày nhẹ',      value: `${s.lightDayCarbG}g`,      note: '-40% vs nền',                                       tip: `Ngày nghỉ hoặc tập nhẹ chỉ cần ${s.lightDayCarbG}g carb (= ${s.carbG}g × 0.6). Giảm carb ngày nghỉ giúp tổng calo tuần đúng mục tiêu mà vẫn có carb cao cho ngày tập quan trọng.` },
+          { key: 'preworkout_carb',  label: b7tr.bar_pre_carb || 'Pre-workout carb',      value: `${s.preWorkoutCarbG}g`,   note: '30–60 phút trước',                                  tip: `${s.preWorkoutCarbG}g carb ≈ 15% lượng carb ngày nặng (${s.heavyDayCarbG}g). Ăn 30–60 phút trước tập: chuối, bánh gạo, hoặc cơm nhỏ. Cung cấp glucose tức thì cho não và cơ, cải thiện hiệu suất 5–10%.` },
+          { key: 'postworkout_protein', label: b7tr.bar_post_protein || 'Post-workout P', value: `${s.postWorkoutProteinG}g`, note: 'trong 2h sau tập',                               tip: `${s.postWorkoutProteinG}g = ${s.weight}kg × 0.3g/kg. Trong 2 giờ sau tập, cửa sổ tổng hợp protein mở rộng nhất. Kết hợp với ${s.postWorkoutCarbG}g carb (${s.weight}kg × 0.5g/kg) để tối ưu phục hồi glycogen và tổng hợp cơ.` },
         ]} />
       {detail && <MetricDetailCard detail={detail} color="#f59e0b" onClose={() => setSelectedMetric(null)} />}
 
@@ -5957,10 +5971,10 @@ function AdvancedPanel({ s }) {
             <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
             <div className="absolute bottom-4 left-6 flex items-center gap-3">
               <span className="text-amber-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-amber-500/20">
-                Dinh Dưỡng Vận Động Viên
+                {b7tr.image_badge || 'Dinh Dưỡng Vận Động Viên'}
               </span>
               <span className="text-[10px] text-muted/60 bg-bg/40 px-2 py-1 rounded-full">
-                Tối ưu hiệu suất & phục hồi
+                {b7tr.image_caption || 'Tối ưu hiệu suất & phục hồi'}
               </span>
             </div>
           </div>
@@ -5973,14 +5987,14 @@ function AdvancedPanel({ s }) {
           <div className="flex items-center gap-3 mb-5">
             <span className="text-2xl">🧮</span>
             <div>
-              <p className="text-sm font-bold text-amber-300">Chuỗi Tính Toán Macro</p>
-              <p className="text-[10px] text-muted">BMR → TDEE → Mục Tiêu → Protein / Fat / Carb</p>
+              <p className="text-sm font-bold text-amber-300">{b7tr.chain_title || 'Chuỗi Tính Toán Macro'}</p>
+              <p className="text-[10px] text-muted">{b7tr.chain_sub || 'BMR → TDEE → Mục Tiêu → Protein / Fat / Carb'}</p>
             </div>
           </div>
           <MacroFormulaChain s={s} />
           <div className="mt-4 rounded-xl bg-amber-500/8 border border-amber-500/15 p-3">
             <p className="text-[10px] text-amber-400/80 leading-relaxed">
-              <span className="font-bold">📌 Lưu ý:</span> Công thức Mifflin-St Jeor cho sai số ±100–150 kcal so với thực tế. Dùng làm điểm xuất phát, sau 2 tuần điều chỉnh theo cân nặng: cân không giảm → giảm 100–200 kcal; cân giảm &gt; 1kg/tuần → tăng 100–200 kcal.
+              {b7tr.chain_note || '📌 Lưu ý: Công thức Mifflin-St Jeor cho sai số ±100–150 kcal so với thực tế. Dùng làm điểm xuất phát, sau 2 tuần điều chỉnh theo cân nặng: cân không giảm → giảm 100–200 kcal; cân giảm > 1kg/tuần → tăng 100–200 kcal.'}
             </p>
           </div>
         </div>
@@ -5993,8 +6007,8 @@ function AdvancedPanel({ s }) {
             <div className="flex items-center gap-3">
               <span className="text-2xl">📊</span>
               <div>
-                <p className="text-sm font-bold text-text">Biểu Đồ Chu Kỳ Calo Theo Ngày</p>
-                <p className="text-[10px] text-muted">Điều chỉnh TDEE × hệ số theo cường độ buổi tập</p>
+                <p className="text-sm font-bold text-text">{b7tr.chart_title || 'Biểu Đồ Chu Kỳ Calo Theo Ngày'}</p>
+                <p className="text-[10px] text-muted">{b7tr.chart_sub || 'Điều chỉnh TDEE × hệ số theo cường độ buổi tập'}</p>
               </div>
             </div>
             <span className="text-[10px] text-muted/50 bg-surface/40 px-2 py-1 rounded-full border border-border/20">
@@ -6006,10 +6020,10 @@ function AdvancedPanel({ s }) {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
             {[
-              { label: 'Ngày Nghỉ', mult: 0.90, kcal: Math.round(s.tdee * 0.90), color: '#22c55e', note: 'Carb thấp, fat cao hơn' },
-              { label: 'Tập Nhẹ',  mult: 0.95, kcal: Math.round(s.tdee * 0.95), color: '#06b6d4', note: 'Duy trì, cardio nhẹ' },
-              { label: 'Tập Vừa', mult: 1.00, kcal: Math.round(s.tdee * 1.00), color: '#f59e0b', note: 'Bằng TDEE, cân bằng' },
-              { label: 'Tập Nặng', mult: 1.07, kcal: Math.round(s.tdee * 1.07), color: '#ef4444', note: 'Nạp carb tối đa' },
+              { label: b7tr.day_types?.[0]?.label || 'Ngày Nghỉ', mult: 0.90, kcal: Math.round(s.tdee * 0.90), color: '#22c55e', note: b7tr.day_types?.[0]?.note || 'Carb thấp, fat cao hơn' },
+              { label: b7tr.day_types?.[1]?.label || 'Tập Nhẹ',   mult: 0.95, kcal: Math.round(s.tdee * 0.95), color: '#06b6d4', note: b7tr.day_types?.[1]?.note || 'Duy trì, cardio nhẹ' },
+              { label: b7tr.day_types?.[2]?.label || 'Tập Vừa',   mult: 1.00, kcal: Math.round(s.tdee * 1.00), color: '#f59e0b', note: b7tr.day_types?.[2]?.note || 'Bằng TDEE, cân bằng' },
+              { label: b7tr.day_types?.[3]?.label || 'Tập Nặng',  mult: 1.07, kcal: Math.round(s.tdee * 1.07), color: '#ef4444', note: b7tr.day_types?.[3]?.note || 'Nạp carb tối đa' },
             ].map(d => (
               <div key={d.label} className="rounded-xl p-3 text-center" style={{ background: `${d.color}08`, border: `1px solid ${d.color}20` }}>
                 <p className="text-[9px] font-bold uppercase tracking-wider mb-1" style={{ color: d.color }}>{d.label}</p>
@@ -6027,14 +6041,14 @@ function AdvancedPanel({ s }) {
           <div className="flex items-center gap-3 mb-1">
             <span className="text-2xl">⚡</span>
             <div>
-              <p className="text-sm font-bold text-text">Giao Thức Dinh Dưỡng Quanh Buổi Tập</p>
+              <p className="text-sm font-bold text-text">{b7tr.peri_title || 'Giao Thức Dinh Dưỡng Quanh Buổi Tập'}</p>
               <p className="text-[10px] text-muted">Tính theo cân nặng {s.weight}kg — từ tài liệu nghiên cứu thực hành</p>
             </div>
           </div>
           <PrePostWorkoutProtocol s={s} />
           <div className="rounded-xl bg-surface/10 border border-border/20 p-3">
             <p className="text-[10px] text-muted leading-relaxed">
-              <span className="font-bold text-amber-400">⏱ Timing tối ưu:</span> Pre-workout ăn sớm 60–120 phút → cơ thể đã tiêu hóa xong khi tập. Nếu chỉ có 30 phút, chọn carb đơn giản (chuối, bánh gạo). Post-workout: 30 phút đầu là lý tưởng nhất — insulin nhạy cao, mTOR kích hoạt mạnh.
+              {b7tr.peri_note || '⏱ Timing tối ưu: Pre-workout ăn sớm 60–120 phút → cơ thể đã tiêu hóa xong khi tập. Nếu chỉ có 30 phút, chọn carb đơn giản (chuối, bánh gạo). Post-workout: 30 phút đầu là lý tưởng nhất — insulin nhạy cao, mTOR kích hoạt mạnh.'}
             </p>
           </div>
         </div>
@@ -6046,7 +6060,7 @@ function AdvancedPanel({ s }) {
           <div className="flex items-center gap-3 mb-1">
             <span className="text-2xl">🏁</span>
             <div>
-              <p className="text-sm font-bold text-text">Hướng Dẫn Nạp Nhiên Liệu Sức Bền</p>
+              <p className="text-sm font-bold text-text">{b7tr.endurance_title || 'Hướng Dẫn Nạp Nhiên Liệu Sức Bền'}</p>
               <p className="text-[10px] text-muted">3 vùng thời gian — chiến lược carb + nước + điện giải</p>
             </div>
           </div>

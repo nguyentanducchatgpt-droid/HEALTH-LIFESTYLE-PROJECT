@@ -741,6 +741,136 @@
           "timeframe": "Nên duy trì ít nhất 8–12 tuần sau mỗi phase giảm/tăng trước khi bắt đầu chu kỳ mới."
         }
       }
+    },
+    "b4": {
+      "bar_label": "Phân Bổ Dinh Dưỡng Theo Bữa",
+      "bar_morning": "🌅 Sáng",
+      "bar_noon": "☀️ Trưa",
+      "bar_evening": "🌙 Tối",
+      "bar_snack": "🍎 Snack",
+      "bar_daily": "Tổng/ngày",
+      "menu_title": "Thực Đơn Mẫu 7 Ngày — Có Snack",
+      "busy_label": "Bận rộn:",
+      "total_label": "Tổng ngày",
+      "meals_label": "Bữa",
+      "adjust_note": "Điều chỉnh lượng theo TDEE của bạn ở B0",
+      "goal_adaptations": {
+        "fat-loss": {
+          "label": "🔥 Giảm Mỡ",
+          "headline": "Điều chỉnh thực đơn cho mục tiêu Giảm Mỡ",
+          "summary": "Thâm hụt ~400 kcal. Tăng protein, giảm carb tinh, ưu tiên chất xơ và rau để no lâu hơn với ít calo hơn.",
+          "note": "Tổng kcal thực tế nên thấp hơn TDEE của bạn ~400 kcal. Điều chỉnh khẩu phần theo số tính từ B0."
+        },
+        "muscle-gain": {
+          "label": "💪 Tăng Cơ",
+          "headline": "Điều chỉnh thực đơn cho mục tiêu Tăng Cơ",
+          "summary": "Thặng dư ~250 kcal. Tăng carb chất lượng quanh buổi tập, giữ protein cao, đảm bảo 4–5 bữa protein/ngày.",
+          "note": "Mỗi bữa cần ≥20g protein. Chia protein đều 4–5 bữa hiệu quả hơn gộp vào 1–2 bữa."
+        },
+        "endurance": {
+          "label": "🚴 Sức Bền",
+          "headline": "Điều chỉnh thực đơn cho mục tiêu Sức Bền",
+          "summary": "Cân bằng calo. Tăng carb phức vào ngày tập nặng, bổ sung điện giải, protein vừa đủ để phục hồi cơ.",
+          "note": "Ngày thi/tập dài >90 phút: tăng carb thêm 20–30%. Không thử đồ mới trước ngày thi đấu."
+        },
+        "maintenance": {
+          "label": "⚖️ Duy Trì",
+          "headline": "Điều chỉnh thực đơn cho mục tiêu Duy Trì",
+          "summary": "Cân bằng TDEE. Tập trung vào chất lượng và đa dạng thực phẩm, linh hoạt 80/20, không cần đếm calo chặt chẽ.",
+          "note": "Cân 1 lần/tuần, cùng giờ, cùng điều kiện. Nếu cân tăng/giảm >2kg liên tục → điều chỉnh khẩu phần."
+        }
+      }
+    },
+    "b5": {
+      "bar_protein": "Protein/ngày",
+      "bar_water": "Nước uống",
+      "bar_steps": "Bước chân",
+      "bar_workout": "Tập luyện",
+      "bar_kcal": "Kcal mục tiêu",
+      "section_heading": "5 Chủ Đề Theo Dõi",
+      "habits_title": "Thói Quen Ăn Uống Bền Vững",
+      "habits_sub": "3 hành vi nhỏ — tác động lớn lên kết quả dài hạn",
+      "no3_title": "Quy Tắc 3 Không",
+      "no3_sub": "Khi ăn lỡ tay hoặc ăn không đúng kế hoạch",
+      "reset_title": "Quy Tắc Quay Lại",
+      "reset_sub": "4 bước để reset sau bữa lệch kế hoạch",
+      "checklist_title": "Checklist Hàng Ngày",
+      "science_title": "Khoa Học Đằng Sau",
+      "formulas_title": "Công Thức Tham Khảo Nhanh",
+      "reset_steps": [
+        "Bữa sau ăn bình thường — không cắt calo bù",
+        "Uống đủ nước — giúp cơ thể xử lý lượng muối và calo dư",
+        "Đi bộ nhẹ 10–20 phút — giúp tiêu hóa và cải thiện tâm trạng",
+        "Ngủ đủ giấc — đêm đó quan trọng hơn việc tập bù"
+      ],
+      "reset_quote": "Một bữa ăn sai không phá hỏng cả quá trình. Bỏ cuộc mới phá hỏng.",
+      "score_perfect": "Hoàn hảo 🏆",
+      "score_good": "Tốt ✅",
+      "score_fair": "Khá 📈",
+      "score_building": "Đang xây dựng 🌱",
+      "done_msg": "Hoàn thành! Thói quen nhỏ mỗi ngày tạo nên kết quả lớn.",
+      "core_philosophy": "Triết lý cốt lõi",
+      "consistency_note": "70% nhất quán trong 6 tháng > 100% trong 7 ngày",
+      "tracking_sections": [
+        {"label": "Checklist Hàng Ngày", "badge": "7 mục tiêu", "desc": "Theo dõi 7 thói quen dinh dưỡng mỗi ngày để xây nền tảng vững chắc"},
+        {"label": "Theo Dõi Hàng Tuần", "badge": "6 chỉ số", "desc": "Đo lường 6 chỉ số quan trọng mỗi tuần để theo dõi tiến độ thực sự"},
+        {"label": "Điều Chỉnh & Tối Ưu", "badge": "Không tiến bộ?", "desc": "Hướng dẫn điều chỉnh khi kết quả không như mong đợi sau 2–4 tuần"}
+      ],
+      "off_plan_rules": [
+        {"rule": "Không bỏ bữa sau để \"trả nợ\""},
+        {"rule": "Không tập phạt cơ thể sau khi ăn lỡ"},
+        {"rule": "Không buông cả ngày còn lại vì lỡ 1 bữa"}
+      ]
+    },
+    "b6": {
+      "bar_training": "Ngày tập",
+      "bar_rest": "Ngày nghỉ",
+      "bar_weekly": "Tổng tuần",
+      "bar_protein": "Protein/ngày",
+      "rhythm_title": "Nhịp Calo Tuần",
+      "legend_training": "Tập",
+      "legend_rest": "Nghỉ",
+      "macro_formula_title": "Công Thức Tính Macro",
+      "carb_cycling_label": "Carb Cycling:",
+      "training_badge": "🏋️ Ngày Tập",
+      "rest_badge": "🌙 Ngày Nghỉ",
+      "meal_prep_headline": "Meal Prep = Thành Công 70%",
+      "meal_prep_desc": "Chuẩn bị sẵn 2–3 ngày thức ăn vào cuối tuần loại bỏ lý do \"không biết ăn gì\" — quyết định đúng đắn nhất ngày thường là quyết định đã được lên kế hoạch từ trước.",
+      "estimate_title": "Công Thức Ước Lượng Thực Phẩm",
+      "shopping_title": "Danh Sách Mua Sắm Tuần",
+      "meal_prep_steps_title": "Meal Prep Cuối Tuần — 6 Bước",
+      "food_formulas": [
+        {"label": "Thịt / Cá sống → Protein", "formula": "g thịt = Protein ÷ 0.22"},
+        {"label": "Cơm chín → Carb", "formula": "g cơm = Carb ÷ 0.28"},
+        {"label": "Trứng gà (1 quả ≈ 6g protein)", "formula": "Số quả = Protein ÷ 6"},
+        {"label": "Nước uống hằng ngày", "formula": "ml = Cân nặng × 35"}
+      ],
+      "shopping_groups": ["Đạm", "Tinh bột", "Rau", "Trái cây", "Chất béo tốt"]
+    },
+    "b7": {
+      "bar_label": "Macro Cá Nhân Hóa Theo Loại Buổi Tập",
+      "bar_heavy_protein": "Protein nặng",
+      "bar_light_protein": "Protein nhẹ",
+      "bar_heavy_carb": "Carb ngày nặng",
+      "bar_light_carb": "Carb ngày nhẹ",
+      "bar_pre_carb": "Pre-workout carb",
+      "bar_post_protein": "Post-workout P",
+      "image_badge": "Dinh Dưỡng Vận Động Viên",
+      "image_caption": "Tối ưu hiệu suất & phục hồi",
+      "chain_title": "Chuỗi Tính Toán Macro",
+      "chain_sub": "BMR → TDEE → Mục Tiêu → Protein / Fat / Carb",
+      "chain_note": "Công thức Mifflin-St Jeor cho sai số ±100–150 kcal so với thực tế. Dùng làm điểm xuất phát, sau 2 tuần điều chỉnh theo xu hướng cân nặng.",
+      "chart_title": "Biểu Đồ Chu Kỳ Calo Theo Ngày",
+      "chart_sub": "Điều chỉnh TDEE × hệ số theo cường độ buổi tập",
+      "day_types": [
+        {"label": "Ngày Nghỉ", "note": "Carb thấp, fat cao hơn"},
+        {"label": "Tập Nhẹ", "note": "Duy trì, cardio nhẹ"},
+        {"label": "Tập Vừa", "note": "Bằng TDEE, cân bằng"},
+        {"label": "Tập Nặng", "note": "Nạp carb tối đa"}
+      ],
+      "peri_title": "Giao Thức Dinh Dưỡng Quanh Buổi Tập",
+      "peri_note": "Timing tối ưu: ăn trước tập 60–120 phút sớm. Nếu chỉ có 30 phút, chọn carb đơn giản. Sau tập: 30 phút đầu là lý tưởng nhất.",
+      "endurance_title": "Hướng Dẫn Nạp Nhiên Liệu Sức Bền"
     }
   },
   "pillarC": {

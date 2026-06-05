@@ -887,6 +887,48 @@
       "peri_note": "Optimal timing: eat pre-workout 60–120 min early. If only 30 min, choose simple carbs (banana, rice cake). Post-workout: first 30 min is ideal — peak insulin sensitivity, mTOR strongly activated.",
       "endurance_title": "Endurance Fueling Guide"
     },
+    "start_level_title": "Where to Start?",
+    "tiers": [
+      {
+        "level": "Beginner", "sub": "Weeks 1–4",
+        "steps": [
+          "At least 1 protein source per meal",
+          "Add vegetables to 2/3 of main meals",
+          "Drink 6–8 glasses of water daily",
+          "No need to count calories — just build awareness",
+          "Cut sugary drinks and ultra-processed snacks"
+        ]
+      },
+      {
+        "level": "Standard", "sub": "Weeks 5–12",
+        "steps": [
+          "Apply ½–¼–¼ plate model for every main meal",
+          "Meal prep 1–2 times/week to save time",
+          "Prioritize minimally processed foods",
+          "Track protein daily (~1.6–2g/kg)",
+          "Learn to read basic nutrition labels"
+        ]
+      },
+      {
+        "level": "Advanced", "sub": "Month 3+",
+        "steps": [
+          "Calculate TDEE and macros for your specific goal",
+          "Carb cycling: high on training days, low on rest days",
+          "Nutrition timing: pre/intra/post workout",
+          "Track body composition (Inbody scale)",
+          "Adjust plan every 4–6 weeks"
+        ]
+      }
+    ],
+    "safety_label": "Safety First",
+    "safety_headline": "Safety first, results next, sustainability is the ultimate goal.",
+    "safety_body": "This information is for general educational purposes and does not replace professional advice. If you have underlying conditions (diabetes, kidney, heart, eating disorders), consult a doctor or registered dietitian before changing your diet.",
+    "cta_program_title": "12-Week Roadmap",
+    "cta_program_desc": "Combine nutrition + exercise with a structured plan — clear phases and milestones.",
+    "cta_program_cta": "View roadmap",
+    "cta_pillars_title": "6 Health Pillars",
+    "cta_pillars_desc": "Nutrition is just 1 of 6 pillars. Explore movement, recovery, sleep and mindset.",
+    "cta_pillars_cta": "View all pillars",
     "teaser_sections": [
       {"label": "Foundation & Structure", "count": "5 pages"},
       {"label": "Meal Plans", "count": "4 pages"},

@@ -906,6 +906,48 @@
       "peri_note": "Zeitpunkt ist wichtig — Nährstoffe strategisch vor und nach dem Training einsetzen.",
       "endurance_title": "Ausdauertankstellen-Leitfaden"
     },
+    "start_level_title": "Wo anfangen?",
+    "tiers": [
+      {
+        "level": "Einsteiger", "sub": "Wochen 1–4",
+        "steps": [
+          "Mindestens 1 Proteinquelle pro Mahlzeit",
+          "Gemüse zu 2/3 der Hauptmahlzeiten hinzufügen",
+          "6–8 Gläser Wasser täglich trinken",
+          "Keine Kalorienzählung — nur Bewusstsein aufbauen",
+          "Zuckerhaltige Getränke und ultra-verarbeitete Snacks reduzieren"
+        ]
+      },
+      {
+        "level": "Standard", "sub": "Wochen 5–12",
+        "steps": [
+          "½–¼–¼ Tellerprinzip bei jeder Hauptmahlzeit anwenden",
+          "1–2x pro Woche Meal Prep zur Zeitersparnis",
+          "Minimal verarbeitete Lebensmittel bevorzugen",
+          "Protein täglich tracken (~1.6–2g/kg)",
+          "Grundlegende Nährwertangaben lesen lernen"
+        ]
+      },
+      {
+        "level": "Fortgeschritten", "sub": "Monat 3+",
+        "steps": [
+          "TDEE und Makros für spezifische Ziele berechnen",
+          "Carb-Cycling: hoch an Trainingstagen, niedrig an Ruhetagen",
+          "Ernährungstiming: Pre/Intra/Post Workout",
+          "Körperzusammensetzung tracken (Inbody-Waage)",
+          "Plan alle 4–6 Wochen anpassen"
+        ]
+      }
+    ],
+    "safety_label": "Sicherheit zuerst",
+    "safety_headline": "Sicherheit zuerst, Effektivität danach, Nachhaltigkeit ist das ultimative Ziel.",
+    "safety_body": "Diese Informationen dienen allgemeinen Bildungszwecken und ersetzen keine professionelle Beratung. Bei Vorerkrankungen (Diabetes, Nieren-, Herz-Kreislauf-Erkrankungen, Essstörungen) vor einer Ernährungsumstellung einen Arzt oder Ernährungsberater konsultieren.",
+    "cta_program_title": "12-Wochen-Roadmap",
+    "cta_program_desc": "Ernährung + Training nach klar strukturiertem Plan mit Phasen kombinieren.",
+    "cta_program_cta": "Roadmap ansehen",
+    "cta_pillars_title": "6 Gesundheitspfeiler",
+    "cta_pillars_desc": "Ernährung ist nur 1 von 6 Pfeilern. Bewegung, Erholung, Schlaf und Mindset erkunden.",
+    "cta_pillars_cta": "Alle Pfeiler ansehen",
     "teaser_sections": [
       {"label": "Grundlagen & Struktur", "count": "5 Seiten"},
       {"label": "Mahlzeitenpläne", "count": "4 Seiten"},

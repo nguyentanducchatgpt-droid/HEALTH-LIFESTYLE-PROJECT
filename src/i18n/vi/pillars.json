@@ -887,6 +887,48 @@
       "peri_note": "Timing tối ưu: ăn trước tập 60–120 phút sớm. Nếu chỉ có 30 phút, chọn carb đơn giản. Sau tập: 30 phút đầu là lý tưởng nhất.",
       "endurance_title": "Hướng Dẫn Nạp Nhiên Liệu Sức Bền"
     },
+    "start_level_title": "Bắt đầu từ cấp độ nào?",
+    "tiers": [
+      {
+        "level": "Người mới", "sub": "Tuần 1–4",
+        "steps": [
+          "Mỗi bữa có ít nhất 1 nguồn đạm",
+          "Thêm rau vào 2/3 bữa chính",
+          "Uống 6–8 ly nước mỗi ngày",
+          "Không cần đếm calo — chỉ cần nhận thức",
+          "Giảm nước ngọt và đồ ăn vặt siêu chế biến"
+        ]
+      },
+      {
+        "level": "Tiêu Chuẩn", "sub": "Tuần 5–12",
+        "steps": [
+          "Áp dụng đĩa ăn ½–¼–¼ mỗi bữa chính",
+          "Meal prep 1–2 lần/tuần tiết kiệm thời gian",
+          "Ưu tiên thực phẩm chế biến tối thiểu",
+          "Theo dõi protein hàng ngày (~1.6–2g/kg)",
+          "Học đọc nhãn dinh dưỡng cơ bản"
+        ]
+      },
+      {
+        "level": "Nâng Cao", "sub": "Tháng 3+",
+        "steps": [
+          "Tính TDEE và macro theo mục tiêu cụ thể",
+          "Carb cycling: cao ngày tập, thấp ngày nghỉ",
+          "Timing dinh dưỡng: pre/intra/post workout",
+          "Theo dõi body composition (cân Inbody)",
+          "Điều chỉnh kế hoạch 4–6 tuần/lần"
+        ]
+      }
+    ],
+    "safety_label": "An toàn trước",
+    "safety_headline": "An toàn trước, hiệu quả sau, bền vững là mục tiêu cuối cùng.",
+    "safety_body": "Thông tin trên mang tính giáo dục chung, không thay thế tư vấn chuyên môn. Nếu có bệnh lý nền (tiểu đường, thận, tim mạch, rối loạn ăn uống), hãy tham khảo bác sĩ hoặc chuyên gia dinh dưỡng trước khi thay đổi chế độ ăn.",
+    "cta_program_title": "Lộ Trình 12 Tuần",
+    "cta_program_desc": "Kết hợp dinh dưỡng + vận động theo kế hoạch có cấu trúc rõ ràng từng giai đoạn.",
+    "cta_program_cta": "Xem lộ trình",
+    "cta_pillars_title": "6 Trụ Cột Sức Khỏe",
+    "cta_pillars_desc": "Dinh dưỡng chỉ là 1 trong 6 trụ cột. Khám phá vận động, phục hồi, giấc ngủ và cả tinh thần.",
+    "cta_pillars_cta": "Xem tất cả trụ cột",
     "teaser_sections": [
       {"label": "Nền Tảng & Cấu Trúc", "count": "5 trang"},
       {"label": "Kế Hoạch Thực Đơn", "count": "4 trang"},

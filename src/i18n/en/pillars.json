@@ -674,7 +674,53 @@
       "swap_sub": "Flexible swaps when an ingredient is unavailable — same protein and calorie level",
       "swap_protein_label": "Protein",
       "swap_carb_label": "Carbs",
-      "swap_veg_label": "Vegetables"
+      "swap_veg_label": "Vegetables",
+      "fat_label": "+ Good Fat:",
+      "fat_desc": "Add a little olive oil, avocado, or nuts — better absorption of fat-soluble vitamins.",
+      "plate_center_1": "PLATE",
+      "plate_center_2": "GUIDE",
+      "plate_label_veg": "½ Veg",
+      "plate_label_protein": "¼ Protein",
+      "plate_label_carb": "¼ Carbs",
+      "rule_8020_title": "The 80/20 Rule — Flexible for Longevity",
+      "rule_8020_sub": "Discipline isn't about banning everything — it's knowing how to come back",
+      "rule_80_label": "Eat on Foundation",
+      "rule_80_items": ["Enough protein, veggies, and water each meal", "Eat exactly {kcal} kcal ±100", "Limit sugary drinks", "Meal prep 1–2 times/week"],
+      "rule_20_label": "Real-Life Flexibility",
+      "rule_20_items": ["Dining out, parties, family gatherings", "Favorite foods 1–2 times/week", "If you overeat — adjust the next meal", "Don't blame yourself"],
+      "rule_8020_q_part1": "One off meal",
+      "rule_8020_q_part2": "doesn't derail the journey",
+      "rule_8020_q_part3": ". What derails it is the mindset of",
+      "rule_8020_q_part4": "'already ruined, might as well quit'",
+      "eating_out_title": "Eat Out, Stay Healthy — The 3-Choice Rule",
+      "eating_out_sub": "When eating out: choose protein first → add veggies/soup → adjust carbs to your goal",
+      "eating_out_guide": [
+        {"name": "Office lunch / Rice plate", "rules": ["Choose 1–2 protein dishes (braised fish, boiled pork, eggs)", "Ask for extra boiled veggies or soup instead of more rice", "Reduce or skip salty/sweet sauces"], "avoid": "Avoid the fried meat + large rice + soda combo"},
+        {"name": "Noodle soup (Phở / Bún)", "rules": ["Ask for 'less noodles, more lean meat'", "Add bean sprouts / fresh herbs freely", "Choose clear broth over thick, fatty broth"], "avoid": "Don't add too much chili sauce/sweet sauce — high in hidden sodium and sugar"},
+        {"name": "Broken rice (Cơm tấm)", "rules": ["Choose lean pork chop, skip the fatty skin", "Ask for extra cucumber/soup instead of extra egg", "Eat slowly — easy to overeat"], "avoid": "Limit scallion oil and sweet fish sauce — significant hidden calories"},
+        {"name": "Fried Chicken / Fast Food", "rules": ["Order grilled chicken instead of fried (40% less calories)", "Swap fries for salad or corn on the cob", "Water or unsweetened tea instead of soda"], "avoid": "Large burger combo + fries + soda ≈ close to a full day's TDEE"}
+      ],
+      "swap_protein_items": [
+        {"main": "Chicken breast 150g", "swap": "Chicken thigh 130g", "note": "Thigh has slightly more fat"},
+        {"main": "Salmon 120g", "swap": "Mackerel 130g", "note": "Mackerel is 3–4x cheaper"},
+        {"main": "3 eggs", "swap": "Tofu 200g", "note": "Tofu is lower fat, has fiber"},
+        {"main": "Lean beef 120g", "swap": "Shrimp 150g", "note": "Shrimp is much lower in calories"},
+        {"main": "1 scoop whey", "swap": "Greek yogurt 200g", "note": "Also contains probiotics"}
+      ],
+      "swap_carb_items": [
+        {"main": "White rice 150g", "swap": "Brown rice 150g", "note": "3x more fiber"},
+        {"main": "White rice 150g", "swap": "Sweet potato 200g", "note": "Lower glycemic index"},
+        {"main": "Noodles 150g", "swap": "Oats 60g dry", "note": "Keeps you full much longer"},
+        {"main": "White bread 2 slices", "swap": "Whole grain bread 2 slices", "note": "More fiber and micronutrients"},
+        {"main": "Instant noodles 1 pack", "swap": "Beef pho, less noodles + more meat", "note": "Significantly more protein"}
+      ],
+      "swap_veg_items": [
+        {"main": "Broccoli", "swap": "Cauliflower / cabbage", "note": "Equally high in fiber"},
+        {"main": "Water spinach", "swap": "Bok choy / sweet potato leaves", "note": "Common Asian greens, affordable"},
+        {"main": "Tomato", "swap": "Bell pepper / cucumber", "note": "Rich in vitamin C"},
+        {"main": "Green beans", "swap": "Okra / zucchini", "note": "Good soluble fiber"},
+        {"main": "Carrot", "swap": "Pumpkin / kohlrabi", "note": "Naturally sweet, low GI"}
+      ]
     },
     "b3": {
       "bar_goal": "Goal",

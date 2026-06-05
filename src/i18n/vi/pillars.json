@@ -674,7 +674,53 @@
       "swap_sub": "Hoán đổi linh hoạt khi không có nguyên liệu — giữ nguyên lượng đạm và calo",
       "swap_protein_label": "Đạm",
       "swap_carb_label": "Tinh bột",
-      "swap_veg_label": "Rau củ"
+      "swap_veg_label": "Rau củ",
+      "fat_label": "+ Chất béo tốt:",
+      "fat_desc": "Thêm một ít dầu olive, bơ, hay hạt — hấp thu vitamin tan trong dầu tốt hơn.",
+      "plate_center_1": "ĐĨA",
+      "plate_center_2": "ĂN",
+      "plate_label_veg": "½ Rau",
+      "plate_label_protein": "¼ Đạm",
+      "plate_label_carb": "¼ Tinh bột",
+      "rule_8020_title": "Nguyên Tắc 80/20 — Linh Hoạt Để Bền Vững",
+      "rule_8020_sub": "Kỷ luật không phải là cấm tất cả — là biết cách quay lại",
+      "rule_80_label": "Ăn đúng nền tảng",
+      "rule_80_items": ["Đủ đạm, đủ rau, đủ nước mỗi bữa", "Ăn đúng {kcal} kcal ±100", "Hạn chế đồ uống có đường", "Meal prep 1–2 lần/tuần"],
+      "rule_20_label": "Linh hoạt đời thực",
+      "rule_20_items": ["Ăn ngoài, tiệc, sum họp gia đình", "Món yêu thích 1–2 lần/tuần", "Khi lỡ ăn nhiều — chỉnh bữa sau", "Không tự trách bản thân"],
+      "rule_8020_q_part1": "Một bữa lệch kế hoạch",
+      "rule_8020_q_part2": "không phá hỏng hành trình",
+      "rule_8020_q_part3": ". Điều phá hỏng hành trình là tâm lý",
+      "rule_8020_q_part4": "'lỡ rồi bỏ luôn'",
+      "eating_out_title": "Ăn Ngoài Vẫn Khỏe — Quy Tắc 3 Chọn",
+      "eating_out_sub": "Khi ăn ngoài: chọn đạm trước → thêm rau/canh → điều chỉnh tinh bột theo mục tiêu",
+      "eating_out_guide": [
+        {"name": "Cơm văn phòng / cơm bình dân", "rules": ["Chọn 1–2 món có đạm (cá kho, thịt luộc, trứng bác)", "Xin thêm rau luộc hoặc canh thay vì thêm cơm", "Giảm hoặc bỏ nước sốt mặn/ngọt"], "avoid": "Tránh combo thịt chiên + cơm nhiều + nước ngọt"},
+        {"name": "Bún / Phở / Hủ tiếu", "rules": ["Gọi 'ít bún/phở' và nhiều thịt nạc", "Thêm rau giá sống / rau thơm tự do", "Gọi nước dùng trong thay vì loại đặc béo"], "avoid": "Không thêm sa tế/tương ngọt quá nhiều — natri và đường ẩn cao"},
+        {"name": "Cơm tấm / Cơm sườn", "rules": ["Chọn sườn nạc, bỏ qua bì chả nhiều fat", "Xin thêm dưa leo/canh thay vì thêm trứng ốp", "Ăn chậm — cơm tấm dễ ăn nhanh vì ngon"], "avoid": "Hạn chế mỡ hành và nước mắm ngọt — calo ẩn đáng kể"},
+        {"name": "Gà rán / FastFood", "rules": ["Gọi gà nướng thay gà rán (giảm 40% calo)", "Thay khoai chiên bằng salad hoặc ngô luộc", "Nước lọc hoặc trà không đường thay nước ngọt"], "avoid": "Combo burger lớn + khoai chiên + nước ngọt ≈ gần TDEE cả ngày"}
+      ],
+      "swap_protein_items": [
+        {"main": "Ức gà 150g", "swap": "Đùi gà 130g", "note": "Đùi có fat cao hơn một chút"},
+        {"main": "Cá hồi 120g", "swap": "Cá thu 130g", "note": "Cá thu rẻ hơn 3–4 lần"},
+        {"main": "3 quả trứng", "swap": "Đậu hũ 200g", "note": "Đậu hũ ít fat, có xơ"},
+        {"main": "Thịt bò nạc 120g", "swap": "Tôm 150g", "note": "Tôm ít calo hơn nhiều"},
+        {"main": "Whey 1 muỗng", "swap": "Sữa chua Hy Lạp 200g", "note": "Có thêm men vi sinh"}
+      ],
+      "swap_carb_items": [
+        {"main": "Cơm trắng 150g", "swap": "Cơm gạo lứt 150g", "note": "Nhiều xơ hơn 3 lần"},
+        {"main": "Cơm trắng 150g", "swap": "Khoai lang 200g", "note": "Chỉ số GI thấp hơn"},
+        {"main": "Bún 150g", "swap": "Yến mạch 60g khô", "note": "No lâu hơn nhiều"},
+        {"main": "Bánh mì trắng 2 lát", "swap": "Bánh mì nguyên cám 2 lát", "note": "Nhiều xơ và vi chất"},
+        {"main": "Mì tôm 1 gói", "swap": "Phở bò ít bún thêm thịt", "note": "Nhiều đạm hơn đáng kể"}
+      ],
+      "swap_veg_items": [
+        {"main": "Bông cải xanh", "swap": "Súp lơ trắng / bắp cải", "note": "Đều giàu xơ như nhau"},
+        {"main": "Rau muống", "swap": "Rau cải ngọt / rau lang", "note": "Rau Việt dễ kiếm, rẻ"},
+        {"main": "Cà chua", "swap": "Ớt chuông / dưa leo", "note": "Giàu vitamin C"},
+        {"main": "Đậu que", "swap": "Đậu bắp / bí zucchini", "note": "Chất xơ hòa tan tốt"},
+        {"main": "Cà rốt", "swap": "Bí đỏ / su hào", "note": "Ngọt tự nhiên, ít GI"}
+      ]
     },
     "b3": {
       "bar_goal": "Mục tiêu",

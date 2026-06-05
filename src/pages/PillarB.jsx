@@ -1323,6 +1323,10 @@ function MacroBar({ macro, delay = 0, highlighted = false }) {
 // ─── Plate Diagram (CSS-only) ─────────────────────────────────────────────────
 
 function PlateDiagram({ animate }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillarB = tPillars('pillarB', { returnObjects: true }) || {};
+  const b2tr = pillarB.b2 || {};
+  const plateSectionsTr = Array.isArray(pillarB.plate_sections) ? pillarB.plate_sections : [];
   const [bars, setBars] = useState(PLATE_SECTIONS.map(() => 0));
 
   useEffect(() => {
@@ -1364,21 +1368,21 @@ function PlateDiagram({ animate }) {
           {/* Center circle */}
           <div className="absolute inset-[30%] rounded-full bg-bg/60 backdrop-blur-sm border border-white/8 flex items-center justify-center">
             <div className="text-center">
-              <p className="text-[8px] font-bold text-white/60 leading-tight">ĐĨA</p>
-              <p className="text-[8px] font-bold text-white/60 leading-tight">ĂN</p>
+              <p className="text-[8px] font-bold text-white/60 leading-tight">{b2tr.plate_center_1 || 'ĐĨA'}</p>
+              <p className="text-[8px] font-bold text-white/60 leading-tight">{b2tr.plate_center_2 || 'ĂN'}</p>
             </div>
           </div>
         </div>
 
         {/* Labels outside */}
         <div className="absolute top-2 left-1/2 -translate-x-1/2 -translate-y-1">
-          <span className="text-[9px] font-bold text-green-400 bg-bg/80 px-1.5 py-0.5 rounded whitespace-nowrap">½ Rau</span>
+          <span className="text-[9px] font-bold text-green-400 bg-bg/80 px-1.5 py-0.5 rounded whitespace-nowrap">{b2tr.plate_label_veg || '½ Rau'}</span>
         </div>
         <div className="absolute bottom-[22%] right-[-8px]">
-          <span className="text-[9px] font-bold text-lime-400 bg-bg/80 px-1.5 py-0.5 rounded whitespace-nowrap">¼ Đạm</span>
+          <span className="text-[9px] font-bold text-lime-400 bg-bg/80 px-1.5 py-0.5 rounded whitespace-nowrap">{b2tr.plate_label_protein || '¼ Đạm'}</span>
         </div>
         <div className="absolute bottom-[22%] left-[-20px]">
-          <span className="text-[9px] font-bold text-orange-400 bg-bg/80 px-1.5 py-0.5 rounded whitespace-nowrap">¼ Tinh bột</span>
+          <span className="text-[9px] font-bold text-orange-400 bg-bg/80 px-1.5 py-0.5 rounded whitespace-nowrap">{b2tr.plate_label_carb || '¼ Tinh bột'}</span>
         </div>
       </div>
 
@@ -1387,7 +1391,7 @@ function PlateDiagram({ animate }) {
         {PLATE_SECTIONS.map((s, i) => (
           <div key={s.label} className="flex items-center gap-3">
             <div className={`w-2.5 h-2.5 rounded-full ${s.bg} shrink-0`} />
-            <span className={`text-xs font-semibold ${s.text} w-28 shrink-0`}>{s.label}</span>
+            <span className={`text-xs font-semibold ${s.text} w-28 shrink-0`}>{plateSectionsTr[i]?.label || s.label}</span>
             <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden">
               <div
                 className={`h-full rounded-full ${s.bg}`}
@@ -1402,7 +1406,7 @@ function PlateDiagram({ animate }) {
       {/* Fat note */}
       <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-3 mt-1">
         <p className="text-[11px] text-yellow-300/80 leading-relaxed">
-          <span className="font-bold text-yellow-400">+ Chất béo tốt:</span> Thêm một ít dầu olive, bơ, hay hạt — hấp thu vitamin tan trong dầu tốt hơn.
+          <span className="font-bold text-yellow-400">{b2tr.fat_label || '+ Chất béo tốt:'}</span>{' '}{b2tr.fat_desc || 'Thêm một ít dầu olive, bơ, hay hạt — hấp thu vitamin tan trong dầu tốt hơn.'}
         </p>
       </div>
     </div>
@@ -2318,8 +2322,8 @@ function PlatePanel({ s }) {
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-xl border flex items-center justify-center text-xl shrink-0" style={{ background: 'rgba(168,85,247,0.12)', borderColor: 'rgba(168,85,247,0.25)' }}>🎯</div>
             <div>
-              <h3 className="text-sm font-bold text-text">Nguyên Tắc 80/20 — Linh Hoạt Để Bền Vững</h3>
-              <p className="text-[10px] text-muted">Kỷ luật không phải là cấm tất cả — là biết cách quay lại</p>
+              <h3 className="text-sm font-bold text-text">{b2tr.rule_8020_title || 'Nguyên Tắc 80/20 — Linh Hoạt Để Bền Vững'}</h3>
+              <p className="text-[10px] text-muted">{b2tr.rule_8020_sub || 'Kỷ luật không phải là cấm tất cả — là biết cách quay lại'}</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-2 gap-5 mb-5">
@@ -2330,9 +2334,12 @@ function PlatePanel({ s }) {
                 </div>
                 <span className="text-xs font-black text-green-400 shrink-0">80%</span>
               </div>
-              <p className="text-[10px] font-bold text-green-400 uppercase tracking-wider mb-2.5">Ăn đúng nền tảng</p>
+              <p className="text-[10px] font-bold text-green-400 uppercase tracking-wider mb-2.5">{b2tr.rule_80_label || 'Ăn đúng nền tảng'}</p>
               <ul className="space-y-1.5">
-                {['Đủ đạm, đủ rau, đủ nước mỗi bữa', `Ăn đúng ${s.targetKcal.toLocaleString()} kcal ±100`, 'Hạn chế đồ uống có đường', 'Meal prep 1–2 lần/tuần'].map((t, i) => (
+                {(Array.isArray(b2tr.rule_80_items)
+                  ? b2tr.rule_80_items.map(t => t.replace('{kcal}', s.targetKcal.toLocaleString()))
+                  : ['Đủ đạm, đủ rau, đủ nước mỗi bữa', `Ăn đúng ${s.targetKcal.toLocaleString()} kcal ±100`, 'Hạn chế đồ uống có đường', 'Meal prep 1–2 lần/tuần']
+                ).map((t, i) => (
                   <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
                     <span className="text-green-400 font-bold shrink-0 mt-px">✓</span>{t}
                   </li>
@@ -2346,9 +2353,12 @@ function PlatePanel({ s }) {
                 </div>
                 <span className="text-xs font-black text-purple-400 shrink-0">20%</span>
               </div>
-              <p className="text-[10px] font-bold text-purple-400 uppercase tracking-wider mb-2.5">Linh hoạt đời thực</p>
+              <p className="text-[10px] font-bold text-purple-400 uppercase tracking-wider mb-2.5">{b2tr.rule_20_label || 'Linh hoạt đời thực'}</p>
               <ul className="space-y-1.5">
-                {['Ăn ngoài, tiệc, sum họp gia đình', 'Món yêu thích 1–2 lần/tuần', 'Khi lỡ ăn nhiều — chỉnh bữa sau', 'Không tự trách bản thân'].map((t, i) => (
+                {(Array.isArray(b2tr.rule_20_items)
+                  ? b2tr.rule_20_items
+                  : ['Ăn ngoài, tiệc, sum họp gia đình', 'Món yêu thích 1–2 lần/tuần', 'Khi lỡ ăn nhiều — chỉnh bữa sau', 'Không tự trách bản thân']
+                ).map((t, i) => (
                   <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
                     <span className="text-purple-400 shrink-0 mt-px">●</span>{t}
                   </li>
@@ -2358,7 +2368,7 @@ function PlatePanel({ s }) {
           </div>
           <div className="rounded-xl border px-4 py-3" style={{ background: 'rgba(168,85,247,0.05)', borderColor: 'rgba(168,85,247,0.18)' }}>
             <p className="text-[11px] text-muted/80 italic leading-relaxed">
-              "Một bữa lệch kế hoạch <span className="text-purple-400 font-semibold not-italic">không phá hỏng hành trình</span>. Điều phá hỏng hành trình là tâm lý <span className="text-red-400 font-semibold not-italic">'lỡ rồi bỏ luôn'</span>."
+              "{b2tr.rule_8020_q_part1 || 'Một bữa lệch kế hoạch'} <span className="text-purple-400 font-semibold not-italic">{b2tr.rule_8020_q_part2 || 'không phá hỏng hành trình'}</span>{b2tr.rule_8020_q_part3 || '. Điều phá hỏng hành trình là tâm lý'} <span className="text-red-400 font-semibold not-italic">{b2tr.rule_8020_q_part4 || "'lỡ rồi bỏ luôn'"}</span>."
             </p>
           </div>
         </div>
@@ -2411,7 +2421,9 @@ function PlatePanel({ s }) {
           <div className="grid md:grid-cols-3 gap-4">
             {Object.entries(FOOD_SWAP_TABLE).map(([key, group]) => {
               const labelMap = { protein: b2tr.swap_protein_label, carb: b2tr.swap_carb_label, veg: b2tr.swap_veg_label };
+              const trItemsMap = { protein: b2tr.swap_protein_items, carb: b2tr.swap_carb_items, veg: b2tr.swap_veg_items };
               const translatedLabel = labelMap[key] || group.label;
+              const trItems = Array.isArray(trItemsMap[key]) ? trItemsMap[key] : null;
               return (
               <RevealBlock key={group.label}>
                 <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${group.color}25`, background: `${group.color}05` }}>
@@ -2420,20 +2432,23 @@ function PlatePanel({ s }) {
                     <p className="text-xs font-bold" style={{ color: group.color }}>{translatedLabel}</p>
                   </div>
                   <div className="space-y-3">
-                    {group.items.map((item, j) => (
+                    {group.items.map((item, j) => {
+                      const trItem = trItems?.[j] || {};
+                      return (
                       <div key={j} className="rounded-xl border p-2.5" style={{ borderColor: `${group.color}15`, background: `${group.color}04` }}>
                         <div className="flex items-center gap-1.5 mb-1">
-                          <span className="text-[10px] font-bold text-text">{item.main}</span>
+                          <span className="text-[10px] font-bold text-text">{trItem.main || item.main}</span>
                           <span className="text-muted/40 text-[9px]">→</span>
-                          <span className="text-[10px] font-bold" style={{ color: group.color }}>{item.swap}</span>
+                          <span className="text-[10px] font-bold" style={{ color: group.color }}>{trItem.swap || item.swap}</span>
                         </div>
                         <div className="flex items-center gap-3 text-[9px] text-muted">
                           <span>P: <b className="text-text">{item.protein}</b></span>
                           <span>Kcal: <b className="text-text">{item.kcal}</b></span>
                         </div>
-                        <p className="text-[9px] text-muted/60 mt-1 italic">{item.note}</p>
+                        <p className="text-[9px] text-muted/60 mt-1 italic">{trItem.note || item.note}</p>
                       </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               </RevealBlock>
@@ -2449,31 +2464,37 @@ function PlatePanel({ s }) {
           <div className="flex items-start gap-3 mb-5">
             <div className="w-9 h-9 rounded-xl bg-orange-500/12 border border-orange-500/20 flex items-center justify-center text-xl shrink-0">🏪</div>
             <div>
-              <h3 className="text-sm font-bold text-text">Ăn Ngoài Vẫn Khỏe — Quy Tắc 3 Chọn</h3>
-              <p className="text-[10px] text-muted mt-0.5">Khi ăn ngoài: chọn đạm trước → thêm rau/canh → điều chỉnh tinh bột theo mục tiêu</p>
+              <h3 className="text-sm font-bold text-text">{b2tr.eating_out_title || 'Ăn Ngoài Vẫn Khỏe — Quy Tắc 3 Chọn'}</h3>
+              <p className="text-[10px] text-muted mt-0.5">{b2tr.eating_out_sub || 'Khi ăn ngoài: chọn đạm trước → thêm rau/canh → điều chỉnh tinh bột theo mục tiêu'}</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
-            {EATING_OUT_GUIDE.map((g, i) => (
+            {EATING_OUT_GUIDE.map((g, i) => {
+              const gtr = Array.isArray(b2tr.eating_out_guide) ? (b2tr.eating_out_guide[i] || {}) : {};
+              const name = gtr.name || g.name;
+              const rules = Array.isArray(gtr.rules) ? gtr.rules : g.rules;
+              const avoid = gtr.avoid || g.avoid;
+              return (
               <RevealBlock key={i} delay={i * 60}>
                 <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${g.color}22`, background: `${g.color}05` }}>
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-2xl">{g.icon}</span>
-                    <p className="text-xs font-bold text-text">{g.name}</p>
+                    <p className="text-xs font-bold text-text">{name}</p>
                   </div>
                   <ul className="space-y-1.5 mb-3">
-                    {g.rules.map((r, j) => (
+                    {rules.map((r, j) => (
                       <li key={j} className="flex items-start gap-2 text-[10px] text-muted">
                         <span className="font-bold shrink-0 mt-px" style={{ color: g.color }}>✓</span>{r}
                       </li>
                     ))}
                   </ul>
                   <div className="rounded-lg px-2.5 py-1.5 border text-[9px] text-muted/70" style={{ borderColor: `${g.color}15`, background: `${g.color}08` }}>
-                    ⚠️ {g.avoid}
+                    ⚠️ {avoid}
                   </div>
                 </div>
               </RevealBlock>
-            ))}
+              );
+            })}
           </div>
         </div>
       </RevealBlock>

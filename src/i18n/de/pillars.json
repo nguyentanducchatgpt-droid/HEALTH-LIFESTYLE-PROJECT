@@ -674,7 +674,53 @@
       "swap_sub": "Flexible Alternativen wenn eine Zutat fehlt — gleicher Protein- und Kaloriengehalt",
       "swap_protein_label": "Protein",
       "swap_carb_label": "Kohlenhydrate",
-      "swap_veg_label": "Gemüse"
+      "swap_veg_label": "Gemüse",
+      "fat_label": "+ Gesundes Fett:",
+      "fat_desc": "Etwas Olivenöl, Avocado oder Nüsse hinzufügen — bessere Aufnahme fettlöslicher Vitamine.",
+      "plate_center_1": "ESSEN",
+      "plate_center_2": "PLAN",
+      "plate_label_veg": "½ Gemüse",
+      "plate_label_protein": "¼ Protein",
+      "plate_label_carb": "¼ Kohlenhy.",
+      "rule_8020_title": "Die 80/20-Regel — Flexibel für Nachhaltigkeit",
+      "rule_8020_sub": "Disziplin bedeutet nicht, alles zu verbieten — sondern zu wissen, wie man zurückkommt",
+      "rule_80_label": "Auf Basis essen",
+      "rule_80_items": ["Genug Protein, Gemüse und Wasser pro Mahlzeit", "Genau {kcal} kcal ±100 essen", "Zuckerhaltige Getränke begrenzen", "Meal Prep 1–2 Mal/Woche"],
+      "rule_20_label": "Alltagsflexibilität",
+      "rule_20_items": ["Auswärtsessen, Partys, Familientreffen", "Lieblingsgerichte 1–2 Mal/Woche", "Wenn zu viel gegessen — nächste Mahlzeit anpassen", "Nicht sich selbst beschuldigen"],
+      "rule_8020_q_part1": "Eine Ausnahme-Mahlzeit",
+      "rule_8020_q_part2": "zerstört die Reise nicht",
+      "rule_8020_q_part3": ". Was die Reise zerstört, ist die Denkweise",
+      "rule_8020_q_part4": "'schon ruiniert, gebe auf'",
+      "eating_out_title": "Auswärts essen, gesund bleiben — Die 3-Wahl-Regel",
+      "eating_out_sub": "Beim Auswärtsessen: erst Protein wählen → Gemüse/Suppe hinzufügen → Kohlenhydrate ans Ziel anpassen",
+      "eating_out_guide": [
+        {"name": "Büro-/Alltagsessen", "rules": ["1–2 Proteingerichte wählen (Fisch, Fleisch, Eier)", "Extra gedünstetes Gemüse oder Suppe statt mehr Reis bitten", "Salzige/süße Soßen reduzieren"], "avoid": "Gebratenes Fleisch + viel Reis + Limo vermeiden"},
+        {"name": "Nudelsuppe (Asiatisch)", "rules": ["'Weniger Nudeln, mehr mageres Fleisch' bestellen", "Bohnensprossen / Kräuter frei hinzufügen", "Klare Brühe statt fettiger Brühe wählen"], "avoid": "Nicht zu viel Chilisauce/Süßsauce — viel verstecktes Natrium und Zucker"},
+        {"name": "Reis mit gegrilltem Fleisch", "rules": ["Mageres Kotelett wählen, fette Teile meiden", "Extra Gurke/Suppe statt extra Ei bitten", "Langsam essen — leicht zu viel zu essen"], "avoid": "Frühlingszwiebelöl und süße Soßen begrenzen — erhebliche versteckte Kalorien"},
+        {"name": "Gebratenes Hähnchen / Fast Food", "rules": ["Gegrilltes Hähnchen statt gebratenem (40% weniger Kalorien)", "Pommes gegen Salat oder Maiskolben tauschen", "Wasser oder ungesüßten Tee statt Limo"], "avoid": "Großes Burger-Kombi + Pommes + Limo ≈ fast der TDEE eines ganzen Tages"}
+      ],
+      "swap_protein_items": [
+        {"main": "Hähnchenbrust 150g", "swap": "Hähnchenschenkel 130g", "note": "Schenkel hat etwas mehr Fett"},
+        {"main": "Lachs 120g", "swap": "Makrele 130g", "note": "Makrele ist 3–4x günstiger"},
+        {"main": "3 Eier", "swap": "Tofu 200g", "note": "Tofu ist fettarm, hat Ballaststoffe"},
+        {"main": "Mageres Rind 120g", "swap": "Garnelen 150g", "note": "Garnelen haben viel weniger Kalorien"},
+        {"main": "1 Löffel Whey", "swap": "Griechischer Joghurt 200g", "note": "Enthält auch Probiotika"}
+      ],
+      "swap_carb_items": [
+        {"main": "Weißer Reis 150g", "swap": "Brauner Reis 150g", "note": "3x mehr Ballaststoffe"},
+        {"main": "Weißer Reis 150g", "swap": "Süßkartoffel 200g", "note": "Niedrigerer glykämischer Index"},
+        {"main": "Nudeln 150g", "swap": "Haferflocken 60g trocken", "note": "Hält viel länger satt"},
+        {"main": "Weißbrot 2 Scheiben", "swap": "Vollkornbrot 2 Scheiben", "note": "Mehr Ballaststoffe und Mikronährstoffe"},
+        {"main": "Instant-Nudeln 1 Packung", "swap": "Rindfleischsuppe, weniger Nudeln", "note": "Deutlich mehr Protein"}
+      ],
+      "swap_veg_items": [
+        {"main": "Brokkoli", "swap": "Blumenkohl / Kohl", "note": "Gleich viele Ballaststoffe"},
+        {"main": "Wasserspinat", "swap": "Pak Choi / Blattgemüse", "note": "Günstige Alternativen"},
+        {"main": "Tomate", "swap": "Paprika / Gurke", "note": "Reich an Vitamin C"},
+        {"main": "Grüne Bohnen", "swap": "Okra / Zucchini", "note": "Gute lösliche Ballaststoffe"},
+        {"main": "Möhre", "swap": "Kürbis / Kohlrabi", "note": "Natürlich süß, niedriger GI"}
+      ]
     },
     "b3": {
       "bar_goal": "Ziel",

@@ -880,6 +880,10 @@
       "meal_days": [
         {
           "day": "Day 1", "theme": "Start — Balanced", "analysis_headline": "Day 1 — establishing core habits", "analysis_score": "Easy to maintain",
+          "analysis_fiber": "Water spinach + soup + banana = ~10g fiber",
+          "analysis_highlight": "Protein distributed evenly across 5 meals (breakfast/snack/lunch/snack/dinner). Total ~82g meets 90% of baseline needs — easy to maintain with no hunger between meals.",
+          "analysis_tip": "Pepper-braised fish is rich in omega-3; afternoon cashews provide healthy fats + natural magnesium to relax muscles after a long day.",
+          "analysis_benefits": ["Stable blood sugar all day thanks to 5 small meals", "Diverse protein: eggs + fish + yogurt", "Light porridge dinner — easier to fall asleep"],
           "meals": [
             { "items": ["White rice", "Boiled eggs ×2", "Boiled water spinach", "Water"], "note": "Busy: whole wheat bread + boiled eggs" },
             { "items": ["Unsweetened yogurt", "Half a banana"], "note": "Busy: 1 store-bought yogurt cup" },
@@ -890,6 +894,10 @@
         },
         {
           "day": "Day 2", "theme": "Protein Focus", "analysis_headline": "Today: high protein — diverse sources", "analysis_score": "High nutrition",
+          "analysis_fiber": "Fresh veg + cabbage + pumpkin soup = ~11g fiber",
+          "analysis_highlight": "Chicken + egg + tofu + soy milk distribute protein evenly across 5 meals. Protein ~94g — ideal for a light training day or recovery from yesterday's workout.",
+          "analysis_tip": "Whole wheat bread in the morning stabilizes blood sugar until lunch. Evening miso soup provides natural probiotics and electrolytes — promotes deep sleep and recovery.",
+          "analysis_benefits": ["Rich protein from 4 diverse sources during the day", "Probiotics from evening miso support digestion", "Light tofu noodles for dinner — not heavy before sleep"],
           "meals": [
             { "items": ["Whole wheat bread", "Sunny-side-up egg", "Tomato + cucumber", "Unsweetened fresh milk"], "note": "Busy: egg sandwich from outside" },
             { "items": ["Boiled egg ×1", "Small fruit (apple/guava)"], "note": "Busy: boil eggs the night before" },
@@ -900,6 +908,10 @@
         },
         {
           "day": "Day 3", "theme": "Complex Carbs", "analysis_headline": "Day focused on high-quality complex carbs", "analysis_score": "Steady energy",
+          "analysis_fiber": "Oats + chia seeds + boiled veg + sour soup = ~14g fiber",
+          "analysis_highlight": "Oats, brown rice, sweet potato — three low-GI complex carbs that keep energy stable for 4–5 hours, without blood sugar spikes and crashes.",
+          "analysis_tip": "Chia seeds in oats provide plant-based omega-3 and form gel in the stomach for longer satiety. Ginger steamed fish is 40% lower in calories than fried.",
+          "analysis_benefits": ["Low-GI complex carbs prevent blood sugar spikes", "Omega-3 from steamed fish + chia seeds protects heart health", "Sweet potato afternoon snack prevents hunger before dinner"],
           "meals": [
             { "items": ["Rolled oats", "1 banana", "Nut milk", "Chia seeds 1 tsp"], "note": "Busy: overnight oats prepared the night before" },
             { "items": ["Greek yogurt", "Honey ¼ tsp"], "note": "Busy: convenient Greek yogurt cup anywhere" },
@@ -910,6 +922,10 @@
         },
         {
           "day": "Day 4", "theme": "High Veg Day", "analysis_headline": "High veggie day — digestion rest", "analysis_score": "Light detox",
+          "analysis_fiber": "Veg + fruit + bitter soup = ~16g fiber — exceeds daily recommendation",
+          "analysis_highlight": "High fiber day gently cleanses the digestive system, stabilizes gut bacteria, and reduces sweet cravings. Lowest calories of the week — perfect for a rest day.",
+          "analysis_tip": "Yogurt + oats in the morning = probiotic + prebiotic together — the best duo for gut health. Bitter vegetable soup at lunch gently supports liver function.",
+          "analysis_benefits": ["Highest fiber of the week: filling + good digestion", "Probiotic + prebiotic together from early morning", "Low calories suitable for rest day — no excess"],
           "meals": [
             { "items": ["Unsweetened yogurt", "Oatmeal", "Mixed fruit", "Small cashews"], "note": "Busy: oat parfait + store-bought yogurt" },
             { "items": ["Boiled egg ×1", "Cherry tomatoes 5 pieces"], "note": "Busy: prep boiled eggs + tomatoes ahead" },
@@ -920,6 +936,10 @@
         },
         {
           "day": "Day 5", "theme": "Training — High Carb", "analysis_headline": "Training day — max carbs + protein", "analysis_score": "Optimal training",
+          "analysis_fiber": "Veg + banana + oats = ~9g fiber — sufficient",
+          "analysis_highlight": "Highest calories of the week (+30% vs rest days) to keep muscle glycogen full before and after training. Protein ~113g = 1.6g/kg (70kg) ensures maximum muscle synthesis in 24–48h post-workout.",
+          "analysis_tip": "Banana 30–60 min before training = fructose + glucose absorbed quickly, not heavy. Greek yogurt + banana right after training = classic protein + carb recovery duo.",
+          "analysis_benefits": ["High carbs before training: explosive energy, no mid-set crashes", "Post-workout protein within 30 min: best muscle synthesis activation", "Evening salmon: omega-3 fights muscle inflammation after heavy training"],
           "meals": [
             { "items": ["Medium white rice", "Eggs ×2", "Lightly sautéed veg", "Fresh milk"], "note": "Busy: rice + fried egg — fast, enough carbs" },
             { "items": ["1 banana", "Small sweet potato or 1 slice bread"], "note": "Busy: banana + small sandwich" },
@@ -930,6 +950,10 @@
         },
         {
           "day": "Day 6", "theme": "Recovery", "analysis_headline": "Light recovery — bone & joint care", "analysis_score": "Fast recovery",
+          "analysis_fiber": "Bean sprouts + herbs + salad + soup = ~12g fiber",
+          "analysis_highlight": "Ideal weekend for meal prep: boil eggs, cook chicken, steam potatoes, cook brown rice — prepares 2–3 days ahead, saving 45–60 min per day during the week.",
+          "analysis_tip": "Morning chicken pho is 'smart eating out' — less noodles, extra bean sprouts, lean chicken, don't finish the fatty broth. Evening chicken congee is easy to digest for good sleep.",
+          "analysis_benefits": ["Meal prep saves 45–60 min/day during the week", "Chicken pho has ~30% less saturated fat than beef pho", "Better calorie control when food is prepared in advance"],
           "meals": [
             { "items": ["Lean chicken pho / noodles", "Extra bean sprouts", "Less noodles", "Skip fatty broth"], "note": "Busy: pho from outside — ask for extra veg, skip fried dough" },
             { "items": ["Seasonal fruit", "Mixed nuts ~15g"], "note": "Busy: small nut bag + pre-cut fruit" },
@@ -940,6 +964,10 @@
         },
         {
           "day": "Day 7", "theme": "Flexible", "analysis_headline": "Flexible day — consolidate the week", "analysis_score": "High flexibility",
+          "analysis_fiber": "Congee + boiled veg + fruit = ~9g gentle fiber",
+          "analysis_highlight": "Full rest day: reduce total calories by 10–15% vs training days, prioritize easily digestible foods so the body focuses on repair and recovery.",
+          "analysis_tip": "Fish/oat porridge is a classic East Asian 'recovery food' — easy to digest, gentle on the stomach, provides enough starch and light protein. Evening miso soup = electrolytes + natural probiotics for deep sleep.",
+          "analysis_benefits": ["Lowest calories of the week — body focuses on recovery", "Soft, easy-to-digest foods let the gut rest", "Resets natural hunger, ready for the new week"],
           "meals": [
             { "items": ["Thin oatmeal porridge", "Boiled egg ×1", "Fresh herbs", "Warm water"], "note": "Busy: light instant porridge + boiled egg" },
             { "items": ["1 medium apple / pear / guava"], "note": "Busy: pre-cut fruit easy to carry" },

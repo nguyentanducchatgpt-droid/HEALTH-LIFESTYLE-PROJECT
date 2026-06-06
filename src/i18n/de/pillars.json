@@ -880,6 +880,10 @@
       "meal_days": [
         {
           "day": "Tag 1", "theme": "Start — Ausgewogen", "analysis_headline": "Tag 1 — Grundgewohnheiten aufbauen", "analysis_score": "Einfach umzusetzen",
+          "analysis_fiber": "Wasserspinat + Suppe + Banane = ~10g Ballaststoffe",
+          "analysis_highlight": "Protein gleichmäßig auf 5 Mahlzeiten verteilt (Frühstück/Snack/Mittagessen/Snack/Abendessen). Gesamt ~82g deckt 90% des Grundbedarfs — leicht durchzuhalten, kein Hunger zwischen den Mahlzeiten.",
+          "analysis_tip": "Pfefferfisch ist reich an Omega-3; Cashews nachmittags liefern gesunde Fette + natürliches Magnesium zur Muskelentspannung nach einem langen Tag.",
+          "analysis_benefits": ["Stabiler Blutzucker den ganzen Tag durch 5 kleine Mahlzeiten", "Verschiedene Proteinquellen: Eier + Fisch + Joghurt", "Leichter Haferbrei abends — besserer Schlaf"],
           "meals": [
             { "items": ["Weißer Reis", "Gekochte Eier ×2", "Gekochter Wasserspinat", "Wasser"], "note": "Schnell: Vollkornbrot + gekochte Eier" },
             { "items": ["Ungesüßter Joghurt", "Halbe Banane"], "note": "Schnell: 1 Joghurtbecher aus dem Supermarkt" },
@@ -890,6 +894,10 @@
         },
         {
           "day": "Tag 2", "theme": "Protein-Fokus", "analysis_headline": "Heute: hohes Protein — diverse Quellen", "analysis_score": "Hohe Ernährung",
+          "analysis_fiber": "Rohes Gemüse + Kohl + Kürbissuppe = ~11g Ballaststoffe",
+          "analysis_highlight": "Hühnchen + Ei + Tofu + Sojamilch verteilen Protein gleichmäßig auf 5 Mahlzeiten. Protein ~94g — ideal für einen leichten Trainingstag oder Erholung nach dem gestrigen Training.",
+          "analysis_tip": "Vollkornbrot morgens stabilisiert den Blutzucker bis zum Mittag. Abend-Misosuppe liefert natürliche Probiotika und Elektrolyte — fördert tiefen Schlaf und gute Erholung.",
+          "analysis_benefits": ["Reiches Protein aus 4 verschiedenen Quellen täglich", "Probiotika aus Abend-Miso unterstützen die Verdauung", "Leichte Tofu-Nudeln abends — nicht schwer vor dem Schlafen"],
           "meals": [
             { "items": ["Vollkornbrot", "Spiegelei", "Tomate + Gurke", "Ungesüßte Frischmilch"], "note": "Schnell: Eier-Sandwich von außen" },
             { "items": ["Gekochtes Ei ×1", "Kleine Frucht (Apfel/Guave)"], "note": "Schnell: Eier am Vorabend kochen" },
@@ -900,6 +908,10 @@
         },
         {
           "day": "Tag 3", "theme": "Komplexe Carbs", "analysis_headline": "Tag mit hochwertigen komplexen Carbs", "analysis_score": "Stabile Energie",
+          "analysis_fiber": "Haferflocken + Chiasamen + gedünstetes Gemüse + Sauersuppe = ~14g Ballaststoffe",
+          "analysis_highlight": "Haferflocken, Vollkornreis, Süßkartoffel — drei Niedrig-GI-Kohlenhydrate halten die Energie 4–5 Stunden stabil, ohne Blutzuckerspitzen und -einbrüche.",
+          "analysis_tip": "Chiasamen in Haferflocken liefern pflanzliches Omega-3 und bilden Gel im Magen für länger anhaltende Sättigung. Ingwer-Dampffisch hat 40% weniger Kalorien als gebratener Fisch.",
+          "analysis_benefits": ["Niedrig-GI-Kohlenhydrate verhindern Blutzuckerspitzen", "Omega-3 aus gedämpftem Fisch + Chiasamen schützt das Herz", "Süßkartoffel-Snack nachmittags verhindert Hunger vor dem Abendessen"],
           "meals": [
             { "items": ["Haferflocken", "1 Banane", "Pflanzenmilch", "Chiasamen 1 TL"], "note": "Schnell: Overnight Oats vom Vorabend" },
             { "items": ["Griechischer Joghurt", "Honig ¼ TL"], "note": "Schnell: Joghurtbecher überall erhältlich" },
@@ -910,6 +922,10 @@
         },
         {
           "day": "Tag 4", "theme": "Gemüse-Tag", "analysis_headline": "Viel Gemüse — Verdauungspause", "analysis_score": "Leichte Entgiftung",
+          "analysis_fiber": "Gemüse + Obst + bittere Suppe = ~16g Ballaststoffe — übertrifft die Tagesempfehlung",
+          "analysis_highlight": "Ballaststoffreicher Tag reinigt sanft das Verdauungssystem, stabilisiert Darmbakterien und reduziert Süßigkeitenverlangen. Niedrigste Kalorien der Woche — perfekt für einen Ruhetag.",
+          "analysis_tip": "Joghurt + Haferflocken morgens = Probiotika + Präbiotika gemeinsam — das beste Duo für die Darmgesundheit. Bittere Gemüsesuppe zum Mittag unterstützt sanft die Leberfunktion.",
+          "analysis_benefits": ["Höchste Ballaststoffe der Woche: sättigend + gute Verdauung", "Probiotika + Präbiotika gemeinsam von früh morgens", "Niedrige Kalorien geeignet für Ruhetag — kein Überschuss"],
           "meals": [
             { "items": ["Ungesüßter Joghurt", "Haferflocken", "Gemischte Früchte", "Kleine Cashews"], "note": "Schnell: Oat-Parfait + Supermarkt-Joghurt" },
             { "items": ["Gekochtes Ei ×1", "Kirschtomaten 5 Stück"], "note": "Schnell: Eier + Tomaten vorbereiten" },
@@ -920,6 +936,10 @@
         },
         {
           "day": "Tag 5", "theme": "Training — Carb-hoch", "analysis_headline": "Trainingstag — max Carbs + Protein", "analysis_score": "Optimales Training",
+          "analysis_fiber": "Gemüse + Banane + Haferflocken = ~9g Ballaststoffe — ausreichend",
+          "analysis_highlight": "Höchste Kalorien der Woche (+30% vs Ruhetage) um Muskelglykogen vor und nach dem Training voll zu halten. Protein ~113g = 1,6g/kg (70kg) sichert maximale Muskelsynthese in 24–48h nach dem Training.",
+          "analysis_tip": "Banane 30–60 Min vor dem Training = Fructose + Glucose schnell absorbiert, nicht schwer. Griechischer Joghurt + Banane direkt nach dem Training = klassisches Protein + Carb Erholungsduo.",
+          "analysis_benefits": ["Hohe Carbs vor dem Training: explosive Energie, keine Einbrüche", "Protein nach dem Training in 30 Min: beste Muskelsynthese-Aktivierung", "Abend-Lachs: Omega-3 bekämpft Muskelentzündungen nach intensivem Training"],
           "meals": [
             { "items": ["Mittlerer weißer Reis", "Eier ×2", "Leicht sautiertes Gemüse", "Frischmilch"], "note": "Schnell: Reis + Spiegelei — schnell, genug Kohlenhydrate" },
             { "items": ["1 Banane", "Kleine Süßkartoffel oder 1 Scheibe Brot"], "note": "Schnell: Banane + kleines Sandwich" },
@@ -930,6 +950,10 @@
         },
         {
           "day": "Tag 6", "theme": "Erholung", "analysis_headline": "Leichte Erholung — Knochen & Gelenke", "analysis_score": "Schnelle Erholung",
+          "analysis_fiber": "Sojasprossen + Kräuter + Salat + Suppe = ~12g Ballaststoffe",
+          "analysis_highlight": "Ideales Wochenende für Meal-Prep: Eier kochen, Hühnchen zubereiten, Kartoffeln dämpfen, Vollkornreis kochen — bereitet 2–3 Tage vor, spart 45–60 Min täglich unter der Woche.",
+          "analysis_tip": "Morgen-Hühner-Pho ist 'intelligentes Auswärtsessen' — weniger Nudeln, extra Sojasprossen, mageres Hühnchen, die fettreiche Brühe nicht ganz trinken. Abend-Hühnerbrei ist leicht verdaulich für guten Schlaf.",
+          "analysis_benefits": ["Meal-Prep spart 45–60 Min/Tag unter der Woche", "Hühner-Pho hat ~30% weniger gesättigte Fettsäuren als Rinder-Pho", "Bessere Kalorienkontrolle bei vorbereiteten Speisen"],
           "meals": [
             { "items": ["Mageres Hühner-Pho / Nudeln", "Extra Sojasprossen", "Weniger Nudeln", "Fettreiche Brühe übrig lassen"], "note": "Schnell: Pho von außen — extra Gemüse bestellen" },
             { "items": ["Saisonale Früchte", "Gemischte Nüsse ~15g"], "note": "Schnell: Nussbeutelchen + geschnittenes Obst" },
@@ -940,6 +964,10 @@
         },
         {
           "day": "Tag 7", "theme": "Flexibel", "analysis_headline": "Flexibler Tag — Woche konsolidieren", "analysis_score": "Hohe Flexibilität",
+          "analysis_fiber": "Brei + gedämpftes Gemüse + Obst = ~9g sanfte Ballaststoffe",
+          "analysis_highlight": "Voller Ruhetag: Gesamtkalorien um 10–15% gegenüber Trainingstagen reduzieren, leicht verdauliche Lebensmittel bevorzugen, damit sich der Körper auf Reparatur und Erholung konzentriert.",
+          "analysis_tip": "Fisch-/Haferbrei ist ein klassisches ostasiatisches 'Erholungsessen' — leicht verdaulich, magenschonend, liefert ausreichend Stärke und leichtes Protein. Abend-Misosuppe = Elektrolyte + natürliche Probiotika für tiefen Schlaf.",
+          "analysis_benefits": ["Niedrigste Kalorien der Woche — Körper fokussiert auf Erholung", "Weiche, leicht verdauliche Speisen lassen den Darm ruhen", "Natürliches Hungergefühl zurücksetzen, bereit für die neue Woche"],
           "meals": [
             { "items": ["Dünner Haferbrei", "Gekochtes Ei ×1", "Frische Kräuter", "Warmes Wasser"], "note": "Schnell: leichter Instant-Brei + gekochtes Ei" },
             { "items": ["1 mittlerer Apfel / Birne / Guave"], "note": "Schnell: geschnittenes Obst leicht mitzunehmen" },

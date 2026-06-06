@@ -3165,19 +3165,19 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
               <p className="text-[10px] font-black mt-0.5" style={{ color: day.color }}>{day.analysis.score.pct}%</p>
             </div>
           </div>
-          <p className="text-[9px] font-bold mb-2.5" style={{ color: `${day.color}99` }}>🌿 {day.analysis.fiber}</p>
-          <p className="text-[10px] text-muted leading-relaxed mb-4">{day.analysis.highlight}</p>
+          <p className="text-[9px] font-bold mb-2.5" style={{ color: `${day.color}99` }}>🌿 {tPillars(`pillarB.b4.meal_days.${activeDay}.analysis_fiber`, { defaultValue: day.analysis.fiber })}</p>
+          <p className="text-[10px] text-muted leading-relaxed mb-4">{tPillars(`pillarB.b4.meal_days.${activeDay}.analysis_highlight`, { defaultValue: day.analysis.highlight })}</p>
           <ul className="space-y-1.5 mb-4">
             {day.analysis.benefits.map((b, i) => (
               <li key={i} className="flex items-start gap-2 text-[10px] text-muted">
                 <span className="font-bold shrink-0 mt-0.5" style={{ color: day.color }}>✓</span>
-                <span>{b}</span>
+                <span>{tPillars(`pillarB.b4.meal_days.${activeDay}.analysis_benefits.${i}`, { defaultValue: b })}</span>
               </li>
             ))}
           </ul>
           <div className="flex items-start gap-2.5 rounded-xl border p-3" style={{ borderColor: `${day.color}18`, background: `${day.color}06` }}>
             <span className="text-base shrink-0">💡</span>
-            <p className="text-[10px] text-muted leading-relaxed">{day.analysis.tip}</p>
+            <p className="text-[10px] text-muted leading-relaxed">{tPillars(`pillarB.b4.meal_days.${activeDay}.analysis_tip`, { defaultValue: day.analysis.tip })}</p>
           </div>
         </div>
       </div>

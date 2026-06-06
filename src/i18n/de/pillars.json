@@ -1153,10 +1153,10 @@
         }
       ],
       "daily_formulas": [
-        { "label": "Protein-Ziel", "unit": "g/Tag", "example": "z.B. 70kg × 1,8 = 126g/Tag" },
-        { "label": "Wasserbedarf", "unit": "ml/Tag", "example": "z.B. 70kg × 35 = 2.450ml = ~10 Gläser" },
-        { "label": "Min. Kcal", "unit": "kcal/Tag", "example": "Nicht unter TDEE − 500 essen" },
-        { "label": "Protein-Mahlzeiten", "unit": "Mahlzeiten/Tag", "example": "Gleichmäßig verteilen statt 1–2 große Portionen" }
+        { "label": "Protein-Ziel", "formula": "Gewicht (kg) × 1,6–2,0", "unit": "g/Tag", "example": "z.B. 70kg × 1,8 = 126g/Tag" },
+        { "label": "Wasserbedarf", "formula": "Gewicht (kg) × 35ml", "unit": "ml/Tag", "example": "z.B. 70kg × 35 = 2.450ml = ~10 Gläser" },
+        { "label": "Min. Kcal", "formula": "TDEE − 500 kcal", "unit": "kcal/Tag", "example": "Nicht unter TDEE − 500 essen" },
+        { "label": "Protein-Mahlzeiten", "formula": "4–5 Mahlzeiten, ≥20g je", "unit": "Mahlzeiten/Tag", "example": "Gleichmäßig verteilen statt 1–2 große Portionen" }
       ]
     },
     "b6": {

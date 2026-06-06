@@ -1047,10 +1047,10 @@
         }
       ],
       "daily_formulas": [
-        { "label": "Protein mục tiêu", "unit": "g/ngày", "example": "VD: 70kg × 1.8 = 126g/ngày" },
-        { "label": "Nước uống", "unit": "ml/ngày", "example": "VD: 70kg × 35 = 2,450ml = ~10 ly" },
-        { "label": "Kcal tối thiểu", "unit": "kcal/ngày", "example": "Không nên ăn dưới TDEE − 500" },
-        { "label": "Số bữa protein", "unit": "bữa/ngày", "example": "Phân đều tốt hơn dồn 1–2 bữa" }
+        { "label": "Protein mục tiêu", "formula": "Cân nặng (kg) × 1.6–2.0", "unit": "g/ngày", "example": "VD: 70kg × 1.8 = 126g/ngày" },
+        { "label": "Nước uống", "formula": "Cân nặng (kg) × 35ml", "unit": "ml/ngày", "example": "VD: 70kg × 35 = 2,450ml = ~10 ly" },
+        { "label": "Kcal tối thiểu", "formula": "TDEE − 500 kcal", "unit": "kcal/ngày", "example": "Không nên ăn dưới TDEE − 500" },
+        { "label": "Số bữa protein", "formula": "4–5 bữa, mỗi bữa ≥20g", "unit": "bữa/ngày", "example": "Phân đều tốt hơn dồn 1–2 bữa" }
       ]
     },
     "b6": {

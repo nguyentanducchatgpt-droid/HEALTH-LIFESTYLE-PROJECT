@@ -1140,10 +1140,10 @@
         }
       ],
       "daily_formulas": [
-        { "label": "Protein target", "unit": "g/day", "example": "e.g. 70kg × 1.8 = 126g/day" },
-        { "label": "Water intake", "unit": "ml/day", "example": "e.g. 70kg × 35 = 2,450ml = ~10 glasses" },
-        { "label": "Min. Kcal", "unit": "kcal/day", "example": "Don't eat below TDEE − 500" },
-        { "label": "Protein meals", "unit": "meals/day", "example": "Spread evenly beats 1–2 large portions" }
+        { "label": "Protein target", "formula": "Weight (kg) × 1.6–2.0", "unit": "g/day", "example": "e.g. 70kg × 1.8 = 126g/day" },
+        { "label": "Water intake", "formula": "Weight (kg) × 35ml", "unit": "ml/day", "example": "e.g. 70kg × 35 = 2,450ml = ~10 glasses" },
+        { "label": "Min. Kcal", "formula": "TDEE − 500 kcal", "unit": "kcal/day", "example": "Don't eat below TDEE − 500" },
+        { "label": "Protein meals", "formula": "4–5 meals, ≥20g each", "unit": "meals/day", "example": "Spread evenly beats 1–2 large portions" }
       ]
     },
     "b6": {

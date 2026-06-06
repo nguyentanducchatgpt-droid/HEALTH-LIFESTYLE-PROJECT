@@ -3579,7 +3579,7 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
           {DAILY_FORMULAS.map((f, i) => (
             <div key={i} className="rounded-xl border p-3" style={{ borderColor: `${f.color}22`, background: `${f.color}05` }}>
               <p className="text-[9px] text-muted mb-1">{tPillars(`pillarB.b5.daily_formulas.${i}.label`, { defaultValue: f.label })}</p>
-              <p className="text-[10px] font-black font-mono mb-1" style={{ color: f.color }}>{f.formula}</p>
+              <p className="text-[10px] font-black font-mono mb-1" style={{ color: f.color }}>{tPillars(`pillarB.b5.daily_formulas.${i}.formula`, { defaultValue: f.formula })}</p>
               <p className="text-[8px] text-muted/60 leading-snug">{tPillars(`pillarB.b5.daily_formulas.${i}.example`, { defaultValue: f.example })}</p>
             </div>
           ))}

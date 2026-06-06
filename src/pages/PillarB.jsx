@@ -5539,10 +5539,14 @@ function SevenDayPanel({ s }) {
             >
               <div className="flex items-start gap-2">
                 <span className="text-xl shrink-0">{step.icon}</span>
-                <p className="text-[11px] text-muted leading-relaxed">{step.text}</p>
+                <p className="text-[11px] text-muted leading-relaxed">
+                  {tPillars(`pillarB.b6.meal_prep_steps.${i}.text`, { defaultValue: step.text })}
+                </p>
               </div>
               {step.tip && (
-                <p className="text-[10px] leading-relaxed pl-7" style={{ color: `${step.color}99` }}>{step.tip}</p>
+                <p className="text-[10px] leading-relaxed pl-7" style={{ color: `${step.color}99` }}>
+                  {tPillars(`pillarB.b6.meal_prep_steps.${i}.tip`, { defaultValue: step.tip })}
+                </p>
               )}
             </div>
           ))}

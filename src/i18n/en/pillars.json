@@ -1170,6 +1170,14 @@
         {"label": "Daily water intake", "formula": "ml = Body weight × 35", "unit": "water/day", "context": ""}
       ],
       "shopping_groups": ["Protein", "Carbohydrates", "Vegetables", "Fruits", "Healthy Fats"],
+      "meal_prep_steps": [
+        {"text": "Boil 6–8 eggs to keep in the fridge", "tip": "Leave shell on — stays fresh 1 week in the fridge."},
+        {"text": "Steam 4–6 small sweet potatoes", "tip": "Airtight container — lasts 4–5 days. Eat warm or cold, both work."},
+        {"text": "Pan-sear / grill 3–4 portions of chicken or fish", "tip": "Marinate 30 min beforehand — pre-portion ~150g/container, keeps 3–4 days."},
+        {"text": "Wash and slice raw vegetables into containers", "tip": "Line container bottom with kitchen paper to absorb moisture — stays fresh 3–4 days."},
+        {"text": "Cook 2–3 portions of rice in airtight containers", "tip": "Cool completely before sealing — no soggy condensation."},
+        {"text": "Prep 3 snack boxes: fruit + yogurt + nuts", "tip": "Divide into 3 boxes for Mon–Wed = no hunger when out."}
+      ],
       "days_training_label": "training days",
       "days_rest_label": "rest days",
       "day_short_prefix": "D",

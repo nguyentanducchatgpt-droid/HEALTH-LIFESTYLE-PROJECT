@@ -1189,6 +1189,14 @@
         "🧂 Gewürze & Sonstiges"
       ],
       "meal_prep_steps_title": "Wochenend-Meal-Prep — 6 Schritte",
+      "meal_prep_steps": [
+        {"text": "6–8 Eier kochen und im Kühlschrank bereithalten", "tip": "Mit Schale lassen — hält 1 Woche im Kühlschrank."},
+        {"text": "4–6 kleine Süßkartoffeln dämpfen", "tip": "Luftdicht verpacken — hält 4–5 Tage. Warm oder kalt genießen."},
+        {"text": "3–4 Portionen Hähnchen oder Fisch anbraten / grillen", "tip": "30 Min vorher marinieren — ~150g/Behälter vorportionieren, hält 3–4 Tage."},
+        {"text": "Rohes Gemüse waschen, schneiden und in Behältern lagern", "tip": "Küchenpapier auf den Boden legen — saugt Feuchtigkeit auf, hält 3–4 Tage frisch."},
+        {"text": "2–3 Reis-Portionen in luftdichten Behältern kochen", "tip": "Vollständig abkühlen lassen vor dem Verschließen — kein Kondenswasser."},
+        {"text": "3 Snackboxen vorbereiten: Obst + Joghurt + Nüsse", "tip": "Je eine Box für Mo–Mi = kein Hunger unterwegs."}
+      ],
       "days_training_label": "Trainingstage",
       "days_rest_label": "Ruhetage",
       "day_short_prefix": "T",

@@ -1077,6 +1077,14 @@
         {"label": "Nước uống hằng ngày", "formula": "ml = Cân nặng × 35", "unit": "nước/ngày", "context": ""}
       ],
       "shopping_groups": ["Đạm", "Tinh bột", "Rau", "Trái cây", "Chất béo tốt"],
+      "meal_prep_steps": [
+        {"text": "Luộc 6–8 quả trứng để sẵn trong tủ", "tip": "Để nguyên vỏ — bảo quản được 1 tuần trong tủ lạnh."},
+        {"text": "Hấp 4–6 củ khoai lang nhỏ", "tip": "Hộp kín — để được 4–5 ngày. Ăn nóng hoặc nguội đều ổn."},
+        {"text": "Áp chảo / nướng 3–4 phần gà hoặc cá", "tip": "Ướp trước 30 phút — chia sẵn ~150g/hộp, bảo quản 3–4 ngày."},
+        {"text": "Rửa, cắt sẵn rau sống đựng trong hộp", "tip": "Giấy bếp lót đáy hộp hút ẩm — rau tươi 3–4 ngày."},
+        {"text": "Nấu sẵn 2–3 phần cơm đựng hộp kín", "tip": "Để nguội hoàn toàn trước khi đậy nắp — không bị ướt hơi."},
+        {"text": "Chuẩn bị 3 hộp snack: trái cây + sữa chua + hạt", "tip": "Chia sẵn 3 hộp cho T2–T4 = không đói khi ra ngoài."}
+      ],
       "days_training_label": "ngày tập",
       "days_rest_label": "ngày nghỉ",
       "day_short_prefix": "N",

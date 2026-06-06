@@ -1164,10 +1164,10 @@
       "shopping_title": "Weekly Shopping List",
       "meal_prep_steps_title": "Weekend Meal Prep — 6 Steps",
       "food_formulas": [
-        {"label": "Meat / Raw Fish → Protein", "formula": "g meat = Protein ÷ 0.22"},
-        {"label": "Cooked Rice → Carbs", "formula": "g rice = Carbs ÷ 0.28"},
-        {"label": "Chicken egg (1 egg ≈ 6g protein)", "formula": "Count = Protein ÷ 6"},
-        {"label": "Daily water intake", "formula": "ml = Body weight × 35"}
+        {"label": "Meat / Raw Fish → Protein", "formula": "g meat = Protein ÷ 0.22", "unit": "meat", "context": ""},
+        {"label": "Cooked Rice → Carbs", "formula": "g rice = Carbs ÷ 0.28", "unit": "cooked rice", "context": "training day"},
+        {"label": "Chicken egg (1 egg ≈ 6g protein)", "formula": "Count = Protein ÷ 6", "unit": "eggs/day", "context": ""},
+        {"label": "Daily water intake", "formula": "ml = Body weight × 35", "unit": "water/day", "context": ""}
       ],
       "shopping_groups": ["Protein", "Carbohydrates", "Vegetables", "Fruits", "Healthy Fats"],
       "days_training_label": "training days",
@@ -1185,13 +1185,68 @@
         "Sau tập": "Post-Workout"
       },
       "seven_day_plan": [
-        { "day": "Day 1", "day_short": "D1", "theme": "Start — Full Meals", "note": "Full meals, adequate protein — no need to count calories today." },
-        { "day": "Day 2", "day_short": "D2", "theme": "Satiety AM", "note": "Oats in the morning keeps you full until lunch, limits afternoon sugar cravings." },
-        { "day": "Day 3", "day_short": "D3", "theme": "Eat Out Smart", "note": "Eating out: choose protein + veggies + moderate carbs. No sugary drinks." },
-        { "day": "Day 4", "day_short": "D4", "theme": "High Veg Day", "note": "High fiber day. If hungry at night, add protein — not sweets." },
-        { "day": "Day 5", "day_short": "D5", "theme": "Training Day", "note": "Training day: maximize carbs + protein. Eat within 30 min of finishing." },
-        { "day": "Day 6", "day_short": "D6", "theme": "Recovery", "note": "Recovery day: keep protein high, light carbs. Focus on hydration." },
-        { "day": "Day 7", "day_short": "D7", "theme": "Flexible", "note": "Flexible day — enjoy a meal out, stay mindful of protein and veggies." }
+        { "day": "Day 1", "day_short": "D1", "theme": "Start — Full Meals", "note": "Full meals, adequate protein — no need to count calories today.",
+          "meals": [
+            { "items": ["Oatmeal + unsweetened milk", "Boiled eggs ×2", "Small banana"] },
+            { "items": ["Unsweetened yogurt"] },
+            { "items": ["White rice", "Pepper-braised fish", "Boiled greens", "Vegetable soup"] },
+            { "items": ["1 apple or guava"] },
+            { "items": ["Boiled chicken breast", "Lightly stir-fried veg", "Steamed sweet potato"] }
+          ]
+        },
+        { "day": "Day 2", "day_short": "D2", "theme": "Satiety AM", "note": "Oats in the morning keeps you full until lunch, limits afternoon sugar cravings.",
+          "meals": [
+            { "items": ["Rolled oats + milk", "Banana + chia seeds", "Fried egg ×1"] },
+            { "items": ["Unsweetened soy milk"] },
+            { "items": ["White rice", "Lemongrass boiled chicken", "Pumpkin soup", "Raw veg"] },
+            { "items": ["Yogurt + 1 orange"] },
+            { "items": ["Light noodles", "Tomato-braised tofu", "Fresh herbs + bean sprouts", "Light soup"] }
+          ]
+        },
+        { "day": "Day 3", "day_short": "D3", "theme": "Eat Out Smart", "note": "Eating out: choose protein + veggies + moderate carbs. No sugary drinks.",
+          "meals": [
+            { "items": ["Whole wheat bread", "Fried egg", "Tomato + cucumber", "Fresh milk"] },
+            { "items": ["Lean beef pho", "Extra veg/sprouts", "Less noodles"] },
+            { "items": ["Small cashews + yogurt"] },
+            { "items": ["Small brown rice", "Ginger steamed fish", "Pork veg soup", "Cucumber"] }
+          ]
+        },
+        { "day": "Day 4", "day_short": "D4", "theme": "High Veg Day", "note": "High fiber day. If hungry at night, add protein — not sweets.",
+          "meals": [
+            { "items": ["Unsweetened yogurt", "Oatmeal", "Fruit + nuts"] },
+            { "items": ["Boiled egg ×1"] },
+            { "items": ["Medium rice", "Lightly salted fish", "Sour soup", "Boiled veg ×2 servings"] },
+            { "items": ["Guava / dragon fruit"] },
+            { "items": ["Large salad: veg + egg + chicken", "Sweet potato or corn"] }
+          ]
+        },
+        { "day": "Day 5", "day_short": "D5", "theme": "Training Day", "note": "Training day: maximize carbs + protein. Eat within 30 min of finishing.",
+          "meals": [
+            { "items": ["Small rice / whole wheat bread", "Eggs + veg"] },
+            { "items": ["1 banana or small potato"] },
+            { "items": ["Rice + chicken/fish/lean meat", "Lightly stir-fried veg", "Soup"] },
+            { "items": ["Yogurt + fruit"] },
+            { "items": ["Shrimp / fish / chicken", "Lots of veg", "Moderate rice/potato"] }
+          ]
+        },
+        { "day": "Day 6", "day_short": "D6", "theme": "Recovery", "note": "Recovery day: keep protein high, light carbs. Focus on hydration.",
+          "meals": [
+            { "items": ["Lean chicken pho/noodles", "Extra bean sprouts", "Skip fatty broth"] },
+            { "items": ["Fruit"] },
+            { "items": ["Home rice: meat/fish/tofu", "2 types of veg", "Soup"] },
+            { "items": ["Nuts + yogurt or milk"] },
+            { "items": ["Veg/mushroom/tofu/lean meat hot pot", "Limit processed ingredients"] }
+          ]
+        },
+        { "day": "Day 7", "day_short": "D7", "theme": "Flexible", "note": "Flexible day — enjoy a meal out, stay mindful of protein and veggies.",
+          "meals": [
+            { "items": ["Oatmeal / fish porridge", "Fresh herbs"] },
+            { "items": ["1 piece of fruit"] },
+            { "items": ["Rice", "Fish/tofu", "Veg soup", "Boiled veg"] },
+            { "items": ["Unsweetened yogurt"] },
+            { "items": ["Eggs/tofu/fish", "Lots of veg", "Small rice/potato"] }
+          ]
+        }
       ]
     },
     "b7": {

@@ -5424,7 +5424,7 @@ function SevenDayPanel({ s }) {
 
         {/* Meals grid */}
         <div className="space-y-3">
-          {day.meals.map((meal) => (
+          {day.meals.map((meal, mealIdx) => (
             <div
               key={meal.time}
               className="rounded-2xl border border-border/35 bg-surface/10 overflow-hidden"
@@ -5444,8 +5444,10 @@ function SevenDayPanel({ s }) {
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {meal.items.map(item => (
-                    <span key={item} className="text-[11px] text-text/80 bg-white/[0.04] border border-white/8 px-2 py-0.5 rounded-lg">{item}</span>
+                  {meal.items.map((item, itemIdx) => (
+                    <span key={itemIdx} className="text-[11px] text-text/80 bg-white/[0.04] border border-white/8 px-2 py-0.5 rounded-lg">
+                      {tPillars(`pillarB.b6.seven_day_plan.${activeDay}.meals.${mealIdx}.items.${itemIdx}`, { defaultValue: item })}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -5466,20 +5468,26 @@ function SevenDayPanel({ s }) {
           <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">{b6tr.estimate_title || 'Công Thức Ước Lượng Thực Phẩm'}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { icon: '🥩', label: 'Thịt / Cá sống → Protein', formula: 'g thịt = Protein ÷ 0.22', example: `${s.proteinG}g protein → ~${Math.round(s.proteinG / 0.22)}g thịt`, color: '#84cc16' },
-              { icon: '🍚', label: 'Cơm chín → Carb', formula: 'g cơm = Carb ÷ 0.28', example: `${s.trainingDayCarb}g carb (ngày tập) → ~${Math.round(s.trainingDayCarb / 0.28)}g cơm`, color: '#f97316' },
-              { icon: '🥚', label: 'Trứng gà (1 quả ≈ 6g protein)', formula: 'Số quả = Protein ÷ 6', example: `${s.proteinG}g protein → ~${Math.round(s.proteinG / 6)} quả trứng/ngày`, color: '#eab308' },
-              { icon: '💧', label: 'Nước uống hằng ngày', formula: 'ml = Cân nặng × 35', example: `${s.weight}kg × 35 = ${(s.weight * 35 / 1000).toFixed(1)}L nước/ngày`, color: '#06b6d4' },
-            ].map(({ icon, label, formula, example, color }) => (
-              <div key={label} className="rounded-xl border p-3.5 flex gap-3" style={{ borderColor: `${color}20`, background: `${color}06` }}>
-                <span className="text-2xl shrink-0 leading-none mt-0.5">{icon}</span>
-                <div>
-                  <p className="text-xs font-bold text-text/80 mb-1">{label}</p>
-                  <p className="text-[10px] text-muted font-mono mb-1.5">{formula}</p>
-                  <p className="text-[10px] font-bold" style={{ color }}>{example}</p>
+              { icon: '🥩', color: '#84cc16', exFn: (unit) => `${s.proteinG}g protein → ~${Math.round(s.proteinG / 0.22)}g ${unit}` },
+              { icon: '🍚', color: '#f97316', exFn: (unit, ctx) => `${s.trainingDayCarb}g carb${ctx ? ` (${ctx})` : ''} → ~${Math.round(s.trainingDayCarb / 0.28)}g ${unit}` },
+              { icon: '🥚', color: '#eab308', exFn: (unit) => `${s.proteinG}g protein → ~${Math.round(s.proteinG / 6)} ${unit}` },
+              { icon: '💧', color: '#06b6d4', exFn: (unit) => `${s.weight}kg × 35 = ${(s.weight * 35 / 1000).toFixed(1)}L ${unit}` },
+            ].map(({ icon, color, exFn }, fi) => {
+              const ffLabel = tPillars(`pillarB.b6.food_formulas.${fi}.label`, { defaultValue: ['Thịt / Cá sống → Protein', 'Cơm chín → Carb', 'Trứng gà (1 quả ≈ 6g protein)', 'Nước uống hằng ngày'][fi] });
+              const ffFormula = tPillars(`pillarB.b6.food_formulas.${fi}.formula`, { defaultValue: ['g thịt = Protein ÷ 0.22', 'g cơm = Carb ÷ 0.28', 'Số quả = Protein ÷ 6', 'ml = Cân nặng × 35'][fi] });
+              const ffUnit = tPillars(`pillarB.b6.food_formulas.${fi}.unit`, { defaultValue: ['thịt', 'cơm', 'quả trứng/ngày', 'nước/ngày'][fi] });
+              const ffCtx = tPillars(`pillarB.b6.food_formulas.${fi}.context`, { defaultValue: ['', 'ngày tập', '', ''][fi] });
+              return (
+                <div key={fi} className="rounded-xl border p-3.5 flex gap-3" style={{ borderColor: `${color}20`, background: `${color}06` }}>
+                  <span className="text-2xl shrink-0 leading-none mt-0.5">{icon}</span>
+                  <div>
+                    <p className="text-xs font-bold text-text/80 mb-1">{ffLabel}</p>
+                    <p className="text-[10px] text-muted font-mono mb-1.5">{ffFormula}</p>
+                    <p className="text-[10px] font-bold" style={{ color }}>{exFn(ffUnit, ffCtx)}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </RevealBlock>

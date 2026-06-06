@@ -1071,10 +1071,10 @@
       "shopping_title": "Danh Sách Mua Sắm Tuần",
       "meal_prep_steps_title": "Meal Prep Cuối Tuần — 6 Bước",
       "food_formulas": [
-        {"label": "Thịt / Cá sống → Protein", "formula": "g thịt = Protein ÷ 0.22"},
-        {"label": "Cơm chín → Carb", "formula": "g cơm = Carb ÷ 0.28"},
-        {"label": "Trứng gà (1 quả ≈ 6g protein)", "formula": "Số quả = Protein ÷ 6"},
-        {"label": "Nước uống hằng ngày", "formula": "ml = Cân nặng × 35"}
+        {"label": "Thịt / Cá sống → Protein", "formula": "g thịt = Protein ÷ 0.22", "unit": "thịt", "context": ""},
+        {"label": "Cơm chín → Carb", "formula": "g cơm = Carb ÷ 0.28", "unit": "cơm", "context": "ngày tập"},
+        {"label": "Trứng gà (1 quả ≈ 6g protein)", "formula": "Số quả = Protein ÷ 6", "unit": "quả trứng/ngày", "context": ""},
+        {"label": "Nước uống hằng ngày", "formula": "ml = Cân nặng × 35", "unit": "nước/ngày", "context": ""}
       ],
       "shopping_groups": ["Đạm", "Tinh bột", "Rau", "Trái cây", "Chất béo tốt"],
       "days_training_label": "ngày tập",

@@ -1175,10 +1175,10 @@
       "meal_prep_desc": "2 Stunden Vorbereitung am Wochenende spart 5+ Stunden unter der Woche und verhindert ungesunde Impulsentscheidungen.",
       "estimate_title": "Lebensmittel-Schätzformeln",
       "food_formulas": [
-        {"label": "Protein (Fleisch/Fisch)", "formula": "1 Handteller = ~25g Protein"},
-        {"label": "Kohlenhydrate (Reis/Nudeln)", "formula": "1 geballte Faust = ~45g Carbs"},
-        {"label": "Fett (Öl/Nüsse)", "formula": "1 Daumen = ~15g Fett"},
-        {"label": "Gemüse", "formula": "2 Fäuste = ausreichende Portion"}
+        {"label": "Fleisch / Roher Fisch → Protein", "formula": "g Fleisch = Protein ÷ 0,22", "unit": "Fleisch", "context": ""},
+        {"label": "Gekochter Reis → Kohlenhydrate", "formula": "g Reis = KH ÷ 0,28", "unit": "gek. Reis", "context": "Trainingstag"},
+        {"label": "Hühnerei (1 Ei ≈ 6g Protein)", "formula": "Anzahl = Protein ÷ 6", "unit": "Eier/Tag", "context": ""},
+        {"label": "Täglicher Wasserbedarf", "formula": "ml = Körpergewicht × 35", "unit": "Wasser/Tag", "context": ""}
       ],
       "shopping_title": "Wöchentliche Einkaufsliste",
       "shopping_groups": [
@@ -1204,13 +1204,68 @@
         "Sau tập": "Nach Training"
       },
       "seven_day_plan": [
-        { "day": "Tag 1", "day_short": "T1", "theme": "Start — Vollständige Mahlzeiten", "note": "Vollständige Mahlzeiten, ausreichend Protein — heute keine Kalorien zählen." },
-        { "day": "Tag 2", "day_short": "T2", "theme": "Sättigung AM", "note": "Haferflocken morgens hält Sie bis zum Mittagessen satt und begrenzt Nachmittagsheißhunger." },
-        { "day": "Tag 3", "day_short": "T3", "theme": "Auswärts Essen", "note": "Auswärts: Protein + Gemüse + moderate Carbs wählen. Keine zuckerhaltigen Getränke." },
-        { "day": "Tag 4", "day_short": "T4", "theme": "Viel Gemüse", "note": "Ballaststofftag. Bei Hunger abends Protein hinzufügen — kein Gebäck." },
-        { "day": "Tag 5", "day_short": "T5", "theme": "Trainingstag", "note": "Trainingstag: maximale Carbs + Protein. Innerhalb von 30 Min nach dem Training essen." },
-        { "day": "Tag 6", "day_short": "T6", "theme": "Erholung", "note": "Erholungstag: Protein hoch halten, leichte Carbs. Fokus auf Hydratation." },
-        { "day": "Tag 7", "day_short": "T7", "theme": "Flexibel", "note": "Flexibler Tag — auswärts essen erlaubt, auf Protein und Gemüse achten." }
+        { "day": "Tag 1", "day_short": "T1", "theme": "Start — Vollständige Mahlzeiten", "note": "Vollständige Mahlzeiten, ausreichend Protein — heute keine Kalorien zählen.",
+          "meals": [
+            { "items": ["Haferbrei + ungesüßte Milch", "Gekochte Eier ×2", "Kleine Banane"] },
+            { "items": ["Ungesüßter Joghurt"] },
+            { "items": ["Weißer Reis", "Pfefferfisch geschmort", "Gedünstetes Gemüse", "Gemüsesuppe"] },
+            { "items": ["1 Apfel oder Guave"] },
+            { "items": ["Gedünstete Hähnchenbrust", "Leicht sautiertes Gemüse", "Gedämpfte Süßkartoffel"] }
+          ]
+        },
+        { "day": "Tag 2", "day_short": "T2", "theme": "Sättigung AM", "note": "Haferflocken morgens hält Sie bis zum Mittagessen satt und begrenzt Nachmittagsheißhunger.",
+          "meals": [
+            { "items": ["Haferflocken + Milch", "Banane + Chiasamen", "Spiegelei ×1"] },
+            { "items": ["Ungesüßte Sojamilch"] },
+            { "items": ["Weißer Reis", "Zitronengras-Hühnchen", "Kürbissuppe", "Rohes Gemüse"] },
+            { "items": ["Joghurt + 1 Orange"] },
+            { "items": ["Leichte Nudeln", "Tofu in Tomatensoße", "Frische Kräuter + Sojasprossen", "Leichte Suppe"] }
+          ]
+        },
+        { "day": "Tag 3", "day_short": "T3", "theme": "Auswärts Essen", "note": "Auswärts: Protein + Gemüse + moderate Carbs wählen. Keine zuckerhaltigen Getränke.",
+          "meals": [
+            { "items": ["Vollkornbrot", "Spiegelei", "Tomate + Gurke", "Frischmilch"] },
+            { "items": ["Mageres Rinderpho", "Extra Gemüse/Sojasprossen", "Weniger Nudeln"] },
+            { "items": ["Kleine Cashews + Joghurt"] },
+            { "items": ["Kleiner Vollkornreis", "Ingwer-Dampffisch", "Schweinefleisch-Gemüsesuppe", "Gurke"] }
+          ]
+        },
+        { "day": "Tag 4", "day_short": "T4", "theme": "Viel Gemüse", "note": "Ballaststofftag. Bei Hunger abends Protein hinzufügen — kein Gebäck.",
+          "meals": [
+            { "items": ["Ungesüßter Joghurt", "Haferflocken", "Obst + Nüsse"] },
+            { "items": ["Gekochtes Ei ×1"] },
+            { "items": ["Mittlerer Reis", "Leicht gesalzener Fisch", "Saure Suppe", "Gedünstetes Gemüse ×2 Portionen"] },
+            { "items": ["Guave / Drachenfrucht"] },
+            { "items": ["Großer Salat: Gemüse + Ei + Hühnchen", "Süßkartoffel oder Mais"] }
+          ]
+        },
+        { "day": "Tag 5", "day_short": "T5", "theme": "Trainingstag", "note": "Trainingstag: maximale Carbs + Protein. Innerhalb von 30 Min nach dem Training essen.",
+          "meals": [
+            { "items": ["Kleiner Reis / Vollkornbrot", "Eier + Gemüse"] },
+            { "items": ["1 Banane oder kleine Kartoffel"] },
+            { "items": ["Reis + Hühnchen/Fisch/mageres Fleisch", "Leicht sautiertes Gemüse", "Suppe"] },
+            { "items": ["Joghurt + Obst"] },
+            { "items": ["Garnelen / Fisch / Hühnchen", "Viel Gemüse", "Mäßiger Reis/Kartoffeln"] }
+          ]
+        },
+        { "day": "Tag 6", "day_short": "T6", "theme": "Erholung", "note": "Erholungstag: Protein hoch halten, leichte Carbs. Fokus auf Hydratation.",
+          "meals": [
+            { "items": ["Mageres Hühner-Pho/Nudeln", "Extra Sojasprossen", "Fettreiche Brühe meiden"] },
+            { "items": ["Obst"] },
+            { "items": ["Heimreis: Fleisch/Fisch/Tofu", "2 Gemüsesorten", "Suppe"] },
+            { "items": ["Nüsse + Joghurt oder Milch"] },
+            { "items": ["Gemüse/Pilze/Tofu/mageres Fleisch Hotpot", "Verarbeitete Zutaten begrenzen"] }
+          ]
+        },
+        { "day": "Tag 7", "day_short": "T7", "theme": "Flexibel", "note": "Flexibler Tag — auswärts essen erlaubt, auf Protein und Gemüse achten.",
+          "meals": [
+            { "items": ["Haferbrei / Fischbrei", "Frische Kräuter"] },
+            { "items": ["1 Stück Obst"] },
+            { "items": ["Reis", "Fisch/Tofu", "Gemüsesuppe", "Gedünstetes Gemüse"] },
+            { "items": ["Ungesüßter Joghurt"] },
+            { "items": ["Eier/Tofu/Fisch", "Viel Gemüse", "Kleiner Reis/Kartoffeln"] }
+          ]
+        }
       ]
     },
     "b7": {

@@ -723,6 +723,57 @@
       ]
     },
     "b3": {
+      "col_calo": "Calo",
+      "goals": [
+        {
+          "label": "Giảm mỡ",
+          "kcal": "−300–500 kcal/ngày",
+          "carb": "Giảm carb tinh, không uống calories",
+          "highlights": [
+            "Thâm hụt calo bền vững, không nhịn ăn",
+            "Protein cao để giữ cơ khi giảm mỡ",
+            "Ưu tiên rau + đạm, hạn chế carb tinh",
+            "Cardio kết hợp sức mạnh",
+            "Tránh nước ngọt, nước trái cây có đường"
+          ]
+        },
+        {
+          "label": "Tăng cơ",
+          "kcal": "+200–300 kcal/ngày",
+          "carb": "Carb cao quanh buổi tập",
+          "highlights": [
+            "Thặng dư nhẹ, tăng cân chậm và chất lượng",
+            "Protein đều đặn mỗi bữa (4–5 bữa)",
+            "Carb trước và sau tập để nạp năng lượng",
+            "Ngủ đủ 7–9h — cơ phát triển khi ngủ",
+            "Progressive overload song song với dinh dưỡng"
+          ]
+        },
+        {
+          "label": "Sức bền",
+          "kcal": "Tùy theo khối lượng tập",
+          "carb": "Carb cao ngày thi/tập nặng",
+          "highlights": [
+            "Nạp carb trước sự kiện dài (>60 phút)",
+            "Điện giải: natri + kali + magie",
+            "Protein để phục hồi cơ sau cardio dài",
+            "Không thử đồ ăn mới trước thi đấu",
+            "Hydrat hóa liên tục — nước + nước dừa"
+          ]
+        },
+        {
+          "label": "Duy trì",
+          "kcal": "Quanh TDEE ± 100",
+          "carb": "Linh hoạt, 80/20",
+          "highlights": [
+            "Ăn quanh TDEE, không cần đếm chặt",
+            "Áp dụng 80/20 — 80% thực phẩm lành mạnh",
+            "Không cần cắt nhóm thực phẩm nào",
+            "Tập trung vào chất lượng bữa ăn lâu dài",
+            "Check-in cân nặng 1 lần/tuần để điều chỉnh"
+          ]
+        }
+      ],
       "bar_goal": "Mục tiêu",
       "bar_adjust": "Điều chỉnh",
       "bar_speed": "Tốc độ",
@@ -815,6 +866,26 @@
       "total_label": "Tổng ngày",
       "meals_label": "Bữa",
       "adjust_note": "Điều chỉnh lượng theo TDEE của bạn ở B0",
+      "col_calo": "Calo",
+      "meals_count": "bữa",
+      "meal_time_map": {
+        "Sáng": "Sáng",
+        "Snack sáng": "Snack sáng",
+        "Trưa": "Trưa",
+        "Snack xế": "Snack xế",
+        "Snack trước tập": "Snack trước tập",
+        "Snack sau tập": "Snack sau tập",
+        "Tối": "Tối"
+      },
+      "meal_days": [
+        { "day": "Ngày 1", "theme": "Bắt đầu — Cân bằng", "analysis_headline": "Ngày đầu — thiết lập thói quen nền tảng", "analysis_score": "Dễ thực hiện" },
+        { "day": "Ngày 2", "theme": "Protein nền tảng", "analysis_headline": "Hôm nay ưu tiên protein cao — đa dạng nguồn", "analysis_score": "Dinh dưỡng cao" },
+        { "day": "Ngày 3", "theme": "Tinh bột phức hợp", "analysis_headline": "Ngày tập trung vào tinh bột chất lượng cao", "analysis_score": "Bền năng lượng" },
+        { "day": "Ngày 4", "theme": "Ngày nhiều rau", "analysis_headline": "Ngày tăng cường rau xanh — tiêu hoá nghỉ ngơi", "analysis_score": "Thải độc nhẹ" },
+        { "day": "Ngày 5", "theme": "Ngày tập — Carb cao", "analysis_headline": "Ngày tập luyện — nạp carb + protein tối đa", "analysis_score": "Tối ưu tập luyện" },
+        { "day": "Ngày 6", "theme": "Phục hồi", "analysis_headline": "Phục hồi nhẹ — chăm sóc xương khớp", "analysis_score": "Phục hồi nhanh" },
+        { "day": "Ngày 7", "theme": "Linh hoạt", "analysis_headline": "Ngày linh hoạt — tổng kết tuần", "analysis_score": "Linh hoạt cao" }
+      ],
       "goal_adaptations": {
         "fat-loss": {
           "label": "🔥 Giảm Mỡ",
@@ -881,6 +952,71 @@
         {"rule": "Không bỏ bữa sau để \"trả nợ\""},
         {"rule": "Không tập phạt cơ thể sau khi ăn lỡ"},
         {"rule": "Không buông cả ngày còn lại vì lỡ 1 bữa"}
+      ],
+      "off_plan_reasons": [
+        "Nhịn bù làm đói dồn dập → ăn bù quá mức và cảm giác thất bại chồng chất.",
+        "\"Tập để xóa calo\" là tư duy sai — tập vì cơ thể cần, không phải để trừng phạt.",
+        "Một bữa ăn sai không phá hỏng kết quả. Buông toàn ngày mới là điều thực sự phá kế hoạch."
+      ],
+      "habits": [
+        {
+          "title": "Ăn Chậm — No Đúng Lúc",
+          "tips": [
+            "Ăn trong 15–20 phút — não cần 15 phút mới nhận được tín hiệu no từ dạ dày.",
+            "Đặt đũa xuống sau mỗi vài miếng, không cầm liên tục.",
+            "Dừng ở mức no 7/10 — không ăn đến khi căng bụng."
+          ],
+          "note": "Nghiên cứu: ăn chậm giúp giảm tổng lượng calo trong bữa 10–15% không cần nỗ lực."
+        },
+        {
+          "title": "Ăn Đúng Giờ Tương Đối",
+          "tips": [
+            "Không cần đúng giờ tuyệt đối, nhưng nên có nhịp: sáng 7–9h, trưa 11–13h, tối 17–19h.",
+            "Khoảng cách bữa tốt nhất là 3–5 giờ — đủ tiêu hóa, không đói quá.",
+            "Không bỏ bữa rồi ăn bù quá nhiều — mất ổn định đường huyết cả ngày."
+          ],
+          "note": "Ăn đúng nhịp giúp duy trì insulin ổn định và giảm thèm ăn vặt buổi chiều."
+        },
+        {
+          "title": "Kiểm Soát Đồ Ngọt Thông Minh",
+          "tips": [
+            "Không cấm tuyệt đối — cấm tạo cơn thèm dồn nén. Cho phép 1–2 lần/tuần.",
+            "Ăn đồ ngọt sau bữa chính thay vì khi đói — insulin đã tăng sẵn, tác động nhỏ hơn.",
+            "Giảm tần suất trước khi giảm lượng — bước nhỏ dễ duy trì hơn."
+          ],
+          "note": "Mục tiêu thực tế: từ 7 lần/tuần → 3–4 lần → 1–2 lần/tuần trong 4–6 tuần."
+        }
+      ],
+      "checklist_items": [
+        "Có protein trong mỗi bữa",
+        "Ăn ít nhất 2 phần rau/ngày",
+        "Uống đủ nước (~2L)",
+        "Không bỏ bữa chính",
+        "Hạn chế đồ chiên/đường",
+        "Ăn đủ kcal, không thiếu quá 500",
+        "Nhận thức được cảm giác no/đói"
+      ],
+      "science_cards": [
+        {
+          "title": "Protein → TEF cao nhất",
+          "formula": "TEF protein = 25–30% kcal nạp vào",
+          "text": "Mỗi 100g protein nạp vào → cơ thể đốt thêm 25–30 kcal ngay khi tiêu hóa. Ăn đủ protein = đốt calo liên tục suốt ngày, không cần tập thêm."
+        },
+        {
+          "title": "Chất xơ → no lâu tự nhiên",
+          "formula": "2 phần rau ≈ 6–10g chất xơ/ngày",
+          "text": "Mục tiêu: 25–35g chất xơ/ngày. Chất xơ làm chậm hấp thu đường → ổn định insulin → giảm thèm ăn xế chiều. Rau củ chứa 3–5g chất xơ/100g."
+        },
+        {
+          "title": "Nước → hiệu suất não & cơ",
+          "formula": "Thiếu 1–2% nước → giảm 10–15% sức mạnh",
+          "text": "Nước tiểu vàng nhạt như nước chanh nhạt = đủ nước. Vàng đậm = thiếu. Uống 1 ly ngay khi thức dậy, 1 ly trước mỗi bữa, 1 ly sau tập."
+        },
+        {
+          "title": "Vi điều chỉnh — không đại tu",
+          "formula": "Không tiến bộ 2 tuần → ±100–150 kcal",
+          "text": "\"Đều quan trọng hơn hoàn hảo.\" 70–80% kế hoạch trong 6 tháng luôn tốt hơn 100% trong 7 ngày rồi bỏ. Chỉ thay đổi 1 biến tại một thời điểm."
+        }
       ]
     },
     "b6": {
@@ -906,7 +1042,30 @@
         {"label": "Trứng gà (1 quả ≈ 6g protein)", "formula": "Số quả = Protein ÷ 6"},
         {"label": "Nước uống hằng ngày", "formula": "ml = Cân nặng × 35"}
       ],
-      "shopping_groups": ["Đạm", "Tinh bột", "Rau", "Trái cây", "Chất béo tốt"]
+      "shopping_groups": ["Đạm", "Tinh bột", "Rau", "Trái cây", "Chất béo tốt"],
+      "days_training_label": "ngày tập",
+      "days_rest_label": "ngày nghỉ",
+      "day_short_prefix": "N",
+      "carb_cycling_insight": "Protein không đổi ({protein}g) — chỉ điều chỉnh carb ±20% theo ngày. Ngày tập: {trainCarb}g carb nạp đầy glycogen cơ. Ngày nghỉ: {restCarb}g carb khuyến khích đốt mỡ dự trữ.",
+      "meal_time_map": {
+        "Sáng": "Sáng",
+        "Phụ sáng": "Phụ sáng",
+        "Trưa": "Trưa",
+        "Trưa (ngoài)": "Trưa (ngoài)",
+        "Phụ chiều": "Phụ chiều",
+        "Tối": "Tối",
+        "Trước tập": "Trước tập",
+        "Sau tập": "Sau tập"
+      },
+      "seven_day_plan": [
+        { "day": "Ngày 1", "day_short": "N1", "theme": "Bắt đầu — Đủ bữa", "note": "Đủ bữa, đủ đạm — không cần tính calo hôm nay." },
+        { "day": "Ngày 2", "day_short": "N2", "theme": "Sáng no lâu", "note": "Yến mạch sáng giúp no tới tận trưa, hạn chế thèm đường buổi xế." },
+        { "day": "Ngày 3", "day_short": "N3", "theme": "Ăn ngoài thông minh", "note": "Ăn ngoài: chọn đạm + rau + tinh bột vừa. Không uống nước ngọt." },
+        { "day": "Ngày 4", "day_short": "N4", "theme": "Ngày nhiều rau", "note": "Ngày tăng chất xơ. Nếu đói tối, thêm đạm — không thêm bánh kẹo." },
+        { "day": "Ngày 5", "day_short": "N5", "theme": "Ngày tập luyện", "note": "Ngày tập: tối đa carb + protein. Ăn trong 30 phút sau khi kết thúc." },
+        { "day": "Ngày 6", "day_short": "N6", "theme": "Phục hồi", "note": "Ngày phục hồi: giữ protein cao, carb nhẹ. Tập trung bù nước." },
+        { "day": "Ngày 7", "day_short": "N7", "theme": "Linh hoạt", "note": "Ngày linh hoạt — bữa ngoài được, vẫn chú ý protein và rau." }
+      ]
     },
     "b7": {
       "bar_label": "Macro Cá Nhân Hóa Theo Loại Buổi Tập",
@@ -930,8 +1089,29 @@
         {"label": "Tập Nặng", "note": "Nạp carb tối đa"}
       ],
       "peri_title": "Giao Thức Dinh Dưỡng Quanh Buổi Tập",
+      "peri_subtitle": "Tính theo cân nặng {weight}kg — từ tài liệu nghiên cứu thực hành",
       "peri_note": "Timing tối ưu: ăn trước tập 60–120 phút sớm. Nếu chỉ có 30 phút, chọn carb đơn giản. Sau tập: 30 phút đầu là lý tưởng nhất.",
-      "endurance_title": "Hướng Dẫn Nạp Nhiên Liệu Sức Bền"
+      "endurance_title": "Hướng Dẫn Nạp Nhiên Liệu Sức Bền",
+      "endurance_subtitle": "3 vùng thời gian — chiến lược carb + nước + điện giải",
+      "day_nutrition_title": "Dinh Dưỡng Theo Loại Ngày Tập",
+      "timing_title": "Lịch Nạp Dinh Dưỡng Trong Ngày Tập Đôi",
+      "col_calo": "Calo",
+      "col_water": "Nước",
+      "training_day_types": [
+        { "type": "Rất nặng", "desc": "Sáng đạp xe / chạy interval — chiều gym — tối bơi kỹ thuật." },
+        { "type": "Nặng vừa", "desc": "Sáng gym lower / full body — chiều bơi 45–60ph hoặc chạy nhẹ 40ph." },
+        { "type": "Sức bền dài", "desc": "Đạp xe 2–4 giờ / Chạy dài 75–120ph. Nạp 30–60g carb/giờ trong buổi." },
+        { "type": "Hồi phục", "desc": "Đi bộ / Đạp Zone 1–2 / Bơi thả lỏng / Mobility. Không cắt protein." }
+      ],
+      "timing_schedule": [
+        { "label": "Trước đạp/chạy", "foods": "Chuối + cà phê / sữa + nước" },
+        { "label": "Trong buổi tập", "foods": "Nước + điện giải + carb nếu >60 phút" },
+        { "label": "Sau buổi sáng", "foods": "Cơm/yến mạch/bánh mì + trứng / sữa / gà" },
+        { "label": "Bữa trưa", "foods": "Cơm/khoai + thịt/cá/đậu + rau + canh" },
+        { "label": "Trước gym/bơi", "foods": "Sữa chua + trái cây hoặc bánh mì + trứng" },
+        { "label": "Sau tập chiều", "foods": "Bữa tối đủ carb + protein nạc + rau" },
+        { "label": "Trước ngủ", "foods": "Sữa chua Hy Lạp / sữa / đậu hũ non nếu cần" }
+      ]
     },
     "start_level_title": "Bắt đầu từ cấp độ nào?",
     "tiers": [

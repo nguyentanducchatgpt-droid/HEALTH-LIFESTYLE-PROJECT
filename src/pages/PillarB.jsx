@@ -252,6 +252,9 @@ const TDEE_MODES = [
   },
 ];
 
+// i18next may return arrays as plain objects {"0":…,"1":…} when using returnObjects — normalize both forms
+const toArr = v => !v ? [] : Array.isArray(v) ? v : Object.values(v);
+
 const PLATE_SECTIONS = [
   {
     pct: 50,
@@ -1326,7 +1329,6 @@ function PlateDiagram({ animate }) {
   const { t: tPillars } = useTranslation('pillars');
   const pillarB = tPillars('pillarB', { returnObjects: true }) || {};
   const b2tr = pillarB.b2 || {};
-  const plateSectionsTr = Array.isArray(pillarB.plate_sections) ? pillarB.plate_sections : [];
   const [bars, setBars] = useState(PLATE_SECTIONS.map(() => 0));
 
   useEffect(() => {
@@ -1391,7 +1393,7 @@ function PlateDiagram({ animate }) {
         {PLATE_SECTIONS.map((s, i) => (
           <div key={s.label} className="flex items-center gap-3">
             <div className={`w-2.5 h-2.5 rounded-full ${s.bg} shrink-0`} />
-            <span className={`text-xs font-semibold ${s.text} w-28 shrink-0`}>{plateSectionsTr[i]?.label || s.label}</span>
+            <span className={`text-xs font-semibold ${s.text} w-28 shrink-0`}>{tPillars(`pillarB.plate_sections.${i}.label`, { defaultValue: s.label })}</span>
             <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden">
               <div
                 className={`h-full rounded-full ${s.bg}`}
@@ -1416,6 +1418,8 @@ function PlateDiagram({ animate }) {
 // ─── Goal Card ────────────────────────────────────────────────────────────────
 
 function GoalCard({ goal, active, onClick }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b3tr = tPillars('pillarB.b3', { returnObjects: true }) || {};
   return (
     <button
       type="button"
@@ -1450,7 +1454,7 @@ function GoalCard({ goal, active, onClick }) {
         <div className="animate-fade-in-up">
           <div className="grid grid-cols-3 gap-2 mb-4 text-center">
             {[
-              { k: 'Calo', v: goal.kcal },
+              { k: b3tr.col_calo || 'Calo', v: goal.kcal },
               { k: 'Protein', v: goal.protein },
               { k: 'Carb', v: goal.carb },
             ].map(item => (
@@ -1800,13 +1804,11 @@ function FoundationPanel({ s, onGoalKeyChange }) {
   const { t: tPillars } = useTranslation('pillars');
   const pillarB = tPillars('pillarB', { returnObjects: true }) || {};
   const b1tr = pillarB.b1 || {};
-  const tdeeModesTr = Array.isArray(pillarB.tdee_modes) ? pillarB.tdee_modes : [];
-  const goalModsTr  = Array.isArray(pillarB.goal_modifiers) ? pillarB.goal_modifiers : [];
   const translatedModes = TDEE_MODES.map((m, i) => ({
     ...m,
-    label: tdeeModesTr[i]?.label || m.label,
-    delta: tdeeModesTr[i]?.delta || m.delta,
-    note:  tdeeModesTr[i]?.note  || m.note,
+    label: tPillars(`pillarB.tdee_modes.${i}.label`, { defaultValue: m.label }),
+    delta: tPillars(`pillarB.tdee_modes.${i}.delta`, { defaultValue: m.delta }),
+    note:  tPillars(`pillarB.tdee_modes.${i}.note`,  { defaultValue: m.note }),
   }));
   const [selectedMetric, setSelectedMetric] = useState(null);
   const [previewGoalKey, setPreviewGoalKey] = useState(s.goalKey ?? 'recomp');
@@ -1816,22 +1818,22 @@ function FoundationPanel({ s, onGoalKeyChange }) {
   useEffect(() => { setPreviewGoalKey(s.goalKey ?? 'recomp'); }, [s.goalKey]);
 
   const previewGoal    = GOAL_MODIFIERS.find(g => g.key === previewGoalKey) ?? GOAL_MODIFIERS[1];
+  const pgIdx = GOAL_MODIFIERS.indexOf(previewGoal);
   const translatedPreviewGoal = {
     ...previewGoal,
-    label: goalModsTr[GOAL_MODIFIERS.indexOf(previewGoal)]?.label || previewGoal.label,
-    note:  goalModsTr[GOAL_MODIFIERS.indexOf(previewGoal)]?.note  || previewGoal.note,
+    label: tPillars(`pillarB.goal_modifiers.${pgIdx}.label`, { defaultValue: previewGoal.label }),
+    note:  tPillars(`pillarB.goal_modifiers.${pgIdx}.note`,  { defaultValue: previewGoal.note }),
   };
   const previewKcal    = selectedMetric === 'tdee' ? s.tdee : s.tdee + previewGoal.delta;
   const dynMacros      = useMemo(() => buildDynamicMacros(s, previewKcal), [s, previewKcal]);
   const activeMacroKey = METRIC_TO_MACRO[selectedMetric] ?? null;
 
-  const macrosTr = Array.isArray(pillarB.macros) ? pillarB.macros : [];
   const translatedDynMacros = dynMacros.map((m, i) => ({
     ...m,
-    displayName:    macrosTr[i]?.name    || m.name,
-    displayRole:    macrosTr[i]?.role    || m.role,
-    displayDose:    macrosTr[i]?.dose    || m.dose,
-    displaySources: macrosTr[i]?.sources || m.sources,
+    displayName:    tPillars(`pillarB.macros.${i}.name`,    { defaultValue: m.name }),
+    displayRole:    tPillars(`pillarB.macros.${i}.role`,    { defaultValue: m.role }),
+    displayDose:    tPillars(`pillarB.macros.${i}.dose`,    { defaultValue: m.dose }),
+    displaySources: tPillars(`pillarB.macros.${i}.sources`, { defaultValue: m.sources }),
   }));
 
   const mP = dynMacros.find(m => m.name === 'Protein');
@@ -2025,13 +2027,13 @@ function FoundationPanel({ s, onGoalKeyChange }) {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
-            {(Array.isArray(b1tr.philosophy_7) ? b1tr.philosophy_7 : PHILOSOPHY_7).map((p, i) => (
+            {PHILOSOPHY_7.map((p, i) => (
               <RevealBlock key={i} delay={i * 55}>
                 <div className="rounded-xl border border-white/6 bg-white/[0.018] p-4 flex items-start gap-3 hover:bg-white/[0.035] hover:border-lime-500/20 transition-all duration-200">
-                  <span className="text-xl shrink-0 mt-0.5">{PHILOSOPHY_7[i]?.icon || '•'}</span>
+                  <span className="text-xl shrink-0 mt-0.5">{p.icon || '•'}</span>
                   <div>
-                    <p className="text-[11px] font-bold text-text mb-1">{p.title}</p>
-                    <p className="text-[10px] text-muted leading-relaxed">{p.body}</p>
+                    <p className="text-[11px] font-bold text-text mb-1">{tPillars(`pillarB.b1.philosophy_7.${i}.title`, { defaultValue: p.title })}</p>
+                    <p className="text-[10px] text-muted leading-relaxed">{tPillars(`pillarB.b1.philosophy_7.${i}.body`, { defaultValue: p.body })}</p>
                   </div>
                 </div>
               </RevealBlock>
@@ -2118,10 +2120,10 @@ function PlatePanel({ s }) {
   const [carbBars, setCarbBars] = useState([0, 0, 0, 0]);
   const detail = selectedMetric ? b2MetricDetail(selectedMetric, s) : null;
 
-  const mealTimesTr    = Array.isArray(b2tr.meal_times)    ? b2tr.meal_times    : ['🌅 Sáng', '☀️ Trưa', '🌙 Tối', '🍎 Snack'];
-  const proteinNotesTr = Array.isArray(b2tr.protein_notes) ? b2tr.protein_notes : ['trứng + sữa chua', 'ức gà / cá / đậu hũ', 'cá / thịt / trứng', 'sữa chua Hy Lạp'];
-  const carbNotesTr    = Array.isArray(b2tr.carb_notes)    ? b2tr.carb_notes    : ['ổn định đường huyết', 'năng lượng cao nhất', 'giảm nếu không tập tối', 'trái cây, yến mạch'];
-  const portionsTr     = Array.isArray(b2tr.portions)      ? b2tr.portions      : [];
+  const mealTimesTr    = toArr(b2tr.meal_times).length    ? toArr(b2tr.meal_times)    : ['🌅 Sáng', '☀️ Trưa', '🌙 Tối', '🍎 Snack'];
+  const proteinNotesTr = toArr(b2tr.protein_notes).length ? toArr(b2tr.protein_notes) : ['trứng + sữa chua', 'ức gà / cá / đậu hũ', 'cá / thịt / trứng', 'sữa chua Hy Lạp'];
+  const carbNotesTr    = toArr(b2tr.carb_notes).length    ? toArr(b2tr.carb_notes)    : ['ổn định đường huyết', 'năng lượng cao nhất', 'giảm nếu không tập tối', 'trái cây, yến mạch'];
+  const portionsTr     = toArr(b2tr.portions);
 
   const proteinRows = [
     { meal: mealTimesTr[0], g: s.breakfastProteinG, pct: 25, note: proteinNotesTr[0] },
@@ -2168,7 +2170,7 @@ function PlatePanel({ s }) {
           <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-5">
             <p className="text-xs font-bold text-lime-400 mb-3">{b2tr.at_home || '🏠 Tại nhà'}</p>
             <ul className="space-y-2">
-              {(Array.isArray(b2tr.at_home_tips) ? b2tr.at_home_tips : ['Dùng đĩa 23–26cm làm chuẩn', 'Bắt đầu bằng rau trước khi thêm carb', 'Đạm = lòng bàn tay của bạn', 'Cơm = nắm tay của bạn']).map((tip, i) => (
+              {(toArr(b2tr.at_home_tips).length ? toArr(b2tr.at_home_tips) : ['Dùng đĩa 23–26cm làm chuẩn', 'Bắt đầu bằng rau trước khi thêm carb', 'Đạm = lòng bàn tay của bạn', 'Cơm = nắm tay của bạn']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
                   <span className="text-lime-400 font-bold shrink-0">✓</span>{tip}
                 </li>
@@ -2178,7 +2180,7 @@ function PlatePanel({ s }) {
           <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
             <p className="text-xs font-bold text-orange-400 mb-3">{b2tr.eating_out || '🍜 Ăn ngoài hàng'}</p>
             <ul className="space-y-2">
-              {(Array.isArray(b2tr.eating_out_tips) ? b2tr.eating_out_tips : ['Chọn phần có cả đạm + rau + carb', 'Gọi thêm rau hoặc salad riêng', 'Tránh nước chấm nhiều muối/đường', 'Bún/phở: ít bún, nhiều rau, thêm trứng']).map((tip, i) => (
+              {(toArr(b2tr.eating_out_tips).length ? toArr(b2tr.eating_out_tips) : ['Chọn phần có cả đạm + rau + carb', 'Gọi thêm rau hoặc salad riêng', 'Tránh nước chấm nhiều muối/đường', 'Bún/phở: ít bún, nhiều rau, thêm trứng']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
                   <span className="text-orange-400 font-bold shrink-0">✓</span>{tip}
                 </li>
@@ -2188,7 +2190,7 @@ function PlatePanel({ s }) {
           <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5">
             <p className="text-xs font-bold text-cyan-400 mb-3">{b2tr.meal_prep || '📦 Meal Prep bận rộn'}</p>
             <ul className="space-y-2">
-              {(Array.isArray(b2tr.meal_prep_tips) ? b2tr.meal_prep_tips : ['Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)', 'Nấu lượng cơm 2–3 ngày một lần', 'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày', 'Yến mạch overnight cho sáng bận rộn']).map((tip, i) => (
+              {(toArr(b2tr.meal_prep_tips).length ? toArr(b2tr.meal_prep_tips) : ['Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)', 'Nấu lượng cơm 2–3 ngày một lần', 'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày', 'Yến mạch overnight cho sáng bận rộn']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
                   <span className="text-cyan-400 font-bold shrink-0">✓</span>{tip}
                 </li>
@@ -2336,8 +2338,8 @@ function PlatePanel({ s }) {
               </div>
               <p className="text-[10px] font-bold text-green-400 uppercase tracking-wider mb-2.5">{b2tr.rule_80_label || 'Ăn đúng nền tảng'}</p>
               <ul className="space-y-1.5">
-                {(Array.isArray(b2tr.rule_80_items)
-                  ? b2tr.rule_80_items.map(t => t.replace('{kcal}', s.targetKcal.toLocaleString()))
+                {(toArr(b2tr.rule_80_items).length
+                  ? toArr(b2tr.rule_80_items).map(t => t.replace('{kcal}', s.targetKcal.toLocaleString()))
                   : ['Đủ đạm, đủ rau, đủ nước mỗi bữa', `Ăn đúng ${s.targetKcal.toLocaleString()} kcal ±100`, 'Hạn chế đồ uống có đường', 'Meal prep 1–2 lần/tuần']
                 ).map((t, i) => (
                   <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
@@ -2355,8 +2357,8 @@ function PlatePanel({ s }) {
               </div>
               <p className="text-[10px] font-bold text-purple-400 uppercase tracking-wider mb-2.5">{b2tr.rule_20_label || 'Linh hoạt đời thực'}</p>
               <ul className="space-y-1.5">
-                {(Array.isArray(b2tr.rule_20_items)
-                  ? b2tr.rule_20_items
+                {(toArr(b2tr.rule_20_items).length
+                  ? toArr(b2tr.rule_20_items)
                   : ['Ăn ngoài, tiệc, sum họp gia đình', 'Món yêu thích 1–2 lần/tuần', 'Khi lỡ ăn nhiều — chỉnh bữa sau', 'Không tự trách bản thân']
                 ).map((t, i) => (
                   <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
@@ -2385,7 +2387,7 @@ function PlatePanel({ s }) {
             </div>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
-            {(Array.isArray(b2tr.check_questions) ? b2tr.check_questions : MEAL_CHECK_QUESTIONS).map((q, i) => (
+            {(toArr(b2tr.check_questions).length ? toArr(b2tr.check_questions) : MEAL_CHECK_QUESTIONS).map((q, i) => (
               <RevealBlock key={i} delay={i * 50}>
                 <div className="rounded-xl border p-4 flex items-start gap-3" style={{ borderColor: `${MEAL_CHECK_QUESTIONS[i]?.color || '#84cc16'}25`, background: `${MEAL_CHECK_QUESTIONS[i]?.color || '#84cc16'}06` }}>
                   <span className="text-2xl shrink-0">{MEAL_CHECK_QUESTIONS[i]?.icon || '•'}</span>
@@ -2421,9 +2423,7 @@ function PlatePanel({ s }) {
           <div className="grid md:grid-cols-3 gap-4">
             {Object.entries(FOOD_SWAP_TABLE).map(([key, group]) => {
               const labelMap = { protein: b2tr.swap_protein_label, carb: b2tr.swap_carb_label, veg: b2tr.swap_veg_label };
-              const trItemsMap = { protein: b2tr.swap_protein_items, carb: b2tr.swap_carb_items, veg: b2tr.swap_veg_items };
               const translatedLabel = labelMap[key] || group.label;
-              const trItems = Array.isArray(trItemsMap[key]) ? trItemsMap[key] : null;
               return (
               <RevealBlock key={group.label}>
                 <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${group.color}25`, background: `${group.color}05` }}>
@@ -2433,19 +2433,18 @@ function PlatePanel({ s }) {
                   </div>
                   <div className="space-y-3">
                     {group.items.map((item, j) => {
-                      const trItem = trItems?.[j] || {};
                       return (
                       <div key={j} className="rounded-xl border p-2.5" style={{ borderColor: `${group.color}15`, background: `${group.color}04` }}>
                         <div className="flex items-center gap-1.5 mb-1">
-                          <span className="text-[10px] font-bold text-text">{trItem.main || item.main}</span>
+                          <span className="text-[10px] font-bold text-text">{tPillars(`pillarB.b2.swap_${key}_items.${j}.main`, { defaultValue: item.main })}</span>
                           <span className="text-muted/40 text-[9px]">→</span>
-                          <span className="text-[10px] font-bold" style={{ color: group.color }}>{trItem.swap || item.swap}</span>
+                          <span className="text-[10px] font-bold" style={{ color: group.color }}>{tPillars(`pillarB.b2.swap_${key}_items.${j}.swap`, { defaultValue: item.swap })}</span>
                         </div>
                         <div className="flex items-center gap-3 text-[9px] text-muted">
                           <span>P: <b className="text-text">{item.protein}</b></span>
                           <span>Kcal: <b className="text-text">{item.kcal}</b></span>
                         </div>
-                        <p className="text-[9px] text-muted/60 mt-1 italic">{trItem.note || item.note}</p>
+                        <p className="text-[9px] text-muted/60 mt-1 italic">{tPillars(`pillarB.b2.swap_${key}_items.${j}.note`, { defaultValue: item.note })}</p>
                       </div>
                       );
                     })}
@@ -2470,9 +2469,9 @@ function PlatePanel({ s }) {
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             {EATING_OUT_GUIDE.map((g, i) => {
-              const gtr = Array.isArray(b2tr.eating_out_guide) ? (b2tr.eating_out_guide[i] || {}) : {};
+              const gtr = toArr(b2tr.eating_out_guide)[i] || {};
               const name = gtr.name || g.name;
-              const rules = Array.isArray(gtr.rules) ? gtr.rules : g.rules;
+              const rules = toArr(gtr.rules).length ? toArr(gtr.rules) : g.rules;
               const avoid = gtr.avoid || g.avoid;
               return (
               <RevealBlock key={i} delay={i * 60}>
@@ -2704,7 +2703,15 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
     return () => clearTimeout(t);
   }, [preview]);
 
-  const activeG = GOALS.find(g => g.id === activeGoal);
+  const translatedGoals = GOALS.map((g, i) => ({
+    ...g,
+    label: tPillars(`pillarB.b3.goals.${i}.label`, { defaultValue: g.label }),
+    kcal:  tPillars(`pillarB.b3.goals.${i}.kcal`,  { defaultValue: g.kcal }),
+    carb:  tPillars(`pillarB.b3.goals.${i}.carb`,  { defaultValue: g.carb }),
+    highlights: toArr(tPillars(`pillarB.b3.goals.${i}.highlights`, { returnObjects: true, defaultValue: g.highlights })),
+  }));
+
+  const activeG = translatedGoals.find(g => g.id === activeGoal) || GOALS.find(g => g.id === activeGoal);
   const analysis = (b3tr.goal_analysis && b3tr.goal_analysis[activeGoal]) || GOAL_ANALYSIS[activeGoal];
 
   const macroRows = [
@@ -2746,7 +2753,7 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
       {/* ── Goal selector ── */}
       <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">{b3tr.choose_goal || 'Chọn Mục Tiêu Của Bạn'}</p>
       <div className="grid sm:grid-cols-2 gap-4">
-        {GOALS.map(g => (
+        {translatedGoals.map(g => (
           <GoalCard key={g.id} goal={g} active={activeGoal === g.id} onClick={() => onActiveGoalChange(g.id)} />
         ))}
       </div>
@@ -3060,18 +3067,18 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
       {/* Day selector — scrollable */}
       <div className="flex gap-2 mb-6 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none' }}>
         {MEAL_DAYS.map((d, i) => (
-          <button
-            key={d.day}
-            type="button"
-            onClick={() => setActiveDay(i)}
-            className="px-3 py-2 rounded-xl text-[10px] font-bold transition-all duration-200 border cursor-pointer shrink-0 text-center"
-            style={activeDay === i
-              ? { background: `${d.color}15`, borderColor: `${d.color}50`, color: d.color }
-              : { borderColor: 'rgba(255,255,255,0.1)', color: 'rgba(160,160,160,0.7)' }}
-          >
-            <span className="block text-[8px] opacity-60 mb-0.5">{d.day}</span>
-            <span>{d.theme.split(' — ')[0]}</span>
-          </button>
+            <button
+              key={d.day}
+              type="button"
+              onClick={() => setActiveDay(i)}
+              className="px-3 py-2 rounded-xl text-[10px] font-bold transition-all duration-200 border cursor-pointer shrink-0 text-center"
+              style={activeDay === i
+                ? { background: `${d.color}15`, borderColor: `${d.color}50`, color: d.color }
+                : { borderColor: 'rgba(255,255,255,0.1)', color: 'rgba(160,160,160,0.7)' }}
+            >
+              <span className="block text-[8px] opacity-60 mb-0.5">{tPillars(`pillarB.b4.meal_days.${i}.day`, { defaultValue: d.day })}</span>
+              <span>{tPillars(`pillarB.b4.meal_days.${i}.theme`, { defaultValue: d.theme }).split(' — ')[0]}</span>
+            </button>
         ))}
       </div>
 
@@ -3081,8 +3088,8 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
         {/* Day header badge */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: day.color }} />
-          <span className="text-xs font-bold text-text">{day.day}</span>
-          <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: day.color, background: `${day.color}12`, border: `1px solid ${day.color}30` }}>{day.theme}</span>
+          <span className="text-xs font-bold text-text">{tPillars(`pillarB.b4.meal_days.${activeDay}.day`, { defaultValue: day.day })}</span>
+          <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: day.color, background: `${day.color}12`, border: `1px solid ${day.color}30` }}>{tPillars(`pillarB.b4.meal_days.${activeDay}.theme`, { defaultValue: day.theme })}</span>
         </div>
 
         {/* Meals */}
@@ -3098,7 +3105,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-bold px-2.5 py-1 rounded-full border"
                     style={{ color: meal.timeColor, background: `${meal.timeColor}12`, borderColor: `${meal.timeColor}35` }}>
-                    {meal.time}
+                    {b4tr.meal_time_map?.[meal.time] || meal.time}
                   </span>
                   <div className="flex gap-2">
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg" style={{ color: '#84cc16', background: 'rgba(132,204,22,0.08)', border: '1px solid rgba(132,204,22,0.2)' }}>
@@ -3134,7 +3141,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
           {[
             { k: 'Kcal', v: day.totalKcal },
             { k: 'Protein', v: day.totalProtein },
-            { k: b4tr.meals_label || 'Bữa', v: `${day.meals.length} bữa` },
+            { k: b4tr.meals_label || 'Bữa', v: `${day.meals.length} ${b4tr.meals_count || 'bữa'}` },
           ].map(item => (
             <div key={item.k}>
               <span className="text-[10px] text-muted">{item.k}: </span>
@@ -3147,9 +3154,9 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
         {/* Daily analysis */}
         <div className="rounded-2xl border p-5" style={{ borderColor: `${day.color}22`, background: `${day.color}04` }}>
           <div className="flex items-start justify-between mb-3">
-            <p className="text-sm font-bold text-text leading-snug pr-3">{day.analysis.headline}</p>
+            <p className="text-sm font-bold text-text leading-snug pr-3">{tPillars(`pillarB.b4.meal_days.${activeDay}.analysis_headline`, { defaultValue: day.analysis.headline })}</p>
             <div className="shrink-0 text-right">
-              <p className="text-[9px] text-muted mb-1">{day.analysis.score.label}</p>
+              <p className="text-[9px] text-muted mb-1">{tPillars(`pillarB.b4.meal_days.${activeDay}.analysis_score`, { defaultValue: day.analysis.score.label })}</p>
               <div className="w-16 h-1.5 rounded-full bg-white/5 overflow-hidden">
                 <div className="h-full rounded-full transition-all duration-700" style={{ width: `${day.analysis.score.pct}%`, background: day.color }} />
               </div>
@@ -3515,7 +3522,7 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
           </div>
           <div className="grid sm:grid-cols-2 gap-2">
             {TRACKING_DAILY.map((item, i) => (
-              <ChecklistItem3D key={i} item={item} checked={!!checked[i]} onClick={() => toggle(i)} />
+              <ChecklistItem3D key={i} item={{ ...item, label: tPillars(`pillarB.b5.checklist_items.${i}`, { defaultValue: item.label }) }} checked={!!checked[i]} onClick={() => toggle(i)} />
             ))}
           </div>
           {allDone && (
@@ -3551,13 +3558,13 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
               style={{ borderColor: `${item.color}25`, background: `${item.color}06` }}>
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-lg">{item.icon}</span>
-                <p className="text-xs font-bold leading-snug" style={{ color: item.color }}>{item.title}</p>
+                <p className="text-xs font-bold leading-snug" style={{ color: item.color }}>{tPillars(`pillarB.b5.science_cards.${i}.title`, { defaultValue: item.title })}</p>
               </div>
               <div className="text-[9px] font-bold px-2 py-1 rounded-lg mb-2 font-mono"
                 style={{ color: item.color, background: `${item.color}12`, border: `1px solid ${item.color}20` }}>
-                📐 {item.formula}
+                📐 {tPillars(`pillarB.b5.science_cards.${i}.formula`, { defaultValue: item.formula })}
               </div>
-              <p className="text-[10px] text-muted leading-relaxed">{item.text}</p>
+              <p className="text-[10px] text-muted leading-relaxed">{tPillars(`pillarB.b5.science_cards.${i}.text`, { defaultValue: item.text })}</p>
             </div>
           ))}
         </div>
@@ -4703,27 +4710,30 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
-            {EATING_HABITS.map((h, i) => (
-              <RevealBlock key={i} delay={i * 60}>
-                <div className="rounded-2xl border p-5 h-full" style={{ borderColor: `${h.color}22`, background: `${h.color}05` }}>
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-2xl">{h.icon}</span>
-                    <p className="text-xs font-bold" style={{ color: h.color }}>{h.title}</p>
+            {EATING_HABITS.map((h, i) => {
+              const tips = toArr(tPillars(`pillarB.b5.habits.${i}.tips`, { returnObjects: true, defaultValue: h.tips }));
+              return (
+                <RevealBlock key={i} delay={i * 60}>
+                  <div className="rounded-2xl border p-5 h-full" style={{ borderColor: `${h.color}22`, background: `${h.color}05` }}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-2xl">{h.icon}</span>
+                      <p className="text-xs font-bold" style={{ color: h.color }}>{tPillars(`pillarB.b5.habits.${i}.title`, { defaultValue: h.title })}</p>
+                    </div>
+                    <ul className="space-y-2 mb-3">
+                      {tips.map((tip, j) => (
+                        <li key={j} className="flex items-start gap-2 text-[10px] text-muted">
+                          <span className="font-bold shrink-0 mt-px" style={{ color: h.color }}>→</span>
+                          <span className="leading-relaxed">{tip}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="rounded-xl px-3 py-2 border text-[9px] leading-relaxed" style={{ borderColor: `${h.color}20`, background: `${h.color}08`, color: `${h.color}cc` }}>
+                      💡 {tPillars(`pillarB.b5.habits.${i}.note`, { defaultValue: h.note })}
+                    </div>
                   </div>
-                  <ul className="space-y-2 mb-3">
-                    {h.tips.map((tip, j) => (
-                      <li key={j} className="flex items-start gap-2 text-[10px] text-muted">
-                        <span className="font-bold shrink-0 mt-px" style={{ color: h.color }}>→</span>
-                        <span className="leading-relaxed">{tip}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="rounded-xl px-3 py-2 border text-[9px] leading-relaxed" style={{ borderColor: `${h.color}20`, background: `${h.color}08`, color: `${h.color}cc` }}>
-                    💡 {h.note}
-                  </div>
-                </div>
-              </RevealBlock>
-            ))}
+                </RevealBlock>
+              );
+            })}
           </div>
         </div>
       </RevealBlock>
@@ -4747,7 +4757,7 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
                     <span className="text-base shrink-0">{r.icon}</span>
                     <div>
                       <p className="text-[11px] font-bold text-red-300 mb-1">{b5tr.off_plan_rules?.[i]?.rule || r.rule}</p>
-                      <p className="text-[10px] text-muted leading-relaxed">{r.reason}</p>
+                      <p className="text-[10px] text-muted leading-relaxed">{tPillars(`pillarB.b5.off_plan_reasons.${i}`, { defaultValue: r.reason })}</p>
                     </div>
                   </div>
                 </div>
@@ -5309,7 +5319,7 @@ function SevenDayPanel({ s }) {
             <div>
               <p className="text-[10px] font-bold text-muted uppercase tracking-[0.18em]">{b6tr.rhythm_title || 'Nhịp Calo Tuần'}</p>
               <p className="text-sm font-bold text-text mt-0.5">
-                {b6tr.carb_cycling_label || 'Carb Cycling'} — {s.trainingDays} ngày tập / {s.restDays} ngày nghỉ
+                {b6tr.carb_cycling_label || 'Carb Cycling'} — {s.trainingDays} {b6tr.days_training_label || 'ngày tập'} / {s.restDays} {b6tr.days_rest_label || 'ngày nghỉ'}
               </p>
             </div>
             <div className="flex gap-3 text-[10px] text-muted">
@@ -5334,9 +5344,10 @@ function SevenDayPanel({ s }) {
             <span className="text-yellow-400 shrink-0 text-sm">💡</span>
             <p className="text-[11px] text-muted leading-relaxed">
               <span className="font-bold text-yellow-300">Carb Cycling:</span>{' '}
-              Protein không đổi ({s.proteinG}g) — chỉ điều chỉnh carb ±20% theo ngày.
-              Ngày tập: {s.trainingDayCarb}g carb nạp đầy glycogen cơ.
-              Ngày nghỉ: {s.restDayCarb}g carb khuyến khích đốt mỡ dự trữ.
+              {(b6tr.carb_cycling_insight || 'Protein không đổi ({protein}g) — chỉ điều chỉnh carb ±20% theo ngày. Ngày tập: {trainCarb}g carb nạp đầy glycogen cơ. Ngày nghỉ: {restCarb}g carb khuyến khích đốt mỡ dự trữ.')
+                .replace('{protein}', s.proteinG)
+                .replace('{trainCarb}', s.trainingDayCarb)
+                .replace('{restCarb}', s.restDayCarb)}
             </p>
           </div>
         </div>
@@ -5378,7 +5389,7 @@ function SevenDayPanel({ s }) {
                 }`}
                 style={activeDay === i ? { background: '#ec489910' } : undefined}
               >
-                <span className="font-black">{d.day.replace('Ngày ', 'N')}</span>
+                <span className="font-black">{tPillars(`pillarB.b6.seven_day_plan.${i}.day_short`, { defaultValue: d.day.replace('Ngày ', 'N') })}</span>
                 <span className="ml-1.5 text-[9px]" style={{ color: dayType === 'training' ? '#ec489980' : '#06b6d480' }}>
                   {dayType === 'training' ? '🏋️' : '🌙'}
                 </span>
@@ -5396,7 +5407,7 @@ function SevenDayPanel({ s }) {
             className="text-xs font-bold px-3 py-1 rounded-full border"
             style={{ color: day.color, background: `${day.color}12`, borderColor: `${day.color}35` }}
           >
-            {day.day} — {day.theme}
+            {tPillars(`pillarB.b6.seven_day_plan.${activeDay}.day`, { defaultValue: day.day })} — {tPillars(`pillarB.b6.seven_day_plan.${activeDay}.theme`, { defaultValue: day.theme })}
           </span>
           {weekPattern[activeDay] === 'training' ? (
             <span className="text-[10px] font-bold px-2.5 py-1 rounded-full border border-pink-500/30 text-pink-400 bg-pink-500/8">
@@ -5423,7 +5434,7 @@ function SevenDayPanel({ s }) {
                     className="text-[10px] font-bold px-2.5 py-0.5 rounded-full border"
                     style={{ color: day.color, background: `${day.color}12`, borderColor: `${day.color}35` }}
                   >
-                    {meal.time}
+                    {b6tr.meal_time_map?.[meal.time] || meal.time}
                   </span>
                   <div className="flex gap-2">
                     <span className="text-[10px] font-bold text-pink-300 bg-pink-500/8 border border-pink-500/20 px-2 py-0.5 rounded-lg">P {meal.protein}</span>
@@ -5443,7 +5454,7 @@ function SevenDayPanel({ s }) {
         {/* Note */}
         <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-3 flex items-start gap-2">
           <span className="text-yellow-400 text-sm shrink-0">💡</span>
-          <p className="text-[11px] text-muted leading-relaxed">{day.note}</p>
+          <p className="text-[11px] text-muted leading-relaxed">{tPillars(`pillarB.b6.seven_day_plan.${activeDay}.note`, { defaultValue: day.note })}</p>
         </div>
       </div>
 
@@ -6066,7 +6077,7 @@ function AdvancedPanel({ s }) {
             <span className="text-2xl">⚡</span>
             <div>
               <p className="text-sm font-bold text-text">{b7tr.peri_title || 'Giao Thức Dinh Dưỡng Quanh Buổi Tập'}</p>
-              <p className="text-[10px] text-muted">Tính theo cân nặng {s.weight}kg — từ tài liệu nghiên cứu thực hành</p>
+              <p className="text-[10px] text-muted">{(b7tr.peri_subtitle || 'Tính theo cân nặng {weight}kg — từ tài liệu nghiên cứu thực hành').replace('{weight}', s.weight)}</p>
             </div>
           </div>
           <PrePostWorkoutProtocol s={s} />
@@ -6085,7 +6096,7 @@ function AdvancedPanel({ s }) {
             <span className="text-2xl">🏁</span>
             <div>
               <p className="text-sm font-bold text-text">{b7tr.endurance_title || 'Hướng Dẫn Nạp Nhiên Liệu Sức Bền'}</p>
-              <p className="text-[10px] text-muted">3 vùng thời gian — chiến lược carb + nước + điện giải</p>
+              <p className="text-[10px] text-muted">{b7tr.endurance_subtitle || '3 vùng thời gian — chiến lược carb + nước + điện giải'}</p>
             </div>
           </div>
           <EnduranceFuelingGuide s={s} />
@@ -6099,16 +6110,16 @@ function AdvancedPanel({ s }) {
 
       {/* Training day types */}
       <RevealBlock delay={100}>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Dinh Dưỡng Theo Loại Ngày Tập</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b7tr.day_nutrition_title || 'Dinh Dưỡng Theo Loại Ngày Tập'}</p>
         <div className="grid md:grid-cols-2 gap-4">
-          {TRAINING_DAY_TYPES.map(d => (
+          {TRAINING_DAY_TYPES.map((d, dIdx) => (
             <RevealBlock key={d.type}>
               <div
                 className="rounded-2xl p-5 border hover:scale-[1.01] transition-all duration-200"
                 style={{ borderColor: d.border, background: d.bg }}
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-sm font-black" style={{ color: d.color }}>{d.type}</span>
+                  <span className="text-sm font-black" style={{ color: d.color }}>{tPillars(`pillarB.b7.training_day_types.${dIdx}.type`, { defaultValue: d.type })}</span>
                   <span
                     className="text-[10px] font-bold px-2 py-0.5 rounded-full"
                     style={{ color: d.color, background: `${d.color}15`, border: `1px solid ${d.color}30` }}
@@ -6116,14 +6127,14 @@ function AdvancedPanel({ s }) {
                     {d.sub}
                   </span>
                 </div>
-                <p className="text-[11px] text-muted leading-relaxed mb-4">{d.desc}</p>
+                <p className="text-[11px] text-muted leading-relaxed mb-4">{tPillars(`pillarB.b7.training_day_types.${dIdx}.desc`, { defaultValue: d.desc })}</p>
                 <div className="rounded-xl overflow-hidden border" style={{ borderColor: d.border }}>
                   {[
-                    { k: 'Calo', v: d.kcal },
+                    { k: b7tr.col_calo || 'Calo', v: d.kcal },
                     { k: 'Protein', v: d.protein },
                     { k: 'Carb', v: d.carb },
                     { k: 'Fat', v: d.fat },
-                    { k: 'Nước', v: d.water },
+                    { k: b7tr.col_water || 'Nước', v: d.water },
                   ].map((row, i) => (
                     <div
                       key={row.k}
@@ -6143,7 +6154,7 @@ function AdvancedPanel({ s }) {
 
       {/* Timing schedule */}
       <RevealBlock delay={120}>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Lịch Nạp Dinh Dưỡng Trong Ngày Tập Đôi</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b7tr.timing_title || 'Lịch Nạp Dinh Dưỡng Trong Ngày Tập Đôi'}</p>
         <div className="rounded-2xl border border-border/30 bg-surface/10 overflow-hidden">
           {TIMING_SCHEDULE.map((t, i) => (
             <div
@@ -6155,8 +6166,8 @@ function AdvancedPanel({ s }) {
               </div>
               <div className="w-px self-stretch" style={{ background: `${t.color}40` }} />
               <div className="flex-1">
-                <p className="text-xs font-bold text-text mb-0.5">{t.label}</p>
-                <p className="text-[11px] text-muted leading-relaxed">{t.foods}</p>
+                <p className="text-xs font-bold text-text mb-0.5">{tPillars(`pillarB.b7.timing_schedule.${i}.label`, { defaultValue: t.label })}</p>
+                <p className="text-[11px] text-muted leading-relaxed">{tPillars(`pillarB.b7.timing_schedule.${i}.foods`, { defaultValue: t.foods })}</p>
               </div>
             </div>
           ))}
@@ -6857,13 +6868,11 @@ export default function PillarB() {
   }, [weight, height, age, sex, activityKey, goalKey]);
 
   const pillar = tPillars('pillarB', { returnObjects: true });
-  const tabsTr = Array.isArray(pillar?.tabs) ? pillar.tabs : [];
-  const mantrasTr = Array.isArray(pillar?.mantras) ? pillar.mantras : [];
   const translatedMantras = MANTRAS.map((m, i) => ({
     ...m,
-    text: mantrasTr[i]?.text || m.text,
-    sub:  mantrasTr[i]?.sub  || m.sub,
-    desc: mantrasTr[i]?.desc || m.desc,
+    text: tPillars(`pillarB.mantras.${i}.text`, { defaultValue: m.text }),
+    sub:  tPillars(`pillarB.mantras.${i}.sub`,  { defaultValue: m.sub }),
+    desc: tPillars(`pillarB.mantras.${i}.desc`, { defaultValue: m.desc }),
   }));
   const spiritTr = pillar?.spirit_card || {};
 
@@ -7117,7 +7126,7 @@ export default function PillarB() {
 
           {/* Key stats row */}
           {(() => {
-            const heroStats = Array.isArray(pillar?.hero_stats) ? pillar.hero_stats : [
+            const HERO_STATS_DEFAULT = [
               { n: '3', unit: 'bữa/ngày', label: 'Nhịp ăn tối ưu' },
               { n: '80/20', unit: '', label: 'Quy tắc bền vững' },
               { n: '21+', unit: 'ngày', label: 'Hình thành thói quen' },
@@ -7131,7 +7140,7 @@ export default function PillarB() {
             ];
             return (
           <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3">
-            {heroStats.map((s, i) => (
+            {HERO_STATS_DEFAULT.map((s, i) => (
               <div
                 key={i}
                 className="group/stat relative bg-bg/50 backdrop-blur-sm rounded-xl p-3.5 border border-lime-500/10 hover:border-lime-500/35 transition-all duration-300 animate-fade-in-up cursor-default"
@@ -7143,9 +7152,9 @@ export default function PillarB() {
                 </div>
 
                 <div className="font-black text-xl leading-none mb-0.5" style={{ color: LIME }}>
-                  {s.n}<span className="text-xs font-bold opacity-60 ml-0.5">{s.unit}</span>
+                  {s.n}<span className="text-xs font-bold opacity-60 ml-0.5">{tPillars(`pillarB.hero_stats.${i}.unit`, { defaultValue: s.unit })}</span>
                 </div>
-                <div className="text-[10px] text-muted">{s.label}</div>
+                <div className="text-[10px] text-muted">{tPillars(`pillarB.hero_stats.${i}.label`, { defaultValue: s.label })}</div>
               </div>
             ))}
           </div>
@@ -7260,7 +7269,7 @@ export default function PillarB() {
                       >
                         <span style={{ color: isActive ? tc : 'rgba(100,116,139,0.4)' }}>{t.icon}</span>
                         <span className="font-black">{t.short}</span>
-                        <span className="hidden sm:inline opacity-75">— {tabsTr[i]?.label || t.label}</span>
+                        <span className="hidden sm:inline opacity-75">— {tPillars(`pillarB.tabs.${i}.label`, { defaultValue: t.label })}</span>
                         {isActive && (
                           <span className="w-1.5 h-1.5 rounded-full animate-pulse ml-0.5" style={{ background: tc }} />
                         )}

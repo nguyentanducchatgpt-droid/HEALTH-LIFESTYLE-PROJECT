@@ -723,6 +723,57 @@
       ]
     },
     "b3": {
+      "col_calo": "Cals",
+      "goals": [
+        {
+          "label": "Fat Loss",
+          "kcal": "−300–500 kcal/day",
+          "carb": "Reduce refined carbs, no liquid calories",
+          "highlights": [
+            "Sustainable calorie deficit, no starvation",
+            "High protein to preserve muscle while losing fat",
+            "Prioritize veggies + protein, limit refined carbs",
+            "Cardio combined with strength training",
+            "Avoid sodas and sugar-sweetened fruit juices"
+          ]
+        },
+        {
+          "label": "Muscle Gain",
+          "kcal": "+200–300 kcal/day",
+          "carb": "High carbs around training",
+          "highlights": [
+            "Small surplus: slow and quality weight gain",
+            "Steady protein each meal (4–5 meals)",
+            "Carbs before and after training for energy",
+            "Sleep 7–9h — muscles grow during sleep",
+            "Progressive overload alongside good nutrition"
+          ]
+        },
+        {
+          "label": "Endurance",
+          "kcal": "Based on training volume",
+          "carb": "High carb on race/heavy days",
+          "highlights": [
+            "Load carbs before long events (>60 min)",
+            "Electrolytes: sodium + potassium + magnesium",
+            "Protein to recover muscles after long cardio",
+            "Don't try new foods before race day",
+            "Continuous hydration — water + coconut water"
+          ]
+        },
+        {
+          "label": "Maintenance",
+          "kcal": "Around TDEE ±100",
+          "carb": "Flexible, 80/20",
+          "highlights": [
+            "Eat around TDEE, no strict counting needed",
+            "Apply 80/20 — 80% healthy foods",
+            "No need to cut any food group",
+            "Focus on meal quality long-term",
+            "Weekly weigh-in to adjust portions if needed"
+          ]
+        }
+      ],
       "bar_goal": "Goal",
       "bar_adjust": "Adjustment",
       "bar_speed": "Rate",
@@ -815,6 +866,26 @@
       "total_label": "Daily total",
       "meals_label": "Meals",
       "adjust_note": "Adjust portions to your TDEE from B0",
+      "col_calo": "Cals",
+      "meals_count": "meals",
+      "meal_time_map": {
+        "Sáng": "Breakfast",
+        "Snack sáng": "Morning Snack",
+        "Trưa": "Lunch",
+        "Snack xế": "Afternoon Snack",
+        "Snack trước tập": "Pre-Workout",
+        "Snack sau tập": "Post-Workout",
+        "Tối": "Dinner"
+      },
+      "meal_days": [
+        { "day": "Day 1", "theme": "Start — Balanced", "analysis_headline": "Day 1 — establishing core habits", "analysis_score": "Easy to maintain" },
+        { "day": "Day 2", "theme": "Protein Focus", "analysis_headline": "Today: high protein — diverse sources", "analysis_score": "High nutrition" },
+        { "day": "Day 3", "theme": "Complex Carbs", "analysis_headline": "Day focused on high-quality complex carbs", "analysis_score": "Steady energy" },
+        { "day": "Day 4", "theme": "High Veg Day", "analysis_headline": "High veggie day — digestion rest", "analysis_score": "Light detox" },
+        { "day": "Day 5", "theme": "Training — High Carb", "analysis_headline": "Training day — max carbs + protein", "analysis_score": "Optimal training" },
+        { "day": "Day 6", "theme": "Recovery", "analysis_headline": "Light recovery — bone & joint care", "analysis_score": "Fast recovery" },
+        { "day": "Day 7", "theme": "Flexible", "analysis_headline": "Flexible day — consolidate the week", "analysis_score": "High flexibility" }
+      ],
       "goal_adaptations": {
         "fat-loss": {
           "label": "🔥 Fat Loss",
@@ -881,6 +952,71 @@
         {"rule": "Don't skip the next meal to 'compensate'"},
         {"rule": "Don't punish your body with extra exercise"},
         {"rule": "Don't write off the rest of the day over one meal"}
+      ],
+      "off_plan_reasons": [
+        "Compensation fasting creates hunger buildup → overeating and layered feelings of failure.",
+        "'Exercise to erase calories' is the wrong mindset — train because your body needs it, not as punishment.",
+        "One off-plan meal doesn't ruin results. Abandoning the whole day does."
+      ],
+      "habits": [
+        {
+          "title": "Eat Slowly — Feel Full at the Right Time",
+          "tips": [
+            "Eat over 15–20 min — the brain needs 15 min to receive fullness signals from the stomach.",
+            "Put utensils down between bites, don't hold them continuously.",
+            "Stop at 7/10 fullness — don't eat until stuffed."
+          ],
+          "note": "Research: eating slowly reduces total meal calories by 10–15% without extra effort."
+        },
+        {
+          "title": "Eat at Consistent Times",
+          "tips": [
+            "No need for exact timing, but aim for a rhythm: breakfast 7–9 am, lunch 11 am–1 pm, dinner 5–7 pm.",
+            "Optimal meal gap is 3–5 hours — enough to digest, not too hungry.",
+            "Don't skip meals then overeat — destabilizes blood sugar all day."
+          ],
+          "note": "Consistent meal timing keeps insulin stable and reduces afternoon snack cravings."
+        },
+        {
+          "title": "Smart Sweet Control",
+          "tips": [
+            "No total bans — banning creates suppressed cravings. Allow 1–2 times/week.",
+            "Eat sweets after a main meal rather than when hungry — insulin already elevated, lower impact.",
+            "Reduce frequency before reducing quantity — small steps are easier to maintain."
+          ],
+          "note": "Realistic goal: from 7×/week → 3–4× → 1–2×/week over 4–6 weeks."
+        }
+      ],
+      "checklist_items": [
+        "Protein in every meal",
+        "At least 2 servings of veg/day",
+        "Drink enough water (~2L)",
+        "No skipping main meals",
+        "Limit fried/sugary foods",
+        "Eat enough kcal, don't cut >500",
+        "Stay aware of hunger/fullness"
+      ],
+      "science_cards": [
+        {
+          "title": "Protein → Highest TEF",
+          "formula": "TEF protein = 25–30% of calories in",
+          "text": "Every 100g protein → body burns 25–30 extra kcal during digestion. Enough protein = burning calories continuously all day, without extra exercise."
+        },
+        {
+          "title": "Fiber → Natural Lasting Fullness",
+          "formula": "2 servings veg ≈ 6–10g fiber/day",
+          "text": "Goal: 25–35g fiber/day. Fiber slows sugar absorption → stable insulin → less afternoon snacking. Vegetables contain 3–5g fiber/100g."
+        },
+        {
+          "title": "Water → Brain & Muscle Performance",
+          "formula": "1–2% dehydration → 10–15% strength loss",
+          "text": "Urine pale yellow like lemon water = well hydrated. Dark yellow = dehydrated. Drink 1 glass on waking, 1 before each meal, 1 after training."
+        },
+        {
+          "title": "Micro-Adjustments — Not Overhauls",
+          "formula": "No progress in 2 weeks → ±100–150 kcal",
+          "text": "'Consistent beats perfect.' 70–80% of the plan for 6 months beats 100% for 7 days then quitting. Change only 1 variable at a time."
+        }
       ]
     },
     "b6": {
@@ -906,7 +1042,30 @@
         {"label": "Chicken egg (1 egg ≈ 6g protein)", "formula": "Count = Protein ÷ 6"},
         {"label": "Daily water intake", "formula": "ml = Body weight × 35"}
       ],
-      "shopping_groups": ["Protein", "Carbohydrates", "Vegetables", "Fruits", "Healthy Fats"]
+      "shopping_groups": ["Protein", "Carbohydrates", "Vegetables", "Fruits", "Healthy Fats"],
+      "days_training_label": "training days",
+      "days_rest_label": "rest days",
+      "day_short_prefix": "D",
+      "carb_cycling_insight": "Protein stays constant ({protein}g) — only carbs shift ±20% by day. Training day: {trainCarb}g carbs to fill muscle glycogen. Rest day: {restCarb}g carbs to encourage fat burning.",
+      "meal_time_map": {
+        "Sáng": "Breakfast",
+        "Phụ sáng": "AM Snack",
+        "Trưa": "Lunch",
+        "Trưa (ngoài)": "Lunch (Out)",
+        "Phụ chiều": "PM Snack",
+        "Tối": "Dinner",
+        "Trước tập": "Pre-Workout",
+        "Sau tập": "Post-Workout"
+      },
+      "seven_day_plan": [
+        { "day": "Day 1", "day_short": "D1", "theme": "Start — Full Meals", "note": "Full meals, adequate protein — no need to count calories today." },
+        { "day": "Day 2", "day_short": "D2", "theme": "Satiety AM", "note": "Oats in the morning keeps you full until lunch, limits afternoon sugar cravings." },
+        { "day": "Day 3", "day_short": "D3", "theme": "Eat Out Smart", "note": "Eating out: choose protein + veggies + moderate carbs. No sugary drinks." },
+        { "day": "Day 4", "day_short": "D4", "theme": "High Veg Day", "note": "High fiber day. If hungry at night, add protein — not sweets." },
+        { "day": "Day 5", "day_short": "D5", "theme": "Training Day", "note": "Training day: maximize carbs + protein. Eat within 30 min of finishing." },
+        { "day": "Day 6", "day_short": "D6", "theme": "Recovery", "note": "Recovery day: keep protein high, light carbs. Focus on hydration." },
+        { "day": "Day 7", "day_short": "D7", "theme": "Flexible", "note": "Flexible day — enjoy a meal out, stay mindful of protein and veggies." }
+      ]
     },
     "b7": {
       "bar_label": "Personalized Macros by Training Type",
@@ -930,8 +1089,29 @@
         {"label": "Heavy Training", "note": "Maximum carb loading"}
       ],
       "peri_title": "Peri-Workout Nutrition Protocol",
+      "peri_subtitle": "Calculated for {weight}kg — from evidence-based research",
       "peri_note": "Optimal timing: eat pre-workout 60–120 min early. If only 30 min, choose simple carbs (banana, rice cake). Post-workout: first 30 min is ideal — peak insulin sensitivity, mTOR strongly activated.",
-      "endurance_title": "Endurance Fueling Guide"
+      "endurance_title": "Endurance Fueling Guide",
+      "endurance_subtitle": "3 time zones — carb + water + electrolyte strategy",
+      "day_nutrition_title": "Nutrition by Training Day Type",
+      "timing_title": "Nutrition Schedule for Double Training Day",
+      "col_calo": "Cals",
+      "col_water": "Water",
+      "training_day_types": [
+        { "type": "Very Heavy", "desc": "Morning cycling/running interval — afternoon gym — evening technical swimming." },
+        { "type": "Moderate Heavy", "desc": "Morning lower/full body gym — afternoon swimming 45–60 min or light 40 min run." },
+        { "type": "Long Endurance", "desc": "Cycling 2–4 hours / Long run 75–120 min. Load 30–60g carb/hour during." },
+        { "type": "Recovery", "desc": "Walking / Zone 1–2 cycling / Easy swimming / Mobility. Don't cut protein." }
+      ],
+      "timing_schedule": [
+        { "label": "Pre-ride/run", "foods": "Banana + coffee/milk + water" },
+        { "label": "During session", "foods": "Water + electrolytes + carbs if >60 min" },
+        { "label": "Post-morning session", "foods": "Rice/oats/bread + eggs/milk/chicken" },
+        { "label": "Lunch", "foods": "Rice/potato + meat/fish/tofu + veggies + soup" },
+        { "label": "Pre-gym/swim", "foods": "Yogurt + fruit or bread + eggs" },
+        { "label": "Post-afternoon session", "foods": "Dinner with enough carbs + lean protein + veggies" },
+        { "label": "Pre-sleep", "foods": "Greek yogurt / milk / silken tofu if needed" }
+      ]
     },
     "start_level_title": "Where to Start?",
     "tiers": [

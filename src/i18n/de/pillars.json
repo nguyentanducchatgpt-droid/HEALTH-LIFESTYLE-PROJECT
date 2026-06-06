@@ -723,6 +723,57 @@
       ]
     },
     "b3": {
+      "col_calo": "Kkal",
+      "goals": [
+        {
+          "label": "Fettabbau",
+          "kcal": "−300–500 kcal/Tag",
+          "carb": "Raffinierte Carbs reduzieren, keine flüssigen Kalorien",
+          "highlights": [
+            "Nachhaltiges Kaloriendefizit, kein Hungern",
+            "Hohes Protein um Muskeln beim Abnehmen zu erhalten",
+            "Gemüse + Protein priorisieren, raffinierte Carbs begrenzen",
+            "Cardio kombiniert mit Krafttraining",
+            "Keine Limonaden und Fruchtsäfte mit Zucker"
+          ]
+        },
+        {
+          "label": "Muskelaufbau",
+          "kcal": "+200–300 kcal/Tag",
+          "carb": "Hohe Carbs rund ums Training",
+          "highlights": [
+            "Kleiner Überschuss: langsame und qualitative Gewichtszunahme",
+            "Gleichmäßiges Protein pro Mahlzeit (4–5 Mahlzeiten)",
+            "Carbs vor und nach dem Training für Energie",
+            "7–9h schlafen — Muskeln wachsen im Schlaf",
+            "Progressive Überlastung neben guter Ernährung"
+          ]
+        },
+        {
+          "label": "Ausdauer",
+          "kcal": "Je nach Trainingsvolumen",
+          "carb": "Hohe Carbs an Wettkampf-/Schwertagen",
+          "highlights": [
+            "Carbs vor langen Events laden (>60 Min)",
+            "Elektrolyte: Natrium + Kalium + Magnesium",
+            "Protein für Muskelregeneration nach langem Cardio",
+            "Vor dem Wettkampftag keine neuen Lebensmittel",
+            "Kontinuierliche Hydratation — Wasser + Kokoswasser"
+          ]
+        },
+        {
+          "label": "Erhaltung",
+          "kcal": "Um TDEE ±100",
+          "carb": "Flexibel, 80/20",
+          "highlights": [
+            "Um TDEE essen, keine strenge Zählung nötig",
+            "80/20 anwenden — 80% gesunde Lebensmittel",
+            "Keine Lebensmittelgruppe streichen nötig",
+            "Fokus auf langfristige Mahlzeitenqualität",
+            "Wöchentliches Wiegen zur Portionsanpassung"
+          ]
+        }
+      ],
       "bar_goal": "Ziel",
       "bar_adjust": "Anpassung",
       "bar_speed": "Tempo",
@@ -815,6 +866,26 @@
       "total_label": "Tagessumme",
       "meals_label": "Mahlzeiten",
       "adjust_note": "Portionsgrößen an Ihren TDEE aus B0 anpassen",
+      "col_calo": "Kkal",
+      "meals_count": "Mahlzeiten",
+      "meal_time_map": {
+        "Sáng": "Frühstück",
+        "Snack sáng": "Morgensnack",
+        "Trưa": "Mittagessen",
+        "Snack xế": "Nachmittagssnack",
+        "Snack trước tập": "Vor Training",
+        "Snack sau tập": "Nach Training",
+        "Tối": "Abendessen"
+      },
+      "meal_days": [
+        { "day": "Tag 1", "theme": "Start — Ausgewogen", "analysis_headline": "Tag 1 — Grundgewohnheiten aufbauen", "analysis_score": "Einfach umzusetzen" },
+        { "day": "Tag 2", "theme": "Protein-Fokus", "analysis_headline": "Heute: hohes Protein — diverse Quellen", "analysis_score": "Hohe Ernährung" },
+        { "day": "Tag 3", "theme": "Komplexe Carbs", "analysis_headline": "Tag mit hochwertigen komplexen Carbs", "analysis_score": "Stabile Energie" },
+        { "day": "Tag 4", "theme": "Gemüse-Tag", "analysis_headline": "Viel Gemüse — Verdauungspause", "analysis_score": "Leichte Entgiftung" },
+        { "day": "Tag 5", "theme": "Training — Carb-hoch", "analysis_headline": "Trainingstag — max Carbs + Protein", "analysis_score": "Optimales Training" },
+        { "day": "Tag 6", "theme": "Erholung", "analysis_headline": "Leichte Erholung — Knochen & Gelenke", "analysis_score": "Schnelle Erholung" },
+        { "day": "Tag 7", "theme": "Flexibel", "analysis_headline": "Flexibler Tag — Woche konsolidieren", "analysis_score": "Hohe Flexibilität" }
+      ],
       "goal_adaptations": {
         "fat-loss": {
           "label": "🔥 Fettabbau",
@@ -894,6 +965,71 @@
         {"rule": "Nächste Mahlzeit nicht auslassen um zu 'kompensieren'"},
         {"rule": "Körper nicht mit Extra-Training bestrafen"},
         {"rule": "Den Rest des Tages wegen einer Mahlzeit nicht abschreiben"}
+      ],
+      "off_plan_reasons": [
+        "Hungerkompensation erzeugt aufgestauten Hunger → übermäßiges Essen und geschichtetes Versagensgefühl.",
+        "'Sport um Kalorien zu löschen' ist falsch — trainieren weil der Körper es braucht, nicht als Bestrafung.",
+        "Eine ungeplante Mahlzeit ruiniert keine Ergebnisse. Den ganzen Tag aufzugeben schon."
+      ],
+      "habits": [
+        {
+          "title": "Langsam Essen — Zur Richtigen Zeit Satt",
+          "tips": [
+            "Über 15–20 Min essen — das Gehirn braucht 15 Min um Sättigungssignale vom Magen zu empfangen.",
+            "Besteck zwischen den Bissen ablegen, nicht ständig halten.",
+            "Bei 7/10 Sättigung aufhören — nicht bis zur Überfüllung essen."
+          ],
+          "note": "Forschung: langsames Essen reduziert die Gesamtkalorien pro Mahlzeit um 10–15% ohne extra Aufwand."
+        },
+        {
+          "title": "Zu Regelmäßigen Zeiten Essen",
+          "tips": [
+            "Keine exakten Zeiten nötig, aber ein Rhythmus hilft: Frühstück 7–9h, Mittagessen 11–13h, Abendessen 17–19h.",
+            "Optimaler Mahlzeitenabstand 3–5 Stunden — genug Zeit zu verdauen, nicht zu hungrig.",
+            "Keine Mahlzeiten auslassen dann überessen — destabilisiert Blutzucker den ganzen Tag."
+          ],
+          "note": "Regelmäßiger Mahlzeitenrhythmus hält Insulin stabil und reduziert Nachmittags-Snack-Verlangen."
+        },
+        {
+          "title": "Smarte Süßigkeitenkontrolle",
+          "tips": [
+            "Keine totalen Verbote — Verbote erzeugen unterdrücktes Verlangen. 1–2 Mal/Woche erlauben.",
+            "Süßes nach der Hauptmahlzeit statt auf nüchternen Magen — Insulin bereits erhöht, geringere Auswirkung.",
+            "Häufigkeit vor Menge reduzieren — kleine Schritte sind einfacher beizubehalten."
+          ],
+          "note": "Realistisches Ziel: von 7×/Woche → 3–4× → 1–2×/Woche über 4–6 Wochen."
+        }
+      ],
+      "checklist_items": [
+        "Protein in jeder Mahlzeit",
+        "Mindestens 2 Portionen Gemüse/Tag",
+        "Genug Wasser trinken (~2L)",
+        "Keine Hauptmahlzeiten auslassen",
+        "Gebratenes/Zuckerhaltiges begrenzen",
+        "Genug kcal essen, nicht >500 kürzen",
+        "Hunger/Sättigungsgefühl wahrnehmen"
+      ],
+      "science_cards": [
+        {
+          "title": "Protein → Höchster TEF",
+          "formula": "TEF Protein = 25–30% der aufgenommenen Kalorien",
+          "text": "Pro 100g Protein → Körper verbrennt 25–30 extra kcal bei der Verdauung. Genug Protein = Kalorien verbrennen den ganzen Tag, ohne extra Training."
+        },
+        {
+          "title": "Ballaststoffe → Natürliche Langzeitsättigung",
+          "formula": "2 Portionen Gemüse ≈ 6–10g Ballaststoffe/Tag",
+          "text": "Ziel: 25–35g Ballaststoffe/Tag. Ballaststoffe verlangsamen die Zuckeraufnahme → stabiles Insulin → weniger nachmittägliche Heißhungerattacken."
+        },
+        {
+          "title": "Wasser → Gehirn- & Muskelleistung",
+          "formula": "1–2% Dehydrierung → 10–15% Kraftverlust",
+          "text": "Hellgelber Urin = gut hydriert. Dunkelgelb = dehydriert. 1 Glas beim Aufwachen, 1 vor jeder Mahlzeit, 1 nach dem Training."
+        },
+        {
+          "title": "Mikro-Anpassungen — Keine Überholungen",
+          "formula": "Kein Fortschritt in 2 Wochen → ±100–150 kcal",
+          "text": "'Konsequenz schlägt Perfektion.' 70–80% des Plans für 6 Monate schlägt 100% für 7 Tage dann aufhören. Nur 1 Variable gleichzeitig ändern."
+        }
       ]
     },
     "b6": {
@@ -925,7 +1061,30 @@
         "🥑 Gesunde Fette",
         "🧂 Gewürze & Sonstiges"
       ],
-      "meal_prep_steps_title": "Wochenend-Meal-Prep — 6 Schritte"
+      "meal_prep_steps_title": "Wochenend-Meal-Prep — 6 Schritte",
+      "days_training_label": "Trainingstage",
+      "days_rest_label": "Ruhetage",
+      "day_short_prefix": "T",
+      "carb_cycling_insight": "Protein bleibt konstant ({protein}g) — nur Carbs werden ±20% täglich angepasst. Trainingstag: {trainCarb}g Carbs um Muskelglykogen aufzufüllen. Ruhetag: {restCarb}g Carbs um Fettverbrennung zu fördern.",
+      "meal_time_map": {
+        "Sáng": "Frühstück",
+        "Phụ sáng": "Morgensnack",
+        "Trưa": "Mittagessen",
+        "Trưa (ngoài)": "Mittagessen (auswärts)",
+        "Phụ chiều": "Nachmittagssnack",
+        "Tối": "Abendessen",
+        "Trước tập": "Vor Training",
+        "Sau tập": "Nach Training"
+      },
+      "seven_day_plan": [
+        { "day": "Tag 1", "day_short": "T1", "theme": "Start — Vollständige Mahlzeiten", "note": "Vollständige Mahlzeiten, ausreichend Protein — heute keine Kalorien zählen." },
+        { "day": "Tag 2", "day_short": "T2", "theme": "Sättigung AM", "note": "Haferflocken morgens hält Sie bis zum Mittagessen satt und begrenzt Nachmittagsheißhunger." },
+        { "day": "Tag 3", "day_short": "T3", "theme": "Auswärts Essen", "note": "Auswärts: Protein + Gemüse + moderate Carbs wählen. Keine zuckerhaltigen Getränke." },
+        { "day": "Tag 4", "day_short": "T4", "theme": "Viel Gemüse", "note": "Ballaststofftag. Bei Hunger abends Protein hinzufügen — kein Gebäck." },
+        { "day": "Tag 5", "day_short": "T5", "theme": "Trainingstag", "note": "Trainingstag: maximale Carbs + Protein. Innerhalb von 30 Min nach dem Training essen." },
+        { "day": "Tag 6", "day_short": "T6", "theme": "Erholung", "note": "Erholungstag: Protein hoch halten, leichte Carbs. Fokus auf Hydratation." },
+        { "day": "Tag 7", "day_short": "T7", "theme": "Flexibel", "note": "Flexibler Tag — auswärts essen erlaubt, auf Protein und Gemüse achten." }
+      ]
     },
     "b7": {
       "bar_label": "Personalisierte Makros nach Trainingstyp",
@@ -949,8 +1108,29 @@
         {"label": "Wettkampftag", "note": "TDEE + 300 kcal"}
       ],
       "peri_title": "Ernährungsprotokoll rund ums Training",
+      "peri_subtitle": "Berechnet für {weight}kg — aus evidenzbasierter Forschung",
       "peri_note": "Zeitpunkt ist wichtig — Nährstoffe strategisch vor und nach dem Training einsetzen.",
-      "endurance_title": "Ausdauertankstellen-Leitfaden"
+      "endurance_title": "Ausdauertankstellen-Leitfaden",
+      "endurance_subtitle": "3 Zeitzonen — Carbs + Wasser + Elektrolyt-Strategie",
+      "day_nutrition_title": "Ernährung nach Trainingstagtyp",
+      "timing_title": "Ernährungsplan für Doppeltrainingstag",
+      "col_calo": "Kkal",
+      "col_water": "Wasser",
+      "training_day_types": [
+        { "type": "Sehr schwer", "desc": "Morgens Radfahren/Intervallaufen — nachmittags Gym — abends technisches Schwimmen." },
+        { "type": "Moderat schwer", "desc": "Morgens Unterkörper/Ganzkörper-Gym — nachmittags Schwimmen 45–60 Min oder leichter 40 Min Lauf." },
+        { "type": "Lange Ausdauer", "desc": "Radfahren 2–4 Stunden / Langer Lauf 75–120 Min. 30–60g Carbs/Stunde laden." },
+        { "type": "Erholung", "desc": "Gehen / Zone 1–2 Radfahren / Lockeres Schwimmen / Mobility. Protein nicht kürzen." }
+      ],
+      "timing_schedule": [
+        { "label": "Vor Radfahren/Laufen", "foods": "Banane + Kaffee/Milch + Wasser" },
+        { "label": "Während der Einheit", "foods": "Wasser + Elektrolyte + Carbs wenn >60 Min" },
+        { "label": "Nach Morgeneinheit", "foods": "Reis/Haferflocken/Brot + Eier/Milch/Hähnchen" },
+        { "label": "Mittagessen", "foods": "Reis/Kartoffel + Fleisch/Fisch/Tofu + Gemüse + Suppe" },
+        { "label": "Vor Gym/Schwimmen", "foods": "Joghurt + Obst oder Brot + Eier" },
+        { "label": "Nach Nachmittagseinheit", "foods": "Abendessen mit Carbs + magerem Protein + Gemüse" },
+        { "label": "Vor dem Schlaf", "foods": "Griechischer Joghurt / Milch / Seidentofu bei Bedarf" }
+      ]
     },
     "start_level_title": "Wo anfangen?",
     "tiers": [

@@ -1045,6 +1045,12 @@
           "formula": "Không tiến bộ 2 tuần → ±100–150 kcal",
           "text": "\"Đều quan trọng hơn hoàn hảo.\" 70–80% kế hoạch trong 6 tháng luôn tốt hơn 100% trong 7 ngày rồi bỏ. Chỉ thay đổi 1 biến tại một thời điểm."
         }
+      ],
+      "daily_formulas": [
+        { "label": "Protein mục tiêu", "unit": "g/ngày", "example": "VD: 70kg × 1.8 = 126g/ngày" },
+        { "label": "Nước uống", "unit": "ml/ngày", "example": "VD: 70kg × 35 = 2,450ml = ~10 ly" },
+        { "label": "Kcal tối thiểu", "unit": "kcal/ngày", "example": "Không nên ăn dưới TDEE − 500" },
+        { "label": "Số bữa protein", "unit": "bữa/ngày", "example": "Phân đều tốt hơn dồn 1–2 bữa" }
       ]
     },
     "b6": {

@@ -2912,9 +2912,9 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/50 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end p-5">
-          <p className="text-[9px] font-bold uppercase tracking-[0.3em] mb-1" style={{ color: '#f97316' }}>{b3tr.philosophy_label || 'Triết lý dự án'}</p>
+          <p className="text-[9px] font-bold uppercase tracking-[0.3em] mb-1" style={{ color: '#f97316' }}>{tPillars('pillarB.b3.philosophy_label', { defaultValue: 'Triết lý dự án' })}</p>
           <p className="text-sm font-bold text-white leading-snug max-w-sm italic">
-            "Ăn tốt hơn hôm qua một chút — đủ dễ để ngày mai còn làm tiếp."
+            "{tPillars('pillarB.b3.philosophy_motto', { defaultValue: 'Ăn tốt hơn hôm qua một chút — đủ dễ để ngày mai còn làm tiếp.' })}"
           </p>
         </div>
       </div>
@@ -3545,9 +3545,9 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/40 to-transparent" />
         <div className="absolute inset-0 p-5 flex flex-col justify-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lime-400/80 mb-1">{b5tr.core_philosophy || 'Triết lý cốt lõi'}</p>
-          <p className="text-sm font-black text-text leading-snug max-w-xs">"Ăn tốt hơn hôm qua một chút,<br/>đủ dễ để ngày mai còn làm tiếp."</p>
-          <p className="text-[10px] text-muted/70 mt-1.5">{b5tr.consistency_note || '70% nhất quán trong 6 tháng > 100% trong 7 ngày'}</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lime-400/80 mb-1">{tPillars('pillarB.b5.core_philosophy', { defaultValue: 'Triết lý cốt lõi' })}</p>
+          <p className="text-sm font-black text-text leading-snug max-w-xs">"{tPillars('pillarB.b5.philosophy_motto', { defaultValue: 'Ăn tốt hơn hôm qua một chút, đủ dễ để ngày mai còn làm tiếp.' })}"</p>
+          <p className="text-[10px] text-muted/70 mt-1.5">{tPillars('pillarB.b5.consistency_note', { defaultValue: '70% nhất quán trong 6 tháng > 100% trong 7 ngày' })}</p>
         </div>
       </div>
 
@@ -3574,13 +3574,13 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
 
       {/* ── Quick formula reference ── */}
       <div>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">{b5tr.formulas_title || 'Công Thức Tham Khảo Nhanh'}</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">{tPillars('pillarB.b5.formulas_title', { defaultValue: 'Công Thức Tham Khảo Nhanh' })}</p>
         <div className="grid grid-cols-2 gap-2">
           {DAILY_FORMULAS.map((f, i) => (
             <div key={i} className="rounded-xl border p-3" style={{ borderColor: `${f.color}22`, background: `${f.color}05` }}>
-              <p className="text-[9px] text-muted mb-1">{f.label}</p>
+              <p className="text-[9px] text-muted mb-1">{tPillars(`pillarB.b5.daily_formulas.${i}.label`, { defaultValue: f.label })}</p>
               <p className="text-[10px] font-black font-mono mb-1" style={{ color: f.color }}>{f.formula}</p>
-              <p className="text-[8px] text-muted/60 leading-snug">{f.example}</p>
+              <p className="text-[8px] text-muted/60 leading-snug">{tPillars(`pillarB.b5.daily_formulas.${i}.example`, { defaultValue: f.example })}</p>
             </div>
           ))}
         </div>

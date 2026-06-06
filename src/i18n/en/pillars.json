@@ -799,6 +799,7 @@
       "macro_fat_ex": "olive oil, nuts, fatty fish",
       "milestone_title": "Progress by weight milestone",
       "philosophy_label": "Project philosophy",
+      "philosophy_motto": "Eat a little better than yesterday — easy enough to do again tomorrow.",
       "consistency_title": "Moderate consistency wins",
       "consistency_body": "People who maintain 70–80% of the plan for 6 months generally have better results than those who do 100% for 7 days then quit.",
       "rule_8020_title": "Sustainable flexibility rule",
@@ -1062,6 +1063,7 @@
       "done_msg": "Done! Small daily habits build big results.",
       "core_philosophy": "Core philosophy",
       "consistency_note": "70% consistent for 6 months > 100% for 7 days",
+      "philosophy_motto": "Eat a little better than yesterday — easy enough to do again tomorrow.",
       "tracking_sections": [
         {"label": "Daily Checklist", "badge": "7 targets", "desc": "Track 7 nutrition habits daily to build a solid foundation"},
         {"label": "Weekly Tracking", "badge": "6 metrics", "desc": "Measure 6 key metrics weekly to track real progress"},
@@ -1136,6 +1138,12 @@
           "formula": "No progress in 2 weeks → ±100–150 kcal",
           "text": "'Consistent beats perfect.' 70–80% of the plan for 6 months beats 100% for 7 days then quitting. Change only 1 variable at a time."
         }
+      ],
+      "daily_formulas": [
+        { "label": "Protein target", "unit": "g/day", "example": "e.g. 70kg × 1.8 = 126g/day" },
+        { "label": "Water intake", "unit": "ml/day", "example": "e.g. 70kg × 35 = 2,450ml = ~10 glasses" },
+        { "label": "Min. Kcal", "unit": "kcal/day", "example": "Don't eat below TDEE − 500" },
+        { "label": "Protein meals", "unit": "meals/day", "example": "Spread evenly beats 1–2 large portions" }
       ]
     },
     "b6": {

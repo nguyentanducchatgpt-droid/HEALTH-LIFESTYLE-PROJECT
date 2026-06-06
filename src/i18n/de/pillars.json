@@ -799,6 +799,7 @@
       "macro_fat_ex": "Olivenöl, Nüsse, fetthaltiger Fisch",
       "milestone_title": "Fortschritt nach Gewichtsmeilensteinen",
       "philosophy_label": "Projekt-Philosophie",
+      "philosophy_motto": "Iss ein bisschen besser als gestern — leicht genug, um es morgen wieder zu tun.",
       "consistency_title": "Moderate Konsequenz gewinnt",
       "consistency_body": "Menschen, die 70–80% des Plans über 6 Monate einhalten, erzielen generell bessere Ergebnisse als jene, die 100% für 7 Tage machen und dann aufgeben.",
       "rule_8020_title": "Nachhaltige Flexibilitätsregel",
@@ -1078,6 +1079,7 @@
       "done_msg": "Alle Aufgaben erledigt!",
       "core_philosophy": "Kernphilosophie",
       "consistency_note": "70% Konsistenz über 12 Wochen schlägt 100% Perfektion über 3 Wochen.",
+      "philosophy_motto": "Iss ein bisschen besser als gestern — leicht genug, um es morgen wieder zu tun.",
       "science_title": "Die Wissenschaft dahinter",
       "formulas_title": "Schnell-Referenzformeln",
       "off_plan_rules": [
@@ -1149,6 +1151,12 @@
           "formula": "Kein Fortschritt in 2 Wochen → ±100–150 kcal",
           "text": "'Konsequenz schlägt Perfektion.' 70–80% des Plans für 6 Monate schlägt 100% für 7 Tage dann aufhören. Nur 1 Variable gleichzeitig ändern."
         }
+      ],
+      "daily_formulas": [
+        { "label": "Protein-Ziel", "unit": "g/Tag", "example": "z.B. 70kg × 1,8 = 126g/Tag" },
+        { "label": "Wasserbedarf", "unit": "ml/Tag", "example": "z.B. 70kg × 35 = 2.450ml = ~10 Gläser" },
+        { "label": "Min. Kcal", "unit": "kcal/Tag", "example": "Nicht unter TDEE − 500 essen" },
+        { "label": "Protein-Mahlzeiten", "unit": "Mahlzeiten/Tag", "example": "Gleichmäßig verteilen statt 1–2 große Portionen" }
       ]
     },
     "b6": {

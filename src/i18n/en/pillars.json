@@ -1301,6 +1301,30 @@
         { "label": "Pre-gym/swim", "foods": "Yogurt + fruit or bread + eggs" },
         { "label": "Post-afternoon session", "foods": "Dinner with enough carbs + lean protein + veggies" },
         { "label": "Pre-sleep", "foods": "Greek yogurt / milk / silken tofu if needed" }
+      ],
+      "pre_time": "60–120 min before workout",
+      "post_time": "Within 1–2 hours after workout",
+      "food_suggestions_label": "Food suggestions",
+      "fat_restriction": "Restrict (heavy on stomach)",
+      "water_label": "Water",
+      "pre_foods": ["Banana + yogurt", "Bread + eggs", "Oatmeal + milk", "Small rice + chicken"],
+      "post_foods": ["Rice + chicken/fish/beef", "Eggs + bread", "Milk + banana", "Whey + potato"],
+      "endurance_carb_label": "Carb/hour",
+      "endurance_water_label": "Water/hour",
+      "endurance_electrolyte_label": "Electrolytes",
+      "endurance_zones": [
+        {"duration": "< 60 min", "carb": "Not needed", "electrolyte": "Not needed", "note": "Water is enough. Pre-workout carbs are most important."},
+        {"duration": "60–120 min", "carb": "30–60g/hour", "electrolyte": "Recommended", "note": "Start fueling from min 30–45, don't wait until hungry. Example {{weight}}kg: {{low}}–{{high}}g carb/h."},
+        {"duration": "> 120 min", "carb": "60–90g/hour", "electrolyte": "Required", "note": "Gel + coconut water + electrolytes. Avoid cramps from sodium/potassium loss."}
+      ],
+      "endurance_rule": "💡 Rule 30–45: Start fueling carbs from min 30–45 of endurance session, don't wait until you feel tired — by then it's too late. Every 15–20 min refuel: energy gel, coconut water, or banana.",
+      "athlete_principles_title": "5 Athlete Nutrition Principles",
+      "athlete_principles": [
+        {"title": "Periodized Nutrition", "desc": "Eat more on heavy training days, moderate on light days, still enough protein & micronutrients on rest days."},
+        {"title": "Never Cut Protein", "desc": "Recovery days still need 1.8–2.2g/kg protein — muscles repair and build during rest."},
+        {"title": "Carbs Are Fuel", "desc": "Fear carbs → gasping during training, pace drops, gym gains stall, craving sweets at night."},
+        {"title": "Electrolytes Matter", "desc": "Heavy sweating → replenish sodium + potassium + magnesium, not just plain water."},
+        {"title": "Sleep = Recovery Medicine", "desc": "7–9h per night. Lack of sleep slows muscle recovery, raises cortisol, reduces training performance."}
       ]
     },
     "start_level_title": "Where to Start?",

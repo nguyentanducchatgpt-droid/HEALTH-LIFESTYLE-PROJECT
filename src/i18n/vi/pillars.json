@@ -1153,6 +1153,30 @@
         { "label": "Trước gym/bơi", "foods": "Sữa chua + trái cây hoặc bánh mì + trứng" },
         { "label": "Sau tập chiều", "foods": "Bữa tối đủ carb + protein nạc + rau" },
         { "label": "Trước ngủ", "foods": "Sữa chua Hy Lạp / sữa / đậu hũ non nếu cần" }
+      ],
+      "pre_time": "60–120 phút trước tập",
+      "post_time": "Trong 1–2 giờ sau tập",
+      "food_suggestions_label": "Gợi ý thực phẩm",
+      "fat_restriction": "Hạn chế (nặng bụng)",
+      "water_label": "Nước",
+      "pre_foods": ["Chuối + sữa chua", "Bánh mì + trứng", "Yến mạch + sữa", "Cơm nhỏ + gà"],
+      "post_foods": ["Cơm + gà/cá/bò", "Trứng + bánh mì", "Sữa + chuối", "Whey + khoai"],
+      "endurance_carb_label": "Carb/giờ",
+      "endurance_water_label": "Nước/giờ",
+      "endurance_electrolyte_label": "Điện giải",
+      "endurance_zones": [
+        {"duration": "< 60 phút", "carb": "Không cần", "electrolyte": "Không cần", "note": "Nước là đủ. Bữa ăn trước đủ carb là quan trọng nhất."},
+        {"duration": "60–120 phút", "carb": "30–60g/giờ", "electrolyte": "Nên dùng", "note": "Bắt đầu nạp từ phút 30–45, không chờ đói. Ví dụ {{weight}}kg: {{low}}–{{high}}g carb/h."},
+        {"duration": "> 120 phút", "carb": "60–90g/giờ", "electrolyte": "Bắt buộc", "note": "Gel + nước dừa + điện giải. Tránh chuột rút do mất natri/kali."}
+      ],
+      "endurance_rule": "💡 Quy tắc 30–45: Bắt đầu nạp carb từ phút thứ 30–45 của buổi tập sức bền, không chờ đến khi cảm thấy mệt — lúc đó đã trễ. Mỗi 15–20 phút nạp thêm 1 lần: gel năng lượng, nước dừa, hoặc chuối.",
+      "athlete_principles_title": "5 Nguyên Tắc Vận Động Viên",
+      "athlete_principles": [
+        {"title": "Periodized Nutrition", "desc": "Ngày tập nặng ăn nhiều hơn, ngày nhẹ ăn vừa, ngày nghỉ vẫn đủ protein & vi chất."},
+        {"title": "Protein không cắt", "desc": "Ngày recovery vẫn phải đủ protein 1.8–2.2g/kg — cơ phục hồi và xây dựng khi nghỉ."},
+        {"title": "Carb là nhiên liệu", "desc": "Sợ carb → tập hụt hơi, pace giảm, gym không tăng lực, dễ thèm ngọt tối."},
+        {"title": "Điện giải quan trọng", "desc": "Mồ hôi nhiều → bổ sung natri + kali + magie, không chỉ uống nước lọc."},
+        {"title": "Ngủ = thuốc phục hồi", "desc": "7–9h mỗi đêm. Thiếu ngủ cản phục hồi cơ, tăng cortisol, giảm hiệu suất tập."}
       ]
     },
     "start_level_title": "Bắt đầu từ cấp độ nào?",

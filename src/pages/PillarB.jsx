@@ -5866,11 +5866,16 @@ function MacroCycleBarChart({ s }) {
 }
 
 function PrePostWorkoutProtocol({ s }) {
+  const { t: tPillars } = useTranslation('pillars');
   const preCarb = [Math.round(s.weight * 0.5), Math.round(s.weight * 1.0)];
   const preProtein = [Math.round(s.weight * 0.2), Math.round(s.weight * 0.3)];
   const postProtein = [Math.round(s.weight * 0.25), Math.round(s.weight * 0.4)];
   const postCarb = [Math.round(s.weight * 0.5), Math.round(s.weight * 1.0)];
   const postWater = [Math.round(s.weight * 0.3 * 10) / 10, Math.round(s.weight * 0.5 * 10) / 10];
+  const preFoodsVI = ['Chuối + sữa chua', 'Bánh mì + trứng', 'Yến mạch + sữa', 'Cơm nhỏ + gà'];
+  const postFoodsVI = ['Cơm + gà/cá/bò', 'Trứng + bánh mì', 'Sữa + chuối', 'Whey + khoai'];
+  const foodSugLabel = tPillars('pillarB.b7.food_suggestions_label', { defaultValue: 'Gợi ý thực phẩm' });
+  const waterLabel = tPillars('pillarB.b7.water_label', { defaultValue: 'Nước' });
 
   return (
     <div className="grid sm:grid-cols-2 gap-4">
@@ -5879,19 +5884,21 @@ function PrePostWorkoutProtocol({ s }) {
           <span className="text-2xl">⚡</span>
           <div>
             <p className="text-sm font-bold text-orange-300">Pre-Workout</p>
-            <p className="text-[10px] text-muted">60–120 phút trước tập</p>
+            <p className="text-[10px] text-muted">{tPillars('pillarB.b7.pre_time', { defaultValue: '60–120 phút trước tập' })}</p>
           </div>
         </div>
         <div className="space-y-2 mb-4">
           <FormulaRow label="Carb" formula={`${s.weight}kg × 0.5–1g/kg`} result={`${preCarb[0]}–${preCarb[1]}g`} color="#f97316" />
           <FormulaRow label="Protein" formula={`${s.weight}kg × 0.2–0.3g/kg`} result={`${preProtein[0]}–${preProtein[1]}g`} color="#84cc16" />
-          <FormulaRow label="Fat" formula="Hạn chế (nặng bụng)" result="< 10g" color="#eab308" />
+          <FormulaRow label="Fat" formula={tPillars('pillarB.b7.fat_restriction', { defaultValue: 'Hạn chế (nặng bụng)' })} result="< 10g" color="#eab308" />
         </div>
         <div className="border-t border-orange-500/15 pt-3">
-          <p className="text-[9px] font-bold text-orange-400 uppercase mb-2">Gợi ý thực phẩm</p>
+          <p className="text-[9px] font-bold text-orange-400 uppercase mb-2">{foodSugLabel}</p>
           <div className="flex flex-wrap gap-1">
-            {['Chuối + sữa chua', 'Bánh mì + trứng', 'Yến mạch + sữa', 'Cơm nhỏ + gà'].map(f => (
-              <span key={f} className="text-[10px] text-orange-300/80 bg-orange-500/10 border border-orange-500/20 px-1.5 py-0.5 rounded-lg">{f}</span>
+            {preFoodsVI.map((f, fi) => (
+              <span key={fi} className="text-[10px] text-orange-300/80 bg-orange-500/10 border border-orange-500/20 px-1.5 py-0.5 rounded-lg">
+                {tPillars(`pillarB.b7.pre_foods.${fi}`, { defaultValue: f })}
+              </span>
             ))}
           </div>
         </div>
@@ -5902,19 +5909,21 @@ function PrePostWorkoutProtocol({ s }) {
           <span className="text-2xl">💪</span>
           <div>
             <p className="text-sm font-bold text-green-300">Post-Workout</p>
-            <p className="text-[10px] text-muted">Trong 1–2 giờ sau tập</p>
+            <p className="text-[10px] text-muted">{tPillars('pillarB.b7.post_time', { defaultValue: 'Trong 1–2 giờ sau tập' })}</p>
           </div>
         </div>
         <div className="space-y-2 mb-4">
           <FormulaRow label="Protein" formula={`${s.weight}kg × 0.25–0.4g/kg`} result={`${postProtein[0]}–${postProtein[1]}g`} color="#84cc16" />
           <FormulaRow label="Carb" formula={`${s.weight}kg × 0.5–1g/kg`} result={`${postCarb[0]}–${postCarb[1]}g`} color="#f97316" />
-          <FormulaRow label="Nước" formula={`${s.weight}kg × 0.3–0.5L`} result={`${postWater[0]}–${postWater[1]}L bù`} color="#06b6d4" />
+          <FormulaRow label={waterLabel} formula={`${s.weight}kg × 0.3–0.5L`} result={`${postWater[0]}–${postWater[1]}L`} color="#06b6d4" />
         </div>
         <div className="border-t border-green-500/15 pt-3">
-          <p className="text-[9px] font-bold text-green-400 uppercase mb-2">Gợi ý thực phẩm</p>
+          <p className="text-[9px] font-bold text-green-400 uppercase mb-2">{foodSugLabel}</p>
           <div className="flex flex-wrap gap-1">
-            {['Cơm + gà/cá/bò', 'Trứng + bánh mì', 'Sữa + chuối', 'Whey + khoai'].map(f => (
-              <span key={f} className="text-[10px] text-green-300/80 bg-green-500/10 border border-green-500/20 px-1.5 py-0.5 rounded-lg">{f}</span>
+            {postFoodsVI.map((f, fi) => (
+              <span key={fi} className="text-[10px] text-green-300/80 bg-green-500/10 border border-green-500/20 px-1.5 py-0.5 rounded-lg">
+                {tPillars(`pillarB.b7.post_foods.${fi}`, { defaultValue: f })}
+              </span>
             ))}
           </div>
         </div>
@@ -5924,27 +5933,40 @@ function PrePostWorkoutProtocol({ s }) {
 }
 
 function EnduranceFuelingGuide({ s }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const carbLabel = tPillars('pillarB.b7.endurance_carb_label', { defaultValue: 'Carb/giờ' });
+  const waterLabel = tPillars('pillarB.b7.endurance_water_label', { defaultValue: 'Nước/giờ' });
+  const electLabel = tPillars('pillarB.b7.endurance_electrolyte_label', { defaultValue: 'Điện giải' });
   const zones = [
     {
-      icon: '🏃', duration: '< 60 phút',
-      carb: 'Không cần', carbExample: null,
-      water: '400–600ml', electrolyte: 'Không cần',
+      icon: '🏃',
+      duration: tPillars('pillarB.b7.endurance_zones.0.duration', { defaultValue: '< 60 phút' }),
+      carb: tPillars('pillarB.b7.endurance_zones.0.carb', { defaultValue: 'Không cần' }),
+      carbExample: null,
+      water: '400–600ml',
+      electrolyte: tPillars('pillarB.b7.endurance_zones.0.electrolyte', { defaultValue: 'Không cần' }),
       color: '#22c55e',
-      note: 'Nước là đủ. Bữa ăn trước đủ carb là quan trọng nhất.',
+      note: tPillars('pillarB.b7.endurance_zones.0.note', { defaultValue: 'Nước là đủ. Bữa ăn trước đủ carb là quan trọng nhất.' }),
     },
     {
-      icon: '🚴', duration: '60–120 phút',
-      carb: '30–60g/giờ', carbExample: `${Math.round(s.weight * 0.4)}–${Math.round(s.weight * 0.8)}g/h`,
-      water: '400–800ml/giờ', electrolyte: 'Nên dùng',
+      icon: '🚴',
+      duration: tPillars('pillarB.b7.endurance_zones.1.duration', { defaultValue: '60–120 phút' }),
+      carb: tPillars('pillarB.b7.endurance_zones.1.carb', { defaultValue: '30–60g/giờ' }),
+      carbExample: `${Math.round(s.weight * 0.4)}–${Math.round(s.weight * 0.8)}g/h`,
+      water: '400–800ml',
+      electrolyte: tPillars('pillarB.b7.endurance_zones.1.electrolyte', { defaultValue: 'Nên dùng' }),
       color: '#f59e0b',
-      note: `Bắt đầu nạp từ phút 30–45, không chờ đói. Ví dụ ${s.weight}kg: ${Math.round(s.weight * 0.4)}–${Math.round(s.weight * 0.8)}g carb/h.`,
+      note: tPillars('pillarB.b7.endurance_zones.1.note', { weight: s.weight, low: Math.round(s.weight * 0.4), high: Math.round(s.weight * 0.8), defaultValue: `Bắt đầu nạp từ phút 30–45, không chờ đói. Ví dụ ${s.weight}kg: ${Math.round(s.weight * 0.4)}–${Math.round(s.weight * 0.8)}g carb/h.` }),
     },
     {
-      icon: '🏊', duration: '> 120 phút',
-      carb: '60–90g/giờ', carbExample: `${Math.round(s.weight * 0.8)}–${Math.round(s.weight * 1.2)}g/h`,
-      water: '500–1000ml/giờ', electrolyte: 'Bắt buộc',
+      icon: '🏊',
+      duration: tPillars('pillarB.b7.endurance_zones.2.duration', { defaultValue: '> 120 phút' }),
+      carb: tPillars('pillarB.b7.endurance_zones.2.carb', { defaultValue: '60–90g/giờ' }),
+      carbExample: `${Math.round(s.weight * 0.8)}–${Math.round(s.weight * 1.2)}g/h`,
+      water: '500–1000ml',
+      electrolyte: tPillars('pillarB.b7.endurance_zones.2.electrolyte', { defaultValue: 'Bắt buộc' }),
       color: '#ef4444',
-      note: 'Gel + nước dừa + điện giải. Tránh chuột rút do mất natri/kali.',
+      note: tPillars('pillarB.b7.endurance_zones.2.note', { defaultValue: 'Gel + nước dừa + điện giải. Tránh chuột rút do mất natri/kali.' }),
     },
   ];
 
@@ -5959,7 +5981,7 @@ function EnduranceFuelingGuide({ s }) {
             </div>
             <div className="space-y-2 mb-3">
               <div className="flex justify-between text-[10px]">
-                <span className="text-muted">Carb/giờ</span>
+                <span className="text-muted">{carbLabel}</span>
                 <span className="font-bold" style={{ color: z.color }}>{z.carb}</span>
               </div>
               {z.carbExample && (
@@ -5969,12 +5991,12 @@ function EnduranceFuelingGuide({ s }) {
                 </div>
               )}
               <div className="flex justify-between text-[10px]">
-                <span className="text-muted">Nước/giờ</span>
+                <span className="text-muted">{waterLabel}</span>
                 <span className="font-bold text-cyan-400/80">{z.water}</span>
               </div>
               <div className="flex justify-between text-[10px]">
-                <span className="text-muted">Điện giải</span>
-                <span className="font-bold" style={{ color: z.electrolyte === 'Bắt buộc' ? '#ef4444' : z.electrolyte === 'Nên dùng' ? '#f59e0b' : '#22c55e' }}>{z.electrolyte}</span>
+                <span className="text-muted">{electLabel}</span>
+                <span className="font-bold" style={{ color: z.electrolyte === tPillars('pillarB.b7.endurance_zones.2.electrolyte', { defaultValue: 'Bắt buộc' }) ? '#ef4444' : z.electrolyte === tPillars('pillarB.b7.endurance_zones.1.electrolyte', { defaultValue: 'Nên dùng' }) ? '#f59e0b' : '#22c55e' }}>{z.electrolyte}</span>
               </div>
             </div>
             <div className="pt-3 border-t" style={{ borderColor: `${z.color}20` }}>
@@ -6116,7 +6138,7 @@ function AdvancedPanel({ s }) {
           <EnduranceFuelingGuide s={s} />
           <div className="rounded-xl bg-cyan-500/5 border border-cyan-500/20 p-3">
             <p className="text-[10px] text-cyan-400/80 leading-relaxed">
-              <span className="font-bold">💡 Quy tắc 30-45:</span> Bắt đầu nạp carb từ phút thứ 30–45 của buổi tập sức bền, <em>không chờ đến khi cảm thấy mệt</em> — lúc đó đã trễ. Mỗi 15–20 phút nạp thêm 1 lần: gel năng lượng, nước dừa, hoặc chuối.
+              {tPillars('pillarB.b7.endurance_rule', { defaultValue: '💡 Quy tắc 30–45: Bắt đầu nạp carb từ phút thứ 30–45 của buổi tập sức bền, không chờ đến khi cảm thấy mệt — lúc đó đã trễ. Mỗi 15–20 phút nạp thêm 1 lần: gel năng lượng, nước dừa, hoặc chuối.' })}
             </p>
           </div>
         </div>
@@ -6190,7 +6212,7 @@ function AdvancedPanel({ s }) {
 
       {/* Athlete principles */}
       <RevealBlock delay={140}>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">5 Nguyên Tắc Vận Động Viên</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b7tr.athlete_principles_title || '5 Nguyên Tắc Vận Động Viên'}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {ATHLETE_PRINCIPLES.map((p, i) => (
             <div
@@ -6199,9 +6221,9 @@ function AdvancedPanel({ s }) {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xl">{p.icon}</span>
-                <p className="text-xs font-bold text-amber-300">{p.title}</p>
+                <p className="text-xs font-bold text-amber-300">{tPillars(`pillarB.b7.athlete_principles.${i}.title`, { defaultValue: p.title })}</p>
               </div>
-              <p className="text-[11px] text-muted leading-relaxed">{p.desc}</p>
+              <p className="text-[11px] text-muted leading-relaxed">{tPillars(`pillarB.b7.athlete_principles.${i}.desc`, { defaultValue: p.desc })}</p>
             </div>
           ))}
         </div>

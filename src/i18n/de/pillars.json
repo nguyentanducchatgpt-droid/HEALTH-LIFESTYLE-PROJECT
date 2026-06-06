@@ -1320,6 +1320,30 @@
         { "label": "Vor Gym/Schwimmen", "foods": "Joghurt + Obst oder Brot + Eier" },
         { "label": "Nach Nachmittagseinheit", "foods": "Abendessen mit Carbs + magerem Protein + Gemüse" },
         { "label": "Vor dem Schlaf", "foods": "Griechischer Joghurt / Milch / Seidentofu bei Bedarf" }
+      ],
+      "pre_time": "60–120 Min vor dem Training",
+      "post_time": "Innerhalb 1–2 Stunden nach dem Training",
+      "food_suggestions_label": "Lebensmittelvorschläge",
+      "fat_restriction": "Begrenzen (liegt schwer im Magen)",
+      "water_label": "Wasser",
+      "pre_foods": ["Banane + Joghurt", "Brot + Eier", "Haferflocken + Milch", "Kleiner Reis + Hähnchen"],
+      "post_foods": ["Reis + Hähnchen/Fisch/Rind", "Eier + Brot", "Milch + Banane", "Whey + Kartoffel"],
+      "endurance_carb_label": "Carbs/Stunde",
+      "endurance_water_label": "Wasser/Stunde",
+      "endurance_electrolyte_label": "Elektrolyte",
+      "endurance_zones": [
+        {"duration": "< 60 Min", "carb": "Nicht nötig", "electrolyte": "Nicht nötig", "note": "Wasser reicht. Vorher ausreichend Carbs zu essen ist am wichtigsten."},
+        {"duration": "60–120 Min", "carb": "30–60g/Stunde", "electrolyte": "Empfohlen", "note": "Ab Min 30–45 beginnen zu tanken, nicht warten bis hungrig. Beispiel {{weight}}kg: {{low}}–{{high}}g Carbs/h."},
+        {"duration": "> 120 Min", "carb": "60–90g/Stunde", "electrolyte": "Pflicht", "note": "Gel + Kokoswasser + Elektrolyte. Krämpfe durch Natrium-/Kaliumverlust vermeiden."}
+      ],
+      "endurance_rule": "💡 Regel 30–45: Ab Min 30–45 der Ausdauereinheit mit Carbs auftanken, nicht warten bis man müde wird — dann ist es zu spät. Alle 15–20 Min nachladen: Energiegel, Kokoswasser oder Banane.",
+      "athlete_principles_title": "5 Prinzipien der Athletenernährung",
+      "athlete_principles": [
+        {"title": "Periodisierte Ernährung", "desc": "Mehr essen an schweren Trainingstagen, moderat an leichten, an Ruhetagen trotzdem genug Protein & Mikronährstoffe."},
+        {"title": "Protein nie kürzen", "desc": "An Erholungstagen trotzdem 1,8–2,2g/kg Protein — Muskeln regenerieren und wachsen in der Ruhe."},
+        {"title": "Carbs sind Treibstoff", "desc": "Angst vor Carbs → Keuchend beim Training, Pace sinkt, Kraftzuwachs stagniert, Süßhunger abends."},
+        {"title": "Elektrolyte sind wichtig", "desc": "Viel Schwitzen → Natrium + Kalium + Magnesium nachfüllen, nicht nur Wasser trinken."},
+        {"title": "Schlaf = Erholungsmedizin", "desc": "7–9h pro Nacht. Schlafmangel verlangsamt Muskelregeneration, erhöht Cortisol, senkt Trainingsleistung."}
       ]
     },
     "start_level_title": "Wo anfangen?",

@@ -878,38 +878,129 @@
         "Tối": "Dinner"
       },
       "meal_days": [
-        { "day": "Day 1", "theme": "Start — Balanced", "analysis_headline": "Day 1 — establishing core habits", "analysis_score": "Easy to maintain" },
-        { "day": "Day 2", "theme": "Protein Focus", "analysis_headline": "Today: high protein — diverse sources", "analysis_score": "High nutrition" },
-        { "day": "Day 3", "theme": "Complex Carbs", "analysis_headline": "Day focused on high-quality complex carbs", "analysis_score": "Steady energy" },
-        { "day": "Day 4", "theme": "High Veg Day", "analysis_headline": "High veggie day — digestion rest", "analysis_score": "Light detox" },
-        { "day": "Day 5", "theme": "Training — High Carb", "analysis_headline": "Training day — max carbs + protein", "analysis_score": "Optimal training" },
-        { "day": "Day 6", "theme": "Recovery", "analysis_headline": "Light recovery — bone & joint care", "analysis_score": "Fast recovery" },
-        { "day": "Day 7", "theme": "Flexible", "analysis_headline": "Flexible day — consolidate the week", "analysis_score": "High flexibility" }
+        {
+          "day": "Day 1", "theme": "Start — Balanced", "analysis_headline": "Day 1 — establishing core habits", "analysis_score": "Easy to maintain",
+          "meals": [
+            { "items": ["White rice", "Boiled eggs ×2", "Boiled water spinach", "Water"], "note": "Busy: whole wheat bread + boiled eggs" },
+            { "items": ["Unsweetened yogurt", "Half a banana"], "note": "Busy: 1 store-bought yogurt cup" },
+            { "items": ["White rice", "Pepper-braised fish", "Garlic sautéed cabbage", "Vegetable soup"], "note": "Busy: office cafeteria — pick fish/meat + veg plate" },
+            { "items": ["Cashews / almonds ~20g", "Water"], "note": "Busy: small nut pack kept in bag" },
+            { "items": ["Oatmeal porridge", "Unsweetened yogurt", "1 banana"], "note": "Busy: instant oats + protein shake" }
+          ]
+        },
+        {
+          "day": "Day 2", "theme": "Protein Focus", "analysis_headline": "Today: high protein — diverse sources", "analysis_score": "High nutrition",
+          "meals": [
+            { "items": ["Whole wheat bread", "Sunny-side-up egg", "Tomato + cucumber", "Unsweetened fresh milk"], "note": "Busy: egg sandwich from outside" },
+            { "items": ["Boiled egg ×1", "Small fruit (apple/guava)"], "note": "Busy: boil eggs the night before" },
+            { "items": ["White rice", "Lemongrass boiled chicken", "Pumpkin soup", "Fresh vegetables"], "note": "Busy: boiled chicken rice — skip salty dipping sauce" },
+            { "items": ["Unsweetened soy milk 200ml"], "note": "Busy: convenience store soy milk box" },
+            { "items": ["Fresh rice noodles", "Lemongrass fried tofu", "Herbs + bean sprouts", "Light miso soup"], "note": "Busy: tofu noodles from outside, less noodles more veg" }
+          ]
+        },
+        {
+          "day": "Day 3", "theme": "Complex Carbs", "analysis_headline": "Day focused on high-quality complex carbs", "analysis_score": "Steady energy",
+          "meals": [
+            { "items": ["Rolled oats", "1 banana", "Nut milk", "Chia seeds 1 tsp"], "note": "Busy: overnight oats prepared the night before" },
+            { "items": ["Greek yogurt", "Honey ¼ tsp"], "note": "Busy: convenient Greek yogurt cup anywhere" },
+            { "items": ["Brown rice", "Ginger steamed fish", "Boiled veg with sesame salt", "Sour soup"], "note": "Busy: fish rice plate, add a bowl of soup" },
+            { "items": ["Small steamed sweet potato ~100g", "Water"], "note": "Busy: batch steam sweet potatoes for the week" },
+            { "items": ["Small white rice", "Garlic fried egg", "Pork vegetable soup", "Cucumber"], "note": "Busy: simple egg rice, add a bowl of soup" }
+          ]
+        },
+        {
+          "day": "Day 4", "theme": "High Veg Day", "analysis_headline": "High veggie day — digestion rest", "analysis_score": "Light detox",
+          "meals": [
+            { "items": ["Unsweetened yogurt", "Oatmeal", "Mixed fruit", "Small cashews"], "note": "Busy: oat parfait + store-bought yogurt" },
+            { "items": ["Boiled egg ×1", "Cherry tomatoes 5 pieces"], "note": "Busy: prep boiled eggs + tomatoes ahead" },
+            { "items": ["Brown rice", "Braised tofu with mushrooms", "Bitter vegetable soup", "Lots of fresh veg"], "note": "Busy: tofu rice plate with lots of greens" },
+            { "items": ["Watermelon / dragon fruit / guava ~200g"], "note": "Busy: pre-cut fruit from convenience store" },
+            { "items": ["Chicken vegetable soup", "Small whole wheat bread", "Low-sugar yogurt"], "note": "Busy: canned soup + ready shredded chicken" }
+          ]
+        },
+        {
+          "day": "Day 5", "theme": "Training — High Carb", "analysis_headline": "Training day — max carbs + protein", "analysis_score": "Optimal training",
+          "meals": [
+            { "items": ["Medium white rice", "Eggs ×2", "Lightly sautéed veg", "Fresh milk"], "note": "Busy: rice + fried egg — fast, enough carbs" },
+            { "items": ["1 banana", "Small sweet potato or 1 slice bread"], "note": "Busy: banana + small sandwich" },
+            { "items": ["Extra white rice", "Pan-seared chicken breast", "Boiled cabbage", "Vegetable soup"], "note": "Busy: office chicken rice — more rice than usual" },
+            { "items": ["Greek yogurt", "1 banana", "Whey shake (if available)"], "note": "Busy: whey + banana blended right after training" },
+            { "items": ["Small rice", "Braised salmon / mackerel", "Lots of boiled veg"], "note": "Busy: fish rice from outside, add veg" }
+          ]
+        },
+        {
+          "day": "Day 6", "theme": "Recovery", "analysis_headline": "Light recovery — bone & joint care", "analysis_score": "Fast recovery",
+          "meals": [
+            { "items": ["Lean chicken pho / noodles", "Extra bean sprouts", "Less noodles", "Skip fatty broth"], "note": "Busy: pho from outside — ask for extra veg, skip fried dough" },
+            { "items": ["Seasonal fruit", "Mixed nuts ~15g"], "note": "Busy: small nut bag + pre-cut fruit" },
+            { "items": ["Brown rice", "Meal-prepped pan chicken", "Olive oil salad", "Boiled egg ×1"], "note": "Busy: meal prepped — just heat and eat" },
+            { "items": ["Unsweetened yogurt", "Small granola ~20g"], "note": "Busy: yogurt cup + convenient granola" },
+            { "items": ["Simple chicken congee", "Ginger + spring onion", "Lightly pickled veg"], "note": "Busy: instant porridge + meal-prepped shredded chicken" }
+          ]
+        },
+        {
+          "day": "Day 7", "theme": "Flexible", "analysis_headline": "Flexible day — consolidate the week", "analysis_score": "High flexibility",
+          "meals": [
+            { "items": ["Thin oatmeal porridge", "Boiled egg ×1", "Fresh herbs", "Warm water"], "note": "Busy: light instant porridge + boiled egg" },
+            { "items": ["1 medium apple / pear / guava"], "note": "Busy: pre-cut fruit easy to carry" },
+            { "items": ["Small white rice", "Lean boiled pork", "Boiled water spinach / bok choy", "Pumpkin soup"], "note": "Busy: smaller office cafeteria portion" },
+            { "items": ["Low-fat yogurt", "Honey ¼ tsp"], "note": "Busy: store-bought yogurt" },
+            { "items": ["Miso soup + soft tofu", "Very small white rice", "Boiled veg"], "note": "Busy: miso soup packet + store-bought silken tofu" }
+          ]
+        }
       ],
       "goal_adaptations": {
         "fat-loss": {
           "label": "🔥 Fat Loss",
           "headline": "Meal plan adjustments for Fat Loss",
           "summary": "~400 kcal deficit. More protein, fewer refined carbs, prioritize fiber and veggies to stay full on fewer calories.",
-          "note": "Target kcal should be ~400 below your TDEE. Adjust portions using your B0 numbers."
+          "note": "Target kcal should be ~400 below your TDEE. Adjust portions using your B0 numbers.",
+          "tweaks": [
+            { "meal": "🌅 Breakfast", "text": "Skip or reduce rice/bread — replace with eggs + sautéed veg. Prioritize protein to stay full longer." },
+            { "meal": "🍎 Snack", "text": "Keep snacks light: 1 boiled egg or unsweetened Greek yogurt. Avoid high-sugar fruits." },
+            { "meal": "☀️ Lunch", "text": "Reduce rice by 1/3 serving. Increase steamed/boiled veg. Keep or slightly increase protein." },
+            { "meal": "🍵 Afternoon Snack", "text": "Only drink warm water / unsweetened green tea if not genuinely hungry." },
+            { "meal": "🌙 Dinner", "text": "No carbs after 7 pm — protein + veg only. Steamed chicken + salad + light seaweed soup." }
+          ]
         },
         "muscle-gain": {
           "label": "💪 Muscle Gain",
           "headline": "Meal plan adjustments for Muscle Gain",
           "summary": "~250 kcal surplus. More quality carbs around training, keep protein high, aim for 4–5 protein meals per day.",
-          "note": "Each meal needs ≥20g protein. Spreading protein across 4–5 meals outperforms 1–2 large portions."
+          "note": "Each meal needs ≥20g protein. Spreading protein across 4–5 meals outperforms 1–2 large portions.",
+          "tweaks": [
+            { "meal": "🌅 Breakfast", "text": "Add 1 bowl oatmeal or 1 portion whole wheat bread. Drink fresh milk or protein shake." },
+            { "meal": "🍎 Morning Snack", "text": "1 handful mixed nuts + 2 slices cheese. Provides good fats and protein for training." },
+            { "meal": "☀️ Lunch", "text": "Increase rice to 1.5 bowls. Add a second protein source: tofu or tuna alongside meat." },
+            { "meal": "🍵 Afternoon Snack", "text": "Pre-workout: banana + 1 tbsp peanut butter / or protein shake. Post-workout: fresh unsweetened milk." },
+            { "meal": "🌙 Dinner", "text": "Still need moderate carbs after afternoon training. Brown rice + beef / chicken breast + garlic broccoli." }
+          ]
         },
         "endurance": {
           "label": "🚴 Endurance",
           "headline": "Meal plan adjustments for Endurance",
           "summary": "Balanced calories. More complex carbs on heavy training days, electrolytes, moderate protein for recovery.",
-          "note": "Training/race days >90 min: increase carbs by 20–30%. Never try new foods on race day."
+          "note": "Training/race days >90 min: increase carbs by 20–30%. Never try new foods on race day.",
+          "tweaks": [
+            { "meal": "🌅 Breakfast", "text": "Complex carbs top priority: oatmeal + banana + honey. Avoid heavy fried food that weighs you down." },
+            { "meal": "🍎 Morning Snack", "text": "1 pack raisins / 1 slice whole wheat toast. Fast glucose for longer training sessions." },
+            { "meal": "☀️ Lunch", "text": "Main meal: full brown rice + protein + varied veg + electrolyte soup (salt + potassium)." },
+            { "meal": "🍵 Afternoon Snack", "text": "During/after long sessions >60 min: electrolyte drink + 1 banana every 45 min." },
+            { "meal": "🌙 Dinner", "text": "Recovery: light protein + small complex carbs + lots of veg. Greek yogurt + granola before bed." }
+          ]
         },
         "maintenance": {
           "label": "⚖️ Maintenance",
           "headline": "Meal plan adjustments for Maintenance",
           "summary": "Balanced TDEE. Focus on food quality and variety, 80/20 flexibility, no strict calorie counting needed.",
-          "note": "Weigh weekly, same time and conditions. Weight changes >2 kg consistently → adjust portions."
+          "note": "Weigh weekly, same time and conditions. Weight changes >2 kg consistently → adjust portions.",
+          "tweaks": [
+            { "meal": "🌅 Breakfast", "text": "Vary breakfast daily: rotate between eggs / porridge / rice noodles / pho. Keep the habit of eating at a consistent time." },
+            { "meal": "🍎 Morning Snack", "text": "1 seasonal fresh fruit. No need to count calories — prioritize natural, minimally processed food." },
+            { "meal": "☀️ Lunch", "text": "Full balanced meal. 80/20 rule: 80% healthy, 20% flexible (can eat out 1–2 times/week)." },
+            { "meal": "🍵 Afternoon Snack", "text": "Tea / black coffee / yogurt. Eat only when genuinely hungry — not out of habit or boredom." },
+            { "meal": "🌙 Dinner", "text": "Lighter than lunch. Less refined carbs, more veg and protein. Avoid eating late after 9 pm." }
+          ]
         }
       }
     },

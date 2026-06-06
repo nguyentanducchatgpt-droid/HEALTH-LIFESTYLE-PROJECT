@@ -878,38 +878,129 @@
         "Tối": "Abendessen"
       },
       "meal_days": [
-        { "day": "Tag 1", "theme": "Start — Ausgewogen", "analysis_headline": "Tag 1 — Grundgewohnheiten aufbauen", "analysis_score": "Einfach umzusetzen" },
-        { "day": "Tag 2", "theme": "Protein-Fokus", "analysis_headline": "Heute: hohes Protein — diverse Quellen", "analysis_score": "Hohe Ernährung" },
-        { "day": "Tag 3", "theme": "Komplexe Carbs", "analysis_headline": "Tag mit hochwertigen komplexen Carbs", "analysis_score": "Stabile Energie" },
-        { "day": "Tag 4", "theme": "Gemüse-Tag", "analysis_headline": "Viel Gemüse — Verdauungspause", "analysis_score": "Leichte Entgiftung" },
-        { "day": "Tag 5", "theme": "Training — Carb-hoch", "analysis_headline": "Trainingstag — max Carbs + Protein", "analysis_score": "Optimales Training" },
-        { "day": "Tag 6", "theme": "Erholung", "analysis_headline": "Leichte Erholung — Knochen & Gelenke", "analysis_score": "Schnelle Erholung" },
-        { "day": "Tag 7", "theme": "Flexibel", "analysis_headline": "Flexibler Tag — Woche konsolidieren", "analysis_score": "Hohe Flexibilität" }
+        {
+          "day": "Tag 1", "theme": "Start — Ausgewogen", "analysis_headline": "Tag 1 — Grundgewohnheiten aufbauen", "analysis_score": "Einfach umzusetzen",
+          "meals": [
+            { "items": ["Weißer Reis", "Gekochte Eier ×2", "Gekochter Wasserspinat", "Wasser"], "note": "Schnell: Vollkornbrot + gekochte Eier" },
+            { "items": ["Ungesüßter Joghurt", "Halbe Banane"], "note": "Schnell: 1 Joghurtbecher aus dem Supermarkt" },
+            { "items": ["Weißer Reis", "Pfefferfisch geschmort", "Kohl mit Knoblauch", "Gemüsesuppe"], "note": "Schnell: Kantine — Fisch/Fleisch + Gemüse wählen" },
+            { "items": ["Cashews / Mandeln ~20g", "Wasser"], "note": "Schnell: kleines Nussbeutelchen in der Tasche" },
+            { "items": ["Haferflockenbrei", "Ungesüßter Joghurt", "1 Banane"], "note": "Schnell: Instant-Haferflocken + Proteinshake" }
+          ]
+        },
+        {
+          "day": "Tag 2", "theme": "Protein-Fokus", "analysis_headline": "Heute: hohes Protein — diverse Quellen", "analysis_score": "Hohe Ernährung",
+          "meals": [
+            { "items": ["Vollkornbrot", "Spiegelei", "Tomate + Gurke", "Ungesüßte Frischmilch"], "note": "Schnell: Eier-Sandwich von außen" },
+            { "items": ["Gekochtes Ei ×1", "Kleine Frucht (Apfel/Guave)"], "note": "Schnell: Eier am Vorabend kochen" },
+            { "items": ["Weißer Reis", "Zitronengras-Hühnchen", "Kürbissuppe", "Rohes Gemüse"], "note": "Schnell: Hühnchen-Reisteller — salzige Soße weglassen" },
+            { "items": ["Ungesüßte Sojamilch 200ml"], "note": "Schnell: Sojamilch aus dem Supermarkt" },
+            { "items": ["Frische Reisnudeln", "Gebratener Tofu", "Kräuter + Sojasprossen", "Leichte Misosuppe"], "note": "Schnell: Tofu-Nudeln, weniger Nudeln mehr Gemüse" }
+          ]
+        },
+        {
+          "day": "Tag 3", "theme": "Komplexe Carbs", "analysis_headline": "Tag mit hochwertigen komplexen Carbs", "analysis_score": "Stabile Energie",
+          "meals": [
+            { "items": ["Haferflocken", "1 Banane", "Pflanzenmilch", "Chiasamen 1 TL"], "note": "Schnell: Overnight Oats vom Vorabend" },
+            { "items": ["Griechischer Joghurt", "Honig ¼ TL"], "note": "Schnell: Joghurtbecher überall erhältlich" },
+            { "items": ["Brauner Reis", "Ingwer-Dampffisch", "Gedünstetes Gemüse mit Sesam", "Saure Suppe"], "note": "Schnell: Fisch-Reisteller + Suppe" },
+            { "items": ["Kleine gedämpfte Süßkartoffel ~100g", "Wasser"], "note": "Schnell: Süßkartoffeln für die Woche vorkochen" },
+            { "items": ["Kleiner weißer Reis", "Knoblauch-Spiegelei", "Fleisch-Gemüsesuppe", "Gurke"], "note": "Schnell: einfacher Reis mit Ei + Suppe" }
+          ]
+        },
+        {
+          "day": "Tag 4", "theme": "Gemüse-Tag", "analysis_headline": "Viel Gemüse — Verdauungspause", "analysis_score": "Leichte Entgiftung",
+          "meals": [
+            { "items": ["Ungesüßter Joghurt", "Haferflocken", "Gemischte Früchte", "Kleine Cashews"], "note": "Schnell: Oat-Parfait + Supermarkt-Joghurt" },
+            { "items": ["Gekochtes Ei ×1", "Kirschtomaten 5 Stück"], "note": "Schnell: Eier + Tomaten vorbereiten" },
+            { "items": ["Brauner Reis", "Geschmorter Tofu mit Pilzen", "Bittere Gemüsesuppe", "Viel rohes Gemüse"], "note": "Schnell: Tofu-Reisteller mit viel Grünzeug" },
+            { "items": ["Wassermelone / Drachenfrucht / Guave ~200g"], "note": "Schnell: geschnittenes Obst aus dem Supermarkt" },
+            { "items": ["Hühnergemüsesuppe", "Kleines Vollkornbrot", "Zuckerarmer Joghurt"], "note": "Schnell: Dosensuppe + fertiges Hühnerfleisch" }
+          ]
+        },
+        {
+          "day": "Tag 5", "theme": "Training — Carb-hoch", "analysis_headline": "Trainingstag — max Carbs + Protein", "analysis_score": "Optimales Training",
+          "meals": [
+            { "items": ["Mittlerer weißer Reis", "Eier ×2", "Leicht sautiertes Gemüse", "Frischmilch"], "note": "Schnell: Reis + Spiegelei — schnell, genug Kohlenhydrate" },
+            { "items": ["1 Banane", "Kleine Süßkartoffel oder 1 Scheibe Brot"], "note": "Schnell: Banane + kleines Sandwich" },
+            { "items": ["Extra weißer Reis", "Gebratene Hähnchenbrust", "Gedünsteter Kohl", "Gemüsesuppe"], "note": "Schnell: Hühnchen-Kantinenreis — mehr Reis als üblich" },
+            { "items": ["Griechischer Joghurt", "1 Banane", "Whey-Shake (falls vorhanden)"], "note": "Schnell: Whey + Banane direkt nach dem Training" },
+            { "items": ["Kleiner Reis", "Geschmorter Lachs / Makrele", "Viel gedünstetes Gemüse"], "note": "Schnell: Fisch-Reis von außen + Gemüse dazu" }
+          ]
+        },
+        {
+          "day": "Tag 6", "theme": "Erholung", "analysis_headline": "Leichte Erholung — Knochen & Gelenke", "analysis_score": "Schnelle Erholung",
+          "meals": [
+            { "items": ["Mageres Hühner-Pho / Nudeln", "Extra Sojasprossen", "Weniger Nudeln", "Fettreiche Brühe übrig lassen"], "note": "Schnell: Pho von außen — extra Gemüse bestellen" },
+            { "items": ["Saisonale Früchte", "Gemischte Nüsse ~15g"], "note": "Schnell: Nussbeutelchen + geschnittenes Obst" },
+            { "items": ["Brauner Reis", "Meal-Prep Hähnchen", "Olivenöl-Salat", "Gekochtes Ei ×1"], "note": "Schnell: Meal Prep — nur aufwärmen" },
+            { "items": ["Ungesüßter Joghurt", "Kleines Granola ~20g"], "note": "Schnell: Joghurtbecher + Granola" },
+            { "items": ["Einfacher Hühnerrei-Brei", "Ingwer + Frühlingszwiebeln", "Leicht eingelegtes Gemüse"], "note": "Schnell: Instant-Brei + Meal-Prep Hühnerfleisch" }
+          ]
+        },
+        {
+          "day": "Tag 7", "theme": "Flexibel", "analysis_headline": "Flexibler Tag — Woche konsolidieren", "analysis_score": "Hohe Flexibilität",
+          "meals": [
+            { "items": ["Dünner Haferbrei", "Gekochtes Ei ×1", "Frische Kräuter", "Warmes Wasser"], "note": "Schnell: leichter Instant-Brei + gekochtes Ei" },
+            { "items": ["1 mittlerer Apfel / Birne / Guave"], "note": "Schnell: geschnittenes Obst leicht mitzunehmen" },
+            { "items": ["Kleiner weißer Reis", "Mageres gedünstetes Schweinefleisch", "Gedünstetes Blattgemüse", "Kürbissuppe"], "note": "Schnell: kleinere Kantine-Portion" },
+            { "items": ["Fettarmer Joghurt", "Honig ¼ TL"], "note": "Schnell: Supermarkt-Joghurt" },
+            { "items": ["Misosuppe + weicher Tofu", "Sehr kleiner weißer Reis", "Gedünstetes Gemüse"], "note": "Schnell: Misosuppen-Beutel + Tofu aus dem Supermarkt" }
+          ]
+        }
       ],
       "goal_adaptations": {
         "fat-loss": {
           "label": "🔥 Fettabbau",
           "headline": "Mahlzeitenanpassungen für Fettabbau",
           "summary": "~400 kcal Defizit. Mehr Protein, weniger raffinierte Kohlenhydrate, mehr Ballaststoffe und Gemüse.",
-          "note": "Ziel-kcal sollte ~400 unter Ihrem TDEE liegen."
+          "note": "Ziel-kcal sollte ~400 unter Ihrem TDEE liegen.",
+          "tweaks": [
+            { "meal": "🌅 Frühstück", "text": "Reis/Brot reduzieren — durch Eier + Gemüse ersetzen. Protein priorisieren für länger anhaltende Sättigung." },
+            { "meal": "🍎 Snack", "text": "Leichte Snacks: 1 gekochtes Ei oder ungesüßter griechischer Joghurt. Zuckerreiche Früchte vermeiden." },
+            { "meal": "☀️ Mittagessen", "text": "Reis um 1/3 reduzieren. Mehr gedünstetes Gemüse. Protein gleich oder leicht erhöhen." },
+            { "meal": "🍵 Nachmittagssnack", "text": "Nur warmes Wasser / ungesüßten grünen Tee trinken, wenn wirklich hungrig." },
+            { "meal": "🌙 Abendessen", "text": "Nach 19 Uhr keine Kohlenhydrate — nur Protein + Gemüse. Gedünstetes Hähnchen + Salat." }
+          ]
         },
         "muscle-gain": {
           "label": "💪 Muskelaufbau",
           "headline": "Mahlzeitenanpassungen für Muskelaufbau",
           "summary": "~250 kcal Überschuss. Mehr Qualitätskohlenhydrate rund ums Training, 4–5 Proteinmahlzeiten täglich.",
-          "note": "Jede Mahlzeit braucht ≥20g Protein."
+          "note": "Jede Mahlzeit braucht ≥20g Protein.",
+          "tweaks": [
+            { "meal": "🌅 Frühstück", "text": "1 Schüssel Haferflocken oder Vollkornbrot hinzufügen. Frischmilch oder Proteinshake trinken." },
+            { "meal": "🍎 Morgensnack", "text": "1 Handvoll gemischte Nüsse + 2 Scheiben Käse. Gute Fette und Protein fürs Training." },
+            { "meal": "☀️ Mittagessen", "text": "Reis auf 1,5 Schüsseln erhöhen. Zweite Proteinquelle hinzufügen: Tofu oder Thunfisch." },
+            { "meal": "🍵 Nachmittagssnack", "text": "Vor Training: Banane + 1 EL Erdnussbutter / oder Proteinshake. Nach Training: Frischmilch." },
+            { "meal": "🌙 Abendessen", "text": "Nach Nachmittagstraining moderate Kohlenhydrate nötig. Brauner Reis + Fleisch + Brokkoli." }
+          ]
         },
         "endurance": {
           "label": "🚴 Ausdauer",
           "headline": "Mahlzeitenanpassungen für Ausdauer",
           "summary": "Ausgewogene Kalorien. Mehr komplexe Kohlenhydrate an intensiven Trainingstagen, Elektrolyte, moderates Protein.",
-          "note": "Trainingstage >90 min: Kohlenhydrate um 20–30% erhöhen."
+          "note": "Trainingstage >90 min: Kohlenhydrate um 20–30% erhöhen.",
+          "tweaks": [
+            { "meal": "🌅 Frühstück", "text": "Komplexe Kohlenhydrate Priorität: Haferflocken + Banane + Honig. Schweres frittiertes Essen vermeiden." },
+            { "meal": "🍎 Morgensnack", "text": "1 Beutel Rosinen / 1 Scheibe Vollkorntoast. Schnelle Glukose für längere Trainingseinheiten." },
+            { "meal": "☀️ Mittagessen", "text": "Hauptmahlzeit: brauner Reis + Protein + Gemüse + Elektrolytsuppe." },
+            { "meal": "🍵 Nachmittagssnack", "text": "Bei langen Einheiten >60 min: Elektrolytgetränk + 1 Banane alle 45 min." },
+            { "meal": "🌙 Abendessen", "text": "Erholung: leichtes Protein + kleine komplexe Kohlenhydrate + viel Gemüse. Griechischer Joghurt + Granola vor dem Schlafen." }
+          ]
         },
         "maintenance": {
           "label": "⚖️ Erhaltung",
           "headline": "Mahlzeitenanpassungen für Erhaltung",
           "summary": "TDEE-Gleichgewicht. Fokus auf Lebensmittelqualität, 80/20-Flexibilität, keine strenge Kalorienzählung.",
-          "note": "Wöchentlich wiegen. Gewichtsänderung >2 kg anhaltend → Portionen anpassen."
+          "note": "Wöchentlich wiegen. Gewichtsänderung >2 kg anhaltend → Portionen anpassen.",
+          "tweaks": [
+            { "meal": "🌅 Frühstück", "text": "Frühstück täglich variieren: Eier / Brei / Nudeln / Suppe abwechseln. Regelmäßige Essenszeit beibehalten." },
+            { "meal": "🍎 Morgensnack", "text": "1 saisonale Frucht. Kalorien nicht zählen — natürliche, minimal verarbeitete Lebensmittel bevorzugen." },
+            { "meal": "☀️ Mittagessen", "text": "Vollständige ausgewogene Mahlzeit. 80/20-Regel: 80% gesund, 20% flexibel (1–2× pro Woche auswärts essen)." },
+            { "meal": "🍵 Nachmittagssnack", "text": "Tee / schwarzer Kaffee / Joghurt. Nur essen wenn wirklich hungrig — nicht aus Gewohnheit oder Langeweile." },
+            { "meal": "🌙 Abendessen", "text": "Leichter als Mittag. Weniger raffinierte Kohlenhydrate, mehr Gemüse und Protein. Nicht nach 21 Uhr essen." }
+          ]
         }
       }
     },

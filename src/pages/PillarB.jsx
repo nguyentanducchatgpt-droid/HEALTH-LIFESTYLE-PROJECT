@@ -3049,8 +3049,8 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
                 style={{ background: `${adaptation.color}08`, border: `1px solid ${adaptation.color}15` }}>
                 <span className="text-sm shrink-0 leading-none mt-0.5">{t.icon}</span>
                 <div>
-                  <span className="text-[10px] font-bold mr-1.5" style={{ color: adaptation.color }}>{t.meal}</span>
-                  <span className="text-[10px] text-muted leading-relaxed">{t.text}</span>
+                  <span className="text-[10px] font-bold mr-1.5" style={{ color: adaptation.color }}>{tPillars(`pillarB.b4.goal_adaptations.${activeGoal}.tweaks.${i}.meal`, { defaultValue: t.meal })}</span>
+                  <span className="text-[10px] text-muted leading-relaxed">{tPillars(`pillarB.b4.goal_adaptations.${activeGoal}.tweaks.${i}.text`, { defaultValue: t.text })}</span>
                 </div>
               </div>
             ))}
@@ -3117,15 +3117,17 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-1.5 mb-2.5">
-                  {meal.items.map(item => (
-                    <span key={item} className="text-[11px] text-text/80 bg-white/[0.04] border border-white/8 px-2.5 py-1 rounded-lg">{item}</span>
+                  {meal.items.map((item, j) => (
+                    <span key={j} className="text-[11px] text-text/80 bg-white/[0.04] border border-white/8 px-2.5 py-1 rounded-lg">
+                      {tPillars(`pillarB.b4.meal_days.${activeDay}.meals.${i}.items.${j}`, { defaultValue: item })}
+                    </span>
                   ))}
                 </div>
                 <div className="flex items-start gap-2 text-[10px] text-muted">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 mt-0.5 text-yellow-400 shrink-0">
                     <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
                   </svg>
-                  <span><span className="text-yellow-400 font-semibold">{b4tr.busy_label || 'Bận rộn:'}</span> {meal.note}</span>
+                  <span><span className="text-yellow-400 font-semibold">{b4tr.busy_label || 'Bận rộn:'}</span> {tPillars(`pillarB.b4.meal_days.${activeDay}.meals.${i}.note`, { defaultValue: meal.note })}</span>
                 </div>
               </div>
             </div>

@@ -891,25 +891,53 @@
           "label": "🔥 Giảm Mỡ",
           "headline": "Điều chỉnh thực đơn cho mục tiêu Giảm Mỡ",
           "summary": "Thâm hụt ~400 kcal. Tăng protein, giảm carb tinh, ưu tiên chất xơ và rau để no lâu hơn với ít calo hơn.",
-          "note": "Tổng kcal thực tế nên thấp hơn TDEE của bạn ~400 kcal. Điều chỉnh khẩu phần theo số tính từ B0."
+          "note": "Tổng kcal thực tế nên thấp hơn TDEE của bạn ~400 kcal. Điều chỉnh khẩu phần theo số tính từ B0.",
+          "tweaks": [
+            { "meal": "🌅 Sáng", "text": "Bỏ hoặc giảm cơm/bánh mì — thay bằng trứng + rau xào. Ưu tiên protein để no lâu." },
+            { "meal": "🍎 Snack", "text": "Giữ snack nhẹ: 1 quả trứng luộc / hũ sữa chua Hy Lạp không đường. Tránh hoa quả nhiều đường." },
+            { "meal": "☀️ Trưa", "text": "Giảm cơm 1/3 khẩu phần. Tăng rau hấp/luộc. Protein giữ nguyên hoặc tăng nhẹ." },
+            { "meal": "🍵 Snack xế", "text": "Chỉ nên uống nước ấm / trà xanh không đường nếu không đói thật sự." },
+            { "meal": "🌙 Tối", "text": "Không ăn carb sau 19h — chỉ protein + rau. Ức đùi gà hấp + salad rau + súp rong biển." }
+          ]
         },
         "muscle-gain": {
           "label": "💪 Tăng Cơ",
           "headline": "Điều chỉnh thực đơn cho mục tiêu Tăng Cơ",
           "summary": "Thặng dư ~250 kcal. Tăng carb chất lượng quanh buổi tập, giữ protein cao, đảm bảo 4–5 bữa protein/ngày.",
-          "note": "Mỗi bữa cần ≥20g protein. Chia protein đều 4–5 bữa hiệu quả hơn gộp vào 1–2 bữa."
+          "note": "Mỗi bữa cần ≥20g protein. Chia protein đều 4–5 bữa hiệu quả hơn gộp vào 1–2 bữa.",
+          "tweaks": [
+            { "meal": "🌅 Sáng", "text": "Thêm 1 bát cháo yến mạch hoặc 1 phần bánh mì nguyên cám. Uống sữa tươi hoặc protein shake." },
+            { "meal": "🍎 Snack sáng", "text": "1 nắm hạt hỗn hợp + 2 lát phô mai. Cung cấp chất béo tốt và protein cho buổi tập." },
+            { "meal": "☀️ Trưa", "text": "Tăng cơm lên 1.5 bát. Thêm nguồn protein thứ 2: đậu phụ hoặc cá ngừ bên cạnh thịt." },
+            { "meal": "🍵 Snack xế", "text": "Trước tập: chuối + 1 muỗng bơ đậu phộng / hoặc protein shake. Sau tập: sữa tươi không đường." },
+            { "meal": "🌙 Tối", "text": "Vẫn cần carb vừa sau tập chiều. Cơm gạo lứt + thịt bò / ức gà + bông cải xào tỏi." }
+          ]
         },
         "endurance": {
           "label": "🚴 Sức Bền",
           "headline": "Điều chỉnh thực đơn cho mục tiêu Sức Bền",
           "summary": "Cân bằng calo. Tăng carb phức vào ngày tập nặng, bổ sung điện giải, protein vừa đủ để phục hồi cơ.",
-          "note": "Ngày thi/tập dài >90 phút: tăng carb thêm 20–30%. Không thử đồ mới trước ngày thi đấu."
+          "note": "Ngày thi/tập dài >90 phút: tăng carb thêm 20–30%. Không thử đồ mới trước ngày thi đấu.",
+          "tweaks": [
+            { "meal": "🌅 Sáng", "text": "Carb phức là ưu tiên số 1: cháo yến mạch + chuối + mật ong. Tránh đồ chiên rán nặng bụng." },
+            { "meal": "🍎 Snack sáng", "text": "1 gói nho khô / 1 miếng bánh nướng nguyên cám. Nạp nhanh glucose cho buổi tập dài." },
+            { "meal": "☀️ Trưa", "text": "Bữa chính nhất: cơm gạo lứt đầy đủ + protein + rau đa dạng + canh điện giải (muối + kali)." },
+            { "meal": "🍵 Snack xế", "text": "Trong/sau tập dài >60 phút: uống nước điện giải + ăn 1 chuối mỗi 45 phút." },
+            { "meal": "🌙 Tối", "text": "Phục hồi: protein nhẹ + carb phức nhỏ + nhiều rau. Sữa chua Hy Lạp + granola trước ngủ." }
+          ]
         },
         "maintenance": {
           "label": "⚖️ Duy Trì",
           "headline": "Điều chỉnh thực đơn cho mục tiêu Duy Trì",
           "summary": "Cân bằng TDEE. Tập trung vào chất lượng và đa dạng thực phẩm, linh hoạt 80/20, không cần đếm calo chặt chẽ.",
-          "note": "Cân 1 lần/tuần, cùng giờ, cùng điều kiện. Nếu cân tăng/giảm >2kg liên tục → điều chỉnh khẩu phần."
+          "note": "Cân 1 lần/tuần, cùng giờ, cùng điều kiện. Nếu cân tăng/giảm >2kg liên tục → điều chỉnh khẩu phần.",
+          "tweaks": [
+            { "meal": "🌅 Sáng", "text": "Bữa sáng đa dạng mỗi ngày: thay đổi giữa trứng / cháo / bún / phở. Giữ thói quen ăn sáng đúng giờ." },
+            { "meal": "🍎 Snack sáng", "text": "1 loại trái cây tươi theo mùa. Không cần tính calo — ưu tiên thực phẩm tự nhiên, ít chế biến." },
+            { "meal": "☀️ Trưa", "text": "Bữa cơm đầy đủ. 80/20 rule: 80% lành mạnh, 20% linh hoạt (có thể ăn nhà hàng 1–2 lần/tuần)." },
+            { "meal": "🍵 Snack xế", "text": "Trà / cà phê đen / sữa chua. Ăn khi thật sự đói — không ăn vì thói quen hay buồn chán." },
+            { "meal": "🌙 Tối", "text": "Tối nhẹ hơn trưa. Ít carb tinh, nhiều rau và protein. Tránh ăn khuya sau 21h." }
+          ]
         }
       }
     },

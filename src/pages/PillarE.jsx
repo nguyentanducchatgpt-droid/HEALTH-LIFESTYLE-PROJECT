@@ -525,7 +525,7 @@ export default function PillarE() {
       <RevealBlock delay={80}>
         <div className={`${ORBIT_CLASS} rounded-3xl p-[1.5px] mb-12`}>
           <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
-            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f3?w=1400&q=80&auto=format&fit=crop" alt="Health Knowledge" className="w-full h-full object-cover object-top" />
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=80&auto=format&fit=crop" alt="Health Knowledge" className="w-full h-full object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
             <div className="absolute bottom-4 left-6">
               <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>{pillar?.image_caption || 'Hiểu Chỉ Số · Phòng Bệnh'}</span>

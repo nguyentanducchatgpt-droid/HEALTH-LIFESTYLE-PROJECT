@@ -709,8 +709,8 @@ export default function PillarF() {
   const tabContent = { f0: <F0Dashboard />, f1: <F1Checklist />, f2: <F2WorkoutLog />, f3: <F3MealPlan />, f4: <F4Lifestyle />, f5: <F5MindTracker />, f6: <F6Test />, f7: <F7QuickWorkouts /> };
 
   return (
-    <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillars" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← 6 Trụ Cột</Link>
+    <div className="px-4 md:px-6 max-w-4xl mx-auto pb-24">
+      <Link to="/pillars" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Sống Khỏe 360</Link>
 
       {/* Hero */}
       <div className="flex items-start gap-6 mb-10 relative">

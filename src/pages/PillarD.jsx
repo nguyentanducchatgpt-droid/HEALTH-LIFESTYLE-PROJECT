@@ -501,11 +501,11 @@ export default function PillarD() {
   ];
 
   return (
-    <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
+    <div className="px-4 md:px-6 max-w-4xl mx-auto pb-24">
       {/* Breadcrumb */}
       <Link to="/pillars" className="inline-flex items-center gap-2 text-xs text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        6 Trụ Cột
+        Sống Khỏe 360
       </Link>
 
       {/* Hero */}

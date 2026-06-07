@@ -290,9 +290,9 @@ export default function PillarC() {
   };
 
   return (
-    <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
+    <div className="px-4 md:px-6 max-w-4xl mx-auto pb-24">
       <Link to="/pillars" className="inline-flex items-center gap-2 text-muted text-sm mb-8 hover:text-teal-400 transition-colors">
-        ← 6 Trụ Cột
+        ← Sống Khỏe 360
       </Link>
 
       {/* Hero */}
@@ -305,18 +305,7 @@ export default function PillarC() {
         </div>
         <div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
-            {(() => {
-              const s = pillar?.title || 'Lối Sống Khỏe';
-              const kw = 'Khỏe';
-              const i = s.lastIndexOf(kw);
-              if (i === -1) return <span className="pc-title-main">{s}</span>;
-              return (
-                <>
-                  <span className="pc-title-main">{s.slice(0, i)}</span>
-                  <span className="pc-title-key">{s.slice(i)}</span>
-                </>
-              );
-            })()}
+            {pillar?.title || 'Lối Sống Khỏe'}
           </h1>
           <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: TEAL, background: `rgba(${TEAL_RGB},0.1)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>

@@ -5118,6 +5118,8 @@ function getWeekPattern(trainingDays) {
 }
 
 function WeeklyWaveChart({ s }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const b6tr = tPillars('pillarB.b6', { returnObjects: true }) || {};
   const pattern = getWeekPattern(s.trainingDays);
   const W = 480, H = 90, PAD_T = 20, PAD_B = 42, PAD_LR = 22;
   const slotW = (W - PAD_LR * 2) / 7;
@@ -5127,8 +5129,8 @@ function WeeklyWaveChart({ s }) {
   const yRange = maxKcal - minKcal;
   const safeRange = yRange > 0 ? yRange : 200;
 
-  const kcalFor = t => t === 'training' ? s.trainingDayKcal : s.restDayKcal;
-  const carbFor = t => t === 'training' ? s.trainingDayCarb : s.restDayCarb;
+  const kcalFor = typ => typ === 'training' ? s.trainingDayKcal : s.restDayKcal;
+  const carbFor = typ => typ === 'training' ? s.trainingDayCarb : s.restDayCarb;
   const yOf = kcal => PAD_T + H * (1 - (kcal - minKcal + safeRange * 0.1) / (safeRange * 1.2));
 
   const pts = pattern.map((type, i) => ({
@@ -5164,12 +5166,12 @@ function WeeklyWaveChart({ s }) {
         </text>
       ))}
       {pts.map((p, i) => (
-        <text key={i} x={p.x} y={PAD_T + H + 13} textAnchor="middle" fontSize="8" fill="#6b728088">N{i + 1}</text>
+        <text key={i} x={p.x} y={PAD_T + H + 13} textAnchor="middle" fontSize="8" fill="#6b728088">{b6tr.day_short_prefix || 'N'}{i + 1}</text>
       ))}
       {pts.map((p, i) => (
         <text key={i} x={p.x} y={PAD_T + H + 25} textAnchor="middle" fontSize="7.5"
           fill={p.type === 'training' ? '#ec489968' : '#06b6d468'}>
-          {p.type === 'training' ? 'Tập' : 'Nghỉ'}
+          {p.type === 'training' ? (b6tr.legend_training || 'Tập') : (b6tr.legend_rest || 'Nghỉ')}
         </text>
       ))}
       {pts.map((p, i) => (
@@ -5183,14 +5185,17 @@ function WeeklyWaveChart({ s }) {
 }
 
 function CarbCycleFormula({ s }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
+  const b6tr = tPillars('pillarB.b6', { returnObjects: true }) || {};
   return (
     <div className="grid grid-cols-3 gap-2">
       <div className="rounded-xl border border-border/30 bg-surface/5 p-3">
-        <p className="text-[9px] font-bold text-muted uppercase tracking-widest mb-2">TDEE Nền</p>
+        <p className="text-[9px] font-bold text-muted uppercase tracking-widest mb-2">{b6tr.tdee_base_label || 'TDEE Nền'}</p>
         <p className="text-xl font-black text-text leading-none">
           {(s.tdee / 1000).toFixed(1)}<span className="text-xs font-normal text-muted">k</span>
         </p>
-        <p className="text-[9px] text-muted mt-0.5">kcal/ngày</p>
+        <p className="text-[9px] text-muted mt-0.5">{tCommon('ui.kcal_day')}</p>
         <div className="mt-2.5 space-y-0.5">
           {[['Protein', `${s.proteinG}g`], ['Carb', `${s.carbG}g`], ['Fat', `${s.fatG}g`]].map(([k, v]) => (
             <div key={k} className="flex justify-between text-[9px]">
@@ -5201,7 +5206,7 @@ function CarbCycleFormula({ s }) {
         </div>
       </div>
       <div className="rounded-xl border border-pink-500/30 bg-pink-500/5 p-3">
-        <p className="text-[9px] font-bold text-pink-400 uppercase tracking-widest mb-2">Ngày Tập 🏋️</p>
+        <p className="text-[9px] font-bold text-pink-400 uppercase tracking-widest mb-2">{b6tr.training_day_label || 'Ngày Tập 🏋️'}</p>
         <p className="text-xl font-black text-pink-300 leading-none">
           {(s.trainingDayKcal / 1000).toFixed(1)}<span className="text-xs font-normal text-pink-400">k</span>
         </p>
@@ -5216,7 +5221,7 @@ function CarbCycleFormula({ s }) {
         </div>
       </div>
       <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-3">
-        <p className="text-[9px] font-bold text-cyan-400 uppercase tracking-widest mb-2">Ngày Nghỉ 🛋️</p>
+        <p className="text-[9px] font-bold text-cyan-400 uppercase tracking-widest mb-2">{b6tr.rest_day_label || 'Ngày Nghỉ 🛋️'}</p>
         <p className="text-xl font-black text-cyan-300 leading-none">
           {(s.restDayKcal / 1000).toFixed(1)}<span className="text-xs font-normal text-cyan-400">k</span>
         </p>
@@ -5309,10 +5314,10 @@ function SevenDayPanel({ s }) {
       <PersonalizedBar panelId="b6" color="#ec4899" source="B0 → B1 → B2 → B3 → B4 → B5"
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-        { key: 'training_day',      label: b6tr.bar_training || 'Ngày tập', value: `${s.trainingDayKcal.toLocaleString()} kcal`, note: `${s.trainingDays} ngày/tuần`, tip: `Ngày tập: TDEE + 100 kcal = ${s.trainingDayKcal.toLocaleString()} kcal.` },
-        { key: 'rest_day',          label: b6tr.bar_rest || 'Ngày nghỉ', value: `${s.restDayKcal.toLocaleString()} kcal`, note: `${s.restDays} ngày/tuần`, tip: `Ngày nghỉ: TDEE - 100 kcal = ${s.restDayKcal.toLocaleString()} kcal.` },
-        { key: 'weekly_total',      label: b6tr.bar_weekly || 'Tổng tuần', value: `${s.weeklyKcalTotal.toLocaleString()}`, note: 'kcal/7 ngày', tip: `${s.trainingDayKcal} × ${s.trainingDays} + ${s.restDayKcal} × ${s.restDays} = ${s.weeklyKcalTotal.toLocaleString()} kcal/tuần.` },
-        { key: 'weekly_protein_b6', label: b6tr.bar_protein || 'Protein/ngày', value: `${s.proteinG}g`, note: 'cả tập & nghỉ', tip: `Duy trì ${s.proteinG}g protein cả ngày tập và ngày nghỉ.` },
+        { key: 'training_day',      label: b6tr.bar_training || 'Ngày tập', value: `${s.trainingDayKcal.toLocaleString()} kcal`, note: `${s.trainingDays} ${b6tr.days_per_week_suffix || 'ngày/tuần'}`, tip: `Ngày tập: TDEE + 100 kcal = ${s.trainingDayKcal.toLocaleString()} kcal.` },
+        { key: 'rest_day',          label: b6tr.bar_rest || 'Ngày nghỉ', value: `${s.restDayKcal.toLocaleString()} kcal`, note: `${s.restDays} ${b6tr.days_per_week_suffix || 'ngày/tuần'}`, tip: `Ngày nghỉ: TDEE - 100 kcal = ${s.restDayKcal.toLocaleString()} kcal.` },
+        { key: 'weekly_total',      label: b6tr.bar_weekly || 'Tổng tuần', value: `${s.weeklyKcalTotal.toLocaleString()}`, note: b6tr.weekly_7days_note || 'kcal/7 ngày', tip: `${s.trainingDayKcal} × ${s.trainingDays} + ${s.restDayKcal} × ${s.restDays} = ${s.weeklyKcalTotal.toLocaleString()} kcal/tuần.` },
+        { key: 'weekly_protein_b6', label: b6tr.bar_protein || 'Protein/ngày', value: `${s.proteinG}g`, note: b6tr.both_days_note || 'cả tập & nghỉ', tip: `Duy trì ${s.proteinG}g protein cả ngày tập và ngày nghỉ.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#ec4899" onClose={() => setSelectedMetric(null)} />}
 

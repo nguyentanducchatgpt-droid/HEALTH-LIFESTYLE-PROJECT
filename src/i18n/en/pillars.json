@@ -1180,6 +1180,12 @@
       ],
       "days_training_label": "training days",
       "days_rest_label": "rest days",
+      "days_per_week_suffix": "days/week",
+      "both_days_note": "training & rest",
+      "weekly_7days_note": "kcal/7 days",
+      "tdee_base_label": "Base TDEE",
+      "training_day_label": "Training Day 🏋️",
+      "rest_day_label": "Rest Day 🛋️",
       "day_short_prefix": "D",
       "carb_cycling_insight": "Protein stays constant ({protein}g) — only carbs shift ±20% by day. Training day: {trainCarb}g carbs to fill muscle glycogen. Rest day: {restCarb}g carbs to encourage fat burning.",
       "meal_time_map": {

@@ -1087,6 +1087,12 @@
       ],
       "days_training_label": "ngày tập",
       "days_rest_label": "ngày nghỉ",
+      "days_per_week_suffix": "ngày/tuần",
+      "both_days_note": "cả tập & nghỉ",
+      "weekly_7days_note": "kcal/7 ngày",
+      "tdee_base_label": "TDEE Nền",
+      "training_day_label": "Ngày Tập 🏋️",
+      "rest_day_label": "Ngày Nghỉ 🛋️",
       "day_short_prefix": "N",
       "carb_cycling_insight": "Protein không đổi ({protein}g) — chỉ điều chỉnh carb ±20% theo ngày. Ngày tập: {trainCarb}g carb nạp đầy glycogen cơ. Ngày nghỉ: {restCarb}g carb khuyến khích đốt mỡ dự trữ.",
       "meal_time_map": {

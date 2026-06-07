@@ -112,7 +112,7 @@ export default function Navbar() {
           {/* Home */}
           <Link
             to="/"
-            className={`relative px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
+            className={`relative px-2.5 py-1.5 text-[13px] font-medium rounded-lg transition-all duration-200 ${
               isActive('/') && !isPillarActive
                 ? 'text-accent bg-accent/8'
                 : 'text-muted hover:text-text hover:bg-white/4'
@@ -133,7 +133,7 @@ export default function Navbar() {
             <Link
               to="/pillars"
               onClick={() => setPillarsOpen(false)}
-              className={`relative flex items-center gap-1 px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
+              className={`relative flex items-center gap-1 px-2.5 py-1.5 text-[13px] font-medium rounded-lg transition-all duration-200 ${
                 isPillarActive || location.pathname === '/pillars'
                   ? 'text-accent bg-accent/8'
                   : 'text-muted hover:text-text hover:bg-white/4'
@@ -195,7 +195,7 @@ export default function Navbar() {
             <Link
               key={to}
               to={to}
-              className={`relative px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
+              className={`relative px-2.5 py-1.5 text-[13px] font-medium rounded-lg transition-all duration-200 ${
                 isActive(to)
                   ? 'text-accent bg-accent/8'
                   : 'text-muted hover:text-text hover:bg-white/4'

@@ -278,6 +278,7 @@ function PillarRow({ id, text }) {
 
 // ── PhaseCard ────────────────────────────────────────────────────────────────
 function PhaseCard({ phase, idx, expanded, onToggle }) {
+  const { t } = useTranslation();
   const isEven = idx % 2 === 0;
   return (
     <RevealBlock delay={idx * 80} className="flex gap-4 md:gap-6">
@@ -329,14 +330,14 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
             <div className="p-5 space-y-4">
               {/* Pillar grid */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">Nội Dung Theo Trụ Cột</h4>
+                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">{t('program.pillar_section_header', 'Nội Dung Theo Trụ Cột')}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {Object.entries(phase.pillars).map(([k,v]) => <PillarRow key={k} id={k} text={v} />)}
                 </div>
               </div>
               {/* KPIs */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">Chỉ Số Mục Tiêu</h4>
+                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">{t('program.kpi_section_header', 'Chỉ Số Mục Tiêu')}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                   {phase.kpis.map((kpi, i) => (
                     <div key={i} className="flex items-start gap-2 text-xs text-muted">
@@ -348,7 +349,7 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
               </div>
               {/* Milestones */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">Cột Mốc Giai Đoạn</h4>
+                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">{t('program.milestone_header', 'Cột Mốc Giai Đoạn')}</h4>
                 <div className="flex flex-wrap gap-2">
                   {phase.milestones.map((m, i) => (
                     <span key={i} className="text-xs px-3 py-1.5 rounded-full border font-medium" style={{ color: phase.color, borderColor: `rgba(${phase.rgb},0.3)`, background: `rgba(${phase.rgb},0.08)` }}>
@@ -371,11 +372,30 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
 
 // ── Main Component ───────────────────────────────────────────────────────────
 export default function Program() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [journey, setJourney] = useState('7d');
   const [activeDay, setActiveDay] = useState(0);
   const [expandedPhase, setExpandedPhase] = useState(0);
   const [subTab, setSubTab] = useState('phases');
+
+  // Translated data — fall back to hardcoded Vietnamese constants if key missing
+  const tJourneys = t('program.journeys', { returnObjects: true });
+  const localJourneys = Array.isArray(tJourneys) ? tJourneys.map((j, i) => ({ ...JOURNEYS[i], ...j })) : JOURNEYS;
+  const tSevenDays = t('program.seven_days', { returnObjects: true });
+  const localSevenDays = Array.isArray(tSevenDays) ? tSevenDays.map((d, i) => ({ ...SEVEN_DAYS[i], ...d })) : SEVEN_DAYS;
+  const tPillarLabels = t('program.pillar_labels', { returnObjects: true });
+  const localPC = (tPillarLabels && typeof tPillarLabels === 'object' && !Array.isArray(tPillarLabels))
+    ? Object.fromEntries(Object.entries(PC).map(([k, v]) => [k, { ...v, l: tPillarLabels[k] || v.l }]))
+    : PC;
+  const tQuickLinks = t('program.quick_links', { returnObjects: true });
+  const localQuickLinks = Array.isArray(tQuickLinks) ? tQuickLinks : null;
+  const localSubTabs = [
+    { id:'phases', label: t('program.sub_tab_phases', 'Lộ Trình'),  icon:'🗓️' },
+    { id:'daily',  label: t('program.sub_tab_daily',  'Khung Ngày'), icon:'⏱️' },
+    { id:'weekly', label: t('program.sub_tab_weekly', 'Nhịp Tuần'), icon:'📅' },
+    { id:'tips',   label: t('program.sub_tab_tips',   'Nguyên Tắc'), icon:'💡' },
+    { id:'test',   label: t('program.sub_tab_test',   'Bài Test'),  icon:'📈' },
+  ];
 
   const phases12 = journey === '12w' ? TWELVE_PHASES : TWENTY_FOUR_PHASES;
 
@@ -495,7 +515,7 @@ export default function Program() {
       <RevealBlock className="mb-10">
         <h2 className="text-xs font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.choose')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {JOURNEYS.map(j => {
+          {localJourneys.map(j => {
             const active = journey === j.id;
             return (
               <button
@@ -527,7 +547,7 @@ export default function Program() {
           <RevealBlock className="mb-6">
             <div className="overflow-x-auto scrollbar-hide -mx-1 px-1">
               <div className="flex gap-2 pb-1" style={{ width:'max-content', minWidth:'100%' }}>
-                {SEVEN_DAYS.map((d, i) => {
+                {localSevenDays.map((d, i) => {
                   const active = activeDay === i;
                   return (
                     <button key={d.n} onClick={() => setActiveDay(i)}
@@ -535,7 +555,7 @@ export default function Program() {
                       style={{ borderColor: active ? `rgba(${d.rgb},0.5)` : 'rgba(255,255,255,0.07)', background: active ? `rgba(${d.rgb},0.1)` : 'transparent', minWidth: 64 }}
                     >
                       <span className="text-xl">{d.emoji}</span>
-                      <span className="text-[10px] font-bold" style={{ color: active ? d.color : undefined }}>N{d.n}</span>
+                      <span className="text-[10px] font-bold" style={{ color: active ? d.color : undefined }}>{t('program.day_prefix', 'N')}{d.n}</span>
                     </button>
                   );
                 })}
@@ -545,7 +565,7 @@ export default function Program() {
 
           {/* Day content */}
           {(() => {
-            const day = SEVEN_DAYS[activeDay];
+            const day = localSevenDays[activeDay];
             return (
               <div key={activeDay} className="animate-fade-in-up">
                 {/* Day header */}
@@ -555,7 +575,7 @@ export default function Program() {
                     <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/40 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
                       <div>
-                        <div className="text-[10px] font-bold uppercase tracking-widest mb-1 opacity-80" style={{ color: day.color }}>Ngày {day.n} của 7</div>
+                        <div className="text-[10px] font-bold uppercase tracking-widest mb-1 opacity-80" style={{ color: day.color }}>{t('program.day_of_7_label', { n: day.n, defaultValue: `Ngày ${day.n} của 7` })}</div>
                         <h2 className="font-bold text-xl md:text-2xl text-text leading-tight">{day.theme}</h2>
                       </div>
                       <span className="text-xs px-3 py-1.5 rounded-full bg-bg/60 border font-bold" style={{ color: day.color, borderColor: `rgba(${day.rgb},0.3)` }}>{day.tag}</span>
@@ -566,7 +586,7 @@ export default function Program() {
                 {/* 4-pillar cards */}
                 <RevealBlock delay={80} className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                   {(['A','B','C','D']).map(pid => {
-                    const p = PC[pid];
+                    const p = localPC[pid];
                     const info = day[pid];
                     return (
                       <div key={pid} className="rounded-2xl p-4 border" style={{ background: p.bg, borderColor: p.br }}>
@@ -587,7 +607,7 @@ export default function Program() {
 
                 {/* Daily checklist */}
                 <RevealBlock delay={160} className="rounded-2xl border p-5 mb-6" style={{ borderColor: `rgba(${day.rgb},0.25)`, background: `rgba(${day.rgb},0.04)` }}>
-                  <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: day.color }}>✅ Checklist Ngày {day.n}</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: day.color }}>✅ {t('program.checklist_day_label', { n: day.n, defaultValue: `Checklist Ngày ${day.n}` })}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {day.checklist.map((item,i) => (
                       <div key={i} className="flex items-center gap-2.5 text-sm text-muted">
@@ -604,19 +624,19 @@ export default function Program() {
                 <div className="flex items-center justify-between mb-10">
                   <button onClick={() => setActiveDay(d => Math.max(0,d-1))} disabled={activeDay===0}
                     className="flex items-center gap-2 text-xs font-medium text-muted hover:text-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors px-3 py-2 rounded-lg hover:bg-surface border border-transparent hover:border-border">
-                    ← Ngày trước
+                    {t('program.prev_day', '← Ngày trước')}
                   </button>
                   <div className="flex gap-1">
-                    {SEVEN_DAYS.map((_,i) => (
+                    {localSevenDays.map((_,i) => (
                       <button key={i} onClick={() => setActiveDay(i)}
                         className="rounded-full transition-all duration-300"
-                        style={{ width: activeDay===i?16:6, height:6, background: activeDay===i ? SEVEN_DAYS[activeDay].color : 'rgba(255,255,255,0.15)' }}
+                        style={{ width: activeDay===i?16:6, height:6, background: activeDay===i ? localSevenDays[activeDay].color : 'rgba(255,255,255,0.15)' }}
                       />
                     ))}
                   </div>
                   <button onClick={() => setActiveDay(d => Math.min(6,d+1))} disabled={activeDay===6}
                     className="flex items-center gap-2 text-xs font-medium text-muted hover:text-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors px-3 py-2 rounded-lg hover:bg-surface border border-transparent hover:border-border">
-                    Ngày tiếp →
+                    {t('program.next_day', 'Ngày tiếp →')}
                   </button>
                 </div>
               </div>
@@ -626,9 +646,9 @@ export default function Program() {
           {/* 7-day philosophy note */}
           <RevealBlock className="rounded-2xl border border-accent/15 p-5 bg-accent/4 mb-8">
             <p className="text-xs text-muted leading-relaxed text-center">
-              💡 <strong className="text-text">7 ngày này là nền tảng</strong> — không phải để "thay đổi cơ thể" mà để
-              <strong className="text-accent"> hình thành 4 thói quen đầu tiên</strong>.
-              Hoàn thành 7 ngày → bắt đầu <button onClick={() => setJourney('12w')} className="text-lime-400 underline cursor-pointer hover:no-underline">12 tuần cơ bản</button>.
+              💡 <strong className="text-text">{t('program.philosophy_7d_strong', '7 ngày này là nền tảng')}</strong> {t('program.philosophy_7d_body', '— không phải để "thay đổi cơ thể" mà để')}
+              <strong className="text-accent"> {t('program.philosophy_7d_habit', 'hình thành 4 thói quen đầu tiên')}</strong>.
+              {' '}{t('program.philosophy_7d_suffix', 'Hoàn thành 7 ngày → bắt đầu')} <button onClick={() => setJourney('12w')} className="text-lime-400 underline cursor-pointer hover:no-underline">{t('program.link_12w_text', '12 tuần cơ bản')}</button>.
             </p>
           </RevealBlock>
         </div>
@@ -643,7 +663,7 @@ export default function Program() {
           <div className="sticky top-16 z-30 bg-bg/95 backdrop-blur-md border-b border-border/60 -mx-4 md:-mx-8 px-4 md:px-8 mb-8">
             <div className="overflow-x-auto scrollbar-hide">
               <div className="flex" style={{ width:'max-content', minWidth:'100%' }}>
-                {SUB_TABS_12W.map(tab => {
+                {localSubTabs.map(tab => {
                   const active = subTab === tab.id;
                   const jColor = journey === '12w' ? '#84cc16' : '#a855f7';
                   return (
@@ -669,9 +689,7 @@ export default function Program() {
               <div>
                 <RevealBlock className="mb-6 text-center">
                   <p className="text-sm text-muted">
-                    {journey === '12w'
-                      ? '3 giai đoạn — mỗi giai đoạn xây trên nền tảng của giai đoạn trước. Nhấn vào từng giai đoạn để xem chi tiết.'
-                      : '6 giai đoạn toàn diện — 12 tuần nền tảng + 12 tuần nâng cao. Nhấn từng giai đoạn để xem chi tiết.'}
+                    {journey === '12w' ? t('program.phases_intro_12w') : t('program.phases_intro_24w')}
                   </p>
                 </RevealBlock>
                 <div className="relative">
@@ -684,8 +702,8 @@ export default function Program() {
                 {journey === '12w' && (
                   <RevealBlock className="mt-6 p-4 rounded-2xl border border-purple-500/15 bg-purple-500/4 text-center">
                     <p className="text-xs text-muted">
-                      Muốn tiến xa hơn sau 12 tuần? →{' '}
-                      <button onClick={() => setJourney('24w')} className="text-purple-400 underline hover:no-underline cursor-pointer">Xem lộ trình 24 tuần nâng cao</button>
+                      {t('program.upgrade_to_24w_cta', 'Muốn tiến xa hơn sau 12 tuần? →')}{' '}
+                      <button onClick={() => setJourney('24w')} className="text-purple-400 underline hover:no-underline cursor-pointer">{t('program.see_24w_btn', 'Xem lộ trình 24 tuần nâng cao')}</button>
                     </p>
                   </RevealBlock>
                 )}
@@ -716,12 +734,18 @@ export default function Program() {
                   </div>
                 </div>
                 <RevealBlock delay={320} className="mt-8 p-5 rounded-2xl border border-accent/15 bg-accent/4">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-accent mb-3">💡 Nguyên Tắc Khung Ngày</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-accent mb-3">💡 {t('program.daily_principles_title', 'Nguyên Tắc Khung Ngày')}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-muted">
-                    <p>• Không bỏ 5\' khởi động — giảm 70% nguy cơ chấn thương</p>
-                    <p>• Mind Reset có thể thay bằng 5\' đi bộ im lặng</p>
-                    <p>• Nếu chỉ có 20 phút: 5\' khởi động + 10\' chính + 5\' giãn</p>
-                    <p>• Nếu có 40 phút: thêm Giãn cơ và Mind Reset đầy đủ</p>
+                    {(() => {
+                      const principles = t('program.daily_principles', { returnObjects: true });
+                      const pArr = Array.isArray(principles) ? principles : [
+                        "Không bỏ 5' khởi động — giảm 70% nguy cơ chấn thương",
+                        "Mind Reset có thể thay bằng 5' đi bộ im lặng",
+                        "Nếu chỉ có 20 phút: 5' khởi động + 10' chính + 5' giãn",
+                        "Nếu có 40 phút: thêm Giãn cơ và Mind Reset đầy đủ"
+                      ];
+                      return pArr.map((p, i) => <p key={i}>• {p}</p>);
+                    })()}
                   </div>
                 </RevealBlock>
               </div>
@@ -741,12 +765,18 @@ export default function Program() {
                   </RevealBlock>
                 ))}
                 <RevealBlock delay={320} className="p-5 rounded-2xl border border-blue-500/15 bg-blue-500/4 mt-4">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">📌 Điều Chỉnh Cho Lịch Của Bạn</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">📌 {t('program.adjust_schedule_title', 'Điều Chỉnh Cho Lịch Của Bạn')}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted">
-                    <p>• <strong className="text-text">Siêu bận:</strong> T2/T4/CN — 3 buổi/tuần là đủ ổn định</p>
-                    <p>• <strong className="text-text">Shift làm việc:</strong> linh hoạt ngày, giữ đủ 3–4 buổi/tuần</p>
-                    <p>• <strong className="text-text">Mới bắt đầu:</strong> 3 buổi/tuần, mỗi buổi 20–25 phút</p>
-                    <p>• <strong className="text-text">Cardio nhẹ:</strong> đi bộ đến nơi làm = tích hợp NEAT tự nhiên</p>
+                    {(() => {
+                      const tips = t('program.adjust_tips', { returnObjects: true });
+                      const tArr = Array.isArray(tips) ? tips : [
+                        "Siêu bận: T2/T4/CN — 3 buổi/tuần là đủ ổn định",
+                        "Shift làm việc: linh hoạt ngày, giữ đủ 3–4 buổi/tuần",
+                        "Mới bắt đầu: 3 buổi/tuần, mỗi buổi 20–25 phút",
+                        "Cardio nhẹ: đi bộ đến nơi làm = tích hợp NEAT tự nhiên"
+                      ];
+                      return tArr.map((tip, i) => <p key={i}>• {tip}</p>);
+                    })()}
                   </div>
                 </RevealBlock>
               </div>
@@ -777,7 +807,7 @@ export default function Program() {
             {subTab === 'test' && (
               <div>
                 <RevealBlock className="text-xs text-muted mb-5 p-4 rounded-xl border border-purple-500/15 bg-purple-500/4">
-                  <strong className="text-purple-400">📋 Hướng dẫn:</strong> Test buổi sáng sau khi thức dậy, trước khi ăn. Ghi kết quả và so sánh qua các mốc để theo dõi tiến bộ thực sự.
+                  <strong className="text-purple-400">📋 {t('program.test_guide', 'Test buổi sáng sau khi thức dậy, trước khi ăn. Ghi kết quả và so sánh qua các mốc để theo dõi tiến bộ thực sự.')}</strong>
                 </RevealBlock>
                 <div className="bg-surface border border-border rounded-2xl overflow-hidden">
                   <div className="h-[2px] bg-gradient-to-r from-purple-500/60 via-purple-500/20 to-transparent" />
@@ -785,12 +815,12 @@ export default function Program() {
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b border-border">
-                          <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">Chỉ Số</th>
-                          <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">Bài Test</th>
-                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">Baseline</th>
-                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">Tuần 4</th>
-                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">Tuần 12</th>
-                          {journey === '24w' && <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">Tuần 24</th>}
+                          <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">{t('program.test_metric_col', 'Chỉ Số')}</th>
+                          <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">{t('program.test_method_col', 'Bài Test')}</th>
+                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_baseline_col', 'Baseline')}</th>
+                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week4_col', 'Tuần 4')}</th>
+                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week12_col', 'Tuần 12')}</th>
+                          {journey === '24w' && <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week24_col', 'Tuần 24')}</th>}
                         </tr>
                       </thead>
                       <tbody>
@@ -810,7 +840,7 @@ export default function Program() {
                 </div>
                 <RevealBlock delay={200} className="mt-4 p-4 rounded-2xl border border-accent/15 bg-accent/4">
                   <p className="text-xs text-muted">
-                    🛠️ Dùng <Link to="/pillar/f/progress-test" className="text-accent hover:underline">Công cụ Bài Test Tiến Bộ</Link> để lưu kết quả và so sánh qua các mốc tự động.
+                    🛠️ {t('program.test_tool_note', 'Dùng Công cụ Bài Test Tiến Bộ để lưu kết quả và so sánh qua các mốc tự động.')}
                   </p>
                 </RevealBlock>
               </div>
@@ -823,27 +853,32 @@ export default function Program() {
       {/* ── Cross-pillar quick links ───────────────────────────── */}
       <RevealBlock className="mt-12">
         <div className="border-t border-border/50 pt-10 mb-6">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-muted mb-4 text-center">Đi Sâu Vào Từng Trụ Cột</h2>
+          <h2 className="text-xs font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.deep_dive_title', 'Đi Sâu Vào Từng Trụ Cột')}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {[
-              { to:'/pillar/a', icon:'🏃', label:'Vận Động & Tập Luyện', sub:'6 mẫu · Khung ngày · Lộ trình', color:'#22c55e' },
-              { to:'/pillar/b/roadmap', icon:'🥗', label:'Lộ Trình Dinh Dưỡng', sub:'12 tuần · Macro · Meal prep', color:'#84cc16' },
-              { to:'/pillar/b/7day', icon:'📅', label:'Thực Đơn 7 Ngày', sub:'Bữa ăn theo ngày · Shopping list', color:'#84cc16' },
-              { to:'/pillar/c/roadmap', icon:'🌿', label:'Lối Sống 12 Tuần', sub:'Ngủ · NEAT · Nhịp sinh học', color:'#14b8a6' },
-              { to:'/pillar/d/roadmap', icon:'🧘', label:'Tâm Trí 12 Tuần', sub:'Thiền · Thở · Journaling', color:'#a855f7' },
-              { to:'/pillar/f/roadmap', icon:'🛠️', label:'Lộ Trình Công Cụ', sub:'Checklist · Tracker · Test', color:'#f97316' },
-            ].map(link => (
-              <Link key={link.to} to={link.to}
-                className="flex items-start gap-3 p-3.5 rounded-2xl border border-border bg-surface hover:border-[var(--lc)] hover:-translate-y-0.5 transition-all duration-200 group"
-                style={{ '--lc': `rgba(${link.color.replace('#','').match(/.{2}/g).map(x=>parseInt(x,16)).join(',')},0.35)` }}
-              >
-                <span className="text-xl shrink-0">{link.icon}</span>
-                <div className="min-w-0">
-                  <div className="font-semibold text-text text-xs leading-snug">{link.label}</div>
-                  <div className="text-[10px] text-muted mt-0.5 leading-relaxed">{link.sub}</div>
-                </div>
-              </Link>
-            ))}
+              { to:'/pillar/a',          icon:'🏃', color:'#22c55e' },
+              { to:'/pillar/b/roadmap',  icon:'🥗', color:'#84cc16' },
+              { to:'/pillar/b/7day',     icon:'📅', color:'#84cc16' },
+              { to:'/pillar/c/roadmap',  icon:'🌿', color:'#14b8a6' },
+              { to:'/pillar/d/roadmap',  icon:'🧘', color:'#a855f7' },
+              { to:'/pillar/f/roadmap',  icon:'🛠️', color:'#f97316' },
+            ].map((link, idx) => {
+              const ql = localQuickLinks?.[idx];
+              const label = ql?.label || ['Vận Động & Tập Luyện','Lộ Trình Dinh Dưỡng','Thực Đơn 7 Ngày','Lối Sống 12 Tuần','Tâm Trí 12 Tuần','Lộ Trình Công Cụ'][idx];
+              const sub = ql?.sub || ['6 mẫu · Khung ngày · Lộ trình','12 tuần · Macro · Meal prep','Bữa ăn theo ngày · Shopping list','Ngủ · NEAT · Nhịp sinh học','Thiền · Thở · Journaling','Checklist · Tracker · Test'][idx];
+              return (
+                <Link key={link.to} to={link.to}
+                  className="flex items-start gap-3 p-3.5 rounded-2xl border border-border bg-surface hover:border-[var(--lc)] hover:-translate-y-0.5 transition-all duration-200 group"
+                  style={{ '--lc': `rgba(${link.color.replace('#','').match(/.{2}/g).map(x=>parseInt(x,16)).join(',')},0.35)` }}
+                >
+                  <span className="text-xl shrink-0">{link.icon}</span>
+                  <div className="min-w-0">
+                    <div className="font-semibold text-text text-xs leading-snug">{label}</div>
+                    <div className="text-[10px] text-muted mt-0.5 leading-relaxed">{sub}</div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </RevealBlock>

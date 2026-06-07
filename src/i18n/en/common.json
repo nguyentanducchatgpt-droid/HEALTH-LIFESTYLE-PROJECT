@@ -247,7 +247,124 @@
     "choose": "Choose Your Journey",
     "j7d": "7-day kickstart",
     "j12w": "12-week foundation",
-    "j24w": "24-week advanced"
+    "j24w": "24-week advanced",
+    "day_prefix": "D",
+    "day_of_7_label": "Day {{n}} of 7",
+    "checklist_day_label": "Day {{n}} Checklist",
+    "prev_day": "← Previous day",
+    "next_day": "Next day →",
+    "pillar_section_header": "Pillar Content",
+    "kpi_section_header": "Key Metrics",
+    "milestone_header": "Milestones",
+    "phases_intro_12w": "3 phases — each builds on the previous. Tap a phase for details.",
+    "phases_intro_24w": "6 comprehensive phases — 12-week foundation + 12-week advanced. Tap each for details.",
+    "upgrade_to_24w_cta": "Want to go further after 12 weeks? →",
+    "see_24w_btn": "View 24-week advanced roadmap",
+    "daily_principles_title": "Daily Framework Principles",
+    "daily_principles": [
+      "Never skip the 5 min warm-up — reduces injury risk by 70%",
+      "Mind Reset can be replaced by 5 min of silent walking",
+      "Only have 20 min? 5 min warm-up + 10 min main + 5 min cool-down",
+      "Have 40 min? Add full cool-down and Mind Reset"
+    ],
+    "adjust_schedule_title": "Adapt to Your Schedule",
+    "adjust_tips": [
+      "Super busy: Mon/Wed/Sun — 3 sessions/week is stable",
+      "Shift work: flexible days, keep 3–4 sessions/week",
+      "Beginner: 3 sessions/week, 20–25 min each",
+      "Light cardio: walk to work = natural NEAT integration"
+    ],
+    "test_guide": "Test in the morning after waking, before eating. Record and compare across checkpoints.",
+    "test_metric_col": "Metric",
+    "test_method_col": "Test Method",
+    "test_baseline_col": "Baseline",
+    "test_week4_col": "Week 4",
+    "test_week12_col": "Week 12",
+    "test_week24_col": "Week 24",
+    "test_tool_note": "Use the Progress Test Tool to save results and compare automatically.",
+    "deep_dive_title": "Deep Dive Into Each Pillar",
+    "link_12w_text": "12-week program",
+    "pillar_labels": { "A": "Movement", "B": "Nutrition", "C": "Lifestyle", "D": "Mind", "F": "Tools" },
+    "philosophy_7d_strong": "These 7 days are the foundation",
+    "philosophy_7d_body": "— not to 'transform your body' but to",
+    "philosophy_7d_habit": "form your first 4 habits",
+    "philosophy_7d_suffix": "Complete 7 days → start the",
+    "journeys": [
+      { "label": "7-Day Kickstart", "sub": "First week", "desc": "Start gently with 7 days. Each day integrates all 4 pillars: Movement · Nutrition · Lifestyle · Mind." },
+      { "label": "12-Week Foundation", "sub": "Core program", "desc": "3 phases: Kickstart → Build Base → Personalize. Enough time to rewire brain habits permanently." },
+      { "label": "24-Week Advanced", "sub": "Complete program", "desc": "6 phases: from beginner to full mastery of your personal health system. Carb cycling + supplement + mastery." }
+    ],
+    "quick_links": [
+      { "label": "Movement & Training", "sub": "6 patterns · Daily framework · Roadmap" },
+      { "label": "Nutrition Roadmap", "sub": "12 weeks · Macro · Meal prep" },
+      { "label": "7-Day Meal Plan", "sub": "Daily meals · Shopping list" },
+      { "label": "Lifestyle 12 Weeks", "sub": "Sleep · NEAT · Circadian rhythm" },
+      { "label": "Mind 12 Weeks", "sub": "Meditation · Breathing · Journaling" },
+      { "label": "Tools Roadmap", "sub": "Checklist · Tracker · Test" }
+    ],
+    "sub_tab_phases": "Roadmap",
+    "sub_tab_daily": "Daily Framework",
+    "sub_tab_weekly": "Weekly Rhythm",
+    "sub_tab_tips": "Principles",
+    "sub_tab_test": "Progress Test",
+    "seven_days": [
+      {
+        "theme": "Start Light — Build Your Foundation", "tag": "Kickstart Day",
+        "A": { "title": "Learn 6 Fundamental Movements", "detail": "Squat · Hinge · Push · Pull · Core · Breath", "time": "20 min", "note": "Perfect form before load. Don't worry about reps — that's your only goal today." },
+        "B": { "title": "Eat 3 Protein-Rich Meals", "detail": "2 eggs morning · chicken breast lunch · fish/tofu dinner", "kcal": "~1,410 kcal", "note": "No need to cut carbs. Add veg and reduce sweets — enough for day one." },
+        "C": { "title": "Sleep Before 11 PM", "detail": "Dark + cool room · phone away from bed · 7–9h", "note": "More important than any workout — priority #1." },
+        "D": { "title": "3 Deep Breaths on Waking", "detail": "Inhale 4s · hold 4s · exhale 4s — repeat 3 times", "note": "30 seconds sets an anchor for the whole day." },
+        "checklist": ["Train 20 min (6 movements)", "Protein in 2/3+ meals", "Drink 1.8L water", "Sleep before 11 PM", "3 morning deep breaths"]
+      },
+      {
+        "theme": "Protein & Water — Two Top Priorities", "tag": "Protein & Hydration",
+        "A": { "title": "Repeat 6 Movements + Add 1 Set", "detail": "Same workout · add 1 set per movement", "time": "22 min", "note": "The brain learns through repetition — don't skip it even if it feels too simple." },
+        "B": { "title": "Protein at Every Main Meal", "detail": "Oats + eggs · meat/fish/veg · tofu", "kcal": "~1,380 kcal", "note": "1 palm of protein per meal — the simplest rule to avoid protein shortfall." },
+        "C": { "title": "10-Minute Morning Routine", "detail": "Drink water · 5 min sunlight · write 1 daily goal", "note": "A morning anchor helps the brain switch on earlier." },
+        "D": { "title": "3-Line Evening Journal", "detail": "What went well · what I learned · what to do tomorrow", "note": "5 min before bed. Doesn't need to be good — just honest." },
+        "checklist": ["Protein all 3 meals", "Drink 2L water", "Morning routine 10 min", "Evening journal 3 lines", "Train 22 min"]
+      },
+      {
+        "theme": "Smart Eating Out & Light Cardio", "tag": "Smart Eating + Walk",
+        "A": { "title": "Brisk Walk 20 Minutes", "detail": "Light cardio · heart rate 100–120 · muscle recovery", "time": "20 min", "note": "Walk after lunch: lowers blood sugar 20–30%, builds base endurance." },
+        "B": { "title": "Handle Eating Out Smartly", "detail": "1 protein + 2 veg + moderate carbs = the eating-out formula", "kcal": "~1,450 kcal", "note": "No need to avoid social meals — just use a simple strategy." },
+        "C": { "title": "No Phone 30 Min Before Bed", "detail": "Replace with: reading · breathing · light stretching", "note": "Blue light suppresses melatonin — one small habit improves sleep depth." },
+        "D": { "title": "Box Breathing 5 Minutes", "detail": "Inhale 4 · hold 4 · exhale 4 · hold 4 — repeat 5 rounds", "note": "Use when stressed, before meetings, or before bed." },
+        "checklist": ["Walk 20 min", "Eating-out formula", "No phone 30 min before bed", "Box breathing 5 min", "Drink enough water"]
+      },
+      {
+        "theme": "Vegetables & Active Recovery", "tag": "Greens & Recovery",
+        "A": { "title": "Active Recovery 15 Minutes", "detail": "Stretch · foam roll · light yoga · no heavy training", "time": "15 min", "note": "Recovery = invisible training. Muscles grow at rest, not during effort." },
+        "B": { "title": "Vegetable Priority Day", "detail": "Salad · soup · steamed veg · more than usual", "kcal": "~1,300 kcal", "note": "Fiber feeds gut bacteria — immune system and mood both benefit." },
+        "C": { "title": "8,000 Steps + Sunlight", "detail": "Total 8k steps through the day · 5 min morning sunlight", "note": "No need to walk continuously. Steps accumulate throughout the day." },
+        "D": { "title": "Meditation 5 Minutes", "detail": "Sit · close eyes · focus on breath · no judgment", "note": "You don't need to empty your mind — just notice and gently return to breath." },
+        "checklist": ["Stretch 15 min", "Veg in 2+ meals", "8,000 steps", "Meditate 5 min", "Sleep 7–9h"]
+      },
+      {
+        "theme": "Strong Training Day & Carb Fuel", "tag": "Strong Training Day",
+        "A": { "title": "Full-Body Strength 30 Minutes", "detail": "3 sets/exercise · Squat + Lunge + Push + Row + Plank", "time": "30 min", "note": "RPE 7/10 — feel tired but not depleted. That is the right zone." },
+        "B": { "title": "Carbs Before + Protein After Training", "detail": "Before: banana · After: rice + chicken · ~1,620 kcal", "kcal": "~1,620 kcal", "note": "Carbs = fuel. Protein = muscle-building material. Don't skip the post-workout meal." },
+        "C": { "title": "Optimize Tonight's Sleep", "detail": "18–22C · complete darkness · no caffeine after 2 PM", "note": "Sleep after heavy training = the most critical time for muscle repair." },
+        "D": { "title": "Set Morning Intention", "detail": "Write 1 sentence: Today I will ___ then read it aloud", "note": "Clear intention leads to ~35% more consistent action." },
+        "checklist": ["30 min strength training", "Carbs before + protein after", "No caffeine after 2 PM", "Set morning intention", "Sleep 7–9h"]
+      },
+      {
+        "theme": "Prepare for the New Week", "tag": "Meal Prep Weekend",
+        "A": { "title": "Light Yoga / Walk 30 Minutes", "detail": "Active recovery · no heavy training on first weekend", "time": "30 min", "note": "Weekend = recharge time. Don't let training pressure damage your motivation." },
+        "B": { "title": "Meal Prep 45 Minutes", "detail": "Cook 2 proteins · veg · carbs · portion into containers", "kcal": "~1,495 kcal", "note": "Meal prep eliminates 60% of impulsive food decisions — set the environment to win." },
+        "C": { "title": "Tidy Your Space", "detail": "Desk clean · bedroom tidy · fridge organized", "note": "Tidy space reduces cortisol 20% — directly impacts sleep quality and focus." },
+        "D": { "title": "10-Minute Weekly Review", "detail": "What went well · what needs work · what to improve next week", "note": "Weekly review = the fastest growth tool. Turn experiences into lessons." },
+        "checklist": ["Meal prep 45 min", "Yoga/walk 30 min", "Tidy space", "Weekly review 10 min", "Plan next week's meals"]
+      },
+      {
+        "theme": "Full Rest & Reflect", "tag": "Rest & Reflect",
+        "A": { "title": "Complete Rest Day", "detail": "Rest day · gentle walk if you like · focus on recovery", "time": "Optional", "note": "Rest day is not failure. Your body is building strength from last week's training." },
+        "B": { "title": "Light, Easy-to-Digest Meals", "detail": "Vegetable soup · congee · fruit · ~1,240 kcal", "kcal": "~1,240 kcal", "note": "Let your digestive system rest — less processed, more produce, enough water." },
+        "C": { "title": "Plan the New Week", "detail": "Schedule training · prep meal plan · review goals", "note": "Preparation = winning 80% — no daily improvisation needed." },
+        "D": { "title": "7-Day Wrap-Up", "detail": "3 wins · 1 area to improve · 1 commitment going forward", "note": "Look back to learn and move forward with more insight — not to criticize yourself." },
+        "checklist": ["Rest / gentle walk", "Light easy-to-digest meals", "Plan next week", "7-day wrap-up journal", "Early sleep before 10:30 PM"]
+      }
+    ]
   },
   "contact": {
     "title": "Contact",

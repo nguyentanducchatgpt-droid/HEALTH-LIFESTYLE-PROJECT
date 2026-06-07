@@ -247,7 +247,124 @@
     "choose": "Wählen Sie Ihre Reise",
     "j7d": "7-Tage-Kickstart",
     "j12w": "12-Wochen-Grundlage",
-    "j24w": "24-Wochen-Fortgeschritten"
+    "j24w": "24-Wochen-Fortgeschritten",
+    "day_prefix": "T",
+    "day_of_7_label": "Tag {{n}} von 7",
+    "checklist_day_label": "Tag {{n}} Checkliste",
+    "prev_day": "← Vorheriger Tag",
+    "next_day": "Nächster Tag →",
+    "pillar_section_header": "Säulen-Inhalte",
+    "kpi_section_header": "Wichtige Kennzahlen",
+    "milestone_header": "Meilensteine",
+    "phases_intro_12w": "3 Phasen — jede baut auf der vorherigen auf. Tippe eine Phase für Details.",
+    "phases_intro_24w": "6 umfassende Phasen — 12 Wochen Grundlage + 12 Wochen Fortgeschritten. Tippe jede Phase für Details.",
+    "upgrade_to_24w_cta": "Weiter nach 12 Wochen? →",
+    "see_24w_btn": "24-Wochen Fortgeschrittenen-Roadmap ansehen",
+    "daily_principles_title": "Tagesrahmen-Prinzipien",
+    "daily_principles": [
+      "Nie das 5-Min-Aufwärmen überspringen — reduziert Verletzungsrisiko um 70%",
+      "Mind Reset kann durch 5 Min stilles Gehen ersetzt werden",
+      "Nur 20 Min? 5 Min Aufwärmen + 10 Min Haupt + 5 Min Abkühlen",
+      "40 Min? Volles Abkühlen und Mind Reset hinzufügen"
+    ],
+    "adjust_schedule_title": "An Deinen Zeitplan Anpassen",
+    "adjust_tips": [
+      "Sehr beschäftigt: Mo/Mi/So — 3 Einheiten/Woche ist stabil",
+      "Schichtarbeit: flexible Tage, 3–4 Einheiten/Woche halten",
+      "Anfänger: 3 Einheiten/Woche, je 20–25 Min",
+      "Leichtes Cardio: zur Arbeit gehen = natürliche NEAT-Integration"
+    ],
+    "test_guide": "Test morgens nach dem Aufwachen, vor dem Essen. Ergebnisse aufzeichnen und über Checkpoints vergleichen.",
+    "test_metric_col": "Kennzahl",
+    "test_method_col": "Testmethode",
+    "test_baseline_col": "Ausgangswert",
+    "test_week4_col": "Woche 4",
+    "test_week12_col": "Woche 12",
+    "test_week24_col": "Woche 24",
+    "test_tool_note": "Nutze das Fortschrittstest-Tool um Ergebnisse zu speichern und automatisch zu vergleichen.",
+    "deep_dive_title": "Tief In Jede Säule Eintauchen",
+    "link_12w_text": "12-Wochen-Programm",
+    "pillar_labels": { "A": "Bewegung", "B": "Ernährung", "C": "Lebensstil", "D": "Geist", "F": "Werkzeuge" },
+    "philosophy_7d_strong": "Diese 7 Tage sind das Fundament",
+    "philosophy_7d_body": "— nicht um den Körper zu transformieren, sondern um",
+    "philosophy_7d_habit": "die ersten 4 Gewohnheiten zu formen",
+    "philosophy_7d_suffix": "7 Tage abschließen → starte das",
+    "journeys": [
+      { "label": "7-Tage-Start", "sub": "Erste Woche", "desc": "Sanft starten mit 7 Tagen. Jeder Tag integriert alle 4 Säulen: Bewegung · Ernährung · Lebensstil · Geist." },
+      { "label": "12-Wochen-Grundlage", "sub": "Kernprogramm", "desc": "3 Phasen: Start → Aufbau → Personalisierung. Genug Zeit um Gehirngewohnheiten dauerhaft zu ändern." },
+      { "label": "24-Wochen-Fortgeschritten", "sub": "Vollständiges Programm", "desc": "6 Phasen: vom Anfänger zur vollständigen Beherrschung deines persönlichen Gesundheitssystems." }
+    ],
+    "quick_links": [
+      { "label": "Bewegung & Training", "sub": "6 Muster · Tagesrahmen · Roadmap" },
+      { "label": "Ernährungs-Roadmap", "sub": "12 Wochen · Makro · Meal Prep" },
+      { "label": "7-Tage-Ernährungsplan", "sub": "Tägliche Mahlzeiten · Einkaufsliste" },
+      { "label": "Lebensstil 12 Wochen", "sub": "Schlaf · NEAT · Circadianrhythmus" },
+      { "label": "Geist 12 Wochen", "sub": "Meditation · Atmung · Journaling" },
+      { "label": "Werkzeuge-Roadmap", "sub": "Checkliste · Tracker · Test" }
+    ],
+    "sub_tab_phases": "Roadmap",
+    "sub_tab_daily": "Tagesrahmen",
+    "sub_tab_weekly": "Wochenrhythmus",
+    "sub_tab_tips": "Grundsätze",
+    "sub_tab_test": "Fortschrittstest",
+    "seven_days": [
+      {
+        "theme": "Leicht Starten — Grundlagen Aufbauen", "tag": "Starttag",
+        "A": { "title": "6 Grundbewegungen Lernen", "detail": "Squat · Hinge · Push · Pull · Core · Atem", "time": "20 Min", "note": "Perfekte Form vor Gewicht. Keine Sorge um Wiederholungen — das ist dein einziges Ziel heute." },
+        "B": { "title": "3 Proteinreiche Mahlzeiten Essen", "detail": "2 Eier morgens · Hühnerbrust mittags · Fisch/Tofu abends", "kcal": "~1.410 kcal", "note": "Keine Kohlenhydrate streichen. Mehr Gemüse und weniger Süßes — das reicht für Tag eins." },
+        "C": { "title": "Vor 23 Uhr Schlafen", "detail": "Dunkles kühles Zimmer · Handy weg vom Bett · 7–9h", "note": "Wichtiger als jedes Training — Priorität Nr. 1." },
+        "D": { "title": "3 Tiefe Atemzüge beim Aufwachen", "detail": "Einatmen 4s · Halten 4s · Ausatmen 4s — 3 Mal wiederholen", "note": "30 Sekunden setzen einen Anker für den ganzen Tag." },
+        "checklist": ["20 Min trainieren (6 Bewegungen)", "Protein in 2/3+ Mahlzeiten", "1,8L Wasser trinken", "Vor 23 Uhr schlafen", "3 Morgenatemzüge"]
+      },
+      {
+        "theme": "Protein & Wasser — Zwei Top-Prioritäten", "tag": "Protein & Hydration",
+        "A": { "title": "6 Bewegungen Wiederholen + 1 Satz Hinzufügen", "detail": "Gleiches Training · 1 Satz pro Bewegung hinzufügen", "time": "22 Min", "note": "Das Gehirn lernt durch Wiederholung — auch wenn es zu einfach wirkt." },
+        "B": { "title": "Protein Bei Jeder Hauptmahlzeit", "detail": "Haferflocken + Eier · Fleisch/Fisch/Gemüse · Tofu", "kcal": "~1.380 kcal", "note": "1 Handflächengröße Protein pro Mahlzeit — einfachste Regel gegen Proteinmangel." },
+        "C": { "title": "10-Minuten-Morgenroutine", "detail": "Wasser trinken · 5 Min Sonnenlicht · 1 Tagesziel aufschreiben", "note": "Ein Morgenanker hilft dem Gehirn früher einzuschalten." },
+        "D": { "title": "3-Zeilen-Abendjournal", "detail": "Was gut lief · was ich gelernt habe · was ich morgen tue", "note": "5 Min vor dem Schlaf. Muss nicht gut sein — nur ehrlich." },
+        "checklist": ["Protein bei allen 3 Mahlzeiten", "2L Wasser trinken", "Morgenroutine 10 Min", "Abendjournal 3 Zeilen", "22 Min trainieren"]
+      },
+      {
+        "theme": "Clever Auswärts Essen & Leichtes Cardio", "tag": "Smart Eating + Walk",
+        "A": { "title": "20 Minuten Flott Gehen", "detail": "Leichtes Cardio · Herzfrequenz 100–120 · Muskelregeneration", "time": "20 Min", "note": "Nach dem Mittagessen gehen: senkt Blutzucker 20–30%, baut Grundausdauer auf." },
+        "B": { "title": "Clever Auswärts Essen", "detail": "1 Protein + 2 Gemüse + moderate Kohlenhydrate = Auswärts-Formel", "kcal": "~1.450 kcal", "note": "Keine sozialen Mahlzeiten meiden — nur eine einfache Strategie anwenden." },
+        "C": { "title": "30 Min Vor Dem Schlaf Kein Handy", "detail": "Ersetzen durch: Lesen · Atmen · Leichtes Dehnen", "note": "Blaues Licht hemmt Melatonin — eine kleine Gewohnheit verbessert die Schlaftiefe." },
+        "D": { "title": "Box-Atmung 5 Minuten", "detail": "Einatmen 4 · Halten 4 · Ausatmen 4 · Halten 4 — 5 Runden wiederholen", "note": "Bei Stress, vor Meetings oder vor dem Schlaf einsetzen." },
+        "checklist": ["20 Min gehen", "Auswärts-Formel anwenden", "30 Min vor Schlaf kein Handy", "Box-Atmung 5 Min", "Genug Wasser trinken"]
+      },
+      {
+        "theme": "Gemüse & Aktive Erholung", "tag": "Greens & Recovery",
+        "A": { "title": "15 Minuten Aktive Erholung", "detail": "Dehnen · Schaumrolle · Leichtes Yoga · Kein schweres Training", "time": "15 Min", "note": "Erholung = unsichtbares Training. Muskeln wachsen in Ruhe, nicht beim Training." },
+        "B": { "title": "Gemüse-Prioritäts-Tag", "detail": "Salat · Suppe · Gedämpftes Gemüse · Mehr als üblich", "kcal": "~1.300 kcal", "note": "Ballaststoffe ernähren Darmbakterien — Immunsystem und Stimmung profitieren beide." },
+        "C": { "title": "8.000 Schritte + Sonnenlicht", "detail": "Gesamt 8k Schritte über den Tag · 5 Min Morgensonne", "note": "Kein kontinuierliches Gehen nötig. Schritte summieren sich über den Tag." },
+        "D": { "title": "5 Minuten Meditation", "detail": "Sitzen · Augen schließen · Auf Atem fokussieren · Kein Urteil", "note": "Du musst deinen Geist nicht leeren — einfach bemerken und sanft zum Atem zurückkehren." },
+        "checklist": ["15 Min dehnen", "Gemüse in 2+ Mahlzeiten", "8.000 Schritte", "5 Min meditieren", "7–9h schlafen"]
+      },
+      {
+        "theme": "Starker Trainingstag & Kohlenhydrat-Tankfüllung", "tag": "Strong Training Day",
+        "A": { "title": "30 Minuten Ganzkörperkraft", "detail": "3 Sätze/Übung · Squat + Ausfallschritte + Push + Row + Plank", "time": "30 Min", "note": "RPE 7/10 — müde aber nicht erschöpft fühlen. Das ist die richtige Zone." },
+        "B": { "title": "Kohlenhydrate Vor + Protein Nach Training", "detail": "Vorher: Banane · Nachher: Reis + Hähnchen · ~1.620 kcal", "kcal": "~1.620 kcal", "note": "Kohlenhydrate = Kraftstoff. Protein = Muskelbaustoff. Mahlzeit nach Training nicht auslassen." },
+        "C": { "title": "Den Heutigen Schlaf Optimieren", "detail": "18–22°C · Vollständige Dunkelheit · Kein Koffein nach 14 Uhr", "note": "Schlaf nach schwerem Training = wichtigste Zeit für Muskelreparatur." },
+        "D": { "title": "Morgenabsicht Setzen", "detail": "1 Satz schreiben: Heute werde ich ___ dann laut vorlesen", "note": "Klare Absicht führt zu ~35% konsistenterem Handeln." },
+        "checklist": ["30 Min Krafttraining", "Kohlenhydrate vor + Protein nach", "Kein Koffein nach 14 Uhr", "Morgenabsicht setzen", "7–9h schlafen"]
+      },
+      {
+        "theme": "Für Die Neue Woche Vorbereiten", "tag": "Meal Prep Wochenende",
+        "A": { "title": "Leichtes Yoga / 30 Minuten Gehen", "detail": "Aktive Erholung · Kein schweres Training am ersten Wochenende", "time": "30 Min", "note": "Wochenende = Aufladezeit. Trainingsdruck nicht die Motivation beschädigen lassen." },
+        "B": { "title": "45 Minuten Mahlzeiten Vorbereiten", "detail": "2 Proteine kochen · Gemüse · Kohlenhydrate · In Behälter portionieren", "kcal": "~1.495 kcal", "note": "Meal Prep eliminiert 60% der impulsiven Essentscheidungen — Umgebung zum Gewinnen einrichten." },
+        "C": { "title": "Raum Aufräumen", "detail": "Schreibtisch aufgeräumt · Schlafzimmer ordentlich · Kühlschrank organisiert", "note": "Ordentlicher Raum reduziert Cortisol um 20% — direkte Auswirkung auf Schlaf und Fokus." },
+        "D": { "title": "10-Minuten-Wochenrückblick", "detail": "Was gut lief · was verbessert werden muss · was nächste Woche besser wird", "note": "Wochenrückblick = schnellstes Wachstumstool. Erfahrungen in Lektionen umwandeln." },
+        "checklist": ["Meal Prep 45 Min", "Yoga/Gehen 30 Min", "Raum aufräumen", "Wochenrückblick 10 Min", "Nächste Woche's Mahlzeiten planen"]
+      },
+      {
+        "theme": "Vollständige Ruhe & Reflexion", "tag": "Rest & Reflect",
+        "A": { "title": "Vollständiger Ruhetag", "detail": "Ruhetag · sanftes Gehen wenn gewünscht · Fokus auf Erholung", "time": "Optional", "note": "Ruhetag ist kein Versagen. Dein Körper baut Kraft aus dem Training der letzten Woche auf." },
+        "B": { "title": "Leichte, Leicht Verdauliche Mahlzeiten", "detail": "Gemüsesuppe · Brei · Obst · ~1.240 kcal", "kcal": "~1.240 kcal", "note": "Verdauungssystem einen Tag ausruhen lassen — weniger verarbeitet, mehr Obst/Gemüse, genug Wasser." },
+        "C": { "title": "Neue Woche Planen", "detail": "Training einplanen · Ernährungsplan vorbereiten · Ziele überprüfen", "note": "Vorbereitung = 80% Sieg — keine tägliche Improvisation nötig." },
+        "D": { "title": "7-Tage-Zusammenfassung", "detail": "3 Erfolge · 1 Verbesserungsbereich · 1 Verpflichtung für die Zukunft", "note": "Zurückblicken um zu lernen und mit mehr Einblick vorwärtszugehen — nicht um sich zu kritisieren." },
+        "checklist": ["Ruhen / sanft gehen", "Leichte verdauliche Mahlzeiten", "Nächste Woche planen", "7-Tage-Tagebuch-Zusammenfassung", "Früh schlafen vor 22:30 Uhr"]
+      }
+    ]
   },
   "contact": {
     "title": "Kontakt",

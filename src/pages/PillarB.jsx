@@ -1481,6 +1481,7 @@ function GoalCard({ goal, active, onClick }) {
 // ─── PersonalizedBar ─────────────────────────────────────────────────────────
 
 function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông số của bạn', source, panelId = 'p', selectedKey, onSelect }) {
+  const { t } = useTranslation('common');
   return (
     <div className="rounded-xl border mb-6 px-4 py-3.5" style={{ borderColor: `${color}22`, background: `${color}07` }}>
       <div className="flex items-center justify-between mb-3">
@@ -1514,7 +1515,7 @@ function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông
                 </div>
                 <div>
                   <p className="text-[10px] text-muted/80 leading-none pt-0.5">{item.label}</p>
-                  {clickable && <p className="text-[8px] leading-none mt-0.5" style={{ color: `${color}50` }}>{isSelected ? '▲ ẩn' : '▼ chi tiết'}</p>}
+                  {clickable && <p className="text-[8px] leading-none mt-0.5" style={{ color: `${color}50` }}>{isSelected ? t('ui.hide_detail') : t('ui.show_detail')}</p>}
                 </div>
               </div>
             </div>
@@ -1529,6 +1530,7 @@ function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông
 
 function MetricDetailCard({ detail, color, onClose }) {
   if (!detail) return null;
+  const { t } = useTranslation('common');
   const { title, value, note, params = [], analysis, evaluation, suggestions = [], pros = [], cons = [] } = detail;
   return (
     <div className="rounded-2xl border mb-6 overflow-hidden animate-fade-in-up" style={{ borderColor: `${color}30`, background: `${color}05` }}>
@@ -1537,7 +1539,7 @@ function MetricDetailCard({ detail, color, onClose }) {
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-5">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-1" style={{ color: `${color}80` }}>Chi Tiết Chỉ Số</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-1" style={{ color: `${color}80` }}>{t('ui.metric_detail_label')}</p>
             <p className="text-lg font-black" style={{ color }}>{value}</p>
             <p className="text-sm font-bold text-text">{title}</p>
             {note && <p className="text-[10px] text-muted mt-0.5">{note}</p>}
@@ -5771,14 +5773,15 @@ function FormulaRow({ label, formula, result, color }) {
 }
 
 function MacroFormulaChain({ s }) {
+  const { t } = useTranslation('common');
   const bmrFormula = s.sex === 'male'
     ? `10×${s.weight} + 6.25×${s.height} − 5×${s.age} + 5`
     : `10×${s.weight} + 6.25×${s.height} − 5×${s.age} − 161`;
 
   const steps = [
-    { label: 'BMR', value: s.bmr.toLocaleString(), unit: 'kcal/ngày', formula: bmrFormula, color: '#8b5cf6' },
-    { label: 'TDEE', value: s.tdee.toLocaleString(), unit: 'kcal/ngày', formula: `${s.bmr.toLocaleString()} × ${s.activity.mult}`, color: '#f59e0b' },
-    { label: 'Mục Tiêu', value: s.targetKcal.toLocaleString(), unit: 'kcal/ngày', formula: `${s.tdee.toLocaleString()} ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} (${s.goal.label})`, color: '#ec4899' },
+    { label: 'BMR', value: s.bmr.toLocaleString(), unit: t('ui.kcal_day'), formula: bmrFormula, color: '#8b5cf6' },
+    { label: 'TDEE', value: s.tdee.toLocaleString(), unit: t('ui.kcal_day'), formula: `${s.bmr.toLocaleString()} × ${s.activity.mult}`, color: '#f59e0b' },
+    { label: t('ui.target_label'), value: s.targetKcal.toLocaleString(), unit: t('ui.kcal_day'), formula: `${s.tdee.toLocaleString()} ${s.goal.delta >= 0 ? '+' : ''}${s.goal.delta} (${s.goal.label})`, color: '#ec4899' },
   ];
   const macros = [
     { label: 'Protein', value: `${s.proteinG}g`, formula: `${s.weight}kg × ${(s.proteinG / s.weight).toFixed(1)}g/kg`, pct: s.proteinPct, color: '#84cc16' },
@@ -5801,7 +5804,7 @@ function MacroFormulaChain({ s }) {
           </div>
         ))}
       </div>
-      <div className="flex justify-center text-[10px] text-muted/40">↓ Phân bổ macro từ kcal mục tiêu</div>
+      <div className="flex justify-center text-[10px] text-muted/40">{t('ui.macro_from_target')}</div>
       <div className="grid grid-cols-3 gap-2">
         {macros.map((m) => (
           <div key={m.label} className="rounded-xl border p-3 text-center" style={{ borderColor: `${m.color}30`, background: `${m.color}08` }}>
@@ -5817,11 +5820,13 @@ function MacroFormulaChain({ s }) {
 }
 
 function MacroCycleBarChart({ s }) {
+  const { t } = useTranslation('common');
+  const barTypes = t('ui.bar_types', { returnObjects: true });
   const types = [
-    { label: 'Ngày Nghỉ', sub: '×0.90', mult: 0.90, color: '#22c55e' },
-    { label: 'Tập Nhẹ',   sub: '×0.95', mult: 0.95, color: '#06b6d4' },
-    { label: 'Tập Vừa',   sub: '×1.00', mult: 1.00, color: '#f59e0b' },
-    { label: 'Tập Nặng',  sub: '×1.07', mult: 1.07, color: '#ef4444' },
+    { label: Array.isArray(barTypes) ? barTypes[0] : 'Ngày Nghỉ', sub: '×0.90', mult: 0.90, color: '#22c55e' },
+    { label: Array.isArray(barTypes) ? barTypes[1] : 'Tập Nhẹ',   sub: '×0.95', mult: 0.95, color: '#06b6d4' },
+    { label: Array.isArray(barTypes) ? barTypes[2] : 'Tập Vừa',   sub: '×1.00', mult: 1.00, color: '#f59e0b' },
+    { label: Array.isArray(barTypes) ? barTypes[3] : 'Tập Nặng',  sub: '×1.07', mult: 1.07, color: '#ef4444' },
   ];
   const kcals = types.map(t => Math.round(s.tdee * t.mult));
   const W = 460, H = 100, PAD_T = 22, PAD_B = 42, PAD_LR = 16;
@@ -6012,6 +6017,7 @@ function EnduranceFuelingGuide({ s }) {
 // ─── AdvancedPanel (B7) ──────────────────────────────────────────────────────
 function AdvancedPanel({ s }) {
   const { t: tPillars } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
   const b7tr = tPillars('pillarB.b7', { returnObjects: true }) || {};
   const [selectedMetric, setSelectedMetric] = useState(null);
   const detail = selectedMetric ? b7MetricDetail(selectedMetric, s) : null;
@@ -6025,8 +6031,8 @@ function AdvancedPanel({ s }) {
           { key: 'light_protein',    label: b7tr.bar_light_protein || 'Protein nhẹ',     value: `${s.lightDayProteinG}g`,   note: `${(s.lightDayProteinG/s.weight).toFixed(1)}g/kg`,  tip: `Ngày tập nhẹ hoặc nghỉ: ${s.lightDayProteinG}g = ${s.weight}kg × ${(s.lightDayProteinG/s.weight).toFixed(1)}g/kg. Giảm nhẹ so với protein nền nhưng không nên xuống dưới 1.4g/kg để không mất cơ.` },
           { key: 'heavy_carb',       label: b7tr.bar_heavy_carb || 'Carb ngày nặng',     value: `${s.heavyDayCarbG}g`,      note: '+40% vs nền',                                       tip: `Ngày tập nặng cần ${s.heavyDayCarbG}g carb (= ${s.carbG}g × 1.4). Tăng carb để nạp đủ glycogen cho buổi tập cường độ cao. Phân bổ: ~${s.preWorkoutCarbG}g trước tập, phần còn lại rải đều.` },
           { key: 'light_carb',       label: b7tr.bar_light_carb || 'Carb ngày nhẹ',      value: `${s.lightDayCarbG}g`,      note: '-40% vs nền',                                       tip: `Ngày nghỉ hoặc tập nhẹ chỉ cần ${s.lightDayCarbG}g carb (= ${s.carbG}g × 0.6). Giảm carb ngày nghỉ giúp tổng calo tuần đúng mục tiêu mà vẫn có carb cao cho ngày tập quan trọng.` },
-          { key: 'preworkout_carb',  label: b7tr.bar_pre_carb || 'Pre-workout carb',      value: `${s.preWorkoutCarbG}g`,   note: '30–60 phút trước',                                  tip: `${s.preWorkoutCarbG}g carb ≈ 15% lượng carb ngày nặng (${s.heavyDayCarbG}g). Ăn 30–60 phút trước tập: chuối, bánh gạo, hoặc cơm nhỏ. Cung cấp glucose tức thì cho não và cơ, cải thiện hiệu suất 5–10%.` },
-          { key: 'postworkout_protein', label: b7tr.bar_post_protein || 'Post-workout P', value: `${s.postWorkoutProteinG}g`, note: 'trong 2h sau tập',                               tip: `${s.postWorkoutProteinG}g = ${s.weight}kg × 0.3g/kg. Trong 2 giờ sau tập, cửa sổ tổng hợp protein mở rộng nhất. Kết hợp với ${s.postWorkoutCarbG}g carb (${s.weight}kg × 0.5g/kg) để tối ưu phục hồi glycogen và tổng hợp cơ.` },
+          { key: 'preworkout_carb',  label: b7tr.bar_pre_carb || 'Pre-workout carb',      value: `${s.preWorkoutCarbG}g`,   note: tCommon('ui.preworkout_note'),  tip: `${s.preWorkoutCarbG}g carb ≈ 15% lượng carb ngày nặng (${s.heavyDayCarbG}g). Ăn 30–60 phút trước tập: chuối, bánh gạo, hoặc cơm nhỏ. Cung cấp glucose tức thì cho não và cơ, cải thiện hiệu suất 5–10%.` },
+          { key: 'postworkout_protein', label: b7tr.bar_post_protein || 'Post-workout P', value: `${s.postWorkoutProteinG}g`, note: tCommon('ui.postworkout_note'), tip: `${s.postWorkoutProteinG}g = ${s.weight}kg × 0.3g/kg. Trong 2 giờ sau tập, cửa sổ tổng hợp protein mở rộng nhất. Kết hợp với ${s.postWorkoutCarbG}g carb (${s.weight}kg × 0.5g/kg) để tối ưu phục hồi glycogen và tổng hợp cơ.` },
         ]} />
       {detail && <MetricDetailCard detail={detail} color="#f59e0b" onClose={() => setSelectedMetric(null)} />}
 

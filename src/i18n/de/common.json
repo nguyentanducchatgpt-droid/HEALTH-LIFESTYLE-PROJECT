@@ -489,5 +489,16 @@
     "topics": "Themen",
     "items": "Inhalte",
     "more_items": "weitere Inhalte"
+  },
+  "ui": {
+    "show_detail": "▼ Details",
+    "hide_detail": "▲ ausblenden",
+    "metric_detail_label": "Kennzahl-Detail",
+    "kcal_day": "kcal/Tag",
+    "macro_from_target": "↓ Makro-Verteilung aus dem Kalorienziel",
+    "target_label": "Ziel",
+    "bar_types": ["Ruhetag", "Leichtes Training", "Moderates Training", "Schweres Training"],
+    "preworkout_note": "30–60 Min vorher",
+    "postworkout_note": "innerhalb 2h nach Training"
   }
 }

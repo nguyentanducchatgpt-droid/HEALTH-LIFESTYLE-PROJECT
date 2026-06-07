@@ -489,5 +489,16 @@
     "topics": "chủ đề",
     "items": "nội dung",
     "more_items": "nội dung khác"
+  },
+  "ui": {
+    "show_detail": "▼ chi tiết",
+    "hide_detail": "▲ ẩn",
+    "metric_detail_label": "Chi Tiết Chỉ Số",
+    "kcal_day": "kcal/ngày",
+    "macro_from_target": "↓ Phân bổ macro từ kcal mục tiêu",
+    "target_label": "Mục Tiêu",
+    "bar_types": ["Ngày Nghỉ", "Tập Nhẹ", "Tập Vừa", "Tập Nặng"],
+    "preworkout_note": "30–60 phút trước",
+    "postworkout_note": "trong 2h sau tập"
   }
 }

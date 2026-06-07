@@ -489,5 +489,16 @@
     "topics": "topics",
     "items": "items",
     "more_items": "more items"
+  },
+  "ui": {
+    "show_detail": "▼ details",
+    "hide_detail": "▲ hide",
+    "metric_detail_label": "Metric Detail",
+    "kcal_day": "kcal/day",
+    "macro_from_target": "↓ Macro distribution from target kcal",
+    "target_label": "Target",
+    "bar_types": ["Rest Day", "Light Training", "Moderate Training", "Heavy Training"],
+    "preworkout_note": "30–60 min before",
+    "postworkout_note": "within 2h post-workout"
   }
 }

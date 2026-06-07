@@ -305,7 +305,18 @@ export default function PillarC() {
         </div>
         <div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
-            {pillar?.title || 'Lối Sống Khỏe'}
+            {(() => {
+              const s = pillar?.title || 'Lối Sống Khỏe';
+              const kw = 'Khỏe';
+              const i = s.lastIndexOf(kw);
+              if (i === -1) return <span className="pc-title-main">{s}</span>;
+              return (
+                <>
+                  <span className="pc-title-main">{s.slice(0, i)}</span>
+                  <span className="pc-title-key">{s.slice(i)}</span>
+                </>
+              );
+            })()}
           </h1>
           <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: TEAL, background: `rgba(${TEAL_RGB},0.1)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>

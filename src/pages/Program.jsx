@@ -890,14 +890,14 @@ export default function Program() {
         <div className="relative p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5">
           <div className="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-2xl shrink-0">🗂️</div>
           <div className="flex-1 min-w-0">
-            <h3 className="font-bold text-text mb-1">Lộ Trình Mẫu Theo Mục Tiêu</h3>
+            <h3 className="font-bold text-text mb-1">{t('program.sample_programs_banner_title', 'Lộ Trình Mẫu Theo Mục Tiêu')}</h3>
             <p className="text-xs text-muted leading-relaxed">
-              6 mục tiêu × 24 tuần — Chọn lộ trình phù hợp: Người mới · Siêu bận · Giảm mỡ · Tăng cơ · Sức bền · Nâng cao.
+              {t('program.sample_programs_banner_desc', '6 mục tiêu × 24 tuần — Chọn lộ trình phù hợp: Người mới · Siêu bận · Giảm mỡ · Tăng cơ · Sức bền · Nâng cao.')}
             </p>
           </div>
           <Link to="/sample-programs"
             className="shrink-0 px-5 py-2.5 rounded-xl bg-pink-500/10 border border-pink-500/25 text-pink-400 text-xs font-bold hover:bg-pink-500/20 transition-all duration-200">
-            Xem lộ trình →
+            {t('program.sample_programs_cta', 'Xem lộ trình →')}
           </Link>
         </div>
       </RevealBlock>

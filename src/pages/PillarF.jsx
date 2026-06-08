@@ -756,15 +756,38 @@ export default function PillarF() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       {/* Sticky Tab Bar */}
-      <div ref={tabBarRef} className="sticky top-[72px] z-30 -mx-4 md:-mx-6 px-4 md:px-6 py-3 mb-8 bg-bg/95 backdrop-blur border-b border-border">
-        <div className="flex gap-1 overflow-x-auto scrollbar-hide max-w-4xl mx-auto">
-          {TABS.map(t => (
-            <button key={t.id} onClick={() => setTab(t.id)}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-base font-bold whitespace-nowrap transition-all shrink-0"
-              style={tab === t.id ? { background: COLOR, color: 'white' } : { color: 'var(--muted)', background: 'transparent' }}>
-              <span>{t.icon}</span><span className="hidden sm:inline">{t.label}</span>
-            </button>
-          ))}
+      <div ref={tabBarRef} className="sticky top-[72px] z-30 -mx-4 md:-mx-6 px-4 md:px-6 pt-3 mb-8"
+        style={{ background: 'rgba(10,10,10,0.96)', backdropFilter: 'blur(14px)' }}>
+        <div className="relative flex items-end overflow-x-auto scrollbar-hide"
+          style={{ borderBottom: '1.5px solid rgba(255,255,255,0.09)' }}>
+          {TABS.map(t => {
+            const active = tab === t.id;
+            return (
+              <button key={t.id} onClick={() => setTab(t.id)}
+                className="flex items-center gap-2 shrink-0 font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer"
+                style={active ? {
+                  color: COLOR,
+                  padding: '9px 16px 11px',
+                  background: '#111213',
+                  borderTop: `2px solid ${COLOR}`,
+                  borderLeft: '1px solid rgba(255,255,255,0.09)',
+                  borderRight: '1px solid rgba(255,255,255,0.09)',
+                  borderBottom: '1.5px solid #111213',
+                  borderRadius: '8px 8px 0 0',
+                  marginBottom: '-1.5px',
+                  boxShadow: `0 -4px 16px rgba(${RGB},0.14)`,
+                } : {
+                  color: 'rgba(130,130,148,0.72)',
+                  padding: '7px 14px 12px',
+                  background: 'transparent',
+                  border: '1px solid transparent',
+                  borderRadius: '8px 8px 0 0',
+                }}>
+                <span className="text-lg">{t.icon}</span>
+                <span className="text-lg">{t.label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 

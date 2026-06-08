@@ -7297,9 +7297,10 @@ export default function PillarB() {
           <div className={`rounded-2xl p-[1.5px] transition-[background] duration-700 ${TABS[activeTab].frameClass}`}>
             <div className="rounded-2xl overflow-hidden" style={{ background: '#0a0a0a' }}>
 
-              {/* Tab strip — inside the frame */}
-              <div className="overflow-x-auto scrollbar-none">
-                <div ref={tabBarRef} className="flex items-stretch min-w-max md:min-w-0">
+              {/* Tab strip — browser chrome style inside frame */}
+              <div className="overflow-x-auto scrollbar-none"
+                style={{ borderBottom: '1.5px solid rgba(255,255,255,0.08)' }}>
+                <div ref={tabBarRef} className="flex items-end min-w-max md:min-w-0">
                   {TABS.map((t, i) => {
                     const isActive = activeTab === i;
                     const tc = t.color;
@@ -7308,26 +7309,31 @@ export default function PillarB() {
                         key={t.id}
                         type="button"
                         onClick={() => switchTab(i)}
-                        className="group relative flex items-center gap-2 px-4 py-3 text-lg font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap"
-                        style={{
-                          color: isActive ? tc : 'rgba(100,116,139,0.55)',
-                          background: isActive ? `${tc}0c` : 'transparent',
-                        }}
-                      >
-                        <span style={{ color: isActive ? tc : 'rgba(100,116,139,0.4)' }}>{t.icon}</span>
+                        className="flex items-center gap-2 shrink-0 font-bold transition-all duration-200 focus:outline-none cursor-pointer whitespace-nowrap"
+                        style={isActive ? {
+                          color: tc,
+                          padding: '9px 16px 11px',
+                          background: '#111213',
+                          borderTop: `2px solid ${tc}`,
+                          borderLeft: '1px solid rgba(255,255,255,0.08)',
+                          borderRight: '1px solid rgba(255,255,255,0.08)',
+                          borderBottom: '1.5px solid #111213',
+                          borderRadius: '8px 8px 0 0',
+                          marginBottom: '-1.5px',
+                          boxShadow: `0 -4px 16px rgba(${t.rgb || '132,204,22'},0.13)`,
+                        } : {
+                          color: 'rgba(100,116,139,0.55)',
+                          padding: '7px 14px 12px',
+                          background: 'transparent',
+                          border: '1px solid transparent',
+                          borderRadius: '8px 8px 0 0',
+                        }}>
+                        <span>{t.icon}</span>
                         <span className="font-black">{t.short}</span>
-                        <span className="hidden sm:inline opacity-75">— {tPillars(`pillarB.tabs.${i}.label`, { defaultValue: t.label })}</span>
+                        <span className="hidden sm:inline text-lg opacity-75">— {tPillars(`pillarB.tabs.${i}.label`, { defaultValue: t.label })}</span>
                         {isActive && (
-                          <span className="w-1.5 h-1.5 rounded-full animate-pulse ml-0.5" style={{ background: tc }} />
+                          <span className="w-1.5 h-1.5 rounded-full animate-pulse ml-1" style={{ background: tc }} />
                         )}
-                        {/* Active tab: solid bottom indicator */}
-                        <div
-                          className="absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300"
-                          style={{
-                            background: isActive ? tc : 'transparent',
-                            boxShadow: isActive ? `0 0 6px ${tc}` : 'none',
-                          }}
-                        />
                       </button>
                     );
                   })}

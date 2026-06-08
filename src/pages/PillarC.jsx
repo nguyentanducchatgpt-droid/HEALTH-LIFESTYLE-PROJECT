@@ -359,19 +359,39 @@ export default function PillarC() {
 
       <div className="h-px mb-10" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
 
-      {/* Tab bar */}
-      <div className="sticky top-[72px] z-30 -mx-4 md:-mx-6 px-4 md:px-6 py-2 mb-8"
-        style={{ background: 'rgba(10,10,10,0.9)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--color-border)' }}>
-        <div ref={tabBarRef} className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
-          {TABS.map(t => (
-            <button key={t.id} onClick={() => handleTabClick(t.id)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-lg font-semibold shrink-0 transition-all duration-200"
-              style={activeTab === t.id
-                ? { background: `rgba(${t.rgb},0.15)`, color: t.color, border: `1px solid rgba(${t.rgb},0.35)` }
-                : { color: 'var(--color-muted)', border: '1px solid transparent' }}>
-              <span>{t.icon}</span> {t.label}
-            </button>
-          ))}
+      {/* Tab bar — browser chrome style */}
+      <div className="sticky top-[72px] z-30 -mx-4 md:-mx-6 px-4 md:px-6 pt-3 mb-8"
+        style={{ background: 'rgba(10,10,10,0.96)', backdropFilter: 'blur(14px)' }}>
+        <div ref={tabBarRef} className="relative flex items-end overflow-x-auto scrollbar-hide"
+          style={{ borderBottom: '1.5px solid rgba(255,255,255,0.09)' }}>
+          {TABS.map(t => {
+            const active = activeTab === t.id;
+            return (
+              <button key={t.id} onClick={() => handleTabClick(t.id)}
+                className="flex items-center gap-2 shrink-0 font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer"
+                style={active ? {
+                  color: t.color,
+                  padding: '9px 16px 11px',
+                  background: '#111213',
+                  borderTop: `2px solid ${t.color}`,
+                  borderLeft: '1px solid rgba(255,255,255,0.09)',
+                  borderRight: '1px solid rgba(255,255,255,0.09)',
+                  borderBottom: '1.5px solid #111213',
+                  borderRadius: '8px 8px 0 0',
+                  marginBottom: '-1.5px',
+                  boxShadow: `0 -4px 16px rgba(${t.rgb},0.14), inset 0 1px 0 rgba(${t.rgb},0.08)`,
+                } : {
+                  color: 'rgba(130,130,148,0.72)',
+                  padding: '7px 14px 12px',
+                  background: 'transparent',
+                  border: '1px solid transparent',
+                  borderRadius: '8px 8px 0 0',
+                }}>
+                <span className="text-lg">{t.icon}</span>
+                <span className="text-lg">{t.label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 

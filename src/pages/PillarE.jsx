@@ -538,15 +538,38 @@ export default function PillarE() {
 
       {/* Tab bar */}
       <RevealBlock delay={100}>
-        <div className="sticky top-[72px] z-30 -mx-4 md:-mx-6 px-4 md:px-6 bg-bg/90 backdrop-blur-md pb-3 mb-8">
-          <div className="flex gap-1 overflow-x-auto scrollbar-hide">
-            {TABS.map(t => (
-              <button key={t.id} onClick={() => setActiveTab(t.id)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-base font-semibold whitespace-nowrap border transition-all shrink-0"
-                style={activeTab === t.id ? { borderColor: t.color, background: `${t.color}20`, color: t.color } : { borderColor: 'transparent', color: '#666' }}>
-                <span>{t.icon}</span><span>{t.label}</span>
-              </button>
-            ))}
+        <div className="sticky top-[72px] z-30 -mx-4 md:-mx-6 px-4 md:px-6 pt-3 mb-8"
+          style={{ background: 'rgba(10,10,10,0.96)', backdropFilter: 'blur(14px)' }}>
+          <div className="relative flex items-end overflow-x-auto scrollbar-hide"
+            style={{ borderBottom: '1.5px solid rgba(255,255,255,0.09)' }}>
+            {TABS.map(t => {
+              const active = activeTab === t.id;
+              return (
+                <button key={t.id} onClick={() => setActiveTab(t.id)}
+                  className="flex items-center gap-2 shrink-0 font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer"
+                  style={active ? {
+                    color: t.color,
+                    padding: '9px 16px 11px',
+                    background: '#111213',
+                    borderTop: `2px solid ${t.color}`,
+                    borderLeft: '1px solid rgba(255,255,255,0.09)',
+                    borderRight: '1px solid rgba(255,255,255,0.09)',
+                    borderBottom: '1.5px solid #111213',
+                    borderRadius: '8px 8px 0 0',
+                    marginBottom: '-1.5px',
+                    boxShadow: `0 -4px 16px rgba(${t.rgb},0.14)`,
+                  } : {
+                    color: 'rgba(130,130,148,0.72)',
+                    padding: '7px 14px 12px',
+                    background: 'transparent',
+                    border: '1px solid transparent',
+                    borderRadius: '8px 8px 0 0',
+                  }}>
+                  <span className="text-lg">{t.icon}</span>
+                  <span className="text-lg">{t.label}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </RevealBlock>

@@ -8,6 +8,7 @@ import ThoughtBubble from '../components/ThoughtBubble';
 const TABS = [
   {
     n: '01',
+    frameClass: 'pa-frame-0',
     path: '/pillar/a/movements',
     title: '6 Mẫu Vận Động Nền Tảng',
     sub: 'Khởi Động & Giãn Cơ Sau Tập',
@@ -46,6 +47,7 @@ const TABS = [
   },
   {
     n: '02',
+    frameClass: 'pa-frame-1',
     path: '/pillar/a/framework',
     title: 'Khung Ngày Tập 20–40 Phút',
     sub: 'Chọn Khung Thời Gian Luyện Tập',
@@ -84,6 +86,7 @@ const TABS = [
   },
   {
     n: '03',
+    frameClass: 'pa-frame-2',
     path: '/pillar/a/weekly',
     title: 'Nhịp Tuần Gợi Ý',
     sub: 'Buổi Tập Theo Mục Tiêu',
@@ -122,6 +125,7 @@ const TABS = [
   },
   {
     n: '04',
+    frameClass: 'pa-frame-3',
     path: '/pillar/a/progress',
     title: 'Bậc Thang Tiến Bộ',
     sub: 'Kiểm Tra Tiến Bộ Hàng Tháng',
@@ -497,6 +501,18 @@ export default function PillarA() {
         color: #22c55e;
         animation: paAmpPulse 2.2s ease-in-out infinite;
       }
+      @property --pat0 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --pat1 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --pat2 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @property --pat3 { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+      @keyframes pat0Spin { to { --pat0: 360deg; } }
+      @keyframes pat1Spin { to { --pat1: 360deg; } }
+      @keyframes pat2Spin { to { --pat2: 360deg; } }
+      @keyframes pat3Spin { to { --pat3: 360deg; } }
+      .pa-frame-0 { background: conic-gradient(from var(--pat0), rgba(34,197,94,0.28) 0deg, rgba(34,197,94,0.28) 353deg, rgba(34,197,94,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(34,197,94,0.55) 361deg, rgba(34,197,94,0.28) 363deg, rgba(34,197,94,0.28) 360deg); animation: pat0Spin 4s linear infinite; border-radius: 1rem; padding: 1.5px; }
+      .pa-frame-1 { background: conic-gradient(from var(--pat1), rgba(34,197,94,0.28) 0deg, rgba(34,197,94,0.28) 353deg, rgba(34,197,94,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(34,197,94,0.55) 361deg, rgba(34,197,94,0.28) 363deg, rgba(34,197,94,0.28) 360deg); animation: pat1Spin 4.4s linear infinite; border-radius: 1rem; padding: 1.5px; }
+      .pa-frame-2 { background: conic-gradient(from var(--pat2), rgba(34,197,94,0.28) 0deg, rgba(34,197,94,0.28) 353deg, rgba(34,197,94,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(34,197,94,0.55) 361deg, rgba(34,197,94,0.28) 363deg, rgba(34,197,94,0.28) 360deg); animation: pat2Spin 3.8s linear infinite; border-radius: 1rem; padding: 1.5px; }
+      .pa-frame-3 { background: conic-gradient(from var(--pat3), rgba(34,197,94,0.28) 0deg, rgba(34,197,94,0.28) 353deg, rgba(34,197,94,0.55) 355deg, rgba(255,255,255,0.92) 358deg, rgba(34,197,94,0.55) 361deg, rgba(34,197,94,0.28) 363deg, rgba(34,197,94,0.28) 360deg); animation: pat3Spin 3.5s linear infinite; border-radius: 1rem; padding: 1.5px; }
     `;
     document.head.appendChild(s);
   }, []);
@@ -753,8 +769,7 @@ export default function PillarA() {
       <div id="tab-section" className="scroll-mt-4">
       <RevealBlock className="mb-0">
         {/* Section header */}
-        <div className="mb-7">
-          {/* Title row */}
+        <div className="mb-5">
           <div className="flex items-center gap-4 mb-2">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
             <div className="flex items-center gap-2.5">
@@ -766,60 +781,71 @@ export default function PillarA() {
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
           </div>
-          {/* Accent underline + connector */}
-          <div className="flex flex-col items-center gap-0">
+          <div className="flex flex-col items-center">
             <div className="w-20 h-0.5 rounded-full bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
             <div className="w-px h-4 bg-gradient-to-b from-accent/40 to-transparent" />
           </div>
         </div>
 
-        {/* Tab cards */}
-        <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-4">
-          <div ref={tabBarRef} className="flex gap-3 min-w-max md:min-w-0 md:grid md:grid-cols-4">
-            {mergedTabs.map((t, i) => {
-              const isActive = activeTab === i;
-              return (
-                <button
-                  key={t.n}
-                  type="button"
-                  onClick={() => switchTab(i)}
-                  className={`relative group flex flex-col p-4 md:p-5 rounded-2xl border text-left transition-all duration-300 focus:outline-none shrink-0 md:shrink w-44 md:w-auto
-                    ${!isActive ? 'border-border/40 bg-surface/20 hover:border-border/70 hover:bg-surface/40 hover:-translate-y-0.5' : ''}`}
-                  style={isActive ? {
-                    borderColor: `${t.color}45`,
-                    background: `${t.color}07`,
-                    boxShadow: `0 4px 28px ${t.glow}, inset 0 1px 0 ${t.color}15`,
-                  } : undefined}
-                >
-                  <div className="flex items-center gap-1.5 mb-3">
-                    <span className="text-[9px] font-black transition-colors" style={{ color: isActive ? t.color : '#6b7280' }}>{t.n} /04</span>
-                    {isActive && <span className="w-1 h-1 rounded-full animate-pulse" style={{ background: t.color }} />}
-                  </div>
-                  <div
-                    className="text-2xl mb-3 transition-all duration-200 group-hover:scale-105 w-fit"
-                    style={isActive ? { filter: `drop-shadow(0 0 8px ${t.color}80)` } : undefined}
-                  >
-                    {t.icon}
-                  </div>
-                  <p className={`text-xs font-bold leading-snug mb-1 transition-colors ${isActive ? 'text-text' : 'text-muted group-hover:text-text/70'}`}>
-                    {t.title}
-                  </p>
-                  <p className="text-[9px] leading-tight transition-all duration-300 line-clamp-1"
-                    style={{ color: isActive ? `${t.color}cc` : 'transparent' }}>
-                    {t.sub}
-                  </p>
-                  <div className="absolute bottom-0 left-4 right-4 h-[1.5px] rounded-full transition-all duration-300"
-                    style={{ background: isActive ? t.color : 'transparent' }} />
-                </button>
-              );
-            })}
+        {/* Orbit-ring frame wrapping tab strip + content */}
+        <div className={`rounded-2xl p-[1.5px] transition-[background] duration-700 ${mergedTabs[activeTab].frameClass || 'pa-frame-0'}`}>
+          <div className="rounded-2xl overflow-hidden" style={{ background: '#0a0a0a' }}>
+
+            {/* Tab strip */}
+            <div className="overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+              <div ref={tabBarRef} className="flex items-stretch min-w-max md:min-w-0">
+                {mergedTabs.map((t, i) => {
+                  const isActive = activeTab === i;
+                  return (
+                    <button
+                      key={t.n}
+                      type="button"
+                      onClick={() => switchTab(i)}
+                      className="group relative flex items-center gap-2 px-4 py-3 text-xs font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap"
+                      style={{
+                        color: isActive ? t.color : 'rgba(100,116,139,0.55)',
+                        background: isActive ? `${t.color}0c` : 'transparent',
+                      }}
+                    >
+                      <span style={{ color: isActive ? t.color : 'rgba(100,116,139,0.4)' }}>{t.icon}</span>
+                      <span className="font-black">{t.n}</span>
+                      <span className="hidden sm:inline opacity-75">— {t.title}</span>
+                      {isActive && (
+                        <span className="w-1.5 h-1.5 rounded-full animate-pulse ml-0.5" style={{ background: t.color }} />
+                      )}
+                      <div
+                        className="absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300"
+                        style={{
+                          background: isActive ? t.color : 'transparent',
+                          boxShadow: isActive ? `0 0 6px ${t.color}` : 'none',
+                        }}
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Separator */}
+            <div
+              className="h-px transition-all duration-700"
+              style={{ background: `linear-gradient(90deg, transparent, ${mergedTabs[activeTab].color}30 25%, ${mergedTabs[activeTab].color}30 75%, transparent)` }}
+            />
+
+            {/* Content panel */}
+            <div key={tabKey} className="relative overflow-hidden animate-fade-in-up">
+              <div
+                className="absolute top-0 right-0 w-80 h-80 rounded-full blur-[120px] pointer-events-none transition-all duration-700"
+                style={{ background: `${mergedTabs[activeTab].color}0e` }}
+              />
+              <div className="relative z-10">
+                <TabPanel tab={tab} />
+              </div>
+            </div>
+
           </div>
         </div>
 
-        {/* Tab panel — re-mounts on tab switch to re-trigger animation */}
-        <div key={tabKey} className="animate-fade-in-up">
-          <TabPanel tab={tab} />
-        </div>
       </RevealBlock>
       </div>{/* /tab-section */}
 

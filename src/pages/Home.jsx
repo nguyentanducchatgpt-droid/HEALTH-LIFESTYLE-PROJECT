@@ -25,7 +25,7 @@ const STRIP_IMAGES = [
   'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=70',
   'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=70',
   'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=600&q=70',
-  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=70',
+  'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600&q=70',
   'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=70',
 ];
 const PILLAR_ROUTES = ['/pillar/a','/pillar/b','/pillar/c','/pillar/d','/pillar/e','/pillar/f'];
@@ -42,7 +42,7 @@ const PILLAR_DATA = [
   { key:'pillarD', route:'/pillar/d', color:'#a855f7', rgb:'168,85,247',
     img:'https://images.unsplash.com/photo-1545389336-cf090694435e?w=700&q=75' },
   { key:'pillarE', route:'/pillar/e', color:'#3b82f6', rgb:'59,130,246',
-    img:'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=75' },
+    img:'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=700&q=75' },
   { key:'pillarF', route:'/pillar/f', color:'#f97316', rgb:'249,115,22',
     img:'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=700&q=75' },
 ];

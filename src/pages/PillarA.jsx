@@ -753,10 +753,24 @@ export default function PillarA() {
       <div id="tab-section" className="scroll-mt-4">
       <RevealBlock className="mb-0">
         {/* Section header */}
-        <div className="flex items-center gap-4 mb-6">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.25em] whitespace-nowrap">{pillar?.tabs_label || '4 chủ đề luyện tập'}</p>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="mb-7">
+          {/* Title row */}
+          <div className="flex items-center gap-4 mb-2">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
+            <div className="flex items-center gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />
+              <h2 className="text-sm font-black uppercase tracking-[0.18em] text-text whitespace-nowrap">
+                {pillar?.tabs_label || '4 chủ đề luyện tập'}
+              </h2>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />
+            </div>
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
+          </div>
+          {/* Accent underline + connector */}
+          <div className="flex flex-col items-center gap-0">
+            <div className="w-20 h-0.5 rounded-full bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+            <div className="w-px h-4 bg-gradient-to-b from-accent/40 to-transparent" />
+          </div>
         </div>
 
         {/* Tab cards */}

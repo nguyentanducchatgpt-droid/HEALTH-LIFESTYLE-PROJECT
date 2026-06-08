@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react';
+﻿import { useEffect, useLayoutEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';

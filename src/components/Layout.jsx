@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+﻿import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
@@ -90,13 +90,13 @@ export default function Layout({ children }) {
             <div className="shrink-0">
               <Link to="/" className="inline-flex items-center gap-2.5 mb-4 group">
                 <img src="/logo.png" alt="" className="h-7 w-7 shrink-0 transition-transform duration-300 group-hover:scale-110" />
-                <span className="ft-wrap font-bold text-base">
+                <span className="ft-wrap font-bold text-lg">
                   <span className="ft-p1">{t('brand.part1')}</span>
                   <span className="ft-amp"> &amp; </span>
                   <span className="ft-p2">{t('brand.part2')}</span>
                 </span>
               </Link>
-              <p className="text-muted text-xs leading-relaxed max-w-[220px]">
+              <p className="text-muted text-sm leading-relaxed max-w-[220px]">
                 {t('footer.tagline')}
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function Layout({ children }) {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
               {[...NAV_COL, ...NAV_COL2].map(({ to, key }) => (
                 <Link key={to} to={to}
-                  className="text-xs text-muted hover:text-accent transition-colors duration-150 flex items-center gap-1.5 group/n">
+                  className="text-sm text-muted hover:text-accent transition-colors duration-150 flex items-center gap-1.5 group/n">
                   <span className="w-1 h-1 rounded-full bg-border group-hover/n:bg-accent transition-colors duration-150 shrink-0" />
                   {t(key)}
                 </Link>
@@ -119,8 +119,8 @@ export default function Layout({ children }) {
 
           {/* Bottom bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-muted/60 text-xs">{t('footer.copyright')}</p>
-            <p className="text-muted/40 text-xs text-center sm:text-right whitespace-nowrap">{t('footer.disclaimer')}</p>
+            <p className="text-muted/60 text-sm">{t('footer.copyright')}</p>
+            <p className="text-muted/40 text-sm text-center sm:text-right whitespace-nowrap">{t('footer.disclaimer')}</p>
           </div>
         </div>
       </footer>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import WeeklyRhythm from '../components/WeeklyRhythm';
 import WorkoutPlans from '../components/WorkoutPlans';
 
@@ -24,7 +24,7 @@ export default function PillarAWeekly() {
 
         <div className="relative z-10 px-4 md:px-8 pt-10 pb-8 animate-fade-in-up">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-xs text-muted mb-5 flex-wrap">
+          <nav className="flex items-center gap-1.5 text-sm text-muted mb-5 flex-wrap">
             <Link to="/" className="hover:text-accent transition-colors">Trang chủ</Link>
             <span className="text-border/60">/</span>
             <Link to="/pillar/a" className="hover:text-accent transition-colors">Vận Động & Tập Luyện</Link>
@@ -33,16 +33,16 @@ export default function PillarAWeekly() {
           </nav>
 
           {/* Step badge */}
-          <div className="inline-flex items-center gap-2 bg-teal-500/8 border border-teal-500/20 text-teal-400 text-xs font-bold px-4 py-1.5 rounded-full mb-5">
+          <div className="inline-flex items-center gap-2 bg-teal-500/8 border border-teal-500/20 text-teal-400 text-sm font-bold px-4 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse shrink-0" />
             3 / 4 · Nhịp Tuần & Mục Tiêu
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-black text-text leading-tight mb-3">
+          <h1 className="text-4xl md:text-5xl font-black text-text leading-tight mb-3">
             Nhịp Tuần Gợi Ý &amp;<br />
             <span className="text-teal-400">Buổi Tập Theo Mục Tiêu</span>
           </h1>
-          <p className="text-muted text-sm leading-relaxed max-w-xl">
+          <p className="text-muted text-base leading-relaxed max-w-xl">
             3 giai đoạn nhịp tuần linh hoạt kết hợp 6 lộ trình tập luyện được cá nhân hóa từ
             người mới bắt đầu đến vận động viên nâng cao.
           </p>
@@ -56,7 +56,7 @@ export default function PillarAWeekly() {
               { n: '24', label: 'Tuần chương trình mẫu' },
             ].map(s => (
               <div key={s.label} className="flex items-center gap-2 bg-surface/70 backdrop-blur-sm border border-border/60 px-3 py-2 rounded-xl">
-                <span className="text-teal-400 font-extrabold text-sm leading-none">{s.n}</span>
+                <span className="text-teal-400 font-extrabold text-base leading-none">{s.n}</span>
                 <span className="text-muted text-[10px] leading-none">{s.label}</span>
               </div>
             ))}
@@ -72,21 +72,21 @@ export default function PillarAWeekly() {
       <div className="flex items-center justify-between py-8 border-t border-border/40 mt-8 mb-4">
         <Link
           to="/pillar/a/framework"
-          className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group"
+          className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           <span>Khung Ngày & Thời Gian</span>
         </Link>
         <Link
           to="/pillar/a"
-          className="flex items-center gap-2 text-xs bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-teal-500/30 transition-all"
+          className="flex items-center gap-2 text-sm bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-teal-500/30 transition-all"
         >
           <span>↩</span>
           <span>Về tổng quan</span>
         </Link>
         <Link
           to="/pillar/a/progress"
-          className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group"
+          className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group"
         >
           <span>Bậc Thang & Kiểm Tra</span>
           <span className="group-hover:translate-x-0.5 transition-transform">→</span>

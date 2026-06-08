@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function DailyChecklist() {
@@ -16,13 +16,13 @@ export default function DailyChecklist() {
   return (
     <div className="bg-surface border border-border rounded-xl p-6">
       <div className="flex items-center justify-between mb-5">
-        <h2 className="font-semibold text-accent text-base">
+        <h2 className="font-semibold text-accent text-lg">
           {(() => {
             const sections = t('pillarF.sections', { returnObjects: true });
             return Array.isArray(sections) && sections[0] ? sections[0].title : 'Daily Checklist';
           })()}
         </h2>
-        <span className="text-xs text-muted bg-border px-2 py-1 rounded-full">
+        <span className="text-sm text-muted bg-border px-2 py-1 rounded-full">
           {doneCount}/{items.length}
         </span>
       </div>
@@ -40,7 +40,7 @@ export default function DailyChecklist() {
           <li key={i}>
             <button
               onClick={() => toggle(i)}
-              className={`w-full flex items-center gap-3 text-left text-sm transition-colors group ${
+              className={`w-full flex items-center gap-3 text-left text-base transition-colors group ${
                 checked[i] ? 'text-muted line-through' : 'text-text'
               }`}
             >
@@ -51,7 +51,7 @@ export default function DailyChecklist() {
                     : 'border-border group-hover:border-accent'
                 }`}
               >
-                {checked[i] && <span className="text-xs font-bold">✓</span>}
+                {checked[i] && <span className="text-sm font-bold">✓</span>}
               </span>
               <span className="leading-snug">{item}</span>
             </button>
@@ -60,7 +60,7 @@ export default function DailyChecklist() {
       </ul>
 
       {doneCount === items.length && (
-        <p className="mt-5 text-center text-accent text-sm font-medium">
+        <p className="mt-5 text-center text-accent text-base font-medium">
           🎉 {doneCount}/{items.length} ✓
         </p>
       )}

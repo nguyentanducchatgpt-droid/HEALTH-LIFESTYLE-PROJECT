@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+﻿import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -172,7 +172,7 @@ function AccordionItem({ item, isOpen, onToggle, idx }) {
 
       {/* Question row */}
       <div className="px-5 py-4 flex items-start gap-4">
-        <span className="shrink-0 w-8 h-8 rounded-xl text-xs font-black flex items-center justify-center mt-0.5 transition-all duration-300"
+        <span className="shrink-0 w-8 h-8 rounded-xl text-sm font-black flex items-center justify-center mt-0.5 transition-all duration-300"
           style={{
             background: isOpen ? `rgba(${item.rgb},0.2)` : 'rgba(255,255,255,0.05)',
             color: isOpen ? item.color : '#475569',
@@ -180,7 +180,7 @@ function AccordionItem({ item, isOpen, onToggle, idx }) {
           }}>
           {String(idx + 1).padStart(2, '0')}
         </span>
-        <span className="flex-1 font-semibold text-sm md:text-base leading-snug pt-1 transition-colors duration-200"
+        <span className="flex-1 font-semibold text-base md:text-lg leading-snug pt-1 transition-colors duration-200"
           style={{ color: isOpen ? '#f1f5f9' : '#94a3b8' }}>
           {item.q}
         </span>
@@ -199,7 +199,7 @@ function AccordionItem({ item, isOpen, onToggle, idx }) {
       {/* Answer */}
       <div style={{ height: h, overflow: 'hidden', transition: 'height 0.4s ease, opacity 0.3s ease', opacity: isOpen ? 1 : 0 }}>
         <div ref={contentRef} className="px-5 pb-5 pl-[68px]">
-          <p className="text-muted/80 text-sm leading-relaxed">{item.a}</p>
+          <p className="text-muted/80 text-base leading-relaxed">{item.a}</p>
         </div>
       </div>
     </div>
@@ -348,12 +348,12 @@ export default function FAQ() {
 
         {/* Floating emoji icons */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
-          <span className="faq2-float absolute top-10  left-[8%]  text-3xl opacity-8">🏃</span>
-          <span className="faq2-float absolute top-14  right-[9%] text-2xl opacity-8">🥗</span>
-          <span className="faq2-float absolute top-[45%] left-[5%]  text-2xl opacity-7">🧘</span>
-          <span className="faq2-float absolute top-[40%] right-[6%] text-3xl opacity-7">💡</span>
-          <span className="faq2-float absolute bottom-14 left-[14%] text-xl opacity-6">🌿</span>
-          <span className="faq2-float absolute bottom-12 right-[13%] text-xl opacity-6">📊</span>
+          <span className="faq2-float absolute top-10  left-[8%]  text-4xl opacity-8">🏃</span>
+          <span className="faq2-float absolute top-14  right-[9%] text-3xl opacity-8">🥗</span>
+          <span className="faq2-float absolute top-[45%] left-[5%]  text-3xl opacity-7">🧘</span>
+          <span className="faq2-float absolute top-[40%] right-[6%] text-4xl opacity-7">💡</span>
+          <span className="faq2-float absolute bottom-14 left-[14%] text-2xl opacity-6">🌿</span>
+          <span className="faq2-float absolute bottom-12 right-[13%] text-2xl opacity-6">📊</span>
         </div>
 
         {/* Top border */}
@@ -385,10 +385,10 @@ export default function FAQ() {
           <div className="faq2-shimmer-line mx-auto mb-6 h-[2.5px] w-28 rounded-full" />
 
           {/* Subtitle */}
-          <p className="faq2-sub text-muted/70 text-sm md:text-base leading-relaxed max-w-sm mx-auto mb-2">
+          <p className="faq2-sub text-muted/70 text-base md:text-lg leading-relaxed max-w-sm mx-auto mb-2">
             {t('faq_page.ui.subtitle')}
           </p>
-          <p className="faq2-sub text-muted/40 text-xs mx-auto mb-9">
+          <p className="faq2-sub text-muted/40 text-sm mx-auto mb-9">
             {FAQSi18n.length} {t('faq_page.ui.count_suffix')}
           </p>
 
@@ -402,7 +402,7 @@ export default function FAQ() {
             <input type="text" value={search}
               onChange={e => { setSearch(e.target.value); setOpenIdx(null); }}
               placeholder={t('faq_page.ui.search_placeholder')}
-              className="w-full pl-10 pr-4 py-3 rounded-2xl text-sm bg-white/5 border border-white/12 text-text placeholder-muted/40 focus:outline-none focus:border-accent/50 focus:bg-white/8 transition-all duration-250"
+              className="w-full pl-10 pr-4 py-3 rounded-2xl text-base bg-white/5 border border-white/12 text-text placeholder-muted/40 focus:outline-none focus:border-accent/50 focus:bg-white/8 transition-all duration-250"
             />
             {search && (
               <button onClick={() => setSearch('')}
@@ -441,7 +441,7 @@ export default function FAQ() {
                 )}
                 {/* Label */}
                 <div className="p-3 pt-2">
-                  <div className="text-xl mb-1">{cat.icon}</div>
+                  <div className="text-2xl mb-1">{cat.icon}</div>
                   <div className="text-[10px] font-bold leading-tight" style={{ color: active ? cat.color : '#64748b' }}>
                     {cat.label}
                   </div>
@@ -459,7 +459,7 @@ export default function FAQ() {
         <div className="flex justify-center mt-4">
           <button
             onClick={() => { setActiveCat('all'); setOpenIdx(null); }}
-            className="px-5 py-1.5 rounded-full text-xs font-medium border transition-all duration-200"
+            className="px-5 py-1.5 rounded-full text-sm font-medium border transition-all duration-200"
             style={{
               background: activeCat === 'all' ? 'rgba(34,197,94,0.12)' : 'rgba(255,255,255,0.04)',
               borderColor: activeCat === 'all' ? 'rgba(34,197,94,0.4)' : 'rgba(255,255,255,0.08)',
@@ -473,7 +473,7 @@ export default function FAQ() {
       {/* ── Featured Q&As ───────────────────────────────────────── */}
       {!search && activeCat === 'all' && (
         <RevealBlock className="mb-12">
-          <h2 className="text-xs font-extrabold uppercase tracking-[0.2em] text-muted/50 mb-4 text-center">
+          <h2 className="text-sm font-extrabold uppercase tracking-[0.2em] text-muted/50 mb-4 text-center">
             ★ {t('faq_page.ui.featured_title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -495,10 +495,10 @@ export default function FAQ() {
                 >
                   {/* Top bar */}
                   <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, rgba(${item.rgb},0.8), rgba(${item.rgb},0.2))` }} />
-                  <div className="text-xl mb-3">{cat?.icon}</div>
+                  <div className="text-2xl mb-3">{cat?.icon}</div>
                   <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: item.color }}>{cat?.label}</div>
-                  <p className="text-sm font-semibold text-text/90 leading-snug mb-2">{item.q}</p>
-                  <p className="text-xs text-muted/60 leading-relaxed line-clamp-2">{item.a}</p>
+                  <p className="text-base font-semibold text-text/90 leading-snug mb-2">{item.q}</p>
+                  <p className="text-sm text-muted/60 leading-relaxed line-clamp-2">{item.a}</p>
                   <div className="mt-3 text-[10px] font-bold" style={{ color: item.color }}>{t('faq_page.ui.read_more')}</div>
                 </div>
               );
@@ -517,9 +517,9 @@ export default function FAQ() {
               <img src={cat.img} alt={cat.label} className="absolute inset-0 w-full h-full object-cover" style={{ opacity: 0.15 }} />
               <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, rgba(${cat.rgb},0.1), rgba(10,10,10,0.8))` }} />
               <div className="relative z-10">
-                <div className="text-2xl mb-1">{cat.icon}</div>
-                <h2 className="text-lg font-black text-text">{cat.label}</h2>
-                <p className="text-xs text-muted/60">{cat.desc} · {FAQSi18n.filter(f => f.cat === activeCat).length} {t('faq_page.ui.cat_count')}</p>
+                <div className="text-3xl mb-1">{cat.icon}</div>
+                <h2 className="text-xl font-black text-text">{cat.label}</h2>
+                <p className="text-sm text-muted/60">{cat.desc} · {FAQSi18n.filter(f => f.cat === activeCat).length} {t('faq_page.ui.cat_count')}</p>
               </div>
             </div>
           </RevealBlock>
@@ -530,8 +530,8 @@ export default function FAQ() {
       <RevealBlock>
         <div className="space-y-2.5 mb-14">
           {filtered.length === 0 ? (
-            <div className="text-center py-16 text-muted/50 text-sm">
-              <div className="text-4xl mb-4">🔍</div>
+            <div className="text-center py-16 text-muted/50 text-base">
+              <div className="text-5xl mb-4">🔍</div>
               {t('faq_page.ui.no_results')}
             </div>
           ) : (
@@ -553,13 +553,13 @@ export default function FAQ() {
             <div key={s.label} className="text-center rounded-2xl py-6 border relative overflow-hidden"
               style={{ background: `rgba(${s.rgb},0.05)`, borderColor: `rgba(${s.rgb},0.18)` }}>
               <div className="absolute inset-0 opacity-20" style={{ background: `radial-gradient(ellipse at center top, rgba(${s.rgb},0.3), transparent 70%)` }} />
-              <div className="text-3xl font-black mb-0.5 relative" style={{
+              <div className="text-4xl font-black mb-0.5 relative" style={{
                 background: `linear-gradient(135deg, ${s.color}, rgba(${s.rgb},0.55))`,
                 WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent',
               }}>
                 <AnimatedCounter target={s.target} suffix={s.suffix} />
               </div>
-              <div className="text-sm font-bold text-text/90 relative">{s.label}</div>
+              <div className="text-base font-bold text-text/90 relative">{s.label}</div>
               <div className="text-[10px] text-muted/50 mt-0.5 relative">{s.sub}</div>
             </div>
           ))}
@@ -576,26 +576,26 @@ export default function FAQ() {
           <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(34,197,94,0.4),rgba(168,85,247,0.3),transparent)' }} />
 
           <div className="relative p-8 md:p-10 text-center">
-            <div className="text-3xl mb-4 select-none">💬</div>
-            <h2 className="text-xl font-black text-text mb-3">{t('faq_page.ui.cta_title')}</h2>
-            <p className="text-muted/65 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
+            <div className="text-4xl mb-4 select-none">💬</div>
+            <h2 className="text-2xl font-black text-text mb-3">{t('faq_page.ui.cta_title')}</h2>
+            <p className="text-muted/65 text-base mb-8 max-w-sm mx-auto leading-relaxed">
               {t('faq_page.ui.cta_desc')}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold border transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-base font-bold border transition-all duration-200 hover:scale-105 hover:shadow-lg"
                 style={{ background: 'rgba(34,197,94,0.12)', borderColor: 'rgba(34,197,94,0.4)', color: '#22c55e' }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(34,197,94,0.2)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; }}>
                 ✉ {t('faq_page.ui.cta_contact')}
               </Link>
               <Link to="/program"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold border transition-all duration-200 hover:scale-105"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-base font-bold border transition-all duration-200 hover:scale-105"
                 style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)', color: '#94a3b8' }}>
                 📈 {t('faq_page.ui.cta_program')}
               </Link>
               <Link to="/pillars"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold border transition-all duration-200 hover:scale-105"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-base font-bold border transition-all duration-200 hover:scale-105"
                 style={{ background: 'rgba(168,85,247,0.08)', borderColor: 'rgba(168,85,247,0.3)', color: '#a855f7' }}>
                 ⬡ {t('faq_page.ui.cta_pillars')}
               </Link>

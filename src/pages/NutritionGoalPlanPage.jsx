@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 /* ─── Orbit-ring CSS ─── */
@@ -376,7 +376,7 @@ function MacroBar({ label, value, max, color, unit = 'g' }) {
   }, [value, max]);
   return (
     <div className="mb-3">
-      <div className="flex justify-between text-xs mb-1.5">
+      <div className="flex justify-between text-sm mb-1.5">
         <span style={{ color: '#9ca3af' }}>{label}</span>
         <span className="font-semibold" style={{ color }}>{value}{unit}</span>
       </div>
@@ -419,7 +419,7 @@ export default function NutritionGoalPlanPage() {
         {/* ── Breadcrumb ── */}
         <Link
           to="/pillar/b"
-          className="inline-flex items-center gap-2 text-sm mb-8 transition-colors duration-200"
+          className="inline-flex items-center gap-2 text-base mb-8 transition-colors duration-200"
           style={{ color: '#84cc16' }}
         >
           <span>←</span>
@@ -433,22 +433,22 @@ export default function NutritionGoalPlanPage() {
             style={{ background: 'rgba(132,204,22,0.05)' }}
           />
           <div
-            className="w-20 h-20 rounded-3xl text-5xl shrink-0 flex items-center justify-center border animate-float"
+            className="w-20 h-20 rounded-3xl text-6xl shrink-0 flex items-center justify-center border animate-float"
             style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(132,204,22,0.2)' }}
           >
             🎯
           </div>
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up" style={{ color: '#f5f5f5' }}>
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-up" style={{ color: '#f5f5f5' }}>
               Meal Plan Theo Mục Tiêu
             </h1>
             <span
-              className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border"
+              className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border"
               style={{ color: '#84cc16', background: 'rgba(132,204,22,0.10)', borderColor: 'rgba(132,204,22,0.20)' }}
             >
               Cá nhân hóa · 7 hướng · Công thức tính toán
             </span>
-            <p className="text-base leading-relaxed max-w-2xl" style={{ color: '#9ca3af' }}>
+            <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#9ca3af' }}>
               Không phải ai cũng cần cùng một chế độ ăn. Chọn mục tiêu — nhận công thức, thực đơn mẫu và cách điều chỉnh riêng cho bạn.
             </p>
           </div>
@@ -467,7 +467,7 @@ export default function NutritionGoalPlanPage() {
               style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 50%, transparent 100%)' }}
             />
             <div
-              className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
+              className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
               style={{ color: '#84cc16', background: 'rgba(10,10,10,0.6)', borderColor: 'rgba(132,204,22,0.2)' }}
             >
               7 Mục Tiêu Dinh Dưỡng
@@ -488,8 +488,8 @@ export default function NutritionGoalPlanPage() {
               className="flex flex-col items-center px-5 py-3 rounded-2xl border"
               style={{ background: 'rgba(132,204,22,0.06)', borderColor: 'rgba(132,204,22,0.15)' }}
             >
-              <span className="text-lg font-bold" style={{ color: '#84cc16' }}>{s.label}</span>
-              <span className="text-xs" style={{ color: '#6b7280' }}>{s.sub}</span>
+              <span className="text-xl font-bold" style={{ color: '#84cc16' }}>{s.label}</span>
+              <span className="text-sm" style={{ color: '#6b7280' }}>{s.sub}</span>
             </div>
           ))}
         </div>
@@ -501,16 +501,16 @@ export default function NutritionGoalPlanPage() {
         <RevealBlock className="mb-14">
           <div className="mb-2">
             <span
-              className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border inline-block mb-4"
+              className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border inline-block mb-4"
               style={{ color: '#84cc16', background: 'rgba(132,204,22,0.08)', borderColor: 'rgba(132,204,22,0.18)' }}
             >
               Bước 0 — Trước khi chọn mục tiêu
             </span>
           </div>
-          <h2 className="text-2xl font-bold mb-3" style={{ color: '#f5f5f5' }}>
+          <h2 className="text-3xl font-bold mb-3" style={{ color: '#f5f5f5' }}>
             5 Câu Hỏi Để Chọn Đúng Hướng
           </h2>
-          <p className="text-sm leading-relaxed mb-8" style={{ color: '#9ca3af' }}>
+          <p className="text-base leading-relaxed mb-8" style={{ color: '#9ca3af' }}>
             Trả lời 5 câu hỏi này trước khi chọn track. Càng rõ câu trả lời, kế hoạch càng chính xác.
           </p>
 
@@ -533,19 +533,19 @@ export default function NutritionGoalPlanPage() {
                 )}
                 <div className="flex flex-col items-center px-2 relative z-20">
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl border mb-3 shrink-0"
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl border mb-3 shrink-0"
                     style={{ background: 'rgba(132,204,22,0.08)', borderColor: 'rgba(132,204,22,0.2)' }}
                   >
                     {q.icon}
                   </div>
                   <div
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mb-3"
+                    className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mb-3"
                     style={{ background: '#84cc16', color: '#000' }}
                   >
                     {q.n}
                   </div>
-                  <p className="text-xs font-bold text-center mb-1" style={{ color: '#f5f5f5' }}>{q.q}</p>
-                  <p className="text-xs text-center leading-relaxed" style={{ color: '#6b7280' }}>{q.detail}</p>
+                  <p className="text-sm font-bold text-center mb-1" style={{ color: '#f5f5f5' }}>{q.q}</p>
+                  <p className="text-sm text-center leading-relaxed" style={{ color: '#6b7280' }}>{q.detail}</p>
                 </div>
               </div>
             ))}
@@ -560,7 +560,7 @@ export default function NutritionGoalPlanPage() {
                 style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.08)' }}
               >
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0 border"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-2xl shrink-0 border"
                   style={{ background: 'rgba(132,204,22,0.08)', borderColor: 'rgba(132,204,22,0.2)' }}
                 >
                   {q.icon}
@@ -568,14 +568,14 @@ export default function NutritionGoalPlanPage() {
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <span
-                      className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
+                      className="w-5 h-5 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
                       style={{ background: '#84cc16', color: '#000' }}
                     >
                       {q.n}
                     </span>
-                    <span className="text-sm font-bold" style={{ color: '#f5f5f5' }}>{q.q}</span>
+                    <span className="text-base font-bold" style={{ color: '#f5f5f5' }}>{q.q}</span>
                   </div>
-                  <p className="text-xs leading-relaxed" style={{ color: '#6b7280' }}>{q.detail}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#6b7280' }}>{q.detail}</p>
                 </div>
               </div>
             ))}
@@ -584,8 +584,8 @@ export default function NutritionGoalPlanPage() {
 
         {/* ── Section 3: TDEE + Goal Macro Calculator ── */}
         <RevealBlock className="mb-14">
-          <h2 className="text-2xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Tính Macro Theo Mục Tiêu</h2>
-          <p className="text-sm mb-6" style={{ color: '#9ca3af' }}>
+          <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Tính Macro Theo Mục Tiêu</h2>
+          <p className="text-base mb-6" style={{ color: '#9ca3af' }}>
             Dựa trên dữ liệu của bạn từ B0 ({b0.w}kg · {b0.h}cm · {b0.age} tuổi · {b0.sx === 'female' ? 'nữ' : 'nam'}). Chọn mục tiêu để xem macro phù hợp.
           </p>
 
@@ -595,7 +595,7 @@ export default function NutritionGoalPlanPage() {
               <button
                 key={g.id}
                 onClick={() => setCalcGoal(g.id)}
-                className="px-3 py-2 rounded-xl border text-xs font-bold transition-all duration-200"
+                className="px-3 py-2 rounded-xl border text-sm font-bold transition-all duration-200"
                 style={{
                   background: calcGoal === g.id ? `rgba(${g.rgb},0.15)` : 'rgba(255,255,255,0.04)',
                   borderColor: calcGoal === g.id ? g.color : 'rgba(255,255,255,0.1)',
@@ -615,18 +615,18 @@ export default function NutritionGoalPlanPage() {
           >
             {/* Formula note */}
             <div
-              className="rounded-xl px-4 py-3 mb-5 text-xs leading-relaxed border-l-4"
+              className="rounded-xl px-4 py-3 mb-5 text-sm leading-relaxed border-l-4"
               style={{ background: 'rgba(132,204,22,0.06)', borderLeftColor: '#84cc16', color: '#9ca3af' }}
             >
               <span className="font-bold" style={{ color: '#84cc16' }}>Công thức: </span>
               BMR (Mifflin-St Jeor) × hệ số hoạt động × hệ số mục tiêu
               <br />
-              <span className="font-mono text-xs mt-1 block" style={{ color: '#6b7280' }}>
+              <span className="font-mono text-sm mt-1 block" style={{ color: '#6b7280' }}>
                 {b0.sx === 'female'
                   ? `BMR = 10×${b0.w} + 6.25×${b0.h} − 5×${b0.age} − 161 = ${calcStats.bmr} kcal`
                   : `BMR = 10×${b0.w} + 6.25×${b0.h} − 5×${b0.age} + 5 = ${calcStats.bmr} kcal`}
               </span>
-              <span className="font-mono text-xs block" style={{ color: '#6b7280' }}>
+              <span className="font-mono text-sm block" style={{ color: '#6b7280' }}>
                 TDEE = {calcStats.bmr} × {b0.a} = {calcStats.tdee} kcal → Mục tiêu: {calcStats.targetKcal} kcal/ngày
               </span>
             </div>
@@ -644,9 +644,9 @@ export default function NutritionGoalPlanPage() {
                   className="rounded-xl border p-3 flex flex-col items-center"
                   style={{ background: `rgba(${m.color === '#22c55e' ? '34,197,94' : m.color === '#f97316' ? '249,115,22' : m.color === '#06b6d4' ? '6,182,212' : GOALS.find(g => g.id === calcGoal)?.rgb || '132,204,22'},0.06)`, borderColor: `${m.color}28` }}
                 >
-                  <span className="text-xl font-bold mb-0.5" style={{ color: m.color }}>{m.value}</span>
-                  <span className="text-xs font-semibold mb-2" style={{ color: m.color }}>{m.unit}</span>
-                  <span className="text-xs text-center leading-tight" style={{ color: '#6b7280' }}>{m.label}</span>
+                  <span className="text-2xl font-bold mb-0.5" style={{ color: m.color }}>{m.value}</span>
+                  <span className="text-sm font-semibold mb-2" style={{ color: m.color }}>{m.unit}</span>
+                  <span className="text-sm text-center leading-tight" style={{ color: '#6b7280' }}>{m.label}</span>
                 </div>
               ))}
             </div>
@@ -663,8 +663,8 @@ export default function NutritionGoalPlanPage() {
 
         {/* ── Section 4: Goal Profile Selector ── */}
         <RevealBlock className="mb-14">
-          <h2 className="text-2xl font-bold mb-2" style={{ color: '#f5f5f5' }}>7 Hồ Sơ Mục Tiêu</h2>
-          <p className="text-sm mb-6" style={{ color: '#9ca3af' }}>
+          <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>7 Hồ Sơ Mục Tiêu</h2>
+          <p className="text-base mb-6" style={{ color: '#9ca3af' }}>
             Chọn mục tiêu phù hợp để xem thực đơn mẫu, tips và lịch tuần chi tiết.
           </p>
 
@@ -684,8 +684,8 @@ export default function NutritionGoalPlanPage() {
                     boxShadow: active ? `0 0 16px rgba(${g.rgb},0.2)` : 'none',
                   }}
                 >
-                  <span className="text-2xl">{g.emoji}</span>
-                  <span className="text-xs font-bold leading-tight" style={{ color: active ? g.color : '#f5f5f5' }}>{g.label}</span>
+                  <span className="text-3xl">{g.emoji}</span>
+                  <span className="text-sm font-bold leading-tight" style={{ color: active ? g.color : '#f5f5f5' }}>{g.label}</span>
                   <span
                     className="text-[10px] leading-tight px-2 py-0.5 rounded-full border mt-1"
                     style={{
@@ -714,19 +714,19 @@ export default function NutritionGoalPlanPage() {
                 style={{ background: `rgba(${goalData.rgb},0.08)`, borderColor: `rgba(${goalData.rgb},0.18)` }}
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-4xl shrink-0">{goalData.emoji}</span>
+                  <span className="text-5xl shrink-0">{goalData.emoji}</span>
                   <div>
                     <div className="flex items-center gap-3 mb-1 flex-wrap">
-                      <h3 className="text-xl font-bold" style={{ color: goalData.color }}>{goalData.label}</h3>
+                      <h3 className="text-2xl font-bold" style={{ color: goalData.color }}>{goalData.label}</h3>
                       <span
-                        className="text-xs font-bold px-2 py-0.5 rounded-full border"
+                        className="text-sm font-bold px-2 py-0.5 rounded-full border"
                         style={{ color: goalData.color, background: `rgba(${goalData.rgb},0.12)`, borderColor: `rgba(${goalData.rgb},0.3)` }}
                       >
                         {goalData.tag}
                       </span>
                     </div>
-                    <p className="text-sm font-semibold mb-2" style={{ color: '#f5f5f5' }}>{goalData.tagline}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{goalData.who}</p>
+                    <p className="text-base font-semibold mb-2" style={{ color: '#f5f5f5' }}>{goalData.tagline}</p>
+                    <p className="text-base leading-relaxed" style={{ color: '#9ca3af' }}>{goalData.who}</p>
                   </div>
                 </div>
               </div>
@@ -736,7 +736,7 @@ export default function NutritionGoalPlanPage() {
                 <img src={goalData.image} alt={goalData.label} className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%)' }} />
                 <div
-                  className="absolute bottom-4 left-5 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
+                  className="absolute bottom-4 left-5 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
                   style={{ color: goalData.color, background: 'rgba(10,10,10,0.65)', borderColor: `rgba(${goalData.rgb},0.3)` }}
                 >
                   {goalData.kcalRule}
@@ -749,7 +749,7 @@ export default function NutritionGoalPlanPage() {
                   className="rounded-xl border p-4 mb-6"
                   style={{ background: `rgba(${goalData.rgb},0.06)`, borderColor: `rgba(${goalData.rgb},0.18)` }}
                 >
-                  <h4 className="text-sm font-bold mb-3" style={{ color: goalData.color }}>Macro cá nhân hóa cho bạn ({b0.w}kg)</h4>
+                  <h4 className="text-base font-bold mb-3" style={{ color: goalData.color }}>Macro cá nhân hóa cho bạn ({b0.w}kg)</h4>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4" key={`detail-${selectedGoal}`}>
                     {[
                       { label: 'Mục tiêu/ngày', value: detailStats.targetKcal, unit: 'kcal', color: goalData.color },
@@ -758,25 +758,25 @@ export default function NutritionGoalPlanPage() {
                       { label: 'Fat', value: detailStats.fatG, unit: 'g', color: '#06b6d4' },
                     ].map(m => (
                       <div key={m.label} className="flex flex-col items-center">
-                        <span className="text-lg font-bold" style={{ color: m.color }}>{m.value}<span className="text-xs ml-0.5">{m.unit}</span></span>
-                        <span className="text-xs mt-0.5" style={{ color: '#6b7280' }}>{m.label}</span>
+                        <span className="text-xl font-bold" style={{ color: m.color }}>{m.value}<span className="text-sm ml-0.5">{m.unit}</span></span>
+                        <span className="text-sm mt-0.5" style={{ color: '#6b7280' }}>{m.label}</span>
                       </div>
                     ))}
                   </div>
                   <div className="grid grid-cols-2 gap-x-6" key={`pbars-${selectedGoal}`}>
                     <div>
-                      <div className="text-xs mb-1" style={{ color: '#6b7280' }}>Protein/ngày: {goalData.proteinRule}</div>
-                      <div className="text-xs" style={{ color: '#6b7280' }}>Fat/ngày: {goalData.fatRule}</div>
+                      <div className="text-sm mb-1" style={{ color: '#6b7280' }}>Protein/ngày: {goalData.proteinRule}</div>
+                      <div className="text-sm" style={{ color: '#6b7280' }}>Fat/ngày: {goalData.fatRule}</div>
                     </div>
                     <div>
-                      <div className="text-xs mb-1" style={{ color: '#6b7280' }}>Carb/ngày: {goalData.carbRule}</div>
-                      <div className="text-xs" style={{ color: '#6b7280' }}>Nước: {detailStats.waterMl}ml/ngày</div>
+                      <div className="text-sm mb-1" style={{ color: '#6b7280' }}>Carb/ngày: {goalData.carbRule}</div>
+                      <div className="text-sm" style={{ color: '#6b7280' }}>Nước: {detailStats.waterMl}ml/ngày</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Meal structure */}
-                <h4 className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Thực đơn mẫu</h4>
+                <h4 className="text-base font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Thực đơn mẫu</h4>
                 <div className="space-y-2 mb-6">
                   {goalData.meals.map((meal, mi) => (
                     <div
@@ -785,32 +785,32 @@ export default function NutritionGoalPlanPage() {
                       style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.07)' }}
                     >
                       <span
-                        className="shrink-0 text-xs font-bold px-2 py-1 rounded-lg mt-0.5"
+                        className="shrink-0 text-sm font-bold px-2 py-1 rounded-lg mt-0.5"
                         style={{ background: `rgba(${goalData.rgb},0.12)`, color: goalData.color, minWidth: 52, textAlign: 'center' }}
                       >
                         {meal.t}
                       </span>
                       <div className="flex-1">
-                        <p className="text-sm leading-snug mb-1" style={{ color: '#d1d5db' }}>{meal.food}</p>
-                        <span className="text-xs italic" style={{ color: '#6b7280' }}>{meal.note}</span>
+                        <p className="text-base leading-snug mb-1" style={{ color: '#d1d5db' }}>{meal.food}</p>
+                        <span className="text-sm italic" style={{ color: '#6b7280' }}>{meal.note}</span>
                       </div>
                     </div>
                   ))}
                 </div>
 
                 {/* Progress signs */}
-                <h4 className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Dấu hiệu đang đi đúng hướng</h4>
+                <h4 className="text-base font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Dấu hiệu đang đi đúng hướng</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                   {goalData.signs.map((sign, si) => (
                     <div key={si} className="flex items-start gap-2">
-                      <span className="shrink-0 text-sm mt-0.5" style={{ color: '#22c55e' }}>✓</span>
-                      <span className="text-sm" style={{ color: '#d1d5db' }}>{sign}</span>
+                      <span className="shrink-0 text-base mt-0.5" style={{ color: '#22c55e' }}>✓</span>
+                      <span className="text-base" style={{ color: '#d1d5db' }}>{sign}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Tips */}
-                <h4 className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Tips quan trọng</h4>
+                <h4 className="text-base font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Tips quan trọng</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                   {goalData.tips.map((tip, ti) => (
                     <div
@@ -818,13 +818,13 @@ export default function NutritionGoalPlanPage() {
                       className="rounded-xl border p-3"
                       style={{ background: `rgba(${goalData.rgb},0.06)`, borderColor: `rgba(${goalData.rgb},0.18)` }}
                     >
-                      <span className="text-xs leading-relaxed" style={{ color: '#d1d5db' }}>{tip}</span>
+                      <span className="text-sm leading-relaxed" style={{ color: '#d1d5db' }}>{tip}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Weekly schedule */}
-                <h4 className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Khung tuần</h4>
+                <h4 className="text-base font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Khung tuần</h4>
                 <div className="rounded-xl border overflow-hidden mb-6" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
                   {goalData.weekPlan.map((row, ri) => (
                     <div
@@ -833,27 +833,27 @@ export default function NutritionGoalPlanPage() {
                       style={{ borderColor: 'rgba(255,255,255,0.06)', background: ri % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}
                     >
                       <span
-                        className="shrink-0 text-xs font-bold px-2 py-1 rounded-lg"
+                        className="shrink-0 text-sm font-bold px-2 py-1 rounded-lg"
                         style={{ background: `rgba(${goalData.rgb},0.12)`, color: goalData.color, minWidth: 60, textAlign: 'center' }}
                       >
                         {row.day}
                       </span>
-                      <span className="text-sm" style={{ color: '#d1d5db' }}>{row.guide}</span>
+                      <span className="text-base" style={{ color: '#d1d5db' }}>{row.guide}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Adjustment rules */}
-                <h4 className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Quy tắc điều chỉnh</h4>
+                <h4 className="text-base font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Quy tắc điều chỉnh</h4>
                 <div className="rounded-xl border overflow-hidden" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-                  <div className="grid grid-cols-2 text-xs font-bold px-3 py-2 border-b" style={{ borderColor: 'rgba(255,255,255,0.08)', color: '#6b7280', background: 'rgba(255,255,255,0.04)' }}>
+                  <div className="grid grid-cols-2 text-sm font-bold px-3 py-2 border-b" style={{ borderColor: 'rgba(255,255,255,0.08)', color: '#6b7280', background: 'rgba(255,255,255,0.04)' }}>
                     <span>Tình huống</span>
                     <span>Điều chỉnh</span>
                   </div>
                   {goalData.adjustments.map((adj, ai) => (
                     <div
                       key={ai}
-                      className="grid grid-cols-2 gap-4 px-3 py-3 border-b last:border-b-0 text-sm"
+                      className="grid grid-cols-2 gap-4 px-3 py-3 border-b last:border-b-0 text-base"
                       style={{ borderColor: 'rgba(255,255,255,0.05)', background: ai % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}
                     >
                       <span style={{ color: '#9ca3af' }}>{adj.situation}</span>
@@ -868,8 +868,8 @@ export default function NutritionGoalPlanPage() {
 
         {/* ── Section 5: Universal Plate Reminder ── */}
         <RevealBlock className="mb-14">
-          <h2 className="text-2xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Công Thức Đĩa Ăn Mọi Mục Tiêu</h2>
-          <p className="text-sm mb-6 leading-relaxed" style={{ color: '#9ca3af' }}>
+          <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Công Thức Đĩa Ăn Mọi Mục Tiêu</h2>
+          <p className="text-base mb-6 leading-relaxed" style={{ color: '#9ca3af' }}>
             Dù theo mục tiêu nào, mỗi bữa chính vẫn bám theo khung đĩa ăn này.
           </p>
 
@@ -895,7 +895,7 @@ export default function NutritionGoalPlanPage() {
                   <text x="110" y="121" textAnchor="middle" fill="#9ca3af" fontSize="9">chuẩn</text>
                 </svg>
                 <div
-                  className="text-xs text-center px-3 py-2 rounded-xl border"
+                  className="text-sm text-center px-3 py-2 rounded-xl border"
                   style={{ color: '#9ca3af', borderColor: 'rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.04)', maxWidth: 200 }}
                 >
                   WHO: ≥400g rau mỗi ngày để giảm nguy cơ bệnh mãn tính
@@ -916,17 +916,17 @@ export default function NutritionGoalPlanPage() {
                       className="rounded-xl border p-3 flex items-center gap-3"
                       style={{ background: 'rgba(255,255,255,0.03)', borderColor: `${seg.color}22` }}
                     >
-                      <span className="text-2xl">{seg.icon}</span>
+                      <span className="text-3xl">{seg.icon}</span>
                       <div>
-                        <div className="text-sm font-bold" style={{ color: seg.color }}>{seg.label}</div>
-                        <div className="text-xs" style={{ color: '#6b7280' }}>{seg.sub}</div>
+                        <div className="text-base font-bold" style={{ color: seg.color }}>{seg.label}</div>
+                        <div className="text-sm" style={{ color: '#6b7280' }}>{seg.sub}</div>
                       </div>
                     </div>
                   ))}
                 </div>
 
                 <div
-                  className="rounded-xl border-l-4 px-4 py-3 text-sm leading-relaxed"
+                  className="rounded-xl border-l-4 px-4 py-3 text-base leading-relaxed"
                   style={{ background: 'rgba(132,204,22,0.06)', borderLeftColor: '#84cc16', color: '#d1d5db' }}
                 >
                   <span className="font-semibold" style={{ color: '#84cc16' }}>Ghi nhớ: </span>
@@ -939,8 +939,8 @@ export default function NutritionGoalPlanPage() {
 
         {/* ── Section 6: Quick Combo Table ── */}
         <RevealBlock className="mb-14">
-          <h2 className="text-2xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Combo Nhanh Theo Mục Tiêu</h2>
-          <p className="text-sm mb-6" style={{ color: '#9ca3af' }}>Không có thời gian lên kế hoạch? Dùng combo gợi ý này ngay.</p>
+          <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Combo Nhanh Theo Mục Tiêu</h2>
+          <p className="text-base mb-6" style={{ color: '#9ca3af' }}>Không có thời gian lên kế hoạch? Dùng combo gợi ý này ngay.</p>
 
           <div
             className="rounded-2xl border overflow-hidden"
@@ -948,7 +948,7 @@ export default function NutritionGoalPlanPage() {
           >
             {/* Table header */}
             <div
-              className="grid grid-cols-12 px-4 py-3 border-b text-xs font-bold uppercase tracking-widest"
+              className="grid grid-cols-12 px-4 py-3 border-b text-sm font-bold uppercase tracking-widest"
               style={{ borderColor: 'rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.05)', color: '#6b7280' }}
             >
               <span className="col-span-3">Mục tiêu</span>
@@ -961,14 +961,14 @@ export default function NutritionGoalPlanPage() {
                 style={{ borderColor: 'rgba(255,255,255,0.06)', background: ri % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}
               >
                 <div className="col-span-3 flex items-center gap-2">
-                  <span className="text-xl">{row.emoji}</span>
-                  <span className="text-sm font-semibold" style={{ color: '#f5f5f5' }}>{row.goal}</span>
+                  <span className="text-2xl">{row.emoji}</span>
+                  <span className="text-base font-semibold" style={{ color: '#f5f5f5' }}>{row.goal}</span>
                 </div>
                 <div className="col-span-9">
                   {row.combo.split('; ').map((c, ci) => (
                     <div key={ci} className="flex items-start gap-2 mb-1 last:mb-0">
                       <span className="shrink-0 mt-0.5" style={{ color: '#84cc16', fontSize: 12 }}>·</span>
-                      <span className="text-sm" style={{ color: '#d1d5db' }}>{c}</span>
+                      <span className="text-base" style={{ color: '#d1d5db' }}>{c}</span>
                     </div>
                   ))}
                 </div>
@@ -979,8 +979,8 @@ export default function NutritionGoalPlanPage() {
 
         {/* ── Section 7: Adjustment Signals Accordion ── */}
         <RevealBlock className="mb-14">
-          <h2 className="text-2xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Tín Hiệu Điều Chỉnh Phổ Quát</h2>
-          <p className="text-sm mb-6" style={{ color: '#9ca3af' }}>
+          <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Tín Hiệu Điều Chỉnh Phổ Quát</h2>
+          <p className="text-base mb-6" style={{ color: '#9ca3af' }}>
             Áp dụng cho mọi mục tiêu — đọc đúng tín hiệu cơ thể để điều chỉnh kịp thời.
           </p>
           <div className="space-y-3">
@@ -1000,13 +1000,13 @@ export default function NutritionGoalPlanPage() {
                     onClick={() => toggleSignal(i)}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">{sig.icon}</span>
-                      <span className="font-semibold text-sm" style={{ color: open ? '#84cc16' : '#f5f5f5' }}>
+                      <span className="text-3xl">{sig.icon}</span>
+                      <span className="font-semibold text-base" style={{ color: open ? '#84cc16' : '#f5f5f5' }}>
                         {sig.trigger}
                       </span>
                     </div>
                     <span
-                      className="text-base transition-transform duration-300"
+                      className="text-lg transition-transform duration-300"
                       style={{ color: '#84cc16', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', display: 'inline-block' }}
                     >
                       ↓
@@ -1017,8 +1017,8 @@ export default function NutritionGoalPlanPage() {
                       <ul className="space-y-2 mt-4">
                         {sig.items.map((item, ii) => (
                           <li key={ii} className="flex items-start gap-3">
-                            <span className="shrink-0 mt-0.5 text-sm" style={{ color: '#84cc16' }}>→</span>
-                            <span className="text-sm" style={{ color: '#d1d5db' }}>{item}</span>
+                            <span className="shrink-0 mt-0.5 text-base" style={{ color: '#84cc16' }}>→</span>
+                            <span className="text-base" style={{ color: '#d1d5db' }}>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -1037,10 +1037,10 @@ export default function NutritionGoalPlanPage() {
             style={{ background: 'rgba(132,204,22,0.04)', borderColor: 'rgba(132,204,22,0.15)' }}
           >
             <div className="flex items-start gap-3">
-              <span className="text-xl shrink-0">⚠️</span>
+              <span className="text-2xl shrink-0">⚠️</span>
               <div>
-                <p className="text-sm font-semibold mb-1" style={{ color: '#84cc16' }}>Lưu ý an toàn</p>
-                <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>
+                <p className="text-base font-semibold mb-1" style={{ color: '#84cc16' }}>Lưu ý an toàn</p>
+                <p className="text-base leading-relaxed" style={{ color: '#9ca3af' }}>
                   Các công thức và thực đơn trên mang tính tham khảo, dựa trên dữ liệu bạn nhập. Nếu có bệnh nền, đang dùng thuốc, mang thai hoặc có nhu cầu đặc biệt, hãy tham khảo chuyên gia dinh dưỡng hoặc bác sĩ trước khi thay đổi chế độ ăn.
                 </p>
               </div>
@@ -1050,14 +1050,14 @@ export default function NutritionGoalPlanPage() {
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
             <Link
               to="/pillar/b"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-base transition-all duration-200"
               style={{ background: 'rgba(132,204,22,0.12)', color: '#84cc16', border: '1px solid rgba(132,204,22,0.3)' }}
             >
               ← Quay lại Dinh Dưỡng
             </Link>
             <Link
               to="/pillar/b/7day"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-base transition-all duration-200"
               style={{ background: '#84cc16', color: '#000' }}
             >
               Xem Meal Plan 7 Ngày →

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#a855f7';
@@ -115,17 +115,17 @@ export default function MindRoadmapPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">
         <span>←</span><span>Tâm Trí An Nhiên</span>
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `${COLOR}08` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🗺️</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🗺️</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Lộ Trình 12 Tuần Tâm Trí An Nhiên</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D7 · Hành Trình Từng Bước</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">Lộ trình từng bước để xây dựng sức khỏe tâm trí bền vững — từ nhận diện stress đến có một "bộ công cụ tâm trí" hoàn chỉnh cá nhân hóa cho bạn.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Lộ Trình 12 Tuần Tâm Trí An Nhiên</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D7 · Hành Trình Từng Bước</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">Lộ trình từng bước để xây dựng sức khỏe tâm trí bền vững — từ nhận diện stress đến có một "bộ công cụ tâm trí" hoàn chỉnh cá nhân hóa cho bạn.</p>
         </div>
       </div>
 
@@ -134,7 +134,7 @@ export default function MindRoadmapPage() {
           <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop" alt="Roadmap" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>4 Giai Đoạn · 12 Tuần</span>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>4 Giai Đoạn · 12 Tuần</span>
           </div>
         </div>
       </div>
@@ -142,8 +142,8 @@ export default function MindRoadmapPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock className="mb-10">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>4 Giai Đoạn Phát Triển</h2>
-        <p className="text-muted text-sm mb-6">Click vào từng giai đoạn để xem chi tiết</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Giai Đoạn Phát Triển</h2>
+        <p className="text-muted text-base mb-6">Click vào từng giai đoạn để xem chi tiết</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
           {PHASES.map((ph, i) => (
             <button key={i} onClick={() => setActivePhase(i)}
@@ -151,36 +151,36 @@ export default function MindRoadmapPage() {
               style={activePhase === i
                 ? { borderColor: ph.color, background: `${ph.color}15` }
                 : { borderColor: '#2a2a2a', background: 'transparent' }}>
-              <div className="text-2xl mb-2">{ph.icon}</div>
-              <div className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: ph.color }}>{ph.weeks}</div>
-              <div className="text-sm font-semibold text-text">{ph.title}</div>
+              <div className="text-3xl mb-2">{ph.icon}</div>
+              <div className="text-sm font-bold uppercase tracking-wide mb-1" style={{ color: ph.color }}>{ph.weeks}</div>
+              <div className="text-base font-semibold text-text">{ph.title}</div>
             </button>
           ))}
         </div>
         <div className="rounded-2xl border p-5 md:p-6" style={{ borderColor: `${p.color}30`, background: `${p.color}07` }}>
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-2xl">{p.icon}</span>
+            <span className="text-3xl">{p.icon}</span>
             <div>
-              <div className="text-xs font-bold uppercase tracking-widest" style={{ color: p.color }}>{p.phase} · {p.weeks} · {p.time}</div>
-              <div className="text-lg font-bold text-text">{p.title}</div>
+              <div className="text-sm font-bold uppercase tracking-widest" style={{ color: p.color }}>{p.phase} · {p.weeks} · {p.time}</div>
+              <div className="text-xl font-bold text-text">{p.title}</div>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: p.color }}>Mục Tiêu</p>
+              <p className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: p.color }}>Mục Tiêu</p>
               <ul className="space-y-2">
                 {p.goals.map(g => (
-                  <li key={g} className="flex items-start gap-2 text-sm text-muted">
+                  <li key={g} className="flex items-start gap-2 text-base text-muted">
                     <span className="shrink-0 mt-1" style={{ color: p.color }}>→</span>{g}
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: p.color }}>Milestones</p>
+              <p className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: p.color }}>Milestones</p>
               <ul className="space-y-2">
                 {p.milestones.map(m => (
-                  <li key={m} className="flex items-start gap-2 text-sm text-muted">
+                  <li key={m} className="flex items-start gap-2 text-base text-muted">
                     <span className="shrink-0 mt-1" style={{ color: p.color }}>✓</span>{m}
                   </li>
                 ))}
@@ -191,15 +191,15 @@ export default function MindRoadmapPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Mental Wellness Stack Hằng Ngày</h2>
-        <p className="text-muted text-sm mb-6">25 phút mỗi ngày chia ra 3 buổi — không cần làm tất cả cùng lúc</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mental Wellness Stack Hằng Ngày</h2>
+        <p className="text-muted text-base mb-6">25 phút mỗi ngày chia ra 3 buổi — không cần làm tất cả cùng lúc</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {DAILY_STACK.map(s => (
             <div key={s.time} className="rounded-2xl border border-border bg-surface p-5">
-              <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>{s.time}</div>
+              <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>{s.time}</div>
               <ul className="space-y-2">
                 {s.items.map(it => (
-                  <li key={it} className="flex items-start gap-2 text-sm text-muted">
+                  <li key={it} className="flex items-start gap-2 text-base text-muted">
                     <span className="shrink-0" style={{ color: COLOR }}>·</span>{it}
                   </li>
                 ))}
@@ -210,16 +210,16 @@ export default function MindRoadmapPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Tất Cả Công Cụ Của Bạn</h2>
-        <p className="text-muted text-sm mb-6">Truy cập nhanh vào mọi module trong lộ trình</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tất Cả Công Cụ Của Bạn</h2>
+        <p className="text-muted text-base mb-6">Truy cập nhanh vào mọi module trong lộ trình</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {LINKS.map(l => (
             <Link key={l.to} to={l.to}
               className="flex items-center gap-3 rounded-xl border border-border bg-surface p-4 hover:border-purple-500/40 transition-all group">
-              <span className="text-xl shrink-0">{l.icon}</span>
+              <span className="text-2xl shrink-0">{l.icon}</span>
               <div>
-                <div className="text-sm font-semibold text-text group-hover:text-purple-300 transition-colors">{l.t}</div>
-                <div className="text-xs text-muted">{l.d}</div>
+                <div className="text-base font-semibold text-text group-hover:text-purple-300 transition-colors">{l.t}</div>
+                <div className="text-sm text-muted">{l.d}</div>
               </div>
             </Link>
           ))}
@@ -228,18 +228,18 @@ export default function MindRoadmapPage() {
 
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border p-5 md:p-6 text-center" style={{ borderColor: `${COLOR}25`, background: `${COLOR}07` }}>
-          <div className="text-3xl mb-3">🌟</div>
-          <p className="text-base text-text font-semibold mb-2">Bắt Đầu Từ Hôm Nay</p>
-          <p className="text-sm text-muted mb-5 max-w-lg mx-auto">Không cần hoàn hảo. Không cần làm tất cả. Chỉ cần bắt đầu 1 việc nhỏ nhất — thở sâu 5 lần, viết 1 dòng nhật ký, hay tắt điện thoại 30 phút trước khi ngủ.</p>
+          <div className="text-4xl mb-3">🌟</div>
+          <p className="text-lg text-text font-semibold mb-2">Bắt Đầu Từ Hôm Nay</p>
+          <p className="text-base text-muted mb-5 max-w-lg mx-auto">Không cần hoàn hảo. Không cần làm tất cả. Chỉ cần bắt đầu 1 việc nhỏ nhất — thở sâu 5 lần, viết 1 dòng nhật ký, hay tắt điện thoại 30 phút trước khi ngủ.</p>
           <Link to="/pillar/d/assessment"
-            className="inline-block px-8 py-3 rounded-full font-bold text-sm"
+            className="inline-block px-8 py-3 rounded-full font-bold text-base"
             style={{ background: COLOR, color: '#fff' }}>
             Bắt đầu với bài đánh giá →
           </Link>
         </div>
       </RevealBlock>
 
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
     </div>

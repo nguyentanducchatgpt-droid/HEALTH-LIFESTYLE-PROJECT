@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 
 // ─── Color palette (mirrors ProgressionStaircase) ─────────────────────────────
 const C = {
@@ -320,13 +320,13 @@ function TestCard({ test, inputKey, value, onChange, submitted, tabColor }) {
       <div className="p-4">
         {/* Header */}
         <div className="flex items-start gap-2 mb-3">
-          <span className="text-xl leading-none mt-0.5">{test.icon}</span>
+          <span className="text-2xl leading-none mt-0.5">{test.icon}</span>
           <div className="flex-1 min-w-0">
-            <p className="font-black text-sm text-text leading-tight">{test.name}</p>
+            <p className="font-black text-base text-text leading-tight">{test.name}</p>
             <p className="text-[10px] text-muted mt-0.5 leading-relaxed">{test.how}</p>
           </div>
           {confirmed && sc !== null && (
-            <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black border ${tc.border} ${tc.bg} ${tc.text}`}>
+            <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black border ${tc.border} ${tc.bg} ${tc.text}`}>
               {sc === 2 ? '2' : sc === 1 ? '1' : '0'}
             </div>
           )}
@@ -347,7 +347,7 @@ function TestCard({ test, inputKey, value, onChange, submitted, tabColor }) {
                   onChange={e => setLocalVal(e.target.value)}
                   onKeyDown={e => e.key === 'Enter' && handleSubmit()}
                   placeholder="0"
-                  className="w-full bg-white/4 border border-white/10 rounded-lg px-3 py-1.5 text-sm text-text font-bold placeholder:text-muted/40 focus:outline-none focus:border-white/25 transition-colors"
+                  className="w-full bg-white/4 border border-white/10 rounded-lg px-3 py-1.5 text-base text-text font-bold placeholder:text-muted/40 focus:outline-none focus:border-white/25 transition-colors"
                 />
               </div>
               <span className="text-[10px] text-muted shrink-0">{test.unit}</span>
@@ -355,7 +355,7 @@ function TestCard({ test, inputKey, value, onChange, submitted, tabColor }) {
                 onClick={handleSubmit}
                 disabled={localVal === ''}
                 className={`
-                  shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold cursor-pointer
+                  shrink-0 px-3 py-1.5 rounded-lg text-sm font-bold cursor-pointer
                   transition-all duration-200 border
                   ${localVal !== ''
                     ? `${tc.bg} ${tc.border} ${tc.text} hover:opacity-80`
@@ -378,7 +378,7 @@ function TestCard({ test, inputKey, value, onChange, submitted, tabColor }) {
                   </span>
                 );
               })()}
-              <span className="text-xs font-black text-text">{localVal} <span className="text-muted font-normal text-[10px]">{test.unit}</span></span>
+              <span className="text-sm font-black text-text">{localVal} <span className="text-muted font-normal text-[10px]">{test.unit}</span></span>
               <button
                 onClick={handleReset}
                 className="ml-auto text-[10px] text-muted/50 hover:text-muted cursor-pointer transition-colors"
@@ -441,16 +441,16 @@ export default function MonthlyProgressCheck() {
     <section className="mb-16">
       {/* Header */}
       <div className="mb-6">
-        <h2 className="text-2xl font-black text-text mb-1.5 flex items-center gap-3">
+        <h2 className="text-3xl font-black text-text mb-1.5 flex items-center gap-3">
           <span
-            className="w-9 h-9 rounded-xl flex items-center justify-center text-lg"
+            className="w-9 h-9 rounded-xl flex items-center justify-center text-xl"
             style={{ background: mc.glow, border: `1px solid ${mc.hex}40` }}
           >
             📊
           </span>
           Kiểm Tra Tiến Bộ Hàng Tháng
         </h2>
-        <p className="text-muted text-sm">Đo kết quả thực tế — không phỏng đoán, không so sánh người khác</p>
+        <p className="text-muted text-base">Đo kết quả thực tế — không phỏng đoán, không so sánh người khác</p>
       </div>
 
       {/* Month tab selector */}
@@ -463,7 +463,7 @@ export default function MonthlyProgressCheck() {
               key={td.week}
               onClick={() => setActiveMonth(idx)}
               className={`
-                flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold
+                flex items-center gap-1.5 px-4 py-2 rounded-xl text-base font-bold
                 border transition-all duration-200 cursor-pointer
                 ${active
                   ? `${tc.bg} ${tc.border} ${tc.text}`
@@ -484,7 +484,7 @@ export default function MonthlyProgressCheck() {
         className={`mb-5 rounded-xl border ${mc.border} ${mc.bg} px-4 py-3`}
         style={{ boxShadow: `0 2px 20px ${mc.glow}` }}
       >
-        <p className={`font-black text-sm ${mc.text}`}>{monthData.title}</p>
+        <p className={`font-black text-base ${mc.text}`}>{monthData.title}</p>
         <p className="text-[11px] text-muted mt-0.5 leading-relaxed">{monthData.desc}</p>
       </div>
 
@@ -509,7 +509,7 @@ export default function MonthlyProgressCheck() {
           <button
             onClick={handleSubmitAll}
             className={`
-              px-6 py-2.5 rounded-xl font-bold text-sm cursor-pointer
+              px-6 py-2.5 rounded-xl font-bold text-base cursor-pointer
               border transition-all duration-200 animate-fade-in-up
               ${mc.bg} ${mc.border} ${mc.text} hover:opacity-80
             `}
@@ -553,13 +553,13 @@ export default function MonthlyProgressCheck() {
                   className={`w-16 h-16 rounded-2xl flex flex-col items-center justify-center border ${C[grade.color]?.border || 'border-green-500/30'} ${C[grade.color]?.bg || 'bg-green-500/10'}`}
                   style={{ boxShadow: `0 4px 24px ${C[grade.color]?.glow || 'rgba(34,197,94,0.2)'}` }}
                 >
-                  <span className={`text-2xl font-black leading-none ${C[grade.color]?.text || 'text-green-400'}`}>
+                  <span className={`text-3xl font-black leading-none ${C[grade.color]?.text || 'text-green-400'}`}>
                     {grade.grade}
                   </span>
                   <span className="text-[9px] text-muted mt-0.5">{total}/{maxPossible}</span>
                 </div>
                 <div>
-                  <p className={`font-black text-base ${C[grade.color]?.text || 'text-green-400'}`}>
+                  <p className={`font-black text-lg ${C[grade.color]?.text || 'text-green-400'}`}>
                     {grade.label}
                   </p>
                   <p className="text-[10px] text-muted">{monthData.title} · {monthData.label}</p>
@@ -574,7 +574,7 @@ export default function MonthlyProgressCheck() {
                   const tc = lv ? (C[lv.color] || C.green) : null;
                   return (
                     <div key={t.id} className="flex items-center gap-2">
-                      <span className="text-sm w-5 text-center">{t.icon}</span>
+                      <span className="text-base w-5 text-center">{t.icon}</span>
                       <span className="text-[11px] text-text/70 flex-1 truncate">{t.name}</span>
                       {s !== null && lv && tc ? (
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${tc.border} ${tc.bg} ${tc.text}`}>
@@ -593,7 +593,7 @@ export default function MonthlyProgressCheck() {
                 <p className="text-[10px] font-bold uppercase tracking-widest mb-1.5" style={{ color: C[grade.color]?.hex || '#22c55e' }}>
                   Nhận xét huấn luyện viên
                 </p>
-                <p className="text-xs text-text/80 leading-relaxed">{grade.note}</p>
+                <p className="text-sm text-text/80 leading-relaxed">{grade.note}</p>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+﻿import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import LocalVideoCard from '../components/LocalVideoCard';
 
@@ -47,9 +47,9 @@ function VideoModal({ src, title, onClose }) {
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute -top-11 right-0 flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-200 text-sm"
+          className="absolute -top-11 right-0 flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-200 text-base"
         >
-          <span className="text-xs">ESC</span>
+          <span className="text-sm">ESC</span>
           <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors duration-200">
             ✕
           </span>
@@ -68,8 +68,8 @@ function VideoModal({ src, title, onClose }) {
 
         {/* Title bar */}
         <div className="mt-3 flex items-center gap-2 px-1">
-          <span className={`text-base ${ACCENT_MAP[src] || 'text-accent'}`}>▶</span>
-          <p className={`font-semibold text-sm ${ACCENT_MAP[src] || 'text-accent'}`}>{title}</p>
+          <span className={`text-lg ${ACCENT_MAP[src] || 'text-accent'}`}>▶</span>
+          <p className={`font-semibold text-base ${ACCENT_MAP[src] || 'text-accent'}`}>{title}</p>
         </div>
       </div>
     </div>
@@ -208,7 +208,7 @@ export default function VideoLibrary() {
             <div className="vl-underline-shimmer mx-auto mb-7 h-[2.5px] w-24 rounded-full" />
 
             {/* Subtitle */}
-            <p className="vl-sub text-muted/70 text-sm md:text-base leading-relaxed max-w-sm mx-auto mb-8">
+            <p className="vl-sub text-muted/70 text-base md:text-lg leading-relaxed max-w-sm mx-auto mb-8">
               {t('video.subtitle')}
             </p>
 
@@ -220,7 +220,7 @@ export default function VideoLibrary() {
                 transition-colors duration-200 group-hover/hint:border-accent group-hover/hint:bg-accent/15">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-2.5 h-2.5 text-accent"><path d="M8 5v14l11-7z"/></svg>
               </span>
-              <span className="text-xs text-muted/65 group-hover/hint:text-muted/90 transition-colors duration-200">
+              <span className="text-sm text-muted/65 group-hover/hint:text-muted/90 transition-colors duration-200">
                 {t('video.click_to_play') || 'Nhấn vào video để xem'}
               </span>
             </div>
@@ -246,12 +246,12 @@ export default function VideoLibrary() {
         {/* ── YouTube placeholder ───────────────────── */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <h2 className="text-lg font-bold text-text">{t('video.youtube_section')}</h2>
+            <h2 className="text-xl font-bold text-text">{t('video.youtube_section')}</h2>
             <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
           </div>
           <div className="py-14 bg-surface border border-border rounded-2xl text-center">
-            <span className="text-4xl block mb-3 opacity-40">📺</span>
-            <p className="text-muted text-sm">{t('video.youtube_placeholder')}</p>
+            <span className="text-5xl block mb-3 opacity-40">📺</span>
+            <p className="text-muted text-base">{t('video.youtube_placeholder')}</p>
           </div>
         </section>
       </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#3b82f6';
@@ -109,17 +109,17 @@ export default function HealthAssessmentPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🎯</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🎯</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Đánh Giá Sức Khỏe</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Đánh Giá Sức Khỏe</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             15 câu hỏi · 6 lĩnh vực
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Đánh giá toàn diện lối sống và thói quen sức khỏe của bạn qua 15 câu hỏi thuộc 6 lĩnh vực. Kết quả giúp bạn xác định điểm mạnh cần phát huy và điểm yếu cần cải thiện.
           </p>
         </div>
@@ -129,7 +129,7 @@ export default function HealthAssessmentPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop" alt="Đánh giá sức khỏe" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             Hiểu mình · Cải thiện đúng chỗ
           </span>
         </div>
@@ -140,8 +140,8 @@ export default function HealthAssessmentPage() {
       {!submitted ? (
         <RevealBlock delay={0} className="mb-10">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold" style={{ color: COLOR }}>Bài Đánh Giá</h2>
-            <span className="text-sm text-muted">{Object.keys(answers).length}/{QUESTIONS.length} câu</span>
+            <h2 className="text-2xl font-bold" style={{ color: COLOR }}>Bài Đánh Giá</h2>
+            <span className="text-base text-muted">{Object.keys(answers).length}/{QUESTIONS.length} câu</span>
           </div>
           <div className="space-y-6">
             {QUESTIONS.map((q, i) => {
@@ -149,14 +149,14 @@ export default function HealthAssessmentPage() {
               return (
                 <div key={q.id}>
                   {q.cat !== prevCat && (
-                    <div className="text-xs font-bold uppercase tracking-widest mb-3 px-1" style={{ color: COLOR }}>— {q.cat}</div>
+                    <div className="text-sm font-bold uppercase tracking-widest mb-3 px-1" style={{ color: COLOR }}>— {q.cat}</div>
                   )}
                   <div className="rounded-2xl border border-border bg-surface p-4">
-                    <p className="text-sm text-text font-medium mb-3">{i + 1}. {q.q}</p>
+                    <p className="text-base text-text font-medium mb-3">{i + 1}. {q.q}</p>
                     <div className="flex flex-col gap-2">
                       {q.opts.map((opt, j) => (
                         <button key={j} onClick={() => setAnswer(q.id, j)}
-                          className="flex items-center gap-3 rounded-xl border p-3 text-left text-sm transition-colors"
+                          className="flex items-center gap-3 rounded-xl border p-3 text-left text-base transition-colors"
                           style={answers[q.id] === j ? { borderColor: COLOR, background: `rgba(${RGB},0.08)`, color: 'var(--text)' } : { borderColor: 'var(--border)', color: 'var(--muted)' }}>
                           <div className="w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center"
                             style={answers[q.id] === j ? { borderColor: COLOR, background: COLOR } : { borderColor: 'var(--border)' }}>
@@ -182,8 +182,8 @@ export default function HealthAssessmentPage() {
         <RevealBlock delay={0} className="mb-10">
           <div className="text-center mb-8">
             <div className="text-6xl font-black mb-2" style={{ color: level?.color }}>{score}</div>
-            <div className="text-xl font-bold text-text mb-2">{level?.label}</div>
-            <p className="text-muted text-sm max-w-xl mx-auto">{level?.desc}</p>
+            <div className="text-2xl font-bold text-text mb-2">{level?.label}</div>
+            <p className="text-muted text-base max-w-xl mx-auto">{level?.desc}</p>
           </div>
           <div className="w-full h-3 bg-surface rounded-full mb-8 overflow-hidden">
             <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${score}%`, background: level?.color }} />
@@ -194,24 +194,24 @@ export default function HealthAssessmentPage() {
               const cs = catScore(cat);
               return (
                 <div key={cat} className="flex items-center gap-3">
-                  <span className="text-sm text-muted w-28 shrink-0">{cat}</span>
+                  <span className="text-base text-muted w-28 shrink-0">{cat}</span>
                   <div className="flex-1 h-2 bg-surface rounded-full overflow-hidden">
                     <div className="h-full rounded-full" style={{ width: `${cs ?? 0}%`, background: COLOR, opacity: cs === null ? 0.3 : 1 }} />
                   </div>
-                  <span className="text-sm font-bold w-10 text-right" style={{ color: COLOR }}>{cs ?? '–'}</span>
+                  <span className="text-base font-bold w-10 text-right" style={{ color: COLOR }}>{cs ?? '–'}</span>
                 </div>
               );
             })}
           </div>
           <div className="flex gap-3">
-            <button onClick={() => { setAnswers({}); setSubmitted(false); }} className="flex-1 py-2 rounded-xl text-sm border border-border text-muted hover:text-text transition-colors">Làm lại</button>
-            <Link to="/pillar/e/roadmap" className="flex-1 py-2 rounded-xl text-sm font-bold text-white text-center transition-all" style={{ background: COLOR }}>Xem Lộ Trình →</Link>
+            <button onClick={() => { setAnswers({}); setSubmitted(false); }} className="flex-1 py-2 rounded-xl text-base border border-border text-muted hover:text-text transition-colors">Làm lại</button>
+            <Link to="/pillar/e/roadmap" className="flex-1 py-2 rounded-xl text-base font-bold text-white text-center transition-all" style={{ background: COLOR }}>Xem Lộ Trình →</Link>
           </div>
         </RevealBlock>
       )}
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
     </div>
   );
 }

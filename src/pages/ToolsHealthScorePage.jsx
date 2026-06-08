@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#f97316';
@@ -97,17 +97,17 @@ export default function ToolsHealthScorePage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>💯</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>💯</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Daily Health Score</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Daily Health Score</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             100 điểm · 7 nhóm hành vi · Xu hướng 7 ngày
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Chấm điểm sức khỏe toàn diện mỗi ngày theo 7 nhóm hành vi. Không phải để phán xét — mà để biết tuần này đang đi đúng hướng không.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function ToolsHealthScorePage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop" alt="Health score" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             đo lường để cải thiện · không để tự trách
           </span>
         </div>
@@ -129,47 +129,47 @@ export default function ToolsHealthScorePage() {
       <RevealBlock delay={0} className="mb-8">
         <div className="rounded-2xl border p-6 text-center" style={{ borderColor: `${level.color}30`, background: `${level.color}08` }}>
           <div className="text-7xl font-black mb-2" style={{ color: level.color }}>{total}</div>
-          <div className="text-lg font-bold mb-1" style={{ color: level.color }}>{level.label}</div>
-          <div className="text-sm text-muted mb-4">{level.msg}</div>
+          <div className="text-xl font-bold mb-1" style={{ color: level.color }}>{level.label}</div>
+          <div className="text-base text-muted mb-4">{level.msg}</div>
           <div className="h-3 rounded-full bg-border overflow-hidden mx-auto max-w-sm">
             <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, background: level.color }} />
           </div>
-          <div className="text-xs text-muted mt-2">{total}/{maxTotal} điểm · {pct}%</div>
+          <div className="text-sm text-muted mt-2">{total}/{maxTotal} điểm · {pct}%</div>
         </div>
       </RevealBlock>
 
       {/* Score inputs */}
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-6" style={{ color: COLOR }}>Chấm Điểm Hôm Nay</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: COLOR }}>Chấm Điểm Hôm Nay</h2>
         <div className="space-y-3">
           {SCORE_ITEMS.map((item, i) => (
             <div key={item.key} className="rounded-2xl border border-border bg-surface overflow-hidden">
               <button onClick={() => setOpenItem(openItem === i ? null : i)} className="w-full flex items-center gap-3 p-4 hover:bg-white/5 transition-colors">
-                <span className="text-xl">{item.icon}</span>
+                <span className="text-2xl">{item.icon}</span>
                 <div className="flex-1 text-left">
-                  <div className="text-sm font-medium text-text">{item.label}</div>
-                  <div className="text-xs text-muted">{scores[item.key] || 0}/{item.max} điểm</div>
+                  <div className="text-base font-medium text-text">{item.label}</div>
+                  <div className="text-sm text-muted">{scores[item.key] || 0}/{item.max} điểm</div>
                 </div>
                 <div className="w-24 h-2 rounded-full bg-border overflow-hidden mr-2">
                   <div className="h-full rounded-full" style={{ width: `${((scores[item.key] || 0) / item.max) * 100}%`, background: COLOR }} />
                 </div>
-                <span className="text-muted text-sm">{openItem === i ? '▲' : '▼'}</span>
+                <span className="text-muted text-base">{openItem === i ? '▲' : '▼'}</span>
               </button>
               {openItem === i && (
                 <div className="px-4 pb-4 border-t border-border pt-3">
-                  <p className="text-xs text-muted mb-3">{item.desc}</p>
+                  <p className="text-sm text-muted mb-3">{item.desc}</p>
                   <div className="flex items-center gap-3">
                     <input type="range" min="0" max={item.max} value={scores[item.key] || 0}
                       onChange={e => setScore(item.key, e.target.value)}
                       className="flex-1" style={{ accentColor: COLOR }} />
-                    <span className="text-sm font-bold w-16 text-right" style={{ color: COLOR }}>{scores[item.key] || 0}/{item.max}</span>
+                    <span className="text-base font-bold w-16 text-right" style={{ color: COLOR }}>{scores[item.key] || 0}/{item.max}</span>
                   </div>
                 </div>
               )}
             </div>
           ))}
         </div>
-        <button onClick={saveToHistory} className="w-full mt-4 py-3 rounded-xl font-bold text-sm text-white" style={{ background: COLOR }}>
+        <button onClick={saveToHistory} className="w-full mt-4 py-3 rounded-xl font-bold text-base text-white" style={{ background: COLOR }}>
           💾 Lưu điểm hôm nay vào lịch sử
         </button>
       </RevealBlock>
@@ -177,19 +177,19 @@ export default function ToolsHealthScorePage() {
       {/* History */}
       {last7hist.length > 0 && (
         <RevealBlock delay={2} className="mb-12">
-          <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Lịch Sử Điểm</h2>
-          {avg7 && <p className="text-muted text-sm mb-4">Điểm trung bình 7 ngày: <strong style={{ color: COLOR }}>{avg7}%</strong></p>}
+          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Lịch Sử Điểm</h2>
+          {avg7 && <p className="text-muted text-base mb-4">Điểm trung bình 7 ngày: <strong style={{ color: COLOR }}>{avg7}%</strong></p>}
           <div className="space-y-2">
             {last7hist.map(h => {
               const lv = SCORE_LEVELS.find(l => h.total >= l.min) || SCORE_LEVELS[SCORE_LEVELS.length - 1];
               return (
                 <div key={h.date} className="flex items-center gap-3 p-3 rounded-xl border border-border">
-                  <span className="text-xs text-muted w-16">{h.date.slice(5)}</span>
+                  <span className="text-sm text-muted w-16">{h.date.slice(5)}</span>
                   <div className="flex-1 h-2 rounded-full bg-border overflow-hidden">
                     <div className="h-full rounded-full" style={{ width: `${h.pct}%`, background: lv.color }} />
                   </div>
-                  <span className="text-sm font-bold w-16 text-right" style={{ color: lv.color }}>{h.total}đ</span>
-                  <span className="text-xs text-muted">{lv.label}</span>
+                  <span className="text-base font-bold w-16 text-right" style={{ color: lv.color }}>{h.total}đ</span>
+                  <span className="text-sm text-muted">{lv.label}</span>
                 </div>
               );
             })}
@@ -198,7 +198,7 @@ export default function ToolsHealthScorePage() {
       )}
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#a855f7';
@@ -131,17 +131,17 @@ export default function HealthRoadmapPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🗺️</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🗺️</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Lộ Trình Kiến Thức Sức Khỏe</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Lộ Trình Kiến Thức Sức Khỏe</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             12 tuần · 4 giai đoạn · Từ hiểu đến hành động
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Lộ trình có hệ thống từ việc hiểu các chỉ số cơ bản, theo dõi thường xuyên, phòng bệnh chủ động, đến duy trì lối sống lành mạnh bền vững suốt đời.
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function HealthRoadmapPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80&auto=format&fit=crop" alt="Lộ trình sức khỏe" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             Từ kiến thức → hành động → bền vững
           </span>
         </div>
@@ -160,37 +160,37 @@ export default function HealthRoadmapPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock delay={0} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Lộ Trình 12 Tuần</h2>
-        <p className="text-muted text-sm mb-6">Nhấn vào từng giai đoạn để xem mục tiêu chi tiết và milestone.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Lộ Trình 12 Tuần</h2>
+        <p className="text-muted text-base mb-6">Nhấn vào từng giai đoạn để xem mục tiêu chi tiết và milestone.</p>
         <div className="space-y-3">
           {PHASES.map((ph, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
               <button onClick={() => setOpenPhase(openPhase === i ? null : i)} className="w-full p-4 text-left hover:bg-white/5 transition-colors">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-black" style={{ background: `${ph.color}20`, color: ph.color }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-base font-black" style={{ background: `${ph.color}20`, color: ph.color }}>
                     P{ph.phase}
                   </div>
                   <div className="flex-1">
                     <div className="font-bold text-text">{ph.title}</div>
-                    <div className="text-xs text-muted mt-0.5">{ph.weeks}</div>
+                    <div className="text-sm text-muted mt-0.5">{ph.weeks}</div>
                   </div>
                   <span className="text-muted">{openPhase === i ? '▲' : '▼'}</span>
                 </div>
               </button>
               {openPhase === i && (
                 <div className="px-4 pb-5 border-t border-border pt-4 space-y-4">
-                  <p className="text-sm text-muted">{ph.desc}</p>
+                  <p className="text-base text-muted">{ph.desc}</p>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ph.color }}>Mục Tiêu</div>
+                    <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: ph.color }}>Mục Tiêu</div>
                     <ul className="space-y-1.5">
                       {ph.goals.map((g, j) => (
-                        <li key={j} className="flex gap-2 text-sm text-muted">
+                        <li key={j} className="flex gap-2 text-base text-muted">
                           <span style={{ color: ph.color }} className="shrink-0">→</span>{g}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="rounded-xl p-3 border-l-2 text-sm" style={{ borderColor: ph.color, background: `${ph.color}10` }}>
+                  <div className="rounded-xl p-3 border-l-2 text-base" style={{ borderColor: ph.color, background: `${ph.color}10` }}>
                     <strong style={{ color: ph.color }}>Milestone: </strong><span className="text-muted">{ph.milestone}</span>
                   </div>
                 </div>
@@ -201,14 +201,14 @@ export default function HealthRoadmapPage() {
       </RevealBlock>
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Tất Cả Chuyên Đề</h2>
-        <p className="text-muted text-sm mb-6">Khám phá từng chủ đề theo thứ tự lộ trình hoặc nhảy vào bất kỳ chuyên đề nào bạn quan tâm.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Tất Cả Chuyên Đề</h2>
+        <p className="text-muted text-base mb-6">Khám phá từng chủ đề theo thứ tự lộ trình hoặc nhảy vào bất kỳ chuyên đề nào bạn quan tâm.</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {SUB_LINKS.map((s, i) => (
             <Link key={i} to={s.to} className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 hover:border-purple-500/30 transition-colors group">
-              <span className="text-xl">{s.icon}</span>
-              <span className="text-sm font-medium text-text group-hover:text-white transition-colors">{s.title}</span>
-              <span className="ml-auto text-muted group-hover:text-text transition-colors text-sm">→</span>
+              <span className="text-2xl">{s.icon}</span>
+              <span className="text-base font-medium text-text group-hover:text-white transition-colors">{s.title}</span>
+              <span className="ml-auto text-muted group-hover:text-text transition-colors text-base">→</span>
             </Link>
           ))}
         </div>
@@ -216,18 +216,18 @@ export default function HealthRoadmapPage() {
 
       <RevealBlock delay={2} className="mb-10">
         <div className="rounded-2xl border p-5 text-center" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <div className="text-2xl mb-3">🎯</div>
+          <div className="text-3xl mb-3">🎯</div>
           <h3 className="font-bold text-text mb-2">Bắt Đầu Ngay Hôm Nay</h3>
-          <p className="text-sm text-muted mb-4">Làm bài đánh giá để biết điểm xuất phát của bạn, sau đó theo lộ trình từng bước.</p>
-          <Link to="/pillar/e/assessment" className="inline-block px-6 py-2.5 rounded-xl text-sm font-bold text-white" style={{ background: COLOR }}>
+          <p className="text-base text-muted mb-4">Làm bài đánh giá để biết điểm xuất phát của bạn, sau đó theo lộ trình từng bước.</p>
+          <Link to="/pillar/e/assessment" className="inline-block px-6 py-2.5 rounded-xl text-base font-bold text-white" style={{ background: COLOR }}>
             Làm Bài Đánh Giá →
           </Link>
         </div>
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <p className="text-xs text-muted mb-6">⚠ Nội dung mang tính giáo dục sức khỏe. Luôn tham khảo ý kiến bác sĩ cho các quyết định y tế quan trọng.</p>
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <p className="text-sm text-muted mb-6">⚠ Nội dung mang tính giáo dục sức khỏe. Luôn tham khảo ý kiến bác sĩ cho các quyết định y tế quan trọng.</p>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
     </div>
   );
 }

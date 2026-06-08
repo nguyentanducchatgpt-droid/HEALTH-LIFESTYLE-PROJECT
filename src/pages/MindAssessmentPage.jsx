@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#a855f7';
@@ -108,17 +108,17 @@ export default function MindAssessmentPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">
         <span>←</span><span>Tâm Trí An Nhiên</span>
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `${COLOR}08` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🧠</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🧠</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Đánh Giá Sức Khỏe Tâm Trí</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D0 · Bài Test Nhập Môn</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">Bài đánh giá 15 câu hỏi giúp bạn hiểu mức độ sức khỏe tâm trí hiện tại và nhận gợi ý cá nhân hóa về nên tập trung vào đâu trước.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Đánh Giá Sức Khỏe Tâm Trí</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D0 · Bài Test Nhập Môn</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">Bài đánh giá 15 câu hỏi giúp bạn hiểu mức độ sức khỏe tâm trí hiện tại và nhận gợi ý cá nhân hóa về nên tập trung vào đâu trước.</p>
         </div>
       </div>
 
@@ -127,7 +127,7 @@ export default function MindAssessmentPage() {
           <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop" alt="Assessment" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>15 câu · ~5 phút</span>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>15 câu · ~5 phút</span>
           </div>
         </div>
       </div>
@@ -137,8 +137,8 @@ export default function MindAssessmentPage() {
       {!submitted ? (
         <RevealBlock className="mb-10">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl md:text-2xl font-bold" style={{ color: COLOR }}>Bài Kiểm Tra</h2>
-            <span className="text-sm text-muted">{answered}/{QUESTIONS.length} câu</span>
+            <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>Bài Kiểm Tra</h2>
+            <span className="text-base text-muted">{answered}/{QUESTIONS.length} câu</span>
           </div>
           <div className="w-full h-1.5 rounded-full bg-surface border border-border mb-8 overflow-hidden">
             <div className="h-full rounded-full transition-all" style={{ width: `${answered / QUESTIONS.length * 100}%`, background: COLOR }} />
@@ -146,15 +146,15 @@ export default function MindAssessmentPage() {
           <div className="space-y-6">
             {grouped.map(g => (
               <div key={g.cat}>
-                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>{g.cat}</p>
+                <p className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>{g.cat}</p>
                 <div className="space-y-4">
                   {g.qs.map((q, i) => (
                     <div key={q.id} className="rounded-2xl border border-border bg-surface p-5">
-                      <p className="text-sm text-text mb-4 leading-relaxed">{i + 1}. {q.q}</p>
+                      <p className="text-base text-text mb-4 leading-relaxed">{i + 1}. {q.q}</p>
                       <div className="flex flex-wrap gap-2">
                         {OPTIONS.map(o => (
                           <button key={o.v} onClick={() => setAnswers(p => ({ ...p, [q.id]: o.v }))}
-                            className="px-3 py-1.5 rounded-full text-xs border transition-all"
+                            className="px-3 py-1.5 rounded-full text-sm border transition-all"
                             style={answers[q.id] === o.v
                               ? { background: COLOR, color: '#fff', borderColor: COLOR }
                               : { background: 'transparent', color: '#888', borderColor: '#333' }}>
@@ -172,7 +172,7 @@ export default function MindAssessmentPage() {
             <button
               onClick={() => answered === QUESTIONS.length && setSubmitted(true)}
               disabled={answered < QUESTIONS.length}
-              className="px-8 py-3 rounded-full font-bold text-sm transition-all disabled:opacity-40"
+              className="px-8 py-3 rounded-full font-bold text-base transition-all disabled:opacity-40"
               style={{ background: COLOR, color: '#fff' }}
             >
               {answered < QUESTIONS.length ? `Còn ${QUESTIONS.length - answered} câu chưa trả lời` : 'Xem kết quả →'}
@@ -183,29 +183,29 @@ export default function MindAssessmentPage() {
         <RevealBlock className="mb-10">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">{level.icon}</div>
-            <div className="text-5xl font-black mb-2" style={{ color: level.color }}>{score}</div>
-            <div className="text-xl font-bold text-text mb-3">{level.label}</div>
+            <div className="text-6xl font-black mb-2" style={{ color: level.color }}>{score}</div>
+            <div className="text-2xl font-bold text-text mb-3">{level.label}</div>
             <p className="text-muted max-w-lg mx-auto">{level.desc}</p>
           </div>
           <div className="space-y-3 mb-8">
             {catScores.map(c => (
               <div key={c.cat} className="flex items-center gap-4">
-                <span className="text-sm text-muted w-32 shrink-0">{c.cat}</span>
+                <span className="text-base text-muted w-32 shrink-0">{c.cat}</span>
                 <div className="flex-1 h-2 rounded-full bg-surface border border-border overflow-hidden">
                   <div className="h-full rounded-full transition-all" style={{ width: `${c.pct}%`, background: c.pct >= 70 ? '#10b981' : c.pct >= 50 ? '#f59e0b' : '#ef4444' }} />
                 </div>
-                <span className="text-sm font-bold w-10 text-right" style={{ color: c.pct >= 70 ? '#10b981' : c.pct >= 50 ? '#f59e0b' : '#ef4444' }}>{c.pct}%</span>
+                <span className="text-base font-bold w-10 text-right" style={{ color: c.pct >= 70 ? '#10b981' : c.pct >= 50 ? '#f59e0b' : '#ef4444' }}>{c.pct}%</span>
               </div>
             ))}
           </div>
           <div className="text-center">
-            <button onClick={() => { setAnswers({}); setSubmitted(false); }} className="px-6 py-2.5 rounded-full text-sm border border-border text-muted hover:text-text transition-colors mr-3">Làm lại</button>
-            <Link to="/pillar/d/roadmap" className="inline-block px-6 py-2.5 rounded-full text-sm font-bold" style={{ background: COLOR, color: '#fff' }}>Xem lộ trình →</Link>
+            <button onClick={() => { setAnswers({}); setSubmitted(false); }} className="px-6 py-2.5 rounded-full text-base border border-border text-muted hover:text-text transition-colors mr-3">Làm lại</button>
+            <Link to="/pillar/d/roadmap" className="inline-block px-6 py-2.5 rounded-full text-base font-bold" style={{ background: COLOR, color: '#fff' }}>Xem lộ trình →</Link>
           </div>
         </RevealBlock>
       )}
 
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
     </div>

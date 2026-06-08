@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#f59e0b';
@@ -79,10 +79,10 @@ function Checklist({ items, storageKey }) {
     <div>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="text-2xl font-black" style={{ color: pct >= 80 ? '#10b981' : pct >= 50 ? COLOR : '#6b7280' }}>{done}/{items.length}</div>
-          <div className="text-sm text-muted">hoàn thành ({pct}%)</div>
+          <div className="text-3xl font-black" style={{ color: pct >= 80 ? '#10b981' : pct >= 50 ? COLOR : '#6b7280' }}>{done}/{items.length}</div>
+          <div className="text-base text-muted">hoàn thành ({pct}%)</div>
         </div>
-        <button onClick={() => { setChecks({}); localStorage.removeItem(storageKey); }} className="text-xs text-muted hover:text-text underline">Reset</button>
+        <button onClick={() => { setChecks({}); localStorage.removeItem(storageKey); }} className="text-sm text-muted hover:text-text underline">Reset</button>
       </div>
       <div className="w-full h-2 rounded-full bg-surface border border-border mb-6 overflow-hidden">
         <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, background: pct >= 80 ? '#10b981' : pct >= 50 ? COLOR : '#6b7280' }} />
@@ -90,7 +90,7 @@ function Checklist({ items, storageKey }) {
       <div className="space-y-5">
         {grouped.map(g => (
           <div key={g.cat}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: CATS_COLOR[g.cat] || '#888' }}>{g.cat}</p>
+            <p className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: CATS_COLOR[g.cat] || '#888' }}>{g.cat}</p>
             <div className="space-y-2">
               {g.items.map(it => (
                 <button key={it.id} onClick={() => toggle(it.id)}
@@ -98,10 +98,10 @@ function Checklist({ items, storageKey }) {
                   style={{ borderColor: checks[it.id] ? (CATS_COLOR[it.cat] || COLOR) : '#2a2a2a', background: checks[it.id] ? `${CATS_COLOR[it.cat] || COLOR}0d` : 'transparent' }}>
                   <div className="w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-all"
                     style={{ borderColor: checks[it.id] ? (CATS_COLOR[it.cat] || COLOR) : '#555', background: checks[it.id] ? (CATS_COLOR[it.cat] || COLOR) : 'transparent' }}>
-                    {checks[it.id] && <span className="text-white text-xs font-bold">✓</span>}
+                    {checks[it.id] && <span className="text-white text-sm font-bold">✓</span>}
                   </div>
-                  <span className="text-base shrink-0">{it.icon}</span>
-                  <span className={`text-sm ${checks[it.id] ? 'text-muted line-through' : 'text-text'}`}>{it.item}</span>
+                  <span className="text-lg shrink-0">{it.icon}</span>
+                  <span className={`text-base ${checks[it.id] ? 'text-muted line-through' : 'text-text'}`}>{it.item}</span>
                 </button>
               ))}
             </div>
@@ -140,17 +140,17 @@ export default function MindChecklistPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">
         <span>←</span><span>Tâm Trí An Nhiên</span>
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `${COLOR}08` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>✅</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>✅</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Checklist Tâm Trí Hằng Ngày</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D7 · Theo Dõi Tiến Trình</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">Checklist đơn giản để theo dõi những thói quen tâm trí và sức khỏe quan trọng nhất mỗi ngày và mỗi tuần. Lưu tự động trên thiết bị.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Checklist Tâm Trí Hằng Ngày</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D7 · Theo Dõi Tiến Trình</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">Checklist đơn giản để theo dõi những thói quen tâm trí và sức khỏe quan trọng nhất mỗi ngày và mỗi tuần. Lưu tự động trên thiết bị.</p>
         </div>
       </div>
 
@@ -159,7 +159,7 @@ export default function MindChecklistPage() {
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop" alt="Checklist" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>10 mục · Ngày / 9 mục · Tuần</span>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>10 mục · Ngày / 9 mục · Tuần</span>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@ export default function MindChecklistPage() {
         <div className="flex gap-2 mb-6">
           {[{ k: 'daily', l: '📅 Hằng Ngày' }, { k: 'weekly', l: '📆 Hằng Tuần' }].map(t => (
             <button key={t.k} onClick={() => setTab(t.k)}
-              className="px-5 py-2.5 rounded-full text-sm font-semibold border transition-all"
+              className="px-5 py-2.5 rounded-full text-base font-semibold border transition-all"
               style={tab === t.k
                 ? { background: COLOR, color: '#0a0a0a', borderColor: COLOR }
                 : { background: 'transparent', color: '#888', borderColor: '#333' }}>
@@ -188,8 +188,8 @@ export default function MindChecklistPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Hướng Dẫn Sử Dụng</h2>
-        <p className="text-muted text-sm mb-6">Để checklist này thực sự hiệu quả</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Hướng Dẫn Sử Dụng</h2>
+        <p className="text-muted text-base mb-6">Để checklist này thực sự hiệu quả</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { icon: '🌅', t: 'Sáng mở ra nhìn', d: 'Xem danh sách ngay khi bắt đầu ngày — đặt ý định cho ngày hôm nay' },
@@ -198,17 +198,17 @@ export default function MindChecklistPage() {
             { icon: '🔄', t: 'Reset mỗi ngày', d: 'Nhấn Reset mỗi sáng để bắt đầu mới — không mang gánh nặng hôm qua' },
           ].map(c => (
             <div key={c.t} className="flex gap-3 rounded-xl border border-border bg-surface p-4">
-              <span className="text-xl shrink-0">{c.icon}</span>
+              <span className="text-2xl shrink-0">{c.icon}</span>
               <div>
-                <div className="font-semibold text-text text-sm mb-1">{c.t}</div>
-                <p className="text-xs text-muted">{c.d}</p>
+                <div className="font-semibold text-text text-base mb-1">{c.t}</div>
+                <p className="text-sm text-muted">{c.d}</p>
               </div>
             </div>
           ))}
         </div>
       </RevealBlock>
 
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
     </div>

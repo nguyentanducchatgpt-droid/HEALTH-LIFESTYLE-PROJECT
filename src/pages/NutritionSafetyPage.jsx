@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+﻿import { useEffect, useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 /* ── constants ── */
@@ -181,8 +181,8 @@ function RevealBlock({ children, className = '' }) {
 
 function SectionTitle({ children, icon }) {
   return (
-    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
-      {icon && <span className="text-3xl">{icon}</span>}
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 flex items-center gap-3">
+      {icon && <span className="text-4xl">{icon}</span>}
       <span style={{ color: C }}>{children}</span>
     </h2>
   );
@@ -212,13 +212,13 @@ function PersonalizedBanner() {
   return (
     <div className="mb-8 rounded-2xl p-5 border" style={{ borderColor: `rgba(${HEX_RGB},0.25)`, background: `rgba(${HEX_RGB},0.05)` }}>
       <div className="flex items-start gap-3">
-        <span className="text-2xl">🧑‍⚕️</span>
+        <span className="text-3xl">🧑‍⚕️</span>
         <div>
-          <p className="text-sm font-semibold mb-1" style={{ color: C }}>Hồ sơ cá nhân của bạn</p>
-          <p className="text-gray-300 text-sm">
+          <p className="text-base font-semibold mb-1" style={{ color: C }}>Hồ sơ cá nhân của bạn</p>
+          <p className="text-gray-300 text-base">
             {data.weight} kg · {data.height} cm · {data.age} tuổi · {data.sex === 'male' ? 'Nam' : 'Nữ'} → TDEE-adjusted: <span className="font-bold text-white">{data.kcal} kcal</span>
           </p>
-          <p className="text-xs mt-1" style={{ color: tier.color }}>
+          <p className="text-sm mt-1" style={{ color: tier.color }}>
             {tier.icon} Phân tầng gợi ý: <strong>{tier.label}</strong> — {tier.sub}
           </p>
         </div>
@@ -238,22 +238,22 @@ function StorageTimer() {
   ];
   return (
     <div className="rounded-2xl p-6 border border-sky-500/20 bg-sky-500/5">
-      <h3 className="text-lg font-bold text-white mb-4">⏱️ Vòng Đời An Toàn Thực Phẩm</h3>
+      <h3 className="text-xl font-bold text-white mb-4">⏱️ Vòng Đời An Toàn Thực Phẩm</h3>
       <div className="flex flex-col gap-3">
         {zones.map((z, i) => (
           <div key={i} className="flex items-center gap-4">
-            <div className="w-24 text-xs font-mono font-bold shrink-0" style={{ color: z.color }}>{z.label}</div>
+            <div className="w-24 text-sm font-mono font-bold shrink-0" style={{ color: z.color }}>{z.label}</div>
             <div className="flex-1 h-6 rounded-full relative overflow-hidden bg-white/5">
               <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${[20,40,70,85,100][i]}%`, backgroundColor: z.color, opacity: 0.7 }} />
             </div>
-            <div className="w-28 text-xs shrink-0">
+            <div className="w-28 text-sm shrink-0">
               <span className="font-bold" style={{ color: z.color }}>{z.status}</span>
               <p className="text-gray-400 text-[10px] leading-tight mt-0.5 hidden md:block">{z.desc}</p>
             </div>
           </div>
         ))}
       </div>
-      <p className="text-xs text-gray-500 mt-4">Nguồn: FoodSafety.gov & USDA FSIS — quy tắc 2 giờ + 3–4 ngày</p>
+      <p className="text-sm text-gray-500 mt-4">Nguồn: FoodSafety.gov & USDA FSIS — quy tắc 2 giờ + 3–4 ngày</p>
     </div>
   );
 }
@@ -267,8 +267,8 @@ function DailyChecklist() {
   return (
     <div className="rounded-2xl p-6 border border-sky-500/20 bg-sky-500/5">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-bold text-white">☀️ Checklist Hằng Ngày</h3>
-        <span className="text-sm font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${HEX_RGB},0.15)`, color: C }}>{count}/{DAILY_CHECKS.length} · {pct}%</span>
+        <h3 className="text-xl font-bold text-white">☀️ Checklist Hằng Ngày</h3>
+        <span className="text-base font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${HEX_RGB},0.15)`, color: C }}>{count}/{DAILY_CHECKS.length} · {pct}%</span>
       </div>
       <div className="h-2 rounded-full bg-white/10 mb-5 overflow-hidden">
         <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, background: `linear-gradient(to right, #0ea5e9, #38bdf8)` }} />
@@ -283,12 +283,12 @@ function DailyChecklist() {
             >
               {checked[i] && <svg viewBox="0 0 10 8" className="w-3 h-3"><path d="M1 4l2.5 2.5L9 1" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" /></svg>}
             </div>
-            <span className={`text-sm leading-relaxed transition-colors ${checked[i] ? 'text-gray-400 line-through' : 'text-gray-300'}`}>{q}</span>
+            <span className={`text-base leading-relaxed transition-colors ${checked[i] ? 'text-gray-400 line-through' : 'text-gray-300'}`}>{q}</span>
           </label>
         ))}
       </div>
       {pct === 100 && (
-        <div className="mt-4 p-3 rounded-xl text-center text-sm font-bold" style={{ background: `rgba(${HEX_RGB},0.15)`, color: C }}>
+        <div className="mt-4 p-3 rounded-xl text-center text-base font-bold" style={{ background: `rgba(${HEX_RGB},0.15)`, color: C }}>
           🎉 Tuyệt vời! Bạn đã hoàn thành tất cả kiểm tra hôm nay!
         </div>
       )}
@@ -304,19 +304,19 @@ function WeeklyChecklist() {
   return (
     <div className="rounded-2xl p-6 border border-sky-500/20 bg-sky-500/5">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-bold text-white">📅 Đánh Giá Hằng Tuần</h3>
+        <h3 className="text-xl font-bold text-white">📅 Đánh Giá Hằng Tuần</h3>
         {bad >= 3 && (
-          <span className="text-xs font-bold px-2 py-1 rounded-full bg-red-500/20 text-red-400">⚠️ {bad} chỉ số xấu — giảm độ khó!</span>
+          <span className="text-sm font-bold px-2 py-1 rounded-full bg-red-500/20 text-red-400">⚠️ {bad} chỉ số xấu — giảm độ khó!</span>
         )}
       </div>
       <div className="space-y-3">
         {WEEKLY_CHECKS.map((q, i) => (
           <div key={i} className="flex items-center gap-3">
-            <span className="text-sm text-gray-300 flex-1">{q}</span>
+            <span className="text-base text-gray-300 flex-1">{q}</span>
             <div className="flex gap-1 shrink-0">
               {[['good', '👍', '#22c55e'], ['ok', '😐', '#eab308'], ['bad', '👎', '#ef4444']].map(([v, lbl, col]) => (
                 <button key={v} onClick={() => rate(i, v)}
-                  className="w-8 h-8 rounded-lg text-sm transition-all"
+                  className="w-8 h-8 rounded-lg text-base transition-all"
                   style={{ background: ratings[i] === v ? `${col}30` : 'rgba(255,255,255,0.05)', border: `1px solid ${ratings[i] === v ? col : 'transparent'}` }}
                 >{lbl}</button>
               ))}
@@ -325,7 +325,7 @@ function WeeklyChecklist() {
         ))}
       </div>
       {bad >= 3 && (
-        <div className="mt-4 p-3 rounded-xl text-sm" style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)' }}>
+        <div className="mt-4 p-3 rounded-xl text-base" style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)' }}>
           <span className="text-red-400 font-bold">Cần điều chỉnh:</span>
           <span className="text-gray-300"> {bad}+ chỉ số xấu liên tục → giảm độ khó meal plan, tăng kcal hoặc tham khảo chuyên gia.</span>
         </div>
@@ -373,21 +373,21 @@ export default function NutritionSafetyPage() {
   return (
     <main className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       {/* breadcrumb */}
-      <Link to="/pillar/b" className="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-sky-400 transition-colors mb-8">
+      <Link to="/pillar/b" className="inline-flex items-center gap-1 text-base text-gray-400 hover:text-sky-400 transition-colors mb-8">
         ← Dinh dưỡng & Thực đơn
       </Link>
 
       {/* hero */}
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${HEX_RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl flex items-center justify-center shrink-0 animate-float border"
+        <div className="w-20 h-20 rounded-3xl text-6xl flex items-center justify-center shrink-0 animate-float border"
           style={{ background: '#0f172a', borderColor: `rgba(${HEX_RGB},0.2)` }}>🛡️</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight animate-fade-in-up">Quy Tắc An Toàn</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: C, background: `rgba(${HEX_RGB},0.1)`, borderColor: `rgba(${HEX_RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight animate-fade-in-up">Quy Tắc An Toàn</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: C, background: `rgba(${HEX_RGB},0.1)`, borderColor: `rgba(${HEX_RGB},0.2)` }}>
             Module XV · Safety Rules
           </span>
-          <p className="text-gray-400 text-base leading-relaxed max-w-2xl">
+          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
             Bộ quy tắc an toàn cho toàn bộ dự án Nutrition & Meal Plans — từ phân tầng người dùng, nguyên tắc dinh dưỡng đến bảo quản thực phẩm và dấu hiệu cần đi khám ngay.
           </p>
         </div>
@@ -400,7 +400,7 @@ export default function NutritionSafetyPage() {
             alt="Safety" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: C, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${HEX_RGB},0.2)` }}>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: C, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${HEX_RGB},0.2)` }}>
               🛡️ An toàn là ưu tiên số 1
             </span>
           </div>
@@ -415,11 +415,11 @@ export default function NutritionSafetyPage() {
       {/* core mantra */}
       <RevealBlock className="mb-12">
         <div className="rounded-3xl p-8 text-center border animate-pulse-glow" style={{ background: `rgba(${HEX_RGB},0.06)`, borderColor: `rgba(${HEX_RGB},0.2)` }}>
-          <div className="text-4xl mb-4">💡</div>
-          <blockquote className="text-xl md:text-2xl font-bold text-white leading-relaxed italic mb-3">
+          <div className="text-5xl mb-4">💡</div>
+          <blockquote className="text-2xl md:text-3xl font-bold text-white leading-relaxed italic mb-3">
             "Ăn đủ, ăn thật, ăn phù hợp mục tiêu,<br />bảo quản đúng, không cực đoan,<br />theo dõi phản hồi cơ thể và đi khám khi có dấu hiệu nguy hiểm."
           </blockquote>
-          <p className="text-sm" style={{ color: C }}>— Kim chỉ nam của dự án Nutrition & Meal Plans</p>
+          <p className="text-base" style={{ color: C }}>— Kim chỉ nam của dự án Nutrition & Meal Plans</p>
         </div>
       </RevealBlock>
 
@@ -429,13 +429,13 @@ export default function NutritionSafetyPage() {
         <div className="space-y-4">
           {CORE_PRINCIPLES.map((p, i) => (
             <div key={i} className="flex gap-4 rounded-2xl p-5 border border-white/5 bg-white/[0.02] hover:border-sky-500/20 transition-all group">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform" style={{ background: `rgba(${HEX_RGB},0.1)` }}>{p.icon}</div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-3xl shrink-0 group-hover:scale-110 transition-transform" style={{ background: `rgba(${HEX_RGB},0.1)` }}>{p.icon}</div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-bold rounded-full px-2 py-0.5" style={{ background: `rgba(${HEX_RGB},0.15)`, color: C }}>{i + 1}</span>
+                  <span className="text-sm font-bold rounded-full px-2 py-0.5" style={{ background: `rgba(${HEX_RGB},0.15)`, color: C }}>{i + 1}</span>
                   <h3 className="font-bold text-white">{p.title}</h3>
                 </div>
-                <p className="text-sm text-gray-400 leading-relaxed">{p.desc}</p>
+                <p className="text-base text-gray-400 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           ))}
@@ -445,11 +445,11 @@ export default function NutritionSafetyPage() {
       {/* 2. tiers */}
       <RevealBlock className="mb-12">
         <SectionTitle icon="🚦">Phân Tầng An Toàn Người Dùng</SectionTitle>
-        <p className="text-gray-400 text-sm mb-6">Trước khi áp dụng meal plan, xác định bạn thuộc nhóm nào để chọn mức độ phù hợp.</p>
+        <p className="text-gray-400 text-base mb-6">Trước khi áp dụng meal plan, xác định bạn thuộc nhóm nào để chọn mức độ phù hợp.</p>
         <div className="flex gap-2 mb-6 flex-wrap">
           {TIERS.map(t => (
             <button key={t.id} onClick={() => setActiveTier(t.id)}
-              className="px-4 py-2 rounded-full text-sm font-bold transition-all"
+              className="px-4 py-2 rounded-full text-base font-bold transition-all"
               style={{
                 background: activeTier === t.id ? t.color : 'rgba(255,255,255,0.05)',
                 color: activeTier === t.id ? '#000' : t.color,
@@ -462,17 +462,17 @@ export default function NutritionSafetyPage() {
         {activeTierData && (
           <div className={`rounded-2xl p-6 border ${activeTierData.bg} ${activeTierData.border} transition-all`}>
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-2xl">{activeTierData.icon}</span>
+              <span className="text-3xl">{activeTierData.icon}</span>
               <div>
-                <h3 className="font-bold text-white text-lg">{activeTierData.label}</h3>
-                <span className="text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
+                <h3 className="font-bold text-white text-xl">{activeTierData.label}</h3>
+                <span className="text-sm font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
                   style={{ background: `${activeTierData.color}20`, color: activeTierData.color }}>{activeTierData.badge}</span>
               </div>
             </div>
-            <p className="text-gray-300 text-sm mb-4 leading-relaxed">{activeTierData.desc}</p>
+            <p className="text-gray-300 text-base mb-4 leading-relaxed">{activeTierData.desc}</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
               {activeTierData.can.map((c, i) => (
-                <div key={i} className="flex items-center gap-2 text-xs text-gray-300">
+                <div key={i} className="flex items-center gap-2 text-sm text-gray-300">
                   <span style={{ color: activeTierData.color }}>•</span> {c}
                 </div>
               ))}
@@ -491,14 +491,14 @@ export default function NutritionSafetyPage() {
             { title: 'Chỉ số theo dõi', icon: '📊', rule: 'Cân nặng 7 ngày, vòng eo, mức đói/no, năng lượng tập, giấc ngủ & tâm trạng.', color: C },
           ].map((item, i) => (
             <div key={i} className="rounded-2xl p-5 border border-white/5 bg-white/[0.02]">
-              <div className="text-3xl mb-3">{item.icon}</div>
+              <div className="text-4xl mb-3">{item.icon}</div>
               <h3 className="font-bold mb-2" style={{ color: item.color }}>{item.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">{item.rule}</p>
+              <p className="text-base text-gray-400 leading-relaxed">{item.rule}</p>
             </div>
           ))}
         </div>
         <div className="rounded-2xl p-5 border border-amber-500/20 bg-amber-500/5">
-          <p className="text-sm text-amber-300"><strong>📌 CDC/NIH:</strong> Giảm cân từ từ ~0.5–1 kg/tuần bền vững hơn giảm nhanh. Thường đạt được với mức âm khoảng 500 kcal/ngày.</p>
+          <p className="text-base text-amber-300"><strong>📌 CDC/NIH:</strong> Giảm cân từ từ ~0.5–1 kg/tuần bền vững hơn giảm nhanh. Thường đạt được với mức âm khoảng 500 kcal/ngày.</p>
         </div>
       </RevealBlock>
 
@@ -509,21 +509,21 @@ export default function NutritionSafetyPage() {
           {MACRO_RULES.map((m, i) => (
             <div key={i} className="rounded-2xl p-6 border border-white/5 bg-white/[0.02]">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-3xl">{m.icon}</span>
-                <h3 className="text-lg font-bold text-white">{m.macro}</h3>
+                <span className="text-4xl">{m.icon}</span>
+                <h3 className="text-xl font-bold text-white">{m.macro}</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="rounded-xl p-4 bg-green-500/5 border border-green-500/20">
-                  <p className="text-xs font-bold text-green-400 mb-1">✅ Nguyên tắc dự án</p>
-                  <p className="text-sm text-gray-300">{m.safe}</p>
+                  <p className="text-sm font-bold text-green-400 mb-1">✅ Nguyên tắc dự án</p>
+                  <p className="text-base text-gray-300">{m.safe}</p>
                 </div>
                 <div className="rounded-xl p-4 bg-red-500/5 border border-red-500/20">
-                  <p className="text-xs font-bold text-red-400 mb-1">⚠️ Thận trọng với</p>
-                  <p className="text-sm text-gray-300">{m.caution}</p>
+                  <p className="text-sm font-bold text-red-400 mb-1">⚠️ Thận trọng với</p>
+                  <p className="text-base text-gray-300">{m.caution}</p>
                 </div>
               </div>
               <div className="mt-3 rounded-xl p-3 border" style={{ borderColor: `rgba(${HEX_RGB},0.2)`, background: `rgba(${HEX_RGB},0.05)` }}>
-                <p className="text-xs" style={{ color: C }}>💡 {m.tip}</p>
+                <p className="text-sm" style={{ color: C }}>💡 {m.tip}</p>
               </div>
             </div>
           ))}
@@ -535,7 +535,7 @@ export default function NutritionSafetyPage() {
         <SectionTitle icon="🍽️">Đĩa Ăn Dự Án — Công Cụ Mặc Định</SectionTitle>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <p className="text-gray-400 text-sm mb-4 leading-relaxed">Đĩa ăn dự án an toàn hơn việc bắt người mới cân đo mọi thứ. Đây là công cụ mặc định.</p>
+            <p className="text-gray-400 text-base mb-4 leading-relaxed">Đĩa ăn dự án an toàn hơn việc bắt người mới cân đo mọi thứ. Đây là công cụ mặc định.</p>
             <div className="space-y-3">
               {[
                 { pct: '1/2', label: 'Rau & củ', desc: 'Rau, củ, canh, salad, trái cây ít ngọt', color: '#22c55e' },
@@ -544,13 +544,13 @@ export default function NutritionSafetyPage() {
                 { pct: '+', label: 'Chất béo tốt', desc: 'Lượng nhỏ: dầu olive, hạt, bơ', color: '#06b6d4' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <span className="w-10 text-center font-bold text-sm" style={{ color: item.color }}>{item.pct}</span>
+                  <span className="w-10 text-center font-bold text-base" style={{ color: item.color }}>{item.pct}</span>
                   <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
                     <div className="h-full rounded-full" style={{ width: ['50%','25%','25%','10%'][i], backgroundColor: item.color }} />
                   </div>
                   <div className="w-40">
-                    <p className="text-sm font-semibold text-white">{item.label}</p>
-                    <p className="text-xs text-gray-500">{item.desc}</p>
+                    <p className="text-base font-semibold text-white">{item.label}</p>
+                    <p className="text-sm text-gray-500">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -566,8 +566,8 @@ export default function NutritionSafetyPage() {
                 { goal: '⏰ Bận rộn', rule: '"Mỗi bữa có rau + đạm + tinh bột vừa đủ" — không cần cân đo.' },
               ].map((item, i) => (
                 <div key={i} className="rounded-xl p-3 bg-white/[0.02]">
-                  <p className="text-sm font-bold text-white mb-1">{item.goal}</p>
-                  <p className="text-xs text-gray-400">{item.rule}</p>
+                  <p className="text-base font-bold text-white mb-1">{item.goal}</p>
+                  <p className="text-sm text-gray-400">{item.rule}</p>
                 </div>
               ))}
             </div>
@@ -578,20 +578,20 @@ export default function NutritionSafetyPage() {
       {/* 6. storage */}
       <RevealBlock className="mb-12">
         <SectionTitle icon="🧊">Quy Tắc An Toàn Meal-Prep & Bảo Quản</SectionTitle>
-        <p className="text-gray-400 text-sm mb-6">4 nguyên tắc nền từ FoodSafety.gov: <strong className="text-white">Clean → Separate → Cook → Chill</strong></p>
+        <p className="text-gray-400 text-base mb-6">4 nguyên tắc nền từ FoodSafety.gov: <strong className="text-white">Clean → Separate → Cook → Chill</strong></p>
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           {STORAGE_RULES.map((r, i) => (
             <div key={i} className="rounded-2xl p-5 border border-white/5 bg-white/[0.02]">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl">{r.icon}</span>
+                <span className="text-3xl">{r.icon}</span>
                 <div>
-                  <span className="text-xs font-bold font-mono" style={{ color: r.color }}>{r.step}</span>
+                  <span className="text-sm font-bold font-mono" style={{ color: r.color }}>{r.step}</span>
                   <h3 className="font-bold text-white">{r.title}</h3>
                 </div>
               </div>
               <ul className="space-y-1">
                 {r.items.map((item, j) => (
-                  <li key={j} className="text-sm text-gray-400 flex items-start gap-2">
+                  <li key={j} className="text-base text-gray-400 flex items-start gap-2">
                     <span style={{ color: r.color }}>•</span> {item}
                   </li>
                 ))}
@@ -605,13 +605,13 @@ export default function NutritionSafetyPage() {
             <h4 className="font-bold text-red-400 mb-2">🚫 Bỏ ngay nếu:</h4>
             <div className="space-y-1">
               {['Mùi chua/lạ', 'Nhớt', 'Mốc', 'Hộp phồng', 'Cơm/sốt để ngoài lâu', 'Không nhớ nấu ngày nào'].map((s, i) => (
-                <p key={i} className="text-xs text-gray-400 flex items-center gap-2"><span className="text-red-400">✕</span> {s}</p>
+                <p key={i} className="text-sm text-gray-400 flex items-center gap-2"><span className="text-red-400">✕</span> {s}</p>
               ))}
             </div>
           </div>
           <div className="rounded-2xl p-4 border border-sky-500/20 bg-sky-500/5">
             <h4 className="font-bold mb-2" style={{ color: C }}>📦 Quy tắc 3–4 ngày</h4>
-            <div className="space-y-2 text-xs text-gray-400">
+            <div className="space-y-2 text-sm text-gray-400">
               <p>• <strong className="text-white">Tủ lạnh ngăn mát:</strong> tối đa 3 ngày — an toàn nhất</p>
               <p>• <strong className="text-white">Ngày 4:</strong> chỉ dùng nếu bảo quản tốt, không mùi/vị lạ</p>
               <p>• <strong className="text-white">5–7 ngày:</strong> nên chia phần đông lạnh</p>
@@ -628,12 +628,12 @@ export default function NutritionSafetyPage() {
           {CONDITIONS.map((c, i) => (
             <div key={i} className="rounded-2xl p-5 border border-white/5 bg-white/[0.02] hover:border-white/10 transition-all">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl">{c.icon}</span>
+                <span className="text-3xl">{c.icon}</span>
                 <h3 className="font-bold text-white">{c.name}</h3>
               </div>
               <ul className="space-y-1">
                 {c.rules.map((r, j) => (
-                  <li key={j} className="text-xs text-gray-400 flex items-start gap-2">
+                  <li key={j} className="text-sm text-gray-400 flex items-start gap-2">
                     <span style={{ color: c.color }}>▸</span> {r}
                   </li>
                 ))}
@@ -656,7 +656,7 @@ export default function NutritionSafetyPage() {
               <h3 className="font-bold mb-3" style={{ color: p.color }}>{p.phase}</h3>
               <ul className="space-y-2">
                 {p.rules.map((r, j) => (
-                  <li key={j} className="text-xs text-gray-400 flex items-start gap-2"><span style={{ color: p.color }}>•</span>{r}</li>
+                  <li key={j} className="text-sm text-gray-400 flex items-start gap-2"><span style={{ color: p.color }}>•</span>{r}</li>
                 ))}
               </ul>
             </div>
@@ -666,7 +666,7 @@ export default function NutritionSafetyPage() {
           <h4 className="font-bold text-amber-300 mb-2">⚠️ Dấu hiệu meal plan không đủ cho người tập nhiều:</h4>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {['Tập tụt sức liên tục', 'Đói cồn cào về đêm', 'Mất ngủ', 'Chuột rút nhiều', 'Cáu gắt dễ', 'Nhịp tim nghỉ tăng', 'Đau cơ kéo dài', 'Sụt cân quá nhanh', 'Thèm ngọt mất kiểm soát'].map((s, i) => (
-              <p key={i} className="text-xs text-gray-400 flex items-center gap-1"><span className="text-amber-400">▸</span>{s}</p>
+              <p key={i} className="text-sm text-gray-400 flex items-center gap-1"><span className="text-amber-400">▸</span>{s}</p>
             ))}
           </div>
         </div>
@@ -676,16 +676,16 @@ export default function NutritionSafetyPage() {
       <RevealBlock className="mb-12">
         <SectionTitle icon="🚨">Dừng Ngay & Đi Khám Khi Có Dấu Hiệu</SectionTitle>
         <div className="rounded-3xl p-6 border border-red-500/30 bg-red-500/5">
-          <p className="text-sm text-red-300 mb-4 font-semibold">Dừng meal plan/tập luyện và đến cơ sở y tế ngay nếu xuất hiện bất kỳ dấu hiệu nào dưới đây:</p>
+          <p className="text-base text-red-300 mb-4 font-semibold">Dừng meal plan/tập luyện và đến cơ sở y tế ngay nếu xuất hiện bất kỳ dấu hiệu nào dưới đây:</p>
           <div className="grid md:grid-cols-2 gap-3">
             {DANGER_SIGNS.map((s, i) => (
               <div key={i} className="flex items-center gap-3 rounded-xl p-3 bg-red-500/10 border border-red-500/20">
-                <span className="text-sm text-gray-200">{s}</span>
+                <span className="text-base text-gray-200">{s}</span>
               </div>
             ))}
           </div>
           <div className="mt-4 rounded-xl p-4 bg-white/5 border border-white/10 text-center">
-            <p className="text-sm text-gray-300">Nguồn: <span className="text-white font-semibold">American Heart Association · ADA · WHO</span></p>
+            <p className="text-base text-gray-300">Nguồn: <span className="text-white font-semibold">American Heart Association · ADA · WHO</span></p>
           </div>
         </div>
       </RevealBlock>
@@ -693,7 +693,7 @@ export default function NutritionSafetyPage() {
       {/* 10. messaging */}
       <RevealBlock className="mb-12">
         <SectionTitle icon="💬">Chống Rối Loạn Ăn Uống — Thông Điệp Đúng</SectionTitle>
-        <p className="text-gray-400 text-sm mb-6">Dự án sống khỏe không được biến thành dự án ám ảnh hình thể. Nhấn vào thẻ để xem thông điệp tích cực thay thế.</p>
+        <p className="text-gray-400 text-base mb-6">Dự án sống khỏe không được biến thành dự án ám ảnh hình thể. Nhấn vào thẻ để xem thông điệp tích cực thay thế.</p>
         <div className="space-y-3">
           {GOOD_MESSAGES.map((m, i) => (
             <div key={i}
@@ -702,11 +702,11 @@ export default function NutritionSafetyPage() {
               onClick={() => setFlipMsg(flipMsg === i ? null : i)}>
               <div className={`p-4 transition-all ${flipMsg === i ? 'bg-green-500/5' : 'bg-red-500/5'}`}>
                 <div className="flex items-center gap-3">
-                  <span className="text-lg">{flipMsg === i ? '✅' : '❌'}</span>
-                  <p className="text-sm font-medium" style={{ color: flipMsg === i ? '#22c55e' : '#ef4444' }}>
+                  <span className="text-xl">{flipMsg === i ? '✅' : '❌'}</span>
+                  <p className="text-base font-medium" style={{ color: flipMsg === i ? '#22c55e' : '#ef4444' }}>
                     {flipMsg === i ? m.good : m.bad}
                   </p>
-                  <span className="ml-auto text-xs text-gray-500">{flipMsg === i ? 'ĐÚNG ↑' : 'SAI ↓'}</span>
+                  <span className="ml-auto text-sm text-gray-500">{flipMsg === i ? 'ĐÚNG ↑' : 'SAI ↓'}</span>
                 </div>
               </div>
             </div>
@@ -720,8 +720,8 @@ export default function NutritionSafetyPage() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {DONT_DO.map((d, i) => (
             <div key={i} className="rounded-2xl p-4 border border-red-500/20 bg-red-500/5 flex items-start gap-3 hover:border-red-500/40 transition-all">
-              <span className="text-2xl">{d.icon}</span>
-              <p className="text-xs text-gray-300 leading-relaxed">{d.text}</p>
+              <span className="text-3xl">{d.icon}</span>
+              <p className="text-sm text-gray-300 leading-relaxed">{d.text}</p>
             </div>
           ))}
         </div>
@@ -739,7 +739,7 @@ export default function NutritionSafetyPage() {
       {/* 13. pre-meal-plan checklist */}
       <RevealBlock className="mb-12">
         <SectionTitle icon="📋">Checklist Trước Khi Cấp Meal Plan</SectionTitle>
-        <p className="text-gray-400 text-sm mb-4">Cần hỏi tối thiểu 13 thông tin trước khi đưa ra kế hoạch ăn uống cá nhân hóa:</p>
+        <p className="text-gray-400 text-base mb-4">Cần hỏi tối thiểu 13 thông tin trước khi đưa ra kế hoạch ăn uống cá nhân hóa:</p>
         <div className="grid md:grid-cols-2 gap-3">
           {[
             ['👤', 'Tuổi, giới, chiều cao, cân nặng'],
@@ -757,20 +757,20 @@ export default function NutritionSafetyPage() {
             ['🤰', 'Có đang mang thai/cho con bú không'],
           ].map(([icon, text], i) => (
             <div key={i} className="flex items-center gap-3 rounded-xl p-3 border border-white/5 bg-white/[0.02]">
-              <span className="text-xl">{icon}</span>
-              <p className="text-sm text-gray-300">{text}</p>
+              <span className="text-2xl">{icon}</span>
+              <p className="text-base text-gray-300">{text}</p>
             </div>
           ))}
         </div>
         <div className="mt-4 rounded-2xl p-4 border border-amber-500/20 bg-amber-500/5">
-          <p className="text-sm text-amber-300"><strong>⚠️ Quan trọng:</strong> Nếu thiếu thông tin bệnh nền, thuốc, dị ứng hoặc triệu chứng nguy hiểm — không nên đưa meal plan cá nhân hóa sâu.</p>
+          <p className="text-base text-amber-300"><strong>⚠️ Quan trọng:</strong> Nếu thiếu thông tin bệnh nền, thuốc, dị ứng hoặc triệu chứng nguy hiểm — không nên đưa meal plan cá nhân hóa sâu.</p>
         </div>
       </RevealBlock>
 
       {/* 14. social content rules */}
       <RevealBlock className="mb-12">
         <SectionTitle icon="📱">Quy Tắc An Toàn Truyền Thông</SectionTitle>
-        <p className="text-gray-400 text-sm mb-4">Mỗi video hoặc bài viết Nutrition nên có 3 lớp an toàn:</p>
+        <p className="text-gray-400 text-base mb-4">Mỗi video hoặc bài viết Nutrition nên có 3 lớp an toàn:</p>
         <div className="space-y-4">
           {[
             {
@@ -788,11 +788,11 @@ export default function NutritionSafetyPage() {
           ].map((l, i) => (
             <div key={i} className="rounded-2xl p-5 border border-white/5 bg-white/[0.02]">
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-xl">{l.icon}</span>
-                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: l.color }}>{l.layer}</span>
+                <span className="text-2xl">{l.icon}</span>
+                <span className="text-sm font-bold uppercase tracking-widest" style={{ color: l.color }}>{l.layer}</span>
                 <h3 className="font-bold text-white">{l.title}</h3>
               </div>
-              <p className="text-sm text-gray-400 italic leading-relaxed">{l.content}</p>
+              <p className="text-base text-gray-400 italic leading-relaxed">{l.content}</p>
             </div>
           ))}
         </div>
@@ -801,21 +801,21 @@ export default function NutritionSafetyPage() {
       {/* closing CTA */}
       <RevealBlock>
         <div className="rounded-3xl p-8 border text-center" style={{ borderColor: `rgba(${HEX_RGB},0.25)`, background: `rgba(${HEX_RGB},0.05)` }}>
-          <div className="text-4xl mb-4">🛡️</div>
-          <h2 className="text-2xl font-bold text-white mb-3">An Toàn Là Nền Tảng Của Mọi Kế Hoạch</h2>
-          <p className="text-gray-400 text-sm max-w-xl mx-auto mb-6 leading-relaxed">
+          <div className="text-5xl mb-4">🛡️</div>
+          <h2 className="text-3xl font-bold text-white mb-3">An Toàn Là Nền Tảng Của Mọi Kế Hoạch</h2>
+          <p className="text-gray-400 text-base max-w-xl mx-auto mb-6 leading-relaxed">
             Bộ quy tắc này nên được đặt ở đầu mọi tài liệu Nutrition, lặp lại trong template meal plan, checklist hằng ngày và video social để đảm bảo dự án không gây hại cho người dùng.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link to="/pillar/b/checklist" className="px-5 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-105"
+            <Link to="/pillar/b/checklist" className="px-5 py-2.5 rounded-full text-base font-bold transition-all hover:scale-105"
               style={{ background: `rgba(${HEX_RGB},0.15)`, color: C, border: `1px solid rgba(${HEX_RGB},0.3)` }}>
               ✅ Checklist Dinh Dưỡng
             </Link>
-            <Link to="/pillar/b/template" className="px-5 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-105"
+            <Link to="/pillar/b/template" className="px-5 py-2.5 rounded-full text-base font-bold transition-all hover:scale-105"
               style={{ background: 'rgba(244,63,94,0.1)', color: '#f43f5e', border: '1px solid rgba(244,63,94,0.3)' }}>
               📋 Template Meal Plan
             </Link>
-            <Link to="/pillar/b" className="px-5 py-2.5 rounded-full text-sm font-bold text-gray-400 border border-white/10 hover:text-white transition-all">
+            <Link to="/pillar/b" className="px-5 py-2.5 rounded-full text-base font-bold text-gray-400 border border-white/10 hover:text-white transition-all">
               ← Về Dinh Dưỡng
             </Link>
           </div>

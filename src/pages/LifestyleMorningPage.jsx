@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#06b6d4';
@@ -76,23 +76,23 @@ export default function LifestyleMorningPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-sm mb-8 hover:text-cyan-400 transition-colors">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-base mb-8 hover:text-cyan-400 transition-colors">
         ← Lối Sống Khỏe
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl flex items-center justify-center shrink-0 animate-float"
+        <div className="w-20 h-20 rounded-3xl text-6xl flex items-center justify-center shrink-0 animate-float"
           style={{ background: 'var(--color-surface)', border: `1px solid rgba(${RGB},0.2)` }}>
           🌅
         </div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Routine Buổi Sáng</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Routine Buổi Sáng</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
             C2 — 5 / 10 / 20 phút
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Buổi sáng không cần hoàn hảo. Chỉ cần bật cơ thể lên đúng cách. 5 phút đúng còn tốt hơn kế hoạch 1 tiếng không làm được.
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function LifestyleMorningPage() {
               alt="Routine sáng" className="w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9), rgba(10,10,10,0.3) 50%, transparent)' }} />
             <div className="absolute bottom-4 left-6">
-              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
                 Nước · Ánh sáng · Vận động nhẹ
               </span>
@@ -118,8 +118,8 @@ export default function LifestyleMorningPage() {
 
       {/* Why morning matters */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Buổi Sáng Quan Trọng?</h2>
-        <p className="text-muted text-sm mb-6">Những gì bạn làm trong 30–60 phút đầu tiên thiết lập tone cho cả ngày.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Buổi Sáng Quan Trọng?</h2>
+        <p className="text-muted text-base mb-6">Những gì bạn làm trong 30–60 phút đầu tiên thiết lập tone cho cả ngày.</p>
         <div className="grid gap-3">
           {[
             { icon: '🧠', title: 'Cortisol Awakening Response (CAR)', desc: 'Cortisol tự nhiên đạt đỉnh 30–45 phút sau thức dậy. Đây là window lý tưởng nhất trong ngày để não hoạt động sắc bén nhất.' },
@@ -128,10 +128,10 @@ export default function LifestyleMorningPage() {
             { icon: '🏃', title: 'Vận động nhẹ bật hệ tuần hoàn', desc: 'Chỉ 5 phút đi bộ nhẹ tăng dopamine, norepinephrine và serotonin — 3 neurotransmitter quan trọng cho mood và focus cả ngày.' },
           ].map((item, i) => (
             <div key={i} className="flex gap-3 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <span className="text-2xl shrink-0">{item.icon}</span>
+              <span className="text-3xl shrink-0">{item.icon}</span>
               <div>
-                <div className="font-semibold text-text text-sm mb-1">{item.title}</div>
-                <p className="text-muted text-xs leading-relaxed">{item.desc}</p>
+                <div className="font-semibold text-text text-base mb-1">{item.title}</div>
+                <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}
@@ -140,12 +140,12 @@ export default function LifestyleMorningPage() {
 
       {/* Routine plans */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>3 Phiên Bản Routine</h2>
-        <p className="text-muted text-sm mb-5">Chọn phiên bản phù hợp với ngày hôm nay. Ngày bận = 5 phút. Ngày thường = 10 phút. Ngày rảnh = 20 phút.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Phiên Bản Routine</h2>
+        <p className="text-muted text-base mb-5">Chọn phiên bản phù hợp với ngày hôm nay. Ngày bận = 5 phút. Ngày thường = 10 phút. Ngày rảnh = 20 phút.</p>
         <div className="flex gap-2 mb-6">
           {['5', '10', '20'].map(m => (
             <button key={m} onClick={() => setMode(m)}
-              className="px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+              className="px-4 py-2 rounded-lg text-base font-semibold transition-all"
               style={mode === m
                 ? { background: `rgba(${RGB},0.15)`, color: COLOR, border: `1px solid rgba(${RGB},0.3)` }
                 : { color: 'var(--color-muted)', border: '1px solid var(--color-border)' }}>
@@ -156,13 +156,13 @@ export default function LifestyleMorningPage() {
         <div className="space-y-3">
           {routines[mode].map((row, i) => (
             <div key={i} className="flex gap-4 items-start p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold"
+              <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-base font-bold"
                 style={{ background: COLOR, color: 'black' }}>{row.step}</div>
               <div className="flex-1">
-                <div className="font-semibold text-text text-sm">{row.action}</div>
-                <div className="text-xs text-muted mt-0.5">{row.why}</div>
+                <div className="font-semibold text-text text-base">{row.action}</div>
+                <div className="text-sm text-muted mt-0.5">{row.why}</div>
               </div>
-              <div className="text-xs font-semibold tabular-nums shrink-0" style={{ color: COLOR }}>{row.time}</div>
+              <div className="text-sm font-semibold tabular-nums shrink-0" style={{ color: COLOR }}>{row.time}</div>
             </div>
           ))}
         </div>
@@ -170,16 +170,16 @@ export default function LifestyleMorningPage() {
 
       {/* Mobility */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Mobility Sáng 5 Phút</h2>
-        <p className="text-muted text-sm mb-6">Bài mobility nhẹ buổi sáng giảm cứng khớp, cải thiện tư thế và chuẩn bị cơ thể cho ngày làm việc.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mobility Sáng 5 Phút</h2>
+        <p className="text-muted text-base mb-6">Bài mobility nhẹ buổi sáng giảm cứng khớp, cải thiện tư thế và chuẩn bị cơ thể cho ngày làm việc.</p>
         <div className="space-y-2">
           {MOBILITY_5.map((ex, i) => (
             <div key={i} className="flex items-center justify-between p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
               <div>
-                <div className="font-semibold text-text text-sm">{ex.name}</div>
-                <div className="text-xs text-muted">{ex.muscles}</div>
+                <div className="font-semibold text-text text-base">{ex.name}</div>
+                <div className="text-sm text-muted">{ex.muscles}</div>
               </div>
-              <div className="text-xs font-semibold tabular-nums" style={{ color: COLOR }}>{ex.reps}</div>
+              <div className="text-sm font-semibold tabular-nums" style={{ color: COLOR }}>{ex.reps}</div>
             </div>
           ))}
         </div>
@@ -187,7 +187,7 @@ export default function LifestyleMorningPage() {
 
       {/* Practical tips */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Mẹo Thực Tế</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẹo Thực Tế</h2>
         <div className="grid gap-3">
           {[
             { tip: 'Chuẩn bị từ tối hôm trước', detail: 'Để sẵn bình nước, giày đi bộ, quần áo tập. Giảm ma sát buổi sáng = tăng khả năng thực hiện.' },
@@ -196,16 +196,16 @@ export default function LifestyleMorningPage() {
             { tip: 'Ngày bận nhất vẫn có thể làm 3 phút', detail: 'Uống nước + ánh sáng + 5 hít thở = 3 phút. Đây là "minimum viable morning routine" của bạn.' },
           ].map((item, i) => (
             <div key={i} className="p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <div className="font-semibold text-text text-sm mb-1" style={{ color: COLOR }}>→ {item.tip}</div>
-              <p className="text-muted text-xs leading-relaxed">{item.detail}</p>
+              <div className="font-semibold text-text text-base mb-1" style={{ color: COLOR }}>→ {item.tip}</div>
+              <p className="text-muted text-sm leading-relaxed">{item.detail}</p>
             </div>
           ))}
         </div>
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/circadian" className="text-muted hover:text-cyan-400 transition-colors text-sm">← Nhịp Sinh Học</Link>
-        <Link to="/pillar/c/neat" className="text-sm font-semibold" style={{ color: COLOR }}>NEAT →</Link>
+        <Link to="/pillar/c/circadian" className="text-muted hover:text-cyan-400 transition-colors text-base">← Nhịp Sinh Học</Link>
+        <Link to="/pillar/c/neat" className="text-base font-semibold" style={{ color: COLOR }}>NEAT →</Link>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
@@ -167,15 +167,15 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
       <div className="flex-1 p-5 md:p-6 flex flex-col justify-between" style={{ minWidth: 0 }}>
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">{icon}</span>
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color }}>{category}</span>
+            <span className="text-3xl">{icon}</span>
+            <span className="text-sm font-bold uppercase tracking-widest" style={{ color }}>{category}</span>
           </div>
-          <h3 className="text-lg font-bold text-text mb-1 group-hover:text-white transition-colors">{title}</h3>
-          <p className="text-xs font-semibold mb-2" style={{ color }}>{accent}</p>
-          <p className="text-muted text-sm leading-relaxed mb-4">{desc}</p>
+          <h3 className="text-xl font-bold text-text mb-1 group-hover:text-white transition-colors">{title}</h3>
+          <p className="text-sm font-semibold mb-2" style={{ color }}>{accent}</p>
+          <p className="text-muted text-base leading-relaxed mb-4">{desc}</p>
           <ul className="space-y-1 mb-4">
             {features.map((f, i) => (
-              <li key={i} className="text-xs text-muted flex items-center gap-2">
+              <li key={i} className="text-sm text-muted flex items-center gap-2">
                 <span style={{ color }}>✦</span>{f}
               </li>
             ))}
@@ -184,11 +184,11 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
         <div className="flex items-center gap-4 mt-auto">
           {stats.map((s, i) => (
             <div key={i} className="text-center">
-              <div className="text-lg font-bold" style={{ color }}>{s.v}</div>
-              <div className="text-xs text-muted">{s.l}</div>
+              <div className="text-xl font-bold" style={{ color }}>{s.v}</div>
+              <div className="text-sm text-muted">{s.l}</div>
             </div>
           ))}
-          <span className="ml-auto text-xs font-semibold" style={{ color }}>{cta}</span>
+          <span className="ml-auto text-sm font-semibold" style={{ color }}>{cta}</span>
         </div>
       </div>
       {image && (
@@ -204,7 +204,7 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
 function TeaserSection({ title, children }) {
   return (
     <div className="mb-10">
-      <h3 className="text-base font-bold uppercase tracking-widest text-muted mb-4 flex items-center gap-3">
+      <h3 className="text-lg font-bold uppercase tracking-widest text-muted mb-4 flex items-center gap-3">
         <span className="h-px flex-1 bg-border" />
         {title}
         <span className="h-px flex-1 bg-border" />
@@ -291,7 +291,7 @@ export default function PillarC() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pb-24">
-      <Link to="/pillars" className="inline-flex items-center gap-2 text-muted text-sm mb-8 hover:text-teal-400 transition-colors">
+      <Link to="/pillars" className="inline-flex items-center gap-2 text-muted text-base mb-8 hover:text-teal-400 transition-colors">
         ← Sống Khỏe 360
       </Link>
 
@@ -299,19 +299,19 @@ export default function PillarC() {
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none"
           style={{ background: `rgba(${TEAL_RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl flex items-center justify-center shrink-0 animate-float"
+        <div className="w-20 h-20 rounded-3xl text-6xl flex items-center justify-center shrink-0 animate-float"
           style={{ background: 'var(--color-surface)', border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
           🌿
         </div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-up">
             {pillar?.title || 'Lối Sống Khỏe'}
           </h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: TEAL, background: `rgba(${TEAL_RGB},0.1)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
             {pillar?.subtitle || 'Lifestyle'}
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             {pillar?.description || 'Ngủ tốt hơn, sống có nhịp hơn, phục hồi tốt hơn.'}
           </p>
         </div>
@@ -333,8 +333,8 @@ export default function PillarC() {
             </div>
             <div className="text-center px-4 py-2 rounded-xl cursor-default"
               style={{ background: `rgba(${TEAL_RGB},0.06)`, border: `1px solid rgba(${TEAL_RGB},0.15)` }}>
-              <div className="text-2xl font-bold" style={{ color: TEAL }}>{s.v}</div>
-              <div className="text-xs text-muted">{s.l}</div>
+              <div className="text-3xl font-bold" style={{ color: TEAL }}>{s.v}</div>
+              <div className="text-sm text-muted">{s.l}</div>
             </div>
           </div>
         ))}
@@ -348,7 +348,7 @@ export default function PillarC() {
               alt="Lối sống khỏe" className="w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 50%, transparent 100%)' }} />
             <div className="absolute bottom-4 left-6">
-              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: TEAL, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
                 {pillar?.image_caption || 'Ngủ · Nhịp sống · Phục hồi'}
               </span>
@@ -365,7 +365,7 @@ export default function PillarC() {
         <div ref={tabBarRef} className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
           {TABS.map(t => (
             <button key={t.id} onClick={() => handleTabClick(t.id)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold shrink-0 transition-all duration-200"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-base font-semibold shrink-0 transition-all duration-200"
               style={activeTab === t.id
                 ? { background: `rgba(${t.rgb},0.15)`, color: t.color, border: `1px solid rgba(${t.rgb},0.35)` }
                 : { color: 'var(--color-muted)', border: '1px solid transparent' }}>
@@ -382,37 +382,37 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-xl font-bold mb-1" style={{ color: TEAL }}>Đánh Giá Lối Sống Ban Đầu</h2>
-                <p className="text-muted text-sm mb-6">Biết điểm xuất phát trước khi thay đổi. Không đánh giá để phán xét — đánh giá để chọn điểm bắt đầu đúng nhất.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: TEAL }}>Đánh Giá Lối Sống Ban Đầu</h2>
+                <p className="text-muted text-base mb-6">Biết điểm xuất phát trước khi thay đổi. Không đánh giá để phán xét — đánh giá để chọn điểm bắt đầu đúng nhất.</p>
                 <div className="grid gap-3 mb-6">
                   {C0_ITEMS.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.05)`, border: `1px solid rgba(${TEAL_RGB},0.1)` }}>
-                      <span className="text-2xl shrink-0">{item.icon}</span>
+                      <span className="text-3xl shrink-0">{item.icon}</span>
                       <div>
-                        <div className="font-semibold text-text text-sm">{item.label}</div>
-                        <div className="text-muted text-xs mt-0.5">{item.desc}</div>
+                        <div className="font-semibold text-text text-base">{item.label}</div>
+                        <div className="text-muted text-sm mt-0.5">{item.desc}</div>
                       </div>
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-sm mb-3" style={{ color: TEAL }}>Lifestyle Score — 100 điểm</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: TEAL }}>Lifestyle Score — 100 điểm</h3>
                 <div className="space-y-2 mb-6">
                   {C0_SCORE.map((row, i) => (
-                    <div key={i} className="flex items-center justify-between text-sm">
+                    <div key={i} className="flex items-center justify-between text-base">
                       <span className="text-muted">{row.label}</span>
                       <span className="font-bold tabular-nums" style={{ color: TEAL }}>{row.pts} đ</span>
                     </div>
                   ))}
                 </div>
                 <div className="p-4 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.08)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
-                  <p className="text-sm font-semibold mb-3" style={{ color: TEAL }}>Chọn track phù hợp với bạn:</p>
+                  <p className="text-base font-semibold mb-3" style={{ color: TEAL }}>Chọn track phù hợp với bạn:</p>
                   <div className="grid gap-2">
                     {[
                       { t: 'Track Cơ Bản', d: 'Ngủ muộn, mệt mỏi, ít vận động' },
                       { t: 'Track Bận Rộn', d: 'Thiếu thời gian, làm việc nhiều, ngồi lâu' },
                       { t: 'Track Tập Nhiều', d: 'Gym/chạy/đạp/bơi nhiều, cần phục hồi tốt hơn' },
                     ].map((tr, i) => (
-                      <div key={i} className="p-2 rounded-lg text-sm" style={{ background: `rgba(${TEAL_RGB},0.05)` }}>
+                      <div key={i} className="p-2 rounded-lg text-base" style={{ background: `rgba(${TEAL_RGB},0.05)` }}>
                         <span className="font-semibold text-text">{tr.t}</span>
                         <span className="text-muted"> — {tr.d}</span>
                       </div>
@@ -421,7 +421,7 @@ export default function PillarC() {
                 </div>
               </div>
             </div>
-            <Link to="/pillar/c/assessment" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: TEAL }}>
+            <Link to="/pillar/c/assessment" className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: TEAL }}>
               Xem đánh giá đầy đủ →
             </Link>
           </RevealBlock>
@@ -432,39 +432,39 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-xl font-bold mb-1" style={{ color: TEAL }}>Vệ Sinh Giấc Ngủ 4 Bước</h2>
-                <p className="text-muted text-sm mb-6">Ngủ không phải là "thời gian chết". Ngủ là lúc cơ thể sửa chữa cơ bắp, cân bằng hormone và phục hồi tâm lý.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: TEAL }}>Vệ Sinh Giấc Ngủ 4 Bước</h2>
+                <p className="text-muted text-base mb-6">Ngủ không phải là "thời gian chết". Ngủ là lúc cơ thể sửa chữa cơ bắp, cân bằng hormone và phục hồi tâm lý.</p>
                 <div className="grid gap-3 mb-8">
                   {C1_STEPS.map((s) => (
                     <div key={s.step} className="flex gap-4 p-4 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.05)`, border: `1px solid rgba(${TEAL_RGB},0.1)` }}>
-                      <span className="text-2xl shrink-0">{s.icon}</span>
+                      <span className="text-3xl shrink-0">{s.icon}</span>
                       <div>
-                        <div className="font-semibold text-text text-sm">Bước {s.step}: {s.title}</div>
-                        <div className="text-muted text-xs mt-1 leading-relaxed">{s.desc}</div>
+                        <div className="font-semibold text-text text-base">Bước {s.step}: {s.title}</div>
+                        <div className="text-muted text-sm mt-1 leading-relaxed">{s.desc}</div>
                       </div>
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-sm mb-3" style={{ color: TEAL }}>Checklist Ngủ Hằng Ngày</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: TEAL }}>Checklist Ngủ Hằng Ngày</h3>
                 <div className="space-y-2 mb-4">
                   {C1_CHECKLIST.map((item, i) => (
                     <label key={i} className="flex items-center gap-3 cursor-pointer group">
                       <div onClick={() => setSleepChecks(p => ({ ...p, [i]: !p[i] }))}
                         className="w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all border"
                         style={{ background: sleepChecks[i] ? TEAL : 'transparent', borderColor: TEAL }}>
-                        {sleepChecks[i] && <span className="text-black text-xs font-bold">✓</span>}
+                        {sleepChecks[i] && <span className="text-black text-sm font-bold">✓</span>}
                       </div>
-                      <span className="text-sm text-muted group-hover:text-text transition-colors">{item}</span>
+                      <span className="text-base text-muted group-hover:text-text transition-colors">{item}</span>
                     </label>
                   ))}
                 </div>
                 <div className="h-2 rounded-full overflow-hidden mb-1" style={{ background: `rgba(${TEAL_RGB},0.15)` }}>
                   <div className="h-full rounded-full transition-all duration-500" style={{ width: `${sleepProgress / C1_CHECKLIST.length * 100}%`, background: TEAL }} />
                 </div>
-                <p className="text-xs text-muted">{sleepProgress}/{C1_CHECKLIST.length} — {sleepProgress >= 4 ? 'Tốt lắm!' : sleepProgress >= 3 ? 'Đạt mức tốt' : 'Đang xây dựng thói quen'}</p>
+                <p className="text-sm text-muted">{sleepProgress}/{C1_CHECKLIST.length} — {sleepProgress >= 4 ? 'Tốt lắm!' : sleepProgress >= 3 ? 'Đạt mức tốt' : 'Đang xây dựng thói quen'}</p>
               </div>
             </div>
-            <Link to="/pillar/c/sleep" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: TEAL }}>
+            <Link to="/pillar/c/sleep" className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: TEAL }}>
               Xem khoa học giấc ngủ đầy đủ →
             </Link>
           </RevealBlock>
@@ -475,12 +475,12 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#06b6d4' }}>Nhịp Sinh Học & Năng Lượng</h2>
-                <p className="text-muted text-sm mb-6">Năng lượng không chỉ đến từ cà phê. Năng lượng đến từ ánh sáng, nước, vận động nhẹ, bữa ăn và nhịp làm việc đúng.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#06b6d4' }}>Nhịp Sinh Học & Năng Lượng</h2>
+                <p className="text-muted text-base mb-6">Năng lượng không chỉ đến từ cà phê. Năng lượng đến từ ánh sáng, nước, vận động nhẹ, bữa ăn và nhịp làm việc đúng.</p>
                 <div className="flex gap-2 mb-5">
                   {['5', '10'].map(m => (
                     <button key={m} onClick={() => setMorningMode(m)}
-                      className="px-3 py-1.5 rounded-lg text-sm font-semibold transition-all"
+                      className="px-3 py-1.5 rounded-lg text-base font-semibold transition-all"
                       style={morningMode === m
                         ? { background: 'rgba(6,182,212,0.15)', color: '#06b6d4', border: '1px solid rgba(6,182,212,0.3)' }
                         : { color: 'var(--color-muted)', border: '1px solid var(--color-border)' }}>
@@ -491,26 +491,26 @@ export default function PillarC() {
                 <div className="space-y-2 mb-7">
                   {(morningMode === '5' ? C2_MORNING_5 : C2_MORNING_10).map((row, i) => (
                     <div key={i} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.12)' }}>
-                      <span className="text-xs font-bold tabular-nums w-12 shrink-0" style={{ color: '#06b6d4' }}>{row.time}</span>
-                      <span className="text-sm text-text">{row.action}</span>
+                      <span className="text-sm font-bold tabular-nums w-12 shrink-0" style={{ color: '#06b6d4' }}>{row.time}</span>
+                      <span className="text-base text-text">{row.action}</span>
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#06b6d4' }}>5 Yếu Tố Tạo Năng Lượng</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#06b6d4' }}>5 Yếu Tố Tạo Năng Lượng</h3>
                 <div className="grid gap-2">
                   {C2_ENERGY_TIPS.map((t, i) => (
                     <div key={i} className="flex gap-3 p-3 rounded-xl" style={{ background: 'rgba(6,182,212,0.04)' }}>
-                      <span className="text-xl shrink-0">{t.icon}</span>
+                      <span className="text-2xl shrink-0">{t.icon}</span>
                       <div>
-                        <div className="font-semibold text-text text-sm">{t.title}</div>
-                        <div className="text-muted text-xs mt-0.5">{t.desc}</div>
+                        <div className="font-semibold text-text text-base">{t.title}</div>
+                        <div className="text-muted text-sm mt-0.5">{t.desc}</div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            <Link to="/pillar/c/circadian" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#06b6d4' }}>
+            <Link to="/pillar/c/circadian" className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: '#06b6d4' }}>
               Xem nhịp sinh học đầy đủ →
             </Link>
           </RevealBlock>
@@ -521,48 +521,48 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#10b981' }}>NEAT & Chống Ngồi Lâu</h2>
-                <p className="text-muted text-sm mb-6">NEAT là toàn bộ vận động ngoài buổi tập: đi bộ, đứng lên, làm việc nhà. Với người bận rộn, NEAT quan trọng không kém buổi tập gym.</p>
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#10b981' }}>Mục tiêu bước theo cấp độ</h3>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#10b981' }}>NEAT & Chống Ngồi Lâu</h2>
+                <p className="text-muted text-base mb-6">NEAT là toàn bộ vận động ngoài buổi tập: đi bộ, đứng lên, làm việc nhà. Với người bận rộn, NEAT quan trọng không kém buổi tập gym.</p>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#10b981' }}>Mục tiêu bước theo cấp độ</h3>
                 <div className="grid gap-2 mb-6">
                   {C3_LEVELS.map((l, i) => (
                     <div key={i} className="flex items-center justify-between p-3 rounded-xl" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.12)' }}>
-                      <span className="text-sm font-semibold text-text">{l.level}</span>
-                      <span className="text-sm font-bold tabular-nums" style={{ color: '#10b981' }}>{l.steps}</span>
+                      <span className="text-base font-semibold text-text">{l.level}</span>
+                      <span className="text-base font-bold tabular-nums" style={{ color: '#10b981' }}>{l.steps}</span>
                     </div>
                   ))}
                 </div>
                 <div className="p-4 rounded-xl mb-6" style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' }}>
-                  <p className="text-sm font-bold mb-1" style={{ color: '#10b981' }}>⏱ Quy tắc đứng dậy 2 phút</p>
-                  <p className="text-xs text-muted">Mỗi 45–60 phút ngồi, đứng dậy 2 phút. Đi lấy nước, xoay vai, vươn người, calf raise. <strong>Đừng đợi đau mới đứng dậy.</strong></p>
+                  <p className="text-base font-bold mb-1" style={{ color: '#10b981' }}>⏱ Quy tắc đứng dậy 2 phút</p>
+                  <p className="text-sm text-muted">Mỗi 45–60 phút ngồi, đứng dậy 2 phút. Đi lấy nước, xoay vai, vươn người, calf raise. <strong>Đừng đợi đau mới đứng dậy.</strong></p>
                 </div>
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#10b981' }}>NEAT Checklist</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#10b981' }}>NEAT Checklist</h3>
                 <div className="space-y-2 mb-4">
                   {['Đứng dậy sau mỗi 45–60 phút ngồi', 'Đi bộ sau ít nhất 1 bữa ăn', 'Đạt mục tiêu bước cá nhân', 'Có 1–2 lần vận động ngắn trong giờ làm'].map((item, i) => (
                     <label key={i} className="flex items-center gap-3 cursor-pointer group">
                       <div onClick={() => setNeatChecks(p => ({ ...p, [i]: !p[i] }))}
                         className="w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all border"
                         style={{ background: neatChecks[i] ? '#10b981' : 'transparent', borderColor: '#10b981' }}>
-                        {neatChecks[i] && <span className="text-black text-xs font-bold">✓</span>}
+                        {neatChecks[i] && <span className="text-black text-sm font-bold">✓</span>}
                       </div>
-                      <span className="text-sm text-muted group-hover:text-text transition-colors">{item}</span>
+                      <span className="text-base text-muted group-hover:text-text transition-colors">{item}</span>
                     </label>
                   ))}
                 </div>
                 <div className="h-2 rounded-full overflow-hidden mb-6" style={{ background: 'rgba(16,185,129,0.15)' }}>
                   <div className="h-full rounded-full transition-all duration-500" style={{ width: `${neatProgress / 4 * 100}%`, background: '#10b981' }} />
                 </div>
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#10b981' }}>Ý tưởng tăng NEAT</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#10b981' }}>Ý tưởng tăng NEAT</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {C3_IDEAS.map((idea, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-muted p-2 rounded-lg" style={{ background: 'rgba(16,185,129,0.04)' }}>
+                    <div key={i} className="flex items-center gap-2 text-sm text-muted p-2 rounded-lg" style={{ background: 'rgba(16,185,129,0.04)' }}>
                       <span style={{ color: '#10b981' }}>→</span>{idea}
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            <Link to="/pillar/c/neat" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#10b981' }}>
+            <Link to="/pillar/c/neat" className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: '#10b981' }}>
               Xem hướng dẫn NEAT đầy đủ →
             </Link>
           </RevealBlock>
@@ -573,27 +573,27 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#a78bfa' }}>Phục Hồi Chủ Động</h2>
-                <p className="text-muted text-sm mb-6">Ngày phục hồi là một phần của chương trình, không phải ngày thất bại. Phục hồi bằng hành động nhẹ, không chỉ nằm nghỉ.</p>
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#a78bfa' }}>Routine Phục Hồi 10 Phút</h3>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#a78bfa' }}>Phục Hồi Chủ Động</h2>
+                <p className="text-muted text-base mb-6">Ngày phục hồi là một phần của chương trình, không phải ngày thất bại. Phục hồi bằng hành động nhẹ, không chỉ nằm nghỉ.</p>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#a78bfa' }}>Routine Phục Hồi 10 Phút</h3>
                 <div className="space-y-2 mb-6">
                   {C4_ROUTINE.map((r, i) => (
                     <div key={i} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: 'rgba(167,139,250,0.05)', border: '1px solid rgba(167,139,250,0.1)' }}>
-                      <span className="text-xs font-bold tabular-nums w-20 shrink-0" style={{ color: '#a78bfa' }}>{r.duration}</span>
+                      <span className="text-sm font-bold tabular-nums w-20 shrink-0" style={{ color: '#a78bfa' }}>{r.duration}</span>
                       <div>
-                        <div className="text-sm font-semibold text-text">{r.exercise}</div>
-                        <div className="text-xs text-muted">{r.note}</div>
+                        <div className="text-base font-semibold text-text">{r.exercise}</div>
+                        <div className="text-sm text-muted">{r.note}</div>
                       </div>
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#a78bfa' }}>Phục Hồi Theo Vùng Đau Mỏi</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#a78bfa' }}>Phục Hồi Theo Vùng Đau Mỏi</h3>
                 <div className="space-y-2">
                   {C4_ZONES.map((z, i) => (
                     <div key={i} className="rounded-xl overflow-hidden border" style={{ borderColor: 'rgba(167,139,250,0.15)' }}>
                       <button onClick={() => setOpenZone(openZone === i ? null : i)}
                         className="w-full flex items-center justify-between p-3 text-left" style={{ background: 'rgba(167,139,250,0.06)' }}>
-                        <span className="flex items-center gap-2 font-semibold text-sm text-text">
+                        <span className="flex items-center gap-2 font-semibold text-base text-text">
                           <span>{z.icon}</span>{z.zone}
                         </span>
                         <span style={{ color: '#a78bfa' }}>{openZone === i ? '▲' : '▼'}</span>
@@ -601,7 +601,7 @@ export default function PillarC() {
                       {openZone === i && (
                         <div className="p-3 space-y-1">
                           {z.exercises.map((ex, j) => (
-                            <div key={j} className="text-xs text-muted flex items-center gap-2">
+                            <div key={j} className="text-sm text-muted flex items-center gap-2">
                               <span style={{ color: '#a78bfa' }}>•</span>{ex}
                             </div>
                           ))}
@@ -612,7 +612,7 @@ export default function PillarC() {
                 </div>
               </div>
             </div>
-            <Link to="/pillar/c/recovery" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#a78bfa' }}>
+            <Link to="/pillar/c/recovery" className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: '#a78bfa' }}>
               Xem phục hồi chủ động đầy đủ →
             </Link>
           </RevealBlock>
@@ -623,46 +623,46 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#f97316' }}>Deload & Quản Lý Tải</h2>
-                <p className="text-muted text-sm mb-6">Deload là giảm tải có kế hoạch. Không phải lùi bước — mà là chiến lược để đi xa hơn về lâu dài.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#f97316' }}>Deload & Quản Lý Tải</h2>
+                <p className="text-muted text-base mb-6">Deload là giảm tải có kế hoạch. Không phải lùi bước — mà là chiến lược để đi xa hơn về lâu dài.</p>
                 <div className="p-4 rounded-xl mb-6" style={{ background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.2)' }}>
-                  <p className="text-sm font-bold mb-2" style={{ color: '#f97316' }}>🚨 Dấu hiệu cần deload</p>
+                  <p className="text-base font-bold mb-2" style={{ color: '#f97316' }}>🚨 Dấu hiệu cần deload</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                     {C5_SIGNALS.map((s, i) => (
-                      <div key={i} className="text-xs text-muted flex items-center gap-2">
+                      <div key={i} className="text-sm text-muted flex items-center gap-2">
                         <span style={{ color: '#f97316' }}>!</span>{s}
                       </div>
                     ))}
                   </div>
                 </div>
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#f97316' }}>4 Cách Deload</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#f97316' }}>4 Cách Deload</h3>
                 <div className="grid gap-3 mb-6">
                   {C5_METHODS.map((m, i) => (
                     <div key={i} className="flex gap-3 p-3 rounded-xl" style={{ background: 'rgba(249,115,22,0.05)', border: '1px solid rgba(249,115,22,0.1)' }}>
-                      <span className="text-2xl shrink-0">{m.icon}</span>
+                      <span className="text-3xl shrink-0">{m.icon}</span>
                       <div>
-                        <div className="font-semibold text-text text-sm">{m.title}</div>
-                        <div className="text-muted text-xs mt-0.5">{m.desc}</div>
+                        <div className="font-semibold text-text text-base">{m.title}</div>
+                        <div className="text-muted text-sm mt-0.5">{m.desc}</div>
                       </div>
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#f97316' }}>Lịch Deload Theo Trình Độ</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#f97316' }}>Lịch Deload Theo Trình Độ</h3>
                 <div className="space-y-2">
                   {[
                     { level: 'Người mới', freq: 'Mỗi 6–8 tuần hoặc khi có dấu hiệu mệt' },
                     { level: 'Trung bình', freq: 'Mỗi 4–6 tuần, giảm 10–20% volume' },
                     { level: 'Tập nhiều', freq: 'Mỗi 4–5 tuần, giảm 30–40% volume' },
                   ].map((row, i) => (
-                    <div key={i} className="flex justify-between items-center text-sm p-2 rounded-lg" style={{ background: 'rgba(249,115,22,0.04)' }}>
+                    <div key={i} className="flex justify-between items-center text-base p-2 rounded-lg" style={{ background: 'rgba(249,115,22,0.04)' }}>
                       <span className="font-semibold text-text">{row.level}</span>
-                      <span className="text-muted text-xs text-right">{row.freq}</span>
+                      <span className="text-muted text-sm text-right">{row.freq}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            <Link to="/pillar/c/deload" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#f97316' }}>
+            <Link to="/pillar/c/deload" className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: '#f97316' }}>
               Xem hướng dẫn deload đầy đủ →
             </Link>
           </RevealBlock>
@@ -673,12 +673,12 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#0ea5e9' }}>Thở & Hạ Nhịp Cơ Thể</h2>
-                <p className="text-muted text-sm mb-6">Thở đúng cách là công cụ điều hòa cơ thể, hỗ trợ phục hồi sau tập và giúp ngủ sâu hơn.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#0ea5e9' }}>Thở & Hạ Nhịp Cơ Thể</h2>
+                <p className="text-muted text-base mb-6">Thở đúng cách là công cụ điều hòa cơ thể, hỗ trợ phục hồi sau tập và giúp ngủ sâu hơn.</p>
                 <div className="flex gap-2 mb-5 overflow-x-auto scrollbar-hide">
                   {C6_TECHNIQUES.map((t, i) => (
                     <button key={i} onClick={() => setBreathMode(i)}
-                      className="px-3 py-1.5 rounded-lg text-sm font-semibold shrink-0 transition-all"
+                      className="px-3 py-1.5 rounded-lg text-base font-semibold shrink-0 transition-all"
                       style={breathMode === i
                         ? { background: 'rgba(14,165,233,0.15)', color: '#0ea5e9', border: '1px solid rgba(14,165,233,0.3)' }
                         : { color: 'var(--color-muted)', border: '1px solid var(--color-border)' }}>
@@ -691,20 +691,20 @@ export default function PillarC() {
                     <h3 className="font-bold text-text mb-3">{C6_TECHNIQUES[breathMode].name}</h3>
                     <div className="flex flex-wrap gap-3 mb-3">
                       {C6_TECHNIQUES[breathMode].steps.split(' • ').map((step, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm">
-                          <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
+                        <div key={i} className="flex items-center gap-2 text-base">
+                          <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
                             style={{ background: '#0ea5e9', color: 'black' }}>{i + 1}</span>
                           <span className="text-text">{step}</span>
                         </div>
                       ))}
                     </div>
-                    <div className="flex gap-4 text-xs text-muted mt-3 flex-wrap">
+                    <div className="flex gap-4 text-sm text-muted mt-3 flex-wrap">
                       <span>⏱ {C6_TECHNIQUES[breathMode].time}</span>
                       <span>• {C6_TECHNIQUES[breathMode].use}</span>
                     </div>
                   </div>
                 )}
-                <h3 className="font-bold text-sm mb-3" style={{ color: '#0ea5e9' }}>Protocol theo tình huống</h3>
+                <h3 className="font-bold text-base mb-3" style={{ color: '#0ea5e9' }}>Protocol theo tình huống</h3>
                 <div className="space-y-2">
                   {[
                     ['Trước tập', '4–6 nhịp thở cơ hoành'],
@@ -713,15 +713,15 @@ export default function PillarC() {
                     ['Căng thẳng giữa ngày', 'Box breathing 4 vòng'],
                     ['Khó ngủ', 'Thở ra dài hơn hít vào × 8–10 vòng'],
                   ].map(([s, b], i) => (
-                    <div key={i} className="flex justify-between items-center text-sm py-2 border-b" style={{ borderColor: 'rgba(14,165,233,0.08)' }}>
+                    <div key={i} className="flex justify-between items-center text-base py-2 border-b" style={{ borderColor: 'rgba(14,165,233,0.08)' }}>
                       <span className="text-muted">{s}</span>
-                      <span className="font-semibold text-xs text-right" style={{ color: '#0ea5e9' }}>{b}</span>
+                      <span className="font-semibold text-sm text-right" style={{ color: '#0ea5e9' }}>{b}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            <Link to="/pillar/c/breathing" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#0ea5e9' }}>
+            <Link to="/pillar/c/breathing" className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: '#0ea5e9' }}>
               Xem kỹ thuật thở đầy đủ →
             </Link>
           </RevealBlock>
@@ -732,18 +732,18 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#f43f5e' }}>Thiết Kế Môi Trường & Thói Quen</h2>
-                <p className="text-muted text-sm mb-6">Đừng chỉ dựa vào ý chí. Hãy thiết kế môi trường để hành vi tốt xảy ra dễ hơn, tự nhiên hơn mỗi ngày.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#f43f5e' }}>Thiết Kế Môi Trường & Thói Quen</h2>
+                <p className="text-muted text-base mb-6">Đừng chỉ dựa vào ý chí. Hãy thiết kế môi trường để hành vi tốt xảy ra dễ hơn, tự nhiên hơn mỗi ngày.</p>
                 <div className="space-y-4 mb-6">
                   {C7_AREAS.map((a, i) => (
                     <div key={i} className="p-4 rounded-xl" style={{ background: 'rgba(244,63,94,0.05)', border: '1px solid rgba(244,63,94,0.1)' }}>
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xl">{a.icon}</span>
-                        <span className="font-bold text-sm" style={{ color: '#f43f5e' }}>{a.area}</span>
+                        <span className="text-2xl">{a.icon}</span>
+                        <span className="font-bold text-base" style={{ color: '#f43f5e' }}>{a.area}</span>
                       </div>
                       <ul className="space-y-1.5">
                         {a.tips.map((tip, j) => (
-                          <li key={j} className="text-xs text-muted flex items-center gap-2">
+                          <li key={j} className="text-sm text-muted flex items-center gap-2">
                             <span style={{ color: '#f43f5e' }}>→</span>{tip}
                           </li>
                         ))}
@@ -752,13 +752,13 @@ export default function PillarC() {
                   ))}
                 </div>
                 <div className="p-4 rounded-xl" style={{ background: 'rgba(244,63,94,0.08)', border: '1px solid rgba(244,63,94,0.2)' }}>
-                  <p className="text-sm font-bold mb-2" style={{ color: '#f43f5e' }}>Quy tắc "Ngày Fail"</p>
-                  <p className="text-xs text-muted leading-relaxed">Khi lỡ một ngày: không tự trách, không bỏ luôn. Quay lại bằng hành động nhỏ nhất: uống nước, đi bộ 5 phút, ngủ sớm hơn 15 phút.</p>
-                  <p className="text-xs font-semibold mt-2" style={{ color: '#f43f5e' }}>Một ngày lệch nhịp không phá hỏng hành trình.</p>
+                  <p className="text-base font-bold mb-2" style={{ color: '#f43f5e' }}>Quy tắc "Ngày Fail"</p>
+                  <p className="text-sm text-muted leading-relaxed">Khi lỡ một ngày: không tự trách, không bỏ luôn. Quay lại bằng hành động nhỏ nhất: uống nước, đi bộ 5 phút, ngủ sớm hơn 15 phút.</p>
+                  <p className="text-sm font-semibold mt-2" style={{ color: '#f43f5e' }}>Một ngày lệch nhịp không phá hỏng hành trình.</p>
                 </div>
               </div>
             </div>
-            <Link to="/pillar/c/environment" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: '#f43f5e' }}>
+            <Link to="/pillar/c/environment" className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: '#f43f5e' }}>
               Xem thiết kế môi trường đầy đủ →
             </Link>
           </RevealBlock>
@@ -769,8 +769,8 @@ export default function PillarC() {
 
       {/* Sub-pages Teaser Grid */}
       <RevealBlock className="mb-6">
-        <h2 className="text-2xl font-bold text-text mb-1">Khám Phá Sâu</h2>
-        <p className="text-muted text-sm">12 chủ đề chuyên sâu về lối sống khỏe — từ khoa học giấc ngủ đến thiết kế môi trường sống.</p>
+        <h2 className="text-3xl font-bold text-text mb-1">Khám Phá Sâu</h2>
+        <p className="text-muted text-base">12 chủ đề chuyên sâu về lối sống khỏe — từ khoa học giấc ngủ đến thiết kế môi trường sống.</p>
       </RevealBlock>
 
       <TeaserSection title="Nền Tảng & Giấc Ngủ">
@@ -881,16 +881,16 @@ export default function PillarC() {
       {/* Core message */}
       <RevealBlock className="mt-4 mb-12">
         <div className="rounded-2xl p-6 text-center" style={{ background: `rgba(${TEAL_RGB},0.06)`, border: `1px solid rgba(${TEAL_RGB},0.15)` }}>
-          <div className="text-3xl mb-3">🌿</div>
-          <blockquote className="text-lg font-bold text-text leading-relaxed mb-2">
+          <div className="text-4xl mb-3">🌿</div>
+          <blockquote className="text-xl font-bold text-text leading-relaxed mb-2">
             "Không cần sống hoàn hảo. Chỉ cần sống có nhịp, có hồi phục, có quay lại."
           </blockquote>
-          <p className="text-muted text-sm">— Triết lý Trụ cột C</p>
+          <p className="text-muted text-base">— Triết lý Trụ cột C</p>
         </div>
       </RevealBlock>
 
       <div className="pt-6 border-t border-border">
-        <Link to="/pillars" className="text-muted hover:text-teal-400 transition-colors text-sm">← Sống Khỏe 360</Link>
+        <Link to="/pillars" className="text-muted hover:text-teal-400 transition-colors text-base">← Sống Khỏe 360</Link>
       </div>
     </div>
   );

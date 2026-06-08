@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#6366f1';
@@ -71,28 +71,28 @@ function MisinfoChecker() {
   return (
     <div className="rounded-2xl border border-border bg-surface p-5">
       <h3 className="font-bold mb-3" style={{ color: COLOR }}>Kiểm Tra Thông Tin Nhanh</h3>
-      <p className="text-xs text-muted mb-3">Dán tiêu đề hoặc đoạn trích nội dung y tế bạn đọc vào đây:</p>
+      <p className="text-sm text-muted mb-3">Dán tiêu đề hoặc đoạn trích nội dung y tế bạn đọc vào đây:</p>
       <textarea
         value={text}
         onChange={e => setText(e.target.value)}
         rows={4}
         placeholder="Ví dụ: 'Uống nước lá X chữa khỏi tiểu đường trong 7 ngày, bác sĩ không muốn bạn biết...'"
-        className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-sm text-text placeholder-muted resize-none mb-3"
+        className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-base text-text placeholder-muted resize-none mb-3"
       />
-      <button onClick={check} className="px-5 py-2 rounded-xl text-sm font-bold text-white mb-4" style={{ background: COLOR }}>
+      <button onClick={check} className="px-5 py-2 rounded-xl text-base font-bold text-white mb-4" style={{ background: COLOR }}>
         Phân Tích
       </button>
       {score !== null && (
         <div className={`rounded-xl p-4 border ${score.length === 0 ? 'border-emerald-500/30' : 'border-red-500/30'}`}
           style={{ background: score.length === 0 ? 'rgba(34,197,94,0.05)' : 'rgba(239,68,68,0.05)' }}>
           {score.length === 0
-            ? <p className="text-sm text-emerald-400">✓ Không tìm thấy cờ đỏ rõ ràng. Vẫn nên kiểm tra nguồn và bằng chứng.</p>
+            ? <p className="text-base text-emerald-400">✓ Không tìm thấy cờ đỏ rõ ràng. Vẫn nên kiểm tra nguồn và bằng chứng.</p>
             : <>
-              <p className="text-sm text-red-400 font-bold mb-2">⚠ Phát hiện {score.length} cờ đỏ:</p>
+              <p className="text-base text-red-400 font-bold mb-2">⚠ Phát hiện {score.length} cờ đỏ:</p>
               <div className="flex flex-wrap gap-2">
-                {score.map((f, i) => <span key={i} className="text-xs px-2 py-1 rounded-full bg-red-500/20 text-red-400">"{f}"</span>)}
+                {score.map((f, i) => <span key={i} className="text-sm px-2 py-1 rounded-full bg-red-500/20 text-red-400">"{f}"</span>)}
               </div>
-              <p className="text-xs text-muted mt-2">Đây là dấu hiệu có thể chứa thông tin sai lệch. Hãy kiểm tra nguồn gốc và tìm bằng chứng khoa học.</p>
+              <p className="text-sm text-muted mt-2">Đây là dấu hiệu có thể chứa thông tin sai lệch. Hãy kiểm tra nguồn gốc và tìm bằng chứng khoa học.</p>
             </>
           }
         </div>
@@ -125,17 +125,17 @@ export default function HealthMediaLiteracyPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🔍</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🔍</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Lọc Thông Tin Y Tế</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Lọc Thông Tin Y Tế</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Media Literacy · Phân biệt thật giả
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Thông tin y tế sai lệch (medical misinformation) là một trong những vấn đề sức khỏe công cộng lớn nhất. WHO gọi đây là "infodemic" — đại dịch thông tin. Học cách lọc thông tin là kỹ năng bảo vệ sức khỏe trong kỷ nguyên số.
           </p>
         </div>
@@ -145,7 +145,7 @@ export default function HealthMediaLiteracyPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80&auto=format&fit=crop" alt="Lọc thông tin" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             Tư duy phản biện · Bằng chứng khoa học
           </span>
         </div>
@@ -154,20 +154,20 @@ export default function HealthMediaLiteracyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock delay={0} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>5 Câu Hỏi Để Lọc Thông Tin</h2>
-        <p className="text-muted text-sm mb-6">Áp dụng mỗi khi đọc thông tin y tế trên mạng xã hội, group sức khỏe, hoặc từ người thân.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>5 Câu Hỏi Để Lọc Thông Tin</h2>
+        <p className="text-muted text-base mb-6">Áp dụng mỗi khi đọc thông tin y tế trên mạng xã hội, group sức khỏe, hoặc từ người thân.</p>
         <div className="space-y-4">
           {FILTER_QUESTIONS.map((fq, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-5">
               <div className="font-bold text-text mb-3" style={{ color: COLOR }}>{fq.q}</div>
               <div className="grid sm:grid-cols-2 gap-3">
                 <div className="rounded-xl p-3" style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.2)' }}>
-                  <div className="text-xs font-bold text-emerald-400 mb-1">✓ Đáng tin</div>
-                  <p className="text-xs text-muted">{fq.good}</p>
+                  <div className="text-sm font-bold text-emerald-400 mb-1">✓ Đáng tin</div>
+                  <p className="text-sm text-muted">{fq.good}</p>
                 </div>
                 <div className="rounded-xl p-3" style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}>
-                  <div className="text-xs font-bold text-red-400 mb-1">✗ Nghi ngờ</div>
-                  <p className="text-xs text-muted">{fq.bad}</p>
+                  <div className="text-sm font-bold text-red-400 mb-1">✗ Nghi ngờ</div>
+                  <p className="text-sm text-muted">{fq.bad}</p>
                 </div>
               </div>
             </div>
@@ -176,15 +176,15 @@ export default function HealthMediaLiteracyPage() {
       </RevealBlock>
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Nhận Biết Thông Tin Sai Lệch</h2>
-        <p className="text-muted text-sm mb-6">6 pattern phổ biến nhất trong thông tin y tế sai lệch trên mạng.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nhận Biết Thông Tin Sai Lệch</h2>
+        <p className="text-muted text-base mb-6">6 pattern phổ biến nhất trong thông tin y tế sai lệch trên mạng.</p>
         <div className="space-y-3">
           {DANGEROUS_PATTERNS.map((d, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex gap-3">
-              <span className="text-xl shrink-0">{d.icon}</span>
+              <span className="text-2xl shrink-0">{d.icon}</span>
               <div>
-                <div className="font-bold text-sm text-red-400 mb-1">{d.pattern}</div>
-                <p className="text-xs text-muted">{d.explain}</p>
+                <div className="font-bold text-base text-red-400 mb-1">{d.pattern}</div>
+                <p className="text-sm text-muted">{d.explain}</p>
               </div>
             </div>
           ))}
@@ -192,26 +192,26 @@ export default function HealthMediaLiteracyPage() {
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-4" style={{ color: COLOR }}>Kiểm Tra Thông Tin</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Kiểm Tra Thông Tin</h2>
         <MisinfoChecker />
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Nguồn Thông Tin Đáng Tin Cậy</h2>
-        <p className="text-muted text-sm mb-5">Bookmark những nguồn này để tra cứu khi cần.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nguồn Thông Tin Đáng Tin Cậy</h2>
+        <p className="text-muted text-base mb-5">Bookmark những nguồn này để tra cứu khi cần.</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {TRUSTED_SOURCES.map((s, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 hover:border-indigo-500/30 transition-colors">
-              <div className="font-bold text-sm text-text mb-1">{s.name}</div>
-              <div className="text-xs font-mono text-muted mb-1">{s.url}</div>
-              <p className="text-xs text-muted">{s.desc}</p>
+              <div className="font-bold text-base text-text mb-1">{s.name}</div>
+              <div className="text-sm font-mono text-muted mb-1">{s.url}</div>
+              <p className="text-sm text-muted">{s.desc}</p>
             </div>
           ))}
         </div>
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
     </div>
   );
 }

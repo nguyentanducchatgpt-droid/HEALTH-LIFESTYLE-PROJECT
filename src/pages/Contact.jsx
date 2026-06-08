@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+﻿import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -182,7 +182,7 @@ export default function Contact() {
         {/* Hero content */}
         <div className="relative z-10 py-16 md:py-20 px-6 md:px-12 text-center">
           {/* Role badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/25 text-accent text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 ct2-sub">
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/25 text-accent text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 ct2-sub">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
             {t('contact.bio_role')}
           </div>
@@ -206,7 +206,7 @@ export default function Contact() {
           <div className="absolute left-1/2 -translate-x-1/2 h-0.5 w-16 rounded-full ct2-shimmer-line" style={{ marginTop: '-1.4rem' }} />
 
           {/* Subtitle */}
-          <p className="ct2-sub text-muted text-sm md:text-base leading-relaxed max-w-lg mx-auto">
+          <p className="ct2-sub text-muted text-base md:text-lg leading-relaxed max-w-lg mx-auto">
             {t('contact.intro')}
           </p>
         </div>
@@ -234,7 +234,7 @@ export default function Contact() {
             <div className="shrink-0 relative">
               <div className="ct2-orbit rounded-[22px] p-[1.5px]">
                 <div className="w-20 h-20 rounded-[20px] bg-gradient-to-br from-accent/20 via-surface to-teal-500/20 border border-accent/20 flex items-center justify-center shadow-[0_0_40px_rgba(34,197,94,0.18)] overflow-hidden">
-                  <span className="text-2xl font-black text-accent tracking-tight">ND</span>
+                  <span className="text-3xl font-black text-accent tracking-tight">ND</span>
                 </div>
               </div>
               {/* Online dot */}
@@ -248,17 +248,17 @@ export default function Contact() {
             {/* Text */}
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h2 className="text-base font-black text-text">{t('contact.bio_name')}</h2>
+                <h2 className="text-lg font-black text-text">{t('contact.bio_name')}</h2>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-accent bg-accent/10 border border-accent/20 rounded-full px-2 py-0.5">Creator</span>
               </div>
-              <p className="text-accent text-xs font-semibold mb-4">{t('contact.bio_role')}</p>
+              <p className="text-accent text-sm font-semibold mb-4">{t('contact.bio_role')}</p>
 
-              <h3 className="text-sm font-bold text-text mb-2">{t('contact.story_title')}</h3>
-              <p className="text-muted text-sm leading-relaxed mb-5">{t('contact.story_text')}</p>
+              <h3 className="text-base font-bold text-text mb-2">{t('contact.story_title')}</h3>
+              <p className="text-muted text-base leading-relaxed mb-5">{t('contact.story_text')}</p>
 
               <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 rounded-full px-4 py-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                <span className="text-accent text-xs font-semibold">{t('contact.mission')}</span>
+                <span className="text-accent text-sm font-semibold">{t('contact.mission')}</span>
               </div>
             </div>
           </div>
@@ -280,7 +280,7 @@ export default function Contact() {
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
                 style={{ background: `radial-gradient(circle at 50% 0%, ${s.color}10 0%, transparent 70%)` }} />
-              <div className="text-2xl font-black mb-0.5" style={{ color: s.color }}>
+              <div className="text-3xl font-black mb-0.5" style={{ color: s.color }}>
                 <AnimatedCounter target={s.val} suffix={s.suffix} duration={1200 + i * 200} />
               </div>
               <div className="text-[11px] text-muted leading-tight">{s.label}</div>
@@ -316,13 +316,13 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0 pt-0.5">
                   <p className="text-[11px] text-muted font-bold uppercase tracking-widest mb-1">{t('contact.email_label')}</p>
-                  <p className="text-sm font-bold text-text group-hover:text-accent transition-colors duration-200 truncate">{email}</p>
+                  <p className="text-base font-bold text-text group-hover:text-accent transition-colors duration-200 truncate">{email}</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2 pt-4 border-t border-border/40">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse shrink-0" />
-                <span className="flex items-center gap-1.5 text-xs text-muted">
+                <span className="flex items-center gap-1.5 text-sm text-muted">
                   <IconClock />{t('contact.email_response')}
                 </span>
               </div>
@@ -354,13 +354,13 @@ export default function Contact() {
                 </div>
                 <div className="pt-0.5">
                   <p className="text-[11px] text-muted font-bold uppercase tracking-widest mb-1">{t('contact.zalo_label')}</p>
-                  <p className="text-sm font-bold text-text group-hover:text-blue-400 transition-colors duration-200">{t('contact.zalo_direct')}</p>
+                  <p className="text-base font-bold text-text group-hover:text-blue-400 transition-colors duration-200">{t('contact.zalo_direct')}</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2 pt-4 border-t border-border/40">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-glow-pulse shrink-0" />
-                <span className="flex items-center gap-1.5 text-xs text-muted">
+                <span className="flex items-center gap-1.5 text-sm text-muted">
                   <IconClock />{t('contact.zalo_avail')}
                 </span>
               </div>
@@ -378,7 +378,7 @@ export default function Contact() {
             {topics.map((topic, i) => (
               <span
                 key={i}
-                className="inline-flex items-center gap-1.5 bg-surface border border-border hover:border-accent/35 hover:bg-accent/5 rounded-full px-4 py-2 text-xs text-muted hover:text-text transition-all duration-200 cursor-default group"
+                className="inline-flex items-center gap-1.5 bg-surface border border-border hover:border-accent/35 hover:bg-accent/5 rounded-full px-4 py-2 text-sm text-muted hover:text-text transition-all duration-200 cursor-default group"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
                 <span className="w-1 h-1 rounded-full bg-accent/50 group-hover:bg-accent shrink-0 transition-colors duration-200" />
@@ -411,8 +411,8 @@ export default function Contact() {
                 <div className="inline-flex items-center gap-1.5 bg-accent/8 border border-accent/20 text-accent text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
                   <span className="w-1 h-1 rounded-full bg-accent" /> {t('contact.faq_teaser_badge')}
                 </div>
-                <h3 className="text-lg font-black text-text mb-2">{t('contact.faq_teaser_title')}</h3>
-                <p className="text-muted text-sm leading-relaxed mb-4">{t('contact.faq_teaser_desc')}</p>
+                <h3 className="text-xl font-black text-text mb-2">{t('contact.faq_teaser_title')}</h3>
+                <p className="text-muted text-base leading-relaxed mb-4">{t('contact.faq_teaser_desc')}</p>
 
                 {/* Preview questions */}
                 <div className="space-y-2 mb-5">
@@ -421,14 +421,14 @@ export default function Contact() {
                       <span className="w-4 h-4 rounded-full bg-surface border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/60" />
                       </span>
-                      <span className="text-xs text-muted">{q}</span>
+                      <span className="text-sm text-muted">{q}</span>
                     </div>
                   ))}
                 </div>
 
                 <Link
                   to="/faq"
-                  className="inline-flex items-center gap-2 bg-accent/10 hover:bg-accent/18 border border-accent/30 hover:border-accent/60 text-accent text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 group/link"
+                  className="inline-flex items-center gap-2 bg-accent/10 hover:bg-accent/18 border border-accent/30 hover:border-accent/60 text-accent text-base font-bold px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 group/link"
                 >
                   {t('contact.faq_teaser_cta')}
                   <span className="group-hover/link:translate-x-1 transition-transform duration-200"><IconArrow /></span>
@@ -437,8 +437,8 @@ export default function Contact() {
 
               {/* Right: stat */}
               <div className="flex flex-col items-center justify-center gap-1 shrink-0 bg-accent/5 border border-accent/15 rounded-2xl px-8 py-6 md:py-8">
-                <span className="text-4xl font-black text-accent">26+</span>
-                <span className="text-xs text-muted text-center">{t('contact.faq_stat_label1')}<br/>{t('contact.faq_stat_label2')}</span>
+                <span className="text-5xl font-black text-accent">26+</span>
+                <span className="text-sm text-muted text-center">{t('contact.faq_stat_label1')}<br/>{t('contact.faq_stat_label2')}</span>
               </div>
             </div>
           </div>
@@ -471,19 +471,19 @@ export default function Contact() {
               </svg>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-black text-text mb-2">{t('contact.bio_name')}</h3>
-            <p className="text-accent text-xs font-bold uppercase tracking-widest mb-4">{t('contact.bio_role')}</p>
+            <h3 className="text-2xl md:text-3xl font-black text-text mb-2">{t('contact.bio_name')}</h3>
+            <p className="text-accent text-sm font-bold uppercase tracking-widest mb-4">{t('contact.bio_role')}</p>
 
             <div className="h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent mb-5 max-w-xs mx-auto" />
 
-            <p className="text-muted/90 text-sm md:text-base leading-relaxed italic max-w-md mx-auto mb-6">
+            <p className="text-muted/90 text-base md:text-lg leading-relaxed italic max-w-md mx-auto mb-6">
               "{t('contact.cta')}"
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
                 href={`mailto:${email}`}
-                className="inline-flex items-center gap-2 bg-accent text-bg text-sm font-bold px-6 py-2.5 rounded-full hover:bg-accent/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(34,197,94,0.35)]"
+                className="inline-flex items-center gap-2 bg-accent text-bg text-base font-bold px-6 py-2.5 rounded-full hover:bg-accent/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(34,197,94,0.35)]"
               >
                 <IconMail /> {t('contact.email_label')}
               </a>
@@ -491,7 +491,7 @@ export default function Contact() {
                 href={`https://zalo.me/${zalo}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-surface border border-blue-500/30 text-blue-400 text-sm font-bold px-6 py-2.5 rounded-full hover:border-blue-500/60 hover:bg-blue-500/8 transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-surface border border-blue-500/30 text-blue-400 text-base font-bold px-6 py-2.5 rounded-full hover:border-blue-500/60 hover:bg-blue-500/8 transition-all duration-200 hover:-translate-y-0.5"
               >
                 <IconChat /> Zalo
               </a>

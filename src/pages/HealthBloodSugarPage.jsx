@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#f59e0b';
@@ -90,29 +90,29 @@ function BSCalculator() {
       <h3 className="font-bold mb-4" style={{ color: COLOR }}>Phân Tích Đường Huyết</h3>
       <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <div>
-          <label className="text-xs text-muted mb-1 block">Đường huyết đói (mg/dL)</label>
-          <input value={fasting} onChange={e => setFasting(e.target.value)} type="number" placeholder="vd: 95" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-sm text-text" />
+          <label className="text-sm text-muted mb-1 block">Đường huyết đói (mg/dL)</label>
+          <input value={fasting} onChange={e => setFasting(e.target.value)} type="number" placeholder="vd: 95" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-base text-text" />
         </div>
         <div>
-          <label className="text-xs text-muted mb-1 block">Sau ăn 2h (mg/dL)</label>
-          <input value={postMeal} onChange={e => setPostMeal(e.target.value)} type="number" placeholder="vd: 130" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-sm text-text" />
+          <label className="text-sm text-muted mb-1 block">Sau ăn 2h (mg/dL)</label>
+          <input value={postMeal} onChange={e => setPostMeal(e.target.value)} type="number" placeholder="vd: 130" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-base text-text" />
         </div>
         <div>
-          <label className="text-xs text-muted mb-1 block">HbA1c (%)</label>
-          <input value={hba1c} onChange={e => setHba1c(e.target.value)} type="number" step="0.1" placeholder="vd: 5.8" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-sm text-text" />
+          <label className="text-sm text-muted mb-1 block">HbA1c (%)</label>
+          <input value={hba1c} onChange={e => setHba1c(e.target.value)} type="number" step="0.1" placeholder="vd: 5.8" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-base text-text" />
         </div>
       </div>
-      <button onClick={analyze} className="px-5 py-2 rounded-xl text-sm font-bold text-white mb-4" style={{ background: COLOR }}>Phân Tích</button>
-      {result && result.length === 0 && <p className="text-muted text-sm">Nhập ít nhất một chỉ số để phân tích.</p>}
+      <button onClick={analyze} className="px-5 py-2 rounded-xl text-base font-bold text-white mb-4" style={{ background: COLOR }}>Phân Tích</button>
+      {result && result.length === 0 && <p className="text-muted text-base">Nhập ít nhất một chỉ số để phân tích.</p>}
       {result && result.length > 0 && (
         <div className="space-y-2">
           {result.map((r, i) => (
             <div key={i} className="rounded-xl border border-border p-3 flex items-start gap-3">
               <div className="w-2 h-2 rounded-full mt-1 shrink-0" style={{ background: r.color }} />
               <div>
-                <div className="text-xs text-muted">{r.label}</div>
-                <div className="font-bold text-sm" style={{ color: r.color }}>{r.status}</div>
-                <div className="text-xs text-muted mt-1">{r.action}</div>
+                <div className="text-sm text-muted">{r.label}</div>
+                <div className="font-bold text-base" style={{ color: r.color }}>{r.status}</div>
+                <div className="text-sm text-muted mt-1">{r.action}</div>
               </div>
             </div>
           ))}
@@ -148,17 +148,17 @@ export default function HealthBloodSugarPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🍬</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🍬</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Đường Huyết</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Đường Huyết</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Chỉ số chuyển hóa · Tiểu đường type 2
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Đường huyết (glucose máu) cho biết cơ thể xử lý năng lượng từ thức ăn như thế nào. Mất kiểm soát đường huyết kéo dài gây tổn thương thần kinh, thận, mắt và mạch máu.
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function HealthBloodSugarPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop" alt="Đường huyết" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             Kiểm soát từ bữa ăn hàng ngày
           </span>
         </div>
@@ -179,59 +179,59 @@ export default function HealthBloodSugarPage() {
       {b0.age && (
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
-            <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
-            <p className="text-xs text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age >= 45 ? 'Nên xét nghiệm đường huyết đói và HbA1c hàng năm.' : 'Xét nghiệm mỗi 3 năm nếu không có yếu tố nguy cơ.'}</p>
+            <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
+            <p className="text-sm text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age >= 45 ? 'Nên xét nghiệm đường huyết đói và HbA1c hàng năm.' : 'Xét nghiệm mỗi 3 năm nếu không có yếu tố nguy cơ.'}</p>
           </div>
         </RevealBlock>
       )}
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Phân Loại Đường Huyết</h2>
-        <p className="text-muted text-sm mb-6">Xét nghiệm sau nhịn ăn ít nhất 8 tiếng hoặc 2 giờ sau bữa ăn (test dung nạp glucose).</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Phân Loại Đường Huyết</h2>
+        <p className="text-muted text-base mb-6">Xét nghiệm sau nhịn ăn ít nhất 8 tiếng hoặc 2 giờ sau bữa ăn (test dung nạp glucose).</p>
         <div className="space-y-2">
           {BS_CATS.map((c, i) => (
             <div key={i} className="rounded-2xl border border-border p-4 flex flex-col sm:flex-row sm:items-center gap-3" style={{ background: c.bg }}>
               <div className="flex items-center gap-2 sm:w-56 shrink-0">
                 <div className="w-2 h-2 rounded-full shrink-0" style={{ background: c.color }} />
-                <span className="text-sm font-bold text-text">{c.label}</span>
+                <span className="text-base font-bold text-text">{c.label}</span>
               </div>
-              <span className="font-mono text-sm font-bold sm:w-32 shrink-0" style={{ color: c.color }}>{c.range}</span>
-              <p className="text-xs text-muted flex-1">{c.note}</p>
+              <span className="font-mono text-base font-bold sm:w-32 shrink-0" style={{ color: c.color }}>{c.range}</span>
+              <p className="text-sm text-muted flex-1">{c.note}</p>
             </div>
           ))}
         </div>
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>HbA1c — Đường Huyết Trung Bình 3 Tháng</h2>
-        <p className="text-muted text-sm mb-6">HbA1c đo lượng glucose gắn vào hemoglobin, phản ánh kiểm soát đường huyết trong 2–3 tháng qua. Không bị ảnh hưởng bởi ăn uống ngay trước đó.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>HbA1c — Đường Huyết Trung Bình 3 Tháng</h2>
+        <p className="text-muted text-base mb-6">HbA1c đo lượng glucose gắn vào hemoglobin, phản ánh kiểm soát đường huyết trong 2–3 tháng qua. Không bị ảnh hưởng bởi ăn uống ngay trước đó.</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {HBAC_CATS.map((c, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-3 h-3 rounded-full" style={{ background: c.color }} />
-                <span className="font-bold text-sm text-text">{c.label}</span>
-                <span className="ml-auto font-mono text-sm font-bold" style={{ color: c.color }}>{c.range}</span>
+                <span className="font-bold text-base text-text">{c.label}</span>
+                <span className="ml-auto font-mono text-base font-bold" style={{ color: c.color }}>{c.range}</span>
               </div>
-              <p className="text-xs text-muted">{c.note}</p>
+              <p className="text-sm text-muted">{c.note}</p>
             </div>
           ))}
         </div>
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-4" style={{ color: COLOR }}>Phân Tích Chỉ Số Của Bạn</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Phân Tích Chỉ Số Của Bạn</h2>
         <BSCalculator />
       </RevealBlock>
 
       <RevealBlock delay={4} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Kiểm Soát Đường Huyết Bằng Lối Sống</h2>
-        <p className="text-muted text-sm mb-6">Thay đổi lối sống có thể ngăn 58% trường hợp tiền tiểu đường không tiến triển thành tiểu đường type 2 (theo nghiên cứu DPP của NIH).</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Kiểm Soát Đường Huyết Bằng Lối Sống</h2>
+        <p className="text-muted text-base mb-6">Thay đổi lối sống có thể ngăn 58% trường hợp tiền tiểu đường không tiến triển thành tiểu đường type 2 (theo nghiên cứu DPP của NIH).</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {DIET_TIPS.map((t, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex gap-3 hover:border-amber-500/30 transition-colors">
-              <span className="text-2xl">{t.icon}</span>
-              <p className="text-sm text-muted">{t.tip}</p>
+              <span className="text-3xl">{t.icon}</span>
+              <p className="text-base text-muted">{t.tip}</p>
             </div>
           ))}
         </div>
@@ -240,7 +240,7 @@ export default function HealthBloodSugarPage() {
       <RevealBlock delay={5} className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold text-text mb-3">Khi Nào Cần Gặp Bác Sĩ?</h3>
-          <ul className="space-y-2 text-sm text-muted">
+          <ul className="space-y-2 text-base text-muted">
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span> Đường huyết đói ≥ 126 mg/dL trong 2 lần đo riêng biệt</li>
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span> HbA1c ≥ 6.5% xác nhận bởi xét nghiệm</li>
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span> Triệu chứng: khát nước nhiều, tiểu nhiều, mệt mỏi không rõ nguyên nhân, nhìn mờ</li>
@@ -250,7 +250,7 @@ export default function HealthBloodSugarPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
     </div>
   );
 }

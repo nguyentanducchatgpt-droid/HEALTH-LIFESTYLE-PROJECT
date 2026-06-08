@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { GOAL_TYPES, PROGRAM_PHASES, WEEKLY_SCHEDULE } from '../data/programData';
@@ -140,17 +140,17 @@ function ProgramDetail({ goalId, weeks }) {
                 {curPhase.tag}
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-2 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-2 leading-tight">
               {weeks} tuần · {curPhase.name}
             </h2>
-            <p className="text-white/60 text-sm leading-relaxed max-w-lg">{curPhase.desc}</p>
+            <p className="text-white/60 text-base leading-relaxed max-w-lg">{curPhase.desc}</p>
           </div>
 
           {/* Right: week position */}
           <div className="shrink-0 text-right">
-            <div className="text-white/30 text-xs mb-1 uppercase tracking-widest">Tuần hiện tại</div>
+            <div className="text-white/30 text-sm mb-1 uppercase tracking-widest">Tuần hiện tại</div>
             <div className={`text-6xl font-black ${goal.text}`}>{weeks}</div>
-            <div className="text-white/40 text-xs">/ 24</div>
+            <div className="text-white/40 text-sm">/ 24</div>
           </div>
         </div>
 
@@ -194,7 +194,7 @@ function ProgramDetail({ goalId, weeks }) {
         <div className={`md:col-span-2 relative overflow-hidden rounded-2xl border ${goal.border} ${goal.bg} p-5`}>
           <div className="absolute top-0 right-0 w-32 h-32 bg-current opacity-3 rounded-full blur-2xl pointer-events-none" />
           <div className="flex items-center gap-3 mb-4">
-            <div className={`w-10 h-10 rounded-xl ${goal.bg} border ${goal.border} flex items-center justify-center text-xl`}>
+            <div className={`w-10 h-10 rounded-xl ${goal.bg} border ${goal.border} flex items-center justify-center text-2xl`}>
               {curPhase.icon}
             </div>
             <div>
@@ -204,7 +204,7 @@ function ProgramDetail({ goalId, weeks }) {
           </div>
           <div className="bg-bg/60 rounded-xl p-4 border border-border/40">
             <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">🏋️ Tập trọng tâm</p>
-            <p className="text-sm text-text leading-relaxed">{curPhase.focus}</p>
+            <p className="text-base text-text leading-relaxed">{curPhase.focus}</p>
           </div>
         </div>
 
@@ -212,18 +212,18 @@ function ProgramDetail({ goalId, weeks }) {
         <div className="flex flex-col gap-4">
           <div className="flex-1 rounded-2xl border border-border bg-surface p-4">
             <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">🥗 Dinh dưỡng</p>
-            <p className="text-xs text-text leading-relaxed">{curPhase.nutrition}</p>
+            <p className="text-sm text-text leading-relaxed">{curPhase.nutrition}</p>
           </div>
           <div className={`rounded-2xl border ${goal.border} bg-surface p-4`}>
             <p className={`text-[10px] font-bold uppercase tracking-wider mb-2 ${goal.text}`}>🏁 Mốc đánh dấu</p>
-            <p className="text-xs text-text leading-relaxed">{curPhase.milestone}</p>
+            <p className="text-sm text-text leading-relaxed">{curPhase.milestone}</p>
           </div>
         </div>
       </div>
 
       {/* ── Weekly schedule ── */}
       <div>
-        <h3 className="text-xs font-bold text-muted uppercase tracking-widest mb-4 flex items-center gap-2">
+        <h3 className="text-sm font-bold text-muted uppercase tracking-widest mb-4 flex items-center gap-2">
           <span className="w-px h-4 bg-border" />
           Lịch mẫu 1 tuần
         </h3>
@@ -254,12 +254,12 @@ function ProgramDetail({ goalId, weeks }) {
                 )}
                 {!img && (
                   <div className={`h-20 flex items-center justify-center ${s.c.bg} border-b border-border/50`}>
-                    <span className="text-3xl">{s.icon}</span>
+                    <span className="text-4xl">{s.icon}</span>
                   </div>
                 )}
                 {/* Text */}
                 <div className="p-3">
-                  <p className="text-xs font-semibold text-text leading-tight mb-1 group-hover:text-accent transition-colors duration-200">{s.type}</p>
+                  <p className="text-sm font-semibold text-text leading-tight mb-1 group-hover:text-accent transition-colors duration-200">{s.type}</p>
                   <p className="text-[10px] text-muted leading-snug">{s.detail}</p>
                 </div>
               </div>
@@ -333,16 +333,16 @@ export default function SamplePrograms() {
           className={`relative z-10 px-4 md:px-8 pt-16 pb-14 transition-all duration-700 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {/* Top badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-xs font-bold px-4 py-1.5 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-sm font-bold px-4 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
             {t('nav.sample_programs') || 'Lộ trình mẫu'}
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-black text-text leading-[1.05] mb-4">
+          <h1 className="text-6xl md:text-6xl font-black text-text leading-[1.05] mb-4">
             Tìm lộ trình<br />
             <span className="text-gradient">phù hợp bạn</span>
           </h1>
-          <p className="text-muted text-base leading-relaxed max-w-lg mb-8">
+          <p className="text-muted text-lg leading-relaxed max-w-lg mb-8">
             6 mục tiêu · 24 tuần · Mỗi lộ trình được xây dựng theo nguyên tắc:
             tập đúng form trước, tăng volume sau, cá nhân hóa theo tiến bộ.
           </p>
@@ -356,9 +356,9 @@ export default function SamplePrograms() {
               { icon:'⏱️', n:'10+',label:'Phút/ngày' },
             ].map(s => (
               <div key={s.n} className="flex items-center gap-2.5 bg-surface/70 backdrop-blur-sm border border-border px-4 py-2.5 rounded-xl">
-                <span className="text-lg">{s.icon}</span>
+                <span className="text-xl">{s.icon}</span>
                 <div>
-                  <span className="text-gradient font-extrabold text-base block leading-none">{s.n}</span>
+                  <span className="text-gradient font-extrabold text-lg block leading-none">{s.n}</span>
                   <span className="text-muted text-[10px] leading-none">{s.label}</span>
                 </div>
               </div>
@@ -382,8 +382,8 @@ export default function SamplePrograms() {
         <div className={`transition-all duration-700 ${step1InView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-3">
-              <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-sm font-black flex items-center justify-center">1</span>
-              <h2 className="text-xl font-bold text-text">Bạn muốn đạt được gì?</h2>
+              <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-base font-black flex items-center justify-center">1</span>
+              <h2 className="text-2xl font-bold text-text">Bạn muốn đạt được gì?</h2>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
           </div>
@@ -449,9 +449,9 @@ export default function SamplePrograms() {
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <div className="flex items-end justify-between">
                       <div>
-                        <p className="text-2xl mb-1.5 group-hover:scale-110 transition-transform duration-300 inline-block">{g.icon}</p>
-                        <h3 className="font-black text-lg text-white leading-tight">{g.title}</h3>
-                        <p className="text-xs text-white/60 mt-0.5">{g.subtitle}</p>
+                        <p className="text-3xl mb-1.5 group-hover:scale-110 transition-transform duration-300 inline-block">{g.icon}</p>
+                        <h3 className="font-black text-xl text-white leading-tight">{g.title}</h3>
+                        <p className="text-sm text-white/60 mt-0.5">{g.subtitle}</p>
                       </div>
                       <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                         isSelected
@@ -486,12 +486,12 @@ export default function SamplePrograms() {
         >
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-3">
-              <span className={`w-8 h-8 rounded-full border text-sm font-black flex items-center justify-center ${selectedGoal?.bg} ${selectedGoal?.border} ${selectedGoal?.text}`}>2</span>
-              <h2 className="text-xl font-bold text-text">Bạn có bao nhiêu tuần?</h2>
+              <span className={`w-8 h-8 rounded-full border text-base font-black flex items-center justify-center ${selectedGoal?.bg} ${selectedGoal?.border} ${selectedGoal?.text}`}>2</span>
+              <h2 className="text-2xl font-bold text-text">Bạn có bao nhiêu tuần?</h2>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
             {weekDuration && (
-              <span className={`text-sm font-bold ${selectedGoal?.text}`}>{weekDuration} tuần đã chọn</span>
+              <span className={`text-base font-bold ${selectedGoal?.text}`}>{weekDuration} tuần đã chọn</span>
             )}
           </div>
 
@@ -501,13 +501,13 @@ export default function SamplePrograms() {
               <img src={selectedCard?.heroImg} alt="" className="w-full h-full object-cover" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className={`font-bold text-sm ${selectedGoal?.text}`}>{selectedGoal?.icon} {selectedGoal?.title}</p>
-              <p className="text-xs text-muted">{selectedGoal?.subtitle} · {selectedGoal?.rpe}</p>
+              <p className={`font-bold text-base ${selectedGoal?.text}`}>{selectedGoal?.icon} {selectedGoal?.title}</p>
+              <p className="text-sm text-muted">{selectedGoal?.subtitle} · {selectedGoal?.rpe}</p>
             </div>
             <button
               type="button"
               onClick={() => { setGoalType(null); setWeekDuration(null); }}
-              className="shrink-0 text-xs text-muted hover:text-text px-3 py-1.5 rounded-lg border border-border hover:border-border-bright transition-colors duration-150"
+              className="shrink-0 text-sm text-muted hover:text-text px-3 py-1.5 rounded-lg border border-border hover:border-border-bright transition-colors duration-150"
             >
               Đổi
             </button>
@@ -528,7 +528,7 @@ export default function SamplePrograms() {
                   onClick={() => setWeekDuration(w)}
                   onMouseEnter={() => setHoveredWeek(w)}
                   onMouseLeave={() => setHoveredWeek(null)}
-                  className={`relative group aspect-square rounded-xl text-xs font-bold transition-all duration-200 border flex flex-col items-center justify-center overflow-hidden ${
+                  className={`relative group aspect-square rounded-xl text-sm font-bold transition-all duration-200 border flex flex-col items-center justify-center overflow-hidden ${
                     isActive
                       ? `${selectedGoal?.bg} ${selectedGoal?.border} ${selectedGoal?.text} ring-2 ${selectedGoal?.ring} shadow-lg scale-[1.08]`
                       : `bg-surface border-border text-muted hover:border-border-bright hover:text-text hover:scale-[1.05]`
@@ -544,7 +544,7 @@ export default function SamplePrograms() {
                     />
                   )}
 
-                  <span className="text-sm font-black leading-none">{w}</span>
+                  <span className="text-base font-black leading-none">{w}</span>
                   <span className={`text-[8px] font-normal leading-none mt-0.5 ${isActive ? selectedGoal?.text : 'text-muted/40'}`}>T</span>
 
                   {/* Tooltip on hover */}
@@ -581,8 +581,8 @@ export default function SamplePrograms() {
         <section className="mb-16">
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-3">
-              <span className={`w-8 h-8 rounded-full border text-sm font-black flex items-center justify-center ${selectedGoal?.bg} ${selectedGoal?.border} ${selectedGoal?.text}`}>3</span>
-              <h2 className="text-xl font-bold text-text">Lộ trình của bạn</h2>
+              <span className={`w-8 h-8 rounded-full border text-base font-black flex items-center justify-center ${selectedGoal?.bg} ${selectedGoal?.border} ${selectedGoal?.text}`}>3</span>
+              <h2 className="text-2xl font-bold text-text">Lộ trình của bạn</h2>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
           </div>
@@ -593,14 +593,14 @@ export default function SamplePrograms() {
       {/* Empty state */}
       {!goalType && (
         <div className="py-20 text-center">
-          <div className="text-5xl mb-4 opacity-30">🗂️</div>
-          <p className="text-muted text-sm">Chọn mục tiêu ở trên để bắt đầu</p>
+          <div className="text-6xl mb-4 opacity-30">🗂️</div>
+          <p className="text-muted text-base">Chọn mục tiêu ở trên để bắt đầu</p>
         </div>
       )}
       {goalType && !weekDuration && (
         <div className="py-16 text-center">
-          <div className={`text-5xl mb-4 ${selectedGoal?.text}`}>{selectedGoal?.icon}</div>
-          <p className="text-muted text-sm">Chọn số tuần để xem lộ trình chi tiết</p>
+          <div className={`text-6xl mb-4 ${selectedGoal?.text}`}>{selectedGoal?.icon}</div>
+          <p className="text-muted text-base">Chọn số tuần để xem lộ trình chi tiết</p>
         </div>
       )}
 
@@ -611,21 +611,21 @@ export default function SamplePrograms() {
         <div className="absolute inset-0 bg-gradient-to-br from-accent/8 via-transparent to-teal-500/5 pointer-events-none" />
         <div className="absolute inset-0 grid-dots opacity-15 pointer-events-none" />
         <div className="relative p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-          <div className="text-5xl shrink-0">🚀</div>
+          <div className="text-6xl shrink-0">🚀</div>
           <div className="flex-1 text-center md:text-left">
-            <h2 className="text-xl font-bold text-text mb-2">Sẵn sàng bắt đầu?</h2>
-            <p className="text-muted text-sm leading-relaxed">Xem lộ trình 12 tuần đầy đủ, khung ngày, nhịp tuần và bộ test tiến bộ.</p>
+            <h2 className="text-2xl font-bold text-text mb-2">Sẵn sàng bắt đầu?</h2>
+            <p className="text-muted text-base leading-relaxed">Xem lộ trình 12 tuần đầy đủ, khung ngày, nhịp tuần và bộ test tiến bộ.</p>
           </div>
           <div className="flex gap-3 shrink-0">
             <Link
               to="/program"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-border hover:border-accent/30 text-text text-sm font-medium rounded-xl transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-border hover:border-accent/30 text-text text-base font-medium rounded-xl transition-all duration-200 hover:-translate-y-0.5"
             >
               ← Lộ trình 12 tuần
             </Link>
             <Link
               to="/pillar/a"
-              className="btn-shimmer inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-sm shadow-[0_0_24px_rgba(34,197,94,0.20)] hover:shadow-[0_0_36px_rgba(34,197,94,0.35)] hover:-translate-y-0.5"
+              className="btn-shimmer inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-base shadow-[0_0_24px_rgba(34,197,94,0.20)] hover:shadow-[0_0_36px_rgba(34,197,94,0.35)] hover:-translate-y-0.5"
             >
               Bắt đầu tập →
             </Link>

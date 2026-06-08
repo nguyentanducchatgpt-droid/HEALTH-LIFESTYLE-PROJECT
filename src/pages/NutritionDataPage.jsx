@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+﻿import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import ThoughtBubble from '../components/ThoughtBubble';
 
@@ -350,7 +350,7 @@ export default function NutritionDataPage() {
 
       {/* Breadcrumb */}
       <div className="mb-8">
-        <Link to="/pillar/b" className="text-sm text-muted hover:text-cyan-400 transition-colors">
+        <Link to="/pillar/b" className="text-base text-muted hover:text-cyan-400 transition-colors">
           ← Dinh Dưỡng
         </Link>
       </div>
@@ -358,17 +358,17 @@ export default function NutritionDataPage() {
       {/* Hero */}
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 bg-cyan-400/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border border-cyan-400/20 shrink-0 nd-float flex items-center justify-center">
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border border-cyan-400/20 shrink-0 nd-float flex items-center justify-center">
           🗄️
         </div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight nd-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight nd-fade-in-up">
             Cấu Trúc <span className="nd-shimmer">Dữ Liệu</span>
           </h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 mt-3 mb-4 px-3 py-1 bg-cyan-400/10 border border-cyan-400/20 rounded-full">
+          <span className="inline-block text-sm font-bold uppercase tracking-widest text-cyan-400 mt-3 mb-4 px-3 py-1 bg-cyan-400/10 border border-cyan-400/20 rounded-full">
             Nutrition Database Architecture
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             4 cơ sở dữ liệu liên kết — từ hồ sơ cá nhân, thư viện thực phẩm đến nhật ký hằng ngày và tổng kết tuần. Công thức tính macro, điểm tuân thủ và template Notion/Google Sheet.
           </p>
         </div>
@@ -383,7 +383,7 @@ export default function NutritionDataPage() {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-cyan-400 text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-cyan-400/20">
+          <span className="absolute bottom-4 left-6 text-cyan-400 text-sm font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-cyan-400/20">
             Database Architecture
           </span>
         </div>
@@ -396,8 +396,8 @@ export default function NutritionDataPage() {
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border border-cyan-400/20 bg-surface p-5">
           <div className="flex flex-wrap items-center gap-2 mb-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-cyan-400">Chỉ số của bạn</span>
-            <span className="text-xs text-muted">({s.w}kg · {s.h}cm · {s.a}t · {s.s === 'male' ? 'Nam' : 'Nữ'} · {s.act.label} · {s.gm.label})</span>
+            <span className="text-sm font-bold uppercase tracking-widest text-cyan-400">Chỉ số của bạn</span>
+            <span className="text-sm text-muted">({s.w}kg · {s.h}cm · {s.a}t · {s.s === 'male' ? 'Nam' : 'Nữ'} · {s.act.label} · {s.gm.label})</span>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
             {[
@@ -411,21 +411,21 @@ export default function NutritionDataPage() {
                   <ThoughtBubble text={item.tip} idx={`ndbar-${i}`} color={item.color} />
                 </div>
                 <div className="rounded-xl bg-bg border border-border p-3 text-center cursor-default">
-                  <div className="text-lg font-bold" style={{ color: item.color }}>{item.val}</div>
-                  <div className="text-xs text-muted mt-0.5">{item.label}</div>
+                  <div className="text-xl font-bold" style={{ color: item.color }}>{item.val}</div>
+                  <div className="text-sm text-muted mt-0.5">{item.label}</div>
                 </div>
               </div>
             ))}
           </div>
           <div className="mb-2">
-            <div className="flex justify-between text-xs text-muted mb-1">
+            <div className="flex justify-between text-sm text-muted mb-1">
               <span>Protein {s.proteinPct}%</span>
               <span>Fat {s.fatPct}%</span>
               <span>Carb {s.carbPct}%</span>
             </div>
             <MacroBar s={s} height={20} />
           </div>
-          <div className="flex gap-4 text-xs text-muted mt-2">
+          <div className="flex gap-4 text-sm text-muted mt-2">
             <span><span className="inline-block w-2 h-2 rounded bg-green-500 mr-1" />P: {s.proteinG}g</span>
             <span><span className="inline-block w-2 h-2 rounded bg-yellow-500 mr-1" />F: {s.fatG}g</span>
             <span><span className="inline-block w-2 h-2 rounded bg-cyan-500 mr-1" />C: {s.carbG}g</span>
@@ -435,8 +435,8 @@ export default function NutritionDataPage() {
 
       {/* Section 1: Data Architecture */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl font-bold text-text mb-2">Kiến Trúc Dữ Liệu</h2>
-        <p className="text-muted text-sm mb-6">4 cơ sở dữ liệu liên kết — click để xem chi tiết từng database.</p>
+        <h2 className="text-3xl font-bold text-text mb-2">Kiến Trúc Dữ Liệu</h2>
+        <p className="text-muted text-base mb-6">4 cơ sở dữ liệu liên kết — click để xem chi tiết từng database.</p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {DATABASES.map(db => (
@@ -449,15 +449,15 @@ export default function NutritionDataPage() {
                 background: activeDb === db.id ? `${db.color}10` : undefined,
               }}
             >
-              <div className="text-2xl mb-2">{db.emoji}</div>
-              <div className="text-xs font-bold" style={{ color: db.color }}>{db.label}</div>
-              <div className="text-xs text-muted mt-1 leading-snug">{db.fields.length} fields</div>
+              <div className="text-3xl mb-2">{db.emoji}</div>
+              <div className="text-sm font-bold" style={{ color: db.color }}>{db.label}</div>
+              <div className="text-sm text-muted mt-1 leading-snug">{db.fields.length} fields</div>
             </button>
           ))}
         </div>
 
         <div className="rounded-2xl border border-border bg-surface p-5 mb-6">
-          <h3 className="text-sm font-bold text-muted uppercase tracking-widest mb-4">Data Flow Diagram</h3>
+          <h3 className="text-base font-bold text-muted uppercase tracking-widest mb-4">Data Flow Diagram</h3>
           <DataFlowDiagram />
         </div>
       </RevealBlock>
@@ -469,16 +469,16 @@ export default function NutritionDataPage() {
             <img src={activeDbData.image} alt={activeDbData.label} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-bg/90 to-bg/40" />
             <div className="absolute inset-0 flex items-center px-6 gap-4">
-              <span className="text-3xl">{activeDbData.emoji}</span>
+              <span className="text-4xl">{activeDbData.emoji}</span>
               <div>
-                <div className="text-lg font-bold text-text">{activeDbData.label}</div>
-                <div className="text-xs text-muted">{activeDbData.notion} · {activeDbData.gsheet}</div>
+                <div className="text-xl font-bold text-text">{activeDbData.label}</div>
+                <div className="text-sm text-muted">{activeDbData.notion} · {activeDbData.gsheet}</div>
               </div>
               <div className="ml-auto flex gap-2">
-                <span className="text-xs px-2 py-1 rounded-full border font-medium" style={{ color: activeDbData.color, borderColor: `${activeDbData.color}40`, background: `${activeDbData.color}15` }}>
+                <span className="text-sm px-2 py-1 rounded-full border font-medium" style={{ color: activeDbData.color, borderColor: `${activeDbData.color}40`, background: `${activeDbData.color}15` }}>
                   Notion
                 </span>
-                <span className="text-xs px-2 py-1 rounded-full border border-border text-muted bg-surface">
+                <span className="text-sm px-2 py-1 rounded-full border border-border text-muted bg-surface">
                   Google Sheet
                 </span>
               </div>
@@ -486,16 +486,16 @@ export default function NutritionDataPage() {
           </div>
 
           <div className="p-5">
-            <p className="text-sm text-muted mb-5">{activeDbData.desc}</p>
+            <p className="text-base text-muted mb-5">{activeDbData.desc}</p>
 
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full text-base">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left text-xs text-muted font-semibold uppercase tracking-wider pb-3 pr-4">Field</th>
-                    <th className="text-left text-xs text-muted font-semibold uppercase tracking-wider pb-3 pr-4">Type</th>
-                    <th className="text-left text-xs text-muted font-semibold uppercase tracking-wider pb-3 pr-4">Description</th>
-                    <th className="text-left text-xs text-muted font-semibold uppercase tracking-wider pb-3">Example</th>
+                    <th className="text-left text-sm text-muted font-semibold uppercase tracking-wider pb-3 pr-4">Field</th>
+                    <th className="text-left text-sm text-muted font-semibold uppercase tracking-wider pb-3 pr-4">Type</th>
+                    <th className="text-left text-sm text-muted font-semibold uppercase tracking-wider pb-3 pr-4">Description</th>
+                    <th className="text-left text-sm text-muted font-semibold uppercase tracking-wider pb-3">Example</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -504,21 +504,21 @@ export default function NutritionDataPage() {
                       <td className="py-2.5 pr-4">
                         <div className="flex items-center gap-2">
                           <span>{f.icon}</span>
-                          <span className="font-mono text-xs text-text font-medium">{f.name}</span>
+                          <span className="font-mono text-sm text-text font-medium">{f.name}</span>
                         </div>
                       </td>
                       <td className="py-2.5 pr-4">
-                        <span className={`text-xs px-2 py-0.5 rounded border font-medium ${TYPE_BADGE[f.type] || 'bg-surface text-muted border-border'}`}>
+                        <span className={`text-sm px-2 py-0.5 rounded border font-medium ${TYPE_BADGE[f.type] || 'bg-surface text-muted border-border'}`}>
                           {f.type}
                         </span>
                       </td>
-                      <td className="py-2.5 pr-4 text-muted text-xs leading-relaxed">
+                      <td className="py-2.5 pr-4 text-muted text-sm leading-relaxed">
                         {f.desc}
                         {f.formula && (
                           <div className="font-mono text-orange-400 text-[10px] mt-0.5 opacity-70">{f.formula}</div>
                         )}
                       </td>
-                      <td className="py-2.5 text-xs text-text/60 font-mono">{f.example}</td>
+                      <td className="py-2.5 text-sm text-text/60 font-mono">{f.example}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -530,8 +530,8 @@ export default function NutritionDataPage() {
 
       {/* Section 3: Google Sheet Formulas */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl font-bold text-text mb-2">Google Sheet Formulas</h2>
-        <p className="text-muted text-sm mb-6">Copy công thức vào Google Sheet — thay ô tham chiếu theo layout của bạn.</p>
+        <h2 className="text-3xl font-bold text-text mb-2">Google Sheet Formulas</h2>
+        <p className="text-muted text-base mb-6">Copy công thức vào Google Sheet — thay ô tham chiếu theo layout của bạn.</p>
 
         <div className="grid md:grid-cols-2 gap-3">
           {GSHEET_FORMULAS.map((f, i) => (
@@ -539,12 +539,12 @@ export default function NutritionDataPage() {
               style={{ borderColor: `${f.color}30` }}>
               <div className="flex items-start justify-between gap-3 mb-2">
                 <div>
-                  <div className="text-sm font-bold text-text">{f.label}</div>
-                  <div className="text-xs text-muted">{f.desc}</div>
+                  <div className="text-base font-bold text-text">{f.label}</div>
+                  <div className="text-sm text-muted">{f.desc}</div>
                 </div>
                 <button
                   onClick={() => handleCopy(f.formula, i)}
-                  className="shrink-0 text-xs px-2.5 py-1 rounded-lg border transition-all duration-150"
+                  className="shrink-0 text-sm px-2.5 py-1 rounded-lg border transition-all duration-150"
                   style={{
                     color: copiedIdx === i ? '#22c55e' : f.color,
                     borderColor: copiedIdx === i ? '#22c55e40' : `${f.color}40`,
@@ -554,10 +554,10 @@ export default function NutritionDataPage() {
                   {copiedIdx === i ? '✓ Copied' : 'Copy'}
                 </button>
               </div>
-              <div className="font-mono text-xs bg-bg rounded-lg px-3 py-2 border border-border text-text/80 mb-2">
+              <div className="font-mono text-sm bg-bg rounded-lg px-3 py-2 border border-border text-text/80 mb-2">
                 {f.formula}
               </div>
-              <div className="text-xs text-muted">
+              <div className="text-sm text-muted">
                 Ví dụ kết quả: <span className="font-semibold" style={{ color: f.color }}>{f.example}</span>
               </div>
             </div>
@@ -565,34 +565,34 @@ export default function NutritionDataPage() {
         </div>
 
         <div className="mt-5 rounded-xl border border-cyan-400/20 bg-cyan-400/5 p-4">
-          <div className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">Ví dụ với số liệu của bạn</div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-            <div><span className="text-muted text-xs">BMR:</span> <span className="text-cyan-400 font-bold">{s.bmr.toLocaleString()} kcal</span></div>
-            <div><span className="text-muted text-xs">TDEE:</span> <span className="text-cyan-400 font-bold">{s.tdee.toLocaleString()} kcal</span></div>
-            <div><span className="text-muted text-xs">Mục tiêu:</span> <span className="text-cyan-400 font-bold">{s.targetKcal.toLocaleString()} kcal</span></div>
-            <div><span className="text-muted text-xs">BMI:</span> <span className="text-cyan-400 font-bold">{s.bmi}</span></div>
+          <div className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-2">Ví dụ với số liệu của bạn</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-base">
+            <div><span className="text-muted text-sm">BMR:</span> <span className="text-cyan-400 font-bold">{s.bmr.toLocaleString()} kcal</span></div>
+            <div><span className="text-muted text-sm">TDEE:</span> <span className="text-cyan-400 font-bold">{s.tdee.toLocaleString()} kcal</span></div>
+            <div><span className="text-muted text-sm">Mục tiêu:</span> <span className="text-cyan-400 font-bold">{s.targetKcal.toLocaleString()} kcal</span></div>
+            <div><span className="text-muted text-sm">BMI:</span> <span className="text-cyan-400 font-bold">{s.bmi}</span></div>
           </div>
         </div>
       </RevealBlock>
 
       {/* Section 4: Notion Formulas */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl font-bold text-text mb-2">Notion Database Formulas</h2>
-        <p className="text-muted text-sm mb-6">Dán vào property Formula trong Notion database.</p>
+        <h2 className="text-3xl font-bold text-text mb-2">Notion Database Formulas</h2>
+        <p className="text-muted text-base mb-6">Dán vào property Formula trong Notion database.</p>
 
         <div className="space-y-3">
           {NOTION_FORMULAS.map((f, i) => (
             <div key={i} className="rounded-xl border border-border bg-surface p-4">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-bold text-text">{f.prop}</span>
+                <span className="text-base font-bold text-text">{f.prop}</span>
                 <button
                   onClick={() => handleCopyNotion(f.formula, i)}
-                  className="text-xs px-2.5 py-1 rounded-lg border border-lime-500/30 text-lime-400 bg-lime-500/10 transition-all duration-150 hover:bg-lime-500/20"
+                  className="text-sm px-2.5 py-1 rounded-lg border border-lime-500/30 text-lime-400 bg-lime-500/10 transition-all duration-150 hover:bg-lime-500/20"
                 >
                   {copiedNotion === i ? '✓ Copied' : 'Copy'}
                 </button>
               </div>
-              <pre className="font-mono text-xs bg-bg rounded-lg px-3 py-2.5 border border-border text-lime-300/80 whitespace-pre-wrap break-all">
+              <pre className="font-mono text-sm bg-bg rounded-lg px-3 py-2.5 border border-border text-lime-300/80 whitespace-pre-wrap break-all">
                 {f.formula}
               </pre>
             </div>
@@ -602,15 +602,15 @@ export default function NutritionDataPage() {
 
       {/* Section 5: Food Library + Calculator */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl font-bold text-text mb-2">Thư Viện Thực Phẩm</h2>
-        <p className="text-muted text-sm mb-6">15 thực phẩm Việt Nam phổ biến — dinh dưỡng trên khẩu phần chuẩn.</p>
+        <h2 className="text-3xl font-bold text-text mb-2">Thư Viện Thực Phẩm</h2>
+        <p className="text-muted text-base mb-6">15 thực phẩm Việt Nam phổ biến — dinh dưỡng trên khẩu phần chuẩn.</p>
 
         <div className="flex gap-2 mb-5 flex-wrap">
           {cats.map(cat => (
             <button
               key={cat}
               onClick={() => { setFoodCat(cat); setSelectedFoodIdx(0); }}
-              className="text-xs px-3 py-1.5 rounded-full border font-medium transition-all duration-150"
+              className="text-sm px-3 py-1.5 rounded-full border font-medium transition-all duration-150"
               style={{
                 color: foodCat === cat ? catColors[cat] : undefined,
                 borderColor: foodCat === cat ? `${catColors[cat]}60` : undefined,
@@ -631,13 +631,13 @@ export default function NutritionDataPage() {
               style={selectedFoodIdx === i ? { borderColor: `${catColors[foodCat]}60`, background: `${catColors[foodCat]}10` } : {}}
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xl">{food.emoji}</span>
+                <span className="text-2xl">{food.emoji}</span>
                 <div>
-                  <div className="text-sm font-semibold text-text">{food.name}</div>
-                  <div className="text-xs text-muted">{food.portion}</div>
+                  <div className="text-base font-semibold text-text">{food.name}</div>
+                  <div className="text-sm text-muted">{food.portion}</div>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-1 text-xs">
+              <div className="grid grid-cols-3 gap-1 text-sm">
                 <div className="text-center"><div className="font-bold text-orange-400">{food.kcal}</div><div className="text-muted">kcal</div></div>
                 <div className="text-center"><div className="font-bold text-green-400">{food.protein}g</div><div className="text-muted">P</div></div>
                 <div className="text-center"><div className="font-bold text-cyan-400">{food.carb}g</div><div className="text-muted">C</div></div>
@@ -648,12 +648,12 @@ export default function NutritionDataPage() {
 
         {/* Food Calculator */}
         <div className="rounded-2xl border border-lime-500/30 bg-surface p-5">
-          <h3 className="text-sm font-bold uppercase tracking-widest text-lime-400 mb-4">Máy Tính Khẩu Phần</h3>
+          <h3 className="text-base font-bold uppercase tracking-widest text-lime-400 mb-4">Máy Tính Khẩu Phần</h3>
           <div className="flex flex-col md:flex-row gap-5 items-start">
             <div className="flex-1">
-              <label className="text-xs text-muted mb-1.5 block">Chọn thực phẩm</label>
+              <label className="text-sm text-muted mb-1.5 block">Chọn thực phẩm</label>
               <select
-                className="w-full bg-bg border border-border rounded-xl px-3 py-2.5 text-sm text-text focus:outline-none focus:border-lime-500/50"
+                className="w-full bg-bg border border-border rounded-xl px-3 py-2.5 text-base text-text focus:outline-none focus:border-lime-500/50"
                 value={selectedFoodIdx}
                 onChange={e => setSelectedFoodIdx(Number(e.target.value))}
               >
@@ -663,26 +663,26 @@ export default function NutritionDataPage() {
               </select>
             </div>
             <div className="w-full md:w-44">
-              <label className="text-xs text-muted mb-1.5 block">Mục tiêu protein (g)</label>
+              <label className="text-sm text-muted mb-1.5 block">Mục tiêu protein (g)</label>
               <input
                 type="number"
                 min={1}
                 max={300}
                 value={targetProtein}
                 onChange={e => setTargetProtein(Number(e.target.value) || 1)}
-                className="w-full bg-bg border border-border rounded-xl px-3 py-2.5 text-sm text-text focus:outline-none focus:border-lime-500/50"
+                className="w-full bg-bg border border-border rounded-xl px-3 py-2.5 text-base text-text focus:outline-none focus:border-lime-500/50"
               />
             </div>
             <div className="w-full md:w-56 rounded-xl border border-lime-500/30 bg-lime-500/5 p-4">
-              <div className="text-xs text-muted mb-1">Cần ăn</div>
-              <div className="text-2xl font-bold text-lime-400">{gramsNeeded}g</div>
-              <div className="text-xs text-muted">{selectedFood.name}</div>
-              <div className="text-xs text-muted mt-1">
+              <div className="text-sm text-muted mb-1">Cần ăn</div>
+              <div className="text-3xl font-bold text-lime-400">{gramsNeeded}g</div>
+              <div className="text-sm text-muted">{selectedFood.name}</div>
+              <div className="text-sm text-muted mt-1">
                 = {kcalResult} kcal · {targetProtein}g protein
               </div>
             </div>
           </div>
-          <div className="mt-4 text-xs text-muted font-mono bg-bg rounded-lg px-3 py-2 border border-border">
+          <div className="mt-4 text-sm text-muted font-mono bg-bg rounded-lg px-3 py-2 border border-border">
             = ({targetProtein} / {selectedFood.protein}) × 100 = {gramsNeeded}g
           </div>
         </div>
@@ -690,8 +690,8 @@ export default function NutritionDataPage() {
 
       {/* Section 6: Nutrition Score Calculator */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl font-bold text-text mb-2">Nutrition Score Calculator</h2>
-        <p className="text-muted text-sm mb-6">Tích các tiêu chí bạn đã đạt hôm nay để xem điểm tuân thủ.</p>
+        <h2 className="text-3xl font-bold text-text mb-2">Nutrition Score Calculator</h2>
+        <p className="text-muted text-base mb-6">Tích các tiêu chí bạn đã đạt hôm nay để xem điểm tuân thủ.</p>
 
         <div className="rounded-2xl border border-cyan-400/20 bg-surface p-6">
           <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -718,10 +718,10 @@ export default function NutritionDataPage() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span>{c.icon}</span>
-                      <span className={`text-sm font-medium transition-colors ${scoreChecks[c.key] ? 'text-text' : 'text-muted'}`}>{c.label}</span>
-                      <span className="text-xs font-bold rounded-full px-1.5 py-0.5" style={{ color: c.color, background: `${c.color}15` }}>+{c.points}</span>
+                      <span className={`text-base font-medium transition-colors ${scoreChecks[c.key] ? 'text-text' : 'text-muted'}`}>{c.label}</span>
+                      <span className="text-sm font-bold rounded-full px-1.5 py-0.5" style={{ color: c.color, background: `${c.color}15` }}>+{c.points}</span>
                     </div>
-                    <div className="text-xs text-muted mt-0.5">{c.tip}</div>
+                    <div className="text-sm text-muted mt-0.5">{c.tip}</div>
                   </div>
                 </label>
               ))}
@@ -729,11 +729,11 @@ export default function NutritionDataPage() {
 
             <div className="flex flex-col items-center gap-3">
               <ScoreRing score={score} />
-              <div className="text-sm font-bold" style={{ color: scoreLevelColor }}>{scoreLevel}</div>
-              <div className="text-xs text-muted text-center">
+              <div className="text-base font-bold" style={{ color: scoreLevelColor }}>{scoreLevel}</div>
+              <div className="text-sm text-muted text-center">
                 {score === 100 ? 'Hoàn hảo! Duy trì nhé.' : score >= 80 ? 'Rất tốt hôm nay.' : score >= 50 ? 'Hãy cải thiện thêm.' : 'Cần chú ý hơn.'}
               </div>
-              <div className="text-xs text-muted text-center mt-1">
+              <div className="text-sm text-muted text-center mt-1">
                 Formula: <span className="font-mono text-cyan-400">{score}/100</span>
               </div>
             </div>
@@ -743,8 +743,8 @@ export default function NutritionDataPage() {
 
       {/* Section 7: Daily Log Template */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl font-bold text-text mb-2">Daily Log Template</h2>
-        <p className="text-muted text-sm mb-6">Mẫu nhật ký một ngày điển hình.</p>
+        <h2 className="text-3xl font-bold text-text mb-2">Daily Log Template</h2>
+        <p className="text-muted text-base mb-6">Mẫu nhật ký một ngày điển hình.</p>
 
         <div className="rounded-2xl border border-cyan-400/20 bg-surface overflow-hidden">
           <div className="px-5 py-3 border-b border-border bg-bg">
@@ -752,11 +752,11 @@ export default function NutritionDataPage() {
               <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
               <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
               <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
-              <span className="text-xs text-muted ml-2">Daily Nutrition Log — 2025-01-15</span>
+              <span className="text-sm text-muted ml-2">Daily Nutrition Log — 2025-01-15</span>
             </div>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-xs">
+            <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border">
                   <th className="text-left text-muted font-semibold px-4 py-2.5 uppercase tracking-wider">Field</th>
@@ -794,10 +794,10 @@ export default function NutritionDataPage() {
       <RevealBlock>
         <div className="rounded-2xl border border-yellow-500/20 bg-yellow-500/5 p-5">
           <div className="flex gap-3 items-start">
-            <span className="text-xl shrink-0 nd-pulse">⚠️</span>
+            <span className="text-2xl shrink-0 nd-pulse">⚠️</span>
             <div>
-              <div className="text-sm font-bold text-yellow-400 mb-1">Lưu ý quan trọng</div>
-              <div className="text-xs text-muted leading-relaxed">
+              <div className="text-base font-bold text-yellow-400 mb-1">Lưu ý quan trọng</div>
+              <div className="text-sm text-muted leading-relaxed">
                 Các công thức tính macro (Mifflin-St Jeor, TDEE, phân chia macro) là ước tính khoa học — không thay thế tư vấn từ chuyên gia dinh dưỡng. Số liệu cá nhân hóa dựa trên dữ liệu bạn nhập ở trang B0. Để đạt kết quả tốt nhất, theo dõi thực tế 4–6 tuần và điều chỉnh theo phản hồi cơ thể.
               </div>
             </div>

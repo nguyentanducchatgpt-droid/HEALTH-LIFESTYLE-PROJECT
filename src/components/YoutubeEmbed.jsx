@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+﻿import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function YoutubeEmbed({ videoId, title }) {
@@ -23,8 +23,8 @@ export default function YoutubeEmbed({ videoId, title }) {
     return (
       <div className="bg-surface border border-border rounded-xl flex items-center justify-center aspect-video">
         <div className="text-center px-6">
-          <div className="text-5xl mb-3">▶️</div>
-          <p className="text-muted text-sm">{t('video.youtube_placeholder')}</p>
+          <div className="text-6xl mb-3">▶️</div>
+          <p className="text-muted text-base">{t('video.youtube_placeholder')}</p>
         </div>
       </div>
     );
@@ -43,7 +43,7 @@ export default function YoutubeEmbed({ videoId, title }) {
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center bg-surface">
-          <div className="text-4xl animate-pulse">⏳</div>
+          <div className="text-5xl animate-pulse">⏳</div>
         </div>
       )}
     </div>

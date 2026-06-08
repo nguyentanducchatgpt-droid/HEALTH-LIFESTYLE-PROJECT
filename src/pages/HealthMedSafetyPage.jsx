@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#10b981';
@@ -99,17 +99,17 @@ export default function HealthMedSafetyPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>💊</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>💊</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">An Toàn Thuốc</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">An Toàn Thuốc</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Dùng thuốc đúng cách · Tránh rủi ro
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Thuốc chữa bệnh khi dùng đúng, nhưng gây hại khi dùng sai. Hiểu đúng về thuốc — bao gồm thuốc kê đơn, OTC, và thực phẩm chức năng — là kỹ năng bảo vệ sức khỏe thiết yếu.
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function HealthMedSafetyPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&auto=format&fit=crop" alt="An toàn thuốc" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             Dùng đúng thuốc · Đúng liều · Đúng lúc
           </span>
         </div>
@@ -128,15 +128,15 @@ export default function HealthMedSafetyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock delay={0} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>5 Quy Tắc An Toàn Thuốc</h2>
-        <p className="text-muted text-sm mb-6">Áp dụng mỗi khi bắt đầu một loại thuốc mới.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>5 Quy Tắc An Toàn Thuốc</h2>
+        <p className="text-muted text-base mb-6">Áp dụng mỗi khi bắt đầu một loại thuốc mới.</p>
         <div className="space-y-4">
           {MED_RULES.map((r, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-5 flex gap-4 hover:border-emerald-500/30 transition-colors">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style={{ background: `rgba(${RGB},0.12)` }}>{r.icon}</div>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0" style={{ background: `rgba(${RGB},0.12)` }}>{r.icon}</div>
               <div>
                 <div className="font-bold text-text mb-1">{r.num}. {r.title}</div>
-                <p className="text-sm text-muted">{r.desc}</p>
+                <p className="text-base text-muted">{r.desc}</p>
               </div>
             </div>
           ))}
@@ -144,26 +144,26 @@ export default function HealthMedSafetyPage() {
       </RevealBlock>
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Những Câu Nguy Hiểm Cần Nhớ</h2>
-        <p className="text-muted text-sm mb-6">Những quan niệm phổ biến nhưng sai — và tại sao chúng nguy hiểm.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Những Câu Nguy Hiểm Cần Nhớ</h2>
+        <p className="text-muted text-base mb-6">Những quan niệm phổ biến nhưng sai — và tại sao chúng nguy hiểm.</p>
         <div className="space-y-3">
           {DANGER_PHRASES.map((d, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4">
-              <div className="font-bold text-sm text-amber-400 mb-2">"{d.phrase}"</div>
-              <p className="text-xs text-muted flex gap-2"><span className="text-red-400 shrink-0">⚠</span>{d.risk}</p>
+              <div className="font-bold text-base text-amber-400 mb-2">"{d.phrase}"</div>
+              <p className="text-sm text-muted flex gap-2"><span className="text-red-400 shrink-0">⚠</span>{d.risk}</p>
             </div>
           ))}
         </div>
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Hướng Dẫn Bổ Sung Thực Phẩm Chức Năng</h2>
-        <p className="text-muted text-sm mb-6">TPCN không phải thuốc nhưng cũng cần dùng đúng cách. Luôn thông báo cho bác sĩ tất cả TPCN đang dùng.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Hướng Dẫn Bổ Sung Thực Phẩm Chức Năng</h2>
+        <p className="text-muted text-base mb-6">TPCN không phải thuốc nhưng cũng cần dùng đúng cách. Luôn thông báo cho bác sĩ tất cả TPCN đang dùng.</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {SUPPLEMENT_CHECK.map((s, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 hover:border-emerald-500/30 transition-colors">
-              <div className="font-bold text-sm text-text mb-1">{s.label}</div>
-              <p className="text-xs text-muted">{s.note}</p>
+              <div className="font-bold text-base text-text mb-1">{s.label}</div>
+              <p className="text-sm text-muted">{s.note}</p>
             </div>
           ))}
         </div>
@@ -172,7 +172,7 @@ export default function HealthMedSafetyPage() {
       <RevealBlock delay={3} className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold text-text mb-3">Luôn Nói Với Bác Sĩ / Dược Sĩ</h3>
-          <ul className="space-y-2 text-sm text-muted">
+          <ul className="space-y-2 text-base text-muted">
             <li>• Tất cả thuốc đang dùng (kể cả OTC, vitamin, thảo dược)</li>
             <li>• Dị ứng thuốc đã gặp trước đây</li>
             <li>• Đang mang thai, cho con bú, hoặc có kế hoạch mang thai</li>
@@ -182,8 +182,8 @@ export default function HealthMedSafetyPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <p className="text-xs text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục sức khỏe. Không thay thế tư vấn của bác sĩ hoặc dược sĩ.</p>
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <p className="text-sm text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục sức khỏe. Không thay thế tư vấn của bác sĩ hoặc dược sĩ.</p>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
     </div>
   );
 }

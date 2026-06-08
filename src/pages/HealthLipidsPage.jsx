@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#8b5cf6';
@@ -119,17 +119,17 @@ export default function HealthLipidsPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🩸</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🩸</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Mỡ Máu</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Mỡ Máu</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Bảng lipid máu · Tim mạch
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Rối loạn mỡ máu (dyslipidemia) là yếu tố nguy cơ hàng đầu của bệnh tim mạch và đột quỵ. Hầu hết trường hợp không có triệu chứng — chỉ phát hiện qua xét nghiệm máu.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function HealthLipidsPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80&auto=format&fit=crop" alt="Mỡ máu" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             Hiểu bảng lipid máu của bạn
           </span>
         </div>
@@ -150,32 +150,32 @@ export default function HealthLipidsPage() {
       {b0.age && (
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
-            <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
-            <p className="text-xs text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age >= 35 ? 'Nên xét nghiệm bảng lipid máu đầy đủ hàng năm.' : 'Xét nghiệm mỗi 5 năm nếu không có yếu tố nguy cơ.'}</p>
+            <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
+            <p className="text-sm text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age >= 35 ? 'Nên xét nghiệm bảng lipid máu đầy đủ hàng năm.' : 'Xét nghiệm mỗi 5 năm nếu không có yếu tố nguy cơ.'}</p>
           </div>
         </RevealBlock>
       )}
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Bảng Lipid Máu</h2>
-        <p className="text-muted text-sm mb-6">Nhấn vào từng chỉ số để xem chi tiết. Xét nghiệm sau nhịn ăn 9–12 tiếng để có kết quả chính xác nhất.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Bảng Lipid Máu</h2>
+        <p className="text-muted text-base mb-6">Nhấn vào từng chỉ số để xem chi tiết. Xét nghiệm sau nhịn ăn 9–12 tiếng để có kết quả chính xác nhất.</p>
         <div className="space-y-3">
           {LIPID_PANEL.map((panel, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
               <button onClick={() => setOpenPanel(openPanel === i ? null : i)} className="w-full flex items-center gap-3 p-4 text-left hover:bg-white/5 transition-colors">
-                <div className="font-bold text-sm text-text flex-1">{panel.name}</div>
-                <span className="text-xs text-muted">{panel.unit}</span>
+                <div className="font-bold text-base text-text flex-1">{panel.name}</div>
+                <span className="text-sm text-muted">{panel.unit}</span>
                 <span className="text-muted ml-2">{openPanel === i ? '▲' : '▼'}</span>
               </button>
               {openPanel === i && (
                 <div className="px-4 pb-4 border-t border-border pt-3">
-                  <p className="text-xs text-muted mb-4">{panel.desc}</p>
+                  <p className="text-sm text-muted mb-4">{panel.desc}</p>
                   <div className="space-y-2">
                     {panel.levels.map((l, j) => (
                       <div key={j} className="flex items-center gap-3">
                         <div className="w-2 h-2 rounded-full shrink-0" style={{ background: l.color }} />
-                        <span className="text-xs font-bold" style={{ color: l.color }}>{l.label}</span>
-                        <span className="text-xs text-muted ml-auto font-mono">{l.range}</span>
+                        <span className="text-sm font-bold" style={{ color: l.color }}>{l.label}</span>
+                        <span className="text-sm text-muted ml-auto font-mono">{l.range}</span>
                       </div>
                     ))}
                   </div>
@@ -187,15 +187,15 @@ export default function HealthLipidsPage() {
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Thực Phẩm Tốt Cho Mỡ Máu</h2>
-        <p className="text-muted text-sm mb-5">Chế độ ăn đúng có thể giảm LDL 15–20% trong 6–12 tuần.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thực Phẩm Tốt Cho Mỡ Máu</h2>
+        <p className="text-muted text-base mb-5">Chế độ ăn đúng có thể giảm LDL 15–20% trong 6–12 tuần.</p>
         <div className="grid sm:grid-cols-2 gap-3 mb-6">
           {FOOD_HELP.map((f, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex gap-3 hover:border-purple-500/30 transition-colors">
-              <span className="text-xl">{f.icon}</span>
+              <span className="text-2xl">{f.icon}</span>
               <div>
-                <div className="font-bold text-sm text-text">{f.name}</div>
-                <div className="text-xs text-muted">{f.effect}</div>
+                <div className="font-bold text-base text-text">{f.name}</div>
+                <div className="text-sm text-muted">{f.effect}</div>
               </div>
             </div>
           ))}
@@ -204,10 +204,10 @@ export default function HealthLipidsPage() {
         <div className="grid sm:grid-cols-2 gap-3">
           {FOOD_AVOID.map((f, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex gap-3">
-              <span className="text-xl">{f.icon}</span>
+              <span className="text-2xl">{f.icon}</span>
               <div>
-                <div className="font-bold text-sm text-text">{f.name}</div>
-                <div className="text-xs text-muted">{f.reason}</div>
+                <div className="font-bold text-base text-text">{f.name}</div>
+                <div className="text-sm text-muted">{f.reason}</div>
               </div>
             </div>
           ))}
@@ -217,7 +217,7 @@ export default function HealthLipidsPage() {
       <RevealBlock delay={3} className="mb-10">
         <div className="rounded-2xl border p-5 space-y-3" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold text-text">Tần Suất Xét Nghiệm</h3>
-          <div className="text-sm text-muted space-y-2">
+          <div className="text-base text-muted space-y-2">
             <p>• <strong className="text-text">Người bình thường &lt; 35 tuổi:</strong> Mỗi 5 năm nếu không có yếu tố nguy cơ</p>
             <p>• <strong className="text-text">35–65 tuổi:</strong> Mỗi 1–2 năm</p>
             <p>• <strong className="text-text">Có nguy cơ tim mạch, tiểu đường, hút thuốc:</strong> Hàng năm</p>
@@ -227,7 +227,7 @@ export default function HealthLipidsPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
     </div>
   );
 }

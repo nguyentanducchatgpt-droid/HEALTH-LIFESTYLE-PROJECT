@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ThoughtBubble from '../components/ThoughtBubble';
 
@@ -467,8 +467,8 @@ function ArcGauge({ score }) {
         <text x={80} y={96} textAnchor="middle" fontSize={10} fill="#9ca3af">điểm</text>
       </svg>
       <div className="text-center">
-        <div className="font-bold text-sm" style={{ color: tierColor }}>{tier}</div>
-        <div className="text-xs text-gray-500 mt-1">{phaseRange}</div>
+        <div className="font-bold text-base" style={{ color: tierColor }}>{tier}</div>
+        <div className="text-sm text-gray-500 mt-1">{phaseRange}</div>
       </div>
     </div>
   );
@@ -484,29 +484,29 @@ function WeekDetail({ wk }) {
     <div className="n24-fade-up rounded-2xl border p-6 mt-4"
       style={{ borderColor: `${wk.color}33`, background: `rgba(${wk.rgb},0.04)` }}>
       <div className="flex flex-wrap items-center gap-3 mb-4">
-        <span className="text-3xl">{wk.emoji}</span>
+        <span className="text-4xl">{wk.emoji}</span>
         <div>
-          <h3 className="font-bold text-lg text-white">Tuần {wk.n}: {wk.title}</h3>
-          <span className="text-xs px-2 py-0.5 rounded-full font-semibold"
+          <h3 className="font-bold text-xl text-white">Tuần {wk.n}: {wk.title}</h3>
+          <span className="text-sm px-2 py-0.5 rounded-full font-semibold"
             style={{ background: `rgba(${phaseObj.rgb},0.15)`, color: phaseObj.color }}>
             Giai Đoạn {wk.phase}: {phaseObj.label}
           </span>
         </div>
       </div>
-      <p className="text-sm italic mb-3" style={{ color: wk.color }}>{wk.tagline}</p>
-      <div className="text-sm text-gray-300 mb-5 p-3 rounded-xl" style={{ background: `rgba(${wk.rgb},0.07)` }}>
+      <p className="text-base italic mb-3" style={{ color: wk.color }}>{wk.tagline}</p>
+      <div className="text-base text-gray-300 mb-5 p-3 rounded-xl" style={{ background: `rgba(${wk.rgb},0.07)` }}>
         <span className="font-semibold text-white">Mục tiêu tuần: </span>{wk.goal}
       </div>
 
       {/* Plate */}
       {wk.plate && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Đĩa Ăn Dự Án</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Đĩa Ăn Dự Án</div>
           <div className="grid grid-cols-2 gap-2">
             {wk.plate.map((p,i) => (
               <div key={i} className="flex items-start gap-2 p-2.5 rounded-lg bg-black/30 border border-white/5">
-                <span className="text-xs font-bold px-1.5 py-0.5 rounded" style={{ background: `${p.color}22`, color: p.color }}>{p.part}</span>
-                <span className="text-xs text-gray-300">{p.label}</span>
+                <span className="text-sm font-bold px-1.5 py-0.5 rounded" style={{ background: `${p.color}22`, color: p.color }}>{p.part}</span>
+                <span className="text-sm text-gray-300">{p.label}</span>
               </div>
             ))}
           </div>
@@ -516,12 +516,12 @@ function WeekDetail({ wk }) {
       {/* Proteins */}
       {wk.proteins && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nguồn Đạm</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Nguồn Đạm</div>
           <div className="grid grid-cols-2 gap-2">
             {wk.proteins.map((p,i) => (
               <div key={i} className="p-2.5 rounded-lg bg-black/30 border border-white/5">
-                <div className="text-xs font-semibold" style={{ color: wk.color }}>{p.group}</div>
-                <div className="text-xs text-gray-400 mt-0.5">{p.items}</div>
+                <div className="text-sm font-semibold" style={{ color: wk.color }}>{p.group}</div>
+                <div className="text-sm text-gray-400 mt-0.5">{p.items}</div>
               </div>
             ))}
           </div>
@@ -531,10 +531,10 @@ function WeekDetail({ wk }) {
       {/* Rules list */}
       {wk.rules && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nguyên Tắc</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Nguyên Tắc</div>
           <ul className="space-y-1.5">
             {wk.rules.map((r,i) => (
-              <li key={i} className="text-sm text-gray-300 flex items-start gap-2">
+              <li key={i} className="text-base text-gray-300 flex items-start gap-2">
                 <span style={{ color: wk.color }}>▸</span>{r}
               </li>
             ))}
@@ -545,10 +545,10 @@ function WeekDetail({ wk }) {
       {/* Formula table */}
       {wk.formula && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Công Thức Năng Lượng</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Công Thức Năng Lượng</div>
           <div className="rounded-xl overflow-hidden border border-white/5">
             {wk.formula.map((f,i) => (
-              <div key={i} className={`flex gap-3 px-3 py-2.5 text-sm ${i%2===0?'bg-black/20':'bg-black/10'}`}>
+              <div key={i} className={`flex gap-3 px-3 py-2.5 text-base ${i%2===0?'bg-black/20':'bg-black/10'}`}>
                 <span className="font-semibold w-28 shrink-0" style={{ color: wk.color }}>{f.goal}</span>
                 <span className="text-gray-300">{f.rule}</span>
               </div>
@@ -560,13 +560,13 @@ function WeekDetail({ wk }) {
       {/* Macros */}
       {wk.macros && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Vai Trò Macro</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Vai Trò Macro</div>
           <div className="space-y-2">
             {wk.macros.map((m,i) => (
               <div key={i} className="p-3 rounded-xl bg-black/30 border border-white/5">
-                <div className="font-semibold text-sm" style={{ color: wk.color }}>{m.macro}</div>
-                <div className="text-xs text-gray-400 mt-0.5">{m.role}</div>
-                <div className="text-xs text-gray-500 mt-0.5">Khi nào: {m.when}</div>
+                <div className="font-semibold text-base" style={{ color: wk.color }}>{m.macro}</div>
+                <div className="text-sm text-gray-400 mt-0.5">{m.role}</div>
+                <div className="text-sm text-gray-500 mt-0.5">Khi nào: {m.when}</div>
               </div>
             ))}
           </div>
@@ -576,12 +576,12 @@ function WeekDetail({ wk }) {
       {/* Hand parts */}
       {wk.handParts && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Khẩu Phần Bàn Tay</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Khẩu Phần Bàn Tay</div>
           <div className="grid grid-cols-2 gap-2">
             {wk.handParts.map((hp,i) => (
               <div key={i} className="flex justify-between p-2.5 rounded-lg bg-black/30 border border-white/5">
-                <span className="text-xs font-semibold" style={{ color: wk.color }}>{hp.part}</span>
-                <span className="text-xs text-gray-400">{hp.measure}</span>
+                <span className="text-sm font-semibold" style={{ color: wk.color }}>{hp.part}</span>
+                <span className="text-sm text-gray-400">{hp.measure}</span>
               </div>
             ))}
           </div>
@@ -591,9 +591,9 @@ function WeekDetail({ wk }) {
       {/* Adjust */}
       {wk.adjust && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Điều Chỉnh Theo Mục Tiêu</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Điều Chỉnh Theo Mục Tiêu</div>
           {wk.adjust.map((a,i) => (
-            <div key={i} className="flex gap-2 text-sm py-1.5 border-b border-white/5 last:border-0">
+            <div key={i} className="flex gap-2 text-base py-1.5 border-b border-white/5 last:border-0">
               <span className="font-semibold w-24 shrink-0" style={{ color: wk.color }}>{a.goal}</span>
               <span className="text-gray-400">{a.rule}</span>
             </div>
@@ -604,10 +604,10 @@ function WeekDetail({ wk }) {
       {/* Body Feedback */}
       {wk.bodyFeedback && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Tín Hiệu Cơ Thể</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Tín Hiệu Cơ Thể</div>
           <div className="rounded-xl overflow-hidden border border-white/5">
             {wk.bodyFeedback.map((f,i) => (
-              <div key={i} className={`flex gap-3 px-3 py-2.5 text-xs ${i%2===0?'bg-black/20':'bg-black/10'}`}>
+              <div key={i} className={`flex gap-3 px-3 py-2.5 text-sm ${i%2===0?'bg-black/20':'bg-black/10'}`}>
                 <span className="text-yellow-400 w-44 shrink-0">{f.signal}</span>
                 <span className="text-gray-300">{f.meaning}</span>
               </div>
@@ -619,10 +619,10 @@ function WeekDetail({ wk }) {
       {/* Review table for w4 */}
       {wk.review && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Tổng Kết Tháng 1</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Tổng Kết Tháng 1</div>
           <div className="rounded-xl overflow-hidden border border-white/5">
             {wk.review.map((r,i) => (
-              <div key={i} className={`flex gap-3 px-3 py-2.5 text-xs ${i%2===0?'bg-black/20':'bg-black/10'}`}>
+              <div key={i} className={`flex gap-3 px-3 py-2.5 text-sm ${i%2===0?'bg-black/20':'bg-black/10'}`}>
                 <span className="text-red-400 w-40 shrink-0">{r.signal}</span>
                 <span className="text-green-400">{r.fix}</span>
               </div>
@@ -634,10 +634,10 @@ function WeekDetail({ wk }) {
       {/* Meals */}
       {wk.meals && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Gợi Ý Bữa Ăn</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Gợi Ý Bữa Ăn</div>
           <div className="space-y-1.5">
             {wk.meals.map((m,i) => (
-              <div key={i} className="flex gap-3 text-sm p-2.5 rounded-lg bg-black/20">
+              <div key={i} className="flex gap-3 text-base p-2.5 rounded-lg bg-black/20">
                 <span className="font-semibold w-20 shrink-0" style={{ color: wk.color }}>{m.meal}</span>
                 <span className="text-gray-300">{m.food}</span>
               </div>
@@ -649,11 +649,11 @@ function WeekDetail({ wk }) {
       {/* Timing */}
       {wk.timing && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Thời Điểm Ăn</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Thời Điểm Ăn</div>
           {wk.timing.map((t,i) => (
             <div key={i} className="p-2.5 rounded-lg bg-black/20 mb-1.5">
-              <div className="text-xs font-semibold" style={{ color: wk.color }}>{t.time}</div>
-              <div className="text-xs text-gray-400 mt-0.5">{t.food}</div>
+              <div className="text-sm font-semibold" style={{ color: wk.color }}>{t.time}</div>
+              <div className="text-sm text-gray-400 mt-0.5">{t.food}</div>
             </div>
           ))}
         </div>
@@ -662,10 +662,10 @@ function WeekDetail({ wk }) {
       {/* testMetrics */}
       {wk.testMetrics && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Chỉ Số Đánh Giá</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Chỉ Số Đánh Giá</div>
           <div className="flex flex-wrap gap-2">
             {wk.testMetrics.map((m,i) => (
-              <span key={i} className="text-xs px-2 py-1 rounded-full bg-black/30 border border-white/10 text-gray-300">{m}</span>
+              <span key={i} className="text-sm px-2 py-1 rounded-full bg-black/30 border border-white/10 text-gray-300">{m}</span>
             ))}
           </div>
         </div>
@@ -674,10 +674,10 @@ function WeekDetail({ wk }) {
       {/* Directions */}
       {wk.directions && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Hướng Đi Tiếp Theo</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Hướng Đi Tiếp Theo</div>
           <div className="rounded-xl overflow-hidden border border-white/5">
             {wk.directions.map((d,i) => (
-              <div key={i} className={`flex gap-3 px-3 py-2.5 text-xs ${i%2===0?'bg-black/20':'bg-black/10'}`}>
+              <div key={i} className={`flex gap-3 px-3 py-2.5 text-sm ${i%2===0?'bg-black/20':'bg-black/10'}`}>
                 <span className="text-yellow-400 w-44 shrink-0">{d.result}</span>
                 <span className="text-green-400">→ {d.next}</span>
               </div>
@@ -689,10 +689,10 @@ function WeekDetail({ wk }) {
       {/* MealBoxes */}
       {wk.mealBoxes && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Công Thức Hộp Cơm</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Công Thức Hộp Cơm</div>
           <div className="grid grid-cols-2 gap-2">
             {wk.mealBoxes.map((b,i) => (
-              <div key={i} className="p-3 rounded-xl bg-black/30 border border-white/5 text-xs">
+              <div key={i} className="p-3 rounded-xl bg-black/30 border border-white/5 text-sm">
                 <div style={{ color: wk.color }} className="font-semibold">{b.protein}</div>
                 <div className="text-green-400">+ {b.veg}</div>
                 <div className="text-amber-400">+ {b.carb}</div>
@@ -705,11 +705,11 @@ function WeekDetail({ wk }) {
       {/* EatOutRules */}
       {wk.eatOutRules && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Quy Tắc Ăn Ngoài</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Quy Tắc Ăn Ngoài</div>
           {wk.eatOutRules.map((r,i) => (
             <div key={i} className="p-2.5 rounded-lg bg-black/20 mb-1.5">
-              <span className="font-semibold text-xs" style={{ color: wk.color }}>{r.place}: </span>
-              <span className="text-xs text-gray-300">{r.rule}</span>
+              <span className="font-semibold text-sm" style={{ color: wk.color }}>{r.place}: </span>
+              <span className="text-sm text-gray-300">{r.rule}</span>
             </div>
           ))}
         </div>
@@ -719,15 +719,15 @@ function WeekDetail({ wk }) {
       {wk.dontDo && (
         <div className="mb-5 grid grid-cols-2 gap-3">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-red-400 mb-2">Không Nên</div>
+            <div className="text-sm font-bold uppercase tracking-wider text-red-400 mb-2">Không Nên</div>
             <ul className="space-y-1">
-              {wk.dontDo.map((d,i) => <li key={i} className="text-xs text-gray-400 flex gap-1.5"><span className="text-red-400">✗</span>{d}</li>)}
+              {wk.dontDo.map((d,i) => <li key={i} className="text-sm text-gray-400 flex gap-1.5"><span className="text-red-400">✗</span>{d}</li>)}
             </ul>
           </div>
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-green-400 mb-2">Nên Làm</div>
+            <div className="text-sm font-bold uppercase tracking-wider text-green-400 mb-2">Nên Làm</div>
             <ul className="space-y-1">
-              {wk.doDo.map((d,i) => <li key={i} className="text-xs text-gray-400 flex gap-1.5"><span className="text-green-400">✓</span>{d}</li>)}
+              {wk.doDo.map((d,i) => <li key={i} className="text-sm text-gray-400 flex gap-1.5"><span className="text-green-400">✓</span>{d}</li>)}
             </ul>
           </div>
         </div>
@@ -736,13 +736,13 @@ function WeekDetail({ wk }) {
       {/* Quick Meals */}
       {wk.quickMeals && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Bữa Ăn Nhanh</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Bữa Ăn Nhanh</div>
           {wk.quickMeals.map((q,i) => (
             <div key={i} className="mb-2">
-              <div className="text-xs font-semibold mb-1" style={{ color: wk.color }}>{q.type}</div>
+              <div className="text-sm font-semibold mb-1" style={{ color: wk.color }}>{q.type}</div>
               <div className="flex flex-wrap gap-1.5">
                 {q.options.map((o,j) => (
-                  <span key={j} className="text-xs px-2 py-1 rounded-full bg-black/30 border border-white/10 text-gray-300">{o}</span>
+                  <span key={j} className="text-sm px-2 py-1 rounded-full bg-black/30 border border-white/10 text-gray-300">{o}</span>
                 ))}
               </div>
             </div>
@@ -753,9 +753,9 @@ function WeekDetail({ wk }) {
       {/* Carb Rules */}
       {wk.carbRules && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Carb Theo Ngày</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Carb Theo Ngày</div>
           {wk.carbRules.map((c,i) => (
-            <div key={i} className="flex gap-3 text-sm py-1.5 border-b border-white/5 last:border-0">
+            <div key={i} className="flex gap-3 text-base py-1.5 border-b border-white/5 last:border-0">
               <span className="font-semibold w-40 shrink-0" style={{ color: wk.color }}>{c.day}</span>
               <span className="text-gray-400">{c.rule}</span>
             </div>
@@ -766,18 +766,18 @@ function WeekDetail({ wk }) {
       {/* Water Rules */}
       {wk.waterRules && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Uống Nước Theo Tình Huống</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Uống Nước Theo Tình Huống</div>
           {wk.waterRules.map((r,i) => (
-            <div key={i} className="flex gap-3 text-sm py-1.5 border-b border-white/5 last:border-0">
+            <div key={i} className="flex gap-3 text-base py-1.5 border-b border-white/5 last:border-0">
               <span className="font-semibold w-40 shrink-0" style={{ color: wk.color }}>{r.situation}</span>
               <span className="text-gray-400">{r.rule}</span>
             </div>
           ))}
           {wk.warnings && (
             <div className="mt-2">
-              <div className="text-xs text-red-400 font-semibold mb-1">Dấu hiệu thiếu nước:</div>
+              <div className="text-sm text-red-400 font-semibold mb-1">Dấu hiệu thiếu nước:</div>
               <div className="flex flex-wrap gap-1.5">
-                {wk.warnings.map((w,i) => <span key={i} className="text-xs px-2 py-1 rounded-full bg-red-900/20 border border-red-800/30 text-red-400">{w}</span>)}
+                {wk.warnings.map((w,i) => <span key={i} className="text-sm px-2 py-1 rounded-full bg-red-900/20 border border-red-800/30 text-red-400">{w}</span>)}
               </div>
             </div>
           )}
@@ -788,15 +788,15 @@ function WeekDetail({ wk }) {
       {wk.goodFats && (
         <div className="mb-5 grid grid-cols-2 gap-3">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-green-400 mb-2">Fat Tốt</div>
+            <div className="text-sm font-bold uppercase tracking-wider text-green-400 mb-2">Fat Tốt</div>
             <ul className="space-y-1">
-              {wk.goodFats.map((f,i) => <li key={i} className="text-xs text-gray-400 flex gap-1.5"><span className="text-green-400">+</span>{f}</li>)}
+              {wk.goodFats.map((f,i) => <li key={i} className="text-sm text-gray-400 flex gap-1.5"><span className="text-green-400">+</span>{f}</li>)}
             </ul>
           </div>
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-red-400 mb-2">Hạn Chế</div>
+            <div className="text-sm font-bold uppercase tracking-wider text-red-400 mb-2">Hạn Chế</div>
             <ul className="space-y-1">
-              {wk.limitFats.map((f,i) => <li key={i} className="text-xs text-gray-400 flex gap-1.5"><span className="text-red-400">−</span>{f}</li>)}
+              {wk.limitFats.map((f,i) => <li key={i} className="text-sm text-gray-400 flex gap-1.5"><span className="text-red-400">−</span>{f}</li>)}
             </ul>
           </div>
         </div>
@@ -806,15 +806,15 @@ function WeekDetail({ wk }) {
       {wk.sleepEffects && (
         <div className="mb-5 grid grid-cols-2 gap-3">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-red-400 mb-2">Khi Thiếu Ngủ</div>
+            <div className="text-sm font-bold uppercase tracking-wider text-red-400 mb-2">Khi Thiếu Ngủ</div>
             <ul className="space-y-1">
-              {wk.sleepEffects.map((e,i) => <li key={i} className="text-xs text-gray-400 flex gap-1.5"><span className="text-red-400">!</span>{e}</li>)}
+              {wk.sleepEffects.map((e,i) => <li key={i} className="text-sm text-gray-400 flex gap-1.5"><span className="text-red-400">!</span>{e}</li>)}
             </ul>
           </div>
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-green-400 mb-2">Routine Tối</div>
+            <div className="text-sm font-bold uppercase tracking-wider text-green-400 mb-2">Routine Tối</div>
             <ul className="space-y-1">
-              {wk.nightRoutine.map((r,i) => <li key={i} className="text-xs text-gray-400 flex gap-1.5"><span className="text-green-400">✓</span>{r}</li>)}
+              {wk.nightRoutine.map((r,i) => <li key={i} className="text-sm text-gray-400 flex gap-1.5"><span className="text-green-400">✓</span>{r}</li>)}
             </ul>
           </div>
         </div>
@@ -823,11 +823,11 @@ function WeekDetail({ wk }) {
       {/* Menu Steps */}
       {wk.menuSteps && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Các Bước Lên Thực Đơn</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Các Bước Lên Thực Đơn</div>
           <ol className="space-y-1.5">
             {wk.menuSteps.map((s,i) => (
-              <li key={i} className="text-sm text-gray-300 flex gap-2">
-                <span className="w-5 h-5 rounded-full text-xs font-bold flex items-center justify-center shrink-0" style={{ background: `rgba(${wk.rgb},0.2)`, color: wk.color }}>{i+1}</span>
+              <li key={i} className="text-base text-gray-300 flex gap-2">
+                <span className="w-5 h-5 rounded-full text-sm font-bold flex items-center justify-center shrink-0" style={{ background: `rgba(${wk.rgb},0.2)`, color: wk.color }}>{i+1}</span>
                 {s}
               </li>
             ))}
@@ -838,9 +838,9 @@ function WeekDetail({ wk }) {
       {/* Day Frame */}
       {wk.dayFrame && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Khung Ngày</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Khung Ngày</div>
           {wk.dayFrame.map((d,i) => (
-            <div key={i} className="flex gap-3 text-sm py-1.5 border-b border-white/5 last:border-0">
+            <div key={i} className="flex gap-3 text-base py-1.5 border-b border-white/5 last:border-0">
               <span className="font-semibold w-16 shrink-0" style={{ color: wk.color }}>{d.meal}</span>
               <span className="text-gray-400">{d.food}</span>
             </div>
@@ -851,10 +851,10 @@ function WeekDetail({ wk }) {
       {/* Plateau Check */}
       {wk.plateauCheck && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Checklist Plateau</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Checklist Plateau</div>
           <ul className="space-y-1.5 mb-3">
             {wk.plateauCheck.map((c,i) => (
-              <li key={i} className="text-xs text-gray-300 flex gap-2 items-center">
+              <li key={i} className="text-sm text-gray-300 flex gap-2 items-center">
                 <span className="w-4 h-4 rounded border border-amber-500/50 inline-block shrink-0" />
                 {c}
               </li>
@@ -862,11 +862,11 @@ function WeekDetail({ wk }) {
           </ul>
           {wk.plateauFix && (
             <>
-              <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Cách Xử Lý</div>
+              <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Cách Xử Lý</div>
               {wk.plateauFix.map((f,i) => (
                 <div key={i} className="p-2.5 rounded-lg bg-black/20 mb-1.5">
-                  <div className="text-xs font-semibold" style={{ color: wk.color }}>{f.goal}</div>
-                  <div className="text-xs text-gray-400 mt-0.5">{f.fix}</div>
+                  <div className="text-sm font-semibold" style={{ color: wk.color }}>{f.goal}</div>
+                  <div className="text-sm text-gray-400 mt-0.5">{f.fix}</div>
                 </div>
               ))}
             </>
@@ -879,9 +879,9 @@ function WeekDetail({ wk }) {
         <div className="mb-5 grid grid-cols-2 gap-3">
           {wk.rule8020.map((r,i) => (
             <div key={i} className="p-3 rounded-xl bg-black/30 border border-white/5">
-              <div className="text-xs font-semibold mb-2" style={{ color: wk.color }}>{r.type}</div>
+              <div className="text-sm font-semibold mb-2" style={{ color: wk.color }}>{r.type}</div>
               <ul className="space-y-1">
-                {r.items.map((item,j) => <li key={j} className="text-xs text-gray-400">• {item}</li>)}
+                {r.items.map((item,j) => <li key={j} className="text-sm text-gray-400">• {item}</li>)}
               </ul>
             </div>
           ))}
@@ -889,11 +889,11 @@ function WeekDetail({ wk }) {
       )}
       {wk.partyStrategy && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Chiến Thuật Đi Tiệc</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Chiến Thuật Đi Tiệc</div>
           {wk.partyStrategy.map((p,i) => (
             <div key={i} className="p-2.5 rounded-lg bg-black/20 mb-1.5">
-              <span className="font-semibold text-xs" style={{ color: wk.color }}>{p.time}: </span>
-              <span className="text-xs text-gray-300">{p.action}</span>
+              <span className="font-semibold text-sm" style={{ color: wk.color }}>{p.time}: </span>
+              <span className="text-sm text-gray-300">{p.action}</span>
             </div>
           ))}
         </div>
@@ -902,10 +902,10 @@ function WeekDetail({ wk }) {
       {/* Review Metrics */}
       {wk.reviewMetrics && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Chỉ Số Tổng Kết</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Chỉ Số Tổng Kết</div>
           <div className="flex flex-wrap gap-2">
             {wk.reviewMetrics.map((m,i) => (
-              <span key={i} className="text-xs px-2.5 py-1 rounded-full border font-medium" style={{ borderColor:`${wk.color}44`, color: wk.color, background:`rgba(${wk.rgb},0.08)` }}>{m}</span>
+              <span key={i} className="text-sm px-2.5 py-1 rounded-full border font-medium" style={{ borderColor:`${wk.color}44`, color: wk.color, background:`rgba(${wk.rgb},0.08)` }}>{m}</span>
             ))}
           </div>
         </div>
@@ -914,14 +914,14 @@ function WeekDetail({ wk }) {
       {/* Next 3 Paths */}
       {wk.next3Paths && (
         <div className="mb-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">3 Hướng Tiếp Theo</div>
+          <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">3 Hướng Tiếp Theo</div>
           <div className="space-y-3">
             {wk.next3Paths.map((p,i) => (
               <div key={i} className="p-3 rounded-xl bg-black/30 border border-white/5">
-                <div className="font-semibold text-sm" style={{ color: wk.color }}>{p.path}</div>
-                <div className="text-xs text-gray-500 mb-2">{p.who}</div>
+                <div className="font-semibold text-base" style={{ color: wk.color }}>{p.path}</div>
+                <div className="text-sm text-gray-500 mb-2">{p.who}</div>
                 <ul className="space-y-1">
-                  {p.strategy.map((s,j) => <li key={j} className="text-xs text-gray-400 flex gap-1.5"><span style={{ color: wk.color }}>▸</span>{s}</li>)}
+                  {p.strategy.map((s,j) => <li key={j} className="text-sm text-gray-400 flex gap-1.5"><span style={{ color: wk.color }}>▸</span>{s}</li>)}
                 </ul>
               </div>
             ))}
@@ -931,16 +931,16 @@ function WeekDetail({ wk }) {
 
       {/* Tasks */}
       <div className="mb-4">
-        <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nhiệm Vụ Tuần Này</div>
+        <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">Nhiệm Vụ Tuần Này</div>
         <ul className="space-y-2">
           {wk.tasks.map((t, i) => (
             <li key={i}
               className="flex items-start gap-2.5 cursor-pointer group"
               onClick={() => toggleTask(i)}>
               <span className={`w-4 h-4 rounded border mt-0.5 flex items-center justify-center shrink-0 transition-all ${checkedTasks[i] ? 'border-amber-500 bg-amber-500' : 'border-gray-600 group-hover:border-amber-400'}`}>
-                {checkedTasks[i] && <span className="text-black text-xs font-bold">✓</span>}
+                {checkedTasks[i] && <span className="text-black text-sm font-bold">✓</span>}
               </span>
-              <span className={`text-sm transition-colors ${checkedTasks[i] ? 'line-through text-gray-600' : 'text-gray-300 group-hover:text-white'}`}>{t}</span>
+              <span className={`text-base transition-colors ${checkedTasks[i] ? 'line-through text-gray-600' : 'text-gray-300 group-hover:text-white'}`}>{t}</span>
             </li>
           ))}
         </ul>
@@ -948,10 +948,10 @@ function WeekDetail({ wk }) {
 
       {/* KPI */}
       <div>
-        <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">KPI Tuần</div>
+        <div className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-2">KPI Tuần</div>
         <ul className="space-y-1.5">
           {wk.kpi.map((k, i) => (
-            <li key={i} className="text-xs text-gray-400 flex gap-2 items-start">
+            <li key={i} className="text-sm text-gray-400 flex gap-2 items-start">
               <span className="mt-0.5 shrink-0" style={{ color: wk.color }}>◆</span>{k}
             </li>
           ))}
@@ -1036,26 +1036,26 @@ export default function NutritionTwentyFourWeekPage() {
       <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
 
         {/* Breadcrumb */}
-        <Link to="/pillar/b" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-amber-400 transition-colors mb-8">
+        <Link to="/pillar/b" className="inline-flex items-center gap-1.5 text-base text-gray-500 hover:text-amber-400 transition-colors mb-8">
           ← Dinh Dưỡng
         </Link>
 
         {/* Hero Row */}
         <div className="flex items-start gap-6 mb-10 relative">
           <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(245,158,11,0.05)' }} />
-          <div className="w-20 h-20 rounded-3xl text-5xl flex items-center justify-center shrink-0 border n24-float"
+          <div className="w-20 h-20 rounded-3xl text-6xl flex items-center justify-center shrink-0 border n24-float"
             style={{ background: '#111', borderColor: 'rgba(245,158,11,0.2)' }}>
             🗓️
           </div>
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight n24-fade-up" style={{ color: '#e5e7eb' }}>
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight n24-fade-up" style={{ color: '#e5e7eb' }}>
               Lộ trình Nutrition <span style={{ color: '#f59e0b' }}>24 Tuần</span>
             </h1>
-            <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border"
+            <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border"
               style={{ color: '#f59e0b', background: 'rgba(245,158,11,0.1)', borderColor: 'rgba(245,158,11,0.2)' }}>
               24 Weeks · 6 Phases · Long-Term Mastery
             </span>
-            <p className="text-gray-400 text-base leading-relaxed max-w-2xl">
+            <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
               Từ nhận thức → kiểm soát năng lượng → cá nhân hóa → đời sống thật → tối ưu hiệu suất → tự vận hành. Hệ thống giúp bạn xây thói quen dinh dưỡng bền vững không phụ thuộc vào ý chí.
             </p>
           </div>
@@ -1067,7 +1067,7 @@ export default function NutritionTwentyFourWeekPage() {
             <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80&auto=format&fit=crop"
               alt="Nutrition 24 weeks" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-            <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
+            <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
               style={{ color: '#f59e0b', background: 'rgba(0,0,0,0.6)', borderColor: 'rgba(245,158,11,0.2)' }}>
               Lộ Trình 24 Tuần · 6 Giai Đoạn
             </span>
@@ -1091,8 +1091,8 @@ export default function NutritionTwentyFourWeekPage() {
                 </div>
                 <div className="w-28 h-28 rounded-2xl border flex flex-col items-center justify-center cursor-default"
                   style={{ borderColor: 'rgba(245,158,11,0.2)', background: 'rgba(245,158,11,0.05)' }}>
-                  <span className="text-3xl font-bold" style={{ color: '#f59e0b' }}>{s.n}{s.suffix}</span>
-                  <span className="text-xs text-gray-400 mt-1 text-center px-2">{s.label}</span>
+                  <span className="text-4xl font-bold" style={{ color: '#f59e0b' }}>{s.n}{s.suffix}</span>
+                  <span className="text-sm text-gray-400 mt-1 text-center px-2">{s.label}</span>
                 </div>
               </div>
             ))}
@@ -1103,10 +1103,10 @@ export default function NutritionTwentyFourWeekPage() {
         <RevealBlock className="mb-16">
           <div className="rounded-2xl p-6 border" style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.03))', borderColor: 'rgba(245,158,11,0.25)' }}>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-xl">🎯</span>
-              <h2 className="font-bold text-base" style={{ color: '#f59e0b' }}>Thông Số Cá Nhân Của Bạn</h2>
+              <span className="text-2xl">🎯</span>
+              <h2 className="font-bold text-lg" style={{ color: '#f59e0b' }}>Thông Số Cá Nhân Của Bạn</h2>
             </div>
-            <p className="text-sm text-gray-400 mb-5">Lộ trình dưới đây được cá nhân hóa cho bạn.</p>
+            <p className="text-base text-gray-400 mb-5">Lộ trình dưới đây được cá nhân hóa cho bạn.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
                 { label: 'TDEE Ước Tính', value: `${b0.tdee} kcal` },
@@ -1115,23 +1115,23 @@ export default function NutritionTwentyFourWeekPage() {
                 { label: 'Mục Tiêu', value: GOAL_LABELS[b0.goal] || b0.goal },
               ].map((item, i) => (
                 <div key={i} className="p-3 rounded-xl bg-black/40 text-center">
-                  <div className="text-lg font-bold" style={{ color: '#f59e0b' }}>{item.value}</div>
-                  <div className="text-xs text-gray-500 mt-1">{item.label}</div>
+                  <div className="text-xl font-bold" style={{ color: '#f59e0b' }}>{item.value}</div>
+                  <div className="text-sm text-gray-500 mt-1">{item.label}</div>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-gray-600 mt-3">Dữ liệu từ B0 · {b0.w}kg · {b0.h}cm · {b0.age}t · {b0.sx === 'female' ? 'Nữ' : 'Nam'}</p>
+            <p className="text-sm text-gray-600 mt-3">Dữ liệu từ B0 · {b0.w}kg · {b0.h}cm · {b0.age}t · {b0.sx === 'female' ? 'Nữ' : 'Nam'}</p>
           </div>
         </RevealBlock>
 
         {/* Section 2 — Objectives */}
         <RevealBlock className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6">Bạn Sẽ Học Được Gì?</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Bạn Sẽ Học Được Gì?</h2>
           <div className="grid md:grid-cols-2 gap-3">
             {objectives.map((o, i) => (
               <div key={i} className="flex items-start gap-3 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:border-amber-500/20 transition-colors">
-                <span className="text-xl shrink-0">{o.icon}</span>
-                <span className="text-sm text-gray-300">{o.text}</span>
+                <span className="text-2xl shrink-0">{o.icon}</span>
+                <span className="text-base text-gray-300">{o.text}</span>
               </div>
             ))}
           </div>
@@ -1139,22 +1139,22 @@ export default function NutritionTwentyFourWeekPage() {
 
         {/* Section 3 — Principles */}
         <RevealBlock className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6">4 Nguyên Tắc Cốt Lõi</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">4 Nguyên Tắc Cốt Lõi</h2>
           <div className="space-y-3">
             {principles.map((p) => (
               <div key={p.id} className="rounded-2xl border border-white/5 overflow-hidden">
                 <button
                   className="w-full flex items-center gap-4 p-4 text-left hover:bg-white/[0.02] transition-colors"
                   onClick={() => setOpenPrinciple(prev => prev === p.id ? null : p.id)}>
-                  <span className="text-2xl">{p.icon}</span>
-                  <span className="font-semibold text-sm text-white flex-1">{p.title}</span>
-                  <span className="text-gray-500 text-xs">{openPrinciple === p.id ? '▲' : '▼'}</span>
+                  <span className="text-3xl">{p.icon}</span>
+                  <span className="font-semibold text-base text-white flex-1">{p.title}</span>
+                  <span className="text-gray-500 text-sm">{openPrinciple === p.id ? '▲' : '▼'}</span>
                 </button>
                 {openPrinciple === p.id && (
                   <div className="px-5 pb-5">
                     {p.id === 3 ? (
                       <div>
-                        <p className="text-sm text-gray-400 mb-4">Mỗi giai đoạn xây trên nền của giai đoạn trước. Không nhảy cóc.</p>
+                        <p className="text-base text-gray-400 mb-4">Mỗi giai đoạn xây trên nền của giai đoạn trước. Không nhảy cóc.</p>
                         {/* Staircase SVG */}
                         <div className="overflow-x-auto">
                           <svg viewBox="0 0 540 210" width="100%" style={{ maxWidth: 540, display: 'block' }}>
@@ -1179,7 +1179,7 @@ export default function NutritionTwentyFourWeekPage() {
                         </div>
                       </div>
                     ) : (
-                      <p className="text-sm text-gray-400">{p.body}</p>
+                      <p className="text-base text-gray-400">{p.body}</p>
                     )}
                   </div>
                 )}
@@ -1190,10 +1190,10 @@ export default function NutritionTwentyFourWeekPage() {
 
         {/* Section 4 — Tracking Metrics */}
         <RevealBlock className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6">Chỉ Số Theo Dõi</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Chỉ Số Theo Dõi</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-2xl border border-white/5 p-5">
-              <div className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: '#f59e0b' }}>Hàng Ngày (7 chỉ số)</div>
+              <div className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: '#f59e0b' }}>Hàng Ngày (7 chỉ số)</div>
               <div className="space-y-2.5">
                 {[
                   {icon:'🍽️', label:'Số bữa chính'},
@@ -1204,14 +1204,14 @@ export default function NutritionTwentyFourWeekPage() {
                   {icon:'😐', label:'Mức đói (1–10)'},
                   {icon:'⚡', label:'Năng lượng (1–10)'},
                 ].map((m,i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-sm text-gray-300">
-                    <span className="text-base">{m.icon}</span>{m.label}
+                  <div key={i} className="flex items-center gap-2.5 text-base text-gray-300">
+                    <span className="text-lg">{m.icon}</span>{m.label}
                   </div>
                 ))}
               </div>
             </div>
             <div className="rounded-2xl border border-white/5 p-5">
-              <div className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: '#f59e0b' }}>Hàng Tuần (9 chỉ số)</div>
+              <div className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: '#f59e0b' }}>Hàng Tuần (9 chỉ số)</div>
               <div className="space-y-2.5">
                 {[
                   {icon:'⚖️', label:'Cân nặng TB 3 ngày'},
@@ -1224,8 +1224,8 @@ export default function NutritionTwentyFourWeekPage() {
                   {icon:'❓', label:'Vấn đề lớn nhất'},
                   {icon:'📝', label:'Điều chỉnh tuần sau'},
                 ].map((m,i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-sm text-gray-300">
-                    <span className="text-base">{m.icon}</span>{m.label}
+                  <div key={i} className="flex items-center gap-2.5 text-base text-gray-300">
+                    <span className="text-lg">{m.icon}</span>{m.label}
                   </div>
                 ))}
               </div>
@@ -1235,7 +1235,7 @@ export default function NutritionTwentyFourWeekPage() {
 
         {/* Section 5 — 6 Phases */}
         <RevealBlock className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6">6 Giai Đoạn</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">6 Giai Đoạn</h2>
           <div className="flex gap-3 overflow-x-auto pb-3 mb-4">
             {PHASES.map((ph) => (
               <button key={ph.id}
@@ -1246,10 +1246,10 @@ export default function NutritionTwentyFourWeekPage() {
                   minWidth: 150,
                 }}
                 onClick={() => setActivePhase(prev => prev === ph.id ? null : ph.id)}>
-                <div className="text-2xl mb-2">{ph.emoji}</div>
-                <div className="text-xs text-gray-500 mb-1">Giai Đoạn {ph.id} · Tuần {ph.weeks}</div>
-                <div className="font-semibold text-sm" style={{ color: ph.color }}>{ph.label}</div>
-                <div className="text-xs text-gray-600 mt-1">{ph.scoreTarget}</div>
+                <div className="text-3xl mb-2">{ph.emoji}</div>
+                <div className="text-sm text-gray-500 mb-1">Giai Đoạn {ph.id} · Tuần {ph.weeks}</div>
+                <div className="font-semibold text-base" style={{ color: ph.color }}>{ph.label}</div>
+                <div className="text-sm text-gray-600 mt-1">{ph.scoreTarget}</div>
               </button>
             ))}
           </div>
@@ -1260,18 +1260,18 @@ export default function NutritionTwentyFourWeekPage() {
               <div className="n24-fade-up rounded-2xl p-5 border"
                 style={{ borderColor: `${ph.color}33`, background: `rgba(${ph.rgb},0.05)` }}>
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-3xl">{ph.emoji}</span>
+                  <span className="text-4xl">{ph.emoji}</span>
                   <div>
                     <div className="font-bold text-white">{ph.label}</div>
-                    <div className="text-xs text-gray-500">Tuần {ph.weeks} · {ph.scoreTarget}</div>
+                    <div className="text-sm text-gray-500">Tuần {ph.weeks} · {ph.scoreTarget}</div>
                   </div>
                 </div>
-                <p className="text-sm text-gray-400 mb-3">{ph.goal}</p>
-                <p className="text-sm text-gray-500 mb-4">{ph.desc}</p>
+                <p className="text-base text-gray-400 mb-3">{ph.goal}</p>
+                <p className="text-base text-gray-500 mb-4">{ph.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {ph.weekNums.map(n => (
                     <button key={n}
-                      className="text-xs px-3 py-1.5 rounded-full border font-medium transition-all hover:scale-105"
+                      className="text-sm px-3 py-1.5 rounded-full border font-medium transition-all hover:scale-105"
                       style={{ borderColor: `${ph.color}44`, color: ph.color, background: `rgba(${ph.rgb},0.1)` }}
                       onClick={() => handleWeekClick(n)}>
                       Tuần {n}
@@ -1285,7 +1285,7 @@ export default function NutritionTwentyFourWeekPage() {
 
         {/* Section 6 — Week Navigator */}
         <RevealBlock className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6">24 Tuần Chi Tiết</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">24 Tuần Chi Tiết</h2>
           <div className="grid grid-cols-4 md:grid-cols-6 gap-2 mb-4">
             {WEEKS.map((wk) => (
               <button key={wk.n}
@@ -1296,7 +1296,7 @@ export default function NutritionTwentyFourWeekPage() {
                   boxShadow: activeWeek === wk.n ? `0 0 12px rgba(${wk.rgb},0.25)` : 'none',
                 }}
                 onClick={() => handleWeekClick(wk.n)}>
-                <span className="text-sm font-bold" style={{ color: wk.color }}>{wk.n}</span>
+                <span className="text-base font-bold" style={{ color: wk.color }}>{wk.n}</span>
                 <span className="text-[8px] text-gray-500 text-center leading-tight mt-0.5 px-0.5">
                   {wk.title.split(' ').slice(0,2).join(' ')}
                 </span>
@@ -1313,7 +1313,7 @@ export default function NutritionTwentyFourWeekPage() {
 
         {/* Section 7 — Habit Score */}
         <RevealBlock className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6">Habit Score Hôm Nay</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Habit Score Hôm Nay</h2>
           <div className="rounded-2xl border p-6" style={{ borderColor: 'rgba(245,158,11,0.2)', background: 'rgba(245,158,11,0.03)' }}>
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="space-y-3">
@@ -1322,14 +1322,14 @@ export default function NutritionTwentyFourWeekPage() {
                     <div
                       className={`w-5 h-5 rounded border flex items-center justify-center shrink-0 mt-0.5 transition-all ${habitChecked[c.id] ? 'border-amber-500 bg-amber-500' : 'border-gray-600 group-hover:border-amber-400'}`}
                       onClick={() => toggleHabit(c.id)}>
-                      {habitChecked[c.id] && <span className="text-black text-xs font-bold">✓</span>}
+                      {habitChecked[c.id] && <span className="text-black text-sm font-bold">✓</span>}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-white">{c.icon} {c.label}</span>
-                        <span className="text-xs font-bold" style={{ color: '#f59e0b' }}>+{c.pts}pt</span>
+                        <span className="text-base font-medium text-white">{c.icon} {c.label}</span>
+                        <span className="text-sm font-bold" style={{ color: '#f59e0b' }}>+{c.pts}pt</span>
                       </div>
-                      <div className="text-xs text-gray-500">{c.desc}</div>
+                      <div className="text-sm text-gray-500">{c.desc}</div>
                     </div>
                   </label>
                 ))}
@@ -1338,8 +1338,8 @@ export default function NutritionTwentyFourWeekPage() {
                 <ArcGauge score={habitScore} />
                 <div className="mt-4 w-full rounded-xl p-3 text-center"
                   style={{ background: 'rgba(245,158,11,0.07)', border: '1px solid rgba(245,158,11,0.15)' }}>
-                  <div className="text-xs text-gray-500">Tổng điểm</div>
-                  <div className="text-2xl font-bold mt-1" style={{ color: '#f59e0b' }}>{habitScore} / 100</div>
+                  <div className="text-sm text-gray-500">Tổng điểm</div>
+                  <div className="text-3xl font-bold mt-1" style={{ color: '#f59e0b' }}>{habitScore} / 100</div>
                 </div>
               </div>
             </div>
@@ -1348,21 +1348,21 @@ export default function NutritionTwentyFourWeekPage() {
 
         {/* Section 8 — Summary Table */}
         <RevealBlock className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6">Bảng Tổng Hợp 24 Tuần</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Bảng Tổng Hợp 24 Tuần</h2>
           <div className="rounded-2xl border border-white/5 overflow-hidden">
-            <div className="grid grid-cols-4 text-xs font-bold uppercase tracking-wider text-gray-500 px-4 py-3 bg-white/[0.02] border-b border-white/5">
+            <div className="grid grid-cols-4 text-sm font-bold uppercase tracking-wider text-gray-500 px-4 py-3 bg-white/[0.02] border-b border-white/5">
               <span>Tuần</span><span>GĐ</span><span>Chủ Đề</span><span>Việc Cần Làm Chính</span>
             </div>
             {SUMMARY_TABLE.map((row) => {
               const ph = PHASES.find(p => p.id === row.phase);
               return (
-                <button key={row.n} className="w-full grid grid-cols-4 text-left px-4 py-3 border-b border-white/[0.03] hover:bg-white/[0.03] transition-colors text-sm"
+                <button key={row.n} className="w-full grid grid-cols-4 text-left px-4 py-3 border-b border-white/[0.03] hover:bg-white/[0.03] transition-colors text-base"
                   style={{ borderLeft: `3px solid ${ph.color}` }}
                   onClick={() => handleWeekClick(row.n)}>
                   <span className="font-bold" style={{ color: ph.color }}>{row.n}</span>
                   <span className="text-gray-500">{row.phase}</span>
                   <span className="text-gray-300">{row.topic}</span>
-                  <span className="text-gray-500 text-xs">{row.action}</span>
+                  <span className="text-gray-500 text-sm">{row.action}</span>
                 </button>
               );
             })}
@@ -1371,7 +1371,7 @@ export default function NutritionTwentyFourWeekPage() {
 
         {/* Section 9 — After 24 Weeks */}
         <RevealBlock className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6">Sau 24 Tuần — 3 Hướng Đi</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Sau 24 Tuần — 3 Hướng Đi</h2>
           <div className="space-y-3">
             {WEEKS[23].next3Paths.map((p, i) => {
               const cols = ['#22c55e','#f97316','#a855f7'];
@@ -1382,16 +1382,16 @@ export default function NutritionTwentyFourWeekPage() {
                   <button className="w-full flex items-center justify-between p-4 text-left hover:bg-white/[0.02] transition-colors"
                     onClick={() => setOpenPath(prev => prev === i ? null : i)}>
                     <div>
-                      <div className="font-bold text-base" style={{ color: cols[i] }}>{p.path}</div>
-                      <div className="text-xs text-gray-500 mt-0.5">{p.who}</div>
+                      <div className="font-bold text-lg" style={{ color: cols[i] }}>{p.path}</div>
+                      <div className="text-sm text-gray-500 mt-0.5">{p.who}</div>
                     </div>
-                    <span className="text-gray-500 text-xs">{openPath === i ? '▲' : '▼'}</span>
+                    <span className="text-gray-500 text-sm">{openPath === i ? '▲' : '▼'}</span>
                   </button>
                   {openPath === i && (
                     <div className="px-5 pb-5 pt-1" style={{ background: `rgba(${rgbs[i]},0.04)` }}>
                       <ul className="space-y-2">
                         {p.strategy.map((s, j) => (
-                          <li key={j} className="flex items-start gap-2 text-sm text-gray-300">
+                          <li key={j} className="flex items-start gap-2 text-base text-gray-300">
                             <span style={{ color: cols[i] }}>▸</span>{s}
                           </li>
                         ))}
@@ -1408,10 +1408,10 @@ export default function NutritionTwentyFourWeekPage() {
         <RevealBlock>
           <div className="rounded-2xl border p-5" style={{ borderColor: 'rgba(245,158,11,0.25)', background: 'rgba(245,158,11,0.05)' }}>
             <div className="flex items-start gap-3">
-              <span className="text-xl shrink-0">⚠️</span>
+              <span className="text-2xl shrink-0">⚠️</span>
               <div>
-                <div className="font-bold text-sm mb-2" style={{ color: '#f59e0b' }}>Lưu Ý Quan Trọng</div>
-                <p className="text-xs text-gray-400 leading-relaxed">
+                <div className="font-bold text-base mb-2" style={{ color: '#f59e0b' }}>Lưu Ý Quan Trọng</div>
+                <p className="text-sm text-gray-400 leading-relaxed">
                   Lộ trình này là hướng dẫn tổng quát về giáo dục dinh dưỡng, không thay thế tư vấn y tế cá nhân. Nếu bạn có tình trạng sức khỏe đặc biệt (tiểu đường, bệnh thận, rối loạn ăn uống, đang mang thai, ...), hãy tham khảo bác sĩ hoặc chuyên gia dinh dưỡng được cấp phép trước khi áp dụng bất kỳ thay đổi nào về chế độ ăn. Mọi con số trong lộ trình (TDEE, protein, calo) là ước tính và cần điều chỉnh theo phản hồi thực tế của cơ thể bạn.
                 </p>
               </div>

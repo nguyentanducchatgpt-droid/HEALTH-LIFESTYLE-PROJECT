@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ThoughtBubble from '../components/ThoughtBubble';
@@ -216,14 +216,14 @@ export default function Home() {
           </div>
 
           {/* Title */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-3">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-3">
             <span className="ht-part1">{t('hero.title_part1')}</span>
             <span className="ht-amp"> &amp; </span>
             <span className="ht-part2">{t('hero.title_part2')}</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10"
+          <p className="text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-10"
             style={{ color: 'rgba(255,255,255,0.52)' }}>
             {t('hero.subtitle')}
           </p>
@@ -231,13 +231,13 @@ export default function Home() {
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#pillars"
-              className="ht-btn-primary relative overflow-hidden inline-flex items-center justify-center gap-2 px-9 py-3.5 bg-accent text-bg font-bold rounded-xl text-sm cursor-pointer">
+              className="ht-btn-primary relative overflow-hidden inline-flex items-center justify-center gap-2 px-9 py-3.5 bg-accent text-bg font-bold rounded-xl text-base cursor-pointer">
               <span className="ht-btn-sweep absolute inset-0 pointer-events-none" />
               <span className="relative z-10">{t('hero.cta')}</span>
-              <span className="relative z-10 text-base">↓</span>
+              <span className="relative z-10 text-lg">↓</span>
             </a>
             <Link to="/program"
-              className="ht-btn-outline inline-flex items-center justify-center gap-2 px-9 py-3.5 font-semibold rounded-xl text-sm">
+              className="ht-btn-outline inline-flex items-center justify-center gap-2 px-9 py-3.5 font-semibold rounded-xl text-base">
               {t('nav.program')} <span className="ht-btn-arrow">→</span>
             </Link>
           </div>
@@ -289,7 +289,7 @@ export default function Home() {
                       </div>
 
                       {/* Value */}
-                      <p className="font-extrabold text-base md:text-lg leading-none mb-1.5 transition-all duration-250 whitespace-nowrap"
+                      <p className="font-extrabold text-lg md:text-xl leading-none mb-1.5 transition-all duration-250 whitespace-nowrap"
                         style={{
                           color: active ? color : 'rgba(255,255,255,0.9)',
                           filter: active ? `drop-shadow(0 0 10px rgba(${rgb},0.55))` : 'none',
@@ -331,8 +331,8 @@ export default function Home() {
                 <img src={STRIP_IMAGES[i]} alt={p?.title || key} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <div className="text-xl mb-1">{PILLAR_ICONS[i]}</div>
-                  <p className="text-white text-xs font-bold leading-snug">{p?.title || key}</p>
+                  <div className="text-2xl mb-1">{PILLAR_ICONS[i]}</div>
+                  <p className="text-white text-sm font-bold leading-snug">{p?.title || key}</p>
                 </div>
                 <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
               </Link>
@@ -344,9 +344,9 @@ export default function Home() {
       {/* ── Journey teaser ─────────────────────────────── */}
       <section className="mb-20">
         <RevealBlock className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">{t('home.journey_badge')}</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-text">{t('home.journey_title')}</h2>
-          <p className="text-muted text-sm mt-2 max-w-md mx-auto">{t('home.journey_sub')}</p>
+          <p className="text-sm font-bold uppercase tracking-widest text-accent mb-2">{t('home.journey_badge')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-text">{t('home.journey_title')}</h2>
+          <p className="text-muted text-base mt-2 max-w-md mx-auto">{t('home.journey_sub')}</p>
         </RevealBlock>
 
         <div className="flex flex-col gap-5">
@@ -379,35 +379,35 @@ export default function Home() {
                       <span className="text-[9px] font-extrabold uppercase tracking-[0.15em] px-3 py-1 rounded-full backdrop-blur-sm" style={{ color: j.color, background: 'rgba(0,0,0,0.55)', border: `1px solid rgba(${j.rgb},0.5)` }}>{jt.tag || j.tag}</span>
                     </div>
                     {/* icon bottom-left mobile */}
-                    <div className="absolute bottom-4 left-4 md:hidden text-3xl">{j.icon}</div>
+                    <div className="absolute bottom-4 left-4 md:hidden text-4xl">{j.icon}</div>
                   </div>
 
                   {/* ── Content panel ── */}
                   <div className="flex-1 p-6 md:p-7 flex flex-col justify-center">
                     {/* icon + tagline */}
                     <div className="flex items-center gap-2.5 mb-3">
-                      <span className="hidden md:block text-2xl">{j.icon}</span>
+                      <span className="hidden md:block text-3xl">{j.icon}</span>
                       <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: j.color }}>{jt.tagline || j.tagline}</p>
                     </div>
                     {/* title */}
-                    <h3 className="font-bold text-text text-lg md:text-xl mb-2 leading-tight transition-colors duration-200" style={{ color: j.color }}>
+                    <h3 className="font-bold text-text text-xl md:text-2xl mb-2 leading-tight transition-colors duration-200" style={{ color: j.color }}>
                       {jt.label || j.label}
                     </h3>
                     {/* description */}
-                    <p className="text-sm text-muted leading-relaxed mb-5 max-w-xl">{jt.desc || j.desc}</p>
+                    <p className="text-base text-muted leading-relaxed mb-5 max-w-xl">{jt.desc || j.desc}</p>
                     {/* feature checklist */}
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 mb-6">
                       {(jt.features || j.features).map((f, fi) => (
-                        <div key={fi} className="flex items-center gap-1.5 text-xs text-muted">
+                        <div key={fi} className="flex items-center gap-1.5 text-sm text-muted">
                           <span className="font-bold shrink-0" style={{ color: j.color }}>✓</span>
                           <span>{f}</span>
                         </div>
                       ))}
                     </div>
                     {/* CTA */}
-                    <div className="flex items-center gap-2 text-sm font-bold group-hover:gap-3 transition-all duration-200" style={{ color: j.color }}>
+                    <div className="flex items-center gap-2 text-base font-bold group-hover:gap-3 transition-all duration-200" style={{ color: j.color }}>
                       {t('home.journey_cta')}
-                      <span className="group-hover:translate-x-1 transition-transform duration-200 text-base">→</span>
+                      <span className="group-hover:translate-x-1 transition-transform duration-200 text-lg">→</span>
                     </div>
                   </div>
                 </div>
@@ -421,7 +421,7 @@ export default function Home() {
       {/* ── 6 Pillars — rich image cards ───────────────── */}
       <section id="pillars" className="mb-20 scroll-mt-20">
         <RevealBlock className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-text">
+          <h2 className="text-4xl md:text-5xl font-bold text-text">
             {(() => {
               const title = t('hero.pillars_title');
               const idx = title.lastIndexOf('360');
@@ -430,7 +430,7 @@ export default function Home() {
             })()}
           </h2>
           <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
-          <p className="text-muted text-sm mt-3 max-w-lg mx-auto">{t('home.pillars_sub')}</p>
+          <p className="text-muted text-base mt-3 max-w-lg mx-auto">{t('home.pillars_sub')}</p>
         </RevealBlock>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -469,19 +469,19 @@ export default function Home() {
                   <div className="p-5">
                     <div className="flex items-center gap-3 mb-3">
                       <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0 transition-transform duration-300 group-hover:scale-110"
+                        className="w-10 h-10 rounded-xl flex items-center justify-center text-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                         style={{ background: `rgba(${pd.rgb},0.12)`, border: `1px solid rgba(${pd.rgb},0.22)` }}
                       >
                         {p.icon}
                       </div>
-                      <h3 className="font-bold text-sm leading-tight transition-colors duration-200" style={{ color: pd.color }}>
+                      <h3 className="font-bold text-base leading-tight transition-colors duration-200" style={{ color: pd.color }}>
                         {p.title}
                       </h3>
                     </div>
-                    <p className="text-xs text-muted leading-relaxed line-clamp-2">{p.description}</p>
+                    <p className="text-sm text-muted leading-relaxed line-clamp-2">{p.description}</p>
                     <div className="mt-4 flex items-center gap-1.5 text-[11px] font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: pd.color }}>
                       {t('home.pillars_cta')}
-                      <span className="transition-transform duration-200 group-hover:translate-x-0.5 text-xs">→</span>
+                      <span className="transition-transform duration-200 group-hover:translate-x-0.5 text-sm">→</span>
                     </div>
                   </div>
                 </Link>
@@ -494,9 +494,9 @@ export default function Home() {
       {/* ── Why section ────────────────────────────────── */}
       <section className="mb-20">
         <RevealBlock className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">{t('home.why_badge')}</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-text">{t('home.why_title')}</h2>
-          <p className="text-muted text-sm mt-2 max-w-md mx-auto">{t('home.why_sub')}</p>
+          <p className="text-sm font-bold uppercase tracking-widest text-accent mb-2">{t('home.why_badge')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-text">{t('home.why_title')}</h2>
+          <p className="text-muted text-base mt-2 max-w-md mx-auto">{t('home.why_sub')}</p>
         </RevealBlock>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -535,7 +535,7 @@ export default function Home() {
 
                   {/* Icon badge — bottom left */}
                   <div
-                    className="absolute bottom-4 left-4 w-11 h-11 rounded-xl flex items-center justify-center text-xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-110"
+                    className="absolute bottom-4 left-4 w-11 h-11 rounded-xl flex items-center justify-center text-2xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-110"
                     style={{ background: `rgba(${item.rgb},0.22)`, border: `1.5px solid rgba(${item.rgb},0.5)` }}
                   >
                     {item.icon}
@@ -544,10 +544,10 @@ export default function Home() {
 
                 {/* Content */}
                 <div className="p-5">
-                  <h3 className="font-bold text-sm mb-2 transition-colors duration-200" style={{ color: item.color }}>
+                  <h3 className="font-bold text-base mb-2 transition-colors duration-200" style={{ color: item.color }}>
                     {wt.title || item.title}
                   </h3>
-                  <p className="text-xs text-muted leading-relaxed">{wt.desc || item.desc}</p>
+                  <p className="text-sm text-muted leading-relaxed">{wt.desc || item.desc}</p>
                 </div>
               </div>
             </RevealBlock>
@@ -569,12 +569,12 @@ export default function Home() {
             {/* Quote */}
             <div className="mb-10">
               <span className="text-6xl leading-none select-none font-serif" style={{ color: 'rgba(34,197,94,0.18)' }}>"</span>
-              <p className="text-text text-2xl md:text-3xl font-semibold leading-relaxed -mt-3 max-w-2xl mx-auto">
+              <p className="text-text text-3xl md:text-4xl font-semibold leading-relaxed -mt-3 max-w-2xl mx-auto">
                 {t('home.quote')}
               </p>
               <div className="flex items-center justify-center gap-3 mt-5">
                 <span className="h-px w-10 bg-gradient-to-r from-transparent to-accent/40" />
-                <p className="text-muted/70 text-xs font-medium tracking-wide">{t('home.quote_author')}</p>
+                <p className="text-muted/70 text-sm font-medium tracking-wide">{t('home.quote_author')}</p>
                 <span className="h-px w-10 bg-gradient-to-l from-transparent to-accent/40" />
               </div>
             </div>
@@ -583,17 +583,17 @@ export default function Home() {
             <div className="h-px bg-gradient-to-r from-transparent via-border/50 to-transparent mb-10 max-w-xs mx-auto" />
 
             {/* CTA */}
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-5">{t('home.cta_badge')}</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent mb-5">{t('home.cta_badge')}</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 to="/program"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-sm shadow-[0_0_28px_rgba(34,197,94,0.28)] hover:shadow-[0_0_42px_rgba(34,197,94,0.45)] hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-base shadow-[0_0_28px_rgba(34,197,94,0.28)] hover:shadow-[0_0_42px_rgba(34,197,94,0.45)] hover:-translate-y-0.5"
               >
                 🌿 {t('home.cta_program')}
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-border hover:border-accent/40 text-muted hover:text-accent rounded-xl transition-all duration-200 text-sm"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-border hover:border-accent/40 text-muted hover:text-accent rounded-xl transition-all duration-200 text-base"
               >
                 ✉️ {t('nav.contact')}
               </Link>

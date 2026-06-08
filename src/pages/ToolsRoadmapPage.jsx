@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#a855f7';
@@ -115,17 +115,17 @@ export default function ToolsRoadmapPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🗺️</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🗺️</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Lộ Trình 12 Tuần</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Lộ Trình 12 Tuần</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             4 giai đoạn · Làm quen → Tối ưu → Tự vận hành
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Hệ thống dẫn dắt từ việc làm quen công cụ, đo tiến bộ, cá nhân hóa theo mình, đến tự vận hành không cần ai nhắc. 12 tuần xây dựng lối sống chủ động.
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function ToolsRoadmapPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80&auto=format&fit=crop" alt="Roadmap" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             12 tuần · từ công cụ → thói quen → tự vận hành
           </span>
         </div>
@@ -145,43 +145,43 @@ export default function ToolsRoadmapPage() {
 
       {/* Phases */}
       <RevealBlock delay={0} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Lộ Trình 4 Giai Đoạn</h2>
-        <p className="text-muted text-sm mb-6">Nhấn vào từng giai đoạn để xem mục tiêu và công cụ cần dùng.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Lộ Trình 4 Giai Đoạn</h2>
+        <p className="text-muted text-base mb-6">Nhấn vào từng giai đoạn để xem mục tiêu và công cụ cần dùng.</p>
         <div className="space-y-3">
           {PHASES.map((ph, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
               <button onClick={() => setOpenPhase(openPhase === i ? null : i)} className="w-full p-4 text-left hover:bg-white/5 transition-colors">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center font-black text-sm" style={{ background: `${ph.color}20`, color: ph.color }}>P{ph.phase}</div>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center font-black text-base" style={{ background: `${ph.color}20`, color: ph.color }}>P{ph.phase}</div>
                   <div className="flex-1">
                     <div className="font-bold text-text">{ph.title}</div>
-                    <div className="text-xs text-muted mt-0.5">{ph.weeks}</div>
+                    <div className="text-sm text-muted mt-0.5">{ph.weeks}</div>
                   </div>
                   <span className="text-muted">{openPhase === i ? '▲' : '▼'}</span>
                 </div>
               </button>
               {openPhase === i && (
                 <div className="px-4 pb-5 border-t border-border pt-4 space-y-4">
-                  <p className="text-sm text-muted italic">{ph.focus}</p>
+                  <p className="text-base text-muted italic">{ph.focus}</p>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ph.color }}>Mục Tiêu</div>
+                    <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: ph.color }}>Mục Tiêu</div>
                     <ul className="space-y-1.5">
                       {ph.goals.map((g, j) => (
-                        <li key={j} className="flex gap-2 text-sm text-muted">
+                        <li key={j} className="flex gap-2 text-base text-muted">
                           <span style={{ color: ph.color }} className="shrink-0">→</span>{g}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ph.color }}>Công Cụ Cần Dùng</div>
+                    <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: ph.color }}>Công Cụ Cần Dùng</div>
                     <div className="flex flex-wrap gap-2">
                       {ph.tools.map((t, j) => (
-                        <span key={j} className="text-xs px-3 py-1 rounded-full border" style={{ color: ph.color, borderColor: `${ph.color}30`, background: `${ph.color}10` }}>{t}</span>
+                        <span key={j} className="text-sm px-3 py-1 rounded-full border" style={{ color: ph.color, borderColor: `${ph.color}30`, background: `${ph.color}10` }}>{t}</span>
                       ))}
                     </div>
                   </div>
-                  <div className="rounded-xl p-3 border-l-2 text-sm" style={{ borderColor: ph.color, background: `${ph.color}10` }}>
+                  <div className="rounded-xl p-3 border-l-2 text-base" style={{ borderColor: ph.color, background: `${ph.color}10` }}>
                     <strong style={{ color: ph.color }}>Milestone: </strong><span className="text-muted">{ph.milestone}</span>
                   </div>
                 </div>
@@ -193,14 +193,14 @@ export default function ToolsRoadmapPage() {
 
       {/* All tools */}
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Tất Cả Công Cụ</h2>
-        <p className="text-muted text-sm mb-6">Truy cập nhanh mọi công cụ trong Pillar F.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Tất Cả Công Cụ</h2>
+        <p className="text-muted text-base mb-6">Truy cập nhanh mọi công cụ trong Pillar F.</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {ALL_TOOLS.map((t, i) => (
             <Link key={i} to={t.to} className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 hover:border-purple-500/30 transition-colors group">
-              <span className="text-xl">{t.icon}</span>
-              <span className="text-sm font-medium text-text group-hover:text-white transition-colors">{t.title}</span>
-              <span className="ml-auto text-muted group-hover:text-text transition-colors text-sm">→</span>
+              <span className="text-2xl">{t.icon}</span>
+              <span className="text-base font-medium text-text group-hover:text-white transition-colors">{t.title}</span>
+              <span className="ml-auto text-muted group-hover:text-text transition-colors text-base">→</span>
             </Link>
           ))}
         </div>
@@ -209,18 +209,18 @@ export default function ToolsRoadmapPage() {
       {/* CTA */}
       <RevealBlock delay={2} className="mb-10">
         <div className="rounded-2xl border p-5 text-center" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <div className="text-2xl mb-3">🚀</div>
+          <div className="text-3xl mb-3">🚀</div>
           <h3 className="font-bold text-text mb-2">Bắt Đầu Giai Đoạn 1 Ngay Hôm Nay</h3>
-          <p className="text-sm text-muted mb-4">Chỉ cần 1 hành động: mở Checklist và tick xong ngày hôm nay.</p>
-          <Link to="/pillar/f/checklist" className="inline-block px-6 py-2.5 rounded-xl text-sm font-bold text-white" style={{ background: COLOR }}>
+          <p className="text-base text-muted mb-4">Chỉ cần 1 hành động: mở Checklist và tick xong ngày hôm nay.</p>
+          <Link to="/pillar/f/checklist" className="inline-block px-6 py-2.5 rounded-xl text-base font-bold text-white" style={{ background: COLOR }}>
             Mở Checklist →
           </Link>
         </div>
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <p className="text-xs text-muted mb-6">⚠ Lộ trình mang tính hướng dẫn. Điều chỉnh tùy theo nhịp sống và mục tiêu cá nhân của bạn.</p>
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <p className="text-sm text-muted mb-6">⚠ Lộ trình mang tính hướng dẫn. Điều chỉnh tùy theo nhịp sống và mục tiêu cá nhân của bạn.</p>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
     </div>
   );
 }

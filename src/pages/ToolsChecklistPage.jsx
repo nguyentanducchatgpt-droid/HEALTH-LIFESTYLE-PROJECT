@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#f97316';
@@ -108,17 +108,17 @@ export default function ToolsChecklistPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>✅</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>✅</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Checklist Ngày &amp; Tuần</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Checklist Ngày &amp; Tuần</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             6 mục hàng ngày · 6 chỉ tiêu hàng tuần · Review cuối tuần
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Checklist tối giản giúp bạn duy trì 6 hành vi quan trọng nhất mỗi ngày. Mỗi tick là một bước nhỏ xây dựng thói quen bền vững.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function ToolsChecklistPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop" alt="Checklist" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             6 hành vi · mỗi ngày · không quá 5 phút để tick
           </span>
         </div>
@@ -139,8 +139,8 @@ export default function ToolsChecklistPage() {
       {/* Daily checklist */}
       <RevealBlock delay={0} className="mb-12">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl md:text-2xl font-bold" style={{ color: COLOR }}>Checklist Hôm Nay</h2>
-          <span className="text-sm font-bold" style={{ color: COLOR }}>{daily.length}/{DAILY_ITEMS.length} mục</span>
+          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>Checklist Hôm Nay</h2>
+          <span className="text-base font-bold" style={{ color: COLOR }}>{daily.length}/{DAILY_ITEMS.length} mục</span>
         </div>
         {/* Progress bar */}
         <div className="h-2 rounded-full bg-border mb-6 overflow-hidden">
@@ -153,47 +153,47 @@ export default function ToolsChecklistPage() {
               style={{ borderColor: daily.includes(i) ? `rgba(${RGB},0.4)` : 'rgba(255,255,255,0.08)', background: daily.includes(i) ? `rgba(${RGB},0.08)` : 'rgba(255,255,255,0.02)' }}>
               <div className="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-all"
                 style={{ borderColor: daily.includes(i) ? COLOR : 'rgba(255,255,255,0.3)', background: daily.includes(i) ? COLOR : 'transparent' }}>
-                {daily.includes(i) && <span className="text-black text-xs font-black">✓</span>}
+                {daily.includes(i) && <span className="text-black text-sm font-black">✓</span>}
               </div>
-              <span className="text-lg shrink-0">{item.icon}</span>
+              <span className="text-xl shrink-0">{item.icon}</span>
               <div className="flex-1">
-                <div className="text-sm font-medium text-text" style={{ textDecoration: daily.includes(i) ? 'line-through' : 'none', opacity: daily.includes(i) ? 0.6 : 1 }}>{item.label}</div>
-                <div className="text-xs text-muted mt-0.5">{item.tip}</div>
+                <div className="text-base font-medium text-text" style={{ textDecoration: daily.includes(i) ? 'line-through' : 'none', opacity: daily.includes(i) ? 0.6 : 1 }}>{item.label}</div>
+                <div className="text-sm text-muted mt-0.5">{item.tip}</div>
               </div>
             </button>
           ))}
         </div>
         {daily.length === DAILY_ITEMS.length && (
           <div className="mt-4 p-4 rounded-2xl text-center" style={{ background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.3)` }}>
-            <div className="text-2xl mb-1">🎉</div>
-            <div className="font-bold text-sm" style={{ color: COLOR }}>Hoàn thành checklist ngày hôm nay! Tuyệt vời.</div>
+            <div className="text-3xl mb-1">🎉</div>
+            <div className="font-bold text-base" style={{ color: COLOR }}>Hoàn thành checklist ngày hôm nay! Tuyệt vời.</div>
           </div>
         )}
       </RevealBlock>
 
       {/* Weekly tracker */}
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: COLOR }}>Tracker Hàng Tuần</h2>
-        <p className="text-muted text-sm mb-6">Nhập số liệu thực tế tuần này. Không cần hoàn hảo — chỉ cần trung thực.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Tracker Hàng Tuần</h2>
+        <p className="text-muted text-base mb-6">Nhập số liệu thực tế tuần này. Không cần hoàn hảo — chỉ cần trung thực.</p>
         <div className="space-y-3">
           {WEEKLY_TARGETS.map((item, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-xl">{item.icon}</span>
+                <span className="text-2xl">{item.icon}</span>
                 <div className="flex-1">
-                  <div className="text-sm font-medium text-text">{item.label}</div>
-                  <div className="text-xs text-muted">Mục tiêu: {item.target}</div>
+                  <div className="text-base font-medium text-text">{item.label}</div>
+                  <div className="text-sm text-muted">Mục tiêu: {item.target}</div>
                 </div>
                 <input
                   type="number" min="0" max="7"
                   value={weekly[i] ?? ''}
                   onChange={e => setWeeklyVal(i, e.target.value)}
                   placeholder="0"
-                  className="w-16 text-center px-2 py-1.5 rounded-xl text-sm font-bold border bg-transparent"
+                  className="w-16 text-center px-2 py-1.5 rounded-xl text-base font-bold border bg-transparent"
                   style={{ borderColor: `rgba(${RGB},0.3)`, color: COLOR }}
                 />
               </div>
-              <div className="text-xs text-muted text-right">{item.unit} đã thực hiện</div>
+              <div className="text-sm text-muted text-right">{item.unit} đã thực hiện</div>
             </div>
           ))}
         </div>
@@ -205,7 +205,7 @@ export default function ToolsChecklistPage() {
           className="w-full flex items-center justify-between p-5 rounded-2xl border border-border bg-surface hover:bg-white/5 transition-colors">
           <div>
             <div className="font-bold text-text text-left">Review Cuối Tuần</div>
-            <div className="text-xs text-muted mt-0.5">4 câu hỏi · ~5 phút · cải thiện tuần sau</div>
+            <div className="text-sm text-muted mt-0.5">4 câu hỏi · ~5 phút · cải thiện tuần sau</div>
           </div>
           <span className="text-muted">{reviewOpen ? '▲' : '▼'}</span>
         </button>
@@ -213,13 +213,13 @@ export default function ToolsChecklistPage() {
           <div className="mt-3 rounded-2xl border border-border bg-surface p-5 space-y-4">
             {REVIEW_QS.map((q, i) => (
               <div key={i}>
-                <label className="text-sm font-medium text-text block mb-2">{i + 1}. {q}</label>
+                <label className="text-base font-medium text-text block mb-2">{i + 1}. {q}</label>
                 <textarea
                   value={review[i] ?? ''}
                   onChange={e => setReviewVal(i, e.target.value)}
                   rows={2}
                   placeholder="Nhập câu trả lời..."
-                  className="w-full px-3 py-2 rounded-xl border bg-transparent text-sm text-text placeholder-muted resize-none focus:outline-none"
+                  className="w-full px-3 py-2 rounded-xl border bg-transparent text-base text-text placeholder-muted resize-none focus:outline-none"
                   style={{ borderColor: `rgba(${RGB},0.3)` }}
                 />
               </div>
@@ -232,7 +232,7 @@ export default function ToolsChecklistPage() {
       <RevealBlock delay={3} className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold text-text mb-3" style={{ color: COLOR }}>💡 Tips Sử Dụng Checklist</h3>
-          <ul className="space-y-2 text-sm text-muted">
+          <ul className="space-y-2 text-base text-muted">
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Tick checklist vào buổi tối trước khi ngủ, không cần tick ngay khi làm</li>
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Mục tiêu là ≥ 5/6 mỗi ngày. 6/6 mỗi ngày là không thực tế lâu dài</li>
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Nếu liên tục bỏ 1 mục — đó là tín hiệu cần điều chỉnh, không phải thất bại</li>
@@ -242,7 +242,7 @@ export default function ToolsChecklistPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
     </div>
   );
 }

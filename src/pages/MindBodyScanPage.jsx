@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#ec4899';
@@ -70,36 +70,36 @@ function BodyScanTimer({ color }) {
 
   return (
     <div className="rounded-2xl border border-border bg-bg p-5 space-y-4">
-      <div className="text-xs font-bold uppercase tracking-widest text-muted text-center">Body Scan Guided Timer · ~8 phút</div>
+      <div className="text-sm font-bold uppercase tracking-widest text-muted text-center">Body Scan Guided Timer · ~8 phút</div>
       {step === -2 ? (
         <div className="text-center py-4">
-          <div className="text-4xl mb-2">🌟</div>
-          <div className="text-sm font-bold" style={{ color }}>Hoàn thành! Ngủ ngon nhé.</div>
-          <button onClick={() => setStep(-1)} className="mt-3 text-xs text-muted hover:text-text transition-colors">Làm lại</button>
+          <div className="text-5xl mb-2">🌟</div>
+          <div className="text-base font-bold" style={{ color }}>Hoàn thành! Ngủ ngon nhé.</div>
+          <button onClick={() => setStep(-1)} className="mt-3 text-sm text-muted hover:text-text transition-colors">Làm lại</button>
         </div>
       ) : zone ? (
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-3xl">{zone.icon}</span>
+            <span className="text-4xl">{zone.icon}</span>
             <div className="flex-1">
-              <div className="text-sm font-bold text-text">{zone.name}</div>
-              <div className="text-xs text-muted">{zone.time}</div>
+              <div className="text-base font-bold text-text">{zone.name}</div>
+              <div className="text-sm text-muted">{zone.time}</div>
             </div>
-            <div className="text-2xl font-bold" style={{ color }}>{count}s</div>
+            <div className="text-3xl font-bold" style={{ color }}>{count}s</div>
           </div>
           <div className="h-1.5 bg-surface rounded-full overflow-hidden mb-3">
             <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${progress}%`, background: color }} />
           </div>
-          <p className="text-xs text-muted leading-relaxed italic">{zone.instructions}</p>
-          <div className="flex justify-between mt-2 text-xs text-muted">
+          <p className="text-sm text-muted leading-relaxed italic">{zone.instructions}</p>
+          <div className="flex justify-between mt-2 text-sm text-muted">
             <span>Vùng {step + 1}/{BODY_ZONES.length}</span>
             <button onClick={stop} className="text-red-400 hover:text-red-300 transition-colors">Dừng</button>
           </div>
         </div>
       ) : (
         <div className="text-center">
-          <p className="text-xs text-muted mb-4">Nằm thoải mái, nhắm mắt. Bài scan sẽ hướng dẫn từng vùng cơ thể.</p>
-          <button onClick={start} className="px-6 py-2.5 rounded-full text-sm font-bold" style={{ background: `rgba(${RGB},0.15)`, color, border: `1px solid rgba(${RGB},0.3)` }}>
+          <p className="text-sm text-muted mb-4">Nằm thoải mái, nhắm mắt. Bài scan sẽ hướng dẫn từng vùng cơ thể.</p>
+          <button onClick={start} className="px-6 py-2.5 rounded-full text-base font-bold" style={{ background: `rgba(${RGB},0.15)`, color, border: `1px solid rgba(${RGB},0.3)` }}>
             Bắt đầu Body Scan
           </button>
         </div>
@@ -134,18 +134,18 @@ export default function MindBodyScanPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-xs text-muted hover:text-purple-400 transition-colors mb-8 group">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Tâm Trí An Nhiên
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🔍</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🔍</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Body Scan</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D3b · Phục Hồi Sâu</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">Body scan là bài thiền quét toàn thân — từng vùng từ đầu đến chân. Công cụ tốt nhất cho người khó ngủ, căng cơ sau tập, hoặc giữ stress trong người mà không biết.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Body Scan</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D3b · Phục Hồi Sâu</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">Body scan là bài thiền quét toàn thân — từng vùng từ đầu đến chân. Công cụ tốt nhất cho người khó ngủ, căng cơ sau tập, hoặc giữ stress trong người mà không biết.</p>
         </div>
       </div>
 
@@ -154,7 +154,7 @@ export default function MindBodyScanPage() {
           <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80&auto=format&fit=crop" alt="Body Scan" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>8 vùng cơ thể · ~8 phút · Guided timer</span>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>8 vùng cơ thể · ~8 phút · Guided timer</span>
           </div>
         </div>
       </div>
@@ -163,28 +163,28 @@ export default function MindBodyScanPage() {
 
       {/* Guided timer */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Body Scan Có Hướng Dẫn</h2>
-        <p className="text-muted text-sm mb-6">Nằm thoải mái, bắt đầu — timer sẽ dẫn qua từng vùng.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Body Scan Có Hướng Dẫn</h2>
+        <p className="text-muted text-base mb-6">Nằm thoải mái, bắt đầu — timer sẽ dẫn qua từng vùng.</p>
         <BodyScanTimer color={COLOR} />
       </RevealBlock>
 
       {/* Zone guide */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>8 Vùng Cơ Thể</h2>
-        <p className="text-muted text-sm mb-6">Nhấn vào từng vùng để xem hướng dẫn chi tiết.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>8 Vùng Cơ Thể</h2>
+        <p className="text-muted text-base mb-6">Nhấn vào từng vùng để xem hướng dẫn chi tiết.</p>
         <div className="space-y-2">
           {BODY_ZONES.map((z, i) => (
             <div key={z.id} className="rounded-xl border border-border overflow-hidden">
               <button onClick={() => setActiveZone(activeZone === i ? null : i)} className="w-full flex items-center gap-3 p-3 hover:bg-white/5 transition-colors text-left">
-                <span className="text-xl">{z.icon}</span>
-                <span className="flex-1 text-sm font-medium text-text">{z.name}</span>
-                <span className="text-xs text-muted mr-2">{z.time}</span>
-                <span className="text-muted text-xs">{activeZone === i ? '▲' : '▼'}</span>
+                <span className="text-2xl">{z.icon}</span>
+                <span className="flex-1 text-base font-medium text-text">{z.name}</span>
+                <span className="text-sm text-muted mr-2">{z.time}</span>
+                <span className="text-muted text-sm">{activeZone === i ? '▲' : '▼'}</span>
               </button>
               {activeZone === i && (
                 <div className="px-4 pb-4 space-y-2">
-                  <p className="text-sm text-text leading-relaxed border-t border-border pt-3">{z.instructions}</p>
-                  <div className="text-xs text-muted italic">💡 {z.tension}</div>
+                  <p className="text-base text-text leading-relaxed border-t border-border pt-3">{z.instructions}</p>
+                  <div className="text-sm text-muted italic">💡 {z.tension}</div>
                 </div>
               )}
             </div>
@@ -194,7 +194,7 @@ export default function MindBodyScanPage() {
 
       {/* When to use */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Khi Nào Dùng Body Scan</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Khi Nào Dùng Body Scan</h2>
         <div className="grid md:grid-cols-2 gap-3">
           {[
             { icon: '🌙', title: 'Trước khi ngủ', desc: 'Thay thế lướt điện thoại. Hiệu quả nhất để đi vào giấc ngủ sâu.' },
@@ -203,9 +203,9 @@ export default function MindBodyScanPage() {
             { icon: '🎯', title: 'Trước thiền ngồi', desc: 'Dọn dẹp cơ thể trước — body scan → thiền ngồi hiệu quả hơn.' },
           ].map(u => (
             <div key={u.title} className="rounded-xl border border-border bg-surface p-4 hover:border-pink-500/20 transition-colors">
-              <div className="text-2xl mb-2">{u.icon}</div>
-              <div className="text-sm font-bold text-text mb-1">{u.title}</div>
-              <div className="text-xs text-muted leading-relaxed">{u.desc}</div>
+              <div className="text-3xl mb-2">{u.icon}</div>
+              <div className="text-base font-bold text-text mb-1">{u.title}</div>
+              <div className="text-sm text-muted leading-relaxed">{u.desc}</div>
             </div>
           ))}
         </div>
@@ -213,12 +213,12 @@ export default function MindBodyScanPage() {
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/d/meditation" className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/d/meditation" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Thiền Ngắn
         </Link>
-        <Link to="/pillar/d" className="text-sm text-muted hover:text-purple-400 transition-colors text-center">Tâm Trí An Nhiên →</Link>
-        <Link to="/pillar/d/journaling" className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/d" className="text-base text-muted hover:text-purple-400 transition-colors text-center">Tâm Trí An Nhiên →</Link>
+        <Link to="/pillar/d/journaling" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
           Journaling 5 Dòng
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ThoughtBubble from '../components/ThoughtBubble';
@@ -267,10 +267,10 @@ function PillarRow({ id, text }) {
   const p = PC[id];
   return (
     <div className="flex items-start gap-3 p-3 rounded-xl" style={{ background: p.bg, border: `1px solid ${p.br}` }}>
-      <span className="text-base shrink-0 mt-0.5">{p.icon}</span>
+      <span className="text-lg shrink-0 mt-0.5">{p.icon}</span>
       <div className="min-w-0">
         <span className="text-[10px] font-bold uppercase tracking-widest block mb-0.5" style={{ color: p.c }}>{p.l}</span>
-        <p className="text-xs text-muted leading-relaxed">{text}</p>
+        <p className="text-sm text-muted leading-relaxed">{text}</p>
       </div>
     </div>
   );
@@ -286,7 +286,7 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
       <div className="flex flex-col items-center shrink-0">
         <button
           onClick={onToggle}
-          className="w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold text-white text-sm z-10 shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+          className="w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold text-white text-base z-10 shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
           style={{ background: phase.color, borderColor: phase.color }}
         >
           {phase.emoji}
@@ -309,18 +309,18 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
             <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-widest opacity-80 block mb-0.5" style={{ color: phase.color }}>{phase.weeks}</span>
-                <h3 className="font-bold text-base md:text-lg text-white leading-tight">{phase.name}</h3>
+                <h3 className="font-bold text-lg md:text-xl text-white leading-tight">{phase.name}</h3>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-xs px-2.5 py-1 rounded-full bg-black/30 border border-white/10 font-semibold" style={{ color: phase.color }}>{phase.tag}</span>
-                <span className="text-white/70 text-sm transition-transform duration-300" style={{ transform: expanded ? 'rotate(180deg)' : 'none' }}>▾</span>
+                <span className="text-sm px-2.5 py-1 rounded-full bg-black/30 border border-white/10 font-semibold" style={{ color: phase.color }}>{phase.tag}</span>
+                <span className="text-white/70 text-base transition-transform duration-300" style={{ transform: expanded ? 'rotate(180deg)' : 'none' }}>▾</span>
               </div>
             </div>
           </div>
           {/* Goal line */}
           <div className="px-5 py-3 flex items-start gap-2 border-b" style={{ borderColor: `rgba(${phase.rgb},0.15)` }}>
-            <span className="text-sm">🎯</span>
-            <p className="text-xs leading-relaxed" style={{ color: phase.color }}>{phase.goal}</p>
+            <span className="text-base">🎯</span>
+            <p className="text-sm leading-relaxed" style={{ color: phase.color }}>{phase.goal}</p>
           </div>
         </button>
 
@@ -330,17 +330,17 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
             <div className="p-5 space-y-4">
               {/* Pillar grid */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">{t('program.pillar_section_header', 'Nội Dung Theo Trụ Cột')}</h4>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-3">{t('program.pillar_section_header', 'Nội Dung Theo Trụ Cột')}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {Object.entries(phase.pillars).map(([k,v]) => <PillarRow key={k} id={k} text={v} />)}
                 </div>
               </div>
               {/* KPIs */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">{t('program.kpi_section_header', 'Chỉ Số Mục Tiêu')}</h4>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-3">{t('program.kpi_section_header', 'Chỉ Số Mục Tiêu')}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                   {phase.kpis.map((kpi, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-muted">
+                    <div key={i} className="flex items-start gap-2 text-sm text-muted">
                       <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: phase.color }} />
                       <span>{kpi}</span>
                     </div>
@@ -349,17 +349,17 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
               </div>
               {/* Milestones */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest text-muted mb-3">{t('program.milestone_header', 'Cột Mốc Giai Đoạn')}</h4>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-3">{t('program.milestone_header', 'Cột Mốc Giai Đoạn')}</h4>
                 <div className="flex flex-wrap gap-2">
                   {phase.milestones.map((m, i) => (
-                    <span key={i} className="text-xs px-3 py-1.5 rounded-full border font-medium" style={{ color: phase.color, borderColor: `rgba(${phase.rgb},0.3)`, background: `rgba(${phase.rgb},0.08)` }}>
+                    <span key={i} className="text-sm px-3 py-1.5 rounded-full border font-medium" style={{ color: phase.color, borderColor: `rgba(${phase.rgb},0.3)`, background: `rgba(${phase.rgb},0.08)` }}>
                       ✓ {m}
                     </span>
                   ))}
                 </div>
               </div>
               {/* Note */}
-              <div className="text-xs text-muted/70 italic p-3 rounded-xl border" style={{ borderColor: `rgba(${phase.rgb},0.15)`, background: `rgba(${phase.rgb},0.04)` }}>
+              <div className="text-sm text-muted/70 italic p-3 rounded-xl border" style={{ borderColor: `rgba(${phase.rgb},0.15)`, background: `rgba(${phase.rgb},0.04)` }}>
                 💬 {phase.note}
               </div>
             </div>
@@ -497,12 +497,12 @@ export default function Program() {
             style={{ background:'linear-gradient(90deg,#22c55e,#5eead4,#a855f7)' }} />
 
           {/* Subtitle */}
-          <p className="pg-sub text-muted/75 text-sm md:text-base leading-relaxed max-w-[440px] mb-4">
+          <p className="pg-sub text-muted/75 text-base md:text-lg leading-relaxed max-w-[440px] mb-4">
             {t('program.hero_sub')}
           </p>
           <div className="pg-sub flex flex-wrap justify-center items-center gap-x-5 gap-y-2">
             {[['🌱', t('program.j7d'), '#22c55e'],['📈', t('program.j12w'), '#84cc16'],['🎓', t('program.j24w'), '#a855f7']].map(([icon,label,color]) => (
-              <span key={label} className="flex items-center gap-1.5 text-xs font-semibold" style={{ color }}>
+              <span key={label} className="flex items-center gap-1.5 text-sm font-semibold" style={{ color }}>
                 <span>{icon}</span>{label}
               </span>
             ))}
@@ -513,7 +513,7 @@ export default function Program() {
 
       {/* ── Journey Mode Selector ─────────────────────────────── */}
       <RevealBlock className="mb-10">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.choose')}</h2>
+        <h2 className="text-sm font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.choose')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {localJourneys.map(j => {
             const active = journey === j.id;
@@ -526,10 +526,10 @@ export default function Program() {
               >
                 {active && <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ background: `radial-gradient(ellipse at top left, rgba(${j.rgb},0.25), transparent 70%)` }} />}
                 <div className="relative">
-                  <span className="text-3xl block mb-2">{j.icon}</span>
-                  <div className="font-bold text-sm text-text leading-tight mb-0.5">{j.label}</div>
+                  <span className="text-4xl block mb-2">{j.icon}</span>
+                  <div className="font-bold text-base text-text leading-tight mb-0.5">{j.label}</div>
                   <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: j.color }}>{j.sub}</div>
-                  <p className="text-xs text-muted leading-relaxed">{j.desc}</p>
+                  <p className="text-sm text-muted leading-relaxed">{j.desc}</p>
                   {active && <div className="absolute top-0 right-0 w-2 h-2 rounded-full" style={{ background: j.color }} />}
                 </div>
               </button>
@@ -554,7 +554,7 @@ export default function Program() {
                       className="flex flex-col items-center gap-1.5 px-3 py-2.5 rounded-xl border transition-all duration-200 cursor-pointer shrink-0"
                       style={{ borderColor: active ? `rgba(${d.rgb},0.5)` : 'rgba(255,255,255,0.07)', background: active ? `rgba(${d.rgb},0.1)` : 'transparent', minWidth: 64 }}
                     >
-                      <span className="text-xl">{d.emoji}</span>
+                      <span className="text-2xl">{d.emoji}</span>
                       <span className="text-[10px] font-bold" style={{ color: active ? d.color : undefined }}>{t('program.day_prefix', 'N')}{d.n}</span>
                     </button>
                   );
@@ -576,9 +576,9 @@ export default function Program() {
                     <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
                       <div>
                         <div className="text-[10px] font-bold uppercase tracking-widest mb-1 opacity-80" style={{ color: day.color }}>{t('program.day_of_7_label', { n: day.n, defaultValue: `Ngày ${day.n} của 7` })}</div>
-                        <h2 className="font-bold text-xl md:text-2xl text-text leading-tight">{day.theme}</h2>
+                        <h2 className="font-bold text-2xl md:text-3xl text-text leading-tight">{day.theme}</h2>
                       </div>
-                      <span className="text-xs px-3 py-1.5 rounded-full bg-bg/60 border font-bold" style={{ color: day.color, borderColor: `rgba(${day.rgb},0.3)` }}>{day.tag}</span>
+                      <span className="text-sm px-3 py-1.5 rounded-full bg-bg/60 border font-bold" style={{ color: day.color, borderColor: `rgba(${day.rgb},0.3)` }}>{day.tag}</span>
                     </div>
                   </div>
                 </RevealBlock>
@@ -591,14 +591,14 @@ export default function Program() {
                     return (
                       <div key={pid} className="rounded-2xl p-4 border" style={{ background: p.bg, borderColor: p.br }}>
                         <div className="flex items-center gap-2 mb-2">
-                          <span className="text-base">{p.icon}</span>
+                          <span className="text-lg">{p.icon}</span>
                           <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: p.c }}>{p.l}</span>
                           {(info.time || info.kcal) && (
                             <span className="ml-auto text-[10px] text-muted/60 font-medium">{info.time || info.kcal}</span>
                           )}
                         </div>
-                        <h3 className="font-bold text-sm text-text mb-1 leading-snug">{info.title}</h3>
-                        <p className="text-xs text-muted mb-2 leading-relaxed">{info.detail}</p>
+                        <h3 className="font-bold text-base text-text mb-1 leading-snug">{info.title}</h3>
+                        <p className="text-sm text-muted mb-2 leading-relaxed">{info.detail}</p>
                         <p className="text-[11px] italic text-muted/60 leading-relaxed border-t pt-2" style={{ borderColor: p.br }}>💬 {info.note}</p>
                       </div>
                     );
@@ -607,14 +607,14 @@ export default function Program() {
 
                 {/* Daily checklist */}
                 <RevealBlock delay={160} className="rounded-2xl border p-5 mb-6" style={{ borderColor: `rgba(${day.rgb},0.25)`, background: `rgba(${day.rgb},0.04)` }}>
-                  <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: day.color }}>✅ {t('program.checklist_day_label', { n: day.n, defaultValue: `Checklist Ngày ${day.n}` })}</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: day.color }}>✅ {t('program.checklist_day_label', { n: day.n, defaultValue: `Checklist Ngày ${day.n}` })}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {day.checklist.map((item,i) => (
-                      <div key={i} className="flex items-center gap-2.5 text-sm text-muted">
+                      <div key={i} className="flex items-center gap-2.5 text-base text-muted">
                         <span className="w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center" style={{ borderColor: `rgba(${day.rgb},0.4)` }}>
                           <span className="w-1.5 h-1.5 rounded-full" style={{ background: day.color }} />
                         </span>
-                        <span className="text-xs leading-relaxed">{item}</span>
+                        <span className="text-sm leading-relaxed">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -623,7 +623,7 @@ export default function Program() {
                 {/* Day navigation */}
                 <div className="flex items-center justify-between mb-10">
                   <button onClick={() => setActiveDay(d => Math.max(0,d-1))} disabled={activeDay===0}
-                    className="flex items-center gap-2 text-xs font-medium text-muted hover:text-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors px-3 py-2 rounded-lg hover:bg-surface border border-transparent hover:border-border">
+                    className="flex items-center gap-2 text-sm font-medium text-muted hover:text-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors px-3 py-2 rounded-lg hover:bg-surface border border-transparent hover:border-border">
                     {t('program.prev_day', '← Ngày trước')}
                   </button>
                   <div className="flex gap-1">
@@ -635,7 +635,7 @@ export default function Program() {
                     ))}
                   </div>
                   <button onClick={() => setActiveDay(d => Math.min(6,d+1))} disabled={activeDay===6}
-                    className="flex items-center gap-2 text-xs font-medium text-muted hover:text-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors px-3 py-2 rounded-lg hover:bg-surface border border-transparent hover:border-border">
+                    className="flex items-center gap-2 text-sm font-medium text-muted hover:text-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors px-3 py-2 rounded-lg hover:bg-surface border border-transparent hover:border-border">
                     {t('program.next_day', 'Ngày tiếp →')}
                   </button>
                 </div>
@@ -645,7 +645,7 @@ export default function Program() {
 
           {/* 7-day philosophy note */}
           <RevealBlock className="rounded-2xl border border-accent/15 p-5 bg-accent/4 mb-8">
-            <p className="text-xs text-muted leading-relaxed text-center">
+            <p className="text-sm text-muted leading-relaxed text-center">
               💡 <strong className="text-text">{t('program.philosophy_7d_strong', '7 ngày này là nền tảng')}</strong> {t('program.philosophy_7d_body', '— không phải để "thay đổi cơ thể" mà để')}
               <strong className="text-accent"> {t('program.philosophy_7d_habit', 'hình thành 4 thói quen đầu tiên')}</strong>.
               {' '}{t('program.philosophy_7d_suffix', 'Hoàn thành 7 ngày → bắt đầu')} <button onClick={() => setJourney('12w')} className="text-lime-400 underline cursor-pointer hover:no-underline">{t('program.link_12w_text', '12 tuần cơ bản')}</button>.
@@ -668,7 +668,7 @@ export default function Program() {
                   const jColor = journey === '12w' ? '#84cc16' : '#a855f7';
                   return (
                     <button key={tab.id} onClick={() => setSubTab(tab.id)}
-                      className={`relative flex items-center gap-2 px-4 md:px-5 py-4 text-sm font-semibold whitespace-nowrap transition-all duration-200 border-b-2 cursor-pointer ${
+                      className={`relative flex items-center gap-2 px-4 md:px-5 py-4 text-base font-semibold whitespace-nowrap transition-all duration-200 border-b-2 cursor-pointer ${
                         active ? 'border-current' : 'text-muted border-transparent hover:text-text hover:border-border'
                       }`}
                       style={active ? { color: jColor } : {}}
@@ -688,7 +688,7 @@ export default function Program() {
             {subTab === 'phases' && (
               <div>
                 <RevealBlock className="mb-6 text-center">
-                  <p className="text-sm text-muted">
+                  <p className="text-base text-muted">
                     {journey === '12w' ? t('program.phases_intro_12w') : t('program.phases_intro_24w')}
                   </p>
                 </RevealBlock>
@@ -701,7 +701,7 @@ export default function Program() {
 
                 {journey === '12w' && (
                   <RevealBlock className="mt-6 p-4 rounded-2xl border border-purple-500/15 bg-purple-500/4 text-center">
-                    <p className="text-xs text-muted">
+                    <p className="text-sm text-muted">
                       {t('program.upgrade_to_24w_cta', 'Muốn tiến xa hơn sau 12 tuần? →')}{' '}
                       <button onClick={() => setJourney('24w')} className="text-purple-400 underline hover:no-underline cursor-pointer">{t('program.see_24w_btn', 'Xem lộ trình 24 tuần nâng cao')}</button>
                     </p>
@@ -724,18 +724,18 @@ export default function Program() {
                     {DAILY_BLOCKS.map((block,i) => (
                       <RevealBlock key={i} delay={i*80} className="relative bg-surface border border-border rounded-2xl p-5 text-center hover:border-accent/30 hover:shadow-[0_0_24px_rgba(34,197,94,0.07)] transition-all duration-300 group">
                         <span className="absolute top-3 right-3 text-[10px] font-bold text-muted/30">{String(i+1).padStart(2,'0')}</span>
-                        <span className="text-3xl block mb-3 group-hover:scale-110 transition-transform duration-300">{block.icon}</span>
+                        <span className="text-4xl block mb-3 group-hover:scale-110 transition-transform duration-300">{block.icon}</span>
                         <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: block.color }}>{block.time}</p>
-                        <h3 className="font-bold text-sm text-text mb-1.5">{block.name}</h3>
-                        <p className="text-xs text-muted leading-relaxed">{block.desc}</p>
-                        {i < 3 && <span className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-border text-lg z-10">›</span>}
+                        <h3 className="font-bold text-base text-text mb-1.5">{block.name}</h3>
+                        <p className="text-sm text-muted leading-relaxed">{block.desc}</p>
+                        {i < 3 && <span className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-border text-xl z-10">›</span>}
                       </RevealBlock>
                     ))}
                   </div>
                 </div>
                 <RevealBlock delay={320} className="mt-8 p-5 rounded-2xl border border-accent/15 bg-accent/4">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-accent mb-3">💡 {t('program.daily_principles_title', 'Nguyên Tắc Khung Ngày')}</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-muted">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-accent mb-3">💡 {t('program.daily_principles_title', 'Nguyên Tắc Khung Ngày')}</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted">
                     {(() => {
                       const principles = t('program.daily_principles', { returnObjects: true });
                       const pArr = Array.isArray(principles) ? principles : [
@@ -756,17 +756,17 @@ export default function Program() {
               <div className="space-y-3">
                 {WEEKLY_RHYTHM.map((day,i) => (
                   <RevealBlock key={i} delay={i*70} className="flex items-center gap-4 bg-surface border border-border rounded-2xl p-4 hover:border-border-bright transition-all duration-200 group">
-                    <div className={`w-28 shrink-0 text-center px-3 py-2 rounded-xl border text-xs font-bold leading-tight ${DAY_CLS[day.color]}`}>{day.days}</div>
+                    <div className={`w-28 shrink-0 text-center px-3 py-2 rounded-xl border text-sm font-bold leading-tight ${DAY_CLS[day.color]}`}>{day.days}</div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-text text-sm">{day.type}</h3>
-                      <p className="text-xs text-muted mt-0.5 leading-relaxed">{day.desc}</p>
+                      <h3 className="font-semibold text-text text-base">{day.type}</h3>
+                      <p className="text-sm text-muted mt-0.5 leading-relaxed">{day.desc}</p>
                     </div>
                     <div className={`shrink-0 w-2.5 h-2.5 rounded-full ${DAY_DOT[day.color]} opacity-60 group-hover:opacity-100 transition-opacity`} />
                   </RevealBlock>
                 ))}
                 <RevealBlock delay={320} className="p-5 rounded-2xl border border-blue-500/15 bg-blue-500/4 mt-4">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">📌 {t('program.adjust_schedule_title', 'Điều Chỉnh Cho Lịch Của Bạn')}</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-blue-400 mb-3">📌 {t('program.adjust_schedule_title', 'Điều Chỉnh Cho Lịch Của Bạn')}</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-muted">
                     {(() => {
                       const tips = t('program.adjust_tips', { returnObjects: true });
                       const tArr = Array.isArray(tips) ? tips : [
@@ -791,10 +791,10 @@ export default function Program() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {SUCCESS_TIPS.map((tip,i) => (
                       <RevealBlock key={i} delay={i*60} className="flex items-start gap-3 group">
-                        <span className="text-2xl shrink-0 group-hover:scale-110 transition-transform duration-200 mt-0.5">{tip.icon}</span>
+                        <span className="text-3xl shrink-0 group-hover:scale-110 transition-transform duration-200 mt-0.5">{tip.icon}</span>
                         <div>
-                          <h3 className="font-bold text-text text-sm mb-1 group-hover:text-accent transition-colors duration-200">{tip.title}</h3>
-                          <p className="text-xs text-muted leading-relaxed">{tip.desc}</p>
+                          <h3 className="font-bold text-text text-base mb-1 group-hover:text-accent transition-colors duration-200">{tip.title}</h3>
+                          <p className="text-sm text-muted leading-relaxed">{tip.desc}</p>
                         </div>
                       </RevealBlock>
                     ))}
@@ -806,32 +806,32 @@ export default function Program() {
             {/* ── Progress test tab ────────── */}
             {subTab === 'test' && (
               <div>
-                <RevealBlock className="text-xs text-muted mb-5 p-4 rounded-xl border border-purple-500/15 bg-purple-500/4">
+                <RevealBlock className="text-sm text-muted mb-5 p-4 rounded-xl border border-purple-500/15 bg-purple-500/4">
                   <strong className="text-purple-400">📋 {t('program.test_guide', 'Test buổi sáng sau khi thức dậy, trước khi ăn. Ghi kết quả và so sánh qua các mốc để theo dõi tiến bộ thực sự.')}</strong>
                 </RevealBlock>
                 <div className="bg-surface border border-border rounded-2xl overflow-hidden">
                   <div className="h-[2px] bg-gradient-to-r from-purple-500/60 via-purple-500/20 to-transparent" />
                   <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
+                    <table className="w-full text-base">
                       <thead>
                         <tr className="border-b border-border">
-                          <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">{t('program.test_metric_col', 'Chỉ Số')}</th>
-                          <th className="text-left text-xs font-bold text-muted uppercase tracking-wider px-5 py-3">{t('program.test_method_col', 'Bài Test')}</th>
-                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_baseline_col', 'Baseline')}</th>
-                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week4_col', 'Tuần 4')}</th>
-                          <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week12_col', 'Tuần 12')}</th>
-                          {journey === '24w' && <th className="text-center text-xs font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week24_col', 'Tuần 24')}</th>}
+                          <th className="text-left text-sm font-bold text-muted uppercase tracking-wider px-5 py-3">{t('program.test_metric_col', 'Chỉ Số')}</th>
+                          <th className="text-left text-sm font-bold text-muted uppercase tracking-wider px-5 py-3">{t('program.test_method_col', 'Bài Test')}</th>
+                          <th className="text-center text-sm font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_baseline_col', 'Baseline')}</th>
+                          <th className="text-center text-sm font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week4_col', 'Tuần 4')}</th>
+                          <th className="text-center text-sm font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week12_col', 'Tuần 12')}</th>
+                          {journey === '24w' && <th className="text-center text-sm font-bold text-muted uppercase tracking-wider px-4 py-3 whitespace-nowrap">{t('program.test_week24_col', 'Tuần 24')}</th>}
                         </tr>
                       </thead>
                       <tbody>
                         {PROGRESS_ROWS.map((row,i) => (
                           <tr key={i} className="border-b border-border/50 hover:bg-purple-500/3 transition-colors duration-150 last:border-0">
-                            <td className="px-5 py-3 font-semibold text-text text-sm">{row.metric}</td>
-                            <td className="px-5 py-3 text-muted text-xs leading-relaxed">{row.test}</td>
-                            <td className="px-4 py-3 text-center"><span className="inline-block text-xs font-semibold text-teal-400 bg-teal-500/8 border border-teal-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
-                            <td className="px-4 py-3 text-center"><span className="inline-block text-xs font-semibold text-accent bg-accent/8 border border-accent/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
-                            <td className="px-4 py-3 text-center"><span className="inline-block text-xs font-semibold text-purple-400 bg-purple-500/8 border border-purple-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
-                            {journey === '24w' && <td className="px-4 py-3 text-center"><span className="inline-block text-xs font-semibold text-orange-400 bg-orange-500/8 border border-orange-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>}
+                            <td className="px-5 py-3 font-semibold text-text text-base">{row.metric}</td>
+                            <td className="px-5 py-3 text-muted text-sm leading-relaxed">{row.test}</td>
+                            <td className="px-4 py-3 text-center"><span className="inline-block text-sm font-semibold text-teal-400 bg-teal-500/8 border border-teal-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
+                            <td className="px-4 py-3 text-center"><span className="inline-block text-sm font-semibold text-accent bg-accent/8 border border-accent/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
+                            <td className="px-4 py-3 text-center"><span className="inline-block text-sm font-semibold text-purple-400 bg-purple-500/8 border border-purple-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
+                            {journey === '24w' && <td className="px-4 py-3 text-center"><span className="inline-block text-sm font-semibold text-orange-400 bg-orange-500/8 border border-orange-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>}
                           </tr>
                         ))}
                       </tbody>
@@ -839,7 +839,7 @@ export default function Program() {
                   </div>
                 </div>
                 <RevealBlock delay={200} className="mt-4 p-4 rounded-2xl border border-accent/15 bg-accent/4">
-                  <p className="text-xs text-muted">
+                  <p className="text-sm text-muted">
                     🛠️ {t('program.test_tool_note', 'Dùng Công cụ Bài Test Tiến Bộ để lưu kết quả và so sánh qua các mốc tự động.')}
                   </p>
                 </RevealBlock>
@@ -853,7 +853,7 @@ export default function Program() {
       {/* ── Cross-pillar quick links ───────────────────────────── */}
       <RevealBlock className="mt-12">
         <div className="border-t border-border/50 pt-10 mb-6">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.deep_dive_title', 'Đi Sâu Vào Từng Trụ Cột')}</h2>
+          <h2 className="text-sm font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.deep_dive_title', 'Đi Sâu Vào Từng Trụ Cột')}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {[
               { to:'/pillar/a',          icon:'🏃', color:'#22c55e' },
@@ -871,9 +871,9 @@ export default function Program() {
                   className="flex items-start gap-3 p-3.5 rounded-2xl border border-border bg-surface hover:border-[var(--lc)] hover:-translate-y-0.5 transition-all duration-200 group"
                   style={{ '--lc': `rgba(${link.color.replace('#','').match(/.{2}/g).map(x=>parseInt(x,16)).join(',')},0.35)` }}
                 >
-                  <span className="text-xl shrink-0">{link.icon}</span>
+                  <span className="text-2xl shrink-0">{link.icon}</span>
                   <div className="min-w-0">
-                    <div className="font-semibold text-text text-xs leading-snug">{label}</div>
+                    <div className="font-semibold text-text text-sm leading-snug">{label}</div>
                     <div className="text-[10px] text-muted mt-0.5 leading-relaxed">{sub}</div>
                   </div>
                 </Link>
@@ -888,15 +888,15 @@ export default function Program() {
         <div className="absolute inset-0 grid-dots opacity-15 pointer-events-none" />
         <div className="absolute top-0 right-0 w-48 h-48 bg-pink-500/6 rounded-full blur-[60px] pointer-events-none" />
         <div className="relative p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5">
-          <div className="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-2xl shrink-0">🗂️</div>
+          <div className="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-3xl shrink-0">🗂️</div>
           <div className="flex-1 min-w-0">
             <h3 className="font-bold text-text mb-1">{t('program.sample_programs_banner_title', 'Lộ Trình Mẫu Theo Mục Tiêu')}</h3>
-            <p className="text-xs text-muted leading-relaxed">
+            <p className="text-sm text-muted leading-relaxed">
               {t('program.sample_programs_banner_desc', '6 mục tiêu × 24 tuần — Chọn lộ trình phù hợp: Người mới · Siêu bận · Giảm mỡ · Tăng cơ · Sức bền · Nâng cao.')}
             </p>
           </div>
           <Link to="/sample-programs"
-            className="shrink-0 px-5 py-2.5 rounded-xl bg-pink-500/10 border border-pink-500/25 text-pink-400 text-xs font-bold hover:bg-pink-500/20 transition-all duration-200">
+            className="shrink-0 px-5 py-2.5 rounded-xl bg-pink-500/10 border border-pink-500/25 text-pink-400 text-sm font-bold hover:bg-pink-500/20 transition-all duration-200">
             {t('program.sample_programs_cta', 'Xem lộ trình →')}
           </Link>
         </div>

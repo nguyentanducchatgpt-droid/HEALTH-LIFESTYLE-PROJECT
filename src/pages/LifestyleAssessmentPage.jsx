@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#14b8a6';
@@ -176,18 +176,18 @@ export default function LifestyleAssessmentPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-xs text-muted hover:text-teal-400 transition-colors mb-8 group">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-sm text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Lối Sống Khỏe
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>📋</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>📋</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Đánh Giá Lối Sống</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C0 · Lifestyle Assessment</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">Đánh giá lối sống hiện tại của bạn qua 7 khía cạnh quan trọng. Kết quả sẽ xác định bạn đang ở Track nào và đề xuất hành động ưu tiên phù hợp.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Đánh Giá Lối Sống</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C0 · Lifestyle Assessment</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">Đánh giá lối sống hiện tại của bạn qua 7 khía cạnh quan trọng. Kết quả sẽ xác định bạn đang ở Track nào và đề xuất hành động ưu tiên phù hợp.</p>
         </div>
       </div>
 
@@ -196,7 +196,7 @@ export default function LifestyleAssessmentPage() {
           <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80&auto=format&fit=crop" alt="Assessment" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>7 câu hỏi · Điểm tối đa {MAX_SCORE} · 3 Tracks</span>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>7 câu hỏi · Điểm tối đa {MAX_SCORE} · 3 Tracks</span>
           </div>
         </div>
       </div>
@@ -207,14 +207,14 @@ export default function LifestyleAssessmentPage() {
       {savedScore && !submitted && (
         <RevealBlock className="mb-8">
           <div className="rounded-2xl border p-4 flex items-center gap-4" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
-            <div className="text-2xl">📊</div>
+            <div className="text-3xl">📊</div>
             <div className="flex-1">
-              <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: COLOR }}>Đánh Giá Gần Nhất</div>
-              <div className="text-sm text-text">{savedScore.score}/{savedScore.max} điểm · {savedScore.track}</div>
-              <div className="text-xs text-muted">{new Date(savedScore.date).toLocaleDateString('vi-VN')}</div>
+              <div className="text-sm font-bold uppercase tracking-widest mb-0.5" style={{ color: COLOR }}>Đánh Giá Gần Nhất</div>
+              <div className="text-base text-text">{savedScore.score}/{savedScore.max} điểm · {savedScore.track}</div>
+              <div className="text-sm text-muted">{new Date(savedScore.date).toLocaleDateString('vi-VN')}</div>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-bold" style={{ color: COLOR }}>{Math.round((savedScore.score / savedScore.max) * 100)}%</div>
+              <div className="text-3xl font-bold" style={{ color: COLOR }}>{Math.round((savedScore.score / savedScore.max) * 100)}%</div>
             </div>
           </div>
         </RevealBlock>
@@ -224,7 +224,7 @@ export default function LifestyleAssessmentPage() {
         <>
           {/* Progress */}
           <RevealBlock className="mb-8">
-            <div className="flex justify-between text-xs text-muted mb-2">
+            <div className="flex justify-between text-sm text-muted mb-2">
               <span>{answeredCount}/{QUESTIONS.length} câu hỏi</span>
               <span style={{ color: COLOR }}>{progress}%</span>
             </div>
@@ -238,17 +238,17 @@ export default function LifestyleAssessmentPage() {
             {QUESTIONS.map((q, qi) => (
               <RevealBlock key={q.id} delay={qi * 50} className="rounded-2xl border border-border bg-surface p-5">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">{q.icon}</span>
+                  <span className="text-3xl">{q.icon}</span>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: q.color }}>{q.category}</div>
-                    <div className="text-sm font-medium text-text">{q.q}</div>
+                    <div className="text-sm font-bold uppercase tracking-widest mb-0.5" style={{ color: q.color }}>{q.category}</div>
+                    <div className="text-base font-medium text-text">{q.q}</div>
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {q.options.map((opt, oi) => (
-                    <button key={oi} onClick={() => setAnswers(prev => ({ ...prev, [q.id]: opt.pts }))} className={`text-left text-sm p-3 rounded-xl border transition-all ${answers[q.id] === opt.pts ? '' : 'border-border hover:border-teal-500/30'}`} style={{ background: answers[q.id] === opt.pts ? `${q.color}15` : undefined, borderColor: answers[q.id] === opt.pts ? q.color : undefined, color: answers[q.id] === opt.pts ? q.color : undefined }}>
+                    <button key={oi} onClick={() => setAnswers(prev => ({ ...prev, [q.id]: opt.pts }))} className={`text-left text-base p-3 rounded-xl border transition-all ${answers[q.id] === opt.pts ? '' : 'border-border hover:border-teal-500/30'}`} style={{ background: answers[q.id] === opt.pts ? `${q.color}15` : undefined, borderColor: answers[q.id] === opt.pts ? q.color : undefined, color: answers[q.id] === opt.pts ? q.color : undefined }}>
                       {opt.label}
-                      {answers[q.id] === opt.pts && <span className="ml-2 text-xs font-bold">✓</span>}
+                      {answers[q.id] === opt.pts && <span className="ml-2 text-sm font-bold">✓</span>}
                     </button>
                   ))}
                 </div>
@@ -266,21 +266,21 @@ export default function LifestyleAssessmentPage() {
           {/* Score */}
           <div className="rounded-2xl border p-6 text-center" style={{ borderColor: `${track.color}40`, background: `${track.color}08` }}>
             <div className="text-6xl font-bold mb-2" style={{ color: track.color }}>{totalScore}</div>
-            <div className="text-muted text-sm">/ {MAX_SCORE} điểm tối đa</div>
-            <div className="mt-4 text-3xl">{track.icon}</div>
-            <div className="text-xl font-bold text-text mt-2">{track.name}</div>
-            <p className="text-muted text-sm mt-2 max-w-sm mx-auto">{track.desc}</p>
+            <div className="text-muted text-base">/ {MAX_SCORE} điểm tối đa</div>
+            <div className="mt-4 text-4xl">{track.icon}</div>
+            <div className="text-2xl font-bold text-text mt-2">{track.name}</div>
+            <p className="text-muted text-base mt-2 max-w-sm mx-auto">{track.desc}</p>
 
             {/* Score bar */}
             <div className="mt-5 h-4 bg-bg rounded-full overflow-hidden">
               <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${Math.round((totalScore / MAX_SCORE) * 100)}%`, background: track.color }} />
             </div>
-            <div className="text-xs text-muted mt-1">{Math.round((totalScore / MAX_SCORE) * 100)}% điểm tối đa</div>
+            <div className="text-sm text-muted mt-1">{Math.round((totalScore / MAX_SCORE) * 100)}% điểm tối đa</div>
           </div>
 
           {/* Category breakdown */}
           <div className="rounded-2xl border border-border bg-surface p-5">
-            <div className="text-sm font-bold text-text mb-4">Chi Tiết Từng Khía Cạnh</div>
+            <div className="text-base font-bold text-text mb-4">Chi Tiết Từng Khía Cạnh</div>
             <div className="space-y-3">
               {QUESTIONS.map(q => {
                 const pts = answers[q.id] ?? 0;
@@ -288,9 +288,9 @@ export default function LifestyleAssessmentPage() {
                 const pct = Math.round((pts / maxPts) * 100);
                 return (
                   <div key={q.id} className="flex items-center gap-3">
-                    <span className="text-lg w-7">{q.icon}</span>
+                    <span className="text-xl w-7">{q.icon}</span>
                     <div className="flex-1">
-                      <div className="flex justify-between text-xs mb-1">
+                      <div className="flex justify-between text-sm mb-1">
                         <span className="text-muted">{q.category}</span>
                         <span style={{ color: q.color }}>{pts}/{maxPts}</span>
                       </div>
@@ -306,11 +306,11 @@ export default function LifestyleAssessmentPage() {
 
           {/* Actions */}
           <div className="rounded-2xl border p-5" style={{ borderColor: `${track.color}30`, background: `${track.color}06` }}>
-            <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: track.color }}>Hành Động Ưu Tiên Cho Bạn</div>
+            <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: track.color }}>Hành Động Ưu Tiên Cho Bạn</div>
             <ul className="space-y-2">
               {track.actions.map((a, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-text">
-                  <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5" style={{ background: `${track.color}20`, color: track.color }}>{i + 1}</span>
+                <li key={i} className="flex items-start gap-3 text-base text-text">
+                  <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5" style={{ background: `${track.color}20`, color: track.color }}>{i + 1}</span>
                   {a}
                 </li>
               ))}
@@ -318,10 +318,10 @@ export default function LifestyleAssessmentPage() {
           </div>
 
           <div className="flex gap-3">
-            <button onClick={reset} className="flex-1 py-3 rounded-xl border border-border text-sm text-muted hover:text-text hover:border-teal-500/30 transition-colors">
+            <button onClick={reset} className="flex-1 py-3 rounded-xl border border-border text-base text-muted hover:text-text hover:border-teal-500/30 transition-colors">
               Làm Lại
             </button>
-            <Link to="/pillar/c/roadmap" className="flex-1 py-3 rounded-xl text-white text-sm font-bold text-center transition-colors" style={{ background: COLOR }}>
+            <Link to="/pillar/c/roadmap" className="flex-1 py-3 rounded-xl text-white text-base font-bold text-center transition-colors" style={{ background: COLOR }}>
               Xem Lộ Trình →
             </Link>
           </div>
@@ -330,14 +330,14 @@ export default function LifestyleAssessmentPage() {
 
       <div className="h-px mt-10 mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/c/checklist" className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/c/checklist" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Checklist Hằng Ngày
         </Link>
-        <Link to="/pillar/c" className="text-sm text-muted hover:text-teal-400 transition-colors text-center">
+        <Link to="/pillar/c" className="text-base text-muted hover:text-teal-400 transition-colors text-center">
           Tất cả Module Lối Sống →
         </Link>
-        <Link to="/pillar/c/roadmap" className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/c/roadmap" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
           Lộ Trình 12 Tuần
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

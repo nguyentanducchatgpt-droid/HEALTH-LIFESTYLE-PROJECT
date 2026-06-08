@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const STYLES = {
@@ -31,13 +31,13 @@ export default function PillarCard({ pillarKey, delay = 0 }) {
       <div className="p-6">
         {/* Icon container */}
         <div
-          className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl text-3xl mb-5 bg-white/4 ${s.icon} transition-all duration-300 group-hover:scale-105`}
+          className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl text-4xl mb-5 bg-white/4 ${s.icon} transition-all duration-300 group-hover:scale-105`}
         >
           {pillar.icon}
         </div>
 
         {/* Title */}
-        <h3 className={`font-bold text-base text-text ${s.text} transition-colors duration-200 leading-tight`}>
+        <h3 className={`font-bold text-lg text-text ${s.text} transition-colors duration-200 leading-tight`}>
           {pillar.title}
         </h3>
 
@@ -47,12 +47,12 @@ export default function PillarCard({ pillarKey, delay = 0 }) {
         </span>
 
         {/* Description */}
-        <p className="text-sm text-muted leading-relaxed line-clamp-2">{pillar.description}</p>
+        <p className="text-base text-muted leading-relaxed line-clamp-2">{pillar.description}</p>
 
         {/* Learn more */}
-        <div className={`mt-5 flex items-center gap-1.5 text-xs font-medium text-muted ${s.text} transition-all duration-200`}>
+        <div className={`mt-5 flex items-center gap-1.5 text-sm font-medium text-muted ${s.text} transition-all duration-200`}>
           <span>{tCommon('common.learn_more')}</span>
-          <span className="group-hover:translate-x-1.5 transition-transform duration-200 text-sm">→</span>
+          <span className="group-hover:translate-x-1.5 transition-transform duration-200 text-base">→</span>
         </div>
       </div>
     </Link>

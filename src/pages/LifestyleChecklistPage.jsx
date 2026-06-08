@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#14b8a6';
@@ -112,18 +112,18 @@ export default function LifestyleChecklistPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-xs text-muted hover:text-teal-400 transition-colors mb-8 group">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-sm text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Lối Sống Khỏe
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>✅</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>✅</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Checklist Lối Sống</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C8 · Daily Checklist</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">7 hành động lối sống khỏe mỗi ngày — đơn giản, dễ theo dõi, tích lũy dần thành thói quen bền vững. Đánh dấu xong mỗi ngày, theo dõi chuỗi ngày liên tiếp.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Checklist Lối Sống</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C8 · Daily Checklist</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">7 hành động lối sống khỏe mỗi ngày — đơn giản, dễ theo dõi, tích lũy dần thành thói quen bền vững. Đánh dấu xong mỗi ngày, theo dõi chuỗi ngày liên tiếp.</p>
         </div>
       </div>
 
@@ -132,7 +132,7 @@ export default function LifestyleChecklistPage() {
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop" alt="Checklist" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>7 hành động · Theo dõi tiến trình hằng ngày</span>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>7 hành động · Theo dõi tiến trình hằng ngày</span>
           </div>
         </div>
       </div>
@@ -143,16 +143,16 @@ export default function LifestyleChecklistPage() {
       <RevealBlock className="mb-8">
         <div className="grid grid-cols-3 gap-3">
           <div className="rounded-2xl border border-border bg-surface p-4 text-center" style={{ borderColor: `rgba(${RGB},0.15)` }}>
-            <div className="text-3xl font-bold" style={{ color: COLOR }}>{completedCount}/{DAILY_ITEMS.length}</div>
-            <div className="text-xs text-muted mt-1">Hôm nay</div>
+            <div className="text-4xl font-bold" style={{ color: COLOR }}>{completedCount}/{DAILY_ITEMS.length}</div>
+            <div className="text-sm text-muted mt-1">Hôm nay</div>
           </div>
           <div className="rounded-2xl border border-border bg-surface p-4 text-center" style={{ borderColor: `rgba(${RGB},0.15)` }}>
-            <div className="text-3xl font-bold" style={{ color: COLOR }}>{streak}</div>
-            <div className="text-xs text-muted mt-1">🔥 Ngày liên tiếp</div>
+            <div className="text-4xl font-bold" style={{ color: COLOR }}>{streak}</div>
+            <div className="text-sm text-muted mt-1">🔥 Ngày liên tiếp</div>
           </div>
           <div className="rounded-2xl border border-border bg-surface p-4 text-center" style={{ borderColor: `rgba(${RGB},0.15)` }}>
-            <div className="text-3xl font-bold" style={{ color: COLOR }}>{progress}%</div>
-            <div className="text-xs text-muted mt-1">Hoàn thành</div>
+            <div className="text-4xl font-bold" style={{ color: COLOR }}>{progress}%</div>
+            <div className="text-sm text-muted mt-1">Hoàn thành</div>
           </div>
         </div>
       </RevealBlock>
@@ -160,7 +160,7 @@ export default function LifestyleChecklistPage() {
       {/* Progress bar */}
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border border-border bg-surface p-4" style={{ borderColor: `rgba(${RGB},0.1)` }}>
-          <div className="flex justify-between text-xs text-muted mb-2">
+          <div className="flex justify-between text-sm text-muted mb-2">
             <span>Tiến trình hôm nay</span>
             <span style={{ color: COLOR }}>{completedCount} / {DAILY_ITEMS.length}</span>
           </div>
@@ -168,27 +168,27 @@ export default function LifestyleChecklistPage() {
             <div className="h-full rounded-full transition-all duration-500" style={{ width: `${progress}%`, background: `linear-gradient(to right, ${COLOR}, rgba(${RGB},0.6))` }} />
           </div>
           {progress === 100 && (
-            <div className="mt-3 text-center text-sm font-bold" style={{ color: COLOR }}>🎉 Hoàn thành 100%! Tuyệt vời!</div>
+            <div className="mt-3 text-center text-base font-bold" style={{ color: COLOR }}>🎉 Hoàn thành 100%! Tuyệt vời!</div>
           )}
         </div>
       </RevealBlock>
 
       {/* Daily checklist */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Checklist Hằng Ngày</h2>
-        <p className="text-muted text-sm mb-6">Đánh dấu từng mục khi hoàn thành. Tiến trình được lưu tự động.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Checklist Hằng Ngày</h2>
+        <p className="text-muted text-base mb-6">Đánh dấu từng mục khi hoàn thành. Tiến trình được lưu tự động.</p>
         <div className="space-y-2">
           {DAILY_ITEMS.map(item => (
             <button key={item.id} onClick={() => toggle(item.id)} className={`w-full flex items-center gap-4 p-4 rounded-2xl border text-left transition-all ${checked[item.id] ? 'opacity-70' : 'hover:border-teal-500/20'}`} style={{ background: checked[item.id] ? `rgba(${RGB},0.08)` : 'var(--color-surface)', borderColor: checked[item.id] ? `rgba(${RGB},0.3)` : undefined }}>
               <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${checked[item.id] ? 'border-teal-400' : 'border-border'}`} style={{ background: checked[item.id] ? COLOR : undefined }}>
-                {checked[item.id] && <span className="text-white text-xs font-bold">✓</span>}
+                {checked[item.id] && <span className="text-white text-sm font-bold">✓</span>}
               </div>
-              <span className="text-2xl">{item.icon}</span>
+              <span className="text-3xl">{item.icon}</span>
               <div className="flex-1">
-                <div className={`text-sm font-medium transition-all ${checked[item.id] ? 'line-through text-muted' : 'text-text'}`}>{item.label}</div>
-                <div className="text-xs text-muted">{item.detail}</div>
+                <div className={`text-base font-medium transition-all ${checked[item.id] ? 'line-through text-muted' : 'text-text'}`}>{item.label}</div>
+                <div className="text-sm text-muted">{item.detail}</div>
               </div>
-              <span className="text-xs px-2 py-0.5 rounded-full font-bold shrink-0" style={{ background: `${item.color}15`, color: item.color }}>{item.pillar}</span>
+              <span className="text-sm px-2 py-0.5 rounded-full font-bold shrink-0" style={{ background: `${item.color}15`, color: item.color }}>{item.pillar}</span>
             </button>
           ))}
         </div>
@@ -196,18 +196,18 @@ export default function LifestyleChecklistPage() {
 
       {/* Weekly review */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Đánh Giá Cuối Tuần</h2>
-        <p className="text-muted text-sm mb-6">5 câu hỏi phản tư để hiểu rõ hơn về tuần vừa qua và điều chỉnh cho tuần tiếp theo.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Đánh Giá Cuối Tuần</h2>
+        <p className="text-muted text-base mb-6">5 câu hỏi phản tư để hiểu rõ hơn về tuần vừa qua và điều chỉnh cho tuần tiếp theo.</p>
         <div className="space-y-4">
           {WEEKLY_QUESTIONS.map(q => (
             <div key={q.id} className="rounded-2xl border border-border bg-surface p-4">
               <div className="flex items-start gap-3 mb-3">
-                <span className="text-xl">{q.icon}</span>
-                <div className="text-sm font-medium text-text">{q.question}</div>
+                <span className="text-2xl">{q.icon}</span>
+                <div className="text-base font-medium text-text">{q.question}</div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {q.options.map((opt, i) => (
-                  <button key={i} onClick={() => setWeekAnswers(prev => ({ ...prev, [q.id]: i }))} className={`text-left text-xs p-2 rounded-lg border transition-all ${weekAnswers[q.id] === i ? 'border-teal-400' : 'border-border hover:border-teal-500/30'}`} style={{ background: weekAnswers[q.id] === i ? `rgba(${RGB},0.1)` : undefined, color: weekAnswers[q.id] === i ? COLOR : undefined }}>
+                  <button key={i} onClick={() => setWeekAnswers(prev => ({ ...prev, [q.id]: i }))} className={`text-left text-sm p-2 rounded-lg border transition-all ${weekAnswers[q.id] === i ? 'border-teal-400' : 'border-border hover:border-teal-500/30'}`} style={{ background: weekAnswers[q.id] === i ? `rgba(${RGB},0.1)` : undefined, color: weekAnswers[q.id] === i ? COLOR : undefined }}>
                     {opt}
                   </button>
                 ))}
@@ -216,7 +216,7 @@ export default function LifestyleChecklistPage() {
           ))}
         </div>
         {Object.keys(weekAnswers).length === WEEKLY_QUESTIONS.length && (
-          <div className="mt-4 rounded-xl p-4 border text-sm text-center font-medium" style={{ borderColor: `rgba(${RGB},0.3)`, background: `rgba(${RGB},0.08)`, color: COLOR }}>
+          <div className="mt-4 rounded-xl p-4 border text-base text-center font-medium" style={{ borderColor: `rgba(${RGB},0.3)`, background: `rgba(${RGB},0.08)`, color: COLOR }}>
             ✓ Đã ghi nhận đánh giá tuần. Xem lại vào cuối tuần sau!
           </div>
         )}
@@ -224,14 +224,14 @@ export default function LifestyleChecklistPage() {
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/c/environment" className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/c/environment" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Thiết Kế Môi Trường
         </Link>
-        <Link to="/pillar/c" className="text-sm text-muted hover:text-teal-400 transition-colors text-center">
+        <Link to="/pillar/c" className="text-base text-muted hover:text-teal-400 transition-colors text-center">
           Tất cả Module Lối Sống →
         </Link>
-        <Link to="/pillar/c/assessment" className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/c/assessment" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
           Đánh Giá Lối Sống
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

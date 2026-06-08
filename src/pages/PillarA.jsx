@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+﻿import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ThoughtBubble from '../components/ThoughtBubble';
@@ -248,7 +248,7 @@ function AnimatedStat({ n, label, color, tooltip }) {
           <ThoughtBubble text={tooltip} idx={`a-${n}-${label}`} color={color} />
         </div>
       )}
-      <div className="text-lg font-black leading-none mb-0.5" style={{ color }}>{display}</div>
+      <div className="text-xl font-black leading-none mb-0.5" style={{ color }}>{display}</div>
       <div className="text-[9px] text-muted leading-snug">{label}</div>
     </div>
   );
@@ -273,9 +273,9 @@ function TabPanel({ tab }) {
       {/* ── QUOTE BLOCK (full width) ── */}
       <div className="relative z-10 px-7 md:px-10 pt-8 pb-6 border-b" style={{ borderColor: `${tab.color}18` }}>
         <div className="flex items-start gap-4">
-          <span className="text-5xl font-black leading-[0.7] shrink-0 select-none" style={{ color: `${tab.color}40` }}>"</span>
+          <span className="text-6xl font-black leading-[0.7] shrink-0 select-none" style={{ color: `${tab.color}40` }}>"</span>
           <div>
-            <p className="text-base md:text-lg font-semibold text-text/90 leading-relaxed italic mb-2">{tab.quote}</p>
+            <p className="text-lg md:text-xl font-semibold text-text/90 leading-relaxed italic mb-2">{tab.quote}</p>
             <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: `${tab.color}80` }}>— {tab.quoteContext}</p>
           </div>
         </div>
@@ -291,9 +291,9 @@ function TabPanel({ tab }) {
             {tab.n} / 04 · {tab.sub}
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-black text-text leading-tight mb-2">{tab.title}</h2>
-          <p className={`text-xs font-bold ${tab.text} mb-4 opacity-80`}>{tab.sub}</p>
-          <p className="text-muted text-sm leading-relaxed mb-7">{tab.longDesc}</p>
+          <h2 className="text-3xl md:text-4xl font-black text-text leading-tight mb-2">{tab.title}</h2>
+          <p className={`text-sm font-bold ${tab.text} mb-4 opacity-80`}>{tab.sub}</p>
+          <p className="text-muted text-base leading-relaxed mb-7">{tab.longDesc}</p>
 
           {/* Highlights — staggered fade in */}
           <div className="space-y-3 mb-6">
@@ -305,13 +305,13 @@ function TabPanel({ tab }) {
                 style={{ animationDelay: `${i * 70 + 80}ms`, animationFillMode: 'both' }}
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-sm shrink-0 border transition-all duration-200 group-hover:scale-110"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-base shrink-0 border transition-all duration-200 group-hover:scale-110"
                   style={{ background: `${tab.color}10`, borderColor: `${tab.color}25` }}
                 >
                   {h.icon}
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-text leading-tight">{h.title}</p>
+                  <p className="text-sm font-bold text-text leading-tight">{h.title}</p>
                   <p className="text-[11px] text-muted mt-0.5">{h.desc}</p>
                 </div>
               </div>
@@ -331,13 +331,13 @@ function TabPanel({ tab }) {
                 style={{ animationDelay: `${i * 90 + 280}ms`, animationFillMode: 'both' }}
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-sm shrink-0 border mt-0.5"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-base shrink-0 border mt-0.5"
                   style={{ background: `${tab.color}08`, borderColor: `${tab.color}20` }}
                 >
                   {d.icon}
                 </div>
                 <div className="flex-1 pl-3 border-l" style={{ borderColor: `${tab.color}25` }}>
-                  <p className="text-xs font-bold text-text/90 leading-tight mb-1">{d.title}</p>
+                  <p className="text-sm font-bold text-text/90 leading-tight mb-1">{d.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{d.body}</p>
                 </div>
               </div>
@@ -348,7 +348,7 @@ function TabPanel({ tab }) {
           <div className="mt-auto">
             <Link
               to={tab.path}
-              className="inline-flex items-center gap-2.5 font-bold text-sm px-7 py-3.5 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group"
+              className="inline-flex items-center gap-2.5 font-bold text-base px-7 py-3.5 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group"
               style={{ background: `${tab.color}12`, borderColor: `${tab.color}40`, color: tab.color }}
               onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 8px 32px ${tab.glow}`; e.currentTarget.style.background = `${tab.color}20`; }}
               onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.background = `${tab.color}12`; }}
@@ -585,7 +585,7 @@ export default function PillarA() {
   if (!pillar || typeof pillar !== 'object') {
     return (
       <div className="flex items-center justify-center py-20">
-        <span className="text-muted text-sm">{tCommon('common.loading')}</span>
+        <span className="text-muted text-base">{tCommon('common.loading')}</span>
       </div>
     );
   }
@@ -601,7 +601,7 @@ export default function PillarA() {
       <div className="mb-10">
         <Link
           to="/pillars"
-          className="inline-flex items-center gap-2 text-muted hover:text-accent text-sm transition-colors duration-200 group"
+          className="inline-flex items-center gap-2 text-muted hover:text-accent text-base transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           {tCommon('nav.pillars')}
@@ -612,11 +612,11 @@ export default function PillarA() {
       <div className="mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
         <div className="relative flex items-start gap-6">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-5xl bg-surface border border-accent/20 shrink-0 animate-float">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-6xl bg-surface border border-accent/20 shrink-0 animate-float">
             🏃
           </div>
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-up">
               {(() => {
                 const s = pillar.title;
                 const i = s.indexOf('&');
@@ -630,10 +630,10 @@ export default function PillarA() {
                 );
               })()}
             </h1>
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent mt-3 mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
+            <span className="inline-block text-sm font-bold uppercase tracking-widest text-accent mt-3 mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
               {pillar.subtitle}
             </span>
-            <p className="text-muted text-base leading-relaxed max-w-2xl">
+            <p className="text-muted text-lg leading-relaxed max-w-2xl">
               {pillar.description}
             </p>
           </div>
@@ -650,7 +650,7 @@ export default function PillarA() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-accent text-xs font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-accent/20">
+            <span className="text-accent text-sm font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-accent/20">
               {pillar?.subtitle || 'Daily Training'}
             </span>
           </div>
@@ -665,12 +665,12 @@ export default function PillarA() {
 
         {/* Opening statement */}
         <div className="text-center mb-10 max-w-2xl mx-auto">
-          <p className="text-xl md:text-2xl font-semibold text-text/85 leading-relaxed mb-3">
+          <p className="text-2xl md:text-3xl font-semibold text-text/85 leading-relaxed mb-3">
             {pillar?.intro_pt1 || 'Tập luyện hiệu quả không phải là tập '}<em>{pillar?.intro_em || 'nhiều hơn'}</em>
             <br />
             {pillar?.intro_pt2 || '— mà là tập '}<span className="text-accent font-bold not-italic">{pillar?.intro_strong || 'đúng hơn'}</span>.
           </p>
-          <p className="text-sm text-muted leading-relaxed">
+          <p className="text-base text-muted leading-relaxed">
             {pillar?.intro_sub || '4 chủ đề dưới đây được sắp xếp theo thứ tự logic.'}
           </p>
         </div>
@@ -685,9 +685,9 @@ export default function PillarA() {
                 className="flex gap-4 p-5 rounded-2xl border border-border/40 bg-surface/20 hover:bg-surface/35 hover:border-border/60 transition-all duration-300 group animate-fade-in-up"
                 style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
               >
-                <span className="text-2xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">{p.icon}</span>
+                <span className="text-3xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">{p.icon}</span>
                 <div>
-                  <p className="text-sm font-bold text-text mb-1.5">{pt.title}</p>
+                  <p className="text-base font-bold text-text mb-1.5">{pt.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{pt.body}</p>
                 </div>
               </div>
@@ -737,14 +737,14 @@ export default function PillarA() {
               >
                 {/* Step circle */}
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black border mb-3 transition-all duration-300 group-hover:scale-110 relative z-10"
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-base font-black border mb-3 transition-all duration-300 group-hover:scale-110 relative z-10"
                   style={{ background: `${t.color}12`, borderColor: `${t.color}40`, color: t.color }}
                 >
                   {i + 1}
                 </div>
 
                 {/* Icon */}
-                <span className="text-xl mb-2">{t.icon}</span>
+                <span className="text-2xl mb-2">{t.icon}</span>
 
                 {/* Title */}
                 <p className="text-[11px] font-bold text-text/80 group-hover:text-text leading-snug mb-1 transition-colors">{jt.title}</p>
@@ -774,7 +774,7 @@ export default function PillarA() {
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
             <div className="flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />
-              <h2 className="text-sm font-black uppercase tracking-[0.18em] text-text whitespace-nowrap">
+              <h2 className="text-base font-black uppercase tracking-[0.18em] text-text whitespace-nowrap">
                 {pillar?.tabs_label || '4 chủ đề luyện tập'}
               </h2>
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />
@@ -808,12 +808,12 @@ export default function PillarA() {
                         background: isActive ? `${t.color}0e` : 'transparent',
                       }}
                     >
-                      <span className={`text-2xl transition-all duration-200 ${isActive ? 'scale-110' : 'opacity-50'}`}
+                      <span className={`text-3xl transition-all duration-200 ${isActive ? 'scale-110' : 'opacity-50'}`}
                         style={{ filter: isActive ? `drop-shadow(0 0 8px ${t.color}90)` : 'none' }}>
                         {t.icon}
                       </span>
-                      <span className="text-base font-black">{t.n}</span>
-                      <span className="hidden sm:inline text-base">— {t.title}</span>
+                      <span className="text-lg font-black">{t.n}</span>
+                      <span className="hidden sm:inline text-lg">— {t.title}</span>
                       {isActive && (
                         <span className="w-2 h-2 rounded-full animate-pulse ml-0.5" style={{ background: t.color }} />
                       )}
@@ -873,7 +873,7 @@ export default function PillarA() {
                 onClick={() => { switchTab(i); tabBarRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 className="flex items-center gap-3 p-3 rounded-xl border border-border/40 hover:border-border transition-all duration-200 group hover:bg-white/[0.03] text-left w-full"
               >
-                <span className="text-sm font-medium text-muted min-w-[140px] shrink-0">{item.who}</span>
+                <span className="text-base font-medium text-muted min-w-[140px] shrink-0">{item.who}</span>
                 <span className="text-[11px] text-muted/50 shrink-0 hidden md:block">{item.where}</span>
                 <span className={`text-[11px] font-bold flex-1 truncate ${mergedTabs[i].text}`}>{mergedTabs[i].title}</span>
                 <span className="text-muted group-hover:translate-x-0.5 transition-transform shrink-0">→</span>
@@ -890,12 +890,12 @@ export default function PillarA() {
             <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-500/5 rounded-full blur-3xl pointer-events-none" />
             <div className="relative">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl">⚠️</span>
-                <h3 className="font-bold text-yellow-400 text-base">{pillar.sections[5].title}</h3>
+                <span className="text-3xl">⚠️</span>
+                <h3 className="font-bold text-yellow-400 text-lg">{pillar.sections[5].title}</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-2">
                 {Array.isArray(pillar.sections[5].items) && pillar.sections[5].items.map((item, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs text-yellow-300/70">
+                  <div key={i} className="flex items-start gap-2 text-sm text-yellow-300/70">
                     <span className="text-yellow-400/60 mt-0.5 shrink-0">·</span>
                     <span>{item}</span>
                   </div>
@@ -912,19 +912,19 @@ export default function PillarA() {
           <Link to="/program" className="group relative overflow-hidden rounded-2xl border border-accent/20 bg-accent/4 p-6 hover:border-accent/40 hover:bg-accent/8 transition-all duration-300 hover:-translate-y-0.5">
             <div className="absolute inset-0 grid-dots opacity-10 pointer-events-none" />
             <div className="relative">
-              <div className="text-3xl mb-3">🗓️</div>
-              <h3 className="font-black text-text text-base mb-1">{pillar?.cta_12week_title || 'Lộ Trình 12 Tuần'}</h3>
-              <p className="text-muted text-xs leading-relaxed mb-4">{pillar?.cta_12week_desc || 'Khung ngày chuẩn, nhịp tuần gợi ý, bộ test tiến bộ theo giai đoạn.'}</p>
-              <span className="inline-flex items-center gap-1.5 text-accent text-xs font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_12week_btn || 'Xem lộ trình'} <span>→</span></span>
+              <div className="text-4xl mb-3">🗓️</div>
+              <h3 className="font-black text-text text-lg mb-1">{pillar?.cta_12week_title || 'Lộ Trình 12 Tuần'}</h3>
+              <p className="text-muted text-sm leading-relaxed mb-4">{pillar?.cta_12week_desc || 'Khung ngày chuẩn, nhịp tuần gợi ý, bộ test tiến bộ theo giai đoạn.'}</p>
+              <span className="inline-flex items-center gap-1.5 text-accent text-sm font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_12week_btn || 'Xem lộ trình'} <span>→</span></span>
             </div>
           </Link>
           <Link to="/sample-programs" className="group relative overflow-hidden rounded-2xl border border-pink-500/20 bg-pink-500/4 p-6 hover:border-pink-500/40 hover:bg-pink-500/8 transition-all duration-300 hover:-translate-y-0.5">
             <div className="absolute inset-0 grid-dots opacity-10 pointer-events-none" />
             <div className="relative">
-              <div className="text-3xl mb-3">🎯</div>
-              <h3 className="font-black text-text text-base mb-1">{pillar?.cta_sample_title || 'Lộ Trình Mẫu'}</h3>
-              <p className="text-muted text-xs leading-relaxed mb-4">{pillar?.cta_sample_desc || '6 mục tiêu × 24 tuần — tìm lộ trình phù hợp nhất với bạn.'}</p>
-              <span className="inline-flex items-center gap-1.5 text-pink-400 text-xs font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_sample_btn || 'Khám phá'} <span>→</span></span>
+              <div className="text-4xl mb-3">🎯</div>
+              <h3 className="font-black text-text text-lg mb-1">{pillar?.cta_sample_title || 'Lộ Trình Mẫu'}</h3>
+              <p className="text-muted text-sm leading-relaxed mb-4">{pillar?.cta_sample_desc || '6 mục tiêu × 24 tuần — tìm lộ trình phù hợp nhất với bạn.'}</p>
+              <span className="inline-flex items-center gap-1.5 text-pink-400 text-sm font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_sample_btn || 'Khám phá'} <span>→</span></span>
             </div>
           </Link>
         </div>

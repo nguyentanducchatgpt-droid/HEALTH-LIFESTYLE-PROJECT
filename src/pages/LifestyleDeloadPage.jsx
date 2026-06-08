@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#f97316';
@@ -127,7 +127,7 @@ export default function LifestyleDeloadPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       {/* Breadcrumb */}
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-xs text-muted hover:text-teal-400 transition-colors mb-8 group">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-sm text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Lối Sống Khỏe
       </Link>
@@ -135,11 +135,11 @@ export default function LifestyleDeloadPage() {
       {/* Hero */}
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>⚡</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>⚡</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight animate-fade-in-up">Deload & Phục Hồi Chủ Động</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C5 · Deload</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">Deload không phải lười biếng — đó là chiến lược. Những tuần giảm tải được lên kế hoạch chính là nơi bạn thực sự mạnh hơn, vì cơ thể có thời gian siêu bù để phát triển vượt mức ban đầu.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Deload & Phục Hồi Chủ Động</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C5 · Deload</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">Deload không phải lười biếng — đó là chiến lược. Những tuần giảm tải được lên kế hoạch chính là nơi bạn thực sự mạnh hơn, vì cơ thể có thời gian siêu bù để phát triển vượt mức ban đầu.</p>
         </div>
       </div>
 
@@ -149,7 +149,7 @@ export default function LifestyleDeloadPage() {
           <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop" alt="Deload" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Deload = Đầu Tư Cho Tương Lai</span>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Deload = Đầu Tư Cho Tương Lai</span>
           </div>
         </div>
       </div>
@@ -158,8 +158,8 @@ export default function LifestyleDeloadPage() {
 
       {/* Why deload */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Cần Deload?</h2>
-        <p className="text-muted text-sm mb-6">Tập luyện = kích thích. Nghỉ ngơi = thích nghi. Thiếu nghỉ = không tiến bộ.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Cần Deload?</h2>
+        <p className="text-muted text-base mb-6">Tập luyện = kích thích. Nghỉ ngơi = thích nghi. Thiếu nghỉ = không tiến bộ.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             { icon: '🔬', title: 'Siêu bù (Supercompensation)', desc: 'Sau stress → cơ thể phục hồi vượt mức cũ. Không có stress → không có lý do để mạnh hơn.' },
@@ -167,9 +167,9 @@ export default function LifestyleDeloadPage() {
             { icon: '🦴', title: 'Gân & khớp cần thời gian', desc: 'Gân và dây chằng phục hồi chậm hơn cơ 3–5 lần. Không deload = tích lũy vi chấn thương.' },
           ].map(item => (
             <div key={item.title} className="rounded-2xl border border-border bg-surface p-5" style={{ borderColor: `rgba(${RGB},0.15)` }}>
-              <div className="text-3xl mb-3">{item.icon}</div>
-              <div className="text-sm font-bold text-text mb-2">{item.title}</div>
-              <div className="text-xs text-muted leading-relaxed">{item.desc}</div>
+              <div className="text-4xl mb-3">{item.icon}</div>
+              <div className="text-base font-bold text-text mb-2">{item.title}</div>
+              <div className="text-sm text-muted leading-relaxed">{item.desc}</div>
             </div>
           ))}
         </div>
@@ -177,22 +177,22 @@ export default function LifestyleDeloadPage() {
 
       {/* 7 Signals */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>7 Dấu Hiệu Cần Deload Ngay</h2>
-        <p className="text-muted text-sm mb-6">Khi nhận thấy 3+ dấu hiệu này, đừng "cố" — hãy deload có kế hoạch.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>7 Dấu Hiệu Cần Deload Ngay</h2>
+        <p className="text-muted text-base mb-6">Khi nhận thấy 3+ dấu hiệu này, đừng "cố" — hãy deload có kế hoạch.</p>
         <div className="space-y-2">
           {SIGNALS.map((s, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden" style={{ borderColor: openSignal === i ? `rgba(${RGB},0.3)` : undefined }}>
               <button onClick={() => setOpenSignal(openSignal === i ? null : i)} className="w-full flex items-center gap-4 p-4 text-left hover:bg-white/5 transition-colors">
-                <span className="text-2xl">{s.icon}</span>
-                <span className="flex-1 text-sm font-medium text-text">{s.title}</span>
-                <span className="text-xs px-2 py-0.5 rounded-full font-bold" style={{ background: s.severity === 'cao' ? `rgba(${RGB},0.15)` : 'rgba(107,114,128,0.15)', color: s.severity === 'cao' ? COLOR : '#9ca3af' }}>
+                <span className="text-3xl">{s.icon}</span>
+                <span className="flex-1 text-base font-medium text-text">{s.title}</span>
+                <span className="text-sm px-2 py-0.5 rounded-full font-bold" style={{ background: s.severity === 'cao' ? `rgba(${RGB},0.15)` : 'rgba(107,114,128,0.15)', color: s.severity === 'cao' ? COLOR : '#9ca3af' }}>
                   {s.severity === 'cao' ? '⚠️ Cao' : '⚡ TB'}
                 </span>
-                <span className="text-muted text-xs">{openSignal === i ? '▲' : '▼'}</span>
+                <span className="text-muted text-sm">{openSignal === i ? '▲' : '▼'}</span>
               </button>
               {openSignal === i && (
                 <div className="px-4 pb-4 pt-0">
-                  <div className="ml-10 text-sm text-muted leading-relaxed border-t border-border pt-3">{s.desc}</div>
+                  <div className="ml-10 text-base text-muted leading-relaxed border-t border-border pt-3">{s.desc}</div>
                 </div>
               )}
             </div>
@@ -202,37 +202,37 @@ export default function LifestyleDeloadPage() {
 
       {/* 4 Methods */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>4 Phương Pháp Deload</h2>
-        <p className="text-muted text-sm mb-6">Chọn phương pháp phù hợp với mục tiêu và lịch tập của bạn.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Phương Pháp Deload</h2>
+        <p className="text-muted text-base mb-6">Chọn phương pháp phù hợp với mục tiêu và lịch tập của bạn.</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
           {METHODS.map(m => (
             <button key={m.id} onClick={() => setOpenMethod(m.id)} className={`rounded-xl p-3 text-left transition-all border ${openMethod === m.id ? 'border-opacity-50' : 'border-border hover:border-opacity-30'}`} style={{ background: openMethod === m.id ? `rgba(${RGB},0.1)` : undefined, borderColor: openMethod === m.id ? COLOR : undefined }}>
-              <div className="text-2xl mb-1">{m.icon}</div>
-              <div className="text-xs font-bold" style={{ color: openMethod === m.id ? COLOR : '#9ca3af' }}>{m.title.split('(')[0].trim()}</div>
+              <div className="text-3xl mb-1">{m.icon}</div>
+              <div className="text-sm font-bold" style={{ color: openMethod === m.id ? COLOR : '#9ca3af' }}>{m.title.split('(')[0].trim()}</div>
             </button>
           ))}
         </div>
         {activeMethod && (
           <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-3xl">{activeMethod.icon}</span>
+              <span className="text-4xl">{activeMethod.icon}</span>
               <div>
-                <div className="text-base font-bold text-text">{activeMethod.title}</div>
-                <div className="text-sm text-muted">{activeMethod.desc}</div>
+                <div className="text-lg font-bold text-text">{activeMethod.title}</div>
+                <div className="text-base text-muted">{activeMethod.desc}</div>
               </div>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: COLOR }}>Cách Thực Hiện</div>
+                <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: COLOR }}>Cách Thực Hiện</div>
                 <ul className="space-y-1">
                   {activeMethod.howto.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-text"><span style={{ color: COLOR }}>→</span>{h}</li>
+                    <li key={i} className="flex items-start gap-2 text-base text-text"><span style={{ color: COLOR }}>→</span>{h}</li>
                   ))}
                 </ul>
               </div>
               <div>
-                <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: COLOR }}>Phù Hợp Nhất Cho</div>
-                <div className="rounded-xl p-3 text-sm text-muted" style={{ background: `rgba(${RGB},0.08)` }}>{activeMethod.best}</div>
+                <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: COLOR }}>Phù Hợp Nhất Cho</div>
+                <div className="rounded-xl p-3 text-base text-muted" style={{ background: `rgba(${RGB},0.08)` }}>{activeMethod.best}</div>
               </div>
             </div>
           </div>
@@ -241,16 +241,16 @@ export default function LifestyleDeloadPage() {
 
       {/* Frequency by level */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Tần Suất Deload Theo Trình Độ</h2>
-        <p className="text-muted text-sm mb-6">Càng tập lâu năm, cơ thể càng cần deload thường xuyên hơn.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tần Suất Deload Theo Trình Độ</h2>
+        <p className="text-muted text-base mb-6">Càng tập lâu năm, cơ thể càng cần deload thường xuyên hơn.</p>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-base">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-3 pr-4 text-xs font-bold uppercase tracking-widest text-muted">Trình Độ</th>
-                <th className="text-left py-3 pr-4 text-xs font-bold uppercase tracking-widest text-muted">Chu Kỳ</th>
-                <th className="text-left py-3 pr-4 text-xs font-bold uppercase tracking-widest text-muted">Thời Gian</th>
-                <th className="text-left py-3 text-xs font-bold uppercase tracking-widest text-muted">Ghi Chú</th>
+                <th className="text-left py-3 pr-4 text-sm font-bold uppercase tracking-widest text-muted">Trình Độ</th>
+                <th className="text-left py-3 pr-4 text-sm font-bold uppercase tracking-widest text-muted">Chu Kỳ</th>
+                <th className="text-left py-3 pr-4 text-sm font-bold uppercase tracking-widest text-muted">Thời Gian</th>
+                <th className="text-left py-3 text-sm font-bold uppercase tracking-widest text-muted">Ghi Chú</th>
               </tr>
             </thead>
             <tbody>
@@ -259,7 +259,7 @@ export default function LifestyleDeloadPage() {
                   <td className="py-3 pr-4 font-medium text-text">{f.level}</td>
                   <td className="py-3 pr-4" style={{ color: COLOR }}>{f.freq}</td>
                   <td className="py-3 pr-4 text-text">{f.duration}</td>
-                  <td className="py-3 text-muted text-xs">{f.note}</td>
+                  <td className="py-3 text-muted text-sm">{f.note}</td>
                 </tr>
               ))}
             </tbody>
@@ -269,24 +269,24 @@ export default function LifestyleDeloadPage() {
 
       {/* Sample deload week */}
       <RevealBlock className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Mẫu Tuần Deload</h2>
-        <p className="text-muted text-sm mb-6">Kế hoạch 7 ngày cho người tập 4–5 buổi/tuần (Giảm Volume).</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẫu Tuần Deload</h2>
+        <p className="text-muted text-base mb-6">Kế hoạch 7 ngày cho người tập 4–5 buổi/tuần (Giảm Volume).</p>
         <div className="space-y-2">
           {DELOAD_WEEK.map((d, i) => (
             <div key={i} className="flex items-center gap-4 rounded-xl p-3 border border-border bg-surface hover:border-opacity-30 transition-colors" style={{ borderColor: d.intensity !== 'rest' ? `rgba(${RGB},0.1)` : undefined }}>
-              <div className="w-16 text-xs font-bold text-center shrink-0" style={{ color: COLOR }}>{d.day}</div>
+              <div className="w-16 text-sm font-bold text-center shrink-0" style={{ color: COLOR }}>{d.day}</div>
               <div className="w-2 h-2 rounded-full shrink-0" style={{ background: INTENSITY_COLOR[d.intensity] }} />
               <div className="flex-1">
-                <div className="text-sm font-medium text-text">{d.type}</div>
-                <div className="text-xs text-muted">{d.detail}</div>
+                <div className="text-base font-medium text-text">{d.type}</div>
+                <div className="text-sm text-muted">{d.detail}</div>
               </div>
-              <div className="text-xs px-2 py-0.5 rounded-full font-bold shrink-0" style={{ background: `${INTENSITY_COLOR[d.intensity]}20`, color: INTENSITY_COLOR[d.intensity] }}>
+              <div className="text-sm px-2 py-0.5 rounded-full font-bold shrink-0" style={{ background: `${INTENSITY_COLOR[d.intensity]}20`, color: INTENSITY_COLOR[d.intensity] }}>
                 {d.intensity === 'light' ? 'Nhẹ' : d.intensity === 'very-light' ? 'Rất nhẹ' : 'Nghỉ'}
               </div>
             </div>
           ))}
         </div>
-        <div className="mt-4 rounded-xl p-4 text-sm text-muted border border-border" style={{ background: `rgba(${RGB},0.05)` }}>
+        <div className="mt-4 rounded-xl p-4 text-base text-muted border border-border" style={{ background: `rgba(${RGB},0.05)` }}>
           💡 <strong style={{ color: COLOR }}>Dinh dưỡng trong tuần deload:</strong> Giữ nguyên protein. Có thể giảm nhẹ carb nếu thấy khó chịu với việc ăn nhiều mà tập ít hơn. Không cần "ăn ít đi" — cơ thể đang sửa chữa và cần dưỡng chất.
         </div>
       </RevealBlock>
@@ -294,23 +294,23 @@ export default function LifestyleDeloadPage() {
       {/* Key quote */}
       <RevealBlock className="mb-12">
         <blockquote className="rounded-2xl p-6 border-l-4 relative overflow-hidden" style={{ borderLeftColor: COLOR, background: `rgba(${RGB},0.05)` }}>
-          <div className="text-4xl absolute right-6 top-4 opacity-10" style={{ color: COLOR }}>"</div>
-          <p className="text-lg font-medium text-text leading-relaxed italic">"Người giỏi nhất không phải là người tập nhiều nhất — mà là người biết khi nào cần dừng để tăng tốc."</p>
-          <cite className="text-xs text-muted mt-3 block">— Nguyên tắc tập luyện dài hạn</cite>
+          <div className="text-5xl absolute right-6 top-4 opacity-10" style={{ color: COLOR }}>"</div>
+          <p className="text-xl font-medium text-text leading-relaxed italic">"Người giỏi nhất không phải là người tập nhiều nhất — mà là người biết khi nào cần dừng để tăng tốc."</p>
+          <cite className="text-sm text-muted mt-3 block">— Nguyên tắc tập luyện dài hạn</cite>
         </blockquote>
       </RevealBlock>
 
       {/* Footer nav */}
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/c/recovery" className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/c/recovery" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Phục Hồi Chủ Động
         </Link>
-        <Link to="/pillar/c" className="text-sm text-muted hover:text-teal-400 transition-colors text-center">
+        <Link to="/pillar/c" className="text-base text-muted hover:text-teal-400 transition-colors text-center">
           Tất cả Module Lối Sống →
         </Link>
-        <Link to="/pillar/c/breathing" className="flex items-center gap-2 text-sm text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/c/breathing" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
           Kỹ Thuật Thở
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

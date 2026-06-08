@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+﻿import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -392,7 +392,7 @@ function FormulaStep({ step, title, color, children, formula }) {
           <p className="text-[11px] font-bold text-text">{title}</p>
           {formula && <p className="text-[9px] font-mono text-muted/70 mt-0.5">{formula}</p>}
         </div>
-        <span className="text-muted/40 text-xs transition-transform duration-200" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▼</span>
+        <span className="text-muted/40 text-sm transition-transform duration-200" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▼</span>
       </button>
       {open && <div className="px-4 pb-4 pt-0 border-t space-y-2" style={{ borderColor: `${color}15` }}>{children}</div>}
     </div>
@@ -477,16 +477,16 @@ export default function NutritionContentPage() {
                 <span className="w-1.5 h-1.5 rounded-full bg-lime-400 inline-block nc-pulse" />
                 <span className="text-[9px] font-bold text-lime-400 uppercase tracking-[0.2em]">Tài Liệu Tổng Thể</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-black leading-tight mb-3">
+              <h1 className="text-5xl md:text-6xl font-black leading-tight mb-3">
                 <span className="nc-shimmer">Cấu Trúc Sản Phẩm</span><br />
                 <span className="text-text">Nội Dung Module Nutrition</span>
               </h1>
-              <p className="text-sm text-muted leading-relaxed max-w-xl">
+              <p className="text-base text-muted leading-relaxed max-w-xl">
                 8 phần B0–B7 · Công thức tính toán · Lộ trình 7 bước · Series nội dung · Công cụ theo dõi. Toàn bộ hệ sinh thái Trụ Cột B trong một trang.
               </p>
               <div className="flex flex-wrap gap-5 mt-6">
                 {[['8', 'Phần B0–B7', '#22c55e'],['20+', 'Nguyên tắc', '#06b6d4'],['7', 'Bước hành trình', '#a855f7'],['4', 'Lớp nội dung', '#f59e0b']].map(([v, l, c]) => (
-                  <div key={l}><p className="text-2xl font-black" style={{ color: c }}>{v}</p><p className="text-[9px] text-muted uppercase tracking-wider">{l}</p></div>
+                  <div key={l}><p className="text-3xl font-black" style={{ color: c }}>{v}</p><p className="text-[9px] text-muted uppercase tracking-wider">{l}</p></div>
                 ))}
               </div>
             </div>
@@ -518,9 +518,9 @@ export default function NutritionContentPage() {
         <RevealBlock>
           <div className="rounded-3xl border border-border/20 bg-surface/5 p-6">
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xl">🏗️</span>
+              <span className="text-2xl">🏗️</span>
               <div>
-                <p className="text-sm font-bold text-text">4 Lớp Kiến Trúc Module Nutrition</p>
+                <p className="text-base font-bold text-text">4 Lớp Kiến Trúc Module Nutrition</p>
                 <p className="text-[9px] text-muted">Từ nền tảng kiến thức đến cá nhân hóa theo dõi</p>
               </div>
             </div>
@@ -529,13 +529,13 @@ export default function NutritionContentPage() {
                 <RevealBlock key={i} delay={i * 80}>
                   <div className="rounded-2xl border p-4 transition-all hover:shadow-lg" style={{ borderColor: `${layer.color}20`, background: `${layer.color}06`, maxWidth: layer.width, marginLeft: `${(100 - parseInt(layer.width)) / 2}%` }}>
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-lg shrink-0" style={{ background: `${layer.color}18`, border: `1.5px solid ${layer.color}30` }}>
+                      <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-xl shrink-0" style={{ background: `${layer.color}18`, border: `1.5px solid ${layer.color}30` }}>
                         {layer.icon}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-[8px] font-black uppercase tracking-[0.2em]" style={{ color: layer.color }}>Lớp {layer.num}</span>
-                          <p className="text-sm font-bold text-text">{layer.label}</p>
+                          <p className="text-base font-bold text-text">{layer.label}</p>
                           <span className="ml-auto text-[8px] px-2 py-0.5 rounded-full border" style={{ borderColor: `${layer.color}30`, color: layer.color }}>Module {layer.modules}</span>
                         </div>
                         <p className="text-[10px] text-muted leading-relaxed mb-2">{layer.desc}</p>
@@ -571,7 +571,7 @@ export default function NutritionContentPage() {
                       <img src={mod.image} alt={mod.label} className="w-full h-full object-cover" />
                       <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 0%, ${mod.color}40 50%, rgba(10,10,10,.9) 100%)` }} />
                       <div className="absolute bottom-2 left-3 flex items-center gap-1.5">
-                        <span className="text-lg">{mod.emoji}</span>
+                        <span className="text-xl">{mod.emoji}</span>
                         <span className="text-[10px] font-black text-white">{mod.id}</span>
                       </div>
                       <div className="absolute top-2 right-2 text-[7px] px-1.5 py-0.5 rounded-full" style={{ background: `${mod.color}80`, color: '#fff' }}>
@@ -593,15 +593,15 @@ export default function NutritionContentPage() {
               return (
                 <div className="mt-4 rounded-3xl border p-6" style={{ borderColor: `${mod.color}25`, background: `${mod.color}06` }}>
                   <div className="flex items-start gap-4 mb-5">
-                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shrink-0" style={{ background: `${mod.color}15`, border: `1.5px solid ${mod.color}30` }}>{mod.emoji}</div>
+                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-3xl shrink-0" style={{ background: `${mod.color}15`, border: `1.5px solid ${mod.color}30` }}>{mod.emoji}</div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <p className="text-xs font-bold uppercase tracking-widest" style={{ color: mod.color }}>{mod.id}</p>
-                        <p className="text-base font-black text-text">{mod.label}</p>
+                        <p className="text-sm font-bold uppercase tracking-widest" style={{ color: mod.color }}>{mod.id}</p>
+                        <p className="text-lg font-black text-text">{mod.label}</p>
                       </div>
                       <p className="text-[10px] text-muted leading-relaxed mt-1">{mod.goal}</p>
                     </div>
-                    <button onClick={() => setActiveModule(null)} className="text-muted/40 hover:text-muted text-lg shrink-0">✕</button>
+                    <button onClick={() => setActiveModule(null)} className="text-muted/40 hover:text-muted text-xl shrink-0">✕</button>
                   </div>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -644,9 +644,9 @@ export default function NutritionContentPage() {
         <RevealBlock>
           <div className="rounded-3xl border border-lime-500/20 bg-lime-500/4 p-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-2xl bg-lime-500/15 border border-lime-500/25 flex items-center justify-center"><span className="text-lg">🔢</span></div>
+              <div className="w-10 h-10 rounded-2xl bg-lime-500/15 border border-lime-500/25 flex items-center justify-center"><span className="text-xl">🔢</span></div>
               <div>
-                <p className="text-sm font-bold text-text">Công Thức Tính Nhanh — Meal Plan Cá Nhân Hóa</p>
+                <p className="text-base font-bold text-text">Công Thức Tính Nhanh — Meal Plan Cá Nhân Hóa</p>
                 <p className="text-[9px] text-muted">Nhập thông tin → xem ngay kết quả BMI, BMR, TDEE, Macro theo từng bước</p>
               </div>
             </div>
@@ -658,7 +658,7 @@ export default function NutritionContentPage() {
                   <p className="text-[10px] font-bold text-lime-400">Thông Số Đầu Vào</p>
                   <p className="text-[9px] text-muted mt-0.5">{inputs.weight}kg · {inputs.height}cm · {inputs.age} tuổi · {inputs.sex === 'male' ? 'Nam' : 'Nữ'} · {ACTIVITY_LEVELS.find(a=>a.key===inputs.activityKey)?.label} · {GOAL_MODIFIERS.find(g=>g.key===inputs.goalKey)?.label}</p>
                 </div>
-                <span className="text-muted/40 text-xs" style={{ transform: inputOpen ? 'rotate(180deg)' : 'none' }}>▼</span>
+                <span className="text-muted/40 text-sm" style={{ transform: inputOpen ? 'rotate(180deg)' : 'none' }}>▼</span>
               </button>
               {inputOpen && (
                 <div className="mt-4 space-y-4 border-t border-border/20 pt-4">
@@ -787,7 +787,7 @@ export default function NutritionContentPage() {
               </FormulaStep>
               <FormulaStep step={5} title="Chọn kcal theo mục tiêu" color="#ec4899" formula="Target = TDEE × Hệ số mục tiêu hoặc TDEE ± Delta">
                 <div className="pt-2 space-y-1.5 text-[9px]">
-                  {GOAL_MODIFIERS.map(g => <div key={g.key} className="flex gap-2 items-start"><span className="text-xl">{g.emoji}</span><div><p className="font-bold text-text">{g.label}: TDEE × {g.multMin}–{g.multMax}</p><p className="text-muted/70">{g.note}</p></div></div>)}
+                  {GOAL_MODIFIERS.map(g => <div key={g.key} className="flex gap-2 items-start"><span className="text-2xl">{g.emoji}</span><div><p className="font-bold text-text">{g.label}: TDEE × {g.multMin}–{g.multMax}</p><p className="text-muted/70">{g.note}</p></div></div>)}
                 </div>
               </FormulaStep>
               <FormulaStep step={6} title="Tính protein, fat, carb" color="#22c55e" formula="P=W×1.6–2.2g/kg · F=W×0.6–1.0g/kg · C=(Target−P×4−F×9)÷4">
@@ -820,9 +820,9 @@ export default function NutritionContentPage() {
         <RevealBlock>
           <div className="rounded-3xl border border-border/20 bg-surface/5 p-6">
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xl">🗺️</span>
+              <span className="text-2xl">🗺️</span>
               <div>
-                <p className="text-sm font-bold text-text">Hành Trình 7 Bước Của Người Dùng</p>
+                <p className="text-base font-bold text-text">Hành Trình 7 Bước Của Người Dùng</p>
                 <p className="text-[9px] text-muted">Từ đánh giá ban đầu đến theo dõi và điều chỉnh liên tục</p>
               </div>
             </div>
@@ -843,12 +843,12 @@ export default function NutritionContentPage() {
               <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full" style={{ background: `linear-gradient(180deg, ${USER_JOURNEY[activeJourneyStep].color}60, transparent)` }} />
               <div className="pl-5">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shrink-0" style={{ background: `${USER_JOURNEY[activeJourneyStep].color}15`, border: `1.5px solid ${USER_JOURNEY[activeJourneyStep].color}40` }}>
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-3xl shrink-0" style={{ background: `${USER_JOURNEY[activeJourneyStep].color}15`, border: `1.5px solid ${USER_JOURNEY[activeJourneyStep].color}40` }}>
                     {USER_JOURNEY[activeJourneyStep].icon}
                   </div>
                   <div>
                     <p className="text-[9px] font-bold uppercase tracking-wider mb-0.5" style={{ color: USER_JOURNEY[activeJourneyStep].color }}>Bước {USER_JOURNEY[activeJourneyStep].step} / 7 · Module {USER_JOURNEY[activeJourneyStep].module}</p>
-                    <p className="text-sm font-black text-text">{USER_JOURNEY[activeJourneyStep].title}</p>
+                    <p className="text-base font-black text-text">{USER_JOURNEY[activeJourneyStep].title}</p>
                     <p className="text-[10px] text-muted leading-relaxed mt-1">{USER_JOURNEY[activeJourneyStep].desc}</p>
                   </div>
                 </div>
@@ -857,7 +857,7 @@ export default function NutritionContentPage() {
                   {USER_JOURNEY.map((st, i) => (
                     <div key={i} className="flex items-center shrink-0">
                       <button onClick={() => setActiveJourneyStep(i)}
-                        className="w-7 h-7 rounded-full border-2 flex items-center justify-center text-xs transition-all"
+                        className="w-7 h-7 rounded-full border-2 flex items-center justify-center text-sm transition-all"
                         style={i === activeJourneyStep
                           ? { borderColor: st.color, background: `${st.color}20`, boxShadow: `0 0 10px ${st.color}40` }
                           : i < activeJourneyStep
@@ -922,7 +922,7 @@ export default function NutritionContentPage() {
                   <RevealBlock key={i} delay={i * 40}>
                     <div className="rounded-2xl border border-border/20 bg-surface/5 p-4 hover:border-lime-500/25 transition-colors">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-xl">{a.icon}</span>
+                        <span className="text-2xl">{a.icon}</span>
                         <div>
                           <span className="text-[7px] font-bold px-1.5 py-0.5 rounded-full bg-lime-500/10 text-lime-400">{a.tag}</span>
                           <p className="text-[8px] text-muted/50 mt-0.5">{a.readTime}</p>
@@ -940,7 +940,7 @@ export default function NutritionContentPage() {
                 {DOWNLOADABLE_TOOLS.map((t, i) => (
                   <RevealBlock key={i} delay={i * 40}>
                     <div className="rounded-2xl border p-4 hover:scale-[1.01] transition-all cursor-pointer" style={{ borderColor: `${t.color}20`, background: `${t.color}06` }}>
-                      <div className="text-2xl mb-2">{t.icon}</div>
+                      <div className="text-3xl mb-2">{t.icon}</div>
                       <span className="text-[7px] font-bold px-1.5 py-0.5 rounded-full mb-2 inline-block" style={{ background: `${t.color}18`, color: t.color }}>{t.tag}</span>
                       <p className="text-[10px] font-bold text-text leading-snug mb-1">{t.title}</p>
                       <p className="text-[9px] text-muted">{t.desc}</p>
@@ -962,7 +962,7 @@ export default function NutritionContentPage() {
                 <div className="absolute inset-0 flex items-center px-8 gap-8">
                   <div>
                     <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-lime-400 mb-1">Cấu Trúc Dữ Liệu</p>
-                    <h3 className="text-lg font-black text-text">4 Database Cốt Lõi</h3>
+                    <h3 className="text-xl font-black text-text">4 Database Cốt Lõi</h3>
                     <p className="text-[9px] text-muted">App · Notion · Google Sheet</p>
                   </div>
                   <div className="flex flex-wrap gap-3">
@@ -974,7 +974,7 @@ export default function NutritionContentPage() {
                     ].map((db, i) => (
                       <div key={i} className="rounded-xl border p-2.5" style={{ borderColor: `${db.color}25`, background: `${db.color}10` }}>
                         <div className="flex items-center gap-1.5 mb-1">
-                          <span className="text-sm">{db.icon}</span>
+                          <span className="text-base">{db.icon}</span>
                           <p className="text-[9px] font-bold" style={{ color: db.color }}>{db.name}</p>
                         </div>
                         <p className="text-[8px] text-muted/70 leading-relaxed">{db.fields}</p>
@@ -997,7 +997,7 @@ export default function NutritionContentPage() {
                 </svg>
               </div>
               <div>
-                <p className="text-xs font-bold text-yellow-400 mb-1">Chuẩn An Toàn Module Nutrition</p>
+                <p className="text-sm font-bold text-yellow-400 mb-1">Chuẩn An Toàn Module Nutrition</p>
                 <div className="grid sm:grid-cols-2 gap-x-6 gap-y-1">
                   {['Nội dung dành cho giáo dục sức khỏe phổ thông — không thay thế tư vấn y khoa',
                     'Người có bệnh nền (đái tháo đường, thận, tim mạch, gout) cần tham khảo bác sĩ',
@@ -1020,8 +1020,8 @@ export default function NutritionContentPage() {
         {/* ── CTA ── */}
         <RevealBlock>
           <div className="rounded-3xl border border-lime-500/20 bg-lime-500/5 p-8 text-center">
-            <p className="text-2xl mb-2">🏗️</p>
-            <h3 className="text-lg font-black text-text mb-2">Module Nutrition — Hệ Thống Hoàn Chỉnh</h3>
+            <p className="text-3xl mb-2">🏗️</p>
+            <h3 className="text-xl font-black text-text mb-2">Module Nutrition — Hệ Thống Hoàn Chỉnh</h3>
             <p className="text-[10px] text-muted max-w-md mx-auto mb-5">
               Từ triết lý đến công cụ. Từ kiến thức đến hành động. Từ ngày đầu tiên đến thói quen trọn đời.
             </p>

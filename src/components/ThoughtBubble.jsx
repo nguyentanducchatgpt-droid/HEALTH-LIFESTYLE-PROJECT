@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+﻿import { useRef, useEffect, useState } from 'react';
 
 // Parametric cloud path: 4 bumps on top, 3 on bottom, scales to any W×H
 function buildCloud(W, H) {

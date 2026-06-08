@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#ef4444';
@@ -89,17 +89,17 @@ export default function ToolsProgressTestPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>📈</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>📈</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-tight">Bộ Test Tiến Bộ 4 Tuần</h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Bộ Test Tiến Bộ 4 Tuần</h1>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             8 chỉ số · Mỗi 4 tuần · Toàn diện hơn cân nặng
           </span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Đo tiến bộ không chỉ bằng cân nặng. 8 chỉ số phản ánh đầy đủ hơn: thể lực, phục hồi, tâm trí và lối sống. Cân bằng và trung thực với chính mình.
           </p>
         </div>
@@ -109,7 +109,7 @@ export default function ToolsProgressTestPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop" alt="Progress test" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             đo lường toàn diện · không chỉ là cân nặng
           </span>
         </div>
@@ -119,13 +119,13 @@ export default function ToolsProgressTestPage() {
 
       {/* Milestones */}
       <RevealBlock delay={0} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-4" style={{ color: COLOR }}>Lịch Test 12 Tuần</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Lịch Test 12 Tuần</h2>
         <div className="grid sm:grid-cols-4 gap-3">
           {MILESTONES.map((m, i) => (
             <div key={i} className="rounded-xl border p-4 text-center" style={{ borderColor: i === 0 ? `rgba(${RGB},0.3)` : 'rgba(255,255,255,0.08)', background: i === 0 ? `rgba(${RGB},0.05)` : 'transparent' }}>
-              <div className="text-2xl font-black mb-1" style={{ color: COLOR }}>T{m.week}</div>
-              <div className="font-bold text-text text-sm mb-1">{m.label}</div>
-              <div className="text-xs text-muted">{m.desc}</div>
+              <div className="text-3xl font-black mb-1" style={{ color: COLOR }}>T{m.week}</div>
+              <div className="font-bold text-text text-base mb-1">{m.label}</div>
+              <div className="text-sm text-muted">{m.desc}</div>
             </div>
           ))}
         </div>
@@ -133,19 +133,19 @@ export default function ToolsProgressTestPage() {
 
       {/* Test form */}
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-xl md:text-2xl font-bold mb-6" style={{ color: COLOR }}>Nhập Kết Quả Test</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: COLOR }}>Nhập Kết Quả Test</h2>
         <div className="rounded-2xl border border-border bg-surface p-5">
           <div className="grid grid-cols-2 gap-3 mb-4">
             <div>
-              <label className="text-xs text-muted block mb-1">Ngày test</label>
+              <label className="text-sm text-muted block mb-1">Ngày test</label>
               <input type="date" value={testDate} onChange={e => setTestDate(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border bg-transparent text-sm text-text focus:outline-none"
+                className="w-full px-3 py-2 rounded-xl border bg-transparent text-base text-text focus:outline-none"
                 style={{ borderColor: `rgba(${RGB},0.3)` }} />
             </div>
             <div>
-              <label className="text-xs text-muted block mb-1">Giai đoạn</label>
+              <label className="text-sm text-muted block mb-1">Giai đoạn</label>
               <select value={testLabel} onChange={e => setTestLabel(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border bg-surface text-sm text-text focus:outline-none"
+                className="w-full px-3 py-2 rounded-xl border bg-surface text-base text-text focus:outline-none"
                 style={{ borderColor: `rgba(${RGB},0.3)` }}>
                 {MILESTONES.map(m => <option key={m.label} value={m.label}>{m.label}</option>)}
               </select>
@@ -156,19 +156,19 @@ export default function ToolsProgressTestPage() {
             {TEST_ITEMS.map((item, i) => (
               <div key={item.key} className="rounded-xl border border-border overflow-hidden">
                 <button onClick={() => setOpenItem(openItem === i ? null : i)} className="w-full flex items-center gap-3 p-3 hover:bg-white/5 transition-colors text-left">
-                  <span className="text-xl">{item.icon}</span>
+                  <span className="text-2xl">{item.icon}</span>
                   <div className="flex-1">
-                    <div className="text-sm font-medium text-text">{item.label}</div>
-                    <div className="text-xs text-muted">{inputs[item.key] ? `${inputs[item.key]} ${item.unit}` : 'Chưa nhập'}</div>
+                    <div className="text-base font-medium text-text">{item.label}</div>
+                    <div className="text-sm text-muted">{inputs[item.key] ? `${inputs[item.key]} ${item.unit}` : 'Chưa nhập'}</div>
                   </div>
-                  <span className="text-muted text-sm">{openItem === i ? '▲' : '▼'}</span>
+                  <span className="text-muted text-base">{openItem === i ? '▲' : '▼'}</span>
                 </button>
                 {openItem === i && (
                   <div className="px-3 pb-3 border-t border-border pt-2">
-                    <p className="text-xs text-muted mb-2">📋 {item.how}</p>
-                    <p className="text-xs mb-2" style={{ color: COLOR }}>📊 {item.betterDir}</p>
+                    <p className="text-sm text-muted mb-2">📋 {item.how}</p>
+                    <p className="text-sm mb-2" style={{ color: COLOR }}>📊 {item.betterDir}</p>
                     <input type="text" value={inputs[item.key] ?? ''} onChange={e => setVal(item.key, e.target.value)}
-                      placeholder={`Nhập ${item.unit}`} className="w-full px-3 py-2 rounded-lg border bg-transparent text-sm text-text placeholder-muted focus:outline-none"
+                      placeholder={`Nhập ${item.unit}`} className="w-full px-3 py-2 rounded-lg border bg-transparent text-base text-text placeholder-muted focus:outline-none"
                       style={{ borderColor: `rgba(${RGB},0.3)` }} />
                   </div>
                 )}
@@ -176,7 +176,7 @@ export default function ToolsProgressTestPage() {
             ))}
           </div>
 
-          <button onClick={saveTest} className="w-full py-3 rounded-xl font-bold text-sm text-white" style={{ background: COLOR }}>
+          <button onClick={saveTest} className="w-full py-3 rounded-xl font-bold text-base text-white" style={{ background: COLOR }}>
             💾 Lưu kết quả {testLabel}
           </button>
         </div>
@@ -185,9 +185,9 @@ export default function ToolsProgressTestPage() {
       {/* History comparison */}
       {history.length > 0 && (
         <RevealBlock delay={2} className="mb-12">
-          <h2 className="text-xl md:text-2xl font-bold mb-4" style={{ color: COLOR }}>So Sánh Kết Quả</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>So Sánh Kết Quả</h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-xs">
+            <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border">
                   <th className="text-left py-2 text-muted font-medium">Chỉ số</th>
@@ -215,7 +215,7 @@ export default function ToolsProgressTestPage() {
       <RevealBlock delay={3} className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold mb-3" style={{ color: COLOR }}>📌 Cách Đọc Kết Quả</h3>
-          <ul className="space-y-2 text-sm text-muted">
+          <ul className="space-y-2 text-base text-muted">
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Không so sánh với người khác — chỉ so với chính mình lần trước</li>
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Tiến bộ nhỏ đều ổn — tốt hơn 1% mỗi tuần = 50% tốt hơn sau 1 năm</li>
             <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Nếu 3/8 chỉ số tốt hơn — đang đi đúng hướng</li>
@@ -225,7 +225,7 @@ export default function ToolsProgressTestPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-sm text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
     </div>
   );
 }

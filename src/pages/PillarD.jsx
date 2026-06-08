@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
@@ -70,18 +70,18 @@ function BoxBreathTimer({ color }) {
   const pct = phase !== 'idle' ? ((curPhase.dur - count) / curPhase.dur) * 100 : 0;
   return (
     <div className="rounded-2xl border border-border bg-bg p-5 flex flex-col items-center gap-3 max-w-xs mx-auto">
-      <div className="text-xs font-bold uppercase tracking-widest text-muted">Box Breathing · 4-4-4-4</div>
+      <div className="text-sm font-bold uppercase tracking-widest text-muted">Box Breathing · 4-4-4-4</div>
       <div className="relative w-32 h-32 flex items-center justify-center">
         <svg className="absolute inset-0 w-full h-full -rotate-90">
           <circle cx="64" cy="64" r="56" fill="none" stroke={color} strokeWidth="3" opacity="0.2" />
           <circle cx="64" cy="64" r="56" fill="none" stroke={color} strokeWidth="3" strokeDasharray={`${2 * Math.PI * 56}`} strokeDashoffset={`${2 * Math.PI * 56 * (1 - pct / 100)}`} strokeLinecap="round" style={{ transition: 'stroke-dashoffset 1s linear' }} />
         </svg>
         <div className="text-center">
-          <div className="text-3xl font-bold text-text">{running ? count : '▶'}</div>
-          <div className="text-xs text-muted">{running ? curPhase.label : 'Bắt đầu'}</div>
+          <div className="text-4xl font-bold text-text">{running ? count : '▶'}</div>
+          <div className="text-sm text-muted">{running ? curPhase.label : 'Bắt đầu'}</div>
         </div>
       </div>
-      <button onClick={startStop} className="px-5 py-2 rounded-full text-sm font-bold transition-all" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${PURPLE_RGB},0.15)`, color: running ? '#ef4444' : color, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${PURPLE_RGB},0.3)`}` }}>
+      <button onClick={startStop} className="px-5 py-2 rounded-full text-base font-bold transition-all" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${PURPLE_RGB},0.15)`, color: running ? '#ef4444' : color, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${PURPLE_RGB},0.3)`}` }}>
         {running ? 'Dừng' : 'Bắt đầu'}
       </button>
     </div>
@@ -102,8 +102,8 @@ function JournalPrompt({ color }) {
     <div className="space-y-3">
       {PROMPTS.map((p, i) => (
         <div key={p.id} className="rounded-xl border border-border bg-bg p-3">
-          <div className="text-xs font-bold mb-1.5" style={{ color }}>{i + 1}. {p.q}</div>
-          <textarea value={answers[p.id] || ''} onChange={e => setAnswers(prev => ({ ...prev, [p.id]: e.target.value }))} rows={2} placeholder="Viết tự do, không cần hay..." className="w-full text-sm bg-transparent text-text placeholder:text-muted/40 resize-none outline-none" />
+          <div className="text-sm font-bold mb-1.5" style={{ color }}>{i + 1}. {p.q}</div>
+          <textarea value={answers[p.id] || ''} onChange={e => setAnswers(prev => ({ ...prev, [p.id]: e.target.value }))} rows={2} placeholder="Viết tự do, không cần hay..." className="w-full text-base bg-transparent text-text placeholder:text-muted/40 resize-none outline-none" />
         </div>
       ))}
     </div>
@@ -126,10 +126,10 @@ function CalmScore({ color }) {
   return (
     <div>
       <div className="flex items-center gap-4 mb-4">
-        <div className="text-4xl font-bold" style={{ color: level.color }}>{score}</div>
+        <div className="text-5xl font-bold" style={{ color: level.color }}>{score}</div>
         <div>
-          <div className="text-xs text-muted">/ 100 điểm</div>
-          <div className="text-sm font-bold" style={{ color: level.color }}>{level.label}</div>
+          <div className="text-sm text-muted">/ 100 điểm</div>
+          <div className="text-base font-bold" style={{ color: level.color }}>{level.label}</div>
         </div>
         <div className="flex-1 h-2 bg-surface rounded-full overflow-hidden ml-2">
           <div className="h-full rounded-full transition-all duration-500" style={{ width: `${score}%`, background: level.color }} />
@@ -139,10 +139,10 @@ function CalmScore({ color }) {
         {ITEMS.map(item => (
           <button key={item.id} onClick={() => setChecks(p => ({ ...p, [item.id]: !p[item.id] }))} className={`w-full flex items-center gap-3 p-3 rounded-xl border text-left transition-all ${checks[item.id] ? '' : 'border-border hover:border-purple-500/20'}`} style={{ background: checks[item.id] ? `rgba(${PURPLE_RGB},0.08)` : 'var(--color-surface)', borderColor: checks[item.id] ? `rgba(${PURPLE_RGB},0.3)` : undefined }}>
             <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all`} style={{ borderColor: checks[item.id] ? color : '#4b5563', background: checks[item.id] ? color : 'transparent' }}>
-              {checks[item.id] && <span className="text-white text-xs font-bold">✓</span>}
+              {checks[item.id] && <span className="text-white text-sm font-bold">✓</span>}
             </div>
-            <span className="flex-1 text-sm text-text">{item.label}</span>
-            <span className="text-xs font-bold" style={{ color: checks[item.id] ? color : '#6b7280' }}>+{item.pts}</span>
+            <span className="flex-1 text-base text-text">{item.label}</span>
+            <span className="text-sm font-bold" style={{ color: checks[item.id] ? color : '#6b7280' }}>+{item.pts}</span>
           </button>
         ))}
       </div>
@@ -154,7 +154,7 @@ function CalmScore({ color }) {
 function D0Panel({ color }) {
   return (
     <div className="space-y-4">
-      <p className="text-sm text-muted leading-relaxed">Trụ cột D không biến bạn thành người "luôn bình tĩnh". Nó cung cấp bộ công cụ dùng ngay khi căng: thở khi stress, viết khi rối, tắt màn hình khi quá tải.</p>
+      <p className="text-base text-muted leading-relaxed">Trụ cột D không biến bạn thành người "luôn bình tĩnh". Nó cung cấp bộ công cụ dùng ngay khi căng: thở khi stress, viết khi rối, tắt màn hình khi quá tải.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {[
           { icon: '🌪️', title: 'D1 – Hiểu Stress', desc: 'Nhận diện 3 tầng stress: cơ thể, cảm xúc, hành vi. Vòng lặp lo âu – thói quen.' },
@@ -166,14 +166,14 @@ function D0Panel({ color }) {
         ].map(m => (
           <div key={m.title} className="rounded-xl border border-border bg-bg p-4 hover:border-purple-500/20 transition-colors">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-xl">{m.icon}</span>
-              <span className="text-sm font-bold text-text">{m.title}</span>
+              <span className="text-2xl">{m.icon}</span>
+              <span className="text-base font-bold text-text">{m.title}</span>
             </div>
-            <p className="text-xs text-muted leading-relaxed">{m.desc}</p>
+            <p className="text-sm text-muted leading-relaxed">{m.desc}</p>
           </div>
         ))}
       </div>
-      <div className="rounded-xl border p-4 text-sm text-muted leading-relaxed" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)`, background: `rgba(${PURPLE_RGB},0.06)` }}>
+      <div className="rounded-xl border p-4 text-base text-muted leading-relaxed" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)`, background: `rgba(${PURPLE_RGB},0.06)` }}>
         <span className="font-bold" style={{ color }}>⚠️ Quy tắc an toàn: </span>
         Trụ cột D chỉ là giáo dục sức khỏe phổ thông. Nếu lo âu/buồn bã kéo dài nhiều tuần, mất ngủ nặng, cơn hoảng sợ lặp lại hoặc ý nghĩ tự làm hại bản thân — hãy tìm hỗ trợ chuyên môn.
       </div>
@@ -191,7 +191,7 @@ function D1Panel({ color }) {
   return (
     <div className="space-y-5">
       <div>
-        <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color }}>3 Tầng Của Stress</div>
+        <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color }}>3 Tầng Của Stress</div>
         <div className="grid grid-cols-3 gap-2">
           {[
             { icon: '💪', label: 'Cơ Thể', signs: ['Tim đập nhanh', 'Căng vai gáy', 'Thở nông', 'Khó ngủ'] },
@@ -199,25 +199,25 @@ function D1Panel({ color }) {
             { icon: '🔄', label: 'Hành Vi', signs: ['Ăn vặt', 'Lướt điện thoại', 'Trì hoãn', 'Bỏ tập'] },
           ].map(t => (
             <div key={t.label} className="rounded-xl border border-border bg-bg p-3">
-              <div className="text-xl mb-1 text-center">{t.icon}</div>
-              <div className="text-xs font-bold text-center mb-2" style={{ color }}>{t.label}</div>
-              <ul className="space-y-0.5">{t.signs.map(s => <li key={s} className="text-xs text-muted text-center">{s}</li>)}</ul>
+              <div className="text-2xl mb-1 text-center">{t.icon}</div>
+              <div className="text-sm font-bold text-center mb-2" style={{ color }}>{t.label}</div>
+              <ul className="space-y-0.5">{t.signs.map(s => <li key={s} className="text-sm text-muted text-center">{s}</li>)}</ul>
             </div>
           ))}
         </div>
       </div>
       <div>
-        <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color }}>Vòng Lặp Lo Âu – Thói Quen</div>
+        <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color }}>Vòng Lặp Lo Âu – Thói Quen</div>
         <div className="space-y-2">
           {LOOPS.map((l, i) => (
             <div key={i} className="rounded-xl border border-border overflow-hidden">
               <button onClick={() => setOpenLoop(openLoop === i ? null : i)} className="w-full flex items-center gap-3 p-3 hover:bg-white/5 transition-colors text-left">
-                <span className="text-sm font-medium text-text flex-1">Trigger: {l.trigger}</span>
-                <span className="text-muted text-xs">{openLoop === i ? '▲' : '▼'}</span>
+                <span className="text-base font-medium text-text flex-1">Trigger: {l.trigger}</span>
+                <span className="text-muted text-sm">{openLoop === i ? '▲' : '▼'}</span>
               </button>
               {openLoop === i && (
                 <div className="px-3 pb-3">
-                  <div className="flex flex-wrap gap-1 text-xs">
+                  <div className="flex flex-wrap gap-1 text-sm">
                     {[['💭', 'Suy nghĩ', l.thought], ['😟', 'Cảm xúc', l.emotion], ['📱', 'Hành vi', l.behavior], ['💢', 'Hậu quả', l.result]].map(([ic, lb, val]) => (
                       <div key={lb} className="rounded-lg p-2 flex-1 min-w-[120px]" style={{ background: `rgba(${PURPLE_RGB},0.08)` }}>
                         <div className="font-bold" style={{ color }}>{ic} {lb}</div>
@@ -225,7 +225,7 @@ function D1Panel({ color }) {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-2 text-xs text-muted p-2 rounded-lg border border-border">
+                  <div className="mt-2 text-sm text-muted p-2 rounded-lg border border-border">
                     🔧 <strong style={{ color }}>Điểm dừng:</strong> Thở 1 phút → gọi tên cảm xúc → chọn việc nhỏ tiếp theo.
                   </div>
                 </div>
@@ -251,17 +251,17 @@ function D2Panel({ color }) {
     <div className="space-y-4">
       <div className="flex gap-2 flex-wrap">
         {TECHS.map(t => (
-          <button key={t.id} onClick={() => setActive(t.id)} className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${active === t.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: active === t.id ? color : undefined, borderColor: active === t.id ? color : undefined }}>
+          <button key={t.id} onClick={() => setActive(t.id)} className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all border ${active === t.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: active === t.id ? color : undefined, borderColor: active === t.id ? color : undefined }}>
             {t.icon} {t.name}
           </button>
         ))}
       </div>
       {tech && (
         <div className="rounded-xl border p-4" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)`, background: `rgba(${PURPLE_RGB},0.05)` }}>
-          <div className="text-sm font-bold text-text mb-1">{tech.formula}</div>
-          <div className="text-xs text-muted mb-3">⏰ Khi nào: {tech.when}</div>
+          <div className="text-base font-bold text-text mb-1">{tech.formula}</div>
+          <div className="text-sm text-muted mb-3">⏰ Khi nào: {tech.when}</div>
           <ol className="space-y-1 mb-4">
-            {tech.steps.map((s, i) => <li key={i} className="flex items-start gap-2 text-sm text-text"><span className="w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5" style={{ background: `rgba(${PURPLE_RGB},0.2)`, color }}>{i + 1}</span>{s}</li>)}
+            {tech.steps.map((s, i) => <li key={i} className="flex items-start gap-2 text-base text-text"><span className="w-4 h-4 rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5" style={{ background: `rgba(${PURPLE_RGB},0.2)`, color }}>{i + 1}</span>{s}</li>)}
           </ol>
           {active === 'box' && <BoxBreathTimer color={color} />}
         </div>
@@ -281,10 +281,10 @@ function D3Panel({ color }) {
   const m = MODES.find(x => x.id === mode);
   return (
     <div className="space-y-4">
-      <p className="text-xs text-muted">Thiền không phải là "không suy nghĩ". Thiền là <strong className="text-text">nhận ra mình đang bị cuốn đi và quay lại nhẹ nhàng</strong>.</p>
+      <p className="text-sm text-muted">Thiền không phải là "không suy nghĩ". Thiền là <strong className="text-text">nhận ra mình đang bị cuốn đi và quay lại nhẹ nhàng</strong>.</p>
       <div className="flex gap-2 flex-wrap">
         {MODES.map(x => (
-          <button key={x.id} onClick={() => setMode(x.id)} className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${mode === x.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: mode === x.id ? color : undefined, borderColor: mode === x.id ? color : undefined }}>
+          <button key={x.id} onClick={() => setMode(x.id)} className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all border ${mode === x.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: mode === x.id ? color : undefined, borderColor: mode === x.id ? color : undefined }}>
             {x.label}
           </button>
         ))}
@@ -293,8 +293,8 @@ function D3Panel({ color }) {
         <div className="rounded-xl border p-4" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)`, background: `rgba(${PURPLE_RGB},0.05)` }}>
           <ol className="space-y-2">
             {m.steps.map((s, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-text">
-                <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5" style={{ background: `rgba(${PURPLE_RGB},0.2)`, color }}>{i + 1}</span>
+              <li key={i} className="flex items-start gap-3 text-base text-text">
+                <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5" style={{ background: `rgba(${PURPLE_RGB},0.2)`, color }}>{i + 1}</span>
                 {s}
               </li>
             ))}
@@ -308,9 +308,9 @@ function D3Panel({ color }) {
 function D4Panel({ color }) {
   return (
     <div className="space-y-4">
-      <p className="text-xs text-muted">Nhiều người mệt không vì nhiều việc, mà vì <strong className="text-text">mọi việc nằm lộn xộn trong đầu</strong>. Journal đưa chúng ra giấy.</p>
+      <p className="text-sm text-muted">Nhiều người mệt không vì nhiều việc, mà vì <strong className="text-text">mọi việc nằm lộn xộn trong đầu</strong>. Journal đưa chúng ra giấy.</p>
       <JournalPrompt color={color} />
-      <div className="rounded-xl border p-3 text-xs text-muted" style={{ borderColor: `rgba(${PURPLE_RGB},0.15)`, background: `rgba(${PURPLE_RGB},0.05)` }}>
+      <div className="rounded-xl border p-3 text-sm text-muted" style={{ borderColor: `rgba(${PURPLE_RGB},0.15)`, background: `rgba(${PURPLE_RGB},0.05)` }}>
         <strong style={{ color }}>Phiên bản siêu ngắn:</strong> "Mình đang cảm thấy… / Mình cần… / Việc nhỏ tiếp theo là…"
       </div>
     </div>
@@ -327,10 +327,10 @@ function D5Panel({ color }) {
   const cur = LEVELS.find(x => x.l === level);
   return (
     <div className="space-y-4">
-      <p className="text-xs text-muted">Điện thoại không xấu. Vấn đề là <strong className="text-text">cuộn vô thức khi não đang mệt</strong>, làm stress nặng hơn và ngủ kém hơn.</p>
+      <p className="text-sm text-muted">Điện thoại không xấu. Vấn đề là <strong className="text-text">cuộn vô thức khi não đang mệt</strong>, làm stress nặng hơn và ngủ kém hơn.</p>
       <div className="flex gap-2">
         {LEVELS.map(x => (
-          <button key={x.l} onClick={() => setLevel(x.l)} className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all border ${level === x.l ? 'text-white' : 'text-muted border-border'}`} style={{ background: level === x.l ? color : undefined, borderColor: level === x.l ? color : undefined }}>
+          <button key={x.l} onClick={() => setLevel(x.l)} className={`flex-1 py-2 rounded-xl text-sm font-bold transition-all border ${level === x.l ? 'text-white' : 'text-muted border-border'}`} style={{ background: level === x.l ? color : undefined, borderColor: level === x.l ? color : undefined }}>
             {x.name}
           </button>
         ))}
@@ -338,7 +338,7 @@ function D5Panel({ color }) {
       {cur && (
         <ul className="space-y-2">
           {cur.rules.map((r, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-text p-2 rounded-lg" style={{ background: `rgba(${PURPLE_RGB},0.05)` }}>
+            <li key={i} className="flex items-start gap-2 text-base text-text p-2 rounded-lg" style={{ background: `rgba(${PURPLE_RGB},0.05)` }}>
               <span style={{ color }}>→</span>{r}
             </li>
           ))}
@@ -359,16 +359,16 @@ function D6Panel({ color }) {
   ];
   return (
     <div className="space-y-4">
-      <p className="text-xs text-muted"><strong className="text-text">Kỷ luật mềm</strong> không phải dễ dãi. Đó là cách quay lại sau khi lệch nhịp — không tự mắng, không bù gấp đôi.</p>
+      <p className="text-sm text-muted"><strong className="text-text">Kỷ luật mềm</strong> không phải dễ dãi. Đó là cách quay lại sau khi lệch nhịp — không tự mắng, không bù gấp đôi.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {HABITS.map(h => (
           <div key={h.situation} className="flex items-center gap-3 p-3 rounded-xl border border-border bg-bg">
-            <div className="text-xs text-muted w-32 shrink-0">{h.situation}</div>
-            <div className="text-xs font-bold" style={{ color }}>→ {h.habit}</div>
+            <div className="text-sm text-muted w-32 shrink-0">{h.situation}</div>
+            <div className="text-sm font-bold" style={{ color }}>→ {h.habit}</div>
           </div>
         ))}
       </div>
-      <div className="rounded-xl p-3 text-xs text-muted leading-relaxed border" style={{ borderColor: `rgba(${PURPLE_RGB},0.15)`, background: `rgba(${PURPLE_RGB},0.06)` }}>
+      <div className="rounded-xl p-3 text-sm text-muted leading-relaxed border" style={{ borderColor: `rgba(${PURPLE_RGB},0.15)`, background: `rgba(${PURPLE_RGB},0.06)` }}>
         <strong style={{ color }}>Quy tắc 1% quay lại:</strong> Không tập được 30 phút → làm 5 phút. Ăn quá tay → bữa tiếp theo quay lại. Ngủ muộn → tối hôm sau giảm màn hình sớm 10 phút. <strong className="text-text">Một ngày fail không phá hỏng hành trình. Bỏ luôn mới phá.</strong>
       </div>
     </div>
@@ -387,7 +387,7 @@ function TeaserSection({ title, children }) {
     <div className="mb-10">
       <div className="flex items-center gap-3 mb-5">
         <div className="h-px flex-1 bg-border" />
-        <span className="text-xs font-bold uppercase tracking-widest text-muted px-3">{title}</span>
+        <span className="text-sm font-bold uppercase tracking-widest text-muted px-3">{title}</span>
         <div className="h-px flex-1 bg-border" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{children}</div>
@@ -405,19 +405,19 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
       <div className="flex-1 p-5 flex flex-col justify-between relative z-10">
         <div>
           <div className="flex items-start gap-3 mb-3">
-            <span className="text-2xl">{icon}</span>
+            <span className="text-3xl">{icon}</span>
             <div>
-              <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color }}>{category}</div>
-              <div className="text-base font-bold text-text group-hover:text-white transition-colors leading-tight">{title}</div>
+              <div className="text-sm font-bold uppercase tracking-widest mb-0.5" style={{ color }}>{category}</div>
+              <div className="text-lg font-bold text-text group-hover:text-white transition-colors leading-tight">{title}</div>
             </div>
           </div>
-          {accent && <div className="text-xs font-medium mb-2 px-2 py-0.5 rounded-full inline-block" style={{ background: `rgba(${rgb},0.1)`, color }}>{accent}</div>}
-          <p className="text-xs text-muted leading-relaxed mb-3">{desc}</p>
-          {features && <ul className="space-y-0.5 mb-3">{features.map(f => <li key={f} className="text-xs text-muted flex items-center gap-1.5"><span style={{ color }}>·</span>{f}</li>)}</ul>}
+          {accent && <div className="text-sm font-medium mb-2 px-2 py-0.5 rounded-full inline-block" style={{ background: `rgba(${rgb},0.1)`, color }}>{accent}</div>}
+          <p className="text-sm text-muted leading-relaxed mb-3">{desc}</p>
+          {features && <ul className="space-y-0.5 mb-3">{features.map(f => <li key={f} className="text-sm text-muted flex items-center gap-1.5"><span style={{ color }}>·</span>{f}</li>)}</ul>}
         </div>
         <div className="flex items-center justify-between mt-auto pt-2 border-t border-border">
-          {stats && <div className="flex gap-3">{stats.map(s => <div key={s.l} className="text-center"><div className="text-sm font-bold" style={{ color }}>{s.v}</div><div className="text-xs text-muted">{s.l}</div></div>)}</div>}
-          <span className="text-xs font-bold ml-auto" style={{ color }}>{cta}</span>
+          {stats && <div className="flex gap-3">{stats.map(s => <div key={s.l} className="text-center"><div className="text-base font-bold" style={{ color }}>{s.v}</div><div className="text-sm text-muted">{s.l}</div></div>)}</div>}
+          <span className="text-sm font-bold ml-auto" style={{ color }}>{cta}</span>
         </div>
       </div>
       <div className="hidden md:block w-[38%] relative overflow-hidden shrink-0">
@@ -503,7 +503,7 @@ export default function PillarD() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pb-24">
       {/* Breadcrumb */}
-      <Link to="/pillars" className="inline-flex items-center gap-2 text-xs text-muted hover:text-purple-400 transition-colors mb-8 group">
+      <Link to="/pillars" className="inline-flex items-center gap-2 text-sm text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Sống Khỏe 360
       </Link>
@@ -511,13 +511,13 @@ export default function PillarD() {
       {/* Hero */}
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${PURPLE_RGB},0.06)` }} />
-        <div className="w-20 h-20 rounded-3xl text-5xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)` }}>🧘</div>
+        <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)` }}>🧘</div>
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-up">
             {pillar?.title || 'Tâm Trí An Nhiên'}
           </h1>
-          <span className="inline-block text-xs font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: PURPLE, background: `rgba(${PURPLE_RGB},0.1)`, borderColor: `rgba(${PURPLE_RGB},0.2)` }}>{pillar?.subtitle || 'Mind & Calm'}</span>
-          <p className="text-muted text-base leading-relaxed max-w-2xl">{pillar?.description || 'An nhiên không phải là không có áp lực.'}</p>
+          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: PURPLE, background: `rgba(${PURPLE_RGB},0.1)`, borderColor: `rgba(${PURPLE_RGB},0.2)` }}>{pillar?.subtitle || 'Mind & Calm'}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{pillar?.description || 'An nhiên không phải là không có áp lực.'}</p>
         </div>
       </div>
 
@@ -529,8 +529,8 @@ export default function PillarD() {
               <ThoughtBubble text={s.tip} idx={s.idx} color={PURPLE} />
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold" style={{ color: PURPLE }}>{s.v}</div>
-              <div className="text-xs text-muted">{s.l}</div>
+              <div className="text-3xl font-bold" style={{ color: PURPLE }}>{s.v}</div>
+              <div className="text-sm text-muted">{s.l}</div>
             </div>
           </div>
         ))}
@@ -542,7 +542,7 @@ export default function PillarD() {
           <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop" alt="Mind & Calm" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: PURPLE, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${PURPLE_RGB},0.2)` }}>{pillar?.image_caption || 'Mind & Calm'}</span>
+            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: PURPLE, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${PURPLE_RGB},0.2)` }}>{pillar?.image_caption || 'Mind & Calm'}</span>
           </div>
         </div>
       </div>
@@ -554,7 +554,7 @@ export default function PillarD() {
         <div className="sticky top-[72px] z-30 -mx-4 md:-mx-6 px-4 md:px-6 py-3 backdrop-blur-md border-b border-border" style={{ background: 'rgba(10,10,10,0.85)' }}>
           <div className="flex gap-1 overflow-x-auto scrollbar-none max-w-4xl">
             {TABS.map(t => (
-              <button key={t.id} onClick={() => setActiveTab(t.id)} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all shrink-0 ${activeTab === t.id ? 'text-white' : 'text-muted hover:text-text'}`} style={{ background: activeTab === t.id ? t.color : 'transparent' }}>
+              <button key={t.id} onClick={() => setActiveTab(t.id)} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all shrink-0 ${activeTab === t.id ? 'text-white' : 'text-muted hover:text-text'}`} style={{ background: activeTab === t.id ? t.color : 'transparent' }}>
                 <span>{t.icon}</span>{t.label}
               </button>
             ))}
@@ -564,10 +564,10 @@ export default function PillarD() {
         <div className={`${tab.frame} rounded-2xl p-[1.5px] mt-4`}>
           <div className="rounded-2xl bg-surface p-5 md:p-6">
             <div className="flex items-center gap-3 mb-5">
-              <span className="text-2xl">{tab.icon}</span>
+              <span className="text-3xl">{tab.icon}</span>
               <div>
-                <h2 className="text-lg font-bold text-text">{tab.label}</h2>
-                <div className="text-xs font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
+                <h2 className="text-xl font-bold text-text">{tab.label}</h2>
+                <div className="text-sm font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
             <Panel color={tab.color} />
@@ -578,16 +578,16 @@ export default function PillarD() {
       {/* Core quote */}
       <RevealBlock className="mb-14">
         <blockquote className="rounded-2xl p-6 border-l-4 relative overflow-hidden" style={{ borderLeftColor: PURPLE, background: `rgba(${PURPLE_RGB},0.05)` }}>
-          <div className="text-4xl absolute right-6 top-4 opacity-10" style={{ color: PURPLE }}>"</div>
-          <p className="text-lg font-medium text-text leading-relaxed italic">"Tâm trí an nhiên không phải là không còn áp lực, mà là biết cách hạ nhịp, quay lại và sống khỏe bền hơn mỗi ngày."</p>
-          <cite className="text-xs text-muted mt-3 block">— Triết lý Tâm Trí An Nhiên</cite>
+          <div className="text-5xl absolute right-6 top-4 opacity-10" style={{ color: PURPLE }}>"</div>
+          <p className="text-xl font-medium text-text leading-relaxed italic">"Tâm trí an nhiên không phải là không còn áp lực, mà là biết cách hạ nhịp, quay lại và sống khỏe bền hơn mỗi ngày."</p>
+          <cite className="text-sm text-muted mt-3 block">— Triết lý Tâm Trí An Nhiên</cite>
         </blockquote>
       </RevealBlock>
 
       {/* Teaser sections */}
       <RevealBlock>
-        <h2 className="text-2xl md:text-3xl font-bold text-text mb-2">Khám Phá Chi Tiết</h2>
-        <p className="text-muted text-sm mb-10">12 trang chuyên sâu — từ nền tảng đến thực hành và công cụ theo dõi.</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">Khám Phá Chi Tiết</h2>
+        <p className="text-muted text-base mb-10">12 trang chuyên sâu — từ nền tảng đến thực hành và công cụ theo dõi.</p>
 
         <TeaserSection title="Nền Tảng & Nhận Diện">
           <TeaserCard to="/pillar/d/stress" color="#8b5cf6" rgb="139,92,246" icon="🌪️" category="Nền Tảng" title="Hiểu Stress & Vòng Lặp Lo Âu" accent="3 tầng · Trigger · Vòng lặp" desc="Stress không phải kẻ thù. Hiểu cơ chế để nhận diện sớm và chèn điểm dừng vào vòng lặp lo âu–thói quen." features={['3 tầng: cơ thể, cảm xúc, hành vi', 'Mô hình Trigger → Hành vi → Hậu quả', 'Kỹ thuật đặt tên cho suy nghĩ']} stats={[{ v: '3', l: 'Tầng' }, { v: '5', l: 'Trigger' }]} image="https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80" imageAlt="Stress" cta="Hiểu stress →" />

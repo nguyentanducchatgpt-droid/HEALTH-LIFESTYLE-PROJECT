@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+﻿import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -498,13 +498,13 @@ function InputPanel({ inputs, setInputs, s, open, setOpen }) {
     <div className="rounded-2xl border border-lime-500/20 bg-lime-500/4 overflow-hidden">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-lime-500/5 transition-colors">
         <div className="flex items-center gap-3">
-          <span className="text-base">⚙️</span>
+          <span className="text-lg">⚙️</span>
           <div className="text-left">
-            <p className="text-xs font-bold text-lime-400">Thông Số Cá Nhân</p>
+            <p className="text-sm font-bold text-lime-400">Thông Số Cá Nhân</p>
             <p className="text-[9px] text-muted mt-0.5">{inputs.weight}kg · {inputs.height}cm · {inputs.age}t · {inputs.sex === 'male' ? 'Nam' : 'Nữ'} · {act.label} · {goal.label} — <span className="text-lime-400 font-semibold">{s.targetKcal.toLocaleString()} kcal</span></p>
           </div>
         </div>
-        <span className="text-muted/60 text-xs transition-transform duration-200" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▼</span>
+        <span className="text-muted/60 text-sm transition-transform duration-200" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▼</span>
       </button>
       {open && (
         <div className="px-5 pb-5 pt-1 space-y-4 border-t border-lime-500/10">
@@ -544,7 +544,7 @@ function InputPanel({ inputs, setInputs, s, open, setOpen }) {
                 <button key={g.key} onClick={() => setInputs(p => ({ ...p, goalKey: g.key }))}
                   className="flex-1 px-2 py-2 rounded-xl border text-[9px] font-bold text-center transition-all"
                   style={inputs.goalKey === g.key ? { borderColor: LIME, background: `${LIME}18`, color: LIME } : { borderColor: 'rgba(255,255,255,0.1)', color: '#6b7280' }}>
-                  <div className="text-base mb-0.5">{g.emoji}</div>
+                  <div className="text-lg mb-0.5">{g.emoji}</div>
                   {g.label}
                 </button>
               ))}
@@ -580,13 +580,13 @@ function PhaseCard({ ph, s, checks, onCheck, mealPlan }) {
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-3xl">{ph.emoji}</span>
-                <h2 className="text-2xl font-black text-white">{ph.label}</h2>
+                <span className="text-4xl">{ph.emoji}</span>
+                <h2 className="text-3xl font-black text-white">{ph.label}</h2>
               </div>
             </div>
             <div className="ml-auto text-right hidden md:block">
               <p className="text-[9px] text-white/50 mb-0.5">Calo mục tiêu</p>
-              <p className="text-lg font-black" style={{ color: ph.color }}>{Math.round(s.targetKcal * ph.kcalMult).toLocaleString()}</p>
+              <p className="text-xl font-black" style={{ color: ph.color }}>{Math.round(s.targetKcal * ph.kcalMult).toLocaleString()}</p>
               <p className="text-[8px] text-white/40">kcal/ngày</p>
             </div>
           </div>
@@ -674,7 +674,7 @@ function PhaseCard({ ph, s, checks, onCheck, mealPlan }) {
               {mealPlan.map((meal, i) => (
                 <div key={i} className="rounded-2xl border p-4" style={{ borderColor: `${meal.color}20`, background: `${meal.color}06` }}>
                   <div className="flex items-center gap-2 mb-2.5">
-                    <span className="text-xl">{meal.icon}</span>
+                    <span className="text-2xl">{meal.icon}</span>
                     <div>
                       <p className="text-[11px] font-bold" style={{ color: meal.color }}>{meal.label}</p>
                       <p className="text-[9px] text-muted">{meal.time}</p>
@@ -708,7 +708,7 @@ function PhaseCard({ ph, s, checks, onCheck, mealPlan }) {
               {ph.weekBreakdown.map((wk, i) => (
                 <div key={i} className="rounded-2xl border p-4" style={{ borderColor: `${ph.color}18`, background: `${ph.color}05` }}>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm shrink-0" style={{ background: `${ph.color}15`, border: `1px solid ${ph.color}30` }}>
+                    <div className="w-8 h-8 rounded-xl flex items-center justify-center text-base shrink-0" style={{ background: `${ph.color}15`, border: `1px solid ${ph.color}30` }}>
                       {wk.icon}
                     </div>
                     <div className="flex-1">
@@ -733,22 +733,22 @@ function PhaseCard({ ph, s, checks, onCheck, mealPlan }) {
           <div className="space-y-4">
             <div className="rounded-2xl border p-4" style={{ borderColor: `${ph.color}20`, background: `${ph.color}06` }}>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">🔬</span>
+                <span className="text-2xl">🔬</span>
                 <p className="text-[11px] font-bold text-text">Cơ Sở Khoa Học</p>
               </div>
               <p className="text-[10px] text-muted leading-relaxed">{ph.science}</p>
             </div>
             <div className="grid sm:grid-cols-3 gap-3">
               <div className="rounded-xl border p-3.5 text-center" style={{ borderColor: `${ph.color}18`, background: `${ph.color}06` }}>
-                <p className="text-2xl font-black" style={{ color: ph.color }}>{ph.compliance}%</p>
+                <p className="text-3xl font-black" style={{ color: ph.color }}>{ph.compliance}%</p>
                 <p className="text-[9px] text-muted mt-1">Tỷ lệ tuân thủ<br />dự kiến cuối giai đoạn</p>
               </div>
               <div className="rounded-xl border p-3.5 text-center" style={{ borderColor: `${ph.color}18`, background: `${ph.color}06` }}>
-                <p className="text-2xl font-black" style={{ color: ph.color }}>{ph.weekCount}</p>
+                <p className="text-3xl font-black" style={{ color: ph.color }}>{ph.weekCount}</p>
                 <p className="text-[9px] text-muted mt-1">Tuần<br />trong giai đoạn này</p>
               </div>
               <div className="rounded-xl border p-3.5 text-center" style={{ borderColor: `${ph.color}18`, background: `${ph.color}06` }}>
-                <p className="text-xl font-black" style={{ color: ph.color }}>{Math.round(s.targetKcal * ph.kcalMult).toLocaleString()}</p>
+                <p className="text-2xl font-black" style={{ color: ph.color }}>{Math.round(s.targetKcal * ph.kcalMult).toLocaleString()}</p>
                 <p className="text-[9px] text-muted mt-1">kcal/ngày<br />mục tiêu của bạn</p>
               </div>
             </div>
@@ -779,7 +779,7 @@ function MilestoneTimeline({ showAll }) {
         {milestones.map((m, i) => (
           <div key={m.w} className="flex items-center">
             <div className="flex flex-col items-center w-32">
-              <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center text-base mb-2 relative z-10" style={{ borderColor: m.color, background: `${m.color}15` }}>
+              <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center text-lg mb-2 relative z-10" style={{ borderColor: m.color, background: `${m.color}15` }}>
                 {m.icon}
               </div>
               <p className="text-[10px] font-bold text-center" style={{ color: m.color }}>Tuần {m.w}</p>
@@ -805,7 +805,7 @@ function FAQSection() {
           <button onClick={() => setOpen(open === i ? -1 : i)}
             className="w-full flex items-center justify-between px-5 py-4 hover:bg-surface/20 transition-colors text-left gap-4">
             <p className="text-[11px] font-bold text-text">{faq.q}</p>
-            <span className="text-muted/60 shrink-0 text-sm transition-transform duration-300" style={{ transform: open === i ? 'rotate(180deg)' : 'none' }}>▼</span>
+            <span className="text-muted/60 shrink-0 text-base transition-transform duration-300" style={{ transform: open === i ? 'rotate(180deg)' : 'none' }}>▼</span>
           </button>
           {open === i && (
             <div className="px-5 pb-4 pt-0 border-t border-border/10">
@@ -944,12 +944,12 @@ export default function NutritionRoadmapPage() {
                 <span className="nr-pulse w-1.5 h-1.5 rounded-full bg-lime-400 inline-block" />
                 <span className="text-[9px] font-bold text-lime-400 uppercase tracking-[0.2em]">Cá Nhân Hóa Theo B0</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-black leading-tight mb-3">
+              <h1 className="text-5xl md:text-6xl font-black leading-tight mb-3">
                 <span className="nr-shimmer-text">Lộ Trình</span>
                 <br />
                 <span className="text-text">Dinh Dưỡng</span>
               </h1>
-              <p className="text-sm text-muted leading-relaxed max-w-lg">
+              <p className="text-base text-muted leading-relaxed max-w-lg">
                 12 & 24 tuần có cấu trúc — từ thói quen cơ bản đến tối ưu hiệu suất. Mọi con số được tính toán theo thông số cá nhân của bạn.
               </p>
 
@@ -962,7 +962,7 @@ export default function NutritionRoadmapPage() {
                   { label: 'Protein/ngày', value: `${s.proteinG}g`, color: '#a855f7' },
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <p className="text-xl font-black" style={{ color: stat.color }}>{stat.value}</p>
+                    <p className="text-2xl font-black" style={{ color: stat.color }}>{stat.value}</p>
                     <p className="text-[9px] text-muted uppercase tracking-wider">{stat.label}</p>
                   </div>
                 ))}
@@ -991,7 +991,7 @@ export default function NutritionRoadmapPage() {
           <RevealBlock>
             <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 px-5 py-4">
               <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-bold text-lime-400">Tiến Độ Cá Nhân</p>
+                <p className="text-sm font-bold text-lime-400">Tiến Độ Cá Nhân</p>
                 <p className="text-[10px] text-muted">{totalChecked}/{totalActions} hành động đã thực hiện</p>
               </div>
               <div className="h-2 rounded-full bg-surface/30 overflow-hidden">
@@ -1007,7 +1007,7 @@ export default function NutritionRoadmapPage() {
           <div className="rounded-3xl border border-border/20 bg-surface/5 p-6 space-y-6">
             <div className="flex items-center justify-between flex-wrap gap-3">
               <div>
-                <h2 className="text-base font-bold text-text">Biểu Đồ Tổng Quan</h2>
+                <h2 className="text-lg font-bold text-text">Biểu Đồ Tổng Quan</h2>
                 <p className="text-[9px] text-muted mt-0.5">Dựa trên TDEE {s.tdee.toLocaleString()} kcal · Mục tiêu {s.targetKcal.toLocaleString()} kcal</p>
               </div>
               {/* 12/24 toggle */}
@@ -1054,7 +1054,7 @@ export default function NutritionRoadmapPage() {
                   style={clampedActive === i
                     ? { borderColor: ph.color, background: `${ph.color}18`, color: ph.color, boxShadow: `0 0 12px ${ph.color}25` }
                     : { borderColor: 'rgba(255,255,255,0.08)', background: 'transparent', color: '#6b7280' }}>
-                  <span className="text-sm">{ph.emoji}</span>
+                  <span className="text-base">{ph.emoji}</span>
                   <span>P{ph.phase}: {ph.label}</span>
                   <span className="text-[8px] opacity-60">T{ph.weeks}</span>
                 </button>
@@ -1078,10 +1078,10 @@ export default function NutritionRoadmapPage() {
           <div className="rounded-3xl border border-border/20 bg-surface/5 p-6">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-8 h-8 rounded-xl bg-lime-500/10 border border-lime-500/20 flex items-center justify-center">
-                <span className="text-sm">🗺️</span>
+                <span className="text-base">🗺️</span>
               </div>
               <div>
-                <p className="text-xs font-bold text-text">Mốc Quan Trọng — {showAll ? '24' : '12'} Tuần</p>
+                <p className="text-sm font-bold text-text">Mốc Quan Trọng — {showAll ? '24' : '12'} Tuần</p>
                 <p className="text-[9px] text-muted">Các điểm đánh giá và kiểm tra trong lộ trình</p>
               </div>
             </div>
@@ -1097,7 +1097,7 @@ export default function NutritionRoadmapPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/60 to-bg/10" />
               <div className="absolute inset-0 flex flex-col justify-center px-8 py-6 max-w-2xl">
                 <p className="text-[9px] font-bold text-lime-400 uppercase tracking-[0.2em] mb-2">Dựa Trên Bằng Chứng Khoa Học</p>
-                <h3 className="text-lg font-black text-text mb-2">Tại Sao 12–24 Tuần?</h3>
+                <h3 className="text-xl font-black text-text mb-2">Tại Sao 12–24 Tuần?</h3>
                 <p className="text-[10px] text-muted leading-relaxed">
                   Nghiên cứu cho thấy cần ít nhất 8–12 tuần để tạo thay đổi thực sự về composition, và 20–24 tuần để thói quen được tự động hóa hoàn toàn. Lộ trình phân chia giai đoạn giúp não bộ thích nghi dần thay vì bị "shock change" — lý do chính khiến hầu hết chế độ ăn kiêng thất bại.
                 </p>
@@ -1121,8 +1121,8 @@ export default function NutritionRoadmapPage() {
         {/* CTA footer */}
         <RevealBlock>
           <div className="rounded-3xl border border-lime-500/20 bg-lime-500/5 p-8 text-center">
-            <p className="text-2xl mb-2">🌱</p>
-            <h3 className="text-lg font-black text-text mb-2">Bắt Đầu Từ Giai Đoạn 1</h3>
+            <p className="text-3xl mb-2">🌱</p>
+            <h3 className="text-xl font-black text-text mb-2">Bắt Đầu Từ Giai Đoạn 1</h3>
             <p className="text-[10px] text-muted leading-relaxed max-w-md mx-auto mb-5">
               Đừng đợi điều kiện hoàn hảo. Một bữa ăn có đạm hơn hôm nay — đó là bước đầu của 24 tuần thay đổi thực sự.
             </p>

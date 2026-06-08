@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+﻿import { useRef, useEffect } from 'react';
 
 const COLOR_MAP = {
   SQUAT: { ring: 'ring-green-500/50',  glow: 'shadow-green-500/20',  badge: 'bg-green-500/15 border-green-500/30 text-green-400',  dot: 'bg-green-500'  },
@@ -65,7 +65,7 @@ export default function LocalVideoCard({ src, title, index = 0, onPlay }) {
 
       {/* Title */}
       <div className="p-3.5">
-        <p className="text-sm font-semibold text-text group-hover:text-accent transition-colors duration-200 leading-snug text-left">
+        <p className="text-base font-semibold text-text group-hover:text-accent transition-colors duration-200 leading-snug text-left">
           {title}
         </p>
       </div>

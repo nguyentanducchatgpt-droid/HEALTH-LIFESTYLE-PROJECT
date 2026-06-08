@@ -1835,7 +1835,7 @@ function FoundationPanel({ s, onGoalKeyChange }) {
     displayName:    tPillars(`pillarB.macros.${i}.name`,    { defaultValue: m.name }),
     displayRole:    tPillars(`pillarB.macros.${i}.role`,    { defaultValue: m.role }),
     displayDose:    tPillars(`pillarB.macros.${i}.dose`,    { defaultValue: m.dose }),
-    displaySources: tPillars(`pillarB.macros.${i}.sources`, { defaultValue: m.sources }),
+    displaySources: toArr(tPillars(`pillarB.macros.${i}.sources`, { returnObjects: true, defaultValue: m.sources })),
   }));
 
   const mP = dynMacros.find(m => m.name === 'Protein');

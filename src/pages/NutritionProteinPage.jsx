@@ -167,7 +167,7 @@ function SourceBar({ item, portion, active }) {
           <p className="text-[10px] font-bold text-text truncate">{item.name}</p>
           <p className="text-[8px] text-muted">{item.cat} · {item.kcal100} kcal/100g</p>
         </div>
-        <span className="text-base font-black shrink-0" style={{ color: item.color }}>{pG.toFixed(1)}g</span>
+        <span className="text-lg font-black shrink-0" style={{ color: item.color }}>{pG.toFixed(1)}g</span>
       </div>
       <div className="relative h-2 rounded-full bg-surface/40 overflow-hidden">
         <div className="absolute inset-y-0 left-0 rounded-full transition-all duration-500"
@@ -291,7 +291,7 @@ export default function NutritionProteinPage() {
           <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border border-green-500/20 shrink-0 flex items-center justify-center np-float">💪</div>
           <div className="flex-1">
             <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Công Thức Tính Protein</h1>
-            <span className="inline-block text-sm font-bold uppercase tracking-widest text-green-400 mt-3 mb-4 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full">Nền Tảng Dinh Dưỡng</span>
+            <span className="inline-block text-base font-bold uppercase tracking-widest text-green-400 mt-3 mb-4 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full">Nền Tảng Dinh Dưỡng</span>
             <p className="text-muted text-lg leading-relaxed max-w-2xl">
               Protein là "neo chính" của mỗi bữa ăn — từ công thức tính lượng cần thiết, nguồn thực phẩm Việt Nam, đến timing tối ưu trước và sau tập luyện.
             </p>
@@ -313,7 +313,7 @@ export default function NutritionProteinPage() {
                 { label: `${Math.round(proteinPct)}%`, sub: 'Tổng macro', color: CYAN },
               ].map((s, i) => (
                 <div key={i} className="bg-bg/70 backdrop-blur-sm px-3 py-1.5 rounded-xl border border-white/10">
-                  <p className="text-base font-black" style={{ color: s.color }}>{s.label}</p>
+                  <p className="text-lg font-black" style={{ color: s.color }}>{s.label}</p>
                   <p className="text-[8px] text-muted">{s.sub}</p>
                 </div>
               ))}
@@ -399,7 +399,7 @@ export default function NutritionProteinPage() {
                     <input type={f.type} min={f.min} max={f.max}
                       value={inputs[f.key]}
                       onChange={e => setInputs(p => ({ ...p, [f.key]: e.target.value }))}
-                      className="w-full bg-surface/30 border border-border/30 rounded-xl px-3 py-2 text-text text-base font-bold focus:outline-none focus:border-green-500/50 focus:bg-surface/50 transition-colors"
+                      className="w-full bg-surface/30 border border-border/30 rounded-xl px-3 py-2 text-text text-lg font-bold focus:outline-none focus:border-green-500/50 focus:bg-surface/50 transition-colors"
                     />
                   </div>
                 ))}
@@ -438,7 +438,7 @@ export default function NutritionProteinPage() {
             <div className="rounded-3xl border border-green-500/20 bg-surface/10 p-6 md:p-8">
               <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-green-400 mb-2">📐 Công Thức Tính</p>
               <h3 className="text-xl font-black text-text mb-4">Protein = Thể trọng × Hệ số mục tiêu</h3>
-              <div className="rounded-2xl bg-black/30 border border-green-500/20 p-4 font-mono text-base mb-5 space-y-1">
+              <div className="rounded-2xl bg-black/30 border border-green-500/20 p-4 font-mono text-lg mb-5 space-y-1">
                 <div className="text-muted text-[10px] mb-2">{/* formula */}</div>
                 <div><span className="text-green-400">Protein (g)</span> <span className="text-muted">= Thể trọng ×</span> <span className="text-lime-400">Hệ số mục tiêu</span></div>
                 <div className="text-border/50 text-[10px] mt-1">---</div>
@@ -505,7 +505,7 @@ export default function NutritionProteinPage() {
               <div className="flex items-center gap-6 mb-4">
                 <ProteinGauge current={currentG} target={proteinG} />
                 <div className="flex-1">
-                  <p className="text-sm text-muted mb-2">Đã nạp: <span className="font-black text-text">{currentG}g</span> / {proteinG}g mục tiêu</p>
+                  <p className="text-base text-muted mb-2">Đã nạp: <span className="font-black text-text">{currentG}g</span> / {proteinG}g mục tiêu</p>
                   <input type="range" min={0} max={Math.max(proteinG * 1.3, 200)} step={5}
                     value={currentG}
                     onChange={e => setCurrentG(Number(e.target.value))}
@@ -538,7 +538,7 @@ export default function NutritionProteinPage() {
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-xl shrink-0">🧑</div>
                 <div>
-                  <p className="text-base font-bold text-text">Nam 48 tuổi · 77kg · 1m75</p>
+                  <p className="text-lg font-bold text-text">Nam 48 tuổi · 77kg · 1m75</p>
                   <p className="text-[9px] text-muted">Tập nhiều: đạp xe + gym + bơi · Mục tiêu sức bền</p>
                 </div>
               </div>
@@ -645,7 +645,7 @@ export default function NutritionProteinPage() {
                         { label: 'Calories', val: `${kc} kcal`, color: '#f59e0b' },
                       ].map((v, i) => (
                         <div key={i} className="text-center rounded-xl bg-surface/20 p-2">
-                          <p className="text-base font-black" style={{ color: v.color }}>{v.val}</p>
+                          <p className="text-lg font-black" style={{ color: v.color }}>{v.val}</p>
                           <p className="text-[8px] text-muted">{v.label}</p>
                         </div>
                       ))}
@@ -669,7 +669,7 @@ export default function NutritionProteinPage() {
                 {[...PROTEIN_SOURCES].sort((a,b) => b.p100 - a.p100).map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <span className="text-[9px] text-muted w-4 shrink-0 text-right">{i+1}</span>
-                    <span className="text-base shrink-0">{item.emoji}</span>
+                    <span className="text-lg shrink-0">{item.emoji}</span>
                     <span className="text-[10px] font-bold text-text flex-1 truncate">{item.name}</span>
                     <div className="relative h-2 w-32 rounded-full bg-surface/40 overflow-hidden shrink-0">
                       <div className="absolute inset-y-0 left-0 rounded-full" style={{ width: `${(item.p100/80)*100}%`, background: item.color }} />
@@ -698,8 +698,8 @@ export default function NutritionProteinPage() {
                       <div className="text-3xl shrink-0">{t.emoji}</div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-1">
-                          <p className="text-base font-bold text-text">{t.label}</p>
-                          <span className="text-base font-black shrink-0" style={{ color: GREEN }}>~{g}g</span>
+                          <p className="text-lg font-bold text-text">{t.label}</p>
+                          <span className="text-lg font-black shrink-0" style={{ color: GREEN }}>~{g}g</span>
                         </div>
                         <p className="text-[9px] text-muted leading-relaxed mb-1.5">{t.note}</p>
                         <p className="text-[9px] font-bold" style={{ color: LIME }}>Ví dụ: {t.example}</p>
@@ -781,7 +781,7 @@ export default function NutritionProteinPage() {
                           <span className="text-[10px] font-bold text-text">{ev.label}</span>
                           <span className="text-[8px] text-muted ml-2">{ev.tip}</span>
                         </div>
-                        <span className="text-sm font-black" style={{ color: ev.color }}>{ev.g}g</span>
+                        <span className="text-base font-black" style={{ color: ev.color }}>{ev.g}g</span>
                       </div>
                     </div>
                   ))}
@@ -867,7 +867,7 @@ export default function NutritionProteinPage() {
               <div className="flex items-start gap-3">
                 <span className="text-3xl shrink-0">⚖️</span>
                 <div>
-                  <p className="text-base font-black text-lime-400 mb-2">Nguyên Tắc 80/20 — Đừng Ám Ảnh</p>
+                  <p className="text-lg font-black text-lime-400 mb-2">Nguyên Tắc 80/20 — Đừng Ám Ảnh</p>
                   <p className="text-[10px] text-muted leading-relaxed">
                     80% thời gian đạt mục tiêu protein là đủ tốt. 20% còn lại cho phép linh hoạt — tiệc, đi ăn ngoài, ngày bận, ngày không muốn nấu.
                     <br /><br />
@@ -892,10 +892,10 @@ export default function NutritionProteinPage() {
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-[60px] pointer-events-none" style={{ background: `${GREEN}06` }} />
                 <div className="relative">
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-base shrink-0">❌</div>
+                    <div className="w-8 h-8 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-lg shrink-0">❌</div>
                     <div>
                       <p className="text-[9px] text-red-400 font-bold uppercase tracking-wider mb-1">Hiểu lầm #{i + 1}</p>
-                      <p className="text-base font-bold text-text">"{m.myth}"</p>
+                      <p className="text-lg font-bold text-text">"{m.myth}"</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 pl-11">
@@ -942,15 +942,15 @@ export default function NutritionProteinPage() {
         <div className="grid md:grid-cols-3 gap-4">
           <Link to="/pillar/b/formula" className="group rounded-2xl border border-green-500/20 bg-green-500/4 p-4 hover:border-green-500/40 transition-all">
             <p className="text-[9px] text-muted mb-1">← Xem trước</p>
-            <p className="text-sm font-bold text-green-400">Công Thức Meal Plan</p>
+            <p className="text-base font-bold text-green-400">Công Thức Meal Plan</p>
           </Link>
           <Link to="/pillar/b" className="group rounded-2xl border border-lime-500/20 bg-lime-500/4 p-4 hover:border-lime-500/40 transition-all text-center">
             <p className="text-[9px] text-muted mb-1">Về trang chính</p>
-            <p className="text-sm font-bold text-lime-400">Dinh Dưỡng & Thực Đơn</p>
+            <p className="text-base font-bold text-lime-400">Dinh Dưỡng & Thực Đơn</p>
           </Link>
           <Link to="/pillar/b/data" className="group rounded-2xl border border-purple-500/20 bg-purple-500/4 p-4 hover:border-purple-500/40 transition-all text-right">
             <p className="text-[9px] text-muted mb-1">Xem tiếp →</p>
-            <p className="text-sm font-bold text-purple-400">Cấu Trúc Dữ Liệu</p>
+            <p className="text-base font-bold text-purple-400">Cấu Trúc Dữ Liệu</p>
           </Link>
         </div>
       </RevealBlock>

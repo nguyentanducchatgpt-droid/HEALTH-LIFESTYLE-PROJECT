@@ -64,7 +64,7 @@ export default function LifestyleCircadianPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-base mb-8 hover:text-cyan-400 transition-colors">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-cyan-400 transition-colors">
         ← Lối Sống Khỏe
       </Link>
 
@@ -76,7 +76,7 @@ export default function LifestyleCircadianPage() {
         </div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Nhịp Sinh Học & Năng Lượng</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
             C2 — Circadian Rhythm · Năng lượng 24h
           </span>
@@ -93,7 +93,7 @@ export default function LifestyleCircadianPage() {
               alt="Nhịp sinh học" className="w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9), rgba(10,10,10,0.3) 50%, transparent)' }} />
             <div className="absolute bottom-4 left-6">
-              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+              <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
                 Ánh sáng · Nhịp ngủ thức · Năng lượng
               </span>
@@ -107,20 +107,20 @@ export default function LifestyleCircadianPage() {
       {/* Energy map */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Bản Đồ Năng Lượng Trong Ngày</h2>
-        <p className="text-muted text-base mb-6">Năng lượng không đều nhau suốt ngày. Làm việc đúng loại vào đúng thời điểm giúp hiệu quả tăng rõ rệt.</p>
+        <p className="text-muted text-lg mb-6">Năng lượng không đều nhau suốt ngày. Làm việc đúng loại vào đúng thời điểm giúp hiệu quả tăng rõ rệt.</p>
         <div className="space-y-3">
           {ENERGY_MAP.map((e, i) => (
             <div key={i} className="flex gap-4 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
               <div className="shrink-0 w-20">
-                <div className="text-sm font-bold tabular-nums" style={{ color: COLOR }}>{e.time}</div>
-                <div className="text-sm text-muted">{e.phase}</div>
+                <div className="text-base font-bold tabular-nums" style={{ color: COLOR }}>{e.time}</div>
+                <div className="text-base text-muted">{e.phase}</div>
                 <div className="flex gap-0.5 mt-1">
                   {[1,2,3,4,5].map(n => (
                     <div key={n} className="w-3 h-1.5 rounded-full" style={{ background: n <= e.level ? COLOR : `rgba(${RGB},0.2)` }} />
                   ))}
                 </div>
               </div>
-              <p className="text-muted text-base flex-1">{e.desc}</p>
+              <p className="text-muted text-lg flex-1">{e.desc}</p>
             </div>
           ))}
         </div>
@@ -129,18 +129,18 @@ export default function LifestyleCircadianPage() {
       {/* Light rules */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Quy Tắc Ánh Sáng</h2>
-        <p className="text-muted text-base mb-6">Ánh sáng là tín hiệu quan trọng nhất điều chỉnh đồng hồ sinh học. Sáng: tăng. Tối: giảm. Đêm: giữ tối.</p>
+        <p className="text-muted text-lg mb-6">Ánh sáng là tín hiệu quan trọng nhất điều chỉnh đồng hồ sinh học. Sáng: tăng. Tối: giảm. Đêm: giữ tối.</p>
         <div className="grid gap-4">
           {LIGHT_RULES.map((rule, i) => (
             <div key={i} className="p-4 rounded-xl border" style={{ borderColor: `rgba(${RGB},0.15)`, background: `rgba(${RGB},0.05)` }}>
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-3xl">{rule.icon}</span>
                 <div>
-                  <div className="font-bold text-text text-base">{rule.time}</div>
-                  <div className="text-sm font-semibold" style={{ color: COLOR }}>{rule.action}</div>
+                  <div className="font-bold text-text text-lg">{rule.time}</div>
+                  <div className="text-base font-semibold" style={{ color: COLOR }}>{rule.action}</div>
                 </div>
               </div>
-              <p className="text-muted text-sm leading-relaxed">{rule.tip}</p>
+              <p className="text-muted text-base leading-relaxed">{rule.tip}</p>
             </div>
           ))}
         </div>
@@ -149,15 +149,15 @@ export default function LifestyleCircadianPage() {
       {/* Caffeine */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Caffeine Thông Minh</h2>
-        <p className="text-muted text-base mb-6">Dùng caffeine như công cụ, không phải phao cứu sinh. Biết khi nào dùng và khi nào không.</p>
+        <p className="text-muted text-lg mb-6">Dùng caffeine như công cụ, không phải phao cứu sinh. Biết khi nào dùng và khi nào không.</p>
         <div className="space-y-4">
           {CAFFEINE_GUIDE.map((g, i) => (
             <div key={i} className="p-4 rounded-xl border" style={{ borderColor: `rgba(${RGB},0.12)`, background: `rgba(${RGB},0.04)` }}>
-              <div className="font-semibold text-text text-base mb-1 flex items-center gap-2">
+              <div className="font-semibold text-text text-lg mb-1 flex items-center gap-2">
                 <span className="text-red-400">✗</span>{g.rule}
               </div>
-              <p className="text-muted text-sm mb-2 leading-relaxed">{g.reason}</p>
-              <div className="flex items-start gap-2 text-sm">
+              <p className="text-muted text-base mb-2 leading-relaxed">{g.reason}</p>
+              <div className="flex items-start gap-2 text-base">
                 <span style={{ color: COLOR }} className="shrink-0">✓</span>
                 <span className="font-semibold" style={{ color: COLOR }}>{g.good}</span>
               </div>
@@ -169,7 +169,7 @@ export default function LifestyleCircadianPage() {
       {/* Post-lunch dip */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vì Sao Buồn Ngủ Sau Ăn Trưa?</h2>
-        <p className="text-muted text-base mb-6">Đây là hiện tượng sinh học bình thường — không phải vì bạn lười.</p>
+        <p className="text-muted text-lg mb-6">Đây là hiện tượng sinh học bình thường — không phải vì bạn lười.</p>
         <div className="grid gap-3">
           {[
             { cause: 'Adenosine tích lũy', solution: 'Đây là chu kỳ sinh học bình thường lúc 13–15h. Nghỉ ngắn 10–20 phút hiệu quả hơn cà phê.' },
@@ -178,8 +178,8 @@ export default function LifestyleCircadianPage() {
             { cause: 'Thiếu nước', solution: 'Mất nước nhẹ (1–2%) gây mệt mỏi. Uống 200–300ml nước trước và sau bữa trưa.' },
           ].map((item, i) => (
             <div key={i} className="p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
-              <div className="text-base font-semibold text-text mb-1">{item.cause}</div>
-              <p className="text-muted text-sm leading-relaxed">{item.solution}</p>
+              <div className="text-lg font-semibold text-text mb-1">{item.cause}</div>
+              <p className="text-muted text-base leading-relaxed">{item.solution}</p>
             </div>
           ))}
         </div>
@@ -188,21 +188,21 @@ export default function LifestyleCircadianPage() {
       {/* 7-day energy tracking */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Bài Tập: Vẽ Bản Đồ Năng Lượng 7 Ngày</h2>
-        <p className="text-muted text-base mb-6">Theo dõi 7 ngày để biết pattern riêng của bạn.</p>
+        <p className="text-muted text-lg mb-6">Theo dõi 7 ngày để biết pattern riêng của bạn.</p>
         <div className="p-5 rounded-2xl border" style={{ borderColor: `rgba(${RGB},0.15)`, background: `rgba(${RGB},0.05)` }}>
-          <div className="grid grid-cols-3 gap-2 text-sm text-muted mb-4 font-semibold" style={{ color: COLOR }}>
+          <div className="grid grid-cols-3 gap-2 text-base text-muted mb-4 font-semibold" style={{ color: COLOR }}>
             <span>Thời điểm</span>
             <span>Năng lượng (1–5)</span>
             <span>Ghi chú</span>
           </div>
           {['Sáng (7–9h)', 'Trưa (11–13h)', 'Chiều (14–16h)', 'Tối (18–20h)'].map((t, i) => (
-            <div key={i} className="grid grid-cols-3 gap-2 py-2 border-t text-base" style={{ borderColor: `rgba(${RGB},0.08)` }}>
+            <div key={i} className="grid grid-cols-3 gap-2 py-2 border-t text-lg" style={{ borderColor: `rgba(${RGB},0.08)` }}>
               <span className="text-muted">{t}</span>
               <span className="text-muted">___</span>
-              <span className="text-muted text-sm">Ăn gì? Làm gì?</span>
+              <span className="text-muted text-base">Ăn gì? Làm gì?</span>
             </div>
           ))}
-          <div className="mt-4 text-sm text-muted">
+          <div className="mt-4 text-base text-muted">
             <p style={{ color: COLOR }} className="font-semibold mb-1">Sau 7 ngày bạn sẽ biết:</p>
             <ul className="space-y-1">
               <li>→ Mình hay mệt lúc nào và vì sao</li>
@@ -215,8 +215,8 @@ export default function LifestyleCircadianPage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-base">← Routine Trước Ngủ</Link>
-        <Link to="/pillar/c/morning" className="text-base font-semibold" style={{ color: COLOR }}>Routine Sáng →</Link>
+        <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Routine Trước Ngủ</Link>
+        <Link to="/pillar/c/morning" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Sáng →</Link>
       </div>
     </div>
   );

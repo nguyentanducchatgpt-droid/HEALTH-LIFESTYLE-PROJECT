@@ -240,7 +240,7 @@ function GoalPill({ goal, active, onClick }) {
     <button
       onClick={onClick}
       className={`
-        flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold
+        flex items-center gap-1.5 px-3 py-1.5 rounded-full text-base font-bold
         border transition-all duration-200 cursor-pointer shrink-0
         ${active
           ? `${gc.bg} ${gc.border} ${gc.text}`
@@ -301,7 +301,7 @@ function StepCard({ step, index, isActive, isMyLevel, isLast, onClick, onSetLeve
           {/* Step number + period */}
           <div className="flex items-center justify-between mb-2">
             <div
-              className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-black border ${sc.border} ${sc.bg} ${sc.text}`}
+              className={`w-7 h-7 rounded-full flex items-center justify-center text-base font-black border ${sc.border} ${sc.bg} ${sc.text}`}
             >
               {step.n}
             </div>
@@ -311,7 +311,7 @@ function StepCard({ step, index, isActive, isMyLevel, isLast, onClick, onSetLeve
           </div>
 
           {/* Title */}
-          <p className={`font-black text-base mb-1 transition-colors ${isActive ? sc.text : 'text-text group-hover:text-text'}`}>
+          <p className={`font-black text-lg mb-1 transition-colors ${isActive ? sc.text : 'text-text group-hover:text-text'}`}>
             {step.title}
           </p>
 
@@ -359,14 +359,14 @@ function DetailPanel({ step, goalColor }) {
       style={{ boxShadow: `0 8px 40px ${sc.glow}` }}
     >
       <div className="flex flex-wrap items-center gap-3 mb-5">
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-base font-black border ${sc.border} ${sc.text}`}>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-lg font-black border ${sc.border} ${sc.text}`}>
           {step.n}
         </div>
         <div>
           <h3 className={`font-black text-lg ${sc.text}`}>{step.title}</h3>
           <p className="text-[10px] text-muted">{step.period}</p>
         </div>
-        <span className={`ml-auto text-sm font-bold px-2.5 py-1 rounded-full ${sc.bg} ${sc.text} border ${sc.border}`}>
+        <span className={`ml-auto text-base font-bold px-2.5 py-1 rounded-full ${sc.bg} ${sc.text} border ${sc.border}`}>
           {step.badge}
         </span>
       </div>
@@ -374,7 +374,7 @@ function DetailPanel({ step, goalColor }) {
       {/* Target */}
       <div className="mb-4">
         <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-1.5">Mục tiêu bước này</p>
-        <p className="text-base text-text leading-relaxed">{step.target}</p>
+        <p className="text-lg text-text leading-relaxed">{step.target}</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-4">
@@ -383,7 +383,7 @@ function DetailPanel({ step, goalColor }) {
           <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-2">Bài tập</p>
           <ul className="space-y-1.5">
             {step.exercises.map((ex, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-text/80 leading-relaxed">
+              <li key={i} className="flex items-start gap-2 text-base text-text/80 leading-relaxed">
                 <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${sc.dot}`} />
                 {ex}
               </li>
@@ -395,7 +395,7 @@ function DetailPanel({ step, goalColor }) {
         <div className="space-y-3">
           <div>
             <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-1.5">Vượt bước khi</p>
-            <p className="text-sm text-text/80 leading-relaxed">{step.passWhen}</p>
+            <p className="text-base text-text/80 leading-relaxed">{step.passWhen}</p>
           </div>
 
           {/* Tip callout */}
@@ -466,7 +466,7 @@ export default function ProgressionStaircase() {
           </span>
           Bậc Thang Tiến Bộ
         </h2>
-        <p className="text-muted text-base">Chọn mục tiêu — xem lộ trình từng bước — đánh dấu bước bạn đang ở</p>
+        <p className="text-muted text-lg">Chọn mục tiêu — xem lộ trình từng bước — đánh dấu bước bạn đang ở</p>
       </div>
 
       {/* Goal selector */}
@@ -488,7 +488,7 @@ export default function ProgressionStaircase() {
       >
         <span className="text-3xl">{goalData.icon}</span>
         <div>
-          <p className={`font-black text-base ${gc.text}`}>{goalData.name}</p>
+          <p className={`font-black text-lg ${gc.text}`}>{goalData.name}</p>
           <p className="text-[11px] text-muted leading-relaxed">{goalData.tagline}</p>
         </div>
       </div>
@@ -498,7 +498,7 @@ export default function ProgressionStaircase() {
         <div className="mb-4 rounded-xl border border-yellow-500/30 bg-yellow-500/8 px-4 py-3 flex items-center gap-3 animate-fade-in-up">
           <span className="text-yellow-400 text-xl">⭐</span>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-bold text-yellow-400">
+            <p className="text-base font-bold text-yellow-400">
               Bạn đang ở <span className="text-yellow-300">Bước {myLevelStep.n}: {myLevelStep.title}</span>
               {nextStep && (
                 <span className="text-yellow-400/60"> — tiếp theo: {nextStep.title}</span>
@@ -571,7 +571,7 @@ export default function ProgressionStaircase() {
                       </span>
                       <span className="text-[9px] text-muted">{step.period}</span>
                     </div>
-                    <p className={`font-black text-base mb-0.5 ${isActive ? sc.text : 'text-text'}`}>{step.title}</p>
+                    <p className={`font-black text-lg mb-0.5 ${isActive ? sc.text : 'text-text'}`}>{step.title}</p>
                     <p className="text-[11px] text-muted leading-relaxed line-clamp-2">{step.target}</p>
                     {isActive && <div className={`mt-2 h-0.5 w-full ${sc.bar} rounded`} />}
                   </div>

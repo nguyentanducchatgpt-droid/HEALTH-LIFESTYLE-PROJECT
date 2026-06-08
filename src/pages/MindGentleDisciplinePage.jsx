@@ -57,28 +57,28 @@ function SelfTalkTool() {
 
   return (
     <div className="rounded-2xl border p-5 space-y-4" style={{ borderColor: `${COLOR}33`, background: `${COLOR}08` }}>
-      <p className="text-base font-semibold" style={{ color: COLOR }}>Luyện Tập Tái Khung Suy Nghĩ Tiêu Cực</p>
+      <p className="text-lg font-semibold" style={{ color: COLOR }}>Luyện Tập Tái Khung Suy Nghĩ Tiêu Cực</p>
       <div className="space-y-2">
         <div>
-          <label className="text-sm text-muted mb-1 block">Suy nghĩ tiêu cực bạn hay nói với bản thân:</label>
-          <textarea className="w-full rounded-xl border bg-bg text-text text-base p-3 resize-none min-h-[60px] focus:outline-none focus:ring-2"
+          <label className="text-base text-muted mb-1 block">Suy nghĩ tiêu cực bạn hay nói với bản thân:</label>
+          <textarea className="w-full rounded-xl border bg-bg text-text text-lg p-3 resize-none min-h-[60px] focus:outline-none focus:ring-2"
             style={{ borderColor: `${COLOR}30`, '--tw-ring-color': `${COLOR}60` }}
             placeholder="VD: Tôi thật tệ, tôi không có ý chí..."
             value={text} onChange={e => setText(e.target.value)} rows={2} />
         </div>
         <div>
-          <label className="text-sm text-muted mb-1 block">Tái khung thành câu tích cực hơn:</label>
-          <textarea className="w-full rounded-xl border bg-bg text-text text-base p-3 resize-none min-h-[60px] focus:outline-none focus:ring-2"
+          <label className="text-base text-muted mb-1 block">Tái khung thành câu tích cực hơn:</label>
+          <textarea className="w-full rounded-xl border bg-bg text-text text-lg p-3 resize-none min-h-[60px] focus:outline-none focus:ring-2"
             style={{ borderColor: `${COLOR}30`, '--tw-ring-color': `${COLOR}60` }}
             placeholder="Viết lại câu trên theo hướng trắc ẩn với bản thân..."
             value={reframed} onChange={e => setReframed(e.target.value)} rows={2} />
         </div>
       </div>
       <div className="border-t border-border pt-4">
-        <p className="text-sm text-muted mb-3">Ví dụ thực tế ({exIdx + 1}/{examples.length}):</p>
+        <p className="text-base text-muted mb-3">Ví dụ thực tế ({exIdx + 1}/{examples.length}):</p>
         <div className="space-y-2 rounded-xl bg-surface border border-border p-4">
-          <div className="flex gap-2 items-start"><span className="text-sm font-bold text-red-400 shrink-0">❌</span><p className="text-base text-muted">{examples[exIdx][0]}</p></div>
-          <div className="flex gap-2 items-start"><span className="text-sm font-bold shrink-0" style={{ color: COLOR }}>✓</span><p className="text-base text-text">{examples[exIdx][1]}</p></div>
+          <div className="flex gap-2 items-start"><span className="text-base font-bold text-red-400 shrink-0">❌</span><p className="text-lg text-muted">{examples[exIdx][0]}</p></div>
+          <div className="flex gap-2 items-start"><span className="text-base font-bold shrink-0" style={{ color: COLOR }}>✓</span><p className="text-lg text-text">{examples[exIdx][1]}</p></div>
         </div>
         <div className="flex gap-2 mt-3">
           {examples.map((_, i) => (
@@ -116,7 +116,7 @@ export default function MindGentleDisciplinePage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
         <span>←</span><span>Tâm Trí An Nhiên</span>
       </Link>
 
@@ -125,7 +125,7 @@ export default function MindGentleDisciplinePage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🌿</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Kỷ Luật Mềm — Gentle Discipline</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D6 · Tự Trắc Ẩn &amp; Kỷ Luật</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D6 · Tự Trắc Ẩn &amp; Kỷ Luật</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Kỷ luật bền vững không đến từ sự khắc nghiệt với bản thân, mà từ sự tử tế và hiểu mình. Gentle discipline là nghệ thuật kiên định mà không tự trừng phạt.</p>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default function MindGentleDisciplinePage() {
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop" alt="Gentle Discipline" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>6 Nguyên Tắc · Thực Hành Mỗi Ngày</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>6 Nguyên Tắc · Thực Hành Mỗi Ngày</span>
           </div>
         </div>
       </div>
@@ -145,19 +145,19 @@ export default function MindGentleDisciplinePage() {
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border p-5 md:p-6" style={{ borderColor: `${COLOR}25`, background: `${COLOR}07` }}>
           <p className="text-lg text-text leading-relaxed italic">"Sự tử tế với bản thân không phải sự yếu đuối — đó là nền tảng của kỷ luật bền vững. Người tử tế với bản thân khi thất bại thường tiếp tục cố gắng lâu dài hơn."</p>
-          <p className="text-sm mt-3" style={{ color: COLOR }}>— Kristin Neff, Self-Compassion Research</p>
+          <p className="text-base mt-3" style={{ color: COLOR }}>— Kristin Neff, Self-Compassion Research</p>
         </div>
       </RevealBlock>
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>6 Nguyên Tắc Kỷ Luật Mềm</h2>
-        <p className="text-muted text-base mb-6">Xây dựng kỷ luật dựa trên sức mạnh nội tâm, không phải nỗi sợ</p>
+        <p className="text-muted text-lg mb-6">Xây dựng kỷ luật dựa trên sức mạnh nội tâm, không phải nỗi sợ</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {PRINCIPLES.map(p => (
             <div key={p.t} className="rounded-2xl border border-border bg-surface p-5 hover:border-emerald-500/30 transition-colors">
               <div className="text-3xl mb-2">{p.icon}</div>
               <div className="font-bold text-text mb-2">{p.t}</div>
-              <p className="text-base text-muted leading-relaxed">{p.d}</p>
+              <p className="text-lg text-muted leading-relaxed">{p.d}</p>
             </div>
           ))}
         </div>
@@ -165,17 +165,17 @@ export default function MindGentleDisciplinePage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Kỷ Luật Mềm vs Khắc Nghiệt</h2>
-        <p className="text-muted text-base mb-6">Thay thế ngôn ngữ tự phán xét bằng tự trắc ẩn</p>
+        <p className="text-muted text-lg mb-6">Thay thế ngôn ngữ tự phán xét bằng tự trắc ẩn</p>
         <div className="space-y-3">
           {VS.map((v, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 grid grid-cols-2 gap-4">
               <div className="flex items-start gap-2">
-                <span className="text-red-400 text-base shrink-0 mt-0.5">✗</span>
-                <p className="text-base text-muted">{v.harsh}</p>
+                <span className="text-red-400 text-lg shrink-0 mt-0.5">✗</span>
+                <p className="text-lg text-muted">{v.harsh}</p>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-base shrink-0 mt-0.5" style={{ color: COLOR }}>✓</span>
-                <p className="text-base text-text">{v.soft}</p>
+                <span className="text-lg shrink-0 mt-0.5" style={{ color: COLOR }}>✓</span>
+                <p className="text-lg text-text">{v.soft}</p>
               </div>
             </div>
           ))}
@@ -184,13 +184,13 @@ export default function MindGentleDisciplinePage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thực Hành Tái Khung</h2>
-        <p className="text-muted text-base mb-6">Luyện tập nói chuyện tử tế với bản thân</p>
+        <p className="text-muted text-lg mb-6">Luyện tập nói chuyện tử tế với bản thân</p>
         <SelfTalkTool />
       </RevealBlock>
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Khung Thực Hành 3 Buổi</h2>
-        <p className="text-muted text-base mb-6">Micro-habits trong ngày để xây kỷ luật bền vững</p>
+        <p className="text-muted text-lg mb-6">Micro-habits trong ngày để xây kỷ luật bền vững</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {PRACTICES.map(p => (
             <div key={p.time} className="rounded-2xl border border-border bg-surface p-5">
@@ -198,7 +198,7 @@ export default function MindGentleDisciplinePage() {
               <div className="font-bold mb-3" style={{ color: COLOR }}>{p.time}</div>
               <ul className="space-y-2">
                 {p.habits.map(h => (
-                  <li key={h} className="flex items-start gap-2 text-base text-muted">
+                  <li key={h} className="flex items-start gap-2 text-lg text-muted">
                     <span className="shrink-0 mt-1" style={{ color: COLOR }}>·</span>{h}
                   </li>
                 ))}
@@ -208,7 +208,7 @@ export default function MindGentleDisciplinePage() {
         </div>
       </RevealBlock>
 
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
     </div>

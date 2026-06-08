@@ -96,14 +96,14 @@ export default function ToolsQuickWorkoutsPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>⚡</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Thư Viện Bài Nhanh</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             5 · 10 · 20 · 30 phút · Không cần thiết bị
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
@@ -116,7 +116,7 @@ export default function ToolsQuickWorkoutsPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop" alt="Quick workouts" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             luôn có 5 phút — luôn có lựa chọn
           </span>
         </div>
@@ -129,7 +129,7 @@ export default function ToolsQuickWorkoutsPage() {
         <div className="flex gap-2 flex-wrap mb-6">
           {WORKOUTS.map((w, i) => (
             <button key={i} onClick={() => setOpen(i)}
-              className="px-4 py-2 rounded-full text-base font-bold border transition-all"
+              className="px-4 py-2 rounded-full text-lg font-bold border transition-all"
               style={{ borderColor: open === i ? w.color : 'rgba(255,255,255,0.1)', background: open === i ? `${w.color}20` : 'transparent', color: open === i ? w.color : '#999' }}>
               {w.icon} {w.dur}
             </button>
@@ -146,29 +146,29 @@ export default function ToolsQuickWorkoutsPage() {
                 <span className="text-4xl">{w.icon}</span>
                 <div>
                   <div className="font-black text-2xl text-text">{w.dur} — {w.label}</div>
-                  <div className="text-sm text-muted mt-0.5">Mục tiêu: {w.goal}</div>
+                  <div className="text-base text-muted mt-0.5">Mục tiêu: {w.goal}</div>
                 </div>
               </div>
-              <div className="text-sm text-muted p-3 rounded-xl border" style={{ borderColor: `${w.color}20`, background: `${w.color}08` }}>
+              <div className="text-base text-muted p-3 rounded-xl border" style={{ borderColor: `${w.color}20`, background: `${w.color}08` }}>
                 <strong style={{ color: w.color }}>Phù hợp cho:</strong> {w.who}
               </div>
             </div>
             <div className="p-5 space-y-4">
               {w.steps.map((step, j) => (
                 <div key={j} className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-base font-black" style={{ background: `${w.color}20`, color: w.color }}>{j + 1}</div>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-lg font-black" style={{ background: `${w.color}20`, color: w.color }}>{j + 1}</div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="font-bold text-text text-base">{step.name}</span>
-                      <span className="text-sm px-2 py-0.5 rounded-full font-bold" style={{ color: w.color, background: `${w.color}15` }}>{step.dur}</span>
+                      <span className="font-bold text-text text-lg">{step.name}</span>
+                      <span className="text-base px-2 py-0.5 rounded-full font-bold" style={{ color: w.color, background: `${w.color}15` }}>{step.dur}</span>
                     </div>
-                    <p className="text-base text-muted">{step.desc}</p>
+                    <p className="text-lg text-muted">{step.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
             <div className="px-5 pb-5">
-              <div className="p-3 rounded-xl text-base" style={{ background: `${w.color}10`, borderLeft: `3px solid ${w.color}` }}>
+              <div className="p-3 rounded-xl text-lg" style={{ background: `${w.color}10`, borderLeft: `3px solid ${w.color}` }}>
                 <strong style={{ color: w.color }}>💡 Tip tăng tiến:</strong> <span className="text-muted">{w.tip}</span>
               </div>
             </div>
@@ -188,15 +188,15 @@ export default function ToolsQuickWorkoutsPage() {
           ].map((s, i) => (
             <div key={i} className="rounded-xl border border-border p-4">
               <div className="text-2xl mb-2">{s.icon}</div>
-              <div className="text-sm text-muted mb-1">Tình huống: {s.situation}</div>
-              <div className="text-base font-bold" style={{ color: COLOR }}>→ {s.recommend}</div>
+              <div className="text-base text-muted mb-1">Tình huống: {s.situation}</div>
+              <div className="text-lg font-bold" style={{ color: COLOR }}>→ {s.recommend}</div>
             </div>
           ))}
         </div>
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
     </div>
   );
 }

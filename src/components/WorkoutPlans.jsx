@@ -313,7 +313,7 @@ function Section({ block, pc }) {
         <div className="flex items-center gap-2.5">
           <span className="text-xl">{block.icon}</span>
           <div>
-            <span className={`text-sm font-black ${bc.text} uppercase tracking-wider`}>{block.phase}</span>
+            <span className={`text-base font-black ${bc.text} uppercase tracking-wider`}>{block.phase}</span>
             {block.note && <p className="text-[10px] text-muted/70 mt-0.5 leading-snug">{block.note}</p>}
           </div>
         </div>
@@ -326,7 +326,7 @@ function Section({ block, pc }) {
         {block.exercises.map((ex, i) => (
           <li key={i} className="flex items-start gap-2.5 px-3 py-2 rounded-xl bg-bg border border-border/40 hover:border-border transition-colors duration-150">
             <span className={`shrink-0 w-4 h-4 rounded-full ${bc.dot} mt-0.5`} />
-            <span className="text-sm text-text/90 leading-relaxed">{ex}</span>
+            <span className="text-base text-text/90 leading-relaxed">{ex}</span>
           </li>
         ))}
       </ul>
@@ -349,7 +349,7 @@ export default function WorkoutPlans() {
         <h2 className="text-3xl font-black text-text flex items-center gap-3 mb-1">
           <span>📋</span> Buổi Tập Theo Mục Tiêu
         </h2>
-        <p className="text-muted text-base">
+        <p className="text-muted text-lg">
           6 lộ trình cá nhân hóa — chọn đúng mục tiêu, đúng cấp độ, đúng thời gian bạn có
         </p>
       </div>
@@ -417,7 +417,7 @@ export default function WorkoutPlans() {
                   <span className="text-4xl">{plan.icon}</span>
                   <div>
                     <h3 className={`text-3xl font-black ${pc.text}`}>{plan.name}</h3>
-                    <p className="text-muted text-sm">{plan.sub} · {plan.commitment}</p>
+                    <p className="text-muted text-base">{plan.sub} · {plan.commitment}</p>
                   </div>
                 </div>
               </div>
@@ -435,17 +435,17 @@ export default function WorkoutPlans() {
                 {plan.forWho.map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className={`shrink-0 w-1.5 h-1.5 rounded-full ${pc.dot} mt-1.5`} />
-                    <span className="text-sm text-text/85 leading-relaxed">{item}</span>
+                    <span className="text-base text-text/85 leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="rounded-2xl border border-border bg-surface/50 p-4">
               <p className="text-[10px] font-black text-muted/60 uppercase tracking-wider mb-2">⚠️ Không phù hợp</p>
-              <p className="text-sm text-muted/80 leading-relaxed">{plan.notFor}</p>
+              <p className="text-base text-muted/80 leading-relaxed">{plan.notFor}</p>
               <div className={`mt-3 pt-3 border-t border-border/50`}>
                 <p className="text-[10px] font-black text-muted/60 uppercase tracking-wider mb-1.5">🧭 Triết lý</p>
-                <p className={`text-sm ${pc.text} leading-relaxed font-medium`}>{plan.philosophy}</p>
+                <p className={`text-base ${pc.text} leading-relaxed font-medium`}>{plan.philosophy}</p>
               </div>
             </div>
           </div>
@@ -460,7 +460,7 @@ export default function WorkoutPlans() {
               <button
                 key={key}
                 onClick={() => setTab(key)}
-                className={`flex-1 text-sm font-bold py-2 rounded-lg transition-all duration-150 ${
+                className={`flex-1 text-base font-bold py-2 rounded-lg transition-all duration-150 ${
                   tab === key
                     ? `${pc.bg} ${pc.text} border ${pc.border}`
                     : 'text-muted hover:text-text'
@@ -474,7 +474,7 @@ export default function WorkoutPlans() {
           {/* ── Tab: Buổi Tập Mẫu ── */}
           {tab === 'session' && (
             <div>
-              <p className={`text-base font-black ${pc.text} mb-4 flex items-center gap-2`}>
+              <p className={`text-lg font-black ${pc.text} mb-4 flex items-center gap-2`}>
                 <span>📋</span> {plan.session.title}
               </p>
               <div className="space-y-3">
@@ -488,7 +488,7 @@ export default function WorkoutPlans() {
           {/* ── Tab: Lộ Trình ── */}
           {tab === 'progression' && (
             <div>
-              <p className={`text-base font-black ${pc.text} mb-4`}>📈 Lộ Trình Tiến Bộ Theo Tuần</p>
+              <p className={`text-lg font-black ${pc.text} mb-4`}>📈 Lộ Trình Tiến Bộ Theo Tuần</p>
               <div className="relative">
                 {/* Vertical line */}
                 <div className={`absolute left-[18px] top-0 bottom-4 w-px ${pc.bar} opacity-20`} />
@@ -500,7 +500,7 @@ export default function WorkoutPlans() {
                       </div>
                       <div className={`flex-1 bg-bg/60 border ${pc.border} border-opacity-30 rounded-2xl px-4 py-3`}>
                         <p className={`text-[10px] font-black ${pc.text} mb-0.5`}>Tuần {step.week}</p>
-                        <p className="text-sm text-text/85 leading-relaxed">{step.text}</p>
+                        <p className="text-base text-text/85 leading-relaxed">{step.text}</p>
                       </div>
                     </div>
                   ))}
@@ -509,12 +509,12 @@ export default function WorkoutPlans() {
 
               {/* Progress markers */}
               <div className={`mt-5 rounded-2xl border ${pc.border} ${pc.bg} p-4`}>
-                <p className={`text-sm font-black ${pc.text} mb-3`}>🎯 Dấu Hiệu Tiến Bộ</p>
+                <p className={`text-base font-black ${pc.text} mb-3`}>🎯 Dấu Hiệu Tiến Bộ</p>
                 <ul className="space-y-2">
                   {plan.progress.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className={`shrink-0 text-sm ${pc.text} mt-0.5`}>✓</span>
-                      <span className="text-sm text-text/85 leading-relaxed">{item}</span>
+                      <span className={`shrink-0 text-base ${pc.text} mt-0.5`}>✓</span>
+                      <span className="text-base text-text/85 leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -525,11 +525,11 @@ export default function WorkoutPlans() {
           {/* ── Tab: Dinh Dưỡng ── */}
           {tab === 'nutrition' && (
             <div>
-              <p className={`text-base font-black ${pc.text} mb-4`}>🥗 Dinh Dưỡng Đi Kèm Lộ Trình</p>
+              <p className={`text-lg font-black ${pc.text} mb-4`}>🥗 Dinh Dưỡng Đi Kèm Lộ Trình</p>
               <div className={`relative overflow-hidden rounded-2xl border ${pc.border} ${pc.bg} p-5 mb-5`}>
                 <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl opacity-8 pointer-events-none"
                   style={{ background: pc.hex }} />
-                <p className="relative text-base text-text/90 leading-relaxed">{plan.nutrition}</p>
+                <p className="relative text-lg text-text/90 leading-relaxed">{plan.nutrition}</p>
               </div>
 
               {/* Macro guide */}
@@ -541,7 +541,7 @@ export default function WorkoutPlans() {
                 ].map((m, i) => (
                   <div key={i} className={`rounded-xl border ${m.color} p-3`}>
                     <p className={`text-[10px] font-black ${m.color.split(' ')[0]} mb-0.5`}>{m.label}</p>
-                    <p className="text-sm font-bold text-text">{m.value}</p>
+                    <p className="text-base font-bold text-text">{m.value}</p>
                     <p className="text-[9px] text-muted/60 mt-1">{m.tip}</p>
                   </div>
                 ))}
@@ -560,7 +560,7 @@ export default function WorkoutPlans() {
                       <span className={`shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border ${pc.bg} ${pc.border} ${pc.text} whitespace-nowrap`}>
                         {item.time}
                       </span>
-                      <span className="text-sm text-muted/80 leading-relaxed">{item.tip}</span>
+                      <span className="text-base text-muted/80 leading-relaxed">{item.tip}</span>
                     </div>
                   ))}
                 </div>
@@ -570,10 +570,10 @@ export default function WorkoutPlans() {
 
           {/* ── Coach tip (always visible) ── */}
           <div className={`mt-5 flex gap-3 items-start rounded-2xl border ${pc.border} ${pc.bg} px-4 py-3`}>
-            <span className="text-base shrink-0 mt-0.5">💡</span>
+            <span className="text-lg shrink-0 mt-0.5">💡</span>
             <div>
               <p className={`text-[10px] font-black ${pc.text} mb-0.5`}>Coach Tip Cá Nhân</p>
-              <p className="text-sm text-muted/90 leading-relaxed">{plan.tip}</p>
+              <p className="text-base text-muted/90 leading-relaxed">{plan.tip}</p>
             </div>
           </div>
 

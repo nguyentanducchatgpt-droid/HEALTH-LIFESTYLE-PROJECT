@@ -118,11 +118,11 @@ function MeditationTimer({ color }) {
 
   return (
     <div className="rounded-2xl border border-border bg-bg p-5 flex flex-col items-center gap-4 max-w-xs mx-auto">
-      <div className="text-sm font-bold uppercase tracking-widest text-muted">Meditation Timer</div>
+      <div className="text-base font-bold uppercase tracking-widest text-muted">Meditation Timer</div>
       {!running && !done && (
         <div className="flex gap-2">
           {[3, 5, 10].map(d => (
-            <button key={d} onClick={() => setDuration(d)} className={`px-3 py-1.5 rounded-full text-sm font-bold transition-all border ${duration === d ? 'text-white' : 'text-muted border-border'}`} style={{ background: duration === d ? color : undefined, borderColor: duration === d ? color : undefined }}>
+            <button key={d} onClick={() => setDuration(d)} className={`px-3 py-1.5 rounded-full text-base font-bold transition-all border ${duration === d ? 'text-white' : 'text-muted border-border'}`} style={{ background: duration === d ? color : undefined, borderColor: duration === d ? color : undefined }}>
               {d} ph
             </button>
           ))}
@@ -139,15 +139,15 @@ function MeditationTimer({ color }) {
           ) : (
             <>
               <div className="text-3xl font-bold text-text">{String(mins).padStart(2, '0')}:{String(secs).padStart(2, '0')}</div>
-              <div className="text-sm text-muted">{running ? 'thiền...' : `${duration} phút`}</div>
+              <div className="text-base text-muted">{running ? 'thiền...' : `${duration} phút`}</div>
             </>
           )}
         </div>
       </div>
       {done ? (
-        <div className="text-base font-bold text-center" style={{ color }}>Hoàn thành! 🧘</div>
+        <div className="text-lg font-bold text-center" style={{ color }}>Hoàn thành! 🧘</div>
       ) : (
-        <button onClick={running ? stop : start} className="px-5 py-2 rounded-full text-base font-bold" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${RGB},0.15)`, color: running ? '#ef4444' : color, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${RGB},0.3)`}` }}>
+        <button onClick={running ? stop : start} className="px-5 py-2 rounded-full text-lg font-bold" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${RGB},0.15)`, color: running ? '#ef4444' : color, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${RGB},0.3)`}` }}>
           {running ? 'Dừng' : 'Bắt đầu'}
         </button>
       )}
@@ -183,7 +183,7 @@ export default function MindMeditationPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-purple-400 transition-colors mb-8 group">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Tâm Trí An Nhiên
       </Link>
@@ -193,7 +193,7 @@ export default function MindMeditationPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🧘</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Thiền Ngắn & Chánh Niệm</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D3 · Thiền & Chánh Niệm</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D3 · Thiền & Chánh Niệm</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Thiền không phải là "không suy nghĩ". Thiền là nhận ra mình đang bị cuốn đi và quay lại nhẹ nhàng. Mỗi lần quay lại là một lần tập — không cần hoàn hảo.</p>
         </div>
       </div>
@@ -203,7 +203,7 @@ export default function MindMeditationPage() {
           <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80&auto=format&fit=crop" alt="Meditation" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>4 kiểu thiền · Timer tương tác · Từ 3 phút</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>4 kiểu thiền · Timer tương tác · Từ 3 phút</span>
           </div>
         </div>
       </div>
@@ -213,12 +213,12 @@ export default function MindMeditationPage() {
       {/* Myths */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Hiểu Đúng Về Thiền</h2>
-        <p className="text-muted text-base mb-6">4 hiểu lầm phổ biến khiến người mới bỏ cuộc trước khi bắt đầu.</p>
+        <p className="text-muted text-lg mb-6">4 hiểu lầm phổ biến khiến người mới bỏ cuộc trước khi bắt đầu.</p>
         <div className="space-y-3">
           {MYTHS.map((m, i) => (
             <div key={i} className="rounded-xl border border-border bg-surface p-4 grid md:grid-cols-2 gap-3">
-              <div className="flex items-start gap-2"><span className="text-red-400 text-base shrink-0">✗</span><div className="text-base text-muted line-through">{m.myth}</div></div>
-              <div className="flex items-start gap-2"><span className="text-base shrink-0" style={{ color: COLOR }}>✓</span><div className="text-base text-text">{m.truth}</div></div>
+              <div className="flex items-start gap-2"><span className="text-red-400 text-lg shrink-0">✗</span><div className="text-lg text-muted line-through">{m.myth}</div></div>
+              <div className="flex items-start gap-2"><span className="text-lg shrink-0" style={{ color: COLOR }}>✓</span><div className="text-lg text-text">{m.truth}</div></div>
             </div>
           ))}
         </div>
@@ -227,10 +227,10 @@ export default function MindMeditationPage() {
       {/* Practice types */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kiểu Thiền Cốt Lõi</h2>
-        <p className="text-muted text-base mb-6">Chọn kiểu phù hợp với hoàn cảnh và sở thích của bạn.</p>
+        <p className="text-muted text-lg mb-6">Chọn kiểu phù hợp với hoàn cảnh và sở thích của bạn.</p>
         <div className="flex gap-2 flex-wrap mb-6">
           {PRACTICE_TYPES.map(p => (
-            <button key={p.id} onClick={() => setActive(p.id)} className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium transition-all border ${active === p.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: active === p.id ? p.color : undefined, borderColor: active === p.id ? p.color : undefined }}>
+            <button key={p.id} onClick={() => setActive(p.id)} className={`flex items-center gap-2 px-3 py-2 rounded-full text-base font-medium transition-all border ${active === p.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: active === p.id ? p.color : undefined, borderColor: active === p.id ? p.color : undefined }}>
               {p.icon} {p.title}
             </button>
           ))}
@@ -241,18 +241,18 @@ export default function MindMeditationPage() {
               <span className="text-5xl">{practice.icon}</span>
               <div>
                 <div className="text-xl font-bold text-text">{practice.title}</div>
-                <div className="text-sm font-bold uppercase tracking-widest mt-0.5" style={{ color: practice.color }}>{practice.subtitle}</div>
+                <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: practice.color }}>{practice.subtitle}</div>
               </div>
             </div>
             <div className="space-y-3 mb-5">
               {practice.steps.map((s, i) => (
                 <div key={i} className="flex items-start gap-3 p-3 rounded-xl border border-border bg-bg">
-                  <span className="text-sm font-bold shrink-0 mt-0.5 min-w-[55px]" style={{ color: practice.color }}>{s.time}</span>
-                  <span className="text-base text-text leading-relaxed">{s.desc}</span>
+                  <span className="text-base font-bold shrink-0 mt-0.5 min-w-[55px]" style={{ color: practice.color }}>{s.time}</span>
+                  <span className="text-lg text-text leading-relaxed">{s.desc}</span>
                 </div>
               ))}
             </div>
-            <div className="rounded-xl p-3 text-sm" style={{ background: `${practice.color}10` }}>
+            <div className="rounded-xl p-3 text-base" style={{ background: `${practice.color}10` }}>
               💡 <strong style={{ color: practice.color }}>Mẹo:</strong> <span className="text-muted">{practice.tip}</span>
             </div>
           </div>
@@ -262,23 +262,23 @@ export default function MindMeditationPage() {
       {/* Timer */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Meditation Timer</h2>
-        <p className="text-muted text-base mb-6">Thực hành ngay — chọn thời lượng và bắt đầu thiền.</p>
+        <p className="text-muted text-lg mb-6">Thực hành ngay — chọn thời lượng và bắt đầu thiền.</p>
         <MeditationTimer color={COLOR} />
       </RevealBlock>
 
       {/* Week plan */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Lộ Trình Tăng Dần</h2>
-        <p className="text-muted text-base mb-6">Bắt đầu từ 3 phút, tăng dần trong 7 ngày.</p>
+        <p className="text-muted text-lg mb-6">Bắt đầu từ 3 phút, tăng dần trong 7 ngày.</p>
         <div className="grid grid-cols-4 md:grid-cols-7 gap-2">
           {[
             { day: 'T2', mins: 3 }, { day: 'T3', mins: 3 }, { day: 'T4', mins: 4 },
             { day: 'T5', mins: 5 }, { day: 'T6', mins: 5 }, { day: 'T7', mins: 7 }, { day: 'CN', mins: 10 },
           ].map(d => (
             <div key={d.day} className="rounded-xl border border-border bg-surface p-3 text-center">
-              <div className="text-sm font-bold" style={{ color: COLOR }}>{d.day}</div>
+              <div className="text-base font-bold" style={{ color: COLOR }}>{d.day}</div>
               <div className="text-xl font-bold text-text mt-1">{d.mins}</div>
-              <div className="text-sm text-muted">phút</div>
+              <div className="text-base text-muted">phút</div>
             </div>
           ))}
         </div>
@@ -286,12 +286,12 @@ export default function MindMeditationPage() {
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/d/breathing" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/d/breathing" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Kỹ Thuật Thở
         </Link>
-        <Link to="/pillar/d" className="text-base text-muted hover:text-purple-400 transition-colors text-center">Tâm Trí An Nhiên →</Link>
-        <Link to="/pillar/d/body-scan" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/d" className="text-lg text-muted hover:text-purple-400 transition-colors text-center">Tâm Trí An Nhiên →</Link>
+        <Link to="/pillar/d/body-scan" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
           Body Scan
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

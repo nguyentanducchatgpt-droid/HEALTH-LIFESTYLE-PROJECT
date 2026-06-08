@@ -24,7 +24,7 @@ export default function PillarAProgress() {
 
         <div className="relative z-10 px-4 md:px-8 pt-10 pb-8 animate-fade-in-up">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-sm text-muted mb-5 flex-wrap">
+          <nav className="flex items-center gap-1.5 text-base text-muted mb-5 flex-wrap">
             <Link to="/" className="hover:text-accent transition-colors">Trang chủ</Link>
             <span className="text-border/60">/</span>
             <Link to="/pillar/a" className="hover:text-accent transition-colors">Vận Động & Tập Luyện</Link>
@@ -33,7 +33,7 @@ export default function PillarAProgress() {
           </nav>
 
           {/* Step badge */}
-          <div className="inline-flex items-center gap-2 bg-purple-500/8 border border-purple-500/20 text-purple-400 text-sm font-bold px-4 py-1.5 rounded-full mb-5">
+          <div className="inline-flex items-center gap-2 bg-purple-500/8 border border-purple-500/20 text-purple-400 text-base font-bold px-4 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse shrink-0" />
             4 / 4 · Bậc Thang & Kiểm Tra
           </div>
@@ -42,7 +42,7 @@ export default function PillarAProgress() {
             Bậc Thang Tiến Bộ &amp;<br />
             <span className="text-purple-400">Kiểm Tra Hàng Tháng</span>
           </h1>
-          <p className="text-muted text-base leading-relaxed max-w-xl">
+          <p className="text-muted text-lg leading-relaxed max-w-xl">
             6 lộ trình tiến bộ theo mục tiêu cá nhân, test kiểm tra định kỳ và radar chart trực quan
             để theo dõi sự phát triển toàn diện theo thời gian.
           </p>
@@ -56,7 +56,7 @@ export default function PillarAProgress() {
               { n: '4', label: 'Bài test mỗi kỳ' },
             ].map(s => (
               <div key={s.label} className="flex items-center gap-2 bg-surface/70 backdrop-blur-sm border border-border/60 px-3 py-2 rounded-xl">
-                <span className="text-purple-400 font-extrabold text-base leading-none">{s.n}</span>
+                <span className="text-purple-400 font-extrabold text-lg leading-none">{s.n}</span>
                 <span className="text-muted text-[10px] leading-none">{s.label}</span>
               </div>
             ))}
@@ -72,14 +72,14 @@ export default function PillarAProgress() {
       <div className="flex items-center justify-between py-8 border-t border-border/40 mt-8 mb-4">
         <Link
           to="/pillar/a/weekly"
-          className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group"
+          className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           <span>Nhịp Tuần & Mục Tiêu</span>
         </Link>
         <Link
           to="/pillar/a"
-          className="flex items-center gap-2 text-sm bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-purple-500/30 transition-all"
+          className="flex items-center gap-2 text-base bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-purple-500/30 transition-all"
         >
           <span>↩</span>
           <span>Về tổng quan</span>

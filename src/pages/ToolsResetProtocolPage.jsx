@@ -110,14 +110,14 @@ export default function ToolsResetProtocolPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🔄</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Reset Protocol</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Sau lỡ nhịp · Quay lại đúng cách · Không tự trách
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
@@ -130,7 +130,7 @@ export default function ToolsResetProtocolPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&q=80&auto=format&fit=crop" alt="Reset protocol" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             lỡ nhịp là bình thường · quay lại mới quan trọng
           </span>
         </div>
@@ -144,7 +144,7 @@ export default function ToolsResetProtocolPage() {
           <h3 className="font-bold text-xl mb-3" style={{ color: COLOR }}>🧠 Mindset Trước Khi Reset</h3>
           <ul className="space-y-2">
             {GENERAL_RULES.map((r, i) => (
-              <li key={i} className="flex gap-2 text-base text-muted">
+              <li key={i} className="flex gap-2 text-lg text-muted">
                 <span style={{ color: COLOR }} className="shrink-0">→</span>{r}
               </li>
             ))}
@@ -155,7 +155,7 @@ export default function ToolsResetProtocolPage() {
       {/* Scenarios */}
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>4 Tình Huống Reset Thường Gặp</h2>
-        <p className="text-muted text-base mb-6">Nhấn vào tình huống bạn đang gặp để xem protocol cụ thể.</p>
+        <p className="text-muted text-lg mb-6">Nhấn vào tình huống bạn đang gặp để xem protocol cụ thể.</p>
         <div className="space-y-3">
           {RESET_SCENARIOS.map((s, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
@@ -163,26 +163,26 @@ export default function ToolsResetProtocolPage() {
                 <span className="text-3xl">{s.icon}</span>
                 <div className="flex-1">
                   <div className="font-bold text-text">{s.title}</div>
-                  <div className="text-sm text-muted mt-0.5">{s.trigger.slice(0, 60)}...</div>
+                  <div className="text-base text-muted mt-0.5">{s.trigger.slice(0, 60)}...</div>
                 </div>
                 <span className="text-muted">{open === i ? '▲' : '▼'}</span>
               </button>
               {open === i && (
                 <div className="px-4 pb-5 border-t border-border pt-4 space-y-4">
-                  <div className="p-3 rounded-xl text-sm" style={{ background: `${s.color}10`, borderLeft: `3px solid ${s.color}` }}>
+                  <div className="p-3 rounded-xl text-base" style={{ background: `${s.color}10`, borderLeft: `3px solid ${s.color}` }}>
                     <strong style={{ color: s.color }}>🔬 Sự thật:</strong> <span className="text-muted">{s.rule}</span>
                   </div>
                   <div>
-                    <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: s.color }}>Protocol Reset</div>
+                    <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: s.color }}>Protocol Reset</div>
                     <ol className="space-y-2">
                       {s.steps.map((step, j) => (
-                        <li key={j} className="flex gap-3 text-base text-muted">
+                        <li key={j} className="flex gap-3 text-lg text-muted">
                           <span className="font-bold shrink-0" style={{ color: s.color }}>{j + 1}.</span>{step}
                         </li>
                       ))}
                     </ol>
                   </div>
-                  <div className="p-3 rounded-xl text-sm" style={{ background: 'rgba(239,68,68,0.08)', borderLeft: '3px solid #ef4444' }}>
+                  <div className="p-3 rounded-xl text-base" style={{ background: 'rgba(239,68,68,0.08)', borderLeft: '3px solid #ef4444' }}>
                     <strong className="text-red-400">⛔ Tránh:</strong> <span className="text-muted">{s.avoid}</span>
                   </div>
                 </div>
@@ -203,15 +203,15 @@ export default function ToolsResetProtocolPage() {
             { action: 'Ngủ đúng giờ tối nay', why: 'Giấc ngủ là công cụ phục hồi mạnh nhất' },
           ].map((item, i) => (
             <div key={i} className="rounded-xl border border-border bg-surface p-4">
-              <div className="font-bold text-text text-base mb-1" style={{ color: COLOR }}>{item.action}</div>
-              <div className="text-sm text-muted">{item.why}</div>
+              <div className="font-bold text-text text-lg mb-1" style={{ color: COLOR }}>{item.action}</div>
+              <div className="text-base text-muted">{item.why}</div>
             </div>
           ))}
         </div>
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
     </div>
   );
 }

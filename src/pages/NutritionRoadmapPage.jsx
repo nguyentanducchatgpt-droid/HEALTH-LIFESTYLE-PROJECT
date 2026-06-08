@@ -500,11 +500,11 @@ function InputPanel({ inputs, setInputs, s, open, setOpen }) {
         <div className="flex items-center gap-3">
           <span className="text-lg">⚙️</span>
           <div className="text-left">
-            <p className="text-sm font-bold text-lime-400">Thông Số Cá Nhân</p>
+            <p className="text-base font-bold text-lime-400">Thông Số Cá Nhân</p>
             <p className="text-[9px] text-muted mt-0.5">{inputs.weight}kg · {inputs.height}cm · {inputs.age}t · {inputs.sex === 'male' ? 'Nam' : 'Nữ'} · {act.label} · {goal.label} — <span className="text-lime-400 font-semibold">{s.targetKcal.toLocaleString()} kcal</span></p>
           </div>
         </div>
-        <span className="text-muted/60 text-sm transition-transform duration-200" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▼</span>
+        <span className="text-muted/60 text-base transition-transform duration-200" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▼</span>
       </button>
       {open && (
         <div className="px-5 pb-5 pt-1 space-y-4 border-t border-lime-500/10">
@@ -708,7 +708,7 @@ function PhaseCard({ ph, s, checks, onCheck, mealPlan }) {
               {ph.weekBreakdown.map((wk, i) => (
                 <div key={i} className="rounded-2xl border p-4" style={{ borderColor: `${ph.color}18`, background: `${ph.color}05` }}>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-xl flex items-center justify-center text-base shrink-0" style={{ background: `${ph.color}15`, border: `1px solid ${ph.color}30` }}>
+                    <div className="w-8 h-8 rounded-xl flex items-center justify-center text-lg shrink-0" style={{ background: `${ph.color}15`, border: `1px solid ${ph.color}30` }}>
                       {wk.icon}
                     </div>
                     <div className="flex-1">
@@ -805,7 +805,7 @@ function FAQSection() {
           <button onClick={() => setOpen(open === i ? -1 : i)}
             className="w-full flex items-center justify-between px-5 py-4 hover:bg-surface/20 transition-colors text-left gap-4">
             <p className="text-[11px] font-bold text-text">{faq.q}</p>
-            <span className="text-muted/60 shrink-0 text-base transition-transform duration-300" style={{ transform: open === i ? 'rotate(180deg)' : 'none' }}>▼</span>
+            <span className="text-muted/60 shrink-0 text-lg transition-transform duration-300" style={{ transform: open === i ? 'rotate(180deg)' : 'none' }}>▼</span>
           </button>
           {open === i && (
             <div className="px-5 pb-4 pt-0 border-t border-border/10">
@@ -949,7 +949,7 @@ export default function NutritionRoadmapPage() {
                 <br />
                 <span className="text-text">Dinh Dưỡng</span>
               </h1>
-              <p className="text-base text-muted leading-relaxed max-w-lg">
+              <p className="text-lg text-muted leading-relaxed max-w-lg">
                 12 & 24 tuần có cấu trúc — từ thói quen cơ bản đến tối ưu hiệu suất. Mọi con số được tính toán theo thông số cá nhân của bạn.
               </p>
 
@@ -991,7 +991,7 @@ export default function NutritionRoadmapPage() {
           <RevealBlock>
             <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 px-5 py-4">
               <div className="flex items-center justify-between mb-2">
-                <p className="text-sm font-bold text-lime-400">Tiến Độ Cá Nhân</p>
+                <p className="text-base font-bold text-lime-400">Tiến Độ Cá Nhân</p>
                 <p className="text-[10px] text-muted">{totalChecked}/{totalActions} hành động đã thực hiện</p>
               </div>
               <div className="h-2 rounded-full bg-surface/30 overflow-hidden">
@@ -1054,7 +1054,7 @@ export default function NutritionRoadmapPage() {
                   style={clampedActive === i
                     ? { borderColor: ph.color, background: `${ph.color}18`, color: ph.color, boxShadow: `0 0 12px ${ph.color}25` }
                     : { borderColor: 'rgba(255,255,255,0.08)', background: 'transparent', color: '#6b7280' }}>
-                  <span className="text-base">{ph.emoji}</span>
+                  <span className="text-lg">{ph.emoji}</span>
                   <span>P{ph.phase}: {ph.label}</span>
                   <span className="text-[8px] opacity-60">T{ph.weeks}</span>
                 </button>
@@ -1078,10 +1078,10 @@ export default function NutritionRoadmapPage() {
           <div className="rounded-3xl border border-border/20 bg-surface/5 p-6">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-8 h-8 rounded-xl bg-lime-500/10 border border-lime-500/20 flex items-center justify-center">
-                <span className="text-base">🗺️</span>
+                <span className="text-lg">🗺️</span>
               </div>
               <div>
-                <p className="text-sm font-bold text-text">Mốc Quan Trọng — {showAll ? '24' : '12'} Tuần</p>
+                <p className="text-base font-bold text-text">Mốc Quan Trọng — {showAll ? '24' : '12'} Tuần</p>
                 <p className="text-[9px] text-muted">Các điểm đánh giá và kiểm tra trong lộ trình</p>
               </div>
             </div>

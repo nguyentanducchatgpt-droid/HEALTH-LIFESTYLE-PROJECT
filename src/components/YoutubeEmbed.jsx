@@ -24,7 +24,7 @@ export default function YoutubeEmbed({ videoId, title }) {
       <div className="bg-surface border border-border rounded-xl flex items-center justify-center aspect-video">
         <div className="text-center px-6">
           <div className="text-6xl mb-3">▶️</div>
-          <p className="text-muted text-base">{t('video.youtube_placeholder')}</p>
+          <p className="text-muted text-lg">{t('video.youtube_placeholder')}</p>
         </div>
       </div>
     );

@@ -77,7 +77,7 @@ export default function LifestyleNeatPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-base mb-8 hover:text-emerald-400 transition-colors">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-emerald-400 transition-colors">
         ← Lối Sống Khỏe
       </Link>
 
@@ -89,7 +89,7 @@ export default function LifestyleNeatPage() {
         </div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">NEAT & Chống Ngồi Lâu</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
             C3 — Non-Exercise Activity Thermogenesis
           </span>
@@ -106,7 +106,7 @@ export default function LifestyleNeatPage() {
               alt="NEAT đi bộ" className="w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9), rgba(10,10,10,0.3) 50%, transparent)' }} />
             <div className="absolute bottom-4 left-6">
-              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+              <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
                 Đi bộ · Đứng dậy · Vận động rải rác
               </span>
@@ -120,7 +120,7 @@ export default function LifestyleNeatPage() {
       {/* NEAT vs TEE */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>NEAT Chiếm Bao Nhiêu Trong Ngày?</h2>
-        <p className="text-muted text-base mb-6">Tổng năng lượng tiêu thụ trong ngày (TDEE) gồm 4 thành phần chính.</p>
+        <p className="text-muted text-lg mb-6">Tổng năng lượng tiêu thụ trong ngày (TDEE) gồm 4 thành phần chính.</p>
         <div className="space-y-3">
           {NEAT_VS_TEE.map((item, i) => (
             <div key={i} className="flex items-center gap-4 p-3 rounded-xl" style={{ background: `${item.color}08`, border: `1px solid ${item.color}20` }}>
@@ -128,29 +128,29 @@ export default function LifestyleNeatPage() {
                 <div className="text-xl font-bold" style={{ color: item.color }}>{item.pct}</div>
               </div>
               <div>
-                <div className="font-semibold text-text text-base">{item.component}</div>
-                <div className="text-muted text-sm">{item.desc}</div>
+                <div className="font-semibold text-text text-lg">{item.component}</div>
+                <div className="text-muted text-base">{item.desc}</div>
               </div>
             </div>
           ))}
         </div>
         <div className="mt-4 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.07)`, border: `1px solid rgba(${RGB},0.2)` }}>
-          <p className="text-base text-muted"><strong style={{ color: COLOR }}>Điểm mấu chốt:</strong> Buổi tập gym chỉ chiếm 5–10% tổng năng lượng. NEAT chiếm 15–30%. Người năng động (đi lại nhiều) có NEAT cao hơn người ngồi nhiều tới 500–700 kcal/ngày.</p>
+          <p className="text-lg text-muted"><strong style={{ color: COLOR }}>Điểm mấu chốt:</strong> Buổi tập gym chỉ chiếm 5–10% tổng năng lượng. NEAT chiếm 15–30%. Người năng động (đi lại nhiều) có NEAT cao hơn người ngồi nhiều tới 500–700 kcal/ngày.</p>
         </div>
       </RevealBlock>
 
       {/* NEAT activities */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>NEAT Tiêu Thụ Bao Nhiêu kcal?</h2>
-        <p className="text-muted text-base mb-6">Các hoạt động NEAT phổ biến và năng lượng tiêu thụ ước tính.</p>
+        <p className="text-muted text-lg mb-6">Các hoạt động NEAT phổ biến và năng lượng tiêu thụ ước tính.</p>
         <div className="grid gap-3">
           {NEAT_ACTIVITIES.map((a, i) => (
             <div key={i} className="flex items-center justify-between p-3 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
               <div className="flex items-center gap-3">
                 <span className="text-3xl">{a.icon}</span>
-                <span className="text-base font-semibold text-text">{a.activity}</span>
+                <span className="text-lg font-semibold text-text">{a.activity}</span>
               </div>
-              <span className="text-base font-bold tabular-nums" style={{ color: COLOR }}>{a.kcal} kcal</span>
+              <span className="text-lg font-bold tabular-nums" style={{ color: COLOR }}>{a.kcal} kcal</span>
             </div>
           ))}
         </div>
@@ -160,12 +160,12 @@ export default function LifestyleNeatPage() {
       <RevealBlock className="mb-12">
         <div className="p-6 rounded-2xl" style={{ background: `rgba(${RGB},0.08)`, border: `1px solid rgba(${RGB},0.25)` }}>
           <h2 className="text-2xl font-bold mb-2" style={{ color: COLOR }}>⏱ Quy Tắc Đứng Dậy 2 Phút</h2>
-          <p className="text-muted text-base leading-relaxed mb-4">
+          <p className="text-muted text-lg leading-relaxed mb-4">
             Ngồi liên tục hơn 90 phút làm giảm lưu thông máu, tăng căng cơ và giảm trao đổi chất. Nghiên cứu cho thấy ngắt quãng mỗi 45–60 phút có hiệu quả hơn tập gym 1 tiếng nếu phần còn lại của ngày bạn ngồi hoàn toàn.
           </p>
           <div className="grid gap-2">
             {['Đứng dậy và đi lấy nước', 'Xoay vai × 10 + xoay cổ × 8', 'Vươn người lên trần + bend forward', 'Đi bộ 1 vòng quanh bàn làm việc', 'Calf raise × 15 khi đứng chờ'].map((action, i) => (
-              <div key={i} className="flex items-center gap-2 text-base">
+              <div key={i} className="flex items-center gap-2 text-lg">
                 <span style={{ color: COLOR }}>→</span>
                 <span className="text-muted">{action}</span>
               </div>
@@ -180,8 +180,8 @@ export default function LifestyleNeatPage() {
         <div className="grid gap-3">
           {OFFICE_HACKS.map((h, i) => (
             <div key={i} className="p-4 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
-              <div className="font-semibold text-text text-base mb-1">{h.hack}</div>
-              <p className="text-muted text-sm leading-relaxed">{h.detail}</p>
+              <div className="font-semibold text-text text-lg mb-1">{h.hack}</div>
+              <p className="text-muted text-base leading-relaxed">{h.detail}</p>
             </div>
           ))}
         </div>
@@ -190,15 +190,15 @@ export default function LifestyleNeatPage() {
       {/* Step goals */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mục Tiêu Bước Theo Cấp Độ</h2>
-        <p className="text-muted text-base mb-6">Không ép tất cả lên 10.000 bước. Tăng từ nền hiện tại, không nhảy vọt.</p>
+        <p className="text-muted text-lg mb-6">Không ép tất cả lên 10.000 bước. Tăng từ nền hiện tại, không nhảy vọt.</p>
         <div className="space-y-3">
           {STEP_GOALS.map((g, i) => (
             <div key={i} className="p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
               <div className="flex justify-between items-start mb-1">
-                <span className="font-semibold text-text text-base">{g.profile}</span>
-                <span className="text-sm font-bold" style={{ color: COLOR }}>{g.goal}</span>
+                <span className="font-semibold text-text text-lg">{g.profile}</span>
+                <span className="text-base font-bold" style={{ color: COLOR }}>{g.goal}</span>
               </div>
-              <p className="text-sm text-muted">{g.tip}</p>
+              <p className="text-base text-muted">{g.tip}</p>
             </div>
           ))}
         </div>
@@ -213,21 +213,21 @@ export default function LifestyleNeatPage() {
               <div onClick={() => setChecks(p => ({ ...p, [i]: !p[i] }))}
                 className="w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all border"
                 style={{ background: checks[i] ? COLOR : 'transparent', borderColor: COLOR }}>
-                {checks[i] && <span className="text-black text-sm font-bold">✓</span>}
+                {checks[i] && <span className="text-black text-base font-bold">✓</span>}
               </div>
-              <span className="text-base text-muted group-hover:text-text transition-colors">{item}</span>
+              <span className="text-lg text-muted group-hover:text-text transition-colors">{item}</span>
             </label>
           ))}
         </div>
         <div className="h-2 rounded-full overflow-hidden mb-1" style={{ background: `rgba(${RGB},0.15)` }}>
           <div className="h-full rounded-full transition-all duration-500" style={{ width: `${checkCount / 5 * 100}%`, background: COLOR }} />
         </div>
-        <p className="text-sm text-muted">{checkCount}/5 — {checkCount >= 4 ? 'Xuất sắc! NEAT cao nhất trong ngày' : checkCount >= 3 ? 'Tốt' : 'Đang xây dựng thói quen'}</p>
+        <p className="text-base text-muted">{checkCount}/5 — {checkCount >= 4 ? 'Xuất sắc! NEAT cao nhất trong ngày' : checkCount >= 3 ? 'Tốt' : 'Đang xây dựng thói quen'}</p>
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/morning" className="text-muted hover:text-emerald-400 transition-colors text-base">← Routine Sáng</Link>
-        <Link to="/pillar/c/recovery" className="text-base font-semibold" style={{ color: COLOR }}>Phục Hồi →</Link>
+        <Link to="/pillar/c/morning" className="text-muted hover:text-emerald-400 transition-colors text-lg">← Routine Sáng</Link>
+        <Link to="/pillar/c/recovery" className="text-lg font-semibold" style={{ color: COLOR }}>Phục Hồi →</Link>
       </div>
     </div>
   );

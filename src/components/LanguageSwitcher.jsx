@@ -56,12 +56,12 @@ export default function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-2 bg-surface-2 border border-border hover:border-accent/40 text-text text-sm font-medium rounded-xl px-2.5 py-1.5 transition-all duration-200 hover:shadow-[0_0_14px_rgba(34,197,94,0.1)]"
+        className="flex items-center gap-2 bg-surface-2 border border-border hover:border-accent/40 text-text text-base font-medium rounded-xl px-2.5 py-1.5 transition-all duration-200 hover:shadow-[0_0_14px_rgba(34,197,94,0.1)]"
         aria-haspopup="listbox"
         aria-expanded={open}
       >
         <Flag src={currentLang.flagSrc} alt={currentLang.flagAlt} />
-        <span className="hidden sm:inline text-muted text-sm">{currentLang.label}</span>
+        <span className="hidden sm:inline text-muted text-base">{currentLang.label}</span>
         <span
           className={`text-muted text-[10px] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
         >
@@ -78,7 +78,7 @@ export default function LanguageSwitcher() {
                 role="option"
                 aria-selected={current === code}
                 onClick={() => { i18n.changeLanguage(code); setOpen(false); }}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-base transition-all duration-150 ${
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-lg transition-all duration-150 ${
                   current === code
                     ? 'bg-accent/10 text-accent font-semibold'
                     : 'text-muted hover:text-text hover:bg-white/5'

@@ -97,12 +97,12 @@ export default function Navbar() {
             alt="Sức Khỏe & Đời Sống"
             className="h-8 w-8 shrink-0 transition-transform duration-300 group-hover:scale-110"
           />
-          <span className="nb-brand hidden sm:inline font-bold tracking-wide text-base leading-none overflow-hidden">
+          <span className="nb-brand hidden sm:inline font-bold tracking-wide text-lg leading-none overflow-hidden">
             <span className="nb-p1">{t('brand.part1')}</span>
             <span className="nb-amp"> &amp; </span>
             <span className="nb-p2">{t('brand.part2')}</span>
           </span>
-          <span className="nb-brand sm:hidden font-bold tracking-wide text-sm leading-none overflow-hidden">
+          <span className="nb-brand sm:hidden font-bold tracking-wide text-base leading-none overflow-hidden">
             <span className="nb-p1">{t('brand.short')}</span>
           </span>
         </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
           {/* Home */}
           <Link
             to="/"
-            className={`relative px-2 py-1.5 text-base font-medium rounded-lg transition-all duration-200 ${
+            className={`relative px-2 py-1.5 text-lg font-medium rounded-lg transition-all duration-200 ${
               isActive('/') && !isPillarActive
                 ? 'text-accent bg-accent/8'
                 : 'text-muted hover:text-text hover:bg-white/4'
@@ -133,7 +133,7 @@ export default function Navbar() {
             <Link
               to="/pillars"
               onClick={() => setPillarsOpen(false)}
-              className={`relative flex items-center gap-1 px-2 py-1.5 text-base font-medium rounded-lg transition-all duration-200 ${
+              className={`relative flex items-center gap-1 px-2 py-1.5 text-lg font-medium rounded-lg transition-all duration-200 ${
                 isPillarActive || location.pathname === '/pillars'
                   ? 'text-accent bg-accent/8'
                   : 'text-muted hover:text-text hover:bg-white/4'
@@ -164,14 +164,14 @@ export default function Navbar() {
                         key={p.to}
                         to={p.to}
                         onClick={() => setPillarsOpen(false)}
-                        className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-base transition-all duration-150 group ${
+                        className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-lg transition-all duration-150 group ${
                           active
                             ? 'bg-accent/10 text-text'
                             : 'hover:bg-white/4 text-muted hover:text-text'
                         }`}
                       >
                         <span className="text-lg shrink-0">{p.icon}</span>
-                        <span className="font-medium leading-snug text-sm">{title}</span>
+                        <span className="font-medium leading-snug text-base">{title}</span>
                         {active && <span className={`ml-auto w-1.5 h-1.5 rounded-full shrink-0 ${p.dot}`} />}
                       </Link>
                     );
@@ -181,7 +181,7 @@ export default function Navbar() {
                   <Link
                     to="/#pillars"
                     onClick={() => setPillarsOpen(false)}
-                    className="text-sm text-muted hover:text-accent transition-colors duration-150"
+                    className="text-base text-muted hover:text-accent transition-colors duration-150"
                   >
                     ↓ Xem tất cả trụ cột trên trang chủ
                   </Link>
@@ -195,7 +195,7 @@ export default function Navbar() {
             <Link
               key={to}
               to={to}
-              className={`relative px-2 py-1.5 text-base font-medium rounded-lg transition-all duration-200 ${
+              className={`relative px-2 py-1.5 text-lg font-medium rounded-lg transition-all duration-200 ${
                 isActive(to)
                   ? 'text-accent bg-accent/8'
                   : 'text-muted hover:text-text hover:bg-white/4'
@@ -238,7 +238,7 @@ export default function Navbar() {
           <Link
             to="/"
             onClick={closeMenu}
-            className={`px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+            className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 ${
               isActive('/') && !isPillarActive ? 'bg-accent/10 text-accent' : 'text-muted hover:text-text hover:bg-white/4'
             }`}
           >
@@ -248,7 +248,7 @@ export default function Navbar() {
           {/* Pillars collapsible */}
           <button
             onClick={() => setMobilePillars(!mobilePillars)}
-            className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+            className={`flex items-center justify-between px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 ${
               isPillarActive ? 'bg-accent/10 text-accent' : 'text-muted hover:text-text hover:bg-white/4'
             }`}
           >
@@ -272,7 +272,7 @@ export default function Navbar() {
                     key={p.to}
                     to={p.to}
                     onClick={closeMenu}
-                    className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-base transition-all duration-150 ${
+                    className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-lg transition-all duration-150 ${
                       active ? 'bg-accent/10 text-accent' : 'text-muted hover:text-text hover:bg-white/4'
                     }`}
                   >
@@ -290,7 +290,7 @@ export default function Navbar() {
               key={to}
               to={to}
               onClick={closeMenu}
-              className={`px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+              className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 ${
                 isActive(to) ? 'bg-accent/10 text-accent' : 'text-muted hover:text-text hover:bg-white/4'
               }`}
             >

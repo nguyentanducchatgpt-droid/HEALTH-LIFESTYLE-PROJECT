@@ -226,7 +226,7 @@ function ScoreGauge({ score }) {
         <text x="90" y="85" textAnchor="middle" fill="white" fontSize="36" fontWeight="900" fontFamily="system-ui">{score}</text>
         <text x="90" y="108" textAnchor="middle" fill="#6b7280" fontSize="14">/100</text>
       </svg>
-      <div className="mt-2 text-base font-bold" style={{ color: tier.color }}>{tier.label}</div>
+      <div className="mt-2 text-lg font-bold" style={{ color: tier.color }}>{tier.label}</div>
     </div>
   );
 }
@@ -336,7 +336,7 @@ export default function NutritionChecklistPage() {
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
 
       {/* Breadcrumb */}
-      <Link to="/pillar/b" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-emerald-400 transition-colors mb-8">
+      <Link to="/pillar/b" className="inline-flex items-center gap-1.5 text-base text-muted hover:text-emerald-400 transition-colors mb-8">
         ← Dinh Dưỡng
       </Link>
 
@@ -350,7 +350,7 @@ export default function NutritionChecklistPage() {
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight cl-fade-up">
             Checklist Nutrition <span className="text-emerald-400">Hằng Ngày</span>
           </h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest text-emerald-400 mt-3 mb-4 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
+          <span className="inline-block text-base font-bold uppercase tracking-widest text-emerald-400 mt-3 mb-4 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
             Daily Tracking · 9 Tiêu Chí · 100 Điểm
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
@@ -368,7 +368,7 @@ export default function NutritionChecklistPage() {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-emerald-400 text-sm font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-emerald-500/20">
+          <span className="absolute bottom-4 left-6 text-emerald-400 text-base font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-emerald-500/20">
             Checklist · Hằng Ngày
           </span>
         </div>
@@ -400,7 +400,7 @@ export default function NutritionChecklistPage() {
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-emerald-400 text-sm font-bold uppercase tracking-widest">Cá Nhân Hóa Từ B0</span>
+            <span className="text-emerald-400 text-base font-bold uppercase tracking-widest">Cá Nhân Hóa Từ B0</span>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
             {[
@@ -422,13 +422,13 @@ export default function NutritionChecklistPage() {
       {/* ── Section 2: Day Type Selector ─────────────────────────────────── */}
       <RevealBlock className="mb-10">
         <div className="mb-4">
-          <p className="text-sm font-bold text-muted uppercase tracking-widest mb-3">Hôm Nay Là Ngày Gì?</p>
+          <p className="text-base font-bold text-muted uppercase tracking-widest mb-3">Hôm Nay Là Ngày Gì?</p>
           <div className="flex gap-2 flex-wrap">
             {DAY_TYPES.map(dt => (
               <button
                 key={dt.id}
                 onClick={() => setDayType(dt.id)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl border text-sm font-semibold transition-all duration-200"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl border text-base font-semibold transition-all duration-200"
                 style={{
                   borderColor: dayType === dt.id ? dt.color : 'rgba(255,255,255,0.1)',
                   background: dayType === dt.id ? `${dt.color}18` : 'transparent',
@@ -443,7 +443,7 @@ export default function NutritionChecklistPage() {
         </div>
         {activeDayType && (
           <div className="rounded-2xl border p-5 transition-all duration-300" style={{ borderColor: `${activeDayType.color}30`, background: `${activeDayType.color}08` }}>
-            <p className="text-sm font-bold mb-3" style={{ color: activeDayType.color }}>Gợi Ý Hôm Nay — {activeDayType.label} {activeDayType.emoji}</p>
+            <p className="text-base font-bold mb-3" style={{ color: activeDayType.color }}>Gợi Ý Hôm Nay — {activeDayType.label} {activeDayType.emoji}</p>
             <p className="text-[11px] text-muted mb-2">{activeDayType.desc}</p>
             <div className="grid md:grid-cols-3 gap-3">
               {[
@@ -466,7 +466,7 @@ export default function NutritionChecklistPage() {
         <div className="rounded-3xl border border-emerald-500/20 bg-emerald-500/5 p-6 md:p-8">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <p className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Điểm Hôm Nay</p>
+              <p className="text-base font-bold text-emerald-400 uppercase tracking-widest">Điểm Hôm Nay</p>
               <p className="text-[10px] text-muted mt-0.5">{todayFormatted}</p>
             </div>
             {resetConfirm ? (
@@ -511,7 +511,7 @@ export default function NutritionChecklistPage() {
                   >
                     <div className="w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 transition-all duration-200"
                       style={{ borderColor: checked ? '#10b981' : '#374151', background: checked ? '#10b981' : 'transparent' }}>
-                      {checked && <span className="text-bg text-sm font-black cl-check-bounce">✓</span>}
+                      {checked && <span className="text-bg text-base font-black cl-check-bounce">✓</span>}
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[11px] font-semibold text-text leading-tight">{item.label}</p>
@@ -530,7 +530,7 @@ export default function NutritionChecklistPage() {
 
       {/* ── Section 4: 7-Tab Detailed Checklist ─────────────────────────── */}
       <RevealBlock className="mb-10">
-        <p className="text-sm font-bold text-muted uppercase tracking-widest mb-4">Checklist Chi Tiết Theo Buổi</p>
+        <p className="text-base font-bold text-muted uppercase tracking-widest mb-4">Checklist Chi Tiết Theo Buổi</p>
         {/* Tabs */}
         <div className="flex gap-2 overflow-x-auto pb-2 mb-5 no-scrollbar">
           {SECTION_TABS.map(t => (
@@ -550,7 +550,7 @@ export default function NutritionChecklistPage() {
           {/* Tab A — Sáng */}
           {activeTab === 'A' && (
             <div className="space-y-5">
-              <p className="text-sm font-bold text-emerald-400">Checklist Buổi Sáng</p>
+              <p className="text-base font-bold text-emerald-400">Checklist Buổi Sáng</p>
               <div className="grid md:grid-cols-3 gap-2">
                 {['Uống 1–2 ly nước ngay khi thức dậy', 'Không bỏ bữa sáng liên tục', 'Bữa sáng có đạm (trứng / sữa / đậu)'].map((item, i) => (
                   <button key={i} onClick={() => toggleTabCheck(`A_water_${i}`)}
@@ -602,7 +602,7 @@ export default function NutritionChecklistPage() {
           {/* Tab B — Bữa Chính */}
           {activeTab === 'B' && (
             <div className="space-y-5">
-              <p className="text-sm font-bold text-emerald-400">Mỗi Bữa Chính</p>
+              <p className="text-base font-bold text-emerald-400">Mỗi Bữa Chính</p>
               {/* Plate diagram */}
               <div className="rounded-xl border border-emerald-500/15 bg-emerald-500/5 p-4">
                 <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-3">Đĩa Ăn Cân Bằng</p>
@@ -680,7 +680,7 @@ export default function NutritionChecklistPage() {
           {/* Tab C — Tập Luyện */}
           {activeTab === 'C' && (
             <div className="space-y-5">
-              <p className="text-sm font-bold text-emerald-400">Trước &amp; Sau Buổi Tập</p>
+              <p className="text-base font-bold text-emerald-400">Trước &amp; Sau Buổi Tập</p>
               <div>
                 <p className="text-[10px] font-bold text-muted mb-2">Bữa Trước Tập</p>
                 <div className="space-y-1.5">
@@ -725,7 +725,7 @@ export default function NutritionChecklistPage() {
           {/* Tab D — Nước */}
           {activeTab === 'D' && (
             <div className="space-y-5">
-              <p className="text-sm font-bold text-emerald-400">Nước &amp; Điện Giải</p>
+              <p className="text-base font-bold text-emerald-400">Nước &amp; Điện Giải</p>
               <div>
                 <p className="text-[10px] font-bold text-muted mb-2">Mục Tiêu Nước Theo Mức Hoạt Động</p>
                 <div className="space-y-1.5">
@@ -753,7 +753,7 @@ export default function NutritionChecklistPage() {
                 <div className="space-y-1.5">
                   {['Chuột rút khi tập — thiếu kali/magie', 'Đầu óc mơ hồ, khó tập trung — thiếu natri', 'Mệt nhanh dù đã ngủ đủ — thiếu điện giải', 'Nước tiểu vàng đậm — cần uống thêm nước', 'Nhức đầu sau tập — mất nước và điện giải'].map((s, i) => (
                     <div key={i} className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-amber-500/5 border border-amber-500/10">
-                      <span className="text-amber-400 text-sm shrink-0">⚠</span>
+                      <span className="text-amber-400 text-base shrink-0">⚠</span>
                       <span className="text-[10px] text-muted">{s}</span>
                     </div>
                   ))}
@@ -783,7 +783,7 @@ export default function NutritionChecklistPage() {
           {/* Tab E — Ăn Vặt */}
           {activeTab === 'E' && (
             <div className="space-y-5">
-              <p className="text-sm font-bold text-emerald-400">Ăn Vặt &amp; Đồ Ngọt</p>
+              <p className="text-base font-bold text-emerald-400">Ăn Vặt &amp; Đồ Ngọt</p>
               <div>
                 <p className="text-[10px] font-bold text-muted mb-2">3 Câu Hỏi Trước Khi Ăn Vặt</p>
                 <div className="space-y-2">
@@ -797,7 +797,7 @@ export default function NutritionChecklistPage() {
                         className="w-full flex items-center gap-2 p-3 rounded-xl border border-white/8 bg-white/[0.025] text-left hover:border-emerald-500/20 transition-colors">
                         <span className="text-[10px] font-bold text-emerald-400 w-5 shrink-0">{i + 1}.</span>
                         <span className="text-[11px] text-text flex-1">{item.q}</span>
-                        <span className="text-muted text-sm">{snackOpen === i ? '−' : '+'}</span>
+                        <span className="text-muted text-base">{snackOpen === i ? '−' : '+'}</span>
                       </button>
                       {snackOpen === i && (
                         <div className="mt-1 px-4 py-3 rounded-xl bg-emerald-500/5 border border-emerald-500/10">
@@ -848,7 +848,7 @@ export default function NutritionChecklistPage() {
           {/* Tab F — Ăn Ngoài */}
           {activeTab === 'F' && (
             <div className="space-y-5">
-              <p className="text-sm font-bold text-emerald-400">Ăn Ngoài Thông Minh</p>
+              <p className="text-base font-bold text-emerald-400">Ăn Ngoài Thông Minh</p>
               <div className="rounded-xl border border-emerald-500/15 bg-emerald-500/5 p-4">
                 <p className="text-[10px] font-bold text-emerald-400 mb-3">Quy Tắc 3 Chọn Khi Ăn Ngoài</p>
                 <div className="space-y-2">
@@ -907,7 +907,7 @@ export default function NutritionChecklistPage() {
           {/* Tab G — Buổi Tối */}
           {activeTab === 'G' && (
             <div className="space-y-5">
-              <p className="text-sm font-bold text-emerald-400">Review &amp; Chuẩn Bị Ngày Mai</p>
+              <p className="text-base font-bold text-emerald-400">Review &amp; Chuẩn Bị Ngày Mai</p>
               <div>
                 <p className="text-[10px] font-bold text-muted mb-2">Checklist Tối</p>
                 <div className="space-y-1.5">
@@ -954,7 +954,7 @@ export default function NutritionChecklistPage() {
 
       {/* ── Section 5: Level Selector ─────────────────────────────────────── */}
       <RevealBlock className="mb-10">
-        <p className="text-sm font-bold text-muted uppercase tracking-widest mb-4">Chọn Cấp Độ Của Bạn</p>
+        <p className="text-base font-bold text-muted uppercase tracking-widest mb-4">Chọn Cấp Độ Của Bạn</p>
         <div className="grid md:grid-cols-3 gap-4">
           {LEVELS.map(lv => (
             <div key={lv.id}>
@@ -967,7 +967,7 @@ export default function NutritionChecklistPage() {
                 }}
               >
                 <div className="text-3xl mb-2">{lv.emoji}</div>
-                <p className="text-base font-bold" style={{ color: lv.color }}>{lv.label}</p>
+                <p className="text-lg font-bold" style={{ color: lv.color }}>{lv.label}</p>
                 <p className="text-[10px] font-semibold text-muted">{lv.sub}</p>
                 <p className="text-[10px] text-muted mt-1.5 leading-relaxed">{lv.desc}</p>
               </button>
@@ -1000,7 +1000,7 @@ export default function NutritionChecklistPage() {
       {/* ── Section 6: Daily Log Template ────────────────────────────────── */}
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border border-white/10 p-5 bg-white/[0.018]">
-          <p className="text-sm font-bold text-muted uppercase tracking-widest mb-4">Template Ghi Log Hằng Ngày</p>
+          <p className="text-base font-bold text-muted uppercase tracking-widest mb-4">Template Ghi Log Hằng Ngày</p>
           <div className="space-y-3 text-[10px]">
             {[
               { row: 'Thông tin ngày', fields: ['Ngày', 'Loại ngày', 'Mục tiêu', 'Nước', 'Protein', 'Rau', 'Trái cây'] },
@@ -1025,7 +1025,7 @@ export default function NutritionChecklistPage() {
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border border-emerald-500/15 p-5">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-sm font-bold text-muted uppercase tracking-widest">Checklist Tuần Này</p>
+            <p className="text-base font-bold text-muted uppercase tracking-widest">Checklist Tuần Này</p>
             <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
               {weeklyCount}/{WEEKLY.length} đạt
             </span>

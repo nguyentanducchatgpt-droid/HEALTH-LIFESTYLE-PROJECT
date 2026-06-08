@@ -191,14 +191,14 @@ function TeaserCard({ to, icon, category, title, accent, desc, features, stats, 
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-2xl">{icon}</span>
-              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: COLOR }}>{category}</span>
+              <span className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>{category}</span>
             </div>
             <h3 className="text-xl font-bold text-text mb-1 leading-tight">{title}</h3>
-            <p className="text-sm text-muted mb-3">{accent}</p>
-            <p className="text-base text-muted leading-relaxed mb-4">{desc}</p>
+            <p className="text-base text-muted mb-3">{accent}</p>
+            <p className="text-lg text-muted leading-relaxed mb-4">{desc}</p>
             <ul className="space-y-1 mb-5">
               {features.map((f, i) => (
-                <li key={i} className="flex gap-2 text-sm text-muted"><span style={{ color: COLOR }}>✦</span>{f}</li>
+                <li key={i} className="flex gap-2 text-base text-muted"><span style={{ color: COLOR }}>✦</span>{f}</li>
               ))}
             </ul>
           </div>
@@ -207,11 +207,11 @@ function TeaserCard({ to, icon, category, title, accent, desc, features, stats, 
               {stats.map((s, i) => (
                 <div key={i} className="text-center">
                   <div className="text-2xl font-black" style={{ color: COLOR }}>{s.v}</div>
-                  <div className="text-sm text-muted">{s.l}</div>
+                  <div className="text-base text-muted">{s.l}</div>
                 </div>
               ))}
             </div>
-            <span className="ml-auto text-base font-bold group-hover:translate-x-1 transition-transform" style={{ color: COLOR }}>{cta}</span>
+            <span className="ml-auto text-lg font-bold group-hover:translate-x-1 transition-transform" style={{ color: COLOR }}>{cta}</span>
           </div>
         </div>
         <div className="relative md:w-44 h-36 md:h-auto shrink-0 overflow-hidden">
@@ -229,7 +229,7 @@ function TeaserSection({ title, children }) {
     <div className="mb-12">
       <div className="flex items-center gap-3 mb-5">
         <div className="h-px flex-1 bg-border" />
-        <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, borderColor: `rgba(${RGB},0.3)`, background: `rgba(${RGB},0.07)` }}>{title}</span>
+        <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, borderColor: `rgba(${RGB},0.3)`, background: `rgba(${RGB},0.07)` }}>{title}</span>
         <div className="h-px flex-1 bg-border" />
       </div>
       <div className="space-y-4">{children}</div>
@@ -259,7 +259,7 @@ function F0Dashboard() {
           <h3 className="font-bold text-text">Health Score Hôm Nay</h3>
           <div className="text-right">
             <div className="text-4xl font-black" style={{ color: level.color }}>{total}</div>
-            <div className="text-sm font-bold" style={{ color: level.color }}>{level.label}</div>
+            <div className="text-base font-bold" style={{ color: level.color }}>{level.label}</div>
           </div>
         </div>
         <div className="w-full h-2 bg-bg rounded-full mb-5 overflow-hidden">
@@ -269,12 +269,12 @@ function F0Dashboard() {
           {SCORE_ITEMS.map((item, i) => (
             <div key={i} className="flex items-center gap-3">
               <span className="text-lg">{item.icon}</span>
-              <span className="text-sm text-muted flex-1">{item.label}</span>
-              <span className="text-sm text-muted w-8 text-right">{item.pts}đ</span>
+              <span className="text-base text-muted flex-1">{item.label}</span>
+              <span className="text-base text-muted w-8 text-right">{item.pts}đ</span>
               <div className="flex gap-1">
                 {[0, Math.round(item.pts * 0.4), Math.round(item.pts * 0.7), item.pts].map((v, j) => (
                   <button key={j} onClick={() => setScore(item.label, v)}
-                    className="px-2 py-0.5 rounded text-sm transition-colors"
+                    className="px-2 py-0.5 rounded text-base transition-colors"
                     style={(scores[item.label] || 0) >= v && v > 0 ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
                     {j === 0 ? '0' : j === 1 ? '~' : j === 2 ? '+' : '✓'}
                   </button>
@@ -287,19 +287,19 @@ function F0Dashboard() {
       <div className="grid grid-cols-2 gap-3">
         <Link to="/pillar/f/checklist" className="rounded-2xl border border-border bg-surface p-4 hover:border-orange-500/30 transition-colors text-center">
           <div className="text-3xl mb-1">✅</div>
-          <div className="text-sm font-bold text-text">Checklist Ngày</div>
+          <div className="text-base font-bold text-text">Checklist Ngày</div>
         </Link>
         <Link to="/pillar/f/workout-log" className="rounded-2xl border border-border bg-surface p-4 hover:border-orange-500/30 transition-colors text-center">
           <div className="text-3xl mb-1">🏋️</div>
-          <div className="text-sm font-bold text-text">Ghi Nhật Ký</div>
+          <div className="text-base font-bold text-text">Ghi Nhật Ký</div>
         </Link>
         <Link to="/pillar/f/health-score" className="rounded-2xl border border-border bg-surface p-4 hover:border-orange-500/30 transition-colors text-center">
           <div className="text-3xl mb-1">💯</div>
-          <div className="text-sm font-bold text-text">Lịch Sử Điểm</div>
+          <div className="text-base font-bold text-text">Lịch Sử Điểm</div>
         </Link>
         <Link to="/pillar/f/progress-test" className="rounded-2xl border border-border bg-surface p-4 hover:border-orange-500/30 transition-colors text-center">
           <div className="text-3xl mb-1">📈</div>
-          <div className="text-sm font-bold text-text">Test Tiến Bộ</div>
+          <div className="text-base font-bold text-text">Test Tiến Bộ</div>
         </Link>
       </div>
     </div>
@@ -333,8 +333,8 @@ function F1Checklist() {
   return (
     <div className="space-y-5">
       <div className="flex gap-2 mb-4">
-        <button onClick={() => setWeekView(false)} className="flex-1 py-2 rounded-xl text-base font-bold transition-colors" style={!weekView ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>Hôm Nay</button>
-        <button onClick={() => setWeekView(true)} className="flex-1 py-2 rounded-xl text-base font-bold transition-colors" style={weekView ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>Tuần Này</button>
+        <button onClick={() => setWeekView(false)} className="flex-1 py-2 rounded-xl text-lg font-bold transition-colors" style={!weekView ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>Hôm Nay</button>
+        <button onClick={() => setWeekView(true)} className="flex-1 py-2 rounded-xl text-lg font-bold transition-colors" style={weekView ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>Tuần Này</button>
       </div>
       {!weekView ? (
         <>
@@ -342,19 +342,19 @@ function F1Checklist() {
             <div className="flex-1 h-2 bg-bg rounded-full overflow-hidden">
               <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, background: COLOR }} />
             </div>
-            <span className="text-base font-bold" style={{ color: COLOR }}>{doneCount}/{DAILY_MIN.length}</span>
+            <span className="text-lg font-bold" style={{ color: COLOR }}>{doneCount}/{DAILY_MIN.length}</span>
           </div>
-          <p className="text-sm text-muted mb-3">{msg} — Làm được 70% là thắng.</p>
+          <p className="text-base text-muted mb-3">{msg} — Làm được 70% là thắng.</p>
           <div className="space-y-2">
             {DAILY_MIN.map((item, i) => (
               <button key={i} onClick={() => toggle(i)} className="w-full flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 text-left hover:border-orange-500/30 transition-colors">
                 <div className="w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors"
                   style={checked[i] ? { background: CAT_COLORS[item.cat], borderColor: CAT_COLORS[item.cat] } : { borderColor: 'var(--border)' }}>
-                  {checked[i] && <span className="text-white text-sm font-bold">✓</span>}
+                  {checked[i] && <span className="text-white text-base font-bold">✓</span>}
                 </div>
                 <span className="text-xl">{item.icon}</span>
-                <span className={`text-base flex-1 ${checked[i] ? 'line-through text-muted' : 'text-text'}`}>{item.label}</span>
-                <span className="text-sm px-1.5 py-0.5 rounded font-bold" style={{ background: `${CAT_COLORS[item.cat]}20`, color: CAT_COLORS[item.cat] }}>{item.cat}</span>
+                <span className={`text-lg flex-1 ${checked[i] ? 'line-through text-muted' : 'text-text'}`}>{item.label}</span>
+                <span className="text-base px-1.5 py-0.5 rounded font-bold" style={{ background: `${CAT_COLORS[item.cat]}20`, color: CAT_COLORS[item.cat] }}>{item.cat}</span>
               </button>
             ))}
           </div>
@@ -365,8 +365,8 @@ function F1Checklist() {
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex items-center gap-3">
               <span className="text-2xl">{item.icon}</span>
               <div className="flex-1">
-                <div className="text-base text-text">{item.label}</div>
-                <div className="text-sm text-muted">{item.target}</div>
+                <div className="text-lg text-text">{item.label}</div>
+                <div className="text-base text-muted">{item.target}</div>
               </div>
               <div className="flex gap-1">
                 {[0, 1, 2, 3, 4, 5, 6, 7].map(d => (
@@ -381,7 +381,7 @@ function F1Checklist() {
               </div>
             </div>
           ))}
-          <p className="text-sm text-muted">Mỗi ô tương ứng 1 ngày trong tuần. Nhấn để tick.</p>
+          <p className="text-base text-muted">Mỗi ô tương ứng 1 ngày trong tuần. Nhấn để tick.</p>
         </div>
       )}
     </div>
@@ -409,34 +409,34 @@ function F2WorkoutLog() {
   return (
     <div className="space-y-4">
       <div className="rounded-2xl border border-border bg-surface p-4 space-y-3">
-        <h3 className="font-bold text-text text-base">Ghi Buổi Tập Mới</h3>
-        <input value={form.exercise} onChange={e => setForm(p => ({ ...p, exercise: e.target.value }))} placeholder="Bài tập (vd: Full body 20 phút)" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-base text-text placeholder-muted" />
+        <h3 className="font-bold text-text text-lg">Ghi Buổi Tập Mới</h3>
+        <input value={form.exercise} onChange={e => setForm(p => ({ ...p, exercise: e.target.value }))} placeholder="Bài tập (vd: Full body 20 phút)" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
         <div className="grid grid-cols-2 gap-2">
-          <input value={form.duration} onChange={e => setForm(p => ({ ...p, duration: e.target.value }))} placeholder="Thời lượng (vd: 25 phút)" className="bg-bg border border-border rounded-xl px-3 py-2 text-base text-text placeholder-muted" />
-          <input value={form.feeling} onChange={e => setForm(p => ({ ...p, feeling: e.target.value }))} placeholder="Cảm giác (vd: Hơi mệt)" className="bg-bg border border-border rounded-xl px-3 py-2 text-base text-text placeholder-muted" />
+          <input value={form.duration} onChange={e => setForm(p => ({ ...p, duration: e.target.value }))} placeholder="Thời lượng (vd: 25 phút)" className="bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+          <input value={form.feeling} onChange={e => setForm(p => ({ ...p, feeling: e.target.value }))} placeholder="Cảm giác (vd: Hơi mệt)" className="bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-sm text-muted shrink-0">RPE: <strong style={{ color: RPE_COLORS[form.rpe] }}>{form.rpe}/10</strong></span>
+          <span className="text-base text-muted shrink-0">RPE: <strong style={{ color: RPE_COLORS[form.rpe] }}>{form.rpe}/10</strong></span>
           <input type="range" min={1} max={10} value={form.rpe} onChange={e => setForm(p => ({ ...p, rpe: +e.target.value }))} className="flex-1" />
         </div>
-        <input value={form.next} onChange={e => setForm(p => ({ ...p, next: e.target.value }))} placeholder="Lần sau (vd: Tăng 2 lần squat)" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-base text-text placeholder-muted" />
-        <button onClick={add} className="w-full py-2 rounded-xl text-base font-bold text-white" style={{ background: COLOR }}>+ Lưu Buổi Tập</button>
+        <input value={form.next} onChange={e => setForm(p => ({ ...p, next: e.target.value }))} placeholder="Lần sau (vd: Tăng 2 lần squat)" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+        <button onClick={add} className="w-full py-2 rounded-xl text-lg font-bold text-white" style={{ background: COLOR }}>+ Lưu Buổi Tập</button>
       </div>
-      {entries.length === 0 && <p className="text-center text-muted text-base py-6">Chưa có nhật ký. Ghi buổi tập đầu tiên.</p>}
+      {entries.length === 0 && <p className="text-center text-muted text-lg py-6">Chưa có nhật ký. Ghi buổi tập đầu tiên.</p>}
       <div className="space-y-2 max-h-72 overflow-y-auto">
         {entries.map((e, i) => (
           <div key={i} className="rounded-xl border border-border bg-surface p-3">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-2 h-2 rounded-full" style={{ background: RPE_COLORS[e.rpe] }} />
-              <span className="text-base font-bold text-text">{e.exercise}</span>
-              <span className="ml-auto text-sm text-muted">{e.date}</span>
+              <span className="text-lg font-bold text-text">{e.exercise}</span>
+              <span className="ml-auto text-base text-muted">{e.date}</span>
             </div>
-            <div className="flex gap-3 text-sm text-muted">
+            <div className="flex gap-3 text-base text-muted">
               {e.duration && <span>⏱ {e.duration}</span>}
               <span>RPE <strong style={{ color: RPE_COLORS[e.rpe] }}>{e.rpe}</strong></span>
               {e.feeling && <span>💬 {e.feeling}</span>}
             </div>
-            {e.next && <p className="text-sm text-muted mt-1">Lần sau: {e.next}</p>}
+            {e.next && <p className="text-base text-muted mt-1">Lần sau: {e.next}</p>}
           </div>
         ))}
       </div>
@@ -480,18 +480,18 @@ function F3MealPlan() {
           {PLATE_PARTS.map((p, i) => (
             <div key={i} className="flex items-center gap-3">
               <div className="rounded-full" style={{ width: `${p.pct * 2}px`, height: 8, background: p.color, minWidth: 20 }} />
-              <span className="text-sm text-muted">{p.label}</span>
+              <span className="text-base text-muted">{p.label}</span>
             </div>
           ))}
         </div>
-        <p className="text-sm text-muted">+ Một lượng nhỏ chất béo tốt: dầu olive, bơ, các loại hạt.</p>
+        <p className="text-base text-muted">+ Một lượng nhỏ chất béo tốt: dầu olive, bơ, các loại hạt.</p>
       </div>
       <div className="rounded-2xl border border-border bg-surface overflow-hidden">
-        <div className="grid grid-cols-3 text-sm font-bold uppercase tracking-widest p-3 border-b border-border" style={{ color: COLOR }}>
+        <div className="grid grid-cols-3 text-base font-bold uppercase tracking-widest p-3 border-b border-border" style={{ color: COLOR }}>
           <span>Bữa</span><span>Công thức</span><span>Ví dụ</span>
         </div>
         {MEALS.map((m, i) => (
-          <div key={i} className="grid grid-cols-3 p-3 border-b border-border/50 text-sm">
+          <div key={i} className="grid grid-cols-3 p-3 border-b border-border/50 text-base">
             <span className="font-bold text-text">{m.meal}</span>
             <span className="text-muted">{m.formula}</span>
             <span className="text-muted">{m.eg}</span>
@@ -499,15 +499,15 @@ function F3MealPlan() {
         ))}
       </div>
       <div className="rounded-2xl border border-border bg-surface p-4">
-        <h3 className="font-bold text-text mb-3 text-base">Nhật Ký Dinh Dưỡng Hôm Nay</h3>
+        <h3 className="font-bold text-text mb-3 text-lg">Nhật Ký Dinh Dưỡng Hôm Nay</h3>
         <div className="space-y-2">
           {[['protein', 'Protein đủ?', '🥩'], ['veg', 'Rau đủ?', '🥦'], ['water', 'Nước đủ?', '💧'], ['sugar', 'Ít đồ ngọt?', '🍬']].map(([k, label, ic]) => (
             <div key={k} className="flex items-center gap-3">
               <span>{ic}</span>
-              <span className="text-base text-text flex-1">{label}</span>
+              <span className="text-lg text-text flex-1">{label}</span>
               <div className="flex gap-2">
                 {['Có', 'Chưa'].map(opt => (
-                  <button key={opt} onClick={() => setVal(k, opt)} className="px-3 py-1 rounded-lg text-sm font-bold border transition-colors"
+                  <button key={opt} onClick={() => setVal(k, opt)} className="px-3 py-1 rounded-lg text-base font-bold border transition-colors"
                     style={log[k] === opt ? { background: COLOR, color: 'white', borderColor: COLOR } : { borderColor: 'var(--border)', color: 'var(--muted)' }}>
                     {opt}
                   </button>
@@ -547,13 +547,13 @@ function F4Lifestyle() {
         <div key={item.key} className="rounded-2xl border border-border bg-surface p-4">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-2xl">{item.icon}</span>
-            <span className="text-base text-text font-medium flex-1">{item.label}</span>
-            <span className="text-2xl font-black" style={{ color: item.good(data[item.key]) }}>{data[item.key]}<span className="text-sm font-normal ml-0.5">{item.unit}</span></span>
+            <span className="text-lg text-text font-medium flex-1">{item.label}</span>
+            <span className="text-2xl font-black" style={{ color: item.good(data[item.key]) }}>{data[item.key]}<span className="text-base font-normal ml-0.5">{item.unit}</span></span>
           </div>
           <input type="range" min={item.min} max={item.max} step={item.step} value={data[item.key]} onChange={e => set(item.key, +e.target.value)} className="w-full" />
         </div>
       ))}
-      <div className="rounded-2xl border p-3 text-sm text-muted" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.04)` }}>
+      <div className="rounded-2xl border p-3 text-base text-muted" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.04)` }}>
         Dữ liệu lưu theo ngày trong thiết bị của bạn. <Link to="/pillar/f/lifestyle-tracker" className="underline" style={{ color: COLOR }}>Xem lịch sử →</Link>
       </div>
     </div>
@@ -582,13 +582,13 @@ function F5MindTracker() {
       <div className="rounded-2xl border border-border bg-surface p-4">
         <div className="flex items-center gap-2 mb-2">
           <span>😓</span>
-          <span className="text-base text-text flex-1">Mức stress hôm nay</span>
+          <span className="text-lg text-text flex-1">Mức stress hôm nay</span>
           <span className="font-black" style={{ color: data.stress >= 7 ? '#ef4444' : data.stress >= 5 ? '#f97316' : '#22c55e' }}>{data.stress}/10</span>
         </div>
         <input type="range" min={1} max={10} value={data.stress} onChange={e => set('stress', +e.target.value)} className="w-full" />
       </div>
       <div className="rounded-2xl border border-border bg-surface p-4">
-        <span className="text-base text-text block mb-3">Tâm trạng hôm nay</span>
+        <span className="text-lg text-text block mb-3">Tâm trạng hôm nay</span>
         <div className="flex gap-3 justify-center">
           {MOODS.map((m, i) => (
             <button key={i} onClick={() => set('mood', i)}
@@ -601,17 +601,17 @@ function F5MindTracker() {
       </div>
       <div className="rounded-2xl border border-border bg-surface p-4">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-base text-text">Đã có calm practice hôm nay?</span>
-          <button onClick={() => set('calm', !data.calm)} className="px-4 py-1.5 rounded-xl text-base font-bold transition-colors"
+          <span className="text-lg text-text">Đã có calm practice hôm nay?</span>
+          <button onClick={() => set('calm', !data.calm)} className="px-4 py-1.5 rounded-xl text-lg font-bold transition-colors"
             style={data.calm ? { background: '#a855f7', color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
             {data.calm ? '✓ Đã làm' : 'Chưa'}
           </button>
         </div>
-        <p className="text-sm text-muted">Thở chậm, thiền, đi bộ không điện thoại, journaling...</p>
+        <p className="text-base text-muted">Thở chậm, thiền, đi bộ không điện thoại, journaling...</p>
       </div>
       <div className="rounded-2xl border border-border bg-surface p-4">
-        <span className="text-base text-text block mb-2">Ghi nhanh 1 dòng</span>
-        <textarea value={data.journal} onChange={e => set('journal', e.target.value)} rows={2} placeholder="Hôm nay tôi cảm thấy... / Điều làm tôi khó tập trung là..." className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-base text-text placeholder-muted resize-none" />
+        <span className="text-lg text-text block mb-2">Ghi nhanh 1 dòng</span>
+        <textarea value={data.journal} onChange={e => set('journal', e.target.value)} rows={2} placeholder="Hôm nay tôi cảm thấy... / Điều làm tôi khó tập trung là..." className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted resize-none" />
       </div>
     </div>
   );
@@ -636,25 +636,25 @@ function F6Test() {
 
   return (
     <div className="space-y-3">
-      <p className="text-base text-muted">Thực hiện test đầu vào và mỗi 4 tuần một lần để đo tiến bộ toàn diện.</p>
+      <p className="text-lg text-muted">Thực hiện test đầu vào và mỗi 4 tuần một lần để đo tiến bộ toàn diện.</p>
       <div className="space-y-2">
         {TEST_ITEMS.map((item, i) => (
           <div key={i} className="rounded-2xl border border-border bg-surface p-3 flex items-center gap-3">
             <div className="flex-1">
-              <div className="text-base text-text font-medium">{item.label}</div>
-              <div className="text-sm text-muted">{item.how}</div>
+              <div className="text-lg text-text font-medium">{item.label}</div>
+              <div className="text-base text-muted">{item.how}</div>
             </div>
             <div className="flex items-center gap-2 shrink-0">
-              <input value={vals[item.label] || ''} onChange={e => set(item.label, e.target.value)} placeholder="0" className="w-16 bg-bg border border-border rounded-lg px-2 py-1 text-base text-text text-center" />
-              <span className="text-sm text-muted w-16">{item.unit}</span>
+              <input value={vals[item.label] || ''} onChange={e => set(item.label, e.target.value)} placeholder="0" className="w-16 bg-bg border border-border rounded-lg px-2 py-1 text-lg text-text text-center" />
+              <span className="text-base text-muted w-16">{item.unit}</span>
             </div>
           </div>
         ))}
       </div>
-      <button onClick={save} className="w-full py-2 rounded-xl text-base font-bold text-white transition-all" style={{ background: saved ? '#22c55e' : COLOR }}>
+      <button onClick={save} className="w-full py-2 rounded-xl text-lg font-bold text-white transition-all" style={{ background: saved ? '#22c55e' : COLOR }}>
         {saved ? '✓ Đã lưu!' : 'Lưu Kết Quả Test'}
       </button>
-      <Link to="/pillar/f/progress-test" className="block text-center text-sm" style={{ color: COLOR }}>Xem bảng so sánh 4 tuần →</Link>
+      <Link to="/pillar/f/progress-test" className="block text-center text-base" style={{ color: COLOR }}>Xem bảng so sánh 4 tuần →</Link>
     </div>
   );
 }
@@ -664,29 +664,29 @@ function F7QuickWorkouts() {
   const [open, setOpen] = useState(0);
   return (
     <div className="space-y-3">
-      <p className="text-base text-muted">Nguyên tắc: Có 5 phút vẫn làm được. Không bỏ hẳn — chỉ cần chọn bản ngắn hơn.</p>
+      <p className="text-lg text-muted">Nguyên tắc: Có 5 phút vẫn làm được. Không bỏ hẳn — chỉ cần chọn bản ngắn hơn.</p>
       {QUICK_WO.map((wo, i) => (
         <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
           <button onClick={() => setOpen(open === i ? -1 : i)} className="w-full flex items-center gap-3 p-4 text-left hover:bg-white/5 transition-colors">
-            <span className="font-black text-base w-16" style={{ color: wo.color }}>{wo.dur}</span>
-            <span className="font-bold text-base text-text flex-1">{wo.label}</span>
+            <span className="font-black text-lg w-16" style={{ color: wo.color }}>{wo.dur}</span>
+            <span className="font-bold text-lg text-text flex-1">{wo.label}</span>
             <span className="text-muted">{open === i ? '▲' : '▼'}</span>
           </button>
           {open === i && (
             <div className="px-4 pb-4 border-t border-border pt-3 space-y-2">
               <ol className="space-y-1">
                 {wo.steps.map((s, j) => (
-                  <li key={j} className="flex gap-2 text-base text-muted">
+                  <li key={j} className="flex gap-2 text-lg text-muted">
                     <span style={{ color: wo.color }} className="shrink-0 font-bold">{j + 1}.</span>{s}
                   </li>
                 ))}
               </ol>
-              <p className="text-sm text-muted border-l-2 pl-2 mt-2" style={{ borderColor: wo.color }}>{wo.note}</p>
+              <p className="text-base text-muted border-l-2 pl-2 mt-2" style={{ borderColor: wo.color }}>{wo.note}</p>
             </div>
           )}
         </div>
       ))}
-      <Link to="/pillar/f/quick-workouts" className="block text-center text-sm py-2" style={{ color: COLOR }}>Xem đầy đủ thư viện bài nhanh →</Link>
+      <Link to="/pillar/f/quick-workouts" className="block text-center text-base py-2" style={{ color: COLOR }}>Xem đầy đủ thư viện bài nhanh →</Link>
     </div>
   );
 }
@@ -710,7 +710,7 @@ export default function PillarF() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pb-24">
-      <Link to="/pillars" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Sống Khỏe 360</Link>
+      <Link to="/pillars" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Sống Khỏe 360</Link>
 
       {/* Hero */}
       <div className="flex items-start gap-6 mb-10 relative">
@@ -720,7 +720,7 @@ export default function PillarF() {
           <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-up">
             {pillar?.title || 'Công Cụ & Tài Nguyên'}
           </h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             {pillar?.subtitle || 'Tools & Resources'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">{pillar?.description || 'Biến mọi kiến thức A–E thành hành động cụ thể mỗi ngày.'}</p>
@@ -736,7 +736,7 @@ export default function PillarF() {
             </div>
             <div className="rounded-2xl border px-4 py-3 cursor-default" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
               <div className="text-3xl font-black" style={{ color: COLOR }}>{s.v}</div>
-              <div className="text-sm text-muted">{s.l}</div>
+              <div className="text-base text-muted">{s.l}</div>
             </div>
           </div>
         ))}
@@ -747,7 +747,7 @@ export default function PillarF() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop" alt="Công cụ sống khỏe" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             {pillar?.image_caption || 'Tools & Resources'}
           </span>
         </div>
@@ -760,7 +760,7 @@ export default function PillarF() {
         <div className="flex gap-1 overflow-x-auto scrollbar-hide max-w-4xl mx-auto">
           {TABS.map(t => (
             <button key={t.id} onClick={() => setTab(t.id)}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition-all shrink-0"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-base font-bold whitespace-nowrap transition-all shrink-0"
               style={tab === t.id ? { background: COLOR, color: 'white' } : { color: 'var(--muted)', background: 'transparent' }}>
               <span>{t.icon}</span><span className="hidden sm:inline">{t.label}</span>
             </button>
@@ -782,7 +782,7 @@ export default function PillarF() {
       {/* Sub-page Teaser Grid */}
       <RevealBlock delay={1} className="mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">Công Cụ & Tài Nguyên Chi Tiết</h2>
-        <p className="text-muted text-base mb-10">11 chuyên đề chuyên sâu để bạn xây hệ thống sống khỏe hoàn chỉnh.</p>
+        <p className="text-muted text-lg mb-10">11 chuyên đề chuyên sâu để bạn xây hệ thống sống khỏe hoàn chỉnh.</p>
         {TEASER_SECTIONS.map((sec, i) => (
           <TeaserSection key={i} title={sec.title}>
             {sec.cards.map((card, j) => (
@@ -796,7 +796,7 @@ export default function PillarF() {
 
       {/* Bottom disclaimer */}
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-6" />
-      <p className="text-sm text-muted text-center">Mọi dữ liệu được lưu cục bộ trong thiết bị của bạn, không gửi lên server. Công cụ không thay thế tư vấn y tế chuyên nghiệp.</p>
+      <p className="text-base text-muted text-center">Mọi dữ liệu được lưu cục bộ trong thiết bị của bạn, không gửi lên server. Công cụ không thay thế tư vấn y tế chuyên nghiệp.</p>
     </div>
   );
 }

@@ -134,7 +134,7 @@ export default function LifestyleRoadmapPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-sm text-muted hover:text-teal-400 transition-colors mb-8 group">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-base text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Lối Sống Khỏe
       </Link>
@@ -144,7 +144,7 @@ export default function LifestyleRoadmapPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🗺️</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Lộ Trình 12 Tuần</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>Lifestyle Roadmap</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>Lifestyle Roadmap</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Hành trình từ "biết mình đang ở đâu" đến "sống với nhịp điệu bền vững". 12 tuần, 4 giai đoạn, từng bước rõ ràng — không vội vã, không áp lực.</p>
         </div>
       </div>
@@ -154,7 +154,7 @@ export default function LifestyleRoadmapPage() {
           <img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=800&q=80&auto=format&fit=crop" alt="Roadmap" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>12 tuần · 4 giai đoạn · 8 module</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>12 tuần · 4 giai đoạn · 8 module</span>
           </div>
         </div>
       </div>
@@ -164,8 +164,8 @@ export default function LifestyleRoadmapPage() {
       {/* Philosophy */}
       <RevealBlock className="mb-12">
         <div className="rounded-2xl p-5 border" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
-          <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>Triết Lý Của Lộ Trình Này</div>
-          <div className="grid md:grid-cols-3 gap-4 text-base">
+          <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>Triết Lý Của Lộ Trình Này</div>
+          <div className="grid md:grid-cols-3 gap-4 text-lg">
             {[
               { icon: '🐢', title: 'Chậm mà chắc', desc: '1% cải thiện mỗi ngày. Sau 12 tuần = 37% tốt hơn tổng cộng.' },
               { icon: '🔄', title: 'Hệ thống, không mục tiêu', desc: 'Đừng "cố gắng" từng ngày. Thiết kế để không cần cố gắng.' },
@@ -174,7 +174,7 @@ export default function LifestyleRoadmapPage() {
               <div key={p.title} className="rounded-xl p-3 bg-surface border border-border">
                 <div className="text-2xl mb-2">{p.icon}</div>
                 <div className="font-bold text-text mb-1">{p.title}</div>
-                <div className="text-sm text-muted leading-relaxed">{p.desc}</div>
+                <div className="text-base text-muted leading-relaxed">{p.desc}</div>
               </div>
             ))}
           </div>
@@ -184,15 +184,15 @@ export default function LifestyleRoadmapPage() {
       {/* 4 Phases */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Giai Đoạn 12 Tuần</h2>
-        <p className="text-muted text-base mb-6">Mỗi giai đoạn xây trên nền của giai đoạn trước — đừng bỏ qua bước nào.</p>
+        <p className="text-muted text-lg mb-6">Mỗi giai đoạn xây trên nền của giai đoạn trước — đừng bỏ qua bước nào.</p>
 
         {/* Timeline */}
         <div className="flex gap-1 mb-6 overflow-x-auto pb-2">
           {PHASES.map(p => (
             <button key={p.id} onClick={() => setOpenPhase(p.id)} className="flex-1 min-w-[100px] rounded-xl p-3 text-center transition-all border" style={{ background: openPhase === p.id ? `${p.color}15` : 'var(--color-surface)', borderColor: openPhase === p.id ? p.color : 'var(--color-border)' }}>
               <div className="text-2xl mb-1">{p.icon}</div>
-              <div className="text-sm font-bold" style={{ color: openPhase === p.id ? p.color : '#9ca3af' }}>Tuần {p.weeks}</div>
-              <div className="text-sm text-muted mt-0.5 leading-tight">{p.subtitle}</div>
+              <div className="text-base font-bold" style={{ color: openPhase === p.id ? p.color : '#9ca3af' }}>Tuần {p.weeks}</div>
+              <div className="text-base text-muted mt-0.5 leading-tight">{p.subtitle}</div>
             </button>
           ))}
         </div>
@@ -202,23 +202,23 @@ export default function LifestyleRoadmapPage() {
             <div className="flex items-center gap-3 mb-5">
               <span className="text-4xl">{active.icon}</span>
               <div>
-                <div className="text-sm font-bold uppercase tracking-widest" style={{ color: active.color }}>Tuần {active.weeks}</div>
+                <div className="text-base font-bold uppercase tracking-widest" style={{ color: active.color }}>Tuần {active.weeks}</div>
                 <div className="text-xl font-bold text-text">{active.title}</div>
-                <div className="text-base text-muted">{active.focus}</div>
+                <div className="text-lg text-muted">{active.focus}</div>
               </div>
               <div className="ml-auto text-right">
-                <div className="text-sm text-muted">Thời gian</div>
-                <div className="text-base font-bold" style={{ color: active.color }}>{active.daily}</div>
+                <div className="text-base text-muted">Thời gian</div>
+                <div className="text-lg font-bold" style={{ color: active.color }}>{active.daily}</div>
               </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-4">
               <div className="md:col-span-2">
-                <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Mục Tiêu Giai Đoạn</div>
+                <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Mục Tiêu Giai Đoạn</div>
                 <ul className="space-y-2">
                   {active.goals.map((g, i) => (
-                    <li key={i} className="flex items-start gap-2 text-base text-text">
-                      <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5" style={{ background: `${active.color}20`, color: active.color }}>{i + 1}</span>
+                    <li key={i} className="flex items-start gap-2 text-lg text-text">
+                      <span className="w-5 h-5 rounded-full flex items-center justify-center text-base font-bold shrink-0 mt-0.5" style={{ background: `${active.color}20`, color: active.color }}>{i + 1}</span>
                       {g}
                     </li>
                   ))}
@@ -226,18 +226,18 @@ export default function LifestyleRoadmapPage() {
               </div>
               <div className="space-y-3">
                 <div>
-                  <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Module Cần Học</div>
+                  <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Module Cần Học</div>
                   <div className="flex flex-wrap gap-1">
                     {active.modules.map(m => (
-                      <span key={m} className="text-sm px-2 py-0.5 rounded-full font-medium" style={{ background: `${active.color}15`, color: active.color }}>{m}</span>
+                      <span key={m} className="text-base px-2 py-0.5 rounded-full font-medium" style={{ background: `${active.color}15`, color: active.color }}>{m}</span>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Đo Lường</div>
+                  <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Đo Lường</div>
                   <ul className="space-y-1">
                     {active.metrics.map((m, i) => (
-                      <li key={i} className="text-sm text-muted flex items-start gap-1"><span style={{ color: active.color }}>→</span>{m}</li>
+                      <li key={i} className="text-base text-muted flex items-start gap-1"><span style={{ color: active.color }}>→</span>{m}</li>
                     ))}
                   </ul>
                 </div>
@@ -250,22 +250,22 @@ export default function LifestyleRoadmapPage() {
       {/* Daily rhythm */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Nhịp Ngày Lý Tưởng</h2>
-        <p className="text-muted text-base mb-6">Khung thời gian gợi ý — điều chỉnh theo lịch làm việc của bạn.</p>
+        <p className="text-muted text-lg mb-6">Khung thời gian gợi ý — điều chỉnh theo lịch làm việc của bạn.</p>
         <div className="relative">
           <div className="absolute left-[68px] top-4 bottom-4 w-px bg-border" />
           <div className="space-y-3">
             {DAILY_RHYTHM.map((item, i) => (
               <div key={i} className="flex items-start gap-4">
-                <div className="text-sm text-muted w-16 text-right shrink-0 pt-0.5 leading-tight">{item.time}</div>
+                <div className="text-base text-muted w-16 text-right shrink-0 pt-0.5 leading-tight">{item.time}</div>
                 <div className="w-4 h-4 rounded-full shrink-0 mt-0.5 relative z-10 flex items-center justify-center" style={{ background: item.color }}>
                   <div className="w-1.5 h-1.5 rounded-full bg-bg" />
                 </div>
                 <div className="flex-1 rounded-xl border border-border bg-surface p-3">
                   <div className="flex items-center gap-2 mb-0.5">
-                    <span className="text-base">{item.icon}</span>
-                    <span className="text-base font-medium text-text">{item.label}</span>
+                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-lg font-medium text-text">{item.label}</span>
                   </div>
-                  <div className="text-sm text-muted">{item.desc}</div>
+                  <div className="text-base text-muted">{item.desc}</div>
                 </div>
               </div>
             ))}
@@ -276,13 +276,13 @@ export default function LifestyleRoadmapPage() {
       {/* All sub-pages */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tất Cả Module Lối Sống</h2>
-        <p className="text-muted text-base mb-6">Khám phá theo trình tự lộ trình hoặc bắt đầu từ chủ đề bạn cần nhất.</p>
+        <p className="text-muted text-lg mb-6">Khám phá theo trình tự lộ trình hoặc bắt đầu từ chủ đề bạn cần nhất.</p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {SUB_PAGES.map(p => (
             <Link key={p.to} to={p.to} className="rounded-xl border border-border bg-surface p-4 hover:border-teal-500/20 transition-all group">
               <div className="text-3xl mb-2">{p.icon}</div>
-              <div className="text-base font-bold text-text group-hover:text-white transition-colors">{p.title}</div>
-              <div className="text-sm mt-1 font-bold" style={{ color: p.color }}>{p.week}</div>
+              <div className="text-lg font-bold text-text group-hover:text-white transition-colors">{p.title}</div>
+              <div className="text-base mt-1 font-bold" style={{ color: p.color }}>{p.week}</div>
             </Link>
           ))}
         </div>
@@ -293,17 +293,17 @@ export default function LifestyleRoadmapPage() {
         <blockquote className="rounded-2xl p-6 border-l-4 relative overflow-hidden" style={{ borderLeftColor: COLOR, background: `rgba(${RGB},0.05)` }}>
           <div className="text-5xl absolute right-6 top-4 opacity-10" style={{ color: COLOR }}>"</div>
           <p className="text-xl font-medium text-text leading-relaxed italic">"Không cần sống hoàn hảo. Chỉ cần sống có nhịp, có hồi phục, có quay lại."</p>
-          <cite className="text-sm text-muted mt-3 block">— Triết lý Lối sống khỏe</cite>
+          <cite className="text-base text-muted mt-3 block">— Triết lý Lối sống khỏe</cite>
         </blockquote>
       </RevealBlock>
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/c/assessment" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/c/assessment" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Đánh Giá Lối Sống
         </Link>
-        <Link to="/pillar/c" className="flex items-center gap-2 text-base font-bold transition-colors justify-center" style={{ color: COLOR }}>
+        <Link to="/pillar/c" className="flex items-center gap-2 text-lg font-bold transition-colors justify-center" style={{ color: COLOR }}>
           Về Trang Chính →
         </Link>
       </div>

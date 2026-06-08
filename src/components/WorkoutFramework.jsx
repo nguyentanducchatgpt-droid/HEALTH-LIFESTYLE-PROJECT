@@ -251,11 +251,11 @@ export default function WorkoutFramework() {
     <section className="mb-16">
       {/* ── Section header ── */}
       <div className="flex items-center gap-4 mb-7">
-        <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-base font-black flex items-center justify-center shrink-0">⏱</span>
+        <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-lg font-black flex items-center justify-center shrink-0">⏱</span>
         <h2 className="text-3xl font-black text-text">Chọn Khung Thời Gian Luyện Tập</h2>
         <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
       </div>
-      <p className="text-muted text-base mb-6">8 khung thời gian — từ 20 đến 180 phút — thiết kế theo từng mục tiêu và lịch bận</p>
+      <p className="text-muted text-lg mb-6">8 khung thời gian — từ 20 đến 180 phút — thiết kế theo từng mục tiêu và lịch bận</p>
 
       {/* ── Duration chip selector ── */}
       <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-6">
@@ -273,7 +273,7 @@ export default function WorkoutFramework() {
                 }`}
                 style={{ boxShadow: isActive ? `0 4px 24px ${cs.glow}` : undefined }}
               >
-                <span className={`text-base font-black leading-none transition-colors ${isActive ? cs.text : 'text-text'}`}>
+                <span className={`text-lg font-black leading-none transition-colors ${isActive ? cs.text : 'text-text'}`}>
                   {f.label}
                 </span>
                 {/* Intensity dots */}
@@ -337,11 +337,11 @@ export default function WorkoutFramework() {
           <div className="absolute bottom-5 left-5">
             <div className="flex items-baseline gap-3 mb-2">
               <span className={`text-6xl font-black leading-none ${ms.text}`}>{fw.label}</span>
-              <span className={`text-sm font-bold px-2.5 py-1 rounded-full border ${ms.bg} ${ms.border} ${ms.text}`}>
+              <span className={`text-base font-bold px-2.5 py-1 rounded-full border ${ms.bg} ${ms.border} ${ms.text}`}>
                 {fw.intensity}
               </span>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-md">{fw.tagline}</p>
+            <p className="text-white/60 text-base leading-relaxed max-w-md">{fw.tagline}</p>
           </div>
         </div>
 
@@ -411,7 +411,7 @@ export default function WorkoutFramework() {
                     <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
                         <span className="text-2xl leading-none">{b.icon}</span>
-                        <span className="text-base font-black text-white">{b.name}</span>
+                        <span className="text-lg font-black text-white">{b.name}</span>
                       </div>
                       <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${cs.bg} ${cs.border} ${cs.text} shrink-0`}>
                         {b.mins} phút
@@ -501,10 +501,10 @@ export default function WorkoutFramework() {
                     <span className="text-5xl leading-none">{mb.icon}</span>
                     <div>
                       <h3 className="text-2xl font-black text-white leading-tight">{mb.name}</h3>
-                      <p className={`text-sm font-semibold ${mcs.text} mt-0.5`}>{mb.desc}</p>
+                      <p className={`text-base font-semibold ${mcs.text} mt-0.5`}>{mb.desc}</p>
                     </div>
                   </div>
-                  <span className={`text-sm font-bold px-3 py-1 rounded-full border shrink-0 ${mcs.bg} ${mcs.border} ${mcs.text}`}>
+                  <span className={`text-base font-bold px-3 py-1 rounded-full border shrink-0 ${mcs.bg} ${mcs.border} ${mcs.text}`}>
                     {mb.mins} phút
                   </span>
                 </div>
@@ -522,8 +522,8 @@ export default function WorkoutFramework() {
                       className="flex items-start gap-2.5 rounded-xl px-3 py-2.5"
                       style={{ background: `${mcs.hex}0d`, border: `1px solid ${mcs.hex}22` }}
                     >
-                      <span className={`text-sm font-black shrink-0 mt-0.5 ${mcs.text}`}>{String(i + 1).padStart(2, '0')}</span>
-                      <span className="text-sm text-white/80 leading-relaxed">{ex}</span>
+                      <span className={`text-base font-black shrink-0 mt-0.5 ${mcs.text}`}>{String(i + 1).padStart(2, '0')}</span>
+                      <span className="text-base text-white/80 leading-relaxed">{ex}</span>
                     </div>
                   ))}
                 </div>

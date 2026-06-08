@@ -72,7 +72,7 @@ export default function LifestyleSleepRoutinePage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-base mb-8 hover:text-teal-400 transition-colors">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-teal-400 transition-colors">
         ← Lối Sống Khỏe
       </Link>
 
@@ -84,7 +84,7 @@ export default function LifestyleSleepRoutinePage() {
         </div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Routine Trước Ngủ</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
             C1 — 10 đến 60 phút · Reset 7 ngày
           </span>
@@ -101,7 +101,7 @@ export default function LifestyleSleepRoutinePage() {
               alt="Routine trước ngủ" className="w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9), rgba(10,10,10,0.3) 50%, transparent)' }} />
             <div className="absolute bottom-4 left-6">
-              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+              <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
                 Giảm màn hình · Giãn cơ · Thở chậm
               </span>
@@ -115,7 +115,7 @@ export default function LifestyleSleepRoutinePage() {
       {/* Why routine */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Cần Routine Trước Ngủ?</h2>
-        <p className="text-muted text-base mb-6">Não cần tín hiệu để chuyển từ "mode tỉnh táo" sang "mode ngủ". Routine là bộ tín hiệu đó.</p>
+        <p className="text-muted text-lg mb-6">Não cần tín hiệu để chuyển từ "mode tỉnh táo" sang "mode ngủ". Routine là bộ tín hiệu đó.</p>
         <div className="grid gap-3">
           {[
             { icon: '🧠', title: 'Giảm cortisol', desc: 'Hormone stress cortisol cần giảm để melatonin tăng. Routine nhẹ nhàng giúp hạ cortisol hiệu quả hơn việc "cố ngủ".' },
@@ -126,8 +126,8 @@ export default function LifestyleSleepRoutinePage() {
             <div key={i} className="flex gap-3 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
               <span className="text-3xl shrink-0">{item.icon}</span>
               <div>
-                <div className="font-semibold text-text text-base mb-1">{item.title}</div>
-                <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
+                <div className="font-semibold text-text text-lg mb-1">{item.title}</div>
+                <p className="text-muted text-base leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}
@@ -137,11 +137,11 @@ export default function LifestyleSleepRoutinePage() {
       {/* Routine plans */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Routine Mẫu</h2>
-        <p className="text-muted text-base mb-5">Chọn phiên bản phù hợp với lịch trình của bạn.</p>
+        <p className="text-muted text-lg mb-5">Chọn phiên bản phù hợp với lịch trình của bạn.</p>
         <div className="flex gap-2 mb-6">
           {['10', '60'].map(m => (
             <button key={m} onClick={() => setMode(m)}
-              className="px-4 py-2 rounded-lg text-base font-semibold transition-all"
+              className="px-4 py-2 rounded-lg text-lg font-semibold transition-all"
               style={mode === m
                 ? { background: `rgba(${RGB},0.15)`, color: COLOR, border: `1px solid rgba(${RGB},0.3)` }
                 : { color: 'var(--color-muted)', border: '1px solid var(--color-border)' }}>
@@ -154,12 +154,12 @@ export default function LifestyleSleepRoutinePage() {
           <div className="space-y-3">
             {ROUTINE_10.map((row, i) => (
               <div key={i} className="flex gap-4 items-center p-3 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-                <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-base font-bold"
+                <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-lg font-bold"
                   style={{ background: COLOR, color: 'black' }}>{row.step}</div>
                 <div className="flex-1">
-                  <div className="text-base font-semibold text-text">{row.action}</div>
+                  <div className="text-lg font-semibold text-text">{row.action}</div>
                 </div>
-                <div className="text-sm font-semibold tabular-nums shrink-0" style={{ color: COLOR }}>{row.duration}</div>
+                <div className="text-base font-semibold tabular-nums shrink-0" style={{ color: COLOR }}>{row.duration}</div>
               </div>
             ))}
           </div>
@@ -169,8 +169,8 @@ export default function LifestyleSleepRoutinePage() {
               <div key={i} className="flex gap-4 items-start p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
                 <span className="text-2xl shrink-0">{row.icon}</span>
                 <div className="flex-1">
-                  <div className="text-sm font-bold tabular-nums mb-1" style={{ color: COLOR }}>{row.time}</div>
-                  <div className="text-base text-text">{row.action}</div>
+                  <div className="text-base font-bold tabular-nums mb-1" style={{ color: COLOR }}>{row.time}</div>
+                  <div className="text-lg text-text">{row.action}</div>
                 </div>
               </div>
             ))}
@@ -181,16 +181,16 @@ export default function LifestyleSleepRoutinePage() {
       {/* Stretching */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Giãn Cơ Trước Ngủ</h2>
-        <p className="text-muted text-base mb-6">Giãn cơ nhẹ 5–10 phút trước ngủ giảm căng cơ tích lũy, tăng thư giãn và cải thiện chất lượng giấc ngủ.</p>
+        <p className="text-muted text-lg mb-6">Giãn cơ nhẹ 5–10 phút trước ngủ giảm căng cơ tích lũy, tăng thư giãn và cải thiện chất lượng giấc ngủ.</p>
         <div className="grid gap-3">
           {STRETCH_EXERCISES.map((ex, i) => (
             <div key={i} className="flex items-center gap-4 p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
               <span className="text-3xl shrink-0">{ex.icon}</span>
               <div className="flex-1">
-                <div className="font-semibold text-text text-base">{ex.name}</div>
-                <div className="text-sm text-muted">{ex.muscles}</div>
+                <div className="font-semibold text-text text-lg">{ex.name}</div>
+                <div className="text-base text-muted">{ex.muscles}</div>
               </div>
-              <div className="text-sm font-semibold tabular-nums text-right" style={{ color: COLOR }}>{ex.reps}</div>
+              <div className="text-base font-semibold tabular-nums text-right" style={{ color: COLOR }}>{ex.reps}</div>
             </div>
           ))}
         </div>
@@ -209,11 +209,11 @@ export default function LifestyleSleepRoutinePage() {
             <div key={i} className="p-4 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-3" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
               <div className="flex items-start gap-2">
                 <span className="text-red-400 shrink-0 mt-0.5">✗</span>
-                <span className="text-base text-muted">{item.wrong}</span>
+                <span className="text-lg text-muted">{item.wrong}</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="shrink-0 mt-0.5" style={{ color: COLOR }}>✓</span>
-                <span className="text-base text-text">{item.right}</span>
+                <span className="text-lg text-text">{item.right}</span>
               </div>
             </div>
           ))}
@@ -221,8 +221,8 @@ export default function LifestyleSleepRoutinePage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/sleep" className="text-muted hover:text-teal-400 transition-colors text-base">← Khoa Học Giấc Ngủ</Link>
-        <Link to="/pillar/c/circadian" className="text-base font-semibold" style={{ color: COLOR }}>Nhịp Sinh Học →</Link>
+        <Link to="/pillar/c/sleep" className="text-muted hover:text-teal-400 transition-colors text-lg">← Khoa Học Giấc Ngủ</Link>
+        <Link to="/pillar/c/circadian" className="text-lg font-semibold" style={{ color: COLOR }}>Nhịp Sinh Học →</Link>
       </div>
     </div>
   );

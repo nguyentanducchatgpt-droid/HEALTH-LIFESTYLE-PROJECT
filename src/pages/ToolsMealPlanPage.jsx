@@ -80,14 +80,14 @@ export default function ToolsMealPlanPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🍽️</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Template Thực Đơn</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Đĩa ăn chuẩn · Nhật ký dinh dưỡng · Gợi ý bữa ăn Việt
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
@@ -100,7 +100,7 @@ export default function ToolsMealPlanPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop" alt="Meal plan" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             ½ rau · ¼ đạm · ¼ tinh bột · đơn giản mỗi bữa
           </span>
         </div>
@@ -111,17 +111,17 @@ export default function ToolsMealPlanPage() {
       {/* Plate model */}
       <RevealBlock delay={0} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Mô Hình Đĩa Ăn Chuẩn</h2>
-        <p className="text-muted text-base mb-6">Áp dụng cho tất cả các bữa chính — không cần cân đo, chỉ cần nhìn đĩa.</p>
+        <p className="text-muted text-lg mb-6">Áp dụng cho tất cả các bữa chính — không cần cân đo, chỉ cần nhìn đĩa.</p>
         <div className="grid sm:grid-cols-3 gap-4">
           {PLATE_SECTIONS.map((s, i) => (
             <div key={i} className="rounded-2xl border bg-surface p-5 text-center" style={{ borderColor: `${s.color}30` }}>
               <div className="text-5xl font-black mb-2" style={{ color: s.color }}>{s.pct}%</div>
-              <div className="font-bold text-text mb-2 text-base">{s.label}</div>
-              <div className="text-sm text-muted leading-relaxed">{s.desc}</div>
+              <div className="font-bold text-text mb-2 text-lg">{s.label}</div>
+              <div className="text-base text-muted leading-relaxed">{s.desc}</div>
             </div>
           ))}
         </div>
-        <div className="mt-4 p-4 rounded-2xl text-base text-muted" style={{ background: `rgba(${RGB},0.05)`, borderLeft: `3px solid ${COLOR}` }}>
+        <div className="mt-4 p-4 rounded-2xl text-lg text-muted" style={{ background: `rgba(${RGB},0.05)`, borderLeft: `3px solid ${COLOR}` }}>
           <strong style={{ color: COLOR }}>Nguyên tắc vàng:</strong> Luôn ăn rau trước → đạm → tinh bột. Ăn chậm, nhai kỹ, dừng khi no 80%.
         </div>
       </RevealBlock>
@@ -129,7 +129,7 @@ export default function ToolsMealPlanPage() {
       {/* Meal ideas */}
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Gợi Ý Bữa Ăn Việt</h2>
-        <p className="text-muted text-base mb-6">Click để xem gợi ý cho từng bữa. Ăn đa dạng, không ăn đi ăn lại 1 món.</p>
+        <p className="text-muted text-lg mb-6">Click để xem gợi ý cho từng bữa. Ăn đa dạng, không ăn đi ăn lại 1 món.</p>
         <div className="space-y-3">
           {MEAL_IDEAS.map((m, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
@@ -137,7 +137,7 @@ export default function ToolsMealPlanPage() {
                 <span className="text-3xl">{m.icon}</span>
                 <div className="flex-1">
                   <div className="font-bold text-text">Bữa {m.meal}</div>
-                  <div className="text-sm text-muted">4 gợi ý · nhấn để xem</div>
+                  <div className="text-base text-muted">4 gợi ý · nhấn để xem</div>
                 </div>
                 <span className="text-muted">{openMeal === i ? '▲' : '▼'}</span>
               </button>
@@ -145,7 +145,7 @@ export default function ToolsMealPlanPage() {
                 <div className="px-4 pb-4 border-t border-border">
                   <ul className="mt-3 space-y-2">
                     {m.options.map((opt, j) => (
-                      <li key={j} className="flex gap-2 text-base text-muted">
+                      <li key={j} className="flex gap-2 text-lg text-muted">
                         <span style={{ color: m.color }}>→</span>{opt}
                       </li>
                     ))}
@@ -160,22 +160,22 @@ export default function ToolsMealPlanPage() {
       {/* Daily nutrition log */}
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nhật Ký Hôm Nay</h2>
-        <p className="text-muted text-base mb-6">Ghi nhanh — không cần hoàn hảo, chỉ cần ý thức về những gì đã ăn.</p>
+        <p className="text-muted text-lg mb-6">Ghi nhanh — không cần hoàn hảo, chỉ cần ý thức về những gì đã ăn.</p>
         <div className="rounded-2xl border border-border bg-surface p-5 space-y-4">
           {NUTRITION_FIELDS.map(f => (
             <div key={f.key}>
-              <label className="flex items-center gap-2 text-base font-medium text-text mb-2">
+              <label className="flex items-center gap-2 text-lg font-medium text-text mb-2">
                 <span>{f.icon}</span>{f.label}
               </label>
               <input type="text" value={log[f.key] ?? ''} onChange={e => updateLog(f.key, e.target.value)}
-                placeholder={f.placeholder} className="w-full px-3 py-2 rounded-xl border bg-transparent text-base text-text placeholder-muted focus:outline-none"
+                placeholder={f.placeholder} className="w-full px-3 py-2 rounded-xl border bg-transparent text-lg text-text placeholder-muted focus:outline-none"
                 style={{ borderColor: `rgba(${RGB},0.3)` }} />
             </div>
           ))}
           <div>
-            <label className="text-base font-medium text-text block mb-2">📝 Ghi chú bữa ăn ngày hôm nay</label>
+            <label className="text-lg font-medium text-text block mb-2">📝 Ghi chú bữa ăn ngày hôm nay</label>
             <textarea value={log.notes ?? ''} onChange={e => updateLog('notes', e.target.value)}
-              rows={3} placeholder="Ăn gì, cảm giác thế nào, muốn điều chỉnh gì..." className="w-full px-3 py-2 rounded-xl border bg-transparent text-base text-text placeholder-muted resize-none focus:outline-none"
+              rows={3} placeholder="Ăn gì, cảm giác thế nào, muốn điều chỉnh gì..." className="w-full px-3 py-2 rounded-xl border bg-transparent text-lg text-text placeholder-muted resize-none focus:outline-none"
               style={{ borderColor: `rgba(${RGB},0.3)` }} />
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function ToolsMealPlanPage() {
       <RevealBlock delay={3} className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold mb-3" style={{ color: COLOR }}>⚡ 5 Quy Tắc Ăn Uống Quan Trọng Nhất</h3>
-          <ol className="space-y-2 text-base text-muted">
+          <ol className="space-y-2 text-lg text-muted">
             {['Ăn đủ đạm mỗi bữa — đây là ưu tiên số 1', 'Ăn rau trước → no nhanh hơn, ít calo hơn', 'Không bỏ bữa — đói sẽ ăn bù nhiều hơn', 'Hạn chế thực phẩm siêu chế biến, không cần loại bỏ hoàn toàn', 'Uống nước thay vì nước ngọt, cà phê sữa nhiều đường'].map((rule, i) => (
               <li key={i} className="flex gap-2">
                 <span className="font-bold shrink-0" style={{ color: COLOR }}>{i + 1}.</span>{rule}
@@ -196,7 +196,7 @@ export default function ToolsMealPlanPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
     </div>
   );
 }

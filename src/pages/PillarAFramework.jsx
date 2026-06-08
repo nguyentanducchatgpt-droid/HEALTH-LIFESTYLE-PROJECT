@@ -124,7 +124,7 @@ export default function PillarAFramework() {
         <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-orange-500/6 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 px-4 md:px-8 pt-10 pb-8 animate-fade-in-up">
-          <nav className="flex items-center gap-1.5 text-sm text-muted mb-5 flex-wrap">
+          <nav className="flex items-center gap-1.5 text-base text-muted mb-5 flex-wrap">
             <Link to="/" className="hover:text-accent transition-colors">Trang chủ</Link>
             <span className="text-border/60">/</span>
             <Link to="/pillar/a" className="hover:text-accent transition-colors">Vận Động & Tập Luyện</Link>
@@ -132,7 +132,7 @@ export default function PillarAFramework() {
             <span className="text-orange-400 font-medium">Khung Ngày & Thời Gian</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 bg-orange-500/8 border border-orange-500/20 text-orange-400 text-sm font-bold px-4 py-1.5 rounded-full mb-5">
+          <div className="inline-flex items-center gap-2 bg-orange-500/8 border border-orange-500/20 text-orange-400 text-base font-bold px-4 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse shrink-0" />
             2 / 4 · Khung Ngày & Thời Gian
           </div>
@@ -141,7 +141,7 @@ export default function PillarAFramework() {
             Khung Ngày Tập 20–40 Phút &amp;<br />
             <span className="text-orange-400">Chọn Khung Thời Gian Luyện Tập</span>
           </h1>
-          <p className="text-muted text-base leading-relaxed max-w-xl">
+          <p className="text-muted text-lg leading-relaxed max-w-xl">
             4 khối thời gian trong ngày và 8 mức thời gian từ 20 đến 180 phút — tìm lịch phù hợp
             với cuộc sống và mức độ hiện tại của bạn.
           </p>
@@ -154,7 +154,7 @@ export default function PillarAFramework() {
               { n: '100+', label: 'Bài tập mẫu' },
             ].map(s => (
               <div key={s.label} className="flex items-center gap-2 bg-surface/70 backdrop-blur-sm border border-border/60 px-3 py-2 rounded-xl">
-                <span className="text-orange-400 font-extrabold text-base leading-none">{s.n}</span>
+                <span className="text-orange-400 font-extrabold text-lg leading-none">{s.n}</span>
                 <span className="text-muted text-[10px] leading-none">{s.label}</span>
               </div>
             ))}
@@ -165,11 +165,11 @@ export default function PillarAFramework() {
       {/* ── Daily framework tabs ────────────────────────────────────────────────── */}
       <section className="mb-16">
         <div className="flex items-center gap-4 mb-7">
-          <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-base flex items-center justify-center shrink-0 font-black">⏱</span>
+          <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-lg flex items-center justify-center shrink-0 font-black">⏱</span>
           <h2 className="text-3xl font-black text-text">Khung Ngày Tập 20–40 Phút</h2>
           <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
         </div>
-        <p className="text-muted text-base mb-6">Mỗi buổi tập được chia thành 4 khối — chọn khối để xem chi tiết từng bước</p>
+        <p className="text-muted text-lg mb-6">Mỗi buổi tập được chia thành 4 khối — chọn khối để xem chi tiết từng bước</p>
 
         {/* Tab bar */}
         <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-6">
@@ -182,7 +182,7 @@ export default function PillarAFramework() {
                   key={i}
                   type="button"
                   onClick={() => setActiveDayBlock(i)}
-                  className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-base font-bold whitespace-nowrap transition-all duration-200 focus:outline-none ${
+                  className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-lg font-bold whitespace-nowrap transition-all duration-200 focus:outline-none ${
                     isActive
                       ? `${s.bg} ${s.text} border ${s.border}`
                       : 'text-muted border border-transparent hover:border-border hover:text-text hover:bg-white/4'
@@ -223,7 +223,7 @@ export default function PillarAFramework() {
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${s.bg} ${s.border} ${s.text}`}>{b.time}</span>
                     </div>
                   </div>
-                  <p className="text-white/65 text-sm leading-relaxed max-w-xl">{b.goal}</p>
+                  <p className="text-white/65 text-base leading-relaxed max-w-xl">{b.goal}</p>
                 </div>
               </div>
 
@@ -234,13 +234,13 @@ export default function PillarAFramework() {
                       <div key={oi} className={`rounded-2xl border ${s.border} ${s.bg} overflow-hidden`}>
                         <div className="px-4 py-3 border-b border-border/50 flex items-center gap-2">
                           <span className="text-xl">{opt.icon}</span>
-                          <h4 className={`font-black text-base ${s.text}`}>{opt.name}</h4>
+                          <h4 className={`font-black text-lg ${s.text}`}>{opt.name}</h4>
                           <span className="ml-auto text-[10px] text-muted font-medium">{opt.days}</span>
                         </div>
                         <div className="p-3 space-y-1.5">
                           {opt.exercises.map((ex, ei) => (
                             <div key={ei} className="flex items-center justify-between bg-bg/70 border border-border/40 rounded-xl px-3 py-2.5 hover:border-border-bright transition-colors">
-                              <span className="text-sm text-text">{ex.name}</span>
+                              <span className="text-base text-text">{ex.name}</span>
                               <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ml-2 ${s.bg} ${s.border} ${s.text}`}>{ex.sets}</span>
                             </div>
                           ))}
@@ -257,7 +257,7 @@ export default function PillarAFramework() {
                       <div key={si} className="flex items-start gap-3 bg-bg/60 border border-border/40 rounded-xl px-4 py-3 hover:border-border-bright transition-colors duration-150">
                         <span className={`w-6 h-6 rounded-full ${s.bg} border ${s.border} ${s.text} text-[10px] font-black flex items-center justify-center shrink-0 mt-0.5`}>{si + 1}</span>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-semibold text-text">{step.name}</p>
+                          <p className="text-base font-semibold text-text">{step.name}</p>
                           <p className="text-[10px] text-muted mt-0.5 leading-snug">{step.how}</p>
                         </div>
                         <span className={`shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border whitespace-nowrap mt-0.5 ${s.bg} ${s.border} ${s.text}`}>{step.duration}</span>
@@ -272,7 +272,7 @@ export default function PillarAFramework() {
                   <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-3">💡 Lưu ý quan trọng</p>
                   <ul className="space-y-2">
                     {b.tips.map((tip, ti) => (
-                      <li key={ti} className="flex items-start gap-2 text-sm text-text/80 leading-relaxed">
+                      <li key={ti} className="flex items-start gap-2 text-base text-text/80 leading-relaxed">
                         <span className={`${s.text} shrink-0 mt-0.5 font-bold`}>·</span>
                         {tip}
                       </li>
@@ -292,21 +292,21 @@ export default function PillarAFramework() {
       <div className="flex items-center justify-between py-8 border-t border-border/40 mt-8 mb-4">
         <Link
           to="/pillar/a/movements"
-          className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group"
+          className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           <span>Vận Động & Khởi Động</span>
         </Link>
         <Link
           to="/pillar/a"
-          className="flex items-center gap-2 text-sm bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-orange-500/30 transition-all"
+          className="flex items-center gap-2 text-base bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-orange-500/30 transition-all"
         >
           <span>↩</span>
           <span>Về tổng quan</span>
         </Link>
         <Link
           to="/pillar/a/weekly"
-          className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group"
+          className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
           <span>Nhịp Tuần & Mục Tiêu</span>
           <span className="group-hover:translate-x-0.5 transition-transform">→</span>

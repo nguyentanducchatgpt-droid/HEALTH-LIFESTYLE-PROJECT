@@ -1032,7 +1032,7 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
             {features.map((f, i) => (
               <span
                 key={i}
-                className="inline-flex items-center gap-1.5 text-base px-3 py-1.5 rounded-full font-medium"
+                className="inline-flex items-center gap-1.5 text-lg px-3 py-1.5 rounded-full font-medium"
                 style={{ color, background: `rgba(${rgb},0.08)`, border: `1px solid rgba(${rgb},0.14)` }}
               >
                 {f.icon} {f.text}
@@ -1295,7 +1295,7 @@ function MacroBar({ macro, delay = 0, highlighted = false }) {
             <p className="text-[10px] text-muted">{displayDose}</p>
           </div>
         </div>
-        <span className={`text-base font-black ${macro.text}`}>{macro.pct}%</span>
+        <span className={`text-lg font-black ${macro.text}`}>{macro.pct}%</span>
       </div>
 
       {/* Bar */}
@@ -1393,7 +1393,7 @@ function PlateDiagram({ animate }) {
         {PLATE_SECTIONS.map((s, i) => (
           <div key={s.label} className="flex items-center gap-3">
             <div className={`w-2.5 h-2.5 rounded-full ${s.bg} shrink-0`} />
-            <span className={`text-base font-semibold ${s.text} w-28 shrink-0`}>{tPillars(`pillarB.plate_sections.${i}.label`, { defaultValue: s.label })}</span>
+            <span className={`text-lg font-semibold ${s.text} w-28 shrink-0`}>{tPillars(`pillarB.plate_sections.${i}.label`, { defaultValue: s.label })}</span>
             <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden">
               <div
                 className={`h-full rounded-full ${s.bg}`}
@@ -1592,7 +1592,7 @@ function MetricDetailCard({ detail, color, onClose }) {
               <div className="rounded-xl p-3 border" style={{ borderColor: `${evaluation.color}30`, background: `${evaluation.color}08` }}>
                 <div className="flex items-center gap-2 mb-1.5">
                   <span className="text-xl">{evaluation.icon}</span>
-                  <span className="text-base font-bold" style={{ color: evaluation.color }}>{evaluation.label}</span>
+                  <span className="text-lg font-bold" style={{ color: evaluation.color }}>{evaluation.label}</span>
                 </div>
                 <p className="text-[10px] text-muted leading-relaxed">{evaluation.text}</p>
               </div>
@@ -1920,7 +1920,7 @@ function FoundationPanel({ s, onGoalKeyChange }) {
                   {/* Arrow */}
                   <div className="text-5xl font-black mb-1 transition-transform duration-200 group-hover:scale-110" style={{ color: m.color }}>{m.arrow}</div>
                   {/* Label */}
-                  <p className="text-base font-black mb-1" style={{ color: m.color }}>{m.label}</p>
+                  <p className="text-lg font-black mb-1" style={{ color: m.color }}>{m.label}</p>
                   {/* Animated kcal */}
                   <p className="text-lg font-black text-text leading-none mb-0.5">
                     <AnimatedVal value={kcal} /><span className="text-[9px] text-muted font-normal ml-0.5">kcal</span>
@@ -2170,7 +2170,7 @@ function PlatePanel({ s }) {
         <div className="space-y-4">
           <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-5">{b2tr.apply_title || 'Áp Dụng Thực Tế'}</p>
           <div className="rounded-2xl border border-lime-500/20 bg-lime-500/5 p-5">
-            <p className="text-base font-bold text-lime-400 mb-3">{b2tr.at_home || '🏠 Tại nhà'}</p>
+            <p className="text-lg font-bold text-lime-400 mb-3">{b2tr.at_home || '🏠 Tại nhà'}</p>
             <ul className="space-y-2">
               {(toArr(b2tr.at_home_tips).length ? toArr(b2tr.at_home_tips) : ['Dùng đĩa 23–26cm làm chuẩn', 'Bắt đầu bằng rau trước khi thêm carb', 'Đạm = lòng bàn tay của bạn', 'Cơm = nắm tay của bạn']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
@@ -2180,7 +2180,7 @@ function PlatePanel({ s }) {
             </ul>
           </div>
           <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-5">
-            <p className="text-base font-bold text-orange-400 mb-3">{b2tr.eating_out || '🍜 Ăn ngoài hàng'}</p>
+            <p className="text-lg font-bold text-orange-400 mb-3">{b2tr.eating_out || '🍜 Ăn ngoài hàng'}</p>
             <ul className="space-y-2">
               {(toArr(b2tr.eating_out_tips).length ? toArr(b2tr.eating_out_tips) : ['Chọn phần có cả đạm + rau + carb', 'Gọi thêm rau hoặc salad riêng', 'Tránh nước chấm nhiều muối/đường', 'Bún/phở: ít bún, nhiều rau, thêm trứng']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
@@ -2190,7 +2190,7 @@ function PlatePanel({ s }) {
             </ul>
           </div>
           <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5">
-            <p className="text-base font-bold text-cyan-400 mb-3">{b2tr.meal_prep || '📦 Meal Prep bận rộn'}</p>
+            <p className="text-lg font-bold text-cyan-400 mb-3">{b2tr.meal_prep || '📦 Meal Prep bận rộn'}</p>
             <ul className="space-y-2">
               {(toArr(b2tr.meal_prep_tips).length ? toArr(b2tr.meal_prep_tips) : ['Chuẩn bị đạm cho cả tuần (gà, trứng, đậu hũ)', 'Nấu lượng cơm 2–3 ngày một lần', 'Rau luộc sẵn, bảo quản tủ lạnh 3 ngày', 'Yến mạch overnight cho sáng bận rộn']).map((tip, i) => (
                 <li key={i} className="flex items-start gap-2 text-[11px] text-muted">
@@ -2336,7 +2336,7 @@ function PlatePanel({ s }) {
                 <div className="h-1.5 w-full rounded-full bg-green-500/25 overflow-hidden">
                   <div className="h-full rounded-full bg-green-500 w-4/5" />
                 </div>
-                <span className="text-base font-black text-green-400 shrink-0">80%</span>
+                <span className="text-lg font-black text-green-400 shrink-0">80%</span>
               </div>
               <p className="text-[10px] font-bold text-green-400 uppercase tracking-wider mb-2.5">{b2tr.rule_80_label || 'Ăn đúng nền tảng'}</p>
               <ul className="space-y-1.5">
@@ -2355,7 +2355,7 @@ function PlatePanel({ s }) {
                 <div className="h-1.5 w-full rounded-full bg-purple-500/25 overflow-hidden">
                   <div className="h-full rounded-full bg-purple-500 w-1/5" />
                 </div>
-                <span className="text-base font-black text-purple-400 shrink-0">20%</span>
+                <span className="text-lg font-black text-purple-400 shrink-0">20%</span>
               </div>
               <p className="text-[10px] font-bold text-purple-400 uppercase tracking-wider mb-2.5">{b2tr.rule_20_label || 'Linh hoạt đời thực'}</p>
               <ul className="space-y-1.5">
@@ -2431,7 +2431,7 @@ function PlatePanel({ s }) {
                 <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${group.color}25`, background: `${group.color}05` }}>
                   <div className="flex items-center gap-2 mb-4">
                     <span className="text-3xl">{group.icon}</span>
-                    <p className="text-base font-bold" style={{ color: group.color }}>{translatedLabel}</p>
+                    <p className="text-lg font-bold" style={{ color: group.color }}>{translatedLabel}</p>
                   </div>
                   <div className="space-y-3">
                     {group.items.map((item, j) => {
@@ -2480,7 +2480,7 @@ function PlatePanel({ s }) {
                 <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${g.color}22`, background: `${g.color}05` }}>
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-4xl">{g.icon}</span>
-                    <p className="text-base font-bold text-text">{name}</p>
+                    <p className="text-lg font-bold text-text">{name}</p>
                   </div>
                   <ul className="space-y-1.5 mb-3">
                     {rules.map((r, j) => (
@@ -2854,7 +2854,7 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
           <div key={m.label} className="rounded-xl border p-4" style={{ borderColor: `${m.color}22`, background: `${m.color}05` }}>
             <div className="flex items-start justify-between mb-2.5">
               <div>
-                <p className="text-base font-bold text-text">{m.label}</p>
+                <p className="text-lg font-bold text-text">{m.label}</p>
                 <p className="text-[9px] text-muted/60 mt-0.5">{m.formula}</p>
               </div>
               <div className="text-right">
@@ -2925,12 +2925,12 @@ function GoalsPanel({ s, activeGoal, onActiveGoalChange }) {
       <div className="grid sm:grid-cols-2 gap-4 mb-2">
         <div className="rounded-2xl border p-4" style={{ borderColor: 'rgba(249,115,22,0.2)', background: 'rgba(249,115,22,0.04)' }}>
           <p className="text-5xl font-black leading-none mb-2" style={{ color: '#f97316' }}>70%</p>
-          <p className="text-base font-bold text-text mb-1.5">{b3tr.consistency_title || 'Kiên trì vừa phải đủ thắng'}</p>
+          <p className="text-lg font-bold text-text mb-1.5">{b3tr.consistency_title || 'Kiên trì vừa phải đủ thắng'}</p>
           <p className="text-[10px] text-muted leading-relaxed">{b3tr.consistency_body || 'Người duy trì 70–80% kế hoạch trong 6 tháng thường có kết quả tốt hơn người làm 100% trong 7 ngày rồi bỏ cuộc.'}</p>
         </div>
         <div className="rounded-2xl border p-4" style={{ borderColor: 'rgba(34,197,94,0.2)', background: 'rgba(34,197,94,0.04)' }}>
           <p className="text-5xl font-black leading-none mb-2" style={{ color: '#22c55e' }}>80/20</p>
-          <p className="text-base font-bold text-text mb-1.5">{b3tr.rule_8020_title || 'Quy tắc linh hoạt bền vững'}</p>
+          <p className="text-lg font-bold text-text mb-1.5">{b3tr.rule_8020_title || 'Quy tắc linh hoạt bền vững'}</p>
           <p className="text-[10px] text-muted leading-relaxed">{b3tr.rule_8020_body || '80% thực phẩm lành mạnh — 20% linh hoạt. Không nhất thiết phải ăn hoàn hảo mỗi ngày để có kết quả tốt dài hạn.'}</p>
         </div>
       </div>
@@ -3038,7 +3038,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
         <div className="h-[2px]" style={{ background: `linear-gradient(90deg, ${adaptation.color}99, transparent)` }} />
         <div className="p-4">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-base font-black px-2.5 py-0.5 rounded-full border"
+            <span className="text-lg font-black px-2.5 py-0.5 rounded-full border"
               style={{ color: adaptation.color, background: `${adaptation.color}12`, borderColor: `${adaptation.color}35` }}>
               {b4tr.goal_adaptations?.[activeGoal]?.label || adaptation.label}
             </span>
@@ -3058,7 +3058,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
             ))}
           </div>
           <div className="flex items-start gap-2 mt-3 rounded-xl p-2.5 border" style={{ borderColor: 'rgba(234,179,8,0.2)', background: 'rgba(234,179,8,0.05)' }}>
-            <span className="text-base shrink-0">📌</span>
+            <span className="text-lg shrink-0">📌</span>
             <p className="text-[10px] text-yellow-300/70 leading-relaxed">{b4tr.goal_adaptations?.[activeGoal]?.note || adaptation.note}</p>
           </div>
         </div>
@@ -3090,7 +3090,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
         {/* Day header badge */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: day.color }} />
-          <span className="text-base font-bold text-text">{tPillars(`pillarB.b4.meal_days.${activeDay}.day`, { defaultValue: day.day })}</span>
+          <span className="text-lg font-bold text-text">{tPillars(`pillarB.b4.meal_days.${activeDay}.day`, { defaultValue: day.day })}</span>
           <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: day.color, background: `${day.color}12`, border: `1px solid ${day.color}30` }}>{tPillars(`pillarB.b4.meal_days.${activeDay}.theme`, { defaultValue: day.theme })}</span>
         </div>
 
@@ -3105,7 +3105,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
               <div className="h-[1.5px]" style={{ background: `linear-gradient(90deg, ${meal.timeColor}99, transparent)` }} />
               <div className="p-4">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-base font-bold px-2.5 py-1 rounded-full border"
+                  <span className="text-lg font-bold px-2.5 py-1 rounded-full border"
                     style={{ color: meal.timeColor, background: `${meal.timeColor}12`, borderColor: `${meal.timeColor}35` }}>
                     {b4tr.meal_time_map?.[meal.time] || meal.time}
                   </span>
@@ -3140,7 +3140,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
         <div className="rounded-2xl border p-4 mb-6 flex items-center gap-4 flex-wrap" style={{ borderColor: `${day.color}30`, background: `${day.color}06` }}>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: day.color }} />
-            <span className="text-base font-bold" style={{ color: day.color }}>{b4tr.total_label || 'Tổng ngày'}</span>
+            <span className="text-lg font-bold" style={{ color: day.color }}>{b4tr.total_label || 'Tổng ngày'}</span>
           </div>
           {[
             { k: 'Kcal', v: day.totalKcal },
@@ -3316,7 +3316,7 @@ function TrackingTabCard({ section, active, onClick }) {
         {/* Card body */}
         <div className="p-4 relative z-10">
           <div className="flex items-start justify-between gap-2 mb-1.5">
-            <p className="text-base font-bold leading-snug transition-colors duration-200" style={{ color: titleColor }}>
+            <p className="text-lg font-bold leading-snug transition-colors duration-200" style={{ color: titleColor }}>
               {section.label}
             </p>
             <span
@@ -3331,7 +3331,7 @@ function TrackingTabCard({ section, active, onClick }) {
           {!active && (
             <div className="mt-3 flex items-center gap-1" style={{ color: `${c}70` }}>
               <span className="text-[10px] font-semibold">Xem chi tiết</span>
-              <span className="text-base">→</span>
+              <span className="text-lg">→</span>
             </div>
           )}
         </div>
@@ -3515,7 +3515,7 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: scoreColor, background: `${scoreColor}12`, border: `1px solid ${scoreColor}30` }}>{scoreLabel}</span>
-              <span className="text-base font-black text-lime-400 bg-lime-500/10 border border-lime-500/25 px-2.5 py-0.5 rounded-full">
+              <span className="text-lg font-black text-lime-400 bg-lime-500/10 border border-lime-500/25 px-2.5 py-0.5 rounded-full">
                 {checkedCount}/{TRACKING_DAILY.length}
               </span>
             </div>
@@ -3562,7 +3562,7 @@ function DailyChecklistContent({ checked, toggle, checkedCount }) {
               style={{ borderColor: `${item.color}25`, background: `${item.color}06` }}>
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-2xl">{item.icon}</span>
-                <p className="text-base font-bold leading-snug" style={{ color: item.color }}>{tPillars(`pillarB.b5.science_cards.${i}.title`, { defaultValue: item.title })}</p>
+                <p className="text-lg font-bold leading-snug" style={{ color: item.color }}>{tPillars(`pillarB.b5.science_cards.${i}.title`, { defaultValue: item.title })}</p>
               </div>
               <div className="text-[9px] font-bold px-2 py-1 rounded-lg mb-2 font-mono"
                 style={{ color: item.color, background: `${item.color}12`, border: `1px solid ${item.color}20` }}>
@@ -4102,7 +4102,7 @@ function BodyCompositionChart() {
     <div>
       <div className="flex items-center gap-2 mb-1">
         <span className="text-lg">🏗️</span>
-        <p className="text-base font-bold text-text">Thành Phần Cơ Thể — So Sánh 3 Kịch Bản</p>
+        <p className="text-lg font-bold text-text">Thành Phần Cơ Thể — So Sánh 3 Kịch Bản</p>
       </div>
       <p className="text-[10px] text-muted leading-relaxed mb-2">
         Cùng giảm cân nhưng <span className="text-lime-400">cắt calo đúng tốc độ = giữ được toàn bộ cơ bắp</span>.
@@ -4251,7 +4251,7 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
                 style={{ borderColor: `${item.color}30`, background: `${item.color}07` }}>
                 <span className="text-3xl shrink-0 mt-0.5">{item.icon}</span>
                 <div className="min-w-0">
-                  <p className="text-base font-bold leading-snug" style={{ color: item.color }}>{item.label}</p>
+                  <p className="text-lg font-bold leading-snug" style={{ color: item.color }}>{item.label}</p>
                   <p className="text-[10px] text-muted mt-0.5 mb-2">{item.sub}</p>
                   <div className="text-[10px] leading-relaxed px-2 py-1.5 rounded-lg"
                     style={{ background: `${item.color}10`, color: `${item.color}cc`, border: `1px solid ${item.color}20` }}>
@@ -4286,7 +4286,7 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
           {WEEKLY_PROTOCOL.map((p, i) => (
             <div key={i} className="flex items-start gap-3 p-3.5 rounded-xl border"
               style={{ borderColor: `${p.color}22`, background: `${p.color}05` }}>
-              <div className="w-7 h-7 rounded-xl flex items-center justify-center text-base font-black shrink-0"
+              <div className="w-7 h-7 rounded-xl flex items-center justify-center text-lg font-black shrink-0"
                 style={{ color: p.color, background: `${p.color}15`, border: `1px solid ${p.color}30` }}>
                 {p.step}
               </div>
@@ -4322,7 +4322,7 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
                   {t.icon}
                 </div>
                 <div>
-                  <p className="text-base font-black mb-0.5" style={{ color: t.color }}>{t.metric}</p>
+                  <p className="text-lg font-black mb-0.5" style={{ color: t.color }}>{t.metric}</p>
                   <p className="text-[10px] text-muted leading-relaxed">{t.context}</p>
                 </div>
               </div>
@@ -4412,7 +4412,7 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
       <div className="rounded-2xl border border-yellow-500/20 bg-yellow-500/4 p-4">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xl">🧪</span>
-          <p className="text-base font-bold text-yellow-300">Test 4 Tuần — Đánh Giá Tiến Bộ Thực Sự</p>
+          <p className="text-lg font-bold text-yellow-300">Test 4 Tuần — Đánh Giá Tiến Bộ Thực Sự</p>
         </div>
         <div className="grid sm:grid-cols-2 gap-2 text-[10px] text-muted">
           {[
@@ -4502,7 +4502,7 @@ function AdjustmentContent() {
             {ADJUST_STEPS.map((s, i) => (
               <div key={i} className="flex items-start gap-4 p-4 rounded-xl border transition-all duration-200 hover:scale-[1.01] hover:-translate-y-0.5 cursor-default"
                 style={{ borderColor: `${s.color}28`, background: `${s.color}06` }}>
-                <div className="w-8 h-8 rounded-xl flex items-center justify-center text-base font-black shrink-0"
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center text-lg font-black shrink-0"
                   style={{ color: s.color, background: `${s.color}18`, border: `1px solid ${s.color}35` }}>
                   {s.n}
                 </div>
@@ -4558,7 +4558,7 @@ function AdjustmentContent() {
       <div className="rounded-2xl border border-lime-500/15 bg-lime-500/3 p-4">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xl">🏅</span>
-          <p className="text-base font-bold text-lime-300">Tiến Bộ Không Cần Cân Số</p>
+          <p className="text-lg font-bold text-lime-300">Tiến Bộ Không Cần Cân Số</p>
           <p className="text-[9px] text-muted ml-auto">Đây mới là tiến bộ thực sự</p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -4721,7 +4721,7 @@ function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
                   <div className="rounded-2xl border p-5 h-full" style={{ borderColor: `${h.color}22`, background: `${h.color}05` }}>
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-4xl">{h.icon}</span>
-                      <p className="text-base font-bold" style={{ color: h.color }}>{tPillars(`pillarB.b5.habits.${i}.title`, { defaultValue: h.title })}</p>
+                      <p className="text-lg font-bold" style={{ color: h.color }}>{tPillars(`pillarB.b5.habits.${i}.title`, { defaultValue: h.title })}</p>
                     </div>
                     <ul className="space-y-2 mb-3">
                       {tips.map((tip, j) => (
@@ -4877,7 +4877,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
                   </div>
                   <div className="rounded-xl p-3 text-center cursor-help transition-all duration-200 hover:scale-[1.04]" style={{ background: `${c.color}0c`, border: `1px solid ${c.color}25` }}>
                     <span className="text-xl">{c.icon}</span>
-                    <p className="text-base font-black mt-1" style={{ color: c.color }}>{c.label}</p>
+                    <p className="text-lg font-black mt-1" style={{ color: c.color }}>{c.label}</p>
                     <p className="text-[9px] text-muted leading-snug mt-0.5">{c.sub}</p>
                     <p className="text-[9px] font-bold mt-1" style={{ color: `${c.color}cc` }}>{c.pct}</p>
                   </div>
@@ -4895,30 +4895,30 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
 
           {/* Weight */}
           <div className="flex items-center justify-between">
-            <span className="text-base text-muted">{b0tr.weight_label || 'Cân nặng (kg)'}</span>
+            <span className="text-lg text-muted">{b0tr.weight_label || 'Cân nặng (kg)'}</span>
             {numInput(weight, setWeight, 30, 200)}
           </div>
           {/* Height */}
           <div className="flex items-center justify-between">
-            <span className="text-base text-muted">{b0tr.height_label || 'Chiều cao (cm)'}</span>
+            <span className="text-lg text-muted">{b0tr.height_label || 'Chiều cao (cm)'}</span>
             {numInput(height, setHeight, 100, 250)}
           </div>
           {/* Age */}
           <div className="flex items-center justify-between">
-            <span className="text-base text-muted">{b0tr.age_label || 'Tuổi'}</span>
+            <span className="text-lg text-muted">{b0tr.age_label || 'Tuổi'}</span>
             {numInput(age, setAge, 10, 100)}
           </div>
 
           {/* Sex toggle */}
           <div className="flex items-center justify-between">
-            <span className="text-base text-muted">{b0tr.sex_label || 'Giới tính'}</span>
+            <span className="text-lg text-muted">{b0tr.sex_label || 'Giới tính'}</span>
             <div className="flex gap-2">
               {['male', 'female'].map(s => (
                 <button
                   key={s}
                   type="button"
                   onClick={() => setSex(s)}
-                  className={`px-3 py-1 rounded-lg text-base font-bold border transition-all duration-200 cursor-pointer ${
+                  className={`px-3 py-1 rounded-lg text-lg font-bold border transition-all duration-200 cursor-pointer ${
                     sex === s
                       ? 'bg-violet-500/15 border-violet-500/50 text-violet-300'
                       : 'border-border/40 text-muted hover:border-border/70'
@@ -4932,7 +4932,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
 
           {/* Activity */}
           <div>
-            <p className="text-base text-muted mb-2">{b0tr.activity_label || 'Mức hoạt động'}</p>
+            <p className="text-lg text-muted mb-2">{b0tr.activity_label || 'Mức hoạt động'}</p>
             <div className="space-y-1.5">
               {translatedActivityLevels.map(a => (
                 <button
@@ -4960,7 +4960,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
           <div className="rounded-2xl border border-violet-500/25 bg-violet-500/8 p-5 text-center">
             <p className="text-[10px] text-muted mb-1 uppercase tracking-widest">{b0tr.tdee_est_label || 'TDEE ước tính'}</p>
             <p className="text-6xl font-black" style={{ color: '#8b5cf6' }}>{tdee.toLocaleString()}</p>
-            <p className="text-base text-muted mt-1">{b0tr.kcal_per_day || 'kcal / ngày'}</p>
+            <p className="text-lg text-muted mt-1">{b0tr.kcal_per_day || 'kcal / ngày'}</p>
             <div className="mt-4 pt-3 border-t border-violet-500/15 flex items-center justify-center flex-wrap gap-1.5 text-[10px]">
               <span className="px-2 py-0.5 rounded-lg font-bold" style={{ background: '#8b5cf615', border: '1px solid #8b5cf630', color: '#c4b5fd' }}>BMR {bmr.toLocaleString()}</span>
               <span className="text-muted">×</span>
@@ -4990,8 +4990,8 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
                   style={isActive ? { borderColor: `${g.color}50`, background: `${g.color}08` } : undefined}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-base font-bold" style={{ color: g.color }}>{g.label}</span>
-                    <span className="text-base font-black text-text">{kcal.toLocaleString()} kcal</span>
+                    <span className="text-lg font-bold" style={{ color: g.color }}>{g.label}</span>
+                    <span className="text-lg font-black text-text">{kcal.toLocaleString()} kcal</span>
                   </div>
                   {isActive && (
                     <div className="grid grid-cols-3 gap-2 mt-3">
@@ -5056,7 +5056,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
             <div key={b.icon} className="flex items-start gap-3 p-4 rounded-2xl border transition-all duration-200 hover:scale-[1.01] hover:-translate-y-0.5" style={{ borderColor: `${b.color}20`, background: `${b.color}06` }}>
               <span className="text-3xl shrink-0 mt-0.5">{b.icon}</span>
               <div>
-                <p className="text-base font-bold mb-1" style={{ color: b.color }}>{btr.title || b.title}</p>
+                <p className="text-lg font-bold mb-1" style={{ color: b.color }}>{btr.title || b.title}</p>
                 <p className="text-[11px] text-muted leading-relaxed">{btr.desc || b.desc}</p>
               </div>
             </div>
@@ -5070,7 +5070,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
         <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 flex items-start gap-3">
           <span className="text-2xl shrink-0 mt-0.5">⚠️</span>
           <div>
-            <p className="text-base font-bold text-amber-300 mb-1.5">{b0tr.accuracy_label || 'Độ chính xác & Lưu ý'}</p>
+            <p className="text-lg font-bold text-amber-300 mb-1.5">{b0tr.accuracy_label || 'Độ chính xác & Lưu ý'}</p>
             <p className="text-[11px] text-muted leading-relaxed">
               {b0tr.accuracy_body || 'Công thức Mifflin-St Jeor có sai số ±10–15% vì không tính được tỷ lệ cơ/mỡ. Dùng TDEE như điểm khởi đầu — theo dõi cân nặng 1–2 tuần, nếu cân không đổi thì lượng bạn đang ăn chính là TDEE thực tế của bạn.'}
             </p>
@@ -5089,7 +5089,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-6 h-6 rounded-lg flex items-center justify-center text-[10px] font-black shrink-0" style={{ color: '#8b5cf6', background: '#8b5cf615', border: '1px solid #8b5cf630' }}>{r.n}</span>
-                <p className="text-base font-bold text-text">{b0tr.meal_split_rules?.[i]?.title || r.title}</p>
+                <p className="text-lg font-bold text-text">{b0tr.meal_split_rules?.[i]?.title || r.title}</p>
               </div>
               <p className="text-[11px] text-muted leading-relaxed">{b0tr.meal_split_rules?.[i]?.desc || r.desc}</p>
             </div>
@@ -5193,7 +5193,7 @@ function CarbCycleFormula({ s }) {
       <div className="rounded-xl border border-border/30 bg-surface/5 p-3">
         <p className="text-[9px] font-bold text-muted uppercase tracking-widest mb-2">{b6tr.tdee_base_label || 'TDEE Nền'}</p>
         <p className="text-3xl font-black text-text leading-none">
-          {(s.tdee / 1000).toFixed(1)}<span className="text-base font-normal text-muted">k</span>
+          {(s.tdee / 1000).toFixed(1)}<span className="text-lg font-normal text-muted">k</span>
         </p>
         <p className="text-[9px] text-muted mt-0.5">{tCommon('ui.kcal_day')}</p>
         <div className="mt-2.5 space-y-0.5">
@@ -5208,7 +5208,7 @@ function CarbCycleFormula({ s }) {
       <div className="rounded-xl border border-pink-500/30 bg-pink-500/5 p-3">
         <p className="text-[9px] font-bold text-pink-400 uppercase tracking-widest mb-2">{b6tr.training_day_label || 'Ngày Tập 🏋️'}</p>
         <p className="text-3xl font-black text-pink-300 leading-none">
-          {(s.trainingDayKcal / 1000).toFixed(1)}<span className="text-base font-normal text-pink-400">k</span>
+          {(s.trainingDayKcal / 1000).toFixed(1)}<span className="text-lg font-normal text-pink-400">k</span>
         </p>
         <p className="text-[9px] text-pink-400 mt-0.5">= TDEE + 100</p>
         <div className="mt-2.5 space-y-0.5">
@@ -5223,7 +5223,7 @@ function CarbCycleFormula({ s }) {
       <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-3">
         <p className="text-[9px] font-bold text-cyan-400 uppercase tracking-widest mb-2">{b6tr.rest_day_label || 'Ngày Nghỉ 🛋️'}</p>
         <p className="text-3xl font-black text-cyan-300 leading-none">
-          {(s.restDayKcal / 1000).toFixed(1)}<span className="text-base font-normal text-cyan-400">k</span>
+          {(s.restDayKcal / 1000).toFixed(1)}<span className="text-lg font-normal text-cyan-400">k</span>
         </p>
         <p className="text-[9px] text-cyan-400 mt-0.5">= TDEE − 100</p>
         <div className="mt-2.5 space-y-0.5">
@@ -5391,7 +5391,7 @@ function SevenDayPanel({ s }) {
                 key={d.day}
                 type="button"
                 onClick={() => setActiveDay(i)}
-                className={`px-3 py-2 rounded-xl text-base font-bold border transition-all duration-200 whitespace-nowrap cursor-pointer ${
+                className={`px-3 py-2 rounded-xl text-lg font-bold border transition-all duration-200 whitespace-nowrap cursor-pointer ${
                   activeDay === i
                     ? 'border-pink-500/50 text-pink-300'
                     : 'border-border/40 text-muted hover:border-border/70 hover:text-text/80'
@@ -5413,7 +5413,7 @@ function SevenDayPanel({ s }) {
         {/* Theme + day type badges */}
         <div className="flex items-center gap-2 flex-wrap">
           <span
-            className="text-base font-bold px-3 py-1 rounded-full border"
+            className="text-lg font-bold px-3 py-1 rounded-full border"
             style={{ color: day.color, background: `${day.color}12`, borderColor: `${day.color}35` }}
           >
             {tPillars(`pillarB.b6.seven_day_plan.${activeDay}.day`, { defaultValue: day.day })} — {tPillars(`pillarB.b6.seven_day_plan.${activeDay}.theme`, { defaultValue: day.theme })}
@@ -5488,7 +5488,7 @@ function SevenDayPanel({ s }) {
                 <div key={fi} className="rounded-xl border p-3.5 flex gap-3" style={{ borderColor: `${color}20`, background: `${color}06` }}>
                   <span className="text-4xl shrink-0 leading-none mt-0.5">{icon}</span>
                   <div>
-                    <p className="text-base font-bold text-text/80 mb-1">{ffLabel}</p>
+                    <p className="text-lg font-bold text-text/80 mb-1">{ffLabel}</p>
                     <p className="text-[10px] text-muted font-mono mb-1.5">{ffFormula}</p>
                     <p className="text-[10px] font-bold" style={{ color }}>{exFn(ffUnit, ffCtx)}</p>
                   </div>
@@ -5517,7 +5517,7 @@ function SevenDayPanel({ s }) {
             {SHOPPING_GROUPS.map((g, gi) => (
               <div key={g.name} className="rounded-2xl border p-4" style={{ borderColor: `${g.color}25`, background: `${g.color}06` }}>
                 <div className="flex items-center justify-between mb-3">
-                  <p className="text-base font-bold" style={{ color: g.color }}>{b6tr.shopping_groups?.[gi] || g.name}</p>
+                  <p className="text-lg font-bold" style={{ color: g.color }}>{b6tr.shopping_groups?.[gi] || g.name}</p>
                   {g.tip && <span className="text-[9px] text-muted">{g.tip}</span>}
                 </div>
                 <ul className="space-y-1">
@@ -5800,7 +5800,7 @@ function MacroFormulaChain({ s }) {
         {steps.map((step, i) => (
           <div key={step.label} className="rounded-xl border p-3 text-center relative" style={{ borderColor: `${step.color}30`, background: `${step.color}08` }}>
             {i < steps.length - 1 && (
-              <span className="absolute -right-1.5 top-1/2 -translate-y-1/2 text-muted/30 text-base z-10 hidden sm:block">→</span>
+              <span className="absolute -right-1.5 top-1/2 -translate-y-1/2 text-muted/30 text-lg z-10 hidden sm:block">→</span>
             )}
             <p className="text-[9px] font-bold text-muted uppercase tracking-widest mb-1.5">{step.label}</p>
             <p className="text-3xl font-black leading-none mb-1" style={{ color: step.color }}>{step.value}</p>
@@ -5987,7 +5987,7 @@ function EnduranceFuelingGuide({ s }) {
           <div className="rounded-2xl border p-4 h-full" style={{ borderColor: `${z.color}25`, background: `${z.color}06` }}>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-4xl">{z.icon}</span>
-              <span className="text-base font-black" style={{ color: z.color }}>{z.duration}</span>
+              <span className="text-lg font-black" style={{ color: z.color }}>{z.duration}</span>
             </div>
             <div className="space-y-2 mb-3">
               <div className="flex justify-between text-[10px]">
@@ -6052,7 +6052,7 @@ function AdvancedPanel({ s }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
             <div className="absolute bottom-4 left-6 flex items-center gap-3">
-              <span className="text-amber-400 text-base font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-amber-500/20">
+              <span className="text-amber-400 text-lg font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-amber-500/20">
                 {b7tr.image_badge || 'Dinh Dưỡng Vận Động Viên'}
               </span>
               <span className="text-[10px] text-muted/60 bg-bg/40 px-2 py-1 rounded-full">
@@ -6213,7 +6213,7 @@ function AdvancedPanel({ s }) {
               </div>
               <div className="w-px self-stretch" style={{ background: `${t.color}40` }} />
               <div className="flex-1">
-                <p className="text-base font-bold text-text mb-0.5">{tPillars(`pillarB.b7.timing_schedule.${i}.label`, { defaultValue: t.label })}</p>
+                <p className="text-lg font-bold text-text mb-0.5">{tPillars(`pillarB.b7.timing_schedule.${i}.label`, { defaultValue: t.label })}</p>
                 <p className="text-[11px] text-muted leading-relaxed">{tPillars(`pillarB.b7.timing_schedule.${i}.foods`, { defaultValue: t.foods })}</p>
               </div>
             </div>
@@ -6232,7 +6232,7 @@ function AdvancedPanel({ s }) {
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-3xl">{p.icon}</span>
-                <p className="text-base font-bold text-amber-300">{tPillars(`pillarB.b7.athlete_principles.${i}.title`, { defaultValue: p.title })}</p>
+                <p className="text-lg font-bold text-amber-300">{tPillars(`pillarB.b7.athlete_principles.${i}.title`, { defaultValue: p.title })}</p>
               </div>
               <p className="text-[11px] text-muted leading-relaxed">{tPillars(`pillarB.b7.athlete_principles.${i}.desc`, { defaultValue: p.desc })}</p>
             </div>
@@ -6652,7 +6652,7 @@ function NutritionRoadmap({ s }) {
       <div className="rounded-2xl border border-border/25 bg-surface/5 p-5 mb-6">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <p className="text-base font-bold text-text">Biểu Đồ Tuân Thủ Kế Hoạch Theo Tuần</p>
+            <p className="text-lg font-bold text-text">Biểu Đồ Tuân Thủ Kế Hoạch Theo Tuần</p>
             <p className="text-[9px] text-muted mt-0.5">Đường S-curve — tiến bộ tăng dần khi thói quen được hình thành</p>
           </div>
           <span className="text-[9px] text-muted/50 bg-surface/40 px-2 py-1 rounded-full border border-border/20">
@@ -6666,7 +6666,7 @@ function NutritionRoadmap({ s }) {
       <div className="rounded-2xl border border-border/25 bg-surface/5 p-5 mb-8">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <p className="text-base font-bold text-text">Calo Mục Tiêu Theo Từng Giai Đoạn</p>
+            <p className="text-lg font-bold text-text">Calo Mục Tiêu Theo Từng Giai Đoạn</p>
             <p className="text-[9px] text-muted mt-0.5">Dựa trên TDEE {s.tdee.toLocaleString()} kcal của bạn — điều chỉnh theo mục tiêu từng phase</p>
           </div>
         </div>
@@ -7116,7 +7116,7 @@ export default function PillarB() {
                 return (<><span className="pb-title-word">{s.slice(0, i)}</span><span className="pb-title-amp">&</span><span className="pb-title-word">{s.slice(i + 1)}</span></>);
               })()}
             </h1>
-            <span className="inline-block text-base font-bold uppercase tracking-widest text-lime-400 mt-3 mb-4 px-3 py-1 bg-lime-500/10 border border-lime-500/20 rounded-full">
+            <span className="inline-block text-lg font-bold uppercase tracking-widest text-lime-400 mt-3 mb-4 px-3 py-1 bg-lime-500/10 border border-lime-500/20 rounded-full">
               {tPillars('pillarB.subtitle')}
             </span>
             <p className="text-muted text-xl leading-relaxed max-w-2xl">
@@ -7136,7 +7136,7 @@ export default function PillarB() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-lime-400 text-base font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-lime-500/20">
+            <span className="text-lime-400 text-lg font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-lime-500/20">
               {tPillars('pillarB.image_caption')}
             </span>
           </div>
@@ -7199,7 +7199,7 @@ export default function PillarB() {
                 </div>
 
                 <div className="font-black text-3xl leading-none mb-0.5" style={{ color: LIME }}>
-                  {s.n}<span className="text-base font-bold opacity-60 ml-0.5">{tPillars(`pillarB.hero_stats.${i}.unit`, { defaultValue: s.unit })}</span>
+                  {s.n}<span className="text-lg font-bold opacity-60 ml-0.5">{tPillars(`pillarB.hero_stats.${i}.unit`, { defaultValue: s.unit })}</span>
                 </div>
                 <div className="text-[10px] text-muted">{tPillars(`pillarB.hero_stats.${i}.label`, { defaultValue: s.label })}</div>
               </div>
@@ -7249,7 +7249,7 @@ export default function PillarB() {
                 <span className="text-[9px] font-black" style={{ color: `${LIME}70` }}>{spiritTr.label || 'TINH THẦN'}</span>
                 <span className="text-3xl w-9 h-9 flex items-center justify-center rounded-xl border bg-lime-500/10 border-lime-500/25">✨</span>
               </div>
-              <p className="text-base font-bold text-lime-300 leading-relaxed mb-3">
+              <p className="text-lg font-bold text-lime-300 leading-relaxed mb-3">
                 {spiritTr.text1 || 'Đều quan trọng hơn hoàn hảo. Kỷ luật là biết quay lại đúng đường sau khi lệch một chút.'}
               </p>
               <p className="text-[11px] leading-relaxed flex-1" style={{ color: `${LIME}70` }}>
@@ -7308,7 +7308,7 @@ export default function PillarB() {
                         key={t.id}
                         type="button"
                         onClick={() => switchTab(i)}
-                        className="group relative flex items-center gap-2 px-4 py-3 text-base font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap"
+                        className="group relative flex items-center gap-2 px-4 py-3 text-lg font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap"
                         style={{
                           color: isActive ? tc : 'rgba(100,116,139,0.55)',
                           background: isActive ? `${tc}0c` : 'transparent',
@@ -7790,7 +7790,7 @@ export default function PillarB() {
               <p className="text-lg font-bold text-lime-400">{pillar?.safety_label || 'An toàn trước'}</p>
             </div>
             <div className="flex-1">
-              <p className="text-base text-muted leading-relaxed">
+              <p className="text-lg text-muted leading-relaxed">
                 <span className="text-lime-300 font-semibold">{pillar?.safety_headline || 'An toàn trước, hiệu quả sau, bền vững là mục tiêu cuối cùng.'}</span>{' '}
                 {pillar?.safety_body || 'Thông tin trên mang tính giáo dục chung, không thay thế tư vấn chuyên môn. Nếu có bệnh lý nền (tiểu đường, thận, tim mạch, rối loạn ăn uống), hãy tham khảo bác sĩ hoặc chuyên gia dinh dưỡng trước khi thay đổi chế độ ăn.'}
               </p>
@@ -7816,8 +7816,8 @@ export default function PillarB() {
                 </svg>
               </div>
               <h3 className="font-black text-text text-xl mb-1">{pillar?.cta_program_title || 'Lộ Trình 12 Tuần'}</h3>
-              <p className="text-muted text-base leading-relaxed mb-4">{pillar?.cta_program_desc || 'Kết hợp dinh dưỡng + vận động theo kế hoạch có cấu trúc rõ ràng từng giai đoạn.'}</p>
-              <span className="inline-flex items-center gap-1.5 text-lime-400 text-base font-bold group-hover:gap-2.5 transition-all">
+              <p className="text-muted text-lg leading-relaxed mb-4">{pillar?.cta_program_desc || 'Kết hợp dinh dưỡng + vận động theo kế hoạch có cấu trúc rõ ràng từng giai đoạn.'}</p>
+              <span className="inline-flex items-center gap-1.5 text-lime-400 text-lg font-bold group-hover:gap-2.5 transition-all">
                 {pillar?.cta_program_cta || 'Xem lộ trình'}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 group-hover:translate-x-0.5 transition-transform">
                   <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
@@ -7838,8 +7838,8 @@ export default function PillarB() {
                 </svg>
               </div>
               <h3 className="font-black text-text text-xl mb-1">{pillar?.cta_pillars_title || '6 Trụ Cột Sức Khỏe'}</h3>
-              <p className="text-muted text-base leading-relaxed mb-4">{pillar?.cta_pillars_desc || 'Dinh dưỡng chỉ là 1 trong 6 trụ cột. Khám phá vận động, phục hồi, giấc ngủ và cả tinh thần.'}</p>
-              <span className="inline-flex items-center gap-1.5 text-teal-400 text-base font-bold group-hover:gap-2.5 transition-all">
+              <p className="text-muted text-lg leading-relaxed mb-4">{pillar?.cta_pillars_desc || 'Dinh dưỡng chỉ là 1 trong 6 trụ cột. Khám phá vận động, phục hồi, giấc ngủ và cả tinh thần.'}</p>
+              <span className="inline-flex items-center gap-1.5 text-teal-400 text-lg font-bold group-hover:gap-2.5 transition-all">
                 {pillar?.cta_pillars_cta || 'Xem tất cả trụ cột'}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 group-hover:translate-x-0.5 transition-transform">
                   <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>

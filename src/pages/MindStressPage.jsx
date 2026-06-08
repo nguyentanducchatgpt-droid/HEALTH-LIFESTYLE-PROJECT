@@ -98,7 +98,7 @@ export default function MindStressPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-purple-400 transition-colors mb-8 group">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Tâm Trí An Nhiên
       </Link>
@@ -108,7 +108,7 @@ export default function MindStressPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🌪️</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Hiểu Stress & Vòng Lặp Lo Âu</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D1 · Nền Tảng</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D1 · Nền Tảng</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Stress không xấu. Stress giúp bạn tập trung và hành động. Vấn đề chỉ xảy ra khi stress kéo dài, không được xả và hình thành vòng lặp lo âu–thói quen. Hiểu cơ chế là bước đầu để phá vỡ vòng lặp đó.</p>
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function MindStressPage() {
           <img src="https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80&auto=format&fit=crop" alt="Stress" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>3 tầng stress · Vòng lặp lo âu · Kỹ thuật phá vỡ</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>3 tầng stress · Vòng lặp lo âu · Kỹ thuật phá vỡ</span>
           </div>
         </div>
       </div>
@@ -128,18 +128,18 @@ export default function MindStressPage() {
       {/* Good vs bad stress */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Stress Tốt vs Stress Xấu</h2>
-        <p className="text-muted text-base mb-6">Không phải stress nào cũng cần loại bỏ.</p>
+        <p className="text-muted text-lg mb-6">Không phải stress nào cũng cần loại bỏ.</p>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="rounded-2xl border p-5" style={{ borderColor: 'rgba(16,185,129,0.3)', background: 'rgba(16,185,129,0.05)' }}>
-            <div className="text-base font-bold text-text mb-3">✅ Stress tích cực (Eustress)</div>
+            <div className="text-lg font-bold text-text mb-3">✅ Stress tích cực (Eustress)</div>
             <ul className="space-y-2">
-              {['Giúp tập trung cao độ khi cần', 'Thúc đẩy hoàn thành deadline', 'Cảm giác hứng khởi trước thử thách', 'Kéo dài ngắn, kết thúc rõ ràng'].map(s => <li key={s} className="text-sm text-muted flex items-start gap-2"><span className="text-green-400">→</span>{s}</li>)}
+              {['Giúp tập trung cao độ khi cần', 'Thúc đẩy hoàn thành deadline', 'Cảm giác hứng khởi trước thử thách', 'Kéo dài ngắn, kết thúc rõ ràng'].map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span className="text-green-400">→</span>{s}</li>)}
             </ul>
           </div>
           <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.3)`, background: `rgba(${RGB},0.05)` }}>
-            <div className="text-base font-bold text-text mb-3">⚠️ Stress mãn tính (Distress)</div>
+            <div className="text-lg font-bold text-text mb-3">⚠️ Stress mãn tính (Distress)</div>
             <ul className="space-y-2">
-              {['Kéo dài nhiều ngày, không được xả', 'Ảnh hưởng ngủ, ăn, tập luyện', 'Cảm xúc không ổn định', 'Hình thành vòng lặp lo âu–thói quen'].map(s => <li key={s} className="text-sm text-muted flex items-start gap-2"><span style={{ color: COLOR }}>→</span>{s}</li>)}
+              {['Kéo dài nhiều ngày, không được xả', 'Ảnh hưởng ngủ, ăn, tập luyện', 'Cảm xúc không ổn định', 'Hình thành vòng lặp lo âu–thói quen'].map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span style={{ color: COLOR }}>→</span>{s}</li>)}
             </ul>
           </div>
         </div>
@@ -148,14 +148,14 @@ export default function MindStressPage() {
       {/* 3 layers */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Tầng Của Stress</h2>
-        <p className="text-muted text-base mb-6">Stress biểu hiện ở cả 3 tầng cùng lúc — nhận diện tầng nào đang ảnh hưởng bạn nhiều nhất.</p>
+        <p className="text-muted text-lg mb-6">Stress biểu hiện ở cả 3 tầng cùng lúc — nhận diện tầng nào đang ảnh hưởng bạn nhiều nhất.</p>
         <div className="grid md:grid-cols-3 gap-4">
           {LAYERS.map(l => (
             <div key={l.title} className="rounded-2xl border border-border bg-surface p-5">
               <div className="text-4xl mb-3">{l.icon}</div>
-              <div className="text-base font-bold mb-3" style={{ color: l.color }}>{l.title}</div>
+              <div className="text-lg font-bold mb-3" style={{ color: l.color }}>{l.title}</div>
               <ul className="space-y-1">
-                {l.signs.map(s => <li key={s} className="text-sm text-muted flex items-start gap-2"><span style={{ color: l.color }}>·</span>{s}</li>)}
+                {l.signs.map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span style={{ color: l.color }}>·</span>{s}</li>)}
               </ul>
             </div>
           ))}
@@ -165,13 +165,13 @@ export default function MindStressPage() {
       {/* Anxiety loops */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vòng Lặp Lo Âu – Thói Quen</h2>
-        <p className="text-muted text-base mb-6">Mục tiêu không phải xóa sạch lo âu — mà là chèn một điểm dừng nhỏ vào vòng lặp.</p>
+        <p className="text-muted text-lg mb-6">Mục tiêu không phải xóa sạch lo âu — mà là chèn một điểm dừng nhỏ vào vòng lặp.</p>
         <div className="space-y-3">
           {LOOPS.map((loop, i) => (
             <div key={i} className="rounded-2xl border border-border overflow-hidden">
               <button onClick={() => setOpenLoop(openLoop === i ? null : i)} className="w-full flex items-center gap-3 p-4 hover:bg-white/5 transition-colors text-left">
-                <span className="text-base font-medium text-text flex-1">{loop.title}</span>
-                <span className="text-muted text-sm">{openLoop === i ? '▲' : '▼'}</span>
+                <span className="text-lg font-medium text-text flex-1">{loop.title}</span>
+                <span className="text-muted text-base">{openLoop === i ? '▲' : '▼'}</span>
               </button>
               {openLoop === i && (
                 <div className="px-4 pb-4">
@@ -180,14 +180,14 @@ export default function MindStressPage() {
                       <div key={si} className="flex items-center gap-1">
                         <div className="rounded-lg p-2 text-center min-w-[80px]" style={{ background: `rgba(${RGB},0.08)` }}>
                           <div className="text-xl">{s.icon}</div>
-                          <div className="text-sm font-bold mt-0.5" style={{ color: COLOR }}>{s.label}</div>
-                          <div className="text-sm text-muted mt-0.5 leading-tight">{s.text}</div>
+                          <div className="text-base font-bold mt-0.5" style={{ color: COLOR }}>{s.label}</div>
+                          <div className="text-base text-muted mt-0.5 leading-tight">{s.text}</div>
                         </div>
-                        {si < loop.steps.length - 1 && <span className="text-muted text-sm">→</span>}
+                        {si < loop.steps.length - 1 && <span className="text-muted text-base">→</span>}
                       </div>
                     ))}
                   </div>
-                  <div className="rounded-xl p-3 text-sm border" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
+                  <div className="rounded-xl p-3 text-base border" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
                     🔧 <strong style={{ color: COLOR }}>Điểm dừng:</strong> {loop.breakpoint}
                   </div>
                 </div>
@@ -200,14 +200,14 @@ export default function MindStressPage() {
       {/* Techniques */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kỹ Thuật Phá Vòng Lặp</h2>
-        <p className="text-muted text-base mb-6">Công cụ nhận thức giúp tạo khoảng cách giữa bạn và phản ứng tự động.</p>
+        <p className="text-muted text-lg mb-6">Công cụ nhận thức giúp tạo khoảng cách giữa bạn và phản ứng tự động.</p>
         <div className="grid md:grid-cols-2 gap-4">
           {TECHNIQUES.map(t => (
             <div key={t.title} className="rounded-2xl border border-border bg-surface p-5 hover:border-violet-500/20 transition-colors">
               <div className="text-3xl mb-3">{t.icon}</div>
-              <div className="text-base font-bold text-text mb-2">{t.title}</div>
-              <p className="text-sm text-muted leading-relaxed mb-3">{t.desc}</p>
-              <div className="rounded-lg p-2 text-sm italic text-muted border border-border">💡 {t.example}</div>
+              <div className="text-lg font-bold text-text mb-2">{t.title}</div>
+              <p className="text-base text-muted leading-relaxed mb-3">{t.desc}</p>
+              <div className="rounded-lg p-2 text-base italic text-muted border border-border">💡 {t.example}</div>
             </div>
           ))}
         </div>
@@ -216,7 +216,7 @@ export default function MindStressPage() {
       {/* Stress levels */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thang Đo Stress 0–10</h2>
-        <p className="text-muted text-base mb-6">Chấm điểm mỗi ngày để nhận diện xu hướng trước khi stress leo thang.</p>
+        <p className="text-muted text-lg mb-6">Chấm điểm mỗi ngày để nhận diện xu hướng trước khi stress leo thang.</p>
         <div className="space-y-2">
           {[
             { range: '0–2', label: 'Bình thường', desc: 'Cơ thể và tâm trí ổn định. Tiếp tục duy trì.', color: '#10b981' },
@@ -226,9 +226,9 @@ export default function MindStressPage() {
             { range: '9–10', label: 'Nguy hiểm', desc: 'Không tự xử lý được. Hỏi người thân hoặc chuyên gia.', color: '#ef4444' },
           ].map(s => (
             <div key={s.range} className="flex items-center gap-4 p-3 rounded-xl border border-border bg-surface">
-              <div className="text-base font-bold w-12 text-center shrink-0" style={{ color: s.color }}>{s.range}</div>
-              <div className="w-16 shrink-0 text-sm font-bold" style={{ color: s.color }}>{s.label}</div>
-              <div className="text-sm text-muted">{s.desc}</div>
+              <div className="text-lg font-bold w-12 text-center shrink-0" style={{ color: s.color }}>{s.range}</div>
+              <div className="w-16 shrink-0 text-base font-bold" style={{ color: s.color }}>{s.label}</div>
+              <div className="text-base text-muted">{s.desc}</div>
             </div>
           ))}
         </div>
@@ -236,11 +236,11 @@ export default function MindStressPage() {
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/d" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/d" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Tâm Trí An Nhiên
         </Link>
-        <Link to="/pillar/d/breathing" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/d/breathing" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
           Kỹ Thuật Thở
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

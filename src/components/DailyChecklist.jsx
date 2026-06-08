@@ -22,7 +22,7 @@ export default function DailyChecklist() {
             return Array.isArray(sections) && sections[0] ? sections[0].title : 'Daily Checklist';
           })()}
         </h2>
-        <span className="text-sm text-muted bg-border px-2 py-1 rounded-full">
+        <span className="text-base text-muted bg-border px-2 py-1 rounded-full">
           {doneCount}/{items.length}
         </span>
       </div>
@@ -40,7 +40,7 @@ export default function DailyChecklist() {
           <li key={i}>
             <button
               onClick={() => toggle(i)}
-              className={`w-full flex items-center gap-3 text-left text-base transition-colors group ${
+              className={`w-full flex items-center gap-3 text-left text-lg transition-colors group ${
                 checked[i] ? 'text-muted line-through' : 'text-text'
               }`}
             >
@@ -51,7 +51,7 @@ export default function DailyChecklist() {
                     : 'border-border group-hover:border-accent'
                 }`}
               >
-                {checked[i] && <span className="text-sm font-bold">✓</span>}
+                {checked[i] && <span className="text-base font-bold">✓</span>}
               </span>
               <span className="leading-snug">{item}</span>
             </button>
@@ -60,7 +60,7 @@ export default function DailyChecklist() {
       </ul>
 
       {doneCount === items.length && (
-        <p className="mt-5 text-center text-accent text-base font-medium">
+        <p className="mt-5 text-center text-accent text-lg font-medium">
           🎉 {doneCount}/{items.length} ✓
         </p>
       )}

@@ -159,7 +159,7 @@ export default function Pillars() {
             style={{ background: 'linear-gradient(90deg, #22c55e, #5eead4, #a855f7)' }} />
 
           {/* Badge (moved here from top) */}
-          <span className="pll-badge inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-sm font-semibold px-4 py-1.5 rounded-full">
+          <span className="pll-badge inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-base font-semibold px-4 py-1.5 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
             {t('hero.badge')}
           </span>
@@ -176,7 +176,7 @@ export default function Pillars() {
               <button
                 key={meta.key}
                 onClick={() => setActiveTab(i)}
-                className={`relative flex items-center gap-2.5 px-4 py-2.5 rounded-2xl text-base font-semibold whitespace-nowrap shrink-0 transition-all duration-250 border ${
+                className={`relative flex items-center gap-2.5 px-4 py-2.5 rounded-2xl text-lg font-semibold whitespace-nowrap shrink-0 transition-all duration-250 border ${
                   isActive
                     ? `${meta.activeBg} ${meta.border} ${meta.textColor} shadow-lg ${meta.glow}`
                     : 'bg-surface border-border text-muted hover:text-text hover:border-border-bright hover:bg-white/3'
@@ -223,7 +223,7 @@ export default function Pillars() {
               <div className={`absolute inset-0 bg-gradient-to-t ${m.imgOverlay} via-transparent md:bg-gradient-to-r`} />
               {/* Pillar badge on image */}
               <div className="absolute top-4 left-4">
-                <span className={`text-sm font-black tracking-[0.15em] uppercase px-3 py-1.5 rounded-xl backdrop-blur-sm bg-black/50 border ${m.border} ${m.textColor}`}>
+                <span className={`text-base font-black tracking-[0.15em] uppercase px-3 py-1.5 rounded-xl backdrop-blur-sm bg-black/50 border ${m.border} ${m.textColor}`}>
                   {t('pillars_page.pillar_badge')} {m.label}
                 </span>
               </div>
@@ -247,7 +247,7 @@ export default function Pillars() {
               </div>
 
               {/* Description */}
-              <p className="text-muted text-base md:text-lg leading-relaxed">
+              <p className="text-muted text-lg md:text-lg leading-relaxed">
                 {p?.description}
               </p>
 
@@ -259,7 +259,7 @@ export default function Pillars() {
                       <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-black shrink-0 mt-0.5 ${m.activeBg} border ${m.border} ${m.textColor}`}>
                         {i + 1}
                       </span>
-                      <span className="text-base text-muted/90 leading-relaxed">{item}</span>
+                      <span className="text-lg text-muted/90 leading-relaxed">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -269,12 +269,12 @@ export default function Pillars() {
               <div className="flex items-center gap-3 pt-2 mt-auto">
                 <Link
                   to={`/pillar/${m.id}`}
-                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border text-base font-semibold transition-all duration-200 ${m.btnBg}`}
+                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border text-lg font-semibold transition-all duration-200 ${m.btnBg}`}
                 >
                   {t('pillars_page.view_all')}
                   <span>→</span>
                 </Link>
-                <span className={`text-sm ${m.textColor} opacity-60`}>
+                <span className={`text-base ${m.textColor} opacity-60`}>
                   {sections.length} {t('pillars_page.topics')} · {sections.reduce((acc, s) => acc + (s.items?.length || 0), 0)} {t('pillars_page.items')}
                 </span>
               </div>
@@ -297,16 +297,16 @@ export default function Pillars() {
                 <div className="p-5">
                   {/* Section header */}
                   <div className="flex items-center gap-2.5 mb-4">
-                    <span className={`w-7 h-7 rounded-xl text-base flex items-center justify-center shrink-0 ${m.activeBg} border ${m.border}`}>
+                    <span className={`w-7 h-7 rounded-xl text-lg flex items-center justify-center shrink-0 ${m.activeBg} border ${m.border}`}>
                       {SECTION_ICONS[i % SECTION_ICONS.length]}
                     </span>
-                    <h3 className="font-bold text-text text-base leading-snug">{section.title}</h3>
+                    <h3 className="font-bold text-text text-lg leading-snug">{section.title}</h3>
                   </div>
 
                   {/* Section items */}
                   <ul className="space-y-2">
                     {(section.items || []).slice(0, 4).map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-muted hover:text-text transition-colors duration-150">
+                      <li key={j} className="flex items-start gap-2 text-base text-muted hover:text-text transition-colors duration-150">
                         <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[8px] font-black shrink-0 mt-0.5 ${m.activeBg} ${m.textColor}`}>
                           ✓
                         </span>
@@ -314,7 +314,7 @@ export default function Pillars() {
                       </li>
                     ))}
                     {section.items?.length > 4 && (
-                      <li className={`text-sm ${m.textColor} pl-6 opacity-70`}>
+                      <li className={`text-base ${m.textColor} pl-6 opacity-70`}>
                         +{section.items.length - 4} {t('pillars_page.more_items')}
                       </li>
                     )}
@@ -331,18 +331,18 @@ export default function Pillars() {
           <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="font-bold text-text text-lg">{t('pillars_page.cta_start')} {p?.title}?</p>
-              <p className="text-muted text-base mt-0.5">{t('pillars_page.cta_detail')}</p>
+              <p className="text-muted text-lg mt-0.5">{t('pillars_page.cta_detail')}</p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <Link
                 to={`/pillar/${m.id}`}
-                className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-base font-bold border transition-all duration-200 ${m.btnBg}`}
+                className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-lg font-bold border transition-all duration-200 ${m.btnBg}`}
               >
                 {t('pillars_page.view_detail')}
               </Link>
               <Link
                 to="/program"
-                className="text-sm text-muted hover:text-accent transition-colors duration-150 underline underline-offset-2"
+                className="text-base text-muted hover:text-accent transition-colors duration-150 underline underline-offset-2"
               >
                 {t('pillars_page.roadmap_12w')}
               </Link>
@@ -352,12 +352,12 @@ export default function Pillars() {
 
         {/* ── Other Pillars Quick Nav ────────────────────── */}
         <div className="flex flex-wrap gap-2">
-          <span className="text-sm text-muted self-center mr-1">{t('pillars_page.other_pillars')}</span>
+          <span className="text-base text-muted self-center mr-1">{t('pillars_page.other_pillars')}</span>
           {pillars.filter((_, i) => i !== activeTab).map(({ meta, data }, i) => (
             <button
               key={meta.key}
               onClick={() => setActiveTab(PILLAR_META.indexOf(meta))}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-medium border bg-surface border-border text-muted hover:${meta.border} hover:${meta.textColor} transition-all duration-200`}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-base font-medium border bg-surface border-border text-muted hover:${meta.border} hover:${meta.textColor} transition-all duration-200`}
             >
               <span>{data?.icon}</span>
               <span className="hidden sm:inline">{data?.title}</span>

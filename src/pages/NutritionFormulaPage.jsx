@@ -204,14 +204,14 @@ function FormulaChainDiagram() {
     <div className="flex flex-wrap items-center gap-1.5 justify-center">
       {FORMULA_STEPS.map((step, i) => (
         <div key={i} className="flex items-center gap-1.5">
-          <div className="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold border"
+          <div className="flex items-center gap-1 px-3 py-1.5 rounded-full text-base font-semibold border"
             style={{ background: `${colors[i]}15`, borderColor: `${colors[i]}40`, color: colors[i] }}>
             <span className="text-[10px] font-bold opacity-60">{step.n}</span>
             <span>{step.emoji}</span>
             <span className="hidden sm:inline">{step.label}</span>
           </div>
           {i < FORMULA_STEPS.length - 1 && (
-            <span className="text-sm" style={{ color: '#444' }}>→</span>
+            <span className="text-base" style={{ color: '#444' }}>→</span>
           )}
         </div>
       ))}
@@ -279,8 +279,8 @@ function FormulaCard({ label, formula, result, color = GREEN }) {
   return (
     <div className="rounded-xl p-4 border" style={{ background: `${color}08`, borderColor: `${color}25` }}>
       <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color }}>{label}</div>
-      <div className="font-mono text-base font-semibold text-text mb-1">{formula}</div>
-      {result && <div className="font-mono text-sm text-muted mt-1">{result}</div>}
+      <div className="font-mono text-lg font-semibold text-text mb-1">{formula}</div>
+      {result && <div className="font-mono text-base text-muted mt-1">{result}</div>}
     </div>
   );
 }
@@ -347,29 +347,29 @@ export default function NutritionFormulaPage() {
   const stepContent = [
     // Step 0 — Nhập liệu
     <div key="s0" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: GREEN }}>Nhập thông số cá nhân</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: GREEN }}>Nhập thông số cá nhân</div>
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="text-[10px] text-muted uppercase tracking-wider block mb-1">Cân nặng (kg)</label>
           <input type="number" value={localInputs.weight} onChange={e => setLocalInputs(p => ({ ...p, weight: e.target.value }))}
-            className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-base text-text focus:outline-none focus:border-green-500" />
+            className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-lg text-text focus:outline-none focus:border-green-500" />
         </div>
         <div>
           <label className="text-[10px] text-muted uppercase tracking-wider block mb-1">Chiều cao (cm)</label>
           <input type="number" value={localInputs.height} onChange={e => setLocalInputs(p => ({ ...p, height: e.target.value }))}
-            className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-base text-text focus:outline-none focus:border-green-500" />
+            className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-lg text-text focus:outline-none focus:border-green-500" />
         </div>
         <div>
           <label className="text-[10px] text-muted uppercase tracking-wider block mb-1">Tuổi</label>
           <input type="number" value={localInputs.age} onChange={e => setLocalInputs(p => ({ ...p, age: e.target.value }))}
-            className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-base text-text focus:outline-none focus:border-green-500" />
+            className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-lg text-text focus:outline-none focus:border-green-500" />
         </div>
         <div>
           <label className="text-[10px] text-muted uppercase tracking-wider block mb-1">Giới tính</label>
           <div className="flex gap-2">
             {['male','female'].map(sx => (
               <button key={sx} onClick={() => setLocalInputs(p => ({ ...p, sex: sx }))}
-                className="flex-1 py-2 rounded-lg text-sm font-semibold border transition-all"
+                className="flex-1 py-2 rounded-lg text-base font-semibold border transition-all"
                 style={{ background: localInputs.sex === sx ? `${GREEN}20` : 'transparent', borderColor: localInputs.sex === sx ? GREEN : '#333', color: localInputs.sex === sx ? GREEN : '#888' }}>
                 {sx === 'male' ? 'Nam' : 'Nữ'}
               </button>
@@ -380,7 +380,7 @@ export default function NutritionFormulaPage() {
       <div>
         <label className="text-[10px] text-muted uppercase tracking-wider block mb-1">Mức vận động</label>
         <select value={localInputs.activityKey} onChange={e => setLocalInputs(p => ({ ...p, activityKey: e.target.value }))}
-          className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-base text-text focus:outline-none focus:border-green-500">
+          className="w-full bg-surface border border-border rounded-lg px-3 py-2 text-lg text-text focus:outline-none focus:border-green-500">
           {ACTIVITY_LEVELS.map(a => (
             <option key={a.key} value={a.key}>{a.label} — {a.sub}</option>
           ))}
@@ -391,7 +391,7 @@ export default function NutritionFormulaPage() {
         <div className="grid grid-cols-2 gap-2">
           {GOAL_MODIFIERS.map(g => (
             <button key={g.key} onClick={() => setLocalInputs(p => ({ ...p, goalKey: g.key }))}
-              className="flex items-center gap-2 p-2.5 rounded-xl border text-sm font-semibold transition-all text-left"
+              className="flex items-center gap-2 p-2.5 rounded-xl border text-base font-semibold transition-all text-left"
               style={{ background: localInputs.goalKey === g.key ? `${g.color}18` : 'transparent', borderColor: localInputs.goalKey === g.key ? g.color : '#2a2a2a', color: localInputs.goalKey === g.key ? g.color : '#666' }}>
               <span>{g.emoji}</span>
               <span>{g.label}</span>
@@ -400,7 +400,7 @@ export default function NutritionFormulaPage() {
         </div>
       </div>
       <button onClick={handleApply}
-        className="w-full py-3 rounded-xl font-bold text-base transition-all active:scale-95"
+        className="w-full py-3 rounded-xl font-bold text-lg transition-all active:scale-95"
         style={{ background: `linear-gradient(135deg, ${GREEN}, ${LIME})`, color: '#000' }}>
         Tính ngay
       </button>
@@ -408,7 +408,7 @@ export default function NutritionFormulaPage() {
         {[{ label: 'BMI', val: s.bmi }, { label: 'BMR', val: `${s.bmr.toLocaleString()} kcal` }, { label: 'TDEE', val: `${s.tdee.toLocaleString()} kcal` }, { label: 'Mục tiêu', val: `${s.targetKcal.toLocaleString()} kcal` }].map((item, i) => (
           <div key={i} className="rounded-xl p-3 border text-center" style={{ background: `${GREEN}08`, borderColor: `${GREEN}25` }}>
             <div className="text-[9px] text-muted uppercase tracking-wider">{item.label}</div>
-            <div className="font-bold text-base nf-count" style={{ color: GREEN }}>{item.val}</div>
+            <div className="font-bold text-lg nf-count" style={{ color: GREEN }}>{item.val}</div>
           </div>
         ))}
       </div>
@@ -421,7 +421,7 @@ export default function NutritionFormulaPage() {
       <div className="flex flex-col items-center gap-2">
         <BMIGauge bmi={s.bmi} />
         <div className="text-3xl font-bold nf-count" style={{ color: bmiLabel(s.bmi).color }}>{s.bmi}</div>
-        <div className="text-sm font-semibold px-3 py-1 rounded-full border" style={{ color: bmiLabel(s.bmi).color, borderColor: `${bmiLabel(s.bmi).color}40`, background: `${bmiLabel(s.bmi).color}12` }}>{bmiLabel(s.bmi).label}</div>
+        <div className="text-base font-semibold px-3 py-1 rounded-full border" style={{ color: bmiLabel(s.bmi).color, borderColor: `${bmiLabel(s.bmi).color}40`, background: `${bmiLabel(s.bmi).color}12` }}>{bmiLabel(s.bmi).label}</div>
       </div>
       <div className="rounded-xl border overflow-hidden" style={{ borderColor: '#2a2a2a' }}>
         <div className="grid grid-cols-3 text-[9px] font-bold uppercase tracking-wider px-3 py-2" style={{ background: '#111', color: '#555' }}>
@@ -436,14 +436,14 @@ export default function NutritionFormulaPage() {
           { range: '25–30', label: 'Thừa cân', note: 'Giảm mỡ từ từ', color: '#f59e0b' },
           { range: '> 30', label: 'Béo phì', note: 'Gặp bác sĩ dinh dưỡng', color: '#ef4444' },
         ].map((row, i) => (
-          <div key={i} className="grid grid-cols-3 px-3 py-2 text-sm border-t" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
+          <div key={i} className="grid grid-cols-3 px-3 py-2 text-base border-t" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
             <span className="font-mono font-bold" style={{ color: row.color }}>{row.range}</span>
             <span style={{ color: row.color }}>{row.label}</span>
             <span className="text-muted text-[10px]">{row.note}</span>
           </div>
         ))}
       </div>
-      <div className="rounded-xl p-3 border text-sm text-muted" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
+      <div className="rounded-xl p-3 border text-base text-muted" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
         BMI chỉ là sàng lọc ban đầu, không đủ cho người tập nhiều cơ. Người có cơ bắp phát triển có BMI cao nhưng không có nghĩa là thừa mỡ.
       </div>
     </div>,
@@ -456,15 +456,15 @@ export default function NutritionFormulaPage() {
       </div>
       <div className="rounded-xl p-4 border" style={{ background: `${GREEN}08`, borderColor: `${GREEN}25` }}>
         <div className="text-[10px] text-muted mb-2">Thế số cho bạn ({s.sx === 'male' ? 'Nam' : 'Nữ'})</div>
-        <div className="font-mono text-base text-text">
+        <div className="font-mono text-lg text-text">
           = 10×{s.w} + 6.25×{s.h} − 5×{s.a} {s.sx === 'male' ? '+ 5' : '− 161'}
         </div>
-        <div className="font-mono text-sm text-muted mt-1">
+        <div className="font-mono text-base text-muted mt-1">
           = {10*s.w} + {(6.25*s.h).toFixed(0)} − {5*s.a} {s.sx === 'male' ? '+ 5' : '− 161'}
         </div>
         <div className="font-mono text-2xl font-bold mt-2" style={{ color: GREEN }}>= {s.bmr.toLocaleString()} kcal/ngày</div>
       </div>
-      <div className="rounded-xl p-3 border text-sm text-muted space-y-1" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
+      <div className="rounded-xl p-3 border text-base text-muted space-y-1" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
         <div className="font-semibold text-text mb-1">BMR là gì?</div>
         <div>Basal Metabolic Rate — lượng calo cơ thể đốt khi nằm nghỉ hoàn toàn để duy trì sự sống: tim đập, phổi thở, não hoạt động, thận lọc máu.</div>
         <div>BMR chiếm ~60–70% tổng năng lượng tiêu thụ hàng ngày.</div>
@@ -482,7 +482,7 @@ export default function NutritionFormulaPage() {
           <span>Ghi chú</span>
         </div>
         {ACTIVITY_LEVELS.map((al, i) => (
-          <div key={i} className="grid grid-cols-3 px-3 py-2.5 text-sm border-t transition-colors"
+          <div key={i} className="grid grid-cols-3 px-3 py-2.5 text-base border-t transition-colors"
             style={{ borderColor: '#1a1a1a', background: al.key === s.act.key ? `${GREEN}10` : i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
             <span className="font-semibold" style={{ color: al.key === s.act.key ? GREEN : '#ccc' }}>{al.label}</span>
             <span className="font-mono font-bold" style={{ color: al.key === s.act.key ? GREEN : '#f59e0b' }}>×{al.mult}</span>
@@ -490,7 +490,7 @@ export default function NutritionFormulaPage() {
           </div>
         ))}
       </div>
-      <div className="rounded-xl p-3 border text-sm text-muted" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
+      <div className="rounded-xl p-3 border text-base text-muted" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
         TDEE (Total Daily Energy Expenditure) = tổng calo bạn đốt trong ngày gồm BMR + nhiệt sinh ra từ tiêu hóa (TEF ~10%) + hoạt động thể chất (TEA). Đây là điểm neo để tính calo mục tiêu.
       </div>
     </div>,
@@ -508,14 +508,14 @@ export default function NutritionFormulaPage() {
               <span className="text-2xl">{g.emoji}</span>
               <div className="flex-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-bold" style={{ color: g.color }}>{g.label}</span>
+                  <span className="text-base font-bold" style={{ color: g.color }}>{g.label}</span>
                   {isActive && <span className="text-[9px] px-1.5 py-0.5 rounded-full font-bold" style={{ background: `${g.color}25`, color: g.color }}>Hiện tại</span>}
                 </div>
                 <div className="text-[10px] text-muted mt-0.5">{g.desc}</div>
               </div>
               <div className="text-right">
-                <div className="font-mono text-sm text-muted">{s.tdee} {g.delta >= 0 ? '+' : ''}{g.delta}</div>
-                <div className="font-bold text-base" style={{ color: g.color }}>{kcal.toLocaleString()} kcal</div>
+                <div className="font-mono text-base text-muted">{s.tdee} {g.delta >= 0 ? '+' : ''}{g.delta}</div>
+                <div className="font-bold text-lg" style={{ color: g.color }}>{kcal.toLocaleString()} kcal</div>
               </div>
             </div>
           );
@@ -544,7 +544,7 @@ export default function NutritionFormulaPage() {
           { label: 'Tăng cơ', range: '1.6–2.2 g/kg', color: GREEN },
           { label: 'Sức bền', range: '1.4–2.0 g/kg', color: '#f59e0b' },
         ].map((row, i) => (
-          <div key={i} className="grid grid-cols-2 px-3 py-2 text-sm border-t" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
+          <div key={i} className="grid grid-cols-2 px-3 py-2 text-base border-t" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
             <span style={{ color: row.color }}>{row.label}</span>
             <span className="font-mono font-bold" style={{ color: row.color }}>{row.range}</span>
           </div>
@@ -552,7 +552,7 @@ export default function NutritionFormulaPage() {
       </div>
       <div className="rounded-xl p-3 border" style={{ background: `${GREEN}08`, borderColor: `${GREEN}25` }}>
         <div className="text-[10px] text-muted mb-1">Chia bữa tham khảo</div>
-        <div className="font-mono text-base font-bold" style={{ color: GREEN }}>{s.proteinG}g ÷ 3 bữa ≈ {s.perMealProtein}g/bữa</div>
+        <div className="font-mono text-lg font-bold" style={{ color: GREEN }}>{s.proteinG}g ÷ 3 bữa ≈ {s.perMealProtein}g/bữa</div>
       </div>
       <div className="text-[10px] font-bold uppercase tracking-widest mb-2 text-muted">Nguồn protein tốt</div>
       <div className="grid grid-cols-2 gap-2">
@@ -564,7 +564,7 @@ export default function NutritionFormulaPage() {
           { name: 'Greek yogurt', val: '10g/100g', emoji: '🥛' },
           { name: 'Thịt bò', val: '26g/100g', emoji: '🥩' },
         ].map((item, i) => (
-          <div key={i} className="flex items-center gap-2 rounded-lg p-2 border text-sm" style={{ borderColor: '#1a1a1a', background: '#0d0d0d' }}>
+          <div key={i} className="flex items-center gap-2 rounded-lg p-2 border text-base" style={{ borderColor: '#1a1a1a', background: '#0d0d0d' }}>
             <span>{item.emoji}</span>
             <span className="text-text">{item.name}</span>
             <span className="ml-auto font-mono font-bold" style={{ color: GREEN }}>{item.val}</span>
@@ -598,13 +598,13 @@ export default function NutritionFormulaPage() {
           { name: 'Trứng', emoji: '🥚' },
           { name: 'Hạt chia', emoji: '🌱' },
         ].map((item, i) => (
-          <div key={i} className="flex items-center gap-2 rounded-lg p-2 border text-sm" style={{ borderColor: '#1a1a1a', background: '#0d0d0d' }}>
+          <div key={i} className="flex items-center gap-2 rounded-lg p-2 border text-base" style={{ borderColor: '#1a1a1a', background: '#0d0d0d' }}>
             <span>{item.emoji}</span>
             <span className="text-text">{item.name}</span>
           </div>
         ))}
       </div>
-      <div className="rounded-xl p-3 border text-sm" style={{ background: '#ef444410', borderColor: '#ef444430' }}>
+      <div className="rounded-xl p-3 border text-base" style={{ background: '#ef444410', borderColor: '#ef444430' }}>
         <span className="font-bold" style={{ color: '#ef4444' }}>Lưu ý: </span>
         <span className="text-muted">Không cắt fat dưới 20% tổng calo — ảnh hưởng nội tiết tố, hormone sinh dục và hấp thụ vitamin A/D/E/K.</span>
       </div>
@@ -646,8 +646,8 @@ export default function NutritionFormulaPage() {
           { label: '😴 Ngày nghỉ', mult: 0.7, color: '#a855f7' },
         ].map((item, i) => (
           <div key={i} className="rounded-xl p-3 border text-center" style={{ background: `${item.color}0d`, borderColor: `${item.color}30` }}>
-            <div className="text-sm mb-1">{item.label}</div>
-            <div className="font-mono font-bold text-base" style={{ color: item.color }}>{Math.round(s.carbG * item.mult)}g</div>
+            <div className="text-base mb-1">{item.label}</div>
+            <div className="font-mono font-bold text-lg" style={{ color: item.color }}>{Math.round(s.carbG * item.mult)}g</div>
             <div className="text-[9px] text-muted">×{item.mult}</div>
           </div>
         ))}
@@ -656,7 +656,7 @@ export default function NutritionFormulaPage() {
 
     // Step 8 — Chia Bữa
     <div key="s8" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: LIME }}>Chọn mô hình bữa ăn</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: LIME }}>Chọn mô hình bữa ăn</div>
       <div className="grid grid-cols-3 gap-2">
         {MEAL_MODELS.map((m, i) => (
           <button key={i} onClick={() => setMealModel(i)}
@@ -674,14 +674,14 @@ export default function NutritionFormulaPage() {
       </div>
       <div className="rounded-xl p-3 border" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
         <div className="text-[10px] text-muted mb-1">Công thức phân bổ</div>
-        <div className="font-mono text-sm text-text">Kcal mỗi bữa = Tổng × Tỉ lệ%</div>
+        <div className="font-mono text-base text-text">Kcal mỗi bữa = Tổng × Tỉ lệ%</div>
         <div className="font-mono text-[10px] text-muted mt-1">VD: Bữa trưa 35% = {Math.round(s.targetKcal * 0.35).toLocaleString()} kcal</div>
       </div>
     </div>,
 
     // Step 9 — Theo Ngày Tập
     <div key="s9" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#f59e0b' }}>Calorie Cycling — Theo Ngày Tập</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: '#f59e0b' }}>Calorie Cycling — Theo Ngày Tập</div>
       <div className="rounded-xl p-4 border" style={{ background: '#f59e0b08', borderColor: '#f59e0b25' }}>
         <DayTypeBarChart s={s} />
       </div>
@@ -707,25 +707,25 @@ export default function NutritionFormulaPage() {
         ].map((item, i) => (
           <div key={i} className="rounded-xl p-2.5 border text-center" style={{ background: `${item.color}0d`, borderColor: `${item.color}30` }}>
             <div className="text-[10px] mb-1">{item.label}</div>
-            <div className="font-bold text-base" style={{ color: item.color }}>{item.g}g</div>
+            <div className="font-bold text-lg" style={{ color: item.color }}>{item.g}g</div>
           </div>
         ))}
       </div>
       <div className="rounded-xl p-3 border space-y-2" style={{ background: '#0d0d0d', borderColor: '#2a2a2a' }}>
         <div className="text-[10px] font-bold uppercase tracking-widest" style={{ color: GREEN }}>Pre-Workout</div>
-        <div className="font-mono text-sm text-text">Carb = 0.5–1g/kg = <span style={{ color: GREEN }}>{s.preCarb}g</span></div>
-        <div className="font-mono text-sm text-text">Protein = 0.2–0.3g/kg = <span style={{ color: GREEN }}>{s.preProtein}g</span></div>
+        <div className="font-mono text-base text-text">Carb = 0.5–1g/kg = <span style={{ color: GREEN }}>{s.preCarb}g</span></div>
+        <div className="font-mono text-base text-text">Protein = 0.2–0.3g/kg = <span style={{ color: GREEN }}>{s.preProtein}g</span></div>
         <div className="border-t mt-2 pt-2" style={{ borderColor: '#2a2a2a' }}>
           <div className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: LIME }}>Post-Workout</div>
-          <div className="font-mono text-sm text-text">Protein = 0.25–0.4g/kg = <span style={{ color: LIME }}>{s.postProtein}g</span></div>
-          <div className="font-mono text-sm text-text">Carb = 0.5–1g/kg = <span style={{ color: LIME }}>{s.postCarb}g</span></div>
+          <div className="font-mono text-base text-text">Protein = 0.25–0.4g/kg = <span style={{ color: LIME }}>{s.postProtein}g</span></div>
+          <div className="font-mono text-base text-text">Carb = 0.5–1g/kg = <span style={{ color: LIME }}>{s.postCarb}g</span></div>
         </div>
       </div>
     </div>,
 
     // Step 10 — Macro/Ngày Tập
     <div key="s10" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#f59e0b' }}>Protein & Fat cố định · Chỉ Carb thay đổi</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: '#f59e0b' }}>Protein & Fat cố định · Chỉ Carb thay đổi</div>
       <div className="overflow-x-auto rounded-xl border" style={{ borderColor: '#2a2a2a' }}>
         <table className="w-full text-[10px]">
           <thead>
@@ -776,7 +776,7 @@ export default function NutritionFormulaPage() {
 
     // Step 11 — Đĩa Ăn Lành Mạnh
     <div key="s11" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#06b6d4' }}>Không cần cân — nhìn đĩa là biết</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: '#06b6d4' }}>Không cần cân — nhìn đĩa là biết</div>
       <div className="flex justify-center">
         <div className="relative w-52 h-52">
           <svg viewBox="0 0 200 200" className="w-full h-full" style={{ overflow: 'visible' }}>
@@ -801,7 +801,7 @@ export default function NutritionFormulaPage() {
           <div key={i} className="flex items-center gap-3 rounded-xl px-4 py-2.5 border" style={{ background: `${item.color}08`, borderColor: `${item.color}25` }}>
             <span className="text-2xl">{item.icon}</span>
             <div className="flex-1">
-              <div className="font-bold text-sm" style={{ color: item.color }}>{item.label}</div>
+              <div className="font-bold text-base" style={{ color: item.color }}>{item.label}</div>
               <div className="text-[10px] text-muted">{item.note}</div>
             </div>
           </div>
@@ -814,10 +814,10 @@ export default function NutritionFormulaPage() {
 
     // Step 12 — Pre & Post Workout (chi tiết)
     <div key="s12" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#f59e0b' }}>Xung quanh buổi tập</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: '#f59e0b' }}>Xung quanh buổi tập</div>
       <div className="grid gap-3">
         <div className="rounded-xl p-4 border" style={{ background: 'rgba(245,158,11,0.06)', borderColor: 'rgba(245,158,11,0.25)' }}>
-          <div className="flex items-center gap-2 mb-3"><span className="text-xl">⚡</span><div className="font-bold text-base text-text">Pre-Workout <span className="text-[10px] text-muted font-normal">(1–2h trước tập)</span></div></div>
+          <div className="flex items-center gap-2 mb-3"><span className="text-xl">⚡</span><div className="font-bold text-lg text-text">Pre-Workout <span className="text-[10px] text-muted font-normal">(1–2h trước tập)</span></div></div>
           <FormulaCard label="Carb" formula="Carb = 0.5–1.0 g/kg" result={`= ${s.preCarb}g cho ${s.w}kg`} color="#06b6d4" />
           <div className="mt-2"><FormulaCard label="Protein" formula="Protein = 0.2–0.3 g/kg" result={`= ${s.preProtein}g cho ${s.w}kg`} color={GREEN} /></div>
           <div className="mt-2 rounded-xl p-2 border text-[10px] text-muted" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
@@ -826,7 +826,7 @@ export default function NutritionFormulaPage() {
           <div className="mt-2 text-[10px] text-muted"><span className="font-bold" style={{ color: '#f59e0b' }}>Ví dụ: </span>Cơm + ức gà · Khoai lang + yogurt · Bánh mì + trứng + chuối</div>
         </div>
         <div className="rounded-xl p-4 border" style={{ background: 'rgba(34,197,94,0.06)', borderColor: 'rgba(34,197,94,0.25)' }}>
-          <div className="flex items-center gap-2 mb-3"><span className="text-xl">💥</span><div className="font-bold text-base text-text">Post-Workout <span className="text-[10px] text-muted font-normal">(30–60 phút sau tập)</span></div></div>
+          <div className="flex items-center gap-2 mb-3"><span className="text-xl">💥</span><div className="font-bold text-lg text-text">Post-Workout <span className="text-[10px] text-muted font-normal">(30–60 phút sau tập)</span></div></div>
           <FormulaCard label="Protein" formula="Protein = 0.25–0.4 g/kg" result={`= ${s.postProtein}g cho ${s.w}kg`} color={GREEN} />
           <div className="mt-2"><FormulaCard label="Carb" formula="Carb = 0.5–0.8 g/kg" result={`= ${s.postCarb}g cho ${s.w}kg`} color="#06b6d4" /></div>
           <div className="mt-2 rounded-xl p-2 border text-[10px] text-muted" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
@@ -854,7 +854,7 @@ export default function NutritionFormulaPage() {
 
     // Step 13 — Sức Bền Dài
     <div key="s13" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#06b6d4' }}>Tập &gt;60 phút</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: '#06b6d4' }}>Tập &gt;60 phút</div>
       <div className="grid gap-3">
         {[
           { emoji: '🍌', label: 'Carb trong khi tập', formula: '30–60g carb/giờ', note: 'Gel năng lượng, chuối, nước có đường', color: '#f59e0b' },
@@ -865,8 +865,8 @@ export default function NutritionFormulaPage() {
             <div className="flex items-center gap-3 mb-2">
               <span className="text-3xl">{item.emoji}</span>
               <div>
-                <div className="font-bold text-base" style={{ color: item.color }}>{item.label}</div>
-                <div className="font-mono text-sm" style={{ color: item.color }}>{item.formula}</div>
+                <div className="font-bold text-lg" style={{ color: item.color }}>{item.label}</div>
+                <div className="font-mono text-base" style={{ color: item.color }}>{item.formula}</div>
               </div>
             </div>
             <div className="text-[10px] text-muted">{item.note}</div>
@@ -881,7 +881,7 @@ export default function NutritionFormulaPage() {
             { day: 'Ngày -2', note: 'Tập nhẹ · Tăng carb lên 60% kcal', color: '#84cc16' },
             { day: 'Ngày -1', note: 'Nghỉ hoặc đi bộ · Carb cao 70% kcal', color: '#22c55e' },
           ].map((row, i) => (
-            <div key={i} className="flex items-center gap-3 text-sm">
+            <div key={i} className="flex items-center gap-3 text-base">
               <span className="font-mono font-bold shrink-0 w-16" style={{ color: row.color }}>{row.day}</span>
               <span className="text-muted">{row.note}</span>
             </div>
@@ -892,7 +892,7 @@ export default function NutritionFormulaPage() {
 
     // Step 14 — Nước · Xơ · Rau
     <div key="s14" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#06b6d4' }}>3 chỉ tiêu thường bị bỏ qua</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: '#06b6d4' }}>3 chỉ tiêu thường bị bỏ qua</div>
       <div className="grid gap-3">
         <div className="rounded-xl p-4 border" style={{ background: 'rgba(6,182,212,0.06)', borderColor: 'rgba(6,182,212,0.25)' }}>
           <FormulaCard label="Nước uống/ngày" formula="Nước = Cân nặng × 35ml" result={`= ${s.w}kg × 35 = ${s.waterMl.toLocaleString()}ml = ${(s.waterMl/1000).toFixed(1)}L`} color="#06b6d4" />
@@ -915,7 +915,7 @@ export default function NutritionFormulaPage() {
         </div>
         <div className="rounded-xl p-3 border text-[10px]" style={{ background: 'rgba(132,204,22,0.06)', borderColor: 'rgba(132,204,22,0.25)' }}>
           <div className="flex items-center gap-2 mb-1"><span>🥗</span><div className="font-bold" style={{ color: LIME }}>Rau — Mục tiêu tối thiểu</div></div>
-          <div className="font-mono text-sm text-text mb-1">3–5 phần rau / ngày · 1 phần = 80–100g</div>
+          <div className="font-mono text-base text-text mb-1">3–5 phần rau / ngày · 1 phần = 80–100g</div>
           <div className="text-muted">Rau lá xanh đậm + rau màu = tối ưu vi chất. Tránh tính khoai lang/bắp vào phần rau.</div>
         </div>
       </div>
@@ -923,7 +923,7 @@ export default function NutritionFormulaPage() {
 
     // Step 15 — Quy Đổi Khẩu Phần
     <div key="s15" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#a855f7' }}>Không cần cân — dùng tay</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: '#a855f7' }}>Không cần cân — dùng tay</div>
       <div className="grid grid-cols-2 gap-2">
         {[
           { icon: '✊', unit: '1 nắm tay', food: 'Tinh bột nấu (cơm, mì, khoai)', g: '~100–150g', kcal: '~130–200', c: GREEN },
@@ -970,7 +970,7 @@ export default function NutritionFormulaPage() {
 
     // Step 16 — Thực Đơn Tự Động
     <div key="s16" className="space-y-4">
-      <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: GREEN }}>Ghép thực phẩm thực tế</div>
+      <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: GREEN }}>Ghép thực phẩm thực tế</div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[10px]">
         {[
           { n: '1', label: 'Tính TDEE + Target', icon: '🧮', color: '#06b6d4', note: 'Cân nặng, chiều cao, tuổi, mục tiêu' },
@@ -1009,13 +1009,13 @@ export default function NutritionFormulaPage() {
         ];
         return (
           <div className="rounded-2xl border overflow-hidden" style={{ borderColor: '#2a2a2a' }}>
-            <div className="px-4 py-2.5 font-bold text-sm" style={{ background: '#0d0d0d', color: LIME }}>
+            <div className="px-4 py-2.5 font-bold text-base" style={{ background: '#0d0d0d', color: LIME }}>
               Mẫu thực đơn · {s.targetKcal.toLocaleString()} kcal · {s.proteinG}g P · {s.carbG}g C · {s.fatG}g F
             </div>
             {mealsData.map((meal, mi) => (
               <div key={mi} className="border-t" style={{ borderColor: '#1e1e1e' }}>
                 <div className="px-4 py-2 flex items-center justify-between" style={{ background: `${meal.color}08` }}>
-                  <div><span className="font-bold text-sm" style={{ color: meal.color }}>{meal.name}</span><span className="text-muted text-[9px] ml-2">{meal.time} · {meal.pct}%</span></div>
+                  <div><span className="font-bold text-base" style={{ color: meal.color }}>{meal.name}</span><span className="text-muted text-[9px] ml-2">{meal.time} · {meal.pct}%</span></div>
                   <div className="text-[10px] font-mono flex gap-2">
                     <span style={{ color: meal.color }}>{meal.kcal} kcal</span>
                     <span style={{ color: GREEN }}>{meal.p}g P</span>
@@ -1035,8 +1035,8 @@ export default function NutritionFormulaPage() {
               </div>
             ))}
             <div className="px-4 py-2.5 border-t flex items-center justify-between" style={{ borderColor: '#2a2a2a', background: '#0d0d0d' }}>
-              <span className="text-sm font-bold text-text">Tổng ngày</span>
-              <div className="flex gap-3 text-sm font-mono">
+              <span className="text-base font-bold text-text">Tổng ngày</span>
+              <div className="flex gap-3 text-base font-mono">
                 <span style={{ color: LIME }}>{s.targetKcal.toLocaleString()} kcal</span>
                 <span style={{ color: GREEN }}>{s.proteinG}g P</span>
                 <span style={{ color: '#06b6d4' }}>{s.carbG}g C</span>
@@ -1051,7 +1051,7 @@ export default function NutritionFormulaPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 md:px-6 py-10">
-      <Link to="/pillar/b" className="inline-flex items-center gap-2 text-sm text-muted hover:text-lime-400 transition-colors mb-8 group">
+      <Link to="/pillar/b" className="inline-flex items-center gap-2 text-base text-muted hover:text-lime-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
         <span>Dinh Dưỡng</span>
       </Link>
@@ -1067,7 +1067,7 @@ export default function NutritionFormulaPage() {
             <h1 className="text-5xl md:text-6xl font-bold leading-tight nf-fade-in-up">
               <span className="nf-shimmer">Công Thức Tính Meal Plan</span>
             </h1>
-            <div className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: LIME, background: 'rgba(132,204,22,0.1)', borderColor: 'rgba(132,204,22,0.2)' }}>
+            <div className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: LIME, background: 'rgba(132,204,22,0.1)', borderColor: 'rgba(132,204,22,0.2)' }}>
               10 Bước · Mifflin-St Jeor · Calorie Cycling
             </div>
             <p className="text-muted text-lg leading-relaxed max-w-2xl">
@@ -1084,7 +1084,7 @@ export default function NutritionFormulaPage() {
             <img src="https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?w=1000&q=75&auto=format&fit=crop" alt="Nutrition formula" className="w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 50%, transparent 100%)' }} />
             <div className="absolute bottom-4 left-6">
-              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: LIME, background: 'rgba(10,10,10,0.6)', borderColor: 'rgba(132,204,22,0.2)' }}>
+              <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: LIME, background: 'rgba(10,10,10,0.6)', borderColor: 'rgba(132,204,22,0.2)' }}>
                 Mifflin-St Jeor Formula System
               </span>
             </div>
@@ -1134,7 +1134,7 @@ export default function NutritionFormulaPage() {
             <div className="rounded-2xl border p-3 h-fit" style={{ background: '#0d0d0d', borderColor: '#1e1e1e' }}>
               {FORMULA_STEPS.map((step, i) => (
                 <button key={i} onClick={() => setActiveStep(i)}
-                  className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-left transition-all mb-0.5 text-sm"
+                  className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-left transition-all mb-0.5 text-base"
                   style={{ background: activeStep === i ? `${GREEN}15` : 'transparent', color: activeStep === i ? GREEN : i < activeStep ? '#555' : '#666', borderLeft: activeStep === i ? `2px solid ${GREEN}` : '2px solid transparent' }}>
                   <span className="text-lg">{step.emoji}</span>
                   <span className="font-medium">{step.label}</span>
@@ -1145,11 +1145,11 @@ export default function NutritionFormulaPage() {
             {/* Step content */}
             <div className="rounded-2xl border p-5" style={{ background: '#0a0a0a', borderColor: '#1e1e1e' }}>
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style={{ background: `${GREEN}20`, color: GREEN }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-base font-bold" style={{ background: `${GREEN}20`, color: GREEN }}>
                   {FORMULA_STEPS[activeStep].n}
                 </div>
                 <div>
-                  <div className="font-bold text-text text-base">{FORMULA_STEPS[activeStep].emoji} {FORMULA_STEPS[activeStep].label}</div>
+                  <div className="font-bold text-text text-lg">{FORMULA_STEPS[activeStep].emoji} {FORMULA_STEPS[activeStep].label}</div>
                   <div className="text-[10px] text-muted">Bước {FORMULA_STEPS[activeStep].n} / {FORMULA_STEPS.length}</div>
                 </div>
               </div>
@@ -1157,14 +1157,14 @@ export default function NutritionFormulaPage() {
               <div className="flex gap-2 mt-5 pt-4 border-t" style={{ borderColor: '#1a1a1a' }}>
                 {activeStep > 0 && (
                   <button onClick={() => setActiveStep(p => p - 1)}
-                    className="flex-1 py-2 rounded-xl text-sm font-semibold border transition-all"
+                    className="flex-1 py-2 rounded-xl text-base font-semibold border transition-all"
                     style={{ borderColor: '#2a2a2a', color: '#666' }}>
                     ← Trước
                   </button>
                 )}
                 {activeStep < FORMULA_STEPS.length - 1 && (
                   <button onClick={() => setActiveStep(p => p + 1)}
-                    className="flex-1 py-2 rounded-xl text-sm font-bold transition-all active:scale-95"
+                    className="flex-1 py-2 rounded-xl text-base font-bold transition-all active:scale-95"
                     style={{ background: `${GREEN}18`, borderColor: GREEN, border: `1px solid ${GREEN}`, color: GREEN }}>
                     Tiếp theo →
                   </button>
@@ -1192,11 +1192,11 @@ export default function NutritionFormulaPage() {
               <FormulaCard label="Công thức" formula="Nước(ml) = Cân nặng × 35ml"
                 result={`= ${s.w}kg × 35 = ${s.waterMl}ml = ${(s.waterMl/1000).toFixed(1)}L`} color="#06b6d4" />
               <div className="mt-3 space-y-2">
-                <div className="flex items-center gap-2 text-sm text-muted">
+                <div className="flex items-center gap-2 text-base text-muted">
                   <span style={{ color: '#06b6d4' }}>+</span>
                   <span>Ngày tập: thêm +500–1000ml</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted">
+                <div className="flex items-center gap-2 text-base text-muted">
                   <span style={{ color: '#06b6d4' }}>+</span>
                   <span>Trong tập: 400–800ml/giờ</span>
                 </div>
@@ -1210,11 +1210,11 @@ export default function NutritionFormulaPage() {
               <FormulaCard label="Công thức" formula="Chất xơ(g) = Kcal × 14g/1000kcal"
                 result={`= ${s.targetKcal} × 0.014 = ${s.fiberG}g/ngày`} color={GREEN} />
               <div className="mt-3 space-y-2">
-                <div className="flex items-center gap-2 text-sm text-muted">
+                <div className="flex items-center gap-2 text-base text-muted">
                   <span style={{ color: GREEN }}>→</span>
                   <span>Thực tế: 2–4 nắm tay rau/ngày</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted">
+                <div className="flex items-center gap-2 text-base text-muted">
                   <span style={{ color: GREEN }}>→</span>
                   <span>Đa dạng rau xanh + rau củ màu sắc</span>
                 </div>
@@ -1232,7 +1232,7 @@ export default function NutritionFormulaPage() {
         <div className="mb-12">
           <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: LIME }}>Ví dụ thực tế</div>
           <h2 className="text-3xl font-bold text-text mb-2">Case Study — {CASE_STUDY.name}</h2>
-          <p className="text-muted text-base mb-6">{CASE_STUDY.activityLabel} · {CASE_STUDY.note}</p>
+          <p className="text-muted text-lg mb-6">{CASE_STUDY.activityLabel} · {CASE_STUDY.note}</p>
 
           <div className="grid md:grid-cols-[1fr_2fr] gap-4 mb-6">
             <div className="rounded-2xl p-4 border space-y-2" style={{ background: '#0d0d0d', borderColor: '#1e1e1e' }}>
@@ -1245,7 +1245,7 @@ export default function NutritionFormulaPage() {
                 { label: 'Vận động', val: CASE_STUDY.activityLabel },
                 { label: 'Mục tiêu', val: 'Sức bền (đạp xe/bơi/gym)' },
               ].map((row, i) => (
-                <div key={i} className="flex justify-between text-sm py-1 border-b" style={{ borderColor: '#1a1a1a' }}>
+                <div key={i} className="flex justify-between text-base py-1 border-b" style={{ borderColor: '#1a1a1a' }}>
                   <span className="text-muted">{row.label}</span>
                   <span className="font-semibold text-text">{row.val}</span>
                 </div>
@@ -1268,7 +1268,7 @@ export default function NutritionFormulaPage() {
                 { step: 'Carb', formula: '(3010−492−756) ÷ 4', calc: '1762 ÷ 4', result: '441g / 1764 kcal', color: '#06b6d4' },
                 { step: 'Nước', formula: '77 × 35ml', calc: '77 × 35', result: '2,695ml / 2.7L', color: '#06b6d4' },
               ].map((row, i) => (
-                <div key={i} className="grid grid-cols-4 px-3 py-2 text-sm border-t" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
+                <div key={i} className="grid grid-cols-4 px-3 py-2 text-base border-t" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
                   <span className="font-semibold" style={{ color: row.color }}>{row.step}</span>
                   <span className="font-mono text-[10px] text-muted">{row.formula}</span>
                   <span className="font-mono text-[10px] text-muted hidden sm:block">{row.calc}</span>
@@ -1293,7 +1293,7 @@ export default function NutritionFormulaPage() {
               { label: '🚶 Tập nhẹ', kcal: Math.round(3010 * 0.95), protein: 123, carb: Math.round(441 * 0.85), fat: 84, color: '#f59e0b' },
               { label: '😴 Ngày nghỉ', kcal: Math.round(3010 * 0.90), protein: 123, carb: Math.round(441 * 0.7), fat: 84, color: '#a855f7' },
             ].map((row, i) => (
-              <div key={i} className="grid grid-cols-5 px-3 py-2.5 text-sm border-t" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
+              <div key={i} className="grid grid-cols-5 px-3 py-2.5 text-base border-t" style={{ borderColor: '#1a1a1a', background: i % 2 === 0 ? 'transparent' : '#0d0d0d' }}>
                 <span className="font-semibold" style={{ color: row.color }}>{row.label}</span>
                 <span className="font-mono font-bold" style={{ color: row.color }}>{row.kcal.toLocaleString()}</span>
                 <span className="font-mono text-muted">{row.protein}g</span>
@@ -1338,8 +1338,8 @@ export default function NutritionFormulaPage() {
                 <div className="flex items-start gap-3">
                   <span className="text-3xl mt-0.5">{card.icon}</span>
                   <div>
-                    <div className="font-bold text-base mb-1" style={{ color: card.color }}>{card.title}</div>
-                    <div className="text-sm text-muted leading-relaxed">{card.action}</div>
+                    <div className="font-bold text-lg mb-1" style={{ color: card.color }}>{card.title}</div>
+                    <div className="text-base text-muted leading-relaxed">{card.action}</div>
                   </div>
                 </div>
               </div>
@@ -1357,7 +1357,7 @@ export default function NutritionFormulaPage() {
             </div>
             <div>
               <div className="font-bold text-text mb-2">Lưu ý quan trọng</div>
-              <div className="text-sm text-muted leading-relaxed space-y-1">
+              <div className="text-base text-muted leading-relaxed space-y-1">
                 <div>Các công thức trên cung cấp điểm khởi đầu khoa học, không phải con số tuyệt đối. Cơ thể mỗi người phản ứng khác nhau — hãy theo dõi ít nhất 2 tuần trước khi điều chỉnh.</div>
                 <div>Người có bệnh nền (tiểu đường, bệnh thận, tim mạch) hoặc có mục tiêu đặc biệt nên tham khảo bác sĩ hoặc chuyên gia dinh dưỡng được cấp phép.</div>
                 <div>Không cắt calo dưới 1,200 kcal/ngày (nữ) hoặc 1,500 kcal/ngày (nam) mà không có sự giám sát y tế.</div>

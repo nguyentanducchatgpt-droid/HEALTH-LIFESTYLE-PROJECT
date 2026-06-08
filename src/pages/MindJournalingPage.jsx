@@ -79,9 +79,9 @@ function JournalWriter({ template }) {
     <div className="rounded-2xl border p-5 space-y-4" style={{ borderColor: `${template.color}33`, background: `${template.color}08` }}>
       {template.lines.map((line, i) => (
         <div key={i}>
-          <p className="text-sm font-semibold mb-1.5" style={{ color: template.color }}>{line.q}</p>
+          <p className="text-base font-semibold mb-1.5" style={{ color: template.color }}>{line.q}</p>
           <textarea
-            className="w-full rounded-xl border bg-bg text-text text-base p-3 resize-none focus:outline-none focus:ring-2 min-h-[56px]"
+            className="w-full rounded-xl border bg-bg text-text text-lg p-3 resize-none focus:outline-none focus:ring-2 min-h-[56px]"
             style={{ borderColor: `${template.color}30`, '--tw-ring-color': `${template.color}60` }}
             placeholder={line.ph}
             value={answers[i] || ''}
@@ -92,7 +92,7 @@ function JournalWriter({ template }) {
       ))}
       <button
         onClick={handleSave}
-        className="px-5 py-2 rounded-full text-base font-bold transition-all"
+        className="px-5 py-2 rounded-full text-lg font-bold transition-all"
         style={{ background: template.color, color: '#fff', opacity: saved ? 0.7 : 1 }}
       >
         {saved ? '✓ Đã lưu!' : 'Lưu nhật ký'}
@@ -130,7 +130,7 @@ export default function MindJournalingPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
         <span>←</span><span>Tâm Trí An Nhiên</span>
       </Link>
 
@@ -139,7 +139,7 @@ export default function MindJournalingPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>📓</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Journaling &amp; Nhật Ký Tâm Trí</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D4 · Viết Để Giải Phóng</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D4 · Viết Để Giải Phóng</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Viết nhật ký là công cụ đơn giản nhất để giải phóng tâm trí — không phán xét, không cần hoàn hảo, chỉ cần viết ra những gì đang diễn ra bên trong.</p>
         </div>
       </div>
@@ -149,7 +149,7 @@ export default function MindJournalingPage() {
           <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop" alt="Journaling" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>5 phút · Mỗi ngày</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>5 phút · Mỗi ngày</span>
           </div>
         </div>
       </div>
@@ -158,7 +158,7 @@ export default function MindJournalingPage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Nên Viết Nhật Ký?</h2>
-        <p className="text-muted text-base mb-6">3 lợi ích được nghiên cứu khoa học xác nhận</p>
+        <p className="text-muted text-lg mb-6">3 lợi ích được nghiên cứu khoa học xác nhận</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             { icon: '🧠', t: 'Giải phóng não bộ', d: 'Viết ra giúp não không còn phải "chạy vòng lặp" lo âu liên tục, giải phóng bộ nhớ làm việc.' },
@@ -168,7 +168,7 @@ export default function MindJournalingPage() {
             <div key={c.t} className="rounded-2xl border border-border bg-surface p-5 hover:border-pink-500/30 transition-colors">
               <div className="text-4xl mb-3">{c.icon}</div>
               <div className="font-bold text-text mb-2">{c.t}</div>
-              <p className="text-muted text-base leading-relaxed">{c.d}</p>
+              <p className="text-muted text-lg leading-relaxed">{c.d}</p>
             </div>
           ))}
         </div>
@@ -176,13 +176,13 @@ export default function MindJournalingPage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>5 Mẫu Nhật Ký Thực Hành</h2>
-        <p className="text-muted text-base mb-6">Chọn mẫu phù hợp với tâm trạng hôm nay</p>
+        <p className="text-muted text-lg mb-6">Chọn mẫu phù hợp với tâm trạng hôm nay</p>
         <div className="flex flex-wrap gap-2 mb-6">
           {TEMPLATES.map(t => (
             <button
               key={t.id}
               onClick={() => setActive(t.id)}
-              className="px-4 py-2 rounded-full text-base font-semibold border transition-all"
+              className="px-4 py-2 rounded-full text-lg font-semibold border transition-all"
               style={active === t.id
                 ? { background: t.color, color: '#fff', borderColor: t.color }
                 : { background: 'transparent', color: '#888', borderColor: '#333' }}
@@ -196,12 +196,12 @@ export default function MindJournalingPage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẹo Để Duy Trì Thói Quen</h2>
-        <p className="text-muted text-base mb-6">Biến việc viết nhật ký thành nghi thức hằng ngày</p>
+        <p className="text-muted text-lg mb-6">Biến việc viết nhật ký thành nghi thức hằng ngày</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {TIPS.map(t => (
             <div key={t.tip} className="flex items-start gap-3 rounded-xl border border-border bg-surface p-4">
               <span className="text-2xl shrink-0">{t.icon}</span>
-              <p className="text-base text-muted leading-relaxed">{t.tip}</p>
+              <p className="text-lg text-muted leading-relaxed">{t.tip}</p>
             </div>
           ))}
         </div>
@@ -217,17 +217,17 @@ export default function MindJournalingPage() {
             { w: 'Tuần 4', t: 'Nhìn Lại & Điều Chỉnh', d: 'Đọc lại 3 tuần. Nhận ra pattern. Chọn mẫu phù hợp nhất.' },
           ].map((r, i) => (
             <div key={i} className="flex gap-4 rounded-2xl border border-border bg-surface p-4">
-              <div className="shrink-0 w-20 text-sm font-bold uppercase tracking-widest pt-0.5" style={{ color: COLOR }}>{r.w}</div>
+              <div className="shrink-0 w-20 text-base font-bold uppercase tracking-widest pt-0.5" style={{ color: COLOR }}>{r.w}</div>
               <div>
                 <div className="font-semibold text-text mb-1">{r.t}</div>
-                <p className="text-muted text-base">{r.d}</p>
+                <p className="text-muted text-lg">{r.d}</p>
               </div>
             </div>
           ))}
         </div>
       </RevealBlock>
 
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
     </div>

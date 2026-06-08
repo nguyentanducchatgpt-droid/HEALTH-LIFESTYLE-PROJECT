@@ -20,7 +20,7 @@ export default function PillarPage({ pillarKey }) {
   if (!pillar || typeof pillar !== 'object') {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="flex items-center gap-3 text-muted text-base">
+        <div className="flex items-center gap-3 text-muted text-lg">
           <span className="animate-spin">⟳</span>
           {tCommon('loading')}
         </div>
@@ -34,7 +34,7 @@ export default function PillarPage({ pillarKey }) {
       <div className="mb-10">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-muted hover:text-accent text-base transition-colors duration-200 group"
+          className="inline-flex items-center gap-2 text-muted hover:text-accent text-lg transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           {tCommon('back')}
@@ -53,7 +53,7 @@ export default function PillarPage({ pillarKey }) {
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">
             {pillar.title}
           </h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest text-accent mt-3 mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
+          <span className="inline-block text-base font-bold uppercase tracking-widest text-accent mt-3 mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
             {pillar.subtitle}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">{pillar.description}</p>
@@ -80,7 +80,7 @@ export default function PillarPage({ pillarKey }) {
                 <div className="p-6">
                   {/* Section header */}
                   <div className="flex items-center gap-3 mb-5">
-                    <span className={`w-7 h-7 rounded-full text-sm font-bold flex items-center justify-center border shrink-0 ${accentClass}`}>
+                    <span className={`w-7 h-7 rounded-full text-base font-bold flex items-center justify-center border shrink-0 ${accentClass}`}>
                       {i + 1}
                     </span>
                     <h2 className="font-bold text-text text-lg">{section.title}</h2>
@@ -91,7 +91,7 @@ export default function PillarPage({ pillarKey }) {
                     {Array.isArray(section.items) && section.items.map((item, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-3 text-base text-muted group/item hover:text-text transition-colors duration-150"
+                        className="flex items-start gap-3 text-lg text-muted group/item hover:text-text transition-colors duration-150"
                       >
                         <span className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-accent group-hover/item:text-bg transition-all duration-200">
                           ✓

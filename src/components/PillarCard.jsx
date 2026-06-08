@@ -47,12 +47,12 @@ export default function PillarCard({ pillarKey, delay = 0 }) {
         </span>
 
         {/* Description */}
-        <p className="text-base text-muted leading-relaxed line-clamp-2">{pillar.description}</p>
+        <p className="text-lg text-muted leading-relaxed line-clamp-2">{pillar.description}</p>
 
         {/* Learn more */}
-        <div className={`mt-5 flex items-center gap-1.5 text-sm font-medium text-muted ${s.text} transition-all duration-200`}>
+        <div className={`mt-5 flex items-center gap-1.5 text-base font-medium text-muted ${s.text} transition-all duration-200`}>
           <span>{tCommon('common.learn_more')}</span>
-          <span className="group-hover:translate-x-1.5 transition-transform duration-200 text-base">→</span>
+          <span className="group-hover:translate-x-1.5 transition-transform duration-200 text-lg">→</span>
         </div>
       </div>
     </Link>

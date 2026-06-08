@@ -96,7 +96,7 @@ function MovementVideoPlayer({ videoKey, s }) {
   if (error) {
     return (
       <div className={`rounded-2xl border ${s.border} bg-surface flex items-center justify-center`} style={{ aspectRatio: '9/16' }}>
-        <p className="text-sm text-muted text-center px-4">Video không tải được.<br />Kiểm tra kết nối.</p>
+        <p className="text-base text-muted text-center px-4">Video không tải được.<br />Kiểm tra kết nối.</p>
       </div>
     );
   }
@@ -123,7 +123,7 @@ function MovementVideoPlayer({ videoKey, s }) {
               <path d="M8 5v14l11-7z"/>
             </svg>
           </div>
-          <span className={`mt-3 text-sm font-semibold ${s.text}`}
+          <span className={`mt-3 text-base font-semibold ${s.text}`}
             style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>Nhấn để xem</span>
         </div>
       )}
@@ -165,7 +165,7 @@ export default function PillarAMovements() {
         <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-green-500/6 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 px-4 md:px-8 pt-10 pb-8 animate-fade-in-up">
-          <nav className="flex items-center gap-1.5 text-sm text-muted mb-5 flex-wrap">
+          <nav className="flex items-center gap-1.5 text-base text-muted mb-5 flex-wrap">
             <Link to="/" className="hover:text-accent transition-colors">Trang chủ</Link>
             <span className="text-border/60">/</span>
             <Link to="/pillar/a" className="hover:text-accent transition-colors">Vận Động & Tập Luyện</Link>
@@ -173,7 +173,7 @@ export default function PillarAMovements() {
             <span className="text-green-400 font-medium">Vận Động & Khởi Động</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 bg-green-500/8 border border-green-500/20 text-green-400 text-sm font-bold px-4 py-1.5 rounded-full mb-5">
+          <div className="inline-flex items-center gap-2 bg-green-500/8 border border-green-500/20 text-green-400 text-base font-bold px-4 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shrink-0" />
             1 / 4 · Vận Động & Khởi Động
           </div>
@@ -182,7 +182,7 @@ export default function PillarAMovements() {
             6 Mẫu Vận Động Nền Tảng &amp;<br />
             <span className="text-green-400">Khởi Động & Giãn Cơ Sau Tập</span>
           </h1>
-          <p className="text-muted text-base leading-relaxed max-w-xl">
+          <p className="text-muted text-lg leading-relaxed max-w-xl">
             Học 6 chuyển động nền tảng với video minh họa chi tiết, khởi động chuẩn trước khi tập
             và giãn cơ đúng cách để tối ưu phục hồi.
           </p>
@@ -195,7 +195,7 @@ export default function PillarAMovements() {
               { n: '15', label: 'Phút khởi động + giãn cơ' },
             ].map(s => (
               <div key={s.label} className="flex items-center gap-2 bg-surface/70 backdrop-blur-sm border border-border/60 px-3 py-2 rounded-xl">
-                <span className="text-green-400 font-extrabold text-base leading-none">{s.n}</span>
+                <span className="text-green-400 font-extrabold text-lg leading-none">{s.n}</span>
                 <span className="text-muted text-[10px] leading-none">{s.label}</span>
               </div>
             ))}
@@ -207,11 +207,11 @@ export default function PillarAMovements() {
       {Array.isArray(movementsDetail) && (
         <section className="mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-base font-black flex items-center justify-center shrink-0">⚡</span>
+            <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-lg font-black flex items-center justify-center shrink-0">⚡</span>
             <h2 className="text-3xl font-black text-text">6 Mẫu Vận Động Nền Tảng</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
           </div>
-          <p className="text-muted text-base mb-6">Chọn bài tập để xem video minh họa và hướng dẫn chi tiết</p>
+          <p className="text-muted text-lg mb-6">Chọn bài tập để xem video minh họa và hướng dẫn chi tiết</p>
 
           {/* Tab bar */}
           <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mb-6">
@@ -224,7 +224,7 @@ export default function PillarAMovements() {
                     key={m.id}
                     type="button"
                     onClick={() => setActiveMove(i)}
-                    className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-base font-bold whitespace-nowrap transition-all duration-200 focus:outline-none ${
+                    className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-lg font-bold whitespace-nowrap transition-all duration-200 focus:outline-none ${
                       isActive
                         ? `${s.bg} ${s.text} border ${s.border}`
                         : 'text-muted border border-transparent hover:border-border hover:text-text hover:bg-white/4'
@@ -260,7 +260,7 @@ export default function PillarAMovements() {
                       <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-4">
                         <div className="absolute top-0 left-0 w-0.5 h-full" style={{ background: `linear-gradient(180deg, ${s.glow}, transparent)` }} />
                         <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1.5">🎯 Mục tiêu</p>
-                        <p className="text-sm text-text leading-relaxed">{currentMove.goal}</p>
+                        <p className="text-base text-text leading-relaxed">{currentMove.goal}</p>
                       </div>
                     </div>
 
@@ -268,12 +268,12 @@ export default function PillarAMovements() {
                       <div className={`${s.bg} border ${s.border} rounded-xl p-4`}>
                         <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">Bài cơ bản</p>
                         <p className={`font-bold ${s.text} mb-2`}>{currentMove.basic}</p>
-                        <p className="text-sm text-muted leading-relaxed">{currentMove.basic_how}</p>
+                        <p className="text-base text-muted leading-relaxed">{currentMove.basic_how}</p>
                       </div>
                       <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-4">
                         <div className="absolute top-0 left-0 w-0.5 h-full" style={{ background: `linear-gradient(180deg, ${s.glow}, transparent)` }} />
                         <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">💡 Cue kỹ thuật</p>
-                        <p className={`text-base font-bold ${s.text} leading-relaxed`}>{currentMove.cue}</p>
+                        <p className={`text-lg font-bold ${s.text} leading-relaxed`}>{currentMove.cue}</p>
                       </div>
                       <div>
                         <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-3">Cấp độ tiến bộ</p>
@@ -281,14 +281,14 @@ export default function PillarAMovements() {
                           {Array.isArray(currentMove.levels) && currentMove.levels.map((lvl, li) => (
                             <div key={li} className="flex items-center gap-3 bg-bg border border-border rounded-xl px-4 py-3">
                               <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${LEVEL_COLORS[li % 3]}`}>{lvl.label}</span>
-                              <span className="text-base text-text">{lvl.exercise}</span>
+                              <span className="text-lg text-text">{lvl.exercise}</span>
                             </div>
                           ))}
                         </div>
                       </div>
                       <div className="bg-yellow-500/6 border border-yellow-500/20 rounded-xl p-4">
                         <p className="text-[10px] font-bold text-yellow-400/80 uppercase tracking-wider mb-2">⚠ Lỗi thường gặp</p>
-                        <p className="text-sm text-yellow-300/70 leading-relaxed">{currentMove.errors}</p>
+                        <p className="text-base text-yellow-300/70 leading-relaxed">{currentMove.errors}</p>
                       </div>
                     </div>
                   </div>
@@ -302,7 +302,7 @@ export default function PillarAMovements() {
       {/* ── Warmup & cooldown tabs ──────────────────────────────────────────────── */}
       <section className="mb-16">
         <div className="flex items-center gap-4 mb-7">
-          <span className="w-8 h-8 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-base font-black flex items-center justify-center shrink-0">🔥</span>
+          <span className="w-8 h-8 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-lg font-black flex items-center justify-center shrink-0">🔥</span>
           <h2 className="text-3xl font-black text-text">Khởi Động & Giãn Cơ Sau Tập</h2>
           <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
         </div>
@@ -317,7 +317,7 @@ export default function PillarAMovements() {
                 key={tab.key}
                 type="button"
                 onClick={() => setActiveWarmup(tab.key)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-base font-bold transition-all duration-250 focus:outline-none ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-lg font-bold transition-all duration-250 focus:outline-none ${
                   isActive
                     ? `${s.bg} ${s.text} border ${s.border} shadow-sm`
                     : 'text-muted hover:text-text'
@@ -364,7 +364,7 @@ export default function PillarAMovements() {
                     <h3 className={`font-black text-2xl ${s.text}`}>{tab.label}</h3>
                     <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border ${s.bg} ${s.border} ${s.text}`}>{tab.duration}</span>
                   </div>
-                  <p className="text-white/60 text-sm leading-relaxed max-w-md">{tab.desc}</p>
+                  <p className="text-white/60 text-base leading-relaxed max-w-md">{tab.desc}</p>
                 </div>
               </div>
 
@@ -389,7 +389,7 @@ export default function PillarAMovements() {
                         {i + 1}
                       </span>
                       <div className="flex-1 min-w-0 py-3 pr-2">
-                        <p className="text-sm font-semibold text-text">{ex.exercise}</p>
+                        <p className="text-base font-semibold text-text">{ex.exercise}</p>
                         <p className="text-[10px] text-muted mt-0.5 leading-snug line-clamp-2">{ex.how}</p>
                       </div>
                       <span className={`shrink-0 text-[10px] font-bold px-3 py-1.5 rounded-full border mr-3 whitespace-nowrap ${s.bg} ${s.border} ${s.text}`}>
@@ -402,7 +402,7 @@ export default function PillarAMovements() {
                 <div className="relative overflow-hidden rounded-xl border border-white/8 bg-white/3 p-4 mt-4">
                   <div className="absolute top-0 left-0 w-0.5 h-full" style={{ background: `linear-gradient(180deg, ${s.glow}, transparent)` }} />
                   <p className={`text-[10px] font-bold ${s.text} uppercase tracking-wider mb-2`}>💡 Ghi nhớ quan trọng</p>
-                  <p className="text-sm text-text/80 leading-relaxed">{tab.tip}</p>
+                  <p className="text-base text-text/80 leading-relaxed">{tab.tip}</p>
                 </div>
               </div>
             </div>
@@ -415,14 +415,14 @@ export default function PillarAMovements() {
         <div className="w-32 shrink-0" />
         <Link
           to="/pillar/a"
-          className="flex items-center gap-2 text-sm bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-green-500/30 transition-all"
+          className="flex items-center gap-2 text-base bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-green-500/30 transition-all"
         >
           <span>↩</span>
           <span>Về tổng quan</span>
         </Link>
         <Link
           to="/pillar/a/framework"
-          className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group"
+          className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
           <span>Khung Ngày & Thời Gian</span>
           <span className="group-hover:translate-x-0.5 transition-transform">→</span>

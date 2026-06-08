@@ -271,7 +271,7 @@ export default function NutritionTemplatePage() {
       <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
 
         {/* breadcrumb */}
-        <Link to="/pillar/b" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-rose-400 transition-colors mb-8 group">
+        <Link to="/pillar/b" className="inline-flex items-center gap-1.5 text-base text-muted hover:text-rose-400 transition-colors mb-8 group">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span> Nutrition &amp; Meal Plans
         </Link>
 
@@ -281,7 +281,7 @@ export default function NutritionTemplatePage() {
           <div className="w-20 h-20 rounded-3xl text-5xl flex items-center justify-center bg-surface border border-rose-500/20 shrink-0 tm-float shadow-lg shadow-rose-500/10">📋</div>
           <div>
             <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight tm-fade-up">Template Meal Plan</h1>
-            <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: C, background: 'rgba(244,63,94,.08)', borderColor: 'rgba(244,63,94,.2)' }}>Chuẩn Cho Dự Án · Cá Nhân Hóa</span>
+            <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: C, background: 'rgba(244,63,94,.08)', borderColor: 'rgba(244,63,94,.2)' }}>Chuẩn Cho Dự Án · Cá Nhân Hóa</span>
             <p className="text-muted text-lg leading-relaxed max-w-2xl">Bộ template meal plan hoàn chỉnh — từ tính BMR/TDEE, chia macro, cấu trúc bữa ăn đến thư viện món, điều chỉnh theo lịch tập và báo cáo cuối tuần. Một bản đồ dinh dưỡng đủ khoa học và đủ linh hoạt để duy trì lâu dài.</p>
           </div>
         </div>
@@ -293,7 +293,7 @@ export default function NutritionTemplatePage() {
               <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80&auto=format&fit=crop" alt="Meal plan template" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
               <div className="absolute bottom-4 left-6">
-                <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: C, background: 'rgba(0,0,0,.6)', borderColor: 'rgba(244,63,94,.2)' }}>Template · Chuẩn Hóa · Linh Hoạt</span>
+                <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: C, background: 'rgba(0,0,0,.6)', borderColor: 'rgba(244,63,94,.2)' }}>Template · Chuẩn Hóa · Linh Hoạt</span>
               </div>
             </div>
           </div>
@@ -306,7 +306,7 @@ export default function NutritionTemplatePage() {
           <RevealBlock className="mb-10">
             <div className="rounded-2xl border p-5 md:p-6" style={{ borderColor: 'rgba(244,63,94,.2)', background: 'rgba(244,63,94,.04)' }}>
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-sm font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border" style={{ color: C, borderColor: 'rgba(244,63,94,.3)' }}>✦ Dữ Liệu Cá Nhân B0</span>
+                <span className="text-base font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border" style={{ color: C, borderColor: 'rgba(244,63,94,.3)' }}>✦ Dữ Liệu Cá Nhân B0</span>
                 <span className="text-[10px] text-muted">Từ thông số đã nhập</span>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
@@ -332,7 +332,7 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 1: Interactive Calculator ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>1. Máy Tính Dinh Dưỡng Cá Nhân</h2>
-          <p className="text-muted text-base mb-6 leading-relaxed">Nhập thông số của bạn để tính BMR, TDEE và macro chuẩn theo mục tiêu. Công thức Mifflin-St Jeor — tiêu chuẩn quốc tế.</p>
+          <p className="text-muted text-lg mb-6 leading-relaxed">Nhập thông số của bạn để tính BMR, TDEE và macro chuẩn theo mục tiêu. Công thức Mifflin-St Jeor — tiêu chuẩn quốc tế.</p>
 
           <div className="rounded-2xl border border-border bg-surface p-5 md:p-6 space-y-5">
             {/* inputs row 1 */}
@@ -349,7 +349,7 @@ export default function NutritionTemplatePage() {
                       onChange={e => setCalc(p => ({ ...p, [f.key]: +e.target.value }))}
                       className="flex-1 h-1.5 rounded-full appearance-none cursor-pointer"
                       style={{ accentColor: C }} />
-                    <span className="text-base font-bold min-w-[36px] text-right" style={{ color: C }}>{calc[f.key]}</span>
+                    <span className="text-lg font-bold min-w-[36px] text-right" style={{ color: C }}>{calc[f.key]}</span>
                   </div>
                 </div>
               ))}
@@ -358,7 +358,7 @@ export default function NutritionTemplatePage() {
                 <div className="flex gap-2">
                   {['male', 'female'].map(s => (
                     <button key={s} onClick={() => setCalc(p => ({ ...p, sex: s }))}
-                      className="flex-1 text-sm py-1.5 rounded-lg border font-semibold transition-all"
+                      className="flex-1 text-base py-1.5 rounded-lg border font-semibold transition-all"
                       style={{ borderColor: calc.sex === s ? C : 'transparent', background: calc.sex === s ? `rgba(244,63,94,.15)` : 'rgba(255,255,255,.05)', color: calc.sex === s ? C : '#6b7280' }}>
                       {s === 'male' ? 'Nam' : 'Nữ'}
                     </button>
@@ -372,14 +372,14 @@ export default function NutritionTemplatePage() {
               <div>
                 <label className="text-[10px] text-muted uppercase tracking-widest block mb-1.5">Mức vận động</label>
                 <select value={calc.activity} onChange={e => setCalc(p => ({ ...p, activity: e.target.value }))}
-                  className="w-full text-sm rounded-lg border border-border bg-bg px-3 py-2 text-text focus:outline-none focus:border-rose-500">
+                  className="w-full text-base rounded-lg border border-border bg-bg px-3 py-2 text-text focus:outline-none focus:border-rose-500">
                   {Object.entries(ACT_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
                 </select>
               </div>
               <div>
                 <label className="text-[10px] text-muted uppercase tracking-widest block mb-1.5">Mục tiêu</label>
                 <select value={calc.goal} onChange={e => setCalc(p => ({ ...p, goal: e.target.value }))}
-                  className="w-full text-sm rounded-lg border border-border bg-bg px-3 py-2 text-text focus:outline-none focus:border-rose-500">
+                  className="w-full text-base rounded-lg border border-border bg-bg px-3 py-2 text-text focus:outline-none focus:border-rose-500">
                   {Object.entries(GOAL_LABEL).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
                 </select>
               </div>
@@ -425,7 +425,7 @@ export default function NutritionTemplatePage() {
                   { label: 'Fat', val: calcNut.fat, unit: 'g', pct: fPct, color: '#facc15', kcal: calcNut.fat * 9 },
                 ].map(m => (
                   <div key={m.label}>
-                    <div className="flex justify-between text-sm mb-1">
+                    <div className="flex justify-between text-base mb-1">
                       <span className="font-semibold" style={{ color: m.color }}>{m.label}</span>
                       <span className="text-muted">{m.val}g · {m.kcal}kcal · {m.pct}%</span>
                     </div>
@@ -443,12 +443,12 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 2: Meal Distribution ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>2. Chia Bữa Ăn Trong Ngày</h2>
-          <p className="text-muted text-base mb-6">Chọn số bữa phù hợp lối sống — mỗi mô hình có ưu điểm riêng. Không có mô hình nào tốt hơn tuyệt đối, quan trọng là bạn duy trì được.</p>
+          <p className="text-muted text-lg mb-6">Chọn số bữa phù hợp lối sống — mỗi mô hình có ưu điểm riêng. Không có mô hình nào tốt hơn tuyệt đối, quan trọng là bạn duy trì được.</p>
 
           <div className="flex gap-2 mb-5">
             {[3, 4, 5].map(n => (
               <button key={n} onClick={() => setMealCount(n)}
-                className="flex-1 py-2.5 rounded-xl border text-base font-bold transition-all"
+                className="flex-1 py-2.5 rounded-xl border text-lg font-bold transition-all"
                 style={{ borderColor: mealCount === n ? C : 'transparent', background: mealCount === n ? `rgba(244,63,94,.12)` : 'rgba(255,255,255,.04)', color: mealCount === n ? C : '#9ca3af' }}>
                 {n} bữa/ngày
               </button>
@@ -457,13 +457,13 @@ export default function NutritionTemplatePage() {
 
           {mealCount === 3 && (
             <div className="rounded-2xl border border-border bg-surface p-5">
-              <p className="text-sm text-muted mb-4">Phù hợp: người bận rộn, mới bắt đầu, không thích ăn vặt.</p>
+              <p className="text-base text-muted mb-4">Phù hợp: người bận rộn, mới bắt đầu, không thích ăn vặt.</p>
               <div className="space-y-2">
                 {[{ meal: 'Sáng', pct: 28, kcal: Math.round(calcNut.kcal * 0.28), icon: '🌅', color: '#fb923c' }, { meal: 'Trưa', pct: 38, kcal: Math.round(calcNut.kcal * 0.38), icon: '☀️', color: '#f43f5e' }, { meal: 'Tối', pct: 33, kcal: Math.round(calcNut.kcal * 0.33), icon: '🌙', color: '#a855f7' }].map(m => (
                   <div key={m.meal} className="flex items-center gap-3">
                     <span className="text-xl w-8 text-center shrink-0">{m.icon}</span>
                     <div className="flex-1">
-                      <div className="flex justify-between text-sm mb-1"><span className="font-semibold" style={{ color: m.color }}>{m.meal}</span><span className="text-muted">{m.pct}% · {m.kcal} kcal</span></div>
+                      <div className="flex justify-between text-base mb-1"><span className="font-semibold" style={{ color: m.color }}>{m.meal}</span><span className="text-muted">{m.pct}% · {m.kcal} kcal</span></div>
                       <div className="h-2.5 rounded-full bg-bg overflow-hidden"><div className="h-full rounded-full" style={{ width: `${m.pct}%`, background: m.color }} /></div>
                     </div>
                   </div>
@@ -474,13 +474,13 @@ export default function NutritionTemplatePage() {
 
           {mealCount === 4 && (
             <div className="rounded-2xl border border-border bg-surface p-5">
-              <p className="text-sm text-muted mb-4">Phù hợp: người tập thể dục, dễ đói, cần kiểm soát năng lượng tốt hơn.</p>
+              <p className="text-base text-muted mb-4">Phù hợp: người tập thể dục, dễ đói, cần kiểm soát năng lượng tốt hơn.</p>
               <div className="space-y-2">
                 {[{ meal: 'Sáng', pct: 25, icon: '🌅', color: '#fb923c' }, { meal: 'Trưa', pct: 35, icon: '☀️', color: '#f43f5e' }, { meal: 'Phụ chiều', pct: 12, icon: '⚡', color: '#facc15' }, { meal: 'Tối', pct: 28, icon: '🌙', color: '#a855f7' }].map(m => (
                   <div key={m.meal} className="flex items-center gap-3">
                     <span className="text-xl w-8 text-center shrink-0">{m.icon}</span>
                     <div className="flex-1">
-                      <div className="flex justify-between text-sm mb-1"><span className="font-semibold" style={{ color: m.color }}>{m.meal}</span><span className="text-muted">{m.pct}% · {Math.round(calcNut.kcal * m.pct / 100)} kcal</span></div>
+                      <div className="flex justify-between text-base mb-1"><span className="font-semibold" style={{ color: m.color }}>{m.meal}</span><span className="text-muted">{m.pct}% · {Math.round(calcNut.kcal * m.pct / 100)} kcal</span></div>
                       <div className="h-2.5 rounded-full bg-bg overflow-hidden"><div className="h-full rounded-full" style={{ width: `${m.pct}%`, background: m.color }} /></div>
                     </div>
                   </div>
@@ -491,13 +491,13 @@ export default function NutritionTemplatePage() {
 
           {mealCount === 5 && (
             <div className="rounded-2xl border border-border bg-surface p-5">
-              <p className="text-sm text-muted mb-4">Phù hợp: người tập nhiều, cần nạp trước/sau tập để đảm bảo hiệu suất.</p>
+              <p className="text-base text-muted mb-4">Phù hợp: người tập nhiều, cần nạp trước/sau tập để đảm bảo hiệu suất.</p>
               <div className="space-y-2">
                 {[{ meal: 'Sáng', pct: 22, icon: '🌅', color: '#fb923c' }, { meal: 'Phụ sáng', pct: 10, icon: '🫐', color: '#22c55e' }, { meal: 'Trưa', pct: 30, icon: '☀️', color: '#f43f5e' }, { meal: 'Trước/Sau tập', pct: 13, icon: '⚡', color: '#facc15' }, { meal: 'Tối', pct: 25, icon: '🌙', color: '#a855f7' }].map(m => (
                   <div key={m.meal} className="flex items-center gap-3">
                     <span className="text-xl w-8 text-center shrink-0">{m.icon}</span>
                     <div className="flex-1">
-                      <div className="flex justify-between text-sm mb-1"><span className="font-semibold" style={{ color: m.color }}>{m.meal}</span><span className="text-muted">{m.pct}% · {Math.round(calcNut.kcal * m.pct / 100)} kcal</span></div>
+                      <div className="flex justify-between text-base mb-1"><span className="font-semibold" style={{ color: m.color }}>{m.meal}</span><span className="text-muted">{m.pct}% · {Math.round(calcNut.kcal * m.pct / 100)} kcal</span></div>
                       <div className="h-2.5 rounded-full bg-bg overflow-hidden"><div className="h-full rounded-full" style={{ width: `${m.pct}%`, background: m.color }} /></div>
                     </div>
                   </div>
@@ -510,7 +510,7 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 3: Đĩa ăn ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>3. Cấu Trúc Đĩa Ăn Chuẩn</h2>
-          <p className="text-muted text-base mb-6">Không cần cân đo từng gram — chỉ cần nhìn vào đĩa. ½ rau + ¼ protein + ¼ carb tốt là công thức đơn giản nhất để ăn đủ chất.</p>
+          <p className="text-muted text-lg mb-6">Không cần cân đo từng gram — chỉ cần nhìn vào đĩa. ½ rau + ¼ protein + ¼ carb tốt là công thức đơn giản nhất để ăn đủ chất.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="rounded-2xl border border-border bg-surface p-5 flex flex-col items-center">
@@ -531,7 +531,7 @@ export default function NutritionTemplatePage() {
                 <text x="100" y="107" textAnchor="middle" fill="#6b7280" fontSize="9">chuẩn</text>
               </svg>
               <div className="flex gap-4">
-                {PLATE.map(s => <div key={s.label} className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full" style={{ background: s.color }} /><span className="text-sm text-muted">{s.label} {s.pct}%</span></div>)}
+                {PLATE.map(s => <div key={s.label} className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full" style={{ background: s.color }} /><span className="text-base text-muted">{s.label} {s.pct}%</span></div>)}
               </div>
             </div>
 
@@ -547,7 +547,7 @@ export default function NutritionTemplatePage() {
                   <span className="text-3xl shrink-0">{r.icon}</span>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-0.5">
-                      <span className="text-base font-bold" style={{ color: r.color }}>{r.label}</span>
+                      <span className="text-lg font-bold" style={{ color: r.color }}>{r.label}</span>
                       <span className="text-[9px] px-1.5 py-0.5 rounded-full" style={{ background: `${r.color}22`, color: r.color }}>{r.desc}</span>
                     </div>
                     <p className="text-[10px] text-muted">{r.examples}</p>
@@ -561,12 +561,12 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 4: Goal-specific templates ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>4. Template Theo Mục Tiêu</h2>
-          <p className="text-muted text-base mb-6">Mỗi mục tiêu cần một chiến lược dinh dưỡng khác nhau. Chọn mục tiêu của bạn để xem bản mẫu thực đơn 1 ngày và nguyên tắc cốt lõi.</p>
+          <p className="text-muted text-lg mb-6">Mỗi mục tiêu cần một chiến lược dinh dưỡng khác nhau. Chọn mục tiêu của bạn để xem bản mẫu thực đơn 1 ngày và nguyên tắc cốt lõi.</p>
 
           <div className="flex flex-wrap gap-2 mb-5">
             {Object.entries(GOAL_MEALS).map(([k, v]) => (
               <button key={k} onClick={() => setActiveGoal(k)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-sm font-bold transition-all"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-base font-bold transition-all"
                 style={{ borderColor: activeGoal === k ? v.color : 'transparent', background: activeGoal === k ? `${v.color}18` : 'rgba(255,255,255,.04)', color: activeGoal === k ? v.color : '#9ca3af' }}>
                 <span>{v.icon}</span> {v.label}
               </button>
@@ -590,10 +590,10 @@ export default function NutritionTemplatePage() {
                 <div className="p-5 space-y-3">
                   {g.day.map((m, i) => (
                     <div key={i} className="flex gap-3 p-3 rounded-xl border border-border">
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5" style={{ background: `${g.color}20`, color: g.color }}>{i + 1}</div>
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center text-base font-bold shrink-0 mt-0.5" style={{ background: `${g.color}20`, color: g.color }}>{i + 1}</div>
                       <div className="flex-1">
-                        <div className="text-sm font-bold mb-1" style={{ color: g.color }}>{m.meal}</div>
-                        <div className="text-base text-text mb-1">{m.items}</div>
+                        <div className="text-base font-bold mb-1" style={{ color: g.color }}>{m.meal}</div>
+                        <div className="text-lg text-text mb-1">{m.items}</div>
                         <div className="text-[10px] text-muted italic">{m.note}</div>
                       </div>
                     </div>
@@ -601,7 +601,7 @@ export default function NutritionTemplatePage() {
                 </div>
                 {/* calorie summary */}
                 <div className="px-5 pb-4">
-                  <div className="p-3 rounded-xl border border-dashed text-sm text-muted text-center" style={{ borderColor: `${g.color}30` }}>
+                  <div className="p-3 rounded-xl border border-dashed text-base text-muted text-center" style={{ borderColor: `${g.color}30` }}>
                     Dựa trên thông số của bạn: <strong style={{ color: g.color }}>{calcNut.kcal} kcal/ngày</strong> · Protein <strong style={{ color: g.color }}>{calcNut.protein}g</strong> · Carb <strong style={{ color: g.color }}>{calcNut.carb}g</strong> · Fat <strong style={{ color: g.color }}>{calcNut.fat}g</strong>
                   </div>
                 </div>
@@ -613,14 +613,14 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 5: Weekly Planner ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>5. Template Meal Plan Tuần</h2>
-          <p className="text-muted text-base mb-6">Lên kế hoạch bữa ăn cho cả tuần — điền vào ô, lưu lại làm tham chiếu. Giúp giảm quyết định hằng ngày và duy trì nhất quán.</p>
+          <p className="text-muted text-lg mb-6">Lên kế hoạch bữa ăn cho cả tuần — điền vào ô, lưu lại làm tham chiếu. Giúp giảm quyết định hằng ngày và duy trì nhất quán.</p>
 
           <div className="rounded-2xl border border-border bg-surface overflow-hidden">
             {/* day tabs */}
             <div className="flex overflow-x-auto border-b border-border">
               {WEEK_DAYS.map((d, i) => (
                 <button key={d} onClick={() => setActiveDayIdx(i)}
-                  className="shrink-0 px-4 py-3 text-sm font-bold border-b-2 transition-all whitespace-nowrap"
+                  className="shrink-0 px-4 py-3 text-base font-bold border-b-2 transition-all whitespace-nowrap"
                   style={{ borderBottomColor: activeDayIdx === i ? C : 'transparent', color: activeDayIdx === i ? C : '#6b7280' }}>
                   {d}
                 </button>
@@ -630,12 +630,12 @@ export default function NutritionTemplatePage() {
             <div className="p-5 space-y-3">
               {MEAL_TYPES.map(mt => (
                 <div key={mt} className="flex gap-3 items-start">
-                  <span className="text-sm font-bold pt-2 w-16 shrink-0" style={{ color: C }}>{mt}</span>
+                  <span className="text-base font-bold pt-2 w-16 shrink-0" style={{ color: C }}>{mt}</span>
                   <input
                     value={weekPlan[WEEK_DAYS[activeDayIdx]][mt]}
                     onChange={e => setWeekPlan(p => ({ ...p, [WEEK_DAYS[activeDayIdx]]: { ...p[WEEK_DAYS[activeDayIdx]], [mt]: e.target.value } }))}
                     placeholder={`${mt}: điền món ăn...`}
-                    className="flex-1 text-sm bg-bg border border-border rounded-xl px-3 py-2.5 text-text placeholder-muted focus:outline-none focus:border-rose-500 transition-colors"
+                    className="flex-1 text-base bg-bg border border-border rounded-xl px-3 py-2.5 text-text placeholder-muted focus:outline-none focus:border-rose-500 transition-colors"
                   />
                 </div>
               ))}
@@ -667,12 +667,12 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 6: Food Library ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>6. Thư Viện Món Ăn Chuẩn</h2>
-          <p className="text-muted text-base mb-6">Danh sách thực phẩm với đầy đủ macro — dùng để gán vào bữa ăn, hoán đổi linh hoạt và xây thực đơn cá nhân.</p>
+          <p className="text-muted text-lg mb-6">Danh sách thực phẩm với đầy đủ macro — dùng để gán vào bữa ăn, hoán đổi linh hoạt và xây thực đơn cá nhân.</p>
 
           <div className="flex gap-2 mb-4 flex-wrap">
             {[['protein', '🥩 Protein'], ['carb', '🍚 Carb'], ['veg', '🥦 Rau/Quả'], ['fat', '🫒 Fat tốt']].map(([k, l]) => (
               <button key={k} onClick={() => setFoodTab(k)}
-                className="px-3 py-1.5 rounded-xl border text-sm font-bold transition-all"
+                className="px-3 py-1.5 rounded-xl border text-base font-bold transition-all"
                 style={{ borderColor: foodTab === k ? C : 'transparent', background: foodTab === k ? 'rgba(244,63,94,.12)' : 'rgba(255,255,255,.04)', color: foodTab === k ? C : '#9ca3af' }}>
                 {l}
               </button>
@@ -687,7 +687,7 @@ export default function NutritionTemplatePage() {
             </div>
             {(FOOD_LIB[foodTab] || []).map((f, i) => (
               <div key={i} className="grid grid-cols-5 gap-0 border-b border-border last:border-b-0 hover:bg-rose-500/5 transition-colors">
-                <div className="px-3 py-2.5 text-sm font-semibold text-text border-r border-border">{f.name}</div>
+                <div className="px-3 py-2.5 text-base font-semibold text-text border-r border-border">{f.name}</div>
                 <div className="px-3 py-2.5 text-[10px] text-muted border-r border-border">{f.unit}</div>
                 <div className="px-3 py-2.5 text-[10px] font-bold border-r border-border" style={{ color: C }}>{f.kcal}</div>
                 <div className="px-3 py-2.5 text-[10px] text-muted border-r border-border">
@@ -711,12 +711,12 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 7: Adjust by training day ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>7. Điều Chỉnh Theo Loại Ngày Tập</h2>
-          <p className="text-muted text-base mb-6">Không phải ngày nào cũng ăn giống nhau. Carb cycling đơn giản — tăng carb ngày nặng, giảm ngày nghỉ — tối ưu hiệu suất và phục hồi.</p>
+          <p className="text-muted text-lg mb-6">Không phải ngày nào cũng ăn giống nhau. Carb cycling đơn giản — tăng carb ngày nặng, giảm ngày nghỉ — tối ưu hiệu suất và phục hồi.</p>
 
           <div className="flex flex-wrap gap-2 mb-5">
             {[['heavy', '🏋️ Ngày tập nặng'], ['light', '🚶 Ngày tập nhẹ'], ['cardio', '🚴 Ngày cardio'], ['rest', '😴 Ngày nghỉ']].map(([k, l]) => (
               <button key={k} onClick={() => setTrainDay(k)}
-                className="px-3 py-2 rounded-xl border text-sm font-bold transition-all"
+                className="px-3 py-2 rounded-xl border text-base font-bold transition-all"
                 style={{ borderColor: trainDay === k ? C : 'transparent', background: trainDay === k ? 'rgba(244,63,94,.12)' : 'rgba(255,255,255,.04)', color: trainDay === k ? C : '#9ca3af' }}>
                 {l}
               </button>
@@ -731,15 +731,15 @@ export default function NutritionTemplatePage() {
             ].map(r => (
               <div key={r.label} className="text-center p-4 rounded-xl bg-bg border border-border">
                 <div className="text-3xl mb-2">{r.icon}</div>
-                <div className="text-sm text-muted mb-1 uppercase tracking-widest">{r.label}</div>
-                <div className="text-base font-bold" style={{ color: C }}>{r.val}</div>
+                <div className="text-base text-muted mb-1 uppercase tracking-widest">{r.label}</div>
+                <div className="text-lg font-bold" style={{ color: C }}>{r.val}</div>
               </div>
             ))}
           </div>
 
           {/* visual timeline */}
           <div className="mt-5 rounded-2xl border border-border bg-surface p-5">
-            <div className="text-sm font-bold uppercase tracking-widest text-muted mb-4">Nhịp Tuần Mẫu (3 Sức Mạnh + 2 Cardio + 2 Nghỉ)</div>
+            <div className="text-base font-bold uppercase tracking-widest text-muted mb-4">Nhịp Tuần Mẫu (3 Sức Mạnh + 2 Cardio + 2 Nghỉ)</div>
             <div className="flex gap-2">
               {[
                 { d: 'T2', type: 'heavy', icon: '🏋️' },
@@ -771,7 +771,7 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 8: 7-step personalization ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>8. Công Thức 7 Bước Tạo Meal Plan Cá Nhân</h2>
-          <p className="text-muted text-base mb-6">Từ thông số đến bữa ăn hoàn chỉnh — quy trình này giúp bạn tự xây dựng meal plan phù hợp mà không cần chuyên gia.</p>
+          <p className="text-muted text-lg mb-6">Từ thông số đến bữa ăn hoàn chỉnh — quy trình này giúp bạn tự xây dựng meal plan phù hợp mà không cần chuyên gia.</p>
 
           <div className="space-y-3">
             {PLAN_STEPS.map((s, i) => (
@@ -781,9 +781,9 @@ export default function NutritionTemplatePage() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: 'rgba(244,63,94,.1)', color: C }}>Bước {s.n}</span>
-                      <span className="text-base font-bold text-text">{s.title}</span>
+                      <span className="text-lg font-bold text-text">{s.title}</span>
                     </div>
-                    <p className="text-sm text-muted leading-relaxed">{s.desc}</p>
+                    <p className="text-base text-muted leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               </RevealBlock>
@@ -794,7 +794,7 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 9: Adjustment rules ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>9. Bảng Điều Chỉnh Hằng Tuần</h2>
-          <p className="text-muted text-base mb-6">Meal plan tốt nhất là meal plan bạn điều chỉnh được. Không có gì cứng nhắc — đây là những trường hợp thường gặp và cách xử lý.</p>
+          <p className="text-muted text-lg mb-6">Meal plan tốt nhất là meal plan bạn điều chỉnh được. Không có gì cứng nhắc — đây là những trường hợp thường gặp và cách xử lý.</p>
 
           <div className="rounded-2xl border border-border bg-surface overflow-hidden">
             <div className="grid grid-cols-2 border-b border-border">
@@ -803,8 +803,8 @@ export default function NutritionTemplatePage() {
             </div>
             {ADJUST_RULES.map((r, i) => (
               <div key={i} className={`grid grid-cols-2 border-b border-border last:border-b-0 hover:bg-rose-500/5 transition-colors`}>
-                <div className="px-4 py-3 text-sm text-text border-r border-border">{r.situation}</div>
-                <div className="px-4 py-3 text-sm" style={{ color: C }}>{r.fix}</div>
+                <div className="px-4 py-3 text-base text-text border-r border-border">{r.situation}</div>
+                <div className="px-4 py-3 text-base" style={{ color: C }}>{r.fix}</div>
               </div>
             ))}
           </div>
@@ -813,7 +813,7 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 10: 10 criteria ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>10. Checklist Meal Plan Đạt Chuẩn</h2>
-          <p className="text-muted text-base mb-6">Một meal plan đạt chuẩn phải có đủ 10 yếu tố. Tick vào những gì bạn đã có để biết còn thiếu gì.</p>
+          <p className="text-muted text-lg mb-6">Một meal plan đạt chuẩn phải có đủ 10 yếu tố. Tick vào những gì bạn đã có để biết còn thiếu gì.</p>
 
           <div className="rounded-2xl border border-border bg-surface p-5">
             {/* score gauge */}
@@ -834,7 +834,7 @@ export default function NutritionTemplatePage() {
                 <div className="text-xl font-bold mb-1" style={{ color: C }}>
                   {criteriaScore >= 10 ? '🏆 Meal plan hoàn hảo!' : criteriaScore >= 7 ? '🌟 Gần đạt chuẩn' : criteriaScore >= 4 ? '📈 Đang xây dựng' : '🚀 Bắt đầu từ đây'}
                 </div>
-                <p className="text-sm text-muted">Click vào từng tiêu chí để đánh dấu đã có. Mục tiêu: đủ 10/10 cho một meal plan hoàn chỉnh.</p>
+                <p className="text-base text-muted">Click vào từng tiêu chí để đánh dấu đã có. Mục tiêu: đủ 10/10 cho một meal plan hoàn chỉnh.</p>
               </div>
             </div>
 
@@ -847,7 +847,7 @@ export default function NutritionTemplatePage() {
                     style={{ background: criteriaChecked[i] ? C : 'transparent', borderColor: criteriaChecked[i] ? C : '#374151' }}>
                     {criteriaChecked[i] && <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" /></svg>}
                   </div>
-                  <span className="text-sm" style={{ color: criteriaChecked[i] ? C : '#9ca3af' }}>
+                  <span className="text-base" style={{ color: criteriaChecked[i] ? C : '#9ca3af' }}>
                     <span className="font-bold" style={{ color: criteriaChecked[i] ? C : '#6b7280' }}>{i + 1}.</span> {c}
                   </span>
                 </button>
@@ -859,12 +859,12 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 11: Sample complete template ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: C }}>11. Mẫu Hoàn Chỉnh: Nam 48 Tuổi</h2>
-          <p className="text-muted text-base mb-6">Ví dụ thực tế từ tài liệu dự án — nam 48 tuổi, 1m75, 77kg, mục tiêu giảm mỡ nhẹ + sống khỏe + duy trì vận động.</p>
+          <p className="text-muted text-lg mb-6">Ví dụ thực tế từ tài liệu dự án — nam 48 tuổi, 1m75, 77kg, mục tiêu giảm mỡ nhẹ + sống khỏe + duy trì vận động.</p>
 
           <div className="rounded-2xl border bg-surface overflow-hidden" style={{ borderColor: 'rgba(244,63,94,.25)' }}>
             {/* profile */}
             <div className="px-5 py-4 border-b border-border" style={{ background: 'rgba(244,63,94,.04)' }}>
-              <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: C }}>Hồ Sơ Người Dùng</div>
+              <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: C }}>Hồ Sơ Người Dùng</div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {[['Tuổi', '48'], ['Chiều cao', '1m75'], ['Cân nặng', '77 kg'], ['Mục tiêu', 'Giảm mỡ nhẹ']].map(([k, v]) => (
                   <div key={k} className="text-center">
@@ -877,7 +877,7 @@ export default function NutritionTemplatePage() {
 
             {/* targets */}
             <div className="px-5 py-4 border-b border-border">
-              <div className="text-sm font-bold uppercase tracking-widest mb-3 text-muted">Mục Tiêu Ngày</div>
+              <div className="text-base font-bold uppercase tracking-widest mb-3 text-muted">Mục Tiêu Ngày</div>
               <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
                 {[
                   { k: 'Calories', v: '2.000–2.200', u: 'kcal' },
@@ -887,7 +887,7 @@ export default function NutritionTemplatePage() {
                   { k: 'Carb', v: 'Theo ngày tập', u: '' },
                 ].map(s => (
                   <div key={s.k} className="text-center p-2.5 rounded-xl bg-bg border border-border">
-                    <div className="text-base font-black" style={{ color: C }}>{s.v}</div>
+                    <div className="text-lg font-black" style={{ color: C }}>{s.v}</div>
                     <div className="text-[8px] text-muted uppercase mt-0.5">{s.k}</div>
                     {s.u && <div className="text-[8px] text-muted">{s.u}</div>}
                   </div>
@@ -897,7 +897,7 @@ export default function NutritionTemplatePage() {
 
             {/* day meals */}
             <div className="px-5 py-4 border-b border-border">
-              <div className="text-sm font-bold uppercase tracking-widest mb-3 text-muted">Ngày Mẫu</div>
+              <div className="text-base font-bold uppercase tracking-widest mb-3 text-muted">Ngày Mẫu</div>
               <div className="space-y-2">
                 {[
                   { meal: '🌅 Sáng', food: 'Yến mạch + sữa chua + chuối + trứng luộc', kcal: 480, p: 32, c: 52, f: 12 },
@@ -907,11 +907,11 @@ export default function NutritionTemplatePage() {
                 ].map((m, i) => (
                   <div key={i} className="grid grid-cols-4 gap-0 rounded-xl overflow-hidden border border-border">
                     <div className="col-span-2 px-3 py-2.5 bg-bg border-r border-border">
-                      <div className="text-sm font-bold mb-0.5" style={{ color: C }}>{m.meal}</div>
+                      <div className="text-base font-bold mb-0.5" style={{ color: C }}>{m.meal}</div>
                       <div className="text-[10px] text-muted">{m.food}</div>
                     </div>
                     <div className="px-3 py-2.5 text-center border-r border-border">
-                      <div className="text-base font-black" style={{ color: C }}>{m.kcal}</div>
+                      <div className="text-lg font-black" style={{ color: C }}>{m.kcal}</div>
                       <div className="text-[8px] text-muted">kcal</div>
                     </div>
                     <div className="px-3 py-2.5 text-center">
@@ -922,10 +922,10 @@ export default function NutritionTemplatePage() {
                 ))}
                 <div className="grid grid-cols-4 gap-0 rounded-xl overflow-hidden border border-rose-500/30 bg-rose-500/5">
                   <div className="col-span-2 px-3 py-2.5 border-r border-rose-500/20">
-                    <div className="text-sm font-black" style={{ color: C }}>Tổng ngày</div>
+                    <div className="text-base font-black" style={{ color: C }}>Tổng ngày</div>
                   </div>
                   <div className="px-3 py-2.5 text-center border-r border-rose-500/20">
-                    <div className="text-base font-black" style={{ color: C }}>2.080</div>
+                    <div className="text-lg font-black" style={{ color: C }}>2.080</div>
                     <div className="text-[8px] text-muted">kcal</div>
                   </div>
                   <div className="px-3 py-2.5 text-center">
@@ -938,7 +938,7 @@ export default function NutritionTemplatePage() {
 
             {/* adjustments */}
             <div className="px-5 py-4">
-              <div className="text-sm font-bold uppercase tracking-widest mb-3 text-muted">Điều Chỉnh Theo Tình Huống</div>
+              <div className="text-base font-bold uppercase tracking-widest mb-3 text-muted">Điều Chỉnh Theo Tình Huống</div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {[
                   { d: '🏋️ Ngày tập nặng', fix: 'Thêm 1 phần carb trước/sau tập (+120kcal)' },
@@ -946,7 +946,7 @@ export default function NutritionTemplatePage() {
                   { d: '🍽️ Ngày ăn ngoài', fix: 'Chọn ít chiên, thêm rau, bỏ nước ngọt' },
                   { d: '😋 Ngày đói nhiều', fix: 'Tăng rau + protein, không tăng đồ ngọt' },
                 ].map((r, i) => (
-                  <div key={i} className="flex gap-2 p-3 rounded-xl border border-border text-sm">
+                  <div key={i} className="flex gap-2 p-3 rounded-xl border border-border text-base">
                     <span className="font-bold shrink-0" style={{ color: C }}>{r.d}</span>
                     <span className="text-muted">→ {r.fix}</span>
                   </div>
@@ -959,19 +959,19 @@ export default function NutritionTemplatePage() {
         {/* ── SECTION 12: Core formula ── */}
         <RevealBlock className="mb-12">
           <div className="rounded-2xl border p-6 text-center" style={{ borderColor: 'rgba(244,63,94,.3)', background: 'rgba(244,63,94,.04)' }}>
-            <div className="text-sm font-bold uppercase tracking-widest mb-3 text-muted">Công Thức Lõi Của Dự Án</div>
+            <div className="text-base font-bold uppercase tracking-widest mb-3 text-muted">Công Thức Lõi Của Dự Án</div>
             <div className="text-2xl md:text-3xl font-black leading-relaxed" style={{ color: C }}>
               Meal Plan Tốt =<br />
               <span className="text-text">Đủ Protein</span> + <span className="text-text">Nhiều Rau</span> + <span className="text-text">Carb Đúng Lúc</span><br />
               + <span className="text-text">Fat Vừa Phải</span> + <span className="text-text">Đủ Nước</span> + <span className="text-text">Theo Dõi Đều</span> + <span style={{ color: C }}>Điều Chỉnh Linh Hoạt</span>
             </div>
-            <div className="mt-4 text-sm text-muted">Nguyên tắc nền: ăn đủ – ăn đều – ăn thật – ăn linh hoạt – duy trì được lâu dài.</div>
+            <div className="mt-4 text-base text-muted">Nguyên tắc nền: ăn đủ – ăn đều – ăn thật – ăn linh hoạt – duy trì được lâu dài.</div>
           </div>
         </RevealBlock>
 
         {/* related sub-pages */}
         <RevealBlock className="mb-8">
-          <div className="text-sm font-bold uppercase tracking-widest text-muted mb-4">Khám Phá Thêm</div>
+          <div className="text-base font-bold uppercase tracking-widest text-muted mb-4">Khám Phá Thêm</div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
               { to: '/pillar/b/checklist', icon: '✅', label: 'Checklist Hằng Ngày', color: '#10b981' },
@@ -981,7 +981,7 @@ export default function NutritionTemplatePage() {
               { to: '/pillar/b/7day', icon: '📋', label: 'Thực Đơn 7 Ngày', color: '#f97316' },
               { to: '/pillar/b/formula', icon: '🔢', label: 'Công Thức Tính', color: '#06b6d4' },
             ].map(l => (
-              <Link key={l.to} to={l.to} className="flex items-center gap-2.5 p-3 rounded-xl border border-border bg-surface hover:border-rose-500/30 transition-all hover:-translate-y-0.5 text-sm font-semibold text-muted hover:text-text">
+              <Link key={l.to} to={l.to} className="flex items-center gap-2.5 p-3 rounded-xl border border-border bg-surface hover:border-rose-500/30 transition-all hover:-translate-y-0.5 text-base font-semibold text-muted hover:text-text">
                 <span className="text-xl">{l.icon}</span>
                 <span style={{ color: l.color }}>{l.label}</span>
               </Link>
@@ -990,7 +990,7 @@ export default function NutritionTemplatePage() {
         </RevealBlock>
 
         <div className="text-center">
-          <Link to="/pillar/b" className="inline-flex items-center gap-2 text-sm text-muted hover:text-rose-400 transition-colors">
+          <Link to="/pillar/b" className="inline-flex items-center gap-2 text-base text-muted hover:text-rose-400 transition-colors">
             ← Quay lại Nutrition &amp; Meal Plans
           </Link>
         </div>

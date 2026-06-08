@@ -13,7 +13,7 @@ export default function ContactSection() {
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-text">{t('contact.title')}</h2>
         <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
-        <p className="mt-4 text-muted text-base max-w-md mx-auto leading-relaxed">{t('contact.intro')}</p>
+        <p className="mt-4 text-muted text-lg max-w-md mx-auto leading-relaxed">{t('contact.intro')}</p>
       </div>
 
       <div className="max-w-2xl mx-auto space-y-4">
@@ -27,9 +27,9 @@ export default function ContactSection() {
             <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-accent border-2 border-bg" />
           </div>
           <div className="relative min-w-0">
-            <p className="font-bold text-text text-base">{t('contact.bio_name')}</p>
-            <p className="text-accent text-sm font-semibold mt-0.5">{t('contact.bio_role')}</p>
-            <p className="text-muted text-sm mt-1.5 leading-relaxed">{t('contact.bio_desc')}</p>
+            <p className="font-bold text-text text-lg">{t('contact.bio_name')}</p>
+            <p className="text-accent text-base font-semibold mt-0.5">{t('contact.bio_role')}</p>
+            <p className="text-muted text-base mt-1.5 leading-relaxed">{t('contact.bio_desc')}</p>
           </div>
         </div>
 
@@ -47,15 +47,15 @@ export default function ContactSection() {
                 ✉️
               </div>
               <div className="min-w-0">
-                <p className="text-sm text-muted font-medium">{t('contact.email_label')}</p>
-                <p className="text-sm font-semibold text-text group-hover:text-accent transition-colors truncate mt-0.5">
+                <p className="text-base text-muted font-medium">{t('contact.email_label')}</p>
+                <p className="text-base font-semibold text-text group-hover:text-accent transition-colors truncate mt-0.5">
                   {email}
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-1.5 ml-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse shrink-0" />
-              <span className="text-sm text-muted">{t('contact.email_response')}</span>
+              <span className="text-base text-muted">{t('contact.email_response')}</span>
             </div>
           </a>
 
@@ -73,21 +73,21 @@ export default function ContactSection() {
                 💬
               </div>
               <div>
-                <p className="text-sm text-muted font-medium">{t('contact.zalo_label')}</p>
-                <p className="text-base font-semibold text-text group-hover:text-blue-400 transition-colors mt-0.5">
+                <p className="text-base text-muted font-medium">{t('contact.zalo_label')}</p>
+                <p className="text-lg font-semibold text-text group-hover:text-blue-400 transition-colors mt-0.5">
                   Zalo Chat
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-1.5 ml-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-glow-pulse shrink-0" />
-              <span className="text-sm text-muted">{t('contact.zalo_avail')}</span>
+              <span className="text-base text-muted">{t('contact.zalo_avail')}</span>
             </div>
           </a>
         </div>
 
         {/* CTA closing */}
-        <p className="text-center text-muted/70 text-sm leading-relaxed pt-2 italic px-4">
+        <p className="text-center text-muted/70 text-base leading-relaxed pt-2 italic px-4">
           {t('contact.cta')}
         </p>
       </div>

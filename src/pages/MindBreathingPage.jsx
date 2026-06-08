@@ -139,7 +139,7 @@ function BoxBreathingTimer({ color }) {
   const pct = phase !== 'idle' ? ((cur.dur - count) / cur.dur) * 100 : 0;
   return (
     <div className="rounded-2xl border border-border bg-bg p-6 flex flex-col items-center gap-4 max-w-sm mx-auto mt-4">
-      <div className="text-sm font-bold uppercase tracking-widest text-muted">Box Breathing Interactive Timer</div>
+      <div className="text-base font-bold uppercase tracking-widest text-muted">Box Breathing Interactive Timer</div>
       <div className="relative w-40 h-40 flex items-center justify-center">
         <svg className="absolute inset-0 w-full h-full -rotate-90">
           <circle cx="80" cy="80" r="68" fill="none" stroke={color} strokeWidth="3" opacity="0.15" />
@@ -147,11 +147,11 @@ function BoxBreathingTimer({ color }) {
         </svg>
         <div className="text-center transition-transform duration-1000" style={{ transform: running ? `scale(${cur.scale})` : 'scale(1)' }}>
           <div className="text-5xl font-bold text-text">{running ? count : '▶'}</div>
-          <div className="text-sm text-muted mt-1">{running ? cur.label : 'Bắt đầu'}</div>
+          <div className="text-base text-muted mt-1">{running ? cur.label : 'Bắt đầu'}</div>
         </div>
       </div>
-      {running && <div className="text-sm text-muted">Vòng {cycles + 1} · Mục tiêu: 4 vòng</div>}
-      <button onClick={startStop} className="px-6 py-2 rounded-full text-base font-bold" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${RGB},0.15)`, color: running ? '#ef4444' : color, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${RGB},0.3)`}` }}>
+      {running && <div className="text-base text-muted">Vòng {cycles + 1} · Mục tiêu: 4 vòng</div>}
+      <button onClick={startStop} className="px-6 py-2 rounded-full text-lg font-bold" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${RGB},0.15)`, color: running ? '#ef4444' : color, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${RGB},0.3)`}` }}>
         {running ? 'Dừng' : 'Bắt đầu'}
       </button>
     </div>
@@ -186,7 +186,7 @@ export default function MindBreathingPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-sm text-muted hover:text-purple-400 transition-colors mb-8 group">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Tâm Trí An Nhiên
       </Link>
@@ -196,7 +196,7 @@ export default function MindBreathingPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🫁</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Kỹ Thuật Thở</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D2 · Thở & Hạ Nhịp</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D2 · Thở & Hạ Nhịp</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Thở là công cụ miễn phí, luôn sẵn sàng, không cần dụng cụ. 4 kỹ thuật cho 4 tình huống khác nhau — từ nền tảng hằng ngày đến emergency reset trong 2 phút.</p>
         </div>
       </div>
@@ -206,7 +206,7 @@ export default function MindBreathingPage() {
           <img src="https://images.unsplash.com/photo-1518609571773-39b7d303a87b?w=800&q=80&auto=format&fit=crop" alt="Breathing" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>4 kỹ thuật · Timer tương tác · Chọn đúng tình huống</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>4 kỹ thuật · Timer tương tác · Chọn đúng tình huống</span>
           </div>
         </div>
       </div>
@@ -216,8 +216,8 @@ export default function MindBreathingPage() {
       {/* Quick reference */}
       <RevealBlock className="mb-10">
         <div className="overflow-x-auto">
-          <table className="w-full text-base">
-            <thead><tr className="border-b border-border">{['Tình Huống', 'Kỹ Thuật'].map(h => <th key={h} className="text-left py-3 pr-4 text-sm font-bold uppercase tracking-widest text-muted">{h}</th>)}</tr></thead>
+          <table className="w-full text-lg">
+            <thead><tr className="border-b border-border">{['Tình Huống', 'Kỹ Thuật'].map(h => <th key={h} className="text-left py-3 pr-4 text-base font-bold uppercase tracking-widest text-muted">{h}</th>)}</tr></thead>
             <tbody>
               {[
                 ['Sau tập, trước ngủ, vai căng', 'Thở Cơ Hoành'],
@@ -226,8 +226,8 @@ export default function MindBreathingPage() {
                 ['Quá tải giữa ngày, sau tranh cãi', 'Reset 2 Phút'],
               ].map(([sit, tech2]) => (
                 <tr key={sit} className="border-b border-border/30">
-                  <td className="py-3 pr-4 text-muted text-sm">{sit}</td>
-                  <td className="py-3 text-sm font-bold" style={{ color: COLOR }}>{tech2}</td>
+                  <td className="py-3 pr-4 text-muted text-base">{sit}</td>
+                  <td className="py-3 text-base font-bold" style={{ color: COLOR }}>{tech2}</td>
                 </tr>
               ))}
             </tbody>
@@ -238,10 +238,10 @@ export default function MindBreathingPage() {
       {/* Techniques */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kỹ Thuật Chi Tiết</h2>
-        <p className="text-muted text-base mb-6">Chọn kỹ thuật để xem hướng dẫn từng bước.</p>
+        <p className="text-muted text-lg mb-6">Chọn kỹ thuật để xem hướng dẫn từng bước.</p>
         <div className="flex gap-2 flex-wrap mb-6">
           {TECHNIQUES.map(t => (
-            <button key={t.id} onClick={() => setActiveTech(t.id)} className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium transition-all border ${activeTech === t.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: activeTech === t.id ? t.color : undefined, borderColor: activeTech === t.id ? t.color : undefined }}>
+            <button key={t.id} onClick={() => setActiveTech(t.id)} className={`flex items-center gap-2 px-3 py-2 rounded-full text-base font-medium transition-all border ${activeTech === t.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: activeTech === t.id ? t.color : undefined, borderColor: activeTech === t.id ? t.color : undefined }}>
               {t.icon} {t.title}
             </button>
           ))}
@@ -252,17 +252,17 @@ export default function MindBreathingPage() {
               <span className="text-5xl">{tech.icon}</span>
               <div>
                 <div className="text-xl font-bold text-text">{tech.title}</div>
-                <div className="text-sm font-bold uppercase tracking-widest mt-0.5" style={{ color: tech.color }}>{tech.subtitle}</div>
-                <div className="text-base font-mono mt-2 px-3 py-1 rounded-full inline-block" style={{ background: `${tech.color}15`, color: tech.color }}>{tech.formula}</div>
+                <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: tech.color }}>{tech.subtitle}</div>
+                <div className="text-lg font-mono mt-2 px-3 py-1 rounded-full inline-block" style={{ background: `${tech.color}15`, color: tech.color }}>{tech.formula}</div>
               </div>
             </div>
             <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>Các Bước</div>
+                <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>Các Bước</div>
                 <ol className="space-y-2">
                   {tech.steps.map((s, i) => (
-                    <li key={i} className="flex items-start gap-3 text-base text-text">
-                      <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5" style={{ background: `${tech.color}20`, color: tech.color }}>{i + 1}</span>
+                    <li key={i} className="flex items-start gap-3 text-lg text-text">
+                      <span className="w-5 h-5 rounded-full flex items-center justify-center text-base font-bold shrink-0 mt-0.5" style={{ background: `${tech.color}20`, color: tech.color }}>{i + 1}</span>
                       {s}
                     </li>
                   ))}
@@ -271,14 +271,14 @@ export default function MindBreathingPage() {
               </div>
               <div className="space-y-4">
                 <div>
-                  <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: tech.color }}>Lợi Ích</div>
-                  <ul className="space-y-1">{tech.benefits.map((b, i) => <li key={i} className="flex items-start gap-2 text-sm text-muted"><span style={{ color: tech.color }}>✓</span>{b}</li>)}</ul>
+                  <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: tech.color }}>Lợi Ích</div>
+                  <ul className="space-y-1">{tech.benefits.map((b, i) => <li key={i} className="flex items-start gap-2 text-base text-muted"><span style={{ color: tech.color }}>✓</span>{b}</li>)}</ul>
                 </div>
                 <div>
-                  <div className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: tech.color }}>Lỗi Thường Gặp</div>
-                  <ul className="space-y-1">{tech.mistakes.map((m, i) => <li key={i} className="flex items-start gap-2 text-sm text-muted"><span className="text-red-400">✗</span>{m}</li>)}</ul>
+                  <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: tech.color }}>Lỗi Thường Gặp</div>
+                  <ul className="space-y-1">{tech.mistakes.map((m, i) => <li key={i} className="flex items-start gap-2 text-base text-muted"><span className="text-red-400">✗</span>{m}</li>)}</ul>
                 </div>
-                <div className="rounded-xl p-3 text-sm" style={{ background: `${tech.color}10` }}>
+                <div className="rounded-xl p-3 text-base" style={{ background: `${tech.color}10` }}>
                   <span className="font-bold" style={{ color: tech.color }}>⏰ Khi nào:</span> <span className="text-muted">{tech.when}</span>
                   <br /><span className="font-bold" style={{ color: tech.color }}>🕐 Thời gian:</span> <span className="text-muted">{tech.duration}</span>
                 </div>
@@ -291,7 +291,7 @@ export default function MindBreathingPage() {
       {/* Daily plan */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Lịch Thở Hằng Ngày</h2>
-        <p className="text-muted text-base mb-6">Tích hợp vào 4 điểm trong ngày — không cần thêm thời gian riêng.</p>
+        <p className="text-muted text-lg mb-6">Tích hợp vào 4 điểm trong ngày — không cần thêm thời gian riêng.</p>
         <div className="space-y-3">
           {[
             { time: '🌅 Buổi sáng', tech: 'Thở Cơ Hoành', dur: '1–2 phút', tip: 'Trước khi ra khỏi giường — kích hoạt nhẹ nhàng' },
@@ -300,12 +300,12 @@ export default function MindBreathingPage() {
             { time: '🌙 Trước ngủ', tech: 'Thở 4-7-8 hoặc Cơ Hoành', dur: '3–5 phút', tip: 'Chuyển cơ thể sang trạng thái nghỉ ngơi' },
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-border bg-surface hover:border-indigo-500/20 transition-colors">
-              <div className="text-base w-40 shrink-0 text-text font-medium">{item.time}</div>
+              <div className="text-lg w-40 shrink-0 text-text font-medium">{item.time}</div>
               <div className="flex-1">
-                <div className="text-sm font-bold" style={{ color: COLOR }}>{item.tech}</div>
-                <div className="text-sm text-muted">{item.tip}</div>
+                <div className="text-base font-bold" style={{ color: COLOR }}>{item.tech}</div>
+                <div className="text-base text-muted">{item.tip}</div>
               </div>
-              <div className="text-sm text-muted shrink-0">{item.dur}</div>
+              <div className="text-base text-muted shrink-0">{item.dur}</div>
             </div>
           ))}
         </div>
@@ -313,12 +313,12 @@ export default function MindBreathingPage() {
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/d/stress" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/d/stress" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Hiểu Stress
         </Link>
-        <Link to="/pillar/d" className="text-base text-muted hover:text-purple-400 transition-colors text-center">Tâm Trí An Nhiên →</Link>
-        <Link to="/pillar/d/meditation" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/d" className="text-lg text-muted hover:text-purple-400 transition-colors text-center">Tâm Trí An Nhiên →</Link>
+        <Link to="/pillar/d/meditation" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
           Thiền Ngắn
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

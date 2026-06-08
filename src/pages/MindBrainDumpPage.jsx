@@ -61,19 +61,19 @@ function BrainDumpTool() {
     <div className="rounded-2xl border border-border bg-surface p-5 space-y-5">
       <div className="flex items-center justify-between">
         <span className="font-bold text-text">Phân Loại {items.length} Mục</span>
-        <button onClick={() => { setPhase('dump'); setText(''); setItems([]); }} className="text-sm text-muted hover:text-text underline">Làm lại</button>
+        <button onClick={() => { setPhase('dump'); setText(''); setItems([]); }} className="text-base text-muted hover:text-text underline">Làm lại</button>
       </div>
       {unassigned.length > 0 && (
         <div>
-          <p className="text-sm text-muted mb-3">Chưa phân loại ({unassigned.length}):</p>
+          <p className="text-base text-muted mb-3">Chưa phân loại ({unassigned.length}):</p>
           <div className="space-y-2">
             {unassigned.map(it => (
               <div key={it.id} className="rounded-xl border border-border p-3">
-                <p className="text-base text-text mb-2">{it.text}</p>
+                <p className="text-lg text-text mb-2">{it.text}</p>
                 <div className="flex flex-wrap gap-2">
                   {CATEGORIES.map(c => (
                     <button key={c.label} onClick={() => assignCat(it.id, c.label)}
-                      className="text-sm px-3 py-1 rounded-full border transition-all hover:opacity-80"
+                      className="text-base px-3 py-1 rounded-full border transition-all hover:opacity-80"
                       style={{ borderColor: c.color, color: c.color }}>
                       {c.icon} {c.label}
                     </button>
@@ -88,16 +88,16 @@ function BrainDumpTool() {
         <div className="space-y-4">
           {grouped.filter(g => g.items.length > 0).map(g => (
             <div key={g.label}>
-              <p className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: g.color }}>{g.icon} {g.label}</p>
+              <p className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: g.color }}>{g.icon} {g.label}</p>
               <ul className="space-y-1">
                 {g.items.map(it => (
-                  <li key={it.id} className="text-base text-muted pl-4 border-l-2" style={{ borderColor: g.color }}>{it.text}</li>
+                  <li key={it.id} className="text-lg text-muted pl-4 border-l-2" style={{ borderColor: g.color }}>{it.text}</li>
                 ))}
               </ul>
             </div>
           ))}
           <div className="pt-2 border-t border-border">
-            <p className="text-sm text-muted">✓ Brain dump hoàn tất! Chọn 1–3 việc từ "Có thể làm ngay" để bắt đầu.</p>
+            <p className="text-base text-muted">✓ Brain dump hoàn tất! Chọn 1–3 việc từ "Có thể làm ngay" để bắt đầu.</p>
           </div>
         </div>
       )}
@@ -106,20 +106,20 @@ function BrainDumpTool() {
 
   return (
     <div className="rounded-2xl border p-5 space-y-4" style={{ borderColor: `${COLOR}33`, background: `${COLOR}08` }}>
-      <p className="text-sm font-semibold" style={{ color: COLOR }}>Viết hết những gì đang trong đầu (mỗi dòng một ý):</p>
+      <p className="text-base font-semibold" style={{ color: COLOR }}>Viết hết những gì đang trong đầu (mỗi dòng một ý):</p>
       <textarea
-        className="w-full rounded-xl border bg-bg text-text text-base p-4 resize-none focus:outline-none focus:ring-2 min-h-[180px]"
+        className="w-full rounded-xl border bg-bg text-text text-lg p-4 resize-none focus:outline-none focus:ring-2 min-h-[180px]"
         style={{ borderColor: `${COLOR}30`, '--tw-ring-color': `${COLOR}60` }}
         placeholder={"Việc cần làm...\nLo về...\nCần nhớ...\nMuốn làm...\nĐang tức về...\n(cứ viết hết vào đây)"}
         value={text}
         onChange={e => setText(e.target.value)}
       />
       <div className="flex items-center justify-between">
-        <span className="text-sm text-muted">{text.split('\n').filter(l => l.trim()).length} mục</span>
+        <span className="text-base text-muted">{text.split('\n').filter(l => l.trim()).length} mục</span>
         <button
           onClick={handleDump}
           disabled={!text.trim()}
-          className="px-5 py-2 rounded-full text-base font-bold transition-all disabled:opacity-40"
+          className="px-5 py-2 rounded-full text-lg font-bold transition-all disabled:opacity-40"
           style={{ background: COLOR, color: '#fff' }}
         >
           Phân loại →
@@ -155,7 +155,7 @@ export default function MindBrainDumpPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
         <span>←</span><span>Tâm Trí An Nhiên</span>
       </Link>
 
@@ -164,7 +164,7 @@ export default function MindBrainDumpPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🧹</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Brain Dump — Xả Tải Tâm Trí</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D4 · Kỹ Thuật Dọn Dẹp Đầu Óc</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D4 · Kỹ Thuật Dọn Dẹp Đầu Óc</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Khi đầu óc quá tải — quá nhiều việc cần nhớ, quá nhiều lo âu — Brain Dump là cách nhanh nhất để làm trống "RAM não bộ" và lấy lại sự rõ ràng.</p>
         </div>
       </div>
@@ -174,7 +174,7 @@ export default function MindBrainDumpPage() {
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop" alt="Brain Dump" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>10 phút · Khi não quá tải</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>10 phút · Khi não quá tải</span>
           </div>
         </div>
       </div>
@@ -184,20 +184,20 @@ export default function MindBrainDumpPage() {
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border p-5 md:p-6 mb-6" style={{ borderColor: `${COLOR}25`, background: `${COLOR}07` }}>
           <p className="text-lg text-text leading-relaxed italic">"Não bộ không được thiết kế để nhớ danh sách — nó được thiết kế để suy nghĩ. Khi bạn yêu cầu nó làm cả hai, nó sẽ làm cả hai đều kém."</p>
-          <p className="text-sm mt-3" style={{ color: COLOR }}>— David Allen, Getting Things Done</p>
+          <p className="text-base mt-3" style={{ color: COLOR }}>— David Allen, Getting Things Done</p>
         </div>
       </RevealBlock>
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>6 Bước Brain Dump</h2>
-        <p className="text-muted text-base mb-6">Quy trình 10 phút để làm trống đầu óc</p>
+        <p className="text-muted text-lg mb-6">Quy trình 10 phút để làm trống đầu óc</p>
         <div className="space-y-3">
           {STEPS.map(s => (
             <div key={s.n} className="flex gap-4 rounded-2xl border border-border bg-surface p-4 hover:border-sky-500/30 transition-colors">
-              <div className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-base font-black" style={{ background: `${COLOR}20`, color: COLOR }}>{s.n}</div>
+              <div className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg font-black" style={{ background: `${COLOR}20`, color: COLOR }}>{s.n}</div>
               <div>
                 <div className="font-semibold text-text mb-1">{s.t}</div>
-                <p className="text-muted text-base">{s.d}</p>
+                <p className="text-muted text-lg">{s.d}</p>
               </div>
             </div>
           ))}
@@ -206,19 +206,19 @@ export default function MindBrainDumpPage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thử Brain Dump Ngay</h2>
-        <p className="text-muted text-base mb-6">Viết ra mọi thứ trong đầu, rồi phân loại tự động</p>
+        <p className="text-muted text-lg mb-6">Viết ra mọi thứ trong đầu, rồi phân loại tự động</p>
         <BrainDumpTool />
       </RevealBlock>
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Nhóm Phân Loại</h2>
-        <p className="text-muted text-base mb-6">Sau brain dump, phân loại để biết phải làm gì tiếp</p>
+        <p className="text-muted text-lg mb-6">Sau brain dump, phân loại để biết phải làm gì tiếp</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {CATEGORIES.map(c => (
             <div key={c.label} className="rounded-2xl border border-border bg-surface p-5">
               <div className="text-3xl mb-2">{c.icon}</div>
               <div className="font-bold mb-1" style={{ color: c.color }}>{c.label}</div>
-              <p className="text-base text-muted">{c.desc}</p>
+              <p className="text-lg text-muted">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -235,13 +235,13 @@ export default function MindBrainDumpPage() {
             <div key={c.t} className="rounded-2xl border border-border bg-surface p-5 text-center">
               <div className="text-4xl mb-2">{c.icon}</div>
               <div className="font-semibold text-text mb-1">{c.t}</div>
-              <p className="text-base text-muted">{c.d}</p>
+              <p className="text-lg text-muted">{c.d}</p>
             </div>
           ))}
         </div>
       </RevealBlock>
 
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
     </div>

@@ -272,7 +272,7 @@ function MacroBar({ label, value, max, color }) {
   }, [value, max]);
   return (
     <div className="mb-2">
-      <div className="flex justify-between text-sm mb-1" style={{ color: '#9ca3af' }}>
+      <div className="flex justify-between text-base mb-1" style={{ color: '#9ca3af' }}>
         <span>{label}</span>
         <span style={{ color }}>{value}g / {max}g</span>
       </div>
@@ -377,7 +377,7 @@ export default function NutritionSevenDayPage() {
         {/* ── Breadcrumb ── */}
         <Link
           to="/pillar/b"
-          className="inline-flex items-center gap-2 text-base mb-8 transition-colors duration-200"
+          className="inline-flex items-center gap-2 text-lg mb-8 transition-colors duration-200"
           style={{ color: '#84cc16' }}
         >
           <span>←</span>
@@ -401,7 +401,7 @@ export default function NutritionSevenDayPage() {
               Meal Plan 7 Ngày — Bản Nền Cho Người Mới Sống Khỏe
             </h1>
             <span
-              className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border"
+              className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border"
               style={{ color: '#84cc16', background: 'rgba(132,204,22,0.10)', borderColor: 'rgba(132,204,22,0.20)' }}
             >
               Mẫu thực đơn · 7 ngày · Bắt đầu dễ dàng
@@ -422,7 +422,7 @@ export default function NutritionSevenDayPage() {
             />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 50%, transparent 100%)' }} />
             <div
-              className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
+              className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border"
               style={{ color: '#84cc16', background: 'rgba(10,10,10,0.6)', borderColor: 'rgba(132,204,22,0.2)' }}
             >
               7 Ngày Thực Đơn
@@ -444,7 +444,7 @@ export default function NutritionSevenDayPage() {
               style={{ background: 'rgba(132,204,22,0.06)', borderColor: 'rgba(132,204,22,0.15)' }}
             >
               <span className="text-xl font-bold" style={{ color: '#84cc16' }}>{s.label}</span>
-              <span className="text-sm" style={{ color: '#6b7280' }}>{s.sub}</span>
+              <span className="text-base" style={{ color: '#6b7280' }}>{s.sub}</span>
             </div>
           ))}
         </div>
@@ -462,7 +462,7 @@ export default function NutritionSevenDayPage() {
               <span className="text-3xl">📊</span>
               <h2 className="text-xl font-bold" style={{ color: '#84cc16' }}>Dữ Liệu Của Bạn</h2>
             </div>
-            <p className="text-base leading-relaxed mb-5" style={{ color: '#9ca3af' }}>
+            <p className="text-lg leading-relaxed mb-5" style={{ color: '#9ca3af' }}>
               Dựa trên dữ liệu của bạn ({stats.w}kg · {stats.h}cm · {goalLabel}), mỗi ngày bạn cần khoảng{' '}
               <span className="font-bold" style={{ color: '#84cc16' }}>{stats.targetKcal} kcal</span>.
             </p>
@@ -479,11 +479,11 @@ export default function NutritionSevenDayPage() {
                   style={{ background: `rgba(${b.color === '#84cc16' ? '132,204,22' : b.color === '#22c55e' ? '34,197,94' : b.color === '#f97316' ? '249,115,22' : '6,182,212'},0.08)`, borderColor: `${b.color}30` }}
                 >
                   <span className="text-lg font-bold" style={{ color: b.color }}>{b.label}</span>
-                  <span className="text-sm" style={{ color: '#6b7280' }}>{b.sub}</span>
+                  <span className="text-base" style={{ color: '#6b7280' }}>{b.sub}</span>
                 </div>
               ))}
             </div>
-            <p className="text-sm" style={{ color: '#6b7280' }}>
+            <p className="text-base" style={{ color: '#6b7280' }}>
               Các bữa ăn mẫu dưới đây được thiết kế cho ~1,400–1,700 kcal/ngày. Điều chỉnh khẩu phần theo nhu cầu của bạn.
             </p>
           </div>
@@ -512,7 +512,7 @@ export default function NutritionSevenDayPage() {
                   }}
                 >
                   <span className="text-2xl">{d.emoji}</span>
-                  <span className="text-sm font-bold mt-1" style={{ color: active ? d.color : '#9ca3af' }}>N{d.n}</span>
+                  <span className="text-base font-bold mt-1" style={{ color: active ? d.color : '#9ca3af' }}>N{d.n}</span>
                   <span className="text-[10px] text-center leading-tight mt-0.5" style={{ color: active ? d.color : '#6b7280', maxWidth: 72 }}>
                     {d.tag}
                   </span>
@@ -538,7 +538,7 @@ export default function NutritionSevenDayPage() {
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-2xl font-bold" style={{ color: day.color }}>Ngày {day.n}</span>
                     <span
-                      className="text-sm font-bold px-2 py-0.5 rounded-full border"
+                      className="text-base font-bold px-2 py-0.5 rounded-full border"
                       style={{ color: day.color, background: `rgba(${day.rgb},0.12)`, borderColor: `rgba(${day.rgb},0.25)` }}
                     >
                       {day.tag}
@@ -558,7 +558,7 @@ export default function NutritionSevenDayPage() {
             <div className="p-5">
               {/* Ghi chú callout */}
               <div
-                className="rounded-xl p-4 mb-5 border-l-4 text-base leading-relaxed"
+                className="rounded-xl p-4 mb-5 border-l-4 text-lg leading-relaxed"
                 style={{ background: `rgba(${day.rgb},0.06)`, borderLeftColor: day.color, color: '#d1d5db' }}
               >
                 <span className="font-semibold" style={{ color: day.color }}>Ghi chú ngày {day.n}: </span>
@@ -566,7 +566,7 @@ export default function NutritionSevenDayPage() {
               </div>
 
               {/* Meal timeline */}
-              <h4 className="text-base font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Thực đơn</h4>
+              <h4 className="text-lg font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Thực đơn</h4>
               <div className="space-y-2 mb-5">
                 {day.meals.map((meal, mi) => (
                   <div
@@ -575,12 +575,12 @@ export default function NutritionSevenDayPage() {
                     style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.07)' }}
                   >
                     <div className="shrink-0 w-20 pt-0.5">
-                      <span className="text-sm font-semibold" style={{ color: day.color }}>{meal.time}</span>
+                      <span className="text-base font-semibold" style={{ color: day.color }}>{meal.time}</span>
                     </div>
                     <span className="text-xl shrink-0">{meal.icon}</span>
-                    <p className="text-base flex-1 leading-snug" style={{ color: '#d1d5db' }}>{meal.food}</p>
+                    <p className="text-lg flex-1 leading-snug" style={{ color: '#d1d5db' }}>{meal.food}</p>
                     <span
-                      className="shrink-0 text-sm font-bold px-2 py-0.5 rounded-full"
+                      className="shrink-0 text-base font-bold px-2 py-0.5 rounded-full"
                       style={{ background: `rgba(${day.rgb},0.15)`, color: day.color }}
                     >
                       {meal.kcal} kcal
@@ -595,7 +595,7 @@ export default function NutritionSevenDayPage() {
                 style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.08)' }}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-base font-semibold" style={{ color: '#f5f5f5' }}>Tổng ngày</span>
+                  <span className="text-lg font-semibold" style={{ color: '#f5f5f5' }}>Tổng ngày</span>
                   <span className="text-lg font-bold" style={{ color: day.color }}>{dayTotal.kcal} kcal</span>
                 </div>
                 <MacroBar label="Đạm" value={dayTotal.protein} max={stats.proteinG} color="#22c55e" />
@@ -604,12 +604,12 @@ export default function NutritionSevenDayPage() {
               </div>
 
               {/* Tips */}
-              <h4 className="text-base font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Tips ngày {day.n}</h4>
+              <h4 className="text-lg font-bold uppercase tracking-wider mb-3" style={{ color: '#6b7280' }}>Tips ngày {day.n}</h4>
               <div className="space-y-2">
                 {day.tips.map((tip, ti) => (
                   <div key={ti} className="flex items-start gap-3">
-                    <span className="shrink-0 mt-0.5 text-base" style={{ color: day.color }}>✓</span>
-                    <span className="text-base" style={{ color: '#d1d5db' }}>{tip}</span>
+                    <span className="shrink-0 mt-0.5 text-lg" style={{ color: day.color }}>✓</span>
+                    <span className="text-lg" style={{ color: '#d1d5db' }}>{tip}</span>
                   </div>
                 ))}
               </div>
@@ -620,7 +620,7 @@ export default function NutritionSevenDayPage() {
         {/* ── Section 4: Weekly chart ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Tổng Quan Calo 7 Ngày</h2>
-          <p className="text-base mb-6" style={{ color: '#6b7280' }}>
+          <p className="text-lg mb-6" style={{ color: '#6b7280' }}>
             Cột = kcal ước tính mỗi ngày. Đường đứt = mục tiêu của bạn ({stats.targetKcal} kcal).
           </p>
           <div
@@ -637,7 +637,7 @@ export default function NutritionSevenDayPage() {
             <h2 className="text-3xl font-bold" style={{ color: '#f5f5f5' }}>Danh Sách Mua Sắm</h2>
             <button
               onClick={copyShoppingList}
-              className="text-base px-4 py-2 rounded-xl border transition-all duration-200 font-semibold"
+              className="text-lg px-4 py-2 rounded-xl border transition-all duration-200 font-semibold"
               style={{ color: '#84cc16', borderColor: 'rgba(132,204,22,0.3)', background: 'rgba(132,204,22,0.08)' }}
             >
               Sao chép danh sách
@@ -652,7 +652,7 @@ export default function NutritionSevenDayPage() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-2xl">{cat.emoji}</span>
-                  <span className="text-base font-bold" style={{ color: cat.color }}>{cat.label}</span>
+                  <span className="text-lg font-bold" style={{ color: cat.color }}>{cat.label}</span>
                 </div>
                 <div className="space-y-2">
                   {cat.items.map((item, idx) => {
@@ -671,7 +671,7 @@ export default function NutritionSevenDayPage() {
                           {checked && <span className="text-[9px] text-black font-bold">✓</span>}
                         </div>
                         <span
-                          className="text-sm leading-snug transition-colors duration-200"
+                          className="text-base leading-snug transition-colors duration-200"
                           style={{ color: checked ? '#4b5563' : '#d1d5db', textDecoration: checked ? 'line-through' : 'none' }}
                           onClick={() => toggleShop(key)}
                         >
@@ -689,7 +689,7 @@ export default function NutritionSevenDayPage() {
         {/* ── Section 6: Meal Prep guide ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Meal Prep 60–90 Phút</h2>
-          <p className="text-base mb-6" style={{ color: '#6b7280' }}>Chuẩn bị trước một lần, ăn khỏe cả tuần.</p>
+          <p className="text-lg mb-6" style={{ color: '#6b7280' }}>Chuẩn bị trước một lần, ăn khỏe cả tuần.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {MEAL_PREP_STEPS.map((step, si) => (
               <div
@@ -707,16 +707,16 @@ export default function NutritionSevenDayPage() {
                 <div className="flex items-center gap-2 mb-2 mt-1">
                   <span className="text-3xl">{step.icon}</span>
                   <div>
-                    <span className="text-base font-bold" style={{ color: '#f5f5f5' }}>{step.title}</span>
+                    <span className="text-lg font-bold" style={{ color: '#f5f5f5' }}>{step.title}</span>
                     <span
-                      className="ml-2 text-sm px-2 py-0.5 rounded-full font-semibold"
+                      className="ml-2 text-base px-2 py-0.5 rounded-full font-semibold"
                       style={{ background: `${step.color}20`, color: step.color }}
                     >
                       {step.time}
                     </span>
                   </div>
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{step.desc}</p>
+                <p className="text-base leading-relaxed" style={{ color: '#9ca3af' }}>{step.desc}</p>
               </div>
             ))}
           </div>
@@ -726,7 +726,7 @@ export default function NutritionSevenDayPage() {
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Checklist Mỗi Ngày</h2>
           <div className="flex items-center gap-3 mb-6">
-            <div className="text-base font-semibold" style={{ color: checkedCount === CHECKLIST.length ? '#84cc16' : '#9ca3af' }}>
+            <div className="text-lg font-semibold" style={{ color: checkedCount === CHECKLIST.length ? '#84cc16' : '#9ca3af' }}>
               {checkedCount}/{CHECKLIST.length} hoàn thành
             </div>
             <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.08)' }}>
@@ -738,7 +738,7 @@ export default function NutritionSevenDayPage() {
           </div>
           {checkedCount === CHECKLIST.length && (
             <div
-              className="rounded-2xl border p-4 mb-6 text-center text-base font-semibold"
+              className="rounded-2xl border p-4 mb-6 text-center text-lg font-semibold"
               style={{ background: 'rgba(132,204,22,0.08)', borderColor: 'rgba(132,204,22,0.25)', color: '#84cc16' }}
             >
               Tuyệt vời! Bạn đã hoàn thành tất cả 5 mục hôm nay. Giữ vững nhé!
@@ -764,9 +764,9 @@ export default function NutritionSevenDayPage() {
                       background: done ? '#84cc16' : 'transparent',
                     }}
                   >
-                    {done && <span className="text-sm font-bold text-black">✓</span>}
+                    {done && <span className="text-base font-bold text-black">✓</span>}
                   </div>
-                  <span className="text-base" style={{ color: done ? '#84cc16' : '#d1d5db' }}>{item.icon} {item.text}</span>
+                  <span className="text-lg" style={{ color: done ? '#84cc16' : '#d1d5db' }}>{item.icon} {item.text}</span>
                 </button>
               );
             })}
@@ -776,7 +776,7 @@ export default function NutritionSevenDayPage() {
         {/* ── Section 8: Off-plan accordion ── */}
         <RevealBlock className="mb-12">
           <h2 className="text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Bữa Ăn Lỡ Tay — Xử Lý Thế Nào?</h2>
-          <p className="text-base mb-6" style={{ color: '#6b7280' }}>Lỡ kế hoạch không có nghĩa là thất bại. Đây là cách xử lý đúng.</p>
+          <p className="text-lg mb-6" style={{ color: '#6b7280' }}>Lỡ kế hoạch không có nghĩa là thất bại. Đây là cách xử lý đúng.</p>
           <div className="space-y-3">
             {OFF_PLAN.map((item, i) => {
               const open = openAccordion === i;
@@ -792,7 +792,7 @@ export default function NutritionSevenDayPage() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-3xl">{item.icon}</span>
-                      <span className="font-semibold text-base" style={{ color: open ? item.color : '#f5f5f5' }}>{item.title}</span>
+                      <span className="font-semibold text-lg" style={{ color: open ? item.color : '#f5f5f5' }}>{item.title}</span>
                     </div>
                     <span
                       className="text-xl transition-transform duration-300"
@@ -807,7 +807,7 @@ export default function NutritionSevenDayPage() {
                         {item.rules.map((rule, ri) => (
                           <li key={ri} className="flex items-start gap-2">
                             <span className="shrink-0 mt-0.5" style={{ color: item.color }}>→</span>
-                            <span className="text-base" style={{ color: '#d1d5db' }}>{rule}</span>
+                            <span className="text-lg" style={{ color: '#d1d5db' }}>{rule}</span>
                           </li>
                         ))}
                       </ul>
@@ -863,8 +863,8 @@ export default function NutritionSevenDayPage() {
                   >
                     <span className="text-3xl">{m.icon}</span>
                     <div>
-                      <div className="text-sm font-bold" style={{ color: m.color }}>{m.label}</div>
-                      <div className="text-sm" style={{ color: '#6b7280' }}>{m.sub}</div>
+                      <div className="text-base font-bold" style={{ color: m.color }}>{m.label}</div>
+                      <div className="text-base" style={{ color: '#6b7280' }}>{m.sub}</div>
                     </div>
                   </div>
                 ))}
@@ -882,8 +882,8 @@ export default function NutritionSevenDayPage() {
             <div className="flex items-start gap-3">
               <span className="text-2xl shrink-0">⚠️</span>
               <div>
-                <p className="text-base font-semibold mb-1" style={{ color: '#84cc16' }}>Lưu ý an toàn</p>
-                <p className="text-base leading-relaxed" style={{ color: '#9ca3af' }}>
+                <p className="text-lg font-semibold mb-1" style={{ color: '#84cc16' }}>Lưu ý an toàn</p>
+                <p className="text-lg leading-relaxed" style={{ color: '#9ca3af' }}>
                   Thực đơn này mang tính tham khảo. Nếu bạn có bệnh nền, đang dùng thuốc hoặc có nhu cầu đặc biệt, hãy tham khảo chuyên gia dinh dưỡng hoặc bác sĩ trước khi thay đổi chế độ ăn.
                 </p>
               </div>
@@ -893,14 +893,14 @@ export default function NutritionSevenDayPage() {
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
             <Link
               to="/pillar/b"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-base transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-lg transition-all duration-200"
               style={{ background: 'rgba(132,204,22,0.12)', color: '#84cc16', border: '1px solid rgba(132,204,22,0.3)' }}
             >
               ← Quay lại Dinh Dưỡng
             </Link>
             <Link
               to="/pillar/b/meals"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-base transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-lg transition-all duration-200"
               style={{ background: '#84cc16', color: '#000' }}
             >
               Quy tắc bữa ăn →

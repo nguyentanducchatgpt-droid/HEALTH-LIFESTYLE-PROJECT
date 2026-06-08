@@ -162,7 +162,7 @@ export default function WeeklyRhythm() {
         <h2 className="text-3xl font-black text-text flex items-center gap-3 mb-1">
           <span>📅</span> Nhịp Tuần Gợi Ý
         </h2>
-        <p className="text-muted text-base">
+        <p className="text-muted text-lg">
           3 giai đoạn tiến bộ — chọn giai đoạn, click từng ngày để xem bài tập chi tiết
         </p>
       </div>
@@ -176,7 +176,7 @@ export default function WeeklyRhythm() {
             <button
               key={ph.id}
               onClick={() => switchPhase(ph.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-base font-bold transition-all duration-200 ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-lg font-bold transition-all duration-200 ${
                 isActive
                   ? `${cs.bg} ${cs.text} border ${cs.border}`
                   : 'text-muted hover:text-text hover:bg-white/4 border border-transparent'
@@ -210,7 +210,7 @@ export default function WeeklyRhythm() {
               <span className="text-2xl shrink-0">{s.icon}</span>
               <div className="min-w-0 relative">
                 <p className="text-[10px] text-muted/70 truncate">{s.label}</p>
-                <p className={`text-base font-black ${pc.text} truncate`}>{s.value}</p>
+                <p className={`text-lg font-black ${pc.text} truncate`}>{s.value}</p>
               </div>
             </div>
           ))}
@@ -218,7 +218,7 @@ export default function WeeklyRhythm() {
 
         {/* ── Focus tag + week color strip ── */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-5">
-          <span className={`inline-flex items-center gap-2 text-sm font-bold px-3 py-1.5 rounded-full border ${pc.bg} ${pc.border} ${pc.text} shrink-0`}>
+          <span className={`inline-flex items-center gap-2 text-base font-bold px-3 py-1.5 rounded-full border ${pc.bg} ${pc.border} ${pc.text} shrink-0`}>
             <span className={`w-1.5 h-1.5 rounded-full ${pc.dot}`} />
             {phase.focus}
           </span>
@@ -339,15 +339,15 @@ export default function WeeklyRhythm() {
                     <span className={`shrink-0 w-5 h-5 rounded-full ${dc.bg} border ${dc.border} ${dc.text} text-[10px] font-black flex items-center justify-center mt-0.5`}>
                       {j + 1}
                     </span>
-                    <p className="text-sm text-text/90 leading-relaxed">{ex}</p>
+                    <p className="text-base text-text/90 leading-relaxed">{ex}</p>
                   </div>
                 ))}
               </div>
 
               {/* Tip */}
               <div className={`mx-4 sm:mx-5 mb-4 sm:mb-5 flex gap-3 items-start rounded-xl border ${dc.border} ${dc.bg} px-4 py-3`}>
-                <span className="text-base shrink-0 mt-0.5">💡</span>
-                <p className={`text-sm ${dc.text} leading-relaxed`}>{d.tip}</p>
+                <span className="text-lg shrink-0 mt-0.5">💡</span>
+                <p className={`text-base ${dc.text} leading-relaxed`}>{d.tip}</p>
               </div>
             </div>
           );
@@ -362,10 +362,10 @@ export default function WeeklyRhythm() {
           <div className="relative flex gap-3 items-start">
             <span className="text-3xl shrink-0">{phase.icon}</span>
             <div>
-              <p className={`text-sm font-black ${pc.text} mb-1`}>
+              <p className={`text-base font-black ${pc.text} mb-1`}>
                 Coach tip — {phase.sub}
               </p>
-              <p className="text-base text-muted/90 leading-relaxed">{phase.tip}</p>
+              <p className="text-lg text-muted/90 leading-relaxed">{phase.tip}</p>
             </div>
           </div>
         </div>

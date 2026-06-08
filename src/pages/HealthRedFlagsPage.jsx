@@ -127,14 +127,14 @@ export default function HealthRedFlagsPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🚨</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Dấu Hiệu Nguy Hiểm</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Nhận biết khẩn cấp · Cấp cứu đúng lúc
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
@@ -147,7 +147,7 @@ export default function HealthRedFlagsPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80&auto=format&fit=crop" alt="Cấp cứu" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             Gọi 115 khi nghi ngờ
           </span>
         </div>
@@ -159,15 +159,15 @@ export default function HealthRedFlagsPage() {
       <RevealBlock delay={0} className="mb-10">
         <div className="rounded-2xl border-2 p-4 text-center" style={{ borderColor: COLOR, background: `rgba(${RGB},0.07)` }}>
           <div className="text-3xl font-black text-white mb-1">115</div>
-          <div className="text-base font-bold" style={{ color: COLOR }}>Số cấp cứu toàn quốc — Miễn phí 24/7</div>
-          <p className="text-sm text-muted mt-1">Hoặc nhờ ai đó đưa đến khoa cấp cứu bệnh viện gần nhất</p>
+          <div className="text-lg font-bold" style={{ color: COLOR }}>Số cấp cứu toàn quốc — Miễn phí 24/7</div>
+          <p className="text-base text-muted mt-1">Hoặc nhờ ai đó đưa đến khoa cấp cứu bệnh viện gần nhất</p>
         </div>
       </RevealBlock>
 
       {/* Emergency groups */}
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Cấp Cứu Ngay Lập Tức</h2>
-        <p className="text-muted text-base mb-6">Các tình trạng dưới đây đòi hỏi xử lý trong phút — không phải giờ.</p>
+        <p className="text-muted text-lg mb-6">Các tình trạng dưới đây đòi hỏi xử lý trong phút — không phải giờ.</p>
         <div className="space-y-4">
           {EMERGENCY_GROUPS.map((g, i) => (
             <div key={i} className="rounded-2xl border overflow-hidden" style={{ borderColor: `${g.color}33` }}>
@@ -176,19 +176,19 @@ export default function HealthRedFlagsPage() {
                 <div className="flex-1">
                   <div className="font-bold text-text">{g.title}</div>
                 </div>
-                <span className="text-sm font-black px-2 py-1 rounded-full" style={{ background: g.color, color: 'white' }}>{g.tag}</span>
+                <span className="text-base font-black px-2 py-1 rounded-full" style={{ background: g.color, color: 'white' }}>{g.tag}</span>
               </div>
               <div className="p-4 space-y-3">
                 <ul className="space-y-1">
                   {g.signs.map((s, j) => (
-                    <li key={j} className="flex gap-2 text-base text-text">
+                    <li key={j} className="flex gap-2 text-lg text-text">
                       <span style={{ color: g.color }} className="shrink-0">•</span>
                       {s}
                     </li>
                   ))}
                 </ul>
-                {g.note && <p className="text-sm text-muted border-l-2 pl-3" style={{ borderColor: g.color }}>{g.note}</p>}
-                <div className="rounded-xl p-3 text-base font-bold" style={{ background: `${g.color}15`, color: g.color }}>
+                {g.note && <p className="text-base text-muted border-l-2 pl-3" style={{ borderColor: g.color }}>{g.note}</p>}
+                <div className="rounded-xl p-3 text-lg font-bold" style={{ background: `${g.color}15`, color: g.color }}>
                   → {g.action}
                 </div>
               </div>
@@ -200,13 +200,13 @@ export default function HealthRedFlagsPage() {
       {/* Soon signs */}
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Cần Đi Khám Sớm</h2>
-        <p className="text-muted text-base mb-6">Các dấu hiệu này không cần vào cấp cứu ngay nhưng cần đặt lịch khám trong thời gian ngắn.</p>
+        <p className="text-muted text-lg mb-6">Các dấu hiệu này không cần vào cấp cứu ngay nhưng cần đặt lịch khám trong thời gian ngắn.</p>
         <div className="space-y-2">
           {SOON_SIGNS.map((s, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex items-center gap-4">
               <span className="text-xl">{s.icon}</span>
-              <p className="text-base text-text flex-1">{s.sign}</p>
-              <span className="text-sm font-bold shrink-0 px-2 py-1 rounded-full border" style={{ color: '#f97316', borderColor: '#f9731633', background: '#f9731610' }}>{s.urgency}</span>
+              <p className="text-lg text-text flex-1">{s.sign}</p>
+              <span className="text-base font-bold shrink-0 px-2 py-1 rounded-full border" style={{ color: '#f97316', borderColor: '#f9731633', background: '#f9731610' }}>{s.urgency}</span>
             </div>
           ))}
         </div>
@@ -215,7 +215,7 @@ export default function HealthRedFlagsPage() {
       <RevealBlock delay={3} className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold text-text mb-3">Chuẩn Bị Sẵn Sàng</h3>
-          <ul className="space-y-2 text-base text-muted">
+          <ul className="space-y-2 text-lg text-muted">
             <li>• Lưu số 115 vào điện thoại ngay bây giờ</li>
             <li>• Biết tên và địa chỉ bệnh viện gần nhà nhất có khoa cấp cứu</li>
             <li>• Chuẩn bị túi cấp cứu cơ bản: aspirin (nếu không dị ứng), thuốc thường dùng, CCCD, thẻ bảo hiểm y tế</li>
@@ -225,8 +225,8 @@ export default function HealthRedFlagsPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <p className="text-sm text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục. Không thay thế khám và điều trị y tế.</p>
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <p className="text-base text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục. Không thay thế khám và điều trị y tế.</p>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
     </div>
   );
 }

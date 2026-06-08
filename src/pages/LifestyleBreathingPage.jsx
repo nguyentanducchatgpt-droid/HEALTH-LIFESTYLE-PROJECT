@@ -141,7 +141,7 @@ function BoxBreathingTimer() {
 
   return (
     <div className="rounded-2xl border border-border bg-surface p-6 flex flex-col items-center gap-4">
-      <div className="text-base font-bold uppercase tracking-widest text-muted">Box Breathing Timer</div>
+      <div className="text-lg font-bold uppercase tracking-widest text-muted">Box Breathing Timer</div>
       <div className="relative w-40 h-40 flex items-center justify-center">
         <div className="absolute inset-0 rounded-full border-2 opacity-20" style={{ borderColor: COLOR }} />
         <svg className="absolute inset-0 w-full h-full -rotate-90">
@@ -149,11 +149,11 @@ function BoxBreathingTimer() {
         </svg>
         <div className="text-center transition-transform duration-1000" style={{ transform: `scale(${running ? circleSize : 1})` }}>
           <div className="text-5xl font-bold text-text">{running ? count : '▶'}</div>
-          <div className="text-sm text-muted mt-1">{running ? currentPhase.label : 'Bắt đầu'}</div>
+          <div className="text-base text-muted mt-1">{running ? currentPhase.label : 'Bắt đầu'}</div>
         </div>
       </div>
-      {running && <div className="text-sm text-muted">Vòng {cycles + 1}</div>}
-      <button onClick={startStop} className="px-6 py-2 rounded-full text-base font-bold transition-all" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${RGB},0.15)`, color: running ? '#ef4444' : COLOR, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${RGB},0.3)`}` }}>
+      {running && <div className="text-base text-muted">Vòng {cycles + 1}</div>}
+      <button onClick={startStop} className="px-6 py-2 rounded-full text-lg font-bold transition-all" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${RGB},0.15)`, color: running ? '#ef4444' : COLOR, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${RGB},0.3)`}` }}>
         {running ? 'Dừng' : 'Bắt đầu'}
       </button>
     </div>
@@ -188,7 +188,7 @@ export default function LifestyleBreathingPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-sm text-muted hover:text-teal-400 transition-colors mb-8 group">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-base text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Lối Sống Khỏe
       </Link>
@@ -198,7 +198,7 @@ export default function LifestyleBreathingPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🌬️</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Kỹ Thuật Thở</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C6 · Breathing</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C6 · Breathing</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Bạn thở 20.000 lần mỗi ngày. Đa số vô thức và không hiệu quả. Chỉ cần thay đổi cách thở 5 phút mỗi ngày, bạn có thể giảm cortisol, cải thiện giấc ngủ và tăng hiệu suất não bộ.</p>
         </div>
       </div>
@@ -208,7 +208,7 @@ export default function LifestyleBreathingPage() {
           <img src="https://images.unsplash.com/photo-1518609571773-39b7d303a87b?w=800&q=80&auto=format&fit=crop" alt="Breathing" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Hít thở có chủ ý · 3 kỹ thuật khoa học</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Hít thở có chủ ý · 3 kỹ thuật khoa học</span>
           </div>
         </div>
       </div>
@@ -218,13 +218,13 @@ export default function LifestyleBreathingPage() {
       {/* Science section */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Khoa Học Đằng Sau Hơi Thở</h2>
-        <p className="text-muted text-base mb-6">Thở là công cụ duy nhất bạn có thể điều khiển cả hệ tự chủ và ý thức.</p>
+        <p className="text-muted text-lg mb-6">Thở là công cụ duy nhất bạn có thể điều khiển cả hệ tự chủ và ý thức.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {SCIENCE.map(s => (
             <div key={s.title} className="rounded-2xl border border-border bg-surface p-5 hover:border-sky-500/20 transition-colors">
               <div className="text-4xl mb-3">{s.icon}</div>
-              <div className="text-base font-bold text-text mb-2">{s.title}</div>
-              <div className="text-sm text-muted leading-relaxed">{s.desc}</div>
+              <div className="text-lg font-bold text-text mb-2">{s.title}</div>
+              <div className="text-base text-muted leading-relaxed">{s.desc}</div>
             </div>
           ))}
         </div>
@@ -233,11 +233,11 @@ export default function LifestyleBreathingPage() {
       {/* 3 techniques */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Kỹ Thuật Thở Cốt Lõi</h2>
-        <p className="text-muted text-base mb-6">Mỗi kỹ thuật có mục đích khác nhau — chọn đúng thời điểm để hiệu quả tối đa.</p>
+        <p className="text-muted text-lg mb-6">Mỗi kỹ thuật có mục đích khác nhau — chọn đúng thời điểm để hiệu quả tối đa.</p>
 
         <div className="flex gap-2 mb-6 flex-wrap">
           {TECHNIQUES.map(t => (
-            <button key={t.id} onClick={() => setActiveTech(t.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium transition-all border ${activeTech === t.id ? 'text-white' : 'text-muted border-border hover:border-sky-500/30'}`} style={{ background: activeTech === t.id ? t.color : undefined, borderColor: activeTech === t.id ? t.color : undefined }}>
+            <button key={t.id} onClick={() => setActiveTech(t.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-lg font-medium transition-all border ${activeTech === t.id ? 'text-white' : 'text-muted border-border hover:border-sky-500/30'}`} style={{ background: activeTech === t.id ? t.color : undefined, borderColor: activeTech === t.id ? t.color : undefined }}>
               <span>{t.icon}</span>{t.title}
             </button>
           ))}
@@ -249,18 +249,18 @@ export default function LifestyleBreathingPage() {
               <span className="text-5xl">{tech.icon}</span>
               <div>
                 <div className="text-xl font-bold text-text">{tech.title}</div>
-                <div className="text-sm font-bold uppercase tracking-widest mt-1" style={{ color: tech.color }}>{tech.subtitle}</div>
-                <p className="text-base text-muted mt-2 leading-relaxed">{tech.desc}</p>
+                <div className="text-base font-bold uppercase tracking-widest mt-1" style={{ color: tech.color }}>{tech.subtitle}</div>
+                <p className="text-lg text-muted mt-2 leading-relaxed">{tech.desc}</p>
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>Cách Thực Hiện</div>
+                <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>Cách Thực Hiện</div>
                 <ol className="space-y-2">
                   {tech.steps.map((step, i) => (
-                    <li key={i} className="flex items-start gap-3 text-base text-text">
-                      <span className="w-5 h-5 rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5" style={{ background: `${tech.color}20`, color: tech.color }}>{i + 1}</span>
+                    <li key={i} className="flex items-start gap-3 text-lg text-text">
+                      <span className="w-5 h-5 rounded-full flex items-center justify-center text-base font-bold shrink-0 mt-0.5" style={{ background: `${tech.color}20`, color: tech.color }}>{i + 1}</span>
                       <span className="leading-relaxed">{step}</span>
                     </li>
                   ))}
@@ -268,17 +268,17 @@ export default function LifestyleBreathingPage() {
               </div>
               <div className="space-y-4">
                 <div>
-                  <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>Lợi Ích</div>
+                  <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>Lợi Ích</div>
                   <ul className="space-y-1">
                     {tech.benefits.map((b, i) => (
-                      <li key={i} className="flex items-start gap-2 text-base text-text"><span style={{ color: tech.color }}>✓</span>{b}</li>
+                      <li key={i} className="flex items-start gap-2 text-lg text-text"><span style={{ color: tech.color }}>✓</span>{b}</li>
                     ))}
                   </ul>
                 </div>
                 <div className="rounded-xl p-3" style={{ background: `${tech.color}10` }}>
-                  <div className="text-sm text-muted mb-1">⏰ Khi nào dùng</div>
-                  <div className="text-base text-text font-medium">{tech.when}</div>
-                  <div className="text-sm text-muted mt-1">🕐 {tech.duration}</div>
+                  <div className="text-base text-muted mb-1">⏰ Khi nào dùng</div>
+                  <div className="text-lg text-text font-medium">{tech.when}</div>
+                  <div className="text-base text-muted mt-1">🕐 {tech.duration}</div>
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@ export default function LifestyleBreathingPage() {
       {/* Interactive box breathing timer */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Box Breathing Timer</h2>
-        <p className="text-muted text-base mb-6">Thực hành ngay — timer sẽ hướng dẫn từng bước theo nhịp 4-4-4-4.</p>
+        <p className="text-muted text-lg mb-6">Thực hành ngay — timer sẽ hướng dẫn từng bước theo nhịp 4-4-4-4.</p>
         <div className="max-w-xs mx-auto">
           <BoxBreathingTimer />
         </div>
@@ -298,7 +298,7 @@ export default function LifestyleBreathingPage() {
       {/* Daily plan */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Kế Hoạch Thở Hằng Ngày</h2>
-        <p className="text-muted text-base mb-6">Tích hợp 3 kỹ thuật vào thói quen hiện tại — không cần thêm thời gian riêng.</p>
+        <p className="text-muted text-lg mb-6">Tích hợp 3 kỹ thuật vào thói quen hiện tại — không cần thêm thời gian riêng.</p>
         <div className="space-y-3">
           {[
             { time: 'Sáng thức dậy', tech: 'Thở Cơ Hoành', duration: '3–5 phút', why: 'Kích hoạt hệ phó giao cảm, ra khỏi trạng thái "còn ngủ"', icon: '🌅' },
@@ -309,12 +309,12 @@ export default function LifestyleBreathingPage() {
             <div key={i} className="flex items-center gap-4 rounded-xl p-4 border border-border bg-surface hover:border-sky-500/20 transition-colors">
               <span className="text-3xl shrink-0">{item.icon}</span>
               <div className="flex-1">
-                <div className="text-base font-bold text-text">{item.time}</div>
-                <div className="text-sm text-muted mt-0.5">{item.why}</div>
+                <div className="text-lg font-bold text-text">{item.time}</div>
+                <div className="text-base text-muted mt-0.5">{item.why}</div>
               </div>
               <div className="text-right shrink-0">
-                <div className="text-sm font-bold" style={{ color: COLOR }}>{item.tech}</div>
-                <div className="text-sm text-muted">{item.duration}</div>
+                <div className="text-base font-bold" style={{ color: COLOR }}>{item.tech}</div>
+                <div className="text-base text-muted">{item.duration}</div>
               </div>
             </div>
           ))}
@@ -323,14 +323,14 @@ export default function LifestyleBreathingPage() {
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/c/deload" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/c/deload" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Deload
         </Link>
-        <Link to="/pillar/c" className="text-base text-muted hover:text-teal-400 transition-colors text-center">
+        <Link to="/pillar/c" className="text-lg text-muted hover:text-teal-400 transition-colors text-center">
           Tất cả Module Lối Sống →
         </Link>
-        <Link to="/pillar/c/environment" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/c/environment" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
           Thiết Kế Môi Trường
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

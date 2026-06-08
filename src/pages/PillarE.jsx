@@ -30,7 +30,7 @@ function TeaserSection({ title, children }) {
     <div className="mb-12">
       <div className="flex items-center gap-3 mb-6">
         <div className="h-px flex-1 bg-border" />
-        <span className="text-sm font-bold uppercase tracking-widest text-muted px-3">{title}</span>
+        <span className="text-base font-bold uppercase tracking-widest text-muted px-3">{title}</span>
         <div className="h-px flex-1 bg-border" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">{children}</div>
@@ -46,15 +46,15 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
         <div>
           <div className="flex items-center gap-2 mb-3">
             <span className="text-3xl">{icon}</span>
-            <span className="text-sm font-bold uppercase tracking-widest" style={{ color }}>{category}</span>
+            <span className="text-base font-bold uppercase tracking-widest" style={{ color }}>{category}</span>
           </div>
           <h3 className="text-xl font-bold text-text mb-1 leading-snug">{title}</h3>
-          <p className="text-sm font-semibold mb-3" style={{ color }}>{accent}</p>
-          <p className="text-base text-muted leading-relaxed mb-4">{desc}</p>
+          <p className="text-base font-semibold mb-3" style={{ color }}>{accent}</p>
+          <p className="text-lg text-muted leading-relaxed mb-4">{desc}</p>
           {features.length > 0 && (
             <ul className="space-y-1 mb-4">
               {features.map(f => (
-                <li key={f} className="flex items-center gap-2 text-sm text-muted">
+                <li key={f} className="flex items-center gap-2 text-base text-muted">
                   <span className="w-1 h-1 rounded-full shrink-0" style={{ background: color }} />{f}
                 </li>
               ))}
@@ -67,12 +67,12 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
               {stats.map(s => (
                 <div key={s.l}>
                   <div className="text-lg font-black" style={{ color }}>{s.v}</div>
-                  <div className="text-sm text-muted">{s.l}</div>
+                  <div className="text-base text-muted">{s.l}</div>
                 </div>
               ))}
             </div>
           )}
-          <span className="text-sm font-bold ml-auto" style={{ color }}>{cta}</span>
+          <span className="text-base font-bold ml-auto" style={{ color }}>{cta}</span>
         </div>
       </div>
       {image && (
@@ -120,27 +120,27 @@ function TabE0() {
   return (
     <div className="space-y-6">
       <div className="rounded-2xl border p-4" style={{ borderColor: `${COLOR}25`, background: `${COLOR}07` }}>
-        <p className="text-base font-semibold mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Sức Khỏe Cá Nhân (E0)</p>
-        <p className="text-sm text-muted">Lưu tự động trên thiết bị. Dùng để cá nhân hóa nội dung trong toàn bộ Trụ cột E.</p>
+        <p className="text-lg font-semibold mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Sức Khỏe Cá Nhân (E0)</p>
+        <p className="text-base text-muted">Lưu tự động trên thiết bị. Dùng để cá nhân hóa nội dung trong toàn bộ Trụ cột E.</p>
       </div>
       <div className="grid grid-cols-2 gap-3">
         {fields.map(f => (
           <div key={f.k}>
-            <label className="text-sm text-muted mb-1 block">{f.l}</label>
+            <label className="text-base text-muted mb-1 block">{f.l}</label>
             <div className="flex items-center gap-2 rounded-xl border border-border bg-bg px-3 py-2">
               <input type={f.t} placeholder={f.ph} value={form[f.k] || ''} onChange={e => set(f.k, +e.target.value)}
-                className="flex-1 bg-transparent text-base text-text focus:outline-none w-0 min-w-0" />
-              <span className="text-sm text-muted shrink-0">{f.unit}</span>
+                className="flex-1 bg-transparent text-lg text-text focus:outline-none w-0 min-w-0" />
+              <span className="text-base text-muted shrink-0">{f.unit}</span>
             </div>
           </div>
         ))}
       </div>
       <div>
-        <label className="text-sm text-muted mb-1 block">Giới tính</label>
+        <label className="text-base text-muted mb-1 block">Giới tính</label>
         <div className="flex gap-2">
           {[{ v: 'male', l: '♂ Nam' }, { v: 'female', l: '♀ Nữ' }].map(g => (
             <button key={g.v} onClick={() => set('sex', g.v)}
-              className="flex-1 py-2 rounded-xl border text-base font-semibold transition-all"
+              className="flex-1 py-2 rounded-xl border text-lg font-semibold transition-all"
               style={form.sex === g.v ? { borderColor: COLOR, background: `${COLOR}20`, color: COLOR } : { borderColor: '#333', color: '#888' }}>
               {g.l}
             </button>
@@ -148,11 +148,11 @@ function TabE0() {
         </div>
       </div>
       <div>
-        <label className="text-sm text-muted mb-1 block">Bệnh nền</label>
+        <label className="text-base text-muted mb-1 block">Bệnh nền</label>
         <div className="flex flex-wrap gap-2">
           {diseaseOpts.map(d => (
             <button key={d} onClick={() => { const cur = form.diseases || []; const next = cur.includes(d) ? cur.filter(x => x !== d) : [...cur, d]; set('diseases', next); }}
-              className="px-3 py-1 rounded-full text-sm border transition-all"
+              className="px-3 py-1 rounded-full text-base border transition-all"
               style={(form.diseases || []).includes(d) ? { borderColor: COLOR, background: `${COLOR}20`, color: COLOR } : { borderColor: '#333', color: '#888' }}>
               {d}
             </button>
@@ -163,11 +163,11 @@ function TabE0() {
         <div className="rounded-2xl border p-4 flex items-center gap-4" style={{ borderColor: `${bmiColor}30`, background: `${bmiColor}08` }}>
           <div className="text-center">
             <div className="text-4xl font-black" style={{ color: bmiColor }}>{bmi}</div>
-            <div className="text-sm text-muted">BMI</div>
+            <div className="text-base text-muted">BMI</div>
           </div>
           <div>
             <div className="font-bold" style={{ color: bmiColor }}>{bmiLabel}</div>
-            <p className="text-sm text-muted">Vòng eo: {form.waist || '–'} cm · {form.sex === 'female' ? 'Nữ: ngưỡng >80 cm' : 'Nam: ngưỡng >90 cm'}</p>
+            <p className="text-base text-muted">Vòng eo: {form.waist || '–'} cm · {form.sex === 'female' ? 'Nữ: ngưỡng >80 cm' : 'Nam: ngưỡng >90 cm'}</p>
           </div>
         </div>
       )}
@@ -190,18 +190,18 @@ function TabE1() {
         <Link to={m.link} key={m.t} className="block rounded-2xl border border-border bg-surface/60 p-4 hover:border-blue-500/30 transition-colors group">
           <div className="flex items-center gap-3 mb-2">
             <span className="text-2xl">{m.icon}</span>
-            <span className="font-bold text-text group-hover:text-blue-400 transition-colors text-base">{m.t}</span>
-            <span className="ml-auto text-sm" style={{ color: COLOR }}>→</span>
+            <span className="font-bold text-text group-hover:text-blue-400 transition-colors text-lg">{m.t}</span>
+            <span className="ml-auto text-base" style={{ color: COLOR }}>→</span>
           </div>
-          <p className="text-sm text-muted mb-2 leading-relaxed">{m.d}</p>
+          <p className="text-base text-muted mb-2 leading-relaxed">{m.d}</p>
           <div className="flex flex-wrap gap-1.5">
             {m.ranges.map(r => (
-              <span key={r.l} className="text-sm px-2 py-0.5 rounded-full" style={{ background: `${r.c}18`, color: r.c }}>{r.l} = {r.n}</span>
+              <span key={r.l} className="text-base px-2 py-0.5 rounded-full" style={{ background: `${r.c}18`, color: r.c }}>{r.l} = {r.n}</span>
             ))}
           </div>
         </Link>
       ))}
-      <p className="text-sm text-muted">* Cần xác nhận lại trong bối cảnh y tế phù hợp, không tự kết luận.</p>
+      <p className="text-base text-muted">* Cần xác nhận lại trong bối cảnh y tế phù hợp, không tự kết luận.</p>
     </div>
   );
 }
@@ -221,35 +221,35 @@ function TabE2() {
   return (
     <div className="space-y-5">
       <div>
-        <h3 className="font-bold text-text text-base mb-3">Lịch Theo Dõi Cơ Bản</h3>
+        <h3 className="font-bold text-text text-lg mb-3">Lịch Theo Dõi Cơ Bản</h3>
         <div className="space-y-1.5">
           {SCHEDULE.map(s => (
             <div key={s.metric} className="flex items-start gap-3 rounded-xl border border-border bg-surface/60 p-3">
               <div className="w-28 shrink-0">
-                <div className="text-base font-semibold text-text">{s.metric}</div>
-                <div className="text-sm font-bold" style={{ color: '#14b8a6' }}>{s.freq}</div>
+                <div className="text-lg font-semibold text-text">{s.metric}</div>
+                <div className="text-base font-bold" style={{ color: '#14b8a6' }}>{s.freq}</div>
               </div>
-              <p className="text-sm text-muted leading-relaxed">{s.tip}</p>
+              <p className="text-base text-muted leading-relaxed">{s.tip}</p>
             </div>
           ))}
         </div>
-        <p className="text-sm text-muted mt-2">* Chỉ khi có nguy cơ tăng huyết áp hoặc được bác sĩ khuyến nghị.</p>
+        <p className="text-base text-muted mt-2">* Chỉ khi có nguy cơ tăng huyết áp hoặc được bác sĩ khuyến nghị.</p>
       </div>
       <div>
-        <h3 className="font-bold text-text text-base mb-3">5 Câu Hỏi Self-Check Mỗi Ngày</h3>
+        <h3 className="font-bold text-text text-lg mb-3">5 Câu Hỏi Self-Check Mỗi Ngày</h3>
         <div className="space-y-2">
           {DAILY.map((q, i) => (
             <button key={i} onClick={() => setChecks(p => ({ ...p, [i]: !p[i] }))}
               className="w-full flex items-center gap-3 rounded-xl border p-3 text-left transition-all"
               style={{ borderColor: checks[i] ? '#14b8a6' : '#2a2a2a', background: checks[i] ? '#14b8a610' : 'transparent' }}>
               <div className="w-5 h-5 rounded border-2 flex items-center justify-center shrink-0" style={{ borderColor: checks[i] ? '#14b8a6' : '#555', background: checks[i] ? '#14b8a6' : 'transparent' }}>
-                {checks[i] && <span className="text-white text-sm font-bold">✓</span>}
+                {checks[i] && <span className="text-white text-base font-bold">✓</span>}
               </div>
-              <span className="text-base text-text">{q}</span>
+              <span className="text-lg text-text">{q}</span>
             </button>
           ))}
         </div>
-        <p className="text-sm text-muted mt-2 italic">Đo để hiểu, không đo để ám ảnh. Nhìn xu hướng 4–12 tuần quan trọng hơn một con số đơn lẻ.</p>
+        <p className="text-base text-muted mt-2 italic">Đo để hiểu, không đo để ám ảnh. Nhìn xu hướng 4–12 tuần quan trọng hơn một con số đơn lẻ.</p>
       </div>
     </div>
   );
@@ -266,18 +266,18 @@ function TabE3() {
   return (
     <div className="space-y-4">
       <div className="rounded-xl border border-red-500/30 bg-red-500/08 p-3">
-        <p className="text-base font-bold text-red-400 mb-1">⚠️ Đi Cấp Cứu Ngay — Không Chờ</p>
-        <p className="text-sm text-muted">Khi có các dấu hiệu dưới đây: không tự xử trí, gọi 115 hoặc đến cơ sở y tế gần nhất.</p>
+        <p className="text-lg font-bold text-red-400 mb-1">⚠️ Đi Cấp Cứu Ngay — Không Chờ</p>
+        <p className="text-base text-muted">Khi có các dấu hiệu dưới đây: không tự xử trí, gọi 115 hoặc đến cơ sở y tế gần nhất.</p>
       </div>
       {EMERGENCY.map(g => (
         <div key={g.cat} className="rounded-2xl border border-border bg-surface/60 p-4">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-2xl">{g.icon}</span>
-            <span className="font-bold text-base" style={{ color: g.color }}>{g.cat}</span>
+            <span className="font-bold text-lg" style={{ color: g.color }}>{g.cat}</span>
           </div>
           <ul className="space-y-1">
             {g.signs.map(s => (
-              <li key={s} className="flex items-start gap-2 text-sm text-muted">
+              <li key={s} className="flex items-start gap-2 text-base text-muted">
                 <span className="shrink-0 mt-0.5" style={{ color: g.color }}>·</span>{s}
               </li>
             ))}
@@ -285,10 +285,10 @@ function TabE3() {
         </div>
       ))}
       <div className="rounded-xl border border-amber-500/30 bg-amber-500/08 p-4">
-        <p className="text-sm font-bold text-amber-400 mb-3">Nên Đi Khám Sớm Khi Có:</p>
+        <p className="text-base font-bold text-amber-400 mb-3">Nên Đi Khám Sớm Khi Có:</p>
         <div className="grid grid-cols-2 gap-2">
           {SOON.map(s => (
-            <div key={s} className="flex items-start gap-2 text-sm text-muted">
+            <div key={s} className="flex items-start gap-2 text-base text-muted">
               <span className="text-amber-400 shrink-0 mt-0.5">·</span>{s}
             </div>
           ))}
@@ -307,17 +307,17 @@ function TabE4() {
   ];
   return (
     <div className="space-y-4">
-      <p className="text-sm text-muted">Tập trung vào 4 nhóm bệnh quan trọng nhất trong cuộc sống hiện đại:</p>
+      <p className="text-base text-muted">Tập trung vào 4 nhóm bệnh quan trọng nhất trong cuộc sống hiện đại:</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {GROUPS.map(g => (
           <div key={g.t} className="rounded-2xl border border-border bg-surface/60 p-4">
             <div className="flex items-center gap-2 mb-3">
               <span className="text-2xl">{g.icon}</span>
-              <span className="font-bold text-base" style={{ color: g.c }}>{g.t}</span>
+              <span className="font-bold text-lg" style={{ color: g.c }}>{g.t}</span>
             </div>
             <ul className="space-y-1.5">
               {g.items.map(it => (
-                <li key={it} className="flex items-center gap-2 text-sm text-muted">
+                <li key={it} className="flex items-center gap-2 text-base text-muted">
                   <span className="w-1 h-1 rounded-full shrink-0" style={{ background: g.c }} />{it}
                 </li>
               ))}
@@ -339,29 +339,29 @@ function TabE5() {
   return (
     <div className="space-y-5">
       <div>
-        <h3 className="font-bold text-text text-base mb-3">Gói Kiểm Tra Nền (Health Check Basic)</h3>
+        <h3 className="font-bold text-text text-lg mb-3">Gói Kiểm Tra Nền (Health Check Basic)</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {BASIC.map(b => (
-            <div key={b} className="flex items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-2 text-sm text-muted">
+            <div key={b} className="flex items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-2 text-base text-muted">
               <span style={{ color: '#84cc16' }}>✓</span>{b}
             </div>
           ))}
         </div>
       </div>
       <div>
-        <h3 className="font-bold text-text text-base mb-3">Mở Rộng Theo Nguy Cơ</h3>
+        <h3 className="font-bold text-text text-lg mb-3">Mở Rộng Theo Nguy Cơ</h3>
         <div className="space-y-3">
           {EXPANDED.map(g => (
             <div key={g.t} className="rounded-xl border border-border bg-surface/60 p-4">
-              <p className="text-sm font-bold mb-2" style={{ color: '#84cc16' }}>+ {g.t}</p>
+              <p className="text-base font-bold mb-2" style={{ color: '#84cc16' }}>+ {g.t}</p>
               <div className="flex flex-wrap gap-2">
-                {g.items.map(it => <span key={it} className="text-sm text-muted px-2 py-0.5 rounded-full border border-border">{it}</span>)}
+                {g.items.map(it => <span key={it} className="text-base text-muted px-2 py-0.5 rounded-full border border-border">{it}</span>)}
               </div>
             </div>
           ))}
         </div>
       </div>
-      <p className="text-sm text-muted">Khám định kỳ không nên là "gói xét nghiệm càng nhiều càng tốt" — nên dựa trên tuổi, nguy cơ và triệu chứng của từng người.</p>
+      <p className="text-base text-muted">Khám định kỳ không nên là "gói xét nghiệm càng nhiều càng tốt" — nên dựa trên tuổi, nguy cơ và triệu chứng của từng người.</p>
     </div>
   );
 }
@@ -372,30 +372,30 @@ function TabE6() {
   return (
     <div className="space-y-4">
       <div className="rounded-2xl border border-violet-500/30 bg-violet-500/08 p-5">
-        <p className="text-base font-bold text-violet-400 mb-3">5 Quy Tắc Không Của Thuốc</p>
+        <p className="text-lg font-bold text-violet-400 mb-3">5 Quy Tắc Không Của Thuốc</p>
         <ul className="space-y-2">
           {RULES.map((r, i) => (
-            <li key={i} className="flex items-start gap-3 text-base text-muted">
+            <li key={i} className="flex items-start gap-3 text-lg text-muted">
               <span className="font-black shrink-0" style={{ color: '#8b5cf6' }}>{i + 1}.</span>{r}
             </li>
           ))}
         </ul>
       </div>
       <div>
-        <p className="text-base font-bold text-text mb-3">Checklist Trước Khi Dùng Thực Phẩm Bổ Sung</p>
+        <p className="text-lg font-bold text-text mb-3">Checklist Trước Khi Dùng Thực Phẩm Bổ Sung</p>
         <div className="space-y-2">
           {CHECK.map((q, i) => (
-            <div key={i} className="flex items-start gap-3 rounded-xl border border-border bg-surface/60 p-3 text-base text-muted">
+            <div key={i} className="flex items-start gap-3 rounded-xl border border-border bg-surface/60 p-3 text-lg text-muted">
               <span className="font-black shrink-0" style={{ color: '#8b5cf6' }}>?</span>{q}
             </div>
           ))}
         </div>
       </div>
       <div className="rounded-xl border border-red-500/20 bg-red-500/06 p-4">
-        <p className="text-sm font-bold text-red-400 mb-2">Cụm từ NGUY HIỂM trong quảng cáo</p>
+        <p className="text-base font-bold text-red-400 mb-2">Cụm từ NGUY HIỂM trong quảng cáo</p>
         <div className="flex flex-wrap gap-2">
           {['"Chữa khỏi 100%"', '"Không tác dụng phụ"', '"Thải độc gan/thận"', '"Tan mỡ khi ngủ"', '"Hạ đường vĩnh viễn"', '"Không cần đi bệnh viện"'].map(t => (
-            <span key={t} className="text-sm px-2 py-0.5 rounded-full bg-red-500/10 text-red-400">{t}</span>
+            <span key={t} className="text-base px-2 py-0.5 rounded-full bg-red-500/10 text-red-400">{t}</span>
           ))}
         </div>
       </div>
@@ -413,26 +413,26 @@ function TabE7() {
   ];
   return (
     <div className="space-y-4">
-      <p className="text-sm text-muted">Với sự bùng nổ của TikTok, YouTube và livestream bán hàng, lọc thông tin sức khỏe là kỹ năng sống quan trọng.</p>
+      <p className="text-base text-muted">Với sự bùng nổ của TikTok, YouTube và livestream bán hàng, lọc thông tin sức khỏe là kỹ năng sống quan trọng.</p>
       <div className="space-y-2">
         {QS.map(q => (
           <div key={q.n} className="rounded-xl border border-border bg-surface/60 p-4">
             <div className="flex items-center gap-2 mb-1">
-              <span className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-black shrink-0" style={{ background: `${COLOR}20`, color: COLOR }}>{q.n}</span>
-              <span className="font-semibold text-base text-text">{q.q}</span>
+              <span className="w-6 h-6 rounded-full flex items-center justify-center text-base font-black shrink-0" style={{ background: `${COLOR}20`, color: COLOR }}>{q.n}</span>
+              <span className="font-semibold text-lg text-text">{q.q}</span>
             </div>
-            <p className="text-sm text-muted pl-8">{q.tip}</p>
+            <p className="text-base text-muted pl-8">{q.tip}</p>
           </div>
         ))}
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-xl border border-red-500/20 bg-red-500/06 p-4">
-          <p className="text-sm font-bold text-red-400 mb-2">❌ Cụm từ nguy hiểm</p>
-          <ul className="space-y-1">{['"Bỏ thuốc tây đi"', '"Giải độc gan 7 ngày"', '"Ai cũng dùng được"', '"Sạch mạch máu"'].map(t => <li key={t} className="text-sm text-muted">{t}</li>)}</ul>
+          <p className="text-base font-bold text-red-400 mb-2">❌ Cụm từ nguy hiểm</p>
+          <ul className="space-y-1">{['"Bỏ thuốc tây đi"', '"Giải độc gan 7 ngày"', '"Ai cũng dùng được"', '"Sạch mạch máu"'].map(t => <li key={t} className="text-base text-muted">{t}</li>)}</ul>
         </div>
         <div className="rounded-xl border border-green-500/20 bg-green-500/06 p-4">
-          <p className="text-sm font-bold text-green-400 mb-2">✓ Ngôn ngữ an toàn</p>
-          <ul className="space-y-1">{['"Hỗ trợ theo dõi"', '"Cần cá nhân hóa"', '"Nên tham khảo bác sĩ"', '"Không thay thuốc điều trị"'].map(t => <li key={t} className="text-sm text-muted">{t}</li>)}</ul>
+          <p className="text-base font-bold text-green-400 mb-2">✓ Ngôn ngữ an toàn</p>
+          <ul className="space-y-1">{['"Hỗ trợ theo dõi"', '"Cần cá nhân hóa"', '"Nên tham khảo bác sĩ"', '"Không thay thuốc điều trị"'].map(t => <li key={t} className="text-base text-muted">{t}</li>)}</ul>
         </div>
       </div>
     </div>
@@ -496,7 +496,7 @@ export default function PillarE() {
 
   return (
     <div className="px-4 md:px-6 max-w-5xl mx-auto pb-24">
-      <Link to="/pillars" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">
+      <Link to="/pillars" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
         <span>←</span><span>Sống Khỏe 360</span>
       </Link>
 
@@ -507,7 +507,7 @@ export default function PillarE() {
           <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-up">
             {pillar?.title || 'Kiến Thức Sức Khỏe'}
           </h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>{pillar?.subtitle || 'Health Literacy'}</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>{pillar?.subtitle || 'Health Literacy'}</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">{pillar?.description || 'Hiểu cơ thể mình bằng ngôn ngữ đơn giản.'}</p>
           <div className="flex flex-wrap gap-6 mt-6">
             {['8 Module', '12 Tuần', '5 Chỉ số', '100 điểm'].map((label, i) => (
@@ -528,7 +528,7 @@ export default function PillarE() {
             <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=1400&q=80&auto=format&fit=crop" alt="Health Knowledge" className="w-full h-full object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
             <div className="absolute bottom-4 left-6">
-              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>{pillar?.image_caption || 'Hiểu Chỉ Số · Phòng Bệnh'}</span>
+              <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>{pillar?.image_caption || 'Hiểu Chỉ Số · Phòng Bệnh'}</span>
             </div>
           </div>
         </div>
@@ -542,7 +542,7 @@ export default function PillarE() {
           <div className="flex gap-1 overflow-x-auto scrollbar-hide">
             {TABS.map(t => (
               <button key={t.id} onClick={() => setActiveTab(t.id)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold whitespace-nowrap border transition-all shrink-0"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-base font-semibold whitespace-nowrap border transition-all shrink-0"
                 style={activeTab === t.id ? { borderColor: t.color, background: `${t.color}20`, color: t.color } : { borderColor: 'transparent', color: '#666' }}>
                 <span>{t.icon}</span><span>{t.label}</span>
               </button>
@@ -558,7 +558,7 @@ export default function PillarE() {
             <div className="flex items-center gap-3 mb-5">
               <span className="text-3xl">{tab.icon}</span>
               <div>
-                <div className="text-sm font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Trụ Cột E</div>
+                <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Trụ Cột E</div>
                 <div className="text-xl font-bold text-text">{tab.label}</div>
               </div>
             </div>
@@ -600,7 +600,7 @@ export default function PillarE() {
       {/* Safety disclaimer */}
       <RevealBlock delay={80} className="mt-6">
         <div className="rounded-2xl border p-5" style={{ borderColor: `${COLOR}20`, background: `${COLOR}06` }}>
-          <p className="text-sm text-muted leading-relaxed">
+          <p className="text-base text-muted leading-relaxed">
             <strong className="font-bold" style={{ color: COLOR }}>⚕️ Lưu ý quan trọng:</strong> Trụ cột E cung cấp kiến thức và công cụ tự theo dõi — không thay thế khám bệnh, chẩn đoán hoặc điều trị cá nhân hóa. Nếu có bệnh nền hoặc đang dùng thuốc đặc trị, hãy trao đổi với bác sĩ trước khi thay đổi chế độ ăn, tập luyện hoặc bổ sung sản phẩm.
           </p>
         </div>

@@ -54,7 +54,7 @@ function HabitTracker() {
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-sm">
+      <table className="w-full text-base">
         <thead>
           <tr>
             <th className="text-left text-muted font-normal pb-3 pr-4 w-40">Thói Quen</th>
@@ -68,7 +68,7 @@ function HabitTracker() {
             const pct = Math.round(done / days.length * 100);
             return (
               <tr key={h}>
-                <td className="py-2 pr-4 text-muted text-sm leading-tight">{h}</td>
+                <td className="py-2 pr-4 text-muted text-base leading-tight">{h}</td>
                 {days.map(d => (
                   <td key={d} className="py-2 text-center">
                     <button onClick={() => toggle(h, d)}
@@ -116,7 +116,7 @@ export default function MindHabitsPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
         <span>←</span><span>Tâm Trí An Nhiên</span>
       </Link>
 
@@ -125,7 +125,7 @@ export default function MindHabitsPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🔄</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Xây Thói Quen Bền Vững</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D6 · Habit Formation Science</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D6 · Habit Formation Science</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">40% hành động của bạn mỗi ngày là thói quen tự động — không phải quyết định có ý thức. Hiểu cơ chế hình thành thói quen là cách thay đổi cuộc sống hiệu quả nhất.</p>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default function MindHabitsPage() {
           <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80&auto=format&fit=crop" alt="Habit Building" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>66 ngày trung bình để hình thành thói quen</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>66 ngày trung bình để hình thành thói quen</span>
           </div>
         </div>
       </div>
@@ -144,14 +144,14 @@ export default function MindHabitsPage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vòng Lặp Thói Quen (Habit Loop)</h2>
-        <p className="text-muted text-base mb-6">4 yếu tố cấu thành mọi thói quen theo khoa học thần kinh</p>
+        <p className="text-muted text-lg mb-6">4 yếu tố cấu thành mọi thói quen theo khoa học thần kinh</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {LOOP_STEPS.map(s => (
             <div key={s.n} className="rounded-2xl border border-border bg-surface p-5 text-center">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center text-base font-black mx-auto mb-3" style={{ background: `${s.color}20`, color: s.color }}>{s.n}</div>
-              <div className="font-bold text-text text-base mb-2">{s.t}</div>
-              <p className="text-sm text-muted leading-relaxed mb-3">{s.d}</p>
-              <div className="rounded-lg px-2 py-1 text-sm font-medium" style={{ background: `${s.color}15`, color: s.color }}>{s.ex}</div>
+              <div className="w-10 h-10 rounded-full flex items-center justify-center text-lg font-black mx-auto mb-3" style={{ background: `${s.color}20`, color: s.color }}>{s.n}</div>
+              <div className="font-bold text-text text-lg mb-2">{s.t}</div>
+              <p className="text-base text-muted leading-relaxed mb-3">{s.d}</p>
+              <div className="rounded-lg px-2 py-1 text-base font-medium" style={{ background: `${s.color}15`, color: s.color }}>{s.ex}</div>
             </div>
           ))}
         </div>
@@ -159,13 +159,13 @@ export default function MindHabitsPage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kỹ Thuật Xây Thói Quen</h2>
-        <p className="text-muted text-base mb-6">Những chiến lược được khoa học chứng minh hiệu quả nhất</p>
+        <p className="text-muted text-lg mb-6">Những chiến lược được khoa học chứng minh hiệu quả nhất</p>
         <div className="space-y-4">
           {STACKING.map(s => (
             <div key={s.t} className="rounded-2xl border border-border bg-surface p-5 hover:border-emerald-500/30 transition-colors">
               <div className="font-bold text-text mb-2">{s.t}</div>
-              <p className="text-base text-muted mb-3 leading-relaxed">{s.d}</p>
-              <div className="rounded-xl px-4 py-2 text-base" style={{ background: `${COLOR}12`, color: COLOR }}>
+              <p className="text-lg text-muted mb-3 leading-relaxed">{s.d}</p>
+              <div className="rounded-xl px-4 py-2 text-lg" style={{ background: `${COLOR}12`, color: COLOR }}>
                 💡 {s.ex}
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function MindHabitsPage() {
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Habit Tracker Tuần Này</h2>
-        <p className="text-muted text-base mb-6">Click vào ô để đánh dấu đã hoàn thành</p>
+        <p className="text-muted text-lg mb-6">Click vào ô để đánh dấu đã hoàn thành</p>
         <div className="rounded-2xl border border-border bg-surface p-5">
           <HabitTracker />
         </div>
@@ -192,13 +192,13 @@ export default function MindHabitsPage() {
           ].map(c => (
             <div key={c.t} className="rounded-2xl border border-border bg-surface p-5">
               <div className="font-bold text-text mb-2">{c.t}</div>
-              <p className="text-base text-muted leading-relaxed">{c.d}</p>
+              <p className="text-lg text-muted leading-relaxed">{c.d}</p>
             </div>
           ))}
         </div>
       </RevealBlock>
 
-      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">
+      <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
     </div>

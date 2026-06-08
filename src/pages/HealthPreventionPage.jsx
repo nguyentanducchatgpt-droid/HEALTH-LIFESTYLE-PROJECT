@@ -129,14 +129,14 @@ export default function HealthPreventionPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🛡️</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Phòng Bệnh Chủ Động</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
             Phòng bệnh hơn chữa bệnh
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
@@ -149,7 +149,7 @@ export default function HealthPreventionPage() {
         <div className="relative rounded-3xl overflow-hidden h-52 md:h-72">
           <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop" alt="Phòng bệnh" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
-          <span className="absolute bottom-4 left-6 text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
+          <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
             5 trụ cột phòng bệnh chủ động
           </span>
         </div>
@@ -160,15 +160,15 @@ export default function HealthPreventionPage() {
       {b0.age && (
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
-            <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
-            <p className="text-sm text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age < 30 ? 'Thời điểm tốt nhất để xây nền tảng phòng bệnh bền vững.' : b0.age < 50 ? 'Giai đoạn quan trọng — đầu tư sức khỏe bây giờ để hưởng lợi 20–30 năm tới.' : 'Phòng bệnh vẫn rất có giá trị ở mọi độ tuổi — không bao giờ là quá muộn.'}</p>
+            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
+            <p className="text-base text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age < 30 ? 'Thời điểm tốt nhất để xây nền tảng phòng bệnh bền vững.' : b0.age < 50 ? 'Giai đoạn quan trọng — đầu tư sức khỏe bây giờ để hưởng lợi 20–30 năm tới.' : 'Phòng bệnh vẫn rất có giá trị ở mọi độ tuổi — không bao giờ là quá muộn.'}</p>
           </div>
         </RevealBlock>
       )}
 
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>5 Trụ Cột Phòng Bệnh</h2>
-        <p className="text-muted text-base mb-6">Nhấn vào từng trụ cột để xem chi tiết và bằng chứng khoa học.</p>
+        <p className="text-muted text-lg mb-6">Nhấn vào từng trụ cột để xem chi tiết và bằng chứng khoa học.</p>
         <div className="space-y-3">
           {PREVENTION_PILLARS.map((p, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
@@ -185,13 +185,13 @@ export default function HealthPreventionPage() {
                 <div className="px-4 pb-4 border-t border-border pt-3 space-y-3">
                   <ul className="space-y-1">
                     {p.items.map((item, j) => (
-                      <li key={j} className="flex gap-2 text-base text-muted">
+                      <li key={j} className="flex gap-2 text-lg text-muted">
                         <span style={{ color: p.color }} className="shrink-0">•</span>
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <div className="rounded-xl p-3 text-sm border-l-2 text-muted" style={{ borderColor: p.color }}>
+                  <div className="rounded-xl p-3 text-base border-l-2 text-muted" style={{ borderColor: p.color }}>
                     <strong style={{ color: p.color }}>Bằng chứng: </strong>{p.evidence}
                   </div>
                 </div>
@@ -203,9 +203,9 @@ export default function HealthPreventionPage() {
 
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Lịch Tiêm Vaccine Người Lớn</h2>
-        <p className="text-muted text-base mb-6">Vaccine không chỉ dành cho trẻ em — người lớn cũng cần cập nhật lịch tiêm định kỳ.</p>
+        <p className="text-muted text-lg mb-6">Vaccine không chỉ dành cho trẻ em — người lớn cũng cần cập nhật lịch tiêm định kỳ.</p>
         <div className="overflow-x-auto">
-          <table className="w-full text-base">
+          <table className="w-full text-lg">
             <thead>
               <tr className="border-b border-border">
                 <th className="text-left py-3 px-3 font-bold text-text">Vaccine</th>
@@ -229,7 +229,7 @@ export default function HealthPreventionPage() {
       <RevealBlock delay={3} className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold text-text mb-3">Tầm Soát Ung Thư Theo Tuổi</h3>
-          <div className="space-y-2 text-base text-muted">
+          <div className="space-y-2 text-lg text-muted">
             <p>• <strong className="text-text">Ung thư đại tràng:</strong> Nội soi bắt đầu từ 45 tuổi, mỗi 10 năm (hoặc mỗi năm nếu FIT dương tính)</p>
             <p>• <strong className="text-text">Ung thư vú:</strong> Mamogram từ 40–45 tuổi, mỗi 1–2 năm</p>
             <p>• <strong className="text-text">Ung thư cổ tử cung:</strong> Pap smear từ 21 tuổi, mỗi 3 năm; hoặc HPV test từ 25 tuổi, mỗi 5 năm</p>
@@ -239,7 +239,7 @@ export default function HealthPreventionPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-base text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
     </div>
   );
 }

@@ -100,7 +100,7 @@ export default function LifestyleRecoveryPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-base mb-8 hover:text-violet-400 transition-colors">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-violet-400 transition-colors">
         ← Lối Sống Khỏe
       </Link>
 
@@ -112,7 +112,7 @@ export default function LifestyleRecoveryPage() {
         </div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Phục Hồi Chủ Động</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
             C4 — Active Recovery · 3 vùng đau mỏi
           </span>
@@ -129,7 +129,7 @@ export default function LifestyleRecoveryPage() {
               alt="Phục hồi" className="w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9), rgba(10,10,10,0.3) 50%, transparent)' }} />
             <div className="absolute bottom-4 left-6">
-              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+              <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
                 Mobility · Giãn cơ · Thở chậm
               </span>
@@ -150,8 +150,8 @@ export default function LifestyleRecoveryPage() {
                 <span className="text-3xl">{r.icon}</span>
                 <span className="font-bold text-text">{r.type}</span>
               </div>
-              <p className="text-muted text-base mb-2">{r.desc}</p>
-              <p className="text-sm" style={{ color: COLOR }}><strong>Dùng khi:</strong> {r.best}</p>
+              <p className="text-muted text-lg mb-2">{r.desc}</p>
+              <p className="text-base" style={{ color: COLOR }}><strong>Dùng khi:</strong> {r.best}</p>
             </div>
           ))}
         </div>
@@ -160,14 +160,14 @@ export default function LifestyleRecoveryPage() {
       {/* 10-min routine */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Routine Phục Hồi 10 Phút</h2>
-        <p className="text-muted text-base mb-6">Routine mẫu cho ngày sau tập nặng hoặc ngày cảm thấy căng cơ.</p>
+        <p className="text-muted text-lg mb-6">Routine mẫu cho ngày sau tập nặng hoặc ngày cảm thấy căng cơ.</p>
         <div className="space-y-2">
           {ROUTINE_10.map((r, i) => (
             <div key={i} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <span className="text-sm font-bold tabular-nums w-20 shrink-0" style={{ color: COLOR }}>{r.duration}</span>
+              <span className="text-base font-bold tabular-nums w-20 shrink-0" style={{ color: COLOR }}>{r.duration}</span>
               <div>
-                <div className="text-base font-semibold text-text">{r.name}</div>
-                <div className="text-sm text-muted">{r.note}</div>
+                <div className="text-lg font-semibold text-text">{r.name}</div>
+                <div className="text-base text-muted">{r.note}</div>
               </div>
             </div>
           ))}
@@ -177,7 +177,7 @@ export default function LifestyleRecoveryPage() {
       {/* Zone fixes */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Phục Hồi Theo Vùng Đau Mỏi</h2>
-        <p className="text-muted text-base mb-6">Chọn vùng đang đau mỏi để xem bài tập phù hợp.</p>
+        <p className="text-muted text-lg mb-6">Chọn vùng đang đau mỏi để xem bài tập phù hợp.</p>
         <div className="space-y-3">
           {ZONE_FIXES.map((z, i) => (
             <div key={i} className="rounded-2xl overflow-hidden border" style={{ borderColor: `rgba(${RGB},0.15)` }}>
@@ -187,7 +187,7 @@ export default function LifestyleRecoveryPage() {
                   <span className="text-3xl">{z.icon}</span>
                   <div>
                     <div className="font-bold text-text">{z.zone}</div>
-                    <div className="text-sm text-muted">{z.cause}</div>
+                    <div className="text-base text-muted">{z.cause}</div>
                   </div>
                 </span>
                 <span style={{ color: COLOR }}>{openZone === i ? '▲' : '▼'}</span>
@@ -197,13 +197,13 @@ export default function LifestyleRecoveryPage() {
                   {z.exercises.map((ex, j) => (
                     <div key={j} className="flex justify-between items-start gap-3 py-2 border-b last:border-0" style={{ borderColor: `rgba(${z.rgb},0.1)` }}>
                       <div>
-                        <div className="text-base font-semibold text-text">{ex.name}</div>
-                        <div className="text-sm text-muted">{ex.why}</div>
+                        <div className="text-lg font-semibold text-text">{ex.name}</div>
+                        <div className="text-base text-muted">{ex.why}</div>
                       </div>
-                      <span className="text-sm font-semibold tabular-nums shrink-0" style={{ color: z.color }}>{ex.reps}</span>
+                      <span className="text-base font-semibold tabular-nums shrink-0" style={{ color: z.color }}>{ex.reps}</span>
                     </div>
                   ))}
-                  <p className="text-sm text-muted pt-1">⚠️ Dừng ngay nếu cảm thấy đau nhói, tê lan hoặc yếu chân tay.</p>
+                  <p className="text-base text-muted pt-1">⚠️ Dừng ngay nếu cảm thấy đau nhói, tê lan hoặc yếu chân tay.</p>
                 </div>
               )}
             </div>
@@ -218,10 +218,10 @@ export default function LifestyleRecoveryPage() {
           {ACTIVE_RECOVERY_BY_GOAL.map((g, i) => (
             <div key={i} className="p-4 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
               <div className="flex justify-between items-start mb-1">
-                <span className="font-semibold text-text text-base" style={{ color: COLOR }}>{g.goal}</span>
+                <span className="font-semibold text-text text-lg" style={{ color: COLOR }}>{g.goal}</span>
               </div>
-              <p className="text-base text-muted mb-1">{g.activities}</p>
-              <p className="text-sm text-muted italic">{g.note}</p>
+              <p className="text-lg text-muted mb-1">{g.activities}</p>
+              <p className="text-base text-muted italic">{g.note}</p>
             </div>
           ))}
         </div>
@@ -230,7 +230,7 @@ export default function LifestyleRecoveryPage() {
       {/* Sample recovery day */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Ngày Phục Hồi Mẫu</h2>
-        <p className="text-muted text-base mb-6">Một ngày phục hồi không có nghĩa là nằm im cả ngày.</p>
+        <p className="text-muted text-lg mb-6">Một ngày phục hồi không có nghĩa là nằm im cả ngày.</p>
         <div className="space-y-3">
           {[
             { time: 'Sáng', action: 'Ánh sáng + đi bộ nhẹ 10 phút' },
@@ -240,16 +240,16 @@ export default function LifestyleRecoveryPage() {
             { time: 'Đêm', action: 'Ngủ sớm hơn 30 phút so với ngày thường' },
           ].map((row, i) => (
             <div key={i} className="flex gap-4 items-center p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)` }}>
-              <span className="w-14 text-sm font-bold shrink-0" style={{ color: COLOR }}>{row.time}</span>
-              <span className="text-base text-muted">{row.action}</span>
+              <span className="w-14 text-base font-bold shrink-0" style={{ color: COLOR }}>{row.time}</span>
+              <span className="text-lg text-muted">{row.action}</span>
             </div>
           ))}
         </div>
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/neat" className="text-muted hover:text-violet-400 transition-colors text-base">← NEAT</Link>
-        <Link to="/pillar/c/deload" className="text-base font-semibold" style={{ color: COLOR }}>Deload →</Link>
+        <Link to="/pillar/c/neat" className="text-muted hover:text-violet-400 transition-colors text-lg">← NEAT</Link>
+        <Link to="/pillar/c/deload" className="text-lg font-semibold" style={{ color: COLOR }}>Deload →</Link>
       </div>
     </div>
   );

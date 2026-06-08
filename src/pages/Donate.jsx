@@ -178,7 +178,7 @@ export default function Donate() {
           </div>
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/25 text-amber-400 text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 dn2-sub">
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/25 text-amber-400 text-base font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 dn2-sub">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-glow-pulse" />
             Ủng Hộ Tác Giả
           </div>
@@ -201,7 +201,7 @@ export default function Donate() {
             <div className="absolute top-0 h-0.5 w-16 rounded-full dn2-shimmer-line" />
           </div>
 
-          <p className="dn2-sub text-muted text-base md:text-lg leading-relaxed max-w-lg mx-auto">
+          <p className="dn2-sub text-muted text-lg md:text-lg leading-relaxed max-w-lg mx-auto">
             {t('donate.subtitle')}
           </p>
         </div>
@@ -256,7 +256,7 @@ export default function Donate() {
                   <div className="absolute top-0 left-0 right-0 h-0.5 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{ background: `linear-gradient(90deg, transparent, ${c}60, transparent)` }} />
                   <p className="font-extrabold text-3xl md:text-4xl mb-1" style={{ color: c }}>{stat.value}</p>
-                  <p className="text-muted text-sm leading-snug">{stat.label}</p>
+                  <p className="text-muted text-base leading-snug">{stat.label}</p>
                 </div>
               );
             })}
@@ -288,12 +288,12 @@ export default function Donate() {
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   </svg>
                 </div>
-                <h3 className="text-base font-bold text-text">{t('donate.impact_title')}</h3>
+                <h3 className="text-lg font-bold text-text">{t('donate.impact_title')}</h3>
               </div>
 
               <ul className="space-y-3">
                 {Array.isArray(impactItems) && impactItems.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-base text-muted leading-relaxed group/item">
+                  <li key={i} className="flex items-start gap-3 text-lg text-muted leading-relaxed group/item">
                     <span
                       className="w-6 h-6 rounded-full border flex items-center justify-center text-[10px] font-black shrink-0 mt-0.5 transition-all duration-200 group-hover/item:scale-110"
                       style={{ background: 'rgba(34,197,94,0.08)', borderColor: 'rgba(34,197,94,0.25)', color: '#22c55e' }}
@@ -325,7 +325,7 @@ export default function Donate() {
                     <path d="M2 10h20"/>
                   </svg>
                 </div>
-                <h3 className="text-base font-bold text-text">{t('donate.bank_title')}</h3>
+                <h3 className="text-lg font-bold text-text">{t('donate.bank_title')}</h3>
               </div>
 
               {/* QR placeholder — styled */}
@@ -349,7 +349,7 @@ export default function Donate() {
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-glow-pulse" />
                     <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">{t('donate.qr_updating')}</span>
                   </div>
-                  <p className="text-sm text-muted/60 leading-relaxed">{t('donate.bank_placeholder')}</p>
+                  <p className="text-base text-muted/60 leading-relaxed">{t('donate.bank_placeholder')}</p>
                 </div>
               </div>
             </div>
@@ -361,7 +361,7 @@ export default function Donate() {
       {Array.isArray(uses) && (
         <RevealBlock className="mb-10">
           <h2 className="text-xl font-black text-text mb-1">{t('donate.uses_title')}</h2>
-          <p className="text-muted text-sm mb-6">{t('donate.uses_subtitle')}</p>
+          <p className="text-muted text-base mb-6">{t('donate.uses_subtitle')}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {uses.map((item, i) => (
@@ -385,8 +385,8 @@ export default function Donate() {
 
                 {/* Text */}
                 <div className="p-4 pt-2">
-                  <p className="text-base font-bold text-text mb-1.5">{item.title}</p>
-                  <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
+                  <p className="text-lg font-bold text-text mb-1.5">{item.title}</p>
+                  <p className="text-base text-muted leading-relaxed">{item.desc}</p>
                 </div>
 
                 {/* Hover shimmer top */}
@@ -401,7 +401,7 @@ export default function Donate() {
       {Array.isArray(faq) && (
         <RevealBlock className="mb-10">
           <h2 className="text-xl font-black text-text mb-1">{t('donate.faq_title')}</h2>
-          <p className="text-muted text-sm mb-6">{t('donate.faq_subtitle')}</p>
+          <p className="text-muted text-base mb-6">{t('donate.faq_subtitle')}</p>
 
           <div className="space-y-2">
             {faq.map((item, i) => (
@@ -423,11 +423,11 @@ export default function Donate() {
                   >
                     {openFaq === i ? '−' : '+'}
                   </span>
-                  <span className="flex-1 text-base font-semibold text-text">{item.q}</span>
+                  <span className="flex-1 text-lg font-semibold text-text">{item.q}</span>
                 </button>
                 {openFaq === i && (
                   <div className="px-5 pb-5 pl-[3.75rem]">
-                    <p className="text-base text-muted leading-relaxed">{item.a}</p>
+                    <p className="text-lg text-muted leading-relaxed">{item.a}</p>
                   </div>
                 )}
               </div>
@@ -464,7 +464,7 @@ export default function Donate() {
 
             <h3 className="text-2xl md:text-3xl font-black text-text mb-3">{t('donate.thanks')}</h3>
             <div className="h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent mb-4 max-w-xs mx-auto" />
-            <p className="text-muted/80 text-base leading-relaxed max-w-md mx-auto mb-6">{t('donate.thanks_note')}</p>
+            <p className="text-muted/80 text-lg leading-relaxed max-w-md mx-auto mb-6">{t('donate.thanks_note')}</p>
 
             {/* Trust badges */}
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -475,7 +475,7 @@ export default function Donate() {
               ].map((b, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-2 bg-surface/60 border border-border/50 rounded-full px-4 py-2 text-sm text-muted backdrop-blur-sm"
+                  className="flex items-center gap-2 bg-surface/60 border border-border/50 rounded-full px-4 py-2 text-base text-muted backdrop-blur-sm"
                 >
                   <span>{b.icon}</span> {b.text}
                 </div>

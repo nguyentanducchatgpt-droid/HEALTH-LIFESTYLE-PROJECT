@@ -292,8 +292,8 @@ function TabPanel({ tab }) {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-black text-text leading-tight mb-2">{tab.title}</h2>
-          <p className={`text-sm font-bold ${tab.text} mb-4 opacity-80`}>{tab.sub}</p>
-          <p className="text-muted text-base leading-relaxed mb-7">{tab.longDesc}</p>
+          <p className={`text-base font-bold ${tab.text} mb-4 opacity-80`}>{tab.sub}</p>
+          <p className="text-muted text-lg leading-relaxed mb-7">{tab.longDesc}</p>
 
           {/* Highlights — staggered fade in */}
           <div className="space-y-3 mb-6">
@@ -305,13 +305,13 @@ function TabPanel({ tab }) {
                 style={{ animationDelay: `${i * 70 + 80}ms`, animationFillMode: 'both' }}
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-base shrink-0 border transition-all duration-200 group-hover:scale-110"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-lg shrink-0 border transition-all duration-200 group-hover:scale-110"
                   style={{ background: `${tab.color}10`, borderColor: `${tab.color}25` }}
                 >
                   {h.icon}
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-text leading-tight">{h.title}</p>
+                  <p className="text-base font-bold text-text leading-tight">{h.title}</p>
                   <p className="text-[11px] text-muted mt-0.5">{h.desc}</p>
                 </div>
               </div>
@@ -331,13 +331,13 @@ function TabPanel({ tab }) {
                 style={{ animationDelay: `${i * 90 + 280}ms`, animationFillMode: 'both' }}
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-base shrink-0 border mt-0.5"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-lg shrink-0 border mt-0.5"
                   style={{ background: `${tab.color}08`, borderColor: `${tab.color}20` }}
                 >
                   {d.icon}
                 </div>
                 <div className="flex-1 pl-3 border-l" style={{ borderColor: `${tab.color}25` }}>
-                  <p className="text-sm font-bold text-text/90 leading-tight mb-1">{d.title}</p>
+                  <p className="text-base font-bold text-text/90 leading-tight mb-1">{d.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{d.body}</p>
                 </div>
               </div>
@@ -348,7 +348,7 @@ function TabPanel({ tab }) {
           <div className="mt-auto">
             <Link
               to={tab.path}
-              className="inline-flex items-center gap-2.5 font-bold text-base px-7 py-3.5 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group"
+              className="inline-flex items-center gap-2.5 font-bold text-lg px-7 py-3.5 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group"
               style={{ background: `${tab.color}12`, borderColor: `${tab.color}40`, color: tab.color }}
               onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 8px 32px ${tab.glow}`; e.currentTarget.style.background = `${tab.color}20`; }}
               onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.background = `${tab.color}12`; }}
@@ -585,7 +585,7 @@ export default function PillarA() {
   if (!pillar || typeof pillar !== 'object') {
     return (
       <div className="flex items-center justify-center py-20">
-        <span className="text-muted text-base">{tCommon('common.loading')}</span>
+        <span className="text-muted text-lg">{tCommon('common.loading')}</span>
       </div>
     );
   }
@@ -601,7 +601,7 @@ export default function PillarA() {
       <div className="mb-10">
         <Link
           to="/pillars"
-          className="inline-flex items-center gap-2 text-muted hover:text-accent text-base transition-colors duration-200 group"
+          className="inline-flex items-center gap-2 text-muted hover:text-accent text-lg transition-colors duration-200 group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           {tCommon('nav.pillars')}
@@ -630,7 +630,7 @@ export default function PillarA() {
                 );
               })()}
             </h1>
-            <span className="inline-block text-sm font-bold uppercase tracking-widest text-accent mt-3 mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
+            <span className="inline-block text-base font-bold uppercase tracking-widest text-accent mt-3 mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
               {pillar.subtitle}
             </span>
             <p className="text-muted text-lg leading-relaxed max-w-2xl">
@@ -650,7 +650,7 @@ export default function PillarA() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-accent text-sm font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-accent/20">
+            <span className="text-accent text-base font-bold uppercase tracking-widest bg-bg/60 px-3 py-1 rounded-full border border-accent/20">
               {pillar?.subtitle || 'Daily Training'}
             </span>
           </div>
@@ -670,7 +670,7 @@ export default function PillarA() {
             <br />
             {pillar?.intro_pt2 || '— mà là tập '}<span className="text-accent font-bold not-italic">{pillar?.intro_strong || 'đúng hơn'}</span>.
           </p>
-          <p className="text-base text-muted leading-relaxed">
+          <p className="text-lg text-muted leading-relaxed">
             {pillar?.intro_sub || '4 chủ đề dưới đây được sắp xếp theo thứ tự logic.'}
           </p>
         </div>
@@ -687,7 +687,7 @@ export default function PillarA() {
               >
                 <span className="text-3xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">{p.icon}</span>
                 <div>
-                  <p className="text-base font-bold text-text mb-1.5">{pt.title}</p>
+                  <p className="text-lg font-bold text-text mb-1.5">{pt.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{pt.body}</p>
                 </div>
               </div>
@@ -737,7 +737,7 @@ export default function PillarA() {
               >
                 {/* Step circle */}
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-base font-black border mb-3 transition-all duration-300 group-hover:scale-110 relative z-10"
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-lg font-black border mb-3 transition-all duration-300 group-hover:scale-110 relative z-10"
                   style={{ background: `${t.color}12`, borderColor: `${t.color}40`, color: t.color }}
                 >
                   {i + 1}
@@ -774,7 +774,7 @@ export default function PillarA() {
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
             <div className="flex items-center gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />
-              <h2 className="text-base font-black uppercase tracking-[0.18em] text-text whitespace-nowrap">
+              <h2 className="text-lg font-black uppercase tracking-[0.18em] text-text whitespace-nowrap">
                 {pillar?.tabs_label || '4 chủ đề luyện tập'}
               </h2>
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />
@@ -873,7 +873,7 @@ export default function PillarA() {
                 onClick={() => { switchTab(i); tabBarRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 className="flex items-center gap-3 p-3 rounded-xl border border-border/40 hover:border-border transition-all duration-200 group hover:bg-white/[0.03] text-left w-full"
               >
-                <span className="text-base font-medium text-muted min-w-[140px] shrink-0">{item.who}</span>
+                <span className="text-lg font-medium text-muted min-w-[140px] shrink-0">{item.who}</span>
                 <span className="text-[11px] text-muted/50 shrink-0 hidden md:block">{item.where}</span>
                 <span className={`text-[11px] font-bold flex-1 truncate ${mergedTabs[i].text}`}>{mergedTabs[i].title}</span>
                 <span className="text-muted group-hover:translate-x-0.5 transition-transform shrink-0">→</span>
@@ -895,7 +895,7 @@ export default function PillarA() {
               </div>
               <div className="grid md:grid-cols-2 gap-2">
                 {Array.isArray(pillar.sections[5].items) && pillar.sections[5].items.map((item, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-yellow-300/70">
+                  <div key={i} className="flex items-start gap-2 text-base text-yellow-300/70">
                     <span className="text-yellow-400/60 mt-0.5 shrink-0">·</span>
                     <span>{item}</span>
                   </div>
@@ -914,8 +914,8 @@ export default function PillarA() {
             <div className="relative">
               <div className="text-4xl mb-3">🗓️</div>
               <h3 className="font-black text-text text-lg mb-1">{pillar?.cta_12week_title || 'Lộ Trình 12 Tuần'}</h3>
-              <p className="text-muted text-sm leading-relaxed mb-4">{pillar?.cta_12week_desc || 'Khung ngày chuẩn, nhịp tuần gợi ý, bộ test tiến bộ theo giai đoạn.'}</p>
-              <span className="inline-flex items-center gap-1.5 text-accent text-sm font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_12week_btn || 'Xem lộ trình'} <span>→</span></span>
+              <p className="text-muted text-base leading-relaxed mb-4">{pillar?.cta_12week_desc || 'Khung ngày chuẩn, nhịp tuần gợi ý, bộ test tiến bộ theo giai đoạn.'}</p>
+              <span className="inline-flex items-center gap-1.5 text-accent text-base font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_12week_btn || 'Xem lộ trình'} <span>→</span></span>
             </div>
           </Link>
           <Link to="/sample-programs" className="group relative overflow-hidden rounded-2xl border border-pink-500/20 bg-pink-500/4 p-6 hover:border-pink-500/40 hover:bg-pink-500/8 transition-all duration-300 hover:-translate-y-0.5">
@@ -923,8 +923,8 @@ export default function PillarA() {
             <div className="relative">
               <div className="text-4xl mb-3">🎯</div>
               <h3 className="font-black text-text text-lg mb-1">{pillar?.cta_sample_title || 'Lộ Trình Mẫu'}</h3>
-              <p className="text-muted text-sm leading-relaxed mb-4">{pillar?.cta_sample_desc || '6 mục tiêu × 24 tuần — tìm lộ trình phù hợp nhất với bạn.'}</p>
-              <span className="inline-flex items-center gap-1.5 text-pink-400 text-sm font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_sample_btn || 'Khám phá'} <span>→</span></span>
+              <p className="text-muted text-base leading-relaxed mb-4">{pillar?.cta_sample_desc || '6 mục tiêu × 24 tuần — tìm lộ trình phù hợp nhất với bạn.'}</p>
+              <span className="inline-flex items-center gap-1.5 text-pink-400 text-base font-bold group-hover:gap-2.5 transition-all">{pillar?.cta_sample_btn || 'Khám phá'} <span>→</span></span>
             </div>
           </Link>
         </div>

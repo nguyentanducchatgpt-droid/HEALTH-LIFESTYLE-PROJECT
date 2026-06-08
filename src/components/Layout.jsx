@@ -96,7 +96,7 @@ export default function Layout({ children }) {
                   <span className="ft-p2">{t('brand.part2')}</span>
                 </span>
               </Link>
-              <p className="text-muted text-sm leading-relaxed max-w-[220px]">
+              <p className="text-muted text-base leading-relaxed max-w-[220px]">
                 {t('footer.tagline')}
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function Layout({ children }) {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
               {[...NAV_COL, ...NAV_COL2].map(({ to, key }) => (
                 <Link key={to} to={to}
-                  className="text-sm text-muted hover:text-accent transition-colors duration-150 flex items-center gap-1.5 group/n">
+                  className="text-base text-muted hover:text-accent transition-colors duration-150 flex items-center gap-1.5 group/n">
                   <span className="w-1 h-1 rounded-full bg-border group-hover/n:bg-accent transition-colors duration-150 shrink-0" />
                   {t(key)}
                 </Link>
@@ -119,8 +119,8 @@ export default function Layout({ children }) {
 
           {/* Bottom bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-muted/60 text-sm">{t('footer.copyright')}</p>
-            <p className="text-muted/40 text-sm text-center sm:text-right whitespace-nowrap">{t('footer.disclaimer')}</p>
+            <p className="text-muted/60 text-base">{t('footer.copyright')}</p>
+            <p className="text-muted/40 text-base text-center sm:text-right whitespace-nowrap">{t('footer.disclaimer')}</p>
           </div>
         </div>
       </footer>

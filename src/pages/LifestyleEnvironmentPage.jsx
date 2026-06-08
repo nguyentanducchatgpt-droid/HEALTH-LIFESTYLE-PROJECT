@@ -109,7 +109,7 @@ export default function LifestyleEnvironmentPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-sm text-muted hover:text-teal-400 transition-colors mb-8 group">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-base text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         Lối Sống Khỏe
       </Link>
@@ -119,7 +119,7 @@ export default function LifestyleEnvironmentPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🏠</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Thiết Kế Môi Trường</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C7 · Environment Design</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C7 · Environment Design</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">Hành vi tốt không chỉ từ ý chí mạnh — mà từ môi trường được thiết kế để làm cho hành vi tốt dễ hơn. Mỗi thay đổi nhỏ trong không gian sống là một "thiết kế hành vi" vô hình nhưng mạnh mẽ.</p>
         </div>
       </div>
@@ -129,7 +129,7 @@ export default function LifestyleEnvironmentPage() {
           <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop" alt="Environment Design" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Môi trường quyết định hành vi · 3 không gian sống</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Môi trường quyết định hành vi · 3 không gian sống</span>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@ export default function LifestyleEnvironmentPage() {
       {/* Core principle */}
       <RevealBlock className="mb-12">
         <div className="rounded-2xl p-5 border" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
-          <div className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>Nguyên Tắc Cốt Lõi</div>
+          <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>Nguyên Tắc Cốt Lõi</div>
           <div className="grid md:grid-cols-3 gap-4">
             {[
               { icon: '✅', title: 'Friction Design', desc: 'Giảm "ma sát" cho hành vi tốt (đặt thảm tập ngay trước giường), tăng ma sát cho hành vi xấu (cất TV vào tủ).' },
@@ -148,8 +148,8 @@ export default function LifestyleEnvironmentPage() {
             ].map(p => (
               <div key={p.title} className="rounded-xl p-4 bg-surface border border-border">
                 <div className="text-3xl mb-2">{p.icon}</div>
-                <div className="text-base font-bold text-text mb-1">{p.title}</div>
-                <div className="text-sm text-muted leading-relaxed">{p.desc}</div>
+                <div className="text-lg font-bold text-text mb-1">{p.title}</div>
+                <div className="text-base text-muted leading-relaxed">{p.desc}</div>
               </div>
             ))}
           </div>
@@ -159,11 +159,11 @@ export default function LifestyleEnvironmentPage() {
       {/* 3 Environment zones */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Không Gian Cần Thiết Kế</h2>
-        <p className="text-muted text-base mb-6">Tối ưu hóa từng giai đoạn trong ngày bắt đầu từ môi trường xung quanh bạn.</p>
+        <p className="text-muted text-lg mb-6">Tối ưu hóa từng giai đoạn trong ngày bắt đầu từ môi trường xung quanh bạn.</p>
 
         <div className="flex gap-2 mb-6 flex-wrap">
           {ENV_ZONES.map(z => (
-            <button key={z.id} onClick={() => setActiveZone(z.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium transition-all border ${activeZone === z.id ? 'text-white' : 'text-muted border-border hover:border-rose-500/30'}`} style={{ background: activeZone === z.id ? z.color : undefined, borderColor: activeZone === z.id ? z.color : undefined }}>
+            <button key={z.id} onClick={() => setActiveZone(z.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-lg font-medium transition-all border ${activeZone === z.id ? 'text-white' : 'text-muted border-border hover:border-rose-500/30'}`} style={{ background: activeZone === z.id ? z.color : undefined, borderColor: activeZone === z.id ? z.color : undefined }}>
               <span>{z.icon}</span>{z.title.replace('Môi Trường ', '')}
             </button>
           ))}
@@ -175,7 +175,7 @@ export default function LifestyleEnvironmentPage() {
               <span className="text-4xl">{zone.icon}</span>
               <div>
                 <div className="text-xl font-bold text-text">{zone.title}</div>
-                <div className="text-sm font-bold uppercase tracking-widest mt-0.5" style={{ color: zone.color }}>{zone.subtitle}</div>
+                <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: zone.color }}>{zone.subtitle}</div>
               </div>
             </div>
             <div className="space-y-3">
@@ -183,8 +183,8 @@ export default function LifestyleEnvironmentPage() {
                 <div key={i} className="flex items-start gap-3 p-3 rounded-xl border border-border bg-bg hover:border-opacity-30 transition-colors">
                   <span className="text-2xl shrink-0 mt-0.5">{item.icon}</span>
                   <div>
-                    <div className="text-base font-bold text-text">{item.title}</div>
-                    <div className="text-sm text-muted leading-relaxed mt-0.5">{item.desc}</div>
+                    <div className="text-lg font-bold text-text">{item.title}</div>
+                    <div className="text-base text-muted leading-relaxed mt-0.5">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -196,13 +196,13 @@ export default function LifestyleEnvironmentPage() {
       {/* Quick wins table */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>8 Thay Đổi Nhanh, Tác Động Lớn</h2>
-        <p className="text-muted text-base mb-6">Bắt đầu với những gì dễ nhất — ngay hôm nay, không cần kế hoạch phức tạp.</p>
+        <p className="text-muted text-lg mb-6">Bắt đầu với những gì dễ nhất — ngay hôm nay, không cần kế hoạch phức tạp.</p>
         <div className="overflow-x-auto">
-          <table className="w-full text-base">
+          <table className="w-full text-lg">
             <thead>
               <tr className="border-b border-border">
                 {['Thay Đổi', 'Tác Động', 'Thời Gian', 'Chi Phí'].map(h => (
-                  <th key={h} className="text-left py-3 pr-4 text-sm font-bold uppercase tracking-widest text-muted">{h}</th>
+                  <th key={h} className="text-left py-3 pr-4 text-base font-bold uppercase tracking-widest text-muted">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -214,7 +214,7 @@ export default function LifestyleEnvironmentPage() {
                     <span className="text-text font-medium">{w.title}</span>
                   </td>
                   <td className="py-3 pr-4">
-                    <span className="px-2 py-0.5 rounded-full text-sm font-bold" style={{ background: `${IMPACT_COLOR[w.impact]}20`, color: IMPACT_COLOR[w.impact] }}>{w.impact}</span>
+                    <span className="px-2 py-0.5 rounded-full text-base font-bold" style={{ background: `${IMPACT_COLOR[w.impact]}20`, color: IMPACT_COLOR[w.impact] }}>{w.impact}</span>
                   </td>
                   <td className="py-3 pr-4 text-muted">{w.time}</td>
                   <td className="py-3 text-muted">{w.cost}</td>
@@ -228,7 +228,7 @@ export default function LifestyleEnvironmentPage() {
       {/* 30-day challenge */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thử Thách 30 Ngày</h2>
-        <p className="text-muted text-base mb-6">Thực hiện từng thay đổi theo tuần — không làm tất cả một lúc.</p>
+        <p className="text-muted text-lg mb-6">Thực hiện từng thay đổi theo tuần — không làm tất cả một lúc.</p>
         <div className="grid md:grid-cols-4 gap-3">
           {[
             { week: 'Tuần 1', focus: 'Phòng ngủ', changes: ['Cất điện thoại ra ngoài', 'Nhiệt độ 18°C', 'Rèm tối hoàn toàn'] },
@@ -237,11 +237,11 @@ export default function LifestyleEnvironmentPage() {
             { week: 'Tuần 4', focus: 'Buổi tối', changes: ['Night mode 20:00', 'Sách thay điện thoại', 'Mùi lavender'] },
           ].map(w => (
             <div key={w.week} className="rounded-xl border border-border bg-surface p-4">
-              <div className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{w.week}</div>
-              <div className="text-base font-bold text-text mb-3">{w.focus}</div>
+              <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{w.week}</div>
+              <div className="text-lg font-bold text-text mb-3">{w.focus}</div>
               <ul className="space-y-1">
                 {w.changes.map((c, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-muted"><span style={{ color: COLOR }}>→</span>{c}</li>
+                  <li key={i} className="flex items-start gap-2 text-base text-muted"><span style={{ color: COLOR }}>→</span>{c}</li>
                 ))}
               </ul>
             </div>
@@ -251,14 +251,14 @@ export default function LifestyleEnvironmentPage() {
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
-        <Link to="/pillar/c/breathing" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group">
+        <Link to="/pillar/c/breathing" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Kỹ Thuật Thở
         </Link>
-        <Link to="/pillar/c" className="text-base text-muted hover:text-teal-400 transition-colors text-center">
+        <Link to="/pillar/c" className="text-lg text-muted hover:text-teal-400 transition-colors text-center">
           Tất cả Module Lối Sống →
         </Link>
-        <Link to="/pillar/c/checklist" className="flex items-center gap-2 text-base text-muted hover:text-text transition-colors group justify-end">
+        <Link to="/pillar/c/checklist" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
           Checklist Hằng Ngày
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>

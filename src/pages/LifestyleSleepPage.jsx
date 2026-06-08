@@ -89,7 +89,7 @@ export default function LifestyleSleepPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-base mb-8 hover:text-teal-400 transition-colors">
+      <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-teal-400 transition-colors">
         ← Lối Sống Khỏe
       </Link>
 
@@ -102,7 +102,7 @@ export default function LifestyleSleepPage() {
         </div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Khoa Học Giấc Ngủ</h1>
-          <span className="inline-block text-sm font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
             C1 — Giấc Ngủ · Vệ Sinh Ngủ
           </span>
@@ -119,7 +119,7 @@ export default function LifestyleSleepPage() {
               alt="Khoa học giấc ngủ" className="w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.9), rgba(10,10,10,0.3) 50%, transparent)' }} />
             <div className="absolute bottom-4 left-6">
-              <span className="text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+              <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
                 7–9 giờ · Ngủ đúng nhịp
               </span>
@@ -133,14 +133,14 @@ export default function LifestyleSleepPage() {
       {/* Why sleep matters */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Giấc Ngủ Quan Trọng?</h2>
-        <p className="text-muted text-base mb-6">Muốn khỏe bền, đừng chỉ tập thêm — hãy ngủ tốt hơn.</p>
+        <p className="text-muted text-lg mb-6">Muốn khỏe bền, đừng chỉ tập thêm — hãy ngủ tốt hơn.</p>
         <div className="grid gap-3">
           {SLEEP_FACTS.map((f, i) => (
             <div key={i} className="flex gap-4 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
               <span className="text-3xl shrink-0">{f.icon}</span>
               <div>
-                <div className="font-semibold text-text text-base mb-1">{f.title}</div>
-                <div className="text-muted text-sm leading-relaxed">{f.desc}</div>
+                <div className="font-semibold text-text text-lg mb-1">{f.title}</div>
+                <div className="text-muted text-base leading-relaxed">{f.desc}</div>
               </div>
             </div>
           ))}
@@ -150,27 +150,27 @@ export default function LifestyleSleepPage() {
       {/* Sleep stages */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Giai Đoạn Giấc Ngủ</h2>
-        <p className="text-muted text-base mb-6">Một chu kỳ ngủ hoàn chỉnh kéo dài ~90 phút và lặp lại 4–6 lần mỗi đêm.</p>
+        <p className="text-muted text-lg mb-6">Một chu kỳ ngủ hoàn chỉnh kéo dài ~90 phút và lặp lại 4–6 lần mỗi đêm.</p>
         <div className="space-y-3">
           {SLEEP_STAGES.map((st, i) => (
             <div key={i} className="p-4 rounded-xl border" style={{ borderColor: `${st.color}22`, background: `${st.color}08` }}>
               <div className="flex items-center justify-between mb-2">
-                <span className="font-bold text-base" style={{ color: st.color }}>{st.stage}</span>
-                <span className="text-sm font-semibold tabular-nums" style={{ color: st.color }}>{st.time}</span>
+                <span className="font-bold text-lg" style={{ color: st.color }}>{st.stage}</span>
+                <span className="text-base font-semibold tabular-nums" style={{ color: st.color }}>{st.time}</span>
               </div>
-              <p className="text-muted text-sm leading-relaxed">{st.desc}</p>
+              <p className="text-muted text-base leading-relaxed">{st.desc}</p>
             </div>
           ))}
         </div>
         <div className="mt-4 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.07)`, border: `1px solid rgba(${RGB},0.15)` }}>
-          <p className="text-sm text-muted"><strong style={{ color: COLOR }}>Lưu ý quan trọng:</strong> Giấc ngủ sâu (N3) nhiều nhất trong 3 giờ đầu đêm. REM nhiều nhất vào buổi sáng sớm. Ngủ muộn → mất giấc ngủ sâu; thức sớm → mất REM.</p>
+          <p className="text-base text-muted"><strong style={{ color: COLOR }}>Lưu ý quan trọng:</strong> Giấc ngủ sâu (N3) nhiều nhất trong 3 giờ đầu đêm. REM nhiều nhất vào buổi sáng sớm. Ngủ muộn → mất giấc ngủ sâu; thức sớm → mất REM.</p>
         </div>
       </RevealBlock>
 
       {/* 4 steps hygiene */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vệ Sinh Giấc Ngủ 4 Bước</h2>
-        <p className="text-muted text-base mb-6">Không ép ngủ hoàn hảo, mà xây môi trường để cơ thể dễ ngủ hơn.</p>
+        <p className="text-muted text-lg mb-6">Không ép ngủ hoàn hảo, mà xây môi trường để cơ thể dễ ngủ hơn.</p>
         <div className="grid gap-4">
           {[
             { num: '01', title: 'Cố định khung giờ ngủ – thức', color: COLOR, icon: '🕙',
@@ -192,8 +192,8 @@ export default function LifestyleSleepPage() {
                 <span className="text-2xl">{step.icon}</span>
                 <h3 className="font-bold text-text">{step.title}</h3>
               </div>
-              <p className="text-muted text-base leading-relaxed mb-3">{step.content}</p>
-              <div className="text-sm font-semibold px-3 py-1.5 rounded-lg inline-block" style={{ color: COLOR, background: `rgba(${RGB},0.1)` }}>
+              <p className="text-muted text-lg leading-relaxed mb-3">{step.content}</p>
+              <div className="text-base font-semibold px-3 py-1.5 rounded-lg inline-block" style={{ color: COLOR, background: `rgba(${RGB},0.1)` }}>
                 💡 {step.tip}
               </div>
             </div>
@@ -204,16 +204,16 @@ export default function LifestyleSleepPage() {
       {/* 7-day reset */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Sửa Ngủ Muộn Trong 7 Ngày</h2>
-        <p className="text-muted text-base mb-6">Không kéo giờ ngủ sớm quá mạnh ngay. Mỗi 2–3 ngày kéo sớm 15–30 phút để cơ thể thích nghi.</p>
+        <p className="text-muted text-lg mb-6">Không kéo giờ ngủ sớm quá mạnh ngay. Mỗi 2–3 ngày kéo sớm 15–30 phút để cơ thể thích nghi.</p>
         <div className="space-y-3">
           {SEVEN_DAY_PLAN.map((day, i) => (
             <div key={i} className="flex gap-4 items-start p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
               <div className="shrink-0 w-16 text-center">
-                <div className="text-sm font-bold tabular-nums" style={{ color: COLOR }}>{day.day}</div>
+                <div className="text-base font-bold tabular-nums" style={{ color: COLOR }}>{day.day}</div>
               </div>
               <div>
-                <div className="font-semibold text-text text-base">{day.focus}</div>
-                <div className="text-muted text-sm mt-0.5">{day.action}</div>
+                <div className="font-semibold text-text text-lg">{day.focus}</div>
+                <div className="text-muted text-base mt-0.5">{day.action}</div>
               </div>
             </div>
           ))}
@@ -223,7 +223,7 @@ export default function LifestyleSleepPage() {
       {/* Trouble cases */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Xử Lý Tình Huống Thường Gặp</h2>
-        <p className="text-muted text-base mb-6">3 kịch bản phổ biến nhất và cách xử lý thực tế.</p>
+        <p className="text-muted text-lg mb-6">3 kịch bản phổ biến nhất và cách xử lý thực tế.</p>
         <div className="space-y-3">
           {TROUBLE_CASES.map((c, i) => (
             <div key={i} className="rounded-2xl overflow-hidden border" style={{ borderColor: `rgba(${RGB},0.15)` }}>
@@ -237,7 +237,7 @@ export default function LifestyleSleepPage() {
               {openCase === i && (
                 <div className="p-4 space-y-2">
                   {c.tips.map((tip, j) => (
-                    <div key={j} className="flex items-start gap-2 text-base">
+                    <div key={j} className="flex items-start gap-2 text-lg">
                       <span style={{ color: COLOR }} className="shrink-0 mt-0.5">→</span>
                       <span className="text-muted">{tip}</span>
                     </div>
@@ -252,7 +252,7 @@ export default function LifestyleSleepPage() {
       {/* Daily checklist */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Checklist Ngủ Hằng Ngày</h2>
-        <p className="text-muted text-base mb-6">Không cần đạt 5/5 mỗi ngày. Đạt 3/5 là đã tốt cho người mới bắt đầu.</p>
+        <p className="text-muted text-lg mb-6">Không cần đạt 5/5 mỗi ngày. Đạt 3/5 là đã tốt cho người mới bắt đầu.</p>
         <div className="space-y-3">
           {[
             'Giảm màn hình trước ngủ 30+ phút',
@@ -265,23 +265,23 @@ export default function LifestyleSleepPage() {
               <div onClick={() => setChecks(p => ({ ...p, [i]: !p[i] }))}
                 className="w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all border"
                 style={{ background: checks[i] ? COLOR : 'transparent', borderColor: COLOR }}>
-                {checks[i] && <span className="text-black text-sm font-bold">✓</span>}
+                {checks[i] && <span className="text-black text-base font-bold">✓</span>}
               </div>
-              <span className="text-base text-muted group-hover:text-text transition-colors">{item}</span>
+              <span className="text-lg text-muted group-hover:text-text transition-colors">{item}</span>
             </label>
           ))}
         </div>
         <div className="mt-4 h-2 rounded-full overflow-hidden" style={{ background: `rgba(${RGB},0.15)` }}>
           <div className="h-full rounded-full transition-all duration-500" style={{ width: `${checkCount / 5 * 100}%`, background: COLOR }} />
         </div>
-        <p className="text-sm text-muted mt-2">{checkCount}/5 — {checkCount >= 4 ? '🌟 Xuất sắc!' : checkCount >= 3 ? '✅ Tốt!' : '⏳ Đang xây dựng'}</p>
+        <p className="text-base text-muted mt-2">{checkCount}/5 — {checkCount >= 4 ? '🌟 Xuất sắc!' : checkCount >= 3 ? '✅ Tốt!' : '⏳ Đang xây dựng'}</p>
       </RevealBlock>
 
       {/* Safety note */}
       <RevealBlock className="mb-12">
         <div className="p-5 rounded-2xl border" style={{ borderColor: 'rgba(239,68,68,0.2)', background: 'rgba(239,68,68,0.05)' }}>
           <h3 className="font-bold text-red-400 mb-3">⚠️ Khi Nào Cần Gặp Bác Sĩ?</h3>
-          <div className="space-y-1 text-base text-muted">
+          <div className="space-y-1 text-lg text-muted">
             {['Mất ngủ kéo dài hơn 3–4 tuần dù đã áp dụng vệ sinh giấc ngủ', 'Ngủ 7–9 tiếng nhưng vẫn mệt mỏi suốt ngày (có thể là sleep apnea)', 'Ngáy to, ngừng thở khi ngủ', 'Chân bứt rứt khó chịu khi ngủ (restless legs)', 'Mộng du hoặc hành vi bất thường khi ngủ'].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
                 <span className="text-red-400 shrink-0">•</span>{item}
@@ -292,8 +292,8 @@ export default function LifestyleSleepPage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c" className="text-muted hover:text-teal-400 transition-colors text-base">← Lối Sống Khỏe</Link>
-        <Link to="/pillar/c/sleep-routine" className="text-base font-semibold" style={{ color: COLOR }}>Routine Trước Ngủ →</Link>
+        <Link to="/pillar/c" className="text-muted hover:text-teal-400 transition-colors text-lg">← Lối Sống Khỏe</Link>
+        <Link to="/pillar/c/sleep-routine" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Trước Ngủ →</Link>
       </div>
     </div>
   );

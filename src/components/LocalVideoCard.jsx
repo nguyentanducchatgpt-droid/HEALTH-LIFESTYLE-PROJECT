@@ -65,7 +65,7 @@ export default function LocalVideoCard({ src, title, index = 0, onPlay }) {
 
       {/* Title */}
       <div className="p-3.5">
-        <p className="text-base font-semibold text-text group-hover:text-accent transition-colors duration-200 leading-snug text-left">
+        <p className="text-lg font-semibold text-text group-hover:text-accent transition-colors duration-200 leading-snug text-left">
           {title}
         </p>
       </div>

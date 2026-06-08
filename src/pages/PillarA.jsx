@@ -801,23 +801,26 @@ export default function PillarA() {
                       key={t.n}
                       type="button"
                       onClick={() => switchTab(i)}
-                      className="group relative flex items-center gap-2 px-4 py-3 text-xs font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap"
+                      className="group relative flex items-center gap-3 px-5 py-4 font-bold transition-all duration-250 focus:outline-none cursor-pointer whitespace-nowrap"
                       style={{
                         color: isActive ? t.color : 'rgba(100,116,139,0.55)',
-                        background: isActive ? `${t.color}0c` : 'transparent',
+                        background: isActive ? `${t.color}0e` : 'transparent',
                       }}
                     >
-                      <span style={{ color: isActive ? t.color : 'rgba(100,116,139,0.4)' }}>{t.icon}</span>
-                      <span className="font-black">{t.n}</span>
-                      <span className="hidden sm:inline opacity-75">— {t.title}</span>
+                      <span className={`text-xl transition-all duration-200 ${isActive ? 'scale-110' : 'opacity-50'}`}
+                        style={{ filter: isActive ? `drop-shadow(0 0 6px ${t.color}80)` : 'none' }}>
+                        {t.icon}
+                      </span>
+                      <span className="text-sm font-black">{t.n}</span>
+                      <span className="hidden sm:inline text-sm">— {t.title}</span>
                       {isActive && (
-                        <span className="w-1.5 h-1.5 rounded-full animate-pulse ml-0.5" style={{ background: t.color }} />
+                        <span className="w-2 h-2 rounded-full animate-pulse ml-0.5" style={{ background: t.color }} />
                       )}
                       <div
-                        className="absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300"
+                        className="absolute bottom-0 left-0 right-0 h-[2.5px] transition-all duration-300"
                         style={{
-                          background: isActive ? t.color : 'transparent',
-                          boxShadow: isActive ? `0 0 6px ${t.color}` : 'none',
+                          background: isActive ? `linear-gradient(90deg, transparent, ${t.color}, transparent)` : 'transparent',
+                          boxShadow: isActive ? `0 0 8px ${t.color}` : 'none',
                         }}
                       />
                     </button>

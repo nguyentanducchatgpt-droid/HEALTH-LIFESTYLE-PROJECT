@@ -792,8 +792,9 @@ export default function PillarA() {
           <div className="rounded-2xl overflow-hidden" style={{ background: '#0a0a0a' }}>
 
             {/* Tab strip */}
-            <div className="overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
-              <div ref={tabBarRef} className="flex items-stretch min-w-max md:min-w-0">
+            <div className="relative">
+              <div className="overflow-x-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: `${mergedTabs[activeTab].color}40 transparent` }}>
+                <div ref={tabBarRef} className="flex items-stretch min-w-max md:min-w-0">
                 {mergedTabs.map((t, i) => {
                   const isActive = activeTab === i;
                   return (
@@ -826,7 +827,11 @@ export default function PillarA() {
                     </button>
                   );
                 })}
+                </div>
               </div>
+              {/* Right fade hint — indicates more tabs to scroll */}
+              <div className="absolute top-0 right-0 bottom-0 w-12 pointer-events-none md:hidden"
+                style={{ background: 'linear-gradient(to left, #0a0a0a, transparent)' }} />
             </div>
 
             {/* Separator */}

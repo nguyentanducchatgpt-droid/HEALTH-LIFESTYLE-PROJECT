@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // ─── Color palette ─────────────────────────────────────────────────────────────
 const S = {
@@ -231,12 +231,21 @@ const FRAMEWORKS = [
 export default function WorkoutFramework() {
   const [activeDur,   setActiveDur]   = useState(0);
   const [activeBlock, setActiveBlock] = useState(null);
+  const [modalBlock,  setModalBlock]  = useState(null);
 
   const fw    = FRAMEWORKS[activeDur];
   const total = fw.blocks.reduce((s, b) => s + b.mins, 0);
   const ms    = S[fw.color] || S.green;
 
   const handleDur = (i) => { setActiveDur(i); setActiveBlock(null); };
+  const openModal  = (b, e) => { e.stopPropagation(); setModalBlock(b); };
+  const closeModal = ()     => setModalBlock(null);
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') closeModal(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   return (
     <section className="mb-16">
@@ -384,13 +393,9 @@ export default function WorkoutFramework() {
               return (
                 <div
                   key={i}
-                  onClick={() => setActiveBlock(expanded ? null : i)}
-                  className={`group relative overflow-hidden rounded-2xl border cursor-pointer transition-all duration-250 ${
-                    expanded
-                      ? `${cs.border} ${cs.bg} ring-1 ${cs.ring}`
-                      : 'border-border hover:border-white/20 bg-surface/50'
-                  }`}
-                  style={{ boxShadow: expanded ? `0 8px 32px ${cs.glow}` : undefined }}
+                  onClick={(e) => openModal(b, e)}
+                  className="group relative overflow-hidden rounded-2xl border cursor-pointer transition-all duration-250 border-border hover:border-white/20 bg-surface/50"
+                  style={{ ':hover': { boxShadow: `0 8px 32px ${cs.glow}` } }}
                 >
                   {/* Image header */}
                   <div className="relative h-28 overflow-hidden">
@@ -413,10 +418,10 @@ export default function WorkoutFramework() {
                       </span>
                     </div>
 
-                    {/* Expand indicator */}
-                    <div className={`absolute top-2.5 right-2.5 w-5 h-5 rounded-full border ${cs.border} ${cs.bg} flex items-center justify-center transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}>
-                      <svg className={`w-2.5 h-2.5 ${cs.text}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    {/* Expand icon */}
+                    <div className={`absolute top-2.5 right-2.5 w-5 h-5 rounded-full border ${cs.border} ${cs.bg} flex items-center justify-center`}>
+                      <svg className={`w-2.5 h-2.5 ${cs.text}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                       </svg>
                     </div>
                   </div>
@@ -425,29 +430,24 @@ export default function WorkoutFramework() {
                   <div className="p-3">
                     <p className="text-[10px] text-muted/70 mb-2.5 leading-snug">{b.desc}</p>
 
-                    {/* Exercise chips */}
+                    {/* Exercise chips — preview (first 3) */}
                     <div className="flex flex-wrap gap-1">
-                      {b.exercises
-                        .slice(0, expanded ? b.exercises.length : 4)
-                        .map((ex, ei) => (
-                          <span
-                            key={ei}
-                            className={`text-[9px] px-2 py-0.5 rounded-full border leading-snug ${cs.bg} ${cs.border} ${cs.text}`}
-                          >
-                            {ex}
-                          </span>
-                        ))}
-                      {!expanded && b.exercises.length > 4 && (
-                        <span className={`text-[9px] px-2 py-0.5 rounded-full border bg-white/4 border-white/10 text-muted/50`}>
-                          +{b.exercises.length - 4} bài
+                      {b.exercises.slice(0, 3).map((ex, ei) => (
+                        <span
+                          key={ei}
+                          className={`text-[9px] px-2 py-0.5 rounded-full border leading-snug ${cs.bg} ${cs.border} ${cs.text}`}
+                        >
+                          {ex}
+                        </span>
+                      ))}
+                      {b.exercises.length > 3 && (
+                        <span className="text-[9px] px-2 py-0.5 rounded-full border bg-white/4 border-white/10 text-muted/50">
+                          +{b.exercises.length - 3} bài
                         </span>
                       )}
                     </div>
 
-                    {/* Toggle hint */}
-                    <p className={`mt-2.5 text-[9px] ${cs.text} opacity-60`}>
-                      {expanded ? '↑ Thu gọn' : '↓ Xem đầy đủ'}
-                    </p>
+                    <p className={`mt-2.5 text-[9px] ${cs.text} opacity-50`}>Nhấn để xem chi tiết →</p>
                   </div>
                 </div>
               );
@@ -456,10 +456,85 @@ export default function WorkoutFramework() {
 
           {/* Bottom note */}
           <p className="text-muted/40 text-[10px] text-center mt-4">
-            Nhấn vào từng khối để xem danh sách bài tập đầy đủ · Nhấn vào thanh timeline để lọc theo giai đoạn
+            Nhấn vào từng khối để xem chi tiết · Nhấn vào thanh timeline để lọc theo giai đoạn
           </p>
         </div>
       </div>
+
+      {/* ── Block detail modal ── */}
+      {modalBlock && (() => {
+        const mb = modalBlock;
+        const mcs = S[mb.color] || S.green;
+        return (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(10px)' }}
+            onClick={closeModal}
+          >
+            <div
+              className="relative w-full max-w-md rounded-3xl overflow-hidden border"
+              style={{ borderColor: `${mcs.hex}50`, background: '#111215', boxShadow: `0 0 80px ${mcs.glow}` }}
+              onClick={e => e.stopPropagation()}
+            >
+              {/* ── Image header */}
+              <div className="relative h-52 overflow-hidden">
+                <img src={mb.img} alt="" className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #111215 0%, #111215 10%, rgba(17,18,21,0.45) 55%, transparent 100%)' }} />
+
+                {/* Glow orb */}
+                <div className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(circle at 30% 50%, ${mcs.glow} 0%, transparent 55%)`, opacity: 0.5 }} />
+
+                {/* Close button */}
+                <button
+                  onClick={closeModal}
+                  className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                  style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                {/* Bottom overlay content */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-4xl leading-none">{mb.icon}</span>
+                    <div>
+                      <h3 className="text-xl font-black text-white leading-tight">{mb.name}</h3>
+                      <p className={`text-xs font-semibold ${mcs.text} mt-0.5`}>{mb.desc}</p>
+                    </div>
+                  </div>
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full border shrink-0 ${mcs.bg} ${mcs.border} ${mcs.text}`}>
+                    {mb.mins} phút
+                  </span>
+                </div>
+              </div>
+
+              {/* ── Content */}
+              <div className="px-5 pb-6 pt-4">
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: mcs.hex }}>
+                  Danh sách bài tập
+                </p>
+                <div className="flex flex-col gap-2">
+                  {mb.exercises.map((ex, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-2.5 rounded-xl px-3 py-2.5"
+                      style={{ background: `${mcs.hex}0d`, border: `1px solid ${mcs.hex}22` }}
+                    >
+                      <span className={`text-xs font-black shrink-0 mt-0.5 ${mcs.text}`}>{String(i + 1).padStart(2, '0')}</span>
+                      <span className="text-xs text-white/80 leading-relaxed">{ex}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* ESC hint */}
+                <p className="text-[9px] text-muted/35 text-center mt-4">Nhấn ra ngoài hoặc nút × để đóng</p>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </section>
   );
 }

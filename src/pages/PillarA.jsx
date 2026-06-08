@@ -650,8 +650,9 @@ export default function PillarA() {
         {/* Opening statement */}
         <div className="text-center mb-10 max-w-2xl mx-auto">
           <p className="text-xl md:text-2xl font-semibold text-text/85 leading-relaxed mb-3">
-            {pillar?.intro_pt1 || 'Tập luyện hiệu quả không phải là tập '}<em>{pillar?.intro_em || 'nhiều hơn'}</em>{pillar?.intro_pt2 || ' — mà là tập '}<br className="hidden md:block" />
-            <span className="text-accent font-bold not-italic">{pillar?.intro_strong || 'đúng hơn'}</span>.
+            {pillar?.intro_pt1 || 'Tập luyện hiệu quả không phải là tập '}<em>{pillar?.intro_em || 'nhiều hơn'}</em>
+            <br />
+            {pillar?.intro_pt2 || '— mà là tập '}<span className="text-accent font-bold not-italic">{pillar?.intro_strong || 'đúng hơn'}</span>.
           </p>
           <p className="text-sm text-muted leading-relaxed">
             {pillar?.intro_sub || '4 chủ đề dưới đây được sắp xếp theo thứ tự logic.'}

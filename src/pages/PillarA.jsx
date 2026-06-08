@@ -807,12 +807,12 @@ export default function PillarA() {
                         background: isActive ? `${t.color}0e` : 'transparent',
                       }}
                     >
-                      <span className={`text-xl transition-all duration-200 ${isActive ? 'scale-110' : 'opacity-50'}`}
-                        style={{ filter: isActive ? `drop-shadow(0 0 6px ${t.color}80)` : 'none' }}>
+                      <span className={`text-2xl transition-all duration-200 ${isActive ? 'scale-110' : 'opacity-50'}`}
+                        style={{ filter: isActive ? `drop-shadow(0 0 8px ${t.color}90)` : 'none' }}>
                         {t.icon}
                       </span>
-                      <span className="text-sm font-black">{t.n}</span>
-                      <span className="hidden sm:inline text-sm">— {t.title}</span>
+                      <span className="text-base font-black">{t.n}</span>
+                      <span className="hidden sm:inline text-base">— {t.title}</span>
                       {isActive && (
                         <span className="w-2 h-2 rounded-full animate-pulse ml-0.5" style={{ background: t.color }} />
                       )}

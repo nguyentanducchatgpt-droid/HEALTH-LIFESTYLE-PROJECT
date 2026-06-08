@@ -55,7 +55,7 @@ const PILLAR_META = [
     btnBg: 'bg-blue-500/10 hover:bg-blue-500/20 border-blue-500/40 text-blue-400',
     badgeBg: 'bg-blue-500/10 border-blue-500/25 text-blue-400',
     imgOverlay: 'from-blue-950/60',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&q=75',
+    image: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=1000&q=75',
     imgAlt: 'Kiến thức sức khỏe y khoa',
     accent: '#3b82f6',
   },

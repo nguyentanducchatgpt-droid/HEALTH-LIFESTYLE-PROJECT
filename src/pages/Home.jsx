@@ -385,7 +385,7 @@ export default function Home() {
         <div className="ht-scan absolute w-full h-[1px] pointer-events-none"
           style={{ background: 'linear-gradient(90deg,transparent 0%,rgba(34,197,94,0.12) 25%,rgba(34,197,94,0.2) 50%,rgba(34,197,94,0.12) 75%,transparent 100%)' }} />
 
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-24 pb-28">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-14 pb-28">
 
           {/* Badge pill */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-6 select-none"

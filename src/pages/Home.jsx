@@ -154,6 +154,30 @@ const REVIEWS = [
     text:'Tài liệu về nhịp sinh học circadian và giấc ngủ rất chất lượng, tôi còn dùng tham khảo khi tư vấn bệnh nhân. Hiếm có nguồn tiếng Việt nào tổng hợp tốt như vậy.',
     date:'6 tuần trước',
   },
+  {
+    id:'r9', initials:'PT', name:'Phương Thảo', role:'Nhân viên văn phòng · TP.HCM', stars:4,
+    color:'#14b8a6', rgb:'20,184,166', tag:'Vận động',
+    text:'Lịch tập Weekly Rhythm rất hợp lý, mình đã theo được 8 tuần liên tục — kỷ lục cá nhân! Chỉ tiếc phần video hướng dẫn động tác còn ít, mong có thêm trong thời gian tới.',
+    date:'4 tuần trước',
+  },
+  {
+    id:'r10', initials:'HN', name:'Hùng Nguyễn', role:'Kỹ sư xây dựng · Hà Nội', stars:4,
+    color:'#84cc16', rgb:'132,204,22', tag:'Dinh dưỡng',
+    text:'Thực đơn 7 ngày ngon và dễ làm, vợ mình cũng thích. Tuy nhiên một số nguyên liệu hơi khó tìm ở siêu thị gần nhà. Nếu có thêm lựa chọn thay thế thì hoàn hảo hơn.',
+    date:'5 tuần trước',
+  },
+  {
+    id:'r11', initials:'LT', name:'Lan Trinh', role:'Sinh viên đại học · Cần Thơ', stars:3,
+    color:'#f97316', rgb:'249,115,22', tag:'Lộ trình',
+    text:'Nội dung khá hay và có hệ thống, nhưng với mình là người mới bắt đầu thì lượng thông tin hơi nhiều, đôi lúc không biết nên bắt đầu từ đâu. Hy vọng có thêm hướng dẫn "quick start" đơn giản hơn.',
+    date:'2 tháng trước',
+  },
+  {
+    id:'r12', initials:'CM', name:'Chí Minh', role:'Thợ điện · Đồng Nai', stars:3,
+    color:'#3b82f6', rgb:'59,130,246', tag:'Tâm trí',
+    text:'Phần thiền định có lý thuyết tốt nhưng mình thấy hơi khó áp dụng vào thực tế cuộc sống bận rộn. Bài tập cụ thể 5 phút/ngày thì làm được, còn phần dài hơn thì chưa theo kịp.',
+    date:'7 tuần trước',
+  },
 ];
 
 export default function Home() {
@@ -790,7 +814,7 @@ export default function Home() {
               {/* Left: big score */}
               <div className="flex flex-col items-center justify-center shrink-0 text-center md:pr-10"
                 style={{ borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-                <p className="text-8xl font-extrabold leading-none text-text tracking-tight mb-2">4.9</p>
+                <p className="text-8xl font-extrabold leading-none text-text tracking-tight mb-2">4.7</p>
                 <div className="flex items-center gap-1 mb-2">
                   {[1,2,3,4,5].map(i => <span key={i} className="text-xl" style={{ color: '#fbbf24' }}>★</span>)}
                 </div>
@@ -800,9 +824,9 @@ export default function Home() {
               {/* Right: bar breakdown */}
               <div className="flex-1 w-full flex flex-col justify-center gap-2.5">
                 {[
-                  { star: 5, pct: 80 },
-                  { star: 4, pct: 15 },
-                  { star: 3, pct: 5  },
+                  { star: 5, pct: 67 },
+                  { star: 4, pct: 17 },
+                  { star: 3, pct: 16 },
                   { star: 2, pct: 0  },
                   { star: 1, pct: 0  },
                 ].map(({ star, pct }) => (

@@ -26,7 +26,9 @@
     "badge": "Science · Simple · Effective",
     "subtitle": "A simple, science-based healthy living ecosystem you can apply every day",
     "cta": "Get Started",
-    "pillars_title": "Healthy Living 360"
+    "pillars_title": "Healthy Living 360",
+    "social_proof": "2,400+ people living healthier",
+    "social_rating": "Rated 4.9/5"
   },
   "home": {
     "stats": [
@@ -57,16 +59,133 @@
     "cta_badge": "Start Today",
     "cta_program": "View Program",
     "journeys": [
-      { "label": "7-Day Kickstart", "tag": "START", "tagline": "Gentle · Step by step · No pressure", "desc": "Start from zero — 20 minutes a day integrating all 4 pillars. Simple enough to be irresistible.", "features": ["20 min movement/day","Nutrition without extreme restriction","Sleep & morning habits","3 deep breaths per day"] },
-      { "label": "12-Week Foundation", "tag": "POPULAR", "tagline": "Structured · 3 phases · Real change", "desc": "Kickstart → Build Base → Personalize. 12 weeks is enough for the brain to form permanent lasting habits.", "features": ["Kickstart weeks 1–4","Build Base weeks 5–8","Personalize weeks 9–12","Progress test weeks 4 & 12"] },
-      { "label": "24-Week Advanced", "tag": "COMPLETE", "tagline": "6 phases · Carb cycling · Full mastery", "desc": "From foundation to mastering your personal health system. 24 weeks turns habits into an irreversible identity.", "features": ["Foundation first 12 weeks","Optimize next 12 weeks","Carb cycling & supplementation","Design your own personal plan"] }
+      {
+        "label": "7-Day Kickstart",
+        "tag": "START",
+        "tagline": "Gentle · Step by step · No pressure",
+        "desc": "Start from zero — 20 minutes a day integrating all 4 pillars. Simple enough to be irresistible.",
+        "features": [
+          "20 min movement/day",
+          "Nutrition without extreme restriction",
+          "Sleep & morning habits",
+          "3 deep breaths per day"
+        ]
+      },
+      {
+        "label": "12-Week Foundation",
+        "tag": "POPULAR",
+        "tagline": "Structured · 3 phases · Real change",
+        "desc": "Kickstart → Build Base → Personalize. 12 weeks is enough for the brain to form permanent lasting habits.",
+        "features": [
+          "Kickstart weeks 1–4",
+          "Build Base weeks 5–8",
+          "Personalize weeks 9–12",
+          "Progress test weeks 4 & 12"
+        ]
+      },
+      {
+        "label": "24-Week Advanced",
+        "tag": "COMPLETE",
+        "tagline": "6 phases · Carb cycling · Full mastery",
+        "desc": "From foundation to mastering your personal health system. 24 weeks turns habits into an irreversible identity.",
+        "features": [
+          "Foundation first 12 weeks",
+          "Optimize next 12 weeks",
+          "Carb cycling & supplementation",
+          "Design your own personal plan"
+        ]
+      }
     ],
     "why_items": [
-      { "title": "Science-Based", "statSub": "Based", "desc": "Synthesized from trusted medical research — not tips or fleeting trends." },
-      { "title": "Simple & Practical", "statSub": "min/day", "desc": "10 minutes a day is enough to start. Every guide is designed specifically for busy people." },
-      { "title": "Clear Roadmap", "statSub": "milestones", "desc": "7 days → 12 weeks → 24 weeks. Small steps, never feel overwhelmed or give up." },
-      { "title": "360° Complete", "statSub": "pillars", "desc": "Movement · Nutrition · Lifestyle · Mind · Knowledge · Tools — no angle left behind." }
-    ]
+      {
+        "title": "Science-Based",
+        "statSub": "Based",
+        "desc": "Synthesized from trusted medical research — not tips or fleeting trends."
+      },
+      {
+        "title": "Simple & Practical",
+        "statSub": "min/day",
+        "desc": "10 minutes a day is enough to start. Every guide is designed specifically for busy people."
+      },
+      {
+        "title": "Clear Roadmap",
+        "statSub": "milestones",
+        "desc": "7 days → 12 weeks → 24 weeks. Small steps, never feel overwhelmed or give up."
+      },
+      {
+        "title": "360° Complete",
+        "statSub": "pillars",
+        "desc": "Movement · Nutrition · Lifestyle · Mind · Knowledge · Tools — no angle left behind."
+      }
+    ],
+    "reviews": {
+      "badge": "Community Reviews",
+      "title": "How They Transformed",
+      "sub": "2,400+ people living healthier every day — here are their stories",
+      "rating_base": "Based on 2,400+ reviews",
+      "items": [
+        {
+          "role": "Accountant · Hanoi",
+          "tag": "Exercise",
+          "text": "I used to think working out needed at least an hour to be effective. After 30 days with the Daily Core 20-minute framework, I lost 3kg and sleep so much better. I had no idea it could be this simple!"
+        },
+        {
+          "role": "Developer · Ho Chi Minh City",
+          "tag": "Nutrition",
+          "text": "The TDEE calculator and 7-day meal plan are very practical. I did not have to starve at all, just adjusted my macro ratios. Gained 4kg of quality muscle in 12 weeks."
+        },
+        {
+          "role": "Teacher · Da Nang",
+          "tag": "Mind",
+          "text": "The meditation and box breathing genuinely changed how I handle stress. After 3 weeks of morning practice, I am much calmer in tense classroom situations."
+        },
+        {
+          "role": "Entrepreneur · Hai Phong",
+          "tag": "Lifestyle",
+          "text": "I am 42 and started with the 7-day program because I was afraid I could not keep up. Now at week 10 of the 12-week journey. Energy is noticeably higher and no more afternoon slumps."
+        },
+        {
+          "role": "Medical Student · Can Tho",
+          "tag": "Knowledge",
+          "text": "As a medical student I am picky about sources. The content here is evidence-based without over-marketing. Already recommended it to my entire study group."
+        },
+        {
+          "role": "Personal Trainer · Binh Duong",
+          "tag": "Tools",
+          "text": "I now use the 3+2+2 weekly rhythm to schedule my clients — solid structure, easy to sustain. The weekly checklist helps them self-track without me having to remind them."
+        },
+        {
+          "role": "Homemaker · Long An",
+          "tag": "Nutrition",
+          "text": "Healthy recipes the whole family loves, no expensive ingredients needed. A 50% veggie plate that tastes better than restaurant food. My 8-year-old even eats more willingly now!"
+        },
+        {
+          "role": "Medical Resident · Hanoi",
+          "tag": "Knowledge",
+          "text": "The material on circadian rhythm and sleep is excellent — I even reference it when advising patients. Rare to find a Vietnamese source this well-curated."
+        },
+        {
+          "role": "Office Worker · Ho Chi Minh City",
+          "tag": "Exercise",
+          "text": "The Weekly Rhythm training schedule is very sensible. I have followed it 8 consecutive weeks — a personal record! Only wish there were more movement tutorial videos."
+        },
+        {
+          "role": "Civil Engineer · Hanoi",
+          "tag": "Nutrition",
+          "text": "The 7-day meal plan is delicious and easy to prepare, my wife loves it too. Some ingredients are a bit hard to find locally. More substitution options would make it perfect."
+        },
+        {
+          "role": "University Student · Can Tho",
+          "tag": "Roadmap",
+          "text": "The content is solid and well-structured, but as a complete beginner there is a lot of information and I sometimes did not know where to start. Hope to see a simpler quick-start guide."
+        },
+        {
+          "role": "Electrician · Dong Nai",
+          "tag": "Mind",
+          "text": "The meditation theory is good but hard to apply in a busy life. The 5-minute daily exercises are doable, but the longer sessions are still a challenge for me."
+        }
+      ]
+    }
   },
   "program": {
     "title": "Healthy Journey 12 Weeks",
@@ -287,23 +406,59 @@
     "test_tool_note": "Use the Progress Test Tool to save results and compare automatically.",
     "deep_dive_title": "Deep Dive Into Each Pillar",
     "link_12w_text": "12-week program",
-    "pillar_labels": { "A": "Movement", "B": "Nutrition", "C": "Lifestyle", "D": "Mind", "F": "Tools" },
+    "pillar_labels": {
+      "A": "Movement",
+      "B": "Nutrition",
+      "C": "Lifestyle",
+      "D": "Mind",
+      "F": "Tools"
+    },
     "philosophy_7d_strong": "These 7 days are the foundation",
     "philosophy_7d_body": "— not to 'transform your body' but to",
     "philosophy_7d_habit": "form your first 4 habits",
     "philosophy_7d_suffix": "Complete 7 days → start the",
     "journeys": [
-      { "label": "7-Day Kickstart", "sub": "First week", "desc": "Start gently with 7 days. Each day integrates all 4 pillars: Movement · Nutrition · Lifestyle · Mind." },
-      { "label": "12-Week Foundation", "sub": "Core program", "desc": "3 phases: Kickstart → Build Base → Personalize. Enough time to rewire brain habits permanently." },
-      { "label": "24-Week Advanced", "sub": "Complete program", "desc": "6 phases: from beginner to full mastery of your personal health system. Carb cycling + supplement + mastery." }
+      {
+        "label": "7-Day Kickstart",
+        "sub": "First week",
+        "desc": "Start gently with 7 days. Each day integrates all 4 pillars: Movement · Nutrition · Lifestyle · Mind."
+      },
+      {
+        "label": "12-Week Foundation",
+        "sub": "Core program",
+        "desc": "3 phases: Kickstart → Build Base → Personalize. Enough time to rewire brain habits permanently."
+      },
+      {
+        "label": "24-Week Advanced",
+        "sub": "Complete program",
+        "desc": "6 phases: from beginner to full mastery of your personal health system. Carb cycling + supplement + mastery."
+      }
     ],
     "quick_links": [
-      { "label": "Movement & Training", "sub": "6 patterns · Daily framework · Roadmap" },
-      { "label": "Nutrition Roadmap", "sub": "12 weeks · Macro · Meal prep" },
-      { "label": "7-Day Meal Plan", "sub": "Daily meals · Shopping list" },
-      { "label": "Lifestyle 12 Weeks", "sub": "Sleep · NEAT · Circadian rhythm" },
-      { "label": "Mind 12 Weeks", "sub": "Meditation · Breathing · Journaling" },
-      { "label": "Tools Roadmap", "sub": "Checklist · Tracker · Test" }
+      {
+        "label": "Movement & Training",
+        "sub": "6 patterns · Daily framework · Roadmap"
+      },
+      {
+        "label": "Nutrition Roadmap",
+        "sub": "12 weeks · Macro · Meal prep"
+      },
+      {
+        "label": "7-Day Meal Plan",
+        "sub": "Daily meals · Shopping list"
+      },
+      {
+        "label": "Lifestyle 12 Weeks",
+        "sub": "Sleep · NEAT · Circadian rhythm"
+      },
+      {
+        "label": "Mind 12 Weeks",
+        "sub": "Meditation · Breathing · Journaling"
+      },
+      {
+        "label": "Tools Roadmap",
+        "sub": "Checklist · Tracker · Test"
+      }
     ],
     "sub_tab_phases": "Roadmap",
     "sub_tab_daily": "Daily Framework",
@@ -312,60 +467,235 @@
     "sub_tab_test": "Progress Test",
     "seven_days": [
       {
-        "theme": "Start Light — Build Your Foundation", "tag": "Kickstart Day",
-        "A": { "title": "Learn 6 Fundamental Movements", "detail": "Squat · Hinge · Push · Pull · Core · Breath", "time": "20 min", "note": "Perfect form before load. Don't worry about reps — that's your only goal today." },
-        "B": { "title": "Eat 3 Protein-Rich Meals", "detail": "2 eggs morning · chicken breast lunch · fish/tofu dinner", "kcal": "~1,410 kcal", "note": "No need to cut carbs. Add veg and reduce sweets — enough for day one." },
-        "C": { "title": "Sleep Before 11 PM", "detail": "Dark + cool room · phone away from bed · 7–9h", "note": "More important than any workout — priority #1." },
-        "D": { "title": "3 Deep Breaths on Waking", "detail": "Inhale 4s · hold 4s · exhale 4s — repeat 3 times", "note": "30 seconds sets an anchor for the whole day." },
-        "checklist": ["Train 20 min (6 movements)", "Protein in 2/3+ meals", "Drink 1.8L water", "Sleep before 11 PM", "3 morning deep breaths"]
+        "theme": "Start Light — Build Your Foundation",
+        "tag": "Kickstart Day",
+        "A": {
+          "title": "Learn 6 Fundamental Movements",
+          "detail": "Squat · Hinge · Push · Pull · Core · Breath",
+          "time": "20 min",
+          "note": "Perfect form before load. Don't worry about reps — that's your only goal today."
+        },
+        "B": {
+          "title": "Eat 3 Protein-Rich Meals",
+          "detail": "2 eggs morning · chicken breast lunch · fish/tofu dinner",
+          "kcal": "~1,410 kcal",
+          "note": "No need to cut carbs. Add veg and reduce sweets — enough for day one."
+        },
+        "C": {
+          "title": "Sleep Before 11 PM",
+          "detail": "Dark + cool room · phone away from bed · 7–9h",
+          "note": "More important than any workout — priority #1."
+        },
+        "D": {
+          "title": "3 Deep Breaths on Waking",
+          "detail": "Inhale 4s · hold 4s · exhale 4s — repeat 3 times",
+          "note": "30 seconds sets an anchor for the whole day."
+        },
+        "checklist": [
+          "Train 20 min (6 movements)",
+          "Protein in 2/3+ meals",
+          "Drink 1.8L water",
+          "Sleep before 11 PM",
+          "3 morning deep breaths"
+        ]
       },
       {
-        "theme": "Protein & Water — Two Top Priorities", "tag": "Protein & Hydration",
-        "A": { "title": "Repeat 6 Movements + Add 1 Set", "detail": "Same workout · add 1 set per movement", "time": "22 min", "note": "The brain learns through repetition — don't skip it even if it feels too simple." },
-        "B": { "title": "Protein at Every Main Meal", "detail": "Oats + eggs · meat/fish/veg · tofu", "kcal": "~1,380 kcal", "note": "1 palm of protein per meal — the simplest rule to avoid protein shortfall." },
-        "C": { "title": "10-Minute Morning Routine", "detail": "Drink water · 5 min sunlight · write 1 daily goal", "note": "A morning anchor helps the brain switch on earlier." },
-        "D": { "title": "3-Line Evening Journal", "detail": "What went well · what I learned · what to do tomorrow", "note": "5 min before bed. Doesn't need to be good — just honest." },
-        "checklist": ["Protein all 3 meals", "Drink 2L water", "Morning routine 10 min", "Evening journal 3 lines", "Train 22 min"]
+        "theme": "Protein & Water — Two Top Priorities",
+        "tag": "Protein & Hydration",
+        "A": {
+          "title": "Repeat 6 Movements + Add 1 Set",
+          "detail": "Same workout · add 1 set per movement",
+          "time": "22 min",
+          "note": "The brain learns through repetition — don't skip it even if it feels too simple."
+        },
+        "B": {
+          "title": "Protein at Every Main Meal",
+          "detail": "Oats + eggs · meat/fish/veg · tofu",
+          "kcal": "~1,380 kcal",
+          "note": "1 palm of protein per meal — the simplest rule to avoid protein shortfall."
+        },
+        "C": {
+          "title": "10-Minute Morning Routine",
+          "detail": "Drink water · 5 min sunlight · write 1 daily goal",
+          "note": "A morning anchor helps the brain switch on earlier."
+        },
+        "D": {
+          "title": "3-Line Evening Journal",
+          "detail": "What went well · what I learned · what to do tomorrow",
+          "note": "5 min before bed. Doesn't need to be good — just honest."
+        },
+        "checklist": [
+          "Protein all 3 meals",
+          "Drink 2L water",
+          "Morning routine 10 min",
+          "Evening journal 3 lines",
+          "Train 22 min"
+        ]
       },
       {
-        "theme": "Smart Eating Out & Light Cardio", "tag": "Smart Eating + Walk",
-        "A": { "title": "Brisk Walk 20 Minutes", "detail": "Light cardio · heart rate 100–120 · muscle recovery", "time": "20 min", "note": "Walk after lunch: lowers blood sugar 20–30%, builds base endurance." },
-        "B": { "title": "Handle Eating Out Smartly", "detail": "1 protein + 2 veg + moderate carbs = the eating-out formula", "kcal": "~1,450 kcal", "note": "No need to avoid social meals — just use a simple strategy." },
-        "C": { "title": "No Phone 30 Min Before Bed", "detail": "Replace with: reading · breathing · light stretching", "note": "Blue light suppresses melatonin — one small habit improves sleep depth." },
-        "D": { "title": "Box Breathing 5 Minutes", "detail": "Inhale 4 · hold 4 · exhale 4 · hold 4 — repeat 5 rounds", "note": "Use when stressed, before meetings, or before bed." },
-        "checklist": ["Walk 20 min", "Eating-out formula", "No phone 30 min before bed", "Box breathing 5 min", "Drink enough water"]
+        "theme": "Smart Eating Out & Light Cardio",
+        "tag": "Smart Eating + Walk",
+        "A": {
+          "title": "Brisk Walk 20 Minutes",
+          "detail": "Light cardio · heart rate 100–120 · muscle recovery",
+          "time": "20 min",
+          "note": "Walk after lunch: lowers blood sugar 20–30%, builds base endurance."
+        },
+        "B": {
+          "title": "Handle Eating Out Smartly",
+          "detail": "1 protein + 2 veg + moderate carbs = the eating-out formula",
+          "kcal": "~1,450 kcal",
+          "note": "No need to avoid social meals — just use a simple strategy."
+        },
+        "C": {
+          "title": "No Phone 30 Min Before Bed",
+          "detail": "Replace with: reading · breathing · light stretching",
+          "note": "Blue light suppresses melatonin — one small habit improves sleep depth."
+        },
+        "D": {
+          "title": "Box Breathing 5 Minutes",
+          "detail": "Inhale 4 · hold 4 · exhale 4 · hold 4 — repeat 5 rounds",
+          "note": "Use when stressed, before meetings, or before bed."
+        },
+        "checklist": [
+          "Walk 20 min",
+          "Eating-out formula",
+          "No phone 30 min before bed",
+          "Box breathing 5 min",
+          "Drink enough water"
+        ]
       },
       {
-        "theme": "Vegetables & Active Recovery", "tag": "Greens & Recovery",
-        "A": { "title": "Active Recovery 15 Minutes", "detail": "Stretch · foam roll · light yoga · no heavy training", "time": "15 min", "note": "Recovery = invisible training. Muscles grow at rest, not during effort." },
-        "B": { "title": "Vegetable Priority Day", "detail": "Salad · soup · steamed veg · more than usual", "kcal": "~1,300 kcal", "note": "Fiber feeds gut bacteria — immune system and mood both benefit." },
-        "C": { "title": "8,000 Steps + Sunlight", "detail": "Total 8k steps through the day · 5 min morning sunlight", "note": "No need to walk continuously. Steps accumulate throughout the day." },
-        "D": { "title": "Meditation 5 Minutes", "detail": "Sit · close eyes · focus on breath · no judgment", "note": "You don't need to empty your mind — just notice and gently return to breath." },
-        "checklist": ["Stretch 15 min", "Veg in 2+ meals", "8,000 steps", "Meditate 5 min", "Sleep 7–9h"]
+        "theme": "Vegetables & Active Recovery",
+        "tag": "Greens & Recovery",
+        "A": {
+          "title": "Active Recovery 15 Minutes",
+          "detail": "Stretch · foam roll · light yoga · no heavy training",
+          "time": "15 min",
+          "note": "Recovery = invisible training. Muscles grow at rest, not during effort."
+        },
+        "B": {
+          "title": "Vegetable Priority Day",
+          "detail": "Salad · soup · steamed veg · more than usual",
+          "kcal": "~1,300 kcal",
+          "note": "Fiber feeds gut bacteria — immune system and mood both benefit."
+        },
+        "C": {
+          "title": "8,000 Steps + Sunlight",
+          "detail": "Total 8k steps through the day · 5 min morning sunlight",
+          "note": "No need to walk continuously. Steps accumulate throughout the day."
+        },
+        "D": {
+          "title": "Meditation 5 Minutes",
+          "detail": "Sit · close eyes · focus on breath · no judgment",
+          "note": "You don't need to empty your mind — just notice and gently return to breath."
+        },
+        "checklist": [
+          "Stretch 15 min",
+          "Veg in 2+ meals",
+          "8,000 steps",
+          "Meditate 5 min",
+          "Sleep 7–9h"
+        ]
       },
       {
-        "theme": "Strong Training Day & Carb Fuel", "tag": "Strong Training Day",
-        "A": { "title": "Full-Body Strength 30 Minutes", "detail": "3 sets/exercise · Squat + Lunge + Push + Row + Plank", "time": "30 min", "note": "RPE 7/10 — feel tired but not depleted. That is the right zone." },
-        "B": { "title": "Carbs Before + Protein After Training", "detail": "Before: banana · After: rice + chicken · ~1,620 kcal", "kcal": "~1,620 kcal", "note": "Carbs = fuel. Protein = muscle-building material. Don't skip the post-workout meal." },
-        "C": { "title": "Optimize Tonight's Sleep", "detail": "18–22C · complete darkness · no caffeine after 2 PM", "note": "Sleep after heavy training = the most critical time for muscle repair." },
-        "D": { "title": "Set Morning Intention", "detail": "Write 1 sentence: Today I will ___ then read it aloud", "note": "Clear intention leads to ~35% more consistent action." },
-        "checklist": ["30 min strength training", "Carbs before + protein after", "No caffeine after 2 PM", "Set morning intention", "Sleep 7–9h"]
+        "theme": "Strong Training Day & Carb Fuel",
+        "tag": "Strong Training Day",
+        "A": {
+          "title": "Full-Body Strength 30 Minutes",
+          "detail": "3 sets/exercise · Squat + Lunge + Push + Row + Plank",
+          "time": "30 min",
+          "note": "RPE 7/10 — feel tired but not depleted. That is the right zone."
+        },
+        "B": {
+          "title": "Carbs Before + Protein After Training",
+          "detail": "Before: banana · After: rice + chicken · ~1,620 kcal",
+          "kcal": "~1,620 kcal",
+          "note": "Carbs = fuel. Protein = muscle-building material. Don't skip the post-workout meal."
+        },
+        "C": {
+          "title": "Optimize Tonight's Sleep",
+          "detail": "18–22C · complete darkness · no caffeine after 2 PM",
+          "note": "Sleep after heavy training = the most critical time for muscle repair."
+        },
+        "D": {
+          "title": "Set Morning Intention",
+          "detail": "Write 1 sentence: Today I will ___ then read it aloud",
+          "note": "Clear intention leads to ~35% more consistent action."
+        },
+        "checklist": [
+          "30 min strength training",
+          "Carbs before + protein after",
+          "No caffeine after 2 PM",
+          "Set morning intention",
+          "Sleep 7–9h"
+        ]
       },
       {
-        "theme": "Prepare for the New Week", "tag": "Meal Prep Weekend",
-        "A": { "title": "Light Yoga / Walk 30 Minutes", "detail": "Active recovery · no heavy training on first weekend", "time": "30 min", "note": "Weekend = recharge time. Don't let training pressure damage your motivation." },
-        "B": { "title": "Meal Prep 45 Minutes", "detail": "Cook 2 proteins · veg · carbs · portion into containers", "kcal": "~1,495 kcal", "note": "Meal prep eliminates 60% of impulsive food decisions — set the environment to win." },
-        "C": { "title": "Tidy Your Space", "detail": "Desk clean · bedroom tidy · fridge organized", "note": "Tidy space reduces cortisol 20% — directly impacts sleep quality and focus." },
-        "D": { "title": "10-Minute Weekly Review", "detail": "What went well · what needs work · what to improve next week", "note": "Weekly review = the fastest growth tool. Turn experiences into lessons." },
-        "checklist": ["Meal prep 45 min", "Yoga/walk 30 min", "Tidy space", "Weekly review 10 min", "Plan next week's meals"]
+        "theme": "Prepare for the New Week",
+        "tag": "Meal Prep Weekend",
+        "A": {
+          "title": "Light Yoga / Walk 30 Minutes",
+          "detail": "Active recovery · no heavy training on first weekend",
+          "time": "30 min",
+          "note": "Weekend = recharge time. Don't let training pressure damage your motivation."
+        },
+        "B": {
+          "title": "Meal Prep 45 Minutes",
+          "detail": "Cook 2 proteins · veg · carbs · portion into containers",
+          "kcal": "~1,495 kcal",
+          "note": "Meal prep eliminates 60% of impulsive food decisions — set the environment to win."
+        },
+        "C": {
+          "title": "Tidy Your Space",
+          "detail": "Desk clean · bedroom tidy · fridge organized",
+          "note": "Tidy space reduces cortisol 20% — directly impacts sleep quality and focus."
+        },
+        "D": {
+          "title": "10-Minute Weekly Review",
+          "detail": "What went well · what needs work · what to improve next week",
+          "note": "Weekly review = the fastest growth tool. Turn experiences into lessons."
+        },
+        "checklist": [
+          "Meal prep 45 min",
+          "Yoga/walk 30 min",
+          "Tidy space",
+          "Weekly review 10 min",
+          "Plan next week's meals"
+        ]
       },
       {
-        "theme": "Full Rest & Reflect", "tag": "Rest & Reflect",
-        "A": { "title": "Complete Rest Day", "detail": "Rest day · gentle walk if you like · focus on recovery", "time": "Optional", "note": "Rest day is not failure. Your body is building strength from last week's training." },
-        "B": { "title": "Light, Easy-to-Digest Meals", "detail": "Vegetable soup · congee · fruit · ~1,240 kcal", "kcal": "~1,240 kcal", "note": "Let your digestive system rest — less processed, more produce, enough water." },
-        "C": { "title": "Plan the New Week", "detail": "Schedule training · prep meal plan · review goals", "note": "Preparation = winning 80% — no daily improvisation needed." },
-        "D": { "title": "7-Day Wrap-Up", "detail": "3 wins · 1 area to improve · 1 commitment going forward", "note": "Look back to learn and move forward with more insight — not to criticize yourself." },
-        "checklist": ["Rest / gentle walk", "Light easy-to-digest meals", "Plan next week", "7-day wrap-up journal", "Early sleep before 10:30 PM"]
+        "theme": "Full Rest & Reflect",
+        "tag": "Rest & Reflect",
+        "A": {
+          "title": "Complete Rest Day",
+          "detail": "Rest day · gentle walk if you like · focus on recovery",
+          "time": "Optional",
+          "note": "Rest day is not failure. Your body is building strength from last week's training."
+        },
+        "B": {
+          "title": "Light, Easy-to-Digest Meals",
+          "detail": "Vegetable soup · congee · fruit · ~1,240 kcal",
+          "kcal": "~1,240 kcal",
+          "note": "Let your digestive system rest — less processed, more produce, enough water."
+        },
+        "C": {
+          "title": "Plan the New Week",
+          "detail": "Schedule training · prep meal plan · review goals",
+          "note": "Preparation = winning 80% — no daily improvisation needed."
+        },
+        "D": {
+          "title": "7-Day Wrap-Up",
+          "detail": "3 wins · 1 area to improve · 1 commitment going forward",
+          "note": "Look back to learn and move forward with more insight — not to criticize yourself."
+        },
+        "checklist": [
+          "Rest / gentle walk",
+          "Light easy-to-digest meals",
+          "Plan next week",
+          "7-day wrap-up journal",
+          "Early sleep before 10:30 PM"
+        ]
       }
     ]
   },
@@ -426,7 +756,11 @@
     "faq_teaser_cta": "View all questions",
     "faq_stat_label1": "questions",
     "faq_stat_label2": "answered",
-    "faq_preview": ["Is the website completely free?", "Where should I start as a beginner?", "Who is the 12-week program for?"]
+    "faq_preview": [
+      "Is the website completely free?",
+      "Where should I start as a beginner?",
+      "Who is the 12-week program for?"
+    ]
   },
   "donate": {
     "title": "Support the Author",
@@ -503,7 +837,13 @@
     "floating_free_tag": "Free content",
     "floating_community": "Health community",
     "impact_journey": "Your contribution's journey",
-    "impact_chain": ["Your contribution", "High-quality videos", "Scientific research", "Free website", "Healthy community"],
+    "impact_chain": [
+      "Your contribution",
+      "High-quality videos",
+      "Scientific research",
+      "Free website",
+      "Healthy community"
+    ],
     "qr_updating": "Updating",
     "uses_subtitle": "Every contribution is used with a clear purpose",
     "faq_subtitle": "Common questions about supporting us",
@@ -536,40 +876,136 @@
       "stat3_sub": "no conditions"
     },
     "cats": {
-      "gen":  { "label": "Overview",   "desc": "Website, content, how to use" },
-      "move": { "label": "Movement",   "desc": "Exercises, frequency, movements" },
-      "food": { "label": "Nutrition",  "desc": "Calories, meal plans, balanced diet" },
-      "life": { "label": "Lifestyle",  "desc": "Sleep, habits, recovery" },
-      "mind": { "label": "Mind",       "desc": "Meditation, breathing, emotions" },
-      "prog": { "label": "Journey",    "desc": "7-day, 12-week, 24-week programs" }
+      "gen": {
+        "label": "Overview",
+        "desc": "Website, content, how to use"
+      },
+      "move": {
+        "label": "Movement",
+        "desc": "Exercises, frequency, movements"
+      },
+      "food": {
+        "label": "Nutrition",
+        "desc": "Calories, meal plans, balanced diet"
+      },
+      "life": {
+        "label": "Lifestyle",
+        "desc": "Sleep, habits, recovery"
+      },
+      "mind": {
+        "label": "Mind",
+        "desc": "Meditation, breathing, emotions"
+      },
+      "prog": {
+        "label": "Journey",
+        "desc": "7-day, 12-week, 24-week programs"
+      }
     },
     "faqs": [
-      { "q": "Who is the Health & Lifestyle website for?", "a": "The website is for anyone who wants to improve their health — from complete beginners to those with a foundation looking to systematize their routine. No experience, no special equipment, no strict diet required. Just 20 minutes a day and consistency." },
-      { "q": "Is all content on the website completely free?", "a": "Yes — 100% free. All 6 pillars, 7-day / 12-week / 24-week programs, exercise videos, checklists, tracking tools and resources are completely free. Our goal is to make science-based health knowledge accessible to everyone without financial barriers." },
-      { "q": "Where should I start if I'm a complete beginner?", "a": "Start on the \"Journey\" page → choose \"7-Day Kickstart\". The first seven days are designed to gradually introduce all 4 core pillars (movement · nutrition · lifestyle · mind) without overwhelming you. Each day only requires 20–30 minutes." },
-      { "q": "Is the content evidence-based?", "a": "Yes. All content is built on modern medical research and guidelines from reputable organizations (WHO, ACSM, AHA). However, this website is educational — it does not replace personal medical advice. If you have specific health concerns, consult a doctor." },
-      { "q": "What does the 360° Health system include?", "a": "6 pillars form a comprehensive health system: (A) Movement & Exercise — strong body; (B) Nutrition & Meal Planning — right fuel; (C) Healthy Lifestyle — sleep, steps, recovery; (D) Calm Mind — emotional balance; (E) Health Knowledge — understand your body; (F) Tools & Resources — track and maintain." },
-      { "q": "How many times a week should I exercise?", "a": "For beginners, 3 sessions/week (every other day) is ideal. Recommended structure: 3 strength sessions · 2 light cardio · 2 active recovery days. More important than frequency is consistency — 3 regular sessions over 12 weeks beats 5 sessions/week for 2 weeks then quitting." },
-      { "q": "What are the 6 fundamental movements and why are they important?", "a": "6 foundational movement patterns: Squat (knee bend), Hinge (hip fold), Push (press), Pull (row), Core (stability) and Breathe. These are the 6 movement groups the human body performs daily. Mastering these with proper form before adding load is rule #1 to prevent injury and build a sustainable foundation." },
-      { "q": "Can I follow the program without any equipment?", "a": "Absolutely. The entire Phase 1 program (7 days + first 4 weeks) uses 100% bodyweight — no equipment needed. From week 5 you can add dumbbells or resistance bands for extra challenge, but they are not required." },
-      { "q": "I have chronic back pain — can I still follow the program?", "a": "It depends on the cause and severity. The program includes \"Active Recovery\" and \"Stretching\" sections suitable for mild back pain. However, if back pain is caused by a spinal condition or is under medical treatment, consult a doctor or physiotherapist first. Golden rule: acute pain = rest; mild chronic pain = gentle controlled movement." },
-      { "q": "Do I have to count calories?", "a": "Not required, especially in the early stages. The \"Plate Model\" (½ vegetables · ¼ protein · ¼ carbs) and the \"1 palm of protein per meal\" rule help you eat right without counting. Calorie counting is only useful at an advanced stage when you want more precise optimization." },
-      { "q": "What is TDEE and do I need to calculate it?", "a": "TDEE (Total Daily Energy Expenditure) is the total calories your body burns each day. Knowing your TDEE helps you eat the right amount for your goal: weight loss (TDEE − 400 kcal), maintenance (= TDEE), muscle gain (TDEE + 300 kcal). The TDEE calculator is in the B0 Toolkit on the Nutrition page." },
-      { "q": "I eat out a lot for work — can I still follow the nutrition guidelines?", "a": "Yes. The smart eating-out formula: \"1 protein + 2 vegetables + moderate carbs\". At restaurants: order extra vegetables or salad, choose grilled/steamed protein instead of fried, control carb portions. No need to refuse social meals — just apply a simple strategy." },
-      { "q": "Do I need to use supplements?", "a": "Not in the early stages. Whole foods are always the foundation — supplements only work when nutrition is already solid. If considering: Vitamin D3 (if rarely outdoors), Omega-3 (if low fish intake), Protein Whey (if struggling to get enough protein from food). Consult a doctor before taking any supplements." },
-      { "q": "How much water should I drink daily?", "a": "Simple formula: body weight (kg) × 35ml. Example: 60kg → 2.1 liters/day. Sign of adequate hydration: pale yellow urine. Add 500ml when exercising. Drink evenly throughout the day and start with a large glass of water immediately on waking." },
-      { "q": "How many hours of sleep do I need?", "a": "7–9 hours is the recommendation for adults (WHO). More important than quantity is sleep quality and regularity — sleeping and waking at the same time every day (including weekends) matters more than sleeping extra on weekends to catch up." },
-      { "q": "What is NEAT and why is it more important than I think?", "a": "NEAT (Non-Exercise Activity Thermogenesis) is the energy burned from all activities outside formal exercise — walking, standing, climbing stairs, doing chores. NEAT can account for 15–50% of total daily calories burned. Goal: 8,000–10,000 steps/day." },
-      { "q": "What does a minimal morning routine require?", "a": "A 10-minute morning routine is enough to make a difference: (1) Drink a large glass of water; (2) Get 5 minutes of natural sunlight; (3) Write 1 goal for the day. No need to wake up at 5 AM — just do it consistently." },
-      { "q": "How can I improve sleep quality fastest?", "a": "Three most effective interventions: (1) No screens 30 minutes before bed; (2) Keep bedroom at 18–22°C and completely dark; (3) No caffeine after 2 PM. Apply all three correctly for 7 days — you will notice a clear difference." },
-      { "q": "I've never meditated before — how do I start?", "a": "The simplest meditation: sit comfortably, close your eyes, focus on your breath for 5 minutes. When your mind wanders, gently bring attention back to your breath — without judgment. Start with 5 minutes each morning, gradually increasing to 10–15 minutes after 2 weeks." },
-      { "q": "What is Box Breathing and when should I use it?", "a": "Box Breathing: Inhale 4s → Hold 4s → Exhale 4s → Hold 4s → repeat. This technique activates the parasympathetic nervous system, reducing cortisol and heart rate within 2–3 minutes. Use when: stressed before a meeting, struggling to sleep, or before a workout." },
-      { "q": "I have no time to meditate — is there a way?", "a": "\"Micro-meditation\" works for busy lives: (1) 3 conscious deep breaths each morning (30 seconds); (2) Eat mindfully — no phone; (3) 5-minute mindful walk midday. These small moments add up to build a solid mental foundation." },
-      { "q": "What should I write in a health journal?", "a": "The 3-line evening journal formula (3–5 minutes): (1) \"Today I did well...\" — note 1 positive thing; (2) \"I learned...\" — 1 lesson or observation; (3) \"Tomorrow I will...\" — 1 specific action. After 4 weeks, looking back you will see your own patterns much more clearly." },
-      { "q": "What is the difference between the 7-day, 12-week, and 24-week programs?", "a": "7-Day Kickstart: Introduce all 4 pillars, form baseline habits. 12-Week Foundation: 3 phases building foundation → increasing load → personalizing. 24-Week Advanced: Expand to all 6 full pillars, including medical knowledge and carb cycling." },
-      { "q": "How much time do I need per day?", "a": "Daily Core structure 20–40 min: 5 min warm-up · 10–20 min main workout · 5–10 min cool-down · 5 min mind reset. Plus: 10-min morning routine + 5-min evening journal. Total: 35–55 min/day. No day requires more than 1 hour." },
-      { "q": "Can I skip the 7 days and go straight to the 12-week program?", "a": "You can, but it is not recommended. The first 7 days help you understand how your body responds to change, identify weaknesses, and build psychological momentum. People who skip the 7 days tend to quit earlier. If you already have a solid base (consistent training for 6+ months), you can start from Phase 2 of the 12-week program." },
-      { "q": "What should I do if I miss 1–2 days in the program?", "a": "No worries. The rule: \"Never miss twice in a row\". Miss 1 day → continue from the next day, no need to make up. Miss 1 week → restart from the beginning of that week. 80% consistency over 12 weeks beats 100% for 3 weeks then quitting." }
+      {
+        "q": "Who is the Health & Lifestyle website for?",
+        "a": "The website is for anyone who wants to improve their health — from complete beginners to those with a foundation looking to systematize their routine. No experience, no special equipment, no strict diet required. Just 20 minutes a day and consistency."
+      },
+      {
+        "q": "Is all content on the website completely free?",
+        "a": "Yes — 100% free. All 6 pillars, 7-day / 12-week / 24-week programs, exercise videos, checklists, tracking tools and resources are completely free. Our goal is to make science-based health knowledge accessible to everyone without financial barriers."
+      },
+      {
+        "q": "Where should I start if I'm a complete beginner?",
+        "a": "Start on the \"Journey\" page → choose \"7-Day Kickstart\". The first seven days are designed to gradually introduce all 4 core pillars (movement · nutrition · lifestyle · mind) without overwhelming you. Each day only requires 20–30 minutes."
+      },
+      {
+        "q": "Is the content evidence-based?",
+        "a": "Yes. All content is built on modern medical research and guidelines from reputable organizations (WHO, ACSM, AHA). However, this website is educational — it does not replace personal medical advice. If you have specific health concerns, consult a doctor."
+      },
+      {
+        "q": "What does the 360° Health system include?",
+        "a": "6 pillars form a comprehensive health system: (A) Movement & Exercise — strong body; (B) Nutrition & Meal Planning — right fuel; (C) Healthy Lifestyle — sleep, steps, recovery; (D) Calm Mind — emotional balance; (E) Health Knowledge — understand your body; (F) Tools & Resources — track and maintain."
+      },
+      {
+        "q": "How many times a week should I exercise?",
+        "a": "For beginners, 3 sessions/week (every other day) is ideal. Recommended structure: 3 strength sessions · 2 light cardio · 2 active recovery days. More important than frequency is consistency — 3 regular sessions over 12 weeks beats 5 sessions/week for 2 weeks then quitting."
+      },
+      {
+        "q": "What are the 6 fundamental movements and why are they important?",
+        "a": "6 foundational movement patterns: Squat (knee bend), Hinge (hip fold), Push (press), Pull (row), Core (stability) and Breathe. These are the 6 movement groups the human body performs daily. Mastering these with proper form before adding load is rule #1 to prevent injury and build a sustainable foundation."
+      },
+      {
+        "q": "Can I follow the program without any equipment?",
+        "a": "Absolutely. The entire Phase 1 program (7 days + first 4 weeks) uses 100% bodyweight — no equipment needed. From week 5 you can add dumbbells or resistance bands for extra challenge, but they are not required."
+      },
+      {
+        "q": "I have chronic back pain — can I still follow the program?",
+        "a": "It depends on the cause and severity. The program includes \"Active Recovery\" and \"Stretching\" sections suitable for mild back pain. However, if back pain is caused by a spinal condition or is under medical treatment, consult a doctor or physiotherapist first. Golden rule: acute pain = rest; mild chronic pain = gentle controlled movement."
+      },
+      {
+        "q": "Do I have to count calories?",
+        "a": "Not required, especially in the early stages. The \"Plate Model\" (½ vegetables · ¼ protein · ¼ carbs) and the \"1 palm of protein per meal\" rule help you eat right without counting. Calorie counting is only useful at an advanced stage when you want more precise optimization."
+      },
+      {
+        "q": "What is TDEE and do I need to calculate it?",
+        "a": "TDEE (Total Daily Energy Expenditure) is the total calories your body burns each day. Knowing your TDEE helps you eat the right amount for your goal: weight loss (TDEE − 400 kcal), maintenance (= TDEE), muscle gain (TDEE + 300 kcal). The TDEE calculator is in the B0 Toolkit on the Nutrition page."
+      },
+      {
+        "q": "I eat out a lot for work — can I still follow the nutrition guidelines?",
+        "a": "Yes. The smart eating-out formula: \"1 protein + 2 vegetables + moderate carbs\". At restaurants: order extra vegetables or salad, choose grilled/steamed protein instead of fried, control carb portions. No need to refuse social meals — just apply a simple strategy."
+      },
+      {
+        "q": "Do I need to use supplements?",
+        "a": "Not in the early stages. Whole foods are always the foundation — supplements only work when nutrition is already solid. If considering: Vitamin D3 (if rarely outdoors), Omega-3 (if low fish intake), Protein Whey (if struggling to get enough protein from food). Consult a doctor before taking any supplements."
+      },
+      {
+        "q": "How much water should I drink daily?",
+        "a": "Simple formula: body weight (kg) × 35ml. Example: 60kg → 2.1 liters/day. Sign of adequate hydration: pale yellow urine. Add 500ml when exercising. Drink evenly throughout the day and start with a large glass of water immediately on waking."
+      },
+      {
+        "q": "How many hours of sleep do I need?",
+        "a": "7–9 hours is the recommendation for adults (WHO). More important than quantity is sleep quality and regularity — sleeping and waking at the same time every day (including weekends) matters more than sleeping extra on weekends to catch up."
+      },
+      {
+        "q": "What is NEAT and why is it more important than I think?",
+        "a": "NEAT (Non-Exercise Activity Thermogenesis) is the energy burned from all activities outside formal exercise — walking, standing, climbing stairs, doing chores. NEAT can account for 15–50% of total daily calories burned. Goal: 8,000–10,000 steps/day."
+      },
+      {
+        "q": "What does a minimal morning routine require?",
+        "a": "A 10-minute morning routine is enough to make a difference: (1) Drink a large glass of water; (2) Get 5 minutes of natural sunlight; (3) Write 1 goal for the day. No need to wake up at 5 AM — just do it consistently."
+      },
+      {
+        "q": "How can I improve sleep quality fastest?",
+        "a": "Three most effective interventions: (1) No screens 30 minutes before bed; (2) Keep bedroom at 18–22°C and completely dark; (3) No caffeine after 2 PM. Apply all three correctly for 7 days — you will notice a clear difference."
+      },
+      {
+        "q": "I've never meditated before — how do I start?",
+        "a": "The simplest meditation: sit comfortably, close your eyes, focus on your breath for 5 minutes. When your mind wanders, gently bring attention back to your breath — without judgment. Start with 5 minutes each morning, gradually increasing to 10–15 minutes after 2 weeks."
+      },
+      {
+        "q": "What is Box Breathing and when should I use it?",
+        "a": "Box Breathing: Inhale 4s → Hold 4s → Exhale 4s → Hold 4s → repeat. This technique activates the parasympathetic nervous system, reducing cortisol and heart rate within 2–3 minutes. Use when: stressed before a meeting, struggling to sleep, or before a workout."
+      },
+      {
+        "q": "I have no time to meditate — is there a way?",
+        "a": "\"Micro-meditation\" works for busy lives: (1) 3 conscious deep breaths each morning (30 seconds); (2) Eat mindfully — no phone; (3) 5-minute mindful walk midday. These small moments add up to build a solid mental foundation."
+      },
+      {
+        "q": "What should I write in a health journal?",
+        "a": "The 3-line evening journal formula (3–5 minutes): (1) \"Today I did well...\" — note 1 positive thing; (2) \"I learned...\" — 1 lesson or observation; (3) \"Tomorrow I will...\" — 1 specific action. After 4 weeks, looking back you will see your own patterns much more clearly."
+      },
+      {
+        "q": "What is the difference between the 7-day, 12-week, and 24-week programs?",
+        "a": "7-Day Kickstart: Introduce all 4 pillars, form baseline habits. 12-Week Foundation: 3 phases building foundation → increasing load → personalizing. 24-Week Advanced: Expand to all 6 full pillars, including medical knowledge and carb cycling."
+      },
+      {
+        "q": "How much time do I need per day?",
+        "a": "Daily Core structure 20–40 min: 5 min warm-up · 10–20 min main workout · 5–10 min cool-down · 5 min mind reset. Plus: 10-min morning routine + 5-min evening journal. Total: 35–55 min/day. No day requires more than 1 hour."
+      },
+      {
+        "q": "Can I skip the 7 days and go straight to the 12-week program?",
+        "a": "You can, but it is not recommended. The first 7 days help you understand how your body responds to change, identify weaknesses, and build psychological momentum. People who skip the 7 days tend to quit earlier. If you already have a solid base (consistent training for 6+ months), you can start from Phase 2 of the 12-week program."
+      },
+      {
+        "q": "What should I do if I miss 1–2 days in the program?",
+        "a": "No worries. The rule: \"Never miss twice in a row\". Miss 1 day → continue from the next day, no need to make up. Miss 1 week → restart from the beginning of that week. 80% consistency over 12 weeks beats 100% for 3 weeks then quitting."
+      }
     ]
   },
   "video": {
@@ -617,7 +1053,12 @@
     "kcal_day": "kcal/day",
     "macro_from_target": "↓ Macro distribution from target kcal",
     "target_label": "Target",
-    "bar_types": ["Rest Day", "Light Training", "Moderate Training", "Heavy Training"],
+    "bar_types": [
+      "Rest Day",
+      "Light Training",
+      "Moderate Training",
+      "Heavy Training"
+    ],
     "preworkout_note": "30–60 min before",
     "postworkout_note": "within 2h post-workout"
   }

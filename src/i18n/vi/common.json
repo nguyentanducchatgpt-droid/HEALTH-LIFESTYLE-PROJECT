@@ -26,7 +26,9 @@
     "badge": "Khoa học · Đơn giản · Hiệu quả",
     "subtitle": "Hệ sinh thái sống khỏe đơn giản, khoa học, dễ áp dụng mỗi ngày",
     "cta": "Bắt Đầu Ngay",
-    "pillars_title": "Sống Khỏe 360"
+    "pillars_title": "Sống Khỏe 360",
+    "social_proof": "2,400+ người đang sống khỏe",
+    "social_rating": "Đánh giá 4.9/5"
   },
   "home": {
     "stats": [
@@ -57,16 +59,133 @@
     "cta_badge": "Bắt Đầu Ngay Hôm Nay",
     "cta_program": "Xem Hành Trình",
     "journeys": [
-      { "label": "7 Ngày Khởi Động", "tag": "BẮT ĐẦU", "tagline": "Nhẹ nhàng · Từng bước · Không áp lực", "desc": "Bắt đầu từ con số 0 — 20 phút mỗi ngày tích hợp đủ 4 trụ cột. Đơn giản đến mức không thể từ chối.", "features": ["Vận động 20 phút/ngày","Dinh dưỡng không kiêng cực đoan","Giấc ngủ & thói quen sáng","3 hơi thở sâu mỗi ngày"] },
-      { "label": "12 Tuần Cơ Bản", "tag": "PHỔ BIẾN", "tagline": "Có cấu trúc · 3 giai đoạn · Thay đổi thật sự", "desc": "Khởi Động → Xây Nền → Cá Nhân Hóa. 12 tuần đủ để não bộ hình thành thói quen bền vững vĩnh viễn.", "features": ["Khởi Động tuần 1–4","Xây Nền tuần 5–8","Cá Nhân Hóa tuần 9–12","Test tiến bộ tuần 4 & 12"] },
-      { "label": "24 Tuần Nâng Cao", "tag": "TOÀN DIỆN", "tagline": "6 giai đoạn · Carb cycling · Làm chủ hoàn toàn", "desc": "Từ nền tảng đến làm chủ hệ thống sức khỏe cá nhân. 24 tuần biến thói quen thành bản sắc không thể đảo ngược.", "features": ["Nền tảng 12 tuần đầu","Tối ưu hóa 12 tuần sau","Carb cycling & supplement","Tự lập kế hoạch cá nhân"] }
+      {
+        "label": "7 Ngày Khởi Động",
+        "tag": "BẮT ĐẦU",
+        "tagline": "Nhẹ nhàng · Từng bước · Không áp lực",
+        "desc": "Bắt đầu từ con số 0 — 20 phút mỗi ngày tích hợp đủ 4 trụ cột. Đơn giản đến mức không thể từ chối.",
+        "features": [
+          "Vận động 20 phút/ngày",
+          "Dinh dưỡng không kiêng cực đoan",
+          "Giấc ngủ & thói quen sáng",
+          "3 hơi thở sâu mỗi ngày"
+        ]
+      },
+      {
+        "label": "12 Tuần Cơ Bản",
+        "tag": "PHỔ BIẾN",
+        "tagline": "Có cấu trúc · 3 giai đoạn · Thay đổi thật sự",
+        "desc": "Khởi Động → Xây Nền → Cá Nhân Hóa. 12 tuần đủ để não bộ hình thành thói quen bền vững vĩnh viễn.",
+        "features": [
+          "Khởi Động tuần 1–4",
+          "Xây Nền tuần 5–8",
+          "Cá Nhân Hóa tuần 9–12",
+          "Test tiến bộ tuần 4 & 12"
+        ]
+      },
+      {
+        "label": "24 Tuần Nâng Cao",
+        "tag": "TOÀN DIỆN",
+        "tagline": "6 giai đoạn · Carb cycling · Làm chủ hoàn toàn",
+        "desc": "Từ nền tảng đến làm chủ hệ thống sức khỏe cá nhân. 24 tuần biến thói quen thành bản sắc không thể đảo ngược.",
+        "features": [
+          "Nền tảng 12 tuần đầu",
+          "Tối ưu hóa 12 tuần sau",
+          "Carb cycling & supplement",
+          "Tự lập kế hoạch cá nhân"
+        ]
+      }
     ],
     "why_items": [
-      { "title": "Dựa Trên Khoa Học", "statSub": "Based", "desc": "Tổng hợp từ nghiên cứu y khoa tin cậy — không phải mẹo vặt hay xu hướng nhất thời." },
-      { "title": "Đơn Giản & Thực Chiến", "statSub": "phút/ngày", "desc": "10 phút mỗi ngày là đủ để bắt đầu. Mọi hướng dẫn thiết kế riêng cho người bận rộn." },
-      { "title": "Lộ Trình Rõ Ràng", "statSub": "mốc tiến bộ", "desc": "7 ngày → 12 tuần → 24 tuần. Từng bước nhỏ, không bao giờ cảm thấy choáng ngợp hay bỏ cuộc." },
-      { "title": "Toàn Diện 360°", "statSub": "trụ cột", "desc": "Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — không bỏ sót bất kỳ góc độ nào." }
-    ]
+      {
+        "title": "Dựa Trên Khoa Học",
+        "statSub": "Based",
+        "desc": "Tổng hợp từ nghiên cứu y khoa tin cậy — không phải mẹo vặt hay xu hướng nhất thời."
+      },
+      {
+        "title": "Đơn Giản & Thực Chiến",
+        "statSub": "phút/ngày",
+        "desc": "10 phút mỗi ngày là đủ để bắt đầu. Mọi hướng dẫn thiết kế riêng cho người bận rộn."
+      },
+      {
+        "title": "Lộ Trình Rõ Ràng",
+        "statSub": "mốc tiến bộ",
+        "desc": "7 ngày → 12 tuần → 24 tuần. Từng bước nhỏ, không bao giờ cảm thấy choáng ngợp hay bỏ cuộc."
+      },
+      {
+        "title": "Toàn Diện 360°",
+        "statSub": "trụ cột",
+        "desc": "Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — không bỏ sót bất kỳ góc độ nào."
+      }
+    ],
+    "reviews": {
+      "badge": "Đánh Giá Từ Cộng Đồng",
+      "title": "Họ Đã Thay Đổi Như Thế Nào",
+      "sub": "2,400+ người đang sống khỏe hơn mỗi ngày — đây là câu chuyện của họ",
+      "rating_base": "Dựa trên 2,400+ đánh giá",
+      "items": [
+        {
+          "role": "Kế toán · Hà Nội",
+          "tag": "Vận động",
+          "text": "Trước đây mình nghĩ tập thể dục cần ít nhất 1 tiếng mới có tác dụng. Sau 30 ngày với framework Daily Core 20 phút, cân nặng giảm 3kg, ngủ ngon hơn hẳn. Không ngờ đơn giản đến vậy!"
+        },
+        {
+          "role": "Lập trình viên · TP.HCM",
+          "tag": "Dinh dưỡng",
+          "text": "Phần TDEE calculator và thực đơn 7 ngày rất thực tế. Mình không phải nhịn ăn gì cả, chỉ cần điều chỉnh tỷ lệ macro. 12 tuần mà tăng được 4kg cơ bắp chất lượng."
+        },
+        {
+          "role": "Giáo viên · Đà Nẵng",
+          "tag": "Tâm trí",
+          "text": "Phần thiền và box breathing thật sự thay đổi cách mình xử lý stress. Sau 3 tuần thực hành buổi sáng, mình bình tĩnh hơn nhiều trước các tình huống căng thẳng trong lớp học."
+        },
+        {
+          "role": "Doanh nhân · Hải Phòng",
+          "tag": "Lối sống",
+          "text": "Mình 42 tuổi, bắt đầu với chương trình 7 ngày vì sợ không theo được. Giờ đang ở tuần 10 của lộ trình 12 tuần. Năng lượng tăng rõ rệt, không còn buồn ngủ sau bữa trưa nữa."
+        },
+        {
+          "role": "Sinh viên y khoa · Cần Thơ",
+          "tag": "Kiến thức",
+          "text": "Là sinh viên y, mình khá kỹ tính về nguồn thông tin. Nội dung ở đây có căn cứ khoa học, không dùng ngôn ngữ hoa mỹ quá mức. Recommend cho cả nhóm học của mình rồi."
+        },
+        {
+          "role": "Huấn luyện viên · Bình Dương",
+          "tag": "Công cụ",
+          "text": "Weekly rhythm 3+2+2 ngày mình dùng để lên lịch cho học viên luôn. Checklist hằng tuần giúp học viên tự theo dõi tiến độ mà không cần mình nhắc."
+        },
+        {
+          "role": "Nội trợ · Long An",
+          "tag": "Dinh dưỡng",
+          "text": "Công thức nấu ăn lành mạnh mà cả nhà đều thích, không cần mua thực phẩm đắt tiền. Đĩa thức ăn 50% rau củ mà vẫn ngon hơn cả cơm nhà hàng. Con mình 8 tuổi còn ăn ngoan hơn trước!"
+        },
+        {
+          "role": "Bác sĩ nội trú · Hà Nội",
+          "tag": "Kiến thức",
+          "text": "Tài liệu về nhịp sinh học circadian và giấc ngủ rất chất lượng, tôi còn dùng tham khảo khi tư vấn bệnh nhân. Hiếm có nguồn tiếng Việt nào tổng hợp tốt như vậy."
+        },
+        {
+          "role": "Nhân viên văn phòng · TP.HCM",
+          "tag": "Vận động",
+          "text": "Lịch tập Weekly Rhythm rất hợp lý, mình đã theo được 8 tuần liên tục. Chỉ tiếc phần video hướng dẫn động tác còn ít, mong có thêm trong thời gian tới."
+        },
+        {
+          "role": "Kỹ sư xây dựng · Hà Nội",
+          "tag": "Dinh dưỡng",
+          "text": "Thực đơn 7 ngày ngon và dễ làm, vợ mình cũng thích. Tuy nhiên một số nguyên liệu hơi khó tìm ở siêu thị gần nhà. Nếu có thêm lựa chọn thay thế thì hoàn hảo hơn."
+        },
+        {
+          "role": "Sinh viên đại học · Cần Thơ",
+          "tag": "Lộ trình",
+          "text": "Nội dung khá hay và có hệ thống, nhưng với mình là người mới bắt đầu thì lượng thông tin hơi nhiều, đôi lúc không biết nên bắt đầu từ đâu. Hy vọng có thêm hướng dẫn quick start đơn giản hơn."
+        },
+        {
+          "role": "Thợ điện · Đồng Nai",
+          "tag": "Tâm trí",
+          "text": "Phần thiền định có lý thuyết tốt nhưng mình thấy hơi khó áp dụng vào thực tế cuộc sống bận rộn. Bài tập cụ thể 5 phút/ngày thì làm được, còn phần dài hơn thì chưa theo kịp."
+        }
+      ]
+    }
   },
   "program": {
     "title": "Hành Trình Sống Khỏe 12 Tuần",
@@ -287,23 +406,59 @@
     "test_tool_note": "Dùng Công cụ Bài Test Tiến Bộ để lưu kết quả và so sánh qua các mốc tự động.",
     "deep_dive_title": "Đi Sâu Vào Từng Trụ Cột",
     "link_12w_text": "12 tuần cơ bản",
-    "pillar_labels": { "A": "Vận Động", "B": "Dinh Dưỡng", "C": "Lối Sống", "D": "Tâm Trí", "F": "Công Cụ" },
+    "pillar_labels": {
+      "A": "Vận Động",
+      "B": "Dinh Dưỡng",
+      "C": "Lối Sống",
+      "D": "Tâm Trí",
+      "F": "Công Cụ"
+    },
     "philosophy_7d_strong": "7 ngày này là nền tảng",
     "philosophy_7d_body": "— không phải để \"thay đổi cơ thể\" mà để",
     "philosophy_7d_habit": "hình thành 4 thói quen đầu tiên",
     "philosophy_7d_suffix": "Hoàn thành 7 ngày → bắt đầu",
     "journeys": [
-      { "label": "7 Ngày Khởi Động", "sub": "Tuần đầu tiên", "desc": "Bắt đầu nhẹ nhàng với 7 ngày đầu tiên. Mỗi ngày tích hợp đủ 4 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí." },
-      { "label": "12 Tuần Cơ Bản", "sub": "Chương trình nền tảng", "desc": "3 giai đoạn 12 tuần: Khởi Động → Xây Nền → Cá Nhân Hóa. Đủ thời gian để thay đổi thói quen não bộ vĩnh viễn." },
-      { "label": "24 Tuần Nâng Cao", "sub": "Chương trình toàn diện", "desc": "6 giai đoạn 24 tuần: từ người mới đến làm chủ hoàn toàn hệ thống sức khỏe cá nhân. Carb cycling + supplement + mastery." }
+      {
+        "label": "7 Ngày Khởi Động",
+        "sub": "Tuần đầu tiên",
+        "desc": "Bắt đầu nhẹ nhàng với 7 ngày đầu tiên. Mỗi ngày tích hợp đủ 4 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí."
+      },
+      {
+        "label": "12 Tuần Cơ Bản",
+        "sub": "Chương trình nền tảng",
+        "desc": "3 giai đoạn 12 tuần: Khởi Động → Xây Nền → Cá Nhân Hóa. Đủ thời gian để thay đổi thói quen não bộ vĩnh viễn."
+      },
+      {
+        "label": "24 Tuần Nâng Cao",
+        "sub": "Chương trình toàn diện",
+        "desc": "6 giai đoạn 24 tuần: từ người mới đến làm chủ hoàn toàn hệ thống sức khỏe cá nhân. Carb cycling + supplement + mastery."
+      }
     ],
     "quick_links": [
-      { "label": "Vận Động & Tập Luyện", "sub": "6 mẫu · Khung ngày · Lộ trình" },
-      { "label": "Lộ Trình Dinh Dưỡng", "sub": "12 tuần · Macro · Meal prep" },
-      { "label": "Thực Đơn 7 Ngày", "sub": "Bữa ăn theo ngày · Shopping list" },
-      { "label": "Lối Sống 12 Tuần", "sub": "Ngủ · NEAT · Nhịp sinh học" },
-      { "label": "Tâm Trí 12 Tuần", "sub": "Thiền · Thở · Journaling" },
-      { "label": "Lộ Trình Công Cụ", "sub": "Checklist · Tracker · Test" }
+      {
+        "label": "Vận Động & Tập Luyện",
+        "sub": "6 mẫu · Khung ngày · Lộ trình"
+      },
+      {
+        "label": "Lộ Trình Dinh Dưỡng",
+        "sub": "12 tuần · Macro · Meal prep"
+      },
+      {
+        "label": "Thực Đơn 7 Ngày",
+        "sub": "Bữa ăn theo ngày · Shopping list"
+      },
+      {
+        "label": "Lối Sống 12 Tuần",
+        "sub": "Ngủ · NEAT · Nhịp sinh học"
+      },
+      {
+        "label": "Tâm Trí 12 Tuần",
+        "sub": "Thiền · Thở · Journaling"
+      },
+      {
+        "label": "Lộ Trình Công Cụ",
+        "sub": "Checklist · Tracker · Test"
+      }
     ],
     "sub_tab_phases": "Lộ Trình",
     "sub_tab_daily": "Khung Ngày",
@@ -368,7 +523,11 @@
     "faq_teaser_cta": "Xem tất cả câu hỏi",
     "faq_stat_label1": "câu hỏi",
     "faq_stat_label2": "đã giải đáp",
-    "faq_preview": ["Website có hoàn toàn miễn phí không?", "Tôi nên bắt đầu từ đâu nếu là người mới?", "Lộ trình 12 tuần dành cho ai?"]
+    "faq_preview": [
+      "Website có hoàn toàn miễn phí không?",
+      "Tôi nên bắt đầu từ đâu nếu là người mới?",
+      "Lộ trình 12 tuần dành cho ai?"
+    ]
   },
   "donate": {
     "title": "Ủng Hộ Tác Giả",
@@ -445,7 +604,13 @@
     "floating_free_tag": "Nội dung miễn phí",
     "floating_community": "Cộng đồng sức khỏe",
     "impact_journey": "Hành trình tác động của bạn",
-    "impact_chain": ["Đóng góp của bạn", "Video chất lượng cao", "Nghiên cứu khoa học", "Website miễn phí", "Cộng đồng khoẻ mạnh"],
+    "impact_chain": [
+      "Đóng góp của bạn",
+      "Video chất lượng cao",
+      "Nghiên cứu khoa học",
+      "Website miễn phí",
+      "Cộng đồng khoẻ mạnh"
+    ],
     "qr_updating": "Đang cập nhật",
     "uses_subtitle": "Mỗi đồng đóng góp đều được sử dụng có mục đích rõ ràng",
     "faq_subtitle": "Những câu hỏi phổ biến về việc ủng hộ",
@@ -478,40 +643,136 @@
       "stat3_sub": "không điều kiện"
     },
     "cats": {
-      "gen":  { "label": "Tổng Quan",  "desc": "Website, nội dung, cách sử dụng" },
-      "move": { "label": "Vận Động",   "desc": "Bài tập, tần suất, chuyển động" },
-      "food": { "label": "Dinh Dưỡng", "desc": "Calo, thực đơn, dinh dưỡng cân bằng" },
-      "life": { "label": "Lối Sống",   "desc": "Giấc ngủ, thói quen, phục hồi" },
-      "mind": { "label": "Tâm Trí",    "desc": "Thiền định, hơi thở, cảm xúc" },
-      "prog": { "label": "Hành Trình", "desc": "Lộ trình 7 ngày, 12 tuần, 24 tuần" }
+      "gen": {
+        "label": "Tổng Quan",
+        "desc": "Website, nội dung, cách sử dụng"
+      },
+      "move": {
+        "label": "Vận Động",
+        "desc": "Bài tập, tần suất, chuyển động"
+      },
+      "food": {
+        "label": "Dinh Dưỡng",
+        "desc": "Calo, thực đơn, dinh dưỡng cân bằng"
+      },
+      "life": {
+        "label": "Lối Sống",
+        "desc": "Giấc ngủ, thói quen, phục hồi"
+      },
+      "mind": {
+        "label": "Tâm Trí",
+        "desc": "Thiền định, hơi thở, cảm xúc"
+      },
+      "prog": {
+        "label": "Hành Trình",
+        "desc": "Lộ trình 7 ngày, 12 tuần, 24 tuần"
+      }
     },
     "faqs": [
-      { "q": "Website Sức Khỏe & Đời Sống dành cho ai?", "a": "Website dành cho bất kỳ ai muốn cải thiện sức khỏe — từ người hoàn toàn mới bắt đầu đến người đã có nền tảng nhưng muốn hệ thống hóa lại. Không cần kinh nghiệm, không cần thiết bị đặc biệt, không cần chế độ ăn kiêng khắt khe. Chỉ cần 20 phút mỗi ngày và sự kiên trì." },
-      { "q": "Nội dung trên website có hoàn toàn miễn phí không?", "a": "Có — 100% miễn phí. Toàn bộ 6 trụ cột, lộ trình 7 ngày / 12 tuần / 24 tuần, video hướng dẫn, checklist, công cụ theo dõi và tài nguyên đều không tính phí. Mục tiêu của chúng tôi là phổ cập kiến thức sức khỏe khoa học đến mọi người mà không có rào cản tài chính." },
-      { "q": "Tôi nên bắt đầu từ đâu nếu là người hoàn toàn mới?", "a": "Bắt đầu bằng trang \"Lộ Trình\" → chọn \"7 Ngày Khởi Động\". Bảy ngày đầu được thiết kế để bạn làm quen dần với cả 4 trụ cột cốt lõi (vận động · dinh dưỡng · lối sống · tâm trí) mà không bị choáng ngợp. Mỗi ngày chỉ cần 20–30 phút." },
-      { "q": "Nội dung có dựa trên bằng chứng khoa học không?", "a": "Có. Tất cả nội dung được xây dựng dựa trên các nghiên cứu y học hiện đại và hướng dẫn từ các tổ chức uy tín (WHO, ACSM, AHA). Tuy nhiên, website này mang tính giáo dục — không thay thế cho tư vấn y tế cá nhân. Nếu có vấn đề sức khỏe cụ thể, hãy tham khảo bác sĩ." },
-      { "q": "6 trụ cột sức khỏe 360° bao gồm những gì?", "a": "6 trụ cột tạo thành hệ thống sức khỏe toàn diện: (A) Vận Động & Tập Luyện — cơ thể mạnh khỏe; (B) Dinh Dưỡng & Thực Đơn — nhiên liệu đúng; (C) Lối Sống Khỏe — ngủ, bước chân, phục hồi; (D) Tâm Trí An Nhiên — cân bằng cảm xúc; (E) Kiến Thức Sức Khỏe — hiểu cơ thể; (F) Công Cụ & Tài Nguyên — theo dõi và duy trì." },
-      { "q": "Tôi nên tập luyện bao nhiêu lần mỗi tuần?", "a": "Với người mới, 3 buổi/tuần (cách ngày) là lý tưởng. Cấu trúc khuyến nghị: 3 buổi sức mạnh · 2 buổi cardio nhẹ · 2 ngày phục hồi tích cực. Quan trọng hơn số buổi là tính nhất quán — 3 buổi đều đặn trong 12 tuần tốt hơn 5 buổi/tuần trong 2 tuần rồi bỏ cuộc." },
-      { "q": "6 chuyển động cơ bản là gì và tại sao quan trọng?", "a": "6 pattern vận động nền tảng: Squat (gập gối), Hinge (gập hông), Push (đẩy), Pull (kéo), Core (lõi) và Thở. Đây là 6 nhóm cơ vận động mà cơ thể người thực hiện hàng ngày. Thành thạo 6 động tác này với form đúng trước khi tăng tải là nguyên tắc số 1 để tránh chấn thương và tạo nền tảng bền vững." },
-      { "q": "Không có dụng cụ tập luyện, có áp dụng được không?", "a": "Hoàn toàn được. Toàn bộ chương trình giai đoạn 1 (7 ngày + 4 tuần đầu) sử dụng 100% bodyweight — không cần thiết bị. Từ tuần 5 trở đi bạn có thể dùng tạ đơn hoặc dây kháng lực nếu muốn tăng thách thức, nhưng không bắt buộc." },
-      { "q": "Tôi đau lưng mãn tính, có thể tập luyện theo hướng dẫn không?", "a": "Phụ thuộc vào nguyên nhân và mức độ. Chương trình có phần \"Phục Hồi Tích Cực\" và \"Giãn Cơ\" phù hợp với người đau lưng nhẹ. Tuy nhiên, nếu đau lưng do bệnh lý đốt sống hoặc đang điều trị, hãy tham khảo bác sĩ hoặc vật lý trị liệu trước. Quy tắc vàng: đau cấp tính = nghỉ ngơi; đau mãn tính nhẹ = vận động nhẹ có kiểm soát." },
-      { "q": "Tôi có bắt buộc phải đếm calo không?", "a": "Không bắt buộc, đặc biệt trong giai đoạn đầu. Mô hình \"Đĩa Ăn\" (½ rau · ¼ đạm · ¼ tinh bột) và quy tắc \"1 lòng bàn tay đạm mỗi bữa\" giúp bạn ăn đúng mà không cần đếm số. Tính calo chỉ hữu ích ở giai đoạn nâng cao khi bạn muốn tối ưu hóa chính xác hơn." },
-      { "q": "TDEE là gì và tôi có cần tính không?", "a": "TDEE (Total Daily Energy Expenditure) là tổng lượng calo cơ thể đốt mỗi ngày. Biết TDEE giúp bạn ăn đúng lượng cho mục tiêu: giảm cân (TDEE − 400 kcal), duy trì (= TDEE), tăng cơ (TDEE + 300 kcal). Công thức tính TDEE có trong Bộ Công Cụ B0 của trang Dinh Dưỡng." },
-      { "q": "Tôi ăn ngoài nhiều vì công việc, có áp dụng được không?", "a": "Có. Công thức ăn ngoài thông minh: \"1 protein + 2 rau + tinh bột vừa phải\". Tại nhà hàng: gọi thêm rau hoặc salad, chọn protein nướng/hấp thay vì chiên, kiểm soát phần tinh bột. Không cần từ chối bữa xã giao — chỉ cần chiến lược đơn giản." },
-      { "q": "Tôi có cần dùng thực phẩm bổ sung (supplement) không?", "a": "Không cần trong giai đoạn đầu. Thực phẩm nguyên bản luôn là nền tảng — supplement chỉ có tác dụng khi nền dinh dưỡng đã vững. Nếu được cân nhắc: Vitamin D3 (nếu ít ra nắng), Omega-3 (nếu ít ăn cá), Protein Whey (nếu khó đủ đạm từ thực phẩm). Tham khảo bác sĩ trước khi dùng bất kỳ supplement nào." },
-      { "q": "Tôi cần uống bao nhiêu nước mỗi ngày?", "a": "Công thức đơn giản: cân nặng (kg) × 35ml. Ví dụ: 60kg → 2,1 lít/ngày. Dấu hiệu đủ nước: nước tiểu vàng nhạt như chanh. Tăng thêm 500ml khi tập luyện. Uống đều trong ngày và bắt đầu ngày với 1 ly nước lớn ngay khi thức dậy." },
-      { "q": "Tôi cần ngủ bao nhiêu tiếng là đủ?", "a": "7–9 tiếng là khuyến nghị cho người trưởng thành (WHO). Quan trọng hơn số giờ là chất lượng giấc ngủ và tính đều đặn — ngủ và dậy cùng giờ mỗi ngày (kể cả cuối tuần) quan trọng hơn là ngủ nhiều vào cuối tuần bù lại." },
-      { "q": "NEAT là gì và tại sao lại quan trọng hơn tôi nghĩ?", "a": "NEAT (Non-Exercise Activity Thermogenesis) là năng lượng đốt từ mọi hoạt động ngoài tập luyện — đi bộ, đứng, leo cầu thang, làm việc nhà. NEAT có thể chiếm 15–50% tổng calo đốt hàng ngày. Mục tiêu: 8.000–10.000 bước/ngày." },
-      { "q": "Morning routine tối thiểu cần những gì?", "a": "Morning routine 10 phút đủ để tạo khác biệt: (1) Uống 1 ly nước lớn; (2) Ra tiếp xúc ánh sáng mặt trời 5 phút; (3) Viết 1 mục tiêu cho ngày hôm đó. Không cần dậy sớm 5h sáng — chỉ cần làm đều đặn." },
-      { "q": "Làm sao cải thiện chất lượng giấc ngủ một cách nhanh nhất?", "a": "Ba can thiệp hiệu quả nhất: (1) Không dùng màn hình 30 phút trước ngủ; (2) Giữ phòng ngủ 18–22°C và tối hoàn toàn; (3) Không uống caffeine sau 14h. Áp dụng đúng 3 điều này trong 7 ngày — bạn sẽ nhận thấy sự khác biệt rõ rệt." },
-      { "q": "Tôi chưa bao giờ thiền, bắt đầu như thế nào?", "a": "Thiền đơn giản nhất: ngồi thoải mái, nhắm mắt, chú ý đến hơi thở trong 5 phút. Khi tâm trí lang thang, nhẹ nhàng đưa sự chú ý về hơi thở — không phán xét. Bắt đầu 5 phút mỗi sáng, tăng dần lên 10–15 phút sau 2 tuần." },
-      { "q": "Box Breathing là gì và khi nào nên dùng?", "a": "Box Breathing: Hít vào 4 giây → Giữ 4 giây → Thở ra 4 giây → Giữ 4 giây → lặp lại. Kỹ thuật này kích hoạt hệ thần kinh phó giao cảm, giảm cortisol và nhịp tim trong 2–3 phút. Dùng khi: căng thẳng trước cuộc họp, khó ngủ, hoặc trước buổi tập." },
-      { "q": "Tôi không có thời gian thiền, có cách nào không?", "a": "\"Micro-meditation\" hiệu quả trong cuộc sống bận rộn: (1) 3 hơi thở sâu có ý thức mỗi buổi sáng (30 giây); (2) Chú tâm hoàn toàn vào bữa ăn — không điện thoại; (3) Đi bộ có ý thức 5 phút giữa ngày. Những khoảnh khắc nhỏ này cộng dồn tạo nền tảng tâm lý vững chắc." },
-      { "q": "Nhật ký sức khỏe (health journal) nên viết những gì?", "a": "Công thức nhật ký 3 dòng tối (3–5 phút): (1) \"Hôm nay tôi làm tốt...\" — ghi nhận 1 điều tích cực; (2) \"Tôi học được...\" — 1 bài học hoặc quan sát; (3) \"Ngày mai tôi sẽ...\" — 1 hành động cụ thể. Sau 4 tuần, nhìn lại bạn sẽ thấy pattern của bản thân rõ ràng hơn." },
-      { "q": "Sự khác nhau giữa 7 ngày, 12 tuần và 24 tuần là gì?", "a": "7 Ngày Khởi Động: Làm quen 4 trụ cột, hình thành thói quen nền. 12 Tuần Cơ Bản: 3 giai đoạn xây dựng nền tảng → tăng tải → cá nhân hóa. 24 Tuần Nâng Cao: Mở rộng sang cả 6 trụ cột đầy đủ, bao gồm kiến thức y tế và carb cycling." },
-      { "q": "Mỗi ngày tôi cần dành bao nhiêu thời gian?", "a": "Cấu trúc Daily Core 20–40 phút: 5 phút khởi động · 10–20 phút tập chính · 5–10 phút giãn cơ · 5 phút mind reset. Ngoài ra: morning routine 10 phút + nhật ký tối 5 phút. Tổng: 35–55 phút/ngày. Không có ngày nào yêu cầu hơn 1 tiếng." },
-      { "q": "Tôi có thể bỏ qua 7 ngày và bắt đầu 12 tuần luôn không?", "a": "Được, nhưng không khuyến nghị. 7 ngày đầu giúp bạn hiểu cơ thể phản ứng thế nào với sự thay đổi, xác định điểm yếu và tạo đà tâm lý. Người bỏ qua 7 ngày thường bỏ cuộc sớm hơn. Nếu đã có nền tảng tốt (tập đều 6+ tháng), bạn có thể bắt đầu từ giai đoạn 2 của 12 tuần." },
-      { "q": "Tôi lỡ 1–2 ngày trong lộ trình thì phải làm gì?", "a": "Không sao cả. Nguyên tắc: \"Không bao giờ bỏ 2 lần liên tiếp\". Bỏ 1 ngày → tiếp tục từ ngày tiếp theo, không cần làm bù. Bỏ 1 tuần → quay lại từ đầu tuần đó. 80% nhất quán trong 12 tuần > 100% trong 3 tuần rồi bỏ." }
+      {
+        "q": "Website Sức Khỏe & Đời Sống dành cho ai?",
+        "a": "Website dành cho bất kỳ ai muốn cải thiện sức khỏe — từ người hoàn toàn mới bắt đầu đến người đã có nền tảng nhưng muốn hệ thống hóa lại. Không cần kinh nghiệm, không cần thiết bị đặc biệt, không cần chế độ ăn kiêng khắt khe. Chỉ cần 20 phút mỗi ngày và sự kiên trì."
+      },
+      {
+        "q": "Nội dung trên website có hoàn toàn miễn phí không?",
+        "a": "Có — 100% miễn phí. Toàn bộ 6 trụ cột, lộ trình 7 ngày / 12 tuần / 24 tuần, video hướng dẫn, checklist, công cụ theo dõi và tài nguyên đều không tính phí. Mục tiêu của chúng tôi là phổ cập kiến thức sức khỏe khoa học đến mọi người mà không có rào cản tài chính."
+      },
+      {
+        "q": "Tôi nên bắt đầu từ đâu nếu là người hoàn toàn mới?",
+        "a": "Bắt đầu bằng trang \"Lộ Trình\" → chọn \"7 Ngày Khởi Động\". Bảy ngày đầu được thiết kế để bạn làm quen dần với cả 4 trụ cột cốt lõi (vận động · dinh dưỡng · lối sống · tâm trí) mà không bị choáng ngợp. Mỗi ngày chỉ cần 20–30 phút."
+      },
+      {
+        "q": "Nội dung có dựa trên bằng chứng khoa học không?",
+        "a": "Có. Tất cả nội dung được xây dựng dựa trên các nghiên cứu y học hiện đại và hướng dẫn từ các tổ chức uy tín (WHO, ACSM, AHA). Tuy nhiên, website này mang tính giáo dục — không thay thế cho tư vấn y tế cá nhân. Nếu có vấn đề sức khỏe cụ thể, hãy tham khảo bác sĩ."
+      },
+      {
+        "q": "6 trụ cột sức khỏe 360° bao gồm những gì?",
+        "a": "6 trụ cột tạo thành hệ thống sức khỏe toàn diện: (A) Vận Động & Tập Luyện — cơ thể mạnh khỏe; (B) Dinh Dưỡng & Thực Đơn — nhiên liệu đúng; (C) Lối Sống Khỏe — ngủ, bước chân, phục hồi; (D) Tâm Trí An Nhiên — cân bằng cảm xúc; (E) Kiến Thức Sức Khỏe — hiểu cơ thể; (F) Công Cụ & Tài Nguyên — theo dõi và duy trì."
+      },
+      {
+        "q": "Tôi nên tập luyện bao nhiêu lần mỗi tuần?",
+        "a": "Với người mới, 3 buổi/tuần (cách ngày) là lý tưởng. Cấu trúc khuyến nghị: 3 buổi sức mạnh · 2 buổi cardio nhẹ · 2 ngày phục hồi tích cực. Quan trọng hơn số buổi là tính nhất quán — 3 buổi đều đặn trong 12 tuần tốt hơn 5 buổi/tuần trong 2 tuần rồi bỏ cuộc."
+      },
+      {
+        "q": "6 chuyển động cơ bản là gì và tại sao quan trọng?",
+        "a": "6 pattern vận động nền tảng: Squat (gập gối), Hinge (gập hông), Push (đẩy), Pull (kéo), Core (lõi) và Thở. Đây là 6 nhóm cơ vận động mà cơ thể người thực hiện hàng ngày. Thành thạo 6 động tác này với form đúng trước khi tăng tải là nguyên tắc số 1 để tránh chấn thương và tạo nền tảng bền vững."
+      },
+      {
+        "q": "Không có dụng cụ tập luyện, có áp dụng được không?",
+        "a": "Hoàn toàn được. Toàn bộ chương trình giai đoạn 1 (7 ngày + 4 tuần đầu) sử dụng 100% bodyweight — không cần thiết bị. Từ tuần 5 trở đi bạn có thể dùng tạ đơn hoặc dây kháng lực nếu muốn tăng thách thức, nhưng không bắt buộc."
+      },
+      {
+        "q": "Tôi đau lưng mãn tính, có thể tập luyện theo hướng dẫn không?",
+        "a": "Phụ thuộc vào nguyên nhân và mức độ. Chương trình có phần \"Phục Hồi Tích Cực\" và \"Giãn Cơ\" phù hợp với người đau lưng nhẹ. Tuy nhiên, nếu đau lưng do bệnh lý đốt sống hoặc đang điều trị, hãy tham khảo bác sĩ hoặc vật lý trị liệu trước. Quy tắc vàng: đau cấp tính = nghỉ ngơi; đau mãn tính nhẹ = vận động nhẹ có kiểm soát."
+      },
+      {
+        "q": "Tôi có bắt buộc phải đếm calo không?",
+        "a": "Không bắt buộc, đặc biệt trong giai đoạn đầu. Mô hình \"Đĩa Ăn\" (½ rau · ¼ đạm · ¼ tinh bột) và quy tắc \"1 lòng bàn tay đạm mỗi bữa\" giúp bạn ăn đúng mà không cần đếm số. Tính calo chỉ hữu ích ở giai đoạn nâng cao khi bạn muốn tối ưu hóa chính xác hơn."
+      },
+      {
+        "q": "TDEE là gì và tôi có cần tính không?",
+        "a": "TDEE (Total Daily Energy Expenditure) là tổng lượng calo cơ thể đốt mỗi ngày. Biết TDEE giúp bạn ăn đúng lượng cho mục tiêu: giảm cân (TDEE − 400 kcal), duy trì (= TDEE), tăng cơ (TDEE + 300 kcal). Công thức tính TDEE có trong Bộ Công Cụ B0 của trang Dinh Dưỡng."
+      },
+      {
+        "q": "Tôi ăn ngoài nhiều vì công việc, có áp dụng được không?",
+        "a": "Có. Công thức ăn ngoài thông minh: \"1 protein + 2 rau + tinh bột vừa phải\". Tại nhà hàng: gọi thêm rau hoặc salad, chọn protein nướng/hấp thay vì chiên, kiểm soát phần tinh bột. Không cần từ chối bữa xã giao — chỉ cần chiến lược đơn giản."
+      },
+      {
+        "q": "Tôi có cần dùng thực phẩm bổ sung (supplement) không?",
+        "a": "Không cần trong giai đoạn đầu. Thực phẩm nguyên bản luôn là nền tảng — supplement chỉ có tác dụng khi nền dinh dưỡng đã vững. Nếu được cân nhắc: Vitamin D3 (nếu ít ra nắng), Omega-3 (nếu ít ăn cá), Protein Whey (nếu khó đủ đạm từ thực phẩm). Tham khảo bác sĩ trước khi dùng bất kỳ supplement nào."
+      },
+      {
+        "q": "Tôi cần uống bao nhiêu nước mỗi ngày?",
+        "a": "Công thức đơn giản: cân nặng (kg) × 35ml. Ví dụ: 60kg → 2,1 lít/ngày. Dấu hiệu đủ nước: nước tiểu vàng nhạt như chanh. Tăng thêm 500ml khi tập luyện. Uống đều trong ngày và bắt đầu ngày với 1 ly nước lớn ngay khi thức dậy."
+      },
+      {
+        "q": "Tôi cần ngủ bao nhiêu tiếng là đủ?",
+        "a": "7–9 tiếng là khuyến nghị cho người trưởng thành (WHO). Quan trọng hơn số giờ là chất lượng giấc ngủ và tính đều đặn — ngủ và dậy cùng giờ mỗi ngày (kể cả cuối tuần) quan trọng hơn là ngủ nhiều vào cuối tuần bù lại."
+      },
+      {
+        "q": "NEAT là gì và tại sao lại quan trọng hơn tôi nghĩ?",
+        "a": "NEAT (Non-Exercise Activity Thermogenesis) là năng lượng đốt từ mọi hoạt động ngoài tập luyện — đi bộ, đứng, leo cầu thang, làm việc nhà. NEAT có thể chiếm 15–50% tổng calo đốt hàng ngày. Mục tiêu: 8.000–10.000 bước/ngày."
+      },
+      {
+        "q": "Morning routine tối thiểu cần những gì?",
+        "a": "Morning routine 10 phút đủ để tạo khác biệt: (1) Uống 1 ly nước lớn; (2) Ra tiếp xúc ánh sáng mặt trời 5 phút; (3) Viết 1 mục tiêu cho ngày hôm đó. Không cần dậy sớm 5h sáng — chỉ cần làm đều đặn."
+      },
+      {
+        "q": "Làm sao cải thiện chất lượng giấc ngủ một cách nhanh nhất?",
+        "a": "Ba can thiệp hiệu quả nhất: (1) Không dùng màn hình 30 phút trước ngủ; (2) Giữ phòng ngủ 18–22°C và tối hoàn toàn; (3) Không uống caffeine sau 14h. Áp dụng đúng 3 điều này trong 7 ngày — bạn sẽ nhận thấy sự khác biệt rõ rệt."
+      },
+      {
+        "q": "Tôi chưa bao giờ thiền, bắt đầu như thế nào?",
+        "a": "Thiền đơn giản nhất: ngồi thoải mái, nhắm mắt, chú ý đến hơi thở trong 5 phút. Khi tâm trí lang thang, nhẹ nhàng đưa sự chú ý về hơi thở — không phán xét. Bắt đầu 5 phút mỗi sáng, tăng dần lên 10–15 phút sau 2 tuần."
+      },
+      {
+        "q": "Box Breathing là gì và khi nào nên dùng?",
+        "a": "Box Breathing: Hít vào 4 giây → Giữ 4 giây → Thở ra 4 giây → Giữ 4 giây → lặp lại. Kỹ thuật này kích hoạt hệ thần kinh phó giao cảm, giảm cortisol và nhịp tim trong 2–3 phút. Dùng khi: căng thẳng trước cuộc họp, khó ngủ, hoặc trước buổi tập."
+      },
+      {
+        "q": "Tôi không có thời gian thiền, có cách nào không?",
+        "a": "\"Micro-meditation\" hiệu quả trong cuộc sống bận rộn: (1) 3 hơi thở sâu có ý thức mỗi buổi sáng (30 giây); (2) Chú tâm hoàn toàn vào bữa ăn — không điện thoại; (3) Đi bộ có ý thức 5 phút giữa ngày. Những khoảnh khắc nhỏ này cộng dồn tạo nền tảng tâm lý vững chắc."
+      },
+      {
+        "q": "Nhật ký sức khỏe (health journal) nên viết những gì?",
+        "a": "Công thức nhật ký 3 dòng tối (3–5 phút): (1) \"Hôm nay tôi làm tốt...\" — ghi nhận 1 điều tích cực; (2) \"Tôi học được...\" — 1 bài học hoặc quan sát; (3) \"Ngày mai tôi sẽ...\" — 1 hành động cụ thể. Sau 4 tuần, nhìn lại bạn sẽ thấy pattern của bản thân rõ ràng hơn."
+      },
+      {
+        "q": "Sự khác nhau giữa 7 ngày, 12 tuần và 24 tuần là gì?",
+        "a": "7 Ngày Khởi Động: Làm quen 4 trụ cột, hình thành thói quen nền. 12 Tuần Cơ Bản: 3 giai đoạn xây dựng nền tảng → tăng tải → cá nhân hóa. 24 Tuần Nâng Cao: Mở rộng sang cả 6 trụ cột đầy đủ, bao gồm kiến thức y tế và carb cycling."
+      },
+      {
+        "q": "Mỗi ngày tôi cần dành bao nhiêu thời gian?",
+        "a": "Cấu trúc Daily Core 20–40 phút: 5 phút khởi động · 10–20 phút tập chính · 5–10 phút giãn cơ · 5 phút mind reset. Ngoài ra: morning routine 10 phút + nhật ký tối 5 phút. Tổng: 35–55 phút/ngày. Không có ngày nào yêu cầu hơn 1 tiếng."
+      },
+      {
+        "q": "Tôi có thể bỏ qua 7 ngày và bắt đầu 12 tuần luôn không?",
+        "a": "Được, nhưng không khuyến nghị. 7 ngày đầu giúp bạn hiểu cơ thể phản ứng thế nào với sự thay đổi, xác định điểm yếu và tạo đà tâm lý. Người bỏ qua 7 ngày thường bỏ cuộc sớm hơn. Nếu đã có nền tảng tốt (tập đều 6+ tháng), bạn có thể bắt đầu từ giai đoạn 2 của 12 tuần."
+      },
+      {
+        "q": "Tôi lỡ 1–2 ngày trong lộ trình thì phải làm gì?",
+        "a": "Không sao cả. Nguyên tắc: \"Không bao giờ bỏ 2 lần liên tiếp\". Bỏ 1 ngày → tiếp tục từ ngày tiếp theo, không cần làm bù. Bỏ 1 tuần → quay lại từ đầu tuần đó. 80% nhất quán trong 12 tuần > 100% trong 3 tuần rồi bỏ."
+      }
     ]
   },
   "footer": {
@@ -559,7 +820,12 @@
     "kcal_day": "kcal/ngày",
     "macro_from_target": "↓ Phân bổ macro từ kcal mục tiêu",
     "target_label": "Mục Tiêu",
-    "bar_types": ["Ngày Nghỉ", "Tập Nhẹ", "Tập Vừa", "Tập Nặng"],
+    "bar_types": [
+      "Ngày Nghỉ",
+      "Tập Nhẹ",
+      "Tập Vừa",
+      "Tập Nặng"
+    ],
     "preworkout_note": "30–60 phút trước",
     "postworkout_note": "trong 2h sau tập"
   }

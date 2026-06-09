@@ -26,7 +26,9 @@
     "badge": "Wissenschaft · Einfach · Effektiv",
     "subtitle": "Ein einfaches, wissenschaftlich fundiertes Ökosystem für ein gesundes Leben – jeden Tag anwendbar",
     "cta": "Jetzt Starten",
-    "pillars_title": "Gesund Leben 360"
+    "pillars_title": "Gesund Leben 360",
+    "social_proof": "2.400+ Menschen leben gesünder",
+    "social_rating": "Bewertet mit 4,9/5"
   },
   "home": {
     "stats": [
@@ -57,16 +59,133 @@
     "cta_badge": "Heute beginnen",
     "cta_program": "Programm ansehen",
     "journeys": [
-      { "label": "7-Tage-Kickstart", "tag": "START", "tagline": "Sanft · Schritt für Schritt · Kein Druck", "desc": "Von Null starten — 20 Minuten täglich mit allen 4 Säulen. So einfach, dass man nicht Nein sagen kann.", "features": ["20 Min. Bewegung/Tag","Ernährung ohne extreme Einschränkung","Schlaf & Morgengewohnheiten","3 tiefe Atemzüge täglich"] },
-      { "label": "12-Wochen-Grundlage", "tag": "BELIEBT", "tagline": "Strukturiert · 3 Phasen · Echter Wandel", "desc": "Kickstart → Aufbau → Personalisierung. 12 Wochen reichen, damit das Gehirn dauerhafte Gewohnheiten bildet.", "features": ["Kickstart Wochen 1–4","Aufbau Wochen 5–8","Personalisierung Wochen 9–12","Fortschrittstest Woche 4 & 12"] },
-      { "label": "24-Wochen-Fortgeschritten", "tag": "VOLLSTÄNDIG", "tagline": "6 Phasen · Carb Cycling · Vollständige Meisterschaft", "desc": "Von der Grundlage zur Meisterschaft des persönlichen Gesundheitssystems. 24 Wochen machen Gewohnheiten zur Identität.", "features": ["Grundlage erste 12 Wochen","Optimierung nächste 12 Wochen","Carb Cycling & Supplementierung","Eigenen persönlichen Plan erstellen"] }
+      {
+        "label": "7-Tage-Kickstart",
+        "tag": "START",
+        "tagline": "Sanft · Schritt für Schritt · Kein Druck",
+        "desc": "Von Null starten — 20 Minuten täglich mit allen 4 Säulen. So einfach, dass man nicht Nein sagen kann.",
+        "features": [
+          "20 Min. Bewegung/Tag",
+          "Ernährung ohne extreme Einschränkung",
+          "Schlaf & Morgengewohnheiten",
+          "3 tiefe Atemzüge täglich"
+        ]
+      },
+      {
+        "label": "12-Wochen-Grundlage",
+        "tag": "BELIEBT",
+        "tagline": "Strukturiert · 3 Phasen · Echter Wandel",
+        "desc": "Kickstart → Aufbau → Personalisierung. 12 Wochen reichen, damit das Gehirn dauerhafte Gewohnheiten bildet.",
+        "features": [
+          "Kickstart Wochen 1–4",
+          "Aufbau Wochen 5–8",
+          "Personalisierung Wochen 9–12",
+          "Fortschrittstest Woche 4 & 12"
+        ]
+      },
+      {
+        "label": "24-Wochen-Fortgeschritten",
+        "tag": "VOLLSTÄNDIG",
+        "tagline": "6 Phasen · Carb Cycling · Vollständige Meisterschaft",
+        "desc": "Von der Grundlage zur Meisterschaft des persönlichen Gesundheitssystems. 24 Wochen machen Gewohnheiten zur Identität.",
+        "features": [
+          "Grundlage erste 12 Wochen",
+          "Optimierung nächste 12 Wochen",
+          "Carb Cycling & Supplementierung",
+          "Eigenen persönlichen Plan erstellen"
+        ]
+      }
     ],
     "why_items": [
-      { "title": "Wissenschaftlich fundiert", "statSub": "Basiert", "desc": "Aus zuverlässiger medizinischer Forschung zusammengestellt — keine Tricks oder flüchtigen Trends." },
-      { "title": "Einfach & Praktisch", "statSub": "Min./Tag", "desc": "10 Minuten täglich reichen zum Starten. Jede Anleitung wurde speziell für vielbeschäftigte Menschen entwickelt." },
-      { "title": "Klarer Fahrplan", "statSub": "Meilensteine", "desc": "7 Tage → 12 Wochen → 24 Wochen. Kleine Schritte, nie überwältigt fühlen oder aufgeben." },
-      { "title": "360° Vollständig", "statSub": "Säulen", "desc": "Bewegung · Ernährung · Lebensstil · Geist · Wissen · Werkzeuge — kein Aspekt wird vergessen." }
-    ]
+      {
+        "title": "Wissenschaftlich fundiert",
+        "statSub": "Basiert",
+        "desc": "Aus zuverlässiger medizinischer Forschung zusammengestellt — keine Tricks oder flüchtigen Trends."
+      },
+      {
+        "title": "Einfach & Praktisch",
+        "statSub": "Min./Tag",
+        "desc": "10 Minuten täglich reichen zum Starten. Jede Anleitung wurde speziell für vielbeschäftigte Menschen entwickelt."
+      },
+      {
+        "title": "Klarer Fahrplan",
+        "statSub": "Meilensteine",
+        "desc": "7 Tage → 12 Wochen → 24 Wochen. Kleine Schritte, nie überwältigt fühlen oder aufgeben."
+      },
+      {
+        "title": "360° Vollständig",
+        "statSub": "Säulen",
+        "desc": "Bewegung · Ernährung · Lebensstil · Geist · Wissen · Werkzeuge — kein Aspekt wird vergessen."
+      }
+    ],
+    "reviews": {
+      "badge": "Community-Bewertungen",
+      "title": "Wie Sie Sich Verändert Haben",
+      "sub": "2.400+ Menschen leben jeden Tag gesünder — das sind ihre Geschichten",
+      "rating_base": "Basierend auf 2.400+ Bewertungen",
+      "items": [
+        {
+          "role": "Buchhalterin · Hanoi",
+          "tag": "Bewegung",
+          "text": "Ich dachte immer, Sport brauche mindestens eine Stunde. Nach 30 Tagen mit dem 20-Minuten Daily Core-Framework habe ich 3 kg abgenommen und schlafe viel besser. Unglaublich einfach!"
+        },
+        {
+          "role": "Entwickler · Ho-Chi-Minh-Stadt",
+          "tag": "Ernährung",
+          "text": "Der TDEE-Rechner und der 7-Tage-Ernährungsplan sind sehr praxisnah. Ich musste überhaupt nicht hungern, nur meine Makro-Verhältnisse anpassen. In 12 Wochen 4 kg Muskelmasse aufgebaut."
+        },
+        {
+          "role": "Lehrerin · Da Nang",
+          "tag": "Geist",
+          "text": "Die Meditations- und Box-Breathing-Übungen haben meinen Umgang mit Stress wirklich verändert. Nach 3 Wochen morgendlicher Praxis bin ich in stressigen Situationen deutlich ruhiger."
+        },
+        {
+          "role": "Unternehmer · Hai Phong",
+          "tag": "Lebensstil",
+          "text": "Mit 42 begann ich mit dem 7-Tage-Programm. Jetzt bin ich in Woche 10 des 12-Wochen-Plans. Spürbar mehr Energie und kein Mittagstief mehr."
+        },
+        {
+          "role": "Medizinstudentin · Can Tho",
+          "tag": "Wissen",
+          "text": "Als Medizinstudentin bin ich wählerisch bei Quellen. Die Inhalte hier sind evidenzbasiert ohne übertriebenes Marketing. Bereits meiner gesamten Lerngruppe empfohlen."
+        },
+        {
+          "role": "Personal Trainer · Binh Duong",
+          "tag": "Werkzeuge",
+          "text": "Ich nutze den 3+2+2-Wochenrhythmus jetzt für meine Klienten — solide Struktur, leicht beizubehalten. Die wöchentliche Checkliste hilft ihnen, den Fortschritt selbst zu verfolgen."
+        },
+        {
+          "role": "Hausfrau · Long An",
+          "tag": "Ernährung",
+          "text": "Gesunde Rezepte, die der ganzen Familie schmecken, ohne teure Zutaten. Ein 50%-Gemüse-Teller, der besser schmeckt als im Restaurant. Mein 8-jähriges Kind isst jetzt sogar bereitwilliger!"
+        },
+        {
+          "role": "Medizinische Assistenzärztin · Hanoi",
+          "tag": "Wissen",
+          "text": "Das Material über zirkadianen Rhythmus und Schlaf ist ausgezeichnet — ich nutze es sogar als Referenz bei Patienten. Selten so eine gute vietnamesische Quelle gefunden."
+        },
+        {
+          "role": "Büroangestellte · Ho-Chi-Minh-Stadt",
+          "tag": "Bewegung",
+          "text": "Der Weekly Rhythm Trainingsplan ist sehr durchdacht. 8 Wochen in Folge eingehalten — persönlicher Rekord! Nur mehr Video-Tutorials für die Übungen wären wünschenswert."
+        },
+        {
+          "role": "Bauingenieur · Hanoi",
+          "tag": "Ernährung",
+          "text": "Der 7-Tage-Ernährungsplan ist lecker und einfach zuzubereiten, meine Frau liebt ihn auch. Einige Zutaten sind schwer zu finden. Mehr Ersatzoptionen würden ihn perfekt machen."
+        },
+        {
+          "role": "Universitätsstudentin · Can Tho",
+          "tag": "Fahrplan",
+          "text": "Die Inhalte sind gut und strukturiert, aber als Anfänger ist die Informationsmenge überwältigend. Eine einfachere Schnellstart-Anleitung wäre toll."
+        },
+        {
+          "role": "Elektriker · Dong Nai",
+          "tag": "Geist",
+          "text": "Die Meditationstheorie ist gut, aber im stressigen Alltag schwer umzusetzen. Die 5-Minuten-Übungen schaffe ich, die längeren Einheiten sind noch eine Herausforderung."
+        }
+      ]
+    }
   },
   "program": {
     "title": "Gesunde Reise 12 Wochen",
@@ -287,23 +406,59 @@
     "test_tool_note": "Nutze das Fortschrittstest-Tool um Ergebnisse zu speichern und automatisch zu vergleichen.",
     "deep_dive_title": "Tief In Jede Säule Eintauchen",
     "link_12w_text": "12-Wochen-Programm",
-    "pillar_labels": { "A": "Bewegung", "B": "Ernährung", "C": "Lebensstil", "D": "Geist", "F": "Werkzeuge" },
+    "pillar_labels": {
+      "A": "Bewegung",
+      "B": "Ernährung",
+      "C": "Lebensstil",
+      "D": "Geist",
+      "F": "Werkzeuge"
+    },
     "philosophy_7d_strong": "Diese 7 Tage sind das Fundament",
     "philosophy_7d_body": "— nicht um den Körper zu transformieren, sondern um",
     "philosophy_7d_habit": "die ersten 4 Gewohnheiten zu formen",
     "philosophy_7d_suffix": "7 Tage abschließen → starte das",
     "journeys": [
-      { "label": "7-Tage-Start", "sub": "Erste Woche", "desc": "Sanft starten mit 7 Tagen. Jeder Tag integriert alle 4 Säulen: Bewegung · Ernährung · Lebensstil · Geist." },
-      { "label": "12-Wochen-Grundlage", "sub": "Kernprogramm", "desc": "3 Phasen: Start → Aufbau → Personalisierung. Genug Zeit um Gehirngewohnheiten dauerhaft zu ändern." },
-      { "label": "24-Wochen-Fortgeschritten", "sub": "Vollständiges Programm", "desc": "6 Phasen: vom Anfänger zur vollständigen Beherrschung deines persönlichen Gesundheitssystems." }
+      {
+        "label": "7-Tage-Start",
+        "sub": "Erste Woche",
+        "desc": "Sanft starten mit 7 Tagen. Jeder Tag integriert alle 4 Säulen: Bewegung · Ernährung · Lebensstil · Geist."
+      },
+      {
+        "label": "12-Wochen-Grundlage",
+        "sub": "Kernprogramm",
+        "desc": "3 Phasen: Start → Aufbau → Personalisierung. Genug Zeit um Gehirngewohnheiten dauerhaft zu ändern."
+      },
+      {
+        "label": "24-Wochen-Fortgeschritten",
+        "sub": "Vollständiges Programm",
+        "desc": "6 Phasen: vom Anfänger zur vollständigen Beherrschung deines persönlichen Gesundheitssystems."
+      }
     ],
     "quick_links": [
-      { "label": "Bewegung & Training", "sub": "6 Muster · Tagesrahmen · Roadmap" },
-      { "label": "Ernährungs-Roadmap", "sub": "12 Wochen · Makro · Meal Prep" },
-      { "label": "7-Tage-Ernährungsplan", "sub": "Tägliche Mahlzeiten · Einkaufsliste" },
-      { "label": "Lebensstil 12 Wochen", "sub": "Schlaf · NEAT · Circadianrhythmus" },
-      { "label": "Geist 12 Wochen", "sub": "Meditation · Atmung · Journaling" },
-      { "label": "Werkzeuge-Roadmap", "sub": "Checkliste · Tracker · Test" }
+      {
+        "label": "Bewegung & Training",
+        "sub": "6 Muster · Tagesrahmen · Roadmap"
+      },
+      {
+        "label": "Ernährungs-Roadmap",
+        "sub": "12 Wochen · Makro · Meal Prep"
+      },
+      {
+        "label": "7-Tage-Ernährungsplan",
+        "sub": "Tägliche Mahlzeiten · Einkaufsliste"
+      },
+      {
+        "label": "Lebensstil 12 Wochen",
+        "sub": "Schlaf · NEAT · Circadianrhythmus"
+      },
+      {
+        "label": "Geist 12 Wochen",
+        "sub": "Meditation · Atmung · Journaling"
+      },
+      {
+        "label": "Werkzeuge-Roadmap",
+        "sub": "Checkliste · Tracker · Test"
+      }
     ],
     "sub_tab_phases": "Roadmap",
     "sub_tab_daily": "Tagesrahmen",
@@ -312,60 +467,235 @@
     "sub_tab_test": "Fortschrittstest",
     "seven_days": [
       {
-        "theme": "Leicht Starten — Grundlagen Aufbauen", "tag": "Starttag",
-        "A": { "title": "6 Grundbewegungen Lernen", "detail": "Squat · Hinge · Push · Pull · Core · Atem", "time": "20 Min", "note": "Perfekte Form vor Gewicht. Keine Sorge um Wiederholungen — das ist dein einziges Ziel heute." },
-        "B": { "title": "3 Proteinreiche Mahlzeiten Essen", "detail": "2 Eier morgens · Hühnerbrust mittags · Fisch/Tofu abends", "kcal": "~1.410 kcal", "note": "Keine Kohlenhydrate streichen. Mehr Gemüse und weniger Süßes — das reicht für Tag eins." },
-        "C": { "title": "Vor 23 Uhr Schlafen", "detail": "Dunkles kühles Zimmer · Handy weg vom Bett · 7–9h", "note": "Wichtiger als jedes Training — Priorität Nr. 1." },
-        "D": { "title": "3 Tiefe Atemzüge beim Aufwachen", "detail": "Einatmen 4s · Halten 4s · Ausatmen 4s — 3 Mal wiederholen", "note": "30 Sekunden setzen einen Anker für den ganzen Tag." },
-        "checklist": ["20 Min trainieren (6 Bewegungen)", "Protein in 2/3+ Mahlzeiten", "1,8L Wasser trinken", "Vor 23 Uhr schlafen", "3 Morgenatemzüge"]
+        "theme": "Leicht Starten — Grundlagen Aufbauen",
+        "tag": "Starttag",
+        "A": {
+          "title": "6 Grundbewegungen Lernen",
+          "detail": "Squat · Hinge · Push · Pull · Core · Atem",
+          "time": "20 Min",
+          "note": "Perfekte Form vor Gewicht. Keine Sorge um Wiederholungen — das ist dein einziges Ziel heute."
+        },
+        "B": {
+          "title": "3 Proteinreiche Mahlzeiten Essen",
+          "detail": "2 Eier morgens · Hühnerbrust mittags · Fisch/Tofu abends",
+          "kcal": "~1.410 kcal",
+          "note": "Keine Kohlenhydrate streichen. Mehr Gemüse und weniger Süßes — das reicht für Tag eins."
+        },
+        "C": {
+          "title": "Vor 23 Uhr Schlafen",
+          "detail": "Dunkles kühles Zimmer · Handy weg vom Bett · 7–9h",
+          "note": "Wichtiger als jedes Training — Priorität Nr. 1."
+        },
+        "D": {
+          "title": "3 Tiefe Atemzüge beim Aufwachen",
+          "detail": "Einatmen 4s · Halten 4s · Ausatmen 4s — 3 Mal wiederholen",
+          "note": "30 Sekunden setzen einen Anker für den ganzen Tag."
+        },
+        "checklist": [
+          "20 Min trainieren (6 Bewegungen)",
+          "Protein in 2/3+ Mahlzeiten",
+          "1,8L Wasser trinken",
+          "Vor 23 Uhr schlafen",
+          "3 Morgenatemzüge"
+        ]
       },
       {
-        "theme": "Protein & Wasser — Zwei Top-Prioritäten", "tag": "Protein & Hydration",
-        "A": { "title": "6 Bewegungen Wiederholen + 1 Satz Hinzufügen", "detail": "Gleiches Training · 1 Satz pro Bewegung hinzufügen", "time": "22 Min", "note": "Das Gehirn lernt durch Wiederholung — auch wenn es zu einfach wirkt." },
-        "B": { "title": "Protein Bei Jeder Hauptmahlzeit", "detail": "Haferflocken + Eier · Fleisch/Fisch/Gemüse · Tofu", "kcal": "~1.380 kcal", "note": "1 Handflächengröße Protein pro Mahlzeit — einfachste Regel gegen Proteinmangel." },
-        "C": { "title": "10-Minuten-Morgenroutine", "detail": "Wasser trinken · 5 Min Sonnenlicht · 1 Tagesziel aufschreiben", "note": "Ein Morgenanker hilft dem Gehirn früher einzuschalten." },
-        "D": { "title": "3-Zeilen-Abendjournal", "detail": "Was gut lief · was ich gelernt habe · was ich morgen tue", "note": "5 Min vor dem Schlaf. Muss nicht gut sein — nur ehrlich." },
-        "checklist": ["Protein bei allen 3 Mahlzeiten", "2L Wasser trinken", "Morgenroutine 10 Min", "Abendjournal 3 Zeilen", "22 Min trainieren"]
+        "theme": "Protein & Wasser — Zwei Top-Prioritäten",
+        "tag": "Protein & Hydration",
+        "A": {
+          "title": "6 Bewegungen Wiederholen + 1 Satz Hinzufügen",
+          "detail": "Gleiches Training · 1 Satz pro Bewegung hinzufügen",
+          "time": "22 Min",
+          "note": "Das Gehirn lernt durch Wiederholung — auch wenn es zu einfach wirkt."
+        },
+        "B": {
+          "title": "Protein Bei Jeder Hauptmahlzeit",
+          "detail": "Haferflocken + Eier · Fleisch/Fisch/Gemüse · Tofu",
+          "kcal": "~1.380 kcal",
+          "note": "1 Handflächengröße Protein pro Mahlzeit — einfachste Regel gegen Proteinmangel."
+        },
+        "C": {
+          "title": "10-Minuten-Morgenroutine",
+          "detail": "Wasser trinken · 5 Min Sonnenlicht · 1 Tagesziel aufschreiben",
+          "note": "Ein Morgenanker hilft dem Gehirn früher einzuschalten."
+        },
+        "D": {
+          "title": "3-Zeilen-Abendjournal",
+          "detail": "Was gut lief · was ich gelernt habe · was ich morgen tue",
+          "note": "5 Min vor dem Schlaf. Muss nicht gut sein — nur ehrlich."
+        },
+        "checklist": [
+          "Protein bei allen 3 Mahlzeiten",
+          "2L Wasser trinken",
+          "Morgenroutine 10 Min",
+          "Abendjournal 3 Zeilen",
+          "22 Min trainieren"
+        ]
       },
       {
-        "theme": "Clever Auswärts Essen & Leichtes Cardio", "tag": "Smart Eating + Walk",
-        "A": { "title": "20 Minuten Flott Gehen", "detail": "Leichtes Cardio · Herzfrequenz 100–120 · Muskelregeneration", "time": "20 Min", "note": "Nach dem Mittagessen gehen: senkt Blutzucker 20–30%, baut Grundausdauer auf." },
-        "B": { "title": "Clever Auswärts Essen", "detail": "1 Protein + 2 Gemüse + moderate Kohlenhydrate = Auswärts-Formel", "kcal": "~1.450 kcal", "note": "Keine sozialen Mahlzeiten meiden — nur eine einfache Strategie anwenden." },
-        "C": { "title": "30 Min Vor Dem Schlaf Kein Handy", "detail": "Ersetzen durch: Lesen · Atmen · Leichtes Dehnen", "note": "Blaues Licht hemmt Melatonin — eine kleine Gewohnheit verbessert die Schlaftiefe." },
-        "D": { "title": "Box-Atmung 5 Minuten", "detail": "Einatmen 4 · Halten 4 · Ausatmen 4 · Halten 4 — 5 Runden wiederholen", "note": "Bei Stress, vor Meetings oder vor dem Schlaf einsetzen." },
-        "checklist": ["20 Min gehen", "Auswärts-Formel anwenden", "30 Min vor Schlaf kein Handy", "Box-Atmung 5 Min", "Genug Wasser trinken"]
+        "theme": "Clever Auswärts Essen & Leichtes Cardio",
+        "tag": "Smart Eating + Walk",
+        "A": {
+          "title": "20 Minuten Flott Gehen",
+          "detail": "Leichtes Cardio · Herzfrequenz 100–120 · Muskelregeneration",
+          "time": "20 Min",
+          "note": "Nach dem Mittagessen gehen: senkt Blutzucker 20–30%, baut Grundausdauer auf."
+        },
+        "B": {
+          "title": "Clever Auswärts Essen",
+          "detail": "1 Protein + 2 Gemüse + moderate Kohlenhydrate = Auswärts-Formel",
+          "kcal": "~1.450 kcal",
+          "note": "Keine sozialen Mahlzeiten meiden — nur eine einfache Strategie anwenden."
+        },
+        "C": {
+          "title": "30 Min Vor Dem Schlaf Kein Handy",
+          "detail": "Ersetzen durch: Lesen · Atmen · Leichtes Dehnen",
+          "note": "Blaues Licht hemmt Melatonin — eine kleine Gewohnheit verbessert die Schlaftiefe."
+        },
+        "D": {
+          "title": "Box-Atmung 5 Minuten",
+          "detail": "Einatmen 4 · Halten 4 · Ausatmen 4 · Halten 4 — 5 Runden wiederholen",
+          "note": "Bei Stress, vor Meetings oder vor dem Schlaf einsetzen."
+        },
+        "checklist": [
+          "20 Min gehen",
+          "Auswärts-Formel anwenden",
+          "30 Min vor Schlaf kein Handy",
+          "Box-Atmung 5 Min",
+          "Genug Wasser trinken"
+        ]
       },
       {
-        "theme": "Gemüse & Aktive Erholung", "tag": "Greens & Recovery",
-        "A": { "title": "15 Minuten Aktive Erholung", "detail": "Dehnen · Schaumrolle · Leichtes Yoga · Kein schweres Training", "time": "15 Min", "note": "Erholung = unsichtbares Training. Muskeln wachsen in Ruhe, nicht beim Training." },
-        "B": { "title": "Gemüse-Prioritäts-Tag", "detail": "Salat · Suppe · Gedämpftes Gemüse · Mehr als üblich", "kcal": "~1.300 kcal", "note": "Ballaststoffe ernähren Darmbakterien — Immunsystem und Stimmung profitieren beide." },
-        "C": { "title": "8.000 Schritte + Sonnenlicht", "detail": "Gesamt 8k Schritte über den Tag · 5 Min Morgensonne", "note": "Kein kontinuierliches Gehen nötig. Schritte summieren sich über den Tag." },
-        "D": { "title": "5 Minuten Meditation", "detail": "Sitzen · Augen schließen · Auf Atem fokussieren · Kein Urteil", "note": "Du musst deinen Geist nicht leeren — einfach bemerken und sanft zum Atem zurückkehren." },
-        "checklist": ["15 Min dehnen", "Gemüse in 2+ Mahlzeiten", "8.000 Schritte", "5 Min meditieren", "7–9h schlafen"]
+        "theme": "Gemüse & Aktive Erholung",
+        "tag": "Greens & Recovery",
+        "A": {
+          "title": "15 Minuten Aktive Erholung",
+          "detail": "Dehnen · Schaumrolle · Leichtes Yoga · Kein schweres Training",
+          "time": "15 Min",
+          "note": "Erholung = unsichtbares Training. Muskeln wachsen in Ruhe, nicht beim Training."
+        },
+        "B": {
+          "title": "Gemüse-Prioritäts-Tag",
+          "detail": "Salat · Suppe · Gedämpftes Gemüse · Mehr als üblich",
+          "kcal": "~1.300 kcal",
+          "note": "Ballaststoffe ernähren Darmbakterien — Immunsystem und Stimmung profitieren beide."
+        },
+        "C": {
+          "title": "8.000 Schritte + Sonnenlicht",
+          "detail": "Gesamt 8k Schritte über den Tag · 5 Min Morgensonne",
+          "note": "Kein kontinuierliches Gehen nötig. Schritte summieren sich über den Tag."
+        },
+        "D": {
+          "title": "5 Minuten Meditation",
+          "detail": "Sitzen · Augen schließen · Auf Atem fokussieren · Kein Urteil",
+          "note": "Du musst deinen Geist nicht leeren — einfach bemerken und sanft zum Atem zurückkehren."
+        },
+        "checklist": [
+          "15 Min dehnen",
+          "Gemüse in 2+ Mahlzeiten",
+          "8.000 Schritte",
+          "5 Min meditieren",
+          "7–9h schlafen"
+        ]
       },
       {
-        "theme": "Starker Trainingstag & Kohlenhydrat-Tankfüllung", "tag": "Strong Training Day",
-        "A": { "title": "30 Minuten Ganzkörperkraft", "detail": "3 Sätze/Übung · Squat + Ausfallschritte + Push + Row + Plank", "time": "30 Min", "note": "RPE 7/10 — müde aber nicht erschöpft fühlen. Das ist die richtige Zone." },
-        "B": { "title": "Kohlenhydrate Vor + Protein Nach Training", "detail": "Vorher: Banane · Nachher: Reis + Hähnchen · ~1.620 kcal", "kcal": "~1.620 kcal", "note": "Kohlenhydrate = Kraftstoff. Protein = Muskelbaustoff. Mahlzeit nach Training nicht auslassen." },
-        "C": { "title": "Den Heutigen Schlaf Optimieren", "detail": "18–22°C · Vollständige Dunkelheit · Kein Koffein nach 14 Uhr", "note": "Schlaf nach schwerem Training = wichtigste Zeit für Muskelreparatur." },
-        "D": { "title": "Morgenabsicht Setzen", "detail": "1 Satz schreiben: Heute werde ich ___ dann laut vorlesen", "note": "Klare Absicht führt zu ~35% konsistenterem Handeln." },
-        "checklist": ["30 Min Krafttraining", "Kohlenhydrate vor + Protein nach", "Kein Koffein nach 14 Uhr", "Morgenabsicht setzen", "7–9h schlafen"]
+        "theme": "Starker Trainingstag & Kohlenhydrat-Tankfüllung",
+        "tag": "Strong Training Day",
+        "A": {
+          "title": "30 Minuten Ganzkörperkraft",
+          "detail": "3 Sätze/Übung · Squat + Ausfallschritte + Push + Row + Plank",
+          "time": "30 Min",
+          "note": "RPE 7/10 — müde aber nicht erschöpft fühlen. Das ist die richtige Zone."
+        },
+        "B": {
+          "title": "Kohlenhydrate Vor + Protein Nach Training",
+          "detail": "Vorher: Banane · Nachher: Reis + Hähnchen · ~1.620 kcal",
+          "kcal": "~1.620 kcal",
+          "note": "Kohlenhydrate = Kraftstoff. Protein = Muskelbaustoff. Mahlzeit nach Training nicht auslassen."
+        },
+        "C": {
+          "title": "Den Heutigen Schlaf Optimieren",
+          "detail": "18–22°C · Vollständige Dunkelheit · Kein Koffein nach 14 Uhr",
+          "note": "Schlaf nach schwerem Training = wichtigste Zeit für Muskelreparatur."
+        },
+        "D": {
+          "title": "Morgenabsicht Setzen",
+          "detail": "1 Satz schreiben: Heute werde ich ___ dann laut vorlesen",
+          "note": "Klare Absicht führt zu ~35% konsistenterem Handeln."
+        },
+        "checklist": [
+          "30 Min Krafttraining",
+          "Kohlenhydrate vor + Protein nach",
+          "Kein Koffein nach 14 Uhr",
+          "Morgenabsicht setzen",
+          "7–9h schlafen"
+        ]
       },
       {
-        "theme": "Für Die Neue Woche Vorbereiten", "tag": "Meal Prep Wochenende",
-        "A": { "title": "Leichtes Yoga / 30 Minuten Gehen", "detail": "Aktive Erholung · Kein schweres Training am ersten Wochenende", "time": "30 Min", "note": "Wochenende = Aufladezeit. Trainingsdruck nicht die Motivation beschädigen lassen." },
-        "B": { "title": "45 Minuten Mahlzeiten Vorbereiten", "detail": "2 Proteine kochen · Gemüse · Kohlenhydrate · In Behälter portionieren", "kcal": "~1.495 kcal", "note": "Meal Prep eliminiert 60% der impulsiven Essentscheidungen — Umgebung zum Gewinnen einrichten." },
-        "C": { "title": "Raum Aufräumen", "detail": "Schreibtisch aufgeräumt · Schlafzimmer ordentlich · Kühlschrank organisiert", "note": "Ordentlicher Raum reduziert Cortisol um 20% — direkte Auswirkung auf Schlaf und Fokus." },
-        "D": { "title": "10-Minuten-Wochenrückblick", "detail": "Was gut lief · was verbessert werden muss · was nächste Woche besser wird", "note": "Wochenrückblick = schnellstes Wachstumstool. Erfahrungen in Lektionen umwandeln." },
-        "checklist": ["Meal Prep 45 Min", "Yoga/Gehen 30 Min", "Raum aufräumen", "Wochenrückblick 10 Min", "Nächste Woche's Mahlzeiten planen"]
+        "theme": "Für Die Neue Woche Vorbereiten",
+        "tag": "Meal Prep Wochenende",
+        "A": {
+          "title": "Leichtes Yoga / 30 Minuten Gehen",
+          "detail": "Aktive Erholung · Kein schweres Training am ersten Wochenende",
+          "time": "30 Min",
+          "note": "Wochenende = Aufladezeit. Trainingsdruck nicht die Motivation beschädigen lassen."
+        },
+        "B": {
+          "title": "45 Minuten Mahlzeiten Vorbereiten",
+          "detail": "2 Proteine kochen · Gemüse · Kohlenhydrate · In Behälter portionieren",
+          "kcal": "~1.495 kcal",
+          "note": "Meal Prep eliminiert 60% der impulsiven Essentscheidungen — Umgebung zum Gewinnen einrichten."
+        },
+        "C": {
+          "title": "Raum Aufräumen",
+          "detail": "Schreibtisch aufgeräumt · Schlafzimmer ordentlich · Kühlschrank organisiert",
+          "note": "Ordentlicher Raum reduziert Cortisol um 20% — direkte Auswirkung auf Schlaf und Fokus."
+        },
+        "D": {
+          "title": "10-Minuten-Wochenrückblick",
+          "detail": "Was gut lief · was verbessert werden muss · was nächste Woche besser wird",
+          "note": "Wochenrückblick = schnellstes Wachstumstool. Erfahrungen in Lektionen umwandeln."
+        },
+        "checklist": [
+          "Meal Prep 45 Min",
+          "Yoga/Gehen 30 Min",
+          "Raum aufräumen",
+          "Wochenrückblick 10 Min",
+          "Nächste Woche's Mahlzeiten planen"
+        ]
       },
       {
-        "theme": "Vollständige Ruhe & Reflexion", "tag": "Rest & Reflect",
-        "A": { "title": "Vollständiger Ruhetag", "detail": "Ruhetag · sanftes Gehen wenn gewünscht · Fokus auf Erholung", "time": "Optional", "note": "Ruhetag ist kein Versagen. Dein Körper baut Kraft aus dem Training der letzten Woche auf." },
-        "B": { "title": "Leichte, Leicht Verdauliche Mahlzeiten", "detail": "Gemüsesuppe · Brei · Obst · ~1.240 kcal", "kcal": "~1.240 kcal", "note": "Verdauungssystem einen Tag ausruhen lassen — weniger verarbeitet, mehr Obst/Gemüse, genug Wasser." },
-        "C": { "title": "Neue Woche Planen", "detail": "Training einplanen · Ernährungsplan vorbereiten · Ziele überprüfen", "note": "Vorbereitung = 80% Sieg — keine tägliche Improvisation nötig." },
-        "D": { "title": "7-Tage-Zusammenfassung", "detail": "3 Erfolge · 1 Verbesserungsbereich · 1 Verpflichtung für die Zukunft", "note": "Zurückblicken um zu lernen und mit mehr Einblick vorwärtszugehen — nicht um sich zu kritisieren." },
-        "checklist": ["Ruhen / sanft gehen", "Leichte verdauliche Mahlzeiten", "Nächste Woche planen", "7-Tage-Tagebuch-Zusammenfassung", "Früh schlafen vor 22:30 Uhr"]
+        "theme": "Vollständige Ruhe & Reflexion",
+        "tag": "Rest & Reflect",
+        "A": {
+          "title": "Vollständiger Ruhetag",
+          "detail": "Ruhetag · sanftes Gehen wenn gewünscht · Fokus auf Erholung",
+          "time": "Optional",
+          "note": "Ruhetag ist kein Versagen. Dein Körper baut Kraft aus dem Training der letzten Woche auf."
+        },
+        "B": {
+          "title": "Leichte, Leicht Verdauliche Mahlzeiten",
+          "detail": "Gemüsesuppe · Brei · Obst · ~1.240 kcal",
+          "kcal": "~1.240 kcal",
+          "note": "Verdauungssystem einen Tag ausruhen lassen — weniger verarbeitet, mehr Obst/Gemüse, genug Wasser."
+        },
+        "C": {
+          "title": "Neue Woche Planen",
+          "detail": "Training einplanen · Ernährungsplan vorbereiten · Ziele überprüfen",
+          "note": "Vorbereitung = 80% Sieg — keine tägliche Improvisation nötig."
+        },
+        "D": {
+          "title": "7-Tage-Zusammenfassung",
+          "detail": "3 Erfolge · 1 Verbesserungsbereich · 1 Verpflichtung für die Zukunft",
+          "note": "Zurückblicken um zu lernen und mit mehr Einblick vorwärtszugehen — nicht um sich zu kritisieren."
+        },
+        "checklist": [
+          "Ruhen / sanft gehen",
+          "Leichte verdauliche Mahlzeiten",
+          "Nächste Woche planen",
+          "7-Tage-Tagebuch-Zusammenfassung",
+          "Früh schlafen vor 22:30 Uhr"
+        ]
       }
     ]
   },
@@ -426,7 +756,11 @@
     "faq_teaser_cta": "Alle Fragen ansehen",
     "faq_stat_label1": "Fragen",
     "faq_stat_label2": "beantwortet",
-    "faq_preview": ["Ist die Website komplett kostenlos?", "Wo soll ich als Anfänger anfangen?", "Für wen ist das 12-Wochen-Programm?"]
+    "faq_preview": [
+      "Ist die Website komplett kostenlos?",
+      "Wo soll ich als Anfänger anfangen?",
+      "Für wen ist das 12-Wochen-Programm?"
+    ]
   },
   "donate": {
     "title": "Autor Unterstützen",
@@ -503,7 +837,13 @@
     "floating_free_tag": "Kostenlose Inhalte",
     "floating_community": "Gesundheitsgemeinschaft",
     "impact_journey": "Der Weg Ihres Beitrags",
-    "impact_chain": ["Ihr Beitrag", "Qualitätsvideos", "Wissenschaftliche Forschung", "Kostenlose Website", "Gesunde Gemeinschaft"],
+    "impact_chain": [
+      "Ihr Beitrag",
+      "Qualitätsvideos",
+      "Wissenschaftliche Forschung",
+      "Kostenlose Website",
+      "Gesunde Gemeinschaft"
+    ],
     "qr_updating": "Wird aktualisiert",
     "uses_subtitle": "Jeder Beitrag wird mit einem klaren Zweck verwendet",
     "faq_subtitle": "Häufige Fragen zur Unterstützung",
@@ -536,40 +876,136 @@
       "stat3_sub": "ohne Bedingungen"
     },
     "cats": {
-      "gen":  { "label": "Überblick",  "desc": "Website, Inhalt, Verwendung" },
-      "move": { "label": "Bewegung",   "desc": "Übungen, Häufigkeit, Bewegungen" },
-      "food": { "label": "Ernährung",  "desc": "Kalorien, Mahlzeitenpläne, Ausgewogenheit" },
-      "life": { "label": "Lebensstil", "desc": "Schlaf, Gewohnheiten, Erholung" },
-      "mind": { "label": "Geist",      "desc": "Meditation, Atmung, Emotionen" },
-      "prog": { "label": "Reise",      "desc": "7-Tage-, 12-Wochen-, 24-Wochen-Programme" }
+      "gen": {
+        "label": "Überblick",
+        "desc": "Website, Inhalt, Verwendung"
+      },
+      "move": {
+        "label": "Bewegung",
+        "desc": "Übungen, Häufigkeit, Bewegungen"
+      },
+      "food": {
+        "label": "Ernährung",
+        "desc": "Kalorien, Mahlzeitenpläne, Ausgewogenheit"
+      },
+      "life": {
+        "label": "Lebensstil",
+        "desc": "Schlaf, Gewohnheiten, Erholung"
+      },
+      "mind": {
+        "label": "Geist",
+        "desc": "Meditation, Atmung, Emotionen"
+      },
+      "prog": {
+        "label": "Reise",
+        "desc": "7-Tage-, 12-Wochen-, 24-Wochen-Programme"
+      }
     },
     "faqs": [
-      { "q": "Für wen ist die Health & Lifestyle-Website?", "a": "Die Website richtet sich an alle, die ihre Gesundheit verbessern möchten — von Anfängern bis zu Fortgeschrittenen, die ihre Routine systematisieren möchten. Keine Erfahrung, keine Spezialgeräte, keine strengen Diäten erforderlich. Nur 20 Minuten täglich und Ausdauer." },
-      { "q": "Sind alle Inhalte auf der Website kostenlos?", "a": "Ja — 100% kostenlos. Alle 6 Säulen, 7-Tage / 12-Wochen / 24-Wochen-Programme, Videos, Checklisten, Tracking-Tools und Ressourcen sind komplett kostenlos. Unser Ziel ist es, wissenschaftlich fundiertes Gesundheitswissen ohne finanzielle Barrieren zugänglich zu machen." },
-      { "q": "Wo soll ich als kompletter Anfänger anfangen?", "a": "Beginne auf der \"Reise\"-Seite → wähle \"7-Tage-Kickstart\". Die ersten sieben Tage führen dich schrittweise in alle 4 Kernsäulen ein (Bewegung · Ernährung · Lebensstil · Geist), ohne zu überfordern. Jeder Tag benötigt nur 20–30 Minuten." },
-      { "q": "Sind die Inhalte evidenzbasiert?", "a": "Ja. Alle Inhalte basieren auf moderner medizinischer Forschung und Leitlinien anerkannter Organisationen (WHO, ACSM, AHA). Diese Website dient jedoch nur zu Bildungszwecken — sie ersetzt keine persönliche medizinische Beratung. Bei spezifischen Gesundheitsproblemen konsultiere einen Arzt." },
-      { "q": "Was umfasst das 360°-Gesundheitssystem?", "a": "6 Säulen bilden das umfassende Gesundheitssystem: (A) Bewegung & Training — starker Körper; (B) Ernährung & Mahlplanung — richtiger Treibstoff; (C) Gesunder Lebensstil — Schlaf, Schritte, Erholung; (D) Ruhiger Geist — emotionales Gleichgewicht; (E) Gesundheitswissen — deinen Körper verstehen; (F) Tools & Ressourcen — verfolgen und aufrechterhalten." },
-      { "q": "Wie oft pro Woche soll ich trainieren?", "a": "Für Anfänger sind 3 Einheiten/Woche (jeden zweiten Tag) ideal. Empfohlene Struktur: 3 Krafteinheiten · 2 leichtes Cardio · 2 aktive Erholungstage. Wichtiger als die Häufigkeit ist die Konsequenz — 3 regelmäßige Einheiten über 12 Wochen schlagen 5 Einheiten/Woche für 2 Wochen dann aufhören." },
-      { "q": "Was sind die 6 Grundbewegungen und warum sind sie wichtig?", "a": "6 grundlegende Bewegungsmuster: Squat (Kniebeuge), Hinge (Hüftbeugung), Push (Drücken), Pull (Ziehen), Core (Stabilität) und Atmen. Diese 6 Bewegungsgruppen führt der menschliche Körper täglich aus. Sie mit korrekter Technik zu beherrschen, bevor man die Last erhöht, ist Regel Nr. 1, um Verletzungen zu vermeiden und eine nachhaltige Grundlage aufzubauen." },
-      { "q": "Kann ich das Programm ohne Ausrüstung durchführen?", "a": "Absolut. Das gesamte Phase-1-Programm (7 Tage + erste 4 Wochen) nutzt 100% Körpergewicht — keine Ausrüstung nötig. Ab Woche 5 kannst du Hanteln oder Widerstandsbänder für mehr Herausforderung hinzufügen, aber sie sind nicht erforderlich." },
-      { "q": "Ich habe chronische Rückenschmerzen — kann ich noch trainieren?", "a": "Es hängt von Ursache und Schweregrad ab. Das Programm enthält Abschnitte \"Aktive Erholung\" und \"Dehnung\", die für leichte Rückenschmerzen geeignet sind. Bei Rückenschmerzen durch Wirbelerkrankungen oder unter ärztlicher Behandlung konsultiere zuerst einen Arzt oder Physiotherapeuten. Goldene Regel: akute Schmerzen = Ruhe; leichte chronische Schmerzen = sanfte kontrollierte Bewegung." },
-      { "q": "Muss ich Kalorien zählen?", "a": "Nicht erforderlich, besonders in der Anfangsphase. Das \"Teller-Modell\" (½ Gemüse · ¼ Protein · ¼ Kohlenhydrate) und die Regel \"1 Handteller Protein pro Mahlzeit\" helfen dir richtig zu essen ohne Zahlen zu zählen. Kalorienzählen ist nur in der Fortgeschrittenenstufe sinnvoll." },
-      { "q": "Was ist TDEE und muss ich es berechnen?", "a": "TDEE (Gesamttäglicher Energieverbrauch) sind die Gesamtkalorien, die dein Körper täglich verbrennt. Dein TDEE zu kennen hilft dir, die richtige Menge für dein Ziel zu essen: Gewichtsverlust (TDEE − 400 kcal), Erhaltung (= TDEE), Muskelaufbau (TDEE + 300 kcal). Der TDEE-Rechner ist im B0-Toolkit auf der Ernährungsseite." },
-      { "q": "Ich esse viel auswärts für die Arbeit — kann ich die Ernährungsempfehlungen trotzdem einhalten?", "a": "Ja. Die smarte Auswärts-Formel: \"1 Protein + 2 Gemüse + moderate Kohlenhydrate\". Im Restaurant: extra Gemüse oder Salat bestellen, gegrilltes/gedämpftes Protein statt Frittiertem wählen, Kohlenhydratportionen kontrollieren. Du musst keine sozialen Mahlzeiten ablehnen — wende einfach eine einfache Strategie an." },
-      { "q": "Brauche ich Nahrungsergänzungsmittel?", "a": "Nicht in der Anfangsphase. Vollwertige Lebensmittel sind immer die Grundlage — Nahrungsergänzungsmittel helfen nur, wenn die Ernährung bereits solide ist. Wenn du sie in Betracht ziehst: Vitamin D3 (wenn du selten draußen bist), Omega-3 (bei wenig Fisch), Protein Whey (wenn es schwer fällt, genug Protein aus der Nahrung zu bekommen). Konsultiere vor der Einnahme einen Arzt." },
-      { "q": "Wie viel Wasser soll ich täglich trinken?", "a": "Einfache Formel: Körpergewicht (kg) × 35ml. Beispiel: 60kg → 2,1 Liter/Tag. Zeichen ausreichender Flüssigkeit: blassgelblicher Urin. Beim Sport 500ml extra hinzufügen. Gleichmäßig über den Tag trinken und sofort nach dem Aufwachen mit einem großen Glas Wasser beginnen." },
-      { "q": "Wie viele Stunden Schlaf brauche ich?", "a": "7–9 Stunden ist die Empfehlung für Erwachsene (WHO). Wichtiger als die Stundenzahl ist die Schlafqualität und Regelmäßigkeit — täglich zur gleichen Zeit schlafen und aufwachen (auch am Wochenende) ist wichtiger als am Wochenende Schlaf nachzuholen." },
-      { "q": "Was ist NEAT und warum ist es wichtiger als ich denke?", "a": "NEAT (Non-Exercise Activity Thermogenesis) ist die Energie, die durch alle Aktivitäten außerhalb des formellen Sports verbrannt wird — Gehen, Stehen, Treppensteigen, Hausarbeiten. NEAT kann 15–50% der täglich verbrannten Kalorien ausmachen. Ziel: 8.000–10.000 Schritte/Tag." },
-      { "q": "Was braucht eine minimale Morgenroutine?", "a": "Eine 10-minütige Morgenroutine reicht aus, um einen Unterschied zu machen: (1) Ein großes Glas Wasser trinken; (2) 5 Minuten natürliches Sonnenlicht bekommen; (3) 1 Tagesziel aufschreiben. Kein Müssen um 5 Uhr morgens aufzuwachen — mache es einfach konsequent." },
-      { "q": "Wie kann ich die Schlafqualität am schnellsten verbessern?", "a": "Drei effektivste Interventionen: (1) Keine Bildschirme 30 Minuten vor dem Schlafengehen; (2) Schlafzimmer bei 18–22°C und völlig dunkel halten; (3) Kein Koffein nach 14 Uhr. Wende alle drei Maßnahmen 7 Tage lang an — du wirst einen deutlichen Unterschied merken." },
-      { "q": "Ich habe noch nie meditiert — wie fange ich an?", "a": "Die einfachste Meditation: Bequem sitzen, Augen schließen, 5 Minuten auf den Atem achten. Wenn der Geist wandert, sanft die Aufmerksamkeit zum Atem zurücklenken — ohne Urteil. Mit 5 Minuten jeden Morgen beginnen und nach 2 Wochen langsam auf 10–15 Minuten steigern." },
-      { "q": "Was ist Box-Atmung und wann sollte ich es anwenden?", "a": "Box-Atmung: Einatmen 4s → Halten 4s → Ausatmen 4s → Halten 4s → wiederholen. Diese Technik aktiviert das parasympathische Nervensystem, senkt Cortisol und Herzfrequenz innerhalb von 2–3 Minuten. Anwenden: gestresst vor einem Meeting, beim Einschlafen, oder vor dem Training." },
-      { "q": "Ich habe keine Zeit zum Meditieren — gibt es eine Möglichkeit?", "a": "\"Mikro-Meditation\" funktioniert für ein beschäftigtes Leben: (1) 3 bewusste tiefe Atemzüge jeden Morgen (30 Sekunden); (2) Achtsam essen — kein Telefon; (3) 5-minütiger achtsamer Spaziergang mittags. Diese kleinen Momente summieren sich und bauen eine solide mentale Grundlage auf." },
-      { "q": "Was soll ich in ein Gesundheitstagebuch schreiben?", "a": "Die 3-Zeilen-Abendtagebuch-Formel (3–5 Minuten): (1) \"Heute habe ich gut gemacht...\" — 1 positives Ding notieren; (2) \"Ich habe gelernt...\" — 1 Lektion oder Beobachtung; (3) \"Morgen werde ich...\" — 1 konkrete Aktion. Nach 4 Wochen siehst du beim Zurückblicken deine eigenen Muster viel klarer." },
-      { "q": "Was ist der Unterschied zwischen 7-Tage-, 12-Wochen- und 24-Wochen-Programm?", "a": "7-Tage-Kickstart: Alle 4 Säulen kennenlernen, Grundgewohnheiten bilden. 12-Wochen-Grundlage: 3 Phasen, Grundlage aufbauen → Last steigern → personalisieren. 24-Wochen-Fortgeschritten: Auf alle 6 vollständigen Säulen ausweiten, einschließlich medizinischem Wissen und Kohlenhydrat-Zyklen." },
-      { "q": "Wie viel Zeit brauche ich täglich?", "a": "Daily-Core-Struktur 20–40 Min: 5 Min Aufwärmen · 10–20 Min Haupttraining · 5–10 Min Abkühlen · 5 Min Geist-Reset. Dazu: 10-minütige Morgenroutine + 5-minütiges Abendtagebuch. Gesamt: 35–55 Min/Tag. Kein Tag erfordert mehr als 1 Stunde." },
-      { "q": "Kann ich die 7 Tage überspringen und direkt mit dem 12-Wochen-Programm beginnen?", "a": "Du kannst, aber es wird nicht empfohlen. Die ersten 7 Tage helfen dir zu verstehen, wie dein Körper auf Veränderungen reagiert, Schwächen zu identifizieren und psychologischen Schwung aufzubauen. Personen, die die 7 Tage überspringen, geben in der Regel früher auf. Wenn du bereits eine solide Grundlage hast (regelmäßiges Training seit 6+ Monaten), kannst du mit Phase 2 des 12-Wochen-Programms beginnen." },
-      { "q": "Was soll ich tun, wenn ich 1–2 Tage im Programm verpasst habe?", "a": "Kein Problem. Die Regel: \"Niemals zweimal hintereinander auslassen\". 1 Tag verpasst → weiter vom nächsten Tag, kein Nachholbedarf. 1 Woche verpasst → Neustart vom Anfang dieser Woche. 80% Konsequenz über 12 Wochen schlägt 100% für 3 Wochen dann aufhören." }
+      {
+        "q": "Für wen ist die Health & Lifestyle-Website?",
+        "a": "Die Website richtet sich an alle, die ihre Gesundheit verbessern möchten — von Anfängern bis zu Fortgeschrittenen, die ihre Routine systematisieren möchten. Keine Erfahrung, keine Spezialgeräte, keine strengen Diäten erforderlich. Nur 20 Minuten täglich und Ausdauer."
+      },
+      {
+        "q": "Sind alle Inhalte auf der Website kostenlos?",
+        "a": "Ja — 100% kostenlos. Alle 6 Säulen, 7-Tage / 12-Wochen / 24-Wochen-Programme, Videos, Checklisten, Tracking-Tools und Ressourcen sind komplett kostenlos. Unser Ziel ist es, wissenschaftlich fundiertes Gesundheitswissen ohne finanzielle Barrieren zugänglich zu machen."
+      },
+      {
+        "q": "Wo soll ich als kompletter Anfänger anfangen?",
+        "a": "Beginne auf der \"Reise\"-Seite → wähle \"7-Tage-Kickstart\". Die ersten sieben Tage führen dich schrittweise in alle 4 Kernsäulen ein (Bewegung · Ernährung · Lebensstil · Geist), ohne zu überfordern. Jeder Tag benötigt nur 20–30 Minuten."
+      },
+      {
+        "q": "Sind die Inhalte evidenzbasiert?",
+        "a": "Ja. Alle Inhalte basieren auf moderner medizinischer Forschung und Leitlinien anerkannter Organisationen (WHO, ACSM, AHA). Diese Website dient jedoch nur zu Bildungszwecken — sie ersetzt keine persönliche medizinische Beratung. Bei spezifischen Gesundheitsproblemen konsultiere einen Arzt."
+      },
+      {
+        "q": "Was umfasst das 360°-Gesundheitssystem?",
+        "a": "6 Säulen bilden das umfassende Gesundheitssystem: (A) Bewegung & Training — starker Körper; (B) Ernährung & Mahlplanung — richtiger Treibstoff; (C) Gesunder Lebensstil — Schlaf, Schritte, Erholung; (D) Ruhiger Geist — emotionales Gleichgewicht; (E) Gesundheitswissen — deinen Körper verstehen; (F) Tools & Ressourcen — verfolgen und aufrechterhalten."
+      },
+      {
+        "q": "Wie oft pro Woche soll ich trainieren?",
+        "a": "Für Anfänger sind 3 Einheiten/Woche (jeden zweiten Tag) ideal. Empfohlene Struktur: 3 Krafteinheiten · 2 leichtes Cardio · 2 aktive Erholungstage. Wichtiger als die Häufigkeit ist die Konsequenz — 3 regelmäßige Einheiten über 12 Wochen schlagen 5 Einheiten/Woche für 2 Wochen dann aufhören."
+      },
+      {
+        "q": "Was sind die 6 Grundbewegungen und warum sind sie wichtig?",
+        "a": "6 grundlegende Bewegungsmuster: Squat (Kniebeuge), Hinge (Hüftbeugung), Push (Drücken), Pull (Ziehen), Core (Stabilität) und Atmen. Diese 6 Bewegungsgruppen führt der menschliche Körper täglich aus. Sie mit korrekter Technik zu beherrschen, bevor man die Last erhöht, ist Regel Nr. 1, um Verletzungen zu vermeiden und eine nachhaltige Grundlage aufzubauen."
+      },
+      {
+        "q": "Kann ich das Programm ohne Ausrüstung durchführen?",
+        "a": "Absolut. Das gesamte Phase-1-Programm (7 Tage + erste 4 Wochen) nutzt 100% Körpergewicht — keine Ausrüstung nötig. Ab Woche 5 kannst du Hanteln oder Widerstandsbänder für mehr Herausforderung hinzufügen, aber sie sind nicht erforderlich."
+      },
+      {
+        "q": "Ich habe chronische Rückenschmerzen — kann ich noch trainieren?",
+        "a": "Es hängt von Ursache und Schweregrad ab. Das Programm enthält Abschnitte \"Aktive Erholung\" und \"Dehnung\", die für leichte Rückenschmerzen geeignet sind. Bei Rückenschmerzen durch Wirbelerkrankungen oder unter ärztlicher Behandlung konsultiere zuerst einen Arzt oder Physiotherapeuten. Goldene Regel: akute Schmerzen = Ruhe; leichte chronische Schmerzen = sanfte kontrollierte Bewegung."
+      },
+      {
+        "q": "Muss ich Kalorien zählen?",
+        "a": "Nicht erforderlich, besonders in der Anfangsphase. Das \"Teller-Modell\" (½ Gemüse · ¼ Protein · ¼ Kohlenhydrate) und die Regel \"1 Handteller Protein pro Mahlzeit\" helfen dir richtig zu essen ohne Zahlen zu zählen. Kalorienzählen ist nur in der Fortgeschrittenenstufe sinnvoll."
+      },
+      {
+        "q": "Was ist TDEE und muss ich es berechnen?",
+        "a": "TDEE (Gesamttäglicher Energieverbrauch) sind die Gesamtkalorien, die dein Körper täglich verbrennt. Dein TDEE zu kennen hilft dir, die richtige Menge für dein Ziel zu essen: Gewichtsverlust (TDEE − 400 kcal), Erhaltung (= TDEE), Muskelaufbau (TDEE + 300 kcal). Der TDEE-Rechner ist im B0-Toolkit auf der Ernährungsseite."
+      },
+      {
+        "q": "Ich esse viel auswärts für die Arbeit — kann ich die Ernährungsempfehlungen trotzdem einhalten?",
+        "a": "Ja. Die smarte Auswärts-Formel: \"1 Protein + 2 Gemüse + moderate Kohlenhydrate\". Im Restaurant: extra Gemüse oder Salat bestellen, gegrilltes/gedämpftes Protein statt Frittiertem wählen, Kohlenhydratportionen kontrollieren. Du musst keine sozialen Mahlzeiten ablehnen — wende einfach eine einfache Strategie an."
+      },
+      {
+        "q": "Brauche ich Nahrungsergänzungsmittel?",
+        "a": "Nicht in der Anfangsphase. Vollwertige Lebensmittel sind immer die Grundlage — Nahrungsergänzungsmittel helfen nur, wenn die Ernährung bereits solide ist. Wenn du sie in Betracht ziehst: Vitamin D3 (wenn du selten draußen bist), Omega-3 (bei wenig Fisch), Protein Whey (wenn es schwer fällt, genug Protein aus der Nahrung zu bekommen). Konsultiere vor der Einnahme einen Arzt."
+      },
+      {
+        "q": "Wie viel Wasser soll ich täglich trinken?",
+        "a": "Einfache Formel: Körpergewicht (kg) × 35ml. Beispiel: 60kg → 2,1 Liter/Tag. Zeichen ausreichender Flüssigkeit: blassgelblicher Urin. Beim Sport 500ml extra hinzufügen. Gleichmäßig über den Tag trinken und sofort nach dem Aufwachen mit einem großen Glas Wasser beginnen."
+      },
+      {
+        "q": "Wie viele Stunden Schlaf brauche ich?",
+        "a": "7–9 Stunden ist die Empfehlung für Erwachsene (WHO). Wichtiger als die Stundenzahl ist die Schlafqualität und Regelmäßigkeit — täglich zur gleichen Zeit schlafen und aufwachen (auch am Wochenende) ist wichtiger als am Wochenende Schlaf nachzuholen."
+      },
+      {
+        "q": "Was ist NEAT und warum ist es wichtiger als ich denke?",
+        "a": "NEAT (Non-Exercise Activity Thermogenesis) ist die Energie, die durch alle Aktivitäten außerhalb des formellen Sports verbrannt wird — Gehen, Stehen, Treppensteigen, Hausarbeiten. NEAT kann 15–50% der täglich verbrannten Kalorien ausmachen. Ziel: 8.000–10.000 Schritte/Tag."
+      },
+      {
+        "q": "Was braucht eine minimale Morgenroutine?",
+        "a": "Eine 10-minütige Morgenroutine reicht aus, um einen Unterschied zu machen: (1) Ein großes Glas Wasser trinken; (2) 5 Minuten natürliches Sonnenlicht bekommen; (3) 1 Tagesziel aufschreiben. Kein Müssen um 5 Uhr morgens aufzuwachen — mache es einfach konsequent."
+      },
+      {
+        "q": "Wie kann ich die Schlafqualität am schnellsten verbessern?",
+        "a": "Drei effektivste Interventionen: (1) Keine Bildschirme 30 Minuten vor dem Schlafengehen; (2) Schlafzimmer bei 18–22°C und völlig dunkel halten; (3) Kein Koffein nach 14 Uhr. Wende alle drei Maßnahmen 7 Tage lang an — du wirst einen deutlichen Unterschied merken."
+      },
+      {
+        "q": "Ich habe noch nie meditiert — wie fange ich an?",
+        "a": "Die einfachste Meditation: Bequem sitzen, Augen schließen, 5 Minuten auf den Atem achten. Wenn der Geist wandert, sanft die Aufmerksamkeit zum Atem zurücklenken — ohne Urteil. Mit 5 Minuten jeden Morgen beginnen und nach 2 Wochen langsam auf 10–15 Minuten steigern."
+      },
+      {
+        "q": "Was ist Box-Atmung und wann sollte ich es anwenden?",
+        "a": "Box-Atmung: Einatmen 4s → Halten 4s → Ausatmen 4s → Halten 4s → wiederholen. Diese Technik aktiviert das parasympathische Nervensystem, senkt Cortisol und Herzfrequenz innerhalb von 2–3 Minuten. Anwenden: gestresst vor einem Meeting, beim Einschlafen, oder vor dem Training."
+      },
+      {
+        "q": "Ich habe keine Zeit zum Meditieren — gibt es eine Möglichkeit?",
+        "a": "\"Mikro-Meditation\" funktioniert für ein beschäftigtes Leben: (1) 3 bewusste tiefe Atemzüge jeden Morgen (30 Sekunden); (2) Achtsam essen — kein Telefon; (3) 5-minütiger achtsamer Spaziergang mittags. Diese kleinen Momente summieren sich und bauen eine solide mentale Grundlage auf."
+      },
+      {
+        "q": "Was soll ich in ein Gesundheitstagebuch schreiben?",
+        "a": "Die 3-Zeilen-Abendtagebuch-Formel (3–5 Minuten): (1) \"Heute habe ich gut gemacht...\" — 1 positives Ding notieren; (2) \"Ich habe gelernt...\" — 1 Lektion oder Beobachtung; (3) \"Morgen werde ich...\" — 1 konkrete Aktion. Nach 4 Wochen siehst du beim Zurückblicken deine eigenen Muster viel klarer."
+      },
+      {
+        "q": "Was ist der Unterschied zwischen 7-Tage-, 12-Wochen- und 24-Wochen-Programm?",
+        "a": "7-Tage-Kickstart: Alle 4 Säulen kennenlernen, Grundgewohnheiten bilden. 12-Wochen-Grundlage: 3 Phasen, Grundlage aufbauen → Last steigern → personalisieren. 24-Wochen-Fortgeschritten: Auf alle 6 vollständigen Säulen ausweiten, einschließlich medizinischem Wissen und Kohlenhydrat-Zyklen."
+      },
+      {
+        "q": "Wie viel Zeit brauche ich täglich?",
+        "a": "Daily-Core-Struktur 20–40 Min: 5 Min Aufwärmen · 10–20 Min Haupttraining · 5–10 Min Abkühlen · 5 Min Geist-Reset. Dazu: 10-minütige Morgenroutine + 5-minütiges Abendtagebuch. Gesamt: 35–55 Min/Tag. Kein Tag erfordert mehr als 1 Stunde."
+      },
+      {
+        "q": "Kann ich die 7 Tage überspringen und direkt mit dem 12-Wochen-Programm beginnen?",
+        "a": "Du kannst, aber es wird nicht empfohlen. Die ersten 7 Tage helfen dir zu verstehen, wie dein Körper auf Veränderungen reagiert, Schwächen zu identifizieren und psychologischen Schwung aufzubauen. Personen, die die 7 Tage überspringen, geben in der Regel früher auf. Wenn du bereits eine solide Grundlage hast (regelmäßiges Training seit 6+ Monaten), kannst du mit Phase 2 des 12-Wochen-Programms beginnen."
+      },
+      {
+        "q": "Was soll ich tun, wenn ich 1–2 Tage im Programm verpasst habe?",
+        "a": "Kein Problem. Die Regel: \"Niemals zweimal hintereinander auslassen\". 1 Tag verpasst → weiter vom nächsten Tag, kein Nachholbedarf. 1 Woche verpasst → Neustart vom Anfang dieser Woche. 80% Konsequenz über 12 Wochen schlägt 100% für 3 Wochen dann aufhören."
+      }
     ]
   },
   "footer": {
@@ -617,7 +1053,12 @@
     "kcal_day": "kcal/Tag",
     "macro_from_target": "↓ Makro-Verteilung aus dem Kalorienziel",
     "target_label": "Ziel",
-    "bar_types": ["Ruhetag", "Leichtes Training", "Moderates Training", "Schweres Training"],
+    "bar_types": [
+      "Ruhetag",
+      "Leichtes Training",
+      "Moderates Training",
+      "Schweres Training"
+    ],
     "preworkout_note": "30–60 Min vorher",
     "postworkout_note": "innerhalb 2h nach Training"
   }

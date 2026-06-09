@@ -183,9 +183,11 @@ const REVIEWS = [
 export default function Home() {
   const { t }     = useTranslation();
   const { t: tP } = useTranslation('pillars');
-  const stats        = t('home.stats',    { returnObjects: true });
-  const journeysTr   = t('home.journeys', { returnObjects: true });
-  const whyItemsTr   = t('home.why_items',{ returnObjects: true });
+  const stats        = t('home.stats',          { returnObjects: true });
+  const journeysTr   = t('home.journeys',       { returnObjects: true });
+  const whyItemsTr   = t('home.why_items',      { returnObjects: true });
+  const reviewsMeta  = t('home.reviews',        { returnObjects: true });
+  const reviewItems  = Array.isArray(reviewsMeta?.items) ? reviewsMeta.items : [];
   const heroRef        = useRef(null);
   const reviewsRef     = useRef(null);
   const reviewPaused   = useRef(false);
@@ -482,10 +484,10 @@ export default function Home() {
               ))}
             </div>
             <div className="text-left">
-              <div className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.72)' }}>2,400+ người đang sống khỏe</div>
+              <div className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.72)' }}>{t('hero.social_proof')}</div>
               <div className="flex items-center gap-1 text-xs" style={{ color: 'rgba(255,255,255,0.38)' }}>
                 <span style={{ color: '#fbbf24', letterSpacing: '-0.5px' }}>★★★★★</span>
-                <span>Đánh giá 4.9/5</span>
+                <span>{t('hero.social_rating')}</span>
               </div>
             </div>
           </div>
@@ -800,9 +802,9 @@ export default function Home() {
         {/* Header */}
         <RevealBlock className="text-center mb-10">
           <p className="text-xs font-bold uppercase tracking-[0.22em] mb-3" style={{ color: '#22c55e' }}>
-            Đánh Giá Từ Cộng Đồng
+            {reviewsMeta?.badge}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-text">Họ Đã Thay Đổi Như Thế Nào</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text">{reviewsMeta?.title}</h2>
         </RevealBlock>
 
         {/* Rating overview card */}
@@ -818,7 +820,7 @@ export default function Home() {
                 <div className="flex items-center gap-1 mb-2">
                   {[1,2,3,4,5].map(i => <span key={i} className="text-xl" style={{ color: '#fbbf24' }}>★</span>)}
                 </div>
-                <p className="text-sm text-muted whitespace-nowrap">Dựa trên 2,400+ đánh giá</p>
+                <p className="text-sm text-muted whitespace-nowrap">{reviewsMeta?.rating_base}</p>
               </div>
 
               {/* Right: bar breakdown */}
@@ -862,6 +864,10 @@ export default function Home() {
             onMouseLeave={() => { reviewPaused.current = false; }}
           >
             {REVIEWS.map((r, idx) => {
+              const tr = reviewItems[idx] || {};
+              const role = tr.role || r.role;
+              const tag  = tr.tag  || r.tag;
+              const text = tr.text || r.text;
               const featured = idx === 0;
               return (
                 <div
@@ -918,7 +924,7 @@ export default function Home() {
                         </p>
                         <p className="text-xs leading-tight mt-0.5"
                           style={{ color: featured ? 'rgba(240,253,244,0.5)' : 'rgba(255,255,255,0.4)' }}>
-                          {r.role}
+                          {role}
                         </p>
                       </div>
                     </div>
@@ -938,7 +944,7 @@ export default function Home() {
                   {/* Review text */}
                   <p className="text-base leading-relaxed italic flex-1 mb-4"
                     style={{ color: featured ? 'rgba(240,253,244,0.75)' : 'rgba(255,255,255,0.52)' }}>
-                    "{r.text}"
+                    "{text}"
                   </p>
 
                   {/* Tag */}
@@ -947,7 +953,7 @@ export default function Home() {
                       background: featured ? 'rgba(34,197,94,0.15)' : `rgba(${r.rgb},0.1)`,
                       color: featured ? '#4ade80' : r.color,
                     }}>
-                    {r.tag}
+                    {tag}
                   </span>
                 </div>
               );

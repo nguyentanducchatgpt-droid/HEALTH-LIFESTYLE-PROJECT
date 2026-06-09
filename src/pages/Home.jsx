@@ -566,13 +566,13 @@ export default function Home() {
       </section>
 
       {/* ── Visual image strip ─────────────────────────── */}
-      <div className="overflow-x-auto scrollbar-hide mb-16 -mx-4 md:-mx-8 px-4 md:px-8">
-        <div className="flex gap-3 pb-1" style={{ width: 'max-content' }}>
+      <div className="overflow-x-auto scrollbar-hide mb-16 -mx-4 md:mx-0 px-4 md:px-0">
+        <div className="flex gap-4 pb-1 min-w-max md:min-w-0 md:flex-wrap md:justify-center">
           {PILLARS_KEYS.map((key, i) => {
             const p = tP(key, { returnObjects: true });
             const color = COLOR_MAP[p?.color] || '#22c55e';
             return (
-              <Link key={key} to={PILLAR_ROUTES[i]} className="relative rounded-2xl overflow-hidden shrink-0 group cursor-pointer" style={{ width: '180px', height: '220px' }}>
+              <Link key={key} to={PILLAR_ROUTES[i]} className="relative rounded-2xl overflow-hidden shrink-0 group cursor-pointer" style={{ width: '220px', height: '280px' }}>
                 <img src={STRIP_IMAGES[i]} alt={p?.title || key} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3">

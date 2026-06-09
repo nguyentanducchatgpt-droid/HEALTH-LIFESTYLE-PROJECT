@@ -97,7 +97,7 @@ export default function Navbar() {
             alt="Sức Khỏe & Đời Sống"
             className="h-8 w-8 shrink-0 transition-transform duration-300 group-hover:scale-110"
           />
-          <span className="nb-brand hidden sm:inline font-bold tracking-wide text-lg leading-none overflow-hidden">
+          <span className="nb-brand hidden sm:inline font-bold tracking-wide text-base leading-none overflow-hidden">
             <span className="nb-p1">{t('brand.part1')}</span>
             <span className="nb-amp"> &amp; </span>
             <span className="nb-p2">{t('brand.part2')}</span>
@@ -108,11 +108,11 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-0.5">
           {/* Home */}
           <Link
             to="/"
-            className={`relative px-2 py-1.5 text-lg font-medium rounded-lg transition-all duration-200 ${
+            className={`relative px-2 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
               isActive('/') && !isPillarActive
                 ? 'text-accent bg-accent/8'
                 : 'text-muted hover:text-text hover:bg-white/4'
@@ -133,7 +133,7 @@ export default function Navbar() {
             <Link
               to="/pillars"
               onClick={() => setPillarsOpen(false)}
-              className={`relative flex items-center gap-1 px-2 py-1.5 text-lg font-medium rounded-lg transition-all duration-200 ${
+              className={`relative flex items-center gap-1 px-2 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
                 isPillarActive || location.pathname === '/pillars'
                   ? 'text-accent bg-accent/8'
                   : 'text-muted hover:text-text hover:bg-white/4'
@@ -195,7 +195,7 @@ export default function Navbar() {
             <Link
               key={to}
               to={to}
-              className={`relative px-2 py-1.5 text-lg font-medium rounded-lg transition-all duration-200 ${
+              className={`relative px-2 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
                 isActive(to)
                   ? 'text-accent bg-accent/8'
                   : 'text-muted hover:text-text hover:bg-white/4'

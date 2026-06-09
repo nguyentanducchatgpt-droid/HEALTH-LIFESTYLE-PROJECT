@@ -77,7 +77,7 @@ const SCHEDULE_IMAGES = {
 
 const WEEKS = Array.from({ length: 24 }, (_, i) => i + 1);
 
-/* ── useInView hook for scroll-triggered animation ── */
+/* ── useInView hook ── */
 function useInView(threshold = 0.15) {
   const ref  = useRef(null);
   const [inView, setInView] = useState(false);
@@ -89,6 +89,25 @@ function useInView(threshold = 0.15) {
     return () => obs.disconnect();
   }, [threshold]);
   return [ref, inView];
+}
+
+/* ── useCountUp hook ── */
+function useCountUp(target, duration = 1000, enabled = false) {
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!enabled || typeof target !== 'number') return;
+    let frame; let start = null;
+    const tick = (ts) => {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / duration, 1);
+      setVal(Math.floor(p * target));
+      if (p < 1) frame = requestAnimationFrame(tick);
+      else setVal(target);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [target, duration, enabled]);
+  return val;
 }
 
 /* ─────────────────────────────────────────────── */
@@ -304,76 +323,190 @@ export default function SamplePrograms() {
     <div className="max-w-5xl mx-auto -mt-4">
 
       {/* ════════════════════════════════════════════ */}
-      {/* HERO                                         */}
+      {/* HERO — cinematic redesign                   */}
       {/* ════════════════════════════════════════════ */}
-      <div
-        ref={heroRef}
-        className="relative -mx-4 md:-mx-8 overflow-hidden mb-16"
-        style={{ minHeight: 440 }}
-      >
-        {/* Background mosaic of fitness images */}
-        <div className="absolute inset-0 grid grid-cols-3 gap-0">
-          {[
-            'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=50',
-            'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&q=50',
-            'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=50',
-          ].map((src, i) => (
-            <img key={i} src={src} alt="" className="w-full h-full object-cover" style={{ opacity: 0.15 }} />
-          ))}
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/30 via-bg/60 to-bg pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-transparent to-bg/80 pointer-events-none" />
-        <div className="absolute inset-0 grid-dots opacity-25 pointer-events-none" />
+      {(() => {
+        /* inject keyframe CSS once */
+        if (typeof document !== 'undefined' && !document.getElementById('sp-hero-kf')) {
+          const s = document.createElement('style'); s.id = 'sp-hero-kf';
+          s.textContent = `
+            @property --sp-orbit-angle { syntax:'<angle>'; initial-value:0deg; inherits:false; }
+            @keyframes spOrbitSpin { to { --sp-orbit-angle:360deg; } }
+            .sp-orbit-ring {
+              background: conic-gradient(from var(--sp-orbit-angle),
+                transparent 0deg, transparent 60deg,
+                rgba(34,197,94,0) 70deg, rgba(34,197,94,0.7) 88deg,
+                rgba(255,255,255,0.85) 94deg, rgba(34,197,94,0.7) 100deg,
+                rgba(34,197,94,0) 115deg, transparent 125deg, transparent 360deg);
+              animation: spOrbitSpin 3.5s linear infinite;
+              border-radius:9999px; padding:1.5px;
+            }
+            @keyframes spBadgeIn { from{opacity:0;transform:translateY(-10px) scale(0.9)} to{opacity:1;transform:none} }
+            @keyframes spTitleL1  { from{opacity:0;transform:translateX(-28px)} to{opacity:1;transform:none} }
+            @keyframes spTitleL2  { from{opacity:0;transform:translateX(-18px)} to{opacity:1;transform:none} }
+            @keyframes spSubIn    { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+            @keyframes spStatPop  { from{opacity:0;transform:scale(0.82) translateY(8px)} to{opacity:1;transform:none} }
+            @keyframes spPillSlide{ from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:none} }
+            @keyframes spGlowFloat{ 0%,100%{opacity:.3;transform:scale(1)} 50%{opacity:.55;transform:scale(1.15)} }
+            @keyframes spScrollBob{ 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(5px)} }
+            .sp-badge-in  { animation:spBadgeIn  .55s cubic-bezier(.25,.46,.45,.94) both .05s; }
+            .sp-title-l1  { animation:spTitleL1  .65s cubic-bezier(.25,.46,.45,.94) both .18s; }
+            .sp-title-l2  { animation:spTitleL2  .65s cubic-bezier(.25,.46,.45,.94) both .32s; }
+            .sp-sub-in    { animation:spSubIn    .55s ease both .48s; }
+            .sp-stat-pop  { animation:spStatPop  .55s cubic-bezier(.34,1.56,.64,1) both; }
+            .sp-pill-slide{ animation:spPillSlide .4s ease both; }
+            .sp-glow-a    { animation:spGlowFloat 8s ease-in-out infinite; }
+            .sp-glow-b    { animation:spGlowFloat 11s ease-in-out infinite reverse; animation-delay:-4s; }
+            .sp-scroll-bob{ animation:spScrollBob 2s ease-in-out infinite; }
+          `;
+          document.head.appendChild(s);
+        }
 
-        {/* Accent orbs */}
-        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-accent/6 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] pointer-events-none" />
+        /* stat counter component */
+        function StatCounter({ target, suffix = '', enabled }) {
+          const n = useCountUp(target, 900, enabled);
+          return <>{n}{suffix}</>;
+        }
 
-        <div
-          className={`relative z-10 px-4 md:px-8 pt-16 pb-14 transition-all duration-700 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-        >
-          {/* Top badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/8 border border-accent/20 text-accent text-base font-bold px-4 py-1.5 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-glow-pulse" />
-            {t('nav.sample_programs') || 'Lộ trình mẫu'}
-          </div>
+        const STATS = [
+          { icon:'🎯', num:6,   suf:'',  label:'Mục tiêu',  c:'#22c55e', rgb:'34,197,94'   },
+          { icon:'📅', num:24,  suf:'',  label:'Tuần mẫu',  c:'#84cc16', rgb:'132,204,22'  },
+          { icon:'📋', num:6,   suf:'',  label:'Loại lịch', c:'#14b8a6', rgb:'20,184,166'  },
+          { icon:'⏱️', num:10, suf:'+', label:'Phút/ngày', c:'#a855f7', rgb:'168,85,247'  },
+        ];
 
-          <h1 className="text-6xl md:text-6xl font-black text-text leading-[1.05] mb-4">
-            Tìm lộ trình<br />
-            <span className="text-gradient">phù hợp bạn</span>
-          </h1>
-          <p className="text-muted text-lg leading-relaxed max-w-lg mb-8">
-            6 mục tiêu · 24 tuần · Mỗi lộ trình được xây dựng theo nguyên tắc:
-            tập đúng form trước, tăng volume sau, cá nhân hóa theo tiến bộ.
-          </p>
+        const BG_IMGS = [
+          'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=55',
+          'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=55',
+          'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=55',
+        ];
 
-          {/* Stats */}
-          <div className="flex flex-wrap gap-3">
-            {[
-              { icon:'🎯', n:'6',  label:'Mục tiêu' },
-              { icon:'📅', n:'24', label:'Tuần mẫu' },
-              { icon:'📋', n:'6',  label:'Loại lịch' },
-              { icon:'⏱️', n:'10+',label:'Phút/ngày' },
-            ].map(s => (
-              <div key={s.n} className="flex items-center gap-2.5 bg-surface/70 backdrop-blur-sm border border-border px-4 py-2.5 rounded-xl">
-                <span className="text-xl">{s.icon}</span>
-                <div>
-                  <span className="text-gradient font-extrabold text-lg block leading-none">{s.n}</span>
-                  <span className="text-muted text-[10px] leading-none">{s.label}</span>
+        return (
+          <div
+            ref={heroRef}
+            className="relative -mx-4 md:-mx-8 overflow-hidden mb-16 rounded-b-3xl"
+            style={{ minHeight: 500 }}
+          >
+            {/* ── layered background ── */}
+            <div className="absolute inset-0 flex">
+              {BG_IMGS.map((src, i) => (
+                <div key={i} className="flex-1 relative overflow-hidden">
+                  <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover"
+                    style={{ opacity: i === 1 ? 0.22 : 0.13, transform: i === 1 ? 'scale(1.06)' : 'none' }} />
+                  {/* vertical separator */}
+                  {i < 2 && <div className="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/5 to-transparent" />}
+                </div>
+              ))}
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/65 to-bg pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-bg via-transparent to-bg pointer-events-none" />
+            <div className="absolute inset-0 grid-dots opacity-20 pointer-events-none" />
+
+            {/* ── ambient glows ── */}
+            <div className="sp-glow-a absolute top-[15%] left-[28%] w-[420px] h-[340px] bg-accent/7 rounded-full blur-[110px] pointer-events-none" />
+            <div className="sp-glow-b absolute bottom-[5%] right-[22%] w-[300px] h-[240px] bg-purple-500/5 rounded-full blur-[90px] pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-[2px]"
+              style={{ background:'linear-gradient(90deg,transparent,rgba(34,197,94,0.45),rgba(132,204,22,0.3),transparent)' }} />
+
+            <div className={`relative z-10 px-4 md:px-10 pt-16 pb-20 transition-all duration-700 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+
+              {/* ── orbit badge ── */}
+              <div className="sp-badge-in inline-block mb-7">
+                <div className="sp-orbit-ring inline-block">
+                  <div className="flex items-center gap-2 bg-bg/90 text-accent text-sm font-bold px-4 py-2 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" style={{ boxShadow:'0 0 6px #22c55e' }} />
+                    {t('nav.sample_programs') || 'Lộ Trình Mẫu'}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* Scroll hint */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-muted/40 text-[10px] uppercase tracking-widest animate-bounce">
-            <span>Chọn mục tiêu</span>
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
+              {/* ── title ── */}
+              <h1 className="font-black leading-[1.05] tracking-tight mb-5" style={{ fontSize:'clamp(2.6rem,5.5vw,4.2rem)' }}>
+                <span className="sp-title-l1 block text-text">Tìm lộ trình</span>
+                <span className="sp-title-l2 block"
+                  style={{ background:'linear-gradient(110deg,#22c55e 0%,#5eead4 45%,#a78bfa 85%)',
+                    WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent' }}>
+                  phù hợp bạn
+                </span>
+              </h1>
+
+              {/* gradient divider */}
+              <div className="sp-sub-in mb-5 h-[2px] w-20 rounded-full"
+                style={{ background:'linear-gradient(90deg,#22c55e,#5eead4,#a855f7)' }} />
+
+              {/* ── subtitle ── */}
+              <p className="sp-sub-in text-muted/80 text-lg leading-relaxed max-w-[460px] mb-8"
+                style={{ animationDelay:'.52s' }}>
+                6 mục tiêu · 24 tuần · Mỗi lộ trình xây dựng theo nguyên tắc:
+                tập đúng form trước, tăng volume sau, cá nhân hóa theo tiến bộ.
+              </p>
+
+              {/* ── stat cards with counter animation ── */}
+              <div className="flex flex-wrap gap-3 mb-7">
+                {STATS.map((s, i) => (
+                  <div
+                    key={i}
+                    className="sp-stat-pop group relative overflow-hidden flex items-center gap-3 px-4 py-3 rounded-2xl border cursor-default"
+                    style={{
+                      animationDelay:`${0.6 + i * 0.1}s`,
+                      background:`rgba(${s.rgb},0.06)`,
+                      borderColor:`rgba(${s.rgb},0.22)`,
+                    }}
+                  >
+                    {/* hover glow */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                      style={{ background:`radial-gradient(circle at center,rgba(${s.rgb},0.14),transparent 70%)` }} />
+                    {/* icon ring */}
+                    <div className="relative w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background:`rgba(${s.rgb},0.12)`, border:`1px solid rgba(${s.rgb},0.25)` }}>
+                      <span className="text-lg">{s.icon}</span>
+                    </div>
+                    <div className="relative">
+                      <div className="font-black text-xl leading-none" style={{ color: s.c }}>
+                        <StatCounter target={s.num} suffix={s.suf} enabled={heroInView} />
+                      </div>
+                      <div className="text-[10px] text-muted/70 uppercase tracking-wider mt-0.5">{s.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* ── goal preview pill strip ── */}
+              <div className="sp-sub-in overflow-x-auto scrollbar-hide -mx-1 px-1"
+                style={{ animationDelay:'.85s' }}>
+                <div className="flex gap-2 pb-1" style={{ width:'max-content' }}>
+                  {GOAL_TYPES.map((g, i) => (
+                    <button
+                      key={g.id}
+                      onClick={() => { setGoalType(g.id); setWeekDuration(null); }}
+                      className="sp-pill-slide flex items-center gap-1.5 px-3.5 py-2 rounded-xl border text-sm font-semibold transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap"
+                      style={{
+                        animationDelay:`${0.9 + i * 0.07}s`,
+                        background: goalType === g.id ? g.bg.replace('/8','') : `rgba(255,255,255,0.03)`,
+                        borderColor: goalType === g.id ? undefined : 'rgba(255,255,255,0.08)',
+                      }}
+                      data-goal={g.id}
+                    >
+                      <span>{g.icon}</span>
+                      <span className={goalType === g.id ? g.text : 'text-muted'}>{g.title}</span>
+                      <span className="text-[10px] text-muted/50">{g.rpe}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* ── scroll hint ── */}
+            <div className="sp-scroll-bob absolute bottom-5 left-1/2 flex flex-col items-center gap-1 text-muted/35 text-[10px] uppercase tracking-widest pointer-events-none">
+              <span>Chọn mục tiêu</span>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
-        </div>
-      </div>
+        );
+      })()}
 
       {/* ════════════════════════════════════════════ */}
       {/* STEP 1 — Goal selector                      */}

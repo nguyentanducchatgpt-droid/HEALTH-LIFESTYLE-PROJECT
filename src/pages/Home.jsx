@@ -56,6 +56,7 @@ const STAT_TIPS = [
 ];
 const STAT_COLORS = ['#22c55e', '#14b8a6', '#a855f7'];
 const STAT_RGBS   = ['34,197,94', '20,184,166', '168,85,247'];
+const STAT_LINKS  = [null, '/pillars', '/program'];
 
 const JOURNEY_CARDS = [
   {
@@ -499,9 +500,12 @@ export default function Home() {
                 const active = hoveredStat === i;
                 const color  = STAT_COLORS[i];
                 const rgb    = STAT_RGBS[i];
+                const to     = STAT_LINKS[i];
+                const Tag    = to ? Link : 'div';
+                const tagProps = to ? { to } : {};
                 return (
-                  <div key={i}
-                    className="group/hstat relative rounded-2xl text-center px-4 py-5 cursor-default overflow-hidden"
+                  <Tag key={i} {...tagProps}
+                    className={`group/hstat relative rounded-2xl text-center px-4 py-5 overflow-hidden${to ? ' cursor-pointer' : ' cursor-default'}`}
                     style={{
                       background: active ? `rgba(${rgb},0.08)` : 'rgba(255,255,255,0.025)',
                       border: `1px solid ${active ? `rgba(${rgb},0.32)` : 'rgba(255,255,255,0.06)'}`,
@@ -546,7 +550,7 @@ export default function Home() {
                       style={{ color: active ? `rgba(${rgb},0.78)` : 'rgba(255,255,255,0.36)', transition: 'color 0.3s' }}>
                       {stat.label}
                     </p>
-                  </div>
+                  </Tag>
                 );
               })}
             </div>

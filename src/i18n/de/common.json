@@ -11,6 +11,10 @@
     "faq": "FAQ",
     "program": "Reise",
     "sample_programs": "Musterprogramme",
+    "p7d": "7-Tage-Start",
+    "p12w": "12-Wochen-Grundlage",
+    "p24w": "24-Wochen-Fortgeschritten",
+    "psample": "Musterplan",
     "contact": "Kontakt",
     "donate": "Unterstützen"
   },

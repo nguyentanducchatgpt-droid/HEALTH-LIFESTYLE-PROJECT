@@ -14,31 +14,44 @@ const PILLARS = [
 
 const NAV_LINKS = [
   { key: 'nav.home',    to: '/' },
-  { key: 'nav.program', to: '/program' },
   { key: 'nav.videos',  to: '/videos' },
   { key: 'nav.faq',     to: '/faq' },
   { key: 'nav.contact', to: '/contact' },
   { key: 'nav.donate',  to: '/donate' },
 ];
 
+const PROGRAM_ITEMS = [
+  { icon: '🌱', to: '/program', hash: '7d',     labelKey: 'nav.p7d',     color: 'text-green-400',  dot: 'bg-green-400' },
+  { icon: '📈', to: '/program', hash: '12w',    labelKey: 'nav.p12w',    color: 'text-lime-400',   dot: 'bg-lime-400' },
+  { icon: '🎓', to: '/program', hash: '24w',    labelKey: 'nav.p24w',    color: 'text-purple-400', dot: 'bg-purple-400' },
+  { icon: '🗺️', to: '/program', hash: 'sample', labelKey: 'nav.psample', color: 'text-teal-400',   dot: 'bg-teal-400' },
+];
+
 export default function Navbar() {
   const { t }           = useTranslation();
   const { t: tPillars } = useTranslation('pillars');
   const location        = useLocation();
-  const [menuOpen,     setMenuOpen]     = useState(false);
-  const [pillarsOpen,  setPillarsOpen]  = useState(false);
-  const [mobilePillars, setMobilePillars] = useState(false);
-  const closeTimer = useRef(null);
+  const [menuOpen,        setMenuOpen]        = useState(false);
+  const [pillarsOpen,     setPillarsOpen]     = useState(false);
+  const [programOpen,     setProgramOpen]     = useState(false);
+  const [mobilePillars,   setMobilePillars]   = useState(false);
+  const [mobileProgram,   setMobileProgram]   = useState(false);
+  const closeTimer   = useRef(null);
+  const programTimer = useRef(null);
 
   const isActive = (to) =>
     to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
 
-  const isPillarActive = PILLARS.some(p => location.pathname.startsWith(p.to));
+  const isPillarActive  = PILLARS.some(p => location.pathname.startsWith(p.to));
+  const isProgramActive = location.pathname.startsWith('/program');
 
-  const closeMenu = () => { setMenuOpen(false); setMobilePillars(false); };
+  const closeMenu = () => { setMenuOpen(false); setMobilePillars(false); setMobileProgram(false); };
 
   const openDropdown  = () => { clearTimeout(closeTimer.current); setPillarsOpen(true); };
   const startClose    = () => { closeTimer.current = setTimeout(() => setPillarsOpen(false), 150); };
+
+  const openProgram   = () => { clearTimeout(programTimer.current); setProgramOpen(true); };
+  const startCloseP   = () => { programTimer.current = setTimeout(() => setProgramOpen(false), 150); };
 
   useEffect(() => {
     const id = 'nb-brand-kf';
@@ -190,6 +203,56 @@ export default function Navbar() {
             )}
           </div>
 
+          {/* Program dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={openProgram}
+            onMouseLeave={startCloseP}
+          >
+            <Link
+              to="/program"
+              onClick={() => setProgramOpen(false)}
+              className={`relative flex items-center gap-1 px-2 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
+                isProgramActive
+                  ? 'text-accent bg-accent/8'
+                  : 'text-muted hover:text-text hover:bg-white/4'
+              }`}
+            >
+              {t('nav.program')}
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 ${programOpen ? 'rotate-180' : ''}`}
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+              {isProgramActive && (
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-3 h-0.5 bg-accent rounded-full" />
+              )}
+            </Link>
+
+            {programOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 glass border border-border rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up">
+                <div className="p-2 flex flex-col gap-0.5">
+                  {PROGRAM_ITEMS.map((p) => {
+                    const label  = t(p.labelKey);
+                    const active = isProgramActive;
+                    return (
+                      <Link
+                        key={p.hash}
+                        to={p.to}
+                        onClick={() => setProgramOpen(false)}
+                        className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl transition-all duration-150 hover:bg-white/4 text-muted hover:text-text"
+                      >
+                        <span className="text-lg shrink-0">{p.icon}</span>
+                        <span className={`font-medium text-base leading-snug ${p.color}`}>{label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Remaining nav links */}
           {NAV_LINKS.filter(l => l.to !== '/').map(({ key, to }) => (
             <Link
@@ -281,6 +344,38 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+            </div>
+          )}
+
+          {/* Program collapsible */}
+          <button
+            onClick={() => setMobileProgram(!mobileProgram)}
+            className={`flex items-center justify-between px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 ${
+              isProgramActive ? 'bg-accent/10 text-accent' : 'text-muted hover:text-text hover:bg-white/4'
+            }`}
+          >
+            <span>{t('nav.program')}</span>
+            <svg
+              className={`w-3.5 h-3.5 transition-transform duration-200 ${mobileProgram ? 'rotate-180' : ''}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {mobileProgram && (
+            <div className="pl-4 flex flex-col gap-0.5 mb-1">
+              {PROGRAM_ITEMS.map((p) => (
+                <Link
+                  key={p.hash}
+                  to={p.to}
+                  onClick={closeMenu}
+                  className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-lg transition-all duration-150 text-muted hover:text-text hover:bg-white/4"
+                >
+                  <span>{p.icon}</span>
+                  <span className={`font-medium ${p.color}`}>{t(p.labelKey)}</span>
+                </Link>
+              ))}
             </div>
           )}
 

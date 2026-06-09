@@ -86,22 +86,83 @@ const JOURNEY_CARDS = [
 ];
 
 const WHY_ITEMS = [
-  { icon:'🧬', title:'Dựa Trên Khoa Học',     stat:'Evidence',  statSub:'Based',
+  { icon:'🧬', title:'Dựa Trên Khoa Học', stat:'Evidence', statSub:'Based',
     desc:'Tổng hợp từ nghiên cứu y khoa tin cậy — không phải mẹo vặt hay xu hướng nhất thời.',
     color:'#22c55e', rgb:'34,197,94',
-    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=75' },
-  { icon:'⚡', title:'Đơn Giản & Thực Chiến', stat:'10',        statSub:'phút/ngày',
+    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=75',
+    detailTitle:'Tại sao khoa học quan trọng?',
+    details:[
+      'Mọi nội dung được tổng hợp từ các nguồn uy tín: WHO, PubMed, Harvard Medical School, American College of Sports Medicine.',
+      'Không có lời khuyên "mẹo vặt" hay xu hướng mạng xã hội thiếu cơ sở — chỉ những điều đã được kiểm chứng qua nghiên cứu thực tế.',
+      'Hệ thống phân biệt rõ: điều gì đã được chứng minh mạnh (RCT, meta-analysis), điều gì mới thử nghiệm, điều gì chỉ là ý kiến cá nhân.',
+      'Ứng dụng nguyên tắc Y học Lối sống (Lifestyle Medicine): dinh dưỡng, vận động, giấc ngủ, tâm trí được xem xét như một tổng thể.',
+      'Cập nhật định kỳ theo bằng chứng mới — không cứng nhắc theo một lý thuyết cũ.',
+    ],
+    points:[
+      {icon:'🔬', label:'PubMed & WHO', note:'Nguồn tài liệu tham khảo chính'},
+      {icon:'📊', label:'RCT & Meta-analysis', note:'Ưu tiên bằng chứng mạnh nhất'},
+      {icon:'🔄', label:'Cập nhật liên tục', note:'Theo kịp nghiên cứu mới nhất'},
+      {icon:'🎓', label:'Harvard Medical', note:'Và các đại học hàng đầu thế giới'},
+    ],
+  },
+  { icon:'⚡', title:'Đơn Giản & Thực Chiến', stat:'10', statSub:'phút/ngày',
     desc:'10 phút mỗi ngày là đủ để bắt đầu. Mọi hướng dẫn thiết kế riêng cho người bận rộn.',
     color:'#84cc16', rgb:'132,204,22',
-    img:'https://images.unsplash.com/photo-1434682881908-b43d0467b798?w=600&q=75' },
-  { icon:'🎯', title:'Lộ Trình Rõ Ràng',      stat:'3',         statSub:'mốc tiến bộ',
+    img:'https://images.unsplash.com/photo-1434682881908-b43d0467b798?w=600&q=75',
+    detailTitle:'Tại sao chỉ cần 10 phút?',
+    details:[
+      'Nghiên cứu cho thấy 10–20 phút vận động cường độ vừa mỗi ngày đã đủ cải thiện sức khỏe tim mạch, tâm trạng và chất lượng giấc ngủ.',
+      'Framework Daily Core: 5 phút khởi động → 10–20 phút chính → 5 phút giãn cơ → 5 phút mind reset. Tổng 25–35 phút, linh hoạt cắt ngắn khi bận.',
+      'Không cần gym hay dụng cụ đặc biệt — toàn bộ bài tập thực hiện tại nhà với không gian tối thiểu 2m².',
+      'Nguyên tắc Habit Stacking: gắn thói quen mới vào thói quen cũ (pha cà phê → 5 phút stretch; đánh răng → 5 phút mindfulness).',
+      'Triết lý "không áp lực": bỏ 1 ngày thì tiếp tục hôm sau — không cần bắt đầu lại từ đầu.',
+    ],
+    points:[
+      {icon:'⏱️', label:'25–35 phút/ngày', note:'Đủ để thay đổi cuộc sống'},
+      {icon:'🏠', label:'Tại nhà, không gym', note:'Không cần dụng cụ đặc biệt'},
+      {icon:'🔗', label:'Habit Stacking', note:'Gắn vào thói quen sẵn có'},
+      {icon:'🎒', label:'Mọi lịch trình', note:'Linh hoạt với người bận nhất'},
+    ],
+  },
+  { icon:'🎯', title:'Lộ Trình Rõ Ràng', stat:'3', statSub:'mốc tiến bộ',
     desc:'7 ngày → 12 tuần → 24 tuần. Từng bước nhỏ, không bao giờ cảm thấy choáng ngợp hay bỏ cuộc.',
     color:'#14b8a6', rgb:'20,184,166',
-    img:'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=75' },
-  { icon:'🔄', title:'Toàn Diện 360°',        stat:'6',         statSub:'trụ cột',
+    img:'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=75',
+    detailTitle:'Hành trình 3 cấp độ',
+    details:[
+      '🌱 Giai đoạn 1 — 7 ngày Khởi Động: Làm quen 3 thói quen cơ bản (vận động sáng, ăn đủ protein, ngủ đúng giờ). Mục tiêu: không bỏ cuộc sau tuần đầu.',
+      '💪 Giai đoạn 2 — Tuần 2–12: Tăng nền tảng. Thêm dần dinh dưỡng cá nhân hóa, Weekly Rhythm, mindfulness ngắn. Cứ 4 tuần có test đánh giá tiến bộ.',
+      '🚀 Giai đoạn 3 — Tuần 13–24: Cá nhân hóa hoàn toàn. Điều chỉnh theo mục tiêu riêng: giảm cân, tăng cơ, cải thiện sức bền tổng thể.',
+      'Mỗi tuần có checklist rõ ràng — biết chính xác mình đang ở đâu, cần làm gì tiếp. Không có "vùng mờ".',
+      'Nếu bỏ lỡ 1 ngày, chỉ cần tiếp tục hôm sau — không phải restart lại toàn bộ hành trình.',
+    ],
+    points:[
+      {icon:'🌱', label:'7 ngày', note:'Khởi động & xây thói quen nền'},
+      {icon:'💪', label:'12 tuần', note:'Tăng nền & củng cố hệ thống'},
+      {icon:'🚀', label:'24 tuần', note:'Cá nhân hóa & làm chủ hoàn toàn'},
+      {icon:'✅', label:'Checklist tuần', note:'Biết mình đang ở đâu'},
+    ],
+  },
+  { icon:'🔄', title:'Toàn Diện 360°', stat:'6', statSub:'trụ cột',
     desc:'Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — không bỏ sót bất kỳ góc độ nào.',
     color:'#a855f7', rgb:'168,85,247',
-    img:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=75' },
+    img:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=75',
+    detailTitle:'6 Trụ Cột Liên Kết Nhau',
+    details:[
+      '🏃 Vận động & Tập luyện: Daily Core 20–40 phút, Weekly Rhythm (3 ngày sức mạnh + 2 ngày cardio + 2 ngày phục hồi). Khoa học vận động ứng dụng thực tế.',
+      '🥗 Dinh dưỡng & Thực đơn: TDEE cá nhân hóa theo cân nặng, chiều cao, lối sống. Thực đơn 7 ngày thực tế, không nhịn ăn, cân bằng macro.',
+      '🌿 Lối sống Khỏe: Tối ưu giấc ngủ, tiếp xúc ánh nắng sáng, hydration đúng cách. Những thay đổi nhỏ nhưng tác động lớn.',
+      '🧘 Tâm trí An nhiên: Thiền 3 bước cho người mới, box breathing (kỹ thuật Navy SEAL), quản lý stress bằng phương pháp thực chứng.',
+      '📚 Kiến thức Sức khỏe: Hiểu cơ thể để ra quyết định thông minh — đọc nhãn thực phẩm, hiểu chỉ số sức khỏe, nhận biết dấu hiệu cảnh báo.',
+      '🛠️ Công cụ & Tài nguyên: Checklist ngày/tuần, template ăn uống, test đánh giá 4 tuần — dùng ngay, không cần cài app.',
+    ],
+    points:[
+      {icon:'🏃', label:'Vận động', note:'Daily Core & Weekly Rhythm'},
+      {icon:'🥗', label:'Dinh dưỡng', note:'TDEE & thực đơn cá nhân'},
+      {icon:'🧘', label:'Tâm trí', note:'Thiền & quản lý stress'},
+      {icon:'🛠️', label:'Công cụ', note:'Checklist & template thực dụng'},
+    ],
+  },
 ];
 
 const PILLARS_KEYS = ['pillarA','pillarB','pillarC','pillarD','pillarE','pillarF'];
@@ -195,6 +256,13 @@ export default function Home() {
   const [mousePos,      setMousePos]      = useState({ x: 0.5, y: 0.5 });
   const [hoveredStat,   setHoveredStat]   = useState(null);
   const [reviewDot,     setReviewDot]     = useState(0);
+  const [expandedWhy,   setExpandedWhy]   = useState(null);
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') setExpandedWhy(null); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
 
   useEffect(() => {
     const el = reviewsRef.current;
@@ -750,8 +818,9 @@ export default function Home() {
             return (
             <RevealBlock key={item.icon} delay={i * 90}>
               <div
-                className="group rounded-2xl border overflow-hidden cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(0,0,0,0.4)]"
+                className="group rounded-2xl border overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(0,0,0,0.4)]"
                 style={{ borderColor: `rgba(${item.rgb},0.16)`, background: `rgba(${item.rgb},0.03)` }}
+                onClick={() => setExpandedWhy(i)}
               >
                 {/* Image strip */}
                 <div className="relative h-44 overflow-hidden">
@@ -1033,6 +1102,81 @@ export default function Home() {
           </div>
         </div>
       </RevealBlock>
+
+      {/* ── Why detail modal ───────────────────────────── */}
+      {expandedWhy !== null && (() => {
+        const item = WHY_ITEMS[expandedWhy];
+        return (
+          <div
+            className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+            style={{ background: 'rgba(0,0,0,0.78)', backdropFilter: 'blur(12px)' }}
+            onClick={() => setExpandedWhy(null)}
+          >
+            <div
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+              style={{ background: '#0f0f0f', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.18)` }}
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Hero image */}
+              <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+                <img src={item.img.replace('w=600','w=800')} alt={item.title} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+                <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(${item.rgb},0.18) 50%, #0f0f0f 100%)` }} />
+                <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+                {/* Stat watermark */}
+                <div className="absolute top-5 right-6 text-right">
+                  <div className="font-black leading-none" style={{ fontSize: '52px', color: item.color, textShadow: `0 0 30px rgba(${item.rgb},0.7)` }}>{item.stat}</div>
+                  <div className="text-[11px] font-bold uppercase tracking-widest mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.statSub}</div>
+                </div>
+                {/* Icon */}
+                <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+                  style={{ background: `rgba(${item.rgb},0.22)`, border: `2px solid rgba(${item.rgb},0.5)` }}>
+                  {item.icon}
+                </div>
+                {/* Close btn */}
+                <button
+                  onClick={() => setExpandedWhy(null)}
+                  className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                  style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}
+                >✕</button>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 md:p-8">
+                <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{item.title}</h2>
+                <p className="font-semibold text-base mb-6" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.detailTitle}</p>
+
+                {/* Detail paragraphs */}
+                <ul className="space-y-3 mb-8">
+                  {item.details.map((d, di) => (
+                    <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                      <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                        style={{ background: `rgba(${item.rgb},0.15)`, color: item.color }}>{di + 1}</span>
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Key points grid */}
+                <div className="grid grid-cols-2 gap-3">
+                  {item.points.map((pt, pi) => (
+                    <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                      style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                      <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                      <div>
+                        <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                        <p className="text-xs text-muted mt-0.5 leading-snug">{pt.note}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Footer hint */}
+                <p className="text-center text-xs text-muted mt-6 opacity-50">Nhấn ESC hoặc click bên ngoài để đóng</p>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

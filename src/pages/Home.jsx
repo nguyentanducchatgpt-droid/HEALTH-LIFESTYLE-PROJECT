@@ -752,84 +752,164 @@ export default function Home() {
 
       {/* ── Testimonials ───────────────────────────────── */}
       <section className="mb-20">
-        <RevealBlock className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-4"
-            style={{ background: 'rgba(34,197,94,0.07)', border: '1px solid rgba(34,197,94,0.2)', color: '#86efac' }}>
-            ★★★★★ Đánh giá từ cộng đồng
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-text mb-3">Họ Đã Thay Đổi Như Thế Nào</h2>
-          <p className="text-muted text-lg max-w-xl mx-auto">2,400+ người đang sống khỏe hơn mỗi ngày — đây là câu chuyện của họ</p>
+        {/* Header */}
+        <RevealBlock className="text-center mb-10">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] mb-3" style={{ color: '#22c55e' }}>
+            Đánh Giá Từ Cộng Đồng
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-text">Họ Đã Thay Đổi Như Thế Nào</h2>
         </RevealBlock>
 
-        {/* Masonry-style 3-col grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {REVIEWS.map((r, idx) => (
-            <RevealBlock key={r.id} delay={idx * 60} className="break-inside-avoid">
-              <div
-                className="rounded-2xl p-5 border transition-all duration-300 hover:-translate-y-1 cursor-default"
-                style={{
-                  background: 'rgba(255,255,255,0.025)',
-                  border: `1px solid rgba(${r.rgb},0.14)`,
-                }}
-                onMouseEnter={e => { e.currentTarget.style.background = `rgba(${r.rgb},0.05)`; e.currentTarget.style.borderColor = `rgba(${r.rgb},0.3)`; e.currentTarget.style.boxShadow = `0 12px 36px rgba(${r.rgb},0.12)`; }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.025)'; e.currentTarget.style.borderColor = `rgba(${r.rgb},0.14)`; e.currentTarget.style.boxShadow = 'none'; }}
-              >
-                {/* Header row */}
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    {/* Avatar */}
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-                      style={{ background: `rgba(${r.rgb},0.18)`, color: r.color, border: `1.5px solid rgba(${r.rgb},0.35)` }}>
-                      {r.initials}
+        {/* Rating overview card */}
+        <RevealBlock className="mb-8">
+          <div className="rounded-3xl p-6 md:p-8"
+            style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="flex flex-col md:flex-row items-center md:items-stretch gap-6 md:gap-10">
+
+              {/* Left: big score */}
+              <div className="flex flex-col items-center justify-center shrink-0 text-center md:pr-10"
+                style={{ borderRight: '1px solid rgba(255,255,255,0.08)' }}>
+                <p className="text-8xl font-extrabold leading-none text-text tracking-tight mb-2">4.9</p>
+                <div className="flex items-center gap-1 mb-2">
+                  {[1,2,3,4,5].map(i => <span key={i} className="text-xl" style={{ color: '#fbbf24' }}>★</span>)}
+                </div>
+                <p className="text-sm text-muted whitespace-nowrap">Dựa trên 2,400+ đánh giá</p>
+              </div>
+
+              {/* Right: bar breakdown */}
+              <div className="flex-1 w-full flex flex-col justify-center gap-2.5">
+                {[
+                  { star: 5, pct: 80 },
+                  { star: 4, pct: 15 },
+                  { star: 3, pct: 5  },
+                  { star: 2, pct: 0  },
+                  { star: 1, pct: 0  },
+                ].map(({ star, pct }) => (
+                  <div key={star} className="flex items-center gap-3">
+                    <span className="text-base text-muted w-4 text-right shrink-0 leading-none">{star}</span>
+                    <span className="text-base shrink-0 leading-none" style={{ color: '#fbbf24' }}>★</span>
+                    <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.07)' }}>
+                      <div className="h-full rounded-full"
+                        style={{
+                          width: `${pct}%`,
+                          background: pct >= 50
+                            ? 'linear-gradient(90deg,#22c55e,#14b8a6)'
+                            : pct > 0
+                              ? 'linear-gradient(90deg,#14b8a6,#3b82f6)'
+                              : 'transparent',
+                        }} />
                     </div>
-                    <div>
-                      <p className="text-base font-semibold text-text leading-tight">{r.name}</p>
-                      <p className="text-xs text-muted leading-tight mt-0.5">{r.role}</p>
-                    </div>
+                    <span className="text-sm text-muted w-8 shrink-0">{pct}%</span>
                   </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </RevealBlock>
+
+        {/* Review cards — 2-col grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {REVIEWS.map((r, idx) => {
+            const featured = idx === 0;
+            return (
+              <RevealBlock key={r.id} delay={idx * 70}>
+                <div
+                  className="relative rounded-2xl p-6 h-full transition-all duration-300 cursor-default"
+                  style={{
+                    background: featured
+                      ? 'linear-gradient(135deg,rgba(20,50,35,0.95) 0%,rgba(10,35,28,0.98) 100%)'
+                      : 'rgba(255,255,255,0.025)',
+                    border: featured
+                      ? '1px solid rgba(34,197,94,0.28)'
+                      : `1px solid rgba(${r.rgb},0.13)`,
+                    boxShadow: featured ? '0 8px 40px rgba(34,197,94,0.12)' : 'none',
+                  }}
+                  onMouseEnter={e => {
+                    if (!featured) {
+                      e.currentTarget.style.background = `rgba(${r.rgb},0.05)`;
+                      e.currentTarget.style.borderColor = `rgba(${r.rgb},0.28)`;
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.boxShadow = `0 12px 36px rgba(${r.rgb},0.12)`;
+                    } else {
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = featured
+                      ? 'linear-gradient(135deg,rgba(20,50,35,0.95) 0%,rgba(10,35,28,0.98) 100%)'
+                      : 'rgba(255,255,255,0.025)';
+                    e.currentTarget.style.borderColor = featured ? 'rgba(34,197,94,0.28)' : `rgba(${r.rgb},0.13)`;
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = featured ? '0 8px 40px rgba(34,197,94,0.12)' : 'none';
+                  }}
+                >
+                  {/* Decorative quote mark */}
+                  <div className="absolute top-4 right-5 text-6xl font-serif leading-none select-none pointer-events-none"
+                    style={{ color: featured ? 'rgba(34,197,94,0.18)' : `rgba(${r.rgb},0.13)` }}>
+                    "
+                  </div>
+
+                  {/* Header: avatar + name + date */}
+                  <div className="flex items-center justify-between mb-3 pr-8">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+                        style={{
+                          background: featured ? 'rgba(34,197,94,0.2)' : `rgba(${r.rgb},0.16)`,
+                          color: featured ? '#4ade80' : r.color,
+                          border: `1.5px solid ${featured ? 'rgba(34,197,94,0.38)' : `rgba(${r.rgb},0.32)`}`,
+                        }}>
+                        {r.initials}
+                      </div>
+                      <div>
+                        <p className="text-base font-bold leading-tight" style={{ color: featured ? '#f0fdf4' : 'rgba(255,255,255,0.88)' }}>
+                          {r.name}
+                        </p>
+                        <p className="text-xs leading-tight mt-0.5" style={{ color: featured ? 'rgba(240,253,244,0.55)' : 'rgba(255,255,255,0.42)' }}>
+                          {r.role}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="text-xs shrink-0" style={{ color: featured ? 'rgba(240,253,244,0.45)' : 'rgba(255,255,255,0.35)' }}>
+                      {r.date}
+                    </span>
+                  </div>
+
+                  {/* Stars */}
+                  <div className="flex items-center gap-0.5 mb-4">
+                    {Array.from({ length: r.stars }).map((_, i) => (
+                      <span key={i} className="text-base" style={{ color: '#fbbf24' }}>★</span>
+                    ))}
+                  </div>
+
+                  {/* Review text */}
+                  <p className="text-base leading-relaxed italic mb-4"
+                    style={{ color: featured ? 'rgba(240,253,244,0.78)' : 'rgba(255,255,255,0.55)' }}>
+                    "{r.text}"
+                  </p>
+
                   {/* Tag */}
-                  <span className="shrink-0 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
-                    style={{ background: `rgba(${r.rgb},0.12)`, color: r.color }}>
+                  <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{
+                      background: featured ? 'rgba(34,197,94,0.15)' : `rgba(${r.rgb},0.1)`,
+                      color: featured ? '#4ade80' : r.color,
+                    }}>
                     {r.tag}
                   </span>
                 </div>
-
-                {/* Stars */}
-                <div className="flex items-center gap-0.5 mb-3">
-                  {Array.from({ length: r.stars }).map((_, i) => (
-                    <span key={i} className="text-sm" style={{ color: '#fbbf24' }}>★</span>
-                  ))}
-                </div>
-
-                {/* Quote text */}
-                <p className="text-base text-muted leading-relaxed mb-3">"{r.text}"</p>
-
-                {/* Footer */}
-                <div className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: r.color }} />
-                  <span className="text-xs text-muted/60">{r.date}</span>
-                </div>
-              </div>
-            </RevealBlock>
-          ))}
+              </RevealBlock>
+            );
+          })}
         </div>
 
-        {/* Summary bar */}
-        <RevealBlock delay={200} className="mt-10">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 py-6 px-8 rounded-2xl"
-            style={{ background: 'rgba(34,197,94,0.04)', border: '1px solid rgba(34,197,94,0.1)' }}>
-            {[
-              { v: '4.9', l: 'Điểm trung bình', sub: 'trên thang 5.0' },
-              { v: '2,400+', l: 'Người tham gia', sub: 'cộng đồng sống khỏe' },
-              { v: '98%', l: 'Hài lòng', sub: 'tiếp tục sau 30 ngày' },
-            ].map(({ v, l, sub }) => (
-              <div key={l} className="text-center">
-                <p className="text-3xl font-extrabold" style={{ color: '#22c55e' }}>{v}</p>
-                <p className="text-base font-semibold text-text">{l}</p>
-                <p className="text-xs text-muted">{sub}</p>
-              </div>
-            ))}
-          </div>
+        {/* Pagination dots */}
+        <RevealBlock delay={150} className="flex items-center justify-center gap-2 mt-8">
+          {REVIEWS.map((r, i) => (
+            <div key={r.id} className="rounded-full transition-all duration-300"
+              style={{
+                width: i === 0 ? 24 : 8, height: 8,
+                background: i === 0 ? '#22c55e' : 'rgba(255,255,255,0.18)',
+              }} />
+          ))}
         </RevealBlock>
       </section>
 

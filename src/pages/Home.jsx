@@ -388,7 +388,7 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-14 pb-28">
 
           {/* Badge pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-14 select-none"
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-8 select-none"
             style={{
               background: 'rgba(34,197,94,0.07)',
               border: '1px solid rgba(34,197,94,0.2)',
@@ -401,30 +401,30 @@ export default function Home() {
           </div>
 
           {/* Logo with 3 orbit rings */}
-          <div className="relative mb-6" style={{ width: 148, height: 148 }}>
+          <div className="relative mb-8" style={{ width: 180, height: 180 }}>
             {/* Ambient glow */}
             <div className="absolute inset-0 pointer-events-none rounded-full"
               style={{ background: 'rgba(34,197,94,0.12)', filter: 'blur(32px)', transform: 'scale(3)', animation: 'htRingPulse 3s ease-in-out infinite' }} />
 
-            {/* Outer orbit ring — 220px */}
+            {/* Outer orbit ring — 268px */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div style={{ position: 'absolute', width: 220, height: 220, animation: 'htOrbitSpin 14s linear infinite' }}>
+              <div style={{ position: 'absolute', width: 268, height: 268, animation: 'htOrbitSpin 14s linear infinite' }}>
                 <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1px dashed rgba(34,197,94,0.18)' }} />
-                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', width: 7, height: 7, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 10px 3px rgba(34,197,94,0.65)' }} />
+                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', width: 8, height: 8, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 12px 3px rgba(34,197,94,0.65)' }} />
               </div>
             </div>
 
-            {/* Middle orbit ring — 174px */}
+            {/* Middle orbit ring — 212px */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div style={{ position: 'absolute', width: 174, height: 174, animation: 'htOrbitSpinRev 9s linear infinite' }}>
+              <div style={{ position: 'absolute', width: 212, height: 212, animation: 'htOrbitSpinRev 9s linear infinite' }}>
                 <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1px solid rgba(20,184,166,0.2)' }} />
-                <div style={{ position: 'absolute', bottom: '8%', right: '8%', width: 5, height: 5, borderRadius: '50%', background: '#14b8a6', boxShadow: '0 0 8px 2px rgba(20,184,166,0.6)' }} />
+                <div style={{ position: 'absolute', bottom: '8%', right: '8%', width: 6, height: 6, borderRadius: '50%', background: '#14b8a6', boxShadow: '0 0 8px 2px rgba(20,184,166,0.6)' }} />
               </div>
             </div>
 
-            {/* Inner orbit ring — 140px */}
+            {/* Inner orbit ring — 170px */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div style={{ position: 'absolute', width: 140, height: 140, animation: 'htOrbitSpin 6s linear infinite 0.5s' }}>
+              <div style={{ position: 'absolute', width: 170, height: 170, animation: 'htOrbitSpin 6s linear infinite 0.5s' }}>
                 <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1.5px solid rgba(168,85,247,0.25)' }} />
                 <div style={{ position: 'absolute', top: '12%', right: 0, transform: 'translate(50%, -50%)', width: 5, height: 5, borderRadius: '50%', background: '#a855f7', boxShadow: '0 0 8px 2px rgba(168,85,247,0.55)' }} />
               </div>
@@ -433,7 +433,7 @@ export default function Home() {
             {/* Logo image */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="ht-icon select-none">
-                <img src="/logo.png" alt="" className="h-24 w-24 md:h-28 md:w-28 drop-shadow-[0_0_18px_rgba(34,197,94,0.35)]" />
+                <img src="/logo.png" alt="" className="h-32 w-32 md:h-36 md:w-36 drop-shadow-[0_0_22px_rgba(34,197,94,0.4)]" />
               </div>
             </div>
           </div>

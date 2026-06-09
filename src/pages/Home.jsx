@@ -105,6 +105,57 @@ const WHY_ITEMS = [
 
 const PILLARS_KEYS = ['pillarA','pillarB','pillarC','pillarD','pillarE','pillarF'];
 
+const REVIEWS = [
+  {
+    id:'r1', initials:'TN', name:'Thanh Nguyên', role:'Kế toán · Hà Nội', stars:5,
+    color:'#22c55e', rgb:'34,197,94', tag:'Vận động',
+    text:'Trước đây mình nghĩ tập thể dục cần ít nhất 1 tiếng mới có tác dụng. Sau 30 ngày với framework Daily Core 20 phút, cân nặng giảm 3kg, ngủ ngon hơn hẳn. Không ngờ đơn giản đến vậy!',
+    date:'2 tuần trước',
+  },
+  {
+    id:'r2', initials:'MH', name:'Minh Hoàng', role:'Lập trình viên · TP.HCM', stars:5,
+    color:'#84cc16', rgb:'132,204,22', tag:'Dinh dưỡng',
+    text:'Phần TDEE calculator và thực đơn 7 ngày rất thực tế. Mình không phải "nhịn ăn" gì cả, chỉ cần điều chỉnh tỷ lệ macro. 12 tuần mà tăng được 4kg cơ bắp chất lượng.',
+    date:'1 tháng trước',
+  },
+  {
+    id:'r3', initials:'HL', name:'Hà Linh', role:'Giáo viên · Đà Nẵng', stars:5,
+    color:'#a855f7', rgb:'168,85,247', tag:'Tâm trí',
+    text:'Phần thiền và box breathing thật sự thay đổi cách mình xử lý stress. Sau 3 tuần thực hành buổi sáng, mình bình tĩnh hơn nhiều trước các tình huống căng thẳng trong lớp học.',
+    date:'3 tuần trước',
+  },
+  {
+    id:'r4', initials:'QT', name:'Quang Trung', role:'Doanh nhân · Hải Phòng', stars:5,
+    color:'#14b8a6', rgb:'20,184,166', tag:'Lối sống',
+    text:'Mình 42 tuổi, bắt đầu với chương trình 7 ngày vì sợ không theo được. Giờ đang ở tuần 10 của lộ trình 12 tuần. Năng lượng tăng rõ rệt, không còn buồn ngủ sau bữa trưa nữa.',
+    date:'5 ngày trước',
+  },
+  {
+    id:'r5', initials:'BT', name:'Bảo Trâm', role:'Sinh viên y khoa · Cần Thơ', stars:5,
+    color:'#3b82f6', rgb:'59,130,246', tag:'Kiến thức',
+    text:'Là sinh viên y, mình khá kỹ tính về nguồn thông tin. Nội dung ở đây có căn cứ khoa học, không dùng ngôn ngữ hoa mỹ quá mức. Recommend cho cả nhóm học của mình rồi.',
+    date:'2 tháng trước',
+  },
+  {
+    id:'r6', initials:'VL', name:'Văn Lộc', role:'Huấn luyện viên · Bình Dương', stars:5,
+    color:'#f97316', rgb:'249,115,22', tag:'Công cụ',
+    text:'Weekly rhythm 3+2+2 ngày mình dùng để lên lịch cho học viên luôn — cấu trúc hợp lý, dễ bền vững. Checklist hằng tuần giúp học viên tự theo dõi tiến độ mà không cần mình nhắc.',
+    date:'3 tháng trước',
+  },
+  {
+    id:'r7', initials:'AN', name:'Anh Nhi', role:'Nội trợ · Long An', stars:5,
+    color:'#22c55e', rgb:'34,197,94', tag:'Dinh dưỡng',
+    text:'Công thức nấu ăn lành mạnh mà cả nhà đều thích, không cần mua thực phẩm đắt tiền. Đĩa thức ăn 50% rau củ mà vẫn ngon hơn cả cơm nhà hàng. Con mình 8 tuổi còn ăn ngoan hơn trước!',
+    date:'1 tuần trước',
+  },
+  {
+    id:'r8', initials:'DK', name:'Đức Khải', role:'Bác sĩ nội trú · Hà Nội', stars:5,
+    color:'#a855f7', rgb:'168,85,247', tag:'Kiến thức',
+    text:'Tài liệu về nhịp sinh học circadian và giấc ngủ rất chất lượng, tôi còn dùng tham khảo khi tư vấn bệnh nhân. Hiếm có nguồn tiếng Việt nào tổng hợp tốt như vậy.',
+    date:'6 tuần trước',
+  },
+];
+
 export default function Home() {
   const { t }     = useTranslation();
   const { t: tP } = useTranslation('pillars');
@@ -697,6 +748,89 @@ export default function Home() {
             );
           })}
         </div>
+      </section>
+
+      {/* ── Testimonials ───────────────────────────────── */}
+      <section className="mb-20">
+        <RevealBlock className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-4"
+            style={{ background: 'rgba(34,197,94,0.07)', border: '1px solid rgba(34,197,94,0.2)', color: '#86efac' }}>
+            ★★★★★ Đánh giá từ cộng đồng
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-text mb-3">Họ Đã Thay Đổi Như Thế Nào</h2>
+          <p className="text-muted text-lg max-w-xl mx-auto">2,400+ người đang sống khỏe hơn mỗi ngày — đây là câu chuyện của họ</p>
+        </RevealBlock>
+
+        {/* Masonry-style 3-col grid */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+          {REVIEWS.map((r, idx) => (
+            <RevealBlock key={r.id} delay={idx * 60} className="break-inside-avoid">
+              <div
+                className="rounded-2xl p-5 border transition-all duration-300 hover:-translate-y-1 cursor-default"
+                style={{
+                  background: 'rgba(255,255,255,0.025)',
+                  border: `1px solid rgba(${r.rgb},0.14)`,
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = `rgba(${r.rgb},0.05)`; e.currentTarget.style.borderColor = `rgba(${r.rgb},0.3)`; e.currentTarget.style.boxShadow = `0 12px 36px rgba(${r.rgb},0.12)`; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.025)'; e.currentTarget.style.borderColor = `rgba(${r.rgb},0.14)`; e.currentTarget.style.boxShadow = 'none'; }}
+              >
+                {/* Header row */}
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    {/* Avatar */}
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+                      style={{ background: `rgba(${r.rgb},0.18)`, color: r.color, border: `1.5px solid rgba(${r.rgb},0.35)` }}>
+                      {r.initials}
+                    </div>
+                    <div>
+                      <p className="text-base font-semibold text-text leading-tight">{r.name}</p>
+                      <p className="text-xs text-muted leading-tight mt-0.5">{r.role}</p>
+                    </div>
+                  </div>
+                  {/* Tag */}
+                  <span className="shrink-0 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
+                    style={{ background: `rgba(${r.rgb},0.12)`, color: r.color }}>
+                    {r.tag}
+                  </span>
+                </div>
+
+                {/* Stars */}
+                <div className="flex items-center gap-0.5 mb-3">
+                  {Array.from({ length: r.stars }).map((_, i) => (
+                    <span key={i} className="text-sm" style={{ color: '#fbbf24' }}>★</span>
+                  ))}
+                </div>
+
+                {/* Quote text */}
+                <p className="text-base text-muted leading-relaxed mb-3">"{r.text}"</p>
+
+                {/* Footer */}
+                <div className="flex items-center gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: r.color }} />
+                  <span className="text-xs text-muted/60">{r.date}</span>
+                </div>
+              </div>
+            </RevealBlock>
+          ))}
+        </div>
+
+        {/* Summary bar */}
+        <RevealBlock delay={200} className="mt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 py-6 px-8 rounded-2xl"
+            style={{ background: 'rgba(34,197,94,0.04)', border: '1px solid rgba(34,197,94,0.1)' }}>
+            {[
+              { v: '4.9', l: 'Điểm trung bình', sub: 'trên thang 5.0' },
+              { v: '2,400+', l: 'Người tham gia', sub: 'cộng đồng sống khỏe' },
+              { v: '98%', l: 'Hài lòng', sub: 'tiếp tục sau 30 ngày' },
+            ].map(({ v, l, sub }) => (
+              <div key={l} className="text-center">
+                <p className="text-3xl font-extrabold" style={{ color: '#22c55e' }}>{v}</p>
+                <p className="text-base font-semibold text-text">{l}</p>
+                <p className="text-xs text-muted">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </RevealBlock>
       </section>
 
       {/* ── Closing — Quote + CTA (merged) ────────────── */}

@@ -28,7 +28,8 @@
     "cta": "Jetzt Starten",
     "pillars_title": "Gesund Leben 360",
     "social_proof": "2.400+ Menschen leben gesünder",
-    "social_rating": "Bewertet mit 4,7/5"
+    "social_rating": "Bewertet mit 4,7/5",
+    "ecosystem_badge": "Umfassendes Gesundheits-Ökosystem"
   },
   "home": {
     "stats": [
@@ -98,24 +99,81 @@
     ],
     "why_items": [
       {
-        "title": "Wissenschaftlich fundiert",
+        "title": "Wissenschaftlich Fundiert",
         "statSub": "Basiert",
-        "desc": "Aus zuverlässiger medizinischer Forschung zusammengestellt — keine Tricks oder flüchtigen Trends."
+        "desc": "Aus vertrauenswürdiger medizinischer Forschung zusammengefasst — keine Tipps oder flüchtigen Trends.",
+        "detailTitle": "Warum ist Wissenschaft wichtig?",
+        "details": [
+          "Alle Inhalte werden aus vertrauenswürdigen Quellen zusammengefasst: WHO, PubMed, Harvard Medical School, American College of Sports Medicine.",
+          "Keine unbegründeten Tipps oder Social-Media-Trends — nur Dinge, die durch echte Forschung bestätigt wurden.",
+          "Das System unterscheidet klar: stark bewiesene Erkenntnisse (RCT, Meta-Analysen), experimentelle Befunde und persönliche Meinungen.",
+          "Wendet Prinzipien der Lifestyle-Medizin an: Ernährung, Bewegung, Schlaf und Geisteshaltung werden als ganzheitliches System betrachtet.",
+          "Regelmäßig mit neuen Erkenntnissen aktualisiert — nicht starr an veraltete Theorien gebunden."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "PubMed & WHO", "note": "Primäre Referenzquellen" },
+          { "icon": "📊", "label": "RCT & Meta-Analysen", "note": "Priorisiert stärkste Belege" },
+          { "icon": "🔄", "label": "Laufend aktualisiert", "note": "Folgt der neuesten Forschung" },
+          { "icon": "🎓", "label": "Harvard Medical", "note": "Und führende Universitäten weltweit" }
+        ]
       },
       {
         "title": "Einfach & Praktisch",
         "statSub": "Min./Tag",
-        "desc": "10 Minuten täglich reichen zum Starten. Jede Anleitung wurde speziell für vielbeschäftigte Menschen entwickelt."
+        "desc": "10 Minuten am Tag reichen zum Start. Jede Anleitung ist speziell für vielbeschäftigte Menschen.",
+        "detailTitle": "Warum nur 10 Minuten?",
+        "details": [
+          "Studien zeigen: 10–20 Minuten moderater Bewegung täglich reichen aus, um Herzgesundheit, Stimmung und Schlafqualität zu verbessern.",
+          "Daily Core Framework: 5 Min. Aufwärmen → 10–20 Min. Haupttraining → 5 Min. Abkühlen → 5 Min. Mind-Reset. Gesamt 25–35 Min., flexibel kürzbar.",
+          "Kein Fitnessstudio oder Spezialgeräte nötig — alle Übungen zu Hause auf 2m² möglich.",
+          "Gewohnheits-Stacking-Prinzip: neue Gewohnheiten an bestehende koppeln (Kaffee kochen → 5 Min. Stretching; Zähneputzen → 5 Min. Achtsamkeit).",
+          "Kein-Druck-Philosophie: Einen Tag verpassen ist kein Problem — einfach am nächsten Tag weitermachen."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "25–35 Min./Tag", "note": "Genug um das Leben zu verändern" },
+          { "icon": "🏠", "label": "Zuhause, kein Gym", "note": "Keine Spezialgeräte nötig" },
+          { "icon": "🔗", "label": "Gewohnheits-Stacking", "note": "An bestehende Gewohnheiten koppeln" },
+          { "icon": "🎒", "label": "Jeder Zeitplan", "note": "Flexibel für Vielbeschäftigte" }
+        ]
       },
       {
         "title": "Klarer Fahrplan",
         "statSub": "Meilensteine",
-        "desc": "7 Tage → 12 Wochen → 24 Wochen. Kleine Schritte, nie überwältigt fühlen oder aufgeben."
+        "desc": "7 Tage → 12 Wochen → 24 Wochen. Kleine Schritte, niemals überfordert oder aufgeben.",
+        "detailTitle": "Eine 3-stufige Reise",
+        "details": [
+          "🌱 Phase 1 — 7-Tage-Start: Erlernen von 3 Grundgewohnheiten (morgendliche Bewegung, ausreichend Protein, regelmäßiger Schlaf). Ziel: nicht nach der ersten Woche aufgeben.",
+          "💪 Phase 2 — Wochen 2–12: Grundlage aufbauen. Schrittweise personalisierte Ernährung, Weekly Rhythm, kurze Achtsamkeit hinzufügen. Fortschrittstest alle 4 Wochen.",
+          "🚀 Phase 3 — Wochen 13–24: Vollständige Personalisierung. Intensität an Ihre Ziele anpassen: Gewichtsabnahme, Muskelaufbau oder allgemeine Ausdauerverbesserung.",
+          "Jede Woche hat eine klare Checkliste — wissen Sie genau, wo Sie stehen und was als nächstes zu tun ist.",
+          "Einen Tag verpassen? Einfach am nächsten Tag weitermachen — kein Neustart der gesamten Reise nötig."
+        ],
+        "points": [
+          { "icon": "🌱", "label": "7 Tage", "note": "Start & Grundgewohnheiten aufbauen" },
+          { "icon": "💪", "label": "12 Wochen", "note": "Grundlage aufbauen & festigen" },
+          { "icon": "🚀", "label": "24 Wochen", "note": "Vollständig personalisierte Meisterschaft" },
+          { "icon": "✅", "label": "Wöchentliche Checkliste", "note": "Immer wissen wo man steht" }
+        ]
       },
       {
         "title": "360° Vollständig",
         "statSub": "Säulen",
-        "desc": "Bewegung · Ernährung · Lebensstil · Geist · Wissen · Werkzeuge — kein Aspekt wird vergessen."
+        "desc": "Bewegung · Ernährung · Lebensstil · Geist · Wissen · Werkzeuge — kein Aspekt wird vergessen.",
+        "detailTitle": "6 miteinander verknüpfte Säulen",
+        "details": [
+          "🏃 Bewegung & Training: Daily Core 20–40 Min., Weekly Rhythm (3 Kraft + 2 Cardio + 2 Erholungstage). Angewandte Sportwissenschaft.",
+          "🥗 Ernährung & Mahlzeitenpläne: Personalisierter TDEE nach Gewicht, Größe und Lebensstil. Praktische 7-Tage-Pläne — kein Hungern, ausgewogene Makros.",
+          "🌿 Gesunder Lebensstil: Schlaf optimieren, Morgensonne, richtige Flüssigkeitszufuhr. Kleine Änderungen, große Wirkung.",
+          "🧘 Geistige Gesundheit: 3-Schritte-Meditation für Anfänger, Box-Breathing (Navy SEAL-Technik), evidenzbasiertes Stressmanagement.",
+          "📚 Gesundheitswissen: Körper verstehen für kluge Entscheidungen — Lebensmitteletiketten lesen, Gesundheitsindikatoren verstehen, Warnsignale erkennen.",
+          "🛠️ Tools & Ressourcen: Tägliche/wöchentliche Checklisten, Mahlzeiten-Templates, 4-Wochen-Bewertungstests — sofort nutzbar, keine App nötig."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Bewegung", "note": "Daily Core & Weekly Rhythm" },
+          { "icon": "🥗", "label": "Ernährung", "note": "TDEE & personalisierte Mahlzeiten" },
+          { "icon": "🧘", "label": "Achtsamkeit", "note": "Meditation & Stressmanagement" },
+          { "icon": "🛠️", "label": "Werkzeuge", "note": "Checklisten & praktische Templates" }
+        ]
       }
     ],
     "reviews": {

@@ -28,7 +28,8 @@
     "cta": "Get Started",
     "pillars_title": "Healthy Living 360",
     "social_proof": "2,400+ people living healthier",
-    "social_rating": "Rated 4.7/5"
+    "social_rating": "Rated 4.7/5",
+    "ecosystem_badge": "Comprehensive Healthy Living Ecosystem"
   },
   "home": {
     "stats": [
@@ -100,22 +101,79 @@
       {
         "title": "Science-Based",
         "statSub": "Based",
-        "desc": "Synthesized from trusted medical research — not tips or fleeting trends."
+        "desc": "Synthesized from trusted medical research — not tips or fleeting trends.",
+        "detailTitle": "Why does science matter?",
+        "details": [
+          "All content is synthesized from trusted sources: WHO, PubMed, Harvard Medical School, American College of Sports Medicine.",
+          "No unsubstantiated tips or social media trends — only things verified through actual research.",
+          "The system clearly distinguishes: strongly proven evidence (RCT, meta-analysis), experimental findings, and personal opinions.",
+          "Applies Lifestyle Medicine principles: nutrition, exercise, sleep, and mindset are considered as one integrated whole.",
+          "Regularly updated with new evidence — not rigidly tied to outdated theories."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "PubMed & WHO", "note": "Primary reference sources" },
+          { "icon": "📊", "label": "RCT & Meta-analysis", "note": "Prioritizes strongest evidence" },
+          { "icon": "🔄", "label": "Continuously updated", "note": "Tracks the latest research" },
+          { "icon": "🎓", "label": "Harvard Medical", "note": "And leading global universities" }
+        ]
       },
       {
         "title": "Simple & Practical",
         "statSub": "min/day",
-        "desc": "10 minutes a day is enough to start. Every guide is designed specifically for busy people."
+        "desc": "10 minutes a day is enough to start. Every guide is designed specifically for busy people.",
+        "detailTitle": "Why only 10 minutes?",
+        "details": [
+          "Research shows 10–20 minutes of moderate-intensity exercise per day is enough to improve cardiovascular health, mood, and sleep quality.",
+          "Daily Core Framework: 5 min warm-up → 10–20 min main workout → 5 min cooldown → 5 min mind reset. Total 25–35 min, flexible to shorten when busy.",
+          "No gym or special equipment needed — all exercises can be done at home in as little as 2m² of space.",
+          "Habit Stacking principle: attach new habits to existing ones (brewing coffee → 5 min stretch; brushing teeth → 5 min mindfulness).",
+          "No-pressure philosophy: missing one day is fine — just continue tomorrow, no need to restart."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "25–35 min/day", "note": "Enough to change your life" },
+          { "icon": "🏠", "label": "At home, no gym", "note": "No special equipment needed" },
+          { "icon": "🔗", "label": "Habit Stacking", "note": "Attach to existing habits" },
+          { "icon": "🎒", "label": "Any schedule", "note": "Flexible for the busiest people" }
+        ]
       },
       {
         "title": "Clear Roadmap",
         "statSub": "milestones",
-        "desc": "7 days → 12 weeks → 24 weeks. Small steps, never feel overwhelmed or give up."
+        "desc": "7 days → 12 weeks → 24 weeks. Small steps, never feel overwhelmed or give up.",
+        "detailTitle": "A 3-Level Journey",
+        "details": [
+          "🌱 Phase 1 — 7-Day Kickstart: Learn 3 basic habits (morning movement, adequate protein, regular sleep). Goal: don't quit after the first week.",
+          "💪 Phase 2 — Weeks 2–12: Build your foundation. Gradually add personalized nutrition, Weekly Rhythm, short mindfulness. Progress test every 4 weeks.",
+          "🚀 Phase 3 — Weeks 13–24: Full personalization. Adjust intensity to your specific goals: weight loss, muscle gain, or overall endurance improvement.",
+          "Each week has a clear checklist — know exactly where you are and what to do next. No 'gray zones'.",
+          "If you miss a day, just continue the next day — no need to restart your entire journey."
+        ],
+        "points": [
+          { "icon": "🌱", "label": "7 days", "note": "Kickstart & build base habits" },
+          { "icon": "💪", "label": "12 weeks", "note": "Build foundation & consolidate" },
+          { "icon": "🚀", "label": "24 weeks", "note": "Fully personalized mastery" },
+          { "icon": "✅", "label": "Weekly checklist", "note": "Always know where you stand" }
+        ]
       },
       {
         "title": "360° Complete",
         "statSub": "pillars",
-        "desc": "Movement · Nutrition · Lifestyle · Mind · Knowledge · Tools — no angle left behind."
+        "desc": "Movement · Nutrition · Lifestyle · Mind · Knowledge · Tools — no angle left behind.",
+        "detailTitle": "6 Interconnected Pillars",
+        "details": [
+          "🏃 Movement & Exercise: Daily Core 20–40 min, Weekly Rhythm (3 strength + 2 cardio + 2 recovery days). Applied sports science.",
+          "🥗 Nutrition & Meal Plans: Personalized TDEE based on weight, height, and lifestyle. Practical 7-day meal plans — no starvation, balanced macros.",
+          "🌿 Healthy Lifestyle: Optimize sleep, morning sunlight exposure, proper hydration. Small changes, big impact.",
+          "🧘 Mindful Living: 3-step meditation for beginners, box breathing (Navy SEAL technique), evidence-based stress management.",
+          "📚 Health Knowledge: Understand your body to make smart decisions — reading food labels, understanding health indicators, recognizing warning signs.",
+          "🛠️ Tools & Resources: Daily/weekly checklists, meal templates, 4-week assessment tests — download and use immediately."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Movement", "note": "Daily Core & Weekly Rhythm" },
+          { "icon": "🥗", "label": "Nutrition", "note": "TDEE & personalized meals" },
+          { "icon": "🧘", "label": "Mindfulness", "note": "Meditation & stress management" },
+          { "icon": "🛠️", "label": "Tools", "note": "Checklists & practical templates" }
+        ]
       }
     ],
     "reviews": {

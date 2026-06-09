@@ -464,7 +464,7 @@ export default function Home() {
               animation: 'htBadgePulse 3.5s ease-in-out infinite',
             }}>
             <span className="ht-amp text-base">✦</span>
-            <span>Hệ Sinh Thái Sức Khỏe Toàn Diện</span>
+            <span>{t('hero.ecosystem_badge')}</span>
             <span className="ht-amp text-base" style={{ animationDelay: '1s' }}>✦</span>
           </div>
 
@@ -1106,6 +1106,7 @@ export default function Home() {
       {/* ── Why detail modal ───────────────────────────── */}
       {expandedWhy !== null && (() => {
         const item = WHY_ITEMS[expandedWhy];
+        const wt = Array.isArray(whyItemsTr) && whyItemsTr[expandedWhy] ? whyItemsTr[expandedWhy] : item;
         return (
           <div
             className="fixed inset-0 z-[200] flex items-center justify-center p-4"
@@ -1143,11 +1144,11 @@ export default function Home() {
               {/* Content */}
               <div className="p-6 md:p-8">
                 <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{item.title}</h2>
-                <p className="font-semibold text-base mb-6" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.detailTitle}</p>
+                <p className="font-semibold text-base mb-6" style={{ color: `rgba(${item.rgb},0.7)` }}>{wt.detailTitle || item.detailTitle}</p>
 
                 {/* Detail paragraphs */}
                 <ul className="space-y-3 mb-8">
-                  {item.details.map((d, di) => (
+                  {(wt.details || item.details).map((d, di) => (
                     <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
                       <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
                         style={{ background: `rgba(${item.rgb},0.15)`, color: item.color }}>{di + 1}</span>
@@ -1158,7 +1159,7 @@ export default function Home() {
 
                 {/* Key points grid */}
                 <div className="grid grid-cols-2 gap-3">
-                  {item.points.map((pt, pi) => (
+                  {(wt.points || item.points).map((pt, pi) => (
                     <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
                       style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
                       <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>

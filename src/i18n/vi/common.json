@@ -28,7 +28,8 @@
     "cta": "Bắt Đầu Ngay",
     "pillars_title": "Sống Khỏe 360",
     "social_proof": "2,400+ người đang sống khỏe",
-    "social_rating": "Đánh giá 4.7/5"
+    "social_rating": "Đánh giá 4.7/5",
+    "ecosystem_badge": "Hệ Sinh Thái Sức Khỏe Toàn Diện"
   },
   "home": {
     "stats": [
@@ -100,22 +101,79 @@
       {
         "title": "Dựa Trên Khoa Học",
         "statSub": "Based",
-        "desc": "Tổng hợp từ nghiên cứu y khoa tin cậy — không phải mẹo vặt hay xu hướng nhất thời."
+        "desc": "Tổng hợp từ nghiên cứu y khoa tin cậy — không phải mẹo vặt hay xu hướng nhất thời.",
+        "detailTitle": "Tại sao khoa học quan trọng?",
+        "details": [
+          "Mọi nội dung được tổng hợp từ các nguồn uy tín: WHO, PubMed, Harvard Medical School, American College of Sports Medicine.",
+          "Không có lời khuyên \"mẹo vặt\" hay xu hướng mạng xã hội thiếu cơ sở — chỉ những điều đã được kiểm chứng qua nghiên cứu thực tế.",
+          "Hệ thống phân biệt rõ: điều gì đã được chứng minh mạnh (RCT, meta-analysis), điều gì mới thử nghiệm, điều gì chỉ là ý kiến cá nhân.",
+          "Ứng dụng nguyên tắc Y học Lối sống (Lifestyle Medicine): dinh dưỡng, vận động, giấc ngủ, tâm trí được xem xét như một tổng thể.",
+          "Cập nhật định kỳ theo bằng chứng mới — không cứng nhắc theo một lý thuyết cũ."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "PubMed & WHO", "note": "Nguồn tài liệu tham khảo chính" },
+          { "icon": "📊", "label": "RCT & Meta-analysis", "note": "Ưu tiên bằng chứng mạnh nhất" },
+          { "icon": "🔄", "label": "Cập nhật liên tục", "note": "Theo kịp nghiên cứu mới nhất" },
+          { "icon": "🎓", "label": "Harvard Medical", "note": "Và các đại học hàng đầu thế giới" }
+        ]
       },
       {
         "title": "Đơn Giản & Thực Chiến",
         "statSub": "phút/ngày",
-        "desc": "10 phút mỗi ngày là đủ để bắt đầu. Mọi hướng dẫn thiết kế riêng cho người bận rộn."
+        "desc": "10 phút mỗi ngày là đủ để bắt đầu. Mọi hướng dẫn thiết kế riêng cho người bận rộn.",
+        "detailTitle": "Tại sao chỉ cần 10 phút?",
+        "details": [
+          "Nghiên cứu cho thấy 10–20 phút vận động cường độ vừa mỗi ngày đã đủ cải thiện sức khỏe tim mạch, tâm trạng và chất lượng giấc ngủ.",
+          "Framework Daily Core: 5 phút khởi động → 10–20 phút chính → 5 phút giãn cơ → 5 phút mind reset. Tổng 25–35 phút, linh hoạt cắt ngắn khi bận.",
+          "Không cần gym hay dụng cụ đặc biệt — toàn bộ bài tập thực hiện tại nhà với không gian tối thiểu 2m².",
+          "Nguyên tắc Habit Stacking: gắn thói quen mới vào thói quen cũ (pha cà phê → 5 phút stretch; đánh răng → 5 phút mindfulness).",
+          "Triết lý \"không áp lực\": bỏ 1 ngày thì tiếp tục hôm sau — không cần bắt đầu lại từ đầu."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "25–35 phút/ngày", "note": "Đủ để thay đổi cuộc sống" },
+          { "icon": "🏠", "label": "Tại nhà, không gym", "note": "Không cần dụng cụ đặc biệt" },
+          { "icon": "🔗", "label": "Habit Stacking", "note": "Gắn vào thói quen sẵn có" },
+          { "icon": "🎒", "label": "Mọi lịch trình", "note": "Linh hoạt với người bận nhất" }
+        ]
       },
       {
         "title": "Lộ Trình Rõ Ràng",
         "statSub": "mốc tiến bộ",
-        "desc": "7 ngày → 12 tuần → 24 tuần. Từng bước nhỏ, không bao giờ cảm thấy choáng ngợp hay bỏ cuộc."
+        "desc": "7 ngày → 12 tuần → 24 tuần. Từng bước nhỏ, không bao giờ cảm thấy choáng ngợp hay bỏ cuộc.",
+        "detailTitle": "Hành trình 3 cấp độ",
+        "details": [
+          "🌱 Giai đoạn 1 — 7 ngày Khởi Động: Làm quen 3 thói quen cơ bản (vận động sáng, ăn đủ protein, ngủ đúng giờ). Mục tiêu: không bỏ cuộc sau tuần đầu.",
+          "💪 Giai đoạn 2 — Tuần 2–12: Tăng nền tảng. Thêm dần dinh dưỡng cá nhân hóa, Weekly Rhythm, mindfulness ngắn. Cứ 4 tuần có test đánh giá tiến bộ.",
+          "🚀 Giai đoạn 3 — Tuần 13–24: Cá nhân hóa hoàn toàn. Điều chỉnh theo mục tiêu riêng: giảm cân, tăng cơ, cải thiện sức bền tổng thể.",
+          "Mỗi tuần có checklist rõ ràng — biết chính xác mình đang ở đâu, cần làm gì tiếp. Không có \"vùng mờ\".",
+          "Nếu bỏ lỡ 1 ngày, chỉ cần tiếp tục hôm sau — không phải restart lại toàn bộ hành trình."
+        ],
+        "points": [
+          { "icon": "🌱", "label": "7 ngày", "note": "Khởi động & xây thói quen nền" },
+          { "icon": "💪", "label": "12 tuần", "note": "Tăng nền & củng cố hệ thống" },
+          { "icon": "🚀", "label": "24 tuần", "note": "Cá nhân hóa & làm chủ hoàn toàn" },
+          { "icon": "✅", "label": "Checklist tuần", "note": "Biết mình đang ở đâu" }
+        ]
       },
       {
         "title": "Toàn Diện 360°",
         "statSub": "trụ cột",
-        "desc": "Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — không bỏ sót bất kỳ góc độ nào."
+        "desc": "Vận động · Dinh dưỡng · Lối sống · Tâm trí · Kiến thức · Công cụ — không bỏ sót bất kỳ góc độ nào.",
+        "detailTitle": "6 Trụ Cột Liên Kết Nhau",
+        "details": [
+          "🏃 Vận động & Tập luyện: Daily Core 20–40 phút, Weekly Rhythm (3 ngày sức mạnh + 2 ngày cardio + 2 ngày phục hồi). Khoa học vận động ứng dụng thực tế.",
+          "🥗 Dinh dưỡng & Thực đơn: TDEE cá nhân hóa theo cân nặng, chiều cao, lối sống. Thực đơn 7 ngày thực tế, không nhịn ăn, cân bằng macro.",
+          "🌿 Lối sống Khỏe: Tối ưu giấc ngủ, tiếp xúc ánh nắng sáng, hydration đúng cách. Những thay đổi nhỏ nhưng tác động lớn.",
+          "🧘 Tâm trí An nhiên: Thiền 3 bước cho người mới, box breathing (kỹ thuật Navy SEAL), quản lý stress bằng phương pháp thực chứng.",
+          "📚 Kiến thức Sức khỏe: Hiểu cơ thể để ra quyết định thông minh — đọc nhãn thực phẩm, hiểu chỉ số sức khỏe, nhận biết dấu hiệu cảnh báo.",
+          "🛠️ Công cụ & Tài nguyên: Checklist ngày/tuần, template ăn uống, test đánh giá 4 tuần — dùng ngay, không cần cài app."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Vận động", "note": "Daily Core & Weekly Rhythm" },
+          { "icon": "🥗", "label": "Dinh dưỡng", "note": "TDEE & thực đơn cá nhân" },
+          { "icon": "🧘", "label": "Tâm trí", "note": "Thiền & quản lý stress" },
+          { "icon": "🛠️", "label": "Công cụ", "note": "Checklist & template thực dụng" }
+        ]
       }
     ],
     "reviews": {

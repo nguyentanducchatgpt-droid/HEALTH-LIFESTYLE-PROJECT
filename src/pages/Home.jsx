@@ -396,7 +396,7 @@ export default function Home() {
 
           {/* Stats — 3 individual lift cards */}
           {Array.isArray(stats) && (
-            <div className="mt-10 w-full max-w-2xl mx-auto grid grid-cols-3 gap-3">
+            <div className="mt-10 w-full max-w-4xl mx-auto grid grid-cols-3 gap-3">
               {stats.map((stat, i) => {
                 const active = hoveredStat === i;
                 const color  = STAT_COLORS[i];
@@ -432,7 +432,7 @@ export default function Home() {
                     </div>
 
                     {/* Value */}
-                    <p className="relative font-extrabold text-xl leading-snug mb-1.5"
+                    <p className="relative font-extrabold text-xl leading-none mb-1.5 whitespace-nowrap"
                       style={{
                         color: active ? color : 'rgba(255,255,255,0.88)',
                         filter: active ? `drop-shadow(0 0 12px rgba(${rgb},0.6))` : 'none',

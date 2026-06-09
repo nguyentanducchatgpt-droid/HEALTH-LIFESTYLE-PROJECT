@@ -388,7 +388,7 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-14 pb-28">
 
           {/* Badge pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-6 select-none"
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-14 select-none"
             style={{
               background: 'rgba(34,197,94,0.07)',
               border: '1px solid rgba(34,197,94,0.2)',

@@ -375,12 +375,18 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
 export default function Program() {
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const contentRef = useRef(null);
   const initTab = new URLSearchParams(location.search).get('tab') || '7d';
   const [journey, setJourney] = useState(initTab);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
-    if (tab) { setJourney(tab); setExpandedPhase(0); setSubTab('phases'); }
+    if (tab) {
+      setJourney(tab);
+      setExpandedPhase(0);
+      setSubTab('phases');
+      setTimeout(() => contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+    }
   }, [location.search]);
   const [activeDay, setActiveDay] = useState(0);
   const [expandedPhase, setExpandedPhase] = useState(0);
@@ -546,6 +552,9 @@ export default function Program() {
           })}
         </div>
       </RevealBlock>
+
+      {/* scroll anchor for deep-link navigation */}
+      <div ref={contentRef} className="scroll-mt-20" />
 
       {/* ─────────────────────────────────────────────────────────
           ── 7-DAY JOURNEY ─────────────────────────────────────

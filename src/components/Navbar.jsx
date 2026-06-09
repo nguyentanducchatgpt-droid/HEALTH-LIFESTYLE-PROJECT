@@ -21,10 +21,10 @@ const NAV_LINKS = [
 ];
 
 const PROGRAM_ITEMS = [
-  { icon: '🌱', to: '/program', hash: '7d',     labelKey: 'nav.p7d',     color: 'text-green-400',  dot: 'bg-green-400' },
-  { icon: '📈', to: '/program', hash: '12w',    labelKey: 'nav.p12w',    color: 'text-lime-400',   dot: 'bg-lime-400' },
-  { icon: '🎓', to: '/program', hash: '24w',    labelKey: 'nav.p24w',    color: 'text-purple-400', dot: 'bg-purple-400' },
-  { icon: '🗺️', to: '/program', hash: 'sample', labelKey: 'nav.psample', color: 'text-teal-400',   dot: 'bg-teal-400' },
+  { icon: '🌱', to: '/program?tab=7d',     hash: '7d',     labelKey: 'nav.p7d',     color: 'text-green-400',  dot: 'bg-green-400' },
+  { icon: '📈', to: '/program?tab=12w',    hash: '12w',    labelKey: 'nav.p12w',    color: 'text-lime-400',   dot: 'bg-lime-400' },
+  { icon: '🎓', to: '/program?tab=24w',    hash: '24w',    labelKey: 'nav.p24w',    color: 'text-purple-400', dot: 'bg-purple-400' },
+  { icon: '🗺️', to: '/program?tab=sample', hash: 'sample', labelKey: 'nav.psample', color: 'text-teal-400',   dot: 'bg-teal-400' },
 ];
 
 export default function Navbar() {

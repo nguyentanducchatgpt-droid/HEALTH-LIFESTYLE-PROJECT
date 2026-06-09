@@ -1,6 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 // ── RevealBlock ──────────────────────────────────────────────────────────────
@@ -249,9 +249,10 @@ const PROGRESS_ROWS = [
 
 // ── Journey config ───────────────────────────────────────────────────────────
 const JOURNEYS = [
-  { id:'7d',  label:'7 Ngày Khởi Động', sub:'Tuần đầu tiên', icon:'🌱', color:'#22c55e', rgb:'34,197,94',   desc:'Bắt đầu nhẹ nhàng với 7 ngày đầu tiên. Mỗi ngày tích hợp đủ 4 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí.' },
-  { id:'12w', label:'12 Tuần Cơ Bản',  sub:'Chương trình nền tảng', icon:'📈', color:'#84cc16', rgb:'132,204,22', desc:'3 giai đoạn 12 tuần: Khởi Động → Xây Nền → Cá Nhân Hóa. Đủ thời gian để thay đổi thói quen não bộ vĩnh viễn.' },
-  { id:'24w', label:'24 Tuần Nâng Cao', sub:'Chương trình toàn diện', icon:'🎓', color:'#a855f7', rgb:'168,85,247', desc:'6 giai đoạn 24 tuần: từ người mới đến làm chủ hoàn toàn hệ thống sức khỏe cá nhân. Carb cycling + supplement + mastery.' },
+  { id:'7d',     label:'7 Ngày Khởi Động',  sub:'Tuần đầu tiên',        icon:'🌱', color:'#22c55e', rgb:'34,197,94',   desc:'Bắt đầu nhẹ nhàng với 7 ngày đầu tiên. Mỗi ngày tích hợp đủ 4 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí.' },
+  { id:'12w',    label:'12 Tuần Cơ Bản',   sub:'Chương trình nền tảng', icon:'📈', color:'#84cc16', rgb:'132,204,22', desc:'3 giai đoạn 12 tuần: Khởi Động → Xây Nền → Cá Nhân Hóa. Đủ thời gian để thay đổi thói quen não bộ vĩnh viễn.' },
+  { id:'24w',    label:'24 Tuần Nâng Cao',  sub:'Chương trình toàn diện', icon:'🎓', color:'#a855f7', rgb:'168,85,247', desc:'6 giai đoạn 24 tuần: từ người mới đến làm chủ hoàn toàn hệ thống sức khỏe cá nhân. Carb cycling + supplement + mastery.' },
+  { id:'sample', label:'Lộ Trình Mẫu',      sub:'Ví dụ thực tế',          icon:'🗺️', color:'#0ea5e9', rgb:'14,165,233',  desc:'Xem lộ trình 12 tuần của một người thực tế: 32 tuổi, nhân viên văn phòng, mục tiêu giảm 5kg và tăng năng lượng.' },
 ];
 
 const SUB_TABS_12W = [
@@ -373,10 +374,18 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
 // ── Main Component ───────────────────────────────────────────────────────────
 export default function Program() {
   const { t, i18n } = useTranslation();
-  const [journey, setJourney] = useState('7d');
+  const location = useLocation();
+  const initTab = new URLSearchParams(location.search).get('tab') || '7d';
+  const [journey, setJourney] = useState(initTab);
+
+  useEffect(() => {
+    const tab = new URLSearchParams(location.search).get('tab');
+    if (tab) { setJourney(tab); setExpandedPhase(0); setSubTab('phases'); }
+  }, [location.search]);
   const [activeDay, setActiveDay] = useState(0);
   const [expandedPhase, setExpandedPhase] = useState(0);
   const [subTab, setSubTab] = useState('phases');
+  const [samplePhase, setSamplePhase] = useState(0);
 
   // Translated data — fall back to hardcoded Vietnamese constants if key missing
   const tJourneys = t('program.journeys', { returnObjects: true });
@@ -514,7 +523,7 @@ export default function Program() {
       {/* ── Journey Mode Selector ─────────────────────────────── */}
       <RevealBlock className="mb-10">
         <h2 className="text-base font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.choose')}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {localJourneys.map(j => {
             const active = journey === j.id;
             return (
@@ -847,6 +856,170 @@ export default function Program() {
             )}
 
           </div>
+        </div>
+      )}
+
+      {/* ── Sample Roadmap ───────────────────────────────────── */}
+      {journey === 'sample' && (
+        <div key="sample" className="animate-fade-in-up">
+
+          {/* Profile card */}
+          <RevealBlock className="mb-8">
+            <div className="relative rounded-3xl overflow-hidden border border-sky-500/25 bg-sky-500/5">
+              <div className="absolute inset-0 grid-dots opacity-10 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-56 h-56 bg-sky-500/8 rounded-full blur-[80px] pointer-events-none" />
+              <div className="relative p-6 md:p-8">
+                <div className="flex flex-col md:flex-row md:items-center gap-5 mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-sky-500/12 border border-sky-500/25 flex items-center justify-center text-3xl shrink-0">👨‍💼</div>
+                  <div className="flex-1">
+                    <div className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">Hồ Sơ Người Dùng Mẫu</div>
+                    <h2 className="text-xl md:text-2xl font-bold text-text mb-1">Anh Tuấn — 32 tuổi, Nhân viên văn phòng</h2>
+                    <p className="text-base text-muted">TP.HCM · Ngồi nhiều 8h/ngày · Ít tập luyện 2 năm gần đây · Hay mệt · Mục tiêu: giảm 5kg + tăng năng lượng trong 12 tuần</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {[
+                    { icon:'⚖️', val:'78 kg',   sub:'Cân nặng ban đầu' },
+                    { icon:'📏', val:'172 cm',   sub:'Chiều cao' },
+                    { icon:'🔥', val:'2,080 kcal',sub:'TDEE ước tính' },
+                    { icon:'🎯', val:'73 kg',    sub:'Mục tiêu 12 tuần' },
+                  ].map((s, i) => (
+                    <div key={i} className="rounded-xl border border-sky-500/15 bg-sky-500/5 p-3 text-center">
+                      <div className="text-xl mb-1">{s.icon}</div>
+                      <div className="font-bold text-text text-base">{s.val}</div>
+                      <div className="text-[10px] text-muted mt-0.5">{s.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </RevealBlock>
+
+          {/* Phases timeline */}
+          <RevealBlock className="mb-8">
+            <h2 className="text-xl font-bold mb-1" style={{ color: '#0ea5e9' }}>Lộ Trình 12 Tuần Thực Tế</h2>
+            <p className="text-base text-muted mb-6">Click từng giai đoạn để xem chi tiết từng tuần của anh Tuấn</p>
+            <div className="space-y-4">
+              {[
+                {
+                  phase:'PHASE 1', weeks:'Tuần 1–4', name:'Khởi Động Từ Số 0', emoji:'🌱',
+                  color:'#22c55e', rgb:'34,197,94',
+                  goal:'Hình thành 3 thói quen không thể thiếu: tập 3×/tuần, ăn đủ đạm, ngủ trước 23h',
+                  detail:[
+                    { w:1, focus:'Học 6 động tác cơ bản',        kcal:'1,680 kcal', sleep:'23:00', steps:'6,500',  note:'Tuần 1 mục tiêu duy nhất: đến phòng tập. Không quan tâm số lần hay cân nặng.' },
+                    { w:2, focus:'Lặp lại · thêm 1 set',          kcal:'1,700 kcal', sleep:'22:45', steps:'7,000',  note:'Não học qua lặp lại. Tuấn bắt đầu nhớ tên các bài tập.' },
+                    { w:3, focus:"Thêm đi bộ 20' sau cơm trưa",  kcal:'1,720 kcal', sleep:'22:30', steps:'7,800',  note:'Phát hiện ra đi bộ sau ăn giúp giảm buồn ngủ 2h chiều — thắng lớn!' },
+                    { w:4, focus:"Test baseline · tập 4×/tuần",   kcal:'1,690 kcal', sleep:'22:30', steps:'8,000',  note:'Test tuần 4: 8 push-up, 18 squat/phút, cân 77.2kg (−0.8kg).' },
+                  ],
+                },
+                {
+                  phase:'PHASE 2', weeks:'Tuần 5–8', name:'Xây Nền Vững Chắc', emoji:'📈',
+                  color:'#84cc16', rgb:'132,204,22',
+                  goal:'Tăng khối lượng tập, tính TDEE, bắt đầu theo dõi macro — cụ thể và đo lường được',
+                  detail:[
+                    { w:5, focus:'Tăng 1 set/bài · Tính TDEE B0',  kcal:'1,750 kcal', sleep:'22:15', steps:'8,500',  note:'B0 cho TDEE 2,080 kcal, target 1,680 kcal (deficit 400). Tuấn bắt đầu tracking.' },
+                    { w:6, focus:'Meal prep chủ nhật 45 phút',      kcal:'1,710 kcal', sleep:'22:20', steps:'9,000',  note:'Meal prep thay đổi hoàn toàn: không còn bữa nhậu ngẫu hứng trưa. Cân 75.8kg.' },
+                    { w:7, focus:'Thêm cardio T3+T5',               kcal:'1,730 kcal', sleep:'22:10', steps:'9,200',  note:'Cardio: đạp xe tĩnh 25 phút. Nhịp tim lúc nghỉ xuống 72 bpm (trước: 78).' },
+                    { w:8, focus:'Test tiến bộ tuần 8',             kcal:'1,720 kcal', sleep:'22:15', steps:'9,500',  note:'Test tuần 8: 16 push-up (+8), 27 squat/phút (+9), cân 74.9kg.' },
+                  ],
+                },
+                {
+                  phase:'PHASE 3', weeks:'Tuần 9–12', name:'Cá Nhân Hóa & Làm Chủ', emoji:'🎯',
+                  color:'#a855f7', rgb:'168,85,247',
+                  goal:'Chọn hướng rõ ràng (giảm mỡ + sức mạnh), tối ưu bằng dữ liệu 8 tuần',
+                  detail:[
+                    { w:9,  focus:'Carb cycling cơ bản',             kcal:'1,680–1,900', sleep:'22:00', steps:'10,000', note:'Ngày tập nặng: 1,900 kcal. Ngày nghỉ: 1,680 kcal. Năng lượng ổn định hơn hẳn.' },
+                    { w:10, focus:"Thiền 5' · Journaling nâng cao",  kcal:'1,720 kcal',  sleep:'22:00', steps:'10,000', note:'Thiền 5 phút sáng. Tuấn nhận ra căng thẳng giảm 30% dù công việc không đổi.' },
+                    { w:11, focus:'Tự lên kế hoạch tuần',            kcal:'1,700 kcal',  sleep:'22:00', steps:'10,500', note:'Lần đầu tự thiết kế lịch tập không cần app. Cân 73.5kg — gần mục tiêu!' },
+                    { w:12, focus:'Test cuối · Lộ trình 12 tuần tiếp', kcal:'1,720 kcal', sleep:'22:00', steps:'10,000', note:'KẾT QUẢ: 22 push-up, 35 squat/phút, cân 73.1kg (−4.9kg), nhịp tim 68 bpm. ✅ Đạt mục tiêu!' },
+                  ],
+                },
+              ].map((ph, pi) => {
+                const active = samplePhase === pi;
+                return (
+                  <div key={pi}>
+                    <button
+                      onClick={() => setSamplePhase(active ? -1 : pi)}
+                      className="w-full text-left rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer"
+                      style={{ borderColor: `rgba(${ph.rgb},0.3)`, background: `rgba(${ph.rgb},0.04)` }}
+                    >
+                      <div className="px-5 py-4 flex items-center gap-4">
+                        <span className="text-2xl">{ph.emoji}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: ph.color }}>{ph.phase} · {ph.weeks}</div>
+                          <div className="font-bold text-text text-base leading-tight">{ph.name}</div>
+                          <p className="text-base text-muted leading-relaxed mt-0.5">{ph.goal}</p>
+                        </div>
+                        <span className="text-muted text-lg transition-transform duration-300 shrink-0" style={{ transform: active ? 'rotate(180deg)' : 'none' }}>▾</span>
+                      </div>
+                    </button>
+                    {active && (
+                      <div className="border border-t-0 rounded-b-2xl overflow-hidden animate-fade-in-up" style={{ borderColor: `rgba(${ph.rgb},0.2)` }}>
+                        <div className="divide-y" style={{ '--dv': `rgba(${ph.rgb},0.12)` }}>
+                          {ph.detail.map((row) => (
+                            <div key={row.w} className="px-5 py-4 grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-x-5 gap-y-1">
+                              <div className="flex items-center gap-3 sm:flex-col sm:items-center sm:justify-center sm:w-14">
+                                <span className="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full shrink-0" style={{ color: ph.color, background: `rgba(${ph.rgb},0.1)` }}>T{row.w}</span>
+                              </div>
+                              <div className="min-w-0">
+                                <div className="font-semibold text-text text-base mb-1">{row.focus}</div>
+                                <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-[11px] text-muted mb-1.5">
+                                  <span>🔥 {row.kcal}</span>
+                                  <span>😴 Ngủ {row.sleep}</span>
+                                  <span>👟 {row.steps} bước</span>
+                                </div>
+                                <p className="text-base text-muted/80 italic leading-relaxed">💬 {row.note}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </RevealBlock>
+
+          {/* Key lessons */}
+          <RevealBlock className="mb-8">
+            <h2 className="text-xl font-bold mb-4" style={{ color: '#0ea5e9' }}>Bài Học Từ Lộ Trình Của Tuấn</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { icon:'🎯', title:'Mục tiêu cụ thể thắng mọi động lực',      desc:'"-5kg trong 12 tuần" cho phép tính ngược ra deficit 400 kcal/ngày. Mơ hồ = thất bại.' },
+                { icon:'🍱', title:'Meal prep = 60% thành công',               desc:'Tuần nào Tuấn meal prep, tuần đó không lệch quá 100 kcal. Tuần nào không, sai tới 400 kcal.' },
+                { icon:'😴', title:'Ngủ quyết định cân nặng, không chỉ bài tập',desc:'2 tuần ngủ trước 22h: giảm 1.2kg. 2 tuần ngủ kém: chỉ giảm 0.3kg dù tập đều.' },
+                { icon:'📊', title:'Số liệu là gương soi trung thực',          desc:'Không có tracking, Tuấn nghĩ mình "ăn ít rồi". Tracking cho thấy thực tế hơn 300 kcal.' },
+              ].map((l, i) => (
+                <RevealBlock key={i} delay={i * 60} className="rounded-2xl border border-sky-500/15 bg-sky-500/4 p-4">
+                  <div className="text-xl mb-2">{l.icon}</div>
+                  <div className="font-bold text-text text-base mb-1">{l.title}</div>
+                  <p className="text-base text-muted leading-relaxed">{l.desc}</p>
+                </RevealBlock>
+              ))}
+            </div>
+          </RevealBlock>
+
+          {/* CTA */}
+          <RevealBlock className="mb-8">
+            <div className="rounded-2xl border border-sky-500/25 bg-sky-500/5 p-5 flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex-1">
+                <div className="font-bold text-text text-base mb-1">Bắt đầu lộ trình của bạn ngay hôm nay</div>
+                <p className="text-base text-muted">Chọn 7 Ngày Khởi Động nếu bạn mới bắt đầu, hoặc 12 Tuần Cơ Bản nếu đã sẵn sàng.</p>
+              </div>
+              <div className="flex gap-2 shrink-0">
+                <button onClick={() => { setJourney('7d'); setExpandedPhase(0); setSubTab('phases'); }}
+                  className="px-4 py-2.5 rounded-xl bg-green-500/10 border border-green-500/25 text-green-400 text-base font-bold hover:bg-green-500/20 transition-all duration-200">
+                  🌱 7 Ngày
+                </button>
+                <button onClick={() => { setJourney('12w'); setExpandedPhase(0); setSubTab('phases'); }}
+                  className="px-4 py-2.5 rounded-xl bg-accent/10 border border-accent/25 text-accent text-base font-bold hover:bg-accent/20 transition-all duration-200">
+                  📈 12 Tuần
+                </button>
+              </div>
+            </div>
+          </RevealBlock>
+
         </div>
       )}
 

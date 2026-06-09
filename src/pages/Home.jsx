@@ -1126,7 +1126,7 @@ export default function Home() {
                 {/* Stat watermark */}
                 <div className="absolute top-5 right-6 text-right">
                   <div className="font-black leading-none" style={{ fontSize: '52px', color: item.color, textShadow: `0 0 30px rgba(${item.rgb},0.7)` }}>{item.stat}</div>
-                  <div className="text-[11px] font-bold uppercase tracking-widest mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.statSub}</div>
+                  <div className="text-[11px] font-bold uppercase tracking-widest mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>{wt.statSub || item.statSub}</div>
                 </div>
                 {/* Icon */}
                 <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
@@ -1143,7 +1143,7 @@ export default function Home() {
 
               {/* Content */}
               <div className="p-6 md:p-8">
-                <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{item.title}</h2>
+                <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{wt.title || item.title}</h2>
                 <p className="font-semibold text-base mb-6" style={{ color: `rgba(${item.rgb},0.7)` }}>{wt.detailTitle || item.detailTitle}</p>
 
                 {/* Detail paragraphs */}

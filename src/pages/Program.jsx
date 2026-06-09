@@ -227,6 +227,44 @@ const WEEKLY_RHYTHM = [
 const DAY_CLS = { green:'bg-green-500/8 border-green-500/25 text-green-400', blue:'bg-blue-500/8 border-blue-500/25 text-blue-400', teal:'bg-teal-500/8 border-teal-500/25 text-teal-400', purple:'bg-purple-500/8 border-purple-500/25 text-purple-400' };
 const DAY_DOT = { green:'bg-green-400', blue:'bg-blue-400', teal:'bg-teal-400', purple:'bg-purple-400' };
 
+const TAB_META = [
+  { icon:'💪', c:'#22c55e', rgb:'34,197,94',   ring:'ring-green-500/30',  shadow:'shadow-[0_0_24px_rgba(34,197,94,0.18)]'  },
+  { icon:'🏃', c:'#3b82f6', rgb:'59,130,246',  ring:'ring-blue-500/30',   shadow:'shadow-[0_0_24px_rgba(59,130,246,0.18)]' },
+  { icon:'🧘', c:'#14b8a6', rgb:'20,184,166',  ring:'ring-teal-500/30',   shadow:'shadow-[0_0_24px_rgba(20,184,166,0.18)]' },
+  { icon:'😴', c:'#a855f7', rgb:'168,85,247',  ring:'ring-purple-500/30', shadow:'shadow-[0_0_24px_rgba(168,85,247,0.18)]' },
+];
+
+const WEEKLY_PANEL = [
+  {
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=70',
+    intensity: 'RPE 7/10', duration: '20–30\'', sessions: '3×/tuần', rest: '60–90s',
+    moves: ['Squat — 3×12', 'Hinge (Deadlift) — 3×10', 'Push (Push-up) — 3×10', 'Pull (Row) — 3×10', 'Core (Plank) — 3×30s'],
+    tips: ['Form trước cường độ — không tăng tải khi chưa đúng tư thế', 'Khởi động 5\' bắt buộc trước mỗi buổi', 'Tăng không quá 10% volume/tuần', 'Ghi RPE + số lần vào nhật ký ngay sau buổi tập'],
+    avoid: 'Không tập 2 ngày liên tiếp — cơ cần 48h để tái tạo',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=70',
+    intensity: 'RPE 5/10', duration: '20–30\'', sessions: '2×/tuần', rest: 'N/A',
+    moves: ['Đi bộ nhanh — nhịp tim 100–120 bpm', 'Đạp xe tĩnh / ngoài trời', 'Leo cầu thang (NEAT)', 'Bơi lội nhẹ / aqua jogging', 'Nhảy dây nhẹ — 10\' đủ'],
+    tips: ['Sau bữa trưa = giảm đường huyết 20–30%', 'Đi bộ đến chỗ làm = NEAT miễn phí', 'Nghe podcast / nhạc để tăng commitment', 'Nhịp tim mục tiêu = (220 - tuổi) × 60–70%'],
+    avoid: 'Không chạy nhanh ngay sau bữa ăn — chờ ít nhất 30 phút',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=70',
+    intensity: 'RPE 3/10', duration: '20–45\'', sessions: '1×/tuần', rest: 'Linh hoạt',
+    moves: ['Giãn cơ tĩnh — giữ 30–60s/vị trí', 'Foam roll toàn thân — 10\'', 'Yoga nhẹ / yin yoga', 'Đi bộ thư giãn công viên', 'Massage nhẹ / tự massage bằng bóng'],
+    tips: ['Đây là "tập vô hình" — cơ lớn lúc phục hồi', 'Breathing: hít 4s → giữ 4s → thở ra 6s', 'Đây là lúc nghe body signal tốt nhất', 'Uống nhiều nước hơn bình thường'],
+    avoid: 'Tránh coi đây là ngày lười biếng — phục hồi có chủ đích = cơ lớn hơn',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=900&q=70',
+    intensity: 'Không', duration: 'Tùy ý', sessions: '1×/tuần', rest: 'Hoàn toàn',
+    moves: ['Đọc sách / nghe nhạc thư giãn', 'Thiền 10–15 phút', 'Dành thời gian với gia đình', 'Nấu ăn lành mạnh meal prep', 'Lên kế hoạch cho tuần mới'],
+    tips: ['Nghỉ không phải thua — đây là khi protein synthesis cao nhất', 'Ngủ 8h+ nếu có thể — golden window tái tạo', 'Review nhật ký tuần: 3 điều tốt, 1 cải thiện', 'Lên kế hoạch thực đơn + lịch tập cho tuần tới'],
+    avoid: 'Đừng tập "bù" nếu bỏ buổi — điều chỉnh lịch thay vì tập gấp đôi',
+  },
+];
+
 const SUCCESS_TIPS = [
   { icon:'🔁', title:'Nhất Quán Hơn Cường Độ',     desc:'3–5 buổi/tuần đều đặn quan trọng hơn 1 buổi kiệt sức. 20 phút mỗi ngày thắng 2 giờ mỗi tháng.' },
   { icon:'📈', title:'Tăng Tải Từ Từ',              desc:'Tăng không quá 10% volume/tuần. Quy tắc này ngăn chấn thương và burnout về lâu dài.' },
@@ -392,6 +430,7 @@ export default function Program() {
   const [expandedPhase, setExpandedPhase] = useState(0);
   const [subTab, setSubTab] = useState('phases');
   const [samplePhase, setSamplePhase] = useState(0);
+  const [weeklyTab, setWeeklyTab] = useState(0);
 
   // Translated data — fall back to hardcoded Vietnamese constants if key missing
   const tJourneys = t('program.journeys', { returnObjects: true });
@@ -770,35 +809,163 @@ export default function Program() {
             )}
 
             {/* ── Weekly rhythm tab ────────── */}
-            {subTab === 'weekly' && (
-              <div className="space-y-3">
-                {WEEKLY_RHYTHM.map((day,i) => (
-                  <RevealBlock key={i} delay={i*70} className="flex items-center gap-4 bg-surface border border-border rounded-2xl p-4 hover:border-border-bright transition-all duration-200 group">
-                    <div className={`w-28 shrink-0 text-center px-3 py-2 rounded-xl border text-base font-bold leading-tight ${DAY_CLS[day.color]}`}>{day.days}</div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-text text-lg">{day.type}</h3>
-                      <p className="text-base text-muted mt-0.5 leading-relaxed">{day.desc}</p>
+            {subTab === 'weekly' && (() => {
+              const day   = WEEKLY_RHYTHM[weeklyTab];
+              const meta  = TAB_META[weeklyTab];
+              const panel = WEEKLY_PANEL[weeklyTab];
+              return (
+                <div>
+                  {/* ── Browser-tab row ── */}
+                  <div className="relative mb-0">
+                    {/* tab bar track */}
+                    <div className="flex gap-1 overflow-x-auto scrollbar-hide pb-0 relative z-10" style={{ borderBottom: `2px solid rgba(${meta.rgb},0.22)` }}>
+                      {WEEKLY_RHYTHM.map((d, i) => {
+                        const m = TAB_META[i];
+                        const active = weeklyTab === i;
+                        return (
+                          <button
+                            key={i}
+                            onClick={() => setWeeklyTab(i)}
+                            className="relative flex items-center gap-2 px-4 py-3 rounded-t-xl shrink-0 cursor-pointer transition-all duration-250 group"
+                            style={{
+                              background: active ? `rgba(${m.rgb},0.10)` : 'transparent',
+                              borderTop:    active ? `2px solid ${m.c}` : '2px solid transparent',
+                              borderLeft:   active ? `1px solid rgba(${m.rgb},0.22)` : '1px solid transparent',
+                              borderRight:  active ? `1px solid rgba(${m.rgb},0.22)` : '1px solid transparent',
+                              borderBottom: active ? `2px solid rgba(${m.rgb},0.10)` : 'none',
+                              marginBottom: active ? '-2px' : '0',
+                            }}
+                          >
+                            {/* colored favicon dot */}
+                            <span
+                              className="w-2 h-2 rounded-full shrink-0 transition-all duration-200"
+                              style={{ background: active ? m.c : `rgba(${m.rgb},0.4)`, boxShadow: active ? `0 0 6px ${m.c}` : 'none' }}
+                            />
+                            <span className="text-lg leading-none">{m.icon}</span>
+                            <span className={`text-base font-semibold whitespace-nowrap transition-colors duration-200 ${active ? 'text-text' : 'text-muted group-hover:text-text/80'}`}>
+                              {d.type}
+                            </span>
+                            <span
+                              className="hidden sm:inline text-[10px] font-bold px-1.5 py-0.5 rounded-md"
+                              style={{ color: m.c, background: `rgba(${m.rgb},0.12)` }}
+                            >
+                              {d.days}
+                            </span>
+                          </button>
+                        );
+                      })}
                     </div>
-                    <div className={`shrink-0 w-2.5 h-2.5 rounded-full ${DAY_DOT[day.color]} opacity-60 group-hover:opacity-100 transition-opacity`} />
-                  </RevealBlock>
-                ))}
-                <RevealBlock delay={320} className="p-5 rounded-2xl border border-blue-500/15 bg-blue-500/4 mt-4">
-                  <h3 className="text-base font-bold uppercase tracking-widest text-blue-400 mb-3">📌 {t('program.adjust_schedule_title', 'Điều Chỉnh Cho Lịch Của Bạn')}</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-base text-muted">
-                    {(() => {
-                      const tips = t('program.adjust_tips', { returnObjects: true });
-                      const tArr = Array.isArray(tips) ? tips : [
-                        "Siêu bận: T2/T4/CN — 3 buổi/tuần là đủ ổn định",
-                        "Shift làm việc: linh hoạt ngày, giữ đủ 3–4 buổi/tuần",
-                        "Mới bắt đầu: 3 buổi/tuần, mỗi buổi 20–25 phút",
-                        "Cardio nhẹ: đi bộ đến nơi làm = tích hợp NEAT tự nhiên"
-                      ];
-                      return tArr.map((tip, i) => <p key={i}>• {tip}</p>);
-                    })()}
                   </div>
-                </RevealBlock>
-              </div>
-            )}
+
+                  {/* ── Content panel ── */}
+                  <div
+                    key={weeklyTab}
+                    className="rounded-b-2xl rounded-tr-2xl border-x border-b overflow-hidden animate-fade-in-up"
+                    style={{ borderColor: `rgba(${meta.rgb},0.22)`, background: `rgba(${meta.rgb},0.03)` }}
+                  >
+                    {/* Hero image strip */}
+                    <div className="relative h-36 md:h-48 overflow-hidden">
+                      <img src={panel.img} alt={day.type} className="w-full h-full object-cover" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/50 to-transparent" />
+                      <div className="absolute inset-0" style={{ background: `linear-gradient(to right, rgba(${meta.rgb},0.5) 0%, transparent 55%)` }} />
+                      <div className="absolute bottom-0 left-0 p-5">
+                        <div className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: meta.c }}>{day.days}</div>
+                        <h3 className="font-black text-2xl md:text-3xl text-white leading-tight">{day.type}</h3>
+                        <p className="text-base text-white/70 mt-0.5">{day.desc}</p>
+                      </div>
+                      {/* Stats badges */}
+                      <div className="absolute bottom-4 right-4 flex gap-2">
+                        {[
+                          { l:'Thời lượng', v: panel.duration },
+                          { l:'Cường độ',   v: panel.intensity },
+                          { l:'Tần suất',   v: panel.sessions },
+                        ].map((s,i) => (
+                          <div key={i} className="hidden sm:flex flex-col items-center px-3 py-1.5 rounded-xl bg-black/50 border border-white/10 backdrop-blur-sm">
+                            <span className="text-[10px] text-white/50 uppercase tracking-wider">{s.l}</span>
+                            <span className="text-base font-bold text-white leading-tight">{s.v}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="p-5 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {/* Exercises */}
+                      <div>
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest mb-3" style={{ color: meta.c }}>
+                          Bài Tập / Hoạt Động
+                        </h4>
+                        <ul className="space-y-2">
+                          {panel.moves.map((m, i) => (
+                            <li key={i} className="flex items-start gap-3 p-2.5 rounded-xl transition-all duration-150 hover:bg-white/3 group/move">
+                              <span
+                                className="mt-0.5 w-5 h-5 rounded-full shrink-0 flex items-center justify-center text-[10px] font-bold text-white"
+                                style={{ background: `rgba(${meta.rgb},0.7)` }}
+                              >
+                                {i + 1}
+                              </span>
+                              <span className="text-base text-muted group-hover/move:text-text transition-colors duration-150">{m}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Tips */}
+                      <div>
+                        <h4 className="text-[11px] font-bold uppercase tracking-widest mb-3" style={{ color: meta.c }}>
+                          Nguyên Tắc Thực Hiện
+                        </h4>
+                        <ul className="space-y-2 mb-4">
+                          {panel.tips.map((tip, i) => (
+                            <li key={i} className="flex items-start gap-2 text-base text-muted">
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: meta.c }} />
+                              {tip}
+                            </li>
+                          ))}
+                        </ul>
+                        {/* Avoid note */}
+                        <div
+                          className="p-3 rounded-xl border text-base"
+                          style={{ borderColor: `rgba(${meta.rgb},0.2)`, background: `rgba(${meta.rgb},0.06)`, color: meta.c }}
+                        >
+                          ⚠️ <span className="text-muted">{panel.avoid}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Mobile stats row */}
+                    <div className="sm:hidden grid grid-cols-3 gap-2 px-5 pb-5">
+                      {[
+                        { l:'Thời lượng', v: panel.duration },
+                        { l:'Cường độ',   v: panel.intensity },
+                        { l:'Tần suất',   v: panel.sessions },
+                      ].map((s,i) => (
+                        <div key={i} className="text-center p-2 rounded-xl border" style={{ borderColor:`rgba(${meta.rgb},0.18)`, background:`rgba(${meta.rgb},0.05)` }}>
+                          <div className="text-[10px] text-muted uppercase tracking-wide">{s.l}</div>
+                          <div className="font-bold text-text text-base mt-0.5">{s.v}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Adjust schedule tip */}
+                  <RevealBlock delay={200} className="p-4 rounded-2xl border border-blue-500/15 bg-blue-500/4 mt-4">
+                    <h3 className="text-base font-bold uppercase tracking-widest text-blue-400 mb-3">📌 {t('program.adjust_schedule_title', 'Điều Chỉnh Cho Lịch Của Bạn')}</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-base text-muted">
+                      {(() => {
+                        const tips = t('program.adjust_tips', { returnObjects: true });
+                        const tArr = Array.isArray(tips) ? tips : [
+                          'Siêu bận: T2/T4/CN — 3 buổi/tuần là đủ ổn định',
+                          'Shift làm việc: linh hoạt ngày, giữ đủ 3–4 buổi/tuần',
+                          'Mới bắt đầu: 3 buổi/tuần, mỗi buổi 20–25 phút',
+                          'Cardio nhẹ: đi bộ đến nơi làm = tích hợp NEAT tự nhiên',
+                        ];
+                        return tArr.map((tip, i) => <p key={i}>• {tip}</p>);
+                      })()}
+                    </div>
+                  </RevealBlock>
+                </div>
+              );
+            })()}
 
             {/* ── Success tips tab ─────────── */}
             {subTab === 'tips' && (

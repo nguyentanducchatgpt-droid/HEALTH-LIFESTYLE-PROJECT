@@ -162,9 +162,30 @@ export default function Home() {
   const stats        = t('home.stats',    { returnObjects: true });
   const journeysTr   = t('home.journeys', { returnObjects: true });
   const whyItemsTr   = t('home.why_items',{ returnObjects: true });
-  const heroRef      = useRef(null);
-  const [mousePos,   setMousePos]   = useState({ x: 0.5, y: 0.5 });
-  const [hoveredStat, setHoveredStat] = useState(null);
+  const heroRef        = useRef(null);
+  const reviewsRef     = useRef(null);
+  const reviewPaused   = useRef(false);
+  const [mousePos,      setMousePos]      = useState({ x: 0.5, y: 0.5 });
+  const [hoveredStat,   setHoveredStat]   = useState(null);
+  const [reviewDot,     setReviewDot]     = useState(0);
+
+  useEffect(() => {
+    const el = reviewsRef.current;
+    if (!el) return;
+    const CARD_W = () => el.querySelector('[data-review-card]')?.offsetWidth + 16 || 340;
+    const tick = setInterval(() => {
+      if (reviewPaused.current) return;
+      const max = el.scrollWidth - el.clientWidth;
+      const next = el.scrollLeft + CARD_W();
+      el.scrollTo({ left: next >= max - 4 ? 0 : next, behavior: 'smooth' });
+    }, 3800);
+    const onScroll = () => {
+      const cw = CARD_W();
+      setReviewDot(Math.round(el.scrollLeft / cw) % REVIEWS.length);
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => { clearInterval(tick); el.removeEventListener('scroll', onScroll); };
+  }, []);
 
   useEffect(() => {
     const id = 'home-title-kf';
@@ -807,50 +828,56 @@ export default function Home() {
           </div>
         </RevealBlock>
 
-        {/* Review cards — 2-col grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {REVIEWS.map((r, idx) => {
-            const featured = idx === 0;
-            return (
-              <RevealBlock key={r.id} delay={idx * 70}>
+        {/* Horizontal carousel */}
+        <RevealBlock>
+          <div
+            ref={reviewsRef}
+            className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 -mx-4 px-4 md:-mx-8 md:px-8"
+            style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}
+            onMouseEnter={() => { reviewPaused.current = true; }}
+            onMouseLeave={() => { reviewPaused.current = false; }}
+          >
+            {REVIEWS.map((r, idx) => {
+              const featured = idx === 0;
+              return (
                 <div
-                  className="relative rounded-2xl p-6 h-full transition-all duration-300 cursor-default"
+                  key={r.id}
+                  data-review-card=""
+                  className="relative shrink-0 rounded-2xl p-6 flex flex-col transition-all duration-300 cursor-default"
                   style={{
+                    width: 'clamp(280px, 75vw, 340px)',
+                    scrollSnapAlign: 'start',
                     background: featured
-                      ? 'linear-gradient(135deg,rgba(20,50,35,0.95) 0%,rgba(10,35,28,0.98) 100%)'
-                      : 'rgba(255,255,255,0.025)',
+                      ? 'linear-gradient(135deg,rgba(20,50,35,0.97) 0%,rgba(10,35,28,1) 100%)'
+                      : 'rgba(255,255,255,0.03)',
                     border: featured
-                      ? '1px solid rgba(34,197,94,0.28)'
-                      : `1px solid rgba(${r.rgb},0.13)`,
-                    boxShadow: featured ? '0 8px 40px rgba(34,197,94,0.12)' : 'none',
+                      ? '1px solid rgba(34,197,94,0.3)'
+                      : `1px solid rgba(${r.rgb},0.14)`,
+                    boxShadow: featured ? '0 8px 40px rgba(34,197,94,0.14)' : 'none',
                   }}
                   onMouseEnter={e => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
                     if (!featured) {
-                      e.currentTarget.style.background = `rgba(${r.rgb},0.05)`;
-                      e.currentTarget.style.borderColor = `rgba(${r.rgb},0.28)`;
-                      e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.boxShadow = `0 12px 36px rgba(${r.rgb},0.12)`;
-                    } else {
-                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.background = `rgba(${r.rgb},0.06)`;
+                      e.currentTarget.style.borderColor = `rgba(${r.rgb},0.3)`;
+                      e.currentTarget.style.boxShadow = `0 12px 36px rgba(${r.rgb},0.13)`;
                     }
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.background = featured
-                      ? 'linear-gradient(135deg,rgba(20,50,35,0.95) 0%,rgba(10,35,28,0.98) 100%)'
-                      : 'rgba(255,255,255,0.025)';
-                    e.currentTarget.style.borderColor = featured ? 'rgba(34,197,94,0.28)' : `rgba(${r.rgb},0.13)`;
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = featured ? '0 8px 40px rgba(34,197,94,0.12)' : 'none';
+                    e.currentTarget.style.background = featured ? 'linear-gradient(135deg,rgba(20,50,35,0.97) 0%,rgba(10,35,28,1) 100%)' : 'rgba(255,255,255,0.03)';
+                    e.currentTarget.style.borderColor = featured ? 'rgba(34,197,94,0.3)' : `rgba(${r.rgb},0.14)`;
+                    e.currentTarget.style.boxShadow = featured ? '0 8px 40px rgba(34,197,94,0.14)' : 'none';
                   }}
                 >
-                  {/* Decorative quote mark */}
-                  <div className="absolute top-4 right-5 text-6xl font-serif leading-none select-none pointer-events-none"
-                    style={{ color: featured ? 'rgba(34,197,94,0.18)' : `rgba(${r.rgb},0.13)` }}>
+                  {/* Decorative " */}
+                  <div className="absolute top-4 right-5 text-5xl font-serif leading-none select-none pointer-events-none"
+                    style={{ color: featured ? 'rgba(34,197,94,0.2)' : `rgba(${r.rgb},0.14)` }}>
                     "
                   </div>
 
-                  {/* Header: avatar + name + date */}
-                  <div className="flex items-center justify-between mb-3 pr-8">
+                  {/* Avatar + name + date */}
+                  <div className="flex items-center justify-between mb-3 pr-6">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
                         style={{
@@ -861,34 +888,37 @@ export default function Home() {
                         {r.initials}
                       </div>
                       <div>
-                        <p className="text-base font-bold leading-tight" style={{ color: featured ? '#f0fdf4' : 'rgba(255,255,255,0.88)' }}>
+                        <p className="text-base font-bold leading-tight"
+                          style={{ color: featured ? '#f0fdf4' : 'rgba(255,255,255,0.88)' }}>
                           {r.name}
                         </p>
-                        <p className="text-xs leading-tight mt-0.5" style={{ color: featured ? 'rgba(240,253,244,0.55)' : 'rgba(255,255,255,0.42)' }}>
+                        <p className="text-xs leading-tight mt-0.5"
+                          style={{ color: featured ? 'rgba(240,253,244,0.5)' : 'rgba(255,255,255,0.4)' }}>
                           {r.role}
                         </p>
                       </div>
                     </div>
-                    <span className="text-xs shrink-0" style={{ color: featured ? 'rgba(240,253,244,0.45)' : 'rgba(255,255,255,0.35)' }}>
+                    <span className="text-xs shrink-0"
+                      style={{ color: featured ? 'rgba(240,253,244,0.4)' : 'rgba(255,255,255,0.3)' }}>
                       {r.date}
                     </span>
                   </div>
 
                   {/* Stars */}
-                  <div className="flex items-center gap-0.5 mb-4">
+                  <div className="flex items-center gap-0.5 mb-3">
                     {Array.from({ length: r.stars }).map((_, i) => (
                       <span key={i} className="text-base" style={{ color: '#fbbf24' }}>★</span>
                     ))}
                   </div>
 
                   {/* Review text */}
-                  <p className="text-base leading-relaxed italic mb-4"
-                    style={{ color: featured ? 'rgba(240,253,244,0.78)' : 'rgba(255,255,255,0.55)' }}>
+                  <p className="text-base leading-relaxed italic flex-1 mb-4"
+                    style={{ color: featured ? 'rgba(240,253,244,0.75)' : 'rgba(255,255,255,0.52)' }}>
                     "{r.text}"
                   </p>
 
                   {/* Tag */}
-                  <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                  <span className="inline-block self-start text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
                     style={{
                       background: featured ? 'rgba(34,197,94,0.15)' : `rgba(${r.rgb},0.1)`,
                       color: featured ? '#4ade80' : r.color,
@@ -896,21 +926,32 @@ export default function Home() {
                     {r.tag}
                   </span>
                 </div>
-              </RevealBlock>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </RevealBlock>
 
         {/* Pagination dots */}
-        <RevealBlock delay={150} className="flex items-center justify-center gap-2 mt-8">
+        <div className="flex items-center justify-center gap-2 mt-6">
           {REVIEWS.map((r, i) => (
-            <div key={r.id} className="rounded-full transition-all duration-300"
+            <button
+              key={r.id}
+              onClick={() => {
+                const el = reviewsRef.current;
+                if (!el) return;
+                const cw = el.querySelector('[data-review-card]')?.offsetWidth + 16 || 340;
+                el.scrollTo({ left: i * cw, behavior: 'smooth' });
+                setReviewDot(i);
+              }}
+              className="rounded-full transition-all duration-300"
               style={{
-                width: i === 0 ? 24 : 8, height: 8,
-                background: i === 0 ? '#22c55e' : 'rgba(255,255,255,0.18)',
-              }} />
+                width: reviewDot === i ? 24 : 8,
+                height: 8,
+                background: reviewDot === i ? '#22c55e' : 'rgba(255,255,255,0.2)',
+              }}
+            />
           ))}
-        </RevealBlock>
+        </div>
       </section>
 
       {/* ── Closing — Quote + CTA (merged) ────────────── */}

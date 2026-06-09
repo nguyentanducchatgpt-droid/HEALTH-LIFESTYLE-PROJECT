@@ -432,7 +432,7 @@ export default function Home() {
                     </div>
 
                     {/* Value */}
-                    <p className="relative font-extrabold text-xl leading-none mb-1.5 whitespace-nowrap"
+                    <p className="relative font-extrabold text-xl leading-snug mb-1.5"
                       style={{
                         color: active ? color : 'rgba(255,255,255,0.88)',
                         filter: active ? `drop-shadow(0 0 12px rgba(${rgb},0.6))` : 'none',

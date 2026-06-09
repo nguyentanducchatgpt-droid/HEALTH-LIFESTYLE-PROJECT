@@ -117,34 +117,80 @@ export default function Home() {
 
   useEffect(() => {
     const id = 'home-title-kf';
-    if (document.getElementById(id)) return;
-    const s = document.createElement('style');
+    const existing = document.getElementById(id);
+    const s = existing || document.createElement('style');
     s.id = id;
     s.textContent = `
       @keyframes htShimmer1 { 0%{background-position:200% center} 100%{background-position:-200% center} }
       @keyframes htShimmer2 { 0%{background-position:-200% center} 100%{background-position:200% center} }
       @keyframes htAmpPulse {
-        0%,100%{filter:drop-shadow(0 0 8px rgba(34,197,94,0.9));opacity:1}
-        50%{filter:drop-shadow(0 0 22px rgba(34,197,94,1));opacity:0.75}
+        0%,100%{filter:drop-shadow(0 0 10px rgba(255,255,255,0.7)) drop-shadow(0 0 28px rgba(251,191,36,0.4));opacity:1;transform:scale(1)}
+        50%{filter:drop-shadow(0 0 22px rgba(255,255,255,0.95)) drop-shadow(0 0 48px rgba(251,191,36,0.6));opacity:0.88;transform:scale(1.06)}
       }
       @keyframes htFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
       @keyframes htScan { 0%{top:0%;opacity:0} 8%{opacity:1} 92%{opacity:0.6} 100%{top:100%;opacity:0} }
       @keyframes htBtnSweep { 0%{transform:translateX(-130%) skewX(-14deg)} 100%{transform:translateX(260%) skewX(-14deg)} }
       @keyframes htScrollBall { 0%,100%{transform:translateY(-3px);opacity:0.15} 55%{transform:translateY(9px);opacity:0.9} }
       @keyframes htRingPulse { 0%,100%{opacity:0.15;transform:scale(1)} 50%{opacity:0.35;transform:scale(1.18)} }
+      @keyframes htOrbitSpin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+      @keyframes htOrbitSpinRev { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
+      @keyframes htParticleUp {
+        0%{transform:translateY(0) scale(1);opacity:0}
+        10%{opacity:0.8}
+        85%{opacity:0.2}
+        100%{transform:translateY(-560px) scale(0.15);opacity:0}
+      }
+      @keyframes htBgFloat {
+        0%,100%{transform:translateY(0) rotate(0deg)}
+        33%{transform:translateY(-16px) rotate(6deg)}
+        66%{transform:translateY(-9px) rotate(-4deg)}
+      }
+      @keyframes htPingRing {
+        0%{transform:scale(1);opacity:0.55}
+        100%{transform:scale(2.4);opacity:0}
+      }
+      @keyframes htBadgePulse {
+        0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+        50%{box-shadow:0 0 18px 2px rgba(34,197,94,0.18)}
+      }
       .ht-part1 {
-        background: linear-gradient(110deg,#22c55e 0%,#86efac 28%,#ffffff 50%,#86efac 72%,#22c55e 100%);
+        background: linear-gradient(110deg,
+          #c2410c 0%,
+          #f97316 16%,
+          #fbbf24 34%,
+          #fef3c7 50%,
+          #fbbf24 66%,
+          #f97316 84%,
+          #ea580c 100%
+        );
         background-size: 300% 100%;
         -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        animation: htShimmer1 5s linear infinite;
+        animation: htShimmer1 4.5s linear infinite;
+        filter: drop-shadow(0 2px 12px rgba(249,115,22,0.22));
       }
       .ht-part2 {
-        background: linear-gradient(110deg,#0d9488 0%,#5eead4 28%,#ffffff 50%,#5eead4 72%,#14b8a6 100%);
+        background: linear-gradient(110deg,
+          #4338ca 0%,
+          #818cf8 18%,
+          #a5b4fc 32%,
+          #e0f2fe 50%,
+          #a5b4fc 68%,
+          #818cf8 82%,
+          #4f46e5 100%
+        );
         background-size: 300% 100%;
         -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        animation: htShimmer2 6s linear infinite;
+        animation: htShimmer2 5.5s linear infinite;
+        filter: drop-shadow(0 2px 12px rgba(129,140,248,0.22));
       }
-      .ht-amp { -webkit-text-fill-color:#22c55e; color:#22c55e; animation: htAmpPulse 2.5s ease-in-out infinite; display:inline-block; }
+      .ht-amp {
+        background: linear-gradient(160deg, #fef9c3 0%, #ffffff 45%, #fef3c7 100%);
+        background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        animation: htAmpPulse 2.8s ease-in-out infinite;
+        display: inline-block;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+      }
       .ht-icon { animation: htFloat 3.2s ease-in-out infinite; display:inline-block; }
       .ht-icon-ring { animation: htRingPulse 3s ease-in-out infinite; }
       .ht-scan { animation: htScan 8s ease-in-out infinite 1s; }
@@ -157,7 +203,7 @@ export default function Home() {
       .ht-btn-arrow { display:inline-block; transition:transform 0.2s; }
       .ht-btn-outline:hover .ht-btn-arrow { transform:translateX(4px); }
     `;
-    document.head.appendChild(s);
+    if (!existing) document.head.appendChild(s);
   }, []);
 
   useEffect(() => {
@@ -174,44 +220,122 @@ export default function Home() {
   return (
     <div>
       {/* ── Hero ───────────────────────────────────────── */}
-      <section ref={heroRef} className="relative -mx-4 md:-mx-8 mb-16 overflow-hidden" style={{ minHeight: '700px' }}>
+      <section ref={heroRef} className="relative -mx-4 md:-mx-8 mb-16 overflow-hidden" style={{ minHeight: '720px' }}>
         {/* BG image */}
         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=70" alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.08 }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/15 via-bg/45 to-bg pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-transparent to-bg/80 pointer-events-none" />
+          className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/50 to-bg pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-transparent to-bg/85 pointer-events-none" />
         <div className="absolute inset-0 grid-dots opacity-18 pointer-events-none" />
 
+        {/* Floating background health icons */}
+        {[
+          { icon:'💪', top:'8%',  left:'3%',  delay:0,    dur:4.8 },
+          { icon:'🥗', top:'22%', right:'4%', delay:1.2,  dur:5.5 },
+          { icon:'🌿', top:'58%', left:'2%',  delay:2.1,  dur:6.2 },
+          { icon:'🧘', bottom:'18%', right:'5%', delay:0.7, dur:5.0 },
+          { icon:'💧', top:'72%', left:'7%',  delay:3.0,  dur:4.5 },
+          { icon:'⚡', top:'14%', right:'11%',delay:1.8,  dur:5.8 },
+          { icon:'🎯', bottom:'32%', left:'14%', delay:2.5, dur:6.0 },
+          { icon:'🔥', top:'42%', right:'2%', delay:0.4,  dur:5.2 },
+        ].map(({ icon, delay, dur, ...pos }, i) => (
+          <div key={i} className="absolute pointer-events-none select-none text-3xl md:text-4xl"
+            style={{ ...pos, opacity: 0.045, animation: `htBgFloat ${dur}s ease-in-out infinite`, animationDelay: `${delay}s` }}>
+            {icon}
+          </div>
+        ))}
+
+        {/* Rising particles */}
+        {Array.from({ length: 14 }).map((_, i) => {
+          const colors = ['rgba(34,197,94,', 'rgba(20,184,166,', 'rgba(168,85,247,'];
+          const c = colors[i % 3];
+          const sz = i % 4 === 0 ? 3 : i % 4 === 1 ? 2 : i % 4 === 2 ? 1.5 : 1;
+          return (
+            <div key={i} className="absolute bottom-0 pointer-events-none rounded-full"
+              style={{
+                left: `${5 + i * 6.5}%`,
+                width: sz, height: sz,
+                background: `${c}0.85)`,
+                boxShadow: `0 0 ${sz * 3}px 1px ${c}0.6)`,
+                opacity: 0,
+                animation: `htParticleUp ${3.8 + (i % 5) * 0.6}s ease-out infinite`,
+                animationDelay: `${i * 0.45}s`,
+              }} />
+          );
+        })}
+
         {/* Mouse-tracking ambient glows */}
-        <div className="absolute w-[820px] h-[820px] rounded-full pointer-events-none"
+        <div className="absolute w-[900px] h-[900px] rounded-full pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(34,197,94,0.09) 0%, transparent 65%)',
-            filter: 'blur(140px)',
-            top: `calc(${mousePos.y * 100}% - 410px)`,
-            left: `calc(${mousePos.x * 100}% - 410px)`,
+            background: 'radial-gradient(circle, rgba(34,197,94,0.1) 0%, transparent 62%)',
+            filter: 'blur(150px)',
+            top: `calc(${mousePos.y * 100}% - 450px)`,
+            left: `calc(${mousePos.x * 100}% - 450px)`,
             transition: 'top 0.9s cubic-bezier(0.2,0,0.2,1), left 0.9s cubic-bezier(0.2,0,0.2,1)',
           }} />
-        <div className="absolute w-[500px] h-[500px] rounded-full pointer-events-none"
+        <div className="absolute w-[550px] h-[550px] rounded-full pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 65%)',
-            filter: 'blur(110px)',
-            top: `calc(${(1 - mousePos.y) * 75 + 12}% - 250px)`,
-            left: `calc(${(1 - mousePos.x) * 75 + 12}% - 250px)`,
-            transition: 'top 1.3s cubic-bezier(0.2,0,0.2,1), left 1.3s cubic-bezier(0.2,0,0.2,1)',
+            background: 'radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 65%)',
+            filter: 'blur(120px)',
+            top: `calc(${(1 - mousePos.y) * 75 + 12}% - 275px)`,
+            left: `calc(${(1 - mousePos.x) * 75 + 12}% - 275px)`,
+            transition: 'top 1.4s cubic-bezier(0.2,0,0.2,1), left 1.4s cubic-bezier(0.2,0,0.2,1)',
           }} />
 
         {/* Scan line */}
         <div className="ht-scan absolute w-full h-[1px] pointer-events-none"
-          style={{ background: 'linear-gradient(90deg,transparent 0%,rgba(34,197,94,0.13) 25%,rgba(34,197,94,0.22) 50%,rgba(34,197,94,0.13) 75%,transparent 100%)' }} />
+          style={{ background: 'linear-gradient(90deg,transparent 0%,rgba(34,197,94,0.12) 25%,rgba(34,197,94,0.2) 50%,rgba(34,197,94,0.12) 75%,transparent 100%)' }} />
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-8 pt-24 pb-28">
 
-          {/* Icon with ambient glow ring */}
-          <div className="relative mb-5">
-            <div className="ht-icon-ring absolute inset-0 rounded-full pointer-events-none"
-              style={{ background: 'rgba(34,197,94,0.1)', filter: 'blur(24px)', transform: 'scale(2.8)' }} />
-            <div className="ht-icon relative z-10 select-none">
-              <img src="/logo.png" alt="" className="h-24 w-24 md:h-32 md:w-32" />
+          {/* Badge pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-6 select-none"
+            style={{
+              background: 'rgba(34,197,94,0.07)',
+              border: '1px solid rgba(34,197,94,0.2)',
+              color: '#86efac',
+              animation: 'htBadgePulse 3.5s ease-in-out infinite',
+            }}>
+            <span className="ht-amp text-base">✦</span>
+            <span>Hệ Sinh Thái Sức Khỏe Toàn Diện</span>
+            <span className="ht-amp text-base" style={{ animationDelay: '1s' }}>✦</span>
+          </div>
+
+          {/* Logo with 3 orbit rings */}
+          <div className="relative mb-6" style={{ width: 148, height: 148 }}>
+            {/* Ambient glow */}
+            <div className="absolute inset-0 pointer-events-none rounded-full"
+              style={{ background: 'rgba(34,197,94,0.12)', filter: 'blur(32px)', transform: 'scale(3)', animation: 'htRingPulse 3s ease-in-out infinite' }} />
+
+            {/* Outer orbit ring — 220px */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div style={{ position: 'absolute', width: 220, height: 220, animation: 'htOrbitSpin 14s linear infinite' }}>
+                <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1px dashed rgba(34,197,94,0.18)' }} />
+                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', width: 7, height: 7, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 10px 3px rgba(34,197,94,0.65)' }} />
+              </div>
+            </div>
+
+            {/* Middle orbit ring — 174px */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div style={{ position: 'absolute', width: 174, height: 174, animation: 'htOrbitSpinRev 9s linear infinite' }}>
+                <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1px solid rgba(20,184,166,0.2)' }} />
+                <div style={{ position: 'absolute', bottom: '8%', right: '8%', width: 5, height: 5, borderRadius: '50%', background: '#14b8a6', boxShadow: '0 0 8px 2px rgba(20,184,166,0.6)' }} />
+              </div>
+            </div>
+
+            {/* Inner orbit ring — 140px */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div style={{ position: 'absolute', width: 140, height: 140, animation: 'htOrbitSpin 6s linear infinite 0.5s' }}>
+                <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '1.5px solid rgba(168,85,247,0.25)' }} />
+                <div style={{ position: 'absolute', top: '12%', right: 0, transform: 'translate(50%, -50%)', width: 5, height: 5, borderRadius: '50%', background: '#a855f7', boxShadow: '0 0 8px 2px rgba(168,85,247,0.55)' }} />
+              </div>
+            </div>
+
+            {/* Logo image */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="ht-icon select-none">
+                <img src="/logo.png" alt="" className="h-24 w-24 md:h-28 md:w-28 drop-shadow-[0_0_18px_rgba(34,197,94,0.35)]" />
+              </div>
             </div>
           </div>
 
@@ -223,7 +347,7 @@ export default function Home() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-10"
+          <p className="text-lg md:text-xl mx-auto leading-relaxed mb-8 whitespace-nowrap"
             style={{ color: 'rgba(255,255,255,0.52)' }}>
             {t('hero.subtitle')}
           </p>
@@ -232,6 +356,9 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#pillars"
               className="ht-btn-primary relative overflow-hidden inline-flex items-center justify-center gap-2 px-9 py-3.5 bg-accent text-bg font-bold rounded-xl text-lg cursor-pointer">
+              {/* Ping ring */}
+              <div className="absolute -inset-[3px] rounded-xl pointer-events-none"
+                style={{ border: '2px solid rgba(34,197,94,0.45)', animation: 'htPingRing 2.2s ease-out infinite' }} />
               <span className="ht-btn-sweep absolute inset-0 pointer-events-none" />
               <span className="relative z-10">{t('hero.cta')}</span>
               <span className="relative z-10 text-lg">↓</span>
@@ -242,72 +369,88 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Stats row */}
-          {Array.isArray(stats) && (
-            <div className="mt-14 w-full max-w-3xl mx-auto">
-              <div className="flex items-stretch rounded-2xl overflow-hidden"
-                style={{ background: 'rgba(255,255,255,0.022)', border: '1px solid rgba(255,255,255,0.052)' }}>
-                {stats.map((stat, i) => {
-                  const active = hoveredStat === i;
-                  const color  = STAT_COLORS[i];
-                  const rgb    = STAT_RGBS[i];
-                  return (
-                    <div key={i}
-                      className="group/hstat relative flex-1 text-center px-4 py-5 cursor-default overflow-hidden"
-                      style={{ transition: 'background 0.3s' }}
-                      onMouseEnter={() => setHoveredStat(i)}
-                      onMouseLeave={() => setHoveredStat(null)}
-                    >
-                      {/* Radial hover bg */}
-                      <div className="absolute inset-0 pointer-events-none"
-                        style={{
-                          background: `radial-gradient(ellipse at 50% 80%, rgba(${rgb},0.11) 0%, transparent 72%)`,
-                          opacity: active ? 1 : 0,
-                          transition: 'opacity 0.3s',
-                        }} />
-
-                      {/* Vertical divider */}
-                      {i > 0 && (
-                        <div className="absolute left-0 top-[20%] bottom-[20%] w-px pointer-events-none"
-                          style={{
-                            background: active ? `rgba(${rgb},0.3)` : 'rgba(255,255,255,0.07)',
-                            transition: 'background 0.3s',
-                          }} />
-                      )}
-
-                      {/* Bottom sweep bar */}
-                      <div className="absolute bottom-0 left-0 h-[2px] pointer-events-none rounded-full"
-                        style={{
-                          width: active ? '100%' : '0%',
-                          background: `linear-gradient(90deg, transparent, ${color}, transparent)`,
-                          transition: 'width 0.4s cubic-bezier(0.22,1,0.36,1)',
-                        }} />
-
-                      {/* ThoughtBubble tooltip */}
-                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none opacity-0 group-hover/hstat:opacity-100 scale-90 group-hover/hstat:scale-100 -translate-y-1 group-hover/hstat:translate-y-0 transition-all duration-200 origin-bottom">
-                        <ThoughtBubble text={STAT_TIPS[i]} idx={`h${i}`} color={color} />
-                      </div>
-
-                      {/* Value */}
-                      <p className="font-extrabold text-lg md:text-xl leading-none mb-1.5 transition-all duration-250 whitespace-nowrap"
-                        style={{
-                          color: active ? color : 'rgba(255,255,255,0.9)',
-                          filter: active ? `drop-shadow(0 0 10px rgba(${rgb},0.55))` : 'none',
-                          transform: active ? 'scale(1.07)' : 'scale(1)',
-                          display: 'block',
-                        }}>
-                        {stat.value}
-                      </p>
-
-                      {/* Label */}
-                      <p className="text-[11px] leading-snug transition-colors duration-250"
-                        style={{ color: active ? `rgba(${rgb},0.75)` : 'rgba(255,255,255,0.36)' }}>
-                        {stat.label}
-                      </p>
-                    </div>
-                  );
-                })}
+          {/* Social proof */}
+          <div className="mt-6 flex items-center justify-center gap-3 select-none">
+            <div className="flex items-center" style={{ gap: '-4px' }}>
+              {[
+                { bg:'rgba(34,197,94,0.25)',  c:'#22c55e', l:'T' },
+                { bg:'rgba(20,184,166,0.25)',  c:'#14b8a6', l:'N' },
+                { bg:'rgba(168,85,247,0.25)', c:'#a855f7', l:'A' },
+                { bg:'rgba(249,115,22,0.25)', c:'#f97316', l:'M' },
+                { bg:'rgba(59,130,246,0.25)', c:'#3b82f6', l:'L' },
+              ].map(({ bg, c, l }, i) => (
+                <div key={i} className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold"
+                  style={{ background: bg, color: c, border: '2px solid rgba(10,10,10,0.8)', marginLeft: i > 0 ? -8 : 0, zIndex: 5 - i }}>
+                  {l}
+                </div>
+              ))}
+            </div>
+            <div className="text-left">
+              <div className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.72)' }}>2,400+ người đang sống khỏe</div>
+              <div className="flex items-center gap-1 text-xs" style={{ color: 'rgba(255,255,255,0.38)' }}>
+                <span style={{ color: '#fbbf24', letterSpacing: '-0.5px' }}>★★★★★</span>
+                <span>Đánh giá 4.9/5</span>
               </div>
+            </div>
+          </div>
+
+          {/* Stats — 3 individual lift cards */}
+          {Array.isArray(stats) && (
+            <div className="mt-10 w-full max-w-2xl mx-auto grid grid-cols-3 gap-3">
+              {stats.map((stat, i) => {
+                const active = hoveredStat === i;
+                const color  = STAT_COLORS[i];
+                const rgb    = STAT_RGBS[i];
+                return (
+                  <div key={i}
+                    className="group/hstat relative rounded-2xl text-center px-4 py-5 cursor-default overflow-hidden"
+                    style={{
+                      background: active ? `rgba(${rgb},0.08)` : 'rgba(255,255,255,0.025)',
+                      border: `1px solid ${active ? `rgba(${rgb},0.32)` : 'rgba(255,255,255,0.06)'}`,
+                      transform: active ? 'translateY(-6px)' : 'translateY(0)',
+                      boxShadow: active ? `0 16px 44px rgba(${rgb},0.2), 0 0 0 1px rgba(${rgb},0.12)` : 'none',
+                      transition: 'all 0.3s cubic-bezier(0.22,1,0.36,1)',
+                    }}
+                    onMouseEnter={() => setHoveredStat(i)}
+                    onMouseLeave={() => setHoveredStat(null)}
+                  >
+                    {/* Top accent line */}
+                    <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl pointer-events-none"
+                      style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)`, opacity: active ? 1 : 0.35, transition: 'opacity 0.3s' }} />
+
+                    {/* Radial bg glow */}
+                    <div className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background: `radial-gradient(ellipse at 50% 100%, rgba(${rgb},0.14) 0%, transparent 70%)`,
+                        opacity: active ? 1 : 0,
+                        transition: 'opacity 0.3s',
+                      }} />
+
+                    {/* ThoughtBubble tooltip */}
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none opacity-0 group-hover/hstat:opacity-100 scale-90 group-hover/hstat:scale-100 -translate-y-1 group-hover/hstat:translate-y-0 transition-all duration-200 origin-bottom">
+                      <ThoughtBubble text={STAT_TIPS[i]} idx={`h${i}`} color={color} />
+                    </div>
+
+                    {/* Value */}
+                    <p className="relative font-extrabold text-xl leading-none mb-1.5 whitespace-nowrap"
+                      style={{
+                        color: active ? color : 'rgba(255,255,255,0.88)',
+                        filter: active ? `drop-shadow(0 0 12px rgba(${rgb},0.6))` : 'none',
+                        transform: active ? 'scale(1.08)' : 'scale(1)',
+                        transition: 'color 0.3s, filter 0.3s, transform 0.3s',
+                        display: 'block',
+                      }}>
+                      {stat.value}
+                    </p>
+
+                    {/* Label */}
+                    <p className="relative text-[11px] leading-snug"
+                      style={{ color: active ? `rgba(${rgb},0.78)` : 'rgba(255,255,255,0.36)', transition: 'color 0.3s' }}>
+                      {stat.label}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           )}
 

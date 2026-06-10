@@ -232,6 +232,77 @@ const SEVEN_DAY_PLAN = [
   { day: 'Ngày 7', focus: 'Giữ giờ dậy ổn định', action: 'Dậy đúng giờ, không ngủ bù quá 1 tiếng cuối tuần' },
 ];
 
+function SleepTimingModal({ onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+  const color = '#14b8a6'; const rgb = '20,184,166';
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src="https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=800&q=80&auto=format&fit=crop"
+            alt="Thời điểm ngủ" className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.45)` }}>⏰</div>
+          <button onClick={onClose} className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-2" style={{ color }}>Thời Điểm Ngủ & Thức Dậy</h2>
+          <div className="rounded-xl p-3 mb-5 text-sm font-semibold" style={{ background: `rgba(${rgb},0.1)`, color, border: `1px solid rgba(${rgb},0.2)` }}>
+            ✦ N3 nhiều nhất 3 giờ đầu đêm — REM nhiều nhất buổi sáng sớm. Thay đổi giờ ngủ/thức ảnh hưởng hoàn toàn khác nhau đến từng giai đoạn.
+          </div>
+          <p className="text-muted text-base leading-relaxed mb-5">Không phải tất cả các giờ ngủ đều như nhau. Cơ thể theo đồng hồ sinh học circadian — N3 và REM có "cửa sổ thời gian" tự nhiên. Hiểu điều này giúp bạn tối ưu hóa giấc ngủ không chỉ bằng số giờ mà còn bằng thời điểm.</p>
+          <ul className="space-y-3 mb-8">
+            {[
+              'N3 (ngủ sâu) tập trung nhiều nhất trong 3–4 giờ đầu tiên sau khi ngủ — đây là "cửa sổ vàng" phục hồi thể chất.',
+              'REM tập trung nhiều nhất vào 2–3 giờ cuối trước khi thức — buổi sáng sớm 4–7h là giai đoạn REM dài nhất.',
+              'Ngủ muộn 2 tiếng (2h AM thay vì 0h AM) không làm giảm tổng giờ ngủ nhưng cắt bỏ gần toàn bộ N3.',
+              'Thức dậy sớm hơn 2 tiếng (5h AM thay vì 7h AM) không giảm nhiều N3 nhưng mất phần lớn REM quan trọng.',
+              'Cùng 6 tiếng ngủ nhưng 23h–5h (nhiều N3, ít REM) khác hoàn toàn với 1h–7h (ít N3, nhiều REM).',
+              'Mục tiêu lý tưởng: ngủ 22h–23h, dậy 6h–7h — tối ưu cả N3 (đầu đêm) lẫn REM (sáng sớm).',
+            ].map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {[
+              { icon: '🌑', label: 'N3 cửa sổ vàng', note: '3–4 tiếng đầu đêm — không thể bù lại' },
+              { icon: '✨', label: 'REM buổi sáng', note: '4–7h AM — thức sớm mất toàn bộ REM' },
+              { icon: '😴', label: 'Ngủ muộn = mất N3', note: 'Dù ngủ đủ giờ, cơ thể không hồi phục' },
+              { icon: '⏰', label: 'Lý tưởng: 22–23h', note: 'Dậy 6–7h — cân bằng N3 + REM' },
+            ].map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SleepFactModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = (e) => {
@@ -320,6 +391,7 @@ export default function LifestyleSleepPage() {
   const [checks, setChecks] = useState({});
   const [sleepFactIdx, setSleepFactIdx] = useState(null);
   const [sleepStageIdx, setSleepStageIdx] = useState(null);
+  const [sleepTimingOpen, setSleepTimingOpen] = useState(false);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -429,8 +501,13 @@ export default function LifestyleSleepPage() {
             </div>
           ))}
         </div>
-        <div className="mt-4 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.07)`, border: `1px solid rgba(${RGB},0.15)` }}>
-          <p className="text-base text-muted"><strong style={{ color: COLOR }}>Lưu ý quan trọng:</strong> Giấc ngủ sâu (N3) nhiều nhất trong 3 giờ đầu đêm. REM nhiều nhất vào buổi sáng sớm. Ngủ muộn → mất giấc ngủ sâu; thức sớm → mất REM.</p>
+        <div className="mt-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.005]"
+          style={{ background: `rgba(${RGB},0.07)`, border: `1px solid rgba(${RGB},0.2)` }}
+          onClick={() => setSleepTimingOpen(true)}>
+          <div className="flex items-start justify-between gap-3">
+            <p className="text-base text-muted"><strong style={{ color: COLOR }}>Lưu ý quan trọng:</strong> Giấc ngủ sâu (N3) nhiều nhất trong 3 giờ đầu đêm. REM nhiều nhất vào buổi sáng sớm. Ngủ muộn → mất giấc ngủ sâu; thức sớm → mất REM.</p>
+            <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg" style={{ color: COLOR, background: `rgba(${RGB},0.12)` }}>Chi tiết →</span>
+          </div>
         </div>
       </RevealBlock>
 
@@ -562,6 +639,9 @@ export default function LifestyleSleepPage() {
         <Link to="/pillar/c" className="text-muted hover:text-teal-400 transition-colors text-lg">← Lối Sống Khỏe</Link>
         <Link to="/pillar/c/sleep-routine" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Trước Ngủ →</Link>
       </div>
+
+      {/* ── Sleep timing modal ── */}
+      {sleepTimingOpen && <SleepTimingModal onClose={() => setSleepTimingOpen(false)} />}
 
       {/* ── Sleep stage modal ── */}
       {sleepStageIdx !== null && (

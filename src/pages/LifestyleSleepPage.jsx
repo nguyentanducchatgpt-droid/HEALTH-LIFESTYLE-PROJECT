@@ -318,13 +318,153 @@ const TROUBLE_CASES = [
 ];
 
 const SEVEN_DAY_PLAN = [
-  { day: 'Ngày 1', focus: 'Ghi lại thật, không ép', action: 'Ghi lại giờ ngủ thực tế, không cố ngủ sớm hơn ngay' },
-  { day: 'Ngày 2', focus: 'Tắt màn hình sớm hơn', action: 'Tắt màn hình sớm hơn 15 phút so với thói quen' },
-  { day: 'Ngày 3', focus: 'Ánh sáng buổi sáng', action: 'Ra nắng hoặc mở rèm 5 phút sau khi thức' },
-  { day: 'Ngày 4', focus: 'Ngủ sớm hơn 15 phút', action: 'Lên giường sớm hơn 15 phút so với ngày 1' },
-  { day: 'Ngày 5', focus: 'Cắt caffeine muộn', action: 'Không uống caffeine sau 14–15h' },
-  { day: 'Ngày 6', focus: 'Thêm routine tối', action: 'Thêm 10 phút: giãn cơ + thở chậm trước ngủ' },
-  { day: 'Ngày 7', focus: 'Giữ giờ dậy ổn định', action: 'Dậy đúng giờ, không ngủ bù quá 1 tiếng cuối tuần' },
+  {
+    day: 'Ngày 1', icon: '📓', label: 'Ghi lại thật, không ép', action: 'Ghi lại giờ ngủ thực tế, không cố ngủ sớm hơn ngay',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Biết baseline thực sự quan trọng hơn bắt đầu thay đổi ngay — không thể điều chỉnh điều bạn chưa đo lường.',
+    detail: 'Ngày 1 là ngày quan sát, không can thiệp. Ghi chép trung thực giờ ngủ thực tế (không phải giờ bạn muốn ngủ) cho phép bạn thấy gap thật sự cần thu hẹp — và tránh thay đổi quá mạnh gây phản tác dụng.',
+    details: [
+      'Ghi lại 3 thông số: giờ lên giường, giờ thực sự ngủ được, giờ thức dậy — không ghi giờ mong muốn.',
+      'Ghi thêm: cảm giác khi dậy (tươi tỉnh/mệt), tổng thời gian ngủ ước tính, và các yếu tố đặc biệt (căng thẳng, xem phim khuya...).',
+      'Không cố ngủ sớm hơn hôm nay — thay đổi đột ngột làm bạn nằm trên giường tỉnh táo, tạo lo âu về giấc ngủ.',
+      'Dùng ghi chú điện thoại hoặc sổ nhỏ cạnh giường — ghi ngay khi vừa dậy khi ký ức còn tươi.',
+      'Sau 7 ngày, pattern sẽ hiện rõ: bạn thường ngủ muộn nhất ngày nào? Thứ 6/7 hay ngày thường? Tại sao?',
+      'Data này là "bản đồ" để 6 ngày tiếp theo có hướng đi cụ thể thay vì thay đổi mù quáng.',
+    ],
+    points: [
+      { icon: '📊', label: 'Đo trước khi sửa', note: 'Baseline thực tế — không phải baseline mong muốn' },
+      { icon: '✍️', label: 'Ghi 3 thông số', note: 'Lên giường / ngủ được / thức dậy' },
+      { icon: '🚫', label: 'Không thay đổi hôm nay', note: 'Quan sát thuần túy — tránh lo âu giấc ngủ' },
+      { icon: '🗺️', label: 'Xây bản đồ pattern', note: 'Dữ liệu 7 ngày → thấy rõ vấn đề thực sự' },
+    ],
+  },
+  {
+    day: 'Ngày 2', icon: '📱', label: 'Tắt màn hình sớm hơn', action: 'Tắt màn hình sớm hơn 15 phút so với thói quen',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chỉ 15 phút không màn hình trước ngủ tạo ra cửa sổ melatonin đủ để cơ thể bắt đầu "nhận tín hiệu ngủ" — bước nhỏ nhất có tác động lớn nhất.',
+    detail: 'Thay vì yêu cầu "không màn hình 2 tiếng" — điều gần như không ai duy trì — chỉ cần lùi 15 phút so với thói quen hôm qua. Mục tiêu là xây thói quen bền vững, không phải thay đổi hoàn hảo 1 đêm.',
+    details: [
+      'Nếu hôm qua tắt màn hình lúc 23h30, hôm nay tắt lúc 23h15 — chỉ 15 phút, không hơn.',
+      'Thay hoạt động trên màn hình bằng sách giấy, podcast nhẹ nhàng, hoặc ghi chép tay 15 phút đó.',
+      'Night Mode / Night Shift vẫn hữu ích nhưng không thay thế được việc tắt màn hình — não vẫn kích thích khi đọc nội dung.',
+      'Thông báo điện thoại sau 21–22h là nguồn gây gián đoạn lớn — bật chế độ im lặng trước khi lên giường.',
+      'Sạc điện thoại ngoài phòng ngủ loại bỏ cám dỗ "xem thêm 1 cái" — thay bằng đồng hồ báo thức thông thường.',
+      'Sau vài ngày 15 phút, cơ thể sẽ bắt đầu buồn ngủ sớm hơn tự nhiên — tiếp tục lùi thêm 15 phút ở Ngày 4.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Chỉ 15 phút', note: 'Nhỏ đủ để duy trì — lớn đủ để tạo thay đổi' },
+      { icon: '📚', label: 'Thay bằng sách giấy', note: 'Kích thích não thấp, ánh sáng ấm, dễ buồn ngủ' },
+      { icon: '🔇', label: 'Im lặng sau 22h', note: 'Thông báo = nguồn gián đoạn lớn nhất' },
+      { icon: '🔌', label: 'Sạc ngoài phòng ngủ', note: 'Loại bỏ cám dỗ — dùng đồng hồ thường' },
+    ],
+  },
+  {
+    day: 'Ngày 3', icon: '☀️', label: 'Ánh sáng buổi sáng', action: 'Ra nắng hoặc mở rèm 5 phút sau khi thức',
+    color: '#eab308', rgb: '234,179,8',
+    img: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ánh sáng mặt trời buổi sáng trong 5–10 phút đầu tiên sau khi thức là tín hiệu circadian mạnh nhất — "đặt lại đồng hồ sinh học" và kéo giờ buồn ngủ tối về sớm hơn.',
+    detail: 'Ánh sáng ban ngày (đặc biệt 480nm xanh lam từ bầu trời) tắt melatonin và khởi động cortisol buổi sáng — thiết lập đồng hồ 24h của cơ thể. Không có can thiệp nào đơn giản mà hiệu quả hơn 5 phút nắng sáng để kéo giờ ngủ về sớm hơn.',
+    details: [
+      'Ánh sáng mặt trời ngoài trời (ngay cả ngày흐曇) chứa 10.000–100.000 lux — ánh đèn phòng chỉ 300–500 lux, không đủ để đặt lại circadian.',
+      'Ipretinal ganglion cells (ipRGC) nhận ánh sáng 480nm → tín hiệu đến suprachiasmatic nucleus → cortisol tăng → tỉnh táo tự nhiên.',
+      'Mỗi giờ ánh sáng ban ngày bạn nhận được buổi sáng = kéo giờ buồn ngủ tối về sớm hơn ~15 phút.',
+      'Không cần nắng trực tiếp — ngồi cạnh cửa sổ mở, đứng ban công, hoặc đi bộ ra ngoài đều hiệu quả.',
+      'Kết hợp với bước đi ngắn 5 phút ngoài trời để tăng body temperature sáng — tăng tỉnh táo và ổn định circadian hơn.',
+      'Ánh sáng mạnh buổi sáng cũng cải thiện tâm trạng (serotonin) và giảm triệu chứng SAD (Seasonal Affective Disorder).',
+    ],
+    points: [
+      { icon: '🌅', label: '5–10 phút nắng sáng', note: 'Ngay sau khi thức — hiệu quả nhất trong ngày' },
+      { icon: '🧬', label: 'Cortisol khởi động', note: 'Tỉnh táo tự nhiên + đặt lại đồng hồ 24h' },
+      { icon: '🌤️', label: 'Ngày흐曇 vẫn hiệu quả', note: 'Ngoài trời = 10.000+ lux dù không nắng' },
+      { icon: '😊', label: 'Serotonin tăng', note: 'Ánh sáng sáng cải thiện tâm trạng cả ngày' },
+    ],
+  },
+  {
+    day: 'Ngày 4', icon: '🛏️', label: 'Ngủ sớm hơn 15 phút', action: 'Lên giường sớm hơn 15 phút so với ngày 1',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sau 3 ngày chuẩn bị (ghi chép, giảm màn hình, ánh sáng sáng), cơ thể đã sẵn sàng để lên giường sớm hơn 15 phút mà không bị nằm tỉnh — đây là lần đầu tiên thay đổi giờ ngủ thực sự.',
+    detail: 'Ngày 4 là lần đầu thực sự "kéo" giờ ngủ về sớm hơn. Sau 3 ngày chuẩn bị circadian (ánh sáng sáng + giảm màn hình tối), cơ thể đã có đủ "áp suất ngủ" (sleep pressure) sớm hơn để lên giường 15 phút trước không gây mất ngủ.',
+    details: [
+      'Lên giường sớm hơn 15 phút so với giờ trung bình ghi được ngày 1 — không phải giờ bạn "muốn" ngủ.',
+      'Nếu không thấy buồn ngủ sau 20–30 phút: đừng ép — đọc sách hoặc thở chậm thay vì nhìn đồng hồ.',
+      'Kết hợp với nghi lễ nhỏ trước ngủ: đánh răng, tắt đèn, thở cơ hoành 3 phút — báo hiệu não "đến giờ ngủ".',
+      'Sleep pressure (adenosine buildup) đủ mạnh sau 16–17 tiếng thức — nếu dậy đúng giờ (ngày 1–3), áp suất ngủ đến đúng giờ.',
+      'Không ngủ trưa quá 30 phút hôm nay — ngủ trưa dài làm giảm sleep pressure tối, khó ngủ sớm hơn.',
+      'Chấp nhận rằng đêm đầu có thể mất 20–30 phút hơn bình thường — đây là bình thường khi bắt đầu thay đổi.',
+    ],
+    points: [
+      { icon: '📉', label: 'Lùi 15 phút', note: 'So với baseline ngày 1 — không phải giờ lý tưởng' },
+      { icon: '💤', label: 'Sleep pressure', note: 'Dậy đúng giờ 3 ngày → adenosine đến đúng lúc' },
+      { icon: '🌿', label: 'Nghi lễ trước ngủ', note: 'Chuỗi hành động nhỏ báo hiệu não = đến giờ ngủ' },
+      { icon: '☀️', label: 'Không ngủ trưa dài', note: '>30 phút làm giảm sleep pressure tối' },
+    ],
+  },
+  {
+    day: 'Ngày 5', icon: '☕', label: 'Cắt caffeine muộn', action: 'Không uống caffeine sau 14–15h',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cắt caffeine sau 14h là thay đổi có tác động lớn nhất đến chất lượng N3 (ngủ sâu) — ngay cả khi bạn "cảm thấy không bị ảnh hưởng bởi caffeine".',
+    detail: 'Nhiều người tin mình không nhạy caffeine — nhưng nghiên cứu EEG cho thấy caffeine uống lúc chiều vẫn làm giảm N3 (slow-wave sleep) đáng kể dù người đó nói họ "ngủ bình thường". Chất lượng ngủ sâu bị ảnh hưởng mà bạn không nhận ra.',
+    details: [
+      'Caffeine half-life 5–7 giờ (tùy gen CYP1A2) — người chuyển hóa chậm có half-life 9–10 giờ: cà phê 15h còn 50% lúc 0h.',
+      'Ngay cả người "không nhạy caffeine" vẫn bị giảm N3 (slow-wave sleep) khi caffeine còn trong máu — chỉ là họ không thấy khó ngủ.',
+      'Giảm N3 = giảm GH tiết, giảm phục hồi cơ, giảm miễn dịch — dù tổng thời gian ngủ không đổi.',
+      'Nguồn caffeine ẩn: trà xanh (~50mg/ly), Coca-Cola (~35mg/lon), socola đen (~20mg/miếng), thuốc đau đầu có caffeine.',
+      'Thay cà phê chiều bằng trà thảo mộc (hoa cúc, gừng, oải hương) hoặc nước ấm có lemon — vẫn có ritual uống đồ mà không có caffeine.',
+      'Sau 1 tuần cắt caffeine sau 14h, hầu hết người báo cáo ngủ sâu hơn và tỉnh táo hơn buổi sáng dù không ngủ nhiều hơn.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Cutoff 14h', note: 'Half-life 5–7h → còn 50% lúc 20–21h' },
+      { icon: '🧬', label: 'N3 giảm không nhận ra', note: 'EEG thấy rõ dù bạn cảm thấy "ngủ bình thường"' },
+      { icon: '🍫', label: 'Nguồn caffeine ẩn', note: 'Trà xanh, Coca, socola đen, thuốc đau đầu' },
+      { icon: '🌿', label: 'Trà thảo mộc thay thế', note: 'Giữ ritual uống — không có caffeine' },
+    ],
+  },
+  {
+    day: 'Ngày 6', icon: '🌙', label: 'Thêm routine tối', action: 'Thêm 10 phút: giãn cơ + thở chậm trước ngủ',
+    color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Routine tối 10 phút tạo "cầu nối" giữa trạng thái hoạt động và trạng thái ngủ — não học bằng liên kết: chuỗi hành động lặp lại = tín hiệu "đến giờ ngủ".',
+    detail: 'Pre-sleep routine là ứng dụng của Pavlovian conditioning vào giấc ngủ. Sau vài tuần lặp lại, chỉ cần bắt đầu chuỗi hành động (đánh răng → tắt đèn → giãn cơ → thở chậm) là não tự động chuyển sang chế độ "sẵn sàng ngủ". Không cần routine dài — 10 phút đủ để tạo tín hiệu đủ mạnh.',
+    details: [
+      'Cấu trúc 10 phút: 3 phút giãn cơ nhẹ (cổ, vai, lưng) → 3 phút thở cơ hoành → 4 phút đọc sách giấy hoặc viết nhật ký.',
+      'Tính nhất quán quan trọng hơn hoàn hảo — làm đúng 10 phút mỗi đêm tốt hơn 45 phút 3 ngày/tuần.',
+      'Không kiểm tra email, tin nhắn công việc trong 10 phút này — đây là thời gian "đóng ngày" chính thức.',
+      'Viết ra 3 việc hoàn thành hôm nay và 3 việc cho ngày mai — "unload" tâm trí, giảm suy nghĩ lặp đi lặp lại khi nằm xuống.',
+      'Nhiệt độ phòng: bắt đầu hạ điều hòa hoặc mở cửa sổ nhẹ trong routine tối — báo hiệu cơ thể chuẩn bị ngủ sâu.',
+      'Sau 7–14 ngày lặp lại, bạn sẽ bắt đầu cảm thấy buồn ngủ khi bắt đầu routine — não đã học liên kết.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Pavlov conditioning', note: 'Chuỗi lặp lại → tín hiệu ngủ tự động' },
+      { icon: '📝', label: 'Viết nhật ký tối', note: 'Unload tâm trí — giảm suy nghĩ lặp khi nằm' },
+      { icon: '🌡️', label: 'Hạ nhiệt độ', note: 'Bắt đầu trong routine — báo hiệu ngủ sâu' },
+      { icon: '⏱️', label: '10 phút nhất quán', note: 'Quan trọng hơn routine dài nhưng không đều' },
+    ],
+  },
+  {
+    day: 'Ngày 7', icon: '🏆', label: 'Giữ giờ dậy ổn định', action: 'Dậy đúng giờ, không ngủ bù quá 1 tiếng cuối tuần',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngủ bù cuối tuần 2+ tiếng gây "social jetlag" — reset toàn bộ 6 ngày cải thiện circadian. Giữ giờ dậy ổn định ±30 phút là yếu tố duy nhất không thể bỏ qua.',
+    detail: 'Ngày 7 không phải điểm kết thúc — đây là ngày đặt nền tảng cho tuần tiếp theo. Giờ dậy ổn định 7 ngày/tuần (kể cả cuối tuần) là can thiệp duy nhất được chứng minh duy trì cải thiện circadian dài hạn. Tất cả 6 ngày trước đều hướng về mục tiêu này.',
+    details: [
+      'Social jetlag: ngủ muộn thức muộn cuối tuần tương đương bay qua 2–3 múi giờ — và mỗi tuần lặp lại.',
+      'Dậy muộn hơn 1 tiếng cuối tuần là giới hạn an toàn — 2+ tiếng bắt đầu ảnh hưởng circadian.',
+      'Nếu thiếu ngủ: đi ngủ sớm hơn tối thứ 6/7 thay vì dậy muộn sáng thứ 7/CN — bảo vệ giờ dậy.',
+      'Sau 7 ngày này, bạn đã có: baseline rõ ràng, giảm ánh sáng tối, ánh sáng sáng, giờ ngủ sớm hơn, không caffeine muộn, routine tối.',
+      'Tuần tiếp theo: tiếp tục lùi giờ ngủ thêm 15 phút mỗi 2–3 ngày cho đến khi đạt giờ ngủ mục tiêu.',
+      'Điểm mấu chốt: không cần hoàn hảo — ngủ "đủ tốt" 6/7 đêm trong tuần tốt hơn ngủ "hoàn hảo" 2 đêm.',
+    ],
+    points: [
+      { icon: '✈️', label: 'Tránh social jetlag', note: 'Ngủ bù >1h cuối tuần = reset 6 ngày cải thiện' },
+      { icon: '⏰', label: '±30 phút', note: 'Biên độ cho phép để duy trì circadian ổn định' },
+      { icon: '🌙', label: 'Ngủ sớm hơn, không dậy muộn', note: 'Bù giấc bằng cách ngủ sớm tối hôm trước' },
+      { icon: '🏆', label: 'Nền tảng tuần tiếp', note: 'Tiếp tục lùi 15 phút/2–3 ngày đến giờ mục tiêu' },
+    ],
+  },
 ];
 
 function SleepTimingModal({ onClose }) {
@@ -398,7 +538,7 @@ function SleepTimingModal({ onClose }) {
   );
 }
 
-function SleepFactModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+function SleepFactModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -454,7 +594,7 @@ function SleepFactModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
-            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {SLEEP_FACTS.length}</span>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total ?? SLEEP_FACTS.length}</span>
             <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
           </div>
@@ -488,6 +628,7 @@ export default function LifestyleSleepPage() {
   const [sleepStageIdx, setSleepStageIdx] = useState(null);
   const [sleepTimingOpen, setSleepTimingOpen] = useState(false);
   const [hygieneIdx, setHygieneIdx] = useState(null);
+  const [sevenDayIdx, setSevenDayIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -640,14 +781,20 @@ export default function LifestyleSleepPage() {
         <p className="text-muted text-lg mb-6">Không kéo giờ ngủ sớm quá mạnh ngay. Mỗi 2–3 ngày kéo sớm 15–30 phút để cơ thể thích nghi.</p>
         <div className="space-y-3">
           {SEVEN_DAY_PLAN.map((day, i) => (
-            <div key={i} className="flex gap-4 items-start p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
-              <div className="shrink-0 w-16 text-center">
-                <div className="text-base font-bold tabular-nums" style={{ color: COLOR }}>{day.day}</div>
+            <div key={i}
+              className="flex gap-4 items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${day.rgb},0.05)`, border: `1px solid rgba(${day.rgb},0.14)` }}
+              onClick={() => setSevenDayIdx(i)}>
+              <div className="shrink-0 text-2xl">{day.icon}</div>
+              <div className="shrink-0 w-14 text-center">
+                <div className="text-sm font-bold tabular-nums" style={{ color: day.color }}>{day.day}</div>
               </div>
-              <div>
-                <div className="font-semibold text-text text-lg">{day.focus}</div>
-                <div className="text-muted text-base mt-0.5">{day.action}</div>
+              <div className="flex-1 min-w-0">
+                <div className="font-semibold text-base" style={{ color: day.color }}>{day.label}</div>
+                <div className="text-muted text-sm mt-0.5">{day.action}</div>
               </div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: day.color, background: `rgba(${day.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -734,6 +881,7 @@ export default function LifestyleSleepPage() {
         <SleepFactModal
           item={HYGIENE_STEPS[hygieneIdx]}
           idx={hygieneIdx}
+          total={HYGIENE_STEPS.length}
           onClose={() => setHygieneIdx(null)}
           onPrev={() => setHygieneIdx(i => Math.max(0, i - 1))}
           onNext={() => setHygieneIdx(i => Math.min(HYGIENE_STEPS.length - 1, i + 1))}
@@ -750,11 +898,26 @@ export default function LifestyleSleepPage() {
         <SleepFactModal
           item={SLEEP_STAGES[sleepStageIdx]}
           idx={sleepStageIdx}
+          total={SLEEP_STAGES.length}
           onClose={() => setSleepStageIdx(null)}
           onPrev={() => setSleepStageIdx(i => Math.max(0, i - 1))}
           onNext={() => setSleepStageIdx(i => Math.min(SLEEP_STAGES.length - 1, i + 1))}
           hasPrev={sleepStageIdx > 0}
           hasNext={sleepStageIdx < SLEEP_STAGES.length - 1}
+        />
+      )}
+
+      {/* ── 7-day plan modal ── */}
+      {sevenDayIdx !== null && (
+        <SleepFactModal
+          item={SEVEN_DAY_PLAN[sevenDayIdx]}
+          idx={sevenDayIdx}
+          total={SEVEN_DAY_PLAN.length}
+          onClose={() => setSevenDayIdx(null)}
+          onPrev={() => setSevenDayIdx(i => Math.max(0, i - 1))}
+          onNext={() => setSevenDayIdx(i => Math.min(SEVEN_DAY_PLAN.length - 1, i + 1))}
+          hasPrev={sevenDayIdx > 0}
+          hasNext={sevenDayIdx < SEVEN_DAY_PLAN.length - 1}
         />
       )}
 

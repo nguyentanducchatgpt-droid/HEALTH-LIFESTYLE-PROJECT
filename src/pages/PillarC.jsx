@@ -473,13 +473,160 @@ const C3_IDEAS = [
 ];
 
 const C4_ROUTINE = [
-  { exercise: 'Thở cơ hoành', duration: '1 phút', note: 'Bụng phồng khi hít, ngực ít nâng' },
-  { exercise: 'Shoulder roll', duration: '1 phút', note: 'Xoay vai trước và sau' },
-  { exercise: 'Thoracic twist', duration: '1 phút', note: 'Xoay lưng ngực từng bên' },
-  { exercise: 'Hip flexor stretch', duration: '1 phút × 2', note: 'Giãn gấp hông từng bên' },
-  { exercise: 'Hamstring stretch', duration: '1 phút × 2', note: 'Giãn đùi sau từng bên' },
-  { exercise: 'Child pose + thở', duration: '2 phút', note: 'Thư giãn hoàn toàn' },
-  { exercise: 'Đi bộ nhẹ', duration: '1–2 phút', note: 'Kết thúc nhẹ nhàng' },
+  {
+    exercise: 'Thở cơ hoành', label: 'Thở cơ hoành',
+    duration: '1 phút', note: 'Bụng phồng khi hít, ngực ít nâng',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thở cơ hoành kích hoạt hệ thần kinh phó giao cảm trong vòng 60 giây — giảm cortisol và nhịp tim hiệu quả hơn bất kỳ kỹ thuật thư giãn nào khác.',
+    detail: 'Đây là bài tập đầu tiên và quan trọng nhất. 90% người hít thở bằng ngực, không phải cơ hoành — điều này duy trì cơ thể trong trạng thái kích thích nhẹ liên tục.',
+    details: [
+      'Thở ngực (chest breathing) kích hoạt cơ cổ và vai phụ — tạo ra căng thẳng cơ học liên tục ở vùng cổ vai gáy khi bạn thở mỗi ngày 20.000+ nhịp.',
+      'Cơ hoành nằm ngay dưới phổi — khi hít vào đúng cách, bụng phồng ra và ngực gần như không nâng. Đây là cơ hô hấp chính của cơ thể.',
+      'Dây thần kinh phế vị (vagus nerve) chạy qua cơ hoành — thở cơ hoành chậm kích thích trực tiếp dây này, kích hoạt chế độ "rest and digest".',
+      'Sau 5–6 nhịp thở cơ hoành chậm (4 giây hít, 6 giây thở), HRV (heart rate variability) tăng có thể đo được — chỉ số phục hồi tốt hơn.',
+      'Kỹ thuật: đặt tay phải lên bụng, tay trái lên ngực. Hít vào mũi — tay phải phải nâng lên, tay trái gần như đứng yên. Thở ra miệng từ từ.',
+      'Tập trong 1 phút mỗi ngày tạo "cơ bắp thần kinh" phó giao cảm — về dài hạn giúp cơ thể phục hồi nhanh hơn sau stress và tập luyện.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Bụng phồng, ngực ít nâng', note: 'Cơ hoành là cơ hô hấp chính' },
+      { icon: '🧠', label: 'Vagus nerve', note: 'Kích hoạt "rest and digest" mode' },
+      { icon: '❤️', label: 'Tăng HRV', note: 'Chỉ số phục hồi cải thiện ngay' },
+      { icon: '⏱️', label: '1 phút = 6–8 nhịp', note: '4 giây hít, 6 giây thở' },
+    ],
+  },
+  {
+    exercise: 'Shoulder roll', label: 'Shoulder roll',
+    duration: '1 phút', note: 'Xoay vai trước và sau',
+    color: '#818cf8', rgb: '129,140,248',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Dân văn phòng dành 6–8 giờ/ngày với vai nhún về phía tai — shoulder roll ngược chiều hàng ngày ngăn chặn tình trạng co rút cơ thang (trapezius) mạn tính.',
+    detail: 'Shoulder roll đơn giản nhưng cực kỳ hiệu quả để reset cơ vai và cổ sau thời gian dài căng thẳng hoặc ngồi làm việc. Hai chiều xoay có tác dụng khác nhau.',
+    details: [
+      'Xoay vai về phía trước (anterior) kéo giãn cơ rhomboid (giữa hai bả vai) thường bị căng do vai đổ về phía trước khi ngồi.',
+      'Xoay vai về phía sau (posterior) kích hoạt cơ lower trapezius và serratus anterior — hai cơ thường bị yếu và ức chế ở người ngồi nhiều.',
+      'Kết hợp hít thở: hít vào khi vai đi lên và về sau, thở ra khi vai đi xuống và về trước — tăng hiệu quả giãn cơ và kích hoạt phó giao cảm.',
+      'Phạm vi chuyển động đầy đủ quan trọng hơn tốc độ — xoay chậm, lớn, cảm nhận từng cơ trong vòng xoay thay vì xoay nhanh hời hợt.',
+      'Dấu hiệu cần chú ý: nghe tiếng "lục cục" khi xoay vai → bình thường nếu không đau; nếu đau → cần kiểm tra rotator cuff trước khi tập.',
+      '1 phút = khoảng 8–10 vòng mỗi chiều. Sau 10 giây, cảm giác căng ở cổ và vai sẽ bắt đầu giảm rõ rệt.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Hai chiều xoay', note: 'Trước và sau, tác dụng khác nhau' },
+      { icon: '💨', label: 'Kết hợp hít thở', note: 'Hít lên, thở ra xuống' },
+      { icon: '🐢', label: 'Chậm và đầy đủ', note: 'Phạm vi rộng quan trọng hơn tốc độ' },
+      { icon: '👂', label: 'Tiếng lục cục', note: 'Bình thường nếu không kèm đau' },
+    ],
+  },
+  {
+    exercise: 'Thoracic twist', label: 'Thoracic twist',
+    duration: '1 phút', note: 'Xoay lưng ngực từng bên',
+    color: '#c084fc', rgb: '192,132,252',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cột sống ngực được thiết kế để xoay 35–40°, nhưng ngồi làm việc suốt ngày làm giảm xuống còn 10–15° — gây ra cơ chế bù trừ khiến cổ và lưng dưới phải xoay thay.',
+    detail: 'Thoracic spine (T1–T12) là vùng bị quên nhất trong phục hồi, nhưng lại là "cầu nối" giữa cổ và lưng. Mất linh hoạt ở đây gây đau cả hai đầu.',
+    details: [
+      'Khi T-spine bị cứng, não tự động "tìm" range of motion ở các khớp lân cận — thường là L4–L5 (lưng dưới) và C4–C6 (cổ), tạo ra tải trọng dư thừa và đau mạn tính.',
+      'Tư thế ngồi làm việc (forward head, rounded shoulders) nén các đốt ngực về phía trước liên tục — thoracic twist kéo giãn ngược lại sự nén này.',
+      'Kỹ thuật: ngồi thẳng, tay phải đặt lên vai trái, xoay thân về bên phải tối đa, giữ 3–5 giây. Đảm bảo xương chậu không xoay theo — chỉ xoay phần lưng ngực.',
+      'Hít vào trước khi xoay, thở ra khi xoay tối đa — phổi xẹp tạo không gian cho lồng ngực xoay sâu hơn 10–15%.',
+      'Điểm phổ biến nhất bị cứng: T4–T8 (giữa lưng ngực) — cảm nhận "điểm kháng cự" khi xoay, ở đó giữ thêm 2–3 giây.',
+      'Kết quả ngay lập tức: sau 3–5 lần mỗi bên, tầm nhìn khi ngửa đầu và xoay cổ thường tăng đáng kể — bằng chứng T-spine và cổ có liên hệ trực tiếp.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Chỉ xoay lưng ngực', note: 'Xương chậu giữ cố định' },
+      { icon: '💨', label: 'Thở ra khi xoay', note: 'Tăng ROM thêm 10–15%' },
+      { icon: '🎯', label: 'T4–T8 là điểm cứng nhất', note: 'Giữ thêm 2–3 giây ở điểm kháng' },
+      { icon: '🔗', label: 'Liên hệ với cổ', note: 'T-spine lỏng → cổ bớt đau' },
+    ],
+  },
+  {
+    exercise: 'Hip flexor stretch', label: 'Hip flexor stretch',
+    duration: '1 phút × 2', note: 'Giãn gấp hông từng bên',
+    color: '#e879f9', rgb: '232,121,249',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người ngồi 8+ giờ/ngày có hip flexor (cơ gấp hông) co rút liên tục — kéo xương chậu ngả về trước (anterior pelvic tilt) và là nguyên nhân số 1 gây đau lưng dưới.',
+    detail: 'Psoas và iliacus (nhóm hip flexor) nối cột sống thắt lưng với xương đùi. Khi co rút, chúng kéo lưng dưới ưỡn ra và nén đĩa đệm L4–L5, L5–S1.',
+    details: [
+      'Ngồi giữ hip flexor ở tư thế co ngắn liên tục — sau vài tháng, cơ "nhớ" độ dài ngắn này và mất đi độ linh hoạt ngay cả khi không ngồi.',
+      'Anterior pelvic tilt (chậu ngả trước) do hip flexor căng làm: bụng phình ra dù không có mỡ thừa, mông "phẳng", lưng dưới ưỡn quá mức.',
+      'Kỹ thuật lunge stretch: gối phải chạm sàn, chân trái phía trước 90°, đẩy hông phải về phía trước và xuống. Cảm thấy căng ở đùi trước chân phải = đúng vị trí.',
+      'Tăng cường độ: từ từ nâng tay cùng bên với gối chạm sàn lên đầu — kéo giãn thêm phần psoas gần cột sống hơn.',
+      'Giữ 60 giây mỗi bên với nhịp thở chậm — không nảy người. Cơ cần thời gian để phản xạ giãn (autogenic inhibition) hoạt động.',
+      'Cơ mông (glutes) và hip flexor là "kẻ thù" — khi hip flexor căng, glutes bị ức chế (reciprocal inhibition). Giãn hip flexor = kích hoạt glutes hiệu quả hơn.',
+    ],
+    points: [
+      { icon: '🦴', label: 'Anterior pelvic tilt', note: 'Lưng dưới đau vì chậu ngả trước' },
+      { icon: '⏱️', label: '60 giây mỗi bên', note: 'Đủ thời gian cho autogenic inhibition' },
+      { icon: '🍑', label: 'Giãn hip flexor = kích hoạt glute', note: 'Reciprocal inhibition' },
+      { icon: '🙅', label: 'Không nảy người', note: 'Gây phản xạ co cơ ngược lại' },
+    ],
+  },
+  {
+    exercise: 'Hamstring stretch', label: 'Hamstring stretch',
+    duration: '1 phút × 2', note: 'Giãn đùi sau từng bên',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1571019613526-f7f999ede82a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hamstring co rút là một trong 3 nguyên nhân hàng đầu gây đau lưng dưới mạn tính — 60 giây giãn mỗi ngày đủ để duy trì độ linh hoạt và giảm tải lên đĩa đệm.',
+    detail: 'Hamstring (cơ đùi sau) chạy từ xương ngồi đến sau gối — khi co rút, chúng kéo xương chậu ngả ra sau (posterior tilt) và làm phẳng đường cong sinh lý lưng dưới.',
+    details: [
+      'Hamstring nối xương ngồi (ischial tuberosity) với xương chày và fibula. Khi ngồi, chúng ở trạng thái vừa dài vừa bị nén — gây mất linh hoạt theo cơ chế khác hip flexor.',
+      'Posterior pelvic tilt do hamstring căng làm "phẳng" lưng dưới — mất đường cong sinh lý L4–L5, tăng áp lực lên đĩa đệm ở tư thế ngồi và cúi.',
+      'Kỹ thuật đứng: đứng thẳng, gót chân phải đặt lên bề mặt cao (30–50cm), giữ gối thẳng, từ từ cúi người về phía chân. Cảm thấy căng sau đùi = đúng.',
+      'Kỹ thuật nằm: nằm ngửa, kéo chân lên 90° bằng khăn quàng cổ vòng qua gót, giữ gối thẳng. Kiểm soát tốt hơn lực kéo so với đứng.',
+      'Neural tension vs. cơ bắp: đôi khi "cảm giác căng sau đùi" là dây thần kinh tọa căng chứ không phải cơ — nếu cảm thấy ngứa ran hay tê, giảm góc kéo.',
+      'Sau 4–6 tuần tập đều, hamstring dài ra và lưng dưới cảm thấy "nhẹ" hơn rõ rệt — đặc biệt sau khi ngủ dậy buổi sáng.',
+    ],
+    points: [
+      { icon: '🦵', label: 'Kéo lưng phẳng', note: 'Posterior tilt gây đau L4–L5' },
+      { icon: '⏱️', label: '60 giây mỗi bên', note: 'Không nảy, giữ tĩnh' },
+      { icon: '⚡', label: 'Kiểm tra dây thần kinh', note: 'Tê/ngứa ran → giảm góc kéo' },
+      { icon: '🔄', label: '4–6 tuần thấy khác biệt', note: 'Lưng sáng dậy nhẹ hơn rõ' },
+    ],
+  },
+  {
+    exercise: 'Child pose + thở', label: 'Child pose + thở',
+    duration: '2 phút', note: 'Thư giãn hoàn toàn',
+    color: '#7dd3fc', rgb: '125,211,252',
+    img: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Child pose kết hợp thở chậm giảm hoạt động hệ thần kinh giao cảm và tăng HRV trong vòng 2 phút — là bài kết thúc lý tưởng vì tích hợp cả giãn cơ lẫn điều hòa thần kinh.',
+    detail: 'Child pose (Balasana) nhẹ nhàng kéo giãn lưng, hông và vai trong khi tư thế cúi về phía trước tự nhiên kích hoạt phản xạ phó giao cảm.',
+    details: [
+      'Tư thế cúi người về phía trước (forward fold) kích hoạt baroreceptor ở cổ — não nhận tín hiệu áp lực tăng và tự động làm chậm nhịp tim, kích hoạt "rest mode".',
+      'Child pose kéo giãn đồng thời: erector spinae (cơ dựng cột sống), QL (quadratus lumborum) hai bên lưng, và hip flexor theo chiều khác với lunge stretch.',
+      'Tay duỗi thẳng về phía trước (extended child pose) kéo giãn thêm vai và lat (cơ lưng rộng) — thường rất căng ở người tập tay nhiều.',
+      'Thở vào khi ở child pose: hít sâu để hướng khí xuống lưng và hông — bạn sẽ cảm nhận được hông và lưng dưới giãn ra thêm với mỗi nhịp thở.',
+      '2 phút cho phép cơ thể "chìm sâu" hơn vào tư thế — trong 30 giây đầu cơ phản xạ co lại, sau 60 giây bắt đầu buông. Đừng rút ngắn dưới 90 giây.',
+      'Kết hợp với thở dài: hít 4 giây, thở ra 6–8 giây trong child pose là combo mạnh nhất để hạ cortisol và chuẩn bị cho giấc ngủ tốt.',
+    ],
+    points: [
+      { icon: '🧘', label: 'Forward fold reflex', note: 'Kích hoạt phó giao cảm tự nhiên' },
+      { icon: '🫁', label: 'Thở hướng về lưng', note: 'Hông và lưng giãn thêm mỗi nhịp' },
+      { icon: '⏳', label: 'Tối thiểu 90 giây', note: '60 giây đầu cơ phản xạ co lại' },
+      { icon: '💤', label: 'Trước ngủ', note: 'Kết hợp thở ra dài để hạ cortisol' },
+    ],
+  },
+  {
+    exercise: 'Đi bộ nhẹ', label: 'Đi bộ nhẹ',
+    duration: '1–2 phút', note: 'Kết thúc nhẹ nhàng',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Kết thúc bằng đi bộ nhẹ cho phép huyết áp và nhịp tim giảm từ từ — dừng đột ngột sau tập hoặc căng giãn mạnh có thể gây chóng mặt và máu đọng ở cơ bắp.',
+    detail: 'Đây là bước "hạ cánh" của toàn bộ routine. Đi bộ nhẹ đảm bảo tuần hoàn trở về bình thường trước khi cơ thể chuyển sang chế độ nghỉ ngơi hoàn toàn.',
+    details: [
+      'Sau căng giãn và thư giãn, cơ bắp còn nhiều máu đọng lại (blood pooling) — đi bộ nhẹ bơm máu trở về tim và phổi, tránh cảm giác chóng mặt khi đứng dậy đột ngột.',
+      'Nhiệt độ cơ thể tăng nhẹ trong quá trình tập và căng giãn — 1–2 phút đi bộ nhẹ hạ thân nhiệt từ từ, cơ thể tiếp tục quá trình làm mát sau khi kết thúc.',
+      'Tốc độ lý tưởng: bước đi chậm hơn nhịp bình thường 20–30%, thở bình thường — đây là "active cool down", không phải đứng yên.',
+      'Lắc nhẹ tay và xoay vai khi đi bộ tăng thêm lưu thông bạch huyết — hệ bạch huyết không có bơm riêng, phụ thuộc vào chuyển động cơ bắp để dẫn lưu.',
+      'Nếu thực hiện routine này trước ngủ: sau đi bộ nhẹ, nằm xuống và để cơ thể tự "chìm" vào nghỉ ngơi — không kiểm tra điện thoại.',
+      'Thời gian linh hoạt: 1 phút nếu vội, 2–3 phút nếu có thể. Không có giới hạn tối đa — đi bộ nhẹ 10 phút sau routine còn tốt hơn.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Chống blood pooling', note: 'Bơm máu về tim sau căng giãn' },
+      { icon: '🌡️', label: 'Hạ thân nhiệt từ từ', note: 'Không dừng đột ngột' },
+      { icon: '💧', label: 'Bạch huyết lưu thông', note: 'Lắc tay nhẹ khi đi bộ' },
+      { icon: '😴', label: 'Trước ngủ', note: 'Sau đó nằm xuống không dùng điện thoại' },
+    ],
+  },
 ];
 
 const C4_ZONES = [
@@ -903,6 +1050,7 @@ export default function PillarC() {
   const [c2EnergyIdx, setC2EnergyIdx] = useState(null);
   const [c3LevelIdx, setC3LevelIdx] = useState(null);
   const [standUpOpen, setStandUpOpen] = useState(false);
+  const [c4RoutineIdx, setC4RoutineIdx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -1341,12 +1489,21 @@ export default function PillarC() {
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#a78bfa' }}>Routine Phục Hồi 10 Phút</h3>
                 <div className="space-y-2 mb-6">
                   {C4_ROUTINE.map((r, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: 'rgba(167,139,250,0.05)', border: '1px solid rgba(167,139,250,0.1)' }}>
-                      <span className="text-base font-bold tabular-nums w-20 shrink-0" style={{ color: '#a78bfa' }}>{r.duration}</span>
-                      <div>
+                    <div
+                      key={i}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setC4RoutineIdx(i)}
+                      onKeyDown={e => e.key === 'Enter' && setC4RoutineIdx(i)}
+                      className="group flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-x-0.5"
+                      style={{ background: `rgba(${r.rgb},0.05)`, border: `1px solid rgba(${r.rgb},0.15)` }}
+                    >
+                      <span className="text-base font-bold tabular-nums w-20 shrink-0" style={{ color: r.color }}>{r.duration}</span>
+                      <div className="flex-1 min-w-0">
                         <div className="text-lg font-semibold text-text">{r.exercise}</div>
                         <div className="text-base text-muted">{r.note}</div>
                       </div>
+                      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 shrink-0 opacity-0 group-hover:opacity-60 transition-opacity" style={{ color: r.color }}><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                     </div>
                   ))}
                 </div>
@@ -1666,6 +1823,19 @@ export default function PillarC() {
           onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
           hasNext={c0Idx < C0_ITEMS.length - 1}
+        />
+      )}
+
+      {/* ── C4 recovery routine modal ── */}
+      {c4RoutineIdx !== null && (
+        <C0ItemModal
+          item={C4_ROUTINE[c4RoutineIdx]}
+          idx={c4RoutineIdx}
+          onClose={() => setC4RoutineIdx(null)}
+          onPrev={() => setC4RoutineIdx(i => Math.max(0, i - 1))}
+          onNext={() => setC4RoutineIdx(i => Math.min(C4_ROUTINE.length - 1, i + 1))}
+          hasPrev={c4RoutineIdx > 0}
+          hasNext={c4RoutineIdx < C4_ROUTINE.length - 1}
         />
       )}
 

@@ -204,6 +204,101 @@ const SLEEP_STAGES = [
   },
 ];
 
+const HYGIENE_STEPS = [
+  {
+    num: '01', icon: '🕙', label: 'Cố định khung giờ ngủ – thức',
+    color: '#14b8a6', rgb: '20,184,166',
+    content: 'Không cần chính xác tuyệt đối, nhưng nên giữ lệch không quá 60 phút giữa các ngày kể cả cuối tuần. Cơ thể hoạt động theo nhịp sinh học 24h (circadian rhythm). Giờ ngủ đều giúp cơ thể dự đoán và chuẩn bị sản xuất melatonin đúng lúc.',
+    tip: 'Đặt báo thức DẬY (không phải báo thức ngủ). Dậy đúng giờ quan trọng hơn ngủ đúng giờ.',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giữ giờ dậy ổn định (±30 phút) 7 ngày/tuần là can thiệp đơn lẻ mạnh nhất để cải thiện chất lượng giấc ngủ — quan trọng hơn cả giờ ngủ.',
+    detail: 'Đồng hồ sinh học (circadian clock) trong nhân siêu giao thoa (suprachiasmatic nucleus) điều khiển toàn bộ chu kỳ ngủ-thức, hormone, thân nhiệt và hàng trăm quá trình sinh lý. "Đồng hồ" này cần tín hiệu ổn định — và tín hiệu quan trọng nhất là giờ dậy buổi sáng.',
+    details: [
+      'Cơ thể bắt đầu chuẩn bị ngủ 14–16 tiếng sau khi thức dậy — giờ dậy ổn định = giờ buồn ngủ ổn định.',
+      'Ngủ bù cuối tuần 2–3 tiếng thêm làm "jet lag" xã hội (social jetlag) — tương tự bay qua 2–3 múi giờ mỗi tuần.',
+      'Giữ lệch không quá 60 phút giữa các ngày — não cần sự nhất quán để tiết melatonin đúng lúc.',
+      'Ánh sáng mặt trời buổi sáng (5–10 phút) là "đặt lại đồng hồ" mạnh nhất — kích hoạt cortisol giúp tỉnh táo và ổn định nhịp circadian.',
+      'Social jetlag tích lũy: ngủ muộn thức muộn cuối tuần rồi "cưỡng bức" dậy sớm thứ Hai tạo ra chu kỳ mệt mỏi mãn tính.',
+      'Báo thức DẬY (không phải báo thức ngủ) vì giờ dậy dễ kiểm soát hơn giờ ngủ — buồn ngủ xuất hiện tự nhiên khi đúng giờ.',
+    ],
+    points: [
+      { icon: '🧬', label: 'Circadian rhythm', note: 'Đồng hồ sinh học cần tín hiệu ổn định mỗi ngày' },
+      { icon: '⏰', label: 'Báo thức DẬY', note: 'Giờ dậy ổn định quan trọng hơn giờ ngủ' },
+      { icon: '✈️', label: 'Social jetlag', note: 'Ngủ muộn cuối tuần = jet lag 2–3 múi giờ/tuần' },
+      { icon: '☀️', label: 'Nắng sáng 5–10 phút', note: 'Đặt lại đồng hồ sinh học mạnh nhất' },
+    ],
+  },
+  {
+    num: '02', icon: '💡', label: 'Giảm ánh sáng mạnh buổi tối',
+    color: '#f59e0b', rgb: '245,158,11',
+    content: 'Ánh sáng xanh từ màn hình ức chế melatonin — hormone báo hiệu "đến giờ ngủ". Tắt bớt đèn, giảm độ sáng màn hình từ 21–22h. Dùng chế độ Night Shift/Night Mode trên thiết bị.',
+    tip: 'Ánh sáng ấm (cam/vàng) ban đêm ít ức chế melatonin hơn ánh sáng trắng/xanh.',
+    img: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chỉ 10 phút tiếp xúc ánh sáng xanh 480nm (màn hình điện thoại) vào lúc 21h làm trì hoãn tiết melatonin 90 phút — bạn sẽ không thấy buồn ngủ cho đến 23h dù cơ thể cần ngủ từ 21h30.',
+    detail: 'Tế bào melanopsin trong võng mạc (ipRGC) nhạy cảm đặc biệt với ánh sáng bước sóng 480nm (xanh lam) — ánh sáng này gửi tín hiệu "ban ngày" đến não ngay cả khi chỉ chiếu vài phút. Cơ thể không phân biệt được giữa ánh sáng mặt trời và màn hình điện thoại ở bước sóng này.',
+    details: [
+      'Melanopsin trong ipRGC (intrinsically photosensitive Retinal Ganglion Cells) là cảm biến ánh sáng "đặc biệt" — nhạy nhất với 480nm.',
+      'Ánh sáng xanh → tín hiệu "ngày" → não ức chế tuyến tùng (pineal gland) → ngừng tiết melatonin.',
+      'Ứng dụng Night Shift/Night Mode của iPhone/Android giảm ánh sáng xanh 50–80% — hiệu quả nhưng không hoàn toàn loại bỏ.',
+      'Kính chống ánh sáng xanh (blue light glasses) hiệu quả hơn Night Mode vì chặn ở nguồn, không chỉ điều chỉnh màn hình.',
+      'Đèn ngủ màu đỏ/cam (<590nm) gần như không ức chế melatonin — lý tưởng cho phòng ngủ sau 21h.',
+      'Ánh sáng phòng tắm thường rất mạnh và trắng — chuyển sang đèn nhỏ hoặc đèn ấm khi dùng phòng tắm sau 21h.',
+    ],
+    points: [
+      { icon: '📱', label: '10 phút = 90 phút delay', note: 'Xem điện thoại 21h → không buồn ngủ đến 23h' },
+      { icon: '👁️', label: 'Melanopsin/ipRGC', note: 'Cảm biến ánh sáng 480nm — không "tắt" được' },
+      { icon: '🔴', label: 'Đèn đỏ/cam sau 21h', note: '<590nm không ức chế melatonin' },
+      { icon: '🥽', label: 'Kính blue light', note: 'Hiệu quả hơn Night Mode nếu cần màn hình tối' },
+    ],
+  },
+  {
+    num: '03', icon: '☕', label: 'Giảm kích thích trước ngủ',
+    color: '#f97316', rgb: '249,115,22',
+    content: 'Caffeine có half-life 5–6 giờ — uống cà phê lúc 15h vẫn còn ½ lượng trong máu lúc 21h. Tránh tập nặng sát giờ ngủ (dưới 2 giờ). Tránh tranh luận, công việc căng thẳng, tin tức nhiều cảm xúc.',
+    tip: 'Thay cà phê tối bằng trà thảo mộc ấm (gừng, hoa cúc) nếu cần uống gì đó.',
+    img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Caffeine uống lúc 15h vẫn còn 50% trong máu lúc 21h — và nếu bạn nhạy caffeine, ¼ vẫn còn lúc 1h AM. Không phải bạn "không bị ảnh hưởng" — não bạn chỉ không còn nhận ra adenosine bị chặn.',
+    detail: 'Caffeine hoạt động bằng cách chặn thụ thể adenosine — chất tích lũy khi bạn thức, tạo ra cảm giác buồn ngủ. Caffeine không "tắt" sự mệt mỏi — nó chỉ che giấu tín hiệu mệt. Adenosine vẫn tích lũy và khi caffeine hết tác dụng, "cơn buồn ngủ phục thù" (caffeine crash) ập đến.',
+    details: [
+      'Caffeine half-life 5–6 giờ: uống 200mg lúc 15h → còn 100mg lúc 20–21h → còn 50mg lúc 1–2h AM.',
+      'Adenosine buildup vẫn xảy ra sau caffeine — khi caffeine hết tác dụng, adenosine ồ ạt gắn vào thụ thể → "crash" mạnh.',
+      'Tập nặng sát giờ ngủ (dưới 2 giờ) tăng core body temperature và cortisol — trì hoãn giấc ngủ 1–2 tiếng.',
+      'Tin tức xấu, tranh luận, email công việc căng thẳng tối kích hoạt amygdala — cortisol tăng, khó thư giãn.',
+      'Rượu bia giúp ngủ nhanh hơn nhưng phá vỡ kiến trúc giấc ngủ: ức chế REM và gây thức giữa đêm.',
+      'Cắt caffeine sau 14h và tránh tập nặng trước 20h là 2 thay đổi đơn giản nhất nhưng có tác động lớn nhất.',
+    ],
+    points: [
+      { icon: '☕', label: 'Cắt caffeine sau 14h', note: 'Half-life 5–6h — còn 50% lúc 20–21h' },
+      { icon: '🧠', label: 'Adenosine crash', note: 'Caffeine che giấu mệt — không loại bỏ' },
+      { icon: '🏋️', label: 'Không tập nặng <2h', note: 'Nhiệt độ cơ thể cao → khó vào giấc ngủ sâu' },
+      { icon: '🍺', label: 'Rượu phá REM', note: 'Ngủ nhanh hơn nhưng giấc ngủ kém chất lượng' },
+    ],
+  },
+  {
+    num: '04', icon: '🛏️', label: 'Tối ưu phòng ngủ',
+    color: '#6366f1', rgb: '99,102,241',
+    content: 'Nhiệt độ lý tưởng để ngủ: 18–21°C. Cơ thể cần nhiệt độ giảm để vào giấc ngủ sâu. Phòng tối (rèm dày hoặc mặt nạ ngủ), yên tĩnh (nút tai nếu cần). Giường chỉ dùng để ngủ — không làm việc, không xem phim trên giường.',
+    tip: 'Giường = tín hiệu ngủ. Làm việc trên giường làm não liên kết giường với trạng thái tỉnh táo.',
+    img: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhiệt độ phòng 18–21°C giúp core body temperature giảm 1–2°C — điều kiện bắt buộc để vào giấc ngủ sâu N3. Quá nóng hoặc quá lạnh đều làm giảm N3 đáng kể.',
+    detail: 'Phòng ngủ lý tưởng tuân theo 3 nguyên tắc: tối, mát, và yên tĩnh. Nhưng quan trọng hơn cả là "stimulus control" — liên kết giường với duy nhất một hành vi: ngủ. Não học bằng liên kết Pavlov — nếu bạn làm việc, xem phim trên giường, não sẽ liên kết "giường = tỉnh táo".',
+    details: [
+      'Nhiệt độ 18–21°C là "ngưỡng vàng": core body temperature cần giảm 1–2°C để não kích hoạt N3.',
+      'Phòng tối hoàn toàn: ngay cả ánh đèn ngủ nhỏ cũng đủ để melanopsin nhận diện và trì hoãn melatonin nhẹ.',
+      'Tiếng ồn không đều (xe cộ, hàng xóm) gây ra micro-arousals (thức thoáng qua không nhận ra) — phá vỡ kiến trúc giấc ngủ.',
+      'White noise hoặc pink noise giúp che tiếng ồn ngẫu nhiên — não không phản ứng với âm thanh đều đặn.',
+      'Stimulus control: giường chỉ dùng để ngủ và quan hệ — không điện thoại, không laptop, không TV.',
+      'Rèm cản sáng (blackout curtain) là đầu tư tốt nhất cho phòng ngủ — đặc biệt nếu ngủ muộn dậy muộn và cần chặn ánh sáng sáng sớm.',
+    ],
+    points: [
+      { icon: '🌡️', label: '18–21°C', note: 'Core body temp cần giảm để vào N3' },
+      { icon: '🌑', label: 'Tối hoàn toàn', note: 'Ánh đèn nhỏ cũng đủ ảnh hưởng melatonin' },
+      { icon: '🔇', label: 'White/pink noise', note: 'Che tiếng ồn ngẫu nhiên — bảo vệ giấc ngủ' },
+      { icon: '🛏️', label: 'Giường = chỉ ngủ', note: 'Stimulus control — Pavlov conditioning' },
+    ],
+  },
+];
+
 const TROUBLE_CASES = [
   {
     title: 'Lên giường nhưng không ngủ được',
@@ -392,6 +487,7 @@ export default function LifestyleSleepPage() {
   const [sleepFactIdx, setSleepFactIdx] = useState(null);
   const [sleepStageIdx, setSleepStageIdx] = useState(null);
   const [sleepTimingOpen, setSleepTimingOpen] = useState(false);
+  const [hygieneIdx, setHygieneIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -516,28 +612,21 @@ export default function LifestyleSleepPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vệ Sinh Giấc Ngủ 4 Bước</h2>
         <p className="text-muted text-lg mb-6">Không ép ngủ hoàn hảo, mà xây môi trường để cơ thể dễ ngủ hơn.</p>
         <div className="grid gap-4">
-          {[
-            { num: '01', title: 'Cố định khung giờ ngủ – thức', color: COLOR, icon: '🕙',
-              content: 'Không cần chính xác tuyệt đối, nhưng nên giữ lệch không quá 60 phút giữa các ngày kể cả cuối tuần. Cơ thể hoạt động theo nhịp sinh học 24h (circadian rhythm). Giờ ngủ đều giúp cơ thể dự đoán và chuẩn bị sản xuất melatonin đúng lúc.',
-              tip: 'Tip: Đặt báo thức DẬY (không phải báo thức ngủ). Dậy đúng giờ quan trọng hơn ngủ đúng giờ.' },
-            { num: '02', title: 'Giảm ánh sáng mạnh buổi tối', color: COLOR, icon: '💡',
-              content: 'Ánh sáng xanh từ màn hình ức chế melatonin — hormone báo hiệu "đến giờ ngủ". Tắt bớt đèn, giảm độ sáng màn hình từ 21–22h. Dùng chế độ Night Shift/Night Mode trên thiết bị.',
-              tip: 'Tip: Ánh sáng ấm (cam/vàng) ban đêm ít ức chế melatonin hơn ánh sáng trắng/xanh.' },
-            { num: '03', title: 'Giảm kích thích trước ngủ', color: COLOR, icon: '☕',
-              content: 'Caffeine có half-life 5–6 giờ — uống cà phê lúc 15h vẫn còn ½ lượng trong máu lúc 21h. Tránh tập nặng sát giờ ngủ (dưới 2 giờ). Tránh tranh luận, công việc căng thẳng, tin tức nhiều cảm xúc.',
-              tip: 'Tip: Thay cà phê tối bằng trà thảo mộc ấm (gừng, hoa cúc) nếu cần uống gì đó.' },
-            { num: '04', title: 'Tối ưu phòng ngủ', color: COLOR, icon: '🛏️',
-              content: 'Nhiệt độ lý tưởng để ngủ: 18–21°C. Cơ thể cần nhiệt độ giảm để vào giấc ngủ sâu. Phòng tối (rèm dày hoặc mặt nạ ngủ), yên tĩnh (nút tai nếu cần). Giường chỉ dùng để ngủ — không làm việc, không xem phim trên giường.',
-              tip: 'Tip: Giường = tín hiệu ngủ. Làm việc trên giường làm não liên kết giường với trạng thái tỉnh táo.' },
-          ].map((step, i) => (
-            <div key={i} className="p-5 rounded-2xl border" style={{ borderColor: `rgba(${RGB},0.15)`, background: `rgba(${RGB},0.04)` }}>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-3xl font-black tabular-nums" style={{ color: `rgba(${RGB},0.3)` }}>{step.num}</span>
-                <span className="text-2xl">{step.icon}</span>
-                <h3 className="font-bold text-text">{step.title}</h3>
+          {HYGIENE_STEPS.map((step, i) => (
+            <div key={i}
+              className="p-5 rounded-2xl border cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ borderColor: `rgba(${step.rgb},0.18)`, background: `rgba(${step.rgb},0.05)` }}
+              onClick={() => setHygieneIdx(i)}>
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl font-black tabular-nums" style={{ color: `rgba(${step.rgb},0.35)` }}>{step.num}</span>
+                  <span className="text-2xl">{step.icon}</span>
+                  <h3 className="font-bold text-text">{step.label}</h3>
+                </div>
+                <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60" style={{ color: step.color, background: `rgba(${step.rgb},0.1)` }}>Chi tiết →</span>
               </div>
-              <p className="text-muted text-lg leading-relaxed mb-3">{step.content}</p>
-              <div className="text-base font-semibold px-3 py-1.5 rounded-lg inline-block" style={{ color: COLOR, background: `rgba(${RGB},0.1)` }}>
+              <p className="text-muted text-base leading-relaxed mb-3">{step.content}</p>
+              <div className="text-sm font-semibold px-3 py-1.5 rounded-lg inline-block" style={{ color: step.color, background: `rgba(${step.rgb},0.1)` }}>
                 💡 {step.tip}
               </div>
             </div>
@@ -639,6 +728,19 @@ export default function LifestyleSleepPage() {
         <Link to="/pillar/c" className="text-muted hover:text-teal-400 transition-colors text-lg">← Lối Sống Khỏe</Link>
         <Link to="/pillar/c/sleep-routine" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Trước Ngủ →</Link>
       </div>
+
+      {/* ── Hygiene step modal ── */}
+      {hygieneIdx !== null && (
+        <SleepFactModal
+          item={HYGIENE_STEPS[hygieneIdx]}
+          idx={hygieneIdx}
+          onClose={() => setHygieneIdx(null)}
+          onPrev={() => setHygieneIdx(i => Math.max(0, i - 1))}
+          onNext={() => setHygieneIdx(i => Math.min(HYGIENE_STEPS.length - 1, i + 1))}
+          hasPrev={hygieneIdx > 0}
+          hasNext={hygieneIdx < HYGIENE_STEPS.length - 1}
+        />
+      )}
 
       {/* ── Sleep timing modal ── */}
       {sleepTimingOpen && <SleepTimingModal onClose={() => setSleepTimingOpen(false)} />}

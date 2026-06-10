@@ -8129,10 +8129,36 @@ export default function PillarB() {
           3-TIER CTA
       ══════════════════════════════════════════════════════════════════════ */}
       <RevealBlock className="mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] whitespace-nowrap">{pillar?.start_level_title || 'Bắt đầu từ cấp độ nào?'}</p>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="flex flex-col items-center gap-3 mb-8 text-center">
+          {/* Decorative top line with dots */}
+          <div className="flex items-center gap-3 w-full max-w-xs">
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(132,204,22,0.4))' }} />
+            <div className="flex gap-1">
+              {['#22c55e','#3b82f6','#a855f7'].map((c, i) => (
+                <span key={i} className="w-1.5 h-1.5 rounded-full" style={{ background: c, opacity: 0.7 }} />
+              ))}
+            </div>
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(168,85,247,0.4))' }} />
+          </div>
+
+          {/* Label chip */}
+          <span className="text-[9px] font-black uppercase tracking-[0.3em] px-3 py-1 rounded-full border"
+            style={{ color: 'rgba(255,255,255,0.35)', borderColor: 'rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)', letterSpacing: '0.25em' }}>
+            lộ trình của bạn
+          </span>
+
+          {/* Main heading */}
+          <h2 className="text-2xl md:text-3xl font-black leading-tight" style={{ letterSpacing: '-0.01em' }}>
+            <span style={{ color: '#22c55e' }}>Bắt đầu</span>
+            <span className="text-text"> từ </span>
+            <span style={{ background: 'linear-gradient(90deg, #3b82f6, #a855f7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              cấp độ nào?
+            </span>
+          </h2>
+
+          <p className="text-xs text-muted max-w-sm">
+            Click vào từng cấp để xem hướng dẫn chi tiết và lộ trình phù hợp
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4">

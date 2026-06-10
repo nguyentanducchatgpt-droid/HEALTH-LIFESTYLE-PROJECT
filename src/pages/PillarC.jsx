@@ -791,6 +791,107 @@ function C1StepModal({ step, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   );
 }
 
+// ─── StandUpModal ─────────────────────────────────────────────────────────────
+
+const STANDUP_COLOR = '#10b981';
+const STANDUP_RGB   = '16,185,129';
+const STANDUP_DATA  = {
+  img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
+  keyFact: 'Ngồi liên tục >8 giờ/ngày làm tăng nguy cơ bệnh tim mạch, tiểu đường type 2 và tử vong sớm — độc lập với việc bạn có tập gym hay không.',
+  detail: 'Đứng dậy 2 phút mỗi 45–60 phút không phải là "nghỉ giải lao" — đây là cơ chế sinh lý để chống lại tác hại của tư thế ngồi kéo dài lên trao đổi chất và tuần hoàn.',
+  details: [
+    'Ngồi tắt tắt hoạt động của enzyme lipoprotein lipase (LPL) — enzyme quan trọng để đốt mỡ. Chỉ cần đứng lên và di chuyển 2 phút là kích hoạt lại LPL.',
+    'Sau 20–30 phút ngồi bất động, lưu lượng máu đến não giảm nhẹ — đây là lý do bạn cảm thấy "mơ màng" và khó tập trung sau một lúc làm việc liên tục.',
+    'Nghiên cứu tại ĐH Utah (2015): thay thế 2 phút ngồi bằng đi bộ nhẹ mỗi giờ giảm nguy cơ tử vong 33% so với nhóm ngồi liên tục.',
+    'Calf raise (kiễng gót) đặc biệt hiệu quả khi đứng tại chỗ — cơ bắp chân hoạt động như "máy bơm thứ hai" giúp máu trở về tim từ chân.',
+    'Không nhất thiết phải rời bàn — đứng lên xoay vai, vươn người, nghiêng cổ trái/phải 30 giây cũng đủ ngắt chu kỳ ngồi và kích hoạt lại tuần hoàn.',
+    'Đặt báo thức 45 phút là cách đơn giản nhất để tạo thói quen này. Sau 2–3 tuần cơ thể tự "cảm thấy cần đứng dậy" mà không cần nhắc.',
+  ],
+  points: [
+    { icon: '⏱️', label: 'Mỗi 45–60 phút', note: 'Đứng dậy tối thiểu 2 phút' },
+    { icon: '🦵', label: 'Calf raise', note: 'Máy bơm thứ hai cho tuần hoàn' },
+    { icon: '🔔', label: 'Đặt báo thức', note: 'Tự động hóa thói quen đứng dậy' },
+    { icon: '🧠', label: 'Reset máu não', note: 'Giảm mơ màng, tăng tập trung' },
+  ],
+};
+
+function StandUpModal({ onClose }) {
+  const d = STANDUP_DATA;
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${STANDUP_RGB},0.28)`, boxShadow: `0 0 80px rgba(${STANDUP_RGB},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={d.img} alt="Quy tắc đứng dậy" className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${STANDUP_RGB},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${STANDUP_COLOR}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 flex items-center gap-3">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+              style={{ background: `rgba(${STANDUP_RGB},0.18)`, border: `2px solid rgba(${STANDUP_RGB},0.45)` }}>⏱</div>
+            <span className="text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full"
+              style={{ color: STANDUP_COLOR, background: `rgba(${STANDUP_RGB},0.2)`, border: `1px solid rgba(${STANDUP_RGB},0.35)` }}>
+              Quy tắc NEAT
+            </span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: STANDUP_COLOR }}>Quy Tắc Đứng Dậy 2 Phút</h2>
+          <p className="text-sm mb-4" style={{ color: `rgba(${STANDUP_RGB},0.7)` }}>{d.detail}</p>
+
+          <div className="rounded-2xl px-4 py-3 mb-6 flex items-start gap-3"
+            style={{ background: `rgba(${STANDUP_RGB},0.08)`, border: `1px solid rgba(${STANDUP_RGB},0.2)` }}>
+            <span className="text-lg shrink-0 mt-0.5">💡</span>
+            <p className="text-sm leading-relaxed" style={{ color: `rgba(${STANDUP_RGB},0.9)` }}>{d.keyFact}</p>
+          </div>
+
+          <ul className="space-y-3 mb-8">
+            {d.details.map((det, i) => (
+              <li key={i} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${STANDUP_RGB},0.14)`, color: STANDUP_COLOR }}>{i + 1}</span>
+                <span>{det}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {d.points.map((pt, i) => (
+              <div key={i} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${STANDUP_RGB},0.06)`, border: `1px solid rgba(${STANDUP_RGB},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-muted opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main component ────────────────────────────────────────────────────────────
 
 export default function PillarC() {
@@ -801,6 +902,7 @@ export default function PillarC() {
   const [c1Idx, setC1Idx] = useState(null);
   const [c2EnergyIdx, setC2EnergyIdx] = useState(null);
   const [c3LevelIdx, setC3LevelIdx] = useState(null);
+  const [standUpOpen, setStandUpOpen] = useState(false);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -1180,8 +1282,21 @@ export default function PillarC() {
                     </div>
                   ))}
                 </div>
-                <div className="p-4 rounded-xl mb-6" style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' }}>
-                  <p className="text-lg font-bold mb-1" style={{ color: '#10b981' }}>⏱ Quy tắc đứng dậy 2 phút</p>
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setStandUpOpen(true)}
+                  onKeyDown={e => e.key === 'Enter' && setStandUpOpen(true)}
+                  className="group p-4 rounded-xl mb-6 cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+                  style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' }}
+                >
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="text-lg font-bold" style={{ color: '#10b981' }}>⏱ Quy tắc đứng dậy 2 phút</p>
+                    <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#10b981' }}>
+                      Chi tiết
+                      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                    </span>
+                  </div>
                   <p className="text-base text-muted">Mỗi 45–60 phút ngồi, đứng dậy 2 phút. Đi lấy nước, xoay vai, vươn người, calf raise. <strong>Đừng đợi đau mới đứng dậy.</strong></p>
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>NEAT Checklist</h3>
@@ -1553,6 +1668,9 @@ export default function PillarC() {
           hasNext={c0Idx < C0_ITEMS.length - 1}
         />
       )}
+
+      {/* ── Stand-up rule modal ── */}
+      {standUpOpen && <StandUpModal onClose={() => setStandUpOpen(false)} />}
 
       {/* ── C3 level modal — reuses C0ItemModal (same data shape) ── */}
       {c3LevelIdx !== null && (

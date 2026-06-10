@@ -141,10 +141,98 @@ const C0_SCORE = [
 ];
 
 const C1_STEPS = [
-  { step: '1', title: 'Cố định khung giờ ngủ – thức', desc: 'Không cần tuyệt đối chính xác, nhưng nên giữ lệch không quá 60 phút giữa các ngày, kể cả cuối tuần.', icon: '🕙' },
-  { step: '2', title: 'Giảm ánh sáng mạnh buổi tối', desc: 'Tắt bớt đèn, giảm màn hình từ 21–22h. Ánh sáng mạnh ban đêm ức chế melatonin tự nhiên.', icon: '💡' },
-  { step: '3', title: 'Giảm kích thích cơ thể', desc: 'Tránh caffeine sau 14–15h, tránh tập quá nặng sát giờ ngủ, tránh làm việc căng ngay trước ngủ.', icon: '☕' },
-  { step: '4', title: 'Tối ưu phòng ngủ', desc: 'Phòng tối, mát (~18–21°C), yên tĩnh. Giường dùng chủ yếu để ngủ, không làm việc hay xem video trên giường.', icon: '🛏️' },
+  {
+    step: '1', icon: '🕙',
+    title: 'Cố định khung giờ ngủ – thức',
+    desc: 'Không cần tuyệt đối chính xác, nhưng nên giữ lệch không quá 60 phút giữa các ngày, kể cả cuối tuần.',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngủ và thức đúng giờ mỗi ngày quan trọng hơn tổng số giờ ngủ — nhất quán là yếu tố số 1 để có giấc ngủ sâu.',
+    detail: 'Đồng hồ sinh học (circadian rhythm) được thiết lập chủ yếu bởi giờ thức dậy, không phải giờ đi ngủ. Cố định giờ thức là chìa khóa để điều chỉnh toàn bộ chu kỳ ngủ.',
+    details: [
+      'Não dùng giờ thức dậy như "điểm neo" để tính ngược lại giờ buồn ngủ tự nhiên — vì vậy thức đúng giờ quan trọng hơn ngủ đúng giờ.',
+      '"Social jet lag" — ngủ muộn/dậy muộn cuối tuần — tạo ra hiệu ứng tương đương đổi múi giờ 2–3 tiếng mỗi tuần cho cơ thể.',
+      'Sau 3–4 tuần giữ giờ thức nhất quán, cảm giác buồn ngủ vào buổi tối sẽ xuất hiện đúng giờ một cách tự nhiên mà không cần cố.',
+      'Không cần ép ngủ sớm ngay — chỉ cần giữ giờ THỨC cố định trước. Giờ ngủ sẽ tự điều chỉnh sau 1–2 tuần.',
+      'Nếu bị thức khuya bất đắc dĩ, vẫn dậy đúng giờ hôm sau thay vì ngủ bù — ngủ bù phá vỡ việc đồng hồ sinh học đang hình thành.',
+      'Ánh sáng mạnh trong 30 phút đầu sau khi thức (ra ngoài hoặc mở rèm) giúp "chốt" giờ thức vào đồng hồ sinh học nhanh hơn nhiều.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Giờ thức cố định', note: 'Quan trọng hơn giờ đi ngủ' },
+      { icon: '📅', label: 'Kể cả cuối tuần', note: 'Lệch ≤60 phút là chấp nhận được' },
+      { icon: '☀️', label: 'Ánh sáng sau thức', note: '30 phút đầu ra ngoài hoặc mở rèm' },
+      { icon: '🗓️', label: '3–4 tuần hình thành', note: 'Sau đó buồn ngủ đúng giờ tự nhiên' },
+    ],
+  },
+  {
+    step: '2', icon: '💡',
+    title: 'Giảm ánh sáng mạnh buổi tối',
+    desc: 'Tắt bớt đèn, giảm màn hình từ 21–22h. Ánh sáng mạnh ban đêm ức chế melatonin tự nhiên.',
+    color: '#06b6d4', rgb: '6,182,212',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chỉ 10–15 phút tiếp xúc ánh sáng xanh sáng vào buổi tối đủ để ức chế melatonin 50% trong 2–3 giờ tiếp theo — theo nghiên cứu của Harvard.',
+    detail: 'Melatonin — hormone báo hiệu "đêm đến" — bắt đầu tiết khoảng 2 giờ trước giờ ngủ tự nhiên của bạn. Ánh sáng xanh từ màn hình là kẻ thù số 1 của quá trình này.',
+    details: [
+      'Màn hình điện thoại, máy tính, TV phát ánh sáng xanh (450–490nm) — loại ánh sáng não "hiểu" là ban ngày và chặn tiết melatonin.',
+      'Kính lọc ánh sáng xanh hoặc chế độ "Night Mode / Night Shift" giảm khoảng 20–30% ánh sáng xanh — hữu ích nhưng không loại bỏ hoàn toàn.',
+      'Tắt bớt đèn nhà từ 21h, chuyển sang đèn ngủ vàng ấm (<3000K) gửi tín hiệu "đêm đến" cho não hiệu quả hơn nhiều so với app lọc màu.',
+      'Đọc sách giấy thay màn hình 30 phút trước ngủ giảm thời gian chìm vào giấc ngủ trung bình 12 phút và cải thiện chất lượng ngủ.',
+      'Đeo kính chặn ánh sáng xanh (amber lens) từ 20h là giải pháp hiệu quả nhất nếu bạn cần dùng màn hình muộn vì công việc.',
+      'Ánh sáng môi trường (đèn nhà sáng) ảnh hưởng nhiều hơn ánh sáng màn hình nhỏ — ưu tiên làm tối phòng trước khi lo về Night Mode.',
+    ],
+    points: [
+      { icon: '🌑', label: 'Tắt đèn từ 21h', note: 'Chuyển đèn vàng ấm <3000K' },
+      { icon: '📵', label: 'Không màn hình 22h+', note: 'Hoặc dùng kính chặn ánh xanh' },
+      { icon: '📚', label: 'Đọc sách giấy', note: 'Thay màn hình 30 phút trước ngủ' },
+      { icon: '⚙️', label: 'Night Mode', note: 'Bật từ 19–20h không chờ đến muộn' },
+    ],
+  },
+  {
+    step: '3', icon: '☕',
+    title: 'Giảm kích thích cơ thể',
+    desc: 'Tránh caffeine sau 14–15h, tránh tập quá nặng sát giờ ngủ, tránh làm việc căng ngay trước ngủ.',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Caffeine có half-life 5–6 giờ: ly cà phê lúc 15h vẫn còn 50% hoạt chất trong máu lúc 21h — đủ để phá vỡ chất lượng ngủ sâu dù bạn vẫn ngủ được.',
+    detail: 'Kích thích thần kinh và hormone từ caffeine, tập nặng, hay công việc căng thẳng tạo ra môi trường sinh lý ngược lại với những gì cơ thể cần để đi vào giấc ngủ sâu.',
+    details: [
+      'Caffeine hoạt động bằng cách chặn adenosine (chất tích lũy gây buồn ngủ) — khi caffeine tan hết, adenosine "đổ ập" trở lại gây mệt đột ngột.',
+      'Người "nhạy cảm" với caffeine: thức uống chứa caffeine sau 12h đã đủ ảnh hưởng đến giấc ngủ — đây là gen di truyền, không phải ý chí yếu.',
+      'Tập thể lực nặng trong vòng 2–3 giờ trước ngủ tăng cortisol và thân nhiệt cơ thể — cả hai đều làm khó ngủ. Tập nhẹ (đi bộ, yoga) thì ổn.',
+      'Làm việc căng thẳng trước ngủ kích hoạt "problem-solving mode" của não — hệ thần kinh giao cảm vẫn kích hoạt dù bạn đã tắt máy.',
+      '"Wind-down" 30–60 phút: tắt email/công việc, làm việc nhẹ không đòi hỏi quyết định. Não cần thời gian chuyển từ "chiến đấu" sang "nghỉ ngơi".',
+      'Rượu bia giúp ngủ nhanh hơn nhưng phá vỡ giai đoạn REM (giấc ngủ mơ) và deep sleep trong nửa sau đêm — chất lượng tổng thể tệ hơn.',
+    ],
+    points: [
+      { icon: '☕', label: 'Cắt caffeine sau 14–15h', note: 'Half-life 5–6 giờ còn trong máu' },
+      { icon: '🏋️', label: 'Tập nhẹ trước ngủ', note: 'Đi bộ/yoga OK, tập nặng thì không' },
+      { icon: '💼', label: 'Dừng công việc 21h', note: 'Wind-down 30–60 phút trước ngủ' },
+      { icon: '🍺', label: 'Hạn chế rượu bia tối', note: 'Phá REM dù giúp ngủ nhanh hơn' },
+    ],
+  },
+  {
+    step: '4', icon: '🛏️',
+    title: 'Tối ưu phòng ngủ',
+    desc: 'Phòng tối, mát (~18–21°C), yên tĩnh. Giường dùng chủ yếu để ngủ, không làm việc hay xem video trên giường.',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhiệt độ phòng 18–21°C là điều kiện lý tưởng để đạt deep sleep — thân nhiệt cơ thể cần giảm 1–2°C để chìm vào giấc ngủ sâu.',
+    detail: 'Phòng ngủ là môi trường kích hoạt hành vi ngủ. Khi não liên kết giường với công việc, màn hình hay stress, nó ngừng nhận "giường = ngủ" như một tín hiệu.',
+    details: [
+      'Nhiệt độ lạnh hơn bình thường giúp ngủ sâu vì não và cơ thể cần giảm nhiệt để bước vào giai đoạn ngủ sâu (NREM stage 3).',
+      'Bóng tối hoàn toàn (hoặc gần hoàn toàn) quan trọng hơn nhiều người nghĩ: ánh đèn đường qua rèm mỏng đủ để giảm chất lượng ngủ.',
+      '"Stimulus control": giường chỉ dùng để ngủ và quan hệ — không làm việc, không xem phim, không cuộn mạng xã hội trên giường.',
+      'Tiếng ồn ngắt quãng (xe cộ, tiếng nói) phá vỡ giấc ngủ nhiều hơn tiếng ồn nền liên tục — white noise / fan nhẹ có thể giúp "che" tiếng ồn ngắt quãng.',
+      'Nệm và gối ảnh hưởng đến tư thế ngủ và đau nhức sau ngủ — đây là đầu tư đáng tiền nhất trong phòng ngủ nếu bạn thức dậy bị đau.',
+      'Dọn dẹp phòng ngủ gọn gàng giảm "visual noise" — nghiên cứu cho thấy phòng bừa bộn liên quan đến khó ngủ và ngủ không sâu.',
+    ],
+    points: [
+      { icon: '❄️', label: '18–21°C', note: 'Nhiệt độ tối ưu để ngủ sâu' },
+      { icon: '🌑', label: 'Tối hoàn toàn', note: 'Rèm dày hoặc mặt nạ ngủ' },
+      { icon: '🔇', label: 'Giảm tiếng ồn', note: 'White noise che tiếng ồn ngắt quãng' },
+      { icon: '🛏️', label: 'Giường chỉ để ngủ', note: 'Không làm việc, không màn hình' },
+    ],
+  },
 ];
 
 const C1_CHECKLIST = [
@@ -411,6 +499,109 @@ function C0ItemModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   );
 }
 
+// ─── C1StepModal ─────────────────────────────────────────────────────────────
+
+function C1StepModal({ step, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  const { color, rgb } = step;
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={step.img} alt={step.title} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 flex items-center gap-3">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+              style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.45)` }}>
+              {step.icon}
+            </div>
+            <span className="text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full"
+              style={{ color, background: `rgba(${rgb},0.2)`, border: `1px solid rgba(${rgb},0.35)` }}>
+              Bước {step.step}
+            </span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color }}>{step.title}</h2>
+          <p className="text-sm mb-4" style={{ color: `rgba(${rgb},0.7)` }}>{step.detail}</p>
+
+          {/* Key fact */}
+          <div className="rounded-2xl px-4 py-3 mb-6 flex items-start gap-3"
+            style={{ background: `rgba(${rgb},0.08)`, border: `1px solid rgba(${rgb},0.2)` }}>
+            <span className="text-lg shrink-0 mt-0.5">💡</span>
+            <p className="text-sm leading-relaxed" style={{ color: `rgba(${rgb},0.9)` }}>{step.keyFact}</p>
+          </div>
+
+          {/* Numbered details */}
+          <ul className="space-y-3 mb-8">
+            {step.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Key points 2-col */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {step.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Bước trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>Bước {idx + 1} / {C1_STEPS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Bước sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main component ────────────────────────────────────────────────────────────
 
 export default function PillarC() {
@@ -418,6 +609,7 @@ export default function PillarC() {
   const pillar = tPillars('pillarC', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('c1');
   const [c0Idx, setC0Idx] = useState(null);
+  const [c1Idx, setC1Idx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -665,12 +857,24 @@ export default function PillarC() {
                 <h2 className="text-2xl font-bold mb-1" style={{ color: TEAL }}>Vệ Sinh Giấc Ngủ 4 Bước</h2>
                 <p className="text-muted text-lg mb-6">Ngủ không phải là "thời gian chết". Ngủ là lúc cơ thể sửa chữa cơ bắp, cân bằng hormone và phục hồi tâm lý.</p>
                 <div className="grid gap-3 mb-8">
-                  {C1_STEPS.map((s) => (
-                    <div key={s.step} className="flex gap-4 p-4 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.05)`, border: `1px solid rgba(${TEAL_RGB},0.1)` }}>
+                  {C1_STEPS.map((s, i) => (
+                    <div
+                      key={s.step}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setC1Idx(i)}
+                      onKeyDown={e => e.key === 'Enter' && setC1Idx(i)}
+                      className="group flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-x-0.5"
+                      style={{ background: `rgba(${s.rgb},0.05)`, border: `1px solid rgba(${s.rgb},0.15)` }}
+                    >
                       <span className="text-3xl shrink-0">{s.icon}</span>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <div className="font-semibold text-text text-lg">Bước {s.step}: {s.title}</div>
                         <div className="text-muted text-base mt-1 leading-relaxed">{s.desc}</div>
+                      </div>
+                      <div className="shrink-0 flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: s.color }}>
+                        Chi tiết
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                       </div>
                     </div>
                   ))}
@@ -1133,6 +1337,19 @@ export default function PillarC() {
           onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
           hasNext={c0Idx < C0_ITEMS.length - 1}
+        />
+      )}
+
+      {/* ── C1 step modal — outside all RevealBlocks so position:fixed works ── */}
+      {c1Idx !== null && (
+        <C1StepModal
+          step={C1_STEPS[c1Idx]}
+          idx={c1Idx}
+          onClose={() => setC1Idx(null)}
+          onPrev={() => setC1Idx(i => Math.max(0, i - 1))}
+          onNext={() => setC1Idx(i => Math.min(C1_STEPS.length - 1, i + 1))}
+          hasPrev={c1Idx > 0}
+          hasNext={c1Idx < C1_STEPS.length - 1}
         />
       )}
     </div>

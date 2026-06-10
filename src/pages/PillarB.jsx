@@ -799,11 +799,111 @@ const GOAL_MODIFIERS = [
 const GOAL_KEY_TO_ID = { loss: 'fat-loss', gain: 'muscle-gain', recomp: 'maintenance' };
 const GOAL_ID_TO_KEY = { 'fat-loss': 'loss', 'muscle-gain': 'gain', 'endurance': 'recomp', 'maintenance': 'recomp' };
 const MEAL_SPLIT_RULES = [
-  { n: '1', title: 'Không bỏ bữa sáng',      desc: 'Bữa sáng kích hoạt trao đổi chất và ổn định đường huyết cả ngày.' },
-  { n: '2', title: 'Mỗi bữa có protein',      desc: 'Protein giúp no lâu, bảo vệ cơ và đốt thêm calo khi tiêu hóa.' },
-  { n: '3', title: 'Ăn rau trước carb',        desc: 'Rau làm chậm hấp thu đường, giảm đỉnh insulin sau bữa ăn.' },
-  { n: '4', title: 'Khoảng cách bữa hợp lý',  desc: 'Không nhịn quá 5 tiếng — tránh ăn bù quá nhiều ở bữa kế.' },
-  { n: '5', title: 'Bữa tối dễ tiêu',          desc: 'Giảm tinh bột buổi tối nếu không tập, tăng rau và protein.' },
+  {
+    n: '1', icon: '🌅',
+    title: 'Không bỏ bữa sáng',
+    desc: 'Bữa sáng kích hoạt trao đổi chất và ổn định đường huyết cả ngày.',
+    img: 'https://images.unsplash.com/photo-1494390248081-4e521a5940db?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Bỏ bữa sáng liên tục làm tăng cortisol buổi sáng, làm chậm trao đổi chất và tăng cảm giác thèm ăn đường/béo vào buổi trưa/tối.',
+    detail: 'Bữa sáng phá vỡ trạng thái nhịn ăn qua đêm (8–10 tiếng), kích hoạt thermogenesis (quá trình đốt calo để tiêu hóa), và ổn định đường huyết trước khi não bộ bắt đầu làm việc. Không cần bữa sáng lớn — 300–400 kcal với protein + carb chậm là đủ.',
+    details: [
+      'Cortisol tự nhiên tăng cao vào buổi sáng (Cortisol Awakening Response). Bỏ bữa sáng làm cortisol duy trì cao hơn, kích thích cơ thể đốt protein cơ thay vì mỡ.',
+      'Đường huyết thấp buổi sáng → não bộ hoạt động kém → khó tập trung, dễ cáu, tăng cảm giác thèm đồ ngọt để bù nhanh.',
+      'Bữa sáng lý tưởng: 300–400 kcal, có 20–30g protein, carb chậm (yến mạch, bánh mì nguyên cám), không cần đủ macro hoàn hảo.',
+      'Không có thời gian? Trứng luộc + sữa tươi + chuối = 5 phút, 350 kcal, 25g protein. Đủ để khởi động ngày.',
+      'Nếu thực sự không ăn được buổi sáng (không đói), hãy ăn trong vòng 1 tiếng sau khi thức dậy thay vì bỏ hoàn toàn.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Kích hoạt thermogenesis', note: 'Đốt calo ngay từ bữa đầu tiên' },
+      { icon: '🧠', label: 'Ổn định đường huyết', note: 'Não hoạt động tốt hơn suốt buổi sáng' },
+      { icon: '💪', label: '20–30g protein', note: 'Bảo vệ cơ, no lâu đến trưa' },
+      { icon: '⏰', label: 'Trong 1 tiếng', note: 'Ăn sớm sau khi thức dậy' },
+    ],
+  },
+  {
+    n: '2', icon: '🥩',
+    title: 'Mỗi bữa có protein',
+    desc: 'Protein giúp no lâu, bảo vệ cơ và đốt thêm calo khi tiêu hóa.',
+    img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Protein có TEF (Thermic Effect of Food) 20–30% — cơ thể đốt 20–30 kcal chỉ để tiêu hóa 100 kcal protein. Carb và mỡ chỉ đốt 5–8%.',
+    detail: 'Protein là macro duy nhất vừa giúp no lâu (tăng PYY, GLP-1, giảm ghrelin), vừa bảo vệ cơ khi giảm calo, vừa tạo ra nhiệt năng khi tiêu hóa. Phân bổ đều protein qua 3–4 bữa giúp tổng hợp protein cơ (MPS) tối ưu hơn ăn dồn một bữa.',
+    details: [
+      'Mục tiêu protein: 1.6–2.2g/kg thể trọng/ngày. Chia đều qua 3–4 bữa, mỗi bữa 25–40g — tối ưu cho muscle protein synthesis (MPS).',
+      'Nguồn protein hoàn chỉnh (đủ 9 amino acid thiết yếu): thịt, cá, trứng, sữa, đậu nành. Kết hợp gạo + đậu cũng tạo ra protein hoàn chỉnh.',
+      'Protein làm chậm tốc độ tiêu hóa chung của bữa ăn, ổn định đường huyết sau bữa — hiệu ứng tốt hơn nếu ăn protein TRƯỚC carb trong cùng bữa.',
+      'Snack có protein (sữa chua, phô mai que, trứng luộc) giúp kiểm soát cơn đói giữa bữa tốt hơn snack thuần carb như bánh quy.',
+      'Người tập sức mạnh cần 2.0–2.2g/kg; người muốn duy trì hoặc giảm nhẹ cần 1.6–1.8g/kg; người ít vận động cần tối thiểu 1.2g/kg.',
+    ],
+    points: [
+      { icon: '🔥', label: 'TEF 20–30%', note: 'Đốt calo khi tiêu hóa protein' },
+      { icon: '💪', label: '25–40g/bữa', note: 'Kích hoạt MPS tối ưu' },
+      { icon: '😋', label: 'No lâu', note: 'Tăng PYY, giảm ghrelin hunger hormone' },
+      { icon: '🎯', label: '1.6–2.2g/kg', note: 'Tổng protein mục tiêu mỗi ngày' },
+    ],
+  },
+  {
+    n: '3', icon: '🥦',
+    title: 'Ăn rau trước carb',
+    desc: 'Rau làm chậm hấp thu đường, giảm đỉnh insulin sau bữa ăn.',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Ăn rau trước cơm có thể giảm đỉnh đường huyết sau bữa ăn tới 40–50% so với ăn cơm trước rau — nghiên cứu từ Weill Cornell Medicine.',
+    detail: 'Chất xơ trong rau tạo ra lớp gel nhớt trong ruột, làm chậm enzyme amylase phân giải tinh bột và làm chậm hấp thu glucose vào máu. Kết quả: đỉnh insulin thấp hơn, no lâu hơn, và ít tích mỡ hơn dù ăn cùng lượng calo.',
+    details: [
+      'Cơ chế: chất xơ hòa tan (pectin, beta-glucan) tạo gel nhớt bao phủ thành ruột non, làm chậm enzyme tiêu hóa tinh bột và hấp thu glucose.',
+      'Nghiên cứu Weill Cornell (2015): ăn rau/protein trước cơm giảm đỉnh glucose 37–40% so với ăn cơm trước. Hiệu ứng kéo dài đến 2 tiếng sau bữa.',
+      'Không cần ăn riêng biệt từng món — chỉ cần bắt đầu bữa bằng vài miếng rau trước khi ăn cơm là đủ tạo ra hiệu ứng buffer.',
+      'Rau hiệu quả nhất: broccoli, súp lơ, cải xanh, đậu bắp (chất xơ hòa tan cao). Ít nhất 1–2 nắm tay rau mỗi bữa chính.',
+      'Hiệu ứng tương tự xảy ra với protein — ăn protein trước carb cũng làm chậm hấp thu glucose. Kết hợp rau + protein trước cơm là chiến lược tối ưu.',
+    ],
+    points: [
+      { icon: '📉', label: 'Giảm đỉnh glucose 40%', note: 'Ổn định đường huyết sau bữa' },
+      { icon: '🧪', label: 'Chất xơ hòa tan', note: 'Tạo gel, làm chậm hấp thu carb' },
+      { icon: '🍽️', label: 'Ăn rau TRƯỚC', note: 'Chỉ vài miếng đầu là đủ tác dụng' },
+      { icon: '⏱️', label: 'Hiệu quả 2 tiếng', note: 'Buffer đường huyết dài sau bữa' },
+    ],
+  },
+  {
+    n: '4', icon: '⏱️',
+    title: 'Khoảng cách bữa hợp lý',
+    desc: 'Không nhịn quá 5 tiếng — tránh ăn bù quá nhiều ở bữa kế.',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Khoảng cách giữa các bữa lý tưởng: 3–5 tiếng. Dưới 3 tiếng: insulin chưa về nền. Trên 5 tiếng: đường huyết quá thấp → ăn bù cồng kềnh.',
+    detail: 'Khoảng cách bữa ảnh hưởng đến hormone đói no (ghrelin/leptin), mức đường huyết, và tâm lý ăn uống. Nhịn quá lâu kích hoạt "emergency eating" — não bộ ưu tiên thực phẩm cao calo, ăn nhanh, và ít nhận biết cảm giác no cho đến khi đã ăn quá nhiều.',
+    details: [
+      'Ghrelin (hormone đói) tăng đỉnh sau 4–5 tiếng không ăn. Khi ghrelin quá cao, khả năng kiểm soát khẩu phần giảm đáng kể — não bộ ưu tiên năng lượng cao, nhanh.',
+      'Khoảng cách 3–5 tiếng: tối ưu cho tiêu hóa hoàn toàn bữa trước, cho phép insulin về baseline trước khi bắt đầu bữa mới.',
+      'Snack 100–200 kcal sau 3–4 tiếng (nếu bữa chính cách xa nhau) giúp ngăn ghrelin tăng quá cao, giữ năng lượng ổn định.',
+      'Không cần ăn đúng giờ cố định mỗi ngày — quan trọng là TỔNG calo và khoảng cách đủ để không quá đói trước bữa chính.',
+      'Dấu hiệu khoảng cách bữa không hợp lý: ăn rất nhanh, không thấy no dù đã ăn nhiều, thèm đồ ngọt/mặn dữ dội sau bữa.',
+    ],
+    points: [
+      { icon: '⏰', label: '3–5 tiếng/bữa', note: 'Khoảng cách tối ưu giữa các bữa' },
+      { icon: '🍎', label: 'Snack 100–200 kcal', note: 'Ngăn ghrelin tăng quá cao' },
+      { icon: '🧠', label: 'Emergency eating', note: 'Nhịn lâu → mất kiểm soát khi ăn' },
+      { icon: '📊', label: 'Insulin baseline', note: 'Cần thời gian về nền trước bữa mới' },
+    ],
+  },
+  {
+    n: '5', icon: '🌙',
+    title: 'Bữa tối dễ tiêu',
+    desc: 'Giảm tinh bột buổi tối nếu không tập, tăng rau và protein.',
+    img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Insulin sensitivity giảm 20–25% vào buổi tối so với buổi sáng — cùng một lượng carb ăn tối sẽ làm tăng đường huyết cao hơn và tích mỡ dễ hơn ăn sáng.',
+    detail: 'Cơ thể có nhịp sinh học (circadian rhythm) ảnh hưởng đến khả năng xử lý các loại thực phẩm. Buổi tối: insulin kém nhạy hơn, trao đổi chất chậm hơn, cơ thể chuẩn bị cho giấc ngủ. Bữa tối nặng, nhiều tinh bột sẽ làm tăng đường huyết và giảm chất lượng giấc ngủ.',
+    details: [
+      'Circadian rhythm và insulin: thụ thể insulin hoạt động tốt nhất buổi sáng, kém nhạy vào buổi tối. Ăn nhiều carb tối = cùng lượng carb nhưng đường huyết tăng cao hơn sáng.',
+      'Bữa tối lý tưởng: protein vừa đủ (30–40g) + rau nhiều (chất xơ giúp no, ổn định đường huyết buổi tối) + carb tối thiểu (khoai lang hoặc gạo lức ít).',
+      'Ngoại lệ: nếu bạn tập buổi tối, cơ thể cần carb sau tập để phục hồi glycogen. Ăn carb sau tập tối là cần thiết — không phải sai.',
+      'Ăn tối quá no hoặc quá gần giờ ngủ (dưới 2 tiếng) làm giảm chất lượng giấc ngủ: nhiệt độ cơ thể cao hơn, tiêu hóa cạnh tranh với quá trình phục hồi ban đêm.',
+      'Thực đơn tối đơn giản: cá/thịt gà hấp + canh rau + ít cơm gạo lức. Tổng 400–500 kcal, đủ no, dễ tiêu, không phá giấc ngủ.',
+    ],
+    points: [
+      { icon: '🌙', label: 'Circadian rhythm', note: 'Insulin kém nhạy buổi tối' },
+      { icon: '🥗', label: 'Rau + protein', note: 'Công thức bữa tối tối ưu' },
+      { icon: '💤', label: 'Cách ngủ 2 tiếng', note: 'Tiêu hóa xong trước khi ngủ' },
+      { icon: '🏋️', label: 'Ngoại lệ: sau tập', note: 'Tập tối → carb sau tập là cần' },
+    ],
+  },
 ];
 
 // ── B6: 7-Day Meal Plan data ──
@@ -5025,7 +5125,7 @@ function TDEEBenefitModal({ b, idx, onClose, onPrev, onNext, hasPrev, hasNext })
 }
 
 // ─── CalcPanel (B0) — Interactive TDEE calculator ───────────────────────────
-function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s, onBenefitOpen }) {
+function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s, onBenefitOpen, onMealSplitOpen }) {
   const { t: tPillars } = useTranslation('pillars');
   const b0tr = tPillars('pillarB.b0', { returnObjects: true }) || {};
   const activityTr = tPillars('pillarB.activity_levels', { returnObjects: true }) || [];
@@ -5301,17 +5401,127 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
           {MEAL_SPLIT_RULES.map((r, i) => (
             <div
               key={r.n}
-              className="rounded-2xl border border-violet-500/15 bg-violet-500/5 p-4 hover:border-violet-500/30 transition-all duration-200"
+              role="button"
+              tabIndex={0}
+              onClick={() => onMealSplitOpen?.(i)}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onMealSplitOpen?.(i); }}
+              className="group rounded-2xl border border-violet-500/15 bg-violet-500/5 p-4 hover:border-violet-500/40 hover:bg-violet-500/10 transition-all duration-200 cursor-pointer hover:-translate-y-0.5"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-6 rounded-lg flex items-center justify-center text-[10px] font-black shrink-0" style={{ color: '#8b5cf6', background: '#8b5cf615', border: '1px solid #8b5cf630' }}>{r.n}</span>
-                <p className="text-lg font-bold text-text">{b0tr.meal_split_rules?.[i]?.title || r.title}</p>
+                <span className="w-6 h-6 rounded-lg flex items-center justify-center text-[10px] font-black shrink-0 transition-colors group-hover:bg-violet-500/25" style={{ color: '#8b5cf6', background: '#8b5cf615', border: '1px solid #8b5cf630' }}>{r.n}</span>
+                <p className="text-lg font-bold text-text group-hover:text-violet-300 transition-colors">{b0tr.meal_split_rules?.[i]?.title || r.title}</p>
               </div>
-              <p className="text-[11px] text-muted leading-relaxed">{b0tr.meal_split_rules?.[i]?.desc || r.desc}</p>
+              <p className="text-[11px] text-muted leading-relaxed mb-2">{b0tr.meal_split_rules?.[i]?.desc || r.desc}</p>
+              <span className="inline-flex items-center gap-1 text-[10px] font-bold opacity-40 group-hover:opacity-100 transition-opacity" style={{ color: '#8b5cf6' }}>
+                Xem chi tiết
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
+                </svg>
+              </span>
             </div>
           ))}
         </div>
       </RevealBlock>
+    </div>
+  );
+}
+
+// ─── MealSplitModal — full-screen overlay (rendered at PillarB root, outside RevealBlocks) ─
+const MS_COLOR = '#8b5cf6';
+const MS_RGB   = '139,92,246';
+
+function MealSplitModal({ r, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0a080f', borderColor: `rgba(${MS_RGB},0.28)`, boxShadow: `0 0 80px rgba(${MS_RGB},0.15), 0 40px 80px rgba(0,0,0,0.6)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={r.img} alt={r.title} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${MS_RGB},0.08) 50%, #0a080f 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${MS_COLOR}, transparent)` }} />
+          <div className="absolute top-5 right-6 font-black leading-none" style={{ fontSize: 52, color: MS_COLOR, textShadow: `0 0 30px rgba(${MS_RGB},0.65)` }}>
+            {r.n}
+          </div>
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${MS_RGB},0.18)`, border: `2px solid rgba(${MS_RGB},0.45)` }}>
+            {r.icon}
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: MS_COLOR }}>{r.title}</h2>
+
+          <div className="flex gap-3 rounded-2xl p-4 mb-6" style={{ background: `rgba(${MS_RGB},0.07)`, border: `1px solid rgba(${MS_RGB},0.2)` }}>
+            <span className="text-lg shrink-0">💡</span>
+            <p className="text-sm font-semibold leading-relaxed m-0" style={{ color: '#c4b5fd' }}>{r.keyFact}</p>
+          </div>
+
+          <p className="text-base text-muted leading-relaxed mb-6">{r.detail}</p>
+
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: MS_COLOR }}>Chi Tiết Thực Hành</p>
+          <ul className="space-y-3 mb-8">
+            {r.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${MS_RGB},0.14)`, color: MS_COLOR }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {r.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${MS_RGB},0.06)`, border: `1px solid rgba(${MS_RGB},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasPrev ? MS_COLOR : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${MS_RGB},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${MS_RGB},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{r.n} / {MEAL_SPLIT_RULES.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasNext ? MS_COLOR : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${MS_RGB},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${MS_RGB},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -7202,6 +7412,7 @@ export default function PillarB() {
   }));
   const [mantraIdx, setMantraIdx] = useState(null);
   const [benefitIdx, setBenefitIdx] = useState(null);
+  const [mealSplitIdx, setMealSplitIdx] = useState(null);
   const spiritTr = pillar?.spirit_card || {};
 
   useEffect(() => {
@@ -7351,7 +7562,7 @@ export default function PillarB() {
     );
   }
 
-  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey: handleGoalKeyChange, userStats, onBenefitOpen: setBenefitIdx };
+  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey: handleGoalKeyChange, userStats, onBenefitOpen: setBenefitIdx, onMealSplitOpen: setMealSplitIdx };
   const PANELS = [
     <CalcPanel key="calc" {...calcProps} />,
     <FoundationPanel key="foundation" s={userStats} onGoalKeyChange={handleGoalKeyChange} />,
@@ -8160,6 +8371,19 @@ export default function PillarB() {
           onNext={() => setBenefitIdx(i => Math.min(TDEE_BENEFITS.length - 1, i + 1))}
           hasPrev={benefitIdx > 0}
           hasNext={benefitIdx < TDEE_BENEFITS.length - 1}
+        />
+      )}
+
+      {/* ── Meal split modal — outside all RevealBlocks so position:fixed works ── */}
+      {mealSplitIdx !== null && (
+        <MealSplitModal
+          r={MEAL_SPLIT_RULES[mealSplitIdx]}
+          idx={mealSplitIdx}
+          onClose={() => setMealSplitIdx(null)}
+          onPrev={() => setMealSplitIdx(i => Math.max(0, i - 1))}
+          onNext={() => setMealSplitIdx(i => Math.min(MEAL_SPLIT_RULES.length - 1, i + 1))}
+          hasPrev={mealSplitIdx > 0}
+          hasNext={mealSplitIdx < MEAL_SPLIT_RULES.length - 1}
         />
       )}
 

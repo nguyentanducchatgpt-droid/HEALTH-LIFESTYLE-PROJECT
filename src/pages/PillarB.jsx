@@ -566,6 +566,7 @@ const TIERS = [
     level: 'Người mới',
     sub: 'Tuần 1–4',
     color: '#22c55e',
+    rgb: '34,197,94',
     glow: 'rgba(34,197,94,0.15)',
     text: 'text-green-400',
     border: 'border-green-500/30',
@@ -578,11 +579,29 @@ const TIERS = [
       'Không cần đếm calo — chỉ cần nhận thức',
       'Giảm nước ngọt và đồ ăn vặt siêu chế biến',
     ],
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: '80% kết quả đến từ những thói quen cơ bản nhất — không cần đếm calo ngay từ đầu.',
+    detail: 'Giai đoạn khởi đầu tập trung vào việc xây dựng nhận thức và thói quen ăn uống lành mạnh. Mục tiêu không phải là hoàn hảo mà là nhất quán.',
+    details: [
+      'Ưu tiên đạm ở mỗi bữa: ức gà, trứng, cá, đậu hũ, sữa chua — giúp no lâu hơn và hạn chế thèm ngọt sau bữa ăn.',
+      'Rau xanh vào 2/3 bữa chính giúp bổ sung vi chất, chất xơ và làm chậm hấp thu đường trong máu.',
+      'Nước là nền tảng: 6–8 ly/ngày giúp cơ thể trao đổi chất tốt hơn, giảm nhầm lẫn giữa khát và đói.',
+      'Ở giai đoạn này, nhận thức quan trọng hơn đếm số: biết bữa nào thiếu đạm, bữa nào quá nhiều tinh bột là đủ.',
+      'Cắt giảm nước ngọt và đồ ăn vặt siêu chế biến — đây là thay đổi tạo ra tác động lớn nhất với ít nỗ lực nhất.',
+      'Không cần thực đơn phức tạp: chỉ cần hỏi bản thân sau mỗi bữa — "Có đạm chưa? Có rau chưa?"',
+    ],
+    points: [
+      { icon: '🥩', label: 'Đạm mỗi bữa', note: 'Thịt, cá, trứng, đậu hũ' },
+      { icon: '🥦', label: 'Rau 2/3 bữa', note: 'Luộc, xào, canh đều được' },
+      { icon: '💧', label: '6–8 ly nước/ngày', note: 'Trước bữa uống 1 ly' },
+      { icon: '🚫', label: 'Giảm siêu chế biến', note: 'Nước ngọt, snack đóng gói' },
+    ],
   },
   {
     level: 'Tiêu Chuẩn',
     sub: 'Tuần 5–12',
     color: '#3b82f6',
+    rgb: '59,130,246',
     glow: 'rgba(59,130,246,0.15)',
     text: 'text-blue-400',
     border: 'border-blue-500/30',
@@ -595,11 +614,29 @@ const TIERS = [
       'Theo dõi protein hàng ngày (~1.6–2g/kg)',
       'Học đọc nhãn dinh dưỡng cơ bản',
     ],
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đĩa ăn ½–¼–¼ + đủ protein hàng ngày giải quyết 90% nhu cầu dinh dưỡng mà không cần app theo dõi phức tạp.',
+    detail: 'Giai đoạn tiêu chuẩn đưa thói quen từ nhận thức sang cấu trúc thực sự. Bạn bắt đầu lập kế hoạch bữa ăn, theo dõi protein và học cách đọc nhãn dinh dưỡng.',
+    details: [
+      'Đĩa ăn ½–¼–¼: nửa đĩa rau và protein, một phần tư tinh bột, một phần tư đạm động vật — công thức đơn giản nhất để cân bằng bữa ăn.',
+      'Meal prep 1–2 lần/tuần tiết kiệm 30–60 phút mỗi ngày và giảm quyết định ăn uống khi đói (quyết định tệ nhất).',
+      'Thực phẩm chế biến tối thiểu có nghĩa là chọn nguyên liệu gần với trạng thái tự nhiên nhất có thể — ức gà luộc thay vì xúc xích gà.',
+      'Theo dõi protein (~1.6–2g/kg cân nặng) là chỉ số quan trọng nhất: đủ protein giúp giữ cơ, no lâu và phục hồi tốt hơn.',
+      'Đọc nhãn dinh dưỡng: chú ý 3 chỉ số — calo/khẩu phần, protein, và thành phần đầu tiên trong danh sách nguyên liệu.',
+      'Ở giai đoạn này bạn bắt đầu thấy cơ thể thay đổi — đây là lúc cần duy trì thay vì thay đổi liên tục kế hoạch.',
+    ],
+    points: [
+      { icon: '🍽️', label: 'Đĩa ăn ½–¼–¼', note: 'Rau + protein + tinh bột' },
+      { icon: '📦', label: 'Meal prep tuần', note: '1–2 lần, tiết kiệm thời gian' },
+      { icon: '🏷️', label: 'Đọc nhãn dinh dưỡng', note: 'Calo, protein, thành phần' },
+      { icon: '📊', label: 'Theo dõi protein', note: '1.6–2g mỗi kg cân nặng' },
+    ],
   },
   {
     level: 'Nâng Cao',
     sub: 'Tháng 3+',
     color: '#a855f7',
+    rgb: '168,85,247',
     glow: 'rgba(168,85,247,0.15)',
     text: 'text-purple-400',
     border: 'border-purple-500/30',
@@ -611,6 +648,23 @@ const TIERS = [
       'Timing dinh dưỡng: pre/intra/post workout',
       'Theo dõi body composition (cân Inbody)',
       'Điều chỉnh kế hoạch 4–6 tuần/lần',
+    ],
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cá nhân hóa macro theo TDEE và mục tiêu cụ thể giúp cải thiện thành tích tập luyện và thay đổi body composition hiệu quả hơn 25–40%.',
+    detail: 'Giai đoạn nâng cao dành cho người đã xây dựng nền tảng vững chắc và muốn tối ưu hóa dinh dưỡng theo mục tiêu cụ thể — giảm mỡ, tăng cơ hoặc cải thiện thành tích.',
+    details: [
+      'TDEE cá nhân hóa: thay vì dùng công thức chung, bạn điều chỉnh dựa trên phản hồi thực tế của cơ thể sau mỗi 2–4 tuần theo dõi.',
+      'Carb cycling tối ưu hóa glycogen: ngày tập nặng tăng carb 20–30% để có năng lượng; ngày nghỉ giảm carb, tăng fat nhẹ để đốt mỡ.',
+      'Nutrient timing: 20–30g protein + carb nhanh trong 30–60 phút sau tập giúp tổng hợp cơ tốt hơn và phục hồi nhanh hơn.',
+      'Cân Inbody 1 lần/tháng cho dữ liệu thực về muscle mass, body fat %, visceral fat — chính xác hơn nhiều so với chỉ cân trọng lượng.',
+      'Điều chỉnh kế hoạch 4–6 tuần/lần dựa trên dữ liệu: nếu body fat không giảm sau 4 tuần, cắt 100–150 kcal; nếu mất cơ, tăng protein.',
+      'Ở giai đoạn này, sự nhất quán và kiên nhẫn với dữ liệu quan trọng hơn bất kỳ "bí quyết" nào — cơ thể thay đổi theo chu kỳ nhiều tuần, không phải vài ngày.',
+    ],
+    points: [
+      { icon: '🧮', label: 'TDEE cá nhân hóa', note: 'Điều chỉnh theo phản hồi thực tế' },
+      { icon: '🔄', label: 'Carb cycling', note: 'Cao ngày tập, thấp ngày nghỉ' },
+      { icon: '⏱️', label: 'Nutrient timing', note: 'Pre/intra/post workout' },
+      { icon: '📈', label: 'Body composition', note: 'Cân Inbody mỗi 4 tuần' },
     ],
   },
 ];
@@ -5026,6 +5080,107 @@ const TDEE_BENEFITS = [
   },
 ];
 
+// ─── TierModal — full-screen overlay for level cards (rendered at PillarB root) ─
+function TierModal({ tier, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  const color = tier.color;
+  const rgb = tier.rgb;
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={tier.img} alt={tier.level} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          {/* Level badge */}
+          <div className="absolute bottom-5 left-6 flex items-center gap-2">
+            <span className="px-3 py-1 rounded-full text-[11px] font-bold"
+              style={{ background: `rgba(${rgb},0.22)`, border: `1.5px solid rgba(${rgb},0.45)`, color }}>
+              {tier.sub}
+            </span>
+          </div>
+          {/* Close */}
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-black text-2xl md:text-3xl mb-1" style={{ color }}>{tier.level}</h2>
+          <p className="text-sm mb-4" style={{ color: `rgba(${rgb},0.7)` }}>{tier.detail}</p>
+
+          {/* Key fact banner */}
+          <div className="rounded-2xl px-4 py-3 mb-6 flex items-start gap-3"
+            style={{ background: `rgba(${rgb},0.08)`, border: `1px solid rgba(${rgb},0.2)` }}>
+            <span className="text-lg shrink-0 mt-0.5">💡</span>
+            <p className="text-sm leading-relaxed" style={{ color: `rgba(${rgb},0.9)` }}>{tier.keyFact}</p>
+          </div>
+
+          {/* Numbered detail list */}
+          <ul className="space-y-3 mb-8">
+            {tier.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Key points 2-col grid */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {tier.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {TIERS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── TDEEBenefitModal — full-screen overlay (rendered at PillarB root, outside RevealBlocks) ─
 function TDEEBenefitModal({ b, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
@@ -7526,6 +7681,7 @@ export default function PillarB() {
   const [mantraIdx, setMantraIdx] = useState(null);
   const [benefitIdx, setBenefitIdx] = useState(null);
   const [mealSplitIdx, setMealSplitIdx] = useState(null);
+  const [tierIdx, setTierIdx] = useState(null);
   const [accuracyOpen, setAccuracyOpen] = useState(false);
   const spiritTr = pillar?.spirit_card || {};
 
@@ -7983,8 +8139,12 @@ export default function PillarB() {
           {TIERS.map((tier, i) => (
             <div
               key={tier.level}
-              className={`relative rounded-2xl border ${tier.border} ${tier.bg} p-6 transition-all duration-300 hover:-translate-y-1 group animate-fade-in-up overflow-hidden`}
-              style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
+              role="button"
+              tabIndex={0}
+              onClick={() => setTierIdx(i)}
+              onKeyDown={e => e.key === 'Enter' && setTierIdx(i)}
+              className={`relative rounded-2xl border ${tier.border} ${tier.bg} p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group animate-fade-in-up overflow-hidden cursor-pointer`}
+              style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both', boxShadow: 'none' }}
             >
               <div className="absolute top-0 left-4 right-4 h-[1.5px] rounded-full" style={{ background: tier.color }} />
               <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-[80px] pointer-events-none" style={{ background: tier.glow }} />
@@ -8005,6 +8165,11 @@ export default function PillarB() {
                     </li>
                   ))}
                 </ul>
+
+                <div className="mt-4 text-[10px] font-bold flex items-center gap-1 opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: tier.color }}>
+                  Xem chi tiết
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </div>
               </div>
             </div>
           ))}
@@ -8462,6 +8627,19 @@ export default function PillarB() {
           </Link>
         </div>
       </RevealBlock>
+
+      {/* ── Tier level modal — outside all RevealBlocks so position:fixed works ── */}
+      {tierIdx !== null && (
+        <TierModal
+          tier={TIERS[tierIdx]}
+          idx={tierIdx}
+          onClose={() => setTierIdx(null)}
+          onPrev={() => setTierIdx(i => Math.max(0, i - 1))}
+          onNext={() => setTierIdx(i => Math.min(TIERS.length - 1, i + 1))}
+          hasPrev={tierIdx > 0}
+          hasNext={tierIdx < TIERS.length - 1}
+        />
+      )}
 
       {/* ── Mantra detail modal — outside all RevealBlocks so position:fixed works ── */}
       {mantraIdx !== null && (

@@ -744,6 +744,72 @@ const C7_AREAS = [
   { area: 'Buổi tối', icon: '🌙', tips: ['Giảm đèn sau 21–22h', 'Sạc điện thoại ngoài phòng ngủ', 'Để sách giấy cạnh giường', 'Chuẩn bị quần áo ngày mai', 'Viết 3 việc ngày mai'] },
 ];
 
+const C5_SCHEDULES = [
+  {
+    icon: '🌱', label: 'Người mới', freq: 'Mỗi 6–8 tuần hoặc khi có dấu hiệu mệt',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người mới thường cần 6–8 tuần mới tích lũy đủ fatigue để cần deload — cơ thể còn đang thích nghi nhanh.',
+    detail: 'Ở giai đoạn người mới, cơ thể đang trải qua "newbie gains" — thích nghi nhanh với mọi kích thích tập luyện. Fatigue tích lũy chậm hơn, nên deload ít thường xuyên hơn. Tuy nhiên vẫn cần quan sát kỹ các dấu hiệu cơ thể, đặc biệt là giấc ngủ và cảm giác hồi phục.',
+    details: [
+      'Tập 6–8 tuần liên tục trước khi lên kế hoạch deload đầu tiên — cơ thể cần thời gian thích nghi.',
+      'Ưu tiên deload theo tín hiệu cơ thể hơn theo lịch cứng: ngủ kém, đau mỏi kéo dài, mất động lực.',
+      'Tuần deload người mới: giảm 30–40% volume tổng (số hiệp × số bài), giữ nguyên kỹ thuật.',
+      'Tránh hoàn toàn bỏ tập — deload chủ động giúp duy trì thói quen và thần kinh-cơ.',
+      'Sau deload, người mới thường cảm nhận rõ sự khác biệt: cảm giác nhẹ nhàng hơn và tập được nặng hơn tuần trước.',
+      'Ghi chép lại tuần deload và kết quả tuần tiếp theo để xây dựng pattern phù hợp với cơ thể bạn.',
+    ],
+    points: [
+      { icon: '📅', label: 'Chu kỳ 6–8 tuần', note: 'Hoặc sớm hơn khi có dấu hiệu fatigue' },
+      { icon: '🌿', label: 'Giảm 30–40% volume', note: 'Nhẹ nhàng, giữ nguyên kỹ thuật' },
+      { icon: '👂', label: 'Lắng nghe cơ thể', note: 'Tín hiệu quan trọng hơn lịch cứng' },
+      { icon: '📝', label: 'Ghi chép tiến trình', note: 'Xây dựng pattern cá nhân theo thời gian' },
+    ],
+  },
+  {
+    icon: '💪', label: 'Trung bình', freq: 'Mỗi 4–6 tuần, giảm 10–20% volume',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1517963879433-6ad2a56fcd82?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người tập trung bình tích lũy fatigue nhanh hơn — cần deload mỗi 4–6 tuần để duy trì tiến bộ dài hạn.',
+    detail: 'Ở trình độ trung bình, cơ thể đã thích nghi và cần kích thích cao hơn để tiến bộ — điều này đồng nghĩa với việc fatigue tích lũy nhanh hơn. Deload 4–6 tuần/lần là cửa sổ tối ưu để duy trì momentum mà không bị overtrain.',
+    details: [
+      'Lên lịch deload cố định mỗi 4 tuần (người tập 4–5 ngày/tuần) hoặc 6 tuần (3 ngày/tuần).',
+      'Giảm 10–20% volume: nếu tuần bình thường có 20 set/nhóm cơ, tuần deload còn 16–18 set.',
+      'Giữ cường độ (% 1RM) ở mức 60–70% — đủ để duy trì strength mà không gây thêm fatigue.',
+      'Kết hợp giảm cardio: từ 3–4 buổi/tuần xuống 2 buổi, chuyển sang Zone 1–2.',
+      'Người tập trung bình nên dùng tuần deload để tập trung vào kỹ thuật và mobility.',
+      'Theo dõi hiệu suất: nếu sau deload không thấy cải thiện, xem xét kéo dài deload thêm 1 tuần.',
+    ],
+    points: [
+      { icon: '📅', label: 'Chu kỳ 4–6 tuần', note: 'Tùy số buổi tập/tuần của bạn' },
+      { icon: '📉', label: 'Giảm 10–20% volume', note: 'Giữ cường độ ở 60–70% 1RM' },
+      { icon: '🏃', label: 'Giảm cardio', note: 'Xuống Zone 1–2, bớt 1–2 buổi/tuần' },
+      { icon: '🎯', label: 'Focus kỹ thuật', note: 'Tận dụng tuần nhẹ để cải thiện form' },
+    ],
+  },
+  {
+    icon: '🔥', label: 'Tập nhiều', freq: 'Mỗi 4–5 tuần, giảm 30–40% volume',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người tập nặng (5–6 ngày/tuần, volume cao) cần giảm 30–40% volume mỗi 4–5 tuần để tránh chronic fatigue.',
+    detail: 'Người tập với volume và cường độ cao tích lũy systemic fatigue rất nhanh. Deload thường xuyên hơn (4–5 tuần) và sâu hơn (30–40% volume) là bắt buộc — không phải tùy chọn. Bỏ qua deload ở trình độ này dễ dẫn đến overtraining syndrome, chấn thương, hoặc plateau dài hạn.',
+    details: [
+      'Lên lịch deload cứng mỗi 4 tuần — không chờ dấu hiệu mệt vì thường nhận ra quá muộn.',
+      'Giảm 30–40% tổng volume: từ 25–30 set/nhóm cơ/tuần xuống còn 15–18 set.',
+      'Có thể kết hợp "full deload" (giảm cả volume lẫn cường độ) sau chu kỳ peaking hoặc thi đấu.',
+      'Hệ miễn dịch ở người tập nặng thường bị ức chế — tuần deload là thời gian để phục hồi miễn dịch.',
+      'Ưu tiên ngủ 8–9 tiếng, massage, sauna (nếu có), và tăng lượng carb nạp vào trong tuần deload.',
+      'Người tập nặng nên có 2–3 "micro-deload" (1 buổi nhẹ) trong chu kỳ 4 tuần để quản lý fatigue chủ động.',
+    ],
+    points: [
+      { icon: '📅', label: 'Chu kỳ 4–5 tuần', note: 'Deload cứng, không chờ dấu hiệu mệt' },
+      { icon: '📊', label: 'Giảm 30–40% volume', note: 'Sâu hơn người tập ít — bắt buộc, không tùy chọn' },
+      { icon: '🛡️', label: 'Phục hồi miễn dịch', note: 'Tập nặng ức chế miễn dịch — deload tái lập' },
+      { icon: '🍚', label: 'Tăng carb nạp vào', note: 'Nạp lại glycogen cơ trong tuần nhẹ' },
+    ],
+  },
+];
+
 // ─── RevealBlock ───────────────────────────────────────────────────────────────
 
 function RevealBlock({ children, delay = 0, className = '' }) {
@@ -1132,6 +1198,7 @@ export default function PillarC() {
   const [standUpOpen, setStandUpOpen] = useState(false);
   const [c4RoutineIdx, setC4RoutineIdx] = useState(null);
   const [c5MethodIdx, setC5MethodIdx] = useState(null);
+  const [c5ScheduleIdx, setC5ScheduleIdx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -1656,14 +1723,21 @@ export default function PillarC() {
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#f97316' }}>Lịch Deload Theo Trình Độ</h3>
                 <div className="space-y-2">
-                  {[
-                    { level: 'Người mới', freq: 'Mỗi 6–8 tuần hoặc khi có dấu hiệu mệt' },
-                    { level: 'Trung bình', freq: 'Mỗi 4–6 tuần, giảm 10–20% volume' },
-                    { level: 'Tập nhiều', freq: 'Mỗi 4–5 tuần, giảm 30–40% volume' },
-                  ].map((row, i) => (
-                    <div key={i} className="flex justify-between items-center text-lg p-2 rounded-lg" style={{ background: 'rgba(249,115,22,0.04)' }}>
-                      <span className="font-semibold text-text">{row.level}</span>
-                      <span className="text-muted text-base text-right">{row.freq}</span>
+                  {C5_SCHEDULES.map((row, i) => (
+                    <div
+                      key={i}
+                      className="flex justify-between items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+                      style={{ background: `rgba(${row.rgb},0.06)`, border: `1px solid rgba(${row.rgb},0.15)` }}
+                      onClick={() => setC5ScheduleIdx(i)}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">{row.icon}</span>
+                        <span className="font-semibold text-lg" style={{ color: row.color }}>{row.label}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-muted text-base text-right">{row.freq}</span>
+                        <span className="text-xs font-bold px-2 py-0.5 rounded-lg opacity-60 shrink-0" style={{ color: row.color, background: `rgba(${row.rgb},0.1)` }}>→</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -1910,6 +1984,19 @@ export default function PillarC() {
           onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
           hasNext={c0Idx < C0_ITEMS.length - 1}
+        />
+      )}
+
+      {/* ── C5 deload schedule modal ── */}
+      {c5ScheduleIdx !== null && (
+        <C0ItemModal
+          item={C5_SCHEDULES[c5ScheduleIdx]}
+          idx={c5ScheduleIdx}
+          onClose={() => setC5ScheduleIdx(null)}
+          onPrev={() => setC5ScheduleIdx(i => Math.max(0, i - 1))}
+          onNext={() => setC5ScheduleIdx(i => Math.min(C5_SCHEDULES.length - 1, i + 1))}
+          hasPrev={c5ScheduleIdx > 0}
+          hasNext={c5ScheduleIdx < C5_SCHEDULES.length - 1}
         />
       )}
 

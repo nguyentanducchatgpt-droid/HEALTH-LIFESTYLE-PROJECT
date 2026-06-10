@@ -646,10 +646,90 @@ const C5_SIGNALS = [
 ];
 
 const C5_METHODS = [
-  { icon: '📉', title: 'Giảm số hiệp', desc: 'Ví dụ: 4 hiệp → 2–3 hiệp. Giữ nguyên cường độ.' },
-  { icon: '🏋️', title: 'Giảm mức tạ', desc: 'Giảm 10–20% trọng lượng so với tuần trước.' },
-  { icon: '🏃', title: 'Giảm thời lượng cardio', desc: '45 phút → 25–30 phút. Hoặc chuyển sang Zone 1–2.' },
-  { icon: '🚶', title: 'Giảm cường độ', desc: 'Chạy nhanh → đi bộ nhanh, đạp xe nhẹ, bơi nhẹ.' },
+  {
+    icon: '📉', label: 'Giảm số hiệp', desc: 'Ví dụ: 4 hiệp → 2–3 hiệp. Giữ nguyên cường độ.',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giảm 40–50% tổng số hiệp trong tuần deload để hệ thần kinh hồi phục hoàn toàn.',
+    detail: 'Giảm số hiệp là phương pháp deload nhẹ nhàng nhất — giữ nguyên cường độ (% 1RM) nhưng cắt giảm volume. Não bộ và hệ thần kinh trung ương được "xả áp" trong khi cơ bắp vẫn duy trì kích thích đủ để không mất form.',
+    details: [
+      'Giữ nguyên trọng lượng sử dụng, chỉ giảm số hiệp từ 4 xuống còn 2–3 hiệp mỗi bài.',
+      'Tổng volume tuần giảm 40–50% so với tuần tập nặng — đây là mức đủ để kích hoạt hồi phục.',
+      'Thích hợp nhất cho người tập sức mạnh muốn duy trì kỹ thuật mà không mất thần kinh-cơ.',
+      'Không giảm thêm số rep — chỉ giảm số set để giữ pattern vận động ổn định.',
+      'Sau 1 tuần deload kiểu này, hiệu suất tuần tiếp theo thường tăng 3–8% nhờ supercompensation.',
+      'Kết hợp với ngủ sớm hơn 30 phút sẽ tối ưu hóa quá trình tái tạo hệ thần kinh.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Cường độ giữ nguyên', note: '% 1RM không đổi, chỉ volume giảm' },
+      { icon: '🧠', label: 'Hồi phục thần kinh', note: 'CNS được xả áp trong 5–7 ngày' },
+      { icon: '📊', label: 'Giảm 40–50% volume', note: '4 hiệp → 2–3 hiệp mỗi bài' },
+      { icon: '🔁', label: 'Duy trì pattern', note: 'Form kỹ thuật không bị gián đoạn' },
+    ],
+  },
+  {
+    icon: '🏋️', label: 'Giảm mức tạ', desc: 'Giảm 10–20% trọng lượng so với tuần trước.',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giảm 10–20% trọng lượng giúp cơ và mô liên kết hồi phục mà cơ thể vẫn "nhớ" chuyển động.',
+    detail: 'Giảm mức tạ tác động trực tiếp vào hệ cơ-xương-khớp — giảm stress cơ học lên cơ và mô liên kết (gân, dây chằng). Đặc biệt hiệu quả khi bạn cảm thấy đau khớp nhẹ hoặc mô liên kết căng cứng sau nhiều tuần tập nặng.',
+    details: [
+      'Giảm 10–20% trọng lượng so với tuần trước — ví dụ squat 100kg → 80–90kg.',
+      'Giữ nguyên số hiệp và rep để cơ thể vẫn quen với pattern volume tương tự.',
+      'Tập trung vào kỹ thuật: tốc độ di chuyển chậm hơn, kiểm soát giai đoạn eccentric tốt hơn.',
+      'Gân và dây chằng hồi phục chậm hơn cơ — phương pháp này đặc biệt bảo vệ mô liên kết.',
+      'Không cảm thấy "dễ quá" là bình thường — mục tiêu không phải hiệu suất mà là hồi phục.',
+      'Sau deload kiểu này, thường tăng được 5–10% trọng lượng ở tuần tiếp theo nhờ cơ thể đã phục hồi.',
+    ],
+    points: [
+      { icon: '🦴', label: 'Bảo vệ mô liên kết', note: 'Gân, dây chằng được giảm stress cơ học' },
+      { icon: '📐', label: 'Cải thiện kỹ thuật', note: 'Tạ nhẹ hơn → focus form tốt hơn' },
+      { icon: '💪', label: 'Giảm 10–20% tạ', note: 'Volume tương đương, cơ vẫn được kích thích' },
+      { icon: '🔋', label: 'Nạp lại năng lượng', note: 'Glycogen cơ được bổ sung đầy đủ' },
+    ],
+  },
+  {
+    icon: '🏃', label: 'Giảm thời lượng cardio', desc: '45 phút → 25–30 phút. Hoặc chuyển sang Zone 1–2.',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Zone 1–2 (60–70% max HR) tăng cường tuần hoàn mà không gây thêm stress cho hệ thần kinh.',
+    detail: 'Cardio cường độ cao tích lũy stress tương tự tập tạ — tác động đến hệ thần kinh giao cảm, hệ miễn dịch và năng lượng tổng thể. Tuần deload cardio tập trung vào Zone 1–2 giúp tăng lưu lượng máu đến cơ (active recovery) mà không tiêu hao thêm nguồn lực hồi phục.',
+    details: [
+      'Giảm thời lượng từ 45 phút xuống 25–30 phút, hoặc từ 30 phút xuống 15–20 phút.',
+      'Chuyển từ Zone 3–4 (HIIT, chạy nhanh) sang Zone 1–2 (đi bộ nhanh, đạp xe nhẹ nhàng).',
+      'Zone 1–2: nhịp tim 60–70% HRmax — bạn vẫn nói chuyện được thoải mái khi tập.',
+      'Active recovery ở Zone 1–2 tăng tuần hoàn máu, giúp các chất chuyển hóa được đào thải nhanh hơn.',
+      'Tránh hoàn toàn HIIT và sprint trong tuần deload — hệ thần kinh cần được nghỉ ngơi.',
+      'Bơi nhẹ hoặc đạp xe tĩnh là lựa chọn tốt nhất vì không có tác động va chạm lên khớp.',
+    ],
+    points: [
+      { icon: '❤️', label: 'Zone 1–2 target', note: '60–70% HRmax, vẫn nói chuyện được' },
+      { icon: '🩸', label: 'Active recovery', note: 'Tăng máu đến cơ, đào thải chất chuyển hóa' },
+      { icon: '⏱️', label: 'Giảm 40% thời gian', note: '45 phút → 25–30 phút tối đa' },
+      { icon: '🚴', label: 'Ưu tiên low-impact', note: 'Bơi, đạp xe — không va chạm lên khớp' },
+    ],
+  },
+  {
+    icon: '🚶', label: 'Giảm cường độ', desc: 'Chạy nhanh → đi bộ nhanh, đạp xe nhẹ, bơi nhẹ.',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1445384763658-0400939829cd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giảm cường độ toàn diện (cả sức mạnh lẫn cardio) là chiến lược deload sâu nhất, phù hợp sau chu kỳ tập cực nặng.',
+    detail: 'Giảm cường độ là phương pháp deload toàn diện — vừa giảm % 1RM vừa hạ nhịp tim mục tiêu. Phù hợp sau chu kỳ peaking (thi đấu, test max), sau chấn thương nhẹ, hoặc khi cơ thể có nhiều dấu hiệu overtrain cùng lúc. Cơ thể chuyển sang trạng thái parasympathetic hoàn toàn.',
+    details: [
+      'Chạy nhanh → đi bộ nhanh (5–6 km/h), đạp xe nhẹ (50–60 rpm), bơi thoải mái (không đua thời gian).',
+      'Kết hợp giảm cường độ cả tập tạ: dùng 50–60% 1RM, tempo chậm, rep thấp (3–5 rep).',
+      'Phù hợp nhất sau giai đoạn peaking 4–6 tuần hoặc sau buổi thi đấu/test max.',
+      'Hệ thần kinh tự chủ chuyển từ giao cảm (fight-or-flight) sang đối giao cảm (rest-and-digest).',
+      'Thêm các hoạt động nhẹ nhàng: yoga, đi bộ thiên nhiên, bơi lội — tốt cho tâm lý lẫn thể chất.',
+      'Kéo dài 7–10 ngày thay vì 5–7 ngày nếu đây là deload sau chu kỳ dài và nặng.',
+    ],
+    points: [
+      { icon: '🧘', label: 'Chế độ Parasympathetic', note: 'Cơ thể chuyển sang rest-and-digest' },
+      { icon: '🌿', label: 'Giảm toàn diện', note: 'Cả sức mạnh lẫn cardio đều hạ xuống' },
+      { icon: '🏖️', label: 'Phù hợp sau peaking', note: 'Sau test max hoặc thi đấu 4–6 tuần' },
+      { icon: '⏳', label: '7–10 ngày', note: 'Dài hơn deload thông thường nếu cần' },
+    ],
+  },
 ];
 
 const C6_TECHNIQUES = [
@@ -1051,6 +1131,7 @@ export default function PillarC() {
   const [c3LevelIdx, setC3LevelIdx] = useState(null);
   const [standUpOpen, setStandUpOpen] = useState(false);
   const [c4RoutineIdx, setC4RoutineIdx] = useState(null);
+  const [c5MethodIdx, setC5MethodIdx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -1558,12 +1639,18 @@ export default function PillarC() {
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#f97316' }}>4 Cách Deload</h3>
                 <div className="grid gap-3 mb-6">
                   {C5_METHODS.map((m, i) => (
-                    <div key={i} className="flex gap-3 p-3 rounded-xl" style={{ background: 'rgba(249,115,22,0.05)', border: '1px solid rgba(249,115,22,0.1)' }}>
+                    <div
+                      key={i}
+                      className="flex gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+                      style={{ background: `rgba(${m.rgb},0.06)`, border: `1px solid rgba(${m.rgb},0.15)` }}
+                      onClick={() => setC5MethodIdx(i)}
+                    >
                       <span className="text-3xl shrink-0">{m.icon}</span>
-                      <div>
-                        <div className="font-semibold text-text text-lg">{m.title}</div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-text text-lg" style={{ color: m.color }}>{m.label}</div>
                         <div className="text-muted text-base mt-0.5">{m.desc}</div>
                       </div>
+                      <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60" style={{ color: m.color, background: `rgba(${m.rgb},0.1)` }}>Chi tiết →</span>
                     </div>
                   ))}
                 </div>
@@ -1823,6 +1910,19 @@ export default function PillarC() {
           onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
           hasNext={c0Idx < C0_ITEMS.length - 1}
+        />
+      )}
+
+      {/* ── C5 deload method modal ── */}
+      {c5MethodIdx !== null && (
+        <C0ItemModal
+          item={C5_METHODS[c5MethodIdx]}
+          idx={c5MethodIdx}
+          onClose={() => setC5MethodIdx(null)}
+          onPrev={() => setC5MethodIdx(i => Math.max(0, i - 1))}
+          onNext={() => setC5MethodIdx(i => Math.min(C5_METHODS.length - 1, i + 1))}
+          hasPrev={c5MethodIdx > 0}
+          hasNext={c5MethodIdx < C5_METHODS.length - 1}
         />
       )}
 

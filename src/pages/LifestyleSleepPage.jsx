@@ -114,10 +114,94 @@ const SLEEP_FACTS = [
 ];
 
 const SLEEP_STAGES = [
-  { stage: 'N1 — Ngủ nông', time: '5–10 phút', color: '#06b6d4', desc: 'Chuyển tiếp từ thức sang ngủ. Cơ thể bắt đầu thư giãn, nhịp tim chậm lại.' },
-  { stage: 'N2 — Ngủ nhẹ', time: '~50% giấc ngủ', color: '#0ea5e9', desc: 'Nhiệt độ cơ thể giảm, nhịp tim chậm hơn. Sleep spindles xuất hiện — quan trọng cho trí nhớ.' },
-  { stage: 'N3 — Ngủ sâu', time: '20–25%', color: '#6366f1', desc: 'Giai đoạn phục hồi thể chất quan trọng nhất. Hormone tăng trưởng được tiết. Khó thức dậy nhất.' },
-  { stage: 'REM — Mơ', time: '20–25%', color: '#a78bfa', desc: 'Não hoạt động mạnh. Củng cố trí nhớ cảm xúc, xử lý thông tin phức tạp và phục hồi tâm lý.' },
+  {
+    stage: 'N1 — Ngủ nông', label: 'N1 — Ngủ nông', icon: '🌫️',
+    time: '5–10 phút', color: '#06b6d4', rgb: '6,182,212',
+    desc: 'Chuyển tiếp từ thức sang ngủ. Cơ thể bắt đầu thư giãn, nhịp tim chậm lại.',
+    img: 'https://images.unsplash.com/photo-1520206183501-b80df61043c2?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'N1 chỉ chiếm 5% giấc ngủ và cực kỳ dễ bị gián đoạn — đây là giai đoạn bạn "giật mình" khi ngủ (hypnic jerk) và có thể nghe thấy âm thanh xung quanh.',
+    detail: 'N1 là cánh cổng giữa thức và ngủ — não bắt đầu chuyển từ sóng beta (tỉnh táo) sang sóng alpha rồi theta (buồn ngủ). Đây là giai đoạn ngắn nhất và nhạy cảm nhất: ánh sáng, tiếng ồn nhỏ cũng đủ đánh thức bạn hoàn toàn.',
+    details: [
+      'Nhịp tim chậm lại, cơ bắp giãn ra, nhiệt độ cơ thể bắt đầu giảm nhẹ.',
+      'Sóng não chuyển từ alpha (8–12 Hz, thư giãn) sang theta (4–7 Hz, buồn ngủ) — ý thức mờ dần.',
+      'Hypnic jerk (giật mình khi ngủ): não hiểu nhầm trạng thái thư giãn đột ngột là "ngã" và gửi tín hiệu co cơ.',
+      'Ở N1, bạn vẫn có thể nghe thấy âm thanh và hình dung hình ảnh mơ màng (hypnagogic hallucination).',
+      'Nếu bị đánh thức ở N1, bạn thường nói "tôi chưa ngủ" — dù thực ra đã ngủ được vài phút.',
+      'Giai đoạn N1 lặp lại ngắn hơn ở các chu kỳ sau — cơ thể "đi sâu" nhanh hơn khi đã quen ngủ.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Hypnic jerk', note: 'Giật mình khi ngủ — phản xạ bình thường của não' },
+      { icon: '👂', label: 'Vẫn nghe được', note: 'Âm thanh nhỏ cũng có thể đánh thức hoàn toàn' },
+      { icon: '🌊', label: 'Sóng theta', note: 'Não chuyển từ alpha → theta, ý thức mờ dần' },
+      { icon: '⏱️', label: 'Chỉ 5% giấc ngủ', note: 'Giai đoạn ngắn và dễ bị gián đoạn nhất' },
+    ],
+  },
+  {
+    stage: 'N2 — Ngủ nhẹ', label: 'N2 — Ngủ nhẹ', icon: '🌙',
+    time: '~50% giấc ngủ', color: '#0ea5e9', rgb: '14,165,233',
+    desc: 'Nhiệt độ cơ thể giảm, nhịp tim chậm hơn. Sleep spindles xuất hiện — quan trọng cho trí nhớ.',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'N2 chiếm ~50% tổng giấc ngủ — đây là nơi "sleep spindles" xuất hiện, giúp chuyển thông tin từ trí nhớ ngắn hạn sang dài hạn và bảo vệ giấc ngủ khỏi bị gián đoạn.',
+    detail: 'N2 là giai đoạn ngủ thực sự bắt đầu — ý thức gần như tắt hẳn, khó đánh thức hơn N1. Điều đặc biệt là sleep spindles (chuỗi sóng não tần số cao) xuất hiện trong N2, đóng vai trò quan trọng trong việc củng cố trí nhớ thủ tục và kỹ năng vận động. Power nap 20 phút chứa đủ N2 để cải thiện hiệu suất chiều.',
+    details: [
+      'Nhiệt độ cơ thể giảm tiếp, nhịp tim và hô hấp chậm và đều hơn N1.',
+      'Sleep spindles: chuỗi sóng não 12–15 Hz, kéo dài 0.5–3 giây, xuất hiện 1–2 lần/phút trong N2.',
+      'Sleep spindles ức chế tín hiệu cảm giác từ đồi thị (thalamus) — "cách âm" não khỏi kích thích bên ngoài.',
+      'K-complexes: sóng não đơn biên độ cao, phản ứng với tiếng ồn đột ngột — bảo vệ giấc ngủ không bị gián đoạn.',
+      'N2 quan trọng cho trí nhớ thủ tục (procedural memory) — học nhạc cụ, kỹ thuật thể thao, thao tác tay.',
+      'Power nap 20 phút đủ để vào N2 và tận dụng sleep spindles — không cần vào N3 mới có lợi ích trí nhớ.',
+    ],
+    points: [
+      { icon: '🌀', label: 'Sleep spindles', note: 'Chuyển trí nhớ ngắn → dài hạn mỗi phút' },
+      { icon: '🔇', label: 'Cách âm não', note: 'Spindles chặn tín hiệu ngoài — ngủ sâu hơn' },
+      { icon: '⚡', label: 'K-complexes', note: 'Bảo vệ giấc ngủ khỏi tiếng ồn đột ngột' },
+      { icon: '☀️', label: 'Power nap 20 phút', note: 'Đủ N2 để cải thiện trí nhớ kỹ năng' },
+    ],
+  },
+  {
+    stage: 'N3 — Ngủ sâu', label: 'N3 — Ngủ sâu', icon: '🌑',
+    time: '20–25%', color: '#6366f1', rgb: '99,102,241',
+    desc: 'Giai đoạn phục hồi thể chất quan trọng nhất. Hormone tăng trưởng được tiết. Khó thức dậy nhất.',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'N3 (slow-wave sleep) là giai đoạn "đại tu" cơ thể — GH tiết mạnh nhất, hệ miễn dịch hồi phục, não tẩy sạch chất thải độc hại qua hệ glymphatic. Mất N3 = mất phục hồi.',
+    detail: 'N3 là đỉnh cao của giấc ngủ — khó thức dậy nhất, và nếu bị đánh thức đột ngột sẽ gây "sleep inertia" (choáng váng, mất phương hướng). Hệ glymphatic não hoạt động mạnh nhất trong N3, tẩy sạch beta-amyloid và tau protein — các chất liên quan đến Alzheimer. Thiếu N3 mãn tính là một trong các yếu tố nguy cơ của sa trí tuệ.',
+    details: [
+      'Sóng delta (0.5–4 Hz) chiếm ưu thế — sóng não chậm và biên độ cao nhất trong toàn bộ giấc ngủ.',
+      'Growth Hormone (GH) được tiết 70–80% trong N3 — tập gym mà không có N3 đủ là lãng phí công sức tập.',
+      'Hệ thống glymphatic hoạt động mạnh: dịch não tủy rửa sạch chất thải chuyển hóa, bao gồm beta-amyloid (Alzheimer-linked).',
+      'Hệ miễn dịch sản xuất cytokines và tăng hoạt động T-cell — thiếu N3 làm giảm đáp ứng vaccine và chống nhiễm trùng.',
+      'N3 nhiều nhất trong 3 giờ đầu đêm — ngủ muộn đồng nghĩa mất phần lớn N3 dù tổng thời gian ngủ không đổi.',
+      'Không thể "bù" N3 bằng ngủ trưa — cần ngủ sớm để hệ circadian hỗ trợ N3 tự nhiên.',
+    ],
+    points: [
+      { icon: '💉', label: 'GH tiết 70–80%', note: 'Phục hồi cơ, xương, gân — peak trong N3' },
+      { icon: '🧹', label: 'Glymphatic cleanup', note: 'Tẩy beta-amyloid — bảo vệ não dài hạn' },
+      { icon: '🛡️', label: 'Hệ miễn dịch', note: 'T-cell tăng — phòng bệnh và đáp ứng vaccine' },
+      { icon: '🌙', label: 'N3 nhiều nhất 3h đầu', note: 'Ngủ muộn = mất N3 dù ngủ đủ giờ' },
+    ],
+  },
+  {
+    stage: 'REM — Mơ', label: 'REM — Mơ', icon: '✨',
+    time: '20–25%', color: '#a78bfa', rgb: '167,139,250',
+    desc: 'Não hoạt động mạnh. Củng cố trí nhớ cảm xúc, xử lý thông tin phức tạp và phục hồi tâm lý.',
+    img: 'https://images.unsplash.com/photo-1509130872995-86c1159b0f3d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Trong REM, não hoạt động gần như khi thức — nhưng cơ bắp bị "tê liệt" tạm thời. Đây là giai đoạn xử lý cảm xúc, sáng tạo và "overnight therapy" mà Matthew Walker mô tả.',
+    detail: 'REM (Rapid Eye Movement) là giai đoạn kỳ lạ nhất của giấc ngủ: não hoạt động như khi thức, nhưng cơ thể gần như bất động (atonia cơ — để bạn không thực hiện các hành động trong giấc mơ). Đây là thời gian não tích hợp thông tin, xử lý cảm xúc phức tạp và tạo ra các kết nối sáng tạo.',
+    details: [
+      'Mắt chuyển động nhanh dưới mí (rapid eye movement) — não đang "xem lại" và xử lý ký ức ban ngày.',
+      'Atonia cơ (liệt cơ tạm thời) do não ức chế tủy sống — ngăn cơ thể thực hiện các hành động trong mơ.',
+      'REM nhiều nhất vào buổi sáng sớm (4–6h) — thức dậy sớm hoặc báo thức cắt bỏ REM quan trọng nhất.',
+      'Xử lý cảm xúc trong môi trường noradrenaline thấp — ký ức được "phát lại" mà không kèm phản ứng stress.',
+      'Giải quyết vấn đề sáng tạo: nhiều phát minh, giải pháp xuất hiện sau giấc ngủ REM — não kết nối thông tin phi tuyến.',
+      'Thiếu REM liên quan đến PTSD (não không "giải độc" được ký ức sang chấn), trầm cảm và lo âu.',
+    ],
+    points: [
+      { icon: '👁️', label: 'Mắt chuyển động', note: 'Não replay và xử lý ký ức ban ngày' },
+      { icon: '😴', label: 'Atonia cơ', note: 'Cơ bị liệt tạm thời — không thực hiện giấc mơ' },
+      { icon: '🎨', label: 'Sáng tạo tăng', note: 'Kết nối thông tin phi tuyến khi thức dậy' },
+      { icon: '🌅', label: 'REM nhiều nhất 4–6h', note: 'Báo thức sớm cắt bỏ REM quan trọng nhất' },
+    ],
+  },
 ];
 
 const TROUBLE_CASES = [
@@ -235,6 +319,7 @@ export default function LifestyleSleepPage() {
   const [openCase, setOpenCase] = useState(null);
   const [checks, setChecks] = useState({});
   const [sleepFactIdx, setSleepFactIdx] = useState(null);
+  const [sleepStageIdx, setSleepStageIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -326,10 +411,19 @@ export default function LifestyleSleepPage() {
         <p className="text-muted text-lg mb-6">Một chu kỳ ngủ hoàn chỉnh kéo dài ~90 phút và lặp lại 4–6 lần mỗi đêm.</p>
         <div className="space-y-3">
           {SLEEP_STAGES.map((st, i) => (
-            <div key={i} className="p-4 rounded-xl border" style={{ borderColor: `${st.color}22`, background: `${st.color}08` }}>
+            <div key={i}
+              className="p-4 rounded-xl border cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ borderColor: `rgba(${st.rgb},0.2)`, background: `rgba(${st.rgb},0.07)` }}
+              onClick={() => setSleepStageIdx(i)}>
               <div className="flex items-center justify-between mb-2">
-                <span className="font-bold text-lg" style={{ color: st.color }}>{st.stage}</span>
-                <span className="text-base font-semibold tabular-nums" style={{ color: st.color }}>{st.time}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">{st.icon}</span>
+                  <span className="font-bold text-lg" style={{ color: st.color }}>{st.stage}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-base font-semibold tabular-nums" style={{ color: st.color }}>{st.time}</span>
+                  <span className="text-xs font-bold px-2 py-0.5 rounded-lg opacity-60" style={{ color: st.color, background: `rgba(${st.rgb},0.12)` }}>→</span>
+                </div>
               </div>
               <p className="text-muted text-base leading-relaxed">{st.desc}</p>
             </div>
@@ -468,6 +562,19 @@ export default function LifestyleSleepPage() {
         <Link to="/pillar/c" className="text-muted hover:text-teal-400 transition-colors text-lg">← Lối Sống Khỏe</Link>
         <Link to="/pillar/c/sleep-routine" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Trước Ngủ →</Link>
       </div>
+
+      {/* ── Sleep stage modal ── */}
+      {sleepStageIdx !== null && (
+        <SleepFactModal
+          item={SLEEP_STAGES[sleepStageIdx]}
+          idx={sleepStageIdx}
+          onClose={() => setSleepStageIdx(null)}
+          onPrev={() => setSleepStageIdx(i => Math.max(0, i - 1))}
+          onNext={() => setSleepStageIdx(i => Math.min(SLEEP_STAGES.length - 1, i + 1))}
+          hasPrev={sleepStageIdx > 0}
+          hasNext={sleepStageIdx < SLEEP_STAGES.length - 1}
+        />
+      )}
 
       {/* ── Sleep fact modal — outside all RevealBlocks so position:fixed works ── */}
       {sleepFactIdx !== null && (

@@ -50,6 +50,175 @@ Each pillar injects its own `<style>` tag via `useEffect` (id: `p{a-f}-orbit-kf`
 | E | Knowledge | blue | `59,130,246` |
 | F | Tools | orange | `249,115,22` |
 
+## Click-to-Expand Detail Modal Pattern
+
+Used for card grids where clicking a card shows a full-screen detail overlay (e.g. MantraCards on PillarB, WHY_ITEMS on Home).
+
+### Critical Rule — Position Fixed + RevealBlock
+
+`RevealBlock` applies `transform: translateY(...)` which creates a CSS containing block. Any `position: fixed` descendant will be constrained to that element's bounds, not the viewport — making the modal invisible or clipped.
+
+**Fix:** Always render the modal component **outside all `RevealBlock` wrappers**, as the last child of the outermost component `<div>`.
+
+```jsx
+// ✅ CORRECT — outside RevealBlock
+function MyPage() {
+  const [activeIdx, setActiveIdx] = useState(null);
+  return (
+    <div className="max-w-5xl mx-auto">
+      <RevealBlock>
+        {ITEMS.map((item, i) => (
+          <Card key={i} item={item} onOpen={() => setActiveIdx(i)} />
+        ))}
+      </RevealBlock>
+
+      {/* Modal here — NOT inside RevealBlock */}
+      {activeIdx !== null && (
+        <DetailModal
+          item={ITEMS[activeIdx]}
+          onClose={() => setActiveIdx(null)}
+          onPrev={() => setActiveIdx(i => Math.max(0, i - 1))}
+          onNext={() => setActiveIdx(i => Math.min(ITEMS.length - 1, i + 1))}
+          hasPrev={activeIdx > 0}
+          hasNext={activeIdx < ITEMS.length - 1}
+        />
+      )}
+    </div>
+  );
+}
+
+// ❌ WRONG — inside RevealBlock, position:fixed breaks
+<RevealBlock>
+  {ITEMS.map(...)}
+  {activeIdx !== null && <DetailModal ... />}  {/* broken */}
+</RevealBlock>
+```
+
+### Modal Component Template
+
+```jsx
+function DetailModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, color = '#84cc16', rgb = '132,204,22' }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.title} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          {/* Icon */}
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          {/* Close */}
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color }}>{item.title}</h2>
+          <p className="font-semibold text-base mb-6" style={{ color: `rgba(${rgb},0.7)` }}>{item.subtitle}</p>
+
+          {/* Numbered detail list */}
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Key points 2-col grid */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / {ITEMS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+### Data shape expected by the template
+
+```js
+const ITEMS = [
+  {
+    num: '01',           // display counter (string)
+    icon: '🧬',
+    title: 'Card Title',
+    subtitle: 'Supporting line',
+    img: 'https://images.unsplash.com/...?w=800&q=75',
+    details: [           // numbered paragraphs shown in modal
+      'First detail sentence...',
+      'Second detail sentence...',
+    ],
+    points: [            // 2-col key point grid in modal
+      { icon: '🔬', label: 'Short label', note: 'One line note' },
+    ],
+  },
+];
+```
+
+### Pages using this pattern
+
+| Page | Section | State var | Color |
+|------|---------|-----------|-------|
+| `Home.jsx` | WHY_ITEMS (4 cards) | `expandedWhy` | per-item |
+| `PillarB.jsx` | MantraCards (7 cards) | `mantraIdx` | lime `#84cc16` |
+
+---
+
 ## ThoughtBubble Tooltip Pattern
 
 Reusable animated cloud tooltip for hover-state stat/metric explanations.

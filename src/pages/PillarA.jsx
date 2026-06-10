@@ -169,18 +169,178 @@ const PRINCIPLES = [
     icon: '🎯',
     title: 'Kỹ thuật đúng là nền tảng',
     body: 'Học đúng từ đầu tiết kiệm hàng năm tập sai. 6 mẫu vận động cơ bản bao phủ 95% mọi bài tập bạn cần trong cuộc đời — không cần thiết bị phức tạp.',
+    img: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=75&auto=format&fit=crop',
+    keyFact: '6 mẫu vận động (Squat, Hinge, Push, Pull, Carry, Core) bao phủ 95% mọi bài tập thể lực cần thiết suốt đời.',
+    detail: 'Kỹ thuật sai không chỉ gây chấn thương — nó còn làm lãng phí mỗi buổi tập. Học đúng ngay từ buổi đầu giúp não bộ "ghi" đúng motor pattern, sau đó cơ thể tự động thực hiện hiệu quả hơn theo thời gian. Cơ thể người được thiết kế để thực hiện 6 mẫu vận động cơ bản. Thuần thục 6 mẫu này là đủ để tập suốt đời — không cần dụng cụ phức tạp hay bài tập hoa mỹ.',
+    details: [
+      'Kỹ thuật sai tạo ra "bad motor pattern" — não bộ ghi nhớ cách di chuyển sai và tự động hóa nó. Sửa sau rất khó hơn học đúng ngay từ đầu.',
+      '6 mẫu vận động cơ bản: Squat (ngồi xuống), Hip Hinge (gập hông), Push (đẩy), Pull (kéo), Carry (mang), Core (ổn định). Mọi bài tập phức tạp đều là biến thể của 6 mẫu này.',
+      'Tập đúng kỹ thuật với tạ nhỏ hiệu quả hơn tập sai với tạ nặng. Nguyên tắc "progressive overload" chỉ an toàn khi form chuẩn.',
+      'Video tự quay hoặc gương là công cụ miễn phí hiệu quả nhất để kiểm tra kỹ thuật. Mỗi 2 tuần, quay lại 1 bài cơ bản và tự đánh giá.',
+      'Không cần gym hay dụng cụ: chỉ cần không gian 2m², thảm và trọng lượng cơ thể là đủ để học đúng 6 mẫu vận động.',
+    ],
+    points: [
+      { icon: '🏋️', label: 'Squat & Hinge', note: 'Nền tảng sức mạnh hạ chi' },
+      { icon: '💪', label: 'Push & Pull', note: 'Cân bằng thân trên toàn diện' },
+      { icon: '🧱', label: 'Carry & Core', note: 'Ổn định cột sống khi vận động' },
+      { icon: '📹', label: 'Tự quay kiểm tra', note: 'Phản hồi trực quan miễn phí' },
+    ],
   },
   {
     icon: '🔁',
     title: 'Nhất quán quan trọng hơn cường độ',
     body: 'Não bộ xây thói quen qua lặp lại đều đặn. 3 buổi/tuần duy trì 12 tuần tốt hơn 7 buổi/tuần rồi burnout sau 3 tuần — cơ thể cần thời gian thích nghi.',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=75&auto=format&fit=crop',
+    keyFact: '3 buổi/tuần trong 12 tuần = 36 buổi tập. 7 buổi/tuần trong 3 tuần = 21 buổi rồi bỏ cuộc. Toán học ủng hộ sự nhất quán.',
+    detail: 'Não bộ xây dựng "superhighway thần kinh" thông qua lặp lại đều đặn — không phải qua cường độ cao. Thích nghi thần kinh cơ xảy ra khi có kích thích vừa đủ, nghỉ ngơi đủ, và chu kỳ lặp lại ổn định. Tập quá nhiều quá sớm kích hoạt cortisol cao kéo dài, phá vỡ giấc ngủ, làm giảm ý chí — và cuối cùng dẫn đến bỏ cuộc. Xây nhất quán trước, tăng cường độ sau.',
+    details: [
+      'Não bộ cần 21–66 ngày để tự động hóa một hành vi mới. Trong giai đoạn này, ý chí là nguồn năng lượng hữu hạn — thiết kế thói quen để tiêu hao ít ý chí nhất.',
+      'Nguyên tắc "minimum effective dose": liều tập tối thiểu vẫn tạo ra thích nghi. 20 phút với form tốt > 90 phút với form mệt.',
+      'Recovery không phải thời gian lãng phí — đây là lúc cơ thể thực sự thích nghi và mạnh hơn. Bỏ qua recovery = phá vỡ chu kỳ thích nghi.',
+      'Habit stacking: gắn buổi tập vào thói quen sẵn có (sau cà phê sáng, trước khi tắm). Giảm "friction" của việc bắt đầu.',
+      'Khi lỡ 1 ngày: quy tắc "không bao giờ bỏ 2 ngày liên tiếp". Bỏ 1 ngày là sự cố; bỏ 2 ngày là bắt đầu thói quen mới (thói quen không tập).',
+    ],
+    points: [
+      { icon: '🧠', label: '21–66 ngày', note: 'Thời gian não tự động hóa thói quen' },
+      { icon: '📅', label: '3 buổi/tuần', note: 'Tần suất tối ưu cho người mới' },
+      { icon: '😴', label: 'Recovery đủ', note: 'Cơ thể thích nghi khi nghỉ, không phải khi tập' },
+      { icon: '🔗', label: 'Habit Stacking', note: 'Gắn tập vào thói quen sẵn có' },
+    ],
   },
   {
     icon: '📊',
     title: 'Đo để không lạc hướng',
     body: 'Tiến bộ mà không thấy được thì dễ nản lòng. Mốc rõ ràng mỗi 4 tuần cho bạn biết chính xác mình đang ở đâu và cần điều chỉnh gì tiếp theo.',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Chỉ cần 4 chỉ số đơn giản: số lần reps tăng, thời gian plank, vòng eo, và cảm giác năng lượng. Không cần máy móc phức tạp.',
+    detail: 'Tiến bộ trong thể lực xảy ra chậm và phi tuyến tính — không có phản hồi rõ ràng, não bộ không thể phân biệt "đang tiến bộ" với "đang giậm chân tại chỗ". Đo lường tạo ra feedback loop rõ ràng: bạn biết cần điều chỉnh gì, và quan trọng hơn, bạn thấy mình thực sự tiến bộ dù chậm.',
+    details: [
+      '4 loại chỉ số cần theo dõi: (1) Sức mạnh — số reps/tạ tăng; (2) Sức bền — thời gian plank, số bước; (3) Hình thể — vòng eo/hông; (4) Chức năng — năng lượng, chất lượng ngủ.',
+      'Chu kỳ test 4 tuần: không phải ngẫu nhiên — 4 tuần đủ để thấy thích nghi rõ ràng nhưng không quá dài để mất phương hướng.',
+      'Ghi lại kết quả bằng bất cứ công cụ nào bạn dùng được: note điện thoại, bảng tính, nhật ký tay. Quan trọng là GHI LẠI, không phải công cụ.',
+      'So sánh với chính mình tuần trước, không phải với người khác. Tiến bộ 5% mỗi 4 tuần sau 1 năm = tăng 80% so với ban đầu.',
+      'Khi kết quả không thay đổi sau 4 tuần: không phải thất bại — đây là tín hiệu cần điều chỉnh (thêm tải, đổi bài, cải thiện ngủ/ăn).',
+    ],
+    points: [
+      { icon: '💪', label: 'Sức mạnh', note: 'Reps & tạ tăng theo thời gian' },
+      { icon: '📏', label: 'Hình thể', note: 'Vòng eo, hông — thực tế hơn cân' },
+      { icon: '⚡', label: 'Năng lượng', note: 'Chỉ số chức năng quan trọng nhất' },
+      { icon: '🔄', label: 'Chu kỳ 4 tuần', note: 'Review & điều chỉnh định kỳ' },
+    ],
   },
 ];
+
+// ─── PrincipleModal — full-screen detail overlay (outside all RevealBlocks) ────
+const PA_COLOR = '#22c55e';
+const PA_RGB   = '34,197,94';
+
+function PrincipleModal({ p, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#080e08', borderColor: `rgba(${PA_RGB},0.28)`, boxShadow: `0 0 80px rgba(${PA_RGB},0.15), 0 40px 80px rgba(0,0,0,0.6)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={p.img} alt={p.title} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${PA_RGB},0.08) 50%, #080e08 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${PA_COLOR}, transparent)` }} />
+          {/* Number watermark */}
+          <div className="absolute top-5 right-6 font-black leading-none" style={{ fontSize: 52, color: PA_COLOR, textShadow: `0 0 30px rgba(${PA_RGB},0.65)` }}>
+            {String(idx + 1).padStart(2, '0')}
+          </div>
+          {/* Icon */}
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${PA_RGB},0.18)`, border: `2px solid rgba(${PA_RGB},0.45)` }}>
+            {p.icon}
+          </div>
+          {/* Close */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}
+          >✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: PA_COLOR }}>{p.title}</h2>
+
+          {/* Key fact banner */}
+          <div className="flex gap-3 rounded-2xl p-4 mb-6" style={{ background: `rgba(${PA_RGB},0.07)`, border: `1px solid rgba(${PA_RGB},0.2)` }}>
+            <span className="text-lg shrink-0">💡</span>
+            <p className="text-sm font-semibold leading-relaxed m-0" style={{ color: '#86efac' }}>{p.keyFact}</p>
+          </div>
+
+          {/* Detail paragraph */}
+          <p className="text-base text-muted leading-relaxed mb-6">{p.detail}</p>
+
+          {/* Numbered detail list */}
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: PA_COLOR }}>Chi Tiết Thực Hành</p>
+          <ul className="space-y-3 mb-8">
+            {p.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${PA_RGB},0.14)`, color: PA_COLOR }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Key points 2-col grid */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {p.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${PA_RGB},0.06)`, border: `1px solid rgba(${PA_RGB},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button
+              onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasPrev ? PA_COLOR : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${PA_RGB},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${PA_RGB},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{idx + 1} / {total}</span>
+            <button
+              onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasNext ? PA_COLOR : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${PA_RGB},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${PA_RGB},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ─── Hooks ──────────────────────────────────────────────────────────────────────
 
@@ -422,6 +582,7 @@ export default function PillarA() {
     };
   });
 
+  const [principleIdx, setPrincipleIdx] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
   const [tabKey, setTabKey] = useState(0);
   const tabBarRef = useRef(null);
@@ -682,13 +843,23 @@ export default function PillarA() {
             return (
               <div
                 key={i}
-                className="flex gap-4 p-5 rounded-2xl border border-border/40 bg-surface/20 hover:bg-surface/35 hover:border-border/60 transition-all duration-300 group animate-fade-in-up"
-                style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
+                role="button"
+                tabIndex={0}
+                onClick={() => setPrincipleIdx(i)}
+                onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setPrincipleIdx(i); }}
+                className="flex gap-4 p-5 rounded-2xl border border-border/40 bg-surface/20 hover:bg-surface/35 hover:border-green-500/40 transition-all duration-300 group animate-fade-in-up cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
+                style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both', boxShadow: undefined }}
               >
                 <span className="text-3xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">{p.icon}</span>
-                <div>
-                  <p className="text-lg font-bold text-text mb-1.5">{pt.title}</p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-lg font-bold text-text mb-1.5 group-hover:text-green-400 transition-colors">{pt.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{pt.body}</p>
+                  <span className="inline-flex items-center gap-1 mt-3 text-[10px] font-bold text-green-500/50 group-hover:text-green-400 transition-colors">
+                    Xem chi tiết
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
+                    </svg>
+                  </span>
                 </div>
               </div>
             );
@@ -929,6 +1100,20 @@ export default function PillarA() {
           </Link>
         </div>
       </RevealBlock>
+
+      {/* Principle modal — outside all RevealBlocks so position:fixed works */}
+      {principleIdx !== null && (
+        <PrincipleModal
+          p={PRINCIPLES[principleIdx]}
+          idx={principleIdx}
+          total={PRINCIPLES.length}
+          onClose={() => setPrincipleIdx(null)}
+          onPrev={() => setPrincipleIdx(i => Math.max(0, i - 1))}
+          onNext={() => setPrincipleIdx(i => Math.min(PRINCIPLES.length - 1, i + 1))}
+          hasPrev={principleIdx > 0}
+          hasNext={principleIdx < PRINCIPLES.length - 1}
+        />
+      )}
 
     </div>
   );

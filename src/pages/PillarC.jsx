@@ -371,10 +371,94 @@ const C2_ENERGY_TIPS = [
 ];
 
 const C3_LEVELS = [
-  { level: 'Mới bắt đầu', steps: '+1.000–2.000 bước so với nền', color: '#10b981' },
-  { level: 'Cơ bản', steps: '6.000–8.000 bước/ngày', color: '#059669' },
-  { level: 'Khỏe hơn', steps: '8.000–10.000 bước/ngày', color: '#047857' },
-  { level: 'Tập nhiều', steps: 'Cá nhân hóa theo phục hồi', color: '#065f46' },
+  {
+    level: 'Mới bắt đầu', label: 'Mới bắt đầu',
+    steps: '+1.000–2.000 bước so với nền', desc: '+1.000–2.000 bước so với nền hiện tại',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tăng chỉ 1.000 bước/ngày so với mức hiện tại đã giảm nguy cơ bệnh tim mạch 10% và tử vong sớm 15% — mục tiêu nhỏ nhất vẫn có lợi ích rõ ràng.',
+    detail: 'Điểm xuất phát tốt nhất không phải là 10.000 bước — mà là bất cứ đâu cao hơn mức hiện tại của bạn. Cơ thể phản ứng với sự thay đổi, không với con số tuyệt đối.',
+    details: [
+      'Trước tiên đo baseline: đeo điện thoại hoặc smartwatch 3–5 ngày liên tục không thay đổi thói quen, ghi lại mức trung bình thực sự.',
+      'Tăng 1.000–2.000 bước so với baseline đó — không phải so với "mục tiêu 10.000" của người khác. Nếu bạn đang đi 2.000 bước, mục tiêu là 3.000–4.000.',
+      'Nhiều nghiên cứu xác nhận lợi ích sức khỏe bắt đầu ngay từ mức tăng nhỏ đầu tiên — điều quan trọng là tạo xu hướng tăng dần, không phải nhảy vọt.',
+      'Giai đoạn này không cần track chính xác từng ngày — chỉ cần cảm nhận "hôm nay mình đi nhiều hơn thường ngày" là thành công.',
+      'Thêm 1 thói quen nhỏ: đi bộ sau 1 bữa ăn, đi cầu thang 1 tầng, đỗ xe xa hơn 1 ô. Mỗi thói quen nhỏ cộng khoảng 200–500 bước.',
+      'Sau 2–3 tuần, baseline tự nâng lên — lúc đó tăng thêm 500–1.000 bước tiếp theo thay vì cố giữ cùng một con số mục tiêu.',
+    ],
+    points: [
+      { icon: '📊', label: 'Đo baseline trước', note: 'Theo dõi 3–5 ngày không thay đổi' },
+      { icon: '➕', label: 'Tăng +1.000–2.000', note: 'So với nền của chính bạn' },
+      { icon: '🔁', label: 'Tăng dần mỗi 2–3 tuần', note: 'Không nhảy vọt ngay' },
+      { icon: '🏃', label: 'Thói quen nhỏ cộng lại', note: '200–500 bước mỗi thói quen' },
+    ],
+  },
+  {
+    level: 'Cơ bản', label: 'Cơ bản',
+    steps: '6.000–8.000 bước/ngày', desc: '6.000–8.000 bước/ngày',
+    color: '#06b6d4', rgb: '6,182,212',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '7.000 bước/ngày giảm 50–70% nguy cơ tử vong sớm so với nhóm dưới 2.000 bước — đây là "điểm gập" lớn nhất trong toàn bộ phổ nghiên cứu bước chân.',
+    detail: 'Mức 6.000–8.000 bước/ngày là vùng lợi ích sức khỏe tốt nhất theo chi phí thời gian — đủ để có tác động đáng kể mà không cần dành quá nhiều thời gian đặc biệt cho việc đi bộ.',
+    details: [
+      'Nghiên cứu JAMA Internal Medicine (2019) trên 16.741 phụ nữ: 7.500 bước/ngày giảm tử vong sớm 65% so với nhóm 2.700 bước. Lợi ích plateau sau khoảng 7.500–8.000 bước.',
+      'Ở mức này, bạn không cần "tập bộ" riêng — vận động phân tán suốt ngày (đi lại văn phòng, cầu thang, đi chợ) đủ để đạt mục tiêu.',
+      'Mức 6.000–8.000 bước tương đương khoảng 45–60 phút đi lại tích lũy trong ngày — hoàn toàn khả thi với lịch bận.',
+      'Đây là mức phù hợp nhất để duy trì lâu dài mà không cảm thấy như một "nhiệm vụ" — đủ thách thức nhưng không quá áp lực.',
+      'Theo dõi tuần thay vì ngày: trung bình 7 ngày quan trọng hơn việc đạt đúng mục tiêu mỗi ngày. Ngày nào ít bước, ngày khác bù lại.',
+      'Khi đạt mức này đều đặn 3–4 tuần, cơ thể tự thích nghi — bạn sẽ thấy đi 6.000 bước trở nên dễ dàng và tự nhiên hơn nhiều.',
+    ],
+    points: [
+      { icon: '📉', label: '7.000 bước = điểm gập', note: 'Giảm 50–70% nguy cơ tử vong sớm' },
+      { icon: '⏱️', label: '45–60 phút tích lũy', note: 'Không cần đi bộ liên tục 1 lần' },
+      { icon: '📅', label: 'Tính trung bình tuần', note: 'Linh hoạt hơn theo dõi từng ngày' },
+      { icon: '🔄', label: 'Duy trì 3–4 tuần', note: 'Sau đó trở thành tự nhiên' },
+    ],
+  },
+  {
+    level: 'Khỏe hơn', label: 'Khỏe hơn',
+    steps: '8.000–10.000 bước/ngày', desc: '8.000–10.000 bước/ngày',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1486218119243-13301b4e234d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Con số 10.000 bước/ngày xuất phát từ một chiến dịch marketing Nhật Bản năm 1965 — nghiên cứu khoa học thực sự cho thấy lợi ích tối đa đạt được ở khoảng 8.000–9.000 bước.',
+    detail: 'Mức 8.000–10.000 bước mang lại cải thiện rõ ràng về sức bền tim mạch, kiểm soát cân nặng và tâm trạng. Đây là mức để "khỏe hơn", không chỉ là "tránh bệnh".',
+    details: [
+      'Con số 10.000 bước/ngày được tạo ra bởi công ty Yamasa năm 1965 khi ra mắt máy đếm bước "Manpo-kei" (万歩計 = vạn bộ kế). Không có nghiên cứu khoa học nào đứng sau con số này lúc đó.',
+      'Nghiên cứu hiện đại cho thấy lợi ích sức khỏe tăng mạnh nhất từ 0→7.000 bước, và tiếp tục tăng nhưng chậm dần từ 7.000→10.000 bước.',
+      'Ở mức 8.000–10.000 bước, bạn bắt đầu thấy cải thiện về: cân nặng ổn định hơn, ngủ sâu hơn, tâm trạng tốt hơn, sức bền tăng.',
+      'Để đạt mức này một cách tự nhiên: 1 lần đi bộ buổi sáng/tối 20–30 phút + vận động phân tán trong ngày là đủ.',
+      'Đi bộ nhanh (brisk walk — có thể nói chuyện nhưng hơi thở nhanh hơn) tạo ra lợi ích tim mạch nhiều hơn đi bộ chậm cùng số bước.',
+      'Ở mức này, chất lượng bước quan trọng dần: thỉnh thoảng đi bộ trên địa hình không bằng phẳng, đi bộ kết hợp leo dốc tạo thêm thách thức tim mạch.',
+    ],
+    points: [
+      { icon: '🏃', label: '20–30 phút đi bộ', note: '+ vận động phân tán cả ngày' },
+      { icon: '💨', label: 'Brisk walk', note: 'Đi nhanh có nhịp tim hiệu quả hơn' },
+      { icon: '📐', label: 'Chất lượng > số lượng', note: 'Địa hình dốc thêm thách thức' },
+      { icon: '🎯', label: '8.000–9.000 là ngưỡng tối ưu', note: '10.000 là marketing, không phải khoa học' },
+    ],
+  },
+  {
+    level: 'Tập nhiều', label: 'Tập nhiều',
+    steps: 'Cá nhân hóa theo phục hồi', desc: 'Cá nhân hóa theo khả năng phục hồi',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1517963628607-235ccdd5476c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người tập gym 4–5 ngày/tuần cường độ cao có thể cần ít bước hơn vì cơ thể đã nhận đủ tín hiệu vận động — ép thêm bước khi đang phục hồi có thể làm chậm tiến bộ.',
+    detail: 'Khi bạn đã tập luyện có cấu trúc, NEAT cần được cân bằng với nhu cầu phục hồi — không phải "càng nhiều càng tốt". Lắng nghe cơ thể quan trọng hơn đạt số bước.',
+    details: [
+      'Người tập nặng có thể cần điều chỉnh mục tiêu bước theo lịch tập: ngày tập chân nặng → giảm bước đi bộ để cơ được phục hồi; ngày nhẹ → có thể tăng bước.',
+      'Dấu hiệu cần giảm NEAT: nhịp tim nghỉ cao hơn bình thường 5–7 bpm, hiệu suất tập giảm liên tiếp 2–3 buổi, đau cơ kéo dài hơn 72 giờ.',
+      'Với người tập gym, "active recovery" bước nhẹ (3.000–5.000 bước đi bộ chậm) ngày sau tập nặng thường tốt hơn nằm yên hoàn toàn.',
+      'Tổng tải trọng hàng tuần (training load) gồm cả buổi tập + NEAT — khi tập nhiều, tự động giảm NEAT một chút là cơ thể tự điều tiết thông minh.',
+      'Đối với người thi đấu hoặc tập 5–6 ngày/tuần: có tuần cao tải (bước + tập) và tuần thấp tải (deload + giảm bước) giúp tiến bộ lâu dài hơn.',
+      'Công cụ theo dõi: heart rate variability (HRV) sáng sớm là chỉ số tốt nhất để biết hôm nay nên tăng hay giảm vận động tổng thể.',
+    ],
+    points: [
+      { icon: '⚖️', label: 'Cân bằng tập + NEAT', note: 'Không ép bước khi đang phục hồi' },
+      { icon: '📈', label: 'HRV buổi sáng', note: 'Chỉ số tốt nhất cho phục hồi' },
+      { icon: '🔄', label: 'Tuần cao/thấp tải', note: 'Deload định kỳ cho tiến bộ lâu dài' },
+      { icon: '🦵', label: 'Ngày tập chân nặng', note: 'Giảm bước, ưu tiên phục hồi' },
+    ],
+  },
 ];
 
 const C3_IDEAS = [
@@ -716,6 +800,7 @@ export default function PillarC() {
   const [c0Idx, setC0Idx] = useState(null);
   const [c1Idx, setC1Idx] = useState(null);
   const [c2EnergyIdx, setC2EnergyIdx] = useState(null);
+  const [c3LevelIdx, setC3LevelIdx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -1078,9 +1163,20 @@ export default function PillarC() {
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>Mục tiêu bước theo cấp độ</h3>
                 <div className="grid gap-2 mb-6">
                   {C3_LEVELS.map((l, i) => (
-                    <div key={i} className="flex items-center justify-between p-3 rounded-xl" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.12)' }}>
+                    <div
+                      key={i}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setC3LevelIdx(i)}
+                      onKeyDown={e => e.key === 'Enter' && setC3LevelIdx(i)}
+                      className="group flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-x-0.5"
+                      style={{ background: `rgba(${l.rgb},0.06)`, border: `1px solid rgba(${l.rgb},0.18)` }}
+                    >
                       <span className="text-lg font-semibold text-text">{l.level}</span>
-                      <span className="text-lg font-bold tabular-nums" style={{ color: '#10b981' }}>{l.steps}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg font-bold tabular-nums" style={{ color: l.color }}>{l.steps}</span>
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 opacity-0 group-hover:opacity-60 transition-opacity shrink-0" style={{ color: l.color }}><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -1455,6 +1551,19 @@ export default function PillarC() {
           onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
           hasNext={c0Idx < C0_ITEMS.length - 1}
+        />
+      )}
+
+      {/* ── C3 level modal — reuses C0ItemModal (same data shape) ── */}
+      {c3LevelIdx !== null && (
+        <C0ItemModal
+          item={C3_LEVELS[c3LevelIdx]}
+          idx={c3LevelIdx}
+          onClose={() => setC3LevelIdx(null)}
+          onPrev={() => setC3LevelIdx(i => Math.max(0, i - 1))}
+          onNext={() => setC3LevelIdx(i => Math.min(C3_LEVELS.length - 1, i + 1))}
+          hasPrev={c3LevelIdx > 0}
+          hasNext={c3LevelIdx < C3_LEVELS.length - 1}
         />
       )}
 

@@ -184,7 +184,7 @@ const SLEEP_STAGES = [
     stage: 'REM — Mơ', label: 'REM — Mơ', icon: '✨',
     time: '20–25%', color: '#a78bfa', rgb: '167,139,250',
     desc: 'Não hoạt động mạnh. Củng cố trí nhớ cảm xúc, xử lý thông tin phức tạp và phục hồi tâm lý.',
-    img: 'https://images.unsplash.com/photo-1509130872995-86c1159b0f3d?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Trong REM, não hoạt động gần như khi thức — nhưng cơ bắp bị "tê liệt" tạm thời. Đây là giai đoạn xử lý cảm xúc, sáng tạo và "overnight therapy" mà Matthew Walker mô tả.',
     detail: 'REM (Rapid Eye Movement) là giai đoạn kỳ lạ nhất của giấc ngủ: não hoạt động như khi thức, nhưng cơ thể gần như bất động (atonia cơ — để bạn không thực hiện các hành động trong giấc mơ). Đây là thời gian não tích hợp thông tin, xử lý cảm xúc phức tạp và tạo ra các kết nối sáng tạo.',
     details: [

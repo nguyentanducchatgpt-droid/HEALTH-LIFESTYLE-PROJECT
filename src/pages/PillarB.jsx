@@ -20,36 +20,57 @@ const MANTRAS = [
     n: '01', icon: '⚖️', text: 'Ăn đủ', sub: 'Không ăn kiệt sức hay cắt quá mức',
     desc: 'Cơ thể cần đủ năng lượng để vận hành, phục hồi và xây dựng cơ bắp. Cắt calo quá mức làm chậm trao đổi chất và gây mất cơ ngoài ý muốn.',
     tips: ['1,600–2,400 kcal/ngày tùy hoạt động', 'Không bỏ bữa sáng liên tục', 'Ăn chậm — não cần 20 phút để cảm nhận no'],
+    detail: 'Nhiều người lầm tưởng rằng cắt giảm calo càng nhiều càng tốt. Nhưng cơ thể có cơ chế thích nghi: khi thiếu hụt năng lượng kéo dài, tốc độ trao đổi chất giảm 10–20%, hormone tuyến giáp suy giảm và cơ thể bắt đầu phá vỡ cơ bắp để lấy năng lượng. Thâm hụt 300–500 kcal/ngày là vùng an toàn để giảm mỡ mà không mất cơ.',
+    keyFact: 'Nghiên cứu 2018 (JAMA): ăn đủ calo nhưng đúng thành phần hiệu quả hơn ăn kiêng khắt khe 40%',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=70&auto=format&fit=crop',
   },
   {
     n: '02', icon: '⏰', text: 'Ăn đều', sub: 'Không theo cảm hứng, không bỏ bữa',
     desc: 'Nhịp sinh học hoạt động tốt nhất khi được nuôi đúng giờ. Ăn đều giờ ổn định đường huyết và kiểm soát cảm giác thèm ăn bất thường.',
     tips: ['3 bữa chính cùng khung giờ mỗi ngày', 'Không nhịn quá 5 tiếng liên tục', 'Chuẩn bị thực phẩm sẵn để không bỏ bữa'],
+    detail: 'Cortisol — hormone tỉnh táo — đạt đỉnh vào buổi sáng và giảm dần theo chu kỳ 24h. Khi bạn ăn đúng giờ, đồng hồ sinh học tiêu hóa đồng bộ với chu kỳ này: enzyme tiêu hóa tiết ra mạnh nhất, hấp thụ dưỡng chất tối ưu hơn. Bỏ bữa tạo ra đỉnh insulin cao bất thường ở bữa tiếp theo, dẫn đến tích trữ mỡ hiệu quả hơn bình thường.',
+    keyFact: 'Người ăn bữa sáng đều đặn có BMI thấp hơn trung bình 1.5 điểm so với người thường xuyên bỏ bữa sáng',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=70&auto=format&fit=crop',
   },
   {
     n: '03', icon: '🌿', text: 'Ăn thật', sub: 'Hạn chế đồ siêu chế biến, ít phụ gia',
     desc: 'Thực phẩm nguyên dạng giữ nguyên vi chất, chất xơ và enzyme tự nhiên. Đồ siêu chế biến kích thích ăn quá mức qua cơ chế thần kinh.',
     tips: ['Ưu tiên rau củ, thịt tươi, trứng, cá', 'Đọc nhãn thành phần trước khi mua', 'Nguyên tắc: dưới 5 thành phần/sản phẩm'],
+    detail: 'Ultra-processed food (UPF) được thiết kế để vượt qua cơ chế no tự nhiên: kết hợp muối + đường + béo theo tỷ lệ kích hoạt dopamine tối đa. Nghiên cứu NIH 2019 cho thấy người ăn chế độ UPF tiêu thụ thêm 500 kcal/ngày so với nhóm ăn thực phẩm nguyên dạng dù cùng lượng thức ăn. Vi chất (vitamin B complex, kẽm, sắt) trong thực phẩm nguyên dạng quan trọng cho trao đổi chất.',
+    keyFact: 'Ultra-processed food chiếm 60% lượng calo trung bình của người thành phố Việt Nam hiện nay',
+    img: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=70&auto=format&fit=crop',
   },
   {
     n: '04', icon: '🎯', text: 'Ăn theo mục tiêu', sub: 'Không theo phong trào hay quảng cáo',
     desc: 'Keto, IF, Low-carb đều có thể hiệu quả — nhưng chỉ khi phù hợp với cơ thể, lịch sống và mục tiêu cụ thể của bạn. Không có chế độ ăn nào phù hợp cho tất cả.',
     tips: ['Xác định mục tiêu rõ ràng trước', 'Thử nghiệm nhất quán ít nhất 4 tuần', 'Đo kết quả khách quan bằng số liệu'],
+    detail: 'Meta-analysis 2020 (NEJM) so sánh 14 chế độ ăn phổ biến: sau 6 tháng, sự khác biệt giảm cân giữa các chế độ chỉ là 1–2kg. Yếu tố quyết định không phải tên chế độ ăn mà là: (1) thâm hụt calo bền vững, (2) đủ protein, (3) phù hợp với lối sống. Keto phù hợp người ít vận động; High-carb phù hợp vận động viên; IF phù hợp người bận rộn.',
+    keyFact: 'Sau 2 năm, tỷ lệ duy trì kết quả của mọi chế độ ăn đều tương đương nếu đủ protein và phù hợp lối sống',
+    img: 'https://images.unsplash.com/photo-1494390248081-4e521a5940db?w=600&q=70&auto=format&fit=crop',
   },
   {
     n: '05', icon: '💪', text: 'Protein là nền', sub: 'Rau là bạn, carb là nhiên liệu',
     desc: 'Protein (1.6–2.2g/kg thể trọng) bảo vệ cơ bắp, tăng cảm giác no lâu và đốt thêm calo qua quá trình tiêu hóa. Đây là macro quan trọng nhất trong mọi mục tiêu.',
     tips: ['1.6–2.2g protein/kg thể trọng/ngày', 'Mỗi bữa ăn đều có nguồn protein', 'Trứng, thịt, đậu, sữa chua Hy Lạp'],
+    detail: 'Protein có Thermic Effect cao nhất trong 3 macro: tiêu hóa protein đốt 20–30% lượng calo của chính nó, so với carb 5–10% và béo 0–3%. Điều này có nghĩa 100 kcal protein thực tế chỉ cung cấp 70–80 kcal net. Leucine trong protein động vật kích hoạt mTOR — con đường tín hiệu chính cho tổng hợp cơ bắp. Phân bổ 30–40g protein đều qua 3–4 bữa tối ưu hơn dồn vào 1–2 bữa.',
+    keyFact: 'Tăng protein từ 15% lên 30% tổng calo giúp giảm tự nhiên 441 kcal/ngày mà không cần đếm calo',
+    img: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&q=70&auto=format&fit=crop',
   },
   {
     n: '06', icon: '🔄', text: 'Một bữa lệch', sub: 'Không phá hỏng hành trình dài hạn',
     desc: 'Một bữa pizza không làm bạn béo, giống như một bữa salad không làm bạn gầy. Kết quả đến từ thói quen hàng tuần, không phải từ một bữa ăn đơn lẻ.',
     tips: ['1–2 bữa linh hoạt/tuần là bình thường', 'Quay lại thói quen bình thường ngay sau', 'Không "bù đắp" bằng cách nhịn ăn'],
+    detail: 'Một bữa "cheat" khoảng 1.000–1.500 kcal có thể ảnh hưởng lên thể cân 0.2–0.4kg — chủ yếu là glycogen và nước giữ lại, không phải mỡ thực sự. Glycogen được bổ sung sẽ cạn dần trong 1–2 ngày tiếp theo. Nguy hiểm thực sự là tâm lý "đã lỡ rồi, ăn tiếp" (all-or-nothing thinking). Chiến lược: lên kế hoạch bữa linh hoạt thay vì để nó xảy ra ngẫu hứng.',
+    keyFact: '"Nguyên tắc 90/10": duy trì 90% thói quen tốt cho phép bạn linh hoạt 10% mà vẫn đạt kết quả dài hạn',
+    img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=70&auto=format&fit=crop',
   },
   {
     n: '07', icon: '🏃', text: 'Duy trì được', sub: 'Dinh dưỡng tốt nhất là cái bạn giữ được',
     desc: 'Chế độ ăn hoàn hảo trên lý thuyết nhưng không thể duy trì trong thực tế thì bằng không. 80% nhất quán trong 1 năm luôn tốt hơn 100% hoàn hảo trong 3 tuần rồi bỏ.',
     tips: ['Bắt đầu với 1 thay đổi nhỏ nhất', 'Xây hệ thống — không phụ thuộc ý chí', 'Điều chỉnh món ăn yêu thích thay vì bỏ'],
+    detail: '"Identity-based habits" (James Clear): thay vì nói "tôi muốn ăn healthy", hãy nói "tôi là người ưu tiên sức khỏe". Mỗi lần bạn chọn ăn đúng, bạn đang vote cho bản sắc đó. Sự bền vững đến từ việc giảm ma sát: chuẩn bị sẵn thực phẩm, đặt rau ở tầm mắt trong tủ lạnh. Ý chí là nguồn tài nguyên có hạn — hệ thống mới là vô hạn.',
+    keyFact: 'Thói quen ăn uống trung bình mất 66 ngày để hình thành (không phải 21 ngày như quan niệm phổ biến)',
+    img: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&q=70&auto=format&fit=crop',
   },
 ];
 
@@ -6243,130 +6264,193 @@ function AdvancedPanel({ s }) {
   );
 }
 
-// ─── MantraCard — 3D tilt + gleam sweep + mouse spotlight ────────────────────
-function MantraCard({ m, i }) {
-  const ref  = useRef(null);
-  const [hov, setHov]   = useState(false);
-  const [gleam, setGleam] = useState(0);
-
-  const onMove = useCallback((e) => {
-    const el = ref.current;
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width;
-    const y = (e.clientY - r.top)  / r.height;
-    el.style.setProperty('--mx', `${Math.round(x * 100)}%`);
-    el.style.setProperty('--my', `${Math.round(y * 100)}%`);
-    el.style.setProperty('--tx', `${(x - 0.5) * -10}deg`);
-    el.style.setProperty('--ty', `${(y - 0.5) *  8}deg`);
-  }, []);
-
-  const onEnter = useCallback(() => { setHov(true);  setGleam(g => g + 1); }, []);
-  const onLeave = useCallback(() => {
-    setHov(false);
-    const el = ref.current;
-    if (el) { el.style.setProperty('--tx', '0deg'); el.style.setProperty('--ty', '0deg'); }
-  }, []);
+// ─── MantraDetail — full-screen modal overlay (rendered outside all RevealBlocks) ─
+function MantraDetail({ m, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
 
   return (
     <div
-      ref={ref}
-      onMouseMove={onMove}
-      onMouseEnter={onEnter}
-      onMouseLeave={onLeave}
-      className="relative flex flex-col rounded-2xl border animate-fade-in-up overflow-hidden cursor-default"
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d120a', borderColor: 'rgba(132,204,22,0.28)', boxShadow: '0 0 80px rgba(132,204,22,0.15), 0 40px 80px rgba(0,0,0,0.6)' }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* ── Hero image ── */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={m.img} alt={m.text} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(132,204,22,0.08) 50%, #0d120a 100%)' }} />
+          {/* Top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, transparent, #84cc16, transparent)' }} />
+          {/* Number watermark */}
+          <div className="absolute top-5 right-6 text-right">
+            <div className="font-black leading-none" style={{ fontSize: 52, color: '#84cc16', textShadow: '0 0 30px rgba(132,204,22,0.65)' }}>{m.n}</div>
+          </div>
+          {/* Icon */}
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: 'rgba(132,204,22,0.18)', border: '2px solid rgba(132,204,22,0.45)' }}>
+            {m.icon}
+          </div>
+          {/* Close */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}
+          >✕</button>
+        </div>
+
+        {/* ── Content ── */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: '#84cc16' }}>{m.text}</h2>
+          <p className="font-semibold text-base mb-2" style={{ color: 'rgba(132,204,22,0.7)' }}>{m.sub}</p>
+
+          {/* Key fact banner */}
+          <div className="flex gap-3 rounded-2xl p-4 mb-6" style={{ background: 'rgba(132,204,22,0.07)', border: '1px solid rgba(132,204,22,0.2)' }}>
+            <span className="text-lg shrink-0">💡</span>
+            <p className="text-sm font-semibold leading-relaxed m-0" style={{ color: '#bef264' }}>{m.keyFact}</p>
+          </div>
+
+          {/* Detail paragraph */}
+          <p className="text-base text-muted leading-relaxed mb-6">{m.detail}</p>
+
+          {/* Tips as numbered list */}
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: '#84cc16' }}>Áp Dụng Thực Tế</p>
+          <ul className="space-y-3 mb-8">
+            {m.tips.map((tip, j) => (
+              <li key={j} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: 'rgba(132,204,22,0.14)', color: '#84cc16' }}>{j + 1}</span>
+                <span>{tip}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Prev / Next nav */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button
+              onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasPrev ? '#84cc16' : 'rgba(255,255,255,0.2)', background: hasPrev ? 'rgba(132,204,22,0.1)' : 'transparent', border: `1px solid ${hasPrev ? 'rgba(132,204,22,0.25)' : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{m.n} / 07</span>
+            <button
+              onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasNext ? '#84cc16' : 'rgba(255,255,255,0.2)', background: hasNext ? 'rgba(132,204,22,0.1)' : 'transparent', border: `1px solid ${hasNext ? 'rgba(132,204,22,0.25)' : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── MantraCard — image + click-to-expand ─────────────────────────────────────
+function MantraCard({ m, i, onOpen }) {
+  const [hov, setHov] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setReady(true), i * 70);
+    return () => clearTimeout(t);
+  }, [i]);
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={() => onOpen(i)}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onOpen(i); }}
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      className="relative flex flex-col rounded-2xl overflow-hidden cursor-pointer"
       style={{
-        animationDelay: `${i * 70}ms`,
-        animationFillMode: 'both',
-        borderColor: hov ? `${LIME}70` : 'rgba(255,255,255,0.08)',
-        background:  hov ? `${LIME}07` : 'rgba(255,255,255,0.03)',
-        transform: 'perspective(800px) rotateY(var(--tx,0deg)) rotateX(var(--ty,0deg))',
-        transition: 'transform 0.15s ease-out, border-color 0.3s, background 0.3s, box-shadow 0.3s',
+        opacity: ready ? 1 : 0,
+        transform: hov ? 'translateY(-4px) scale(1.015)' : 'translateY(0) scale(1)',
+        transition: 'opacity 0.5s ease, transform 0.25s ease, border-color 0.3s, box-shadow 0.3s, background 0.3s',
+        border: `1px solid ${hov ? 'rgba(132,204,22,0.45)' : 'rgba(255,255,255,0.08)'}`,
+        background: hov ? 'rgba(132,204,22,0.04)' : 'rgba(255,255,255,0.025)',
         boxShadow: hov
-          ? `0 20px 40px rgba(0,0,0,0.45), 0 0 0 1px ${LIME}28, inset 0 1px 0 rgba(255,255,255,0.07), 0 0 35px ${LIME}0d`
+          ? '0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(132,204,22,0.15), 0 0 40px rgba(132,204,22,0.08)'
           : '0 2px 8px rgba(0,0,0,0.2)',
+        pointerEvents: 'auto',
       }}
     >
       {/* Top accent bar */}
-      <div
-        className="h-[2px] shrink-0 transition-all duration-500 ease-out"
-        style={{ width: hov ? '100%' : '0%', background: `linear-gradient(90deg,${LIME}dd,${LIME}20)` }}
-      />
+      <div className="h-[2px] shrink-0 transition-all duration-500"
+        style={{ width: hov ? '100%' : '0%', background: `linear-gradient(90deg,${LIME}dd,${LIME}15)` }} />
 
-      {/* Gleam sweep — re-fires every hover-enter */}
-      <div key={gleam} className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
-        {hov && (
-          <div
-            className="absolute inset-y-0"
-            style={{
-              width: '55%', left: '-55%',
-              background: `linear-gradient(105deg,transparent 30%,rgba(255,255,255,0.055) 50%,${LIME}09 55%,transparent 70%)`,
-              animation: 'pbGleam 0.95s ease-out forwards',
-            }}
-          />
-        )}
+      {/* Image */}
+      <div className="relative h-32 overflow-hidden">
+        <img
+          src={m.img} alt={m.text}
+          onLoad={() => setImgLoaded(true)}
+          className="w-full h-full object-cover transition-transform duration-700"
+          style={{ transform: hov ? 'scale(1.08)' : 'scale(1)', opacity: imgLoaded ? 1 : 0 }}
+        />
+        {/* Gradient fade */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(10,10,10,0.88) 100%)' }} />
+        {/* Number badge */}
+        <span className="absolute top-2.5 left-3 text-[9px] font-black px-1.5 py-0.5 rounded-md transition-all duration-300"
+          style={{
+            color: hov ? LIME : 'rgba(160,160,160,0.6)',
+            background: hov ? 'rgba(132,204,22,0.15)' : 'rgba(0,0,0,0.4)',
+            border: `1px solid ${hov ? 'rgba(132,204,22,0.35)' : 'rgba(255,255,255,0.1)'}`,
+          }}>{m.n}</span>
+        {/* Icon */}
+        <span
+          className="absolute bottom-2.5 right-3 text-2xl w-10 h-10 flex items-center justify-center rounded-xl border transition-all duration-300"
+          style={{
+            background: hov ? 'rgba(132,204,22,0.15)' : 'rgba(0,0,0,0.45)',
+            borderColor: hov ? 'rgba(132,204,22,0.4)' : 'rgba(255,255,255,0.12)',
+            backdropFilter: 'blur(8px)',
+            transform: hov ? 'scale(1.1) rotate(-5deg)' : 'scale(1) rotate(0deg)',
+          }}
+        >{m.icon}</span>
       </div>
 
-      {/* Mouse spotlight */}
-      <div
-        className="absolute inset-0 pointer-events-none rounded-2xl transition-opacity duration-300"
-        style={{
-          opacity: hov ? 1 : 0,
-          background: `radial-gradient(circle at var(--mx,50%) var(--my,50%),${LIME}10 0%,transparent 55%)`,
-        }}
-      />
+      {/* Content */}
+      <div className="p-4 flex flex-col flex-1">
+        <p className="text-base font-bold leading-snug mb-0.5 transition-colors duration-200"
+          style={{ color: hov ? '#bef264' : '#e2e8f0' }}>{m.text}</p>
+        <p className="text-[11px] leading-relaxed mb-2.5 transition-colors duration-200"
+          style={{ color: hov ? 'rgba(190,242,100,0.7)' : 'rgba(148,163,184,0.65)' }}>{m.sub}</p>
+        <p className="text-[11px] leading-relaxed flex-1 overflow-hidden transition-colors duration-300"
+          style={{
+            color: hov ? 'rgba(200,200,200,0.85)' : 'rgba(148,163,184,0.5)',
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+          }}>{m.desc}</p>
 
-      <div className="p-5 flex flex-col flex-1 relative z-10">
-        <div className="flex items-center justify-between mb-3">
-          <span
-            className="text-[9px] font-black transition-colors duration-200"
-            style={{ color: hov ? `${LIME}88` : 'rgba(160,160,160,0.35)' }}
-          >{m.n}</span>
-          <span
-            className="text-3xl w-9 h-9 flex items-center justify-center rounded-xl border transition-all duration-300"
-            style={{
-              borderColor: hov ? `${LIME}45` : 'rgba(255,255,255,0.1)',
-              background:   hov ? `${LIME}14` : 'rgba(255,255,255,0.04)',
-              transform:    hov ? 'scale(1.1)' : 'scale(1)',
-            }}
-          >{m.icon}</span>
-        </div>
-
-        <p
-          className="text-lg font-bold leading-snug mb-1 transition-colors duration-200"
-          style={{ color: hov ? '#bef264' : '#e2e8f0' }}
-        >{m.text}</p>
-
-        <p
-          className="text-[11px] leading-relaxed mb-3 transition-colors duration-200"
-          style={{ color: hov ? 'rgba(210,210,210,0.85)' : 'rgba(160,160,160,0.65)' }}
-        >{m.sub}</p>
-
-        <p
-          className="text-[11px] leading-relaxed flex-1 transition-colors duration-300"
-          style={{ color: hov ? 'rgba(200,200,200,0.88)' : 'rgba(150,150,150,0.5)' }}
-        >{m.desc}</p>
-
-        <div
-          className="overflow-hidden transition-all duration-400 ease-in-out"
-          style={{ maxHeight: hov ? '160px' : '0px' }}
-        >
-          <div className="border-t border-border/40 mt-3 pt-3 space-y-1.5">
-            {m.tips.map((tip, j) => (
-              <div key={j} className="flex items-start gap-1.5">
-                <span className="text-[10px] font-bold mt-0.5 shrink-0" style={{ color: LIME }}>✓</span>
-                <span className="text-[10px] leading-relaxed" style={{ color: 'rgba(185,185,185,0.82)' }}>{tip}</span>
-              </div>
-            ))}
-          </div>
+        {/* CTA */}
+        <div className="flex items-center gap-1 mt-3 pt-2.5 border-t transition-all duration-300"
+          style={{ borderColor: hov ? 'rgba(132,204,22,0.2)' : 'rgba(255,255,255,0.06)' }}>
+          <span className="text-[10px] font-bold transition-colors duration-200"
+            style={{ color: hov ? LIME : 'rgba(148,163,184,0.4)' }}>Xem chi tiết</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3 transition-all duration-300"
+            style={{ color: hov ? LIME : 'rgba(148,163,184,0.3)', transform: hov ? 'translateX(3px)' : 'translateX(0)' }}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4" />
+          </svg>
         </div>
       </div>
-
-      {/* Bottom ambient glow */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none transition-opacity duration-500"
-        style={{ opacity: hov ? 1 : 0, background: `linear-gradient(to top,${LIME}12,transparent)` }}
-      />
     </div>
   );
 }
@@ -6921,6 +7005,7 @@ export default function PillarB() {
     sub:  tPillars(`pillarB.mantras.${i}.sub`,  { defaultValue: m.sub }),
     desc: tPillars(`pillarB.mantras.${i}.desc`, { defaultValue: m.desc }),
   }));
+  const [mantraIdx, setMantraIdx] = useState(null);
   const spiritTr = pillar?.spirit_card || {};
 
   useEffect(() => {
@@ -7235,7 +7320,7 @@ export default function PillarB() {
         {/* ── Mantra cards (3 col) ── */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {translatedMantras.map((m, i) => (
-            <MantraCard key={m.n} m={m} i={i} />
+            <MantraCard key={m.n} m={m} i={i} onOpen={(i) => setMantraIdx(i)} />
           ))}
 
           {/* Spirit card */}
@@ -7258,6 +7343,7 @@ export default function PillarB() {
             </div>
           </div>
         </div>
+
       </RevealBlock>
 
       {/* ══════════════════════════════════════════════════════════════════════
@@ -7855,6 +7941,18 @@ export default function PillarB() {
           </Link>
         </div>
       </RevealBlock>
+
+      {/* ── Mantra detail modal — outside all RevealBlocks so position:fixed works ── */}
+      {mantraIdx !== null && (
+        <MantraDetail
+          m={translatedMantras[mantraIdx]}
+          onClose={() => setMantraIdx(null)}
+          onPrev={() => setMantraIdx(idx => Math.max(0, idx - 1))}
+          onNext={() => setMantraIdx(idx => Math.min(translatedMantras.length - 1, idx + 1))}
+          hasPrev={mantraIdx > 0}
+          hasNext={mantraIdx < translatedMantras.length - 1}
+        />
+      )}
 
     </div>
   );

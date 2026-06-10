@@ -918,7 +918,7 @@
       "badge": "Häufig Gestellte Fragen",
       "title2": "Gesundheit",
       "subtitle": "Antworten auf die häufigsten Fragen zu Ihrer Gesundheitsreise",
-      "count_suffix": "Fragen · 6 Themen · regelmäßig aktualisiert",
+      "count_suffix": "Fragen · 7 Themen · regelmäßig aktualisiert",
       "search_placeholder": "Fragen suchen...",
       "all_btn": "Alle",
       "cat_count": "Fr.",
@@ -961,6 +961,10 @@
       "prog": {
         "label": "Reise",
         "desc": "7-Tage-, 12-Wochen-, 24-Wochen-Programme"
+      },
+      "calc": {
+        "label": "Formeln",
+        "desc": "TDEE, BMI, Protein, Wasser, Herzfrequenz"
       }
     },
     "faqs": [
@@ -1067,6 +1071,38 @@
       {
         "q": "Was soll ich tun, wenn ich 1–2 Tage im Programm verpasst habe?",
         "a": "Kein Problem. Die Regel: \"Niemals zweimal hintereinander auslassen\". 1 Tag verpasst → weiter vom nächsten Tag, kein Nachholbedarf. 1 Woche verpasst → Neustart vom Anfang dieser Woche. 80% Konsequenz über 12 Wochen schlägt 100% für 3 Wochen dann aufhören."
+      },
+      {
+        "q": "Was ist die BMR-Formel (Grundumsatz)?",
+        "a": "BMR wird nach der Mifflin-St-Jeor-Formel berechnet: Mann = (10 × Gewicht kg) + (6,25 × Größe cm) − (5 × Alter) + 5. Frau = (10 × Gewicht kg) + (6,25 × Größe cm) − (5 × Alter) − 161. Beispiel: Mann 30 Jahre, 70kg, 170cm → BMR = 700 + 1062,5 − 150 + 5 = 1617,5 kcal/Tag. Das ist der Mindestenergiebedarf des Körpers in vollständiger Ruhe."
+      },
+      {
+        "q": "Wie wird TDEE berechnet? Welche Aktivitätsmultiplikatoren gibt es?",
+        "a": "TDEE = BMR × Aktivitätsmultiplikator. Stufen: Sitzend (Bürojob, kein Sport) × 1,2; Leicht (1–3 Einheiten/Woche) × 1,375; Moderat (3–5 Einheiten/Woche) × 1,55; Aktiv (6–7 Einheiten/Woche) × 1,725; Sehr aktiv (2× täglich) × 1,9. Beispiel: BMR 1617 kcal × 1,55 (moderat) = 2506 kcal TDEE."
+      },
+      {
+        "q": "Wie viele Kalorien soll ich je nach meinem Ziel essen?",
+        "a": "Anpassung vom TDEE: Gewichtsverlust = TDEE − 400 kcal (moderates Defizit, nicht extrem); Erhaltung = TDEE; Muskelaufbau = TDEE + 300 kcal (kleiner Überschuss). Nie unter dem BMR essen. Beispiel mit TDEE 2500: Abnehmen = 2100 kcal, Muskelaufbau = 2800 kcal."
+      },
+      {
+        "q": "Wie berechne ich meine Makro-Verhältnisse (Protein, Fett, Kohlenhydrate)?",
+        "a": "Schritt 1 — Protein: Körpergewicht × 1,6–2,0g (2,0g für Gewichtsverlust oder Muskelaufbau; 1,6g zur Erhaltung). Schritt 2 — Fett: 25% der Gesamtkalorien ÷ 9 (da 1g Fett = 9 kcal). Schritt 3 — Kohlenhydrate füllen den Rest: (Gesamtkcal − Protein×4 − Fett×9) ÷ 4. Beispiel: 70kg, 2100 kcal Gewichtsverlust — Protein 140g (560 kcal) · Fett 58g (525 kcal) · Kohlenhydrate 254g (1016 kcal)."
+      },
+      {
+        "q": "Welche Kaloriedichte haben die einzelnen Makronährstoffe?",
+        "a": "Wichtige Konstanten: Protein = 4 kcal/g; Kohlenhydrate = 4 kcal/g; Fett = 9 kcal/g; Alkohol = 7 kcal/g (fast so dicht wie Fett, oft vergessen). Praxisbeispiele: 100g Hühnerbrust (30g Protein) ≈ 120 kcal; 100g gekochter Reis (28g Kohlenhydrate) ≈ 130 kcal; 1 EL Speiseöl (14g Fett) ≈ 126 kcal."
+      },
+      {
+        "q": "Wie viel Wasser brauche ich? Was ist die Formel für den Wasserbedarf?",
+        "a": "Grundformel: Körpergewicht (kg) × 35ml = Mindest-Tagesmenge. Beispiele: 60kg × 35 = 2.100ml (2,1 Liter); 75kg × 35 = 2.625ml (2,6 Liter). Zusätzlich: +500ml pro Trainingseinheit; +300ml bei heißem Wetter. Zeichen ausreichender Flüssigkeit: blassgelblicher Urin. Zeichen von Dehydration: dunkelgelber Urin, trockener Mund, Müdigkeit."
+      },
+      {
+        "q": "Wie wird der BMI berechnet und was bedeuten die Bereiche?",
+        "a": "BMI = Gewicht (kg) ÷ [Größe (m)]². Beispiel: 68kg, 1,70m → BMI = 68 ÷ (1,70)² = 23,5. WHO-Klassifikation: Unter 18,5 = Untergewicht; 18,5–24,9 = Normalgewicht; 25,0–29,9 = Übergewicht; 30,0+ = Adipositas. Hinweis: BMI unterscheidet nicht zwischen Muskel und Fett — muskulöse Menschen können als \"übergewichtig\" eingestuft werden, obwohl sie sehr gesund sind. Kombiniere mit Taillenumfang (<90cm Männer, <80cm Frauen) für eine genauere Bewertung."
+      },
+      {
+        "q": "Wie berechne ich meine Trainingsherzfrequenz und die Herzfrequenzzonen?",
+        "a": "Maximale Herzfrequenz (HFmax) = 220 − Alter. Beispiel: 30 Jahre → HFmax = 190 Schläge/Min. Herzfrequenzzonen: 50–60% HFmax = Leichtes Aufwärmen (minimaler aerober Nutzen); 60–70% HFmax = Optimale Fettverbrennungszone; 70–85% HFmax = Kardiozone — verbessert Herz-Kreislauf-Fitness; 85–95% HFmax = Fortgeschrittene Zone — nur für erfahrene Sportler. Für Anfänger: 60–75% HFmax für 20–30 Minuten anstreben."
       }
     ]
   },

@@ -685,7 +685,7 @@
       "badge": "Câu Hỏi Thường Gặp",
       "title2": "Sức Khỏe",
       "subtitle": "Giải đáp những thắc mắc phổ biến nhất về hành trình sống khỏe",
-      "count_suffix": "câu hỏi · 6 chủ đề · cập nhật thường xuyên",
+      "count_suffix": "câu hỏi · 7 chủ đề · cập nhật thường xuyên",
       "search_placeholder": "Tìm kiếm câu hỏi...",
       "all_btn": "Tất Cả",
       "cat_count": "câu",
@@ -728,6 +728,10 @@
       "prog": {
         "label": "Hành Trình",
         "desc": "Lộ trình 7 ngày, 12 tuần, 24 tuần"
+      },
+      "calc": {
+        "label": "Công Thức",
+        "desc": "TDEE, BMI, Protein, Nước, Nhịp Tim"
       }
     },
     "faqs": [
@@ -834,6 +838,38 @@
       {
         "q": "Tôi lỡ 1–2 ngày trong lộ trình thì phải làm gì?",
         "a": "Không sao cả. Nguyên tắc: \"Không bao giờ bỏ 2 lần liên tiếp\". Bỏ 1 ngày → tiếp tục từ ngày tiếp theo, không cần làm bù. Bỏ 1 tuần → quay lại từ đầu tuần đó. 80% nhất quán trong 12 tuần > 100% trong 3 tuần rồi bỏ."
+      },
+      {
+        "q": "Công thức tính BMR (Chuyển hóa cơ bản) là gì?",
+        "a": "BMR tính theo công thức Mifflin-St Jeor: Nam = (10 × cân nặng kg) + (6.25 × chiều cao cm) − (5 × tuổi) + 5. Nữ = (10 × cân nặng kg) + (6.25 × chiều cao cm) − (5 × tuổi) − 161. Ví dụ: Nam 30 tuổi, 70kg, 170cm → BMR = 700 + 1062.5 − 150 + 5 = 1617.5 kcal/ngày. Đây là năng lượng tối thiểu cơ thể cần khi nghỉ ngơi hoàn toàn."
+      },
+      {
+        "q": "TDEE được tính như thế nào? Hệ số hoạt động là bao nhiêu?",
+        "a": "TDEE = BMR × Hệ số hoạt động. Các mức: Ít vận động (văn phòng, không tập) × 1.2; Nhẹ (tập 1–3 buổi/tuần) × 1.375; Trung bình (tập 3–5 buổi/tuần) × 1.55; Năng động (tập 6–7 buổi/tuần) × 1.725; Rất năng động (tập 2 lần/ngày) × 1.9. Ví dụ: BMR 1617 kcal × 1.55 (trung bình) = 2506 kcal TDEE."
+      },
+      {
+        "q": "Tôi nên ăn bao nhiêu calo tùy theo mục tiêu?",
+        "a": "Điều chỉnh từ TDEE theo mục tiêu: Giảm cân = TDEE − 400 kcal (thâm hụt vừa phải, không cực đoan); Duy trì = TDEE; Tăng cơ = TDEE + 300 kcal (dư thặng nhỏ). Không nên ăn dưới BMR. Ví dụ với TDEE 2500: giảm cân ăn 2100 kcal, tăng cơ ăn 2800 kcal."
+      },
+      {
+        "q": "Tỷ lệ Macro (đạm, béo, tinh bột) tính thế nào?",
+        "a": "Bước 1 — Tính đạm: cân nặng × 1.6–2.0g (giảm cân hoặc tăng cơ dùng 2.0g; duy trì dùng 1.6g). Bước 2 — Tính béo: 25% tổng calo ÷ 9 (vì 1g béo = 9 kcal). Bước 3 — Tinh bột lấp đầy phần còn lại: (Tổng kcal − Đạm×4 − Béo×9) ÷ 4. Ví dụ 70kg, 2100 kcal giảm cân: Đạm 140g (560 kcal) · Béo 58g (525 kcal) · Tinh bột 254g (1016 kcal)."
+      },
+      {
+        "q": "Mật độ calo của từng nhóm chất dinh dưỡng là bao nhiêu?",
+        "a": "Đây là hằng số cần nhớ: Protein (đạm) = 4 kcal/g; Carbohydrate (tinh bột) = 4 kcal/g; Fat (béo) = 9 kcal/g; Alcohol = 7 kcal/g (gần bằng béo, thường bị bỏ quên). Ứng dụng: 100g ức gà (30g protein) ≈ 120 kcal; 100g cơm trắng (28g carb) ≈ 130 kcal; 1 thìa dầu ăn (14g béo) ≈ 126 kcal."
+      },
+      {
+        "q": "Tôi cần uống bao nhiêu nước? Công thức tính nhu cầu nước là gì?",
+        "a": "Công thức cơ bản: cân nặng (kg) × 35ml = lượng nước tối thiểu mỗi ngày. Ví dụ: 60kg × 35 = 2.100ml (2,1 lít); 75kg × 35 = 2.625ml (2,6 lít). Cộng thêm: +500ml mỗi buổi tập; +300ml khi thời tiết nóng. Dấu hiệu đủ nước: nước tiểu vàng nhạt. Dấu hiệu thiếu nước: nước tiểu vàng đậm, khô miệng, mệt mỏi."
+      },
+      {
+        "q": "Chỉ số BMI tính như thế nào và ý nghĩa từng mức?",
+        "a": "BMI = cân nặng (kg) ÷ [chiều cao (m)]². Ví dụ: 68kg, 1.70m → BMI = 68 ÷ (1.70)² = 23.5. Phân loại (WHO): Dưới 18.5 = Thiếu cân; 18.5–24.9 = Bình thường; 25.0–29.9 = Thừa cân; 30.0+ = Béo phì. Lưu ý: BMI không phân biệt cơ và mỡ — người có nhiều cơ bắp có thể bị xếp \"thừa cân\" dù sức khỏe tốt. Kết hợp với vòng eo (<90cm nam, <80cm nữ) để đánh giá chính xác hơn."
+      },
+      {
+        "q": "Công thức tính nhịp tim tập luyện và các vùng nhịp tim là gì?",
+        "a": "Nhịp tim tối đa (HRmax) = 220 − tuổi. Ví dụ 30 tuổi: HRmax = 190 nhịp/phút. Các vùng nhịp tim: 50–60% HRmax = Khởi động nhẹ (ít lợi ích aerobic); 60–70% HRmax = Vùng đốt mỡ tối ưu (fat-burning zone); 70–85% HRmax = Vùng cardio — tăng tim phổi; 85–95% HRmax = Vùng nâng cao — chỉ cho người đã có nền tảng. Khuyến nghị cho người mới: duy trì 60–75% HRmax trong 20–30 phút."
       }
     ]
   },

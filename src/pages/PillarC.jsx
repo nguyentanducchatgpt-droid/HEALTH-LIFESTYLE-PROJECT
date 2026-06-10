@@ -733,75 +733,9 @@ const C5_METHODS = [
 ];
 
 const C6_TECHNIQUES = [
-  {
-    icon: '🫁', name: 'Thở cơ hoành', label: 'Thở cơ hoành',
-    steps: 'Tay lên bụng • Hít mũi → bụng phồng • Thở miệng chậm • Ngực ít nâng',
-    time: '1–3 phút', use: 'Trước ngủ, sau tập, khi căng thẳng',
-    color: '#0ea5e9', rgb: '14,165,233',
-    img: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80&auto=format&fit=crop',
-    keyFact: '90% người thở bằng ngực — thở cơ hoành đúng cách kích hoạt hệ phó giao cảm trong 60 giây, giảm cortisol hiệu quả hơn bất kỳ kỹ thuật thư giãn nào.',
-    detail: 'Thở cơ hoành là nền tảng của mọi kỹ thuật thở. Cơ hoành là cơ chính của hô hấp, nhưng hầu hết người trưởng thành đã mất thói quen thở bằng cơ hoành do stress mãn tính — và chuyển sang thở ngực nông, duy trì cơ thể trong trạng thái kích thích nhẹ liên tục 24/7.',
-    details: [
-      'Đặt một tay lên ngực, một tay lên bụng — khi thở đúng, chỉ tay trên bụng nâng lên.',
-      'Hít vào qua mũi trong 4 giây: để bụng phồng ra tự nhiên, ngực giữ nguyên hoặc ít nâng.',
-      'Thở ra qua miệng chậm trong 4–6 giây: bụng xẹp dần từ dưới lên, không ép.',
-      'Lặp 6–10 nhịp, tổng 1–3 phút — có thể ngồi, đứng hoặc nằm ngửa.',
-      'Dấu hiệu thở đúng: cảm giác nhẹ đầu nhẹ nhàng sau 3–4 nhịp đầu (CO₂ đang cân bằng).',
-      'Tập luyện hằng ngày 3 phút buổi sáng để tái lập thói quen thở cơ hoành tự nhiên.',
-    ],
-    points: [
-      { icon: '✋', label: 'Tay lên bụng', note: 'Kiểm tra: tay bụng nâng, tay ngực giữ nguyên' },
-      { icon: '👃', label: 'Hít mũi 4 giây', note: 'Bụng phồng ra, không nâng vai lên' },
-      { icon: '💨', label: 'Thở miệng 4–6 giây', note: 'Chậm, kiểm soát, bụng xẹp dần' },
-      { icon: '⏱️', label: '1–3 phút', note: 'Trước ngủ, sau tập, khi căng thẳng' },
-    ],
-  },
-  {
-    icon: '📦', name: 'Box breathing', label: 'Box breathing',
-    steps: 'Hít 4 giây • Giữ 4 giây • Thở 4 giây • Giữ 4 giây • Lặp 4 vòng',
-    time: '4 vòng (64 giây)', use: 'Trước tập, lúc stress, trước ngủ',
-    color: '#6366f1', rgb: '99,102,241',
-    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
-    keyFact: 'Box breathing (4-4-4-4) đồng bộ hóa nhịp tim và hệ thần kinh tự chủ — kỹ thuật Navy SEAL dùng để bình tĩnh tức thời dưới áp lực cao.',
-    detail: 'Box breathing hoạt động theo nguyên lý "nhịp thở đối xứng" — 4 giai đoạn bằng nhau tạo ra vòng lặp sinh lý có trật tự, giúp đồng bộ hóa nhịp tim với hơi thở (Heart Rate Variability). Não chuyển từ trạng thái amygdala (phản ứng) sang prefrontal cortex (tư duy) chỉ sau 3–4 vòng.',
-    details: [
-      'Hít vào qua mũi đúng 4 giây: bụng nở, cảm nhận phổi lấp đầy dần.',
-      'Giữ hơi 4 giây: không căng cơ, chỉ "tạm dừng" hơi thở một cách nhẹ nhàng.',
-      'Thở ra qua miệng đúng 4 giây: bụng xẹp từ từ, kiểm soát tốc độ đều đặn.',
-      'Giữ rỗng 4 giây: đây là giai đoạn quan trọng nhất — não nhận tín hiệu "an toàn" mạnh nhất.',
-      'Lặp 4 vòng (64 giây tổng) — đủ để não chuyển sang trạng thái bình tĩnh rõ rệt.',
-      'Dùng được ở bất kỳ đâu: văn phòng, nhà vệ sinh, trước buổi họp, thang máy.',
-    ],
-    points: [
-      { icon: '📦', label: '4-4-4-4', note: 'Hít → Giữ → Thở → Giữ rỗng, mỗi pha 4 giây' },
-      { icon: '🧠', label: 'Prefrontal cortex', note: 'Não chuyển từ stress sang tư duy rõ ràng' },
-      { icon: '❤️', label: 'Heart Rate Variability', note: 'Đồng bộ hóa nhịp tim với hơi thở' },
-      { icon: '⏱️', label: '64 giây', note: '4 vòng là đủ — dùng được mọi lúc mọi nơi' },
-    ],
-  },
-  {
-    icon: '🌊', name: 'Thở ra dài hơn', label: 'Thở ra dài hơn',
-    steps: 'Hít 4 giây • Thở ra 6 giây • Lặp 6–10 vòng',
-    time: '2–3 phút', use: 'Khó ngủ, tim đập nhanh, sau ngày mệt',
-    color: '#8b5cf6', rgb: '139,92,246',
-    img: 'https://images.unsplash.com/photo-1510894347713-fc3dc6166086?w=800&q=80&auto=format&fit=crop',
-    keyFact: 'Thở ra dài hơn hít vào là cách kích hoạt dây thần kinh phế vị mạnh nhất — đặc biệt hiệu quả khi khó ngủ hoặc tim đập nhanh.',
-    detail: 'Kỹ thuật này khai thác cơ chế sinh lý: nhịp tim tăng nhẹ khi hít vào (giao cảm) và giảm khi thở ra (phó giao cảm). Khi thở ra dài hơn hít vào, bạn kéo dài pha phó giao cảm — dây thần kinh phế vị được kích hoạt lâu hơn, hạ nhịp tim và cortisol nhanh hơn bất kỳ kỹ thuật nào.',
-    details: [
-      'Hít vào qua mũi trong 4 giây: nhẹ nhàng, không ép, bụng phồng.',
-      'Thở ra qua miệng trong 6–8 giây (hoặc lâu hơn nếu thoải mái): chậm, đều, bụng xẹp dần.',
-      'Khoảng im lặng tự nhiên sau thở ra: đừng vội hít vào — chờ cơ thể tự "đòi" thở.',
-      'Lặp 6–10 vòng (2–3 phút tổng) — nhiều người ngủ thiếp trước khi kết thúc 10 vòng.',
-      'Không đếm nếu khiến bạn căng thẳng — chỉ tập trung vào cảm giác thở ra chậm và dài.',
-      'Hiệu quả nhất khi nằm ngửa trong phòng tối — kết hợp với nhiệt độ phòng 18–22°C.',
-    ],
-    points: [
-      { icon: '🕸️', label: 'Vagus nerve', note: 'Thở ra dài = kích hoạt phế vị tối đa' },
-      { icon: '🌊', label: 'Tỉ lệ 4:6', note: 'Thở ra > hít vào — kéo dài pha phó giao cảm' },
-      { icon: '💤', label: 'Chống khó ngủ', note: 'Hiệu quả nhất trong 3 kỹ thuật khi mất ngủ' },
-      { icon: '⏱️', label: '6–10 vòng (2–3 phút)', note: 'Không đếm nếu stress — focus cảm giác' },
-    ],
-  },
+  { name: 'Thở cơ hoành', steps: 'Tay lên bụng • Hít mũi → bụng phồng • Thở miệng chậm • Ngực ít nâng', time: '1–3 phút', use: 'Trước ngủ, sau tập, khi căng thẳng' },
+  { name: 'Box breathing', steps: 'Hít 4 giây • Giữ 4 giây • Thở 4 giây • Giữ 4 giây • Lặp 4 vòng', time: '4 vòng', use: 'Trước tập, lúc stress, trước ngủ' },
+  { name: 'Thở ra dài hơn', steps: 'Hít 4 giây • Thở ra 6 giây • Lặp 6–10 vòng', time: '2–3 phút', use: 'Khó ngủ, tim đập nhanh, sau ngày mệt' },
 ];
 
 const C6_PROTOCOLS = [
@@ -1374,7 +1308,6 @@ export default function PillarC() {
   const [c5MethodIdx, setC5MethodIdx] = useState(null);
   const [c5ScheduleIdx, setC5ScheduleIdx] = useState(null);
   const [c6ProtocolIdx, setC6ProtocolIdx] = useState(null);
-  const [c6TechIdx, setC6TechIdx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -1932,37 +1865,35 @@ export default function PillarC() {
               <div className="rounded-2xl bg-surface p-5 md:p-6">
                 <h2 className="text-2xl font-bold mb-1" style={{ color: '#0ea5e9' }}>Thở & Hạ Nhịp Cơ Thể</h2>
                 <p className="text-muted text-lg mb-6">Thở đúng cách là công cụ điều hòa cơ thể, hỗ trợ phục hồi sau tập và giúp ngủ sâu hơn.</p>
-                <div className="grid gap-3 mb-6">
+                <div className="flex gap-2 mb-5 overflow-x-auto scrollbar-hide">
                   {C6_TECHNIQUES.map((t, i) => (
-                    <div
-                      key={i}
-                      className="p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
-                      style={{ background: `rgba(${t.rgb},0.06)`, border: `1px solid rgba(${t.rgb},0.18)` }}
-                      onClick={() => setC6TechIdx(i)}
-                    >
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center gap-2">
-                          <span className="text-2xl">{t.icon}</span>
-                          <span className="font-bold text-lg" style={{ color: t.color }}>{t.name}</span>
-                        </div>
-                        <span className="text-xs font-bold px-2 py-0.5 rounded-lg opacity-60" style={{ color: t.color, background: `rgba(${t.rgb},0.12)` }}>Chi tiết →</span>
-                      </div>
-                      <div className="flex flex-wrap gap-2 mb-2">
-                        {t.steps.split(' • ').map((step, si) => (
-                          <div key={si} className="flex items-center gap-1.5 text-base">
-                            <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
-                              style={{ background: t.color, color: 'black' }}>{si + 1}</span>
-                            <span className="text-text">{step}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex gap-3 text-sm text-muted mt-2 flex-wrap">
-                        <span>⏱ {t.time}</span>
-                        <span>• {t.use}</span>
-                      </div>
-                    </div>
+                    <button key={i} onClick={() => setBreathMode(i)}
+                      className="px-3 py-1.5 rounded-lg text-lg font-semibold shrink-0 transition-all"
+                      style={breathMode === i
+                        ? { background: 'rgba(14,165,233,0.15)', color: '#0ea5e9', border: '1px solid rgba(14,165,233,0.3)' }
+                        : { color: 'var(--color-muted)', border: '1px solid var(--color-border)' }}>
+                      {t.name}
+                    </button>
                   ))}
                 </div>
+                {C6_TECHNIQUES[breathMode] && (
+                  <div className="p-5 rounded-xl mb-6" style={{ background: 'rgba(14,165,233,0.06)', border: '1px solid rgba(14,165,233,0.15)' }}>
+                    <h3 className="font-bold text-text mb-3">{C6_TECHNIQUES[breathMode].name}</h3>
+                    <div className="flex flex-wrap gap-3 mb-3">
+                      {C6_TECHNIQUES[breathMode].steps.split(' • ').map((step, i) => (
+                        <div key={i} className="flex items-center gap-2 text-lg">
+                          <span className="w-5 h-5 rounded-full flex items-center justify-center text-base font-bold shrink-0"
+                            style={{ background: '#0ea5e9', color: 'black' }}>{i + 1}</span>
+                          <span className="text-text">{step}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex gap-4 text-base text-muted mt-3 flex-wrap">
+                      <span>⏱ {C6_TECHNIQUES[breathMode].time}</span>
+                      <span>• {C6_TECHNIQUES[breathMode].use}</span>
+                    </div>
+                  </div>
+                )}
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#0ea5e9' }}>Protocol theo tình huống</h3>
                 <div className="space-y-2">
                   {C6_PROTOCOLS.map((p, i) => (
@@ -2167,19 +2098,6 @@ export default function PillarC() {
           onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
           hasNext={c0Idx < C0_ITEMS.length - 1}
-        />
-      )}
-
-      {/* ── C6 technique modal ── */}
-      {c6TechIdx !== null && (
-        <C0ItemModal
-          item={C6_TECHNIQUES[c6TechIdx]}
-          idx={c6TechIdx}
-          onClose={() => setC6TechIdx(null)}
-          onPrev={() => setC6TechIdx(i => Math.max(0, i - 1))}
-          onNext={() => setC6TechIdx(i => Math.min(C6_TECHNIQUES.length - 1, i + 1))}
-          hasPrev={c6TechIdx > 0}
-          hasNext={c6TechIdx < C6_TECHNIQUES.length - 1}
         />
       )}
 

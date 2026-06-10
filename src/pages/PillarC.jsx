@@ -738,6 +738,114 @@ const C6_TECHNIQUES = [
   { name: 'Thở ra dài hơn', steps: 'Hít 4 giây • Thở ra 6 giây • Lặp 6–10 vòng', time: '2–3 phút', use: 'Khó ngủ, tim đập nhanh, sau ngày mệt' },
 ];
 
+const C6_PROTOCOLS = [
+  {
+    icon: '🏋️', label: 'Trước tập', brief: '4–6 nhịp thở cơ hoành',
+    color: '#22d3ee', rgb: '34,211,238',
+    img: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80&auto=format&fit=crop',
+    keyFact: '4–6 nhịp thở cơ hoành trước tập kích hoạt hệ phó giao cảm, giúp cơ thể chuyển từ trạng thái căng thẳng sang sẵn sàng tập trung.',
+    detail: 'Trước khi tập, hệ thần kinh giao cảm (fight-or-flight) cần được "bật" đúng cách — không quá kích động nhưng đủ tỉnh táo. Thở cơ hoành 4–6 nhịp giúp oxy hóa máu, ổn định nhịp tim, và kết nối thần kinh-cơ trước khi bắt đầu buổi tập.',
+    details: [
+      'Đứng hoặc ngồi thẳng, tay đặt lên bụng để cảm nhận chuyển động của cơ hoành.',
+      'Hít vào qua mũi 4 giây: bụng phồng ra trước, ngực ít nâng lên — đây là thở cơ hoành đúng cách.',
+      'Thở ra qua miệng 6 giây: bụng xẹp dần, không ép bụng đột ngột.',
+      'Lặp 4–6 nhịp — khoảng 40–60 giây — ngay trước bài khởi động đầu tiên.',
+      'Kết hợp với tập trung vào buổi tập: nghĩ đến các bài tập sắp thực hiện, hình dung form đúng.',
+      'Không thở quá nhanh hoặc quá sâu đến mức chóng mặt — giữ nhịp tự nhiên và kiểm soát.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Kích hoạt cơ hoành', note: 'Bụng phồng khi hít, ngực ít nâng' },
+      { icon: '🧠', label: 'Kết nối tâm-cơ', note: 'Focus vào buổi tập ngay từ nhịp đầu' },
+      { icon: '⏱️', label: '40–60 giây', note: '4–6 nhịp trước bài khởi động' },
+      { icon: '💡', label: 'Không chóng mặt', note: 'Giữ nhịp tự nhiên, không quá sâu' },
+    ],
+  },
+  {
+    icon: '🧊', label: 'Sau tập', brief: 'Hít 4 giây, thở 6 giây × 6–8 vòng',
+    color: '#38bdf8', rgb: '56,189,248',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thở ra dài hơn hít vào kích hoạt dây thần kinh phế vị, chủ động hạ nhịp tim và cortisol sau tập.',
+    detail: 'Sau buổi tập cường độ cao, hệ giao cảm đang "nóng" — tim đập nhanh, cortisol cao, cơ thể chưa thoát khỏi trạng thái stress sinh lý. Protocol hít 4 / thở 6 giây kích hoạt dây thần kinh phế vị (vagus nerve), chủ động chuyển về trạng thái phục hồi nhanh hơn.',
+    details: [
+      'Sau bài tập cuối, ngồi xuống hoặc nằm ngửa với tư thế thoải mái.',
+      'Hít vào qua mũi trong 4 giây: bụng phồng, lồng ngực nở nhẹ.',
+      'Thở ra qua miệng chậm trong 6 giây: thở ra lâu hơn hít vào là chìa khóa kích hoạt phó giao cảm.',
+      'Lặp 6–8 vòng — khoảng 1.5–2 phút — nhịp tim sẽ giảm rõ rệt trong vòng 2–3 phút.',
+      'Không đứng dậy ngay sau 8 vòng nếu vẫn còn chóng mặt — thêm 2–3 nhịp tự nhiên.',
+      'Kết hợp với bước đi thư giãn 3–5 phút để hỗ trợ tuần hoàn máu trở về tim.',
+    ],
+    points: [
+      { icon: '❤️', label: 'Hạ nhịp tim', note: 'Rõ rệt trong 2–3 phút sau 8 vòng' },
+      { icon: '🧬', label: 'Vagus nerve', note: 'Thở ra dài kích hoạt dây phế vị' },
+      { icon: '⏱️', label: '1.5–2 phút', note: '6–8 vòng × (4s hít + 6s thở)' },
+      { icon: '🚶', label: 'Kết hợp đi bộ', note: 'Cool-down 3–5 phút sau protocol' },
+    ],
+  },
+  {
+    icon: '🌙', label: 'Trước ngủ', brief: 'Thở cơ hoành 3 phút',
+    color: '#818cf8', rgb: '129,140,248',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: '3 phút thở cơ hoành trước ngủ giảm cortisol và kích thích melatonin — rút ngắn thời gian đi vào giấc ngủ trung bình 8–12 phút.',
+    detail: 'Thở cơ hoành 3 phút trước khi ngủ là protocol đơn giản nhất nhưng có tác dụng sinh lý rõ ràng nhất. Cortisol — hormone tỉnh táo — được hạ nhanh khi thở chậm sâu, trong khi melatonin được kích thích tổng hợp tốt hơn trong môi trường tối và yên tĩnh.',
+    details: [
+      'Nằm ngửa, mắt nhắm, hai tay đặt lên bụng để cảm nhận chuyển động.',
+      'Hít vào mũi 4 giây: cảm nhận bụng nâng lên dưới tay — đây là thở cơ hoành đúng cách.',
+      'Thở ra miệng chậm 6–8 giây: bụng hạ từ từ, thư giãn hoàn toàn cơ bụng.',
+      'Duy trì trong 3 phút (khoảng 15–18 nhịp thở) — hầu hết người cảm thấy buồn ngủ trước khi kết thúc.',
+      'Nếu tâm trí còn lang thang, tập trung vào cảm giác tay nâng/hạ thay vì đếm số.',
+      'Kết hợp với phòng tối, nhiệt độ 18–22°C, và không dùng điện thoại 30 phút trước.',
+    ],
+    points: [
+      { icon: '😴', label: 'Ngủ sớm hơn 8–12 phút', note: 'Rút ngắn thời gian đi vào giấc ngủ' },
+      { icon: '🌡️', label: 'Giảm cortisol', note: 'Hormone tỉnh táo hạ nhanh khi thở sâu' },
+      { icon: '🌑', label: 'Tối + yên tĩnh', note: 'Kết hợp để tối ưu melatonin' },
+      { icon: '⏱️', label: '3 phút (15–18 nhịp)', note: '4s hít + 6–8s thở, nằm ngửa' },
+    ],
+  },
+  {
+    icon: '😤', label: 'Căng thẳng giữa ngày', brief: 'Box breathing 4 vòng',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Box breathing 4 vòng (64 giây) đủ để hạ cortisol và ổn định hệ thần kinh giữa ngày làm việc căng thẳng.',
+    detail: 'Box breathing (thở hộp) là kỹ thuật được Navy SEAL và Google sử dụng để phục hồi trạng thái bình tĩnh dưới áp lực cao. Nhịp thở đều 4–4–4–4 đồng bộ hóa nhịp tim và hệ thần kinh tự chủ, nhanh chóng đưa não về trạng thái prefrontal cortex (tư duy rõ ràng) thay vì amygdala (phản ứng stress).',
+    details: [
+      'Ngồi thẳng lưng hoặc đứng, mắt nhắm hoặc nhìn xuống một điểm cố định.',
+      'Hít vào mũi 4 giây: bụng và ngực nở đều.',
+      'Giữ hơi 4 giây: không căng, không ép — giữ tự nhiên.',
+      'Thở ra miệng chậm 4 giây: bụng xẹp dần từ dưới lên.',
+      'Giữ rỗng 4 giây trước nhịp tiếp theo — đây là điểm quan trọng nhất của box breathing.',
+      'Lặp 4 vòng (64 giây) — não sẽ bình tĩnh rõ rệt sau vòng thứ 3.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Prefrontal cortex', note: 'Não chuyển từ stress sang tư duy rõ ràng' },
+      { icon: '📦', label: '4-4-4-4', note: 'Hít → Giữ → Thở → Giữ rỗng × 4' },
+      { icon: '⏱️', label: '64 giây', note: '4 vòng × 16 giây/vòng' },
+      { icon: '💼', label: 'Dùng được ở mọi nơi', note: 'Văn phòng, toilet, thang máy đều OK' },
+    ],
+  },
+  {
+    icon: '🛌', label: 'Khó ngủ', brief: 'Thở ra dài hơn hít vào × 8–10 vòng',
+    color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1495197359483-d092478c170a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tỉ lệ thở ra/hít vào > 1 là kích hoạt mạnh nhất dây thần kinh phế vị — hiệu quả nhất khi nằm trên giường không ngủ được.',
+    detail: 'Khi nằm trên giường mà không ngủ được, não đang ở trạng thái hyperarousal — quá tỉnh táo, suy nghĩ nhiều. Protocol thở ra dài hơn hít vào khai thác phản xạ sinh lý: thở ra dài kích hoạt dây thần kinh phế vị mạnh hơn bất kỳ protocol nào khác, chủ động kéo nhịp tim và não xuống trạng thái buồn ngủ.',
+    details: [
+      'Nằm ngửa, hai tay xuôi hoặc đặt lên bụng, mắt nhắm.',
+      'Hít vào mũi 4 giây: nhẹ nhàng, không ép.',
+      'Thở ra miệng chậm 6–8 giây (hoặc lâu hơn nếu thoải mái) — thở ra càng dài càng tốt.',
+      'Khoảng im lặng tự nhiên sau thở ra: đừng vội hít vào — chờ cơ thể tự "đòi" thở.',
+      'Lặp 8–10 vòng (khoảng 2–3 phút) — hầu hết người ngủ thiếp đi trước khi kết thúc 10 vòng.',
+      'Không đếm số nếu khiến bạn căng thẳng — chỉ tập trung vào cảm giác thở ra dài.',
+    ],
+    points: [
+      { icon: '🕸️', label: 'Vagus nerve mạnh nhất', note: 'Tỉ lệ thở ra > hít vào = kích hoạt tối đa' },
+      { icon: '💤', label: 'Giảm hyperarousal', note: 'Não quá tỉnh → kéo xuống buồn ngủ' },
+      { icon: '⏱️', label: '8–10 vòng (2–3 phút)', note: '4s hít + 6–8s thở ra' },
+      { icon: '🌀', label: 'Không đếm nếu stress', note: 'Focus cảm giác, không focus con số' },
+    ],
+  },
+];
+
 const C7_AREAS = [
   { area: 'Buổi sáng', icon: '🌅', tips: ['Đặt bình nước trên bàn đầu giường', 'Để giày đi bộ ở cửa', 'Chuẩn bị đồ tập từ tối hôm trước', 'Đặt điện thoại xa giường', 'Mở rèm dễ dàng'] },
   { area: 'Làm việc', icon: '💼', tips: ['Đặt bình nước xa bàn để buộc phải đứng dậy', 'Dùng timer 45–60 phút', 'Để dây kháng lực nhỏ ở bàn', 'Tạo góc đứng làm việc 10–15 phút', 'Đặt nhắc "đi bộ 2 phút"'] },
@@ -1199,6 +1307,7 @@ export default function PillarC() {
   const [c4RoutineIdx, setC4RoutineIdx] = useState(null);
   const [c5MethodIdx, setC5MethodIdx] = useState(null);
   const [c5ScheduleIdx, setC5ScheduleIdx] = useState(null);
+  const [c6ProtocolIdx, setC6ProtocolIdx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -1787,16 +1896,21 @@ export default function PillarC() {
                 )}
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#0ea5e9' }}>Protocol theo tình huống</h3>
                 <div className="space-y-2">
-                  {[
-                    ['Trước tập', '4–6 nhịp thở cơ hoành'],
-                    ['Sau tập', 'Hít 4 giây, thở 6 giây × 6–8 vòng'],
-                    ['Trước ngủ', 'Thở cơ hoành 3 phút'],
-                    ['Căng thẳng giữa ngày', 'Box breathing 4 vòng'],
-                    ['Khó ngủ', 'Thở ra dài hơn hít vào × 8–10 vòng'],
-                  ].map(([s, b], i) => (
-                    <div key={i} className="flex justify-between items-center text-lg py-2 border-b" style={{ borderColor: 'rgba(14,165,233,0.08)' }}>
-                      <span className="text-muted">{s}</span>
-                      <span className="font-semibold text-base text-right" style={{ color: '#0ea5e9' }}>{b}</span>
+                  {C6_PROTOCOLS.map((p, i) => (
+                    <div
+                      key={i}
+                      className="flex justify-between items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+                      style={{ background: `rgba(${p.rgb},0.06)`, border: `1px solid rgba(${p.rgb},0.15)` }}
+                      onClick={() => setC6ProtocolIdx(i)}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">{p.icon}</span>
+                        <span className="text-muted text-base">{p.label}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold text-base text-right" style={{ color: p.color }}>{p.brief}</span>
+                        <span className="text-xs font-bold px-2 py-0.5 rounded-lg opacity-60 shrink-0" style={{ color: p.color, background: `rgba(${p.rgb},0.1)` }}>→</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -1984,6 +2098,19 @@ export default function PillarC() {
           onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
           hasNext={c0Idx < C0_ITEMS.length - 1}
+        />
+      )}
+
+      {/* ── C6 breathing protocol modal ── */}
+      {c6ProtocolIdx !== null && (
+        <C0ItemModal
+          item={C6_PROTOCOLS[c6ProtocolIdx]}
+          idx={c6ProtocolIdx}
+          onClose={() => setC6ProtocolIdx(null)}
+          onPrev={() => setC6ProtocolIdx(i => Math.max(0, i - 1))}
+          onNext={() => setC6ProtocolIdx(i => Math.min(C6_PROTOCOLS.length - 1, i + 1))}
+          hasPrev={c6ProtocolIdx > 0}
+          hasNext={c6ProtocolIdx < C6_PROTOCOLS.length - 1}
         />
       )}
 

@@ -258,11 +258,116 @@ const C2_MORNING_10 = [
 ];
 
 const C2_ENERGY_TIPS = [
-  { icon: '☀️', title: 'Ánh sáng sáng', desc: 'Ra ánh sáng tự nhiên 3–5 phút sau khi thức. Báo hiệu cho cơ thể bắt đầu ngày mới.' },
-  { icon: '💧', title: 'Uống nước đầu ngày', desc: 'Uống 200–300ml nước ngay khi thức. Cơ thể mất nước sau 7–9 giờ ngủ không có nước.' },
-  { icon: '🍽️', title: 'Bữa đầu có đạm', desc: 'Protein buổi sáng giúp ổn định đường huyết, tránh tụt năng lượng buổi chiều.' },
-  { icon: '🚶', title: 'Đi bộ sau ăn', desc: '5–10 phút đi bộ sau bữa trưa giúp tỉnh táo, tránh buồn ngủ sau ăn và ổn định đường huyết.' },
-  { icon: '☕', title: 'Caffeine thông minh', desc: 'Không uống caffeine khi chưa uống nước và ăn nhẹ. Tránh caffeine sau 15h với người khó ngủ.' },
+  {
+    icon: '☀️', label: 'Ánh sáng sáng',
+    desc: 'Ra ánh sáng tự nhiên 3–5 phút sau khi thức. Báo hiệu cho cơ thể bắt đầu ngày mới.',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ánh sáng tự nhiên buổi sáng là kích thích mạnh nhất để đặt lại đồng hồ sinh học — 5 phút ra ngoài hiệu quả gấp 10 lần bật đèn trong nhà.',
+    detail: 'Mắt có các tế bào nhạy cảm ánh sáng đặc biệt (ipRGCs) kết nối trực tiếp với nhân trên giao thoa (SCN) — đồng hồ chủ của cơ thể. Ánh sáng buổi sáng "chốt" giờ thức và kích hoạt chuỗi hormone cho cả ngày.',
+    details: [
+      'Ánh sáng tự nhiên buổi sáng (10.000–100.000 lux) mạnh gấp 100–1000 lần ánh đèn trong nhà (~100–500 lux) — đây là lý do ra ngoài quan trọng hơn bật đèn.',
+      'Trong vòng 30–60 phút đầu sau khi thức, tiếp xúc ánh sáng kích hoạt cortisol (Cortisol Awakening Response) — đây là cortisol tốt giúp bạn tỉnh táo và năng động.',
+      '5 phút ánh sáng tự nhiên buổi sáng không cần nắng gắt — ngày흐mây vẫn hiệu quả vì độ sáng ngoài trời vẫn cao hơn trong nhà rất nhiều.',
+      'Đeo kính râm khi ra ngoài buổi sáng làm giảm tác dụng — để mắt tiếp xúc ánh sáng trực tiếp (không nhìn thẳng vào mặt trời).',
+      'Nếu không thể ra ngoài, mở rèm hết và ngồi gần cửa sổ trong 10–15 phút vẫn tốt hơn không làm gì.',
+      'Ánh sáng buổi sáng còn giúp tăng serotonin — tiền chất của melatonin về đêm. Nhiều serotonin ban ngày → ngủ sâu hơn về tối.',
+    ],
+    points: [
+      { icon: '⏱️', label: '5 phút là đủ', note: 'Ra ngoài ngay sau khi thức' },
+      { icon: '🌥️', label: 'Ngày흐mây vẫn tốt', note: 'Ngoài trời luôn sáng hơn trong nhà' },
+      { icon: '👓', label: 'Không đeo kính râm', note: 'Để mắt nhận ánh sáng tự nhiên' },
+      { icon: '🌅', label: 'Trong 1 giờ đầu', note: 'Kích hoạt cortisol tốt cho cả ngày' },
+    ],
+  },
+  {
+    icon: '💧', label: 'Uống nước đầu ngày',
+    desc: 'Uống 200–300ml nước ngay khi thức. Cơ thể mất nước sau 7–9 giờ ngủ không có nước.',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mất 1–2% nước trong cơ thể đã đủ làm giảm hiệu suất nhận thức 10–15% và tăng cảm giác mệt mỏi — và bạn thường đạt mức này ngay khi vừa thức dậy.',
+    detail: 'Sau 7–9 giờ không uống nước, cơ thể bắt đầu ngày mới ở trạng thái thiếu nước nhẹ. Uống nước là một trong những thói quen sáng đơn giản nhất với lợi ích rõ ràng nhất.',
+    details: [
+      'Não chứa ~75% nước — thiếu nước nhẹ làm chậm dẫn truyền thần kinh, giảm tập trung và tăng cảm giác mơ màng buổi sáng.',
+      'Uống nước trước khi uống cà phê: caffeine lúc bụng đói + cơ thể mất nước tăng cortisol và gây khó chịu dạ dày cho nhiều người.',
+      '200–300ml nước là lượng lý tưởng — không cần uống cả lít ngay một lúc, uống từ từ trong 10–15 phút đầu.',
+      'Nước thường hoặc nước ấm đều tốt. Thêm chút muối (electrolyte) hoặc chanh không bắt buộc nhưng có thể giúp hấp thu nhanh hơn.',
+      'Đặt bình nước ngay cạnh giường tối hôm trước — loại bỏ ma sát để biến thói quen uống nước thành tự động.',
+      'Cảm giác "buồn ngủ" sau khi thức trong 10–20 phút (sleep inertia) thường giảm nhanh hơn sau khi uống nước và ra ánh sáng — không phải lúc nào cũng cần cà phê.',
+    ],
+    points: [
+      { icon: '🥛', label: '200–300ml ngay khi thức', note: 'Trước cà phê và bữa sáng' },
+      { icon: '🛏️', label: 'Đặt bình cạnh giường', note: 'Tự động hóa thói quen' },
+      { icon: '🧠', label: 'Não cần nước', note: 'Giảm mơ màng, tăng tập trung' },
+      { icon: '⚡', label: 'Giảm sleep inertia', note: 'Cảm giác "chưa tỉnh" sau ngủ' },
+    ],
+  },
+  {
+    icon: '🍽️', label: 'Bữa đầu có đạm',
+    desc: 'Protein buổi sáng giúp ổn định đường huyết, tránh tụt năng lượng buổi chiều.',
+    color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bữa sáng giàu protein (~25–30g) giúp kiểm soát cơn thèm ăn suốt cả ngày bằng cách tăng GLP-1 và giảm ghrelin (hormone đói) hiệu quả hơn carb đơn thuần.',
+    detail: 'Bữa sáng không phải là bắt buộc với mọi người, nhưng nếu bạn ăn sáng thì đạm là thành phần quan trọng nhất — quyết định đường huyết và năng lượng suốt buổi sáng.',
+    details: [
+      'Bữa sáng nhiều carb tinh (bánh mì trắng, xôi trắng, cháo loãng) gây tăng đường huyết nhanh rồi tụt mạnh lúc 10–11h — đây là nguyên nhân chính của cơn đói và mệt buổi sáng.',
+      '25–30g protein buổi sáng làm chậm hấp thu, ổn định đường huyết và duy trì cảm giác no đến gần trưa mà không cần ăn vặt.',
+      'Nguồn đạm dễ làm buổi sáng: 3 quả trứng (~18g), sữa chua Hy Lạp 200g (~17g), ức gà nguội 80g (~26g), phô mai tươi 100g (~12g).',
+      'Không nhất thiết phải ăn sáng ngay khi thức — nhiều người nhịn đến 9–10h vẫn tốt nếu không đói. Nhưng khi ăn bữa đầu, hãy có đạm.',
+      'Cà phê + đường không phải là bữa sáng — đây là kích thích cortisol và đường huyết ngắn hạn, sẽ sập năng lượng sớm hơn.',
+      'Kết hợp lý tưởng: đạm + chất xơ (rau, trái cây) cho bữa đầu ngày — carb có thể có nhưng không nên là thành phần chủ đạo.',
+    ],
+    points: [
+      { icon: '🥚', label: '25–30g protein', note: 'Mục tiêu cho bữa đầu ngày' },
+      { icon: '📉', label: 'Tránh carb đơn thuần', note: 'Gây tụt đường huyết lúc 10–11h' },
+      { icon: '🕘', label: 'Không cần ăn ngay', note: 'Ăn khi đói, nhưng có đạm khi ăn' },
+      { icon: '🧀', label: 'Nguồn đạm nhanh', note: 'Trứng, sữa chua, phô mai' },
+    ],
+  },
+  {
+    icon: '🚶', label: 'Đi bộ sau ăn',
+    desc: '5–10 phút đi bộ sau bữa trưa giúp tỉnh táo, tránh buồn ngủ sau ăn và ổn định đường huyết.',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đi bộ 10 phút sau bữa ăn giảm đường huyết sau bữa đến 22% — hiệu quả hơn đi bộ 30 phút vào bất kỳ thời điểm nào khác trong ngày.',
+    detail: 'Buồn ngủ sau ăn trưa (post-lunch dip) là hiện tượng sinh lý tự nhiên — nhưng bạn có thể giảm thiểu đáng kể bằng cách di chuyển nhẹ thay vì ngồi yên sau ăn.',
+    details: [
+      'Sau bữa ăn, cơ thể chuyển máu đến hệ tiêu hóa và đường huyết tăng — ngồi yên làm quá trình này kéo dài và gây cảm giác nặng nề, buồn ngủ.',
+      'Đi bộ nhẹ kích hoạt cơ bắp hấp thu glucose từ máu (không cần insulin) — đây là cơ chế giải thích tại sao chỉ 10 phút đi bộ giảm đường huyết đáng kể.',
+      'Không cần đi bộ nhanh hay xa — chỉ cần "di chuyển" là đủ. Đi quanh văn phòng, leo cầu thang 1–2 tầng, hoặc ra ngoài 5 phút đều có tác dụng.',
+      'Thời điểm lý tưởng: bắt đầu đi trong vòng 20–30 phút sau khi ăn xong — đây là khi đường huyết đang tăng và cơ bắp cần glucose nhất.',
+      'Post-lunch dip tự nhiên nhất lúc 13–15h (nhịp sinh học) — đi bộ + ánh sáng tự nhiên là combo mạnh nhất để vượt qua điểm tụt này.',
+      'Đây cũng là thời điểm tốt để "ngắt" công việc: một vòng ngắn ngoài trời reset tư duy, giảm stress và tăng tập trung buổi chiều.',
+    ],
+    points: [
+      { icon: '⏱️', label: '5–10 phút là đủ', note: 'Không cần bài tập dài' },
+      { icon: '🕐', label: 'Trong 30 phút sau ăn', note: 'Đường huyết đang tăng cao nhất' },
+      { icon: '📉', label: 'Giảm đường huyết 22%', note: 'Hiệu quả hơn tập lúc khác' },
+      { icon: '🧠', label: 'Reset tư duy buổi chiều', note: 'Giảm post-lunch dip tự nhiên' },
+    ],
+  },
+  {
+    icon: '☕', label: 'Caffeine thông minh',
+    desc: 'Không uống caffeine khi chưa uống nước và ăn nhẹ. Tránh caffeine sau 15h với người khó ngủ.',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Uống cà phê ngay sau khi thức dậy khi cortisol đang ở đỉnh (6–9h) lãng phí tác dụng caffeine — uống lúc 90–120 phút sau khi thức mới tối ưu nhất.',
+    detail: 'Caffeine là công cụ mạnh khi dùng đúng cách và là kẻ thù của giấc ngủ khi lạm dụng. Thời điểm và cách uống quan trọng hơn lượng uống.',
+    details: [
+      'Cortisol (hormone tỉnh táo) đạt đỉnh 30–45 phút sau khi thức — đây là lúc não tự nhiên "tỉnh nhất". Uống cà phê lúc này không thêm được gì và còn làm tăng khả năng nhờn caffeine.',
+      'Uống cà phê lúc 90–120 phút sau khi thức (khi cortisol bắt đầu giảm) cho tác dụng tỉnh táo tối đa và kéo dài hơn.',
+      'Uống cà phê khi bụng đói làm tăng cortisol và axit dạ dày — uống sau khi đã uống nước và ăn nhẹ nhẹ bụng hơn nhiều.',
+      'Caffeine có half-life 5–6 giờ: ly cà phê 15h → 50% caffeine vẫn còn lúc 21h → phá giai đoạn deep sleep dù bạn vẫn ngủ được.',
+      '"Người không nhạy caffeine" thường vẫn bị ảnh hưởng đến giấc ngủ mà không nhận ra — vì deep sleep bị phá không gây mất ngủ rõ ràng, chỉ là ngủ không thật sự phục hồi.',
+      'Giới hạn thực tế: 1–2 tách cà phê/ngày, uống trước 14h. Trà xanh và matcha cũng chứa caffeine — tính luôn vào tổng lượng.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Uống sau 90 phút thức', note: 'Cortisol giảm, caffeine mới hiệu quả' },
+      { icon: '🥛', label: 'Uống nước trước', note: 'Tránh bụng đói + mất nước' },
+      { icon: '🕒', label: 'Cắt sau 14h', note: 'Half-life 5–6h còn trong máu buổi tối' },
+      { icon: '🍵', label: 'Tính cả trà', note: 'Trà xanh, matcha đều có caffeine' },
+    ],
+  },
 ];
 
 const C3_LEVELS = [
@@ -610,6 +715,7 @@ export default function PillarC() {
   const [activeTab, setActiveTab] = useState('c1');
   const [c0Idx, setC0Idx] = useState(null);
   const [c1Idx, setC1Idx] = useState(null);
+  const [c2EnergyIdx, setC2EnergyIdx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -933,11 +1039,23 @@ export default function PillarC() {
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#06b6d4' }}>5 Yếu Tố Tạo Năng Lượng</h3>
                 <div className="grid gap-2">
                   {C2_ENERGY_TIPS.map((t, i) => (
-                    <div key={i} className="flex gap-3 p-3 rounded-xl" style={{ background: 'rgba(6,182,212,0.04)' }}>
+                    <div
+                      key={i}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setC2EnergyIdx(i)}
+                      onKeyDown={e => e.key === 'Enter' && setC2EnergyIdx(i)}
+                      className="group flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-x-0.5"
+                      style={{ background: `rgba(${t.rgb},0.05)`, border: `1px solid rgba(${t.rgb},0.15)` }}
+                    >
                       <span className="text-2xl shrink-0">{t.icon}</span>
-                      <div>
-                        <div className="font-semibold text-text text-lg">{t.title}</div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-text text-lg">{t.label}</div>
                         <div className="text-muted text-base mt-0.5">{t.desc}</div>
+                      </div>
+                      <div className="shrink-0 flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: t.color }}>
+                        Chi tiết
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                       </div>
                     </div>
                   ))}
@@ -1337,6 +1455,19 @@ export default function PillarC() {
           onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
           hasNext={c0Idx < C0_ITEMS.length - 1}
+        />
+      )}
+
+      {/* ── C2 energy tips modal — reuses C0ItemModal (same data shape) ── */}
+      {c2EnergyIdx !== null && (
+        <C0ItemModal
+          item={C2_ENERGY_TIPS[c2EnergyIdx]}
+          idx={c2EnergyIdx}
+          onClose={() => setC2EnergyIdx(null)}
+          onPrev={() => setC2EnergyIdx(i => Math.max(0, i - 1))}
+          onNext={() => setC2EnergyIdx(i => Math.min(C2_ENERGY_TIPS.length - 1, i + 1))}
+          hasPrev={c2EnergyIdx > 0}
+          hasNext={c2EnergyIdx < C2_ENERGY_TIPS.length - 1}
         />
       )}
 

@@ -6,11 +6,111 @@ const RGB = '20,184,166';
 const ORBIT_ID = 'c-sleep-orbit-kf';
 
 const SLEEP_FACTS = [
-  { icon: '💪', title: 'Phục hồi cơ bắp', desc: 'Trong giai đoạn ngủ sâu (slow-wave sleep), cơ thể tiết GH — hormone tăng trưởng giúp sửa chữa mô cơ sau tập luyện.' },
-  { icon: '🧠', title: 'Tăng cường trí nhớ', desc: 'Não củng cố thông tin học được trong ngày. Thiếu ngủ làm giảm khả năng học kỹ năng mới và hồi phục kỹ thuật vận động.' },
-  { icon: '🍽️', title: 'Kiểm soát hormone đói', desc: 'Ngủ kém tăng ghrelin (hormone đói) và giảm leptin (hormone no). Người ngủ kém thường thèm đồ ngọt và thức ăn nhiều calo hơn.' },
-  { icon: '❤️', title: 'Sức khỏe tim mạch', desc: 'Ngủ đủ giúp hạ huyết áp, giảm viêm và cân bằng nhịp tim. Ngủ dưới 6 giờ tăng nguy cơ tim mạch đáng kể.' },
-  { icon: '😊', title: 'Ổn định tâm trạng', desc: 'Giấc ngủ đủ giúp kiểm soát cảm xúc tốt hơn, giảm lo âu, cáu gắt và dễ duy trì động lực tập luyện.' },
+  {
+    icon: '💪', label: 'Phục hồi cơ bắp', desc: 'Trong giai đoạn ngủ sâu (slow-wave sleep), cơ thể tiết GH — hormone tăng trưởng giúp sửa chữa mô cơ sau tập luyện.',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '95% lượng Growth Hormone (GH) được tiết ra trong giấc ngủ sâu N3 — thiếu ngủ đồng nghĩa thiếu GH, và mô cơ không được sửa chữa dù bạn tập bao nhiêu.',
+    detail: 'Giấc ngủ sâu (slow-wave sleep, N3) là "xưởng sửa chữa" của cơ thể. Đây là giai đoạn hormone tăng trưởng GH được tiết ra mạnh nhất — kích thích tổng hợp protein, sửa chữa vi tổn thương cơ sau tập, và tái tạo mô liên kết. Bỏ qua giấc ngủ = bỏ qua phần lớn kết quả tập luyện.',
+    details: [
+      'Hormone tăng trưởng GH được tiết 70–80% trong giai đoạn N3 (ngủ sâu) trong vòng 1–2 tiếng đầu sau khi ngủ.',
+      'GH kích thích tổng hợp protein cơ (muscle protein synthesis) — quá trình biến amino acid thành mô cơ mới.',
+      'Thiếu ngủ 1 đêm có thể giảm tổng hợp protein cơ 18% — tương đương giảm hiệu quả buổi tập đáng kể.',
+      'Cortisol (hormone phân hủy cơ) tăng cao khi thiếu ngủ — đây là lý do tập nhiều mà không thấy kết quả khi ngủ kém.',
+      'Ngoài GH, insulin-like growth factor 1 (IGF-1) cũng tăng trong giấc ngủ sâu — hỗ trợ phục hồi xương và gân.',
+      'Ngủ 7–9 tiếng liên tục quan trọng hơn ngủ nhiều lần ngắn — N3 xảy ra chủ yếu trong 4 tiếng đầu giấc ngủ.',
+    ],
+    points: [
+      { icon: '🧪', label: 'GH tiết 70–80%', note: 'Trong N3 (ngủ sâu) 1–2h đầu giấc ngủ' },
+      { icon: '💪', label: 'Tổng hợp protein', note: 'Thiếu 1 đêm ngủ → giảm 18% hiệu quả' },
+      { icon: '📉', label: 'Cortisol tăng', note: 'Thiếu ngủ → phân hủy cơ, mất kết quả tập' },
+      { icon: '⏰', label: '7–9 tiếng liên tục', note: 'Quan trọng hơn ngủ nhiều lần ngắn' },
+    ],
+  },
+  {
+    icon: '🧠', label: 'Tăng cường trí nhớ', desc: 'Não củng cố thông tin học được trong ngày. Thiếu ngủ làm giảm khả năng học kỹ năng mới và hồi phục kỹ thuật vận động.',
+    color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Trong giấc ngủ REM, não "replay" lại các kỹ năng đã học trong ngày — đây là lý do tại sao ngủ sau khi học giúp nhớ lâu hơn 40% so với thức.',
+    detail: 'Não không "tắt" khi ngủ — nó đang bận rộn "lưu file". Trong giai đoạn N2 (sleep spindles) và REM, hippocampus chuyển thông tin ngắn hạn sang vỏ não để lưu trữ dài hạn. Đây là quá trình memory consolidation — thiếu ngủ làm gián đoạn quá trình này.',
+    details: [
+      'Memory consolidation xảy ra trong 2 giai đoạn: N2 (kỹ năng vận động, thủ tục) và REM (kiến thức, trí nhớ khai báo).',
+      'Sleep spindles trong N2 tích cực chuyển thông tin từ hippocampus (ngắn hạn) sang neocortex (dài hạn).',
+      'Giấc ngủ REM đặc biệt quan trọng cho kỹ năng vận động — học một động tác mới cần ngủ để não củng cố motor memory.',
+      'Thiếu 1 đêm ngủ làm giảm khả năng học từ mới xuống 40% và giảm khả năng ghi nhớ kỹ năng mới xuống 30%.',
+      'Ngủ trưa 20–30 phút (power nap) chứa đủ N2 để cải thiện hiệu suất học sau đó đáng kể.',
+      '"Sleep to forget" — REM cũng giúp loại bỏ thông tin không cần thiết, giữ cho não không bị quá tải.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Memory replay', note: 'REM replay kỹ năng đã học — nhớ lâu hơn 40%' },
+      { icon: '⚡', label: 'Sleep spindles', note: 'N2 chuyển trí nhớ ngắn → dài hạn' },
+      { icon: '🏃', label: 'Motor memory', note: 'Kỹ thuật vận động cần ngủ REM để định hình' },
+      { icon: '☀️', label: 'Power nap 20 phút', note: 'Đủ N2 để boost hiệu suất học chiều' },
+    ],
+  },
+  {
+    icon: '🍽️', label: 'Kiểm soát hormone đói', desc: 'Ngủ kém tăng ghrelin (hormone đói) và giảm leptin (hormone no). Người ngủ kém thường thèm đồ ngọt và thức ăn nhiều calo hơn.',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chỉ 2 đêm ngủ ít hơn 2 tiếng so với nhu cầu làm tăng ghrelin 28% và giảm leptin 18% — tương đương cảm giác đói như nhịn ăn 1.000 kcal.',
+    detail: 'Ghrelin và leptin là 2 hormone điều khiển cảm giác đói và no. Thiếu ngủ làm mất cân bằng nghiêm trọng: ghrelin tăng (bạn đói hơn), leptin giảm (bạn không cảm thấy no dù đã ăn đủ). Đây là cơ chế sinh học giải thích tại sao người ngủ ít thường ăn nhiều hơn và dễ tăng cân hơn.',
+    details: [
+      'Ghrelin (hormone đói) được sản xuất chủ yếu ở dạ dày — tăng trước bữa ăn để báo hiệu cần nạp năng lượng.',
+      'Leptin (hormone no) được tiết từ mô mỡ — tăng sau ăn và trong giấc ngủ để báo no và ức chế ăn.',
+      'Chỉ 2 đêm ngủ 4 tiếng: ghrelin tăng 28%, leptin giảm 18%, và người tham gia tự báo đói hơn 24%.',
+      'Người ngủ ít thường thèm carb tinh luyện, đồ ngọt và thức ăn nhiều calo — não tìm kiếm năng lượng nhanh.',
+      'Cortisol cao do thiếu ngủ cũng làm tăng insulin resistance — cơ thể khó xử lý đường huyết, càng thèm ngọt hơn.',
+      'Khắc phục: ngủ đủ 7–9 tiếng là "can thiệp dinh dưỡng" miễn phí giúp kiểm soát cảm giác thèm ăn.',
+    ],
+    points: [
+      { icon: '📈', label: 'Ghrelin +28%', note: 'Chỉ sau 2 đêm ngủ thiếu 2 tiếng' },
+      { icon: '📉', label: 'Leptin −18%', note: 'Không cảm thấy no dù đã ăn đủ' },
+      { icon: '🍬', label: 'Thèm ngọt', note: 'Não tìm năng lượng nhanh khi thiếu ngủ' },
+      { icon: '💡', label: 'Ngủ đủ = kiểm soát ăn', note: 'Can thiệp dinh dưỡng miễn phí tốt nhất' },
+    ],
+  },
+  {
+    icon: '❤️', label: 'Sức khỏe tim mạch', desc: 'Ngủ đủ giúp hạ huyết áp, giảm viêm và cân bằng nhịp tim. Ngủ dưới 6 giờ tăng nguy cơ tim mạch đáng kể.',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người ngủ dưới 6 tiếng/đêm có nguy cơ tăng huyết áp cao hơn 48% và nguy cơ đau tim cao hơn 200% so với người ngủ 7–8 tiếng.',
+    detail: 'Tim và mạch máu cần giấc ngủ để "bảo dưỡng". Trong giấc ngủ sâu, huyết áp giảm 10–20% (nocturnal dipping) — đây là "kỳ nghỉ" quan trọng cho hệ tim mạch. Người không có nocturnal dipping (thường do thiếu ngủ) có nguy cơ bệnh tim mạch cao hơn đáng kể.',
+    details: [
+      'Nocturnal dipping: huyết áp bình thường giảm 10–20% trong giấc ngủ — tim và mạch máu được nghỉ ngơi thực sự.',
+      'Thiếu ngủ làm mất nocturnal dipping — tim phải hoạt động 24/7 không có kỳ nghỉ, dẫn đến tổn thương tích lũy.',
+      'CRP (C-reactive protein) — chỉ số viêm — tăng cao khi thiếu ngủ, đây là yếu tố nguy cơ độc lập của xơ vữa động mạch.',
+      'Thiếu ngủ làm tăng fibrinogen (protein đông máu) — tăng nguy cơ hình thành cục máu đông.',
+      'Ngủ dưới 6 tiếng liên tục trong 2 tuần: nguy cơ tim mạch tương đương hút 1 gói thuốc/ngày.',
+      'Cải thiện giấc ngủ từ 6 lên 7 tiếng đã giảm đáng kể nguy cơ tim mạch theo nghiên cứu NHANES 2019.',
+    ],
+    points: [
+      { icon: '📉', label: 'Nocturnal dipping', note: 'HA giảm 10–20% khi ngủ — tim được nghỉ' },
+      { icon: '🔥', label: 'CRP viêm tăng', note: 'Thiếu ngủ → viêm mãn tính → xơ vữa' },
+      { icon: '⚠️', label: 'Nguy cơ +200%', note: 'Ngủ <6h → nguy cơ đau tim cao hơn 2× ' },
+      { icon: '💊', label: 'Liều thuốc miễn phí', note: '+1 tiếng ngủ = giảm đáng kể nguy cơ tim' },
+    ],
+  },
+  {
+    icon: '😊', label: 'Ổn định tâm trạng', desc: 'Giấc ngủ đủ giúp kiểm soát cảm xúc tốt hơn, giảm lo âu, cáu gắt và dễ duy trì động lực tập luyện.',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thiếu ngủ làm amygdala (trung tâm cảm xúc) phản ứng mạnh hơn 60% với kích thích tiêu cực — giải thích tại sao người mệt dễ cáu hơn và khó kiểm soát cảm xúc.',
+    detail: 'Giấc ngủ REM đóng vai trò đặc biệt quan trọng trong điều tiết cảm xúc. Trong REM, não xử lý lại các ký ức cảm xúc trong môi trường noradrenaline thấp — giúp "giải độc" cảm xúc tiêu cực mà không gây thêm stress. Matthew Walker gọi đây là "overnight therapy" — liệu pháp ban đêm tự nhiên.',
+    details: [
+      'Amygdala — trung tâm xử lý cảm xúc và phản ứng sợ hãi — tăng hoạt động 60% khi thiếu ngủ.',
+      'Kết nối giữa prefrontal cortex (lý trí) và amygdala (cảm xúc) yếu đi khi thiếu ngủ — mất kiểm soát cảm xúc.',
+      'Giấc ngủ REM "detox" cảm xúc: xử lý lại ký ức trong môi trường stress thấp, giảm cường độ cảm xúc tiêu cực.',
+      'Thiếu ngủ mãn tính làm tăng nguy cơ trầm cảm lên 2× và lo âu lên 3× theo nghiên cứu dọc dài hạn.',
+      'Dopamine pathway (hệ thống thưởng) cũng bị ảnh hưởng — thiếu ngủ giảm cảm giác vui, giảm động lực tập luyện.',
+      'Ngủ tốt 7–9 tiếng là nền tảng của sức khỏe tâm thần — không có biện pháp nào thay thế được.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Amygdala +60%', note: 'Phản ứng tiêu cực mạnh hơn khi thiếu ngủ' },
+      { icon: '🌙', label: 'REM therapy', note: 'Xử lý cảm xúc ban đêm — "overnight therapy"' },
+      { icon: '😰', label: 'Trầm cảm +2×', note: 'Thiếu ngủ mãn tính → nguy cơ gấp đôi' },
+      { icon: '⚡', label: 'Dopamine giảm', note: 'Mất động lực, giảm cảm giác vui khi thiếu ngủ' },
+    ],
+  },
 ];
 
 const SLEEP_STAGES = [
@@ -48,6 +148,73 @@ const SEVEN_DAY_PLAN = [
   { day: 'Ngày 7', focus: 'Giữ giờ dậy ổn định', action: 'Dậy đúng giờ, không ngủ bù quá 1 tiếng cuối tuần' },
 ];
 
+function SleepFactModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+  const { color, rgb } = item;
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose} className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-2" style={{ color }}>{item.label}</h2>
+          <div className="rounded-xl p-3 mb-5 text-sm font-semibold" style={{ background: `rgba(${rgb},0.1)`, color, border: `1px solid rgba(${rgb},0.2)` }}>✦ {item.keyFact}</div>
+          <p className="text-muted text-base leading-relaxed mb-5">{item.detail}</p>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {SLEEP_FACTS.length}</span>
+            <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function RevealBlock({ children, delay = 0, className = '' }) {
   const ref = useRef(null);
   const [vis, setVis] = useState(false);
@@ -67,6 +234,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function LifestyleSleepPage() {
   const [openCase, setOpenCase] = useState(null);
   const [checks, setChecks] = useState({});
+  const [sleepFactIdx, setSleepFactIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -136,12 +304,17 @@ export default function LifestyleSleepPage() {
         <p className="text-muted text-lg mb-6">Muốn khỏe bền, đừng chỉ tập thêm — hãy ngủ tốt hơn.</p>
         <div className="grid gap-3">
           {SLEEP_FACTS.map((f, i) => (
-            <div key={i} className="flex gap-4 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
+            <div key={i}
+              className="flex gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${f.rgb},0.06)`, border: `1px solid rgba(${f.rgb},0.15)` }}
+              onClick={() => setSleepFactIdx(i)}>
               <span className="text-3xl shrink-0">{f.icon}</span>
-              <div>
-                <div className="font-semibold text-text text-lg mb-1">{f.title}</div>
+              <div className="flex-1 min-w-0">
+                <div className="font-semibold text-lg mb-1" style={{ color: f.color }}>{f.label}</div>
                 <div className="text-muted text-base leading-relaxed">{f.desc}</div>
               </div>
+              <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
+                style={{ color: f.color, background: `rgba(${f.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -295,6 +468,19 @@ export default function LifestyleSleepPage() {
         <Link to="/pillar/c" className="text-muted hover:text-teal-400 transition-colors text-lg">← Lối Sống Khỏe</Link>
         <Link to="/pillar/c/sleep-routine" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Trước Ngủ →</Link>
       </div>
+
+      {/* ── Sleep fact modal — outside all RevealBlocks so position:fixed works ── */}
+      {sleepFactIdx !== null && (
+        <SleepFactModal
+          item={SLEEP_FACTS[sleepFactIdx]}
+          idx={sleepFactIdx}
+          onClose={() => setSleepFactIdx(null)}
+          onPrev={() => setSleepFactIdx(i => Math.max(0, i - 1))}
+          onNext={() => setSleepFactIdx(i => Math.min(SLEEP_FACTS.length - 1, i + 1))}
+          hasPrev={sleepFactIdx > 0}
+          hasNext={sleepFactIdx < SLEEP_FACTS.length - 1}
+        />
+      )}
     </div>
   );
 }

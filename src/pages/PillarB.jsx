@@ -4838,8 +4838,194 @@ const CALC_TOOLTIPS = [
   'Trung bình mỗi giờ cơ thể đốt bao nhiêu calo. Con số này giúp bạn ước tính: ngủ 8 tiếng tiêu ~1/3 TDEE, ngồi làm việc tiêu ít hơn TDEE/24, tập 1 tiếng tăng đáng kể. Hữu ích để lên kế hoạch bữa ăn trước/sau tập.',
 ];
 
+// ─── TDEE benefit data (used by CalcPanel cards + TDEEBenefitModal) ─────────
+const TDEE_BENEFITS = [
+  {
+    icon: '🎯', color: '#8b5cf6', rgb: '139,92,246',
+    title: 'Ăn Đúng Mức Calo',
+    desc: 'Biết chính xác bạn cần bao nhiêu kcal mỗi ngày — không đoán mò khi muốn giảm mỡ, tăng cơ hay duy trì.',
+    img: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Sai lệch ±200 kcal/ngày so với TDEE thực có thể tạo ra hoặc phá vỡ hành trình giảm mỡ/tăng cơ chỉ trong 2–3 tuần.',
+    detail: 'Không biết TDEE, bạn đang đoán mò lượng calo mỗi ngày. Trung bình người tự ước tính thiếu 20–40% lượng thực ăn. TDEE cho bạn con số cụ thể để điều chỉnh theo đúng mục tiêu — giảm mỡ (cắt 400 kcal), duy trì (bằng TDEE), hay tăng cơ (cộng 300 kcal).',
+    details: [
+      'Khi muốn giảm mỡ: ăn TDEE − 400 kcal/ngày. Đây là mức thiếu hụt an toàn, không phá cơ, không làm giảm BMR (trao đổi chất nền).',
+      'Khi muốn tăng cơ: ăn TDEE + 300 kcal/ngày. Thặng dư vừa đủ giúp tăng cơ mà không tích quá nhiều mỡ.',
+      'Khi muốn duy trì: ăn đúng bằng TDEE. Đây là trạng thái cơ thể ổn định nhất — không giảm không tăng.',
+      'Nhiều người thất bại không phải vì ý chí kém, mà vì không biết mình đang ăn bao nhiêu. TDEE tạo ra "neo" cụ thể để bám vào.',
+      'Không cần đếm từng calo mãi mãi — chỉ cần theo dõi 2–4 tuần để não bộ calibrate lại cảm giác no đói theo đúng nhu cầu thực.',
+    ],
+    points: [
+      { icon: '📉', label: 'Giảm mỡ', note: 'TDEE − 400 kcal, an toàn cho cơ' },
+      { icon: '💪', label: 'Tăng cơ', note: 'TDEE + 300 kcal, thặng dư tối thiểu' },
+      { icon: '⚖️', label: 'Duy trì', note: 'Ăn bằng TDEE, trạng thái ổn định' },
+      { icon: '🧭', label: 'Neo calo', note: 'Điểm tham chiếu không phải đoán mò' },
+    ],
+  },
+  {
+    icon: '⚡', color: '#f97316', rgb: '249,115,22',
+    title: 'Tránh Mất Cân Bằng Năng Lượng',
+    desc: 'Ăn đủ để duy trì năng lượng và cơ bắp, tránh "sụp đổ" do cắt calo quá mạnh hoặc tích mỡ do ăn quá thừa.',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Cắt calo xuống dưới BMR (năng lượng nghỉ ngơi) kích hoạt "starvation mode" — cơ thể đốt cơ thay vì mỡ và giảm BMR tới 20%.',
+    detail: 'Thiếu năng lượng mãn tính (ăn dưới BMR) gây ra metabolic adaptation: cơ thể tự hạ BMR để sống sót, đốt cơ bắp làm nhiên liệu, và tích mỡ trở lại ngay khi ăn trở lại bình thường. Ngược lại, thặng dư calo lớn (>500 kcal/ngày) tích mỡ nhanh hơn xây cơ.',
+    details: [
+      'BMR (Basal Metabolic Rate) là năng lượng tối thiểu để các cơ quan hoạt động khi nằm yên. Ăn dưới BMR = cơ thể "ăn" chính mình.',
+      '"Metabolic adaptation" sau cắt calo mạnh: BMR giảm 10–20%, cơ thể ưu tiên đốt protein cơ thay vì mỡ dự trữ.',
+      'Biểu hiện thiếu năng lượng mãn tính: mệt mỏi buổi chiều, khó tập trung, thèm đường dữ dội, ngủ không sâu, tóc rụng.',
+      'Thặng dư lớn (>500 kcal/ngày) không tăng cơ nhanh hơn, chỉ tăng tích mỡ — tỷ lệ cơ/mỡ xấu hơn.',
+      'Mục tiêu lý tưởng: luôn ở trong vùng −400 đến +300 kcal so với TDEE. Đây là vùng "anabolic window" an toàn.',
+    ],
+    points: [
+      { icon: '🔥', label: 'BMR tối thiểu', note: 'Không bao giờ ăn dưới con số này' },
+      { icon: '💀', label: 'Starvation Mode', note: 'Cắt mạnh → đốt cơ, giảm BMR' },
+      { icon: '📊', label: 'Vùng an toàn', note: '−400 đến +300 kcal so với TDEE' },
+      { icon: '⚠️', label: 'Dấu hiệu cảnh báo', note: 'Mệt, thèm đường, tóc rụng' },
+    ],
+  },
+  {
+    icon: '📈', color: '#22c55e', rgb: '34,197,94',
+    title: 'Điều Chỉnh Đúng Lúc',
+    desc: 'Không tiến bộ sau 2 tuần? Tăng/giảm chính xác 100–200 kcal thay vì đổi toàn bộ chế độ ăn.',
+    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Thay đổi 100 kcal/ngày = thay đổi 700 kcal/tuần = ~0.1 kg mỡ/tuần. Điều chỉnh nhỏ, kết quả rõ, không cần đổi toàn bộ.',
+    detail: 'Cơ thể thích nghi với calo intake sau 2–3 tuần. Khi cân không thay đổi dù đang cố gắng, đó là tín hiệu cần điều chỉnh — không phải bỏ cuộc. TDEE cho phép bạn điều chỉnh chính xác thay vì mò mẫm.',
+    details: [
+      'Plateau (cao nguyên tiến độ) là bình thường — không phải thất bại. Cơ thể tự điều chỉnh TDEE khi cân nặng thay đổi.',
+      'Không tiến bộ sau 2 tuần với chế độ ăn nhất quán → giảm thêm 100–150 kcal/ngày. Đơn giản, không cần thay đổi toàn bộ.',
+      'Không tăng cân sau 2 tuần tập tăng cơ → thêm 100–150 kcal/ngày, ưu tiên protein và carb xung quanh buổi tập.',
+      'Theo dõi cân sáng, sau khi đi vệ sinh, trước khi ăn — lấy trung bình 7 ngày. Cân ngày lên xuống 0.5–2 kg là bình thường do nước.',
+      'Re-feed day (tăng calo 1 ngày/tuần) giúp reset leptin, giảm mệt mỏi và tâm lý khi đang trong giai đoạn giảm mỡ dài hạn.',
+    ],
+    points: [
+      { icon: '🎚️', label: '100 kcal thay đổi', note: '~0.1 kg/tuần — điều chỉnh tinh' },
+      { icon: '⏳', label: 'Chờ 2 tuần', note: 'Đủ thời gian thấy xu hướng rõ' },
+      { icon: '🔁', label: 'Re-feed day', note: 'Reset leptin khi giảm dài hạn' },
+      { icon: '📉', label: 'Trung bình 7 ngày', note: 'Loại bỏ biến động nước' },
+    ],
+  },
+  {
+    icon: '🔄', color: '#06b6d4', rgb: '6,182,212',
+    title: 'Cập Nhật Theo Cơ Thể',
+    desc: 'TDEE thay đổi khi cân nặng thay đổi. Tính lại mỗi 4 tuần để duy trì hiệu quả ổn định.',
+    img: 'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=800&q=75&auto=format&fit=crop',
+    keyFact: 'Giảm 5 kg = TDEE giảm ~100 kcal/ngày. Không cập nhật → plateau bắt buộc sau 4–6 tuần dù ăn đúng.',
+    detail: 'TDEE không phải con số cố định — nó thay đổi theo cân nặng, tuổi, và mức hoạt động. Người giảm 5 kg cần ít calo hơn người nặng 5 kg trước đó. Không cập nhật TDEE là lý do phổ biến nhất gây plateau bắt buộc.',
+    details: [
+      'Cứ giảm/tăng 1 kg → TDEE thay đổi khoảng 20–25 kcal/ngày. Giảm 5 kg = TDEE giảm 100–125 kcal/ngày.',
+      'Nên tính lại TDEE sau mỗi 4 tuần hoặc khi cân nặng thay đổi ≥ 2–3 kg. Nhập lại cân nặng mới vào máy tính B0.',
+      'Mức hoạt động cũng thay đổi theo thời gian — từ "ít vận động" lên "vận động vừa" khi bạn quen với lịch tập.',
+      'Sau 3–6 tháng tập luyện, tỷ lệ cơ/mỡ cải thiện → BMR tăng nhẹ (cơ đốt nhiều calo hơn mỡ khi nghỉ ngơi).',
+      'Không cần app phức tạp: tính lại TDEE mỗi 4 tuần bằng công cụ B0 ở đây là đủ — mất 2 phút, tiết kiệm 4 tuần mò mẫm.',
+    ],
+    points: [
+      { icon: '📅', label: 'Mỗi 4 tuần', note: 'Tần suất cập nhật lý tưởng' },
+      { icon: '⚖️', label: '±2–3 kg', note: 'Ngưỡng cần tính lại ngay' },
+      { icon: '🏋️', label: 'Mức hoạt động', note: 'Cũng thay đổi theo tiến độ tập' },
+      { icon: '🧮', label: 'Dùng B0 ở đây', note: 'Tính lại mất 2 phút' },
+    ],
+  },
+];
+
+// ─── TDEEBenefitModal — full-screen overlay (rendered at PillarB root, outside RevealBlocks) ─
+function TDEEBenefitModal({ b, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0a0a10', borderColor: `rgba(${b.rgb},0.28)`, boxShadow: `0 0 80px rgba(${b.rgb},0.15), 0 40px 80px rgba(0,0,0,0.6)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={b.img} alt={b.title} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${b.rgb},0.08) 50%, #0a0a10 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${b.color}, transparent)` }} />
+          <div className="absolute top-5 right-6 font-black leading-none" style={{ fontSize: 52, color: b.color, textShadow: `0 0 30px rgba(${b.rgb},0.65)` }}>
+            {String(idx + 1).padStart(2, '0')}
+          </div>
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${b.rgb},0.18)`, border: `2px solid rgba(${b.rgb},0.45)` }}>
+            {b.icon}
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: b.color }}>{b.title}</h2>
+
+          {/* Key fact */}
+          <div className="flex gap-3 rounded-2xl p-4 mb-6" style={{ background: `rgba(${b.rgb},0.07)`, border: `1px solid rgba(${b.rgb},0.2)` }}>
+            <span className="text-lg shrink-0">💡</span>
+            <p className="text-sm font-semibold leading-relaxed m-0" style={{ color: b.color }}>{b.keyFact}</p>
+          </div>
+
+          <p className="text-base text-muted leading-relaxed mb-6">{b.detail}</p>
+
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: b.color }}>Chi Tiết</p>
+          <ul className="space-y-3 mb-8">
+            {b.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${b.rgb},0.14)`, color: b.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {b.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${b.rgb},0.06)`, border: `1px solid rgba(${b.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasPrev ? b.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${b.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${b.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{idx + 1} / {TDEE_BENEFITS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasNext ? b.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${b.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${b.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── CalcPanel (B0) — Interactive TDEE calculator ───────────────────────────
-function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s }) {
+function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s, onBenefitOpen }) {
   const { t: tPillars } = useTranslation('pillars');
   const b0tr = tPillars('pillarB.b0', { returnObjects: true }) || {};
   const activityTr = tPillars('pillarB.activity_levels', { returnObjects: true }) || [];
@@ -5066,21 +5252,30 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
       <RevealBlock delay={80}>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{b0tr.benefits_label || 'Lợi Ích Khi Biết TDEE'}</p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {[
-            { icon: '🎯', title: 'Ăn đúng theo mục tiêu', desc: 'Biết chính xác cần bao nhiêu kcal/ngày — không đoán mò khi muốn giảm mỡ, tăng cơ hay duy trì cân nặng.', color: '#8b5cf6' },
-            { icon: '⚡', title: 'Tránh thiếu / thừa năng lượng', desc: 'Ăn đủ để giữ năng lượng và cơ bắp, tránh "crash" khi cắt calo quá mạnh hoặc tích mỡ khi ăn thừa.', color: '#f97316' },
-            { icon: '📈', title: 'Điều chỉnh đúng điểm', desc: 'Không tiến bộ sau 2 tuần? Tăng/giảm chính xác 100–200 kcal thay vì thay đổi toàn bộ chế độ ăn.', color: '#22c55e' },
-            { icon: '🔄', title: 'Cập nhật theo thể trạng', desc: 'TDEE thay đổi khi cân nặng thay đổi. Tính lại sau mỗi 4 tuần để duy trì hiệu quả liên tục.', color: '#06b6d4' },
-          ].map((b, i) => {
+          {TDEE_BENEFITS.map((b, i) => {
             const btr = b0tr.benefits?.[i] || {};
             return (
-            <div key={b.icon} className="flex items-start gap-3 p-4 rounded-2xl border transition-all duration-200 hover:scale-[1.01] hover:-translate-y-0.5" style={{ borderColor: `${b.color}20`, background: `${b.color}06` }}>
-              <span className="text-3xl shrink-0 mt-0.5">{b.icon}</span>
-              <div>
-                <p className="text-lg font-bold mb-1" style={{ color: b.color }}>{btr.title || b.title}</p>
-                <p className="text-[11px] text-muted leading-relaxed">{btr.desc || b.desc}</p>
+              <div
+                key={b.icon}
+                role="button"
+                tabIndex={0}
+                onClick={() => onBenefitOpen?.(i)}
+                onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onBenefitOpen?.(i); }}
+                className="group flex items-start gap-3 p-4 rounded-2xl border transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+                style={{ borderColor: `${b.color}20`, background: `${b.color}06` }}
+              >
+                <span className="text-3xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">{b.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-lg font-bold mb-1" style={{ color: b.color }}>{btr.title || b.title}</p>
+                  <p className="text-[11px] text-muted leading-relaxed">{btr.desc || b.desc}</p>
+                  <span className="inline-flex items-center gap-1 mt-2 text-[10px] font-bold opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: b.color }}>
+                    Xem chi tiết
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
+                    </svg>
+                  </span>
+                </div>
               </div>
-            </div>
             );
           })}
         </div>
@@ -7006,6 +7201,7 @@ export default function PillarB() {
     desc: tPillars(`pillarB.mantras.${i}.desc`, { defaultValue: m.desc }),
   }));
   const [mantraIdx, setMantraIdx] = useState(null);
+  const [benefitIdx, setBenefitIdx] = useState(null);
   const spiritTr = pillar?.spirit_card || {};
 
   useEffect(() => {
@@ -7155,7 +7351,7 @@ export default function PillarB() {
     );
   }
 
-  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey: handleGoalKeyChange, userStats };
+  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey: handleGoalKeyChange, userStats, onBenefitOpen: setBenefitIdx };
   const PANELS = [
     <CalcPanel key="calc" {...calcProps} />,
     <FoundationPanel key="foundation" s={userStats} onGoalKeyChange={handleGoalKeyChange} />,
@@ -7951,6 +8147,19 @@ export default function PillarB() {
           onNext={() => setMantraIdx(idx => Math.min(translatedMantras.length - 1, idx + 1))}
           hasPrev={mantraIdx > 0}
           hasNext={mantraIdx < translatedMantras.length - 1}
+        />
+      )}
+
+      {/* ── TDEE benefit modal — outside all RevealBlocks so position:fixed works ── */}
+      {benefitIdx !== null && (
+        <TDEEBenefitModal
+          b={TDEE_BENEFITS[benefitIdx]}
+          idx={benefitIdx}
+          onClose={() => setBenefitIdx(null)}
+          onPrev={() => setBenefitIdx(i => Math.max(0, i - 1))}
+          onNext={() => setBenefitIdx(i => Math.min(TDEE_BENEFITS.length - 1, i + 1))}
+          hasPrev={benefitIdx > 0}
+          hasNext={benefitIdx < TDEE_BENEFITS.length - 1}
         />
       )}
 

@@ -5125,7 +5125,7 @@ function TDEEBenefitModal({ b, idx, onClose, onPrev, onNext, hasPrev, hasNext })
 }
 
 // ─── CalcPanel (B0) — Interactive TDEE calculator ───────────────────────────
-function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s, onBenefitOpen, onMealSplitOpen }) {
+function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s, onBenefitOpen, onMealSplitOpen, onAccuracyOpen }) {
   const { t: tPillars } = useTranslation('pillars');
   const b0tr = tPillars('pillarB.b0', { returnObjects: true }) || {};
   const activityTr = tPillars('pillarB.activity_levels', { returnObjects: true }) || [];
@@ -5383,13 +5383,25 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
 
       {/* ── Accuracy note ── */}
       <RevealBlock delay={100}>
-        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 flex items-start gap-3">
-          <span className="text-2xl shrink-0 mt-0.5">⚠️</span>
-          <div>
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() => onAccuracyOpen?.()}
+          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onAccuracyOpen?.(); }}
+          className="group rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 flex items-start gap-3 cursor-pointer hover:border-amber-500/45 hover:bg-amber-500/10 transition-all duration-200 hover:-translate-y-0.5"
+        >
+          <span className="text-2xl shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110">⚠️</span>
+          <div className="flex-1 min-w-0">
             <p className="text-lg font-bold text-amber-300 mb-1.5">{b0tr.accuracy_label || 'Độ chính xác & Lưu ý'}</p>
             <p className="text-[11px] text-muted leading-relaxed">
               {b0tr.accuracy_body || 'Công thức Mifflin-St Jeor có sai số ±10–15% vì không tính được tỷ lệ cơ/mỡ. Dùng TDEE như điểm khởi đầu — theo dõi cân nặng 1–2 tuần, nếu cân không đổi thì lượng bạn đang ăn chính là TDEE thực tế của bạn.'}
             </p>
+            <span className="inline-flex items-center gap-1 mt-2 text-[10px] font-bold text-amber-400/50 group-hover:text-amber-400 transition-colors">
+              Xem chi tiết
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </span>
           </div>
         </div>
       </RevealBlock>
@@ -5422,6 +5434,107 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
           ))}
         </div>
       </RevealBlock>
+    </div>
+  );
+}
+
+// ─── AccuracyModal — full-screen overlay for the TDEE accuracy note ─────────
+const AC_COLOR = '#f59e0b';
+const AC_RGB   = '245,158,11';
+
+const ACCURACY_DATA = {
+  img: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=75&auto=format&fit=crop',
+  keyFact: 'Mifflin-St Jeor ±10–15% nghĩa là TDEE tính ra 2,000 kcal thực tế có thể nằm từ 1,700–2,300 kcal. Không sao — theo dõi cân 2 tuần sẽ tự hiệu chỉnh.',
+  detail: 'Không có công thức nào tính chính xác 100% TDEE vì mỗi cơ thể khác nhau về tỷ lệ cơ/mỡ, hiệu quả tiêu hóa, mức độ hoạt động thực tế, và di truyền học. Mifflin-St Jeor là công thức được nghiên cứu rộng rãi nhất và cho sai số nhỏ nhất trong nhóm dân số bình thường — nhưng vẫn cần hiệu chỉnh cá nhân sau 2 tuần.',
+  details: [
+    'Sai số ±10–15% là bình thường và được chấp nhận trong y học dinh dưỡng. Không cần tìm công thức "hoàn hảo" — hãy dùng TDEE như điểm khởi đầu rồi hiệu chỉnh.',
+    'Cách hiệu chỉnh đơn giản nhất: ăn theo TDEE tính ra, cân mỗi sáng (sau khi đi vệ sinh, trước ăn), lấy trung bình 7 ngày. Nếu cân ổn định → TDEE chính xác. Cân tăng → ăn ít hơn 100–150 kcal. Cân giảm → ăn thêm.',
+    'Người có nhiều cơ bắp hơn trung bình sẽ có TDEE thực cao hơn tính toán (cơ đốt nhiều calo hơn mỡ). Người ít vận động hơn khai báo sẽ có TDEE thực thấp hơn.',
+    'TDEE thay đổi theo thời gian: khi giảm cân, BMR giảm theo. Khi tăng cơ, BMR tăng theo. Nên tính lại sau mỗi 4 tuần hoặc khi cân nặng thay đổi ≥ 2–3 kg.',
+    'Các yếu tố không tính được trong công thức: chất lượng giấc ngủ, mức độ stress (cortisol cao làm chậm trao đổi chất), thuốc (đặc biệt thuốc tuyến giáp), và chu kỳ kinh nguyệt (ảnh hưởng 100–300 kcal/ngày).',
+  ],
+  points: [
+    { icon: '⚖️', label: '±10–15% sai số', note: 'Chấp nhận được — hiệu chỉnh sau 2 tuần' },
+    { icon: '📅', label: 'Theo dõi 7 ngày', note: 'Trung bình cân/tuần loại bỏ biến động nước' },
+    { icon: '🔄', label: 'Tính lại mỗi 4 tuần', note: 'TDEE thay đổi theo cân nặng & thể trạng' },
+    { icon: '🧬', label: 'Yếu tố cá nhân', note: 'Ngủ, stress, thuốc ảnh hưởng TDEE thực' },
+  ],
+};
+
+function AccuracyModal({ onClose }) {
+  const d = ACCURACY_DATA;
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#100c00', borderColor: `rgba(${AC_RGB},0.28)`, boxShadow: `0 0 80px rgba(${AC_RGB},0.15), 0 40px 80px rgba(0,0,0,0.6)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={d.img} alt="Độ chính xác TDEE" className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${AC_RGB},0.08) 50%, #100c00 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${AC_COLOR}, transparent)` }} />
+          <div className="absolute top-5 right-6 font-black leading-none text-5xl" style={{ color: AC_COLOR, textShadow: `0 0 30px rgba(${AC_RGB},0.65)` }}>±15%</div>
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${AC_RGB},0.18)`, border: `2px solid rgba(${AC_RGB},0.45)` }}>⚠️</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: AC_COLOR }}>Độ Chính Xác & Lưu Ý</h2>
+
+          <div className="flex gap-3 rounded-2xl p-4 mb-6" style={{ background: `rgba(${AC_RGB},0.07)`, border: `1px solid rgba(${AC_RGB},0.2)` }}>
+            <span className="text-lg shrink-0">💡</span>
+            <p className="text-sm font-semibold leading-relaxed m-0" style={{ color: '#fcd34d' }}>{d.keyFact}</p>
+          </div>
+
+          <p className="text-base text-muted leading-relaxed mb-6">{d.detail}</p>
+
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: AC_COLOR }}>Cách Hiệu Chỉnh Thực Tế</p>
+          <ul className="space-y-3 mb-8">
+            {d.details.map((item, i) => (
+              <li key={i} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${AC_RGB},0.14)`, color: AC_COLOR }}>{i + 1}</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {d.points.map((pt, i) => (
+              <div key={i} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${AC_RGB},0.06)`, border: `1px solid rgba(${AC_RGB},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-muted opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -7413,6 +7526,7 @@ export default function PillarB() {
   const [mantraIdx, setMantraIdx] = useState(null);
   const [benefitIdx, setBenefitIdx] = useState(null);
   const [mealSplitIdx, setMealSplitIdx] = useState(null);
+  const [accuracyOpen, setAccuracyOpen] = useState(false);
   const spiritTr = pillar?.spirit_card || {};
 
   useEffect(() => {
@@ -7562,7 +7676,7 @@ export default function PillarB() {
     );
   }
 
-  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey: handleGoalKeyChange, userStats, onBenefitOpen: setBenefitIdx, onMealSplitOpen: setMealSplitIdx };
+  const calcProps = { weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey: handleGoalKeyChange, userStats, onBenefitOpen: setBenefitIdx, onMealSplitOpen: setMealSplitIdx, onAccuracyOpen: () => setAccuracyOpen(true) };
   const PANELS = [
     <CalcPanel key="calc" {...calcProps} />,
     <FoundationPanel key="foundation" s={userStats} onGoalKeyChange={handleGoalKeyChange} />,
@@ -8373,6 +8487,9 @@ export default function PillarB() {
           hasNext={benefitIdx < TDEE_BENEFITS.length - 1}
         />
       )}
+
+      {/* ── Accuracy modal — outside all RevealBlocks so position:fixed works ── */}
+      {accuracyOpen && <AccuracyModal onClose={() => setAccuracyOpen(false)} />}
 
       {/* ── Meal split modal — outside all RevealBlocks so position:fixed works ── */}
       {mealSplitIdx !== null && (

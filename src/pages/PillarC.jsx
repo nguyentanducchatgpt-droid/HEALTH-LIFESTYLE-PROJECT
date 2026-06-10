@@ -474,10 +474,10 @@ const C3_IDEAS = [
 
 const C4_ROUTINE = [
   {
-    exercise: 'Thở cơ hoành', label: 'Thở cơ hoành',
+    exercise: 'Thở cơ hoành', label: 'Thở cơ hoành', icon: '🫁',
     duration: '1 phút', note: 'Bụng phồng khi hít, ngực ít nâng',
     color: '#a78bfa', rgb: '167,139,250',
-    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Thở cơ hoành kích hoạt hệ thần kinh phó giao cảm trong vòng 60 giây — giảm cortisol và nhịp tim hiệu quả hơn bất kỳ kỹ thuật thư giãn nào khác.',
     detail: 'Đây là bài tập đầu tiên và quan trọng nhất. 90% người hít thở bằng ngực, không phải cơ hoành — điều này duy trì cơ thể trong trạng thái kích thích nhẹ liên tục.',
     details: [
@@ -496,10 +496,10 @@ const C4_ROUTINE = [
     ],
   },
   {
-    exercise: 'Shoulder roll', label: 'Shoulder roll',
+    exercise: 'Shoulder roll', label: 'Shoulder roll', icon: '🔄',
     duration: '1 phút', note: 'Xoay vai trước và sau',
     color: '#818cf8', rgb: '129,140,248',
-    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Dân văn phòng dành 6–8 giờ/ngày với vai nhún về phía tai — shoulder roll ngược chiều hàng ngày ngăn chặn tình trạng co rút cơ thang (trapezius) mạn tính.',
     detail: 'Shoulder roll đơn giản nhưng cực kỳ hiệu quả để reset cơ vai và cổ sau thời gian dài căng thẳng hoặc ngồi làm việc. Hai chiều xoay có tác dụng khác nhau.',
     details: [
@@ -518,10 +518,10 @@ const C4_ROUTINE = [
     ],
   },
   {
-    exercise: 'Thoracic twist', label: 'Thoracic twist',
+    exercise: 'Thoracic twist', label: 'Thoracic twist', icon: '🌀',
     duration: '1 phút', note: 'Xoay lưng ngực từng bên',
     color: '#c084fc', rgb: '192,132,252',
-    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Cột sống ngực được thiết kế để xoay 35–40°, nhưng ngồi làm việc suốt ngày làm giảm xuống còn 10–15° — gây ra cơ chế bù trừ khiến cổ và lưng dưới phải xoay thay.',
     detail: 'Thoracic spine (T1–T12) là vùng bị quên nhất trong phục hồi, nhưng lại là "cầu nối" giữa cổ và lưng. Mất linh hoạt ở đây gây đau cả hai đầu.',
     details: [
@@ -540,10 +540,10 @@ const C4_ROUTINE = [
     ],
   },
   {
-    exercise: 'Hip flexor stretch', label: 'Hip flexor stretch',
+    exercise: 'Hip flexor stretch', label: 'Hip flexor stretch', icon: '🦵',
     duration: '1 phút × 2', note: 'Giãn gấp hông từng bên',
     color: '#e879f9', rgb: '232,121,249',
-    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Người ngồi 8+ giờ/ngày có hip flexor (cơ gấp hông) co rút liên tục — kéo xương chậu ngả về trước (anterior pelvic tilt) và là nguyên nhân số 1 gây đau lưng dưới.',
     detail: 'Psoas và iliacus (nhóm hip flexor) nối cột sống thắt lưng với xương đùi. Khi co rút, chúng kéo lưng dưới ưỡn ra và nén đĩa đệm L4–L5, L5–S1.',
     details: [
@@ -562,10 +562,10 @@ const C4_ROUTINE = [
     ],
   },
   {
-    exercise: 'Hamstring stretch', label: 'Hamstring stretch',
+    exercise: 'Hamstring stretch', label: 'Hamstring stretch', icon: '🏃',
     duration: '1 phút × 2', note: 'Giãn đùi sau từng bên',
     color: '#a78bfa', rgb: '167,139,250',
-    img: 'https://images.unsplash.com/photo-1571019613526-f7f999ede82a?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1434608519344-49d77a699e1d?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Hamstring co rút là một trong 3 nguyên nhân hàng đầu gây đau lưng dưới mạn tính — 60 giây giãn mỗi ngày đủ để duy trì độ linh hoạt và giảm tải lên đĩa đệm.',
     detail: 'Hamstring (cơ đùi sau) chạy từ xương ngồi đến sau gối — khi co rút, chúng kéo xương chậu ngả ra sau (posterior tilt) và làm phẳng đường cong sinh lý lưng dưới.',
     details: [
@@ -584,7 +584,7 @@ const C4_ROUTINE = [
     ],
   },
   {
-    exercise: 'Child pose + thở', label: 'Child pose + thở',
+    exercise: 'Child pose + thở', label: 'Child pose + thở', icon: '🧘',
     duration: '2 phút', note: 'Thư giãn hoàn toàn',
     color: '#7dd3fc', rgb: '125,211,252',
     img: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80&auto=format&fit=crop',
@@ -606,10 +606,10 @@ const C4_ROUTINE = [
     ],
   },
   {
-    exercise: 'Đi bộ nhẹ', label: 'Đi bộ nhẹ',
+    exercise: 'Đi bộ nhẹ', label: 'Đi bộ nhẹ', icon: '🚶',
     duration: '1–2 phút', note: 'Kết thúc nhẹ nhàng',
     color: '#10b981', rgb: '16,185,129',
-    img: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Kết thúc bằng đi bộ nhẹ cho phép huyết áp và nhịp tim giảm từ từ — dừng đột ngột sau tập hoặc căng giãn mạnh có thể gây chóng mặt và máu đọng ở cơ bắp.',
     detail: 'Đây là bước "hạ cánh" của toàn bộ routine. Đi bộ nhẹ đảm bảo tuần hoàn trở về bình thường trước khi cơ thể chuyển sang chế độ nghỉ ngơi hoàn toàn.',
     details: [

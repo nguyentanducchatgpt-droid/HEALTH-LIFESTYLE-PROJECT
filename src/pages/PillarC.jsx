@@ -23,11 +23,111 @@ const TABS = [
 // ─── Tab content data ─────────────────────────────────────────────────────────
 
 const C0_ITEMS = [
-  { icon: '😴', label: 'Giấc ngủ', desc: 'Giờ ngủ, giờ thức, số giờ, chất lượng ngủ' },
-  { icon: '⚡', label: 'Năng lượng', desc: 'Khi nào tỉnh nhất, khi nào dễ mệt nhất' },
-  { icon: '🚶', label: 'Vận động trong ngày', desc: 'Số bước, thời gian ngồi, di chuyển nhẹ' },
-  { icon: '🔄', label: 'Phục hồi', desc: 'Đau mỏi vai gáy, lưng, gối; dấu hiệu quá tải' },
-  { icon: '📱', label: 'Thói quen tối', desc: 'Màn hình, giờ ăn, phòng ngủ, công việc' },
+  {
+    icon: '😴', label: 'Giấc ngủ', desc: 'Giờ ngủ, giờ thức, số giờ, chất lượng ngủ',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: '7–9 giờ ngủ chất lượng cải thiện hiệu suất tập luyện 20–25% và giảm nguy cơ bệnh mạn tính đáng kể.',
+    detail: 'Giấc ngủ là nền tảng của mọi thứ — phục hồi cơ bắp, cân bằng hormone, trí nhớ và kiểm soát cơn thèm ăn. Đây là chỉ số đầu tiên cần đánh giá.',
+    details: [
+      'Ghi nhận giờ đi ngủ và giờ thức dậy trong 7 ngày liên tục — đây là baseline thực sự, không phải ý định.',
+      'Chất lượng quan trọng hơn số giờ: ngủ 6 tiếng sâu tốt hơn 8 tiếng trằn trọc. Đánh giá 1–10 sau mỗi buổi sáng.',
+      'Giờ ngủ nhất quán (lệch ≤60 phút mỗi ngày kể cả cuối tuần) điều tiết đồng hồ sinh học tốt hơn bất kỳ thói quen nào.',
+      'Melatonin bắt đầu tiết 2 giờ trước khi bạn buồn ngủ tự nhiên — ánh sáng xanh và thức ăn nặng cản trở quá trình này.',
+      'Giai đoạn ngủ sâu (deep sleep) xảy ra chủ yếu trong nửa đầu đêm — đi ngủ sau 00h mất nhiều deep sleep hơn tưởng.',
+      'Nếu thức dậy mà không cảm thấy tươi tỉnh sau 7+ giờ → đây là tín hiệu cần điều chỉnh thói quen tối, không phải uống thêm cà phê.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Giờ ngủ ổn định', note: 'Lệch ≤60 phút mỗi ngày' },
+      { icon: '🌙', label: 'Chất lượng ngủ', note: 'Chấm điểm 1–10 mỗi sáng' },
+      { icon: '💤', label: '7–9 giờ/đêm', note: 'Người lớn trưởng thành' },
+      { icon: '📊', label: 'Theo dõi 7 ngày', note: 'Xây baseline trước khi cải thiện' },
+    ],
+  },
+  {
+    icon: '⚡', label: 'Năng lượng', desc: 'Khi nào tỉnh nhất, khi nào dễ mệt nhất',
+    color: '#06b6d4', rgb: '6,182,212',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhịp sinh học (circadian rhythm) quyết định ~60% mức năng lượng trong ngày — biết chu kỳ của mình để làm việc thuận theo, không phải chống lại nó.',
+    detail: 'Năng lượng không phải là ý chí — là sinh lý học. Biết khi nào não bạn sắc bén nhất và khi nào cơ thể cần nghỉ giúp bạn tận dụng tối đa từng giờ.',
+    details: [
+      'Ghi nhận mức năng lượng mỗi 2–3 giờ trong 3 ngày (1–10): đây là cách duy nhất để biết "chronotype" thực sự của bạn.',
+      'Hầu hết người có đỉnh năng lượng lúc 9–11h sáng và 15–17h chiều, với tụt mạnh lúc 13–15h sau ăn trưa.',
+      'Khi nào tỉnh nhất → làm việc đòi hỏi tư duy sâu. Khi nào mệt nhất → họp, email, việc cơ học.',
+      'Chu kỳ Ultradian ~90 phút: não hoạt động cường độ cao ~90 phút rồi cần nghỉ 10–20 phút. Đừng ép qua điểm này.',
+      'Caffeine che giấu adenosine (chất gây buồn ngủ) chứ không tạo năng lượng thật — uống quá nhiều làm rối loạn chu kỳ tự nhiên.',
+      'Ánh sáng tự nhiên buổi sáng là "nút reset" mạnh nhất cho đồng hồ sinh học — 5 phút ra ngoài sau khi thức đủ để có hiệu quả.',
+    ],
+    points: [
+      { icon: '📈', label: 'Đỉnh năng lượng', note: 'Thường 9–11h và 15–17h' },
+      { icon: '🔄', label: 'Chu kỳ 90 phút', note: 'Nghỉ 10–20 phút sau mỗi chu kỳ' },
+      { icon: '☀️', label: 'Ánh sáng sáng', note: '5 phút ra ngoài sau khi thức' },
+      { icon: '☕', label: 'Caffeine thông minh', note: 'Uống sau 90 phút thức dậy' },
+    ],
+  },
+  {
+    icon: '🚶', label: 'Vận động trong ngày', desc: 'Số bước, thời gian ngồi, di chuyển nhẹ',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '8.000 bước/ngày giảm 51% nguy cơ tử vong sớm theo nghiên cứu JAMA 2021 — và bạn không cần tập gym để đạt được con số này.',
+    detail: 'NEAT (Non-Exercise Activity Thermogenesis) — vận động ngoài tập gym — chiếm 15–50% tổng năng lượng tiêu thụ. Đây là "vũ khí bí mật" mà nhiều người bỏ qua.',
+    details: [
+      'Đếm số bước hiện tại trước khi đặt mục tiêu — nhiều người tập gym nhưng vẫn chỉ đi 3.000–4.000 bước vì ngồi cả ngày.',
+      'Ngồi >8 giờ liên tục làm tăng nguy cơ bệnh tim mạch độc lập với việc có tập gym hay không — đứng dậy mỗi 45–60 phút.',
+      'Mỗi 1.000 bước thêm vào baseline hiện tại tạo ra lợi ích sức khỏe có thể đo được — không cần nhảy lên 10.000 ngay.',
+      'Di chuyển nhẹ sau bữa ăn (5–10 phút đi bộ) giảm đường huyết sau ăn 20–30% hiệu quả hơn nhiều so với ngồi yên.',
+      'Thời gian ngồi liên tục quan trọng hơn tổng thời gian ngồi: ngồi 8 tiếng nhưng đứng mỗi giờ tốt hơn ngồi liên tục 4 tiếng.',
+      'Mục tiêu thực tế: tăng 500–1.000 bước mỗi tuần cho đến khi đạt 7.000–8.000 bước/ngày một cách tự nhiên.',
+    ],
+    points: [
+      { icon: '👣', label: '7.000–8.000 bước', note: 'Mục tiêu thiết thực nhất' },
+      { icon: '⏱️', label: 'Đứng mỗi 45–60 phút', note: 'Chống tác hại của ngồi lâu' },
+      { icon: '🍽️', label: 'Đi bộ sau ăn', note: '5–10 phút kiểm soát đường huyết' },
+      { icon: '📱', label: 'Đeo máy đếm bước', note: 'Hoặc dùng app điện thoại' },
+    ],
+  },
+  {
+    icon: '🔄', label: 'Phục hồi', desc: 'Đau mỏi vai gáy, lưng, gối; dấu hiệu quá tải',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '40% chấn thương thể thao và đau mạn tính không xuất phát từ tập quá sức — mà từ phục hồi không đủ và bỏ qua các tín hiệu cảnh báo sớm.',
+    detail: 'Phục hồi không phải nghỉ ngơi thụ động — là tập hợp các thực hành chủ động giúp cơ thể tái tạo, giảm viêm và chuẩn bị cho buổi tập tiếp theo.',
+    details: [
+      'Đau mỏi vai gáy và lưng dưới sau ngồi làm việc là tín hiệu của cơ yếu và tư thế sai — không phải "tự nhiên" phải chịu.',
+      'Phân biệt đau cơ do tập (DOMS — nhức 1–3 ngày sau tập, lan tỏa) và đau khớp/gân (nhói, cố định vị trí → cần nghỉ và kiểm tra).',
+      'Mobility 5–10 phút/ngày hiệu quả hơn foam roll 1 tiếng/tuần — tính nhất quán quan trọng hơn cường độ phục hồi.',
+      'Dấu hiệu quá tải: nhịp tim nghỉ cao hơn bình thường 5–7 bpm, mất ngủ dù mệt, hiệu suất giảm liên tiếp 2–3 buổi.',
+      'Deload (tuần giảm khối lượng tập 40–50%) mỗi 4–6 tuần giúp phục hồi sâu và thường đi kèm với bước tiến sau đó.',
+      'Lạnh/nóng, massage, và giãn cơ đều là công cụ — không có gì tốt nhất cho mọi người. Thử và quan sát phản ứng của cơ thể bạn.',
+    ],
+    points: [
+      { icon: '🩺', label: 'Phân biệt loại đau', note: 'Cơ bắp vs khớp/gân' },
+      { icon: '🧘', label: 'Mobility 5–10 phút/ngày', note: 'Nhất quán hơn là cường độ' },
+      { icon: '📉', label: 'Dấu hiệu quá tải', note: 'Tim nhanh, mất ngủ, giảm suất' },
+      { icon: '🔁', label: 'Deload 4–6 tuần/lần', note: 'Giảm 40–50% khối lượng tập' },
+    ],
+  },
+  {
+    icon: '📱', label: 'Thói quen tối', desc: 'Màn hình, giờ ăn, phòng ngủ, công việc',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Màn hình ánh sáng xanh sau 20h làm chậm tiết melatonin 1–3 giờ và giảm chất lượng giấc ngủ ~20% theo nghiên cứu Harvard.',
+    detail: 'Những gì bạn làm trong 2 giờ trước khi ngủ quyết định chất lượng 7–8 tiếng ngủ phía sau. Đây là cửa sổ can thiệp dễ nhất và có tác động lớn nhất.',
+    details: [
+      'Màn hình điện thoại/TV phát ánh sáng xanh (blue light) ức chế melatonin — hãy dùng chế độ Night Mode hoặc kính lọc ánh sáng xanh từ 20h.',
+      'Ăn tối trước 20h lý tưởng — bữa ăn nặng gần giờ ngủ làm tăng thân nhiệt cơ thể, khó ngủ sâu và tăng nguy cơ trào ngược.',
+      'Công việc căng thẳng sau 21h kích hoạt cortisol — để não "thoát khỏi" công việc, cần ít nhất 60 phút không làm việc trước khi ngủ.',
+      'Phòng ngủ nên dưới 20°C — thân nhiệt giảm khi ngủ, và môi trường mát giúp quá trình này tự nhiên hơn.',
+      'Routine tối dù ngắn 5 phút (tắm, đọc sách nhẹ, viết nhật ký ngắn) gửi tín hiệu đến não: sắp đến giờ ngủ.',
+      'Không cần làm tất cả mọi thứ — chọn 1 thói quen thay đổi, duy trì 2–3 tuần, rồi mới thêm cái tiếp theo.',
+    ],
+    points: [
+      { icon: '🌑', label: 'Giảm màn hình 20h+', note: 'Night mode hoặc kính xanh' },
+      { icon: '🍽️', label: 'Ăn tối trước 20h', note: 'Không ăn nặng gần giờ ngủ' },
+      { icon: '❄️', label: 'Phòng mát <20°C', note: 'Nhiệt độ tối ưu để ngủ sâu' },
+      { icon: '📖', label: 'Routine tối 5–30 phút', note: 'Tín hiệu cho não chuẩn bị ngủ' },
+    ],
+  },
 ];
 
 const C0_SCORE = [
@@ -214,12 +314,110 @@ function TeaserSection({ title, children }) {
   );
 }
 
+// ─── C0ItemModal ──────────────────────────────────────────────────────────────
+
+function C0ItemModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  const { color, rgb } = item;
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color }}>{item.label}</h2>
+          <p className="text-sm mb-4" style={{ color: `rgba(${rgb},0.7)` }}>{item.detail}</p>
+
+          {/* Key fact */}
+          <div className="rounded-2xl px-4 py-3 mb-6 flex items-start gap-3"
+            style={{ background: `rgba(${rgb},0.08)`, border: `1px solid rgba(${rgb},0.2)` }}>
+            <span className="text-lg shrink-0 mt-0.5">💡</span>
+            <p className="text-sm leading-relaxed" style={{ color: `rgba(${rgb},0.9)` }}>{item.keyFact}</p>
+          </div>
+
+          {/* Numbered details */}
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Key points 2-col */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {C0_ITEMS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main component ────────────────────────────────────────────────────────────
 
 export default function PillarC() {
   const { t: tPillars } = useTranslation('pillars');
   const pillar = tPillars('pillarC', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('c1');
+  const [c0Idx, setC0Idx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
@@ -406,11 +604,23 @@ export default function PillarC() {
                 <p className="text-muted text-lg mb-6">Biết điểm xuất phát trước khi thay đổi. Không đánh giá để phán xét — đánh giá để chọn điểm bắt đầu đúng nhất.</p>
                 <div className="grid gap-3 mb-6">
                   {C0_ITEMS.map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.05)`, border: `1px solid rgba(${TEAL_RGB},0.1)` }}>
+                    <div
+                      key={i}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setC0Idx(i)}
+                      onKeyDown={e => e.key === 'Enter' && setC0Idx(i)}
+                      className="group flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:-translate-x-0.5"
+                      style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.15)` }}
+                    >
                       <span className="text-3xl shrink-0">{item.icon}</span>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <div className="font-semibold text-text text-lg">{item.label}</div>
                         <div className="text-muted text-base mt-0.5">{item.desc}</div>
+                      </div>
+                      <div className="shrink-0 flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: item.color }}>
+                        Chi tiết
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                       </div>
                     </div>
                   ))}
@@ -912,6 +1122,19 @@ export default function PillarC() {
       <div className="pt-6 border-t border-border">
         <Link to="/pillars" className="text-muted hover:text-teal-400 transition-colors text-lg">← Sống Khỏe 360</Link>
       </div>
+
+      {/* ── C0 item modal — outside all RevealBlocks so position:fixed works ── */}
+      {c0Idx !== null && (
+        <C0ItemModal
+          item={C0_ITEMS[c0Idx]}
+          idx={c0Idx}
+          onClose={() => setC0Idx(null)}
+          onPrev={() => setC0Idx(i => Math.max(0, i - 1))}
+          onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
+          hasPrev={c0Idx > 0}
+          hasNext={c0Idx < C0_ITEMS.length - 1}
+        />
+      )}
     </div>
   );
 }

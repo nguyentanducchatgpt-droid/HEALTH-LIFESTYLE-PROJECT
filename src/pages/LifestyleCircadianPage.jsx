@@ -231,6 +231,101 @@ const LIGHT_RULES = [
   },
 ];
 
+const POST_LUNCH_DIP = [
+  {
+    cause: 'Adenosine tích lũy', icon: '😴', level: 3,
+    time: 'Adenosine tích lũy', phase: 'Nghỉ ngắn 10–20 phút',
+    solution: 'Đây là chu kỳ sinh học bình thường lúc 13–15h. Nghỉ ngắn 10–20 phút hiệu quả hơn cà phê.',
+    color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Adenosine — phân tử gây buồn ngủ — tích lũy từ lúc thức dậy và đạt ngưỡng đủ để gây buồn ngủ rõ ràng lúc 13–15h, trùng với một nhịp sinh học circadian giảm tự nhiên. Đây không phải lỗi của bạn — đây là thiết kế sinh học.',
+    detail: 'Hai yếu tố cùng lúc tạo ra "post-lunch dip": (1) áp lực ngủ từ adenosine tích lũy từ sáng, và (2) nhịp circadian có một điểm giảm tự nhiên lúc 13–15h — ngay cả những người không ăn trưa cũng trải qua điểm này. Bữa ăn nhiều tinh bột chỉ làm nó tệ hơn, không phải là nguyên nhân chính.',
+    details: [
+      'Adenosine tích lũy trong não từ thời điểm thức dậy — nồng độ tăng dần theo giờ thức. Đến 13–15h, đã đủ cao để gây buồn ngủ rõ ràng ngay cả khi không ăn trưa.',
+      'Nhịp circadian có hai điểm giảm tự nhiên mỗi ngày: 2–4h sáng và 13–15h chiều — đây là kết quả tiến hóa, không phải do thói quen xấu.',
+      'Power nap 10–20 phút (không quá 30 phút) trong khung giờ này giải phóng một phần adenosine mà không vào giấc ngủ sâu — bạn dậy tỉnh táo, không bị "ngủ quán tính".',
+      'Nếu ngủ quá 30 phút: bạn vào N2/N3 (ngủ sâu hơn) — dậy bị ngủ quán tính (sleep inertia) mạnh, mất 20–30 phút để hoàn toàn tỉnh táo.',
+      '"Caffeine nap": uống cà phê → ngủ 20 phút ngay → caffeine hấp thụ đúng lúc dậy — kết hợp hai hiệu ứng, tỉnh táo tốt hơn mỗi cái riêng lẻ.',
+      'Không có điều kiện ngủ: thiền 10–15 phút, thở 4-7-8, hoặc đơn giản nhắm mắt + không kích thích cũng giúp giảm áp lực adenosine một phần.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Adenosine đạt ngưỡng', note: 'Tích lũy từ sáng, đủ để gây buồn ngủ lúc 13–15h' },
+      { icon: '💤', label: 'Power nap 10–20 phút', note: 'Không quá 30 phút — tránh ngủ quán tính khi dậy' },
+      { icon: '☕', label: 'Caffeine nap', note: 'Uống cà phê → ngủ 20 phút ngay → hai hiệu ứng cộng dồn' },
+      { icon: '🌊', label: 'Nhịp circadian tự nhiên', note: 'Cả người không ăn trưa cũng buồn ngủ lúc 13–15h' },
+    ],
+  },
+  {
+    cause: 'Đường huyết sau ăn', icon: '🍚', level: 4,
+    time: 'Đường huyết sau ăn', phase: 'Thêm đạm + rau vào bữa trưa',
+    solution: 'Ăn nhiều tinh bột nhanh → đường huyết tăng nhanh → giảm nhanh → buồn ngủ. Fix: thêm đạm + rau.',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bữa trưa nhiều tinh bột nhanh (cơm trắng, bánh mì, nước ngọt) gây spike đường huyết rồi giảm nhanh — kích hoạt insulin mạnh và tăng tryptophan vào não → serotonin → melatonin. Đây là "post-lunch dip tăng cường" do thực phẩm gây ra.',
+    detail: 'Không phải cơm gây buồn ngủ — mà là tỷ lệ macro: cơm trắng không có đạm và chất xơ đi kèm. Cùng một lượng carb nhưng kết hợp với đạm + chất xơ sẽ làm đường huyết tăng chậm hơn, đều hơn và không có crash đột ngột sau đó.',
+    details: [
+      'Tinh bột nhanh (GI cao) gây đường huyết tăng nhanh → tụy tiết insulin nhiều → đường huyết giảm nhanh → não nhận tín hiệu "thiếu glucose" → buồn ngủ và khó tập trung.',
+      'Tăng insulin sau ăn cũng thúc đẩy tryptophan vào não → chuyển thành serotonin → một phần chuyển thành melatonin — giải thích tại sao buồn ngủ hơn sau bữa ăn lớn.',
+      'Fix đơn giản: thêm đạm (thịt, cá, đậu, trứng) và chất xơ (rau xanh) vào bữa trưa — làm chậm hấp thụ glucose, đường huyết đều hơn, không có crash.',
+      'Giảm phần cơm 30% + thêm rau và đạm tương đương: đường huyết sau ăn thấp hơn đáng kể mà không cảm thấy đói hơn (nhờ đạm và chất xơ tạo no lâu).',
+      'Nước ngọt, nước ép trái cây (kể cả 100% tự nhiên) trong bữa trưa: glucose liquid hấp thụ nhanh hơn solid — tránh hoặc thay bằng nước lọc trong bữa.',
+      'Bữa trưa lý tưởng cho năng lượng chiều: ½ đĩa rau + ¼ đạm + ¼ carb phức hợp (gạo lứt, khoai lang) — đường huyết ổn định 3–4 tiếng sau ăn.',
+    ],
+    points: [
+      { icon: '📊', label: 'Spike → crash đường huyết', note: 'Cơm trắng không kèm đạm/rau = đường huyết lên nhanh, xuống nhanh' },
+      { icon: '🥩', label: 'Thêm đạm + chất xơ', note: 'Làm chậm hấp thụ glucose — năng lượng đều và bền hơn' },
+      { icon: '🥗', label: '½ đĩa rau + ¼ đạm', note: 'Cơ cấu bữa trưa lý tưởng cho năng lượng chiều' },
+      { icon: '🚫', label: 'Tránh nước ngọt bữa trưa', note: 'Glucose liquid hấp thụ nhanh nhất — tăng crash đột ngột' },
+    ],
+  },
+  {
+    cause: 'Ngồi yên sau ăn', icon: '🚶', level: 3,
+    time: 'Ngồi yên sau ăn', phase: 'Đi bộ 5–10 phút sau bữa trưa',
+    solution: 'Đi bộ 5–10 phút sau ăn trưa giúp tỉnh táo và ổn định đường huyết tốt hơn cà phê.',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đi bộ 10 phút sau ăn làm giảm đỉnh đường huyết (glucose spike) tới 30% và duy trì nồng độ glucose ổn định lâu hơn — hiệu quả hơn cả 30 phút tập trước ăn. Đây là "hack" đơn giản nhất với tỷ lệ chi phí/lợi ích tốt nhất.',
+    detail: 'Cơ bắp khi co rút trong khi đi bộ tiêu thụ glucose trực tiếp mà không cần insulin — giảm tải cho tụy và ngăn đường huyết tăng quá cao sau ăn. Kết hợp với ánh sáng tự nhiên và tư thế đứng, đi bộ sau ăn là một trong những thói quen có bằng chứng khoa học mạnh nhất.',
+    details: [
+      'Cơ bắp co rút khi đi bộ tiêu thụ glucose trực tiếp qua cơ chế không phụ thuộc insulin (GLUT4 translocation) — hạ đỉnh đường huyết sau ăn nhanh và hiệu quả.',
+      'Nghiên cứu từ Đại học George Washington: đi bộ 15 phút sau mỗi bữa ăn kiểm soát đường huyết tốt hơn đi bộ 45 phút 1 lần/ngày — tổng thời gian ít hơn nhưng hiệu quả hơn.',
+      'Tư thế đứng + đi giúp hệ tiêu hóa hoạt động tốt hơn ngồi: trọng lực hỗ trợ di chuyển thức ăn qua đường ruột và giảm áp lực lên cơ hoành.',
+      'Ánh sáng tự nhiên trong 5–10 phút đi bộ trưa cũng giúp duy trì nhịp circadian buổi chiều — giảm nguy cơ melatonin tiết sớm hơn mong muốn.',
+      'Không có không gian đi bộ: đứng tại chỗ hoặc ngồi trên ghế tập nhón gót (heel raises) cũng kích hoạt cơ bắp chân — ít hơn nhưng có tác động đo được.',
+      'Sau 10 phút đi bộ: đường huyết ổn định hơn, não nhận đủ glucose đều đặn thay vì spike rồi crash — tỉnh táo và tập trung kéo dài hơn 45–60 phút so với ngồi ngay.',
+    ],
+    points: [
+      { icon: '📉', label: 'Giảm glucose spike 30%', note: 'Cơ bắp tiêu thụ glucose trực tiếp khi đi bộ' },
+      { icon: '⏱️', label: 'Chỉ cần 5–10 phút', note: 'Hiệu quả hơn tập 30 phút trước ăn về kiểm soát đường huyết' },
+      { icon: '🧍', label: 'Không gian nhỏ cũng được', note: 'Đứng tại chỗ + heel raises — kích hoạt cơ bắp chân' },
+      { icon: '☀️', label: 'Bonus: ánh sáng trưa', note: 'Duy trì nhịp circadian chiều — tránh melatonin tiết sớm' },
+    ],
+  },
+  {
+    cause: 'Thiếu nước', icon: '💧', level: 2,
+    time: 'Thiếu nước', phase: 'Uống 200–300ml trước và sau bữa trưa',
+    solution: 'Mất nước nhẹ (1–2%) gây mệt mỏi. Uống 200–300ml nước trước và sau bữa trưa.',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mất nước chỉ 1–2% trọng lượng cơ thể (1.5–2kg với người 70kg) đủ để giảm hiệu suất nhận thức 5–10% và gây mệt mỏi rõ ràng — thấp hơn ngưỡng khát. Bạn mất nước trước khi cảm thấy khát.',
+    detail: 'Nhiều người nhầm mệt mỏi buổi trưa với đói hoặc buồn ngủ, trong khi nguyên nhân thực sự là dehydration nhẹ tích lũy từ sáng. Não là cơ quan tiêu thụ nước nhiều nhất (chiếm 73% trọng lượng là nước) và nhạy cảm nhất với dehydration.',
+    details: [
+      'Mất nước 1% (700ml với người 70kg) làm giảm sự tập trung và tốc độ xử lý thông tin đo được — ngưỡng này thường đạt được trước bữa trưa nếu không uống nước từ sáng.',
+      'Cảm giác khát chỉ xuất hiện khi mất nước khoảng 1.5–2% — nghĩa là đến lúc bạn khát, hiệu suất nhận thức đã giảm rồi.',
+      'Não là 73% nước và tiêu thụ 20% lượng nước cơ thể — cơ quan nhạy cảm nhất với dehydration, giải thích tại sao thiếu nước gây mệt mỏi tinh thần rõ hơn mệt mỏi thể chất.',
+      'Uống 200–300ml trước bữa trưa và 200ml sau: cung cấp đủ nước cho tiêu hóa và bù lại lượng nước mất qua hơi thở, mồ hôi từ sáng.',
+      'Nước lọc hiệu quả nhất — nước có ga, nước ép, cà phê KHÔNG thay thế hoàn toàn được nước lọc cho mục đích hydration.',
+      'Dấu hiệu đủ nước: nước tiểu màu vàng nhạt (như rơm) — vàng sậm = cần uống thêm ngay; trong suốt = uống nhiều hơn cần.',
+    ],
+    points: [
+      { icon: '🧠', label: '73% não là nước', note: 'Cơ quan nhạy cảm nhất với dehydration trong cơ thể' },
+      { icon: '📉', label: '1% mất nước = -5–10%', note: 'Hiệu suất nhận thức giảm trước khi bạn cảm thấy khát' },
+      { icon: '💧', label: '200–300ml trước + sau', note: 'Bù lại lượng nước mất từ sáng, hỗ trợ tiêu hóa' },
+      { icon: '🟡', label: 'Kiểm tra màu nước tiểu', note: 'Vàng nhạt như rơm = đủ nước; vàng sậm = cần uống thêm' },
+    ],
+  },
+];
+
 const CAFFEINE_GUIDE = [
   {
     rule: 'Không uống khi vừa thức dậy', icon: '⏰', level: 3,
@@ -443,6 +538,7 @@ export default function LifestyleCircadianPage() {
   const [energyIdx, setEnergyIdx] = useState(null);
   const [lightIdx, setLightIdx] = useState(null);
   const [caffeineIdx, setCaffeineIdx] = useState(null);
+  const [dipIdx, setDipIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -587,15 +683,18 @@ export default function LifestyleCircadianPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vì Sao Buồn Ngủ Sau Ăn Trưa?</h2>
         <p className="text-muted text-lg mb-6">Đây là hiện tượng sinh học bình thường — không phải vì bạn lười.</p>
         <div className="grid gap-3">
-          {[
-            { cause: 'Adenosine tích lũy', solution: 'Đây là chu kỳ sinh học bình thường lúc 13–15h. Nghỉ ngắn 10–20 phút hiệu quả hơn cà phê.' },
-            { cause: 'Đường huyết sau ăn', solution: 'Ăn nhiều tinh bột nhanh → đường huyết tăng nhanh → giảm nhanh → buồn ngủ. Fix: thêm đạm + rau.' },
-            { cause: 'Ngồi yên sau ăn', solution: 'Đi bộ 5–10 phút sau ăn trưa giúp tỉnh táo và ổn định đường huyết tốt hơn cà phê.' },
-            { cause: 'Thiếu nước', solution: 'Mất nước nhẹ (1–2%) gây mệt mỏi. Uống 200–300ml nước trước và sau bữa trưa.' },
-          ].map((item, i) => (
-            <div key={i} className="p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
-              <div className="text-lg font-semibold text-text mb-1">{item.cause}</div>
-              <p className="text-muted text-base leading-relaxed">{item.solution}</p>
+          {POST_LUNCH_DIP.map((item, i) => (
+            <div key={i}
+              className="p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.15)` }}
+              onClick={() => setDipIdx(i)}>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xl">{item.icon}</span>
+                <div className="font-semibold text-text text-base flex-1">{item.cause}</div>
+                <span className="text-xs font-bold px-2 py-1 rounded-lg opacity-60 shrink-0"
+                  style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
+              </div>
+              <p className="text-muted text-sm leading-relaxed">{item.solution}</p>
             </div>
           ))}
         </div>
@@ -634,6 +733,19 @@ export default function LifestyleCircadianPage() {
         <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Routine Trước Ngủ</Link>
         <Link to="/pillar/c/morning" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Sáng →</Link>
       </div>
+
+      {/* ── Post-lunch dip modal ── */}
+      {dipIdx !== null && (
+        <EnergyModal
+          item={POST_LUNCH_DIP[dipIdx]}
+          idx={dipIdx}
+          onClose={() => setDipIdx(null)}
+          onPrev={() => setDipIdx(i => Math.max(0, i - 1))}
+          onNext={() => setDipIdx(i => Math.min(POST_LUNCH_DIP.length - 1, i + 1))}
+          hasPrev={dipIdx > 0}
+          hasNext={dipIdx < POST_LUNCH_DIP.length - 1}
+        />
+      )}
 
       {/* ── Caffeine guide modal ── */}
       {caffeineIdx !== null && (

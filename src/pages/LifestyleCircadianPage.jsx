@@ -6,12 +6,138 @@ const RGB = '6,182,212';
 const ORBIT_ID = 'c-circadian-orbit-kf';
 
 const ENERGY_MAP = [
-  { time: '6–8h', phase: 'Sáng sớm', level: 3, desc: 'Cortisol tự nhiên tăng. Tốt cho: cardio nhẹ, lập kế hoạch, bữa ăn có đạm.' },
-  { time: '9–11h', phase: 'Buổi sáng', level: 5, desc: 'Đỉnh năng lượng. Tốt cho: công việc quan trọng, tập luyện, sáng tạo.' },
-  { time: '12–14h', phase: 'Sau ăn trưa', level: 2, desc: 'Năng lượng tụt. Tốt cho: nghỉ ngắn 10–20 phút, công việc dễ, đi bộ nhẹ.' },
-  { time: '15–17h', phase: 'Chiều', level: 4, desc: 'Năng lượng phục hồi. Nhiệt độ cơ thể cao nhất. Tốt cho: tập luyện cường độ cao, sáng tạo.' },
-  { time: '18–20h', phase: 'Tối', level: 3, desc: 'Đang giảm dần. Tốt cho: đi bộ nhẹ, xã hội, nấu ăn, giãn cơ.' },
-  { time: '21–23h', phase: 'Cuối ngày', level: 1, desc: 'Melatonin bắt đầu tăng. Giảm ánh sáng, giảm kích thích, chuẩn bị ngủ.' },
+  {
+    time: '6–8h', phase: 'Sáng sớm', level: 3, icon: '🌅',
+    desc: 'Cortisol tự nhiên tăng. Tốt cho: cardio nhẹ, lập kế hoạch, bữa ăn có đạm.',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cortisol đạt đỉnh tự nhiên lúc 6–8h sáng — đây là "năng lượng mồi" của cơ thể để khởi động ngày mới. Đây là lý do bạn không nên uống cà phê ngay khi dậy.',
+    detail: 'Cortisol awakening response (CAR) là cơ chế tự nhiên giúp cơ thể tỉnh giấc và sẵn sàng hoạt động. Nó tăng 50–100% trong 30 phút đầu sau khi thức dậy. Hiểu được điều này giúp bạn tận dụng năng lượng nội sinh thay vì phụ thuộc caffeine.',
+    details: [
+      'Cortisol awakening response (CAR) tăng 50–100% trong 30 phút đầu sau khi dậy — đây là năng lượng nội sinh mạnh nhất trong ngày, không cần caffeine.',
+      'Ánh sáng mặt trời buổi sáng (đặc biệt 6–9h) kích hoạt đồng hồ sinh học và đặt lại nhịp 24h — 5–10 phút ngoài trời là đủ để kích hoạt tín hiệu này.',
+      'Cardio nhẹ (đi bộ, yoga nhẹ) lúc 6–7h phù hợp hơn tập nặng vì nhiệt độ cơ thể còn thấp và cơ chưa warm-up đủ.',
+      'Bữa sáng có đạm (trứng, sữa, đậu) trong khung giờ này giúp ổn định đường huyết và kéo dài cảm giác no đến buổi trưa.',
+      'Lập kế hoạch ngày và xử lý thông tin tổng quan hiệu quả trong giai đoạn này khi não chuyển từ trạng thái ngủ sang hoạt động.',
+      'Tránh uống cà phê ngay khi dậy — cortisol cao tự nhiên làm giảm hiệu quả caffeine và tăng nguy cơ lệ thuộc. Chờ 90–120 phút sau khi dậy.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Cortisol awakening', note: 'Tăng 50–100% trong 30 phút đầu sau dậy' },
+      { icon: '☀️', label: 'Ánh sáng sáng sớm', note: '5–10 phút ngoài trời — đặt lại đồng hồ sinh học' },
+      { icon: '🥚', label: 'Bữa sáng có đạm', note: 'Ổn định đường huyết, kéo dài no đến trưa' },
+      { icon: '🚫', label: 'Tránh cà phê ngay', note: 'Chờ 90–120 phút sau dậy — tối ưu hiệu quả' },
+    ],
+  },
+  {
+    time: '9–11h', phase: 'Buổi sáng', level: 5, icon: '🔥',
+    desc: 'Đỉnh năng lượng. Tốt cho: công việc quan trọng, tập luyện, sáng tạo.',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80&auto=format&fit=crop',
+    keyFact: '9–11h là khung giờ "golden zone" của nhận thức — trí nhớ ngắn hạn, tập trung và phân tích logic đạt đỉnh. Đây là thời điểm hiếm hoi trong ngày không nên lãng phí vào email và họp không quan trọng.',
+    detail: 'Nhiều nghiên cứu chronobiology xác nhận rằng thực hiện công việc đòi hỏi tư duy cao trong khung giờ 9–11h giúp năng suất tăng 20–30% so với cùng công việc đó lúc 14–16h. Đây là tài nguyên không thể tái tạo mỗi ngày.',
+    details: [
+      'Nhiệt độ cơ thể lúc này đang tăng dần — liên quan trực tiếp đến tốc độ xử lý nhận thức và khả năng tập trung của não bộ.',
+      'Trí nhớ làm việc (working memory) và tốc độ phản ứng đạt đỉnh lúc 9–11h — phù hợp cho quyết định khó, viết lách, phân tích dữ liệu.',
+      'Tập luyện cường độ cao (weightlifting, HIIT) trong khung giờ này cho kết quả tốt hơn buổi sáng sớm — cơ thể đã warm-up đủ, testosterone vẫn cao.',
+      'Sáng tạo divergent (brainstorm, ideation) hoạt động tốt nhất lúc 9–11h khi tâm trí tỉnh táo, chưa mệt mỏi quyết định.',
+      'Email và cuộc họp không cấp bách nên được xử lý vào khung giờ khác (11–12h hoặc 14–15h) để bảo vệ "peak window" này.',
+      'Nếu bạn là "night owl", khung giờ đỉnh có thể trễ hơn 1–2 tiếng — nhưng nguyên tắc "bảo vệ peak window" vẫn áp dụng.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Đỉnh nhận thức', note: 'Working memory + tập trung + phân tích đạt cao nhất' },
+      { icon: '💪', label: 'Tập luyện hiệu quả', note: 'Cơ thể đã warm-up, testosterone còn cao' },
+      { icon: '🛡️', label: 'Bảo vệ khung giờ', note: 'Không họp lặt vặt, không check email vô định' },
+      { icon: '📈', label: '+20–30% năng suất', note: 'So với cùng công việc thực hiện lúc 14–16h' },
+    ],
+  },
+  {
+    time: '12–14h', phase: 'Sau ăn trưa', level: 2, icon: '😴',
+    desc: 'Năng lượng tụt. Tốt cho: nghỉ ngắn 10–20 phút, công việc dễ, đi bộ nhẹ.',
+    color: '#94a3b8', rgb: '148,163,184',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tụt năng lượng sau ăn trưa (post-lunch dip) là hiện tượng sinh học bình thường — không phải vì bạn lười. Adenosine tích lũy + bữa ăn nhiều tinh bột tạo ra "double dip" khiến buồn ngủ rõ ràng.',
+    detail: 'Nhiều nền văn hóa trên thế giới đã công nhận điều này: siesta ở Tây Ban Nha, đảo Địa Trung Hải, nhiều nước châu Á. NASA và quân đội Mỹ cũng nghiên cứu và áp dụng power nap trong khung giờ này để tăng hiệu suất.',
+    details: [
+      'Adenosine — phân tử gây buồn ngủ — tích lũy từ sáng sớm và đạt ngưỡng đủ để gây buồn ngủ nhẹ lúc 13–15h, trùng với nhịp sinh học giảm tự nhiên.',
+      'Bữa ăn nhiều tinh bột nhanh (cơm trắng, bánh mì, nước ngọt) gây spike đường huyết rồi giảm nhanh → tăng insulin → buồn ngủ và mệt.',
+      'Power nap 10–20 phút (không quá 30 phút) trong khung giờ này giúp phục hồi năng lượng hiệu quả hơn cà phê, không gây "ngủ quán tính" nếu đúng thời gian.',
+      'Đi bộ 5–10 phút sau ăn trưa giúp ổn định đường huyết, tránh đường huyết giảm đột ngột và giảm buồn ngủ hiệu quả.',
+      'Công việc nhẹ nhàng (trả lời email, cuộc họp ngắn, task đơn giản) phù hợp với khung giờ này khi não không trong trạng thái tập trung cao.',
+      '"Caffeine nap" (uống cà phê rồi ngủ 20 phút ngay) là kỹ thuật hiệu quả nhất — caffeine mất 20 phút để hấp thụ, bạn tỉnh dậy đúng lúc nó có hiệu quả.',
+    ],
+    points: [
+      { icon: '😪', label: 'Post-lunch dip sinh học', note: 'Adenosine tích lũy + nhịp circadian giảm tự nhiên' },
+      { icon: '💤', label: 'Power nap 10–20 phút', note: 'Hiệu quả hơn cà phê, không gây ngủ quán tính' },
+      { icon: '🚶', label: 'Đi bộ sau ăn', note: 'Ổn định đường huyết, giảm buồn ngủ hiệu quả' },
+      { icon: '☕', label: 'Caffeine nap', note: 'Uống cà phê → ngủ 20 phút → tỉnh dậy tối ưu' },
+    ],
+  },
+  {
+    time: '15–17h', phase: 'Chiều', level: 4, icon: '⚡',
+    desc: 'Năng lượng phục hồi. Nhiệt độ cơ thể cao nhất. Tốt cho: tập luyện cường độ cao, sáng tạo.',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhiệt độ cơ thể đạt cao nhất lúc 15–17h — thời điểm lý tưởng cho tập luyện cường độ cao. Sức mạnh cơ, thời gian phản ứng và sức bền aerobic đều đạt đỉnh trong khung giờ này.',
+    detail: 'Nghiên cứu thể thao cho thấy vận động viên thi đấu lúc 15–17h đạt thành tích tốt hơn buổi sáng khoảng 3–5%. Với người thường, đây là khung giờ tốt thứ hai trong ngày cho công việc đòi hỏi tư duy, sau giai đoạn phục hồi từ post-lunch dip.',
+    details: [
+      'Nhiệt độ cơ thể lõi đạt cực đại 15–17h — trực tiếp cải thiện hiệu suất cơ (strength output), tốc độ co cơ và khả năng chịu đựng aerobic.',
+      'Thời gian phản ứng ngắn nhất trong ngày lúc 15–17h — lý tưởng cho các môn thể thao yêu cầu reflexes nhanh như cầu lông, tennis, bóng đá.',
+      'Testosterone và adrenaline đạt mức tốt cho hiệu suất — cơ thể sẵn sàng tập luyện nặng hơn buổi sáng sớm (khi cơ thể vừa dậy).',
+      'Sau power nap và bữa trưa tiêu hóa xong, não phục hồi khả năng tập trung — phù hợp cho công việc sáng tạo lần 2 trong ngày.',
+      'Người đi làm văn phòng nếu không thể tập lúc 15–17h: tập lúc 17–19h sau giờ làm cũng nằm trong vùng "second wind" hiệu quả.',
+      'Hạn chế: tập luyện cường độ cao sau 19h có thể làm tăng adrenaline và khó vào giấc — nên kết thúc tập nặng trước 20h.',
+    ],
+    points: [
+      { icon: '🌡️', label: 'Nhiệt độ cơ thể đỉnh', note: 'Sức mạnh cơ + thời gian phản ứng tốt nhất trong ngày' },
+      { icon: '🏋️', label: 'Tập nặng lý tưởng', note: 'Hiệu suất cao hơn buổi sáng ~3–5%' },
+      { icon: '🎯', label: 'Second wind nhận thức', note: 'Sau power nap — não phục hồi tập trung tốt' },
+      { icon: '⏰', label: 'Kết thúc trước 20h', note: 'Tập nặng sau 20h có thể ảnh hưởng giấc ngủ' },
+    ],
+  },
+  {
+    time: '18–20h', phase: 'Tối', level: 3, icon: '🌆',
+    desc: 'Đang giảm dần. Tốt cho: đi bộ nhẹ, xã hội, nấu ăn, giãn cơ.',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: '18–20h là giai đoạn chuyển tiếp quan trọng — cơ thể bắt đầu "đóng cửa" hệ thần kinh kích thích. Quyết định sống trong 2 tiếng này ảnh hưởng trực tiếp đến chất lượng ngủ đêm.',
+    detail: 'Cortisol bắt đầu giảm, nhiệt độ cơ thể từ từ hạ, hệ tiêu hóa vẫn đang xử lý bữa tối. Đây là thời điểm tốt nhất để kết nối xã hội, vận động nhẹ và chuẩn bị tâm lý cho việc nghỉ ngơi — không phải làm thêm việc nặng.',
+    details: [
+      'Cortisol bắt đầu giảm đáng kể từ 18h — cơ thể chuyển dần từ trạng thái "chiến đấu/bay" sang "nghỉ ngơi/tiêu hóa" (rest-and-digest mode).',
+      'Đi bộ 20–30 phút sau bữa tối giúp ổn định đường huyết, hỗ trợ tiêu hóa và là hoạt động nhẹ nhàng không kích thích hệ thần kinh giao cảm.',
+      'Hoạt động xã hội (trò chuyện gia đình, gặp bạn bè nhẹ nhàng) giúp giải phóng oxytocin và giảm cortisol — chuẩn bị tâm lý cho ngủ.',
+      'Nấu ăn và chuẩn bị bữa tối đơn giản là hoạt động meditative tốt — tập trung vào hiện tại, nhịp độ chậm, không screen.',
+      'Giãn cơ nhẹ, yoga phục hồi (yin yoga, stretching) trong khung giờ này giúp thả lỏng cơ sau ngày dài và chuẩn bị cơ thể cho giấc ngủ sâu.',
+      'Tránh: email công việc, tin tức căng thẳng, tranh luận, quyết định lớn — cortisol giảm tự nhiên sẽ bị gián đoạn và ảnh hưởng đến giấc ngủ.',
+    ],
+    points: [
+      { icon: '🚶', label: 'Đi bộ sau bữa tối', note: 'Ổn định đường huyết + tiêu hóa + giảm cortisol' },
+      { icon: '👨‍👩‍👧', label: 'Kết nối xã hội nhẹ', note: 'Oxytocin tăng, cortisol giảm — chuẩn bị ngủ' },
+      { icon: '🧘', label: 'Giãn cơ/yoga nhẹ', note: 'Thả lỏng cơ, chuẩn bị cơ thể cho ngủ sâu' },
+      { icon: '🚫', label: 'Tránh công việc nặng', note: 'Email căng thẳng + quyết định lớn phá vỡ wind-down' },
+    ],
+  },
+  {
+    time: '21–23h', phase: 'Cuối ngày', level: 1, icon: '🌙',
+    desc: 'Melatonin bắt đầu tăng. Giảm ánh sáng, giảm kích thích, chuẩn bị ngủ.',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tuyến tùng bắt đầu tiết melatonin lúc khoảng 21h khi ánh sáng giảm đủ — đây là "tín hiệu ngủ" tự nhiên mạnh nhất của cơ thể. Ánh sáng xanh từ màn hình trong giai đoạn này trực tiếp ức chế melatonin và trì hoãn giờ ngủ.',
+    detail: 'Melatonin không phải là thuốc ngủ — nó là tín hiệu thời gian cho cơ thể biết "trời tối, sắp đến giờ ngủ". Nồng độ melatonin tăng dần trong 2–3 tiếng trước khi bạn thực sự ngủ. Bảo vệ giai đoạn này là quan trọng nhất để có giấc ngủ tự nhiên.',
+    details: [
+      'Tuyến tùng (pineal gland) bắt đầu tiết melatonin từ khoảng 21h khi cơ thể nhận tín hiệu ánh sáng giảm — quá trình này cần 2–3 tiếng để đạt đỉnh.',
+      'Ánh sáng xanh 480nm từ màn hình điện thoại/laptop ức chế trực tiếp quá trình tiết melatonin — ngay cả dưới 10 phút xem màn hình sáng cũng đủ làm trễ giấc ngủ 30–60 phút.',
+      'Nhiệt độ phòng lý tưởng cho ngủ là 18–20°C — cơ thể cần hạ nhiệt độ lõi 1–2°C để vào giấc ngủ sâu, phòng mát hỗ trợ quá trình này.',
+      'Đọc sách giấy dưới đèn ấm là hoạt động lý tưởng nhất — không kích thích nhận thức, không ánh sáng xanh, nhịp độ chậm tự nhiên dẫn đến buồn ngủ.',
+      'Tránh ăn nặng sau 21h — tiêu hóa kích hoạt hệ thần kinh và tăng thân nhiệt, cả hai đều cản trở quá trình vào giấc ngủ sâu.',
+      'Nhất quán về giờ đi ngủ (±30 phút) là quan trọng nhất — cơ thể bắt đầu tiết melatonin đúng giờ khi nhịp sinh học được lập trình ổn định.',
+    ],
+    points: [
+      { icon: '🌙', label: 'Melatonin tăng từ 21h', note: 'Tín hiệu ngủ tự nhiên — cần 2–3h để đạt đỉnh' },
+      { icon: '📵', label: 'Không màn hình sáng', note: 'Ánh sáng 480nm ức chế melatonin trong <10 phút' },
+      { icon: '❄️', label: 'Phòng 18–20°C', note: 'Cơ thể cần hạ nhiệt độ lõi để vào ngủ sâu' },
+      { icon: '🕙', label: 'Giờ ngủ nhất quán', note: 'Lập trình nhịp sinh học — ±30 phút mỗi đêm' },
+    ],
+  },
 ];
 
 const LIGHT_RULES = [
@@ -27,6 +153,99 @@ const CAFFEINE_GUIDE = [
   { rule: 'Tránh sau 14–15h', reason: 'Half-life caffeine ~5–6 giờ. Uống 15h → còn ½ lúc 21h → khó vào giấc.', good: 'Người nhạy cảm: cut-off sau 12–13h' },
   { rule: 'Không dùng che lấp thiếu ngủ', reason: 'Caffeine không thay thế ngủ. Nó chỉ block cảm giác buồn ngủ, không phục hồi chức năng nhận thức.', good: 'Ngủ đủ + ít caffeine > ít ngủ + nhiều caffeine' },
 ];
+
+function EnergyModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.phase} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <div className="flex items-center gap-3 mb-1">
+            <span className="text-2xl font-bold tabular-nums" style={{ color: item.color }}>{item.time}</span>
+            <span className="text-sm font-bold px-2 py-0.5 rounded-full" style={{ color: item.color, background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>{item.phase}</span>
+          </div>
+          {/* Energy level dots */}
+          <div className="flex gap-1 mb-4">
+            {[1,2,3,4,5].map(n => (
+              <div key={n} className="w-4 h-2 rounded-full" style={{ background: n <= item.level ? item.color : `rgba(${item.rgb},0.2)` }} />
+            ))}
+          </div>
+          {/* Key fact */}
+          <div className="rounded-2xl p-4 mb-5" style={{ background: `rgba(${item.rgb},0.07)`, border: `1px solid rgba(${item.rgb},0.18)` }}>
+            <p className="text-sm font-semibold leading-relaxed" style={{ color: item.color }}>{item.keyFact}</p>
+          </div>
+          <p className="text-muted text-sm leading-relaxed mb-6">{item.detail}</p>
+          {/* Numbered details */}
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          {/* Key points 2-col */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Prev / Next */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
+              ← Trước
+            </button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {ENERGY_MAP.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
+              Sau →
+            </button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function RevealBlock({ children, delay = 0, className = '' }) {
   const ref = useRef(null);
@@ -45,6 +264,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function LifestyleCircadianPage() {
+  const [energyIdx, setEnergyIdx] = useState(null);
+
   useEffect(() => {
     const id = ORBIT_ID;
     if (document.getElementById(id)) return;
@@ -110,17 +331,23 @@ export default function LifestyleCircadianPage() {
         <p className="text-muted text-lg mb-6">Năng lượng không đều nhau suốt ngày. Làm việc đúng loại vào đúng thời điểm giúp hiệu quả tăng rõ rệt.</p>
         <div className="space-y-3">
           {ENERGY_MAP.map((e, i) => (
-            <div key={i} className="flex gap-4 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
+            <div key={i}
+              className="flex gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${e.rgb},0.05)`, border: `1px solid rgba(${e.rgb},0.15)` }}
+              onClick={() => setEnergyIdx(i)}>
+              <div className="shrink-0 w-8 flex items-center justify-center text-2xl">{e.icon}</div>
               <div className="shrink-0 w-20">
-                <div className="text-base font-bold tabular-nums" style={{ color: COLOR }}>{e.time}</div>
-                <div className="text-base text-muted">{e.phase}</div>
+                <div className="text-base font-bold tabular-nums" style={{ color: e.color }}>{e.time}</div>
+                <div className="text-sm text-muted">{e.phase}</div>
                 <div className="flex gap-0.5 mt-1">
                   {[1,2,3,4,5].map(n => (
-                    <div key={n} className="w-3 h-1.5 rounded-full" style={{ background: n <= e.level ? COLOR : `rgba(${RGB},0.2)` }} />
+                    <div key={n} className="w-3 h-1.5 rounded-full" style={{ background: n <= e.level ? e.color : `rgba(${e.rgb},0.2)` }} />
                   ))}
                 </div>
               </div>
-              <p className="text-muted text-lg flex-1">{e.desc}</p>
+              <p className="text-muted text-base flex-1">{e.desc}</p>
+              <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
+                style={{ color: e.color, background: `rgba(${e.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -218,6 +445,19 @@ export default function LifestyleCircadianPage() {
         <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Routine Trước Ngủ</Link>
         <Link to="/pillar/c/morning" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Sáng →</Link>
       </div>
+
+      {/* ── Energy map modal — outside all RevealBlocks so position:fixed works ── */}
+      {energyIdx !== null && (
+        <EnergyModal
+          item={ENERGY_MAP[energyIdx]}
+          idx={energyIdx}
+          onClose={() => setEnergyIdx(null)}
+          onPrev={() => setEnergyIdx(i => Math.max(0, i - 1))}
+          onNext={() => setEnergyIdx(i => Math.min(ENERGY_MAP.length - 1, i + 1))}
+          hasPrev={energyIdx > 0}
+          hasNext={energyIdx < ENERGY_MAP.length - 1}
+        />
+      )}
     </div>
   );
 }

@@ -405,12 +405,132 @@ const WHY_ROUTINE = [
 ];
 
 const STRETCH_EXERCISES = [
-  { name: 'Chin tuck', reps: '10 lần × 2s giữ', muscles: 'Cổ trước', icon: '🦴' },
-  { name: 'Shoulder roll', reps: '10 vòng × 2 chiều', muscles: 'Vai, cổ', icon: '💫' },
-  { name: 'Thoracic twist', reps: '8 lần mỗi bên', muscles: 'Lưng trên', icon: '🔄' },
-  { name: 'Child pose', reps: '1–2 phút giữ', muscles: 'Lưng dưới, hông', icon: '🧘' },
-  { name: 'Hip flexor stretch', reps: '1 phút mỗi bên', muscles: 'Gấp hông, đùi trước', icon: '🦵' },
-  { name: 'Legs up the wall', reps: '2–5 phút', muscles: 'Giảm sưng chân, thư giãn', icon: '🦶' },
+  {
+    name: 'Chin tuck', label: 'Chin tuck', reps: '10 lần × 2s giữ', muscles: 'Cổ trước', icon: '🦴',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chin tuck là bài tập hiệu quả nhất để giải phóng cơ dưới chẩm (suboccipital muscles) — nhóm cơ căng nhất sau ngày nhìn màn hình và nguyên nhân phổ biến nhất của đau đầu căng thẳng buổi tối.',
+    detail: 'Tư thế "đầu rùa" (forward head posture) khi nhìn màn hình kéo dài làm cơ dưới chẩm co cứng mãn tính — mỗi cm đầu nhô về trước thêm ~5kg tải lên cột sống cổ. Chin tuck là bài sửa tư thế đơn giản và hiệu quả nhất, không cần dụng cụ và có thể làm mọi nơi.',
+    details: [
+      'Tư thế bắt đầu: ngồi thẳng lưng hoặc đứng, mắt nhìn thẳng về phía trước — không cúi đầu xuống.',
+      'Thực hiện: gập cằm vào cổ (như tạo "cằm đôi"), giữ 2–3 giây, cảm nhận kéo căng nhẹ ở sau đầu — thả ra từ từ.',
+      'Không nhìn xuống sàn — chỉ gập cằm vào, đầu vẫn giữ ngang. Nếu nhìn xuống là sai tư thế.',
+      'Cảm giác đúng: kéo căng nhẹ ở cơ dưới chẩm (phía sau trên cổ) và kéo thẳng cơ cổ trước — không đau, chỉ là căng nhẹ.',
+      '10 lần × 2 giây giữ: tổng khoảng 30–40 giây — đủ để giải phóng co cứng mà không làm mệt cơ.',
+      'Sau 2–4 tuần tập đều: tư thế đầu tự nhiên cải thiện, đau đầu căng thẳng buổi tối giảm đáng kể.',
+    ],
+    points: [
+      { icon: '🖥️', label: 'Forward head posture', note: '+1cm = +5kg tải lên cột sống cổ khi nhìn màn hình' },
+      { icon: '🎯', label: 'Suboccipital muscles', note: 'Nhóm cơ căng nhất — nguồn đau đầu căng thẳng chính' },
+      { icon: '✅', label: 'Cằm vào, mắt thẳng', note: 'Không nhìn xuống sàn — đầu vẫn giữ ngang' },
+      { icon: '⏱️', label: '10 lần × 2 giây', note: '~35 giây tổng — đủ giải phóng, không mệt cơ' },
+    ],
+  },
+  {
+    name: 'Shoulder roll', label: 'Shoulder roll', reps: '10 vòng × 2 chiều', muscles: 'Vai, cổ', icon: '💫',
+    color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Shoulder roll kết hợp thở đồng bộ (vai lên = hít vào, vai xuống = thở ra) kích hoạt hệ phó giao cảm nhanh hơn 40% so với chỉ xoay vai đơn thuần — cơ chế "thở–chuyển động" synergistic.',
+    detail: 'Vai là vùng chứa đựng căng thẳng cảm xúc và thể chất — nhiều người không nhận ra vai họ đang "nhún lên" suốt ngày do căng thẳng mãn tính. Shoulder roll đồng bộ với thở tạo ra hiệu ứng kép: giải phóng cơ vai và kích hoạt vagus nerve qua nhịp thở có kiểm soát.',
+    details: [
+      'Tư thế: ngồi thẳng hoặc đứng, tay thả tự nhiên hai bên — không cần cầm hay chống gì.',
+      'Xoay ra trước: vai lên → ra trước → xuống → ra sau → lên — 5 vòng chậm. Sau đó đổi chiều 5 vòng.',
+      'Đồng bộ thở: vai lên = hít vào chậm, vai xuống = thở ra chậm — giữ nhịp thở chậm hơn nhịp vai.',
+      'Cảm nhận từng giai đoạn: khi vai ở vị trí cao nhất, giữ 1 giây và cảm nhận căng — khi thả xuống, chủ động "buông" và thở ra hết.',
+      'Biến thể nâng cao: sau 5 vòng mỗi chiều, kết thúc bằng nâng vai lên tai, giữ 5 giây rồi thả mạnh xuống — "drop" mạnh tạo thư giãn tức thì.',
+      'Kết hợp với ear-to-shoulder: sau shoulder roll, nghiêng đầu sang phải (tai về vai), giữ 15–20 giây rồi đổi bên.',
+    ],
+    points: [
+      { icon: '💨', label: 'Thở đồng bộ', note: 'Vai lên = hít vào / vai xuống = thở ra — synergistic' },
+      { icon: '🎯', label: 'Drop vai mạnh', note: 'Nâng lên tai → giữ 5s → thả mạnh — thư giãn tức thì' },
+      { icon: '🔄', label: '5 vòng × 2 chiều', note: 'Ra trước trước, ra sau sau — mỗi chiều 5 vòng' },
+      { icon: '😤', label: 'Stress container', note: 'Vai "nhún lên" suốt ngày — thả xuống khi thở ra' },
+    ],
+  },
+  {
+    name: 'Thoracic twist', label: 'Thoracic twist', reps: '8 lần mỗi bên', muscles: 'Lưng trên', icon: '🔄',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cột sống ngực (thoracic spine) bị giảm tầm vận động nghiêm trọng nhất sau ngày ngồi — thoracic twist là cách phục hồi nhanh nhất và an toàn nhất, đồng thời kích thích dây thần kinh intercostal giúp thở sâu hơn ngay sau đó.',
+    detail: 'Cột sống ngực (T1–T12) được thiết kế để xoay, nhưng ngồi lâu làm các đốt sống "đóng băng" theo hướng gấp về trước. Stiffness này không chỉ gây đau lưng mà còn hạn chế dung tích phổi — làm thở cạn hơn và tăng cortisol. Thoracic twist giải phóng stiffness và mở lồng ngực cho thở sâu hơn.',
+    details: [
+      'Tư thế ngồi trên ghế: ngồi thẳng, tay đan sau đầu hoặc đặt lên vai — xoay toàn phần trên cơ thể sang phải, giữ 2–3 giây, về trung tâm, rồi sang trái.',
+      'Tư thế nằm: nằm ngửa, co gối, hai gối cùng đổ sang phải (vai trái vẫn chạm sàn), tay trái duỗi sang trái — giữ 20–30 giây mỗi bên.',
+      'Điểm quan trọng: xoay từ cột sống ngực (phần giữa lưng), không phải từ thắt lưng hay cổ — cằm đi cùng hướng vai.',
+      'Thở ra khi xoay ra xa, hít vào khi trở về trung tâm — thở ra tạo thêm tầm xoay nhờ cơ liên sườn giãn ra.',
+      'Cảm giác "crack" nhẹ là bình thường — các khớp nhỏ (facet joints) đang giải phóng gas buildup. Không cố ép để tạo tiếng crack.',
+      'Sau thoracic twist, thử hít thở sâu — lồng ngực sẽ mở hơn và thở sâu hơn đáng kể, đây là dấu hiệu bài đã hiệu quả.',
+    ],
+    points: [
+      { icon: '🔒', label: 'Thoracic stiffness', note: 'Ngồi lâu đóng băng T1–T12 → thở cạn + đau lưng' },
+      { icon: '💨', label: 'Thở ra khi xoay', note: 'Cơ liên sườn giãn → tầm xoay tăng thêm khi thở ra' },
+      { icon: '🎯', label: 'Xoay từ giữa lưng', note: 'Không phải từ thắt lưng — cằm đi cùng hướng vai' },
+      { icon: '🫁', label: 'Test sau bài', note: 'Hít thở sâu — ngực mở hơn = bài đã hiệu quả' },
+    ],
+  },
+  {
+    name: 'Child pose', label: 'Child pose', reps: '1–2 phút giữ', muscles: 'Lưng dưới, hông', icon: '🧘',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Child pose là một trong số ít tư thế được chứng minh kích hoạt hệ phó giao cảm trong vòng 60–90 giây — áp lực nhẹ lên bụng kích thích vagus nerve qua baroreceptor, làm chậm nhịp tim và hạ huyết áp.',
+    detail: 'Tư thế gập người về trước (forward fold) có tác động sinh lý mạnh hơn nhiều so với chỉ kéo căng cơ đơn thuần. Ngoài giải phóng lưng dưới và hông — hai vùng tích lũy căng thẳng nhiều nhất sau ngày ngồi — child pose còn kích hoạt phản xạ "rest" toàn thân.',
+    details: [
+      'Tư thế chuẩn: quỳ gối, ngồi xuống gót chân (hoặc gần gót), cúi người về trước, hai tay duỗi thẳng về phía trước trên sàn.',
+      'Nếu hông không xuống được gót: đặt gối/chăn gấp giữa gót và mông — mục tiêu là thoải mái, không phải hoàn hảo.',
+      'Trán chạm sàn hoặc gối — giữ cổ thư giãn hoàn toàn. Để trọng lực làm việc, không cố ép người xuống.',
+      'Biến thể "wide child pose": hai gối mở rộng bằng vai, ngón cái chạm nhau — tạo không gian cho bụng và kéo căng hông sâu hơn.',
+      'Thở trong child pose: hít vào để bụng phồng vào sàn (cảm nhận sức đề kháng), thở ra để thả lỏng hoàn toàn — mỗi vòng thở người sẽ lún thêm một chút.',
+      'Giữ 1–2 phút để kích hoạt đủ phản xạ phó giao cảm — dưới 60 giây chưa đủ để hệ thần kinh chuyển đổi hoàn toàn.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Vagus nerve 60–90 giây', note: 'Áp lực bụng → baroreceptor → tim chậm + HA giảm' },
+      { icon: '🛋️', label: 'Wide child pose', note: 'Gối mở rộng — thêm không gian bụng + hông sâu hơn' },
+      { icon: '🌬️', label: 'Thở vào sàn', note: 'Bụng phồng vào sàn khi hít — mỗi vòng thở lún thêm' },
+      { icon: '⏱️', label: 'Giữ ≥ 60 giây', note: 'Dưới 1 phút chưa đủ để phó giao cảm kích hoạt' },
+    ],
+  },
+  {
+    name: 'Hip flexor stretch', label: 'Hip flexor stretch', reps: '1 phút mỗi bên', muscles: 'Gấp hông, đùi trước', icon: '🦵',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cơ gấp hông (iliopsoas, rectus femoris) là cơ co rút nhiều nhất sau ngày ngồi — hip flexor tight gây nghiêng khung chậu ra trước, tăng độ cong thắt lưng và là nguyên nhân phổ biến nhất của đau lưng dưới âm ỉ khi ngủ.',
+    detail: 'Ngồi 8+ tiếng/ngày giữ cơ gấp hông trong tư thế rút ngắn liên tục. Theo thời gian, cơ này "quên" cách duỗi dài — tạo ra tight hips ảnh hưởng tư thế ngủ, gây căng lưng dưới ban đêm và giảm chất lượng ngủ. Chỉ 1 phút mỗi bên mỗi tối có thể đảo ngược tình trạng này.',
+    details: [
+      'Low lunge (tư thế chiến binh thấp): bước chân phải ra trước, gối trái hạ xuống sàn — hông đẩy về trước và xuống dưới.',
+      'Cảm nhận đúng: kéo căng ở phía trước đùi và bẹn của chân sau (trái) — không phải ở gối hay lưng dưới.',
+      'Không đẩy hông quá mạnh ngay từ đầu — để trọng lực dần dần kéo hông xuống trong 30 giây đầu, sau đó mới đẩy nhẹ thêm.',
+      'Biến thể tăng cường: từ low lunge, nâng tay lên cao và nghiêng nhẹ sang bên đối diện — kéo căng cơ iliopsoas sâu hơn.',
+      'Kết hợp thở: thở ra khi đẩy hông về trước — giải phóng thêm tầm vận động mỗi vòng thở. Giữ tối thiểu 45 giây mỗi bên.',
+      'Sau khi giãn: nằm ngửa với một gối nhỏ dưới thắt lưng 2–3 phút — giúp giữ tư thế khung chậu trung lập khi ngủ.',
+    ],
+    points: [
+      { icon: '🪑', label: 'Iliopsoas co rút', note: 'Ngồi 8h/ngày = cơ gấp hông "quên" cách duỗi dài' },
+      { icon: '🎯', label: 'Kéo căng đùi trước', note: 'Cảm nhận ở bẹn chân sau — không phải gối hay lưng' },
+      { icon: '🌬️', label: 'Thở ra khi đẩy hông', note: 'Mỗi vòng thở ra → hông xuống thêm một chút' },
+      { icon: '⏱️', label: '≥ 45 giây mỗi bên', note: 'Dưới 30 giây chưa đủ để cơ gấp hông thực sự thả' },
+    ],
+  },
+  {
+    name: 'Legs up the wall', label: 'Legs up the wall', reps: '2–5 phút', muscles: 'Giảm sưng chân, thư giãn', icon: '🦶',
+    color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Legs up the wall (Viparita Karani) giúp máu và bạch huyết từ chân chảy ngược về tim, giảm sưng phù chân sau ngày đứng/ngồi lâu, và kích hoạt phó giao cảm mạnh mẽ — nhiều người ngủ thiếp đi trong tư thế này.',
+    detail: 'Đây là tư thế được gọi là "tư thế ngủ nhẹ" trong yoga — đơn giản nhất nhưng có tác động sinh lý sâu nhất trong bộ 6 bài. Trọng lực đảo ngược giúp tĩnh mạch chân không phải chống lại trọng lực để đẩy máu về tim — tim đập chậm lại, huyết áp giảm, cơ thể chuyển sang chế độ phục hồi toàn thân.',
+    details: [
+      'Cách vào tư thế: ngồi sát tường, nằm xuống và đưa hai chân lên tường — mông sát tường hoặc cách 5–10cm nếu hông tight.',
+      'Hai tay: đặt tự nhiên hai bên, lòng bàn tay ngửa lên — không cần làm gì, để trọng lực làm việc.',
+      'Cảm nhận trong 1 phút đầu: máu bắt đầu chảy ngược từ bàn chân → cẳng chân → đùi — bàn chân có thể hơi lạnh lúc đầu.',
+      'Giữ 2–5 phút: 2 phút đủ để giảm sưng nhẹ; 5 phút tối ưu cho phục hồi sau ngày dài hoặc sau tập luyện.',
+      'Biến thể thư giãn sâu hơn: đặt gối nhỏ dưới hông (nâng hông lên) — tăng hiệu quả dẫn lưu bạch huyết và kích hoạt phó giao cảm.',
+      'Ra khỏi tư thế từ từ: co gối vào ngực trước, nằm nghiêng 10–20 giây — không đứng dậy ngay để tránh chóng mặt do huyết áp đổi chiều đột ngột.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Trọng lực đảo ngược', note: 'Máu chân chảy về tim tự nhiên — tim đập chậm lại' },
+      { icon: '💧', label: 'Dẫn lưu bạch huyết', note: 'Giảm sưng phù chân sau ngày đứng/ngồi dài' },
+      { icon: '😴', label: '2–5 phút tối ưu', note: '2 phút = giảm sưng; 5 phút = phục hồi toàn thân' },
+      { icon: '⚠️', label: 'Ra tư thế từ từ', note: 'Co gối vào ngực → nằm nghiêng — tránh chóng mặt' },
+    ],
+  },
 ];
 
 function WhyRoutineModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
@@ -501,6 +621,7 @@ export default function LifestyleSleepRoutinePage() {
   const [routineIdx, setRoutineIdx] = useState(null);
   const [routine60Idx, setRoutine60Idx] = useState(null);
   const [routine10Idx, setRoutine10Idx] = useState(null);
+  const [stretchIdx, setStretchIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -643,13 +764,18 @@ export default function LifestyleSleepRoutinePage() {
         <p className="text-muted text-lg mb-6">Giãn cơ nhẹ 5–10 phút trước ngủ giảm căng cơ tích lũy, tăng thư giãn và cải thiện chất lượng giấc ngủ.</p>
         <div className="grid gap-3">
           {STRETCH_EXERCISES.map((ex, i) => (
-            <div key={i} className="flex items-center gap-4 p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
+            <div key={i}
+              className="flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${ex.rgb},0.05)`, border: `1px solid rgba(${ex.rgb},0.15)` }}
+              onClick={() => setStretchIdx(i)}>
               <span className="text-3xl shrink-0">{ex.icon}</span>
-              <div className="flex-1">
-                <div className="font-semibold text-text text-lg">{ex.name}</div>
-                <div className="text-base text-muted">{ex.muscles}</div>
+              <div className="flex-1 min-w-0">
+                <div className="font-semibold text-base" style={{ color: ex.color }}>{ex.name}</div>
+                <div className="text-sm text-muted">{ex.muscles}</div>
               </div>
-              <div className="text-base font-semibold tabular-nums text-right" style={{ color: COLOR }}>{ex.reps}</div>
+              <div className="text-sm font-semibold tabular-nums shrink-0" style={{ color: ex.color }}>{ex.reps}</div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: ex.color, background: `rgba(${ex.rgb},0.1)` }}>→</span>
             </div>
           ))}
         </div>
@@ -695,6 +821,20 @@ export default function LifestyleSleepRoutinePage() {
           onNext={() => setRoutineIdx(i => Math.min(WHY_ROUTINE.length - 1, i + 1))}
           hasPrev={routineIdx > 0}
           hasNext={routineIdx < WHY_ROUTINE.length - 1}
+        />
+      )}
+
+      {/* ── Stretch exercises modal ── */}
+      {stretchIdx !== null && (
+        <WhyRoutineModal
+          item={STRETCH_EXERCISES[stretchIdx]}
+          idx={stretchIdx}
+          total={STRETCH_EXERCISES.length}
+          onClose={() => setStretchIdx(null)}
+          onPrev={() => setStretchIdx(i => Math.max(0, i - 1))}
+          onNext={() => setStretchIdx(i => Math.min(STRETCH_EXERCISES.length - 1, i + 1))}
+          hasPrev={stretchIdx > 0}
+          hasNext={stretchIdx < STRETCH_EXERCISES.length - 1}
         />
       )}
 

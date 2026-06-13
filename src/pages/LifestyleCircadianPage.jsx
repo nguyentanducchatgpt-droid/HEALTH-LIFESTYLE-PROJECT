@@ -232,10 +232,102 @@ const LIGHT_RULES = [
 ];
 
 const CAFFEINE_GUIDE = [
-  { rule: 'Không uống khi vừa thức dậy', reason: 'Cortisol tự nhiên đã cao 6–8h. Caffeine lúc này ít tác dụng hơn và có thể gây lệ thuộc.', good: 'Uống sau 90–120 phút dậy (8–9h nếu dậy lúc 6h)' },
-  { rule: 'Không uống khi đói', reason: 'Caffeine khi dạ dày rỗng gây kích ứng axit và tim đập nhanh hơn.', good: 'Uống sau khi uống nước và ăn nhẹ có đạm' },
-  { rule: 'Tránh sau 14–15h', reason: 'Half-life caffeine ~5–6 giờ. Uống 15h → còn ½ lúc 21h → khó vào giấc.', good: 'Người nhạy cảm: cut-off sau 12–13h' },
-  { rule: 'Không dùng che lấp thiếu ngủ', reason: 'Caffeine không thay thế ngủ. Nó chỉ block cảm giác buồn ngủ, không phục hồi chức năng nhận thức.', good: 'Ngủ đủ + ít caffeine > ít ngủ + nhiều caffeine' },
+  {
+    rule: 'Không uống khi vừa thức dậy', icon: '⏰', level: 3,
+    time: 'Không uống khi vừa thức dậy', phase: 'Uống sau 90–120 phút dậy',
+    reason: 'Cortisol tự nhiên đã cao 6–8h. Caffeine lúc này ít tác dụng hơn và có thể gây lệ thuộc.',
+    good: 'Uống sau 90–120 phút dậy (8–9h nếu dậy lúc 6h)',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cortisol tự nhiên đạt đỉnh trong 30–60 phút đầu sau khi dậy. Uống cà phê ngay lúc này vừa lãng phí (cortisol đã làm công việc của caffeine), vừa dạy não rằng caffeine mới = tỉnh táo — nền của lệ thuộc.',
+    detail: 'Cơ chế lệ thuộc caffeine bắt đầu từ đây: khi bạn uống cà phê ngay sau dậy mỗi ngày, não giảm sản xuất cortisol tự nhiên buổi sáng và tăng receptor adenosine — dần dần bạn cần caffeine chỉ để cảm thấy "bình thường", không phải để tỉnh táo hơn.',
+    details: [
+      'Cortisol awakening response (CAR) tăng 50–100% trong 30–60 phút đầu sau dậy — đây là chất kích thích tự nhiên mạnh nhất mà não tự sản xuất mỗi sáng.',
+      'Caffeine hoạt động bằng cách block receptor adenosine (gây buồn ngủ). Khi cortisol cao, adenosine đã bị ức chế tự nhiên — caffeine lúc này có ít "chỗ" để tác động, hiệu quả giảm rõ.',
+      'Uống cà phê ngay sau dậy mỗi ngày khiến não giảm sản xuất cortisol buổi sáng theo thời gian — bạn cần caffeine chỉ để cảm thấy bình thường, không phải để tỉnh hơn.',
+      'Chờ 90–120 phút sau khi dậy (khi cortisol bắt đầu giảm) là lúc caffeine có hiệu quả cao nhất — bạn dùng ít hơn nhưng cảm thấy tác động mạnh hơn.',
+      'Trong 90 phút đầu: uống nước (250–500ml), ra ngoài lấy ánh sáng, ăn nhẹ có đạm — ba việc này giúp tỉnh táo không kém cà phê và không gây lệ thuộc.',
+      'Thử thách 14 ngày: không cà phê trước 9h — sau 2 tuần, phần lớn người báo cáo tỉnh táo buổi sáng tốt hơn và ít cần caffeine hơn trong ngày.',
+    ],
+    points: [
+      { icon: '📈', label: 'Cortisol đỉnh sáng sớm', note: 'Tự nhiên tăng 50–100% — làm công việc caffeine thay bạn' },
+      { icon: '⏳', label: 'Chờ 90–120 phút', note: 'Caffeine hiệu quả nhất khi cortisol bắt đầu giảm' },
+      { icon: '🔄', label: 'Tránh lệ thuộc', note: 'Uống sớm → não giảm cortisol → cần caffeine chỉ để "bình thường"' },
+      { icon: '💧', label: 'Thay bằng nước + ánh sáng', note: '250–500ml nước + 5 phút ngoài trời — tỉnh táo không lệ thuộc' },
+    ],
+  },
+  {
+    rule: 'Không uống khi đói', icon: '🫙', level: 3,
+    time: 'Không uống khi đói', phase: 'Uống sau khi ăn nhẹ có đạm',
+    reason: 'Caffeine khi dạ dày rỗng gây kích ứng axit và tim đập nhanh hơn.',
+    good: 'Uống sau khi uống nước và ăn nhẹ có đạm',
+    color: '#f43f5e', rgb: '244,63,94',
+    img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Caffeine khi dạ dày rỗng kích thích sản xuất axit dạ dày trực tiếp và làm tăng cortisol thêm — gây tim đập nhanh, lo lắng, kích ứng dạ dày và làm tăng cảm giác "cần caffeine" của não nhanh hơn.',
+    detail: 'Thức ăn (đặc biệt đạm) làm chậm hấp thụ caffeine vào máu — thay vì spike nhanh rồi crash, bạn có đường cong năng lượng đều và kéo dài hơn. Đây là lý do uống cà phê sau bữa sáng cho cảm giác tốt hơn và bền hơn uống trước.',
+    details: [
+      'Caffeine khi dạ dày rỗng được hấp thụ nhanh hơn 45% vào máu — tạo spike cortisol đột ngột và tăng axit dạ dày, gây kích ứng, buồn nôn nhẹ hoặc tim đập nhanh ở người nhạy cảm.',
+      'Thức ăn có đạm (trứng, sữa, các loại đậu) làm chậm hấp thụ caffeine — đường cong năng lượng đều hơn, không có crash đột ngột sau 2–3 tiếng.',
+      'Caffeine khi đói làm tăng cortisol thêm lên — nếu buổi sáng bạn đã căng thẳng, uống cà phê khi đói có thể đẩy cortisol lên mức gây lo lắng hoặc bồn chồn.',
+      'Uống nước trước khi uống cà phê (ít nhất 250ml): dehydration nhẹ sau ngủ đêm tăng cường tác động tiêu cực của caffeine khi dạ dày rỗng.',
+      'Nếu không thể ăn sáng: ít nhất uống 1 ly nước và ăn 1 nắm hạt hoặc 1 quả trứng luộc trước cà phê — đủ để giảm thiểu tác động tiêu cực.',
+      'Cà phê bulletproof (pha với bơ/dầu dừa) là giải pháp cho người ăn sáng muộn — chất béo làm chậm hấp thụ tương tự thức ăn, giảm spike cortisol.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Hấp thụ nhanh hơn 45%', note: 'Khi đói → spike đột ngột → lo lắng, tim đập nhanh' },
+      { icon: '🥚', label: 'Ăn đạm trước', note: 'Làm chậm hấp thụ — năng lượng đều và bền hơn' },
+      { icon: '💧', label: 'Nước trước tiên', note: '250ml nước sau ngủ dậy — giảm dehydration trước caffeine' },
+      { icon: '🥜', label: 'Tối thiểu: 1 nắm hạt', note: 'Đủ để giảm kích ứng nếu không ăn sáng được' },
+    ],
+  },
+  {
+    rule: 'Tránh sau 14–15h', icon: '🕒', level: 4,
+    time: 'Tránh sau 14–15h', phase: 'Người nhạy cảm: cut-off sau 12–13h',
+    reason: 'Half-life caffeine ~5–6 giờ. Uống 15h → còn ½ lúc 21h → khó vào giấc.',
+    good: 'Người nhạy cảm: cut-off sau 12–13h',
+    color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Half-life caffeine là 5–6 giờ — uống 1 ly cà phê lúc 15h, còn ½ lượng caffeine trong máu lúc 21h khi bạn cần vào giấc. Không phải caffeine làm bạn "tỉnh", nó block adenosine — adenosine vẫn tích lũy nhưng bị che khuất, gây sleep debt ẩn.',
+    detail: 'Nhiều người uống cà phê buổi chiều và vẫn ngủ được — nhưng ngủ không sâu. Caffeine còn trong máu làm giảm ngủ sóng chậm (slow-wave sleep / N3) tới 20% ngay cả khi bạn ngủ đủ giờ. Bạn ngủ đủ số giờ nhưng không phục hồi đủ.',
+    details: [
+      'Half-life caffeine trung bình là 5–6 giờ, nhưng dao động 3–9 giờ tùy gen CYP1A2 — 50% dân số là "slow metabolizers" cần thêm 2–3 giờ để thải hoàn toàn.',
+      'Uống 200mg caffeine (1 ly cà phê lớn) lúc 15h → còn 100mg lúc 21h → 50mg lúc 3h sáng — tương đương ½ ly espresso đang trong máu khi bạn ngủ.',
+      'Caffeine giảm ngủ sóng chậm (deep sleep N3) tới 20% ngay cả khi bạn ngủ đủ 7–8 tiếng — bạn ngủ đủ giờ nhưng không phục hồi đủ, thức dậy vẫn mệt.',
+      'Adenosine tích lũy suốt ngày nhưng bị caffeine block — khi caffeine hết tác dụng lúc đêm, adenosine "tràn" vào đột ngột, gây cảm giác kiệt sức buổi chiều muộn.',
+      'Test cá nhân: thử cut-off sau 13h trong 1 tuần và ghi nhận chất lượng ngủ. Nếu cải thiện rõ rệt, bạn là slow metabolizer — cần cut-off sớm hơn.',
+      'Thay thế sau 14h: green tea (ít caffeine hơn ~30mg, có L-theanine làm mượt tác dụng), nước uống mát, đi bộ ngắn — đủ phá post-lunch dip mà không ảnh hưởng ngủ.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Half-life 5–6 giờ', note: '15h → còn ½ lúc 21h — đang trong máu khi vào giấc' },
+      { icon: '😴', label: 'Giảm ngủ sâu 20%', note: 'Dù ngủ đủ giờ — không phục hồi đủ, dậy vẫn mệt' },
+      { icon: '🧬', label: 'Gen CYP1A2 quan trọng', note: '50% người chuyển hóa chậm — cần cut-off trước 13h' },
+      { icon: '🍵', label: 'Thay bằng green tea', note: '~30mg + L-theanine — nhẹ nhàng hơn, không phá giấc ngủ' },
+    ],
+  },
+  {
+    rule: 'Không dùng che lấp thiếu ngủ', icon: '🚫', level: 2,
+    time: 'Không dùng che lấp thiếu ngủ', phase: 'Ngủ đủ + ít caffeine > ít ngủ + nhiều caffeine',
+    reason: 'Caffeine không thay thế ngủ. Nó chỉ block cảm giác buồn ngủ, không phục hồi chức năng nhận thức.',
+    good: 'Ngủ đủ + ít caffeine > ít ngủ + nhiều caffeine',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Caffeine block adenosine receptor — che khuất cảm giác mệt nhưng KHÔNG phục hồi hiệu suất nhận thức. Người thiếu ngủ + nhiều caffeine vẫn ra quyết định tệ như người say rượu, nhưng không cảm thấy như vậy. Đây là "ảo giác tỉnh táo" nguy hiểm nhất.',
+    detail: 'Nghiên cứu của Matthew Walker (Why We Sleep) và các nhóm tại Harvard chỉ ra rằng caffeine có thể che lấp cảm giác buồn ngủ chủ quan nhưng không cải thiện được tốc độ phản ứng, trí nhớ làm việc, hay khả năng ra quyết định của người thiếu ngủ — các chức năng này chỉ phục hồi được bằng ngủ thật sự.',
+    details: [
+      'Caffeine block adenosine receptor nhưng adenosine vẫn tiếp tục tích lũy đằng sau — khi caffeine hết, toàn bộ adenosine tràn vào cùng lúc, gây "crash" mạnh hơn bình thường.',
+      'Người thiếu ngủ mãn tính (< 6h/đêm) tích lũy "sleep debt" không thể trả bằng caffeine — não mất khả năng nhận ra chính xác mức độ mệt mỏi của mình (mất calibration).',
+      'Ngủ đủ + 1 ly cà phê sáng > ngủ thiếu + 3–4 ly cà phê/ngày — về mọi thước đo: năng suất, trí nhớ, quyết định, sức khỏe dài hạn.',
+      'Caffeine không phục hồi: trí nhớ consolidation (chỉ xảy ra khi ngủ sâu N3), emotional regulation (REM sleep), motor learning, immune function.',
+      '"Caffeine nap" là ngoại lệ hợp lý duy nhất: uống cà phê → ngủ 20 phút ngay → caffeine hấp thụ đúng lúc bạn dậy = tỉnh táo thật sự trong 2–3 tiếng.',
+      'Dấu hiệu bạn đang dùng caffeine che lấp thiếu ngủ: cần >3 ly/ngày để cảm thấy bình thường, không thể hoạt động sáng hôm sau mà không có cà phê, ngủ ngay khi ngồi yên.',
+    ],
+    points: [
+      { icon: '🎭', label: 'Ảo giác tỉnh táo', note: 'Block cảm giác mệt nhưng không phục hồi hiệu suất thật' },
+      { icon: '🧠', label: 'Ngủ không thể thay thế', note: 'Trí nhớ, cảm xúc, motor learning chỉ phục hồi khi ngủ' },
+      { icon: '💥', label: 'Crash kép sau đó', note: 'Adenosine tích lũy → tràn vào khi caffeine hết → crash mạnh hơn' },
+      { icon: '💤', label: 'Caffeine nap hợp lệ', note: 'Uống → ngủ 20 phút ngay → caffeine hấp thụ đúng lúc dậy' },
+    ],
+  },
 ];
 
 function EnergyModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
@@ -350,6 +442,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function LifestyleCircadianPage() {
   const [energyIdx, setEnergyIdx] = useState(null);
   const [lightIdx, setLightIdx] = useState(null);
+  const [caffeineIdx, setCaffeineIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -469,14 +562,20 @@ export default function LifestyleCircadianPage() {
         <p className="text-muted text-lg mb-6">Dùng caffeine như công cụ, không phải phao cứu sinh. Biết khi nào dùng và khi nào không.</p>
         <div className="space-y-4">
           {CAFFEINE_GUIDE.map((g, i) => (
-            <div key={i} className="p-4 rounded-xl border" style={{ borderColor: `rgba(${RGB},0.12)`, background: `rgba(${RGB},0.04)` }}>
+            <div key={i}
+              className="p-4 rounded-xl border cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ borderColor: `rgba(${g.rgb},0.2)`, background: `rgba(${g.rgb},0.05)` }}
+              onClick={() => setCaffeineIdx(i)}>
               <div className="font-semibold text-text text-lg mb-1 flex items-center gap-2">
-                <span className="text-red-400">✗</span>{g.rule}
+                <span className="text-red-400">✗</span>
+                <span className="flex-1">{g.rule}</span>
+                <span className="text-xs font-bold px-2 py-1 rounded-lg opacity-60 shrink-0"
+                  style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>Chi tiết →</span>
               </div>
               <p className="text-muted text-base mb-2 leading-relaxed">{g.reason}</p>
               <div className="flex items-start gap-2 text-base">
-                <span style={{ color: COLOR }} className="shrink-0">✓</span>
-                <span className="font-semibold" style={{ color: COLOR }}>{g.good}</span>
+                <span style={{ color: g.color }} className="shrink-0">✓</span>
+                <span className="font-semibold" style={{ color: g.color }}>{g.good}</span>
               </div>
             </div>
           ))}
@@ -535,6 +634,19 @@ export default function LifestyleCircadianPage() {
         <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Routine Trước Ngủ</Link>
         <Link to="/pillar/c/morning" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Sáng →</Link>
       </div>
+
+      {/* ── Caffeine guide modal ── */}
+      {caffeineIdx !== null && (
+        <EnergyModal
+          item={CAFFEINE_GUIDE[caffeineIdx]}
+          idx={caffeineIdx}
+          onClose={() => setCaffeineIdx(null)}
+          onPrev={() => setCaffeineIdx(i => Math.max(0, i - 1))}
+          onNext={() => setCaffeineIdx(i => Math.min(CAFFEINE_GUIDE.length - 1, i + 1))}
+          hasPrev={caffeineIdx > 0}
+          hasNext={caffeineIdx < CAFFEINE_GUIDE.length - 1}
+        />
+      )}
 
       {/* ── Light rules modal ── */}
       {lightIdx !== null && (

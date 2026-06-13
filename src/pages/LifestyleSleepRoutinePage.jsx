@@ -177,12 +177,144 @@ const ROUTINE_60 = [
 ];
 
 const ROUTINE_10 = [
-  { step: 1, action: 'Tắt màn hình và đặt điện thoại ra xa', duration: '1 phút' },
-  { step: 2, action: 'Giãn cổ vai gáy nhẹ (xoay đầu, shoulder roll)', duration: '2 phút' },
-  { step: 3, action: 'Child pose + vươn người (kéo căng lưng)', duration: '2 phút' },
-  { step: 4, action: 'Thở chậm: hít 4 giây, thở 6 giây × 5–6 vòng', duration: '2 phút' },
-  { step: 5, action: 'Viết 1 dòng: "Việc quan trọng nhất ngày mai là..."', duration: '1 phút' },
-  { step: 6, action: 'Lên giường, nhắm mắt, tiếp tục thở chậm', duration: '2 phút' },
+  {
+    step: 1, duration: '1 phút', icon: '📵',
+    action: 'Tắt màn hình và đặt điện thoại ra xa',
+    label: 'Tắt màn hình & đặt điện thoại ra xa',
+    color: '#f43f5e', rgb: '244,63,94',
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đặt điện thoại ra ngoài tầm tay (không chỉ úp mặt xuống) loại bỏ hoàn toàn lực kéo tâm lý — não ngừng "chờ thông báo" và bắt đầu thư giãn thực sự.',
+    detail: 'Hành động vật lý đơn giản nhất nhưng có tác động lớn nhất trong routine 10 phút. Điện thoại trong tầm tay tạo ra "kéo nhận thức" liên tục — não dành một phần năng lực để theo dõi thiết bị, ngay cả khi màn hình tắt. Bước 1 này đặt ranh giới cứng cho toàn bộ routine.',
+    details: [
+      'Đặt điện thoại vào ngăn kéo, để ngoài cửa phòng, hoặc sạc ở phòng khác — xa tầm tay là tiêu chuẩn, không phải úp mặt xuống.',
+      'Nghiên cứu University of Texas (2017): điện thoại trên bàn — dù màn hình tắt — làm giảm khả năng nhận thức đáng kể do "brain drain" hiệu ứng.',
+      'Bật chế độ "Không làm phiền" trước khi đặt đi: loại bỏ cả âm thanh và rung — não không còn lý do để "vẫn nghe ngóng".',
+      'Thay thế bằng đồng hồ báo thức thông thường nếu lo quên báo thức — đây là lý do phổ biến nhất giữ điện thoại trong phòng ngủ.',
+      'Nếu cần điện thoại cho âm thanh (podcast/nhạc): bật trước, đặt màn hình úp và xa — không để trong tầm với khi nằm xuống.',
+      'Sau 7–14 ngày làm quen, hành động đặt điện thoại ra xa trở thành tín hiệu Pavlov "bắt đầu routine ngủ" — cơ thể tự nhiên chuyển sang chế độ thư giãn.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Brain drain effect', note: 'Điện thoại trên bàn → giảm khả năng nhận thức' },
+      { icon: '🔇', label: 'Bật "Không làm phiền"', note: 'Loại bỏ cả âm thanh + rung — não ngừng ngóng đợi' },
+      { icon: '⏰', label: 'Dùng đồng hồ thường', note: 'Loại bỏ lý do số 1 giữ điện thoại trong phòng ngủ' },
+      { icon: '🔔', label: 'Tín hiệu Pavlov', note: 'Sau 7–14 ngày → hành động này = báo hiệu ngủ tự động' },
+    ],
+  },
+  {
+    step: 2, duration: '2 phút', icon: '💫',
+    action: 'Giãn cổ vai gáy nhẹ (xoay đầu, shoulder roll)',
+    label: 'Giãn cổ vai gáy nhẹ',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cơ cổ vai gáy là vùng tích lũy căng thẳng nhiều nhất sau ngày làm việc với màn hình. Chỉ 2 phút xoay và thả nhẹ giải phóng co cứng, kích hoạt hệ thần kinh phó giao cảm và báo hiệu cơ thể "an toàn để nghỉ ngơi".',
+    detail: 'Sau 8–10 tiếng nhìn màn hình, cơ cổ và vai gáy duy trì co cứng isometric (co mà không chuyển động) liên tục. Đây là nguồn cortisol và căng thẳng tích lũy lớn nhất trong cơ thể. Giãn nhẹ 2 phút không cần chuyên sâu — chỉ cần đủ để gửi tín hiệu "thả ra" lên não.',
+    details: [
+      'Chin tuck (gập cằm vào): giữ 3–5 giây × 5 lần — giải phóng cơ dưới chẩm (suboccipital muscles) thường căng nhất khi nhìn màn hình.',
+      'Xoay đầu chậm: trái 5 giây → trung tâm → phải 5 giây → lặp lại 3–4 lần. Không giật mạnh — giữ chậm và thở ra khi xoay.',
+      'Shoulder roll: 5 vòng ra trước, 5 vòng ra sau — vai nâng lên tai khi hít vào, thả xuống khi thở ra.',
+      'Ear-to-shoulder stretch: nghiêng đầu sang phải, giữ 20–30 giây (tay phải nhẹ nhàng kéo thêm), lặp lại bên trái.',
+      'Không làm khi có chấn thương cổ cấp tính — chỉ xoay trong phạm vi thoải mái, không cố ép qua điểm đau.',
+      'Kết hợp thở chậm trong khi giãn: thở ra khi xoay ra ngoài, hít vào khi trở về trung tâm — tăng hiệu quả thư giãn cơ-thần kinh.',
+    ],
+    points: [
+      { icon: '🖥️', label: 'Isometric tension', note: '8–10h màn hình = cổ co cứng liên tục mà không biết' },
+      { icon: '🔄', label: 'Chin tuck × 5', note: 'Giải phóng suboccipital — nhóm cơ căng nhất' },
+      { icon: '💫', label: 'Shoulder roll × 10', note: 'Ra trước 5 + ra sau 5 — thả vai xuống khi thở ra' },
+      { icon: '🌬️', label: 'Thở đồng bộ', note: 'Thở ra khi xoay ra ngoài — tăng hiệu quả thư giãn' },
+    ],
+  },
+  {
+    step: 3, duration: '2 phút', icon: '🧘',
+    action: 'Child pose + vươn người (kéo căng lưng)',
+    label: 'Child pose + vươn người',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Child pose (tư thế em bé) là một trong số ít tư thế yoga được chứng minh kích hoạt hệ phó giao cảm (rest-and-digest) trong vòng 60–90 giây — gập người về trước làm chậm nhịp tim và hạ huyết áp.',
+    detail: 'Child pose kết hợp 3 tác động cùng lúc: kéo căng lưng dưới và hông (vùng tích lũy căng thẳng thứ 2 sau cổ vai), kích thích áp suất nhẹ vào bụng giúp kích hoạt dây thần kinh phế vị, và tư thế cúi đầu tạo phản xạ làm chậm nhịp tim. Đây là lý do nhiều người tự nhiên cảm thấy buồn ngủ sau tư thế này.',
+    details: [
+      'Child pose: quỳ gối, ngồi xuống gót chân, cúi người về trước, hai tay duỗi thẳng — giữ 60–90 giây, thở chậm và đều.',
+      'Áp lực nhẹ lên bụng trong child pose kích thích vagus nerve qua cơ chế baroreceptor — làm chậm nhịp tim trong 30–60 giây.',
+      'Vươn người (cat-cow stretch): 4 điểm chống (tay và gối), cong lưng lên hít vào, võng lưng xuống thở ra — lặp 5–6 lần chậm rãi.',
+      'Thoracic extension: ngồi trên gót chân, hai tay đan sau đầu, ngửa người ra sau nhẹ — 15–20 giây, mở ngực sau ngày co cụm.',
+      'Nếu không quen: đơn giản nhất là nằm ngửa, co gối vào ngực và giữ 1 phút — hiệu quả tương tự, không cần điều kiện linh hoạt.',
+      'Kết thúc bằng ngồi thẳng lưng, tay đặt lên đùi, mắt nhắm 10 giây — chuyển nhịp sang bước thở chậm tiếp theo.',
+    ],
+    points: [
+      { icon: '🧘', label: 'Child pose 60–90 giây', note: 'Kích hoạt phó giao cảm — nhịp tim chậm lại' },
+      { icon: '⚡', label: 'Vagus nerve qua bụng', note: 'Áp lực nhẹ → baroreceptor → tim chậm hơn' },
+      { icon: '🐱', label: 'Cat-cow × 5–6 lần', note: 'Đồng bộ thở với cử động — kéo căng cột sống' },
+      { icon: '🛋️', label: 'Thay thế dễ hơn', note: 'Nằm ngửa co gối vào ngực 1 phút — hiệu quả tương tự' },
+    ],
+  },
+  {
+    step: 4, duration: '2 phút', icon: '🌬️',
+    action: 'Thở chậm: hít 4 giây, thở 6 giây × 5–6 vòng',
+    label: 'Thở chậm cơ hoành 4–6',
+    color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1474418397713-003ec9f4dafd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hít 4 giây – thở ra 6 giây tạo ra tỉ lệ I:E = 1:1.5 — ngưỡng tối thiểu để kích hoạt phó giao cảm. Chỉ 5–6 vòng thở (khoảng 50–60 giây) đủ để nhịp tim chậm lại và cortisol giảm đáng kể.',
+    detail: 'Thở là công cụ duy nhất có thể can thiệp trực tiếp vào hệ thần kinh tự chủ theo ý chí. Thở ra dài hơn thở vào = kích hoạt hệ phó giao cảm. Tỉ lệ 4:6 là đơn giản nhất cho người mới — dễ đếm, dễ nhớ, và đủ hiệu quả trong routine 10 phút.',
+    details: [
+      'Hít vào 4 giây qua mũi, bụng phồng ra (thở cơ hoành, không phải ngực) — thở ra 6 giây qua miệng hoặc mũi, bụng xẹp xuống từ từ.',
+      'Thở cơ hoành: đặt tay lên bụng để kiểm tra — bụng phải phồng ra khi hít vào. Nếu ngực phồng, thở chưa đúng cơ hoành.',
+      'I:E ratio 1:1.5 (4:6) là ngưỡng tối thiểu kích hoạt phó giao cảm — tỉ lệ 1:2 (4:8) mạnh hơn nhưng khó hơn cho người mới.',
+      '5–6 vòng thở đủ thay đổi HRV (Heart Rate Variability) đáng kể — chỉ số đo độ cân bằng hệ thần kinh tự chủ.',
+      'Đếm nhẩm hoặc dùng ngón tay để đếm giây — không cần app hay timer, giữ não ở mức kích thích tối thiểu.',
+      'Nếu 4:6 quá dễ sau vài ngày: thử 4:8 hoặc 4-4-8 (hít 4, giữ 4, thở 8) — tăng dần tỉ lệ thở ra để kích hoạt phó giao cảm mạnh hơn.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Bụng phồng khi hít', note: 'Thở cơ hoành — không phải ngực phồng' },
+      { icon: '⚖️', label: 'Tỉ lệ 4:6 (I:E 1:1.5)', note: 'Ngưỡng tối thiểu kích hoạt phó giao cảm' },
+      { icon: '❤️', label: 'HRV tăng sau 5–6 vòng', note: 'Hệ thần kinh tự chủ cân bằng — ngủ sâu hơn' },
+      { icon: '📈', label: 'Nâng dần lên 4:8', note: 'Sau quen với 4:6 — tăng thở ra dài hơn' },
+    ],
+  },
+  {
+    step: 5, duration: '1 phút', icon: '✍️',
+    action: 'Viết 1 dòng: "Việc quan trọng nhất ngày mai là..."',
+    label: 'Viết task quan trọng nhất ngày mai',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Viết ra 1 task quan trọng nhất ngày mai "offload" não khỏi nhiệm vụ ghi nhớ — nghiên cứu Baylor University (2018): viết to-do list trước ngủ giúp vào giấc nhanh hơn 9 phút so với viết nhật ký về ngày đã qua.',
+    detail: 'Não liên tục "rehearse" các task chưa hoàn thành khi ngủ (Zeigarnik effect) — đây là nguyên nhân chính của mind chatter khi nằm xuống. Viết ra giải phóng não khỏi nhiệm vụ "đừng quên" — não có thể thực sự tắt máy thay vì chạy nền.',
+    details: [
+      'Zeigarnik effect: não ưu tiên ghi nhớ và rehearse các task chưa hoàn thành — viết ra "đóng vòng lặp" và cho phép não buông bỏ.',
+      'Chỉ viết 1 task — không phải danh sách dài. Một task cụ thể, có thể hành động được, cho ngày mai. Không cần hoàn chỉnh.',
+      'Baylor University (2018): viết to-do list cụ thể cho ngày mai (không phải journal về hôm nay) giúp vào giấc nhanh hơn 9 phút.',
+      'To-do list càng cụ thể càng tốt: "Gọi điện cho A lúc 9h" tốt hơn "xử lý công việc" — não cần sự rõ ràng để "đóng tab".',
+      'Dùng sổ tay giấy và bút — không phải app điện thoại. Hành động vật lý viết tay kích hoạt vùng não khác, có hiệu quả "đóng cửa ngày" mạnh hơn.',
+      'Tùy chọn: thêm 1 dòng nhanh về điều tốt nhất trong ngày hôm nay — kết hợp gratitude nhẹ để chuyển não sang cảm xúc tích cực trước ngủ.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Zeigarnik effect', note: 'Não rehearse task chưa xong — viết ra để buông bỏ' },
+      { icon: '📝', label: 'Chỉ 1 task cụ thể', note: 'Có thể hành động được — không phải danh sách chung' },
+      { icon: '⏱️', label: 'Vào giấc nhanh hơn 9 phút', note: 'Baylor 2018 — to-do list > journal về ngày đã qua' },
+      { icon: '📓', label: 'Sổ giấy + bút', note: 'Không phải app — hành động vật lý "đóng cửa ngày"' },
+    ],
+  },
+  {
+    step: 6, duration: '2 phút', icon: '😴',
+    action: 'Lên giường, nhắm mắt, tiếp tục thở chậm',
+    label: 'Lên giường, nhắm mắt, thở chậm',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Lên giường sau khi đã hoàn thành 5 bước trước = não nhận tín hiệu "tất cả đã xong, đến giờ ngủ". Tiếp tục thở chậm 2 phút cuối này củng cố phó giao cảm và đóng vòng conditioning toàn bộ routine.',
+    detail: 'Bước 6 là bước chuyển tiếp từ routine sang ngủ thực sự. Thở chậm tiếp tục duy trì trạng thái phó giao cảm đã xây dựng từ bước 4 — không để não "bật lại" bằng cách nằm xuống và bắt đầu nghĩ. Mắt nhắm + thở chậm + giường = 3 tín hiệu ngủ đồng thời.',
+    details: [
+      'Lên giường ngay sau bước 5 — không dừng lại kiểm tra điện thoại, không mở TV, không làm thêm bất kỳ điều gì ngoài routine.',
+      'Tiếp tục thở 4:6 (hít 4, thở 6) thêm 5–8 vòng — duy trì trạng thái phó giao cảm mà bước 4 đã tạo ra.',
+      'Nếu có suy nghĩ xuất hiện: nhận biết ("ah, tôi đang nghĩ về X"), không phán xét, nhẹ nhàng đưa sự chú ý về hơi thở.',
+      'Body scan nhẹ: từ bàn chân lên đầu, để ý xem vùng nào còn căng, thở ra và "thả" vùng đó — không ép, chỉ quan sát và thả.',
+      'Không nhìn đồng hồ: kiểm tra giờ kích hoạt lo lắng → cortisol → khó ngủ hơn. Tin tưởng vào routine — thả ra và để cơ thể làm việc.',
+      'Sau 14–21 ngày lặp lại đủ 6 bước, cơ thể sẽ bắt đầu cảm thấy buồn ngủ ngay từ bước 1 — đây là dấu hiệu conditioning thành công.',
+    ],
+    points: [
+      { icon: '🛏️', label: 'Giường = chỉ ngủ', note: 'Stimulus control — không làm gì khác sau khi lên giường' },
+      { icon: '🌬️', label: 'Thêm 5–8 vòng thở', note: 'Duy trì phó giao cảm từ bước 4 — không để gián đoạn' },
+      { icon: '🧘', label: 'Body scan nhẹ', note: 'Quan sát → thả từng vùng căng — từ chân lên đầu' },
+      { icon: '🔔', label: 'Tín hiệu conditioning', note: 'Sau 14–21 ngày → buồn ngủ ngay từ bước 1' },
+    ],
+  },
 ];
 
 const WHY_ROUTINE = [
@@ -368,6 +500,7 @@ export default function LifestyleSleepRoutinePage() {
   const [mode, setMode] = useState('60');
   const [routineIdx, setRoutineIdx] = useState(null);
   const [routine60Idx, setRoutine60Idx] = useState(null);
+  const [routine10Idx, setRoutine10Idx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -469,13 +602,18 @@ export default function LifestyleSleepRoutinePage() {
         {mode === '10' ? (
           <div className="space-y-3">
             {ROUTINE_10.map((row, i) => (
-              <div key={i} className="flex gap-4 items-center p-3 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-                <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-lg font-bold"
-                  style={{ background: COLOR, color: 'black' }}>{row.step}</div>
-                <div className="flex-1">
-                  <div className="text-lg font-semibold text-text">{row.action}</div>
+              <div key={i}
+                className="flex gap-4 items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+                style={{ background: `rgba(${row.rgb},0.05)`, border: `1px solid rgba(${row.rgb},0.15)` }}
+                onClick={() => setRoutine10Idx(i)}>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold"
+                  style={{ background: row.color, color: 'black' }}>{row.step}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-base font-semibold" style={{ color: row.color }}>{row.action}</div>
                 </div>
-                <div className="text-base font-semibold tabular-nums shrink-0" style={{ color: COLOR }}>{row.duration}</div>
+                <div className="text-sm font-semibold tabular-nums shrink-0" style={{ color: row.color }}>{row.duration}</div>
+                <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                  style={{ color: row.color, background: `rgba(${row.rgb},0.1)` }}>→</span>
               </div>
             ))}
           </div>
@@ -557,6 +695,20 @@ export default function LifestyleSleepRoutinePage() {
           onNext={() => setRoutineIdx(i => Math.min(WHY_ROUTINE.length - 1, i + 1))}
           hasPrev={routineIdx > 0}
           hasNext={routineIdx < WHY_ROUTINE.length - 1}
+        />
+      )}
+
+      {/* ── Routine 10 timeline modal ── */}
+      {routine10Idx !== null && (
+        <WhyRoutineModal
+          item={ROUTINE_10[routine10Idx]}
+          idx={routine10Idx}
+          total={ROUTINE_10.length}
+          onClose={() => setRoutine10Idx(null)}
+          onPrev={() => setRoutine10Idx(i => Math.max(0, i - 1))}
+          onNext={() => setRoutine10Idx(i => Math.min(ROUTINE_10.length - 1, i + 1))}
+          hasPrev={routine10Idx > 0}
+          hasNext={routine10Idx < ROUTINE_10.length - 1}
         />
       )}
 

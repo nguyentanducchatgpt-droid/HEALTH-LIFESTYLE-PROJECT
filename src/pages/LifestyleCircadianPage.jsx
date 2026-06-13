@@ -141,10 +141,94 @@ const ENERGY_MAP = [
 ];
 
 const LIGHT_RULES = [
-  { time: 'Sáng 6–10h', action: 'Tăng ánh sáng tự nhiên', tip: 'Ra ngoài 5–10 phút hoặc ngồi gần cửa sổ. Ánh nắng trực tiếp mạnh gấp 100 lần ánh đèn trong nhà.', icon: '☀️' },
-  { time: 'Chiều 14–17h', action: 'Duy trì ánh sáng đủ', tip: 'Tránh phòng tối hoàn toàn. Ánh sáng giúp tránh tụt năng lượng buổi chiều.', icon: '🌤️' },
-  { time: 'Tối 20–22h', action: 'Giảm ánh sáng mạnh', tip: 'Dùng đèn ấm, giảm độ sáng màn hình. Night Mode trên thiết bị từ 20h.', icon: '🌅' },
-  { time: 'Đêm 22h+', action: 'Giữ tối', tip: 'Phòng ngủ tối hoàn toàn. Ngay cả đèn báo nhỏ cũng có thể ảnh hưởng chất lượng ngủ sâu.', icon: '🌙' },
+  {
+    time: 'Sáng 6–10h', phase: 'Tăng ánh sáng tự nhiên', icon: '☀️', level: 5,
+    tip: 'Ra ngoài 5–10 phút hoặc ngồi gần cửa sổ. Ánh nắng trực tiếp mạnh gấp 100 lần ánh đèn trong nhà.',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1464823063530-08f10ed1a2dd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ánh sáng buổi sáng là tín hiệu quan trọng nhất để đặt lại đồng hồ sinh học 24h. Chỉ cần 5–10 phút ra ngoài lúc 6–9h mạnh gấp 100 lần ánh đèn trong nhà — và không thể thay thế bằng đèn nhân tạo.',
+    detail: 'Tế bào ipRGC (intrinsically photosensitive retinal ganglion cells) trong võng mạc nhạy cảm đặc biệt với ánh sáng xanh ban ngày. Chúng gửi tín hiệu trực tiếp đến SCN (suprachiasmatic nucleus) — "đồng hồ chủ" của cơ thể — để đặt lại nhịp sinh học mỗi sáng.',
+    details: [
+      'Ánh sáng mặt trời buổi sáng chứa 10.000–100.000 lux, trong khi đèn LED trong nhà chỉ cho 100–500 lux — chênh lệch này lý giải tại sao ngồi gần cửa sổ không đủ hiệu quả bằng ra ngoài trực tiếp.',
+      'Chỉ cần 5–10 phút tiếp xúc ánh sáng trực tiếp buổi sáng (không cần nhìn thẳng vào mặt trời) đủ để kích hoạt tín hiệu đặt lại đồng hồ sinh học.',
+      'Ánh sáng sáng sớm tăng cortisol awakening response (CAR) — giúp bạn tỉnh táo nhanh hơn mà không cần caffeine ngay khi dậy.',
+      'Lợi ích dài hạn: giờ ngủ ổn định hơn, dễ dậy đúng giờ hơn, ít cảm giác "lag" buổi sáng — đặc biệt rõ ràng sau 7–14 ngày áp dụng liên tục.',
+      'Ngày흐u/mưa: ánh sáng ngoài trời vẫn mạnh hơn trong nhà (khoảng 1.000–5.000 lux ngay cả ngày흐u) — vẫn nên ra ngoài, thêm 5–10 phút so với ngày nắng.',
+      'Kết hợp: đi bộ sáng sớm = ánh sáng tự nhiên + vận động nhẹ + không khí tươi — ba lợi ích circadian trong một hoạt động.',
+    ],
+    points: [
+      { icon: '🌞', label: '10.000+ lux ngoài trời', note: 'Gấp 100 lần đèn nhà — không thể thay thế' },
+      { icon: '⏱️', label: 'Chỉ cần 5–10 phút', note: 'Đủ để đặt lại đồng hồ sinh học mỗi sáng' },
+      { icon: '⚡', label: 'Tăng cortisol sáng', note: 'Tỉnh táo tự nhiên, không cần caffeine ngay khi dậy' },
+      { icon: '🌧️', label: 'Cả ngày흐u vẫn hiệu quả', note: '1.000–5.000 lux ngày흐u — vẫn hơn trong nhà nhiều' },
+    ],
+  },
+  {
+    time: 'Chiều 14–17h', phase: 'Duy trì ánh sáng đủ', icon: '🌤️', level: 4,
+    tip: 'Tránh phòng tối hoàn toàn. Ánh sáng giúp tránh tụt năng lượng buổi chiều.',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ánh sáng buổi chiều giúp "neo" giai đoạn thức muộn của đồng hồ sinh học — đặc biệt quan trọng với người làm việc trong phòng tối suốt ngày. Thiếu ánh sáng chiều đẩy nhanh quá trình tiết melatonin, khiến bạn buồn ngủ sớm hơn bình thường.',
+    detail: 'Nghiên cứu của Stanford (Andrew Huberman Lab) chỉ ra rằng việc tiếp xúc ánh sáng buổi chiều (14–17h) giúp cơ thể dự đoán thời điểm "tối thực sự" và điều chỉnh melatonin chính xác hơn — kết quả là ngủ ngon hơn vào đúng giờ bạn muốn.',
+    details: [
+      'Ánh sáng chiều giúp phân biệt "chiều muộn" với "tối" — không có tín hiệu này, cơ thể có thể bắt đầu tiết melatonin sớm hơn 1–2 tiếng.',
+      'Người làm văn phòng không có cửa sổ: đi bộ ra ngoài 10 phút lúc 15–16h là thói quen đơn giản có tác động circadian đáng kể.',
+      'Ánh sáng chiều ở mức 500–2.000 lux đủ hiệu quả — không cần ánh nắng trực tiếp như buổi sáng, ánh sáng tán xạ ngoài trời hoặc đèn sáng trong phòng cũng được.',
+      'Tránh "phòng tối hoàn toàn" buổi chiều: phòng tối kích thích não nhận tín hiệu "sắp tối" sớm, làm tụt năng lượng và gây buồn ngủ sớm hơn mong muốn.',
+      'Kết hợp với second wind (15–17h): ra ngoài 10 phút lúc 15h vừa nạp ánh sáng circadian vừa phá vỡ post-lunch dip và tận dụng đỉnh năng lượng buổi chiều.',
+      'Mùa đông/ngày ngắn: ánh sáng chiều càng quan trọng hơn vì mặt trời xuống sớm — cân nhắc đèn light therapy 5.000–10.000 lux nếu ít tiếp xúc ánh sáng tự nhiên.',
+    ],
+    points: [
+      { icon: '🔆', label: '500–2.000 lux đủ hiệu quả', note: 'Ánh sáng tán xạ ngoài trời hoặc đèn sáng trong nhà' },
+      { icon: '🚶', label: 'Đi bộ 10 phút lúc 15h', note: 'Nạp ánh sáng + phá post-lunch dip + second wind' },
+      { icon: '🏢', label: 'Tránh phòng tối cả chiều', note: 'Não nhận tín hiệu "tối" sớm → melatonin sớm hơn' },
+      { icon: '❄️', label: 'Mùa đông cần nhiều hơn', note: 'Ngày ngắn → cân nhắc light therapy 5.000–10.000 lux' },
+    ],
+  },
+  {
+    time: 'Tối 20–22h', phase: 'Giảm ánh sáng mạnh', icon: '🌅', level: 2,
+    tip: 'Dùng đèn ấm, giảm độ sáng màn hình. Night Mode trên thiết bị từ 20h.',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giảm ánh sáng xuống <50 lux (tương đương ánh nến) từ 20h giúp tuyến tùng bắt đầu tiết melatonin — cơ thể không phân biệt được "đèn LED trắng ban đêm" và "ban ngày". Đây là 2 tiếng quan trọng nhất để chuẩn bị cho giấc ngủ sâu.',
+    detail: 'Hệ thống thị giác của con người tiến hóa trong môi trường lửa trại và ánh trăng buổi tối — ánh sáng ấm, yếu và không có ánh sáng xanh. Đèn LED hiện đại (đặc biệt ánh sáng trắng 5.000K+) hoàn toàn đảo lộn tín hiệu sinh học này.',
+    details: [
+      'Melanopsin trong tế bào võng mạc nhạy nhất với ánh sáng 480nm (xanh lam) — chính xác là bước sóng phổ biến nhất trong đèn LED trắng và màn hình thiết bị hiện đại.',
+      'Ngưỡng <50 lux (tương đương ánh nến) là mức tối thiểu để tuyến tùng bắt đầu tiết melatonin — đèn phòng thông thường thường ở mức 200–500 lux, vượt ngưỡng hoàn toàn.',
+      'Đèn ngủ ấm 2.700–3.000K (màu vàng/cam) chứa ít ánh sáng 480nm hơn đèn trắng ban ngày (5.000–6.500K) — thay thế thực tế và hiệu quả nhất.',
+      'Night Mode / True Tone trên điện thoại và laptop giảm ánh sáng xanh nhưng KHÔNG loại bỏ hoàn toàn — vẫn tốt hơn không dùng, nhưng không ngang bằng tắt màn hình.',
+      'Phòng tắm là điểm yếu lớn nhất: đèn LED trắng sáng lúc 22h phá hủy melatonin đã tích lũy — đặt đèn ngủ nhỏ ấm trong phòng tắm để dùng ban đêm.',
+      'Smart bulb lập lịch tự động giảm về 2.700K lúc 20h mỗi đêm — đầu tư một lần, áp dụng tự động không cần nhớ, không cần ý chí.',
+    ],
+    points: [
+      { icon: '🕯️', label: '<50 lux từ 20h', note: 'Ngưỡng để tuyến tùng bắt đầu tiết melatonin' },
+      { icon: '🟠', label: 'Đèn 2.700–3.000K', note: 'Màu vàng/cam ấm — ít ánh sáng 480nm nhất' },
+      { icon: '📱', label: 'Night Mode không đủ', note: 'Giảm nhưng không loại bỏ ánh sáng xanh hoàn toàn' },
+      { icon: '💡', label: 'Smart bulb tự động', note: 'Lập lịch 2.700K lúc 20h — không cần nhớ mỗi đêm' },
+    ],
+  },
+  {
+    time: 'Đêm 22h+', phase: 'Giữ tối', icon: '🌙', level: 1,
+    tip: 'Phòng ngủ tối hoàn toàn. Ngay cả đèn báo nhỏ cũng có thể ảnh hưởng chất lượng ngủ sâu.',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngay cả ánh sáng yếu 10 lux (đèn báo, ánh đèn đường qua cửa sổ) trong lúc ngủ cũng làm giảm chất lượng ngủ sâu N3 và N4. Phòng ngủ tối hoàn toàn là thiết lập môi trường quan trọng nhất — đơn giản nhưng ít người thực hiện đúng.',
+    detail: 'Nghiên cứu tại Northwestern University (2022) cho thấy ngủ trong phòng có ánh sáng nhẹ (100 lux) làm tăng nhịp tim, tăng insulin kháng trong khi ngủ và giảm chất lượng ngủ sâu đáng kể — ngay cả khi người ngủ không ý thức được ánh sáng.',
+    details: [
+      'Ánh sáng 10 lux trong phòng ngủ (tương đương đèn báo nhỏ hoặc ánh đèn đường qua rèm mỏng) đủ để ức chế melatonin một phần và làm giảm ngủ sâu.',
+      'Da và mắt nhắm vẫn cảm nhận được ánh sáng qua mí mắt — hệ thống thần kinh không hoàn toàn "tắt" thị giác khi ngủ, đặc biệt là ipRGC vẫn nhạy cảm.',
+      'Giải pháp đơn giản nhất: rèm blackout (che ánh đèn đường, ánh trăng) + che tất cả đèn báo nhỏ trong phòng (router, TV standby, sạc điện thoại).',
+      'Mặt nạ ngủ (sleep mask) hiệu quả và rẻ nhất — đặc biệt hữu ích khi đi du lịch, phòng khách sạn thường có nhiều đèn LED không tắt được.',
+      'Đèn báo cháy, đèn WiFi router, đèn TV standby: dán băng keo đen lên hoặc hướng về phía tường — âm thanh báo động vẫn hoạt động, chỉ che ánh sáng.',
+      'Phòng ngủ tối + mát (18–20°C) + yên tĩnh là bộ ba môi trường tối ưu cho ngủ sâu — thiếu một yếu tố nào cũng làm giảm hiệu quả phục hồi.',
+    ],
+    points: [
+      { icon: '🌑', label: 'Tối hoàn toàn < 5 lux', note: 'Ngay cả 10 lux cũng làm giảm ngủ sâu N3/N4' },
+      { icon: '🪟', label: 'Rèm blackout', note: 'Che ánh đèn đường + ánh trăng qua cửa sổ' },
+      { icon: '😴', label: 'Mặt nạ ngủ', note: 'Giải pháp đơn giản nhất — đặc biệt tốt khi du lịch' },
+      { icon: '📡', label: 'Che đèn báo nhỏ', note: 'Router, TV standby, sạc — dán băng keo đen' },
+    ],
+  },
 ];
 
 const CAFFEINE_GUIDE = [
@@ -265,6 +349,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 export default function LifestyleCircadianPage() {
   const [energyIdx, setEnergyIdx] = useState(null);
+  const [lightIdx, setLightIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -359,13 +444,18 @@ export default function LifestyleCircadianPage() {
         <p className="text-muted text-lg mb-6">Ánh sáng là tín hiệu quan trọng nhất điều chỉnh đồng hồ sinh học. Sáng: tăng. Tối: giảm. Đêm: giữ tối.</p>
         <div className="grid gap-4">
           {LIGHT_RULES.map((rule, i) => (
-            <div key={i} className="p-4 rounded-xl border" style={{ borderColor: `rgba(${RGB},0.15)`, background: `rgba(${RGB},0.05)` }}>
+            <div key={i}
+              className="p-4 rounded-xl border cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ borderColor: `rgba(${rule.rgb},0.2)`, background: `rgba(${rule.rgb},0.05)` }}
+              onClick={() => setLightIdx(i)}>
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-3xl">{rule.icon}</span>
-                <div>
+                <div className="flex-1">
                   <div className="font-bold text-text text-lg">{rule.time}</div>
-                  <div className="text-base font-semibold" style={{ color: COLOR }}>{rule.action}</div>
+                  <div className="text-base font-semibold" style={{ color: rule.color }}>{rule.phase}</div>
                 </div>
+                <span className="text-xs font-bold px-2 py-1 rounded-lg opacity-60 shrink-0"
+                  style={{ color: rule.color, background: `rgba(${rule.rgb},0.1)` }}>Chi tiết →</span>
               </div>
               <p className="text-muted text-base leading-relaxed">{rule.tip}</p>
             </div>
@@ -445,6 +535,19 @@ export default function LifestyleCircadianPage() {
         <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Routine Trước Ngủ</Link>
         <Link to="/pillar/c/morning" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Sáng →</Link>
       </div>
+
+      {/* ── Light rules modal ── */}
+      {lightIdx !== null && (
+        <EnergyModal
+          item={LIGHT_RULES[lightIdx]}
+          idx={lightIdx}
+          onClose={() => setLightIdx(null)}
+          onPrev={() => setLightIdx(i => Math.max(0, i - 1))}
+          onNext={() => setLightIdx(i => Math.min(LIGHT_RULES.length - 1, i + 1))}
+          hasPrev={lightIdx > 0}
+          hasNext={lightIdx < LIGHT_RULES.length - 1}
+        />
+      )}
 
       {/* ── Energy map modal — outside all RevealBlocks so position:fixed works ── */}
       {energyIdx !== null && (

@@ -6,14 +6,174 @@ const RGB = '20,184,166';
 const ORBIT_ID = 'c-sroutine-orbit-kf';
 
 const ROUTINE_60 = [
-  { time: 'Trước ngủ 60 phút', action: 'Ngưng việc nặng, chốt công việc ngày mai', icon: '📋' },
-  { time: 'Trước ngủ 50 phút', action: 'Kiểm tra tin nhắn lần cuối, sau đó đặt điện thoại đi', icon: '📱' },
-  { time: 'Trước ngủ 45 phút', action: 'Giảm đèn phòng, bật đèn ngủ ấm', icon: '💡' },
-  { time: 'Trước ngủ 40 phút', action: 'Tắm ấm hoặc rửa mặt, vệ sinh cá nhân', icon: '🚿' },
-  { time: 'Trước ngủ 30 phút', action: 'Giãn cơ nhẹ: cổ vai gáy, lưng, hông (5–10 phút)', icon: '🧘' },
-  { time: 'Trước ngủ 20 phút', action: 'Đọc sách giấy hoặc nghe nhạc nhẹ', icon: '📚' },
-  { time: 'Trước ngủ 10 phút', action: 'Thở chậm cơ hoành 3–5 phút', icon: '🌬️' },
-  { time: 'Lên giường', action: 'Không lướt điện thoại, nhắm mắt thư giãn', icon: '😴' },
+  {
+    time: 'Trước ngủ 60 phút', icon: '📋', action: 'Ngưng việc nặng, chốt công việc ngày mai',
+    color: '#94a3b8', rgb: '148,163,184',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Quyết định ngưng làm việc ở phút 60 — không phải "khi xong việc" — là bước quan trọng nhất của routine. Não cần 45–60 phút để chuyển từ "mode làm việc" sang "mode ngủ" được.',
+    detail: '"Khi nào xong thì thôi" là bẫy lớn nhất. Công việc không bao giờ thực sự xong — luôn có email tiếp theo, task tiếp theo. Đặt giờ "đóng ngày" cứng như một cuộc hẹn không thể thay đổi, không phải như một mục tiêu mơ hồ.',
+    details: [
+      'Não cần 45–60 phút "wind-down" để giảm cortisol và chuyển từ sóng beta (tập trung) sang alpha (thư giãn) trước khi vào giấc ngủ sâu được.',
+      'Ngưng việc nặng không có nghĩa là dừng hoàn toàn — nhưng không bắt đầu task mới, không mở email, không vào cuộc họp sau giờ này.',
+      'Chốt công việc ngày mai bằng cách viết 1–3 task quan trọng nhất sáng mai — não có thể "thả" chúng ra thay vì tiếp tục xử lý ngầm trong đêm.',
+      'Kỹ thuật "concern dump": viết ra tất cả những điều đang lo lắng vào sổ — não sẽ dừng replay chúng khi biết chúng đã được ghi lại rõ ràng.',
+      'Thông báo hệ thống (Slack, email, phone): bật chế độ "Không làm phiền" ngay lúc này — không phải 10 phút sau.',
+      'Nhất quán về giờ đóng ngày quan trọng hơn bất kỳ biện pháp kỹ thuật nào — cơ thể bắt đầu chuẩn bị ngủ từ tín hiệu thời gian cố định.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Wind-down 45–60 phút', note: 'Não cần thời gian chuyển từ beta → alpha' },
+      { icon: '✍️', label: 'Viết task ngày mai', note: 'Não thả ra thay vì xử lý ngầm suốt đêm' },
+      { icon: '📵', label: 'Bật "Không làm phiền"', note: 'Ngay lúc này — không phải sau 10 phút' },
+      { icon: '🕙', label: 'Giờ đóng ngày cứng', note: 'Như cuộc hẹn, không phải mục tiêu mơ hồ' },
+    ],
+  },
+  {
+    time: 'Trước ngủ 50 phút', icon: '📱', action: 'Kiểm tra tin nhắn lần cuối, sau đó đặt điện thoại đi',
+    color: '#f43f5e', rgb: '244,63,94',
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Kiểm tra lần cuối" là khoảnh khắc quan trọng nhất — sau đó điện thoại phải ra khỏi tầm tay. Sạc điện thoại ngoài phòng ngủ là thay đổi vật lý đơn giản nhất để phá vỡ vòng xoáy "xem thêm 1 cái".',
+    detail: 'Điện thoại trong phòng ngủ — dù màn hình tắt — tạo ra "kéo tâm lý" liên tục. Nghiên cứu cho thấy sự có mặt của điện thoại (ngay cả úp mặt xuống) vẫn làm giảm khả năng thư giãn và làm chậm quá trình chuyển sang trạng thái nghỉ ngơi.',
+    details: [
+      'Kiểm tra có chủ đích: mở, đọc, trả lời nếu cần thiết, đặt xuống — không scroll vô định sau khi đã kiểm tra.',
+      'Không reply email/tin nhắn công việc sau thời điểm này — trả lời tạo ra kỳ vọng "sẵn sàng 24/7" và khó cắt về sau.',
+      'Điện thoại ngoài phòng ngủ: dùng đồng hồ báo thức thông thường thay thế — loại bỏ hoàn toàn lý do "cần điện thoại để báo thức".',
+      'Nếu phải giữ điện thoại trong phòng: úp mặt xuống, tắt toàn bộ thông báo âm thanh, đặt xa tầm tay từ giường.',
+      'Ánh sáng xanh từ màn hình điện thoại (480nm) ức chế melatonin ngay cả khi xem dưới 10 phút — phút 50 là thời điểm muộn nhất nên cắt.',
+      'Thay thế bằng: podcast nhẹ nhàng (không tin tức), nhạc ambient, hoặc đơn giản là im lặng — não cần ít kích thích hơn, không nhiều hơn.',
+    ],
+    points: [
+      { icon: '🔌', label: 'Sạc ngoài phòng ngủ', note: 'Thay đổi vật lý đơn giản nhất — không cần ý chí' },
+      { icon: '📵', label: 'Không reply công việc', note: 'Tạo ranh giới rõ ràng — bảo vệ thời gian nghỉ' },
+      { icon: '💡', label: 'Ánh sáng 480nm', note: '<10 phút xem điện thoại đủ ức chế melatonin' },
+      { icon: '🎵', label: 'Thay bằng âm thanh nhẹ', note: 'Podcast/nhạc ambient — ít kích thích hơn màn hình' },
+    ],
+  },
+  {
+    time: 'Trước ngủ 45 phút', icon: '💡', action: 'Giảm đèn phòng, bật đèn ngủ ấm',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giảm cường độ ánh sáng xuống <50 lux (tương đương ánh nến) trong 45 phút trước ngủ giúp tuyến tùng bắt đầu tiết melatonin — cơ thể không phân biệt được "đèn LED trắng" và "ban ngày".',
+    detail: 'Hệ thống ánh sáng của con người tiến hóa trong môi trường không có điện. Lúc hoàng hôn, ánh sáng chuyển từ xanh (ban ngày) sang đỏ/cam (hoàng hôn) — tín hiệu cho cơ thể "sắp tối". Đèn phòng hiện đại (đặc biệt LED trắng) can thiệp hoàn toàn tín hiệu sinh học này.',
+    details: [
+      'Melanopsin trong võng mạc nhạy nhất với ánh sáng 480nm (xanh lam) — chính xác là bước sóng phổ biến nhất trong đèn LED trắng và màn hình hiện đại.',
+      'Cơ thể cần ánh sáng giảm xuống <50 lux (ánh nến) trong ít nhất 30 phút trước ngủ để tuyến tùng bắt đầu tiết melatonin đủ nồng độ.',
+      'Đèn ngủ ấm (2700K–3000K, màu cam/vàng) chứa ít ánh sáng 480nm hơn đèn trắng ban ngày (5000–6500K) — thay thế tốt và thực tế nhất.',
+      'Đèn đỏ (<590nm) gần như không kích thích melanopsin — lý tưởng nhất cho phòng ngủ sau 21h nếu cần đèn để di chuyển.',
+      'Phòng tắm thường có đèn rất trắng và sáng — thay bằng đèn nhỏ ấm hoặc đèn ngủ khi dùng phòng tắm sau 21h.',
+      'Smart bulb có thể lập lịch tự động giảm về 2700K lúc 21h — đầu tư một lần, áp dụng mọi đêm không cần nhớ.',
+    ],
+    points: [
+      { icon: '🕯️', label: '<50 lux (ánh nến)', note: 'Ngưỡng để tuyến tùng bắt đầu tiết melatonin' },
+      { icon: '🟠', label: 'Đèn 2700–3000K', note: 'Màu cam/vàng ấm — ít ánh sáng 480nm nhất' },
+      { icon: '🔴', label: 'Đèn đỏ <590nm', note: 'Gần như không ức chế melatonin — lý tưởng nhất' },
+      { icon: '💡', label: 'Phòng tắm là điểm yếu', note: 'Đèn trắng sáng sau 21h — cần thay bằng đèn ấm' },
+    ],
+  },
+  {
+    time: 'Trước ngủ 40 phút', icon: '🚿', action: 'Tắm ấm hoặc rửa mặt, vệ sinh cá nhân',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tắm ấm 40–42°C trong 10 phút, 40–60 phút trước khi ngủ, giúp nhiệt độ lõi cơ thể giảm nhanh sau khi ra tắm — đẩy nhanh quá trình vào giấc ngủ sâu N3 đáng kể.',
+    detail: 'Nghịch lý nhiệt: tắm nóng lại giúp ngủ mát hơn. Nước ấm làm giãn mạch máu ngoại vi → nhiệt tỏa ra qua da → nhiệt độ lõi cơ thể giảm sau khi ra tắm. Não đọc tín hiệu "nhiệt độ lõi giảm" = "đến giờ ngủ sâu". Không có bồn tắm? Ngâm chân 15 phút hiệu quả tương tự.',
+    details: [
+      'Nhiệt độ lõi cơ thể cần giảm 1–2°C để vào N3 (ngủ sâu) — tắm ấm đẩy nhanh quá trình này bằng cơ chế tỏa nhiệt qua da.',
+      'Nhiệt độ nước lý tưởng: 40–42°C — đủ ấm để giãn mạch nhưng không nóng đến mức gây khó chịu kéo dài.',
+      'Thời gian tối ưu: 10–15 phút tắm, 40–60 phút trước khi ngủ — để nhiệt độ lõi có thời gian giảm xuống mức tối ưu.',
+      'Ngâm chân ấm 15 phút: chân có mật độ mạch máu cao — hiệu quả gần tương đương tắm toàn thân, dễ thực hiện hơn.',
+      'Tránh tắm quá nóng (>43°C) ngay sát giờ ngủ: cơ thể cần thêm thời gian hạ nhiệt, có thể trì hoãn giấc ngủ thay vì cải thiện.',
+      'Kết hợp với ánh sáng ấm trong phòng tắm — không bật đèn trắng sáng khi tắm để không phá vỡ tín hiệu melatonin đang hình thành.',
+    ],
+    points: [
+      { icon: '🌡️', label: '40–42°C, 10–15 phút', note: 'Ngưỡng nhiệt độ và thời gian tối ưu để tỏa nhiệt' },
+      { icon: '⏱️', label: '40–60 phút trước ngủ', note: 'Đủ thời gian để nhiệt độ lõi giảm tự nhiên' },
+      { icon: '🦶', label: 'Ngâm chân thay thế', note: '15 phút — hiệu quả gần tương đương tắm toàn thân' },
+      { icon: '❄️', label: 'Core temp giảm', note: 'Tín hiệu não nhận: "đến giờ vào ngủ sâu N3"' },
+    ],
+  },
+  {
+    time: 'Trước ngủ 30 phút', icon: '🧘', action: 'Giãn cơ nhẹ: cổ vai gáy, lưng, hông (5–10 phút)',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giãn cơ nhẹ 5–10 phút trước ngủ giảm cortisol, giải phóng căng thẳng tích lũy trong cơ sau ngày dài, và gửi tín hiệu "an toàn" lên hệ thần kinh — cho phép cơ thể chuyển sang chế độ phục hồi.',
+    detail: 'Cơ bắp căng cứng (đặc biệt cổ, vai, lưng) là dấu hiệu hệ thần kinh giao cảm vẫn còn kích hoạt. Giãn cơ không phải chỉ thư giãn cơ bắp — nó kích hoạt hệ thần kinh phó giao cảm qua phản xạ cơ-não, làm nhịp tim chậm lại và chuẩn bị cơ thể cho giấc ngủ.',
+    details: [
+      'Cơ cổ vai gáy là vùng tích trữ căng thẳng nhiều nhất — ngồi máy tính cả ngày tạo ra co cứng mãn tính cần được giãn trước ngủ.',
+      'Giãn cơ kích hoạt thụ thể cơ (Golgi tendon organs) → tín hiệu "an toàn" lên não → hệ thần kinh giao cảm giảm hoạt động tự nhiên.',
+      'Không tập mạnh: mục tiêu là thư giãn, không phải workout. Giữ mỗi tư thế 30–60 giây, thở chậm — không kéo căng đến mức đau.',
+      '5 bài cơ bản: chin tuck (cổ), shoulder roll (vai), thoracic twist (lưng trên), child pose (lưng dưới), legs up the wall (chân/hông).',
+      'Kết hợp thở chậm trong khi giãn cơ — thở ra dài hơn thở vào (4 giây hít / 6–8 giây thở) tăng hiệu quả thư giãn rõ rệt.',
+      'Đặc biệt hiệu quả cho người tập nặng — giúp cortisol sau tập giảm nhanh hơn và cơ phục hồi tốt hơn trong giai đoạn N3.',
+    ],
+    points: [
+      { icon: '🦴', label: 'Cổ vai gáy trước tiên', note: 'Vùng tích lũy căng thẳng nhiều nhất trong ngày' },
+      { icon: '⚡', label: 'Golgi tendon reflex', note: 'Thư giãn cơ → tín hiệu an toàn → giao cảm giảm' },
+      { icon: '🧘', label: '5 bài cơ bản', note: 'Chin tuck / shoulder roll / twist / child pose / legs up' },
+      { icon: '🌬️', label: 'Thở 4–6–8 khi giãn', note: 'Thở ra dài hơn — tăng hiệu quả phó giao cảm' },
+    ],
+  },
+  {
+    time: 'Trước ngủ 20 phút', icon: '📚', action: 'Đọc sách giấy hoặc nghe nhạc nhẹ',
+    color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đọc sách giấy 20 phút trước ngủ giảm mức stress 68% (University of Sussex 2009) — hiệu quả hơn nghe nhạc (61%), uống trà (54%), và đi bộ (42%). Não "thoát" khỏi vấn đề thực tế khi đắm chìm vào câu chuyện.',
+    detail: 'Sách giấy hoàn hảo cho phút này vì 3 lý do: không có ánh sáng xanh, không có thông báo, và nội dung có cấu trúc tuyến tính (không phải scroll vô tận). Não được kích thích nhẹ nhàng bởi câu chuyện thay vì bị kéo căng bởi thông tin thực tế.',
+    details: [
+      'University of Sussex (2009): chỉ 6 phút đọc sách giảm nhịp tim, căng cơ và mức stress 68% — nhanh hơn bất kỳ phương pháp thư giãn nào khác được kiểm tra.',
+      'Sách giấy vs. e-reader: sách giấy không có ánh sáng tự phát, không có thông báo, không có "next content" gợi ý — ít kích thích não hơn hoàn toàn.',
+      'Nội dung lý tưởng: tiểu thuyết nhẹ, phi hư cấu thú vị nhưng không căng thẳng — tránh sách nghề nghiệp, tin tức, nội dung kích thích tư duy nặng.',
+      'Nghe nhạc nhẹ (60–80 BPM, không lời hoặc lời nhẹ nhàng) đồng bộ nhịp tim với nhịp nhạc — giảm nhịp tim tự nhiên theo cơ chế entrainment.',
+      'Podcast nhẹ nhàng là lựa chọn tốt nếu không muốn đọc — tránh podcast nghề nghiệp, tin tức, nội dung gây tranh cãi.',
+      'Không đọc trên điện thoại/tablet — ngay cả với chế độ night mode, não vẫn phản xạ "scroll", "swipe", "check" từ thói quen đã hình thành.',
+    ],
+    points: [
+      { icon: '📖', label: 'Giảm stress 68%', note: 'University of Sussex — chỉ sau 6 phút đọc sách' },
+      { icon: '🎵', label: '60–80 BPM', note: 'Nhịp nhạc đồng bộ nhịp tim — entrainment effect' },
+      { icon: '🚫', label: 'Không e-reader/phone', note: 'Ánh sáng xanh + thông báo phá vỡ toàn bộ hiệu quả' },
+      { icon: '📗', label: 'Tiểu thuyết nhẹ', note: 'Tránh sách nghề nghiệp — não "thoát" khỏi lo lắng' },
+    ],
+  },
+  {
+    time: 'Trước ngủ 10 phút', icon: '🌬️', action: 'Thở chậm cơ hoành 3–5 phút',
+    color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thở ra dài hơn thở vào (tỉ lệ 1:2, ví dụ hít 4 giây — thở 8 giây) kích hoạt dây thần kinh phế vị và hạ nhịp tim trong 60–90 giây — phương pháp duy nhất có thể can thiệp trực tiếp vào hệ thần kinh tự chủ theo ý chí.',
+    detail: 'Hơi thở là cầu nối duy nhất giữa hệ thần kinh tự chủ (thường hoạt động ngoài ý chí) và ý thức. Khi thở ra chậm và dài, dây thần kinh phế vị (vagus nerve) được kích hoạt → nhịp tim chậm lại → huyết áp giảm → cortisol giảm → cơ thể chuyển sang chế độ phục hồi.',
+    details: [
+      'Hệ thần kinh phó giao cảm được kích hoạt chủ yếu qua thở ra — thở vào kích hoạt giao cảm nhẹ, thở ra kích hoạt phó giao cảm mạnh.',
+      'Tỉ lệ thở tối ưu trước ngủ: hít 4 giây → giữ 4 giây (tùy chọn) → thở ra 6–8 giây — thở ra ít nhất gấp đôi thở vào.',
+      'Thở cơ hoành (bụng phồng ra khi hít, không phải ngực) tối đa hóa thể tích khí mỗi nhịp → ít nhịp hơn → nhịp tim chậm hơn tự nhiên.',
+      'Phương pháp 4-7-8 (hít 4, giữ 7, thở 8): hiệu quả nhanh nhưng khó với người mới — bắt đầu bằng 4-0-6 đơn giản hơn.',
+      'Box breathing (4-4-4-4): tốt cho ban ngày và giảm căng thẳng — nhưng 4-6-8 tốt hơn cho trước ngủ vì thở ra dài hơn rõ rệt.',
+      'Chỉ cần 3–5 phút để hệ thần kinh phó giao cảm chiếm ưu thế — ngắn nhất trong tất cả các kỹ thuật thư giãn có bằng chứng khoa học.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Thở cơ hoành', note: 'Bụng phồng ra khi hít — không phải ngực' },
+      { icon: '⚖️', label: 'Tỉ lệ 1:2', note: 'Thở ra ≥ 2× thở vào — kích hoạt phó giao cảm mạnh' },
+      { icon: '⚡', label: 'Vagus nerve', note: 'Nhịp tim chậm trong 60–90 giây sau khi bắt đầu' },
+      { icon: '⏱️', label: 'Chỉ 3–5 phút', note: 'Đủ để hệ thần kinh chuyển sang rest-and-digest' },
+    ],
+  },
+  {
+    time: 'Lên giường', icon: '😴', action: 'Không lướt điện thoại, nhắm mắt thư giãn',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giường chỉ dùng để ngủ — nguyên tắc "stimulus control" của CBT-I (Cognitive Behavioral Therapy for Insomnia). Mỗi lần làm việc hoặc xem phim trên giường huấn luyện não liên kết "giường = tỉnh táo".',
+    detail: 'Stimulus control là nền tảng của CBT-I — phương pháp được FDA và các cơ quan y tế toàn cầu khuyến nghị là điều trị đầu tay cho mất ngủ mãn tính (hiệu quả hơn thuốc ngủ dài hạn). Giường = duy nhất ngủ là quy tắc không thể phá vỡ.',
+    details: [
+      'Stimulus control: não học bằng liên kết Pavlov — làm việc, xem phim trên giường = giường trở thành tín hiệu "tỉnh táo, hoạt động".',
+      'Nếu nằm >20 phút không ngủ được: dậy nhẹ nhàng, ngồi ra ghế đọc sách trong ánh sáng ấm cho đến khi buồn ngủ — không nằm cố.',
+      'Không nhìn đồng hồ liên tục: lo lắng về giờ giấc kích hoạt cortisol → càng khó ngủ. Úp đồng hồ lại hoặc xoay đi xa.',
+      'Progressive Muscle Relaxation (PMR): căng từng nhóm cơ 5 giây rồi thả → từ bàn chân lên đến mặt — hiệu quả với người khó thư giãn.',
+      'Guided imagery: tưởng tượng một nơi yên tĩnh quen thuộc với chi tiết cụ thể — giữ tâm trí bận rộn nhẹ nhàng thay vì để nó lo lắng.',
+      'Body scan: tập trung lần lượt vào từng phần cơ thể từ bàn chân lên đầu, nhận biết cảm giác mà không phán xét — thiền mindfulness đơn giản.',
+    ],
+    points: [
+      { icon: '🛏️', label: 'Giường = chỉ ngủ', note: 'Stimulus control — nguyên tắc CBT-I số 1' },
+      { icon: '🕐', label: 'Không xem giờ', note: 'Nhìn đồng hồ → lo lắng → cortisol → tỉnh hơn' },
+      { icon: '💪', label: 'PMR', note: 'Căng-thả từng cơ — từ bàn chân lên mặt' },
+      { icon: '🌄', label: 'Guided imagery', note: 'Tưởng tượng nơi yên bình — giữ tâm trí nhẹ nhàng' },
+    ],
+  },
 ];
 
 const ROUTINE_10 = [
@@ -121,7 +281,7 @@ const STRETCH_EXERCISES = [
   { name: 'Legs up the wall', reps: '2–5 phút', muscles: 'Giảm sưng chân, thư giãn', icon: '🦶' },
 ];
 
-function WhyRoutineModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+function WhyRoutineModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -177,7 +337,7 @@ function WhyRoutineModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext 
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
-            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {WHY_ROUTINE.length}</span>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total ?? WHY_ROUTINE.length}</span>
             <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
           </div>
@@ -207,6 +367,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function LifestyleSleepRoutinePage() {
   const [mode, setMode] = useState('60');
   const [routineIdx, setRoutineIdx] = useState(null);
+  const [routine60Idx, setRoutine60Idx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -321,12 +482,17 @@ export default function LifestyleSleepRoutinePage() {
         ) : (
           <div className="space-y-3">
             {ROUTINE_60.map((row, i) => (
-              <div key={i} className="flex gap-4 items-start p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
+              <div key={i}
+                className="flex gap-4 items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+                style={{ background: `rgba(${row.rgb},0.05)`, border: `1px solid rgba(${row.rgb},0.15)` }}
+                onClick={() => setRoutine60Idx(i)}>
                 <span className="text-2xl shrink-0">{row.icon}</span>
-                <div className="flex-1">
-                  <div className="text-base font-bold tabular-nums mb-1" style={{ color: COLOR }}>{row.time}</div>
-                  <div className="text-lg text-text">{row.action}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-bold tabular-nums mb-0.5" style={{ color: row.color }}>{row.time}</div>
+                  <div className="text-base text-text">{row.action}</div>
                 </div>
+                <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                  style={{ color: row.color, background: `rgba(${row.rgb},0.1)` }}>→</span>
               </div>
             ))}
           </div>
@@ -380,16 +546,31 @@ export default function LifestyleSleepRoutinePage() {
         <Link to="/pillar/c/circadian" className="text-lg font-semibold" style={{ color: COLOR }}>Nhịp Sinh Học →</Link>
       </div>
 
-      {/* ── Why routine modal — outside all RevealBlocks so position:fixed works ── */}
+      {/* ── Why routine modal ── */}
       {routineIdx !== null && (
         <WhyRoutineModal
           item={WHY_ROUTINE[routineIdx]}
           idx={routineIdx}
+          total={WHY_ROUTINE.length}
           onClose={() => setRoutineIdx(null)}
           onPrev={() => setRoutineIdx(i => Math.max(0, i - 1))}
           onNext={() => setRoutineIdx(i => Math.min(WHY_ROUTINE.length - 1, i + 1))}
           hasPrev={routineIdx > 0}
           hasNext={routineIdx < WHY_ROUTINE.length - 1}
+        />
+      )}
+
+      {/* ── Routine 60 timeline modal — outside all RevealBlocks so position:fixed works ── */}
+      {routine60Idx !== null && (
+        <WhyRoutineModal
+          item={ROUTINE_60[routine60Idx]}
+          idx={routine60Idx}
+          total={ROUTINE_60.length}
+          onClose={() => setRoutine60Idx(null)}
+          onPrev={() => setRoutine60Idx(i => Math.max(0, i - 1))}
+          onNext={() => setRoutine60Idx(i => Math.min(ROUTINE_60.length - 1, i + 1))}
+          hasPrev={routine60Idx > 0}
+          hasNext={routine60Idx < ROUTINE_60.length - 1}
         />
       )}
     </div>

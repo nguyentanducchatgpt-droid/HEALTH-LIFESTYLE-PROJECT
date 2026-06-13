@@ -317,6 +317,101 @@ const ROUTINE_10 = [
   },
 ];
 
+const COMMON_MISTAKES = [
+  {
+    icon: '⏰', label: 'Cố ngủ sớm 2–3 tiếng ngay từ ngày 1',
+    wrong: 'Cố ngủ sớm 2–3 tiếng ngay từ ngày 1',
+    right: 'Kéo giờ ngủ sớm dần 15–30 phút mỗi 2–3 ngày',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cố ngủ sớm đột ngột 2–3 tiếng tạo ra "sleep anxiety" — lo lắng về việc ngủ được hay không kích hoạt cortisol, khiến bạn nằm trên giường tỉnh táo và lo lắng hơn bình thường.',
+    detail: 'Nhịp sinh học (circadian rhythm) là đồng hồ sinh học cứng — nó không thể bị kéo về sớm 2–3 tiếng trong một đêm. Cơ thể cần kéo dần 15–30 phút mỗi 2–3 ngày để hệ circadian có thời gian điều chỉnh mà không gây ra phản ứng ngược.',
+    details: [
+      'Circadian rhythm chỉ có thể dịch chuyển 15–30 phút mỗi ngày — cố ngủ sớm hơn 2–3 tiếng đột ngột = nằm trên giường tỉnh táo trong nhiều giờ.',
+      'Sleep anxiety: lo lắng "liệu mình có ngủ được không" kích hoạt amygdala và cortisol — chính xác là trạng thái não chống lại giấc ngủ.',
+      'Nằm trên giường tỉnh táo lâu còn tạo ra liên kết tiêu cực: giường = nơi nằm lo lắng, không phải nơi ngủ — phá vỡ stimulus control.',
+      'Lịch trình đúng: lùi giờ ngủ 15 phút mỗi 2 ngày. Với người ngủ 0h muốn về 22h — cần 8–12 ngày để đạt mục tiêu bền vững.',
+      'Giờ thức dậy ổn định (không thay đổi dù đêm ngủ muộn) quan trọng hơn giờ ngủ — sleep pressure tích lũy sẽ tự nhiên kéo giờ ngủ về sớm hơn.',
+      'Đêm đầu tiên ngủ sớm hơn 15 phút: nếu không ngủ được sau 20 phút, đứng dậy đọc sách nhẹ 10 phút rồi thử lại — không nằm cố.',
+    ],
+    points: [
+      { icon: '🧬', label: 'Circadian = 15–30 phút/ngày', note: 'Không thể dịch chuyển 2–3 tiếng trong một đêm' },
+      { icon: '😰', label: 'Sleep anxiety', note: 'Cố ngủ → lo lắng → cortisol → càng tỉnh hơn' },
+      { icon: '📅', label: 'Lịch 8–12 ngày', note: 'Từ 0h về 22h cần dịch 15 phút mỗi 2 ngày' },
+      { icon: '⏰', label: 'Giờ dậy ổn định', note: 'Quan trọng hơn giờ ngủ — sleep pressure tự kéo về' },
+    ],
+  },
+  {
+    icon: '📱', label: 'Xem phim trên điện thoại cho đến khi ngủ được',
+    wrong: 'Xem phim trên điện thoại "cho đến khi ngủ được"',
+    right: 'Đặt điện thoại ra xa và đọc sách giấy thay thế',
+    color: '#f43f5e', rgb: '244,63,94',
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Xem phim "cho đến khi ngủ được" là lỗi kép: ánh sáng xanh ức chế melatonin + nội dung kích thích giữ não ở trạng thái hyperarousal. Não không "mệt đến mức ngủ được" — nó bị kích thích thêm mỗi phút xem.',
+    detail: 'Nhiều người tin rằng xem phim "thụ động" giúp não thư giãn — nhưng thực tế ngược lại. Mỗi cảnh phim, mỗi tình tiết mới kích hoạt dopamine và cortisol nhỏ. Tích lũy 1–2 tiếng, não ở trạng thái hyperarousal (kích thích quá mức) — không thể chuyển sang chế độ ngủ dù mắt đã mỏi.',
+    details: [
+      'Ánh sáng xanh 480nm từ màn hình điện thoại ức chế melatonin ngay lập tức — 10 phút xem lúc 22h trì hoãn tiết melatonin 60–90 phút.',
+      'Nội dung phim/series kích hoạt dopamine prediction loop — não liên tục "đoán" điều gì sẽ xảy ra tiếp theo, không thể tắt.',
+      '"Mắt mỏi" ≠ "não mệt" — mắt mỏi do mỏi cơ mắt khi nhìn màn hình, nhưng hệ thần kinh trung ương vẫn đang hoạt động cường độ cao.',
+      'Mỗi lần ngủ thiếp trên điện thoại rồi tỉnh lại giữa đêm là dấu hiệu giấc ngủ bị phân mảnh — chất lượng ngủ tệ dù ngủ đủ giờ.',
+      'Thay thế đúng: sách giấy (ánh đèn ấm, không màn hình, nội dung tuyến tính không "next episode"). Podcast nhẹ nhàng cũng chấp nhận được.',
+      'Nếu thực sự cần màn hình: giảm độ sáng xuống mức thấp nhất, bật Night Mode, và đặt giới hạn 20 phút — sau đó bắt buộc đặt xuống.',
+    ],
+    points: [
+      { icon: '💡', label: 'Melatonin bị ức chế', note: '10 phút xem 22h → trì hoãn melatonin 60–90 phút' },
+      { icon: '🎰', label: 'Dopamine prediction loop', note: 'Não đoán tình tiết tiếp theo — không thể tắt' },
+      { icon: '👁️', label: 'Mắt mỏi ≠ não mệt', note: 'Cơ mắt mỏi, hệ thần kinh vẫn đang hyperarousal' },
+      { icon: '📚', label: 'Sách giấy thay thế', note: 'Không màn hình, không thông báo, nội dung tuyến tính' },
+    ],
+  },
+  {
+    icon: '😴', label: 'Ngủ bù vào cuối tuần đến trưa',
+    wrong: 'Ngủ bù vào cuối tuần đến trưa',
+    right: 'Dậy không quá 1 tiếng sau giờ thường — tránh lệch nhịp',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngủ bù cuối tuần 2+ tiếng tạo "social jetlag" — tương đương bay qua 2–3 múi giờ mỗi tuần. Thứ Hai bạn phải "hồi phục từ kỳ nghỉ cuối tuần", không phải bắt đầu tuần mới với năng lượng.',
+    detail: 'Social jetlag là hiện tượng khi giờ ngủ/thức cuối tuần lệch nhiều so với ngày thường — gây ra tất cả triệu chứng của jet lag thực sự: mệt mỏi, kém tập trung, khó ngủ đúng giờ vào tối Chủ Nhật. Đây là vòng lặp tự duy trì: ngủ bù → thức muộn → khó ngủ tối CN → thiếu ngủ thứ Hai → ngủ bù tiếp.',
+    details: [
+      'Social jetlag: lệch giữa đồng hồ sinh học (circadian) và giờ xã hội — cuối tuần thức muộn = bay sang múi giờ khác mỗi tuần.',
+      'Nghiên cứu Munich Chronotype: social jetlag 2+ giờ liên quan đến tăng nguy cơ béo phì 33%, tim mạch và trầm cảm.',
+      'Ngủ bù không "trả được nợ ngủ" — ngủ thiếu thứ Hai đến thứ Sáu, ngủ bù thứ Bảy không khôi phục được tổn thương nhận thức đã tích lũy.',
+      'Giới hạn an toàn: dậy muộn hơn không quá 60 phút so với ngày thường (ví dụ: ngày thường 6h30 → cuối tuần tối đa 7h30).',
+      'Nếu thiếu ngủ cuối tuần: ngủ sớm hơn tối thứ Sáu/Bảy thay vì dậy muộn sáng thứ Bảy/Chủ Nhật — bảo vệ giờ dậy.',
+      'Giải pháp dài hạn: cải thiện chất lượng ngủ trong tuần (không phải số giờ ngủ bù cuối tuần) — ngủ sâu hơn trong 7 tiếng tốt hơn ngủ 9 tiếng nông.',
+    ],
+    points: [
+      { icon: '✈️', label: 'Social jetlag', note: 'Lệch 2h cuối tuần = jet lag 2–3 múi giờ/tuần' },
+      { icon: '🔄', label: 'Vòng lặp tự duy trì', note: 'Ngủ bù → thức muộn → khó ngủ CN → thiếu ngủ T2' },
+      { icon: '⏰', label: 'Lệch tối đa 60 phút', note: 'Giới hạn an toàn để không phá nhịp circadian' },
+      { icon: '🌙', label: 'Ngủ sớm hơn, không dậy muộn', note: 'Bù giấc bằng cách ngủ sớm tối hôm trước' },
+    ],
+  },
+  {
+    icon: '🍷', label: 'Uống rượu để dễ ngủ hơn',
+    wrong: 'Uống rượu để "dễ ngủ hơn"',
+    right: 'Rượu giúp vào giấc nhưng phá giấc ngủ sâu và REM',
+    color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Rượu là chất ức chế thần kinh trung ương — giúp vào giấc nhanh hơn nhưng ức chế REM và gây thức giữa đêm khi gan chuyển hóa rượu. Giấc ngủ sau rượu là "ngủ mê" chứ không phải "ngủ phục hồi".',
+    detail: 'Rượu giảm độ trễ vào giấc (sleep onset latency) — đây là lý do nhiều người dùng rượu để ngủ. Nhưng trong 4–5 giờ tiếp theo, khi gan chuyển hóa rượu, chất chuyển hóa (acetaldehyde) gây kích thích hệ thần kinh, ức chế REM, và làm thức giữa đêm. Kết quả: ngủ đủ giờ nhưng chất lượng ngủ thảm.',
+    details: [
+      'Rượu giúp vào giấc nhanh hơn bằng cách tăng GABA (chất ức chế) và giảm glutamate (chất kích thích) — hiệu quả trong 1–2 tiếng đầu.',
+      'Sau 4–5 tiếng, gan chuyển hóa rượu thành acetaldehyde — chất này kích thích hệ thần kinh, tạo ra "rebound arousal" và thức giữa đêm.',
+      'REM bị ức chế rõ rệt: nghiên cứu cho thấy rượu giảm REM 20–40% trong nửa đêm đầu — mất đúng giai đoạn phục hồi tâm lý và cảm xúc quan trọng nhất.',
+      'Rượu gây mất nước và tăng đi tiểu đêm — thêm nguồn gây thức giữa đêm ngoài rebound arousal.',
+      'Ngáy và ngưng thở khi ngủ (sleep apnea) nặng hơn đáng kể sau khi uống rượu — cơ hầu họng giãn ra nhiều hơn bình thường.',
+      'Thay thế: nếu cần thư giãn buổi tối, trà thảo mộc ấm (hoa cúc, oải hương, gừng), tắm ấm, hoặc thở chậm — không có tác dụng phụ.',
+    ],
+    points: [
+      { icon: '⚗️', label: 'Acetaldehyde rebound', note: 'Chuyển hóa rượu sau 4–5h → kích thích TK → thức đêm' },
+      { icon: '✨', label: 'REM giảm 20–40%', note: 'Mất phục hồi tâm lý và cảm xúc quan trọng nhất' },
+      { icon: '💧', label: 'Mất nước + đi tiểu đêm', note: 'Thêm nguồn gây thức giữa đêm ngoài rebound' },
+      { icon: '🌿', label: 'Trà thảo mộc thay thế', note: 'Hoa cúc / oải hương / gừng — thư giãn không tác dụng phụ' },
+    ],
+  },
+];
+
 const WHY_ROUTINE = [
   {
     icon: '🧠', label: 'Giảm cortisol',
@@ -622,6 +717,7 @@ export default function LifestyleSleepRoutinePage() {
   const [routine60Idx, setRoutine60Idx] = useState(null);
   const [routine10Idx, setRoutine10Idx] = useState(null);
   const [stretchIdx, setStretchIdx] = useState(null);
+  const [mistakeIdx, setMistakeIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -785,20 +881,26 @@ export default function LifestyleSleepRoutinePage() {
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Lỗi Thường Gặp</h2>
         <div className="grid gap-3">
-          {[
-            { wrong: 'Cố ngủ sớm 2–3 tiếng ngay từ ngày 1', right: 'Kéo giờ ngủ sớm dần 15–30 phút mỗi 2–3 ngày' },
-            { wrong: 'Xem phim trên điện thoại "cho đến khi ngủ được"', right: 'Đặt điện thoại ra xa và đọc sách giấy thay thế' },
-            { wrong: 'Ngủ bù vào cuối tuần đến trưa', right: 'Dậy không quá 1 tiếng sau giờ thường — tránh lệch nhịp' },
-            { wrong: 'Uống rượu để "dễ ngủ hơn"', right: 'Rượu giúp vào giấc nhưng phá giấc ngủ sâu và REM' },
-          ].map((item, i) => (
-            <div key={i} className="p-4 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-3" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
-              <div className="flex items-start gap-2">
-                <span className="text-red-400 shrink-0 mt-0.5">✗</span>
-                <span className="text-lg text-muted">{item.wrong}</span>
+          {COMMON_MISTAKES.map((item, i) => (
+            <div
+              key={i}
+              className="p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.15)` }}
+              onClick={() => setMistakeIdx(i)}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="flex items-start gap-2">
+                  <span className="text-red-400 shrink-0 mt-0.5">✗</span>
+                  <span className="text-base text-muted">{item.wrong}</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="shrink-0 mt-0.5" style={{ color: item.color }}>✓</span>
+                  <span className="text-base text-text">{item.right}</span>
+                </div>
               </div>
-              <div className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5" style={{ color: COLOR }}>✓</span>
-                <span className="text-lg text-text">{item.right}</span>
+              <div className="flex justify-end mt-2">
+                <span className="text-xs font-bold px-2 py-1 rounded-lg opacity-60"
+                  style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
               </div>
             </div>
           ))}
@@ -863,6 +965,20 @@ export default function LifestyleSleepRoutinePage() {
           onNext={() => setRoutine60Idx(i => Math.min(ROUTINE_60.length - 1, i + 1))}
           hasPrev={routine60Idx > 0}
           hasNext={routine60Idx < ROUTINE_60.length - 1}
+        />
+      )}
+
+      {/* ── Common mistakes modal ── */}
+      {mistakeIdx !== null && (
+        <WhyRoutineModal
+          item={COMMON_MISTAKES[mistakeIdx]}
+          idx={mistakeIdx}
+          total={COMMON_MISTAKES.length}
+          onClose={() => setMistakeIdx(null)}
+          onPrev={() => setMistakeIdx(i => Math.max(0, i - 1))}
+          onNext={() => setMistakeIdx(i => Math.min(COMMON_MISTAKES.length - 1, i + 1))}
+          hasPrev={mistakeIdx > 0}
+          hasNext={mistakeIdx < COMMON_MISTAKES.length - 1}
         />
       )}
     </div>

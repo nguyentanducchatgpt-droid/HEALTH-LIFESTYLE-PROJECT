@@ -25,6 +25,93 @@ const ROUTINE_10 = [
   { step: 6, action: 'Lên giường, nhắm mắt, tiếp tục thở chậm', duration: '2 phút' },
 ];
 
+const WHY_ROUTINE = [
+  {
+    icon: '🧠', label: 'Giảm cortisol',
+    color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cortisol và melatonin hoạt động nghịch chiều — cortisol cao thì melatonin không thể tăng dù trời đã tối. Đây là lý do "cố ngủ" càng khiến bạn tỉnh hơn.',
+    detail: 'Cortisol là hormone cảnh báo — nó giữ cơ thể trong trạng thái sẵn sàng phản ứng. Não không thể vừa "cảnh giác" vừa "ngủ sâu" cùng lúc. Routine nhẹ nhàng (giãn cơ, thở chậm, đọc sách) kích hoạt hệ phó giao cảm — làm cortisol giảm tự nhiên và mở "cửa" cho melatonin tăng.',
+    details: [
+      'Trục HPA (hypothalamus–pituitary–adrenal) tiết cortisol khi căng thẳng — cortisol cao vào buổi tối là dấu hiệu cơ thể vẫn ở "chế độ chiến đấu".',
+      'Melatonin và cortisol có mối quan hệ nghịch đảo — khi một cái tăng, cái kia giảm. Cortisol cao buổi tối = ức chế tiết melatonin từ tuyến tùng.',
+      '"Cố ngủ" tạo ra lo âu (sleep anxiety) → kích hoạt thêm cortisol → càng khó ngủ — đây là vòng xoáy mà nhiều người mất ngủ mắc phải.',
+      'Thở chậm (hít 4 giây, thở 6–8 giây) kích hoạt dây thần kinh phế vị (vagus nerve) → giảm nhịp tim → giảm cortisol trong 3–5 phút.',
+      'Giãn cơ nhẹ (không tập nặng) làm giảm cortisol nhanh hơn ngồi yên — cơ bắp thư giãn gửi tín hiệu "an toàn" lên não.',
+      'Cortisol tự nhiên thấp nhất lúc 0h–2h AM — routine giúp đẩy nhanh quá trình giảm để bạn ngủ sớm hơn thay vì chờ cortisol tự giảm.',
+    ],
+    points: [
+      { icon: '⚖️', label: 'Cortisol ↔ Melatonin', note: 'Nghịch chiều — một cái tăng, cái kia giảm' },
+      { icon: '😰', label: 'Sleep anxiety', note: 'Cố ngủ → cortisol tăng → càng khó ngủ hơn' },
+      { icon: '🌬️', label: 'Thở 4–6–8 giây', note: 'Vagus nerve → giảm cortisol trong 3–5 phút' },
+      { icon: '🧘', label: 'Giãn cơ nhẹ', note: 'Cơ thư giãn → tín hiệu "an toàn" → cortisol giảm' },
+    ],
+  },
+  {
+    icon: '🌡️', label: 'Hạ nhiệt độ cơ thể',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tắm ấm 40–42°C trong 10–15 phút trước ngủ 1–2 tiếng giúp vào giấc nhanh hơn 10 phút và tăng N3 (ngủ sâu) — bằng cơ chế giãn mạch máu tỏa nhiệt, làm nhiệt độ lõi cơ thể giảm nhanh.',
+    detail: 'Nghe có vẻ ngược — tắm nóng lại giúp ngủ tốt hơn. Cơ chế là: nước nóng làm giãn mạch máu ngoài da → nhiệt tỏa ra ngoài qua da → nhiệt độ lõi cơ thể (core body temperature) giảm nhanh sau khi ra khỏi tắm → não nhận tín hiệu "đã hạ nhiệt" = "đến giờ ngủ".',
+    details: [
+      'Não cần nhiệt độ lõi cơ thể giảm 1–2°C để kích hoạt N3 (ngủ sâu) — đây là điều kiện sinh lý bắt buộc.',
+      'Tắm ấm 40–42°C trong 10–15 phút: mạch máu ngoài da giãn ra, nhiệt tỏa ra qua da tay chân — "xả nhiệt" toàn thân.',
+      'Sau khi ra tắm, nhiệt độ lõi giảm nhanh hơn bình thường (vì mạch máu ngoài da vẫn giãn) — tạo ra hiệu ứng "hạ nhiệt nhanh" thuận lợi cho ngủ sâu.',
+      'Nghiên cứu University of Texas: tắm ấm 1–2 tiếng trước ngủ giúp vào giấc nhanh hơn 10 phút và tăng chất lượng giấc ngủ tổng thể.',
+      'Không có bồn tắm? Ngâm chân ấm 15 phút cũng có hiệu quả tương tự — mạch máu ở bàn chân rất dồi dào, giúp tỏa nhiệt hiệu quả.',
+      'Phòng ngủ mát (18–21°C) kết hợp với tắm ấm trước ngủ = kết hợp tối ưu nhất để đẩy nhanh quá trình hạ nhiệt độ lõi.',
+    ],
+    points: [
+      { icon: '🌡️', label: 'Core temp giảm 1–2°C', note: 'Điều kiện bắt buộc để vào N3 (ngủ sâu)' },
+      { icon: '🚿', label: 'Tắm 40–42°C, 10–15 phút', note: '1–2h trước ngủ — giãn mạch, tỏa nhiệt' },
+      { icon: '🦶', label: 'Ngâm chân ấm', note: 'Thay thế nếu không có bồn tắm — hiệu quả tương tự' },
+      { icon: '❄️', label: 'Phòng 18–21°C', note: 'Kết hợp phòng mát + tắm ấm = tối ưu nhất' },
+    ],
+  },
+  {
+    icon: '📵', label: 'Cắt kích thích cuối ngày',
+    color: '#f43f5e', rgb: '244,63,94',
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Dopamine spike từ mạng xã hội tối giữ não trong "chế độ tìm kiếm phần thưởng" — tương tự như ăn đồ ngọt trước ngủ nhưng cho não: kích thích liên tục ngăn não hạ nhiệt và chuyển sang chế độ ngủ.',
+    detail: 'Não hiện đại nhận quá nhiều "thức ăn" kích thích mỗi tối — tin tức, mạng xã hội, email công việc, tranh luận. Mỗi thông báo = một đợt cortisol và dopamine nhỏ. Tích lũy cả tối, não vào trạng thái "hyperarousal" — không thể chuyển sang chế độ ngủ dù cơ thể đã mệt. Đây là trạng thái nghịch lý: mệt nhưng không ngủ được.',
+    details: [
+      'Hyperarousal là trạng thái kích thích thần kinh quá mức — đây là nguyên nhân chính của mất ngủ mãn tính, không phải thiếu melatonin.',
+      'Mỗi "dopamine hit" nhỏ (like, comment, tin tức) tạo kỳ vọng cho cái tiếp theo — não ở chế độ "scan liên tục", không thể nghỉ.',
+      'Tin tức tiêu cực (chiến tranh, tai nạn, chính trị) kích hoạt amygdala — tạo cortisol ngay lập tức dù bạn đọc nó ở 23h.',
+      'Email/tin nhắn công việc buổi tối giữ não trong trạng thái "pending" — một phần não tiếp tục xử lý vấn đề ngay cả khi bạn đã đặt điện thoại xuống.',
+      'Routine "đóng ngày" giúp não xác nhận: "Công việc đã xong, không còn gì cần theo dõi" — giảm hyperarousal đáng kể.',
+      'Viết ra 3 việc ngày mai trước khi ngủ (brain dump) giải phóng não khỏi nhiệm vụ "nhớ" — giảm mind chatter khi nằm xuống.',
+    ],
+    points: [
+      { icon: '🎰', label: 'Dopamine loop', note: 'Mạng xã hội giữ não trong "chế độ tìm kiếm thưởng"' },
+      { icon: '😤', label: 'Hyperarousal', note: 'Mệt nhưng không ngủ được — kích thích quá mức' },
+      { icon: '📰', label: 'Tin xấu = cortisol', note: 'Amygdala kích hoạt ngay cả khi đọc lúc 23h' },
+      { icon: '✍️', label: 'Brain dump tối', note: 'Ghi ra 3 việc ngày mai — não không cần "nhớ" nữa' },
+    ],
+  },
+  {
+    icon: '🎯', label: 'Tạo tín hiệu Pavlov',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sau 2–3 tuần lặp lại cùng một chuỗi hành động trước ngủ, cơ thể bắt đầu tiết melatonin ngay khi nhận ra bước đầu của routine — không cần ý chí, không cần "cố ngủ".',
+    detail: 'Ivan Pavlov cho chó nghe chuông trước khi cho ăn — sau vài tuần, tiếng chuông một mình đủ làm chó tiết nước bọt. Giấc ngủ hoạt động theo cùng cơ chế. Não học bằng liên kết: chuỗi hành động nhất quán trở thành "tín hiệu ngủ" mạnh hơn cả thuốc ngủ nhẹ. Sau 14–21 ngày lặp lại, chỉ cần bắt đầu routine là cơ thể tự chuẩn bị ngủ.',
+    details: [
+      'Classical conditioning (điều kiện hóa cổ điển) là cơ chế học của não — liên kết hai kích thích để tạo phản xạ tự động.',
+      'Sau 14–21 ngày lặp lại cùng thứ tự (đánh răng → tắt đèn → giãn cơ → thở chậm), trình tự đó trở thành "trigger" ngủ tự động.',
+      'Tính nhất quán quan trọng hơn độ dài routine — 10 phút mỗi đêm hiệu quả hơn 45 phút 2 lần/tuần.',
+      'Mỗi lần bỏ routine làm yếu liên kết conditioning — không cần hoàn hảo, nhưng phải nhất quán ≥ 5/7 ngày.',
+      'Giường chỉ dùng để ngủ (không làm việc, không xem phim trên giường) tăng cường "giường = ngủ" — loại stimulus conditioning mạnh nhất.',
+      'Sau khi routine đã được conditioning, bạn sẽ tự động buồn ngủ khi bắt đầu — ý chí không còn là yếu tố quyết định nữa.',
+    ],
+    points: [
+      { icon: '🔔', label: 'Classical conditioning', note: 'Não học liên kết: routine → buồn ngủ tự động' },
+      { icon: '📅', label: '14–21 ngày', note: 'Thời gian để conditioning hình thành ổn định' },
+      { icon: '🔄', label: 'Nhất quán > hoàn hảo', note: '5/7 đêm đủ để duy trì — không cần tuyệt đối' },
+      { icon: '🛏️', label: 'Giường = chỉ ngủ', note: 'Stimulus control mạnh nhất để tăng conditioning' },
+    ],
+  },
+];
+
 const STRETCH_EXERCISES = [
   { name: 'Chin tuck', reps: '10 lần × 2s giữ', muscles: 'Cổ trước', icon: '🦴' },
   { name: 'Shoulder roll', reps: '10 vòng × 2 chiều', muscles: 'Vai, cổ', icon: '💫' },
@@ -33,6 +120,73 @@ const STRETCH_EXERCISES = [
   { name: 'Hip flexor stretch', reps: '1 phút mỗi bên', muscles: 'Gấp hông, đùi trước', icon: '🦵' },
   { name: 'Legs up the wall', reps: '2–5 phút', muscles: 'Giảm sưng chân, thư giãn', icon: '🦶' },
 ];
+
+function WhyRoutineModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+  const { color, rgb } = item;
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose} className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-2" style={{ color }}>{item.label}</h2>
+          <div className="rounded-xl p-3 mb-5 text-sm font-semibold" style={{ background: `rgba(${rgb},0.1)`, color, border: `1px solid rgba(${rgb},0.2)` }}>✦ {item.keyFact}</div>
+          <p className="text-muted text-base leading-relaxed mb-5">{item.detail}</p>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {WHY_ROUTINE.length}</span>
+            <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function RevealBlock({ children, delay = 0, className = '' }) {
   const ref = useRef(null);
@@ -52,6 +206,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 export default function LifestyleSleepRoutinePage() {
   const [mode, setMode] = useState('60');
+  const [routineIdx, setRoutineIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -117,18 +272,18 @@ export default function LifestyleSleepRoutinePage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Cần Routine Trước Ngủ?</h2>
         <p className="text-muted text-lg mb-6">Não cần tín hiệu để chuyển từ "mode tỉnh táo" sang "mode ngủ". Routine là bộ tín hiệu đó.</p>
         <div className="grid gap-3">
-          {[
-            { icon: '🧠', title: 'Giảm cortisol', desc: 'Hormone stress cortisol cần giảm để melatonin tăng. Routine nhẹ nhàng giúp hạ cortisol hiệu quả hơn việc "cố ngủ".' },
-            { icon: '🌡️', title: 'Hạ nhiệt độ cơ thể', desc: 'Tắm ấm nghịch lý giúp ngủ tốt hơn: nước ấm làm giãn mạch máu → nhiệt tỏa ra → nhiệt độ cơ thể lõi giảm → dễ vào giấc.' },
-            { icon: '📵', title: 'Cắt kích thích cuối ngày', desc: 'Tin tức, mạng xã hội, công việc trễ kích thích não liên tục. Routine giúp "đóng tab" cuối ngày để não nghỉ.' },
-            { icon: '🎯', title: 'Tạo tín hiệu Pavlov', desc: 'Sau 2–3 tuần làm đều, routine sẽ trở thành tín hiệu conditioned — cơ thể tự bắt đầu buồn ngủ khi bắt đầu routine.' },
-          ].map((item, i) => (
-            <div key={i} className="flex gap-3 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
+          {WHY_ROUTINE.map((item, i) => (
+            <div key={i}
+              className="flex gap-3 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.14)` }}
+              onClick={() => setRoutineIdx(i)}>
               <span className="text-3xl shrink-0">{item.icon}</span>
-              <div>
-                <div className="font-semibold text-text text-lg mb-1">{item.title}</div>
-                <p className="text-muted text-base leading-relaxed">{item.desc}</p>
+              <div className="flex-1 min-w-0">
+                <div className="font-semibold text-lg mb-1" style={{ color: item.color }}>{item.label}</div>
+                <p className="text-muted text-base leading-relaxed">{item.details[0]}</p>
               </div>
+              <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -224,6 +379,19 @@ export default function LifestyleSleepRoutinePage() {
         <Link to="/pillar/c/sleep" className="text-muted hover:text-teal-400 transition-colors text-lg">← Khoa Học Giấc Ngủ</Link>
         <Link to="/pillar/c/circadian" className="text-lg font-semibold" style={{ color: COLOR }}>Nhịp Sinh Học →</Link>
       </div>
+
+      {/* ── Why routine modal — outside all RevealBlocks so position:fixed works ── */}
+      {routineIdx !== null && (
+        <WhyRoutineModal
+          item={WHY_ROUTINE[routineIdx]}
+          idx={routineIdx}
+          onClose={() => setRoutineIdx(null)}
+          onPrev={() => setRoutineIdx(i => Math.max(0, i - 1))}
+          onNext={() => setRoutineIdx(i => Math.min(WHY_ROUTINE.length - 1, i + 1))}
+          hasPrev={routineIdx > 0}
+          hasNext={routineIdx < WHY_ROUTINE.length - 1}
+        />
+      )}
     </div>
   );
 }

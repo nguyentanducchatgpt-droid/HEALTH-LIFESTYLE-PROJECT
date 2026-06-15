@@ -507,6 +507,97 @@ const WHY_MORNING = [
   },
 ];
 
+const PRACTICAL_TIPS = [
+  {
+    tip: 'Chuẩn bị từ tối hôm trước',
+    detail: 'Để sẵn bình nước, giày đi bộ, quần áo tập. Giảm ma sát buổi sáng = tăng khả năng thực hiện.',
+    icon: '🌙', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Friction" (ma sát) là yếu tố dự đoán tốt nhất hành vi có được duy trì hay không — không phải ý chí. Để sẵn bình nước, giày và quần áo tập từ tối hôm trước giảm số quyết định buổi sáng và tăng khả năng thực hiện routine lên 60–80% theo các nghiên cứu về thiết kế hành vi.',
+    detail: '"Intention-action gap" — khoảng cách giữa dự định và thực hiện — bị thu hẹp nhất khi môi trường được thiết kế để ủng hộ hành vi mục tiêu. Chuẩn bị từ tối là chiến lược "environment design" đơn giản nhất và hiệu quả nhất mà không tốn thêm thời gian hay nỗ lực ý chí.',
+    details: [
+      '"Friction" trong tâm lý hành vi: não đánh giá effort cần bỏ ra cho mỗi hành động. Khi friction thấp (thiết bị đã chuẩn bị sẵn), não ít kháng cự hơn. Ngược lại, phải tìm giày, mặc quần áo, pha nước buổi sáng — mỗi bước nhỏ là quyết định cần willpower.',
+      'BJ Fogg (Tiny Habits, Stanford) gọi đây là "environment architecture": thay đổi môi trường vật lý để hành vi mong muốn trở thành con đường kháng cự thấp nhất. Để bình nước cạnh giường = hành động đầu tiên khi thức dậy là uống nước, không phải quyết định uống hay không.',
+      'Cụ thể những gì nên chuẩn bị: bình nước 300–500ml (có thể thêm chanh/muối từ tối), giày đi bộ cạnh cửa, quần áo tập để ngoài ghế — ba vật dụng này cover toàn bộ 3 bước cốt lõi (nước, ánh sáng, vận động).',
+      'Night routine kết nối: chuẩn bị buổi sáng là phần cuối cùng của night routine — làm xong khi đi ngủ thì buổi sáng như "chạy trên ray". Mất 3–5 phút tối hôm trước tiết kiệm 15–20 phút quyết định và cognitive load buổi sáng.',
+      'Decision fatigue: não có lượng hạn chế "quyết định chất lượng" mỗi ngày. Mỗi quyết định nhỏ buổi sáng tiêu tốn nguồn tài nguyên này sớm hơn. Chuẩn bị sẵn = giữ decision budget cho công việc quan trọng hơn.',
+      'Mở rộng: chuẩn bị bữa sáng protein từ tối (trứng luộc sẵn, sữa chua để tủ lạnh), đặt điện thoại sạc ngoài phòng ngủ từ tối — để không cầm vào sáng. Mỗi thứ chuẩn bị sẵn là 1 ma sát bị loại bỏ khỏi sáng hôm sau.',
+    ],
+    points: [
+      { icon: '🏗️', label: 'Environment design', note: 'Thay đổi môi trường vật lý — không cần thay đổi ý chí' },
+      { icon: '🎯', label: '3 vật dụng cốt lõi', note: 'Bình nước + giày + quần áo tập — cover toàn bộ routine' },
+      { icon: '🧠', label: 'Giảm decision fatigue', note: 'Mỗi quyết định sáng tốn budget nhận thức — chuẩn bị sẵn bảo tồn nó' },
+      { icon: '⏰', label: '3–5 phút tối = 15–20 phút sáng', note: 'Đầu tư nhỏ tối hôm trước → sáng chạy trên ray không cần nghĩ' },
+    ],
+  },
+  {
+    tip: 'Không xem điện thoại trong 15 phút đầu',
+    detail: 'Điện thoại ngay khi thức dậy → não vào chế độ reactive ngay. Ưu tiên routine trước, điện thoại sau.',
+    icon: '📵', color: '#f43f5e', rgb: '244,63,94',
+    img: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Check điện thoại trong 5–10 phút đầu sau khi thức dậy kích hoạt dopamine spike → dopamine crash → khó tập trung và dễ procrastinate trong 2–3 giờ sau. Não buổi sáng ở trạng thái alpha (4–8Hz) — trạng thái dễ "nhiễm" thông tin nhất và cũng sáng tạo nhất.',
+    detail: 'Điện thoại được thiết kế để tối đa hóa engagement — mỗi notification, like, tin tức đều tạo dopamine micro-spike. Buổi sáng là thời điểm não dễ bị override nhất bởi external stimuli trước khi prefrontal cortex hoàn toàn active (~30 phút sau khi thức).',
+    details: [
+      'Trạng thái alpha buổi sáng (4–8Hz): ngay sau khi thức dậy, não ở trạng thái alpha/theta — ranh giới giữa ngủ và tỉnh. Trạng thái này đặc biệt sáng tạo và dễ tiếp nhận thông tin, nhưng cũng dễ bị "override" bởi external input như điện thoại.',
+      'Dopamine hijack: mỗi notification, like, tin tức tạo micro-spike dopamine. Điện thoại buổi sáng đặt "bar" dopamine lên cao ngay từ đầu — mọi hoạt động "bình thường" sau đó (công việc, học tập) cảm thấy nhạt hơn và khó duy trì attention hơn.',
+      'Reactive vs intentional mode: check điện thoại ngay → não vào chế độ respond-to-others-agenda. Các nghiên cứu của Gloria Mark (UC Irvine) cho thấy interrupt sáng sớm làm tăng "reactive work" cả ngày và giảm khả năng deep work tới 40%.',
+      'Prefrontal cortex chưa đủ active: PFC — vùng não chịu trách nhiệm quyết định, ưu tiên và tư duy chiến lược — cần 20–30 phút sau khi thức để hoàn toàn hoạt động. Điện thoại sớm nghĩa là "amygdala (cảm xúc) dẫn đầu" thay vì PFC.',
+      'Làm gì thay thế: 15 phút đầu là thời điểm tốt nhất cho: uống nước, mở cửa sổ/ra ngoài, đi bộ nhẹ, thiền ngắn, journal 1 câu, đọc sách vật lý. Tất cả những hoạt động này feed vào routine mà không bị interrupt.',
+      'Thực tế: đặt điện thoại sạc ngoài phòng ngủ từ tối — không cần ý chí để không cầm điện thoại sáng nếu nó không ở bên. "Out of sight, out of habit-trigger" — loại bỏ cue là cách phá thói quen hiệu quả nhất.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Trạng thái alpha buổi sáng', note: 'Sáng tạo + dễ nhiễm — bảo vệ nó trước thông tin ngoài' },
+      { icon: '🎭', label: 'Dopamine hijack', note: 'Notification spike dopamine sớm → mọi thứ sau cảm thấy nhạt hơn' },
+      { icon: '🛡️', label: 'Intentional > Reactive mode', note: 'PFC chưa active — để amygdala dẫn đầu là để cảm xúc quyết định ngày' },
+      { icon: '🔌', label: 'Sạc ngoài phòng ngủ', note: 'Loại bỏ cue = phá thói quen — không cần ý chí để không cầm máy' },
+    ],
+  },
+  {
+    tip: 'Bắt đầu từ 1 thói quen, không phải cả list',
+    detail: 'Tuần 1: chỉ uống nước khi thức. Tuần 2: thêm ánh sáng. Tuần 3: thêm đi bộ 2 phút.',
+    icon: '🌱', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1467664631004-58beab1ece0d?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Keystone habits" (Charles Duhigg) — thói quen then chốt — kéo theo 2–3 thói quen khác tự nhiên. Uống nước buổi sáng → nhớ ra ngoài → tự nhiên muốn di chuyển = hiệu ứng domino. Bắt đầu với 1 thói quen nhỏ nhất còn dễ hơn cả việc không làm gì.',
+    detail: 'Thử làm quá nhiều cùng lúc = willpower depletion sớm. Não có lượng hạn chế cognitive resources cho thay đổi hành vi mỗi ngày. Bắt đầu với 1 thói quen → build identity ("tôi là người uống nước mỗi sáng") → từ identity đó các thói quen mới dễ dàng thêm vào.',
+    details: [
+      'Keystone habit: một thói quen duy nhất kéo theo cascade các thói quen khác tự nhiên do chuỗi tác động (uống nước → ra ngoài lấy ánh sáng → tự nhiên muốn đi bộ thêm). Chọn đúng keystone habit = ROI cao nhất trên 1 hành động.',
+      'Ego depletion (Roy Baumeister): willpower là nguồn tài nguyên có giới hạn — bị tiêu hao khi dùng. Thử thực hiện 5 thói quen mới đồng thời đòi hỏi 5× willpower → thất bại nhiều hơn thành công → identity "tôi không giữ được thói quen" hình thành.',
+      'Identity-based habits (James Clear, Atomic Habits): thay vì "tôi muốn uống nước mỗi sáng" (outcome), hãy "tôi là người chăm sóc cơ thể mình" (identity). Mỗi lần uống nước = 1 lá phiếu cho identity đó. Identity thay đổi → hành vi tự nhiên theo sau.',
+      'Habit stacking: sau khi thói quen đầu tiên ổn định (2–4 tuần), thêm thói quen mới bằng cách gắn vào thói quen đã có: "Sau khi uống nước → mở cửa sổ". Thói quen cũ trở thành cue (tín hiệu) cho thói quen mới — không cần nhớ thêm.',
+      'Lộ trình 4 tuần: Tuần 1: chỉ uống nước ngay khi thức (30 giây). Tuần 2: thêm mở cửa sổ/ra ngoài (1 phút). Tuần 3: thêm đi bộ nhẹ 2 phút. Tuần 4: thêm 5 nhịp thở chậm. Sau 4 tuần: có routine 5 phút đầy đủ mà không cảm thấy "cố gắng".',
+      'Mở rộng: không cần "all or nothing". Ngày bận → làm rút gọn (chỉ uống nước). Ngày bình thường → làm đầy đủ. Linh hoạt > cứng nhắc trong giai đoạn xây dựng thói quen. Mục tiêu là giữ chuỗi, không phải hoàn hảo mỗi ngày.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Keystone habit = domino', note: '1 thói quen đúng kéo theo 2–3 thói quen khác tự nhiên' },
+      { icon: '🪪', label: 'Identity-based habits', note: '"Tôi là người chăm sóc cơ thể" → hành vi tự nhiên theo sau' },
+      { icon: '🔗', label: 'Habit stacking', note: 'Gắn thói quen mới vào thói quen cũ — không cần nhớ thêm' },
+      { icon: '📅', label: '4 tuần lên full routine', note: '30 giây → 1 phút → 2 phút → 5 phút → có routine mà không "cố"' },
+    ],
+  },
+  {
+    tip: 'Ngày bận nhất vẫn có thể làm 3 phút',
+    detail: 'Uống nước + ánh sáng + 5 hít thở = 3 phút. Đây là "minimum viable morning routine" của bạn.',
+    icon: '⚡', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Never miss twice" (James Clear) — bỏ 1 ngày là tai nạn, bỏ 2 ngày là bắt đầu 1 pattern mới. Minimum viable routine (3 phút) quan trọng hơn không làm gì vì nó giữ identity và chuỗi thói quen intact ngay cả trong ngày bận nhất.',
+    detail: 'Nghiên cứu về habit formation cho thấy "không bỏ 2 ngày liên tiếp" quan trọng hơn "làm đầy đủ mỗi ngày". 3 phút (nước + ánh sáng + 5 hít thở) đủ để giữ chain intact và não vẫn nhận được tín hiệu sinh học cơ bản cần thiết.',
+    details: [
+      '"Never miss twice" rule: missing once is an accident, missing twice is the start of a new habit. Một ngày bỏ routine không phá hủy thói quen — hai ngày liên tiếp bắt đầu rewire não theo pattern "tôi không làm routine". 3 phút ngăn ngày thứ hai bị bỏ.',
+      'Minimum viable routine là khái niệm từ "Minimum Viable Product" trong startup: phiên bản tối giản nhất vẫn giữ được giá trị cốt lõi. Với morning routine, giá trị cốt lõi là: hydrate + ánh sáng + tín hiệu sinh học. 3 phút đủ làm cả ba.',
+      '3 phút cụ thể: 1 phút uống nước (bình đã để sẵn từ tối) + 1 phút mở cửa sổ/bước ra cửa nhìn ra ngoài + 1 phút 5–6 nhịp thở chậm. Không cần thay đồ, không cần di chuyển xa, không cần thiết bị.',
+      'Tâm lý học: "tôi đã làm routine sáng nay, dù chỉ 3 phút" giữ identity "người có routine buổi sáng" nguyên vẹn. Identity intact → ngày hôm sau dễ trở lại routine đầy đủ hơn. Identity bị phá vỡ → cần nhiều effort để restart hơn.',
+      'Ngày đặc biệt bận: sáng họp sớm, chuyến bay, con ốm — những ngày này vẫn có 3 phút trong khi đun nước pha trà, trong thang máy, hoặc ngay sau khi dậy trước khi làm gì khác. 3 phút không cần điều kiện lý tưởng.',
+      'Mở rộng: sau "minimum viable" ngày hôm nay → bù vào buổi trưa hoặc tối nếu điều kiện cho phép. Không có khái niệm "lỡ rồi thì thôi cả ngày" — tư duy "all or nothing" là kẻ thù lớn nhất của thói quen dài hạn.',
+    ],
+    points: [
+      { icon: '🚫', label: 'Never miss twice', note: 'Bỏ 1 ngày là tai nạn — bỏ 2 ngày là pattern mới hình thành' },
+      { icon: '✂️', label: 'Minimum viable routine', note: 'Nước + ánh sáng + thở = 3 phút. Giữ chain trong ngày bận nhất' },
+      { icon: '🪪', label: 'Giữ identity nguyên vẹn', note: '"Tôi có routine sáng" — dù 3 phút hay 20 phút, identity không bị phá' },
+      { icon: '🧩', label: 'Không phải all or nothing', note: 'Tư duy "lỡ rồi thôi" là kẻ thù lớn nhất của thói quen dài hạn' },
+    ],
+  },
+];
+
 function MorningModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = (e) => {
@@ -606,6 +697,7 @@ export default function LifestyleMorningPage() {
   const [whyIdx, setWhyIdx] = useState(null);
   const [routineIdx, setRoutineIdx] = useState(null);
   const [mobilityIdx, setMobilityIdx] = useState(null);
+  const [tipIdx, setTipIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -753,15 +845,18 @@ export default function LifestyleMorningPage() {
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẹo Thực Tế</h2>
         <div className="grid gap-3">
-          {[
-            { tip: 'Chuẩn bị từ tối hôm trước', detail: 'Để sẵn bình nước, giày đi bộ, quần áo tập. Giảm ma sát buổi sáng = tăng khả năng thực hiện.' },
-            { tip: 'Không xem điện thoại trong 15 phút đầu', detail: 'Điện thoại ngay khi thức dậy → não vào chế độ reactive ngay. Ưu tiên routine trước, điện thoại sau.' },
-            { tip: 'Bắt đầu từ 1 thói quen, không phải cả list', detail: 'Tuần 1: chỉ uống nước khi thức. Tuần 2: thêm ánh sáng. Tuần 3: thêm đi bộ 2 phút.' },
-            { tip: 'Ngày bận nhất vẫn có thể làm 3 phút', detail: 'Uống nước + ánh sáng + 5 hít thở = 3 phút. Đây là "minimum viable morning routine" của bạn.' },
-          ].map((item, i) => (
-            <div key={i} className="p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <div className="font-semibold text-text text-lg mb-1" style={{ color: COLOR }}>→ {item.tip}</div>
-              <p className="text-muted text-base leading-relaxed">{item.detail}</p>
+          {PRACTICAL_TIPS.map((item, i) => (
+            <div key={i}
+              className="flex gap-3 items-start p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.18)` }}
+              onClick={() => setTipIdx(i)}>
+              <span className="text-2xl shrink-0 mt-0.5">{item.icon}</span>
+              <div className="flex-1">
+                <div className="font-semibold text-base mb-0.5" style={{ color: item.color }}>→ {item.tip}</div>
+                <p className="text-muted text-sm leading-relaxed">{item.detail}</p>
+              </div>
+              <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -771,6 +866,20 @@ export default function LifestyleMorningPage() {
         <Link to="/pillar/c/circadian" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Nhịp Sinh Học</Link>
         <Link to="/pillar/c/neat" className="text-lg font-semibold" style={{ color: COLOR }}>NEAT →</Link>
       </div>
+
+      {/* ── Practical tips modal — outside all RevealBlocks ── */}
+      {tipIdx !== null && (
+        <MorningModal
+          item={PRACTICAL_TIPS[tipIdx]}
+          idx={tipIdx}
+          total={PRACTICAL_TIPS.length}
+          onClose={() => setTipIdx(null)}
+          onPrev={() => setTipIdx(i => Math.max(0, i - 1))}
+          onNext={() => setTipIdx(i => Math.min(PRACTICAL_TIPS.length - 1, i + 1))}
+          hasPrev={tipIdx > 0}
+          hasNext={tipIdx < PRACTICAL_TIPS.length - 1}
+        />
+      )}
 
       {/* ── Why morning modal — outside all RevealBlocks ── */}
       {whyIdx !== null && (

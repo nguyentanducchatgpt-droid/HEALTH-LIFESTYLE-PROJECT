@@ -6,26 +6,306 @@ const RGB = '6,182,212';
 const ORBIT_ID = 'c-morning-orbit-kf';
 
 const ROUTINE_5 = [
-  { step: 1, time: '1 phút', action: 'Uống 1 ly nước (200–300ml)', why: 'Bổ sung nước sau 7–9 giờ không uống' },
-  { step: 2, time: '1 phút', action: 'Mở rèm hoặc ra ngoài lấy ánh nắng', why: 'Tắt melatonin, bật cortisol tự nhiên' },
-  { step: 3, time: '1 phút', action: 'Đi bộ nhẹ tại chỗ 50–100 bước', why: 'Tăng nhịp tim nhẹ, bật hệ tuần hoàn' },
-  { step: 4, time: '1 phút', action: 'Xoay vai × 10, xoay hông × 10', why: 'Giảm cứng khớp sau khi ngủ' },
-  { step: 5, time: '1 phút', action: 'Hít thở sâu 4–6 nhịp chậm', why: 'Oxy cho não, giảm cortisol lo âu' },
+  {
+    step: 1, time: '1 phút', action: 'Uống 1 ly nước (200–300ml)', why: 'Bổ sung nước sau 7–9 giờ không uống',
+    icon: '💧', title: 'Uống 1 ly nước (200–300ml)', color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sau 7–9 giờ không uống, cơ thể mất 0.5–1 lít qua hơi thở và mồ hôi khi ngủ. Mất nước nhẹ 1% đủ làm giảm hiệu suất nhận thức 5–10% — uống nước là "hack" đơn giản nhất và hiệu quả nhất của toàn bộ routine sáng.',
+    detail: 'Não là 73% nước và là cơ quan nhạy cảm nhất với dehydration. Buổi sáng sau khi ngủ dậy, nhiều người nhầm triệu chứng thiếu nước (mệt mỏi, đầu nặng) với "chưa uống cà phê" — trong khi thực ra họ chỉ cần hydrate.',
+    details: [
+      'Trong 7–9 giờ ngủ, cơ thể mất khoảng 0.5–1 lít qua hơi thở (respiratory water loss) và mồ hôi không nhìn thấy — dù phòng mát và không ra mồ hôi thấy được.',
+      'Mất nước 1% (700ml với người 70kg) làm giảm sự tập trung và tốc độ xử lý thông tin có thể đo được — bạn thường đạt ngưỡng này ngay khi vừa dậy.',
+      'Uống nước trước cà phê: caffeine có tác dụng lợi tiểu nhẹ — uống cà phê khi đang thiếu nước làm tăng tác động tiêu cực. Hydrate trước để tối ưu cả hai.',
+      'Nước lạnh (10–15°C) giúp tỉnh táo nhanh hơn: nhiệt độ thấp kích thích nhẹ hệ thần kinh giao cảm, tạo "shock" nhỏ tỉnh táo trong 60 giây đầu sau khi uống.',
+      'Chuẩn bị từ tối hôm trước: để sẵn bình nước cạnh giường hoặc trên bàn trước nhà vệ sinh — giảm ma sát = tăng khả năng thực hiện hằng ngày.',
+      'Thêm một nhúm muối hồng hoặc lát chanh: electrolytes giúp hấp thụ nước vào tế bào nhanh hơn (electrolyte gradient) — hữu ích đặc biệt sau đêm nóng hoặc tập thể dục.',
+    ],
+    points: [
+      { icon: '🌊', label: 'Mất 0.5–1 lít khi ngủ', note: 'Hơi thở cũng mang nước ra — dù không thấy mồ hôi' },
+      { icon: '🧠', label: '-1% nước = -5–10% nhận thức', note: 'Đạt ngưỡng này trước khi cảm thấy khát' },
+      { icon: '❄️', label: 'Nước lạnh tỉnh táo hơn', note: '10–15°C kích thích hệ giao cảm nhẹ — tỉnh nhanh hơn' },
+      { icon: '🍋', label: 'Thêm muối/chanh', note: 'Electrolytes giúp hấp thụ nước vào tế bào nhanh hơn' },
+    ],
+  },
+  {
+    step: 2, time: '1 phút', action: 'Mở rèm hoặc ra ngoài lấy ánh nắng', why: 'Tắt melatonin, bật cortisol tự nhiên',
+    icon: '☀️', title: 'Mở rèm hoặc ra ngoài lấy ánh nắng', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1464823063530-08f10ed1a2dd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ánh sáng mặt trời sáng sớm là tín hiệu mạnh nhất để tắt melatonin, khuếch đại Cortisol Awakening Response và đặt lại đồng hồ sinh học 24h. Tín hiệu này quyết định thời điểm bạn buồn ngủ tối nay — 12–16 giờ sau.',
+    detail: 'Tế bào ipRGC trong võng mạc gửi tín hiệu trực tiếp đến SCN (đồng hồ sinh học chủ) khi nhận ánh sáng mạnh. SCN đặt "timer" cho toàn bộ nhịp hormone 24h dựa trên tín hiệu ánh sáng này — ảnh hưởng đến cortisol, melatonin, nhiệt độ cơ thể và năng lượng suốt ngày.',
+    details: [
+      'Melatonin — hormone gây buồn ngủ — cần ánh sáng mạnh để ngừng sản xuất. Phòng tối sau khi dậy kéo dài "đêm sinh học", làm chậm quá trình tỉnh táo thêm 30–60 phút.',
+      'Ánh nắng trực tiếp ngoài trời đạt 10.000–100.000 lux — gấp 20–200 lần ánh đèn trong nhà (100–500 lux). Mở rèm để ánh sáng khuếch tán vào (~1.000–3.000 lux) vẫn hiệu quả hơn nhiều so với đèn điện.',
+      'Không cần nhìn thẳng vào mặt trời: ánh sáng khuếch tán từ bầu trời xanh đã đủ kích hoạt ipRGC — chỉ cần mắt mở ra ngoài, không cần đeo kính và không cần nắng trực tiếp.',
+      'Tác động kép lên cortisol: ánh sáng sáng sớm kích thích trục HPA tăng cortisol thêm ngoài CAR tự nhiên — tạo "double boost" năng lượng mà không cần caffeine.',
+      'Đặt timer melatonin tối nay: ra ngoài lúc 7h → melatonin tiết khoảng 21–22h. Không nhận đủ ánh sáng sáng → melatonin tiết muộn → khó ngủ đúng giờ dù mệt.',
+      'Ngày흐u/mưa: vẫn mở rèm hoặc ra ngoài — ánh sáng tán xạ ngoài trời ngày흐u (1.000–5.000 lux) vẫn mạnh hơn đèn trong nhà 10–50 lần.',
+    ],
+    points: [
+      { icon: '🌅', label: 'Tắt melatonin ngay', note: 'Ánh sáng mạnh dừng sản xuất melatonin — tỉnh hơn ngay' },
+      { icon: '⚡', label: 'Khuếch đại CAR', note: 'Ánh sáng + cortisol tự nhiên = double boost sáng' },
+      { icon: '🕙', label: 'Đặt giờ ngủ tối nay', note: 'Ánh sáng 7h → melatonin tiết 21–22h — ngủ đúng giờ' },
+      { icon: '🌧️', label: 'Ngày흐u vẫn hiệu quả', note: 'Khuếch tán ngoài trời vẫn 10–50x mạnh hơn đèn nhà' },
+    ],
+  },
+  {
+    step: 3, time: '1 phút', action: 'Đi bộ nhẹ tại chỗ 50–100 bước', why: 'Tăng nhịp tim nhẹ, bật hệ tuần hoàn',
+    icon: '🚶', title: 'Đi bộ nhẹ tại chỗ 50–100 bước', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '50–100 bước đi bộ nhẹ đủ để tăng nhịp tim 10–15%, bắt đầu tiết dopamine và norepinephrine, và tăng nhiệt độ cơ thể nhẹ — ba tín hiệu sinh học quan trọng báo cho não "ngày đã bắt đầu".',
+    detail: 'Sau 7–9 giờ nằm yên, hệ tuần hoàn đang ở tốc độ tối thiểu. Cơ bắp chân hoạt động như "bơm phụ" cho tim — khi co rút trong khi đi bộ, chúng đẩy máu từ tĩnh mạch chân lên tim và phân phối oxygen đến não hiệu quả hơn ngay lập tức.',
+    details: [
+      'Sau 7–9 giờ nằm yên, huyết áp và nhịp tim ở mức thấp nhất trong ngày — đứng dậy và đi bộ nhẹ ngay giúp cơ thể chuyển dần từ nghỉ sang hoạt động mà không bị chóng mặt đứng.',
+      'Cơ bắp chân hoạt động như "bơm phụ" cho tim: khi co rút khi đi bộ, chúng đẩy máu từ tĩnh mạch chân lên tim. 50–100 bước đủ để kích hoạt cơ chế bơm này có tác động đo được.',
+      'Dopamine và norepinephrine bắt đầu tăng sau vài phút vận động nhẹ — hai neurotransmitter này cải thiện động lực và tập trung, duy trì hiệu ứng 2–4 giờ sau khi dừng.',
+      'Nhiệt độ cơ thể tăng nhẹ khi vận động — nhiệt độ cơ thể liên quan trực tiếp đến mức tỉnh táo: ấm hơn = tỉnh táo hơn. Đây là lý do tắm nóng buổi sáng cũng giúp tỉnh.',
+      '50–100 bước chỉ mất ~1 phút — quá ngắn để cảm thấy phải "tập thể dục", nhưng đủ để cơ thể chuyển trạng thái. Ngưỡng tâm lý thấp giúp duy trì thói quen dễ hơn.',
+      'Cộng dồn với ánh sáng (bước 2): đi bộ nhẹ + ánh sáng tự nhiên = tác động circadian và thần kinh cộng dồn — hiệu quả hơn từng thứ riêng lẻ.',
+    ],
+    points: [
+      { icon: '❤️', label: 'Bật hệ tuần hoàn', note: 'Cơ bắp chân bơm máu lên tim — oxygen đến não nhanh hơn' },
+      { icon: '🎯', label: 'Dopamine + Norepinephrine', note: 'Bắt đầu tăng sau vài phút — hiệu ứng kéo dài 2–4 giờ' },
+      { icon: '🌡️', label: 'Nhiệt độ cơ thể tăng nhẹ', note: 'Ấm hơn = tỉnh táo hơn — cơ chế trực tiếp của não' },
+      { icon: '🧘', label: 'Ngưỡng tâm lý thấp', note: '50–100 bước — dễ làm hằng ngày hơn từ "tập thể dục"' },
+    ],
+  },
+  {
+    step: 4, time: '1 phút', action: 'Xoay vai × 10, xoay hông × 10', why: 'Giảm cứng khớp sau khi ngủ',
+    icon: '🔄', title: 'Xoay vai × 10, xoay hông × 10', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Khớp vai và hông là hai khớp có phạm vi chuyển động lớn nhất và cứng nhất sau một đêm bất động. Xoay tròn 10 lần mỗi khớp bơm dịch khớp (synovial fluid) trở lại, giảm cứng và đau buổi sáng trong dưới 1 phút.',
+    detail: 'Khớp không có mạch máu trực tiếp — chúng nhận chất dinh dưỡng và bôi trơn thông qua dịch khớp được bơm ra khi khớp chuyển động. Sau 7–9 giờ bất động, dịch khớp giảm lưu thông, gây cảm giác cứng và đau nhẹ buổi sáng.',
+    details: [
+      'Dịch khớp (synovial fluid) bôi trơn và nuôi dưỡng sụn khớp — cần được "bơm" vào khớp thông qua chuyển động. Sau đêm bất động, dịch khớp giảm lưu thông và khớp trở nên cứng hơn.',
+      'Xoay tròn là chuyển động hiệu quả nhất để bơm dịch khớp: chuyển động tròn kích hoạt toàn bộ phạm vi chuyển động, phân phối dịch khớp đều hơn chuyển động tuyến tính.',
+      'Vai và hông cứng nhất sau ngủ vì: vai thường ở vị trí cúi về trước khi nằm, hông ở vị trí gập khi nằm nghiêng — cả hai bị co cụm trong nhiều giờ.',
+      'Tiếng "kêu" khi xoay khớp buổi sáng là bình thường: thường là bóng khí nitơ trong dịch khớp nổ — không gây hại và thường đi kèm cảm giác nhẹ nhõm ngay lập tức.',
+      'Tác dụng lên thần kinh: stretch receptors trong cơ và khớp gửi tín hiệu lên não khi được kích hoạt — "thức dậy" hệ thần kinh vận động và tăng nhận thức về cơ thể (proprioception).',
+      'Mở rộng sau 1 tuần: thêm xoay cổ và cổ tay, cổ chân — 5 khớp × 10 lần = 3 phút mobility toàn thân đủ để giảm cứng sau ngủ hoàn toàn.',
+    ],
+    points: [
+      { icon: '💧', label: 'Bơm dịch khớp', note: 'Chuyển động tròn phân phối synovial fluid — giảm cứng ngay' },
+      { icon: '🎯', label: 'Vai + hông trước tiên', note: 'Hai khớp cứng nhất sau ngủ — ưu tiên xoay tròn' },
+      { icon: '🔊', label: 'Tiếng kêu là bình thường', note: 'Bóng khí nitơ — không gây hại, thường kèm cảm giác nhẹ' },
+      { icon: '🧠', label: 'Thức dậy hệ thần kinh', note: 'Stretch receptors → não nhận tín hiệu "cơ thể chuyển động"' },
+    ],
+  },
+  {
+    step: 5, time: '1 phút', action: 'Hít thở sâu 4–6 nhịp chậm', why: 'Oxy cho não, giảm cortisol lo âu',
+    icon: '🌬️', title: 'Hít thở sâu 4–6 nhịp chậm', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: '4–6 nhịp thở sâu bằng cơ hoành (4 giây hít vào – 6 giây thở ra) kích hoạt dây thần kinh phế vị (vagus nerve), giảm nhịp tim, hạ cortisol lo âu và chuyển hệ thần kinh từ "chiến đấu/bay" sang "nghỉ ngơi/tập trung" trong dưới 1 phút.',
+    detail: 'Hơi thở là cơ chế duy nhất bạn có thể điều khiển ý thức để trực tiếp tác động lên hệ thần kinh tự chủ. Thở ra dài hơn hít vào kích hoạt vagus nerve — giảm nhịp tim, hạ cortisol lo âu và tăng cảm giác bình tĩnh ngay lập tức.',
+    details: [
+      'Thở ra dài hơn hít vào (tỷ lệ 4:6 hoặc 4:8) kích hoạt dây thần kinh phế vị (vagus nerve) — kết nối trực tiếp não với tim, phổi và tiêu hóa. Kích hoạt vagal = giảm nhịp tim, giảm cortisol stress.',
+      'Thở cơ hoành (bụng phình ra khi hít vào) hiệu quả hơn thở ngực: cơ hoành chiếm 2/3 dung tích phổi — thở ngực chỉ dùng 1/3 phổi trên, kém oxygen so với thở bụng đầy đủ.',
+      '4–6 nhịp thở chậm đủ để đo được thay đổi trong HRV (heart rate variability) — chỉ số sức khỏe thần kinh tự chủ. HRV cao hơn = hệ thần kinh linh hoạt và phục hồi tốt hơn.',
+      'Buổi sáng check điện thoại ngay khi dậy kích hoạt cortisol lo âu (stress cortisol) và duy trì trạng thái reactive cả ngày. 4–6 nhịp thở đặt lại trạng thái thần kinh trước khi tiếp xúc thông tin.',
+      'Kết hợp với bước 4 (mobility): sau xoay khớp chuyển sang thở chậm — tạo sự tương phản rõ rệt giữa "chuyển động" và "tĩnh lặng", não nhận hai tín hiệu bổ trợ: cơ thể sẵn sàng + tâm trí bình tĩnh.',
+      'Mở rộng: box breathing (4-4-4-4: hít 4, nín 4, thở 4, nín 4) được Navy SEALs dùng kiểm soát lo âu dưới áp lực. Bắt đầu với 4:6 đơn giản hơn và cũng hiệu quả.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Thở bụng > thở ngực', note: 'Cơ hoành = 2/3 phổi — thở bụng cho nhiều oxy hơn' },
+      { icon: '💚', label: 'Kích hoạt vagus nerve', note: 'Thở ra dài → giảm nhịp tim, hạ cortisol stress ngay' },
+      { icon: '📊', label: 'Tăng HRV ngay', note: 'Heart rate variability tăng sau 4–6 nhịp — đo được' },
+      { icon: '🧘', label: 'Reset trạng thái thần kinh', note: 'Từ reactive/anxious → calm/focused trước khi bắt đầu ngày' },
+    ],
+  },
 ];
 
 const ROUTINE_10 = [
-  { step: 1, time: '2 phút', action: 'Uống nước + mở cửa sổ/ra ngoài lấy ánh sáng tự nhiên', why: 'Hydrate + báo hiệu bắt đầu ngày' },
-  { step: 2, time: '3 phút', action: 'Đi bộ nhẹ (trong nhà, ra hành lang hoặc ngoài trời)', why: 'Tăng nhiệt độ cơ thể, bật năng lượng' },
-  { step: 3, time: '3 phút', action: 'Mobility nhẹ: cổ vai gáy + xoay hông + vươn người', why: 'Giảm căng cơ, cải thiện tư thế ngày mới' },
-  { step: 4, time: '2 phút', action: 'Thở chậm + xác định 1 việc quan trọng nhất hôm nay', why: 'Định hướng tâm trí, giảm lo âu sáng sớm' },
+  {
+    step: 1, time: '2 phút', action: 'Uống nước + mở cửa sổ/ra ngoài lấy ánh sáng tự nhiên', why: 'Hydrate + báo hiệu bắt đầu ngày',
+    icon: '💧☀️', title: 'Uống nước + Lấy ánh sáng tự nhiên', color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hai phút đầu tiên của 10-minute routine kết hợp hai tín hiệu sinh học quan trọng nhất: nước (hydrate não sau 7–9 giờ thiếu nước) và ánh sáng (đặt lại đồng hồ sinh học 24h). Làm đồng thời = tiết kiệm thời gian và khuếch đại hiệu quả cộng dồn.',
+    detail: 'Mở cửa sổ uống nước trong ánh sáng sáng sớm — hai giây đơn giản tạo ra cascade sinh học: melatonin giảm, cortisol tăng, não được hydrate. Đây là bộ đôi nền tảng của mọi morning routine hiệu quả.',
+    details: [
+      'Uống 200–300ml nước lạnh ngay khi dậy: bù lại 0.5–1 lít mất qua hơi thở và mồ hôi khi ngủ, cung cấp nước cho não (73% nước) để hoạt động nhận thức bình thường.',
+      'Mở cửa sổ hoặc ra ngoài cùng lúc: ánh sáng tự nhiên kích hoạt ipRGC trong võng mạc — gửi tín hiệu đặt lại đồng hồ sinh học SCN trong khi bạn uống nước.',
+      'Hai phút trong ánh sáng sáng (ngay cả qua cửa sổ kính): hiệu quả hơn đèn trong nhà 5–20 lần về tín hiệu circadian, giúp melatonin giảm nhanh hơn và cortisol tăng đúng chu kỳ.',
+      'Không mở điện thoại trong 2 phút này: uống nước + ánh sáng là "first input" của ngày — cho não nhận tín hiệu sinh học trước thông tin xã hội để tránh cortisol lo âu sớm.',
+      '10-minute routine hiệu quả vì kết hợp: 2 phút này làm đồng thời hai việc mà 5-minute routine làm riêng biệt (bước 1 và 2) — tối ưu hóa thời gian mà không mất hiệu quả.',
+      'Biến thể: pha nước ấm với chanh và uống bên cửa sổ — kết hợp hydration + vitamin C + ánh sáng + hơi ấm giúp tỉnh táo đa chiều.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Kết hợp = cộng dồn', note: 'Nước + ánh sáng cùng lúc — hiệu quả hơn làm riêng lẻ' },
+      { icon: '📵', label: 'Không điện thoại', note: 'Cho não nhận tín hiệu sinh học trước thông tin xã hội' },
+      { icon: '⏱️', label: '2 phút thay 2 bước riêng', note: '10-minute routine tối ưu thời gian bằng cách kết hợp' },
+      { icon: '🍋', label: 'Biến thể nước ấm chanh', note: 'Hydration + vitamin C + ánh sáng — tỉnh táo đa chiều' },
+    ],
+  },
+  {
+    step: 2, time: '3 phút', action: 'Đi bộ nhẹ (trong nhà, ra hành lang hoặc ngoài trời)', why: 'Tăng nhiệt độ cơ thể, bật năng lượng',
+    icon: '🚶', title: 'Đi bộ nhẹ 3 phút', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '3 phút đi bộ nhẹ tăng nhiệt độ cơ thể 0.2–0.5°C, tiết dopamine và norepinephrine có thể đo được, và bơm máu đến não nhanh hơn. Hiệu ứng này kéo dài 2–4 giờ — dài hơn nhiều so với 3 phút bỏ ra.',
+    detail: '3 phút dài hơn 1 phút (ROUTINE_5) đủ để đạt nhiệt độ cơ thể tăng ổn định, tăng nhịp tim lên 20–30% và tiết đủ endorphin nhẹ — đặt nền năng lượng cho phần còn lại của routine.',
+    details: [
+      'Nhiệt độ cơ thể là chỉ số tốt nhất dự đoán mức tỉnh táo: tăng 0.2–0.5°C trong 3 phút đi bộ nhẹ đủ để cảm nhận được sự khác biệt trong mức tỉnh táo và tốc độ tư duy.',
+      'Cơ bắp chân là "bơm phụ" lớn nhất cho tim — 3 phút đi bộ đủ để hệ tuần hoàn chuyển từ chế độ nghỉ ngơi (lưu lượng máu thấp) sang chế độ hoạt động có oxy đầy đủ cho não.',
+      'Đi bộ trong nhà hoàn toàn hiệu quả: không cần thay quần áo, không cần chuẩn bị, không cần thời tiết tốt — giảm rào cản tâm lý là lý do chính để thói quen bền vững.',
+      'Kết hợp với bước 1 (ánh sáng): nếu ra ngoài đi bộ, bạn nhận thêm ánh sáng tự nhiên — hiệu quả circadian tăng gấp đôi so với đi bộ trong nhà.',
+      'Norepinephrine tăng trong 3 phút đi bộ nhẹ: neurotransmitter này cải thiện khả năng chú ý và xử lý thông tin — bạn sẽ đọc/nghe/xử lý thông tin hiệu quả hơn sau khi đi bộ so với ngồi ngay.',
+      'Biến thể ngày bận: leo 2–3 tầng cầu thang = 2 phút vận động nhẹ đủ hiệu quả — tích lũy "movement snacks" ngắn có tác động circadian và thần kinh tương tự.',
+    ],
+    points: [
+      { icon: '🌡️', label: '+0.2–0.5°C nhiệt độ cơ thể', note: 'Ấm hơn = tỉnh táo hơn — cơ chế trực tiếp' },
+      { icon: '🏠', label: 'Trong nhà hoàn toàn ổn', note: 'Không cần thời tiết tốt — giảm rào cản thói quen' },
+      { icon: '🧠', label: 'Norepinephrine + tập trung', note: 'Đọc/xử lý thông tin hiệu quả hơn sau khi đi bộ' },
+      { icon: '🪜', label: 'Cầu thang = movement snack', note: 'Leo 2–3 tầng = 2 phút vận động nhẹ hiệu quả' },
+    ],
+  },
+  {
+    step: 3, time: '3 phút', action: 'Mobility nhẹ: cổ vai gáy + xoay hông + vươn người', why: 'Giảm căng cơ, cải thiện tư thế ngày mới',
+    icon: '🔄', title: 'Mobility nhẹ: cổ vai gáy + xoay hông + vươn người', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '3 phút mobility nhẹ kết hợp 3 khu vực: cổ/vai/gáy (hay căng nhất sau ngủ), hông (bị co cụm khi nằm nghiêng) và vươn người toàn thân (giải phóng cột sống). Đây là phiên bản đầy đủ hơn so với chỉ xoay vai + hông trong routine 5 phút.',
+    detail: 'Tư thế buổi sáng thiết lập tư thế cả ngày. Cổ và vai căng → ngồi gù → đau lưng chiều. 3 phút mobility nhẹ phá vỡ pattern "cứng" từ giấc ngủ và thiết lập tư thế tốt hơn cho cả ngày làm việc.',
+    details: [
+      'Cổ và gáy: sau đêm ngủ gối cao hoặc không đúng tư thế, cơ ức đòn chũm và cơ thang thường bị co cụm. Xoay cổ tròn nhẹ (không nhanh, không gập quá mức) và cúi nghiêng 2 bên × 5 giây.',
+      'Vai: shoulder roll về phía sau (10 vòng) chống lại tư thế vai cúi về trước của người làm việc máy tính. Kéo vai về sau và giữ 5 giây × 3 lần giải phóng cơ ngực và cơ thang trước.',
+      'Xoay hông: đứng hai tay trên hông, xoay hông tròn 10 vòng mỗi chiều — bơm dịch khớp háng và giải phóng cơ gập hông (hip flexor) bị co cụm sau khi nằm nhiều giờ.',
+      'Vươn người toàn thân: giơ tay lên cao hết mức, đứng trên đầu ngón chân, giữ 5–10 giây — kéo giãn toàn bộ cột sống, cơ liên sườn và cơ bụng, cải thiện tư thế đứng thẳng.',
+      'Thứ tự quan trọng: từ trên xuống (cổ → vai → hông → toàn thân) theo luồng thần kinh từ não xuống — não nhận tín hiệu "toàn bộ cơ thể đã sẵn sàng" một cách tuần tự.',
+      'Dịch khớp và fascia: bên cạnh dịch khớp, fascia (mô liên kết bao quanh cơ) cũng trở nên "dính" sau nhiều giờ bất động. Mobility nhẹ giải phóng fascia, giảm cảm giác căng cứng toàn thân.',
+    ],
+    points: [
+      { icon: '🦒', label: 'Cổ + vai + gáy', note: 'Hay căng nhất sau ngủ — ưu tiên xoay tròn chậm' },
+      { icon: '🔄', label: 'Hông 10 vòng mỗi chiều', note: 'Bơm dịch khớp háng + giải phóng hip flexor' },
+      { icon: '🙆', label: 'Vươn người toàn thân', note: 'Kéo giãn cột sống + cơ liên sườn — cải thiện tư thế ngày' },
+      { icon: '⬇️', label: 'Từ trên xuống dưới', note: 'Cổ → vai → hông → toàn thân — theo luồng thần kinh' },
+    ],
+  },
+  {
+    step: 4, time: '2 phút', action: 'Thở chậm + xác định 1 việc quan trọng nhất hôm nay', why: 'Định hướng tâm trí, giảm lo âu sáng sớm',
+    icon: '🎯', title: 'Thở chậm + MIT (Most Important Task)', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Kết hợp thở chậm (giảm cortisol lo âu) và xác định MIT — Most Important Task — tạo ra sự chuyển đổi từ "reactive mode" (phản ứng với những gì xảy đến) sang "intentional mode" (chủ động quyết định ngày hôm nay sẽ là gì).',
+    detail: 'Não buổi sáng dễ bị kéo vào chế độ reactive: check email → phản ứng với yêu cầu người khác → ngày bị chi phối bởi agenda của người khác. 2 phút thở chậm + 1 câu MIT tạo ra "bộ đệm" giữa giấc ngủ và thế giới ngoài kia.',
+    details: [
+      'Thở chậm 4:6 (hít 4 giây – thở 6 giây) trong 1 phút: kích hoạt vagus nerve, giảm cortisol stress, tăng HRV — chuyển hệ thần kinh từ sympathetic (căng thẳng) sang parasympathetic (bình tĩnh tập trung).',
+      'MIT (Most Important Task): xác định 1 việc — chỉ 1 — mà nếu hoàn thành hôm nay, ngày sẽ cảm thấy thành công. Không phải danh sách, không phải goal lớn — 1 hành động cụ thể có thể hoàn thành trong ngày.',
+      'Xác định MIT khi não ở trạng thái bình tĩnh (sau thở chậm) cho kết quả khác với xác định khi vội vã hoặc lo lắng: bạn chọn được việc thực sự quan trọng, không phải việc gây nhiều lo lắng nhất.',
+      'MIT giúp đặt "default action": khi không biết làm gì tiếp theo trong ngày, não tự động quay về MIT thay vì mở email hoặc social media — giảm procrastination.',
+      'Viết MIT ra giấy (không điện thoại): hành động viết tay củng cố commitment và giúp não xử lý thông tin sâu hơn nhập liệu số. 1 câu ngắn đủ — "Hoàn thành proposal cho khách hàng X."',
+      'Kết thúc bằng 3 nhịp thở sâu: tạo cảm giác "sẵn sàng bắt đầu" — không còn nằm trong giấc ngủ, không còn hỗn loạn thông tin, nhưng đang ở trạng thái calm + intentional + focused.',
+    ],
+    points: [
+      { icon: '🌬️', label: 'Thở 4:6 trong 1 phút', note: 'Vagus nerve → bình tĩnh → cortisol stress giảm ngay' },
+      { icon: '🎯', label: 'Chỉ 1 MIT — không phải list', note: 'Nếu hoàn thành 1 việc này, ngày sẽ thành công' },
+      { icon: '✍️', label: 'Viết tay, không điện thoại', note: 'Cam kết sâu hơn, tránh bị kéo vào notifications' },
+      { icon: '🛡️', label: 'Bộ đệm chống reactive mode', note: 'Intentional mode: ngày do bạn quyết định, không phải inbox' },
+    ],
+  },
 ];
 
 const ROUTINE_20 = [
-  { step: 1, time: '3 phút', action: 'Uống nước + ánh sáng tự nhiên + journal 1 câu', why: 'Hydrate, tín hiệu ngày mới, khởi động tư duy' },
-  { step: 2, time: '5 phút', action: 'Đi bộ ngoài trời + hít thở không khí sáng', why: 'Nhiệt độ cơ thể tăng, cortisol khỏe mạnh' },
-  { step: 3, time: '7 phút', action: 'Mobility + kéo giãn toàn thân (xem bài tập bên dưới)', why: 'Chuẩn bị cơ thể cho ngày dài' },
-  { step: 4, time: '3 phút', action: 'Thiền nhẹ hoặc thở cơ hoành + review 3 việc chính', why: 'Tâm trí bình tĩnh, focus cao' },
-  { step: 5, time: '2 phút', action: 'Bữa ăn có đạm hoặc uống nước protein', why: 'Ổn định đường huyết, năng lượng bền' },
+  {
+    step: 1, time: '3 phút', action: 'Uống nước + ánh sáng tự nhiên + journal 1 câu', why: 'Hydrate, tín hiệu ngày mới, khởi động tư duy',
+    icon: '📓', title: 'Nước + Ánh sáng + Journal 1 câu', color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Journal 1 câu sáng sớm — trong trạng thái vừa dậy, trước khi não bị "ô nhiễm" bởi thông tin ngoài — là thời điểm tiếp cận suy nghĩ thật nhất của mình. Chỉ 1 câu đủ để khởi động tư duy và tạo tư liệu phản chiếu cá nhân có giá trị.',
+    detail: 'Ba phút này là "bộ ba khởi động" hoàn chỉnh: nước (hydrate não), ánh sáng (đặt lại nhịp sinh học) và journal (khởi động tư duy có chủ đích). Làm đồng thời hoặc tuần tự trong 3 phút — bước nền tảng cho 20-minute routine.',
+    details: [
+      'Uống 200–300ml nước cùng lúc mở rèm: tiết kiệm thời gian khi kết hợp hydration + tín hiệu ánh sáng circadian — não nhận hai tín hiệu sinh học nền tảng trong 1 phút.',
+      'Journal 1 câu: có thể là cảm xúc sáng dậy ("Hôm nay cảm thấy..."), điều đang lo lắng ("Điều đang chiếm tâm trí nhất là..."), hoặc intention ("Hôm nay tôi muốn...") — không cần đúng chính tả hay hay.',
+      'Não buổi sáng ở trạng thái alpha (thư giãn) sau khi ngủ — trước khi check email hoặc tin tức, đây là cửa sổ hiếm để truy cập suy nghĩ sâu hơn và sáng tạo hơn. Journal 1 câu bắt lấy cửa sổ này.',
+      'Không cần sổ đẹp hay cây bút tốt: bất kỳ tờ giấy nào, bút bic đều được. Rào cản vật chất thấp = khả năng thực hiện hằng ngày cao hơn.',
+      'Sau 30 ngày journal: đọc lại 30 câu trong 5 phút — pattern suy nghĩ, cảm xúc tái diễn và điều đang thực sự ưu tiên sẽ nổi rõ. Đây là tư liệu tự nhận thức (self-awareness) có giá trị nhất.',
+      '20-minute routine có journal vì đủ thời gian để không vội — 3 phút cho bộ ba này, không phải 3 phút gộp 2 việc vội vã.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Bộ ba không tách rời', note: 'Nước + ánh sáng + journal — ba tín hiệu nền tảng cho ngày' },
+      { icon: '✍️', label: 'Chỉ 1 câu', note: 'Không cần hay, không cần dài — bắt lấy suy nghĩ đầu ngày' },
+      { icon: '🌅', label: 'Cửa sổ alpha sáng sớm', note: 'Não ở trạng thái sáng tạo/sâu hơn trước khi check thông tin' },
+      { icon: '📊', label: 'Tư liệu 30 ngày', note: 'Đọc lại sau 1 tháng — pattern suy nghĩ và ưu tiên nổi rõ' },
+    ],
+  },
+  {
+    step: 2, time: '5 phút', action: 'Đi bộ ngoài trời + hít thở không khí sáng', why: 'Nhiệt độ cơ thể tăng, cortisol khỏe mạnh',
+    icon: '🌿', title: 'Đi bộ ngoài trời 5 phút', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '5 phút đi bộ ngoài trời buổi sáng là liều dopamine/serotonin/norepinephrine và ánh sáng circadian kết hợp — hiệu ứng thần kinh và sinh học mạnh nhất có thể đạt được trong 5 phút mà không cần bất kỳ thiết bị hay supplement nào.',
+    detail: 'Khác với routine 5 phút (đi bộ tại chỗ) và 10 phút (đi bộ trong nhà), routine 20 phút ưu tiên đi bộ ngoài trời — nhận thêm ánh sáng tự nhiên, không khí tươi và thay đổi môi trường. Ba yếu tố này cộng dồn tác động thần kinh và circadian vượt trội so với đi bộ trong nhà.',
+    details: [
+      'Đi bộ ngoài trời 5 phút = vận động nhẹ (dopamine/norepinephrine) + ánh sáng tự nhiên (circadian reset) + không khí tươi (CO2 giảm, O2 tăng) + thay đổi môi trường (visual novelty kích thích não). Bốn lợi ích trong 1 hoạt động.',
+      'Không khí tươi sáng sớm thường có nồng độ CO2 thấp hơn trong nhà — CO2 cao trong phòng ngủ kín sau đêm làm giảm sự tỉnh táo và tăng cảm giác "mù mờ" buổi sáng.',
+      'Visual novelty (nhìn thấy môi trường thay đổi khi đi bộ) kích thích dopamine nhẹ — não phản ứng với sự mới lạ bằng cách tiết dopamine. Đây là lý do đi bộ ngoài thường cảm thấy "tốt hơn" đi bộ trên máy chạy bộ cùng tốc độ.',
+      'Cortisol khỏe mạnh (healthy cortisol) vs cortisol stress: CAR + ánh sáng sáng sớm tạo ra spike cortisol sinh lý bình thường giúp tỉnh táo. Đây là cortisol "tốt" — khác hoàn toàn với cortisol do lo âu hay căng thẳng.',
+      'Nhiệt độ cơ thể tăng 0.5–1°C sau 5 phút đi bộ ngoài trời — cao hơn đi bộ trong nhà vì cơ thể cần làm việc nhiều hơn để duy trì nhiệt khi tiếp xúc không khí lạnh buổi sáng.',
+      'Ngày mưa: mặc áo và đi ra ngoài 5 phút vẫn hiệu quả — ánh sáng khuếch tán (1.000–5.000 lux ngày흐u) + không khí tươi + thay đổi môi trường vẫn cung cấp đủ ba lợi ích chính.',
+    ],
+    points: [
+      { icon: '🌟', label: '4 lợi ích trong 5 phút', note: 'Vận động + ánh sáng + không khí + visual novelty cộng dồn' },
+      { icon: '💨', label: 'Không khí tươi sáng sớm', note: 'CO2 thấp hơn trong nhà — giảm "mù mờ" buổi sáng' },
+      { icon: '🎲', label: 'Visual novelty = dopamine', note: 'Não tiết dopamine khi nhìn môi trường thay đổi khi đi bộ' },
+      { icon: '🌧️', label: 'Ngày mưa: mặc áo và đi', note: 'Ánh sáng tán xạ + không khí tươi vẫn đủ 3 lợi ích chính' },
+    ],
+  },
+  {
+    step: 3, time: '7 phút', action: 'Mobility + kéo giãn toàn thân (xem bài tập bên dưới)', why: 'Chuẩn bị cơ thể cho ngày dài',
+    icon: '🧘', title: 'Mobility + kéo giãn toàn thân 7 phút', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: '7 phút mobility buổi sáng — dài nhất trong 3 phiên bản routine — đủ để thực hiện đầy đủ 5 bài tập mobility (Chin tuck, Shoulder roll, Xoay hông, Thoracic extension, World\'s greatest stretch) và kéo giãn tĩnh nhẹ. Đây là phiên bản chuyên sâu nhất cho tư thế và phòng ngừa đau.',
+    detail: '7 phút là đủ thời gian để não và cơ thể thực sự "vào" trạng thái tập — không vội vàng, không bỏ qua khu vực nào. Mobility đầy đủ buổi sáng tác động đến tư thế cả ngày và giảm nguy cơ đau cổ vai gáy và lưng dài hạn.',
+    details: [
+      'Chin tuck (1 phút): kéo cằm vào, giữ 5 giây × 10 lần — chống lại "forward head posture" (đầu chìa về trước) do nhìn màn hình. Một trong những bài tập quan trọng nhất cho dân văn phòng.',
+      'Shoulder roll (1 phút): 10 vòng ra sau + 10 vòng ra trước + kéo vai về sau giữ 5 giây × 3 lần — chống lại vai cúi về trước và giải phóng cơ ngực bị co cụm sau ngủ.',
+      'Xoay hông (1 phút): 10 vòng mỗi chiều đứng + hip flexor stretch 30 giây mỗi bên — giải phóng cơ gập hông bị co cụm sau nhiều giờ nằm và ngồi.',
+      'Thoracic extension (2 phút): nằm sấp Cobra pose hoặc đứng tay sau gáy, mở ngực về phía sau — counter lại tư thế ngồi cúi gù. Thoracic spine (ngực giữa) là khu vực bị bỏ quên nhất.',
+      'World\'s greatest stretch (2 phút): 5 lần mỗi bên — kéo giãn hip flexor, xoay ngực, mở vai và kéo giãn hamstring trong 1 bài tập đa khớp. Được gọi là "greatest" vì cover nhiều nhóm cơ nhất trong ít thời gian nhất.',
+      'Sau 7 phút: cơ thể ở nhiệt độ cao hơn, dịch khớp đã phân phối đều, cơ giải phóng, tư thế cải thiện rõ — nền tảng tốt nhất cho công việc dài và tập luyện chính buổi chiều.',
+    ],
+    points: [
+      { icon: '🦒', label: 'Chin tuck quan trọng nhất', note: 'Chống forward head posture cho dân nhìn màn hình' },
+      { icon: '💪', label: 'Thoracic extension', note: 'Khu vực bị bỏ quên nhất — mở ngực, chống gù lưng' },
+      { icon: '🌟', label: "World's greatest stretch", note: 'Cover nhiều nhóm cơ nhất trong ít thời gian nhất' },
+      { icon: '📈', label: '7 phút đủ thời gian vào', note: 'Không vội vàng — não và cơ thể thực sự vào trạng thái tập' },
+    ],
+  },
+  {
+    step: 4, time: '3 phút', action: 'Thiền nhẹ hoặc thở cơ hoành + review 3 việc chính', why: 'Tâm trí bình tĩnh, focus cao',
+    icon: '🧘', title: 'Thiền nhẹ + Review 3 việc chính', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1528319725582-ddc096101511?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thiền nhẹ 2 phút + review 3 việc quan trọng nhất 1 phút là bước chuyển đổi từ "cơ thể sẵn sàng" sang "tâm trí sẵn sàng" — kết thúc phần sinh học của routine và bắt đầu phần nhận thức, intention và priorities.',
+    detail: '3 phút thiền nhẹ cuối routine không cần kỹ thuật phức tạp — chỉ ngồi yên, mắt nhắm, theo dõi hơi thở và để suy nghĩ đến rồi đi. Sau đó mở mắt, viết 3 việc quan trọng nhất hôm nay. Sự đơn giản này là điểm mạnh, không phải điểm yếu.',
+    details: [
+      '2 phút thiền nhẹ: ngồi thoải mái, mắt nhắm, tập trung vào hơi thở ra vào. Không cần "không suy nghĩ" — chỉ cần nhận ra mỗi khi tâm trí lang thang và nhẹ nhàng quay về hơi thở. Mỗi lần quay về = 1 lần tập "chú ý" cơ bắp thần kinh.',
+      'Không có gì thần bí trong thiền: thực chất là "attention training" — luyện khả năng phát hiện tâm trí đang ở đâu và điều chỉnh nó. Kỹ năng này áp dụng trực tiếp vào công việc, học tập và giao tiếp.',
+      'Sau 2 phút thiền: mở mắt, viết 3 việc quan trọng nhất hôm nay (không phải urgent, không phải dễ — mà là quan trọng nhất). Review trong 1 phút — hình dung rõ mỗi việc sẽ diễn ra như thế nào.',
+      '3 việc vs 1 việc (MIT của routine 10 phút): routine 20 phút có đủ thời gian để xác định 3 việc với độ sâu hơn — vẫn đặt thứ tự ưu tiên (việc 1 là MIT, 2 và 3 là secondary).',
+      'Mental rehearsal sau khi viết: hình dung làm xong từng việc — não không phân biệt rõ giữa tưởng tượng và thực hiện trong quá trình chuẩn bị. Mental rehearsal tăng khả năng thực hiện thực tế.',
+      'Kết thúc bằng 1 nhịp thở sâu và mở mắt chậm: tín hiệu "routine kết thúc, ngày bắt đầu" — chuyển đổi có chủ đích từ trạng thái chuẩn bị sang trạng thái hành động.',
+    ],
+    points: [
+      { icon: '🎯', label: '3 việc quan trọng nhất', note: 'Không phải urgent, không phải dễ — mà là important nhất' },
+      { icon: '🔁', label: 'Thiền = attention training', note: 'Mỗi lần quay về hơi thở = 1 lần tập cơ chú ý thần kinh' },
+      { icon: '🎬', label: 'Mental rehearsal', note: 'Hình dung làm xong từng việc — tăng khả năng thực hiện thật' },
+      { icon: '🚪', label: 'Cửa chuyển tiếp cơ thể → tâm trí', note: 'Kết thúc phần sinh học, bắt đầu phần nhận thức của ngày' },
+    ],
+  },
+  {
+    step: 5, time: '2 phút', action: 'Bữa ăn có đạm hoặc uống nước protein', why: 'Ổn định đường huyết, năng lượng bền',
+    icon: '🥚', title: 'Bữa sáng có đạm / Protein shake', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bữa sáng có đạm (protein) là bước duy nhất trong routine 20 phút liên quan đến thực phẩm — vì đây là bước đủ quan trọng để được đưa vào lịch trình. Đạm buổi sáng ổn định đường huyết 3–4 giờ và giảm cravings tinh bột về trưa.',
+    detail: 'Sau routine vận động và thiền, cơ thể cần nhiên liệu để chạy phần còn lại của ngày. Đạm là macro ưu việt nhất cho bữa sáng: tiêu hóa chậm, no lâu, không gây spike đường huyết và hỗ trợ tổng hợp neurotransmitter (serotonin, dopamine cần amino acids từ đạm).',
+    details: [
+      'Đạm no lâu nhất trong 3 macro: tiêu hóa mất 3–5 giờ (so với carb 1–2 giờ), ức chế ghrelin (hormone đói) hiệu quả và duy trì đường huyết ổn định đến bữa trưa.',
+      'Amino acids từ đạm là nguyên liệu tổng hợp neurotransmitter: tryptophan → serotonin (mood), tyrosine → dopamine (động lực), glycine → giảm lo âu. Bữa sáng có đạm = nền tảng hóa học cho tâm trạng và focus cả ngày.',
+      'Protein shake 2 phút: 20–30g protein từ whey/casein/plant protein + 200ml nước hoặc sữa — nhanh nhất, không cần nấu, phù hợp ngay cả ngày bận. Không tốt bằng thực phẩm nguyên hạt nhưng vẫn tốt hơn bỏ bữa.',
+      'Thực phẩm đạm nhanh: 2 quả trứng luộc (chuẩn bị tối hôm trước), 150g sữa chua Hy Lạp, 30g hạt hỗn hợp + phô mai. Tất cả đều dưới 2 phút chuẩn bị nếu chuẩn bị nguyên liệu từ tối.',
+      'Không bỏ bữa sáng để "uống cà phê cho gọn": caffeine khi đói spike cortisol và gây kích ứng dạ dày. Đạm trước caffeine ổn định đường huyết và giảm tác động tiêu cực của cà phê khi đói.',
+      'Kết thúc routine: sau bước 5, bạn đã hydrate, nhận ánh sáng, đi bộ, mobility đầy đủ, thiền, xác định priorities và nạp nhiên liệu — cơ thể và tâm trí ở trạng thái tốt nhất có thể để bắt đầu ngày dài.',
+    ],
+    points: [
+      { icon: '🔋', label: 'No lâu 3–4 giờ', note: 'Đạm tiêu hóa chậm nhất — ổn định đường huyết đến trưa' },
+      { icon: '🧠', label: 'Amino acids = nguyên liệu não', note: 'Tryptophan → serotonin, Tyrosine → dopamine' },
+      { icon: '⚡', label: 'Protein shake 2 phút', note: '20–30g protein + nước — nhanh nhất, không cần nấu' },
+      { icon: '✅', label: 'Hoàn thành routine 20 phút', note: 'Cơ thể + tâm trí ở trạng thái tốt nhất để bắt đầu ngày' },
+    ],
+  },
 ];
 
 const MOBILITY_5 = [
@@ -127,7 +407,7 @@ const WHY_MORNING = [
   },
 ];
 
-function MorningModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+function MorningModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -191,7 +471,7 @@ function MorningModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) 
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
               ← Trước
             </button>
-            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {WHY_MORNING.length}</span>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total ?? WHY_MORNING.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
@@ -224,6 +504,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function LifestyleMorningPage() {
   const [mode, setMode] = useState('5');
   const [whyIdx, setWhyIdx] = useState(null);
+  const [routineIdx, setRoutineIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -325,14 +606,20 @@ export default function LifestyleMorningPage() {
         </div>
         <div className="space-y-3">
           {routines[mode].map((row, i) => (
-            <div key={i} className="flex gap-4 items-start p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-lg font-bold"
-                style={{ background: COLOR, color: 'black' }}>{row.step}</div>
+            <div key={i}
+              className="flex gap-4 items-center p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${row.rgb ?? RGB},0.05)`, border: `1px solid rgba(${row.rgb ?? RGB},0.15)` }}
+              onClick={() => setRoutineIdx(i)}>
+              <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm font-bold"
+                style={{ background: row.color ?? COLOR, color: 'black' }}>{row.step}</div>
+              <span className="text-xl shrink-0">{row.icon}</span>
               <div className="flex-1">
-                <div className="font-semibold text-text text-lg">{row.action}</div>
-                <div className="text-base text-muted mt-0.5">{row.why}</div>
+                <div className="font-semibold text-text text-base">{row.action}</div>
+                <div className="text-sm text-muted mt-0.5">{row.why}</div>
               </div>
-              <div className="text-base font-semibold tabular-nums shrink-0" style={{ color: COLOR }}>{row.time}</div>
+              <div className="text-sm font-semibold tabular-nums shrink-0" style={{ color: row.color ?? COLOR }}>{row.time}</div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: row.color ?? COLOR, background: `rgba(${row.rgb ?? RGB},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -383,6 +670,7 @@ export default function LifestyleMorningPage() {
         <MorningModal
           item={WHY_MORNING[whyIdx]}
           idx={whyIdx}
+          total={WHY_MORNING.length}
           onClose={() => setWhyIdx(null)}
           onPrev={() => setWhyIdx(i => Math.max(0, i - 1))}
           onNext={() => setWhyIdx(i => Math.min(WHY_MORNING.length - 1, i + 1))}
@@ -390,6 +678,24 @@ export default function LifestyleMorningPage() {
           hasNext={whyIdx < WHY_MORNING.length - 1}
         />
       )}
+
+      {/* ── Routine steps modal — outside all RevealBlocks ── */}
+      {routineIdx !== null && (() => {
+        const arr = routines[mode];
+        const item = arr[routineIdx];
+        return (
+          <MorningModal
+            item={item}
+            idx={routineIdx}
+            total={arr.length}
+            onClose={() => setRoutineIdx(null)}
+            onPrev={() => setRoutineIdx(i => Math.max(0, i - 1))}
+            onNext={() => setRoutineIdx(i => Math.min(arr.length - 1, i + 1))}
+            hasPrev={routineIdx > 0}
+            hasNext={routineIdx < arr.length - 1}
+          />
+        );
+      })()}
     </div>
   );
 }

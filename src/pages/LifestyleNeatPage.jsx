@@ -97,12 +97,138 @@ const NEAT_VS_TEE = [
 ];
 
 const NEAT_ACTIVITIES = [
-  { activity: 'Đứng làm việc 4 tiếng', kcal: '+50–100', icon: '🧍' },
-  { activity: 'Đi bộ 10.000 bước', kcal: '+300–400', icon: '🚶' },
-  { activity: 'Đi cầu thang 10 phút', kcal: '+60–80', icon: '🪜' },
-  { activity: 'Dọn nhà 30 phút', kcal: '+80–120', icon: '🧹' },
-  { activity: 'Đi bộ sau 3 bữa ăn (5+10+15p)', kcal: '+80–120', icon: '🍽️' },
-  { activity: 'Fidgeting/đung đưa chân', kcal: '+20–50', icon: '💫' },
+  {
+    activity: 'Đứng làm việc 4 tiếng', kcal: '+50–100', icon: '🧍',
+    color: '#0ea5e9', rgb: '14,165,233',
+    title: 'Đứng Làm Việc 4 Tiếng',
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đứng thay vì ngồi 4 tiếng/ngày chỉ đốt thêm 50–100 kcal — nhỏ về calo, nhưng lợi ích thực sự là cải thiện đường huyết sau bữa ăn và giảm nguy cơ tim mạch. "Sitting is the new smoking" không phải vì kcal mà vì tác động lên chuyển hóa khi ngồi liên tục.',
+    detail: 'Ngồi liên tục >8 giờ/ngày tăng nguy cơ bệnh tim, tiểu đường và tử vong sớm ngay cả ở người tập gym đều đặn. Đứng xen kẽ mỗi 45–60 phút "tắt" quá trình tích lũy tiêu cực này, cải thiện lưu thông máu và giữ cơ bắp chân hoạt động nhẹ.',
+    details: [
+      'Kcal thực tế: đứng đốt ~80–100 kcal/giờ so với ngồi ~65–75 kcal/giờ — chênh lệch chỉ 15–25 kcal/giờ. 4 tiếng đứng = +60–100 kcal/ngày. Không ấn tượng về mặt năng lượng nhưng tác động chuyển hóa lớn hơn nhiều.',
+      'Glucose & insulin: đứng dậy sau bữa ăn kích hoạt cơ bắp chân hấp thụ glucose từ máu trực tiếp — giảm post-prandial glucose spike 30–35%. Ngồi yên sau bữa ăn để insulin làm toàn bộ công việc này kém hiệu quả và gây tích lũy glucose trong mỡ nội tạng.',
+      'Lipoprotein lipase (LPL): enzyme quan trọng để đốt mỡ trong cơ bắp. Ngồi liên tục tắt LPL trong cơ bắp chân — đứng dậy tái kích hoạt nó ngay trong vòng vài phút. Đây là cơ chế giải thích tại sao ngồi nhiều liên quan đến mỡ nội tạng cao.',
+      'Thực hiện thế nào: không cần standing desk đắt tiền — stack sách/thùng để nâng màn hình, dùng bàn bếp cao, đứng khi họp hoặc gọi điện. Timer 45 phút nhắc đứng dậy hiệu quả hơn cố gắng đứng liên tục.',
+      'Đứng xen kẽ tốt hơn đứng liên tục: đứng 5 phút mỗi 25–30 phút hiệu quả hơn đứng 2 tiếng liên tục rồi ngồi 6 tiếng. Đứng lâu liên tục gây mỏi chân, đau lưng dưới và giảm năng suất — mục tiêu là xen kẽ, không phải thay thế hoàn toàn.',
+      'Kết hợp: đứng dậy khi nghe nhạc, nghe podcast, xem video ngắn — thay đổi tư thế kết hợp với hoạt động không cần ngồi. Mỗi lần đứng dậy lấy nước (~1 phút) × 10 lần/ngày = 10 phút đứng thêm không tốn công sức.',
+    ],
+    points: [
+      { icon: '📊', label: '+50–100 kcal/4h', note: 'Nhỏ về kcal nhưng tác động chuyển hóa lớn hơn nhiều' },
+      { icon: '🩺', label: 'Giảm glucose spike', note: 'Đứng sau bữa ăn giảm đường huyết 30–35% — cơ bắp hấp thụ glucose' },
+      { icon: '🔥', label: 'Tái kích hoạt LPL', note: 'Lipoprotein lipase — enzyme đốt mỡ — tắt khi ngồi, bật khi đứng' },
+      { icon: '⏰', label: 'Xen kẽ > liên tục', note: '5 phút mỗi 30 phút hiệu quả hơn đứng 2 giờ rồi ngồi cả ngày' },
+    ],
+  },
+  {
+    activity: 'Đi bộ 10.000 bước', kcal: '+300–400', icon: '🚶',
+    color: '#10b981', rgb: '16,185,129',
+    title: 'Đi Bộ 10.000 Bước',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '10.000 bước (~7–8km) đốt 300–400 kcal — lớn nhất trong NEAT phổ biến. Nhưng con số "10.000" đến từ chiến dịch marketing của Yamasa (Nhật Bản, 1964), không phải khoa học. Nghiên cứu hiện đại cho thấy lợi ích sức khỏe plateau ở 7.000–8.000 bước và tăng ít hơn sau đó.',
+    detail: 'Không cần đạt 10.000 bước trong 1 lần liên tục — tích lũy rải rác trong ngày (đi lấy nước, leo cầu thang, đậu xe xa hơn) có hiệu quả NEAT tương tự. "Bộ đi tích lũy" vs "đi bộ 1 lần dài" về kcal và sức khỏe là như nhau.',
+    details: [
+      'Nguồn gốc 10.000 bước: thiết bị đếm bước "Manpo-kei" (万歩計 = "10.000 bước") được Yamasa tung ra thị trường để kỷ niệm Thế vận hội Tokyo 1964. Con số 10.000 được chọn vì tính dễ nhớ và marketing, không phải từ nghiên cứu y khoa.',
+      'Nghiên cứu Lee et al. 2019 (JAMA): theo dõi 16.741 phụ nữ cao tuổi cho thấy lợi ích tử vong giảm dần sau 7.500 bước — không tăng đáng kể sau đó. 7.000–8.000 bước có thể là ngưỡng thực tế hơn cho lợi ích sức khỏe tối ưu.',
+      'Kcal per step: trung bình ~0.04 kcal/bước (phụ thuộc cân nặng và tốc độ). 10.000 bước × 0.04 = ~400 kcal. Người 80kg đốt nhiều hơn, người 50kg đốt ít hơn. Tốc độ nhanh hơn cùng số bước đốt nhiều kcal hơn.',
+      'Tích lũy bước rải rác: 1.000 bước đi bộ đến chỗ làm + 500 bước đi lấy cà phê + 2.000 bước giờ nghỉ trưa + 1.500 bước sau tan làm = 5.000 bước không cần "đi bộ tập thể dục". Thêm 3.000 bước là cầu thang và các chuyển dịch nhỏ.',
+      'Beyond kcal: đi bộ 30+ phút liên tục kích hoạt thêm fat oxidation và dopamine/serotonin — không chỉ là NEAT. Đi bộ ngoài trời thêm vitamin D, ánh sáng circadian reset và "visual novelty" cho não. Kcal là lợi ích nhỏ nhất.',
+      'Tracking thực tế: smartphone đếm bước khá chính xác (sai số ~5–10%). Không cần mua thiết bị riêng. Để điện thoại trong túi khi đi bộ để đếm đúng — không để trong túi xách hay ba lô.',
+    ],
+    points: [
+      { icon: '📜', label: 'Marketing, không phải khoa học', note: '"10.000" từ Yamasa 1964 — 7.000–8.000 đủ cho lợi ích tối ưu' },
+      { icon: '🧮', label: '~0.04 kcal/bước', note: 'Người 70kg × 10.000 bước ≈ 400 kcal — tùy cân nặng và tốc độ' },
+      { icon: '🧩', label: 'Tích lũy rải rác = như nhau', note: 'Không cần đi liên tục — bước tích lũy suốt ngày hiệu quả tương đương' },
+      { icon: '🧠', label: 'Dopamine + ánh sáng', note: 'Lợi ích thần kinh và circadian lớn hơn kcal đốt trực tiếp' },
+    ],
+  },
+  {
+    activity: 'Đi cầu thang 10 phút', kcal: '+60–80', icon: '🪜',
+    color: '#f97316', rgb: '249,115,22',
+    title: 'Leo Cầu Thang 10 Phút',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Leo cầu thang đốt ~8–10 kcal/phút — gấp 8–10 lần đi bộ bằng phẳng (~3–4 kcal/phút). 10 phút cầu thang = tương đương 20–25 phút đi bộ về kcal. Cường độ vừa phải cũng tạo EPOC nhỏ — tiếp tục đốt thêm 15–30 phút sau khi dừng.',
+    detail: 'Cầu thang thay thang máy là "habit swap" hiệu quả nhất: không tốn thêm thời gian (thang máy thường chờ lâu hơn leo 1–2 tầng), tăng NEAT đáng kể và tốt hơn cho tim mạch. Hai lần leo cầu thang mỗi ngày trong 1 năm = giảm ~1–2 kg mỡ không cần thay đổi gì khác.',
+    details: [
+      'Kcal/phút so sánh: đi bộ bằng phẳng ~3–4 kcal/phút, leo cầu thang ~8–10 kcal/phút, chạy bộ nhẹ ~10–12 kcal/phút. Leo cầu thang nằm giữa đi bộ và chạy bộ về cường độ — hiệu quả hơn nhiều so với bước đi bằng.',
+      'Cơ bắp sử dụng: leo cầu thang kích hoạt quadriceps (cơ tứ đầu đùi), glutes (mông), hamstrings (đùi sau), calf (bắp chân) và cơ bụng để giữ thăng bằng — gần như full lower body workout ở cường độ thấp-vừa.',
+      'EPOC (afterburn) nhỏ: cầu thang đủ cường độ để tạo EPOC nhỏ — cơ thể tiếp tục đốt thêm 10–30 kcal trong 15–30 phút sau khi dừng để phục hồi nhịp tim và oxy. Đi bộ bằng không có hiệu ứng này.',
+      'Thực hiện thế nào: 1–2 tầng × 2–3 lần/ngày = ~5–10 phút leo cầu thang = 40–80 kcal thêm. Không cần leo liên tục — chia nhỏ trong ngày vẫn hiệu quả. Nếu làm việc tầng 10, leo đến tầng 5 và đi thang máy nốt cũng được.',
+      'Lợi ích tim mạch: nghiên cứu Harvard Alumni cho thấy leo cầu thang thường xuyên giảm nguy cơ tử vong tim mạch 20–30% — hiệu quả hơn nhiều so với kcal đốt gợi ý. Tim mạch được cải thiện ngay cả khi cường độ thấp nếu thực hiện đều đặn.',
+      'Làm quen dần nếu khó thở: nếu leo 2 tầng đã mệt, đó là tín hiệu tim mạch đang yếu — càng cần leo cầu thang hơn. Bắt đầu với 1 tầng × 3 lần/ngày, tăng dần. Khó thở sẽ giảm trong 2–4 tuần.',
+    ],
+    points: [
+      { icon: '⚡', label: '8–10x so với đi bằng', note: 'Cùng thời gian, leo cầu thang đốt nhiều kcal hơn đi bộ 8–10 lần' },
+      { icon: '🦵', label: 'Full lower body', note: 'Quad + glutes + hamstring + calf — gần như tập chân cường độ nhẹ' },
+      { icon: '⏱️', label: 'Không tốn thêm thời gian', note: 'Thang máy chờ lâu hơn leo 1–2 tầng — thực ra còn nhanh hơn' },
+      { icon: '❤️', label: '-20–30% nguy cơ tim mạch', note: 'Harvard Alumni Study — hiệu quả hơn nhiều so với kcal đốt gợi ý' },
+    ],
+  },
+  {
+    activity: 'Dọn nhà 30 phút', kcal: '+80–120', icon: '🧹',
+    color: '#f59e0b', rgb: '245,158,11',
+    title: 'Dọn Nhà 30 Phút',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Dọn nhà 30 phút đốt 80–120 kcal — tương đương đi bộ 25–35 phút. Quan trọng hơn, dọn nhà kết hợp nhiều chuyển động: cúi nhặt, đứng dậy, duỗi người, di chuyển đồ — NEAT "có chất lượng" hơn chỉ đi bộ về đa dạng chuyển động.',
+    detail: '"Domestic NEAT" — năng lượng đốt qua các hoạt động nhà — hay bị underestimate vì không mang tính "tập luyện". Người làm nội trợ nhiều thường có NEAT cao hơn người tập gym nhưng ít di chuyển trong ngày. NEAT không phân biệt nguồn gốc.',
+    details: [
+      'Kcal theo hoạt động cụ thể (người 70kg): Lau sàn/hút bụi: 4–5 kcal/phút, Nấu ăn đứng: 2–3 kcal/phút, Giặt và phơi quần áo: 2–3 kcal/phút, Dọn nhà bếp: 3–4 kcal/phút, Cắt cỏ/làm vườn: 5–6 kcal/phút.',
+      'MET (Metabolic Equivalent of Task): lau sàn MET ~3.5, hút bụi MET ~3.3, nấu ăn MET ~2.5. Để so sánh: đi bộ nhẹ MET ~3.0, yoga MET ~2.5. Dọn nhà năng động ngang bằng các bài tập nhẹ.',
+      'Lợi ích kép: vừa tăng NEAT vừa làm việc nhà xong. "Productive movement" — chuyển động có mục đích kép — tăng cả NEAT lẫn cảm giác hoàn thành. Nghiên cứu cho thấy nhà gọn gàng cũng giảm cortisol và tăng tập trung.',
+      'Batch housework: gom các việc nhà vào 1–2 phiên dài hơn thay vì làm lẻ tẻ từng thứ. 30 phút dọn nhà tích cực > 6 lần làm mỗi thứ 5 phút rải rác về kcal, vì cơ thể cần "warm up" trước khi đốt calo hiệu quả.',
+      'Cường độ quan trọng hơn thời gian: lau sàn kỹ với lực mạnh hơn tốt hơn lau nhẹ lâu hơn về kcal. Thêm âm nhạc nhanh để tăng tốc độ di chuyển khi dọn nhà — nghiên cứu cho thấy nhạc tempo cao tăng cường độ hoạt động tự nhiên.',
+      'Domestic NEAT tổng tháng: 30 phút dọn nhà × 20 ngày/tháng = 1.600–2.400 kcal/tháng — tương đương 4–6 buổi gym. Người xem nhà cửa là "bài tập" thực sự đang làm đúng.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Đa dạng chuyển động', note: 'Cúi + duỗi + di chuyển đồ — NEAT có chất lượng hơn chỉ đi bộ' },
+      { icon: '📊', label: 'MET 3–4.5', note: 'Ngang bằng đi bộ nhẹ về cường độ chuyển hóa' },
+      { icon: '✅', label: 'Lợi ích kép', note: 'Tăng NEAT + nhà gọn gàng + giảm cortisol — 1 hoạt động 3 lợi ích' },
+      { icon: '🎵', label: 'Nhạc nhanh tăng cường độ', note: 'Tempo cao → chuyển động nhanh hơn tự nhiên → kcal cao hơn' },
+    ],
+  },
+  {
+    activity: 'Đi bộ sau 3 bữa ăn (5+10+15p)', kcal: '+80–120', icon: '🍽️',
+    color: '#84cc16', rgb: '132,204,22',
+    title: 'Đi Bộ Sau 3 Bữa Ăn',
+    img: 'https://images.unsplash.com/photo-1499803270242-467f7b8cffcd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đi bộ nhẹ 10–15 phút sau bữa ăn giảm glucose peak 30–50% — lợi ích lớn hơn nhiều so với 80–120 kcal đốt được. Cơ bắp hoạt động hấp thụ glucose trực tiếp mà không cần insulin (GLUT4 mechanism) — giảm spike đường huyết hiệu quả nhất và cải thiện insulin sensitivity dài hạn.',
+    detail: 'Sau bữa ăn 15–30 phút là "thời điểm vàng" để vận động nhẹ: glucose từ thức ăn đang đổ vào máu và cơ bắp đang cần nhiên liệu nhất. 3 lần đi bộ nhỏ (5+10+15 phút) phân phối lợi ích đều nhau trong ngày thay vì 1 buổi tập dài.',
+    details: [
+      'GLUT4 mechanism: khi cơ bắp co rút khi đi bộ, GLUT4 protein di chuyển lên bề mặt tế bào cơ và hấp thụ glucose từ máu trực tiếp — không cần insulin. Cơ chế này đặc biệt quan trọng với người kháng insulin hoặc tiểu đường type 2.',
+      'Glucose peak reduction: nghiên cứu DiPietro et al. (Diabetes Care, 2013): 15 phút đi bộ nhẹ sau mỗi bữa ăn giảm glucose peak tốt hơn 1 lần đi bộ 45 phút vào buổi sáng — mặc dù tổng thời gian tương đương. Timing quan trọng hơn duration.',
+      'Sau bữa sáng (5 phút): buổi sáng insulin sensitivity tự nhiên cao nhất — 5 phút đi bộ nhẹ đủ để tận dụng thời điểm này và kết hợp với lấy ánh sáng sáng sớm.',
+      'Sau bữa trưa (10 phút): đây là bữa ăn thường có nhiều carb nhất — 10 phút đi bộ sau trưa cũng giảm "buồn ngủ sau ăn" do ổn định đường huyết và giảm adenosine tích lũy.',
+      'Sau bữa tối (15 phút): bữa tối gần với giờ ngủ — đường huyết cao trước ngủ ảnh hưởng đến sleep quality. 15 phút đi bộ nhẹ sau tối giúp glucose ổn định hơn trước khi ngủ và cải thiện giấc ngủ.',
+      'Ai nên đặc biệt chú ý: người tiền đái tháo đường, kháng insulin, hay buồn ngủ sau ăn, hoặc muốn giảm mỡ bụng. Post-meal walking là can thiệp đơn giản và hiệu quả nhất cho nhóm này, theo nhiều hướng dẫn y khoa hiện đại.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Glucose peak -30–50%', note: 'Cơ bắp hấp thụ glucose trực tiếp khi di chuyển — không cần insulin' },
+      { icon: '⏰', label: 'Thời điểm vàng 15–30 phút sau ăn', note: 'Glucose đang vào máu — vận động ngay khi cơ thể cần nhiên liệu nhất' },
+      { icon: '🔬', label: 'GLUT4 mechanism', note: 'Protein GLUT4 bề mặt tế bào cơ hút glucose trực tiếp khi co rút' },
+      { icon: '🌙', label: 'Bữa tối + 15 phút = ngủ tốt hơn', note: 'Glucose ổn định trước ngủ → ít gián đoạn giấc ngủ hơn' },
+    ],
+  },
+  {
+    activity: 'Fidgeting/đung đưa chân', kcal: '+20–50', icon: '💫',
+    color: '#8b5cf6', rgb: '139,92,246',
+    title: 'Fidgeting — Vận Động Bồn Chồn',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Fidgeting (đung đưa chân, gõ ngón tay, thay đổi tư thế liên tục) đốt 20–350 kcal/ngày — biên độ cực lớn tùy người. Nghiên cứu Levine (Mayo Clinic) cho thấy người hay fidget tự nhiên ít có xu hướng béo phì hơn và NEAT cao hơn đáng kể so với người ngồi yên hoàn toàn.',
+    detail: 'Fidgeting không phải thói quen xấu về mặt sinh lý — nó là tín hiệu NEAT tự nhiên mà cơ thể tự điều chỉnh. Người bị ép phải "ngồi yên" trong thời gian dài thực ra đang ức chế một cơ chế điều tiết năng lượng tự nhiên. Không thể "học" fidgeting — nhưng có thể tạo điều kiện cho nó.',
+    details: [
+      'Nghiên cứu Levine 1999 (Science): 16 người được cho ăn thêm 1.000 kcal/ngày trong 8 tuần. Người tăng cân ít nhất tự nhiên tăng fidgeting nhiều hơn để "phóng thích" năng lượng dư. Người ngồi yên hoàn toàn tích trữ nhiều mỡ hơn. NEAT — bao gồm fidgeting — là hệ thống kiểm soát cân nặng tự nhiên.',
+      'Biên độ 20–350 kcal: người hay bồn chồn, đung đưa chân, thay đổi tư thế liên tục có thể đốt thêm ~300–350 kcal/ngày. Người ngồi yên hoàn toàn chỉ có ~20–50 kcal từ các chuyển động không thể tránh. Đây là 1 trong những yếu tố tạo ra "NEAT gap" giữa người dễ tăng và khó tăng cân.',
+      'Không thể "học" fidgeting một cách nhân tạo: fidgeting là phản xạ tự động của hệ thần kinh, không thể fake liên tục. Cố ý đung đưa chân khi nhớ không giống với fidgeting tự nhiên. Tuy nhiên có thể tạo điều kiện cho nó.',
+      'Fidget tools có tác dụng không? Fidget spinner, fidget cube, bóng bóp tay: có tác dụng nhỏ (~20–40 kcal/ngày) và chủ yếu giúp tập trung hơn là đốt calo. Under-desk elliptical hoặc bàn pedal hiệu quả hơn về kcal (~50–100 kcal/giờ).',
+      'Under-desk elliptical: thiết bị đạp nhẹ dưới bàn khi ngồi làm việc — tốc độ chậm (20–30 rpm) đủ để đốt 50–80 kcal/giờ mà không ảnh hưởng đến công việc yêu cầu ngồi yên. Hiệu quả hơn nhiều so với fidget thông thường.',
+      'Body signal — không phải bad habit: nếu bạn hay bồn chồn, không thể ngồi yên — đó là cơ thể cần vận động hơn. Đứng dậy, đi bộ ngắn, hay chuyển sang môi trường năng động hơn có thể giải quyết gốc rễ hơn là ép bản thân ngồi yên.',
+    ],
+    points: [
+      { icon: '📊', label: '20–350 kcal/ngày', note: 'Biên độ lớn nhất trong NEAT — tùy mức độ bồn chồn tự nhiên' },
+      { icon: '🔬', label: 'Levine 1999 — Mayo Clinic', note: 'NEAT tự tăng khi ăn dư là cơ chế chống tích mỡ tự nhiên' },
+      { icon: '🚫', label: 'Không thể fake được', note: 'Fidgeting là reflex thần kinh — không giả lập liên tục được' },
+      { icon: '⚙️', label: 'Under-desk elliptical', note: '+50–80 kcal/giờ khi làm việc — hiệu quả hơn fidget tools thông thường' },
+    ],
+  },
 ];
 
 const OFFICE_HACKS = [
@@ -220,6 +346,7 @@ function NeatModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext
 export default function LifestyleNeatPage() {
   const [checks, setChecks] = useState({});
   const [teeIdx, setTeeIdx] = useState(null);
+  const [activityIdx, setActivityIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -316,12 +443,15 @@ export default function LifestyleNeatPage() {
         <p className="text-muted text-lg mb-6">Các hoạt động NEAT phổ biến và năng lượng tiêu thụ ước tính.</p>
         <div className="grid gap-3">
           {NEAT_ACTIVITIES.map((a, i) => (
-            <div key={i} className="flex items-center justify-between p-3 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <div className="flex items-center gap-3">
-                <span className="text-3xl">{a.icon}</span>
-                <span className="text-lg font-semibold text-text">{a.activity}</span>
-              </div>
-              <span className="text-lg font-bold tabular-nums" style={{ color: COLOR }}>{a.kcal} kcal</span>
+            <div key={i}
+              className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${a.rgb},0.05)`, border: `1px solid rgba(${a.rgb},0.18)` }}
+              onClick={() => setActivityIdx(i)}>
+              <span className="text-2xl shrink-0">{a.icon}</span>
+              <span className="text-base font-semibold text-text flex-1">{a.activity}</span>
+              <span className="text-base font-bold tabular-nums shrink-0" style={{ color: a.color }}>{a.kcal} kcal</span>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: a.color, background: `rgba(${a.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -400,6 +530,20 @@ export default function LifestyleNeatPage() {
         <Link to="/pillar/c/morning" className="text-muted hover:text-emerald-400 transition-colors text-lg">← Routine Sáng</Link>
         <Link to="/pillar/c/recovery" className="text-lg font-semibold" style={{ color: COLOR }}>Phục Hồi →</Link>
       </div>
+
+      {/* ── NEAT activities modal — outside all RevealBlocks ── */}
+      {activityIdx !== null && (
+        <NeatModal
+          item={NEAT_ACTIVITIES[activityIdx]}
+          idx={activityIdx}
+          total={NEAT_ACTIVITIES.length}
+          onClose={() => setActivityIdx(null)}
+          onPrev={() => setActivityIdx(i => Math.max(0, i - 1))}
+          onNext={() => setActivityIdx(i => Math.min(NEAT_ACTIVITIES.length - 1, i + 1))}
+          hasPrev={activityIdx > 0}
+          hasNext={activityIdx < NEAT_ACTIVITIES.length - 1}
+        />
+      )}
 
       {/* ── TDEE components modal — outside all RevealBlocks ── */}
       {teeIdx !== null && (

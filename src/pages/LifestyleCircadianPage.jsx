@@ -326,6 +326,97 @@ const POST_LUNCH_DIP = [
   },
 ];
 
+const TRACKER_SLOTS = [
+  {
+    slot: 'Sáng (7–9h)', icon: '🌅', level: 3,
+    time: 'Sáng (7–9h)', phase: 'Theo dõi năng lượng khởi động',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Năng lượng buổi sáng là chỉ số nhạy cảm nhất phản ánh chất lượng giấc ngủ đêm trước. Một đêm ngủ sâu đủ → sáng tỉnh táo tự nhiên. Thiếu ngủ sâu → sáng uể oải dù ngủ đủ giờ.',
+    detail: 'Sáng (7–9h) là "điểm xuất phát" của bản đồ năng lượng. Ghi lại mức năng lượng và những gì bạn ăn/làm giúp xác định xem thói quen buổi sáng nào thực sự giúp bạn tỉnh táo hơn — và thói quen nào đang kéo năng lượng xuống.',
+    details: [
+      'Ghi điểm năng lượng 1–5 lúc 8–9h: 1 = rất uể oải, 3 = bình thường, 5 = tỉnh táo hoàn toàn, không cần cà phê. Điểm thấp liên tục (1–2) sau 7+ tiếng ngủ = tín hiệu ngủ không sâu.',
+      'Ghi "Ăn gì?": sáng ăn đạm (trứng, sữa) → thường năng lượng ổn đến trưa. Ăn bánh ngọt/tinh bột nhanh → đường huyết spike rồi crash trước 10h.',
+      'Ghi "Làm gì?": đi bộ sáng hoặc ánh sáng tự nhiên → điểm năng lượng buổi sáng thường cao hơn 1–2 bậc so với ngồi trong nhà tối.',
+      'So sánh điểm sáng với giờ ngủ đêm trước: pattern thường rõ sau 3–4 ngày — ngủ trước 23h → sáng hôm sau điểm cao hơn ngủ sau 0h dù cùng 7 tiếng.',
+      'Ghi cà phê: uống ngay khi dậy (trước 8h) vs chờ đến 8–9h — tuần đầu ghi nhận xem cách nào cho năng lượng buổi sáng bền hơn.',
+      'Pattern cần chú ý: nếu điểm sáng luôn ≤ 2 dù ngủ ≥ 7h, có thể ngủ không sâu do: rượu tối hôm trước, phòng quá sáng/ấm, ngủ không đúng giờ cố định.',
+    ],
+    points: [
+      { icon: '📊', label: 'Chỉ số chất lượng ngủ', note: 'Điểm sáng phản ánh ngủ sâu đêm trước chính xác hơn giờ ngủ' },
+      { icon: '🥚', label: 'Ghi bữa sáng', note: 'Đạm vs tinh bột — tác động đến năng lượng trước 10h' },
+      { icon: '☀️', label: 'Ghi ánh sáng/vận động', note: 'Ra ngoài sáng sớm → điểm cao hơn 1–2 bậc' },
+      { icon: '🔍', label: 'So sánh với giờ ngủ', note: 'Pattern ngủ sớm → sáng tốt hơn thường rõ sau 3–4 ngày' },
+    ],
+  },
+  {
+    slot: 'Trưa (11–13h)', icon: '☀️', level: 5,
+    time: 'Trưa (11–13h)', phase: 'Theo dõi đỉnh năng lượng',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Trưa (11–13h) là thời điểm năng lượng cao nhất trong ngày với hầu hết mọi người. Ghi lại điểm năng lượng TRƯỚC bữa trưa — sau khi ăn điểm sẽ thay đổi do post-lunch dip. So sánh hai điểm giúp bạn biết bữa trưa ảnh hưởng đến năng lượng chiều như thế nào.',
+    detail: 'Điểm 11h là đỉnh thật sự của nhịp sinh học — không bị ảnh hưởng bởi bữa ăn. Điểm 13h phản ánh tác động của bữa trưa. Chênh lệch lớn (ví dụ từ 5 xuống 2) = bữa trưa nhiều tinh bột nhanh. Chênh lệch nhỏ (từ 5 xuống 4) = bữa trưa cân đối tốt.',
+    details: [
+      'Ghi điểm 11h (TRƯỚC ăn): đây là điểm circadian thật sự, phản ánh năng lượng nội sinh không bị ảnh hưởng bởi thực phẩm. Điểm này thường cao nhất trong ngày.',
+      'Ghi điểm 13h (SAU ăn): so sánh với điểm 11h — chênh lệch lớn (≥ 2 bậc) cho thấy bữa trưa đang gây post-lunch dip mạnh hơn bình thường.',
+      'Ghi "Ăn gì?": cơm trắng + ít rau/đạm → chênh lệch lớn. Gạo lứt + nhiều rau + đạm → chênh lệch nhỏ hơn. Pattern này thường rõ sau 3–5 ngày ghi chép.',
+      'Ghi "Làm gì?": nếu 11h bạn đang xử lý email không quan trọng — bạn đang "lãng phí" đỉnh nhận thức. Pattern này cần thay đổi: đặt task quan trọng nhất vào 9–11h.',
+      'Nếu điểm 11h luôn chỉ ở 3–4 (không bao giờ đạt 5): xem xét chất lượng ngủ sâu, lịch caffeine, hoặc căng thẳng mãn tính làm giảm "ceiling" năng lượng.',
+      'So sánh điểm trưa với thứ trong tuần: nhiều người báo cáo điểm thứ 2 thấp hơn (ngủ bù cuối tuần lệch nhịp) và điểm thứ 6 cao hơn (nhịp ổn định cả tuần).',
+    ],
+    points: [
+      { icon: '🎯', label: 'Ghi 11h VÀ 13h', note: 'Trước và sau ăn — chênh lệch = tác động bữa trưa' },
+      { icon: '🔝', label: 'Đỉnh circadian thật sự', note: 'Điểm 11h = năng lượng nội sinh — không bị thực phẩm ảnh hưởng' },
+      { icon: '📉', label: 'Chênh lệch ≥ 2 = tín hiệu', note: 'Bữa trưa nhiều tinh bột nhanh — cần điều chỉnh macro' },
+      { icon: '📅', label: 'So sánh thứ trong tuần', note: 'Thứ 2 thấp = ngủ bù cuối tuần lệch nhịp circadian' },
+    ],
+  },
+  {
+    slot: 'Chiều (14–16h)', icon: '⚡', level: 4,
+    time: 'Chiều (14–16h)', phase: 'Theo dõi phục hồi sau post-lunch dip',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chiều (14–16h) là khoảng thời gian phục hồi sau post-lunch dip và bước vào second wind. Điểm chiều phụ thuộc mạnh vào: (1) bữa trưa có đạm/rau không, (2) có nghỉ ngắn sau trưa không, (3) caffeine cut-off có đúng giờ không.',
+    detail: 'Second wind thật sự bắt đầu lúc ~15h khi nhiệt độ cơ thể đạt đỉnh — đây là cơ hội tốt thứ hai trong ngày cho công việc quan trọng. Nhưng nhiều người bỏ lỡ vì post-lunch dip kéo dài quá lâu do bữa trưa không phù hợp.',
+    details: [
+      'Ghi điểm 15h: nếu vẫn ≤ 2 sau bữa trưa tốt → đây là post-lunch dip circadian bình thường. Nếu vẫn ≤ 2 sau bữa trưa cân đối + nghỉ ngắn → xem xét chất lượng ngủ đêm.',
+      'Ghi "Làm gì 14–15h?": power nap 10–20 phút → điểm 15h thường cao hơn 1–2 bậc so với không nghỉ. Caffeine nap → thường cao hơn 2+ bậc.',
+      'Ghi caffeine: uống cà phê lúc mấy giờ và điểm chiều? Pattern caffeine ảnh hưởng đến điểm tối và chất lượng ngủ thường rõ sau 5–7 ngày ghi chép.',
+      'So sánh điểm 15h với bữa trưa: ngày ăn ít tinh bột + nhiều đạm/rau → điểm 15h thường cao hơn 1 bậc và phục hồi nhanh hơn 30–60 phút.',
+      'Ghi tập luyện: nếu tập lúc 15–17h, ghi điểm trước và sau tập — nhiều người báo cáo điểm sau tập buổi chiều cao hơn đáng kể và duy trì đến tối.',
+      'Pattern cần chú ý: điểm chiều luôn ≤ 2 dù bữa trưa tốt + nghỉ ngắn = dấu hiệu sleep debt tích lũy từ nhiều ngày — cần "trả nợ ngủ" bằng cách ngủ sớm hơn 30–60 phút trong 3–5 ngày.',
+    ],
+    points: [
+      { icon: '💤', label: 'Ghi power nap', note: 'Nghỉ 10–20 phút → điểm 15h thường +1–2 bậc' },
+      { icon: '☕', label: 'Ghi giờ uống cà phê', note: 'Tương quan với điểm tối và chất lượng ngủ — rõ sau 5–7 ngày' },
+      { icon: '🔄', label: 'Phục hồi nhanh = bữa trưa tốt', note: 'Đạm + rau → second wind lúc 15h, không kéo dài đến 16h' },
+      { icon: '⚠️', label: 'Luôn ≤ 2 buổi chiều', note: 'Sleep debt tích lũy — cần ngủ sớm hơn 3–5 đêm liên tiếp' },
+    ],
+  },
+  {
+    slot: 'Tối (18–20h)', icon: '🌆', level: 3,
+    time: 'Tối (18–20h)', phase: 'Theo dõi wind-down tự nhiên',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Điểm tối (18–20h) lý tưởng là 2–3/5 — đang giảm tự nhiên, không còn đỉnh năng lượng nhưng chưa kiệt sức. Điểm tối quá cao (4–5) = quá kích thích, khó vào giấc. Điểm tối quá thấp (≤ 1) = kiệt sức, sleep debt tích lũy.',
+    detail: 'Điểm tối là chỉ số dự đoán tốt nhất cho chất lượng ngủ đêm đó. Điểm tối ổn định 2–3 qua nhiều ngày = nhịp sinh học hoạt động tốt. Điểm tối dao động mạnh (hôm 5, hôm 1) = nhịp sinh học không ổn định — cần xem xét giờ ngủ thức và ánh sáng buổi tối.',
+    details: [
+      'Điểm tối lý tưởng là 2–3: cơ thể đang "hạ cánh" tự nhiên — đủ năng lượng để sinh hoạt xã hội, nấu ăn, giãn cơ nhẹ, nhưng không còn năng lượng để làm việc nặng.',
+      'Điểm tối 4–5: quá kích thích — thường do tập luyện cường độ cao sau 19h, cà phê muộn, tin tức căng thẳng, tranh luận. Dự báo khó vào giấc đêm đó.',
+      'Điểm tối ≤ 1: kiệt sức — thường do sleep debt tích lũy (không ngủ đủ nhiều đêm liên tiếp). Đây là tín hiệu cần ưu tiên ngủ sớm hơn, không phải uống cà phê hôm sau.',
+      'Ghi "Làm gì 18–20h?": xem phim hành động/tin tức → điểm tối thường cao hơn và khó ngủ. Đi bộ nhẹ/trò chuyện gia đình/đọc sách → điểm tối giảm tự nhiên hơn.',
+      'Ghi ánh sáng: dùng đèn ấm + giảm màn hình từ 20h → điểm tối thường ≤ 3 lúc 21h. Dùng đèn sáng + màn hình → điểm tối cao hơn và trễ hơn 1–2 tiếng.',
+      'Sau 7 ngày: so sánh điểm tối với điểm sáng hôm sau — pattern thường rõ: tối điểm 2–3 → sáng hôm sau 4–5. Tối điểm 5 → sáng hôm sau 2–3.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Lý tưởng: điểm 2–3 tối', note: 'Đang hạ cánh tự nhiên — không quá cao cũng không kiệt sức' },
+      { icon: '⚠️', label: 'Điểm tối 4–5 = tín hiệu', note: 'Quá kích thích → dự báo khó vào giấc đêm nay' },
+      { icon: '🔋', label: 'Điểm ≤ 1 = sleep debt', note: 'Cần ngủ sớm hơn, không phải cà phê nhiều hơn sáng mai' },
+      { icon: '🔗', label: 'Tối ↔ sáng hôm sau', note: 'Pattern tương quan rõ nhất sau 7 ngày ghi chép' },
+    ],
+  },
+];
+
 const CAFFEINE_GUIDE = [
   {
     rule: 'Không uống khi vừa thức dậy', icon: '⏰', level: 3,
@@ -539,6 +630,7 @@ export default function LifestyleCircadianPage() {
   const [lightIdx, setLightIdx] = useState(null);
   const [caffeineIdx, setCaffeineIdx] = useState(null);
   const [dipIdx, setDipIdx] = useState(null);
+  const [trackerIdx, setTrackerIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -705,19 +797,35 @@ export default function LifestyleCircadianPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Bài Tập: Vẽ Bản Đồ Năng Lượng 7 Ngày</h2>
         <p className="text-muted text-lg mb-6">Theo dõi 7 ngày để biết pattern riêng của bạn.</p>
         <div className="p-5 rounded-2xl border" style={{ borderColor: `rgba(${RGB},0.15)`, background: `rgba(${RGB},0.05)` }}>
-          <div className="grid grid-cols-3 gap-2 text-base text-muted mb-4 font-semibold" style={{ color: COLOR }}>
+          <div className="grid grid-cols-3 gap-2 text-sm text-muted mb-3 font-semibold px-3" style={{ color: COLOR }}>
             <span>Thời điểm</span>
             <span>Năng lượng (1–5)</span>
             <span>Ghi chú</span>
           </div>
-          {['Sáng (7–9h)', 'Trưa (11–13h)', 'Chiều (14–16h)', 'Tối (18–20h)'].map((t, i) => (
-            <div key={i} className="grid grid-cols-3 gap-2 py-2 border-t text-lg" style={{ borderColor: `rgba(${RGB},0.08)` }}>
-              <span className="text-muted">{t}</span>
-              <span className="text-muted">___</span>
-              <span className="text-muted text-base">Ăn gì? Làm gì?</span>
-            </div>
-          ))}
-          <div className="mt-4 text-base text-muted">
+          <div className="space-y-2">
+            {TRACKER_SLOTS.map((slot, i) => (
+              <div key={i}
+                className="grid grid-cols-3 gap-2 items-center px-3 py-2 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+                style={{ background: `rgba(${slot.rgb},0.06)`, border: `1px solid rgba(${slot.rgb},0.18)` }}
+                onClick={() => setTrackerIdx(i)}>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{slot.icon}</span>
+                  <span className="font-semibold text-sm" style={{ color: slot.color }}>{slot.slot}</span>
+                </div>
+                <div className="flex gap-0.5">
+                  {[1,2,3,4,5].map(n => (
+                    <div key={n} className="w-3 h-1.5 rounded-full" style={{ background: n <= slot.level ? slot.color : `rgba(${slot.rgb},0.2)` }} />
+                  ))}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-muted text-sm">Ăn gì? Làm gì?</span>
+                  <span className="text-xs font-bold px-2 py-0.5 rounded-lg opacity-60"
+                    style={{ color: slot.color, background: `rgba(${slot.rgb},0.12)` }}>Chi tiết →</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 text-sm text-muted">
             <p style={{ color: COLOR }} className="font-semibold mb-1">Sau 7 ngày bạn sẽ biết:</p>
             <ul className="space-y-1">
               <li>→ Mình hay mệt lúc nào và vì sao</li>
@@ -733,6 +841,19 @@ export default function LifestyleCircadianPage() {
         <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Routine Trước Ngủ</Link>
         <Link to="/pillar/c/morning" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Sáng →</Link>
       </div>
+
+      {/* ── Tracker slots modal ── */}
+      {trackerIdx !== null && (
+        <EnergyModal
+          item={TRACKER_SLOTS[trackerIdx]}
+          idx={trackerIdx}
+          onClose={() => setTrackerIdx(null)}
+          onPrev={() => setTrackerIdx(i => Math.max(0, i - 1))}
+          onNext={() => setTrackerIdx(i => Math.min(TRACKER_SLOTS.length - 1, i + 1))}
+          hasPrev={trackerIdx > 0}
+          hasNext={trackerIdx < TRACKER_SLOTS.length - 1}
+        />
+      )}
 
       {/* ── Post-lunch dip modal ── */}
       {dipIdx !== null && (

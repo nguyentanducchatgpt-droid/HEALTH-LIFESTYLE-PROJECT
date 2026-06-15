@@ -309,11 +309,111 @@ const ROUTINE_20 = [
 ];
 
 const MOBILITY_5 = [
-  { name: 'Chin tuck', reps: '10 lần', muscles: 'Cổ trước' },
-  { name: 'Shoulder roll', reps: '10 vòng × 2 chiều', muscles: 'Vai, cổ' },
-  { name: 'Xoay hông (đứng)', reps: '10 vòng mỗi bên', muscles: 'Hông, lưng dưới' },
-  { name: 'Thoracic extension', reps: '8–10 lần', muscles: 'Lưng trên' },
-  { name: 'World\'s greatest stretch', reps: '5 lần mỗi bên', muscles: 'Toàn thân' },
+  {
+    name: 'Chin tuck', reps: '10 lần', muscles: 'Cổ trước',
+    icon: '🦒', title: 'Chin Tuck — Kéo Cằm Vào', color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1520975954732-35dd22299614?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mỗi 2.5cm đầu chìa về phía trước thêm ~5kg tải trọng lên cột sống cổ. Người dùng máy tính trung bình chìa đầu 5–7.5cm — tương đương gánh thêm 10–15kg lên cổ suốt ngày làm việc. 10 chin tuck mỗi sáng là "reset" đơn giản nhất để counteract forward head posture.',
+    detail: 'Forward head posture là vấn đề phổ biến nhất của dân làm việc màn hình. Chin tuck kéo đầu về vị trí trung lập phía trên cột sống, giảm tải trọng lên đốt sống C5-C6 và kích hoạt cơ cổ sâu (deep cervical flexors) bị yếu do ít được dùng.',
+    details: [
+      'Forward head posture: với mỗi 2.5cm đầu chìa về trước, tải trọng lên cột sống cổ tăng khoảng 4.5–5kg. Người trung bình chìa đầu 5–7.5cm khi nhìn màn hình — gánh thêm 10–15kg liên tục lên đốt sống C5-C6.',
+      'Deep cervical flexors (longus colli, longus capitis) là cơ ổn định cột sống cổ chính: bị yếu dần ở người ngồi nhiều vì không được dùng đúng cách. Chin tuck kích hoạt và tăng cường nhóm cơ này.',
+      'Kỹ thuật đúng: đứng hoặc ngồi thẳng, nhìn thẳng về trước, kéo cằm thẳng ra sau (không cúi đầu xuống), giữ 5 giây, thả ra. Cảm thấy căng nhẹ phía sau cổ là đúng.',
+      'Không phải cúi đầu: chin tuck là chuyển động ngang — đầu đi ra phía sau, không cúi xuống. Nhìn thẳng trong suốt bài tập. Đây là lỗi phổ biến nhất khi mới thực hiện.',
+      'Thực hiện ở bất kỳ đâu: ngồi tại bàn, ngồi xe, đứng chờ — không cần thiết bị, không cần không gian. Lý tưởng nhất là thực hiện mỗi 1–2 giờ ngồi máy tính để reset tư thế cổ.',
+      'Kết hợp với shoulder roll (bài 2): chin tuck + shoulder roll ra sau = combo counteract toàn bộ tư thế ngồi gù cúi của dân văn phòng. Hai bài bổ trợ nhau và nên làm liên tiếp.',
+    ],
+    points: [
+      { icon: '📏', label: '+5kg/2.5cm đầu chìa', note: 'Người ngồi máy tính gánh thêm 10–15kg lên cổ mỗi ngày' },
+      { icon: '💪', label: 'Kích hoạt cơ cổ sâu', note: 'Deep cervical flexors — nhóm cơ bị yếu nhất ở dân văn phòng' },
+      { icon: '↔️', label: 'Chuyển động ngang', note: 'Kéo đầu ra sau — KHÔNG cúi xuống. Nhìn thẳng suốt bài' },
+      { icon: '🔄', label: 'Mỗi 1–2 giờ ngồi máy', note: 'Không cần thiết bị — làm tại bàn, trong xe, mọi lúc' },
+    ],
+  },
+  {
+    name: 'Shoulder roll', reps: '10 vòng × 2 chiều', muscles: 'Vai, cổ',
+    icon: '🔄', title: 'Shoulder Roll — Xoay Vai Tròn', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Rounded shoulders (vai cúi về trước) là pattern cơ học phổ biến nhất ở người làm việc máy tính. Shoulder roll ra sau 10 vòng kéo giãn cơ ngực (pectoralis) bị co cụm và kích hoạt rhomboids bị yếu — "reset" tư thế vai chỉ trong 1 phút.',
+    detail: 'Cơ ngực bị co cụm do ngồi với tay ở trước — kéo vai về phía trước và xuống. Rhomboids và middle trapezius bị yếu vì ít được kích hoạt. Shoulder roll ra sau kích hoạt nhóm cơ yếu trong khi kéo giãn nhóm cơ căng — cân bằng lại tư thế vai.',
+    details: [
+      'Rounded shoulders: cơ ngực (pectoralis major/minor) bị co cụm do ngồi tay ở trước; cơ thang giữa (rhomboids, middle trapezius) bị yếu và dài ra. Kết quả: vai bị kéo về phía trước và xuống.',
+      'Vai ra sau trước: backward roll kích hoạt rhomboids và middle trapezius — nhóm cơ bị yếu nhất. Forward roll chỉ tiếp tục kích hoạt cơ ngực vốn đã co cụm. Ưu tiên ra sau trước, ra trước sau để cân bằng.',
+      'Kỹ thuật đúng: tạo vòng tròn đầy đủ nhất có thể — vai lên cao, ra sau, xuống thấp, ra trước. Không nhún vai quá mức. Hít thở bình thường trong suốt bài tập.',
+      'Thêm kéo vai về sau giữ 5 giây × 3 lần: sau khi xoay, kéo hai vai về phía sau như cố chạm hai xương bả vai vào nhau, giữ 5 giây — tăng cường rhomboids hiệu quả nhất.',
+      'Không cần thiết bị: shoulder roll chỉ dùng trọng lượng cánh tay. Có thể thêm tạ nhẹ 0.5–1kg nếu muốn tăng tác động, nhưng không cần cho bài mobility buổi sáng.',
+      'Kết hợp với chin tuck: chin tuck + shoulder roll ra sau = posture reset 2 phút đầy đủ cho cổ và vai. Cổ thẳng + vai mở = tư thế đứng thẳng tự nhiên nhất.',
+    ],
+    points: [
+      { icon: '💪', label: 'Kéo giãn cơ ngực', note: 'Pectoralis bị co cụm → kéo vai về trước. Roll ra sau giải phóng' },
+      { icon: '✅', label: 'Kích hoạt rhomboids', note: 'Cơ thang giữa bị yếu nhất ở dân ngồi — roll ra sau tăng cường' },
+      { icon: '⬅️', label: 'Ra sau trước tiên', note: 'Backward roll ưu tiên — kích hoạt nhóm yếu trước nhóm mạnh' },
+      { icon: '🤝', label: 'Kéo bả vai lại gần nhau', note: 'Giữ 5 giây × 3 lần sau khi xoay — tăng cường hiệu quả nhất' },
+    ],
+  },
+  {
+    name: 'Xoay hông (đứng)', reps: '10 vòng mỗi bên', muscles: 'Hông, lưng dưới',
+    icon: '🔃', title: 'Xoay Hông Đứng', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hip flexor là nhóm cơ bị co cụm nhất ở người ngồi nhiều — khi ngồi, cơ này bị giữ ở trạng thái co ngắn nhiều giờ. Hip flexor ngắn là nguyên nhân phổ biến nhất gây đau lưng dưới: kéo xương chậu về trước (anterior pelvic tilt) và tạo áp lực lên đĩa đệm L4-L5.',
+    detail: 'Xoay hông tròn là chuyển động hiệu quả nhất để kéo giãn hip flexor và bơm dịch khớp háng (synovial fluid). Khớp háng không có mạch máu trực tiếp — nhận dinh dưỡng qua dịch khớp được bơm vào khi chuyển động. Xoay tròn phân phối dịch khớp đều hơn chuyển động tuyến tính.',
+    details: [
+      'Hip flexor (iliopsoas = iliacus + psoas major) kết nối cột sống thắt lưng với xương đùi. Khi bị co cụm do ngồi nhiều, nó kéo cột sống về phía trước (anterior pelvic tilt) — gây áp lực lên đĩa đệm L4-L5, nguyên nhân phổ biến nhất của đau lưng dưới mãn tính.',
+      'Synovial fluid (dịch khớp): khớp háng không có mạch máu trực tiếp, nhận chất dinh dưỡng và bôi trơn từ dịch khớp. Sau nhiều giờ bất động, dịch khớp phân phối không đều. Xoay tròn bơm dịch khớp trở lại đều khắp khớp.',
+      'Xoay tròn hiệu quả hơn chuyển động tuyến tính: kích hoạt toàn bộ phạm vi chuyển động của khớp háng, kéo giãn tất cả cơ xung quanh — hip flexor, piriformis, hip rotators và glutes.',
+      'Kỹ thuật: đứng hai tay trên hông, xoay hông tạo vòng tròn lớn nhất có thể — ra trước, sang một bên, ra sau, sang bên kia. 10 vòng mỗi chiều. Giữ bàn chân cố định, chỉ chuyển động khớp háng.',
+      'Anterior pelvic tilt: triệu chứng nhận biết — lưng dưới cong vào trong quá mức, bụng nhô ra nhẹ. Xoay hông + hip flexor stretch buổi sáng giảm dần tình trạng này nếu thực hiện đều đặn.',
+      'Mở rộng: sau xoay, thêm hip flexor stretch (lunge sâu, đầu gối sau chạm đất, giữ 30 giây mỗi bên) để kéo giãn sâu hơn. Combo này mất 3 phút và hiệu quả nhất giảm đau lưng dưới do ngồi nhiều.',
+    ],
+    points: [
+      { icon: '🦴', label: 'Hip flexor — cơ số 1 bị co cụm', note: 'Ngồi nhiều giờ → co ngắn → kéo cột sống lệch → đau lưng' },
+      { icon: '💧', label: 'Bơm dịch khớp háng', note: 'Xoay tròn phân phối synovial fluid — giảm cứng và bôi trơn khớp' },
+      { icon: '⭕', label: 'Vòng tròn lớn nhất có thể', note: 'Tối đa ROM — kéo giãn toàn bộ cơ xung quanh khớp háng' },
+      { icon: '🔧', label: 'Phòng ngừa đau lưng L4-L5', note: 'Hip flexor ngắn = anterior tilt = áp lực đĩa đệm — xoay hàng ngày' },
+    ],
+  },
+  {
+    name: 'Thoracic extension', reps: '8–10 lần', muscles: 'Lưng trên',
+    icon: '🦅', title: 'Thoracic Extension — Mở Ngực Ra Sau', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thoracic spine (T1–T12) là đoạn cột sống bị bỏ quên nhất: người tập thường chú ý cervical (cổ) và lumbar (lưng dưới), nhưng thoracic cứng là nguyên nhân gốc rễ khiến cả hai phải bù trừ quá mức và dễ chấn thương. Thoracic extension mở lại phạm vi chuyển động quan trọng này.',
+    detail: 'Thoracic kyphosis (gù lưng trên) do ngồi máy tính hạn chế không chỉ tư thế mà còn hô hấp — phổi không thể mở rộng đầy đủ khi lồng ngực bị khép. Mở thoracic spine ra sau counteract kyphosis, cải thiện tư thế và tăng dung tích hô hấp.',
+    details: [
+      'Thoracic spine gồm 12 đốt sống (T1–T12) kết nối xương sườn. Cứng thoracic → hạn chế rotation và extension → lưng dưới (lumbar) và cổ phải bù trừ bằng cách di chuyển nhiều hơn → tăng nguy cơ chấn thương.',
+      'Hô hấp và thoracic: lồng ngực bị khép (thoracic kyphosis) giảm dung tích hít vào tối đa 10–15%. Mở thoracic → lồng ngực mở rộng → thở sâu hơn — lý do yoga và pilates tập trung nhiều vào thoracic.',
+      'Cobra pose (nằm sấp): nằm sấp, lòng bàn tay đặt cạnh vai, đẩy ngực lên khỏi sàn trong khi giữ hông xuống. Cảm thấy kéo giãn cột sống ngực và mở lồng ngực. Giữ 20–30 giây × 3 lần.',
+      'Chair extension (ngồi ghế): ngồi thẳng, đan tay sau gáy, cẩn thận ngả người ra sau qua lưng ghế — dùng cạnh ghế như điểm tựa để extend thoracic spine. Thực hiện tại bàn làm việc.',
+      'Thoracic rotation: đứng hoặc ngồi, tay trước ngực, xoay thân trên sang hai bên tối đa mà không xoay hông. Rotation mobility quyết định hiệu suất mọi môn thể thao dùng xoay người (golf, tennis, bơi, boxing).',
+      'Sau 4–6 tuần: thoracic mobility cải thiện → tư thế thẳng hơn tự nhiên, hô hấp sâu hơn, đau cổ vai gáy mãn tính giảm — giải quyết nguyên nhân gốc rễ thay vì triệu chứng.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Đốt sống bị bỏ quên nhất', note: 'Thoracic cứng → cervical và lumbar bù trừ → dễ chấn thương' },
+      { icon: '🫁', label: 'Mở ngực = thở sâu hơn', note: 'Kyphosis giảm dung tích phổi 10–15% — extension giải phóng' },
+      { icon: '🦅', label: 'Cobra pose hoặc ghế', note: 'Nằm sấp đẩy ngực lên hoặc dùng cạnh ghế làm điểm tựa' },
+      { icon: '🌀', label: 'Rotation = yếu tố thể thao', note: 'Thoracic rotation quyết định hiệu suất golf, tennis, bơi, boxing' },
+    ],
+  },
+  {
+    name: "World's greatest stretch", reps: '5 lần mỗi bên', muscles: 'Toàn thân',
+    icon: '🌟', title: "World's Greatest Stretch", color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: "World's greatest stretch được gọi là 'greatest' vì cover 5 nhóm cơ quan trọng nhất trong 1 chuyển động: hip flexor, hamstring, cơ ngực, thoracic rotation và shoulder mobility. Không bài tập đơn nào khác có mật độ lợi ích cao như vậy trong 30 giây thực hiện.",
+    detail: "Bài tập kết hợp lunge sâu (kéo giãn hip flexor), thoracic rotation (mở cột sống ngực) và arm reach (shoulder mobility) trong 1 chuyển động lưu loát. Được physical therapist và trainer chuyên nghiệp dùng như bài warm-up/mobility đơn tốt nhất có thể.",
+    details: [
+      'Hip flexor: bước lunge dài ra trước, đầu gối sau có thể chạm đất. Cảm thấy kéo giãn mặt trước đùi chân sau và háng — đây là kéo giãn hip flexor sâu nhất trong bài, quan trọng nhất với người ngồi nhiều.',
+      'Thoracic rotation: từ vị trí lunge, đặt tay trong (cùng bên chân sau) xuống sàn cạnh chân trước. Từ từ xoay thân trên lên, giơ tay ngoài lên trần nhà. Nhìn theo tay — xoay tối đa không đau.',
+      'Hamstring: có thể chuyển sang duỗi thẳng chân trước để kéo giãn hamstring chân trước. Kết hợp hip flexor + hamstring trong 1 chuyển động từ 1 vị trí — không cần đổi tư thế.',
+      'Shoulder mobility: khi giơ tay lên (thoracic rotation), vai mở ra — shoulder mobility được kéo giãn thụ động. 5 lần mỗi bên đủ để cải thiện shoulder ROM đáng kể nếu thực hiện đều đặn.',
+      "Thứ tự: bước lunge dài → tay trong xuống sàn → xoay thân → giơ tay lên cao nhìn theo → giữ 2–3 giây → hạ tay → chuyển chân. Chậm và có kiểm soát quan trọng hơn tốc độ.",
+      "Tại sao 5 lần đủ: mobility hiệu quả nhất ở chất lượng chuyển động, không phải số lượng. 5 lần chất lượng > 20 lần vội vàng. World's greatest stretch cover đủ để không cần bài mobility nào khác nếu thời gian hạn chế.",
+    ],
+    points: [
+      { icon: '5️⃣', label: '5 nhóm cơ trong 1 bài', note: 'Hip flexor + hamstring + cơ ngực + thoracic + shoulder' },
+      { icon: '🏋️', label: 'Dùng bởi vận động viên', note: 'Physical therapist và trainer chuyên nghiệp chọn làm warm-up tốt nhất' },
+      { icon: '🐢', label: 'Chậm và kiểm soát', note: '5 lần chất lượng > 20 lần vội vàng — chất lượng quan trọng hơn' },
+      { icon: '⏱️', label: '30 giây/lần × 5 lần', note: 'Mật độ lợi ích cao nhất trong thời gian ngắn nhất có thể' },
+    ],
+  },
 ];
 
 const WHY_MORNING = [
@@ -505,6 +605,7 @@ export default function LifestyleMorningPage() {
   const [mode, setMode] = useState('5');
   const [whyIdx, setWhyIdx] = useState(null);
   const [routineIdx, setRoutineIdx] = useState(null);
+  const [mobilityIdx, setMobilityIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -631,12 +732,18 @@ export default function LifestyleMorningPage() {
         <p className="text-muted text-lg mb-6">Bài mobility nhẹ buổi sáng giảm cứng khớp, cải thiện tư thế và chuẩn bị cơ thể cho ngày làm việc.</p>
         <div className="space-y-2">
           {MOBILITY_5.map((ex, i) => (
-            <div key={i} className="flex items-center justify-between p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
-              <div>
-                <div className="font-semibold text-text text-lg">{ex.name}</div>
-                <div className="text-base text-muted">{ex.muscles}</div>
+            <div key={i}
+              className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${ex.rgb},0.05)`, border: `1px solid rgba(${ex.rgb},0.18)` }}
+              onClick={() => setMobilityIdx(i)}>
+              <span className="text-xl shrink-0">{ex.icon}</span>
+              <div className="flex-1">
+                <div className="font-semibold text-text text-base">{ex.name}</div>
+                <div className="text-sm text-muted">{ex.muscles}</div>
               </div>
-              <div className="text-base font-semibold tabular-nums" style={{ color: COLOR }}>{ex.reps}</div>
+              <div className="text-sm font-semibold tabular-nums shrink-0" style={{ color: ex.color }}>{ex.reps}</div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: ex.color, background: `rgba(${ex.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -676,6 +783,20 @@ export default function LifestyleMorningPage() {
           onNext={() => setWhyIdx(i => Math.min(WHY_MORNING.length - 1, i + 1))}
           hasPrev={whyIdx > 0}
           hasNext={whyIdx < WHY_MORNING.length - 1}
+        />
+      )}
+
+      {/* ── Mobility modal — outside all RevealBlocks ── */}
+      {mobilityIdx !== null && (
+        <MorningModal
+          item={MOBILITY_5[mobilityIdx]}
+          idx={mobilityIdx}
+          total={MOBILITY_5.length}
+          onClose={() => setMobilityIdx(null)}
+          onPrev={() => setMobilityIdx(i => Math.max(0, i - 1))}
+          onNext={() => setMobilityIdx(i => Math.min(MOBILITY_5.length - 1, i + 1))}
+          hasPrev={mobilityIdx > 0}
+          hasNext={mobilityIdx < MOBILITY_5.length - 1}
         />
       )}
 

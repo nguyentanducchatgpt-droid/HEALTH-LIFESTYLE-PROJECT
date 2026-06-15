@@ -232,12 +232,251 @@ const NEAT_ACTIVITIES = [
 ];
 
 const OFFICE_HACKS = [
-  { hack: 'Timer 45 phút', detail: 'Dùng app hoặc đồng hồ. Sau 45 phút: đứng dậy, đi lấy nước, xoay vai 30 giây rồi ngồi lại.' },
-  { hack: 'Bình nước 0.5L', detail: 'Đặt bình nước nhỏ (không phải 1.5L) để phải đứng dậy đổ thêm nước thường xuyên hơn.' },
-  { hack: 'Họp đứng hoặc đi bộ', detail: 'Cuộc họp 1-1 hoặc cuộc gọi điện thoại: đứng dậy hoặc đi bộ chậm thay vì ngồi.' },
-  { hack: 'Printer ở tầng khác', detail: 'Nếu có thể, đặt máy in, máy pha cà phê ở chỗ cần đi bộ thêm.' },
-  { hack: 'Cầu thang thay thang máy', detail: 'Chỉ cần 1–2 tầng, 2–3 lần/ngày. Nhỏ nhưng tích lũy đáng kể.' },
-  { hack: 'Lunch walk 10 phút', detail: 'Đi bộ 10 phút sau ăn trưa. Tỉnh táo + ổn định đường huyết + tăng NEAT.' },
+  {
+    hack: 'Timer 45 phút', icon: '⏱️', color: '#f97316', rgb: '249,115,22',
+    title: 'Timer 45 Phút — Ngắt Quãng Có Kỷ Luật',
+    img: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngồi liên tục >60 phút tắt LPL enzyme, tăng cortisol và làm cứng cột sống. Timer 45 phút là "minimum viable break" — đủ để vào deep focus mà không trả giá sinh lý cho ngồi dài. Khoa học nhận thức cho thấy nghỉ ngắn định kỳ không phá vỡ flow — ngược lại, giúp duy trì sự tập trung lâu dài hơn.',
+    detail: '45 phút là điểm ngọt giữa Pomodoro (25 phút) và Ultradian rhythm (90 phút). Đủ để vào trạng thái tập trung sâu nhưng chưa đủ lâu để cơ thể bắt đầu trả giá sinh lý. Break 2 phút đứng dậy và đi là đủ — không cần ngủ hay rời khu vực làm việc.',
+    detail_short: 'Dùng app hoặc đồng hồ. Sau 45 phút: đứng dậy, đi lấy nước, xoay vai 30 giây rồi ngồi lại.',
+    details: [
+      'LPL (Lipoprotein Lipase) enzyme bị ức chế sau 20–30 phút ngồi. Timer 45 phút đảm bảo LPL được tái kích hoạt ít nhất mỗi giờ — giữ cơ bắp trong trạng thái chuyển hóa active suốt ngày làm việc.',
+      'Pomodoro Technique (Francesco Cirillo): 25 phút tập trung + 5 phút nghỉ. Timer 45 phút là biến thể dài hơn phù hợp với công việc cần deep focus. Cả hai đều ủng hộ ngắt quãng định kỳ thay vì làm liên tục.',
+      'Ultradian rhythm: não tự nhiên có chu kỳ tập trung ~90–120 phút rồi cần nghỉ ngơi. Break 45 phút đảm bảo bạn nghỉ trước khi đến điểm suy giảm nhận thức — không phải sau khi đã mất tập trung.',
+      'Break chất lượng vs break dài: nghiên cứu Microsoft Research cho thấy 10 phút nghỉ bao gồm thư giãn nhẹ hiệu quả hơn 20 phút nhìn điện thoại. Timer nhắc đứng dậy 2 phút thực chất > nhìn mạng xã hội 5 phút.',
+      'App recommendations: Forest (gamification cây xanh), Be Focused (Pomodoro), hoặc đơn giản là tính năng timer mặc định của điện thoại. Quan trọng là timer phát tiếng — không dựa vào nhớ manual.',
+      '"Never miss twice" rule: nếu bỏ lỡ 1 timer (đang họp, đang trong flow quan trọng), không sao — nhưng không để bỏ 2 lần liên tiếp. Tính liên tục quan trọng hơn độ chính xác tuyệt đối.',
+    ],
+    points: [
+      { icon: '🔥', label: 'LPL reset mỗi 45 phút', note: 'Enzyme đốt mỡ không bị tắt quá lâu — chuyển hóa giữ ở mức active' },
+      { icon: '🧠', label: 'Trước điểm suy giảm nhận thức', note: 'Break trước khi não đến ngưỡng — duy trì chất lượng focus lâu hơn' },
+      { icon: '⏰', label: '2 phút là đủ', note: 'Đứng dậy + đi 20 bước đủ để reset sinh lý — không cần rời bàn lâu' },
+      { icon: '📱', label: 'App > ý chí', note: 'Timer tự động thắng mọi cố gắng "nhớ" manual — dùng công nghệ' },
+    ],
+  },
+  {
+    hack: 'Bình nước 0.5L', icon: '🍶', color: '#0ea5e9', rgb: '14,165,233',
+    title: 'Bình Nước 0.5L — NEAT Hack Kép',
+    img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bình nước nhỏ 0.5L thay vì 1.5L tạo ra 3× nhiều lần đứng dậy tự nhiên — không cần nhớ, không cần alarm. Mỗi lần đứng dậy đổ nước: 2 phút đứng + 20–40 bước + LPL reactivation. Nhân với 6–8 lần/ngày = 12–16 phút đứng và vài trăm bước hoàn toàn "miễn phí".',
+    detail: 'Đây là "friction engineering" — thiết kế môi trường để hành vi tốt xảy ra tự động, không cần ý chí. Bình nhỏ tạo ra rào cản nhỏ (phải đứng dậy đổ thêm) biến thành lợi ích lớn (NEAT tăng, hydration đều đặn). Nguyên lý tương tự như thiết kế cầu thang đẹp hơn thang máy để khuyến khích leo cầu thang.',
+    detail_short: 'Đặt bình nước nhỏ (không phải 1.5L) để phải đứng dậy đổ thêm nước thường xuyên hơn.',
+    details: [
+      'Toán học đơn giản: bình 1.5L → 1–2 lần đứng dậy/ngày. Bình 0.5L → 5–6 lần đứng dậy/ngày. Chênh lệch 4–5 lần × 2 phút đứng = 8–10 phút đứng thêm/ngày hoàn toàn tự động không cần nhớ.',
+      'Vị trí bình chiến lược: đặt bình ở nơi cần đứng dậy và đi 10–20 bước (bếp, quầy pha cà phê, phòng khác) thay vì ngay cạnh bàn. Mỗi lần lấy nước = 20–40 bước + đứng dậy + LPL reset.',
+      'Hydration đều đặn vs uống nhiều 1 lần: uống liên tục nhỏ giọt suốt ngày tốt hơn uống 500ml 1 lần về hấp thụ. Thận hấp thụ nước hiệu quả nhất khi nhận đều đặn — không bị overload 1 lần rồi bài tiết ngay.',
+      'Thiếu nước 1–2% (500–1.000ml với người 70kg) đã đo được giảm nhận thức: tập trung, tốc độ xử lý, trí nhớ ngắn hạn đều giảm. Bình nhỏ = nhắc nhở hydration tự động, không cần app uống nước.',
+      'Kết hợp micro-movement: mỗi lần đứng dậy đổ nước, thêm 5 calf raise hoặc xoay vai 5 vòng trước khi quay lại bàn. Lấy nước trở thành "movement trigger" — một hành động nhỏ kéo theo nhiều lợi ích.',
+      'Cost-benefit: bình nước 0.5L giá ~50.000–200.000đ. Lợi ích: 8–12 phút đứng thêm/ngày × 250 ngày làm việc/năm = 33–50 giờ đứng/năm thêm, hoàn toàn không cần ý chí. ROI cực cao.',
+    ],
+    points: [
+      { icon: '⚙️', label: 'Friction engineering', note: 'Thiết kế môi trường để hành vi tốt xảy ra tự động — không cần ý chí' },
+      { icon: '💧', label: '6× đứng dậy/ngày', note: 'Bình 0.5L hết nhanh → đứng dậy 5–6 lần/ngày tự nhiên thay vì 1–2 lần' },
+      { icon: '🧠', label: 'Hydration đều > nhiều 1 lần', note: 'Thận hấp thụ tốt hơn khi nhận liên tục — không bị overload rồi thải' },
+      { icon: '🎯', label: 'Movement trigger', note: 'Kết hợp 5 calf raise mỗi lần lấy nước — biến thói quen nhỏ thành lớn' },
+    ],
+  },
+  {
+    hack: 'Họp đứng hoặc đi bộ', icon: '🗣️', color: '#10b981', rgb: '16,185,129',
+    title: 'Walking Meeting — Họp Khi Di Chuyển',
+    img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Walking meetings đã được Jeff Bezos, Steve Jobs và Barack Obama sử dụng không phải vì trend — mà vì có bằng chứng: đi bộ tăng creative thinking lên 81% (Stanford, 2014), giảm độ dài meeting và tăng quyết đoán trong ra quyết định. Họp ngồi khuyến khích suy nghĩ thụ động; họp đứng/đi khuyến khích suy nghĩ nhanh hơn.',
+    detail: 'Meeting 1-1 hoặc cuộc gọi điện thoại là thời điểm hoàn hảo để đứng dậy và đi — không cần nhìn màn hình, không cần ghi chú, chỉ cần lắng nghe và nói. "Walk and talk" biến thời gian meeting thành NEAT mà không ảnh hưởng chất lượng.',
+    detail_short: 'Cuộc họp 1-1 hoặc cuộc gọi điện thoại: đứng dậy hoặc đi bộ chậm thay vì ngồi.',
+    details: [
+      'Stanford 2014 (Oppezzo & Schwartz): đi bộ tăng divergent thinking (sáng tạo, brainstorm) lên 81% so với ngồi. Convergent thinking (logic chặt chẽ) không bị ảnh hưởng — nghĩa là walking meetings tốt cho brainstorm và quyết định sáng tạo.',
+      'Meeting ngắn hơn khi đứng: nghiên cứu của Washington University cho thấy stand-up meeting ngắn hơn 34% so với sit-down meeting về cùng chủ đề, mà không giảm chất lượng quyết định. Đứng = ít nói vòng vo hơn.',
+      'Phone calls là cơ hội vàng: 80–90% cuộc gọi điện thoại không cần nhìn màn hình. Đứng dậy đi bộ trong khi nghe = thêm 200–500 bước/cuộc gọi 5–10 phút. Người hay gọi điện có thể thêm 1.000–2.000 bước/ngày chỉ từ phone walks.',
+      'Setup walking meeting: thông báo trước "meeting này chúng ta sẽ đi bộ" — hầu hết mọi người phản ứng tích cực. Nếu cần ghi chú: dùng voice memo trên điện thoại hoặc ghi nhanh sau khi xong.',
+      'Không phải tất cả meeting đều phù hợp: presentation với nhiều slides, meeting >4 người, hoặc cuộc họp nhạy cảm (feedback cá nhân) tốt hơn ngồi. Walking meeting phù hợp nhất cho 1-1 brainstorm, check-in nhanh và phone calls.',
+      'NEAT tích lũy từ meetings: người có lịch họp nhiều thường than phiền không có thời gian vận động — nhưng nếu 50% meetings là standing/walking, NEAT tăng đáng kể mà không cần thêm thời gian.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Sáng tạo tăng 81%', note: 'Stanford 2014: đi bộ tăng divergent thinking gần gấp đôi so với ngồi' },
+      { icon: '⏱️', label: 'Meeting ngắn hơn 34%', note: 'Stand-up meeting ngắn hơn và ít vòng vo hơn — hiệu quả hơn sit-down' },
+      { icon: '📞', label: 'Phone calls = bước đi miễn phí', note: '5–10 phút phone walk = 200–500 bước không cần thêm thời gian' },
+      { icon: '🚫', label: 'Không phải tất cả meeting', note: 'Phù hợp 1-1 + brainstorm + phone. Không dùng cho presentation hay feedback nhạy cảm' },
+    ],
+  },
+  {
+    hack: 'Printer ở tầng khác', icon: '🖨️', color: '#f59e0b', rgb: '245,158,11',
+    title: 'Artificial Destinations — Tạo Lý Do Phải Di Chuyển',
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Artificial destinations" — tạo ra các điểm đến nhân tạo đòi hỏi phải di chuyển — là chiến lược NEAT hiệu quả nhất cho văn phòng. Máy in ở tầng khác, cà phê ở tầng trên, gặp trực tiếp thay vì nhắn Slack. Mỗi "trip" 2–3 phút × 5–8 lần/ngày = 10–24 phút đi bộ và hàng trăm bước không cần thêm thời gian tập.',
+    detail: 'Nguyên lý "friction by design" ngược lại — thay vì giảm ma sát cho hành vi xấu (lười vận động), tăng ma sát nhẹ để buộc vận động tốt xảy ra tự nhiên. Đặt mọi thứ cần dùng thường xuyên ở nơi đòi hỏi phải đứng dậy và đi.',
+    detail_short: 'Nếu có thể, đặt máy in, máy pha cà phê ở chỗ cần đi bộ thêm.',
+    details: [
+      'Nguyên lý "Destination walking": mỗi lần đến một điểm đến có mục đích (lấy tài liệu, pha cà phê, gặp đồng nghiệp) bạn không ý thức rằng mình đang "tập thể dục" — đây là lý do hiệu quả hơn cố tình đi bộ thêm theo ý chí.',
+      'Máy in tầng khác: mỗi lần in = leo/xuống 1 tầng + đi bộ đến máy in + về. Tổng ~3–5 phút và 100–200 bước. In 3–5 lần/ngày = 9–25 phút di chuyển thêm tự nhiên. Nếu không cần in thường, chọn máy in xa hơn trên cùng tầng.',
+      'Cà phê ở tầng khác: pha cà phê/trà ở bếp tầng khác thay vì bếp ngay cạnh bàn. Trip 5–7 phút × 2 lần/ngày = 10–14 phút đi bộ thêm chỉ từ thói quen pha cà phê.',
+      'Gặp trực tiếp thay vì nhắn tin: thay vì Slack/Zalo cho đồng nghiệp ngồi cách 10–20m, đứng dậy đến hỏi trực tiếp. Bonus: giao tiếp mặt đối mặt tốt hơn cho mối quan hệ và tránh hiểu nhầm. "Destination social" vừa NEAT vừa cải thiện team dynamics.',
+      'Thiết kế lại workspace cá nhân: đặt sạc điện thoại ở xa bàn, tài liệu cần thường xuyên ở kệ đứng dậy mới lấy được, đặt mọi thứ "cần tìm" ở nơi đòi hỏi phải đứng dậy. Mỗi micro-trip là NEAT.',
+      'Cộng dồn nghiêm túc: 8–10 artificial destinations × 3 phút mỗi trip = 24–30 phút đi bộ/ngày. Người làm văn phòng 8 giờ có thể dễ dàng thêm 2.000–3.000 bước/ngày chỉ bằng cách tái thiết kế môi trường — không cần thêm 1 phút "tập thể dục".',
+    ],
+    points: [
+      { icon: '🗺️', label: 'Friction by design', note: 'Tăng ma sát nhẹ để buộc vận động xảy ra tự nhiên — không cần ý chí' },
+      { icon: '📄', label: 'Mỗi print = 100–200 bước', note: 'Máy in tầng khác biến việc in tài liệu thành NEAT tự động' },
+      { icon: '☕', label: 'Cà phê xa = thêm 10 phút/ngày', note: 'Bếp tầng trên thay vì tầng bạn — 2 lần pha cà phê = chuyến đi bộ miễn phí' },
+      { icon: '💬', label: 'Gặp mặt > nhắn tin', note: 'Đến chỗ đồng nghiệp hỏi trực tiếp = NEAT + giao tiếp tốt hơn' },
+    ],
+  },
+  {
+    hack: 'Cầu thang thay thang máy', icon: '🪜', color: '#8b5cf6', rgb: '139,92,246',
+    title: 'Cầu Thang — Habit Swap Hiệu Quả Nhất',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Leo cầu thang đốt ~8–10 kcal/phút so với đi bộ bằng ~3–4 kcal/phút. 1–2 tầng × 3 lần/ngày = ~5 phút leo cầu thang = ~40–50 kcal thêm/ngày. Nhân với 250 ngày làm việc = 10.000–12.500 kcal/năm — tương đương 1,4–1,8 kg mỡ mà không thêm 1 phút tập thể dục. Harvard Alumni Study: leo cầu thang đều giảm nguy cơ tử vong tim mạch 20–30%.',
+    detail: '"Habit swap" là thay thế một hành vi trung tính (đi thang máy) bằng hành vi có lợi (leo cầu thang) trong cùng ngữ cảnh — không cần thêm thời gian hay ý chí mới. Đây là chiến lược thay đổi hành vi hiệu quả nhất vì không yêu cầu tạo thói quen mới từ đầu.',
+    detail_short: 'Chỉ cần 1–2 tầng, 2–3 lần/ngày. Nhỏ nhưng tích lũy đáng kể.',
+    details: [
+      'Không tốn thêm thời gian: thang máy có thời gian chờ 30–90 giây + thời gian di chuyển. Leo 1–2 tầng cầu thang thường nhanh bằng hoặc nhanh hơn chờ thang máy. Đây không phải trade-off thời gian — đây là upgrade chất lượng cùng thời gian.',
+      'Cơ học cầu thang: leo cầu thang kích hoạt full lower body — quadriceps, glutes, hamstrings, calves — và core để giữ thăng bằng. Cường độ vừa đủ để có EPOC nhỏ (afterburn 10–30 phút sau) mà đi bộ bằng không có.',
+      'Tích lũy theo năm: 2 tầng × 3 lần/ngày × 250 ngày = 1.500 tầng/năm. Nghiên cứu tính ra 1.500 tầng/năm = giảm nguy cơ tử vong sớm ~15% — từ thay đổi 3 phút/ngày.',
+      'Làm quen dần nếu khó thở: khó thở khi leo 2 tầng là tín hiệu tim mạch yếu — không phải lý do tránh, mà là lý do càng cần leo hơn. Bắt đầu 1 tầng × 1 lần/ngày. Khó thở sẽ giảm trong 2–4 tuần.',
+      'Kết hợp với "artificial destination": nếu chọn máy in hoặc cà phê ở tầng khác, tự động leo cầu thang mỗi lần. Hai habit hacks kết hợp = tăng NEAT gấp đôi từ 1 quyết định thiết kế.',
+      'Điều kiện không phù hợp: chấn thương đầu gối/hông, mang đồ nặng, late for meeting quan trọng — trong các trường hợp này, đi thang máy là hoàn toàn hợp lý. Mục tiêu là default habit, không phải quy tắc cứng.',
+    ],
+    points: [
+      { icon: '⚡', label: '8–10 kcal/phút', note: 'Leo cầu thang đốt gấp 2.5–3× đi bộ bằng — hiệu quả nhất cho thời gian' },
+      { icon: '⏰', label: 'Không tốn thêm thời gian', note: 'Leo 1–2 tầng thường nhanh bằng chờ thang máy — không có trade-off' },
+      { icon: '📈', label: '1.500 tầng/năm = -15% tử vong sớm', note: 'Số liệu Harvard Alumni — 3 phút/ngày tích lũy thành lợi ích lớn sau nhiều năm' },
+      { icon: '❤️', label: '-20–30% nguy cơ tim mạch', note: 'Harvard Alumni Study — hiệu quả lớn hơn nhiều so với kcal đốt gợi ý' },
+    ],
+  },
+  {
+    hack: 'Lunch walk 10 phút', icon: '🍽️', color: '#84cc16', rgb: '132,204,22',
+    title: 'Lunch Walk 10 Phút — Cú Double Win Sau Ăn',
+    img: 'https://images.unsplash.com/photo-1499803270242-467f7b8cffcd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đi bộ nhẹ 10–15 phút sau bữa trưa giảm glucose spike 30–50% (GLUT4 mechanism), giảm "buồn ngủ sau ăn" nhờ ổn định đường huyết và adenosine, đồng thời thêm 800–1.200 bước NEAT. Nghiên cứu DiPietro 2013 (Diabetes Care): 15 phút đi bộ sau ăn hiệu quả hơn 45 phút đi bộ 1 lần về glucose control 24 giờ.',
+    detail: 'Bữa trưa là bữa ăn thường có nhiều carb nhất trong ngày — glucose spike sau trưa cao và kéo dài hơn. 10 phút đi bộ ngay sau khi ăn xong là can thiệp đơn giản nhất để kiểm soát glucose và chống buồn ngủ chiều.',
+    detail_short: 'Đi bộ 10 phút sau ăn trưa. Tỉnh táo + ổn định đường huyết + tăng NEAT.',
+    details: [
+      'GLUT4 mechanism: cơ bắp co rút khi đi bộ kích hoạt protein GLUT4 trên bề mặt tế bào cơ, hút glucose từ máu trực tiếp không cần insulin. Đây là lý do tại sao đi bộ ngay sau ăn (khi glucose đang đổ vào máu) hiệu quả nhất cho glucose control.',
+      '"Post-lunch dip" (buồn ngủ sau trưa) có 2 nguyên nhân: glucose spike → crash và adenosine tích lũy trong não buổi chiều. Đi bộ sau ăn giải quyết cả hai: ổn định glucose + tăng máu não rửa adenosine.',
+      'DiPietro et al. (Diabetes Care, 2013): 3 lần đi bộ 15 phút sau mỗi bữa ăn kiểm soát glucose 24 giờ tốt hơn 1 lần đi bộ 45 phút buổi sáng — dù tổng thời gian như nhau. Timing sau ăn quan trọng hơn duration.',
+      'Ánh sáng mặt trời + đi bộ: đi bộ ngoài trời sau trưa thêm vitamin D, ánh sáng giữa trưa reset circadian rhythm và "visual novelty" cho não — giảm monotony của ngày làm việc. Tất cả trong 10 phút.',
+      'Khi nào đi: sau 10–20 phút kể từ khi ăn xong (không phải ngay khi đứng dậy khỏi bàn ăn). Glucose bắt đầu tăng sau ~15–20 phút — đây là thời điểm cơ bắp cần nhiên liệu nhất.',
+      'Không có thời gian 10 phút? 5 phút đi bộ cũng có tác dụng đáng kể về glucose. Đi vòng quanh building 1 lần, đi bộ đến chỗ rửa tay xa, leo 2–3 tầng cầu thang — bất kỳ movement nào sau ăn đều tốt hơn ngồi ngay xuống ghế.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Glucose -30–50%', note: 'GLUT4 kích hoạt khi cơ co rút — hút glucose trực tiếp không cần insulin' },
+      { icon: '😴', label: 'Chống buồn ngủ chiều', note: 'Ổn định glucose + rửa adenosine = tỉnh táo suốt chiều không cần cà phê' },
+      { icon: '☀️', label: 'Ánh sáng + circadian reset', note: 'Đi bộ ngoài trời: vitamin D + nhịp circadian + vitamin tâm trạng' },
+      { icon: '⏱️', label: '5 phút cũng có tác dụng', note: 'Không cần đủ 10 phút — bất kỳ movement nào sau ăn đều hơn ngồi ngay' },
+    ],
+  },
+];
+
+const BREAK_MOVES = [
+  {
+    action: 'Đứng dậy và đi lấy nước',
+    icon: '💧', color: '#0ea5e9', rgb: '14,165,233',
+    title: 'Đứng Dậy Lấy Nước',
+    img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Lấy nước" là NEAT hack kép: vừa ngắt quãng ngồi liên tục (reset LPL enzyme, tăng lưu thông) vừa đảm bảo hydration — thiếu nước 1% đã làm giảm nhận thức 5–10%. Đặt bình nhỏ 0.5L thay vì 1.5L để phải đứng dậy 3× nhiều hơn.',
+    detail: 'Đứng dậy lấy nước là micro-habit dễ duy trì nhất vì có "reward" ngay lập tức (được uống nước). Mỗi lần đứng dậy ~2 phút kích hoạt LPL, tăng lưu thông máu và nhắc nhở hydration mà không cần app hay alarm.',
+    details: [
+      'LPL (Lipoprotein Lipase): enzyme đốt mỡ trong cơ bắp bị tắt sau 20–30 phút ngồi. Đứng dậy lấy nước tái kích hoạt LPL ngay lập tức trong vòng 1–2 phút. Làm điều này 6–8 lần/ngày = LPL hoạt động nhiều hơn đáng kể so với ngồi suốt rồi tập gym 1 tiếng.',
+      'Hydration + nhận thức: thiếu nước nhẹ 1–2% (500–1.000ml với người 70kg) giảm sự tập trung, tốc độ xử lý và trí nhớ ngắn hạn có thể đo được. Uống nước đều đặn trong ngày hiệu quả hơn uống nhiều 1 lần.',
+      '"Small bottle hack": đặt bình nước 300–500ml trên bàn thay vì bình 1.5L. Khi hết phải đứng dậy đổ thêm — tạo ra 4–6 lần đứng dậy tự nhiên mỗi ngày mà không cần nhớ hay đặt alarm.',
+      'Vị trí bình nước chiến lược: đặt bình ở nơi cần đứng dậy và đi 10–20 bước (bếp, quầy pha cà phê, phòng khác) thay vì ngay cạnh bàn — mỗi lần lấy nước = 20–40 bước thêm.',
+      'Cộng dồn trong ngày: đứng dậy lấy nước 6 lần × 2 phút = 12 phút đứng + đi bộ nhỏ thêm. Nhỏ nhưng tích lũy 300+ lần/năm — đáng kể về tổng NEAT và đặc biệt tốt cho LPL.',
+      'Kết hợp lúc lấy nước: mỗi lần đứng dậy, thêm 5 calf raise hoặc xoay vai 5 vòng trước khi quay lại bàn. Biến lấy nước thành "micro-exercise trigger" — không tốn thêm thời gian.',
+    ],
+    points: [
+      { icon: '🔥', label: 'Tái kích hoạt LPL', note: 'Enzyme đốt mỡ bị tắt sau 20–30 phút ngồi — đứng dậy bật lại' },
+      { icon: '🧠', label: '-1% nước = -5–10% nhận thức', note: 'Lấy nước nhắc hydration đều đặn — hiệu quả hơn uống nhiều 1 lần' },
+      { icon: '🍶', label: 'Bình nhỏ 0.5L', note: 'Hết sớm hơn → đứng dậy 3× nhiều hơn tự nhiên' },
+      { icon: '🎯', label: 'Kết hợp micro-exercise', note: 'Thêm 5 calf raise mỗi lần lấy nước — không tốn thêm thời gian' },
+    ],
+  },
+  {
+    action: 'Xoay vai × 10 + xoay cổ × 8',
+    icon: '🔄', color: '#f97316', rgb: '249,115,22',
+    title: 'Xoay Vai × 10 + Xoay Cổ × 8',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vai và cổ là hai vùng căng cứng nhất sau 45–60 phút ngồi máy tính. Xoay vai 10 vòng ra sau bơm dịch khớp và counteract tư thế vai cúi về trước. Xoay cổ 8 vòng giảm căng cơ ức đòn chũm — nguyên nhân phổ biến nhất của đau đầu do căng thẳng (tension headache).',
+    detail: 'Break 2 phút với mobility vai + cổ hiệu quả hơn đứng yên 2 phút hoặc đi bộ nhỏ 2 phút về tác động lên cột sống cổ và vai. Đây là micro-intervention tốt nhất cho dân văn phòng bị đau vai gáy mãn tính.',
+    details: [
+      'Cơ thang (trapezius) bị co cụm khi vai cúi về trước khi nhìn màn hình — co cứng gây đau vai gáy và nhức đầu. Xoay vai ra sau (backward roll) kéo giãn cơ ngực và kích hoạt rhomboids, counteract pattern này.',
+      'Cơ ức đòn chũm (sternocleidomastoid — SCM): cơ cổ lớn nhất, bị căng khi đầu chìa về trước hoặc nghiêng. Căng SCM là nguyên nhân phổ biến nhất của tension headache (đau đầu do căng thẳng) — xoay cổ nhẹ và kéo giãn bên giảm căng hiệu quả.',
+      'Thứ tự: xoay vai trước (warm up), sau đó xoay cổ. Xoay cổ khi cơ thang đang căng có thể gây khó chịu — giải phóng cơ thang trước bằng shoulder roll thì xoay cổ dễ dàng hơn.',
+      'Kỹ thuật xoay cổ an toàn: xoay chậm, bán kính nhỏ đến vừa. Không gập cổ ra sau tối đa (gây áp lực lên đốt sống cổ). Nếu cảm thấy tiếng kêu lớn hoặc tê bì — giảm bán kính và đến gặp chuyên gia.',
+      'Synovial fluid: khớp vai và cổ cần chuyển động để phân phối dịch khớp. Sau 45–60 phút bất động, dịch khớp giảm lưu thông — xoay tròn bơm dịch khớp trở lại đều khắp khớp, giảm cứng và tiếng kêu.',
+      'Kết hợp với chin tuck: xoay vai → xoay cổ → chin tuck × 5 = 2 phút break hoàn chỉnh cho đầu/cổ/vai. Ba bài tập này bổ trợ nhau và cover toàn bộ vùng hay bị ảnh hưởng nhất khi làm việc máy tính.',
+    ],
+    points: [
+      { icon: '💪', label: 'Counteract vai cúi về trước', note: 'Shoulder roll ra sau kéo giãn pectoralis + kích hoạt rhomboids' },
+      { icon: '🧠', label: 'Giảm tension headache', note: 'Căng SCM là nguyên nhân #1 đau đầu văn phòng — xoay cổ giải phóng' },
+      { icon: '💧', label: 'Bơm dịch khớp', note: 'Vai + cổ bất động 45–60 phút → synovial fluid ứ lại → xoay để reset' },
+      { icon: '📋', label: 'Vai trước → cổ sau', note: 'Thứ tự đúng: giải phóng trapezius trước → xoay cổ dễ dàng hơn' },
+    ],
+  },
+  {
+    action: 'Vươn người lên trần + bend forward',
+    icon: '🙆', color: '#10b981', rgb: '16,185,129',
+    title: 'Vươn Người + Cúi Gập',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vươn người lên trần (spinal extension) + cúi gập người (spinal flexion) trong 30–60 giây counteract hoàn toàn tư thế ngồi gù. Hai chuyển động ngược chiều bơm dịch vào và ra khỏi đĩa đệm — giữ đĩa đệm khỏe mạnh và giảm nguy cơ lồi đĩa đệm dài hạn.',
+    detail: 'Cột sống bị nén khi ngồi — đĩa đệm hấp thụ áp lực trọng lực và tư thế gù. Vươn người (extension) và cúi người (flexion) xen kẽ là cơ chế tự nhiên để "bơm" dinh dưỡng vào đĩa đệm, vì đĩa đệm không có mạch máu trực tiếp.',
+    details: [
+      'Disc hydration: đĩa đệm không có mạch máu — nhận dinh dưỡng và nước qua cơ chế khuếch tán áp suất. Khi ngồi liên tục, đĩa đệm bị nén → mất nước dần. Extension + flexion xen kẽ tạo áp suất âm "hút" dịch trở lại vào đĩa đệm.',
+      'Vươn người lên trần: giơ cả hai tay lên cao hết mức, đứng trên đầu ngón chân nếu được, giữ 5–10 giây. Kéo giãn cột sống, cơ liên sườn, cơ bụng bị co cụm khi ngồi cúi. Mở lồng ngực = thở sâu hơn ngay lập tức.',
+      'Bend forward: từ tư thế đứng, cúi người về phía trước để tay chạm đùi hoặc đất (tùy linh hoạt), giữ 15–20 giây. Kéo giãn lưng dưới (erector spinae), hamstring và giải phóng sacroiliac joint bị nén khi ngồi.',
+      'Thoracic extension: trong khi vươn tay lên, cố gắng mở ngực về phía sau nhẹ (không quá mức). Đây là thoracic extension bổ trợ — counteract kyphosis (gù lưng trên) do ngồi máy tính.',
+      'Ai đặc biệt cần: người ngồi >6 giờ/ngày, hay bị đau lưng dưới sau làm việc, hoặc cảm thấy lưng "cứng" khi đứng dậy sau ngồi lâu. Combo này 2 phút mỗi giờ có thể giảm đáng kể đau lưng mãn tính liên quan đến ngồi nhiều.',
+      'Không cần không gian rộng: vươn người có thể thực hiện ngay cạnh bàn làm việc, trong thang máy, hoặc trong nhà vệ sinh. Bend forward cần đứng thẳng — làm được ở bất kỳ đâu có đủ không gian đứng.',
+    ],
+    points: [
+      { icon: '💧', label: 'Bơm dịch vào đĩa đệm', note: 'Đĩa đệm không có mạch máu — extension + flexion = cơ chế tưới dưỡng' },
+      { icon: '🫁', label: 'Mở ngực = thở sâu hơn', note: 'Vươn tay lên mở cơ liên sườn — dung tích hô hấp tăng ngay' },
+      { icon: '🔄', label: '2 chiều đối lập', note: 'Extension → flexion xen kẽ — counteract hoàn toàn tư thế ngồi' },
+      { icon: '🩺', label: 'Phòng lồi đĩa đệm', note: 'Disc hydration đều đặn = giảm nguy cơ dài hạn cho dân ngồi nhiều' },
+    ],
+  },
+  {
+    action: 'Đi bộ 1 vòng quanh bàn làm việc',
+    icon: '🚶', color: '#f59e0b', rgb: '245,158,11',
+    title: 'Đi Bộ 1 Vòng Quanh Bàn',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chỉ 20–50 bước đi bộ quanh bàn (~30 giây) đủ để tái kích hoạt LPL, tăng lưu thông máu lên não và xả nhẹ adenosine tích lũy. Dunstan et al. (Diabetes Care 2012) cho thấy ngắt quãng ngồi bằng đi bộ nhẹ 2 phút mỗi 20 phút giảm glucose và insulin postprandial hiệu quả hơn ngồi-đứng xen kẽ không di chuyển.',
+    detail: 'Không cần đi xa hay rời khỏi khu vực làm việc. Đi 1 vòng quanh bàn, ra lấy tài liệu, đến chỗ đồng nghiệp hỏi thay vì nhắn tin — mọi "mini-trip" đều có tác dụng tương tự về NEAT và chuyển hóa.',
+    details: [
+      'LPL reactivation ngay lập tức: nghiên cứu cho thấy chỉ cần 2 phút đi bộ nhẹ đủ để đảo ngược sự ức chế LPL trong cơ bắp chân do ngồi. Không cần đạt nhịp tim cao hay đổ mồ hôi — chuyển động nhẹ là đủ.',
+      'Adenosine buildup: adenosine tích lũy trong não khi ngồi tập trung lâu — gây cảm giác "đầu nặng" và muốn ngủ. Di chuyển nhẹ tăng lưu lượng máu não, giúp adenosine được "rửa trôi" nhanh hơn mà không cần cà phê.',
+      'Dunstan Study (2012): người ngồi liên tục suốt ngày có glucose và insulin postprandial cao nhất. Người ngắt quãng bằng đi bộ nhẹ 2 phút mỗi 20 phút có glucose thấp hơn 24% và insulin thấp hơn 23% so với ngồi-đứng không di chuyển.',
+      'Đi bộ vs đứng yên: đứng yên không di chuyển không có tác dụng tương tự như đi bộ về glucose và LPL. Cơ bắp cần co rút (chuyển động) để kích hoạt GLUT4 và LPL — đứng tĩnh chỉ tốt hơn ngồi ở khía cạnh tư thế, không phải chuyển hóa.',
+      'Tận dụng phone call: khi nghe điện thoại hoặc tham gia meeting không cần nhìn màn hình, đứng dậy và đi bộ nhẹ. "Walk and talk" — thêm hàng trăm bước/ngày mà không ảnh hưởng đến công việc.',
+      'Destination walking: thay vì nhắn Slack/Zalo cho đồng nghiệp gần, đứng dậy đến hỏi trực tiếp. Thay vì in tài liệu ở máy in gần, chọn máy in xa hơn. Tạo "artificial destinations" để tăng bước đi tự nhiên.',
+    ],
+    points: [
+      { icon: '⚡', label: 'LPL bật lại sau 2 phút', note: 'Không cần cường độ cao — đi nhẹ đủ để tái kích hoạt enzyme đốt mỡ' },
+      { icon: '🧠', label: 'Xả adenosine não', note: 'Di chuyển tăng máu não → adenosine rửa trôi → tỉnh táo hơn' },
+      { icon: '📊', label: 'Glucose -24%, Insulin -23%', note: 'Dunstan 2012 — đi bộ nhẹ mỗi 20 phút hiệu quả hơn đứng không di chuyển' },
+      { icon: '📞', label: 'Walk-and-talk', note: 'Meeting + phone call không cần màn hình — đứng dậy và đi khi nghe' },
+    ],
+  },
+  {
+    action: 'Calf raise × 15 khi đứng chờ',
+    icon: '🦶', color: '#8b5cf6', rgb: '139,92,246',
+    title: 'Calf Raise × 15',
+    img: 'https://images.unsplash.com/photo-1434682966252-f8506a5a0f06?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Soleus (cơ dép bắp chân) là cơ có khả năng chuyển hóa cao nhất khi cơ thể ở trạng thái đứng hoặc ngồi. Nghiên cứu Mclaughlin et al. (iScience, 2022) gọi soleus là "sleeping giant of metabolism" — calf raise kích hoạt cơ này để tiêu thụ glucose và fatty acids ở mức cao mà không gây mệt.',
+    detail: 'Soleus có đặc tính oxy hóa đặc biệt: không cần glycogen (đường dự trữ) để hoạt động — dùng trực tiếp glucose và fatty acids từ máu. Kiễng gót chân 15 lần trong 30 giây kích hoạt soleus ở mức metabolic rate cao gấp 3× so với nghỉ ngơi.',
+    details: [
+      'Soleus vs gastrocnemius: bắp chân gồm 2 cơ chính. Gastrocnemius (cơ to bên ngoài) dùng nhiều cho nhảy và chạy — chủ yếu glycolytic. Soleus (cơ dép bên dưới) là cơ chậm, oxy hóa cao, hoạt động tốt nhất ở cường độ thấp-vừa khi đứng.',
+      'iScience 2022 (Mclaughlin, Hamilton): soleus pushup (SLR — Soleus Lengthening Reactivation) giảm postprandial glucose 52% và triglycerides 60% trong phòng thí nghiệm — mạnh hơn đáng kể so với đi bộ hoặc nhịn ăn gián đoạn.',
+      'Calf raise vs soleus pushup: calf raise đứng (kiễng gót chân) kích hoạt cả gastrocnemius và soleus. Soleus pushup ngồi (gót chân xuống, nhón đầu ngón chân, giữ) kích hoạt soleus thuần túy — tốt hơn về chuyển hóa nhưng ít người biết đến.',
+      'Khi nào làm: đứng chờ thang máy, chờ pha cà phê, chờ in tài liệu, đứng nấu ăn, đứng xếp hàng. Bất kỳ lúc đứng chờ > 30 giây đều là cơ hội calf raise. Không cần thay đổi gì — chỉ kiễng gót chân là xong.',
+      '"Bơm tĩnh mạch" (venous pump): calf raise co cơ bắp chân đẩy máu từ tĩnh mạch chân lên tim — "bơm phụ" của hệ tuần hoàn. Ngồi/đứng lâu không di chuyển để máu ứ ở chân — calf raise chống lại điều này hiệu quả hơn đứng yên.',
+      'Tích lũy 15 lần × 6 lần/ngày = 90 calf raise/ngày. Soleus hoạt động tích lũy như vậy có tác động đo được lên glucose và triglycerides cả ngày — không cần làm liên tục, chia nhỏ nhiều lần hiệu quả tương đương.',
+    ],
+    points: [
+      { icon: '😴', label: '"Sleeping giant of metabolism"', note: 'Soleus — cơ bị bỏ quên nhất nhưng tiêu thụ glucose hiệu quả nhất' },
+      { icon: '🩸', label: 'Glucose -52%, TG -60%', note: 'iScience 2022 — mạnh hơn đi bộ về postprandial blood markers' },
+      { icon: '🫀', label: 'Venous pump bắp chân', note: 'Co bắp chân đẩy máu từ tĩnh mạch chân lên tim — chống ứ máu' },
+      { icon: '⏳', label: 'Làm khi đứng chờ', note: 'Thang máy, cà phê, in tài liệu — bất kỳ chờ >30 giây nào đều dùng được' },
+    ],
+  },
 ];
 
 const STEP_GOALS = [
@@ -347,6 +586,8 @@ export default function LifestyleNeatPage() {
   const [checks, setChecks] = useState({});
   const [teeIdx, setTeeIdx] = useState(null);
   const [activityIdx, setActivityIdx] = useState(null);
+  const [breakIdx, setBreakIdx] = useState(null);
+  const [officeIdx, setOfficeIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -465,10 +706,15 @@ export default function LifestyleNeatPage() {
             Ngồi liên tục hơn 90 phút làm giảm lưu thông máu, tăng căng cơ và giảm trao đổi chất. Nghiên cứu cho thấy ngắt quãng mỗi 45–60 phút có hiệu quả hơn tập gym 1 tiếng nếu phần còn lại của ngày bạn ngồi hoàn toàn.
           </p>
           <div className="grid gap-2">
-            {['Đứng dậy và đi lấy nước', 'Xoay vai × 10 + xoay cổ × 8', 'Vươn người lên trần + bend forward', 'Đi bộ 1 vòng quanh bàn làm việc', 'Calf raise × 15 khi đứng chờ'].map((action, i) => (
-              <div key={i} className="flex items-center gap-2 text-lg">
-                <span style={{ color: COLOR }}>→</span>
-                <span className="text-muted">{action}</span>
+            {BREAK_MOVES.map((move, i) => (
+              <div key={i}
+                className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+                style={{ background: `rgba(${move.rgb},0.06)`, border: `1px solid rgba(${move.rgb},0.18)` }}
+                onClick={() => setBreakIdx(i)}>
+                <span className="text-xl shrink-0">{move.icon}</span>
+                <span className="flex-1 text-base text-muted">{move.action}</span>
+                <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                  style={{ color: move.color, background: `rgba(${move.rgb},0.1)` }}>Chi tiết →</span>
               </div>
             ))}
           </div>
@@ -478,11 +724,20 @@ export default function LifestyleNeatPage() {
       {/* Office hacks */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>6 Cách Tăng NEAT Cho Dân Văn Phòng</h2>
+        <p className="text-muted text-lg mb-6">Click vào từng mục để xem chiến lược chi tiết và bằng chứng khoa học.</p>
         <div className="grid gap-3">
           {OFFICE_HACKS.map((h, i) => (
-            <div key={i} className="p-4 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
-              <div className="font-semibold text-text text-lg mb-1">{h.hack}</div>
-              <p className="text-muted text-base leading-relaxed">{h.detail}</p>
+            <div key={i}
+              className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${h.rgb},0.05)`, border: `1px solid rgba(${h.rgb},0.18)` }}
+              onClick={() => setOfficeIdx(i)}>
+              <span className="text-2xl shrink-0">{h.icon}</span>
+              <div className="flex-1">
+                <div className="font-semibold text-text text-base">{h.hack}</div>
+                <div className="text-muted text-sm mt-0.5">{h.detail_short}</div>
+              </div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: h.color, background: `rgba(${h.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -530,6 +785,34 @@ export default function LifestyleNeatPage() {
         <Link to="/pillar/c/morning" className="text-muted hover:text-emerald-400 transition-colors text-lg">← Routine Sáng</Link>
         <Link to="/pillar/c/recovery" className="text-lg font-semibold" style={{ color: COLOR }}>Phục Hồi →</Link>
       </div>
+
+      {/* ── Office hacks modal — outside all RevealBlocks ── */}
+      {officeIdx !== null && (
+        <NeatModal
+          item={OFFICE_HACKS[officeIdx]}
+          idx={officeIdx}
+          total={OFFICE_HACKS.length}
+          onClose={() => setOfficeIdx(null)}
+          onPrev={() => setOfficeIdx(i => Math.max(0, i - 1))}
+          onNext={() => setOfficeIdx(i => Math.min(OFFICE_HACKS.length - 1, i + 1))}
+          hasPrev={officeIdx > 0}
+          hasNext={officeIdx < OFFICE_HACKS.length - 1}
+        />
+      )}
+
+      {/* ── Break moves modal — outside all RevealBlocks ── */}
+      {breakIdx !== null && (
+        <NeatModal
+          item={BREAK_MOVES[breakIdx]}
+          idx={breakIdx}
+          total={BREAK_MOVES.length}
+          onClose={() => setBreakIdx(null)}
+          onPrev={() => setBreakIdx(i => Math.max(0, i - 1))}
+          onNext={() => setBreakIdx(i => Math.min(BREAK_MOVES.length - 1, i + 1))}
+          hasPrev={breakIdx > 0}
+          hasNext={breakIdx < BREAK_MOVES.length - 1}
+        />
+      )}
 
       {/* ── NEAT activities modal — outside all RevealBlocks ── */}
       {activityIdx !== null && (

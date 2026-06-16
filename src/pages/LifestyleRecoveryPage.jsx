@@ -583,11 +583,116 @@ const ZONE_FIXES = [
 ];
 
 const ACTIVE_RECOVERY_BY_GOAL = [
-  { goal: 'Giảm mỡ', activities: 'Đi bộ nhẹ 20–30 phút, mobility 10 phút, giãn cơ tối', note: 'Tránh tập nặng ngày phục hồi' },
-  { goal: 'Tăng cơ', activities: 'Đi bộ 15–20 phút, stretching, foam rolling nhẹ', note: 'Ngủ đủ 7–9h là ưu tiên số 1' },
-  { goal: 'Sức bền', activities: 'Đạp/đi bộ/bơi Zone 1–2 (nhịp tim dưới 130)', note: 'Active recovery giảm lactate tốt hơn nghỉ hoàn toàn' },
-  { goal: 'Đau mỏi mãn tính', activities: 'Mobility nhẹ cho vùng đau, thở chậm, đi bộ ngắn', note: 'Vận động nhẹ thường tốt hơn nghỉ ngơi hoàn toàn' },
-  { goal: 'Stress cao', activities: 'Đi bộ ngoài trời, thở cơ hoành, giãn cơ tối', note: 'Thiên nhiên + vận động nhẹ = double effect giảm cortisol' },
+  {
+    goal: 'Giảm mỡ', activities: 'Đi bộ nhẹ 20–30 phút, mobility 10 phút, giãn cơ tối', note: 'Tránh tập nặng ngày phục hồi',
+    icon: '🔥', color: '#f43f5e', rgb: '244,63,94',
+    title: 'Phục Hồi Cho Mục Tiêu Giảm Mỡ',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngày phục hồi KHÔNG phải ngày "nghỉ giảm cân". Khi ngủ đủ và active recovery đúng, cơ thể tiết GH (Growth Hormone) nhiều nhất — hormone đốt mỡ và tái tạo cơ bắp mạnh nhất mà không cần thuốc hay supplement nào. Thiếu ngủ 1 tiếng giảm GH tiết ra 70% đêm hôm đó.',
+    detail: 'Ngày phục hồi khi giảm mỡ cần hai ưu tiên: duy trì NEAT (Non-Exercise Activity Thermogenesis) bằng đi bộ nhẹ và bảo vệ giấc ngủ. Hai yếu tố này ảnh hưởng đến metabolic rate và fat oxidation nhiều hơn 1 buổi tập bổ sung có thể làm.',
+    details: [
+      'Zone 1 walk đốt mỡ trực tiếp: ở cường độ nhẹ (<60% max HR, ~4–5 km/h), cơ thể dùng ~60–70% năng lượng từ fat oxidation. Đi bộ 30 phút ở Zone 1 đốt nhiều mỡ hơn HIIT 15 phút tính theo tổng fat gram — dù HIIT đốt nhiều calorie hơn, phần lớn từ glycogen.',
+      'Cortisol và fat storage: tập quá nặng ngày phục hồi tăng cortisol — hormone tăng fat storage ở vùng bụng và ức chế fat oxidation. Ngày phục hồi đúng nghĩa giữ cortisol thấp, cho phép cơ thể ưu tiên fat làm nhiên liệu cả ngày.',
+      'NEAT contribution: đi bộ nhẹ 30 phút/ngày × 7 ngày = 3,500+ kcal/tháng (tương đương ~0.4kg mỡ). NEAT (đi lại, đứng, di chuyển nhẹ) chiếm 15–30% total energy expenditure — nhiều người bỏ qua "ngày tập" nhưng hoàn toàn bất động, triệt tiêu NEAT.',
+      'Mobility 10 phút chiều: giúp duy trì range of motion để buổi tập nặng hôm sau hiệu quả hơn. Cơ thể linh hoạt = squat sâu hơn, deadlift đúng form = calorie đốt nhiều hơn ở mỗi buổi tập. Mobility recovery là đầu tư cho hiệu suất tập luyện hôm sau.',
+      'Giãn cơ tối + thở chậm: giảm cortisol tối (peak 2 lần/ngày: sáng sớm và chiều). Cortisol tối cao → khó ngủ → GH tiết ít → recovery kém → fat loss chậm. 10 phút giãn cơ + thở 4-6 trước ngủ cắt vòng lặp này.',
+      'Ăn ngày phục hồi như thế nào: không cần "eat back" calorie từ đi bộ nhẹ. Duy trì deficit nhỏ (–200 đến –300 kcal). Ưu tiên protein đủ (1.6–2g/kg) để bảo vệ muscle trong deficit. Ngày phục hồi không phải "cheat day" — nhưng cũng không cần ăn ít hơn ngày tập nặng.',
+    ],
+    points: [
+      { icon: '🌙', label: 'GH tiết tối đa khi ngủ sâu', note: 'Ngủ đủ 7–8h = hormone đốt mỡ mạnh nhất — không supplement nào thay thế được' },
+      { icon: '🚶', label: 'Zone 1 walk đốt mỡ trực tiếp', note: '30 phút <60% max HR = 60–70% năng lượng từ fat oxidation' },
+      { icon: '📉', label: 'Cortisol thấp = fat loss cao', note: 'Tập nặng ngày phục hồi tăng cortisol → tăng fat storage bụng — counterproductive' },
+      { icon: '🍽️', label: 'Duy trì protein cao', note: '1.6–2g/kg protein ngày phục hồi để bảo vệ cơ bắp trong calorie deficit' },
+    ],
+  },
+  {
+    goal: 'Tăng cơ', activities: 'Đi bộ 15–20 phút, stretching, foam rolling nhẹ', note: 'Ngủ đủ 7–9h là ưu tiên số 1',
+    icon: '💪', color: '#f97316', rgb: '249,115,22',
+    title: 'Phục Hồi Cho Mục Tiêu Tăng Cơ',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cơ bắp KHÔNG lớn lên trong khi tập — chúng lớn lên trong khi ngủ và nghỉ ngơi. Tập luyện chỉ tạo ra stimulus (kích thích). Phục hồi là lúc protein synthesis (tổng hợp protein cơ) diễn ra — quá trình này cần 24–72h tùy nhóm cơ và cường độ. Người không ngủ đủ + không nghỉ đúng sẽ train harder nhưng gain slower.',
+    detail: 'Hai sai lầm phổ biến nhất khi tăng cơ: (1) tập nhiều ngày liên tiếp vì nghĩ nhiều tập = nhiều cơ, và (2) bỏ bữa hoặc ăn ít vào ngày không tập. Cả hai đều làm chậm muscle protein synthesis đáng kể.',
+    details: [
+      'Protein synthesis window: sau tập nặng, muscle protein synthesis (MPS) tăng cao 24–48h. Đây là cửa sổ cơ thể "hấp thụ" protein để xây dựng cơ. Trong 48h này, cần đủ protein (0.4g/kg/bữa × 4 bữa) và calorie dương. Ngày phục hồi là "building day" không kém ngày tập.',
+      'GH và IGF-1 trong deep sleep: Growth Hormone tiết 70–80% trong giai đoạn N3 deep sleep (1–3 giờ sáng). GH kích hoạt IGF-1 ở gan → IGF-1 là signal chính để cơ bắp tổng hợp protein mới. 7–9h ngủ = 1–2 chu kỳ deep sleep đầy đủ = GH peak đủ. Dưới 6h ngủ, mất hoàn toàn chu kỳ GH peak thứ 2.',
+      'Foam rolling trước stretching: foam roller làm mềm myofascia (vỏ bọc cơ), tăng lưu thông máu và chuẩn bị cơ cho stretching sâu hơn. Cơ sau tập nặng có micro-tears và viêm nhẹ — foam rolling tăng lymphatic flow giúp loại bỏ debris viêm nhanh hơn.',
+      'Tại sao chỉ 15–20 phút đi bộ: đủ để tăng lưu thông máu đưa amino acid đến cơ đang phục hồi, nhưng không đủ cường độ để tạo thêm catabolic stress. Đi bộ nhẹ sau tập nặng = "nutrient delivery" cho cơ bắp đang rebuild — hiệu quả hơn ngồi yên.',
+      'Đừng bỏ bữa ngày không tập: MPS vẫn cần nguyên liệu (amino acid) 24–48h sau buổi tập. Ăn ít ngày không tập = thiếu nguyên liệu khi cơ đang xây dựng. Nếu muốn eat less, giảm carb một chút nhưng giữ nguyên protein.',
+      'Stretching static ngày phục hồi: không làm ngay sau tập nặng (tránh kéo cơ đang bị micro-torn). Nhưng ngày hôm sau — static stretching 20–30s giúp cơ sắp xếp lại collagen fiber đúng hướng trong quá trình healing → cơ hồi phục dẻo dai hơn, ít dính và cứng hơn về dài hạn.',
+    ],
+    points: [
+      { icon: '🛌', label: '7–9h ngủ = ưu tiên số 1', note: 'GH peak trong deep sleep — không có gì thay thế được ngủ đủ cho muscle gain' },
+      { icon: '🥩', label: 'Không bỏ bữa ngày nghỉ', note: 'MPS vẫn active 24–48h sau tập — cơ cần protein nguyên liệu cả ngày hôm sau' },
+      { icon: '🫀', label: 'Đi bộ nhẹ = nutrient delivery', note: 'Tăng lưu thông máu đưa amino acid đến cơ đang rebuild — tốt hơn ngồi yên' },
+      { icon: '🧻', label: 'Foam roll → stretch → nghỉ', note: 'Thứ tự đúng: làm mềm fascia trước, stretch sau, rồi ngủ sớm' },
+    ],
+  },
+  {
+    goal: 'Sức bền', activities: 'Đạp/đi bộ/bơi Zone 1–2 (nhịp tim dưới 130)', note: 'Active recovery giảm lactate tốt hơn nghỉ hoàn toàn',
+    icon: '🏃', color: '#0ea5e9', rgb: '14,165,233',
+    title: 'Phục Hồi Cho Mục Tiêu Sức Bền',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vận động viên sức bền elite có điểm chung: 80% training volume ở Zone 1–2 (nhẹ), 20% ở Zone 4–5 (hard). Ngày phục hồi ở Zone 1–2 không chỉ là nghỉ ngơi — chúng xây dựng aerobic base, tăng mật độ mitochondria và cải thiện fat oxidation ở cường độ thấp. Nghỉ hoàn toàn thực sự làm chậm aerobic adaptation.',
+    detail: '80/20 rule (Polarized Training) là phương pháp được nghiên cứu nhiều nhất cho sức bền. Phần lớn người mới mắc lỗi "gray zone" — tập ở cường độ vừa quá thường xuyên, không đủ cả để build base lẫn tạo high-end stimulus. Ngày phục hồi Zone 1–2 đúng nghĩa là phần không thể thiếu của hệ thống này.',
+    details: [
+      'Lactate clearance cơ chế: sau buổi tập cường độ cao, lactate tích lũy trong máu và cơ bắp. Nghỉ hoàn toàn làm lactate clearance chậm — gan phải chuyển hóa hết. Active recovery Zone 1–2 dùng lactate làm nhiên liệu cho cơ đang hoạt động nhẹ → clearance nhanh hơn 50% so với nghỉ hoàn toàn. Đây là lý do vận động viên "jog nhẹ" sau thi đấu thay vì nằm xuống.',
+      'Mitochondria biogenesis: Zone 1–2 training kích hoạt PGC-1α — protein kích hoạt sản xuất mitochondria mới (biogenesis). Mitochondria là "nhà máy năng lượng" của cơ bắp. Nhiều mitochondria = VO2max cao hơn, sức bền tốt hơn, phục hồi nhanh hơn. Zone 1–2 ngày phục hồi vừa rest vừa build mitochondria đồng thời.',
+      'Fat oxidation efficiency: Zone 1–2 training dạy cơ thể dùng fat làm nhiên liệu hiệu quả hơn. Người train Zone 1–2 nhiều có thể chạy marathon pace nhanh hơn trước khi bắt đầu dùng glycogen — tiết kiệm glycogen cho final sprint. Đây là "metabolic efficiency" không xây được bằng Zone 4–5 training.',
+      'Cường độ đúng cho Zone 1–2: Zone 1 < 60% max HR (~100–115 bpm cho người 30 tuổi). Zone 2 = 60–70% max HR (~115–135 bpm). Talk test: Zone 2 = có thể nói cả câu nhưng không muốn nói nhiều. Không phải "bước nhanh vừa" — phải đủ nhẹ để duy trì 45–90 phút thoải mái.',
+      'Hoạt động phù hợp: đạp xe (cường độ thấp, gear nhẹ), bơi nhẹ nhàng (không sprint), chạy bộ cực chậm (nhiều người không thể Zone 2 khi chạy — đạp xe hoặc đi bộ nhanh thường dễ maintain Zone 2 hơn). Rowing machine ở resistance thấp cũng tốt.',
+      'Tần suất active recovery: runners tốt nhất thế giới train 10–12 buổi/tuần — trong đó 8–9 buổi ở Zone 1–2. Với người tập 4–5 lần/tuần, 1–2 buổi Zone 1–2 active recovery/tuần là tối ưu. Không cần dài — 30–45 phút đủ để kích hoạt lactate clearance và mitochondria signal.',
+    ],
+    points: [
+      { icon: '🔋', label: '80% volume ở Zone 1–2', note: 'Polarized training: phần lớn low, phần nhỏ high — không có "gray zone" vừa' },
+      { icon: '⚗️', label: 'Lactate clearance nhanh hơn 50%', note: 'Active recovery dùng lactate làm nhiên liệu — nhanh hơn nhiều so với nghỉ hoàn toàn' },
+      { icon: '🏭', label: 'Xây mitochondria khi recovery', note: 'PGC-1α kích hoạt mitochondria biogenesis ở Zone 1–2 — rest và build đồng thời' },
+      { icon: '💬', label: 'Talk test = Zone 2 check', note: 'Nói cả câu được nhưng không muốn nói nhiều — chuẩn Zone 2, không cần HR monitor' },
+    ],
+  },
+  {
+    goal: 'Đau mỏi mãn tính', activities: 'Mobility nhẹ cho vùng đau, thở chậm, đi bộ ngắn', note: 'Vận động nhẹ thường tốt hơn nghỉ ngơi hoàn toàn',
+    icon: '🎯', color: '#8b5cf6', rgb: '139,92,246',
+    title: 'Phục Hồi Cho Người Đau Mỏi Mãn Tính',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đau mãn tính tạo ra "pain-inactivity cycle": đau → nghỉ → cơ yếu hơn → đau nhiều hơn → nghỉ thêm. Nghiên cứu hiện đại cho thấy vận động nhẹ phù hợp phá vỡ vòng lặp này — tăng lưu thông máu, giải phóng endorphin tự nhiên, và giảm central sensitization (não "học" cảm nhận đau ít hơn). Nghỉ hoàn toàn thực sự làm đau mãn tính tồi hơn về dài hạn.',
+    detail: 'Đau mãn tính (>12 tuần) khác hoàn toàn với đau cấp. Đau cấp = tín hiệu nguy hiểm thực sự từ mô. Đau mãn tính thường có hệ thần kinh trung ương đã "nhạy cảm hóa" — khuếch đại tín hiệu đau dù không còn tổn thương mô thực sự. Vận động nhẹ và kiểm soát nhận thức là điều trị tốt nhất cho sensitization này.',
+    details: [
+      'Pain-inactivity cycle: đau → giảm vận động → cơ yếu, khớp cứng → áp lực lên khớp tăng → đau hơn. Vòng lặp này tự duy trì và ngày càng xấu hơn nếu không can thiệp. Vận động nhẹ phá vỡ ở điểm "cơ yếu → áp lực tăng" — cơ mạnh hơn = áp lực khớp giảm = đau giảm.',
+      'Endorphin và enkephalin: vận động nhẹ → tiết endorphin (opioid tự nhiên của não) và enkephalin (giảm đau tại tủy sống). Cơ chế này giải thích vì sao đi bộ 20 phút có thể giảm đau trong 2–4 giờ sau. Không phải giả thuyết — đây là cơ chế được đo bằng brain imaging.',
+      'Central sensitization và graded exposure: khi hệ thần kinh đã sensitize, mục tiêu không phải chữa khỏi đau ngay mà là "dạy" não rằng vận động an toàn. Graded exposure — tăng dần cường độ/thời gian vận động rất từ từ — là phương pháp được chứng minh làm giảm sensitization theo thời gian.',
+      'Mobility đúng vùng đau: không phải "stretch đau thêm" — mà là vận động trong range không đau (pain-free range of motion). Bắt đầu với biên độ nhỏ, nhẹ nhàng. Ví dụ: đau cổ → chin tuck nhẹ (không ép đến đau). Đau lưng → cat-cow ở biên độ 30% tầm vận động bình thường. Nguyên tắc: movement is medicine, but dose matters.',
+      'Thở chậm và pain gate control: Gate Control Theory — tín hiệu xúc giác và proprioception (thở chậm, vận động nhẹ) "đóng cổng" (gate) đường dẫn tín hiệu đau lên não. Thở chậm bụng 5–6 nhịp/phút giảm pain perception đo được trên fMRI — brain imaging xác nhận cortex tiếp nhận ít tín hiệu đau hơn.',
+      'Khi nào cần gặp chuyên gia: đau mãn tính không cải thiện sau 4–6 tuần can thiệp nhẹ, đau kèm tê bì hoặc yếu cơ (dấu hiệu thần kinh), đau tăng khi vận động nhẹ (không phải đau "cơ" bình thường mà đau sắc và ngay lập tức). Physiotherapist hoặc pain specialist có thể dùng các phương pháp sâu hơn.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Phá vỡ pain-inactivity cycle', note: 'Vận động nhẹ → cơ mạnh hơn → áp lực khớp giảm → đau giảm — vòng lặp tốt thay xấu' },
+      { icon: '🧬', label: 'Endorphin tự nhiên 2–4h', note: 'Đi bộ nhẹ 20 phút tiết endorphin — giảm đau tự nhiên mà không cần thuốc' },
+      { icon: '📏', label: 'Pain-free range of motion', note: 'Vận động trong biên độ không đau — không ép stretch đến đau. Nhỏ dần to là đúng' },
+      { icon: '🫁', label: 'Thở chậm đóng cổng đau', note: 'Gate control theory — thở bụng 5–6 nhịp/phút giảm pain signal lên não đo được trên fMRI' },
+    ],
+  },
+  {
+    goal: 'Stress cao', activities: 'Đi bộ ngoài trời, thở cơ hoành, giãn cơ tối', note: 'Thiên nhiên + vận động nhẹ = double effect giảm cortisol',
+    icon: '🌿', color: '#10b981', rgb: '16,185,129',
+    title: 'Phục Hồi Cho Người Stress Cao',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress tâm lý cao là "invisible training load" — não và hệ thần kinh chịu tải như khi tập nặng mà không có physical output. Cortisol cao mãn tính ức chế recovery, phá hủy cơ bắp (catabolism), tăng fat storage bụng và giảm chất lượng giấc ngủ. Ngày stress cao = cần recovery nhiều hơn, không ít hơn — đây là điều hầu hết mọi người không nhận ra.',
+    detail: 'Stress tâm lý và stress thể chất dùng chung "recovery budget". Ngày làm việc 10 giờ stress cao + tập nặng = overtraining risk cao. Ngày phục hồi khi stress cao cần ưu tiên hệ thần kinh phó giao cảm — đi bộ ngoài trời, thở chậm và ánh sáng tự nhiên là ba công cụ mạnh nhất.',
+    details: [
+      'Cortisol và invisible training load: cortisol tiết ra khi stress công việc, deadline, xung đột — giống như khi tập nặng. Hệ thần kinh và tuyến thượng thận không phân biệt "stress tâm lý" vs "stress tập luyện". Ngày stress cao + tập nặng có thể overload tuyến thượng thận, dẫn đến adrenal fatigue và recovery kéo dài.',
+      'Thiên nhiên và Attention Restoration Theory: não ở môi trường tự nhiên (cây cối, bầu trời, âm thanh nước) kích hoạt "restorative" mode — soft fascination thay vì directed attention (tập trung căng thẳng). Nghiên cứu Nhật Bản (Shinrin-yoku/forest bathing) cho thấy 20 phút trong thiên nhiên giảm cortisol 12–15% và hạ nhịp tim đo được.',
+      'Đi bộ ngoài trời vs trong nhà: ánh sáng tự nhiên ban ngày → tăng serotonin (mood stabilizer) và điều chỉnh nhịp sinh học. Serotonin là tiền chất của melatonin — ánh sáng tự nhiên buổi sáng = melatonin tốt hơn buổi tối = ngủ sâu hơn = recovery tốt hơn. Đi bộ trong nhà bỏ lỡ hoàn toàn lợi ích này.',
+      'Thở cơ hoành và HRV: Heart Rate Variability (HRV) là chỉ số sức khỏe hệ thần kinh tự trị. Stress cao làm HRV giảm (hệ giao cảm dominant). Thở chậm bụng (4–6 nhịp/phút) tăng HRV trong vòng 5 phút — thay đổi đo được bằng thiết bị. HRV cao hơn = capacity phục hồi cao hơn.',
+      'Giãn cơ tối và cortisol diurnal rhythm: cortisol có nhịp sinh học — cao nhất 30 phút sau khi thức dậy (CAR - Cortisol Awakening Response), giảm dần và nên về mức thấp vào tối. Stress mãn tính làm cortisol tối vẫn cao → khó ngủ. 10–15 phút giãn cơ nhẹ kèm thở chậm trước ngủ ép cortisol về baseline và kích hoạt melatonin.',
+      'Tránh screen 1 giờ trước ngủ khi stress cao: màn hình xanh ức chế melatonin (tuyến pineal). Khi đã stress cao → cortisol cao → thêm screen → thêm ức chế melatonin → ngủ muộn hơn → ít deep sleep → cortisol hôm sau cao hơn → cycle tệ hơn. Thay screen bằng stretch + đọc sách nhẹ = break the cycle.',
+    ],
+    points: [
+      { icon: '🌳', label: '20 phút thiên nhiên = -12% cortisol', note: 'Shinrin-yoku research: cây cối + ánh sáng tự nhiên giảm cortisol đo được' },
+      { icon: '💚', label: 'Stress tâm lý = invisible load', note: 'Não dùng chung recovery budget với cơ thể — ngày stress cao cần nghỉ nhiều hơn' },
+      { icon: '📊', label: 'Thở bụng tăng HRV trong 5 phút', note: '4–6 nhịp/phút diaphragmatic breathing → HRV tăng ngay — đo được bằng thiết bị' },
+      { icon: '📵', label: 'Tắt màn hình 1h trước ngủ', note: 'Screen xanh + cortisol cao = double melatonin suppression — sleep quality sụp đổ' },
+    ],
+  },
 ];
 
 function RecoveryModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
@@ -689,6 +794,7 @@ export default function LifestyleRecoveryPage() {
   const [recoveryTypeIdx, setRecoveryTypeIdx] = useState(null);
   const [routineIdx, setRoutineIdx] = useState(null);
   const [zoneExState, setZoneExState] = useState(null);
+  const [goalIdx, setGoalIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -841,14 +947,21 @@ export default function LifestyleRecoveryPage() {
       {/* Active recovery by goal */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Active Recovery Theo Mục Tiêu</h2>
+        <p className="text-muted text-lg mb-6">Click vào mục tiêu của bạn để xem hướng dẫn phục hồi chi tiết.</p>
         <div className="space-y-3">
           {ACTIVE_RECOVERY_BY_GOAL.map((g, i) => (
-            <div key={i} className="p-4 rounded-xl" style={{ background: `rgba(${RGB},0.04)`, border: `1px solid rgba(${RGB},0.08)` }}>
-              <div className="flex justify-between items-start mb-1">
-                <span className="font-semibold text-text text-lg" style={{ color: COLOR }}>{g.goal}</span>
+            <div key={i}
+              className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${g.rgb},0.05)`, border: `1px solid rgba(${g.rgb},0.18)` }}
+              onClick={() => setGoalIdx(i)}>
+              <span className="text-2xl shrink-0">{g.icon}</span>
+              <div className="flex-1">
+                <div className="font-bold text-text text-base" style={{ color: g.color }}>{g.goal}</div>
+                <p className="text-muted text-sm mt-0.5">{g.activities}</p>
+                <p className="text-xs mt-1 italic text-muted">{g.note}</p>
               </div>
-              <p className="text-lg text-muted mb-1">{g.activities}</p>
-              <p className="text-base text-muted italic">{g.note}</p>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -878,6 +991,20 @@ export default function LifestyleRecoveryPage() {
         <Link to="/pillar/c/neat" className="text-muted hover:text-violet-400 transition-colors text-lg">← NEAT</Link>
         <Link to="/pillar/c/deload" className="text-lg font-semibold" style={{ color: COLOR }}>Deload →</Link>
       </div>
+
+      {/* ── Goal modal — outside all RevealBlocks ── */}
+      {goalIdx !== null && (
+        <RecoveryModal
+          item={ACTIVE_RECOVERY_BY_GOAL[goalIdx]}
+          idx={goalIdx}
+          total={ACTIVE_RECOVERY_BY_GOAL.length}
+          onClose={() => setGoalIdx(null)}
+          onPrev={() => setGoalIdx(i => Math.max(0, i - 1))}
+          onNext={() => setGoalIdx(i => Math.min(ACTIVE_RECOVERY_BY_GOAL.length - 1, i + 1))}
+          hasPrev={goalIdx > 0}
+          hasNext={goalIdx < ACTIVE_RECOVERY_BY_GOAL.length - 1}
+        />
+      )}
 
       {/* ── Zone exercise modal — outside all RevealBlocks ── */}
       {zoneExState !== null && (() => {

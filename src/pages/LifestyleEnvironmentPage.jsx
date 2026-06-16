@@ -81,8 +81,159 @@ const QUICK_WINS = [
 
 const IMPACT_COLOR = { 'Cao': '#10b981', 'Trung bình': '#f59e0b' };
 
+const PRINCIPLES = [
+  {
+    icon: '✅', title: 'Friction Design',
+    desc: 'Giảm "ma sát" cho hành vi tốt (đặt thảm tập ngay trước giường), tăng ma sát cho hành vi xấu (cất TV vào tủ).',
+    color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Friction Design — Thiết Kế Ma Sát Thay Đổi Hành Vi',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Friction Design (thiết kế ma sát) là nguyên tắc hành vi học đơn giản nhất và mạnh nhất: giảm số bước/effort cần thiết để thực hiện hành vi tốt, tăng số bước cho hành vi xấu. Nghiên cứu của BJ Fogg (Stanford) và James Clear cho thấy thêm chỉ 20 giây vào một hành vi (ví dụ: để điện thoại phòng khác = phải đi lấy) giảm tần suất hành vi đó đến 30–50%. Ngược lại, giảm 20 giây cho hành vi tốt làm tăng tần suất tương tự.',
+    detail: 'Friction Design không dựa vào willpower hay motivation — những thứ có hạn và dao động theo ngày. Thay vào đó, nó thay đổi cấu trúc môi trường để hành vi tốt trở thành "con đường ít kháng cự nhất" (path of least resistance). Não bộ luôn chọn con đường dễ nhất — Friction Design hack điều này có lợi.',
+    details: [
+      'Neuroscience của least effort: não bộ tiến hóa để tiết kiệm năng lượng — mỗi quyết định tiêu thụ glucose và mental bandwidth. Khi một hành vi đòi hỏi nhiều bước, não tự động resist nó (cognitive load quá cao). Friction Design giảm cognitive load của hành vi tốt xuống mức "auto-pilot" — không cần decision-making, chỉ cần một bước đơn giản.',
+      'Hai chiều của Friction Design: (1) Giảm ma sát cho hành vi tốt: thảm yoga đặt cạnh giường → thức dậy vấp phải → tập ngay. Sách để trên bàn → thấy → đọc. Rau xanh để ở tầm mắt trong tủ lạnh → mở ra thấy ngay → ăn rau. (2) Tăng ma sát cho hành vi xấu: cất TV vào tủ có khóa → lấy phải mở khóa → bớt xem. Để điện thoại ở phòng khác khi ngủ → phải đi bộ lấy → bớt scroll đêm.',
+      'The 2-Minute Rule của James Clear: thiết kế mọi hành vi tốt để có thể bắt đầu trong 2 phút. Không phải "tập gym 1 tiếng" — mà là "đi đến gym (2 phút)". Không phải "thiền 20 phút" — mà là "ngồi xuống đệm thiền (2 phút)". Khi đã bắt đầu, momentum tự nhiên đẩy tiếp. Friction Design = làm cho bước đầu tiên này dễ nhất có thể.',
+      'Environment design vs willpower: nghiên cứu của Roy Baumeister cho thấy willpower là resource hữu hạn — cạn dần theo ngày. Người thành công không có willpower mạnh hơn — họ có môi trường tốt hơn, không đặt mình vào tình huống cần dùng willpower. Người ít ăn kẹo không phải vì "kỷ luật" — mà vì không để kẹo ở nhà.',
+      'Friction audit: đi qua một ngày của bạn và liệt kê: hành vi tốt nào bạn hay bỏ qua? Có bao nhiêu bước để thực hiện nó? Hành vi xấu nào bạn hay làm dù không muốn? Có bao nhiêu bước? Giảm 1–2 bước cho hành vi tốt và thêm 2–3 bước cho hành vi xấu thường đủ để tạo ra sự thay đổi có ý nghĩa mà không cần motivation.',
+      'Stacking Friction Design với identity: Friction Design hoạt động tốt nhất khi kết hợp với identity-based habits (James Clear). "Tôi là người chạy bộ buổi sáng" + giày chạy đặt ngay cửa ra vào = friction thấp + identity reinforcement. Mỗi lần thực hiện hành vi dễ dàng vì friction thấp, bạn đang bầu chọn cho identity của mình — củng cố vòng lặp tích cực.',
+    ],
+    points: [
+      { icon: '⏱️', label: '+20 giây giảm hành vi 30–50%', note: 'Để điện thoại phòng khác = thêm 20 giây = scroll đêm giảm 40%' },
+      { icon: '🧠', label: 'Không cần willpower', note: 'Môi trường tốt > kỷ luật — người thành công có môi trường tốt, không phải ý chí mạnh hơn' },
+      { icon: '⚡', label: '2-Minute Rule: bắt đầu trong 2 phút', note: 'Thiết kế bước đầu tiên dễ nhất có thể — momentum tự đẩy tiếp' },
+      { icon: '🔍', label: 'Friction audit định kỳ', note: 'Liệt kê hành vi tốt/xấu → đếm số bước → giảm/tăng ma sát tương ứng' },
+    ],
+  },
+  {
+    icon: '👁️', title: 'Visual Cues',
+    desc: 'Những gì bạn thấy → bạn nghĩ đến → bạn làm. Để sách nơi dễ thấy, cất điện thoại khỏi tầm mắt.',
+    color: '#f43f5e', rgb: '244,63,94',
+    modalTitle: 'Visual Cues — Môi Trường Trực Quan Định Hướng Hành Vi',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Visual cues (tín hiệu thị giác) là trigger mạnh nhất để kích hoạt hành vi — mạnh hơn cả intention và reminder app. Não bộ xử lý thông tin thị giác nhanh hơn bất kỳ giác quan nào khác (11 triệu bits/giây so với 40 bits conscious processing). "Những gì bạn thấy" là môi trường kích hoạt liên tục suốt ngày — thiết kế visual environment đúng = thiết kế hành vi của bạn.',
+    detail: 'Environmental psychology cho thấy con người phần lớn hành động theo context và visual cues xung quanh, không phải theo "ý định". Thay đổi những gì bạn nhìn thấy thay đổi những gì bạn làm — không cần self-discipline.',
+    details: [
+      'Implementation intentions và visual anchors: nghiên cứu của Peter Gollwitzer cho thấy "implementation intentions" (IF-THEN plans) kết hợp với visual cues tăng follow-through đến 91% so với chỉ có intention. "Khi tôi thấy thảm yoga cạnh giường (visual cue), tôi sẽ tập 10 phút ngay" hiệu quả hơn rất nhiều so với "Tôi sẽ tập yoga buổi sáng".',
+      'Cue-routine-reward loop: theo Charles Duhigg (The Power of Habit), mọi habit đều có cấu trúc: Cue (tín hiệu) → Routine (hành vi) → Reward (phần thưởng). Visual cues là loại cue mạnh nhất vì não xử lý nó gần như tức thời và tự động. Thiết kế visual cue đúng = thiết kế cue mạnh nhất của habit loop.',
+      'Visibility và salience: không phải mọi thứ bạn thấy đều tạo cue như nhau — salience (độ nổi bật) quan trọng. Sách đặt trên giá sách (thấy) khác sách đặt trên gối (salience cao hơn). Rau để ở tầm mắt tủ lạnh khác rau để ở ngăn dưới (salience cao hơn → ăn nhiều hơn 25%). Thiết kế visual cue = tăng salience của hành vi tốt, giảm salience của hành vi xấu.',
+      'Out of sight, out of mind: nghiên cứu Cornell "Wansink Kitchen" cho thấy người để kẹo trên bàn bếp ăn trung bình nặng hơn 8–10 lbs so với người để trong tủ kín. Người để điện thoại trên bàn trong meeting nhớ ít hơn 20% nội dung — ngay cả khi điện thoại tắt (chỉ cần nhìn thấy là đủ gây distraction). Visual cue không cần conscious attention để ảnh hưởng hành vi.',
+      'Thiết kế visual environment cụ thể: (Hành vi tốt) Đặt sách/kindle trên gối → đọc trước ngủ. Đặt vitamin trên bàn ăn sáng → uống mỗi sáng. Đặt bình nước 2L trên bàn làm việc → uống đủ nước. Đặt giày chạy ở cửa → chạy buổi sáng. (Hành vi xấu) Cất điện thoại vào hộc bàn → ít check. Cất remote TV vào tủ → ít xem. Để snack không healthy trong tủ kín trên cao → ít ăn.',
+      'Visual cues và accountability: visual tracking (habit tracker dán tường, whiteboard goals, jar với marble đếm ngày liên tiếp) tạo external accountability thông qua visual cues. Thấy chuỗi ngày không gián đoạn trên tracker → không muốn phá vỡ chuỗi (don\'t break the chain — Jerry Seinfeld method). Visual progress = motivation duy trì hành vi.',
+    ],
+    points: [
+      { icon: '👁️', label: '11 triệu bits/s xử lý thị giác', note: 'Não xử lý visual nhanh nhất — visual cue ảnh hưởng hành vi ngay cả khi không chú ý' },
+      { icon: '📊', label: 'Salience: tầm mắt = 25% ăn nhiều hơn', note: 'Rau ở tầm mắt tủ lạnh → ăn nhiều hơn 25% so với để ngăn dưới' },
+      { icon: '📱', label: 'Điện thoại trên bàn = nhớ kém 20%', note: 'Chỉ cần THẤY điện thoại (dù tắt) là đủ gây distraction measurable' },
+      { icon: '📆', label: 'Visual tracker = don\'t break the chain', note: 'Thấy chuỗi habit days → không muốn phá vỡ → habit duy trì tự nhiên' },
+    ],
+  },
+  {
+    icon: '🔄', title: 'Habit Stacking',
+    desc: 'Ghép thói quen mới vào môi trường/thói quen cũ. "Sau khi pha cà phê, tôi ngồi thiền 5 phút trên ghế bếp."',
+    color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Habit Stacking — Xây Thói Quen Mới Trên Nền Cũ',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Habit Stacking là kỹ thuật của BJ Fogg (Tiny Habits) và James Clear (Atomic Habits): ghép thói quen mới vào ngay sau/trước một thói quen cũ đã vững chắc. Công thức: "Sau khi [THÓI QUEN CŨ], tôi sẽ [THÓI QUEN MỚI]." Neural pathway của thói quen cũ đã rất mạnh — khi kích hoạt, nó kéo theo thói quen mới, giảm effort cần thiết để bắt đầu xuống gần bằng 0.',
+    detail: 'Habit Stacking hoạt động vì nó tận dụng "associative memory" — não bộ liên kết các sự kiện xảy ra cùng nhau. Sau đủ repetitions, não không còn cần nhắc nhở để làm thói quen mới — nó tự động xảy ra khi thói quen cũ kết thúc, giống như domino.',
+    details: [
+      'Neurological basis — associative learning: mỗi khi hai hành vi xảy ra liên tiếp, synapse giữa các neurons đại diện cho chúng được strengthen (Hebbian learning: "neurons that fire together, wire together"). Sau 30–50 repetitions, connection đủ mạnh để một hành vi tự động trigger hành vi kia — không cần conscious decision. Habit stacking exploit cơ chế này.',
+      'Thói quen neo (anchor habits): để habit stacking hiệu quả, "anchor habit" (thói quen cũ làm cue) phải là thói quen đã hoàn toàn automatic — không cần suy nghĩ. Pha cà phê, đánh răng, ngồi vào bàn làm việc, ăn trưa, tắt máy tính buổi tối. Đây là những điểm "neo" tự nhiên trong ngày — mỗi điểm neo có thể gắn 1 thói quen mới.',
+      'Nguyên tắc tiny: thói quen mới trong habit stack phải nhỏ hơn nhiều so với mục tiêu dài hạn. "Thiền 20 phút" → quá lớn để stack. "Ngồi yên 2 phút sau khi pha cà phê" → hoàn hảo. Tiny habit dễ thực hiện nhất quán và xây dựng momentum. Sau 2–4 tuần, tự nhiên muốn mở rộng ("2 phút cảm thấy tốt, thêm 3 phút nữa").',
+      'Chain stacking — morning/evening routine: từ nhiều tiny habits stack lại tạo thành morning/evening routine hoàn chỉnh mà không cần discipline. Ví dụ morning stack: Tắt alarm → ra khỏi giường ngay (stack 1) → uống nước (stack 2) → mở rèm (stack 3) → 5 phút thở cơ hoành (stack 4) → 10 phút đọc sách (stack 5). Sau 6–8 tuần, toàn bộ chain xảy ra auto-pilot.',
+      'Environment integration — location stacking: kết hợp Habit Stacking với visual cues và specific location. "Ngồi vào ghế bếp sau khi pha cà phê" hiệu quả hơn "thiền ở đâu đó sau khi pha cà phê" — location cụ thể tạo additional cue. Não associate location với hành vi (giải thích tại sao làm việc trên giường inefficient — não không associate giường với "work mode").',
+      'Troubleshooting habit stacks thất bại: stack thất bại thường vì: (1) anchor habit không đủ automatic — chọn anchor khác. (2) Thói quen mới quá lớn — tiny-fy thêm. (3) Sequence không natural — test xem hành vi mới có phù hợp với ngữ cảnh anchor không. "Sau khi tắt máy tính, tôi tập 30 phút gym" — không natural vì gym cần travel. "Sau khi tắt máy tính, tôi thay đồ gym" — natural, chỉ 1 bước.',
+    ],
+    points: [
+      { icon: '🔗', label: '"Sau khi X, tôi sẽ Y" — formula đơn giản nhất', note: 'Tận dụng neural pathway cũ đã mạnh để kéo thói quen mới theo không tốn effort' },
+      { icon: '🧠', label: 'Neurons fire together → wire together', note: '30–50 repetitions đủ để thói quen mới tự động xảy ra sau anchor habit' },
+      { icon: '⚡', label: 'Tiny habit: < 2 phút để stack', note: 'Bắt đầu nhỏ — "ngồi yên 2 phút" dễ stack hơn "thiền 20 phút" nhiều lần' },
+      { icon: '📍', label: 'Location cụ thể tăng hiệu quả', note: '"Ghế bếp sau cà phê" > "đâu đó sau cà phê" — location = thêm 1 visual cue' },
+    ],
+  },
+];
+
+function EnvModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.modalTitle} className="w-full h-full object-cover" style={{ opacity: 0.55 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-4" style={{ color: item.color }}>{item.modalTitle}</h2>
+          <div className="rounded-2xl p-4 mb-5" style={{ background: `rgba(${item.rgb},0.07)`, border: `1px solid rgba(${item.rgb},0.18)` }}>
+            <p className="text-sm font-semibold leading-relaxed" style={{ color: item.color }}>{item.keyFact}</p>
+          </div>
+          <p className="text-muted text-sm leading-relaxed mb-6">{item.detail}</p>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
+              ← Trước
+            </button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
+              Sau →
+            </button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function LifestyleEnvironmentPage() {
   const [activeZone, setActiveZone] = useState('morning');
+  const [principleIdx, setPrincipleIdx] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -139,17 +290,18 @@ export default function LifestyleEnvironmentPage() {
       {/* Core principle */}
       <RevealBlock className="mb-12">
         <div className="rounded-2xl p-5 border" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
-          <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>Nguyên Tắc Cốt Lõi</div>
+          <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>Nguyên Tắc Cốt Lõi — Click để xem chi tiết</div>
           <div className="grid md:grid-cols-3 gap-4">
-            {[
-              { icon: '✅', title: 'Friction Design', desc: 'Giảm "ma sát" cho hành vi tốt (đặt thảm tập ngay trước giường), tăng ma sát cho hành vi xấu (cất TV vào tủ).' },
-              { icon: '👁️', title: 'Visual Cues', desc: 'Những gì bạn thấy → bạn nghĩ đến → bạn làm. Để sách nơi dễ thấy, cất điện thoại khỏi tầm mắt.' },
-              { icon: '🔄', title: 'Habit Stacking', desc: 'Ghép thói quen mới vào môi trường/thói quen cũ. "Sau khi pha cà phê, tôi ngồi thiền 5 phút trên ghế bếp."' },
-            ].map(p => (
-              <div key={p.title} className="rounded-xl p-4 bg-surface border border-border">
+            {PRINCIPLES.map((p, i) => (
+              <div key={p.title}
+                className="rounded-xl p-4 border cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
+                style={{ borderColor: `rgba(${p.rgb},0.2)`, background: `rgba(${p.rgb},0.06)` }}
+                onClick={() => setPrincipleIdx(i)}>
                 <div className="text-3xl mb-2">{p.icon}</div>
-                <div className="text-lg font-bold text-text mb-1">{p.title}</div>
-                <div className="text-base text-muted leading-relaxed">{p.desc}</div>
+                <div className="text-lg font-bold mb-1" style={{ color: p.color }}>{p.title}</div>
+                <div className="text-base text-muted leading-relaxed mb-3">{p.desc}</div>
+                <span className="text-xs font-bold px-2 py-1 rounded-lg"
+                  style={{ color: p.color, background: `rgba(${p.rgb},0.12)` }}>Chi tiết →</span>
               </div>
             ))}
           </div>
@@ -248,6 +400,20 @@ export default function LifestyleEnvironmentPage() {
           ))}
         </div>
       </RevealBlock>
+
+      {/* ── Principles modal — outside all RevealBlocks ── */}
+      {principleIdx !== null && (
+        <EnvModal
+          item={PRINCIPLES[principleIdx]}
+          idx={principleIdx}
+          total={PRINCIPLES.length}
+          onClose={() => setPrincipleIdx(null)}
+          onPrev={() => setPrincipleIdx(i => Math.max(0, i - 1))}
+          onNext={() => setPrincipleIdx(i => Math.min(PRINCIPLES.length - 1, i + 1))}
+          hasPrev={principleIdx > 0}
+          hasNext={principleIdx < PRINCIPLES.length - 1}
+        />
+      )}
 
       <div className="h-px mb-8" style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }} />
       <div className="flex flex-col sm:flex-row gap-3 justify-between">

@@ -480,10 +480,94 @@ const BREAK_MOVES = [
 ];
 
 const STEP_GOALS = [
-  { profile: 'Ít vận động (dưới 3.000 bước)', goal: 'Tăng 1.000 bước so với nền', tip: 'Đừng nhảy ngay lên 10.000. Tăng dần.' },
-  { profile: 'Trung bình (3.000–6.000)', goal: 'Tăng 1.000–2.000 bước/tuần', tip: 'Thêm 1 lần đi bộ 10 phút mỗi ngày.' },
-  { profile: 'Cơ bản (6.000–8.000)', goal: 'Duy trì + tăng lên 8.000–10.000', tip: 'Thêm bước sau bữa tối.' },
-  { profile: 'Tốt (8.000–10.000+)', goal: 'Duy trì + tối ưu chất lượng', tip: 'Tập trung phân bổ đều trong ngày.' },
+  {
+    profile: 'Ít vận động (dưới 3.000 bước)', goal: 'Tăng 1.000 bước so với nền', tip: 'Đừng nhảy ngay lên 10.000. Tăng dần.',
+    icon: '🐢', color: '#f43f5e', rgb: '244,63,94',
+    title: 'Dưới 3.000 Bước — Điểm Xuất Phát',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Dưới 3.000 bước/ngày được phân loại là "sedentary lifestyle" — tương đương ngồi >10 giờ/ngày. Nghiên cứu cho thấy tăng chỉ 1.000 bước/ngày từ nền thấp giảm nguy cơ tử vong sớm ~10–15%. Không cần nhảy lên 10.000 — chỉ cần hơn ngày hôm qua một chút là đã có tác dụng đo được.',
+    detail: 'Nhóm này thường là dân văn phòng ngồi 8–10 giờ, di chuyển bằng xe máy/ô tô và ít đi bộ trong nhà. Mục tiêu đầu tiên không phải là đạt số bước cao — mà là phá vỡ vòng lặp ngồi liên tục và bắt đầu xây dựng thói quen nhận thức về việc vận động.',
+    details: [
+      '"Sedentary paradox": nhiều người dưới 3.000 bước/ngày không cảm thấy mình "không vận động" vì họ bận rộn và mệt mỏi. Nhưng bận rộn ngồi bàn giấy = NEAT thấp — sự mệt mỏi là mental fatigue, không phải physical activity.',
+      'Tăng 1.000 bước từ nền thấp có tác động lớn nhất: nghiên cứu cho thấy người từ 2.000 bước tăng lên 3.000 bước nhận được lợi ích sức khỏe tương đương người từ 8.000 lên 9.000 bước. Mỗi bước đầu tiên có giá trị cao nhất.',
+      'Cách thực tế thêm 1.000 bước: đi bộ sau bữa tối 10 phút (~800–1.000 bước) hoặc đậu xe xa hơn 5 phút (~400 bước) + leo cầu thang thay thang máy 3 lần (~300 bước). Không cần thay đổi lịch trình lớn.',
+      'Tracking quan trọng hơn target: với nhóm này, chỉ cần bắt đầu đo số bước bằng điện thoại là đã cải thiện. Biết được con số thực tế tạo ra "awareness effect" — tự nhiên bắt đầu tìm cách tăng thêm.',
+      'Không tăng quá 500–1.000 bước/tuần: cơ thể chưa quen vận động cần thích nghi từ từ. Tăng đột ngột dẫn đến đau chân, mệt mỏi và bỏ cuộc. Nguyên tắc "10% rule": không tăng quá 10% tổng bước mỗi tuần.',
+      'Timeline thực tế: từ 2.000 lên 5.000 bước/ngày đều đặn cần khoảng 4–8 tuần tăng dần. Đừng nhìn vào mục tiêu 10.000 — nhìn vào tuần tới cần đạt gì. Small wins tích lũy thành thay đổi lớn.',
+    ],
+    points: [
+      { icon: '📉', label: 'Sedentary lifestyle', note: '<3.000 bước = ngồi >10h/ngày — nguy cơ cao nhất về tim mạch và chuyển hóa' },
+      { icon: '📈', label: '+1.000 bước = -10–15% tử vong', note: 'Mỗi 1.000 bước thêm từ nền thấp có giá trị lớn nhất về sức khỏe' },
+      { icon: '📱', label: 'Tracking trước target', note: 'Biết số bước thực tế tạo awareness — tự nhiên bắt đầu tìm cách tăng' },
+      { icon: '🐢', label: 'Tăng 500–1.000 bước/tuần', note: '10% rule — không tăng đột ngột, cơ thể cần thích nghi từng bước nhỏ' },
+    ],
+  },
+  {
+    profile: 'Trung bình (3.000–6.000)', goal: 'Tăng 1.000–2.000 bước/tuần', tip: 'Thêm 1 lần đi bộ 10 phút mỗi ngày.',
+    icon: '🚶', color: '#f59e0b', rgb: '245,158,11',
+    title: '3.000–6.000 Bước — Xây Nền Vận Động',
+    img: 'https://images.unsplash.com/photo-1499803270242-467f7b8cffcd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhóm 3.000–6.000 bước đã thoát khỏi "sedentary" nhưng chưa đạt ngưỡng lợi ích sức khỏe tối ưu. Nghiên cứu 2022 (The Lancet) cho thấy plateau lợi ích tử vong ở 7.000–8.000 bước — nhóm này cần thêm 1.000–2.000 bước/ngày để đến vùng hiệu quả cao nhất. Thêm 1 lần đi bộ 10 phút/ngày (~800–1.000 bước) là đủ để bắc cầu.',
+    detail: 'Nhóm này thường đã có một số thói quen vận động nhẹ — đi bộ đến văn phòng, leo vài tầng cầu thang — nhưng chưa có "dedicated walk" nào. Thêm 1 lần đi bộ có mục đích 10 phút vào routine (sáng, sau ăn trưa, hoặc tối) là đủ để tăng lên nhóm "Cơ bản".',
+    details: [
+      'The Lancet 2022 (meta-analysis, 47.471 người): lợi ích giảm tử vong tăng mạnh từ 3.500–7.000 bước, plateau sau 7.000–8.000. Nhóm 3.000–6.000 đang ở "vùng dốc" — mỗi bước thêm có giá trị rất cao.',
+      'Thêm 1 lần đi bộ 10 phút/ngày: tương đương ~800–1.000 bước và ~40–50 kcal. Nhỏ về kcal nhưng tác động lớn về NEAT, glucose control và lợi ích tim mạch dài hạn. Dễ dàng lồng vào routine hiện tại.',
+      'Thời điểm tốt nhất: sau bữa trưa (glucose control), buổi tối trước khi xem TV (habit stacking), hoặc trước giờ làm sáng (cortisol thấp + ánh sáng sáng sớm). Không có thời điểm "tốt nhất" tuyệt đối — thời điểm bạn thực sự làm được là tốt nhất.',
+      'Habit stacking: gắn đi bộ 10 phút vào thói quen đã có — "Sau khi ăn trưa xong, tôi đi bộ 10 phút". Không tạo thói quen mới từ đầu — gắn vào anchor habit có sẵn tăng tỷ lệ duy trì đáng kể.',
+      'Progress tracking: ghi lại bước mỗi ngày trong 2 tuần đầu để thấy xu hướng. Sau khi đạt 5.000–6.000 bước đều đặn, tự nhiên muốn push lên 7.000–8.000 — momentum tự tạo ra motivation tiếp theo.',
+      'Đừng để "bad day" phá vỡ streak: nếu một ngày chỉ đạt 2.000 bước (ốm, thời tiết xấu) — không sao. Chỉ cần không để 2 ngày xấu liên tiếp. "Never miss twice" rule giúp duy trì habit dài hạn.',
+    ],
+    points: [
+      { icon: '📊', label: 'Vùng dốc cao nhất', note: 'Lancet 2022: mỗi bước từ 3.500–7.000 có giá trị sức khỏe lớn nhất' },
+      { icon: '⏱️', label: '+10 phút/ngày là đủ', note: '1 lần đi bộ 10 phút = 800–1.000 bước — đủ để tăng lên nhóm tiếp theo' },
+      { icon: '🔗', label: 'Habit stacking', note: 'Gắn vào sau bữa ăn hoặc anchor habit có sẵn — duy trì dễ hơn tạo mới' },
+      { icon: '📅', label: 'Never miss twice', note: '1 ngày xấu không sao — không để 2 ngày liên tiếp phá streak' },
+    ],
+  },
+  {
+    profile: 'Cơ bản (6.000–8.000)', goal: 'Duy trì + tăng lên 8.000–10.000', tip: 'Thêm bước sau bữa tối.',
+    icon: '🏃', color: '#0ea5e9', rgb: '14,165,233',
+    title: '6.000–8.000 Bước — Ngưỡng Lợi Ích Tốt',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '6.000–8.000 bước/ngày đã nằm trong vùng lợi ích sức khỏe tốt theo nhiều nghiên cứu. Nghiên cứu Lee et al. (JAMA, 2019): lợi ích sức khỏe tối ưu ở 7.500 bước với phụ nữ cao tuổi — ít tăng thêm sau đó. Nhóm này chỉ cần thêm 1 buổi đi bộ tối ngắn để "seal the deal" — không cần thay đổi lớn.',
+    detail: 'Ở mức này, bạn đã có thói quen vận động nhất định. Mục tiêu không phải chỉ tăng số bước mà còn tối ưu cách phân phối bước trong ngày — rải đều thay vì dồn vào 1 lần — để có lợi ích glucose và NEAT tốt hơn.',
+    details: [
+      'Lee et al. 2019 (JAMA Internal Medicine): 16.741 phụ nữ cao tuổi được theo dõi. Nhóm trung vị ~7.500 bước có tỷ lệ tử vong thấp nhất. Lợi ích tiếp tục tăng đến ~7.500 bước rồi plateau — sau đó không đáng kể. Nghiên cứu gần đây với người trẻ gợi ý ngưỡng có thể cao hơn (~8.000–10.000).',
+      'Phân phối bước quan trọng hơn tổng: 8.000 bước rải đều cả ngày (mỗi giờ ~1.000 bước) tốt hơn 8.000 bước trong 1 buổi đi bộ 80 phút về glucose control và LPL. Cùng tổng bước, khác tác động sinh lý.',
+      'Thêm bước sau bữa tối: 10–20 phút đi bộ tối (~1.000–1.500 bước) giúp glucose bữa tối ổn định hơn trước khi ngủ, cải thiện sleep quality và tạo thói quen tốt trước giờ nghỉ. Nhiều người thấy đây là thời gian dễ duy trì nhất.',
+      'Đi bộ tối vs tối giản hóa: nếu không có thời gian đi bộ riêng, thêm bước bằng cách đậu xe xa 10 phút, xuống xe buýt 1 trạm sớm hơn, hoặc đi bộ trong khi gọi điện thoại tối. Không nhất thiết phải là "dedicated walk session".',
+      'Milestone 8.000 bước: đây là ngưỡng mà nghiên cứu gần đây (2021–2022) đồng thuận là đủ cho lợi ích sức khỏe toàn diện — tim mạch, chuyển hóa, sức khỏe tâm thần. Nhóm này chỉ cần thêm ~500–1.000 bước để cross milestone quan trọng này.',
+      'Chất lượng bước: ở mức này, bắt đầu chú ý đến "active minutes" — thời gian bước ở tốc độ >100 bước/phút (đi nhanh). 30 phút active minutes/ngày có lợi ích tim mạch đo được ngay cả khi tổng bước không tăng.',
+    ],
+    points: [
+      { icon: '✅', label: 'Vùng lợi ích sức khỏe tốt', note: 'JAMA 2019: 7.500 bước là ngưỡng lợi ích tối ưu nhiều nghiên cứu xác nhận' },
+      { icon: '⏰', label: 'Phân phối đều > dồn 1 lần', note: 'Rải bước cả ngày tốt hơn đi bộ 1 buổi dài về glucose và LPL' },
+      { icon: '🌙', label: 'Đi bộ tối sau bữa ăn', note: 'Glucose ổn định + sleep quality tốt hơn + dễ duy trì habit' },
+      { icon: '⚡', label: 'Active minutes >100 bước/phút', note: 'Chú ý chất lượng bước — 30 phút đi nhanh có lợi ích tim mạch thêm' },
+    ],
+  },
+  {
+    profile: 'Tốt (8.000–10.000+)', goal: 'Duy trì + tối ưu chất lượng', tip: 'Tập trung phân bổ đều trong ngày.',
+    icon: '🌟', color: '#10b981', rgb: '16,185,129',
+    title: '8.000–10.000+ Bước — Tối Ưu Hóa NEAT',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ở mức 8.000–10.000+ bước, mục tiêu chuyển từ "tăng số lượng" sang "tối ưu chất lượng và phân phối". Phân phối đều (rải bước mỗi giờ, không dồn vào 1 buổi) và tăng "active minutes" (bước nhanh >100 bước/phút) tạo ra lợi ích bổ sung mà chỉ tăng tổng bước không đạt được.',
+    detail: 'Nhóm này đã có nền vận động tốt. Cải tiến tiếp theo không phải về số lượng mà về cách phân phối bước trong ngày, kết hợp với strength training, và tối ưu hóa sleep + recovery để NEAT bền vững dài hạn.',
+    details: [
+      'Quality over quantity ở ngưỡng này: tăng từ 10.000 lên 12.000 bước có tác dụng ít hơn nhiều so với cải thiện cách phân phối 10.000 bước đó. 10.000 bước rải đều 16 giờ thức (~625 bước/giờ) tốt hơn 10.000 bước trong 2 giờ tập gym + 14 giờ ngồi.',
+      'Active minutes tracking: Google Fit, Apple Health, Garmin theo dõi "active minutes" (bước ở >100 bước/phút). Mục tiêu 150 phút active minutes/tuần (WHO) = ~21 phút/ngày đi nhanh. Ở nhóm này, focus vào active minutes thay vì chỉ tổng bước.',
+      'Kết hợp với strength training: NEAT cao + strength training 3 lần/tuần = tổ hợp tốt nhất cho sức khỏe dài hạn. Strength training tăng BMR và cơ bắp; NEAT đảm bảo hoạt động nền đều đặn. Hai yếu tố bổ trợ nhau, không thay thế nhau.',
+      'Zone 2 cardio: đi bộ nhanh hoặc đạp xe nhẹ ở 60–70% max heart rate (Zone 2) tối ưu hóa fat oxidation và mitochondrial health. 30–45 phút Zone 2 × 3–4 lần/tuần = lợi ích tim mạch và chuyển hóa cao nhất với thời gian phù hợp.',
+      'Phân phối bước thực tế: đặt reminder đứng dậy mỗi 45–60 phút, đi bộ sau mỗi bữa ăn, và kết hợp "walking meetings". Thay vì 1 buổi đi bộ dài, chia thành 4–5 lần đi ngắn rải trong ngày.',
+      'Bền vững dài hạn: ở mức này, nguy cơ lớn nhất là injury (overuse) hoặc burnout khi cố duy trì cao quá. Lắng nghe cơ thể, nghỉ ngơi đủ và không để theo dõi số bước trở thành áp lực. Consistency trong nhiều năm quan trọng hơn peak trong vài tháng.',
+    ],
+    points: [
+      { icon: '📊', label: 'Phân phối > tổng số', note: '10.000 bước rải đều cả ngày tốt hơn dồn vào 2 giờ gym về NEAT và glucose' },
+      { icon: '⚡', label: 'Active minutes (>100 b/phút)', note: 'WHO: 150 phút active minutes/tuần — focus vào chất lượng bước, không chỉ số' },
+      { icon: '💪', label: 'NEAT + Strength = cặp đôi tối ưu', note: 'Strength tăng BMR; NEAT đảm bảo nền hoạt động — bổ trợ không thay thế' },
+      { icon: '🌱', label: 'Consistency > peak', note: 'Duy trì đều 8.000–10.000 nhiều năm > 12.000 bước 3 tháng rồi bỏ' },
+    ],
+  },
 ];
 
 function RevealBlock({ children, delay = 0, className = '' }) {
@@ -588,6 +672,7 @@ export default function LifestyleNeatPage() {
   const [activityIdx, setActivityIdx] = useState(null);
   const [breakIdx, setBreakIdx] = useState(null);
   const [officeIdx, setOfficeIdx] = useState(null);
+  const [stepIdx, setStepIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -749,12 +834,18 @@ export default function LifestyleNeatPage() {
         <p className="text-muted text-lg mb-6">Không ép tất cả lên 10.000 bước. Tăng từ nền hiện tại, không nhảy vọt.</p>
         <div className="space-y-3">
           {STEP_GOALS.map((g, i) => (
-            <div key={i} className="p-4 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <div className="flex justify-between items-start mb-1">
-                <span className="font-semibold text-text text-lg">{g.profile}</span>
-                <span className="text-base font-bold" style={{ color: COLOR }}>{g.goal}</span>
+            <div key={i}
+              className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${g.rgb},0.05)`, border: `1px solid rgba(${g.rgb},0.18)` }}
+              onClick={() => setStepIdx(i)}>
+              <span className="text-2xl shrink-0">{g.icon}</span>
+              <div className="flex-1">
+                <div className="font-semibold text-text text-base">{g.profile}</div>
+                <div className="text-sm mt-0.5 font-medium" style={{ color: g.color }}>{g.goal}</div>
+                <div className="text-xs text-muted mt-0.5">{g.tip}</div>
               </div>
-              <p className="text-base text-muted">{g.tip}</p>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -785,6 +876,20 @@ export default function LifestyleNeatPage() {
         <Link to="/pillar/c/morning" className="text-muted hover:text-emerald-400 transition-colors text-lg">← Routine Sáng</Link>
         <Link to="/pillar/c/recovery" className="text-lg font-semibold" style={{ color: COLOR }}>Phục Hồi →</Link>
       </div>
+
+      {/* ── Step goals modal — outside all RevealBlocks ── */}
+      {stepIdx !== null && (
+        <NeatModal
+          item={STEP_GOALS[stepIdx]}
+          idx={stepIdx}
+          total={STEP_GOALS.length}
+          onClose={() => setStepIdx(null)}
+          onPrev={() => setStepIdx(i => Math.max(0, i - 1))}
+          onNext={() => setStepIdx(i => Math.min(STEP_GOALS.length - 1, i + 1))}
+          hasPrev={stepIdx > 0}
+          hasNext={stepIdx < STEP_GOALS.length - 1}
+        />
+      )}
 
       {/* ── Office hacks modal — outside all RevealBlocks ── */}
       {officeIdx !== null && (

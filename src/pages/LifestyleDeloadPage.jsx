@@ -328,40 +328,96 @@ const SIGNALS = [
 
 const METHODS = [
   {
-    id: 'volume',
-    icon: '🔽',
+    id: 'volume', icon: '🔽', color: '#f97316', rgb: '249,115,22',
     title: 'Giảm Volume (Phổ biến nhất)',
     desc: 'Giữ nguyên cường độ, giảm 40–60% tổng khối lượng tập.',
-    howto: ['Giữ tạ nặng như thường', 'Giảm số set từ 4 → 2, số rep từ 12 → 8', 'Bỏ bớt 1–2 bài phụ', 'Thời gian tập ngắn hơn 30–40%'],
     best: 'Người tập sức mạnh, powerlifter',
-    color: '#f97316',
+    img: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giảm volume là phương pháp deload được nghiên cứu nhiều nhất và hiệu quả nhất cho hầu hết mọi người. Lý do: cường độ (tạ nặng) là tín hiệu chính để duy trì strength và neural adaptations — giảm volume nhưng giữ cường độ = duy trì stimulus đủ để không mất gains, đồng thời giảm fatigue đủ để supercompensation xảy ra. Đây là "minimum effective dose" của deload.',
+    detail: 'Nguyên tắc cốt lõi: giảm 40–60% total tonnage (tổng khối lượng = sets × reps × weight), giữ nguyên hoặc gần nguyên intensity (% 1RM). Ví dụ: thay vì 4 sets × 8 reps × 100kg = 3200kg, làm 2 sets × 5 reps × 100kg = 1000kg. Cùng tạ nặng, bằng 31% volume.',
+    details: [
+      'Tại sao giữ cường độ quan trọng: strength là neural adaptation — não học cách recruit motor units hiệu quả hơn. Giảm tạ nhiều (xuống 50–60% 1RM) làm mất neural stimulus → strength giảm nhanh hơn. Giữ nguyên tạ nặng nhưng giảm sets/reps = CNS và cơ bắp vẫn nhận "reminder signal" mà không bị fatigue thêm.',
+      'Cách tính volume cut: nếu bình thường làm 4 sets × 10 reps cho mỗi bài → deload còn 2 sets × 6–8 reps. Nếu bình thường 5 bài/buổi → deload còn 3 bài (bỏ bài phụ, giữ compound chính). Tổng tonnage giảm 40–60% nhưng pattern movement và load quen thuộc được duy trì.',
+      'Compound over accessory: trong tuần deload giảm volume, ưu tiên compound movements (squat, deadlift, bench, row) và bỏ hoặc giảm mạnh accessory/isolation. Compound movements duy trì neural pattern và recruit nhiều motor unit hơn accessory — hiệu quả hơn nhiều với ít sets hơn.',
+      'RPE target trong deload: aim cho RPE 6–7 (thay vì RPE 8–9.5 khi tập thường). Cảm giác "quá dễ" là bình thường và đúng. Nếu vẫn thấy nặng ở RPE 7–8 với volume deload, đó là dấu hiệu cần giảm tạ thêm hoặc cần nghỉ dài hơn.',
+      'Duration: 1 tuần deload giảm volume thường đủ cho hầu hết. Sau mesocycle 4–6 tuần, 1 tuần volume deload = sufficient. Sau mesocycle dài hơn (8–12 tuần) hoặc khi overreaching nặng, 1.5–2 tuần. Trở lại volume bình thường từ từ — không nhảy thẳng lên training max ngay tuần đầu.',
+      'Kết hợp với technique work: ít volume → có thêm thời gian và energy để focus vào form. Sử dụng buổi deload để slow down, ghi lại video, phát hiện và sửa technical issues sẽ mang lại lợi ích dài hạn. Nhiều người cải thiện technique đáng kể trong tuần deload vì không còn lo "cố hoàn thành số reps".',
+    ],
+    points: [
+      { icon: '💪', label: 'Giữ tạ = giữ neural adaptations', note: 'Cường độ duy trì strength gains — không giảm tạ, chỉ giảm sets và reps' },
+      { icon: '📐', label: 'Giảm 40–60% tổng tonnage', note: '4×10 → 2×6 — cùng load, bằng ~30% volume. Cảm giác "quá dễ" là đúng' },
+      { icon: '🏋️', label: 'Bỏ accessory, giữ compound', note: 'Compound movements duy trì motor pattern hiệu quả nhất với ít sets nhất' },
+      { icon: '🎥', label: 'Dùng deload để sửa technique', note: 'Ít fatigue + ít sets = cơ hội ghi video và focus form — đầu tư dài hạn' },
+    ],
   },
   {
-    id: 'intensity',
-    icon: '🎯',
+    id: 'intensity', icon: '🎯', color: '#06b6d4', rgb: '6,182,212',
     title: 'Giảm Intensity',
     desc: 'Giữ nguyên volume, giảm tạ xuống 50–60% 1RM.',
-    howto: ['Số set và rep giữ nguyên', 'Giảm tạ xuống còn 50–60% max', 'Tập với tốc độ chậm hơn, kiểm soát nhiều hơn', 'Tập trung vào kỹ thuật'],
     best: 'Người tập hypertrophy, bodybuilder',
-    color: '#06b6d4',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giảm intensity (tạ nhẹ hơn) phù hợp nhất cho hypertrophy training, nơi volume cao là driver chính của muscle growth. Giảm tạ xuống 50–60% 1RM trong khi giữ số set và rep cho phép hệ thần kinh và gân nghỉ ngơi (không còn phải chịu peak load) trong khi cơ bắp vẫn được kích thích đủ để duy trì gains.',
+    detail: 'Nguyên tắc: giữ nguyên 4 sets × 10–12 reps, nhưng giảm tạ từ 80% 1RM xuống còn 50–60% 1RM. Volume (sets × reps) không đổi nhưng mechanical load giảm đáng kể. Phù hợp cho bodybuilder và hypertrophy trainees vì volume là stimulus chính, không phải load tuyệt đối.',
+    details: [
+      'Tại sao bodybuilder benefit nhiều hơn: trong hypertrophy training, muscle tension over time và metabolic stress quan trọng hơn peak force. Tạ 50–60% vẫn tạo đủ mechanical tension ở sets cao (10–15 reps) và metabolic stress (pump) để duy trì hypertrophy signal, trong khi giảm đáng kể joint và tendon stress.',
+      '50–60% 1RM là vùng đặc biệt: ở 50–60% 1RM với sets 10–15 reps, cơ bắp vẫn phải recruit type II fibers ở cuối sets (muscle fiber recruitment theo nguyên tắc Henneman\'s size principle — fiber lớn được recruit sau khi fiber nhỏ đã mệt). Đủ stimulus nhưng không overload CNS.',
+      'Pump và blood flow: tạ nhẹ + reps cao = tăng blood flow và pump tốt hơn so với tạ nặng ít reps. Pump (cell swelling) là tín hiệu anabolic thực sự — tăng protein synthesis ngắn hạn và mTOR activation. Deload giảm intensity với reps cao không hoàn toàn mất hypertrophy stimulus.',
+      'Technique refinement ở tốc độ chậm: tạ nhẹ + reps kiểm soát chậm (tempo 3–1–3: 3s xuống, 1s pause, 3s lên) = time under tension cao mà không có joint stress. Đây là cơ hội tốt để groove movement patterns sâu hơn, đặc biệt cho những bài có kỹ thuật phức tạp.',
+      'Khi nào KHÔNG nên giảm intensity: powerlifter và strength athletes cần duy trì neural pattern ở tạ nặng — giảm tạ nhiều sẽ mất specificity. Với họ, giảm volume tốt hơn. Giảm intensity phù hợp nhất khi primary goal là muscle size, không phải max strength.',
+      'Returning từ intensity deload: sau 1 tuần deload intensity, không tăng tạ đột ngột về training max. Tuần 1 trở lại: 70–75% 1RM. Tuần 2: 80–85%. Tuần 3: trở lại bình thường. Gân và connective tissue cần "ramp up" gradual hơn cơ bắp sau thời gian tạ nhẹ.',
+    ],
+    points: [
+      { icon: '📊', label: 'Volume không đổi, load giảm 40–50%', note: 'Sets × reps như cũ — tạ từ 80% → 50–60% 1RM. Neural và gân được nghỉ' },
+      { icon: '🩸', label: 'Pump duy trì hypertrophy signal', note: 'Cell swelling và metabolic stress vẫn xảy ra ở tạ nhẹ + reps cao' },
+      { icon: '🐌', label: 'Tempo chậm 3–1–3', note: 'Time under tension cao không cần tạ nặng — groove technique + duy trì stimulus' },
+      { icon: '🚫', label: 'Không phù hợp cho powerlifter', note: 'Strength athletes cần giữ neural pattern ở tạ nặng — dùng volume deload thay thế' },
+    ],
   },
   {
-    id: 'frequency',
-    icon: '📅',
+    id: 'frequency', icon: '📅', color: '#10b981', rgb: '16,185,129',
     title: 'Giảm Tần Suất',
     desc: 'Giảm số buổi tập trong tuần, duy trì cường độ và volume mỗi buổi.',
-    howto: ['Từ 5 buổi/tuần → 3 buổi', 'Mỗi buổi tập vẫn như thường', 'Ngày nghỉ thêm là active recovery', 'Tập full-body thay split routine'],
     best: 'Người tập 4–6 ngày/tuần',
-    color: '#10b981',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giảm tần suất là lựa chọn tốt nhất cho người tập 5–6 ngày/tuần — vì tăng số ngày nghỉ giữa các buổi cho phép recovery hoàn toàn hơn mà không cần thay đổi gì trong các buổi tập còn lại. Psychologically, giữ nguyên intensity và volume mỗi buổi giúp nhiều người không cảm thấy "mất đà" hay "tập yếu đi" trong tuần deload.',
+    detail: 'Thay vì 5 buổi/tuần (push/pull/legs/upper/lower), giảm xuống 3 buổi full-body hoặc 3 buổi compound-focused. Mỗi buổi vẫn có quality cao — không giảm tạ, không giảm sets nhiều. Chỉ có ít buổi tập hơn và nhiều ngày nghỉ hơn.',
+    details: [
+      'Tại sao hiệu quả cho người tập nhiều ngày: người tập 5–6 ngày/tuần thường có cumulative fatigue cao hơn từ frequency — mỗi buổi thêm là thêm 1 round của CNS stress, tendon loading và systemic inflammation. Giảm từ 5 → 3 buổi giảm 40% total stress ngay cả khi mỗi buổi không thay đổi.',
+      'Full-body trong deload frequency: chuyển từ split routine (ngực thứ 2, lưng thứ 4...) sang full-body 3 buổi/tuần trong tuần deload. Full-body với compound chính (squat, press, pull) × 2–3 sets mỗi bài = kích thích tất cả muscle groups nhưng không chuyên biệt hóa quá mức. Maintenance với minimum sets.',
+      'Ngày nghỉ thêm = active recovery: những ngày không tập không phải ngày nằm im. Đi bộ 20–30 phút, mobility 10 phút, foam rolling — những hoạt động này tăng lưu thông máu đến muscle và connective tissue đang phục hồi mà không tạo thêm training stress.',
+      'Psychological benefit của giữ nguyên intensity: nhiều người cảm thấy "yếu" khi dùng tạ nhẹ hơn (giảm intensity). Giảm frequency cho phép họ bước vào phòng tập với tạ quen thuộc — cảm giác familiar và confident được duy trì trong tuần deload, quan trọng cho tâm lý dài hạn.',
+      'Thứ tự các ngày: với 3 buổi full-body, để 1–2 ngày nghỉ giữa mỗi buổi: Thứ 2 / Thứ 4 / Thứ 6. Không tập 2 ngày liên tiếp ngay cả trong deload — mục tiêu là recovery, không phải training density.',
+      'Kết hợp với giảm volume nhẹ: giảm tần suất thường kết hợp với giảm nhẹ volume (bỏ 1 set phụ mỗi bài). Không nhất thiết phải strict — linh hoạt là key. Cảm thấy tốt trong buổi full-body deload? Có thể thêm 1 set. Cảm thấy mệt? Bỏ bài cuối và ra về.',
+    ],
+    points: [
+      { icon: '📆', label: '5–6 buổi → 3 buổi full-body', note: 'Giảm 40% total frequency = giảm 40% cumulative stress mà không đổi gì trong buổi tập' },
+      { icon: '💚', label: 'Tâm lý tốt hơn: tạ không đổi', note: 'Không cảm thấy "yếu đi" — tạ quen thuộc, chỉ có ít buổi hơn' },
+      { icon: '🚶', label: 'Ngày nghỉ = active recovery', note: '20–30 phút đi bộ + mobility — tăng lưu thông không tạo training stress' },
+      { icon: '📅', label: 'T2/T4/T6 — không liên tiếp', note: 'Ít nhất 1 ngày nghỉ giữa mỗi buổi, ngay cả trong deload' },
+    ],
   },
   {
-    id: 'active',
-    icon: '🚶',
+    id: 'active', icon: '🚶', color: '#a78bfa', rgb: '167,139,250',
     title: 'Active Deload',
     desc: 'Thay thế buổi tập bằng hoạt động nhẹ nhàng, vui vẻ.',
-    howto: ['Bơi lội, đi bộ, yoga nhẹ', 'Không có mục tiêu hiệu suất', 'Chơi thể thao giải trí', 'Đi bộ trong thiên nhiên'],
     best: 'Người tập cardio nhiều, cần phục hồi tâm lý',
-    color: '#a78bfa',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Active deload là phương pháp cần thiết nhất khi overtraining đã ảnh hưởng đến tâm lý — mất motivation, chán ghét phòng tập, cảm thấy "bị bắt buộc phải tập". Một tuần hoàn toàn không tập (có thể kể cả weights) nhưng vẫn vận động nhẹ nhàng qua các hoạt động yêu thích giúp "rekindle" mối quan hệ với vận động và cho CNS phục hồi hoàn toàn.',
+    detail: 'Active deload không có structure cứng nhắc — không có sets, reps hay progressive overload. Chỉ có hoạt động vui vẻ: bơi, đạp xe leisurely, leo núi nhẹ, yoga, đi bộ khám phá. Mục tiêu là duy trì vận động cơ thể (không nằm yên hoàn toàn) trong khi cho tâm lý và CNS nghỉ ngơi hoàn toàn khỏi structured training.',
+    details: [
+      'Khi nào active deload thực sự cần thiết: (1) mất hoàn toàn motivation với tập luyện có cấu trúc, (2) cảm giác "burnout" với gym environment, (3) dopamine depletion nặng — phòng tập không còn hấp dẫn dù biết cần tập, (4) psychological overtraining (không chỉ physical). Trong những trường hợp này, standard deload với vẫn phải vào phòng tập không đủ — cần detach hoàn toàn.',
+      'Zone 1–2 là cường độ phù hợp: bơi nhẹ, đạp xe không cần đến 60% max HR, yoga nhẹ nhàng, đi bộ trong thiên nhiên. Không phải: HIIT bơi, đạp xe leo đồi, yoga hot vất vả. Mục tiêu là movement for joy, không phải movement for performance. Bất kỳ hoạt động nào khiến bạn cảm thấy vui vẻ và không áp lực đều phù hợp.',
+      'Thiên nhiên và phục hồi tâm lý: các hoạt động ngoài trời (đi bộ rừng, leo núi nhẹ, đạp xe đường quê) có lợi ích bổ sung qua Attention Restoration Theory. Thiên nhiên kích hoạt "soft fascination" — não được nghỉ ngơi khỏi directed attention mà công việc và structured training đều đòi hỏi. 90 phút đi bộ rừng = giảm rumination và prefrontal cortex overload đo được trên fMRI.',
+      'Play element: thể thao giải trí (bóng rổ casual, tennis nhẹ, ném frisbee) có yếu tố play — tự phát, xã hội và không có áp lực. Play kích hoạt dopamine theo cách khác với structured training — reward đến từ enjoyment và social connection, không phải performance. Đây là cách tái nạp dopamine nhanh nhất khi bị depletion từ overtraining.',
+      'Duration và intensity guidance: 20–45 phút mỗi activity, không quá 60 phút. Nếu muốn làm gì đó cảm giác như "workout" — yoga nhẹ hoặc đi bộ nhanh — giữ HR dưới 120 bpm và cảm giác effort không quá 5/10. Không cần track, không cần hit target. Kết thúc khi muốn.',
+      'Trở lại sau active deload: active deload thường cần 1–2 tuần (dài hơn standard deload). Sau đó trở lại với volume và intensity thấp hơn bình thường (50–60%), tăng dần trong 2–3 tuần. Không rush — burnout recovery cần thời gian. Nếu sau 2 tuần active deload vẫn không thấy muốn quay lại, đó là dấu hiệu cần xem xét lại toàn bộ training approach.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Cho tâm lý nghỉ ngơi hoàn toàn', note: 'Không vào phòng tập, không track, không target — chỉ movement for joy' },
+      { icon: '🌳', label: 'Thiên nhiên recharge dopamine', note: 'Soft fascination của rừng/thiên nhiên giảm rumination và prefrontal overload' },
+      { icon: '🎮', label: 'Play kích hoạt dopamine khác', note: 'Thể thao giải trí + social = dopamine từ enjoyment, không phải performance' },
+      { icon: '⏳', label: '1–2 tuần, trở lại từ từ', note: 'Burnout cần thời gian dài hơn standard deload — không rush, tăng dần 2–3 tuần' },
+    ],
   },
 ];
 
@@ -385,7 +441,7 @@ const DELOAD_WEEK = [
 const INTENSITY_COLOR = { light: '#f97316', 'very-light': '#10b981', rest: '#6b7280' };
 
 export default function LifestyleDeloadPage() {
-  const [openMethod, setOpenMethod] = useState('volume');
+  const [methodIdx, setMethodIdx] = useState(null);
   const [whyIdx, setWhyIdx] = useState(null);
   const [signalIdx, setSignalIdx] = useState(null);
 
@@ -409,8 +465,6 @@ export default function LifestyleDeloadPage() {
     document.head.appendChild(style);
     return () => document.getElementById(ORBIT_ID)?.remove();
   }, []);
-
-  const activeMethod = METHODS.find(m => m.id === openMethod);
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
@@ -493,40 +547,21 @@ export default function LifestyleDeloadPage() {
       {/* 4 Methods */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Phương Pháp Deload</h2>
-        <p className="text-muted text-lg mb-6">Chọn phương pháp phù hợp với mục tiêu và lịch tập của bạn.</p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
-          {METHODS.map(m => (
-            <button key={m.id} onClick={() => setOpenMethod(m.id)} className={`rounded-xl p-3 text-left transition-all border ${openMethod === m.id ? 'border-opacity-50' : 'border-border hover:border-opacity-30'}`} style={{ background: openMethod === m.id ? `rgba(${RGB},0.1)` : undefined, borderColor: openMethod === m.id ? COLOR : undefined }}>
-              <div className="text-3xl mb-1">{m.icon}</div>
-              <div className="text-base font-bold" style={{ color: openMethod === m.id ? COLOR : '#9ca3af' }}>{m.title.split('(')[0].trim()}</div>
-            </button>
+        <p className="text-muted text-lg mb-6">Chọn phương pháp phù hợp với mục tiêu và lịch tập của bạn. Click để xem hướng dẫn chi tiết.</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {METHODS.map((m, i) => (
+            <div key={m.id}
+              className="rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
+              style={{ borderColor: `rgba(${m.rgb},0.2)`, background: `rgba(${m.rgb},0.05)` }}
+              onClick={() => setMethodIdx(i)}>
+              <div className="text-4xl mb-3">{m.icon}</div>
+              <div className="font-bold text-base mb-1" style={{ color: m.color }}>{m.title.split('(')[0].trim()}</div>
+              <div className="text-sm text-muted mb-3 leading-relaxed">{m.desc}</div>
+              <span className="text-xs font-bold px-2 py-1 rounded-lg"
+                style={{ color: m.color, background: `rgba(${m.rgb},0.12)` }}>Chi tiết →</span>
+            </div>
           ))}
         </div>
-        {activeMethod && (
-          <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-4xl">{activeMethod.icon}</span>
-              <div>
-                <div className="text-lg font-bold text-text">{activeMethod.title}</div>
-                <div className="text-lg text-muted">{activeMethod.desc}</div>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: COLOR }}>Cách Thực Hiện</div>
-                <ul className="space-y-1">
-                  {activeMethod.howto.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2 text-lg text-text"><span style={{ color: COLOR }}>→</span>{h}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: COLOR }}>Phù Hợp Nhất Cho</div>
-                <div className="rounded-xl p-3 text-lg text-muted" style={{ background: `rgba(${RGB},0.08)` }}>{activeMethod.best}</div>
-              </div>
-            </div>
-          </div>
-        )}
       </RevealBlock>
 
       {/* Frequency by level */}
@@ -605,6 +640,20 @@ export default function LifestyleDeloadPage() {
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>
+
+      {/* ── Methods modal — outside all RevealBlocks ── */}
+      {methodIdx !== null && (
+        <DeloadModal
+          item={{ ...METHODS[methodIdx], modalTitle: METHODS[methodIdx].title }}
+          idx={methodIdx}
+          total={METHODS.length}
+          onClose={() => setMethodIdx(null)}
+          onPrev={() => setMethodIdx(i => Math.max(0, i - 1))}
+          onNext={() => setMethodIdx(i => Math.min(METHODS.length - 1, i + 1))}
+          hasPrev={methodIdx > 0}
+          hasNext={methodIdx < METHODS.length - 1}
+        />
+      )}
 
       {/* ── Signals modal — outside all RevealBlocks ── */}
       {signalIdx !== null && (

@@ -78,13 +78,160 @@ const RECOVERY_TYPES = [
 ];
 
 const ROUTINE_10 = [
-  { name: 'Thở cơ hoành', duration: '1 phút', note: 'Bụng phồng khi hít, ngực ít nâng' },
-  { name: 'Shoulder roll', duration: '1 phút', note: '10 vòng trước + 10 vòng sau' },
-  { name: 'Thoracic twist', duration: '1 phút', note: '8 lần mỗi bên' },
-  { name: 'Hip flexor stretch', duration: '1 phút × 2', note: 'Giữ 30–45s mỗi bên' },
-  { name: 'Hamstring stretch', duration: '1 phút × 2', note: 'Ngồi chân thẳng hoặc đứng cúi' },
-  { name: 'Child pose + thở chậm', duration: '2 phút', note: 'Thở vào 4s, ra 6s' },
-  { name: 'Đi bộ nhẹ', duration: '1–2 phút', note: 'Kết thúc nhẹ nhàng, bình thường hóa' },
+  {
+    name: 'Thở cơ hoành', duration: '1 phút', note: 'Bụng phồng khi hít, ngực ít nâng',
+    icon: '🫁', color: '#14b8a6', rgb: '20,184,166',
+    title: 'Thở Cơ Hoành — Reset Hệ Thần Kinh',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thở cơ hoành kích hoạt hệ thần kinh phó giao cảm (rest & digest) và ức chế giao cảm (fight or flight) trong vòng 2–3 nhịp thở. Đây là bài khởi động tốt nhất để "báo hiệu" cho cơ thể rằng đây là thời gian phục hồi, không phải tập luyện. Không làm bước này, cơ thể vẫn ở trạng thái stress khi bắt đầu stretch.',
+    detail: 'Hầu hết mọi người thở ngực (chest breathing) — lồng ngực nâng, vai nhích lên. Thở bụng (diaphragmatic breathing) dùng cơ hoành — cơ hô hấp chính bị "tắt" bởi stress và ngồi nhiều. 1 phút thở bụng đúng cách bằng 5–10 phút thư giãn thông thường về tác động hệ thần kinh.',
+    details: [
+      'Cơ hoành (diaphragm): cơ hình vòm ngăn cách ngực và bụng. Khi hít vào, cơ hoành co xuống → bụng phồng ra (không phải ngực nâng). Khi thở ra, cơ hoành thả lỏng → bụng xẹp tự nhiên. Đây là cơ hô hấp chính — ngực chỉ là hỗ trợ.',
+      'Thở ngực vs thở bụng: thở ngực dùng cơ phụ (scalenes, sternocleidomastoid, trapezius) — những cơ này cũng là cơ căng thẳng mãn tính ở dân văn phòng. Thở ngực liên tục duy trì căng cơ cổ vai gáy. Thở bụng "tắt" cơ phụ và giải phóng căng cơ vùng này.',
+      'Vagus nerve activation: thở chậm + thở bụng kích hoạt dây thần kinh phế vị (vagus nerve) — dây thần kinh dài nhất của hệ thần kinh phó giao cảm. Kích hoạt vagus giảm nhịp tim, hạ huyết áp, giảm cortisol và chuyển não từ beta waves (tập trung/stress) sang alpha waves (thư giãn tỉnh táo).',
+      'Kỹ thuật đúng: nằm hoặc ngồi thẳng lưng, đặt 1 tay lên bụng, 1 tay lên ngực. Hít vào 4 giây — tay bụng nâng lên, tay ngực hầu như không di chuyển. Thở ra 6 giây — bụng xẹp từ từ. Tỷ lệ thở ra > hít vào kích hoạt phó giao cảm mạnh hơn.',
+      'Vì sao bắt đầu routine bằng thở: cơ thể cần 2–3 phút để chuyển từ trạng thái active (sau workout) sang trạng thái recovery. Stretch trong khi cơ thể vẫn ở trạng thái giao cảm kém hiệu quả hơn — cơ bắp sẽ không "buông" hoàn toàn. 1 phút thở bụng trước là "warm-up" cho hệ thần kinh.',
+      'Box breathing variant: nếu muốn hiệu quả cao hơn, dùng box breathing — hít 4s, giữ 4s, thở ra 4s, giữ 4s. Được Navy SEALs sử dụng để reset nhanh hệ thần kinh trong tình huống stress cao. Áp dụng sau workout cường độ cao hoặc ngày stress công việc.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Kích hoạt phó giao cảm', note: 'Vagus nerve → nhịp tim giảm, cortisol giảm, não chuyển sang alpha waves' },
+      { icon: '💪', label: 'Tay bụng nâng, tay ngực yên', note: 'Kiểm tra đúng kỹ thuật — ngực ít di chuyển là thở bụng đúng cách' },
+      { icon: '⏱️', label: 'Thở ra 6s > hít vào 4s', note: 'Exhale dài hơn inhale = kích hoạt phó giao cảm mạnh hơn' },
+      { icon: '🎯', label: 'Reset trước khi stretch', note: 'Cơ "buông" tốt hơn khi hệ thần kinh đã ở trạng thái rest — không skip bước này' },
+    ],
+  },
+  {
+    name: 'Shoulder roll', duration: '1 phút', note: '10 vòng trước + 10 vòng sau',
+    icon: '🔄', color: '#f97316', rgb: '249,115,22',
+    title: 'Shoulder Roll — Giải Phóng Cơ Thang',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Shoulder roll là bài đơn giản nhất nhưng có tác dụng trực tiếp nhất lên cơ thang (trapezius) — cơ bị căng nhất ở dân ngồi bàn. Xoay vai ra sau (backward roll) counteract pattern vai đổ về trước và kích hoạt rhomboids + lower trapezius đang bị ức chế. 10 vòng trước + 10 vòng sau = bơm dịch khớp vai và giải phóng căng cơ hiệu quả hơn chỉ xoay 1 chiều.',
+    detail: 'Không phải tất cả shoulder roll đều có tác dụng như nhau. Xoay về trước (forward roll) thực ra làm tight thêm pectoralis minor và internal rotators. Xoay về sau (backward roll) mới là chiều cần thiết để counteract pattern ngồi máy tính. Tỷ lệ tối ưu: 1 vòng trước : 2 vòng sau.',
+    details: [
+      'Upper trapezius — cơ "căng thẳng" kinh điển: là cơ nâng vai, thường bị hypertonic (căng liên tục) khi stress và ngồi nhiều. Cảm giác "cổ vai gáy cứng" phần lớn đến từ upper trap. Shoulder roll bơm dịch khớp và kéo giãn cơ này trong phạm vi an toàn.',
+      'Rhomboids và lower trapezius bị ức chế: khi vai đổ về trước (protraction), rhomboids và lower trap bị kéo dài và ức chế hoạt động. Xoay vai ra sau kích hoạt lại hai cơ này — bước đầu tiên để sửa posture xấu.',
+      'Bơm dịch khớp vai (glenohumeral): khớp vai là khớp linh hoạt nhất cơ thể nhưng cần chuyển động tròn để phân phối synovial fluid đều khắp. Sau 45–60 phút bất động, dịch khớp kém phân phối — shoulder roll là cách tốt nhất để bơm dịch trở lại.',
+      'Kỹ thuật backward roll đúng: nâng vai lên → kéo về phía sau → hạ xuống → về trước (một vòng tròn lớn). Giữ ngực mở trong suốt quá trình, không để ngực xẹp về trước. Vòng tròn lớn và chậm tốt hơn vòng nhỏ nhanh.',
+      'Kết hợp với hơi thở: hít vào khi vai nâng lên và ra sau, thở ra khi vai hạ xuống và về trước. Synchronize chuyển động với hơi thở tăng relaxation response và giúp cơ buông lỏng sâu hơn.',
+      'Sau shoulder roll, thêm chin tuck: shoulder roll giải phóng upper trap → ngay sau đó làm chin tuck × 5 để kéo giãn deep neck extensors và suboccipitals. Hai bài kết hợp giải quyết toàn bộ vùng cổ vai trên trong 2 phút.',
+    ],
+    points: [
+      { icon: '↩️', label: 'Backward > forward roll', note: 'Xoay ra sau counteract pattern gù — không chỉ xoay 1 chiều bất kỳ' },
+      { icon: '💧', label: 'Bơm dịch khớp vai', note: 'Synovial fluid phân phối đều khi xoay tròn — giảm tiếng kêu và cứng khớp' },
+      { icon: '💪', label: 'Kích hoạt rhomboids', note: 'Lower trap + rhomboids bị ức chế khi vai đổ — xoay sau tái kích hoạt' },
+      { icon: '🌬️', label: 'Sync với hơi thở', note: 'Hít vào khi vai nâng/sau — thở ra khi hạ/về trước. Cơ buông sâu hơn' },
+    ],
+  },
+  {
+    name: 'Thoracic twist', duration: '1 phút', note: '8 lần mỗi bên',
+    icon: '🌀', color: '#10b981', rgb: '16,185,129',
+    title: 'Thoracic Twist — Mở Khóa Cột Sống Ngực',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cột sống ngực (thoracic spine, T1–T12) là vùng "bị bỏ quên" nhất trong mobility — và là gốc rễ của nhiều vấn đề cổ, vai và lưng dưới. Thoracic kyphosis (gù lưng trên) do ngồi nhiều làm vai bị đẩy về trước và cổ phải bù bằng cách chìa về trước. Thoracic twist 8 lần mỗi bên restore rotation range of motion bị mất sau mỗi giờ ngồi.',
+    detail: 'Thoracic spine được thiết kế để xoay — có 12 đốt sống với khả năng rotation ~35° mỗi bên. Khi cột sống ngực cứng (stiff), cột sống thắt lưng (lumbar) phải bù thêm rotation trong khi nó được thiết kế để flex/extend, không rotate. Đây là nguyên nhân đau lưng dưới phổ biến ở người ngồi nhiều.',
+    details: [
+      'Thoracic vs Lumbar rotation: thoracic spine (T1–T12) có thể xoay ~35° mỗi bên. Lumbar spine (L1–L5) chỉ có thể xoay ~5° mỗi bên. Khi T-spine cứng, L-spine bị ép xoay quá mức → disc compression → đau lưng dưới. Thoracic twist là "pressure relief valve" cho lumbar.',
+      'Vị trí thực hiện: ngồi trên sàn tư thế cross-legged, hoặc ngồi trên ghế thẳng lưng. Xoay từ ngực (không từ hông), tay đặt sau đầu để giữ cổ neutral. 8 lần mỗi bên, mỗi lần xoay đến điểm cảm thấy kéo nhẹ — không ép quá mức.',
+      'Nhịp thở + twist: hít vào để chuẩn bị, thở ra khi xoay — lồng ngực xẹp khi thở ra giúp xoay sâu hơn tự nhiên. Đây là "trick" quan trọng mà nhiều người bỏ qua — thở ra trước khi xoay có thể tăng range of motion 10–15%.',
+      'Thoracic mobility và hô hấp: 12 cặp xương sườn gắn vào thoracic spine. T-spine cứng → xương sườn ít di động → dung tích hô hấp giảm. Thoracic twist tăng mobility T-spine = mở lồng ngực = thở sâu hơn. Đây là lý do những người hay cúi gù thường thở nông.',
+      'T-spine và vai: glenohumeral rhythm — vai hoạt động tốt cần thoracic spine mobile. T-spine kyphosis → scapula wing out → impingement không gian dưới mỏm cùng vai → đau vai khi nâng tay lên cao. Fix T-spine = giảm nguy cơ shoulder impingement.',
+      'Tiến triển: bắt đầu với ngồi ghế nếu không quen ngồi sàn. Khi T-spine mobile hơn, chuyển sang thoracic extension over foam roller — nằm ngửa trên foam roller đặt ngang lưng trên, duỗi người ra sau từng đốt sống. Bài này sâu hơn nhưng cần nền mobility tốt.',
+    ],
+    points: [
+      { icon: '🔓', label: 'Mở khóa T-spine', note: 'T-spine cứng → lumbar bù rotation quá mức → đau lưng dưới — xoay ngực giải quyết gốc' },
+      { icon: '🫁', label: 'T-spine mobile = thở sâu hơn', note: '12 xương sườn gắn T-spine — mobility tốt hơn = dung tích hô hấp tốt hơn' },
+      { icon: '💨', label: 'Thở ra khi xoay', note: 'Lồng ngực xẹp khi exhale → xoay sâu hơn 10–15% — không xoay khi đang hít vào' },
+      { icon: '🦾', label: 'Phòng shoulder impingement', note: 'T-spine kyphosis → scapula không di động đúng → vai bị kẹp. Fix source, not symptom' },
+    ],
+  },
+  {
+    name: 'Hip flexor stretch', duration: '1 phút × 2', note: 'Giữ 30–45s mỗi bên',
+    icon: '🦵', color: '#f59e0b', rgb: '245,158,11',
+    title: 'Hip Flexor Stretch — Giải Phóng Cơ Chậu Thắt Lưng',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hip flexors (psoas + iliacus = iliopsoas) là nhóm cơ bị tight nhất ở người ngồi nhiều — và ít được stretch nhất. Psoas tight kéo xương chậu ra trước (anterior pelvic tilt), gây lưng dưới bị overextend liên tục → đau lưng mãn tính. Giữ 30–45s mỗi bên là ngưỡng tối thiểu để phản xạ cơ relaxation (autogenic inhibition) bắt đầu tác dụng.',
+    detail: 'Psoas là cơ duy nhất nối cột sống với chân — gốc từ T12-L5 (cột sống thắt lưng), đi qua xương chậu và gắn vào lesser trochanter của femur (xương đùi). Khi ngồi 8 giờ/ngày, psoas co cụm ở chiều dài ngắn — dần dần mất khả năng kéo dài hoàn toàn khi đứng.',
+    details: [
+      'Psoas anatomy: dài ~43cm, là cơ "sâu nhất" của cơ thể không thể sờ thấy từ bên ngoài. Gốc từ body của T12 và L1–L5, đi qua brim của xương chậu và gắn vào lesser trochanter femur. Ngoài hip flexion, psoas còn rotate cột sống và ổn định lumbar spine — cơ đa chức năng nhất.',
+      'Anterior pelvic tilt (APT): psoas tight kéo xương chậu ra trước → lưng dưới bị forced into extension → cơ erector spinae phải co liên tục để giữ thân → đau lưng mãn tính. APT cũng làm bụng dưới "ưỡn ra" dù không có mỡ thừa — dấu hiệu dễ nhận biết nhất.',
+      '30–45 giây ngưỡng autogenic inhibition: dưới 20 giây, cơ vẫn đang "chống lại" stretch qua phản xạ myotatic. Sau 20–30 giây, Golgi Tendon Organ (GTO) kích hoạt autogenic inhibition — cơ bắt buộc phải buông lỏng. Đây là lý do phải giữ ít nhất 30 giây — không phải tùy tiện.',
+      'Tư thế lunge stretch đúng: quỳ 1 gối, chân trước gập 90°, hông đẩy ra trước (không phải cúi người) cho đến khi cảm thấy kéo ở bẹn/đùi trước chân sau. Thẳng người, không cúi về trước. Thêm arm reach overhead kéo thêm phần psoas gần cột sống.',
+      'PNF stretching để tăng hiệu quả: giữ tư thế stretch, sau đó co cơ hip flexor (ép đùi trước xuống sàn) 6 giây với lực 30%, rồi thả lỏng và sink sâu hơn vào stretch. Lặp lại 3 lần. PNF (Proprioceptive Neuromuscular Facilitation) tăng range of motion nhanh hơn static stretch đơn thuần.',
+      'Kết hợp với glute activation: psoas tight thường đi kèm glutes bị ức chế (reciprocal inhibition). Sau hip flexor stretch, làm glute bridge × 10 để kích hoạt glutes. Hai bài kết hợp = giải quyết cả hai phía của hội chứng lưng dưới mãn tính.',
+    ],
+    points: [
+      { icon: '⚖️', label: 'APT — xương chậu ngả trước', note: 'Psoas tight → pelvis tilt → lưng overextend liên tục → đau mãn tính' },
+      { icon: '⏱️', label: '30–45s = ngưỡng GTO', note: 'Golgi Tendon Organ bắt đầu autogenic inhibition sau 20–30s — phải giữ đủ lâu' },
+      { icon: '🦵', label: 'Hông đẩy trước, không cúi người', note: 'Lunge stretch đúng: thân thẳng + hông forward — không phải người cúi về trước' },
+      { icon: '🍑', label: 'Sau stretch → Glute bridge × 10', note: 'Psoas tight → glutes bị ức chế. Kích hoạt lại glutes sau khi stretch psoas' },
+    ],
+  },
+  {
+    name: 'Hamstring stretch', duration: '1 phút × 2', note: 'Ngồi chân thẳng hoặc đứng cúi',
+    icon: '🏃', color: '#0ea5e9', rgb: '14,165,233',
+    title: 'Hamstring Stretch — Giải Phóng Chuỗi Sau',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hamstring tight là nguyên nhân thứ hai phổ biến nhất của đau lưng dưới (sau hip flexors). Chuỗi cơ sau (posterior chain): hamstring → sacroiliac joint → erector spinae → lưng dưới đều kết nối qua fascia. Hamstring tight kéo xương chậu ra sau (posterior pelvic tilt) và tăng căng thẳng cho toàn bộ lưng dưới. 1 phút × 2 bên là minimum effective dose.',
+    detail: 'Hamstring gồm 3 cơ: biceps femoris, semitendinosus, semimembranosus — đều gắn vào ischial tuberosity (xương ngồi) ở trên và đầu gối ở dưới. Ngồi nhiều giữ hamstring ở chiều dài ngắn — dần dần mất khả năng kéo dài và kéo xương chậu lệch.',
+    details: [
+      'Posterior chain connection: hamstring gắn vào ischial tuberosity → sacroiliac (SI) joint → sacrum → erector spinae. Khi hamstring tight, toàn bộ chuỗi này bị kéo căng. Đây là lý do nhiều người đau lưng dưới khi cúi người — không phải cột sống yếu, mà là hamstring không kéo dài được.',
+      'Posterior pelvic tilt: hamstring tight kéo ischial tuberosity xuống → xương chậu xoay ra sau → lưng dưới flat (mất đường cong tự nhiên) → đĩa đệm bị nén không đều. Đối lập với APT do psoas nhưng cũng gây đau lưng theo cơ chế khác.',
+      'Kỹ thuật đứng cúi (standing forward fold): đứng thẳng, gập nhẹ đầu gối (không khóa cứng), cúi từ hông (không từ lưng). Để trọng lực kéo tự nhiên thay vì cố ép. Mỗi lần thở ra, sink thêm 1–2cm. Sau 30 giây đầu tiên cảm thấy cơ bắt đầu buông lỏng.',
+      'Kỹ thuật ngồi chân thẳng (seated forward fold): ngồi trên sàn, chân thẳng, ngồi thẳng lưng trước, sau đó nghiêng người ra trước từ hông (không cúi lưng tròn). Nếu không với được bàn chân, dùng dây hoặc khăn quanh bàn chân. Không quan trọng chạm đến đâu — quan trọng là cảm thấy kéo ở đùi sau.',
+      'Neural tension test: một số người cảm thấy "điện giật" lan xuống chân khi stretch hamstring — đây là neural tension (dây thần kinh sciatic bị căng), không phải hamstring stretch. Nếu có triệu chứng này, không ép stretch sâu hơn và cần kiểm tra với chuyên gia.',
+      'Warm hamstring stretch hiệu quả hơn: không stretch hamstring lạnh (ngay sau khi thức dậy hoặc sau thời gian ngồi dài). Làm sau thở cơ hoành và shoulder roll — cơ thể đã có lưu thông máu tốt hơn, stretch sẽ hiệu quả hơn và an toàn hơn.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Posterior chain toàn bộ', note: 'Hamstring → SI joint → erector spinae — một chuỗi fascia. Tight 1 điểm = ảnh hưởng toàn bộ' },
+      { icon: '🦴', label: 'Cúi từ hông, không từ lưng', note: 'Hip hinge, không lumbar flexion — kéo giãn hamstring, không nén đĩa đệm lưng' },
+      { icon: '⚡', label: 'Điện giật = neural tension', note: 'Sciatic nerve bị kéo, không phải hamstring stretch — không ép tiếp, cần tư vấn' },
+      { icon: '🌡️', label: 'Stretch sau warm-up, không lạnh', note: 'Sau thở bụng + shoulder roll — lưu thông tốt hơn = stretch an toàn và hiệu quả hơn' },
+    ],
+  },
+  {
+    name: 'Child pose + thở chậm', duration: '2 phút', note: 'Thở vào 4s, ra 6s',
+    icon: '🧘', color: '#8b5cf6', rgb: '139,92,246',
+    title: 'Child Pose + Thở Chậm — Tổng Hợp Phục Hồi',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Child pose (balasana) kết hợp thoracic stretch + hip flexor release + lumbar decompression trong 1 tư thế. Thêm thở 4s vào / 6s ra trong tư thế này tạo ra double effect: vật lý (kéo giãn cột sống và hông) + sinh lý (kích hoạt phó giao cảm). 2 phút child pose với thở chậm tương đương 15–20 phút thư giãn thụ động về tác động hệ thần kinh.',
+    detail: 'Child pose là bài kết thúc hoàn hảo vì giải quyết 3 vùng cùng lúc: lưng trên + hông + lưng dưới. Trọng lực làm việc thay cho bạn — không cần lực cơ bắp để duy trì tư thế. Kết hợp với thở 4-6, đây là "close loop" của routine — báo hiệu cho não rằng phiên phục hồi đã hoàn tất.',
+    details: [
+      'Child pose anatomy: quỳ gối, hông ngồi về phía gót chân, tay duỗi ra trước hoặc để dọc theo thân. Tư thế này: (1) kéo giãn erector spinae theo chiều dài cột sống, (2) mở sacroiliac joint, (3) stretch hip flexors nhẹ theo chiều ngược (hip flexion), (4) mở lồng ngực khi tay duỗi ra trước.',
+      'Spinal decompression: cột sống bị nén trong suốt ngày do trọng lực và tư thế ngồi/đứng. Child pose đặt cột sống ở tư thế không chịu lực theo trục dọc (axial load-free) — đĩa đệm có cơ hội tái hydrate và phục hồi chiều cao tự nhiên. Tương tự tác dụng nằm ngủ nhưng có thêm stretch.',
+      'Thở 4-6 trong child pose: hít vào 4 giây — lưng sau phồng nhẹ (posterior ribcage expansion), thở ra 6 giây — bụng chìm về phía đùi, lưng nhẹ nhàng kéo dài thêm. Mỗi nhịp thở ra là một cơ hội để sink sâu hơn vào tư thế. Sau 5–6 nhịp đầu, cơ bắt đầu buông lỏng đáng kể.',
+      'Variations nếu khó ngồi gót: nếu hông không ngồi xuống được gót chân (tight quads hoặc knees), đặt 1–2 gối dưới hông. Nếu đầu không chạm sàn, dùng gối dưới đầu. Tư thế quan trọng hơn depth — cảm thấy thoải mái và có thể thở sâu là tiêu chí đúng.',
+      'Phó giao cảm + thở 4-6: exhale dài hơn inhale là công thức kích hoạt phó giao cảm mạnh nhất. Sau 2 phút với 12–15 nhịp thở 4-6 trong child pose, nhịp tim có thể giảm 8–12 bpm, HRV tăng — dấu hiệu cơ thể đã chuyển hoàn toàn sang trạng thái recovery.',
+      'Sau child pose — đứng dậy từ từ: thay đổi tư thế đột ngột từ nằm/quỳ lên đứng có thể gây orthostatic hypotension (chóng mặt tụt huyết áp). Đứng dậy từ từ qua tư thế ngồi, đợi 3–5 giây trước khi bước đi. Đây là lý do bài cuối là "đi bộ nhẹ 1–2 phút" — transition đệm.',
+    ],
+    points: [
+      { icon: '🔱', label: '3 vùng trong 1 tư thế', note: 'Lưng trên + hông + lưng dưới — trọng lực làm việc, không cần lực cơ bắp' },
+      { icon: '💧', label: 'Spinal decompression', note: 'Axial load-free → đĩa đệm tái hydrate — bù lại 8h cột sống chịu lực' },
+      { icon: '😌', label: 'Thở ra 6s = phó giao cảm sâu', note: 'Exhale > inhale = vagus nerve activation mạnh nhất — nhịp tim giảm, HRV tăng' },
+      { icon: '🐌', label: 'Đứng dậy từ từ sau đó', note: 'Đứng đột ngột gây chóng mặt — ngồi 3–5s trước khi bước đi bình thường' },
+    ],
+  },
+  {
+    name: 'Đi bộ nhẹ', duration: '1–2 phút', note: 'Kết thúc nhẹ nhàng, bình thường hóa',
+    icon: '🚶', color: '#84cc16', rgb: '132,204,22',
+    title: 'Đi Bộ Nhẹ — Transition Về Trạng Thái Bình Thường',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Cool-down walk" sau routine recovery giúp cơ thể transition từ trạng thái nghỉ hoàn toàn (child pose, nằm) về trạng thái hoạt động nhẹ bình thường — tránh orthostatic hypotension và giúp máu được phân phối lại từ các chi về tuần hoàn trung tâm. 1–2 phút đi bộ nhẹ cũng "lock in" trạng thái phó giao cảm đã tạo ra trong suốt routine.',
+    detail: 'Kết thúc routine với đi bộ nhẹ không phải thêm thừa — đây là bước chuyển đổi quan trọng. Giống như sau surgery không cho bệnh nhân nằm yên (early ambulation protocol), sau stretch + nghỉ sâu cơ thể cần được đưa từ từ về hoạt động bình thường để tránh stiffness và duy trì lưu thông.',
+    details: [
+      'Orthostatic hypotension prevention: khi nằm/quỳ, máu tập trung ở trung tâm cơ thể. Đứng dậy đột ngột, tim cần 5–10 giây để pump đủ máu lên não — trong thời gian đó có thể chóng mặt. 1–2 phút đi bộ nhẹ giúp cơ tim và hệ mạch máu "warm up" trở lại từ từ.',
+      'Blood redistribution: khi nằm/stretch, máu tập trung ở các cơ đang được stretch. Đi bộ nhẹ kích hoạt bơm cơ bắp chân → đẩy máu tĩnh mạch trở về tim → tăng cardiac output → máu được phân phối lại đều khắp. Đây là lý do sau yoga và massage nên đi bộ nhẹ, không ngồi ngay.',
+      '"Lock in" phó giao cảm: sau 10 phút stretch + thở chậm, cơ thể ở trạng thái phó giao cảm (low HR, low cortisol, high HRV). Đi bộ nhẹ Zone 1 duy trì trạng thái này — không "phá vỡ" bằng kích thích đột ngột (xem điện thoại, tiếp tục công việc ngay lập tức).',
+      'Mindful walking: 1–2 phút đi bộ nhẹ là cơ hội thực hành mindfulness nhỏ — chú ý đến cảm giác bàn chân chạm sàn, hơi thở, độ nhẹ của cơ thể so với trước routine. "Body scan while walking" tăng body awareness và giúp nhận ra sự thay đổi sau stretch.',
+      'Tránh điện thoại ngay sau routine: não đang ở trạng thái alpha (thư giãn tỉnh táo). Xem điện thoại ngay lập tức chuyển về beta (stimulated, stressed) và "xóa" hầu hết lợi ích thần kinh của routine. Đợi ít nhất 5 phút sau khi kết thúc trước khi kiểm tra tin nhắn.',
+      'Thêm ánh sáng nếu có thể: nếu routine buổi sáng, 1–2 phút đi bộ ngoài trời sau đó = cortisol awakening response (CAR) tự nhiên + light therapy sáng sớm. Double benefit trong 2 phút không tốn thêm thời gian. Đây là "morning stack" lý tưởng: routine recovery → ánh sáng sáng sớm.',
+    ],
+    points: [
+      { icon: '🩺', label: 'Chống orthostatic hypotension', note: 'Đứng đột ngột → chóng mặt. Đi bộ nhẹ chuyển huyết áp từ từ — không đứng nhanh' },
+      { icon: '🫀', label: 'Venous pump trả máu về tim', note: 'Bắp chân đẩy máu tĩnh mạch lên — phân phối lại tuần hoàn sau nằm/stretch' },
+      { icon: '🧘', label: 'Lock in phó giao cảm', note: 'Không phá vỡ trạng thái đã tạo ra — Zone 1 walk duy trì low HR và HRV cao' },
+      { icon: '📵', label: 'Tránh điện thoại 5 phút sau', note: 'Não đang ở alpha waves — xem phone chuyển ngay về beta, "xóa" lợi ích thần kinh' },
+    ],
+  },
 ];
 
 const ZONE_FIXES = [
@@ -225,6 +372,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function LifestyleRecoveryPage() {
   const [openZone, setOpenZone] = useState(null);
   const [recoveryTypeIdx, setRecoveryTypeIdx] = useState(null);
+  const [routineIdx, setRoutineIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -311,15 +459,21 @@ export default function LifestyleRecoveryPage() {
       {/* 10-min routine */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Routine Phục Hồi 10 Phút</h2>
-        <p className="text-muted text-lg mb-6">Routine mẫu cho ngày sau tập nặng hoặc ngày cảm thấy căng cơ.</p>
+        <p className="text-muted text-lg mb-6">Routine mẫu cho ngày sau tập nặng hoặc ngày cảm thấy căng cơ. Click để xem hướng dẫn chi tiết.</p>
         <div className="space-y-2">
           {ROUTINE_10.map((r, i) => (
-            <div key={i} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: `rgba(${RGB},0.05)`, border: `1px solid rgba(${RGB},0.1)` }}>
-              <span className="text-base font-bold tabular-nums w-20 shrink-0" style={{ color: COLOR }}>{r.duration}</span>
-              <div>
-                <div className="text-lg font-semibold text-text">{r.name}</div>
-                <div className="text-base text-muted">{r.note}</div>
+            <div key={i}
+              className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${r.rgb},0.05)`, border: `1px solid rgba(${r.rgb},0.18)` }}
+              onClick={() => setRoutineIdx(i)}>
+              <span className="text-base font-bold tabular-nums w-20 shrink-0" style={{ color: r.color }}>{r.duration}</span>
+              <span className="text-xl shrink-0">{r.icon}</span>
+              <div className="flex-1">
+                <div className="text-base font-semibold text-text">{r.name}</div>
+                <div className="text-sm text-muted">{r.note}</div>
               </div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: r.color, background: `rgba(${r.rgb},0.1)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -402,6 +556,20 @@ export default function LifestyleRecoveryPage() {
         <Link to="/pillar/c/neat" className="text-muted hover:text-violet-400 transition-colors text-lg">← NEAT</Link>
         <Link to="/pillar/c/deload" className="text-lg font-semibold" style={{ color: COLOR }}>Deload →</Link>
       </div>
+
+      {/* ── Routine 10 modal — outside all RevealBlocks ── */}
+      {routineIdx !== null && (
+        <RecoveryModal
+          item={ROUTINE_10[routineIdx]}
+          idx={routineIdx}
+          total={ROUTINE_10.length}
+          onClose={() => setRoutineIdx(null)}
+          onPrev={() => setRoutineIdx(i => Math.max(0, i - 1))}
+          onNext={() => setRoutineIdx(i => Math.min(ROUTINE_10.length - 1, i + 1))}
+          hasPrev={routineIdx > 0}
+          hasNext={routineIdx < ROUTINE_10.length - 1}
+        />
+      )}
 
       {/* ── Recovery types modal — outside all RevealBlocks ── */}
       {recoveryTypeIdx !== null && (

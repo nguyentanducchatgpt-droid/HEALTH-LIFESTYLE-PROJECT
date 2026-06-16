@@ -582,6 +582,119 @@ const ZONE_FIXES = [
   },
 ];
 
+const SAMPLE_DAY = [
+  {
+    time: 'Sáng', action: 'Ánh sáng + đi bộ nhẹ 10 phút',
+    icon: '🌅', color: '#f59e0b', rgb: '245,158,11',
+    title: 'Buổi Sáng — Ánh Sáng & Đi Bộ Nhẹ',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ánh sáng tự nhiên trong 30 phút đầu sau khi thức dậy là "zeitgeber" (bộ chỉnh giờ sinh học) mạnh nhất — đồng bộ đồng hồ sinh học, tăng cortisol awakening response (CAR) tự nhiên và khởi động sản xuất serotonin. Serotonin buổi sáng sẽ được chuyển hóa thành melatonin tối — ánh sáng sáng = ngủ ngon tối. 10 phút đi bộ ngoài trời kết hợp cả hai lợi ích này cùng lúc.',
+    detail: 'Buổi sáng của ngày phục hồi thiết lập "tone" sinh lý cho cả ngày. Ánh sáng + vận động nhẹ tạo ra cortisol peak tự nhiên và lành mạnh — giúp cơ thể tỉnh táo mà không cần caffeine, và đặt nền tảng cho giấc ngủ sâu tối hôm đó.',
+    details: [
+      'Cortisol Awakening Response (CAR): trong 30–45 phút đầu sau thức dậy, cortisol tăng tự nhiên 50–100% — phản xạ sinh học bình thường giúp cơ thể sẵn sàng cho ngày mới. Ánh sáng tự nhiên khuếch đại CAR lành mạnh. Thiếu ánh sáng (nằm trong phòng tối) = CAR yếu hơn = cảm giác "uể oải" kéo dài buổi sáng.',
+      'Đồng hồ sinh học và ánh sáng xanh tự nhiên: ánh sáng mặt trời buổi sáng chứa phổ ánh sáng xanh (480nm) kích hoạt ipRGC (photoreceptor đặc biệt trong võng mạc) → tín hiệu đến suprachiasmatic nucleus (SCN — trung tâm đồng hồ sinh học) → ngừng tiết melatonin hoàn toàn, khởi động cortisol + serotonin. Không có loại đèn trong nhà nào có cường độ đủ để thay thế ánh sáng tự nhiên.',
+      'Serotonin → melatonin pathway: serotonin được sản xuất từ tryptophan (amino acid) và yêu cầu ánh sáng để hoạt hóa. Serotonin ban ngày là nguyên liệu thô để não sản xuất melatonin buổi tối (qua N-acetylserotonin → melatonin). Ánh sáng buổi sáng = đầu tư cho giấc ngủ tối hôm đó.',
+      '10 phút đi bộ Zone 1: vận động cực nhẹ buổi sáng tăng lưu thông máu, khởi động lymphatic system (hệ bạch huyết không có tim bơm — phụ thuộc vào vận động cơ bắp), và tiết BDNF (Brain-Derived Neurotrophic Factor) — protein tăng trưởng não, cải thiện mood và cognitive function trong 2–4h tiếp theo.',
+      'Không cần caffeine ngay khi thức dậy: uống cà phê trong 30–90 phút đầu sau thức dậy chặn adenosine receptors trong khi cortisol đang peak tự nhiên — không tăng thêm tỉnh táo nhưng làm crash mạnh hơn sau đó. Chờ 90 phút sau thức dậy rồi uống cà phê = caffeine hiệu quả hơn nhiều và không gây afternoon crash.',
+      'Ngày phục hồi vs ngày tập: buổi sáng ngày phục hồi nên nhẹ nhàng và chủ tâm. Không kiểm tra email ngay khi thức dậy (cortisol + stress email = spike cortisol quá cao). 10 phút ánh sáng + đi bộ trước mọi thứ khác là "morning buffer" để hệ thần kinh thức dậy từ từ thay vì bị bắn vào stress ngay lập tức.',
+    ],
+    points: [
+      { icon: '☀️', label: 'Ánh sáng = bộ chỉnh đồng hồ sinh học', note: 'SCN nhận tín hiệu ánh sáng → ngừng melatonin, khởi động serotonin + cortisol tự nhiên' },
+      { icon: '🧠', label: 'BDNF từ đi bộ nhẹ', note: '10 phút Zone 1 tiết BDNF — protein tăng trưởng não, tăng mood và focus 2–4h' },
+      { icon: '☕', label: 'Chờ 90 phút trước khi uống cà phê', note: 'Caffeine sau 90 phút thức dậy = hiệu quả hơn và không gây afternoon crash' },
+      { icon: '📵', label: 'Không email trước ánh sáng + đi bộ', note: 'Email stress + cortisol peak = spike quá cao. Đi bộ trước, email sau' },
+    ],
+  },
+  {
+    time: 'Trưa', action: 'Đi bộ 5 phút sau ăn',
+    icon: '🍽️', color: '#84cc16', rgb: '132,204,22',
+    title: 'Buổi Trưa — Đi Bộ Nhẹ Sau Ăn',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '5–10 phút đi bộ nhẹ sau bữa ăn giảm blood glucose spike 30–40% so với ngồi yên — được xác nhận bởi nhiều nghiên cứu CGM (continuous glucose monitoring). Glucose spike thấp hơn = insulin thấp hơn = fat storage ít hơn = energy stable hơn suốt chiều. Đây là "hack" đơn giản nhất để cải thiện metabolic health mà không cần thay đổi chế độ ăn.',
+    detail: 'Postprandial walk (đi bộ sau ăn) là một trong những can thiệp được nghiên cứu nhiều nhất và đơn giản nhất trong metabolic health. 5 phút sau ăn trưa đủ để cơ bắp chân và đùi "hút" glucose từ máu để dùng làm năng lượng — giảm tải cho tuyến tụy và giảm insulin response.',
+    details: [
+      'Glucose uptake cơ chế: khi cơ bắp co lại (ngay cả nhẹ), GLUT4 transporter (protein vận chuyển glucose) di chuyển lên màng tế bào cơ mà không cần insulin — đây là "insulin-independent glucose uptake". Cơ bắp đang hoạt động nhẹ có thể hấp thụ glucose trực tiếp từ máu, giảm peak glucose sau ăn đáng kể.',
+      'Postprandial glycemic response: nghiên cứu CGM cho thấy ngồi yên sau ăn → glucose peak trong 30–45 phút có thể vượt 140–160 mg/dL (pre-diabetic range ngay cả ở người khỏe mạnh). Đi bộ 5 phút ngay sau ăn → peak giảm còn 110–130 mg/dL. Khác biệt nhỏ nhưng lặp lại 3 lần/ngày × 365 ngày = tác động metabolic lớn.',
+      'Đúng thời điểm: hiệu quả nhất khi đi bộ trong vòng 10–20 phút sau khi bắt đầu ăn (không cần đợi ăn xong hoàn toàn). Glucose bắt đầu vào máu 15–20 phút sau khi bắt đầu ăn — đi bộ trong window này overlap đúng với absorption peak. Đi bộ 1 giờ sau ăn ít hiệu quả hơn nhiều.',
+      'Tại sao chỉ 5 phút đủ: nghiên cứu so sánh 2 phút, 5 phút và 15 phút đi bộ sau ăn cho thấy ngay cả 2 phút cũng có hiệu quả. 5 phút là sweet spot — đủ để kích hoạt GLUT4 muscle uptake mà không cần thay đổi lịch làm việc. Không cần cardio — đi bộ tốc độ bình thường là đủ.',
+      'Lợi ích cho tiêu hóa: đi bộ nhẹ sau ăn kích hoạt peristalsis (co bóp ruột) và tăng gastric emptying rate — thức ăn di chuyển qua dạ dày nhanh hơn, giảm cảm giác nặng bụng và đầy hơi. Đặc biệt hữu ích cho người hay bị sluggish digestion sau bữa trưa nhiều tinh bột.',
+      'Ngủ trưa kết hợp: nếu có thể ngủ trưa 10–20 phút (power nap) — làm sau đi bộ 5 phút, không làm thay vì đi bộ. Power nap sau đi bộ nhẹ ổn định glucose và cho phép cơ thể vào light sleep mà không bị glucose spike làm khó ngủ. Timing lý tưởng: ăn trưa → đi bộ 5 phút → power nap 15–20 phút.',
+    ],
+    points: [
+      { icon: '📊', label: 'Glucose spike giảm 30–40%', note: 'GLUT4 uptake không cần insulin — cơ bắp hút glucose trực tiếp khi hoạt động nhẹ' },
+      { icon: '⏰', label: 'Trong 10–20 phút đầu sau ăn', note: 'Overlap đúng absorption peak — muộn hơn ít hiệu quả hơn nhiều' },
+      { icon: '🫀', label: 'Chỉ 5 phút = đủ', note: 'Sweet spot: kích hoạt GLUT4 mà không cần thay đổi lịch. Đi bộ thường, không cần nhanh' },
+      { icon: '🌀', label: 'Kích hoạt peristalsis', note: 'Đi bộ nhẹ tăng co bóp ruột — giảm đầy bụng và sluggish digestion sau bữa trưa' },
+    ],
+  },
+  {
+    time: 'Chiều', action: 'Mobility 10 phút (vùng hay đau mỏi)',
+    icon: '🧘', color: '#14b8a6', rgb: '20,184,166',
+    title: 'Buổi Chiều — Mobility 10 Phút',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Buổi chiều (14:00–17:00) là thời điểm cơ thể có nhiệt độ core cao nhất trong ngày — cơ bắp và khớp linh hoạt nhất, range of motion lớn nhất và nguy cơ chấn thương thấp nhất khi stretch. Mobility 10 phút vào giờ này hiệu quả hơn 20 phút buổi sáng khi cơ thể còn "lạnh". Đây cũng là thời điểm cortisol bắt đầu giảm — stretch kết hợp với thở chậm đẩy nhanh quá trình này.',
+    detail: 'Mobility khác stretching đơn thuần — không chỉ kéo giãn thụ động mà còn kích hoạt cơ ở tầm vận động mới (active mobility). 10 phút mobility chiều với focus vào vùng hay đau nhất của bạn là "maintenance work" giúp duy trì và mở rộng range of motion theo thời gian.',
+    details: [
+      'Circadian rhythm và cơ bắp: nhiệt độ core cơ thể peak lúc 15:00–16:00 (+0.5–1°C so với buổi sáng). Cơ bắp ấm = độ nhớt cơ thấp hơn = stretch dễ hơn và sâu hơn. Nghiên cứu cho thấy flexibility cao hơn 10–20% vào buổi chiều so với buổi sáng. Record thể thao thường bị phá vào buổi chiều — không phải ngẫu nhiên.',
+      'Cortisol dip chiều: cortisol thường có secondary peak nhỏ lúc 15:00–16:00 rồi giảm dần. 10 phút mobility + thở chậm vào cuối chiều đẩy cortisol giảm nhanh hơn — chuẩn bị cho cơ thể chuyển sang "evening mode" dần dần, tránh cortisol vẫn cao tối gây khó ngủ.',
+      'Active mobility vs passive stretch: passive stretch (kéo giãn thụ động, giữ tĩnh) tốt cho tăng flexibility. Active mobility (vào tầm vận động mới + co cơ nhẹ ở đó) tốt hơn để CRS (Controlled Range Strength) — cơ bắp mạnh ở tầm vận động mới, không chỉ dẻo. Ví dụ: active hip circle, cossack squat nhẹ, thoracic rotation + hold.',
+      'Chọn vùng hay đau mỏi: không phải stretch toàn thân mỗi ngày. 10 phút focus vào 1–2 vùng hiệu quả hơn 30 phút stretch tất cả qua loa. Chiều sau ngày ngồi nhiều: hip flexors + thoracic. Sau chạy bộ: hamstring + calf + IT band. Sau tập vai: pec minor + lat stretch.',
+      'Breathing into the stretch: thở ra khi vào sâu tầm vận động — lồng ngực xẹp giúp trunk xoay xa hơn (thoracic rotation), bụng xẹp giúp hip flexion sâu hơn. Kỹ thuật này có thể tăng ROM 10–15% ngay lập tức — không phải thần thoại, là cơ chế sinh lý thực (exhale → giảm intrathoracic pressure → cơ buông lỏng hơn).',
+      'Tiến triển theo tuần: mobility cải thiện chậm nhưng bền — cần 4–8 tuần tập nhất quán để thấy thay đổi rõ ràng. Nguyên tắc: 1–2 phút/vùng × 5–6 ngày/tuần = 6–12 phút tổng/ngày. Không cần session dài — frequency quan trọng hơn duration khi nói về mobility training.',
+    ],
+    points: [
+      { icon: '🌡️', label: 'Nhiệt độ core peak buổi chiều', note: 'Cơ bắp linh hoạt nhất 14:00–17:00 — stretch sâu hơn và an toàn hơn sáng sớm' },
+      { icon: '🎯', label: 'Focus 1–2 vùng, không tất cả', note: '10 phút tập trung vùng đau nhất hiệu quả hơn 30 phút stretch qua loa toàn thân' },
+      { icon: '💨', label: 'Thở ra = sâu hơn 10–15%', note: 'Exhale giảm intrathoracic pressure → cơ buông lỏng hơn → ROM tăng ngay' },
+      { icon: '📅', label: '4–8 tuần mới thấy thay đổi', note: 'Frequency > duration — 6–12 phút/ngày × 5–6 ngày/tuần = kết quả bền vững' },
+    ],
+  },
+  {
+    time: 'Tối', action: 'Giãn cơ nhẹ + thở chậm 5 phút',
+    icon: '🌙', color: '#8b5cf6', rgb: '139,92,246',
+    title: 'Buổi Tối — Giãn Cơ Nhẹ & Thở Chậm',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhiệt độ cơ thể cần giảm 0.5–1°C để khởi động giấc ngủ. Giãn cơ nhẹ + thở chậm buổi tối kích hoạt vasodilation (giãn mạch máu ở tay chân) — nhiệt từ core được "tỏa ra" qua tay chân → core temperature giảm → melatonin tăng. Đây là cơ chế sinh lý tại sao vào phòng mát sau tắm nóng giúp ngủ dễ hơn. 5 phút thở 4-6 + stretch nhẹ đủ để khởi động cả hai cơ chế này.',
+    detail: 'Buổi tối cần "down-regulation" — cơ thể và hệ thần kinh từ từ chuyển từ sympathetic (giao cảm) sang parasympathetic (phó giao cảm). Không thể ra lệnh cho não "ngủ ngay" — nhưng có thể tạo điều kiện sinh lý đúng để melatonin tăng và sleep onset diễn ra tự nhiên.',
+    details: [
+      'Thermoregulation và sleep onset: core body temperature peak lúc 17:00–19:00, sau đó giảm dần. Sleep onset xảy ra khi temperature giảm 0.5–1°C — đây là tín hiệu sinh lý cho não biết "đến giờ ngủ". Giãn cơ nhẹ + thở chậm tăng lưu thông ngoại vi → nhiệt thoát qua tay chân → core temperature giảm nhanh hơn.',
+      'Parasympathetic shift: stretch nhẹ + thở bụng → vagus nerve activation → nhịp tim chậm lại, huyết áp giảm, digestion tăng (rest & digest mode). Cơ thể không thể vào giấc ngủ sâu khi ở trạng thái sympathetic — "ép" ngủ mà không down-regulate trước = nằm lăn lộn, ngủ nông. 5 phút routine tối = bridge từ ngày sang đêm.',
+      'Thở 4-6 và HRV recovery: thở với exhale dài gấp đôi inhale (4s vào, 6–8s ra) là pattern hiệu quả nhất để tăng HRV (Heart Rate Variability). HRV cao = hệ thần kinh đã recovery tốt. Ngày phục hồi kết thúc bằng HRV recovery tốt = sẵn sàng cho ngày tập tiếp theo cao hơn.',
+      'Progressive muscle relaxation kết hợp: giãn cơ nhẹ + co cơ nhẹ × thả lỏng (PMR technique) — co từng nhóm cơ 5 giây rồi thả lỏng hoàn toàn. Bắt đầu từ bàn chân lên đến vai. PMR giảm resting muscle tone toàn thân và làm giảm cortisol tối thêm 20–30% so với thở chậm đơn thuần.',
+      'Ánh sáng đỏ/ấm buổi tối: khi làm stretch tối, dùng đèn ấm (2700K hoặc dưới, ánh nến) thay vì đèn LED trắng 6500K. Ánh sáng xanh (5000–6500K) ức chế melatonin lên đến 2h. Ánh sáng đỏ/ấm gần như không ảnh hưởng melatonin. Kết hợp stretch + ánh sáng đúng = double signal cho não rằng đêm đã đến.',
+      'Không stretch mạnh buổi tối: avoid aggressive PNF stretch hay cố ép tầm vận động mới buổi tối — kích hoạt sympathetic response và tăng adrenaline. Tối chỉ làm light static stretch (giữ 20–30 giây, không đến điểm đau, không cố ép sâu hơn). Mục tiêu: giảm muscle tension, không tăng flexibility.',
+    ],
+    points: [
+      { icon: '🌡️', label: 'Core temperature giảm = ngủ dễ', note: 'Vasodilation tay chân tỏa nhiệt ra ngoài — stretch nhẹ + thở chậm đẩy nhanh quá trình' },
+      { icon: '💜', label: 'Vagus nerve → parasympathetic', note: 'Nhịp tim chậm, BP giảm, digestion tăng — bridge từ ngày căng thẳng sang đêm phục hồi' },
+      { icon: '💡', label: 'Đèn ấm <2700K khi stretch tối', note: 'Ánh sáng xanh ức chế melatonin 2h — dùng ánh nến hoặc đèn đỏ/ấm khi làm routine' },
+      { icon: '🧘', label: 'Nhẹ nhàng, không ép sâu', note: 'Tối: giảm muscle tone, không tăng flexibility. Aggressive stretch = sympathetic response = khó ngủ' },
+    ],
+  },
+  {
+    time: 'Đêm', action: 'Ngủ sớm hơn 30 phút so với ngày thường',
+    icon: '😴', color: '#6366f1', rgb: '99,102,241',
+    title: 'Buổi Đêm — Ngủ Sớm Hơn 30 Phút',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: '30 phút ngủ thêm trên ngày phục hồi có thể tăng GH (Growth Hormone) tiết thêm một chu kỳ sóng chậm (slow-wave sleep) — GH tiết theo xung trong N3 deep sleep, và nhiều N3 = nhiều GH. Ngủ muộn hơn thường cắt N3 phase cuối của đêm (xảy ra nhiều nhất trong nửa đêm trước). 30 phút ngủ sớm hơn là ROI (return on investment) cao nhất của toàn bộ ngày phục hồi.',
+    detail: 'Giấc ngủ không đồng đều — mỗi 90 phút là một chu kỳ với tỷ lệ N3 (deep sleep) và REM thay đổi. N3 (phục hồi thể chất) nhiều trong nửa đêm đầu; REM (phục hồi tâm lý + memory) nhiều trong nửa đêm sau. Ngủ đủ cả hai phase là recovery hoàn chỉnh — chỉ thiếu 30 phút là đã cắt vào phase quan trọng nhất.',
+    details: [
+      'Sleep architecture và deep sleep: một đêm 7.5h gồm ~5 chu kỳ 90 phút. Chu kỳ 1–2: N3 deep sleep nhiều nhất (30–40 phút/chu kỳ). Chu kỳ 3–5: N3 ít lại, REM nhiều lên. Người thức dậy lúc 6:00 nhưng ngủ lúc 1:00 (6h ngủ) mất toàn bộ chu kỳ 5 — bao gồm peak REM cuối. Ngủ lúc 22:30 thay vì 23:00 = thêm 1 chu kỳ N3 đầy đủ.',
+      'GH secretion và N3: GH tiết theo xung (pulses) — xung lớn nhất xảy ra trong N3 deep sleep đầu tiên (1–2h sau khi ngủ). Mỗi chu kỳ N3 thêm là thêm 1 xung GH. GH là hormone phục hồi cơ bắp quan trọng nhất — nhiều hơn testosterone hay IGF-1 về tác động cơ học lên protein synthesis đêm. Ngủ sớm hơn 30 phút trên ngày phục hồi = thêm tối đa 1 chu kỳ GH pulse.',
+      'Sleep debt và recovery: 1 đêm thiếu ngủ (dưới 6h) tăng cortisol 37%, giảm testosterone 10–15%, giảm insulin sensitivity 40% và tăng cảm giác đói (ghrelin +25%). Ngủ bù 1 đêm không hoàn toàn trả được "sleep debt" — nhưng thêm 30 phút trên ngày phục hồi giúp đẩy nhanh normalization của các hormone này.',
+      'Room temperature cho deep sleep: nhiệt độ phòng ngủ 18–19°C (65–66°F) tối ưu cho N3 deep sleep — core temperature giảm nhanh nhất ở môi trường mát. Nhiệt độ phòng >22°C làm giảm N3 đáng kể. Nếu không có máy lạnh: quạt + cửa sổ thoáng, mặc ít khi ngủ, dùng chăn mỏng.',
+      'Không dùng điện thoại 30 phút trước giờ ngủ mới: ngủ sớm hơn 30 phút chỉ hiệu quả nếu thực sự ngủ được — không phải nằm xem điện thoại sớm hơn 30 phút. Đặt điện thoại ở phòng khác (hoặc airplane mode) trước giờ ngủ mới 30 phút. Dùng thời gian đó: đọc sách nhẹ, nghe podcast chậm, hoặc tiếp tục routine stretch + thở từ phần "Tối".',
+      'Consistency hơn duration: ngủ đúng giờ cố định 7 ngày/tuần quan trọng hơn ngủ 9h 2 ngày và 5h 5 ngày. Đồng hồ sinh học hoạt động theo lịch cố định — ngủ và dậy cùng giờ ± 30 phút, ngay cả cuối tuần. Ngủ muộn cuối tuần (social jetlag) rối loạn đồng hồ sinh học tương đương bay múi giờ +2 mỗi tuần.',
+    ],
+    points: [
+      { icon: '💊', label: 'GH peak trong N3 đầu tiên', note: 'Ngủ sớm hơn 30 phút = thêm chu kỳ N3 = thêm GH pulse — ROI cao nhất của ngày phục hồi' },
+      { icon: '🌡️', label: '18–19°C = deep sleep tối ưu', note: 'Core temperature cần giảm để vào N3 — phòng mát hỗ trợ quá trình này hiệu quả nhất' },
+      { icon: '📵', label: 'Không phone 30 phút trước giờ ngủ mới', note: 'Ngủ sớm hơn phải thực sự ngủ — không phải nằm xem phone sớm hơn 30 phút' },
+      { icon: '📅', label: 'Cùng giờ 7/7 quan trọng hơn duration', note: 'Social jetlag cuối tuần = bay múi giờ +2 mỗi tuần — phá circadian rhythm cả tuần' },
+    ],
+  },
+];
+
 const ACTIVE_RECOVERY_BY_GOAL = [
   {
     goal: 'Giảm mỡ', activities: 'Đi bộ nhẹ 20–30 phút, mobility 10 phút, giãn cơ tối', note: 'Tránh tập nặng ngày phục hồi',
@@ -795,6 +908,7 @@ export default function LifestyleRecoveryPage() {
   const [routineIdx, setRoutineIdx] = useState(null);
   const [zoneExState, setZoneExState] = useState(null);
   const [goalIdx, setGoalIdx] = useState(null);
+  const [sampleDayIdx, setSampleDayIdx] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -970,18 +1084,20 @@ export default function LifestyleRecoveryPage() {
       {/* Sample recovery day */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Ngày Phục Hồi Mẫu</h2>
-        <p className="text-muted text-lg mb-6">Một ngày phục hồi không có nghĩa là nằm im cả ngày.</p>
+        <p className="text-muted text-lg mb-6">Một ngày phục hồi không có nghĩa là nằm im cả ngày. Click để hiểu lý do khoa học đằng sau mỗi hoạt động.</p>
         <div className="space-y-3">
-          {[
-            { time: 'Sáng', action: 'Ánh sáng + đi bộ nhẹ 10 phút' },
-            { time: 'Trưa', action: 'Đi bộ 5 phút sau ăn' },
-            { time: 'Chiều', action: 'Mobility 10 phút (vùng hay đau mỏi)' },
-            { time: 'Tối', action: 'Giãn cơ nhẹ + thở chậm 5 phút' },
-            { time: 'Đêm', action: 'Ngủ sớm hơn 30 phút so với ngày thường' },
-          ].map((row, i) => (
-            <div key={i} className="flex gap-4 items-center p-3 rounded-xl" style={{ background: `rgba(${RGB},0.04)` }}>
-              <span className="w-14 text-base font-bold shrink-0" style={{ color: COLOR }}>{row.time}</span>
-              <span className="text-lg text-muted">{row.action}</span>
+          {SAMPLE_DAY.map((row, i) => (
+            <div key={i}
+              className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: `rgba(${row.rgb},0.05)`, border: `1px solid rgba(${row.rgb},0.18)` }}
+              onClick={() => setSampleDayIdx(i)}>
+              <span className="text-2xl shrink-0">{row.icon}</span>
+              <div className="flex-1">
+                <span className="text-base font-bold shrink-0 mr-3" style={{ color: row.color }}>{row.time}</span>
+                <span className="text-base text-muted">{row.action}</span>
+              </div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: row.color, background: `rgba(${row.rgb},0.1)` }}>Tại sao →</span>
             </div>
           ))}
         </div>
@@ -991,6 +1107,20 @@ export default function LifestyleRecoveryPage() {
         <Link to="/pillar/c/neat" className="text-muted hover:text-violet-400 transition-colors text-lg">← NEAT</Link>
         <Link to="/pillar/c/deload" className="text-lg font-semibold" style={{ color: COLOR }}>Deload →</Link>
       </div>
+
+      {/* ── Sample day modal — outside all RevealBlocks ── */}
+      {sampleDayIdx !== null && (
+        <RecoveryModal
+          item={SAMPLE_DAY[sampleDayIdx]}
+          idx={sampleDayIdx}
+          total={SAMPLE_DAY.length}
+          onClose={() => setSampleDayIdx(null)}
+          onPrev={() => setSampleDayIdx(i => Math.max(0, i - 1))}
+          onNext={() => setSampleDayIdx(i => Math.min(SAMPLE_DAY.length - 1, i + 1))}
+          hasPrev={sampleDayIdx > 0}
+          hasNext={sampleDayIdx < SAMPLE_DAY.length - 1}
+        />
+      )}
 
       {/* ── Goal modal — outside all RevealBlocks ── */}
       {goalIdx !== null && (

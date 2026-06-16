@@ -172,6 +172,101 @@ const SCIENCE = [
   },
 ];
 
+const DAILY_PLAN = [
+  {
+    time: 'Sáng thức dậy', tech: 'Thở Cơ Hoành', duration: '3–5 phút',
+    why: 'Kích hoạt hệ phó giao cảm, ra khỏi trạng thái "còn ngủ"', icon: '🌅',
+    color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Sáng Thức Dậy — Khởi Động Hệ Thần Kinh Đúng Cách',
+    img: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Trong 30–60 phút đầu sau khi thức dậy, cortisol đạt đỉnh cao nhất trong ngày — gọi là Cortisol Awakening Response (CAR). Đây vừa là cơ hội vừa là rủi ro: nếu bạn ngay lập tức nhìn điện thoại, cortisol leo thang thêm tạo anxiety từ sáng. Nếu bạn thở chậm 3–5 phút trước, CAR được "tối ưu" thành alertness tích cực thay vì lo âu.',
+    detail: 'Thở cơ hoành sáng sớm hoạt động như một "phím bật" chuyển hệ thần kinh từ trạng thái hypnagogic (nửa ngủ nửa thức) sang fully alert nhưng calm. Ngủ 7–8h là trạng thái parasympathetic kéo dài — thức dậy đột ngột với alarm và điện thoại ngay lập tức kích hoạt sympathetic quá mạnh.',
+    details: [
+      'Cortisol Awakening Response (CAR): trong 20–30 phút sau khi thức, cortisol tăng 50–100% so với mức ngủ. Đây là "natural pre-workout" của não — chuẩn bị cho hoạt động ngày mới. Tuy nhiên, ánh sáng xanh từ điện thoại và tin tức tiêu cực ngay sau khi thức amplify CAR theo hướng lo âu. Thở chậm 5 phút ở đây "định hướng" CAR thành focused energy thay vì anxiety.',
+      'Serotonin synthesis buổi sáng: ánh sáng mặt trời buổi sáng kích hoạt serotonin synthesis qua retinal photoreceptors. Kết hợp thở cơ hoành (tăng oxygen đến não) với ánh sáng tự nhiên (tốt nhất) tạo double trigger cho serotonin. Serotonin buổi sáng sau đó chuyển hóa thành melatonin buổi tối — morning light + morning breathwork = better sleep 12–14h sau.',
+      'Hypnagogic → alert transition: khi ngủ, CO₂ tích lũy nhẹ (thở chậm khi ngủ). Thức dậy đột ngột, cơ thể cần normalize CO₂. Thở cơ hoành có chủ đích tăng tốc quá trình này — não nhận đủ O₂, CO₂ được cân bằng, và bạn cảm thấy "clear-headed" trong 3–5 phút thay vì 20–30 phút với coffee.',
+      'Protocol sáng tối ưu: trước khi rờ điện thoại — ngồi hoặc nằm, một tay lên bụng, thở vào 4 giây (bụng phồng), thở ra 6 giây. Lặp 10–15 lần (khoảng 3–4 phút). Sau đó: uống nước 300–500ml, ra nắng 5–10 phút. Thứ tự này quan trọng: hydration + breathing + light = morning stack mạnh nhất không cần supplement.',
+      'Thay thế caffeine buổi sáng sớm: adenosine (hóa chất buồn ngủ) vẫn còn cao trong 60–90 phút đầu sau thức dậy. Caffeine trong giai đoạn này chỉ block adenosine tạm thời — khi caffeine hết, adenosine còn tích lũy gây crash. Thở cơ hoành + ánh sáng + vận động nhẹ là natural adenosine flush không gây crash sau đó.',
+      'Consistency là key: những người thực hành morning breathwork đều đặn 4–8 tuần báo cáo: thức dậy dễ hơn (không cần snooze), mood buổi sáng ổn định hơn, và productive focus kéo dài đến trưa. Không cần 30 phút — 3–5 phút đủ để trigger những thay đổi sinh lý học này.',
+    ],
+    points: [
+      { icon: '📈', label: 'CAR peak trong 30 phút đầu', note: 'Cortisol +50–100% khi thức — thở chậm định hướng nó thành focused energy, không phải anxiety' },
+      { icon: '☀️', label: 'Serotonin sáng → melatonin tối', note: 'Ánh sáng + thở sâu = double trigger serotonin → giấc ngủ tốt hơn 12–14h sau' },
+      { icon: '💧', label: 'Morning stack: thở + nước + nắng', note: '5 phút thở → 300ml nước → 10 phút nắng. Không supplement nào hiệu quả hơn combo này' },
+      { icon: '⏰', label: '3–5 phút đủ — không cần 30 phút', note: 'Consistency quan trọng hơn duration — 3 phút mỗi ngày > 30 phút mỗi tuần' },
+    ],
+  },
+  {
+    time: 'Trước bài tập / họp', tech: 'Box Breathing', duration: '2–4 phút',
+    why: 'Tăng tập trung, bình ổn hệ thần kinh trước áp lực', icon: '💪',
+    color: '#0ea5e9', rgb: '14,165,233',
+    modalTitle: 'Trước Áp Lực — Box Breathing Của Navy SEALs',
+    img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Box Breathing (4-4-4-4) được Navy SEALs dùng trước các nhiệm vụ nguy hiểm cao để maintain performance dưới cực độ stress. Cơ chế: giữ hơi sau hít vào làm tăng CO₂ nhẹ → kích hoạt parasympathetic. Giữ hơi sau thở ra tạo "transient hypoxia" nhẹ → não chú ý nhiều hơn. Kết quả: calm + alert cùng lúc — trạng thái lý tưởng cho tập luyện và meeting quan trọng.',
+    detail: 'Box Breathing cân bằng ANS (Autonomic Nervous System) bằng cách tạo 4 pha bằng nhau — không thiên về sympathetic (hít vào) hay parasympathetic (thở ra) hoàn toàn. Đây là "neutral gear" của hệ thần kinh — đủ alert để perform, đủ calm để không bị overwhelming.',
+    details: [
+      'Tại sao 4-4-4-4 hoạt động: nhịp thở bình thường là 12–18 lần/phút (2–3 giây mỗi pha). Box Breathing ở 4 giây mỗi pha = khoảng 3.75 lần/phút — chậm hơn 3–5 lần normal. Nhịp này đủ chậm để kích hoạt vagal brake (giảm nhịp tim) trong khi 2 pha giữ hơi (hold) duy trì CO₂ ở mức kích thích sự chú ý của não.',
+      'Pre-performance priming: nghiên cứu trên người thi đấu thể thao và nhà đầu tư tài chính cho thấy 4–8 cycles Box Breathing trước khi perform giảm "choking under pressure" — mất khả năng perform khi áp lực cao. Box Breathing giảm amygdala hyperactivity (phần não gây panic) mà không giảm alertness của prefrontal cortex (tư duy chiến lược).',
+      'Trước buổi tập: Box Breathing 2–4 phút trước warm-up giúp shift từ "tâm trạng ngày đi làm" sang "tập trung tập luyện". Nhiều người vào gym sau công việc với cortisol cao và mind racing — Box Breathing là transition ritual giúp não biết rằng "mode" đang thay đổi. Kết quả: warm-up chất lượng cao hơn, PRs dễ đạt hơn.',
+      'Trước meeting quan trọng: presentation, pitch, difficult conversation — 5 cycles Box Breathing trong nhà vệ sinh hoặc xe trước khi vào room. Voice trở nên ổn định hơn (vagal tone cao = less voice tremor), cognitive processing nhanh hơn và emotional reactivity giảm. Đây là tool mà nhiều CEO và public speakers sử dụng.',
+      'Biến thể: nếu 4-4-4-4 cảm thấy quá chậm hoặc quá nhanh, điều chỉnh đến 5-5-5-5 hay 6-6-6-6. Nguyên tắc là 4 pha bằng nhau — con số cụ thể ít quan trọng hơn symmetry. Người có lung capacity nhỏ có thể bắt đầu với 3-3-3-3 và tăng dần.',
+      'Timer và guided audio: sử dụng app (Calm, Insight Timer, hoặc YouTube "box breathing timer") để giữ nhịp chính xác trong 2–4 phút đầu thực hành. Sau 2–3 tuần, bạn internalize nhịp 4-4-4-4 và không cần timer. Lúc này, Box Breathing có thể thực hành silently trong cuộc họp hoặc ngay trước rep nặng tại gym.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Calm + Alert — "neutral gear" ANS', note: '4 pha bằng nhau cân bằng sympathetic/parasympathetic — không thiên về bên nào' },
+      { icon: '🧠', label: 'Giảm amygdala, giữ prefrontal', note: 'Giảm panic mà không giảm tư duy chiến lược — lý do Navy SEALs dùng trước nhiệm vụ' },
+      { icon: '🎤', label: 'Voice ổn định hơn khi present', note: 'Vagal tone cao = ít run giọng — tool của CEO và public speakers' },
+      { icon: '⏱️', label: '5 cycles = 2 phút là đủ', note: 'Nhà vệ sinh, thang máy, xe — không cần không gian hay thời gian đặc biệt' },
+    ],
+  },
+  {
+    time: 'Giữa ngày (stress cao)', tech: 'Extended Exhale', duration: '2–3 phút',
+    why: 'Reset nhanh, giảm cortisol trong vài phút', icon: '🌊',
+    color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Giữa Ngày — Extended Exhale Reset Stress Nhanh Nhất',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Extended Exhale (4-8: hít vào 4 giây, thở ra 8 giây) là kỹ thuật nhanh nhất để giảm nhịp tim và cortisol cấp tính — nhanh hơn Box Breathing và hiệu quả hơn cho stress đột ngột. Cơ chế: thở ra dài kích hoạt baroreceptor reflex mạnh hơn bất kỳ kỹ thuật thở nào khác. Trong vòng 3–4 hơi thở đầu tiên, nhịp tim đã bắt đầu chậm lại đo được.',
+    detail: 'Thở ra (exhalation) là pha parasympathetic của chu kỳ thở. Kéo dài thở ra gấp đôi hít vào tối đa hóa vagal activation trong mỗi chu kỳ. Không cần giữ hơi (không như Box Breathing) — liên tục, đơn giản và có thể thực hành ngay cả trong office mà không ai nhận ra.',
+    details: [
+      'Baroreceptor reflex khuếch đại: khi thở ra chậm, áp suất trong lồng ngực giảm dần → baroreceptors (cảm biến áp suất) trong động mạch chủ và carotid detect → gửi tín hiệu "safe" đến brainstem → vagus nerve kích hoạt → nhịp tim giảm. Thở ra dài = nhiều thời gian cho baroreceptors gửi tín hiệu calm hơn thở ra ngắn.',
+      'So sánh với Box Breathing giữa ngày: Box Breathing phù hợp khi bạn có 2–4 phút và muốn prepare (proactive). Extended Exhale phù hợp khi bạn ĐANG stressed và cần reset NGAY (reactive). Không cần counting phức tạp — chỉ "thở ra gấp đôi hít vào". Stress cao giữa ngày thường đến đột ngột — Extended Exhale cần ít cognitive overhead hơn.',
+      'Thực hành không ai biết: ngồi trong cuộc họp, thở vào nhẹ nhàng bằng mũi (4 giây, silent) và thở ra cực kỳ chậm qua mũi (8 giây). Không cần nhắm mắt, không cần tư thế đặc biệt. Đây là tool "invisible" nhất trong tất cả kỹ thuật — có thể dùng trong bất kỳ tình huống xã hội nào.',
+      'Afternoon energy slump: 2–3h chiều (13:00–15:00) là thời điểm circadian dip tự nhiên — melatonin nhẹ tăng, core body temperature dip. Nhiều người dùng caffeine để fight qua — nhưng caffeine buổi chiều ảnh hưởng sleep. Extended Exhale 3–5 phút + đứng dậy đi lại 5 phút đủ để clear mental fog mà không disturb sleep later.',
+      'Micro-breaks và performance: nghiên cứu về surgeon và air traffic controller cho thấy 2–3 phút breathing break mỗi 90 phút duy trì performance tốt hơn working straight. Extended Exhale là lý tưởng cho micro-break vì đủ ngắn để không "phá vỡ flow" nhưng đủ để reset ANS. Đặt timer 90 phút và dùng Extended Exhale như "micro-reset".',
+      'Kết hợp với movement: Extended Exhale trong khi đi bộ chậm (slow nasal walk) là powerful combo. Bước chân đồng bộ với nhịp thở: bước 2 nhịp khi hít vào, bước 4 nhịp khi thở ra. Đây là "walking meditation" đơn giản nhất — giảm cortisol + tăng blood flow + clear mental fog trong cùng 5 phút.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Nhịp tim giảm sau 3–4 hơi thở', note: 'Baroreceptor reflex khuếch đại khi thở ra dài — nhanh nhất trong tất cả kỹ thuật' },
+      { icon: '🕵️', label: 'Tool "invisible" — dùng trong họp', note: 'Mũi, silent, không cần nhắm mắt — không ai biết bạn đang breathwork' },
+      { icon: '☕', label: 'Thay caffeine chiều = ngủ tốt hơn', note: '3–5 phút Extended Exhale + đi lại clear afternoon slump không phá sleep' },
+      { icon: '⏱️', label: 'Micro-break mỗi 90 phút', note: 'Surgeon/controller research: 2–3 phút breathing mỗi 90 phút = performance sustained' },
+    ],
+  },
+  {
+    time: 'Trước khi ngủ', tech: 'Thở Cơ Hoành hoặc Extended Exhale', duration: '5–10 phút',
+    why: 'Chuyển sang trạng thái nghỉ ngơi, cải thiện sleep onset', icon: '🌙',
+    color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Trước Khi Ngủ — Tắt Hệ Thần Kinh Đúng Cách',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sleep onset (thời gian từ khi nằm xuống đến khi ngủ được) trung bình của người hiện đại là 20–30 phút — gấp đôi lý tưởng (10–15 phút). Nguyên nhân chính: cortisol và sympathetic tone vẫn cao do screentime và mental activity sát giờ ngủ. 5–10 phút thở chậm trước ngủ là intervention hiệu quả nhất và không tốn chi phí để rút ngắn sleep onset và tăng deep sleep.',
+    detail: 'Melatonin bắt đầu tăng khi trời tối, nhưng nếu cortisol vẫn cao, melatonin bị ức chế. Thở chậm hạ cortisol và tăng GABA (neurotransmitter ức chế) — tạo điều kiện cho melatonin hoạt động hiệu quả hơn. Cơ thể cần "permission" để ngủ — thở chậm là cách cho phép đó.',
+    details: [
+      'Cortisol và melatonin đối lập: cortisol và melatonin hoạt động ngược nhau trên chu kỳ 24h. Cortisol thấp buổi tối → melatonin tăng dễ dàng. Nhưng stress công việc, tranh luận, news tiêu cực sát giờ ngủ giữ cortisol cao → melatonin bị ức chế → khó ngủ. Thở cơ hoành 5–10 phút hạ cortisol đo được — là "cortisol blocker" tự nhiên tốt nhất trước ngủ.',
+      'GABA và sleep: GABA (gamma-aminobutyric acid) là neurotransmitter ức chế chính — giảm brain activity, giúp cơ thể "shut down" để ngủ. Thở chậm tăng GABA indirectly qua: giảm sympathetic tone, tăng adenosine (hóa chất buồn ngủ) và giảm glutamate (excitatory neurotransmitter). Các thuốc ngủ (benzodiazepine, zolpidem) đều hoạt động qua GABA receptor — thở chậm kích hoạt cùng system tự nhiên.',
+      '4-7-8 breathing (biến thể trước ngủ): Dr. Andrew Weil recommend: hít vào 4s, giữ 7s, thở ra 8s. Pha giữ hơi 7 giây làm CO₂ tích lũy nhẹ, kết hợp thở ra dài 8 giây = vagal activation mạnh nhất. Nhiều người báo cáo ngủ được trong vòng 4 cycles (chưa đến 2 phút). Không nên dùng ban ngày vì gây buồn ngủ quá mức.',
+      'Nhiệt độ phòng và thở: thở cơ hoành chậm giảm core body temperature nhẹ — thực ra đây là một trong những tín hiệu quan trọng nhất để trigger sleep. Core temperature cần giảm 1–2°C để ngủ sâu. Kết hợp: phòng lạnh 18–20°C + thở chậm = double signal cho cơ thể rằng "đã đến giờ ngủ".',
+      'Quy trình 10 phút trước ngủ lý tưởng: tắt màn hình 30 phút trước (tối quan trọng). Nằm xuống, đèn tắt hoặc ánh sáng ấm rất thấp. Thở cơ hoành 4–6 phút (hoặc 4-7-8 breathing). Nếu mind còn racing: body scan từ đầu đến chân trong khi thở — chuyển sự chú ý từ thoughts sang physical sensations. Hầu hết người ngủ được trước khi scan đến chân.',
+      'Consistency và sleep pressure: body (và não) học "thở chậm = chuẩn bị ngủ" qua Pavlovian conditioning sau 1–2 tuần nhất quán. Sau đó, chỉ cần bắt đầu thở chậm là cơ thể tự động release adenosine và melatonin nhiều hơn — phản xạ điều kiện hóa. Đây là tại sao sleep hygiene (cùng routine mỗi tối) quan trọng hơn bất kỳ supplement hay device nào.',
+    ],
+    points: [
+      { icon: '🌙', label: 'Hạ cortisol → melatonin tự do', note: 'Cortisol ức chế melatonin — thở chậm 5–10 phút là "cortisol blocker" tự nhiên tốt nhất' },
+      { icon: '💊', label: 'Tăng GABA — cơ chế như thuốc ngủ', note: 'Benzodiazepin hoạt động qua GABA — thở chậm kích hoạt cùng pathway, không tác dụng phụ' },
+      { icon: '🌡️', label: 'Giảm core temp = trigger ngủ sâu', note: 'Phòng 18–20°C + thở chậm = double signal "đã đến giờ ngủ" cho cơ thể' },
+      { icon: '🧠', label: 'Pavlovian conditioning sau 2 tuần', note: 'Cơ thể học thở chậm = ngủ → tự release melatonin khi bắt đầu breathwork' },
+    ],
+  },
+];
+
 function BreathingModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = (e) => {
@@ -329,6 +424,7 @@ function BoxBreathingTimer() {
 export default function LifestyleBreathingPage() {
   const [activeTech, setActiveTech] = useState('box');
   const [scienceIdx, setScienceIdx] = useState(null);
+  const [dailyPlanIdx, setDailyPlanIdx] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -470,28 +566,42 @@ export default function LifestyleBreathingPage() {
       {/* Daily plan */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Kế Hoạch Thở Hằng Ngày</h2>
-        <p className="text-muted text-lg mb-6">Tích hợp 3 kỹ thuật vào thói quen hiện tại — không cần thêm thời gian riêng.</p>
+        <p className="text-muted text-lg mb-6">Tích hợp 3 kỹ thuật vào thói quen hiện tại — không cần thêm thời gian riêng. Click để xem hướng dẫn chi tiết.</p>
         <div className="space-y-3">
-          {[
-            { time: 'Sáng thức dậy', tech: 'Thở Cơ Hoành', duration: '3–5 phút', why: 'Kích hoạt hệ phó giao cảm, ra khỏi trạng thái "còn ngủ"', icon: '🌅' },
-            { time: 'Trước bài tập / họp', tech: 'Box Breathing', duration: '2–4 phút', why: 'Tăng tập trung, bình ổn hệ thần kinh trước áp lực', icon: '💪' },
-            { time: 'Giữa ngày (stress cao)', tech: 'Extended Exhale', duration: '2–3 phút', why: 'Reset nhanh, giảm cortisol trong vài phút', icon: '🌊' },
-            { time: 'Trước khi ngủ', tech: 'Thở Cơ Hoành hoặc Extended Exhale', duration: '5–10 phút', why: 'Chuyển sang trạng thái nghỉ ngơi, cải thiện sleep onset', icon: '🌙' },
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-4 rounded-xl p-4 border border-border bg-surface hover:border-sky-500/20 transition-colors">
+          {DAILY_PLAN.map((item, i) => (
+            <div key={i}
+              className="flex items-center gap-4 rounded-xl p-4 border cursor-pointer transition-all duration-200 hover:scale-[1.01] hover:shadow-md"
+              style={{ borderColor: `rgba(${item.rgb},0.2)`, background: `rgba(${item.rgb},0.04)` }}
+              onClick={() => setDailyPlanIdx(i)}>
               <span className="text-3xl shrink-0">{item.icon}</span>
               <div className="flex-1">
                 <div className="text-lg font-bold text-text">{item.time}</div>
                 <div className="text-base text-muted mt-0.5">{item.why}</div>
               </div>
               <div className="text-right shrink-0">
-                <div className="text-base font-bold" style={{ color: COLOR }}>{item.tech}</div>
+                <div className="text-base font-bold" style={{ color: item.color }}>{item.tech}</div>
                 <div className="text-base text-muted">{item.duration}</div>
               </div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: item.color, background: `rgba(${item.rgb},0.12)` }}>→</span>
             </div>
           ))}
         </div>
       </RevealBlock>
+
+      {/* ── Daily plan modal — outside all RevealBlocks ── */}
+      {dailyPlanIdx !== null && (
+        <BreathingModal
+          item={DAILY_PLAN[dailyPlanIdx]}
+          idx={dailyPlanIdx}
+          total={DAILY_PLAN.length}
+          onClose={() => setDailyPlanIdx(null)}
+          onPrev={() => setDailyPlanIdx(i => Math.max(0, i - 1))}
+          onNext={() => setDailyPlanIdx(i => Math.min(DAILY_PLAN.length - 1, i + 1))}
+          hasPrev={dailyPlanIdx > 0}
+          hasNext={dailyPlanIdx < DAILY_PLAN.length - 1}
+        />
+      )}
 
       {/* ── Science modal — outside all RevealBlocks ── */}
       {scienceIdx !== null && (

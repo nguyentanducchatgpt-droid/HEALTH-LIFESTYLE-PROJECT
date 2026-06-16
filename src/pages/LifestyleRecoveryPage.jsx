@@ -238,31 +238,346 @@ const ZONE_FIXES = [
   { zone: 'Cổ vai gáy', icon: '🦴', color: '#14b8a6', rgb: '20,184,166',
     cause: 'Ngồi gù, nhìn màn hình liên tục, vai xoáy vào trong',
     exercises: [
-      { name: 'Chin tuck', reps: '10 lần × 2s giữ', why: 'Phục hồi đường cong cổ tự nhiên' },
-      { name: 'Shoulder roll', reps: '10 vòng × 2 chiều', why: 'Giải phóng căng cơ vai' },
-      { name: 'Doorway stretch', reps: '30s × 2 lần', why: 'Mở ngực, giảm gù lưng' },
-      { name: 'Scapular squeeze', reps: '15 lần × 2s giữ', why: 'Kích hoạt cơ lưng giữa yếu' },
-      { name: 'Thoracic twist ngồi', reps: '8 lần mỗi bên', why: 'Cải thiện xoay lưng ngực' },
+      {
+        name: 'Chin tuck', reps: '10 lần × 2s giữ', why: 'Phục hồi đường cong cổ tự nhiên',
+        icon: '↩️', color: '#14b8a6', rgb: '20,184,166',
+        title: 'Chin Tuck — Phục Hồi Cổ Tự Nhiên',
+        img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Mỗi cm đầu chìa về trước (forward head posture) tăng tải lên cột sống cổ thêm 4.5kg. Ở 5cm về trước = 22.5kg tải thêm lên C5–C6 liên tục. Chin tuck kéo đầu về neutral và kích hoạt deep neck flexors (longus colli, longus capitis) — nhóm cơ "core" của cổ bị yếu và ức chế bởi tư thế chìa đầu.',
+        detail: 'Chin tuck KHÔNG phải gật đầu hay cúi cổ — mà là kéo cằm thẳng về phía sau theo trục nằm ngang (retraction). Tưởng tượng đang tạo "double chin" hoặc đầu đang trượt ra sau trên ray trượt nằm ngang. Giữ 2 giây ở điểm căng nhẹ rồi thả ra.',
+        details: [
+          'Forward head posture (FHP) biomechanics: cột sống cổ có đường cong tự nhiên (lordosis) bị mất khi đầu chìa về trước. C5–C6 là điểm chịu lực nhiều nhất — đây là nơi thoái hóa đĩa đệm và gai cột sống cổ xuất hiện sớm nhất ở người ngồi nhiều.',
+          'Deep neck flexors vs superficial: longus colli và longus capitis (sâu) là "stabilizers" của cổ, như transversus abdominis với lưng dưới. SCM và scalenes (nông) là "movers" — thường bị overactive và tight ở FHP. Chin tuck kích hoạt deep, ức chế superficial.',
+          'Kỹ thuật: ngồi thẳng, mắt nhìn thẳng (không nhìn xuống). Kéo cằm về phía cổ theo đường nằm ngang — không phải cúi đầu. Phía sau đầu nên di chuyển ra sau và lên cao nhẹ. Giữ 2 giây (feel kéo nhẹ ở gáy), thả ra. Không nín thở.',
+          'Tại sao 10 lần × 2s: 2 giây đủ để kích hoạt deep neck flexors mà không bị compensate bởi superficial. Dưới 2 giây quá ngắn; trên 5 giây với người mới có thể gây tremor (cơ đang quá yếu). 10 lần đủ để tạo neural activation mà không fatigue.',
+          'Kết hợp với chin tuck extension: sau khi thành thạo chin tuck cơ bản, thêm chin tuck + nhìn lên nhẹ (cervical extension from neutral) để kích hoạt deep extensors. Không làm bài này nếu chưa mastered chin tuck thuần — dễ dùng sai cơ.',
+          'Tiến triển: chin tuck với kháng lực (ấn ngón tay vào trán nhẹ) hoặc chin tuck + arm reach overhead (kéo giãn thêm cơ scalene). Sau 2–4 tuần tập đều, đầu tự nhiên ít chìa về trước khi không nhớ — deep neck flexors đã đủ mạnh để maintain posture.',
+        ],
+        points: [
+          { icon: '📐', label: '+4.5kg/cm chìa đầu', note: '5cm forward head = 22.5kg extra load lên C5-C6 liên tục — tổn thương tích lũy' },
+          { icon: '↔️', label: 'Kéo ngang, không gật', note: 'Trục nằm ngang — cằm về sau, đầu lên cao nhẹ, KHÔNG phải cúi cổ xuống' },
+          { icon: '💪', label: 'Kích hoạt deep neck flexors', note: 'Longus colli/capitis — "core của cổ" bị yếu và ức chế bởi FHP' },
+          { icon: '⏱️', label: '2s giữ × 10 lần', note: 'Đủ để kích hoạt deep stabilizers mà không overload cơ đang yếu' },
+        ],
+      },
+      {
+        name: 'Shoulder roll', reps: '10 vòng × 2 chiều', why: 'Giải phóng căng cơ vai',
+        icon: '🔄', color: '#f97316', rgb: '249,115,22',
+        title: 'Shoulder Roll — Bơm Dịch Khớp Vai',
+        img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Upper trapezius là cơ bị hypertonic (căng mãn tính) phổ biến nhất ở dân văn phòng — cảm giác "vai cứng" và "đau cổ gáy" phần lớn đến từ đây. Shoulder roll backward (ra sau) counteract pattern vai đổ về trước và kích hoạt rhomboids + lower trapezius bị ức chế. 10 vòng ra trước + 10 vòng ra sau = bơm đều synovial fluid khắp khớp vai.',
+        detail: 'Vai đổ về trước (rounded shoulders) là kết quả của upper trap và pectoralis minor tight, kết hợp với rhomboids và lower trap weak. Shoulder roll backward là "nhắc nhở" cơ thể về vị trí neutral của vai — nhưng phải kết hợp với strengthening dài hạn để duy trì.',
+        details: [
+          'Cơ nào được kích hoạt: forward roll → pectoralis minor + serratus anterior. Backward roll → rhomboids, middle trap, lower trap, posterior deltoid. Tỷ lệ 1:2 (1 forward : 2 backward) phù hợp cho dân văn phòng vì đã quá nhiều "forward" trong ngày.',
+          'Synovial fluid distribution: glenohumeral joint (khớp vai chính) sau 45–60 phút bất động có dịch khớp phân bố không đều → cứng khớp và tiếng kêu. Shoulder roll tròn lớn và chậm phân phối dịch khớp đều khắp diện tiếp xúc.',
+          'Kỹ thuật: vai lên → kéo ra sau → xuống → về trước (một vòng tròn đầy đủ). Vòng tròn lớn và chậm tốt hơn nhỏ nhanh. Giữ ngực mở trong suốt — không để ngực xẹp về trước khi vai quay.',
+          'Hơi thở sync: hít vào khi vai nâng lên và ra sau, thở ra khi vai hạ xuống và về trước. Nhịp thở + chuyển động tăng parasympathetic response và giúp cơ buông sâu hơn khi phối hợp.',
+          'Forward roll warning: 10 vòng ra trước TRƯỚC backward giúp "warm up" khớp và phát hiện điểm đau/kẹt. Nếu forward roll gây đau ở phía trước vai → có thể là shoulder impingement sơ bộ, cần giảm bớt forward và tăng backward rolls.',
+          'Sau shoulder roll, ngay lập tức làm chin tuck × 5: upper trap được giải phóng → cổ có thể retract sâu hơn. Hai bài kết hợp trong 2 phút là "minimal effective intervention" cho toàn bộ vùng cổ-vai trên.',
+        ],
+        points: [
+          { icon: '↩️', label: 'Backward > forward', note: 'Xoay ra sau counteract rounded shoulders — không chỉ xoay 1 chiều bất kỳ' },
+          { icon: '💧', label: 'Bơm synovial fluid', note: 'Dịch khớp phân bố đều khi xoay tròn lớn — giảm tiếng kêu và cứng khớp sáng' },
+          { icon: '💪', label: 'Kích hoạt rhomboids', note: 'Rhomboids + lower trap bị ức chế khi vai đổ — xoay sau tái kích hoạt' },
+          { icon: '🌬️', label: 'Sync hơi thở', note: 'Hít vào khi vai nâng/sau — thở ra khi hạ/về trước. Cơ buông sâu hơn' },
+        ],
+      },
+      {
+        name: 'Doorway stretch', reps: '30s × 2 lần', why: 'Mở ngực, giảm gù lưng',
+        icon: '🚪', color: '#0ea5e9', rgb: '14,165,233',
+        title: 'Doorway Stretch — Mở Ngực Và Vai',
+        img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Pectoralis minor bị tight ở hầu hết người ngồi nhiều — co cụm kéo coracoid process xuống, đẩy vai về trước và xuống. Doorway stretch là cách hiệu quả nhất để kéo giãn pec minor và pec major trong khi đứng — không cần thiết bị. 30 giây là ngưỡng autogenic inhibition cần thiết để cơ thực sự buông lỏng.',
+        detail: 'Doorway stretch đặt pectoralis vào tư thế kéo giãn (external rotation + shoulder abduction) và dùng trọng lực/tựa cửa làm "kháng lực". Bài này sửa vừa rounded shoulders vừa thoracic kyphosis bằng cách mở phần trước ngực và cho phép cột sống ngực duỗi về phía sau.',
+        details: [
+          'Pectoralis minor anatomy: gắn từ coracoid process (mỏm quạ của xương vai) xuống xương sườn 3–5. Khi tight, kéo scapula ra trước và xuống → vai đổ về trước → không gian dưới acromion thu hẹp → rotator cuff bị kẹp (impingement). Doorway stretch kéo giãn trực tiếp cơ này.',
+          'High vs Low elbow position: khuỷu tay ngang vai (90°) kéo giãn sternal head của pec major. Khuỷu tay cao hơn vai (120°) kéo giãn clavicular head. Làm cả hai góc để cover toàn bộ pec major. Pec minor được giãn ở cả hai vị trí.',
+          '30 giây ngưỡng GTO: giống hip flexor stretch, Golgi Tendon Organ (GTO) bắt đầu autogenic inhibition sau 20–30 giây — cơ bắt buộc phải buông lỏng. Dưới 20 giây chỉ warm up, không stretch thực sự. 2 lần × 30 giây tốt hơn 1 lần × 60 giây (reset neural response).',
+          'Kỹ thuật: đứng ở cửa, tay và khuỷu tay tựa vào khung cửa (90°), bước nhẹ 1 chân về phía trước, cảm thấy kéo ở ngực và vai trước. Không nghiêng người quá nhiều về trước — giữ thân thẳng, để ngực "ra trước". Thở bình thường trong 30 giây.',
+          'Kết hợp với scapular squeeze ngay sau: doorway stretch mở ngực (giãn pec) → scapular squeeze kích hoạt rhomboids (squeeze bả vai). Hai bài liên tiếp = giải quyết cả hai phía của rounded shoulders: giãn phía trước + kích hoạt phía sau.',
+          'Khi nào KHÔNG làm: đau ở phía trước vai khi duỗi tay ra sau (có thể là biceps tendinitis hoặc SLAP tear). Nếu doorway stretch gây đau sắc trong khớp vai — dừng và kiểm tra với chuyên gia.',
+        ],
+        points: [
+          { icon: '🦴', label: 'Pec minor kéo vai đổ trước', note: 'Coracoid → xương sườn 3–5: tight = vai đổ + không gian dưới acromion hẹp lại' },
+          { icon: '📐', label: '90° vs 120° khuỷu tay', note: 'Hai góc để cover sternal + clavicular head của pec major. Làm cả hai' },
+          { icon: '⏱️', label: '30s = GTO autogenic inhibition', note: 'Cơ thực sự buông sau 20–30s — dưới đó chỉ warm up, không stretch hiệu quả' },
+          { icon: '➡️', label: 'Sau đó → scapular squeeze', note: 'Giãn pec trước + kích hoạt rhomboids sau = giải quyết cả hai phía rounded shoulders' },
+        ],
+      },
+      {
+        name: 'Scapular squeeze', reps: '15 lần × 2s giữ', why: 'Kích hoạt cơ lưng giữa yếu',
+        icon: '🫸', color: '#10b981', rgb: '16,185,129',
+        title: 'Scapular Squeeze — Kích Hoạt Lưng Giữa',
+        img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Rhomboids và middle/lower trapezius là hai nhóm cơ bị ức chế mạnh nhất bởi tư thế vai đổ về trước. Scapular squeeze (kéo bả vai về phía nhau) trực tiếp kích hoạt cả hai nhóm. 15 lần × 2s giữ tạo đủ neural activation để "remind" cơ bắp hoạt động — ngưỡng cho motor learning ở người ít vận động.',
+        detail: 'Bài này dễ làm sai: nhiều người nâng vai lên thay vì kéo bả vai về sau và xuống. Scapular squeeze đúng là retract (kéo về sau) + depress (kéo xuống) đồng thời — không phải elevation (nâng lên).',
+        details: [
+          'Rhomboids: gắn từ spinous processes T2–T5 đến medial border của scapula. Chức năng: retract + downward rotate scapula. Khi yếu và bị ức chế, scapula bị kéo ra trước (protraction) liên tục → shoulder impingement và neck pain.',
+          'Middle trapezius: gắn từ spinous processes C7–T3 đến spine of scapula. Chức năng: retract scapula. Lower trapezius: gắn từ T4–T12 đến spine of scapula. Chức năng: depress + retract scapula. Cả hai bị ức chế ở rounded shoulders pattern.',
+          'Kỹ thuật đúng: ngồi hoặc đứng thẳng, hai tay buông tự nhiên. Kéo bả vai về phía nhau (retract) VÀ xuống phía dưới (depress) đồng thời — như đang "nhét bả vai vào túi quần sau". Giữ 2 giây với lực vừa phải. KHÔNG nâng vai lên.',
+          'Lỗi phổ biến: nâng vai thay vì kéo về sau và xuống. Upper trap sẽ bị kích hoạt thay vì middle/lower trap. Cách kiểm tra: vai không di chuyển lên — chỉ bả vai di chuyển về sau. Nếu không chắc, làm trước gương.',
+          '15 lần × 2s rationale: 15 lần đủ để tạo motor pattern nhưng không gây fatigue (rhomboids và mid-trap là cơ nhỏ, mỏi nhanh). 2 giây giữ tạo time under tension đủ cho motor learning. 3 sets nếu muốn strengthening — 1 set trong recovery routine là kích hoạt đủ.',
+          'Band pull-apart variation: nếu muốn tăng hiệu quả và thêm kháng lực, dùng resistance band mỏng. Kéo band ra trước ngực (horizontal abduction) với hai tay thẳng — kích hoạt thêm posterior deltoid và rotator cuff ngoài. Tiến triển tự nhiên sau khi mastered scapular squeeze.',
+        ],
+        points: [
+          { icon: '↙️', label: 'Retract + Depress đồng thời', note: '"Nhét bả vai vào túi quần sau" — về sau VÀ xuống, KHÔNG nâng lên' },
+          { icon: '💪', label: 'Rhomboids + middle/lower trap', note: 'Hai nhóm bị ức chế nhất bởi rounded shoulders — cần kích hoạt lại mỗi ngày' },
+          { icon: '🎯', label: '2s giữ = motor learning', note: 'Time under tension tối thiểu để neural pathway được kích hoạt đúng cách' },
+          { icon: '🔍', label: 'Làm trước gương', note: 'Kiểm tra vai không nâng lên — chỉ bả vai di chuyển ra sau và xuống' },
+        ],
+      },
+      {
+        name: 'Thoracic twist ngồi', reps: '8 lần mỗi bên', why: 'Cải thiện xoay lưng ngực',
+        icon: '🌀', color: '#8b5cf6', rgb: '139,92,246',
+        title: 'Thoracic Twist Ngồi — Mở Khóa T-Spine',
+        img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Thoracic spine (T1–T12) được thiết kế để xoay ~35° mỗi bên — nhiều nhất trong cột sống. Tuy nhiên đây cũng là đoạn bị stiff nhất ở người ngồi nhiều. T-spine cứng bắt cervical spine (cổ) và lumbar spine (lưng dưới) phải bù rotation quá mức — gây đau cổ và đau lưng dưới từ nguồn gốc là T-spine. Ngồi xoay 8 lần/bên là minimum để restore rotation range.',
+        detail: 'Thoracic twist ngồi an toàn hơn đứng vì cố định hông và lumbar, buộc rotation phải đến từ T-spine. Tay sau đầu giữ cổ neutral và tăng đòn bẩy cho thoracic rotation mà không compensate bằng cổ.',
+        details: [
+          'Tại sao T-spine quan trọng cho cổ vai: shoulder blade (scapula) trượt trên T-spine. Khi T-spine kyphotic và stiff, scapula không di động đúng → shoulder mechanics bị lệch → neck và shoulder pain theo sau. Fix T-spine trước khi fix vai-cổ là thứ tự đúng.',
+          'Ngồi cross-legged vs ngồi ghế: ngồi cross-legged cố định hông hiệu quả hơn, buộc rotation từ T-spine nhiều hơn. Ngồi ghế thẳng lưng cũng được nếu không quen ngồi sàn — đặt tay sau gáy và xoay từ ngực, không từ hông.',
+          'Kỹ thuật: ngồi thẳng lưng, đặt 2 tay sau đầu (elbow ra 2 bên). Hít vào chuẩn bị, thở ra và xoay ngực sang một bên — mắt và khuỷu tay dẫn hướng xoay. Giữ 1–2 giây ở điểm xoay xa nhất. Thở ra khi xoay giúp lồng ngực xẹp → xoay sâu hơn 10–15%.',
+          'Không xoay từ hông: người hay compensate bằng cách xoay toàn bộ thân từ hông — T-spine vẫn cứng nhưng cảm giác đã "xoay được nhiều". Cách kiểm tra: hông phải không di chuyển trong suốt rotation. Nếu một bên hông nâng lên → đang xoay từ hông, không từ ngực.',
+          'Open book variation (nằm): nằm nghiêng một bên, hai gối gập 90° chồng lên nhau. Tay trên mở ra về phía sau (external rotation) theo nhịp thở. Hiệu quả hơn ngồi nhưng cần nhiều không gian. Dùng nếu muốn kết hợp T-spine rotation với soft tissue release.',
+          'Tần suất: T-spine mobility cải thiện chậm — cần kiên trì 4–6 tuần mới thấy range of motion tăng rõ. Nhưng cảm giác dễ chịu sau mỗi lần làm là ngay lập tức. Đây là bài "maintenance" cần làm hàng ngày, không phải bài "fix" làm vài tuần rồi thôi.',
+        ],
+        points: [
+          { icon: '🔓', label: 'T-spine stiff → cổ + lưng bù', note: 'T-spine cứng bắt cổ và lumbar spine bù rotation — gây đau cả hai vùng' },
+          { icon: '💨', label: 'Thở ra khi xoay', note: 'Lồng ngực xẹp khi exhale → xoay sâu hơn 10–15% tự nhiên — không xoay khi hít vào' },
+          { icon: '🦴', label: 'Hông không di chuyển', note: 'Kiểm tra: hông cố định, chỉ ngực xoay — nếu hông xoay là đang compensate' },
+          { icon: '📅', label: 'Cải thiện chậm nhưng chắc', note: '4–6 tuần mới thấy ROM tăng — nhưng cảm giác nhẹ ngay sau mỗi lần làm' },
+        ],
+      },
     ]
   },
   { zone: 'Lưng dưới', icon: '🫀', color: '#06b6d4', rgb: '6,182,212',
     cause: 'Ngồi lâu, cơ hông gấp căng, cơ bụng yếu',
     exercises: [
-      { name: 'Dead bug', reps: '10 lần mỗi bên', why: 'Kích hoạt cơ bụng sâu an toàn' },
-      { name: 'Bird-dog', reps: '10 lần mỗi bên', why: 'Ổn định lưng + kích hoạt glute' },
-      { name: 'Glute bridge', reps: '15 lần × 2s giữ', why: 'Tăng cường glute giảm tải lưng' },
-      { name: 'Child pose', reps: '1–2 phút', why: 'Giải phóng căng lưng dưới' },
-      { name: 'Hip flexor stretch', reps: '45s mỗi bên', why: 'Giải phóng co cứng hông gấp' },
+      {
+        name: 'Dead bug', reps: '10 lần mỗi bên', why: 'Kích hoạt cơ bụng sâu an toàn',
+        icon: '🐛', color: '#6366f1', rgb: '99,102,241',
+        title: 'Dead Bug — Core Sâu Không Đau Lưng',
+        img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Dead bug là bài tập core tốt nhất cho người đau lưng dưới vì kích hoạt transversus abdominis (TA) và multifidus mà không tạo thêm compressive load lên đĩa đệm. Nằm ngửa = spine trong tư thế neutral, trọng lực không nén cột sống theo trục dọc. Tay và chân đối diện di chuyển ra ngoài chậm và kiểm soát — thách thức anti-extension core stability.',
+        detail: 'Dead bug đúng kỹ thuật khó hơn trông — lưng dưới phải ép sát sàn trong suốt bài, không được arch lên. Bất kỳ lúc nào lưng dưới tách khỏi sàn = TA không còn active và bài tập mất tác dụng. Đây là bài kiểm tra + tập luyện core stability đồng thời.',
+        details: [
+          'Transversus abdominis (TA) là cơ "corset" sâu nhất của bụng — bao quanh toàn bộ thân. Chức năng chính là tăng intra-abdominal pressure để ổn định cột sống TRƯỚC khi tay chân di chuyển (feedforward mechanism). TA yếu = mỗi chuyển động tay chân đều có thể gây microtrauma cột sống.',
+          'Multifidus: nhóm cơ nhỏ dọc theo cột sống, quan trọng nhất cho segmental stability (ổn định từng đốt sống). Ở người đau lưng mãn tính, multifidus bị atrophy một bên và không tự phục hồi mà không tập luyện có chủ đích. Dead bug là một trong số ít bài kích hoạt multifidus hiệu quả mà không gây đau.',
+          'Kỹ thuật: nằm ngửa, hai tay giơ thẳng lên trần, hai đầu gối gập 90° trên không trung. Ép lưng dưới THẲNG sàn (không arch). Chậm rãi hạ tay phải + chân trái xuống gần sàn (không chạm), giữ 2 giây, về vị trí ban đầu. Đổi bên. Trong suốt bài — lưng dưới phải ép sát sàn.',
+          'Thở: thở ra TrƯỚC khi hạ tay/chân (kích hoạt TA và intra-abdominal pressure). Giữ hơi thở nhẹ trong khi tay/chân đang di chuyển. Hít vào khi trở về vị trí ban đầu. Đừng nín thở hoàn toàn — Valsalva maneuver gây tăng huyết áp đột ngột.',
+          'Tiến triển: bắt đầu với chỉ hạ tay (giữ 2 chân tại chỗ) → sau 2 tuần thêm chân → sau 2 tuần nữa thêm tạ nhẹ 0.5–1kg ở tay. Không tiến triển nếu lưng dưới vẫn tách khỏi sàn — kỹ thuật quan trọng hơn progression.',
+          'So sánh với plank: plank là anti-extension isometric, dead bug là anti-extension dynamic. Dead bug chal lenge core ở range of motion lớn hơn và gần với chức năng thực tế (tay chân di chuyển trong khi core ổn định). Cho đau lưng, dead bug an toàn hơn plank vì không có axial load.',
+        ],
+        points: [
+          { icon: '🛡️', label: 'Không compressive load', note: 'Nằm ngửa = cột sống không chịu lực theo trục — an toàn nhất cho đĩa đệm đang phục hồi' },
+          { icon: '🔒', label: 'Lưng ép sát sàn suốt bài', note: 'Lưng tách sàn = TA tắt và bài mất tác dụng — đây là tiêu chí kỹ thuật số 1' },
+          { icon: '💨', label: 'Thở ra trước khi hạ tay/chân', note: 'Exhale kích hoạt TA và intra-abdominal pressure trước khi cơ tay chân hoạt động' },
+          { icon: '🐢', label: 'Chậm > nhiều', note: 'Chuyển động chậm × 10 lần tốt hơn nhanh × 20 lần về kích hoạt deep stabilizers' },
+        ],
+      },
+      {
+        name: 'Bird-dog', reps: '10 lần mỗi bên', why: 'Ổn định lưng + kích hoạt glute',
+        icon: '🐦', color: '#10b981', rgb: '16,185,129',
+        title: 'Bird-Dog — Ổn Định Cột Sống Và Kích Hoạt Glute',
+        img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Bird-dog là bài được Stuart McGill (spine biomechanics expert) đưa vào "Big 3" của low back rehabilitation. Bài này train anti-rotation stability — cột sống phải chống lại lực xoắn vặn khi tay và chân đối diện di chuyển. Đây chính xác là loại stability cần thiết trong cuộc sống hàng ngày (bước đi, leo cầu thang, mang đồ).',
+        detail: 'Bird-dog kích hoạt gluteus maximus (chân sau), multifidus (ổn định cột sống) và posterior deltoid (tay trước) đồng thời — trong khi core duy trì neutral spine và chống rotation. Bài đa chức năng hiếm có: strengthen + stabilize + coordinate cùng lúc.',
+        details: [
+          'Stuart McGill\'s "Big 3": curl-up (thay vì sit-up), side plank và bird-dog là 3 bài McGill chứng minh an toàn và hiệu quả nhất cho low back rehab. Bird-dog train "neutral spine under load" — kỹ năng quan trọng nhất để phòng và phục hồi đau lưng.',
+          'Anti-rotation demand: khi tay phải giơ ra trước và chân trái kéo ra sau, toàn bộ thân bị kéo về phía phải. Core phải tạo counter-rotation force để giữ neutral. Đây là functional demand rất gần với walking (tay và chân đối diện swing cùng lúc).',
+          'Kỹ thuật: quỳ 4 điểm, lưng thẳng (không sag hay arch). Giơ tay phải và chân trái ra ngang bằng — KHÔNG cao hơn thân. Ngón chân trái duỗi (không flex gối). Giữ 3–5 giây, trở về chậm rãi, không chạm gối/tay xuống sàn giữa các lần lặp.',
+          'Giữ hông level: không để hông bên chân đang giơ xoay lên hoặc xệ xuống. Đặt 1 cuốn sách lên lưng để kiểm tra — nếu sách rơi là đang xoay hông. Hông level là tiêu chí kỹ thuật quan trọng nhất, còn quan trọng hơn độ cao của tay/chân.',
+          'Tiến triển: bird-dog chuẩn → bird-dog + elbow to knee (kéo khuỷu tay và đầu gối đối diện về gặp nhau dưới bụng) → bird-dog với resistance band ở cổ chân → bird-dog trên bosu ball. Progression tăng dần instability và kháng lực.',
+          'Kết hợp trong routine: bird-dog sau dead bug hoặc glute bridge. Dead bug train anti-extension (lying), bird-dog train anti-rotation (quadruped) — hai mặt phẳng khác nhau của core stability. Kết hợp cả hai để cover toàn diện.',
+        ],
+        points: [
+          { icon: '🔄', label: 'Anti-rotation stability', note: 'Core chống lực xoắn khi tay và chân đối diện di chuyển — functional cho đi bộ, leo cầu thang' },
+          { icon: '📐', label: 'Hông phải level suốt bài', note: 'Quan trọng hơn tầm cao của tay/chân — hông xoay là lỗi kỹ thuật số 1' },
+          { icon: '📚', label: 'McGill\'s Big 3', note: 'Một trong 3 bài được chứng minh khoa học an toàn và hiệu quả nhất cho low back rehab' },
+          { icon: '⏱️', label: 'Giữ 3–5s, không chạm sàn', note: 'Time under tension dài + không nghỉ giữa reps = kích hoạt multifidus và glute liên tục' },
+        ],
+      },
+      {
+        name: 'Glute bridge', reps: '15 lần × 2s giữ', why: 'Tăng cường glute giảm tải lưng',
+        icon: '🍑', color: '#f59e0b', rgb: '245,158,11',
+        title: 'Glute Bridge — Kích Hoạt Mông Giảm Tải Lưng',
+        img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Gluteus maximus là cơ lớn nhất cơ thể và là "extensor chính" của hông — nhưng bị ức chế mạnh nhất bởi ngồi nhiều (reciprocal inhibition với hip flexors). Khi glutes yếu, erector spinae phải bù thêm tải cho hip extension → quá tải lưng dưới mãn tính. Glute bridge kích hoạt glutes từ tư thế nằm — an toàn và hiệu quả ngay cả khi đang đau lưng.',
+        detail: '"Gluteal amnesia" là thuật ngữ Stuart McGill dùng để mô tả glutes bị ức chế và "quên" cách kích hoạt đúng sau thời gian dài ngồi. Glute bridge là bài đánh thức lại cơ mông trước khi yêu cầu nó làm việc trong các bài squat hay deadlift.',
+        details: [
+          'Reciprocal inhibition: khi hip flexors (psoas) hoạt động mạnh (ngồi nhiều), neural inhibition tắt bớt gluteus maximus. Đây là cơ chế thần kinh bình thường — nhưng khi ngồi 8–10 giờ/ngày, glutes bị ức chế gần như suốt ngày → yếu dần và không kích hoạt đúng kể cả khi cần.',
+          'Kỹ thuật: nằm ngửa, gối gập 90°, bàn chân rộng bằng hông. Ép gót chân xuống sàn, siết mông, đẩy hông lên cho đến khi thân tạo đường thẳng từ vai đến gối. Giữ 2 giây ở trên cùng — focus vào squeeze glutes. Hạ xuống chậm 2–3 giây.',
+          '2 giây giữ: nhiều người làm glute bridge "bouncing" — không có pause ở đỉnh. 2 giây giữ ở vị trí cao nhất tạo maximal glute activation và eliminates momentum. EMG studies cho thấy glute activation tăng 30–40% khi có pause so với không có.',
+          'Foot position matters: bàn chân quá gần mông → quads dominant. Bàn chân quá xa → hamstring dominant. Bàn chân đặt sao cho khi ở vị trí cao, ống chân thẳng đứng (shin vertical) → glute dominant. Adjust vị trí bàn chân đến khi cảm thấy glutes nhiều nhất.',
+          'Tiến triển: glute bridge 2 chân → glute bridge + band (band quanh đầu gối để resist internal rotation) → single-leg glute bridge → hip thrust với thanh tạ vai. Mỗi bước tiến thêm kháng lực hoặc giảm base of support.',
+          'Glute bridge vs hip thrust: glute bridge (lưng trên sàn) dễ hơn và an toàn hơn. Hip thrust (lưng tựa bench) có ROM lớn hơn và EMG glute activation cao hơn ~20%. Bắt đầu với glute bridge trong recovery, chuyển sang hip thrust khi mạnh hơn.',
+        ],
+        points: [
+          { icon: '🔑', label: 'Gluteal amnesia', note: 'Ngồi nhiều → glutes bị ức chế → "quên" kích hoạt → lưng phải bù thêm tải' },
+          { icon: '🦵', label: 'Ống chân thẳng đứng', note: 'Vị trí bàn chân tối ưu: shin vertical ở đỉnh → glute dominant, không phải quad/hamstring' },
+          { icon: '⏸️', label: '2s pause ở đỉnh = +30–40% activation', note: 'Không bouncing — pause ở trên tối đa hóa glute EMG, loại bỏ momentum' },
+          { icon: '💪', label: 'Siết mông, không đẩy lưng', note: 'Cảm giác đẩy từ gót chân qua mông — không phải cong lưng lên' },
+        ],
+      },
+      {
+        name: 'Child pose', reps: '1–2 phút', why: 'Giải phóng căng lưng dưới',
+        icon: '🧘', color: '#8b5cf6', rgb: '139,92,246',
+        title: 'Child Pose — Giải Phóng Lưng Dưới',
+        img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Child pose (balasana) đặt cột sống vào flexion nhẹ — tư thế đối lập với extension liên tục do ngồi lâu (anterior pelvic tilt). Cột sống lưng dưới được kéo dài và giảm compression, erector spinae được giãn theo chiều dài. Đồng thời, không gian sau đĩa đệm mở ra — tạm thời giảm áp lực lên dây thần kinh sau đĩa đệm ở L4–L5 và L5–S1.',
+        detail: 'Child pose an toàn cho hầu hết người đau lưng dưới cơ học (mechanical low back pain) — nhưng không phù hợp nếu đau tăng khi gập người (disc herniation gây radiculopathy). Luôn test nhẹ trước: nếu đau tăng khi vào tư thế, dừng và chuyển sang prone extension.',
+        details: [
+          'Posterior disc space: ở tư thế ngồi hoặc đứng, đĩa đệm L4–L5 và L5–S1 chịu lực nén lớn nhất. Gập người về trước (flexion) làm phần sau đĩa đệm mở ra và giảm compression posteriorly. Với disc herniation nhẹ (không có radiculopathy), điều này giảm đau tạm thời.',
+          'Erector spinae stretch: cơ erector spinae chạy dọc hai bên cột sống từ xương chậu đến đáy hộp sọ. Ở tư thế ngồi lâu (extension), cơ này bị rút ngắn mãn tính. Child pose kéo dài erector theo chiều dài tối đa — cảm giác "lưng được kéo căng dễ chịu".',
+          'Sacroiliac joint decompression: SI joint (khớp nối xương cùng và ilium) thường bị stiff và đau ở người ngồi lâu. Child pose với gối mở rộng (wide-knee child pose) tạo traction nhẹ lên SI joint và stretch iliolumbar ligament.',
+          'Wide-knee variation: nếu standard child pose (gối khép) không đủ thoải mái, mở gối rộng ra hai bên và ngón chân chạm nhau. Hông hạ thấp hơn và stretch lưng dưới + hông sâu hơn. Tốt hơn cho người có hông tight hoặc cơ đùi trong tight.',
+          'KHÔNG làm nếu: đau tăng khi vào tư thế, có radiculopathy (đau lan xuống chân theo đường dây thần kinh), hoặc stenosis nặng (hẹp ống sống). Với disc herniation gây radiculopathy, prone extension (McKenzie extension) thường phù hợp hơn child pose.',
+          'Thở trong child pose: thở cơ hoành — khi hít vào, cảm thấy lưng sau phồng lên (posterior ribcage expansion). Mỗi lần thở ra, sink thêm 1–2mm vào tư thế. Sau 1 phút, lưng dưới thường "buông" đáng kể so với lúc bắt đầu.',
+        ],
+        points: [
+          { icon: '🔓', label: 'Mở posterior disc space', note: 'Flexion mở phần sau đĩa đệm L4–L5, L5–S1 — giảm áp lực dây thần kinh tạm thời' },
+          { icon: '📏', label: 'Erector spinae kéo dài tối đa', note: 'Counteract extension mãn tính của ngồi lâu — cơ lưng được "reset" chiều dài' },
+          { icon: '⚠️', label: 'Đau tăng → dừng ngay', note: 'Child pose không phù hợp cho disc herniation có radiculopathy — thử prone extension thay' },
+          { icon: '💨', label: 'Lưng sau phồng khi hít vào', note: 'Posterior ribcage expansion — mỗi thở ra sink thêm vào tư thế' },
+        ],
+      },
+      {
+        name: 'Hip flexor stretch', reps: '45s mỗi bên', why: 'Giải phóng co cứng hông gấp',
+        icon: '🦵', color: '#f97316', rgb: '249,115,22',
+        title: 'Hip Flexor Stretch — Giải Phóng Psoas',
+        img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Psoas (iliopsoas) tight là nguyên nhân hàng đầu của đau lưng dưới mãn tính ở dân văn phòng. Ngồi 8–10 giờ/ngày giữ psoas ở chiều dài ngắn → mất khả năng kéo dài đầy đủ → kéo xương chậu ra trước (APT) khi đứng → lưng dưới bị overextend liên tục → đau. 45 giây đủ để GTO kích hoạt autogenic inhibition và psoas thực sự buông lỏng.',
+        detail: 'Psoas là cơ duy nhất nối trực tiếp cột sống với chân, đi qua trước xương chậu. Khi tight, nó không chỉ gây APT mà còn có thể nén đám rối thắt lưng (lumbar plexus) và ảnh hưởng đến hệ thần kinh vùng bụng dưới và hông.',
+        details: [
+          'Psoas và lumbar lordosis: psoas tight kéo T12–L5 ra trước → tăng lumbar lordosis → facet joints bị nén → đau khi đứng lâu hoặc đi bộ. Đây là "extension-based back pain" — khác với "flexion-based" (đau khi cúi người). Hip flexor stretch là điều trị trực tiếp cho extension-based LBP.',
+          '45 giây rationale: GTO (Golgi Tendon Organ) bắt đầu relaxation response sau 20–30 giây. 45 giây đảm bảo cơ đã qua ngưỡng này và đang trong giai đoạn relaxation thực sự — không phải chỉ stretch cơ đang "resist". Với chronic tightness, 60–90 giây thậm chí hiệu quả hơn.',
+          'Lunge kneeling stretch (kỹ thuật chuẩn): quỳ gối phải xuống, chân trái bước ra trước gập 90°. Đẩy hông về phía trước (không phải cúi người về trước). Tay trái có thể nâng lên để thêm lateral trunk flexion — kéo psoas ở đoạn gần cột sống. Giữ lưng thẳng trong suốt.',
+          'Knifehand variation: từ lunge chuẩn, thêm arm overhead phía chân đang stretch. Giơ tay phải lên (khi stretch psoas phải) và nghiêng nhẹ sang trái — lateral flexion ngược phía thêm kéo giãn đoạn proximal của psoas gần cột sống. Tăng hiệu quả 20–30%.',
+          'PNF contract-relax: từ lunge stretch, ép đầu gối xuống sàn nhẹ nhàng (co psoas với lực 20–30%) trong 6 giây, sau đó thả lỏng hoàn toàn và sink sâu hơn vào stretch. Lặp 3–4 lần. PNF (Proprioceptive Neuromuscular Facilitation) là kỹ thuật stretch hiệu quả nhất để tăng ROM nhanh.',
+          'Kết hợp với glute bridge ngay sau: psoas stretch (giãn hip flexors) + glute bridge (kích hoạt hip extensors). Hai bài kết hợp = cân bằng lại hip joint từ hai phía: giãn nhóm tight (psoas) + kích hoạt nhóm weak (glutes). Pattern này là core của mọi chương trình rehab lưng dưới hiện đại.',
+        ],
+        points: [
+          { icon: '🔗', label: 'Psoas nối cột sống với chân', note: 'T12–L5 → lesser trochanter. Tight = kéo cột sống về trước = APT = đau lưng' },
+          { icon: '⏱️', label: '45s = vượt ngưỡng GTO', note: 'GTO autogenic inhibition sau 20–30s — 45s đảm bảo cơ đang buông thực sự' },
+          { icon: '➡️', label: 'Đẩy hông trước, không cúi người', note: 'Hông forward → psoas kéo dài. Cúi người → chỉ stretch lưng, không phải psoas' },
+          { icon: '🔄', label: 'Sau đó → Glute bridge', note: 'Giãn psoas + kích hoạt glutes = cân bằng lại hip joint từ cả hai phía' },
+        ],
+      },
     ]
   },
   { zone: 'Gối', icon: '🦵', color: '#a78bfa', rgb: '167,139,250',
     cause: 'Yếu glute + quad, overuse, tư thế valgus',
     exercises: [
-      { name: 'Sit-to-stand chậm', reps: '10 lần, kiểm soát', why: 'Tăng sức mạnh quad + glute an toàn' },
-      { name: 'Glute bridge một chân', reps: '8–10 lần mỗi bên', why: 'Cân bằng sức mạnh 2 bên' },
-      { name: 'Calf raise', reps: '15–20 lần', why: 'Hỗ trợ bơm máu về tim' },
-      { name: 'Terminal knee extension', reps: '15 lần', why: 'Kích hoạt VMO — cơ bảo vệ gối' },
-      { name: 'Hamstring stretch nhẹ', reps: '30s mỗi bên', why: 'Giảm lực kéo sau gối' },
+      {
+        name: 'Sit-to-stand chậm', reps: '10 lần, kiểm soát', why: 'Tăng sức mạnh quad + glute an toàn',
+        icon: '🪑', color: '#0ea5e9', rgb: '14,165,233',
+        title: 'Sit-To-Stand Chậm — Squat Chức Năng Cho Gối',
+        img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Sit-to-stand là bài tập chức năng nhất cho gối — chúng ta thực hiện hàng chục lần mỗi ngày. Phiên bản chậm (3–5 giây xuống, 3–5 giây lên) tạo time under tension dài cho quadriceps và gluteus maximus mà không cần tải trọng. Eccentric control (hạ xuống chậm) là thành phần quan trọng nhất — cơ chịu tải lớn nhất khi kéo dài và dễ strengthen nhất.',
+        detail: 'Gối đau thường do quadriceps yếu không kiểm soát được lực khi xuống (eccentric) — gối "đổ" vào trong (valgus collapse). Sit-to-stand chậm train eccentric quad và gluteus medius (kiểm soát valgus) đồng thời, trong khi ghế là "safety net" nếu không đủ sức.',
+        details: [
+          'Eccentric overload: cơ sinh lực nhiều nhất khi kéo dài (eccentric) so với rút ngắn (concentric). Đồng thời, eccentric training tạo hypertrophy và strength gains nhanh hơn concentric với cùng số lần tập. Hạ xuống chậm 3–5 giây = eccentric quad training hiệu quả dù không có tạ.',
+          'Valgus collapse pattern: gối đổ vào trong khi ngồi xuống là dấu hiệu gluteus medius yếu (hip abductor). Glute med không giữ được femur (xương đùi) ở vị trí trung lập → gối bị valgus stress → patellofemoral pain và IT band syndrome theo sau. Sit-to-stand chậm train cả kiểm soát valgus này.',
+          'Kỹ thuật: ngồi ở mép ghế. Đặt chân rộng bằng hông, ngón chân hướng ra ngoài 10–15°. Nhìn thẳng. Đứng dậy: nghiêng người nhẹ ra trước, đẩy từ gót chân, siết mông khi lên đến thẳng người. Ngồi xuống: hạ hông xuống chậm 3–5 giây, đổ trọng lượng về gót, gối theo hướng ngón chân.',
+          'Gối không vượt quá ngón chân? Đây là myth đã bị bác bỏ. Gối CÓ THỂ vượt quá ngón chân trong squat bình thường — điều quan trọng là lực phân phối đều qua bàn chân và gối theo hướng ngón chân (không collapse vào trong). Restricting knee forward travel thực ra tăng hip stress.',
+          'Tiến triển: sit-to-stand 2 chân (ghế cao) → sit-to-stand 2 chân (ghế thấp) → sit-to-stand với 1–2kg tạ cầm → box squat với tạ nhẹ → squat tự do. Hoặc single-leg sit-to-stand (pistol squat hỗ trợ) khi đã đủ mạnh.',
+          'Knee pain indicator: nếu nghe tiếng lộp cộp (crepitus) khi đứng lên — không đáng lo nếu không đau. Nếu đau bên trong gối (medial) → có thể là MCL hoặc medial meniscus. Đau phía trước (kneecap) → patellofemoral. Đau phía sau → popliteal cyst. Đau sắc khi đứng dậy → gặp bác sĩ.',
+        ],
+        points: [
+          { icon: '⬇️', label: 'Hạ xuống 3–5s = eccentric training', note: 'Eccentric = cơ mạnh nhất và tăng strength nhanh nhất — không cần tạ' },
+          { icon: '🦵', label: 'Gối theo hướng ngón chân', note: 'Không collapse vào trong (valgus) — tiêu chí kỹ thuật quan trọng nhất cho gối' },
+          { icon: '🪑', label: 'Ghế là safety net', note: 'Nếu không đủ sức = ngồi xuống ghế — an toàn để tập đến giới hạn thực tế' },
+          { icon: '📈', label: 'Tiến triển: ghế cao → thấp → 1 chân', note: 'Bắt đầu với ghế cao, tiến dần — không nhảy thẳng vào squat tự do' },
+        ],
+      },
+      {
+        name: 'Glute bridge một chân', reps: '8–10 lần mỗi bên', why: 'Cân bằng sức mạnh 2 bên',
+        icon: '🦶', color: '#10b981', rgb: '16,185,129',
+        title: 'Single-Leg Glute Bridge — Cân Bằng 2 Bên',
+        img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Hầu hết người có sự chênh lệch sức mạnh glute 2 bên — side asymmetry >15% là yếu tố nguy cơ chấn thương gối và lưng. Single-leg glute bridge (SLGB) phát hiện và fix asymmetry này vì mỗi bên phải làm việc độc lập. Bên yếu hơn sẽ run rẩy, hông xệ xuống hoặc không giữ được 8–10 lần — đây là tín hiệu cần tập tập trung bên đó nhiều hơn.',
+        detail: 'SLGB train gluteus maximus đơn bên cùng với hip abductors (gluteus medius, tensor fascia latae) phải ổn định hông khỏi xệ xuống. Đây là điều kiện gần nhất với walking và running — 1 chân chịu lực trong khi chân kia swing.',
+        details: [
+          'Bilateral deficit: khi tập 2 chân cùng lúc, mỗi chân chỉ phát lực ~70–80% so với 1 chân riêng lẻ — cơ bắp "chia sẻ" effort và có thể hide weakness. SLGB loại bỏ bilateral deficit — bên yếu không có bên mạnh để bù.',
+          'Kỹ thuật: bắt đầu từ glute bridge 2 chân. Giơ 1 chân lên (thẳng hoặc gập gối 90°). Đẩy hông lên từ gót chân còn lại, siết mông, giữ hông level. Hông KHÔNG được xệ về phía chân đang giơ. Giữ 1–2 giây ở đỉnh, hạ xuống chậm.',
+          'Hip level = hip abductor test: nếu hông xệ về một bên khi giơ chân → gluteus medius bên đó yếu. Đây chính xác là Trendelenburg sign — được dùng trong lâm sàng để test glute med. SLGB vừa là bài tập vừa là screening tool.',
+          'Chân đang giơ gập hay thẳng: thẳng tăng hamstring của chân đang giơ activation nhưng dễ làm hơn về balance. Gập 90° giảm hamstring tension và focus hơn vào glute của chân trụ. Cả hai đều hiệu quả — chọn dựa trên comfort.',
+          'Số lần không đều 2 bên: nếu chân phải làm được 10 lần nhưng chân trái chỉ được 6 lần — tập thêm 2–3 set riêng cho chân trái sau set bình thường. Asymmetry sẽ giảm dần sau 4–6 tuần tập nhất quán.',
+          'Tiến triển: SLGB → SLGB + band quanh đùi → SLGB với tạ trên hông → single-leg hip thrust trên bench. Hoặc → SLGB trên bosu ball để thêm instability challenge cho hip stabilizers.',
+        ],
+        points: [
+          { icon: '⚖️', label: 'Phát hiện asymmetry 2 bên', note: 'Bilateral training ẩn weakness — SLGB buộc mỗi bên phải làm việc độc lập' },
+          { icon: '📐', label: 'Hông level = glute med test', note: 'Hông xệ = gluteus medius yếu (Trendelenburg) — tập trung bên yếu hơn' },
+          { icon: '🎯', label: 'Số lần không đều → tập thêm bên yếu', note: '2–3 set riêng cho bên yếu sau main set — asymmetry giảm sau 4–6 tuần' },
+          { icon: '🦿', label: 'Gần với walking/running', note: '1 chân trụ + hông level = điều kiện chức năng thực tế — transfer tốt nhất' },
+        ],
+      },
+      {
+        name: 'Calf raise', reps: '15–20 lần', why: 'Hỗ trợ bơm máu về tim',
+        icon: '🦶', color: '#14b8a6', rgb: '20,184,166',
+        title: 'Calf Raise — Bơm Tĩnh Mạch Và Mạnh Gân Achilles',
+        img: 'https://images.unsplash.com/photo-1434682966252-f8506a5a0f06?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Soleus (cơ dép) trong calf raise đứng là "thiết bị bơm thứ hai" của hệ tuần hoàn — đẩy máu từ tĩnh mạch chân lên tim. Cho gối, calf raise train eccentric control của gân Achilles và gastrocnemius, giảm lực kéo ra sau gối (posterior knee stress). iScience 2022: soleus pushup giảm postprandial glucose 52% — calf raise cũng kích hoạt cơ này.',
+        detail: 'Calf raise thường bị underestimate vì quá đơn giản. Nhưng soleus có đặc tính chuyển hóa độc đáo — dùng trực tiếp glucose và fatty acids từ máu để hoạt động, không dùng glycogen. Đây là lý do calf raise đứng nhẹ khi đứng chờ có thể ảnh hưởng đến đường huyết đáng kể.',
+        details: [
+          'Venous pump mechanism: tim bơm máu xuống động mạch chân. Máu tĩnh mạch trở về phải chống lại trọng lực. Gastrocnemius và soleus co rút khi calf raise đẩy máu tĩnh mạch qua van tĩnh mạch → lên tim. Không có calf pump này, máu ứ ở chân → sưng, mỏi chân, tăng nguy cơ deep vein thrombosis (DVT).',
+          'Eccentric calf training cho gối: khi hạ xuống chậm (eccentric lowering), gastrocnemius và soleus chịu load lớn — strengthening gân Achilles và giảm lực kéo ra sau qua posterior knee joint capsule. Beneficial cho jumper\'s knee (patellar tendinopathy) và gối sau chấn thương.',
+          'Kỹ thuật tối ưu: đứng với mép bàn chân trên bậc (hoặc sàn), hạ gót xuống thấp nhất có thể (eccentric stretch), sau đó kiễng lên cao nhất có thể (concentric). Giữ 1 giây ở đỉnh. Hạ xuống 3–4 giây (eccentric chậm). Bước này quan trọng hơn số lần.',
+          'Single-leg calf raise: sau khi 2 chân dễ dàng, chuyển sang 1 chân. 1 chân tạo ~2× load so với 2 chân → strength gains nhanh hơn và detect asymmetry. Người có tiền sử Achilles tendinopathy PHẢI làm single-leg eccentric calf raise (Alfredson protocol).',
+          'Alfredson protocol cho Achilles tendinopathy: 3 sets × 15 reps eccentric calf raise 1 chân, 2 lần/ngày, 12 tuần. Nghiên cứu original của Alfredson (1998) cho thấy 82% thành công — hiệu quả hơn surgery ở nhiều trường hợp. Đây là gold standard điều trị Achilles tendinopathy.',
+          'Calf raise và plantar fasciitis: calf tight (particularly soleus) là nguyên nhân chính của plantar fasciitis. Calf raise eccentric kéo giãn và strengthen đồng thời — address cả tightness và weakness. Kết hợp với towel stretch sáng sớm trước khi bước xuống giường.',
+        ],
+        points: [
+          { icon: '🫀', label: 'Bơm tĩnh mạch về tim', note: 'Gastrocnemius + soleus = "tim thứ hai" cho tuần hoàn chân — chống DVT và mỏi chân' },
+          { icon: '⬇️', label: 'Hạ xuống 3–4s = eccentric training', note: 'Eccentric slow = gân Achilles và gastrocnemius strengthen — không chỉ kiễng gót lên/xuống' },
+          { icon: '🦶', label: 'Mép bàn chân trên bậc', note: 'Full ROM: hạ gót thấp nhất + kiễng cao nhất — tối đa hóa stretch + strengthen' },
+          { icon: '🎯', label: '1 chân = Alfredson protocol', note: 'Gold standard cho Achilles tendinopathy — 82% thành công không cần surgery' },
+        ],
+      },
+      {
+        name: 'Terminal knee extension', reps: '15 lần', why: 'Kích hoạt VMO — cơ bảo vệ gối',
+        icon: '🦿', color: '#f59e0b', rgb: '245,158,11',
+        title: 'Terminal Knee Extension — Kích Hoạt VMO',
+        img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'VMO (vastus medialis oblique) là phần cơ tứ đầu đùi ở phía trong, trên xương bánh chè. Chức năng quan trọng nhất của VMO là giữ xương bánh chè đi đúng rãnh trên femur (patellar tracking) — VMO yếu làm bánh chè lệch ra ngoài → patellofemoral pain (đau trước gối). TKE kích hoạt VMO ở những 10–15° cuối của duỗi gối — vùng mà VMO hoạt động nhiều nhất.',
+        detail: 'TKE (Terminal Knee Extension) là bài tập riêng biệt cho VMO vì VMO chỉ hoạt động nhiều ở cuối tầm duỗi gối (0–15°). Squat và lunge không tạo đủ VMO activation ở cuối tầm này. Với band, TKE target đúng muscle ở đúng range.',
+        details: [
+          'VMO anatomy: vastus medialis oblique là phần dưới-trong của cơ tứ đầu đùi (quadriceps). Sợi cơ chạy theo hướng 50–55° (oblique) — khác với phần còn lại của vastus medialis. Chức năng: kéo patella vào trong, counteract vastus lateralis (cơ đùi ngoài) đang kéo bánh chè ra ngoài.',
+          'Patellofemoral pain syndrome (PFPS): bánh chè lệch ra ngoài do VMO yếu → ma sát giữa bánh chè và femoral groove tăng → đau trước gối, đặc biệt khi leo cầu thang, ngồi lâu, hoặc squat. PFPS là chấn thương gối phổ biến nhất ở người trẻ.',
+          'Kỹ thuật với band: vòng resistance band nhẹ quanh cột và sau đầu gối (popliteal fossa). Đứng, gối hơi gập nhẹ, sau đó duỗi thẳng gối hoàn toàn — siết cơ tứ đầu ở điểm cuối (15 degrees cuối). Giữ 1 giây. Không cần motion lớn — chỉ 10–15° cuối của extension.',
+          'Làm không có band: ngồi trên sàn, chân thẳng. Gập nhẹ gối 20°, sau đó duỗi thẳng hoàn toàn và siết mạnh cơ tứ đầu khi thẳng. Giữ 2 giây siết. Cảm nhận phần trong-trên của gối (VMO) co lại. Có thể đặt tay lên VMO để cảm nhận.',
+          'Kết hợp với straight leg raise: VMO cũng active khi nâng chân thẳng (SLR). SLR + ankle weight là progression sau TKE. SLR không có gối gập = không có shear force lên gối → cực kỳ an toàn ngay cả sau surgery.',
+          'Timeline thực tế: VMO atrophy sau chấn thương gối hoặc surgery rất nhanh (24–48h). Nhưng phục hồi chậm hơn — cần 6–12 tuần tập nhất quán để thấy VMO "tròn" trở lại và patellar tracking cải thiện. Không expect thay đổi trong 1–2 tuần.',
+        ],
+        points: [
+          { icon: '🎯', label: 'VMO = patellar tracking guard', note: 'VMO yếu → bánh chè lệch ngoài → ma sát → đau trước gối khi leo cầu thang, squat' },
+          { icon: '📐', label: 'Chỉ 10–15° cuối của duỗi gối', note: 'VMO hoạt động nhiều nhất ở cuối tầm — squat và lunge không target đủ vùng này' },
+          { icon: '✋', label: 'Đặt tay lên VMO để cảm nhận', note: 'Phần trong-trên gối — kiểm tra cơ co khi duỗi thẳng. Biofeedback tự nhiên' },
+          { icon: '⏳', label: '6–12 tuần mới thấy kết quả', note: 'VMO atrophy nhanh, phục hồi chậm — kiên trì 6–12 tuần, không expect kết quả trong 1–2 tuần' },
+        ],
+      },
+      {
+        name: 'Hamstring stretch nhẹ', reps: '30s mỗi bên', why: 'Giảm lực kéo sau gối',
+        icon: '🏃', color: '#f43f5e', rgb: '244,63,94',
+        title: 'Hamstring Stretch Nhẹ — Giảm Tải Sau Gối',
+        img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Hamstring tight tạo "posterior knee pull" — kéo liên tục vào sau gối qua hamstring attachment ở đầu gối. Với gối đang phục hồi sau chấn thương hoặc đau mãn tính, thêm lực kéo này làm trậm quá trình phục hồi. Stretch NHẸ (không ép mạnh) 30 giây/bên giảm resting tension của hamstring và giảm posterior knee stress mà không gây thêm microtrauma.',
+        detail: 'Từ "nhẹ" trong tên bài quan trọng — với gối đau, hamstring stretch phải thực sự nhẹ nhàng. Đừng ép đến điểm đau. Stretch tĩnh nhẹ giảm muscle tone (resting tension) mà không gây microtrauma. Đây là flexibility maintenance, không phải aggressive lengthening.',
+        details: [
+          'Posterior knee anatomy: hamstring gắn vào fibula head và tibia qua các tendons khác nhau. Resting tension của hamstring kéo tibia ra sau → posterior knee capsule stress. Với gối đang viêm hoặc sau chấn thương PCL/posterior capsule, tension này cần được minimize.',
+          'Supine hamstring stretch (an toàn nhất cho gối): nằm ngửa, nâng 1 chân lên, dùng dây/khăn quanh đùi (không phải bàn chân) để giữ chân lên mà không cần co cơ. Gập gối nhẹ (không thẳng hoàn toàn) nếu gối đang đau. Cảm thấy kéo nhẹ ở đùi sau — không phải căng mạnh.',
+          '30 giây đủ cho resting tone reduction: khác với flexibility training (cần 60–90s), mục tiêu ở đây chỉ là giảm resting muscle tone. 30 giây đủ để GTO kích hoạt và tone giảm nhẹ. Không cần ép sâu hơn — nhẹ nhàng là ưu tiên.',
+          'KHÔNG làm nếu: đau sắc ở gối khi stretch, tê bì lan xuống bàn chân (sciatic nerve involvement), hoặc đau tăng khi duỗi gối (có thể là meniscus issue). Với những triệu chứng này, hamstring stretch nhẹ vẫn có thể làm theo hướng nằm ngửa với gối gập nhẹ.',
+          'Kết hợp với calf stretch: hamstring và calf đều gắn vào phía sau đầu gối. Sau hamstring stretch, làm soleus stretch (gập gối, ép vào tường) để giải quyết cả hai phía của posterior knee. Sequential stretching toàn bộ posterior chain giảm tổng tension hiệu quả hơn từng bài riêng lẻ.',
+          'Neural tension consideration: một số người có đau lan xuống chân khi stretch hamstring (sciatic nerve bị kéo căng — neurodynamics). Nếu đau theo đường thần kinh, làm "neural flossing" thay vì stretch cơ thuần túy — gập và duỗi gối nhẹ nhàng trong khi giữ hông flexed, không giữ tĩnh.',
+        ],
+        points: [
+          { icon: '🪶', label: 'Nhẹ nhàng — không ép mạnh', note: 'Gối đau: giảm resting tone, không aggressive lengthening. Kéo nhẹ ở đùi sau là đủ' },
+          { icon: '🛡️', label: 'Giảm posterior knee stress', note: 'Hamstring resting tension kéo tibia ra sau — giảm tension = giảm tải capsule và ligaments' },
+          { icon: '⚡', label: 'Tê bì lan xuống = dừng ngay', note: 'Sciatic nerve involvement — không stretch thêm, cần neural flossing hoặc gặp chuyên gia' },
+          { icon: '🔗', label: 'Sau đó → calf stretch', note: 'Hamstring + calf đều gắn sau gối — sequential stretch giảm tổng posterior knee tension' },
+        ],
+      },
     ]
   },
 ];
@@ -373,6 +688,7 @@ export default function LifestyleRecoveryPage() {
   const [openZone, setOpenZone] = useState(null);
   const [recoveryTypeIdx, setRecoveryTypeIdx] = useState(null);
   const [routineIdx, setRoutineIdx] = useState(null);
+  const [zoneExState, setZoneExState] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -500,12 +816,18 @@ export default function LifestyleRecoveryPage() {
               {openZone === i && (
                 <div className="p-4 space-y-3">
                   {z.exercises.map((ex, j) => (
-                    <div key={j} className="flex justify-between items-start gap-3 py-2 border-b last:border-0" style={{ borderColor: `rgba(${z.rgb},0.1)` }}>
-                      <div>
-                        <div className="text-lg font-semibold text-text">{ex.name}</div>
-                        <div className="text-base text-muted">{ex.why}</div>
+                    <div key={j}
+                      className="flex items-center gap-3 py-2 px-1 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01] border-b last:border-0"
+                      style={{ borderColor: `rgba(${z.rgb},0.1)` }}
+                      onClick={() => setZoneExState({ zi: i, ei: j })}>
+                      <span className="text-xl shrink-0">{ex.icon}</span>
+                      <div className="flex-1">
+                        <div className="text-base font-semibold text-text">{ex.name}</div>
+                        <div className="text-sm text-muted">{ex.why}</div>
                       </div>
-                      <span className="text-base font-semibold tabular-nums shrink-0" style={{ color: z.color }}>{ex.reps}</span>
+                      <span className="text-sm font-semibold tabular-nums shrink-0" style={{ color: z.color }}>{ex.reps}</span>
+                      <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                        style={{ color: ex.color, background: `rgba(${ex.rgb},0.1)` }}>Chi tiết →</span>
                     </div>
                   ))}
                   <p className="text-base text-muted pt-1">⚠️ Dừng ngay nếu cảm thấy đau nhói, tê lan hoặc yếu chân tay.</p>
@@ -556,6 +878,24 @@ export default function LifestyleRecoveryPage() {
         <Link to="/pillar/c/neat" className="text-muted hover:text-violet-400 transition-colors text-lg">← NEAT</Link>
         <Link to="/pillar/c/deload" className="text-lg font-semibold" style={{ color: COLOR }}>Deload →</Link>
       </div>
+
+      {/* ── Zone exercise modal — outside all RevealBlocks ── */}
+      {zoneExState !== null && (() => {
+        const zone = ZONE_FIXES[zoneExState.zi];
+        const ex = zone.exercises[zoneExState.ei];
+        return (
+          <RecoveryModal
+            item={ex}
+            idx={zoneExState.ei}
+            total={zone.exercises.length}
+            onClose={() => setZoneExState(null)}
+            onPrev={() => setZoneExState(s => ({ ...s, ei: Math.max(0, s.ei - 1) }))}
+            onNext={() => setZoneExState(s => ({ ...s, ei: Math.min(zone.exercises.length - 1, s.ei + 1) }))}
+            hasPrev={zoneExState.ei > 0}
+            hasNext={zoneExState.ei < zone.exercises.length - 1}
+          />
+        );
+      })()}
 
       {/* ── Routine 10 modal — outside all RevealBlocks ── */}
       {routineIdx !== null && (

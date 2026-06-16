@@ -422,10 +422,98 @@ const METHODS = [
 ];
 
 const FREQUENCY = [
-  { level: 'Mới bắt đầu (< 1 năm)', freq: 'Mỗi 8–10 tuần', duration: '1 tuần', note: 'Cơ thể vẫn đang thích nghi, ít cần deload' },
-  { level: 'Trung cấp (1–3 năm)', freq: 'Mỗi 6–8 tuần', duration: '1 tuần', note: 'Bắt đầu cảm nhận được dấu hiệu rõ ràng hơn' },
-  { level: 'Nâng cao (3–5 năm)', freq: 'Mỗi 4–6 tuần', duration: '1–2 tuần', note: 'Mỗi mesocycle nên kết thúc bằng deload' },
-  { level: 'Elite (> 5 năm)', freq: 'Mỗi 3–4 tuần', duration: '1–2 tuần', note: 'Deload là phần không thể thiếu của lập kế hoạch' },
+  {
+    icon: '🌱', level: 'Mới bắt đầu', tag: '< 1 năm', freq: 'Mỗi 8–10 tuần', duration: '1 tuần',
+    note: 'Cơ thể vẫn đang thích nghi, ít cần deload',
+    color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Người Mới — Tại Sao Ít Cần Deload Hơn',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người mới bắt đầu tập (< 1 năm) có cơ chế phục hồi thuận lợi hơn người nâng cao — cơ thể vẫn đang trong giai đoạn "novice gains", mỗi buổi tập đều trigger adaptation mạnh với stress thấp hơn. Thêm vào đó, SRA cycle (Stimulus–Recovery–Adaptation) của người mới ngắn hơn vì chưa đẩy cơ thể đến giới hạn thực sự. Deload quá sớm với người mới có thể làm gián đoạn momentum và làm chậm tiến bộ.',
+    detail: 'Ở giai đoạn mới bắt đầu, mỗi bước nhỏ đều là lãnh thổ mới với cơ thể — cơ bắp, hệ thần kinh và kết nối thần kinh-cơ đều đang cải thiện nhanh chóng. Deload sau 8–10 tuần vẫn cần thiết để "lock in" những adaptation này và tránh chấn thương do technique còn đang hoàn thiện.',
+    details: [
+      'Novice gains và SRA cycle ngắn: người mới có thể phục hồi và adapt sau mỗi buổi tập đơn lẻ — không cần tích lũy nhiều tuần mới thấy adaptation như người nâng cao. SRA cycle của người mới thường chỉ 24–48h cho cơ bắp nhỏ, 48–72h cho nhóm cơ lớn. Điều này có nghĩa là mỗi buổi tập là một "mini supercompensation" — deload không cần thiết sớm.',
+      'Neural adaptation chiếm ưu thế: 60–80% tiến bộ sức mạnh trong 3–6 tháng đầu đến từ cải thiện neural (não học cách recruit nhiều motor unit hơn, cải thiện coordination) chứ không phải từ muscle hypertrophy thực sự. Neural adaptation không gây CNS fatigue nặng bằng strength training nặng sau này — người mới "ít bị burn out hơn" về mặt thần kinh.',
+      'Tại sao cần deload sau 8–10 tuần dù ít stress: dù ít cần hơn, deload vẫn có giá trị. Gân và dây chằng thích nghi chậm hơn cơ bắp ngay cả ở người mới — 8–10 tuần tập nhất quán tạo đủ cumulative tendon stress để cần 1 tuần giảm tải. Thứ hai, deload là cơ hội để consolidate technique — tập nhẹ hơn cho phép focus vào form thay vì chỉ tập trung vào load.',
+      'Red flags người mới hay bỏ qua: DOMS (đau cơ khởi phát muộn) quá nặng liên tục — nếu sau 4–5 tuần vẫn DOMS nặng sau mỗi buổi, cơ thể chưa adapted đủ và deload có thể cần sớm hơn. Joint pain (đau khớp thực sự, không phải cơ đau) là tín hiệu cần deload ngay — người mới thường khó phân biệt muscle soreness và joint pain.',
+      'Cấu trúc deload lý tưởng cho người mới: giảm 30–40% volume (thay vì 50% của người nâng cao) và giữ nguyên tạ. Người mới thường sợ "mất đà" nếu giảm quá nhiều — giảm nhẹ hơn nhưng vẫn deload là compromise tốt. 1 tuần deload với 60% volume thông thường là đủ để phục hồi hoàn toàn.',
+      'Sau deload đầu tiên: nhiều người mới ngạc nhiên khi thấy hiệu suất tăng ngay sau tuần deload đầu tiên — đây là lần đầu họ trải nghiệm "deload effect". Sử dụng trải nghiệm này để hiểu giá trị của recovery và xây dựng thói quen deload có kế hoạch từ sớm trong hành trình tập luyện.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Phục hồi 24–72h mỗi buổi', note: 'SRA cycle ngắn — mỗi buổi tập là mini supercompensation riêng biệt' },
+      { icon: '🧠', label: '60–80% gains là neural', note: 'Não học cách recruit cơ hiệu quả hơn — ít CNS fatigue hơn người nâng cao' },
+      { icon: '🦴', label: 'Gân vẫn cần nghỉ sau 8–10 tuần', note: 'Gân thích nghi chậm hơn cơ ngay cả với người mới — cumulative stress tích lũy' },
+      { icon: '📐', label: 'Deload = cơ hội luyện kỹ thuật', note: 'Tập nhẹ hơn → focus vào form → kỹ thuật tốt hơn → ít chấn thương' },
+    ],
+  },
+  {
+    icon: '📈', level: 'Trung cấp', tag: '1–3 năm', freq: 'Mỗi 6–8 tuần', duration: '1 tuần',
+    note: 'Bắt đầu cảm nhận được dấu hiệu rõ ràng hơn',
+    color: '#3b82f6', rgb: '59,130,246',
+    modalTitle: 'Trung Cấp — Giai Đoạn Deload Bắt Đầu Quan Trọng',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ở giai đoạn trung cấp (1–3 năm), novice gains đã đạt đỉnh và cơ thể cần stress cao hơn để tiếp tục adapt — đồng nghĩa với recovery demand cũng cao hơn. SRA cycle dài ra (cơ bắp cần 48–96h thay vì 24–48h) và CNS fatigue bắt đầu tích lũy theo mesocycle. Đây là giai đoạn deload chuyển từ "nên có" sang "cần phải có" để duy trì progressive overload liên tục.',
+    detail: 'Người trung cấp thường gặp "intermediate plateau" — cảm giác tiến bộ chậm lại hoặc dừng hẳn dù vẫn tập chăm chỉ. Một trong những nguyên nhân phổ biến nhất là thiếu deload có kế hoạch, khiến cumulative fatigue che khuất fitness gains thực sự.',
+    details: [
+      'SRA cycle dài hơn và mesocycle planning: người trung cấp không thể recovery và adapt sau mỗi buổi tập đơn lẻ nữa — adaptation xảy ra theo mesocycle (4–8 tuần). Mỗi mesocycle tích lũy stress, tuần deload cuối mesocycle là lúc supercompensation thực sự xảy ra. Không deload = không tận dụng được supercompensation của cả mesocycle.',
+      'Fatigue accumulation và performance metrics: người trung cấp có thể đo được fatigue qua performance — nếu 5RM hoặc AMRAP reps giảm so với 2 tuần trước dù dinh dưỡng và ngủ tốt, đó là cumulative fatigue cần deload. Theo dõi training log là công cụ quan trọng nhất để timing deload chính xác.',
+      'Mức độ deload phù hợp (6–8 tuần, giảm 40–50% volume): chu kỳ 6–8 tuần cân bằng giữa đủ thời gian để build fitness và đủ sớm để tránh overtraining. Giảm 40–50% volume (giữ nguyên intensity) là standard — người trung cấp đã quen với tạ nặng hơn và cần đủ stimulus để duy trì neural adaptations trong tuần deload.',
+      'Intermediate plateau và deload: nếu đang gặp plateau kéo dài 3–4 tuần, xem xét deload ngay cả khi chưa đến 6 tuần. Plateau thường là dấu hiệu cumulative fatigue đã đạt điểm tới hạn — cơ thể không thể express fitness gains vì quá mệt. Sau 1 tuần deload, nhiều người trung cấp thấy weights "cảm thấy nhẹ hơn" và break through plateau.',
+      'Autoregulation cho người trung cấp: không phải lúc nào cũng cứng nhắc 6–8 tuần. Nếu tuần 5 mà resting HR cao hơn baseline, motivation giảm mạnh, performance đột ngột giảm — deload sớm hơn. Autoregulation (điều chỉnh dựa trên signals của cơ thể) trở nên quan trọng hơn khi mức tập tăng lên.',
+      'Nutrition và sleep trong deload trung cấp: người trung cấp thường cần protein cao hơn để hỗ trợ recovery (1.6–2.0g/kg). Trong tuần deload, giữ nguyên protein nhưng có thể giảm carb 10–15% nếu cảm thấy bloated. Sleep quality cải thiện rõ rệt trong tuần deload — sử dụng tuần này để tối ưu sleep routine.',
+    ],
+    points: [
+      { icon: '📊', label: 'Mesocycle 6–8 tuần + 1 tuần deload', note: 'SRA cycle dài — adaptation xảy ra theo mesocycle, không phải từng buổi' },
+      { icon: '📉', label: 'Performance giảm = cần deload', note: 'Theo dõi 5RM/AMRAP — giảm 2 tuần liên tiếp dù ngủ/ăn tốt → deload ngay' },
+      { icon: '🔓', label: 'Deload phá plateau trung cấp', note: 'Plateau thường là cumulative fatigue che gains — deload để express fitness thực sự' },
+      { icon: '🎯', label: 'Autoregulate theo signals cơ thể', note: 'Không cứng nhắc 6–8 tuần — RHR cao + motivation giảm = deload sớm hơn' },
+    ],
+  },
+  {
+    icon: '🏋️', level: 'Nâng cao', tag: '3–5 năm', freq: 'Mỗi 4–6 tuần', duration: '1–2 tuần',
+    note: 'Mỗi mesocycle nên kết thúc bằng deload',
+    color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Nâng Cao — Mỗi Mesocycle Kết Thúc Bằng Deload',
+    img: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người tập nâng cao (3–5 năm) đang hoạt động gần giới hạn của potential — mỗi % tăng sức mạnh hay cơ bắp đòi hỏi stress cực kỳ lớn và recovery tương xứng. Mesocycle 4–6 tuần với deload bắt buộc cuối mỗi mesocycle không còn là tùy chọn — đây là cấu trúc training duy nhất cho phép người nâng cao tiếp tục tiến bộ bền vững mà không rơi vào OTS (Overtraining Syndrome).',
+    detail: 'Ở trình độ nâng cao, cơ thể đã thích nghi với hầu hết dạng stress thông thường. Để tiếp tục progress, phải liên tục tăng volume, intensity hoặc frequency — tất cả đều đòi hỏi recovery cao hơn. Periodization (lên kế hoạch training theo chu kỳ) trở thành kỹ năng quan trọng nhất.',
+    details: [
+      'Periodization bắt buộc: người nâng cao không thể "wing it" — training cần được lên kế hoạch theo macrocycle (năm), mesocycle (4–8 tuần) và microcycle (tuần). Deload là ranh giới tự nhiên giữa các mesocycle. Các model phổ biến: Block Periodization (accumulation → intensification → realization + deload), DUP (Daily Undulating Periodization với deload tuần 5), và 5/3/1 với deload tuần 4.',
+      'Volume landmarks và MRV: người nâng cao cần hiểu Maximum Recoverable Volume (MRV) của từng nhóm cơ — lượng volume tối đa cơ thể có thể recover từ trong 1 tuần. Mỗi mesocycle nên bắt đầu từ MEV (Minimum Effective Volume) và tăng dần đến gần MRV trước khi deload. Tập vượt MRV = diminishing returns và accumulated fatigue không sustainable.',
+      'Giảm volume 50% + giữ nguyên intensity: người nâng cao cần giữ tạ nặng trong deload vì neural adaptations (strength = neural skill) decay nhanh hơn hypertrophy nếu không được stimulate. Giảm volume (sets × reps) 50% nhưng giữ %1RM thì đủ stimulus để duy trì neural adaptations trong khi cho phép recovery hoàn toàn.',
+      'Peaking và competition prep: người nâng cao thi đấu (powerlifting, weightlifting, CrossFit) cần "peak" trước competition — 1–2 tuần giảm volume đột ngột trước ngày thi để supercompensation xảy ra đúng ngày. Đây là ứng dụng nâng cao của deload principle. Peak quá sớm hay quá muộn đều làm mất hiệu quả.',
+      'Joint và tendon accumulation sau nhiều năm: sau 3–5 năm tập cường độ cao, cumulative wear trên gân và khớp là thực tế. Người nâng cao thường cảm thấy "chronic tightness" ở vai, hông, đầu gối. Deload 1–2 tuần mỗi 4–6 tuần là cơ hội để những inflammation mãn tính nhỏ có thời gian giải quyết. Bỏ qua deload ở giai đoạn này = tăng tốc mài mòn khớp.',
+      'Quản lý fatigue như asset: người nâng cao học cách quản lý fatigue như một tài nguyên — biết khi nào nên "push through" và khi nào cần pull back. Không phải mọi fatigue đều xấu; functional overreaching (cố ý đẩy past MRV ngắn hạn) theo sau bởi deload đủ dài có thể tạo supercompensation lớn hơn bình thường. Đây là kỹ thuật advanced dùng trong peaking.',
+    ],
+    points: [
+      { icon: '📋', label: 'Deload = kết thúc mỗi mesocycle', note: 'Block / DUP / 5/3/1 — tất cả đều có deload có kế hoạch sau 4–6 tuần' },
+      { icon: '📊', label: 'Tập đến MRV rồi mới deload', note: 'MEV → MRV theo mesocycle — deload reset để bắt đầu MEV cao hơn ở mesocycle tiếp' },
+      { icon: '💪', label: 'Giữ intensity, giảm volume 50%', note: 'Tạ nặng duy trì neural adaptations — chỉ giảm số sets, không giảm tạ' },
+      { icon: '🏆', label: 'Peaking cho thi đấu', note: '1–2 tuần giảm volume đột ngột trước competition = supercompensation đúng ngày thi' },
+    ],
+  },
+  {
+    icon: '👑', level: 'Elite', tag: '> 5 năm', freq: 'Mỗi 3–4 tuần', duration: '1–2 tuần',
+    note: 'Deload là phần không thể thiếu của lập kế hoạch',
+    color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Elite — Deload Là Một Phần Của Kế Hoạch Năm',
+    img: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vận động viên elite (> 5 năm tập nghiêm túc) không coi deload là "break" hay "nghỉ ngơi" — họ coi đó là một pha training có mục đích rõ ràng trong macrocycle năm. Với training volume và intensity ở mức elite, CNS fatigue tích lũy nhanh đến mức deload mỗi 3–4 tuần không phải là xa xỉ mà là tối thiểu cần thiết để duy trì khả năng thích nghi.',
+    detail: 'Ở mức elite, cơ thể đang hoạt động ở 90–95% genetic potential. Mỗi tuần tập thêm ở cường độ full đều có diminishing returns cao và injury risk tăng theo hàm mũ. Quản lý training như một doanh nghiệp — mỗi quyết định đều có ROI (return on investment) và deload có ROI cao nhất trong dài hạn.',
+    details: [
+      'Annual periodization và macrocycle: vận động viên elite lập kế hoạch training theo năm, không theo tuần. Macrocycle thường chia thành: Preparatory period (general + specific prep), Competitive period (pre-comp + competition peak), Transition period (active recovery sau season). Deload được lên kế hoạch tại ranh giới của mỗi block — không reactive, hoàn toàn proactive.',
+      'Tần suất deload 3–4 tuần — tại sao? Ở mức training elite, volume và intensity đủ cao để MRV đạt sau chỉ 3–4 tuần. Tiếp tục tập quá MRV thêm 1–2 tuần nữa không thêm adaptation — chỉ thêm fatigue và injury risk. Deload ngắn hơn nhưng thường xuyên hơn là chiến lược tối ưu.',
+      'HRV monitoring và biofeedback: elite athletes hầu hết theo dõi HRV (Heart Rate Variability) hằng ngày. HRV là proxy gián tiếp của ANS (Autonomic Nervous System) balance và CNS recovery. HRV thấp hơn baseline 5–7 ngày liên tiếp = cơ thể báo hiệu cần deload ngay cả khi chưa đến 3–4 tuần. Công nghệ như Whoop, Garmin HRV4Training làm điều này tự động.',
+      'Deload chủ động vs thụ động: elite athletes dùng deload "chủ động" — không chỉ giảm volume mà thay đổi hoàn toàn stimulus. Ví dụ: powerlifter deload bằng 1 tuần bơi và yoga; sprinter deload bằng 1 tuần đạp xe nhẹ. "Cross-training deload" duy trì cardiovascular conditioning và mental freshness trong khi cho hệ thống chính (sức mạnh/tốc độ) phục hồi hoàn toàn.',
+      'Psychological fatigue và motivation: ở mức elite, tập luyện là nghề nghiệp — không phải sở thích. Motivation intrinsic (yêu tập luyện) có thể bị xói mòn bởi áp lực competition, expectation và monotony của training. Deload giữ cho tập luyện có cảm giác "thú vị" — tuần nhẹ nhàng, thay đổi routine, nhắc nhở bản thân tại sao bắt đầu. Psychological freshness dẫn đến physical performance tốt hơn.',
+      'Long-term athlete longevity: elite athletes dài hạn nhất (vẫn thi đấu ở tuổi 35–40+) đều có một điểm chung — họ deload đều đặn và không cố gắng "train through" mọi injury hay fatigue. Mỗi injury lớn mất 6–12 tuần recovery. Deload 1 tuần mỗi 3–4 tuần = đầu tư vào career longevity. Những athlete coi deload là điểm yếu thường có career ngắn hơn đáng kể.',
+    ],
+    points: [
+      { icon: '📅', label: 'Lập kế hoạch deload cho cả năm', note: 'Proactive, không reactive — deload nằm trong macrocycle từ đầu mùa' },
+      { icon: '📡', label: 'HRV monitoring hằng ngày', note: 'Whoop/Garmin theo dõi ANS balance — HRV thấp 5–7 ngày = deload ngay' },
+      { icon: '🔄', label: 'Cross-training deload', note: 'Thay toàn bộ stimulus — powerlifter bơi, sprinter đạp xe — mental freshness' },
+      { icon: '⏳', label: 'Longevity = deload nhất quán', note: 'Elite dài hạn (35–40+) luôn deload — mỗi injury lớn mất 6–12 tuần' },
+    ],
+  },
 ];
 
 const DELOAD_WEEK = [
@@ -442,6 +530,7 @@ const INTENSITY_COLOR = { light: '#f97316', 'very-light': '#10b981', rest: '#6b7
 
 export default function LifestyleDeloadPage() {
   const [methodIdx, setMethodIdx] = useState(null);
+  const [frequencyIdx, setFrequencyIdx] = useState(null);
   const [whyIdx, setWhyIdx] = useState(null);
   const [signalIdx, setSignalIdx] = useState(null);
 
@@ -567,28 +656,22 @@ export default function LifestyleDeloadPage() {
       {/* Frequency by level */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tần Suất Deload Theo Trình Độ</h2>
-        <p className="text-muted text-lg mb-6">Càng tập lâu năm, cơ thể càng cần deload thường xuyên hơn.</p>
-        <div className="overflow-x-auto">
-          <table className="w-full text-lg">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-3 pr-4 text-base font-bold uppercase tracking-widest text-muted">Trình Độ</th>
-                <th className="text-left py-3 pr-4 text-base font-bold uppercase tracking-widest text-muted">Chu Kỳ</th>
-                <th className="text-left py-3 pr-4 text-base font-bold uppercase tracking-widest text-muted">Thời Gian</th>
-                <th className="text-left py-3 text-base font-bold uppercase tracking-widest text-muted">Ghi Chú</th>
-              </tr>
-            </thead>
-            <tbody>
-              {FREQUENCY.map((f, i) => (
-                <tr key={i} className="border-b border-border/30 hover:bg-white/3 transition-colors">
-                  <td className="py-3 pr-4 font-medium text-text">{f.level}</td>
-                  <td className="py-3 pr-4" style={{ color: COLOR }}>{f.freq}</td>
-                  <td className="py-3 pr-4 text-text">{f.duration}</td>
-                  <td className="py-3 text-muted text-base">{f.note}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <p className="text-muted text-lg mb-6">Càng tập lâu năm, cơ thể càng cần deload thường xuyên hơn. Click để xem hướng dẫn chi tiết.</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {FREQUENCY.map((f, i) => (
+            <div key={i}
+              className="rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
+              style={{ borderColor: `rgba(${f.rgb},0.2)`, background: `rgba(${f.rgb},0.05)` }}
+              onClick={() => setFrequencyIdx(i)}>
+              <div className="text-3xl mb-3">{f.icon}</div>
+              <div className="font-bold text-base mb-0.5" style={{ color: f.color }}>{f.level}</div>
+              <div className="text-xs font-bold uppercase tracking-widest mb-3 opacity-60" style={{ color: f.color }}>{f.tag}</div>
+              <div className="text-sm text-muted mb-1"><span className="font-semibold text-text">Chu kỳ:</span> {f.freq}</div>
+              <div className="text-sm text-muted mb-3"><span className="font-semibold text-text">Thời gian:</span> {f.duration}</div>
+              <span className="text-xs font-bold px-2 py-1 rounded-lg"
+                style={{ color: f.color, background: `rgba(${f.rgb},0.12)` }}>Chi tiết →</span>
+            </div>
+          ))}
         </div>
       </RevealBlock>
 
@@ -640,6 +723,20 @@ export default function LifestyleDeloadPage() {
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>
+
+      {/* ── Frequency modal — outside all RevealBlocks ── */}
+      {frequencyIdx !== null && (
+        <DeloadModal
+          item={FREQUENCY[frequencyIdx]}
+          idx={frequencyIdx}
+          total={FREQUENCY.length}
+          onClose={() => setFrequencyIdx(null)}
+          onPrev={() => setFrequencyIdx(i => Math.max(0, i - 1))}
+          onNext={() => setFrequencyIdx(i => Math.min(FREQUENCY.length - 1, i + 1))}
+          hasPrev={frequencyIdx > 0}
+          hasNext={frequencyIdx < FREQUENCY.length - 1}
+        />
+      )}
 
       {/* ── Methods modal — outside all RevealBlocks ── */}
       {methodIdx !== null && (

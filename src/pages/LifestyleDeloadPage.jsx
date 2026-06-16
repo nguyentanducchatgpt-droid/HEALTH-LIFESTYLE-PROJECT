@@ -517,13 +517,160 @@ const FREQUENCY = [
 ];
 
 const DELOAD_WEEK = [
-  { day: 'Thứ 2', type: 'Tập giảm volume', detail: 'Upper body: giảm 50% set, giữ tạ', intensity: 'light' },
-  { day: 'Thứ 3', type: 'Active recovery', detail: 'Đi bộ 30 phút + foam rolling', intensity: 'very-light' },
-  { day: 'Thứ 4', type: 'Tập giảm volume', detail: 'Lower body: giảm 50% set, giữ tạ', intensity: 'light' },
-  { day: 'Thứ 5', type: 'Nghỉ hoàn toàn', detail: 'Stretching nhẹ, đi dạo 20 phút', intensity: 'rest' },
-  { day: 'Thứ 6', type: 'Full-body nhẹ', detail: 'Compound movements @ 60% 1RM, 2×8', intensity: 'light' },
-  { day: 'Thứ 7', type: 'Active leisure', detail: 'Bơi, leo núi, đạp xe → vui là chính', intensity: 'very-light' },
-  { day: 'Chủ nhật', type: 'Nghỉ hoàn toàn', detail: 'Ngủ đủ giấc, chuẩn bị tinh thần tuần mới', intensity: 'rest' },
+  {
+    day: 'Thứ 2', icon: '🏋️', type: 'Tập giảm volume', detail: 'Upper body: giảm 50% set, giữ tạ', intensity: 'light',
+    color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Thứ 2 — Upper Body Giảm Volume',
+    img: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngày đầu tuần deload vẫn tập với tạ quen thuộc — chỉ giảm 50% số sets. Đây là quyết định khoa học: giữ nguyên intensity (% 1RM) duy trì neural adaptations trong khi giảm volume cho phép recovery. Nhiều người sợ "mất sức" khi deload — thực tế ngược lại: neural drive được bảo toàn hoàn toàn, muscle memory không bị ảnh hưởng.',
+    detail: 'Upper body deload ngày Thứ 2 giúp thiết lập tone cho cả tuần. Bắt đầu bằng bài tập quen thuộc với tạ không đổi tạo cảm giác an tâm tâm lý, trong khi volume giảm 50% tạo không gian để CNS và cơ bắp phục hồi thực sự.',
+    details: [
+      'Tại sao giữ nguyên tạ: sức mạnh (strength) là neural skill — não và hệ thần kinh học cách recruit motor units hiệu quả. Nếu giảm tạ xuống 50–60%, neural stimulus không đủ và motor pattern bị "mờ" sau vài buổi không tập nặng. Giữ tạ quen thuộc = duy trì neural groove trong khi cho cơ bắp nghỉ ngơi.',
+      'Giảm 50% sets — không phải reps: cơ chế recovery tốt nhất là giảm total sets (volume) chứ không giảm reps hay tạ. Ví dụ: nếu thường tập 4 sets × 8 reps bench press @ 80kg, deload = 2 sets × 8 reps @ 80kg. Tổng tonnage giảm 50%, nhưng mỗi set vẫn có chất lượng cao.',
+      'Bài tập upper body ưu tiên trong deload: compound movements (bench press, overhead press, row, pull-up) vẫn được thực hiện với tạ quen thuộc. Cắt bỏ các isolation exercises (curls, lateral raises, tricep pushdowns) — đây là "trim fat" không cần thiết. Mục tiêu: giữ stimulus cho movement pattern chính, loại bỏ volume phụ.',
+      'Thứ tự bài tập trong buổi deload: giữ nguyên thứ tự thường lệ. Warm-up bình thường (5–10 phút). Thực hiện main compound movements với 50% sets. Kết thúc sau 30–40 phút thay vì 60–90 phút thường lệ. Không cố "thêm 1 set nữa" — discipline trong deload cũng quan trọng như discipline tập nặng.',
+      'RPE trong deload: tập đến RPE 6–7/10 (có thể làm thêm 3–4 reps nếu cần), không phải RPE 9–10 như thường. Cảm giác "dễ hơn bình thường" là hoàn toàn đúng và bình thường trong deload. Nếu cảm thấy "quá dễ" — đó là dấu hiệu tốt: cơ thể đang bắt đầu recover.',
+      'Dinh dưỡng Thứ 2: protein giữ nguyên (2g/kg) để hỗ trợ muscle protein synthesis. Carb có thể giảm nhẹ (10–15%) vì energy expenditure thấp hơn. Pre-workout nutrition bình thường — không cần thay đổi timing. Hydration quan trọng: uống 35ml/kg để hỗ trợ joint lubrication trong tuần giảm tải.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Giữ tạ = giữ neural adaptations', note: 'Strength là neural skill — giảm tạ làm "mờ" motor pattern, giữ tạ bảo toàn hoàn toàn' },
+      { icon: '✂️', label: 'Cắt sets, không cắt tạ', note: '4 sets → 2 sets @ cùng tạ — giảm 50% tonnage, giữ 100% quality per set' },
+      { icon: '🎯', label: 'Chỉ compound, bỏ isolation', note: 'Bench/Row/OHP giữ nguyên — cắt curls, lateral raises, pushdowns' },
+      { icon: '⏱️', label: '30–40 phút thay vì 60–90 phút', note: 'Buổi ngắn hơn, chất lượng cao hơn — không cố thêm sets vì "còn sức"' },
+    ],
+  },
+  {
+    day: 'Thứ 3', icon: '🚶', type: 'Active recovery', detail: 'Đi bộ 30 phút + foam rolling', intensity: 'very-light',
+    color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Thứ 3 — Active Recovery Tối Ưu',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Active recovery (phục hồi tích cực) nhanh hơn passive rest (nằm nghỉ hoàn toàn) vì vận động nhẹ tăng lưu thông máu — đưa oxygen và nutrients đến cơ bắp đang repair, đồng thời flush lactate và metabolic waste sản phẩm tích lũy từ buổi tập hôm qua. Đi bộ 30 phút + foam rolling là combination hiệu quả nhất, chi phí thấp nhất.',
+    detail: 'Ngày giữa tuần deload không phải ngày "không làm gì" — mà là ngày recovery có chủ đích. Đi bộ nhẹ giữ cardiovascular system hoạt động ở Zone 1 trong khi foam rolling giải quyết myofascial tension tích lũy từ nhiều tuần tập.',
+    details: [
+      'Cơ chế tăng lưu thông máu: khi đi bộ nhẹ ở Zone 1 (50–60% max HR, có thể trò chuyện bình thường), cơ tim bơm nhiều máu hơn đến peripheral muscles mà không tạo thêm training stress. Tăng lưu thông máu = tăng delivery của amino acids, glycogen và growth factors đến cơ bắp đang repair, đồng thời loại bỏ inflammation mediators nhanh hơn.',
+      'Foam rolling và fascia: cơ bắp được bọc bởi fascia (màng liên kết). Sau nhiều tuần tập cường độ cao, fascia có thể trở nên "sticky" — các lớp trượt lên nhau không còn trơn tru, tạo cảm giác tight và restricted movement. Foam rolling tạo áp lực lên trigger points (điểm căng cứng) giải phóng myofascial tension và cải thiện range of motion.',
+      'Thứ tự tối ưu: đi bộ 20–30 phút trước → tăng nhiệt độ cơ → foam rolling sau khi cơ đã ấm hiệu quả hơn 30–40%. Foam rolling "lạnh" (trước khi cơ ấm) kém hiệu quả hơn và có thể gây khó chịu. Lý tưởng: đi bộ → foam rolling toàn thân 10–15 phút → static stretching nhẹ nếu còn thời gian.',
+      'Zone 1 — cách kiểm soát cường độ: mục tiêu là HR 95–115 bpm (tùy tuổi và fitness). Test đơn giản: nếu có thể nói chuyện bình thường và không thở dốc → đúng Zone 1. Nếu thở dốc hay không nói được câu dài → đang vào Zone 2, cần chậm lại. Ngày active recovery không phải ngày cardio — không cần push.',
+      'Foam rolling protocol cho deload: 45–60 giây mỗi vùng, tập trung vào các nhóm cơ đã tập ngày Thứ 2 (lats, chest, shoulders, triceps). Thêm: thoracic spine mobilization (foam roll dọc cột sống), hip flexors, IT band nếu có tension. Áp lực vừa phải — nếu đau quá 7/10, nhấc bớt trọng lượng cơ thể bằng tay.',
+      'Lợi ích tâm lý của active recovery: đi bộ ngoài trời tăng serotonin và endorphin nhẹ — giúp mood trong tuần deload khi thiếu dopamine từ intense training. Đặc biệt hiệu quả nếu đi bộ trong thiên nhiên (công viên, ven hồ) — "green exercise" có lợi ích tâm lý bổ sung qua Attention Restoration Theory.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Tăng lưu thông máu đến cơ', note: 'Zone 1 đẩy oxygen/nutrients đến cơ repair, flush lactate và metabolic waste' },
+      { icon: '🔧', label: 'Foam rolling giải phóng fascia', note: 'Cơ ấm trước → foam rolling sau — hiệu quả hơn 30–40% so với foam roll lạnh' },
+      { icon: '💬', label: 'Test Zone 1: vẫn nói chuyện được', note: '95–115 bpm, không thở dốc — không phải cardio workout, là recovery' },
+      { icon: '🌿', label: 'Đi bộ ngoài trời tăng serotonin', note: 'Green exercise bù đắp dopamine thiếu hụt khi không tập nặng trong deload' },
+    ],
+  },
+  {
+    day: 'Thứ 4', icon: '🦵', type: 'Tập giảm volume', detail: 'Lower body: giảm 50% set, giữ tạ', intensity: 'light',
+    color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Thứ 4 — Lower Body Giảm Volume',
+    img: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Lower body deload giữa tuần đặc biệt quan trọng vì nhóm cơ chân (quads, hamstrings, glutes, calves) có volume cơ bắp lớn nhất và đóng góp nhiều nhất vào systemic fatigue. Tập lower body với volume cao nhất trong mesocycle cũng tạo CNS fatigue nhiều nhất — deload lower body đúng cách cho CNS thời gian phục hồi mà vẫn duy trì strength patterns.',
+    detail: 'Squat, deadlift, hip hinge là những bài tập đòi hỏi CNS nhiều nhất trong toàn bộ training. Giảm 50% sets ngày Thứ 4 trong khi giữ nguyên tạ là cách cân bằng hoàn hảo giữa duy trì strength patterns và cho phép systemic recovery.',
+    details: [
+      'Tại sao lower body tạo nhiều CNS fatigue hơn upper body: squat và deadlift activate nhiều nhóm cơ lớn đồng thời (total body recruitment), đòi hỏi CNS phải coordinate phức tạp hơn. Nghiên cứu cho thấy 5 sets deadlift nặng gây CNS fatigue tương đương 10 sets upper body isolation. Deload lower body đúng cách = recovery hệ thần kinh nhanh hơn đáng kể.',
+      'Bài tập lower body trong deload: giữ nguyên main compounds (squat, Romanian deadlift hoặc leg press). Bỏ accessory (leg extension, leg curl, calf raises, lunges). Không thực hiện conventional deadlift nặng trong tuần deload — thay bằng RDL hoặc trap bar deadlift ở 60% intensity nếu muốn giữ movement pattern. Squat giữ nguyên tạ, giảm 50% sets.',
+      'Joint care cho gối và hông: lower body deload là cơ hội để chú ý đến knee và hip joint. Trước buổi tập, thực hiện 5–10 phút dynamic warm-up: leg swings, hip circles, bodyweight squats. Sau buổi tập, 5 phút hip flexor stretching và calf stretching — các nhóm này thường tight nhất sau nhiều tuần squat và deadlift.',
+      'Tempo chậm hơn trong deload squat: deload là cơ hội tuyệt vời để tập với tempo chậm hơn thường (3–4 giây eccentric thay vì 1–2 giây). Eccentric chậm với tạ bình thường nhưng ít sets = tăng time under tension mà không tăng volume. Lợi ích: cải thiện tendon health (gân thích nghi tốt với slow eccentric loading), reinforce good squat mechanics.',
+      'Đau gối mãn tính và lower body deload: nếu có "runner\'s knee" hay patellar tendinopathy, ngày deload lower body là ngày để thực hiện "eccentric rehab protocol" — slow bodyweight leg extension hoặc decline squat bodyweight. Eccentric protocol là bằng chứng mạnh nhất cho tendinopathy management — deload week cho thời gian và điều kiện lý tưởng để làm điều này.',
+      'Hệ thống năng lượng và lower body: squats và deadlift chủ yếu dùng phosphocreatine và glycolytic system. Trong tuần deload, glycogen stores được replenish hoàn toàn (không bị depleted bởi HIIT hay MetCon). Sau 1 tuần deload, glycogen ở cơ chân thường đạt mức peak — đây là một phần lý do performance tăng mạnh ngay sau deload.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Lower body = CNS fatigue cao nhất', note: '5 sets deadlift = CNS fatigue tương đương 10 sets upper body isolation' },
+      { icon: '🏋️', label: 'Chỉ main compounds, bỏ accessory', note: 'Squat/RDL giữ tạ — bỏ leg extension, leg curl, lunges, calf raises' },
+      { icon: '🐢', label: 'Tempo chậm hơn — 3–4s eccentric', note: 'Slow eccentric cải thiện tendon health + reinforce mechanics trong khi giảm volume' },
+      { icon: '⚡', label: 'Glycogen peak sau deload', note: 'Lower body glycogen được refill hoàn toàn — 1 lý do hiệu suất tăng mạnh sau deload' },
+    ],
+  },
+  {
+    day: 'Thứ 5', icon: '🛋️', type: 'Nghỉ hoàn toàn', detail: 'Stretching nhẹ, đi dạo 20 phút', intensity: 'rest',
+    color: '#6b7280', rgb: '107,114,128',
+    modalTitle: 'Thứ 5 — Ngày Nghỉ Có Mục Đích',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngày nghỉ hoàn toàn giữa tuần không phải "lãng phí" — đây là ngày CNS phục hồi sâu nhất. Sau 3 ngày liên tiếp (Thứ 2 tập upper, Thứ 3 active recovery, Thứ 4 tập lower), hệ thần kinh cần một ngày không có training stimulus để reboot hoàn toàn. Stretching nhẹ và đi dạo 20 phút giữ lưu thông máu mà không tạo thêm bất kỳ stress nào.',
+    detail: 'Ngày nghỉ có mục đích khác ngày "nằm một chỗ xem phim". Stretching nhẹ duy trì range of motion, đi dạo 20 phút giữ cardiovascular rhythm. Toàn bộ phục hồi diễn ra trong nghỉ ngơi — không phải trong lúc tập.',
+    details: [
+      'Mẫu giấc ngủ và CNS recovery: ngày nghỉ giữa tuần là ngày cơ thể tận dụng sleep tối ưu nhất cho recovery. Deep sleep (N3) tăng secretion của Growth Hormone, consolidates motor memories từ 3 ngày tập vừa rồi, và glymphatic system hoạt động mạnh nhất để clear metabolic waste. Ưu tiên ngủ 8–9h đêm Thứ 4 sang Thứ 5.',
+      'Static stretching — khi nào phù hợp: static stretching (giữ tư thế 30–60 giây) làm giảm muscle tension và tăng range of motion — nhưng không phù hợp trước tập (giảm explosive power). Ngày nghỉ là thời điểm lý tưởng: cơ bắp không cần contractile force, static stretching hoàn toàn có lợi. Focus: hip flexors, hamstrings, thoracic spine, chest/shoulder anterior.',
+      'Đi dạo 20 phút — không hơn không kém: 20 phút đủ để maintain blood flow nhẹ và endorphin release mà không gây bất kỳ training stress nào. Tránh leo cầu thang nhiều, tránh đi bộ nhanh hay jogging — ngay cả "nhẹ" vẫn tạo stimulus cho cơ chân đang cần nghỉ sau Thứ 4. Cường độ mục tiêu: resting HR +5–10 bpm, không hơn.',
+      'Không training bù: tâm lý "bù đắp" (tập thêm vì hôm qua không tập đủ) là kẻ thù của deload hiệu quả. Ngày nghỉ là ngày nghỉ — không cơ hội, không bù. Cơ thể không phân biệt được "tập vì bù" hay "tập bình thường" — nó chỉ nhận thêm stress. Resistance to rest là dấu hiệu tâm lý cần deload, không phải dấu hiệu cần tập thêm.',
+      'Dinh dưỡng ngày nghỉ: nhiều người giảm ăn ngày không tập vì "không cần năng lượng" — đây là sai lầm trong deload. Protein vẫn 2g/kg để hỗ trợ muscle repair đang diễn ra. Carb có thể giảm 15–20% nhưng không giảm quá nhiều — cơ thể vẫn cần glycogen để repair. Fat giữ nguyên. Uống đủ nước — dehydration làm chậm recovery.',
+      'Mental recovery: ngày nghỉ giữa tuần là cơ hội để "decompress" tâm lý. Đọc sách, thiền, massage, tắm nước ấm — tất cả đều hỗ trợ recovery thông qua giảm cortisol và tăng parasympathetic tone (rest-and-digest). Tắm nước ấm đặc biệt hiệu quả: nhiệt độ làm giãn cơ và giảm DOMS, trong khi relaxation response giảm cortisol đo được sau 20 phút.',
+    ],
+    points: [
+      { icon: '🧠', label: 'CNS reboot hoàn toàn', note: 'Sau 3 ngày liên tiếp, hệ thần kinh cần 1 ngày không stimulus để phục hồi sâu' },
+      { icon: '🌙', label: 'Deep sleep = Growth Hormone peak', note: 'Ngủ 8–9h đêm Thứ 4→5: GH secretion cao, glymphatic flush metabolic waste' },
+      { icon: '🧘', label: 'Static stretch lý tưởng ngày nghỉ', note: 'Hip flexors, hamstrings, thoracic spine — static stretch không phù hợp trước tập, hoàn hảo ngày nghỉ' },
+      { icon: '🚫', label: 'Không "tập bù" — rest là rest', note: 'Resistance to rest là tâm lý cần deload, không phải cần tập thêm' },
+    ],
+  },
+  {
+    day: 'Thứ 6', icon: '💫', type: 'Full-body nhẹ', detail: 'Compound movements @ 60% 1RM, 2×8', intensity: 'light',
+    color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Thứ 6 — Full-Body Nhẹ Consolidate Tuần Deload',
+    img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Buổi full-body nhẹ cuối tuần (Thứ 6) là "maintenance dose" — đủ stimulus để duy trì mọi neural adaptations đã build trong mesocycle vừa rồi, nhưng không đủ để tạo thêm fatigue. 60% 1RM × 2 sets × 8 reps cho mỗi compound movement là threshold tối thiểu để "remind" cơ thần kinh của các movement patterns quan trọng trước khi bắt đầu mesocycle mới.',
+    detail: 'Full-body nhẹ Thứ 6 có vai trò kép: duy trì neural adaptations VÀ tạo pump nhẹ để tăng lưu thông máu đến tất cả nhóm cơ trước 2 ngày nghỉ cuối tuần. Cảm giác sau buổi này nên là "refreshed" chứ không phải "sore".',
+    details: [
+      'Tại sao 60% 1RM là threshold quan trọng: 60% 1RM là minimum effective intensity để maintain strength adaptations — dưới mức này, neural drive không đủ để "reinforce" motor patterns. Tập 60% × 2×8 đảm bảo motor unit recruitment vẫn xảy ra ở mức đủ để không mất neural adaptations, trong khi metabolic stress và mechanical tension không đủ để gây soreness đáng kể.',
+      'Chọn bài tập cho full-body deload: 3–4 compound movements đại diện cho tất cả movement patterns. Ví dụ: Squat (knee-dominant lower), Romanian Deadlift (hip-dominant lower), Bench Press (horizontal push), Barbell Row (horizontal pull). 4 bài × 2 sets × 8 reps = 64 total reps. Tổng buổi tập: 30–35 phút bao gồm warm-up.',
+      'Movement pattern thinking trong deload: thay vì nghĩ "tập nhóm cơ nào", nghĩ theo movement patterns. Cần cover: push (horizontal + vertical), pull (horizontal + vertical), squat, hip hinge, carry (optional). Deload full-body đảm bảo mọi movement pattern đều được "touched" trước khi break cuối tuần.',
+      'Không đến failure — dừng ở 2–3 reps in reserve: RIR (Reps In Reserve) mục tiêu là 3–4 reps. Ví dụ: nếu 60% 1RM của bench là 80kg, bạn có thể làm 8 reps thoải mái và cảm thấy có thể làm thêm 3–4 reps nữa. Dừng lại. Không "test" xem có thể làm được bao nhiêu. Discipline này là phần quan trọng nhất của deload.',
+      'Timing và recovery: buổi tập Thứ 6 nên kết thúc ít nhất 48h trước buổi tập đầu mesocycle mới (thường Thứ 2 tuần sau). 48h đủ để giải quyết bất kỳ soreness nhỏ nào từ buổi full-body nhẹ và để bước vào tuần mới fresh hoàn toàn. Nếu bắt đầu lại vào Chủ nhật — cân nhắc chuyển full-body deload sang Thứ 5.',
+      'Pump và feel-good chemistry: buổi tập nhẹ tạo muscle pump (tăng máu vào cơ tạm thời) và release endorphin/dopamine ở mức vừa đủ. Sau 4 ngày volume thấp, buổi Thứ 6 thường cảm thấy rất tốt — cơ bắp "đầy" và responsiveness cao hơn bình thường. Đây là tín hiệu sinh lý tích cực: cơ thể đang trong giai đoạn supercompensation.',
+    ],
+    points: [
+      { icon: '🎯', label: '60% 1RM = minimum maintenance dose', note: 'Dưới 60% neural drive không đủ — motor patterns bắt đầu "mờ" sau 5–7 ngày không tập' },
+      { icon: '📋', label: '4 movement patterns × 2 sets × 8 reps', note: 'Push, pull, squat, hinge — 30–35 phút bao gồm warm-up, không hơn' },
+      { icon: '✋', label: 'Dừng ở RIR 3–4, không đến failure', note: 'Discipline trong deload = quan trọng như discipline tập nặng — đừng "test" sức' },
+      { icon: '⚡', label: 'Pump = dấu hiệu supercompensation', note: 'Cơ bắp "đầy" và responsiveness cao sau deload = sinh lý học tích cực' },
+    ],
+  },
+  {
+    day: 'Thứ 7', icon: '🏄', type: 'Active leisure', detail: 'Bơi, leo núi, đạp xe → vui là chính', intensity: 'very-light',
+    color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: 'Thứ 7 — Active Leisure: Vận Động Vì Niềm Vui',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Active leisure khác hoàn toàn với training — không có sets, reps, progressive overload hay performance target. Chỉ có hoạt động bạn thực sự thích và cảm thấy vui khi làm. Bơi, leo núi nhẹ, đạp xe leisurely — những hoạt động này kích hoạt dopamine thông qua intrinsic motivation (niềm vui thuần túy) thay vì extrinsic (đạt mục tiêu). Đây là cách nhanh nhất để "rekindle" tình yêu với vận động sau nhiều tuần tập nghiêm túc.',
+    detail: 'Thứ 7 active leisure là khoảnh khắc trong tuần để nhớ tại sao bạn bắt đầu vận động. Không phải vì body composition hay performance — mà vì cơ thể muốn di chuyển và bạn cảm thấy tốt hơn khi làm vậy.',
+    details: [
+      'Intrinsic vs extrinsic motivation: sau nhiều tuần training với mục tiêu cụ thể (PR, competition, body composition), motivation có thể shift hoàn toàn sang extrinsic. Active leisure cung cấp dopamine thông qua intrinsic reward — làm gì đó vì bản thân nó thú vị, không phải vì kết quả. Điều này "resets" motivation system và giải thích tại sao nhiều người trở lại gym với energy cao hơn sau tuần deload có active leisure.',
+      'Lựa chọn hoạt động phù hợp: bơi (Zone 1–2, không competitive), leo núi nhẹ (trail hiking, không phải technical climbing), đạp xe đường bằng, yoga nhẹ, kayak, volleyball bãi biển casual, nhảy zumba... Bất kỳ hoạt động nào mà khi kết thúc bạn cảm thấy "vui và refreshed" thay vì "mệt và sore" đều phù hợp. HR mục tiêu: dưới 130–140 bpm suốt session.',
+      'Social bonus: active leisure thường có yếu tố xã hội — đạp xe với bạn bè, leo núi theo nhóm, bơi cùng gia đình. Social connection trong hoạt động thể chất tăng oxytocin và serotonin theo cơ chế riêng biệt, củng cố mood benefits của exercise. "Exercise is medicine, but exercise with friends is better medicine."',
+      'Cross-training benefits: bơi sử dụng cơ ở góc độ và range of motion khác hoàn toàn với weight training. Đạp xe cải thiện cardiovascular efficiency mà không tạo impact stress cho gối. Leo núi nhẹ strengthen stabilizer muscles bị bỏ qua trong gym. Những activities này tạo balanced fitness tổng thể — không phải thay thế training, nhưng bổ sung những gì gym không cung cấp.',
+      'Ánh sáng mặt trời và vitamin D: nhiều hoạt động active leisure diễn ra ngoài trời — đặc biệt Thứ 7. Ánh sáng mặt trời trigger serotonin synthesis trực tiếp, đồng thời UVB rays kích thích tổng hợp Vitamin D (quan trọng cho muscle function, bone density và mood regulation). 20–30 phút nắng trực tiếp trên da (không kem chống nắng) là đủ để trigger Vitamin D synthesis.',
+      'Kết thúc tuần deload ở mức energy cao: active leisure Thứ 7 nên kết thúc với bạn cảm thấy có năng lượng cao, mentally fresh và "ready to train again". Nếu sau tuần deload bạn không cảm thấy muốn tập lại — deload chưa đủ dài hoặc có vấn đề khác (thiếu ngủ, nutrition kém, stress cao). Thông thường, sau Thứ 7 active leisure, cảm giác "không thể chờ đợi đến Thứ 2 để tập lại" là phản ứng bình thường và lành mạnh.',
+    ],
+    points: [
+      { icon: '😊', label: 'Vui là chỉ số thành công duy nhất', note: 'Không sets/reps/targets — kết thúc cảm thấy "vui và refreshed" = thành công' },
+      { icon: '🧪', label: 'Dopamine từ intrinsic motivation', note: 'Hoạt động vì thích (không vì PR) reset motivation system sau weeks of grind' },
+      { icon: '🌞', label: '20–30 phút nắng = Vitamin D', note: 'UVB trigger tổng hợp D3, serotonin tăng trực tiếp — mood benefits ngoài trời > indoor' },
+      { icon: '🤝', label: 'Xã hội tăng oxytocin + serotonin', note: 'Tập cùng người khác tạo social bond — "exercise with friends is better medicine"' },
+    ],
+  },
+  {
+    day: 'CN', icon: '🌙', type: 'Nghỉ hoàn toàn', detail: 'Ngủ đủ giấc, chuẩn bị tinh thần tuần mới', intensity: 'rest',
+    color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Chủ Nhật — Nghỉ Ngơi & Chuẩn Bị Tinh Thần',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chủ nhật cuối tuần deload là ngày quan trọng nhất để mental preparation cho mesocycle mới. Nghỉ hoàn toàn, ngủ đủ giấc (8–9h) và dành thời gian để review training log, set goals mới cho mesocycle tiếp theo. Mindset entering a new mesocycle sau deload quyết định phần lớn chất lượng của mesocycle đó — arrive mentally prepared và physically fresh là combination tối ưu.',
+    detail: 'Chủ nhật là ngày transition — kết thúc deload week và bắt đầu chuẩn bị tâm lý cho tuần tập mới. Không phải ngày tập, không phải ngày hoàn toàn idle — mà là ngày để "nạp tinh thần" có chủ đích.',
+    details: [
+      'Sleep Chủ nhật và hormone reset: ngủ đủ giấc đêm Thứ 7 sang Chủ nhật là quan trọng nhất của cả tuần deload. Sau 6 ngày recovery, cơ thể sẵn sàng cho deep sleep tối ưu — GH release đạt peak, testosterone synthesis diễn ra, cortisol được normalize hoàn toàn. Mục tiêu: 8–9h không alarm (nếu có thể), dậy khi tự nhiên thức giấc. Đây là dấu hiệu cơ thể đã recovered đủ.',
+      'Review training log: trước khi bắt đầu mesocycle mới, dành 20–30 phút review log của mesocycle vừa kết thúc. Những câu hỏi cần trả lời: volume nào work tốt nhất? Bài tập nào cho progress nhiều nhất? Week nào cảm thấy tốt nhất? Điều gì nên làm khác đi? Insights từ review này trực tiếp inform programming của mesocycle mới.',
+      'Goal setting cho mesocycle mới: sau review, set 1–3 goals cụ thể và measurable cho mesocycle tới. Không phải "tập chăm hơn" — mà là "Squat 5kg thêm vào tuần 6", "Tăng volume bench từ 12 lên 16 sets/tuần" hay "Maintain bodyweight trong khi tăng strength". Specific, Measurable, Achievable, Relevant, Time-bound (SMART) goals.',
+      'Meal prep Chủ nhật: chuẩn bị thực phẩm cho tuần mới trong ngày nghỉ. Đặc biệt quan trọng là protein sources cho tuần tập mới — mesocycle đầu tiên sau deload thường cần protein cao để hỗ trợ supercompensation. Meal prep giảm friction của tuần tập: không cần suy nghĩ về ăn gì khi đang mệt sau tập.',
+      'Visualization và mental rehearsal: trước khi ngủ đêm Chủ nhật, dành 5–10 phút visualization — hình dung cụ thể buổi tập Thứ 2 tới. Warm-up như thế nào, tạ sẽ tập, form của squat hay deadlift. Mental rehearsal kích hoạt cùng neural pathways như thực sự tập — giúp bắt đầu tuần mới với confidence cao hơn.',
+      'Mindset shift: sau tuần deload, cơ thể và tâm trí nên ở trạng thái "hungry to train" — muốn tập lại sau 1 tuần nhẹ. Nếu cảm thấy lo lắng về việc "đã mất gains" hay "đã yếu đi" — nhắc nhở bản thân rằng deload effect thường cho performance tăng 3–8% ngay trong tuần đầu sau deload. Trust the process.',
+    ],
+    points: [
+      { icon: '😴', label: 'Ngủ tự nhiên — không alarm', note: 'Dậy khi tự nhiên tỉnh = cơ thể báo hiệu đã recovered đủ để bắt đầu lại' },
+      { icon: '📓', label: 'Review log 20–30 phút', note: 'Volume/bài tập nào hiệu quả? Insights này define programming cho mesocycle mới' },
+      { icon: '🎯', label: '1–3 SMART goals cho mesocycle mới', note: '"Squat +5kg tuần 6" > "tập chăm hơn" — cụ thể và đo được thúc đẩy hơn' },
+      { icon: '🧘', label: 'Visualization trước ngủ = confidence', note: 'Hình dung buổi Thứ 2 kích hoạt neural pathways — bắt đầu tuần với sẵn sàng cao hơn' },
+    ],
+  },
 ];
 
 const INTENSITY_COLOR = { light: '#f97316', 'very-light': '#10b981', rest: '#6b7280' };
@@ -531,6 +678,7 @@ const INTENSITY_COLOR = { light: '#f97316', 'very-light': '#10b981', rest: '#6b7
 export default function LifestyleDeloadPage() {
   const [methodIdx, setMethodIdx] = useState(null);
   const [frequencyIdx, setFrequencyIdx] = useState(null);
+  const [deloadDayIdx, setDeloadDayIdx] = useState(null);
   const [whyIdx, setWhyIdx] = useState(null);
   const [signalIdx, setSignalIdx] = useState(null);
 
@@ -678,11 +826,14 @@ export default function LifestyleDeloadPage() {
       {/* Sample deload week */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẫu Tuần Deload</h2>
-        <p className="text-muted text-lg mb-6">Kế hoạch 7 ngày cho người tập 4–5 buổi/tuần (Giảm Volume).</p>
+        <p className="text-muted text-lg mb-6">Kế hoạch 7 ngày cho người tập 4–5 buổi/tuần (Giảm Volume). Click để xem lý do khoa học.</p>
         <div className="space-y-2">
           {DELOAD_WEEK.map((d, i) => (
-            <div key={i} className="flex items-center gap-4 rounded-xl p-3 border border-border bg-surface hover:border-opacity-30 transition-colors" style={{ borderColor: d.intensity !== 'rest' ? `rgba(${RGB},0.1)` : undefined }}>
-              <div className="w-16 text-base font-bold text-center shrink-0" style={{ color: COLOR }}>{d.day}</div>
+            <div key={i}
+              className="flex items-center gap-4 rounded-xl p-3 border cursor-pointer transition-all duration-200 hover:scale-[1.01] hover:shadow-md"
+              style={{ borderColor: `rgba(${d.rgb},0.2)`, background: `rgba(${d.rgb},0.04)` }}
+              onClick={() => setDeloadDayIdx(i)}>
+              <div className="w-16 text-base font-bold text-center shrink-0" style={{ color: d.color }}>{d.day}</div>
               <div className="w-2 h-2 rounded-full shrink-0" style={{ background: INTENSITY_COLOR[d.intensity] }} />
               <div className="flex-1">
                 <div className="text-lg font-medium text-text">{d.type}</div>
@@ -691,6 +842,8 @@ export default function LifestyleDeloadPage() {
               <div className="text-base px-2 py-0.5 rounded-full font-bold shrink-0" style={{ background: `${INTENSITY_COLOR[d.intensity]}20`, color: INTENSITY_COLOR[d.intensity] }}>
                 {d.intensity === 'light' ? 'Nhẹ' : d.intensity === 'very-light' ? 'Rất nhẹ' : 'Nghỉ'}
               </div>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
+                style={{ color: d.color, background: `rgba(${d.rgb},0.12)` }}>→</span>
             </div>
           ))}
         </div>
@@ -723,6 +876,20 @@ export default function LifestyleDeloadPage() {
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>
+
+      {/* ── Deload day modal — outside all RevealBlocks ── */}
+      {deloadDayIdx !== null && (
+        <DeloadModal
+          item={DELOAD_WEEK[deloadDayIdx]}
+          idx={deloadDayIdx}
+          total={DELOAD_WEEK.length}
+          onClose={() => setDeloadDayIdx(null)}
+          onPrev={() => setDeloadDayIdx(i => Math.max(0, i - 1))}
+          onNext={() => setDeloadDayIdx(i => Math.min(DELOAD_WEEK.length - 1, i + 1))}
+          hasPrev={deloadDayIdx > 0}
+          hasNext={deloadDayIdx < DELOAD_WEEK.length - 1}
+        />
+      )}
 
       {/* ── Frequency modal — outside all RevealBlocks ── */}
       {frequencyIdx !== null && (

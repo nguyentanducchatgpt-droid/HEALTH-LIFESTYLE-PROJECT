@@ -390,14 +390,182 @@ const ENV_ZONES = [
 ];
 
 const QUICK_WINS = [
-  { icon: '🔲', title: 'Cất điện thoại khỏi phòng ngủ', impact: 'Cao', time: '0 phút', cost: 'Miễn phí' },
-  { icon: '💡', title: 'Đèn đọc sách warm white', impact: 'Cao', time: '5 phút', cost: '< 200k' },
-  { icon: '🌿', title: 'Mua 1 cây trồng chậu nhỏ', impact: 'Trung bình', time: '15 phút', cost: '< 100k' },
-  { icon: '🎧', title: 'Nút tai chống ồn', impact: 'Cao', time: '0 phút', cost: '< 50k' },
-  { icon: '💧', title: 'Ly nước đặt sẵn bên giường', impact: 'Trung bình', time: '0 phút', cost: 'Miễn phí' },
-  { icon: '📦', title: 'Hộp đựng dây cáp, đồ lặt vặt', impact: 'Trung bình', time: '30 phút', cost: '< 100k' },
-  { icon: '🌡️', title: 'Máy đo nhiệt độ phòng ngủ', impact: 'Cao', time: '0 phút', cost: '< 200k' },
-  { icon: '🔅', title: 'Cài Night Mode tự động 20:00', impact: 'Cao', time: '2 phút', cost: 'Miễn phí' },
+  {
+    icon: '🔲', title: 'Cất điện thoại khỏi phòng ngủ', impact: 'Cao', time: '0 phút', cost: 'Miễn phí',
+    color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Cất Điện Thoại Khỏi Phòng Ngủ — Thay Đổi Đơn Giản Nhất, Tác Động Lớn Nhất',
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Điện thoại trong phòng ngủ gây hại theo 3 cơ chế độc lập: (1) ánh sáng xanh ức chế melatonin, (2) notifications gây micro-arousals làm gián đoạn giấc ngủ sâu, (3) temptation to check kéo dài giờ vào giường trễ. Cất điện thoại ra phòng khác là thay đổi duy nhất loại bỏ cả 3 cơ chế — không tốn tiền, không tốn thời gian, chỉ cần một quyết định.',
+    detail: 'Đây là ví dụ Friction Design hoàn hảo nhất: thêm 20–30 giây (đi lấy điện thoại từ phòng khác) giảm 40–60% tần suất check điện thoại đêm khuya và sáng sớm. Không cần willpower — môi trường làm việc thay bạn.',
+    details: [
+      'Blue light và melatonin suppression: màn hình điện thoại phát ánh sáng xanh (450–490nm) — bước sóng nhạy nhất với ipRGC (intrinsically photosensitive retinal ganglion cells). Chỉ 1–2 giờ tiếp xúc ánh sáng xanh buổi tối ức chế melatonin 50–80%, làm trễ onset giấc ngủ 1–3 tiếng. Night mode/warm filter giảm nhưng không loại bỏ hoàn toàn — giải pháp duy nhất là không dùng điện thoại sau 21:00.',
+      'Sleep fragmentation từ notifications: dù tắt tiếng, notifications (đèn nhấp nháy, rung nhẹ) gây micro-arousals — não chuyển lên lighter sleep stages để process tín hiệu. Nghiên cứu 2017 (University of Michigan) cho thấy chỉ có điện thoại trong phòng (dù không bật) liên quan đến sleep fragmentation đo được bằng polysomnography. Brain "monitors" thiết bị ngay cả khi ngủ.',
+      'Sleep onset delay — "just one more scroll": dopamine loop của social media/video khiến "1 phút" thành 45 phút. Mỗi video/post thú vị là variable reward kích hoạt dopamine — brain muốn thêm. Người để điện thoại trong phòng trung bình đi ngủ trễ hơn 47 phút so với người để ngoài (JAMA Pediatrics, 2019 — dù nghiên cứu ở teen, pattern tương tự ở người lớn).',
+      'Morning phone check và reactive mindset: 68% người check điện thoại trong 10 phút đầu sau thức (Deloitte survey). Kiểm tra điện thoại sáng sớm (trước khi PFC fully activate) đặt não vào reactive mode — xử lý notifications, emails, social comparison trước khi có bất kỳ intention cho ngày. Cất điện thoại phòng khác = không thể check ngay khi thức = bảo vệ "golden hour" buổi sáng.',
+      'Đồng hồ báo thức thay thế: lý do biện hộ phổ biến nhất cho việc giữ điện thoại trong phòng là "cần báo thức". Một đồng hồ báo thức vật lý (loại cơ hoặc digital, giá 50–100k) loại bỏ hoàn toàn lý do này. Đầu tư nhỏ nhất với ROI giấc ngủ cao nhất: 100k đổi lại 6–12 tháng ngủ tốt hơn mỗi đêm.',
+      'Nghiên cứu thực địa về bedroom phone removal: một RCT 2020 (Sleep Medicine) yêu cầu participants để điện thoại ngoài phòng ngủ 4 tuần. Kết quả: sleep duration tăng trung bình 43 phút/đêm, sleep quality (Pittsburgh Sleep Quality Index) cải thiện có ý nghĩa, morning mood tốt hơn đáng kể so với control group. Không có can thiệp nào khác — chỉ thay đổi vị trí điện thoại.',
+    ],
+    points: [
+      { icon: '😴', label: '+43 phút ngủ mỗi đêm', note: 'RCT: chỉ cần cất điện thoại ra phòng khác — không có can thiệp nào khác' },
+      { icon: '📵', label: 'Micro-arousals ngay cả khi tắt tiếng', note: 'Brain monitors thiết bị khi ngủ — notification nhỏ đủ phá vỡ deep sleep' },
+      { icon: '⏰', label: 'Đồng hồ 100k = giải pháp hoàn hảo', note: 'Loại bỏ lý do "cần báo thức" — đầu tư nhỏ nhất, ROI giấc ngủ cao nhất' },
+      { icon: '🌅', label: 'Bảo vệ golden hour buổi sáng', note: 'Không thể check ngay khi thức = PFC warm-up tự nhiên, morning routine proactive' },
+    ],
+  },
+  {
+    icon: '💡', title: 'Đèn đọc sách warm white', impact: 'Cao', time: '5 phút', cost: '< 200k',
+    color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Đèn Warm White — Ánh Sáng Đúng Giờ Bảo Vệ Giấc Ngủ',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ánh sáng buổi tối ảnh hưởng giấc ngủ qua màu sắc (color temperature), không phải chỉ độ sáng. Ánh sáng trắng lạnh (5000–6500K, cool white) giàu blue light → ức chế melatonin mạnh. Ánh sáng vàng ấm (2200–3000K, warm white/amber) có ít blue light → ít ức chế melatonin. Thay bóng đèn phòng ngủ/đèn bàn sang warm white (<3000K) là thay đổi infrastructure một lần — không cần nhớ làm gì mỗi tối.',
+    detail: 'Đọc sách vật lý dưới đèn warm white là hoạt động tối lý tưởng: không có blue light từ màn hình, không có dopamine loops từ apps, nội dung có closure (sách có kết), và thường gây buồn ngủ tự nhiên sau 20–30 phút.',
+    details: [
+      'Color temperature và melatonin: đơn vị Kelvin (K) đo color temperature của ánh sáng — cao hơn = trắng lạnh hơn = giàu blue light hơn. Bóng đèn LED cool white phòng khách (4000–6500K) ức chế melatonin gần như mạnh bằng ánh sáng ban ngày. Warm white LED (2200–2700K) có phổ gần nến/mặt trời lúc hoàng hôn — ánh sáng não bộ tiến hóa liên kết với "sắp tối, chuẩn bị ngủ".',
+      'Lux và thời điểm: độ sáng (lux) cũng quan trọng. Overhead lighting 300–500 lux tối lý tưởng nên giảm xuống <50 lux sau 20:00. Đèn đọc sách (chiếu cục bộ, không overhead) tự nhiên tạo ambient light thấp hơn. Combination: warm white (<3000K) + low lux (<50) + cục bộ (không overhead) = minimal melatonin suppression.',
+      'Đọc sách vs màn hình: đọc sách vật lý không phát light — nó reflect ánh sáng ambient (warm, low lux). E-ink readers (Kindle không backlit) tương tự. iPad/tablet phát light trực tiếp vào mắt dù có night mode. Đọc 20–30 phút trước ngủ với sách vật lý liên quan đến sleep onset nhanh hơn 25% và ít wake-ups hơn (University of Sussex).',
+      'Thói quen đọc và sleep hygiene: đọc sách tạo natural sleep cue — nội dung stimulating nhưng không interactive, không có variable reward loops. Sau 15–20 phút, mắt mỏi, tập trung giảm → buồn ngủ tự nhiên. Ngược với điện thoại (variable reward giữ tỉnh táo vô thời hạn), sách có endpoint tự nhiên (hết chương, mắt mỏi).',
+      'Thiết lập cụ thể: đèn kẹp sách (book clip light) warm white, để cạnh giường, chỉ dùng sau 20:00. Tắt overhead light phòng ngủ → chỉ đèn sách warm white. Sau 30 phút đọc, cơ thể thường ready for sleep tự nhiên. Không cần "cố ngủ" — let the warm light + book do the work.',
+      'Đèn thông minh (smart bulb) và automation: Philips Hue, LIFX, hoặc bóng thông minh Xiaomi cho phép schedule tự động chuyển sang warm white sau 19:00–20:00 mà không cần nhớ. Một lần cài → hàng tối tự động đúng màu. Chi phí 200–500k/bóng nhưng hoàn toàn passive sau khi cài — perfect Friction Design.',
+    ],
+    points: [
+      { icon: '🌡️', label: '<3000K = ít blue light nhất', note: 'Warm white/amber gần phổ nến/hoàng hôn — màu ánh sáng não liên kết với "sắp ngủ"' },
+      { icon: '📖', label: 'Sách vật lý: sleep onset nhanh hơn 25%', note: 'Không phát light, có natural endpoint, không có dopamine loops — hoạt động tối hoàn hảo' },
+      { icon: '💡', label: '<50 lux sau 20:00', note: 'Đèn đọc cục bộ tự nhiên tạo low ambient light — kết hợp với warm white = minimal melatonin suppression' },
+      { icon: '⚙️', label: 'Smart bulb tự động sau 19:00', note: 'Một lần cài schedule → hàng tối passive — không cần nhớ, không cần willpower' },
+    ],
+  },
+  {
+    icon: '🌿', title: 'Mua 1 cây trồng chậu nhỏ', impact: 'Trung bình', time: '15 phút', cost: '< 100k',
+    color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Cây Xanh Trong Nhà — Biophilia Và Sức Khỏe Không Gian Sống',
+    img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Biophilia hypothesis (E.O. Wilson, 1984) cho rằng con người có xu hướng tiến hóa để kết nối với thiên nhiên — bộ não con người tiến hóa trong môi trường tự nhiên hàng triệu năm và vẫn "expect" thiên nhiên xung quanh. Nhìn thấy cây xanh kích hoạt parasympathetic nervous system (rest-and-digest), giảm cortisol measurable, và giảm mental fatigue theo cơ chế Attention Restoration Theory (ART) của Rachel và Stephen Kaplan.',
+    detail: 'Cây trong nhà không chỉ trang trí — chúng tạo micro-environment tâm lý. Attention Restoration Theory giải thích tại sao môi trường thiên nhiên (kể cả chỉ 1 cây nhỏ) giúp phục hồi directed attention sau cognitive fatigue — quan trọng cho người làm việc trí tuệ suốt ngày.',
+    details: [
+      'Attention Restoration Theory (ART): Rachel và Stephen Kaplan (University of Michigan) phân biệt "directed attention" (effort-based focus cho công việc) và "fascination" (effortless attention trong thiên nhiên). Directed attention bị depleted theo giờ làm việc. Thiên nhiên (kể cả cây trong nhà) kích hoạt fascination mode — phục hồi directed attention mà không tốn mental effort. Sau 10–15 phút nhìn cây/thiên nhiên, directed attention được restore đáng kể.',
+      'Cortisol và green space: nghiên cứu của Seung-Yeon Lee (Chung-Ang University) đo cortisol saliva khi nhìn cây trong nhà vs nhìn màn hình. Nhóm cây xanh giảm cortisol 15–20% trong 5 phút. Cây không cần lớn — ngay cả cây nhỏ trên bàn đủ tạo "green micro-dose" có tác dụng. Cơ chế: visual perception của màu xanh lá và organic shapes trigger parasympathetic response.',
+      'NASA Clean Air Study và chất lượng không khí: nghiên cứu NASA 1989 (và validated nhiều lần sau) cho thấy cây trong nhà hấp thu VOCs (volatile organic compounds) như benzene, formaldehyde, toluene từ furniture, paint, cleaning products. Số lượng cần cho 18m² phòng: 6–8 cây loại trung bình. Ngay cả 1–2 cây cũng tạo cải thiện nhỏ về air quality, đặc biệt nếu phòng ít thông khí.',
+      'Cây dễ chăm nhất cho người bận rộn: (1) Lưỡi hổ / Snake plant (Sansevieria): sống trong bóng tối, tưới 2 tuần/lần, lọc không khí tốt nhất NASA. (2) Trầu bà / Pothos: leo, bóng tối, tưới khi đất khô. (3) Xương rồng / Cactus: tưới 1 tháng/lần. (4) ZZ Plant: chịu khô tốt nhất, không cần nhiều ánh sáng. (5) Sơ ri / Peace Lily: thích bóng mát, nở hoa trắng. Tất cả đều < 100k và siêu khó chết.',
+      'Psychological ownership và engagement: chăm sóc cây tạo sense of nurturing và responsibility nhỏ — giúp thiết lập routine (tưới cây) và tạo kết nối với môi trường sống. Research cho thấy người chăm cây thường báo cáo higher sense of control và lower loneliness. Cây là "low-stakes living thing" — không quá demanding như thú cưng, nhưng đủ alive để tạo connection.',
+      'Workplace cây xanh và productivity: meta-analysis 2014 (Exeter University, 2.000 nhân viên văn phòng) cho thấy văn phòng có cây xanh tăng productivity 15%, wellbeing 47%, creativity 45% so với văn phòng không có cây. Chỉ cần 1 cây trong tầm nhìn là đủ cho cải thiện đo được. Nhìn cây khi "stuck" với problem → attention restoration → fresh perspective.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Attention restore sau cognitive fatigue', note: 'ART: thiên nhiên kích hoạt effortless fascination — phục hồi directed attention mà không effort' },
+      { icon: '📉', label: 'Cortisol giảm 15–20% trong 5 phút', note: 'Chỉ cần NHÌN cây nhỏ trên bàn đủ trigger parasympathetic response đo được' },
+      { icon: '💼', label: '+15% productivity, +45% creativity', note: 'Exeter meta-analysis (2.000 người): 1 cây trong tầm nhìn đủ cho cải thiện có ý nghĩa' },
+      { icon: '🌱', label: 'Lưỡi hổ: tưới 2 tuần/lần, siêu bền', note: 'NASA top air purifier — sống được trong bóng tối, gần như không thể chết, <50k' },
+    ],
+  },
+  {
+    icon: '🎧', title: 'Nút tai chống ồn', impact: 'Cao', time: '0 phút', cost: '< 50k',
+    color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Nút Tai Chống Ồn — Kiểm Soát Acoustic Environment',
+    img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tiếng ồn nền (ambient noise) ảnh hưởng cognitive performance ngay cả khi bạn "quen" với nó và không chú ý. Hippocampus — vùng não quan trọng cho memory và learning — đặc biệt nhạy với noise stress: tiếng ồn không đoán được (unpredictable noise) gây cortisol spike và impair memory formation. Nút tai xốp (foam earplugs, giá 20–50k/cặp) giảm âm thanh 25–33 dB — đủ để loại bỏ hầu hết ambient noise trong nhà và văn phòng.',
+    detail: 'Không cần ANC (active noise cancellation) đắt tiền — foam earplugs đơn giản hiệu quả hơn cho deep work và ngủ. Không có electronics, không cần sạc, không có latency, giảm noise nhiều hơn hầu hết ANC headphones ở mid-range.',
+    details: [
+      'Cognitive performance và noise: nghiên cứu của Cornell (Evans & Johnson, 2000) cho thấy nhân viên văn phòng open-plan (có noise nền) có elevated cortisol, giảm motivation to persist on challenges, và ít ergonomic adjustments (giảm adapting to environment). Quan trọng nhất: participants KHÔNG NHẬN THỨC được noise đang ảnh hưởng họ — chứng minh noise gây harm dưới ngưỡng conscious perception.',
+      'Unpredictable noise vs constant noise: não có cơ chế habituation với constant noise (fan, white noise) — eventually tune it out. Nhưng với unpredictable noise (tiếng người nói chuyện, xe cộ, notifications), não không thể fully habituate — phải liên tục "check" tín hiệu mới. Đây là lý do tiếng người nói chuyện (speech-modulated noise) phá concentration nhiều nhất.',
+      'Inhibitory spillover effect: khi đang cố ngủ, tiếng ồn gây arousal responses — não activate để process tiếng ồn dù bạn cố ignore. Nút tai khi ngủ giảm sleep latency (thời gian từ nằm xuống đến ngủ) trung bình 15–20 phút theo nghiên cứu ICU noise (tương tự nhà ở VN gần đường phố). Đặc biệt hữu ích giai đoạn sleep onset và early morning khi giấc ngủ nhẹ hơn.',
+      'Foam earplugs vs ANC headphones: foam earplugs (NRR 32–33 dB) thực sự giảm noise nhiều hơn hầu hết ANC headphones mid-range (hiệu quả 15–25 dB tùy tần số). ANC tốt hơn cho low-frequency noise (engine hum); foam tốt hơn cho broad-spectrum ambient noise. Foam không cần sạc, không có microphone leakage, không có pressure sensation của ANC, và chi phí 20–50k thay vì 2–5 triệu.',
+      'Deep work và acoustic environment: Cal Newport (Deep Work) nhấn mạnh "monk mode" — môi trường không gián đoạn cho intense focused work. Nút tai là thiết bị đơn giản nhất để tạo monk mode ngay lập tức, bất kỳ đâu. Khi đeo nút tai, bạn còn tạo visual signal cho người xung quanh "đang tập trung, không làm phiền" — double benefit.',
+      'Acoustic và sức khỏe dài hạn: WHO (2011) ước tính tiếng ồn giao thông đô thị ở châu Âu gây mất 1 triệu năm healthy life/năm do sleep disturbance và cardiovascular effects. Tiếp xúc chronic noise (>55 dB ban đêm) liên quan đến tăng risk cardiovascular disease, hypertension, và cognitive decline. Nút tai không chỉ improve productivity — còn là health protection measure.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Noise hại cognitive dưới conscious perception', note: 'Cornell: nhân viên không biết noise đang ảnh hưởng — cortisol tăng, motivation giảm đo được' },
+      { icon: '😴', label: 'Sleep latency giảm 15–20 phút', note: 'Ít tín hiệu arousal trong giai đoạn sleep onset — đặc biệt quan trọng ở VN gần đường phố' },
+      { icon: '💰', label: 'Foam 50k > ANC 5 triệu cho noise reduction', note: 'NRR 33 dB foam earplugs thường giảm noise nhiều hơn mid-range ANC headphones' },
+      { icon: '🚫', label: 'Unpredictable speech noise = worst for focus', note: 'Não không thể habituate tiếng người — nút tai loại bỏ loại noise phá concentration nhất' },
+    ],
+  },
+  {
+    icon: '💧', title: 'Ly nước đặt sẵn bên giường', impact: 'Trung bình', time: '0 phút', cost: 'Miễn phí',
+    color: '#3b82f6', rgb: '59,130,246',
+    modalTitle: 'Ly Nước Bên Giường — Friction Design Cho Hydration Sáng',
+    img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sau 7–9h ngủ không uống nước, cơ thể mất 0.5–1L qua hơi thở, mồ hôi và tiểu đêm, dẫn đến mild dehydration (1–2% body weight). Nghiên cứu cho thấy chỉ 1% dehydration giảm concentration 12%, short-term memory đo được, và làm tasks feel harder (subjective effort tăng). Ly nước 500ml bên giường = friction gần 0 — vươn tay là uống, trước khi fully conscious, trước bất kỳ quyết định nào khác buổi sáng.',
+    detail: 'Đây là ví dụ Friction Design đơn giản nhất với ROI cao nhất: chuẩn bị tối hôm trước (10 giây) → thói quen tự động sáng hôm sau (vươn tay uống ngay khi thức). Sau 2–3 tuần, trở thành reflex không cần nghĩ.',
+    details: [
+      'Dehydration sáng và cognitive function: khi thức dậy, plasma osmolality (nồng độ chất hòa tan trong máu) cao hơn mức tối ưu do mất nước qua hơi thở và không uống 8h. Brain tissue 73% nước — ngay cả 1–2% dehydration gây brain "shrink" tạm thời, tăng cortisol stress response, và làm neural transmission chậm hơn. Uống nước sáng sớm là cách nhanh nhất restore cellular hydration.',
+      'Adenosine clearance: adenosine là hóa chất "buồn ngủ" tích lũy suốt ngày thức và được metabolize khi ngủ. Sau 8h ngủ, adenosine vẫn còn residual trong bloodstream cần được cleared qua kidney. Hydration giúp renal clearance hoạt động hiệu quả hơn — một phần lý do uống nước sáng sớm giúp tỉnh táo. Caffeine hoạt động bằng cách block adenosine receptors; nước hoạt động bằng cách flush adenosine — complementary mechanisms.',
+      'Metabolism activation: uống 500ml nước lạnh sáng sớm tăng metabolic rate ~30% trong 30–40 phút theo nghiên cứu (Journal of Clinical Endocrinology & Metabolism, 2003). Cơ thể phải "warm up" nước lạnh để đạt body temperature — thermogenesis nhỏ nhưng có ý nghĩa. Nước ấm không có hiệu ứng thermogenesis này nhưng gentler cho hệ tiêu hóa — chọn theo preference.',
+      'Lymphatic system kickstart: lymphatic system không có pump như tim — nó di chuyển qua muscle contractions và hydration pressure. Sau 8h nằm không vận động, lymph fluid stagnant. Uống nước + nhẹ nhàng vươn vai/vận động giúp kickstart lymph circulation — quan trọng cho detox, immune cell distribution, và giảm morning puffiness (sưng mặt sáng).',
+      'Electrolyte enhancement: thêm pinch of Himalayan salt (≈1/8 tsp) hoặc squeeze chanh vào ly nước sáng tăng electrolyte content — giúp nước được absorbed vào tế bào thay vì qua kidney ngay. Electrolytes (sodium, potassium, magnesium) cần thiết cho neural function và muscle contraction. Không cần sport drinks — pinch of salt là đủ và chi phí gần 0.',
+      'Habit stacking: ly nước bên giường là anchor habit — trigger automatic behavior: (1) thức dậy → (2) vươn tay → (3) uống 500ml → (4) ngồi dậy. Habit stacking (James Clear) gắn thói quen mới vào action hiện có. "Ngay sau khi thức dậy (trigger), tôi uống ly nước bên giường (routine)" — không cần nhớ, không cần motivation, ly nước ở đó nhắc bạn.',
+    ],
+    points: [
+      { icon: '🧠', label: '1% dehydration = -12% concentration', note: 'Mild dehydration sau ngủ ảnh hưởng cognitive performance trước bất kỳ task nào buổi sáng' },
+      { icon: '⚗️', label: 'Flush adenosine qua kidney', note: 'Nước giúp clear "sleepiness chemical" hiệu quả hơn — complementary với cơ chế caffeine' },
+      { icon: '🔥', label: '+30% metabolic rate với nước lạnh', note: 'Thermogenesis nhỏ để warm up nước — bonus metabolism kick cùng với hydration benefits' },
+      { icon: '🧂', label: 'Pinch of salt = electrolyte upgrade miễn phí', note: 'Sodium giúp nước vào tế bào thay vì qua kidney ngay — absorption tốt hơn, không cần sport drink' },
+    ],
+  },
+  {
+    icon: '📦', title: 'Hộp đựng dây cáp, đồ lặt vặt', impact: 'Trung bình', time: '30 phút', cost: '< 100k',
+    color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: 'Hộp Đựng Dây Cáp — Giải Phóng Cognitive Load Từ Clutter',
+    img: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Dây cáp rối, đồ lặt vặt vô mục đích trên bàn là ví dụ điển hình của "cognitive clutter" — môi trường hỗn loạn mà não phải liên tục process ở background. Princeton University Neuroscience Institute cho thấy clutter cạnh tranh visual cortex, làm giảm ability to focus và process information. Một hộp đựng gọn gàng không chỉ "trông đẹp hơn" — nó giải phóng cognitive resources đang bị tiêu thụ vô ích.',
+    detail: 'Hộp đựng là giải pháp 30 phút, một lần, vĩnh viễn — sau khi thiết lập, mỗi lần cất đồ vào hộp chỉ cần 5 giây. So với dây cáp rối mà bạn phải "process" mỗi lần nhìn vào bàn làm việc suốt 8h.',
+    details: [
+      'Pre-attentive processing và visual noise: não xử lý visual environment song song ở nhiều cấp độ — conscious attention chỉ là một phần nhỏ. Pre-attentive processing (automatic, không cần effort) liên tục scan và categorize mọi thứ trong visual field. Dây cáp rối, đồ lặt vặt = nhiều objects não phải process và decide "không liên quan" → suppress. Nhiều objects = nhiều suppression cycles = cognitive drain không nhận ra.',
+      'Zeigarnik effect và open loops: não có xu hướng nhớ incomplete tasks và "ping" chúng liên tục (Bluma Zeigarnik, 1927). Đồ vật không có chỗ cố định là "open loops" — não implicit nhận ra "chưa được xử lý/cất đúng chỗ" và generate nhẹ nhàng nhưng liên tục background anxiety. Mỗi vật có chỗ cố định = closed loop = giảm background mental noise.',
+      'Thiết lập hệ thống một lần, benefit mãi mãi: khác với dọn bàn (cần làm lại mỗi ngày), mua hộp đựng và thiết lập system là one-time effort. Sau khi mọi thứ có "home", cất đồ sau khi dùng chỉ cần 5 giây — không cần decide "để đây hay để đâu". Decision fatigue giảm mỗi ngày từ đó.',
+      'Cable management cụ thể: (1) Velcro cable ties hoặc binder clips gộp dây cáp theo nhóm. (2) Hộp có ngăn (organizer box) cho: tai nghe, sạc, adapter, pin dự phòng. (3) Labeled drawers: không cần nhớ, chỉ cần đọc label. (4) Cable clips dán vào cạnh bàn để routing cáp gọn. Chi phí tổng: 50–200k từ Daiso, Muji, hoặc Shopee.',
+      'Minimalism và decision fatigue: Steve Jobs mặc cùng một outfit mỗi ngày, Barack Obama chỉ mặc navy/grey suits — không phải quirk, mà là deliberate decision fatigue reduction. Mỗi quyết định nhỏ (để dây này đâu, cái này đâu) tiêu thụ mental bandwidth cùng pool với quyết định quan trọng. Môi trường gọn gàng = ít micro-decisions = nhiều bandwidth cho thứ quan trọng hơn.',
+      'Maintenance system: hệ thống chỉ bền nếu cất đồ dễ như (hoặc dễ hơn) để bừa. Golden rule: "If it takes less than 5 seconds to put away, do it now." Hộp không nên có nắp phức tạp, hộp nên ở vị trí tiện tay, không cần gấp/xếp — chỉ cần thả vào. Friction Design cho cất đồ: càng dễ cất → càng ít bừa → môi trường luôn gọn.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Clutter = cognitive drain trên fMRI', note: 'Princeton: visual clutter cạnh tranh visual cortex — não process bất kể bạn chú ý hay không' },
+      { icon: '🔄', label: 'Zeigarnik: đồ vô chỗ = open loops stress', note: 'Não implicit track items without "home" — background anxiety không nhận ra từ đồ lặt vặt' },
+      { icon: '⚡', label: 'One-time setup, lifetime benefit', note: 'Khác với dọn bàn hàng ngày — thiết lập system một lần, cất đồ 5 giây mỗi lần' },
+      { icon: '🎯', label: 'Ít micro-decisions = nhiều bandwidth', note: 'Jobs/Obama uniform principle: đồ có chỗ cố định → không cần decide → nhiều capacity cho thứ quan trọng' },
+    ],
+  },
+  {
+    icon: '🌡️', title: 'Máy đo nhiệt độ phòng ngủ', impact: 'Cao', time: '0 phút', cost: '< 200k',
+    color: '#0ea5e9', rgb: '14,165,233',
+    modalTitle: 'Máy Đo Nhiệt Độ — Biết Số Liệu Để Tối Ưu Giấc Ngủ',
+    img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhiệt độ phòng ngủ lý tưởng cho người lớn là 16–19°C theo National Sleep Foundation — lạnh hơn hầu hết mọi người nghĩ. Vấn đề: không ai biết phòng mình thực sự bao nhiêu độ. Máy đo nhiệt độ/độ ẩm mini (Xiaomi, 150–200k) cung cấp real-time data chính xác — bước đầu tiên để optimize là BIẾT baseline hiện tại là gì. Không thể cải thiện điều không đo được.',
+    detail: 'Nhiều người ngủ trong phòng 26–28°C nghĩ mình ngủ "ổn" nhưng không biết mình đang miss 30–40% deep sleep. Máy đo nhiệt độ là data tool — sau khi có data, bạn có thể thực sự làm điều gì đó với nó.',
+    details: [
+      'Core body temperature và sleep stages: giấc ngủ sâu (slow-wave sleep, N3) xảy ra khi core body temperature (CBT) đạt đáy. Não cần giảm CBT ~1–2°C từ đỉnh ban ngày để enter deep sleep. Phòng lạnh giúp quá trình giảm CBT xảy ra nhanh hơn và sâu hơn — phòng nóng làm CBT không giảm đủ, deep sleep giảm. Đây là cơ chế sinh học giải thích tại sao nhiệt độ phòng có impact lớn đến sleep quality.',
+      'REM sleep và nhiệt độ: não không regulate nhiệt độ trong REM sleep (giống cold-blooded animal trong REM). Trong phòng quá nóng, REM sleep giảm đáng kể vì core temp không được regulate. REM sleep quan trọng cho emotional processing, memory consolidation và creativity. Phòng nóng không chỉ giảm deep sleep — còn ảnh hưởng REM, làm giảm emotional stability và cognitive function ngày hôm sau.',
+      'Độ ẩm và sleep quality: máy đo combo (nhiệt độ + độ ẩm) cũng cho thấy humidity — quan trọng không kém. Độ ẩm lý tưởng: 40–60%. <30%: niêm mạc khô, ho, thức giữa đêm. >70%: cảm giác nóng bức dù nhiệt độ thấp, dễ moldy. Ở VN mùa hè, phòng có thể 28°C + 85% humidity — combination tệ nhất cho giấc ngủ.',
+      'Data-driven sleep optimization: Xiaomi/Mijia Bluetooth thermometer hygrometer (150–200k) log data theo thời gian, sync với app — bạn có thể thấy nhiệt độ phòng thay đổi như thế nào trong đêm. Nhiều người phát hiện phòng tăng nhiệt 2–3°C lúc 2–4 sáng khi máy lạnh tắt timer — giải thích tại sao hay thức lúc 3–4 sáng không rõ lý do.',
+      'Cooling strategies không tốn tiền: nếu không có máy lạnh hoặc muốn tiết kiệm điện: (1) Quạt hướng vào cửa sổ đêm (draw cool air in). (2) Túi nước đá dưới chân giường (feet cooling = core temp giảm nhanh hơn). (3) Màn cửa dày để chặn nhiệt ban ngày. (4) Tắt tất cả electronics phát nhiệt trong phòng. (5) Ga trải giường cotton nhẹ (không dùng fleece mùa hè).',
+      'Sleep temperature tracking và improvement: sau khi biết nhiệt độ phòng qua máy đo, set target: giảm 1–2°C so với hiện tại (nếu >22°C). Nhiều người giảm nhiệt độ phòng từ 26°C → 22°C báo cáo sleep quality cải thiện đáng kể trong 1–2 tuần đầu. Oura Ring, Withings và các sleep trackers khác cũng measure skin temperature — nhưng room thermometer là bước đầu tiên và rẻ nhất.',
+    ],
+    points: [
+      { icon: '🌡️', label: '16–19°C = sweet spot giấc ngủ', note: 'Lạnh hơn hầu hết mọi người nghĩ — và hầu hết không biết phòng mình thực sự bao nhiêu độ' },
+      { icon: '📊', label: 'Không thể optimize điều không đo được', note: '150–200k đổi lại data chính xác — bước đầu tiên của bất kỳ improvement nào là biết baseline' },
+      { icon: '😴', label: 'Phòng nóng = giảm deep sleep + REM', note: 'CBT không giảm đủ → ít N3 (deep sleep); não không regulate nhiệt trong REM → REM giảm' },
+      { icon: '💧', label: 'Độ ẩm 40–60% cũng quan trọng', note: 'Humidity cao (>70%) ở VN mùa hè gây nóng bức dù nhiệt thấp — máy đo combo cho cả hai số' },
+    ],
+  },
+  {
+    icon: '🔅', title: 'Cài Night Mode tự động 20:00', impact: 'Cao', time: '2 phút', cost: 'Miễn phí',
+    color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Night Mode Tự Động — Passive Protection Cho Giấc Ngủ Tối',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Night mode (màu ấm/amber cho màn hình) filter blue light (450–490nm) — bước sóng ức chế melatonin mạnh nhất. Schedule tự động lúc 20:00 là Friction Design hoàn hảo: thay đổi xảy ra passive, không cần nhớ, không cần willpower. Thiết lập một lần (2 phút) → bảo vệ melatonin production mỗi tối mãi mãi. Không perfect như tắt màn hình hoàn toàn, nhưng tốt hơn rất nhiều so với màn hình trắng lạnh lúc 22:00.',
+    detail: 'Night mode không thể thay thế việc tắt màn hình hoàn toàn sau 21:00, nhưng là backstop quan trọng: cho những ngày không thể tránh dùng màn hình buổi tối, night mode giảm thiệt hại đáng kể. Passive protection > active willpower.',
+    details: [
+      'Blue light và melatonin: võng mạc có tế bào cảm quang đặc biệt (ipRGC) chứa melanopsin — cực kỳ nhạy với ánh sáng xanh 480nm. Ban đêm, khi ánh sáng xanh hit ipRGC, não nhận tín hiệu "còn ban ngày" → ức chế pineal gland → giảm melatonin. Màn hình điện thoại/laptop phát ánh sáng xanh đáng kể ngay cả ở độ sáng thấp. Night mode giảm blue light output 30–80% tùy mức độ, giúp melatonin production ít bị gián đoạn hơn.',
+      'Schedule timing quan trọng: lý tưởng nhất là bắt đầu 2–3h trước giờ ngủ dự định. Nếu ngủ 23:00, set night mode từ 20:00–20:30. Melatonin onset tự nhiên xảy ra ~2h trước sleep time — cần bảo vệ window này. 20:00 schedule đủ early cho hầu hết people với sleep time 22:00–23:30.',
+      'Cài đặt cụ thể trên các thiết bị: iOS: Settings → Display & Brightness → Night Shift → Scheduled (sunset to sunrise hoặc custom 20:00–07:00), intensity cao nhất (most warm). Android: Settings → Display → Night Light hoặc Blue Light Filter → Schedule. macOS: System Preferences → Displays → Night Shift. Windows: Settings → System → Display → Night Light. Tất cả đều miễn phí, built-in.',
+      'Blue light glasses như alternative: blue light blocking glasses (kính filter blue light) có thể đeo khi dùng màn hình buổi tối — option cho người không muốn thay đổi màu màn hình. Amber-tinted glasses (đỏ/vàng đậm) hiệu quả hơn clear "blue light glasses" thông thường. Nghiên cứu University of Toronto (2015) cho thấy amber glasses đêm cải thiện sleep quality tương đương với không có bright light exposure.',
+      'Kết hợp với dim lighting: night mode trên màn hình + giảm độ sáng màn hình xuống 30–40% + tắt overhead lights (dùng đèn warm white floor lamp) là combination mạnh nhất. Ba lớp bảo vệ: màu ánh sáng (warm) + độ sáng (thấp) + nguồn ánh sáng (cục bộ, không overhead). Tổng chi phí: setup 2 phút + bóng warm white 50–100k.',
+      'Limitation của night mode: nghiên cứu Harvard 2018 gây tranh cãi: green light cũng ức chế melatonin, và warm/amber light ở high intensity vẫn có thể gây suppression. Night mode không thể hoàn toàn replace "không dùng màn hình". Nhưng practical reality: nhiều người PHẢI dùng màn hình buổi tối — night mode + dim là harm reduction strategy tốt nhất có thể trong constraints thực tế.',
+    ],
+    points: [
+      { icon: '🌙', label: 'Filter 30–80% blue light tùy intensity', note: 'Không perfect, nhưng passive protection tốt hơn rất nhiều so với màn hình trắng lạnh lúc 22:00' },
+      { icon: '⚙️', label: 'Cài một lần, bảo vệ mỗi tối', note: 'Passive Friction Design: xảy ra tự động — không cần nhớ, không cần willpower tối nào' },
+      { icon: '⏰', label: '20:00 = 2–3h trước sleep time', note: 'Melatonin onset tự nhiên ~2h trước khi ngủ — bảo vệ window này là quan trọng nhất' },
+      { icon: '🥽', label: 'Amber glasses: alternative không cần đổi màn hình', note: 'Kính amber-tinted (đỏ/vàng) hiệu quả như không có bright light exposure — option cho màn hình pro' },
+    ],
+  },
 ];
 
 const IMPACT_COLOR = { 'Cao': '#10b981', 'Trung bình': '#f59e0b' };
@@ -556,6 +724,7 @@ export default function LifestyleEnvironmentPage() {
   const [activeZone, setActiveZone] = useState('morning');
   const [principleIdx, setPrincipleIdx] = useState(null);
   const [zoneItemIdx, setZoneItemIdx] = useState(null);
+  const [quickWinIdx, setQuickWinIdx] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -673,35 +842,27 @@ export default function LifestyleEnvironmentPage() {
         )}
       </RevealBlock>
 
-      {/* Quick wins table */}
+      {/* Quick wins cards */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>8 Thay Đổi Nhanh, Tác Động Lớn</h2>
-        <p className="text-muted text-lg mb-6">Bắt đầu với những gì dễ nhất — ngay hôm nay, không cần kế hoạch phức tạp.</p>
-        <div className="overflow-x-auto">
-          <table className="w-full text-lg">
-            <thead>
-              <tr className="border-b border-border">
-                {['Thay Đổi', 'Tác Động', 'Thời Gian', 'Chi Phí'].map(h => (
-                  <th key={h} className="text-left py-3 pr-4 text-base font-bold uppercase tracking-widest text-muted">{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {QUICK_WINS.map((w, i) => (
-                <tr key={i} className="border-b border-border/30 hover:bg-white/3 transition-colors">
-                  <td className="py-3 pr-4">
-                    <span className="mr-2">{w.icon}</span>
-                    <span className="text-text font-medium">{w.title}</span>
-                  </td>
-                  <td className="py-3 pr-4">
-                    <span className="px-2 py-0.5 rounded-full text-base font-bold" style={{ background: `${IMPACT_COLOR[w.impact]}20`, color: IMPACT_COLOR[w.impact] }}>{w.impact}</span>
-                  </td>
-                  <td className="py-3 pr-4 text-muted">{w.time}</td>
-                  <td className="py-3 text-muted">{w.cost}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <p className="text-muted text-lg mb-2">Bắt đầu với những gì dễ nhất — ngay hôm nay, không cần kế hoạch phức tạp.</p>
+        <p className="text-sm text-muted mb-6 opacity-60">Click vào từng mục để xem chi tiết khoa học</p>
+        <div className="space-y-2">
+          {QUICK_WINS.map((w, i) => (
+            <div key={i}
+              className="flex items-center gap-4 p-4 rounded-2xl border cursor-pointer transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
+              style={{ borderColor: `rgba(${w.rgb},0.2)`, background: `rgba(${w.rgb},0.05)` }}
+              onClick={() => setQuickWinIdx(i)}>
+              <span className="text-2xl shrink-0">{w.icon}</span>
+              <div className="flex-1 min-w-0">
+                <span className="text-base font-bold" style={{ color: w.color }}>{w.title}</span>
+              </div>
+              <span className="px-2 py-0.5 rounded-full text-sm font-bold shrink-0" style={{ background: `${IMPACT_COLOR[w.impact]}20`, color: IMPACT_COLOR[w.impact] }}>{w.impact}</span>
+              <span className="text-sm text-muted shrink-0 hidden sm:block">{w.time}</span>
+              <span className="text-sm text-muted shrink-0 hidden sm:block">{w.cost}</span>
+              <span className="text-xs font-bold px-2 py-1 rounded-lg shrink-0" style={{ color: w.color, background: `rgba(${w.rgb},0.12)` }}>→</span>
+            </div>
+          ))}
         </div>
       </RevealBlock>
 
@@ -728,6 +889,20 @@ export default function LifestyleEnvironmentPage() {
           ))}
         </div>
       </RevealBlock>
+
+      {/* ── Quick wins modal — outside all RevealBlocks ── */}
+      {quickWinIdx !== null && (
+        <EnvModal
+          item={QUICK_WINS[quickWinIdx]}
+          idx={quickWinIdx}
+          total={QUICK_WINS.length}
+          onClose={() => setQuickWinIdx(null)}
+          onPrev={() => setQuickWinIdx(i => Math.max(0, i - 1))}
+          onNext={() => setQuickWinIdx(i => Math.min(QUICK_WINS.length - 1, i + 1))}
+          hasPrev={quickWinIdx > 0}
+          hasNext={quickWinIdx < QUICK_WINS.length - 1}
+        />
+      )}
 
       {/* ── Zone item modal — outside all RevealBlocks ── */}
       {zoneItemIdx !== null && zone && (

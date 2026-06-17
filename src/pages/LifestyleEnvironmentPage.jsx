@@ -570,6 +570,101 @@ const QUICK_WINS = [
 
 const IMPACT_COLOR = { 'Cao': '#10b981', 'Trung bình': '#f59e0b' };
 
+const WEEKS = [
+  {
+    week: 'Tuần 1', focus: 'Phòng Ngủ',
+    changes: ['Cất điện thoại ra ngoài', 'Nhiệt độ 18°C', 'Rèm tối hoàn toàn'],
+    color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Tuần 1: Tối Ưu Phòng Ngủ — Nền Tảng Của Mọi Thứ',
+    img: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tuần 1 tập trung vào phòng ngủ vì lý do chiến lược: giấc ngủ là nền tảng của mọi hành vi sức khỏe khác. Thiếu ngủ làm giảm willpower, tăng cortisol, impair prefrontal cortex — khiến tất cả thay đổi khác (ăn uống, tập luyện, tâm trí) trở nên khó khăn hơn gấp đôi. Giải quyết phòng ngủ trước = đặt foundation vững chắc cho 3 tuần còn lại.',
+    detail: 'Ba thay đổi tuần 1 được chọn vì: (1) impact cao nhất trên giấc ngủ, (2) không tốn tiền hoặc rất rẻ, (3) có thể thực hiện ngay hôm nay mà không cần chuẩn bị. Mỗi thay đổi loại bỏ một "sleep saboteur" lớn nhất trong phòng ngủ người Việt điển hình.',
+    details: [
+      'Cất điện thoại — tại sao đây là ưu tiên số 1: điện thoại trong phòng ngủ gây hại qua 3 cơ chế đồng thời: blue light ức chế melatonin, notifications gây micro-arousals giữa đêm, và temptation to scroll trước khi ngủ. Nghiên cứu 2020 (Sleep Medicine RCT): chỉ cất điện thoại ra ngoài phòng ngủ = sleep duration tăng 43 phút/đêm. Không có thay đổi lifestyle nào khác tạo ra improvement nhanh và lớn như vậy.',
+      'Nhiệt độ 18°C — không phải comfort, là physiology: nhiều người nghĩ ngủ ấm (24–26°C) là thoải mái. Thực ra, deep sleep (N3) đòi hỏi core body temperature giảm ~1–2°C từ đỉnh ban ngày. Phòng nóng ngăn CBT giảm đủ → ít deep sleep → thức dậy mệt dù ngủ đủ giờ. 18–19°C là nhiệt độ phòng ngủ được nghiên cứu nhiều nhất và consistently cho kết quả tốt nhất về sleep quality. Mùa hè VN khó đạt — ít nhất target <22°C.',
+      'Rèm tối — ánh sáng ảnh hưởng giấc ngủ ngay cả qua mí mắt nhắm: eyelids không block ánh sáng hoàn toàn — ánh đèn đường, đèn xe, ánh sáng sáng sớm đi qua mí mắt nhắm đủ để kích hoạt ipRGC và ức chế melatonin nhẹ. Nghiên cứu cho thấy ngủ trong phòng tối hoàn toàn liên quan đến: melatonin production cao hơn, ít awakenings hơn, sáng dậy cortisol thấp hơn (ít bị "giật mình" bởi ánh sáng). Rèm blackout (200–500k) là investment một lần.',
+      'Kỳ vọng tuần 1 — những gì sẽ xảy ra: ngày 1–3: có thể cảm thấy "thiếu" điện thoại, khó ngủ hơn một chút (digital withdrawal nhẹ). Ngày 4–7: sleep onset bắt đầu nhanh hơn, ít thức giữa đêm hơn. Sau 7 ngày: đa số người báo cáo cảm giác ngủ sâu hơn và dậy tỉnh táo hơn — không phải placebo, là physiology cải thiện thực sự.',
+      'Tuần 1 tạo nền tảng cho tuần 2–4 thế nào: ngủ tốt hơn → cortisol sáng thấp hơn → buổi sáng tuần 2 (ly nước, ánh sáng, no-phone) cảm thấy natural hơn. Não được nghỉ ngơi đủ → prefrontal cortex hoạt động tốt hơn → intention và discipline cho tuần 3–4 tốt hơn. Đây là lý do phòng ngủ được ưu tiên đầu tiên — không phải ngẫu nhiên.',
+      'Sustainability check: sau 7 ngày, đánh giá: điện thoại có thực sự ra ngoài mỗi đêm không? Nhiệt độ có duy trì được không? Rèm có đủ tối không? Thay đổi nào khó nhất? Tuần 1 xong = không nên dừng — tiếp tục maintain 3 thay đổi này khi sang tuần 2. Mỗi tuần là "stack thêm", không phải "thay thế". Sau 4 tuần, bạn có 12 thay đổi cùng hoạt động.',
+    ],
+    points: [
+      { icon: '😴', label: '+43 phút ngủ chỉ từ cất điện thoại', note: 'RCT: không có thay đổi nào khác — đây là ROI cao nhất của bất kỳ sleep intervention nào' },
+      { icon: '🌡️', label: '18–19°C để deep sleep tối ưu', note: 'Phòng nóng ngăn CBT giảm đủ → ít N3 → thức dậy mệt dù đủ giờ ngủ' },
+      { icon: '🌑', label: 'Tối hoàn toàn: ánh sáng qua mí mắt nhắm', note: 'eyelids không block hoàn toàn — ánh đèn đường đủ ức chế melatonin nhẹ suốt đêm' },
+      { icon: '📈', label: 'Nền tảng cho 3 tuần còn lại', note: 'Ngủ tốt → cortisol thấp → willpower cao → mọi thay đổi khác dễ hơn gấp đôi' },
+    ],
+  },
+  {
+    week: 'Tuần 2', focus: 'Buổi Sáng',
+    changes: ['Ly nước bên giường', 'Đèn sáng 5 phút đầu', 'Không phone 30 phút'],
+    color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Tuần 2: Thiết Kế Buổi Sáng — Kiểm Soát Ngày Từ Giờ Đầu Tiên',
+    img: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Buổi sáng là "keystone period" — cách bạn bắt đầu ngày ảnh hưởng đến trạng thái mental, hormonal và behavioral của cả ngày còn lại. Ba thay đổi tuần 2 tác động đến 3 hệ thống sinh học khác nhau: hydration (phục hồi nước sau ngủ), circadian reset (ánh sáng mạnh sáng sớm), và cognitive priming (bảo vệ PFC trong 30 phút đầu). Tất cả là passive hoặc gần passive — không cần thêm thời gian, chỉ cần thay đổi trình tự.',
+    detail: 'Ba thay đổi tuần 2 được thiết kế để "stack" lên nhau: thức dậy → uống nước (ly đã có sẵn) → ra chỗ có ánh sáng (cửa sổ/ban công) → 30 phút không phone (điện thoại đã ở phòng khác từ tuần 1). Friction gần bằng 0 — tuần 1 đã setup sẵn điều kiện cho tuần 2.',
+    details: [
+      'Ly nước bên giường — tại sao là thay đổi đầu tiên: sau 7–9h không uống nước, mild dehydration (1%) giảm concentration 12% và làm tasks feel harder. Uống 400–500ml ngay khi thức là cách nhanh nhất restore hydration và kickstart các hệ thống cơ thể. Friction Design: ly đã sẵn sàng bên giường (chuẩn bị tối hôm trước) = không cần quyết định, không cần đi lấy, vươn tay là uống — trở thành reflex sau 2–3 tuần.',
+      'Ánh sáng mạnh 5 phút — reset đồng hồ sinh học hàng ngày: ánh sáng mạnh (>1000 lux nắng ngoài trời, hoặc SAD lamp 10.000 lux) trong 30 phút đầu là tín hiệu mạnh nhất reset circadian clock. Kích hoạt Cortisol Awakening Response (CAR), amplify serotonin synthesis, suppress melatonin residual. 5 phút ở cửa sổ hoặc ban công (không cần trực tiếp nhìn mặt trời) đủ để bắt đầu process này. Đây là "free productivity hack" mà hầu hết người bỏ qua.',
+      'Không phone 30 phút — bảo vệ PFC trong golden window: Prefrontal Cortex (PFC) cần 20–30 phút để fully activate sau sleep inertia. Kiểm tra điện thoại trước khi PFC sẵn sàng = xử lý notifications, social, news khi não chưa có phòng vệ nhận thức → reactive mindset từ đầu ngày. 30 phút phone-free = PFC có thời gian warm up + DMN (Default Mode Network) hoạt động tự nhiên → sáng tạo và clarity tốt hơn buổi sáng.',
+      'Kỳ vọng tuần 2 — những gì sẽ xảy ra: ngày 1–2: cảm giác buổi sáng ít vội vàng hơn, ít cảm giác "reactive" ngay từ đầu ngày. Ngày 3–5: năng lượng buổi sáng cải thiện đáng kể (kết hợp hydration + ánh sáng + PFC protection). Ngày 6–7: buổi sáng bắt đầu feel có chủ đích — bạn control agenda của ngày thay vì notifications control bạn.',
+      'Stack với tuần 1: điện thoại đã ở phòng khác (tuần 1) → "không phone 30 phút" của tuần 2 gần như tự động xảy ra — không cần thêm willpower, chỉ cần không đi lấy điện thoại ngay. Rèm tối (tuần 1) giúp ngủ sâu hơn → dậy refreshed hơn → buổi sáng tuần 2 bắt đầu từ trạng thái tốt hơn. Compound effect bắt đầu rõ ràng từ tuần 2.',
+      'Thiết lập cụ thể tối hôm trước: (1) Đặt ly nước 500ml bên giường. (2) Quyết định chỗ nhận ánh sáng sáng (cửa sổ nào, ban công hay không). (3) Điện thoại đã ở phòng khác (tuần 1 đã làm). Sáng hôm sau: wake → uống nước → đến chỗ có ánh sáng tự nhiên 5–10 phút → ăn sáng/vận động nhẹ. Không phone cho đến khi hoàn thành routine sáng.',
+    ],
+    points: [
+      { icon: '💧', label: 'Uống nước trước → concentration +12%', note: 'Dehydration nhẹ sau ngủ giảm performance — vươn tay uống trước khi làm bất cứ điều gì' },
+      { icon: '☀️', label: '5 phút ánh sáng = CAR amplification', note: 'Cortisol Awakening Response mạnh hơn, serotonin tăng, circadian reset — không thứ gì thay thế được' },
+      { icon: '🧠', label: 'PFC warm-up trong 30 phút đầu', note: 'Không phone = PFC có thời gian activate đầy đủ → intentional mindset thay vì reactive từ sáng sớm' },
+      { icon: '🔗', label: 'Tuần 1 setup sẵn điều kiện cho tuần 2', note: 'Điện thoại đã ngoài phòng → no-phone sáng gần tự động. Compound effect bắt đầu rõ từ tuần này.' },
+    ],
+  },
+  {
+    week: 'Tuần 3', focus: 'Làm Việc',
+    changes: ['Dọn bàn mỗi sáng', 'Nút tai/headphone', 'Cây xanh trên bàn'],
+    color: '#0ea5e9', rgb: '14,165,233',
+    modalTitle: 'Tuần 3: Tối Ưu Không Gian Làm Việc — Môi Trường Cho Deep Work',
+    img: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đến tuần 3, phòng ngủ và buổi sáng đã được tối ưu. Tuần này chuyển focus sang không gian làm việc — nơi bạn dành 6–10h mỗi ngày. Ba thay đổi tuần 3 tác động đến 3 yếu tố cản trở deep work phổ biến nhất: visual clutter (bàn lộn xộn), acoustic pollution (tiếng ồn), và cognitive fatigue (thiếu thiên nhiên). Tất cả ba thay đổi này có thể thực hiện song song — không cần chọn thứ tự.',
+    detail: 'Không gian làm việc có tác động lớn hơn hầu hết mọi người nhận ra. Nghiên cứu cho thấy môi trường làm việc vật lý ảnh hưởng đến chất lượng output nhiều hơn "trying harder". Tuần 3 là đầu tư vào infrastructure cho tất cả công việc trí tuệ bạn làm.',
+    details: [
+      'Dọn bàn mỗi sáng — pre-task ritual và cognitive reset: Princeton fMRI study cho thấy clutter cạnh tranh visual cortex, làm giảm focus và processing speed. Dọn bàn 5 phút sáng không chỉ loại bỏ cognitive drag — nó còn tạo "pre-task ritual" tạo clear psychological boundary giữa casual time và focused work time. Nghiên cứu rituals (Michael Norton, Harvard): rituals cụ thể trước performance giảm anxiety và tăng consistency — ngay cả rituals "không liên quan" đến task.',
+      'Nút tai/headphone — kiểm soát acoustic environment: tiếng ồn nền gây hại ngay cả khi bạn quen và không chú ý (pre-attentive processing). Đặc biệt: speech-modulated noise (tiếng người nói chuyện) não không thể fully habituate — phải liên tục "check" xem có gì mới không. Foam earplugs (NRR 33 dB, 20–50k) giảm noise hiệu quả hơn hầu hết ANC headphones. White noise apps (free) hoặc brown noise mask ambient noise tốt nếu không dùng earplugs.',
+      'Cây xanh trên bàn — Attention Restoration Theory: Rachel và Stephen Kaplan (University of Michigan) cho thấy thiên nhiên (kể cả cây nhỏ trong phòng) kích hoạt "fascination mode" — effortless attention giúp phục hồi directed attention bị depleted bởi work. Sau 10–15 phút nhìn cây, directed attention được restore đáng kể. Exeter meta-analysis (2.000 nhân viên): 1 cây trong tầm nhìn → productivity +15%, creativity +45%.',
+      'Kỳ vọng tuần 3 — những gì sẽ xảy ra: ngày 1–2: bàn sạch sáng đầu tiên tạo cảm giác fresh start; nút tai giúp vào focus nhanh hơn. Ngày 3–5: bắt đầu notice khi không có những thứ này — bằng chứng chúng đang work. Ngày 6–7: work sessions feel qualitatively khác — ít friction, ít context switches, ít "tại sao mình ngồi đây mà không làm được gì" frustration.',
+      'Stack với tuần 1–2: ngủ tốt (tuần 1) + buổi sáng tốt (tuần 2) → đến bàn làm việc ở trạng thái cognitive tốt nhất có thể. Bàn sạch (tuần 3) + nút tai + cây = môi trường không làm depleted thêm. Three-layer optimization: sleep (recovery), morning (activation), workspace (protection of cognitive resources). Compound effect đạt maximum từ tuần 3.',
+      'Cụ thể hóa tuần 3: (1) Dọn bàn 5 phút đầu mỗi buổi sáng làm việc — tất cả không liên quan cất vào hộc/hộp đựng (đã mua tuần trước). (2) Nút tai hoặc noise-canceling trên bàn sẵn sàng — đeo khi bắt đầu phiên focus. (3) Mua 1 cây nhỏ (lưỡi hổ/trầu bà/ZZ plant, <100k) đặt trên hoặc cạnh bàn ở tầm nhìn. Không cần làm cùng một lúc — từng thứ một trong 7 ngày là đủ.',
+    ],
+    points: [
+      { icon: '🧹', label: 'Dọn bàn = pre-flow ritual + cognitive reset', note: 'Ritual trước performance giảm anxiety, tăng consistency — và loại bỏ visual drain từ clutter' },
+      { icon: '🎧', label: 'Nút tai foam: NRR 33 dB, 50k, không cần sạc', note: 'Giảm noise hiệu quả hơn hầu hết ANC headphones — loại bỏ speech noise không thể habituate' },
+      { icon: '🌿', label: 'Cây nhỏ = restore directed attention', note: 'ART: 10–15 phút nhìn cây → fascination mode → directed attention phục hồi, không cần effort' },
+      { icon: '⚡', label: 'Compound từ 3 tuần: sleep + morning + workspace', note: 'Từ tuần 3, tất cả 9 thay đổi hoạt động cùng lúc — cognitive performance ở mức tốt nhất có thể' },
+    ],
+  },
+  {
+    week: 'Tuần 4', focus: 'Buổi Tối',
+    changes: ['Night mode 20:00', 'Sách thay điện thoại', 'Mùi lavender'],
+    color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Tuần 4: Thiết Kế Wind-Down — Chuẩn Bị Cho Giấc Ngủ Từ 2 Tiếng Trước',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giấc ngủ tốt không bắt đầu khi bạn nằm xuống giường — nó bắt đầu 2 tiếng trước. Tuần 4 thiết kế "wind-down period" (20:00–22:00) thông qua 3 cơ chế: giảm blue light (night mode), thay hoạt động stimulating bằng relaxing (sách thay điện thoại), và tạo olfactory sleep cue (mùi lavender). Ba thay đổi này cộng hưởng với phòng ngủ đã được tối ưu từ tuần 1 — tạo vòng lặp hoàn chỉnh từ tối đến sáng.',
+    detail: 'Tuần 4 là tuần cuối nhưng hoàn thiện hệ thống. Sau 4 tuần, bạn có 12 thay đổi môi trường hoạt động cùng nhau — không cần willpower để duy trì vì mỗi thay đổi đã được thiết kế để self-sustaining qua Friction Design và habit stacking.',
+    details: [
+      'Night mode 20:00 — passive blue light protection: schedule tự động (1 lần cài, mãi mãi active) đảm bảo màn hình chuyển warm/amber sau 20:00 mà không cần nhớ hay quyết định. Giảm blue light output 30–80% tùy intensity → ít ức chế melatonin → melatonin onset tự nhiên hơn lúc 21:00–22:00. Không perfect như không dùng màn hình, nhưng là backstop quan trọng cho những tối không thể tránh dùng màn hình muộn.',
+      'Sách thay điện thoại — replacing dopamine loop với natural sleep cue: điện thoại (social, video, news) có variable reward structure — não không biết phần thưởng tiếp theo là gì, nên liên tục kéo scroll dù mắt mỏi. Sách không có variable reward — nội dung có kết, mắt mỏi dần, buồn ngủ tự nhiên sau 20–30 phút. University of Sussex: đọc sách 6 phút giảm stress 68% (nhanh hơn nghe nhạc, uống trà). Sách vật lý = không có blue light + natural sleep onset.',
+      'Mùi lavender — olfactory sleep cue qua classical conditioning: khứu giác là giác quan duy nhất kết nối trực tiếp với limbic system (amygdala, hippocampus) mà không qua thalamus — giải thích tại sao mùi trigger memory và emotion mạnh và nhanh hơn bất kỳ giác quan nào. Linalool trong lavender có tác dụng anxiolytic trực tiếp qua GABA receptor. Nhưng mạnh hơn là conditioning: dùng lavender đều đặn trước ngủ → mùi trở thành Pavlovian sleep cue — não học "mùi này = sắp ngủ" và bắt đầu wind-down tự động.',
+      'Kỳ vọng tuần 4 — những gì sẽ xảy ra: ngày 1–3: buổi tối feel "chậm hơn" theo nghĩa tốt — ít stimulation, calm hơn. Ngày 4–7: sleep onset (thời gian từ nằm xuống đến ngủ) ngắn hơn đáng kể. Sau tuần 4 đầy đủ: wake-ups giữa đêm giảm; sáng dậy feeling more rested. Đây là kết quả của 4 tuần stack — không phải chỉ tuần 4, mà là toàn bộ hệ thống 12 thay đổi hoạt động cùng nhau.',
+      'Hoàn thiện hệ thống sau 30 ngày: sau 30 ngày, nhìn lại 12 thay đổi. Cái nào stick? Cái nào chưa? Không expect 100% — 8/12 thay đổi được duy trì nhất quán là excellent result. Tiếp theo: đánh giá sleep quality (subjective: cảm giác khi dậy, energy level 3h sau khi thức) và identify bottleneck tiếp theo. Hệ thống môi trường không bao giờ "hoàn thành" — luôn có thứ để tinh chỉnh.',
+      'Lavender cụ thể — cách sử dụng: (1) Essential oil diffuser (150–300k) với 3–5 giọt lavender oil, bật 30 phút trước ngủ. (2) Lavender pillow spray (xịt gối trước khi nằm xuống). (3) Lavender sachets trong vỏ gối. (4) Cây lavender thật trên bàn đầu giường (nếu có điều kiện). Consistency quan trọng hơn method — dùng cùng một loại mùi, cùng thời điểm, mỗi tối để conditioning xảy ra sau 2–3 tuần.',
+    ],
+    points: [
+      { icon: '🌙', label: 'Night mode: passive, một lần cài, mãi mãi', note: 'Schedule tự động 20:00 = zero willpower mỗi tối — backstop cho những ngày phải dùng màn hình muộn' },
+      { icon: '📚', label: 'Sách: natural sleep onset sau 20–30 phút', note: 'Không có variable reward → não không có lý do tiếp tục → buồn ngủ tự nhiên. Stress giảm 68% sau 6 phút đọc.' },
+      { icon: '💜', label: 'Lavender → Pavlovian sleep cue', note: 'Conditioning: mùi quen + ngủ đều → mùi đó trigger wind-down tự động sau 2–3 tuần dùng' },
+      { icon: '🔄', label: '12 thay đổi, 4 tuần, 0 willpower', note: 'Mỗi thay đổi được thiết kế self-sustaining — toàn bộ hệ thống chạy automatic sau khi setup' },
+    ],
+  },
+];
+
 const PRINCIPLES = [
   {
     icon: '✅', title: 'Friction Design',
@@ -725,6 +820,7 @@ export default function LifestyleEnvironmentPage() {
   const [principleIdx, setPrincipleIdx] = useState(null);
   const [zoneItemIdx, setZoneItemIdx] = useState(null);
   const [quickWinIdx, setQuickWinIdx] = useState(null);
+  const [weekIdx, setWeekIdx] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -869,26 +965,42 @@ export default function LifestyleEnvironmentPage() {
       {/* 30-day challenge */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thử Thách 30 Ngày</h2>
-        <p className="text-muted text-lg mb-6">Thực hiện từng thay đổi theo tuần — không làm tất cả một lúc.</p>
+        <p className="text-muted text-lg mb-2">Thực hiện từng thay đổi theo tuần — không làm tất cả một lúc.</p>
+        <p className="text-sm text-muted mb-6 opacity-60">Click vào từng tuần để xem kế hoạch chi tiết</p>
         <div className="grid md:grid-cols-4 gap-3">
-          {[
-            { week: 'Tuần 1', focus: 'Phòng ngủ', changes: ['Cất điện thoại ra ngoài', 'Nhiệt độ 18°C', 'Rèm tối hoàn toàn'] },
-            { week: 'Tuần 2', focus: 'Buổi sáng', changes: ['Ly nước bên giường', 'Đèn sáng 5 phút đầu', 'Không phone 30 phút'] },
-            { week: 'Tuần 3', focus: 'Làm việc', changes: ['Dọn bàn mỗi sáng', 'Nút tai/headphone', 'Cây xanh trên bàn'] },
-            { week: 'Tuần 4', focus: 'Buổi tối', changes: ['Night mode 20:00', 'Sách thay điện thoại', 'Mùi lavender'] },
-          ].map(w => (
-            <div key={w.week} className="rounded-xl border border-border bg-surface p-4">
-              <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{w.week}</div>
+          {WEEKS.map((w, i) => (
+            <div key={w.week}
+              className="rounded-xl border p-4 cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
+              style={{ borderColor: `rgba(${w.rgb},0.25)`, background: `rgba(${w.rgb},0.06)` }}
+              onClick={() => setWeekIdx(i)}>
+              <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: w.color }}>{w.week}</div>
               <div className="text-lg font-bold text-text mb-3">{w.focus}</div>
-              <ul className="space-y-1">
-                {w.changes.map((c, i) => (
-                  <li key={i} className="flex items-start gap-2 text-base text-muted"><span style={{ color: COLOR }}>→</span>{c}</li>
+              <ul className="space-y-1 mb-4">
+                {w.changes.map((c, ci) => (
+                  <li key={ci} className="flex items-start gap-2 text-base text-muted">
+                    <span style={{ color: w.color }}>→</span>{c}
+                  </li>
                 ))}
               </ul>
+              <span className="text-xs font-bold px-2 py-1 rounded-lg" style={{ color: w.color, background: `rgba(${w.rgb},0.12)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
       </RevealBlock>
+
+      {/* ── 30-day challenge modal — outside all RevealBlocks ── */}
+      {weekIdx !== null && (
+        <EnvModal
+          item={WEEKS[weekIdx]}
+          idx={weekIdx}
+          total={WEEKS.length}
+          onClose={() => setWeekIdx(null)}
+          onPrev={() => setWeekIdx(i => Math.max(0, i - 1))}
+          onNext={() => setWeekIdx(i => Math.min(WEEKS.length - 1, i + 1))}
+          hasPrev={weekIdx > 0}
+          hasNext={weekIdx < WEEKS.length - 1}
+        />
+      )}
 
       {/* ── Quick wins modal — outside all RevealBlocks ── */}
       {quickWinIdx !== null && (

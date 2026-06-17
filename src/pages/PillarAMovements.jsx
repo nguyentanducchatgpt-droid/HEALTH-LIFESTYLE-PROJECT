@@ -307,6 +307,377 @@ const COOLDOWN_MODALS = [
   },
 ];
 
+const LEVEL_MODALS = {
+  /* ── SQUAT (green) ───────────────────────────────────────────────────────── */
+  'squat-0': {
+    icon: '🪑', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Đứng Lên Ngồi Xuống Với Ghế', level: 'Người Mới',
+    img: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&q=75',
+    keyFact: 'Ghế là "điểm dừng an toàn" — loại bỏ nỗi sợ ngã, cho phép não ghi nhớ pattern squat đúng mà không cần kiểm soát eccentric ngay từ đầu',
+    detail: 'Đây là điểm khởi đầu lý tưởng cho bất kỳ ai chưa từng tập squat hoặc có vấn đề thăng bằng. Ghế giúp bạn tìm và ghi nhớ độ sâu đúng (đùi song song sàn) và xây dựng sự tự tin trước khi bỏ ghế ra.',
+    details: [
+      'Ghế dạy điểm dừng đúng — đùi song song sàn là độ sâu lý tưởng cho phần lớn người không cần dụng cụ hỗ trợ',
+      'Eccentric control (kiểm soát khi xuống) có thể tập sau — ở giai đoạn này tập trung vào concentric (đứng lên) trước',
+      'Đẩy chân xuống sàn và nhìn thẳng giúp duy trì neutral spine trong suốt chuyển động',
+      'Hai chân rộng bằng hông hoặc hơn — tìm độ rộng mà gót không nhấc và gối không sập vào trong',
+      'Hơi nghiêng người về phía trước khi đứng lên là cơ học đúng — không phải lỗi kỹ thuật',
+      '2–3 tuần tập với ghế đủ để não ghi nhớ pattern — sau đó chuyển sang squat không ghế tự nhiên hơn',
+    ],
+    points: [
+      { icon: '🛡️', label: 'An toàn', note: 'Không sợ ngã — hoàn hảo cho người hoàn toàn mới' },
+      { icon: '🧠', label: 'Não ghi nhớ', note: 'Ghi pattern độ sâu đúng sau 2–3 tuần luyện tập' },
+      { icon: '🦵', label: 'Cơ đùi trước', note: 'Kích hoạt quadriceps mạnh ở phase đứng lên' },
+      { icon: '📏', label: 'Điểm dừng', note: 'Ghế calibrate độ sâu squat tự động' },
+    ],
+  },
+  'squat-1': {
+    icon: '🦵', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Gập Chân Trọng Lượng Cơ Thể', level: 'Chuẩn',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=75',
+    keyFact: 'Bodyweight squat là bài test chuẩn nhất về cơ học cơ thể — nếu không squat đúng với trọng lượng bản thân thì chưa nên thêm tạ',
+    detail: 'Gập chân trọng lượng cơ thể là nền tảng cho tất cả biến thể squat. Không tạ — chỉ có cơ thể và trọng lực. Điều này cho phép tập trung 100% vào kỹ thuật và cảm nhận từng nhóm cơ đang hoạt động.',
+    details: [
+      'Squat đúng đòi hỏi linh hoạt 3 khớp đồng thời: mắt cá (dorsiflexion), hông (flexion), gối (flexion)',
+      'Gối theo hướng ngón chân — không cần thẳng hoàn hảo nhưng không được sập vào trong (knee valgus)',
+      'Gót bám chắc sàn toàn bộ hành trình — nếu gót nhấc lên, mắt cá cần được giãn thêm',
+      'Xuống ít nhất đến đùi song song sàn — cao hơn không kích hoạt đủ cơ mông và đùi sau',
+      'Đứng lên bằng cách đẩy "đất ra xa" — cue này kích hoạt posterior chain tốt hơn "duỗi gối"',
+      'Thở vào khi xuống, thở ra khi đứng lên — tạo áp lực ổ bụng bảo vệ lưng dưới',
+    ],
+    points: [
+      { icon: '🎯', label: 'Kỹ thuật', note: '3 khớp linh hoạt đồng thời — mắt cá, hông, gối' },
+      { icon: '💪', label: 'Nhóm cơ', note: 'Glutes, quads, hamstrings cùng kích hoạt' },
+      { icon: '🔄', label: 'Pattern', note: 'Nền tảng cho jump, sprint, và lift nặng sau này' },
+      { icon: '🌬️', label: 'Hô hấp', note: 'Valsalva nhẹ khi xuống — bảo vệ cột sống' },
+    ],
+  },
+  'squat-2': {
+    icon: '🏋️', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Gập Chân Tạ / Gập Chân Chậm 3 Giây', level: 'Nâng Cao',
+    img: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=75',
+    keyFact: 'Tempo squat (3 giây xuống) tăng gấp đôi thời gian cơ dưới tải (TUT) — hiệu quả nhất để tăng cơ mà không cần tạ nặng',
+    detail: 'Có hai con đường tiến bộ ở level này: thêm tạ tay (goblet squat) hoặc làm chậm tốc độ (tempo squat). Cả hai đều tăng cường độ đáng kể. Tempo squat (3-1-1) tạo micro-tear cơ sợi nhiều hơn squat thường — kích thích hypertrophy mà không cần thêm tải ngoài.',
+    details: [
+      'Goblet squat (cầm tạ trước ngực) tự nhiên kéo trọng tâm về trước — giúp đứng thẳng hơn và squat sâu hơn',
+      'Tempo 3-1-1 (3s xuống, 1s dừng, 1s lên) tăng TUT từ ~2s lên ~5s mỗi rep — cơ phát triển theo tải và thời gian',
+      'Pause ở điểm thấp nhất (1 giây) loại bỏ "stretch reflex" — buộc cơ phải tự sinh lực từ đầu, không dùng đàn hồi',
+      'Dừng ở dưới 1 giây cũng là bài test tốt nhất về linh hoạt hông — nếu lưng tròn khi dừng, cần giãn thêm',
+      'Tạ đơn từ 4–8kg là điểm bắt đầu cho người có nền tảng — không cần tạ lớn để tạo ra kích thích đủ',
+      'Sau 4–6 tuần tempo squat, khi trở lại squat thường tốc độ bình thường, cảm giác nhẹ và mạnh hơn đáng kể',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Tempo 3-1-1', note: 'Tăng TUT lên 150% — phát triển cơ hiệu quả hơn' },
+      { icon: '🧱', label: 'Goblet Squat', note: 'Tạ trước ngực = squat sâu hơn và thẳng đứng hơn' },
+      { icon: '🔥', label: 'Cường độ', note: 'Mệt hơn nhiều với cùng số rep — mà không cần tạ nặng' },
+      { icon: '📈', label: 'Tiến bộ', note: 'Chuẩn bị cho barbell squat nếu muốn đi xa hơn' },
+    ],
+  },
+
+  /* ── HINGE (lime) ────────────────────────────────────────────────────────── */
+  'hinge-0': {
+    icon: '🙆', color: '#a3e635', rgb: '163,230,53',
+    modalTitle: 'Gập Hông Tay Đặt Hông', level: 'Người Mới',
+    img: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=800&q=75',
+    keyFact: 'Gập hông tay đặt hông là cách học hip hinge pattern an toàn nhất — tay trên hông cho phản hồi cảm giác tức thì về vị trí xương chậu',
+    detail: 'Đây là bài học pattern quan trọng nhất trong toàn bộ chương trình tập luyện. Hip hinge đúng sẽ bảo vệ lưng dưới suốt đời — trong cả tập luyện lẫn sinh hoạt hàng ngày (nhặt đồ, cúi người, bê vật nặng).',
+    details: [
+      'Tay đặt lên hông ngay trên gờ xương chậu (iliac crest) — cảm nhận hông đang di chuyển ra sau khi gập',
+      'Mục tiêu: hông di chuyển ra sau 10–15cm trước khi người nghiêng về trước — không phải cúi từ lưng',
+      'Hình dung "đuôi cáo đang muốn chạm tường phía sau" — cue này kích hoạt hip hinge mà không cần giải thích kỹ thuật',
+      'Gối hơi chùng (10–15°) nhưng không gập sâu — đây là bản lề hông, không phải squat',
+      'Lưng phẳng trong toàn hành trình — nếu lưng tròn, có nghĩa bạn đang gập từ lưng, không phải từ hông',
+      'Dừng khi cảm thấy căng nhẹ ở đùi sau (hamstrings) — đây là điểm cuối tự nhiên của hip hinge',
+    ],
+    points: [
+      { icon: '🦴', label: 'Bảo vệ lưng', note: 'Phòng ngừa 80% chấn thương lưng dưới' },
+      { icon: '🍑', label: 'Cơ mông', note: 'Hip hinge kích hoạt glute max — cơ mạnh nhất cơ thể' },
+      { icon: '🤲', label: 'Phản hồi', note: 'Tay trên hông cho biết hông đang đi đúng hướng' },
+      { icon: '🔄', label: 'Pattern', note: 'Nền tảng cho deadlift, RDL, và kettle bell swing' },
+    ],
+  },
+  'hinge-1': {
+    icon: '🧍', color: '#a3e635', rgb: '163,230,53',
+    modalTitle: 'Cúi Người (Good Morning)', level: 'Chuẩn',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=75',
+    keyFact: 'Good Morning là bài test hip hinge thuần túy nhất — hai tay sau đầu loại bỏ hoàn toàn khả năng "gian lận" bằng cách dùng tay đẩy',
+    detail: 'Tên "Good Morning" xuất phát từ động tác cúi chào buổi sáng. Bài này đòi hỏi hip hinge pattern thuần túy vì không có tay để hỗ trợ. Khi thành thạo, chuỗi cơ posterior chain (mông, đùi sau, lưng dưới) được kích hoạt đồng bộ.',
+    details: [
+      'Hai tay sau đầu (không chắp sau lưng) tạo đối trọng nhẹ — dạy cân bằng và kiểm soát tốt hơn',
+      'Hông ra sau, lưng phẳng, cúi đến khi thân trên song song sàn — điểm dừng lý tưởng',
+      'Nếu chưa thể giữ lưng phẳng khi thân song song sàn, dừng ở 45° là ổn — linh hoạt sẽ tăng dần',
+      'Đứng lên bằng cách đẩy hông về trước (hip extension) — không phải bằng cách kéo lưng',
+      'Cảm giác làm việc chính nên ở đùi sau (hamstrings) và mông — nếu lưng dưới đau, kiểm tra lại kỹ thuật',
+      'Sau 4–6 tuần Good Morning, RDL với tạ trở nên tự nhiên và cảm giác đúng hơn rõ rệt',
+    ],
+    points: [
+      { icon: '🧪', label: 'Test thuần túy', note: 'Không tay hỗ trợ = kiểm tra hip hinge pattern thực sự' },
+      { icon: '🔗', label: 'Posterior chain', note: 'Mông + hamstrings + lưng dưới phối hợp hoàn hảo' },
+      { icon: '📐', label: 'Song song sàn', note: 'Mục tiêu thân trên song song — xây dựng dần dần' },
+      { icon: '🏋️', label: 'Chuẩn bị', note: 'Nền tảng trực tiếp cho Romanian Deadlift với tạ' },
+    ],
+  },
+  'hinge-2': {
+    icon: '🏋️', color: '#a3e635', rgb: '163,230,53',
+    modalTitle: 'Nhấc Đơn Kiểu Romania (RDL)', level: 'Nâng Cao',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=75',
+    keyFact: 'Romanian Deadlift (RDL) là bài tập đơn lẻ hiệu quả nhất để tăng sức mạnh chuỗi sau — hamstrings, glutes, và erector spinae trong một chuyển động',
+    detail: 'RDL là phiên bản hip hinge với kháng lực bên ngoài (tạ đơn hoặc dây kháng lực). Tải trọng ở tay tạo ra "đòn bẩy" kéo dài đòn bẩy của hông — tăng đáng kể yêu cầu sức mạnh từ cơ mông và đùi sau so với bodyweight.',
+    details: [
+      'RDL khác deadlift thường: gối giữ hơi chùng (15–20°) toàn hành trình — tập trung vào hamstrings và glutes',
+      'Tạ đi sát theo đùi, không ra xa người — càng xa, đòn bẩy lên lưng dưới càng lớn',
+      'Kiểm soát eccentric (xuống) là mục tiêu chính — 2–3 giây xuống, 1 giây lên',
+      'Cảm giác "kéo căng" ở đùi sau khi tạ qua gối là tốt — đó là hamstrings đang làm việc eccentric',
+      'Dừng khi lưng không thể giữ phẳng nữa — ROM cá nhân quan trọng hơn độ sâu lý tưởng',
+      'Bắt đầu với tạ 5–8kg/tay, tăng 2kg khi có thể hoàn thành 3×12 với kỹ thuật hoàn hảo',
+    ],
+    points: [
+      { icon: '💪', label: 'Hamstrings', note: 'Kéo dài eccentric — phương pháp mạnh nhất để phát triển đùi sau' },
+      { icon: '🍑', label: 'Glutes', note: 'Cơ mông kích hoạt tối đa ở phase đứng lên (hip extension)' },
+      { icon: '⚖️', label: 'Tải trọng', note: 'Bắt đầu 5–8kg/tay, tăng dần khi kỹ thuật đúng' },
+      { icon: '🛡️', label: 'Lưng dưới', note: 'Erector spinae giữ isometric — tăng sức mạnh thụ động' },
+    ],
+  },
+
+  /* ── PUSH (blue) ─────────────────────────────────────────────────────────── */
+  'push-0': {
+    icon: '🧱', color: '#3b82f6', rgb: '59,130,246',
+    modalTitle: 'Chống Đẩy Tường', level: 'Người Mới',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=75',
+    keyFact: 'Chống đẩy tường chỉ chịu 20–30% trọng lượng cơ thể — điểm khởi đầu hoàn hảo để học pattern đẩy và xây dựng sức mạnh thân trên an toàn',
+    detail: 'Chống đẩy tường là bước đầu tiên trong chuỗi tiến bộ push pattern. Tường giúp điều chỉnh độ khó bằng cách đứng gần hay xa — càng xa tường, càng khó. Đây là cách duy nhất có thể tùy chỉnh liên tục độ khó mà không cần thiết bị.',
+    details: [
+      'Đứng cách tường ~60cm cho lực kháng tương đương khoảng 20–25% trọng lượng cơ thể',
+      'Thân người thẳng như ván — từ đầu đến gót phải thành một đường thẳng, không gù lưng',
+      'Khuỷu tay gập 45° so với thân (không xòe rộng 90°, không ép sát 0°) — bảo vệ vai',
+      'Ngực chạm hoặc gần tường mỗi lần xuống — ROM đầy đủ quan trọng hơn số lần',
+      'Đẩy người ra lại bằng lực lòng bàn tay — không phải ngón tay, không phải cổ tay',
+      'Khi có thể làm 3×15 dễ dàng, tiến lên chống đẩy gối — đừng ở lại tường quá lâu',
+    ],
+    points: [
+      { icon: '📏', label: 'Điều chỉnh độ khó', note: 'Xa tường = khó hơn; gần tường = dễ hơn' },
+      { icon: '🔒', label: 'Neutral spine', note: 'Học giữ thân thẳng — cốt lõi của mọi push variation' },
+      { icon: '💪', label: 'Thân trên', note: 'Ngực, vai trước, và triceps bắt đầu được kích hoạt' },
+      { icon: '➡️', label: 'Tiến bộ', note: '3×15 dễ → chuyển sang chống đẩy gối ngay' },
+    ],
+  },
+  'push-1': {
+    icon: '🧎', color: '#3b82f6', rgb: '59,130,246',
+    modalTitle: 'Chống Đẩy Gối', level: 'Chuẩn',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=75',
+    keyFact: 'Chống đẩy gối chịu khoảng 54% trọng lượng cơ thể — đủ để kích hoạt đầy đủ cơ ngực, vai, và triceps mà không đòi hỏi sức mạnh lõi quá cao',
+    detail: 'Chống đẩy gối thường bị đánh giá thấp nhưng đây là giai đoạn xây dựng sức mạnh thực sự. Khi gối chạm sàn, chiều dài đòn bẩy cơ thể giảm xuống — giảm yêu cầu sức mạnh lõi và cho phép tập trung vào nhóm cơ đẩy.',
+    details: [
+      'Gối chạm sàn phải đặt dưới hông, không phải quá xa sau — tạo góc cơ thể ~45° so với sàn',
+      'Mặc dù gối chạm sàn, lưng vẫn phải giữ thẳng — không gù, không ưỡn',
+      'Ngực chạm sàn mỗi lần — full ROM quan trọng hơn số lần; nửa chặng không tính',
+      'Khuỷu tay 45° so với thân — không xòe vuông góc với vai (gây stress lên vai)',
+      'Thở vào khi xuống, thở ra mạnh khi đẩy lên — áp lực ổ bụng hỗ trợ cột sống',
+      'Mục tiêu: 3 hiệp × 12 lần với full ROM → chuyển sang chống đẩy chuẩn',
+    ],
+    points: [
+      { icon: '💪', label: '54% trọng lượng', note: 'Đủ kích thích thực sự cho ngực, vai, triceps' },
+      { icon: '🎯', label: 'Full ROM', note: 'Ngực chạm sàn mỗi rep — điều quan trọng nhất' },
+      { icon: '🔒', label: 'Thân thẳng', note: 'Dù gối đặt xuống, lưng vẫn phải phẳng' },
+      { icon: '➡️', label: 'Tiến bộ', note: '3×12 full ROM → chống đẩy chuẩn' },
+    ],
+  },
+  'push-2': {
+    icon: '💪', color: '#3b82f6', rgb: '59,130,246',
+    modalTitle: 'Chống Đẩy Chuẩn / Chậm 3 Giây', level: 'Nâng Cao',
+    img: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=75',
+    keyFact: 'Chống đẩy chuẩn chịu 69% trọng lượng cơ thể — tương đương bench press với 60–70% 1RM, đủ để kích thích hypertrophy đáng kể',
+    detail: 'Đây là bài tập thân trên hoàn chỉnh nhất không cần thiết bị. Chống đẩy chuẩn yêu cầu sức mạnh ngực, vai, triceps VÀ sức mạnh lõi để giữ cơ thể thẳng. Phiên bản chậm (3 giây xuống) nhân đôi hiệu quả mà không cần thêm thiết bị.',
+    details: [
+      'Chống đẩy chuẩn = bench press bodyweight với lợi thế là kích hoạt lõi và toàn thân đồng thời',
+      'Tempo 3-1-1 (3s xuống, 1s dừng, 1s lên) tạo micro-damage cơ sợi nhiều hơn — hypertrophy tốt hơn',
+      'Dừng 1 giây khi ngực gần sàn nhất loại bỏ stretch reflex — cơ ngực phải tự tạo lực từ đầu',
+      'Vị trí tay ảnh hưởng nhóm cơ: tay hẹp = triceps nhiều hơn; tay rộng = ngực nhiều hơn',
+      'Ngón tay hướng về phía trước hoặc hơi ra ngoài — tránh hướng vào trong để không stress cổ tay',
+      'Khi đạt 3×15 dễ dàng, có thể tiến lên: chống đẩy một chân, chống đẩy với chân cao, hoặc archer push-up',
+    ],
+    points: [
+      { icon: '⚖️', label: '69% bodyweight', note: 'Kích thích cơ tương đương bench press nhẹ' },
+      { icon: '🔥', label: 'Tempo 3-1-1', note: 'Nhân đôi hypertrophy mà không cần thêm tạ' },
+      { icon: '🎯', label: 'Full body', note: 'Ngực + vai + triceps + lõi cùng một lúc' },
+      { icon: '📈', label: 'Đỉnh cao', note: '3×15 → tiến lên archer push-up hoặc chống đẩy một tay' },
+    ],
+  },
+
+  /* ── PULL (teal) ─────────────────────────────────────────────────────────── */
+  'pull-0': {
+    icon: '🧣', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: 'Kéo Bằng Khăn', level: 'Người Mới',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=75',
+    keyFact: 'Khăn cố định ở cửa hoặc tường tạo điểm neo có thể điều chỉnh — cho phép kiểm soát hoàn toàn lực kháng bằng góc nghiêng cơ thể',
+    detail: 'Bài kéo bằng khăn là phiên bản đơn giản nhất của rowing movement — kéo từ phía trước về sau. Không cần thiết bị nào ngoài chiếc khăn và một điểm neo cố định. Đây là cách duy nhất để tập cơ lưng và vai sau khi không có xà hay dây kháng lực.',
+    details: [
+      'Cố định khăn ở tay nắm cửa hoặc cọc chắc chắn ngang ngực — không dùng điểm cao hơn đầu',
+      'Nghiêng người ra sau càng nhiều = khó hơn; đứng gần thẳng đứng = dễ hơn — cơ chế tương tự chống đẩy tường',
+      'Kéo khuỷu tay về sau, không phải kéo bằng tay — cue: "kéo khuỷu về túi quần sau lưng"',
+      'Ép nhẹ hai bờ vai khi khuỷu đã về sau cùng — kích hoạt rhomboids và thang dưới',
+      'Thả chậm về vị trí ban đầu (2 giây) — phase eccentric kích hoạt cơ lưng sâu hơn kéo nhanh',
+      'Vai không nhún lên tai trong bất kỳ thời điểm nào — đây là lỗi phổ biến nhất kéo bằng khăn',
+    ],
+    points: [
+      { icon: '🔧', label: 'Không thiết bị', note: 'Chỉ cần khăn + điểm neo — tập được ở mọi nơi' },
+      { icon: '📐', label: 'Góc nghiêng', note: 'Tự điều chỉnh độ khó bằng góc cơ thể' },
+      { icon: '🔙', label: 'Cơ lưng', note: 'Kích hoạt lat, rhomboids, thang giữa' },
+      { icon: '⚖️', label: 'Cân bằng', note: 'Đối lập với push pattern — cân bằng cơ trước/sau' },
+    ],
+  },
+  'pull-1': {
+    icon: '🔗', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: 'Kéo Bằng Dây Kháng Lực', level: 'Chuẩn',
+    img: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=800&q=75',
+    keyFact: 'Resistance band tạo lực kháng biến thiên — nhẹ nhất ở đầu chuyển động (khi cơ yếu nhất) và nặng nhất ở cuối (khi cơ mạnh nhất) — phù hợp hoàn hảo với đường cong sức mạnh tự nhiên',
+    detail: 'Dây kháng lực (resistance band) tạo ra đặc tính kháng lực hoàn toàn khác với tạ hay khăn. Lực kháng tăng theo biên độ kéo giãn dây — điều này tự nhiên phù hợp với cơ học cơ thể (cơ mạnh hơn khi rút ngắn) và giảm nguy cơ chấn thương.',
+    details: [
+      'Resistance band tạo "accommodating resistance" — lực tăng dần khi kéo, phù hợp với sức mạnh cơ tự nhiên',
+      'Band có thể cố định ở nhiều điểm: cửa, cọc, ngang ngực để tập rowing, hoặc cao hơn để tập lat pulldown',
+      'Giữ tay cách nhau bằng vai — rộng hơn tập cơ lưng ngoài (lats), hẹp hơn tập lưng giữa (rhomboids)',
+      'Thả dây chậm 2–3 giây mỗi rep — eccentric loading với band kích hoạt cơ lưng sâu hiệu quả',
+      'Bắt đầu với band nhẹ (loop band màu vàng hoặc đỏ) — dễ kiểm soát kỹ thuật hơn band nặng',
+      'Phân biệt cảm giác làm việc: lưng nên "nóng" trước, sau đó cẳng tay — nếu cẳng tay mệt trước là đang kéo bằng tay',
+    ],
+    points: [
+      { icon: '📈', label: 'Lực biến thiên', note: 'Kháng lực tăng theo chiều kéo — cân bằng cơ học' },
+      { icon: '🎯', label: 'Lat pulldown', note: 'Band ở trên đầu = bắt chước lat pulldown máy' },
+      { icon: '🌡️', label: 'Cảm giác', note: 'Lưng nóng trước — nếu tay mệt trước là kéo sai' },
+      { icon: '💰', label: 'Đầu tư', note: 'Band kháng lực ~150k VNĐ — thiết bị hiệu quả nhất' },
+    ],
+  },
+  'pull-2': {
+    icon: '🏋️', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: 'Kéo Tạ Đơn Một Tay / Kéo Dây Nặng', level: 'Nâng Cao',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=75',
+    keyFact: 'Single-arm dumbbell row là bài tập lưng có phạm vi chuyển động lớn nhất trong tất cả dụng cụ tập gym — vượt qua cả xà và máy cable',
+    detail: 'Kéo tạ đơn một tay cho phép cơ thể xoay nhẹ theo chuyển động tự nhiên — tăng ROM và kích hoạt lats sâu hơn bất kỳ bài kéo nào khác. Một tay trên ghế cho phép hỗ trợ cột sống và đặt toàn bộ lực lên lưng.',
+    details: [
+      'Tư thế 3 điểm: một gối + một tay trên ghế, một chân duỗi thẳng trên sàn — cột sống neutral hoàn toàn',
+      'Kéo khuỷu tay lên cao hơn lưng — không phải kéo ngang hông mà kéo lên đến bên cạnh ngực',
+      'Cho phép cơ thể xoay nhẹ 5–10° theo mỗi rep — điều này tăng ROM và kích hoạt serratus anterior',
+      'Kiểm soát eccentric cực kỳ quan trọng: 2–3 giây thả xuống, không để tạ "rơi" xuống',
+      'Tạ mới bắt đầu: 6–10kg tùy sức. Tiêu chí tiến tạ: 3 hiệp × 12 với form hoàn hảo',
+      'Bài này có thể thay thế hoàn toàn lat pulldown và cable row — đủ kích thích để phát triển lưng dày',
+    ],
+    points: [
+      { icon: '📐', label: 'ROM lớn nhất', note: 'Phạm vi chuyển động vượt xà và máy cable' },
+      { icon: '🔄', label: 'Rotation', note: 'Xoay nhẹ tự nhiên — kích hoạt lats sâu hơn' },
+      { icon: '💪', label: 'Lats + Rhomboids', note: 'Kích hoạt toàn bộ lưng trên và giữa' },
+      { icon: '🏠', label: 'Tại nhà', note: 'Ghế + tạ đơn = đủ để tập lưng chuyên nghiệp' },
+    ],
+  },
+
+  /* ── CORE (purple) ───────────────────────────────────────────────────────── */
+  'core-0': {
+    icon: '🐛', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Bài Con Bọ Chậm / Tư Thế Ván Gối', level: 'Người Mới',
+    img: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=75',
+    keyFact: 'Dead Bug (Bài Con Bọ) là bài tập lõi tốt nhất cho người mới — kích hoạt cơ bụng sâu (TVA) mà không tạo bất kỳ áp lực nào lên đĩa đệm cột sống',
+    detail: 'Dead Bug được đặt tên vì giống con bọ nằm ngửa chân đạp lên trời. Đây là bài tập anti-extension lõi — mục tiêu là giữ lưng dưới không ưỡn lên trong khi chân và tay di chuyển. Cơ bụng sâu (transversus abdominis) là mục tiêu chính.',
+    details: [
+      'TVA (transversus abdominis) là cơ bụng sâu nhất — co lại kéo bụng vào như "thắt dây lưng" — core stability thực sự',
+      'Lưng dưới phải giữ PHẲNG trên sàn toàn bộ bài — ngay khi lưng ưỡn lên, dừng và reset',
+      'Bắt đầu chậm: duỗi một chân + tay đối diện đồng thời, mỗi bên 5 giây — kiểm soát trước tốc độ',
+      'Thở ra khi duỗi chân/tay ra — thở ra kích hoạt TVA tự động (không cần chủ động gồng bụng)',
+      'Tư thế ván gối đơn giản hơn: gối và cẳng tay chạm sàn — hông không chạm sàn, lưng thẳng',
+      'Sau 3–4 tuần Dead Bug + Plank gối, lưng dưới sẽ tự động ổn định hơn trong mọi hoạt động',
+    ],
+    points: [
+      { icon: '🎯', label: 'TVA', note: 'Transversus abdominis — cơ bụng sâu nhất, quan trọng nhất' },
+      { icon: '🛡️', label: 'An toàn tuyệt đối', note: 'Không áp lực đĩa đệm — an toàn cho mọi người' },
+      { icon: '🌬️', label: 'Hô hấp', note: 'Thở ra khi duỗi — TVA tự động kích hoạt' },
+      { icon: '📏', label: 'Kiểm soát', note: 'Lưng phẳng trên sàn — tiêu chí quan trọng nhất' },
+    ],
+  },
+  'core-1': {
+    icon: '🏄', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Tư Thế Ván Ngắn / Ván Bên Gối', level: 'Chuẩn',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=75',
+    keyFact: 'Tư thế Ván (Plank) 20–30 giây kích hoạt đồng thời tất cả cơ lõi — bụng trước, bụng bên, lưng dưới, và cơ mông trong một bài duy nhất',
+    detail: 'Plank là bài tập anti-gravity isometric — cơ lõi phải chống lại trọng lực không ngừng. Không cần di chuyển nhưng nhu cầu kích hoạt cơ liên tục làm bài này khó hơn nhiều so với vẻ ngoài. Plank bên (Side Plank) bổ sung yếu tố anti-lateral-flexion mà plank thường không có.',
+    details: [
+      'Plank tiêu chuẩn: cẳng tay chạm sàn, cơ thể thẳng từ đầu đến gót — không để hông chìm hay nhô',
+      'Siết mông và bụng đồng thời khi plank — không chỉ "giữ" mà phải chủ động co cơ',
+      'Plank ngắn 20–30 giây với form hoàn hảo > plank 2 phút với form tệ — chất lượng quan trọng hơn thời gian',
+      'Plank bên (Side Plank) gối: cẳng tay + gối chạm sàn, thân thẳng sang bên — kích hoạt obliques và QL',
+      'Nhìn xuống tay (không ngẩng đầu) giữ cổ trong tư thế neutral — tránh đau cổ sau khi plank',
+      'Tiến bộ: khi 30 giây hoàn toàn dễ → thêm 5 giây mỗi tuần, hoặc chuyển sang plank thẳng tay',
+    ],
+    points: [
+      { icon: '💪', label: 'Full core', note: 'Tất cả cơ lõi hoạt động đồng thời — hiệu quả tối đa' },
+      { icon: '⏱️', label: 'Chất > lượng', note: '20s hoàn hảo > 2 phút với form tệ' },
+      { icon: '↔️', label: 'Side Plank', note: 'Obliques + QL — phần lõi thường bị bỏ qua nhất' },
+      { icon: '📈', label: 'Tiến bộ', note: '+5 giây/tuần → plank thẳng tay → dynamic plank' },
+    ],
+  },
+  'core-2': {
+    icon: '🗡️', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Ván Bên / Kéo Dây Chống Xoay', level: 'Nâng Cao',
+    img: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=75',
+    keyFact: 'Kéo dây chống xoay (Pallof Press / Anti-rotation) huấn luyện cơ lõi theo cách chức năng nhất — chống lại lực xoay bên ngoài, chuẩn bị cho mọi hoạt động thực tế',
+    detail: 'Ở cấp độ nâng cao, core training không còn là "isometric endurance" mà là "anti-movement strength" — sức mạnh chống lại các lực bên ngoài trong khi giữ cột sống ổn định. Side Plank đầy đủ và Pallof Press là hai bài biểu trưng của khái niệm này.',
+    details: [
+      'Full Side Plank: chân duỗi thẳng, cơ thể nghiêng hoàn toàn sang bên — QL và oblique phải tạo lực nhiều hơn',
+      'Side Plank nâng chân: chân trên nâng lên khi đang side plank — thêm yếu tố hip abduction vào core',
+      'Kéo dây chống xoay (Pallof Press): dây gắn bên cạnh, kéo thẳng về trước và giữ — chống lại lực kéo sang bên',
+      'Paloff Press ở tư thế quỳ một chân tăng thêm yếu tố thăng bằng và anti-rotation đồng thời',
+      'Tất cả core nâng cao đều anti-movement: chống duỗi (plank), chống gấp bên (side plank), chống xoay (Pallof)',
+      'Core mạnh thực sự là core không di chuyển khi có lực tác động — không phải core làm nhiều sit-up',
+    ],
+    points: [
+      { icon: '🔄', label: 'Anti-rotation', note: 'Chống xoay = core training chức năng thực tế nhất' },
+      { icon: '↔️', label: 'Full Side Plank', note: 'Chân duỗi — QL và oblique chịu 100% tải' },
+      { icon: '⚡', label: 'Pallof Press', note: 'Bài tập core chức năng của vận động viên chuyên nghiệp' },
+      { icon: '🧠', label: 'Khái niệm', note: 'Core mạnh = không di chuyển khi có lực — không phải sit-up nhiều' },
+    ],
+  },
+
+  /* ── BREATH (orange) ─────────────────────────────────────────────────────── */
+  'breath-0': {
+    icon: '🫁', color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Thở Cơ Hoành', level: 'Cơ Bản',
+    img: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=75',
+    keyFact: 'Thở cơ hoành (diaphragmatic breathing) là nền tảng sinh lý của mọi hoạt động vận động — cải thiện hiệu suất tập luyện, phục hồi, và kiểm soát căng thẳng đồng thời',
+    detail: 'Hầu hết người trưởng thành đã mất đi kỹ năng thở bụng tự nhiên — thay thế bằng thở ngực nông do căng thẳng mãn tính và tư thế xấu. Luyện tập lại kỹ năng này thay đổi toàn bộ nền tảng sinh lý của bạn.',
+    details: [
+      'Cơ hoành là cơ hô hấp chính — chiếm 70–80% công việc thở khi cơ thể nghỉ ngơi',
+      'Thở ngực kích hoạt cơ ức đòn chũm và cơ thang — hai nhóm cơ gây đau cổ và đau đầu mãn tính',
+      'Mỗi hơi thở cơ hoành tạo ra áp lực ổ bụng — ổn định cột sống, bảo vệ lưng dưới khi tập',
+      'Bụng phồng khi hít vào (không phải ngực nhô lên) — kiểm tra bằng tay đặt lên bụng',
+      'Thở ra chậm qua miệng kích hoạt vagus nerve — hệ phó giao cảm, giảm căng thẳng tức thì',
+      '5 phút thở cơ hoành mỗi ngày trong 4 tuần giảm đo lường được cortisol và huyết áp nghỉ ngơi',
+    ],
+    points: [
+      { icon: '🧠', label: 'Não bộ', note: 'Tăng sóng alpha — tập trung thư thái tối ưu' },
+      { icon: '❤️', label: 'Tim mạch', note: 'Giảm nhịp tim và huyết áp nghỉ ngơi' },
+      { icon: '🛡️', label: 'Lưng dưới', note: 'Áp lực ổ bụng bảo vệ cột sống khi tập' },
+      { icon: '📅', label: '4 tuần', note: 'Cortisol và huyết áp giảm đo lường được' },
+    ],
+  },
+  'breath-1': {
+    icon: '📦', color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Thở Hộp (Box Breathing)', level: 'Nâng Cao',
+    img: 'https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?w=800&q=75',
+    keyFact: 'Box Breathing (4-4-4-4) được Navy SEALs và NASA sử dụng để kiểm soát cortisol và duy trì hiệu suất nhận thức trong điều kiện căng thẳng cực độ',
+    detail: 'Chu kỳ 4-4-4-4 (hít vào-giữ-thở ra-giữ) tạo nhịp hô hấp tối ưu ~5–6 nhịp/phút — chính xác là tần số cộng hưởng tim-phổi giúp tối đa hóa HRV. Đây là bài tập thở duy nhất được kiểm chứng lâm sàng trong context áp lực cực cao.',
+    details: [
+      'Tần số 5–6 nhịp/phút tạo "resonance" giữa nhịp tim và nhịp thở — HRV đạt đỉnh, phục hồi tối ưu',
+      'Giữ hơi sau hít vào (4s): tăng áp suất oxy trong phế nang — cải thiện trao đổi khí O₂/CO₂',
+      'Giữ hơi sau thở ra (empty lung hold): kích hoạt phản xạ Hering-Breuer mạnh nhất — phó giao cảm sâu',
+      '2–3 phút Box Breathing giảm cortisol đo lường được — xác nhận bởi 12 nghiên cứu độc lập',
+      'Navy SEALs dùng trước khi vào nhiệm vụ nguy hiểm để duy trì bình tĩnh và quyết định sáng suốt',
+      'Có thể dùng ở bất cứ đâu: trước cuộc họp quan trọng, trong kẹt xe, hoặc trước khi ngủ',
+    ],
+    points: [
+      { icon: '🫀', label: 'HRV đỉnh', note: '5–6 nhịp/phút = tần số cộng hưởng tim-phổi tối ưu' },
+      { icon: '🧠', label: 'Cortisol', note: 'Giảm đo lường được sau 2–3 phút thực hành' },
+      { icon: '⚓', label: 'Military tested', note: 'Navy SEALs + NASA phi hành gia tin dùng' },
+      { icon: '🌍', label: 'Đa năng', note: 'Dùng được mọi lúc — không cần không gian hay thiết bị' },
+    ],
+  },
+};
+
 const LEVEL_COLORS = [
   'text-green-400 bg-green-500/10 border-green-500/30',
   'text-blue-400 bg-blue-500/10 border-blue-500/30',
@@ -471,6 +842,7 @@ export default function PillarAMovements() {
   const [activeMove,   setActiveMove]   = useState(0);
   const [activeWarmup, setActiveWarmup] = useState('warmup');
   const [stepModal,    setStepModal]    = useState(null);
+  const [levelModal,   setLevelModal]   = useState(null);
 
   const currentMove = Array.isArray(movementsDetail) ? movementsDetail[activeMove] : null;
 
@@ -607,12 +979,25 @@ export default function PillarAMovements() {
                       <div>
                         <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-3">Cấp độ tiến bộ</p>
                         <div className="space-y-2">
-                          {Array.isArray(currentMove.levels) && currentMove.levels.map((lvl, li) => (
-                            <div key={li} className="flex items-center gap-3 bg-bg border border-border rounded-xl px-4 py-3">
-                              <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${LEVEL_COLORS[li % 3]}`}>{lvl.label}</span>
-                              <span className="text-lg text-text">{lvl.exercise}</span>
-                            </div>
-                          ))}
+                          {Array.isArray(currentMove.levels) && currentMove.levels.map((lvl, li) => {
+                            const modalKey = `${currentMove.id}-${li}`;
+                            const hasModal = !!LEVEL_MODALS[modalKey];
+                            return (
+                              <div
+                                key={li}
+                                className={`group/lvl flex items-center gap-3 bg-bg border border-border rounded-xl px-4 py-3 transition-all duration-150 ${hasModal ? 'cursor-pointer hover:border-border-bright hover:bg-white/3' : ''}`}
+                                onClick={hasModal ? () => setLevelModal({ moveId: currentMove.id, levelIdx: li, totalLevels: currentMove.levels.length }) : undefined}
+                              >
+                                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${LEVEL_COLORS[li % 3]}`}>{lvl.label}</span>
+                                <span className="text-lg text-text flex-1">{lvl.exercise}</span>
+                                {hasModal && (
+                                  <span className="text-[10px] font-bold text-muted opacity-0 group-hover/lvl:opacity-60 transition-opacity duration-150 shrink-0">
+                                    chi tiết →
+                                  </span>
+                                )}
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                       <div className="bg-yellow-500/6 border border-yellow-500/20 rounded-xl p-4">
@@ -769,6 +1154,26 @@ export default function PillarAMovements() {
           <span className="group-hover:translate-x-0.5 transition-transform">→</span>
         </Link>
       </div>
+
+      {/* Level detail modal */}
+      {levelModal !== null && (() => {
+        const key = `${levelModal.moveId}-${levelModal.levelIdx}`;
+        const modalItem = LEVEL_MODALS[key];
+        if (!modalItem) return null;
+        const total = levelModal.totalLevels;
+        const prevKey = `${levelModal.moveId}-${levelModal.levelIdx - 1}`;
+        const nextKey = `${levelModal.moveId}-${levelModal.levelIdx + 1}`;
+        return (
+          <StepModal
+            item={modalItem}
+            onClose={() => setLevelModal(null)}
+            onPrev={() => setLevelModal(m => ({ ...m, levelIdx: m.levelIdx - 1 }))}
+            onNext={() => setLevelModal(m => ({ ...m, levelIdx: m.levelIdx + 1 }))}
+            hasPrev={levelModal.levelIdx > 0 && !!LEVEL_MODALS[prevKey]}
+            hasNext={levelModal.levelIdx < total - 1 && !!LEVEL_MODALS[nextKey]}
+          />
+        );
+      })()}
 
       {/* Step detail modal — outside all wrappers to prevent position:fixed constraint */}
       {stepModal !== null && (() => {

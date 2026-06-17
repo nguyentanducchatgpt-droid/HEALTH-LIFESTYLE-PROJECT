@@ -168,6 +168,266 @@ const TABS = [
   },
 ];
 
+// HIGHLIGHT_MODALS[tabIdx * 3 + highlightIdx]
+const HIGHLIGHT_MODALS = [
+  // ── Tab 0: 6 Mẫu Vận Động (green) ──────────────────────────────────────────
+  {
+    icon: '🎬', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Video HD Từng Bài — Tại Sao Xem Đúng Quan Trọng Hơn Đọc',
+    img: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Học kỹ thuật vận động qua video giúp não kích hoạt "mirror neurons" — cơ thể bắt đầu học mẫu chuyển động ngay cả trước khi thực hành. Xem đúng góc độ giảm 40% thời gian học kỹ thuật mới.',
+    detail: 'Kỹ thuật tập luyện là thứ không thể học chỉ qua chữ viết. Video HD với nhiều góc quay khác nhau cho phép não bộ phân tích chuyển động 3D — điều mà hình ảnh 2D hay mô tả văn bản không thể truyền đạt được.',
+    details: [
+      'Mirror neurons (neuron gương): Khi xem người khác thực hiện động tác, cùng các vùng não kiểm soát vận động của bạn cũng kích hoạt — đây là cơ chế học vận động qua quan sát.',
+      'Góc quay quan trọng: Góc bên (sagittal) cho thấy độ sâu squat và vị trí lưng. Góc trước (frontal) cho thấy đối xứng hai bên. Góc sau cho thấy căn chỉnh cột sống. Một video với đủ 3 góc là tốt nhất.',
+      'Cue vận động (movement cues): "Ngồi giữa hai chân" hiệu quả hơn "gập gối 90 độ". "Đẩy sàn xuống" hiệu quả hơn "duỗi gối". Cue tốt kích hoạt đúng nhóm cơ hơn mô tả kỹ thuật thuần túy.',
+      'Tốc độ xem: Xem slow-motion ở 0.5× tốc độ giúp nhận ra các phase của động tác mà mắt thường bỏ sót ở tốc độ bình thường — đặc biệt quan trọng cho deadlift và overhead press.',
+      'So sánh cấp độ: Xem cùng bài tập ở cấp độ cơ bản, trung cấp và nâng cao cạnh nhau giúp não xây dựng "lộ trình tiến bộ" trực quan — biết mình đang ở đâu và đích đến trông như thế nào.',
+      'Xem trước, tập sau: Nghiên cứu Motor Learning cho thấy xem video 2–3 lần trước khi thực hành cải thiện kỹ thuật buổi đầu tiên lên 28% so với nhóm chỉ đọc mô tả.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Mirror neurons', note: 'Não học kỹ thuật ngay khi xem, trước khi tập' },
+      { icon: '📐', label: '3 góc quay', note: 'Sagittal · Frontal · Posterior — không thiếu góc nào' },
+      { icon: '⏪', label: 'Slow-motion 0.5×', note: 'Nhận ra phase động tác mắt thường bỏ sót' },
+      { icon: '📈', label: '+28% kỹ thuật', note: 'Xem video trước tập tốt hơn chỉ đọc mô tả' },
+    ],
+  },
+  {
+    icon: '📊', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: '3 Cấp Độ Mỗi Bài — Tiến Bộ Không Bao Giờ Dừng Lại',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Principle of Progressive Overload: cơ thể chỉ tiếp tục phát triển khi kích thích tăng dần theo thời gian. 3 cấp độ mỗi bài tập tạo ra lộ trình tiến bộ rõ ràng trong ít nhất 6–18 tháng.',
+    detail: 'Hầu hết người bỏ tập không phải vì lười — mà vì bị "plateau" và không biết bước tiếp theo là gì. 3 cấp độ rõ ràng mỗi bài giải quyết vấn đề này: luôn có thứ gì đó để hướng đến.',
+    details: [
+      'Cấp 1 — Cơ bản (Beginner): Biên độ động tác đầy đủ với hỗ trợ hoặc tải trọng thấp. Mục tiêu là học pattern chuyển động đúng, không phải khối lượng tạ. Ví dụ: Goblet squat giữ dumbbell nhẹ.',
+      'Cấp 2 — Trung cấp (Intermediate): Cùng mẫu chuyển động nhưng giảm hỗ trợ hoặc tăng tải trọng. Kỹ thuật đã ổn định, giờ tập trung vào strength progression. Ví dụ: Barbell back squat.',
+      'Cấp 3 — Nâng cao (Advanced): Thêm độ khó qua unilateral (1 chân/tay), tempo đặc biệt, hoặc biên độ mở rộng. Ví dụ: Pistol squat, pause squat, tempo squat 4-0-1-0.',
+      'Tiêu chí lên cấp: Không phải ngẫu hứng — mà dựa trên tiêu chí cụ thể (10 reps × 3 sets với kỹ thuật hoàn hảo ở cấp hiện tại). Đừng lên cấp trước khi đạt tiêu chí.',
+      'Thời gian giữa các cấp: Người mới thường mất 4–8 tuần mỗi cấp. Người trung cấp mất 8–16 tuần. Không có "quá chậm" — chỉ có "đúng thời điểm" hay "chưa sẵn sàng".',
+      'Khi bị stuck ở cấp: Không phải thiếu nỗ lực — thường là thiếu volume (thêm 1–2 set), thiếu protein, hoặc thiếu ngủ. Giải quyết 3 yếu tố này trước khi lo về kỹ thuật.',
+    ],
+    points: [
+      { icon: '🪜', label: 'Lộ trình 6–18 tháng', note: '3 cấp = đủ thách thức cho ít nhất 1,5 năm' },
+      { icon: '✅', label: 'Tiêu chí lên cấp', note: '10 reps × 3 sets kỹ thuật hoàn hảo = sẵn sàng' },
+      { icon: '⏱️', label: '4–8 tuần/cấp', note: 'Người mới bình thường — đừng so sánh với người khác' },
+      { icon: '🔄', label: 'Plateau = thiếu volume', note: 'Thêm 1–2 set trước khi lo về kỹ thuật' },
+    ],
+  },
+  {
+    icon: '🔥', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Khởi Động Chuẩn Khoa Học — 5–8 Phút Không Thể Bỏ',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Khởi động đúng cách tăng nhiệt độ cơ bắp 1–2°C, cải thiện dẫn truyền thần kinh-cơ, và giảm viscosity khớp. Kết quả: sức mạnh đỉnh tăng 15–20%, nguy cơ chấn thương giảm 20–30%.',
+    detail: 'Khởi động không phải nghi lễ — nó có chức năng sinh lý cụ thể. Cơ bắp lạnh co bóp kém hơn, dẫn truyền thần kinh chậm hơn, và khớp thiếu dầu bôi trơn. 5–8 phút khởi động đúng cách thay đổi hoàn toàn chất lượng buổi tập.',
+    details: [
+      'Nhiệt độ cơ bắp: Mỗi 1°C tăng nhiệt độ = tốc độ co cơ tăng 2–4%. Khởi động 5 phút đủ để tăng 1–2°C nhiệt độ cơ bắp sâu — tương đương tăng 4–8% tốc độ và sức mạnh co cơ.',
+      'Dịch khớp (synovial fluid): Lúc sáng sớm hoặc sau thời gian ngồi lâu, dịch khớp đặc và ít. Chuyển động nhẹ trong khởi động kích thích tiết dịch khớp, giảm ma sát và nguy cơ tổn thương sụn.',
+      'Neural pre-activation: Khởi động kích hoạt các motor neurons cần dùng trong buổi tập. Bắt đầu bằng các bài tập tương tự pattern sẽ tập (mobility squat cho buổi squat) hiệu quả hơn chạy bộ chung chung.',
+      'Dynamic > Static: Khởi động động (leg swing, hip circle, arm circle) tốt hơn giãn cơ tĩnh (static stretch) trước tập. Static stretch trước tập có thể giảm sức mạnh đỉnh tạm thời 5–10%.',
+      'Progressive intensity: Bắt đầu nhẹ → tăng dần cường độ. Không bắt đầu ngay bằng bài nặng nhất. Rule of thumb: 2–3 warm-up sets với tải trọng 50–70% trước working sets.',
+      'Khởi động tâm lý: Thời gian khởi động cũng là thời gian não "chuyển mode" từ công việc/cuộc sống sang buổi tập. Không bỏ qua khởi động tâm lý này — nó ảnh hưởng đến sự tập trung và motivation.',
+    ],
+    points: [
+      { icon: '🌡️', label: '+1–2°C nhiệt độ cơ', note: '= +4–8% tốc độ và sức mạnh co cơ' },
+      { icon: '💧', label: 'Kích thích dịch khớp', note: 'Giảm ma sát, bảo vệ sụn khớp' },
+      { icon: '⚡', label: 'Neural pre-activation', note: 'Kích hoạt đúng motor neurons sẽ dùng' },
+      { icon: '🚫', label: 'No static stretch trước', note: 'Giảm sức mạnh đỉnh 5–10% nếu giãn tĩnh trước tập' },
+    ],
+  },
+  // ── Tab 1: Khung Ngày Tập (orange) ─────────────────────────────────────────
+  {
+    icon: '⚡', color: '#f97316', rgb: '249,115,22',
+    modalTitle: '4 Khối Thời Gian Chuẩn — Cấu Trúc Khoa Học Mỗi Buổi Tập',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: '4 khối phục vụ 4 chức năng sinh lý khác nhau: Khởi động (neural activation) → Vận động chính (stimulus) → Giãn cơ (recovery initiation) → Tĩnh tâm (ANS regulation). Thiếu bất kỳ khối nào làm giảm hiệu quả tổng thể.',
+    detail: 'Cấu trúc 4 khối không phải tùy tiện — mỗi khối phục vụ một giai đoạn trong chu trình sinh lý của buổi tập. Khi thiếu 1 khối, cả chuỗi sinh lý bị phá vỡ và hiệu quả tổng thể giảm dù volume vận động chính không đổi.',
+    details: [
+      'Khối 1 — Khởi động (5–10 phút): Tăng nhiệt độ cơ, kích hoạt thần kinh-cơ, bôi trơn khớp. Bỏ qua khối này = giảm 15–20% sức mạnh đỉnh và tăng nguy cơ gân cơ bị kéo căng đột ngột.',
+      'Khối 2 — Vận động chính (10–150 phút): Phần cốt lõi của buổi tập. Sức mạnh, cardio, hoặc kết hợp. Đây là khối duy nhất có thể co giãn theo thời gian — các khối khác nên giữ nguyên.',
+      'Khối 3 — Giãn cơ (5–10 phút): Static stretch sau tập (không trước) khi cơ đang ấm giúp tăng range of motion và giảm DOMS. Mỗi tư thế giữ ≥30 giây — dưới 15 giây không có hiệu quả.',
+      'Khối 4 — Tĩnh tâm (5 phút): Điều chỉnh hệ thần kinh tự chủ từ sympathetic (fight/flight) sang parasympathetic (rest/digest). Thở có kiểm soát là cách nhanh nhất để thực hiện điều này.',
+      'Tỉ lệ thời gian: Buổi 60 phút gợi ý: Khởi động 8\' + Vận động chính 40\' + Giãn cơ 7\' + Tĩnh tâm 5\'. Buổi 20 phút: 4\' + 10\' + 4\' + 2\'. Tỉ lệ co giãn, cấu trúc không đổi.',
+      'Sai lầm phổ biến: Bỏ khởi động vì "bận", bỏ giãn cơ vì "chán", bỏ tĩnh tâm vì "không cần". Kết quả là buổi tập chỉ có khối 2 — thiếu 3 điều quan trọng nhất cho tính bền vững.',
+    ],
+    points: [
+      { icon: '🔥', label: 'Khởi động không thể bỏ', note: '+15–20% sức mạnh đỉnh khi khởi động đúng' },
+      { icon: '⚡', label: 'Vận động chính', note: 'Khối duy nhất linh hoạt — co giãn thoải mái' },
+      { icon: '🧘', label: 'Giãn cơ sau (không trước)', note: '≥30 giây/tư thế để có hiệu quả thực' },
+      { icon: '🌬️', label: 'Tĩnh tâm 5 phút', note: 'Chuyển sympathetic → parasympathetic nhanh nhất' },
+    ],
+  },
+  {
+    icon: '📐', color: '#f97316', rgb: '249,115,22',
+    modalTitle: '8 Mức Thời Gian — Từ 20 Phút Đến 3 Giờ, Đều Có Kế Hoạch',
+    img: 'https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Hôm nay bận quá không tập được" thường không phải vì thiếu thời gian — mà vì thiếu kế hoạch cho buổi tập ngắn. 20 phút có cấu trúc hiệu quả hơn 1 giờ không có kế hoạch.',
+    detail: '8 mức thời gian từ 20 đến 180 phút đảm bảo luôn có một lịch tập phù hợp với thời gian bạn có hôm đó — không có lý do để bỏ buổi chỉ vì "không đủ thời gian".',
+    details: [
+      'Mức 20 phút (Siêu bận): Khởi động 4\' + Sức mạnh full-body circuit 12\' + Giãn nhanh 3\' + Thở 1\'. 3 bài tập compound (squat/push/hinge), 3 sets × 8 reps. Không lãng phí giây nào.',
+      'Mức 30 phút (Nhanh): Thêm 1 bài hoặc thêm 1 set cho mỗi bài. Hoặc thay circuit bằng superset (2 bài liên tiếp, nghỉ ngắn hơn).',
+      'Mức 45 phút (Chuẩn): Tách được thành sức mạnh (25\') + cardio nhẹ (10\') hoặc tập trung hoàn toàn vào sức mạnh với thêm warm-up chuyên sâu.',
+      'Mức 60 phút (Đầy đủ): Đủ thời gian cho lower hoặc upper body tập trung, với warm-up đầy đủ và giãn cơ có ý nghĩa. Đây là "buổi tập lý tưởng" cho hầu hết người đi làm.',
+      'Mức 90–120 phút (Nâng cao): Thêm accessory work sau main lift, hoặc kết hợp sức mạnh + cardio LISS (low-intensity steady-state). Cần thêm dinh dưỡng trong/sau buổi tập.',
+      'Mức 180 phút (Chuyên sâu): Phù hợp vận động viên hoặc ngày tập đặc biệt. Cần đặc biệt chú ý hydration, intra-workout nutrition (carbs trong buổi), và recovery sau đó.',
+    ],
+    points: [
+      { icon: '⚡', label: '20 phút là đủ', note: 'Full-body circuit có cấu trúc không kém 1 giờ' },
+      { icon: '📅', label: '8 mức = 8 lịch sẵn sàng', note: 'Luôn có kế hoạch dù thời gian khác nhau' },
+      { icon: '🎯', label: '60 phút = lý tưởng', note: 'Đủ cho buổi tập đầy đủ không cần ép thời gian' },
+      { icon: '🚫', label: 'Không có "quá bận"', note: 'Chỉ có "chưa có kế hoạch cho buổi ngắn"' },
+    ],
+  },
+  {
+    icon: '💡', color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Chi Tiết Từng Phút — Không Còn "Không Biết Tập Gì"',
+    img: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người tập với kế hoạch cụ thể từng phút hoàn thành 94% volume dự định. Người tập không có kế hoạch chi tiết chỉ hoàn thành 67% — bỏ bài, rút ngắn set, nghỉ quá lâu giữa các bài.',
+    detail: 'Kế hoạch "từng phút" không có nghĩa là cứng nhắc — nó có nghĩa là biết chính xác sẽ làm gì trong mỗi giai đoạn. Sự rõ ràng này loại bỏ hoàn toàn "dead time" (thời gian lãng phí do do dự) trong buổi tập.',
+    details: [
+      'Dead time trong buổi tập: Thời gian do dự giữa các bài, quyết định set tiếp theo, tìm kiếm thiết bị. Khảo sát phòng gym cho thấy dead time chiếm 20–35% thời gian ở phòng gym không có kế hoạch.',
+      'Rest timer vs. feel: Nghỉ theo cảm giác thường dài hơn 40% so với cần thiết. Timer 60–90 giây cho hypertrophy, 3–5 phút cho strength max effort. Cụ thể hóa = hiệu quả hơn.',
+      'Bài tập theo thứ tự ưu tiên: Tập bài quan trọng nhất đầu tiên khi energy cao nhất. Accessory work sau cùng. Nếu buổi bị cắt ngắn, đã hoàn thành phần quan trọng nhất.',
+      'Superset và giant set: Ghép 2–3 bài không cùng nhóm cơ chính liên tiếp (ví dụ: squat + pull-up + plank). Tăng density (volume/thời gian) mà không tăng total thời gian buổi tập.',
+      'Tracking đơn giản: Ghi ngay sau mỗi set (bài, reps, tạ). 2–3 phút/buổi. Giúp quyết định nhanh set tiếp theo và xây dựng progression logic cho buổi sau.',
+      'Adaptive planning: Kế hoạch "từng phút" không phải không thể thay đổi — nó là điểm xuất phát. Điều chỉnh khi cần (mệt hơn dự kiến, thiếu thiết bị) nhưng không phá vỡ cấu trúc tổng thể.',
+    ],
+    points: [
+      { icon: '✅', label: '94% vs 67%', note: 'Hoàn thành volume với/không có kế hoạch chi tiết' },
+      { icon: '⏱️', label: 'Rest timer', note: '60–90" cho hypertrophy · 3–5\' cho max strength' },
+      { icon: '🔝', label: 'Ưu tiên bài đầu', note: 'Quan trọng nhất trước khi energy giảm' },
+      { icon: '📝', label: 'Track 2–3 phút/buổi', note: 'Đủ để progressive overload diễn ra nhất quán' },
+    ],
+  },
+  // ── Tab 2: Nhịp Tuần (teal) ─────────────────────────────────────────────────
+  {
+    icon: '🗓', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: '3 Giai Đoạn Nhịp Tuần — Từ Bắt Đầu Đến Cá Nhân Hóa',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'General Adaptation Syndrome (GAS, Selye 1950): cơ thể phản ứng với stress theo 3 giai đoạn — Alarm (sốc) → Resistance (thích nghi) → Exhaustion (kiệt sức nếu không nghỉ). Nhịp tuần theo 3 giai đoạn phản ánh đúng chu trình sinh lý này.',
+    detail: '3 giai đoạn nhịp tuần không phải tùy ý đặt ra — chúng phản ánh cách cơ thể học thích nghi với tải trọng tập luyện theo thời gian. Bỏ qua giai đoạn nào cũng dẫn đến chấn thương hoặc không đạt kết quả.',
+    details: [
+      'Giai đoạn 1 — Bắt đầu (Tuần 1–4): 3 buổi/tuần, cường độ thấp-vừa, tập trung vào học kỹ thuật. Mục tiêu: tạo thói quen, không phải fitness. Không cần tập đến "thất bại cơ bắp" (failure).',
+      'Giai đoạn 2 — Xây nền (Tuần 5–12): 4 buổi/tuần, tăng volume và cường độ có kiểm soát. Đây là giai đoạn tăng cơ/giảm mỡ chính — cơ thể đang thích nghi nhanh nhất.',
+      'Giai đoạn 3 — Nâng cao (Tuần 13+): 5–6 buổi/tuần, cá nhân hóa theo mục tiêu cụ thể. Chỉ vào giai đoạn này khi nền đã xây đủ vững — không có shortcut.',
+      'Deload tuần: Sau mỗi 4–6 tuần tăng volume, 1 tuần giảm 40–50% cường độ. Supercompensation xảy ra trong tuần deload này — thực ra đây là tuần tăng mạnh nhất về mặt sinh lý.',
+      'Tại sao 3 giai đoạn không thể bỏ qua: Bắt đầu thẳng vào giai đoạn 3 (5–6 buổi/tuần) = overuse injury trong 4–8 tuần. Thống kê ACSM: 70% người tập quá nhiều quá sớm bị chấn thương trong 3 tháng đầu.',
+      'Chuyển tiếp giai đoạn: Không có ngày cụ thể để "lên giai đoạn mới" — dựa vào tín hiệu cơ thể: recovery tốt (không đau kéo dài), hiệu suất ổn định, ngủ tốt, mood ổn.',
+    ],
+    points: [
+      { icon: '🌱', label: 'Giai đoạn 1: Thói quen', note: 'Học kỹ thuật + tạo habit — chưa phải fitness' },
+      { icon: '💪', label: 'Giai đoạn 2: Xây nền', note: 'Tuần 5–12: tăng cơ/giảm mỡ nhanh nhất' },
+      { icon: '🎯', label: 'Giai đoạn 3: Cá nhân hóa', note: 'Tuần 13+: tối ưu cho mục tiêu riêng' },
+      { icon: '🔄', label: 'Deload = tuần mạnh nhất', note: 'Supercompensation xảy ra trong tuần nghỉ bớt' },
+    ],
+  },
+  {
+    icon: '🎯', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: '6 Lộ Trình Theo Mục Tiêu — Tìm Nhịp Tập Phù Hợp Nhất Với Bạn',
+    img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"One size fits all" không tồn tại trong tập luyện. 6 lộ trình được thiết kế cho 6 profile khác nhau về mục tiêu, thời gian có, và điểm xuất phát. Chọn nhầm lộ trình = không đạt kết quả dù cố gắng nhiều.',
+    detail: 'Nhiều người thất bại không phải vì thiếu kỷ luật — mà vì đang đi theo lộ trình không phù hợp với hoàn cảnh của họ. Người mới đi theo lịch của vận động viên chuyên nghiệp, hoặc người bận rộn cố duy trì lịch 6 buổi/tuần — đều không bền vững.',
+    details: [
+      'Lộ trình 1 — Siêu bận (2 buổi/tuần): Full-body mỗi buổi, 45 phút, 4–5 bài compound. Đủ để duy trì cơ bắp và sức khỏe tổng thể. Phù hợp: người làm việc >50h/tuần hoặc có trách nhiệm gia đình lớn.',
+      'Lộ trình 2 — Bắt đầu (3 buổi/tuần): A/B alternating (Full-body A và Full-body B xen kẽ). Hiệu quả nhất cho người mới vì tần suất đủ cao để học kỹ thuật mà không quá tải.',
+      'Lộ trình 3 — Phổ biến (4 buổi/tuần): Upper/Lower split. 2 ngày upper, 2 ngày lower. Đủ để tiến bộ rõ rệt và đủ nghỉ giữa các buổi. Phù hợp: hầu hết người không phải chuyên nghiệp.',
+      'Lộ trình 4 — Nâng cao (5 buổi/tuần): Push/Pull/Legs hoặc Upper-Lower-Full. Cần nền tảng kỹ thuật tốt và khả năng phục hồi cao. Không phù hợp cho người đang stress cao hay ngủ kém.',
+      'Lộ trình 5 — Chuyên sâu (6 buổi/tuần): Tập từng nhóm cơ riêng (bro split) hoặc Daily Undulating Periodization. Cần kinh nghiệm 12+ tháng và điều kiện dinh dưỡng-ngủ nghỉ tối ưu.',
+      'Lộ trình 6 — Vận động viên (6 buổi + cardio phụ): Kết hợp strength training, sport-specific cardio, và mobility work. Không phải mục tiêu của hầu hết người — nhưng để biết tiềm năng phát triển.',
+    ],
+    points: [
+      { icon: '🏃', label: 'Lộ trình 1–2: Bắt đầu', note: '2–3 buổi/tuần cho người mới và bận rộn' },
+      { icon: '💪', label: 'Lộ trình 3: Sweet spot', note: '4 buổi/tuần phổ biến nhất, kết quả tốt nhất' },
+      { icon: '🔑', label: 'Chọn dựa trên thực tế', note: 'Nhịp duy trì được > nhịp lý tưởng không duy trì' },
+      { icon: '📈', label: 'Tăng dần từ ít', note: 'Ổn định 4 tuần rồi thêm 1 buổi — không nhảy cóc' },
+    ],
+  },
+  {
+    icon: '😴', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: 'Nghỉ Đúng Cách — Phục Hồi Là Phần Thiết Yếu, Không Phải Lười Biếng',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cơ bắp không mạnh lên trong buổi tập — mà trong thời gian nghỉ sau đó. Ngày nghỉ không phải ngày "không làm gì" — mà là ngày cơ thể thực sự xây dựng những gì bạn kích thích trong buổi tập.',
+    detail: 'Văn hóa "no pain no gain" và "rest is for the weak" đã gây hại cho hàng triệu người tập. Nghỉ ngơi đủ không phải dấu hiệu yếu đuối — nó là kỹ năng training thiết yếu của vận động viên chuyên nghiệp.',
+    details: [
+      'Active recovery vs. passive rest: Ngày nghỉ không có nghĩa là nằm im. Đi bộ 20–30 phút, yoga nhẹ, bơi nhẹ ở cường độ thấp (<60% max HR) thực ra tăng tốc phục hồi bằng cách tăng blood flow mà không tạo thêm tải.',
+      'Sleep là recovery tool số 1: GH (growth hormone) tiết 70–80% trong giai đoạn slow-wave sleep. Thiếu ngủ 1 giờ = giảm MPS 18–21% và tăng cortisol. Không có supplement nào bù được thiếu ngủ.',
+      'Nutrition trong ngày nghỉ: Không cần giảm protein ngày nghỉ — muscle protein synthesis vẫn xảy ra 24–48h sau tập. Carbs có thể giảm nhẹ nhưng đừng cắt hoàn toàn — glycogen cần được tái nạp.',
+      'HRV (Heart Rate Variability): Metric đơn giản nhất để đo recovery. HRV cao sáng dậy = phục hồi tốt. HRV thấp nhiều ngày liên tiếp = cần thêm rest hoặc giảm cường độ. Nhiều smartwatch đo được.',
+      'Resting Heart Rate trend: Nếu RHR tăng 5–10 BPM so với baseline liên tục 3+ ngày — đây là tín hiệu overtraining. Cần 1–2 ngày nghỉ thêm hoặc giảm volume 40–50%.',
+      'Psychological recovery: Ngày nghỉ cũng là recovery tâm lý. Buổi tập mỗi ngày mà không hứng thú, phải ép bản thân — đây là dấu hiệu cần nghỉ dù cơ thể "không đau". Motivation burnout thường đến trước physical burnout.',
+    ],
+    points: [
+      { icon: '🏃', label: 'Active recovery tốt hơn', note: 'Đi bộ nhẹ > nằm im trong ngày nghỉ' },
+      { icon: '😴', label: 'Sleep = GH +70–80%', note: 'Không supplement nào bù được thiếu ngủ' },
+      { icon: '💓', label: 'HRV theo dõi recovery', note: 'Smartwatch đo được — HRV cao = đã phục hồi' },
+      { icon: '🧠', label: 'Psychological burnout trước', note: 'Mất motivation là tín hiệu sớm hơn physical pain' },
+    ],
+  },
+  // ── Tab 3: Bậc Thang Tiến Bộ (purple) ─────────────────────────────────────
+  {
+    icon: '🪜', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Bậc Thang Rõ Ràng — Biết Chính Xác Bước Tiếp Theo Là Gì',
+    img: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thiếu rõ ràng về "bước tiếp theo" là nguyên nhân số 1 khiến người tập bỏ cuộc (IHRSA 2019). Không phải lười biếng, không phải thiếu thời gian — mà là "tôi không biết mình cần làm gì tiếp".',
+    detail: 'Bậc thang tiến bộ không phải danh hiệu hay cuộc cạnh tranh. Nó là hệ thống định vị — giúp bạn biết hiện đang ở đâu, cần gì để tiến lên, và bước tiếp theo trông như thế nào cụ thể.',
+    details: [
+      'Vấn đề của "tập tự do": Không có tiêu chí rõ ràng = không biết bao giờ đã "đủ tốt". Tập mà không biết mình tiến bộ hay không = mất động lực sau 4–8 tuần.',
+      '5 bậc rõ ràng với tiêu chí cụ thể: Bậc 1 (đi bộ 30\'/ngày) → Bậc 2 (push-up 10, plank 30") → Bậc 3 (squat BW, 2km chạy) → Bậc 4 (squat 1.5BW, 5km <30\') → Bậc 5 (vận động viên).',
+      'Tại sao 5 bậc, không phải nhiều hơn: Đủ granular để biết mình đang ở đâu, không quá nhiều đến mức gây overwhelm. 5 bậc cũng phù hợp với khoảng thời gian 1–5 năm tập luyện nghiêm túc.',
+      'Test vào đúng bậc: Đánh giá bản thân dựa trên tiêu chí khách quan (reps, thời gian, tải trọng), không dựa trên cảm giác. Nhiều người overestimate hoặc underestimate bậc của mình.',
+      'Phần thưởng khi lên bậc: Thêm loại bài tập mới (unilateral, olympic lifting), tăng tần suất tập, hoặc thêm cardio chuyên biệt. Mỗi bậc mở ra khả năng mới — đây là dynamic phần thưởng.',
+      'Không so sánh với người khác: Bậc thang là cá nhân — dựa trên baseline của bạn, không phải benchmark của người khác. Người 50 tuổi ở Bậc 3 tốt hơn nhiều so với người 20 tuổi ở Bậc 3 nhưng đang plateau.',
+    ],
+    points: [
+      { icon: '🗺️', label: 'Định vị rõ ràng', note: 'Biết đang ở đâu = giảm 70% khả năng bỏ cuộc' },
+      { icon: '✅', label: 'Tiêu chí khách quan', note: 'Reps · Thời gian · Tải trọng — không phải cảm giác' },
+      { icon: '🏆', label: 'Phần thưởng khi lên bậc', note: 'Mỗi bậc mở ra khả năng và bài tập mới' },
+      { icon: '🚫', label: 'Không so sánh', note: 'Bậc thang cá nhân — baseline riêng của bạn' },
+    ],
+  },
+  {
+    icon: '🎯', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Test Định Kỳ 3 Kỳ — Tuần 4, 8 Và 12 Là Mốc Quan Trọng',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Không đo không cải thiện (Peter Drucker). 3 kỳ test trong 12 tuần đầu cho phép điều chỉnh kế hoạch dựa trên dữ liệu thực — không phải cảm giác. Người có lịch test cụ thể đạt mục tiêu 2.5× hiệu quả hơn.',
+    detail: '3 kỳ test không phải để kiểm tra mà để điều chỉnh. Tuần 4 cho biết kế hoạch có phù hợp không. Tuần 8 cho thấy progression rate. Tuần 12 đánh giá tổng thể và lập kế hoạch giai đoạn tiếp theo.',
+    details: [
+      'Tuần 4 test — Calibration: Sau 4 tuần, cơ thể đã vượt qua giai đoạn neural adaptation ban đầu. Test này cho biết kế hoạch có phù hợp (đang tiến bộ) hay cần điều chỉnh (không tiến bộ đáng kể).',
+      'Tuần 8 test — Trend analysis: So sánh với tuần 4. Nếu tiến bộ >10% = kế hoạch đang hoạt động tốt. Nếu <5% = cần xem lại dinh dưỡng và ngủ. Nếu hiệu suất giảm = overtraining.',
+      'Tuần 12 test — Full evaluation: Đánh giá toàn diện tất cả 4 chiều (sức mạnh, sức bền, linh hoạt, phục hồi). Kết quả này làm nền tảng để thiết kế kế hoạch 12 tuần tiếp theo.',
+      'Test đúng ngày: Không test sau buổi tập nặng, không test khi mệt hay ốm, không test sau đêm ngủ kém. Điều kiện nhất quán cho phép so sánh chính xác giữa các kỳ.',
+      'Điều chỉnh dựa trên test: Tuần 4 test kém → tăng protein hoặc ngủ thêm trước khi thay đổi volume. Tuần 8 test tốt → tăng thêm 5–10% volume. Không thay đổi nhiều thứ cùng lúc.',
+      'Tạo ritual: Biến ngày test thành một nghi thức — cùng thời điểm, cùng warm-up, cùng âm nhạc nếu có. Ritual giúp tâm lý vào đúng trạng thái và kết quả nhất quán hơn.',
+    ],
+    points: [
+      { icon: '📅', label: 'Tuần 4: Calibration', note: 'Kế hoạch có phù hợp không? Điều chỉnh sớm nếu cần' },
+      { icon: '📈', label: 'Tuần 8: Trend', note: '>10% tiến bộ = đang đi đúng hướng' },
+      { icon: '🏁', label: 'Tuần 12: Full eval', note: 'Nền tảng cho kế hoạch 12 tuần tiếp theo' },
+      { icon: '🎭', label: 'Tạo ritual test', note: 'Cùng điều kiện mỗi lần = kết quả đáng tin cậy' },
+    ],
+  },
+  {
+    icon: '📊', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Radar Chart 4 Chiều — Sức Mạnh · Sức Bền · Linh Hoạt · Phục Hồi',
+    img: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80&auto=format&fit=crop',
+    keyFact: '4 chiều không phải 4 bài test riêng lẻ — chúng là hệ thống đánh giá toàn diện sức khỏe thể chất. VO2 max (sức bền) là predictor số 1 của tuổi thọ theo nghiên cứu JAMA 2018 với 122.000 người.',
+    detail: 'Fitness không phải một chiều tuyến tính. Người mạnh nhất chưa chắc khỏe nhất. Người dẻo dai chưa chắc phục hồi tốt. Radar chart 4 chiều là cách đơn giản nhất để thấy "bức tranh toàn diện" về sức khỏe thể chất.',
+    details: [
+      'Chiều 1 — Sức mạnh: Đo ability to produce force. Test đơn giản: push-up max reps, squat 5RM, deadlift 3RM. Sức mạnh là nền tảng — thiếu sức mạnh = giới hạn tất cả các chiều khác.',
+      'Chiều 2 — Sức bền (Cardiovascular): VO2 max là gold standard nhưng khó đo. Thay thế: thời gian chạy 1.5km, beep test, hoặc 12-minute Cooper test. VO2 max là predictor mạnh nhất của tử vong tim mạch và tuổi thọ.',
+      'Chiều 3 — Linh hoạt (Mobility): Không phải mềm dẻo như vũ công — mà là đủ range of motion để thực hiện các mẫu chuyển động cơ bản an toàn. Test: overhead squat, hip flexor length, shoulder mobility.',
+      'Chiều 4 — Phục hồi: Tổng hợp của HRV trend, resting heart rate, chất lượng giấc ngủ (PSQI score), và thời gian để không còn DOMS sau buổi tập chuẩn. Chiều này cải thiện khi 3 chiều kia được cân bằng.',
+      'Asymmetry là warning sign: Nếu một chiều thấp hơn các chiều khác >30% → ưu tiên cải thiện chiều đó trong giai đoạn tiếp theo. Đừng cố tối ưu điểm mạnh khi có điểm yếu rõ ràng.',
+      'Cách vẽ radar chart: Cho mỗi chiều điểm từ 1–10 dựa trên tiêu chí của bậc thang (Bậc 1 = 2 điểm, Bậc 2 = 4 điểm, v.v.). Vẽ lên 4 trục và nối thành hình tứ giác. Mục tiêu: hình tứ giác đều, không phải hình không đều có một góc nhọn.',
+    ],
+    points: [
+      { icon: '❤️', label: 'VO2 max = tuổi thọ', note: 'JAMA 2018: 122.000 người — predictor số 1' },
+      { icon: '⚠️', label: 'Asymmetry = danger', note: '>30% chênh lệch = ưu tiên cải thiện chiều yếu' },
+      { icon: '📐', label: 'Điểm 1–10 mỗi chiều', note: 'Dựa trên tiêu chí bậc thang — khách quan' },
+      { icon: '🎯', label: 'Hình tứ giác đều', note: 'Không cần điểm cao — cần cân bằng giữa 4 chiều' },
+    ],
+  },
+];
+
 // DETAIL_MODALS[tabIdx * 3 + detailIdx] — separate from TABS to survive i18n merge
 const DETAIL_MODALS = [
   // ── Tab 0: 6 Mẫu Vận Động (green) ──────────────────────────────────────────
@@ -791,7 +1051,7 @@ function AnimatedStat({ n, label, color, tooltip }) {
 
 // ─── Tab content panel ──────────────────────────────────────────────────────────
 
-function TabPanel({ tab, onDetailClick }) {
+function TabPanel({ tab, onDetailClick, onHighlightClick }) {
   return (
     <div className={`relative overflow-hidden rounded-3xl border ${tab.border}`} style={{ background: `${tab.color}03` }}>
       {/* Top accent gradient line */}
@@ -836,19 +1096,21 @@ function TabPanel({ tab, onDetailClick }) {
             {tab.highlights.map((h, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 group animate-fade-in-up"
+                className="flex items-start gap-3 group/hl animate-fade-in-up cursor-pointer rounded-xl transition-all duration-200 hover:bg-white/[0.03] -mx-2 px-2 py-1"
                 style={{ animationDelay: `${i * 70 + 80}ms`, animationFillMode: 'both' }}
+                onClick={() => onHighlightClick && onHighlightClick(i)}
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-lg shrink-0 border transition-all duration-200 group-hover:scale-110"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-lg shrink-0 border transition-all duration-200 group-hover/hl:scale-110"
                   style={{ background: `${tab.color}10`, borderColor: `${tab.color}25` }}
                 >
                   {h.icon}
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="text-base font-bold text-text leading-tight">{h.title}</p>
                   <p className="text-[11px] text-muted mt-0.5">{h.desc}</p>
                 </div>
+                <span className="shrink-0 self-center text-[10px] font-bold opacity-0 group-hover/hl:opacity-60 transition-opacity" style={{ color: tab.color }}>chi tiết →</span>
               </div>
             ))}
           </div>
@@ -960,7 +1222,8 @@ export default function PillarA() {
   });
 
   const [principleIdx, setPrincipleIdx] = useState(null);
-  const [detailModal, setDetailModal] = useState(null); // { tabIdx, itemIdx }
+  const [detailModal, setDetailModal] = useState(null);     // { tabIdx, itemIdx }
+  const [highlightModal, setHighlightModal] = useState(null); // { tabIdx, itemIdx }
   const [activeTab, setActiveTab] = useState(0);
   const [tabKey, setTabKey] = useState(0);
   const tabBarRef = useRef(null);
@@ -1396,7 +1659,11 @@ export default function PillarA() {
                 style={{ background: `${mergedTabs[activeTab].color}0e` }}
               />
               <div className="relative z-10">
-                <TabPanel tab={tab} onDetailClick={(i) => setDetailModal({ tabIdx: activeTab, itemIdx: i })} />
+                <TabPanel
+                  tab={tab}
+                  onDetailClick={(i) => setDetailModal({ tabIdx: activeTab, itemIdx: i })}
+                  onHighlightClick={(i) => setHighlightModal({ tabIdx: activeTab, itemIdx: i })}
+                />
               </div>
             </div>
 
@@ -1478,6 +1745,22 @@ export default function PillarA() {
           </Link>
         </div>
       </RevealBlock>
+
+      {/* Highlight modal — outside all RevealBlocks so position:fixed works */}
+      {highlightModal !== null && (() => {
+        const hItem = HIGHLIGHT_MODALS[highlightModal.tabIdx * 3 + highlightModal.itemIdx];
+        return hItem ? (
+          <TabDetailModal
+            item={hItem}
+            itemIdx={highlightModal.itemIdx}
+            onClose={() => setHighlightModal(null)}
+            onPrev={() => setHighlightModal(dm => ({ ...dm, itemIdx: Math.max(0, dm.itemIdx - 1) }))}
+            onNext={() => setHighlightModal(dm => ({ ...dm, itemIdx: Math.min(2, dm.itemIdx + 1) }))}
+            hasPrev={highlightModal.itemIdx > 0}
+            hasNext={highlightModal.itemIdx < 2}
+          />
+        ) : null;
+      })()}
 
       {/* Tab detail modal — outside all RevealBlocks so position:fixed works */}
       {detailModal !== null && (() => {

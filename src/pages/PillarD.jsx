@@ -297,14 +297,17 @@ function D0Panel({ color, onCardClick }) {
         {D0_CARDS.map((m, i) => (
           <div
             key={m.title}
-            className={`group/card rounded-xl border border-border bg-bg p-4 transition-all duration-200 ${onCardClick ? 'cursor-pointer hover:border-purple-500/30 hover:bg-white/[0.03]' : 'hover:border-purple-500/20'}`}
+            className={`group/card rounded-xl border bg-bg p-4 transition-all duration-200 ${onCardClick ? 'cursor-pointer border-border hover:border-purple-500/40 hover:bg-white/[0.03] hover:shadow-[0_0_18px_rgba(168,85,247,0.08)]' : 'border-border hover:border-purple-500/20'}`}
             onClick={onCardClick ? () => onCardClick(i) : undefined}
           >
             <div className="flex items-center gap-3 mb-2">
               <span className="text-2xl">{m.icon}</span>
-              <span className="text-lg font-bold text-text">{m.title}</span>
+              <span className="text-lg font-bold text-text flex-1">{m.title}</span>
               {onCardClick && (
-                <span className="ml-auto text-[10px] font-bold text-muted opacity-0 group-hover/card:opacity-60 transition-opacity shrink-0">chi tiết →</span>
+                <span
+                  className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/card:opacity-100 transition-opacity"
+                  style={{ color: D0_CARD_MODALS[i].color, borderColor: `rgba(${D0_CARD_MODALS[i].rgb},0.35)`, background: `rgba(${D0_CARD_MODALS[i].rgb},0.08)` }}
+                >chi tiết →</span>
               )}
             </div>
             <p className="text-base text-muted leading-relaxed">{m.desc}</p>

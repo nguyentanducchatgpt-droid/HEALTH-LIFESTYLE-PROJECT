@@ -25,45 +25,366 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 const ENV_ZONES = [
   {
-    id: 'morning',
-    icon: '🌅',
-    title: 'Môi Trường Buổi Sáng',
-    subtitle: 'Thiết kế cho sự khởi động',
-    color: '#f59e0b',
+    id: 'morning', icon: '🌅', title: 'Môi Trường Buổi Sáng',
+    subtitle: 'Thiết kế cho sự khởi động', color: '#f59e0b',
     items: [
-      { icon: '💡', title: 'Ánh sáng ngay khi thức', desc: 'Mở rèm hoặc bật đèn sáng trắng (5000K+) trong 5 phút đầu. Ức chế melatonin, reset đồng hồ sinh học.' },
-      { icon: '🌡️', title: 'Nhiệt độ mát', desc: 'Giữ phòng 18–20°C buổi sáng. Nhiệt độ thấp kích hoạt cortisol tích cực, tăng tỉnh táo.' },
-      { icon: '📵', title: 'Phone-free 30 phút', desc: 'Để điện thoại ở phòng khác hoặc chế độ DND. Không email, không mạng xã hội — não bộ cần thời gian "warm up".' },
-      { icon: '💧', title: 'Nước trên bàn đêm', desc: 'Đặt sẵn ly nước lớn bên giường. Uống ngay khi thức dậy — cơ thể mất 0.5–1L qua đêm.' },
-      { icon: '🎵', title: 'Âm nhạc hoặc im lặng', desc: 'Tránh podcast/news ngay từ sáng — chúng kích thích hệ thống xử lý thông tin trước khi não sẵn sàng.' },
+      {
+        icon: '💡', title: 'Ánh sáng ngay khi thức',
+        desc: 'Mở rèm hoặc bật đèn sáng trắng (5000K+) trong 5 phút đầu. Ức chế melatonin, reset đồng hồ sinh học.',
+        color: '#f59e0b', rgb: '245,158,11',
+        modalTitle: 'Ánh Sáng Buổi Sáng — Reset Đồng Hồ Sinh Học',
+        img: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Ánh sáng mạnh (>1000 lux) trong 30 phút đầu sau khi thức là tín hiệu mạnh nhất để reset circadian clock. Võng mạc có tế bào cảm quang đặc biệt (ipRGC — intrinsically photosensitive retinal ganglion cells) nhạy nhất với ánh sáng xanh lam (480nm) — chúng gửi tín hiệu trực tiếp đến suprachiasmatic nucleus (SCN) trong hypothalamus, "đồng hồ chủ" của cơ thể. Ánh sáng sáng buổi sáng = SCN nhận lệnh "đã là ban ngày" → ức chế melatonin → cortisol tăng đúng lúc → tỉnh táo trong 6–8h tiếp theo.',
+        detail: 'Đồng hồ sinh học (circadian rhythm) không tự động biết giờ — nó cần "zeitgebers" (time-givers) bên ngoài để calibrate mỗi ngày. Ánh sáng mạnh buổi sáng là zeitgeber mạnh nhất và quan trọng nhất. Thiếu ánh sáng buổi sáng (làm việc trong văn phòng tối, dậy trước bình minh không bù đắp) là nguyên nhân phổ biến của cảm giác "không tỉnh" kéo dài suốt buổi sáng.',
+        details: [
+          'ipRGC và melanopsin: tế bào cảm quang đặc biệt này (phát hiện năm 1999 bởi David Berson) không liên quan đến thị giác thông thường — chức năng duy nhất là đo ánh sáng ambient để điều tiết đồng hồ sinh học. Chúng nhạy nhất với bước sóng 480nm (xanh lam) và cần ánh sáng đủ mạnh (>100 lux) mới hoạt động hiệu quả. Phòng trong nhà buổi sáng thường chỉ 50–100 lux — không đủ. Nắng ngoài trời: 10.000–100.000 lux.',
+          'Cortisol Awakening Response (CAR) và ánh sáng: ánh sáng mạnh buổi sáng amplify CAR — đỉnh cortisol tự nhiên cao hơn và sắc nét hơn → năng lượng tốt hơn trong 4–6h đầu. Thiếu ánh sáng buổi sáng → CAR yếu → "brain fog" kéo dài. Đây là lý do người làm việc ca đêm và sống trong môi trường ít sáng thường bị mood disorders — đồng hồ sinh học bị desynchronize.',
+          'Serotonin synthesis: ánh sáng buổi sáng qua ipRGC trigger serotonin synthesis tại raphe nuclei. Serotonin là precursor của melatonin — "more morning light = more serotonin now + more melatonin tonight". Đây là lý do morning sunlight trực tiếp liên quan đến chất lượng giấc ngủ tối hôm đó và tại sao seasonal affective disorder (trầm cảm mùa đông) điều trị bằng light therapy.',
+          'Practical: 5 phút đủ (nếu ánh sáng đủ mạnh). Ra ngoài trời 10 phút không đeo kính râm (ánh sáng phải qua mắt, không phải da) = tốt nhất. Nếu không ra ngoài được: mở cửa sổ hoặc bật đèn sáng trắng 5000K+ (LED studio light hoặc SAD lamp 10.000 lux) trong khi ăn sáng. Không cần nhìn thẳng vào ánh sáng — ambient light đủ.',
+          'Timing quan trọng hơn duration: ánh sáng mạnh trong 30–60 phút đầu sau thức có impact lớn nhất. Sau đó, light exposure ít ảnh hưởng hơn đến circadian timing. "Golden window" này không thể bù bằng ánh sáng mạnh vào buổi trưa hay chiều cho mục đích circadian reset.',
+          'Ánh sáng nhân tạo có đủ không: SAD lamps (10.000 lux, 20–30 phút) được chứng minh hiệu quả tương đương nắng tự nhiên cho circadian reset và seasonal depression. Đèn LED thông thường trong nhà (200–500 lux) không đủ. Đầu tư một SAD lamp hoặc đèn grow light (dùng gần mặt) là giải pháp cho người không thể ra ngoài sáng sớm.',
+        ],
+        points: [
+          { icon: '🌞', label: '10 phút nắng sáng > bất kỳ supplement', note: 'Serotonin + CAR amplification + circadian reset — không thứ gì thay thế được' },
+          { icon: '🔬', label: 'ipRGC: cảm biến ánh sáng chuyên dụng', note: 'Tế bào đặc biệt chỉ đo ánh sáng ambient — cần >100 lux để hoạt động (phòng trong nhà thường 50 lux)' },
+          { icon: '🌙', label: 'Ánh sáng sáng → ngủ tốt tối', note: 'Serotonin → melatonin: morning light trực tiếp quyết định chất lượng giấc ngủ 14–16h sau' },
+          { icon: '⏱️', label: 'Golden window: 30–60 phút đầu', note: 'Timing quan trọng hơn duration — không thể bù bằng ánh sáng mạnh buổi trưa' },
+        ],
+      },
+      {
+        icon: '🌡️', title: 'Nhiệt độ mát',
+        desc: 'Giữ phòng 18–20°C buổi sáng. Nhiệt độ thấp kích hoạt cortisol tích cực, tăng tỉnh táo.',
+        color: '#0ea5e9', rgb: '14,165,233',
+        modalTitle: 'Nhiệt Độ Mát Sáng — Kích Hoạt Tỉnh Táo Tự Nhiên',
+        img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Core body temperature (CBT) tự nhiên đạt đáy lúc 4:00–6:00 sáng và bắt đầu tăng trước khi thức dậy — đây là tín hiệu kích hoạt cortisol và tỉnh táo. Giữ phòng 18–20°C buổi sáng tăng tốc quá trình tăng nhiệt độ này qua thermogenesis (cơ thể tự đốt calo để làm ấm) — tạo cảm giác tỉnh táo và energized nhanh hơn 20–30 phút so với phòng ấm 24–26°C.',
+        detail: 'Nhiệt độ ảnh hưởng đến trạng thái tỉnh thức sâu hơn hầu hết mọi người nhận ra. Phòng quá ấm buổi sáng duy trì trạng thái gần với sleep — não và cơ thể "không có lý do" để fully activate. Nhiệt độ mát tạo gentle thermal stress kích hoạt sympathetic nervous system vừa đủ.',
+        details: [
+          'CBT và sleep-wake cycle: core body temperature dao động theo circadian rhythm — thấp nhất lúc ngủ sâu (giúp deep sleep), tăng dần trước khi thức. Phòng quá ấm làm chậm việc tăng CBT → kéo dài trạng thái drowsy. Phòng 18–20°C = slight thermal stress → cơ thể phải generate heat → thermogenesis → tỉnh táo hơn.',
+          'Thermogenesis và brown adipose tissue: nhiệt độ lạnh nhẹ kích hoạt brown adipose tissue (BAT — mỡ nâu) đốt calo để tạo nhiệt. Không giống mỡ trắng (fat storage), BAT có nhiều mitochondria và đốt glucose/fatty acids trực tiếp. BAT activation tăng metabolism sáng sớm — một lý do tắm lạnh hoặc phòng mát buổi sáng được liên kết với higher energy expenditure.',
+          'Cold exposure và norepinephrine: nhiệt độ lạnh nhẹ (không cần cực đoan như cold plunge) tăng norepinephrine release — neurotransmitter liên quan đến focus, alertness và mood. Nghiên cứu cho thấy tăng 200–300% norepinephrine sau cold exposure ngắn. Điều này giải thích "cảm giác tỉnh hẳn" khi bước ra ngoài buổi sáng mát.',
+          'Optimal morning temperature range: 18–20°C là sweet spot — đủ mát để kích hoạt thermogenesis và norepinephrine, không quá lạnh gây discomfort làm giảm motivation ra khỏi giường. Nhiệt độ <16°C có thể gây shivering (không productive). >22°C sáng sớm: thiếu thermal stimulus để fully wake up.',
+          'Practical: mở cửa sổ buổi sáng (đặc biệt ở VN mùa Đông hoặc phòng có máy lạnh). Để nhiệt độ 18–20°C khi ngủ và sáng dậy không tăng ngay. Nếu không thể điều chỉnh nhiệt độ phòng, tắm nước mát/lạnh 2–3 phút sau khi thức có effect tương tự — đây là option mạnh hơn nhiệt độ phòng.',
+          'Nhiệt độ phòng vs tắm lạnh: tắm lạnh (15–20°C, 2–5 phút) tăng norepinephrine 200–300% trong vài giờ — mạnh hơn nhiều so với chỉ ở phòng mát. Nhưng tắm lạnh cần willpower để bắt đầu. Phòng mát là "passive version" — tự động xảy ra mà không cần effort. Tốt nhất: phòng mát + tắm lạnh hoặc ít nhất rửa mặt nước lạnh.',
+        ],
+        points: [
+          { icon: '🌡️', label: '18–20°C = sweet spot tỉnh táo', note: 'Thermogenesis + norepinephrine activation mà không gây discomfort cản trở dậy giường' },
+          { icon: '🔥', label: 'BAT đốt calo khi lạnh nhẹ', note: 'Brown adipose tissue activation = higher metabolism sáng sớm, không cần exercise' },
+          { icon: '⚡', label: 'Norepinephrine +200–300% khi lạnh', note: 'Focus, alertness, mood — giải thích "cảm giác tỉnh hẳn" khi ra ngoài buổi sáng mát' },
+          { icon: '🚿', label: 'Tắm lạnh = passive phòng mát × 10', note: '2–5 phút nước lạnh mạnh hơn nhiều — option cho người muốn maximize morning activation' },
+        ],
+      },
+      {
+        icon: '📵', title: 'Phone-free 30 phút',
+        desc: 'Để điện thoại ở phòng khác hoặc chế độ DND. Không email, không mạng xã hội — não bộ cần thời gian "warm up".',
+        color: '#f43f5e', rgb: '244,63,94',
+        modalTitle: 'Phone-Free Sáng — Bảo Vệ Não Trong Giờ Vàng',
+        img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Prefrontal cortex (PFC) — vùng não điều hành tư duy phê phán, ra quyết định và self-control — cần 20–30 phút để fully activate sau khi thức dậy. Kiểm tra điện thoại ngay khi thức đặt não vào reactive mode (xử lý notifications, emails, social) trước khi PFC sẵn sàng — về cơ bản bạn đang để người khác đặt agenda cho ngày của mình trong khi não chưa đủ khả năng phòng vệ nhận thức.',
+        detail: 'Điện thoại buổi sáng không chỉ lãng phí thời gian — nó tái cấu trúc trạng thái tinh thần. Mỗi notification là một micro-stressor; social media comparison kích hoạt amygdala; news tiêu cực raise cortisol. Tất cả trước khi não bạn sẵn sàng xử lý chúng — để lại dấu ấn anxiety và reactive mindset cho cả ngày.',
+        details: [
+          'Sleep inertia và PFC warm-up: "sleep inertia" (quán tính ngủ) là trạng thái cognitive impairment kéo dài 15–30 phút sau khi thức — PFC chưa hoạt động đầy đủ, judgment kém, impulse control giảm. Trong giai đoạn này, cơ chế phòng vệ nhận thức (critical thinking, skepticism, self-regulation) chưa hoạt động. Đây là thời điểm tệ nhất để tiếp xúc với thông tin cần xử lý — nhưng là lúc nhiều người mở điện thoại.',
+          'Dopamine hijack buổi sáng: notifications tạo variable reward (không biết có gì mới không) → kích hoạt dopamine spike liên tục. Dopamine là "wanting neurotransmitter" — nó tạo craving, không phải satisfaction thực sự. Checking điện thoại đầu ngày đặt não vào dopamine-seeking loop trước khi có bất kỳ deep work nào — sau đó rất khó để shift sang focused, slow thinking.',
+          'Default Mode Network (DMN) và sáng tạo: khi không có external input (điện thoại, media), não hoạt động qua DMN — liên quan đến day-dreaming, memory consolidation, creative insight và self-reflection. Buổi sáng là lúc DMN hoạt động tự nhiên nhất sau ngủ. Điện thoại ngay khi thức suppress DMN và kích hoạt Task-Positive Network — mất cơ hội cho những sáng kiến và insights quan trọng.',
+          'Cortisol và reactive mindset: email/news tiêu cực buổi sáng raise cortisol trước CAR đã normalize. Cortisol cao → narrow thinking (tunnel vision), reduced working memory, increased anxiety. Người bắt đầu ngày với cortisol cao thường report cảm giác "overwhelmed" và "reactive" suốt ngày — không phải vì công việc nhiều hơn mà vì mental bandwidth bị hẹp từ đầu.',
+          'Friction Design cho phone-free: đặt điện thoại ở phòng khác khi ngủ là cách hiệu quả nhất (zero willpower cần thiết). Sử dụng đồng hồ báo thức vật lý thay vì điện thoại loại bỏ "cần điện thoại để báo thức" — lý do biện hộ phổ biến nhất. Grayscale mode trên điện thoại (Settings → Accessibility) giảm visual appeal của apps → giảm urge to check.',
+          'Alternative sáng tốt hơn: 30 phút phone-free là cơ hội để: journal (5 phút ghi 3 thứ biết ơn + 1 intention cho ngày), đọc sách vật lý, thiền/thở, vận động nhẹ, ăn sáng không màn hình. Những hoạt động này proactively set mental state cho ngày thay vì để external inputs (notifications) define nó.',
+        ],
+        points: [
+          { icon: '🧠', label: 'PFC cần 20–30 phút warm-up', note: 'Kiểm tra phone trước khi PFC ready = xử lý reactive mode khi não chưa có phòng vệ nhận thức' },
+          { icon: '🎲', label: 'Variable reward = dopamine loop', note: 'Notifications không biết có gì → dopamine craving → khó shift sang deep work sau đó' },
+          { icon: '💡', label: 'DMN = cơ hội sáng tạo buổi sáng', note: 'Phone suppress Default Mode Network — mất window tự nhiên nhất cho creative insights' },
+          { icon: '📍', label: 'Cất điện thoại phòng khác = zero willpower', note: 'Friction Design: không cần kỷ luật — vật lý không thể với tay lấy ngay khi thức' },
+        ],
+      },
+      {
+        icon: '💧', title: 'Nước trên bàn đêm',
+        desc: 'Đặt sẵn ly nước lớn bên giường. Uống ngay khi thức dậy — cơ thể mất 0.5–1L qua đêm.',
+        color: '#3b82f6', rgb: '59,130,246',
+        modalTitle: 'Hydration Sáng — Khởi Động Cơ Thể Với Nước',
+        img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Sau 7–9h ngủ không uống nước, cơ thể ở trạng thái mild dehydration (mất 0.5–1L qua hơi thở, mồ hôi và tiểu đêm). Dù nhẹ (chỉ 1–2% body weight), dehydration gây giảm cognitive performance đo được: concentration giảm 12%, short-term memory giảm, reaction time chậm hơn. Uống 400–500ml nước ngay khi thức dậy là cách nhanh nhất để restore hydration và "kick-start" các hệ thống cơ thể.',
+        detail: 'Nước không chỉ là hydration — nó là trigger sinh lý cho nhiều quá trình: kích hoạt hệ tiêu hóa, flush toxins tích lũy qua đêm, và tăng blood volume giúp circulation tốt hơn ngay buổi sáng. Friction Design đơn giản nhất: đặt sẵn ly nước bên giường = không cần willpower, không cần đi lấy.',
+        details: [
+          'Dehydration và cognitive function: nghiên cứu của University of East London và Universty of Westminster cho thấy chỉ 1% dehydration (khoảng 700ml với người 70kg) giảm concentration, short-term memory và psychomotor speed đo được. Brain tissue là 73% nước — ngay cả dehydration nhẹ làm não "shrink" tạm thời, tăng cortisol và làm task feel harder.',
+          'Adenosine và wakefulness: adenosine (hóa chất "buồn ngủ") tích lũy suốt ngày và giải phóng khi ngủ. Khi thức dậy, adenosine vẫn còn trong máu. Uống đủ nước giúp flush adenosine và metabolic waste products khác nhanh hơn qua kidney filtration — một phần lý do tại sao uống nước sáng sớm giúp tỉnh táo nhanh hơn.',
+          'Lymphatic system morning activation: lymphatic system (hệ thống loại bỏ waste và immune cells) không có pump riêng như tim — nó di chuyển qua vận động cơ và hydration. Sau 8h không vận động (ngủ), lymph fluid stagnant. Uống nước sáng + nhẹ nhàng vươn vai/vận động giúp kick-start lymph circulation — quan trọng cho detox và immune function.',
+          'Electrolytes và muscle function: nước lọc tốt, nhưng thêm một chút muối biển (pinch of sea salt) hoặc lát chanh vào nước sáng tăng electrolyte content giúp hấp thu nước vào tế bào tốt hơn (không phải qua kidney ngay). Electrolytes giúp cơ hoạt động hiệu quả hơn — quan trọng nếu tập sáng. Không cần sport drinks — pinch of salt là đủ.',
+          'Nước ấm vs nước lạnh buổi sáng: nước ấm (40–50°C) kích hoạt hệ tiêu hóa nhẹ nhàng hơn và không gây "thermal shock" cho dạ dày. Nước lạnh (10–15°C) tăng thermogenesis và alertness ngay lập tức. Cả hai đều tốt hơn không uống — chọn theo preference và mục tiêu (tỉnh táo nhanh: lạnh; gentle morning: ấm).',
+          'Friction Design implementation: ly nước lớn (500ml+) đặt ngay bên giường tối hôm trước = friction gần bằng 0. Thay vì tìm ly, tìm nước, đi ra bếp — chỉ cần vươn tay và uống. Sau 2–3 tuần trở thành reflex tự nhiên: thức dậy → uống nước tự động trước khi fully conscious. Đây là tiny habit dễ nhất và ROI cao nhất buổi sáng.',
+        ],
+        points: [
+          { icon: '🧠', label: '1% dehydration = -12% concentration', note: 'Sau ngủ mất 0.5–1L — uống 400–500ml ngay là cách nhanh nhất restore cognitive performance' },
+          { icon: '🔄', label: 'Flush adenosine và metabolic waste', note: 'Nước giúp kidney clear sleep-accumulated waste nhanh hơn — tỉnh táo nhanh hơn caffeine' },
+          { icon: '🧂', label: 'Pinch of salt tăng hấp thu', note: 'Electrolyte nhỏ giúp nước vào tế bào thay vì qua kidney ngay — không cần sport drinks' },
+          { icon: '🛏️', label: 'Ly nước bên giường = zero willpower', note: 'Chuẩn bị tối hôm trước = vươn tay là uống — Friction Design đơn giản nhất có ROI cao nhất' },
+        ],
+      },
+      {
+        icon: '🎵', title: 'Âm nhạc hoặc im lặng',
+        desc: 'Tránh podcast/news ngay từ sáng — chúng kích thích hệ thống xử lý thông tin trước khi não sẵn sàng.',
+        color: '#a855f7', rgb: '168,85,247',
+        modalTitle: 'Âm Thanh Buổi Sáng — Bảo Vệ Khả Năng Tập Trung',
+        img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Podcast và news buổi sáng nghe có vẻ productive ("học hỏi trong lúc ăn sáng") nhưng thực tế làm giảm khả năng deep thinking suốt ngày. Language processing trong não cạnh tranh tài nguyên nhận thức với other thinking — nghe nói/podcast activate Wernicke\'s area và Broca\'s area liên tục, exhausting language processing capacity trước khi bạn cần nó cho công việc quan trọng. Kết quả: "verbal fatigue" sớm, khó viết và khó diễn đạt ý tưởng phức tạp sau đó.',
+        detail: 'Buổi sáng là lúc DMN (Default Mode Network) — liên quan đến sáng tạo, problem-solving và self-reflection — hoạt động mạnh nhất. Đưa external audio vào suppress DMN và force Task-Positive Network activation sớm. Im lặng hoặc âm nhạc không lời cho DMN không gian để "chạy tự do" — often khi những ý tưởng tốt nhất trong ngày xuất hiện.',
+        details: [
+          'Cognitive bandwidth và serial processing: não không thực sự multitask với complex tasks — nó switch nhanh giữa các tasks (time-sharing). Language comprehension là một trong những tasks đòi hỏi cognitive bandwidth cao nhất. Nghe podcast khi ăn sáng/chuẩn bị = dùng hết bandwidth cho language processing → ít bandwidth còn lại cho planning, creative thinking, problem-solving buổi sáng.',
+          'News và cortisol: news media (đặc biệt breaking news và social media news) thiết kế để tạo urgency và emotional arousal — kích hoạt amygdala và raise cortisol. Tiếp xúc với news tiêu cực buổi sáng (kể cả chỉ nghe radio) liên quan đến higher anxiety và worse mood outcome cả ngày theo nghiên cứu của Graham Davey (University of Sussex). Tin xấu không cần phải là "tin của bạn" để ảnh hưởng cortisol.',
+          'Silence và creativity: nghiên cứu của Imke Kirste (Duke University) cho thấy im lặng 2h kích thích neurogenesis (tạo tế bào não mới) ở hippocampus — vùng liên quan đến memory và learning. Ngay cả white noise và âm nhạc không tạo được effect này. Buổi sáng im lặng (hoặc chỉ tiếng thiên nhiên) cho hippocampus cơ hội để consolidate memories từ đêm trước.',
+          'Âm nhạc không lời là compromise tốt: nhạc không lời (classical, ambient, jazz không có vocals) ít can thiệp vào language processing hơn. Nhạc tempo 60–80 bpm kích hoạt alpha brainwave (8–14 Hz) liên quan đến relaxed alertness — trạng thái tốt cho creative thinking. Mozart Effect (dù bị overhyped) có cơ sở thực: nhạc baroque phức tạp có thể tăng spatial reasoning tạm thời.',
+          'Morning pages và internal dialogue: cho phép suy nghĩ "rảnh" buổi sáng (không input từ ngoài) là lúc "morning pages" — stream-of-consciousness journaling — hiệu quả nhất. Julia Cameron (The Artist\'s Way) gọi đây là "brain drain" — những gì xuất hiện khi viết mà không có media noise thường là creative insights, solutions cho problems đang nghĩ, và clarity về ưu tiên. Impossible nếu đang nghe podcast.',
+          'Practical implementation: nếu cần âm thanh để không cảm thấy "too quiet", thử: nature sounds (birdsong, rain, stream), instrumental music không có vocals, hoặc binaural beats (40Hz gamma cho focus). Dành podcast/audiobooks cho lúc làm việc tay chân (rửa bát, lái xe) — không cạnh tranh với creative work. Protect buổi sáng như "cognitive prime time".',
+        ],
+        points: [
+          { icon: '🧠', label: 'Language processing exhausts bandwidth', note: 'Podcast buổi sáng dùng hết verbal capacity trước khi cần cho công việc quan trọng' },
+          { icon: '📰', label: 'News = cortisol spike từ sáng sớm', note: 'Tin xấu kích hoạt amygdala → anxiety cả ngày — không cần là tin của bạn để gây hại' },
+          { icon: '✨', label: 'Im lặng kích thích neurogenesis', note: 'Duke research: 2h im lặng tạo tế bào não mới ở hippocampus — white noise không làm được' },
+          { icon: '🎼', label: '60–80 bpm không lời = alpha state', note: 'Classical/ambient nhẹ nhàng kích hoạt alpha brainwave — compromise tốt nhất nếu cần âm thanh' },
+        ],
+      },
     ],
   },
   {
-    id: 'work',
-    icon: '💼',
-    title: 'Môi Trường Làm Việc',
-    subtitle: 'Tối ưu cho tập trung & năng suất',
-    color: '#0ea5e9',
+    id: 'work', icon: '💼', title: 'Môi Trường Làm Việc',
+    subtitle: 'Tối ưu cho tập trung & năng suất', color: '#0ea5e9',
     items: [
-      { icon: '🖥️', title: 'Bàn làm việc ngăn nắp', desc: 'Dọn dẹp bàn trước mỗi phiên tập trung. Môi trường hỗn loạn → não luôn dùng tài nguyên để xử lý thứ không liên quan.' },
-      { icon: '🌿', title: 'Cây xanh & thiên nhiên', desc: 'Ít nhất 1 cây nhỏ trên bàn hoặc tầm nhìn ra cây xanh. Giảm stress, tăng sáng tạo theo nghiên cứu.' },
-      { icon: '🎧', title: 'Kiểm soát âm thanh', desc: 'Nút tai, headphone noise-cancelling hoặc white noise (mynoise.net). 60–70dB là ngưỡng tối ưu cho sáng tạo.' },
-      { icon: '🌡️', title: 'Nhiệt độ 20–22°C', desc: 'Nhiệt độ phòng ảnh hưởng trực tiếp đến năng suất. Quá nóng hoặc quá lạnh đều giảm hiệu suất nhận thức.' },
-      { icon: '⏰', title: 'Pomodoro vật lý', desc: 'Đồng hồ đếm ngược (không phải điện thoại). Giúp não "cam kết" với thời gian làm việc hơn timer trên screen.' },
+      {
+        icon: '🖥️', title: 'Bàn làm việc ngăn nắp',
+        desc: 'Dọn dẹp bàn trước mỗi phiên tập trung. Môi trường hỗn loạn → não luôn dùng tài nguyên để xử lý thứ không liên quan.',
+        color: '#14b8a6', rgb: '20,184,166',
+        modalTitle: 'Bàn Ngăn Nắp — Giải Phóng Tài Nguyên Nhận Thức',
+        img: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Môi trường hỗn loạn không chỉ "trông không đẹp" — nó tích cực tiêu thụ cognitive resources. Não xử lý visual environment liên tục ở background (pre-attentive processing), và mỗi vật thể không liên quan trên bàn là một "unresolved open loop" nhỏ cạnh tranh attention. Nghiên cứu của Princeton University Neuroscience Institute cho thấy clutter làm giảm khả năng focus và xử lý thông tin đo được trên fMRI — do cạnh tranh visual cortex.',
+        detail: 'Dọn bàn trước mỗi phiên làm việc không chỉ là thói quen gọn gàng — đây là "pre-task ritual" reset cognitive state. Nghiên cứu về rituals (Michael Norton, Harvard) cho thấy rituals cụ thể trước performance giảm anxiety và tăng consistency.',
+        details: [
+          'Pre-attentive processing và visual clutter: não xử lý visual scene ở nhiều cấp độ song song — conscious attention chỉ là một phần nhỏ. Pre-attentive processing (không cần conscious effort) liên tục scan và categorize objects trong môi trường. Mỗi irrelevant object là một data point não phải process và decide "không liên quan" → suppress. Nhiều objects = nhiều suppression cycles = cognitive drain không nhận biết.',
+          'Open loops và Zeigarnik effect: Bluma Zeigarnik (1927) phát hiện não nhớ incomplete tasks tốt hơn completed tasks và liên tục "ping" chúng để nhắc nhở. Đống hồ sơ chưa xử lý, bills chưa trả, sách chưa đọc trên bàn — tất cả là "open loops" tạo background mental noise. Dọn bàn đóng visual open loops → giảm mental background noise.',
+          'Ritual transition và flow state: dọn bàn 5 phút trước khi bắt đầu là pre-task ritual tạo clear boundary giữa "random time" và "focused work time". Mihaly Csikszentmihalyi (Flow) mô tả flow state cần: clear goals, immediate feedback và elimination of distractions. Ritual dọn bàn chuẩn bị mind và environment cho flow — không phải procrastination.',
+          'Không gian = tư duy: nhiều nhà tư tưởng lớn làm việc trong môi trường tối giản — không phải ngẫu nhiên. Trống rỗng trên bàn = trống rỗng trong đầu để điền ý tưởng mới. Ngược lại, bàn đầy vật dụng = mind đầy noise. "A place for everything and everything in its place" là nguyên tắc cả environmental design và cognitive hygiene.',
+          'Minimum viable desk setup: bàn sạch không có nghĩa là bàn trống hoàn toàn. Chỉ để những gì cần cho task hiện tại + một vài items có emotional significance (ảnh gia đình nhỏ, cây mini). Research cho thấy một vài personal items tăng sense of agency và comfort mà không gây clutter cognitive effects. Guideline: nếu không dùng trong buổi làm việc này, cất đi.',
+          'End-of-day desk reset: dọn bàn vào cuối ngày (không phải đầu ngày) tạo clear closure signal cho workday và cho phép tiếp tục vào sáng hôm sau mà không cần thêm transition time. "Tomorrow\'s self" sẽ cảm ơn bạn. Kết hợp với write 3 priorities cho ngày mai trên sticky note → bàn sạch + clear intention = tối ưu cognitive setup.',
+        ],
+        points: [
+          { icon: '🧠', label: 'Clutter = cognitive drain trên fMRI', note: 'Princeton: môi trường hỗn loạn giảm focus đo được — não process visual clutter dù không chú ý' },
+          { icon: '🔄', label: 'Open loops tạo mental background noise', note: 'Hồ sơ, bills, sách chưa xử lý = Zeigarnik effect — não ping liên tục để nhắc nhở' },
+          { icon: '🎯', label: 'Dọn bàn là pre-flow ritual', note: 'Ritual tạo boundary "random time → focused time" — giảm anxiety, tăng consistency theo research' },
+          { icon: '🌅', label: 'Dọn cuối ngày > dọn đầu ngày', note: 'Closure signal cho workday + bàn sạch sẵn sàng cho sáng mai = gift cho future self' },
+        ],
+      },
+      {
+        icon: '🌿', title: 'Cây xanh & thiên nhiên',
+        desc: 'Ít nhất 1 cây nhỏ trên bàn hoặc tầm nhìn ra cây xanh. Giảm stress, tăng sáng tạo theo nghiên cứu.',
+        color: '#10b981', rgb: '16,185,129',
+        modalTitle: 'Cây Xanh — Thiên Nhiên Trong Không Gian Làm Việc',
+        img: 'https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Nhìn vào cây xanh và thiên nhiên — dù chỉ 40 giây — phục hồi attention capacity và giảm stress đo được. Nghiên cứu "micro-break" của University of Melbourne cho thấy nhìn ra mái nhà có cây xanh 40 giây giữa tasks khó giúp concentration sustained lâu hơn và ít lỗi hơn so với nhìn vào mái nhà bê tông. Cây trên bàn làm việc giảm cortisol và blood pressure, tăng creativity và satisfaction theo meta-analysis 2019 trên 24 nghiên cứu.',
+        detail: 'Attention Restoration Theory (ART) của Rachel và Stephen Kaplan giải thích: natural environments kích hoạt "involuntary attention" (fascination không cần effort) thay vì "directed attention" (tập trung cần effort). Nhìn cây xanh = let directed attention rest = restore concentration capacity.',
+        details: [
+          'Attention Restoration Theory (ART): directed attention (concentrated focus) là resource hữu hạn — cạn dần theo thời gian làm việc. Natural environments kích hoạt "soft fascination" — quan tâm không cần effort, không cạnh tranh với directed attention. Nhìn cây xanh, mây, nước = directed attention được "recharge" trong khi eyes và mind vẫn awake. Urban environments (traffic, screens, buildings) require constant directed attention → fatigue nhanh hơn.',
+          'Biophilia hypothesis và stress: E.O. Wilson\'s Biophilia hypothesis — con người có innate affinity với living organisms và natural settings vì evolutionary history (>99% thời gian tổ tiên sống trong thiên nhiên). Khi thấy cây xanh, não interpret là "safe environment" — giảm sympathetic activation, giảm cortisol, giảm blood pressure. Phản ứng này tự động và không cần conscious processing.',
+          'Không khí và productivity: nhiều cây indoor (snake plant, peace lily, pothos) có khả năng lọc VOCs (volatile organic compounds) — benzene, formaldehyde từ furniture và building materials. VOCs ở nồng độ cao giảm cognitive performance. Một nghiên cứu của Dr. Joseph Allen (Harvard) cho thấy improved air quality tăng cognitive function score lên 101% trên 9 parameters. Cây xanh là air filter tự nhiên — không thay thế ventilation tốt nhưng bổ sung.',
+          'Màu xanh lá và mood: wavelength của ánh sáng phản xạ từ lá cây (xanh lá, ~520–550nm) ít demanding hơn với visual cortex so với màu đỏ hay màu sắc bão hòa cao. Màu xanh lá liên quan đến trạng thái calm và balance trong color psychology — không phải cultural bias mà có cơ sở neurological (visual cortex processing).',
+          'Cây nào phù hợp bàn làm việc: ưu tiên cây chịu bóng tốt (ít ánh sáng tự nhiên trong văn phòng) và dễ chăm. Top picks: pothos (devil\'s ivy) — extremely hardy, grows in water, air purifier. Snake plant (Sansevieria) — survive neglect, release O₂ ban đêm. ZZ plant — drought tolerant, glossy leaves. Peace lily — blooms, air purifier, cần ít sáng. Tránh: cây cần tưới hàng ngày → chết = depressing visual cue.',
+          'Thiên nhiên nhân tạo có tác dụng không: views of nature (ảnh, painting, video screen saver của thiên nhiên) có một phần tác dụng của thiên nhiên thực — giảm stress nhẹ hơn nhưng có đo được. Living plants tốt hơn ảnh; moving water (desktop fountain) tốt hơn static image. Nếu không thể có cây thực (dị ứng, chăm sóc), desktop nature screensaver + occasional outdoor walk là compromise.',
+        ],
+        points: [
+          { icon: '👁️', label: '40 giây nhìn cây = restore attention', note: 'Melbourne University: micro-break nhìn cây xanh giảm lỗi và duy trì concentration lâu hơn bê tông' },
+          { icon: '🧬', label: 'Biophilia: não mặc định "safe" khi thấy cây', note: 'Evolutionary hard-wired — cây xanh giảm cortisol, blood pressure tự động không cần conscious effort' },
+          { icon: '💨', label: 'Snake plant lọc VOCs buổi tối', note: 'Release O₂ ban đêm, lọc formaldehyde — pair với phòng thoáng cho air quality tốt nhất' },
+          { icon: '🌱', label: 'Pothos: không thể giết chết', note: 'Sống trong nước, chịu bóng tốt, air purifier — cây lý tưởng nhất cho desk làm việc' },
+        ],
+      },
+      {
+        icon: '🎧', title: 'Kiểm soát âm thanh',
+        desc: 'Nút tai, headphone noise-cancelling hoặc white noise (mynoise.net). 60–70dB là ngưỡng tối ưu cho sáng tạo.',
+        color: '#6366f1', rgb: '99,102,241',
+        modalTitle: 'Âm Thanh Làm Việc — Tối Ưu Môi Trường Âm Học',
+        img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Tiếng ồn ngẫu nhiên và không dự đoán được (conversations gần đó, thông báo đột ngột, traffic) là kẻ thù lớn nhất của deep work. Nghiên cứu cho thấy mỗi interruption (dù chỉ 2.8 giây) cần trung bình 23 phút để fully re-enter flow state. Tiếng ồn xung quanh 60–70dB (tiếng ồn vừa phải, như quán cà phê) thực ra tăng creative thinking — nhưng >75dB làm giảm cả creative và analytical thinking.',
+        detail: 'Không phải mọi tiếng ồn đều như nhau. Tiếng ồn dự đoán được (white noise, nhạc không lời, mưa) ít gây distraction hơn tiếng ồn bất ngờ. Conversations gần đó đặc biệt disruptive vì language processing network tự động activate khi nghe giọng người — không thể "tắt" được.',
+        details: [
+          'Cocktail party effect và language hijack: não được lập trình để ưu tiên nghe giọng người (evolutionary survival advantage). Ngay cả khi đang tập trung vào task khác, nghe conversation gần đó tự động activate language processing areas. Đây là lý do open office plans với nhiều người nói chuyện cực kỳ disruptive — không phải volume của tiếng ồn mà là content (speech) là vấn đề.',
+          'Stochastic resonance và white noise: white noise (all frequencies bằng nhau) và pink noise (tần số thấp nhiều hơn, nghe tự nhiên hơn) tạo "stochastic resonance" — một lượng noise nhỏ paradoxically tăng signal detection trong neural systems. Ở mức phù hợp, white noise làm mờ sharp edges của sudden sounds → giảm startling → duy trì focus. MyNoise.net, Brain.fm, Noisli là tools tốt.',
+          '60–70dB creative sweet spot: nghiên cứu Ravi Mehta (University of Illinois) cho thấy moderate ambient noise (~70dB, tương đương quán cà phê nhộn nhịp) tăng creative thinking so với silence hoặc loud (85dB+). Cơ chế: moderate distraction đẩy não vào slightly broader thinking mode (less focused → more associative). Đây là basis của "coffee shop effect" — nhiều người sáng tạo làm việc tốt nhất trong quán cà phê.',
+          'Noise-cancelling headphones vs earplugs: ANC headphones (Active Noise Cancellation) tốt nhất cho low-frequency noise (HVAC, traffic, machine hum). Earplugs tốt hơn cho high-frequency random noise. Kết hợp: ANC headphones + white noise qua headphones = maximum noise control. Sony WH-1000XM5, Bose QC45 là top ANC performers.',
+          'Music for different task types: no music = tốt nhất cho learning new material và complex analytical tasks (cần full cognitive bandwidth). Familiar instrumental music = tốt cho repetitive tasks (data entry, editing). Upbeat familiar music = tốt cho creative brainstorming (positive mood → broader thinking). Never: music with lyrics khi cần viết hoặc đọc (language interference).',
+          'Architectural acoustics cho home office: hard surfaces (hardwood, tile, glass) reflect sound → echoy và reverberant → tiring to work in long-term. Add: rugs, curtains, bookshelf full of books, foam panels (recording studio foam) reduce reverberation. Dead-quiet room (anechoic) cũng uncomfortable — target RT60 (reverberation time) của 0.3–0.5 giây là comfortable for speech và work.',
+        ],
+        points: [
+          { icon: '⚠️', label: '2.8s interrupt = 23 phút để recover focus', note: 'Mỗi bất ngờ nhỏ = 23 phút mất flow — noise control là ROI cao nhất trong deep work' },
+          { icon: '☕', label: '70dB quán cà phê = creative sweet spot', note: 'Moderate noise paradoxically tăng creative thinking — quá im lặng hoặc quá ồn đều kém hơn' },
+          { icon: '🗣️', label: 'Speech là noise tệ nhất', note: 'Não không thể tắt language processing khi nghe giọng người — ANC headphone giải quyết' },
+          { icon: '🎵', label: 'Lyrics khi viết = cognitive conflict', note: 'Nhạc có lời cạnh tranh với language center khi viết/đọc — instrumental hoặc không nhạc' },
+        ],
+      },
+      {
+        icon: '🌡️', title: 'Nhiệt độ 20–22°C',
+        desc: 'Nhiệt độ phòng ảnh hưởng trực tiếp đến năng suất. Quá nóng hoặc quá lạnh đều giảm hiệu suất nhận thức.',
+        color: '#0ea5e9', rgb: '14,165,233',
+        modalTitle: 'Nhiệt Độ Làm Việc — Tối Ưu Môi Trường Nhiệt Học',
+        img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Nhiệt độ phòng làm việc ảnh hưởng trực tiếp đến cognitive performance theo đường cong U ngược: quá lạnh (<18°C) gây vasoconstriction giảm blood flow đến não, quá nóng (>25°C) tăng metabolic load và giảm alertness. Nghiên cứu của ASHRAE và Cornell University xác định 20–22°C là peak cognitive performance zone, với 22°C cho văn phòng cho thấy typing errors giảm 44% và output tăng 150% so với 25°C.',
+        detail: 'Nhiệt độ ảnh hưởng đến cả physical comfort và neurochemistry. Nóng quá kích hoạt thermoregulation mechanisms tiêu thụ energy → less available for cognitive tasks. Lạnh quá trigger stress response. Sweet spot 20–22°C là trạng thái "thermally neutral" — cơ thể không cần effort để maintain temperature.',
+        details: [
+          'Thermoregulation và cognitive load: khi quá nóng, hypothalamus kích hoạt thermoregulation: tăng sweating, vasodilation (giãn mạch để tỏa nhiệt), giảm core metabolism. Tất cả đều consume energy và attention resources. "Thermal discomfort" — dù chỉ cảm giác hơi nóng — create background physiological stress tương tự như low-grade pain, continuously consuming cognitive resources.',
+          'Cornell study và typing performance: nghiên cứu của Alan Hedge (Cornell, 2004) trong môi trường văn phòng thực: ở 20°C, typing errors 25°C là 25°C là điểm typing errors giảm 44% và typing output tăng 150%. Economic calculation: ở 25°C với 1 nhân viên/m², tăng nhiệt độ lên 25°C cost employer $2/h trong productivity loss. Đây là lý do nhiều công ty đầu tư vào HVAC system.',
+          'Gender differences trong thermal preference: nghiên cứu cho thấy women thường comfortable ở nhiệt độ cao hơn 2–3°C so với men ở cùng điều kiện — do differences trong metabolic rate và body composition. "Standard office temperature" được set dựa trên metabolic rate của nam giới 40+ tuổi từ thập niên 1960. Khi làm việc remote, điều chỉnh nhiệt độ theo preference cá nhân là lợi thế lớn của home office.',
+          'Humidity và perceived temperature: độ ẩm 40–60% là comfortable range — dưới 30% gây dry eyes và throat, trên 70% gây cảm giác ẩm ướt và tăng perceived temperature. Điều hòa nhiệt độ thường làm giảm humidity (drying effect) → cần humidifier nếu sử dụng AC nhiều. Đặc biệt quan trọng trong mùa lạnh khi heating systems làm không khí rất khô.',
+          'Seasonal adjustment và acclimatization: cơ thể có thể acclimatize đến nhiệt độ khác nhau trong 2–3 tuần. Người sống ở khí hậu nhiệt đới thường comfortable ở nhiệt độ cao hơn người sống ở khí hậu ôn đới. Đừng cố ép mình làm việc ở nhiệt độ "theoretically optimal" nếu cơ thể chưa acclimatize — discomfort itself là cognitive load. Điều chỉnh dần dần nếu muốn thay đổi temperature preference.',
+          'Micro-climate tricks: nếu không thể điều chỉnh nhiệt độ phòng (shared office, rented space), tạo micro-climate: desk fan khi nóng, cardigan/blanket khi lạnh, heated/cooled mouse pad. Bàn chân lạnh đặc biệt disruptive — sock ấm hoặc foot warmer giải quyết nhanh. Uống nước lạnh khi nóng, trà ấm khi lạnh giúp điều tiết core temperature mà không thay đổi room temperature.',
+        ],
+        points: [
+          { icon: '📊', label: '22°C: typing errors -44%, output +150%', note: 'Cornell study: nhiệt độ optimal trong văn phòng thực — không phải theory mà là đo được' },
+          { icon: '⚡', label: 'Thermoregulation = stolen cognitive load', note: 'Nóng quá hoặc lạnh quá → cơ thể dùng energy để regulate temp → ít để thinking' },
+          { icon: '💧', label: 'Humidity 40–60% quan trọng không kém temp', note: 'AC làm khô không khí → dry eyes, throat → humidifier là pair hoàn hảo với AC' },
+          { icon: '🧦', label: 'Bàn chân lạnh = đặc biệt disruptive', note: 'Micro-climate: cardigan + warm socks khi không thể kiểm soát nhiệt độ phòng' },
+        ],
+      },
+      {
+        icon: '⏰', title: 'Pomodoro vật lý',
+        desc: 'Đồng hồ đếm ngược (không phải điện thoại). Giúp não "cam kết" với thời gian làm việc hơn timer trên screen.',
+        color: '#f97316', rgb: '249,115,22',
+        modalTitle: 'Pomodoro Vật Lý — Kỹ Thuật Quản Lý Thời Gian Hiệu Quả',
+        img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Pomodoro Technique (Francesco Cirillo, 1980s): 25 phút focused work → 5 phút break → lặp lại. Sau 4 pomodoros: 15–30 phút break dài. Nghiên cứu cho thấy kỹ thuật này hiệu quả vì nó matches với natural attention span, tạo urgency giúp start (không phải perfect, chỉ cần start), và mandatory breaks prevent mental fatigue accumulation. Đồng hồ vật lý hiệu quả hơn phone timer vì không có notification temptation và ticking sound tạo auditory cue.',
+        detail: 'Pomodoro không phải chỉ là timer technique — nó là time-boxing và attention management tool. Biết "chỉ còn 15 phút" tạo mild urgency kích hoạt Parkinson\'s Law (work expands to fill available time) theo hướng ngược: khi time limited, bạn focus vào essential, bỏ qua perfectionism.',
+        details: [
+          'Ultradian rhythms và 90-minute cycles: Peretz Lavie và Nathaniel Kleitman phát hiện "basic rest-activity cycle" (BRAC) — não oscillate giữa high-focus và low-focus states theo chu kỳ ~90 phút ngay cả ban ngày. Pomodoro 25 phút nằm trong 1/3 đầu của BRAC khi attention cao nhất. 4 pomodoros (100 phút + breaks) xấp xỉ 1 full BRAC. Long break sau 4 pomodoros align với natural BRAC reset.',
+          'Time anxiety và procrastination: procrastination thường bắt nguồn từ task feeling overwhelming (không biết bắt đầu từ đâu) hoặc perfectionistic fear (không làm nếu không làm perfect). Pomodoro giải quyết cả hai: không cần hoàn thành task, chỉ cần "work on it for 25 minutes". Tính hữu hạn của 25 phút làm task feel manageable → dễ start hơn rất nhiều.',
+          'Đồng hồ vật lý vs phone timer: phone timer = điện thoại trên bàn = visual cue → temptation check notifications (ngay cả khi screen off, biết phone ở đó đủ để gây distraction). Đồng hồ vật lý = tactile experience (wind up crank) tạo physical commitment, ticking sound = auditory pacemaker giúp maintain pace, và visual countdown = natural urgency. Mechanical Pomodoro timers (cà chua hình quả cà chua) có thêm yếu tố play.',
+          'Break quality matters: Pomodoro break 5 phút không phải để check phone — đó là "micro-recovery". Effective breaks: stand up, stretch (thay đổi posture), look out window (ART), drink water, deep breathe. Không effective: social media, email, news — chúng không allow cognitive recovery và làm break feel "wasted" dù đã nghỉ về thể chất.',
+          'Task batching với Pomodoro: estimate tasks in pomodoros trước khi bắt đầu ngày. "Email: 1 pomodoro. Report draft: 3 pomodoros. Meeting prep: 1 pomodoro." Việc estimate tạo realistic expectation và giảm overwhelm. Tracking completed pomodoros mỗi ngày cũng là productivity metric hữu ích hơn "hours worked" vì exclude breaks và distractions.',
+          'Interruptions handling: khi bị interrupt trong pomodoro, ghi chú nhanh và nói "tôi sẽ trả lời sau 15 phút" — rồi finish pomodoro. Nếu interrupt không thể defer, reset pomodoro sau khi giải quyết. Không "add thêm vài phút bù" — nếu bị gián đoạn, reset là quy tắc. Consistency quan trọng hơn perfection trong Pomodoro.',
+        ],
+        points: [
+          { icon: '🍅', label: '25 phút matches natural attention span', note: 'Ultradian rhythm: 90 phút full cycle, 25 phút = high-focus phase đầu của cycle' },
+          { icon: '🚀', label: '"Chỉ 25 phút" phá procrastination', note: 'Không cần perfect, không cần xong — chỉ cần work 25 phút. Tính hữu hạn làm task feel manageable' },
+          { icon: '📵', label: 'Phone timer = phone trên bàn = distraction', note: 'Đồng hồ vật lý: không notification temptation + ticking = auditory pacemaker tự nhiên' },
+          { icon: '🧘', label: 'Break = micro-recovery, không phải scroll', note: 'Stand + stretch + look out window: ART + postural change. Phone trong break = không recover' },
+        ],
+      },
     ],
   },
   {
-    id: 'evening',
-    icon: '🌙',
-    title: 'Môi Trường Buổi Tối',
-    subtitle: 'Thiết kế cho phục hồi & giấc ngủ',
-    color: '#a855f7',
+    id: 'evening', icon: '🌙', title: 'Môi Trường Buổi Tối',
+    subtitle: 'Thiết kế cho phục hồi & giấc ngủ', color: '#a855f7',
     items: [
-      { icon: '🔅', title: 'Dim light sau 20:00', desc: 'Giảm độ sáng tất cả đèn và màn hình xuống 30–40% sau 8 giờ tối. Kích hoạt sản xuất melatonin tự nhiên.' },
-      { icon: '🌡️', title: 'Làm mát phòng ngủ', desc: 'Nhiệt độ phòng ngủ lý tưởng: 16–19°C. Cơ thể cần giảm nhiệt độ lõi 1–2°C để đi vào giấc ngủ sâu.' },
-      { icon: '📵', title: 'Blue light filter 21:00', desc: 'Bật Night Shift / f.lux trên tất cả thiết bị. Hoặc tốt hơn — không dùng màn hình sau 21:30.' },
-      { icon: '🧴', title: 'Mùi hương thư giãn', desc: 'Lavender, chamomile hoặc sandalwood. Hệ khứu giác kết nối trực tiếp với limbic system — vùng não điều tiết cảm xúc và giấc ngủ.' },
-      { icon: '📚', title: 'Sách thay điện thoại', desc: 'Để sách trên giường thay điện thoại. Đọc sách giả tưởng hoặc nhẹ nhàng — không sách phát triển bản thân trước ngủ.' },
+      {
+        icon: '🔅', title: 'Dim light sau 20:00',
+        desc: 'Giảm độ sáng tất cả đèn và màn hình xuống 30–40% sau 8 giờ tối. Kích hoạt sản xuất melatonin tự nhiên.',
+        color: '#f59e0b', rgb: '245,158,11',
+        modalTitle: 'Dim Light Tối — Kích Hoạt Melatonin Tự Nhiên',
+        img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Melatonin bắt đầu tăng khi ánh sáng giảm xuống dưới ~50 lux — thường là lúc hoàng hôn trong điều kiện tự nhiên. Phòng khách hiện đại với đèn LED trần (300–500 lux) ức chế hoàn toàn melatonin dù bạn cảm thấy buồn ngủ. Dim light xuống 30–40% sau 20:00 giảm lux xuống ~50–100 lux — đủ để melatonin bắt đầu tăng tự nhiên trong 30–60 phút. Kết quả: buồn ngủ đúng giờ, sleep onset nhanh hơn, deep sleep nhiều hơn.',
+        detail: 'Ánh sáng nhân tạo buổi tối là nguyên nhân số 1 của "social jet lag" — đồng hồ sinh học bị delay so với lịch xã hội. Người dùng màn hình sáng và đèn trần đến 23:00 effectively "living in a timezone 2-3 hours ahead" — cơ thể muốn ngủ lúc 2:00 nhưng lịch yêu cầu dậy lúc 6:30.',
+        details: [
+          'Melanopsin và light threshold: melatonin suppression bởi ánh sáng hoạt động qua ipRGC (cùng tế bào cảm quang phát hiện sáng sáng) với ngưỡng nhạy cảm ~10 lux — rất thấp. Điều này có nghĩa là ngay cả ánh sáng đèn ngủ (20–50 lux) vẫn ức chế một phần melatonin nếu tiếp xúc đủ lâu. Dim all lights, không chỉ tắt đèn trần.',
+          'Blue light wavelength và melatonin: ipRGC nhạy nhất với ánh sáng xanh lam (480nm) — bước sóng phổ biến trong LED trắng lạnh và screens. LED ấm (2700K, màu vàng cam) ít blue light hơn nhiều. Switching từ 6500K LED trắng (đèn văn phòng) sang 2700K LED ấm sau 20:00 giảm melatonin suppression đến 40–60% ở cùng lux level.',
+          'Dimmer switch và smart bulbs: đầu tư dimmer switch (500k-1M VNĐ) hoặc smart bulbs (Philips Hue, Yeelight) cho phép tự động dim lights theo lịch. Đặt routine: 20:00 = 50%, 21:00 = 30%, 22:00 = 10%. Smart bulbs cũng có thể shift color temperature từ 6500K (ban ngày) xuống 2700K (buổi tối) theo lịch — best of both worlds.',
+          'Candles và firelight: ánh nến và firelight là ánh sáng flickering, warm color (1800K), low lux (~10–20 lux) — hoàn hảo về mặt sleep physiology. Không phải ngẫu nhiên mà tổ tiên ngủ tốt hơn bên lửa trại: firelight không suppress melatonin. Nến buổi tối là low-tech sleep hack hiệu quả và aesthetically pleasant.',
+          'Screen dimming và Night Mode: Night Shift (iOS) và Night Mode (Android) shift screen màu sang warm tones sau hoàng hôn. Tuy nhiên, nghiên cứu cho thấy color shift không đủ — vấn đề chính là overall brightness của screen, không chỉ color temperature. Giảm screen brightness xuống 30–50% vào buổi tối quan trọng hơn là bật Night Shift ở brightness cao.',
+          'Bathroom lighting đặc biệt quan trọng: nhiều người dim lights phòng khách nhưng quên bathroom có đèn LED trắng sáng (500+ lux) — đánh răng, rửa mặt trước ngủ trong bathroom sáng reset melatonin. Solution: để đèn ngủ nhỏ trong bathroom cho routine tối, hoặc dùng đèn đỏ (red light không suppress melatonin vì wavelength khác). Red night light là solution đơn giản và rẻ nhất.',
+        ],
+        points: [
+          { icon: '💡', label: '<50 lux = melatonin bắt đầu tăng', note: 'Đèn LED trần 300–500 lux ức chế hoàn toàn melatonin — dim xuống 30% = game changer' },
+          { icon: '🔶', label: '2700K ấm giảm melatonin suppression 50%', note: 'Shift từ LED trắng lạnh sang LED ấm = giảm blue light = ít ức chế melatonin cùng lux level' },
+          { icon: '🕯️', label: 'Nến = sleep physiology hoàn hảo', note: '1800K, ~15 lux, flickering = không suppress melatonin, tổ tiên ngủ tốt bên lửa không ngẫu nhiên' },
+          { icon: '🚽', label: 'Bathroom sáng trước ngủ reset melatonin', note: 'Đèn đỏ trong bathroom là fix đơn giản nhất — red wavelength không ức chế melatonin' },
+        ],
+      },
+      {
+        icon: '🌡️', title: 'Làm mát phòng ngủ',
+        desc: 'Nhiệt độ phòng ngủ lý tưởng: 16–19°C. Cơ thể cần giảm nhiệt độ lõi 1–2°C để đi vào giấc ngủ sâu.',
+        color: '#0ea5e9', rgb: '14,165,233',
+        modalTitle: 'Nhiệt Độ Phòng Ngủ — Điều Kiện Sinh Lý Cho Deep Sleep',
+        img: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Core body temperature (CBT) cần giảm 1–2°C để brain "switch" sang sleep mode và vào deep sleep (N3 — slow-wave sleep). CBT giảm bằng cách "dump" nhiệt ra peripheral vasodilation (mạch máu tay chân giãn để tỏa nhiệt). Phòng mát (16–19°C) hỗ trợ quá trình này — phòng ấm (>22°C) cản trở CBT drop → khó ngủ, ít deep sleep. Nghiên cứu của University of Texas cho thấy mỗi 1°C phòng ngủ mát hơn tương quan với 10–15 phút ngủ sâu hơn.',
+        detail: 'Mất nhiều năm để hiểu tại sao chân ấm trước khi ngủ giúp ngủ tốt hơn dù phòng mát: vasodilation ở tay chân (tỏa nhiệt) = giảm CBT nhanh hơn = sleep onset nhanh hơn. Vớ ấm không làm ấm cơ thể — nó giúp tay chân release nhiệt hiệu quả hơn.',
+        details: [
+          'CBT và sleep architecture: CBT không chỉ liên quan đến sleep onset mà còn ảnh hưởng sleep architecture. CBT thấp nhất (~4:00–6:00 sáng) tương quan với deep slow-wave sleep (SWS) peak. Khi phòng quá ấm, CBT không xuống đủ thấp → SWS giảm → thức dậy không sảng khoái dù ngủ đủ giờ. Điều hòa nhiệt độ phòng là "nhà máy SWS" nếu dùng đúng.',
+          'Warm bath/shower trick (paradox): tắm nước ấm (40°C) 1–2h trước khi ngủ paradoxically helps sleep. Cơ chế: nước ấm kích hoạt mạnh vasodilation → cơ thể dump nhiệt hiệu quả → CBT drop nhanh hơn sau khi ra khỏi bồn. Nghiên cứu confirm: tắm ấm 1–2h trước ngủ giảm sleep onset 10 phút và tăng deep sleep 15%. Không phải tắm nước lạnh — ấm mới hiệu quả.',
+          'Bedding và thermal regulation: chăn/đệm ảnh hưởng sleep temperature nhiều như nhiệt độ phòng. Chăn lông vũ (down comforter) giữ nhiệt tốt — phù hợp nếu phòng mát. Chăn bamboo/cotton thoáng khí — phù hợp nếu phòng ấm hoặc hot sleepers. Gối memory foam giữ nhiệt; gối latex hoặc cooling gel phân tán nhiệt tốt hơn. Nếu partner có preference nhiệt độ khác nhau: dual-zone chăn là giải pháp.',
+          'Ideal temperature range và individual variation: 16–19°C là range nghiên cứu suggest, nhưng individual variation lớn. Phụ nữ thường comfortable ở nhiệt độ ngủ cao hơn 1–2°C (do hormonal cycle ảnh hưởng thermoregulation). Người cao tuổi thường ngủ tốt hơn ở nhiệt độ ấm hơn. Experiment với ½°C increments trong 1–2 tuần để tìm optimal temperature cá nhân.',
+          'Fan vs AC: fan tạo airflow giúp evaporative cooling (mồ hôi bay hơi) nhưng không thực sự làm mát không khí. Hiệu quả khi ambient temperature đã đủ mát (<26°C). AC cần cho nhiệt độ cao (tropical climate). White noise của fan là bonus sleep aid. Dehumidifier quan trọng ở khí hậu ẩm — high humidity giảm evaporative cooling và makes sleep uncomfortable.',
+          'Napping và temperature: ngủ trưa cũng benefits from cool environment — napping trong phòng 18–20°C vs 26°C: SWS nhiều hơn, wake up cảm thấy refreshed hơn. Nếu không thể control nhiệt độ phòng khi nap, cooling eye mask hoặc mở quạt aimed at body giúp simulate cooler environment ở micro-level.',
+        ],
+        points: [
+          { icon: '🌡️', label: 'CBT drop 1–2°C = deep sleep trigger', note: 'Phòng mát hỗ trợ drop CBT — mỗi 1°C mát hơn = +10–15 phút SWS thêm' },
+          { icon: '🛁', label: 'Tắm ấm 40°C trước ngủ 1–2h', note: 'Paradox: vasodilation từ nước ấm dump nhiệt nhanh → CBT drop sau khi ra bồn → ngủ sâu hơn' },
+          { icon: '🧦', label: 'Vớ ấm giúp tỏa nhiệt từ bàn chân', note: 'Không làm ấm — giúp vasodilation hiệu quả hơn = CBT drop nhanh hơn = sleep onset nhanh hơn' },
+          { icon: '💨', label: 'Fan: airflow + white noise', note: 'Evaporative cooling + sleep-inducing sound — pair với đủ mát không khí để hiệu quả nhất' },
+        ],
+      },
+      {
+        icon: '📵', title: 'Blue light filter 21:00',
+        desc: 'Bật Night Shift / f.lux trên tất cả thiết bị. Hoặc tốt hơn — không dùng màn hình sau 21:30.',
+        color: '#3b82f6', rgb: '59,130,246',
+        modalTitle: 'Blue Light Tối — Bảo Vệ Melatonin Trước Khi Ngủ',
+        img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Ánh sáng xanh (blue light, 400–490nm) từ màn hình điện thoại, máy tính và TV là melatonin suppressor mạnh nhất trong phổ ánh sáng nhìn thấy được. Harvard Medical School research cho thấy ánh sáng xanh ức chế melatonin gấp đôi ánh sáng xanh lá và delay circadian clock thêm 3 giờ — so với ánh sáng xanh lá chỉ delay 1.5h. Điện thoại hiện đại (peak brightness 600–900 nits) ở khoảng cách gần mặt tạo intense light exposure vào thời điểm tệ nhất trong ngày.',
+        detail: 'Blue light filter apps (Night Shift, f.lux) giúp nhưng không đủ — chúng shift color nhưng không giảm brightness. Màn hình sáng ở warm tone vẫn suppress melatonin. Giải pháp tốt nhất: giảm brightness + warm filter + tăng khoảng cách từ mắt. Tốt nhất: không dùng màn hình 1h trước ngủ.',
+        details: [
+          'Harvard 2015 study — iPad vs eReader: người đọc iPad (backlit) vs eReader (no backlight) trước ngủ: iPad group mất thêm 10 phút để ngủ, melatonin peak delay 1.5h, REM sleep giảm, cảm thấy ít alertness hơn sáng hôm sau ngay cả khi ngủ cùng số giờ. Đây là evidence trực tiếp nhất về ảnh hưởng của blue light buổi tối trên sleep quality.',
+          'Distance và lux: cường độ ánh sáng giảm theo bình phương khoảng cách (inverse square law). Điện thoại cách mắt 30cm = 4× lux của cùng điện thoại cách mắt 60cm. TV lớn từ 3–4m = lux rất thấp từ screen — safe hơn nhiều so với phone/laptop gần mặt. Đây là lý do xem TV tối ít hại hơn scroll phone trước ngủ, dù TV có màn hình lớn hơn nhiều.',
+          'f.lux và Night Shift — limitations: f.lux (free, Mac/PC) tự động shift screen màu từ 6500K xuống 1900K theo sunset time. Night Shift (iOS/macOS) tương tự. Tuy nhiên, nghiên cứu University of Manchester (2019) cho thấy color temperature shift ít hiệu quả hơn kỳ vọng — não adjust đến "warm screen" và treat nó như white light. Brightness reduction là factor quan trọng hơn color shift.',
+          'Blue light blocking glasses: glasses với orange/amber tinted lenses (block 99% blue light) là solution portable cho situations không thể tránh screen buổi tối. Research mixed — một số study cho thấy benefit, một số không. Chất lượng glasses quan trọng: glasses cheap filter ít blue light hơn advertised. Dùng spectrometer app để test. Nếu phải làm việc late với màn hình, glasses tốt hơn không có gì.',
+          'Alternative buổi tối: thay màn hình bằng: đọc sách giấy (hoặc e-ink eReader không backlit như Kindle Paperwhite ở brightness thấp), podcast/audiobook với điện thoại face-down, board games, nhạc cụ, vẽ/viết tay. Những activities này tạo winding-down ritual đồng thời tránh blue light — double benefit.',
+          'Children và blue light: trẻ em đặc biệt nhạy cảm với blue light vì pupils larger và lens clearer → more light reaches retina. American Academy of Pediatrics khuyến nghị no screens 1h trước bedtime cho trẻ <12 tuổi. Sleep deprivation ở trẻ liên quan đến attention problems, emotional dysregulation và academic performance — often misdiagnosed as ADHD khi thực chất là sleep issues từ screen use.',
+        ],
+        points: [
+          { icon: '🔵', label: 'Blue light delay circadian 3h — gấp đôi green', note: 'Harvard: blue light (480nm) là melatonin suppressor mạnh nhất — màn hình hiện đại peak blue' },
+          { icon: '📏', label: 'Khoảng cách giảm exposure bình phương', note: 'Phone 30cm = 4× lux của 60cm — TV 3m xa much safer dù screen lớn hơn' },
+          { icon: '🔆', label: 'Brightness quan trọng hơn color shift', note: 'Night Shift warm tone + brightness cao vẫn suppress melatonin — giảm brightness mới là key' },
+          { icon: '📚', label: 'Sách giấy = best buổi tối', note: 'Không backlight, không notification, warm ambient light = sleep-friendly và effective wind-down' },
+        ],
+      },
+      {
+        icon: '🧴', title: 'Mùi hương thư giãn',
+        desc: 'Lavender, chamomile hoặc sandalwood. Hệ khứu giác kết nối trực tiếp với limbic system — vùng não điều tiết cảm xúc và giấc ngủ.',
+        color: '#a855f7', rgb: '168,85,247',
+        modalTitle: 'Mùi Hương — Aromatherapy Và Giấc Ngủ Khoa Học',
+        img: 'https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Khứu giác (olfaction) là giác quan duy nhất có đường trực tiếp đến limbic system (amygdala, hippocampus) mà không qua thalamus — "relay station" của não. Tất cả giác quan khác (thị giác, thính giác, xúc giác) đều qua thalamus trước khi đến emotional brain. Điều này giải thích tại sao mùi hương gây emotional responses ngay lập tức và mạnh mẽ hơn bất kỳ giác quan nào. Lavender được nghiên cứu nhiều nhất: linalool (chemical chính trong lavender) ức chế glutamate receptors → giảm neural excitability → calming effect.',
+        detail: 'Aromatherapy có evidence base chắc hơn nhiều người nghĩ — nhưng cơ chế không phải là "mùi thơm nên thư giãn" (psychological only) mà là direct neurochemical effect thông qua olfactory-limbic pathway.',
+        details: [
+          'Olfactory-limbic pathway: khi phân tử mùi đến olfactory epithelium (niêm mạc khứu giác), signal đi trực tiếp đến olfactory bulb → olfactory cortex → amygdala và hippocampus. Amygdala xử lý emotional responses; hippocampus liên kết mùi với memory. Đây là lý do tại sao mùi hương gây emotional recall mạnh (Proustian memory phenomenon) và tại sao aromatherapy ảnh hưởng mood trực tiếp.',
+          'Linalool trong lavender: nghiên cứu in vitro và animal studies cho thấy linalool (chất chính trong lavender essential oil) interact với GABA-A receptors — cùng receptor mà benzodiazepines (thuốc an thần) tác động. Có thể ức chế neuronal excitability không qua bloodstream mà qua olfactory pathway. Human trials cho thấy lavender inhalation giảm anxiety scores và improves sleep quality measurably.',
+          'Chamomile và apigenin: chamomile tea và essential oil chứa apigenin — một flavonoid bind với benzodiazepine receptors trong não (GABA-A). Cơ chế tương tự lavender nhưng mạnh hơn qua oral ingestion (chamomile tea). Kết hợp: uống chamomile tea + diffuse chamomile essential oil = double-pathway delivery của apigenin-like compounds.',
+          'Sandalwood và alpha-santalol: sandalwood chứa alpha-santalol được nghiên cứu cho sedative và anxiolytic effects thông qua olfaction. Traditional use trong meditation và sleep rituals (Indian Ayurveda) có cơ sở biochemical — không chỉ là cultural belief. Sandalwood also inhibit 5-alpha-reductase liên quan đến testosterone metabolism (separate dari sleep).',
+          'Diffuser vs direct application: ultrasonic diffuser (không nhiệt) tốt nhất — nhiệt phá vỡ some volatile compounds. Đặt trong phòng 30 phút trước khi vào phòng ngủ (fill air với scent molecules) rồi tắt hoặc để chạy low. Pillow spray (diluted essential oil trong water) là alternative đơn giản — lavender spray trên gối. Không dùng undiluted essential oil trực tiếp trên da.',
+          'Associative conditioning và sleep cue: sau 2–3 tuần dùng cùng mùi hương mỗi tối trước ngủ, mùi đó trở thành Pavlovian sleep cue — ngửi mùi đó = não release sleep-related neurotransmitters. Đây là lý do hotel sử dụng signature scent (brand scent) và tại sao cùng mùi từ nhà có thể giúp ngủ tốt khi đi xa. Consistency quan trọng: cùng mùi, cùng thời gian, cùng ritual.',
+        ],
+        points: [
+          { icon: '🧬', label: 'Olfaction → limbic trực tiếp, không qua thalamus', note: 'Giác quan duy nhất có đường thẳng đến emotional brain — phản ứng nhanh và mạnh nhất' },
+          { icon: '💊', label: 'Linalool tác động GABA-A như benzodiazepine', note: 'Lavender không chỉ "ngửi thơm" — linalool ức chế neural excitability qua GABA receptor' },
+          { icon: '🫖', label: 'Chamomile tea + diffuse = double pathway', note: 'Apigenin qua uống (oral) + olfactory = maximize GABA-A binding cho sedative effect' },
+          { icon: '🔁', label: '2–3 tuần = Pavlovian sleep cue', note: 'Cùng mùi mỗi tối → associative conditioning → ngửi mùi = não release sleep neurotransmitters tự động' },
+        ],
+      },
+      {
+        icon: '📚', title: 'Sách thay điện thoại',
+        desc: 'Để sách trên giường thay điện thoại. Đọc sách giả tưởng hoặc nhẹ nhàng — không sách phát triển bản thân trước ngủ.',
+        color: '#10b981', rgb: '16,185,129',
+        modalTitle: 'Đọc Sách Tối — Wind-Down Ritual Tốt Nhất',
+        img: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80&auto=format&fit=crop',
+        keyFact: 'Đọc sách giấy 6 phút trước ngủ giảm stress 68% theo nghiên cứu của University of Sussex (2009) — hiệu quả hơn nghe nhạc (61%), uống trà (54%) và đi bộ (42%). Cơ chế: đọc sách (đặc biệt fiction) activate "transportation" — não "enter" vào thế giới câu chuyện, releasing từ rumination về ngày hôm đó. Narrative immersion tự nhiên giảm cortisol và mental chatter không cần technique thiền.',
+        detail: 'Không phải mọi loại sách đều như nhau trước ngủ. Fiction (tiểu thuyết, truyện ngắn) tạo transportation effect và ít cognitive demand. Self-help và non-fiction thường đặt câu hỏi ("tôi phải làm gì ngày mai?") → activate planning mode → không conducive cho sleep.',
+        details: [
+          'Transportation theory và narrative immersion: Green & Brock (2000) mô tả "transportation" — trạng thái mental immersion hoàn toàn vào narrative của sách. Khi transported, attention rời khỏi real world (problems, anxieties, to-dos) và vào fictional world. Neuroimaging cho thấy transportation deactivates DMN default mode network rumination và activates narrative processing networks — cognitive "vacation" từ self-referential thinking.',
+          'Sussex study mechanics: 2009 study bởi Mindlab International (Dr. David Lewis) đo heart rate variability, muscle tension và skin conductance. Reading decreased stress markers trong 6 phút — chỉ cần 6 phút, không phải 30 phút. Effectiveness của reading attributed đến: "active engagement of imagination", linguistic processing different từ digital multitasking, và physical còn (sách không có sounds/notifications).',
+          'Fiction vs non-fiction trước ngủ: non-fiction thường chứa new information → working memory activation → harder to wind down. "Actionable content" (productivity, business) đặc biệt tệ — kích hoạt planning và problem-solving. Fiction "completes" emotional arcs → cathartic closure. Best genres trước ngủ: fantasy, literary fiction, mystery (cozy, không thriller căng thẳng). Worst: thriller, horror, news, business books.',
+          'Physical book vs e-reader: sách giấy tốt nhất (no backlight). E-ink e-readers (Kindle Paperwhite) là second best — no backlight, no notifications, eye-friendly. Đặt ở brightness thấp nhất có thể đọc comfortable. iPad và phone apps: poor choice — backlit, notification-prone, temptation to switch apps. Nếu phải dùng phone để đọc: full brightness Night Mode, airplane mode, grayscale.',
+          'Bookmarking ritual và transition: đặt bookmark là "completion signal" cho brain — task done, ready to sleep. Không đọc đến "ở chỗ hay không thể dừng" — sẽ đọc thêm 2h và overrun sleep time. Set timer "đọc 20–30 phút" hoặc hẹn "đọc đến cuối chapter này". Đặt sách xuống, đèn tắt là physical ritual end của ngày — mạnh hơn "scroll thêm 5 phút nữa" của phone.',
+          'Genre recommendations và library building: xây một nightstand book stack nhỏ (3–5 cuốn rotation) để có lựa chọn mà không phải tìm kiếm (friction thấp). Mix genres: một cuốn đang đọc chính, một cuốn essays nhẹ (khi không muốn theo dõi plot), một cuốn thơ (5 phút là đủ). Thư viện địa phương và ứng dụng Libby (ebooks miễn phí từ thư viện) là nguồn sách không tốn tiền.',
+        ],
+        points: [
+          { icon: '😌', label: '6 phút đọc sách giảm stress 68%', note: 'Sussex 2009: mạnh hơn nhạc (61%), trà (54%), đi bộ (42%) — transportation effect' },
+          { icon: '🏰', label: 'Fiction = mental vacation khỏi ngày hôm đó', note: 'Narrative transportation deactivate rumination và self-referential thinking tự nhiên' },
+          { icon: '🚫', label: 'Không sách self-help trước ngủ', note: 'Actionable content kích hoạt planning mode → ngược lại mục đích wind-down' },
+          { icon: '🔖', label: 'Đặt bookmark = completion signal cho não', note: 'Physical ritual kết thúc ngày — set timer để không đọc quá giờ ngủ' },
+        ],
+      },
     ],
   },
 ];
@@ -234,6 +555,7 @@ function EnvModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext 
 export default function LifestyleEnvironmentPage() {
   const [activeZone, setActiveZone] = useState('morning');
   const [principleIdx, setPrincipleIdx] = useState(null);
+  const [zoneItemIdx, setZoneItemIdx] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -330,14 +652,20 @@ export default function LifestyleEnvironmentPage() {
                 <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: zone.color }}>{zone.subtitle}</div>
               </div>
             </div>
+            <p className="text-sm text-muted mb-3 opacity-60">Click vào từng mục để xem chi tiết khoa học</p>
             <div className="space-y-3">
               {zone.items.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 p-3 rounded-xl border border-border bg-bg hover:border-opacity-30 transition-colors">
+                <div key={i}
+                  className="flex items-start gap-3 p-3 rounded-xl border cursor-pointer transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
+                  style={{ borderColor: `rgba(${item.rgb},0.18)`, background: `rgba(${item.rgb},0.05)` }}
+                  onClick={() => setZoneItemIdx(i)}>
                   <span className="text-2xl shrink-0 mt-0.5">{item.icon}</span>
-                  <div>
-                    <div className="text-lg font-bold text-text">{item.title}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-lg font-bold" style={{ color: item.color }}>{item.title}</div>
                     <div className="text-base text-muted leading-relaxed mt-0.5">{item.desc}</div>
                   </div>
+                  <span className="text-xs font-bold px-2 py-1 rounded-lg shrink-0 self-start mt-1"
+                    style={{ color: item.color, background: `rgba(${item.rgb},0.12)` }}>Chi tiết →</span>
                 </div>
               ))}
             </div>
@@ -400,6 +728,20 @@ export default function LifestyleEnvironmentPage() {
           ))}
         </div>
       </RevealBlock>
+
+      {/* ── Zone item modal — outside all RevealBlocks ── */}
+      {zoneItemIdx !== null && zone && (
+        <EnvModal
+          item={zone.items[zoneItemIdx]}
+          idx={zoneItemIdx}
+          total={zone.items.length}
+          onClose={() => setZoneItemIdx(null)}
+          onPrev={() => setZoneItemIdx(i => Math.max(0, i - 1))}
+          onNext={() => setZoneItemIdx(i => Math.min(zone.items.length - 1, i + 1))}
+          hasPrev={zoneItemIdx > 0}
+          hasNext={zoneItemIdx < zone.items.length - 1}
+        />
+      )}
 
       {/* ── Principles modal — outside all RevealBlocks ── */}
       {principleIdx !== null && (

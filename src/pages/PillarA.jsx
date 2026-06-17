@@ -35,6 +35,7 @@ const TABS = [
     previewItems: ['Squat', 'Hinge', 'Push-up', 'Pull/Row', 'Core', 'Thở & Tim mạch', 'Khởi động 5–8\'', 'Giãn cơ 5–10\''],
     cta: 'Học động tác',
     color: '#22c55e',
+    rgb:   '34,197,94',
     glow: 'rgba(34,197,94,0.18)',
     text:  'text-green-400',
     badge: 'bg-green-500/8 border-green-500/20 text-green-400',
@@ -74,6 +75,7 @@ const TABS = [
     previewItems: ['Khởi động 5\'', 'Sức mạnh 10–20\'', 'Tim mạch 15–35\'', 'Giãn cơ 5–10\'', 'Tĩnh tâm 5\'', '7 kcal/phút max'],
     cta: 'Xây khung ngày',
     color: '#f97316',
+    rgb:   '249,115,22',
     glow: 'rgba(249,115,22,0.18)',
     text:  'text-orange-400',
     badge: 'bg-orange-500/8 border-orange-500/20 text-orange-400',
@@ -113,6 +115,7 @@ const TABS = [
     previewItems: ['Sức mạnh T2/T4/T6', 'Cardio T3/T5', 'Phục hồi T7', 'Người mới', 'Giảm mỡ', 'Tăng cơ', 'Sức bền', 'Nâng cao'],
     cta: 'Lên lịch tuần',
     color: '#14b8a6',
+    rgb:   '20,184,166',
     glow: 'rgba(20,184,166,0.18)',
     text:  'text-teal-400',
     badge: 'bg-teal-500/8 border-teal-500/20 text-teal-400',
@@ -152,6 +155,7 @@ const TABS = [
     previewItems: ['Tuần 4 test', 'Tuần 8 test', 'Tuần 12 test', 'Radar chart', '6 mục tiêu cá nhân', 'Điểm A/B/C/D', 'Coach notes'],
     cta: 'Theo dõi tiến bộ',
     color: '#a855f7',
+    rgb:   '168,85,247',
     glow: 'rgba(168,85,247,0.18)',
     text:  'text-purple-400',
     badge: 'bg-purple-500/8 border-purple-500/20 text-purple-400',
@@ -161,6 +165,266 @@ const TABS = [
     accentBg: 'bg-purple-500/8',
     tabBg:    'bg-purple-500/5',
     bar:   'from-purple-500/80 to-transparent',
+  },
+];
+
+// DETAIL_MODALS[tabIdx * 3 + detailIdx] — separate from TABS to survive i18n merge
+const DETAIL_MODALS = [
+  // ── Tab 0: 6 Mẫu Vận Động (green) ──────────────────────────────────────────
+  {
+    icon: '🦴', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Tại Sao Chỉ 6 Mẫu? — Sinh Cơ Học Sau Hàng Nghìn Bài Tập',
+    img: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Các nhà sinh cơ học phân tích > 3.000 bài tập và phát hiện tất cả đều là biến thể của 6 mẫu chuyển động cơ bản. Thành thạo 6 mẫu = nền tảng cho 95% mọi bài tập trong cuộc đời.',
+    detail: 'Bộ khung 6 mẫu không phải do ai tùy tiện đặt ra — đây là kết quả phân tích sinh cơ học từ hàng nghìn bài tập khác nhau. Mỗi mẫu đại diện cho một chuỗi khớp-cơ phối hợp theo cách mà cơ thể người được tiến hóa thiết kế.',
+    details: [
+      'Squat (gập khuỵu): Khớp hông + gối + mắt cá gập đồng thời — kích hoạt 60–70% khối lượng cơ toàn thân, quan trọng nhất cho sức mạnh hạ thể.',
+      'Hip Hinge (bản lề hông): Gập hông giữ lưng thẳng — nền tảng của deadlift, Romanian DL, kettlebell swing. Cơ mông và gân kheo phát triển tối đa.',
+      'Push (đẩy): Từ push-up sàn đến overhead press — phát triển cơ ngực, vai, tricep theo trục ngang và dọc.',
+      'Pull (kéo): Từ band pull đến pull-up — cân bằng với mẫu đẩy, phát triển lưng, bicep, rhomboid. Giảm nguy cơ vẹo vai do tập đẩy quá nhiều.',
+      'Carry (gánh): Đi với tải trọng — kích hoạt core 360°, cải thiện tư thế, bắt chước chuyển động chức năng trong cuộc sống thực.',
+      'Core & Breath (chống xoay/sụp): Plank, dead bug, pallof press — không phải sit-up, mà là chống lại chuyển động không mong muốn. Thở là điều kiện nền của mọi mẫu khác.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Bao phủ toàn thân', note: '6 mẫu = 100% cơ bắp chính được kích hoạt cân bằng' },
+      { icon: '♾️', label: 'Vô số biến thể', note: 'Mỗi mẫu có 5–15+ biến thể từ dễ đến rất khó' },
+      { icon: '🛡️', label: 'An toàn lâu dài', note: 'Không có điểm yếu cấu trúc nào bị bỏ qua' },
+      { icon: '🧠', label: 'Dễ nhớ, dễ áp dụng', note: 'Tự thiết kế buổi tập chỉ cần 1 bài mỗi mẫu' },
+    ],
+  },
+  {
+    icon: '🔄', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Biến Thể Không Giới Hạn — Cùng Mẫu, Vô Số Cấp Độ Tiến Bộ',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mỗi mẫu có phổ từ cực dễ đến cực khó trong cùng một chuỗi tiến bộ. Không cần đổi bài tập — chỉ cần đi lên trên phổ đó khi đã sẵn sàng.',
+    detail: 'Sai lầm phổ biến nhất trong tập luyện là đổi bài tập liên tục thay vì tiến sâu vào một mẫu. Squat vào ghế → goblet squat → barbell squat → pistol squat: đây là cùng một mẫu, bốn cấp độ khác nhau.',
+    details: [
+      'Hồi quy (regression): Mọi mẫu đều có phiên bản siêu dễ cho người mới, người phục hồi chấn thương, hoặc ngày mệt mỏi. Không bao giờ "không có bài để tập".',
+      'Tiến bộ (progression): Thêm tải trọng, giảm hỗ trợ, tăng biên độ, thay đổi tempo — 4 trục tiến bộ cho mỗi mẫu mà không cần mua thêm thiết bị.',
+      'Unilateral (một chân/tay): Pistol squat, single-leg RDL, archer push-up — tăng độ khó gấp đôi mà không cần tạ nặng hơn. Phát hiện mất cân bằng hai bên.',
+      'Tempo: Eccentric 4 giây thay vì 1 giây tăng thời gian căng cơ (TUT) 300–400%. Cùng trọng lượng, khó hơn rất nhiều, tăng cơ hiệu quả hơn.',
+      'Môi trường: Cát, sàn không bằng phẳng, túi cát thay barbell — thay đổi yếu tố ổn định mà không thay đổi mẫu cơ bản.',
+      'Khả năng chuyển hóa: Thành thạo goblet squat → barbell squat dễ hơn; thành thạo push-up → bench press ngay lập tức. Mẫu giống nhau, công cụ khác nhau.',
+    ],
+    points: [
+      { icon: '📈', label: 'Tiến bộ rõ ràng', note: 'Biết chính xác bước tiếp theo cần làm' },
+      { icon: '🏠', label: 'Không cần thiết bị', note: 'Bodyweight đủ để đạt cấp độ trung-cao' },
+      { icon: '🔧', label: '4 trục tiến bộ', note: 'Tải · Hỗ trợ · Biên độ · Tempo' },
+      { icon: '⚡', label: 'Nhất quán dài hạn', note: 'Không bao giờ nhàm chán khi có phổ tiến bộ rõ' },
+    ],
+  },
+  {
+    icon: '⚖️', color: '#22c55e', rgb: '34,197,94',
+    modalTitle: 'Cân Bằng Cơ Thể Toàn Diện — Thiết Kế Không Có Điểm Yếu',
+    img: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hầu hết chấn thương thể thao không phải do yếu — mà do mất cân bằng. Push quá nhiều mà không Pull đủ → đau vai. Squat nhiều mà không Hinge đủ → đau lưng dưới.',
+    detail: 'Cơ thể người được tiến hóa thiết kế cho 6 chuyển động này theo tỉ lệ cân bằng. Khi tập quá nhiều một mẫu và bỏ qua mẫu đối xứng, mất cân bằng cơ lực xuất hiện và chấn thương chỉ là vấn đề thời gian.',
+    details: [
+      'Push + Pull: Tỉ lệ 1:1 giữa thể tích đẩy và kéo giảm 60% nguy cơ đau vai. Nhiều gym-goer đẩy 3× nhiều hơn kéo — đây là lý do phổ biến nhất của rotator cuff injury.',
+      'Squat + Hinge: Squat phát triển quad (trước đùi), Hinge phát triển glute/hamstring (sau đùi). Tỉ lệ quad:hamstring chuẩn là 3:2; mất cân bằng → knee injury.',
+      'Bilateral + Unilateral: Barbell squat tốt cho sức mạnh, nhưng single-leg squat phát hiện mất cân bằng hai bên. Thêm ít nhất 1 bài unilateral mỗi mẫu mỗi tuần.',
+      'Core anti-movement: Cột sống không được thiết kế để uốn cong dưới tải — mà để chống lại chuyển động không mong muốn. Plank tốt hơn crunch cho sức khỏe lưng.',
+      'Breath dưới áp lực: Valsalva maneuver khi nâng tạ nặng bảo vệ cột sống. Thở không tốt = core không ổn định = tải gây hại lên đĩa đệm.',
+      'Tỉ lệ tập tuần gợi ý: 2× squat + 2× hinge + 2× push + 2× pull + 2× carry + daily core/breath = không có điểm yếu cấu trúc.',
+    ],
+    points: [
+      { icon: '🛡️', label: 'Phòng chấn thương', note: 'Cân bằng push/pull giảm 60% nguy cơ đau vai' },
+      { icon: '💪', label: 'Phát triển toàn diện', note: 'Không có nhóm cơ nào bị bỏ sót' },
+      { icon: '🦵', label: 'Squat/Hinge cân bằng', note: 'Quad:hamstring = 3:2 là tỉ lệ khỏe mạnh' },
+      { icon: '🌬️', label: 'Breath là nền tảng', note: 'Thở đúng bảo vệ cột sống dưới mọi tải trọng' },
+    ],
+  },
+  // ── Tab 1: Khung Ngày Tập (orange) ─────────────────────────────────────────
+  {
+    icon: '🧠', color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Não Bộ Cần Cấu Trúc — Quyết Định Ít Hơn, Tập Tốt Hơn',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nghiên cứu Baumeister (1998) về "decision fatigue" cho thấy mỗi quyết định nhỏ tiêu hao willpower. Người có lịch tập cấu trúc duy trì nhất quán 62% vs 23% ở nhóm không có lịch (Annesi, 2003).',
+    detail: 'Khi vào phòng gym mà không biết sẽ làm gì, não bộ tốn năng lượng để quyết định liên tục: tập gì, bao nhiêu set, nghỉ bao lâu. Năng lượng đó đáng lẽ dùng để tập tốt hơn. Cấu trúc xóa bỏ hoàn toàn vấn đề này.',
+    details: [
+      'Decision fatigue trong tập luyện: Mỗi lần quyết định "tập gì tiếp theo" giữa chừng, chất lượng quyết định giảm. Kết quả: tập tắt dần về cuối buổi, bỏ bài khó, rút ngắn thời gian.',
+      'Lịch cấu trúc → automatic execution: Khi biết chính xác sẽ làm gì, não chuyển sang "auto-pilot". Chất lượng kỹ thuật và cường độ đều tăng vì não không phải lo lên kế hoạch.',
+      'Giảm barrier to start: "Tôi sẽ làm A → B → C" dễ bắt đầu hơn "tôi sẽ tập gì hôm nay". Rào cản bắt đầu thấp = ít bỏ buổi hơn.',
+      'Habit stacking: Cấu trúc cho phép gắn tập luyện vào thói quen đã có. "Sau khi ăn tối → khởi động 5 phút" dễ duy trì hơn "tối nay sẽ tập lúc nào đó".',
+      'Linh hoạt trong cấu trúc: Có 45 phút thay vì 60 phút? Cắt thời gian từng khối theo tỉ lệ. Bộ khung vẫn giữ nguyên — nội dung linh hoạt theo.',
+      'Long-term adherence: Nghiên cứu 12 tháng (Conn et al., 2011) cho thấy nhóm có cấu trúc duy trì được 68% buổi, vs 34% nhóm không có kế hoạch rõ ràng.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Ít quyết định hơn', note: 'Auto-pilot = chất lượng tập cao hơn' },
+      { icon: '📈', label: '62% vs 23%', note: 'Tỉ lệ duy trì nhất quán có/không có lịch' },
+      { icon: '🚀', label: 'Dễ bắt đầu hơn', note: 'Rào cản thấp khi đã biết chính xác sẽ làm gì' },
+      { icon: '🔄', label: 'Linh hoạt thông minh', note: 'Cấu trúc co giãn theo thời gian có, không xóa bỏ' },
+    ],
+  },
+  {
+    icon: '⚡', color: '#f97316', rgb: '249,115,22',
+    modalTitle: '4 Khối Thời Gian — Cấu Trúc Vạn Năng Từ 20 Đến 180 Phút',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '4 khối (Khởi động → Vận động chính → Giãn cơ → Tĩnh tâm) phục vụ 4 chức năng sinh lý khác nhau và không thể thay thế cho nhau. Cắt bỏ bất kỳ khối nào đều làm giảm hiệu quả và tăng rủi ro.',
+    detail: 'Mỗi khối không phải tùy tiện — chúng phục vụ một chức năng sinh lý cụ thể. Khởi động kích hoạt hệ thần kinh-cơ. Vận động chính tạo kích thích tăng trưởng. Giãn cơ hỗ trợ phục hồi. Tĩnh tâm điều chỉnh thần kinh tự chủ.',
+    details: [
+      'Khởi động (5–10 phút): Tăng nhiệt độ cơ bắp 1–2°C, tăng độ nhớt dầu khớp, kích hoạt dẫn truyền thần kinh-cơ. Bỏ qua khởi động = giảm 15–20% sức mạnh đỉnh và tăng nguy cơ chấn thương gân.',
+      'Vận động chính (10–150 phút): Phần cốt lõi — sức mạnh, cardio, hoặc kết hợp. Đây là khối duy nhất có thể mở rộng/thu ngắn linh hoạt theo thời gian có.',
+      'Giãn cơ (5–10 phút): Static stretch sau tập giảm DOMS 20–40%. Thời gian giữ tối thiểu 30 giây/tư thế để có hiệu quả thực sự — ngắn hơn không tính.',
+      'Tĩnh tâm (5 phút): Cyclic sighing kích hoạt hệ phó giao cảm, giảm cortisol, chuẩn bị não cho phần còn lại của ngày. Không phải tùy chọn — là đầu tư phục hồi tốt nhất.',
+      'Khi cắt ngắn buổi tập: Ưu tiên giữ khởi động + tĩnh tâm nguyên vẹn. Cắt từ vận động chính. Buổi 20 phút: 5\' + 10\' + 3\' + 2\' — vẫn đủ 4 khối.',
+      'Linh hoạt thứ tự trong khối vận động chính: Sức mạnh trước cardio nếu mục tiêu tăng cơ. Cardio trước sức mạnh nếu mục tiêu sức bền tim mạch. 4 khối không đổi, nội dung trong khối linh hoạt.',
+    ],
+    points: [
+      { icon: '🔥', label: 'Khởi động không thể bỏ', note: '+15–20% sức mạnh đỉnh, -30% nguy cơ chấn thương' },
+      { icon: '⚡', label: 'Vận động chính', note: 'Khối duy nhất linh hoạt hoàn toàn về thời gian' },
+      { icon: '🧘', label: 'Giãn cơ có hiệu quả', note: '≥30 giây/tư thế để giảm DOMS thực sự' },
+      { icon: '🌙', label: 'Tĩnh tâm là đầu tư', note: '5 phút = phục hồi tốt hơn cho 23 giờ còn lại' },
+    ],
+  },
+  {
+    icon: '🌙', color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Tĩnh Tâm 5 Phút — Cortisol, Phục Hồi Và Giấc Ngủ Tốt Hơn',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nghiên cứu Stanford (Spiegel et al., 2023) cho thấy cyclic sighing giảm cortisol 15% và cải thiện positive affect nhiều hơn mindfulness meditation hoặc box breathing trong 5 phút thực hành.',
+    detail: '5 phút sau tập là thời điểm cortisol đang cao. Nếu bạn chạy ra ngoài ngay, mức cortisol cao này theo bạn vào phần còn lại của ngày, ảnh hưởng đến giấc ngủ tối và phục hồi cơ bắp.',
+    details: [
+      'Cortisol sau tập: Exercise là stress tốt (eustress), nhưng cortisol tăng trong và sau tập. Không giảm đúng cách → khó ngủ tối, cơ bắp phục hồi chậm hơn.',
+      'Cyclic sighing: Hít vào mũi đầy → hít thêm một hơi ngắn bằng mũi → thở ra dài và chậm bằng miệng. Lặp 5–10 lần. Kích hoạt phó giao cảm nhanh hơn bất kỳ kỹ thuật thở nào khác.',
+      'Box breathing (4-4-4-4): Thay thế tốt nếu không quen cyclic sighing. Hít 4 giây → giữ 4 → thở ra 4 → giữ 4. Dùng nhiều bởi lính đặc nhiệm để giảm cortisol trước/sau nhiệm vụ.',
+      'Không nằm xuống: Ngồi hoặc đứng, mắt nhắm hoặc nhìn điểm cố định. Nằm xuống có thể dẫn đến ngủ thiếp đi, phá vỡ lịch ngủ tối.',
+      'Cải thiện giấc ngủ: Người tập buổi tối + 5 phút tĩnh tâm ngủ sâu hơn 18% so với nhóm dừng tập đột ngột. Melatonin không bị cortisol ức chế.',
+      'Tích lũy theo thời gian: Nhóm thực hành 5 phút tĩnh tâm sau tập liên tục 8 tuần có mức cortisol baseline thấp hơn 12% và self-reported stress thấp hơn đáng kể.',
+    ],
+    points: [
+      { icon: '📉', label: 'Cortisol -15%', note: 'Cyclic sighing hiệu quả nhất trong 5 phút' },
+      { icon: '😴', label: 'Ngủ sâu hơn 18%', note: 'Nhất là khi tập buổi tối' },
+      { icon: '💪', label: 'Phục hồi cơ tốt hơn', note: 'Cortisol thấp = GH cao hơn khi ngủ sâu' },
+      { icon: '🧠', label: 'Calm ≠ weakness', note: 'Tĩnh tâm là kỹ năng, không phải dấu hiệu yếu đuối' },
+    ],
+  },
+  // ── Tab 2: Nhịp Tuần (teal) ─────────────────────────────────────────────────
+  {
+    icon: '🔬', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: 'Cửa Sổ Phục Hồi 48–72 Giờ — Cơ Thể Mạnh Khi Nghỉ, Không Khi Tập',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Muscle Protein Synthesis (MPS) đạt đỉnh 24–36 giờ sau tập và trở về baseline sau 48–72 giờ. Tập lại cùng nhóm cơ trong 24 giờ = phá vỡ quá trình tái tạo. Tập lại sau 72 giờ = bỏ lỡ window tăng trưởng.',
+    detail: 'Nghịch lý của tập luyện là cơ bắp không mạnh lên trong buổi tập — mà trong thời gian nghỉ ngơi sau đó. Buổi tập tạo ra "vết nứt" vi mô trong sợi cơ. Cơ thể sửa chữa những vết nứt này to hơn và mạnh hơn — nhưng chỉ khi được cho đủ thời gian.',
+    details: [
+      'Muscle Protein Synthesis (MPS): Sau tập sức mạnh, MPS tăng 25–150% và duy trì 24–48 giờ. Đây là cửa sổ quan trọng nhất để protein từ bữa ăn được dùng cho tái tạo cơ.',
+      'DOMS (Delayed Onset Muscle Soreness): Cơn đau nhức 24–72 giờ sau tập là dấu hiệu vi chấn thương đang được sửa chữa — không nguy hiểm, nhưng tập nặng lên cùng nhóm cơ khi đang DOMS sẽ làm chậm tái tạo.',
+      'Glycogen resynthesis: Sau tập cardio cường độ cao, glycogen cơ cần 24–48 giờ để tái nạp đầy với chế độ ăn bình thường. Tập lại khi glycogen chưa đầy = hiệu suất kém và tốn nhiều cơ hơn làm nhiên liệu.',
+      'CNS fatigue: Hệ thần kinh trung ương mệt mỏi sau buổi tập nặng. Không thể đo bằng cảm giác cơ bắp — ngay cả khi chân không đau, CNS có thể vẫn chưa phục hồi sau squat nặng.',
+      'Growth hormone khi ngủ: GH tiết nhiều nhất trong giai đoạn ngủ sâu (slow-wave sleep), bị ức chế bởi cortisol cao. Nghỉ đủ và ngủ đủ là điều kiện thiếu yếu để MPS diễn ra tối đa.',
+      'Nguyên tắc thiết kế nhịp tuần: Cùng nhóm cơ chính cách nhau ít nhất 48 giờ (tốt nhất 72 giờ). Upper/lower split xen kẽ thay vì liền kề. Active recovery ngày nghỉ — đi bộ, yoga nhẹ — không làm hỏng phục hồi nếu cường độ thấp.',
+    ],
+    points: [
+      { icon: '🔬', label: 'MPS đỉnh 24–48h', note: 'Đây là khi protein từ bữa ăn được dùng nhiều nhất' },
+      { icon: '⏱️', label: 'Nghỉ 48–72h', note: 'Cùng nhóm cơ — không sớm hơn, không muộn hơn' },
+      { icon: '😴', label: 'GH khi ngủ sâu', note: 'Growth hormone chủ yếu tiết trong slow-wave sleep' },
+      { icon: '🧠', label: 'CNS cũng mệt', note: 'Thần kinh trung ương phục hồi chậm hơn cơ bắp' },
+    ],
+  },
+  {
+    icon: '📈', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: '3 Giai Đoạn Thích Nghi — Tiến Bộ Bền Vững Không Burnout',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'SAID Principle (Specific Adaptation to Imposed Demand): cơ thể chỉ thích nghi với đúng loại kích thích được áp đặt. 3 giai đoạn thích nghi (thần kinh → cấu trúc → hiệu suất) xảy ra tuần tự, không thể bỏ qua.',
+    detail: 'Một trong những sai lầm phổ biến nhất của người mới tập là tăng quá nhanh — thêm nhiều ngày tập, thêm volume, thêm cường độ — trước khi cơ thể đã hoàn thành giai đoạn thích nghi đầu tiên. Kết quả thường là chấn thương hoặc burnout.',
+    details: [
+      'Giai đoạn 1 — Neural (Tuần 1–4): Không phải cơ to lên mà não học cách tuyển dụng nhiều motor units hơn. Sức mạnh tăng 20–40% trong 4 tuần đầu = thần kinh tối ưu hóa, không phải hypertrophy.',
+      'Giai đoạn 2 — Cấu trúc (Tuần 5–12): Bắt đầu hypertrophy thực sự — protein được thêm vào sợi cơ. Cần đủ protein (1.6–2.2g/kg/ngày) và ngủ đủ (7–9 tiếng) để giai đoạn này xảy ra.',
+      'Giai đoạn 3 — Hiệu suất (Tuần 13+): Cơ thể đã có nền tảng → có thể tối ưu hóa cho mục tiêu cụ thể (sức mạnh tối đa, sức bền, tốc độ). Cá nhân hóa thực sự bắt đầu ở đây.',
+      'Deload có cấu trúc: Sau 4–6 tuần tăng volume liên tục, 1 tuần giảm tải 40–50% cho phép supercompensation (phục hồi vượt mức). Không deload = nền hiệu suất giảm dần.',
+      'Dấu hiệu overtraining: Hiệu suất giảm dù đang nghỉ đủ, nhịp tim nghỉ cao hơn bình thường 5–10 BPM, mood xấu liên tục, giấc ngủ kém mà không có nguyên nhân khác.',
+      'Linear vs non-linear progression: Người mới → linear (thêm cùng tải mỗi tuần). Người trung cấp trở lên → non-linear (heavy/medium/light week xen kẽ). Không nhận ra sự chuyển tiếp này = plateau sớm.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Tuần 1–4: Neural', note: 'Não học, không phải cơ to — sức mạnh tăng 20–40%' },
+      { icon: '💪', label: 'Tuần 5–12: Hypertrophy', note: 'Cơ trưởng thành với đủ protein + ngủ đủ' },
+      { icon: '🎯', label: 'Tuần 13+: Cá nhân hóa', note: 'Nền đã có → tối ưu cho mục tiêu riêng' },
+      { icon: '🔄', label: 'Deload là bắt buộc', note: '1 tuần giảm tải sau 4–6 tuần để supercompensate' },
+    ],
+  },
+  {
+    icon: '🎯', color: '#14b8a6', rgb: '20,184,166',
+    modalTitle: 'Nhịp Tập Bền Vững — Nhịp Tốt Nhất Là Nhịp Duy Trì Được 12 Tháng',
+    img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"2 buổi/tuần × 12 tháng = 96 buổi" tốt hơn "6 buổi/tuần × 6 tuần = 36 buổi". Tổng volume tích lũy dài hạn, không phải cường độ ngắn hạn, quyết định kết quả thực sự.',
+    detail: 'Fitness culture thường tôn vinh cường độ cao và tần suất tập nhiều. Nhưng nghiên cứu dài hạn nhất quán chỉ ra rằng biến số quan trọng nhất không phải cường độ — mà là consistency. Người tập đều 2 buổi/tuần trong 5 năm có kết quả tốt hơn người tập 5 buổi/tuần trong 6 tháng rồi bỏ.',
+    details: [
+      'Minimum Effective Dose (MED): 2 buổi sức mạnh/tuần đủ để duy trì và tăng cơ ở người không chuyên. Không cần tập nhiều hơn nếu không thể duy trì — hãy bắt đầu với MED.',
+      'Never miss twice rule: Bỏ 1 buổi = bình thường. Bỏ 2 buổi liên tiếp = bắt đầu mất momentum. Quy tắc đơn giản nhất để duy trì nhất quán là không cho phép bỏ 2 buổi liên tiếp.',
+      '6 lộ trình từ ít đến nhiều: Siêu bận (2 buổi/tuần) → Bắt đầu (3 buổi) → Phổ biến (4 buổi) → Nâng cao (5 buổi) → Chuyên sâu (6 buổi) → Vận động viên (6 buổi + cardio phụ).',
+      'Scale up từ từ: Duy trì nhất quán ở mức thấp hơn 4 tuần rồi thêm 1 buổi. Không nhảy thẳng từ 2 lên 5 buổi — burnout đến rất nhanh.',
+      'Social accountability: Tập cùng 1 người khác tăng adherence 37% (Plante et al., 1996). Không có partner? Community online hoặc check-in app cũng có hiệu quả.',
+      'Identity shift: Người duy trì được 12+ tháng thường không còn "đang cố tập" — họ đã trở thành "người tập luyện". Identity-based habits bền hơn goal-based habits.',
+    ],
+    points: [
+      { icon: '📅', label: '96 > 36 buổi', note: '2 buổi/tuần × 12 tháng > 6 buổi/tuần × 6 tuần' },
+      { icon: '✌️', label: 'Never miss twice', note: 'Quy tắc đơn giản nhất để giữ momentum' },
+      { icon: '🤝', label: 'Partner +37%', note: 'Accountability partner tăng adherence đáng kể' },
+      { icon: '🆔', label: 'Identity shift', note: '"Tôi là người tập luyện" bền hơn "tôi đang cố gắng"' },
+    ],
+  },
+  // ── Tab 3: Bậc Thang Tiến Bộ (purple) ─────────────────────────────────────
+  {
+    icon: '📋', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Test Định Kỳ — Đo Chuẩn Để Tiến Bộ Đáng Tin Cậy',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thực hiện test là một kỹ năng riêng cần 2–3 lần để thành thạo. Điều kiện test không nhất quán (sau tập nặng, thiếu ngủ) có thể thay đổi kết quả ±15–20%, khiến bạn tưởng tiến bộ/thụt lùi sai.',
+    detail: 'Test fitness không chỉ là "tập và đếm". Để kết quả có ý nghĩa và so sánh được theo thời gian, điều kiện test phải nhất quán: cùng thời điểm trong ngày, cùng trạng thái ngủ, cùng cách warm-up, cùng thiết bị.',
+    details: [
+      'Lên lịch test trước: 3 kỳ test — Tuần 4, Tuần 8, Tuần 12 — được đặt vào lịch từ đầu, không phụ thuộc vào cảm giác "sẵn sàng". Ngày test không phải ngày tập nặng.',
+      'Điều kiện test chuẩn hóa: 8+ tiếng ngủ đêm trước, không tập nặng 48 giờ trước, cùng thời điểm (ví dụ: sáng thứ 7), cùng warm-up 10 phút. Ghi lại tất cả điều kiện.',
+      '±15–20% dao động không phải tiến bộ thực: Nếu điều kiện test khác nhau, kết quả khác nhau không phản ánh fitness thực. Chỉ so sánh test với cùng điều kiện.',
+      'Kỹ năng test cần luyện tập: Lần test đầu thường không tối ưu vì chưa quen với áp lực. Tuần 4 test = học cách test. Tuần 8 và 12 = số liệu đáng tin cậy để so sánh.',
+      'Ghi chép chi tiết: Ghi không chỉ kết quả mà còn cảm giác chủ quan (1–10), giấc ngủ đêm trước, cafein, thời tiết. Metadata này giải thích các outlier.',
+      'Chọn bài test phù hợp mục tiêu: Tăng cơ → 5RM squat/deadlift. Sức bền → 2km chạy hoặc beep test. Linh hoạt → sit-and-reach. Phục hồi → resting heart rate trend.',
+    ],
+    points: [
+      { icon: '📅', label: 'Test có lịch trước', note: 'Tuần 4, 8, 12 — không phụ thuộc cảm giác' },
+      { icon: '🎯', label: 'Điều kiện nhất quán', note: 'Cùng giờ, ngủ, warm-up mỗi lần test' },
+      { icon: '📝', label: 'Ghi chép metadata', note: 'Giải thích outlier và kết quả bất ngờ' },
+      { icon: '🎓', label: 'Test là kỹ năng', note: 'Lần 1–2 để học, lần 3+ mới đáng tin cậy' },
+    ],
+  },
+  {
+    icon: '🕸️', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Radar Chart 4 Chiều — Thấy Điểm Yếu Ẩn Mà Một Chỉ Số Không Hiện',
+    img: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người có sức mạnh cao nhưng linh hoạt kém có nguy cơ chấn thương cao hơn người tập cân bằng, dù "khỏe hơn" theo nghĩa thông thường. 4 chiều phát hiện mất cân bằng ẩn không thấy được qua 1 chỉ số.',
+    detail: 'Fitness không phải một chiều. Người mạnh có thể thiếu sức bền. Người bền có thể thiếu sức mạnh. Người dẻo có thể phục hồi chậm. Radar chart 4 chiều cho bạn thấy "bức tranh thực" về tình trạng thể chất — không chỉ điểm mạnh.',
+    details: [
+      'Chiều 1 — Sức mạnh: Đo bằng bài test đại diện (squat BW ×1.5 cho nam, ×1.0 cho nữ là mức khá). Sức mạnh là nền tảng — thiếu sức mạnh = giới hạn mọi chiều khác.',
+      'Chiều 2 — Sức bền: VO2 max hoặc bài test đơn giản như 1.5km chạy. VO2 max là predictor mạnh nhất của tử vong do tim mạch — quan trọng hơn hầu hết chỉ số sức khỏe khác.',
+      'Chiều 3 — Linh hoạt: Không phải chỉ yoga mới cần — linh hoạt đủ cho squat sâu (hip crease dưới đầu gối), overhead reach không arch lưng, toe touch gần chạm. Thiếu linh hoạt = compensation patterns = chấn thương.',
+      'Chiều 4 — Phục hồi: Resting heart rate xu hướng (giảm = tốt), HRV trend nếu đo được, chất lượng giấc ngủ (PSQI <5), và thời gian phục hồi chủ quan sau buổi tập nặng.',
+      'Nguy hiểm khi asymmetric: Mạnh + kém linh hoạt = rotator cuff injury, hip impingement. Bền + không có sức mạnh nền = stress fracture. Mạnh + phục hồi kém = overtraining tích lũy.',
+      'Cách dùng radar chart: Vẽ ở tuần 1 → 4 → 8 → 12. Chiều nào lõm nhất = ưu tiên tập cho giai đoạn tiếp theo. Mục tiêu không phải điểm cao nhất từng chiều — mà là hình tròn đều nhất.',
+    ],
+    points: [
+      { icon: '📊', label: '4 chiều quan trọng', note: 'Sức mạnh · Sức bền · Linh hoạt · Phục hồi' },
+      { icon: '⚠️', label: 'Mạnh + cứng = nguy hiểm', note: 'Mất cân bằng ẩn là nguyên nhân chấn thương phổ biến' },
+      { icon: '❤️', label: 'VO2 max = tuổi thọ', note: 'Predictor mạnh nhất của tử vong tim mạch' },
+      { icon: '🎯', label: 'Hình tròn đều hơn', note: 'Mục tiêu: cân bằng, không phải điểm cao 1 chiều' },
+    ],
+  },
+  {
+    icon: '🪜', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: '5 Bậc Tiến Bộ — Biết Rõ Vị Trí Và Bước Tiếp Theo Là Gì',
+    img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80&auto=format&fit=crop',
+    keyFact: '20–30% người bỏ tập trong 90 ngày đầu không phải vì lười biếng — mà vì không biết mình đang ở đâu và bước tiếp theo là gì (IHRSA, 2019). Cấu trúc bậc thang giải quyết trực tiếp vấn đề này.',
+    detail: '5 bậc không phải danh hiệu hay cuộc thi — chúng là bản đồ. Biết mình đang ở Bậc 2 và tiêu chí lên Bậc 3 là gì = có hướng rõ ràng = ít bỏ cuộc hơn. Không có bản đồ = đi lạc.',
+    details: [
+      'Bậc 1 — Hoạt động cơ bản: Đi bộ 30 phút/ngày, 3 lần/tuần. Không cần gym. Đây là điểm bắt đầu cho người hoàn toàn ít vận động. Mục tiêu: tạo thói quen vận động trước khi nghĩ đến cường độ.',
+      'Bậc 2 — Nền tảng: Có thể hoàn thành 3 buổi/tuần với 6 mẫu cơ bản ở mức cơ sở (10 push-up, goblet squat BW × 20 reps, plank 30 giây). Hầu hết người mới đạt được sau 4–8 tuần.',
+      'Bậc 3 — Trung cấp: Sức mạnh đủ để squat BW, deadlift BW ×1.2, 20 push-up. Sức bền: chạy 2km không nghỉ. Đây là bậc "khỏe mạnh cơ bản" theo tiêu chuẩn y tế.',
+      'Bậc 4 — Nâng cao: Squat BW ×1.5 (nam) / ×1.0 (nữ). 5km <30 phút. Pull-up 5 reps (nam) / 2 reps (nữ). Cần 6–18 tháng tập có hệ thống từ nền zero.',
+      'Bậc 5 — Vận động viên: Squat BW ×2.0+. 5km <22 phút. Cần gen tốt + thời gian dài + lập trình chuyên sâu. Không phải mục tiêu mọi người cần đạt.',
+      'Thực tế: 80% lợi ích sức khỏe đến từ Bậc 1–3. Không cần Bậc 4–5 để có sức khỏe tốt và tuổi thọ dài. Biết điều này giảm áp lực và giúp duy trì lâu dài hơn.',
+    ],
+    points: [
+      { icon: '🗺️', label: 'Bậc = bản đồ', note: 'Biết vị trí + bước tiếp theo = ít bỏ cuộc' },
+      { icon: '🏁', label: 'Bậc 1–3 = đủ rồi', note: '80% lợi ích sức khỏe từ nền đến trung cấp' },
+      { icon: '📅', label: '4–8 tuần lên Bậc 2', note: 'Người mới đạt nền tảng trong 1–2 tháng' },
+      { icon: '🎯', label: '6–18 tháng lên Bậc 4', note: 'Nâng cao cần thời gian — không có đường tắt' },
+    ],
   },
 ];
 
@@ -342,6 +606,117 @@ function PrincipleModal({ p, idx, total, onClose, onPrev, onNext, hasPrev, hasNe
   );
 }
 
+// ─── TabDetailModal ──────────────────────────────────────────────────────────────
+
+function TabDetailModal({ item, itemIdx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { color, rgb } = item;
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#080a08', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15), 0 40px 80px rgba(0,0,0,0.6)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.modalTitle} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${rgb},0.08) 50%, #080a08 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          {/* Icon */}
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          {/* Number watermark */}
+          <div className="absolute top-5 right-6 font-black leading-none select-none" style={{ fontSize: 48, color, textShadow: `0 0 30px rgba(${rgb},0.6)`, opacity: 0.8 }}>
+            {String(itemIdx + 1).padStart(2, '0')}
+          </div>
+          {/* Close */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}
+          >✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-4 leading-snug" style={{ color }}>{item.modalTitle}</h2>
+
+          {/* Key fact banner */}
+          <div className="flex gap-3 rounded-2xl p-4 mb-5" style={{ background: `rgba(${rgb},0.07)`, border: `1px solid rgba(${rgb},0.2)` }}>
+            <span className="text-lg shrink-0">💡</span>
+            <p className="text-sm font-semibold leading-relaxed m-0" style={{ color: `rgba(255,255,255,0.85)` }}>{item.keyFact}</p>
+          </div>
+
+          {/* Detail paragraph */}
+          <p className="text-sm text-muted leading-relaxed mb-5">{item.detail}</p>
+
+          {/* Numbered detail list */}
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color }}>Chi Tiết Thực Hành</p>
+          <ul className="space-y-3 mb-7">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Key points 2-col grid */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button
+              onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{itemIdx + 1} / 3</span>
+            <button
+              onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Hooks ──────────────────────────────────────────────────────────────────────
 
 function useScrollReveal(threshold = 0.12) {
@@ -416,7 +791,7 @@ function AnimatedStat({ n, label, color, tooltip }) {
 
 // ─── Tab content panel ──────────────────────────────────────────────────────────
 
-function TabPanel({ tab }) {
+function TabPanel({ tab, onDetailClick }) {
   return (
     <div className={`relative overflow-hidden rounded-3xl border ${tab.border}`} style={{ background: `${tab.color}03` }}>
       {/* Top accent gradient line */}
@@ -487,11 +862,12 @@ function TabPanel({ tab }) {
             {tab.details.map((d, i) => (
               <div
                 key={i}
-                className="flex gap-3.5 animate-fade-in-up"
+                className="flex gap-3.5 animate-fade-in-up group/detail cursor-pointer rounded-xl transition-all duration-200 hover:bg-white/[0.03] -mx-2 px-2 py-1"
                 style={{ animationDelay: `${i * 90 + 280}ms`, animationFillMode: 'both' }}
+                onClick={() => onDetailClick && onDetailClick(i)}
               >
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-lg shrink-0 border mt-0.5"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-lg shrink-0 border mt-0.5 transition-all group-hover/detail:scale-110"
                   style={{ background: `${tab.color}08`, borderColor: `${tab.color}20` }}
                 >
                   {d.icon}
@@ -500,6 +876,7 @@ function TabPanel({ tab }) {
                   <p className="text-base font-bold text-text/90 leading-tight mb-1">{d.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{d.body}</p>
                 </div>
+                <span className="shrink-0 self-center text-[10px] font-bold opacity-0 group-hover/detail:opacity-60 transition-opacity" style={{ color: tab.color }}>chi tiết →</span>
               </div>
             ))}
           </div>
@@ -583,6 +960,7 @@ export default function PillarA() {
   });
 
   const [principleIdx, setPrincipleIdx] = useState(null);
+  const [detailModal, setDetailModal] = useState(null); // { tabIdx, itemIdx }
   const [activeTab, setActiveTab] = useState(0);
   const [tabKey, setTabKey] = useState(0);
   const tabBarRef = useRef(null);
@@ -1018,7 +1396,7 @@ export default function PillarA() {
                 style={{ background: `${mergedTabs[activeTab].color}0e` }}
               />
               <div className="relative z-10">
-                <TabPanel tab={tab} />
+                <TabPanel tab={tab} onDetailClick={(i) => setDetailModal({ tabIdx: activeTab, itemIdx: i })} />
               </div>
             </div>
 
@@ -1100,6 +1478,22 @@ export default function PillarA() {
           </Link>
         </div>
       </RevealBlock>
+
+      {/* Tab detail modal — outside all RevealBlocks so position:fixed works */}
+      {detailModal !== null && (() => {
+        const modalItem = DETAIL_MODALS[detailModal.tabIdx * 3 + detailModal.itemIdx];
+        return modalItem ? (
+          <TabDetailModal
+            item={modalItem}
+            itemIdx={detailModal.itemIdx}
+            onClose={() => setDetailModal(null)}
+            onPrev={() => setDetailModal(dm => ({ ...dm, itemIdx: Math.max(0, dm.itemIdx - 1) }))}
+            onNext={() => setDetailModal(dm => ({ ...dm, itemIdx: Math.min(2, dm.itemIdx + 1) }))}
+            hasPrev={detailModal.itemIdx > 0}
+            hasNext={detailModal.itemIdx < 2}
+          />
+        ) : null;
+      })()}
 
       {/* Principle modal — outside all RevealBlocks so position:fixed works */}
       {principleIdx !== null && (

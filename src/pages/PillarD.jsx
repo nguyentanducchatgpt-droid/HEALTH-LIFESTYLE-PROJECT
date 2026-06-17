@@ -151,23 +151,161 @@ function CalmScore({ color }) {
 }
 
 // ─── Tab panels ──────────────────────────────────────────────────────────────
-function D0Panel({ color }) {
+const D0_CARD_MODALS = [
+  {
+    icon: '🌪️', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'D1 – Hiểu Stress',
+    img: 'https://images.unsplash.com/photo-1505455184862-554165e5f6ba?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress không phải kẻ thù — đó là tín hiệu cơ thể cần hành động khôn ngoan hơn.',
+    detail: 'Stress xảy ra ở 3 tầng: cơ thể (tim đập, vai căng), cảm xúc (lo, bực), hành vi (lướt điện thoại, ăn vặt). Nhận diện được tầng nào đang kích hoạt giúp chọn đúng công cụ ứng phó.',
+    details: [
+      'Stress cấp tính (ngắn hạn) thực ra có lợi: tăng tập trung, phản ứng nhanh và hiệu suất tạm thời — đây là phản xạ sinh tồn hàng triệu năm tiến hóa.',
+      'Stress mãn tính (kéo dài nhiều tuần) mới gây hại: tăng cortisol liên tục làm suy hệ miễn dịch, gây mất ngủ và tăng nguy cơ bệnh tim mạch.',
+      'Vòng lặp lo âu–thói quen: Trigger → suy nghĩ tự động → cảm xúc → hành vi bù đắp (lướt MXH, ăn vặt) → Trigger không được giải quyết, cứ quay lại.',
+      'Nhận diện sớm ở tầng cơ thể (vai cứng, thở nông) giúp chèn "điểm dừng" trước khi stress leo thang lên tầng cảm xúc rồi hành vi.',
+      'Đặt tên cho cảm xúc (affect labeling) giảm cường độ lo âu — vùng frontal lobe được kích hoạt, amygdala (trung tâm sợ hãi) tự dịu lại theo cơ chế thần kinh.',
+      'Mục tiêu không phải "loại bỏ stress" mà là "nhận diện sớm và chọn phản ứng khôn ngoan hơn thay vì phản xạ tự động bù đắp".',
+    ],
+    points: [
+      { icon: '💪', label: 'Tầng Cơ Thể', note: 'Tim đập, thở nông, vai căng' },
+      { icon: '😤', label: 'Tầng Cảm Xúc', note: 'Dễ cáu, lo âu, buồn bực' },
+      { icon: '🔄', label: 'Tầng Hành Vi', note: 'Ăn vặt, lướt MXH, trì hoãn' },
+      { icon: '🔧', label: 'Điểm Dừng', note: 'Thở → đặt tên → việc nhỏ tiếp' },
+    ],
+  },
+  {
+    icon: '🫁', color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'D2 – Thở & Hạ Nhịp',
+    img: 'https://images.unsplash.com/photo-1518609571773-39b7d303a87b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thở có chủ ý là cách duy nhất kiểm soát hệ thần kinh tự chủ bằng ý thức — không cần dụng cụ, không cần thời gian.',
+    detail: 'Hệ thần kinh phó giao cảm (rest & digest) được kích hoạt khi thở chậm, sâu. Chỉ 4–5 nhịp thở cơ hoành đã đủ hạ nhịp tim và giảm cortisol đo được trên máy.',
+    details: [
+      'Hệ thần kinh tự chủ có 2 nhánh: giao cảm (fight-or-flight — tăng nhịp tim, cortisol) và phó giao cảm (rest & digest — hạ nhịp, phục hồi). Thở chậm kích hoạt nhánh phó giao cảm.',
+      'Thở cơ hoành tăng biên độ trao đổi O₂/CO₂, kích thích dây thần kinh phế vị (vagus nerve), giúp hạ huyết áp và nhịp tim trong 1–3 phút.',
+      'Box breathing (4-4-4-4) được Navy SEALs dùng để kiểm soát trạng thái tinh thần trong tình huống cực kỳ căng thẳng — áp dụng hoàn toàn được cho cuộc sống thường ngày.',
+      'Thở 4-7-8 kéo dài thời gian giữ hơi (7 giây) làm tăng CO₂ máu tạm thời, kích thích phản xạ thư giãn sâu — đặc biệt hiệu quả 20 phút trước khi ngủ.',
+      'Reset 2 phút (5 nhịp thở + thả lỏng vai–hàm–bàn tay) đủ để chuyển trạng thái từ reactive (phản ứng bốc đồng) sang responsive (phản ứng có chủ ý).',
+      'Thực hành thở cơ hoành đều đặn 10 phút/ngày có thể giảm huyết áp tâm thu 5–10 mmHg sau 4 tuần — tương đương tác động của vận động aerobic nhẹ.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Cơ Hoành', note: 'Nền tảng — dùng mọi lúc' },
+      { icon: '⬜', label: 'Box 4-4-4-4', note: 'Tập trung & bình tĩnh nhanh' },
+      { icon: '🌊', label: 'Thở 4-7-8', note: 'Chuẩn bị cho giấc ngủ' },
+      { icon: '⚡', label: 'Reset 2 Phút', note: 'Dùng ngay khi quá tải' },
+    ],
+  },
+  {
+    icon: '🧘', color: '#d946ef', rgb: '217,70,239',
+    modalTitle: 'D3 – Thiền & Chánh Niệm',
+    img: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thiền 8 tuần thay đổi cấu trúc vật lý của não — hippocampus dày hơn, amygdala nhỏ hơn.',
+    detail: 'Thiền không phải là "không suy nghĩ". Thiền là nhận ra mình đang bị cuốn đi và nhẹ nhàng quay lại. Mỗi lần não lang thang rồi quay lại là một rep luyện tập cho cơ chú ý.',
+    details: [
+      'Nghiên cứu Harvard (Sara Lazar, 2011): 8 tuần thiền chánh niệm làm dày vỏ não trước trán (kiểm soát cảm xúc và quyết định) và thu nhỏ amygdala (trung tâm lo âu).',
+      'Thiền chánh niệm giảm triệu chứng lo âu và trầm cảm nhẹ–vừa, hiệu quả tương đương liệu pháp nhận thức hành vi (CBT) trong một số thử nghiệm ngẫu nhiên có đối chứng.',
+      'Body scan 5 phút trước ngủ kích hoạt hệ phó giao cảm mạnh và giảm cortisol — người thiền body scan ngủ nhanh hơn và ít thức giữa đêm hơn trong nghiên cứu về insomnia.',
+      'Chánh niệm khi ăn (mindful eating) giảm ăn theo cảm xúc và tăng nhận thức tín hiệu no — não nhận tín hiệu no sau 20 phút, chánh niệm giúp "chờ" đủ thời gian đó.',
+      'Đi bộ chánh niệm (không tai nghe, cảm nhận bàn chân) kết hợp vận động nhẹ và thiền — hai lợi ích song song trong cùng 10–15 phút mỗi ngày.',
+      'Thiền không cần ngồi im 1 tiếng hay ngồi kiết già. 3 phút mỗi ngày là đủ để xây dựng thói quen và nhận thấy hiệu quả rõ ràng sau 2–3 tuần.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Não Khỏe Hơn', note: 'Hippocampus dày sau 8 tuần' },
+      { icon: '😌', label: 'Giảm Lo Âu', note: 'Tương đương CBT nhẹ–vừa' },
+      { icon: '😴', label: 'Ngủ Tốt Hơn', note: 'Body scan trước ngủ 5 phút' },
+      { icon: '🔄', label: 'Bắt Đầu 3 Phút', note: 'Lang thang → quay lại = tập' },
+    ],
+  },
+  {
+    icon: '📓', color: '#ec4899', rgb: '236,72,153',
+    modalTitle: 'D4 – Journaling 5 Dòng',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Viết ra suy nghĩ giảm lo âu vì não không cần "giữ" chúng nữa — gọi là cognitive offloading.',
+    detail: 'Journaling không phải nhật ký kể chuyện. 5 câu hỏi có cấu trúc mỗi tối giúp não xử lý cảm xúc, nhận ra vấn đề thực sự và chuẩn bị cho ngày mai nhẹ nhàng hơn.',
+    details: [
+      'James Pennebaker (UT Austin, từ 1986): viết ra suy nghĩ và cảm xúc khó khăn (expressive writing) giảm lo âu, tăng hệ miễn dịch và cải thiện giấc ngủ — hiệu quả rõ sau 3–4 ngày viết liên tiếp.',
+      'Cognitive offloading: não không cần "giữ" những việc chưa giải quyết khi đã viết ra — giảm vòng lặp suy nghĩ lặp đi lặp lại (rumination) chiếm băng thông nhận thức.',
+      'Câu hỏi "Hôm nay mình cảm thấy gì?" kích hoạt affect labeling — não đặt tên cảm xúc thay vì chỉ cảm nhận mơ hồ, từ đó giảm hoạt động amygdala đo được trên fMRI.',
+      'Journal sau ngày fail: viết "Điều gì không ổn? Mình rút ra được gì?" chuyển thất bại thành bài học rõ ràng, giảm tự trách vô ích và tăng khả năng thử lại.',
+      'Chỉ cần 5–8 phút mỗi tối. Không cần viết đẹp, đúng ngữ pháp hay đủ câu. Viết tự do — não không quan tâm hình thức, chỉ quan tâm việc được xả.',
+      '"Một câu tử tế với bản thân" cuối mỗi buổi journal là thực hành self-compassion có cơ sở khoa học — không phải tự khen mà là xác nhận rằng mình đang cố gắng.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Xả Não', note: 'Đưa rác ra khỏi đầu' },
+      { icon: '😌', label: 'Xử Lý Cảm Xúc', note: 'Đặt tên = amygdala dịu lại' },
+      { icon: '📈', label: 'Rút Bài Học', note: 'Journal sau ngày fail' },
+      { icon: '💙', label: 'Tử Tế Bản Thân', note: 'Self-compassion hằng ngày' },
+    ],
+  },
+  {
+    icon: '📵', color: '#0ea5e9', rgb: '14,165,233',
+    modalTitle: 'D5 – Digital Detox',
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Màn hình trước ngủ ức chế melatonin lên đến 23% — làm trễ giờ ngủ trung bình 1,5 giờ.',
+    detail: 'Vấn đề không phải điện thoại mà là lướt vô thức khi não mệt. Digital detox là thiết kế lại môi trường số để não có khoảng thở — không cần ép bỏ điện thoại hoàn toàn.',
+    details: [
+      'Ánh sáng xanh (blue light) từ màn hình điện thoại ức chế melatonin — hormone điều tiết giấc ngủ. Dùng màn hình 2 giờ trước ngủ có thể trì hoãn giờ ngủ trung bình 1,5 giờ.',
+      'Social media feed thiết kế theo nguyên lý "variable reward" (phần thưởng ngẫu nhiên) — cùng cơ chế với máy đánh bạc, kích hoạt dopamine và tạo hành vi lướt vô thức.',
+      'Thông báo liên tục phân mảnh sự tập trung (cognitive fragmentation) — mỗi interrupt cần trung bình 23 phút để não quay lại trạng thái tập trung sâu (nghiên cứu của Gloria Mark, UC Irvine).',
+      '30 phút đầu ngày không điện thoại tạo "khoảng trống nhận thức" — não không ở trạng thái reactive (phản ứng với thông báo) ngay từ khi mở mắt.',
+      'Menu thay thế hiệu quả hơn ý chí thuần túy: khi muốn lướt, thay bằng thở 5 nhịp, ra ngoài 2 phút, uống nước, hoặc ghi nhanh 1 câu đang nghĩ trong đầu.',
+      'Thiết kế môi trường số: app gây nghiện ở màn hình 2 hoặc trong thư mục khó tìm, điện thoại để phòng khác khi ngủ — giảm trigger lướt tự động đến 80% mà không cần ý chí.',
+    ],
+    points: [
+      { icon: '😴', label: 'Ngủ Ngon Hơn', note: 'Tắt màn hình 20ph trước ngủ' },
+      { icon: '🎯', label: 'Tập Trung Sâu', note: 'Tắt thông báo khi làm việc' },
+      { icon: '🧘', label: 'Khoảng Trống', note: '10 phút/ngày không màn hình' },
+      { icon: '🏠', label: 'Môi Trường Số', note: 'App nghiện ở màn hình 2' },
+    ],
+  },
+  {
+    icon: '🌱', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'D6 – Kỷ Luật Mềm',
+    img: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ý chí là nguồn lực hữu hạn. Hệ thống nhỏ và self-compassion mới tạo thói quen bền vững.',
+    detail: 'Kỷ luật mềm không phải dễ dãi — đó là cách quay lại sau ngày lệch mà không tự trách. Không bù gấp đôi. Không bỏ cuộc. Chỉ cần bản nhỏ nhất.',
+    details: [
+      'Ý chí hoạt động như cơ bắp — dùng nhiều sẽ mệt (ego depletion). Quyết định sau cùng trong ngày thường tệ hơn quyết định đầu ngày. Hệ thống nhỏ thay thế ý chí mới bền vững.',
+      'Quy tắc "không bao giờ bỏ lỡ hai lần liên tiếp" (James Clear, Atomic Habits) thực tế hơn "không bao giờ bỏ" — vì cuộc sống luôn có ngày không thể hoàn hảo.',
+      'Quy tắc 1%: tập 1 phút vẫn tốt hơn 0 phút. Bản nhỏ nhất duy trì danh tính "người tập/người thiền" — danh tính đó quan trọng hơn số phút thực tế thực hiện.',
+      'Tự trách (self-criticism) sau ngày fail kích hoạt thêm stress — phản tác dụng, làm tăng xác suất bỏ cuộc hẳn so với người tự nhẹ nhàng hơn với bản thân.',
+      'Self-compassion (Kristen Neff, UT Austin): tử tế với bản thân sau thất bại tăng khả năng thử lại và kiên trì — ngược với lo ngại rằng tự thương hại sẽ làm người ta lười.',
+      'Habit stacking: ghép thói quen mới vào sau thói quen cũ ("Sau khi đánh răng, tôi thiền 3 phút") giảm ma sát khởi động và tăng tỷ lệ duy trì theo nghiên cứu hành vi của BJ Fogg.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Quy Tắc 1%', note: 'Bản nhỏ nhất vẫn là thắng' },
+      { icon: '💙', label: 'Không Tự Trách', note: 'Self-compassion tăng kiên trì' },
+      { icon: '🔗', label: 'Habit Stacking', note: 'Ghép vào thói quen hiện có' },
+      { icon: '🏗️', label: 'Hệ Thống Nhỏ', note: 'Thiết kế thay vì dùng ý chí' },
+    ],
+  },
+];
+
+const D0_CARDS = [
+  { icon: '🌪️', title: 'D1 – Hiểu Stress', desc: 'Nhận diện 3 tầng stress: cơ thể, cảm xúc, hành vi. Vòng lặp lo âu – thói quen.' },
+  { icon: '🫁', title: 'D2 – Thở & Hạ Nhịp', desc: 'Thở cơ hoành, box breathing 4-4-4-4, thở 4-7-8, reset 2 phút.' },
+  { icon: '🧘', title: 'D3 – Thiền & Chánh Niệm', desc: 'Thiền 3 phút cho người mới. Body scan 5 phút. Chánh niệm khi ăn, đi bộ.' },
+  { icon: '📓', title: 'D4 – Journaling 5 Dòng', desc: '5 câu hỏi mỗi tối. Xả não khi quá tải. Journal sau ngày fail.' },
+  { icon: '📵', title: 'D5 – Digital Detox', desc: '3 mức: dễ → chuẩn → nâng cao. Giảm màn hình trước ngủ, tắt thông báo.' },
+  { icon: '🌱', title: 'D6 – Kỷ Luật Mềm', desc: 'Không tự trách. Quy tắc 1% quay lại. Thói quen nhỏ bền vững.' },
+];
+
+function D0Panel({ color, onCardClick }) {
   return (
     <div className="space-y-4">
       <p className="text-lg text-muted leading-relaxed">Trụ cột D không biến bạn thành người "luôn bình tĩnh". Nó cung cấp bộ công cụ dùng ngay khi căng: thở khi stress, viết khi rối, tắt màn hình khi quá tải.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        {[
-          { icon: '🌪️', title: 'D1 – Hiểu Stress', desc: 'Nhận diện 3 tầng stress: cơ thể, cảm xúc, hành vi. Vòng lặp lo âu – thói quen.' },
-          { icon: '🫁', title: 'D2 – Thở & Hạ Nhịp', desc: 'Thở cơ hoành, box breathing 4-4-4-4, thở 4-7-8, reset 2 phút.' },
-          { icon: '🧘', title: 'D3 – Thiền & Chánh Niệm', desc: 'Thiền 3 phút cho người mới. Body scan 5 phút. Chánh niệm khi ăn, đi bộ.' },
-          { icon: '📓', title: 'D4 – Journaling 5 Dòng', desc: '5 câu hỏi mỗi tối. Xả não khi quá tải. Journal sau ngày fail.' },
-          { icon: '📵', title: 'D5 – Digital Detox', desc: '3 mức: dễ → chuẩn → nâng cao. Giảm màn hình trước ngủ, tắt thông báo.' },
-          { icon: '🌱', title: 'D6 – Kỷ Luật Mềm', desc: 'Không tự trách. Quy tắc 1% quay lại. Thói quen nhỏ bền vững.' },
-        ].map(m => (
-          <div key={m.title} className="rounded-xl border border-border bg-bg p-4 hover:border-purple-500/20 transition-colors">
+        {D0_CARDS.map((m, i) => (
+          <div
+            key={m.title}
+            className={`group/card rounded-xl border border-border bg-bg p-4 transition-all duration-200 ${onCardClick ? 'cursor-pointer hover:border-purple-500/30 hover:bg-white/[0.03]' : 'hover:border-purple-500/20'}`}
+            onClick={onCardClick ? () => onCardClick(i) : undefined}
+          >
             <div className="flex items-center gap-3 mb-2">
               <span className="text-2xl">{m.icon}</span>
               <span className="text-lg font-bold text-text">{m.title}</span>
+              {onCardClick && (
+                <span className="ml-auto text-[10px] font-bold text-muted opacity-0 group-hover/card:opacity-60 transition-opacity shrink-0">chi tiết →</span>
+              )}
             </div>
             <p className="text-base text-muted leading-relaxed">{m.desc}</p>
           </div>
@@ -379,6 +517,96 @@ function D7Panel({ color }) {
   return <CalmScore color={color} />;
 }
 
+function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.modalTitle} className="w-full h-full object-cover" style={{ opacity: 0.50 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-3" style={{ color: item.color }}>{item.modalTitle}</h2>
+          <div className="rounded-xl px-4 py-3 mb-5 text-base font-medium leading-relaxed"
+            style={{ background: `rgba(${item.rgb},0.1)`, borderLeft: `3px solid ${item.color}`, color: `rgba(${item.rgb},0.9)` }}>
+            💡 {item.keyFact}
+          </div>
+          <p className="text-base text-muted leading-relaxed mb-6">{item.detail}</p>
+
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const PANEL_MAP = { d0: D0Panel, d1: D1Panel, d2: D2Panel, d3: D3Panel, d4: D4Panel, d5: D5Panel, d6: D6Panel, d7: D7Panel };
 
 // ─── Teaser components (copied from PillarB pattern) ─────────────────────────
@@ -433,6 +661,7 @@ export default function PillarD() {
   const { t: tPillars } = useTranslation('pillars');
   const pillar = tPillars('pillarD', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('d0');
+  const [d0Modal, setD0Modal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -595,7 +824,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
-            <Panel color={tab.color} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -638,6 +867,19 @@ export default function PillarD() {
           <TeaserCard to="/pillar/d/roadmap" color="#a855f7" rgb="168,85,247" icon="🗺️" category="Lộ Trình" title="Lộ Trình 12 Tuần Mind & Calm" accent="6 giai đoạn · 3–10 phút/ngày" desc="Từ nhận diện stress → thở → journaling → digital detox → kỷ luật mềm → cá nhân hóa routine. Mỗi ngày chỉ cần 3–10 phút." features={['Tuần 1–2: Nhận diện stress & reset', 'Tuần 3–4: Thở có chủ ý', 'Tuần 5–6: Journaling & xả não', 'Tuần 7–12: Detox, kỷ luật, cá nhân hóa']} stats={[{ v: '12', l: 'Tuần' }, { v: '6', l: 'Giai đoạn' }]} image="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=800&q=80" imageAlt="Roadmap" cta="Xem lộ trình →" />
         </TeaserSection>
       </RevealBlock>
+
+      {d0Modal !== null && (
+        <CardModal
+          item={D0_CARD_MODALS[d0Modal]}
+          onClose={() => setD0Modal(null)}
+          onPrev={() => setD0Modal(i => Math.max(0, i - 1))}
+          onNext={() => setD0Modal(i => Math.min(D0_CARD_MODALS.length - 1, i + 1))}
+          hasPrev={d0Modal > 0}
+          hasNext={d0Modal < D0_CARD_MODALS.length - 1}
+          total={D0_CARD_MODALS.length}
+          idx={d0Modal}
+        />
+      )}
     </div>
   );
 }

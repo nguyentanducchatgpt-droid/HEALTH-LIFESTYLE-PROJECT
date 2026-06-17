@@ -322,8 +322,79 @@ function D0Panel({ color, onCardClick }) {
   );
 }
 
-function D1Panel({ color }) {
+const D1_LAYER_MODALS = [
+  {
+    icon: '💪', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'Tầng Cơ Thể',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cơ thể cảnh báo stress trước khi ý thức nhận ra — học cách đọc tín hiệu sớm để can thiệp kịp thời.',
+    detail: 'Tầng cơ thể là tầng đầu tiên và nhanh nhất trong phản ứng stress. Nhận diện được các tín hiệu vật lý này giúp bạn chặn chuỗi phản ứng trước khi nó leo thang.',
+    details: [
+      'Tim đập nhanh (tachycardia) khi stress do adrenaline và noradrenaline được tuyến thượng thận bơm vào máu trong vòng vài giây — phản xạ fight-or-flight nguyên thủy.',
+      'Vai và gáy căng là phản ứng phòng thủ tiến hóa — cơ thể co rút để bảo vệ đầu và cổ khi nhận tín hiệu nguy hiểm, kể cả khi nguy hiểm chỉ là email từ sếp.',
+      'Thở nông (shallow breathing) giảm O₂ lên não, làm tăng cảm giác lo âu và mờ đầu — tạo vòng phản hồi: stress → thở nông → lo hơn → thở nông hơn.',
+      'Khó ngủ khi stress mãn tính do cortisol không hạ đủ vào buổi tối — bình thường cortisol thấp nhất lúc 3–4h sáng, nhưng căng thẳng kéo dài phá vỡ nhịp này.',
+      'Tiêu hóa bị ảnh hưởng qua trục ruột-não (gut-brain axis): hệ giao cảm ức chế tiêu hóa khi stress, gây đau bụng, đầy bụng hoặc tiêu chảy khi căng thẳng kéo dài.',
+      'Điểm vàng: nhận ra tín hiệu cơ thể (vai cứng, thở nông) ngay lúc xuất hiện cho phép can thiệp ở ngưỡng thấp nhất — 1 nhịp thở sâu đủ để bắt đầu đảo ngược chuỗi phản ứng.',
+    ],
+    points: [
+      { icon: '❤️', label: 'Tim Đập Nhanh', note: 'Adrenaline trong vòng giây' },
+      { icon: '💪', label: 'Vai Gáy Căng', note: 'Phản xạ bảo vệ nguyên thủy' },
+      { icon: '🌬️', label: 'Thở Nông', note: 'Vòng phản hồi làm stress hơn' },
+      { icon: '😴', label: 'Khó Ngủ', note: 'Cortisol cao buổi tối' },
+    ],
+  },
+  {
+    icon: '😤', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'Tầng Cảm Xúc',
+    img: 'https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cảm xúc không phải yếu đuối — đó là dữ liệu não gửi cho bạn về mức "nguy hiểm" của tình huống.',
+    detail: 'Tầng cảm xúc xuất hiện sau tầng cơ thể và khó nhận biết hơn vì thường bị gán nhãn "tính cách xấu" thay vì "phản ứng stress". Nhận diện đúng cho phép xử lý đúng.',
+    details: [
+      'Dễ cáu (irritability) khi stress do amygdala bị kích hoạt quá mức — ngưỡng phản ứng cảm xúc giảm xuống, những việc nhỏ trở thành "cọng rơm cuối cùng gãy lưng lạc đà".',
+      'Lo lắng là cảm xúc hướng về tương lai — não tạo ra "kịch bản tệ nhất" như cơ chế chuẩn bị sinh tồn, kể cả khi tình huống thực tế không nguy hiểm như não nghĩ.',
+      'Buồn bực khi stress mãn tính do cortisol ức chế serotonin và dopamine — hai neurotransmitter liên quan đến cảm giác hài lòng, động lực và kết nối xã hội.',
+      'Mất kiên nhẫn khi mệt do vỏ não trước trán (prefrontal cortex — kiểm soát xung lực) bị "offline" khi stress cao, não chuyển sang chế độ phản ứng thay vì suy nghĩ có chủ ý.',
+      'Đặt tên cho cảm xúc (affect labeling): nói hoặc viết "Tôi đang cảm thấy lo" làm giảm hoạt động amygdala đo được trên fMRI — không chỉ "hữu ích về tâm lý" mà là thay đổi vật lý trong não.',
+      'Cảm xúc khó chịu không cần bị loại bỏ — chỉ cần được nhận diện và đặt tên. Sau đó não có thể tiếp tục xử lý tình huống thay vì bị mắc kẹt trong phản ứng tự động.',
+    ],
+    points: [
+      { icon: '😤', label: 'Dễ Cáu', note: 'Amygdala kích hoạt quá mức' },
+      { icon: '😰', label: 'Lo Lắng', note: 'Não tạo kịch bản tệ nhất' },
+      { icon: '😔', label: 'Buồn Bực', note: 'Cortisol ức chế serotonin' },
+      { icon: '🏷️', label: 'Đặt Tên Cảm Xúc', note: 'Affect labeling hạ amygdala' },
+    ],
+  },
+  {
+    icon: '🔄', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'Tầng Hành Vi',
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hành vi bù đắp (ăn vặt, lướt điện thoại) giải quyết cảm xúc ngắn hạn nhưng kéo dài stress dài hạn.',
+    detail: 'Tầng hành vi là tầng cuối cùng và dễ nhìn thấy nhất — nhưng can thiệp ở đây không hiệu quả bằng can thiệp ở tầng cơ thể hoặc cảm xúc trước đó.',
+    details: [
+      'Ăn vặt khi stress là phản ứng sinh học: dopamine từ đường và chất béo tạm thời giảm cortisol, nhưng đường huyết tăng vọt rồi tụt nhanh làm mood xuống thêm sau 30–60 phút.',
+      'Lướt điện thoại khi mệt là "kháng stress" kém hiệu quả — dopamine từ scroll ngắn hạn không bù đắp cognitive load tích lũy và còn trì hoãn việc xử lý cảm xúc thực sự.',
+      'Trì hoãn (procrastination) khi stress cao do não vào "survival mode" — chỉ ưu tiên việc an toàn và quen thuộc, tránh việc khó và không chắc chắn dù biết cần làm.',
+      'Bỏ tập thể dục khi bận/mệt là nghịch lý: tập thể dục chính là thuốc giảm cortisol hiệu quả nhất, nhưng khi stress cao, ngưỡng động lực để bắt đầu tập lại tăng lên đáng kể.',
+      'Thói quen bù đắp giải quyết cảm xúc ngắn hạn nhưng không giải quyết Trigger — vòng lặp bắt đầu lại vì nguồn gốc stress chưa được xử lý thực sự.',
+      'Điểm can thiệp hiệu quả nhất là ở đầu vòng lặp (nhận diện Trigger) hoặc ở giữa (khoảng trống giữa suy nghĩ tự động và hành vi) — không phải sau khi hành vi bù đắp đã xảy ra rồi.',
+    ],
+    points: [
+      { icon: '🍕', label: 'Ăn Vặt', note: 'Dopamine ngắn, mood tụt dài' },
+      { icon: '📱', label: 'Lướt Điện Thoại', note: 'Không xử lý được stress gốc' },
+      { icon: '⏰', label: 'Trì Hoãn', note: 'Não vào survival mode' },
+      { icon: '🔄', label: 'Can Thiệp Sớm', note: 'Nhận Trigger trước khi hành vi' },
+    ],
+  },
+];
+
+function D1Panel({ color, onLayerClick }) {
   const [openLoop, setOpenLoop] = useState(null);
+  const D1_LAYERS = [
+    { icon: '💪', label: 'Cơ Thể', signs: ['Tim đập nhanh', 'Căng vai gáy', 'Thở nông', 'Khó ngủ'] },
+    { icon: '😤', label: 'Cảm Xúc', signs: ['Dễ cáu', 'Lo lắng', 'Buồn bực', 'Mất kiên nhẫn'] },
+    { icon: '🔄', label: 'Hành Vi', signs: ['Ăn vặt', 'Lướt điện thoại', 'Trì hoãn', 'Bỏ tập'] },
+  ];
   const LOOPS = [
     { trigger: 'Sếp nhắn tin gấp', thought: '"Chắc mình làm sai"', emotion: 'Lo, tim đập nhanh', behavior: 'Mở điện thoại liên tục', result: 'Mệt, làm việc kém hơn' },
     { trigger: 'Thấy người khác thành công', thought: '"Mình không bằng ai"', emotion: 'Tự ti, chán nản', behavior: 'Lướt mạng xã hội nhiều hơn', result: 'Càng so sánh, càng mệt' },
@@ -334,15 +405,23 @@ function D1Panel({ color }) {
       <div>
         <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color }}>3 Tầng Của Stress</div>
         <div className="grid grid-cols-3 gap-2">
-          {[
-            { icon: '💪', label: 'Cơ Thể', signs: ['Tim đập nhanh', 'Căng vai gáy', 'Thở nông', 'Khó ngủ'] },
-            { icon: '😤', label: 'Cảm Xúc', signs: ['Dễ cáu', 'Lo lắng', 'Buồn bực', 'Mất kiên nhẫn'] },
-            { icon: '🔄', label: 'Hành Vi', signs: ['Ăn vặt', 'Lướt điện thoại', 'Trì hoãn', 'Bỏ tập'] },
-          ].map(t => (
-            <div key={t.label} className="rounded-xl border border-border bg-bg p-3">
+          {D1_LAYERS.map((t, i) => (
+            <div
+              key={t.label}
+              className={`group/layer rounded-xl border bg-bg p-3 transition-all duration-200 ${onLayerClick ? 'cursor-pointer border-border hover:border-purple-500/40 hover:bg-white/[0.03]' : 'border-border'}`}
+              onClick={onLayerClick ? () => onLayerClick(i) : undefined}
+            >
               <div className="text-2xl mb-1 text-center">{t.icon}</div>
               <div className="text-base font-bold text-center mb-2" style={{ color }}>{t.label}</div>
               <ul className="space-y-0.5">{t.signs.map(s => <li key={s} className="text-base text-muted text-center">{s}</li>)}</ul>
+              {onLayerClick && (
+                <div className="text-center mt-2">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/layer:opacity-100 transition-opacity"
+                    style={{ color: D1_LAYER_MODALS[i].color, borderColor: `rgba(${D1_LAYER_MODALS[i].rgb},0.35)`, background: `rgba(${D1_LAYER_MODALS[i].rgb},0.08)` }}>
+                    chi tiết →
+                  </span>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -665,6 +744,7 @@ export default function PillarD() {
   const pillar = tPillars('pillarD', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('d0');
   const [d0Modal, setD0Modal] = useState(null);
+  const [d1Modal, setD1Modal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -827,7 +907,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
-            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -881,6 +961,19 @@ export default function PillarD() {
           hasNext={d0Modal < D0_CARD_MODALS.length - 1}
           total={D0_CARD_MODALS.length}
           idx={d0Modal}
+        />
+      )}
+
+      {d1Modal !== null && (
+        <CardModal
+          item={D1_LAYER_MODALS[d1Modal]}
+          onClose={() => setD1Modal(null)}
+          onPrev={() => setD1Modal(i => Math.max(0, i - 1))}
+          onNext={() => setD1Modal(i => Math.min(D1_LAYER_MODALS.length - 1, i + 1))}
+          hasPrev={d1Modal > 0}
+          hasNext={d1Modal < D1_LAYER_MODALS.length - 1}
+          total={D1_LAYER_MODALS.length}
+          idx={d1Modal}
         />
       )}
     </div>

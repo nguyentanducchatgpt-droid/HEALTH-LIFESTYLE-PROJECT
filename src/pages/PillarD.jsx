@@ -89,7 +89,7 @@ function BoxBreathTimer({ color }) {
 }
 
 // ─── Journal Prompt (D4 tab) ─────────────────────────────────────────────────
-function JournalPrompt({ color }) {
+function JournalPrompt({ color, onPromptClick }) {
   const [answers, setAnswers] = useState({});
   const PROMPTS = [
     { id: 'p1', q: 'Hôm nay mình đang cảm thấy gì?' },
@@ -101,8 +101,17 @@ function JournalPrompt({ color }) {
   return (
     <div className="space-y-3">
       {PROMPTS.map((p, i) => (
-        <div key={p.id} className="rounded-xl border border-border bg-bg p-3">
-          <div className="text-base font-bold mb-1.5" style={{ color }}>{i + 1}. {p.q}</div>
+        <div key={p.id} className="group/prompt rounded-xl border border-border bg-bg p-3">
+          <div className="flex items-start justify-between gap-2 mb-1.5">
+            <div className="text-base font-bold" style={{ color }}>{i + 1}. {p.q}</div>
+            {onPromptClick && (
+              <button
+                onClick={() => onPromptClick(i)}
+                className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/prompt:opacity-100 transition-opacity"
+                style={{ color, borderColor: 'rgba(236,72,153,0.35)', background: 'rgba(236,72,153,0.08)' }}
+              >chi tiết →</button>
+            )}
+          </div>
           <textarea value={answers[p.id] || ''} onChange={e => setAnswers(prev => ({ ...prev, [p.id]: e.target.value }))} rows={2} placeholder="Viết tự do, không cần hay..." className="w-full text-lg bg-transparent text-text placeholder:text-muted/40 resize-none outline-none" />
         </div>
       ))}
@@ -721,11 +730,119 @@ function D3Panel({ color, onModeClick }) {
   );
 }
 
-function D4Panel({ color }) {
+const D4_PROMPT_MODALS = [
+  {
+    icon: '💭', color: '#ec4899', rgb: '236,72,153',
+    modalTitle: 'Hôm Nay Mình Cảm Thấy Gì?',
+    img: 'https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đặt tên cho cảm xúc (affect labeling) giảm hoạt động amygdala đo được trên fMRI — viết "tôi đang lo" thay đổi trạng thái sinh lý não, không chỉ là tự an ủi.',
+    detail: 'Câu hỏi đơn giản nhất nhưng quan trọng nhất. Nhiều người chỉ cảm thấy "mệt" hay "bực" mà không biết rõ mình đang cảm thấy gì. Nhận diện chính xác là bước đầu tiên để xử lý — không thể giải quyết điều bạn chưa nhìn thấy.',
+    details: [
+      'Nghiên cứu Lieberman et al. (UCLA, 2007): đặt tên cho cảm xúc bằng ngôn ngữ kích hoạt vỏ não trước trán, đồng thời giảm hoạt động amygdala đo được qua fMRI — thay đổi vật lý trong não, không phải chỉ "cảm thấy khá hơn".',
+      'Emotional granularity — khả năng phân biệt cảm xúc tinh tế (lo lắng vs sợ hãi; buồn vs thất vọng) — liên quan đến sức khỏe tâm lý tốt hơn và khả năng điều tiết cảm xúc cao hơn theo Lisa Feldman Barrett.',
+      'Viết về cảm xúc khó khăn chỉ 3–4 ngày × 15–20 phút đủ để cải thiện tâm trạng và giảm lo âu trong nhiều tuần sau — hiệu quả được ghi nhận ngay cả khi không có therapist hay guidance.',
+      'Khi chỉ "cảm" trong đầu, não dễ bị rumination (vòng lặp suy nghĩ lặp lại) — viết ra tạo "khoảng cách" giữa bạn và cảm xúc, giúp quan sát thay vì bị cuốn vào.',
+      'Không cần đặt tên "đúng" — ngay cả việc viết "tôi không biết mình đang cảm thấy gì, chỉ thấy nặng nề" cũng bắt đầu kích hoạt quá trình xử lý nhận thức-cảm xúc trong não.',
+      'Thực hành hằng ngày tăng vocabulary cảm xúc — càng có nhiều từ để mô tả cảm xúc, não càng có nhiều "bộ công cụ" để xử lý tình huống khó theo cách linh hoạt hơn.',
+    ],
+    points: [
+      { icon: '🏷️', label: 'Affect Labeling', note: 'Đặt tên = amygdala dịu xuống' },
+      { icon: '🔬', label: 'Thay Đổi Não', note: 'Đo được trên fMRI' },
+      { icon: '🔍', label: 'Clarity', note: 'Không thể giải quyết điều chưa thấy' },
+      { icon: '📏', label: 'Khoảng Cách', note: 'Quan sát thay vì bị cuốn vào' },
+    ],
+  },
+  {
+    icon: '🎯', color: '#ec4899', rgb: '236,72,153',
+    modalTitle: 'Điều Gì Làm Mình Căng Nhất?',
+    img: 'https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Não mặc định phóng đại mức độ nghiêm trọng khi lo trong đầu — viết ra buộc não phải cụ thể hóa stress và thường tự phát hiện vấn đề không to như tưởng.',
+    detail: 'Cognitive offloading: não dùng nhiều năng lượng để "giữ" những việc chưa giải quyết trong working memory. Viết ra giải phóng năng lượng đó và buộc vấn đề phải trở nên cụ thể — mơ hồ thì đáng sợ, cụ thể thì giải quyết được.',
+    details: [
+      'Zeigarnik effect: não ưu tiên giữ những việc chưa xong trong bộ nhớ — tạo "open loops" tiêu thụ bandwidth nhận thức liên tục. Viết ra đóng loop đó, não không cần giữ nữa và năng lượng được giải phóng.',
+      'James Pennebaker (UT Austin, 1986–2010s): expressive writing về stressor chính giảm cortisol measurable, cải thiện hệ miễn dịch và giảm số ngày ốm — hiệu quả mạnh nhất với việc viết về nguồn gốc stress cụ thể.',
+      'Viết "điều gì làm mình căng nhất" buộc não chuyển từ diffuse worry (lo lan man) sang focused problem (vấn đề cụ thể) — diffuse worry không giải quyết được, focused problem có thể bắt đầu hành động.',
+      'Sau khi xác định nguồn gốc stress chính, não có thể phân loại: kiểm soát được / không kiểm soát được. Chỉ cần hành động với phần kiểm soát được, buông phần còn lại.',
+      'Nhiều người phát hiện "điều làm họ căng nhất" không phải deadline hay công việc, mà là mối quan hệ hoặc quyết định chưa được đưa ra — insight này không xuất hiện khi chỉ lo trong đầu.',
+      'Viết đều đặn về stress giúp nhận ra patterns: loại tình huống nào thường xuyên căng thẳng bạn nhất? Nhận ra pattern là bước đầu để thay đổi cách phản ứng với nó.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Cognitive Offload', note: 'Giải phóng working memory' },
+      { icon: '🎯', label: 'Cụ Thể Hóa', note: 'Mơ hồ sợ, cụ thể giải quyết được' },
+      { icon: '🔄', label: 'Zeigarnik Effect', note: 'Viết ra đóng "open loop"' },
+      { icon: '🗺️', label: 'Nhận Ra Pattern', note: 'Nhận ra để thay đổi phản ứng' },
+    ],
+  },
+  {
+    icon: '✨', color: '#ec4899', rgb: '236,72,153',
+    modalTitle: 'Hôm Nay Mình Làm Tốt Điều Gì?',
+    img: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Não có negativity bias tự nhiên — nhớ xấu gấp 3–5 lần nhớ tốt. Chủ động ghi nhận điều tốt nhỏ mỗi ngày là "counter-training" trực tiếp cho thiên kiến này.',
+    detail: 'Không phải tự khen hay tự hài lòng. Đây là kỹ thuật điều chỉnh thống kê — não tự động ghi nhớ nhiều hơn điều tiêu cực. Viết ít nhất 1 điều tốt mỗi ngày cân bằng lại tỉ lệ đó theo thời gian.',
+    details: [
+      'Negativity bias (Roy Baumeister et al.): não xử lý thông tin tiêu cực sâu hơn và nhớ lâu hơn thông tin tích cực — cơ chế tiến hóa giúp tránh nguy hiểm, nhưng trong cuộc sống hiện đại tạo ra self-narrative quá tiêu cực.',
+      'Barbara Fredrickson (Broaden-and-Build Theory): cảm xúc tích cực mở rộng tư duy và xây dựng nguồn lực dài hạn — ngược với cảm xúc tiêu cực thu hẹp focus về survival.',
+      'Nhận ra "điều nhỏ làm tốt" quan trọng hơn chờ "thành tích lớn" — não cần dopamine nhỏ và đều đặn từ progress nhỏ để duy trì động lực và cảm giác agency (kiểm soát cuộc sống).',
+      'Self-efficacy (Bandura): nhận ra mình đã làm được việc nhỏ tăng niềm tin vào khả năng làm được việc khó hơn — tích lũy evidence cho bức tranh "tôi là người có thể".',
+      'Viết "dù nhỏ" tắt tiêu chuẩn perfectionism — chấp nhận progress nhỏ là đủ để ghi nhận, giảm all-or-nothing thinking ("hôm nay không hoàn hảo nên không có gì đáng kể").',
+      'Nghiên cứu của Martin Seligman: viết "3 điều tốt mỗi ngày + nguyên nhân" trong 1 tuần cải thiện happiness và giảm depressive symptoms — hiệu quả kéo dài 6 tháng sau khi dừng bài tập.',
+    ],
+    points: [
+      { icon: '⚖️', label: 'Counter-Training', note: 'Cân bằng negativity bias tự nhiên' },
+      { icon: '✨', label: 'Nhỏ Vẫn Quan Trọng', note: 'Não cần dopamine từ progress nhỏ' },
+      { icon: '💪', label: 'Self-Efficacy', note: 'Tích lũy evidence "tôi có thể"' },
+      { icon: '😊', label: 'Seligman 3-Good', note: 'Cải thiện mood kéo dài 6 tháng' },
+    ],
+  },
+  {
+    icon: '📋', color: '#ec4899', rgb: '236,72,153',
+    modalTitle: 'Ngày Mai Chỉ Cần Làm 1 Việc?',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Implementation intention ("Khi tôi X, tôi sẽ làm Y") tăng tỷ lệ hoàn thành mục tiêu 2–3 lần — nhưng chỉ hoạt động khi mục tiêu đủ cụ thể và chỉ có 1 mục tiêu.',
+    detail: 'Đêm trước xác định 1 việc quan trọng cho ngày mai tạo "pre-commitment" — não đã có kế hoạch rõ và không cần quyết định buổi sáng khi willpower thấp nhất. Loại bỏ decision fatigue và procrastination ở giờ bắt đầu ngày.',
+    details: [
+      'Peter Gollwitzer (NYU): implementation intention — "Khi tôi X, tôi sẽ làm Y" — tăng tỷ lệ hoàn thành mục tiêu từ ~22% lên 62–91% tùy nghiên cứu. Cơ chế: tạo triggers tự động trong não, không cần ý chí mỗi lần.',
+      'Decision fatigue: mỗi quyết định tiêu thụ glucose và willpower. Buổi sáng não chưa phục hồi hoàn toàn — quyết định buổi tối về việc quan trọng nhất ngày mai là cách sử dụng willpower thông minh.',
+      '"1 việc quan trọng" cưỡng lại multi-tasking illusion — nghiên cứu nhất quán rằng multi-tasking giảm productivity 20–40%. Não chỉ có thể thực sự tập trung vào 1 việc tại 1 thời điểm.',
+      'Chọn "việc quan trọng nhất" buộc phải prioritize — phân biệt giữa urgent (gấp) và important (quan trọng). Hầu hết việc gấp không quan trọng; việc quan trọng nhất thường không gấp nhưng tạo kết quả dài hạn.',
+      'Nếu không đạt được 1 việc đó, vẫn dễ dàng điều chỉnh — biết rõ mình định làm gì và chưa làm, dễ quay lại hơn là có danh sách 10 việc mơ hồ chưa biết bắt đầu từ đâu.',
+      'Kết hợp với "việc nhỏ tiếp theo" (GTD mindset của David Allen): chia "việc quan trọng" thành hành động cụ thể đầu tiên — không phải "viết báo cáo" mà là "mở file báo cáo và viết 1 câu đầu tiên".',
+    ],
+    points: [
+      { icon: '🎯', label: 'Implementation Intention', note: 'Tăng hoàn thành 2–3 lần' },
+      { icon: '⚡', label: 'Tiết Kiệm Willpower', note: 'Quyết định tối, không phải sáng' },
+      { icon: '1️⃣', label: 'Chỉ 1 Việc', note: 'Multi-tasking giảm 20–40% năng suất' },
+      { icon: '🔑', label: 'Important vs Urgent', note: 'Quan trọng ≠ gấp' },
+    ],
+  },
+  {
+    icon: '💙', color: '#ec4899', rgb: '236,72,153',
+    modalTitle: 'Một Câu Tử Tế Với Bản Thân',
+    img: 'https://images.unsplash.com/photo-1518609571773-39b7d303a87b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Self-compassion tăng khả năng thử lại và kiên trì sau thất bại — ngược với lo ngại rằng tự thương hại sẽ làm người ta lười biếng hơn.',
+    detail: 'Câu tử tế với bản thân không phải lời khen ngợi hay tự hào — đó là công nhận rằng bạn đang cố gắng trong điều kiện thực tế, và điều đó đủ rồi. Cơ chế giống như nói chuyện với người bạn đang vất vả.',
+    details: [
+      'Kristen Neff (UT Austin): self-compassion gồm 3 thành phần — self-kindness (tử tế với bản thân), common humanity (nhận ra đau khổ là phần của trải nghiệm con người), mindfulness (nhận biết không phán xét). Ba thành phần cùng hoạt động mới tạo hiệu quả.',
+      'Self-compassion KHÔNG phải self-pity (tự thương hại). Self-pity tập trung vào mình, self-compassion nhìn ra rằng tất cả mọi người đều khó khăn — tạo kết nối thay vì cô lập.',
+      'Ngược với trực giác: người thực hành self-compassion có accountability cao hơn và dễ nhận lỗi hơn người self-critical — vì không sợ đối mặt với thất bại, dễ nhìn thẳng vào vấn đề hơn.',
+      'Cortisol thấp hơn và oxytocin cao hơn khi thực hành self-compassion — oxytocin (hormone kết nối) được kích thích khi tự đối xử với sự ấm áp tương tự như khi nhận quan tâm từ người khác.',
+      'Câu tử tế với bản thân nên "đủ thực tế" — không phải "tôi thật tuyệt vời" (não biết không đúng và reject). Ví dụ đúng: "Hôm nay khó, nhưng mình vẫn cố gắng" hoặc "Mình đủ tốt để tiếp tục ngày mai".',
+      'Thực hành hằng ngày thay đổi self-talk pattern dài hạn — người nói chuyện với bản thân bằng giọng tử tế có khả năng phục hồi sau thất bại (resilience) cao hơn đáng kể theo dữ liệu nghiên cứu dọc.',
+    ],
+    points: [
+      { icon: '💙', label: 'Self-Compassion', note: 'Tăng kiên trì sau thất bại' },
+      { icon: '🔬', label: 'Oxytocin', note: 'Hormone kết nối khi tự ấm áp' },
+      { icon: '🎯', label: 'Accountability', note: 'Dễ nhận lỗi hơn tự trách' },
+      { icon: '🔄', label: 'Self-Talk', note: 'Thay đổi pattern dài hạn' },
+    ],
+  },
+];
+
+function D4Panel({ color, onPromptClick }) {
   return (
     <div className="space-y-4">
       <p className="text-base text-muted">Nhiều người mệt không vì nhiều việc, mà vì <strong className="text-text">mọi việc nằm lộn xộn trong đầu</strong>. Journal đưa chúng ra giấy.</p>
-      <JournalPrompt color={color} />
+      <JournalPrompt color={color} onPromptClick={onPromptClick} />
       <div className="rounded-xl border p-3 text-base text-muted" style={{ borderColor: `rgba(${PURPLE_RGB},0.15)`, background: `rgba(${PURPLE_RGB},0.05)` }}>
         <strong style={{ color }}>Phiên bản siêu ngắn:</strong> "Mình đang cảm thấy… / Mình cần… / Việc nhỏ tiếp theo là…"
       </div>
@@ -943,6 +1060,7 @@ export default function PillarD() {
   const [d1Modal, setD1Modal] = useState(null);
   const [d2Modal, setD2Modal] = useState(null);
   const [d3Modal, setD3Modal] = useState(null);
+  const [d4Modal, setD4Modal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -1105,7 +1223,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
-            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -1198,6 +1316,19 @@ export default function PillarD() {
           hasNext={d3Modal < D3_MODE_MODALS.length - 1}
           total={D3_MODE_MODALS.length}
           idx={d3Modal}
+        />
+      )}
+
+      {d4Modal !== null && (
+        <CardModal
+          item={D4_PROMPT_MODALS[d4Modal]}
+          onClose={() => setD4Modal(null)}
+          onPrev={() => setD4Modal(i => Math.max(0, i - 1))}
+          onNext={() => setD4Modal(i => Math.min(D4_PROMPT_MODALS.length - 1, i + 1))}
+          hasPrev={d4Modal > 0}
+          hasNext={d4Modal < D4_PROMPT_MODALS.length - 1}
+          total={D4_PROMPT_MODALS.length}
+          idx={d4Modal}
         />
       )}
     </div>

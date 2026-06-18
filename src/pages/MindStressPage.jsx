@@ -72,6 +72,72 @@ const TECHNIQUES = [
   { icon: '⏸️', title: 'Điểm dừng nhỏ', desc: 'Mục tiêu của Trụ cột D không phải xóa sạch lo âu, mà là chèn một điểm dừng nhỏ vào vòng lặp. Điểm dừng có thể là: thở 1 phút, viết 5 dòng, đi bộ 5 phút, tắt màn hình 10 phút.', example: 'Khi cảm thấy căng: dừng → thở → gọi tên cảm xúc → chọn việc nhỏ tiếp theo' },
 ];
 
+const LAYER_MODALS = [
+  {
+    icon: '💪', color: '#f97316', rgb: '249,115,22',
+    modalTitle: 'Tầng Cơ Thể — Triệu Chứng & Cơ Chế',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cơ thể là "cảnh báo sớm" của stress — các triệu chứng thực thể xuất hiện TRƯỚC khi bạn nhận ra mình đang stress. Nhận diện ở tầng này giúp can thiệp sớm nhất.',
+    detail: 'HPA axis (Hypothalamic-Pituitary-Adrenal) và hệ giao cảm kích hoạt đồng thời: adrenaline phóng thích trong giây, cortisol theo sau trong vài phút — tạo ra toàn bộ bộ triệu chứng cơ thể mà bạn cảm nhận.',
+    details: [
+      'Tim đập nhanh và hồi hộp: adrenaline (epinephrine) làm tăng nhịp tim để bơm máu tới cơ bắp chuẩn bị "fight or flight" — một phản xạ tiến hóa hữu ích khi đối mặt nguy hiểm thật sự, nhưng kích hoạt liên tục gây mệt mỏi tim mạch.',
+      'Căng cổ vai gáy: cơ trapezius và cơ cổ co lại trong stress như bản năng bảo vệ đầu. Sau nhiều giờ ngồi + stress, các cơ này không được thư giãn và tạo ra "stress hump" — cảm giác vai gáy như đá.',
+      'Thở nông, thở nhanh: khi giao cảm kích hoạt, nhịp thở tăng để cung cấp O₂ nhanh hơn. Nhưng thở ngực nông gây hyperventilation nhẹ — CO₂ giảm → cảm giác chóng mặt và lo âu tăng (vòng lặp tự khuếch đại).',
+      'Đau đầu: căng cơ cổ-vai → giảm lưu thông máu lên đầu + cortisol gây viêm → đau đầu căng thẳng (tension headache). Đây là loại đau đầu phổ biến nhất ở người làm việc văn phòng.',
+      'Khó ngủ: cortisol cao buổi tối ức chế melatonin, norepinephrine duy trì "chế độ cảnh giác" của não — ngăn não vào giai đoạn ngủ sâu NREM cần thiết cho phục hồi.',
+      'Mệt mỏi không rõ nguyên nhân: hệ miễn dịch tiêu thụ nhiều năng lượng hơn khi cortisol mãn tính gây viêm toàn thân — bạn "mệt" dù không làm gì nhiều vì cơ thể đang chiến đấu ở cấp độ tế bào.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Adrenaline Ngay Lập Tức', note: 'Tim đập nhanh trong vòng giây' },
+      { icon: '🏔️', label: 'Căng Cơ Bảo Vệ', note: 'Vai gáy co lại như bản năng tự vệ' },
+      { icon: '🌬️', label: 'Thở Nông → Vòng Lặp', note: 'Hyperventilation làm lo âu tăng thêm' },
+      { icon: '🔍', label: 'Cảnh Báo Sớm Nhất', note: 'Nhận diện ở đây trước khi leo lên tầng cảm xúc' },
+    ],
+  },
+  {
+    icon: '😤', color: '#ec4899', rgb: '236,72,153',
+    modalTitle: 'Tầng Cảm Xúc — Từ Kích Động Đến Quá Tải',
+    img: 'https://images.unsplash.com/photo-1620228885847-9eab2a1adddc?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Amygdala "chiếm quyền" vỏ não khi stress cao — đây là lý do bạn dễ cáu, mất kiên nhẫn và không thể suy nghĩ rõ ràng dù bình thường vẫn làm được.',
+    detail: 'Amygdala hijack (Joseph LeDoux): khi stress vượt ngưỡng, amygdala kích hoạt phản ứng cảm xúc nhanh hơn vỏ não trước trán (PFC) có thể điều chỉnh — bạn phản ứng trước khi kịp suy nghĩ.',
+    details: [
+      'Amygdala hijack: amygdala xử lý tín hiệu nguy hiểm nhanh hơn PFC 11–17 mili giây. Khi cortisol cao, ngưỡng kích hoạt amygdala giảm thấp — nghĩa là cùng một tình huống sẽ gây phản ứng mạnh hơn bình thường.',
+      'Dễ cáu bẳn và mất kiên nhẫn: cortisol làm giảm serotonin — neurotransmitter điều tiết tâm trạng và khả năng chịu đựng. Khi serotonin thấp, ngưỡng "bực" giảm xuống và mọi thứ nhỏ cũng trở nên khó chịu.',
+      'Lo lắng và bất an: amygdala trong trạng thái cảnh giác cao → não liên tục quét môi trường để tìm mối đe dọa — tạo ra trạng thái lo âu nền ngay cả khi không có trigger rõ ràng.',
+      'Buồn bực và chán nản: stress mãn tính làm giảm dopamine tonic (nền) — không còn cảm giác hứng khởi hoặc kỳ vọng tích cực. Các hoạt động bình thường vui không còn hấp dẫn.',
+      'Cảm giác quá tải (overwhelm): khi PFC bị "offline" do cortisol, khả năng phân loại và ưu tiên công việc suy giảm — mọi thứ đều có vẻ cấp bách và quan trọng như nhau, gây liệt hành động.',
+      'Khó tập trung, đãng trí: norepinephrine ở mức tối ưu giúp tập trung, nhưng khi quá cao (stress cao) nó giảm khả năng lọc thông tin không liên quan — bạn để ý mọi thứ xung quanh thay vì tập trung vào việc chính.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Amygdala Hijack', note: 'Phản ứng cảm xúc nhanh hơn lý trí' },
+      { icon: '😠', label: 'Serotonin Giảm', note: 'Ngưỡng chịu đựng thấp → dễ cáu' },
+      { icon: '🌀', label: 'Lo Âu Nền', note: 'Não quét nguy hiểm liên tục' },
+      { icon: '🧩', label: 'PFC Offline', note: 'Mất khả năng ưu tiên và sắp xếp' },
+    ],
+  },
+  {
+    icon: '🔄', color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Tầng Hành Vi — Bù Đắp Và Né Tránh',
+    img: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Các hành vi bù đắp không phải sự yếu đuối — đó là não tự tìm nguồn dopamine nhanh vì stress đã làm cạn kiệt dopamine từ các hoạt động có ý nghĩa.',
+    detail: 'Khi stress kéo dài, dopamine tonic (nền) giảm → não thiếu cảm giác thưởng thích. Não chuyển sang tìm kiếm dopamine phasic (đột biến nhanh) từ thực phẩm ngon, MXH, game — những thứ cho phản hồi tức thì nhưng không giải quyết nguồn gốc stress.',
+    details: [
+      'Ăn vặt nhiều hơn: thực phẩm giàu đường và chất béo kích thích dopamine nhanh, cộng thêm cortisol cao làm tăng cảm giác thèm ăn đặc biệt với food comfort. Đây là cơ chế tiến hóa — cơ thể tích trữ năng lượng khi "nguy hiểm".',
+      'Lướt điện thoại vô thức: mỗi lần kéo feed là một "variable reward" (phần thưởng không chắc chắn) — cơ chế tương tự máy đánh bạc. Variable reward tạo dopamine đột biến mạnh nhất, lý do MXH gây nghiện hơn nội dung cố định.',
+      'Trì hoãn việc quan trọng: PFC offline → khó khởi động nhiệm vụ phức tạp. Não ưu tiên việc nhỏ, dễ, cho kết quả tức thì (check email, dọn bàn) để có cảm giác hoàn thành mà tránh nhiệm vụ nặng gây thêm stress.',
+      'Bỏ tập, bỏ thói quen: habit loop cần willpower để kích hoạt — khi cortisol cao, willpower (self-regulation) suy giảm vì PFC thiếu năng lượng. Những habits tốt dễ bị break nhất vì chúng cần effort cao nhất.',
+      'Thức khuya, ngủ nướng: thức khuya = tìm thêm "thời gian cho bản thân" (revenge bedtime procrastination) sau ngày stress. Ngủ nướng = cơ thể cố phục hồi cortisol deficit qua ngủ thêm nhưng thực ra làm lệch nhịp sinh học.',
+      'Vòng lặp tự khuếch đại: hành vi bù đắp → không giải quyết stress → tiếp tục bỏ habits tốt → sức khỏe/hiệu suất giảm → stress tăng → bù đắp nhiều hơn. Đây là lý do stress mãn tính khó thoát nếu không can thiệp có ý thức.',
+    ],
+    points: [
+      { icon: '🍕', label: 'Dopamine Tức Thì', note: 'Ăn vặt/MXH thay thế dopamine thiếu hụt' },
+      { icon: '📱', label: 'Variable Reward Loop', note: 'Feed MXH = máy đánh bạc dopamine' },
+      { icon: '⏳', label: 'Willpower Suy Giảm', note: 'PFC thiếu năng lượng → habits tốt bị break' },
+      { icon: '🔁', label: 'Vòng Lặp Tự Khuếch Đại', note: 'Bù đắp → không giải quyết → stress thêm' },
+    ],
+  },
+];
+
 const STRESS_TYPE_MODALS = [
   {
     icon: '✅', color: '#10b981', rgb: '16,185,129',
@@ -200,6 +266,7 @@ function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx
 export default function MindStressPage() {
   const [openLoop, setOpenLoop] = useState(null);
   const [stressModal, setStressModal] = useState(null);
+  const [layerModal, setLayerModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -292,9 +359,18 @@ export default function MindStressPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Tầng Của Stress</h2>
         <p className="text-muted text-lg mb-6">Stress biểu hiện ở cả 3 tầng cùng lúc — nhận diện tầng nào đang ảnh hưởng bạn nhiều nhất.</p>
         <div className="grid md:grid-cols-3 gap-4">
-          {LAYERS.map(l => (
-            <div key={l.title} className="rounded-2xl border border-border bg-surface p-5">
-              <div className="text-4xl mb-3">{l.icon}</div>
+          {LAYERS.map((l, i) => (
+            <div key={l.title}
+              className="group/card rounded-2xl border border-border bg-surface p-5 cursor-pointer transition-all duration-200 hover:bg-white/[0.03]"
+              style={{ '--hover-color': l.color }}
+              onClick={() => setLayerModal(i)}>
+              <div className="flex items-start justify-between mb-3">
+                <div className="text-4xl">{l.icon}</div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/card:opacity-100 transition-opacity shrink-0"
+                  style={{ color: l.color, borderColor: `rgba(${LAYER_MODALS[i].rgb},0.35)`, background: `rgba(${LAYER_MODALS[i].rgb},0.08)` }}>
+                  chi tiết →
+                </span>
+              </div>
               <div className="text-lg font-bold mb-3" style={{ color: l.color }}>{l.title}</div>
               <ul className="space-y-1">
                 {l.signs.map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span style={{ color: l.color }}>·</span>{s}</li>)}
@@ -398,6 +474,19 @@ export default function MindStressPage() {
           hasNext={stressModal < STRESS_TYPE_MODALS.length - 1}
           total={STRESS_TYPE_MODALS.length}
           idx={stressModal}
+        />
+      )}
+
+      {layerModal !== null && (
+        <CardModal
+          item={LAYER_MODALS[layerModal]}
+          onClose={() => setLayerModal(null)}
+          onPrev={() => setLayerModal(i => Math.max(0, i - 1))}
+          onNext={() => setLayerModal(i => Math.min(LAYER_MODALS.length - 1, i + 1))}
+          hasPrev={layerModal > 0}
+          hasNext={layerModal < LAYER_MODALS.length - 1}
+          total={LAYER_MODALS.length}
+          idx={layerModal}
         />
       )}
     </div>

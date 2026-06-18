@@ -72,6 +72,93 @@ const TECHNIQUES = [
   { icon: '⏸️', title: 'Điểm dừng nhỏ', desc: 'Mục tiêu của Trụ cột D không phải xóa sạch lo âu, mà là chèn một điểm dừng nhỏ vào vòng lặp. Điểm dừng có thể là: thở 1 phút, viết 5 dòng, đi bộ 5 phút, tắt màn hình 10 phút.', example: 'Khi cảm thấy căng: dừng → thở → gọi tên cảm xúc → chọn việc nhỏ tiếp theo' },
 ];
 
+const TECHNIQUE_MODALS = [
+  {
+    icon: '🏷️', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'Đặt Tên Cho Suy Nghĩ (Defusion)',
+    img: 'https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cognitive defusion (ACT): khoảng cách giữa "Tôi thất bại" và "Tôi đang có suy nghĩ rằng mình thất bại" là tất cả — cùng nội dung, nhưng não xử lý theo cách hoàn toàn khác.',
+    detail: 'Kỹ thuật từ Acceptance & Commitment Therapy (Steven Hayes). Fusion = gắn chặt vào suy nghĩ như sự thật. Defusion = tạo khoảng cách bằng ngôn ngữ — giúp quan sát suy nghĩ thay vì bị nó điều khiển.',
+    details: [
+      'Cognitive fusion là trạng thái suy nghĩ = thực tế: "Tôi thất bại" → não xử lý như một sự kiện đang xảy ra, kích hoạt amygdala và threat response. Đây là nguồn gốc của nhiều vòng lặp lo âu.',
+      '"Tôi đang có suy nghĩ rằng..." thêm một lớp quan sát giữa bạn và suy nghĩ. fMRI cho thấy cách diễn đạt này giảm hoạt động amygdala và tăng hoạt động PFC — dịch chuyển từ phản ứng sang quan sát.',
+      'Biến thể mạnh hơn: "Tôi nhận ra mình đang có suy nghĩ rằng..." — thêm "nhận ra" (noticing) tăng meta-awareness, tạo khoảng cách lớn hơn và giảm ảnh hưởng cảm xúc của suy nghĩ.',
+      'Đặt tên cho loại suy nghĩ còn hiệu quả hơn: "Đây là suy nghĩ lo âu về tương lai" / "Đây là suy nghĩ so sánh" / "Đây là cái não mình hay phán xét bản thân". Categorizing giúp não nhận ra pattern.',
+      'Nghiên cứu ACT (Hayes, 2012): defusion techniques giảm ảnh hưởng của suy nghĩ tiêu cực hiệu quả hơn "suy nghĩ tích cực" (positive thinking) vì không cố xóa suy nghĩ — chỉ thay đổi mối quan hệ với nó.',
+      'Thực hành ngay: lần tới khi có suy nghĩ tiêu cực, thêm "Mình đang bận tâm về..." hoặc đơn giản nói thầm "Đó chỉ là một suy nghĩ" — đủ để phá vỡ fusion trong hầu hết tình huống hằng ngày.',
+    ],
+    points: [
+      { icon: '🔭', label: 'Cognitive Defusion', note: 'Quan sát suy nghĩ thay vì bị cuốn vào' },
+      { icon: '🧠', label: 'Giảm Amygdala', note: 'Cách diễn đạt thay đổi não xử lý' },
+      { icon: '🏷️', label: 'Đặt Tên Pattern', note: 'Categorizing giúp nhận ra vòng lặp' },
+      { icon: '✅', label: 'Không Cần Xóa', note: 'Thay đổi quan hệ, không phải nội dung' },
+    ],
+  },
+  {
+    icon: '🔵', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'Vòng Tròn Kiểm Soát (Circle of Control)',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Epictetus (thế kỷ 1 SCN): "Không phải sự vật làm bạn xáo trộn — mà là quan điểm của bạn về sự vật." 2000 năm sau, tâm lý học hiện đại xác nhận điều này qua Locus of Control theory.',
+    detail: 'Lo âu tăng mạnh nhất khi dành năng lượng cho điều không thể kiểm soát. Vòng tròn kiểm soát (Stephen Covey, 7 Habits) phân loại rõ ràng — giúp não ngừng "giải quyết" điều không thể giải quyết được.',
+    details: [
+      'Locus of Control (Julian Rotter, 1954): người có internal locus (tin rằng mình kiểm soát được kết quả) có mức lo âu thấp hơn, phục hồi nhanh hơn và hiệu suất cao hơn so với người có external locus.',
+      'Vòng tròn trong (Circle of Control): giờ ngủ, bữa ăn, cách luyện tập, cách phản ứng, lời nói, hành động — những thứ chỉ bạn quyết định. Đây là nơi đặt toàn bộ năng lượng.',
+      'Vòng tròn ngoài (Circle of Concern): ý kiến người khác, thị trường, thời tiết, kết quả tuyệt đối — biết nhưng không hành động. Nghĩ về nó → stress. Chấp nhận nó → bình an.',
+      'Cognitive load giảm đáng kể khi phân loại rõ ràng: não không còn phải "cố giải quyết" điều không giải quyết được. Nhiều nghiên cứu về burnout cho thấy đây là kỹ năng phân biệt người có resilience cao.',
+      'Bài tập thực hành: viết lo âu hiện tại ra → hỏi "Mình có thể làm gì cụ thể về điều này không?" → Có: lên kế hoạch nhỏ ngay. Không: ghi nhận và đặt sang một bên có ý thức.',
+      'Cạm bẫy phổ biến: lo âu về điều trong vòng ngoài, nhưng biến nó thành cảm giác có trách nhiệm — "Tôi cần phải lo vì tôi quan tâm." Phân biệt lo âu (passive) với hành động (active) là kỹ năng quan trọng.',
+    ],
+    points: [
+      { icon: '⭕', label: 'Circle of Control', note: 'Chỉ hành động trong vòng tròn này' },
+      { icon: '🧘', label: 'Locus of Control', note: 'Internal = lo âu thấp + resilience cao' },
+      { icon: '🧩', label: 'Giảm Cognitive Load', note: 'Não ngừng "giải quyết" điều vô nghĩa' },
+      { icon: '📝', label: 'Bài Tập Viết', note: '2 cột: kiểm soát được / không kiểm soát được' },
+    ],
+  },
+  {
+    icon: '🔍', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'Tìm Bằng Chứng (Cognitive Restructuring)',
+    img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cognitive distortions (Aaron Beck): não trong trạng thái stress không "nghĩ sai" — nó áp dụng đúng cơ chế nhưng với dữ liệu sai lệch. Tìm bằng chứng là cách cập nhật dữ liệu.',
+    detail: 'Cognitive restructuring từ CBT (Cognitive Behavioral Therapy): không phải "suy nghĩ tích cực" — mà là "suy nghĩ chính xác". Khi suy nghĩ tiêu cực xuất hiện, kiểm tra nó như kiểm tra một giả thuyết khoa học.',
+    details: [
+      'Aaron Beck (cha đẻ CBT) xác định 10 cognitive distortions phổ biến: all-or-nothing thinking, catastrophizing, mind reading, fortune telling, overgeneralization... Não stress có xu hướng dùng tất cả cùng lúc.',
+      '"Mình mắc lỗi" → cognitive distortion "overgeneralization" (khái quát hóa từ 1 trường hợp). Tìm bằng chứng phản bác: "Mình có mắc lỗi ở mọi việc không?" → Không → suy nghĩ ban đầu không chính xác.',
+      '"Kiểm tra chéo" (cross-examination): tự hỏi "Nếu bạn thân mình có suy nghĩ này, mình sẽ nói gì với họ?" — perspective shift này đủ để não đánh giá lại suy nghĩ một cách khách quan hơn.',
+      '"Tìm diễn giải thay thế": cho cùng một sự kiện, có bao nhiêu diễn giải khác khả dĩ? Bạn gửi email, sếp không reply → "Sếp bực tôi" vs "Sếp bận" vs "Email bị filter". Ít nhất 3 diễn giải luôn tồn tại.',
+      'Behavioral experiment: thay vì chỉ tranh luận với suy nghĩ, thử hành động nhỏ để kiểm tra nó. "Mình không làm được đâu" → làm 5 phút → có làm được không? Bằng chứng thực tế mạnh hơn lý luận.',
+      'Meta-cognition (nghĩ về cách mình nghĩ): sau khi tìm bằng chứng, nhận ra "Khi stress, não mình có xu hướng catastrophize" — biết pattern của chính mình giúp nhận diện nhanh hơn lần sau.',
+    ],
+    points: [
+      { icon: '⚖️', label: 'Cognitive Restructuring', note: 'Kiểm tra suy nghĩ như giả thuyết' },
+      { icon: '🔄', label: 'Diễn Giải Thay Thế', note: 'Luôn có ít nhất 3 cách diễn giải' },
+      { icon: '👥', label: 'Perspective Shift', note: '"Bạn thân mình sẽ nói gì?"' },
+      { icon: '🧪', label: 'Behavioral Experiment', note: 'Hành động nhỏ → bằng chứng thực tế' },
+    ],
+  },
+  {
+    icon: '⏸️', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'Điểm Dừng Nhỏ (Pattern Interrupt)',
+    img: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Pattern interrupt là kỹ thuật NLP và neuroscience: chèn một hành động có ý thức vào vòng lặp tự động — đủ để phá vỡ chuỗi trigger-thought-emotion-behavior trước khi nó hoàn chỉnh.',
+    detail: 'Không cần phải "giải quyết" vòng lặp ngay. Chỉ cần tạo một khoảng trống nhỏ giữa trigger và phản ứng. Viktor Frankl: "Giữa kích thích và phản ứng là một khoảng trống. Sức mạnh của chúng ta nằm ở chỗ chọn cách phản ứng trong khoảng trống đó."',
+    details: [
+      'Pattern interrupt hoạt động vì: hành vi tự động chạy theo "neurological highway" — chuỗi nơ-ron đã được củng cố qua nhiều lần lặp lại. Một hành động gián đoạn buộc não "derail" khỏi đường ray quen thuộc.',
+      'Thở 1 phút: đây không chỉ là "hít thở". 6 hơi thở chậm (~10 giây/hơi) đủ để kích hoạt vagal brake — hệ phó giao cảm hạ nhịp tim và cortisol, đưa PFC trở lại online để ra quyết định có ý thức.',
+      'Viết 5 dòng: không cần câu đẹp. Viết stream of consciousness (ghi lại mọi thứ đang trong đầu không lọc) trong 3–5 phút giải phóng working memory, giảm cognitive load và đặt vòng lặp lo âu "ra bên ngoài não".',
+      'Đi bộ 5 phút: locomotion (chuyển động nhịp điệu) kích thích serotonin và endorphin, cộng thêm đổi môi trường thị giác phá vỡ associative context của stress — lý do "đi dạo" giải quyết vấn đề hiệu quả hơn ngồi tại bàn.',
+      'Tắt màn hình 10 phút: cho Default Mode Network (DMN) vào hoạt động — mạng lưới xử lý ký ức và cảm xúc mà chỉ hoạt động khi não "nhàn rỗi". DMN thường tự tìm ra giải pháp mà conscious mind không thấy.',
+      'Chuỗi điểm dừng: Dừng → Thở → Gọi tên cảm xúc → Chọn việc nhỏ tiếp theo. 4 bước này chỉ mất 60–90 giây nhưng tạo đủ khoảng trống để chuyển từ reactive (phản ứng tự động) sang responsive (chọn lựa có ý thức).',
+    ],
+    points: [
+      { icon: '⚡', label: 'Pattern Interrupt', note: 'Phá chuỗi tự động trước khi hoàn chỉnh' },
+      { icon: '🫁', label: 'Vagal Brake', note: '6 hơi thở = PFC online trở lại' },
+      { icon: '🚶', label: 'Locomotion', note: 'Đi bộ kích thích serotonin + đổi context' },
+      { icon: '🌐', label: 'DMN Activation', note: 'Màn hình off → não tự giải quyết vấn đề' },
+    ],
+  },
+];
+
 const LAYER_MODALS = [
   {
     icon: '💪', color: '#f97316', rgb: '249,115,22',
@@ -267,6 +354,7 @@ export default function MindStressPage() {
   const [openLoop, setOpenLoop] = useState(null);
   const [stressModal, setStressModal] = useState(null);
   const [layerModal, setLayerModal] = useState(null);
+  const [techniqueModal, setTechniqueModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -420,9 +508,17 @@ export default function MindStressPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kỹ Thuật Phá Vòng Lặp</h2>
         <p className="text-muted text-lg mb-6">Công cụ nhận thức giúp tạo khoảng cách giữa bạn và phản ứng tự động.</p>
         <div className="grid md:grid-cols-2 gap-4">
-          {TECHNIQUES.map(t => (
-            <div key={t.title} className="rounded-2xl border border-border bg-surface p-5 hover:border-violet-500/20 transition-colors">
-              <div className="text-3xl mb-3">{t.icon}</div>
+          {TECHNIQUES.map((t, i) => (
+            <div key={t.title}
+              className="group/card rounded-2xl border border-border bg-surface p-5 cursor-pointer transition-all duration-200 hover:border-violet-500/30 hover:bg-white/[0.03]"
+              onClick={() => setTechniqueModal(i)}>
+              <div className="flex items-start justify-between mb-3">
+                <div className="text-3xl">{t.icon}</div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/card:opacity-100 transition-opacity shrink-0"
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>
+                  chi tiết →
+                </span>
+              </div>
               <div className="text-lg font-bold text-text mb-2">{t.title}</div>
               <p className="text-base text-muted leading-relaxed mb-3">{t.desc}</p>
               <div className="rounded-lg p-2 text-base italic text-muted border border-border">💡 {t.example}</div>
@@ -487,6 +583,19 @@ export default function MindStressPage() {
           hasNext={layerModal < LAYER_MODALS.length - 1}
           total={LAYER_MODALS.length}
           idx={layerModal}
+        />
+      )}
+
+      {techniqueModal !== null && (
+        <CardModal
+          item={TECHNIQUE_MODALS[techniqueModal]}
+          onClose={() => setTechniqueModal(null)}
+          onPrev={() => setTechniqueModal(i => Math.max(0, i - 1))}
+          onNext={() => setTechniqueModal(i => Math.min(TECHNIQUE_MODALS.length - 1, i + 1))}
+          hasPrev={techniqueModal > 0}
+          hasNext={techniqueModal < TECHNIQUE_MODALS.length - 1}
+          total={TECHNIQUE_MODALS.length}
+          idx={techniqueModal}
         />
       )}
     </div>

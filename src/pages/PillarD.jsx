@@ -850,7 +850,73 @@ function D4Panel({ color, onPromptClick }) {
   );
 }
 
-function D5Panel({ color }) {
+const D5_LEVEL_MODALS = [
+  {
+    icon: '📵', color: '#0ea5e9', rgb: '14,165,233',
+    modalTitle: 'Mức 1 – Detox Bắt Đầu',
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ánh sáng xanh từ điện thoại ức chế melatonin lên đến 23% và trì hoãn giờ ngủ trung bình 1,5 giờ — chỉ cần tắt màn hình 20 phút trước ngủ để ngủ sâu hơn ngay đêm đầu tiên.',
+    detail: '4 thay đổi nhỏ trong Mức 1 nhắm đúng vào 4 điểm "rò rỉ" phổ biến nhất: buổi sáng (mở MXH ngay khi thức), suốt ngày (thông báo liên tục), trên giường (điện thoại cạnh đầu giường) và tối (màn hình sáng trước ngủ).',
+    details: [
+      'Ánh sáng xanh (460–480nm) từ màn hình kích thích tế bào ipRGC trong võng mạc, ức chế tuyến tùng tiết melatonin. Harvard Medical School: dùng màn hình 2 giờ trước ngủ làm giảm melatonin 23% và trì hoãn ngủ 1,5 giờ.',
+      'Mở điện thoại trong 10 phút đầu sau khi thức đặt não vào "reactive mode" — xử lý thông báo, tin tức, comment. Cortisol sáng sớm (cortisol awakening response) vốn đã cao nhất ngày, thêm self-comparison từ MXH làm tăng stress khởi đầu ngày.',
+      'Thông báo liên tục phân mảnh sự tập trung (cognitive fragmentation) — Gloria Mark (UC Irvine): trung bình 23 phút để não quay lại trạng thái tập trung sâu sau mỗi interrupt. 10 thông báo/ngày = mất 3–4 giờ tập trung tiềm năng.',
+      'Điện thoại trên giường ngủ có 2 tác hại: ánh sáng khi lướt đêm ức chế melatonin, và proximity effect — chỉ cần biết điện thoại ở đó cũng tăng arousal và giảm chất lượng giấc ngủ theo nghiên cứu Ward et al. 2017.',
+      '4 thay đổi Mức 1 không đòi hỏi ý chí cao — chỉ cần thay đổi môi trường vật lý: điện thoại ra khỏi phòng ngủ, tắt thông báo trong Settings, dùng đồng hồ báo thức thay cho điện thoại.',
+      'Mức 1 thường tạo hiệu quả ngay trong tuần đầu: ngủ sâu hơn (do melatonin không bị ức chế), buổi sáng bắt đầu chủ động hơn (không reactive), và giảm cảm giác "phone anxiety" khi không có điện thoại.',
+    ],
+    points: [
+      { icon: '😴', label: 'Melatonin', note: 'Tắt màn hình 20ph → ngủ sâu hơn' },
+      { icon: '🌅', label: 'Sáng Chủ Động', note: 'Không reactive từ đầu ngày' },
+      { icon: '🔕', label: 'Thông Báo', note: 'Tắt = +3–4h tập trung/ngày' },
+      { icon: '🛏️', label: 'Phòng Ngủ', note: 'Để điện thoại phòng khác' },
+    ],
+  },
+  {
+    icon: '⚡', color: '#0ea5e9', rgb: '14,165,233',
+    modalTitle: 'Mức 2 – Detox Chuẩn',
+    img: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Social media feed được thiết kế theo nguyên lý "variable reward" — cùng cơ chế với máy đánh bạc, kích hoạt dopamine theo chu kỳ ngẫu nhiên. 30 phút đầu ngày không MXH đủ để não không ở trạng thái reactive cả ngày.',
+    detail: 'Mức 2 giải quyết nguyên nhân gốc rễ: não đang bị "khai thác" bởi attention economy. Không phải lỗi của bạn khi không thể dừng lướt — đó là thiết kế có chủ ý. Mức 2 tạo khoảng trống để não không ở trạng thái reactive liên tục.',
+    details: [
+      'Variable reward schedule (B.F. Skinner): phần thưởng ngẫu nhiên (cuộn xuống không biết thấy gì) kích hoạt dopamine mạnh hơn phần thưởng cố định. Social media feed áp dụng chính xác cơ chế này — thiết kế bởi các kỹ sư biết rõ tác động.',
+      'Tristan Harris (cựu kỹ sư Google, "The Social Dilemma"): mỗi thông báo "Like" hoặc "Comment" được gom lại và gửi theo chu kỳ để tạo dopamine burst tối đa — không phải ngẫu nhiên.',
+      '"30 phút đầu ngày không MXH" tạo "khoảng trống nhận thức" (cognitive white space) — não không ở trạng thái threat detection và comparison ngay từ khi thức dậy. Khởi đầu ngày với agenda của bạn, không phải của người khác.',
+      'Ăn mà không cầm điện thoại có 2 lợi ích: (1) não nhận tín hiệu no tốt hơn khi không bị distract (mindful eating), (2) ngăn association "ăn = màn hình" — loại bỏ trigger cho lướt vô thức khi ăn.',
+      '"10 phút khoảng trống" giữa ngày cho Default Mode Network (DMN) hoạt động — DMN cần thời gian "không nhiệm vụ" để xử lý ký ức, giải quyết vấn đề ngầm và giảm cognitive overload tích lũy.',
+      '30 phút trước ngủ không cuộn feed giúp não chuyển từ xử lý social information (stimulating) sang wind-down — ngoài tác động melatonin, còn giảm "comparison loop" và FOMO trước khi ngủ.',
+    ],
+    points: [
+      { icon: '🎰', label: 'Variable Reward', note: 'Cơ chế máy đánh bạc trong app' },
+      { icon: '🌅', label: 'Buổi Sáng Khác', note: '30ph không MXH = agenda của bạn' },
+      { icon: '🧠', label: 'DMN Rest', note: '10ph trống = não xử lý ngầm' },
+      { icon: '🍽️', label: 'Ăn Không Màn', note: 'Nhận tín hiệu no tốt hơn' },
+    ],
+  },
+  {
+    icon: '🌿', color: '#0ea5e9', rgb: '14,165,233',
+    modalTitle: 'Mức 3 – Detox Nâng Cao',
+    img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Default Mode Network (DMN) cần thời gian "trống" để xử lý ký ức, sáng tạo và cảm xúc. Màn hình liên tục ngăn DMN làm việc — mất khả năng sáng tạo, giảm trí nhớ dài hạn và tăng cảm giác trống rỗng dù bận rộn.',
+    detail: 'Mức 3 không phải cực đoan — đó là phục hồi cognitive bandwidth dài hạn. Deep work, sáng tạo và cảm giác kết nối thực sự đều cần não ở trạng thái không màn hình trong thời gian đủ dài để DMN và hệ thần kinh phó giao cảm làm việc.',
+    details: [
+      'Default Mode Network (Buckner & DiNicola, 2019): mạng lưới não hoạt động khi "không làm gì" — thực ra đang xử lý ký ức, tưởng tượng tương lai, cảm xúc và empathy. Màn hình liên tục không để DMN vào trạng thái này.',
+      'Cal Newport ("Deep Work"): công việc đòi hỏi nhận thức cao cần 90–120 phút liên tục không interrupt để đạt trạng thái flow. 1 buổi tối/tuần không màn hình huấn luyện khả năng tập trung sâu cho cả tuần.',
+      'Đi bộ không tai nghe, không điện thoại kết hợp aerobic nhẹ (BDNF) + DMN activation + present-moment awareness — 3 lợi ích não bộ song song trong cùng 10–15 phút, không thể đạt được khi đeo tai nghe.',
+      'Csikszentmihalyi (Flow): trạng thái "dòng chảy" (flow state) — năng suất và hạnh phúc cao nhất — đòi hỏi thách thức vừa đủ và không có interrupt. "Deep life" cuối tuần (nấu ăn, đọc sách, gia đình) là môi trường tự nhiên tạo flow.',
+      'Stanford RCT (Bratman et al., 2015): đi bộ thiên nhiên 90 phút giảm rumination và hoạt động subgenual PFC (liên quan trầm cảm) nhiều hơn đáng kể so với đi bộ đô thị — không cần thiên nhiên hoang dã, công viên đủ.',
+      'Đưa app gây nghiện ra khỏi màn hình chính giảm consumption 80% mà không cần ý chí — theo dữ liệu internal của một số app. Friction nhỏ (phải tìm trong thư mục) đủ để ngắt hành vi tự động.',
+    ],
+    points: [
+      { icon: '🧠', label: 'DMN Phục Hồi', note: 'Sáng tạo & ký ức cần idle time' },
+      { icon: '🌊', label: 'Flow State', note: 'Deep work 90ph liên tục' },
+      { icon: '🌿', label: 'Thiên Nhiên', note: 'Giảm rumination, giảm stress' },
+      { icon: '📱', label: 'Friction Design', note: 'App ra màn 2 = giảm 80% lướt' },
+    ],
+  },
+];
+
+function D5Panel({ color, onLevelClick }) {
   const [level, setLevel] = useState(1);
   const LEVELS = [
     { l: 1, name: 'Mức 1 – Dễ', rules: ['Không mở MXH 10 phút sau khi thức', 'Tắt thông báo không cần thiết', 'Không để điện thoại trên giường khi ngủ', 'Giảm màn hình 10–20 phút trước ngủ'] },
@@ -869,13 +935,24 @@ function D5Panel({ color }) {
         ))}
       </div>
       {cur && (
-        <ul className="space-y-2">
-          {cur.rules.map((r, i) => (
-            <li key={i} className="flex items-start gap-2 text-lg text-text p-2 rounded-lg" style={{ background: `rgba(${PURPLE_RGB},0.05)` }}>
-              <span style={{ color }}>→</span>{r}
-            </li>
-          ))}
-        </ul>
+        <div className="rounded-xl border p-4" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)`, background: `rgba(${PURPLE_RGB},0.05)` }}>
+          <ul className="space-y-2 mb-4">
+            {cur.rules.map((r, i) => (
+              <li key={i} className="flex items-start gap-2 text-lg text-text p-2 rounded-lg" style={{ background: `rgba(${PURPLE_RGB},0.05)` }}>
+                <span style={{ color }}>→</span>{r}
+              </li>
+            ))}
+          </ul>
+          {onLevelClick && (
+            <button
+              onClick={() => onLevelClick(level - 1)}
+              className="w-full flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-bold transition-all border"
+              style={{ color, borderColor: `rgba(14,165,233,0.3)`, background: `rgba(14,165,233,0.07)` }}
+            >
+              Xem khoa học đằng sau →
+            </button>
+          )}
+        </div>
       )}
     </div>
   );
@@ -1061,6 +1138,7 @@ export default function PillarD() {
   const [d2Modal, setD2Modal] = useState(null);
   const [d3Modal, setD3Modal] = useState(null);
   const [d4Modal, setD4Modal] = useState(null);
+  const [d5Modal, setD5Modal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -1223,7 +1301,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
-            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} onLevelClick={activeTab === 'd5' ? setD5Modal : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -1329,6 +1407,19 @@ export default function PillarD() {
           hasNext={d4Modal < D4_PROMPT_MODALS.length - 1}
           total={D4_PROMPT_MODALS.length}
           idx={d4Modal}
+        />
+      )}
+
+      {d5Modal !== null && (
+        <CardModal
+          item={D5_LEVEL_MODALS[d5Modal]}
+          onClose={() => setD5Modal(null)}
+          onPrev={() => setD5Modal(i => Math.max(0, i - 1))}
+          onNext={() => setD5Modal(i => Math.min(D5_LEVEL_MODALS.length - 1, i + 1))}
+          hasPrev={d5Modal > 0}
+          hasNext={d5Modal < D5_LEVEL_MODALS.length - 1}
+          total={D5_LEVEL_MODALS.length}
+          idx={d5Modal}
         />
       )}
     </div>

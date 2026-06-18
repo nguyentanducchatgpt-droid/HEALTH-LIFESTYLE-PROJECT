@@ -458,7 +458,96 @@ function D1Panel({ color, onLayerClick }) {
   );
 }
 
-function D2Panel({ color }) {
+const D2_TECH_MODALS = [
+  {
+    icon: '🫁', color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Thở Cơ Hoành',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thở cơ hoành là nền tảng của mọi kỹ thuật thở — 70% sức mạnh hơi thở đến từ cơ này, nhưng hầu hết người hiện đại đã lãng quên nó vì căng thẳng mãn tính.',
+    detail: 'Cơ hoành là cơ thở chính, nằm ngay dưới phổi. Khi thở đúng, bụng phồng ra khi hít vào (cơ hoành hạ xuống). Hầu hết người thành thị thở bằng ngực — chỉ dùng 1/3 dung tích phổi.',
+    details: [
+      'Cơ hoành chịu trách nhiệm 70–80% công việc thở khi nghỉ ngơi, nhưng căng thẳng mãn tính và thói quen ngồi sai tư thế khiến nhiều người chuyển sang thở ngực.',
+      'Thở ngực chỉ dùng 1/3 dung tích phổi, dẫn đến hyperventilation nhẹ — CO₂ dao động làm kích hoạt hệ thần kinh giao cảm và tạo cảm giác lo âu không rõ nguyên do.',
+      'Thở cơ hoành kích thích dây thần kinh phế vị (vagus nerve) chạy qua cơ hoành — đây là "đường cao tốc" trực tiếp kích hoạt hệ phó giao cảm (rest & digest).',
+      'Chỉ 5 phút thở cơ hoành đủ để giảm nhịp tim 5–10 bpm và hạ huyết áp tâm thu 5–8 mmHg — đo được trong các thử nghiệm kiểm soát.',
+      'Cơ hoành, cơ sàn chậu, cơ thắt lưng và cơ bụng sâu hoạt động như một hệ thống — thở cơ hoành đúng cải thiện tư thế, giảm đau lưng và tăng ổn định cột sống.',
+      'Test nhanh: đặt 1 tay lên ngực, 1 tay lên bụng. Hít vào — nếu tay bụng nhô lên nhiều hơn tay ngực là đúng. Hầu hết người mới sẽ thấy tay ngực nhô hơn.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Cơ Bắp Thở', note: '70% công việc thở mỗi ngày' },
+      { icon: '⚡', label: 'Vagus Nerve', note: 'Kích hoạt rest & digest' },
+      { icon: '❤️', label: 'Hạ Nhịp Tim', note: '5–10 bpm sau 5 phút' },
+      { icon: '✅', label: 'Test Nhanh', note: '1 tay ngực, 1 tay bụng' },
+    ],
+  },
+  {
+    icon: '⬜', color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Box Breathing 4-4-4-4',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Box breathing cân bằng hệ thần kinh tự chủ bằng nhịp điệu đối xứng — kỹ thuật Navy SEALs dùng để duy trì tư duy rõ ràng trong tình huống nguy hiểm tính mạng.',
+    detail: 'Bốn giai đoạn bằng nhau (4-4-4-4) tạo "hộp" hơi thở đối xứng. Nhịp điệu này kích hoạt HRV (Heart Rate Variability) cao — dấu hiệu hệ thần kinh linh hoạt và khỏe mạnh.',
+    details: [
+      'Box breathing được Mark Divine phổ biến trong huấn luyện Navy SEALs — dùng để kiểm soát adrenaline, giảm sợ hãi và duy trì tư duy rõ ràng khi áp lực tột độ.',
+      'Giai đoạn "giữ hơi" làm tăng áp lực trong phổi tạm thời, kích thích baroreceptors trên động mạch chủ, gửi tín hiệu "an toàn" lên não và hạ hoạt động amygdala.',
+      'HRV (Heart Rate Variability — độ biến thiên nhịp tim) tăng khi thực hành box breathing đều đặn. HRV cao liên quan đến khả năng phục hồi, kiểm soát cảm xúc và hiệu suất nhận thức tốt hơn.',
+      'Box breathing giảm cortisol nhanh hơn thở tự nhiên trong một số RCT vì cấu trúc có chủ ý buộc sự tập trung hoàn toàn của não vào hơi thở — không còn bandwidth cho lo âu.',
+      'Dùng hiệu quả nhất trong 3 tình huống: trước việc quan trọng (tăng tập trung), khi bực tức (hạ ngưỡng phản ứng), và giữa ngày khi mất tập trung (reset nhận thức).',
+      'Timer trong trang D2 này cho phép thực hành ngay: 4 vòng × 16 giây = 64 giây là đủ để cảm nhận hiệu quả rõ ràng — thử ngay sau khi đóng modal này.',
+    ],
+    points: [
+      { icon: '🎖️', label: 'Navy SEALs', note: 'Dùng trong tình huống cực căng' },
+      { icon: '❤️', label: 'Tăng HRV', note: 'Hệ thần kinh linh hoạt hơn' },
+      { icon: '🧠', label: 'Reset Nhận Thức', note: '64 giây = 4 vòng đầy đủ' },
+      { icon: '⬜', label: '4-4-4-4', note: 'Đối xứng = cân bằng tối ưu' },
+    ],
+  },
+  {
+    icon: '🌊', color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Thở 4-7-8',
+    img: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thở 4-7-8 của Dr. Andrew Weil được gọi là "thuốc an thần tự nhiên" — giữ hơi 7 giây tạo phản xạ thư giãn sâu không thể đạt được bằng thở thông thường.',
+    detail: 'Tỉ lệ 1:2 (hít vào : thở ra) là tỉ lệ tối ưu nhất để kích hoạt hệ phó giao cảm. Thở 4-7-8 đẩy tỉ lệ này lên cực đại (4 : 8) với thêm giai đoạn giữ hơi để tăng cường hiệu quả.',
+    details: [
+      'Dr. Andrew Weil (Harvard Medical School) phát triển kỹ thuật 4-7-8 dựa trên pranayama yoga và nghiên cứu HRV. Ông gọi đây là "công cụ thư giãn tự nhiên mạnh nhất" trong thực hành y khoa của mình.',
+      'Giữ hơi 7 giây làm tăng CO₂ trong máu tạm thời (hypercapnia nhẹ), kích thích chemoreceptors trên thân não tạo phản xạ thư giãn sâu — tương tự cơ chế "hold breath" trong freediving.',
+      'Thở ra 8 giây (gấp đôi hít vào) kích hoạt phản xạ phó giao cảm mạnh hơn bất kỳ tỉ lệ nào khác theo nghiên cứu về autonomic nervous system — não đọc thở ra dài là "tôi đang an toàn".',
+      'Hiệu quả đặc biệt trước khi ngủ: làm chậm nhịp tim, hạ huyết áp và giảm nhiệt độ cơ thể — 3 yếu tố sinh lý cần thiết để cơ thể chuyển từ thức sang ngủ.',
+      'Khác với box breathing (vừa thư giãn vừa tỉnh táo), 4-7-8 thiên về thư giãn sâu — không nên dùng trước khi cần tập trung cao độ hoặc lái xe.',
+      'Bắt đầu với 3–4 vòng. Nếu cảm thấy chóng mặt (CO₂ biến động), giảm xuống tỉ lệ 3-5-6 trước khi thực hành 4-7-8 đầy đủ.',
+    ],
+    points: [
+      { icon: '🌊', label: 'Tỉ Lệ 1:2', note: 'Hít:thở ra tối ưu nhất' },
+      { icon: '💤', label: 'Trước Ngủ', note: 'Hạ nhịp tim & nhiệt độ cơ thể' },
+      { icon: '🧬', label: 'CO₂ Kỹ Thuật', note: 'Giữ 7s tạo phản xạ sâu' },
+      { icon: '⚠️', label: 'Lưu Ý', note: 'Không dùng trước khi cần tập trung' },
+    ],
+  },
+  {
+    icon: '⚡', color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Reset 2 Phút',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Reset 2 phút không phải thiền — đó là "pattern interrupt" ngắt mạch phản ứng tự động, cho não 120 giây chuyển từ reactive sang responsive.',
+    detail: 'Khi quá tải, não ở trạng thái fight-or-flight và không thể tư duy rõ ràng. Reset 2 phút tạo khoảng trống giữa kích thích và phản ứng — và trong khoảng trống đó bạn lấy lại quyền kiểm soát.',
+    details: [
+      'Pattern interrupt là kỹ thuật trong NLP và CBT: ngắt chuỗi suy nghĩ/hành vi tự động bằng một hành động có chủ ý đủ để não chuyển từ phản ứng tự động sang nhận thức có ý thức.',
+      'Dừng 10 giây không cầm điện thoại là bước khó nhất — điện thoại là "hành vi mặc định" khi não mệt và không có việc gì để làm. Ngắt thói quen này là toàn bộ mục đích của bước 1.',
+      'Thả lỏng vai–hàm–bàn tay nhắm đến 3 vùng cơ thể giữ căng thẳng mà ít người nhận ra: vai thường nhô lên khi stress, hàm siết lại khi lo, bàn tay nắm chặt khi căng.',
+      'Câu neo "Việc nhỏ tiếp theo là..." buộc não chuyển từ overwhelm (bị ngập tràn) sang action — bất kỳ hành động nhỏ nào (uống nước, đứng dậy) đều phá vỡ trạng thái tê liệt.',
+      'Reset 2 phút hiệu quả nhất khi làm NGAY khi nhận ra tín hiệu stress đầu tiên — không phải sau khi đã reactive 20 phút rồi. Nhận diện sớm là chìa khóa.',
+      'Khác với thiền (cần môi trường yên tĩnh), reset 2 phút dùng được ở bất cứ đâu: toilet công ty, lúc chờ thang máy, giữa hai cuộc họp, khi đang kẹt xe.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Pattern Interrupt', note: 'Ngắt mạch phản xạ tự động' },
+      { icon: '💪', label: 'Thả Vai–Hàm–Tay', note: '3 vùng giữ căng thẳng' },
+      { icon: '🎯', label: 'Câu Neo', note: '"Việc nhỏ tiếp theo là..."' },
+      { icon: '⏱️', label: 'Dùng Ngay', note: 'Không cần môi trường riêng' },
+    ],
+  },
+];
+
+const D2_TECHS_ORDER = ['diaphragm', 'box', '478', 'reset2'];
+
+function D2Panel({ color, onTechClick }) {
   const [active, setActive] = useState('box');
   const TECHS = [
     { id: 'diaphragm', icon: '🫁', name: 'Thở Cơ Hoành', formula: 'Hít bụng phồng → thở ra xẹp', when: 'Sau tập, trước ngủ, khi vai gáy căng', steps: ['1 tay ngực, 1 tay bụng', 'Hít vào — bụng phồng, ngực ít', 'Thở ra chậm, bụng xẹp', '1–3 phút'] },
@@ -484,6 +573,15 @@ function D2Panel({ color }) {
             {tech.steps.map((s, i) => <li key={i} className="flex items-start gap-2 text-lg text-text"><span className="w-4 h-4 rounded-full flex items-center justify-center text-base font-bold shrink-0 mt-0.5" style={{ background: `rgba(${PURPLE_RGB},0.2)`, color }}>{i + 1}</span>{s}</li>)}
           </ol>
           {active === 'box' && <BoxBreathTimer color={color} />}
+          {onTechClick && (
+            <button
+              onClick={() => onTechClick(D2_TECHS_ORDER.indexOf(active))}
+              className="mt-4 w-full flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-bold transition-all border"
+              style={{ color, borderColor: `rgba(${PURPLE_RGB},0.3)`, background: `rgba(${PURPLE_RGB},0.07)` }}
+            >
+              Xem khoa học đằng sau →
+            </button>
+          )}
         </div>
       )}
     </div>
@@ -745,6 +843,7 @@ export default function PillarD() {
   const [activeTab, setActiveTab] = useState('d0');
   const [d0Modal, setD0Modal] = useState(null);
   const [d1Modal, setD1Modal] = useState(null);
+  const [d2Modal, setD2Modal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -907,7 +1006,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
-            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -974,6 +1073,19 @@ export default function PillarD() {
           hasNext={d1Modal < D1_LAYER_MODALS.length - 1}
           total={D1_LAYER_MODALS.length}
           idx={d1Modal}
+        />
+      )}
+
+      {d2Modal !== null && (
+        <CardModal
+          item={D2_TECH_MODALS[d2Modal]}
+          onClose={() => setD2Modal(null)}
+          onPrev={() => setD2Modal(i => Math.max(0, i - 1))}
+          onNext={() => setD2Modal(i => Math.min(D2_TECH_MODALS.length - 1, i + 1))}
+          hasPrev={d2Modal > 0}
+          hasNext={d2Modal < D2_TECH_MODALS.length - 1}
+          total={D2_TECH_MODALS.length}
+          idx={d2Modal}
         />
       )}
     </div>

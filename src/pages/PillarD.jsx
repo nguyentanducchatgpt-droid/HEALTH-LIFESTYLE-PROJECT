@@ -120,7 +120,136 @@ function JournalPrompt({ color, onPromptClick }) {
 }
 
 // ─── Calm Score (D7 tab) ─────────────────────────────────────────────────────
-function CalmScore({ color }) {
+const D7_ITEM_MODALS = [
+  {
+    icon: '🫁', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Thở/Thiền ≥ 3 Phút · +25 điểm',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chỉ 3 phút thở cơ hoành là liều tối thiểu có hiệu quả — đủ để kích hoạt dây thần kinh phế vị và hạ cortisol đo được.',
+    detail: '3 phút là ngưỡng tối thiểu mà nghiên cứu ghi nhận sự thay đổi sinh lý rõ ràng: nhịp tim giảm, HRV tăng, vỏ não trước trán (PFC) được kích hoạt trở lại. Không cần dụng cụ, không cần không gian đặc biệt.',
+    details: [
+      'Vagus nerve (dây thần kinh X) kết nối não với tim, phổi, ruột. Thở chậm sâu kích thích vagus → bật phó giao cảm → hạ nhịp tim + cortisol trong vòng 60–90 giây.',
+      'HRV (Heart Rate Variability) tăng sau 3 phút thở nhịp 6 lần/phút — đây là chỉ số sức khỏe thần kinh tự chủ quan trọng, tương quan với khả năng điều tiết cảm xúc.',
+      'PFC (vỏ não trước trán) — trung tâm ra quyết định — bị "offline" khi stress cao. Thở cơ hoành đưa PFC trở lại online, cải thiện khả năng phán đoán và kiểm soát xung động.',
+      'Sara Lazar (Harvard) ghi nhận người thiền đều đặn có lớp vỏ não dày hơn ở vùng liên quan đến chú ý và tự nhận thức — thay đổi cấu trúc não bắt đầu từ 8 tuần.',
+      'Không cần ngồi kiết già hay hết tiếng ồn — thở 4-7-8 hoặc box 4-4-4-4 trong nhà vệ sinh, xe hơi, hay trước màn hình đều đạt hiệu quả tương đương.',
+      '"Minimal viable dose" là khái niệm quan trọng: 3 phút mỗi ngày đều đặn > 30 phút mỗi cuối tuần về tổng tác động lên hệ thần kinh và thói quen não bộ.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Vagus Nerve', note: 'Kích hoạt phó giao cảm tức thì' },
+      { icon: '📈', label: 'Tăng HRV', note: 'Chỉ số sức khỏe thần kinh tự chủ' },
+      { icon: '🎯', label: 'PFC Training', note: 'Đưa não ra quyết định trở lại online' },
+      { icon: '📅', label: 'Nhất Quán', note: '3 phút/ngày > 30 phút/tuần' },
+    ],
+  },
+  {
+    icon: '📓', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Journal 1–5 Dòng · +20 điểm',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Viết ra giải phóng "open loops" — những suy nghĩ bỏ ngỏ chiếm dung lượng não bộ và gây lo âu nền cả ngày.',
+    detail: 'Não bộ không thể "quên" việc chưa làm xong (Hiệu ứng Zeigarnik). Journal không cần đẹp hay dài — 1–5 dòng đủ để đóng open loops và giải phóng bandwidth cho các việc thực sự quan trọng.',
+    details: [
+      'James Pennebaker (UT Austin) chứng minh viết cảm xúc 15–20 phút trong 3–4 ngày liên tiếp cải thiện hệ miễn dịch, giảm trầm cảm và tăng cảm giác hạnh phúc chủ quan.',
+      'Hiệu ứng Zeigarnik: não ghi nhớ việc chưa hoàn thành mạnh hơn việc đã xong — journal tạo "closure" giả lập đủ để não thả ra và ngừng loop những suy nghĩ đó.',
+      'Affect labeling (đặt tên cảm xúc bằng ngôn ngữ) kích hoạt vỏ não trước trán, làm giảm hoạt động amygdala — hiệu ứng tương tự liệu pháp nhận thức hành vi CBT.',
+      'Growth mindset journaling: ghi nhận 1 điều học được hôm nay (dù nhỏ) tái định hướng não từ tư duy fixed (tôi thất bại) sang growth (tôi đang học).',
+      '1–5 dòng là thiết kế có chủ ý: đủ để xả áp mà không tạo thêm gánh nặng "phải viết đủ dài". Mục tiêu là nhất quán, không phải chất lượng từng entry.',
+      'Journal trước ngủ hiệu quả nhất vì não đang tổng hợp ký ức ngày (memory consolidation) — ghi lại giúp quá trình này hoàn chỉnh hơn và giảm overthinking ban đêm.',
+    ],
+    points: [
+      { icon: '🔓', label: 'Cognitive Offload', note: 'Giải phóng open loops não bộ' },
+      { icon: '🏷️', label: 'Affect Labeling', note: 'Đặt tên cảm xúc → amygdala dịu' },
+      { icon: '🌱', label: 'Growth Mindset', note: '1 điều học được mỗi ngày' },
+      { icon: '✏️', label: '1–5 Dòng', note: 'Đủ để tạo closure, không quá tải' },
+    ],
+  },
+  {
+    icon: '📵', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Digital Detox ≥ 10 Phút · +15 điểm',
+    img: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Default Mode Network (DMN) cần idle time để tổng hợp ký ức, tạo kết nối sáng tạo và xử lý cảm xúc — màn hình liên tục chặn toàn bộ quá trình này.',
+    detail: 'Mỗi khi không có kích thích bên ngoài, não kích hoạt DMN — mạng lưới "chạy nền" xử lý ký ức, hình thành bản sắc và tạo ra những insight bất ngờ. 10 phút không màn hình là khoảng tối thiểu để DMN khởi động.',
+    details: [
+      'Default Mode Network (DMN) là mạng nơ-ron kích hoạt khi não "nhàn rỗi" — thực ra đang làm việc tích cực: tổng hợp ký ức, xử lý cảm xúc, lập kế hoạch tương lai, tạo sự đồng cảm.',
+      'Gloria Mark (UC Irvine) đo được: mỗi lần bị ngắt quãng cần trung bình 23 phút để đạt lại trạng thái tập trung sâu — điện thoại thông báo mỗi vài phút là vòng lặp phá hủy liên tục.',
+      'Dopamine loop của MXH: mỗi lần kéo feed hoặc kiểm tra thông báo là một "variable reward" — cùng cơ chế với máy đánh bạc — làm tăng rưỡng dopamine cần thiết cho niềm vui tự nhiên.',
+      'Adrian Ward (UT Austin): chỉ cần điện thoại nằm trên bàn (dù úp mặt và tắt) cũng làm giảm cognitive capacity — não dùng một phần tài nguyên để kháng cự không nhìn điện thoại.',
+      '10 phút không màn hình trước ngủ cải thiện chất lượng giấc ngủ rõ rệt: ánh sáng xanh (420–480nm) ức chế melatonin, nhưng tác hại không chỉ là ánh sáng — kích thích tâm lý mới là vấn đề lớn hơn.',
+      'Detox không cần vào rừng — đi bộ 10 phút không tai nghe, ăn sáng không màn hình, hoặc nằm im trên giường 10 phút sau thức dậy là đủ để DMN khởi động.',
+    ],
+    points: [
+      { icon: '🌐', label: 'DMN Activation', note: 'Não cần idle để xử lý & sáng tạo' },
+      { icon: '🎰', label: 'Dopamine Reset', note: 'Phá vòng lặp variable reward' },
+      { icon: '🧠', label: 'Cognitive Reset', note: 'Giải phóng tài nguyên não bộ' },
+      { icon: '😴', label: 'Không Tầm Nhìn', note: '10 phút trước ngủ = melatonin tăng' },
+    ],
+  },
+  {
+    icon: '🌪️', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Ghi Nhận Stress Trong Ngày · +10 điểm',
+    img: 'https://images.unsplash.com/photo-1620228885847-9eab2a1adddc?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Meta-awareness — khả năng quan sát trạng thái của mình — là kỹ năng can thiệp sớm quan trọng nhất: nhận ra stress ở tầng cơ thể trước khi leo thang thành cảm xúc rồi hành vi.',
+    detail: 'Phần lớn stress bùng phát không phải vì sự kiện quá lớn mà vì không được nhận diện sớm. Ghi nhận stress trong ngày không cần phải phân tích sâu — chỉ cần đặt tên và định vị nó ở đâu.',
+    details: [
+      'Meta-awareness là khả năng quan sát trạng thái nội tâm của mình như một người ngoài cuộc — "Mình đang stress" thay vì "Mình là người bị stress". Tách biệt này giảm đáng kể cường độ cảm giác.',
+      'Affect labeling: đặt tên cụ thể cho cảm xúc (frustrated / overwhelmed / disappointed) hiệu quả hơn nhiều so với chỉ nói "stress" hay "mệt" — nghiên cứu fMRI cho thấy amygdala giảm hoạt động ngay lập tức.',
+      '3 tầng stress giúp định vị: Cơ thể (vai cứng, thở nông, tim đập) → Cảm xúc (bực, lo, chán) → Hành vi (trì hoãn, ăn vặt, lướt điện thoại). Nhận diện được tầng nào → chọn đúng công cụ.',
+      'Self-check 3 lần/ngày (sáng/trưa/tối): "Mình đang ở tầng nào?" mất < 30 giây nhưng ngăn stress tích lũy âm thầm — giống như đọc đồng hồ xăng thay vì chờ xe hết xăng giữa đường.',
+      'Stress inoculation: nhận biết stress sớm và xử lý nhỏ hằng ngày thực ra tăng khả năng chịu đựng stress lớn — não học được rằng stress có thể xử lý được, không phải điều cần né tránh.',
+      'Ghi nhận không có nghĩa là giải quyết ngay — đôi khi chỉ cần viết "3h chiều hôm nay tôi cảm thấy frustrated vì cuộc họp kéo dài" là đủ để não ngừng loop và tìm cách giải quyết sau.',
+    ],
+    points: [
+      { icon: '👁️', label: 'Meta-Awareness', note: 'Quan sát trạng thái như người ngoài' },
+      { icon: '🏷️', label: 'Affect Labeling', note: 'Đặt tên chính xác → amygdala giảm' },
+      { icon: '⏰', label: 'Can Thiệp Sớm', note: 'Nhận diện ở tầng cơ thể trước' },
+      { icon: '📊', label: 'Calibrate', note: 'Đọc "đồng hồ xăng" stress hằng ngày' },
+    ],
+  },
+  {
+    icon: '🌙', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Routine Tối · +15 điểm',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Routine tối là "conditioned sleep cue" — não học được rằng chuỗi hành động nhất định = đến giờ ngủ, giảm latency (thời gian từ nằm xuống đến ngủ được) đáng kể.',
+    detail: 'Không cần routine phức tạp — 3 bước nhất quán (ví dụ: tắt đèn sáng → tắm nước ấm → đọc sách giấy) đã đủ tạo phản xạ Pavlov giúp não chuyển trạng thái từ active sang ready-for-sleep.',
+    details: [
+      'Pavlovian conditioning áp dụng cho giấc ngủ: não liên kết chuỗi hành động với trạng thái ngủ — sau 2–3 tuần lặp lại, chỉ cần bắt đầu bước 1, não đã tự chuẩn bị ngủ trước khi bước cuối kết thúc.',
+      'Nghiên cứu Sleep Hygiene RCT (2022): routine ngủ nhất quán ≥ 5 ngày/tuần giảm sleep onset latency trung bình 18 phút và tăng hiệu suất giấc ngủ (sleep efficiency) lên 7–12%.',
+      'CAR (Cortisol Awakening Response) và cortisol buổi tối là nghịch nhau: routine tối giảm cortisol cuối ngày, giúp melatonin tăng tự nhiên mà không cần supplement.',
+      '"Reset 5 phút" trước ngủ — ngồi im, thở chậm, không màn hình — đủ để hạ norepinephrine (chất dẫn truyền kích thích) và chuyển sang trạng thái phó giao cảm dominant.',
+      'Glymphatic system (hệ thống "dọn rác não") hoạt động mạnh nhất trong giấc ngủ sâu (NREM) — routine tốt giúp vào NREM nhanh hơn, tăng thời gian glymphatic hoạt động mỗi đêm.',
+      '2–3 bước đơn giản nhất quán > 10 bước routine "hoàn hảo" thỉnh thoảng — não cần sự lặp lại, không cần sự hoàn hảo. Bỏ 1 đêm không làm hỏng habit nếu 6/7 ngày còn lại vẫn giữ.',
+    ],
+    points: [
+      { icon: '🔔', label: 'Conditioned Cue', note: 'Pavlovian reflex — não tự chuẩn bị ngủ' },
+      { icon: '⏱️', label: 'Sleep Onset', note: 'Giảm latency 18 phút (RCT 2022)' },
+      { icon: '🧹', label: 'Glymphatic', note: 'Vào NREM nhanh → não dọn rác hiệu quả' },
+      { icon: '✅', label: '2–3 Phút Đủ', note: 'Nhất quán > phức tạp' },
+    ],
+  },
+  {
+    icon: '🌱', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Kỷ Luật Mềm: Không Tự Trách · +15 điểm',
+    img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Self-compassion không phải nhân nhượng — người tự trắc ẩn cao hơn thực ra có trách nhiệm với bản thân cao hơn vì không sợ thất bại làm tê liệt hành động.',
+    detail: 'Kỷ luật mềm nghĩa là: không bỏ qua trách nhiệm (không làm → ghi nhận → thử lại) nhưng cũng không punish bản thân (không làm → tự hành → không thử lại). Sự khác biệt nhỏ trong ngôn ngữ tự nói chuyện tạo ra kết quả dài hạn rất khác nhau.',
+    details: [
+      'Kristen Neff (UT Austin) — người tiên phong nghiên cứu self-compassion: người có self-compassion cao không ít trách nhiệm hơn mà ngược lại — họ sẵn sàng nhìn nhận thất bại vì biết nó không định nghĩa giá trị của họ.',
+      'Self-criticism kích hoạt cortisol và threat response — não ở trạng thái này ưu tiên tự bảo vệ, không phải học hỏi hay thay đổi. Tự trách kéo dài là vòng lặp đóng băng hành động.',
+      'Self-compassion ≠ self-pity: tự trắc ẩn nhìn nhận khó khăn như một phần của trải nghiệm con người ("nhiều người cũng gặp điều này"), không cô lập mình trong đau khổ.',
+      'Oxytocin — hormone kết nối và an toàn — được giải phóng khi tự nói chuyện với bản thân như với một người bạn tốt. Oxytocin đối kháng cortisol và tạo trạng thái bình an, khuyến khích hành động.',
+      'Câu thực hành: "Mình đã bỏ qua [việc X] hôm nay. Đó là điều bình thường — nhiều người cũng gặp. Mình sẽ thử lại ngày mai với một cách nhỏ hơn." — đơn giản nhưng đủ để phá vòng lặp tự trách.',
+      'Thiết kế checklist này (điểm nhỏ, nhiều hạng mục) là ví dụ kỷ luật mềm trong hành động: ngay cả ngày chỉ được 25/100 điểm cũng là ngày bạn đã làm được điều gì đó, không phải ngày thất bại.',
+    ],
+    points: [
+      { icon: '💚', label: 'Self-Compassion', note: 'Trắc ẩn → trách nhiệm cao hơn' },
+      { icon: '🧬', label: 'Oxytocin', note: 'Tự nói chuyện tốt → giải phóng oxytocin' },
+      { icon: '🪞', label: 'Identity', note: 'Thất bại ≠ định nghĩa bản thân' },
+      { icon: '🔁', label: 'Kỹ Năng', note: 'Không tự trách là kỹ năng học được' },
+    ],
+  },
+];
+
+function CalmScore({ color, onItemClick }) {
   const [checks, setChecks] = useState({});
   const ITEMS = [
     { id: 'breath', label: 'Thở/thiền ≥ 3 phút', pts: 25 },
@@ -145,13 +274,22 @@ function CalmScore({ color }) {
         </div>
       </div>
       <div className="space-y-2">
-        {ITEMS.map(item => (
-          <button key={item.id} onClick={() => setChecks(p => ({ ...p, [item.id]: !p[item.id] }))} className={`w-full flex items-center gap-3 p-3 rounded-xl border text-left transition-all ${checks[item.id] ? '' : 'border-border hover:border-purple-500/20'}`} style={{ background: checks[item.id] ? `rgba(${PURPLE_RGB},0.08)` : 'var(--color-surface)', borderColor: checks[item.id] ? `rgba(${PURPLE_RGB},0.3)` : undefined }}>
+        {ITEMS.map((item, i) => (
+          <button key={item.id} onClick={() => setChecks(p => ({ ...p, [item.id]: !p[item.id] }))} className={`group/item w-full flex items-center gap-3 p-3 rounded-xl border text-left transition-all ${checks[item.id] ? '' : 'border-border hover:border-purple-500/20'}`} style={{ background: checks[item.id] ? `rgba(${PURPLE_RGB},0.08)` : 'var(--color-surface)', borderColor: checks[item.id] ? `rgba(${PURPLE_RGB},0.3)` : undefined }}>
             <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all`} style={{ borderColor: checks[item.id] ? color : '#4b5563', background: checks[item.id] ? color : 'transparent' }}>
               {checks[item.id] && <span className="text-white text-base font-bold">✓</span>}
             </div>
             <span className="flex-1 text-lg text-text">{item.label}</span>
             <span className="text-base font-bold" style={{ color: checks[item.id] ? color : '#6b7280' }}>+{item.pts}</span>
+            {onItemClick && (
+              <span
+                onClick={e => { e.stopPropagation(); onItemClick(i); }}
+                className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/item:opacity-100 transition-opacity cursor-pointer"
+                style={{ color: '#f59e0b', borderColor: 'rgba(245,158,11,0.35)', background: 'rgba(245,158,11,0.08)' }}
+              >
+                chi tiết →
+              </span>
+            )}
           </button>
         ))}
       </div>
@@ -1124,8 +1262,8 @@ function D6Panel({ color, onHabitClick }) {
   );
 }
 
-function D7Panel({ color }) {
-  return <CalmScore color={color} />;
+function D7Panel({ color, onItemClick }) {
+  return <CalmScore color={color} onItemClick={onItemClick} />;
 }
 
 function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx }) {
@@ -1279,6 +1417,7 @@ export default function PillarD() {
   const [d4Modal, setD4Modal] = useState(null);
   const [d5Modal, setD5Modal] = useState(null);
   const [d6Modal, setD6Modal] = useState(null);
+  const [d7Modal, setD7Modal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -1441,7 +1580,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
-            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} onLevelClick={activeTab === 'd5' ? setD5Modal : undefined} onHabitClick={activeTab === 'd6' ? setD6Modal : undefined} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} onLevelClick={activeTab === 'd5' ? setD5Modal : undefined} onHabitClick={activeTab === 'd6' ? setD6Modal : undefined} onItemClick={activeTab === 'd7' ? setD7Modal : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -1573,6 +1712,19 @@ export default function PillarD() {
           hasNext={d6Modal < D6_HABIT_MODALS.length - 1}
           total={D6_HABIT_MODALS.length}
           idx={d6Modal}
+        />
+      )}
+
+      {d7Modal !== null && (
+        <CardModal
+          item={D7_ITEM_MODALS[d7Modal]}
+          onClose={() => setD7Modal(null)}
+          onPrev={() => setD7Modal(i => Math.max(0, i - 1))}
+          onNext={() => setD7Modal(i => Math.min(D7_ITEM_MODALS.length - 1, i + 1))}
+          hasPrev={d7Modal > 0}
+          hasNext={d7Modal < D7_ITEM_MODALS.length - 1}
+          total={D7_ITEM_MODALS.length}
+          idx={d7Modal}
         />
       )}
     </div>

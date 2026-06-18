@@ -958,7 +958,136 @@ function D5Panel({ color, onLevelClick }) {
   );
 }
 
-function D6Panel({ color }) {
+const D6_HABIT_MODALS = [
+  {
+    icon: '🌬️', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Căng Thẳng → Thở 1 Phút',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: '1 phút thở cơ hoành đủ để hạ nhịp tim 5–8 bpm và giảm cortisol đo được — ngắn đến mức không có lý do nào để không làm ngay khi căng thẳng.',
+    detail: 'Thở là công cụ duy nhất kiểm soát hệ thần kinh tự chủ bằng ý thức. Khi căng, não ở trạng thái fight-or-flight và không thể tư duy rõ ràng. 1 phút thở chậm kích hoạt hệ phó giao cảm đủ để chuyển trạng thái.',
+    details: [
+      'Hệ phó giao cảm (rest & digest) kích hoạt khi thở chậm qua cơ chế vagus nerve — dây thần kinh phế vị chạy từ não xuống qua cơ hoành, gửi tín hiệu "an toàn" lên thân não trong 30–60 giây.',
+      'Nghiên cứu của Zaccaro et al. (2018): thở chậm 6 nhịp/phút (10 giây/nhịp) tạo HRV cao nhất — chỉ số linh hoạt hệ thần kinh liên quan đến kiểm soát cảm xúc và phục hồi stress tốt hơn.',
+      'Kỹ thuật đơn giản nhất: hít vào 4 giây, thở ra 6–8 giây. Tỉ lệ thở ra dài hơn hít vào là chìa khóa — kích hoạt baroreceptors trên động mạch chủ, gửi tín hiệu "hạ nhịp" lên não.',
+      '"1 phút" không phải con số tùy ý — chỉ cần 4–5 nhịp thở sâu (khoảng 60 giây ở tốc độ 1 nhịp/12–15 giây) để cortisol bắt đầu giảm theo nghiên cứu kiểm soát có đo nước bọt.',
+      'Thở 1 phút hiệu quả nhất khi làm NGAY lúc nhận ra tín hiệu căng đầu tiên — không phải sau 30 phút đã reactive. Vai cứng, thở nông, tim nhanh là tín hiệu — đó là thời điểm.',
+      'Dùng được ở bất cứ đâu: toilet công ty, thang máy, kẹt xe, giữa hai cuộc họp. Không cần môi trường yên tĩnh. Đây là lý do "thở 1 phút" hiệu quả hơn "thiền 20 phút" khi bận — friction gần như bằng 0.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Vagus Nerve', note: 'Kích hoạt rest & digest trong 60s' },
+      { icon: '❤️', label: 'Hạ Nhịp Tim', note: '5–8 bpm sau 4–5 nhịp thở sâu' },
+      { icon: '⏱️', label: '1 Phút', note: 'Đủ để cortisol bắt đầu giảm' },
+      { icon: '📍', label: 'Dùng Ngay', note: 'Không cần môi trường đặc biệt' },
+    ],
+  },
+  {
+    icon: '🧠', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Quá Tải → Xả Não 5 Dòng',
+    img: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Não không thể xử lý task hiện tại tốt khi còn đang "giữ" danh sách việc chưa xong trong working memory — viết ra 5 dòng giải phóng RAM não cho việc đang làm.',
+    detail: 'Quá tải nhận thức (cognitive overload) không phải vì quá nhiều việc — mà vì não đang cố giữ quá nhiều thứ cùng lúc. Working memory có giới hạn ~7 đơn vị. Khi đầy, não không thể xử lý thêm và cảm giác "tê liệt" xuất hiện.',
+    details: [
+      'Working memory (bộ nhớ làm việc) có giới hạn ~7 ± 2 "chunks" theo Miller (1956). Khi overflow, não không thể thêm thông tin mới hay xử lý hiệu quả — gây cảm giác overwhelm và tê liệt.',
+      'Zeigarnik effect: não ưu tiên "giữ" những việc chưa xong hơn việc đã hoàn thành — open tasks tiêu thụ working memory liên tục, ngay cả khi bạn đang làm việc khác.',
+      '"Xả não 5 dòng" = GTD (Getting Things Done, David Allen) phiên bản tối giản: viết tất cả ra khỏi đầu. Não không cần giữ nữa → working memory được giải phóng → tập trung vào 1 việc hiện tại tốt hơn.',
+      'Không cần 5 dòng hoàn hảo hay có cấu trúc. Viết bất kỳ thứ gì đang chiếm "chỗ" trong đầu: việc cần làm, lo lắng, việc đang chờ người khác, ý tưởng random. Não không quan tâm hình thức.',
+      'Sau khi viết ra, phân loại đơn giản: "làm ngay" / "lên lịch sau" / "chờ người khác" / "buông — không kiểm soát được". Phân loại này ngăn não tiếp tục giữ những thứ không hành động được.',
+      '"5 dòng" là đủ cho hầu hết trường hợp quá tải hằng ngày — không cần brain dump 2 trang. Nghiên cứu về note-taking: ngắn gọn hơn thường hiệu quả hơn vì giảm thêm cognitive load từ chính quá trình viết.',
+    ],
+    points: [
+      { icon: '💾', label: 'Giải Phóng RAM', note: 'Working memory có giới hạn ~7 chunks' },
+      { icon: '🔄', label: 'Zeigarnik Effect', note: 'Não giữ việc chưa xong — viết ra đóng loop' },
+      { icon: '✍️', label: '5 Dòng', note: 'GTD tối giản, không cần cấu trúc' },
+      { icon: '🗂️', label: 'Phân Loại', note: 'Làm / Lên lịch / Chờ / Buông' },
+    ],
+  },
+  {
+    icon: '😴', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Trước Ngủ → Tắt Màn Hình',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: '20 phút không màn hình trước ngủ đủ để cortisol bắt đầu giảm và melatonin bắt đầu tăng — hai điều kiện sinh lý cần thiết để ngủ sâu và phục hồi hoàn toàn.',
+    detail: 'Giấc ngủ là thời gian não "dọn dẹp" — xử lý ký ức, loại bỏ chất thải thần kinh (glymphatic system), và reset cảm xúc. Màn hình trước ngủ không chỉ trì hoãn giờ ngủ mà còn giảm chất lượng ngủ ngay cả khi đã ngủ đủ giờ.',
+    details: [
+      'Ánh sáng xanh từ màn hình kích thích tế bào ipRGC trong võng mạc, ức chế tuyến tùng tiết melatonin. Harvard: 2 giờ màn hình trước ngủ giảm melatonin 23% và trì hoãn ngủ trung bình 1,5 giờ.',
+      'Cortisol cần giảm xuống ngưỡng thấp để não chuyển sang trạng thái sleep-ready. Lướt feed kích hoạt social comparison và FOMO — cả hai tăng cortisol và giữ hệ thần kinh giao cảm hoạt động.',
+      'Glymphatic system — hệ thống làm sạch não — hoạt động chủ yếu trong giấc ngủ sâu (slow-wave sleep). Amyloid beta và tau protein (liên quan Alzheimer) được loại bỏ trong giai đoạn này. Ngủ kém dài hạn tích lũy các chất thải này.',
+      'REM sleep — giai đoạn xử lý cảm xúc — bị rút ngắn khi ngủ muộn do màn hình. REM ít → cảm xúc ngày hôm sau kém ổn định, dễ reactive hơn, và khả năng empathy giảm (nghiên cứu Walker, "Why We Sleep").',
+      'Thói quen thay thế hiệu quả: đọc sách giấy (ánh sáng ấm, không blue light), nghe nhạc nhẹ, body scan, hoặc viết journal 5 dòng — bất kỳ hoạt động nào không có màn hình đều tạo điều kiện melatonin tăng.',
+      '"10–20 phút" là ngưỡng tối thiểu — nghiên cứu về pre-sleep routine cho thấy thay đổi hành vi trước ngủ chỉ cần 10–15 phút để bắt đầu thấy hiệu quả rõ trong tuần đầu.',
+    ],
+    points: [
+      { icon: '🌙', label: 'Melatonin', note: 'Tăng sau 20ph không màn hình' },
+      { icon: '🧹', label: 'Glymphatic', note: 'Não dọn dẹp chất thải khi ngủ sâu' },
+      { icon: '😊', label: 'REM Sleep', note: 'Xử lý cảm xúc ngày hôm sau' },
+      { icon: '📖', label: 'Thay Thế', note: 'Sách giấy, journal, body scan' },
+    ],
+  },
+  {
+    icon: '🔄', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Sau Khi Fail → Viết 1 Câu Quay Lại',
+    img: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người thực hành self-compassion sau thất bại có tỷ lệ thử lại cao hơn người tự trách — nghịch lý là tử tế với bản thân tạo accountability cao hơn, không thấp hơn.',
+    detail: '"Viết 1 câu quay lại" ngắt vòng lặp rumination và chuyển não từ threat mode (tự trách, tự phán xét) sang action mode (bước tiếp theo nhỏ nhất). Không phải tự an ủi — đó là cách phục hồi hiệu quả nhất.',
+    details: [
+      'James Clear ("Atomic Habits"): quy tắc "không bao giờ bỏ lỡ hai lần liên tiếp" thực tế hơn "không bao giờ bỏ". Sau ngày fail, hành động nhỏ nhất ngày hôm sau duy trì danh tính "người đang thực hành" — danh tính đó quan trọng hơn streak.',
+      'Self-criticism (tự trách) sau thất bại kích hoạt thêm cortisol và threat response — não vào trạng thái phòng thủ, không phải học hỏi. Nghiên cứu của Neff et al.: self-criticism tăng xác suất abandon goal, không tăng motivation.',
+      'Kristen Neff (UT Austin): self-compassion sau thất bại — không phải tự thương hại mà là công nhận "đây là khó, và mình đang cố gắng" — tăng accountability và tỷ lệ thử lại theo dữ liệu longitudinal.',
+      '"Viết 1 câu" cụ thể hơn "tha thứ cho bản thân" — não cần hành động cụ thể, không phải cảm xúc mơ hồ. Ví dụ đúng: "Hôm qua bỏ tập. Tối nay tập 10 phút." Một câu đủ để chuyển từ rumination sang intention.',
+      'Growth mindset (Carol Dweck): thất bại là data, không phải kết luận về con người. "Mình chưa biết cách" thay vì "mình không thể". 1 câu quay lại là cách thực hành growth mindset trong 10 giây.',
+      'Habit identity repair: sau ngày không thiền, viết "Ngày mai thiền 3 phút" duy trì narrative "tôi là người thiền" — danh tính thiền quan trọng hơn chuỗi ngày liên tiếp theo nghiên cứu về habit formation.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Không Bỏ 2 Lần', note: 'Quy tắc James Clear' },
+      { icon: '💙', label: 'Self-Compassion', note: 'Tăng tỷ lệ thử lại, không giảm' },
+      { icon: '✍️', label: '1 Câu Cụ Thể', note: 'Hành động > cảm xúc mơ hồ' },
+      { icon: '🌱', label: 'Identity Repair', note: 'Duy trì narrative về bản thân' },
+    ],
+  },
+  {
+    icon: '🍕', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Muốn Ăn Vặt → Dừng 10 Giây',
+    img: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80&auto=format&fit=crop',
+    keyFact: '80% lần "đói" sau bữa ăn vừa xong thực ra là stress, buồn chán, hoặc thói quen — không phải đói thật. 10 giây kiểm tra phân biệt được hai điều đó và ngắt hành vi tự động.',
+    detail: 'Ăn vặt theo cảm xúc không phải thiếu ý chí — đó là vòng lặp thần kinh được củng cố qua nhiều năm: cảm xúc khó chịu → tìm đồ ăn → dopamine ngắn → cảm xúc tạm dịu → vòng lặp lặp lại. 10 giây tạo khoảng trống để ngắt vòng lặp đó.',
+    details: [
+      'Đường và chất béo kích hoạt nucleus accumbens (trung tâm thưởng của não), tạo dopamine burst ngắn hạn. Nhưng đường huyết tăng vọt rồi tụt nhanh sau 30–60 phút làm mood xuống thêm và tạo craving tiếp theo — vòng lặp tự củng cố.',
+      'Phân biệt đói thật vs đói cảm xúc: đói thật xuất hiện dần, bất kỳ đồ ăn nào cũng hấp dẫn, đi kèm cảm giác vật lý (bụng réo). Đói cảm xúc xuất hiện đột ngột, chỉ muốn thứ cụ thể (ngọt/giòn/béo), thường sau trigger cảm xúc.',
+      '10 giây dừng là "pattern interrupt" — ngắt chuỗi cue → routine tự động bằng một khoảng trống có ý thức. Hỏi "Mình đói hay mệt?" buộc prefrontal cortex tham gia thay vì để amygdala chạy autopilot.',
+      'Menu thay thế hiệu quả hơn ý chí thuần túy: khi xác định là stress/mệt (không phải đói thật), thay bằng thở 5 nhịp, uống nước, ra ngoài 2 phút, hoặc viết 1 câu cảm xúc hiện tại. Não cần thay thế hành vi, không phải khoảng trống.',
+      'Mindful eating research: dừng trước khi lấy thêm đồ ăn giảm binge eating 60–70% trong một số RCT — không cần không ăn, chỉ cần tạo khoảng dừng có ý thức trước khi tiếp tục.',
+      'Lâu dài: nhật ký ghi trigger ăn vặt (tình huống, cảm xúc) giúp nhận ra pattern — loại tình huống nào kích hoạt ăn cảm xúc? Nhận ra pattern là bước đầu để thay đổi cue thay vì chỉ chiến đấu với craving.',
+    ],
+    points: [
+      { icon: '🔍', label: 'Đói Thật vs Cảm Xúc', note: 'Đột ngột + cụ thể = cảm xúc' },
+      { icon: '⏸️', label: 'Pattern Interrupt', note: '10s ngắt chuỗi tự động' },
+      { icon: '🔄', label: 'Thay Thế', note: 'Hành vi khác, không để trống' },
+      { icon: '📊', label: 'Nhận Ra Pattern', note: 'Ghi trigger để thay đổi cue' },
+    ],
+  },
+  {
+    icon: '⚡', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Mất Động Lực → Làm 2 Phút',
+    img: 'https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Động lực không đến trước hành động — nó đến SAU khi đã bắt đầu. 2 phút là ngưỡng đủ thấp để não không kháng cự nhưng đủ để kích hoạt momentum và thường tự mở rộng thành nhiều hơn.',
+    detail: '"Làm bản tối thiểu 2 phút" không phải bài tập thực sự — đó là cách đánh lừa activation energy của não. Neuroscience: một khi đã bắt đầu một hành vi, không có lý do nào để dừng lại sau đúng 2 phút.',
+    details: [
+      'Activation energy: não cần năng lượng để bắt đầu một hành vi mới, nhất là khi động lực thấp. "2 phút" giảm activation energy gần như bằng 0 — không ai thực sự "không có 2 phút". Friction thấp = tỷ lệ bắt đầu cao.',
+      'James Clear ("Atomic Habits"): "2-minute rule" — thu nhỏ bất kỳ thói quen nào thành bản 2 phút để bắt đầu. "Tập gym" → "mặc đồ gym". "Đọc sách" → "mở sách đọc 1 trang". Mục tiêu là bắt đầu, không phải hoàn thành.',
+      'Zeigarnik effect ngược: một khi đã bắt đầu task, não tạo "open loop" muốn hoàn thành — stopping early tạo cognitive dissonance. Thực tế 70–80% người "làm 2 phút" tiếp tục lâu hơn sau khi đã bắt đầu.',
+      'Motivation follows action, không phải ngược lại — đây là một trong những phát hiện nhất quán nhất trong tâm lý học hành vi. Chờ cảm hứng để bắt đầu là backward causation. Bắt đầu trước, cảm hứng đến sau.',
+      'Identity anchoring: "Tập 2 phút" vẫn duy trì danh tính "người tập thể dục" — quan trọng hơn số phút thực tế. Danh tính được xây dựng qua hành động lặp lại, dù nhỏ. "Tôi là người tập mỗi ngày" > "tôi tập 30 phút".',
+      'BJ Fogg (Stanford, "Tiny Habits"): thói quen nhỏ nhất có thể tạo ra emotional win — mỗi lần hoàn thành dù ngắn tạo dopamine nhỏ, củng cố loop thói quen. Cần ăn mừng ngay sau để não học nhanh hơn.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Activation Energy', note: '2ph = ngưỡng não không kháng cự' },
+      { icon: '🌊', label: 'Momentum', note: '70–80% tiếp tục sau khi bắt đầu' },
+      { icon: '🎭', label: 'Motivation Follows', note: 'Hành động trước, cảm hứng sau' },
+      { icon: '🏷️', label: 'Identity', note: 'Nhỏ vẫn duy trì danh tính' },
+    ],
+  },
+];
+
+function D6Panel({ color, onHabitClick }) {
   const HABITS = [
     { situation: 'Căng thẳng', habit: 'Thở 1 phút' },
     { situation: 'Quá tải công việc', habit: 'Xả não 5 dòng' },
@@ -971,10 +1100,20 @@ function D6Panel({ color }) {
     <div className="space-y-4">
       <p className="text-base text-muted"><strong className="text-text">Kỷ luật mềm</strong> không phải dễ dãi. Đó là cách quay lại sau khi lệch nhịp — không tự mắng, không bù gấp đôi.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        {HABITS.map(h => (
-          <div key={h.situation} className="flex items-center gap-3 p-3 rounded-xl border border-border bg-bg">
+        {HABITS.map((h, i) => (
+          <div
+            key={h.situation}
+            className={`group/habit flex items-center gap-3 p-3 rounded-xl border bg-bg transition-all duration-200 ${onHabitClick ? 'cursor-pointer border-border hover:border-emerald-500/40 hover:bg-white/[0.03] hover:shadow-[0_0_14px_rgba(16,185,129,0.08)]' : 'border-border'}`}
+            onClick={onHabitClick ? () => onHabitClick(i) : undefined}
+          >
             <div className="text-base text-muted w-32 shrink-0">{h.situation}</div>
-            <div className="text-base font-bold" style={{ color }}>→ {h.habit}</div>
+            <div className="text-base font-bold flex-1" style={{ color }}>→ {h.habit}</div>
+            {onHabitClick && (
+              <span
+                className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/habit:opacity-100 transition-opacity"
+                style={{ color: D6_HABIT_MODALS[i].color, borderColor: `rgba(${D6_HABIT_MODALS[i].rgb},0.35)`, background: `rgba(${D6_HABIT_MODALS[i].rgb},0.08)` }}
+              >chi tiết →</span>
+            )}
           </div>
         ))}
       </div>
@@ -1139,6 +1278,7 @@ export default function PillarD() {
   const [d3Modal, setD3Modal] = useState(null);
   const [d4Modal, setD4Modal] = useState(null);
   const [d5Modal, setD5Modal] = useState(null);
+  const [d6Modal, setD6Modal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -1301,7 +1441,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
-            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} onLevelClick={activeTab === 'd5' ? setD5Modal : undefined} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} onLevelClick={activeTab === 'd5' ? setD5Modal : undefined} onHabitClick={activeTab === 'd6' ? setD6Modal : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -1420,6 +1560,19 @@ export default function PillarD() {
           hasNext={d5Modal < D5_LEVEL_MODALS.length - 1}
           total={D5_LEVEL_MODALS.length}
           idx={d5Modal}
+        />
+      )}
+
+      {d6Modal !== null && (
+        <CardModal
+          item={D6_HABIT_MODALS[d6Modal]}
+          onClose={() => setD6Modal(null)}
+          onPrev={() => setD6Modal(i => Math.max(0, i - 1))}
+          onNext={() => setD6Modal(i => Math.min(D6_HABIT_MODALS.length - 1, i + 1))}
+          hasPrev={d6Modal > 0}
+          hasNext={d6Modal < D6_HABIT_MODALS.length - 1}
+          total={D6_HABIT_MODALS.length}
+          idx={d6Modal}
         />
       )}
     </div>

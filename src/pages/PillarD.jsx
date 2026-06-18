@@ -588,7 +588,96 @@ function D2Panel({ color, onTechClick }) {
   );
 }
 
-function D3Panel({ color }) {
+const D3_MODE_MODALS = [
+  {
+    icon: '🧘', color: '#d946ef', rgb: '217,70,239',
+    modalTitle: 'Thiền 3 Phút',
+    img: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80&auto=format&fit=crop',
+    keyFact: '3 phút thiền mỗi ngày không phải ít hơn mức cần thiết — đó là "minimum viable dose" đủ để xây dựng thói quen bền vững.',
+    detail: 'Tính nhất quán quan trọng hơn thời lượng. 3 phút mỗi ngày trong 30 ngày hiệu quả hơn 30 phút 1 lần/tuần — não học qua lặp lại, không qua cường độ.',
+    details: [
+      'Harvard study (Sara Lazar, 2011): 8 tuần × 27 phút/ngày đủ để thấy thay đổi cấu trúc não. Nghiên cứu mới hơn cho thấy thay đổi chức năng (functional) xuất hiện sớm hơn — sau vài tuần thực hành 5–10 phút/ngày.',
+      'Thiền 3 phút chánh niệm hơi thở kích hoạt PFC (prefrontal cortex) — vùng não kiểm soát chú ý và điều tiết cảm xúc — đủ để tạo "neurological imprint" sau mỗi lần thực hành ngắn.',
+      '"Nhận ra mình đang bị cuốn đi và quay lại" là REP luyện tập thực sự. Mỗi lần não lang thang rồi quay lại hơi thở, cortex trước trán tập kiểm soát chú ý — y hệt tập tạ cho cơ bắp.',
+      'Không cần ngồi kiết già hay phòng yên tĩnh. Bất kỳ tư thế nào giữ lưng tương đối thẳng — ngồi ghế, ngồi sàn, thậm chí trên bus — đều có tác dụng tương đương.',
+      'Headspace research (n > 1 triệu users): chỉ 10 ngày × 10 phút đủ để tăng compassion 23%, giảm aggression và cải thiện focus — hiệu quả tiếp tục tăng với practice dài hơn.',
+      '"Thiền xấu" (ngồi mà bị distract liên tục) vẫn tốt hơn không thiền. Nhận ra mình bị distract và quay lại chính xác là những gì thiền luyện tập — không cần đạt trạng thái "hoàn toàn trống".',
+    ],
+    points: [
+      { icon: '🔄', label: 'Mỗi Rep Có Giá Trị', note: 'Lang thang → quay lại = 1 rep' },
+      { icon: '📅', label: 'Nhất Quán Hơn Cường Độ', note: '3ph/ngày > 30ph/tuần' },
+      { icon: '🧠', label: 'PFC Training', note: 'Cơ chú ý được luyện tập' },
+      { icon: '✅', label: 'Không Cần Hoàn Hảo', note: 'Thiền "xấu" vẫn tốt hơn 0' },
+    ],
+  },
+  {
+    icon: '🌙', color: '#d946ef', rgb: '217,70,239',
+    modalTitle: 'Thiền 5 Phút Trước Ngủ',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Body scan trước ngủ giảm cortisol và kích hoạt hệ phó giao cảm — điều trị mất ngủ first-line được ACP khuyến nghị trước cả thuốc ngủ.',
+    detail: 'Nhiều người bị "wired but tired" — cơ thể kiệt sức nhưng não vẫn chạy. Body scan 5 phút không phải thiền để "clear mind" — đó là kỹ thuật tắt hệ thần kinh giao cảm có hướng dẫn.',
+    details: [
+      'Cortisol giảm tự nhiên vào buổi tối để cho phép ngủ. Nhưng stress mãn tính hoặc màn hình điện thoại trước ngủ giữ cortisol cao — body scan giúp ức chế cortisol chủ động thay vì chờ tự giảm.',
+      'Body scan là kỹ thuật cốt lõi trong CBT-I (Cognitive Behavioral Therapy for Insomnia) — điều trị mất ngủ mãn tính first-line được American College of Physicians khuyến nghị, hiệu quả tốt hơn thuốc ngủ dài hạn.',
+      '"Scan từ trán → vai → ngực → bụng → chân": chú ý từng vùng cơ thể tuần tự → nhận ra vùng căng → thở ra thả lỏng. Quy trình này phân tán self-referential thinking (vòng lặp "lo ngủ không được").',
+      '"Hôm nay đủ rồi, ngày mai làm tiếp" — câu tự nhắc này kích hoạt self-compassion và tắt hệ threat detection. Não không thể đồng thời ở trạng thái threat alert và rest & digest.',
+      'Trong nghiên cứu về insomnia, nhóm thiền body scan trước ngủ ngủ nhanh hơn trung bình 13 phút và thức giữa đêm ít hơn 2 lần so với nhóm đối chứng — sau 8 tuần thực hành.',
+      'Nếu còn quá tỉnh táo: bắt đầu bằng thở 4-7-8 (2–3 vòng) để hạ nhịp tim xuống trước, rồi mới chuyển sang body scan — kết hợp hai kỹ thuật hiệu quả hơn từng kỹ thuật đơn lẻ.',
+    ],
+    points: [
+      { icon: '😴', label: 'Chữa Mất Ngủ', note: 'CBT-I first-line trước thuốc' },
+      { icon: '💉', label: 'Hạ Cortisol', note: 'Tắt hệ giao cảm chủ động' },
+      { icon: '🔍', label: 'Scan Từng Vùng', note: 'Trán → vai → ngực → bụng → chân' },
+      { icon: '💙', label: 'Self-Compassion', note: '"Hôm nay đủ rồi" tắt threat alert' },
+    ],
+  },
+  {
+    icon: '🚶', color: '#d946ef', rgb: '217,70,239',
+    modalTitle: 'Chánh Niệm Đi Bộ',
+    img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đi bộ chánh niệm kết hợp 2 lợi ích trong 1: vận động aerobic nhẹ tăng BDNF + thiền hiện tại giảm rumination — hai trong những can thiệp mạnh nhất cho sức khỏe não.',
+    detail: 'Nhiều người khó ngồi yên thiền nhưng có thể thiền khi di chuyển. Không cần nơi đặc biệt — hành lang văn phòng, con đường từ bãi xe vào nhà, hay siêu thị đều đủ.',
+    details: [
+      'Đi bộ aerobic nhẹ tăng BDNF (Brain-Derived Neurotrophic Factor) — "phân bón của não" giúp tạo kết nối thần kinh mới và bảo vệ hippocampus khỏi shrinkage do stress mãn tính.',
+      '"Cảm nhận bàn chân chạm đất từng bước" là mỏ neo (anchor) chánh niệm hiệu quả khi di chuyển — nhịp bước đi tự nhiên tạo đủ kích thích để não không drift vào rumination (suy nghĩ tiêu cực lặp lại).',
+      'Không tai nghe là yếu tố then chốt — nghe podcast/nhạc giữ Default Mode Network (DMN) hoạt động (brain wandering về tương lai/quá khứ). Chú ý âm thanh xung quanh kích hoạt present-moment awareness.',
+      'Quan sát ánh sáng, cây cối, bầu trời kích hoạt "awe response" — trải nghiệm ngạc nhiên/kỳ thú làm giảm self-focus và tăng cảm giác kết nối. Awe response liên quan đến giảm IL-6 (inflammation marker).',
+      'RCT tại Stanford: đi bộ thiên nhiên 90 phút giảm rumination và hoạt động subgenual PFC (vùng liên quan trầm cảm) nhiều hơn đáng kể so với đi bộ đô thị cùng độ dài.',
+      'Không đếm thành tích (không cần 10.000 bước, không cần track pace): chánh niệm đòi hỏi "process mode" — chú ý trải nghiệm hiện tại. "Goal mode" (đếm bước) là chế độ tư duy đối nghịch.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Tăng BDNF', note: '"Phân bón" não khi aerobic nhẹ' },
+      { icon: '🎧', label: 'Không Tai Nghe', note: 'Present-moment awareness' },
+      { icon: '🌿', label: 'Awe Response', note: 'Giảm rumination & inflammation' },
+      { icon: '🚫', label: 'Không Đếm Bước', note: 'Process mode, không goal mode' },
+    ],
+  },
+  {
+    icon: '🍽️', color: '#d946ef', rgb: '217,70,239',
+    modalTitle: 'Chánh Niệm Khi Ăn',
+    img: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Não cần 20 phút sau khi bắt đầu ăn để nhận tín hiệu no từ dạ dày — ăn nhanh và ăn trong khi nhìn màn hình luôn dẫn đến ăn quá nhiều trước khi tín hiệu này đến.',
+    detail: 'Chánh niệm khi ăn không phải "ăn chậm cho tốt tiêu hóa" — đó là kỹ thuật đồng bộ hành vi ăn với tín hiệu sinh học của cơ thể, giải quyết gốc rễ của ăn theo cảm xúc.',
+    details: [
+      'CCK (cholecystokinin), leptin và peptide YY — 3 hormone no chính — cần 15–20 phút để tăng đủ trong máu và cross blood-brain barrier để signal cho hypothalamus "đủ rồi". Ăn nhanh luôn xong trước khi tín hiệu đến.',
+      '"Tắt màn hình khi ăn" giảm distracted eating — khi chú ý vào màn hình, khả năng nhận biết no/đói giảm 30–40%. Não xử lý ăn uống và xử lý content màn hình cạnh tranh bandwidth nhận thức.',
+      'Nhai kỹ hơn (20–30 lần/miếng) bắt đầu tiêu hóa từ miệng — amylase trong nước bọt phân giải tinh bột ngay lập tức. Thức ăn được nhai kỹ cũng tạo cảm giác no sớm hơn vì tiếp xúc với receptors vị giác lâu hơn.',
+      '"Dừng 10 giây trước khi lấy thêm" là pattern interrupt cho hành vi ăn tự động — nhiều lần lấy thêm đồ ăn là habit loop (thấy đồ ăn → tay với) chứ không phải đói thực sự.',
+      'Mindful eating đặc biệt hiệu quả với binge eating và emotional eating — hai vấn đề phổ biến nhất liên quan đến cân nặng. Mindful eating giảm binge eating episodes 60–70% trong một số RCT.',
+      'Không cần mọi bữa ăn đều chánh niệm hoàn toàn — chỉ bữa tối (khi có thời gian nhất và thường ăn nhiều nhất) đủ để xây thói quen và nhận ra patterns ăn theo cảm xúc.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Quy Tắc 20 Phút', note: 'Não cần 20ph nhận tín hiệu no' },
+      { icon: '📵', label: 'Tắt Màn Hình', note: 'Giảm 30–40% nhận biết no' },
+      { icon: '🦷', label: 'Nhai Kỹ', note: 'Tiêu hóa bắt đầu từ miệng' },
+      { icon: '🛑', label: 'Dừng 10 Giây', note: 'Ngắt habit loop trước khi lấy thêm' },
+    ],
+  },
+];
+
+const D3_MODES_ORDER = ['3min', '5min', 'walk', 'eat'];
+
+function D3Panel({ color, onModeClick }) {
   const [mode, setMode] = useState('3min');
   const MODES = [
     { id: '3min', label: 'Thiền 3 Phút', steps: ['Ngồi thoải mái, nhắm mắt hoặc nhìn xuống', 'Cảm nhận hơi thở vào – ra ở mũi/bụng', 'Khi suy nghĩ xuất hiện, nói thầm "biết rồi"', 'Nhẹ nhàng quay lại hơi thở'] },
@@ -617,6 +706,15 @@ function D3Panel({ color }) {
               </li>
             ))}
           </ol>
+          {onModeClick && (
+            <button
+              onClick={() => onModeClick(D3_MODES_ORDER.indexOf(mode))}
+              className="mt-4 w-full flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-bold transition-all border"
+              style={{ color, borderColor: `rgba(${PURPLE_RGB},0.3)`, background: `rgba(${PURPLE_RGB},0.07)` }}
+            >
+              Xem khoa học đằng sau →
+            </button>
+          )}
         </div>
       )}
     </div>
@@ -844,6 +942,7 @@ export default function PillarD() {
   const [d0Modal, setD0Modal] = useState(null);
   const [d1Modal, setD1Modal] = useState(null);
   const [d2Modal, setD2Modal] = useState(null);
+  const [d3Modal, setD3Modal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -1006,7 +1105,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
               </div>
             </div>
-            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -1086,6 +1185,19 @@ export default function PillarD() {
           hasNext={d2Modal < D2_TECH_MODALS.length - 1}
           total={D2_TECH_MODALS.length}
           idx={d2Modal}
+        />
+      )}
+
+      {d3Modal !== null && (
+        <CardModal
+          item={D3_MODE_MODALS[d3Modal]}
+          onClose={() => setD3Modal(null)}
+          onPrev={() => setD3Modal(i => Math.max(0, i - 1))}
+          onNext={() => setD3Modal(i => Math.min(D3_MODE_MODALS.length - 1, i + 1))}
+          hasPrev={d3Modal > 0}
+          hasNext={d3Modal < D3_MODE_MODALS.length - 1}
+          total={D3_MODE_MODALS.length}
+          idx={d3Modal}
         />
       )}
     </div>

@@ -158,6 +158,72 @@ const DAILY_STACK = [
   { time: 'Tối (10ph)', items: ['Viết nhật ký 5 dòng', 'Không màn hình 30ph trước ngủ', 'Body scan 5 phút (tuỳ chọn)'] },
 ];
 
+const DAILY_STACK_MODALS = [
+  {
+    icon: '🌅', color: COLOR, rgb: RGB,
+    modalTitle: 'Buổi Sáng 10 Phút — Tại Sao Sáng Sớm Là Thời Điểm Vàng',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cortisol Awakening Response (CAR): cortisol tăng tự nhiên 50–100% trong 30–45 phút đầu sau thức dậy — đây là peak tự nhiên của alertness, working memory và executive function. Window này là "biological prime time" không thể tạo ra bằng caffeine. Morning stack khai thác CAR để set direction cho cả ngày.',
+    detail: 'Ba thực hành sáng (nước + thở, thiền, ý định) không phải random selection — mỗi cái target một system khác nhau: hydration/physiological reset, nervous system regulation, và prefrontal cortex activation. Tổng thời gian 10 phút là deliberately minimal — đủ impact, đủ sustainable ngay cả với schedule bận.',
+    details: [
+      'Uống nước ngay sau thức dậy — dehydration và cognitive function: Sau 7–9 giờ ngủ không uống, cơ thể mất ~400–600ml nước qua hơi thở và mồ hôi. Nghiên cứu Benton & Burgess (2009): ngay cả mild dehydration (1–2% body weight) giảm cognitive performance đáng kể — attention, memory, mood đều bị ảnh hưởng. Uống 200–400ml nước trước bất kỳ việc gì khác = immediate cognitive boost.',
+      '5 hít thở sâu kèm nước — transition ritual: Uống nước + thở sâu 5 lần là sensory anchor: thức dậy → specific cue (uống) → specific behavior (thở). Habit stacking principle (James Clear): gắn new behavior vào existing trigger. 5 hít thở sâu kích hoạt vagus nerve → parasympathetic tone → giảm cortisol spike nếu quá mức, tăng HRV baseline cho ngày.',
+      'Thiền 3–5 phút buổi sáng — theta-alpha transition window: Não khi vừa thức dậy ở theta-alpha transition (4–12 Hz) — trạng thái giữa giấc ngủ và tỉnh táo hoàn toàn. Nghiên cứu creativity: theta state liên quan đến divergent thinking và "aha moments." Thiền ngay trong window này khai thác self-referential processing của Default Mode Network trước khi external demands hijack attention.',
+      'Thiền 3–5 phút là đủ để bắt đầu — evidence: Zeidan et al. (2010, Consciousness & Cognition): 4 ngày thiền, chỉ 20 phút/ngày → significant improvements trong working memory, sustained attention, và visuospatial processing. Ngay cả 3 phút: đủ để activate metacognitive awareness và reduce mind-wandering. Ngắn nhưng consistent >>> dài nhưng sporadic.',
+      'Viết 1 ý định cho ngày — implementation intention power: Gollwitzer (1999): implementation intentions ("Hôm nay tôi sẽ làm X vào Y giờ") tăng goal completion 2–3x so với vague goals ("tôi sẽ cố gắng"). Buổi sáng là optimal timing — consolidation overnight fresh → PFC clear → intention setting most effective. 1 ý định, không phải 5 — specificity + focus over comprehensiveness.',
+      'Tại sao 10 phút là đủ: 10 phút = nước (1 phút) + thở (2 phút) + thiền (5 phút) + viết ý định (2 phút). Đây là design cho 100% compliance, không phải ideal practice. Fogg's Tiny Habits: barrier phải đủ thấp để không skip ngay cả khi mệt, trễ, hay không muốn. "Perfect routine skipped" = 0. "Simple routine done" = compound effect over months.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Cortisol Peak Window', note: 'CAR: cognitive prime time 30–45 phút sau thức dậy' },
+      { icon: '💧', label: 'Hydration First', note: 'Benton 2009: mild dehydration → cognitive decline ngay' },
+      { icon: '🌊', label: 'Theta-Alpha State', note: 'Sau ngủ: creativity và divergent thinking window tối ưu' },
+      { icon: '🎯', label: '1 Ý Định, Không Nhiều Hơn', note: 'Gollwitzer: implementation intention → 2–3x completion' },
+    ],
+  },
+  {
+    icon: '☀️', color: COLOR, rgb: RGB,
+    modalTitle: 'Buổi Chiều 5 Phút — Recovery Window & Acute Stress Response',
+    img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ultradian rhythm (Peretz Lavie, 1986): não hoạt động theo chu kỳ 90–120 phút (high performance) xen kẽ với rest windows (15–20 phút). Chiều thường rơi vào rest window tự nhiên — đặc biệt khoảng 2–3 giờ (post-lunch dip). Thay vì fight qua rest window bằng caffeine, 5-minute mental reset trong window này restore baseline hiệu quả hơn.',
+    detail: 'Ba thực hành chiều (check-in cảm xúc, box breathing, di chuyển) target ba systems bị tích lũy stress suốt ngày: cognitive load (check-in giải quyết), sympathetic activation (box breathing reset), và physical stagnation (di chuyển giải quyết). 5 phút nhưng tác động lên 3 systems = highest ROI practice trong ngày.',
+    details: [
+      'Check-in cảm xúc — metacognition và mid-day recalibration: Check-in không phải "ngồi cảm nhận cảm xúc" — đó là brief scan: "Tôi đang cảm thấy gì? (0–10). Tại sao? Tôi cần gì lúc này?" 30 giây. Metacognitive awareness giúp catch emotional spirals sớm — trước khi chúng compound thành buổi chiều/tối tệ. CBT: early intervention khi emotion còn ở mức 4–5/10 hiệu quả hơn nhiều so với can thiệp ở 8–9/10.',
+      'Check-in là early warning system: Người không có check-in habit thường nhận ra "hôm nay tôi rất stress" chỉ vào buổi tối — khi đã accumulated 8+ giờ unprocessed stress. Check-in chiều: catch stress ở giai đoạn giữa ngày → có thể intervene (box breathing, walk, micro-break) trước khi compound. Prevention > treatment.',
+      'Box breathing khi stress — acute sympathetic reset: 4-4-4-4 box breathing (inhale 4s, hold 4s, exhale 4s, hold 4s) kích hoạt baroreceptors trong aorta → vagal signal → parasympathetic activation trong 60–90 giây. Cortisol giảm measurable sau 3 phút. HRV tăng ngay lập tức. Không cần quiet room — có thể làm trong meeting break, toilet, car. Zero barrier, maximum portability.',
+      'Di chuyển 5 phút — BDNF và cognitive reset: John Ratey (Spark, 2008): exercise releases BDNF (Brain-Derived Neurotrophic Factor) — protein giúp neurons grow và connect. Ngay cả 5 phút light movement (walk, stretch, stairs) tăng BDNF và blood flow to PFC. Nghiên cứu: 5-minute walk after prolonged sitting → attention và creativity scores tăng significantly vs sedentary group.',
+      'Sitting disease và afternoon productivity: Biswas et al. (2015, Annals of Internal Medicine): sitting > 8 giờ/ngày linked với mortality risk tương đương smoking, independent of exercise frequency. Prolonged sitting → reduced circulation → reduced brain oxygenation → cognitive decline throughout afternoon. 5-minute movement break every 90 phút là nghiên cứu-supported prescription.',
+      'Tại sao chỉ 5 phút và không nhiều hơn: Workday context — không thể schedule 30 phút break giữa buổi làm. 5 phút = feasible cho 100% of people on any schedule. Check-in (1 phút) + box breathing if needed (3 phút) + brief movement (5 phút) = total 5–9 phút. Flexibility: ngày nhẹ = cả 3. Ngày bận = chỉ check-in. Never skip: minimum viable version prevents "missed habit" pattern.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Ultradian Rest Window', note: 'Lavie: 90-120 phút cycle — afternoon dip là natural reset cue' },
+      { icon: '🧠', label: 'Check-in = Early Warning', note: 'Catch stress ở 4/10 trước khi leo lên 9/10 buổi tối' },
+      { icon: '📦', label: 'Box Breathing Reset', note: 'HRV tăng trong 60–90 giây, cortisol giảm measurable' },
+      { icon: '🏃', label: 'BDNF trong 5 Phút', note: 'Ratey: brief movement → PFC blood flow → attention tăng ngay' },
+    ],
+  },
+  {
+    icon: '🌙', color: COLOR, rgb: RGB,
+    modalTitle: 'Buổi Tối 10 Phút — Sleep Preparation & Memory Consolidation',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Matthew Walker (Why We Sleep, 2017): sleep là não bộ\'s active maintenance cycle — không phải passive rest. Trong NREM slow-wave sleep, hippocampus "replays" experiences từ ngày để transfer sang cortical long-term storage. Những gì xảy ra 30–60 phút trước ngủ directly influences chất lượng của consolidation cycle này.',
+    detail: 'Ba thực hành tối (nhật ký, không màn hình, body scan) là sequential sleep preparation protocol — nhật ký đóng cognitive loops, không màn hình cho melatonin rise, body scan transitions nervous system từ sympathetic sang parasympathetic. Đây không phải "nice to have" bedtime routine — đây là neurological preparation cho nightly memory consolidation.',
+    details: [
+      'Viết nhật ký 5 dòng — Zeigarnik closure và sleep onset: Scullin et al. (2018, Experimental Brain Research): người viết specific to-do list trước ngủ ngủ nhanh hơn 9 phút vs nhóm viết completed activities. Cơ chế: Zeigarnik Effect — não duy trì "open loops" (incomplete tasks, unresolved concerns) trong working memory → interrupts sleep onset. Nhật ký 5 dòng closes daily loops, signals brain: "đã xử lý, an toàn để release."',
+      'Không màn hình 30 phút — blue light và melatonin suppression: Chang et al. (2014, PNAS): screen exposure trước ngủ suppresses melatonin secretion lên đến 50% và delays circadian clock 90+ phút. Melatonin là sleep onset hormone — không đủ → khó ngủ và ngủ không đủ sâu. 30 phút no-screen = đủ để melatonin bắt đầu rise naturally. Phone/laptop/TV blue light (450–490 nm) là worst offender.',
+      'Không màn hình — dopamine và arousal: Beyond blue light, content itself is stimulating: notifications, news, social media tạo dopamine hits và emotional arousal. Aroused nervous system (sympathetic activation) incompatible với sleep onset. 30 phút của calm activity (đọc sách giấy, nhẹ nhàng, nói chuyện) allows sympathetic → parasympathetic transition naturally.',
+      'Body scan 5 phút (tuỳ chọn) — progressive muscle relaxation connection: Body scan before sleep có roots trong Jacobson\'s Progressive Muscle Relaxation (1929) — systematic attention to body parts → voluntary muscle release → global relaxation. Nghiên cứu: PMR và mindful body scan before sleep → reduced sleep onset latency, increased slow-wave sleep duration, và improved sleep quality scores. "Tuỳ chọn" vì effective even 2–3x/week, not needing daily.',
+      'Sleep và memory consolidation — tại sao tối quan trọng: Stickgold (2005, Science): sleep plays critical and active role in memory consolidation. Hippocampal-neocortical transfer xảy ra chủ yếu trong NREM Stage 3 (deep sleep, 60–90 phút sau ngủ). Pre-sleep practices that improve sleep quality → improve this consolidation. Skills learned during day (thiền, breathing, journaling insights) consolidate better with quality sleep.',
+      'Evening routine là neurological anchor: Circadian rhythm được duy trì bởi environmental cues (zeitgebers): light, temperature, và behavioral cues. Consistent evening routine tạo behavioral zeitgeber — não learns "sau sequence này = ngủ" → sleep onset faster over time. Điều này giải thích tại sao routine quan trọng hơn perfect practices: consistency of sequence > perfection of individual practices.',
+    ],
+    points: [
+      { icon: '😴', label: 'Sleep Onset -9 Phút', note: 'Scullin 2018: to-do list trước ngủ → ngủ nhanh hơn 9 phút' },
+      { icon: '📵', label: 'Melatonin -50%', note: 'Chang 2014: screen suppresses melatonin 50%, delays clock 90 phút' },
+      { icon: '🫀', label: 'Body Scan + PMR', note: 'Reduced sleep onset, increased slow-wave sleep depth' },
+      { icon: '🧠', label: 'Memory Consolidation', note: 'Walker: NREM transfers skills to long-term cortical storage' },
+    ],
+  },
+];
+
 const LINKS = [
   { to: '/pillar/d/assessment', icon: '🧠', t: 'Đánh Giá Tâm Trí', d: 'Đo lường trước khi bắt đầu' },
   { to: '/pillar/d/stress', icon: '😤', t: 'Quản Lý Stress', d: 'Tuần 1–2' },
@@ -249,6 +315,7 @@ function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx
 export default function MindRoadmapPage() {
   const [activePhase, setActivePhase] = useState(0);
   const [phaseModal, setPhaseModal] = useState(null);
+  const [dailyModal, setDailyModal] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -369,9 +436,13 @@ export default function MindRoadmapPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mental Wellness Stack Hằng Ngày</h2>
         <p className="text-muted text-lg mb-6">25 phút mỗi ngày chia ra 3 buổi — không cần làm tất cả cùng lúc</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {DAILY_STACK.map(s => (
-            <div key={s.time} className="rounded-2xl border border-border bg-surface p-5">
-              <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>{s.time}</div>
+          {DAILY_STACK.map((s, i) => (
+            <div key={s.time} className="group/daily rounded-2xl border border-border bg-surface p-5 hover:border-purple-500/30 transition-colors cursor-pointer" onClick={() => setDailyModal(i)}>
+              <div className="flex items-center justify-between mb-3">
+                <div className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>{s.time}</div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/daily:opacity-100 transition-opacity"
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+              </div>
               <ul className="space-y-2">
                 {s.items.map(it => (
                   <li key={it} className="flex items-start gap-2 text-lg text-muted">
@@ -418,6 +489,18 @@ export default function MindRoadmapPage() {
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
 
+      {dailyModal !== null && (
+        <CardModal
+          item={DAILY_STACK_MODALS[dailyModal]}
+          onClose={() => setDailyModal(null)}
+          onPrev={() => setDailyModal(i => Math.max(0, i - 1))}
+          onNext={() => setDailyModal(i => Math.min(DAILY_STACK_MODALS.length - 1, i + 1))}
+          hasPrev={dailyModal > 0}
+          hasNext={dailyModal < DAILY_STACK_MODALS.length - 1}
+          total={DAILY_STACK_MODALS.length}
+          idx={dailyModal}
+        />
+      )}
       {phaseModal !== null && (
         <CardModal
           item={PHASE_MODALS[phaseModal]}

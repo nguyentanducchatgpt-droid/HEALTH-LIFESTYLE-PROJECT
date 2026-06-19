@@ -232,6 +232,222 @@ const TEMPLATES = [
   ]},
 ];
 
+const TIP_MODALS = [
+  {
+    icon: '🕐', color: COLOR, rgb: RGB,
+    modalTitle: 'Thời Điểm Tốt Nhất — Sáng Sớm & Trước Ngủ',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cortisol Awakening Response (CAR): cortisol tăng 50–100% trong 30 phút đầu sau thức dậy — đỉnh tự nhiên của alertness và cognitive clarity. Buổi sáng sớm cũng có theta-alpha transition (não vừa ra khỏi ngủ) — ideal for reflective, creative writing.',
+    detail: 'Có hai "cửa sổ" sinh lý tối ưu cho journaling: sáng sớm (cognitive peak + fresh perspective) và trước ngủ (cognitive offloading + sleep preparation). Cả hai đều có neurological reasons cụ thể — không phải mê tín.',
+    details: [
+      'Sáng sớm — Cortisol Awakening Response: Cortisol tăng tự nhiên 30–45 phút sau thức dậy (CAR). Đây là peak tự nhiên của working memory, executive function và creative thinking. Viết nhật ký trong window này capture clarity trước khi daily stress và stimuli (social media, email) "pollute" perspective.',
+      'Sáng sớm — Theta waves transition: Khi thức dậy, não đang trong theta-alpha transition (4–12 Hz) — trạng thái giữa ngủ và tỉnh hoàn toàn. Nghiên cứu creativity: theta state liên quan đến divergent thinking, "aha moments" và free association. Morning pages (Julia Cameron) khai thác chính window này.',
+      'Trước ngủ — Cognitive offloading: Viết nhật ký trước ngủ externalize "open loops" — những việc chưa xong, lo lắng, unresolved thoughts. Scullin et al. (2018): viết to-do list cụ thể trước ngủ giảm sleep onset time 9 phút. Não được signal "đã ghi lại = an toàn để buông."',
+      'Trước ngủ — Memory consolidation: Memories được consolidate trong ngủ (hippocampal replay trong slow-wave sleep). Viết về ngày trước ngủ encode experiences vào long-term memory tốt hơn. "Học mà không ôn = quên"; viết về ngày = brief review trước consolidation window.',
+      'Tránh: Ngay sau ăn nặng (tiêu hóa compete với cognitive function), sau intense exercise (cortisol còn cao), khi quá mệt (quality giảm). Không có "sai" nếu không thể theo thời điểm ideal — nhưng consistent timing giúp habit formation qua context-dependent memory.',
+      'Implementation: Set specific time anchor — "Khi tôi pha cà phê sáng, tôi viết nhật ký" hoặc "Khi tôi nằm xuống giường, tôi viết 3 câu." Time + context anchor mạnh hơn chỉ "mỗi ngày." Fogg: anchor behavior vào sensory cue (mùi cà phê, cảm giác nằm xuống) tạo automatic trigger.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Cortisol Peak', note: 'Sáng: +50–100% cortisol = clarity và cognitive peak' },
+      { icon: '🌊', label: 'Theta-Alpha State', note: 'Sáng sớm: creative thinking và free association tốt nhất' },
+      { icon: '😴', label: 'Sleep Onset -9 Phút', note: 'Tối: viết to-do list → ngủ nhanh hơn (Scullin 2018)' },
+      { icon: '🧠', label: 'Memory Consolidation', note: 'Tối: viết ngày → hippocampus encode tốt hơn trong ngủ' },
+    ],
+  },
+  {
+    icon: '✏️', color: COLOR, rgb: RGB,
+    modalTitle: 'Viết Tay — Handwriting & Neural Encoding',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Van der Meer & Van der Weel (2023, Frontiers in Psychology): handwriting kích hoạt neural networks rộng và phức tạp hơn typing đáng kể — motor cortex, somatosensory, visual processing và language areas cùng hoạt động. "Handwriting is brain training, typing is not."',
+    detail: 'Handwriting slow pace buộc não phải process, summarize và synthesize information — không thể viết tay nhanh bằng nói hay gõ phím. Chính sự "chậm chạp" này là advantage: deeper encoding, better understanding, và more reflective thinking.',
+    details: [
+      'Motor-cognitive coupling: Mỗi chữ viết tay = unique motor program (sequence of muscle movements). Neural circuits cho handwriting bao gồm cerebellum (motor coordination), basal ganglia (sequence learning), và primary motor cortex — tất cả kết nối với language và memory areas. Typing = chỉ nhấn phím giống nhau.',
+      'Encoding và recall: Mueller & Oppenheimer (2014, Psychological Science): sinh viên ghi chú tay nhớ và hiểu bài tốt hơn ghi chú laptop dù laptop nhiều thông tin hơn. Reason: viết tay requires paraphrase và synthesis (generative processing), typing enables verbatim recording (shallow processing).',
+      'Slow writing = deeper reflection: Journaling speed tự nhiên slower khi viết tay → more time for reflection between sentences. "Writing is thinking made visible" — tốc độ chậm cho phép thoughts fully form trước khi được externalized, thay vì stream-of-consciousness unprocessed.',
+      'Digital distraction elimination: Khi viết tay, không có notifications, no autocomplete, no ability to "just quickly check" something. Attention không bị fragmented. Flow state (Csikszentmihalyi) dễ đạt hơn với analog medium vì zero distraction.',
+      'Tangible artifact: Nhật ký vật lý tạo tangible object — có thể cầm, lật lại, thấy progress vật lý qua nhiều cuốn. Psychological studies: tangible goals và artifacts tạo commitment stronger than digital. "Seeing the stack of completed journals" là visual motivator khác với scrolling through digital notes.',
+      'Nếu phải dùng digital: Apps như Bear, Day One, hoặc Obsidian (offline, no social) là better than social-connected apps. Block notifications khi viết. Đặt phone ở chế độ Do Not Disturb. Dù không bằng tay, digital với intent và focus tốt hơn handwriting mà distracted.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Neural Network Rộng', note: 'Handwriting kích hoạt nhiều brain areas hơn typing' },
+      { icon: '💾', label: 'Deeper Encoding', note: 'Mueller 2014: viết tay → nhớ và hiểu tốt hơn laptop' },
+      { icon: '🔇', label: 'Zero Distraction', note: 'Không notifications, không autocomplete, không check' },
+      { icon: '📚', label: 'Tangible Progress', note: 'Stack of journals = visual motivator không thể clone' },
+    ],
+  },
+  {
+    icon: '⏱️', color: COLOR, rgb: RGB,
+    modalTitle: '5–10 Phút Mỗi Ngày — Minimum Effective Dose',
+    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b6f6c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Perfectionism là nguyên nhân #1 của journaling failure. "Phải viết đủ, phải hay, phải phân tích sâu" → skip khi không có thời gian/energy. MED principle: 5 phút consistent > 30 phút một lần/tuần. Brain builds neural pathway qua repetition, không qua duration.',
+    detail: 'Nghiên cứu habit formation (Lally et al., 2010): habits take 18–254 ngày để automatic, trung bình 66 ngày. Critical factor: frequency của repetition, không phải duration. Mỗi lần viết — dù 2 phút — củng cố habit neural pathway. Skip một ngày làm yếu pathway đó.',
+    details: [
+      'MED (Minimum Effective Dose): Concept từ Timothy Ferriss/pharmacology — lượng tối thiểu để có tác dụng mong muốn. Trong journaling: 5 phút đủ để activate affect labeling, cognitive offloading và gratitude neural networks. Hơn 5 phút tốt hơn, nhưng 5 phút >> 0 phút.',
+      'Perfectionism trap: "Nếu không viết đủ tốt, thôi không viết" là cognitive distortion kinh điển — all-or-nothing thinking. Journaling không có grading system. A messy, fragmented 3 phút có therapeutic value. A "perfect" journal entry không tồn tại vì không có tiêu chuẩn.',
+      'Habit formation — frequency > duration: Lally et al. (2010, EJSP): nghiên cứu 12 tuần về habit formation. Daily repetition là variable quan trọng nhất. Missing one day occasionally không phải disaster — nhưng missing more than 2 consecutive days có correlation mạnh với permanent abandonment.',
+      'Energy-based approach: Hôm nào energy cao → viết lâu hơn, sâu hơn. Hôm nào kiệt sức → 3 câu siêu ngắn. "Điều chỉnh theo năng lượng, không theo kế hoạch cứng" align với natural ultradian rhythms (90 phút cycle của energy). Forcing khi low energy tạo negative association với habit.',
+      '"Done is better than perfect" cho journaling: Research on self-regulation: người đặt "flexible" goals (process-oriented, not outcome-oriented) có better long-term adherence than people with rigid "perfect" standards. "Tôi sẽ viết mỗi ngày" tốt hơn "Tôi sẽ viết 1000 từ mỗi ngày."',
+      'Timer method: Đặt timer 5 phút và cam kết viết cho đến khi timer kêu. Người thường viết vượt quá 5 phút khi đã bắt đầu (Zeigarnik: khi đã bắt đầu, não muốn hoàn thành). Timer eliminates decision fatigue về "khi nào dừng" và giảm start barrier.',
+    ],
+    points: [
+      { icon: '💊', label: 'Minimum Effective Dose', note: '5 phút kích hoạt đủ neural mechanisms quan trọng' },
+      { icon: '🔄', label: 'Frequency > Duration', note: 'Lally 2010: daily practice builds pathway, không phải length' },
+      { icon: '🚫', label: 'Anti-Perfectionism', note: 'Messy 3 phút > đợi "có thời gian" và không bao giờ viết' },
+      { icon: '⏲️', label: 'Timer Method', note: 'Set 5 phút → thường vượt quá, Zeigarnik effect kicks in' },
+    ],
+  },
+  {
+    icon: '🚫', color: COLOR, rgb: RGB,
+    modalTitle: 'Không Chỉnh Sửa, Không Phán Xét — Free Writing & Inner Critic',
+    img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Inner critic (Tiếng nói phán xét nội tâm) là sản phẩm của prefrontal cortex kiểm soát quá mức. Khi viết và ngay lập tức edit/judge, PFC interrupt raw emotional processing — giảm therapeutic value của writing. "Write drunk, edit sober" (Hemingway) — không phải về rượu, mà về states.',
+    detail: 'Free writing (Elbow, 1973) là kỹ thuật viết không dừng, không sửa trong thời gian nhất định. Khi inner critic bị bypass, material từ subconscious và emotional processing center (limbic system) có thể surface — những insights mà rational, editing mind thường suppress.',
+    details: [
+      'Inner critic và Superego: Freud mô tả Superego là phần kiểm soát, phán xét và censoring của psyche. Trong viết nhật ký, inner critic là Superego hoạt động — "Câu này không hay", "Điều này nghe sẽ... weird", "Nếu ai đọc được...". Censor này block authentic expression và emotional processing.',
+      'Free writing mechanics: Peter Elbow (Writing Without Teachers, 1973): viết liên tục, không dừng, không sửa lỗi chính tả, không xóa. Nếu không biết viết gì, viết "tôi không biết viết gì" cho đến khi material xuất hiện. Pen không rời giấy. Rule này bypass inner critic bằng cách không để nó interrupt.',
+      'Stream of consciousness và access: Julia Cameron (The Artist\'s Way): "Morning Pages" là 3 trang viết tay, free writing, ngay sau thức dậy — không edit, không re-read. Mục tiêu: access subconscious material trước rational mind "wake up fully." Nhiều people report unexpected insights và emotional releases.',
+      'Judgment và cortisol: Khi lo lắng bị phán xét (ngay cả từ bản thân), cortisol tăng và PFC hoạt động ở defensive mode — giảm emotional authenticity. "Nhật ký là để trung thực, không phải để hay" là permission structure quan trọng. Authenticity trong viết correlates với therapeutic outcomes.',
+      'Không re-read ngay: Re-reading immediately after writing triggers editorial mode — tend to judge, edit, want to change. Allow written material to "settle" before reading. Many journalers follow "write, close, read the next morning" rule. Time distance creates perspective.',
+      'Grammar và spelling là irrelevant: Journaling không phải essay — perfect grammar là distraction. Khi brain dùng energy để correct spelling, nó không dùng energy cho emotional processing. "cảm giác mình mệt waaaa, không hiểu sao" valid và useful. "Tôi cảm thấy mệt mỏi không rõ nguyên nhân" không ích gì hơn.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Bypass Inner Critic', note: 'Free writing ngắt censor của PFC → subconscious surfaces' },
+      { icon: '🌊', label: 'Stream of Consciousness', note: 'Cameron: Morning Pages — 3 trang không chỉnh, không đọc lại' },
+      { icon: '✍️', label: 'Pen Không Rời Giấy', note: 'Elbow 1973: viết liên tục = momentum vượt qua resistance' },
+      { icon: '😌', label: 'Authenticity > Grammar', note: 'Không phán xét → cortisol thấp → processing sâu hơn' },
+    ],
+  },
+  {
+    icon: '🔒', color: COLOR, rgb: RGB,
+    modalTitle: 'Nhật Ký Riêng Tư — Disclosure Inhibition & Safe Space',
+    img: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Pennebaker\'s Disclosure Inhibition Theory: giữ bí mật và ức chế disclosure (không nói ra) tiêu tốn cognitive và physiological energy liên tục — tương tự giữ muscle contracted. Long-term inhibition = chronic stress response, immune suppression, và higher illness rates. Viết ra = release inhibition.',
+    detail: 'Khi biết nhật ký là riêng tư, người viết có authentic disclosure rate cao hơn — viết thứ họ không nói với ai. Chính authentic disclosure này (không phải "viết hay") tạo therapeutic effect. "Audience of zero" paradoxically creates deeper honest expression.',
+    details: [
+      'Disclosure Inhibition Theory: Pennebaker (1985): người giữ secrets và không thể disclose experiences stressful có higher health problems, more doctor visits, và lower immune function. Physiological work of inhibition = chronic low-grade stress response. Journaling là safe disclosure — không cần audience.',
+      '"Audience of zero" effect: Khi viết cho người đọc (blog, diary shared), writing becomes performance — chọn lọc, censor, curate. Khi viết chỉ cho mình, không có social audience → authentic expression possible. Người viết nhật ký private thường disclose deeper material than shared writing.',
+      'Safety và psychological containment: Nhật ký vật lý hoặc private digital space tạo "contained" environment cho difficult emotions. Containment (concept từ Bion, psychoanalysis) cho phép hold intense feelings trong bounded space — không overwhelm, không permanence tách biệt khỏi life. Emotions được "held" rồi processed.',
+      'Không cần share, không cần validate: Trong social media culture, nhiều người share để get validation (likes, comments). Nhật ký không cần validation — đây là một dạng self-sufficiency trong emotional processing. Khả năng validate bản thân (self-validation) là sign of emotional maturity và security.',
+      'Destroy or keep: Nhiều người lo "nếu mình chết, ai đọc nhật ký?" hoặc "nếu bị tìm thấy?" Giải pháp: destroy regularly (đốt, cắt nhỏ), dùng private encrypted digital (Day One với passcode), hoặc accept rằng context-stripped journal entries không biểu đạt đúng mình. Sợ bị đọc = censor = less effective.',
+      'Therapeutic writing vs. journaling: Pennebaker protocol (expressive writing) yêu cầu người viết destroy paper after writing — remove concern về audience hoàn toàn. Nhiều therapists dùng protocol này: write for 20 min, then shred. Effect size significant ngay cả khi không keep journal.',
+    ],
+    points: [
+      { icon: '🔓', label: 'Release Inhibition', note: 'Pennebaker: giữ secrets = chronic stress, viết ra = release' },
+      { icon: '🎭', label: 'Audience of Zero', note: 'Không có người đọc → authentic disclosure tự nhiên hơn' },
+      { icon: '🫂', label: 'Psychological Containment', note: 'Safe space cho emotions khó — held, not suppressed' },
+      { icon: '🗑️', label: 'Destroy = More Free', note: 'Không lo bị đọc → viết thật hơn → therapeutic hơn' },
+    ],
+  },
+  {
+    icon: '📈', color: COLOR, rgb: RGB,
+    modalTitle: 'Đọc Lại Sau 7 Ngày — Pattern Recognition & Narrative Review',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Self-tracking và periodic review là core của Quantified Self movement và behavior change science. Đọc lại journal sau 7 ngày tạo "second-order observation" — quan sát bản thân đang quan sát — highest level của self-awareness theo Gregory Bateson.',
+    detail: 'Khi viết, bạn đang capture real-time experience. Khi đọc lại, bạn đang observe that experience từ temporal distance — một người khác nhìn vào version của bạn 7 ngày trước. Khoảng cách thời gian này tạo perspective không thể có trong khoảnh khắc.',
+    details: [
+      'Pattern recognition qua time: Một entry đơn lẻ = data point. Bảy entries = pattern. "Thứ Hai luôn tệ nhất" "Mình hay stress sau khi gặp X" "Mình ăn nhiều hơn khi cô đơn" — những patterns này chỉ visible khi nhìn lại nhiều ngày, không thể thấy in-the-moment. Self-knowledge qua patterns > introspection đơn thuần.',
+      'Temporal distancing và perspective: Kross et al. (2014): temporal distancing ("tôi 7 ngày trước") giống như spatial distancing — tạo self-compassionate perspective. Đọc lại lo lắng cũ thường giải phóng: "ồ, điều đó đã tự giải quyết" hoặc "điều đó không quan trọng bằng mình nghĩ lúc đó."',
+      'Evidence-based self-awareness: Nhiều người có inaccurate self-perception — overestimate stable traits, underestimate situational factors. Journaling review cung cấp empirical evidence về actual behavior và feelings, không phải self-concept. "Mình nghĩ mình không bao giờ lo lắng" vs "7 entries, 5 cái đề cập lo lắng."',
+      'Growth tracking: Đọc lại journal từ 1 tháng hoặc 1 năm trước thường reveal growth mà không thể thấy in real-time (change blindness — mắt không thấy slow changes). "Mình đã lo lắng điều này nhiều thế — bây giờ không còn lo nữa" = direct evidence của growth.',
+      'Weekly review practice: GTD (Getting Things Done — David Allen) và nhiều productivity systems đề xuất weekly review. Áp dụng cho journaling: Sunday evening đọc lại tuần qua + viết reflection ngắn (top 3 themes? top 1 lesson?). Synthesis brief này là metacognitive practice có giá trị cao.',
+      'Avoid over-analysis: Đọc lại để observe, không phải để judge. "Interesting, mình đã cảm thấy thế này" — not "Mình thật idiotic khi lo điều đó." Attitude: curious observer, không phải critic. Nếu đọc lại gây ra distress (thấy tệ hơn), reduce frequency hoặc discuss với mental health professional.',
+    ],
+    points: [
+      { icon: '🔭', label: 'Second-Order Observation', note: 'Nhìn bản thân nhìn chính mình — highest self-awareness' },
+      { icon: '📊', label: 'Patterns > Snapshots', note: '7 entries = pattern; 1 entry = chỉ là một ngày' },
+      { icon: '⏳', label: 'Temporal Distancing', note: 'Kross: đọc lại tạo compassion và perspective tự nhiên' },
+      { icon: '📈', label: 'Growth Evidence', note: 'Change blindness fix: proof bạn đã thay đổi' },
+    ],
+  },
+];
+
+const ROADMAP_MODALS = [
+  {
+    icon: '🌱', color: COLOR, rgb: RGB,
+    modalTitle: 'Tuần 1 — Xây Nền Móng Habit',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Habit formation research (Lally et al.): tuần đầu là "pain period" — motivation cao nhưng automaticity thấp, cần most willpower. Bí quyết: giảm friction tối đa (bút + sổ sẵn ở gần giường), anchor vào ritual cố định, và không đặt kỳ vọng về quality.',
+    detail: 'Tuần 1 không phải về viết hay hay sâu — chỉ về viết. Mục tiêu duy nhất: 7/7 ngày có ít nhất 3 dòng gì đó. Không miss. Bất kỳ miss nào trong tuần đầu có correlation cao với permanent abandonment (habit không được establish đủ để survive interruption).',
+    details: [
+      'Tại sao chỉ "Nhật Ký 5 Dòng": 5 câu có structure rõ ràng → không cần think "viết gì hôm nay." Decision fatigue là enemy của new habits. Khi template có sẵn, cognitive load gần bằng 0 — chỉ cần ngồi xuống và điền vào. Dễ hơn nhiều so với "tự do viết."',
+      'Friction reduction: Bút và sổ để ngay trên đầu giường hoặc bàn làm việc — thấy ngay, lấy ngay. Không cần mở tủ, không cần tìm. Fogg: mỗi extra step trong routine là potential dropout point. "2-minute rule" — nếu mất < 2 phút để prepare, không có excuse nào valid.',
+      'Anchor và cue: Chọn một anchor cụ thể: "Sau khi đánh răng tối → viết nhật ký." Anchor phải là behavior ĐANG có sẵn, stable, và xảy ra daily. Sensory cue mạnh hơn time cue — "khi tôi ngồi vào bàn uống cà phê" rõ ràng hơn "lúc 7 giờ sáng."',
+      'Imperfect is OK — missing is not: Ngày viết 2 câu vì quá mệt = success. Ngày viết "hôm nay tôi không muốn viết gì" = success. Ngày không viết = only failure. Habit threshold không phải về quality trong tuần đầu — về unbroken chain. "Don\'t break the chain" (Seinfeld strategy).',
+      'Social accountability (optional): Tell one trusted person about journaling goal hoặc use habit tracker app (Streaks, Habitica). Commitment device cho tuần đầu — not needed long-term once habit established, but helpful while neural pathway being built.',
+      'Week 1 milestone: Cuối tuần 1, nếu đã viết 7/7, bạn đã pass critical threshold. Research: người complete tuần đầu của new habit có significantly higher long-term adherence. Celebrate nhỏ — nhận ra mình đã làm điều quan trọng.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Chain Không Đứt', note: '7/7 ngày — miss bất kỳ ngày nào = nguy cơ cao bỏ luôn' },
+      { icon: '⚡', label: 'Zero Decision', note: 'Template có sẵn = không phải nghĩ "viết gì" → just do it' },
+      { icon: '🪝', label: 'Anchor Behavior', note: 'Gắn với ritual đã có — không cần remember or plan' },
+      { icon: '✅', label: 'Quality Không Quan Trọng', note: 'Tuần 1: chỉ cần viết gì đó, bất kể hay hay dở' },
+    ],
+  },
+  {
+    icon: '🌿', color: COLOR, rgb: RGB,
+    modalTitle: 'Tuần 2 — Thêm Nhật Ký Cảm Xúc Khi Có Sự Kiện',
+    img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tuần 2: habit đã có đủ inertia để survive với addition của complexity mới. Cơ chế "progressive overload" từ strength training áp dụng cho habit: tăng difficulty khi đã master previous level. Nhật Ký Cảm Xúc không thay thế 5 Dòng — chỉ thêm vào khi có stress event.',
+    detail: '"Reactive journaling" — chỉ dùng Nhật Ký Cảm Xúc khi sự kiện xảy ra — là approach thực tế nhất. Không cần làm mỗi ngày, không cần force nếu không có gì để process. Đây là on-demand tool cho stress events, không phải daily obligation thêm.',
+    details: [
+      'Trigger-based practice: Nhật Ký Cảm Xúc hoạt động tốt nhất khi có specific trigger — argument, bad news, sudden anxiety, sau cuộc họp căng thẳng. Implementation intention: "Khi tôi cảm thấy cảm xúc mạnh (>6/10), tôi sẽ mở nhật ký và viết 5 câu." If-then rule tạo automatic response.',
+      'Hot vs cool cognition: "Hot" cognition = trong lúc cảm xúc mạnh, harder to process rationally. Viết trong "hot" state captures raw emotion. Sau đó đọc lại ở "cool" state tạo insight. Không cần phân tích khi đang viết — chỉ describe experience. Analysis comes later.',
+      'Stacking với Nhật Ký 5 Dòng: Những ngày có stress event → viết cả hai (5 Dòng + Cảm Xúc). Những ngày không có event đặc biệt → chỉ 5 Dòng. Total time on stress days: 10–15 phút. No stress days: 5 phút. Không bao giờ skip 5 Dòng vì "đã viết Cảm Xúc".',
+      'Emotional vocabulary expansion: Tuần 2 là cơ hội để expand emotional granularity. Thay vì "tệ" → phân biệt: thất vọng, bị phản bội, cô đơn, lo lắng, kiệt sức, chán nản. List cảm xúc cụ thể (Feelings Wheel của Dr. Gloria Willcox) có ích. Granularity tăng = regulation tốt hơn.',
+      'Notice without fix: Nhiều người viết nhật ký với intention "fix" cảm xúc — không phải lúc nào cũng cần. Đôi khi mục tiêu chỉ là witness và acknowledge. "Tôi đang cảm thấy buồn. Đó là thật." — không cần giải quyết ngay. Witnessing without judgment already has therapeutic effect.',
+      'Pattern từ tuần 2: Cuối tuần 2, đọc lại cả 2 tuần. Stress events có pattern không? Cùng người? Cùng loại situation? Cùng time of day/week? Early pattern recognition này là payoff của consistent practice.',
+    ],
+    points: [
+      { icon: '🎯', label: 'If-Then Rule', note: 'Cảm xúc mạnh >6/10 → tự động mở Nhật Ký Cảm Xúc' },
+      { icon: '🌡️', label: 'Hot vs Cool', note: 'Viết khi hot → đọc lại khi cool = insight xuất hiện' },
+      { icon: '🎨', label: 'Emotional Granularity', note: 'Tuần 2: học phân biệt cảm xúc chi tiết hơn' },
+      { icon: '👁️', label: 'Witness, Not Fix', note: 'Acknowledge cảm xúc đã có value — không cần giải quyết ngay' },
+    ],
+  },
+  {
+    icon: '🌲', color: COLOR, rgb: RGB,
+    modalTitle: 'Tuần 3 — Thêm Nhật Ký Ăn Uống Cảm Xúc',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Pillar B connection: Nhật Ký Ăn Uống Cảm Xúc là bridge giữa Trụ Cột D (Tâm trí) và Trụ Cột B (Dinh dưỡng). Emotional eating thường không được nhận ra vì xảy ra automatic, không có awareness. 3 tuần journaling practice đã tạo enough interoceptive awareness để notice patterns này.',
+    detail: 'Tuần 3 chỉ thêm Nhật Ký Ăn Uống nếu có pattern emotional eating — không phải ai cũng cần. Nếu ăn uống không phải area of difficulty, có thể skip hoặc replace bằng nhật ký khác (vd: Nhật Ký Ngày Thất Bại). Self-directed program, không phải rigid protocol.',
+    details: [
+      'Interoceptive readiness: Sau 2 tuần consistent journaling, interoceptive awareness đã tăng. Điều này make Nhật Ký Ăn Uống more effective — bạn đã practice "notice what I\'m feeling" và có thể apply it to eating context. Không nên bắt đầu ăn uống journaling từ ngày 1 vì foundation awareness chưa có.',
+      'Not calorie counting: Hoàn toàn khác với food diary/calorie logging. Không có "foods to avoid," không có gram counting, không có judgment về thứ đã ăn. Chỉ là awareness exercise: what was I feeling? what did I actually need? — không phải nutritional analysis.',
+      'HALT in eating context: Hungry (đói thật?) — Angry/Anxious (bực hay lo?) — Lonely (cô đơn?) — Tired (kiệt sức?). Ba cái sau thường trigger eating khi không đói thật. Nhật Ký Ăn Uống helps identify which HALT state is driving eating và redirect đến appropriate response.',
+      'Compassionate tracking: Nếu ăn "vì cảm xúc" và ghi vào nhật ký — không tự trách. Ghi nhận, tò mò, không judge. "Tôi đã ăn cả hộp kem vì buồn và cô đơn" là valuable information, không phải moral failure. Self-compassion in this context actually predicts better eating behavior long-term.',
+      'Connection với Trụ Cột B tools: Combine với hunger scale (1–10) từ Mindful Eating section trong Pillar B. "Câu 2: Tôi có đói thật không? (0–10)" trong template là TDEE/hunger awareness tool. Người dùng cả hai resources sẽ thấy chúng reinforce nhau.',
+      'When to skip this step: Nếu có history của eating disorders (anorexia, bulimia, orthorexia), Nhật Ký Ăn Uống có thể counter-productive — consult với mental health professional trước. Awareness tools designed for general population không phải EDs recovery tools.',
+    ],
+    points: [
+      { icon: '🌉', label: 'Pillar D + B Bridge', note: 'Kết nối tâm trí với ăn uống — awareness transfer' },
+      { icon: '🚫', label: 'Không Đếm Calories', note: 'Chỉ emotions và needs — không phải nutritional tracking' },
+      { icon: '🛑', label: 'HALT Check', note: 'Hungry/Angry/Lonely/Tired — identify real need trước khi ăn' },
+      { icon: '💜', label: 'Self-Compassion First', note: 'Emotional eating = information, không phải moral failure' },
+    ],
+  },
+  {
+    icon: '🏔️', color: COLOR, rgb: RGB,
+    modalTitle: 'Tuần 4 — Review, Personalize & Build Long-Term System',
+    img: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Meta-learning: học về cách mình học. Tuần 4 không phải về adding more — mà về stepping back và asking "điều gì đang hoạt động tốt nhất với mình?" Research on self-determination: intrinsic motivation (do mình chọn, vì mình thấy value) sustains habit long-term. Extrinsic protocols không sustain.',
+    detail: 'Tuần 4 là "personalization phase" — bạn đã có 3 tuần data về bản thân. Đọc lại toàn bộ, nhận ra patterns, và thiết kế system làm việc cho YOUR life — không phải system hoàn hảo theo lý thuyết. Best journaling system = system bạn thực sự duy trì được.',
+    details: [
+      'Monthly review protocol: Đọc lại tất cả entries từ 3 tuần. Ghi chú: themes lặp lại là gì? emotions nào xuất hiện nhiều nhất? triggers phổ biến? điều gì đã tốt hơn? điều gì vẫn stuck? — không phải grading, mà là inquiry. Câu hỏi: "Tôi đã học được gì về bản thân mình?"',
+      'Template optimization: Sau 3 tuần, nhận ra template nào resonate nhất. Có người thấy 5 Dòng đủ mãi mãi. Có người chuyển hoàn toàn sang Nhật Ký Cảm Xúc. Có người kết hợp custom. Personalization = higher adherence. Rigidly following một template khi nó không work = recipe for quitting.',
+      'Reduce hay increase: Nếu thấy 5 phút quá ngắn — tự nhiên extend. Nếu thấy 3 tuần quá nhiều commitment — simplify xuống 1 template 3 phút. Không phải "mình thất bại với lộ trình" — mà là "mình biết mình cần gì." Self-knowledge là outcome, không phải rule-following.',
+      'Long-term sustainability cues: Questions to ask: Có gần giường hay không? Có phải search cho bút không? Có timer hay không? Có consistent anchor chưa? Có reward (dù nhỏ) sau khi viết không? Friction thấp, context strong, reward present = habit sustainable beyond 4 weeks.',
+      'Annual reflection (bonus): Sau 3–6 tháng, add một buổi annual/quarterly review dài hơn — 30–60 phút đọc lại journals từ nhiều tháng. Many journalers report này là most valuable practice: seeing growth over months, không phải days. "Mình của 6 tháng trước lo lắng điều này... bây giờ mình đã qua được."',
+      'Sharing decision: Chia sẻ insights từ journal (không phải entries) với therapist, trusted friend, hay accountability partner có thể amplify value. Không cần share entries raw. Synthesized insights ("tôi nhận ra mình stress nhất khi...") là output tốt từ journaling practice.',
+    ],
+    points: [
+      { icon: '🔭', label: 'Meta-Learning', note: 'Học về cách mình học — highest level reflection' },
+      { icon: '🎨', label: 'Personalization', note: 'Best system = system bạn thực sự duy trì được' },
+      { icon: '📅', label: 'Annual Review', note: '6 tháng sau: xem growth mà không thể thấy ngày-qua-ngày' },
+      { icon: '🌱', label: 'Intrinsic Motivation', note: 'Tự chọn, tự thấy value → sustain long-term, không phải protocol' },
+    ],
+  },
+];
+
 const TIPS = [
   { icon: '🕐', tip: 'Sáng sớm hoặc trước khi ngủ là thời điểm tốt nhất' },
   { icon: '✏️', tip: 'Viết tay hiệu quả hơn gõ phím — kết nối não bộ sâu hơn' },
@@ -353,6 +569,8 @@ export default function MindJournalingPage() {
   const [active, setActive] = useState('daily');
   const [benefitModal, setBenefitModal] = useState(null);
   const [templateModal, setTemplateModal] = useState(null);
+  const [tipModal, setTipModal] = useState(null);
+  const [roadmapModal, setRoadmapModal] = useState(null);
   const tmpl = TEMPLATES.find(t => t.id === active);
   const tmplIdx = TEMPLATES.findIndex(t => t.id === active);
 
@@ -464,10 +682,14 @@ export default function MindJournalingPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẹo Để Duy Trì Thói Quen</h2>
         <p className="text-muted text-lg mb-6">Biến việc viết nhật ký thành nghi thức hằng ngày</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {TIPS.map(t => (
-            <div key={t.tip} className="flex items-start gap-3 rounded-xl border border-border bg-surface p-4">
+          {TIPS.map((t, i) => (
+            <div key={t.tip} className="group/tip flex items-start gap-3 rounded-xl border border-border bg-surface p-4 hover:border-pink-500/20 transition-colors cursor-pointer" onClick={() => setTipModal(i)}>
               <span className="text-2xl shrink-0">{t.icon}</span>
-              <p className="text-lg text-muted leading-relaxed">{t.tip}</p>
+              <div className="flex-1 flex items-start justify-between gap-2">
+                <p className="text-lg text-muted leading-relaxed">{t.tip}</p>
+                <span className="shrink-0 self-start text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/tip:opacity-100 transition-opacity"
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+              </div>
             </div>
           ))}
         </div>
@@ -476,17 +698,16 @@ export default function MindJournalingPage() {
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Lộ Trình 4 Tuần</h2>
         <div className="space-y-3">
-          {[
-            { w: 'Tuần 1', t: 'Nhật Ký 5 Dòng', d: 'Mỗi tối viết 5 dòng theo template cơ bản. Không cần dài, cần đều.' },
-            { w: 'Tuần 2', t: '+ Nhật Ký Cảm Xúc', d: 'Khi có sự kiện gây căng thẳng, thêm template cảm xúc vào.' },
-            { w: 'Tuần 3', t: '+ Nhật Ký Ăn Uống', d: 'Nếu ăn uống mất kiểm soát, thêm nhật ký ăn uống cảm xúc.' },
-            { w: 'Tuần 4', t: 'Nhìn Lại & Điều Chỉnh', d: 'Đọc lại 3 tuần. Nhận ra pattern. Chọn mẫu phù hợp nhất.' },
-          ].map((r, i) => (
-            <div key={i} className="flex gap-4 rounded-2xl border border-border bg-surface p-4">
-              <div className="shrink-0 w-20 text-base font-bold uppercase tracking-widest pt-0.5" style={{ color: COLOR }}>{r.w}</div>
-              <div>
-                <div className="font-semibold text-text mb-1">{r.t}</div>
-                <p className="text-muted text-lg">{r.d}</p>
+          {ROADMAP_MODALS.map((r, i) => (
+            <div key={i} className="group/roadmap flex gap-4 rounded-2xl border border-border bg-surface p-4 hover:border-pink-500/20 transition-colors cursor-pointer" onClick={() => setRoadmapModal(i)}>
+              <div className="shrink-0 w-20 text-base font-bold uppercase tracking-widest pt-0.5" style={{ color: COLOR }}>{['Tuần 1','Tuần 2','Tuần 3','Tuần 4'][i]}</div>
+              <div className="flex-1 flex items-start justify-between gap-2">
+                <div>
+                  <div className="font-semibold text-text mb-1">{r.modalTitle.split(' — ')[1] || r.modalTitle}</div>
+                  <p className="text-muted text-lg">{r.detail.split('.')[0]}.</p>
+                </div>
+                <span className="shrink-0 self-start text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/roadmap:opacity-100 transition-opacity mt-0.5"
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
               </div>
             </div>
           ))}
@@ -519,6 +740,30 @@ export default function MindJournalingPage() {
           hasNext={templateModal < TEMPLATE_MODALS.length - 1}
           total={TEMPLATE_MODALS.length}
           idx={templateModal}
+        />
+      )}
+      {tipModal !== null && (
+        <CardModal
+          item={TIP_MODALS[tipModal]}
+          onClose={() => setTipModal(null)}
+          onPrev={() => setTipModal(i => Math.max(0, i - 1))}
+          onNext={() => setTipModal(i => Math.min(TIP_MODALS.length - 1, i + 1))}
+          hasPrev={tipModal > 0}
+          hasNext={tipModal < TIP_MODALS.length - 1}
+          total={TIP_MODALS.length}
+          idx={tipModal}
+        />
+      )}
+      {roadmapModal !== null && (
+        <CardModal
+          item={ROADMAP_MODALS[roadmapModal]}
+          onClose={() => setRoadmapModal(null)}
+          onPrev={() => setRoadmapModal(i => Math.max(0, i - 1))}
+          onNext={() => setRoadmapModal(i => Math.min(ROADMAP_MODALS.length - 1, i + 1))}
+          hasPrev={roadmapModal > 0}
+          hasNext={roadmapModal < ROADMAP_MODALS.length - 1}
+          total={ROADMAP_MODALS.length}
+          idx={roadmapModal}
         />
       )}
     </div>

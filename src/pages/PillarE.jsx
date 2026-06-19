@@ -949,33 +949,138 @@ function TabE3() {
   );
 }
 
+const DISEASE_GROUPS = [
+  {
+    metric: 'Tim Mạch', freq: 'Phòng ngừa suốt đời', tip: '5 thay đổi lối sống giảm 80% nguy cơ tim mạch',
+    icon: '❤️', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=800&q=80&auto=format&fit=crop',
+    items: ['Kiểm soát huyết áp <130/80', 'Giảm muối, tăng rau xanh', 'Vận động 150ph/tuần', 'Không hút thuốc lá', 'Kiểm soát mỡ máu LDL'],
+    keyFact: 'Bệnh tim mạch là nguyên nhân tử vong số 1 toàn cầu — chiếm ~32% tổng số ca tử vong (WHO 2019). Tin tốt: 80% trường hợp có thể phòng ngừa bằng thay đổi lối sống. Kiểm soát 5 yếu tố — huyết áp, mỡ máu, đường huyết, cân nặng và hút thuốc — là cốt lõi phòng ngừa hiệu quả.',
+    detail: 'Bệnh tim mạch phát triển trong im lặng hàng chục năm trước khi gây ra nhồi máu cơ tim hay đột quỵ. Mảng xơ vữa tích tụ từ tuổi 20–30 và các yếu tố nguy cơ hoàn toàn có thể kiểm soát được ngay hôm nay với thay đổi lối sống đúng hướng.',
+    details: [
+      'Huyết áp <130/80 mmHg: tăng huyết áp làm tổn thương thành mạch, tạo điều kiện cho xơ vữa tích tụ. Mỗi 10 mmHg giảm huyết áp tâm thu giảm 20–30% nguy cơ đột quỵ và 15% nguy cơ nhồi máu cơ tim. Đo tại nhà (buổi sáng, trước ăn sáng, nghỉ 5 phút) chính xác hơn phòng khám.',
+      'Giảm muối <5g/ngày + tăng rau xanh: WHO khuyến nghị <5g muối/ngày (1 thìa cà phê). Rau xanh cung cấp kali (cân bằng natri), chất xơ hòa tan (giảm LDL) và folate (giảm homocysteine). Chế độ DASH giảm huyết áp hiệu quả tương đương thuốc nhẹ.',
+      'Vận động 150 phút moderate/tuần: tim cần được "tập luyện" như bắp thịt. Đi bộ nhanh, bơi lội, đạp xe đều hiệu quả. Meta-analysis (Cochrane 2011): tập thể dục giảm tử vong tim mạch 26%, nhồi máu tái phát 25%.',
+      'Không hút thuốc lá: thuốc lá gây co mạch, tăng đông máu, phá hủy nội mô mạch. Ngưng hút thuốc 1 năm → nguy cơ tim mạch giảm 50%; 15 năm → ngang người không bao giờ hút. Không có "số điếu an toàn" — ngay cả 1 điếu/ngày tăng 48% nguy cơ nhồi máu (BMJ 2018).',
+      'Kiểm soát LDL <100 mg/dL: LDL tích tụ trong thành mạch tạo mảng xơ vữa. Nếu thay đổi lối sống chưa đủ, statin an toàn và hiệu quả — giảm LDL 30–50%, giảm biến cố tim mạch 25–35%. Người đã có bệnh tim: LDL mục tiêu <70 mg/dL.',
+      'Ngủ đủ 7–9h + quản lý stress: cortisol mạn tính làm tăng huyết áp và tình trạng viêm toàn thân. Ngủ <6h tăng nguy cơ tim mạch 48% (meta-analysis SLEEP journal). Thiền và vận động là hai can thiệp stress hiệu quả nhất về tim mạch.',
+    ],
+    points: [
+      { icon: '📊', label: 'Đo huyết áp tại nhà', note: 'Buổi sáng, trước ăn — chính xác hơn đo tại phòng khám' },
+      { icon: '🚭', label: 'Ngưng thuốc lá ngay hôm nay', note: '1 năm ngưng → nguy cơ tim giảm 50% — không có liều an toàn' },
+      { icon: '🏃', label: '150 phút moderate/tuần', note: 'Chia 5 ngày × 30 phút — đi bộ nhanh đủ hiệu quả' },
+      { icon: '🧪', label: 'Mỡ máu 1–2 năm/lần', note: 'LDL <100 mg/dL — statin nếu lối sống chưa đạt mục tiêu' },
+    ],
+  },
+  {
+    metric: 'Chuyển Hóa', freq: 'Phòng ngừa tiểu đường & béo phì', tip: '5 thói quen kiểm soát đường huyết và cân nặng',
+    icon: '🍬', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    items: ['Giảm đường tinh chế, nước ngọt', 'Tăng chất xơ (25–38g/ngày)', 'Giảm cân nếu thừa cân', 'Tập sức mạnh 2–3x/tuần', 'Ngủ đủ 7–9h'],
+    keyFact: 'Hội chứng chuyển hóa (béo bụng + huyết áp cao + đường huyết cao + mỡ máu xấu) ảnh hưởng >25% người trưởng thành toàn cầu và tăng gấp 3 nguy cơ tim mạch, gấp 5 nguy cơ tiểu đường type 2. Tất cả thành phần đều cải thiện đáng kể bằng lối sống mà không cần thuốc trong giai đoạn sớm.',
+    detail: 'Đề kháng insulin là gốc rễ của hội chứng chuyển hóa — tế bào không phản ứng hiệu quả với insulin → đường huyết tăng → tụy tiết insulin nhiều hơn → cuối cùng kiệt sức → tiểu đường type 2. Toàn bộ vòng này có thể đảo ngược ở giai đoạn tiền tiểu đường.',
+    details: [
+      'Giảm đường tinh chế và nước ngọt: đường thêm vào (added sugar) >10% tổng calo làm tăng triglyceride, gan nhiễm mỡ và đề kháng insulin. Mục tiêu <25g đường thêm vào/ngày (WHO). Đọc nhãn thực phẩm — đường ẩn trong sốt cà chua, bánh mì, sữa chua có hương vị.',
+      'Chất xơ 25–38g/ngày: chất xơ hòa tan (đậu, yến mạch, táo, atiso) tạo gel làm chậm hấp thu đường và giảm LDL. Chất xơ không hòa tan (rau, ngũ cốc nguyên hạt) nuôi Bifidobacterium và Lactobacillus có lợi. Người Việt trung bình chỉ đạt 10–15g/ngày.',
+      'Giảm 5–10% cân nặng nếu thừa cân: DPP study (Diabetes Prevention Program): giảm 5–7% cân nặng + 150 phút vận động/tuần giảm 58% nguy cơ tiến triển từ tiền tiểu đường sang tiểu đường — hiệu quả gấp đôi metformin (31%).',
+      'Tập sức mạnh 2–3x/tuần: cơ bắp là "bể chứa glucose" lớn nhất cơ thể — cơ nhiều hơn = nhận glucose hiệu quả hơn kể cả không có insulin (GLUT4 translocation). Resistance training giảm HbA1c hiệu quả hơn aerobic đơn thuần trong kiểm soát đường huyết.',
+      'Ngủ đủ 7–9h: thiếu ngủ làm tăng ghrelin (hormone đói) và giảm leptin (hormone no) → ăn nhiều hơn 300–500 kcal/ngày mà không biết. Chỉ 2 tuần ngủ 5.5h → giảm độ nhạy insulin 25% (Annals of Internal Medicine 2010).',
+      'Kiểm soát stress mạn tính: cortisol cao → tăng đường huyết → tăng insulin → tích mỡ bụng visceral. Mỡ bụng (visceral fat) sản xuất adipokine gây viêm → tăng đề kháng insulin → vòng luẩn quẩn. Thiền + vận động đồng thời tấn công cả hai đầu vòng này.',
+    ],
+    points: [
+      { icon: '📏', label: 'Đo vòng eo mỗi tháng', note: 'Nam <90cm, nữ <80cm — mỡ bụng quan trọng hơn BMI tổng' },
+      { icon: '🥦', label: 'Thực phẩm nguyên chất ưu tiên', note: 'Ít chế biến = ít đường ẩn + nhiều chất xơ tự nhiên hơn' },
+      { icon: '💪', label: 'Squat + deadlift tốt hơn chỉ chạy bộ', note: 'Cơ bắp là "bể chứa glucose" — tập sức mạnh giảm đề kháng insulin tốt nhất' },
+      { icon: '🩸', label: 'Đường huyết đói + HbA1c mỗi năm', note: 'Phát hiện sớm tiền tiểu đường — giai đoạn còn đảo ngược được' },
+    ],
+  },
+  {
+    metric: 'Cơ Xương Khớp', freq: 'Phòng ngừa từ tuổi 30+', tip: '5 thói quen bảo vệ cơ xương khớp suốt đời',
+    icon: '🦴', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    items: ['Giãn cơ 5–10ph/ngày', 'Không ngồi quá 2h liên tục', 'Tập lõi (core) 2–3x/tuần', 'Ergonomics bàn làm việc', 'Tập thăng bằng nếu >50 tuổi'],
+    keyFact: 'Sarcopenia (mất cơ theo tuổi) bắt đầu từ 30 tuổi với tốc độ 3–8%/thập kỷ, tăng lên 15%/thập kỷ sau 60 tuổi. Viêm khớp ảnh hưởng >500 triệu người toàn cầu. Cả hai đều phòng ngừa và làm chậm tiến triển hiệu quả bằng vận động và dinh dưỡng đúng cách — không cần chờ đến khi có triệu chứng.',
+    detail: 'Hệ cơ xương khớp suy giảm theo tuổi là tất yếu — nhưng tốc độ suy giảm hoàn toàn kiểm soát được. Người tập luyện đều đặn ở tuổi 70 có thể có sức mạnh cơ và mật độ xương tương đương người ít vận động ở tuổi 40.',
+    details: [
+      'Giãn cơ 5–10ph/ngày: tính linh hoạt (flexibility) giảm theo tuổi nếu không duy trì. Giãn cơ dynamic trước tập (leg swing, arm circle) kích hoạt cơ và khớp. Giãn tĩnh sau tập (giữ 20–30 giây) tăng tầm vận động. Yoga và pilates là hệ thống hoàn chỉnh nhất cho flexibility + core.',
+      'Không ngồi quá 2h liên tục: ngồi lâu co rút cơ gấp hông (hip flexors), làm yếu cơ mông (glutes) và gây đau lưng dưới mạn tính. Đứng dậy đi 2–5 phút mỗi 1–2h. "Active sitting" (ngồi bóng, ghế ergonomic) không thay thế được việc đứng dậy di chuyển.',
+      'Tập lõi (core) 2–3x/tuần: core không chỉ là 6-pack mà gồm tất cả cơ bao quanh thân (transverse abdominis, multifidus, cơ sàn chậu). Plank, bird-dog, dead bug, Pallof press ổn định cột sống, giảm nguy cơ chấn thương khi nâng vật và hoạt động hàng ngày.',
+      '"Tech neck" và ergonomics: cúi đầu 60° nhìn điện thoại = 27kg áp lực lên đốt sống cổ (thay vì 5kg bình thường). Màn hình ngang tầm mắt, khuỷu tay 90°, lưng có điểm tựa, bàn chân phẳng sàn. Đầu tư một màn hình phụ tốt hơn vật lý trị liệu sau này.',
+      'Tập thăng bằng sau 50 tuổi: ngã là nguyên nhân hàng đầu thương tích nghiêm trọng ở người cao tuổi — 30% người >65 tuổi ngã ít nhất 1 lần/năm. Tập đứng một chân (30 giây/chân), tai chi, yoga cải thiện proprioception và phản xạ ngã — giảm 50% nguy cơ ngã (WHO data).',
+      'Canxi và vitamin D cho xương: canxi 1000–1200mg/ngày (sữa, rau lá xanh đậm, cá hộp có xương) + vitamin D 1500–2000 IU/ngày. Vitamin D cần thiết để hấp thu canxi — thiếu D dù đủ canxi vẫn loãng xương. Sau 50 tuổi: đo mật độ xương (DEXA) mỗi 2 năm để tầm soát loãng xương.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Đứng dậy mỗi 2h', note: '"Active breaks" 5 phút đủ reset cột sống và lưu lượng máu' },
+      { icon: '🧘', label: 'Core + flexibility 3x/tuần', note: 'Plank, bird-dog, giãn cơ hông — đầu tư tốt nhất cho tuổi trung niên' },
+      { icon: '🥛', label: 'Canxi + vitamin D đủ liều', note: '1000–1200mg canxi + 1500–2000 IU vitamin D/ngày từ tuổi 50' },
+      { icon: '⚖️', label: 'Tập sức mạnh giữ cơ theo tuổi', note: 'Sarcopenia bắt đầu 30 tuổi — resistance training đảo ngược được' },
+    ],
+  },
+  {
+    metric: 'Stress & Giấc Ngủ', freq: 'Hằng ngày — không thể bù đắp', tip: '5 thói quen phục hồi não bộ và hệ thần kinh',
+    icon: '🧠', color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    items: ['Ngủ 7–9h/đêm cố định giờ', 'Thiền/thở 5–10ph/ngày', 'Tắt màn hình 1h trước ngủ', 'Duy trì kết nối xã hội', 'Có ít nhất 1 hoạt động thư giãn'],
+    keyFact: 'Stress mạn tính và thiếu ngủ tạo ra vòng luẩn quẩn: cortisol cao làm khó ngủ, thiếu ngủ làm cortisol cao hơn. Cả hai đồng thời tăng nguy cơ tim mạch, tiểu đường, trầm cảm và suy giảm nhận thức — và cả hai đáp ứng tốt với cùng một tập hợp can thiệp đơn giản.',
+    detail: 'Não và hệ thần kinh không thể "hoạt động liên tục" như máy tính. Giấc ngủ là thời gian dọn dẹp độc chất não (glymphatic system), củng cố trí nhớ và cân bằng cảm xúc. Không thể bù giấc ngủ bằng cách ngủ nhiều cuối tuần.',
+    details: [
+      'Cố định giờ dậy 7 ngày/tuần: consistency của giờ ngủ/dậy quan trọng hơn tổng số giờ. "Social jetlag" (dậy muộn cuối tuần >1 giờ so với ngày thường) làm tăng nguy cơ béo phì, tim mạch và tâm trạng kém tuần tiếp theo. Một giờ dậy cố định là can thiệp đơn giản và mạnh nhất.',
+      'Thiền/thở 5–10 phút/ngày: box breathing (hít 4 giây – giữ 4 – thở 4 – giữ 4) kích hoạt parasympathetic ngay lập tức — nhịp tim và huyết áp giảm trong vài phút. Thiền mindfulness >8 tuần giảm kích thước amygdala và tăng grey matter vùng prefrontal cortex (Holzel et al. 2011, Harvard).',
+      'Tắt màn hình 1h trước ngủ: ánh sáng xanh từ điện thoại/máy tính ức chế melatonin 2–3 giờ và trễ giờ ngủ thiếp trung bình 30–40 phút. Nếu phải dùng thiết bị: bật Night Shift/Night Light + giảm độ sáng tối đa + đeo kính chặn ánh sáng xanh.',
+      'Kết nối xã hội chất lượng: cô đơn và cô lập xã hội có tác động sức khỏe tương đương hút 15 điếu thuốc/ngày (Holt-Lunstad 2015, BYU). Chất lượng quan hệ (1–2 người thật sự hiểu nhau) quan trọng hơn số lượng. Một cuộc trò chuyện thật giảm cortisol hiệu quả.',
+      '"Active rest" thay vì passive entertainment: đọc sách giấy, nấu ăn, làm vườn, âm nhạc, thủ công — não cần "playful mode" để tái tạo dopamine và serotonin. Ngược lại, scroll mạng xã hội và Netflix kích thích thụ động không cho não nghỉ ngơi thực sự, thường làm tăng lo âu và căng thẳng.',
+      'Vận động là can thiệp stress hiệu quả nhất: 30 phút moderate exercise → giảm cortisol, tăng BDNF (brain-derived neurotrophic factor — "phân bón cho não"), endorphin và serotonin. Hiệu quả ngay sau buổi tập (mood boost 4–6h) và tích lũy theo tuần. Meta-analysis: tập thể dục hiệu quả tương đương antidepressant nhẹ đến vừa.',
+    ],
+    points: [
+      { icon: '🛌', label: 'Cố định giờ dậy 7 ngày', note: 'Nhịp sinh học ổn định — quan trọng hơn giờ ngủ cụ thể' },
+      { icon: '🫁', label: 'Box breathing 4-4-4-4', note: 'Kích hoạt parasympathetic ngay — làm 3–4 vòng khi stress cao' },
+      { icon: '📵', label: 'Không màn hình 1h trước ngủ', note: 'Ánh sáng xanh delay melatonin 2–3h — Night Mode không đủ' },
+      { icon: '🏃', label: 'Vận động 30 phút = giảm stress ngay', note: 'Endorphin + BDNF — can thiệp stress nhanh và bền vững nhất' },
+    ],
+  },
+];
+
 function TabE4() {
-  const GROUPS = [
-    { icon: '❤️', t: 'Tim Mạch', c: '#ef4444', items: ['Kiểm soát huyết áp <130/80', 'Giảm muối, tăng rau xanh', 'Vận động 150ph/tuần', 'Không hút thuốc lá', 'Kiểm soát mỡ máu LDL'] },
-    { icon: '🍬', t: 'Chuyển Hóa', c: '#f59e0b', items: ['Giảm đường tinh chế, nước ngọt', 'Tăng chất xơ (25–38g/ngày)', 'Giảm cân nếu thừa cân', 'Tập sức mạnh 2–3x/tuần', 'Ngủ đủ 7–9h'] },
-    { icon: '🦴', t: 'Cơ Xương Khớp', c: '#10b981', items: ['Giãn cơ 5–10ph/ngày', 'Không ngồi quá 2h liên tục', 'Tập lõi (core) 2–3x/tuần', 'Ergonomics bàn làm việc', 'Tập thăng bằng nếu >50 tuổi'] },
-    { icon: '🧠', t: 'Stress & Giấc Ngủ', c: '#a855f7', items: ['Ngủ 7–9h/đêm cố định giờ', 'Thiền/thở 5–10ph/ngày', 'Tắt màn hình 1h trước ngủ', 'Duy trì kết nối xã hội', 'Có ít nhất 1 hoạt động thư giãn'] },
-  ];
+  const [groupModal, setGroupModal] = useState(null);
   return (
     <div className="space-y-4">
       <p className="text-base text-muted">Tập trung vào 4 nhóm bệnh quan trọng nhất trong cuộc sống hiện đại:</p>
+      <p className="text-xs text-muted opacity-60">Nhấp vào từng nhóm để xem chiến lược phòng ngừa chi tiết</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {GROUPS.map(g => (
-          <div key={g.t} className="rounded-2xl border border-border bg-surface/60 p-4">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">{g.icon}</span>
-              <span className="font-bold text-lg" style={{ color: g.c }}>{g.t}</span>
+        {DISEASE_GROUPS.map((g, i) => (
+          <div key={g.metric}
+            className="rounded-2xl border border-border bg-surface/60 p-4 cursor-pointer transition-all duration-200 hover:shadow-md"
+            onClick={() => setGroupModal(i)}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${g.rgb},0.45)`; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = ''; }}>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">{g.icon}</span>
+                <span className="font-bold text-lg" style={{ color: g.color }}>{g.metric}</span>
+              </div>
+              <span className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0"
+                style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>Chi tiết →</span>
             </div>
             <ul className="space-y-1.5">
               {g.items.map(it => (
                 <li key={it} className="flex items-center gap-2 text-base text-muted">
-                  <span className="w-1 h-1 rounded-full shrink-0" style={{ background: g.c }} />{it}
+                  <span className="w-1 h-1 rounded-full shrink-0" style={{ background: g.color }} />{it}
                 </li>
               ))}
             </ul>
           </div>
         ))}
       </div>
+      {groupModal !== null && (
+        <ScheduleModal
+          item={DISEASE_GROUPS[groupModal]}
+          idx={groupModal} total={DISEASE_GROUPS.length}
+          onClose={() => setGroupModal(null)}
+          onPrev={() => setGroupModal(i => Math.max(0, i - 1))}
+          onNext={() => setGroupModal(i => Math.min(DISEASE_GROUPS.length - 1, i + 1))}
+          hasPrev={groupModal > 0} hasNext={groupModal < DISEASE_GROUPS.length - 1}
+        />
+      )}
     </div>
   );
 }

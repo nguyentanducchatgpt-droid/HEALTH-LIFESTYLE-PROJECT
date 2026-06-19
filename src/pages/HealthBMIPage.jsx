@@ -253,6 +253,75 @@ function BMIModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   );
 }
 
+const TREND_ITEMS = [
+  {
+    num: '01', icon: '✅', color: '#10b981', rgb: '16,185,129',
+    t: 'Cân giảm ít nhưng vòng eo giảm 3–5cm',
+    n: '✓ Tiến triển tốt — mỡ bụng đang giảm',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vòng eo giảm 3–5cm trong khi cân không giảm nhiều là dấu hiệu tốt nhất: bạn đang mất mỡ nội tạng và tăng cơ cùng lúc — đây chính xác là mục tiêu của "body recomposition." Mỡ nội tạng giảm = giảm nguy cơ tim mạch, đái tháo đường, và cải thiện nhạy cảm insulin ngay cả khi cân không thay đổi.',
+    detail: 'Đây là kịch bản lý tưởng khi tập resistance training kết hợp ăn đủ protein. Cơ bắp (dày đặc hơn mỡ) thay thế mỡ nội tạng — cân nặng gần như không đổi nhưng tỷ lệ cơ/mỡ cải thiện rõ rệt. Đừng nản vì cân không xuống nhanh: vòng eo mới là thước đo thực sự.',
+    details: [
+      'Recomposition là gì: mất mỡ và tăng cơ đồng thời. Xảy ra hiệu quả nhất ở người mới tập, người có % mỡ cao, hoặc người ăn đủ protein (1.6–2g/kg). Cân không giảm nhưng quần áo rộng hơn, vòng eo nhỏ hơn — đây là progress thật.',
+      'Tại sao vòng eo quan trọng hơn cân: 1kg mỡ chiếm thể tích gấp 3–4 lần 1kg cơ. Người mất 2kg mỡ bụng và tăng 2kg cơ = cân không đổi nhưng trông gọn hơn, khỏe hơn, các marker chuyển hóa cải thiện hoàn toàn.',
+      'Mỡ nội tạng giảm trước: cơ thể ưu tiên đốt mỡ nội tạng (quanh cơ quan) trước mỡ dưới da khi caloric deficit kết hợp exercise. Đây là tin tốt — mỡ nội tạng là loại mỡ nguy hiểm nhất và nó đáp ứng nhanh nhất với can thiệp.',
+      'Đo đúng để thấy progress: cân 1–2 lần/tuần buổi sáng trước ăn, lấy trung bình. Đo vòng eo mỗi 1–2 tuần cùng vị trí. Chụp ảnh tiến trình 4 tuần/lần. So quần áo cũ. Những thước đo này trung thực hơn con số trên cân nhiều.',
+      'Duy trì và tiếp tục: đây là giai đoạn không được thay đổi chiến lược. Tiếp tục resistance training 3–4 buổi/tuần, protein 1.6–2g/kg, ngủ 7–9h, quản lý stress. Đừng tăng deficit vì cân không xuống — bạn đang làm đúng rồi.',
+      'Khi nào cân sẽ bắt đầu giảm: sau khi recomp plateau (thường 8–12 tuần), body composition ổn định hơn và cân sẽ bắt đầu giảm dần nếu vẫn duy trì deficit. Hoặc có thể duy trì cân hiện tại với body composition tốt hơn nhiều — cũng là kết quả xuất sắc.',
+    ],
+    points: [
+      { icon: '🔥', label: 'Mỡ nội tạng giảm trước', note: 'Đáp ứng nhanh nhất với deficit + exercise — nguy cơ tim giảm ngay' },
+      { icon: '💪', label: 'Cơ tăng = cân không giảm', note: 'Recomposition: 1 kg cơ nhỏ hơn 3–4× so với 1 kg mỡ' },
+      { icon: '📏', label: 'Vòng eo thật hơn cân', note: 'Mỡ/cơ không hiển thị trên cân — vòng eo mới phản ánh thực tế' },
+      { icon: '✅', label: 'Tiếp tục chiến lược hiện tại', note: 'Đừng thay đổi vì cân chậm — đây là progress tốt nhất có thể' },
+    ],
+  },
+  {
+    num: '02', icon: '⚠️', color: '#f59e0b', rgb: '245,158,11',
+    t: 'Cân không giảm, vòng eo tăng',
+    n: '⚠ Xem lại ăn uống, rượu bia, stress, ngủ',
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cân không giảm nhưng vòng eo tăng dần là tín hiệu cảnh báo quan trọng: mỡ nội tạng đang tích tụ trong khi cơ bắp có thể đang giảm (sarcopenia ẩn). Điều này thường xảy ra khi ăn uống không kiểm soát, ngủ kém mãn tính, stress cao hoặc uống rượu bia thường xuyên — ngay cả khi cân số giữ nguyên.',
+    detail: 'Đây là kịch bản "skinny fat" hoặc "weight stable but metabolically deteriorating" — nguy hiểm vì người dùng thường nghĩ mình ổn vì cân không tăng. Nhưng sự tích tụ mỡ nội tạng trong khi mất cơ là xu hướng xấu về sức khỏe chuyển hóa, tim mạch và tuổi thọ.',
+    details: [
+      'Rượu bia — thủ phạm số 1: Alcohol không chứa nhiều calo hơn tưởng (7 kcal/g, hơn protein và carb). Quan trọng hơn: alcohol ức chế fat oxidation trong 24–48 giờ → cơ thể ưu tiên đốt alcohol thay mỡ → toàn bộ calo ăn trong ngày đó được lưu trữ thành mỡ, đặc biệt mỡ bụng. 2–3 ly/ngày đủ để tăng vòng eo đáng kể qua nhiều tháng.',
+      'Ngủ kém mãn tính: ngủ <6 giờ làm ghrelin tăng 15% (đói hơn) và leptin giảm 15% (no ít hơn) → ăn thêm 200–400 kcal/ngày không tự giác. Cortisol cao do thiếu ngủ kích hoạt tích trữ mỡ nội tạng đặc biệt. Ngủ đủ 7–9 giờ là can thiệp hiệu quả và miễn phí nhất.',
+      'Stress mãn tính: cortisol kéo dài kích hoạt enzyme lipoprotein lipase ở mỡ bụng nội tạng — tức là tín hiệu "tích mỡ ngay tại đây." Stress cũng gây eating khi buồn/lo âu. Một nghiên cứu 2015: phụ nữ stress cao tích 11% mỡ nội tạng nhiều hơn nhóm stress thấp dù ăn cùng lượng calo.',
+      'Ăn uống không kiểm soát dần: "cân không tăng" thường đi kèm ăn ít protein hơn, nhiều ultra-processed food hơn — thay cơ bằng mỡ từ từ. Kiểm tra: protein/ngày có đạt 1.2–1.6g/kg không? Fiber có đủ 25–30g/ngày không? Số bữa tự nấu vs bên ngoài?',
+      'Kiểm tra markers chuyển hóa: vòng eo tăng dù cân ổn định → nên làm xét nghiệm: glucose đói (bình thường <100 mg/dL), HbA1c (<5.7%), lipid panel (TG <150, HDL >40 nam/>50 nữ), huyết áp (<120/80 mmHg). Một hoặc nhiều chỉ số bất thường = metabolic syndrome đang hình thành.',
+      'Kế hoạch điều chỉnh: (1) Cắt hoặc giảm mạnh rượu bia 4 tuần, (2) Ưu tiên ngủ 7–9 giờ như mục tiêu số 1, (3) Thêm resistance training nếu chưa có, (4) Tăng protein về 1.6g/kg, (5) Đo lại vòng eo sau 4 tuần. Không cần làm tất cả cùng lúc — bắt đầu với ngủ và rượu bia.',
+    ],
+    points: [
+      { icon: '🍺', label: 'Rượu bia ức chế fat oxidation', note: '2–3 ly/ngày = toàn bộ calo ngày đó vào mỡ bụng' },
+      { icon: '😴', label: 'Ngủ <6h = +400 kcal/ngày vô thức', note: 'Ghrelin tăng, leptin giảm — ngủ đủ là can thiệp miễn phí nhất' },
+      { icon: '😤', label: 'Cortisol mãn tính → mỡ nội tạng', note: 'Stress cao = enzyme tích mỡ ở bụng hoạt động liên tục' },
+      { icon: '🩺', label: 'Kiểm tra glucose, TG, huyết áp', note: 'Metabolic syndrome có thể đang hình thành dù cân ổn định' },
+    ],
+  },
+  {
+    num: '03', icon: '🚨', color: '#ef4444', rgb: '239,68,68',
+    t: 'Vòng eo tăng nhanh kèm mệt, phù, khó thở',
+    n: '→ Nên đi khám bác sĩ',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vòng eo tăng nhanh (>5cm trong vài tuần) kèm theo các triệu chứng như mệt mỏi bất thường, phù chân, khó thở khi nằm, hoặc đau tức ngực là dấu hiệu cần đánh giá y tế ngay. Đây không phải tăng cân bình thường — có thể là biểu hiện của suy tim, bệnh gan, suy thận, hội chứng Cushing hoặc các tình trạng nội tiết nghiêm trọng.',
+    detail: 'Không phải mọi tăng vòng eo đều do ăn nhiều. Tích dịch cổ trướng (ascites), phù nề lan tỏa, khối u hoặc tăng cortisol do bệnh lý có thể gây tăng vòng eo nhanh và không liên quan đến chế độ ăn. Phân biệt rõ nguyên nhân trước khi bắt đầu bất kỳ can thiệp nào.',
+    details: [
+      'Suy tim sung huyết (CHF): tim bơm kém → dịch tích ở phổi (khó thở khi nằm, phải ngồi để thở) và ở bụng, chân (phù). Vòng eo tăng nhanh + phù chân + mệt khi leo cầu thang → ưu tiên hàng đầu cần loại trừ. Chẩn đoán: ECG, siêu âm tim, BNP/NT-proBNP.',
+      'Cổ trướng do bệnh gan: xơ gan (do rượu, viêm gan B/C, NASH) → albumin giảm → dịch thoát vào ổ bụng. Bụng to nhanh, căng, gõ vang, tĩnh mạch bụng nổi, vàng da nhẹ, mệt mỏi. Kiểm tra: ALT/AST, bilirubin, albumin, siêu âm ổ bụng.',
+      'Suy thận và hội chứng thận hư: thận không đào thải dịch → phù toàn thân, bụng to. Hội chứng thận hư: mất protein qua nước tiểu → phù nhiều. Dấu hiệu: nước tiểu có bọt (protein niệu), phù mặt buổi sáng, phù chân chiều tối. Kiểm tra: creatinine, BUN, tổng phân tích nước tiểu.',
+      'Hội chứng Cushing: cortisol cao bất thường (do khối u tuyến thượng thận hoặc thuốc corticosteroid) gây tích mỡ đặc trưng: bụng to, mặt tròn (moon face), gù lưng (buffalo hump), da mỏng dễ bầm, vết rạn tím. Kiểm tra: cortisol 24h niệu, cortisol buổi sáng, dexamethasone suppression test.',
+      'Khối u ổ bụng: u nang buồng trứng lớn, u xơ tử cung, ung thư buồng trứng, u lymphoma ổ bụng có thể gây bụng to nhanh không liên quan cân nặng. Dấu hiệu: vòng eo tăng không đối xứng, cảm giác nặng hoặc đau tức, rối loạn tiêu hóa/tiểu tiện. Siêu âm ổ bụng là bước đầu tiên.',
+      'Khi nào cần đi cấp cứu ngay: khó thở đột ngột tăng nặng khi nằm, phù chân nhanh trong 24–48 giờ, đau ngực hoặc đau bụng dữ dội kèm bụng cứng, vàng da và vàng mắt xuất hiện nhanh, hoặc lú lẫn/rối loạn ý thức. Những triệu chứng này cần đánh giá cấp cứu, không chờ hẹn bác sĩ thường.',
+    ],
+    points: [
+      { icon: '🫀', label: 'Suy tim: khó thở khi nằm + phù chân', note: 'ECG + siêu âm tim + BNP → phân loại ngay' },
+      { icon: '🫁', label: 'Gan: bụng căng + vàng da + mệt', note: 'ALT/AST + siêu âm ổ bụng → loại trừ xơ gan' },
+      { icon: '💊', label: 'Cushing: mỡ bụng + mặt tròn + da mỏng', note: 'Cortisol cao bất thường → cần nội tiết học' },
+      { icon: '🚑', label: 'Khó thở nặng/đau ngực → cấp cứu ngay', note: 'Không chờ hẹn — một số nguyên nhân đe dọa tính mạng' },
+    ],
+  },
+];
+
 function WaistModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = (e) => {
@@ -318,6 +387,80 @@ function WaistModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
               ← Trước</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {WAIST_RISKS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
+              Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TrendModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.t} className="w-full h-full object-cover" style={{ opacity: 0.50 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-2 leading-snug" style={{ color: item.color }}>{item.t}</h2>
+          <div className="rounded-xl px-4 py-3 mb-5 text-base font-medium leading-relaxed"
+            style={{ background: `rgba(${item.rgb},0.1)`, borderLeft: `3px solid ${item.color}`, color: `rgba(${item.rgb},0.9)` }}>
+            💡 {item.keyFact}
+          </div>
+          <p className="text-base text-muted leading-relaxed mb-6">{item.detail}</p>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
+              ← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {TREND_ITEMS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
@@ -406,6 +549,7 @@ function BMICalculator() {
 export default function HealthBMIPage() {
   const [bmiModal, setBmiModal] = useState(null);
   const [waistModal, setWaistModal] = useState(null);
+  const [trendModal, setTrendModal] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -521,16 +665,19 @@ export default function HealthBMIPage() {
 
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `${COLOR}25`, background: `${COLOR}07` }}>
-          <h3 className="font-bold text-text mb-3">Nhìn Xu Hướng, Không Nhìn Một Con Số</h3>
+          <h3 className="font-bold text-text mb-1">Nhìn Xu Hướng, Không Nhìn Một Con Số</h3>
+          <p className="text-xs text-muted mb-4 opacity-60">Nhấp vào mỗi kịch bản để xem phân tích chi tiết</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {[
-              { t: 'Cân giảm ít nhưng vòng eo giảm 3–5cm', c: '#10b981', n: '✓ Tiến triển tốt — mỡ bụng đang giảm' },
-              { t: 'Cân không giảm, vòng eo tăng', c: '#f59e0b', n: '⚠ Xem lại ăn uống, rượu bia, stress, ngủ' },
-              { t: 'Vòng eo tăng nhanh kèm mệt, phù, khó thở', c: '#ef4444', n: '→ Nên đi khám bác sĩ' },
-            ].map(c => (
-              <div key={c.t} className="rounded-xl border p-3" style={{ borderColor: `${c.c}25`, background: `${c.c}08` }}>
-                <p className="text-base text-muted mb-1">{c.t}</p>
-                <p className="text-base font-bold" style={{ color: c.c }}>{c.n}</p>
+            {TREND_ITEMS.map((item, i) => (
+              <div key={item.t}
+                className="rounded-xl border p-3 cursor-pointer hover:shadow-md transition-all duration-200"
+                style={{ borderColor: `${item.color}25`, background: `${item.color}08` }}
+                onClick={() => setTrendModal(i)}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${item.rgb},0.45)`; e.currentTarget.style.background = `rgba(${item.rgb},0.12)`; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = `${item.color}25`; e.currentTarget.style.background = `${item.color}08`; }}>
+                <p className="text-base text-muted mb-1">{item.t}</p>
+                <p className="text-base font-bold" style={{ color: item.color }}>{item.n}</p>
+                <p className="text-[10px] text-muted mt-2 opacity-50">Nhấp để xem phân tích →</p>
               </div>
             ))}
           </div>
@@ -561,6 +708,17 @@ export default function HealthBMIPage() {
           onNext={() => setWaistModal(i => Math.min(WAIST_RISKS.length - 1, i + 1))}
           hasPrev={waistModal > 0}
           hasNext={waistModal < WAIST_RISKS.length - 1}
+        />
+      )}
+      {trendModal !== null && (
+        <TrendModal
+          item={TREND_ITEMS[trendModal]}
+          idx={trendModal}
+          onClose={() => setTrendModal(null)}
+          onPrev={() => setTrendModal(i => Math.max(0, i - 1))}
+          onNext={() => setTrendModal(i => Math.min(TREND_ITEMS.length - 1, i + 1))}
+          hasPrev={trendModal > 0}
+          hasNext={trendModal < TREND_ITEMS.length - 1}
         />
       )}
     </div>

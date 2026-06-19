@@ -510,7 +510,7 @@ const WHY_MORNING = [
 const PRACTICAL_TIPS = [
   {
     tip: 'Chuẩn bị từ tối hôm trước',
-    detail: 'Để sẵn bình nước, giày đi bộ, quần áo tập. Giảm ma sát buổi sáng = tăng khả năng thực hiện.',
+    desc: 'Để sẵn bình nước, giày đi bộ, quần áo tập. Giảm ma sát buổi sáng = tăng khả năng thực hiện.',
     icon: '🌙', color: '#f59e0b', rgb: '245,158,11',
     img: 'https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=800&q=80&auto=format&fit=crop',
     keyFact: '"Friction" (ma sát) là yếu tố dự đoán tốt nhất hành vi có được duy trì hay không — không phải ý chí. Để sẵn bình nước, giày và quần áo tập từ tối hôm trước giảm số quyết định buổi sáng và tăng khả năng thực hiện routine lên 60–80% theo các nghiên cứu về thiết kế hành vi.',
@@ -532,7 +532,7 @@ const PRACTICAL_TIPS = [
   },
   {
     tip: 'Không xem điện thoại trong 15 phút đầu',
-    detail: 'Điện thoại ngay khi thức dậy → não vào chế độ reactive ngay. Ưu tiên routine trước, điện thoại sau.',
+    desc: 'Điện thoại ngay khi thức dậy → não vào chế độ reactive ngay. Ưu tiên routine trước, điện thoại sau.',
     icon: '📵', color: '#f43f5e', rgb: '244,63,94',
     img: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Check điện thoại trong 5–10 phút đầu sau khi thức dậy kích hoạt dopamine spike → dopamine crash → khó tập trung và dễ procrastinate trong 2–3 giờ sau. Não buổi sáng ở trạng thái alpha (4–8Hz) — trạng thái dễ "nhiễm" thông tin nhất và cũng sáng tạo nhất.',
@@ -554,7 +554,7 @@ const PRACTICAL_TIPS = [
   },
   {
     tip: 'Bắt đầu từ 1 thói quen, không phải cả list',
-    detail: 'Tuần 1: chỉ uống nước khi thức. Tuần 2: thêm ánh sáng. Tuần 3: thêm đi bộ 2 phút.',
+    desc: 'Tuần 1: chỉ uống nước khi thức. Tuần 2: thêm ánh sáng. Tuần 3: thêm đi bộ 2 phút.',
     icon: '🌱', color: '#10b981', rgb: '16,185,129',
     img: 'https://images.unsplash.com/photo-1467664631004-58beab1ece0d?w=800&q=80&auto=format&fit=crop',
     keyFact: '"Keystone habits" (Charles Duhigg) — thói quen then chốt — kéo theo 2–3 thói quen khác tự nhiên. Uống nước buổi sáng → nhớ ra ngoài → tự nhiên muốn di chuyển = hiệu ứng domino. Bắt đầu với 1 thói quen nhỏ nhất còn dễ hơn cả việc không làm gì.',
@@ -576,7 +576,7 @@ const PRACTICAL_TIPS = [
   },
   {
     tip: 'Ngày bận nhất vẫn có thể làm 3 phút',
-    detail: 'Uống nước + ánh sáng + 5 hít thở = 3 phút. Đây là "minimum viable morning routine" của bạn.',
+    desc: 'Uống nước + ánh sáng + 5 hít thở = 3 phút. Đây là "minimum viable morning routine" của bạn.',
     icon: '⚡', color: '#8b5cf6', rgb: '139,92,246',
     img: 'https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80&auto=format&fit=crop',
     keyFact: '"Never miss twice" (James Clear) — bỏ 1 ngày là tai nạn, bỏ 2 ngày là bắt đầu 1 pattern mới. Minimum viable routine (3 phút) quan trọng hơn không làm gì vì nó giữ identity và chuỗi thói quen intact ngay cả trong ngày bận nhất.',
@@ -853,7 +853,7 @@ export default function LifestyleMorningPage() {
               <span className="text-2xl shrink-0 mt-0.5">{item.icon}</span>
               <div className="flex-1">
                 <div className="font-semibold text-base mb-0.5" style={{ color: item.color }}>→ {item.tip}</div>
-                <p className="text-muted text-sm leading-relaxed">{item.detail}</p>
+                <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
               </div>
               <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
                 style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>

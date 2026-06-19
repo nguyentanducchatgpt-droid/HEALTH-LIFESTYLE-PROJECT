@@ -518,7 +518,7 @@ const FREQUENCY = [
 
 const DELOAD_WEEK = [
   {
-    day: 'Thứ 2', icon: '🏋️', type: 'Tập giảm volume', detail: 'Upper body: giảm 50% set, giữ tạ', intensity: 'light',
+    day: 'Thứ 2', icon: '🏋️', type: 'Tập giảm volume', desc: 'Upper body: giảm 50% set, giữ tạ', intensity: 'light',
     color: '#f97316', rgb: '249,115,22',
     modalTitle: 'Thứ 2 — Upper Body Giảm Volume',
     img: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80&auto=format&fit=crop',
@@ -540,7 +540,7 @@ const DELOAD_WEEK = [
     ],
   },
   {
-    day: 'Thứ 3', icon: '🚶', type: 'Active recovery', detail: 'Đi bộ 30 phút + foam rolling', intensity: 'very-light',
+    day: 'Thứ 3', icon: '🚶', type: 'Active recovery', desc: 'Đi bộ 30 phút + foam rolling', intensity: 'very-light',
     color: '#10b981', rgb: '16,185,129',
     modalTitle: 'Thứ 3 — Active Recovery Tối Ưu',
     img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
@@ -562,7 +562,7 @@ const DELOAD_WEEK = [
     ],
   },
   {
-    day: 'Thứ 4', icon: '🦵', type: 'Tập giảm volume', detail: 'Lower body: giảm 50% set, giữ tạ', intensity: 'light',
+    day: 'Thứ 4', icon: '🦵', type: 'Tập giảm volume', desc: 'Lower body: giảm 50% set, giữ tạ', intensity: 'light',
     color: '#f97316', rgb: '249,115,22',
     modalTitle: 'Thứ 4 — Lower Body Giảm Volume',
     img: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80&auto=format&fit=crop',
@@ -584,7 +584,7 @@ const DELOAD_WEEK = [
     ],
   },
   {
-    day: 'Thứ 5', icon: '🛋️', type: 'Nghỉ hoàn toàn', detail: 'Stretching nhẹ, đi dạo 20 phút', intensity: 'rest',
+    day: 'Thứ 5', icon: '🛋️', type: 'Nghỉ hoàn toàn', desc: 'Stretching nhẹ, đi dạo 20 phút', intensity: 'rest',
     color: '#6b7280', rgb: '107,114,128',
     modalTitle: 'Thứ 5 — Ngày Nghỉ Có Mục Đích',
     img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
@@ -606,7 +606,7 @@ const DELOAD_WEEK = [
     ],
   },
   {
-    day: 'Thứ 6', icon: '💫', type: 'Full-body nhẹ', detail: 'Compound movements @ 60% 1RM, 2×8', intensity: 'light',
+    day: 'Thứ 6', icon: '💫', type: 'Full-body nhẹ', desc: 'Compound movements @ 60% 1RM, 2×8', intensity: 'light',
     color: '#f59e0b', rgb: '245,158,11',
     modalTitle: 'Thứ 6 — Full-Body Nhẹ Consolidate Tuần Deload',
     img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80&auto=format&fit=crop',
@@ -628,7 +628,7 @@ const DELOAD_WEEK = [
     ],
   },
   {
-    day: 'Thứ 7', icon: '🏄', type: 'Active leisure', detail: 'Bơi, leo núi, đạp xe → vui là chính', intensity: 'very-light',
+    day: 'Thứ 7', icon: '🏄', type: 'Active leisure', desc: 'Bơi, leo núi, đạp xe → vui là chính', intensity: 'very-light',
     color: '#14b8a6', rgb: '20,184,166',
     modalTitle: 'Thứ 7 — Active Leisure: Vận Động Vì Niềm Vui',
     img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
@@ -650,7 +650,7 @@ const DELOAD_WEEK = [
     ],
   },
   {
-    day: 'CN', icon: '🌙', type: 'Nghỉ hoàn toàn', detail: 'Ngủ đủ giấc, chuẩn bị tinh thần tuần mới', intensity: 'rest',
+    day: 'CN', icon: '🌙', type: 'Nghỉ hoàn toàn', desc: 'Ngủ đủ giấc, chuẩn bị tinh thần tuần mới', intensity: 'rest',
     color: '#6366f1', rgb: '99,102,241',
     modalTitle: 'Chủ Nhật — Nghỉ Ngơi & Chuẩn Bị Tinh Thần',
     img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
@@ -837,7 +837,7 @@ export default function LifestyleDeloadPage() {
               <div className="w-2 h-2 rounded-full shrink-0" style={{ background: INTENSITY_COLOR[d.intensity] }} />
               <div className="flex-1">
                 <div className="text-lg font-medium text-text">{d.type}</div>
-                <div className="text-base text-muted">{d.detail}</div>
+                <div className="text-base text-muted">{d.desc}</div>
               </div>
               <div className="text-base px-2 py-0.5 rounded-full font-bold shrink-0" style={{ background: `${INTENSITY_COLOR[d.intensity]}20`, color: INTENSITY_COLOR[d.intensity] }}>
                 {d.intensity === 'light' ? 'Nhẹ' : d.intensity === 'very-light' ? 'Rất nhẹ' : 'Nghỉ'}

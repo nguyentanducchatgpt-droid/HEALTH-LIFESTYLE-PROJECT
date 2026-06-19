@@ -28,7 +28,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 const DAILY_ITEMS = [
   {
-    id: 'sleep7', icon: '😴', label: 'Ngủ 7–9 tiếng', detail: 'Không tính ngủ bù cuối tuần', pillar: 'Giấc ngủ', color: '#6366f1', rgb: '99,102,241',
+    id: 'sleep7', icon: '😴', label: 'Ngủ 7–9 tiếng', desc: 'Không tính ngủ bù cuối tuần', pillar: 'Giấc ngủ', color: '#6366f1', rgb: '99,102,241',
     modalTitle: 'Ngủ 7–9 Tiếng — Không Thể Thương Lượng Với Sinh Học',
     img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
     keyFact: '7–9 tiếng là khuyến cáo của National Sleep Foundation cho người trưởng thành (18–64 tuổi) dựa trên hàng trăm nghiên cứu. Không phải "lý tưởng" — đây là minimum để não hoàn thành các quá trình phục hồi bắt buộc: glymphatic clearance (loại bỏ metabolic waste bao gồm amyloid beta), memory consolidation (hippocampus transfer từ short-term → long-term), và hormone secretion (growth hormone đỉnh trong N3, cortisol reset). Mỗi giờ thiếu ngủ tạo "sleep debt" không thể trả bằng ngủ bù cuối tuần.',
@@ -49,7 +49,7 @@ const DAILY_ITEMS = [
     ],
   },
   {
-    id: 'sleep_time', icon: '🌙', label: 'Ngủ trước 23:30', detail: 'Theo nhịp sinh học tự nhiên', pillar: 'Giấc ngủ', color: '#6366f1', rgb: '99,102,241',
+    id: 'sleep_time', icon: '🌙', label: 'Ngủ trước 23:30', desc: 'Theo nhịp sinh học tự nhiên', pillar: 'Giấc ngủ', color: '#6366f1', rgb: '99,102,241',
     modalTitle: 'Ngủ Trước 23:30 — Đồng Bộ Với Circadian Rhythm',
     img: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Giá trị của giấc ngủ không chỉ phụ thuộc vào số giờ mà còn vào TIMING — ngủ đúng cửa sổ circadian rhythm (khoảng 22:00–02:00 cho hầu hết chronotype trung bình) để maximize slow-wave sleep (N3) concentration. Nghiên cứu large-scale (UK Biobank, 88.000 người): ngủ 22:00–23:00 liên quan đến cardiovascular risk thấp nhất; ngủ sau 00:00 tăng risk 12–25% ngay cả khi kiểm soát duration. Timing matters independently of duration.',
@@ -70,7 +70,7 @@ const DAILY_ITEMS = [
     ],
   },
   {
-    id: 'sunlight', icon: '☀️', label: 'Ra ngoài đón nắng sáng', detail: 'Ít nhất 5–10 phút ánh sáng tự nhiên', pillar: 'Nhịp sinh học', color: '#f59e0b', rgb: '245,158,11',
+    id: 'sunlight', icon: '☀️', label: 'Ra ngoài đón nắng sáng', desc: 'Ít nhất 5–10 phút ánh sáng tự nhiên', pillar: 'Nhịp sinh học', color: '#f59e0b', rgb: '245,158,11',
     modalTitle: 'Ánh Sáng Sáng — Zeitgeber Mạnh Nhất Reset Đồng Hồ Sinh Học',
     img: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Ánh sáng sáng sớm là "zeitgeber" (time-giver) mạnh nhất để calibrate circadian clock mỗi ngày. Võng mạc có tế bào cảm quang đặc biệt (ipRGC — intrinsically photosensitive retinal ganglion cells) chứa melanopsin, nhạy nhất với ánh sáng xanh 480nm. Khi ánh sáng >1000 lux hit ipRGC: signal đi thẳng đến suprachiasmatic nucleus (SCN) trong hypothalamus — "đồng hồ chủ" của cơ thể. SCN nhận lệnh "đã là ban ngày" → ức chế melatonin → trigger cortisol awakening response → toàn bộ circadian cascade bắt đầu đúng timing.',
@@ -91,7 +91,7 @@ const DAILY_ITEMS = [
     ],
   },
   {
-    id: 'steps', icon: '🚶', label: '8.000+ bước chân', detail: 'Hoặc 30 phút vận động nhẹ', pillar: 'NEAT', color: '#10b981', rgb: '16,185,129',
+    id: 'steps', icon: '🚶', label: '8.000+ bước chân', desc: 'Hoặc 30 phút vận động nhẹ', pillar: 'NEAT', color: '#10b981', rgb: '16,185,129',
     modalTitle: '8.000+ Bước Chân — NEAT Là Nền Tảng Sức Khỏe Vận Động',
     img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
     keyFact: 'NEAT (Non-Exercise Activity Thermogenesis) — năng lượng từ mọi vận động ngoài tập có chủ đích — có thể chiếm 15–50% tổng năng lượng tiêu thụ mỗi ngày. 8.000 bước/ngày là target evidence-based: JAMA Internal Medicine 2021 (16.741 phụ nữ lớn tuổi): mortality giảm dần từ 2.700 bước, plateau ở ~7.500 bước. JAMA Neurology 2022: 9.800 bước/ngày liên quan đến giảm 51% risk dementia và 57% giảm anxiety/depression. 8.000 bước/ngày là điểm "ngưỡng" cost-effective nhất cho cả longevity và mental health.',
@@ -112,7 +112,7 @@ const DAILY_ITEMS = [
     ],
   },
   {
-    id: 'water', icon: '💧', label: 'Uống đủ nước', detail: 'Công thức: cân nặng × 35ml', pillar: 'Lối sống', color: '#0ea5e9', rgb: '14,165,233',
+    id: 'water', icon: '💧', label: 'Uống đủ nước', desc: 'Công thức: cân nặng × 35ml', pillar: 'Lối sống', color: '#0ea5e9', rgb: '14,165,233',
     modalTitle: 'Uống Đủ Nước — Hydration Ảnh Hưởng Mọi Hệ Thống',
     img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Công thức cân nặng × 35ml là guideline thực hành đơn giản nhất (người 60kg cần ~2.1L, 70kg cần ~2.45L, 80kg cần ~2.8L). Chỉ cần 1–2% dehydration (700ml–1L với người 70kg) đã gây: concentration giảm 12%, short-term memory giảm, reaction time chậm, subjective effort tăng (tasks feel harder). Não là 73% nước — dehydration nhẹ làm neurotransmission chậm lại trước khi bạn cảm thấy khát.',
@@ -133,7 +133,7 @@ const DAILY_ITEMS = [
     ],
   },
   {
-    id: 'no_phone_morning', icon: '📵', label: 'Không phone 30 phút đầu', detail: 'Sau khi thức dậy buổi sáng', pillar: 'Môi trường', color: '#f43f5e', rgb: '244,63,94',
+    id: 'no_phone_morning', icon: '📵', label: 'Không phone 30 phút đầu', desc: 'Sau khi thức dậy buổi sáng', pillar: 'Môi trường', color: '#f43f5e', rgb: '244,63,94',
     modalTitle: 'Không Phone 30 Phút Đầu — Bảo Vệ Não Trong Golden Window',
     img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Prefrontal Cortex (PFC) — vùng điều hành tư duy phê phán, ra quyết định, self-control và emotional regulation — cần 20–30 phút để fully activate sau sleep inertia. Kiểm tra điện thoại ngay khi thức đặt não vào reactive mode (xử lý notifications, emails, social comparison) TRƯỚC KHI PFC sẵn sàng — để người khác đặt agenda cho ngày của bạn trong khi não chưa có phòng vệ nhận thức. 30 phút phone-free = PFC warm-up tự nhiên + DMN hoạt động cho sáng tạo + proactive mindset thay vì reactive.',
@@ -154,7 +154,7 @@ const DAILY_ITEMS = [
     ],
   },
   {
-    id: 'breathing', icon: '🌬️', label: 'Thực hành thở có chủ ý', detail: '5 phút thở cơ hoành hoặc box breathing', pillar: 'Thở', color: '#14b8a6', rgb: '20,184,166',
+    id: 'breathing', icon: '🌬️', label: 'Thực hành thở có chủ ý', desc: '5 phút thở cơ hoành hoặc box breathing', pillar: 'Thở', color: '#14b8a6', rgb: '20,184,166',
     modalTitle: 'Thở Có Chủ Ý — Công Cụ Duy Nhất Điều Khiển ANS Trực Tiếp',
     img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Hơi thở là cơ quan duy nhất trong hệ thần kinh tự chủ (Autonomic Nervous System) mà bạn có thể kiểm soát CÓ CHỦ Ý — không cần thiết bị, thuốc hay thời gian dài. ANS kiểm soát heart rate, huyết áp, tiêu hóa, immune function và stress response. Thở chậm và sâu (5–6 hơi/phút) kích hoạt mạnh vagus nerve → parasympathetic dominance → cortisol giảm, HRV tăng, inflammatory markers giảm. Chỉ 5 phút/ngày tạo changes đo được trong HRV baseline sau 4–8 tuần.',
@@ -513,7 +513,7 @@ export default function LifestyleChecklistPage() {
               <span className="text-3xl">{item.icon}</span>
               <div className="flex-1">
                 <div className={`text-lg font-medium transition-all ${checked[item.id] ? 'line-through text-muted' : 'text-text'}`}>{item.label}</div>
-                <div className="text-base text-muted">{item.detail}</div>
+                <div className="text-base text-muted">{item.desc}</div>
               </div>
               <span className="text-base px-2 py-0.5 rounded-full font-bold shrink-0" style={{ background: `${item.color}15`, color: item.color }}>{item.pillar}</span>
               <button

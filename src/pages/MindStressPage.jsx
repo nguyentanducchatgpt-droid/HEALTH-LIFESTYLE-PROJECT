@@ -159,6 +159,114 @@ const TECHNIQUE_MODALS = [
   },
 ];
 
+const STRESS_LEVEL_MODALS = [
+  {
+    icon: '😌', color: '#10b981', rgb: '16,185,129',
+    modalTitle: '0–2 · Bình Thường — Trạng Thái Nền Lý Tưởng',
+    img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress 0–2 không có nghĩa là không có gì xảy ra — đây là trạng thái cân bằng sinh lý (homeostasis) mà cơ thể liên tục cố đạt được. Mục tiêu là duy trì, không phải đạt điểm tuyệt đối 0.',
+    detail: 'Ở mức 0–2, cortisol ở baseline buổi sáng (CAR — Cortisol Awakening Response), HRV cao, PFC hoạt động tốt và hệ miễn dịch ở trạng thái ổn định. Đây là điều kiện tối ưu để học hỏi, sáng tạo và gây dựng habits.',
+    details: [
+      'Cortisol nhịp sinh học bình thường: tăng tự nhiên 30–45 phút sau khi thức dậy (CAR), đạt đỉnh vào 8–9 giờ sáng, giảm dần về chiều và thấp nhất vào tối. Nhịp này giúp bạn tỉnh táo buổi sáng và buồn ngủ buổi tối.',
+      'HRV (Heart Rate Variability) cao ở mức stress 0–2: chỉ số này phản ánh khả năng thích nghi của hệ thần kinh tự chủ. HRV cao → dễ chuyển đổi giữa tập trung và thư giãn → resilience tốt hơn với stress tiếp theo.',
+      'Neuroplasticity tối ưu: ở trạng thái bình thường, BDNF (Brain-Derived Neurotrophic Factor) — "phân bón của não" — được tiết đủ để hỗ trợ tạo kết nối nơ-ron mới. Học kỹ năng mới hiệu quả nhất khi stress thấp.',
+      '"Tiếp tục duy trì" không có nghĩa là không làm gì — mà là tiếp tục những habits đang tạo ra trạng thái này: ngủ đủ giấc, vận động, ăn đều, giảm thiếu screen time, kết nối xã hội đủ.',
+      'Trạng thái 0–2 không tự nhiên mà có trong xã hội hiện đại — nó là kết quả của lifestyle design có chủ ý. Người duy trì được thường có routines rõ ràng và biết cách "exit" stress trước khi tích lũy.',
+      'Cảnh báo: nhiều người nhầm lẫn "không cảm thấy gì" với stress 0–2. Thực ra, alexithymia (khó nhận diện cảm xúc) hoặc emotional numbing có thể tạo cảm giác trống rỗng — đây không phải bình thường mà là dấu hiệu cần chú ý.',
+    ],
+    points: [
+      { icon: '⚖️', label: 'Homeostasis', note: 'Cân bằng sinh lý mà cơ thể luôn hướng tới' },
+      { icon: '📈', label: 'HRV Cao', note: 'Resilience tốt với stress tiếp theo' },
+      { icon: '🧠', label: 'BDNF Optimal', note: 'Học hỏi và tạo habits hiệu quả nhất' },
+      { icon: '🔄', label: 'Lifestyle Design', note: 'Kết quả của habits có chủ ý, không tự nhiên' },
+    ],
+  },
+  {
+    icon: '🟡', color: '#84cc16', rgb: '132,204,22',
+    modalTitle: '3–4 · Nhẹ — Eustress Có Thể Quản Lý',
+    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress 3–4 là vùng eustress productive — đủ để kích hoạt tập trung và động lực, nhưng chưa đủ để làm suy giảm hiệu suất. Reset 2 phút ngăn tích lũy lên vùng cao hơn.',
+    detail: 'Ở mức này, norepinephrine và dopamine tăng vừa đủ để đạt trạng thái "alert but calm" — đây là điều kiện tối ưu cho deep work và problem-solving. Tuy nhiên, nếu không xả, stress 3–4 có thể tích lũy thành 5–6 trong vài giờ.',
+    details: [
+      'Yerkes-Dodson zone: stress 3–4 nằm ở vùng "upslope" của đường cong hiệu suất — mức kích thích tăng đang kéo hiệu suất lên, chưa qua đỉnh. Deadline nhẹ, thử thách vừa sức, mục tiêu rõ ràng tạo ra trạng thái này.',
+      'Reset 2 phút được thiết kế để "xả van" trước khi áp lực tích lũy: 5 hơi thở cơ hoành sâu + thả lỏng 3 điểm (vai, hàm, bàn tay) + 1 câu định hướng ("Việc quan trọng nhất mình cần làm tiếp theo là...").',
+      'Stress 3–4 buổi sáng là bình thường và lành mạnh — CAR (Cortisol Awakening Response) tự nhiên tạo mức này để chuẩn bị cho ngày làm việc. Vấn đề xảy ra khi mức này không giảm về cuối ngày.',
+      'Self-monitoring hiệu quả: đặt alarm 3 lần/ngày (10h, 14h, 18h) để "check-in" stress level. Nếu nhận thấy 3–4 đang kéo dài > 3 giờ liên tục, đó là dấu hiệu cần reset trước khi tự leo thang.',
+      'Chiến lược phòng ngừa tốt nhất ở mức 3–4: không thêm commitments, giải quyết 1 việc nhỏ ngay (giảm cognitive load), uống nước (dehydration nhẹ làm stress tăng), đứng dậy đi lại 2 phút.',
+      'Lưu ý: một số người chronically ở mức 3–4 đến mức coi đó là "bình thường". Nếu bạn khó nhớ lần cuối cùng mình thực sự thư giãn là khi nào — đây là dấu hiệu mức baseline của bạn đã bị nâng lên.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Eustress Zone', note: 'Kích hoạt tập trung và động lực' },
+      { icon: '⏱️', label: 'Reset 2 Phút', note: 'Xả van trước khi stress tích lũy' },
+      { icon: '📊', label: 'Self-Monitor', note: 'Check-in 3 lần/ngày ngăn leo thang' },
+      { icon: '⚠️', label: 'Chronic 3–4', note: 'Kéo dài quá lâu → baseline bị nâng' },
+    ],
+  },
+  {
+    icon: '🟠', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: '5–6 · Trung Bình — Hiệu Suất Bắt Đầu Giảm',
+    img: 'https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress 5–6 là đỉnh của đường cong Yerkes-Dodson — thêm một chút áp lực nữa là bắt đầu đi xuống. Box breathing + journal là combo hiệu quả nhất để giữ không leo lên 7–8.',
+    detail: 'Ở mức này, PFC bắt đầu bị cortisol ảnh hưởng: khả năng lọc thông tin giảm, working memory bị quá tải, quyết định kém hơn bình thường. Bạn vẫn "hoạt động" được nhưng chất lượng và tốc độ đều kém hơn.',
+    details: [
+      'Tipping point: stress 5–6 là ngưỡng mà cortisol bắt đầu có tác động đo được lên prefrontal cortex — thời gian phản ứng chậm hơn 15–20%, lỗi sai tăng, khó giữ nhiều thông tin trong đầu cùng lúc.',
+      'Working memory bị thu hẹp: bình thường working memory giữ được 7±2 items. Ở stress 5–6, con số này giảm còn 4–5 — giải thích tại sao bạn hay quên, mất mạch và cần nhắc nhở nhiều hơn.',
+      'Box breathing (4-4-4-4) ở mức này: 4 vòng × 16 giây = 64 giây đủ để hạ cortisol đo được và đưa HRV tăng trở lại. Hiệu quả nhất khi thực hiện TRƯỚC khi làm việc quan trọng, không phải sau.',
+      'Journal ở mức 5–6: viết "brain dump" — đổ hết mọi thứ đang trong đầu ra giấy không lọc. Mục tiêu không phải giải quyết vấn đề mà là giải phóng working memory khỏi "open loops" để não hoạt động hiệu quả hơn.',
+      'Dấu hiệu thêm cần nhận ra ở 5–6: ăn uống thay đổi (thèm ngọt, mặn), social withdrawal (không muốn nói chuyện), thở nông hơn bình thường, hay kiểm tra điện thoại vô thức.',
+      'Nếu 5–6 kéo dài > 2 ngày liên tiếp, cần đánh giá nguồn gốc stress: công việc cụ thể nào? Mối quan hệ nào? Sức khỏe? Tài chính? Giải quyết nguyên nhân gốc thay vì chỉ dùng kỹ thuật hô hấp.',
+    ],
+    points: [
+      { icon: '📉', label: 'Hiệu Suất Giảm', note: 'PFC bị cortisol ảnh hưởng rõ ràng' },
+      { icon: '🧠', label: 'Working Memory', note: '7±2 → 4–5 items: hay quên và mất mạch' },
+      { icon: '⬜', label: 'Box Breathing', note: '64 giây trước việc quan trọng' },
+      { icon: '📓', label: 'Brain Dump Journal', note: 'Xả open loops → giải phóng working memory' },
+    ],
+  },
+  {
+    icon: '🔴', color: '#f97316', rgb: '249,115,22',
+    modalTitle: '7–8 · Cao — Chế Độ Tồn Tại, Không Phải Sống',
+    img: 'https://images.unsplash.com/photo-1505455184862-554165e5f6ba?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress 7–8 là ngưỡng mà não chuyển sang "survival mode" — PFC gần như offline, amygdala kiểm soát hầu hết quyết định. Ưu tiên nghỉ ngơi không phải yếu đuối, đó là sinh lý học.',
+    detail: 'Ở mức này, cortisol đã vượt ngưỡng tối ưu và bắt đầu gây hại: ký ức ngắn hạn suy giảm, immune function giảm, tiêu hóa kém, giấc ngủ bị phá vỡ. Giảm kỳ vọng không phải từ bỏ — là điều chỉnh thực tế để không làm mọi thứ tệ hơn.',
+    details: [
+      'Survival mode: amygdala ở trạng thái 7–8 có ngưỡng kích hoạt cực thấp — mọi kích thích nhỏ đều có thể gây phản ứng quá mức. Bạn "cáu" với những thứ bình thường không ảnh hưởng — đây là triệu chứng sinh lý, không phải tính cách.',
+      'Immune system: stress 7–8 kéo dài kích hoạt pro-inflammatory cytokines (IL-6, TNF-α) và ức chế NK cells. Người trong trạng thái này dễ ốm hơn 2–3 lần, và khi ốm thì phục hồi chậm hơn bình thường.',
+      'Giấc ngủ bị phá vỡ nghiêm trọng: cortisol cao tối ngăn melatonin, kết hợp amygdala hypervigilant → mind racing khi nằm xuống. Thiếu ngủ → cortisol tăng thêm → vòng lặp tự khuếch đại.',
+      'Giảm kỳ vọng có nghĩa là: tạm thời hủy những cam kết không thiết yếu, delegate những việc có thể, nói "không" một cách rõ ràng và không xin lỗi quá nhiều. Không phải từ bỏ — là ưu tiên lại.',
+      'Những gì KHÔNG nên làm ở 7–8: cafein nhiều hơn bình thường (kích thích cortisol thêm), làm thêm giờ để "giải quyết xong" (không hiệu quả, chỉ deepens stress response), isolate hoàn toàn (connection là buffer quan trọng).',
+      'Phục hồi 7–8 cần 24–72 giờ để cortisol về baseline nếu loại bỏ được nguồn stress chính. Nếu không loại bỏ được — cần chiến lược buffer: ngủ đủ giấc là ưu tiên #1, vận động nhẹ (không intense), kết nối người thân.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Survival Mode', note: 'PFC offline, amygdala kiểm soát' },
+      { icon: '🛡️', label: 'Miễn Dịch Sụt Giảm', note: 'Dễ ốm 2–3 lần, phục hồi chậm' },
+      { icon: '😴', label: 'Ngủ Bị Phá Vỡ', note: 'Cortisol tối + amygdala = mind racing' },
+      { icon: '📋', label: 'Giảm Kỳ Vọng', note: 'Ưu tiên lại, không phải từ bỏ' },
+    ],
+  },
+  {
+    icon: '🚨', color: '#ef4444', rgb: '239,68,68',
+    modalTitle: '9–10 · Nguy Hiểm — Cần Hỗ Trợ Bên Ngoài',
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress 9–10 vượt ngưỡng mà các kỹ thuật tự quản lý còn hiệu quả — hệ thần kinh đang trong trạng thái không thể tự điều tiết (dysregulation). Tìm kiếm hỗ trợ là hành động khôn ngoan nhất, không phải yếu đuối.',
+    detail: 'Ở mức này, cortisol + adrenaline ở mức rất cao trong thời gian kéo dài đã gây ra allostatic overload — cơ thể không còn đủ khả năng "reset" mà không có can thiệp từ bên ngoài. Điều này không có nghĩa là bạn đã "thất bại".',
+    details: [
+      'Allostatic overload: khái niệm của Bruce McEwen (Rockefeller) — khi cumulative stress vượt khả năng adaptaion của sinh lý, hệ thống bắt đầu breakdown thay vì adapt. Không phải vấn đề ý chí — là giới hạn sinh học.',
+      'Dấu hiệu nhận biết 9–10: dissociation (cảm giác không thật, như nhìn từ bên ngoài bản thân), cơn hoảng loạn (panic attack), suy nghĩ vòng lặp không thể dừng, ăn ngủ bị ảnh hưởng nặng (hoặc không ngủ hoặc ngủ liên tục), không thể thực hiện các tasks bình thường.',
+      'Hỏi người thân không phải "cầu cứu yếu đuối" — nghiên cứu về social support cho thấy oxytocin được giải phóng khi kết nối với người thân tin cậy, trực tiếp đối kháng cortisol và giảm amygdala hyperactivation.',
+      'Chuyên gia tâm lý/tâm thần có thể cung cấp: liệu pháp CBT hoặc ACT được chứng minh lâm sàng, đánh giá chính xác mức độ và cần can thiệp gì, và nếu cần, hỗ trợ dược lý ngắn hạn (không phụ thuộc).',
+      'Những gì CÓ THỂ giúp ngay bây giờ trong khi tìm kiếm hỗ trợ: gọi điện cho 1 người bạn tin tưởng (không cần nói gì nhiều, chỉ cần không ở một mình), ra ngoài không gian hẹp, uống nước ấm, ánh sáng tự nhiên.',
+      'Đường dây hỗ trợ sức khỏe tâm thần Việt Nam: Đường dây tư vấn sức khỏe tâm thần 1800 599 920 (miễn phí, 24/7). Việc gọi điện là bước đầu tiên — không cần biết chắc mình "đủ nghiêm trọng" để gọi.',
+    ],
+    points: [
+      { icon: '🔬', label: 'Allostatic Overload', note: 'Cơ thể không thể tự reset — cần can thiệp' },
+      { icon: '🤝', label: 'Social Support', note: 'Oxytocin từ kết nối trực tiếp chống cortisol' },
+      { icon: '🧑‍⚕️', label: 'Chuyên Gia', note: 'CBT/ACT lâm sàng + đánh giá chính xác' },
+      { icon: '📞', label: '1800 599 920', note: 'Đường dây tư vấn miễn phí 24/7' },
+    ],
+  },
+];
+
 const LAYER_MODALS = [
   {
     icon: '💪', color: '#f97316', rgb: '249,115,22',
@@ -355,6 +463,7 @@ export default function MindStressPage() {
   const [stressModal, setStressModal] = useState(null);
   const [layerModal, setLayerModal] = useState(null);
   const [techniqueModal, setTechniqueModal] = useState(null);
+  const [stressLevelModal, setStressLevelModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -538,11 +647,18 @@ export default function MindStressPage() {
             { range: '5–6', label: 'Trung bình', desc: 'Ảnh hưởng tập trung. Nên dùng box breathing + journal.', color: '#f59e0b' },
             { range: '7–8', label: 'Cao', desc: 'Căng thẳng rõ ràng. Ưu tiên nghỉ ngơi, giảm kỳ vọng.', color: '#f97316' },
             { range: '9–10', label: 'Nguy hiểm', desc: 'Không tự xử lý được. Hỏi người thân hoặc chuyên gia.', color: '#ef4444' },
-          ].map(s => (
-            <div key={s.range} className="flex items-center gap-4 p-3 rounded-xl border border-border bg-surface">
+          ].map((s, i) => (
+            <div key={s.range}
+              className="group/row flex items-center gap-4 p-3 rounded-xl border border-border bg-surface cursor-pointer transition-all duration-200 hover:bg-white/[0.03]"
+              style={{ '--hc': s.color }}
+              onClick={() => setStressLevelModal(i)}>
               <div className="text-lg font-bold w-12 text-center shrink-0" style={{ color: s.color }}>{s.range}</div>
               <div className="w-16 shrink-0 text-base font-bold" style={{ color: s.color }}>{s.label}</div>
-              <div className="text-base text-muted">{s.desc}</div>
+              <div className="text-base text-muted flex-1">{s.desc}</div>
+              <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/row:opacity-100 transition-opacity"
+                style={{ color: s.color, borderColor: `${s.color}55`, background: `${s.color}14` }}>
+                chi tiết →
+              </span>
             </div>
           ))}
         </div>
@@ -596,6 +712,19 @@ export default function MindStressPage() {
           hasNext={techniqueModal < TECHNIQUE_MODALS.length - 1}
           total={TECHNIQUE_MODALS.length}
           idx={techniqueModal}
+        />
+      )}
+
+      {stressLevelModal !== null && (
+        <CardModal
+          item={STRESS_LEVEL_MODALS[stressLevelModal]}
+          onClose={() => setStressLevelModal(null)}
+          onPrev={() => setStressLevelModal(i => Math.max(0, i - 1))}
+          onNext={() => setStressLevelModal(i => Math.min(STRESS_LEVEL_MODALS.length - 1, i + 1))}
+          hasPrev={stressLevelModal > 0}
+          hasNext={stressLevelModal < STRESS_LEVEL_MODALS.length - 1}
+          total={STRESS_LEVEL_MODALS.length}
+          idx={stressLevelModal}
         />
       )}
     </div>

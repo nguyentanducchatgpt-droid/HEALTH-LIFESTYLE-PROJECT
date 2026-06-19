@@ -437,19 +437,28 @@ export default function MindRoadmapPage() {
         <p className="text-muted text-lg mb-6">25 phút mỗi ngày chia ra 3 buổi — không cần làm tất cả cùng lúc</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {DAILY_STACK.map((s, i) => (
-            <div key={s.time} className="group/daily rounded-2xl border border-border bg-surface p-5 hover:border-purple-500/30 transition-colors cursor-pointer" onClick={() => setDailyModal(i)}>
+            <div key={s.time}
+              className="group/daily relative rounded-2xl border border-border bg-surface p-5 hover:border-purple-500/40 hover:shadow-lg transition-all duration-200 cursor-pointer"
+              style={{ '--hover-glow': `rgba(${RGB},0.08)` }}
+              onClick={() => setDailyModal(i)}>
               <div className="flex items-center justify-between mb-3">
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>{s.time}</div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/daily:opacity-100 transition-opacity"
-                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border transition-all duration-200 group-hover/daily:scale-105"
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.4)`, background: `rgba(${RGB},0.1)` }}>Chi tiết →</span>
               </div>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-4">
                 {s.items.map(it => (
                   <li key={it} className="flex items-start gap-2 text-lg text-muted">
                     <span className="shrink-0" style={{ color: COLOR }}>·</span>{it}
                   </li>
                 ))}
               </ul>
+              <div className="flex items-center gap-1.5 pt-3 border-t" style={{ borderColor: `rgba(${RGB},0.12)` }}>
+                <svg className="w-3.5 h-3.5 opacity-50" style={{ color: COLOR }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-xs text-muted opacity-60 group-hover/daily:opacity-100 transition-opacity">Nhấp để xem lý do khoa học</span>
+              </div>
             </div>
           ))}
         </div>

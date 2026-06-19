@@ -614,25 +614,116 @@ function TabE2() {
   );
 }
 
+const EMERGENCY = [
+  {
+    icon: '💔', cat: 'Tim Mạch', color: '#ef4444', rgb: '239,68,68',
+    signs: ['Đau ngực dữ dội, bóp nghẹt, lan tay trái/hàm/lưng', 'Khó thở đột ngột', 'Ngất bất ngờ', 'Hồi hộp kèm choáng, đau ngực, khó thở', 'Huyết áp rất cao kèm đau ngực, yếu liệt, lú lẫn'],
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhồi máu cơ tim (NMCT) và suy tim cấp là hai cấp cứu tim mạch phổ biến nhất. Với NMCT: mỗi phút không được tái tưới máu = thêm khoảng 2 triệu tế bào cơ tim chết. "Time is muscle" — thời gian từ khi có triệu chứng đến khi mở mạch (door-to-balloon <90 phút) quyết định trực tiếp tổn thương tim vĩnh viễn và tử vong.',
+    detail: 'Đau ngực do tim thường được mô tả là "bóp nghẹt", "đè nặng", "như có người ngồi lên ngực" — không nhất thiết phải "đau nhói". 25–30% NMCT không điển hình (đặc biệt ở nữ giới, người đái tháo đường): chỉ mệt mỏi, buồn nôn, khó thở, đau hàm hoặc cổ. Không chờ xem thêm — gọi 115 ngay.',
+    details: [
+      'Nhận biết NMCT (nhồi máu cơ tim): đau ngực bóp nghẹt kéo dài >20 phút, lan lên vai trái, cánh tay trái (hoặc cả hai), hàm dưới, lưng giữa. Kèm vã mồ hôi lạnh, buồn nôn, nôn, chóng mặt, cảm giác sắp chết. Không giảm khi nghỉ ngơi hoặc ngậm nitroglycerin. Phụ nữ thường không điển hình: chỉ mệt mỏi cực độ, buồn nôn, khó thở.',
+      'Nhận biết suy tim cấp: khó thở đột ngột nặng — đặc biệt khi nằm (phải ngồi thẳng để thở), thở khò khè bọt hồng, phù chân tăng nhanh, bụng to nhanh, tĩnh mạch cổ nổi. Nguyên nhân thường là NMCT cấp, rối loạn nhịp nặng, hoặc mất bù suy tim mãn.',
+      'Rối loạn nhịp nguy hiểm: hồi hộp đánh trống ngực kèm choáng váng, ngất, hoặc đau ngực = rối loạn nhịp có thể đe dọa tính mạng (VT, VF, AF có đáp ứng thất nhanh, block nhĩ thất độ 3). Ngất đột ngột không báo trước ở người có bệnh tim = nghi rối loạn nhịp cho đến khi chứng minh ngược lại.',
+      'Hành động đúng khi nghi NMCT: (1) Gọi 115 ngay — không tự lái xe. (2) Nhai (không nuốt nguyên) Aspirin 300mg nếu không dị ứng và đang có. (3) Nằm yên, thư giãn, không hoạt động gắng sức. (4) Mở cửa cho xe cấp cứu. (5) Nếu ngừng tim + mất ý thức: CPR 30 ép ngực : 2 hô hấp nhân tạo, liên tục đến khi có cấp cứu.',
+      'Cơn đau thắt ngực ổn định vs không ổn định: đau thắt ngực ổn định = xảy ra khi gắng sức, hết sau 5–10 phút nghỉ hoặc nitroglycerin — CẦN KHÁM nhưng không phải cấp cứu ngay. Đau thắt ngực không ổn định = mới xuất hiện, tần suất tăng, xảy ra khi nghỉ ngơi, không đáp ứng nitroglycerin → ĐI CẤP CỨU NGAY (có thể là NMCT đang hình thành).',
+      'Hypertensive crisis (tăng HA cấp cứu): HA >180/>120 kèm đau ngực, khó thở, lú lẫn, nhìn mờ, yếu liệt một bên, co giật → cấp cứu ngay (end-organ damage). HA >180/>120 đơn thuần không triệu chứng = hypertensive urgency — cần điều trị trong vài giờ nhưng không nguy cấp bằng.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Mỗi phút = 2 triệu tế bào tim chết', note: 'Time is muscle — gọi 115, không chờ, không tự lái xe đến viện' },
+      { icon: '💊', label: 'Nhai Aspirin 300mg ngay nếu có', note: 'Giảm cục máu đông — làm trong khi chờ xe cấp cứu' },
+      { icon: '⚠️', label: 'Nữ/ĐTĐ: triệu chứng không điển hình', note: 'Mệt cực độ, buồn nôn, khó thở — không nhất thiết đau ngực' },
+      { icon: '🫀', label: 'Đau khi nghỉ + không đáp ứng NTG', note: 'Đây là unstable angina/NMCT đang hình thành — cấp cứu ngay' },
+    ],
+  },
+  {
+    icon: '🧠', cat: 'Thần Kinh (nghi đột quỵ)', color: '#dc2626', rgb: '220,38,38',
+    signs: ['Méo miệng đột ngột', 'Yếu liệt tay chân một bên', 'Nói khó, nói đớ bất ngờ', 'Đau đầu dữ dội đột ngột', 'Co giật, lú lẫn cấp'],
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đột quỵ là nguyên nhân tử vong đứng thứ 2 và gây tàn tật đứng thứ 1 toàn cầu. Mỗi phút đột quỵ không được điều trị: 1.9 triệu tế bào não chết, 14 tỷ synapse mất đi. Cửa sổ điều trị tiêu sợi huyết (tPA): 4.5 giờ từ khi triệu chứng xuất hiện. Cứu 1 phút = cứu 1.9 triệu tế bào não. Dùng FAST để nhận biết nhanh.',
+    detail: 'FAST (Face-Arm-Speech-Time): Méo miệng (F) + Yếu tay một bên (A) + Nói đớ/không hiểu (S) → Gọi 115 ngay (T). Thêm BE-FAST: Balance (mất thăng bằng đột ngột) + Eyes (nhìn mờ/đôi một bên). Đột quỵ xuất huyết (vỡ mạch máu) thường khởi phát với đau đầu dữ dội đột ngột "như sét đánh" — cần phân biệt để điều trị khác nhau.',
+    details: [
+      'Nhận diện bằng BE-FAST: Balance (mất thăng bằng, đi loạng choạng đột ngột), Eyes (nhìn mờ hoặc mất thị lực một bên/mù nửa thị trường đột ngột), Face (méo miệng khi cười — bảo bệnh nhân mỉm cười, một bên không lên), Arm (yếu một tay — bảo giơ 2 tay ngang, một tay rơi xuống), Speech (nói không rõ, ú ớ, không hiểu câu hỏi đơn giản), Time (gọi 115 ngay).',
+      'TIA (Transient Ischemic Attack) — cảnh báo không được bỏ qua: triệu chứng đột quỵ thoáng qua tự hết trong <1h (thường <5–15 phút). 15% đột quỵ hoàn toàn xảy ra trong 48h sau TIA. Đây KHÔNG phải dấu hiệu "ổn rồi" — cần đi khám cấp cứu ngay khi TIA xảy ra, ngay cả khi đã hết triệu chứng.',
+      'Đột quỵ xuất huyết não vs nhồi máu: xuất huyết (20%): đau đầu đột ngột dữ dội nhất trong đời ("thunderclap headache"), buồn nôn, nôn, mất ý thức. Nhồi máu (80%): triệu chứng thần kinh khu trú (một bên người, mặt, lời nói) thường không đau đầu nhiều. Cả hai cần cấp cứu ngay — không tự phân biệt để trì hoãn điều trị.',
+      'Cửa sổ thời gian điều trị: tPA (tiêu sợi huyết): 0–4.5h từ khi triệu chứng. Thrombectomy cơ học (lấy huyết khối): 0–24h trong một số trường hợp chọn lọc. Điều trị trong 1h đầu ("golden hour"): phục hồi gần như hoàn toàn ở 30–50% bệnh nhân. Trì hoãn mỗi 30 phút = giảm 10% khả năng phục hồi tốt.',
+      'Yếu tố nguy cơ đột quỵ có thể kiểm soát: tăng huyết áp (nguy cơ #1, chiếm 50% đột quỵ), rung nhĩ (tăng nguy cơ 5×), đái tháo đường, hút thuốc, mỡ máu cao, béo phì. Kiểm soát tốt huyết áp đơn lẻ giảm 40% nguy cơ đột quỵ. Aspirin 81mg/ngày không khuyến cáo dự phòng tiên phát (người chưa từng đột quỵ) nếu không có chỉ định khác.',
+      'Phục hồi sau đột quỵ: bắt đầu vật lý trị liệu trong 24–48h đầu (nếu ổn định) — neuroplasticity cao nhất trong 3–6 tháng đầu. 30% phục hồi gần hoàn toàn, 30% còn khuyết tật nhẹ, 30% khuyết tật nặng. Yếu tố quyết định: thời gian điều trị + cường độ phục hồi chức năng sớm.',
+    ],
+    points: [
+      { icon: '🅱️', label: 'BE-FAST: 6 dấu hiệu cần nhớ', note: 'Balance · Eyes · Face · Arm · Speech · Time (gọi 115)' },
+      { icon: '⏰', label: 'Cửa sổ 4.5h cho tPA', note: 'Mỗi phút = 1.9 triệu tế bào não — không chờ, không "xem thêm"' },
+      { icon: '🚨', label: 'TIA tự hết vẫn phải đi cấp cứu', note: '15% đột quỵ hoàn toàn xảy ra trong 48h sau TIA' },
+      { icon: '❤️', label: 'Kiểm soát HA = giảm 40% đột quỵ', note: 'Tăng HA là nguy cơ #1 — theo dõi và điều trị là dự phòng tốt nhất' },
+    ],
+  },
+  {
+    icon: '🩸', cat: 'Tiêu Hóa & Chuyển Hóa', color: '#f59e0b', rgb: '245,158,11',
+    signs: ['Đau bụng dữ dội', 'Nôn ra máu, đi cầu phân đen', 'Đường huyết rất cao kèm lơ mơ, thở sâu nhanh', 'Đường huyết thấp kèm vã mồ hôi, run, lơ mơ'],
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cấp cứu tiêu hóa và chuyển hóa đa dạng và dễ bị bỏ qua vì triệu chứng đôi khi mơ hồ. Xuất huyết tiêu hóa trên (nôn máu/phân đen) mất máu nhanh, tỷ lệ tử vong 10% nếu không xử trí kịp. Hạ đường huyết nặng (<50 mg/dL) gây tổn thương não không hồi phục trong 5–10 phút nếu không điều chỉnh. Nhiễm toan ceton (DKA) là biến chứng đái tháo đường đe dọa tính mạng với tỷ lệ tử vong 1–5%.',
+    detail: 'Phân biệt đau bụng cấp cứu và đau bụng thông thường: cấp cứu khi đau dữ dội đột ngột, bụng cứng như gỗ (viêm phúc mạc), kèm sốt cao + rùng mình, đau không giảm sau 30–60 phút hoặc tăng dần. Đau bụng kèm sốc (huyết áp thấp, mạch nhanh, da lạnh ẩm) = cấp cứu tuyệt đối.',
+    details: [
+      'Xuất huyết tiêu hóa trên — nhận biết nhanh: nôn ra máu đỏ tươi (chảy máu đang hoạt động, nặng) hoặc màu bã cà phê (máu tiêu một phần). Phân đen như hắc ín, mùi tanh đặc trưng (melena) = máu tiêu qua ruột, nguồn gốc thực quản/dạ dày/tá tràng. 150–200mL máu đủ gây phân đen. Nguyên nhân: loét dạ dày, vỡ giãn tĩnh mạch thực quản (xơ gan), Mallory-Weiss.',
+      'Hạ đường huyết cấp (<70 mg/dL có triệu chứng): run tay, vã mồ hôi, đói cồn cào, tim đập nhanh, lo âu — đây là giai đoạn sớm, còn tỉnh táo và có thể tự xử trí: ăn 15–20g đường nhanh (4 viên glucose, 150ml nước ép trái cây, 1 muỗng mật ong), kiểm tra lại sau 15 phút. Nặng hơn: lú lẫn, co giật, mất ý thức → tiêm glucagon (nếu có) và gọi 115 ngay.',
+      'DKA (Nhiễm toan ceton đái tháo đường): đường huyết >300 mg/dL + buồn nôn/nôn/đau bụng + hơi thở mùi táo/aceton + thở sâu và nhanh (Kussmaul) + lơ mơ. Thường ở ĐTĐ type 1 hoặc type 2 khi stress, nhiễm trùng, bỏ thuốc. Cần IV fluid và insulin khẩn cấp tại bệnh viện — không tự xử trí tại nhà.',
+      'Viêm ruột thừa — nhận biết: đau thường bắt đầu quanh rốn sau đó di chuyển về hố chậu phải, tăng khi di chuyển, sốt nhẹ. Nếu vỡ ruột thừa: đau lan toàn bụng, bụng cứng, sốt cao — cấp cứu khẩn cấp. Biểu hiện không điển hình ở trẻ em, người già, phụ nữ có thai: đau có thể ở vị trí khác.',
+      'Tắc ruột: đau bụng co cơn từng đợt, bụng chướng, buồn nôn/nôn nhiều, không trung tiện/đại tiện. Tắc ruột hoàn toàn là cấp cứu — ruột có thể thiếu máu và hoại tử trong vài giờ. Tắc ruột do dính (sau phẫu thuật bụng trước đây) phổ biến nhất ở người lớn.',
+      'Khi nào đau bụng cần đi cấp cứu ngay: đau đột ngột dữ dội (đặc biệt đau "xé toạc" vùng lưng/bụng → nghi phình/vỡ động mạch chủ bụng), bụng cứng khi chạm, kèm sốc (mạch nhanh, HA thấp, da lạnh), kèm nôn ra máu hoặc phân đen, đau không giảm sau 1–2h hoặc tăng dần, kèm sốt >38.5°C và lạnh run.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Phân đen như hắc ín = xuất huyết tiêu hóa', note: '150mL máu đủ gây phân đen — nguồn gốc trên tá tràng' },
+      { icon: '🍬', label: 'Hạ ĐH nhẹ: 15–20g đường nhanh', note: 'Run + vã mồ hôi còn tỉnh táo → tự xử trí được, kiểm lại 15 phút' },
+      { icon: '💨', label: 'Hơi thở mùi táo + thở nhanh sâu = DKA', note: 'Nhiễm toan ceton — gọi 115, không tự điều chỉnh insulin tại nhà' },
+      { icon: '🚑', label: 'Bụng cứng + sốc = cấp cứu tuyệt đối', note: 'Viêm phúc mạc, vỡ tạng — phẫu thuật khẩn cấp, không trì hoãn' },
+    ],
+  },
+  {
+    icon: '🦴', cat: 'Cơ Xương Khớp', color: '#8b5cf6', rgb: '139,92,246',
+    signs: ['Đau sau chấn thương kèm biến dạng chi', 'Đau lưng kèm yếu chân, bí tiểu, tê vùng yên ngựa', 'Không chịu lực được sau chấn thương'],
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cấp cứu cơ xương khớp ít gây tử vong nhưng có thể gây tàn tật vĩnh viễn nếu xử trí chậm. Hội chứng cauda equina (chèn ép đuôi ngựa tủy sống) với yếu chân + bí tiểu/tiểu không kiểm soát + tê vùng đáy chậu là cấp cứu phẫu thuật — trì hoãn >6–12h có thể gây mất kiểm soát bàng quang/ruột vĩnh viễn. Gãy cột sống cổ sau chấn thương không được bất động đúng = có thể gây liệt tứ chi vĩnh viễn.',
+    detail: 'Đau sau chấn thương kèm biến dạng chi hầu như luôn là gãy xương cho đến khi có X-quang chứng minh ngược lại. Không cố nắn thẳng, không để bệnh nhân đứng/đi bộ. Bất động bằng nẹp tạm thời ở tư thế hiện tại và vận chuyển an toàn. Chú ý: gãy xương có thể mất máu đáng kể (gãy đùi: 1–2L, gãy xương chậu: 3–5L).',
+    details: [
+      'Nhận biết gãy xương: đau dữ dội tại vị trí chấn thương, sưng nề nhanh, biến dạng rõ ràng (xương lồi, chi ngắn/lệch), không thể chịu lực, cảm giác lắc rắc khi chấn thương. Gãy hở (đầu xương xuyên qua da) = cấp cứu do nguy cơ nhiễm khuẩn nặng, cần kháng sinh và xử trí trong 6–8h.',
+      'Hội chứng Cauda Equina — cấp cứu phẫu thuật: thoát vị đĩa đệm thắt lưng khổng lồ chèn ép đuôi ngựa gây: đau lưng thấp + yếu hai chân + tê vùng yên ngựa (đáy chậu, bộ phận sinh dục, mặt trong đùi) + rối loạn cơ vòng (bí tiểu/tiểu không kiểm soát, táo bón nặng hoặc đại tiện không tự chủ). Phẫu thuật giải ép trong 24–48h = tiên lượng tốt; trễ hơn = tổn thương thần kinh vĩnh viễn.',
+      'Gãy cột sống cổ sau chấn thương: chấn thương đầu/cổ mạnh (tai nạn giao thông, ngã ngựa, bơi lội đập đầu) với đau cổ = phải coi là gãy cột sống cổ đến khi chụp CT loại trừ. Không di chuyển đầu/cổ tự do. Cần nẹp cổ cứng và vận chuyển thẳng trên cáng. Di chuyển sai = gây liệt tứ chi vĩnh viễn do tổn thương tủy sống.',
+      'Hội chứng khoang (Compartment Syndrome): sau gãy xương/chèn ép/bỏng — áp lực trong khoang筋 (fascial compartment) tăng cao, thiếu máu nuôi → đau dữ dội không giải thích được, đau tăng khi duỗi thụ động cơ, căng cứng khoang, tê bì đầu chi. Cửa sổ điều trị 6h — trễ hơn gây hoại tử cơ không hồi phục (rhabdomyolysis).',
+      'Sai khớp — không cố nắn tại hiện trường: sai khớp vai (thường nhất), háng, đầu gối, khuỷu tay. Đau dữ dội, chi ở tư thế bất thường, không cử động được. Không cố nắn tại nhà vì có thể kèm gãy xương (nắn gây thêm tổn thương) hoặc tổn thương mạch máu/thần kinh. Kiểm tra mạch, cảm giác và vận động đầu chi. Đến ER để X-quang trước khi nắn.',
+      'Đau lưng khi nào cần đi cấp cứu: đau lưng thông thường (<6 tuần, không yếu chi, không rối loạn cơ vòng) không phải cấp cứu. ĐI CẤP CỨU NGAY khi đau lưng kèm: yếu hai chân tiến triển nhanh, bí tiểu hoặc tiểu không tự chủ, tê vùng đáy chậu (cauda equina), sốt cao + rùng mình (nghi viêm đốt sống nhiễm khuẩn), tiền sử ung thư (nghi di căn cột sống), chấn thương mạnh.',
+    ],
+    points: [
+      { icon: '🦿', label: 'Biến dạng chi sau chấn thương = gãy xương', note: 'Bất động tại chỗ, không nắn thẳng, không để đứng — đến ER' },
+      { icon: '🚨', label: 'Tê đáy chậu + bí tiểu = cauda equina', note: 'Phẫu thuật trong 24–48h — trễ hơn = mất kiểm soát bàng quang vĩnh viễn' },
+      { icon: '🏊', label: 'Đau cổ sau chấn thương đầu = nẹp cổ', note: 'Gãy cột sống cổ đến khi CT loại trừ — di chuyển sai = liệt tứ chi' },
+      { icon: '⏰', label: 'Hội chứng khoang: cửa sổ 6h', note: 'Đau dữ dội + khoang cứng sau gãy xương — trễ hơn 6h = hoại tử cơ' },
+    ],
+  },
+];
+
 function TabE3() {
-  const EMERGENCY = [
-    { icon: '💔', cat: 'Tim Mạch', signs: ['Đau ngực dữ dội, bóp nghẹt, lan tay trái/hàm/lưng', 'Khó thở đột ngột', 'Ngất bất ngờ', 'Hồi hộp kèm choáng, đau ngực, khó thở', 'Huyết áp rất cao kèm đau ngực, yếu liệt, lú lẫn'], color: '#ef4444' },
-    { icon: '🧠', cat: 'Thần Kinh (nghi đột quỵ)', signs: ['Méo miệng đột ngột', 'Yếu liệt tay chân một bên', 'Nói khó, nói đớ bất ngờ', 'Đau đầu dữ dội đột ngột', 'Co giật, lú lẫn cấp'], color: '#dc2626' },
-    { icon: '🩸', cat: 'Tiêu Hóa & Chuyển Hóa', signs: ['Đau bụng dữ dội', 'Nôn ra máu, đi cầu phân đen', 'Đường huyết rất cao kèm lơ mơ, thở sâu nhanh', 'Đường huyết thấp kèm vã mồ hôi, run, lơ mơ'], color: '#f59e0b' },
-    { icon: '🦴', cat: 'Cơ Xương Khớp', signs: ['Đau sau chấn thương kèm biến dạng chi', 'Đau lưng kèm yếu chân, bí tiểu, tê vùng yên ngựa', 'Không chịu lực được sau chấn thương'], color: '#8b5cf6' },
-  ];
   const SOON = ['Sụt cân không rõ nguyên nhân', 'Mệt kéo dài >2–4 tuần', 'Ho kéo dài', 'Đau ngực khi gắng sức', 'Phù chân kéo dài', 'Tiểu nhiều, khát nhiều', 'Rối loạn giấc ngủ nặng kéo dài', 'Vết thương lâu lành'];
+  const [emergModal, setEmergModal] = useState(null);
   return (
     <div className="space-y-4">
       <div className="rounded-xl border border-red-500/30 bg-red-500/08 p-3">
         <p className="text-lg font-bold text-red-400 mb-1">⚠️ Đi Cấp Cứu Ngay — Không Chờ</p>
         <p className="text-base text-muted">Khi có các dấu hiệu dưới đây: không tự xử trí, gọi 115 hoặc đến cơ sở y tế gần nhất.</p>
       </div>
-      {EMERGENCY.map(g => (
-        <div key={g.cat} className="rounded-2xl border border-border bg-surface/60 p-4">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl">{g.icon}</span>
-            <span className="font-bold text-lg" style={{ color: g.color }}>{g.cat}</span>
+      <p className="text-xs text-muted opacity-60">Nhấp vào từng nhóm để xem chi tiết và cách xử trí</p>
+      {EMERGENCY.map((g, i) => (
+        <div key={g.cat}
+          className="rounded-2xl border border-border bg-surface/60 p-4 cursor-pointer hover:shadow-md transition-all duration-200"
+          onClick={() => setEmergModal(i)}
+          onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${g.rgb},0.45)`}
+          onMouseLeave={e => e.currentTarget.style.borderColor = ''}>
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">{g.icon}</span>
+              <span className="font-bold text-lg" style={{ color: g.color }}>{g.cat}</span>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0"
+              style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>Chi tiết →</span>
           </div>
           <ul className="space-y-1">
             {g.signs.map(s => (
@@ -653,6 +744,16 @@ function TabE3() {
           ))}
         </div>
       </div>
+      {emergModal !== null && (
+        <ScheduleModal
+          item={{ ...EMERGENCY[emergModal], metric: EMERGENCY[emergModal].cat, freq: 'Cấp cứu ngay', tip: 'Gọi 115 — không tự xử trí' }}
+          idx={emergModal} total={EMERGENCY.length}
+          onClose={() => setEmergModal(null)}
+          onPrev={() => setEmergModal(i => Math.max(0, i - 1))}
+          onNext={() => setEmergModal(i => Math.min(EMERGENCY.length - 1, i + 1))}
+          hasPrev={emergModal > 0} hasNext={emergModal < EMERGENCY.length - 1}
+        />
+      )}
     </div>
   );
 }

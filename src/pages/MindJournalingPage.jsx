@@ -22,6 +22,72 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
+const BENEFIT_MODALS = [
+  {
+    icon: '🧠', color: COLOR, rgb: RGB,
+    modalTitle: 'Giải Phóng Não Bộ — Cognitive Offloading',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Zeigarnik Effect (1927): não bộ không thể "buông" những việc chưa hoàn thành — chúng chiếm working memory liên tục. Viết ra = signal "đã ghi lại" cho não → cho phép buông bỏ và giải phóng bandwidth nhận thức cho việc quan trọng hơn.',
+    detail: 'Working memory của con người có giới hạn — chỉ giữ được 4–7 items cùng lúc (Miller, 1956). Khi lo âu, những "open loops" (việc chưa giải quyết, lo lắng chưa xử lý) chiếm hết working memory. Viết nhật ký là hành động cognitive offloading — chuyển tải từ RAM não sang "ổ cứng bên ngoài".',
+    details: [
+      'Zeigarnik Effect và "chạy vòng lặp": Bluma Zeigarnik (1927) phát hiện người phục vụ nhớ đơn hàng chưa thanh toán rõ hơn đơn đã xong. Não dùng cùng cơ chế cho lo lắng — duy trì "unfinished tasks" trong working memory với mục đích nhắc nhở. Kết quả: rumination loop không tự dừng.',
+      'Cognitive offloading và Working Memory: Nghiên cứu của Seli et al. (2016): viết ra những "open loops" trước task = giảm mind-wandering 30% và tăng performance trên task tiếp theo. Não được signal rằng thứ đó đã được ghi nhận → có thể release nó khỏi active maintenance.',
+      'Expressive writing và rumination: Pennebaker & Beall (1986) — nghiên cứu landmark: viết về sự kiện căng thẳng 15–20 phút/ngày × 4 ngày → giảm health center visits 43% trong 6 tháng tiếp theo. Cơ chế: narrative processing chuyển raw emotion thành coherent story → giảm intrusive thoughts.',
+      'Worry journaling và anxiety: Ứng dụng cụ thể: "Worry time journaling" — dành 10 phút buổi tối viết ra mọi lo lắng. Não học được: "lo lắng có chỗ để xử lý → không cần lo lúc 2 giờ sáng." CBT clinicians dùng kỹ thuật này như component chuẩn trong trị anxiety.',
+      'Viết tay vs gõ phím: fMRI studies: handwriting kích hoạt broader neural network hơn typing — bao gồm motor cortex, sensory areas và visual processing. Handwriting slower pace cho phép deeper processing. "Slow writing = deeper thinking" — xu hướng generative AI không thể thay thế.',
+      'Pre-sleep journaling và "unfinished business": Baddeley & Logie: working memory interference là nguyên nhân chính của "overthinking before bed." Viết to-do list và lo lắng trước ngủ (Scullin et al., 2018) — nhóm viết to-do list ngủ nhanh hơn 9 phút so với nhóm viết sự kiện đã xong.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Zeigarnik Effect', note: 'Não không buông việc chưa xong — viết ra = signal hoàn thành' },
+      { icon: '💾', label: 'Cognitive Offload', note: 'Chuyển lo lắng từ RAM não sang "ổ cứng ngoài"' },
+      { icon: '😴', label: 'Ngủ Nhanh +9 Phút', note: 'Scullin 2018: viết to-do trước ngủ → giảm sleep onset' },
+      { icon: '📉', label: '-43% Health Visits', note: 'Pennebaker 1986: viết cảm xúc 4 ngày → ít bệnh hơn' },
+    ],
+  },
+  {
+    icon: '🔍', color: COLOR, rgb: RGB,
+    modalTitle: 'Hiểu Bản Thân Hơn — Pattern Recognition & Self-Awareness',
+    img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Narrative identity theory (Dan McAdams): con người hiểu bản thân qua câu chuyện họ kể về chính mình. Journaling là process kiến tạo narrative — từ raw experience rời rạc → coherent story → self-understanding. Người viết nhật ký đều đặn có self-concept clarity cao hơn đáng kể.',
+    detail: 'Pattern recognition trong journaling xảy ra qua hai tầng: (1) nhận ra trong khi viết — khi putting words to experience, não làm "sense-making" và connections nổi lên, (2) nhận ra khi đọc lại — thấy recurring themes, triggers, reactions mà không thể thấy khi trong khoảnh khắc đó.',
+    details: [
+      'Self-Concept Clarity (SCC): Campbell et al. (1996): SCC — mức độ rõ ràng về bản thân — tương quan mạnh với self-esteem, emotional stability và lower neuroticism. Journaling tăng SCC bằng cách forced articulation: khi phải viết ra "tôi là ai, tôi muốn gì, tôi phản ứng thế nào" → self-concept trở nên rõ nét hơn.',
+      'Emotional pattern recognition: Viết về cùng một loại situation nhiều lần → bắt đầu nhận ra signature pattern của mình: "Mình hay phản ứng defensive khi bị chỉ trích bởi người thân, nhưng thoải mái hơn với người lạ." Đây là level self-awareness mà therapy cũng hướng đến — và journaling làm được mà không cần therapist.',
+      'Trigger mapping: "Điều gì kích hoạt cảm xúc này?" trong nhật ký cảm xúc là bước đầu của trigger awareness. Sau 2–4 tuần, patterns nổi lên: "Mình stress nhất vào thứ Hai sáng, sau khi đọc email." — information này cho phép proactive coping thay vì reactive.',
+      'Narrative processing và meaning-making: Neimeyer (2000): sau loss hoặc trauma, người có thể viết coherent narrative về sự kiện phục hồi tốt hơn những người không thể. Journaling giúp chuyển "điều khủng khiếp đó xảy ra với mình" → "đây là điều đó dạy mình và mình đã thay đổi thế này."',
+      'Values clarification: Viết về moments bạn cảm thấy fulfilled vs drained giúp reverse-engineer core values. "Mình vui nhất khi làm điều gì? Mình bực nhất khi ai làm điều gì?" — 30 ngày journaling thường reveal 3–5 core values rõ ràng hơn bất kỳ personality test nào.',
+      'Metacognitive awareness: Journaling là externalized metacognition — đặt thoughts ra ngoài để quan sát thay vì sống trong đó. "Tôi đang có suy nghĩ rằng..." thay vì "Tôi đang nghĩ..." — khoảng cách nhỏ này là nền tảng của mindfulness và cognitive defusion trong ACT.',
+    ],
+    points: [
+      { icon: '🧩', label: 'Narrative Identity', note: 'McAdams: tự hiểu qua câu chuyện kể về bản thân' },
+      { icon: '🗺️', label: 'Trigger Mapping', note: '2–4 tuần → patterns nổi lên: ai/gì/khi nào gây stress' },
+      { icon: '💎', label: 'Values Clarification', note: '30 ngày → 3–5 core values rõ hơn bất kỳ personality test' },
+      { icon: '🔭', label: 'Metacognition', note: '"Tôi đang có suy nghĩ rằng..." — khoảng cách quan sát' },
+    ],
+  },
+  {
+    icon: '💜', color: COLOR, rgb: RGB,
+    modalTitle: 'Xử Lý Cảm Xúc Khỏe — Affect Labeling & Emotional Release',
+    img: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Affect labeling (đặt tên cho cảm xúc): fMRI studies — Matthew Lieberman (UCLA, 2007): khi đặt tên cho cảm xúc bằng lời ("tôi đang tức giận"), amygdala activation giảm ngay lập tức và PFC activation tăng. "Nói ra để não bộ bình tĩnh" không phải ẩn dụ — đây là neuroscience.',
+    detail: 'Viết nhật ký là phiên bản chậm và sâu hơn của affect labeling — thay vì chỉ đặt tên, bạn còn mô tả, contextualize và make sense of cảm xúc. Điều này engage PFC (prefrontal cortex) mạnh hơn, tạo "top-down regulation" của amygdala — giảm cường độ cảm xúc một cách có ý thức.',
+    details: [
+      'Amygdala và prefrontal cortex: Amygdala = alarm system cảm xúc, phản ứng trong 50ms. PFC = "brake pedal" lý trí, chậm hơn nhưng có thể down-regulate amygdala khi được engage. Viết về cảm xúc = engage PFC với task có structure → PFC "busy with task" giúp modulate amygdala response.',
+      'Pennebaker\'s expressive writing research: 35+ năm nghiên cứu của James Pennebaker (UT Austin): viết về traumatic/stressful experiences 15–20 phút × 3–4 ngày có effects: giảm anxiety và depression symptoms, cải thiện immune function (T-cell activity tăng), giảm doctor visits, cải thiện sleep quality.',
+      'Suppression vs expression: Gross (1998): emotional suppression (không được biểu đạt cảm xúc) có hại cho cả psychological và physical health — tăng cortisol, tăng cardiovascular reactivity, giảm social connection. Viết nhật ký là safe expression outlet — không harm relationships, không cần timing đúng.',
+      'Distancing effect: Kross et al. (2014): viết về experience ở third-person ("anh ấy cảm thấy...") hoặc self-distanced ("nhìn từ xa...") giúp process emotion mạnh hơn là first-person ("mình cảm thấy..."). Viết nhật ký tự nhiên tạo khoảng cách này — retrospective perspective vs experiencing in the moment.',
+      'Self-compassion through writing: Kristin Neff: self-compassion letter (viết thư an ủi bản thân về điều mình đang khổ sở, như viết cho bạn thân) là can thiệp có effect size lớn nhất cho self-esteem và giảm shame. Template "Nhật Ký Ngày Thất Bại" trong trang này implement kỹ thuật này.',
+      'Emotional granularity: Lisa Feldman Barrett: người có emotional granularity cao (phân biệt được nhiều cảm xúc chi tiết) có better emotional regulation. Viết nhật ký tăng emotional granularity — thay vì "tôi cảm thấy tệ", bạn học distinguish: thất vọng, cô đơn, lo âu, chán nản, bị phản bội — mỗi cái cần xử lý khác nhau.',
+    ],
+    points: [
+      { icon: '🧬', label: 'Amygdala Giảm Ngay', note: 'Lieberman 2007: đặt tên cảm xúc → amygdala xuống tức thì' },
+      { icon: '🛡️', label: 'Miễn Dịch Tăng', note: 'Pennebaker: viết 4 ngày → T-cell activity tăng đo được' },
+      { icon: '💌', label: 'Self-Compassion Letter', note: 'Thư an ủi bản thân — effect size lớn nhất cho shame' },
+      { icon: '🎨', label: 'Emotional Granularity', note: 'Barrett: phân biệt cảm xúc chi tiết = regulate tốt hơn' },
+    ],
+  },
+];
+
 const TEMPLATES = [
   { id: 'daily', icon: '📅', label: 'Nhật Ký 5 Dòng', color: '#ec4899', lines: [
     { q: '1. Hôm nay tôi biết ơn điều gì?', ph: 'Một điều nhỏ cũng đủ...' },
@@ -67,6 +133,80 @@ const TIPS = [
   { icon: '📈', tip: 'Sau 7 ngày, đọc lại để thấy sự thay đổi của bản thân' },
 ];
 
+function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.modalTitle} className="w-full h-full object-cover" style={{ opacity: 0.50 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-3" style={{ color: item.color }}>{item.modalTitle}</h2>
+          <div className="rounded-xl px-4 py-3 mb-5 text-base font-medium leading-relaxed"
+            style={{ background: `rgba(${item.rgb},0.1)`, borderLeft: `3px solid ${item.color}`, color: `rgba(${item.rgb},0.9)` }}>
+            💡 {item.keyFact}
+          </div>
+          <p className="text-base text-muted leading-relaxed mb-6">{item.detail}</p>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
+              ← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
+              Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function JournalWriter({ template }) {
   const [answers, setAnswers] = useState({});
   const [saved, setSaved] = useState(false);
@@ -103,6 +243,7 @@ function JournalWriter({ template }) {
 
 export default function MindJournalingPage() {
   const [active, setActive] = useState('daily');
+  const [benefitModal, setBenefitModal] = useState(null);
   const tmpl = TEMPLATES.find(t => t.id === active);
 
   useEffect(() => {
@@ -160,15 +301,15 @@ export default function MindJournalingPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Nên Viết Nhật Ký?</h2>
         <p className="text-muted text-lg mb-6">3 lợi ích được nghiên cứu khoa học xác nhận</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            { icon: '🧠', t: 'Giải phóng não bộ', d: 'Viết ra giúp não không còn phải "chạy vòng lặp" lo âu liên tục, giải phóng bộ nhớ làm việc.' },
-            { icon: '🔍', t: 'Hiểu bản thân hơn', d: 'Nhận ra pattern suy nghĩ, cảm xúc lặp lại — từ đó thay đổi cách phản ứng có ý thức hơn.' },
-            { icon: '💜', t: 'Xử lý cảm xúc khỏe', d: 'Đặt tên cho cảm xúc làm giảm cường độ của nó. Viết ra = chấp nhận và buông bỏ.' },
-          ].map(c => (
-            <div key={c.t} className="rounded-2xl border border-border bg-surface p-5 hover:border-pink-500/30 transition-colors">
-              <div className="text-4xl mb-3">{c.icon}</div>
-              <div className="font-bold text-text mb-2">{c.t}</div>
-              <p className="text-muted text-lg leading-relaxed">{c.d}</p>
+          {BENEFIT_MODALS.map((c, i) => (
+            <div key={c.modalTitle} className="group/benefit rounded-2xl border border-border bg-surface p-5 hover:border-pink-500/30 transition-colors cursor-pointer" onClick={() => setBenefitModal(i)}>
+              <div className="flex items-start justify-between gap-2 mb-3">
+                <span className="text-4xl">{c.icon}</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/benefit:opacity-100 transition-opacity self-start mt-1"
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+              </div>
+              <div className="font-bold text-text mb-2">{c.modalTitle.split(' — ')[0]}</div>
+              <p className="text-muted text-lg leading-relaxed">{c.detail.split('.')[0]}.</p>
             </div>
           ))}
         </div>
@@ -230,6 +371,19 @@ export default function MindJournalingPage() {
       <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
         <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
       </Link>
+
+      {benefitModal !== null && (
+        <CardModal
+          item={BENEFIT_MODALS[benefitModal]}
+          onClose={() => setBenefitModal(null)}
+          onPrev={() => setBenefitModal(i => Math.max(0, i - 1))}
+          onNext={() => setBenefitModal(i => Math.min(BENEFIT_MODALS.length - 1, i + 1))}
+          hasPrev={benefitModal > 0}
+          hasNext={benefitModal < BENEFIT_MODALS.length - 1}
+          total={BENEFIT_MODALS.length}
+          idx={benefitModal}
+        />
+      )}
     </div>
   );
 }

@@ -356,7 +356,7 @@ const SCHEDULE = [
   },
 ];
 
-function ScheduleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+function ScheduleModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -421,7 +421,7 @@ function ScheduleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext })
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
               ← Trước</button>
-            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {SCHEDULE.length}</span>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
@@ -434,10 +434,113 @@ function ScheduleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext })
   );
 }
 
+const DAILY_CHECKS = [
+  {
+    q: 'Hôm nay ngủ được bao nhiêu giờ?', icon: '😴', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người lớn cần 7–9 giờ ngủ mỗi đêm (AHA/CDC). Thiếu ngủ mãn tính (<6h) gây rối loạn hormone hunger/fullness (ghrelin tăng 15%, leptin giảm 15%), tăng nguy cơ béo phì 89%, đái tháo đường 25%, và giảm hiệu suất nhận thức tương đương uống 2 ly rượu. Đây là câu hỏi quan trọng nhất trong checklist vì giấc ngủ ảnh hưởng đến mọi chỉ số còn lại.',
+    detail: 'Ghi số giờ ngủ thực tế mỗi sáng tạo dữ liệu cá nhân quý giá: bạn ngủ ít nhất ngày nào? Sau khi ngủ đủ, ngày hôm sau bạn ăn ít hơn không? Tập luyện tốt hơn không? Chuỗi dữ liệu 30 ngày sẽ cho thấy pattern rõ ràng mà không thể cảm nhận chủ quan được.',
+    details: [
+      'Ngưỡng tối thiểu và lý tưởng: <6h = thiếu ngủ rõ rệt, có hại sinh lý. 6–7h = vùng xám, đủ chức năng nhưng tích lũy sleep debt. 7–9h = khuyến nghị cho người trưởng thành. >9h thường xuyên mà vẫn mệt = có thể là triệu chứng bệnh (trầm cảm, thiếu máu, suy giáp, sleep apnea).',
+      'Sleep debt tích lũy: mỗi đêm thiếu 1h ngủ tạo ra "sleep debt." Não không thể phân biệt được mức độ suy giảm của chính nó khi thiếu ngủ — người thiếu ngủ thường nghĩ mình đang ổn trong khi test hiệu suất cho thấy tệ hơn nhiều. Ngủ bù cuối tuần chỉ phục hồi được một phần.',
+      'Thời điểm ngủ quan trọng không kém số giờ: ngủ 23:00–7:00 (8h, đúng nhịp sinh học) tốt hơn ngủ 2:00–10:00 (8h, lệch nhịp). Deep sleep cao điểm trong nửa đêm đầu, REM cao điểm nửa đêm sau. Ngủ muộn = ít deep sleep = ít hormone tăng trưởng, ít hồi phục cơ thể.',
+      'Dấu hiệu ngủ đủ giấc: thức dậy trước báo thức hoặc cùng giờ không cần báo thức, không cần cà phê để tỉnh táo buổi sáng, không buồn ngủ trong khi ngồi yên ban ngày, cảm thấy sảng khoái trong 1h đầu sau khi dậy.',
+      'Cải thiện nhanh nhất: (1) Ngủ và dậy cùng giờ mỗi ngày — kể cả cuối tuần. (2) Không dùng màn hình 1h trước ngủ (ánh sáng xanh ức chế melatonin 2–3h). (3) Phòng mát 18–20°C. (4) Không uống rượu bia 3h trước ngủ. Chỉ cần áp dụng 2 trong 4 điều này, chất lượng giấc ngủ cải thiện rõ rệt sau 1–2 tuần.',
+      'Khi nào cần đánh giá y tế: ngủ đủ giờ nhưng vẫn mệt khi dậy, ngáy to hoặc thức dậy nhiều lần trong đêm, buồn ngủ ban ngày không kiểm soát được (ngủ gật khi họp, xem TV), khó ngủ >30 phút mỗi đêm kéo dài >4 tuần. Sleep apnea và insomnia có phương pháp điều trị hiệu quả — không cần chịu đựng.',
+    ],
+    points: [
+      { icon: '🎯', label: '7–9 giờ là ngưỡng tối ưu', note: '<6h mãn tính = suy giảm tương đương uống rượu liên tục' },
+      { icon: '🌙', label: 'Ngủ trước nửa đêm để có deep sleep', note: 'Deep sleep cao điểm 22:00–2:00 — ngủ muộn mất đi khoảng này' },
+      { icon: '📵', label: 'Tắt màn hình 1h trước khi ngủ', note: 'Ánh sáng xanh delay melatonin 2–3h — giờ ngủ thiếp muộn hơn' },
+      { icon: '📅', label: 'Cùng giờ ngủ/dậy cả 7 ngày', note: 'Nhịp sinh học ổn định = chất lượng cao hơn dù số giờ không đổi' },
+    ],
+  },
+  {
+    q: 'Có vận động ít nhất 20–30 phút không?', icon: '🏃', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'WHO khuyến nghị 150–300 phút moderate aerobic/tuần (hoặc 75–150 phút vigorous) + strength training 2 ngày/tuần. Nghiên cứu Lancet 2016 (>1 triệu người): 1h/ngày moderate activity (đi bộ nhanh, đạp xe) đủ để loại bỏ hoàn toàn nguy cơ tử vong sớm liên quan đến ngồi nhiều. Chỉ 20–30 phút/ngày đã giảm đáng kể nguy cơ tim mạch, đái tháo đường và trầm cảm.',
+    detail: 'Câu hỏi này không đặt bar quá cao — 20 phút là ngưỡng tối thiểu đủ để có lợi ích sinh lý rõ ràng: tăng BDNF (não), tiết endorphin, cải thiện insulin sensitivity 24–48h sau tập. Ghi "Rồi" hay "Chưa" mỗi ngày tạo accountability và giúp bạn nhận ra pattern: bạn ít vận động nhất ngày nào trong tuần?',
+    details: [
+      'Tại sao 20–30 phút đủ để tính: nghiên cứu Jakicic (2015): ba đoạn 10 phút/ngày tốt ngang một đoạn 30 phút liên tục cho sức khỏe tim mạch. "Exercise snacks" (1–5 phút vigorous activity mỗi giờ) tích lũy lợi ích tương đương. Quan trọng nhất là tổng thời gian trong tuần.',
+      'Phân biệt các mức độ: Light (đi bộ thong thả, kéo giãn) — tốt hơn ngồi nhưng ít benefit tim mạch. Moderate (đi bộ nhanh, đạp xe bình thường, bơi chậm — mức bạn thở nhanh hơn nhưng vẫn nói chuyện được) — ngưỡng có lợi ích đã được chứng minh. Vigorous (chạy, HIIT, đạp xe nhanh — khó nói chuyện) — lợi ích tương đương moderate nhưng thời gian ngắn hơn 2×.',
+      'Zone 2 cardio — vũ khí bí mật: cường độ bạn vẫn trò chuyện được nhưng hơi thở hơi nặng (~60–70% max heart rate). Đây là zone tốt nhất cho mitochondrial biogenesis, fat oxidation dài hạn và cardiorespiratory fitness. 3–4 buổi 30–45 phút/tuần trong 3–6 tháng tạo thay đổi sinh lý cơ bản: RHR giảm, VO2max tăng, insulin sensitivity cải thiện rõ.',
+      'Resistance training — không thể thiếu sau 30 tuổi: mất 1–2% cơ bắp/năm (sarcopenia) sau 30 nếu không tập. Cơ bắp là "metabolic organ" — tăng 1 kg cơ = tăng ~50 kcal TDEE. 2–3 buổi/tuần compound movements (squat, deadlift, push-up, row) đủ để bảo toàn cơ bắp dài hạn. Không cần gym — bodyweight đủ nếu đủ progressive overload.',
+      'Vận động và não: tập thể dục tăng BDNF (Brain-Derived Neurotrophic Factor) — "phân bón não" giúp neuroplasticity, trí nhớ và chống trầm cảm. Một buổi tập 20–30 phút cải thiện tập trung và tâm trạng trong 2–4h tiếp theo. Đây là lý do nhiều người làm việc sáng tạo thấy hiệu quả nhất ngay sau tập.',
+      'Vượt qua rào cản "không có thời gian": 20 phút = 1.4% của 24h. Giải pháp: đặt lịch như cuộc họp, không phải tùy hứng. Morning walk trước khi tắm. Đi bộ/đạp xe đi làm. Tập ngay sau ăn tối (cũng giúp kiểm soát đường huyết sau ăn). Nghiên cứu: người báo cáo "không có thời gian tập" xem TV trung bình 3.5h/ngày.',
+    ],
+    points: [
+      { icon: '⏱️', label: '3 × 10 phút = 1 × 30 phút', note: 'Exercise snacks tích lũy — không cần liên tục để có lợi ích' },
+      { icon: '💬', label: 'Zone 2: vừa đi vừa nói chuyện được', note: 'Cường độ tối ưu cho fat burn và tim mạch dài hạn' },
+      { icon: '💪', label: 'Resistance 2×/tuần chống sarcopenia', note: '-1–2% cơ/năm sau 30 nếu không tập — cơ là metabolic organ' },
+      { icon: '🧠', label: 'BDNF tăng ngay sau 20 phút tập', note: 'Tập trung và tâm trạng tốt hơn 2–4h sau buổi tập' },
+    ],
+  },
+  {
+    q: 'Có ăn đủ rau/đạm/nước không?', icon: '🥗', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ba trụ dinh dưỡng cơ bản nhất: rau (fiber, vi chất, chống oxy hóa), protein (tổng hợp cơ, miễn dịch, enzyme, hormone), nước (mọi phản ứng sinh hóa đều cần nước). Thiếu bất kỳ trụ nào đều có hậu quả ngay trong ngày: thiếu fiber → glucose spike; thiếu protein → muscle breakdown; thiếu nước →giảm hiệu suất nhận thức 10–15% khi mất 2% trọng lượng cơ thể.',
+    detail: 'Câu hỏi đơn giản "Có đủ rau/đạm/nước không?" là filter tốt nhất cho chế độ ăn hàng ngày mà không cần đếm calo. Nếu câu trả lời là "Có" cho cả 3, rất có thể bạn đang ăn uống hợp lý. Nếu "Không" nhiều ngày liên tiếp → đây là tín hiệu cần điều chỉnh.',
+    details: [
+      'Rau và chất xơ — nền tảng sức khỏe microbiome: khuyến nghị 400–600g rau/ngày (5 phần). Chất xơ mục tiêu 25–35g/ngày. Chất xơ nuôi vi khuẩn ruột có lợi → sản xuất short-chain fatty acids → giảm viêm, tăng nhạy cảm insulin, hỗ trợ miễn dịch. Đa dạng loại rau quan trọng hơn số lượng — mỗi màu sắc có phytochemical khác nhau.',
+      'Protein — ngưỡng tối thiểu và tối ưu: người ít vận động tối thiểu 0.8g/kg/ngày (thường thiếu ở người ăn nhiều tinh bột). Người tập thể dục: 1.2–2g/kg. Protein quan trọng nhất cho bữa sáng và sau tập — "protein pulse" 25–40g mỗi bữa kích hoạt muscle protein synthesis hiệu quả hơn chia nhỏ nhiều bữa ít. Nguồn tốt: trứng, cá, đậu phụ, thịt nạc, sữa chua Hy Lạp.',
+      'Nước — bao nhiêu là đủ: công thức cơ bản: 35ml × kg cân nặng/ngày. VD: 65kg → 2.275L/ngày. Thêm nước khi tập (500ml/30 phút vigorous activity), thời tiết nóng, hoặc đổ mồ hôi nhiều. Màu nước tiểu là indicator tốt nhất: vàng nhạt như nước chanh = đủ nước; vàng đậm = cần uống thêm; trong suốt = uống quá nhiều.',
+      'Meal sequencing — thứ tự ăn quan trọng: ăn rau trước → protein → tinh bột cuối. Nghiên cứu Weill Cornell (2015): ăn rau và protein trước tinh bột giảm glucose peak 29–37% và insulin spike 20–28% so với ăn tinh bột trước. Không cần thay đổi thực phẩm, chỉ thay đổi thứ tự.',
+      'Thiếu nước ảnh hưởng nhận thức: mất 1–2% trọng lượng cơ thể qua nước (700mL–1.4L với người 70kg) làm giảm tập trung 13%, trí nhớ ngắn hạn 7%, tăng cảm giác mệt mỏi và đau đầu. RHR tăng 7–8 bpm. Rất nhiều người bị "mệt mỏi chiều" thực ra là do mất nước nhẹ tích lũy trong ngày.',
+      'Practical framework — đĩa ăn đơn giản: 50% rau (nhiều màu sắc), 25% protein (ít nhất 25–30g mỗi bữa), 25% tinh bột phức hợp (gạo lứt, khoai, quinoa). Không cần app đếm calo — nếu đĩa ăn của bạn trông như thế này và bạn uống đủ nước, 80% dinh dưỡng đã được đảm bảo.',
+    ],
+    points: [
+      { icon: '🥦', label: '400–600g rau/ngày · 25–35g fiber', note: 'Fiber nuôi microbiome → giảm viêm, insulin sensitivity tốt hơn' },
+      { icon: '🥩', label: 'Protein 1.2–2g/kg · 25–40g/bữa', note: 'Muscle protein synthesis cần "pulse" đủ lớn mỗi bữa, không rải đều' },
+      { icon: '💧', label: '35ml/kg/ngày · uống trước khi khát', note: 'Khát = đã thiếu nước — uống đều cả ngày, không dồn một lúc' },
+      { icon: '🥗', label: 'Ăn rau trước → protein → tinh bột', note: 'Meal sequencing giảm glucose spike 29–37% không đổi thực phẩm' },
+    ],
+  },
+  {
+    q: 'Mức stress hôm nay (1–10)?', icon: '🧘', color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ghi điểm stress mỗi tối là bước đầu tiên để quản lý nó. Hầu hết mọi người bị ảnh hưởng bởi stress nhưng không nhận ra pattern của mình — ngày nào cao nhất? Nguyên nhân gì? Can thiệp nào giúp? Sau 30 ngày theo dõi, bạn sẽ biết câu trả lời cụ thể cho bản thân hơn bất kỳ cuốn sách self-help nào.',
+    detail: 'Stress cấp tính ngắn hạn (eustress) thực ra có lợi: tăng cortisol tạm thời cải thiện focus, tăng immune activity, củng cố trí nhớ. Vấn đề là stress mãn tính kéo dài — cortisol không bao giờ hạ xuống — gây ức chế miễn dịch, mỡ bụng, tăng huyết áp và thu nhỏ hippocampus. Phân biệt "stress tốt" (thử thách vừa sức, có deadline rõ ràng) và "stress độc" (không kiểm soát được, kéo dài, không có lối thoát).',
+    details: [
+      'Dùng thang đúng: 1–3 = thư giãn, hoạt động như bình thường. 4–5 = stress nhẹ, có thể xử lý. 6–7 = ảnh hưởng tập trung và quyết định. 8–9 = rất khó kiểm soát, triệu chứng thể chất (đau đầu, căng vai gáy). 10 = khủng hoảng. Kèm theo con số, ghi 1 từ nguyên nhân chính: "công việc", "gia đình", "tiền", "sức khỏe" — sẽ rõ pattern sau vài tuần.',
+      'Cortisol và ảnh hưởng sinh lý: cortisol cao mãn tính → tăng glucose máu (cơ thể chuẩn bị "fight or flight") → nếu glucose không được dùng → tích trữ thành mỡ nội tạng. Ức chế hệ tiêu hóa, hệ sinh sản, hệ miễn dịch. Huyết áp tăng. Ngủ kém (cortisol đêm bình thường thấp — stress mãn tính đảo lộn nhịp này).',
+      'Can thiệp tức thì hiệu quả nhất — breathing: Physiological sigh (hít vào sâu qua mũi, hít thêm một hơi ngắn, thở ra dài qua miệng) — Stanford 2023: hiệu quả nhất trong tất cả breathing techniques để hạ cortisol ngay lập tức. Box breathing (4-4-4-4) kích hoạt parasympathetic trong 2–3 phút. 4-7-8 breathing cho trước khi ngủ.',
+      'Tập thể dục — reset stress tốt nhất: 20–30 phút moderate exercise tiêu thụ cortisol, tăng endorphin và serotonin, tăng BDNF. Nghiên cứu: một buổi tập hiệu quả trong việc hạ lo âu ngang bằng benzodiazepine liều thấp trong các RCT, không tác dụng phụ. Điều trị lo âu và trầm cảm nhẹ-vừa: exercise là first-line recommendation của NICE (UK) và APA.',
+      'Cold exposure và stress resilience: tắm nước lạnh 30–90 giây/ngày tăng norepinephrine 100–300% — chất tạo focus và mood. Quan trọng hơn: tập chịu đựng cảm giác khó chịu trong môi trường an toàn (nước lạnh) → tăng tolerance với stress thực tế trong cuộc sống. Wim Hof method, cold plunge có nền tảng nghiên cứu ngày càng vững.',
+      'Khi điểm stress ≥7 trong >7 ngày liên tiếp: đây là dấu hiệu cần can thiệp chủ động, không phải "cố thêm một chút." Xem xét: liệu pháp CBT (hiệu quả nhất cho lo âu mãn tính theo meta-analysis), mindfulness-based stress reduction (MBSR) 8 tuần, giảm tải công việc, nói chuyện với người tin tưởng, và nếu cần — đánh giá tâm lý/tâm thần chuyên khoa.',
+    ],
+    points: [
+      { icon: '📊', label: 'Ghi số + 1 từ nguyên nhân', note: 'Pattern 30 ngày cho thấy trigger và hiệu quả can thiệp cụ thể của bạn' },
+      { icon: '🫁', label: 'Physiological sigh hạ cortisol ngay', note: 'Stanford 2023: hít sâu + hít thêm + thở ra dài — hiệu quả nhất' },
+      { icon: '🏃', label: '20 phút tập = benzodiazepine liều thấp', note: 'Reset stress tốt nhất — không tác dụng phụ, không nghiện' },
+      { icon: '⚠️', label: '≥7/10 liên tục >7 ngày → cần can thiệp', note: 'Allostatic overload — không tự phục hồi được, cần hỗ trợ chủ động' },
+    ],
+  },
+  {
+    q: 'Có triệu chứng bất thường nào không?', icon: '🩺', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hỏi bản thân mỗi tối "có gì bất thường không?" là thói quen đơn giản nhất để phát hiện sớm các vấn đề sức khỏe. Nhiều bệnh nghiêm trọng (ung thư, bệnh tim, đái tháo đường, tăng huyết áp) có triệu chứng sớm mờ nhạt mà người bệnh bỏ qua nhiều tháng vì nghĩ là "bình thường." Ghi nhận và theo dõi thay đổi theo thời gian là kỹ năng y tế quan trọng nhất bạn có thể có.',
+    detail: 'Không phải mọi triệu chứng đều cần lo lắng — cơ thể luôn có những biến động nhỏ. Quan trọng là nhận ra điều gì là MỚI, KHÔNG GIẢI THÍCH ĐƯỢC, hoặc KÉO DÀI hơn bình thường. Câu hỏi tốt để tự hỏi: "Nếu cứ 2–4 tuần nữa vẫn như thế này, mình có lo không?" Nếu câu trả lời là "Có" → đặt lịch khám.',
+    details: [
+      'Triệu chứng cần chú ý — không cần cấp cứu nhưng cần khám trong 1–2 tuần: mệt mỏi bất thường kéo dài >2 tuần không giải thích được, sụt cân không chủ ý >5% trong 6 tháng, ho kéo dài >3 tuần, đau ngực khi gắng sức hoặc leo cầu thang, phù chân mới xuất hiện, tiểu nhiều/khát nhiều bất thường, thay đổi thói quen đại tiện kéo dài.',
+      'Red flags — cần khám sớm trong 24–48h: vết thương lâu lành (>2 tuần, đặc biệt nếu có đái tháo đường), khó nuốt kéo dài, thay đổi giọng nói kéo dài >3 tuần, nổi hạch không đau to dần, xuất huyết bất thường (phân đen, tiểu ra máu, nôn ra máu, xuất huyết âm đạo sau mãn kinh).',
+      'Cấp cứu ngay — gọi 115 hoặc đến ER: đau ngực dữ dội bóp nghẹt, khó thở đột ngột nặng, yếu liệt một bên người/méo miệng/nói khó đột ngột (nghi đột quỵ), đau đầu dữ dội đột ngột "sét đánh", mất ý thức, co giật lần đầu.',
+      'Theo dõi symptom journal: khi có triệu chứng, ghi: ngày bắt đầu, mô tả cụ thể (đau như thế nào, ở đâu, mức độ 1–10), thời gian kéo dài mỗi lần, yếu tố làm nặng/nhẹ hơn, triệu chứng kèm theo. Thông tin này giúp bác sĩ chẩn đoán chính xác hơn nhiều — và giúp bạn quyết định có cần đi khám không.',
+      'Đừng tự chẩn đoán bằng internet: "cyberchondria" — lo lắng do tự tra Google triệu chứng — rất phổ biến và thường dẫn đến kết luận sai (mọi đau đầu đều thành u não khi Google). Rule of thumb: Google để hiểu cơ bản, nhưng quyết định có đi khám hay không dựa trên: triệu chứng có mới, kéo dài, hoặc ảnh hưởng chức năng không? Không phải dựa trên worst-case scenario từ internet.',
+      'Biết bình thường của chính mình: không ai biết cơ thể bạn tốt hơn bạn — nhưng chỉ khi bạn chú ý. Nhiều người "không để ý" đến cơ thể đến mức không phân biệt được "bình thường của mình" và "triệu chứng mới." Daily check-in xây dựng awareness này từng ngày — sau vài tháng, bạn sẽ nhận ra thay đổi nhỏ sớm hơn nhiều so với người không theo dõi.',
+    ],
+    points: [
+      { icon: '🔍', label: 'Mới + Kéo dài + Không giải thích = khám', note: 'Ba tiêu chí để phân biệt biến động bình thường và triệu chứng thực' },
+      { icon: '📝', label: 'Ghi: ngày bắt đầu, mô tả, mức độ', note: 'Symptom journal giúp bác sĩ chẩn đoán chính xác hơn nhiều' },
+      { icon: '📵', label: 'Không tự chẩn đoán bằng Google', note: 'Dùng để hiểu cơ bản — không để quyết định có bệnh nghiêm trọng không' },
+      { icon: '🚑', label: 'Yếu liệt một bên / đau ngực → 115 ngay', note: 'Đột quỵ: mỗi phút = 1.9 triệu tế bào não — không chờ xem thêm' },
+    ],
+  },
+];
+
 function TabE2() {
   const [checks, setChecks] = useState({});
   const [schedModal, setSchedModal] = useState(null);
-  const DAILY = ['Hôm nay ngủ được bao nhiêu giờ?', 'Có vận động ít nhất 20–30 phút không?', 'Có ăn đủ rau/đạm/nước không?', 'Mức stress hôm nay (1–10)?', 'Có triệu chứng bất thường nào không?'];
+  const [dailyModal, setDailyModal] = useState(null);
   return (
     <div className="space-y-5">
       <div>
@@ -464,30 +567,47 @@ function TabE2() {
         <p className="text-base text-muted mt-2">* Chỉ khi có nguy cơ tăng huyết áp hoặc được bác sĩ khuyến nghị.</p>
       </div>
       <div>
-        <h3 className="font-bold text-text text-lg mb-3">5 Câu Hỏi Self-Check Mỗi Ngày</h3>
+        <h3 className="font-bold text-text text-lg mb-1">5 Câu Hỏi Self-Check Mỗi Ngày</h3>
+        <p className="text-xs text-muted mb-3 opacity-60">Tick để check · Nhấp "Chi tiết" để xem khoa học và hướng dẫn</p>
         <div className="space-y-2">
-          {DAILY.map((q, i) => (
-            <button key={i} onClick={() => setChecks(p => ({ ...p, [i]: !p[i] }))}
-              className="w-full flex items-center gap-3 rounded-xl border p-3 text-left transition-all"
-              style={{ borderColor: checks[i] ? '#14b8a6' : '#2a2a2a', background: checks[i] ? '#14b8a610' : 'transparent' }}>
-              <div className="w-5 h-5 rounded border-2 flex items-center justify-center shrink-0" style={{ borderColor: checks[i] ? '#14b8a6' : '#555', background: checks[i] ? '#14b8a6' : 'transparent' }}>
-                {checks[i] && <span className="text-white text-base font-bold">✓</span>}
-              </div>
-              <span className="text-lg text-text">{q}</span>
-            </button>
+          {DAILY_CHECKS.map((item, i) => (
+            <div key={i}
+              className="flex items-center gap-3 rounded-xl border p-3 transition-all duration-200"
+              style={{ borderColor: checks[i] ? `rgba(${item.rgb},0.4)` : '#2a2a2a', background: checks[i] ? `rgba(${item.rgb},0.07)` : 'transparent' }}>
+              <button
+                onClick={() => setChecks(p => ({ ...p, [i]: !p[i] }))}
+                className="w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-all"
+                style={{ borderColor: checks[i] ? item.color : '#555', background: checks[i] ? item.color : 'transparent' }}>
+                {checks[i] && <span className="text-white text-[11px] font-black">✓</span>}
+              </button>
+              <span className="text-base text-text flex-1">{item.q}</span>
+              <button
+                onClick={() => setDailyModal(i)}
+                className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0 transition-all hover:opacity-80"
+                style={{ color: item.color, borderColor: `rgba(${item.rgb},0.35)`, background: `rgba(${item.rgb},0.08)` }}>
+                Chi tiết →
+              </button>
+            </div>
           ))}
         </div>
         <p className="text-base text-muted mt-2 italic">Đo để hiểu, không đo để ám ảnh. Nhìn xu hướng 4–12 tuần quan trọng hơn một con số đơn lẻ.</p>
       </div>
       {schedModal !== null && (
         <ScheduleModal
-          item={SCHEDULE[schedModal]}
-          idx={schedModal}
+          item={SCHEDULE[schedModal]} idx={schedModal} total={SCHEDULE.length}
           onClose={() => setSchedModal(null)}
           onPrev={() => setSchedModal(i => Math.max(0, i - 1))}
           onNext={() => setSchedModal(i => Math.min(SCHEDULE.length - 1, i + 1))}
-          hasPrev={schedModal > 0}
-          hasNext={schedModal < SCHEDULE.length - 1}
+          hasPrev={schedModal > 0} hasNext={schedModal < SCHEDULE.length - 1}
+        />
+      )}
+      {dailyModal !== null && (
+        <ScheduleModal
+          item={DAILY_CHECKS[dailyModal]} idx={dailyModal} total={DAILY_CHECKS.length}
+          onClose={() => setDailyModal(null)}
+          onPrev={() => setDailyModal(i => Math.max(0, i - 1))}
+          onNext={() => setDailyModal(i => Math.min(DAILY_CHECKS.length - 1, i + 1))}
+          hasPrev={dailyModal > 0} hasNext={dailyModal < DAILY_CHECKS.length - 1}
         />
       )}
     </div>

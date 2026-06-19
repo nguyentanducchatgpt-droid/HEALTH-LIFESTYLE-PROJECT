@@ -88,6 +88,114 @@ const BENEFIT_MODALS = [
   },
 ];
 
+const TEMPLATE_MODALS = [
+  {
+    icon: '📅', color: '#ec4899', rgb: '236,72,153',
+    modalTitle: 'Nhật Ký 5 Dòng — Khoa Học Của Lòng Biết Ơn',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Emmons & McCullough (2003, JPSP): viết 3 điều biết ơn mỗi tuần × 9 tuần → well-being tăng 25%, triệu chứng thể chất giảm, ngủ thêm 30 phút/đêm so với nhóm viết về sự kiện trung tính. Effect kéo dài sau khi ngừng can thiệp.',
+    detail: 'Nhật Ký 5 Dòng kết hợp 3 kỹ thuật evidence-based: gratitude practice (câu 1–2), stress disclosure (câu 3), implementation intention (câu 4) và positive self-talk (câu 5). Mỗi câu hỏi được thiết kế để activate một neural mechanism cụ thể.',
+    details: [
+      'Câu 1 — Gratitude (biết ơn): Ghi ra điều biết ơn force brain scan environment cho positive events thay vì default scan cho threats (negativity bias). Dopamine release khi nhớ lại positive experience. Không cần điều lớn — Emmons: specific, small gratitude ("bữa cơm ngon") có effect tương đương điều lớn.',
+      'Câu 2 — Positive event logging: Chủ động ghi nhận "điều đã tốt" (What Went Well — WWW) là kỹ thuật của Martin Seligman (Positive Psychology). WWW exercise × 3 ngày → giảm depressive symptoms và tăng happiness trong 6 tháng — một trong những interventions có effect size lớn nhất trong positive psychology.',
+      'Câu 3 — Stress disclosure: Ghi stress KHÔNG phải để giải quyết ngay — mà để externalize và "close the loop." Não được signal "đã ghi nhận" → giảm intrusive rumination. Pennebaker: ngay cả chỉ đặt tên cho stressor (không cần phân tích) đã giảm physiological arousal.',
+      'Câu 4 — Implementation intention: "Ưu tiên #1 ngày mai" là dạng implementation intention — "Tôi sẽ làm X vào lúc Y ở nơi Z." Gollwitzer (1999): implementation intentions tăng goal completion rate 2–3x so với chỉ đặt mục tiêu chung chung. Đêm trước là thời điểm tối ưu — consolidation trong ngủ.',
+      'Câu 5 — Self-talk/self-compassion: "Nói với bản thân như với người bạn thân" là core của Kristin Neff\'s self-compassion framework. Common humanity + non-judgment + kindness. Người tự nói chuyện với mình theo cách này có cortisol thấp hơn và resilience cao hơn trong adversity.',
+      'Tổng thể: 5 câu × 5 phút mỗi ngày activate gratitude network, close open loops, set next-day direction và build self-relationship. Đây không phải "viết nhật ký" thông thường — đây là structured psychological intervention hàng ngày với từng câu hỏi có mục đích rõ ràng.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Biết Ơn +25% Well-being', note: 'Emmons 2003: 9 tuần → well-being tăng đo được' },
+      { icon: '😴', label: 'Ngủ +30 Phút/Đêm', note: 'Gratitude practice cải thiện sleep duration và quality' },
+      { icon: '🎯', label: 'Implementation Intention', note: 'Câu 4: tăng goal completion 2–3x (Gollwitzer 1999)' },
+      { icon: '💌', label: 'Self-Compassion', note: 'Câu 5: Neff framework — cortisol thấp hơn khi adversity' },
+    ],
+  },
+  {
+    icon: '😤', color: '#a855f7', rgb: '168,85,247',
+    modalTitle: 'Nhật Ký Cảm Xúc — Somatic Markers & Emotional Literacy',
+    img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Antonio Damasio (Somatic Marker Hypothesis): cảm xúc là "readout" của cơ thể — không phải trạng thái tâm trí thuần túy mà là pattern tổng hợp từ signals cơ thể (heart rate, gut, muscle tension). Câu 2 "Cơ thể đang phản ứng thế nào?" là bước đầu của somatic awareness.',
+    detail: 'Nhật Ký Cảm Xúc theo cấu trúc của Dialectical Behavior Therapy (DBT) emotion regulation module — identify emotion → identify body experience → identify trigger → identify need → identify action. Cấu trúc này từ Marsha Linehan\'s DBT, được nghiên cứu kỹ cho emotional dysregulation.',
+    details: [
+      'Câu 1 — Emotion identification và labeling: Naming emotion (affect labeling) kích hoạt PFC và giảm amygdala — Lieberman 2007. Nhưng quan trọng hơn: cần emotional granularity — phân biệt "tức giận" vs "thất vọng" vs "bị phản bội" vs "xấu hổ." Mỗi cảm xúc cần xử lý khác nhau; nhầm lẫn → sai approach.',
+      'Câu 2 — Body awareness (interoception): "Ngực tức, vai căng, tay run" là somatic markers — signals cơ thể giúp xác định cảm xúc và quyết định. Damasio: người mất khả năng cảm nhận cơ thể (anosognosia) không thể đưa ra quyết định tốt dù IQ nguyên vẹn. Cơ thể là navigation system của emotion.',
+      'Câu 3 — Trigger identification: Phân biệt sự kiện (fact) và interpretation (story). "Anh ấy không reply tin nhắn" (fact) vs "Anh ấy ghét mình" (story). CBT: phần lớn emotional suffering đến từ interpretation, không phải event. Viết ra trigger giúp tách fact khỏi story.',
+      'Câu 4 — Need identification: Cảm xúc là signal của unmet need — tức giận = boundary bị xâm phạm, cô đơn = need for connection, lo âu = need for safety/certainty. Xác định need (câu 4) quan trọng hơn là phân tích cảm xúc — vì need chỉ hướng đến action có thể làm gì.',
+      'Câu 5 — Action step: "Bước nhỏ nhất" — dù chỉ "thở sâu 3 lần" — là bridge giữa emotion regulation và action. Tránh paralysis bằng cách giảm barrier của action step xuống tối thiểu. Self-efficacy xây dựng qua small wins liên tục.',
+      'DBT và emotion dysregulation: Template này phù hợp đặc biệt với người có emotional sensitivity cao (high reactive), lịch sử trauma, hoặc pattern của emotional eating/substance use. Không phải diagnosis tool — nhưng consistent practice tạo emotional awareness là foundation của emotional health.',
+    ],
+    points: [
+      { icon: '🔬', label: 'Somatic Markers', note: 'Damasio: cảm xúc là pattern của cơ thể, không phải tâm trí' },
+      { icon: '🎨', label: 'Emotional Granularity', note: 'Phân biệt cảm xúc chi tiết = regulate tốt hơn (Barrett)' },
+      { icon: '🎯', label: 'Fact vs Story', note: 'CBT: phân tách event thực vs interpretation của mình' },
+      { icon: '💡', label: 'Need Identification', note: 'Cảm xúc = signal của unmet need → biết cần làm gì' },
+    ],
+  },
+  {
+    icon: '💪', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Nhật Ký Ngày Thất Bại — Growth Mindset & Self-Compassion',
+    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b6f6c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Carol Dweck (Stanford): người có growth mindset xử lý failure như information, không phải identity threat. Nhật Ký Ngày Thất Bại là structured practice chuyển hóa failure response từ fixed ("mình tệ") sang growth ("mình học được gì") — cùng sự kiện, khác narrative, khác outcome.',
+    detail: 'Template này kết hợp 3 frameworks: After Action Review (AAR) từ US Army để extract learning, Self-Compassion Letter (Kristin Neff) để xử lý shame, và Implementation Intention để prevent repeat. Cấu trúc ngăn hai failure modes: self-flagellation (quá khắt khe) và self-deception (bỏ qua bài học).',
+    details: [
+      'Câu 1 — Event-only description: Chỉ ghi sự kiện, không interpretation. "Mình fail bài kiểm tra" không phải "Mình ngu." Kỹ thuật này từ Cognitive Defusion trong ACT — tạo khoảng cách giữa sự kiện và ý nghĩa mình gán cho nó. Failure có thể là dữ liệu; "mình là kẻ thất bại" là interpretation có thể thay đổi.',
+      'Câu 2 — Learning extraction: "Tôi đã học được gì?" — forced learning extraction prevents failure from being "just bad." After Action Review (US Army AAR protocol): sau mỗi mission, dù thành công hay thất bại, luôn có học review. Organizations dùng AAR liên tục có learning rate cao hơn nhiều.',
+      'Câu 3 — Bright spots: Tìm "điều đã làm tốt dù trong hoàn cảnh đó" activate appreciative inquiry — tìm gì đang hoạt động thay vì chỉ tập trung vào vấn đề. Chip Heath (Switch): tìm "bright spots" và nhân rộng hiệu quả hơn chỉ fix problems. Xây confidence từ những gì đã đúng.',
+      'Câu 4 — Behavior change: "Ngày mai tôi sẽ làm khác thế nào?" chuyển từ rumination (nghĩ về quá khứ) sang orientation (hướng về tương lai). Implementation intention cụ thể ("Tôi sẽ X thay vì Y khi Z xảy ra") có evidence mạnh cho behavior change so với chỉ "cố gắng hơn."',
+      'Câu 5 — Self-forgiveness: Kristin Neff: self-compassion không phải tự mãn hay excuse — nó là acknowledge khó khăn + recognize common humanity + be kind to self. People với self-compassion cao hơn thực ra có accountability cao hơn — vì không cần defensive ego protection. Tự tha thứ = release để move forward.',
+      'Post-traumatic growth (PTG): Tedeschi & Calhoun: một số người sau adversity không chỉ recover mà còn grow — tìm thấy meaning, strength, connection mới. PTG không xảy ra tự động — cần deliberate narrative processing. Nhật Ký Ngày Thất Bại là low-stakes practice cho PTG mechanism.',
+    ],
+    points: [
+      { icon: '🌱', label: 'Growth Mindset', note: 'Dweck: failure là information, không phải identity' },
+      { icon: '🪖', label: 'After Action Review', note: 'US Army AAR: extract learning từ mọi outcome' },
+      { icon: '💌', label: 'Self-Compassion', note: 'Neff: accountability cao hơn khi không cần defend ego' },
+      { icon: '✨', label: 'Post-Traumatic Growth', note: 'Tedeschi: narrative processing → meaning tìm thấy' },
+    ],
+  },
+  {
+    icon: '🍽️', color: '#0ea5e9', rgb: '14,165,233',
+    modalTitle: 'Nhật Ký Ăn Uống Cảm Xúc — HALT & Interoceptive Eating',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Emotional eating (ăn không do đói sinh lý mà do cảm xúc) ảnh hưởng 60–75% phụ nữ và 40% nam giới theo meta-analysis. HALT framework: Hungry, Angry, Lonely, Tired — 4 trạng thái phổ biến nhất bị nhầm thành "đói." Câu 3 trong template này là HALT check.',
+    detail: 'Nhật Ký Ăn Uống Cảm Xúc không phải food diary — không đếm calories, không judge thực phẩm. Mục tiêu là tăng interoceptive awareness về hunger/satiety signals và disconnect ăn uống khỏi emotional regulation. Jean Kristeller (Mindful Eating) và DBT skill "HALT" là nền tảng.',
+    details: [
+      'Câu 1 — Craving specificity: "Tôi đang muốn ăn gì?" — ghi cụ thể (pizza, kem, bánh mì) có thể phân biệt physical hunger vs emotional hunger. Physical hunger thường flexible (ăn gì cũng được), emotional hunger thường specific (PHẢI là món này). Awareness của specificity là bước đầu.',
+      'Câu 2 — Hunger rating (0–10): Nếu đói < 3 (không đói), nhưng vẫn muốn ăn → emotional hunger. Hunger scale train interoceptive accuracy — khả năng "đọc" signals cơ thể. Người mất kết nối interoception (do diet culture, childhood "clean your plate") cần rebuild này từ từ.',
+      'Câu 3 — Emotional trigger: Ghi cảm xúc và sự kiện trước khi muốn ăn giúp identify emotional eating pattern. HALT: Hungry (thực sự)? Angry/Anxious? Lonely? Tired? — mỗi cái cần approach khác: food chỉ address Hungry, không address ba cái kia.',
+      'Câu 4 — True need: "Tôi thực sự cần gì?" redirect từ eating behavior đến underlying need. Lonely → cần kết nối (gọi điện cho bạn). Tired → cần nghỉ ngơi (nằm 20 phút). Stressed → cần discharge (tập thở). Ăn không satisfy những needs này — chỉ tạm thời numb chúng.',
+      'Câu 5 — Post-meal awareness: Ghi lại cảm giác sau ăn (không phán xét) build feedback loop. "Mình cảm thấy tội lỗi và đầy bụng" vs "Mình cảm thấy no vừa và thoải mái" — không phải moralistic judgment mà là data collection. Overtime, patterns nổi lên cho phép informed choices.',
+      'Mindful Eating intervention results: Kristeller & Wolever (2011): Mindfulness-Based Eating Awareness Training (MB-EAT) × 9 tuần giảm binge eating episodes 70%, giảm emotional eating scores 28%. Không có dietary restriction nào trong protocol — kết quả từ awareness dẫn đến natural regulation.',
+    ],
+    points: [
+      { icon: '🛑', label: 'HALT Framework', note: 'Hungry/Angry/Lonely/Tired — 4 trạng thái bị nhầm là đói' },
+      { icon: '📊', label: 'Hunger Scale 0–10', note: 'Train interoceptive accuracy — đọc signals cơ thể' },
+      { icon: '💡', label: 'True Need', note: 'Food chỉ address đói thật — không address cảm xúc' },
+      { icon: '📉', label: '-70% Binge Episodes', note: 'Kristeller 2011: MB-EAT 9 tuần, không diet restriction' },
+    ],
+  },
+  {
+    icon: '⚡', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Phiên Bản Siêu Ngắn — Minimum Viable Journaling',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'BJ Fogg (Tiny Habits, Stanford): hành vi = Motivation × Ability × Prompt. Khi motivation thấp, ability phải cực cao (barrier cực thấp). "3 câu, 3 từ mỗi câu, 60 giây" = minimum viable practice — đủ để duy trì habit chain ngay cả trong những ngày tệ nhất.',
+    detail: '"Phiên Bản Siêu Ngắn" không phải phiên bản thấp kém hơn — đây là chiến lược strategic. Ngày bạn làm 3 câu thay vì bỏ hẳn là ngày bạn giữ được streak và neural pathway của habit. Consistency > intensity trong habit formation.',
+    details: [
+      'Minimum Viable Practice (MVP): Concept từ startup world — minimum viable product đủ để test và ship. Applied to habits: "minimum viable practice" đủ để maintain habit signal ngay cả khi không có energy/motivation cho full version. 60 giây journaling giữ habit alive cho những ngày bình thường.',
+      'Câu 1 — Emotion in 1–3 words: Tốc ký cảm xúc ("mệt, lo, ổn") activate affect labeling mechanism đủ để có tác dụng. Không cần phân tích — chỉ cần đặt tên. EEG studies cho thấy ngay cả minimal labeling tạo PFC engagement và amygdala modulation.',
+      'Câu 2 — Need in 1–3 words: "Nghỉ ngơi, kết nối, một mình" — tốc độ ghi minimal nhưng activate need-awareness. Chỉ biết mình cần gì là already valuable — ngay cả khi không làm được ngay. Awareness → intention → eventual action.',
+      'Câu 3 — Next smallest step: Một action cụ thể tối giản — "uống nước", "thở sâu 3 lần", "nhắn tin cho X." Implementation science: specific micro-actions có follow-through rate cao hơn nhiều so với vague intentions. "Sẽ cố gắng hơn" = 0 behavior change. "Sẽ uống 1 ly nước ngay bây giờ" = action.',
+      'Habit stacking và anchor: Fogg: attach tiny habit vào existing habit như anchor. "Sau khi đánh răng, tôi viết 3 câu siêu ngắn." Anchor behavior đã stable → new behavior piggybacking on neural pathway đã có. Không cần nhớ, không cần motivation riêng.',
+      'Những ngày "không muốn": Điều quan trọng nhất không phải chất lượng của buổi journaling — mà là không break streak. Research on habit formation: streak interruption là nguyên nhân chính của habit failure. "Never miss twice" (James Clear) — Siêu Ngắn là insurance policy cho rule này.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Tiny Habits', note: 'Fogg: barrier thấp → behavior xảy ra ngay cả khi ít motivation' },
+      { icon: '🔗', label: 'Habit Stacking', note: 'Attach vào existing routine — không cần willpower riêng' },
+      { icon: '📅', label: 'Streak > Quality', note: 'Never miss twice — siêu ngắn giữ streak sống' },
+      { icon: '🎯', label: 'Micro-Action', note: 'Action cụ thể 1 bước — follow-through cao hơn nhiều' },
+    ],
+  },
+];
+
 const TEMPLATES = [
   { id: 'daily', icon: '📅', label: 'Nhật Ký 5 Dòng', color: '#ec4899', lines: [
     { q: '1. Hôm nay tôi biết ơn điều gì?', ph: 'Một điều nhỏ cũng đủ...' },
@@ -244,7 +352,9 @@ function JournalWriter({ template }) {
 export default function MindJournalingPage() {
   const [active, setActive] = useState('daily');
   const [benefitModal, setBenefitModal] = useState(null);
+  const [templateModal, setTemplateModal] = useState(null);
   const tmpl = TEMPLATES.find(t => t.id === active);
+  const tmplIdx = TEMPLATES.findIndex(t => t.id === active);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -332,7 +442,22 @@ export default function MindJournalingPage() {
             </button>
           ))}
         </div>
-        {tmpl && <JournalWriter key={tmpl.id} template={tmpl} />}
+        {tmpl && (
+          <>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <span className="text-xl">{tmpl.icon}</span>
+                <span className="font-bold text-text">{tmpl.label}</span>
+              </div>
+              <button onClick={() => setTemplateModal(tmplIdx)}
+                className="text-[11px] font-bold px-3 py-1 rounded-full border transition-colors hover:opacity-80"
+                style={{ color: tmpl.color, borderColor: `${tmpl.color}40`, background: `${tmpl.color}12` }}>
+                Khoa học đằng sau →
+              </button>
+            </div>
+            <JournalWriter key={tmpl.id} template={tmpl} />
+          </>
+        )}
       </RevealBlock>
 
       <RevealBlock className="mb-10">
@@ -382,6 +507,18 @@ export default function MindJournalingPage() {
           hasNext={benefitModal < BENEFIT_MODALS.length - 1}
           total={BENEFIT_MODALS.length}
           idx={benefitModal}
+        />
+      )}
+      {templateModal !== null && (
+        <CardModal
+          item={TEMPLATE_MODALS[templateModal]}
+          onClose={() => setTemplateModal(null)}
+          onPrev={() => setTemplateModal(i => Math.max(0, i - 1))}
+          onNext={() => setTemplateModal(i => Math.min(TEMPLATE_MODALS.length - 1, i + 1))}
+          hasPrev={templateModal > 0}
+          hasNext={templateModal < TEMPLATE_MODALS.length - 1}
+          total={TEMPLATE_MODALS.length}
+          idx={templateModal}
         />
       )}
     </div>

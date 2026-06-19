@@ -188,6 +188,93 @@ const SITUATION_MODALS = [
   },
 ];
 
+const DAILY_MODALS = [
+  {
+    icon: '🌅', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Buổi Sáng — Thở Trước Khi Rời Giường',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: '30–60 phút sau khi thức là "cửa sổ vàng" của ngày: não ở trạng thái theta-alpha (dễ tiếp nhận, sáng tạo) và Cortisol Awakening Response đang đạt đỉnh. 1–2 phút thở cơ hoành lúc này là can thiệp nhỏ nhất với tác động không cân xứng lên mood và energy cả ngày.',
+    detail: 'Hầu hết người thức dậy và check điện thoại ngay — bỏ lỡ hoàn toàn cửa sổ này. Khi bạn mở điện thoại, não chuyển sang "reactive mode" (phản ứng với input bên ngoài) thay vì "proactive mode" (set intention cho ngày). 1–2 phút thở bụng trước khi rời giường đủ để chặn lại sự chuyển đổi đó.',
+    details: [
+      'CAR (Cortisol Awakening Response): Cortisol tăng tự nhiên 50–100% trong 30 phút đầu sau khi thức — đây là "natural stimulant" cơ thể tự tạo ra để chuẩn bị cho ngày mới, không phải stress xấu. Thở cơ hoành trong giai đoạn này tối ưu hóa quá trình tự nhiên này.',
+      'Theta-alpha state: Trong ~30 phút đầu sau thức, não ở ranh giới theta-alpha — trạng thái giữa ngủ và thức hoàn toàn. Trạng thái này đặc biệt tốt cho set intention và creative thinking. Điện thoại phá vỡ cửa sổ này ngay lập tức bằng cách kéo não vào beta (analytical/reactive mode).',
+      'Tại sao "trước khi rời giường": Cơ thể lúc mới thức thường hơi dehydrated và cơ chưa "ấm". Thở sâu tăng O₂ circulation, nhẹ nhàng kích hoạt tim mạch, và tạo transition từ sleep state sang awake state mượt hơn thay vì đứng dậy đột ngột.',
+      'Stack thành morning micro-ritual: 1–2 phút thở bụng → uống 1 ly nước lớn → 3 hơi thở cảm ơn. Cả 3 hành động mất < 5 phút nhưng tạo nền tảng physiological và tâm lý tốt cho buổi sáng, và đặc biệt — bảo vệ cửa sổ theta-alpha khỏi reactive mode.',
+      'Cortisol sáng không phải kẻ thù: Nhiều người nghĩ cortisol là "hormone stress xấu" cần tránh. Thực ra cortisol sáng sớm là healthy và cần thiết — nó cung cấp năng lượng và motivation cho ngày mới. Vấn đề chỉ xảy ra khi cortisol cao kéo dài suốt cả ngày do chronic stress.',
+      'Dấu hiệu hiệu quả: Sau 1–2 phút thở bụng buổi sáng, bạn sẽ cảm thấy tỉnh táo hơn và ít "foggy" hơn. Nếu không cảm thấy khác biệt sau 3–4 ngày thực hành — kiểm tra lại kỹ thuật: tay trên ngực ít di chuyển, tay trên bụng phồng lên khi hít vào.',
+    ],
+    points: [
+      { icon: '📈', label: 'CAR Peak', note: 'Cortisol tự nhiên tăng 50–100% — tối ưu hóa nó' },
+      { icon: '🧠', label: 'Theta-Alpha', note: 'Trạng thái tốt nhất để set intention cho ngày' },
+      { icon: '📵', label: 'Trước Điện Thoại', note: 'Bảo vệ cửa sổ buổi sáng khỏi reactive mode' },
+      { icon: '⏱️', label: '< 2 Phút', note: 'Can thiệp nhỏ nhất với tác động lớn nhất' },
+    ],
+  },
+  {
+    icon: '💼', color: '#6366f1', rgb: '99,102,241',
+    modalTitle: 'Trước Họp & Tập — Pre-Performance Reset',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Pre-performance breathing" là protocol được VĐV chuyên nghiệp, military operators và top executives sử dụng để đưa cơ thể vào "optimal arousal zone" — không quá calm (thiếu energy), không quá anxious (PFC bị inhibit). Box Breathing đạt điều này trong < 2 phút.',
+    detail: 'Yerkes-Dodson Law: performance có hình chữ U ngược với arousal. Quá ít kích thích → buồn ngủ, mất tập trung. Quá nhiều → overwhelm, PFC offline, quyết định kém. Box Breathing là công cụ điều chỉnh arousal về vùng peak performance — từ cả 2 hướng.',
+    details: [
+      'Yerkes-Dodson và optimal arousal: Mỗi người có "optimal arousal zone" hơi khác nhau, nhưng phần lớn người sẽ perform tốt nhất khi arousal ở mức trung bình-cao. Trước họp quan trọng, arousal thường quá cao (lo lắng) → Box Breathing kéo về vùng tối ưu.',
+      'Trước cuộc họp quan trọng: PFC cần hoạt động tối ưu để đọc cảm xúc người khác, lắng nghe chủ động, ra quyết định và thuyết phục. Cortisol cao làm cả 4 kém đi. 4 vòng Box Breathing giảm cortisol đủ để PFC "come online" hoàn toàn.',
+      'Trước buổi tập thể thao: Nhiều người nghĩ cần "psyched up" (arousal cao) trước khi tập. Đúng — nhưng Box Breathing trước tập không làm bạn calm down. Nó điều chỉnh HRV và CNS readiness, giúp motor unit recruitment hiệu quả hơn ngay từ rep đầu tiên.',
+      '4 vòng là sweet spot: Nghiên cứu về breathing interventions: 4 vòng (~1.5–2 phút) đủ để kích hoạt PNS mà không làm bạn quá thư giãn hoặc mất alertness cần thiết cho performance. Ít hơn 4 vòng — chưa đủ. Nhiều hơn — có thể làm bạn quá calm.',
+      'Discreet và linh hoạt: Có thể thực hành trong nhà vệ sinh, trong xe trước khi vào phòng họp, hoặc ngay tại bàn (mắt nhìn màn hình, thở nhẩm đếm — không ai biết). Đây là một trong những ưu điểm lớn nhất của kỹ thuật này.',
+      'Dấu hiệu hiệu quả: Sau 4 vòng, bạn cảm thấy "settled" — nhịp tim ổn hơn, vai thả lỏng hơn, tập trung vào hiện tại hơn. Nếu không cảm thấy khác biệt, thử đếm chậm hơn (5 giây mỗi pha thay vì 4) để tăng tác động PNS.',
+    ],
+    points: [
+      { icon: '📊', label: 'Yerkes-Dodson', note: 'Arousal vừa phải = đỉnh điểm hiệu suất' },
+      { icon: '🧠', label: 'PFC Online', note: 'Giảm cortisol để rational brain hoạt động tối ưu' },
+      { icon: '🎯', label: '4 Vòng = ~2 Phút', note: 'Sweet spot giữa calm và alert' },
+      { icon: '🤫', label: 'Discreet', note: 'Làm được ngay tại bàn mà không ai biết' },
+    ],
+  },
+  {
+    icon: '⚡', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Giữa Ngày Căng — Reset Hơn Là Cafein',
+    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giữa ngày (13h–15h) là cortisol valley tự nhiên — energy và focus giảm mạnh. Đây là lúc người ta uống cà phê thứ 2, check MXH, hoặc trở nên irritable. Reset 2 Phút là can thiệp hiệu quả hơn — không có caffeine crash, không phá giấc ngủ đêm.',
+    detail: '"Giữa ngày căng" không chỉ là physiological — đó là kết quả tích lũy: cognitive load từ sáng, micro-decisions fatigue, social interactions và context-switching liên tục. Reset 2 Phút xả "bộ nhớ đệm" này và cho phép tiếp tục với chất lượng cao hơn trong nửa chiều.',
+    details: [
+      'Cortisol Valley 13h–15h: Sau đỉnh CAR buổi sáng, cortisol giảm theo đường cong tự nhiên và đạt valley lúc 13h–15h. Đây là lý do sinh học của "post-lunch slump" — không phải chỉ vì ăn no. Ánh sáng ban ngày và brief nap 10–20 phút có thể giúp, nhưng Reset 2 Phút dùng được trong bất kỳ môi trường nào.',
+      'Decision fatigue tích lũy: Mỗi quyết định dù nhỏ đều dùng mental energy. Sau buổi sáng với hàng trăm micro-decisions, PFC bắt đầu "go offline" giữa ngày — biểu hiện là: khó tập trung, irritable, cần "distraction" thay vì làm việc. Reset tạo khoảng nghỉ cho PFC mà không cần nap.',
+      'Sau stress spike đột ngột: Khi gặp tình huống gây stress đột ngột (deadline, conflict, bad news), cortisol và adrenaline tăng nhanh. Phản ứng tự động (impulsive decisions, defensive responses) xảy ra ngay trong trạng thái này. 2 phút reset tạo khoảng cách đủ để phản ứng có chủ ý.',
+      'Ultradian rhythms: Cơ thể có chu kỳ 90-phút (ultradian rhythm) — 85–90 phút hoạt động cao, rồi cần 15–20 phút phục hồi. Phần lớn người bỏ qua cửa sổ phục hồi này và "push through" → tích lũy fatigue sang buổi chiều. Reset 2 Phút là phiên bản rút gọn của giai đoạn phục hồi.',
+      'Tại sao hơn cafein: Cafein lúc 14h–15h kéo dài > 10 tiếng trong cơ thể (half-life 5–6 tiếng) và can thiệp vào giấc ngủ đêm, tạo vòng lặp: thiếu ngủ → cần nhiều cafein hơn → ngủ kém hơn. Reset 2 Phút tạo "alertness" tự nhiên không có bất kỳ side effect nào.',
+      'Bước "Neo" sau Reset: "Việc nhỏ tiếp theo là gì?" không chỉ giảm overwhelm — nó actively re-engages PFC và re-activates executive function sau khi phần trước của ngày đã làm PFC mệt. Một nhiệm vụ cụ thể = điểm focal point cho attention để restart làm việc hiệu quả.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Cortisol Valley', note: '13h–15h là đáy năng lượng sinh học tự nhiên' },
+      { icon: '🔋', label: 'Decision Fatigue', note: 'Hàng trăm micro-decisions sáng = PFC mệt' },
+      { icon: '☕', label: 'Không Phải Cafein', note: 'Không crash, không phá giấc ngủ đêm' },
+      { icon: '🎯', label: 'Re-activate PFC', note: '"Việc nhỏ tiếp theo?" = executive function reset' },
+    ],
+  },
+  {
+    icon: '🌙', color: '#d946ef', rgb: '217,70,239',
+    modalTitle: 'Trước Ngủ — Wind-Down Cơ Thể & Tâm Trí',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: '60–90 phút trước ngủ là "wind-down window" — cơ thể cần cortisol và norepinephrine giảm để melatonin tiết ra. Thở đúng lúc này không chỉ giúp ngủ nhanh hơn mà còn cải thiện cấu trúc giấc ngủ — tăng % N3 (ngủ sâu) và REM.',
+    detail: 'Tại sao cần chọn giữa 4-7-8 và Cơ Hoành? 4-7-8 mạnh hơn, tốt cho overthinking và anxiety. Cơ Hoành nhẹ hơn, dùng được khi đã nằm trong tư thế ngủ. Quy tắc đơn giản: nếu não đang racing — dùng 4-7-8. Nếu chỉ muốn relax nhẹ — Cơ Hoành đủ.',
+    details: [
+      'Melatonin và nhiệt độ cơ thể: Melatonin được tiết ra khi thân nhiệt giảm và nhịp tim hạ dưới ngưỡng nhất định. Thở sâu chậm tạo điều kiện cho cả 2 — đặc biệt hiệu quả khi phòng ngủ mát (17–19°C lý tưởng theo Matthew Walker).',
+      '2 hệ thống điều khiển giấc ngủ: Sleep pressure (adenosine tích lũy suốt ngày) và circadian rhythm (đồng hồ sinh học). Thở trước ngủ không thay đổi 2 yếu tố này — nó giảm cortical arousal đủ để 2 hệ thống "thắng" dễ hơn và nhanh hơn.',
+      'Racing thoughts trước ngủ: Não ở chế độ problem-solving ban ngày không tự dừng khi bạn nằm xuống — nó tiếp tục chạy các "open loops" chưa xử lý. Thở có ý thức là cognitive task đủ đơn giản để chiếm dụng attention và ngắt vòng lặp này một cách nhẹ nhàng.',
+      '4-7-8 cho anxiety-driven insomnia: Nếu bạn nằm xuống và ngay lập tức lo lắng về ngày mai — 4-7-8 hiệu quả hơn Cơ Hoành vì "giữ 7 giây" đòi hỏi đủ cognitive attention để ngắt racing thoughts, nhưng không đủ để kích hoạt thêm suy nghĩ mới.',
+      'Cơ Hoành cho general relaxation: Nếu bạn chỉ hơi căng và muốn transition vào giấc ngủ — thở bụng trong tư thế ngủ (một tay lên bụng) là đủ và sẽ diễn ra tự nhiên khi bạn thư giãn. Không cần ngồi dậy hay đếm nghiêm ngặt.',
+      'Không kiểm tra "tôi có ngủ không": Nhiều người thở rồi tự hỏi "Tôi có đang ngủ không?" — làm não tỉnh lại ngay lập tức. Mục tiêu không phải "ngủ" — mà là "thở". Giấc ngủ đến như kết quả tự nhiên khi arousal đủ thấp. Đừng cố, chỉ cần tiếp tục thở.',
+    ],
+    points: [
+      { icon: '🌙', label: 'Wind-Down Window', note: 'Cortisol phải giảm để melatonin tiết ra' },
+      { icon: '💭', label: 'Racing Thoughts', note: '4-7-8 ngắt overthinking bằng "giữ 7 giây"' },
+      { icon: '💤', label: 'Sleep Architecture', note: 'Thở đúng → tăng % N3 ngủ sâu và REM' },
+      { icon: '🎯', label: 'Chọn Đúng', note: 'Anxious → 4-7-8 · Chỉ relax → Cơ Hoành' },
+    ],
+  },
+];
+
 function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx }) {
   useEffect(() => {
     const onKey = (e) => {
@@ -322,6 +409,7 @@ function BoxBreathingTimer({ color }) {
 export default function MindBreathingPage() {
   const [activeTech, setActiveTech] = useState('box');
   const [sitModal, setSitModal] = useState(null);
+  const [dailyModal, setDailyModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -475,10 +563,16 @@ export default function MindBreathingPage() {
             { time: '⚡ Giữa ngày căng', tech: 'Reset 2 Phút', dur: '2 phút', tip: 'Cắt vòng lặp stress, chọn việc tiếp theo' },
             { time: '🌙 Trước ngủ', tech: 'Thở 4-7-8 hoặc Cơ Hoành', dur: '3–5 phút', tip: 'Chuyển cơ thể sang trạng thái nghỉ ngơi' },
           ].map((item, i) => (
-            <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-border bg-surface hover:border-indigo-500/20 transition-colors">
+            <div key={i} className="group/daily flex items-center gap-4 p-4 rounded-xl border border-border bg-surface hover:border-indigo-500/20 transition-colors cursor-pointer" onClick={() => setDailyModal(i)}>
               <div className="text-lg w-40 shrink-0 text-text font-medium">{item.time}</div>
               <div className="flex-1">
-                <div className="text-base font-bold" style={{ color: COLOR }}>{item.tech}</div>
+                <div className="flex items-center gap-2">
+                  <span className="text-base font-bold" style={{ color: DAILY_MODALS[i].color }}>{item.tech}</span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/daily:opacity-100 transition-opacity"
+                    style={{ color: DAILY_MODALS[i].color, borderColor: `rgba(${DAILY_MODALS[i].rgb},0.35)`, background: `rgba(${DAILY_MODALS[i].rgb},0.08)` }}>
+                    chi tiết →
+                  </span>
+                </div>
                 <div className="text-base text-muted">{item.tip}</div>
               </div>
               <div className="text-base text-muted shrink-0">{item.dur}</div>
@@ -510,6 +604,18 @@ export default function MindBreathingPage() {
           hasNext={sitModal < SITUATION_MODALS.length - 1}
           total={SITUATION_MODALS.length}
           idx={sitModal}
+        />
+      )}
+      {dailyModal !== null && (
+        <CardModal
+          item={DAILY_MODALS[dailyModal]}
+          onClose={() => setDailyModal(null)}
+          onPrev={() => setDailyModal(i => Math.max(0, i - 1))}
+          onNext={() => setDailyModal(i => Math.min(DAILY_MODALS.length - 1, i + 1))}
+          hasPrev={dailyModal > 0}
+          hasNext={dailyModal < DAILY_MODALS.length - 1}
+          total={DAILY_MODALS.length}
+          idx={dailyModal}
         />
       )}
     </div>

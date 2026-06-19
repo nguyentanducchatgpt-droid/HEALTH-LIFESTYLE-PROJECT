@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
@@ -367,7 +368,7 @@ function ScheduleModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, has
     document.body.style.overflow = 'hidden';
     return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
   }, [onClose, onPrev, onNext, hasPrev, hasNext]);
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
       style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
       onClick={onClose}>
@@ -430,7 +431,8 @@ function ScheduleModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, has
           <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

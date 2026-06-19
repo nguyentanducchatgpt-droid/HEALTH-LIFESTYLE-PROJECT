@@ -701,9 +701,180 @@ const EMERGENCY = [
   },
 ];
 
+const SOON_ITEMS = [
+  {
+    metric: 'Sụt cân không rõ nguyên nhân', freq: 'Khám trong 1–2 tuần', tip: 'Cân hàng tuần để theo dõi xu hướng',
+    icon: '⚖️', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sụt >5% trọng lượng cơ thể trong 6–12 tháng không chủ ý là ngưỡng y khoa cần điều tra — ung thư, tiểu đường, cường giáp thường biểu hiện qua sụt cân trước khi có triệu chứng rõ ràng khác.',
+    detail: 'Sụt cân không chủ ý khác hoàn toàn với sụt cân có chủ đích. Khi cơ thể mất cân mà không thay đổi chế độ ăn hay tập luyện, đó là tín hiệu cơ thể đang tiêu thụ năng lượng bất thường hoặc không hấp thu đủ dinh dưỡng — cần tìm nguyên nhân.',
+    details: [
+      'Ngưỡng y khoa: mất >5% cân nặng (ví dụ 3.5 kg với người 70 kg) trong 6–12 tháng mà không chủ ý = "clinically significant weight loss" cần điều tra bất kể cảm giác chủ quan.',
+      'Ung thư cần loại trừ đầu tiên: ung thư tụy, dạ dày, đại tràng, phổi gây sụt cân sớm qua tăng chuyển hóa và kém hấp thu — trước khi có đau hoặc triệu chứng cụ thể.',
+      'Cường giáp (hyperthyroidism): hormone tuyến giáp tăng → tăng tốc chuyển hóa toàn thân → đốt calo nhanh hơn. Kèm: tim đập nhanh, run tay, ra nhiều mồ hôi. TSH thấp là xét nghiệm tầm soát.',
+      'Tiểu đường type 1 mới khởi phát: tế bào không nhận glucose → cơ thể đốt cơ và mỡ dự trữ → sụt cân nhanh kèm tiểu nhiều, khát nhiều. Có thể xảy ra ở mọi lứa tuổi.',
+      'Bệnh viêm ruột (Crohn/viêm đại tràng): viêm mạn tính → kém hấp thu + tăng chuyển hóa + ăn ít do đau bụng. Xét nghiệm: CRP, calprotectin phân, nội soi.',
+      'Ghi lại cân nặng và thời gian để bác sĩ đánh giá tốc độ: sụt 3 kg trong 3 tháng khác với sụt 5 kg trong 3 tuần — kèm bất kỳ triệu chứng nào khác thì ưu tiên khám sớm hơn.',
+    ],
+    points: [
+      { icon: '📉', label: '>5% / 6 tháng = ngưỡng khám', note: 'VD: 70 kg → sụt 3.5 kg không chủ ý trong 6 tháng' },
+      { icon: '🔬', label: 'Xét nghiệm cơ bản', note: 'CBC, đường huyết, TSH, chức năng gan/thận, CEA' },
+      { icon: '📋', label: 'Cân hàng tuần, ghi sổ', note: 'Dữ liệu xu hướng giúp bác sĩ đánh giá tốc độ sụt cân' },
+      { icon: '⏱️', label: 'Khám trong 1–2 tuần', note: 'Không trì hoãn nếu sụt cân kèm đau bụng, mệt, sốt' },
+    ],
+  },
+  {
+    metric: 'Mệt kéo dài >2–4 tuần', freq: 'Khám sau 2–4 tuần không cải thiện', tip: 'Mệt không hết dù đã ngủ đủ giấc',
+    icon: '😴', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mệt mỏi mạn tính là triệu chứng gặp trong >200 tình trạng y tế. Điểm phân biệt quan trọng: mệt sinh lý thông thường hết sau nghỉ ngơi. Mệt bệnh lý không hết sau ngủ đủ giấc và ảnh hưởng chức năng hàng ngày.',
+    detail: 'Không phải mọi mệt mỏi đều cần đi khám. Nhưng khi mệt kéo dài >2–4 tuần, không cải thiện sau nghỉ ngơi đủ giấc, ảnh hưởng công việc/sinh hoạt — đây là triệu chứng cần điều tra nguyên nhân, không chỉ uống vitamin.',
+    details: [
+      'Thiếu máu thiếu sắt: nguyên nhân phổ biến nhất ở phụ nữ tuổi sinh sản và người ăn chay/thuần chay. Ferritin có thể thấp trước khi hemoglobin giảm — cần xét nghiệm cả hai.',
+      'Suy giáp (hypothyroidism): hormone tuyến giáp giảm → làm chậm mọi chuyển hóa. Mệt + tăng cân + lạnh tay chân + táo bón + da khô. TSH cao = suy giáp. Phổ biến ở phụ nữ >40 tuổi.',
+      'Hội chứng mệt mãn tính (ME/CFS): mệt tồi tệ hơn sau gắng sức thể chất/tinh thần (post-exertional malaise), không hết sau nghỉ. Chẩn đoán loại trừ — ảnh hưởng ~0.2–0.4% dân số.',
+      'Tiểu đường type 2: kháng insulin → glucose không vào tế bào hiệu quả → tế bào thiếu năng lượng dù đường huyết cao. Mệt sau ăn kèm khát nước, tiểu nhiều là tam chứng điển hình.',
+      'Trầm cảm và lo âu mạn tính: kiệt sức thể chất do não thiếu dopamine/serotonin. Thường kèm mất hứng thú, rối loạn giấc ngủ, thay đổi cảm giác ăn ngon, khó tập trung.',
+      'Nguyên nhân khác: ngưng thở khi ngủ (sleep apnea), suy thận mạn, lupus, thiếu vitamin D và B12 đặc biệt ở người ít nắng và người ăn thuần chay.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Xét nghiệm tầm soát', note: 'CBC, ferritin, TSH, đường huyết HbA1c, vitamin D, B12' },
+      { icon: '⏳', label: '2–4 tuần là ngưỡng đi khám', note: 'Mệt không hết sau nghỉ đủ giấc + ảnh hưởng sinh hoạt' },
+      { icon: '🧠', label: 'Đánh giá cả tâm lý', note: 'Trầm cảm và lo âu là nguyên nhân thường bị bỏ qua' },
+      { icon: '📊', label: 'Ghi nhật ký năng lượng', note: 'Thang 1–10 mỗi ngày — giúp bác sĩ thấy pattern' },
+    ],
+  },
+  {
+    metric: 'Ho kéo dài', freq: 'Khám sau 3–8 tuần ho không dứt', tip: 'Ho >3 tuần không do cảm cúm thông thường',
+    icon: '🫁', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ho mạn tính (>8 tuần) có 3 nguyên nhân phổ biến chiếm >90%: nhỏ giọt sau mũi, hen suyễn và GERD. Nhưng ho kéo dài cũng là triệu chứng sớm của ung thư phổi và lao — cần X-quang ngực để loại trừ.',
+    detail: 'Ho cấp (<3 tuần) thường do cảm cúm và tự khỏi. Ho kéo dài >3–8 tuần cần tìm nguyên nhân cụ thể và điều trị đúng nguyên nhân — uống thuốc ho chỉ che triệu chứng, không chữa bệnh.',
+    details: [
+      'Nhỏ giọt sau mũi (postnasal drip): dịch nhầy từ xoang chảy xuống họng kích thích phản xạ ho. Thường nặng hơn buổi sáng và khi nằm. Điều trị: antihistamine/xịt mũi corticoid.',
+      'Hen suyễn (asthma): ho đặc biệt về đêm và sáng sớm, khi tiếp xúc không khí lạnh. Cough-variant asthma có thể không có tiếng rít. Đo peak flow hoặc spirometry để chẩn đoán.',
+      'GERD (trào ngược dạ dày-thực quản): acid trào ngược kích thích thanh quản → ho mạn. Đặc biệt sau ăn, khi nằm. Silent GERD thường không kèm ợ chua. Thử PPI 4–8 tuần xem ho có cải thiện.',
+      'Ung thư phổi: ho mạn tính kèm đờm có máu, khàn tiếng, đau ngực, sụt cân — cần chụp CT ngực ngay. Ung thư phổi thường không có triệu chứng giai đoạn sớm — ho kéo dài là cơ hội phát hiện sớm.',
+      'Lao phổi: ho kéo dài >2–3 tuần ở người có nguy cơ kèm sốt về chiều, đổ mồ hôi đêm, sụt cân — cần xét nghiệm AFB đờm và Mantoux/IGRA.',
+      'Thuốc ức chế men chuyển (ACE inhibitors như enalapril, captopril): gây ho khan ở 10–15% người dùng. Nếu mới dùng thuốc huyết áp và xuất hiện ho → báo bác sĩ đổi sang ARB.',
+    ],
+    points: [
+      { icon: '🏥', label: 'Ba nguyên nhân >90%', note: 'Postnasal drip, hen suyễn, GERD — điều trị được' },
+      { icon: '🚨', label: 'Ho + đờm máu = khám ngay', note: 'Không đợi — loại trừ ung thư phổi và lao' },
+      { icon: '💊', label: 'Không tự uống thuốc ho', note: 'Chỉ che triệu chứng — cần tìm và điều trị nguyên nhân' },
+      { icon: '📷', label: 'X-quang / CT ngực', note: 'Bước đầu tiên trong tầm soát nguyên nhân ho mạn' },
+    ],
+  },
+  {
+    metric: 'Đau ngực khi gắng sức', freq: 'Khám tim mạch khẩn — trong vài ngày', tip: 'Đau khi leo cầu thang, đi bộ nhanh, mang nặng',
+    icon: '💔', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đau ngực khi gắng sức (angina pectoris) là dấu hiệu mạch vành hẹp không cấp máu đủ cho cơ tim khi hoạt động. Đây là cảnh báo trước nhồi máu cơ tim — không đợi "xem có hết không".',
+    detail: 'Cơ tim cần oxy liên tục. Khi mạch vành hẹp >50–70%, cơ tim đủ oxy lúc nghỉ nhưng thiếu oxy khi tim cần bơm mạnh hơn. Kết quả là đau/tức ngực — tín hiệu cơ tim đang thiếu máu cục bộ.',
+    details: [
+      'Đặc điểm điển hình: cảm giác tức nặng/đè ép/thắt ở giữa ngực, lan lên vai trái, cánh tay trái, cổ hoặc hàm. Xuất hiện khi gắng sức và biến mất sau nghỉ ngơi 1–5 phút — điểm phân biệt với đau cơ xương.',
+      'Cơ chế: mảng xơ vữa thu hẹp lòng mạch vành → lưu lượng máu giảm → cơ tim thiếu oxy khi cần hoạt động mạnh → giải phóng adenosine gây đau. Mảng xơ vữa không ổn định có thể vỡ bất cứ lúc nào.',
+      'Phân biệt với nguyên nhân khác: đau cơ xương (đau khi ấn vào ngực, thay đổi theo tư thế); GERD (đau rát sau xương ức, sau ăn); panic attack (kèm tim đập nhanh, ECG bình thường). Đau ngực điển hình khi gắng sức = nghi mạch vành cho đến khi chứng minh ngược lại.',
+      'Yếu tố nguy cơ: nam >45 tuổi / nữ >55 tuổi, hút thuốc, tăng huyết áp, tiểu đường, rối loạn mỡ máu, béo bụng, tiền sử gia đình bị bệnh tim sớm (<55 tuổi nam, <65 tuổi nữ).',
+      'Chẩn đoán: ECG lúc nghỉ (có thể bình thường), nghiệm pháp gắng sức (stress test — ECG trong khi đi thảm lăn), siêu âm tim gắng sức, CT mạch vành, hoặc chụp mạch vành xâm lấn.',
+      'Nguy hiểm nếu trì hoãn: mảng xơ vữa không ổn định có thể vỡ → huyết khối bịt mạch → nhồi máu cơ tim cấp. Điều trị (statin, aspirin, stent) giảm đáng kể nguy cơ biến cố.',
+    ],
+    points: [
+      { icon: '🚨', label: 'Khám tim mạch trong vài ngày', note: 'Không trì hoãn — nguy cơ nhồi máu cơ tim' },
+      { icon: '❤️', label: 'Dấu hiệu mạch vành hẹp', note: 'Cảnh báo trước nhồi máu cơ tim — cần can thiệp sớm' },
+      { icon: '🧪', label: 'Cần stress test', note: 'ECG nghỉ thường bình thường — cần ECG gắng sức' },
+      { icon: '🚫', label: 'Tránh gắng sức cho đến khi khám', note: 'Không tự tập luyện mạnh khi chưa được tư vấn' },
+    ],
+  },
+  {
+    metric: 'Phù chân kéo dài', freq: 'Khám trong 1 tuần', tip: 'Phù cả hai chân, nặng hơn cuối ngày',
+    icon: '🦵', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Phù hai chân kéo dài thường phản ánh vấn đề hệ thống: suy tim, suy thận hoặc hạ albumin máu. Phù một bên cần loại trừ ngay huyết khối tĩnh mạch sâu (DVT) — có thể gây thuyên tắc phổi nguy hiểm tính mạng.',
+    detail: 'Phù xảy ra khi dịch từ lòng mạch thoát ra khoang gian bào — do áp lực thủy tĩnh tăng (suy tim, suy tĩnh mạch) hoặc áp lực keo giảm (albumin thấp). Phù nhẹ cuối ngày sau đứng nhiều là bình thường; phù không hết qua đêm cần điều tra.',
+    details: [
+      'Phù cả hai bên — nguyên nhân hệ thống: suy tim (tim không bơm đủ → áp lực tĩnh mạch tăng), suy thận (giữ nước và muối), hạ albumin (xơ gan, suy dinh dưỡng nặng, hội chứng thận hư), suy giáp. Cần xét nghiệm: albumin, BNP, creatinine, TSH.',
+      'Phù một bên — loại trừ DVT ngay: huyết khối tĩnh mạch sâu gây phù đột ngột một chân, đỏ, ấm, đau. Cục máu đông có thể di chuyển lên phổi → thuyên tắc phổi → tử vong. Cần siêu âm Doppler tĩnh mạch ngay.',
+      'Suy tĩnh mạch mạn tính: phù mềm, trắng, không đau, tăng dần cuối ngày, giảm khi nằm nghỉ nâng cao chân. Thường kèm giãn tĩnh mạch, da đổi màu nâu ở mắt cá chân. Phổ biến ở người đứng nhiều, béo phì.',
+      'Phù do thuốc: amlodipine và nifedipine (thuốc huyết áp), NSAID, corticoid, thuốc tiểu đường thiazolidinediones gây phù là tác dụng phụ. Nếu phù xuất hiện sau dùng thuốc mới → báo bác sĩ.',
+      'Phù thận: nước tiểu bọt (protein), giảm lượng nước tiểu, tăng huyết áp kèm phù mặt buổi sáng là đặc trưng bệnh thận hơn bệnh tim.',
+      'Test đơn giản: phù sinh lý hết sau ngủ 1 đêm nằm nâng cao chân. Phù không hết sau nghỉ ngơi đúng cách = bệnh lý cần điều tra.',
+    ],
+    points: [
+      { icon: '🩺', label: 'Phù 1 bên = khám ngay', note: 'Loại trừ DVT — nguy hiểm tính mạng nếu không điều trị' },
+      { icon: '🧪', label: 'Xét nghiệm cần', note: 'Albumin, BNP, creatinine, siêu âm tim và tĩnh mạch' },
+      { icon: '🛏️', label: 'Test nâng cao chân qua đêm', note: 'Phù không giảm sau ngủ nằm = cần đi khám ngay' },
+      { icon: '💊', label: 'Kiểm tra thuốc đang dùng', note: 'Amlodipine, NSAID, corticoid thường gây phù chân' },
+    ],
+  },
+  {
+    metric: 'Tiểu nhiều, khát nhiều', freq: 'Khám trong 1 tuần', tip: 'Tiểu >8 lần/ngày kèm khát bất thường',
+    icon: '💧', color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tam chứng "tiểu nhiều – khát nhiều – ăn nhiều nhưng sụt cân" là biểu hiện kinh điển của tiểu đường. Glucose cao kéo nước ra qua nước tiểu → mất nước → khát → uống nhiều → tiểu nhiều. Một xét nghiệm đường huyết đơn giản có thể xác nhận hoặc loại trừ.',
+    detail: 'Tiểu nhiều (polyuria: >3 lít/ngày) và khát nhiều thường đi kèm nhau. Cần loại trừ tiểu đường — nhưng cũng cần nghĩ đến đái tháo nhạt, tăng canxi máu và tác dụng phụ thuốc lợi tiểu.',
+    details: [
+      'Tiểu đường type 2: kháng insulin → glucose tích lũy → khi vượt ngưỡng thận (~10 mmol/L) → glucose lọc vào nước tiểu → kéo nước theo thẩm thấu → tiểu nhiều → khát bù. Đường huyết đói ≥7.0 mmol/L là chẩn đoán tiểu đường.',
+      'Tiểu đường type 1 — khởi phát cấp hơn: thiếu insulin tuyệt đối → tế bào "đói" dù máu đầy glucose → cơ thể đốt mỡ và cơ → sụt cân nhanh kèm nôn, hơi thở mùi trái cây (ketoacidosis). Nguy hiểm nếu không chẩn đoán kịp.',
+      'Đái tháo nhạt (diabetes insipidus): ADH thiếu hoặc thận không đáp ứng → tiểu rất nhiều (10–20 lít/ngày), nước tiểu loãng như nước lã. Đường huyết bình thường, nước tiểu không có glucose — khác hoàn toàn với tiểu đường thông thường.',
+      'Tăng canxi máu (hypercalcemia): canxi cao ức chế khả năng cô đặc nước tiểu → tiểu nhiều. Nguyên nhân: cường tuyến cận giáp, ung thư di căn xương, thừa vitamin D. Kèm yếu cơ, táo bón, buồn nôn.',
+      'Đo lượng nước tiểu 24h để xác nhận: ghi lại lượng nước uống vào và lượng nước tiểu ra trong 24h. >3 lít nước tiểu/ngày = polyuria thực sự cần điều tra. Nếu chỉ tiểu đêm → có thể bàng quang hoạt động quá mức.',
+      'Xét nghiệm tầm soát đơn giản: đường huyết đói, HbA1c, tổng phân tích nước tiểu (glucose và protein), canxi máu. Có kết quả trong 1 ngày tại phòng khám bất kỳ.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Xét nghiệm cơ bản', note: 'Đường huyết đói + HbA1c + nước tiểu — tại phòng khám bất kỳ' },
+      { icon: '📏', label: 'Đo nước tiểu 24h', note: '>3 lít/ngày = polyuria thực sự cần điều tra nguyên nhân' },
+      { icon: '⚡', label: 'Type 1 có thể cấp tính', note: 'Sụt cân nhanh + nôn + tiểu nhiều = cấp cứu, không chờ' },
+      { icon: '📋', label: 'Ghi triệu chứng kèm theo', note: 'Sụt cân, mờ mắt, mệt — giúp bác sĩ phân biệt type 1 và 2' },
+    ],
+  },
+  {
+    metric: 'Rối loạn giấc ngủ nặng kéo dài', freq: 'Khám sau 4 tuần', tip: 'Mất ngủ hoặc ngủ quá nhiều ảnh hưởng sinh hoạt',
+    icon: '🌙', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Rối loạn giấc ngủ mạn tính (>4 tuần) làm tăng nguy cơ tim mạch, béo phì, tiểu đường type 2, suy giảm miễn dịch và rút ngắn tuổi thọ. Nguyên nhân thường điều trị được nếu được chẩn đoán đúng.',
+    detail: 'Mất ngủ mạn tính (khó ngủ hoặc không duy trì giấc ngủ ≥3 đêm/tuần trong >4 tuần) cần phân biệt với ngưng thở khi ngủ, hội chứng chân bứt rứt và rối loạn nhịp sinh học — các tình trạng có điều trị hiệu quả cao.',
+    details: [
+      'Mất ngủ mạn tính (chronic insomnia): khó ngủ, thức giữa đêm, dậy sớm không ngủ lại. CBT-I (liệu pháp nhận thức hành vi) hiệu quả hơn thuốc ngủ dài hạn và không gây phụ thuộc — điều trị đầu tay theo tất cả hướng dẫn quốc tế.',
+      'Ngưng thở khi ngủ (sleep apnea — OSA): đường thở tắc từng cơn → oxy máu giảm → não thức dậy nhiều lần/đêm mà không biết → sáng dậy mệt, ngủ ngày, nhức đầu, ngáy to. Điều trị CPAP rất hiệu quả.',
+      'Hội chứng chân bứt rứt (RLS): cảm giác khó chịu ở chân khi nằm yên → khó ngủ, nặng hơn buổi tối. Thường do thiếu sắt, suy thận, hoặc một số thuốc (antidepressant, antihistamine). Kiểm tra ferritin.',
+      'Rối loạn nhịp sinh học: không thể ngủ trước 2–3 giờ sáng và rất khó dậy sáng (delayed sleep phase). Điều trị: ánh sáng mạnh buổi sáng (light therapy) + melatonin liều thấp vào buổi chiều.',
+      'Rối loạn giấc ngủ và sức khỏe tâm thần: trầm cảm gây thức dậy sớm không ngủ lại được. Lo âu gây khó ngủ ban đầu và suy nghĩ lặp đi lặp lại. Rối loạn lưỡng cực có thể biểu hiện qua không ngủ nhiều ngày liên tục.',
+      'Thuốc ngủ không phải giải pháp dài hạn: benzodiazepine và z-drugs (zolpidem) gây phụ thuộc, suy giảm nhận thức, tăng nguy cơ ngã ở người cao tuổi. Dùng tối đa 2–4 tuần trong khi chờ điều trị nguyên nhân.',
+    ],
+    points: [
+      { icon: '🛌', label: 'CBT-I hiệu quả hơn thuốc ngủ', note: 'Không gây phụ thuộc — điều trị đầu tay theo WHO' },
+      { icon: '😤', label: 'Ngáy to = nghi ngưng thở', note: 'Sleep apnea — cần đo giấc ngủ (polysomnography)' },
+      { icon: '🦵', label: 'Chân bứt rứt khi nằm', note: 'RLS — kiểm tra ferritin, có thể bổ sung sắt điều trị' },
+      { icon: '☀️', label: 'Ánh sáng mạnh buổi sáng', note: 'Reset đồng hồ sinh học — hiệu quả cho rối loạn pha' },
+    ],
+  },
+  {
+    metric: 'Vết thương lâu lành', freq: 'Khám trong 2–4 tuần nếu không lành', tip: 'Vết thương >2 tuần không cải thiện',
+    icon: '🩹', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vết thương lành bình thường trong 1–2 tuần. Vết thương không lành sau >4 tuần dù chăm sóc đúng = "chronic wound" — nguyên nhân thường là tiểu đường, bệnh mạch máu ngoại biên, hoặc suy tĩnh mạch. Cần điều trị nguyên nhân gốc rễ, không chỉ chăm sóc vết thương.',
+    detail: 'Lành vết thương bình thường qua 4 giai đoạn: cầm máu → viêm (1–5 ngày) → tái tạo mô (5–21 ngày) → tái cấu trúc. Bất kỳ bệnh lý nào cản trở tuần hoàn máu, miễn dịch hoặc chuyển hóa đều làm chậm quá trình này.',
+    details: [
+      'Tiểu đường — nguyên nhân hàng đầu: đường huyết cao làm tổn thương vi mạch → giảm cấp máu đến mô → thiếu oxy và chất dinh dưỡng → lành chậm. Đường cao cũng ức chế bạch cầu và làm chậm tổng hợp collagen. Bàn chân tiểu đường cần chăm sóc chuyên biệt.',
+      'Bệnh động mạch ngoại biên (PAD): mảng xơ vữa hẹp động mạch chi dưới → thiếu máu mạn → vết thương ở bàn chân không lành, đau khi đi bộ, da lạnh và nhợt. Chỉ số ABI (ankle-brachial index) đơn giản để tầm soát.',
+      'Suy tĩnh mạch mạn tính: áp lực tĩnh mạch cao → phù + thay đổi da → loét tĩnh mạch ở mắt cá trong. Lành rất chậm nếu không kiểm soát phù — phương pháp chính là băng nén (compression). Chiếm 70–80% loét chân mạn tính.',
+      'Suy dinh dưỡng và thiếu vi chất: protein, vitamin C (đồng yếu tố tổng hợp collagen), kẽm (tổng hợp DNA và phân chia tế bào), vitamin A (tái tạo biểu bì) — thiếu bất kỳ thứ nào đều làm chậm lành. Người lớn tuổi và người ăn kém có nguy cơ cao.',
+      'Nhiễm trùng vết thương: đỏ, sưng, nóng, chảy mủ, mùi hôi = dấu hiệu nhiễm trùng → cần kháng sinh theo kháng sinh đồ. Biofilm vi khuẩn trong vết thương mạn là thách thức điều trị lớn, không đáp ứng kháng sinh thông thường.',
+      'Vết thương lâu lành và ung thư da: loét da không lành dai dẳng, đặc biệt ở vùng tiếp xúc ánh nắng, có thể là ung thư da (squamous/basal cell carcinoma). Ung thư da lành tính nếu phát hiện sớm — sinh thiết là tiêu chuẩn vàng.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Kiểm tra đường huyết', note: 'Tiểu đường không chẩn đoán là nguyên nhân số 1' },
+      { icon: '🦿', label: 'Đánh giá tuần hoàn mạch', note: 'ABI test đơn giản loại trừ bệnh động mạch ngoại biên' },
+      { icon: '🥩', label: 'Dinh dưỡng cho lành vết thương', note: 'Protein + vitamin C + kẽm — thiếu 1 trong 3 làm chậm lành' },
+      { icon: '🔬', label: '>4 tuần không lành = sinh thiết', note: 'Loại trừ ung thư da — đặc biệt vết loét không rõ nguyên nhân' },
+    ],
+  },
+];
+
 function TabE3() {
-  const SOON = ['Sụt cân không rõ nguyên nhân', 'Mệt kéo dài >2–4 tuần', 'Ho kéo dài', 'Đau ngực khi gắng sức', 'Phù chân kéo dài', 'Tiểu nhiều, khát nhiều', 'Rối loạn giấc ngủ nặng kéo dài', 'Vết thương lâu lành'];
   const [emergModal, setEmergModal] = useState(null);
+  const [soonModal, setSoonModal] = useState(null);
   return (
     <div className="space-y-4">
       <div className="rounded-xl border border-red-500/30 bg-red-500/08 p-3">
@@ -735,11 +906,19 @@ function TabE3() {
         </div>
       ))}
       <div className="rounded-xl border border-amber-500/30 bg-amber-500/08 p-4">
-        <p className="text-base font-bold text-amber-400 mb-3">Nên Đi Khám Sớm Khi Có:</p>
+        <p className="text-base font-bold text-amber-400 mb-1">Nên Đi Khám Sớm Khi Có:</p>
+        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng mục để xem chi tiết và hướng xử trí</p>
         <div className="grid grid-cols-2 gap-2">
-          {SOON.map(s => (
-            <div key={s} className="flex items-start gap-2 text-base text-muted">
-              <span className="text-amber-400 shrink-0 mt-0.5">·</span>{s}
+          {SOON_ITEMS.map((s, i) => (
+            <div key={s.metric}
+              className="flex items-center gap-2 text-base text-muted rounded-xl px-3 py-2 cursor-pointer transition-all duration-200 hover:text-text"
+              style={{ background: 'rgba(245,158,11,0.04)', border: '1px solid rgba(245,158,11,0.12)' }}
+              onClick={() => setSoonModal(i)}
+              onMouseEnter={e => { e.currentTarget.style.background = `rgba(${s.rgb},0.10)`; e.currentTarget.style.borderColor = `rgba(${s.rgb},0.35)`; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(245,158,11,0.04)'; e.currentTarget.style.borderColor = 'rgba(245,158,11,0.12)'; }}>
+              <span className="text-lg shrink-0">{s.icon}</span>
+              <span className="text-sm leading-snug">{s.metric}</span>
+              <span className="ml-auto text-[9px] font-bold shrink-0" style={{ color: s.color }}>→</span>
             </div>
           ))}
         </div>
@@ -752,6 +931,16 @@ function TabE3() {
           onPrev={() => setEmergModal(i => Math.max(0, i - 1))}
           onNext={() => setEmergModal(i => Math.min(EMERGENCY.length - 1, i + 1))}
           hasPrev={emergModal > 0} hasNext={emergModal < EMERGENCY.length - 1}
+        />
+      )}
+      {soonModal !== null && (
+        <ScheduleModal
+          item={SOON_ITEMS[soonModal]}
+          idx={soonModal} total={SOON_ITEMS.length}
+          onClose={() => setSoonModal(null)}
+          onPrev={() => setSoonModal(i => Math.max(0, i - 1))}
+          onNext={() => setSoonModal(i => Math.min(SOON_ITEMS.length - 1, i + 1))}
+          hasPrev={soonModal > 0} hasNext={soonModal < SOON_ITEMS.length - 1}
         />
       )}
     </div>

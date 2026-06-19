@@ -249,6 +249,93 @@ const PRACTICE_TYPES = [
   },
 ];
 
+const PRACTICE_MODALS = [
+  {
+    icon: '⏱️', color: '#d946ef', rgb: '217,70,239',
+    modalTitle: 'Thiền 3 Phút — Bài Tập Tâm Trí Cho Người Mới',
+    img: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Zeidan et al. (2010, Journal of Pain): chỉ 3 buổi × 20 phút = tổng 60 phút → giảm pain rating 57%, giảm emotional response 40%. Nhưng quan trọng hơn: consistency mỗi ngày (dù 3 phút) tạo neuroplastic changes nhanh hơn sessions dài nhưng không đều.',
+    detail: 'Thiền 3 phút là minimum effective dose cho người mới — rào cản đủ thấp để không có excuse, nhưng đủ để luyện attention muscle. Mỗi lần nhận ra mình đang suy nghĩ và nhẹ nhàng quay lại hơi thở = 1 rep metacognition. 3 phút × 20 lần phân tâm = 20 reps/session.',
+    details: [
+      'Bước 1 — Thiết lập tư thế: Ngồi thoải mái, lưng thẳng nhẹ (không cứng), tay để thoải mái trên đùi. Mắt nhắm nhẹ hoặc nhìn xuống 45°. Mục tiêu: đủ thoải mái để không bị đau phân tâm, đủ tỉnh táo để không ngủ.',
+      'Bước 2 — Neo attention vào hơi thở: Chú ý đến điểm hơi thở dễ cảm nhận nhất — thường là mũi (cảm giác không khí vào/ra) hoặc bụng (phồng/xẹp). Không cần kiểm soát hơi thở, chỉ quan sát như quan sát sóng biển.',
+      'Bước 3 — Thực hành metacognition: Khi nhận ra tâm đang lang thang (suy nghĩ về việc cần làm, lo lắng, plan...), không tự trách. Nói thầm "biết rồi" và nhẹ nhàng quay lại hơi thở. Đây là moment quan trọng nhất — không phải khi tâm yên.',
+      'Vì sao "không tự trách" quan trọng: Self-criticism khi phân tâm kích hoạt sympathetic nervous system và cortisol — phản tác dụng với mục tiêu thiền. Thái độ non-judgmental là yếu tố quyết định trong tất cả RCT về mindfulness. Treat tâm phân tâm như treat một đứa trẻ tò mò — nhẹ nhàng.',
+      'Tiến trình 4 tuần: Tuần 1: 20–30 lần phân tâm/3 phút — bình thường. Tuần 2: bắt đầu nhận ra nhanh hơn. Tuần 3–4: gap "bị cuốn → nhận ra" ngắn lại đáng kể. Sau 8 tuần: nhiều người tự nhiên tăng lên 5–10 phút vì muốn thiền hơn.',
+      'Thời điểm tốt nhất: Sáng sớm ngay sau thức dậy (não ở trạng thái theta-alpha dễ tập trung) hoặc trước khi bắt đầu công việc. Tránh sau bữa ăn nặng (ngủ gật) và tránh cuối ngày khi quá mệt.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Minimum Effective Dose', note: '3 phút đủ để tạo thói quen và thấy hiệu quả' },
+      { icon: '🔄', label: '1 Phân Tâm = 1 Rep', note: 'Nhận ra và quay lại = luyện metacognition' },
+      { icon: '😌', label: 'Non-Judgmental', note: 'Không tự trách = yếu tố quyết định hiệu quả' },
+      { icon: '📈', label: 'Tự Tăng Sau 8 Tuần', note: 'Nhiều người tự nhiên muốn thiền lâu hơn' },
+    ],
+  },
+  {
+    icon: '🌙', color: '#8b5cf6', rgb: '139,92,246',
+    modalTitle: 'Thiền 5 Phút Trước Ngủ — Wind-Down Protocol',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sleep Science: cortisol (stress hormone) cần giảm để melatonin tăng. Diaphragmatic breathing kích hoạt parasympathetic NS (rest-and-digest) trong vòng 90 giây, giảm heart rate và cortisol — tạo điều kiện sinh lý cho sleep onset.',
+    detail: 'Thiền trước ngủ không phải là "cố ngủ" — mà là tạo điều kiện sinh lý để ngủ tự nhiên. Body scan + slow breathing chuyển cơ thể từ sympathetic (fight-or-flight) sang parasympathetic (rest-and-digest) mode trong 5 phút.',
+    details: [
+      'Sinh lý học sleep onset: Để ngủ được, cơ thể cần: (1) nhiệt độ cơ thể giảm 0.5–1°C, (2) cortisol xuống thấp, (3) melatonin tăng. Stress và screen time trước ngủ duy trì cortisol cao và suppress melatonin. Thiền 5 phút can thiệp vào cả 3 cơ chế.',
+      'Phút 1 — Diaphragmatic breathing: Thở bụng sâu (bụng phồng khi hít vào) kích hoạt vagus nerve → parasympathetic response trong 60–90 giây. Heart rate variability (HRV) tăng — dấu hiệu tốt cho sleep quality. Đây là bước nhanh nhất để shift từ stress sang relax.',
+      'Phút 2–3 — Body scan: Chú ý lần lượt từng vùng cơ thể (trán → vai → ngực → bụng → chân) và thả lỏng khi thở ra. Tìm vùng đang giữ tension mà bạn không nhận ra. Hầu hết mọi người thấy hàm, vai và bàn tay đang căng mà không biết.',
+      'Phút 4 — Progressive relaxation: Tập trung vào vùng còn căng. Nếu vai căng: hít vào → căng vai nhẹ → thở ra → thả lỏng. Progressive muscle relaxation (PMR) là kỹ thuật lâm sàng được nghiên cứu kỹ cho insomnia.',
+      'Phút 5 — Cognitive wind-down: Tự nhắc nhở những điều đã làm được hôm nay (thay vì nghĩ về việc chưa xong). Câu mantra: "Hôm nay đủ rồi. Ngày mai làm tiếp. Mình cho phép mình nghỉ ngơi." — chuyển từ planning mode sang rest mode.',
+      'Không cần "tắt não" để ngủ: Không phải xóa hết suy nghĩ — chỉ cần cơ thể đủ thư giãn về sinh lý. Ngay cả khi tâm vẫn hoạt động, nếu cơ thể đủ thư giãn, sleep onset sẽ đến. Nhiều người thấy ngủ giữa chừng khi đang body scan.',
+    ],
+    points: [
+      { icon: '🧬', label: 'Cortisol → Melatonin', note: 'Thiền 5 phút shift hormonal balance cho ngủ' },
+      { icon: '🫀', label: 'HRV Tăng', note: 'Diaphragmatic breathing cải thiện heart rate variability' },
+      { icon: '💪', label: 'Body Scan + PMR', note: 'Kỹ thuật lâm sàng cho insomnia — có RCT backing' },
+      { icon: '🌙', label: 'Ngủ Trong Khi Scan', note: 'Nhiều người tự nhiên ngủ trước khi xong 5 phút' },
+    ],
+  },
+  {
+    icon: '🚶', color: '#10b981', rgb: '16,185,129',
+    modalTitle: 'Thiền Đi Bộ — Mindfulness Trong Chuyển Động',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Kinhin (Zen walking meditation) và Theravada walking meditation đều có RCT backing cho anxiety, depression và chronic pain. Đặc biệt hiệu quả cho người ADHD và người không thể ngồi yên — kết hợp NEAT (Non-Exercise Activity Thermogenesis) với mindfulness.',
+    detail: 'Thiền đi bộ giải quyết vấn đề phổ biến nhất: "Mình không thể ngồi yên." Thay vì ngồi và quan sát hơi thở, bạn đi bộ và quan sát cảm giác bàn chân. Neo attention vào kinesthetic sensation — cơ chế tương tự nhưng phù hợp hơn cho người kinesthetic dominant.',
+    details: [
+      'Tại sao kinesthetic anchor hiệu quả: Không phải ai cũng dễ neo attention vào hơi thở (nhiều người lo lắng khi chú ý quá nhiều vào hô hấp). Cảm giác bàn chân chạm đất là anchor mạnh hơn cho nhiều người — cụ thể, liên tục thay đổi, dễ cảm nhận.',
+      'Cách thực hành: Đi chậm hơn bình thường khoảng 30–50%. Chú ý trình tự: gót chân chạm → lòng bàn chân → đầu ngón → nhấc lên. Cảm nhận trọng lượng cơ thể chuyển từ chân này sang chân kia. Không cần đếm bước.',
+      'Mắt và tai trong thiền đi bộ: Mắt nhìn về phía trước tự nhiên (không nhìn điện thoại). Tai để mở — nghe âm thanh xung quanh mà không cần xác định nguồn gốc hay phán xét. Chỉ nghe như nghe nhạc không lời.',
+      'Khi phân tâm: Quay lại cảm giác bàn chân chạm đất — đây là "hơi thở" của thiền đi bộ. Không cần đứng lại hay dừng bước. Nhận ra → quay lại → tiếp tục. Cùng cơ chế với thiền ngồi, chỉ khác anchor.',
+      'Thời gian và địa điểm: 5–10 phút đủ. Tốt nhất: giờ nghỉ trưa (outdoor nếu có thể), sau bữa ăn (hỗ trợ tiêu hóa), hoặc commute đi bộ. Không cần địa điểm đặc biệt — hành lang, công viên, ngay cả siêu thị đều được.',
+      'Lợi ích kép: Walking 10k steps/ngày + mindfulness = NEAT + attention training đồng thời. Đi bộ sau bữa ăn giảm blood glucose spike 30%. Kết hợp mindfulness làm giảm stress eating và tăng awareness về no-đói — kết nối tự nhiên với Trụ Cột B.',
+    ],
+    points: [
+      { icon: '🦶', label: 'Kinesthetic Anchor', note: 'Bàn chân chạm đất — dễ hơn hơi thở cho nhiều người' },
+      { icon: '🏃', label: 'Tốt Cho ADHD', note: 'Chuyển động giúp người không thể ngồi yên thiền được' },
+      { icon: '🌿', label: '5–10 Phút Đủ', note: 'Giờ nghỉ trưa, sau ăn, hoặc commute đi bộ' },
+      { icon: '🔥', label: 'NEAT + Mindfulness', note: 'Đốt calo + giảm stress đồng thời — lợi ích kép' },
+    ],
+  },
+  {
+    icon: '🍽️', color: '#f59e0b', rgb: '245,158,11',
+    modalTitle: 'Chánh Niệm Khi Ăn — Kết Nối Với Trụ Cột B',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Gut-brain axis: não nhận tín hiệu no từ ruột sau 15–20 phút. Ăn nhanh → ăn quá mức trước khi não "biết" đã no. Mindful eating giảm binge eating 40–60% trong các RCT (Katterman meta-analysis 2014).',
+    detail: 'Chánh niệm khi ăn không phải về "kiêng khem" hay "ăn ít" — mà về ăn đúng lượng cơ thể cần bằng cách reconnect với hunger/satiety signals. Hầu hết người ăn quá nhanh, vừa ăn vừa xem điện thoại — mất kết nối hoàn toàn với interoception.',
+    details: [
+      'Interoception là gì: Khả năng nhận biết cảm giác bên trong cơ thể — đói, no, khát, mệt. Người thường xuyên ăn trước màn hình hoặc ăn vội dần mất interoceptive accuracy — không còn phân biệt được đói thật sự vs đói cảm xúc, no vs cần ăn thêm vì thói quen.',
+      'Tắt màn hình — can thiệp đơn giản nhất: Ăn có màn hình tăng lượng ăn 20–35% theo meta-analysis. Não không process taste và satiety signals đúng khi đang xử lý visual/auditory input từ screen. "Không nhìn màn hình" là can thiệp có effect size lớn nhất và đơn giản nhất.',
+      'Nhai kỹ — khoa học tiêu hóa: Nhai kỹ (20–30 lần/miếng) tăng tiết amylase (tiêu hóa carb), tăng diện tích tiếp xúc enzyme, giảm bloating và khó tiêu. Đồng thời làm chậm tốc độ ăn để não kịp nhận tín hiệu no. Không cần đếm — chỉ cần nhai đến khi mịn.',
+      'Hunger scale 1–10: Trước ăn: đánh giá độ đói 1–10. Giữa bữa: kiểm tra lại. Ngừng khi đạt 6–7 (no vừa, không đầy). Lý tưởng bắt đầu ăn khi đói ở mức 3–4. Ăn khi đói 1–2 → ăn quá nhiều vì mất kiểm soát.',
+      '"Dừng giữa bữa" — cơ chế sinh lý: Đặt đũa xuống 1–2 lần giữa bữa → cho phép "catch up" giữa tốc độ ăn và tín hiệu no. Đây là kỹ thuật trong Hara Hachi Bu (腹八分目) của Okinawa — nguyên tắc ăn đến 80% no. Okinawa là một trong những blue zones có tuổi thọ cao nhất.',
+      'Mindful eating vs dietary restriction: Mindful eating không phải kiêng khem — không có "thực phẩm cấm". Mục tiêu là tăng pleasure từ ít thức ăn hơn (ăn chậm + chú ý → satisfaction cao hơn) và giảm ăn do stress/boredom/habit.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Gut-Brain Axis', note: 'Tín hiệu no mất 15–20 phút — ăn chậm để não kịp nhận' },
+      { icon: '📵', label: 'Tắt Màn Hình', note: 'Ăn có screen tăng lượng ăn 20–35%' },
+      { icon: '⚖️', label: 'Hunger Scale 1–10', note: 'Bắt đầu ăn ở 3–4, dừng ở 6–7 (Hara Hachi Bu)' },
+      { icon: '📉', label: 'Giảm Binge 40–60%', note: 'Meta-analysis Katterman 2014 — evidence-based' },
+    ],
+  },
+];
+
 // Simple meditation timer
 function MeditationTimer({ color }) {
   const [duration, setDuration] = useState(3);
@@ -319,6 +406,7 @@ function MeditationTimer({ color }) {
 export default function MindMeditationPage() {
   const [active, setActive] = useState('3min');
   const [mythModal, setMythModal] = useState(null);
+  const [practiceModal, setPracticeModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -341,6 +429,7 @@ export default function MindMeditationPage() {
     return () => document.getElementById(ORBIT_ID)?.remove();
   }, []);
 
+  const practiceIdx = PRACTICE_TYPES.findIndex(p => p.id === active);
   const practice = PRACTICE_TYPES.find(p => p.id === active);
 
   return (
@@ -402,11 +491,15 @@ export default function MindMeditationPage() {
           ))}
         </div>
         {practice && (
-          <div className="rounded-2xl border p-5 md:p-6" style={{ borderColor: `${practice.color}30`, background: `${practice.color}06` }}>
+          <div className="group/practice rounded-2xl border p-5 md:p-6 cursor-pointer" style={{ borderColor: `${practice.color}30`, background: `${practice.color}06` }} onClick={() => setPracticeModal(practiceIdx)}>
             <div className="flex items-start gap-4 mb-5">
               <span className="text-5xl">{practice.icon}</span>
-              <div>
-                <div className="text-xl font-bold text-text">{practice.title}</div>
+              <div className="flex-1">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="text-xl font-bold text-text">{practice.title}</div>
+                  <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/practice:opacity-100 transition-opacity"
+                    style={{ color: practice.color, borderColor: `rgba(${PRACTICE_MODALS[practiceIdx].rgb},0.35)`, background: `rgba(${PRACTICE_MODALS[practiceIdx].rgb},0.08)` }}>chi tiết →</span>
+                </div>
                 <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: practice.color }}>{practice.subtitle}</div>
               </div>
             </div>
@@ -473,6 +566,18 @@ export default function MindMeditationPage() {
           hasNext={mythModal < MYTH_MODALS.length - 1}
           total={MYTH_MODALS.length}
           idx={mythModal}
+        />
+      )}
+      {practiceModal !== null && (
+        <CardModal
+          item={PRACTICE_MODALS[practiceModal]}
+          onClose={() => setPracticeModal(null)}
+          onPrev={() => setPracticeModal(i => Math.max(0, i - 1))}
+          onNext={() => setPracticeModal(i => Math.min(PRACTICE_MODALS.length - 1, i + 1))}
+          hasPrev={practiceModal > 0}
+          hasNext={practiceModal < PRACTICE_MODALS.length - 1}
+          total={PRACTICE_MODALS.length}
+          idx={practiceModal}
         />
       )}
     </div>

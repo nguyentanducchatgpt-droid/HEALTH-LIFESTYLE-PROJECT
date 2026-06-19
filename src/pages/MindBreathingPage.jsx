@@ -345,6 +345,7 @@ export default function MindBreathingPage() {
   }, []);
 
   const tech = TECHNIQUES.find(t => t.id === activeTech);
+  const activeTechIdx = TECHNIQUES.findIndex(t => t.id === activeTech);
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
@@ -415,11 +416,18 @@ export default function MindBreathingPage() {
           ))}
         </div>
         {tech && (
-          <div className="rounded-2xl border p-5 md:p-6" style={{ borderColor: `${tech.color}30`, background: `${tech.color}06` }}>
+          <div className="group/tech rounded-2xl border p-5 md:p-6" style={{ borderColor: `${tech.color}30`, background: `${tech.color}06` }}>
             <div className="flex items-start gap-4 mb-5">
               <span className="text-5xl">{tech.icon}</span>
-              <div>
-                <div className="text-xl font-bold text-text">{tech.title}</div>
+              <div className="flex-1">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="text-xl font-bold text-text">{tech.title}</div>
+                  <button onClick={() => setSitModal(activeTechIdx)}
+                    className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/tech:opacity-100 transition-opacity cursor-pointer"
+                    style={{ color: tech.color, borderColor: `rgba(${SITUATION_MODALS[activeTechIdx]?.rgb},0.35)`, background: `rgba(${SITUATION_MODALS[activeTechIdx]?.rgb},0.08)` }}>
+                    chi tiết →
+                  </button>
+                </div>
                 <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: tech.color }}>{tech.subtitle}</div>
                 <div className="text-lg font-mono mt-2 px-3 py-1 rounded-full inline-block" style={{ background: `${tech.color}15`, color: tech.color }}>{tech.formula}</div>
               </div>

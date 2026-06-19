@@ -320,6 +320,28 @@ const CATEGORIES = [
   { icon: '💡', label: 'Ý tưởng hay', color: '#f59e0b', desc: 'Lưu lại nhưng chưa cần làm ngay' },
 ];
 
+const TOOL_MODAL = {
+  icon: '🧹', color: COLOR, rgb: RGB,
+  modalTitle: 'Khoa Học Của Brain Dump — Tại Sao Nó Hoạt Động',
+  img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+  keyFact: 'David Allen (Getting Things Done, 2001): "Your mind is for having ideas, not holding them." Não bộ human không được thiết kế như RAM — nó không có "save state." Mọi thứ chưa được externalize đều chiếm active maintenance bandwidth, làm giảm capacity cho thinking hiệu quả. Brain dump là hành động release toàn bộ maintenance burden này ra bên ngoài.',
+  detail: 'Brain dump kết hợp ít nhất 4 evidence-based mechanisms: cognitive offloading (giảm working memory load), Zeigarnik closure (signal complete cho open loops), affect labeling (naming anxieties = reduces amygdala), và structured externalisation (viết ra = 2-phase cognitive processing: capture then evaluate). Mỗi cơ chế độc lập có research backing; kết hợp tạo synergistic effect.',
+  details: [
+    'Cognitive Offloading & Working Memory: Risko & Gilbert (2016) — cognitive offloading là adaptive human strategy, không phải weakness. Working memory capacity: 4–7 items (Miller, 1956). Khi "mental list" vượt capacity, não bắt đầu cyclic rehearsal — mental spinning của same items để không quên. Brain dump releases toàn bộ rehearsal burden vào trusted external system, freeing WM cho higher-order thinking.',
+    'Zeigarnik Effect & Closure: Bluma Zeigarnik (1927): não duy trì "active record" của incomplete tasks. Unfinished items xâm nhập consciousness bất cứ lúc nào (intrusive thoughts). Externalization — viết ra trong brain dump — cung cấp closure signal: "đã ghi lại, an toàn để release." Điều này stops the intrusive loop, không phải suppress — distinction quan trọng (suppression rebound effect).',
+    'Two-phase Cognitive Processing: Merlin Donald (Origins of the Modern Mind, 1991): human cognition uniquely powerful bởi vì khả năng externalize và then manipulate external representations. Brain dump là ứng dụng: Phase 1 (capture/dump) = raw externalization từ episodic và semantic memory. Phase 2 (sort) = analytical evaluation từ external representation. Tách hai phase prevents cognitive interference giữa creative capture và analytical evaluation.',
+    'Structured Labeling & Anxiety Reduction: Labeling items trong sort phase ("lo vô ích," "cần lên lịch") là extended affect labeling exercise. Matthew Lieberman (UCLA): labeling emotional content activates PFC và reduces amygdala response. Sort phase transforms undifferentiated anxiety thành labeled, bounded categories — from "everything is overwhelming" to "these 3 items need action, these 4 are uncontrollable."',
+    'GTD System Evidence: David Allen\'s GTD được implemented bởi millions và studied qualitatively. Core insight validated: human stress often comes not from amount of work but from undefined next actions. Khi mỗi item có clear "home" (do now / schedule / release / capture), brain không cần maintain vigilance. "Stress-free productivity" emerges from trusted capture system, không phải từ doing less.',
+    'Practical design của tool này: Textarea (không phải fancy input) = minimal cognitive overhead để bắt đầu. "Mỗi dòng một ý" = simple encoding rule → easy parsing trong sort phase. 4 categories đủ granular cho most brain dumps mà không overwhelm với choices. "Làm lại" option = low-stakes iteration. Flow: open → dump → click → sort → done. Zero setup, zero learning curve.',
+  ],
+  points: [
+    { icon: '🧠', label: 'Working Memory Release', note: 'Free từ cyclic rehearsal → think better about what matters' },
+    { icon: '🔒', label: 'Zeigarnik Closure', note: 'Viết ra = signal complete → intrusive loops stop' },
+    { icon: '🔬', label: 'Two-Phase Processing', note: 'Capture trước, evaluate sau = cả hai done better' },
+    { icon: '😌', label: 'Anxiety Categorization', note: 'Labeled categories = amygdala giảm, PFC tăng' },
+  ],
+};
+
 function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx }) {
   useEffect(() => {
     const onKey = (e) => {
@@ -489,6 +511,7 @@ export default function MindBrainDumpPage() {
   const [stepModal, setStepModal] = useState(null);
   const [categoryModal, setCategoryModal] = useState(null);
   const [whenModal, setWhenModal] = useState(null);
+  const [toolModal, setToolModal] = useState(false);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -569,7 +592,14 @@ export default function MindBrainDumpPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thử Brain Dump Ngay</h2>
+        <div className="flex items-center justify-between mb-1">
+          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>Thử Brain Dump Ngay</h2>
+          <button onClick={() => setToolModal(true)}
+            className="text-[11px] font-bold px-3 py-1 rounded-full border transition-colors hover:opacity-80"
+            style={{ color: COLOR, borderColor: `${COLOR}40`, background: `${COLOR}12` }}>
+            Khoa học đằng sau →
+          </button>
+        </div>
         <p className="text-muted text-lg mb-6">Viết ra mọi thứ trong đầu, rồi phân loại tự động</p>
         <BrainDumpTool />
       </RevealBlock>
@@ -645,6 +675,18 @@ export default function MindBrainDumpPage() {
           hasNext={whenModal < WHEN_MODALS.length - 1}
           total={WHEN_MODALS.length}
           idx={whenModal}
+        />
+      )}
+      {toolModal && (
+        <CardModal
+          item={TOOL_MODAL}
+          onClose={() => setToolModal(false)}
+          onPrev={() => {}}
+          onNext={() => {}}
+          hasPrev={false}
+          hasNext={false}
+          total={1}
+          idx={0}
         />
       )}
     </div>

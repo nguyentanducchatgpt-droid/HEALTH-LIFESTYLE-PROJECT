@@ -206,30 +206,258 @@ function TabE1() {
   );
 }
 
+const SCHEDULE = [
+  {
+    metric: 'Cân nặng', freq: '1–3 lần/tuần', tip: 'Buổi sáng, sau vệ sinh, trước ăn',
+    icon: '⚖️', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cân nặng biến động 1–2 kg mỗi ngày do nước, thức ăn trong ruột, chu kỳ kinh nguyệt — không phải mỡ thực sự. Chỉ nhìn xu hướng 4–8 tuần mới có ý nghĩa. Cân 1–3 lần/tuần (không mỗi ngày) giúp tránh lo lắng không cần thiết và vẫn đủ để theo dõi xu hướng.',
+    detail: 'Cân vào buổi sáng sau vệ sinh, trước ăn sáng, không mặc quần áo nặng — đây là thời điểm cơ thể ở trạng thái "baseline" nhất quán nhất. Ghi lại số và lấy trung bình tuần để loại bỏ nhiễu ngày.',
+    details: [
+      'Tại sao không nên cân mỗi ngày: dao động hàng ngày do natri (muối giữ nước), carbohydrate (glycogen giữ nước 3g/g), chu kỳ kinh nguyệt, hơi thở, mồ hôi. Cân mỗi ngày và phản ứng với số là nguồn gốc của lo lắng không cần thiết và quyết định ăn uống sai lầm.',
+      'Tần suất tối ưu: 1–3 lần/tuần, cùng ngày trong tuần (VD: thứ 2, thứ 4, thứ 6 sáng). Lấy trung bình 3 lần = trọng lượng tuần. So sánh tuần này với tuần trước, không ngày này với ngày trước.',
+      'Điều kiện chuẩn mỗi lần đo: sau khi đi vệ sinh (tiểu tiện), trước khi uống nước hoặc ăn sáng, cùng thiết bị, cùng vị trí đặt cân (sàn cứng phẳng). Không mang giày, không mặc đồ nặng.',
+      'Hiểu xu hướng: giảm >0.25 kg/tuần trong 4 tuần liên tiếp = xu hướng giảm thực sự. Cân dao động trong ±1 kg so với tuần trước = không thay đổi. Tăng >0.5 kg/tuần trong 3–4 tuần = cần xem lại chế độ ăn.',
+      'Khi nào không nên cân: sau bữa ăn lớn, sau buổi tập nặng (cơ giữ nước để hồi phục), ngay trước/sau chu kỳ kinh nguyệt, khi đang bị bệnh có sốt. Những lúc này số sẽ không phản ánh thực tế.',
+      'App theo dõi hữu ích: Happy Scale (iOS) hoặc LibreScale (Android) tính trung bình động và loại bỏ nhiễu — cho thấy xu hướng thực sự khi số hàng ngày trông hỗn loạn. Hoặc ghi vào bảng tính đơn giản: ngày, cân nặng, trung bình 7 ngày.',
+    ],
+    points: [
+      { icon: '📅', label: '1–3 lần/tuần là đủ', note: 'Nhiều hơn tạo lo lắng — không thêm thông tin có ích' },
+      { icon: '🌅', label: 'Sáng, sau vệ sinh, trước ăn', note: 'Baseline nhất quán nhất trong ngày' },
+      { icon: '📊', label: 'Nhìn trung bình tuần', note: 'Loại bỏ nhiễu ngày — xu hướng 4 tuần mới có ý nghĩa' },
+      { icon: '🚫', label: 'Không phản ứng với một con số', note: 'Biến động ±1–2 kg là bình thường sinh lý, không phải mỡ' },
+    ],
+  },
+  {
+    metric: 'Vòng eo', freq: '1 lần/tuần', tip: 'Buổi sáng, đứng thẳng, không hóp',
+    icon: '📏', color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vòng eo là chỉ số phản ánh mỡ nội tạng — loại mỡ nguy hiểm hơn cân nặng đơn thuần. Nam giới ngưỡng nguy hiểm ≥90 cm, nữ giới ≥80 cm (tiêu chuẩn IDF châu Á). Chỉ cần 1 thước dây và 30 giây — đây là chỉ số tim mạch quan trọng nhất bạn có thể tự đo tại nhà.',
+    detail: 'Mỡ nội tạng (quanh cơ quan trong bụng) hoạt động khác mỡ dưới da: tiết adipokines viêm, free fatty acids trực tiếp vào vòng tuần hoàn cổng, gây kháng insulin và xơ vữa động mạch. Vòng eo giảm 5–10 cm liên quan đến giảm nguy cơ tim mạch và đái tháo đường đáng kể, ngay cả khi cân nặng không đổi nhiều.',
+    details: [
+      'Cách đo đúng: đứng thẳng, hai chân rộng bằng vai, thở ra nhẹ nhàng (KHÔNG hóp bụng hay thở ra hết), đo ngang qua điểm giữa bờ dưới xương sườn cuối và mào chậu trên — thường ngang hoặc 1–2 cm trên rốn. Không kéo thước quá chặt, không để lỏng. Đo 2 lần, lấy trung bình.',
+      'Tần suất 1 lần/tuần là tối ưu: vòng eo thay đổi chậm hơn cân nặng (đây là mỡ thực sự, không phải nước). Đo mỗi ngày sẽ không thấy thay đổi và tạo nản lòng. Xu hướng 4–8 tuần mới rõ ràng. Cùng buổi sáng trước ăn, cùng điều kiện.',
+      'Hiểu ngưỡng nguy hiểm châu Á: IDF 2005 đặt ngưỡng thấp hơn phương Tây vì người châu Á tích mỡ nội tạng nhiều hơn ở cùng BMI. Nam ≥90 cm (phương Tây 102 cm), nữ ≥80 cm (phương Tây 88 cm). Người BMI bình thường nhưng vòng eo vượt ngưỡng = "TOFI" — nguy cơ chuyển hóa tương đương người thừa cân.',
+      'Vòng eo giảm trước cân: khi bắt đầu chế độ ăn lành mạnh + tập luyện, mỡ nội tạng (phản ánh qua vòng eo) thường giảm trước khi cân số giảm đáng kể. Vòng eo giảm 2–3 cm trong khi cân không đổi = thành công thực sự — bạn đang mất mỡ và tăng cơ.',
+      'Yếu tố ảnh hưởng vòng eo ngoài ăn uống: stress mãn tính (cortisol kích hoạt tích mỡ bụng), ngủ kém (<6h liên tục gây cortisol cao), rượu bia (đặc biệt beer belly), thuốc corticosteroid dài hạn. Giảm vòng eo cần giải quyết tất cả các yếu tố này, không chỉ ăn ít.',
+      'Khi nào cần lo ngại: vòng eo tăng >3 cm trong 1 tháng không giải thích được, hoặc tăng kèm phù mặt/chân, mệt mỏi bất thường, khó thở → cần đánh giá y tế (loại trừ cổ trướng, suy tim, suy thận).',
+    ],
+    points: [
+      { icon: '🎯', label: 'Nam <90cm · Nữ <80cm', note: 'Ngưỡng IDF châu Á — thấp hơn phương Tây vì sinh lý khác' },
+      { icon: '📐', label: 'Đo đúng: thở ra nhẹ, không hóp', note: 'Hóp bụng hoặc thở hết làm sai kết quả tới 3–5 cm' },
+      { icon: '📉', label: 'Vòng eo giảm trước cân', note: 'Mỡ nội tạng đáp ứng nhanh — dấu hiệu sớm nhất của tiến bộ' },
+      { icon: '⚠️', label: 'TOFI: BMI ổn nhưng vòng eo cao', note: 'Nguy cơ chuyển hóa dù cân bình thường — đo vòng eo bắt buộc' },
+    ],
+  },
+  {
+    metric: 'Huyết áp', freq: '2–7 ngày/tuần*', tip: 'Nghỉ 5ph trước đo, ghi trung bình',
+    icon: '❤️', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tăng huyết áp được gọi là "kẻ giết người thầm lặng" vì không có triệu chứng rõ ràng cho đến khi có biến chứng (đột quỵ, nhồi máu cơ tim, suy thận). Trung bình 7 ngày đo tại nhà (buổi sáng + tối) chính xác hơn đo 1 lần tại phòng khám vì loại trừ được "white coat hypertension" (huyết áp tăng do lo lắng khi gặp bác sĩ).',
+    detail: 'Huyết áp thay đổi liên tục trong ngày: thấp nhất lúc ngủ, tăng dần từ 6–10 giờ sáng (morning surge), cao nhất chiều tối. Một lần đo duy nhất có thể sai lệch 10–20 mmHg so với thực tế. Giao thức chuẩn: đo 2 lần cách nhau 1–2 phút, lấy trung bình, ghi lại cả hai buổi.',
+    details: [
+      'Chuẩn bị đúng trước đo: nghỉ ngồi yên tĩnh 5 phút (không nói chuyện, không dùng điện thoại). Không uống cà phê, không hút thuốc, không tập thể dục trong vòng 30 phút trước. Bàng quang rỗng (bàng quang đầy làm tăng HA 10–15 mmHg). Ngồi thẳng lưng, chân đặt phẳng sàn, không vắt chân.',
+      'Tư thế và vị trí đặt manometer: cánh tay đặt ngang tim (trên mặt bàn, ngang ngực). Vòng bít phủ 80% chu vi cánh tay (dùng sai size làm sai kết quả ±10 mmHg). Không đo qua áo dày. Nghỉ ít nhất 1 phút giữa 2 lần đo, lấy trung bình 2 lần.',
+      'Tần suất đo theo tình trạng: người bình thường khỏe mạnh — đo 2–3 lần/tuần đủ để phát hiện xu hướng. Người được chẩn đoán hoặc nghi tăng HA — đo sáng + tối mỗi ngày trong 7 ngày, ghi lại, mang kết quả đến bác sĩ. Người đang điều chỉnh thuốc — theo hướng dẫn bác sĩ.',
+      'Đọc số đúng: 120/80 = tâm thu/tâm trương. Bình thường: <120/80. Elevated: 120–129/<80. Stage 1 HTN: 130–139/80–89. Stage 2 HTN: ≥140/90. Hypertensive crisis: >180/>120 → đi khám ngay. Một lần cao chưa phải kết luận — cần nhiều lần đo khác nhau.',
+      'Masked hypertension và white-coat hypertension: HA tại nhà bình thường nhưng tại phòng khám cao = white-coat (25–30% bệnh nhân). HA tại nhà cao nhưng tại phòng khám bình thường = masked hypertension (nguy hiểm hơn vì bị bỏ qua). Đây là lý do đo tại nhà quan trọng không kém đo tại cơ sở y tế.',
+      'Khi nào đi khám ngay: HA ≥180/120 mmHg (dù không triệu chứng), HA cao kèm đau đầu dữ dội sau gáy, nhìn mờ, đau ngực, khó thở, phù mặt/tay chân đột ngột, hoặc HA tâm trương tăng đột ngột >20 mmHg so với baseline của bạn.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Nghỉ 5 phút trước đo', note: 'Đứng dậy, nói chuyện, dùng ĐT làm tăng HA 5–15 mmHg' },
+      { icon: '📝', label: 'Ghi cả 2 lần đo, cả 2 buổi', note: '7 ngày trung bình sáng + tối chính xác hơn 1 lần phòng khám' },
+      { icon: '🎯', label: 'Mục tiêu: <120/80 mmHg', note: 'Stage 1 HTN: 130–139/80–89 → cần thay đổi lối sống' },
+      { icon: '🚨', label: '≥180/120 → đi khám ngay', note: 'Hypertensive crisis — không chờ dù chưa có triệu chứng' },
+    ],
+  },
+  {
+    metric: 'Nhịp tim nghỉ', freq: '2–3 lần/tuần', tip: 'Ngay sau thức dậy, nằm yên',
+    icon: '💓', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhịp tim nghỉ (resting heart rate) là chỉ số đơn giản phản ánh sức khỏe tim mạch và mức độ hồi phục. Người tập thể thao đều đặn có RHR 45–55 bpm; người ít vận động 75–90 bpm. Nghiên cứu: mỗi 10 nhịp/phút tăng trong RHR liên quan đến tăng 15–18% nguy cơ tử vong tim mạch. RHR cao đột ngột (>10 nhịp so với baseline) là dấu hiệu sớm của bệnh, stress, ngủ kém hoặc overtraining.',
+    detail: 'RHR phải đo ngay sau thức dậy, trước khi ngồi dậy hoặc làm bất kỳ việc gì — đây là "true resting" state. Ngồi dậy làm tăng RHR 10–15 bpm, uống cà phê tăng 5–10 bpm, căng thẳng tăng 5–20 bpm. Theo dõi baseline cá nhân của bạn quan trọng hơn so với ngưỡng "bình thường" chung.',
+    details: [
+      'Cách đo chính xác: ngay khi thức dậy (mắt vừa mở), vẫn nằm yên, đặt 2 ngón (trỏ + giữa) lên cổ tay phía trong (mạch quay) hoặc cổ (mạch cảnh), đếm trong 60 giây. Hoặc 30 giây x 2. Đồng hồ thông minh đo liên tục và lấy trung bình buổi đêm — chính xác hơn đo tay một lần.',
+      'Ngưỡng bình thường và ý nghĩa: 60–100 bpm là "bình thường" theo AHA, nhưng ngưỡng tối ưu cho sức khỏe là 60–80 bpm. Vận động viên: 40–60 bpm (nhịp tim mạnh hơn, bơm nhiều máu mỗi nhát). RHR >100 bpm liên tục = tachycardia, cần đánh giá y tế.',
+      'RHR là barometer hồi phục: RHR tăng 5–7 bpm so với baseline sau buổi tập = bạn chưa hồi phục đủ — nên tập nhẹ hoặc nghỉ hôm đó. RHR tăng 7–10+ bpm kèm mệt mỏi = có thể bệnh đang đến (nhiễm virus thường làm RHR tăng trước khi triệu chứng rõ). Garmin/Apple Watch HRV và Recovery Score dựa vào điều này.',
+      'Cải thiện RHR qua tập luyện: Zone 2 cardio (chạy bộ, đạp xe chậm — mức bạn vẫn trò chuyện được) 150 phút/tuần là cách hiệu quả nhất giảm RHR dài hạn. Sau 8–12 tuần tập đều, RHR có thể giảm 5–10 bpm. Resistance training cũng giúp nhưng ít hơn cardio.',
+      'Các yếu tố làm tăng RHR: mất nước (RHR tăng 7–8 bpm khi thiếu 1% trọng lượng cơ thể qua nước), cà phê, căng thẳng, thiếu ngủ, rượu bia (tăng ngay trong đêm), thuốc (xem hướng dẫn). Những biến động này bình thường nếu RHR trở về baseline sau 1–2 ngày.',
+      'HRV — chỉ số nâng cao hơn: Heart Rate Variability (biến thiên nhịp tim giữa các nhịp đập) phản ánh cân bằng hệ thần kinh tự trị tốt hơn RHR đơn thuần. HRV cao = hồi phục tốt, tim khỏe. Đồng hồ thông minh hiện đại đo HRV mỗi sáng — nếu HRV thấp hơn baseline >20% nhiều ngày liên tiếp, đây là tín hiệu cơ thể cần nghỉ ngơi.',
+    ],
+    points: [
+      { icon: '🛌', label: 'Đo ngay khi thức, chưa ngồi dậy', note: 'Ngồi dậy làm tăng ngay 10–15 bpm — mất đi giá trị baseline' },
+      { icon: '📈', label: '+5–7 bpm so baseline = chưa hồi phục', note: 'Tập nhẹ hoặc nghỉ hôm đó — đặc biệt nếu kèm mệt mỏi' },
+      { icon: '🏃', label: 'Zone 2 cardio giảm RHR', note: '150 phút/tuần → RHR giảm 5–10 bpm sau 8–12 tuần' },
+      { icon: '💧', label: 'Mất nước tăng RHR 7–8 bpm', note: 'Uống nước đủ ngay khi thức dậy trước khi đo lần tiếp theo' },
+    ],
+  },
+  {
+    metric: 'Giấc ngủ', freq: 'Hằng ngày', tip: 'Giờ ngủ, thức, chất lượng 1–5',
+    icon: '😴', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giấc ngủ ảnh hưởng đến gần như mọi hệ cơ quan. Thiếu ngủ mãn tính (<7 giờ/đêm) liên quan đến tăng nguy cơ béo phì 89% (ở trẻ em), đái tháo đường type 2, tăng huyết áp, trầm cảm, suy giảm nhận thức và tử vong sớm. Matthew Walker (Why We Sleep): "Không có cơ quan nào trong cơ thể không hưởng lợi từ ngủ đủ giấc, không có bệnh lý nào không trở nên tệ hơn khi thiếu ngủ."',
+    detail: 'Theo dõi giấc ngủ mỗi ngày giúp bạn nhận ra pattern: bạn ngủ tốt hơn sau những ngày tập thể dục? Sau khi ăn tối sớm? Tương quan với tâm trạng ngày hôm sau? Dữ liệu cá nhân hóa giúp cải thiện hiệu quả hơn bất kỳ lời khuyên chung nào.',
+    details: [
+      'Những gì cần ghi: giờ lên giường, giờ ngủ thiếp (ước tính), số lần thức đêm, giờ thức dậy, cảm giác khi dậy (thang 1–5: 1=rất mệt, 5=sảng khoái). Tổng thời gian ngủ (sleep duration) + chất lượng (cảm giác khi dậy) = hai chỉ số quan trọng nhất.',
+      'Công cụ theo dõi: đồng hồ thông minh (Apple Watch, Garmin, Fitbit) tự động theo dõi sleep stages (light/deep/REM). Apps như Sleep Cycle hoặc Oura Ring phân tích chất lượng. Tối giản nhất: nhật ký giấc ngủ 3 chỉ số (giờ ngủ, giờ dậy, điểm chất lượng 1–5) mất 10 giây mỗi sáng.',
+      'Nhịp sinh học (circadian rhythm): cơ thể có đồng hồ nội tại 24h kiểm soát tiết melatonin, cortisol, nhiệt độ cơ thể. Ngủ và dậy cùng giờ mỗi ngày (kể cả cuối tuần) là yếu tố quan trọng nhất cho chất lượng giấc ngủ — quan trọng hơn giờ ngủ cụ thể. Sai lệch >1 giờ cuối tuần so ngày thường ("social jetlag") làm tăng nguy cơ béo phì và tim mạch.',
+      'Deep sleep và REM: deep sleep (N3) quan trọng cho hồi phục cơ thể, miễn dịch, hormone tăng trưởng. REM quan trọng cho trí nhớ cảm xúc, sáng tạo, xử lý stress. Deep sleep nhiều hơn trong 1/3 đầu đêm; REM nhiều hơn 1/3 cuối. Rượu bia ức chế REM mạnh — ngủ 8 tiếng sau uống rượu nhưng thiếu REM = không hồi phục thực sự.',
+      'Những kẻ phá giấc ngủ phổ biến: màn hình điện tử trước ngủ (ánh sáng xanh ức chế melatonin 2–3h), nhiệt độ phòng quá nóng (lý tưởng 18–20°C), cà phê sau 14:00 (bán kỳ 5–6h — 25% caffeine vẫn trong máu lúc nửa đêm), uống nhiều nước tối, thức đêm bù ngủ cuối tuần.',
+      'Khi theo dõi thấy pattern: ngủ <6h liên tục >1 tuần → ưu tiên cải thiện ngủ trước bất kỳ mục tiêu sức khỏe nào khác. Chất lượng ≤2/5 dù đủ giờ → xem xét sleep apnea (đặc biệt nếu ngáy, BMI cao, cổ to). Thức đêm thường xuyên 2–3 giờ sáng → cortisol cao/stress/lo âu cần giải quyết.',
+    ],
+    points: [
+      { icon: '🕐', label: 'Cùng giờ ngủ/dậy cả tuần', note: 'Nhịp sinh học ổn định quan trọng hơn số giờ ngủ cụ thể' },
+      { icon: '📵', label: 'Tắt màn hình trước ngủ 1h', note: 'Ánh sáng xanh ức chế melatonin 2–3 giờ — delay giờ ngủ thiếp' },
+      { icon: '🌡️', label: 'Phòng 18–20°C để ngủ sâu', note: 'Nhiệt độ cơ thể giảm khi ngủ sâu — phòng mát hỗ trợ điều này' },
+      { icon: '🍺', label: 'Rượu bia phá REM dù bạn ngủ đủ giờ', note: 'Ngủ 8h sau rượu = thiếu giấc ngủ phục hồi thực sự' },
+    ],
+  },
+  {
+    metric: 'Mức stress', freq: 'Hằng ngày', tip: 'Thang 1–10, buổi tối',
+    icon: '🧘', color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress mãn tính (kéo dài nhiều tuần/tháng) có tác động sinh lý thực sự: cortisol cao liên tục làm tăng huyết áp, ức chế hệ miễn dịch, gây kháng insulin, tích mỡ bụng và thu nhỏ hippocampus (vùng não quan trọng cho trí nhớ). Theo dõi mức stress hàng ngày giúp bạn nhận ra trigger, pattern và hiệu quả của các can thiệp (thiền, tập thể dục, ngủ).',
+    detail: 'Thang 1–10 chủ quan đơn giản nhưng hiệu quả khi theo dõi liên tục. Điểm tuyệt đối ít quan trọng hơn xu hướng: stress 6/10 mỗi ngày trong 2 tuần nguy hiểm hơn stress 8/10 một ngày. Ghi vào buổi tối trước khi ngủ — thời điểm phản ánh đủ cả ngày.',
+    details: [
+      'Cách dùng thang 1–10: 1–3 = thư giãn, không áp lực đáng kể. 4–5 = stress nhẹ bình thường, xử lý được. 6–7 = stress đáng kể, ảnh hưởng tập trung và tâm trạng. 8–9 = rất stress, khó kiểm soát. 10 = cực độ, khủng hoảng. Ghi số và optionally ghi 1 từ về nguyên nhân chính (công việc, gia đình, sức khỏe, tài chính).',
+      'Pattern thường thấy khi theo dõi: stress cao mỗi thứ 2 đầu tuần (anticipatory stress), stress thấp sau tập thể dục (endorphin effect thấy rõ trong dữ liệu), stress tăng tương quan với ngủ kém 2 đêm liên tiếp, stress giảm sau thiền đều đặn >4 tuần. Dữ liệu cá nhân hóa này hiệu quả hơn bất kỳ lời khuyên chung nào.',
+      'Stress sinh lý vs stress cảm nhận: HRV (heart rate variability) là chỉ số sinh lý phản ánh stress thần kinh tự trị — thấp = stress cao dù bạn cảm thấy ổn. Kết hợp HRV từ đồng hồ thông minh với thang stress chủ quan cho bức tranh đầy đủ hơn. Nhiều người "không cảm thấy stress" nhưng HRV liên tục thấp = allostatic load cao.',
+      'Can thiệp hiệu quả nhất theo bằng chứng: (1) Tập thể dục 30 phút moderate — giảm cortisol, tăng BDNF, endorphin. (2) Breathing 4–7–8 hoặc box breathing — kích hoạt parasympathetic ngay lập tức. (3) Thiền mindfulness >8 tuần — giảm kích thước amygdala, tăng grey matter prefrontal cortex (meta-analysis Holzel 2011). (4) Ngủ đủ — cortisol đêm giảm trong deep sleep.',
+      'Allostatic load — tổng tải stress lâu dài: cơ thể có thể chịu đựng stress cao ngắn hạn (acute stress thực ra có lợi). Vấn đề là khi stress liên tục không được phục hồi. Theo dõi điểm trung bình 7 ngày: nếu liên tục ≥6/10 trong >2 tuần → đây là dấu hiệu cần can thiệp chủ động, không chỉ "cố gắng thêm".',
+      'Social connection — yếu tố thường bỏ qua: cô đơn và cô lập xã hội có tác động sức khỏe tương đương hút 15 điếu thuốc/ngày (Holt-Lunstad 2015). Theo dõi mức kết nối xã hội song song với stress — nhiều khi stress cao là do cô đơn, không phải công việc. Một cuộc trò chuyện thật với người thân giảm cortisol hiệu quả.',
+    ],
+    points: [
+      { icon: '📝', label: 'Ghi buổi tối, thêm nguyên nhân chính', note: 'Xu hướng 7 ngày quan trọng hơn điểm một ngày' },
+      { icon: '🏃', label: 'Tập 30 phút giảm cortisol ngay', note: 'Endorphin + BDNF — can thiệp stress nhanh nhất và hiệu quả nhất' },
+      { icon: '🫁', label: 'Box breathing kích hoạt parasympathetic', note: '4 giây hít — 4 giây giữ — 4 giây thở ra — lặp 4 lần' },
+      { icon: '⚠️', label: '≥6/10 liên tục >2 tuần = cần can thiệp', note: 'Allostatic load — cơ thể không hồi phục được khi stress không ngắt' },
+    ],
+  },
+  {
+    metric: 'Bước chân', freq: 'Hằng ngày', tip: 'Mục tiêu 7.000–10.000 bước/ngày',
+    icon: '🚶', color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Con số 10.000 bước/ngày xuất phát từ chiến dịch marketing của một công ty Nhật năm 1965, không phải nghiên cứu khoa học. Nghiên cứu JAMA 2019 (hơn 16.000 phụ nữ): ngưỡng có lợi bắt đầu từ 4.400 bước/ngày và lợi ích tăng dần đến ~7.500 bước/ngày — sau đó plateau. 7.000–8.000 bước là mục tiêu realistic và dựa trên bằng chứng cho người bình thường.',
+    detail: 'Bước chân là proxy cho NEAT (Non-Exercise Activity Thermogenesis) — lượng calo tiêu thụ qua hoạt động hàng ngày ngoài tập thể dục có chủ đích. NEAT biến động đến 2.000 kcal/ngày giữa người hoạt động và ít vận động. Tăng bước chân thường xuyên dễ duy trì hơn tập gym và có thể có tác động lớn hơn về tổng calo tiêu thụ trong tuần.',
+    details: [
+      'Bằng chứng về ngưỡng tối ưu: JAMA Internal Medicine 2021 (2.110 người trung niên): 7.000+ bước/ngày giảm 50–70% nguy cơ tử vong tim mạch so với <5.000 bước. Sau 10.000 bước, lợi ích thêm không đáng kể. Nghiên cứu Lancet 2022: ngưỡng tối ưu 6.000–8.000 bước với người >60 tuổi, 8.000–10.000 với người trẻ hơn.',
+      'Bước chân vs tập thể dục có chủ đích: 10.000 bước/ngày ≈ 5–7 km đi bộ ≈ 300–400 kcal. Kết hợp bước chân cao (NEAT) + tập thể dục cấu trúc (gym/cardio) cho kết quả tốt hơn chỉ tập gym nhưng ngồi suốt phần còn lại của ngày ("active couch potato" — nghiên cứu đã xác nhận tập 60 phút/ngày không bù đắp được 8–12h ngồi liên tục).',
+      'Cách tăng bước chân mà không "cố gắng": đi cầu thang thay thang máy, xuống xe bus sớm 1–2 trạm, đi bộ khi gọi điện thoại, họp đứng hoặc walking meeting, đặt xe xa hơn 5 phút. Những thay đổi nhỏ này tích lũy 2.000–3.000 bước/ngày không tốn thêm thời gian.',
+      'Intensity matters too: 100 bước/phút = walking pace bình thường. 130+ bước/phút = brisk walk (cardio nhẹ). Đoạn đi bộ nhanh 10 phút liên tục (brisk walking bout) có lợi ích cardiovascular bổ sung ngoài tổng bước chân. WHO khuyến nghị 150 phút moderate activity/tuần = ~10 phút brisk walk x 5 ngày/tuần.',
+      'Công cụ theo dõi: điện thoại (accelerometer tích hợp, dùng Health/Google Fit) đủ chính xác cho theo dõi thường ngày — sai số ~5–10%. Đồng hồ thông minh chính xác hơn. Pedometer đơn giản giá rẻ ($5–10) cũng đủ. Quan trọng: consistency trong dùng một công cụ hơn là độ chính xác tuyệt đối.',
+      'Ngưỡng cảnh báo: <3.000 bước/ngày liên tục nhiều tuần = sedentary lifestyle với các rủi ro sức khỏe rõ ràng. Nếu công việc buộc ngồi nhiều (>6h/ngày), bổ sung đứng dậy đi 5 phút mỗi giờ (tổng cộng 40 phút) giảm nguy cơ tim mạch tương đương tăng 1.000 bước/ngày.',
+    ],
+    points: [
+      { icon: '🎯', label: '7.000–8.000 bước = mục tiêu thực tế', note: 'JAMA 2019: lợi ích plateau ở ~7.500 — 10.000 là marketing' },
+      { icon: '🏢', label: 'NEAT > 1 buổi gym dài', note: 'Ngồi 8h dù tập gym 1h vẫn là sedentary — tăng NEAT cả ngày' },
+      { icon: '⚡', label: '10 phút brisk walk = bonus cardio', note: '130+ bước/phút liên tục có lợi ích tim mạch bổ sung' },
+      { icon: '📱', label: 'Điện thoại đủ chính xác để theo dõi', note: 'Consistency quan trọng hơn accuracy — dùng một tool nhất quán' },
+    ],
+  },
+];
+
+function ScheduleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-48 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.metric} className="w-full h-full object-cover" style={{ opacity: 0.50 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <div className="flex items-center gap-3 mb-1">
+            <h2 className="text-2xl font-bold" style={{ color: item.color }}>{item.metric}</h2>
+            <span className="text-sm px-2 py-0.5 rounded-full font-bold" style={{ background: `rgba(${item.rgb},0.12)`, color: item.color }}>{item.freq}</span>
+          </div>
+          <p className="text-sm text-muted mb-4 opacity-70">⏰ {item.tip}</p>
+          <div className="rounded-xl px-4 py-3 mb-5 text-base leading-relaxed"
+            style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: `rgba(${item.rgb},0.9)` }}>
+            💡 {item.keyFact}
+          </div>
+          <p className="text-base text-muted leading-relaxed mb-6">{item.detail}</p>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
+              ← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {SCHEDULE.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
+              Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function TabE2() {
-  const SCHEDULE = [
-    { metric: 'Cân nặng', freq: '1–3 lần/tuần', tip: 'Buổi sáng, sau vệ sinh, trước ăn' },
-    { metric: 'Vòng eo', freq: '1 lần/tuần', tip: 'Buổi sáng, đứng thẳng, không hóp' },
-    { metric: 'Huyết áp', freq: '2–7 ngày/tuần*', tip: 'Nghỉ 5ph trước đo, ghi trung bình' },
-    { metric: 'Nhịp tim nghỉ', freq: '2–3 lần/tuần', tip: 'Ngay sau thức dậy, nằm yên' },
-    { metric: 'Giấc ngủ', freq: 'Hằng ngày', tip: 'Giờ ngủ, thức, chất lượng 1–5' },
-    { metric: 'Mức stress', freq: 'Hằng ngày', tip: 'Thang 1–10, buổi tối' },
-    { metric: 'Bước chân', freq: 'Hằng ngày', tip: 'Mục tiêu 7.000–10.000 bước/ngày' },
-  ];
   const [checks, setChecks] = useState({});
+  const [schedModal, setSchedModal] = useState(null);
   const DAILY = ['Hôm nay ngủ được bao nhiêu giờ?', 'Có vận động ít nhất 20–30 phút không?', 'Có ăn đủ rau/đạm/nước không?', 'Mức stress hôm nay (1–10)?', 'Có triệu chứng bất thường nào không?'];
   return (
     <div className="space-y-5">
       <div>
-        <h3 className="font-bold text-text text-lg mb-3">Lịch Theo Dõi Cơ Bản</h3>
+        <h3 className="font-bold text-text text-lg mb-1">Lịch Theo Dõi Cơ Bản</h3>
+        <p className="text-xs text-muted mb-3 opacity-60">Nhấp vào từng chỉ số để xem hướng dẫn và khoa học chi tiết</p>
         <div className="space-y-1.5">
-          {SCHEDULE.map(s => (
-            <div key={s.metric} className="flex items-start gap-3 rounded-xl border border-border bg-surface/60 p-3">
+          {SCHEDULE.map((s, i) => (
+            <div key={s.metric}
+              className="flex items-center gap-3 rounded-xl border border-border bg-surface/60 p-3 cursor-pointer hover:shadow-md transition-all duration-200"
+              onClick={() => setSchedModal(i)}
+              onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${s.rgb},0.45)`}
+              onMouseLeave={e => e.currentTarget.style.borderColor = ''}>
+              <span className="text-xl shrink-0">{s.icon}</span>
               <div className="w-28 shrink-0">
                 <div className="text-lg font-semibold text-text">{s.metric}</div>
-                <div className="text-base font-bold" style={{ color: '#14b8a6' }}>{s.freq}</div>
+                <div className="text-base font-bold" style={{ color: s.color }}>{s.freq}</div>
               </div>
-              <p className="text-base text-muted leading-relaxed">{s.tip}</p>
+              <p className="text-base text-muted leading-relaxed flex-1">{s.tip}</p>
+              <span className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0"
+                style={{ color: s.color, borderColor: `rgba(${s.rgb},0.35)`, background: `rgba(${s.rgb},0.08)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -251,6 +479,17 @@ function TabE2() {
         </div>
         <p className="text-base text-muted mt-2 italic">Đo để hiểu, không đo để ám ảnh. Nhìn xu hướng 4–12 tuần quan trọng hơn một con số đơn lẻ.</p>
       </div>
+      {schedModal !== null && (
+        <ScheduleModal
+          item={SCHEDULE[schedModal]}
+          idx={schedModal}
+          onClose={() => setSchedModal(null)}
+          onPrev={() => setSchedModal(i => Math.max(0, i - 1))}
+          onNext={() => setSchedModal(i => Math.min(SCHEDULE.length - 1, i + 1))}
+          hasPrev={schedModal > 0}
+          hasNext={schedModal < SCHEDULE.length - 1}
+        />
+      )}
     </div>
   );
 }

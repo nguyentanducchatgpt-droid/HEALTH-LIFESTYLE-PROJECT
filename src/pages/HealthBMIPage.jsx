@@ -132,8 +132,48 @@ const BMI_CATS = [
 ];
 
 const WAIST_RISKS = [
-  { group: 'Nam', low: '<90 cm', normal: 'Bình thường', high: '≥90 cm', danger: 'Nguy cơ cao' },
-  { group: 'Nữ', low: '<80 cm', normal: 'Bình thường', high: '≥80 cm', danger: 'Nguy cơ cao' },
+  {
+    group: 'Nam', icon: '👨', color: '#3b82f6', rgb: '59,130,246',
+    low: '<90 cm', normal: 'Bình thường', high: '≥90 cm', danger: 'Nguy cơ cao',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vòng eo ≥90cm ở nam giới (tiêu chuẩn IDF châu Á) là dấu hiệu mỡ nội tạng cao — nguy cơ độc lập của đái tháo đường type 2, bệnh tim mạch và hội chứng chuyển hóa, ngay cả khi BMI bình thường. Nam giới có xu hướng tích mỡ dạng "táo" (bụng) — mẫu phân bố mỡ nguy hiểm hơn cho tim mạch so với dạng "lê" (hông/đùi) thường gặp ở nữ.',
+    detail: 'Ở nam giới, mỡ nội tạng (visceral fat) bao quanh các cơ quan như gan, tụy, ruột — khác với mỡ dưới da. Mỡ nội tạng tiết adipokines viêm (TNF-α, IL-6) và free fatty acids → kháng insulin → đái tháo đường; tăng LDL, giảm HDL → bệnh tim mạch.',
+    details: [
+      'Tại sao nam giới tích mỡ bụng: testosterone hỗ trợ phân bố mỡ dạng "táo" (android fat — trung tâm cơ thể). Khi testosterone giảm (sau 40 tuổi, stress cao, béo phì, ít ngủ), tỷ lệ estrogen/testosterone tăng → mỡ tích thêm ở bụng. Cortisol mãn tính cũng kích hoạt adipogenesis đặc biệt ở mỡ nội tạng.',
+      'Nguy cơ tim mạch: Framingham Heart Study: mỗi 1cm tăng vòng eo = tăng 2% nguy cơ cardiovascular event. Nam giới vòng eo ≥90cm: nguy cơ nhồi máu cơ tim tăng 3×, đột quỵ tăng 2×. Mỡ nội tạng tiết adipokines pro-inflammatory gây xơ vữa động mạch nhanh hơn.',
+      'Mỡ gan và NAFLD: vòng eo ≥90cm liên quan trực tiếp với NAFLD — nguy cơ tăng 3.5×, độc lập với BMI. Gan nhiễm mỡ → viêm gan → xơ gan trong 10–20 năm nếu không can thiệp. Kiểm tra ALT/AST định kỳ nếu vòng eo cao.',
+      'Đo vòng eo đúng cho nam: đứng thẳng, thở ra nhẹ (không hóp bụng), đo ngang qua điểm giữa bờ dưới xương sườn cuối và mào chậu (thường ngang hoặc 1–2cm trên rốn). Buổi sáng trước ăn. Đo 2 lần và lấy trung bình.',
+      'Giảm mỡ bụng: không có cách giảm mỡ bụng riêng lẻ (spot reduction không tồn tại). Deficit calo 300–500 kcal + resistance training (tăng testosterone tự nhiên) + ngủ đủ 7–9h (testosterone đỉnh trong deep sleep) + giảm alcohol. HIIT 2–3 lần/tuần hiệu quả cho giảm mỡ bụng.',
+      'Testosterone và mỡ bụng — vòng lặp xấu: mỡ bụng nhiều → enzyme aromatase chuyển testosterone thành estrogen → testosterone giảm thêm → tích thêm mỡ bụng. Giảm cân phá vỡ vòng lặp này và tăng testosterone tự nhiên 15–20%.',
+    ],
+    points: [
+      { icon: '🫀', label: 'Vòng eo ≥90cm = nguy cơ cao', note: 'Tiêu chuẩn IDF châu Á — thấp hơn tiêu chuẩn phương Tây (102cm)' },
+      { icon: '🔥', label: 'Mỡ nội tạng tiết chất viêm', note: 'TNF-α, IL-6, FFA → kháng insulin → đái tháo đường type 2' },
+      { icon: '😴', label: 'Ngủ đủ = testosterone tốt', note: 'Testosterone đỉnh trong deep sleep — ngủ <6h giảm T 15–20%' },
+      { icon: '💪', label: 'Resistance training tăng T tự nhiên', note: 'Compound moves (squat, deadlift) hiệu quả nhất cho testosterone' },
+    ],
+  },
+  {
+    group: 'Nữ', icon: '👩', color: '#ec4899', rgb: '236,72,153',
+    low: '<80 cm', normal: 'Bình thường', high: '≥80 cm', danger: 'Nguy cơ cao',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vòng eo ≥80cm ở phụ nữ (tiêu chuẩn IDF châu Á) phản ánh mỡ nội tạng tăng cao. Ngưỡng thấp hơn nam do phụ nữ châu Á tích mỡ nội tạng cao hơn dù cùng BMI. Estrogen tiền mãn kinh "bảo vệ" phân bố mỡ dạng "lê" (hông/đùi), nhưng sau mãn kinh mỡ dịch chuyển về bụng và nguy cơ tim mạch tăng mạnh.',
+    detail: 'Phụ nữ có đặc điểm sinh lý khác về mỡ cơ thể: tổng mỡ cao hơn nam (22–25% vs 15–18% healthy range) nhưng mỡ dưới da ở hông/đùi ít nguy hiểm hơn mỡ nội tạng. Sau mãn kinh, estrogen giảm → mỡ tái phân bố từ hông về bụng → nguy cơ tim mạch tăng ngang nam giới.',
+    details: [
+      'Estrogen và phân bố mỡ: estrogen ức chế enzyme lipoprotein lipase ở mỡ bụng và kích hoạt ở mỡ hông/đùi → phụ nữ tiền mãn kinh tích mỡ dạng "lê". Mỡ hông/đùi tiết adiponectin (hormone chống viêm, tăng nhạy cảm insulin) — thực ra có tác dụng bảo vệ. Mỡ bụng nội tạng tiết adipokines viêm.',
+      'PCOS và vòng eo: hội chứng buồng trứng đa nang (PCOS) ảnh hưởng 5–10% phụ nữ tuổi sinh sản và liên quan chặt với mỡ bụng tăng. PCOS → insulin resistance → mỡ tích ở bụng → vòng eo tăng → kháng insulin nặng hơn. Kiểm tra: testosterone, DHEAS, LH/FSH ratio nếu vòng eo tăng kèm chu kỳ không đều.',
+      'Mãn kinh và tái phân bố mỡ: trong 5 năm sau mãn kinh, phụ nữ tăng trung bình 3–5kg và vòng eo tăng 4–5cm do giảm estrogen. Nguy cơ tim mạch tăng từ thấp lên ngang bằng nam giới cùng tuổi. HRT (hormone replacement therapy) có thể giảm bớt tái phân bố mỡ — cần thảo luận với bác sĩ.',
+      'Ăn uống và vòng eo phụ nữ: PREDIMED study: chế độ Mediterranean giảm waist circumference 0.4–0.7 cm/năm so với low-fat diet. Đường và tinh bột tinh chế là yếu tố chính tăng mỡ bụng ở phụ nữ — không phải chất béo toàn thể. Chất xơ và healthy fats giảm insulin spike.',
+      'Vận động cho giảm mỡ bụng ở nữ: resistance training 2–3 lần/tuần + cardio moderate 150 phút/tuần là combination hiệu quả nhất (ACSM). Yoga và Pilates không đủ giảm mỡ nội tạng nhưng giảm cortisol — yếu tố gián tiếp quan trọng. Bơi lội và đạp xe ideal nếu có vấn đề khớp.',
+      'Cortisol và mỡ bụng nữ: phụ nữ có phản ứng cortisol cao hơn nam với social stressors. Cortisol mãn tính → tăng appetite (đặc biệt thức ăn giàu đường và mỡ), ức chế fat oxidation, kích hoạt adipogenesis ở mỡ nội tạng. Thiền, breathing practice và ngủ đủ giấc là can thiệp y học thực sự cho mỡ bụng nữ.',
+    ],
+    points: [
+      { icon: '🌸', label: 'Vòng eo ≥80cm = ngưỡng cảnh báo', note: 'IDF châu Á: thấp hơn phương Tây (88cm) vì phụ nữ Á có mỡ nội tạng cao hơn cùng BMI' },
+      { icon: '🔄', label: 'Mãn kinh: mỡ dịch từ hông về bụng', note: 'Estrogen giảm → nguy cơ tim mạch tăng ngang nam giới cùng tuổi' },
+      { icon: '🧘', label: 'Cortisol giảm = mỡ bụng giảm', note: 'Stress mãn tính → tích mỡ nội tạng — thiền và breathing là can thiệp thực' },
+      { icon: '🥗', label: 'Mediterranean diet giảm vòng eo', note: 'PREDIMED: hiệu quả hơn low-fat diet cho mỡ bụng ở phụ nữ' },
+    ],
+  },
 ];
 
 function BMIModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
@@ -201,6 +241,83 @@ function BMIModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
               ← Trước</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {BMI_CATS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
+              Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WaistModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(16px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.group} className="w-full h-full object-cover" style={{ opacity: 0.50 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <div className="flex items-center gap-3 mb-1">
+            <span className="text-2xl font-black" style={{ color: item.color }}>{item.group}</span>
+            <span className="text-base font-semibold text-muted">· Vòng eo & nguy cơ sức khỏe</span>
+          </div>
+          <div className="rounded-xl px-4 py-3 mb-5 text-base font-medium leading-relaxed"
+            style={{ background: `rgba(${item.rgb},0.1)`, borderLeft: `3px solid ${item.color}`, color: `rgba(${item.rgb},0.9)` }}>
+            💡 {item.keyFact}
+          </div>
+          <p className="text-base text-muted leading-relaxed mb-6">{item.detail}</p>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
+              ← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {WAIST_RISKS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
@@ -288,6 +405,7 @@ function BMICalculator() {
 
 export default function HealthBMIPage() {
   const [bmiModal, setBmiModal] = useState(null);
+  const [waistModal, setWaistModal] = useState(null);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -364,9 +482,17 @@ export default function HealthBMIPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vòng Eo — Chỉ Số Quan Trọng Hơn Cân Nặng</h2>
         <p className="text-muted text-lg mb-6">Mỡ bụng nội tạng liên quan đến nguy cơ tim mạch, đái tháo đường type 2, gan nhiễm mỡ và hội chứng chuyển hóa</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          {WAIST_RISKS.map(w => (
-            <div key={w.group} className="rounded-2xl border border-border bg-surface p-5">
-              <div className="font-bold text-text mb-3">{w.group}</div>
+          {WAIST_RISKS.map((w, i) => (
+            <div key={w.group}
+              className="rounded-2xl border border-border bg-surface p-5 cursor-pointer hover:shadow-md transition-all duration-200"
+              onClick={() => setWaistModal(i)}
+              onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${w.rgb},0.4)`}
+              onMouseLeave={e => e.currentTarget.style.borderColor = ''}>
+              <div className="flex justify-between items-center mb-3">
+                <div className="font-bold text-text">{w.icon} {w.group}</div>
+                <span className="text-[10px] font-bold px-2 py-1 rounded-full border"
+                  style={{ color: w.color, borderColor: `rgba(${w.rgb},0.35)`, background: `rgba(${w.rgb},0.08)` }}>Chi tiết →</span>
+              </div>
               <div className="flex gap-3">
                 <div className="flex-1 rounded-xl p-3 text-center" style={{ background: '#10b98115' }}>
                   <div className="font-black text-xl" style={{ color: '#10b981' }}>{w.low}</div>
@@ -377,6 +503,7 @@ export default function HealthBMIPage() {
                   <div className="text-base text-muted">{w.danger}</div>
                 </div>
               </div>
+              <p className="text-center text-xs text-muted mt-3 opacity-50">Nhấp để xem phân tích chi tiết</p>
             </div>
           ))}
         </div>
@@ -423,6 +550,17 @@ export default function HealthBMIPage() {
           onNext={() => setBmiModal(i => Math.min(BMI_CATS.length - 1, i + 1))}
           hasPrev={bmiModal > 0}
           hasNext={bmiModal < BMI_CATS.length - 1}
+        />
+      )}
+      {waistModal !== null && (
+        <WaistModal
+          item={WAIST_RISKS[waistModal]}
+          idx={waistModal}
+          onClose={() => setWaistModal(null)}
+          onPrev={() => setWaistModal(i => Math.max(0, i - 1))}
+          onNext={() => setWaistModal(i => Math.min(WAIST_RISKS.length - 1, i + 1))}
+          hasPrev={waistModal > 0}
+          hasNext={waistModal < WAIST_RISKS.length - 1}
         />
       )}
     </div>

@@ -384,6 +384,97 @@ const DIET_TIPS = [
   },
 ];
 
+const DOCTOR_SIGNS = [
+  {
+    icon: '🩸', label: 'Đường Huyết Đói ≥ 126 mg/dL', range: 'Chẩn đoán ĐTĐ',
+    color: '#ef4444', rgb: '239,68,68',
+    text: 'Đường huyết đói ≥ 126 mg/dL trong 2 lần đo riêng biệt',
+    img: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80',
+    keyFact: '💡 Tiêu chuẩn ADA 2023: đường huyết đói ≥ 126 mg/dL (≥ 7.0 mmol/L) trong 2 lần đo riêng biệt = xác nhận tiểu đường. Chỉ cần 1 lần nếu kèm triệu chứng điển hình (khát nhiều, tiểu nhiều, sụt cân). Đừng chờ thêm — sớm gặp bác sĩ, sớm bảo vệ các cơ quan.',
+    detail: 'Đường huyết đói ≥ 126 mg/dL không phải "chỉ số hơi cao" — đây là ngưỡng đã được xác lập bởi hàng chục nghiên cứu dịch tễ học là mức bắt đầu gây tổn thương mạch máu theo thời gian.',
+    details: [
+      'Tại sao cần 2 lần đo riêng biệt: stress cấp tính, bệnh nhiễm trùng, steroid, thuốc lợi tiểu có thể làm tăng đường huyết tạm thời. Xác nhận 2 lần (vào 2 ngày khác nhau) loại trừ kết quả dương tính giả.',
+      'Trường hợp 1 lần đo là đủ: nếu cùng lúc có triệu chứng điển hình (khát nhiều, tiểu nhiều, sụt cân không rõ lý do, mệt mỏi bất thường, nhìn mờ) + đường huyết đói ≥ 126 → đủ tiêu chuẩn chẩn đoán.',
+      'Thời gian nhịn ăn chuẩn: ít nhất 8 giờ (tốt nhất 8–12 giờ) không ăn gì ngoài nước lọc. Cà phê đen, trà không đường lý tưởng là không uống, dù ảnh hưởng nhỏ. Đo vào buổi sáng trước bữa sáng.',
+      'Kết quả 126–139 mg/dL: biên giới — làm thêm HbA1c và OGTT (test dung nạp glucose 75g) để xác nhận đầy đủ. Bác sĩ sẽ quyết định cần thuốc hay chỉ thay đổi lối sống.',
+      'Biến chứng tiến triển âm thầm: tổn thương mạch máu nhỏ ở thận, mắt, thần kinh bắt đầu tích lũy ngay từ khi đường huyết ở vùng tiền tiểu đường (100–125) — không chờ đến khi ≥ 126 mới lo.',
+      'Hành động sau kết quả: gặp bác sĩ trong vòng 1 tuần (không phải tháng sau). Mang kết quả xét nghiệm, ghi chú chế độ ăn và thuốc đang dùng. Bác sĩ có thể yêu cầu thêm HbA1c, lipid, creatinine.',
+    ],
+    points: [
+      { icon: '📋', label: 'Cần 2 lần đo xác nhận', note: 'Vào 2 ngày khác nhau — trừ khi có triệu chứng' },
+      { icon: '⏰', label: 'Nhịn ăn ≥ 8 giờ', note: 'Chuẩn đo: buổi sáng trước bữa sáng' },
+      { icon: '📅', label: 'Gặp bác sĩ trong 1 tuần', note: 'Không phải "đợi tháng sau xem lại"' },
+      { icon: '🔬', label: 'Làm thêm HbA1c + lipid', note: 'Đánh giá toàn diện nguy cơ tim mạch' },
+    ],
+  },
+  {
+    icon: '🧪', label: 'HbA1c ≥ 6.5%', range: 'Chẩn đoán ĐTĐ',
+    color: '#f97316', rgb: '249,115,22',
+    text: 'HbA1c ≥ 6.5% xác nhận bởi xét nghiệm',
+    img: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660?w=800&q=80',
+    keyFact: '💡 HbA1c ≥ 6.5% là 1 trong 4 tiêu chuẩn chẩn đoán tiểu đường theo ADA 2023. Không cần nhịn ăn, đo được bất kỳ lúc nào trong ngày — ưu điểm lớn so với đường huyết đói. Tương đương đường huyết trung bình ≥ 140 mg/dL liên tục trong 3 tháng.',
+    detail: 'HbA1c ≥ 6.5% không phải "hơi cao một chút" — đây là bằng chứng 3 tháng về kiểm soát đường huyết kém, cần bác sĩ đánh giá toàn diện và lập kế hoạch điều trị cá nhân hóa.',
+    details: [
+      'HbA1c đo % hemoglobin trong hồng cầu đã gắn glucose. Hồng cầu sống 90–120 ngày → HbA1c phản ánh đường huyết trung bình 2–3 tháng qua — không bị nhiễu bởi bữa ăn hay stress ngày hôm đó.',
+      'Quy đổi HbA1c → đường huyết trung bình (eAG): 6.5% ≈ 140 mg/dL; 7.0% ≈ 154 mg/dL; 8.0% ≈ 183 mg/dL; 9.0% ≈ 212 mg/dL. Mỗi 1% tăng HbA1c ≈ tăng 29 mg/dL đường huyết trung bình.',
+      'Hạn chế của HbA1c — khi kết quả có thể không chính xác: thiếu máu (hồng cầu ít), hồng cầu hình liềm (sickle cell), thiếu G6PD, mang thai (hồng cầu quay vòng nhanh hơn), mới truyền máu — bác sĩ cần biết.',
+      'HbA1c 6.0–6.4% (vùng tiền ĐTĐ): gặp bác sĩ ngay cả ở ngưỡng này — tùy yếu tố nguy cơ, bác sĩ có thể đề xuất metformin phòng ngừa kết hợp thay đổi lối sống. Không chờ đến khi ≥ 6.5%.',
+      'Xét nghiệm HbA1c tại đâu: bệnh viện, phòng khám đa khoa, hoặc phòng xét nghiệm tư nhân có chứng nhận. Giá khoảng 100,000–150,000 VND. Không cần nhịn ăn — đo được mọi lúc.',
+      'Sau khi có kết quả ≥ 6.5%: bác sĩ thường làm thêm đường huyết đói, lipid máu (LDL, triglyceride), creatinine (chức năng thận), microalbumin niệu — để có bức tranh đầy đủ trước khi lập phác đồ điều trị.',
+    ],
+    points: [
+      { icon: '🩺', label: 'Không cần nhịn ăn', note: 'Đo được bất kỳ lúc nào trong ngày' },
+      { icon: '📊', label: '6.5% ≈ 140 mg/dL TB', note: 'Đường huyết trung bình 3 tháng qua' },
+      { icon: '⚠️', label: 'HbA1c 6.0–6.4%: cũng đi khám', note: 'Tiền ĐTĐ — can thiệp sớm hiệu quả hơn' },
+      { icon: '🔬', label: 'Làm thêm lipid + thận', note: 'Đánh giá toàn diện trước khi điều trị' },
+    ],
+  },
+  {
+    icon: '🚨', label: 'Triệu Chứng Điển Hình', range: 'Khám ngay',
+    color: '#f59e0b', rgb: '245,158,11',
+    text: 'Triệu chứng: khát nước nhiều, tiểu nhiều, mệt mỏi không rõ nguyên nhân, nhìn mờ',
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80',
+    keyFact: '💡 Bộ triệu chứng "3P" cổ điển của tiểu đường: Polydipsia (khát nhiều) + Polyuria (tiểu nhiều) + Polyphagia (ăn nhiều) kèm sụt cân. Khi đường huyết > 180 mg/dL liên tục, thận không còn tái hấp thu kịp glucose — đường tràn ra nước tiểu kéo nước theo, gây chuỗi phản ứng dây chuyền.',
+    detail: 'Các triệu chứng tiểu đường không xuất hiện đột ngột — chúng tích lũy âm thầm trong nhiều tháng. Khi đã có triệu chứng rõ, đường huyết thường đã cao đáng kể trong thời gian dài.',
+    details: [
+      'Khát nước nhiều (Polydipsia): khi đường huyết > 180 mg/dL, glucose tràn vào nước tiểu kéo nước theo (osmotic diuresis) → cơ thể mất nước → não nhận tín hiệu khát. Uống nhiều nước nhưng nước tiểu tiếp tục nhiều — vòng lặp không tự ngắt.',
+      'Tiểu nhiều (Polyuria): ≥ 3L nước tiểu/ngày (bình thường 1–2L). Hay thức đêm đi tiểu (nocturia) ≥ 2 lần là dấu hiệu đáng chú ý — đặc biệt nếu không uống nhiều nước trước ngủ.',
+      'Mệt mỏi không giải thích được: dù ăn đủ, tế bào không nhận được glucose (kháng insulin) → thiếu năng lượng tế bào. Cũng do mất nước mạn tính và rối loạn giấc ngủ (tiểu đêm nhiều).',
+      'Nhìn mờ: đường huyết cao làm thay đổi áp suất thẩm thấu của thủy tinh thể mắt → thủy tinh thể phồng lên, thay đổi tiêu cự → nhìn mờ. Thường hồi phục khi đường huyết được kiểm soát — không phải tổn thương võng mạc ngay.',
+      'Vết thương lâu lành, ngứa da, nhiễm trùng tái phát (đặc biệt nấm âm đạo): glucose cao tạo môi trường thuận lợi cho vi khuẩn và nấm. Hệ miễn dịch bị suy giảm khi đường huyết cao mạn tính.',
+      'Tê bì hoặc đau tay/chân: bệnh thần kinh ngoại biên do đường huyết cao thường bắt đầu ở ngón chân và bàn chân. Mất cảm giác "đi trên bông" là dấu hiệu bệnh thần kinh đã tiến triển — cần gặp bác sĩ ngay.',
+    ],
+    points: [
+      { icon: '💧', label: 'Khát + tiểu nhiều', note: 'Osmotic diuresis — vòng lặp tự duy trì' },
+      { icon: '👁️', label: 'Nhìn mờ thường hồi phục', note: 'Không phải tổn thương võng mạc ngay' },
+      { icon: '🦶', label: 'Tê bì tay chân', note: 'Bệnh thần kinh ngoại biên — khám ngay' },
+      { icon: '🩹', label: 'Vết thương lâu lành', note: 'Glucose cao ức chế hồi phục mô' },
+    ],
+  },
+  {
+    icon: '⚡', label: 'Hạ Đường Huyết Tái Phát', range: 'Cần điều chỉnh',
+    color: '#3b82f6', rgb: '59,130,246',
+    text: 'Hạ đường huyết tái phát (< 70 mg/dL) kèm chóng mặt, run tay',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
+    keyFact: '💡 Hạ đường huyết tái phát (> 1 lần/tuần) là dấu hiệu phác đồ điều trị cần điều chỉnh — liều insulin hoặc thuốc hạ đường quá cao, bỏ bữa thường xuyên, hoặc vận động không được tính vào kế hoạch. Không được tự điều chỉnh liều insulin — gặp bác sĩ ngay.',
+    detail: 'Hạ đường huyết tái phát không chỉ nguy hiểm tức thời — nó còn làm giảm khả năng nhận biết triệu chứng (hypoglycemia unawareness) theo thời gian, khiến các lần hạ đường tiếp theo ít được cảnh báo hơn.',
+    details: [
+      'Hạ đường huyết là < 70 mg/dL theo ADA. "Hạ đường huyết tái phát" là ≥ 2 lần/tuần hoặc bất kỳ lần nào nặng (cần người khác giúp, mất ý thức, co giật) — cần gặp bác sĩ trong vòng 24–48 giờ.',
+      'Hypoglycemia unawareness: mỗi lần hạ đường huyết làm não "quen" với mức glucose thấp → ngưỡng nhận biết triệu chứng hạ thấp dần → các lần sau hạ sâu hơn mới thấy triệu chứng → nguy hiểm hơn nhiều.',
+      'Nguyên nhân tái phát thường gặp: (1) Liều insulin/sulfonylurea quá cao; (2) Bỏ bữa hoặc ăn ít carb hơn bình thường; (3) Vận động ngoài kế hoạch mà không điều chỉnh liều; (4) Uống rượu — ức chế gluconeogenesis ở gan.',
+      'Hạ đường huyết ban đêm đặc biệt nguy hiểm: xảy ra trong lúc ngủ, không có triệu chứng cảnh báo. Dấu hiệu gián tiếp: thức dậy mệt mỏi, đau đầu, quần áo/ga ướt mồ hôi, đường huyết cao bất thường vào buổi sáng (Somogyi effect).',
+      'Không tự điều chỉnh liều insulin: đây là sai lầm nguy hiểm. Bác sĩ cần xem xét toàn bộ pattern đường huyết (nhật ký đường huyết), đánh giá nguyên nhân, và điều chỉnh phác đồ có hệ thống.',
+      'Chuẩn bị cho buổi gặp bác sĩ: mang nhật ký đường huyết 1–2 tuần gần nhất (hoặc tải từ máy đo). Ghi chú: thời điểm hạ, hoạt động trước đó, bữa ăn, và cách xử trí. Thông tin này rất quan trọng cho bác sĩ điều chỉnh phác đồ.',
+    ],
+    points: [
+      { icon: '📔', label: 'Mang nhật ký đường huyết', note: '1–2 tuần gần nhất — quan trọng với bác sĩ' },
+      { icon: '🚫', label: 'Không tự chỉnh liều insulin', note: 'Nguy hiểm — bác sĩ cần xem xét toàn bộ' },
+      { icon: '🌙', label: 'Nghi ngờ hạ đêm', note: 'Mệt sáng + đường cao bất thường = Somogyi' },
+      { icon: '⏱️', label: 'Gặp bác sĩ trong 24–48h', note: 'Nếu hạ nặng hoặc mất ý thức' },
+    ],
+  },
+];
+
 function BSModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = e => {
@@ -560,6 +651,7 @@ export default function HealthBloodSugarPage() {
   const [bsModal, setBsModal] = useState(null);
   const [hbacModal, setHbacModal] = useState(null);
   const [dietModal, setDietModal] = useState(null);
+  const [doctorModal, setDoctorModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -695,14 +787,27 @@ export default function HealthBloodSugarPage() {
       </RevealBlock>
 
       <RevealBlock delay={5} className="mb-10">
-        <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold text-text mb-3">Khi Nào Cần Gặp Bác Sĩ?</h3>
-          <ul className="space-y-2 text-lg text-muted">
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span> Đường huyết đói ≥ 126 mg/dL trong 2 lần đo riêng biệt</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span> HbA1c ≥ 6.5% xác nhận bởi xét nghiệm</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span> Triệu chứng: khát nước nhiều, tiểu nhiều, mệt mỏi không rõ nguyên nhân, nhìn mờ</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span> Hạ đường huyết tái phát (&lt; 70 mg/dL) kèm chóng mặt, run tay</li>
-          </ul>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Khi Nào Cần Gặp Bác Sĩ?</h2>
+        <p className="text-muted text-lg mb-6">Những dấu hiệu này yêu cầu đánh giá y tế sớm — đừng tự theo dõi tại nhà mà không có phác đồ từ bác sĩ.</p>
+        <div className="space-y-3">
+          {DOCTOR_SIGNS.map((s, i) => (
+            <div key={i}
+              onClick={() => setDoctorModal(i)}
+              className="rounded-2xl border p-4 flex items-center gap-4 cursor-pointer transition-colors"
+              style={{ borderColor: `rgba(${s.rgb},0.22)`, background: `rgba(${s.rgb},0.04)` }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${s.rgb},0.55)`}
+              onMouseLeave={e => e.currentTarget.style.borderColor = `rgba(${s.rgb},0.22)`}>
+              <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-2xl shrink-0"
+                style={{ background: `rgba(${s.rgb},0.12)`, border: `1px solid rgba(${s.rgb},0.25)` }}>
+                {s.icon}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-sm mb-0.5" style={{ color: s.color }}>{s.label}</p>
+                <p className="text-base text-muted leading-snug">{s.text}</p>
+              </div>
+              <span className="text-muted text-sm shrink-0">→</span>
+            </div>
+          ))}
         </div>
       </RevealBlock>
 
@@ -743,6 +848,18 @@ export default function HealthBloodSugarPage() {
           onNext={() => setDietModal(i => Math.min(DIET_TIPS.length - 1, i + 1))}
           hasPrev={dietModal > 0}
           hasNext={dietModal < DIET_TIPS.length - 1}
+        />
+      )}
+      {doctorModal !== null && (
+        <BSModal
+          item={DOCTOR_SIGNS[doctorModal]}
+          idx={doctorModal}
+          total={DOCTOR_SIGNS.length}
+          onClose={() => setDoctorModal(null)}
+          onPrev={() => setDoctorModal(i => Math.max(0, i - 1))}
+          onNext={() => setDoctorModal(i => Math.min(DOCTOR_SIGNS.length - 1, i + 1))}
+          hasPrev={doctorModal > 0}
+          hasNext={doctorModal < DOCTOR_SIGNS.length - 1}
         />
       )}
     </div>

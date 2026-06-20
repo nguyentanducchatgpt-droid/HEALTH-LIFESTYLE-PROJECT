@@ -122,11 +122,106 @@ const BP_CATS = [
 ];
 
 const STEPS = [
-  { num: '1', title: 'Nghỉ ngơi 5 phút', desc: 'Ngồi yên, không nói chuyện, tư thế thoải mái trước khi đo.' },
-  { num: '2', title: 'Tránh cà phê & thuốc lá', desc: 'Không dùng cà phê, thuốc lá, rượu 30 phút trước khi đo.' },
-  { num: '3', title: 'Tư thế chuẩn', desc: 'Ngồi ngay lưng, hai chân chạm đất, tay đặt bằng tim trên bàn.' },
-  { num: '4', title: 'Băng quấn đúng cỡ', desc: 'Băng quấn ôm sát, cách nếp khuỷu tay 2–3cm. Không quấn lên áo.' },
-  { num: '5', title: 'Đo 2 lần liên tiếp', desc: 'Nghỉ 1–2 phút giữa 2 lần đo. Ghi lại trị số trung bình.' },
+  {
+    num: '1', icon: '🪑', title: 'Nghỉ ngơi 5 phút', desc: 'Ngồi yên, không nói chuyện, tư thế thoải mái trước khi đo.',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+    keyFact: '💡 Không nghỉ ngơi trước khi đo có thể làm HA cao hơn thực tế 10–20 mmHg — đủ để bị chẩn đoán nhầm là tăng huyết áp.',
+    detail: 'Nghỉ ngơi 5 phút trước khi đo là bước quan trọng nhất thường bị bỏ qua — cơ thể cần thời gian để đưa hệ thần kinh giao cảm về trạng thái nghỉ.',
+    details: [
+      'Khi vừa đi bộ, leo cầu thang, hoặc hoạt động thể lực, hệ thần kinh giao cảm tăng cường → tim đập nhanh hơn, mạch máu co lại → HA tăng giả tạo 10–20 mmHg.',
+      'Nói chuyện trong khi đo cũng làm tăng HA 5–10 mmHg — không chỉ hoạt động thể chất mà cả kích thích tâm lý cũng ảnh hưởng.',
+      '"White coat hypertension" (tăng HA áo choàng trắng): HA tăng khi gặp bác sĩ do lo lắng — chiếm 15–30% ca tăng HA được ghi nhận tại phòng khám.',
+      'Giải pháp cho white coat hypertension: đo HA tại nhà (HBPM — Home Blood Pressure Monitoring) cho kết quả phản ánh thực tế hơn.',
+      'Không nói chuyện điện thoại, không xem tin tức căng thẳng trong 5 phút trước đo. Ngồi im, thở đều, thư giãn cơ bắp.',
+      'Nếu không có đủ 5 phút, tối thiểu cần 2–3 phút — đủ để nhịp tim bắt đầu ổn định về baseline.',
+    ],
+    points: [
+      { icon: '⏱️', label: '5 phút tối thiểu', note: 'Không đo ngay sau hoạt động' },
+      { icon: '🤫', label: 'Không nói chuyện', note: 'Tăng thêm 5–10 mmHg nếu nói' },
+      { icon: '🏠', label: 'Đo tại nhà tốt hơn', note: 'Tránh white coat hypertension' },
+      { icon: '😌', label: 'Thư giãn tâm lý', note: 'Lo lắng → HA giả tạo tăng cao' },
+    ],
+  },
+  {
+    num: '2', icon: '☕', title: 'Tránh cà phê & thuốc lá', desc: 'Không dùng cà phê, thuốc lá, rượu 30 phút trước khi đo.',
+    img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80',
+    keyFact: '💡 Caffeine làm tăng HA tạm thời 5–10 mmHg trong 30–60 phút. Nicotine từ thuốc lá làm tăng HA 5–10 mmHg và kéo dài 15–30 phút sau mỗi điếu.',
+    detail: 'Các chất kích thích tác động trực tiếp lên hệ tim mạch và thần kinh tự chủ — đo HA sau dùng cà phê hoặc thuốc lá cho kết quả không phản ánh thực trạng.',
+    details: [
+      'Caffeine ức chế adenosine (chất giãn mạch) và kích thích giải phóng adrenaline → co mạch, tăng nhịp tim, tăng HA tạm thời 5–10 mmHg trong 30–60 phút.',
+      'Nicotine kích thích hệ thần kinh giao cảm và giải phóng catecholamine → co mạch mạnh, tăng HA 5–10 mmHg và nhịp tim 10–20 bpm sau mỗi điếu thuốc.',
+      'Rượu: liều thấp có thể hạ HA tạm thời, nhưng uống nhiều (>2 ly/ngày) làm tăng HA mạn tính 3–4 mmHg và tăng nguy cơ loạn nhịp.',
+      'Không chỉ cà phê — tất cả nguồn caffeine: trà đậm, nước tăng lực, socola đậm đều cần tránh 30 phút trước đo.',
+      'Nếu bạn uống cà phê hàng ngày và muốn đo HA chính xác: đo vào buổi sáng sớm TRƯỚC khi uống cà phê, sau khi thức 15 phút và nghỉ ngơi.',
+      'Người đang cai thuốc lá: HA thường giảm trong vài tuần đầu sau khi ngừng hoàn toàn — đây là một trong những thay đổi lối sống hiệu quả nhất.',
+    ],
+    points: [
+      { icon: '☕', label: 'Cà phê: chờ 30–60 phút', note: 'Caffeine tăng HA 5–10 mmHg tạm thời' },
+      { icon: '🚬', label: 'Thuốc lá: chờ 30 phút', note: 'Nicotine co mạch, tăng nhịp tim' },
+      { icon: '🍺', label: 'Rượu bia: chờ ít nhất 1h', note: 'Ảnh hưởng HA phức tạp cả ngắn và dài' },
+      { icon: '🌅', label: 'Đo sáng sớm', note: 'Trước ăn, trước cà phê — chuẩn nhất' },
+    ],
+  },
+  {
+    num: '3', icon: '🪑', title: 'Tư thế chuẩn', desc: 'Ngồi ngay lưng, hai chân chạm đất, tay đặt bằng tim trên bàn.',
+    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    keyFact: '💡 Tư thế tay thấp hơn tim làm HA cao hơn thực tế 5–10 mmHg. Bắt chéo chân khi đo làm HA tâm thu tăng thêm 2–8 mmHg.',
+    detail: 'Tư thế đo quyết định đến 10–15 mmHg trong kết quả — sai tư thế là nguồn sai số phổ biến nhất khi đo HA tại nhà.',
+    details: [
+      'Nguyên tắc vật lý: tay ở vị trí thấp hơn tim → cột máu từ tim xuống tay tạo áp lực thủy tĩnh thêm → máy đo ghi nhận HA cao hơn thực tế 5–10 mmHg.',
+      'Ngược lại: tay giơ cao hơn tim → áp lực giảm → HA đọc thấp hơn thực. Tay phải ngang tim — đặt trên bàn, không cầm trên không hay để thõng xuống.',
+      'Bắt chéo chân: làm tăng áp lực trong ổ bụng và tĩnh mạch chi dưới → tăng lượng máu hồi về tim → tăng cardiac output → tăng HA 2–8 mmHg.',
+      'Lưng không tựa vào ghế: cơ lưng phải hoạt động để giữ thẳng → tăng trương lực cơ → kích thích hệ giao cảm → HA tăng 5–6 mmHg.',
+      'Băng quấn ở tay nào? Khuyến cáo đo ở tay không thuận (thường là tay trái) để thuận tiện. Lần đầu nên đo cả 2 tay — nếu chênh >10 mmHg cần đánh giá thêm.',
+      'Tư thế nằm vs ngồi: kết quả có thể khác nhau 5–10 mmHg — luôn ghi chú tư thế khi theo dõi dài hạn để so sánh nhất quán.',
+    ],
+    points: [
+      { icon: '💪', label: 'Tay ngang tim', note: 'Thấp hơn → +5–10 mmHg sai số' },
+      { icon: '🦵', label: 'Không bắt chéo chân', note: 'Tăng áp lực ổ bụng +2–8 mmHg' },
+      { icon: '🪑', label: 'Lưng tựa ghế', note: 'Cơ lưng gắng sức → HA tăng giả' },
+      { icon: '🔄', label: 'Đo cả 2 tay lần đầu', note: 'Chênh >10 mmHg cần đánh giá' },
+    ],
+  },
+  {
+    num: '4', icon: '💪', title: 'Băng quấn đúng cỡ', desc: 'Băng quấn ôm sát, cách nếp khuỷu tay 2–3cm. Không quấn lên áo.',
+    img: 'https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80',
+    keyFact: '💡 Băng quấn quá nhỏ (vòng cánh tay lớn hơn cỡ) làm HA đọc cao hơn thực tế 5–8 mmHg. Quấn lên áo quần dày làm tăng thêm 10–50 mmHg.',
+    detail: 'Cỡ băng quấn và cách quấn ảnh hưởng đến kết quả nhiều hơn hầu hết mọi người nghĩ — đây là nguồn sai số phổ biến nhất trong đo HA tại nhà.',
+    details: [
+      'Cỡ băng quấn chuẩn cho người lớn: vòng cánh tay 22–32cm (cỡ "standard"). Cánh tay to hơn cần cỡ "large" (32–42cm). Dùng sai cỡ → sai số đến 5–8 mmHg.',
+      'Kiểm tra cỡ: đặt 2 ngón tay vào trong băng quấn sau khi quấn — nếu quá chật hoặc quá lỏng đều không chuẩn. Băng phải ôm sát nhưng không thắt.',
+      'Quấn lên áo dày: vải tạo thêm lực cản → áp lực cần cao hơn để bóp mạch → máy đọc HA cao hơn thực tế, sai số có thể đến 10–50 mmHg tùy độ dày áo.',
+      'Vị trí chuẩn: mép dưới băng quấn cách nếp khuỷu tay (cubital fossa) 2–3cm. Ống cảm biến (artery marker) nằm ngay trên động mạch cánh tay.',
+      'Ống nghe hay đồng hồ: không nên đặt ống nghe dưới băng quấn — đặt trên nếp khuỷu tay sau khi quấn xong.',
+      'Máy đo cổ tay: tiện lợi nhưng kém chính xác hơn máy đo bắp tay, đặc biệt ở người cao tuổi có mạch xơ cứng. Cũng cần đặt ngang tim khi dùng.',
+    ],
+    points: [
+      { icon: '📏', label: 'Đo vòng cánh tay trước', note: '22–32cm = cỡ standard, >32cm = large' },
+      { icon: '🧥', label: 'Không quấn lên áo dày', note: 'Sai số đến 10–50 mmHg' },
+      { icon: '📍', label: 'Cách khuỷu tay 2–3cm', note: 'Marker mạch ngay trên động mạch' },
+      { icon: '⌚', label: 'Cổ tay kém chính xác hơn', note: 'Bắp tay = chuẩn hơn cho theo dõi' },
+    ],
+  },
+  {
+    num: '5', icon: '🔁', title: 'Đo 2 lần liên tiếp', desc: 'Nghỉ 1–2 phút giữa 2 lần đo. Ghi lại trị số trung bình.',
+    img: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80',
+    keyFact: '💡 Lần đo đầu tiên thường cao hơn 5–10 mmHg so với lần thứ hai do phản ứng cảnh báo (alerting response). Luôn lấy trung bình ít nhất 2 lần.',
+    detail: 'Đo một lần duy nhất không đủ đáng tin cậy để đưa ra quyết định lâm sàng — biến thiên tự nhiên của HA đòi hỏi ít nhất 2–3 lần đo để có giá trị đại diện.',
+    details: [
+      '"Alerting response": lần đo đầu tiên kích hoạt phản ứng cảnh giác nhẹ (orientating reflex) → hệ giao cảm tăng nhẹ → HA cao hơn 5–10 mmHg so với lần thứ hai.',
+      'Cần nghỉ 1–2 phút giữa các lần đo để: (1) mạch máu phục hồi sau khi bị bóp; (2) hệ thần kinh trở về trạng thái cơ sở.',
+      'Theo khuyến cáo AHA: đo ít nhất 2 lần mỗi buổi (sáng + tối), ghi lại cả hai và tính trung bình, trong ít nhất 7 ngày liên tiếp trước khi kết luận.',
+      'HA biến thiên tự nhiên trong ngày: cao nhất vào sáng sớm (6–10h sáng — morning surge), thấp nhất lúc ngủ. Người bị tăng HA không có "nocturnal dipping" (HA không giảm ban đêm) có nguy cơ cao hơn.',
+      'Sổ nhật ký HA: ghi ngày, giờ, lần đo 1, lần đo 2, trung bình, nhịp tim, ghi chú (uống thuốc lúc nào, trạng thái tâm lý) — bác sĩ sẽ dùng dữ liệu này để điều chỉnh điều trị.',
+      'Một lần đo cao tại phòng khám không đủ để chẩn đoán tăng HA — cần đo nhiều lần ở nhiều thời điểm khác nhau, hoặc đeo Holter HA 24h (ABPM) để xác nhận.',
+    ],
+    points: [
+      { icon: '⏳', label: 'Nghỉ 1–2 phút giữa lần đo', note: 'Mạch cần phục hồi sau bóp' },
+      { icon: '📊', label: 'Lấy trung bình 2 lần', note: 'Lần 1 thường cao hơn do alerting' },
+      { icon: '📓', label: 'Nhật ký 7 ngày', note: 'AHA khuyến cáo trước khi kết luận' },
+      { icon: '🏥', label: '1 lần cao chưa = tăng HA', note: 'Cần nhiều lần xác nhận chẩn đoán' },
+    ],
+  },
 ];
 
 const LIFESTYLE = [
@@ -305,6 +400,7 @@ function BPJournal() {
 export default function HealthBPPage() {
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [bpModal, setBpModal] = useState(null);
+  const [stepModal, setStepModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -410,12 +506,15 @@ export default function HealthBPPage() {
         <p className="text-muted text-lg mb-6">Sai kỹ thuật có thể khiến kết quả lệch 10–20 mmHg.</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {STEPS.map((s, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex gap-4">
+            <div key={i}
+              onClick={() => setStepModal(i)}
+              className="rounded-2xl border border-border bg-surface p-4 flex gap-4 cursor-pointer hover:border-red-500/40 transition-colors">
               <div className="w-9 h-9 rounded-xl font-bold text-xl flex items-center justify-center shrink-0" style={{ background: `rgba(${RGB},0.12)`, color: COLOR }}>{s.num}</div>
-              <div>
+              <div className="flex-1">
                 <div className="font-bold text-lg text-text mb-1">{s.title}</div>
                 <div className="text-base text-muted">{s.desc}</div>
               </div>
+              <span className="text-muted text-base self-center shrink-0">→</span>
             </div>
           ))}
         </div>
@@ -462,6 +561,18 @@ export default function HealthBPPage() {
           onNext={() => setBpModal(i => Math.min(BP_CATS.length - 1, i + 1))}
           hasPrev={bpModal > 0}
           hasNext={bpModal < BP_CATS.length - 1}
+        />
+      )}
+      {stepModal !== null && (
+        <BPModal
+          item={{ ...STEPS[stepModal], label: STEPS[stepModal].title, color: COLOR, rgb: RGB }}
+          idx={stepModal}
+          total={STEPS.length}
+          onClose={() => setStepModal(null)}
+          onPrev={() => setStepModal(i => Math.max(0, i - 1))}
+          onNext={() => setStepModal(i => Math.min(STEPS.length - 1, i + 1))}
+          hasPrev={stepModal > 0}
+          hasNext={stepModal < STEPS.length - 1}
         />
       )}
     </div>

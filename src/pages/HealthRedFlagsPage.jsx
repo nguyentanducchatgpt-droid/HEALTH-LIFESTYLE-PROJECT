@@ -290,6 +290,89 @@ const SOON_SIGNS = [
   },
 ];
 
+const PREP_ITEMS = [
+  {
+    icon: '📱', sign: 'Lưu số 115 vào điện thoại ngay bây giờ', urgency: 'Làm ngay hôm nay',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1512428813834-c702c7702b78?w=800&q=80',
+    keyFact: '✅ Trong tình huống cấp cứu, não người hoảng loạn không nhớ được số điện thoại — kể cả những số đã thuộc lòng. Lưu sẵn "115 Cấp Cứu" với tên hiển thị rõ ràng giúp bất kỳ ai cầm điện thoại cũng có thể gọi ngay lập tức.',
+    details: [
+      'Tại sao cần lưu sẵn thay vì nhớ: nghiên cứu về stress cấp tính cho thấy vỏ não trán trước (prefrontal cortex) — vùng xử lý ký ức và ra quyết định — bị ức chế mạnh khi cơ thể trong trạng thái "fight or flight". Hành động đơn giản nhất (gọi số đã lưu) vẫn thực hiện được ngay cả khi hoảng loạn.',
+      'Lưu với tên rõ ràng: "115 Cấp Cứu" hoặc "SOS - Cấp Cứu 115". Nếu điện thoại có tính năng ICE (In Case of Emergency), điền thêm thông tin liên lạc khẩn cấp của người thân.',
+      'Bật tính năng SOS khẩn cấp: iOS — nhấn nút nguồn 5 lần hoặc giữ nút nguồn + âm lượng để gọi SOS tự động. Android — phụ thuộc nhà sản xuất, thường trong Cài đặt → An toàn và khẩn cấp → SOS khẩn cấp.',
+      'Medical ID (iOS) / Thông tin khẩn cấp (Android): điền nhóm máu, dị ứng thuốc, bệnh mạn tính, người liên hệ. Thông tin này hiển thị ngay trên màn hình khóa — nhân viên cấp cứu có thể đọc mà không cần mở khóa điện thoại.',
+      'Dạy cả gia đình: trẻ em từ 5–6 tuổi đã có thể học gọi số khẩn cấp nếu được hướng dẫn. Luyện tập tình huống giả định với trẻ (role-play): "Nếu bố/mẹ ngã và không dậy được, con sẽ làm gì?"',
+      'Ngoài 115: lưu thêm số bệnh viện gần nhà (khoa cấp cứu), số xe taxi uy tín địa phương (nếu cần đưa đi viện nhanh khi 115 bận), số của ít nhất 2 người thân có thể đến ngay trong 15 phút.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Não hoảng loạn không nhớ số điện thoại', note: 'Lưu sẵn — hành động cứu sống đơn giản nhất' },
+      { icon: '🔒', label: 'Medical ID hiển thị ở màn hình khóa', note: 'Nhân viên cấp cứu đọc được ngay — không cần mở khóa' },
+      { icon: '👶', label: 'Dạy trẻ từ 5–6 tuổi', note: 'Luyện tập tình huống giả định với trẻ em' },
+      { icon: '📋', label: 'Lưu thêm số bệnh viện + người thân', note: 'Tối thiểu 2 người có thể đến trong 15 phút' },
+    ],
+  },
+  {
+    icon: '🏥', sign: 'Biết tên và địa chỉ bệnh viện gần nhà nhất có khoa cấp cứu', urgency: 'Tìm hiểu tuần này',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&q=80',
+    keyFact: '🏥 "Thời gian cửa đến kim" (door-to-needle) trong đột quỵ và "cửa đến bóng" (door-to-balloon) trong nhồi máu cơ tim là tiêu chuẩn chất lượng y tế — mỗi phút tính từ khi vào viện. Biết trước nơi nào gần và có năng lực xử lý cấp cứu = rút ngắn thời gian quyết định trong lúc hoảng loạn.',
+    details: [
+      'Phân biệt cơ sở y tế: Trạm y tế phường/xã — sơ cứu cơ bản, không có phẫu thuật. Bệnh viện quận/huyện — cấp cứu cơ bản, một số phẫu thuật. Bệnh viện tỉnh/thành phố — ICU, phẫu thuật phức tạp, đơn vị đột quỵ. Bệnh viện chuyên khoa (Chợ Rẫy, Bạch Mai, Việt Đức) — ca nặng nhất.',
+      'Năng lực cần biết: (1) Có khoa cấp cứu 24/7 không? (2) Có đơn vị đột quỵ (stroke unit) không? (3) Có can thiệp mạch vành (PCI) không? — quan trọng cho nhồi máu cơ tim. (4) Có phòng mổ hoạt động 24/7 không?',
+      'Lập danh sách 2–3 bệnh viện theo khoảng cách: (1) Gần nhất (< 10 phút) — cho cấp cứu bất kỳ; (2) Bệnh viện có đơn vị đột quỵ/PCI gần nhất; (3) Bệnh viện chuyên khoa nếu cần chuyển viện. Lưu địa chỉ vào Google Maps để dẫn đường ngay.',
+      'Giờ kẹt xe và lộ trình thay thế: biết trước đường đi vào giờ cao điểm. Một số bệnh viện có cổng vào khoa cấp cứu riêng — không phải cổng chính. Tìm hiểu và lưu tọa độ GPS cổng cấp cứu (khác với cổng chính).',
+      'Thẻ bảo hiểm y tế và phạm vi thanh toán: BHYT thanh toán ở tuyến đúng (xã → huyện → tỉnh → trung ương). Cấp cứu thực sự (nguy hiểm tính mạng) được thanh toán ở bất kỳ tuyến nào kể cả trái tuyến — nhưng cần có giấy tờ hợp lệ.',
+      'Lập sơ đồ cấp cứu gia đình: dán trên tủ lạnh hoặc cửa ra vào — danh sách bệnh viện, số điện thoại, địa chỉ, người liên hệ khẩn cấp. Đặc biệt quan trọng nếu trong nhà có người cao tuổi, trẻ nhỏ, hoặc người bệnh mạn tính.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Mỗi phút tính từ khi vào viện', note: 'Door-to-needle (đột quỵ) và door-to-balloon (tim mạch) là tiêu chuẩn vàng' },
+      { icon: '🗺️', label: 'Lưu tọa độ GPS cổng cấp cứu', note: 'Cổng cấp cứu thường khác cổng chính — tìm trước khi cần' },
+      { icon: '💳', label: 'Cấp cứu thật được BHYT thanh toán trái tuyến', note: 'Nhưng cần có giấy tờ và xác nhận cấp cứu từ bệnh viện' },
+      { icon: '📌', label: 'Dán sơ đồ cấp cứu ở nhà', note: 'Tủ lạnh hoặc cửa ra vào — ai cũng thấy ngay' },
+    ],
+  },
+  {
+    icon: '🎒', sign: 'Chuẩn bị túi cấp cứu cơ bản: aspirin, thuốc thường dùng, CCCD, thẻ BHYT', urgency: 'Chuẩn bị trong tuần',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=800&q=80',
+    keyFact: '🎒 Túi cấp cứu không phải "kit sinh tồn" phức tạp — chỉ cần 5 thứ thiết yếu trong 1 túi nhỏ ở vị trí cố định: (1) Aspirin 300mg, (2) Danh sách thuốc đang dùng + dị ứng, (3) CCCD, (4) Thẻ BHYT, (5) Số liên lạc khẩn cấp. Chuẩn bị sẵn = tiết kiệm 5–10 phút trong tình huống mà từng phút có giá trị.',
+    details: [
+      'Aspirin 300mg: nhai ngay khi nghi nhồi máu cơ tim (nếu không dị ứng). Liều tiêu chuẩn: 300mg nhai (không nuốt nguyên) → hấp thu nhanh hơn 50%. Không dùng nếu có dị ứng aspirin, đang chảy máu tiêu hóa, hoặc không chắc loại đột quỵ. Hạn sử dụng: kiểm tra 6 tháng/lần.',
+      'Danh sách thuốc đang dùng (medication list): ghi tên thuốc, liều, lần/ngày, tên bác sĩ kê. Đặc biệt quan trọng: thuốc chống đông (warfarin, xarelto, pradaxa), insulin, thuốc tim mạch, thuốc động kinh. Nhân viên cấp cứu cần biết để tránh tương tác thuốc.',
+      'Danh sách dị ứng: ghi rõ dị ứng thuốc (penicillin, aspirin, NSAID...), dị ứng thực phẩm nặng (đậu phộng, hải sản), dị ứng iốt cản quang (quan trọng nếu cần CT/MRI có thuốc). Ghi cả phản ứng cụ thể (nổi mề đay vs. phản vệ).',
+      'Tài liệu tùy thân: CCCD/CMND (cần để nhập viện và xác nhận danh tính), thẻ BHYT (hoặc ứng dụng VssID/VNeID có thể thay thẻ vật lý), thẻ tín dụng/ít tiền mặt (đặt cọc viện phí). Chụp ảnh tất cả và lưu trên điện thoại như backup.',
+      'Thuốc cấp cứu cá nhân: người hen — ống xịt salbutamol (Ventolin); người tiểu đường — viên glucose (dextrose) cho hạ đường huyết; người dị ứng nặng — bút tiêm epinephrine (EpiPen) nếu có chỉ định; người tim mạch — Nitroglycerin xịt/ngậm nếu đã được kê.',
+      'Vị trí và bảo quản: túi cấp cứu ở vị trí CỐ ĐỊNH mà cả nhà đều biết. Kiểm tra 6 tháng/lần: hạn thuốc, tình trạng giấy tờ, cập nhật danh sách thuốc. Không để trong ô tô để tránh nhiệt độ cao làm hỏng thuốc.',
+    ],
+    points: [
+      { icon: '💊', label: 'Aspirin 300mg — nhai khi nghi nhồi máu', note: 'Kiểm tra hạn sử dụng 6 tháng/lần' },
+      { icon: '📝', label: 'Danh sách thuốc + dị ứng = quan trọng nhất', note: 'Giúp nhân viên cấp cứu tránh tương tác thuốc nguy hiểm' },
+      { icon: '🆔', label: 'CCCD + BHYT + tiền mặt nhỏ', note: 'Chụp ảnh lưu điện thoại như backup' },
+      { icon: '📍', label: 'Vị trí cố định — cả nhà đều biết', note: 'Kiểm tra và cập nhật 6 tháng/lần' },
+    ],
+  },
+  {
+    icon: '🫀', sign: 'Học cách sơ cứu cơ bản: CPR, hồi sức ngừng thở', urgency: 'Học trong tháng này',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80',
+    keyFact: '💪 CPR (Cardiopulmonary Resuscitation — hồi sinh tim phổi) tăng tỷ lệ sống sót sau ngừng tim đột ngột từ 5% lên 40–50% nếu được thực hiện đúng trong 4 phút đầu. Mỗi phút không có CPR = giảm 10% khả năng sống sót. Bạn không cần là bác sĩ — CPR cơ bản có thể học trong 30 phút.',
+    details: [
+      'Nhận biết ngừng tim: người không phản ứng (lay/gọi không tỉnh), không thở bình thường (không thở hoặc thở ngáp — agonal breathing). Không cần kiểm tra mạch — người thường kiểm tra mạch mất 5–10 giây và thường sai. Nếu không chắc chắn người đang thở bình thường → bắt đầu CPR.',
+      'Chuỗi sinh tồn (Chain of Survival): (1) Nhận biết và gọi 115; (2) CPR sớm chất lượng cao; (3) AED (máy sốc tim tự động) sớm; (4) Cấp cứu nâng cao; (5) Chăm sóc sau ngừng tim. Mỗi mắt xích đều quan trọng — CPR và AED là 2 mắt có thể làm trước khi 115 đến.',
+      'CPR thực hành: (1) Đặt nạn nhân nằm ngửa trên mặt phẳng cứng; (2) Quỳ bên cạnh ngang ngực; (3) Đặt 2 tay chồng nhau ở giữa ngực dưới (xương ức); (4) Ép ngực sâu 5–6cm, tốc độ 100–120 lần/phút (theo nhịp bài "Stayin\' Alive" của Bee Gees); (5) Để ngực nở hoàn toàn giữa các lần ép; (6) Không dừng trừ khi có người thay hoặc AED về.',
+      'Hô hấp nhân tạo (rescue breathing): theo AHA 2020, CPR chỉ ép ngực (Hands-Only CPR) đủ hiệu quả cho người lớn ngừng tim đột ngột do tim mạch trong 5–10 phút đầu. Hô hấp nhân tạo cần thiết hơn cho: trẻ em, ngạt nước, ngộ độc, ngừng thở do nguyên nhân hô hấp.',
+      'AED (Automated External Defibrillator — máy sốc tim tự động): thiết bị phân tích nhịp tim tự động và hướng dẫn bằng giọng nói. Chỉ sốc nếu phát hiện rung thất (VF/VT) — không sốc nếu nhịp tim bình thường hay vô tâm thu. Tìm AED: sân bay, trung tâm thương mại, phòng gym, một số tòa nhà văn phòng. Học cách dùng trước khi cần.',
+      'Học CPR ở đâu: AHA/Hội Tim mạch Việt Nam tổ chức lớp BLS (Basic Life Support) 4 giờ, chứng chỉ 2 năm. Nhiều bệnh viện tổ chức lớp miễn phí cho cộng đồng. Xem video hướng dẫn AHA trên YouTube như phương án tạm thời — nhưng không thay thế thực hành trực tiếp trên manikin.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Mỗi phút không CPR = -10% sống sót', note: 'Bắt đầu ngay — CPR sai vẫn tốt hơn không làm' },
+      { icon: '🎵', label: '100–120 lần/phút = nhịp "Stayin\' Alive"', note: 'Bài hát của Bee Gees có nhịp đúng chuẩn CPR' },
+      { icon: '⚡', label: 'Tìm AED ở nơi công cộng', note: 'Sân bay, trung tâm thương mại, phòng gym — học dùng trước' },
+      { icon: '🎓', label: 'Học BLS 4 giờ = chứng chỉ 2 năm', note: 'AHA / Hội Tim mạch Việt Nam — nhiều lớp miễn phí' },
+    ],
+  },
+];
+
 function SoonModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = e => {
@@ -505,6 +588,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthRedFlagsPage() {
   const [emergencyModal, setEmergencyModal] = useState(null);
   const [soonModal, setSoonModal] = useState(null);
+  const [prepModal, setPrepModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -629,14 +713,24 @@ export default function HealthRedFlagsPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold text-text mb-3">Chuẩn Bị Sẵn Sàng</h3>
-          <ul className="space-y-2 text-lg text-muted">
-            <li>• Lưu số 115 vào điện thoại ngay bây giờ</li>
-            <li>• Biết tên và địa chỉ bệnh viện gần nhà nhất có khoa cấp cứu</li>
-            <li>• Chuẩn bị túi cấp cứu cơ bản: aspirin (nếu không dị ứng), thuốc thường dùng, CCCD, thẻ bảo hiểm y tế</li>
-            <li>• Học cách sơ cứu cơ bản: CPR, hồi sức ngừng thở</li>
-          </ul>
+        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Chuẩn Bị Sẵn Sàng</h2>
+        <p className="text-muted text-sm mb-5">4 việc cần làm ngay — click để xem hướng dẫn chi tiết</p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {PREP_ITEMS.map((p, i) => (
+            <div key={i}
+              onClick={() => setPrepModal(i)}
+              className="rounded-2xl border bg-surface p-4 flex gap-3 cursor-pointer transition-all"
+              style={{ borderColor: `rgba(${p.rgb},0.22)` }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${p.rgb},0.55)`; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = `rgba(${p.rgb},0.22)`; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              <span className="text-2xl shrink-0">{p.icon}</span>
+              <div className="flex-1 min-w-0">
+                <div className="font-bold text-sm mb-1" style={{ color: p.color }}>{p.sign}</div>
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: `rgba(${p.rgb},0.12)`, color: p.color }}>{p.urgency}</span>
+              </div>
+              <span className="text-sm shrink-0 self-center" style={{ color: p.color }}>→</span>
+            </div>
+          ))}
         </div>
       </RevealBlock>
 
@@ -644,6 +738,18 @@ export default function HealthRedFlagsPage() {
       <p className="text-base text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục. Không thay thế khám và điều trị y tế.</p>
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
 
+      {prepModal !== null && (
+        <SoonModal
+          item={PREP_ITEMS[prepModal]}
+          idx={prepModal}
+          total={PREP_ITEMS.length}
+          onClose={() => setPrepModal(null)}
+          onPrev={() => setPrepModal(i => Math.max(0, i - 1))}
+          onNext={() => setPrepModal(i => Math.min(PREP_ITEMS.length - 1, i + 1))}
+          hasPrev={prepModal > 0}
+          hasNext={prepModal < PREP_ITEMS.length - 1}
+        />
+      )}
       {soonModal !== null && (
         <SoonModal
           item={SOON_SIGNS[soonModal]}

@@ -1747,6 +1747,196 @@ function TabE6() {
   );
 }
 
+const DANGER_PHRASES = [
+  {
+    num: '01', icon: '🚫', color: '#ef4444', rgb: '239,68,68',
+    metric: '"Bỏ thuốc tây đi"',
+    freq: 'Cực kỳ nguy hiểm',
+    tip: 'Ngừng thuốc đột ngột có thể gây nguy hiểm tính mạng với bệnh mạn tính.',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
+    keyFact: '💡 Bỏ thuốc huyết áp, tim mạch hoặc đái tháo đường đột ngột có thể gây đột quỵ, nhồi máu cơ tim, hoặc hôn mê trong vài giờ.',
+    detail: 'Đây là lời khuyên nguy hiểm nhất trong thế giới sức khỏe mạng — nghe có vẻ tự nhiên nhưng có thể gây hậu quả không thể đảo ngược.',
+    details: [
+      'Thuốc điều trị bệnh mạn tính (huyết áp, đái tháo đường, tim mạch, động kinh) không thể ngừng đột ngột — cơ thể đã thích nghi và cần giảm liều dần theo chỉ dẫn bác sĩ.',
+      'Ngừng thuốc huyết áp đột ngột: nguy cơ rebound hypertension — huyết áp vọt lên cao hơn mức trước khi điều trị, có thể gây đột quỵ trong 24–48 giờ.',
+      'Ngừng thuốc chống động kinh: seizure rebound có thể xảy ra dù bệnh nhân đã kiểm soát tốt nhiều năm — co giật liên tục là cấp cứu nội khoa.',
+      'Ngừng corticosteroid đột ngột: suy tuyến thượng thận cấp (Addisonian crisis) — sốc, hạ huyết áp, đe dọa tính mạng.',
+      '"Thuốc tây có tác dụng phụ" là đúng — nhưng bác sĩ đã cân nhắc lợi ích vượt nguy cơ. Nếu muốn thay đổi, làm cùng bác sĩ, không tự ngừng.',
+      'Nếu thực sự muốn giảm dùng thuốc: thay đổi lối sống tích cực (ăn uống, vận động) có thể hỗ trợ — nhưng thực hiện CÙNG điều trị, không THAY THẾ, và dưới giám sát y tế.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Nguy hiểm tức thì', note: 'Huyết áp, tim, động kinh — tính giờ' },
+      { icon: '📉', label: 'Rebound effect', note: 'Bệnh bùng phát mạnh hơn sau khi ngừng' },
+      { icon: '👨‍⚕️', label: 'Chỉ bác sĩ quyết định', note: 'Không ai khác có quyền khuyên ngừng' },
+      { icon: '🔄', label: 'Giảm dần nếu cần', note: 'Phải có phác đồ cụ thể, không đột ngột' },
+    ],
+  },
+  {
+    num: '02', icon: '🫀', color: '#ef4444', rgb: '239,68,68',
+    metric: '"Giải độc gan 7 ngày"',
+    freq: 'Pseudoscience phổ biến',
+    tip: 'Gan không cần "giải độc" — đây là cơ quan tự làm sạch tốt nhất của cơ thể.',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
+    keyFact: '💡 Không có bằng chứng khoa học nào ủng hộ "liver detox" thương mại. Gan là cơ quan lọc cực kỳ hiệu quả — nếu cần "giải độc" thực sự, bạn cần nhập viện, không uống trà thảo mộc.',
+    detail: 'Khái niệm "detox gan" trong y học có nghĩa hoàn toàn khác với sản phẩm thương mại — đây là một trong những misconception phổ biến nhất về sức khỏe.',
+    details: [
+      'Gan xử lý 1.5 lít máu/phút, loại bỏ độc chất 24/7 — không cần "nghỉ ngơi" hay "kích thích" từ trà thảo mộc hay supplement.',
+      'Trong y học, "giải độc gan" thực sự là điều trị tại ICU: lọc máu (plasmapheresis), ghép gan cấp cứu với bệnh nhân suy gan do ngộ độc nặng.',
+      'Nhiều sản phẩm "detox gan" thương mại chứa thành phần chưa được nghiên cứu đầy đủ — paradoxically, chính chúng có thể gây tổn thương gan (DILI - drug-induced liver injury).',
+      'Nước ép cần tây, trà artichoke, silymarin (milk thistle) có dữ liệu hạn chế — không thể "giải độc" hay đảo ngược tổn thương gan có sẵn.',
+      'Cách bảo vệ gan thực sự: không uống rượu, duy trì cân nặng hợp lý, tiêm phòng viêm gan B, không tự ý dùng thuốc/thảo dược liều cao.',
+      'Nếu lo về sức khỏe gan: xét nghiệm AST, ALT, GGT, bilirubin — cho kết quả thực, không tốn tiền vào sản phẩm không có bằng chứng.',
+    ],
+    points: [
+      { icon: '🔬', label: 'Gan tự lọc 24/7', note: '1.5L máu/phút, không cần "giải độc"' },
+      { icon: '⚠️', label: 'DILI nguy cơ thực', note: 'Thảo dược liều cao → tổn thương gan' },
+      { icon: '🏥', label: 'Detox thật = ICU', note: 'Không phải trà hay supplement' },
+      { icon: '🧪', label: 'Xét nghiệm thực tế', note: 'AST/ALT/GGT cho số liệu chính xác' },
+    ],
+  },
+  {
+    num: '03', icon: '👥', color: '#f59e0b', rgb: '245,158,11',
+    metric: '"Ai cũng dùng được"',
+    freq: 'Claim sai về y học cá nhân hóa',
+    tip: 'Không có thuốc hay thực phẩm chức năng nào phù hợp với tất cả mọi người.',
+    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    keyFact: '💡 Y học hiện đại đang tiến tới precision medicine — cùng một thuốc có thể cứu sống người này nhưng gây hại người khác, tùy gene, bệnh nền, tương tác thuốc.',
+    detail: 'Tuyên bố "ai cũng dùng được" vi phạm nguyên tắc cơ bản của dược học và y học — mỗi người có profile sinh lý, bệnh nền, và đáp ứng thuốc riêng biệt.',
+    details: [
+      'Cùng một loại thuốc: người chuyển hóa nhanh (extensive metabolizer) cần liều cao hơn người chuyển hóa chậm (poor metabolizer) — do đa hình di truyền enzyme CYP450.',
+      'Chống chỉ định phổ biến bị bỏ qua: sắt không dùng với bệnh hemochromatosis; canxi không tốt với người sỏi thận calci oxalat; omega-3 liều cao với người dùng thuốc chống đông.',
+      'Phụ nữ mang thai: hầu hết thảo dược "tự nhiên" chưa có dữ liệu an toàn trong thai kỳ — thận trọng là nguyên tắc mặc định.',
+      'Trẻ em không phải người lớn thu nhỏ: liều, dạng bào chế, và độ an toàn khác hoàn toàn — sản phẩm dành cho người lớn không tự động an toàn cho trẻ.',
+      'Bệnh thận mạn (CKD): nhiều chất bổ sung tích lũy trong cơ thể khi thận suy giảm khả năng lọc — kali, phospho, vitamin tan trong mỡ (A, D, E, K) cần kiểm soát chặt.',
+      'Tương tác thuốc-thảo dược: St. John\'s Wort làm giảm hiệu quả thuốc tránh thai, thuốc chống thải ghép, thuốc kháng HIV — "tự nhiên" không có nghĩa là không tương tác.',
+    ],
+    points: [
+      { icon: '🧬', label: 'Gene quyết định đáp ứng', note: 'Pharmacogenomics — mỗi người khác nhau' },
+      { icon: '🤰', label: 'Thai kỳ = thận trọng', note: 'Mặc định chưa có dữ liệu an toàn' },
+      { icon: '🫘', label: 'Bệnh thận/gan cần lọc', note: 'Chất tích lũy khi thận/gan suy yếu' },
+      { icon: '💊', label: 'Tương tác thuốc-thảo dược', note: 'St. John\'s Wort + thuốc kê đơn = nguy hiểm' },
+    ],
+  },
+  {
+    num: '04', icon: '🩸', color: '#ef4444', rgb: '239,68,68',
+    metric: '"Sạch mạch máu"',
+    freq: 'Pseudoscience tim mạch',
+    tip: 'Không có sản phẩm nào "làm sạch" mạch máu theo nghĩa thương mại quảng cáo.',
+    img: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f3?w=800&q=80',
+    keyFact: '💡 Xơ vữa động mạch là quá trình mạn tính cần điều trị y tế nghiêm túc (statin, thay đổi lối sống). Không có thực phẩm chức năng nào có thể "rửa sạch" mảng bám đã hình thành.',
+    detail: 'Khái niệm "sạch mạch máu" trong quảng cáo không tương ứng với bất kỳ cơ chế sinh lý nào đã được khoa học xác nhận — đây là pseudoscience tim mạch phổ biến.',
+    details: [
+      'Xơ vữa động mạch (atherosclerosis) là quá trình hình thành mảng bám lipid + tế bào viêm + calci trong thành mạch — phát triển qua nhiều thập kỷ, không thể "rửa" bằng thực phẩm chức năng.',
+      'Điều trị xơ vữa thực sự: statin (giảm LDL, ổn định mảng bám), aspirin (chống kết tập tiểu cầu), kiểm soát huyết áp, ngừng hút thuốc — tất cả cần theo dõi y tế.',
+      'Tỏi, omega-3, coenzyme Q10, vitamin E: có dữ liệu về hỗ trợ sức khỏe tim mạch ở mức độ nhất định — nhưng không ai trong số này "làm sạch" mạch máu có mảng bám đã hình thành.',
+      'Đánh giá sức khỏe mạch máu thực tế: xét nghiệm lipid máu (LDL, HDL, triglycerides), siêu âm Doppler mạch cảnh, chụp CT coronary calcium score.',
+      '"Thông mạch máu" trong quảng cáo đông y thường ám chỉ cải thiện tuần hoàn — khác hoàn toàn với điều trị xơ vữa động mạch có bằng chứng.',
+      'Nếu lo về sức khỏe tim mạch: đo huyết áp định kỳ, xét nghiệm mỡ máu, kiểm soát đường huyết, không hút thuốc — đây là biện pháp có bằng chứng thực sự.',
+    ],
+    points: [
+      { icon: '🔬', label: 'Mảng bám không "rửa" được', note: 'Cần can thiệp y tế chuyên sâu' },
+      { icon: '💊', label: 'Statin là điều trị thực', note: 'Bằng chứng mạnh nhất về xơ vữa' },
+      { icon: '🧪', label: 'Đo lipid máu', note: 'LDL/HDL/triglycerides — số thật' },
+      { icon: '🏃', label: 'Lối sống > supplement', note: 'Vận động + ăn uống có bằng chứng cao hơn' },
+    ],
+  },
+];
+
+const SAFE_PHRASES = [
+  {
+    num: '01', icon: '📊', color: '#22c55e', rgb: '34,197,94',
+    metric: '"Hỗ trợ theo dõi"',
+    freq: 'Ngôn ngữ y khoa chuẩn',
+    tip: 'Thừa nhận giới hạn của sản phẩm — chỉ hỗ trợ, không thay thế điều trị.',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    keyFact: '💡 "Hỗ trợ" trong y học có nghĩa là bổ sung thêm vào điều trị chính, không phải thay thế. Cụm từ này thể hiện sự trung thực về vai trò của sản phẩm.',
+    detail: 'Ngôn ngữ "hỗ trợ theo dõi" phản ánh đúng vị trí của nhiều sản phẩm sức khỏe — có vai trò bổ sung nhưng không phải công cụ điều trị.',
+    details: [
+      '"Hỗ trợ theo dõi" thừa nhận rằng sản phẩm không chữa bệnh — đây là sự trung thực cần thiết trong truyền thông sức khỏe.',
+      'Ví dụ hợp lệ: thiết bị đo nhịp tim hỗ trợ theo dõi — cần bác sĩ diễn giải kết quả và đưa ra quyết định điều trị.',
+      'Phân biệt rõ: "hỗ trợ theo dõi đường huyết" (máy đo) khác với "điều trị đái tháo đường" (thuốc + insulin + thay đổi lối sống).',
+      'Ngôn ngữ này giúp người dùng đặt kỳ vọng đúng — không tin rằng chỉ cần theo dõi là đủ, vẫn cần điều trị cốt lõi.',
+      'Công cụ theo dõi tốt (app, wearable, máy đo) có giá trị thực khi dùng cùng với chăm sóc y tế, không thay thế nó.',
+      'Khi thấy cụm từ này, câu hỏi tiếp theo: "Theo dõi gì? Tần suất? Kết quả cần báo bác sĩ khi nào?" — để biết cách dùng đúng.',
+    ],
+    points: [
+      { icon: '✅', label: 'Thừa nhận giới hạn', note: 'Trung thực về vai trò bổ sung' },
+      { icon: '🔗', label: 'Cùng điều trị chính', note: 'Hỗ trợ thêm, không thay thế' },
+      { icon: '📱', label: 'Công cụ theo dõi', note: 'Wearable, app — giá trị khi dùng đúng' },
+      { icon: '❓', label: 'Hỏi thêm cụ thể', note: 'Theo dõi gì? Báo bác sĩ khi nào?' },
+    ],
+  },
+  {
+    num: '02', icon: '🎯', color: '#22c55e', rgb: '34,197,94',
+    metric: '"Cần cá nhân hóa"',
+    freq: 'Ngôn ngữ y học chuẩn',
+    tip: 'Thừa nhận rằng không có giải pháp một size fits all — phản ánh đúng thực tế y khoa.',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    keyFact: '💡 Precision medicine — xu hướng y học hiện đại — xây dựng trên nguyên tắc này: mỗi người cần phác đồ riêng dựa trên gene, lối sống, và bệnh nền.',
+    detail: 'Cá nhân hóa là nguyên tắc cốt lõi của y học hiện đại — cụm từ này phản ánh tư duy khoa học, không phải né tránh cam kết.',
+    details: [
+      'Nhu cầu protein: 0.8–2.2g/kg tùy mục tiêu (giảm cân, tăng cơ, bệnh thận), tuổi tác, mức độ hoạt động — không có con số duy nhất cho tất cả.',
+      'Liều vitamin D: phụ thuộc mức 25-OH vitamin D hiện tại, khả năng tiếp xúc ánh nắng, màu da, BMI — xét nghiệm trước, bổ sung sau.',
+      'Kế hoạch vận động: người có đau khớp gối cần bài tập khác người khỏe mạnh; người cao tuổi cần ưu tiên thăng bằng và chống ngã hơn sức mạnh.',
+      'Thực đơn: người bị hội chứng ruột kích thích (IBS) cần low-FODMAP; người đái tháo đường cần kiểm soát GI; người suy thận cần hạn chế kali, phospho.',
+      'Khi sản phẩm/dịch vụ nói "cần cá nhân hóa", đây là tín hiệu tốt — họ không overpromise và thừa nhận bạn cần được đánh giá riêng.',
+      'Bước tiếp theo khi nghe cụm từ này: "Cá nhân hóa dựa trên thông tin gì? Ai đánh giá? Có cần xét nghiệm không?" — để biết quy trình cụ thể.',
+    ],
+    points: [
+      { icon: '🧬', label: 'Precision medicine', note: 'Xu hướng y học dựa trên gene + lối sống' },
+      { icon: '⚖️', label: 'Không overpromise', note: 'Thừa nhận không có giải pháp chung' },
+      { icon: '📋', label: 'Cần đánh giá cụ thể', note: 'Xét nghiệm, tiền sử, mục tiêu cá nhân' },
+      { icon: '✅', label: 'Dấu hiệu trung thực', note: 'Người nói hiểu giới hạn của thông tin' },
+    ],
+  },
+  {
+    num: '03', icon: '👨‍⚕️', color: '#22c55e', rgb: '34,197,94',
+    metric: '"Nên tham khảo bác sĩ"',
+    freq: 'Disclaimer chuẩn mực y tế',
+    tip: 'Khuyến nghị đúng đắn — nhận ra giới hạn của bản thân và chuyển hướng đến chuyên gia.',
+    img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80',
+    keyFact: '💡 Cụm từ này không phải né tránh trách nhiệm — đây là lời khuyên đúng nhất có thể đưa ra khi không biết đủ thông tin cá nhân của bạn để đưa ra khuyến nghị cụ thể.',
+    detail: 'Lời khuyên "tham khảo bác sĩ" bị nhiều người xem là né tránh, nhưng thực ra đây là biểu hiện của sự trung thực và trách nhiệm trong truyền thông sức khỏe.',
+    details: [
+      'Bác sĩ có thể đặt câu hỏi trực tiếp, xem xét tiền sử bệnh, kiểm tra thể lực, đọc kết quả xét nghiệm — tất cả những điều mà nội dung online không thể làm thay.',
+      'Nội dung y tế online chỉ cung cấp thông tin chung (general information), không phải lời khuyên y tế (medical advice) — hai khái niệm này khác nhau về pháp lý và đạo đức.',
+      'Ở nhiều quốc gia, chỉ bác sĩ được cấp phép mới được cung cấp "medical advice" cá nhân hóa — đây là quy định bảo vệ bệnh nhân.',
+      'Khi ai đó nói "nên tham khảo bác sĩ", hãy coi đây là dấu hiệu họ hiểu giới hạn của mình — không phải né tránh mà là trách nhiệm.',
+      'Cụm từ này đặc biệt quan trọng với: phụ nữ mang thai, trẻ em, người cao tuổi, người có bệnh nền, người đang dùng nhiều thuốc cùng lúc.',
+      'Cách tận dụng tốt: ghi chú nội dung đọc được, đặt câu hỏi cụ thể cho bác sĩ tại lần khám tiếp theo — nội dung online và bác sĩ bổ trợ cho nhau.',
+    ],
+    points: [
+      { icon: '🩺', label: 'Bác sĩ biết bạn cụ thể', note: 'Tiền sử, thuốc, kết quả xét nghiệm' },
+      { icon: '⚖️', label: 'Info ≠ medical advice', note: 'Hai khái niệm khác nhau về pháp lý' },
+      { icon: '✅', label: 'Dấu hiệu trung thực', note: 'Người nói biết giới hạn của mình' },
+      { icon: '📝', label: 'Dùng thông minh', note: 'Ghi câu hỏi → hỏi bác sĩ lần sau' },
+    ],
+  },
+  {
+    num: '04', icon: '💊', color: '#22c55e', rgb: '34,197,94',
+    metric: '"Không thay thuốc điều trị"',
+    freq: 'Disclaimer quan trọng nhất',
+    tip: 'Tuyên bố rõ ràng về vị trí của sản phẩm — bổ sung, không thay thế điều trị.',
+    img: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80',
+    keyFact: '💡 Integrative medicine (y học tích hợp) kết hợp y học thông thường với các liệu pháp bổ sung — nhưng luôn nhấn mạnh: liệu pháp bổ sung không thay thế điều trị cốt lõi.',
+    detail: 'Đây là disclaimer quan trọng và trung thực nhất trong truyền thông sức khỏe — sản phẩm biết rõ vị trí của mình trong hệ sinh thái chăm sóc sức khỏe.',
+    details: [
+      'Sản phẩm có thể bổ sung vào điều trị y tế: giảm tác dụng phụ, cải thiện chất lượng sống, hỗ trợ phục hồi — nhưng không phải liều thuốc thay thế.',
+      'Ví dụ: gừng hỗ trợ giảm buồn nôn trong hóa trị — có bằng chứng khoa học nhất định, nhưng không thay thế phác đồ hóa trị của bác sĩ ung thư.',
+      'Khi sản phẩm nói "không thay thuốc điều trị", đây là sự trung thực về giới hạn — đừng xem đây là điểm yếu mà là dấu hiệu đáng tin.',
+      'Integrative medicine tại các bệnh viện lớn (MD Anderson, Mayo Clinic) sử dụng yoga, thiền, châm cứu — CÙNG với điều trị ung thư, không thay thế nó.',
+      'Nguy hiểm xảy ra khi người bệnh tự quyết định thay điều trị bằng "tự nhiên" — thường do hiểu sai thông tin hoặc bị quảng cáo thao túng.',
+      'Câu hỏi đúng đắn: "Liệu pháp bổ sung này có tương tác với thuốc điều trị của tôi không?" — hỏi bác sĩ và dược sĩ trước khi thêm bất kỳ thứ gì.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Bổ sung, không thay thế', note: 'Integrative medicine — luôn giữ điều trị chính' },
+      { icon: '✅', label: 'Dấu hiệu trung thực', note: 'Sản phẩm biết vị trí của mình' },
+      { icon: '⚠️', label: 'Hỏi về tương tác', note: 'Bổ sung + thuốc có thể xung đột' },
+      { icon: '🏥', label: 'Integrative medicine', note: 'Kết hợp đúng cách tại bệnh viện lớn' },
+    ],
+  },
+];
+
 const INFO_FILTER = [
   {
     num: '01', icon: '🧑‍⚕️', color: '#6366f1', rgb: '99,102,241',
@@ -1867,6 +2057,8 @@ const INFO_FILTER = [
 
 function TabE7() {
   const [filterModal, setFilterModal] = useState(null);
+  const [dangerModal, setDangerModal] = useState(null);
+  const [safeModal, setSafeModal] = useState(null);
   return (
     <div className="space-y-4">
       <p className="text-base text-muted">Với sự bùng nổ của TikTok, YouTube và livestream bán hàng, lọc thông tin sức khỏe là kỹ năng sống quan trọng.</p>
@@ -1889,11 +2081,33 @@ function TabE7() {
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-xl border border-red-500/20 bg-red-500/06 p-4">
           <p className="text-base font-bold text-red-400 mb-2">❌ Cụm từ nguy hiểm</p>
-          <ul className="space-y-1">{['"Bỏ thuốc tây đi"', '"Giải độc gan 7 ngày"', '"Ai cũng dùng được"', '"Sạch mạch máu"'].map(t => <li key={t} className="text-base text-muted">{t}</li>)}</ul>
+          <ul className="space-y-1">
+            {DANGER_PHRASES.map((p, i) => (
+              <li
+                key={p.num}
+                onClick={() => setDangerModal(i)}
+                className="text-base text-muted cursor-pointer hover:text-red-300 transition-colors flex items-center justify-between group"
+              >
+                <span>{p.metric}</span>
+                <span className="text-red-500/40 group-hover:text-red-400 text-xs ml-1 transition-colors">→</span>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="rounded-xl border border-green-500/20 bg-green-500/06 p-4">
           <p className="text-base font-bold text-green-400 mb-2">✓ Ngôn ngữ an toàn</p>
-          <ul className="space-y-1">{['"Hỗ trợ theo dõi"', '"Cần cá nhân hóa"', '"Nên tham khảo bác sĩ"', '"Không thay thuốc điều trị"'].map(t => <li key={t} className="text-base text-muted">{t}</li>)}</ul>
+          <ul className="space-y-1">
+            {SAFE_PHRASES.map((p, i) => (
+              <li
+                key={p.num}
+                onClick={() => setSafeModal(i)}
+                className="text-base text-muted cursor-pointer hover:text-green-300 transition-colors flex items-center justify-between group"
+              >
+                <span>{p.metric}</span>
+                <span className="text-green-500/40 group-hover:text-green-400 text-xs ml-1 transition-colors">→</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       {filterModal !== null && (
@@ -1906,6 +2120,30 @@ function TabE7() {
           onNext={() => setFilterModal(i => Math.min(INFO_FILTER.length - 1, i + 1))}
           hasPrev={filterModal > 0}
           hasNext={filterModal < INFO_FILTER.length - 1}
+        />
+      )}
+      {dangerModal !== null && (
+        <ScheduleModal
+          item={DANGER_PHRASES[dangerModal]}
+          idx={dangerModal}
+          total={DANGER_PHRASES.length}
+          onClose={() => setDangerModal(null)}
+          onPrev={() => setDangerModal(i => Math.max(0, i - 1))}
+          onNext={() => setDangerModal(i => Math.min(DANGER_PHRASES.length - 1, i + 1))}
+          hasPrev={dangerModal > 0}
+          hasNext={dangerModal < DANGER_PHRASES.length - 1}
+        />
+      )}
+      {safeModal !== null && (
+        <ScheduleModal
+          item={SAFE_PHRASES[safeModal]}
+          idx={safeModal}
+          total={SAFE_PHRASES.length}
+          onClose={() => setSafeModal(null)}
+          onPrev={() => setSafeModal(i => Math.max(0, i - 1))}
+          onNext={() => setSafeModal(i => Math.min(SAFE_PHRASES.length - 1, i + 1))}
+          hasPrev={safeModal > 0}
+          hasNext={safeModal < SAFE_PHRASES.length - 1}
         />
       )}
     </div>

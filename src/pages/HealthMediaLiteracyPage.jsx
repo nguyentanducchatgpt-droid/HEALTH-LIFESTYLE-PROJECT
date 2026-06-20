@@ -122,12 +122,132 @@ const FILTER_QUESTIONS = [
 ];
 
 const DANGEROUS_PATTERNS = [
-  { icon: '❌', pattern: '"Bí quyết mà bác sĩ giấu bạn"', explain: 'Không có âm mưu ẩn — bác sĩ học 6–10 năm để chữa bệnh, không có động cơ che giấu.' },
-  { icon: '❌', pattern: '"Chữa khỏi mọi bệnh" hoặc "không tác dụng phụ"', explain: 'Mọi chất có tác dụng sinh học đều có thể có tác dụng phụ tùy liều và người dùng.' },
-  { icon: '❌', pattern: 'Ảnh trước/sau đáng ngờ', explain: 'Góc chụp, ánh sáng, quần áo, tư thế có thể tạo ra sự khác biệt giả. Yêu cầu dữ liệu chứng minh từ nghiên cứu độc lập.' },
-  { icon: '❌', pattern: '"Giải độc cơ thể" hoặc "thải độc"', explain: 'Gan và thận đã là hệ thống thải độc hoàn hảo. Không có bằng chứng khoa học nào ủng hộ "detox" thương mại.' },
-  { icon: '❌', pattern: 'Testimonial thay cho bằng chứng', explain: '"1.000 người đã thử và thành công" không phải dữ liệu khoa học — cần nhóm đối chứng, kiểm soát yếu tố nhiễu.' },
-  { icon: '❌', pattern: 'Sợ hãi + giải pháp tức thì', explain: 'Tạo lo lắng rồi cung cấp "giải pháp" — đây là mô hình marketing. Thông tin tốt giải thích, không dọa nạt.' },
+  {
+    num: '01', icon: '🕵️', pattern: '"Bí quyết mà bác sĩ giấu bạn"',
+    explain: 'Không có âm mưu ẩn — bác sĩ học 6–10 năm để chữa bệnh, không có động cơ che giấu.',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80',
+    keyFact: '🕵️ Lý thuyết âm mưu y tế tồn tại vì chúng đơn giản hóa những vấn đề phức tạp. Thực tế: hàng triệu nhà khoa học và bác sĩ trên toàn cầu làm việc độc lập — không có cơ chế nào giữ được bí mật lâu dài ở quy mô đó.',
+    details: [
+      'Tại sao lý thuyết âm mưu hấp dẫn: não người tìm kiếm mô hình (pattern) và nguyên nhân trong hỗn độn. Khi sự kiện phức tạp xảy ra (ung thư, đại dịch), bộ não ưu tiên giải thích đơn giản có chủ thể hành động hơn là "nhiều yếu tố ngẫu nhiên kết hợp". Âm mưu cũng mang lại cảm giác kiểm soát: "tôi biết điều người khác không biết".',
+      'Kinh tế học của ngành dược không ủng hộ âm mưu "che giấu thuốc chữa": nếu công ty dược có thuốc chữa khỏi ung thư vú, họ có thể bán với giá hàng trăm nghìn USD/liệu trình, đăng ký bằng sáng chế 20 năm, và kiếm hàng tỷ USD. Che giấu nó để bán thuốc duy trì điều trị sẽ kiếm ít tiền hơn nhiều — và rủi ro bị lộ sẽ phá hủy công ty. Động cơ tài chính thực tế là CÔNG BỐ thuốc tốt, không che giấu.',
+      'Wakefield và bài học từ âm mưu giả mạo nổi tiếng nhất: năm 1998, Andrew Wakefield công bố nghiên cứu liên kết vaccine MMR với tự kỷ. Báo chí lan truyền. Tỷ lệ tiêm vaccine giảm mạnh → dịch sởi bùng phát. Năm 2010: điều tra cho thấy Wakefield giả mạo dữ liệu và nhận tiền từ luật sư đang kiện nhà sản xuất vaccine. Ông bị thu hồi bằng hành nghề. Bài báo bị rút. Hàng chục nghiên cứu lớn sau đó không tìm thấy liên kết nào. Đây là ví dụ về cách "âm mưu" được tạo ra — không phải bởi ngành y, mà bởi 1 người có lợi ích tài chính.',
+      '"Thuốc tây điều trị triệu chứng để bán thuốc mãi mãi": quan niệm này hiểu sai về nhiều loại bệnh. Nhiều bệnh mãn tính (đái tháo đường, tăng huyết áp, suy giáp) cần điều trị suốt đời không phải vì "âm mưu" mà vì cơ chế bệnh lý không reversible. Đồng thời, y học đã "chữa khỏi" nhiều bệnh không cần điều trị mãn tính: smallpox (xóa sổ hoàn toàn), polio (gần như xóa sổ), tuberculosis (có thể chữa khỏi trong 6 tháng), nhiều ung thư giai đoạn sớm.',
+      'Cách âm mưu lan truyền trong kỷ nguyên số: thuật toán mạng xã hội tối ưu cho tương tác, không phải sự thật. Nội dung kích động cảm xúc (tức giận, sợ hãi, kinh ngạc) nhận engagement cao hơn. Một video "âm mưu" với 10 triệu view không có nghĩa là đúng — có nghĩa là kích thích cảm xúc mạnh. Đây là lý do tại sao tin sai trên Twitter (nay là X) lan truyền nhanh gấp 6 lần tin đúng (nghiên cứu MIT 2018).',
+      'Câu hỏi tốt để kiểm tra lý thuyết âm mưu: Có bao nhiêu người cần giữ bí mật? (Công ty dược lớn có 100.000+ nhân viên.) Ai đã bị hại bởi "sự che giấu" này và tại sao họ không lên tiếng? Bằng chứng độc lập từ các quốc gia và tổ chức khác nhau có nhất quán không? Nếu âm mưu này đúng, tại sao chuyên gia trong lĩnh vực đó (người có thể kiếm được danh tiếng và tiền lớn bằng cách vạch trần) không ai công bố bằng chứng cụ thể?',
+    ],
+    points: [
+      { icon: '💰', label: 'Kinh tế học ngược: công bố thuốc tốt = nhiều tiền hơn', note: 'Che giấu "thuốc chữa ung thư" tốt kiếm ít hơn bán nó với giá cao' },
+      { icon: '🔬', label: 'Wakefield: âm mưu do 1 người có COI tạo ra', note: 'Hàng chục nghiên cứu độc lập không tìm thấy liên kết vaccine-tự kỷ' },
+      { icon: '📱', label: 'Tin sai lan nhanh gấp 6x vì kích thích cảm xúc', note: 'Algorithm tối ưu engagement, không phải sự thật' },
+      { icon: '💊', label: 'Y học đã chữa khỏi smallpox, polio, TBC — không che giấu', note: 'Bệnh mãn tính cần điều trị dài hạn vì cơ chế bệnh, không phải âm mưu' },
+    ],
+  },
+  {
+    num: '02', icon: '🚫', pattern: '"Chữa khỏi mọi bệnh" hoặc "không tác dụng phụ"',
+    explain: 'Mọi chất có tác dụng sinh học đều có thể có tác dụng phụ tùy liều và người dùng.',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1576671081837-49000212a370?w=800&q=80',
+    keyFact: '⚗️ Paracelsus (1493–1541), cha đẻ của độc chất học: "Sola dosis facit venenum" — chỉ có liều lượng mới tạo ra chất độc. Nước uống đủ nhiều cũng gây tử vong. Không có gì "hoàn toàn không tác dụng phụ" nếu có hoạt tính sinh học.',
+    details: [
+      '"Chữa khỏi 100%" vi phạm nguyên tắc sinh học cơ bản: ung thư không phải một bệnh — là hơn 200 loại bệnh với cơ chế đột biến gen khác nhau, vị trí khác nhau, tốc độ tiến triển khác nhau. Tiểu đường type 1 và type 2 có cơ chế hoàn toàn khác nhau. Cao huyết áp có hàng chục nguyên nhân. Không có "một thứ" nào có thể điều trị tất cả — trừ một thứ không có tác dụng gì.',
+      '"Không tác dụng phụ" = không có tác dụng gì hoặc chưa được nghiên cứu đủ: nếu một chất thực sự có hoạt tính sinh học (ảnh hưởng đến cơ thể), nó không thể chỉ có tác dụng tốt mà không có tác dụng không mong muốn — bởi vì sinh lý học cơ thể phức tạp và được kết nối với nhau. Tuyên bố "không tác dụng phụ" thường có nghĩa: chất đó quá yếu để có tác dụng gì (cả tốt lẫn xấu), hoặc không ai nghiên cứu đủ kỹ để phát hiện tác dụng phụ.',
+      'Nguyên lý liều-đáp ứng (dose-response): mọi chất có đường cong liều-đáp ứng. Nước: uống 1 lít/ngày = tốt cho sức khỏe; uống 6–8 lít trong vài giờ = hạ natri máu nguy hiểm tính mạng. Oxygen: FiO2 21% (không khí bình thường) = cần thiết; FiO2 100% kéo dài = độc phổi (oxygen toxicity). Aspirin: 100mg = chống kết tập tiểu cầu; 4.000mg = viêm loét dạ dày nghiêm trọng. Chỉ liều và ngữ cảnh mới quyết định "độc" hay "thuốc".',
+      'Hormesis — hiệu ứng ngược: một số chất gây hại ở liều cao lại có lợi ở liều cực thấp. Phóng xạ liều thấp (radon trong hang động nhất định), rượu vang đỏ liều rất thấp, và nhiều chất phytochemical trong rau củ đều cho thấy hiệu ứng hormesis. Điều này không có nghĩa là "độc thì tốt" — mà là liều quyết định mọi thứ.',
+      '"Thảo dược tự nhiên = an toàn": quan niệm sai lầm phổ biến nhất. Digitalis (foxglove) → digoxin (thuốc tim mạch mạnh, có thể gây ngộ độc). Arsenic trong thạch tín = thuốc chữa bệnh bạch cầu (AML) ở nồng độ điều trị. Belladonna → atropine (dùng trong cấp cứu tim). Opium poppy → morphine (giảm đau mạnh nhất). "Tự nhiên" không quyết định an toàn — cơ chế và liều lượng mới quyết định.',
+      'Cờ đỏ ngôn ngữ của tuyên bố "chữa mọi bệnh": "Khôi phục cân bằng cơ thể" (quá mơ hồ để đo lường), "Tăng cường hệ miễn dịch" (hệ miễn dịch không phải "yếu hơn tốt" — lupus là hệ miễn dịch hoạt động quá mức), "Loại bỏ độc tố" (không chỉ định độc tố nào), "Chữa từ gốc" (không giải thích cơ chế), "Phù hợp với mọi người" (không có gì phù hợp với mọi người — ngay cả paracetamol có chống chỉ định).',
+    ],
+    points: [
+      { icon: '⚗️', label: 'Liều tạo ra độc hay thuốc — không phải bản chất', note: 'Nước uống 6–8L trong vài giờ cũng gây tử vong (hạ natri máu)' },
+      { icon: '🌿', label: '"Tự nhiên" ≠ an toàn: arsenic, digitalis, morphine', note: 'Nhiều chất độc nhất đến từ thiên nhiên — cơ chế và liều mới quan trọng' },
+      { icon: '🔬', label: '"Không tác dụng phụ" = không tác dụng gì hoặc chưa nghiên cứu', note: 'Hoạt tính sinh học thực sự luôn kèm theo tác dụng không mong muốn' },
+      { icon: '🎯', label: '"Tăng miễn dịch" mơ hồ — lupus là miễn dịch quá mức', note: 'Hệ miễn dịch cần cân bằng, không phải "càng mạnh càng tốt"' },
+    ],
+  },
+  {
+    num: '03', icon: '📸', pattern: 'Ảnh trước/sau đáng ngờ',
+    explain: 'Góc chụp, ánh sáng, quần áo, tư thế có thể tạo ra sự khác biệt giả. Yêu cầu dữ liệu chứng minh từ nghiên cứu độc lập.',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80',
+    keyFact: '📸 Ảnh trước/sau là bằng chứng yếu nhất trong y học — dễ tạo ra nhất và khó kiểm chứng nhất. Không có thông tin về điều kiện chụp, thời gian, hay những gì khác đã thay đổi cùng lúc.',
+    details: [
+      '7 kỹ thuật phổ biến tạo ảnh trước/sau giả: (1) Tư thế — đứng thẳng, ưỡn bụng vs đứng thẳng, thở ra, hóp bụng; (2) Ánh sáng — ánh sáng từ trên trực tiếp tạo bóng rõ ràng hơn ánh sáng mềm từ bên cạnh; (3) Góc máy ảnh — chụp từ dưới lên vs từ trên xuống; (4) Quần áo — quần lưng cao vs quần lưng thấp; (5) Bơm cơ — tập gym xong vài phút vs ảnh lúc nghỉ ngơi; (6) Thao tác nước — mất nước nhẹ vs hydrated đầy đủ; (7) Chỉnh sửa ảnh — filter, tăng contrast, crop, warp tool.',
+      'Thời gian không được kiểm soát: ảnh "30 ngày dùng sản phẩm" thực tế có thể là 6 tháng, hoặc được chụp theo thứ tự ngược lại (ảnh "sau" được chụp trước). FTC (Mỹ) yêu cầu testimonial phải điển hình cho kết quả của người dùng — nhưng enforcement lỏng lẻo và nhiều người chỉ đăng ảnh của người đạt kết quả tốt nhất.',
+      'Cherry-picking và survivorship bias: công ty có thể thử nghiệm sản phẩm với 1.000 người, chỉ 5 người có kết quả dramatic, và chỉ đăng ảnh của 5 người đó. 995 người không thấy hiệu quả không được đề cập. Đây là "survivorship bias" — chỉ thấy những thành công, không thấy thất bại. Trong thử nghiệm lâm sàng, mọi người tham gia đều được theo dõi — không chỉ người thành công.',
+      'Thay đổi đồng thời không được kiểm soát: người trong ảnh "sau" có thể cùng lúc thay đổi chế độ ăn, tập thể dục, ngủ đủ giấc — nhưng chỉ sản phẩm được credit. Điều này là confounding variable — yếu tố nhiễu. Trong nghiên cứu lâm sàng, mọi biến số này được kiểm soát qua randomization và nhóm đối chứng.',
+      'Yêu cầu dữ liệu thực sự thay vì ảnh: "Bao nhiêu người tham gia? Nhóm đối chứng dùng gì? Có theo dõi lâu dài không? Kết quả được đo bằng công cụ khách quan nào (BMI, mỡ cơ thể DEXA, biomarker máu)?" Ảnh là subjective hoàn toàn — số liệu đo lường mới là bằng chứng.',
+      'Cách phân tích ảnh trước/sau nghi ngờ: Tìm dấu hiệu chỉnh sửa (đường thẳng bị méo, độ phân giải không đều). So sánh tất cả chi tiết: màu da, nếp nhăn, vết thương — nếu quá nhiều thứ thay đổi thì nghi ngờ. Tìm ảnh gốc qua Google Reverse Image Search. Hỏi: "Có bao nhiêu người dùng sản phẩm không thấy kết quả như vậy?" — nếu không được trả lời, cẩn thận.',
+    ],
+    points: [
+      { icon: '💡', label: '7 kỹ thuật tạo ảnh giả: tư thế, ánh sáng, góc máy', note: 'Tập gym 30 phút → bơm cơ → ảnh "sau" ngay lập tức không cần sản phẩm' },
+      { icon: '📊', label: 'Yêu cầu số liệu: BMI, DEXA, biomarker — không phải ảnh', note: 'Ảnh hoàn toàn subjective — đo lường mới là bằng chứng' },
+      { icon: '👥', label: 'Cherry-picking: 5/1.000 người thành công = tất cả đăng lên', note: 'Hỏi: bao nhiêu người dùng không thấy kết quả này?' },
+      { icon: '🔍', label: 'Google Reverse Image Search để kiểm tra ảnh gốc', note: 'Nhiều ảnh "thật" thực tế là stock photo hoặc đã bị đổi tên người' },
+    ],
+  },
+  {
+    num: '04', icon: '🧪', pattern: '"Giải độc cơ thể" hoặc "thải độc"',
+    explain: 'Gan và thận đã là hệ thống thải độc hoàn hảo. Không có bằng chứng khoa học nào ủng hộ "detox" thương mại.',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=800&q=80',
+    keyFact: '🧪 Hỏi bất kỳ người bán "detox" nào: "Độc tố nào cụ thể?" và "Làm sao bạn đo lường sự thay đổi?" Nếu không trả lời được, sản phẩm chỉ là marketing. Gan và thận của bạn đã đang "detox" liên tục 24/7 miễn phí.',
+    details: [
+      'Gan thực sự "detox" như thế nào — Phase I và Phase II: Phase I (cytochrome P450 enzymes): oxy hóa, khử, thủy phân — biến đổi chất tan trong dầu thành dạng dễ xử lý hơn. Đây cũng là lúc một số chất trở nên "hoạt động hơn" trước khi được thải. Phase II (conjugation): gắn nhóm hóa học (glucuronide, sulfate, glutathione, glycine) vào chất từ Phase I → tăng tính tan trong nước → dễ thải qua mật/nước tiểu. Thận lọc 120–150L máu/ngày và thải các sản phẩm chuyển hóa, thuốc, và chất độc qua nước tiểu.',
+      '"Độc tố" trong marketing — không bao giờ được chỉ định cụ thể: sản phẩm detox không bao giờ trả lời được câu hỏi "độc tố nào?" Vì: nếu chỉ định cụ thể (ví dụ: chì, thủy ngân, thuốc trừ sâu), họ phải chứng minh sản phẩm thực sự loại bỏ chất đó qua xét nghiệm máu/nước tiểu trước-sau. Không có sản phẩm detox thương mại nào vượt qua được kiểm tra này. Điều trị ngộ độc thực sự (chì, thủy ngân nặng) dùng chelation therapy — là thuốc kê đơn, không phải nước ép.',
+      'Juice cleanse và detox diet — không có bằng chứng: systematic review (Klein & Kiat, 2015) tổng hợp bằng chứng về juice cleanse và detox diet: không tìm thấy bằng chứng từ nghiên cứu lâm sàng ủng hộ loại can thiệp này cho mục đích "thải độc". Người dùng thường cảm thấy "nhẹ nhàng hơn" và "sáng suốt hơn" — nhưng đây thường là do giảm calo, tăng nước, ngưng rượu và thức ăn chế biến trong thời gian cleanse.',
+      'Activated charcoal "detox" — hiểu sai về cơ chế: than hoạt tính được dùng trong y tế cấp cứu để hấp thụ một số chất độc trong vài giờ sau khi nuốt — không phải để "dọn sạch" toàn bộ cơ thể. Uống than hoạt tính trong nước ép hoặc sinh tố hàng ngày: (1) Không thải được "độc tố tích lũy" (đã được gan/thận xử lý); (2) Có thể hấp thụ thuốc kê đơn và TPCN đang dùng — giảm hiệu quả thuốc; (3) Có thể gây táo bón.',
+      'Colon cleansing và enema — nguy cơ thực sự: quảng cáo rằng ruột già chứa "phân thối" tích lũy gây bệnh là sai — niêm mạc ruột già tự thay mới mỗi vài ngày và có hệ vi khuẩn cộng sinh cần thiết. Rửa ruột thường xuyên: phá vỡ hệ vi khuẩn đường ruột (microbiome), gây mất điện giải (natri, kali → mất nước, rối loạn nhịp tim), và trong một số trường hợp gây thủng ruột. Đây là nguy cơ thực sự, không phải lý thuyết.',
+      'Khi nào cơ thể thực sự cần "hỗ trợ thải độc" từ y tế: ngộ độc kim loại nặng (chì, thủy ngân, asen) → chelation therapy kê đơn. Ngộ độc thuốc/hóa chất cấp tính → than hoạt tính trong vài giờ đầu ở cấp cứu. Suy gan cấp → ghép gan. Suy thận → lọc máu (dialysis). Tất cả những trường hợp này đều cần can thiệp y tế thực sự — không phải nước ép hay "trà thải độc".',
+    ],
+    points: [
+      { icon: '🫀', label: 'Gan xử lý 120–150L máu/ngày — miễn phí, liên tục', note: 'Phase I+II detox đã diễn ra trong cơ thể bạn 24/7 không cần sản phẩm' },
+      { icon: '❓', label: '"Độc tố nào?" — câu hỏi không ai bán detox trả lời được', note: 'Nếu thật, phải chứng minh qua xét nghiệm máu/nước tiểu trước-sau' },
+      { icon: '🖤', label: 'Than hoạt tính trong smoothie hấp thụ thuốc kê đơn', note: 'Dùng cấp cứu trong vài giờ đầu sau ngộ độc — không phải dùng hằng ngày' },
+      { icon: '⚠️', label: 'Rửa ruột thường xuyên → phá microbiome + mất điện giải', note: 'Nguy cơ thực sự: rối loạn nhịp tim, mất nước, thủng ruột' },
+    ],
+  },
+  {
+    num: '05', icon: '💬', pattern: 'Testimonial thay cho bằng chứng',
+    explain: '"1.000 người đã thử và thành công" không phải dữ liệu khoa học — cần nhóm đối chứng, kiểm soát yếu tố nhiễu.',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
+    keyFact: '💬 Testimonial không thể phân biệt tác dụng thực sự của sản phẩm với: (1) bệnh tự khỏi theo thời gian; (2) placebo effect; (3) thay đổi khác cùng lúc; (4) regression to the mean. Đây là lý do khoa học cần nhóm đối chứng.',
+    details: [
+      'Regression to the mean — cạm bẫy thống kê ít người biết: khi triệu chứng ở điểm tệ nhất (lý do bắt đầu dùng sản phẩm), chúng có xu hướng tự cải thiện mà không cần can thiệp — đơn giản vì không thể ở điểm tệ nhất mãi. Người đau lưng dữ dội hôm qua bắt đầu dùng kem "thần kỳ" hôm nay — và tốt hơn trong 3 ngày. Nhưng họ cũng sẽ tốt hơn mà không dùng kem đó. Đây là regression to the mean, không phải tác dụng của kem.',
+      'Survivorship bias trong testimonial: chỉ những người trải nghiệm tốt mới chia sẻ — và công ty chỉ đăng những testimonial tốt nhất. 95% người dùng không thấy kết quả không chia sẻ (hoặc review của họ bị xóa). Đây là vấn đề lấy mẫu có hệ thống (systematic sampling bias) — không đại diện cho kết quả trung bình của người dùng.',
+      'Placebo effect — mạnh hơn nhiều người nghĩ: kỳ vọng thay đổi trải nghiệm chủ quan. Người được nói "đây là thuốc giảm đau mạnh" cảm thấy ít đau hơn người được nói "đây là vitamin" — dù cả hai uống giả dược. Placebo có thể giảm đau 30–40%, cải thiện triệu chứng IBS, và trong nghiên cứu đặc biệt thú vị của Kaptchuk (2010), thậm chí open-label placebo (biết mình đang uống giả dược) vẫn có tác dụng ở IBS. Đây là lý do thử nghiệm lâm sàng phải mù đôi.',
+      'Confounding variables — yếu tố nhiễu: người bắt đầu dùng sản phẩm "giảm cân" thường đồng thời bắt đầu chú ý đến ăn uống, tập thể dục thêm, và uống đủ nước hơn. Kết quả tốt sau đó không thể được gán cho sản phẩm — mà có thể do tất cả thay đổi kia. Trong RCT, randomization và kiểm soát chặt chẽ loại trừ confounders này.',
+      'Anecdote của người nổi tiếng (celebrity testimonial): người nổi tiếng không có kiến thức y tế đặc biệt. Họ được trả rất nhiều tiền để quảng cáo — thường là 6 con số trở lên cho một campaign. Hiệu ứng halo (halo effect): nếu chúng ta ngưỡng mộ người đó, chúng ta tin tưởng phán đoán của họ nhiều hơn kể cả trong lĩnh vực họ không có chuyên môn. FTC yêu cầu công bố rõ paid partnership, nhưng nhiều influencer vẫn không tuân thủ đầy đủ.',
+      '"1.000 người đã thành công" — tại sao không đủ: cần hỏi: 1.000 người này so với bao nhiêu người không thành công? Họ được chọn từ đâu (tự nguyện chia sẻ hay random sample)? Điều kiện ban đầu của họ là gì? Họ có làm gì khác cùng lúc không? Có ai kiểm chứng kết quả của họ bằng đo lường khách quan không? Nếu không trả lời được những câu này, "1.000 người" chỉ là số marketing.',
+    ],
+    points: [
+      { icon: '📈', label: 'Regression to mean: đau nhất → tự cải thiện không cần sản phẩm', note: 'Bắt đầu dùng khi tệ nhất = tự nhiên sẽ tốt hơn dù làm gì' },
+      { icon: '🎭', label: 'Placebo giảm đau 30–40% — trải nghiệm không = tác dụng thật', note: 'Open-label placebo vẫn có tác dụng — kỳ vọng thay đổi cảm giác' },
+      { icon: '⭐', label: 'Celebrity được trả tiền để quảng cáo — không phải chuyên gia', note: 'Halo effect: ngưỡng mộ người nổi tiếng → tin phán đoán y tế của họ' },
+      { icon: '❓', label: '"1.000 người thành công" — bao nhiêu người thất bại?', note: 'Hỏi tỷ lệ thành công thực sự, không chỉ số tuyệt đối được chọn lọc' },
+    ],
+  },
+  {
+    num: '06', icon: '😱', pattern: 'Sợ hãi + giải pháp tức thì',
+    explain: 'Tạo lo lắng rồi cung cấp "giải pháp" — đây là mô hình marketing. Thông tin tốt giải thích, không dọa nạt.',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1560807707-8cc77767d783?w=800&q=80',
+    keyFact: '😱 Kỹ thuật "sợ hãi → giải pháp" (fear-mongering) là mô hình marketing cổ xưa nhất — tạo ra nhu cầu bằng cách khuếch đại nguy cơ, sau đó cung cấp giải pháp. Thông tin y tế thực sự giải thích nguy cơ theo tỷ lệ thực tế, không thổi phồng.',
+    details: [
+      'Cơ chế tâm lý của fear-mongering: amygdala (trung tâm sợ hãi trong não) kích hoạt → hệ thần kinh giao cảm (fight-or-flight) → tư duy phản biện giảm, ra quyết định nhanh hơn và dễ bị ảnh hưởng hơn. Đây là lý do quảng cáo dùng sợ hãi hiệu quả: não trong trạng thái stress làm giảm phân tích lý trí (giảm hoạt động vỏ não trước trán). Ngưỡng mua hàng giảm khi lo lắng tăng.',
+      '"Độc chất ẩn" và "hóa chất nguy hiểm" — vũ khí sợ hãi phổ biến: "Sản phẩm X của bạn chứa [tên hóa học dài và đáng sợ]!" Tất cả thực phẩm và thuốc đều chứa "hóa chất" — nước là H2O, muối là NaCl, đường là C12H22O11. Điều quan trọng là nồng độ và ngữ cảnh, không phải sự hiện diện của chất đó. Formaldehyde có trong rau củ tự nhiên, trái cây lên men, và cơ thể người — ở nồng độ rất thấp, không gây hại. Kỹ thuật đặt tên hóa học để gây sợ gọi là "chemophobia marketing".',
+      'Manufactured urgency (khẩn cấp giả): "Chỉ còn 24 giờ!", "Giá này không còn vào ngày mai!", "Hàng có hạn — đặt ngay!" — tạo áp lực quyết định nhanh mà không có thời gian suy nghĩ. Thông tin y tế thực sự không có giới hạn thời gian: nếu nghiên cứu cho thấy vitamin D quan trọng, điều đó đúng hôm nay và vẫn đúng sau 1 tháng. Urgency giả là dấu hiệu rõ ràng của marketing, không phải thông tin.',
+      'FOMO (Fear Of Missing Out) trong sức khỏe: "Mọi người xung quanh bạn đang làm điều này và khỏe hơn — bạn đang bị bỏ lại!" Kết hợp với social proof giả (số lượng người dùng phóng đại), tạo áp lực xã hội để tuân theo. Người ở trạng thái FOMO ít khả năng đánh giá bằng chứng một cách khách quan.',
+      'Phân biệt cảnh báo sức khỏe thực sự với fear-mongering: CẢNH BÁO THỰC: nêu cụ thể nguy cơ với số liệu ("hút thuốc tăng nguy cơ ung thư phổi lên 25 lần", "béo phì BMI > 30 liên quan đến nguy cơ tim mạch cao hơn 2x"), không bán sản phẩm, hướng đến hành vi thay đổi cụ thể có bằng chứng, không tạo áp lực thời gian. FEAR-MONGERING: nguy cơ mơ hồ ("đang hủy hoại sức khỏe của bạn"), ngay sau đó giới thiệu sản phẩm, tạo urgency, không trích nguồn.',
+      'Cách chống lại fear-mongering: (1) Dừng lại 24–48 giờ trước khi mua — nếu là thông tin thực sự quan trọng, nó vẫn còn đó sau 2 ngày. (2) Tìm absolute risk (nguy cơ tuyệt đối), không chỉ relative risk ("tăng 100% nguy cơ" nghe đáng sợ, nhưng từ 0.001% lên 0.002% — tức là 1 trên 50.000 người thêm). (3) Hỏi: "Ai được lợi nếu tôi sợ điều này?" (4) Tìm kiếm thông tin từ nguồn không bán sản phẩm liên quan.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Sợ hãi kích hoạt amygdala → giảm tư duy phản biện', note: 'Não trong trạng thái stress ra quyết định nhanh hơn và ít lý trí hơn' },
+      { icon: '⏰', label: '"Chỉ còn 24 giờ" = urgency giả — thông tin thật không có hạn', note: 'Nếu vitamin D quan trọng hôm nay, nó vẫn quan trọng sau 1 tháng' },
+      { icon: '☠️', label: 'Chemophobia: "hóa chất" trong thực phẩm nghe đáng sợ nhưng bình thường', note: 'Formaldehyde có tự nhiên trong rau củ — nồng độ mới quan trọng, không phải tên' },
+      { icon: '🔢', label: 'Hỏi absolute risk, không chỉ relative risk', note: '"Tăng 100% nguy cơ": từ 0.001% lên 0.002% — ít người thêm thực sự bị ảnh hưởng' },
+    ],
+  },
 ];
 
 const TRUSTED_SOURCES = [
@@ -138,6 +258,105 @@ const TRUSTED_SOURCES = [
   { name: 'UpToDate', url: 'uptodate.com', desc: 'Tài liệu tham khảo lâm sàng được bác sĩ toàn cầu tin dùng' },
   { name: 'Examine.com', url: 'examine.com', desc: 'Tổng hợp bằng chứng về bổ sung dinh dưỡng và thảo dược' },
 ];
+
+function PatternCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-4 cursor-pointer transition-all duration-200 flex gap-3"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.55)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 20px rgba(${item.rgb},0.12)` : 'none', transform: hovered ? 'translateY(-2px)' : 'translateY(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <span className="text-2xl shrink-0 mt-0.5">{item.icon}</span>
+      <div className="flex-1 min-w-0">
+        <div className="font-bold text-base leading-snug mb-1" style={{ color: item.color }}>{item.pattern}</div>
+        <p className="text-sm text-muted leading-relaxed">{item.explain}</p>
+      </div>
+      <span className="text-xs px-2 py-0.5 rounded-full font-bold shrink-0 self-start mt-0.5 transition-opacity duration-200"
+        style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>Chi tiết →</span>
+    </div>
+  );
+}
+
+function PatternModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.pattern} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>Pattern {item.num}/06</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-2 leading-snug" style={{ color: item.color }}>{item.pattern}</h2>
+          <p className="text-sm mb-5 leading-relaxed" style={{ color: 'rgba(209,213,219,0.8)' }}>{item.explain}</p>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 06</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function FilterCard({ item, onClick }) {
   const [hovered, setHovered] = useState(false);
@@ -326,6 +545,7 @@ function MisinfoChecker() {
 
 export default function HealthMediaLiteracyPage() {
   const [filterModal, setFilterModal] = useState(null);
+  const [patternModal, setPatternModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -390,16 +610,10 @@ export default function HealthMediaLiteracyPage() {
 
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nhận Biết Thông Tin Sai Lệch</h2>
-        <p className="text-muted text-lg mb-6">6 pattern phổ biến nhất trong thông tin y tế sai lệch trên mạng.</p>
+        <p className="text-muted text-lg mb-6">6 pattern phổ biến nhất trong thông tin y tế sai lệch trên mạng. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-3">
           {DANGEROUS_PATTERNS.map((d, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex gap-3">
-              <span className="text-2xl shrink-0">{d.icon}</span>
-              <div>
-                <div className="font-bold text-lg text-red-400 mb-1">{d.pattern}</div>
-                <p className="text-base text-muted">{d.explain}</p>
-              </div>
-            </div>
+            <PatternCard key={i} item={d} onClick={() => setPatternModal(i)} />
           ))}
         </div>
       </RevealBlock>
@@ -436,6 +650,17 @@ export default function HealthMediaLiteracyPage() {
           onNext={() => setFilterModal(i => Math.min(FILTER_QUESTIONS.length - 1, i + 1))}
           hasPrev={filterModal > 0}
           hasNext={filterModal < FILTER_QUESTIONS.length - 1}
+        />
+      )}
+
+      {patternModal !== null && (
+        <PatternModal
+          item={DANGEROUS_PATTERNS[patternModal]}
+          onClose={() => setPatternModal(null)}
+          onPrev={() => setPatternModal(i => Math.max(0, i - 1))}
+          onNext={() => setPatternModal(i => Math.min(DANGEROUS_PATTERNS.length - 1, i + 1))}
+          hasPrev={patternModal > 0}
+          hasNext={patternModal < DANGEROUS_PATTERNS.length - 1}
         />
       )}
     </div>

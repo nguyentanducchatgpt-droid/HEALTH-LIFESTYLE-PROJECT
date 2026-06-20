@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#6366f1';
@@ -8,11 +9,116 @@ const ORBIT_CLASS = 'e-media-orbit-ring';
 const ORBIT_PROP = '--e-media-orbit-angle';
 
 const FILTER_QUESTIONS = [
-  { q: '1. Nguồn là ai?', good: 'WHO, CDC, Bộ Y tế, tạp chí peer-reviewed (PubMed, Lancet, NEJM)', bad: 'Facebook cá nhân, group sức khỏe không xác minh, trang tin không có tên tác giả' },
-  { q: '2. Bằng chứng là gì?', good: 'Nghiên cứu có đối chứng (RCT), meta-analysis, systematic review', bad: '"1 người dùng và khỏi", "nghiên cứu tôi tự làm", không trích nguồn' },
-  { q: '3. Tuyên bố có hợp lý không?', good: '"Có thể giúp cải thiện...", "Theo nghiên cứu X trong điều kiện Y..."', bad: '"Chữa khỏi 100%", "bác sĩ không muốn bạn biết điều này"' },
-  { q: '4. Có lợi ích tài chính không?', good: 'Thông tin giáo dục thuần túy, không bán sản phẩm', bad: 'Nội dung kết thúc bằng link mua hàng, hoa hồng affiliate' },
-  { q: '5. Thông tin có mới không?', good: 'Được cập nhật trong 2–3 năm gần đây (y học thay đổi nhanh)', bad: 'Bài viết từ 2010 vẫn đang lan truyền như mới' },
+  {
+    num: '01', icon: '🏛️', q: '1. Nguồn là ai?',
+    good: 'WHO, CDC, Bộ Y tế, tạp chí peer-reviewed (PubMed, Lancet, NEJM)',
+    bad: 'Facebook cá nhân, group sức khỏe không xác minh, trang tin không có tên tác giả',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80',
+    keyFact: '🏛️ 97% thông tin y tế sai lệch lan truyền qua mạng xã hội xuất phát từ nguồn không được kiểm chứng. Uy tín của tác giả và tổ chức đứng sau thông tin là bộ lọc nhanh và hiệu quả nhất.',
+    details: [
+      'Hệ thống phân cấp nguồn tin: Cấp 1 — tổ chức y tế quốc tế (WHO, CDC, NIH, EMA) và Bộ Y tế: đưa ra hướng dẫn dựa trên tổng hợp hàng ngàn nghiên cứu. Cấp 2 — tạp chí peer-reviewed (Nature Medicine, Lancet, NEJM, JAMA, BMJ): mỗi bài qua ít nhất 2–3 chuyên gia độc lập đánh giá. Cấp 3 — bệnh viện và trung tâm nghiên cứu uy tín: Mayo Clinic, Cleveland Clinic, các đại học y. Cấp 4 trở xuống: báo chí đại chúng (đưa tin về nghiên cứu — không phải nghiên cứu gốc), blog, mạng xã hội.',
+      'Quy trình peer-review (đánh giá đồng nghiệp): khi nhà khoa học nộp bài báo, tạp chí gửi cho 2–3 chuyên gia độc lập trong lĩnh vực đó đánh giá phương pháp, kết quả và kết luận. Thời gian thường 3–12 tháng. Nhiều bài bị từ chối (tỷ lệ từ chối ở Lancet, NEJM lên đến 90%+). Peer-review không hoàn hảo nhưng là cơ chế lọc quan trọng nhất trong khoa học.',
+      'Tạp chí predatory (ăn bám) — bẫy uy tín giả: có hàng nghìn tạp chí "mở" tính phí xuất bản ($500–5.000 USD) nhưng không có peer-review thực sự — chấp nhận gần như mọi bài nộp. Danh sách Beall (Beall\'s List) liệt kê các tạp chí predatory. Tên tạp chí nghe có vẻ khoa học ("Journal of Advanced Medical Research") nhưng không có uy tín. Kiểm tra tạp chí trên PubMed hoặc Scopus để xác nhận.',
+      'Kiểm tra tác giả và tổ chức: tác giả có học vị và chuyên môn phù hợp không (bác sĩ viết về bệnh tim mạch vs kỹ sư phần mềm viết về điều trị ung thư)? Tổ chức có liên quan đến sản phẩm đang được quảng bá không? Bài viết có ghi tên tác giả cụ thể không (không phải "Ban biên tập")? Tác giả có conflict of interest (xung đột lợi ích) được công bố không?',
+      'Mạng xã hội và echo chamber: Facebook, TikTok, YouTube dùng algorithm để giữ người dùng tương tác — không phải để cung cấp thông tin chính xác. Nội dung cảm xúc mạnh (sợ hãi, phẫn nộ, kỳ diệu) lan truyền nhanh hơn thông tin chính xác nhưng nhàm. Nghiên cứu MIT (2018) cho thấy tin sai lan truyền nhanh gấp 6 lần tin đúng trên Twitter. Group sức khỏe trên Facebook không có cơ chế kiểm duyệt chuyên môn.',
+      'Công cụ kiểm tra nguồn nhanh: Google Scholar (scholar.google.com) — tìm bài báo khoa học gốc. PubMed (pubmed.ncbi.nlm.nih.gov) — cơ sở dữ liệu y khoa lớn nhất. Snopes, FactCheck.org, PolitiFact — kiểm tra tin giả. WHO Myth Busters — giải thích các quan niệm sai phổ biến. Full Fact (UK) — fact-checking y tế.',
+    ],
+    points: [
+      { icon: '📚', label: 'Peer-review = đã qua chuyên gia kiểm duyệt', note: 'Lancet, NEJM từ chối > 90% bài nộp — chỉ đăng tốt nhất' },
+      { icon: '⚠️', label: 'Tạp chí predatory: tên khoa học, không peer-review', note: 'Kiểm tra trên PubMed/Scopus trước khi tin tưởng nguồn' },
+      { icon: '📱', label: 'Mạng xã hội: tin sai lan nhanh gấp 6 lần tin đúng', note: 'Algorithm ưu tiên tương tác, không phải độ chính xác' },
+      { icon: '🔍', label: 'Google Scholar + PubMed: tìm bài gốc', note: 'Báo đại chúng đưa tin về nghiên cứu — không phải nghiên cứu' },
+    ],
+  },
+  {
+    num: '02', icon: '🔬', q: '2. Bằng chứng là gì?',
+    good: 'Nghiên cứu có đối chứng (RCT), meta-analysis, systematic review',
+    bad: '"1 người dùng và khỏi", "nghiên cứu tôi tự làm", không trích nguồn',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80',
+    keyFact: '🔬 Kim tự tháp bằng chứng: Systematic review & meta-analysis ở đỉnh, RCT ở giữa, còn câu chuyện cá nhân (anecdote) ở đáy. "1 người dùng và khỏi" là bằng chứng yếu nhất trong khoa học — không thể phân biệt tác dụng thật vs tự khỏi vs placebo.',
+    details: [
+      'Kim tự tháp bằng chứng (Evidence Pyramid) từ mạnh đến yếu: (1) Systematic review + meta-analysis: tổng hợp tất cả RCT về một câu hỏi, cho kết quả có độ chính xác cao nhất. (2) RCT (Randomized Controlled Trial): phân nhóm ngẫu nhiên, có nhóm đối chứng — "tiêu chuẩn vàng" để chứng minh nhân quả. (3) Cohort study: theo dõi nhóm người theo thời gian. (4) Case-control: so sánh người có bệnh với nhóm không có bệnh. (5) Case report: báo cáo 1–vài trường hợp. (6) Expert opinion. (7) Anecdote (câu chuyện cá nhân).',
+      'Tại sao cần nhóm đối chứng: giả sử bạn uống thuốc X và khỏi trong 7 ngày — có thể thuốc hiệu quả, nhưng cũng có thể bệnh tự khỏi sau 7 ngày (cảm cúm thông thường tự khỏi trong 5–10 ngày), hoặc bạn thay đổi lối sống đồng thời, hoặc placebo effect. Chỉ RCT với nhóm đối chứng (uống giả dược) mới phân biệt được tác dụng thật vs những yếu tố này.',
+      'Placebo effect — mạnh hơn bạn nghĩ: nghiên cứu cho thấy placebo có thể giảm đau 30–40%, cải thiện triệu chứng trầm cảm 25–35%, và thậm chí giảm triệu chứng Parkinson quan sát được. Đây là lý do mọi thuốc phải so sánh với giả dược trong RCT, không phải "so với không điều trị gì". Câu chuyện "tôi dùng X và khỏi" không loại trừ được placebo.',
+      'P-value và ý nghĩa thống kê — bị hiểu sai rộng rãi: p < 0.05 có nghĩa là "xác suất kết quả này xảy ra ngẫu nhiên là dưới 5%" — không có nghĩa là "thuốc hiệu quả 95%". Một nghiên cứu nhỏ (n=50) có thể cho p < 0.05 nhưng effect size rất nhỏ (không có ý nghĩa lâm sàng). Cần xem effect size (mức độ hiệu quả thực tế) cùng với p-value. Statistical significance ≠ Clinical significance.',
+      'Replication crisis — ngay cả nghiên cứu đã đăng cũng có thể sai: dự án Reproducibility Project (2015) cố gắng tái lập 100 nghiên cứu tâm lý học đã đăng — chỉ 36–39% cho kết quả tương tự. Trong y học, nhiều "phát hiện" từ nghiên cứu nhỏ ban đầu không được xác nhận trong nghiên cứu lớn hơn sau đó. Đây là lý do meta-analysis và systematic review quan trọng hơn một nghiên cứu đơn lẻ.',
+      'Dấu hiệu nghiên cứu yếu hoặc sai lệch: cỡ mẫu nhỏ (n < 100 với cú kết luận rộng); không có nhóm đối chứng; tự báo cáo (self-reported outcomes — dễ bị bias); follow-up ngắn; nghiên cứu trên động vật được ngoại suy cho người; không công bố conflict of interest; kết quả quá tốt để là thật (effect size quá lớn); chỉ đăng 1 lần và không có nghiên cứu lặp lại.',
+    ],
+    points: [
+      { icon: '🏆', label: 'Systematic review > RCT > anecdote', note: 'Kim tự tháp bằng chứng — "1 người khỏi" ở đáy' },
+      { icon: '🎭', label: 'Placebo giảm đau 30–40% — không thể bỏ qua', note: 'Chỉ RCT với giả dược mới phân biệt được tác dụng thật' },
+      { icon: '📊', label: 'P-value ≠ hiệu quả thực tế', note: 'p < 0.05 không có nghĩa thuốc hiệu quả — cần effect size' },
+      { icon: '🔄', label: 'Replication crisis: 39% nghiên cứu không tái lập được', note: 'Một nghiên cứu đơn lẻ chưa đủ — cần tổng hợp nhiều nghiên cứu' },
+    ],
+  },
+  {
+    num: '03', icon: '🧠', q: '3. Tuyên bố có hợp lý không?',
+    good: '"Có thể giúp cải thiện...", "Theo nghiên cứu X trong điều kiện Y..."',
+    bad: '"Chữa khỏi 100%", "bác sĩ không muốn bạn biết điều này"',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80',
+    keyFact: '🧠 Nguyên tắc Carl Sagan: "Extraordinary claims require extraordinary evidence." Tuyên bố càng cực đoan (chữa mọi bệnh, không tác dụng phụ, hiệu quả 100%) đòi hỏi bằng chứng càng mạnh — và thường không có.',
+    details: [
+      'Phân tích ngôn ngữ — cách phát hiện tuyên bố thổi phồng: Ngôn ngữ ĐÁNG TIN: "có thể giúp cải thiện", "theo nghiên cứu X trên đối tượng Y", "một số người ghi nhận", "nghiên cứu cho thấy mối liên quan" (không phải nhân quả). Ngôn ngữ CẦN NGHI NGỜ: "chữa khỏi", "loại bỏ hoàn toàn", "100%", "không tác dụng phụ", "thần kỳ", "đột phá", "bác sĩ không muốn bạn biết". Không có gì trong y học là "100%" — ngay cả vaccine không đạt 100% hiệu quả với mọi người.',
+      'Hợp lý sinh học (biological plausibility): tuyên bố có cơ chế sinh lý học hợp lý không? Ví dụ "vitamin C hỗ trợ miễn dịch" — có cơ chế rõ ràng (cofactor cho sản xuất collagen, hỗ trợ hoạt động tế bào miễn dịch). Ngược lại "nước kiềm chữa ung thư" — không có cơ chế hợp lý (dạ dày trung hòa pH ngay lập tức, nước không thể thay đổi pH máu trừ khi bị nhiễm kiềm nặng).',
+      'Quan hệ liều-đáp ứng (dose-response): một chất có tác dụng sinh học thực sự thường biểu hiện dose-response — nhiều hơn thì hiệu quả hơn (đến một điểm). Nếu không có dose-response, nghi ngờ cao về cơ chế. Tuyên bố "chỉ cần 1 giọt/ngày chữa mọi bệnh" vi phạm nguyên tắc này.',
+      'Universality trap — không có gì chữa "mọi bệnh": ung thư không phải một bệnh — là hơn 200 loại bệnh khác nhau với cơ chế và điều trị khác nhau. Tuyên bố một thứ chữa được tiểu đường lẫn ung thư lẫn huyết áp là dấu hiệu rõ ràng của thông tin sai. Ngay cả aspirin (một trong các thuốc được nghiên cứu nhiều nhất) chỉ có chỉ định cụ thể, không phải "tốt cho mọi thứ".',
+      'Conspiracy framing — "bác sĩ giấu bạn": tuyên bố rằng y học chính thống "che giấu" sự thật để kiếm tiền từ bệnh nhân vi phạm nhận thức về cách khoa học vận hành. Hàng triệu nhà khoa học, bác sĩ, nhà nghiên cứu trên toàn cầu làm việc độc lập — không có âm mưu toàn cầu nào có thể giữ bí mật lâu dài. Nếu có thuốc chữa ung thư thực sự, đó sẽ là phát hiện của thế kỷ — ai phát hiện đều nổi tiếng và giàu vô cùng, không có lý do che giấu.',
+      'Kiểm tra tính nhất quán với kiến thức y học đã được thiết lập: nếu một tuyên bố mâu thuẫn với hàng nghìn nghiên cứu đã được tái lập — cần bằng chứng RẤT mạnh. Thuyết "không có vaccine nào an toàn" mâu thuẫn với hàng trăm triệu dữ liệu an toàn từ nhiều thập kỷ. "Trái đất phẳng" không được chấp nhận dù có người "nghiên cứu" ủng hộ. Consensus khoa học có thể sai nhưng hiếm — và được thay đổi bởi bằng chứng, không phải bởi viral post.',
+    ],
+    points: [
+      { icon: '💯', label: '"Chữa 100%" = không bao giờ đúng trong y học', note: 'Ngay cả vaccine không đạt 100% với mọi người — không gì là tuyệt đối' },
+      { icon: '⚗️', label: 'Dose-response: thiếu cơ chế = nghi ngờ cao', note: '"1 giọt chữa mọi bệnh" vi phạm nguyên tắc sinh lý học cơ bản' },
+      { icon: '🌐', label: 'Không có âm mưu toàn cầu che giấu thuốc chữa ung thư', note: 'Hàng triệu nhà khoa học độc lập không thể cùng giấu một bí mật' },
+      { icon: '🔗', label: 'Mâu thuẫn consensus = cần bằng chứng RẤT mạnh', note: 'Consensus thay đổi bởi dữ liệu, không phải bởi viral post' },
+    ],
+  },
+  {
+    num: '04', icon: '💰', q: '4. Có lợi ích tài chính không?',
+    good: 'Thông tin giáo dục thuần túy, không bán sản phẩm',
+    bad: 'Nội dung kết thúc bằng link mua hàng, hoa hồng affiliate',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&q=80',
+    keyFact: '💰 Xung đột lợi ích không có nghĩa là thông tin sai — nhưng nó là lý do để tăng mức độ nghi ngờ. Khi người chia sẻ thông tin sẽ được hưởng lợi tài chính nếu bạn tin theo, đặt câu hỏi kỹ hơn.',
+    details: [
+      'Các loại xung đột lợi ích (conflict of interest): Tài chính trực tiếp: bán sản phẩm, hoa hồng affiliate, được tài trợ bởi công ty liên quan. Tài chính gián tiếp: nghiên cứu được tài trợ bởi ngành công nghiệp liên quan (ví dụ: nghiên cứu về đường do công ty đồ uống tài trợ). Cá nhân/danh tiếng: người nổi tiếng muốn duy trì hình ảnh "chuyên gia", KOL muốn phát triển audience. Tất cả đều có thể vô thức ảnh hưởng đến cách thông tin được trình bày.',
+      'Affiliate marketing trong nội dung sức khỏe: nhiều blogger, influencer, podcast sức khỏe nhận hoa hồng 20–50% từ mỗi sản phẩm bán được qua link của họ. Điều này tạo động cơ mạnh để ca ngợi sản phẩm — dù không có bằng chứng. FTC (Mỹ) yêu cầu công bố mối quan hệ affiliate, nhưng nhiều người không tuân thủ hoặc chỉ ghi nhỏ "#ad" khó thấy. Tại Việt Nam, quy định về công bố affiliate trong y tế còn lỏng lẻo hơn.',
+      'Industry-funded research bias (nghiên cứu do ngành tài trợ): phân tích hàng trăm nghiên cứu cho thấy nghiên cứu do ngành tài trợ có xu hướng cho kết quả thuận lợi cho ngành đó gấp 3–5 lần so với nghiên cứu độc lập. Không nhất thiết do gian lận — có thể là publication bias (không đăng kết quả bất lợi), selective reporting, hay thiết kế nghiên cứu có lợi. Ví dụ kinh điển: nghiên cứu về đường và bệnh tim mạch do Sugar Research Foundation tài trợ đã chuyển đổ lỗi sang chất béo trong thập niên 1960–1970.',
+      'Paid content và sponsored content: nội dung được trả tiền thường được thiết kế để trông giống bài viết thông thường (native advertising). Tìm chú thích "Nội dung được tài trợ", "Advertorial", "Sponsored by", "#PR" — nếu không có, nghi ngờ cao hơn. Nhiều trang tin sức khỏe Việt Nam đăng bài PR sản phẩm mà không ghi rõ là quảng cáo.',
+      'Cách phát hiện nhanh xung đột lợi ích: có link mua hàng hoặc affiliate ở cuối bài không? Tác giả/trang web bán sản phẩm liên quan không? Bài có ghi nguồn tài trợ nghiên cứu không (trong nghiên cứu khoa học, phần "Funding" ở cuối)? "KOL" (Key Opinion Leader) này được ngành dược/TPCN tài trợ tham dự hội thảo không? Họ có nhận mẫu sản phẩm miễn phí không?',
+      'Xung đột lợi ích trong học thuật cũng tồn tại: bác sĩ và nhà nghiên cứu có thể nhận tài trợ từ công ty dược để nói chuyện tại hội thảo, làm cố vấn, hoặc đứng tên trong nghiên cứu. ProPublica\'s Dollars for Docs (Mỹ) tra cứu được thanh toán từ ngành dược cho bác sĩ. Điều này không có nghĩa bác sĩ đó sai — nhưng cần biết để đánh giá khách quan hơn. Nhiều tạp chí uy tín yêu cầu công bố tất cả COI.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Link mua hàng cuối bài = động cơ tài chính', note: 'Affiliate commission 20–50%: incentive mạnh để ca ngợi sản phẩm' },
+      { icon: '🏭', label: 'Industry-funded research: kết quả thuận lợi gấp 3–5x', note: 'Xem phần "Funding" trong nghiên cứu để kiểm tra ai tài trợ' },
+      { icon: '📢', label: 'Tìm "#ad", "sponsored", "tài trợ" trong nội dung', note: 'Không có công bố = tăng mức nghi ngờ về tính khách quan' },
+      { icon: '⚖️', label: 'COI không = sai, nhưng = cần thận trọng hơn', note: 'Tìm nguồn xác nhận độc lập khi phát hiện xung đột lợi ích' },
+    ],
+  },
+  {
+    num: '05', icon: '📅', q: '5. Thông tin có mới không?',
+    good: 'Được cập nhật trong 2–3 năm gần đây (y học thay đổi nhanh)',
+    bad: 'Bài viết từ 2010 vẫn đang lan truyền như mới',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80',
+    keyFact: '📅 Y học không tĩnh — hướng dẫn điều trị được cập nhật thường xuyên khi có bằng chứng mới. Điều "đúng" năm 2010 có thể đã bị bác bỏ năm 2024. Kiểm tra ngày xuất bản là thói quen quan trọng.',
+    details: [
+      'Y học thay đổi nhanh hơn bạn nghĩ: số lượng bài báo y tế mới xuất bản mỗi năm vượt 1 triệu bài. Hướng dẫn điều trị (clinical guidelines) của AHA, ADA, ESC, WHO thường được cập nhật mỗi 3–5 năm. Trong các lĩnh vực như ung thư học và truyền nhiễm, hướng dẫn có thể thay đổi trong vài tháng khi có bằng chứng mới.',
+      'Những lần y học thay đổi quan điểm quan trọng: Chất béo và bệnh tim mạch (1960–1990 vs 2010–nay): hướng dẫn cũ dạy "giảm chất béo để bảo vệ tim" → hiện nay: chất béo bão hòa vừa phải an toàn hơn carbohydrate tinh chế. Trứng và cholesterol (1970–2010 vs 2015–nay): "không quá 1 trứng/ngày" → FDA 2015 không còn giới hạn cholesterol ăn vào. HRT (hormone thay thế) và ung thư vú: WHO\'s Women\'s Health Initiative (2002) gây hoảng loạn → phân tích lại cho thấy nguy cơ phụ thuộc loại HRT, tuổi bắt đầu, và thời gian dùng.',
+      'Aspirin và phòng ngừa tim mạch — đảo chiều quan trọng: trong nhiều thập kỷ, aspirin liều thấp được khuyến nghị cho mọi người > 50 tuổi để phòng ngừa tim mạch. Nghiên cứu ASPREE (2018) và ARRIVE (2018) cho thấy người khỏe mạnh không có tiền sử tim mạch nhận ít lợi ích hơn và tăng nguy cơ chảy máu. AHA/ACC (2019) đảo ngược khuyến nghị: không còn khuyến nghị aspirin dự phòng cho người > 70 tuổi hoặc người nguy cơ thấp. Bài viết từ 2015 về aspirin có thể dẫn đến thực hành sai.',
+      'Living guidelines và cập nhật liên tục: một số tổ chức như WHO, NICE (Anh), và nhiều hội chuyên khoa cung cấp "living guidelines" — được cập nhật liên tục khi có bằng chứng mới, không chờ đến kỳ cập nhật định kỳ. COVID-19 là ví dụ rõ nhất: hướng dẫn thay đổi hàng tuần trong giai đoạn đầu đại dịch. Đây là cách khoa học nên vận hành — không phải dấu hiệu khoa học "không đáng tin".',
+      'Kiểm tra ngày bài viết và ngày cập nhật lần cuối: nhiều trang web không ghi ngày xuất bản hoặc ghi ngày nhưng không ghi ngày cập nhật. Kỹ thuật xem ngày Google: tìm bằng Google, dưới URL thường hiện ngày lập chỉ mục. Cách xem ngày trong Facebook: click vào timestamp (số giờ/ngày trước) để xem ngày chính xác. Với Wikipedia: xem phần "Last edited" ở cuối trang và check lịch sử chỉnh sửa.',
+      'Bài viết cũ lan truyền như mới — một vấn đề nghiêm trọng: mạng xã hội cho phép chia sẻ lại bài cũ mà không thay đổi gì — bài 2012 có thể viral lại năm 2024 với người chia sẻ không biết nó đã lỗi thời. Một số bài blog sức khỏe không ghi ngày — đây là dấu hiệu thiếu minh bạch. Tip thực tế: Google "site:pubmed.ncbi.nlm.nih.gov [chủ đề] [năm gần nhất]" để tìm nghiên cứu mới nhất.',
+    ],
+    points: [
+      { icon: '📆', label: 'Aspirin 2015 vs 2019: khuyến nghị đảo ngược hoàn toàn', note: 'Bài từ 2015 có thể khuyến nghị aspirin mà AHA 2019 đã thu hồi' },
+      { icon: '🔄', label: 'Trứng, chất béo, HRT: tất cả đã đổi quan điểm', note: 'Y học không sai — mà đang cập nhật khi có bằng chứng tốt hơn' },
+      { icon: '📱', label: 'Bài 2012 viral 2024 — không ai ghi chú', note: 'Click timestamp Facebook để xem ngày đăng thực sự' },
+      { icon: '🔍', label: 'PubMed: lọc theo ngày 3–5 năm gần nhất', note: 'Tìm systematic review mới hơn bất cứ bài blog nào' },
+    ],
+  },
 ];
 
 const DANGEROUS_PATTERNS = [
@@ -32,6 +138,123 @@ const TRUSTED_SOURCES = [
   { name: 'UpToDate', url: 'uptodate.com', desc: 'Tài liệu tham khảo lâm sàng được bác sĩ toàn cầu tin dùng' },
   { name: 'Examine.com', url: 'examine.com', desc: 'Tổng hợp bằng chứng về bổ sung dinh dưỡng và thảo dược' },
 ];
+
+function FilterCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-5 cursor-pointer transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.55)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 20px rgba(${item.rgb},0.12)` : 'none', transform: hovered ? 'translateY(-2px)' : 'translateY(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-xl shrink-0">{item.icon}</span>
+        <span className="font-bold text-base leading-snug flex-1" style={{ color: item.color }}>{item.q}</span>
+        <span className="text-xs px-2 py-0.5 rounded-full font-bold shrink-0 transition-opacity duration-200"
+          style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>Chi tiết →</span>
+      </div>
+      <div className="grid sm:grid-cols-2 gap-2">
+        <div className="rounded-xl p-3" style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.2)' }}>
+          <div className="text-xs font-bold text-emerald-400 mb-1">✓ Đáng tin</div>
+          <p className="text-xs text-muted leading-relaxed">{item.good}</p>
+        </div>
+        <div className="rounded-xl p-3" style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}>
+          <div className="text-xs font-bold text-red-400 mb-1">✗ Nghi ngờ</div>
+          <p className="text-xs text-muted leading-relaxed">{item.bad}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FilterModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.q} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>Câu hỏi {item.num}/05</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-3 leading-snug" style={{ color: item.color }}>{item.q}</h2>
+          <div className="grid grid-cols-2 gap-3 mb-5">
+            <div className="rounded-xl p-3" style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.2)' }}>
+              <div className="text-xs font-bold text-emerald-400 mb-1">✓ Đáng tin</div>
+              <p className="text-xs leading-relaxed" style={{ color: 'rgba(209,213,219,0.8)' }}>{item.good}</p>
+            </div>
+            <div className="rounded-xl p-3" style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}>
+              <div className="text-xs font-bold text-red-400 mb-1">✗ Nghi ngờ</div>
+              <p className="text-xs leading-relaxed" style={{ color: 'rgba(209,213,219,0.8)' }}>{item.bad}</p>
+            </div>
+          </div>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 05</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function RevealBlock({ children, delay = 0, className = '' }) {
   const [visible, setVisible] = useState(false);
@@ -102,6 +325,8 @@ function MisinfoChecker() {
 }
 
 export default function HealthMediaLiteracyPage() {
+  const [filterModal, setFilterModal] = useState(null);
+
   useEffect(() => {
     const style = document.createElement('style');
     style.id = ORBIT_ID;
@@ -155,22 +380,10 @@ export default function HealthMediaLiteracyPage() {
 
       <RevealBlock delay={0} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>5 Câu Hỏi Để Lọc Thông Tin</h2>
-        <p className="text-muted text-lg mb-6">Áp dụng mỗi khi đọc thông tin y tế trên mạng xã hội, group sức khỏe, hoặc từ người thân.</p>
+        <p className="text-muted text-lg mb-6">Áp dụng mỗi khi đọc thông tin y tế trên mạng xã hội, group sức khỏe, hoặc từ người thân. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-4">
           {FILTER_QUESTIONS.map((fq, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-5">
-              <div className="font-bold text-text mb-3" style={{ color: COLOR }}>{fq.q}</div>
-              <div className="grid sm:grid-cols-2 gap-3">
-                <div className="rounded-xl p-3" style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.2)' }}>
-                  <div className="text-base font-bold text-emerald-400 mb-1">✓ Đáng tin</div>
-                  <p className="text-base text-muted">{fq.good}</p>
-                </div>
-                <div className="rounded-xl p-3" style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}>
-                  <div className="text-base font-bold text-red-400 mb-1">✗ Nghi ngờ</div>
-                  <p className="text-base text-muted">{fq.bad}</p>
-                </div>
-              </div>
-            </div>
+            <FilterCard key={i} item={fq} onClick={() => setFilterModal(i)} />
           ))}
         </div>
       </RevealBlock>
@@ -212,6 +425,19 @@ export default function HealthMediaLiteracyPage() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+
+      {filterModal !== null && (
+        <FilterModal
+          item={FILTER_QUESTIONS[filterModal]}
+          idx={filterModal}
+          total={FILTER_QUESTIONS.length}
+          onClose={() => setFilterModal(null)}
+          onPrev={() => setFilterModal(i => Math.max(0, i - 1))}
+          onNext={() => setFilterModal(i => Math.min(FILTER_QUESTIONS.length - 1, i + 1))}
+          hasPrev={filterModal > 0}
+          hasNext={filterModal < FILTER_QUESTIONS.length - 1}
+        />
+      )}
     </div>
   );
 }

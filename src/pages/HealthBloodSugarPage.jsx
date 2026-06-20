@@ -159,10 +159,94 @@ const BS_CATS = [
 ];
 
 const HBAC_CATS = [
-  { label: 'Bình thường', range: '< 5.7%', color: '#22c55e', note: 'Kiểm soát tốt trong 3 tháng qua.' },
-  { label: 'Tiền tiểu đường', range: '5.7–6.4%', color: '#f97316', note: 'Đường huyết cao hơn bình thường liên tục.' },
-  { label: 'Tiểu đường', range: '≥ 6.5%', color: '#ef4444', note: 'Đáp ứng tiêu chí chẩn đoán tiểu đường type 2.' },
-  { label: 'Mục tiêu điều trị ĐTĐ', range: '< 7%', color: '#3b82f6', note: 'Nếu bạn đang điều trị, đây là đích cần đạt.' },
+  {
+    label: 'Bình thường', range: '< 5.7%', color: '#22c55e', rgb: '34,197,94',
+    note: 'Kiểm soát tốt trong 3 tháng qua.',
+    icon: '✅',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    keyFact: '💡 HbA1c < 5.7% tương đương đường huyết trung bình khoảng 117 mg/dL trong 3 tháng qua. Mỗi 1% tăng HbA1c ≈ tăng 29 mg/dL đường huyết trung bình.',
+    detail: 'HbA1c dưới 5.7% phản ánh tụy và tế bào cơ thể hoạt động hài hòa — insulin tiết đúng lúc, tế bào đáp ứng tốt, glucose không tích lũy trên hemoglobin.',
+    details: [
+      'HbA1c (Glycated Hemoglobin) đo % hemoglobin gắn glucose. Vì hồng cầu sống ~90–120 ngày, HbA1c phản ánh đường huyết trung bình trong 2–3 tháng — không bị ảnh hưởng bởi bữa ăn ngày đó.',
+      'Quy đổi HbA1c → đường huyết trung bình (eAG): HbA1c 5.7% ≈ 117 mg/dL; 6.0% ≈ 126 mg/dL; 6.5% ≈ 140 mg/dL; 7.0% ≈ 154 mg/dL.',
+      'Xét nghiệm HbA1c không cần nhịn ăn — có thể làm bất kỳ lúc nào trong ngày, tiện lợi hơn đường đói. Phù hợp để tầm soát định kỳ ở người ≥ 45 tuổi.',
+      'Hạn chế của HbA1c: không chính xác ở người thiếu máu hồng cầu hình liềm, thiếu G6PD, mang thai (hồng cầu quay vòng nhanh hơn), hoặc mới mất máu/truyền máu.',
+      'Duy trì HbA1c < 5.7%: tương tự duy trì đường đói 70–99 mg/dL — cân nặng hợp lý, ăn ít đường tinh, vận động đều, ngủ đủ giấc.',
+      'Xét nghiệm định kỳ: người bình thường < 45 tuổi không có yếu tố nguy cơ xét nghiệm mỗi 3 năm; ≥ 45 tuổi hoặc có nguy cơ mỗi năm.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Phản ánh 2–3 tháng', note: 'Không bị ảnh hưởng bởi bữa ăn gần đây' },
+      { icon: '📐', label: '5.7% ≈ 117 mg/dL', note: 'Quy đổi HbA1c → eAG trung bình' },
+      { icon: '📅', label: 'Xét nghiệm mỗi 3 năm', note: 'Nếu < 45 tuổi, không có yếu tố nguy cơ' },
+      { icon: '⚠️', label: 'Hạn chế với thiếu máu', note: 'Hồng cầu bất thường → kết quả sai lệch' },
+    ],
+  },
+  {
+    label: 'Tiền tiểu đường', range: '5.7–6.4%', color: '#f97316', rgb: '249,115,22',
+    note: 'Đường huyết cao hơn bình thường liên tục.',
+    icon: '⚡',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+    keyFact: '💡 HbA1c 5.7–6.4% tương đương đường huyết trung bình 117–137 mg/dL trong 3 tháng. Người ở ngưỡng này có 15–30% nguy cơ phát triển thành tiểu đường type 2 trong 5 năm tới nếu không can thiệp.',
+    detail: 'HbA1c ở ngưỡng tiền tiểu đường cho thấy kháng insulin đã âm thầm tích lũy trong nhiều tháng — khác với đường đói cao chỉ phản ánh 1 thời điểm.',
+    details: [
+      'HbA1c 5.7–6.4% tương ứng đường huyết trung bình 117–137 mg/dL liên tục — không phải chỉ 1 lần cao mà là xu hướng cao kéo dài, phản ánh kháng insulin mạn tính.',
+      'Tiền tiểu đường theo HbA1c thường phát hiện cùng lúc hoặc sau khi đường đói và đường sau ăn đã bắt đầu tăng — HbA1c xác nhận bức tranh toàn cảnh 3 tháng.',
+      'Can thiệp hiệu quả nhất: giảm 7% cân nặng + 150 phút/tuần vận động → giảm 58% nguy cơ tiến triển (DPP study, NEJM 2002). Metformin hiệu quả 31% — kém hơn lối sống.',
+      'Ngủ đủ giấc ảnh hưởng đến HbA1c: thiếu ngủ mạn tính (< 6h/đêm) làm tăng cortisol → tăng đường huyết lúc đói → HbA1c tăng 0.2–0.5%. Cải thiện giấc ngủ là can thiệp thường bị bỏ qua.',
+      'Stress mạn tính: cortisol kéo dài → tăng gluconeogenesis ở gan → HbA1c tăng dù chế độ ăn không thay đổi. Quản lý stress là một phần quan trọng của kiểm soát đường huyết.',
+      'Theo dõi: xét nghiệm HbA1c lại sau 3 tháng thay đổi lối sống. Mục tiêu trở về < 5.7% là hoàn toàn khả thi với phần lớn người tiền tiểu đường nếu kiên trì.',
+    ],
+    points: [
+      { icon: '📊', label: '117–137 mg/dL trung bình', note: 'Cao liên tục 3 tháng, không phải 1 lần' },
+      { icon: '🏃', label: 'Lối sống > metformin', note: 'DPP: 58% vs 31% giảm nguy cơ tiến triển' },
+      { icon: '😴', label: 'Ngủ đủ giấc', note: '<6h/đêm → HbA1c tăng 0.2–0.5%' },
+      { icon: '🔄', label: 'Xét nghiệm lại 3 tháng', note: 'Đánh giá hiệu quả can thiệp' },
+    ],
+  },
+  {
+    label: 'Tiểu đường', range: '≥ 6.5%', color: '#ef4444', rgb: '239,68,68',
+    note: 'Đáp ứng tiêu chí chẩn đoán tiểu đường type 2.',
+    icon: '🏥',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
+    keyFact: '💡 HbA1c ≥ 6.5% là 1 trong 4 tiêu chuẩn chẩn đoán tiểu đường của ADA 2023. Tương đương đường huyết trung bình ≥ 140 mg/dL liên tục trong 3 tháng — mức đủ để gây tổn thương mạch máu nhỏ theo thời gian.',
+    detail: 'HbA1c ≥ 6.5% xác nhận tiểu đường không phụ thuộc vào bữa ăn hay stress ngày đó — đây là "bằng chứng" 3 tháng về đường huyết cao mạn tính.',
+    details: [
+      'Tiêu chuẩn chẩn đoán ADA 2023 bằng HbA1c: ≥ 6.5% trong 2 lần xét nghiệm riêng biệt, HOẶC 1 lần nếu kèm triệu chứng điển hình hoặc đường huyết ngẫu nhiên ≥ 200 mg/dL.',
+      'HbA1c 6.5% tương đương eAG ~140 mg/dL; 7.0% ≈ 154 mg/dL; 8.0% ≈ 183 mg/dL; 9.0% ≈ 212 mg/dL; 10% ≈ 240 mg/dL. Mỗi 1% giảm HbA1c = giảm ~21% nguy cơ biến chứng.',
+      'Biến chứng vi mạch (microvascular) khởi phát khi HbA1c > 7% kéo dài: bệnh võng mạc (retinopathy — nguy cơ mù lòa), bệnh thận (nephropathy — tiến triển suy thận), bệnh thần kinh (neuropathy — tê bì, loét bàn chân).',
+      'UKPDS (UK Prospective Diabetes Study): giảm HbA1c 1% → giảm 37% biến chứng vi mạch, 21% biến chứng liên quan tiểu đường, 14% nhồi máu cơ tim. Mỗi 1% giảm có giá trị lâm sàng lớn.',
+      'Điều trị đầu tay: metformin (trừ khi có chống chỉ định) + thay đổi lối sống. Nếu HbA1c ≥ 9% hoặc có triệu chứng nặng: xem xét insulin ngay từ đầu để hạ nhanh đường huyết.',
+      'Theo dõi HbA1c khi điều trị: mỗi 3 tháng cho đến khi đạt mục tiêu, sau đó mỗi 6 tháng. Cũng theo dõi: creatinine, microalbumin niệu, lipid, HA, soi đáy mắt, khám bàn chân mỗi năm.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Mục tiêu < 7% khi điều trị', note: 'Giảm 37% biến chứng vi mạch' },
+      { icon: '👁️', label: 'Soi đáy mắt mỗi năm', note: 'Phát hiện sớm bệnh võng mạc' },
+      { icon: '🫘', label: 'Xét nghiệm thận mỗi năm', note: 'Creatinine + microalbumin niệu' },
+      { icon: '🦶', label: 'Khám bàn chân mỗi năm', note: 'Bệnh thần kinh → nguy cơ loét' },
+    ],
+  },
+  {
+    label: 'Mục tiêu điều trị ĐTĐ', range: '< 7%', color: '#3b82f6', rgb: '59,130,246',
+    note: 'Nếu bạn đang điều trị, đây là đích cần đạt.',
+    icon: '🎯',
+    img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80',
+    keyFact: '💡 HbA1c < 7% giảm 37% nguy cơ biến chứng vi mạch (mắt, thận, thần kinh) so với không kiểm soát. Tuy nhiên, mục tiêu được cá nhân hóa — người cao tuổi hoặc nguy cơ hạ đường huyết cao có thể dùng mục tiêu < 8%.',
+    detail: 'Mục tiêu HbA1c < 7% là ngưỡng chung của ADA cho người lớn mắc tiểu đường — nhưng điều trị tiểu đường ngày nay là cá nhân hóa, không phải one-size-fits-all.',
+    details: [
+      'ADA 2023 mục tiêu HbA1c theo nhóm: < 7% (hầu hết người lớn); < 6.5% (người trẻ, mới chẩn đoán, không có nguy cơ hạ đường huyết); < 8% (người cao tuổi, bệnh nền nặng, kỳ vọng sống ngắn).',
+      'Vì sao không hạ HbA1c càng thấp càng tốt: nghiên cứu ACCORD cho thấy nhóm kiểm soát chặt (HbA1c < 6%) có tỷ lệ tử vong cao hơn — do hạ đường huyết nghiêm trọng và tác dụng phụ của thuốc.',
+      '"Time in Range" (TIR) là chỉ số bổ sung quan trọng: % thời gian đường huyết trong 70–180 mg/dL. TIR > 70% tương ứng với HbA1c ~7% và gắn với ít biến chứng hơn.',
+      'Thuốc điều trị tiểu đường thế hệ mới (SGLT2 inhibitor, GLP-1 agonist): ngoài hạ đường huyết còn bảo vệ tim mạch và thận độc lập với HbA1c — đặc biệt ở người có bệnh tim mạch hoặc thận mạn.',
+      'Không chỉ HbA1c: kiểm soát toàn diện gồm HA < 130/80, LDL < 70 mg/dL (nếu có nguy cơ tim mạch), không hút thuốc, aspirin (nhóm nguy cơ cao) — ABC của tiểu đường (A1c, Blood pressure, Cholesterol).',
+      'Đạt mục tiêu HbA1c < 7% có thể giảm 40–50% nguy cơ đoạn chi, mù lòa, suy thận do tiểu đường — đầu tư vào kiểm soát đường huyết hôm nay là bảo vệ chất lượng sống 10–20 năm sau.',
+    ],
+    points: [
+      { icon: '📊', label: 'TIR > 70% song song', note: '70–180 mg/dL hầu hết thời gian' },
+      { icon: '👴', label: 'Người cao tuổi: < 8%', note: 'Tránh hạ đường huyết nguy hiểm hơn' },
+      { icon: '💊', label: 'SGLT2/GLP-1 bảo vệ tim', note: 'Lợi ích ngoài HbA1c' },
+      { icon: '🔤', label: 'ABC kiểm soát toàn diện', note: 'A1c + Blood pressure + Cholesterol' },
+    ],
+  },
 ];
 
 const DIET_TIPS = [
@@ -348,6 +432,7 @@ function BSCalculator() {
 export default function HealthBloodSugarPage() {
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [bsModal, setBsModal] = useState(null);
+  const [hbacModal, setHbacModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -437,11 +522,17 @@ export default function HealthBloodSugarPage() {
         <p className="text-muted text-lg mb-6">HbA1c đo lượng glucose gắn vào hemoglobin, phản ánh kiểm soát đường huyết trong 2–3 tháng qua. Không bị ảnh hưởng bởi ăn uống ngay trước đó.</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {HBAC_CATS.map((c, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4">
+            <div key={i}
+              onClick={() => setHbacModal(i)}
+              className="rounded-2xl border border-border bg-surface p-4 cursor-pointer transition-colors"
+              style={{ borderColor: `rgba(${c.rgb},0.20)` }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${c.rgb},0.55)`}
+              onMouseLeave={e => e.currentTarget.style.borderColor = `rgba(${c.rgb},0.20)`}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-3 h-3 rounded-full" style={{ background: c.color }} />
-                <span className="font-bold text-lg text-text">{c.label}</span>
-                <span className="ml-auto font-mono text-lg font-bold" style={{ color: c.color }}>{c.range}</span>
+                <span className="font-bold text-lg text-text flex-1">{c.label}</span>
+                <span className="font-mono text-lg font-bold" style={{ color: c.color }}>{c.range}</span>
+                <span className="text-muted text-sm ml-1">→</span>
               </div>
               <p className="text-base text-muted">{c.note}</p>
             </div>
@@ -482,6 +573,18 @@ export default function HealthBloodSugarPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
 
+      {hbacModal !== null && (
+        <BSModal
+          item={HBAC_CATS[hbacModal]}
+          idx={hbacModal}
+          total={HBAC_CATS.length}
+          onClose={() => setHbacModal(null)}
+          onPrev={() => setHbacModal(i => Math.max(0, i - 1))}
+          onNext={() => setHbacModal(i => Math.min(HBAC_CATS.length - 1, i + 1))}
+          hasPrev={hbacModal > 0}
+          hasNext={hbacModal < HBAC_CATS.length - 1}
+        />
+      )}
       {bsModal !== null && (
         <BSModal
           item={BS_CATS[bsModal]}

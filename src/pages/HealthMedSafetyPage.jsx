@@ -122,12 +122,132 @@ const MED_RULES = [
 ];
 
 const DANGER_PHRASES = [
-  { phrase: '"Uống nhiều hơn cho mau khỏi"', risk: 'Quá liều, độc cho gan/thận tùy loại thuốc' },
-  { phrase: '"Thuốc tây hại, dùng thuốc nam cho an toàn"', risk: 'Nhiều thảo dược tương tác nghiêm trọng với thuốc tây (St. John\'s Wort + thuốc chống trầm cảm, kava + an thần)' },
-  { phrase: '"Kháng sinh uống vài ngày thấy khỏi thì thôi"', risk: 'Kháng kháng sinh — vi khuẩn sống sót phát triển đề kháng, lần sau khó điều trị hơn' },
-  { phrase: '"Paracetamol an toàn, uống nhiều không sao"', risk: 'Paracetamol > 4g/ngày (người bình thường) hoặc > 2g/ngày (uống rượu nhiều) → suy gan cấp' },
-  { phrase: '"Vitamin uống bao nhiêu cũng được"', risk: 'Vitamin A, D, E, K (tan trong dầu) tích lũy → độc liều cao. Vitamin A: > 10.000 IU/ngày gây dị tật thai' },
-  { phrase: '"Thuốc bổ không cần đơn"', risk: 'TPCN không qua kiểm duyệt nghiêm ngặt như thuốc, có thể nhiễm kim loại nặng, tương tác thuốc' },
+  {
+    icon: '📈', phrase: '"Uống nhiều hơn cho mau khỏi"',
+    risk: 'Quá liều, độc cho gan/thận tùy loại thuốc',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
+    keyFact: '🚨 Liều thuốc được tính toán dựa trên dược động học — khoảng cách giữa liều điều trị và liều gây độc (therapeutic index) thường rất hẹp. Tăng liều không có nghĩa là "mau khỏi hơn" — mà là đang tiến gần ngưỡng gây tổn thương cơ quan.',
+    details: [
+      'Chỉ số điều trị hẹp (narrow therapeutic index): một số thuốc như digoxin, warfarin, lithium, phenytoin, theophylline có khoảng cách rất nhỏ giữa liều điều trị và liều độc — uống gấp đôi có thể gây ngộ độc nghiêm trọng dù chỉ tăng một chút.',
+      'Paracetamol — cạm bẫy phổ biến nhất: ở liều điều trị, gan chuyển hóa paracetamol an toàn. Khi quá liều, con đường chính bão hòa → enzyme CYP2E1 tạo ra NAPQI (chất độc mạnh). Glutathione dùng để trung hòa NAPQI cạn kiệt → tổn thương tế bào gan không hồi phục sau 3–5 ngày.',
+      'NSAID (ibuprofen, naproxen) quá liều: viêm loét dạ dày cấp, xuất huyết tiêu hóa, suy thận cấp (ức chế prostaglandin thận → co mạch máu thận), và trên liều 3.200mg/ngày ibuprofen tăng nguy cơ đột quỵ và nhồi máu cơ tim.',
+      'Vitamin D liều cao kéo dài: nhiều người tự tăng liều vì "thiếu vitamin D thì uống nhiều cho nhanh". Vitamin D > 10.000 IU/ngày kéo dài → hypercalcemia (calci máu cao) → buồn nôn, sỏi thận, vôi hóa mô mềm, rối loạn nhịp tim. Cần đo 25(OH)D trước khi điều chỉnh liều.',
+      'Kháng sinh quá liều không chữa nhanh hơn: hiệu quả kháng sinh (trừ nhóm concentration-dependent như aminoglycoside) phụ thuộc vào thời gian duy trì nồng độ trên MIC, không phải nồng độ đỉnh. Tăng liều amoxicillin không diệt khuẩn nhanh hơn — chỉ tăng nguy cơ tiêu chảy và phá vỡ vi khuẩn có ích.',
+      'Triệu chứng ngộ độc cần cấp cứu ngay: buồn nôn/nôn nhiều sau uống thuốc, đau bụng dữ dội, vàng da/vàng mắt (tổn thương gan), tiểu ít/không tiểu (suy thận), rối loạn ý thức, co giật. Nếu nghi ngộ độc thuốc: gọi 115 hoặc đến cấp cứu ngay — không chờ triệu chứng nặng hơn.',
+    ],
+    points: [
+      { icon: '⚖️', label: 'Therapeutic index hẹp — rất nguy hiểm', note: 'Digoxin, warfarin, lithium, phenytoin — tăng liều nhỏ = ngộ độc' },
+      { icon: '🔥', label: 'Paracetamol: NAPQI phá gan sau 3–5 ngày', note: 'Ngộ độc không đau ngay — tổn thương âm thầm đến khi quá muộn' },
+      { icon: '💊', label: 'Vitamin D > 10.000 IU/ngày → sỏi thận', note: 'Đo 25(OH)D máu trước khi tự điều chỉnh liều cao' },
+      { icon: '🚨', label: 'Nghi ngộ độc thuốc → gọi 115 ngay', note: 'Không chờ triệu chứng nặng — cửa sổ điều trị rất hẹp' },
+    ],
+  },
+  {
+    icon: '🌿', phrase: '"Thuốc tây hại, dùng thuốc nam cho an toàn"',
+    risk: 'Nhiều thảo dược tương tác nghiêm trọng với thuốc tây (St. John\'s Wort + thuốc chống trầm cảm, kava + an thần)',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80',
+    keyFact: '🌿 "Tự nhiên" không đồng nghĩa với "an toàn". Nhiều thảo dược chứa hoạt chất dược lý mạnh, tương tác với thuốc tây, và không trải qua kiểm duyệt lâm sàng nghiêm ngặt trước khi bán ra thị trường.',
+    details: [
+      'St. John\'s Wort (Hypericum perforatum) — kẻ gây rối nổi tiếng nhất: cảm ứng mạnh enzyme CYP3A4 và P-glycoprotein → giảm nồng độ hàng chục loại thuốc quan trọng: thuốc chống HIV (indinavir giảm 57%), thuốc tránh thai (có thể dẫn đến mang thai ngoài ý muốn), warfarin (giảm hiệu quả chống đông), cyclosporine (tăng thải ghép), digoxin, nhiều thuốc chống trầm cảm.',
+      'Kava (Piper methysticum) và độc gan: kava là thảo dược giảm lo âu phổ biến. Tuy nhiên, có trên 100 ca suy gan cấp và tử vong được báo cáo toàn cầu, dẫn đến lệnh cấm tại Đức, Thụy Sĩ, Canada. Kết hợp với rượu hoặc thuốc an thần → tăng nguy cơ ức chế hô hấp.',
+      'Aristolochic acid (mộc thông, phòng kỷ, một số bài thuốc đông y): chất độc thận cực mạnh và là chất gây ung thư (nhóm 1 IARC). Đã gây ra hàng ngàn ca suy thận mãn tính ở Bỉ (Belgian herbal nephropathy) và nhiều quốc gia châu Á. Hiện bị cấm ở nhiều nước nhưng vẫn lưu hành ở một số thị trường.',
+      'Pyrrolizidine alkaloids (PA) trong comfrey, coltsfoot, borage: chất độc gan gây viêm tắc tĩnh mạch gan (hepatic veno-occlusive disease), đặc biệt nguy hiểm ở trẻ em và phụ nữ mang thai. Comfrey từng được dùng rộng rãi tại Việt Nam và châu Á.',
+      'Ô nhiễm và giả mạo trong thảo dược: nhiều nghiên cứu phân tích TPCN thảo dược phát hiện kim loại nặng (chì, thủy ngân, asen — đặc biệt trong thuốc đông y nhập từ Trung Quốc), thành phần dược phẩm ẩn (sildenafil trong thuốc tăng cường sinh lý, corticosteroid trong thuốc chữa viêm khớp), và hoạt chất không được công bố.',
+      'Tương tác thảo dược với thuốc kê đơn thường gặp tại Việt Nam: tỏi liều cao + warfarin → tăng chảy máu; gừng + aspirin → tăng chảy máu; nhân sâm + warfarin → ảnh hưởng INR; dầu cá > 3g/ngày + warfarin → tăng nguy cơ chảy máu. Luôn thông báo cho bác sĩ tất cả thảo dược đang dùng.',
+    ],
+    points: [
+      { icon: '🌱', label: 'St. John\'s Wort giảm thuốc HIV 57%', note: 'Cũng vô hiệu hóa thuốc tránh thai, warfarin, cyclosporine' },
+      { icon: '⚗️', label: 'Kava → suy gan cấp, bị cấm nhiều nước', note: 'Kết hợp với rượu/an thần → nguy cơ ức chế hô hấp' },
+      { icon: '🧪', label: 'Aristolochic acid → suy thận mãn, ung thư', note: 'Nhóm 1 IARC — chất gây ung thư đã được xác nhận' },
+      { icon: '⚠️', label: 'TPCN thảo dược: kiểm tra nguồn gốc', note: 'Ô nhiễm kim loại nặng và hoạt chất ẩn phổ biến hơn bạn nghĩ' },
+    ],
+  },
+  {
+    icon: '🦠', phrase: '"Kháng sinh uống vài ngày thấy khỏi thì thôi"',
+    risk: 'Kháng kháng sinh — vi khuẩn sống sót phát triển đề kháng, lần sau khó điều trị hơn',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1576671081837-49000212a370?w=800&q=80',
+    keyFact: '🦠 Việt Nam nằm trong top các quốc gia có tỷ lệ đề kháng kháng sinh cao nhất thế giới. Ngưng kháng sinh sớm khi "thấy đỡ" là một trong các nguyên nhân chính tạo ra siêu vi khuẩn kháng thuốc.',
+    details: [
+      'Tại sao triệu chứng hết sớm hơn vi khuẩn bị tiêu diệt: hệ miễn dịch và kháng sinh cùng chiến đấu — triệu chứng cải thiện khi vi khuẩn giảm xuống dưới ngưỡng gây bệnh, nhưng vẫn còn vi khuẩn sống sót có khả năng đề kháng. Những vi khuẩn này phát triển mạnh khi ngưng kháng sinh.',
+      'Cơ chế chọn lọc kháng thuốc (selective pressure): quần thể vi khuẩn luôn có biến thể ngẫu nhiên. Kháng sinh tiêu diệt vi khuẩn nhạy cảm, chừa lại những vi khuẩn có đặc tính đề kháng. Nếu ngưng quá sớm, những vi khuẩn đề kháng này nhân lên và trở thành chủng mới khó điều trị.',
+      'Tình trạng đề kháng tại Việt Nam: nghiên cứu ASTS và GARP-Vietnam ghi nhận MRSA (Staphylococcus aureus kháng methicillin) chiếm 30–40% mẫu phân lập; E. coli kháng fluoroquinolone > 60%; Klebsiella pneumoniae kháng carbapenem ngày càng tăng — kháng sinh "cuối tuyến" dần mất hiệu lực.',
+      'Kháng sinh không diệt virus — nguyên nhân đề kháng phổ biến: 70–80% cảm lạnh, cúm thông thường, và viêm họng là do virus. Kháng sinh hoàn toàn vô dụng với virus nhưng vẫn giết vi khuẩn có ích trong đường ruột, tạo cơ hội cho vi khuẩn đề kháng chiếm chỗ.',
+      'Kháng sinh time-dependent vs concentration-dependent: nhóm time-dependent (penicillin, amoxicillin, cephalosporin, metronidazole) hiệu quả khi nồng độ duy trì trên MIC trong suốt khoảng cách liều. Uống trễ 2–4 giờ → nồng độ tụt dưới MIC → vi khuẩn phát triển trong khoảng thời gian đó. Đây là lý do phải uống đúng giờ và đủ liệu trình.',
+      'Siêu vi khuẩn và hậu quả toàn cầu: WHO tuyên bố đề kháng kháng sinh là một trong 10 mối đe dọa sức khỏe toàn cầu lớn nhất. Ước tính đến 2050, đề kháng kháng sinh có thể gây 10 triệu ca tử vong/năm — vượt qua ung thư. Mỗi lần ngưng kháng sinh sớm là góp phần vào khủng hoảng toàn cầu này.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Hết triệu chứng ≠ hết vi khuẩn', note: 'Vi khuẩn đề kháng vẫn còn — ngưng sớm để chúng sinh sôi' },
+      { icon: '🇻🇳', label: 'Việt Nam: MRSA 30–40%, E.coli kháng FQ 60%+', note: 'Top đề kháng kháng sinh cao nhất thế giới' },
+      { icon: '🦠', label: 'Virus không cần kháng sinh', note: '70–80% cảm/cúm/viêm họng là do virus — kháng sinh vô dụng' },
+      { icon: '💀', label: 'Đến 2050: 10 triệu người/năm vì siêu vi khuẩn', note: 'Mỗi lần dùng sai kháng sinh góp phần vào khủng hoảng toàn cầu' },
+    ],
+  },
+  {
+    icon: '🔥', phrase: '"Paracetamol an toàn, uống nhiều không sao"',
+    risk: 'Paracetamol > 4g/ngày (người bình thường) hoặc > 2g/ngày (uống rượu nhiều) → suy gan cấp',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=800&q=80',
+    keyFact: '⚠️ Paracetamol là nguyên nhân hàng đầu gây suy gan cấp tính tại Mỹ, Anh và nhiều nước phát triển — không phải vì người ta cố ý dùng nhiều, mà vì vô tình cộng dồn từ nhiều nguồn khác nhau.',
+    details: [
+      'Cơ chế độc gan (hepatotoxicity): ở liều bình thường, paracetamol được glucuronide hóa và sulfate hóa an toàn. Khi quá liều, hai con đường này bão hòa → CYP2E1 chuyển hóa tạo ra NAPQI (N-acetyl-p-benzoquinoneimine) — chất cực độc. Glutathione dùng để trung hòa NAPQI cạn kiệt nhanh → NAPQI liên kết với protein tế bào gan → hoại tử tế bào gan.',
+      'Giới hạn an toàn: người bình thường khỏe mạnh — tối đa 4g/ngày (8 viên 500mg), chia đều mỗi 6 giờ. Người uống rượu thường xuyên — tối đa 2g/ngày vì CYP2E1 đã tăng hoạt và glutathione cạn kiệt do rượu. Người suy gan, thiếu dinh dưỡng nặng, đang nhịn ăn kéo dài — cũng cần giảm liều.',
+      'Nguy hiểm ẩn: paracetamol có trong hàng trăm thuốc kết hợp không kê đơn — thuốc cảm cúm (Panadol Cold, Decolgen), thuốc ho, thuốc ngủ kết hợp, thuốc giảm đau liều cao. Người uống 2 viên Panadol + 1 gói Decolgen + 1 viên Efferalgan = đã gần đến giới hạn 4g/ngày mà không biết.',
+      'Dấu hiệu ngộ độc theo giai đoạn: Giai đoạn 1 (0–24h): buồn nôn, nôn, mệt — dễ bị xem là triệu chứng bình thường. Giai đoạn 2 (24–72h): đau hạ sườn phải, men gan tăng. Giai đoạn 3 (72–96h): suy gan cấp, vàng da, rối loạn đông máu, có thể tử vong. Giai đoạn 4: hồi phục hoặc tử vong/ghép gan.',
+      'Cửa sổ điều trị hẹp: N-acetylcysteine (NAC) là thuốc giải độc hiệu quả nếu dùng trong 8–10 giờ đầu sau uống quá liều — hiệu quả giảm mạnh sau 24 giờ. Đây là lý do phải đến cấp cứu ngay khi nghi ngờ, không chờ triệu chứng rõ ràng.',
+      'Lời khuyên thực tế: luôn đọc nhãn tất cả thuốc đang uống để tìm "paracetamol", "acetaminophen" (tên ở Mỹ), "APAP". Nếu uống nhiều hơn 1 loại thuốc chứa paracetamol, cộng tổng liều lại. Không uống rượu trong vòng 24 giờ trước/sau khi dùng paracetamol liều cao.',
+    ],
+    points: [
+      { icon: '🧬', label: 'NAPQI phá hủy tế bào gan — không hồi phục', note: 'Glutathione cạn trong 8–10 giờ — cửa sổ điều trị rất hẹp' },
+      { icon: '📦', label: 'Nhiều thuốc cùng chứa paracetamol', note: 'Decolgen + Panadol + Efferalgan = gần đến giới hạn 4g/ngày' },
+      { icon: '🍷', label: 'Uống rượu: giới hạn chỉ còn 2g/ngày', note: 'CYP2E1 tăng hoạt → tạo NAPQI nhiều hơn, glutathione ít hơn' },
+      { icon: '⏰', label: 'Cấp cứu trong 8–10 giờ đầu — N-acetylcysteine', note: 'Sau 24h: NAC giảm hiệu quả mạnh — không đợi triệu chứng' },
+    ],
+  },
+  {
+    icon: '💊', phrase: '"Vitamin uống bao nhiêu cũng được"',
+    risk: 'Vitamin A, D, E, K (tan trong dầu) tích lũy → độc liều cao. Vitamin A: > 10.000 IU/ngày gây dị tật thai',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1512428813834-c702c7702b78?w=800&q=80',
+    keyFact: '💊 Vitamin tan trong nước (B, C) được thải qua nước tiểu nếu thừa — tương đối an toàn ở liều cao. Nhưng vitamin tan trong dầu (A, D, E, K) tích lũy trong mô mỡ và gan, gây độc khi dùng kéo dài ở liều cao.',
+    details: [
+      'Vitamin A (retinol) — chất gây dị tật thai hàng đầu: liều > 10.000 IU/ngày ở phụ nữ mang thai (đặc biệt 3 tháng đầu) tăng nguy cơ dị tật tim, mạch máu lớn, sứt môi hở hàm ếch, dị tật thần kinh. Isotretinoin (thuốc trị mụn Accutane) — dạng tổng hợp vitamin A — yêu cầu hai biện pháp tránh thai vì nguy cơ dị tật cực cao. Người lớn: ngộ độc cấp (> 150.000 IU một lần) gây buồn nôn, nhức đầu; mãn tính (> 15.000 IU/ngày kéo dài) gây loãng xương, tổn thương gan.',
+      'Vitamin D — "thần dược" bị lạm dụng: mức an toàn tối đa (UL) của WHO là 4.000 IU/ngày cho người lớn. Nhiều người tự uống 10.000–50.000 IU/ngày mà không theo dõi nồng độ. Hypervitaminosis D → hypercalcemia (calci máu cao) → buồn nôn, khát nước, tiểu nhiều, sỏi thận, vôi hóa thận và mạch máu, rối loạn nhịp tim. Cần đo 25(OH)D máu để biết liều phù hợp.',
+      'Vitamin E liều cao và đông máu: nghiên cứu HOPE-TOO cho thấy vitamin E > 400 IU/ngày tăng nguy cơ suy tim và tử vong do tất cả nguyên nhân. Vitamin E ức chế kết tập tiểu cầu và tương tác với warfarin → tăng chảy máu. Cần ngưng vitamin E > 400 IU ít nhất 2 tuần trước phẫu thuật.',
+      'Vitamin B6 (pyridoxine) và bệnh thần kinh ngoại vi: đây là vitamin tan trong nước nhưng vẫn có độc liều cao. B6 > 500mg/ngày kéo dài → neuropathy ngoại vi (tê, đau, mất cảm giác ở tay chân), có thể mất khả năng đi lại. Tổn thương thần kinh có thể không hồi phục sau khi ngưng.',
+      'Vitamin C liều cao (> 2g/ngày): mặc dù ít nguy hiểm hơn, liều cao làm tăng oxalate niệu → sỏi thận (đặc biệt ở người có tiền sử sỏi thận). Cũng có thể tăng hấp thu sắt quá mức ở người bị hemochromatosis. Và do "rebound scurvy": khi ngưng đột ngột sau dùng liều cao kéo dài, cơ thể tiếp tục đào thải nhanh → thiếu vitamin C tạm thời.',
+      'Nguyên tắc chung: bổ sung vitamin chỉ khi có bằng chứng thiếu hụt (xét nghiệm máu) hoặc nhu cầu tăng (mang thai, bệnh hấp thu kém, chế độ ăn hạn chế đặc biệt). "Phòng ngừa" bằng liều cao mà không theo dõi là không cần thiết và có thể gây hại. Thực phẩm đa dạng là nguồn vitamin tốt nhất và an toàn nhất.',
+    ],
+    points: [
+      { icon: '🤰', label: 'Vitamin A > 10.000 IU → dị tật thai', note: 'Tuyệt đối không dùng liều cao khi mang thai hoặc chuẩn bị mang thai' },
+      { icon: '☀️', label: 'Vitamin D: đo 25(OH)D trước khi dùng liều cao', note: 'UL là 4.000 IU/ngày — không tự tăng lên 10.000–50.000 IU' },
+      { icon: '🩸', label: 'Vitamin E > 400 IU: tăng chảy máu, ngưng trước mổ', note: 'Ức chế tiểu cầu + tương tác warfarin — ngưng 2 tuần trước phẫu thuật' },
+      { icon: '🦵', label: 'Vitamin B6 > 500mg/ngày → liệt tay chân', note: 'Vitamin tan trong nước nhưng vẫn độc ở liều cao — tổn thương thần kinh' },
+    ],
+  },
+  {
+    icon: '📦', phrase: '"Thuốc bổ không cần đơn"',
+    risk: 'TPCN không qua kiểm duyệt nghiêm ngặt như thuốc, có thể nhiễm kim loại nặng, tương tác thuốc',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1576107232684-1279f55f1e4f?w=800&q=80',
+    keyFact: '📋 Tại hầu hết các quốc gia, thực phẩm chức năng (TPCN) không cần phải chứng minh hiệu quả trước khi được bán ra. Nhà sản xuất không bắt buộc phải báo cáo tác dụng phụ. FDA chỉ can thiệp sau khi có vấn đề xảy ra.',
+    details: [
+      'Khung pháp lý lỏng lẻo: tại Mỹ, Dietary Supplement Health and Education Act (DSHEA 1994) cho phép bán TPCN mà không cần chứng minh hiệu quả hay an toàn trước khi bán — ngược hoàn toàn với thuốc. Tại Việt Nam, TPCN được quản lý như thực phẩm, không như thuốc — tiêu chuẩn kiểm duyệt thấp hơn đáng kể.',
+      'Ô nhiễm kim loại nặng: phân tích hàng ngàn mẫu TPCN từ nhiều nghiên cứu độc lập (ConsumerLab, NSF, AOAC) phát hiện 20–30% chứa chì, thủy ngân, cadmium, asen vượt mức an toàn. Rủi ro cao nhất: thuốc đông y nhập từ Trung Quốc và Ấn Độ, sản phẩm chiết xuất từ thực vật mọc ở đất ô nhiễm.',
+      'Thành phần dược phẩm ẩn (undisclosed pharmaceutical ingredients): FDA đã phát hiện hàng trăm sản phẩm TPCN chứa hoạt chất dược phẩm không công bố — phổ biến nhất: sildenafil/tadalafil trong "thuốc tăng cường sinh lý nam", sibutramine (thuốc giảm cân đã bị thu hồi vì nguy cơ tim mạch), anabolic steroids trong sản phẩm tăng cơ, corticosteroid trong "thuốc xương khớp" thảo dược.',
+      'Tương tác thực sự với thuốc kê đơn: dầu cá > 3g/ngày + warfarin → tăng nguy cơ chảy máu; CoQ10 + warfarin → ảnh hưởng INR; canxi + levothyroxine → giảm hấp thu hormone tuyến giáp; kẽm liều cao → cản trở hấp thu đồng → thiếu đồng; sắt + hầu hết kháng sinh → giảm hấp thu kháng sinh. Không bao giờ coi TPCN là "vô hại với thuốc".',
+      'Tiêu chuẩn chất lượng đáng tin cậy: tìm nhãn bên thứ ba độc lập — NSF International, USP Verified, ConsumerLab, Informed-Sport. Các nhãn này chứng nhận sản phẩm chứa đúng thành phần ghi trên nhãn, không ô nhiễm, và không chứa chất bị cấm (quan trọng với vận động viên). Không có nghĩa là "hiệu quả" — chỉ là "sạch".',
+      'Quy tắc vàng: luôn thông báo với bác sĩ và dược sĩ tất cả TPCN đang dùng, ngay cả "chỉ là vitamin" hay "thảo dược tự nhiên". Đặc biệt quan trọng trước phẫu thuật, khi điều chỉnh thuốc mãn tính, và khi mang thai. Bác sĩ không thể giúp bạn nếu không biết đủ thông tin.',
+    ],
+    points: [
+      { icon: '📜', label: 'TPCN không cần chứng minh hiệu quả', note: 'FDA/Bộ Y tế VN: TPCN bán ra không cần thử nghiệm lâm sàng trước' },
+      { icon: '☠️', label: '20–30% TPCN chứa kim loại nặng vượt ngưỡng', note: 'Đặc biệt: thuốc đông y nhập từ Trung Quốc, Ấn Độ' },
+      { icon: '💉', label: 'Hoạt chất ẩn: sildenafil, steroid, sibutramine', note: 'FDA đã phát hiện hàng trăm sản phẩm "thảo dược" chứa thuốc thật' },
+      { icon: '🔍', label: 'Tìm nhãn NSF / USP Verified / ConsumerLab', note: 'Chứng nhận độc lập = sản phẩm sạch, đúng thành phần (không = hiệu quả)' },
+    ],
+  },
 ];
 
 const SUPPLEMENT_CHECK = [
@@ -138,6 +258,110 @@ const SUPPLEMENT_CHECK = [
   { label: 'Sắt', note: 'Chỉ bổ sung khi có chỉ định thiếu máu. Thừa sắt gây táo bón, có hại cho gan.' },
   { label: 'Canxi', note: 'Hấp thu tốt nhất từ thực phẩm. Bổ sung: canxi citrate tốt hơn carbonate. Không uống cùng sắt.' },
 ];
+
+function DangerCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-4 cursor-pointer transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.5)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 18px rgba(${item.rgb},0.1)` : 'none', transform: hovered ? 'translateY(-2px)' : 'translateY(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-start gap-3 mb-2">
+        <span className="text-xl shrink-0 mt-0.5">{item.icon}</span>
+        <div className="font-bold text-base leading-snug" style={{ color: '#fbbf24' }}>{item.phrase}</div>
+        <span className="ml-auto text-xs px-2 py-0.5 rounded-full font-bold shrink-0 transition-opacity duration-200 whitespace-nowrap"
+          style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>Chi tiết →</span>
+      </div>
+      <p className="text-sm text-muted flex gap-2 pl-8">
+        <span className="text-red-400 shrink-0">⚠</span>
+        <span>{item.risk}</span>
+      </p>
+    </div>
+  );
+}
+
+function DangerModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.phrase} className="w-full h-full object-cover" style={{ opacity: 0.4 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+              {item.icon}
+            </div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: 'rgba(220,38,38,0.18)', color: '#f87171', border: '1px solid rgba(220,38,38,0.4)' }}>⚠ Quan niệm sai lầm</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-lg md:text-xl mb-1 leading-snug" style={{ color: '#fbbf24' }}>{item.phrase}</h2>
+          <p className="text-sm mb-4 flex gap-2" style={{ color: 'rgba(252,165,165,0.9)' }}><span className="shrink-0">⚠</span><span>{item.risk}</span></p>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function MedCard({ rule, onClick }) {
   const [hovered, setHovered] = useState(false);
@@ -269,6 +493,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 export default function HealthMedSafetyPage() {
   const [medModal, setMedModal] = useState(null);
+  const [dangerModal, setDangerModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -333,13 +558,10 @@ export default function HealthMedSafetyPage() {
 
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Những Câu Nguy Hiểm Cần Nhớ</h2>
-        <p className="text-muted text-lg mb-6">Những quan niệm phổ biến nhưng sai — và tại sao chúng nguy hiểm.</p>
+        <p className="text-muted text-lg mb-6">Những quan niệm phổ biến nhưng sai — và tại sao chúng nguy hiểm. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-3">
           {DANGER_PHRASES.map((d, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4">
-              <div className="font-bold text-lg text-amber-400 mb-2">"{d.phrase}"</div>
-              <p className="text-base text-muted flex gap-2"><span className="text-red-400 shrink-0">⚠</span>{d.risk}</p>
-            </div>
+            <DangerCard key={i} item={d} onClick={() => setDangerModal(i)} />
           ))}
         </div>
       </RevealBlock>
@@ -373,6 +595,18 @@ export default function HealthMedSafetyPage() {
       <p className="text-base text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục sức khỏe. Không thay thế tư vấn của bác sĩ hoặc dược sĩ.</p>
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
 
+      {dangerModal !== null && (
+        <DangerModal
+          item={DANGER_PHRASES[dangerModal]}
+          idx={dangerModal}
+          total={DANGER_PHRASES.length}
+          onClose={() => setDangerModal(null)}
+          onPrev={() => setDangerModal(i => Math.max(0, i - 1))}
+          onNext={() => setDangerModal(i => Math.min(DANGER_PHRASES.length - 1, i + 1))}
+          hasPrev={dangerModal > 0}
+          hasNext={dangerModal < DANGER_PHRASES.length - 1}
+        />
+      )}
       {medModal !== null && (
         <MedModal
           item={MED_RULES[medModal]}

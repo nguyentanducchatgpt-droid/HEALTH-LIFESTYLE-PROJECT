@@ -250,12 +250,138 @@ const HBAC_CATS = [
 ];
 
 const DIET_TIPS = [
-  { icon: '🥗', tip: 'Ưu tiên rau xanh, đậu, ngũ cốc nguyên hạt — GI thấp, tăng đường chậm hơn.' },
-  { icon: '🍚', tip: 'Ăn cơm trắng ít hơn, thay bằng gạo lứt, khoai lang, bún gạo lứt.' },
-  { icon: '🥩', tip: 'Kết hợp protein + chất xơ trong mỗi bữa ăn để làm chậm hấp thu đường.' },
-  { icon: '🚶', tip: 'Đi bộ 10–15 phút sau bữa ăn giúp giảm đường huyết sau ăn hiệu quả.' },
-  { icon: '💧', tip: 'Uống đủ nước (30–35ml/kg/ngày) — mất nước làm tăng nồng độ đường huyết.' },
-  { icon: '😴', tip: 'Ngủ đủ 7–9 tiếng. Thiếu ngủ làm tăng insulin resistance trong vài ngày.' },
+  {
+    icon: '🥗', label: 'Thực Phẩm GI Thấp', range: 'Dinh dưỡng',
+    color: '#22c55e', rgb: '34,197,94',
+    tip: 'Ưu tiên rau xanh, đậu, ngũ cốc nguyên hạt — GI thấp, tăng đường chậm hơn.',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',
+    keyFact: '💡 Glycemic Index (GI) đo tốc độ thực phẩm tăng đường huyết. GI < 55 = thấp (rau xanh, đậu, ngũ cốc nguyên hạt); GI ≥ 70 = cao (cơm trắng, bánh mì). Ăn GI thấp giúp đường huyết tăng chậm và đều — không có "đỉnh đường" sau bữa ăn.',
+    detail: 'Chỉ số đường huyết (GI) phản ánh tốc độ glucose vào máu sau khi ăn. Ưu tiên GI thấp là nền tảng kiểm soát đường huyết không cần đếm từng gram carbohydrate.',
+    details: [
+      'GI thấp (< 55): rau xanh (hầu hết GI < 15), đậu xanh/đen/đỏ (GI 25–40), yến mạch (GI 55), khoai lang (GI 44–55), ngũ cốc nguyên hạt — hấp thu chậm, không gây đỉnh đường.',
+      'GI cao (≥ 70): cơm trắng (GI 72–89), bánh mì trắng (GI 75), khoai tây luộc (GI 78), đường trắng (GI 65–70) — gây đường huyết tăng nhanh, đỉnh cao, rồi xuống nhanh gây đói.',
+      'Glycemic Load (GL) quan trọng hơn GI đơn thuần: GL = GI × lượng carb trong khẩu phần ÷ 100. Dưa hấu có GI 72 nhưng GL = 7 (ăn ít) — thực ra không quá nguy hiểm nếu ăn vừa phải.',
+      'Rau xanh không tinh bột (cải, bông cải, rau muống, bí xanh, dưa leo): ăn nhiều thoải mái — GI cực thấp, nhiều chất xơ làm chậm hấp thu toàn bộ bữa ăn, tạo cảm giác no.',
+      'Đậu các loại (đậu lăng, đậu xanh, đậu đen): nguồn protein + carb + chất xơ hoàn hảo — no lâu, đường huyết ổn định, còn giúp giảm cholesterol LDL.',
+      'Chiến lược thực tế: lấp 1/2 đĩa bằng rau xanh → 1/4 protein → 1/4 carb GI thấp. Thứ tự ăn: rau trước, protein + chất béo, carb cuối → giảm đỉnh đường sau ăn 20–30%.',
+    ],
+    points: [
+      { icon: '🥬', label: 'Rau xanh không tinh bột', note: 'GI < 15 — ăn nhiều thoải mái' },
+      { icon: '🫘', label: 'Đậu các loại', note: 'Protein + chất xơ + GI thấp hoàn hảo' },
+      { icon: '📊', label: 'GL quan trọng hơn GI', note: 'GI × lượng carb / 100 = GL thực tế' },
+      { icon: '🍽️', label: '½ đĩa là rau xanh', note: 'Nguyên tắc đĩa ăn — đơn giản và hiệu quả' },
+    ],
+  },
+  {
+    icon: '🍚', label: 'Thay Thế Carb Tinh Chế', range: 'Chế độ ăn',
+    color: '#84cc16', rgb: '132,204,22',
+    tip: 'Ăn cơm trắng ít hơn, thay bằng gạo lứt, khoai lang, bún gạo lứt.',
+    img: 'https://images.unsplash.com/photo-1536304993881-ff86e0c9c3c8?w=800&q=80',
+    keyFact: '💡 Thay 1 chén cơm trắng (GI 72–89) bằng ½ chén gạo lứt + ½ chén khoai lang: đường huyết sau ăn thường giảm 20–40 mg/dL — đủ để chuyển từ vùng tiền tiểu đường (140–199) xuống vùng bình thường (< 140).',
+    detail: 'Carb tinh chế bị tước bỏ phần lớn chất xơ và vi chất trong quá trình chế biến — glucose hấp thu vào máu gần như ngay lập tức, gây đỉnh đường cao và tụt nhanh sau đó.',
+    details: [
+      'Cơm trắng là thực phẩm chủ đạo người Việt ăn 2–3 lần/ngày với GI 72–89 — nghiên cứu Harvard (2012) cho thấy mỗi phần cơm trắng thêm/ngày tăng nguy cơ tiểu đường type 2 thêm 11%.',
+      'Gạo lứt: GI 50–55, giữ nguyên cám và mầm — giàu magie (đồng yếu tố của insulin), chất xơ không hòa tan làm chậm tiêu hóa. Bắt đầu bằng trộn 50% gạo lứt + 50% gạo trắng để làm quen.',
+      'Khoai lang: GI 44–55, giàu beta-carotene và kali — trong khi khoai tây luộc GI 78. Một củ khoai lang vừa (150g) cung cấp 130kcal, 27g carb, 4g chất xơ.',
+      'Bún gạo lứt / bún tươi: GI thấp hơn cơm trắng vì tinh bột retrogradation (thoái hóa) khi nguội làm một phần trở thành resistant starch — tinh bột kháng không hấp thu như glucose thông thường.',
+      'Quinoa: protein hoàn chỉnh + GI 53 — ít phổ biến hơn nhưng là lựa chọn tốt cho người cần đa dạng hóa nguồn carb.',
+      'Không cần cắt hoàn toàn cơm trắng: giảm khẩu phần + kết hợp với protein và rau nhiều hơn đã đủ giảm đáng kể tác động lên đường huyết. Cực đoan dễ bỏ cuộc — bền vững mới quan trọng.',
+    ],
+    points: [
+      { icon: '🌾', label: 'Gạo lứt GI 50–55', note: 'Giàu magie — đồng yếu tố của insulin' },
+      { icon: '🍠', label: 'Khoai lang GI 44–55', note: 'Thay khoai tây (GI 78) trong bữa chính' },
+      { icon: '📉', label: 'Giảm 20–40 mg/dL sau ăn', note: 'Đủ chuyển từ tiền ĐTĐ về vùng bình thường' },
+      { icon: '⚖️', label: 'Không cần cắt hoàn toàn', note: 'Giảm khẩu phần + kết hợp đúng cách' },
+    ],
+  },
+  {
+    icon: '🥩', label: 'Protein & Chất Xơ Mỗi Bữa', range: 'Dinh dưỡng',
+    color: '#f97316', rgb: '249,115,22',
+    tip: 'Kết hợp protein + chất xơ trong mỗi bữa ăn để làm chậm hấp thu đường.',
+    img: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80',
+    keyFact: '💡 Protein và chất béo làm chậm quá trình làm rỗng dạ dày (gastric emptying) — carb tiếp xúc với enzyme tiêu hóa chậm hơn → đường huyết tăng chậm và ít hơn. Ăn 25–30g protein/bữa giảm đỉnh đường sau ăn 15–25%.',
+    detail: 'Không phải carb quyết định tất cả — tốc độ hấp thu glucose từ bữa ăn bị ảnh hưởng mạnh bởi protein, chất béo lành mạnh, và chất xơ ăn cùng. Cấu trúc bữa ăn quan trọng không kém thành phần.',
+    details: [
+      'Cơ chế protein làm chậm đường: protein kích thích tiết CCK và GLP-1 từ ruột → làm chậm làm rỗng dạ dày (gastric emptying) → glucose vào máu từ từ hơn → đỉnh đường sau ăn thấp hơn.',
+      'Mục tiêu protein mỗi bữa: 25–30g protein — bằng 100g ức gà (31g), 150g cá hồi (30g), 3 quả trứng (18g + thêm đậu hũ), 200g đậu lăng nấu chín (18g).',
+      'Chất xơ hòa tan (soluble fiber) đặc biệt hiệu quả: tạo gel trong ruột → làm chậm hấp thu glucose. Nguồn: yến mạch, đậu các loại, vỏ táo, hạt chia, rau okra. Mục tiêu ≥ 25g chất xơ/ngày.',
+      'Food sequencing — thứ tự ăn: nghiên cứu Weill Cornell (2015) cho thấy ăn rau → protein → carb (thay vì carb trước) giảm đỉnh đường sau ăn 37–73% — không thay đổi gì về thành phần bữa ăn.',
+      'Chất béo lành mạnh (dầu olive, bơ, hạt các loại) cũng làm chậm hấp thu carb — nhưng cần chú ý lượng calo vì chất béo đậm đặc năng lượng hơn (9kcal/g vs 4kcal/g của protein và carb).',
+      'Thực tế bữa ăn Việt: cơm + thịt + rau thường sẵn có protein và chất xơ — chỉ cần điều chỉnh tỷ lệ (tăng rau và protein, giảm cơm) và thứ tự ăn (rau trước cơm) là đủ tạo khác biệt đáng kể.',
+    ],
+    points: [
+      { icon: '🐔', label: '25–30g protein/bữa', note: '100g ức gà, 150g cá, hoặc 3 quả trứng' },
+      { icon: '🌿', label: 'Chất xơ hòa tan', note: 'Yến mạch, đậu, hạt chia — tạo gel làm chậm đường' },
+      { icon: '🍽️', label: 'Ăn rau trước, carb sau', note: 'Food sequencing giảm đỉnh đường 37–73%' },
+      { icon: '📉', label: 'Giảm đỉnh đường 15–25%', note: 'Protein đủ mỗi bữa — đơn giản và hiệu quả' },
+    ],
+  },
+  {
+    icon: '🚶', label: 'Vận Động Sau Bữa Ăn', range: 'Vận động',
+    color: '#3b82f6', rgb: '59,130,246',
+    tip: 'Đi bộ 10–15 phút sau bữa ăn giúp giảm đường huyết sau ăn hiệu quả.',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    keyFact: '💡 Đi bộ 10–15 phút sau bữa ăn giảm đường huyết sau ăn 22–34% theo nhiều nghiên cứu ngẫu nhiên có đối chứng. Cơ bắp hấp thu glucose qua GLUT4 transporter — cơ chế độc lập với insulin, không bị ảnh hưởng bởi kháng insulin.',
+    detail: 'Vận động sau bữa ăn là can thiệp đơn giản nhất, không tốn tiền, không cần thiết bị — chỉ cần 10–15 phút đi bộ để tận dụng giai đoạn đường huyết đang tăng.',
+    details: [
+      'Cơ chế: khi cơ bắp co bóp, GLUT4 transporter di chuyển lên bề mặt tế bào cơ và hấp thu glucose vào tế bào mà không cần insulin. Đây là lý do tập thể dục cực kỳ hiệu quả với người kháng insulin.',
+      'Thời điểm tối ưu: bắt đầu đi bộ 15–30 phút sau khi ăn — lúc đường huyết bắt đầu tăng nhưng chưa đạt đỉnh. Không cần cường độ cao — đi bộ vừa phải (60–65% HRmax) là đủ.',
+      'Nghiên cứu (Diabetologia, 2013): đi bộ 10 phút sau mỗi bữa ăn hiệu quả hơn đi bộ 30 phút liên tục 1 lần/ngày trong việc kiểm soát đường huyết sau ăn — tổng thời gian tương đương nhưng phân chia tốt hơn.',
+      'Kháng insulin (insulin resistance) không ảnh hưởng đến GLUT4: đây là lý do người tiền tiểu đường và tiểu đường vẫn hưởng lợi từ đi bộ sau ăn — bypass insulin, tế bào cơ vẫn hấp thu glucose.',
+      'Bài tập sức mạnh (squat, lunge, push-up) sau ăn cũng hiệu quả: cơ lớn ở chân và lưng chiếm 70–80% khối lượng cơ bắp — kích hoạt chúng tạo glucose sink lớn nhất cơ thể.',
+      'Lưu ý: không vận động ngay sau ăn no (< 5 phút) có thể gây khó chịu tiêu hóa. Chờ 10–15 phút, uống nước rồi đi bộ nhẹ nhàng là tốt nhất. Không cần thay đồ hay đến phòng gym.',
+    ],
+    points: [
+      { icon: '⏱️', label: '10–15 phút là đủ', note: 'Sau mỗi bữa — hiệu quả hơn 30 phút 1 lần' },
+      { icon: '🦵', label: 'GLUT4 bypass insulin', note: 'Cơ hấp thu glucose không cần insulin' },
+      { icon: '📉', label: 'Giảm đỉnh đường 22–34%', note: 'Can thiệp đơn giản nhất, bằng chứng mạnh' },
+      { icon: '💪', label: 'Squat/lunge hiệu quả cao', note: 'Cơ chân lớn = glucose sink lớn nhất' },
+    ],
+  },
+  {
+    icon: '💧', label: 'Hydration Đủ Nước', range: 'Thói quen',
+    color: '#0ea5e9', rgb: '14,165,233',
+    tip: 'Uống đủ nước (30–35ml/kg/ngày) — mất nước làm tăng nồng độ đường huyết.',
+    img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80',
+    keyFact: '💡 Mất nước làm đặc máu, tăng nồng độ glucose theo tỷ lệ — mất nước 2% thể trọng (1.4kg với người 70kg) có thể tăng đường huyết 5–10 mg/dL. Vasopressin (ADH) tiết ra khi mất nước cũng kích thích gan sản xuất thêm glucose.',
+    detail: 'Nước không chứa calo, không chứa carb nhưng đóng vai trò thiết yếu trong điều hòa đường huyết — cả qua cơ chế pha loãng trực tiếp lẫn gián tiếp qua hormone.',
+    details: [
+      'Cơ chế mất nước tăng đường huyết: (1) Cô đặc máu — ít nước, cùng lượng glucose → nồng độ tăng; (2) Vasopressin (ADH) tăng → kích thích gan sản xuất glucose (gluconeogenesis); (3) Cortisol tăng theo stress mất nước → thêm glucose từ glycogen.',
+      'Mục tiêu hydration: 30–35ml/kg cân nặng/ngày (người 60kg cần 1.8–2.1L, người 80kg cần 2.4–2.8L). Nhu cầu tăng thêm 500–750ml mỗi giờ vận động đổ mồ hôi.',
+      'Nước có thể giúp loại thải glucose qua thận: khi đường huyết > 180 mg/dL, glucose tràn vào nước tiểu và "kéo" nước theo. Uống đủ nước duy trì thể tích máu và hỗ trợ thận lọc.',
+      'Thay thế đồ uống có đường: 1 lon Coke (330ml) = 35g đường = tăng đường huyết ngay 40–60 mg/dL trong 30 phút. Nước lọc, trà xanh không đường, nước chanh không đường là thay thế tốt nhất.',
+      'Trà xanh có lợi đặc biệt: catechin trong trà xanh cải thiện độ nhạy insulin và ức chế enzyme tiêu hóa carb (alpha-glucosidase) — nghiên cứu Nhật Bản cho thấy uống 3–4 tách/ngày giảm nguy cơ tiểu đường type 2 33%.',
+      'Dấu hiệu uống đủ nước: nước tiểu màu vàng nhạt/trong suốt (màu 1–3 trên thang Urine Color Chart). Nước tiểu vàng đậm = cần uống thêm ngay. Mục tiêu 6–8 lần tiểu/ngày.',
+    ],
+    points: [
+      { icon: '🥛', label: '30–35ml/kg/ngày', note: '60kg → 1.8–2.1L; 80kg → 2.4–2.8L' },
+      { icon: '🍵', label: 'Trà xanh không đường', note: 'Catechin cải thiện độ nhạy insulin' },
+      { icon: '🚫', label: 'Tránh đồ uống có đường', note: '1 lon Coke = +40–60 mg/dL đường huyết' },
+      { icon: '💛', label: 'Nước tiểu vàng nhạt', note: 'Dấu hiệu hydration đủ mỗi ngày' },
+    ],
+  },
+  {
+    icon: '😴', label: 'Giấc Ngủ & Đường Huyết', range: 'Lối sống',
+    color: '#a855f7', rgb: '168,85,247',
+    tip: 'Ngủ đủ 7–9 tiếng. Thiếu ngủ làm tăng insulin resistance trong vài ngày.',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+    keyFact: '💡 Nghiên cứu (Annals of Internal Medicine, 2012): chỉ 4 đêm ngủ 4.5 tiếng làm giảm độ nhạy insulin 16% và tăng nồng độ fatty acids gây kháng insulin. Thiếu ngủ mạn tính làm HbA1c tăng 0.2–0.5% — tương đương ảnh hưởng của ăn thêm 1 bát cơm mỗi ngày.',
+    detail: 'Giấc ngủ không phải thời gian "nghỉ" thụ động — não và tuyến nội tiết hoạt động tích cực điều hòa hormone, phục hồi độ nhạy insulin, và kiểm soát cơn thèm ăn thông qua leptin và ghrelin.',
+    details: [
+      'Cơ chế thiếu ngủ gây kháng insulin: (1) Cortisol tăng do stress sinh lý → kích thích gan sản xuất glucose; (2) GH (growth hormone) mất nhịp tiết ban đêm → rối loạn chuyển hóa glucose; (3) Cytokines viêm tăng → cản trở tín hiệu insulin.',
+      'Ghrelin và Leptin mất cân bằng: thiếu ngủ → ghrelin tăng (hormone gây đói) + leptin giảm (hormone no) → ăn nhiều hơn 300–400kcal/ngày và ưu tiên thực phẩm đường, béo — vòng lặp tăng đường huyết.',
+      'Deep sleep (NREM giai đoạn 3) đặc biệt quan trọng: giai đoạn này não tiết GH và prolactin, phục hồi độ nhạy insulin ở mô. Rượu bia ức chế deep sleep dù làm bạn buồn ngủ nhanh hơn.',
+      'Ngủ quá nhiều (> 9 tiếng) cũng liên quan đến nguy cơ tiểu đường cao hơn — thường phản ánh chất lượng giấc ngủ kém (sleep apnea, trầm cảm) chứ không phải vì ngủ dư thừa.',
+      'Sleep apnea và tiểu đường: hội chứng ngưng thở khi ngủ (sleep apnea) gây thiếu oxy đêm → cortisol tăng → kháng insulin. 86% người béo phì mắc tiểu đường type 2 có sleep apnea — điều trị CPAP cải thiện HbA1c 0.5–1%.',
+      'Cải thiện giấc ngủ: cùng giờ ngủ/thức mỗi ngày (kể cả cuối tuần); phòng tối, mát (18–20°C); tránh màn hình xanh 1 giờ trước ngủ; tránh caffeine sau 2pm; không ăn no trong vòng 2 giờ trước ngủ.',
+    ],
+    points: [
+      { icon: '⏰', label: '7–9 tiếng mỗi đêm', note: 'ADA 2023 khuyến nghị — không thương lượng' },
+      { icon: '📉', label: 'HbA1c tăng 0.2–0.5%', note: 'Với mỗi giờ thâm hụt giấc ngủ mạn tính' },
+      { icon: '😤', label: 'Kiểm tra sleep apnea', note: 'Ngáy to + mệt buổi sáng → nên tầm soát' },
+      { icon: '🌙', label: 'Ngủ cùng giờ mỗi ngày', note: 'Đồng hồ sinh học đều đặn = insulin nhạy hơn' },
+    ],
+  },
 ];
 
 function BSModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
@@ -433,6 +559,7 @@ export default function HealthBloodSugarPage() {
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [bsModal, setBsModal] = useState(null);
   const [hbacModal, setHbacModal] = useState(null);
+  const [dietModal, setDietModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -550,9 +677,18 @@ export default function HealthBloodSugarPage() {
         <p className="text-muted text-lg mb-6">Thay đổi lối sống có thể ngăn 58% trường hợp tiền tiểu đường không tiến triển thành tiểu đường type 2 (theo nghiên cứu DPP của NIH).</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {DIET_TIPS.map((t, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex gap-3 hover:border-amber-500/30 transition-colors">
-              <span className="text-3xl">{t.icon}</span>
-              <p className="text-lg text-muted">{t.tip}</p>
+            <div key={i}
+              onClick={() => setDietModal(i)}
+              className="rounded-2xl border border-border bg-surface p-4 flex gap-3 cursor-pointer transition-colors"
+              style={{ borderColor: `rgba(${t.rgb},0.22)` }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${t.rgb},0.55)`}
+              onMouseLeave={e => e.currentTarget.style.borderColor = `rgba(${t.rgb},0.22)`}>
+              <span className="text-3xl shrink-0">{t.icon}</span>
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-sm mb-1" style={{ color: t.color }}>{t.label}</p>
+                <p className="text-base text-muted">{t.tip}</p>
+              </div>
+              <span className="text-muted text-sm shrink-0 self-center">→</span>
             </div>
           ))}
         </div>
@@ -595,6 +731,18 @@ export default function HealthBloodSugarPage() {
           onNext={() => setBsModal(i => Math.min(BS_CATS.length - 1, i + 1))}
           hasPrev={bsModal > 0}
           hasNext={bsModal < BS_CATS.length - 1}
+        />
+      )}
+      {dietModal !== null && (
+        <BSModal
+          item={DIET_TIPS[dietModal]}
+          idx={dietModal}
+          total={DIET_TIPS.length}
+          onClose={() => setDietModal(null)}
+          onPrev={() => setDietModal(i => Math.max(0, i - 1))}
+          onNext={() => setDietModal(i => Math.min(DIET_TIPS.length - 1, i + 1))}
+          hasPrev={dietModal > 0}
+          hasNext={dietModal < DIET_TIPS.length - 1}
         />
       )}
     </div>

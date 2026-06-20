@@ -513,13 +513,13 @@ function BSModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }
             <span className="ml-auto font-mono font-bold text-base px-3 py-1 rounded-full"
               style={{ background: `rgba(${item.rgb},0.12)`, color: item.color }}>{item.range}</span>
           </div>
-          <div className="rounded-2xl px-4 py-3 mb-5 mt-4 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}` }}>
+          <div className="rounded-2xl px-4 py-3 mb-5 mt-4 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.85)' }}>
             {item.keyFact}
           </div>
-          <p className="text-muted text-base leading-relaxed mb-6">{item.detail}</p>
+          <p className="text-base leading-relaxed mb-6" style={{ color: 'rgba(209,213,219,0.9)' }}>{item.detail}</p>
           <ul className="space-y-3 mb-8">
             {item.details.map((d, di) => (
-              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+              <li key={di} className="flex gap-3 text-base leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
                 <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
                   style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
                 <span>{d}</span>
@@ -532,8 +532,8 @@ function BSModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }
                 style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
                 <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
                 <div>
-                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
-                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
                 </div>
               </div>
             ))}

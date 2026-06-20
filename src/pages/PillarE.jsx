@@ -1459,27 +1459,258 @@ function TabE5() {
   );
 }
 
+const DRUG_RULES = [
+  {
+    metric: 'Không tự ngưng thuốc bác sĩ kê', freq: 'Quy tắc #1', tip: 'Luôn hỏi bác sĩ trước khi ngưng — kể cả khi thấy "đã khỏe"',
+    icon: '💊', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngưng thuốc đột ngột có thể nguy hiểm hơn chưa từng dùng thuốc — đặc biệt corticoid, beta-blocker, thuốc tâm thần và chống động kinh. Cơ thể thích nghi với thuốc theo thời gian và cần giảm liều dần dần (tapering) để phục hồi an toàn.',
+    detail: 'Nhiều người tự ý ngưng thuốc khi "thấy khỏe hơn" hoặc "ngại tác dụng phụ" mà không biết điều này có thể gây ra những hậu quả nghiêm trọng hơn cả bệnh ban đầu.',
+    details: [
+      'Corticosteroid (prednisone, methylprednisolone): dùng >2–3 tuần → tuyến thượng thận ức chế, giảm sản xuất cortisol nội sinh. Ngưng đột ngột → suy tuyến thượng thận cấp (adrenal crisis): tụt huyết áp, nôn, mất ý thức — đe dọa tính mạng. Phải giảm liều dần trong nhiều tuần.',
+      'Beta-blocker (metoprolol, atenolol — thuốc huyết áp/tim): ngưng đột ngột → rebound tachycardia và tăng huyết áp vọt. Nguy hiểm đặc biệt với người bệnh mạch vành — có thể kích hoạt cơn đau thắt ngực hoặc nhồi máu cơ tim.',
+      'Thuốc chống động kinh (phenytoin, valproate, carbamazepine, levetiracetam): ngưng đột ngột → hạ ngưỡng co giật → cơn động kinh nặng (status epilepticus) — co giật liên tục >30 phút gây tổn thương não vĩnh viễn và tử vong.',
+      'Thuốc trầm cảm/lo âu (SSRI, SNRI như sertraline, escitalopram, venlafaxine): ngưng đột ngột → discontinuation syndrome: chóng mặt, cảm giác "điện giật" trong đầu, buồn nôn, lo âu bùng phát, mất ngủ. Phải giảm liều dần trong 2–4 tuần.',
+      'Kháng sinh: ngưng trước khi hết liệu trình khi "thấy đỡ" → vi khuẩn chưa tiêu diệt hoàn toàn, những con kháng thuốc còn sót lại nhân lên → nhiễm trùng tái phát với chủng kháng thuốc khó điều trị hơn. Đây là nguyên nhân chính của kháng kháng sinh toàn cầu.',
+      'Thuốc "an toàn" cũng cần thận trọng khi ngưng: aspirin liều thấp (ngưng đột ngột có thể tăng nguy cơ huyết khối tạm thời — rebound platelet activation). Insulin và thuốc tiểu đường (ngưng đột ngột → đường huyết mất kiểm soát). Thuốc tuyến giáp (ngưng → suy giáp trở lại trong vài tuần).',
+    ],
+    points: [
+      { icon: '⚕️', label: 'Hỏi bác sĩ trước khi ngưng', note: '"Thuốc tôi có thể ngưng được không?" là câu hỏi hoàn toàn hợp lý' },
+      { icon: '⚠️', label: 'Corticoid ngưng đột ngột = nguy hiểm', note: 'Suy tuyến thượng thận cấp nếu dùng >2–3 tuần rồi ngưng ngay' },
+      { icon: '💊', label: 'Kháng sinh uống hết liệu trình', note: 'Ngưng sớm → tạo vi khuẩn kháng thuốc — nguy hại cả cộng đồng' },
+      { icon: '📋', label: 'Ghi nhật ký thuốc đang dùng', note: 'Tên, liều, lý do — mang khi đi khám bất kỳ chuyên khoa nào' },
+    ],
+  },
+  {
+    metric: 'Không tự tăng/giảm liều', freq: 'Quy tắc #2', tip: 'Liều được tính theo cân nặng, chức năng gan/thận và bệnh đi kèm',
+    icon: '⚖️', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Liều thuốc không phải con số tùy ý — được tính toán dựa trên dược động học (pharmacokinetics): cân nặng, tuổi, chức năng thận và gan, tương tác thuốc. Tự thay đổi liều có thể gây ngộ độc (quá liều) hoặc mất tác dụng (dưới liều điều trị).',
+    detail: 'Khái niệm "cửa sổ điều trị" (therapeutic window): khoảng nồng độ thuốc trong máu đủ để có tác dụng nhưng chưa gây độc. Một số thuốc có cửa sổ rất hẹp — thay đổi 20–30% liều đã vượt giới hạn an toàn.',
+    details: [
+      'Paracetamol — thuốc "vô hại" dễ quá liều nhất: liều an toàn <4g/ngày với người khỏe mạnh. Uống >7.5–10g một lần → hoại tử gan cấp. Người uống rượu thường xuyên, suy dinh dưỡng hoặc suy gan → ngưỡng an toàn chỉ còn <2g/ngày. Lưu ý: nhiều thuốc cảm cúm combo đã chứa paracetamol — cộng dồn dễ vượt ngưỡng.',
+      'Thuốc có cửa sổ điều trị hẹp (narrow therapeutic index — NTI): digoxin (tim), warfarin (chống đông), lithium (tâm thần), phenytoin (động kinh), aminoglycosides (kháng sinh tiêm), cyclosporine (ức chế miễn dịch). Chênh lệch 20% liều = nguy cơ ngộ độc hoặc mất hiệu quả. Cần đo nồng độ thuốc trong máu (TDM — therapeutic drug monitoring).',
+      'Insulin và thuốc tiểu đường: tăng liều insulin mà không kiểm tra đường huyết → hạ đường huyết nặng (seizure, hôn mê). Giảm liều khi "thấy đường huyết tốt" → mất kiểm soát, tiến triển biến chứng. HbA1c là xét nghiệm đánh giá kiểm soát dài hạn — không phải một lần đo tại nhà.',
+      'Kháng sinh dưới liều: nồng độ thuốc không đủ tiêu diệt vi khuẩn → chọn lọc chủng kháng thuốc. Đây là cơ chế chính tạo ra superbug (vi khuẩn siêu kháng thuốc). Một quyết định cá nhân (giảm liều) tạo ra hệ quả cộng đồng nghiêm trọng.',
+      'Vitamin và khoáng chất cũng có liều độc: vitamin D >4000 IU/ngày dài hạn → tăng canxi máu → sỏi thận, vôi hóa mạch. Vitamin A >3000 µg/ngày (thai phụ) → dị tật thai nhi. Sắt quá liều → ngộ độc sắt đặc biệt ở trẻ em. Không có nghĩa là "vitamin tự nhiên, uống nhiều không sao".',
+      'Aspirin: liều thấp (75–100 mg) dùng cho tim mạch. Liều trung bình (325 mg) cho giảm đau. Liều cao (>500 mg) chống viêm. Tự tăng lên liều cao không có chỉ định → tăng nguy cơ chảy máu tiêu hóa và xuất huyết não mà không tăng thêm lợi ích tim mạch.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Paracetamol <4g/ngày tối đa', note: 'Uống rượu hoặc suy gan → giới hạn còn <2g — kiểm tra thuốc combo' },
+      { icon: '🧪', label: 'Thuốc NTI cần đo nồng độ máu', note: 'Digoxin, warfarin, lithium — liều phải dựa trên kết quả xét nghiệm' },
+      { icon: '💉', label: 'Insulin: đo đường trước khi điều chỉnh', note: 'Không tăng liều "cảm giác" — hạ đường huyết nặng gây hôn mê' },
+      { icon: '🌿', label: 'Vitamin cũng có liều độc', note: 'D >4000 IU/ngày dài hạn → sỏi thận. A nhiều → dị tật thai nhi' },
+    ],
+  },
+  {
+    metric: 'Không dùng đơn thuốc của người khác', freq: 'Quy tắc #3', tip: 'Thuốc phù hợp với người này có thể gây nguy hiểm cho người khác',
+    icon: '🚫', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hai người có triệu chứng giống nhau nhưng nguyên nhân khác nhau cần thuốc hoàn toàn khác nhau. Dùng thuốc kháng sinh "của bạn" khi bị viêm họng không phân biệt được nguyên nhân virus hay vi khuẩn, đúng loại kháng sinh hay không, và có dị ứng hay không.',
+    detail: 'Đơn thuốc là tài liệu y tế cá nhân hóa — được kê dựa trên chẩn đoán, tiền sử dị ứng, bệnh đi kèm, thuốc đang dùng và đặc điểm của từng bệnh nhân cụ thể. Không có hai người cần đúng thuốc như nhau dù triệu chứng có vẻ giống nhau.',
+    details: [
+      'Chẩn đoán giống nhưng nguyên nhân khác: "đau đầu" có thể do căng thẳng (paracetamol), migraine (sumatriptan), tăng huyết áp (không dùng NSAID — làm tăng HA thêm), u não (cần chẩn đoán hình ảnh). Dùng thuốc của người khác → điều trị sai nguyên nhân → bỏ lỡ bệnh nghiêm trọng.',
+      'Dị ứng thuốc: penicillin và các cephalosporin dị ứng chéo → sốc phản vệ. Dị ứng sulfonamide → không dùng cotrimoxazole. Aspirin/NSAID → có thể gây hen dạng aspirin (aspirin-exacerbated respiratory disease) ở 10% người hen phế quản. Không ai biết dị ứng của người khác.',
+      'Tương tác thuốc: người đang dùng warfarin + dùng aspirin của bạn → tăng nguy cơ xuất huyết nghiêm trọng. Người dùng MAOI + dùng antidepressant của bạn → hội chứng serotonin nguy hiểm. Các tương tác này không ai biết nếu không biết đầy đủ danh sách thuốc của người đó.',
+      'Liều khác nhau theo cân nặng, tuổi và chức năng thận: kháng sinh liều người lớn 70kg khác với người 50kg. Người suy thận phải giảm liều thuốc thải qua thận (aminoglycosides, metformin). Người cao tuổi nhạy cảm hơn với nhiều thuốc — liều người trẻ có thể gây ngộ độc.',
+      'Kháng sinh "của bạn" khi bị cảm: 80–90% viêm đường hô hấp trên là do virus → kháng sinh hoàn toàn vô tác dụng. Dùng kháng sinh không cần thiết → diệt vi khuẩn có lợi trong đường ruột, tạo điều kiện Clostridioides difficile gây tiêu chảy nặng, và đóng góp vào kháng kháng sinh toàn cầu.',
+      'Thuốc kê đơn không phải tự nhiên: corticoid, thuốc tâm thần, opioid, thuốc chống đông — được kê đơn vì cần theo dõi chặt chẽ. Dùng mà không có chỉ định và giám sát của bác sĩ có thể gây phụ thuộc, ngộ độc và biến chứng nghiêm trọng.',
+    ],
+    points: [
+      { icon: '🧬', label: 'Cùng triệu chứng, khác nguyên nhân', note: '"Đau đầu" cần chẩn đoán — không phải cùng một loại thuốc' },
+      { icon: '🚨', label: 'Dị ứng thuốc có thể gây sốc phản vệ', note: 'Penicillin, aspirin, sulfonamide — sốc phản vệ tử vong trong phút' },
+      { icon: '🔗', label: 'Tương tác thuốc không thể đoán trước', note: 'Warfarin + aspirin → chảy máu. MAOI + SSRI → hội chứng serotonin' },
+      { icon: '🦠', label: 'Kháng sinh khi cảm = vô tác dụng', note: '90% cảm cúm là virus — kháng sinh không diệt virus, chỉ hại ruột' },
+    ],
+  },
+  {
+    metric: 'Không phối hợp thực phẩm chức năng mà không biết thành phần', freq: 'Quy tắc #4', tip: 'TPCN có thể tương tác với thuốc kê đơn — nguy hiểm như tương tác thuốc-thuốc',
+    icon: '🌿', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thực phẩm chức năng (TPCN) không phải "vô hại vì tự nhiên". St. John\'s Wort (cỏ Saint-John) giảm hiệu quả của thuốc tránh thai, thuốc chống HIV, thuốc ung thư và thuốc chống thải ghép — tất cả qua cùng một cơ chế cảm ứng enzyme CYP3A4.',
+    detail: 'Thị trường TPCN trị giá >150 tỷ USD toàn cầu và được quản lý lỏng lẻo hơn nhiều so với thuốc. Nhà sản xuất không cần chứng minh hiệu quả trước khi bán — chỉ cần đảm bảo an toàn (và thực tế nhiều sản phẩm chưa được kiểm chứng đủ về an toàn).',
+    details: [
+      'St. John\'s Wort (Hypericum perforatum): thảo dược "chống trầm cảm tự nhiên" — cảm ứng CYP3A4 và P-glycoprotein → giảm nồng độ nhiều thuốc: thuốc tránh thai (mang thai ngoài ý muốn), cyclosporine (thải ghép tạng), indinavir (HIV), irinotecan (ung thư), warfarin (chống đông). Đây là tương tác thảo dược-thuốc nguy hiểm nhất được nghiên cứu rõ ràng.',
+      'Grapefruit (bưởi chùm): ức chế CYP3A4 → tăng nồng độ nhiều thuốc lên 2–3 lần: statin (atorvastatin, simvastatin — tăng nguy cơ tiêu cơ vân), amiodarone, calcium channel blockers (thuốc huyết áp), thuốc chống đông thế hệ mới. Chỉ một ly nước bưởi ảnh hưởng 24–72h.',
+      'Omega-3/fish oil liều cao: ở liều >3g EPA+DHA/ngày có tác dụng chống đông máu → khi kết hợp warfarin, aspirin, clopidogrel → tăng nguy cơ chảy máu đáng kể, đặc biệt trước phẫu thuật. Ngưng omega-3 trước phẫu thuật 1–2 tuần.',
+      'Kẽm và kháng sinh: kẽm tạo phức với tetracycline và fluoroquinolone (ciprofloxacin) → giảm hấp thu kháng sinh đến 50–90%. Nếu cần cả hai → uống kháng sinh 2h trước hoặc 6h sau khi uống kẽm.',
+      'Thảo dược có hoạt tính sinh học cao: tỏi liều cao (chống đông → cộng hưởng với warfarin), ginkgo biloba (chống đông + chống tiểu cầu), ginseng (ảnh hưởng đường huyết và warfarin), kava (độc gan + an thần → khuếch đại tác dụng thuốc ngủ/rượu). Nhiều tương tác chưa được nghiên cứu đủ.',
+      'TPCN có thể chứa thành phần ẩn: phân tích 78 sản phẩm "tăng cường sinh lực" phát hiện sildenafil (Viagra) không khai báo. Sản phẩm "giảm cân thảo dược" chứa sibutramine (thuốc bị cấm do nguy cơ tim mạch). Sản phẩm "hạ đường" chứa glibenclamide (thuốc kê đơn gây hạ đường huyết nặng ở người không tiểu đường).',
+    ],
+    points: [
+      { icon: '⚗️', label: 'St. John\'s Wort giảm thuốc tránh thai', note: 'Cảm ứng CYP3A4 — ảnh hưởng hàng chục loại thuốc kê đơn quan trọng' },
+      { icon: '🍊', label: 'Bưởi chùm nguy hiểm với statin', note: '1 ly nước bưởi tăng nồng độ atorvastatin 2–3 lần → tiêu cơ vân' },
+      { icon: '🐟', label: 'Omega-3 >3g/ngày tăng nguy cơ chảy máu', note: 'Ngưng 1–2 tuần trước phẫu thuật nếu đang uống kháng đông' },
+      { icon: '🔍', label: 'Kiểm tra TPCN trên NIH Dietary Supplements', note: 'Cơ sở dữ liệu tương tác thuốc-TPCN uy tín của NIH, miễn phí' },
+    ],
+  },
+  {
+    metric: 'Không tin quảng cáo "chữa dứt điểm", "thải độc", "hết tiểu đường vĩnh viễn"', freq: 'Quy tắc #5', tip: 'Nếu nghe quá hay — đó là dấu hiệu cảnh báo, không phải cơ hội',
+    icon: '🚨', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Không có loại thuốc hoặc TPCN nào "chữa khỏi hoàn toàn" tiểu đường type 2, tăng huyết áp mạn tính, viêm khớp hay ung thư. Những tuyên bố này vi phạm luật quảng cáo tại Việt Nam — và dấu hiệu của sản phẩm giả mạo hoặc kém chất lượng.',
+    detail: 'Ngành công nghiệp TPCN và thuốc "dân gian" khai thác nỗi sợ hãi, hy vọng và thiếu thông tin của người bệnh và gia đình họ. Mỗi năm hàng nghìn tỷ đồng bị lãng phí vào sản phẩm vô tác dụng — trong khi bệnh thật sự không được điều trị đúng cách.',
+    details: [
+      '"Thải độc" (detox): gan và thận là hệ thống thải độc tự nhiên của cơ thể hoạt động 24/7. Không có bằng chứng khoa học nào ủng hộ việc "thải độc bổ sung" qua TPCN, nước ép detox hoặc enema. Nếu gan thận hoạt động bình thường → không cần detox. Nếu không hoạt động bình thường → cần điều trị y khoa, không phải TPCN.',
+      '"Hết tiểu đường vĩnh viễn": tiểu đường type 2 có thể đạt remission (lui bệnh) qua giảm cân đáng kể (>15kg, phẫu thuật bariatric) và thay đổi lối sống triệt để — không phải qua TPCN. Tiểu đường type 1 là bệnh tự miễn không thể "chữa dứt điểm" bằng bất kỳ phương pháp nào hiện có.',
+      '"Không tác dụng phụ": mọi chất có tác dụng sinh học đều có thể có tác dụng phụ ở liều đủ cao hoặc với một số người nhạy cảm. Tuyên bố "hoàn toàn không tác dụng phụ" hoặc là không đúng sự thật hoặc là sản phẩm không có tác dụng gì cả.',
+      '"Chữa khỏi 100%": không có phương pháp điều trị nào có hiệu quả 100% với tất cả mọi người — ngay cả thuốc được chứng minh lâm sàng chặt chẽ. Tuyên bố 100% là vi phạm quy định quảng cáo y tế tại Việt Nam (Nghị định 181/2013/NĐ-CP và Thông tư 09/2015).',
+      'Nhận biết quảng cáo lừa đảo: người nổi tiếng hoặc "bác sĩ" chứng thực không đủ cơ sở. Kết quả chứng thực cá nhân (testimonial) không phải bằng chứng khoa học. Áp lực thời gian ("mua ngay hôm nay", "số lượng có hạn"). Tuyên bố điều trị nhiều bệnh khác nhau cùng lúc. Không có thông tin liên hệ rõ ràng.',
+      'Khi muốn thử phương pháp bổ sung: tìm hiểu trên Pubmed (cơ sở dữ liệu nghiên cứu khoa học), hỏi bác sĩ hoặc dược sĩ, kiểm tra sản phẩm có đăng ký cục ATTP không. Tích hợp với điều trị y khoa chuẩn mực — không thay thế. Thông báo bác sĩ mọi TPCN đang dùng để phát hiện tương tác.',
+    ],
+    points: [
+      { icon: '🧪', label: '"Thải độc" là pseudoscience', note: 'Gan + thận làm điều này 24/7 — không TPCN nào làm tốt hơn' },
+      { icon: '📊', label: 'Tìm bằng chứng trên PubMed', note: 'Nghiên cứu ngẫu nhiên có đối chứng (RCT) — tiêu chuẩn vàng y học' },
+      { icon: '🏥', label: 'TPCN bổ trợ — không thay thế điều trị', note: 'Dùng song song với thuốc bác sĩ kê — không ngưng thuốc để dùng TPCN' },
+      { icon: '⚖️', label: 'Tuyên bố "100%" = vi phạm pháp luật', note: 'Báo cáo quảng cáo sai sự thật cho Cục ATTP — 1800 6838' },
+    ],
+  },
+];
+
+const SUPPLEMENT_CHECKS = [
+  {
+    metric: 'Tôi dùng để làm gì? Có bằng chứng rõ không?', freq: 'Câu hỏi #1', tip: 'Bằng chứng cấp độ cao nhất: RCT đa trung tâm, meta-analysis',
+    icon: '🎯', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Phần lớn TPCN được bán ra với bằng chứng hiệu quả rất yếu hoặc không có. Biết mình dùng để làm gì và liệu có bằng chứng khoa học ủng hộ là bước đầu tiên quan trọng nhất để quyết định có nên dùng không.',
+    detail: 'Bằng chứng khoa học có thứ bậc rõ ràng. Cảm nhận cá nhân và chứng thực của người nổi tiếng nằm ở đáy kim tự tháp — ít đáng tin nhất. Thử nghiệm ngẫu nhiên có đối chứng (RCT) và meta-analysis tổng hợp nhiều nghiên cứu nằm ở đỉnh.',
+    details: [
+      'Kim tự tháp bằng chứng y học: (Cao → Thấp) Meta-analysis/Systematic review → Randomized Controlled Trial (RCT) → Cohort study → Case-control study → Case report → Expert opinion → Testimonial/Anecdote. TPCN thường được quảng cáo dựa trên tầng thấp nhất.',
+      'Câu hỏi cụ thể để đánh giá: Mục tiêu điều trị là gì (giảm cân, tăng miễn dịch, ngủ ngon)? Có RCT nào trên người — không phải chuột hoặc ống nghiệm — chứng minh hiệu quả không? Hiệu quả có ý nghĩa lâm sàng không (không chỉ ý nghĩa thống kê)? Lợi ích vượt trội nguy cơ và chi phí không?',
+      'Tìm kiếm bằng chứng: PubMed (pubmed.ncbi.nlm.nih.gov) — cơ sở dữ liệu nghiên cứu y tế miễn phí. Natural Medicines Database — cơ sở dữ liệu uy tín về TPCN và thảo dược. Cochrane Library — meta-analysis chất lượng cao. Tránh tìm kiếm trên Google — kết quả thường ưu tiên trang quảng cáo.',
+      'TPCN có bằng chứng tốt: vitamin D (thiếu hụt thực sự), folate (phụ nữ trước mang thai), omega-3 (tim mạch ở một số nhóm), probiotics (một số chủng cho một số chỉ định cụ thể), sắt (thiếu máu thiếu sắt xác nhận). Không phải "uống cho chắc ăn" không có bằng chứng.',
+      'TPCN được quảng cáo nhiều nhưng bằng chứng yếu: glucosamine/chondroitin (thoái hóa khớp — RCT lớn GAIT 2006 không cho thấy lợi ích rõ), collagen uống (không có bằng chứng đủ mạnh), "tăng cường miễn dịch" chung chung (hệ miễn dịch không cần "tăng cường" nếu hoạt động bình thường), detox/cleanse (không có bằng chứng).',
+      'Placebo effect thực và mạnh: 30–40% người dùng TPCN có cảm giác "hiệu quả" — đây là hiệu ứng giả dược (placebo), đặc biệt với các triệu chứng chủ quan (mệt mỏi, đau, lo âu). Không có nghĩa sản phẩm có tác dụng sinh học — có nghĩa là não bộ phản ứng với kỳ vọng. RCT dùng nhóm đối chứng giả dược để phân biệt điều này.',
+    ],
+    points: [
+      { icon: '📚', label: 'Tìm trên PubMed, không phải Google', note: 'pubmed.ncbi.nlm.nih.gov — nghiên cứu thật, không phải quảng cáo' },
+      { icon: '🔬', label: 'RCT trên người — tiêu chuẩn tối thiểu', note: 'Nghiên cứu chuột/ống nghiệm không đủ cơ sở để dùng trên người' },
+      { icon: '💡', label: '"Cảm thấy hiệu quả" có thể là placebo', note: '30–40% người dùng TPCN cảm thấy tốt hơn bất kể thành phần' },
+      { icon: '✅', label: 'Vitamin D, folate, sắt — có bằng chứng', note: 'Nhưng chỉ khi có thiếu hụt xác nhận qua xét nghiệm — không dùng đại trà' },
+    ],
+  },
+  {
+    metric: 'Tôi có bệnh nền / đang dùng thuốc không?', freq: 'Câu hỏi #2', tip: 'Bệnh nền và thuốc kê đơn = phải hỏi bác sĩ trước khi dùng bất kỳ TPCN nào',
+    icon: '🏥', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Người có bệnh mạn tính đang dùng thuốc kê đơn là nhóm dễ bị ảnh hưởng nhất bởi tương tác TPCN-thuốc. Thống kê: 40–50% người dùng TPCN không thông báo cho bác sĩ biết, và bác sĩ không hỏi — đây là khoảng trống nguy hiểm.',
+    detail: 'Người càng nhiều bệnh và nhiều thuốc thì tương tác càng phức tạp và càng khó dự đoán. Gan và thận bị ảnh hưởng bởi bệnh nền càng làm chậm chuyển hóa và thải thuốc, tăng nguy cơ ngộ độc.',
+    details: [
+      'Bệnh tim mạch và thuốc chống đông: warfarin, aspirin, clopidogrel, rivaroxaban tương tác với nhiều TPCN có tính chống đông (vitamin E liều cao, omega-3 liều cao, tỏi, ginkgo, ginger). Kết quả: tăng nguy cơ chảy máu nghiêm trọng — chảy máu não, xuất huyết tiêu hóa.',
+      'Tiểu đường và thuốc hạ đường huyết: một số TPCN có tác dụng hạ đường huyết (cinnamon, chromium, gymnema, bitter melon) khi kết hợp metformin, sulfonylurea hoặc insulin → hạ đường huyết nặng. Người tiểu đường muốn dùng TPCN cần theo dõi đường huyết chặt hơn và thông báo bác sĩ.',
+      'Bệnh gan và thận: đây là hai cơ quan chuyển hóa và thải trừ thuốc chính. Khi suy giảm chức năng → thuốc và TPCN tích lũy trong cơ thể → ngộ độc ở liều bình thường. Người suy thận đặc biệt phải tránh: thảo dược chứa kali cao (dandelion), NSAID tự mua, và nhiều kháng sinh.',
+      'Phụ nữ mang thai và cho con bú: giai đoạn cần thận trọng nhất. Vitamin A >3000 µg/ngày gây dị tật thai nhi. St. John\'s Wort, kava, ma huang, blue cohosh chống chỉ định tuyệt đối trong thai kỳ. Gần như không có nghiên cứu RCT về TPCN trong thai kỳ — nguyên tắc: ít nhất là tốt nhất.',
+      'Người cao tuổi (>65 tuổi): chuyển hóa thuốc chậm hơn, thường dùng nhiều thuốc (polypharmacy), dễ bị ngã do thuốc gây chóng mặt hoặc hạ huyết áp. Melatonin liều cao gây buồn ngủ ban ngày và tăng nguy cơ ngã. Valerian kết hợp benzodiazepine → an thần quá mức.',
+      'Ung thư đang điều trị: tương tác TPCN-hóa chất trị liệu là vấn đề nghiêm trọng. Antioxidant liều cao (vitamin C, E, A) lý thuyết có thể giảm tác dụng của hóa trị và xạ trị hoạt động qua cơ chế tạo gốc tự do. St. John\'s Wort giảm nồng độ irinotecan và tamoxifen. Tuyệt đối phải thông báo bác sĩ ung thư trước khi dùng bất kỳ TPCN nào.',
+    ],
+    points: [
+      { icon: '💊', label: 'Kể tên tất cả TPCN cho bác sĩ', note: '40–50% người dùng không thông báo — tạo ra khoảng trống nguy hiểm' },
+      { icon: '🩸', label: 'Dùng thuốc chống đông = cảnh giác cao', note: 'Warfarin + omega-3/tỏi/ginkgo → tăng nguy cơ chảy máu' },
+      { icon: '🤰', label: 'Thai kỳ: ít TPCN = tốt nhất', note: 'Gần như không có RCT trong thai kỳ — nguyên tắc tối thiểu hóa' },
+      { icon: '🎗️', label: 'Ung thư: báo bác sĩ tất cả TPCN', note: 'Antioxidant liều cao có thể giảm hiệu quả hóa trị/xạ trị' },
+    ],
+  },
+  {
+    metric: 'Sản phẩm có nguồn gốc rõ không?', freq: 'Câu hỏi #3', tip: 'Tìm số đăng ký Cục ATTP và chứng nhận bên thứ ba (USP, NSF, ConsumerLab)',
+    icon: '🔍', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Không giống thuốc, TPCN tại hầu hết quốc gia không cần chứng minh hiệu quả hoặc an toàn trước khi bán. Nghiên cứu của ConsumerLab phát hiện 1/4 TPCN không chứa đúng lượng thành phần ghi trên nhãn — nhiều sản phẩm chứa thành phần ẩn nguy hiểm.',
+    detail: 'Tại Việt Nam, TPCN phải đăng ký với Cục An toàn thực phẩm (Cục ATTP) nhưng không cần bằng chứng hiệu quả lâm sàng. Đăng ký chỉ xác nhận sản phẩm không có thành phần bị cấm — không xác nhận hiệu quả hay chất lượng.',
+    details: [
+      'Kiểm tra đăng ký Cục ATTP: tra cứu tại congkhaiyte.moh.gov.vn. Số đăng ký có dạng: XXXXX/2024/ĐKSP hoặc tương tự. Sản phẩm không có số đăng ký hoặc số giả → vi phạm pháp luật và tiềm ẩn nguy cơ cao. Đặc biệt cẩn thận với sản phẩm nhập khẩu không rõ nguồn gốc.',
+      'Chứng nhận bên thứ ba (third-party certification): USP (US Pharmacopeia) và NSF International là hai tổ chức uy tín kiểm tra độc lập sản phẩm TPCN về: đúng thành phần ghi trên nhãn, không chứa chất bị cấm, không bị nhiễm kim loại nặng, vi sinh vật. ConsumerLab.com (mất phí) kiểm tra và so sánh sản phẩm.',
+      'Dấu hiệu cảnh báo sản phẩm đáng ngờ: không có địa chỉ nhà sản xuất rõ ràng, không có số đăng ký, chỉ bán online qua mạng xã hội (không qua nhà thuốc hoặc chuỗi phân phối chính thức), giá rất rẻ so với sản phẩm tương tự, tuyên bố quá nhiều công dụng khác nhau, không có thông tin về thành phần đầy đủ.',
+      'Thực phẩm chức năng nhiễm kim loại nặng: nghiên cứu Consumer Reports phát hiện nhiều thực phẩm bổ sung protein (protein powder), thảo dược và chất khoáng có chứa chì, thủy ngân, cadmium, asen vượt ngưỡng an toàn — đặc biệt sản phẩm giá rẻ nhập khẩu từ một số nguồn không được kiểm soát chặt.',
+      'Sản phẩm dành cho vận động viên tăng nguy cơ doping: pre-workout, fat burner, testosterone booster từ một số nguồn có thể chứa stimulants bị cấm (ma huang/ephedra, DMAA, DMBA) hoặc anabolic steroids không khai báo. Vận động viên thi đấu có thể bị cấm thi đấu dù vô tình — WADA không chấp nhận lý do "không biết".',
+      'Nơi mua đáng tin cậy: nhà thuốc có uy tín và được cấp phép, chuỗi phân phối chính thức (Long Châu, Pharmacity, An Khang), website chính thức của nhà sản xuất, siêu thị lớn. Tránh: mạng xã hội không rõ ràng, chợ online không kiểm soát (Shopee/Lazada cũng có sản phẩm giả), người bán dạo hoặc đa cấp.',
+    ],
+    points: [
+      { icon: '🏛️', label: 'Tra số đăng ký Cục ATTP', note: 'congkhaiyte.moh.gov.vn — kiểm tra trước khi mua' },
+      { icon: '✅', label: 'Tìm dấu USP hoặc NSF trên nhãn', note: 'Chứng nhận bên thứ ba = đúng thành phần, không chứa chất cấm' },
+      { icon: '🚩', label: '6 dấu hiệu cảnh báo sản phẩm đáng ngờ', note: 'Không địa chỉ, chỉ bán mạng xã hội, giá rẻ bất thường, 10 công dụng' },
+      { icon: '🏃', label: 'Pre-workout: nguy cơ doping', note: 'WADA không tha lý do "không biết" — kiểm tra tại Informed Sport' },
+    ],
+  },
+  {
+    metric: 'Có nguy cơ ảnh hưởng gan/thận không?', freq: 'Câu hỏi #4', tip: 'Thảo dược và TPCN "tự nhiên" là nguyên nhân DILI ngày càng tăng',
+    icon: '⚠️', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Drug-Induced Liver Injury (DILI) do thảo dược và TPCN (HILI — Herb-Induced Liver Injury) chiếm 20% và đang tăng nhanh. Tại Mỹ, TPCN chiếm ~20% tổng số ca suy gan cấp nhập viện. Nhiều sản phẩm được xem là "tự nhiên và an toàn" nhưng có độc tính gan cao.',
+    detail: 'Quan niệm "tự nhiên = an toàn" là sai lầm phổ biến và nguy hiểm. Nhiều chất độc mạnh nhất tự nhiên trên Trái Đất là chất tự nhiên (aconite, ricin, arsenic). Gan và thận phải xử lý tất cả những gì đi vào cơ thể — kể cả TPCN.',
+    details: [
+      'Thảo dược gây độc gan nổi tiếng: kava (Piper methysticum) — lo âu và mất ngủ → viêm gan nặng, vàng da, suy gan cấp. Bị cấm ở nhiều quốc gia châu Âu. Pyrrolizidine alkaloids (trong comfrey, borage, một số trà thảo dược) → tắc tĩnh mạch gan (SOS/VOD) — không hồi phục. Green tea extract liều cao (>800 mg EGCG/ngày) → viêm gan cấp.',
+      'Thảo dược gây độc thận: aristolochic acid trong mộc thông (Aristolochia), phòng kỷ (Stephania) — gây xơ thận nhanh và tiến triển đến suy thận không hồi phục (aristolochic acid nephropathy). Crom picolinate liều cao dài hạn → tổn thương thận. Nhiều thảo dược chứa oxalate cao → sỏi thận canxi oxalate.',
+      'Người có bệnh gan/thận từ trước cần cẩn thận hơn: chức năng gan/thận kém → thuốc và TPCN tích lũy → đạt ngưỡng độc ở liều bình thường. Viêm gan B mạn → gan nhạy cảm hơn với độc tính bổ sung. Suy thận CKD giai đoạn 3+ → tránh thảo dược giàu kali và oxalate.',
+      'Sản phẩm giảm cân và tăng cơ tiềm ẩn nguy cơ cao: nhiều sản phẩm "giảm cân thảo dược" và "tăng cơ" bị phát hiện chứa các chất gây độc gan không khai báo: anabolic steroids, sibutramine (bị cấm), DNP (2,4-dinitrophenol — cực kỳ nguy hiểm). DNP làm tăng nhiệt độ cơ thể, gây sốt cao tử vong.',
+      'Kiểm tra độc tính trước khi dùng: Natural Medicines Database (prescriber.naturalmediciners.com) đánh giá an toàn của hàng nghìn thảo dược và TPCN — có rating rõ ràng từ "Likely Safe" đến "Unsafe". NCCIH (National Center for Complementary and Integrative Health) của NIH cũng cung cấp thông tin đáng tin cậy.',
+      'Dấu hiệu tổn thương gan cần khám ngay: vàng da, vàng mắt, nước tiểu màu nâu/coca-cola, phân nhạt màu, ngứa toàn thân, mệt mỏi tăng nhanh, đau tức vùng gan (hạ sườn phải). Ngưng ngay sản phẩm đang dùng và đến khám bác sĩ mang theo nhãn sản phẩm.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Kava + green tea extract = độc gan', note: 'HILI chiếm 20% DILI và đang tăng — "tự nhiên" không nghĩa là an toàn' },
+      { icon: '🫘', label: 'Mộc thông/phòng kỷ → suy thận vĩnh viễn', note: 'Aristolochic acid nephropathy — không hồi phục, tiến đến lọc máu' },
+      { icon: '📱', label: 'Tra Natural Medicines Database', note: 'Rating an toàn rõ ràng từ Likely Safe đến Unsafe — đáng tin cậy' },
+      { icon: '🟡', label: 'Vàng da + nước tiểu sẫm = dừng TPCN ngay', note: 'Mang nhãn sản phẩm đến khám — giúp bác sĩ xác định nguyên nhân' },
+    ],
+  },
+  {
+    metric: 'Có được bác sĩ/dược sĩ tư vấn không?', freq: 'Câu hỏi #5', tip: 'Dược sĩ lâm sàng là chuyên gia tương tác thuốc-TPCN phù hợp nhất để hỏi',
+    icon: '👨‍⚕️', color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Chỉ 34% người dùng TPCN thông báo cho bác sĩ biết (NHIS survey). Trong khi đó 70% bác sĩ thừa nhận không tự động hỏi bệnh nhân về TPCN. Khoảng trống giao tiếp này là nguyên nhân của nhiều tương tác thuốc-TPCN nguy hiểm không được phát hiện.',
+    detail: 'Tư vấn bác sĩ hoặc dược sĩ không chỉ là thủ tục — đây là bước kiểm tra an toàn quan trọng nhất. Dược sĩ lâm sàng được đào tạo đặc biệt về tương tác thuốc và là nguồn tư vấn TPCN phù hợp nhất, thậm chí tốt hơn bác sĩ trong nhiều trường hợp.',
+    details: [
+      'Vai trò của dược sĩ lâm sàng: được đào tạo về dược lý học, dược động học và tương tác thuốc sâu hơn nhiều bác sĩ. Kiểm tra tương tác thuốc-TPCN, đánh giá phù hợp với bệnh nền, tư vấn liều phù hợp, thời điểm uống và cách bảo quản. Dược sĩ nhà thuốc lớn có thể tra cứu tương tác qua phần mềm chuyên dụng.',
+      'Những gì cần nói với bác sĩ/dược sĩ: danh sách đầy đủ tất cả thuốc kê đơn và TPCN đang dùng (kể cả "nhỏ" như aspirin 81mg, multivitamin). Sản phẩm TPCN muốn dùng mới. Bệnh nền và dị ứng. Tiền sử phản ứng bất thường với thuốc hoặc TPCN. Đang mang thai hoặc cho con bú.',
+      'Nguồn thông tin đáng tin cho bác sĩ/dược sĩ tra cứu: Lexicomp, Micromedex và Natural Medicines Database là ba nguồn uy tín nhất về tương tác thuốc-TPCN dùng chuyên nghiệp. Medscape Drug Interaction Checker (miễn phí) cũng có tương tác thuốc-TPCN.',
+      'Khi bác sĩ không có kiến thức về TPCN: không phải mọi bác sĩ đều có kiến thức sâu về TPCN — đây là lĩnh vực chuyên biệt. Có thể hỏi dược sĩ hoặc bác sĩ y học tích hợp (integrative medicine). Nguyên tắc quan trọng: bác sĩ chuyên khoa điều trị bệnh chính của bạn phải biết bạn đang dùng gì.',
+      'Mua ở đâu cũng cần tư vấn: không phải chỉ cần tư vấn khi mua ở nhà thuốc. Mua online cũng cần tra cứu hoặc hỏi dược sĩ trước. Nhiều người mua TPCN online vì tiện hoặc rẻ hơn — nhưng mất đi bước kiểm tra quan trọng từ dược sĩ.',
+      'Tư vấn định kỳ: danh sách TPCN nên được xem xét lại mỗi năm — tình trạng sức khỏe thay đổi, bệnh nền mới, thuốc mới → tương tác mới có thể xuất hiện. Đặc biệt khi bắt đầu thuốc mới → cần kiểm tra lại toàn bộ tương tác với TPCN đang dùng.',
+    ],
+    points: [
+      { icon: '💬', label: 'Dược sĩ — chuyên gia tương tác tốt nhất', note: 'Được đào tạo sâu về tương tác thuốc hơn nhiều bác sĩ' },
+      { icon: '📋', label: 'Mang danh sách đầy đủ khi tư vấn', note: 'Kể cả "nhỏ" như aspirin 81mg, vitamin C, omega-3 — tất cả đều quan trọng' },
+      { icon: '🔄', label: 'Xem xét lại TPCN mỗi năm', note: 'Bệnh thay đổi → thuốc mới → tương tác mới — không set and forget' },
+      { icon: '🌐', label: 'Medscape Drug Interaction Checker', note: 'Miễn phí, uy tín — tra cứu tương tác thuốc-TPCN trực tuyến' },
+    ],
+  },
+];
+
 function TabE6() {
-  const RULES = ['Không tự ngưng thuốc bác sĩ kê', 'Không tự tăng/giảm liều', 'Không dùng đơn thuốc của người khác', 'Không phối hợp thực phẩm chức năng mà không biết thành phần', 'Không tin quảng cáo "chữa dứt điểm", "thải độc", "hết tiểu đường vĩnh viễn"'];
-  const CHECK = ['Tôi dùng để làm gì? Có bằng chứng rõ không?', 'Tôi có bệnh nền / đang dùng thuốc không?', 'Sản phẩm có nguồn gốc rõ không?', 'Có nguy cơ ảnh hưởng gan/thận không?', 'Có được bác sĩ/dược sĩ tư vấn không?'];
+  const [ruleModal, setRuleModal] = useState(null);
+  const [checkModal, setCheckModal] = useState(null);
   return (
     <div className="space-y-4">
       <div className="rounded-2xl border border-violet-500/30 bg-violet-500/08 p-5">
-        <p className="text-lg font-bold text-violet-400 mb-3">5 Quy Tắc Không Của Thuốc</p>
+        <p className="text-lg font-bold text-violet-400 mb-1">5 Quy Tắc Không Của Thuốc</p>
+        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng quy tắc để hiểu lý do và hậu quả</p>
         <ul className="space-y-2">
-          {RULES.map((r, i) => (
-            <li key={i} className="flex items-start gap-3 text-lg text-muted">
-              <span className="font-black shrink-0" style={{ color: '#8b5cf6' }}>{i + 1}.</span>{r}
+          {DRUG_RULES.map((r, i) => (
+            <li key={i}
+              className="flex items-start gap-3 text-base text-muted rounded-xl px-3 py-2 cursor-pointer transition-all duration-200 hover:text-text"
+              style={{ background: 'rgba(139,92,246,0.04)', border: '1px solid rgba(139,92,246,0.10)' }}
+              onClick={() => setRuleModal(i)}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(139,92,246,0.10)'; e.currentTarget.style.borderColor = 'rgba(139,92,246,0.35)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(139,92,246,0.04)'; e.currentTarget.style.borderColor = 'rgba(139,92,246,0.10)'; }}>
+              <span className="font-black shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs" style={{ background: 'rgba(139,92,246,0.18)', color: '#8b5cf6' }}>{i + 1}</span>
+              <span className="flex-1">{r.metric}</span>
+              <span className="text-[9px] font-bold shrink-0 mt-0.5" style={{ color: '#8b5cf6' }}>→</span>
             </li>
           ))}
         </ul>
       </div>
       <div>
-        <p className="text-lg font-bold text-text mb-3">Checklist Trước Khi Dùng Thực Phẩm Bổ Sung</p>
+        <p className="text-lg font-bold text-text mb-1">Checklist Trước Khi Dùng Thực Phẩm Bổ Sung</p>
+        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng câu hỏi để xem hướng dẫn chi tiết</p>
         <div className="space-y-2">
-          {CHECK.map((q, i) => (
-            <div key={i} className="flex items-start gap-3 rounded-xl border border-border bg-surface/60 p-3 text-lg text-muted">
-              <span className="font-black shrink-0" style={{ color: '#8b5cf6' }}>?</span>{q}
+          {SUPPLEMENT_CHECKS.map((q, i) => (
+            <div key={i}
+              className="flex items-start gap-3 rounded-xl border border-border bg-surface/60 p-3 text-base text-muted cursor-pointer transition-all duration-200 hover:text-text"
+              onClick={() => setCheckModal(i)}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.40)'; e.currentTarget.style.background = 'rgba(139,92,246,0.06)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = ''; e.currentTarget.style.background = ''; }}>
+              <span className="font-black shrink-0 mt-0.5" style={{ color: '#8b5cf6' }}>?</span>
+              <span className="flex-1">{q.metric}</span>
+              <span className="text-[9px] font-bold shrink-0 mt-0.5" style={{ color: '#8b5cf6' }}>→</span>
             </div>
           ))}
         </div>
@@ -1492,6 +1723,26 @@ function TabE6() {
           ))}
         </div>
       </div>
+      {ruleModal !== null && (
+        <ScheduleModal
+          item={DRUG_RULES[ruleModal]}
+          idx={ruleModal} total={DRUG_RULES.length}
+          onClose={() => setRuleModal(null)}
+          onPrev={() => setRuleModal(i => Math.max(0, i - 1))}
+          onNext={() => setRuleModal(i => Math.min(DRUG_RULES.length - 1, i + 1))}
+          hasPrev={ruleModal > 0} hasNext={ruleModal < DRUG_RULES.length - 1}
+        />
+      )}
+      {checkModal !== null && (
+        <ScheduleModal
+          item={SUPPLEMENT_CHECKS[checkModal]}
+          idx={checkModal} total={SUPPLEMENT_CHECKS.length}
+          onClose={() => setCheckModal(null)}
+          onPrev={() => setCheckModal(i => Math.max(0, i - 1))}
+          onNext={() => setCheckModal(i => Math.min(SUPPLEMENT_CHECKS.length - 1, i + 1))}
+          hasPrev={checkModal > 0} hasNext={checkModal < SUPPLEMENT_CHECKS.length - 1}
+        />
+      )}
     </div>
   );
 }

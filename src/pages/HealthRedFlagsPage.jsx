@@ -128,15 +128,246 @@ const EMERGENCY_GROUPS = [
 ];
 
 const SOON_SIGNS = [
-  { icon: '🩺', sign: 'Sụt cân không rõ nguyên nhân > 5% trong 1 tháng', urgency: 'Trong 1–2 tuần' },
-  { icon: '🩺', sign: 'Mệt mỏi dai dẳng không hồi phục dù nghỉ đủ', urgency: 'Trong 1–2 tuần' },
-  { icon: '🩺', sign: 'Khối u hoặc hạch bất thường mới xuất hiện', urgency: 'Trong 1 tuần' },
-  { icon: '🩺', sign: 'Đi tiểu ra máu (không do kinh nguyệt)', urgency: 'Trong 1 tuần' },
-  { icon: '🩺', sign: 'Ho kéo dài > 3 tuần không rõ nguyên nhân', urgency: 'Trong 2 tuần' },
-  { icon: '🩺', sign: 'Thay đổi tính chất phân: máu, đen, mỏng hơn kéo dài', urgency: 'Trong 1 tuần' },
-  { icon: '🩺', sign: 'Đau đầu sáng sớm kèm nôn mửa liên tục', urgency: 'Trong 3–5 ngày' },
-  { icon: '🩺', sign: 'Nhìn đôi hoặc mất thị lực một phần kéo dài', urgency: 'Trong 1–2 ngày' },
+  {
+    icon: '⚖️', sign: 'Sụt cân không rõ nguyên nhân > 5% trong 1 tháng', urgency: 'Trong 1–2 tuần',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80',
+    keyFact: '⚠️ Sụt cân không chủ ý > 5% trọng lượng cơ thể trong 1 tháng (hoặc > 10% trong 6 tháng) là một trong những dấu hiệu "đỏ" quan trọng nhất trong y học — có thể là biểu hiện đầu tiên của ung thư, tiểu đường, cường giáp, hay bệnh lý tiêu hóa nghiêm trọng.',
+    details: [
+      'Nguyên nhân ác tính cần loại trừ: ung thư dạ dày, ung thư đại trực tràng, ung thư phổi, lymphoma (ung thư hạch), ung thư tụy. Đây là nhóm ung thư thường biểu hiện bằng sụt cân sớm trước khi có triệu chứng cụ thể khác.',
+      'Nguyên nhân nội tiết: tiểu đường type 1 (sụt cân nhanh kèm uống nhiều, tiểu nhiều), cường giáp (sụt cân kèm hồi hộp, đổ mồ hôi, tiêu chảy), suy thượng thận (sụt cân kèm mệt, buồn nôn, hạ áp).',
+      'Nguyên nhân tiêu hóa: bệnh Crohn, viêm loét đại tràng, celiac disease (dị ứng gluten), hội chứng kém hấp thu. Thường kèm tiêu chảy mạn, đau bụng, hoặc phân bất thường.',
+      'Nguyên nhân nhiễm trùng mạn: lao phổi (sụt cân + ho + sốt nhẹ về chiều), HIV/AIDS, nhiễm ký sinh trùng mạn tính. Cần hỏi về tiền sử tiếp xúc và du lịch.',
+      'Cần làm gì khi gặp bác sĩ: cân nặng tại nhiều thời điểm (tự theo dõi), nhật ký ăn uống, các triệu chứng kèm theo. Bác sĩ sẽ chỉ định: CBC, chức năng gan/thận/giáp, glucose, và tùy nghi ngờ — nội soi hoặc CT scan.',
+      'Sụt cân có chủ ý (ăn kiêng, tập thể dục) không phải dấu hiệu nguy hiểm. Chỉ lo ngại khi sụt cân KHÔNG CÓ thay đổi về chế độ ăn hoặc vận động — tức là cơ thể đang "tiêu hao" vì nguyên nhân bên trong.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Mốc cảnh báo: > 5% trong 1 tháng', note: 'Ví dụ: người 60kg sụt > 3kg không rõ lý do' },
+      { icon: '🦀', label: 'Loại trừ ung thư trước tiên', note: 'Đặc biệt nếu > 45 tuổi hoặc có tiền sử gia đình' },
+      { icon: '📋', label: 'Ghi lại cân nặng và triệu chứng kèm', note: 'Giúp bác sĩ đánh giá xu hướng và định hướng xét nghiệm' },
+      { icon: '🔬', label: 'CBC + TSH + glucose là bước đầu', note: 'Xét nghiệm cơ bản + nội soi nếu cần' },
+    ],
+  },
+  {
+    icon: '😴', sign: 'Mệt mỏi dai dẳng không hồi phục dù nghỉ đủ', urgency: 'Trong 1–2 tuần',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+    keyFact: '⚠️ Mệt mỏi dai dẳng kéo dài > 6 tuần, không cải thiện dù ngủ đủ giấc, không do nguyên nhân rõ ràng — cần đánh giá y tế. Phân biệt với mệt mỏi thông thường: mệt bệnh lý không hồi phục sau nghỉ ngơi.',
+    details: [
+      'Thiếu máu (anemia): nguyên nhân phổ biến nhất. Thiếu sắt (hay gặp ở phụ nữ kinh nguyệt nhiều, ăn chay), thiếu B12/folate (người cao tuổi, ăn chay thuần túy). Biểu hiện: mệt + da xanh + hoa mắt + nhịp tim nhanh.',
+      'Suy giáp (hypothyroidism): TSH tăng, FT4 giảm. Gặp ở nữ giới nhiều hơn (tỷ lệ 5:1). Triệu chứng: mệt mỏi + tăng cân + lạnh + táo bón + tóc rụng + da khô. Chẩn đoán bằng xét nghiệm TSH.',
+      'Tiểu đường type 2: glucose cao → tế bào không dùng được glucose → thiếu năng lượng. Kèm: uống nhiều, tiểu nhiều, nhìn mờ, vết thương lâu lành. Nhiều người phát hiện bệnh lần đầu qua triệu chứng mệt mỏi.',
+      'Trầm cảm và rối loạn lo âu: mệt mỏi là triệu chứng cốt lõi của trầm cảm. Thường kèm mất ngủ/ngủ nhiều, mất hứng thú, buồn bã, khó tập trung. Cần đánh giá sức khỏe tâm thần song song với các nguyên nhân thực thể.',
+      'Hội chứng mệt mỏi mạn (ME/CFS): mệt mỏi nghiêm trọng > 6 tháng, tệ hơn sau gắng sức (post-exertional malaise), kèm sương mù não, đau cơ khớp. Chẩn đoán loại trừ — sau khi kiểm tra hết các nguyên nhân khác.',
+      'Ung thư: mệt mỏi không giải thích được là triệu chứng của hầu hết các ung thư, đặc biệt lymphoma, bệnh bạch cầu (leukemia). Đặc biệt nghi ngờ nếu kèm sụt cân, sốt, đổ mồ hôi đêm (B symptoms).',
+    ],
+    points: [
+      { icon: '🩸', label: 'CBC + sắt + TSH trước tiên', note: 'Thiếu máu và suy giáp — nguyên nhân phổ biến, dễ điều trị' },
+      { icon: '🍬', label: 'Xét nghiệm đường huyết lúc đói', note: 'Tiểu đường type 2 thường phát hiện muộn qua triệu chứng mệt' },
+      { icon: '🧠', label: 'Đánh giá sức khỏe tâm thần', note: 'Trầm cảm và lo âu là nguyên nhân mệt mỏi rất hay gặp' },
+      { icon: '📅', label: 'Mệt > 6 tuần không rõ = cần khám', note: 'Đừng tự quy cho "làm việc nhiều" mà bỏ qua' },
+    ],
+  },
+  {
+    icon: '🔵', sign: 'Khối u hoặc hạch bất thường mới xuất hiện', urgency: 'Trong 1 tuần',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1576671081837-49000212a370?w=800&q=80',
+    keyFact: '⚠️ Bất kỳ khối u mới nào xuất hiện trên cơ thể hoặc hạch sưng to không đau không rõ nguyên nhân đều cần đánh giá. Đặc biệt: khối u cứng, không di động, bờ không đều, hoặc hạch > 2cm kéo dài > 4 tuần.',
+    details: [
+      'Hạch bình thường vs. bất thường: hạch phản ứng với nhiễm trùng thường mềm, đau, di động được và tự nhỏ sau 2–4 tuần. Hạch cần lo ngại: cứng, không đau, không di động, > 2cm, kéo dài > 4 tuần, kèm sụt cân/sốt/đổ mồ hôi đêm.',
+      'Vị trí hạch và ý nghĩa: cổ (viêm họng, ung thư vùng đầu cổ, lymphoma); nách (viêm nhiễm tay, ung thư vú); bẹn (nhiễm trùng sinh dục, ung thư tế bào hắc tố chi dưới); hạch thượng đòn trái (Virchow node — cảnh báo ung thư ổ bụng).',
+      'Lymphoma (ung thư hạch): Hodgkin lymphoma hay gặp ở người trẻ 15–35 tuổi, thường bắt đầu bằng hạch cổ không đau. Non-Hodgkin lymphoma đa dạng hơn, có thể ở mọi lứa tuổi. B symptoms: sốt, đổ mồ hôi đêm, sụt cân.',
+      'Khối u vú: bất kỳ khối u mới nào ở vú đều cần đánh giá — dù đau hay không. Ung thư vú thường không đau. Cần siêu âm (người < 40) hoặc mammography (> 40) và có thể sinh thiết.',
+      'Khối u da — dấu hiệu ABCDE: Asymmetry (mất đối xứng), Border irregular (bờ không đều), Color variation (màu không đồng nhất), Diameter > 6mm, Evolution (thay đổi theo thời gian). Bất kỳ nốt ruồi nào thay đổi đều cần kiểm tra.',
+      'Bước tiếp theo: siêu âm hoặc CT để đánh giá kích thước; FNA (chọc hút tế bào) hoặc sinh thiết cắt để chẩn đoán mô học — đây là tiêu chuẩn vàng xác định ác tính hay lành tính.',
+    ],
+    points: [
+      { icon: '🔴', label: 'Hạch cứng, không đau, không di động = lo ngại', note: 'Khác với hạch phản ứng: mềm, đau, tự nhỏ sau 2–4 tuần' },
+      { icon: '👆', label: 'Hạch thượng đòn trái = cảnh báo cao', note: 'Virchow node — thường liên quan ung thư ổ bụng' },
+      { icon: '🩻', label: 'Siêu âm là bước đầu', note: 'Nhanh, rẻ, không bức xạ — đánh giá cấu trúc và kích thước' },
+      { icon: '🔬', label: 'Sinh thiết = chẩn đoán xác định', note: 'Chỉ sinh thiết mới cho biết lành hay ác tính' },
+    ],
+  },
+  {
+    icon: '🩸', sign: 'Đi tiểu ra máu (không do kinh nguyệt)', urgency: 'Trong 1 tuần',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80',
+    keyFact: '⚠️ Tiểu máu (hematuria) — dù chỉ một lần, không đau, không kèm triệu chứng khác — cũng cần đánh giá y tế. Tiểu máu không đau ở người > 45 tuổi có thể là ung thư bàng quang hoặc thận cho đến khi được loại trừ.',
+    details: [
+      'Tiểu máu đại thể (thấy bằng mắt thường): nước tiểu đỏ hoặc nâu. Tiểu máu vi thể (qua xét nghiệm): > 3 hồng cầu/vi trường. Cả hai đều cần đánh giá — tiểu máu vi thể cũng có thể là bệnh nghiêm trọng.',
+      'Nguyên nhân theo tuổi: người trẻ (<40): viêm cầu thận (IgA nephropathy), sỏi tiết niệu, nhiễm trùng tiết niệu. Người trung niên và cao tuổi (>45): ung thư bàng quang, ung thư thận là ưu tiên loại trừ đầu tiên.',
+      'Ung thư bàng quang: hay gặp ở nam > 50 tuổi, hút thuốc, tiếp xúc hóa chất công nghiệp. Tiểu máu không đau là triệu chứng đầu tiên trong 80% ca. Điều trị tốt nhất khi phát hiện giai đoạn sớm (còn trong niêm mạc).',
+      'Sỏi tiết niệu: tiểu máu kèm đau quặn (renal colic) dữ dội từ hông lan xuống bẹn. CT scan không thuốc cản quang là tiêu chuẩn chẩn đoán (nhạy 95%).',
+      'Viêm cầu thận: tiểu máu vi thể + protein niệu + phù. IgA nephropathy hay gặp ở người trẻ sau nhiễm trùng hô hấp. Cần sinh thiết thận để chẩn đoán và đánh giá mức độ tổn thương.',
+      'Cần làm gì: tổng phân tích nước tiểu (UA) là bước đầu; nếu tiểu máu được xác nhận → siêu âm thận bàng quang, tế bào học nước tiểu, và nếu > 45 tuổi → nội soi bàng quang (cystoscopy).',
+    ],
+    points: [
+      { icon: '🚨', label: 'Tiểu máu không đau > 45 tuổi = ưu tiên loại trừ ung thư', note: '80% ung thư bàng quang biểu hiện qua tiểu máu không đau' },
+      { icon: '🔬', label: 'Tổng phân tích nước tiểu là bước đầu', note: 'Xác nhận tiểu máu và tìm dấu hiệu viêm/nhiễm kèm' },
+      { icon: '🩻', label: 'Siêu âm + CT thận tiết niệu', note: 'Phát hiện sỏi, u thận, bất thường cấu trúc' },
+      { icon: '🔭', label: 'Nội soi bàng quang nếu > 45 tuổi', note: 'Tiêu chuẩn vàng phát hiện ung thư bàng quang giai đoạn sớm' },
+    ],
+  },
+  {
+    icon: '🫁', sign: 'Ho kéo dài > 3 tuần không rõ nguyên nhân', urgency: 'Trong 2 tuần',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80',
+    keyFact: '⚠️ Ho kéo dài > 3 tuần không do cảm cúm hoặc không cải thiện sau điều trị thông thường cần loại trừ lao phổi, ung thư phổi và bệnh phổi mạn tính. Đặc biệt nguy hiểm nếu kèm ho ra máu, sụt cân, hoặc sốt kéo dài.',
+    details: [
+      'Lao phổi: ho mạn + sốt nhẹ về chiều + đổ mồ hôi đêm + sụt cân là tứ chứng kinh điển. Việt Nam thuộc 30 quốc gia có gánh nặng lao cao nhất thế giới. Chẩn đoán: X-quang phổi + đờm AFB (3 mẫu) + Gene Xpert MTB/RIF.',
+      'Ung thư phổi: thường không triệu chứng giai đoạn sớm. Dấu hiệu cảnh báo: ho mới khởi phát hoặc thay đổi tính chất ho ở người hút thuốc, ho ra máu, khàn tiếng, đau ngực. Tỷ lệ sống 5 năm: giai đoạn I >90%, giai đoạn IV chỉ 10%.',
+      'Ho mạn do thuốc (ACE inhibitor cough): ho khan kích thích gặp ở 5–20% người dùng thuốc hạ áp nhóm ACE inhibitor (captopril, enalapril, lisinopril). Ho thường hết sau khi ngưng thuốc 1–4 tuần.',
+      'Trào ngược dạ dày thực quản (GERD): ho mạn ban đêm hoặc sau ăn, kèm ợ chua, ợ nóng. Cơ chế: acid kích thích thanh quản/phế quản. Điều trị thử PPI 4–8 tuần thấy cải thiện có giá trị chẩn đoán.',
+      'Hen phế quản ho dạng (cough-variant asthma): ho khan dai dẳng, tăng ban đêm và sáng sớm, kích thích bởi lạnh/gắng sức/mùi hóa chất. Không thở khò khè rõ. Chẩn đoán bằng đo hô hấp ký và test phế quản giãn.',
+      'Nhỏ giọt sau (post-nasal drip): dịch mũi chảy xuống họng → kích thích ho, hay gặp ở viêm mũi xoang mạn. Ho nhiều buổi sáng, cảm giác chảy dịch sau cổ họng. Điều trị: xịt mũi corticoid, kháng histamine.',
+    ],
+    points: [
+      { icon: '🦠', label: 'Loại trừ lao phổi trước tiên ở Việt Nam', note: 'X-quang + đờm AFB + Gene Xpert — cần làm nếu ho > 3 tuần' },
+      { icon: '🚬', label: 'Hút thuốc + ho mới = nghi ung thư phổi', note: 'CT low-dose sàng lọc ung thư phổi cho người hút thuốc > 50 tuổi' },
+      { icon: '💊', label: 'Kiểm tra thuốc đang dùng', note: 'ACE inhibitor gây ho khan — ngưng thuốc là điều trị' },
+      { icon: '🩻', label: 'X-quang phổi là bước đầu', note: 'Nhanh, rẻ, loại trừ lao và các bất thường phổi lớn' },
+    ],
+  },
+  {
+    icon: '🩹', sign: 'Thay đổi tính chất phân: máu, đen, mỏng hơn kéo dài', urgency: 'Trong 1 tuần',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    keyFact: '⚠️ Phân đen hoặc có máu đỏ tươi kéo dài — không do táo bón hoặc trĩ đã biết — cần loại trừ ung thư đại trực tràng và xuất huyết tiêu hóa. Phân hình bút chì (pencil-thin stool) kéo dài là dấu hiệu cảnh báo ung thư trực tràng.',
+    details: [
+      'Phân đen (melena): màu đen như hắc ín, mùi hôi đặc trưng — xuất huyết tiêu hóa trên (dạ dày, tá tràng). Nguyên nhân: loét dạ dày/tá tràng, giãn tĩnh mạch thực quản (xơ gan). Cần nội soi dạ dày khẩn nếu phân đen kèm chóng mặt, ngất.',
+      'Phân đỏ tươi (hematochezia): thường là xuất huyết tiêu hóa dưới. Nguyên nhân lành tính: trĩ, nứt hậu môn. Nguyên nhân nghiêm trọng: polyp đại tràng, ung thư đại trực tràng, viêm đại tràng. Không tự quy cho trĩ nếu chưa được xác nhận qua nội soi.',
+      'Ung thư đại trực tràng: thay đổi thói quen đại tiện (táo bón luân phiên tiêu chảy, phân mỏng hơn), máu trong phân, đau bụng, sụt cân là tứ chứng kinh điển. Ung thư phổ biến thứ 3 thế giới; tỷ lệ sống > 90% nếu phát hiện giai đoạn I.',
+      'Sàng lọc ung thư đại trực tràng: ACS khuyến nghị bắt đầu từ 45 tuổi bằng: nội soi đại tràng mỗi 10 năm, hoặc xét nghiệm máu ẩn phân (FIT) mỗi năm, hoặc xét nghiệm DNA phân mỗi 3 năm.',
+      'Phân mỏng dạng bút chì (pencil-thin stool) kéo dài: khối u trong trực tràng thu hẹp lòng ruột — phân bị nén thành hình bút chì. Đây là dấu hiệu cảnh báo cao cần nội soi đại tràng ngay.',
+      'Thuốc gây màu phân: sắt và bismuth gây phân đen (không mùi đặc trưng như melena); củ dền/thực phẩm đỏ có thể gây phân đỏ. Hỏi về thuốc và thực phẩm trước khi lo ngại — nhưng tốt nhất vẫn nên kiểm tra.',
+    ],
+    points: [
+      { icon: '⚫', label: 'Phân đen + chóng mặt = cấp cứu', note: 'Xuất huyết tiêu hóa trên có thể mất máu nhanh' },
+      { icon: '✏️', label: 'Phân hình bút chì = nghi ung thư trực tràng', note: 'Khối u thu hẹp lòng ruột — cần nội soi ngay' },
+      { icon: '🚫', label: 'Đừng tự quy cho trĩ', note: 'Trĩ gây máu đỏ tươi — nhưng ung thư cũng vậy. Cần nội soi xác nhận' },
+      { icon: '🩺', label: 'Sàng lọc từ 45 tuổi', note: 'Nội soi đại tràng mỗi 10 năm hoặc FIT test hàng năm' },
+    ],
+  },
+  {
+    icon: '🧠', sign: 'Đau đầu sáng sớm kèm nôn mửa liên tục', urgency: 'Trong 3–5 ngày',
+    color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
+    keyFact: '⚠️ Đau đầu dữ dội buổi sáng sớm (thường cải thiện sau nôn), kèm nôn mửa phun vọt, thị giác thay đổi — là dấu hiệu kinh điển của tăng áp lực nội sọ. Có thể là u não, tụ máu nội sọ, hoặc tràn dịch não thất cần chẩn đoán khẩn.',
+    details: [
+      'Tăng áp lực nội sọ (TALNS): tam chứng Cushing — đau đầu sáng sớm (tệ nhất khi mới thức dậy, cải thiện sau khi đứng dậy/nôn), nôn mửa phun vọt (không có buồn nôn trước), phù gai thị (nhìn mờ, song thị). Áp lực bình thường 5–15 mmHg, TALNS khi > 20 mmHg.',
+      'U não nguyên phát: glioblastoma (grade IV, tiến triển nhanh, trung vị sống 15 tháng), meningioma (thường lành tính, phát triển chậm). Không phải tất cả u não đều gây đau đầu — chỉ 50% có triệu chứng đau đầu.',
+      'U não di căn: ung thư phổi (50%), ung thư vú (15%), ung thư đại trực tràng, ung thư thận. Đau đầu tiến triển kèm suy giảm thần kinh khu trú (yếu tay chân một bên, rối loạn thị giác, thay đổi tính cách).',
+      'Tràn dịch não thất (hydrocephalus): dịch não tủy tích lũy → tăng áp lực. Dạng mắc phải (sau viêm màng não, sau chảy máu dưới nhện). Triệu chứng: đau đầu tăng dần, lơ mơ, dáng đi không vững.',
+      'Chẩn đoán phân biệt với migraine lành tính: migraine cũng nặng vào sáng và kèm nôn — nhưng có tiền triệu (aura), biết trước yếu tố kích hoạt, và có lịch sử lâu dài. Đau đầu "dữ dội nhất cuộc đời" (thunderclap headache) là cấp cứu — nghĩ đến vỡ phình mạch.',
+      'Cần làm gì: MRI não có/không thuốc cản quang là tiêu chuẩn vàng. CT não phù hợp hơn trong cấp cứu (nhanh, phát hiện xuất huyết tốt). Không trì hoãn nếu có thêm yếu liệt, co giật, hoặc thay đổi ý thức.',
+    ],
+    points: [
+      { icon: '🌅', label: 'Đau đầu sáng sớm + nôn phun = TALNS', note: 'Tăng áp lực nội sọ — không tự xử lý' },
+      { icon: '⚡', label: '"Đau đầu dữ dội nhất cuộc đời" = cấp cứu', note: 'Thunderclap headache — nghi vỡ phình mạch máu não' },
+      { icon: '🧲', label: 'MRI não là tiêu chuẩn vàng', note: 'Tốt hơn CT cho khối u nhỏ — CT dùng trong cấp cứu' },
+      { icon: '🎯', label: 'Đau đầu tiến triển ≠ migraine', note: 'Nặng hơn mỗi ngày, không đáp ứng thuốc thông thường' },
+    ],
+  },
+  {
+    icon: '👁️', sign: 'Nhìn đôi hoặc mất thị lực một phần kéo dài', urgency: 'Trong 1–2 ngày',
+    color: '#8b5cf6', rgb: '139,92,246',
+    img: 'https://images.unsplash.com/photo-1516239482977-b550ba7253f2?w=800&q=80',
+    keyFact: '⚠️ Mất thị lực đột ngột hoặc nhìn đôi dai dẳng là dấu hiệu thần kinh hoặc mắt nghiêm trọng. Mất thị lực một mắt đột ngột (amaurosis fugax) có thể là TIA và dự báo đột quỵ trong 48h tiếp theo.',
+    details: [
+      'Amaurosis fugax (mù thoáng qua một mắt): mất thị lực hoàn toàn một mắt trong vài giây đến vài phút, tự hồi phục — như "tấm màn sập xuống". Nguyên nhân: tắc mạch máu tạm thời đến võng mạc từ cục huyết khối mảng xơ vữa động mạch cảnh. Đây là TIA mắt — cấp cứu thần kinh mạch máu.',
+      'Bong võng mạc: mất thị lực một phần (như tấm màn che một góc), kèm ánh sáng chớp, nhiều chấm bay hơn bình thường. Không đau. Cần phẫu thuật khẩn trong 24h nếu điểm vàng (macula) chưa bị ảnh hưởng — trì hoãn gây mù vĩnh viễn.',
+      'Glaucoma cấp: tăng nhãn áp đột ngột → đau mắt dữ dội + nhìn mờ + nhìn thấy quầng xung quanh đèn + buồn nôn. Cấp cứu nhãn khoa — áp lực cao gây tổn thương dây thần kinh thị giác không thể hồi phục.',
+      'Nhìn đôi (diplopia) phân loại: một mắt (monocular — che mắt kia vẫn nhìn đôi) → nguyên nhân ở mắt. Hai mắt (binocular — che một mắt là hết) → nguyên nhân thần kinh. Liệt dây thần kinh III, IV, VI → nghi phình mạch, u não, tăng áp nội sọ.',
+      'Tắc động mạch trung tâm võng mạc (CRAO): "đột quỵ mắt" — mất thị lực hoàn toàn và đột ngột một mắt, không đau. Cửa sổ điều trị < 4–6 giờ. Cần đến cấp cứu ngay như đột quỵ não.',
+      'Phân biệt với lành tính: mờ mắt do khúc xạ (cải thiện khi nheo mắt), mờ khi nhìn xa (cận thị đơn thuần). Lo ngại khi: một mắt bị ảnh hưởng, xuất hiện đột ngột, có kèm đau mắt, hoặc không cải thiện sau nghỉ ngơi.',
+    ],
+    points: [
+      { icon: '🚨', label: 'Mù thoáng qua 1 mắt = TIA = khẩn cấp', note: 'Nguy cơ đột quỵ trong 48h tiếp theo — gọi 115' },
+      { icon: '🔲', label: '"Tấm màn" che thị lực = nghi bong võng mạc', note: 'Phẫu thuật trong 24h nếu macula chưa bị — trễ → mù' },
+      { icon: '👓', label: 'Nhìn đôi 2 mắt = nguyên nhân thần kinh', note: 'Che 1 mắt mà hết nhìn đôi → vấn đề thần kinh/não' },
+      { icon: '👁️', label: 'Đau mắt + quầng ánh đèn = glaucoma cấp', note: 'Cấp cứu nhãn khoa — tổn thương thần kinh thị không hồi phục' },
+    ],
+  },
 ];
+
+function SoonModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.sign} className="w-full h-full object-cover" style={{ opacity: 0.4 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+              {item.icon}
+            </div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>{item.urgency}</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-4 leading-snug" style={{ color: item.color }}>{item.sign}</h2>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function EmergencyModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
@@ -273,6 +504,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 export default function HealthRedFlagsPage() {
   const [emergencyModal, setEmergencyModal] = useState(null);
+  const [soonModal, setSoonModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -378,13 +610,19 @@ export default function HealthRedFlagsPage() {
       {/* Soon signs */}
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Cần Đi Khám Sớm</h2>
-        <p className="text-muted text-lg mb-6">Các dấu hiệu này không cần vào cấp cứu ngay nhưng cần đặt lịch khám trong thời gian ngắn.</p>
+        <p className="text-muted text-lg mb-6">Các dấu hiệu này không cần vào cấp cứu ngay nhưng cần đặt lịch khám trong thời gian ngắn. Click để xem chi tiết.</p>
         <div className="space-y-2">
           {SOON_SIGNS.map((s, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex items-center gap-4">
-              <span className="text-xl">{s.icon}</span>
-              <p className="text-lg text-text flex-1">{s.sign}</p>
-              <span className="text-base font-bold shrink-0 px-2 py-1 rounded-full border" style={{ color: '#f97316', borderColor: '#f9731633', background: '#f9731610' }}>{s.urgency}</span>
+            <div key={i}
+              onClick={() => setSoonModal(i)}
+              className="rounded-2xl border bg-surface p-4 flex items-center gap-4 cursor-pointer transition-all"
+              style={{ borderColor: `rgba(${s.rgb},0.2)` }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${s.rgb},0.55)`; e.currentTarget.style.transform = 'translateX(4px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = `rgba(${s.rgb},0.2)`; e.currentTarget.style.transform = 'translateX(0)'; }}>
+              <span className="text-xl shrink-0">{s.icon}</span>
+              <p className="flex-1 text-sm" style={{ color: 'rgba(229,231,235,0.9)' }}>{s.sign}</p>
+              <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-full border" style={{ color: s.color, borderColor: `rgba(${s.rgb},0.3)`, background: `rgba(${s.rgb},0.1)` }}>{s.urgency}</span>
+              <span className="text-sm shrink-0 ml-1" style={{ color: s.color }}>→</span>
             </div>
           ))}
         </div>
@@ -406,6 +644,18 @@ export default function HealthRedFlagsPage() {
       <p className="text-base text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục. Không thay thế khám và điều trị y tế.</p>
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
 
+      {soonModal !== null && (
+        <SoonModal
+          item={SOON_SIGNS[soonModal]}
+          idx={soonModal}
+          total={SOON_SIGNS.length}
+          onClose={() => setSoonModal(null)}
+          onPrev={() => setSoonModal(i => Math.max(0, i - 1))}
+          onNext={() => setSoonModal(i => Math.min(SOON_SIGNS.length - 1, i + 1))}
+          hasPrev={soonModal > 0}
+          hasNext={soonModal < SOON_SIGNS.length - 1}
+        />
+      )}
       {emergencyModal !== null && (
         <EmergencyModal
           item={EMERGENCY_GROUPS[emergencyModal]}

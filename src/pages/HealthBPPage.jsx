@@ -430,6 +430,114 @@ function BPModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }
   );
 }
 
+function BPEntryModal({ entry, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const cls = entry.sys > 180 || entry.dia > 120 ? BP_CATS[4]
+    : entry.sys >= 140 || entry.dia >= 90 ? BP_CATS[3]
+    : entry.sys >= 130 || entry.dia >= 80 ? BP_CATS[2]
+    : entry.sys >= 120 ? BP_CATS[1]
+    : BP_CATS[0];
+
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${cls.rgb},0.30)`, boxShadow: `0 0 80px rgba(${cls.rgb},0.18)` }}
+        onClick={e => e.stopPropagation()}>
+
+        {/* Reading hero */}
+        <div className="relative rounded-t-3xl overflow-hidden shrink-0 py-10 flex flex-col items-center justify-center"
+          style={{ background: `rgba(${cls.rgb},0.07)` }}>
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${cls.color}, transparent)` }} />
+          <div className="flex items-baseline gap-2 mb-2">
+            <span className="font-black" style={{ fontSize: '3.5rem', lineHeight: 1, color: cls.color }}>{entry.sys}/{entry.dia}</span>
+            <span className="text-lg font-bold text-muted">mmHg</span>
+          </div>
+          {entry.pulse && <span className="text-base text-muted mb-1">♥ {entry.pulse} bpm</span>}
+          <span className="text-sm text-muted opacity-60">{entry.date} · {entry.time}</span>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        <div className="p-6">
+          {/* Classification badge */}
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-3 h-3 rounded-full shrink-0" style={{ background: cls.color }} />
+            <span className="font-bold text-xl" style={{ color: cls.color }}>{cls.label}</span>
+            <span className="ml-auto text-xs px-3 py-1 rounded-full font-bold uppercase tracking-widest"
+              style={{ background: `rgba(${cls.rgb},0.12)`, color: cls.color }}>
+              Tâm thu {cls.sys} · Tâm trương {cls.dia}
+            </span>
+          </div>
+
+          {/* Key fact */}
+          <div className="rounded-2xl px-4 py-3 mb-5 text-sm leading-relaxed" style={{ background: `rgba(${cls.rgb},0.08)`, borderLeft: `3px solid ${cls.color}` }}>
+            {cls.keyFact}
+          </div>
+
+          {/* Recommended action */}
+          <div className="mb-5">
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: cls.color }}>Khuyến nghị</p>
+            <p className="text-base text-muted leading-relaxed">{cls.action}</p>
+          </div>
+
+          {/* 3 key details */}
+          <ul className="space-y-3 mb-5">
+            {cls.details.slice(0, 3).map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${cls.rgb},0.14)`, color: cls.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* 2-col key points */}
+          <div className="grid grid-cols-2 gap-3 mb-5">
+            {cls.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2 rounded-2xl p-3"
+                style={{ background: `rgba(${cls.rgb},0.06)`, border: `1px solid rgba(${cls.rgb},0.14)` }}>
+                <span className="text-xl shrink-0">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? cls.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${cls.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${cls.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? cls.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${cls.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${cls.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function RevealBlock({ children, delay = 0, className = '' }) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -468,6 +576,7 @@ function BPJournal() {
   const [sys, setSys] = useState('');
   const [dia, setDia] = useState('');
   const [pulse, setPulse] = useState('');
+  const [entryModal, setEntryModal] = useState(null);
 
   function addEntry() {
     if (!sys || !dia) return;
@@ -499,14 +608,32 @@ function BPJournal() {
       {entries.length === 0 && <p className="text-muted text-lg text-center py-6">Chưa có dữ liệu. Thêm lần đo đầu tiên.</p>}
       <div className="space-y-2 max-h-64 overflow-y-auto">
         {entries.map((e, i) => (
-          <div key={i} className="flex items-center gap-3 rounded-xl px-3 py-2 border border-border">
+          <div key={i}
+            onClick={() => setEntryModal(i)}
+            className="flex items-center gap-3 rounded-xl px-3 py-2 border border-border cursor-pointer hover:border-opacity-60 transition-colors"
+            style={{ '--hover-color': getColor(e.sys, e.dia) }}
+            onMouseEnter={el => el.currentTarget.style.borderColor = getColor(e.sys, e.dia) + '66'}
+            onMouseLeave={el => el.currentTarget.style.borderColor = ''}>
             <div className="w-2 h-2 rounded-full shrink-0" style={{ background: getColor(e.sys, e.dia) }} />
             <span className="font-bold text-lg" style={{ color: getColor(e.sys, e.dia) }}>{e.sys}/{e.dia}</span>
             {e.pulse && <span className="text-base text-muted">♥ {e.pulse} bpm</span>}
             <span className="text-base text-muted ml-auto">{e.date} {e.time}</span>
+            <span className="text-muted text-sm shrink-0">→</span>
           </div>
         ))}
       </div>
+      {entryModal !== null && entries[entryModal] && (
+        <BPEntryModal
+          entry={entries[entryModal]}
+          idx={entryModal}
+          total={entries.length}
+          onClose={() => setEntryModal(null)}
+          onPrev={() => setEntryModal(i => Math.max(0, i - 1))}
+          onNext={() => setEntryModal(i => Math.min(entries.length - 1, i + 1))}
+          hasPrev={entryModal > 0}
+          hasNext={entryModal < entries.length - 1}
+        />
+      )}
     </div>
   );
 }

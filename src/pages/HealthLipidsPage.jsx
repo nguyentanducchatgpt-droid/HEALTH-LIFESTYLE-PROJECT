@@ -349,6 +349,97 @@ const FOOD_AVOID = [
   },
 ];
 
+const TEST_FREQ = [
+  {
+    icon: '🧑‍⚕️', label: 'Người Bình Thường < 35 Tuổi', range: 'Mỗi 5 năm',
+    color: '#22c55e', rgb: '34,197,94',
+    desc: 'Mỗi 5 năm nếu không có yếu tố nguy cơ tim mạch, tiểu đường, hay tiền sử gia đình.',
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80',
+    keyFact: '💡 Người trẻ khỏe mạnh < 35 tuổi có ít nguy cơ nhưng xét nghiệm nền giúp phát hiện sớm rối loạn lipid di truyền (familial hypercholesterolemia) — một bệnh không có triệu chứng nhưng tăng nguy cơ đột quỵ/nhồi máu cơ tim sớm rất cao.',
+    detail: 'Thiết lập đường cơ sở (baseline) từ sớm cho phép theo dõi xu hướng theo thời gian — quan trọng hơn là so sánh với một giá trị duy nhất.',
+    details: [
+      'Không có yếu tố nguy cơ = không hút thuốc, không béo phì, không tiểu đường, không cao huyết áp, không có tiền sử gia đình bị bệnh tim sớm (nam < 55 tuổi, nữ < 65 tuổi).',
+      'Lần đầu xét nghiệm nên thực hiện ở tuổi 20 để thiết lập baseline. Nếu kết quả bình thường, chu kỳ 5 năm là hợp lý theo hướng dẫn AHA/ACC 2019.',
+      'Familial hypercholesterolemia ảnh hưởng 1/200–1/500 người — LDL thường > 190 mg/dL ngay từ trẻ. Nếu phát hiện sớm, điều trị statin có thể ngăn chặn biến cố tim mạch.',
+      'Tăng cân nhanh, thay đổi lối sống lớn (bắt đầu hút thuốc, ít vận động, chế độ ăn thay đổi) là chỉ định xét nghiệm sớm hơn chu kỳ 5 năm.',
+      'Phụ nữ mang thai có thể thay đổi lipid tạm thời (TG tăng sinh lý). Nên đo lại sau 6–12 tuần sau sinh để có giá trị đại diện.',
+      'Lưu kết quả để so sánh: xu hướng LDL tăng dần qua các năm có ý nghĩa lâm sàng hơn một giá trị đơn lẻ trong ngưỡng bình thường.',
+    ],
+    points: [
+      { icon: '📋', label: 'Thiết lập baseline từ tuổi 20', note: 'Xu hướng dài hạn quan trọng hơn một điểm dữ liệu' },
+      { icon: '🧬', label: 'Phát hiện FH sớm', note: 'Familial hypercholesterolemia: LDL > 190 không triệu chứng' },
+      { icon: '🔄', label: 'Đánh giá lại nếu lối sống thay đổi', note: 'Tăng cân, hút thuốc, ít vận động → xét nghiệm sớm hơn' },
+      { icon: '🤰', label: 'Phụ nữ sau sinh', note: 'Đo lại 6–12 tuần sau sinh vì thai kỳ thay đổi lipid tạm thời' },
+    ],
+  },
+  {
+    icon: '📅', label: '35–65 Tuổi', range: 'Mỗi 1–2 năm',
+    color: '#f97316', rgb: '249,115,22',
+    desc: 'Giai đoạn nguy cơ tăng dần — tần suất kiểm tra định kỳ 1–2 năm để theo dõi xu hướng.',
+    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    keyFact: '💡 Tuổi 35–65 là giai đoạn mảng xơ vữa (atherosclerotic plaque) tích lũy mà không có triệu chứng rõ ràng. Xét nghiệm mỗi 1–2 năm giúp bắt kịp xu hướng tăng LDL và can thiệp trước khi xảy ra biến cố tim mạch.',
+    detail: 'Đây là giai đoạn "cửa sổ" quan trọng nhất cho can thiệp lối sống — thay đổi ở tuổi 40 có lợi ích tim mạch dài hạn lớn hơn nhiều so với bắt đầu ở tuổi 60.',
+    details: [
+      'Cholesterol tự nhiên tăng theo tuổi: estrogen bảo vệ phụ nữ trước mãn kinh, nhưng sau mãn kinh LDL tăng nhanh có thể vượt mức của nam giới đồng lứa.',
+      'Nam giới tuổi 35–65 có nguy cơ tim mạch tích lũy cao nhất — thường không có triệu chứng cho đến khi nhồi máu cơ tim hoặc đột quỵ xảy ra.',
+      'Nếu LDL trong lần trước là 110–129 mg/dL (gần tối ưu), xét nghiệm mỗi năm để phát hiện sớm khi vượt ngưỡng cần can thiệp.',
+      'Kết hợp đánh giá điểm nguy cơ 10 năm (ASCVD Risk Score — AHA Calculator): mức LDL cần điều trị phụ thuộc vào tổng nguy cơ, không chỉ số tuyệt đối.',
+      'Xét nghiệm cần nhịn ăn 9–12h để có TG chính xác (ảnh hưởng đến tính LDL gián tiếp qua công thức Friedewald).',
+      'Nên xét nghiệm cùng glucose máu, HbA1c, hs-CRP để có bức tranh toàn diện về nguy cơ tim mạch/chuyển hóa.',
+    ],
+    points: [
+      { icon: '📈', label: 'Cholesterol tăng tự nhiên theo tuổi', note: 'Xu hướng tăng LDL cần theo dõi sát hơn' },
+      { icon: '⚖️', label: 'Tính ASCVD Risk Score', note: 'Ngưỡng điều trị phụ thuộc tổng nguy cơ 10 năm' },
+      { icon: '🍽️', label: 'Nhịn ăn 9–12h trước xét nghiệm', note: 'Cần cho TG chính xác và LDL tính đúng' },
+      { icon: '🧪', label: 'Xét nghiệm kèm glucose, HbA1c, hs-CRP', note: 'Bức tranh chuyển hóa toàn diện hơn chỉ lipid' },
+    ],
+  },
+  {
+    icon: '⚠️', label: 'Có Yếu Tố Nguy Cơ', range: 'Hàng năm',
+    color: '#ef4444', rgb: '239,68,68',
+    desc: 'Tim mạch, tiểu đường, hút thuốc, béo phì — cần kiểm tra hàng năm.',
+    img: 'https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80',
+    keyFact: '💡 Các yếu tố nguy cơ nhân lên tác hại của nhau: người vừa có LDL cao, vừa hút thuốc, vừa tăng huyết áp có nguy cơ cao hơn 8–10 lần so với chỉ một yếu tố đơn lẻ. Theo dõi hàng năm để điều chỉnh can thiệp kịp thời.',
+    detail: 'Yếu tố nguy cơ tim mạch chính: hút thuốc lá, tăng huyết áp (≥ 130/80), tiểu đường, béo phì (BMI ≥ 30), tiền sử gia đình bệnh tim sớm, bệnh thận mạn, viêm khớp dạng thấp.',
+    details: [
+      'Hút thuốc lá: giảm HDL 5–10 mg/dL, tăng oxy hóa LDL (dạng gây xơ vữa nguy hiểm hơn), tăng viêm mạch máu. Chỉ cần bỏ thuốc 1 năm, nguy cơ tim mạch giảm 50%.',
+      'Tiểu đường type 2: thường kèm rối loạn lipid đặc trưng — TG cao, HDL thấp, LDL "bình thường" nhưng hạt nhỏ đặc (small dense LDL) nguy hiểm hơn. Mục tiêu LDL < 70 mg/dL ở bệnh nhân ĐTĐ có bệnh tim.',
+      'Béo phì và hội chứng chuyển hóa: mỡ tạng tăng → giải phóng acid béo tự do → gan tăng sản xuất VLDL → TG tăng, HDL giảm. Giảm 5–10% cân nặng có thể cải thiện đáng kể bảng lipid.',
+      'Cao huyết áp: tổn thương nội mạc mạch máu → tạo điều kiện LDL xâm nhập và tích tụ. Kết hợp với LDL cao làm tăng đột biến nguy cơ xơ vữa.',
+      'Bệnh thận mạn (GFR < 60): giảm thanh thải lipid, tăng TG, tăng LDL. Mục tiêu LDL < 70 mg/dL theo hướng dẫn KDIGO.',
+      'Viêm hệ thống mạn (viêm khớp dạng thấp, lupus, vảy nến nặng): viêm tăng oxy hóa LDL và tăng nguy cơ xơ vữa độc lập với các yếu tố nguy cơ kinh điển.',
+    ],
+    points: [
+      { icon: '🚬', label: 'Bỏ thuốc = giảm 50% nguy cơ sau 1 năm', note: 'Can thiệp đơn lẻ hiệu quả nhất có thể làm ngay' },
+      { icon: '🩺', label: 'Tiểu đường: LDL mục tiêu < 70', note: 'Small dense LDL nguy hiểm hơn LDL thông thường' },
+      { icon: '⚖️', label: 'Giảm 5–10% cân nặng cải thiện lipid', note: 'Giảm TG, tăng HDL đáng kể khi giảm mỡ tạng' },
+      { icon: '🔥', label: 'Viêm mạn tính là yếu tố nguy cơ độc lập', note: 'Kiểm tra hs-CRP cùng bảng lipid nếu có bệnh viêm mạn' },
+    ],
+  },
+  {
+    icon: '💊', label: 'Đang Điều Trị Mỡ Máu', range: 'Mỗi 3–6 tháng',
+    color: '#8b5cf6', rgb: '139,92,246',
+    desc: 'Đang dùng statin hoặc thuốc hạ lipid khác — theo dõi 3–6 tháng để đánh giá đáp ứng và an toàn.',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
+    keyFact: '💡 Statin đạt tác dụng tối đa sau 4–6 tuần. Kiểm tra lipid sau 6–12 tuần từ khi bắt đầu hoặc điều chỉnh liều để đánh giá hiệu quả. Đồng thời kiểm tra men gan (ALT) và CK (creatine kinase) để phát hiện sớm tác dụng phụ.',
+    detail: 'Mục tiêu điều trị phụ thuộc vào mức nguy cơ tim mạch: nguy cơ rất cao (có bệnh tim mạch) → LDL < 55 mg/dL và giảm ≥ 50% so với baseline; nguy cơ cao → LDL < 70 mg/dL.',
+    details: [
+      'Statin: ức chế HMG-CoA reductase, giảm LDL 30–50% tùy loại và liều. Rosuvastatin 20mg giảm LDL ~52%; Atorvastatin 40mg giảm ~46%. Uống tối ưu vào buổi tối (chu kỳ tổng hợp cholesterol gan cao nhất 2–4 giờ sáng).',
+      'Kiểm tra ALT trước điều trị và sau 8–12 tuần. ALT > 3× ULN: cần ngưng hoặc giảm liều. Myopathy (đau cơ + CK > 10× ULN = rhabdomyolysis — hiếm gặp nhưng nghiêm trọng).',
+      'Ezetimibe (Zetia) thường dùng phối hợp khi statin đơn không đủ: ức chế hấp thu cholesterol ở ruột, giảm thêm LDL 15–20%. An toàn, ít tác dụng phụ cơ.',
+      'PCSK9 inhibitors (Evolocumab, Alirocumab): tiêm 2 tuần/lần hoặc 1 tháng/lần, giảm LDL 50–60% thêm trên nền statin. Dùng cho nguy cơ rất cao hoặc không dung nạp statin.',
+      'Fibrate (Fenofibrate): chủ yếu hạ TG 30–50% và tăng HDL 5–15%. Dùng khi TG > 500 mg/dL (nguy cơ viêm tụy) hoặc kết hợp statin khi TG cao dai dẳng.',
+      'Theo dõi dài hạn: sau khi đạt mục tiêu LDL ổn định, có thể giảm tần suất xuống 6 tháng – 1 năm. Không tự ngưng thuốc vì LDL sẽ tăng trở lại trong 4–6 tuần.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Statin đạt hiệu quả sau 4–6 tuần', note: 'Kiểm tra lipid sau 6–12 tuần để đánh giá đáp ứng' },
+      { icon: '🔬', label: 'Kiểm tra ALT + CK kèm lipid', note: 'Phát hiện sớm tác dụng phụ gan và cơ' },
+      { icon: '🎯', label: 'Mục tiêu LDL < 55 mg/dL (nguy cơ rất cao)', note: 'Hoặc < 70 mg/dL nếu nguy cơ cao' },
+      { icon: '💉', label: 'PCSK9 inhibitors nếu statin không đủ', note: 'Giảm thêm 50–60% LDL — tiêm 2 tuần hoặc 1 tháng/lần' },
+    ],
+  },
+];
+
 function LipidModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
   useEffect(() => {
     const onKey = e => {
@@ -458,6 +549,7 @@ export default function HealthLipidsPage() {
   const [lipidModal, setLipidModal] = useState(null);
   const [foodHelpModal, setFoodHelpModal] = useState(null);
   const [foodAvoidModal, setFoodAvoidModal] = useState(null);
+  const [testFreqModal, setTestFreqModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -588,14 +680,25 @@ export default function HealthLipidsPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5 space-y-3" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold text-text">Tần Suất Xét Nghiệm</h3>
-          <div className="text-lg text-muted space-y-2">
-            <p>• <strong className="text-text">Người bình thường &lt; 35 tuổi:</strong> Mỗi 5 năm nếu không có yếu tố nguy cơ</p>
-            <p>• <strong className="text-text">35–65 tuổi:</strong> Mỗi 1–2 năm</p>
-            <p>• <strong className="text-text">Có nguy cơ tim mạch, tiểu đường, hút thuốc:</strong> Hàng năm</p>
-            <p>• <strong className="text-text">Đang điều trị mỡ máu:</strong> Mỗi 3–6 tháng để đánh giá đáp ứng thuốc</p>
-          </div>
+        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Tần Suất Xét Nghiệm</h2>
+        <p className="text-muted text-sm mb-5">Click vào từng nhóm để xem hướng dẫn chi tiết</p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {TEST_FREQ.map((f, i) => (
+            <div key={i}
+              onClick={() => setTestFreqModal(i)}
+              className="rounded-2xl border bg-surface p-4 flex gap-3 cursor-pointer transition-colors"
+              style={{ borderColor: `rgba(${f.rgb},0.22)` }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${f.rgb},0.55)`}
+              onMouseLeave={e => e.currentTarget.style.borderColor = `rgba(${f.rgb},0.22)`}>
+              <span className="text-2xl shrink-0">{f.icon}</span>
+              <div className="flex-1 min-w-0">
+                <div className="font-bold text-sm mb-0.5" style={{ color: f.color }}>{f.label}</div>
+                <div className="text-xs text-muted">{f.range}</div>
+                <div className="text-sm text-muted mt-1 leading-snug">{f.desc}</div>
+              </div>
+              <span className="text-muted text-sm shrink-0 self-center">→</span>
+            </div>
+          ))}
         </div>
       </RevealBlock>
 
@@ -636,6 +739,18 @@ export default function HealthLipidsPage() {
           onNext={() => setFoodAvoidModal(i => Math.min(FOOD_AVOID.length - 1, i + 1))}
           hasPrev={foodAvoidModal > 0}
           hasNext={foodAvoidModal < FOOD_AVOID.length - 1}
+        />
+      )}
+      {testFreqModal !== null && (
+        <LipidModal
+          item={TEST_FREQ[testFreqModal]}
+          idx={testFreqModal}
+          total={TEST_FREQ.length}
+          onClose={() => setTestFreqModal(null)}
+          onPrev={() => setTestFreqModal(i => Math.max(0, i - 1))}
+          onNext={() => setTestFreqModal(i => Math.min(TEST_FREQ.length - 1, i + 1))}
+          hasPrev={testFreqModal > 0}
+          hasNext={testFreqModal < TEST_FREQ.length - 1}
         />
       )}
     </div>

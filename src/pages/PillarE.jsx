@@ -1085,31 +1085,348 @@ function TabE4() {
   );
 }
 
+const CHECK_BASIC = [
+  {
+    metric: 'Khám tổng quát', freq: '1 lần/năm', tip: 'Bắt đầu từ 20 tuổi hoặc sớm hơn nếu có nguy cơ',
+    icon: '🩺', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nhiều bệnh nghiêm trọng — tăng huyết áp, tiểu đường, ung thư giai đoạn sớm — không gây triệu chứng rõ ràng trong nhiều năm. Khám tổng quát là cơ hội duy nhất phát hiện sớm trước khi bệnh tiến triển nặng và tốn kém hơn nhiều để điều trị.',
+    detail: 'Khám tổng quát không chỉ là xét nghiệm máu — bao gồm hỏi bệnh sử, khám lâm sàng toàn diện, đánh giá nguy cơ cá nhân và tư vấn phòng ngừa. Bác sĩ là người quyết định xét nghiệm nào phù hợp với tuổi và nguy cơ của bạn.',
+    details: [
+      'Hỏi bệnh sử: tiền sử bệnh bản thân và gia đình, thuốc đang dùng, thói quen sinh hoạt (hút thuốc, rượu, vận động, ngủ, stress). Đây là nền tảng để bác sĩ quyết định tầm soát nào ưu tiên.',
+      'Khám lâm sàng toàn diện: cân nặng, chiều cao, BMI, vòng eo, huyết áp, nhịp tim, nhiệt độ, nghe tim phổi, sờ bụng, khám hạch bạch huyết, kiểm tra da và niêm mạc. Nhiều phát hiện quan trọng đến từ khám tay đơn giản.',
+      'Tầm soát theo tuổi và giới: phụ nữ >21 tuổi — PAP smear (tầm soát ung thư cổ tử cung) mỗi 3 năm. Phụ nữ >40 tuổi — mammography. Nam >50 tuổi — tầm soát ung thư đại tràng, PSA. Tất cả >40 tuổi — ECG, đo mật độ xương (nếu nguy cơ).',
+      'Tiêm chủng người lớn: nhiều người bỏ qua tiêm phòng sau tuổi trưởng thành. Khám tổng quát là dịp rà soát: cúm (hàng năm), viêm gan B (nếu chưa có miễn dịch), HPV (đến 26 tuổi), Tdap (mỗi 10 năm), phế cầu (>65 tuổi).',
+      'Tư vấn và đặt mục tiêu sức khỏe: khám tổng quát là cơ hội thảo luận mục tiêu sức khỏe với bác sĩ — giảm cân, cải thiện đường huyết, ngưng thuốc lá, quản lý stress. Bác sĩ gia đình tốt là người nhớ bạn qua nhiều năm và thấy xu hướng thay đổi.',
+      'Tần suất phù hợp: 20–39 tuổi khỏe mạnh, không nguy cơ → 2–3 năm/lần. 40–49 tuổi → 1–2 năm/lần. ≥50 tuổi → hàng năm. Có bệnh mạn tính hoặc nguy cơ cao → theo lịch hẹn của bác sĩ (thường 3–6 tháng/lần).',
+    ],
+    points: [
+      { icon: '📅', label: '1 lần/năm từ tuổi 40+', note: '20–39 tuổi khỏe mạnh → 2–3 năm/lần là đủ' },
+      { icon: '🗓️', label: 'Nhịn ăn trước khám', note: 'Nhịn ăn 8–12h để đường huyết và mỡ máu đo chính xác' },
+      { icon: '📋', label: 'Mang danh sách thuốc đang dùng', note: 'Bao gồm thực phẩm chức năng — ảnh hưởng kết quả xét nghiệm' },
+      { icon: '📊', label: 'Lưu kết quả để so sánh', note: 'Xu hướng thay đổi theo năm quan trọng hơn một lần đo' },
+    ],
+  },
+  {
+    metric: 'Cân nặng + BMI + vòng eo', freq: '1 lần/năm (hoặc hàng tháng tại nhà)', tip: 'BMI và vòng eo cùng nhau phản ánh nguy cơ chuyển hóa',
+    icon: '⚖️', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'BMI có giới hạn — không phân biệt được cơ và mỡ. Vòng eo là chỉ số tốt hơn cho mỡ bụng (visceral fat) — loại mỡ nguy hiểm nhất về tim mạch và chuyển hóa. Nam >90cm, nữ >80cm = nguy cơ tăng đáng kể dù BMI bình thường.',
+    detail: 'Cân nặng một mình không đủ thông tin. BMI thêm chiều cao vào phương trình nhưng vẫn bỏ qua phân bố mỡ. Vòng eo đo mỡ nội tạng (visceral fat) — loại mỡ bao quanh các cơ quan nội tạng và gây viêm hệ thống, đề kháng insulin và bệnh tim mạch.',
+    details: [
+      'BMI (Body Mass Index) = cân nặng (kg) / chiều cao² (m²). Phân loại WHO châu Á: <18.5 = thiếu cân; 18.5–22.9 = bình thường; 23–24.9 = thừa cân; ≥25 = béo phì. Người châu Á ngưỡng thấp hơn người da trắng do tỷ lệ mỡ/cơ khác nhau.',
+      'Vòng eo đo đúng cách: đứng thẳng, thở ra bình thường, đặt thước ở điểm giữa xương sườn thấp nhất và đỉnh xương chậu (thường ngang rốn). Nguy cơ tăng: nam ≥90cm, nữ ≥80cm. Rất cao: nam ≥102cm, nữ ≥88cm (theo chuẩn châu Á điều chỉnh).',
+      'Tỷ số vòng eo/chiều cao (WHtR): vòng eo/chiều cao <0.5 là mục tiêu tốt hơn BMI đơn thuần. VD: chiều cao 170cm → vòng eo mục tiêu <85cm. WHtR >0.6 ở bất kỳ BMI nào đều tăng nguy cơ tim mạch đáng kể.',
+      'Visceral fat nguy hiểm hơn subcutaneous fat: mỡ bụng nội tạng bao quanh gan, tụy, ruột → giải phóng adipokine gây viêm, free fatty acid gây đề kháng insulin, IL-6 và TNF-α. Người "skinny fat" (BMI bình thường nhưng vòng eo lớn) có nguy cơ chuyển hóa ngang người béo phì.',
+      'Theo dõi xu hướng quan trọng hơn con số tuyệt đối: cân mỗi tháng cùng giờ, cùng điều kiện (sáng sớm, sau toilet, trước ăn sáng). Biến động 1–2 kg/tuần là bình thường. Xu hướng tăng liên tục >3–6 tháng cần điều chỉnh.',
+      'Cân thông minh (body composition scale): nhiều cân thông minh đo được % mỡ, cơ, nước cơ thể qua BIA (bioelectrical impedance). Độ chính xác không bằng DEXA nhưng đủ để theo dõi xu hướng. % mỡ lý tưởng: nam 15–20%, nữ 20–28%.',
+    ],
+    points: [
+      { icon: '📐', label: 'Vòng eo quan trọng hơn BMI', note: 'Nam <90cm, nữ <80cm — mỡ nội tạng mới là vấn đề thực' },
+      { icon: '⏰', label: 'Cân buổi sáng cùng điều kiện', note: 'Sau toilet, trước ăn — giảm nhiễu từ thức ăn và nước' },
+      { icon: '📊', label: 'Theo dõi xu hướng 3–6 tháng', note: 'Biến động ngày/tuần bình thường — xu hướng mới quan trọng' },
+      { icon: '💪', label: 'Cơ nhiều có thể BMI cao', note: 'Người tập sức mạnh: dùng % mỡ cơ thể thay vì chỉ BMI' },
+    ],
+  },
+  {
+    metric: 'Huyết áp', freq: 'Mỗi lần khám + đo tại nhà hàng tuần', tip: 'Đo 2 lần cách nhau 1 phút, lấy giá trị trung bình',
+    icon: '💊', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tăng huyết áp được gọi là "kẻ giết người thầm lặng" vì không có triệu chứng rõ ràng trong nhiều năm. Ảnh hưởng 1.28 tỷ người trưởng thành toàn cầu (WHO 2021) và là yếu tố nguy cơ hàng đầu của đột quỵ, nhồi máu cơ tim và suy thận.',
+    detail: 'Huyết áp dao động trong ngày — cao nhất buổi sáng, thấp nhất khi ngủ. Đo đúng cách quan trọng hơn đo nhiều lần. Đo tại nhà (home blood pressure monitoring) phản ánh chính xác hơn đo tại phòng khám do tránh được "white coat hypertension".',
+    details: [
+      'Phân loại huyết áp (theo AHA 2017): Bình thường <120/80. Nâng cao (elevated) 120–129/<80. Tăng độ 1: 130–139/80–89. Tăng độ 2: ≥140/90. Khủng hoảng: >180/120 → đi cấp cứu. Người Việt Nam thường dùng ngưỡng <140/90 là bình thường nhưng hướng dẫn quốc tế mới dùng <130/80.',
+      'Cách đo đúng: ngồi nghỉ 5 phút trước khi đo, lưng tựa ghế, chân không bắt chéo, tay ngang tim. Không nói chuyện khi đo. Đo 2 lần cách nhau 1 phút, lấy trung bình. Không uống cà phê, không tập thể dục trong 30 phút trước.',
+      'White coat hypertension: huyết áp tăng khi đến phòng khám do lo lắng — gặp ở 15–30% người. Huyết áp thật sự bình thường nhưng đo tại phòng khám cao. Ngược lại: masked hypertension — bình thường tại phòng khám nhưng cao tại nhà (nguy hiểm hơn vì không được điều trị).',
+      'Mục tiêu điều trị: hầu hết người lớn → <130/80 mmHg. Người >65 tuổi → <130/80 nếu dung nạp được. Người có bệnh thận mạn/đái tháo đường → <130/80. Đạt mục tiêu bằng lối sống trước, thuốc nếu cần sau 3 tháng không cải thiện.',
+      'Can thiệp lối sống hiệu quả: giảm muối (<5g/ngày) giảm 5–6 mmHg. Tập thể dục aerobic 150 phút/tuần giảm 5–8 mmHg. Giảm 5kg nếu thừa cân giảm 5 mmHg. Hạn chế rượu (<2 ly/ngày) giảm 3–4 mmHg. DASH diet giảm 8–14 mmHg.',
+      'Đo tại nhà: máy đo huyết áp bắp tay tự động (omron, citizen) chính xác hơn máy đo cổ tay. Đo 2 lần buổi sáng (trước ăn, trước thuốc) + 2 lần buổi tối trong 7 ngày. Ghi lại và mang cho bác sĩ — có giá trị hơn một lần đo tại phòng khám.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Mục tiêu <130/80 mmHg', note: 'Ngưỡng mới theo AHA 2017 — không phải <140/90 cũ' },
+      { icon: '🏠', label: 'Đo tại nhà chính xác hơn', note: 'Tránh white coat effect — đo sáng + tối trong 7 ngày' },
+      { icon: '🧂', label: 'Giảm muối — hiệu quả nhất', note: '<5g muối/ngày giảm 5–6 mmHg không cần thuốc' },
+      { icon: '💊', label: 'Thuốc nếu lối sống chưa đủ', note: '3 tháng thay đổi lối sống không đạt mục tiêu → cần thuốc' },
+    ],
+  },
+  {
+    metric: 'Đường huyết đói', freq: '1 lần/năm (hoặc mỗi 3 năm nếu bình thường)', tip: 'Nhịn ăn ít nhất 8 giờ, không uống gì ngoài nước lọc',
+    icon: '🩸', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop',
+    keyFact: '537 triệu người trưởng thành toàn cầu sống với tiểu đường (IDF 2021) — và khoảng 240 triệu người không biết mình mắc bệnh. Đường huyết đói là xét nghiệm tầm soát đơn giản nhất, nhanh nhất và rẻ nhất để phát hiện tiểu đường và tiền tiểu đường.',
+    detail: 'Đường huyết đói (fasting plasma glucose — FPG) đo nồng độ glucose trong máu sau khi nhịn ăn ≥8 giờ. Đây là xét nghiệm tiêu chuẩn cho chẩn đoán tiểu đường và tầm soát hàng năm.',
+    details: [
+      'Ngưỡng chẩn đoán (ADA 2023): Bình thường: <5.6 mmol/L (100 mg/dL). Tiền tiểu đường: 5.6–6.9 mmol/L (100–125 mg/dL). Tiểu đường: ≥7.0 mmol/L (126 mg/dL) — cần xác nhận lần 2 nếu không có triệu chứng.',
+      'Tầm quan trọng của giai đoạn tiền tiểu đường: 70–80 triệu người Việt Nam có nguy cơ tiền tiểu đường. Đây là giai đoạn hoàn toàn đảo ngược được bằng lối sống — giảm 5–7% cân nặng + 150 phút vận động/tuần giảm 58% nguy cơ tiến triển sang tiểu đường (DPP study).',
+      'Ai nên tầm soát sớm hơn (từ 35 tuổi hoặc sớm hơn): BMI ≥23, vòng eo lớn, tiền sử gia đình có tiểu đường, tiểu đường thai kỳ, hội chứng buồng trứng đa nang (PCOS), tăng huyết áp hoặc mỡ máu xấu, lối sống ít vận động.',
+      'Giới hạn của đường huyết đói đơn thuần: chỉ phản ánh tình trạng tại một thời điểm buổi sáng. Một số người có đường huyết đói bình thường nhưng HbA1c tăng (đường huyết sau ăn cao). Lý tưởng là xét nghiệm cả FPG và HbA1c.',
+      'Sau khi được chẩn đoán tiểu đường: tự theo dõi đường huyết tại nhà (glucometer) giúp thấy phản ứng với thức ăn, vận động và thuốc. Đường huyết 2h sau ăn <8.0 mmol/L (140 mg/dL) là mục tiêu cho người tiểu đường có điều trị.',
+      'Đường huyết bình thường không có nghĩa là "không cần lo": đường huyết đói bình thường nhưng sau ăn spike cao (postprandial hyperglycemia) vẫn gây tổn thương mạch máu. Ăn tinh bột nhiều, ít chất xơ, ăn nhanh đều làm tăng spike sau ăn dù đường huyết đói bình thường.',
+    ],
+    points: [
+      { icon: '📏', label: 'Ngưỡng tiểu đường ≥7.0 mmol/L', note: 'Tiền tiểu đường: 5.6–6.9 mmol/L — giai đoạn đảo ngược được' },
+      { icon: '⏰', label: 'Nhịn ăn ít nhất 8 giờ', note: 'Chỉ uống nước lọc — cà phê, trà đều ảnh hưởng kết quả' },
+      { icon: '🎯', label: 'Tầm soát từ 35 tuổi', note: 'Hoặc sớm hơn nếu có nguy cơ — béo bụng, gia đình có tiểu đường' },
+      { icon: '🏃', label: 'Tiền tiểu đường hoàn toàn đảo ngược', note: 'Giảm 5% cân + 150 phút/tuần vận động giảm 58% nguy cơ' },
+    ],
+  },
+  {
+    metric: 'HbA1c (nếu có nguy cơ)', freq: 'Mỗi 3 tháng (tiểu đường) hoặc 1 lần/năm (tầm soát)', tip: 'Phản ánh đường huyết trung bình 3 tháng — không cần nhịn ăn',
+    icon: '🧪', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'HbA1c (glycated hemoglobin) phản ánh đường huyết trung bình trong 2–3 tháng qua — không bị ảnh hưởng bởi bữa ăn ngay trước khi xét nghiệm. Là tiêu chuẩn vàng theo dõi kiểm soát tiểu đường và có thể dùng để chẩn đoán.',
+    detail: 'Glucose gắn vào hemoglobin trong hồng cầu theo tỷ lệ thuận với nồng độ glucose trong máu. Vì hồng cầu sống 2–3 tháng, HbA1c phản ánh "ký ức đường huyết" của 3 tháng trước — không thể "làm đẹp" bằng cách nhịn ăn một ngày trước xét nghiệm.',
+    details: [
+      'Ngưỡng giải thích: Bình thường: <5.7% (39 mmol/mol). Tiền tiểu đường: 5.7–6.4% (39–46 mmol/mol). Tiểu đường: ≥6.5% (48 mmol/mol). Mục tiêu kiểm soát tiểu đường: <7.0% (53 mmol/mol) cho hầu hết người lớn.',
+      'Ưu điểm so với đường huyết đói: không cần nhịn ăn, phản ánh kiểm soát đường huyết dài hạn chứ không chỉ một thời điểm, ít biến động ngày qua ngày. Nhược điểm: không phát hiện được dao động đường huyết trong ngày (cần CGMS để đánh giá).',
+      'HbA1c và biến chứng tiểu đường: DCCT study (type 1) và UKPDS study (type 2) chứng minh mỗi 1% giảm HbA1c giảm 35% nguy cơ biến chứng mắt, 25% biến chứng thận, 18% biến chứng tim mạch. Kiểm soát tốt HbA1c từ sớm có "memory effect" — bảo vệ kéo dài dù sau này kiểm soát kém hơn.',
+      'Giới hạn của HbA1c: không chính xác với thiếu máu hồng cầu hình liềm, thiếu máu nặng (hồng cầu sống ngắn hơn), sau truyền máu. Người thiếu máu sắt: HbA1c thường cao giả tạo. Người thiếu G6PD: HbA1c thấp giả tạo.',
+      'Tần suất xét nghiệm: tiểu đường kiểm soát tốt → 2 lần/năm. Tiểu đường chưa đạt mục tiêu hoặc mới thay đổi phác đồ → mỗi 3 tháng. Tiền tiểu đường → 1 lần/năm. Nguy cơ cao (béo bụng, gia đình tiểu đường) → 1 lần/năm.',
+      'Mục tiêu cá nhân hóa: người trẻ, mới chẩn đoán, không biến chứng → <6.5%. Người già, nhiều bệnh đi kèm, nguy cơ hạ đường huyết cao → <8.0%. Mục tiêu quá chặt có thể gây hạ đường huyết nguy hiểm ở người cao tuổi.',
+    ],
+    points: [
+      { icon: '📊', label: 'Phản ánh 3 tháng — không thể "giả"', note: 'Không cần nhịn ăn — đường huyết trung bình dài hạn' },
+      { icon: '🎯', label: 'Mục tiêu <7.0% khi có tiểu đường', note: 'Mỗi 1% giảm HbA1c = giảm 35% biến chứng mắt và thận' },
+      { icon: '🩺', label: 'Tầm soát nếu có nguy cơ', note: 'Béo bụng, gia đình tiểu đường, tiền tiểu đường → 1 lần/năm' },
+      { icon: '⚠️', label: 'Không chính xác nếu thiếu máu', note: 'Thiếu sắt làm HbA1c cao giả — cần bổ sung thêm xét nghiệm' },
+    ],
+  },
+  {
+    metric: 'Mỡ máu toàn phần', freq: '1 lần/năm (hoặc mỗi 5 năm nếu bình thường)', tip: 'Nhịn ăn 9–12 giờ để triglyceride chính xác',
+    icon: '🫀', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Rối loạn mỡ máu (dyslipidemia) là một trong 4 yếu tố nguy cơ tim mạch chính cùng tăng huyết áp, tiểu đường và hút thuốc. LDL "cholesterol xấu" thường không gây triệu chứng cho đến khi đột quỵ hoặc nhồi máu cơ tim xảy ra.',
+    detail: 'Lipid panel cơ bản gồm 4 chỉ số: Total cholesterol (TC), LDL-C, HDL-C và Triglycerides. Mỗi chỉ số có vai trò khác nhau trong đánh giá nguy cơ tim mạch — không thể nhìn một chỉ số mà bỏ qua các chỉ số còn lại.',
+    details: [
+      'LDL-C (low-density lipoprotein): "cholesterol xấu" tích tụ trong thành mạch tạo mảng xơ vữa. Mục tiêu: <2.6 mmol/L (100 mg/dL) cho người bình thường; <1.8 mmol/L (70 mg/dL) nếu đã có bệnh tim mạch. LDL-C là mục tiêu điều trị chính của statin.',
+      'HDL-C (high-density lipoprotein): "cholesterol tốt" thu dọn cholesterol từ thành mạch đưa về gan. Thấp (<1.0 mmol/L nam, <1.2 mmol/L nữ) = nguy cơ cao. Tập aerobic và rượu nhẹ tăng HDL; hút thuốc và béo phì giảm HDL.',
+      'Triglycerides (TG): mỡ trung tính — tăng sau ăn và khi uống rượu. TG cao (>5.6 mmol/L) tăng nguy cơ viêm tụy cấp. TG 1.7–5.6 mmol/L = nguy cơ tim mạch tăng vừa. Giảm TG: cắt đường, rượu, carb tinh chế; tăng omega-3.',
+      'Non-HDL cholesterol = TC - HDL-C: phản ánh tất cả lipoprotein chứa apoB (LDL, VLDL, IDL, Lp(a)) — là predictor tim mạch tốt hơn LDL đơn thuần. Mục tiêu: <3.4 mmol/L (130 mg/dL) cho nguy cơ thấp.',
+      'Tầm soát theo tuổi: nam ≥35 tuổi, nữ ≥45 tuổi hoặc sau mãn kinh. Người có nguy cơ cao (gia đình tăng cholesterol, tiểu đường, hút thuốc) → bắt đầu sớm hơn và theo dõi thường xuyên hơn.',
+      'Statin — khi nào cần: LDL tăng kéo dài dù đã thay đổi lối sống 3–6 tháng, đặc biệt kèm nguy cơ tim mạch 10 năm >7.5% (theo Framingham score). Statin an toàn và hiệu quả — lo ngại "hại gan" từ statin là không có cơ sở khoa học vững chắc khi dùng đúng liều.',
+    ],
+    points: [
+      { icon: '📉', label: 'LDL <2.6 mmol/L mục tiêu cơ bản', note: 'Đã có bệnh tim → <1.8 mmol/L — statin nếu lối sống chưa đạt' },
+      { icon: '⬆️', label: 'HDL càng cao càng tốt', note: 'Tập aerobic là cách tăng HDL hiệu quả nhất' },
+      { icon: '🍬', label: 'TG cao = cắt đường và rượu trước', note: 'Đường và rượu là nguyên nhân phổ biến nhất tăng triglyceride' },
+      { icon: '💊', label: 'Statin an toàn khi dùng đúng liều', note: 'Lo ngại "hại gan" không có cơ sở — theo dõi ALT nếu cần' },
+    ],
+  },
+  {
+    metric: 'Chức năng gan (AST/ALT)', freq: '1 lần/năm', tip: 'AST và ALT là enzyme trong tế bào gan — tăng khi tế bào gan tổn thương',
+    icon: '🫁', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Gan là "nhà máy hóa chất" lớn nhất cơ thể — thực hiện >500 chức năng. Viêm gan B và C mạn tính là nguyên nhân hàng đầu xơ gan và ung thư gan ở Việt Nam. Nhiều người mang virus viêm gan mà không biết cho đến khi đã xơ gan nặng.',
+    detail: 'AST (aspartate aminotransferase) và ALT (alanine aminotransferase) là enzyme trong tế bào gan. Khi tế bào gan bị tổn thương, enzyme rò rỉ vào máu → nồng độ trong máu tăng. ALT đặc hiệu cho gan hơn AST (AST còn có trong tim, cơ).',
+    details: [
+      'Ngưỡng bình thường: ALT: nam <40 U/L, nữ <35 U/L. AST: <40 U/L. Tăng nhẹ (<3 lần ngưỡng trên): thường do rượu, thuốc, thực phẩm chức năng, tập thể dục mạnh trước xét nghiệm. Tăng >3–5 lần: cần điều tra thêm.',
+      'Gan nhiễm mỡ không do rượu (NAFLD/NASH): ngày càng phổ biến do ăn nhiều đường, béo phì, tiểu đường type 2. ALT thường tăng nhẹ 1–3 lần. Tiến triển từ steatosis → viêm → xơ gan → ung thư gan theo thập kỷ. Điều trị hiệu quả nhất: giảm cân 7–10%.',
+      'Viêm gan B và C mạn tính: Việt Nam có tỷ lệ HBsAg dương tính ~8–10% dân số (một trong những cao nhất thế giới). Viêm gan B mạn → AST/ALT tăng thất thường → xơ gan → ung thư gan. Có vaccine viêm gan B và thuốc kháng virus hiệu quả (tenofovir, entecavir).',
+      'Phân biệt nguyên nhân tăng transaminase: tỷ số AST/ALT >2 thường gợi ý do rượu (alcoholic hepatitis). ALT>AST gợi ý NAFLD hoặc viêm gan virus. ALT tăng kèm ALP và bilirubin gợi ý tắc mật. Cần kết hợp hình ảnh học (siêu âm) và marker virus để chẩn đoán chính xác.',
+      'Thuốc và thực phẩm chức năng gây tổn thương gan: paracetamol (quá liều >4g/ngày), thuốc lao (INH, rifampicin), statins (tăng nhẹ, hiếm khi nghiêm trọng), thảo dược và TPCN không rõ thành phần là nguyên nhân ngày càng phổ biến của drug-induced liver injury (DILI).',
+      'Theo dõi người dùng statin: statin có thể gây tăng ALT nhẹ (<3 lần giới hạn trên bình thường) ở một số người — thường tự hồi phục. Kiểm tra ALT trước khi bắt đầu statin và sau 3 tháng. Không cần ngưng statin nếu ALT <3 lần giới hạn trên.',
+    ],
+    points: [
+      { icon: '🦠', label: 'Tầm soát viêm gan B và C', note: 'HBsAg và Anti-HCV — Việt Nam tỷ lệ nhiễm cao, có điều trị hiệu quả' },
+      { icon: '🍺', label: 'AST/ALT >2 gợi ý do rượu', note: 'Cắt rượu 4–6 tuần và đo lại — thường về bình thường' },
+      { icon: '⚖️', label: 'Giảm cân tốt nhất cho gan nhiễm mỡ', note: 'Giảm 7–10% cân nặng cải thiện NAFLD rõ rệt trong 6 tháng' },
+      { icon: '💊', label: 'Kiểm tra TPCN đang dùng', note: 'Thảo dược không rõ nguồn gốc là nguyên nhân phổ biến DILI' },
+    ],
+  },
+  {
+    metric: 'Chức năng thận (creatinine)', freq: '1 lần/năm', tip: 'eGFR tính từ creatinine, tuổi và giới — quan trọng hơn creatinine đơn thuần',
+    icon: '💧', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bệnh thận mạn (CKD) ảnh hưởng ~10% dân số toàn cầu — phần lớn không biết do không có triệu chứng đến giai đoạn muộn. Thận hoạt động như bộ lọc 24/7 — tiểu đường và tăng huyết áp là hai nguyên nhân hàng đầu gây suy thận cần lọc máu.',
+    detail: 'Creatinine là sản phẩm phân hủy của creatine trong cơ. Thận lọc creatinine ra khỏi máu — khi thận suy, creatinine tích lũy trong máu. eGFR (estimated GFR) tính toán mức lọc cầu thận ước tính từ creatinine, tuổi, giới và cân nặng — phản ánh chức năng thận tốt hơn creatinine đơn thuần.',
+    details: [
+      'Phân loại giai đoạn CKD theo eGFR: G1: ≥90 ml/min (bình thường — nhưng cần có albumin niệu để chẩn đoán CKD). G2: 60–89. G3a: 45–59. G3b: 30–44 (cần theo dõi sát). G4: 15–29 (chuẩn bị lọc máu). G5: <15 hoặc lọc máu.',
+      'Ngưỡng creatinine bình thường: nam 62–115 µmol/L (0.7–1.3 mg/dL); nữ 44–97 µmol/L (0.5–1.1 mg/dL). Người có cơ bắp nhiều (vận động viên) có creatinine cao hơn — không phải dấu hiệu bệnh. eGFR quan trọng hơn creatinine đơn thuần.',
+      'Protein/albumin trong nước tiểu (proteinuria/albuminuria): dấu hiệu sớm tổn thương thận — xuất hiện trước khi creatinine tăng. Microalbuminuria (30–300 mg/g creatinine) là dấu hiệu sớm nhất của bệnh thận do tiểu đường và huyết áp. Xét nghiệm nước tiểu trong gói khám định kỳ thường phát hiện điều này.',
+      'Tiểu đường và thận: đường huyết cao gây tổn thương tiểu cầu thận (glomeruli) qua nhiều cơ chế — glycation, tăng áp lực lọc, viêm. Người tiểu đường cần kiểm tra creatinine và albumin niệu ít nhất 1 lần/năm. Kiểm soát HbA1c <7% và huyết áp <130/80 là hai biện pháp bảo thận hiệu quả nhất.',
+      'Thuốc gây độc thận thường gặp: NSAID (ibuprofen, naproxen — dùng thường xuyên hoặc kéo dài), aminoglycosides (kháng sinh tiêm như gentamicin), thuốc cản quang (contrast dye) ở người thận yếu, một số thảo dược chứa aristolochic acid (mộc thông, phòng kỷ). Người thận yếu (eGFR <60) phải cẩn thận với liều thuốc thải qua thận.',
+      'Bảo vệ thận: kiểm soát đường huyết và huyết áp là quan trọng nhất. Uống đủ nước (2–2.5 lít/ngày). Tránh NSAID dài hạn. Nếu cần thuốc cản quang → hydrate tốt trước và sau. Người CKD giai đoạn 3+ cần hạn chế protein động vật để giảm tải lọc thận.',
+    ],
+    points: [
+      { icon: '📊', label: 'eGFR quan trọng hơn creatinine', note: 'Tính từ creatinine + tuổi + giới — phản ánh chức năng thực' },
+      { icon: '🩺', label: 'Protein niệu là dấu hiệu sớm', note: 'Xuất hiện trước khi creatinine tăng — cần xét nghiệm nước tiểu' },
+      { icon: '💊', label: 'Tránh NSAID dài hạn', note: 'Ibuprofen thường xuyên làm giảm eGFR theo thời gian' },
+      { icon: '💧', label: 'Hydrate đủ — bảo vệ thận đơn giản nhất', note: '2–2.5 lít nước/ngày — quan trọng đặc biệt khi làm xét nghiệm cản quang' },
+    ],
+  },
+  {
+    metric: 'Công thức máu toàn phần', freq: '1 lần/năm', tip: 'Complete Blood Count (CBC) — đánh giá 3 dòng tế bào máu',
+    icon: '🔬', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Công thức máu toàn phần (CBC) là một trong những xét nghiệm phổ biến nhất trong y tế — đánh giá ba dòng tế bào máu: hồng cầu (oxy), bạch cầu (miễn dịch) và tiểu cầu (đông máu). Một xét nghiệm duy nhất có thể phát hiện thiếu máu, nhiễm trùng, leukemia và nhiều bệnh khác.',
+    detail: 'CBC đo số lượng và đặc điểm của các tế bào máu. Kết hợp với triệu chứng lâm sàng, CBC giúp bác sĩ đưa ra hướng chẩn đoán — không phải chẩn đoán cuối cùng mà là sàng lọc để quyết định xét nghiệm tiếp theo.',
+    details: [
+      'Hồng cầu và hemoglobin: Hemoglobin bình thường nam ≥130 g/L, nữ ≥120 g/L. Thiếu máu (anemia) khi dưới ngưỡng này. Nguyên nhân phổ biến nhất: thiếu sắt (ferritin thấp), thiếu B12/folate, bệnh mạn tính. MCV (mean corpuscular volume): nhỏ = thiếu sắt/thalassemia; to = thiếu B12/folate.',
+      'Bạch cầu và vi differential: WBC bình thường 4.0–11.0 × 10⁹/L. Tăng bạch cầu (leukocytosis) gặp trong nhiễm trùng, viêm, stress, corticoid. Giảm bạch cầu (leukopenia) gặp trong virus (HIV, EBV), thuốc, bệnh tủy xương. Differential (tỷ lệ từng loại bạch cầu) cho thêm thông tin: neutrophil tăng = vi khuẩn; lymphocyte tăng = virus.',
+      'Tiểu cầu (platelets): bình thường 150–400 × 10⁹/L. Giảm tiểu cầu (<100 × 10⁹/L) → nguy cơ chảy máu: do ITP (tự miễn), thuốc, virus dengue (xuất huyết dengue), hội chứng DIC. Tăng tiểu cầu (>450 × 10⁹/L) → nguy cơ huyết khối.',
+      'Thiếu máu thiếu sắt — phổ biến nhất: phụ nữ tuổi sinh sản mất sắt qua kinh nguyệt, thai kỳ; người ăn chay/thuần chay; người chạy bộ nhiều (foot strike hemolysis). Ferritin là xét nghiệm nhạy hơn CBC để phát hiện sớm — ferritin <30 ng/mL dù hemoglobin bình thường là thiếu sắt tiềm ẩn.',
+      'Thalassemia — phổ biến ở Việt Nam: MCV thấp (<80 fL) kèm hồng cầu nhỏ nhiều (microcytosis) nhưng ferritin bình thường gợi ý thalassemia trait (người mang gen). Không cần điều trị nhưng cần tư vấn di truyền trước khi mang thai (nếu cả 2 vợ chồng mang gen → nguy cơ sinh con nặng 25%).',
+      'Bạch cầu ái toan (eosinophil) tăng: >5% hoặc >0.5 × 10⁹/L → nghĩ đến dị ứng mạn tính, nhiễm ký sinh trùng (giun, sán), bệnh tự miễn. Ở Việt Nam hay gặp nhiễm giun lươn (strongyloides), giun đũa chó mèo (toxocara).',
+    ],
+    points: [
+      { icon: '🩸', label: 'Ferritin quan trọng hơn hemoglobin', note: 'Thiếu sắt tiềm ẩn: ferritin <30 ng/mL dù hemoglobin còn bình thường' },
+      { icon: '🔬', label: 'MCV nhỏ + ferritin bình thường', note: 'Gợi ý thalassemia trait — phổ biến ở Việt Nam, cần tư vấn di truyền' },
+      { icon: '🦠', label: 'Bạch cầu cao ≠ luôn là nhiễm trùng', note: 'Stress, vận động, corticoid đều tăng WBC — cần kết hợp lâm sàng' },
+      { icon: '🐛', label: 'Eosinophil tăng → kiểm tra ký sinh trùng', note: 'Toxocara, giun lươn phổ biến ở Việt Nam — xét nghiệm phân và huyết thanh' },
+    ],
+  },
+  {
+    metric: 'Tổng phân tích nước tiểu', freq: '1 lần/năm', tip: 'Xét nghiệm nước tiểu giữa dòng buổi sáng — không cần nhịn ăn',
+    icon: '🧫', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nước tiểu là "gương phản chiếu" của thận và nhiều cơ quan khác. Tổng phân tích nước tiểu (urinalysis) đơn giản, rẻ và nhanh có thể phát hiện bệnh thận, tiểu đường, nhiễm trùng tiết niệu và thậm chí một số ung thư — trước khi có triệu chứng.',
+    detail: 'Urinalysis gồm 3 phần: đánh giá bằng mắt (màu, độ đục), que nhúng dipstick (protein, glucose, máu, bạch cầu, nitrite, pH, tỷ trọng, bilirubin, urobilinogen) và soi kính hiển vi (tế bào, trụ, tinh thể). Kết quả bất thường cần xét nghiệm tiếp theo và đánh giá lâm sàng.',
+    details: [
+      'Protein niệu (proteinuria): bình thường <150 mg/24h hoặc <30 mg/g creatinine. Albumin niệu vi lượng (30–300 mg/g) là dấu hiệu sớm nhất tổn thương thận do tiểu đường và tăng huyết áp — xuất hiện trước khi creatinine tăng 5–10 năm. Protein niệu >500 mg/ngày: cần điều tra nguyên nhân khẩn.',
+      'Glucose niệu: bình thường không có glucose trong nước tiểu. Xuất hiện khi đường huyết vượt ngưỡng thận (~10 mmol/L). Là dấu hiệu gợi ý tiểu đường nhưng không đủ để chẩn đoán — cần xét nghiệm máu xác nhận.',
+      'Máu trong nước tiểu (hematuria): vi thể (chỉ thấy dưới kính hiển vi) hoặc đại thể (màu đỏ/hồng nhìn thấy được). Nguyên nhân: sỏi thận/tiết niệu, viêm cầu thận, nhiễm trùng tiết niệu, ung thư bàng quang/thận. Hematuria không đau cần tầm soát ung thư niệu đạo đặc biệt ở người >40 tuổi và hút thuốc.',
+      'Bạch cầu niệu và nitrite: gợi ý nhiễm trùng tiết niệu (UTI). Nitrite dương tính khi vi khuẩn gram âm (E. coli) chuyển hóa nitrate → nitrite. Phụ nữ có tỷ lệ UTI cao hơn nam do niệu đạo ngắn. UTI không điều trị có thể tiến triển thành viêm bể thận (pyelonephritis).',
+      'Tỷ trọng nước tiểu (specific gravity): phản ánh khả năng cô đặc của thận và tình trạng hydrate. 1.010–1.030 là bình thường. <1.003 liên tục: thận không cô đặc được (đái tháo nhạt hoặc uống nhiều nước). >1.030 thường: mất nước. Đo tỷ trọng dạy được nhiều về tình trạng thủy điện giải.',
+      'Cách lấy mẫu đúng: lấy giữa dòng (midstream clean-catch) — vệ sinh sạch vùng niệu đạo, bỏ phần nước tiểu đầu tiên, lấy phần giữa. Làm xét nghiệm trong 2 giờ sau khi lấy mẫu để tránh phân hủy. Phụ nữ nên tránh lấy mẫu trong kỳ kinh nguyệt.',
+    ],
+    points: [
+      { icon: '🔍', label: 'Albumin niệu — dấu hiệu thận sớm', note: 'Xuất hiện 5–10 năm trước khi creatinine tăng ở tiểu đường' },
+      { icon: '🩸', label: 'Máu niệu không đau → tầm soát ung thư', note: 'Đặc biệt >40 tuổi và hút thuốc — ung thư bàng quang' },
+      { icon: '🧪', label: 'Lấy mẫu giữa dòng buổi sáng', note: 'Nước tiểu cô đặc nhất, ít nhiễu nhất để phân tích' },
+      { icon: '💊', label: 'UTI cần điều trị kháng sinh đúng', note: 'Không tự dùng kháng sinh — cần cấy nước tiểu xác định vi khuẩn' },
+    ],
+  },
+  {
+    metric: 'ECG (trên 40 tuổi)', freq: '1 lần/năm từ 40 tuổi', tip: 'Điện tâm đồ lúc nghỉ — chụp hoạt động điện tim 10 giây',
+    icon: '📈', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'ECG (electrocardiogram) là xét nghiệm không xâm lấn, nhanh (10 giây), không đau và rẻ tiền — nhưng có thể phát hiện rung nhĩ, block nhĩ thất, phì đại thất trái, thiếu máu cơ tim im lặng và các bất thường khác trước khi gây triệu chứng.',
+    detail: 'Điện tâm đồ ghi lại hoạt động điện của tim qua 12 điện cực. Bác sĩ đọc ECG đánh giá nhịp tim, tần số, block dẫn truyền, phì đại buồng tim và dấu hiệu thiếu máu/nhồi máu. ECG nghỉ không phát hiện được bệnh mạch vành khi không đang thiếu máu — cần stress test để tầm soát đó.',
+    details: [
+      'Rung nhĩ (atrial fibrillation — AF): loạn nhịp tim phổ biến nhất, ảnh hưởng >33 triệu người toàn cầu. AF thường không có triệu chứng rõ ràng nhưng tăng nguy cơ đột quỵ gấp 5 lần (cục máu đông từ nhĩ trái di chuyển lên não). Phát hiện qua ECG → điều trị anticoagulant giảm 60–70% nguy cơ đột quỵ.',
+      'Block nhĩ thất (AV block): chậm trễ hoặc gián đoạn dẫn truyền điện từ nhĩ xuống thất. Block độ 1 và 2 type 1 thường lành tính. Block độ 2 type 2 và block độ 3 (complete heart block) cần can thiệp — đặt máy tạo nhịp.',
+      'Phì đại thất trái (LVH): dấu hiệu tăng huyết áp lâu dài không kiểm soát. Tim phải bơm mạnh hơn → cơ thất trái dày lên → tăng nguy cơ suy tim và loạn nhịp. LVH trên ECG là yếu tố nguy cơ tim mạch độc lập.',
+      'Bất thường ST-T: có thể gợi ý thiếu máu cơ tim im lặng (silent ischemia) — một số người bệnh mạch vành không có đau ngực điển hình, đặc biệt người tiểu đường và phụ nữ. Cần đánh giá thêm bằng stress test hoặc CT mạch vành.',
+      'Hội chứng Wolff-Parkinson-White (WPW) và hội chứng Brugada: bất thường dẫn truyền bẩm sinh có thể gây đột tử tim (sudden cardiac death) ở người trẻ và người tập luyện cường độ cao. ECG có thể phát hiện pattern đặc trưng — quan trọng cho người chơi thể thao cường độ cao.',
+      'ECG nghỉ so với stress test: ECG nghỉ phát hiện bất thường cấu trúc và nhịp tim nhưng không phát hiện bệnh mạch vành khi đang tưới máu tốt lúc nghỉ. Stress test (ECG trong khi đi thảm lăn hoặc tiêm dobutamine) phát hiện thiếu máu khi tim cần tăng cung cấp oxy. Chỉ định stress test: đau ngực khi gắng sức, nhiều yếu tố nguy cơ tim mạch.',
+    ],
+    points: [
+      { icon: '💗', label: 'Phát hiện rung nhĩ im lặng', note: 'AF không triệu chứng tăng nguy cơ đột quỵ gấp 5 lần — cần anticoagulant' },
+      { icon: '📊', label: 'LVH = dấu hiệu tăng HA lâu dài', note: 'Thành thất trái dày → nguy cơ suy tim và loạn nhịp' },
+      { icon: '🏃', label: 'ECG nghỉ ≠ loại trừ bệnh mạch vành', note: 'Cần stress test để phát hiện thiếu máu khi gắng sức' },
+      { icon: '⚡', label: 'WPW và Brugada ở người trẻ', note: 'Đột tử tim ở vận động viên trẻ — cần tầm soát ECG trước thi đấu' },
+    ],
+  },
+];
+
+const CHECK_EXPANDED = [
+  {
+    metric: 'Thừa cân / béo bụng', freq: 'Bổ sung thêm vào gói cơ bản', tip: 'Vòng eo lớn kèm BMI >23 là chỉ định rõ ràng',
+    icon: '⚖️', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    items: ['HbA1c', 'Mỡ máu đầy đủ', 'Men gan', 'Acid uric', 'Siêu âm gan (nếu cần)'],
+    keyFact: 'Béo bụng là yếu tố nguy cơ độc lập cho 5 nhóm bệnh: tiểu đường type 2, tim mạch, gan nhiễm mỡ, gout và ung thư (đại tràng, vú, nội mạc tử cung). Các xét nghiệm mở rộng này bắt đầu theo dõi khi vòng eo vượt ngưỡng — ngay cả khi chưa có triệu chứng.',
+    detail: 'Người béo bụng cần đánh giá toàn diện hội chứng chuyển hóa. Không cần đợi đến khi có triệu chứng — phát hiện sớm giai đoạn tiền bệnh giúp đảo ngược bằng lối sống trước khi cần thuốc.',
+    details: [
+      'HbA1c tầm soát tiền tiểu đường: người béo bụng có nguy cơ tiền tiểu đường cao gấp 3–5 lần. HbA1c 5.7–6.4% = tiền tiểu đường — giai đoạn hoàn toàn đảo ngược bằng giảm cân và vận động. Đợi đến HbA1c ≥6.5% (tiểu đường) thì can thiệp tốn kém và ít hiệu quả hơn.',
+      'Mỡ máu đầy đủ (full lipid panel): người béo bụng thường có triglycerides cao, HDL thấp, LDL nhỏ dày (small dense LDL — xâm nhập thành mạch dễ hơn). Bộ mỡ máu đầy đủ bao gồm: TC, LDL, HDL, TG, non-HDL và apoB (nếu có thể).',
+      'AST/ALT và siêu âm gan: gan nhiễm mỡ không do rượu (NAFLD) gặp ở 50–75% người béo bụng. ALT tăng nhẹ kèm siêu âm gan echo dày là chẩn đoán NAFLD. Điều trị hiệu quả nhất: giảm 7–10% cân nặng — giảm viêm gan và ngăn tiến triển sang xơ gan.',
+      'Acid uric: mỡ bụng tăng → tăng tổng hợp acid uric và giảm đào thải qua thận. Acid uric cao (>420 µmol/L nam, >360 µmol/L nữ) → gout và sỏi thận. Cắt đường fructose (nước ngọt) và rượu là biện pháp hàng đầu giảm acid uric không cần thuốc.',
+      'Siêu âm bụng tổng quát (nếu cần): đánh giá độ echo gan (gan nhiễm mỡ), kích thước thận, sỏi mật và sỏi thận, u nang buồng trứng (phụ nữ với PCOS hay kèm béo phì). Siêu âm không dùng tia X, an toàn, thông tin nhiều cho một buổi khám.',
+      'Insulin và HOMA-IR (nếu có điều kiện): insulin đói và glucose đói → tính HOMA-IR (đề kháng insulin). HOMA-IR >2.5 = đề kháng insulin đáng kể ngay cả khi đường huyết còn bình thường. Phát hiện sớm nhất giai đoạn trước tiền tiểu đường — nhưng xét nghiệm này không phổ biến trong tầm soát thường quy.',
+    ],
+    points: [
+      { icon: '🍬', label: 'HbA1c phát hiện tiền tiểu đường', note: '5.7–6.4% = có thể đảo ngược — đừng đợi đến 6.5%' },
+      { icon: '🫀', label: 'TG cao + HDL thấp = nguy hiểm', note: 'Bộ mỡ máu béo bụng đặc trưng — không nhìn LDL đơn thuần' },
+      { icon: '🫁', label: 'NAFLD điều trị bằng giảm cân', note: 'Giảm 7–10% cân → giảm viêm gan rõ rệt trong 6 tháng' },
+      { icon: '🍺', label: 'Cắt đường + rượu → giảm acid uric', note: 'Fructose trong nước ngọt là nguyên nhân phổ biến nhất' },
+    ],
+  },
+  {
+    metric: 'Tăng huyết áp / nguy cơ tim mạch', freq: 'Theo dõi sát — 3–6 tháng/lần', tip: 'Gói đánh giá nguy cơ tim mạch 10 năm toàn diện',
+    icon: '❤️', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=800&q=80&auto=format&fit=crop',
+    items: ['Nhật ký huyết áp 7 ngày', 'Chức năng thận + điện giải', 'ECG / Holter', 'Đánh giá nguy cơ tim mạch 10 năm'],
+    keyFact: 'Tăng huyết áp không chỉ cần đo huyết áp — cần đánh giá tổng thể tổn thương cơ quan đích (thận, tim, mắt) và tính nguy cơ tim mạch 10 năm để quyết định mức độ điều trị tích cực. Người huyết áp nhẹ nhưng nguy cơ 10 năm >10% cần điều trị sớm hơn.',
+    detail: 'Tăng huyết áp không điều trị đúng gây tổn thương nhiều cơ quan theo thời gian — tim (LVH, suy tim), thận (CKD), não (đột quỵ) và mắt (bệnh võng mạc). Đánh giá toàn diện giúp bác sĩ quyết định mức độ điều trị phù hợp.',
+    details: [
+      'Nhật ký huyết áp 7 ngày (home BP monitoring): đo sáng + tối, 2 lần mỗi buổi, cách nhau 1 phút. Lấy trung bình tất cả các lần đo trong 7 ngày (bỏ ngày đầu). Huyết áp tại nhà <135/85 = bình thường. Phân biệt white coat hypertension (cao phòng khám, bình thường tại nhà) với masked hypertension (bình thường phòng khám, cao tại nhà — nguy hiểm hơn).',
+      'Chức năng thận và điện giải: tăng huyết áp gây và gây ra bởi bệnh thận (vòng luẩn quẩn). Kiểm tra: creatinine, eGFR (bảo thận), kali và natri (điện giải — quan trọng khi dùng thuốc huyết áp, đặc biệt lợi tiểu và ACE inhibitor/ARB), albumin niệu (tổn thương thận sớm).',
+      'ECG tầm soát LVH và loạn nhịp: tăng huyết áp lâu dài → phì đại thất trái (LVH) trên ECG. LVH là yếu tố nguy cơ tim mạch độc lập và là dấu hiệu tăng huyết áp chưa được kiểm soát đủ. Holter 24h khi nghi ngờ loạn nhịp hoặc huyết áp biến động nhiều ban đêm.',
+      'Nguy cơ tim mạch 10 năm: Framingham Risk Score hoặc SCORE2 (châu Âu) tính nguy cơ nhồi máu cơ tim/đột quỵ 10 năm dựa trên tuổi, giới, huyết áp, cholesterol, tiểu đường, hút thuốc. Nguy cơ >10% = cần điều trị tích cực hơn (mục tiêu HA thấp hơn, statin nếu LDL tăng).',
+      'Tầm soát hẹp động mạch thận (renal artery stenosis): nguyên nhân thứ phát của tăng huyết áp — tăng huyết áp khó kiểm soát dù dùng 3 thuốc, tăng creatinine đột ngột khi dùng ACE inhibitor/ARB, chênh lệch kích thước 2 thận trên siêu âm. Siêu âm Doppler mạch thận là bước tầm soát đầu tiên.',
+      'Siêu âm tim (echocardiography): đánh giá trực tiếp độ dày thành thất trái (LVH), chức năng co bóp thất trái (EF) và diastolic dysfunction. Cần thiết khi: ECG có dấu hiệu LVH, có triệu chứng suy tim, trước khi bắt đầu hoặc thay đổi phác đồ điều trị tăng huyết áp nặng.',
+    ],
+    points: [
+      { icon: '🏠', label: 'Nhật ký HA 7 ngày — vàng chuẩn', note: 'Phân biệt white coat và masked hypertension — cả 2 cần điều trị khác nhau' },
+      { icon: '🧮', label: 'Tính nguy cơ 10 năm', note: 'HA nhẹ + nhiều yếu tố nguy cơ = cần điều trị tích cực hơn' },
+      { icon: '🫀', label: 'LVH trên ECG = HA chưa đủ kiểm soát', note: 'Phì đại thất trái là dấu hiệu tổn thương cơ quan đích' },
+      { icon: '🩺', label: 'Kiểm tra thận + điện giải khi dùng thuốc', note: 'ACE inhibitor/ARB và lợi tiểu ảnh hưởng kali và thận' },
+    ],
+  },
+  {
+    metric: 'Người tập luyện nhiều', freq: '1–2 lần/năm hoặc khi có triệu chứng bất thường', tip: 'Tập >10h/tuần hoặc thi đấu thể thao cần đánh giá riêng',
+    icon: '🏃', color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    items: ['Ferritin, Vitamin D', 'CK (creatine kinase)', 'Tư vấn phục hồi, overtraining', 'Tim mạch nếu có triệu chứng bất thường'],
+    keyFact: 'Người tập luyện cường độ cao có nguy cơ riêng: thiếu sắt tiềm ẩn (foot strike hemolysis, sweating losses), thiếu vitamin D dù tập ngoài trời, và hội chứng overtraining (nRAR — nonfunctional overreaching) khi tải tập vượt khả năng phục hồi. Xét nghiệm định kỳ giúp tối ưu hiệu suất và phòng chấn thương.',
+    detail: 'Paradox của người tập nhiều: hoạt động thể chất cao bảo vệ sức khỏe tổng thể nhưng cũng tạo ra stress sinh lý đặc thù. Thiếu vi chất, overtraining và bất thường tim mạch không phát hiện là nguyên nhân hàng đầu chấn thương và đột tử thể thao.',
+    details: [
+      'Ferritin và thiếu sắt: vận động viên có nhu cầu sắt cao hơn 70% so với người bình thường (hemolysis, mất qua mồ hôi, viêm vi thể đường tiêu hóa). Ferritin <30 ng/mL = thiếu sắt tiềm ẩn dù hemoglobin bình thường → giảm hiệu suất, mệt mỏi, recovery kém. Bổ sung sắt khi ferritin <30–50 ng/mL và có triệu chứng.',
+      'Vitamin D: vai trò trong sức mạnh cơ, phục hồi, miễn dịch và hấp thu canxi cho xương. Tập trong nhà, dùng kem chống nắng và tập sáng sớm/chiều tối làm giảm tổng hợp D qua da. Mục tiêu 25-OH-D: >50 nmol/L (20 ng/mL) tối thiểu; >75 nmol/L (30 ng/mL) tối ưu cho vận động viên.',
+      'CK (creatine kinase): enzyme trong cơ, tăng sau tập cường độ cao (DOMS — delayed onset muscle soreness). CK bình thường vận động viên có thể cao hơn người thường 2–3 lần. CK >10 lần giới hạn trên bình thường kèm nước tiểu màu cola = rhabdomyolysis (tiêu cơ vân cấp) — cần nhập viện ngay, bù dịch mạnh.',
+      'Hội chứng overtraining (OTS): khối lượng tập vượt khả năng phục hồi kéo dài → suy giảm hiệu suất kéo dài ≥2 tháng dù nghỉ ngơi. Triệu chứng: mệt mỏi mạn, mất hứng thú, ngủ kém, tâm trạng tiêu cực, nhịp tim nghỉ tăng, HRV giảm. Không có xét nghiệm đặc hiệu — chẩn đoán dựa trên lâm sàng và loại trừ.',
+      'Bất thường tim mạch ở vận động viên: tim vận động viên (athlete\'s heart) — phì đại sinh lý lành tính. Phân biệt với bệnh cơ tim phì đại (HCM — nguyên nhân hàng đầu đột tử ở vận động viên trẻ). Chỉ định siêu âm tim khi: đau ngực khi gắng sức, ngất khi tập, gia đình có đột tử tim sớm, nghi loạn nhịp.',
+      'ECG tầm soát trước thi đấu: nhiều quốc gia châu Âu và liên đoàn thể thao yêu cầu ECG 12 chuyển đạo trước khi tham gia thi đấu cạnh tranh. ECG phát hiện WPW, hội chứng Brugada, LQTS và dấu hiệu HCM — có thể cứu sống vận động viên trẻ.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Ferritin <30 ng/mL = thiếu sắt', note: 'Dù hemoglobin bình thường — ảnh hưởng hiệu suất và recovery' },
+      { icon: '☀️', label: 'Vitamin D >75 nmol/L tối ưu', note: 'Sức mạnh cơ, miễn dịch và xương — vận động viên cần mức cao hơn' },
+      { icon: '📉', label: 'Giảm hiệu suất >2 tháng = OTS', note: 'Nghỉ ngơi + giảm khối lượng — không thể "tập luyện qua"' },
+      { icon: '❤️', label: 'ECG trước thi đấu cạnh tranh', note: 'Phát hiện WPW, HCM và Brugada — nguyên nhân đột tử thể thao' },
+    ],
+  },
+];
+
 function TabE5() {
-  const BASIC = ['Khám tổng quát', 'Cân nặng + BMI + vòng eo', 'Huyết áp', 'Đường huyết đói', 'HbA1c (nếu có nguy cơ)', 'Mỡ máu toàn phần', 'Chức năng gan (AST/ALT)', 'Chức năng thận (creatinine)', 'Công thức máu toàn phần', 'Tổng phân tích nước tiểu', 'ECG (trên 40 tuổi)'];
-  const EXPANDED = [
-    { t: 'Thừa cân / béo bụng', items: ['HbA1c', 'Mỡ máu đầy đủ', 'Men gan', 'Acid uric', 'Siêu âm gan (nếu cần)'] },
-    { t: 'Tăng huyết áp / nguy cơ tim mạch', items: ['Nhật ký huyết áp 7 ngày', 'Chức năng thận + điện giải', 'ECG / Holter', 'Đánh giá nguy cơ tim mạch 10 năm'] },
-    { t: 'Người tập luyện nhiều', items: ['Ferritin, Vitamin D', 'CK (creatine kinase)', 'Tư vấn phục hồi, overtraining', 'Tim mạch nếu có triệu chứng bất thường'] },
-  ];
+  const [basicModal, setBasicModal] = useState(null);
+  const [expandedModal, setExpandedModal] = useState(null);
   return (
     <div className="space-y-5">
       <div>
-        <h3 className="font-bold text-text text-lg mb-3">Gói Kiểm Tra Nền (Health Check Basic)</h3>
+        <h3 className="font-bold text-text text-lg mb-1">Gói Kiểm Tra Nền (Health Check Basic)</h3>
+        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng mục để xem chi tiết và ý nghĩa xét nghiệm</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {BASIC.map(b => (
-            <div key={b} className="flex items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-2 text-base text-muted">
-              <span style={{ color: '#84cc16' }}>✓</span>{b}
+          {CHECK_BASIC.map((b, i) => (
+            <div key={b.metric}
+              className="flex items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-2 text-base text-muted cursor-pointer transition-all duration-200 hover:text-text"
+              onClick={() => setBasicModal(i)}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(132,204,22,0.45)'; e.currentTarget.style.background = 'rgba(132,204,22,0.05)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = ''; e.currentTarget.style.background = ''; }}>
+              <span className="text-lg shrink-0">{b.icon}</span>
+              <span className="flex-1">{b.metric}</span>
+              <span className="text-[9px] font-bold shrink-0" style={{ color: '#84cc16' }}>→</span>
             </div>
           ))}
         </div>
       </div>
       <div>
-        <h3 className="font-bold text-text text-lg mb-3">Mở Rộng Theo Nguy Cơ</h3>
+        <h3 className="font-bold text-text text-lg mb-1">Mở Rộng Theo Nguy Cơ</h3>
+        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng nhóm để xem danh sách xét nghiệm bổ sung</p>
         <div className="space-y-3">
-          {EXPANDED.map(g => (
-            <div key={g.t} className="rounded-xl border border-border bg-surface/60 p-4">
-              <p className="text-base font-bold mb-2" style={{ color: '#84cc16' }}>+ {g.t}</p>
+          {CHECK_EXPANDED.map((g, i) => (
+            <div key={g.metric}
+              className="rounded-xl border border-border bg-surface/60 p-4 cursor-pointer transition-all duration-200 hover:shadow-md"
+              onClick={() => setExpandedModal(i)}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${g.rgb},0.45)`; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = ''; }}>
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-base font-bold flex items-center gap-2" style={{ color: g.color }}>
+                  <span>{g.icon}</span>+ {g.metric}
+                </p>
+                <span className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0"
+                  style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>Chi tiết →</span>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {g.items.map(it => <span key={it} className="text-base text-muted px-2 py-0.5 rounded-full border border-border">{it}</span>)}
               </div>
@@ -1118,6 +1435,26 @@ function TabE5() {
         </div>
       </div>
       <p className="text-base text-muted">Khám định kỳ không nên là "gói xét nghiệm càng nhiều càng tốt" — nên dựa trên tuổi, nguy cơ và triệu chứng của từng người.</p>
+      {basicModal !== null && (
+        <ScheduleModal
+          item={CHECK_BASIC[basicModal]}
+          idx={basicModal} total={CHECK_BASIC.length}
+          onClose={() => setBasicModal(null)}
+          onPrev={() => setBasicModal(i => Math.max(0, i - 1))}
+          onNext={() => setBasicModal(i => Math.min(CHECK_BASIC.length - 1, i + 1))}
+          hasPrev={basicModal > 0} hasNext={basicModal < CHECK_BASIC.length - 1}
+        />
+      )}
+      {expandedModal !== null && (
+        <ScheduleModal
+          item={CHECK_EXPANDED[expandedModal]}
+          idx={expandedModal} total={CHECK_EXPANDED.length}
+          onClose={() => setExpandedModal(null)}
+          onPrev={() => setExpandedModal(i => Math.max(0, i - 1))}
+          onNext={() => setExpandedModal(i => Math.min(CHECK_EXPANDED.length - 1, i + 1))}
+          hasPrev={expandedModal > 0} hasNext={expandedModal < CHECK_EXPANDED.length - 1}
+        />
+      )}
     </div>
   );
 }

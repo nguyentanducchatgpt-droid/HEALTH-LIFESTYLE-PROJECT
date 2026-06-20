@@ -1747,23 +1747,140 @@ function TabE6() {
   );
 }
 
+const INFO_FILTER = [
+  {
+    num: '01', icon: '🧑‍⚕️', color: '#6366f1', rgb: '99,102,241',
+    metric: 'Ai nói?',
+    freq: 'Kiểm tra uy tín người nói',
+    tip: 'Có chuyên môn y tế thực sự không? Bằng cấp, tổ chức uy tín?',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
+    keyFact: '💡 Influencer có lượt theo dõi cao ≠ có chuyên môn y tế. Luôn xác minh bằng cấp thực sự.',
+    detail: 'Người chia sẻ thông tin sức khỏe cần có nền tảng chuyên môn được xác minh, không chỉ trải nghiệm cá nhân hay lượt xem cao.',
+    details: [
+      'Bác sĩ, dược sĩ, chuyên gia dinh dưỡng được cấp phép là nguồn uy tín — hỏi rõ bằng cấp nếu không chắc.',
+      'Tổ chức y tế có uy tín: WHO, Bộ Y tế, Hội Y học Việt Nam, Mayo Clinic, WebMD là các nguồn đáng tin.',
+      'Influencer kể "hành trình cá nhân" có thể truyền cảm hứng nhưng không phải lời khuyên y tế — phân biệt rõ hai loại.',
+      'Xác nhận bằng cách tìm kiếm tên người nói + "bằng cấp", "giấy phép hành nghề" hoặc tìm trên trang web cơ quan nhà nước.',
+      'Thận trọng với danh hiệu tự phong: "chuyên gia", "tiến sĩ" mà không có trường/tổ chức cụ thể — không thể kiểm chứng.',
+      'Kênh YouTube/TikTok với vài triệu follow không có nghĩa là kiến thức y khoa đúng — đám đông không xác nhận sự thật.',
+    ],
+    points: [
+      { icon: '🎓', label: 'Bằng cấp thực', note: 'Trường/cơ quan cụ thể có thể tra cứu' },
+      { icon: '🏥', label: 'Tổ chức uy tín', note: 'WHO, Bộ Y tế, Hội Y học' },
+      { icon: '⚠️', label: 'Danh hiệu tự phong', note: '"Chuyên gia" không rõ nguồn gốc' },
+      { icon: '🔍', label: 'Cách kiểm tra', note: 'Tên + bằng cấp + giấy phép hành nghề' },
+    ],
+  },
+  {
+    num: '02', icon: '🔬', color: '#6366f1', rgb: '99,102,241',
+    metric: 'Dựa trên gì?',
+    freq: 'Kiểm tra bằng chứng khoa học',
+    tip: 'Nghiên cứu hay kinh nghiệm cá nhân? Có trích dẫn nguồn không?',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    keyFact: '💡 "Tôi đã thử và thấy hiệu quả" là anecdote, không phải bằng chứng khoa học. Cần nghiên cứu có kiểm soát.',
+    detail: 'Chất lượng bằng chứng quyết định độ tin cậy của thông tin sức khỏe — từ ý kiến cá nhân đến thử nghiệm lâm sàng là khoảng cách rất lớn.',
+    details: [
+      'Bậc thang bằng chứng (từ cao đến thấp): systematic review → RCT → cohort study → case report → ý kiến chuyên gia → kinh nghiệm cá nhân.',
+      'Khi xem claim sức khỏe, tìm nguồn trích dẫn: nghiên cứu đăng ở tạp chí nào, bao nhiêu người tham gia, thời gian theo dõi bao lâu.',
+      'Nghiên cứu trên chuột hoặc ống nghiệm (in vitro) không tự động áp dụng cho người — cần thử nghiệm lâm sàng xác nhận.',
+      'Correlation ≠ causation: "người ăn X sống lâu hơn" chưa chứng minh X là nguyên nhân — có thể người giàu mới ăn được X.',
+      'Số mẫu nhỏ (n<50), không có nhóm đối chứng, tự báo cáo — các dấu hiệu của nghiên cứu yếu cần thận trọng.',
+      'Google Scholar, PubMed là công cụ tra cứu nghiên cứu miễn phí — bất kỳ ai cũng có thể tự kiểm chứng nguồn trích dẫn.',
+    ],
+    points: [
+      { icon: '📊', label: 'RCT là chuẩn vàng', note: 'Thử nghiệm ngẫu nhiên có đối chứng' },
+      { icon: '🐭', label: 'Nghiên cứu chuột ≠ người', note: 'Cần xác nhận thêm trên người' },
+      { icon: '🔗', label: 'Trích dẫn cụ thể', note: 'Tên tác giả, tạp chí, năm xuất bản' },
+      { icon: '🔎', label: 'Tự kiểm chứng', note: 'PubMed.gov — tra cứu miễn phí' },
+    ],
+  },
+  {
+    num: '03', icon: '🚩', color: '#ef4444', rgb: '239,68,68',
+    metric: 'Có hứa hẹn quá mức?',
+    freq: 'Nhận diện red flags ngôn ngữ',
+    tip: '"100%", "Chữa khỏi", "Tất cả mọi người" — là dấu hiệu đỏ.',
+    img: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80',
+    keyFact: '💡 Y học thực chứng không bao giờ dùng ngôn ngữ tuyệt đối. "Luôn luôn hiệu quả" và "không có tác dụng phụ" là dấu hiệu cảnh báo.',
+    detail: 'Ngôn ngữ marketing sức khỏe sử dụng các cụm từ cảm xúc để tạo niềm tin giả tạo — nhận biết chúng là kỹ năng bảo vệ bản thân quan trọng.',
+    details: [
+      'Red flags phổ biến: "100% tự nhiên", "không tác dụng phụ", "chữa khỏi hoàn toàn", "ai dùng cũng có hiệu quả", "bác sĩ không muốn bạn biết điều này".',
+      '"Tự nhiên" không đồng nghĩa an toàn — arsenic, thuốc phiện đều tự nhiên nhưng cực độc; nhiều thuốc tổng hợp là cứu sống người.',
+      'Y học dùng ngôn ngữ xác suất: "có thể giảm nguy cơ", "hỗ trợ điều trị", "cần theo dõi thêm" — không bao giờ tuyệt đối.',
+      '"Giải pháp bí mật mà các công ty dược phẩm giấu đi" là cụm từ điển hình của thuyết âm mưu, không có cơ sở thực tế.',
+      'Testimonial (lời chứng nhận) của một vài người không thay thế được dữ liệu thống kê từ hàng nghìn người trong nghiên cứu.',
+      'Khi thấy claim nghe quá tốt để là thật — thường là không thật. Hiệu ứng "too good to be true" đặc biệt phổ biến trong sức khỏe.',
+    ],
+    points: [
+      { icon: '🚩', label: '"100%" và "Luôn luôn"', note: 'Ngôn ngữ tuyệt đối — không có trong y học' },
+      { icon: '🌿', label: '"Tự nhiên" ≠ an toàn', note: 'Nhiều chất tự nhiên là độc hại' },
+      { icon: '👥', label: 'Testimonial ≠ bằng chứng', note: 'Câu chuyện cá nhân không thay được dữ liệu' },
+      { icon: '🤫', label: '"Bí mật bị giấu"', note: 'Dấu hiệu điển hình của thuyết âm mưu' },
+    ],
+  },
+  {
+    num: '04', icon: '🛒', color: '#f59e0b', rgb: '245,158,11',
+    metric: 'Có bán hàng ngay sau?',
+    freq: 'Nhận diện công thức thao túng',
+    tip: 'Tạo nỗi sợ → giới thiệu sản phẩm → bán = công thức thao túng.',
+    img: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80',
+    keyFact: '💡 Công thức FASO (Fear → Authority → Solution → Offer) là cấu trúc của hàng nghìn livestream sức khỏe. Nhận biết cấu trúc này giúp bạn không bị thao túng.',
+    detail: 'Nội dung sức khỏe thực sự nhằm giáo dục, không nhằm bán hàng ngay lập tức. Khi giáo dục và bán hàng lẫn lộn, cần đặt câu hỏi về động cơ của người tạo nội dung.',
+    details: [
+      'Công thức FASO: Fear (tạo nỗi sợ về bệnh tật) → Authority (đóng vai chuyên gia) → Solution (giới thiệu giải pháp) → Offer (bán sản phẩm) — xuất hiện trong hàng nghìn livestream.',
+      '"Gan của bạn đang bị tổn thương mà không biết… May mà có sản phẩm này" — đây là ví dụ điển hình của chuỗi FASO.',
+      'Thông tin giáo dục sức khỏe hợp lệ không cần đi kèm link mua ngay hay flash sale, không tạo áp lực thời gian ("chỉ còn 10 suất").',
+      'Conflict of interest: người bán bổ sung không thể là người khách quan đánh giá bổ sung đó — xung đột lợi ích làm méo mó thông tin.',
+      'Affiliate link, hoa hồng, code giảm giá không tự làm thông tin sai — nhưng cần biết động cơ tài chính của người chia sẻ.',
+      'Câu hỏi đơn giản: "Nếu tôi không mua gì, người này vẫn muốn chia sẻ thông tin không?" — giúp đánh giá động cơ thực sự.',
+    ],
+    points: [
+      { icon: '😱', label: 'Fear-based hook', note: 'Tạo nỗi sợ để tạo nhu cầu' },
+      { icon: '⏰', label: 'Áp lực thời gian', note: '"Chỉ còn X suất" — chiêu bán hàng' },
+      { icon: '💰', label: 'Conflict of interest', note: 'Người bán không thể khách quan' },
+      { icon: '🎓', label: 'Giáo dục vs. bán hàng', note: 'Nội dung thực không cần CTA ngay' },
+    ],
+  },
+  {
+    num: '05', icon: '💊', color: '#ef4444', rgb: '239,68,68',
+    metric: 'Có khuyên bỏ điều trị?',
+    freq: 'Dấu hiệu nguy hiểm nhất',
+    tip: '"Bỏ thuốc tây đi" — cực kỳ nguy hiểm với bệnh nhân mạn tính.',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
+    keyFact: '💡 Bỏ thuốc điều trị đột ngột có thể gây nguy hiểm tính mạng với bệnh tim, đái tháo đường, tâm thần phân liệt, động kinh. Không bao giờ làm điều này mà không có bác sĩ hướng dẫn.',
+    detail: 'Khuyên bỏ điều trị y tế thông thường là ranh giới đỏ nghiêm trọng nhất — hậu quả có thể không thể đảo ngược với nhiều bệnh mạn tính.',
+    details: [
+      'Nhóm nguy hiểm nhất khi bỏ thuốc đột ngột: bệnh tim mạch (nhồi máu, suy tim), đái tháo đường (hôn mê), động kinh (co giật liên tục), tâm thần phân liệt (tái phát cấp tính).',
+      '"Thuốc tây có tác dụng phụ" là đúng — nhưng không dùng thuốc với bệnh nặng còn nguy hiểm hơn nhiều. Bác sĩ cân bằng lợi ích-nguy cơ cho từng người.',
+      'Không ai có quyền khuyên bỏ thuốc của bạn trừ bác sĩ điều trị của bạn — đây là ranh giới pháp lý và đạo đức rõ ràng.',
+      '"Điều trị bổ sung" (thảo dược, châm cứu, liệu pháp tâm lý) có thể được dùng CÙNG với điều trị y tế, không phải THAY THẾ — gọi là integrative medicine.',
+      'Nếu muốn thay đổi phác đồ điều trị, làm cùng bác sĩ: giảm liều dần, theo dõi chỉ số, có phương án dự phòng — không tự ngừng đột ngột.',
+      'Báo cáo cho cơ quan y tế khi gặp nội dung khuyên bỏ điều trị: vi phạm quy định về quảng cáo y tế và có thể bị xử lý hình sự.',
+    ],
+    points: [
+      { icon: '🚫', label: 'Không tự ngừng thuốc', note: 'Luôn có bác sĩ hướng dẫn' },
+      { icon: '⚕️', label: 'Integrative ≠ thay thế', note: 'Bổ sung cạnh thuốc, không thay thuốc' },
+      { icon: '⚡', label: 'Nguy cơ tức thì', note: 'Tim, tiểu đường, động kinh — nguy hiểm ngay' },
+      { icon: '📢', label: 'Báo cáo vi phạm', note: 'Cơ quan y tế có thể xử lý nội dung này' },
+    ],
+  },
+];
+
 function TabE7() {
-  const QS = [
-    { n: '1', q: 'Ai nói?', tip: 'Có chuyên môn y tế thực sự không? Bằng cấp, tổ chức uy tín?' },
-    { n: '2', q: 'Dựa trên gì?', tip: 'Nghiên cứu hay kinh nghiệm cá nhân? Có trích dẫn nguồn không?' },
-    { n: '3', q: 'Có hứa hẹn quá mức?', tip: '"100%", "Chữa khỏi", "Tất cả mọi người" — là dấu hiệu đỏ.' },
-    { n: '4', q: 'Có bán hàng ngay sau?', tip: 'Tạo nỗi sợ → giới thiệu sản phẩm → bán = công thức thao túng.' },
-    { n: '5', q: 'Có khuyên bỏ điều trị?', tip: '"Bỏ thuốc tây đi" — cực kỳ nguy hiểm với bệnh nhân mạn tính.' },
-  ];
+  const [filterModal, setFilterModal] = useState(null);
   return (
     <div className="space-y-4">
       <p className="text-base text-muted">Với sự bùng nổ của TikTok, YouTube và livestream bán hàng, lọc thông tin sức khỏe là kỹ năng sống quan trọng.</p>
       <div className="space-y-2">
-        {QS.map(q => (
-          <div key={q.n} className="rounded-xl border border-border bg-surface/60 p-4">
+        {INFO_FILTER.map((q, i) => (
+          <div
+            key={q.num}
+            onClick={() => setFilterModal(i)}
+            className="rounded-xl border border-border bg-surface/60 p-4 cursor-pointer hover:border-indigo-500/40 hover:bg-surface transition-colors"
+          >
             <div className="flex items-center gap-2 mb-1">
-              <span className="w-6 h-6 rounded-full flex items-center justify-center text-base font-black shrink-0" style={{ background: `${COLOR}20`, color: COLOR }}>{q.n}</span>
-              <span className="font-semibold text-lg text-text">{q.q}</span>
+              <span className="w-6 h-6 rounded-full flex items-center justify-center text-base font-black shrink-0" style={{ background: `rgba(${q.rgb},0.15)`, color: q.color }}>{q.num}</span>
+              <span className="font-semibold text-lg text-text flex-1">{q.metric}</span>
+              <span className="text-muted text-sm">→</span>
             </div>
             <p className="text-base text-muted pl-8">{q.tip}</p>
           </div>
@@ -1779,6 +1896,18 @@ function TabE7() {
           <ul className="space-y-1">{['"Hỗ trợ theo dõi"', '"Cần cá nhân hóa"', '"Nên tham khảo bác sĩ"', '"Không thay thuốc điều trị"'].map(t => <li key={t} className="text-base text-muted">{t}</li>)}</ul>
         </div>
       </div>
+      {filterModal !== null && (
+        <ScheduleModal
+          item={INFO_FILTER[filterModal]}
+          idx={filterModal}
+          total={INFO_FILTER.length}
+          onClose={() => setFilterModal(null)}
+          onPrev={() => setFilterModal(i => Math.max(0, i - 1))}
+          onNext={() => setFilterModal(i => Math.min(INFO_FILTER.length - 1, i + 1))}
+          hasPrev={filterModal > 0}
+          hasNext={filterModal < INFO_FILTER.length - 1}
+        />
+      )}
     </div>
   );
 }

@@ -251,13 +251,234 @@ const DANGER_PHRASES = [
 ];
 
 const SUPPLEMENT_CHECK = [
-  { label: 'Omega-3', note: 'Giảm TG, an toàn. Liều > 3g/ngày: ảnh hưởng đông máu — báo bác sĩ trước mổ.' },
-  { label: 'Vitamin D3', note: 'Thiếu phổ biến. Liều 1.000–2.000 IU/ngày an toàn. Kiểm tra 25(OH)D máu trước bổ sung liều cao.' },
-  { label: 'Magie', note: 'Giúp ngủ, giảm chuột rút. Magie glycinate/citrate hấp thu tốt. Liều > 350mg/ngày → tiêu chảy.' },
-  { label: 'Probiotics', note: 'Hỗ trợ đường ruột sau kháng sinh. Uống cách kháng sinh 2 giờ.' },
-  { label: 'Sắt', note: 'Chỉ bổ sung khi có chỉ định thiếu máu. Thừa sắt gây táo bón, có hại cho gan.' },
-  { label: 'Canxi', note: 'Hấp thu tốt nhất từ thực phẩm. Bổ sung: canxi citrate tốt hơn carbonate. Không uống cùng sắt.' },
+  {
+    icon: '🐟', label: 'Omega-3',
+    note: 'Giảm TG, an toàn. Liều > 3g/ngày: ảnh hưởng đông máu — báo bác sĩ trước mổ.',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+    keyFact: '🐟 Omega-3 từ dầu cá (EPA + DHA) có bằng chứng lâm sàng mạnh nhất về giảm triglyceride và chống viêm. ALA từ thực vật (hạt lanh, chia) hấp thu kém — chỉ 5–15% được chuyển hóa thành EPA/DHA.',
+    details: [
+      'EPA vs DHA: EPA (eicosapentaenoic acid) hiệu quả hơn với chống viêm và trầm cảm. DHA quan trọng hơn cho não, mắt và phát triển thai nhi. Sản phẩm tốt nên chứa cả hai. Liều điều trị triglyceride cao: 2–4g EPA+DHA/ngày (kê đơn).',
+      'Giảm triglyceride: omega-3 liều cao (2–4g/ngày) giảm triglyceride 20–30% — hiệu quả nhất trong các TPCN. Cơ chế: ức chế tổng hợp VLDL ở gan, tăng thanh thải triglyceride. Icosapent ethyl (Vascepa) — dạng EPA tinh khiết kê đơn — giảm biến cố tim mạch 25% trong nghiên cứu REDUCE-IT.',
+      'Tương tác đông máu: omega-3 > 3g/ngày ức chế kết tập tiểu cầu và kéo dài thời gian chảy máu. Kết hợp với aspirin, warfarin, hoặc clopidogrel → tăng nguy cơ chảy máu đáng kể. Cần ngưng ít nhất 1–2 tuần trước phẫu thuật. Thông báo với bác sĩ và gây mê.',
+      'Chất lượng sản phẩm — quan trọng hơn bạn nghĩ: dầu cá dễ bị oxy hóa → mất hiệu lực và tạo sản phẩm oxy hóa có hại. Dấu hiệu dầu cá tốt: mùi tanh nhẹ (không hôi), IFOS 5 sao hoặc NSF certified, hàm lượng EPA+DHA ghi rõ (không chỉ "dầu cá"), được bảo quản trong tủ lạnh sau khi mở. Cá nhỏ (cá cơm, cá mòi) có ít thủy ngân hơn cá lớn.',
+      'Ăn cá vs uống viên: 2–3 bữa cá béo/tuần (cá hồi, cá thu, cá ngừ, cá mòi) cung cấp đủ omega-3 cho người khỏe mạnh. TPCN chỉ cần thiết khi không ăn đủ cá hoặc cần liều điều trị cao. Cá nguyên con còn cung cấp protein, selen, và vitamin D — viên omega-3 không thay thế được điều này.',
+      'Omega-3 với thai kỳ: DHA đặc biệt quan trọng cho phát triển não và mắt thai nhi trong 3 tháng cuối và sau sinh. Phụ nữ mang thai nên ăn 2–3 bữa cá ít thủy ngân/tuần và/hoặc bổ sung DHA 200–300mg/ngày. Tránh cá có thủy ngân cao: cá kiếm, cá mập, cá thu vua.',
+    ],
+    points: [
+      { icon: '📉', label: 'Giảm TG 20–30% ở liều 2–4g/ngày', note: 'Hiệu quả nhất trong các TPCN về tim mạch' },
+      { icon: '🩸', label: '> 3g/ngày: báo bác sĩ trước phẫu thuật', note: 'Ngưng 1–2 tuần trước mổ — ức chế tiểu cầu' },
+      { icon: '🐟', label: 'EPA cho viêm/tâm trạng, DHA cho não/mắt', note: 'Chọn sản phẩm ghi rõ mg EPA + mg DHA riêng biệt' },
+      { icon: '🧊', label: 'Bảo quản lạnh sau khi mở — tránh oxy hóa', note: 'Mùi hôi = dầu cá đã oxy hóa — không nên dùng' },
+    ],
+  },
+  {
+    icon: '☀️', label: 'Vitamin D3',
+    note: 'Thiếu phổ biến. Liều 1.000–2.000 IU/ngày an toàn. Kiểm tra 25(OH)D máu trước bổ sung liều cao.',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80',
+    keyFact: '☀️ Ước tính 70–80% người Việt Nam thiếu vitamin D do lối sống trong nhà, kem chống nắng, và ánh mặt trời ít hiệu quả gần xích đạo vào buổi trưa. Thiếu D liên quan đến loãng xương, suy giảm miễn dịch, và rối loạn tâm trạng.',
+    details: [
+      'D2 vs D3: Vitamin D3 (cholecalciferol, từ động vật/ánh nắng) hiệu quả hơn D2 (ergocalciferol, từ thực vật) trong tăng và duy trì 25(OH)D máu — được khuyến nghị ưu tiên. Chỉ số xét nghiệm: 25-hydroxyvitamin D [25(OH)D]. Mức tối ưu: 40–60 ng/mL (100–150 nmol/L).',
+      'Ánh nắng và tổng hợp vitamin D: UVB (290–315nm) kích thích tổng hợp vitamin D3 ở da. Gần xích đạo (Việt Nam), UVB có quanh năm nhưng chỉ đủ mạnh vào khoảng 10h–14h. 10–15 phút nắng/ngày trên da mặt+tay (không kem chống nắng) đủ cho người da trắng; người da tối cần lâu hơn. Kem chống nắng SPF 30 giảm 95–98% tổng hợp vitamin D.',
+      'Liều bổ sung theo nhu cầu: phòng ngừa ở người khỏe mạnh — 1.000–2.000 IU/ngày. Nâng nhanh nồng độ khi thiếu trung bình — 4.000 IU/ngày có thể dùng 2–3 tháng rồi kiểm tra lại. Giới hạn an toàn UL (Tolerable Upper Intake Level) của WHO — 4.000 IU/ngày cho người lớn. Không tự dùng > 4.000 IU/ngày mà không theo dõi xét nghiệm.',
+      'Vitamin D3 và K2 — cặp đôi hoàn hảo: vitamin D tăng hấp thu canxi từ ruột; vitamin K2 (MK-7) định hướng canxi vào xương thay vì lắng đọng ở thành mạch máu (vôi hóa). Nhiều nghiên cứu gợi ý dùng D3+K2 cùng nhau để tối ưu sức khỏe xương và giảm nguy cơ tim mạch. Liều K2 thường 100–200 mcg/ngày.',
+      'Vitamin D và sức khỏe toàn diện: ngoài xương, vitamin D ảnh hưởng đến hệ miễn dịch (giảm nguy cơ nhiễm trùng đường hô hấp), tâm trạng (deficiency liên quan đến trầm cảm theo mùa), kiểm soát đường huyết, và có thể giảm nguy cơ một số ung thư. Tuy nhiên, bổ sung D ở người đã đủ không mang lại thêm lợi ích.',
+      'Ngộ độc vitamin D (hypervitaminosis D): xảy ra khi > 10.000 IU/ngày kéo dài nhiều tháng → 25(OH)D > 150 ng/mL → hypercalcemia → buồn nôn, khát, tiểu nhiều, sỏi thận, vôi hóa thận và mạch. Không có nguy cơ ngộ độc từ ánh nắng — da tự điều chỉnh. Nguy cơ từ viên uống liều cao mà không theo dõi.',
+    ],
+    points: [
+      { icon: '🔬', label: 'Đo 25(OH)D máu trước khi tăng liều', note: 'Mức tối ưu: 40–60 ng/mL — không đoán mò liều' },
+      { icon: '🦴', label: 'D3 + K2 (MK-7): combo tốt nhất cho xương', note: 'K2 định hướng canxi vào xương, không lắng ở mạch máu' },
+      { icon: '⚠️', label: 'Giới hạn an toàn: 4.000 IU/ngày (UL)', note: 'Không tự dùng > 4.000 IU mà không theo dõi xét nghiệm' },
+      { icon: '☀️', label: '10–15 phút nắng/ngày = nguồn D tốt nhất', note: 'Không kem chống nắng, da mặt+tay, 10h–14h tại Việt Nam' },
+    ],
+  },
+  {
+    icon: '🌿', label: 'Magie',
+    note: 'Giúp ngủ, giảm chuột rút. Magie glycinate/citrate hấp thu tốt. Liều > 350mg/ngày → tiêu chảy.',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+    keyFact: '🌿 Magie tham gia vào hơn 300 phản ứng enzyme trong cơ thể — bao gồm tổng hợp ATP, tổng hợp DNA/RNA, và điều tiết ion canxi/kali. Thiếu magie âm thầm rất phổ biến nhưng khó phát hiện qua xét nghiệm máu thông thường (99% magie nằm trong tế bào, không trong máu).',
+    details: [
+      'Các dạng magie và sự khác biệt quan trọng: Magie glycinate (bisglycinate) — hấp thu tốt nhất, dịu dạ dày nhất, tốt nhất cho giảm lo âu và cải thiện giấc ngủ. Magie citrate — hấp thu tốt, tác dụng nhẹ làm mềm phân (hữu ích cho người táo bón). Magie oxide — hấp thu kém (4%), chủ yếu dùng làm thuốc nhuận tràng, không hiệu quả để tăng magie tế bào. Magie L-threonate — có thể vượt hàng rào máu-não tốt hơn, nghiên cứu sơ bộ về nhận thức.',
+      'Vai trò trong giấc ngủ và thư giãn thần kinh: magie điều tiết thụ thể GABA (chất dẫn truyền thần kinh ức chế) và ức chế thụ thể NMDA (glutamate kích thích). Thiếu magie → tăng kích thích thần kinh → khó ngủ, lo lắng, cơ bắp co cứng. Liều 200–400mg glycinate buổi tối giúp thư giãn và cải thiện chất lượng giấc ngủ.',
+      'Chuột rút cơ bắp: magie cần thiết cho thư giãn cơ (canxi gây co, magie gây giãn). Thiếu magie → chuột rút về đêm, đặc biệt ở bắp chân. Cũng phổ biến ở người tập thể thao nặng (mất qua mồ hôi), phụ nữ mang thai, người dùng lợi tiểu (furosemide, thiazide), và người uống rượu nhiều.',
+      'Nguồn thực phẩm giàu magie: hạt bí ngô (535mg/100g), hạt lanh (392mg), hạnh nhân (270mg), điều (292mg), đậu đen (70mg/100g nấu chín), rau bina (87mg/100g nấu), socola đen > 70% (228mg/100g). Người ăn đa dạng thực phẩm nguyên chất thường đủ magie từ thực phẩm.',
+      'Giới hạn bổ sung và tác dụng phụ: UL của WHO cho magie từ bổ sung (không tính từ thực phẩm) là 350mg/ngày cho người lớn. Liều cao → tiêu chảy thẩm thấu (đặc biệt oxide và citrate). Người suy thận không được tự bổ sung magie — thận không đào thải được → nguy cơ ngộ độc (nhịp tim chậm, ức chế hô hấp).',
+      'Magie và thuốc kê đơn: magie giảm hấp thu bisphosphonate (thuốc loãng xương — phải uống cách nhau ≥ 2 giờ), fluoroquinolone và tetracycline (uống cách ≥ 2 giờ), và levothyroxine. Magie tăng cường tác dụng của thuốc giãn cơ và an thần — thận trọng khi dùng cùng.',
+    ],
+    points: [
+      { icon: '💊', label: 'Glycinate = hấp thu tốt + dịu dạ dày', note: 'Tốt nhất cho giấc ngủ và lo âu — tránh dùng oxide' },
+      { icon: '😴', label: 'GABA + NMDA: thư giãn thần kinh tự nhiên', note: '200–400mg glycinate buổi tối giúp ngủ sâu hơn' },
+      { icon: '🚿', label: '> 350mg/ngày (từ viên): có thể gây tiêu chảy', note: 'Chia nhỏ liều và tăng từ từ để tránh tác dụng phụ tiêu hóa' },
+      { icon: '⚠️', label: 'Suy thận: không tự bổ sung magie', note: 'Thận suy không đào thải → tích lũy → ngộ độc magie' },
+    ],
+  },
+  {
+    icon: '🦠', label: 'Probiotics',
+    note: 'Hỗ trợ đường ruột sau kháng sinh. Uống cách kháng sinh 2 giờ.',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?w=800&q=80',
+    keyFact: '🦠 Hệ vi sinh đường ruột (gut microbiome) chứa hơn 100 nghìn tỷ vi khuẩn — gấp 10 lần số tế bào người — và tham gia vào tiêu hóa, miễn dịch, tổng hợp vitamin, và thậm chí tâm trạng qua trục não-ruột.',
+    details: [
+      'Không phải "probiotic" nào cũng như nhau — chủng loài quyết định tất cả: Lactobacillus rhamnosus GG (LGG) — nghiên cứu nhiều nhất, bằng chứng mạnh nhất về tiêu chảy liên quan kháng sinh và tiêu chảy du lịch. Bifidobacterium longum — hỗ trợ phục hồi sau kháng sinh ở ruột già. Saccharomyces boulardii — nấm men, không bị kháng sinh tiêu diệt, hiệu quả với tiêu chảy C. difficile. Lactobacillus acidophilus NCFM — hỗ trợ miễn dịch và giảm đầy hơi.',
+      'Uống cách kháng sinh 2 giờ — tại sao quan trọng: kháng sinh tiêu diệt cả vi khuẩn probiotic nếu uống cùng lúc. Uống probiotic trước kháng sinh 1–2 giờ hoặc sau kháng sinh 2 giờ để vi khuẩn probiotic sống sót đến ruột. Tiếp tục uống probiotic thêm 1–2 tuần sau khi hoàn thành liệu trình kháng sinh để giúp hệ vi sinh phục hồi.',
+      'CFU (Colony Forming Units) — đơn vị đo lường: liều từ 1–10 tỷ CFU/ngày phổ biến nhất. Liều cao hơn không nhất thiết hiệu quả hơn — chủng quan trọng hơn số lượng. Một số sản phẩm ghi hàng tỷ CFU nhưng ở chủng không có bằng chứng — marketing hơn là khoa học.',
+      'Bảo quản và sinh tồn: nhiều probiotic cần bảo quản lạnh (2–8°C) để vi khuẩn sống sót. Một số dòng "shelf-stable" được sấy đông khô, ổn định ở nhiệt độ phòng. Kiểm tra ngày hết hạn — probiotic chứa vi khuẩn sống, số lượng giảm dần theo thời gian. Uống sau bữa ăn (không lúc đói) giúp vi khuẩn sống sót qua axit dạ dày.',
+      'Bằng chứng lâm sàng — đâu có, đâu không: CÓ bằng chứng tốt: phòng ngừa và điều trị tiêu chảy liên quan kháng sinh (NNT = 6), hội chứng ruột kích thích (IBS), đầy hơi chức năng, tăng cường miễn dịch mùa đông. BẰNG CHỨNG YẾU/CHƯA ĐỦ: eczema ở người lớn, bệnh Crohn đang hoạt động, giảm cân, cải thiện tâm trạng (nghiên cứu sơ bộ).',
+      'Prebiotic — thức ăn cho probiotic: prebiotic là chất xơ đặc biệt (inulin, FOS, GOS, pectin) nuôi vi khuẩn có lợi trong ruột. Nguồn tự nhiên: tỏi, hành tây, chuối chín, yến mạch, củ artichoke. Probiotic mà không có prebiotic giống như trồng cây nhưng không tưới nước. Nhiều sản phẩm kết hợp cả hai gọi là "synbiotic".',
+    ],
+    points: [
+      { icon: '⏰', label: 'Uống cách kháng sinh 2 giờ — không cùng lúc', note: 'Tiếp tục 1–2 tuần sau khi hoàn thành kháng sinh' },
+      { icon: '🔬', label: 'LGG và S. boulardii: bằng chứng mạnh nhất', note: 'Chủng quan trọng hơn số tỷ CFU trên nhãn' },
+      { icon: '🌡️', label: 'Bảo quản lạnh 2–8°C (hầu hết dòng)', note: 'Uống sau bữa ăn để sống sót qua axit dạ dày' },
+      { icon: '🌱', label: 'Prebiotic = thức ăn cho probiotic', note: 'Tỏi, hành, chuối, yến mạch nuôi vi khuẩn có lợi' },
+    ],
+  },
+  {
+    icon: '🩸', label: 'Sắt',
+    note: 'Chỉ bổ sung khi có chỉ định thiếu máu. Thừa sắt gây táo bón, có hại cho gan.',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80',
+    keyFact: '🩸 Thừa sắt (hemochromatosis) nguy hiểm ngang thiếu sắt — tích lũy sắt ở gan, tim, tuyến tụy gây xơ gan, suy tim, và đái tháo đường. Không tự bổ sung sắt mà không có xét nghiệm chỉ định.',
+    details: [
+      'Xét nghiệm chẩn đoán thiếu sắt: không chỉ đo hemoglobin (Hb) — Hb thấp là hậu quả muộn. Cần đo ferritin (dự trữ sắt) và transferrin saturation. Ferritin < 15 ng/mL = cạn dự trữ. Ferritin < 30 ng/mL + triệu chứng mệt mỏi, rụng tóc, khó tập trung = thiếu sắt chức năng (dù Hb còn bình thường). Ferritin > 200 ng/mL (nữ) hoặc > 300 ng/mL (nam) = cần kiểm tra thừa sắt.',
+      'Các dạng sắt và hấp thu: Ferrous sulfate (sắt sulfat) — rẻ nhất, phổ biến nhất, hấp thu tốt nhưng gây táo bón và buồn nôn nhiều nhất. Ferrous gluconate — dịu dạ dày hơn, hấp thu tương đương. Ferrous bisglycinate (sắt glycinate chelate) — hấp thu tốt nhất, ít tác dụng phụ tiêu hóa nhất — đắt hơn. Ferric (sắt 3+) như ferric carboxymaltose (Ferinject) — IV cho thiếu máu nặng.',
+      'Tối đa hóa hấp thu sắt: uống lúc đói hoặc với vitamin C (tăng hấp thu 2–3 lần). TRÁNH uống cùng: sữa và các sản phẩm từ sữa (canxi ức chế), trà/cà phê (tannin chelate sắt), antacid chứa Ca/Mg/Al, kháng sinh fluoroquinolone và tetracycline (cách nhau ≥ 2 giờ). Uống cách bữa ăn 30 phút trước hoặc 2 giờ sau nếu dung nạp được.',
+      'Tác dụng phụ tiêu hóa và xử lý: táo bón, buồn nôn, phân đen (bình thường) là phổ biến nhất. Chiến lược giảm: bắt đầu liều thấp rồi tăng dần; uống sau bữa ăn nếu không chịu được lúc đói (giảm hấp thu nhưng dung nạp tốt hơn); thử ferrous gluconate hoặc bisglycinate nếu sulfate gây vấn đề; tăng chất xơ và nước trong thời gian bổ sung.',
+      'Hemochromatosis di truyền (hereditary hemochromatosis): bệnh di truyền lặn do đột biến gen HFE — cơ thể hấp thu sắt quá mức không điều chỉnh được. Phổ biến ở người gốc Bắc Âu (1/200–300 người). Tích lũy sắt ở gan (xơ gan), tim (rối loạn nhịp, suy tim), khớp (viêm khớp), tuyến tụy (đái tháo đường). Điều trị đơn giản: phlebotomy (lấy máu) định kỳ.',
+      'Nhóm đặc biệt cần lưu ý: phụ nữ mang thai — nhu cầu tăng 27mg/ngày (từ 18mg), kiểm tra ferritin đầu thai kỳ. Phụ nữ tiền mãn kinh mất máu kinh nguyệt nhiều — kiểm tra ferritin thường xuyên. Vận động viên endurance (chạy bộ đường dài) — hemolysis (vỡ hồng cầu do va đập) gây mất sắt. Người ăn chay/thuần chay — sắt non-heme từ thực vật hấp thu kém hơn 2–3 lần so với sắt heme từ thịt.',
+    ],
+    points: [
+      { icon: '🔬', label: 'Đo ferritin trước khi bổ sung', note: 'Hb thấp là hậu quả muộn — ferritin mới là chỉ số sớm' },
+      { icon: '🍊', label: 'Vitamin C tăng hấp thu 2–3 lần', note: 'Uống cùng nước cam hoặc viên vitamin C — tránh trà/cà phê' },
+      { icon: '💊', label: 'Bisglycinate: dịu dạ dày nhất', note: 'Ít táo bón và buồn nôn hơn sulfate — đáng giá chi phí thêm' },
+      { icon: '⚠️', label: 'Thừa sắt → xơ gan, suy tim, tiểu đường', note: 'Không tự bổ sung sắt "cho chắc" — nguy cơ thực sự' },
+    ],
+  },
+  {
+    icon: '🦴', label: 'Canxi',
+    note: 'Hấp thu tốt nhất từ thực phẩm. Bổ sung: canxi citrate tốt hơn carbonate. Không uống cùng sắt.',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&q=80',
+    keyFact: '🦴 Cơ thể chỉ hấp thu tối đa 500–600mg canxi mỗi lần uống — chia nhỏ liều là bắt buộc. Uống > 1.000mg canxi bổ sung/ngày có thể tăng nguy cơ sỏi thận và có thể liên quan đến nguy cơ tim mạch.',
+    details: [
+      'Calcium carbonate vs calcium citrate — khác biệt thực sự: Carbonate (phổ biến, rẻ hơn) cần axit dạ dày để hòa tan — uống sau bữa ăn (khi dạ dày tiết axit nhiều nhất). Không phù hợp cho người dùng thuốc ức chế bơm proton (PPI như omeprazole) hoặc người cao tuổi (giảm axit dạ dày). Citrate (đắt hơn) hấp thu tốt ngay cả khi đói và không cần axit dạ dày — phù hợp hơn cho người > 50 tuổi, người dùng PPI, và người dạ dày yếu.',
+      'Giới hạn hấp thu và chia liều: hệ vận chuyển canxi ở ruột bão hòa ở khoảng 500–600mg/liều. Uống 1.000mg một lần → chỉ hấp thu 300–350mg. Chia thành 2–3 lần 500mg/lần → hấp thu tổng cộng nhiều hơn. Thực phẩm canxi cao: sữa (120mg/100ml), sữa chua (150mg/100g), đậu hũ làm từ canxi sulfat (350mg/100g), cá hộp ăn cả xương (400mg/100g), rau xanh đậm (100–150mg/100g).',
+      'Vitamin D3 và K2 — không thể thiếu: canxi bổ sung mà không có đủ vitamin D → hấp thu kém và hiệu quả xương thấp. Canxi + D3 mà không có K2 → canxi có thể lắng đọng ở thành mạch thay vì xương (một số nghiên cứu liên quan đến canxi bổ sung tăng nguy cơ vôi hóa động mạch). K2 (MK-7) kích hoạt osteocalcin và matrix Gla protein → định hướng canxi vào xương, không vào mạch.',
+      'Tranh cãi về canxi bổ sung và tim mạch: phân tích tổng hợp của Bolland (2010, 2011) gợi ý canxi bổ sung > 1.000mg/ngày tăng nguy cơ nhồi máu cơ tim. Nghiên cứu sau đó cho kết quả mâu thuẫn. Consensus hiện tại: ưu tiên canxi từ thực phẩm, chỉ bổ sung khi thực sự thiếu, không vượt 500–600mg bổ sung/ngày, đảm bảo đủ K2 nếu bổ sung canxi liều cao.',
+      'Tương tác với các thuốc và khoáng chất: canxi ức chế hấp thu sắt (không uống cùng), kẽm (uống cách nhau), và magie (cạnh tranh cùng transporter). Canxi cũng ảnh hưởng đến hấp thu tetracycline và fluoroquinolone (uống cách ≥ 2 giờ). Thiazide lợi tiểu giảm bài xuất canxi → tăng nguy cơ tăng canxi máu nếu bổ sung nhiều. Furosemide ngược lại — tăng mất canxi qua nước tiểu.',
+      'Nhu cầu canxi theo tuổi và nhóm: Trẻ em 9–18 tuổi — 1.300mg/ngày (đang phát triển xương nhanh). Người lớn 19–50 tuổi — 1.000mg/ngày. Phụ nữ > 51 tuổi và nam > 70 tuổi — 1.200mg/ngày. Phụ nữ mang thai và cho con bú — 1.000mg/ngày (cơ thể điều chỉnh hấp thu). Tốt nhất lấy từ thực phẩm; bổ sung chỉ phần thiếu hụt.',
+    ],
+    points: [
+      { icon: '⚖️', label: 'Tối đa 500mg mỗi lần — chia nhỏ liều', note: 'Hấp thu bão hòa ở 500–600mg/lần — uống 1.000mg/lần = lãng phí' },
+      { icon: '💊', label: 'Citrate tốt hơn cho người > 50 tuổi / dùng PPI', note: 'Carbonate cần axit dạ dày — citrate hấp thu ngay cả khi đói' },
+      { icon: '🧬', label: 'D3 + K2 không thể thiếu khi bổ sung canxi', note: 'K2 đưa canxi vào xương — không để lắng ở thành mạch' },
+      { icon: '🍼', label: 'Thực phẩm trước — bổ sung phần thiếu hụt', note: 'Sữa, đậu hũ, cá hộp ăn xương, rau xanh đậm' },
+    ],
+  },
 ];
+
+function SupplementCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-4 cursor-pointer transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.55)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 18px rgba(${item.rgb},0.1)` : 'none', transform: hovered ? 'translateY(-3px)' : 'translateY(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-xl shrink-0">{item.icon}</span>
+        <span className="font-bold text-base text-text">{item.label}</span>
+        <span className="ml-auto text-xs px-2 py-0.5 rounded-full font-bold shrink-0 transition-opacity duration-200"
+          style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>Chi tiết →</span>
+      </div>
+      <p className="text-sm text-muted leading-relaxed">{item.note}</p>
+    </div>
+  );
+}
+
+function SupplementModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.4 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+              {item.icon}
+            </div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>TPCN · Hướng dẫn</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-1 leading-snug" style={{ color: item.color }}>{item.label}</h2>
+          <p className="text-sm mb-4 leading-relaxed" style={{ color: 'rgba(209,213,219,0.8)' }}>{item.note}</p>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function DangerCard({ item, onClick }) {
   const [hovered, setHovered] = useState(false);
@@ -494,6 +715,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthMedSafetyPage() {
   const [medModal, setMedModal] = useState(null);
   const [dangerModal, setDangerModal] = useState(null);
+  const [suppModal, setSuppModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -568,13 +790,10 @@ export default function HealthMedSafetyPage() {
 
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Hướng Dẫn Bổ Sung Thực Phẩm Chức Năng</h2>
-        <p className="text-muted text-lg mb-6">TPCN không phải thuốc nhưng cũng cần dùng đúng cách. Luôn thông báo cho bác sĩ tất cả TPCN đang dùng.</p>
+        <p className="text-muted text-lg mb-6">TPCN không phải thuốc nhưng cũng cần dùng đúng cách. Luôn thông báo cho bác sĩ tất cả TPCN đang dùng. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {SUPPLEMENT_CHECK.map((s, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4 hover:border-emerald-500/30 transition-colors">
-              <div className="font-bold text-lg text-text mb-1">{s.label}</div>
-              <p className="text-base text-muted">{s.note}</p>
-            </div>
+            <SupplementCard key={i} item={s} onClick={() => setSuppModal(i)} />
           ))}
         </div>
       </RevealBlock>
@@ -595,6 +814,18 @@ export default function HealthMedSafetyPage() {
       <p className="text-base text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục sức khỏe. Không thay thế tư vấn của bác sĩ hoặc dược sĩ.</p>
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
 
+      {suppModal !== null && (
+        <SupplementModal
+          item={SUPPLEMENT_CHECK[suppModal]}
+          idx={suppModal}
+          total={SUPPLEMENT_CHECK.length}
+          onClose={() => setSuppModal(null)}
+          onPrev={() => setSuppModal(i => Math.max(0, i - 1))}
+          onNext={() => setSuppModal(i => Math.min(SUPPLEMENT_CHECK.length - 1, i + 1))}
+          hasPrev={suppModal > 0}
+          hasNext={suppModal < SUPPLEMENT_CHECK.length - 1}
+        />
+      )}
       {dangerModal !== null && (
         <DangerModal
           item={DANGER_PHRASES[dangerModal]}

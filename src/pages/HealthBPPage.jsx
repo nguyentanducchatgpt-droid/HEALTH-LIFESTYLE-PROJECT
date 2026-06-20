@@ -225,12 +225,126 @@ const STEPS = [
 ];
 
 const LIFESTYLE = [
-  { icon: '🧂', title: 'Giảm muối', desc: '< 5g muối/ngày (1 muỗng cà phê). Tránh đồ đóng hộp, mì gói.' },
-  { icon: '🥦', title: 'Ăn nhiều rau quả', desc: 'DASH diet: rau, trái cây, ngũ cốc nguyên hạt, sữa ít béo.' },
-  { icon: '🏃', title: 'Vận động đều', desc: '150 phút/tuần cường độ vừa (đi bộ nhanh, bơi lội, đạp xe).' },
-  { icon: '⚖️', title: 'Giữ cân nặng hợp lý', desc: 'Giảm 1kg → HA giảm ~1 mmHg. Mục tiêu BMI 18.5–24.9.' },
-  { icon: '🚭', title: 'Không hút thuốc', desc: 'Bỏ thuốc lá → HA giảm ngay trong vài tuần đầu.' },
-  { icon: '🧘', title: 'Kiểm soát stress', desc: 'Thở sâu, thiền, yoga → giảm hệ thần kinh giao cảm.' },
+  {
+    icon: '🧂', title: 'Giảm muối', desc: '< 5g muối/ngày (1 muỗng cà phê). Tránh đồ đóng hộp, mì gói.',
+    img: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?w=800&q=80',
+    keyFact: '💡 Giảm muối từ 9g xuống 5g/ngày có thể giảm HA tâm thu 4–5 mmHg ở người bình thường và 5–7 mmHg ở người tăng HA — hiệu quả tương đương một nửa liều thuốc huyết áp nhẹ.',
+    detail: '75–80% lượng muối chúng ta ăn đến từ thực phẩm chế biến sẵn, không phải từ muối nêm khi nấu — đọc nhãn dinh dưỡng là kỹ năng quan trọng nhất để giảm muối hiệu quả.',
+    details: [
+      'Ngưỡng WHO: < 5g muối/ngày (tương đương < 2g natri). Người Việt Nam trung bình ăn 9–12g/ngày — gấp đôi mức khuyến cáo.',
+      'Nguồn muối ẩn phổ biến nhất: nước mắm (1 muỗng canh = 1.4g natri), tương, xì dầu, mì gói (1 gói = 1.5–2g natri), bánh mì, phô mai, đồ hộp.',
+      'Cách đọc nhãn: tìm "Sodium" hoặc "Na" trên bao bì. < 120mg/100g = ít muối; > 600mg/100g = nhiều muối. Chú ý khẩu phần ăn (serving size).',
+      'Chiến lược giảm từ từ: giảm 25% lượng muối mỗi 2 tuần — khẩu vị thích nghi dần, sau 6–8 tuần không còn thấy nhạt. Tăng đột ngột sẽ thất bại vì khó chịu.',
+      'Thay thế hương vị: tỏi, gừng, chanh, ớt, herbs tươi (húng quế, ngò, thì là) — tăng hương vị mà không cần thêm muối. Kali trong rau quả còn đối kháng tác dụng của natri.',
+      'DASH diet + giảm natri kết hợp: giảm HA 8–14 mmHg — hiệu quả nhất trong các can thiệp lối sống đơn lẻ theo meta-analysis.',
+    ],
+    points: [
+      { icon: '📏', label: '< 5g muối/ngày', note: '1 muỗng cà phê = ~5g — mức mục tiêu' },
+      { icon: '🏷️', label: 'Đọc nhãn Sodium', note: '>600mg/100g = sản phẩm nhiều muối' },
+      { icon: '📉', label: 'Giảm từ từ 25%/2 tuần', note: 'Khẩu vị thích nghi — không bỏ đột ngột' },
+      { icon: '🍋', label: 'Thay bằng herbs & chanh', note: 'Kali trong rau đối kháng natri' },
+    ],
+  },
+  {
+    icon: '🥦', title: 'Ăn nhiều rau quả', desc: 'DASH diet: rau, trái cây, ngũ cốc nguyên hạt, sữa ít béo.',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+    keyFact: '💡 DASH diet (Dietary Approaches to Stop Hypertension) giảm HA tâm thu 8–14 mmHg trong 2 tuần — nhanh hơn và mạnh hơn hầu hết các can thiệp lối sống đơn lẻ khác.',
+    detail: 'DASH không chỉ là "ăn nhiều rau" — đây là hệ thống dinh dưỡng toàn diện được thiết kế để tác động lên nhiều cơ chế điều hòa huyết áp cùng lúc.',
+    details: [
+      'DASH diet nguyên tắc: 4–5 khẩu phần rau/ngày, 4–5 khẩu phần trái cây/ngày, 6–8 khẩu phần ngũ cốc nguyên hạt, 2–3 khẩu phần sữa ít béo, ≤6oz thịt nạc/ngày.',
+      'Cơ chế: DASH tăng kali, magiê, canxi (3 khoáng chất giãn mạch) trong khi giảm natri, chất béo bão hòa, cholesterol — tấn công nhiều con đường gây tăng HA cùng lúc.',
+      'Kali đặc biệt quan trọng: đối kháng trực tiếp tác dụng co mạch của natri, kích thích thận đào thải natri. Nguồn tốt: chuối, khoai lang, bơ, đậu đen, rau bina.',
+      'Magiê giãn cơ trơn thành mạch: thiếu magiê liên quan đến co thắt mạch và tăng HA. Nguồn: hạt bí, hạnh nhân, đậu phụ, ngũ cốc nguyên hạt.',
+      'Fiber từ rau và ngũ cốc nguyên hạt giảm hấp thu cholesterol, giảm viêm mạn tính — cả hai đều liên quan đến sức khỏe mạch máu lâu dài.',
+      'DASH + giảm natri (Low Sodium DASH): giảm HA tâm thu 11–16 mmHg — tốt nhất trong tất cả các can thiệp dinh dưỡng theo NEJM 2001.',
+    ],
+    points: [
+      { icon: '🍌', label: 'Kali — đối kháng natri', note: 'Chuối, khoai lang, bơ, đậu đen' },
+      { icon: '🥜', label: 'Magiê — giãn mạch', note: 'Hạt bí, hạnh nhân, ngũ cốc nguyên hạt' },
+      { icon: '📉', label: 'DASH giảm 8–14 mmHg', note: 'Kết quả thấy sau 2 tuần' },
+      { icon: '🔗', label: 'DASH + ít muối', note: 'Giảm 11–16 mmHg — mạnh nhất' },
+    ],
+  },
+  {
+    icon: '🏃', title: 'Vận động đều', desc: '150 phút/tuần cường độ vừa (đi bộ nhanh, bơi lội, đạp xe).',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    keyFact: '💡 Tập aerobic đều đặn giảm HA tâm thu 5–8 mmHg ở người tăng HA. Chỉ cần 30 phút đi bộ nhanh, 5 ngày/tuần — không cần phòng gym hay thiết bị đặc biệt.',
+    detail: 'Vận động là "thuốc" không cần đơn — cơ chế sinh lý trực tiếp làm giảm huyết áp thông qua nhiều con đường khác nhau, không chỉ giảm cân.',
+    details: [
+      'Cơ chế ngay lập tức: sau 1 buổi tập aerobic, HA giảm 5–7 mmHg trong 4–12 giờ tiếp theo (post-exercise hypotension) — người tăng HA nên tận dụng tập vào buổi sáng.',
+      'Cơ chế dài hạn: tập đều đặn → tim khỏe hơn (giảm nhịp tim lúc nghỉ) → giảm cardiac output → giảm HA cơ bản. Giảm cứng mạch (arterial stiffness) theo tuổi tác.',
+      'Vận động kháng lực (tập tạ): cũng giảm HA 2–4 mmHg khi tập đều đặn — kết hợp aerobic + tập tạ hiệu quả hơn chỉ làm 1 loại.',
+      'Cường độ tối ưu: vừa phải — có thể nói chuyện ngắn nhưng không thể hát (khoảng 50–70% nhịp tim tối đa). Cường độ quá cao có thể tăng HA tạm thời trong khi tập.',
+      'Không cần liên tục: 3 buổi × 10 phút = 30 phút cũng hiệu quả tương đương 1 buổi 30 phút liên tục theo nghiên cứu. Phù hợp cho người bận rộn.',
+      'Thận trọng với người HA > 180/110: cần kiểm soát HA trước bằng thuốc trước khi bắt đầu chương trình tập luyện cường độ cao — tập nhẹ (đi bộ) vẫn an toàn.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Giảm HA ngay sau tập', note: 'Post-exercise hypotension 4–12h' },
+      { icon: '🏋️', label: 'Kết hợp aerobic + tạ', note: 'Hiệu quả hơn chỉ làm 1 loại' },
+      { icon: '⏱️', label: '3 × 10 phút = 30 phút', note: 'Chia nhỏ cũng hiệu quả tương đương' },
+      { icon: '⚠️', label: 'HA > 180: cần kiểm soát trước', note: 'Dùng thuốc ổn định rồi mới tăng cường độ' },
+    ],
+  },
+  {
+    icon: '⚖️', title: 'Giữ cân nặng hợp lý', desc: 'Giảm 1kg → HA giảm ~1 mmHg. Mục tiêu BMI 18.5–24.9.',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+    keyFact: '💡 Giảm 5–10% cân nặng ở người thừa cân béo phì có thể giảm HA 5–20 mmHg — một trong những can thiệp lối sống mạnh nhất, đặc biệt với người béo bụng.',
+    detail: 'Béo phì tăng HA qua nhiều cơ chế: tăng thể tích máu tuần hoàn, kháng insulin, tăng hoạt động hệ renin-angiotensin, tăng áp lực cơ học lên thận.',
+    details: [
+      'Cơ chế béo phì → tăng HA: mô mỡ (đặc biệt mỡ nội tạng) tiết adipokine làm tăng hoạt động hệ giao cảm và hệ renin-angiotensin-aldosterone → co mạch, giữ natri → tăng HA.',
+      'Mỡ bụng (waist circumference) quan trọng hơn BMI: nam > 90cm, nữ > 80cm (tiêu chuẩn châu Á) là nguy cơ tim mạch chuyển hóa cao — dù BMI còn trong giới hạn.',
+      'Mỗi 1kg giảm = giảm ~1 mmHg HA tâm thu theo bằng chứng tổng hợp. Người thừa cân giảm 5–10% cân nặng → giảm HA 5–20 mmHg.',
+      'Không cần giảm về cân nặng lý tưởng: chỉ cần giảm 3–5% cân nặng ban đầu đã mang lại lợi ích tim mạch đáng kể — mục tiêu khả thi hơn và dễ duy trì hơn.',
+      'Kết hợp giảm cân + giảm muối + DASH diet: hiệu quả cộng hưởng, không chỉ cộng gộp — có thể giảm HA 15–20 mmHg mà không cần thuốc ở người tăng HA nhẹ-vừa.',
+      'Tránh giảm cân cực đoan: yo-yo effect (giảm rồi tăng lại) làm tổn thương thành mạch và gây dao động HA có hại. Giảm chậm 0.5–1kg/tuần và duy trì dài hạn.',
+    ],
+    points: [
+      { icon: '📏', label: 'Đo vòng bụng', note: 'Nam <90cm, nữ <80cm (châu Á)' },
+      { icon: '📉', label: 'Giảm 5–10% = hiệu quả lớn', note: 'Không cần về cân nặng lý tưởng' },
+      { icon: '🔗', label: 'Kết hợp DASH + muối ít', note: 'Hiệu quả cộng hưởng, không chỉ cộng' },
+      { icon: '⚠️', label: 'Tránh yo-yo diet', note: 'Dao động cân gây hại thành mạch' },
+    ],
+  },
+  {
+    icon: '🚭', title: 'Không hút thuốc', desc: 'Bỏ thuốc lá → HA giảm ngay trong vài tuần đầu.',
+    img: 'https://images.unsplash.com/photo-1528475979590-4e47a83f79f5?w=800&q=80',
+    keyFact: '💡 Mỗi điếu thuốc lá làm tăng HA tạm thời 5–10 mmHg trong 15–30 phút. Người hút 1 gói/ngày trải qua hàng chục đợt tăng HA như vậy mỗi ngày — tổng thiệt hại tích lũy rất lớn.',
+    detail: 'Thuốc lá không chỉ tăng HA — nicotine và các chất độc hại trong khói thuốc tấn công trực tiếp thành mạch máu, gây xơ vữa, giảm đàn hồi và tăng cục máu đông.',
+    details: [
+      'Nicotine kích thích hạch giao cảm và tủy thượng thận → giải phóng adrenaline, noradrenaline → co mạch, tăng nhịp tim, tăng HA 5–10 mmHg mỗi điếu thuốc.',
+      'Carbon monoxide (CO) trong khói thuốc gắn hemoglobin thay oxy → tim phải bơm mạnh hơn để cung cấp đủ oxy → tăng cardiac output → tăng HA.',
+      'Tổn thương nội mạc mạch (endothelium): khói thuốc giảm NO (nitric oxide — chất giãn mạch tự nhiên), tăng endothelin (co mạch) → mất cân bằng vận mạch → co mạch mạn tính.',
+      'Xơ vữa động mạch: thuốc lá tăng LDL, giảm HDL, tăng viêm, tăng kết dính tiểu cầu → mảng bám hình thành nhanh hơn, dễ vỡ hơn.',
+      'Bỏ thuốc lá 20 phút: nhịp tim và HA bắt đầu giảm. 1 tuần: cải thiện tuần hoàn. 1 năm: nguy cơ bệnh mạch vành giảm 50%. 5 năm: nguy cơ đột quỵ về gần bằng người không hút.',
+      'Hỗ trợ cai thuốc: nicotine replacement (patch, gum), varenicline (Champix), bupropion — tỷ lệ thành công tăng gấp 2–3 lần so với tự cai không hỗ trợ.',
+    ],
+    points: [
+      { icon: '⚡', label: '+5–10 mmHg/điếu', note: 'Kéo dài 15–30 phút mỗi lần' },
+      { icon: '🩺', label: 'Bỏ 20 phút: HA giảm ngay', note: 'Tim bắt đầu phục hồi từ phút đầu tiên' },
+      { icon: '📅', label: '1 năm: tim mạch giảm 50%', note: 'Nguy cơ bệnh mạch vành' },
+      { icon: '💊', label: 'Hỗ trợ cai thuốc hiệu quả', note: 'Patch/gum/Champix tăng tỷ lệ thành công 2–3x' },
+    ],
+  },
+  {
+    icon: '🧘', title: 'Kiểm soát stress', desc: 'Thở sâu, thiền, yoga → giảm hệ thần kinh giao cảm.',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+    keyFact: '💡 Stress mạn tính kích hoạt hệ thần kinh giao cảm liên tục → tăng cortisol, giữ natri, co mạch → tăng HA. Thiền định đều đặn giảm HA tâm thu 4–5 mmHg theo meta-analysis.',
+    detail: 'Stress không chỉ làm HA tăng tức thời — stress mạn tính dẫn đến hành vi có hại (ăn nhiều, uống rượu, ít vận động) và thay đổi sinh lý lâu dài gây tăng HA thực sự.',
+    details: [
+      'Cơ chế stress → tăng HA: kích hoạt trục HPA (hypothalamic-pituitary-adrenal) → cortisol tăng → giữ natri, nước → tăng thể tích máu. Đồng thời kích hoạt hệ giao cảm → noradrenaline → co mạch.',
+      'Stress mạn tính vs cấp tính: stress cấp (deadline, tranh luận) → tăng HA tạm thời, phục hồi sau vài giờ. Stress mạn (công việc áp lực kéo dài, quan hệ căng thẳng) → tăng HA cơ bản.',
+      'Thiền chánh niệm (mindfulness): 8 tuần MBSR (Mindfulness-Based Stress Reduction) giảm HA tâm thu 4.7 mmHg, tâm trương 3.2 mmHg theo meta-analysis 2019.',
+      'Thở bụng 4-7-8 (hít 4s, nín 7s, thở ra 8s): kích hoạt hệ thần kinh phó giao cảm (vagus nerve) → giảm nhịp tim và HA trong 5–10 phút thực hành.',
+      'Yoga kết hợp vận động + hơi thở + thiền: giảm HA tâm thu 5 mmHg, tâm trương 3.9 mmHg theo review Cochrane 2014. Phù hợp với người cao tuổi và người ít vận động.',
+      'Ngủ đủ giấc là kiểm soát stress quan trọng: ngủ < 6h/đêm tăng nguy cơ tăng HA 20–32%. Sleep apnea (ngưng thở khi ngủ) là nguyên nhân tăng HA thứ phát phổ biến — cần điều trị đặc hiệu.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Thở 4-7-8', note: 'Kích hoạt vagus nerve — giảm HA trong phút' },
+      { icon: '🧘', label: 'Thiền 8 tuần MBSR', note: 'Giảm 4.7/3.2 mmHg theo meta-analysis' },
+      { icon: '😴', label: 'Ngủ ≥ 7 giờ', note: '<6h/đêm → nguy cơ tăng HA +20–32%' },
+      { icon: '😴', label: 'Tầm soát sleep apnea', note: 'Ngáy to + buồn ngủ ban ngày → cần kiểm tra' },
+    ],
+  },
 ];
 
 function BPModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
@@ -401,6 +515,7 @@ export default function HealthBPPage() {
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [bpModal, setBpModal] = useState(null);
   const [stepModal, setStepModal] = useState(null);
+  const [lifestyleModal, setLifestyleModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -529,12 +644,15 @@ export default function HealthBPPage() {
         <p className="text-muted text-lg mb-6">Thay đổi lối sống có thể giảm HA 5–20 mmHg mà không cần thuốc.</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {LIFESTYLE.map((l, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex gap-3 hover:border-red-500/30 transition-colors">
-              <span className="text-3xl">{l.icon}</span>
-              <div>
+            <div key={i}
+              onClick={() => setLifestyleModal(i)}
+              className="rounded-2xl border border-border bg-surface p-4 flex gap-3 cursor-pointer hover:border-red-500/40 transition-colors">
+              <span className="text-3xl shrink-0">{l.icon}</span>
+              <div className="flex-1">
                 <div className="font-bold text-lg text-text mb-1">{l.title}</div>
                 <div className="text-base text-muted">{l.desc}</div>
               </div>
+              <span className="text-muted text-base self-center shrink-0">→</span>
             </div>
           ))}
         </div>
@@ -573,6 +691,18 @@ export default function HealthBPPage() {
           onNext={() => setStepModal(i => Math.min(STEPS.length - 1, i + 1))}
           hasPrev={stepModal > 0}
           hasNext={stepModal < STEPS.length - 1}
+        />
+      )}
+      {lifestyleModal !== null && (
+        <BPModal
+          item={{ ...LIFESTYLE[lifestyleModal], label: LIFESTYLE[lifestyleModal].title, color: COLOR, rgb: RGB }}
+          idx={lifestyleModal}
+          total={LIFESTYLE.length}
+          onClose={() => setLifestyleModal(null)}
+          onPrev={() => setLifestyleModal(i => Math.max(0, i - 1))}
+          onNext={() => setLifestyleModal(i => Math.min(LIFESTYLE.length - 1, i + 1))}
+          hasPrev={lifestyleModal > 0}
+          hasNext={lifestyleModal < LIFESTYLE.length - 1}
         />
       )}
     </div>

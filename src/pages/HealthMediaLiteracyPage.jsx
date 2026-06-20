@@ -251,13 +251,239 @@ const DANGEROUS_PATTERNS = [
 ];
 
 const TRUSTED_SOURCES = [
-  { name: 'PubMed', url: 'pubmed.ncbi.nlm.nih.gov', desc: 'Cơ sở dữ liệu nghiên cứu y khoa lớn nhất, hơn 35 triệu bài báo' },
-  { name: 'WHO', url: 'who.int', desc: 'Tổ chức Y tế Thế giới — hướng dẫn và cập nhật sức khỏe toàn cầu' },
-  { name: 'CDC', url: 'cdc.gov', desc: 'Trung tâm Kiểm soát và Phòng ngừa Bệnh tật Hoa Kỳ' },
-  { name: 'Bộ Y tế Việt Nam', url: 'moh.gov.vn', desc: 'Thông tin y tế chính thức tại Việt Nam' },
-  { name: 'UpToDate', url: 'uptodate.com', desc: 'Tài liệu tham khảo lâm sàng được bác sĩ toàn cầu tin dùng' },
-  { name: 'Examine.com', url: 'examine.com', desc: 'Tổng hợp bằng chứng về bổ sung dinh dưỡng và thảo dược' },
+  {
+    num: '01', icon: '📚', name: 'PubMed', url: 'pubmed.ncbi.nlm.nih.gov',
+    desc: 'Cơ sở dữ liệu nghiên cứu y khoa lớn nhất, hơn 35 triệu bài báo',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80',
+    keyFact: '📚 PubMed là cổng tra cứu miễn phí vào MEDLINE — kho lưu trữ hơn 35 triệu tài liệu sinh y học từ năm 1950 đến nay. Được Thư viện Y học Quốc gia Hoa Kỳ (NLM) duy trì, đây là điểm khởi đầu số một cho mọi câu hỏi y tế cần bằng chứng.',
+    details: [
+      'Phạm vi và quy mô: PubMed lập chỉ mục hơn 35 triệu tài liệu từ hơn 30.000 tạp chí y sinh học quốc tế từ hơn 80 quốc gia. Cập nhật mỗi ngày với hàng nghìn bài báo mới. Bao gồm cả bài báo toàn văn miễn phí (PubMed Central — PMC) và bài báo chỉ có tóm tắt. Tra cứu hoàn toàn miễn phí, không cần tài khoản.',
+      'Cách tìm kiếm hiệu quả — MeSH Terms: PubMed dùng hệ thống thuật ngữ y học chuẩn hóa gọi là MeSH (Medical Subject Headings). Ví dụ: tìm "diabetes mellitus type 2" sẽ cho kết quả chính xác hơn "tiểu đường type 2". Dùng bộ lọc "Systematic Reviews" hoặc "Meta-Analysis" trong cột trái để chỉ xem bằng chứng mạnh nhất. Bộ lọc "Free Full Text" để đọc toàn văn miễn phí.',
+      'Đọc tóm tắt (Abstract) đúng cách: Abstract gồm các phần: Background (lý do nghiên cứu), Methods (phương pháp), Results (kết quả con số thực), Conclusions (kết luận tác giả). Luôn đọc Results trước Conclusions — đôi khi tác giả kết luận quá rộng so với dữ liệu. Chú ý cỡ mẫu (n=?), thời gian theo dõi, và loại nghiên cứu (RCT, cohort, case report).',
+      'Hạn chế cần biết: PubMed không phải mọi thứ — không lập chỉ mục tất cả tạp chí. Nhiều nghiên cứu đăng trên preprint server (bioRxiv, medRxiv) chưa qua peer-review. Publication bias: nghiên cứu có kết quả dương tính dễ được đăng hơn kết quả âm tính. Không phải mọi bài trong PubMed đều chất lượng cao — vẫn phải đánh giá tạp chí và phương pháp.',
+      'PubMed Central (PMC) — toàn văn miễn phí: PMC lưu trữ hơn 9 triệu bài báo toàn văn miễn phí. NIH yêu cầu mọi nghiên cứu được tài trợ bởi NIH phải có toàn văn trong PMC trong vòng 12 tháng. Cách truy cập: từ kết quả tìm kiếm, chọn bài có nút "Free PMC article" màu xanh. Ngoài ra có thể tìm preprint tại Europe PMC.',
+      'Công cụ nâng cao trong PubMed: "Similar articles" — tìm bài liên quan tự động. "Cited by" — xem bài nào trích dẫn bài này (cho thấy bài có được ngành công nhận không). "MeSH on Demand" — nhập đoạn văn bản, hệ thống gợi ý MeSH terms phù hợp. "Clinical Queries" — bộ lọc chuyên biệt cho câu hỏi lâm sàng (therapy, diagnosis, prognosis, etiology, clinical prediction).',
+    ],
+    points: [
+      { icon: '🆓', label: 'Hoàn toàn miễn phí, không cần tài khoản', note: '35 triệu bài — lọc "Free Full Text" để đọc toàn văn không mất phí' },
+      { icon: '🔍', label: 'Lọc "Systematic Reviews" để xem bằng chứng mạnh nhất', note: 'Meta-analysis > systematic review > RCT — chọn loại phù hợp câu hỏi' },
+      { icon: '📊', label: 'Đọc Results trước Conclusions — tự đánh giá dữ liệu', note: 'Tác giả đôi khi kết luận rộng hơn những gì dữ liệu thực sự chứng minh' },
+      { icon: '⚠️', label: 'Publication bias: kết quả âm tính ít được đăng hơn', note: 'Tìm systematic review tổng hợp nhiều nghiên cứu thay vì tin vào 1 bài' },
+    ],
+  },
+  {
+    num: '02', icon: '🌍', name: 'WHO', url: 'who.int',
+    desc: 'Tổ chức Y tế Thế giới — hướng dẫn và cập nhật sức khỏe toàn cầu',
+    color: '#0891b2', rgb: '8,145,178',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    keyFact: '🌍 WHO (World Health Organization) — cơ quan y tế của Liên Hợp Quốc với 194 quốc gia thành viên. Hướng dẫn WHO được xây dựng bởi hàng trăm chuyên gia quốc tế và dựa trên tổng hợp bằng chứng khoa học tốt nhất hiện có. Đây là nguồn tham chiếu đầu tiên cho mọi vấn đề sức khỏe toàn cầu.',
+    details: [
+      'Vai trò và cơ cấu WHO: WHO được thành lập năm 1948, trụ sở tại Geneva, Thụy Sĩ. 194 quốc gia thành viên đóng góp tài chính và chuyên môn. Cơ cấu: Đại Hội đồng Y tế Thế giới (WHA) họp hàng năm để đặt chính sách; Ban Giám đốc điều hành gồm 34 thành viên kỹ thuật; Tổng Giám đốc hiện tại: Tedros Adhanom Ghebreyesus (từ 2017). 6 văn phòng khu vực bao gồm WPRO (Tây Thái Bình Dương, có trụ sở tại Manila) — khu vực Việt Nam thuộc vào.',
+      'Hướng dẫn WHO được tạo ra như thế nào: WHO tập hợp nhóm chuyên gia độc lập (Guidelines Development Group — GDG) gồm các nhà khoa học, bác sĩ lâm sàng, đại diện người bệnh, và đại diện chính sách. GDG thực hiện systematic review về tất cả bằng chứng liên quan. Dùng hệ thống GRADE để đánh giá chất lượng bằng chứng (Very low → Low → Moderate → High). Kết quả: khuyến nghị có phân loại rõ ràng ("strong" vs "conditional"). Toàn bộ quá trình có thể mất 1–3 năm.',
+      'Myth Busters — công cụ chống tin giả: WHO duy trì trang "Fact-checking" và "Myth Busters" cập nhật liên tục giải thích các quan niệm sai phổ biến. Đặc biệt quan trọng trong đại dịch COVID-19: WHO cung cấp cập nhật kỹ thuật gần như hàng ngày, hướng dẫn điều trị sống (living guidelines), và infographic đơn giản để chia sẻ. Trang này hữu ích để gửi cho người thân khi muốn bác bỏ tin giả một cách lịch sự.',
+      'Báo cáo và dữ liệu toàn cầu: WHO Global Health Observatory (GHO) cung cấp dữ liệu sức khỏe từ tất cả quốc gia thành viên — tỷ lệ tử vong, gánh nặng bệnh tật, bao phủ dịch vụ y tế. World Health Statistics xuất bản hàng năm — tổng hợp số liệu sức khỏe toàn cầu. ICD-11 (International Classification of Diseases) — hệ thống phân loại bệnh quốc tế do WHO quản lý, là chuẩn mực toàn cầu.',
+      'Hạn chế và phê bình về WHO: WHO phụ thuộc vào đóng góp tài chính của các quốc gia thành viên — điều này tạo ra áp lực chính trị tinh tế trong một số quyết định. Phản ứng chậm trong giai đoạn đầu COVID-19 bị nhiều chuyên gia phê bình. Không phải mọi khuyến nghị WHO đều phù hợp với mọi quốc gia — các nước có điều kiện kinh tế và gánh nặng bệnh tật khác nhau. Tuy nhiên, với người bình thường, WHO vẫn là nguồn đáng tin cậy nhất hiện có.',
+      'Cách dùng who.int hiệu quả: Trang chủ → "Health topics" → chủ đề bạn cần (ví dụ: Diabetes, Hypertension, Nutrition). "Publications" → tìm guidelines và reports mới nhất. "News" → cập nhật tình hình dịch bệnh toàn cầu. "Data" → Global Health Observatory cho số liệu thống kê. Ứng dụng "WHO Info" (iOS/Android) — tin tức và cập nhật trực tiếp từ WHO.',
+    ],
+    points: [
+      { icon: '🏛️', label: '194 quốc gia + hàng trăm chuyên gia xây dựng mỗi guideline', note: 'Hệ thống GRADE đánh giá chất lượng bằng chứng — không phải ý kiến cá nhân' },
+      { icon: '🚫', label: 'Myth Busters: giải thích quan niệm sai phổ biến', note: 'Hữu ích để chia sẻ cho người thân khi cần bác bỏ tin giả lịch sự' },
+      { icon: '📊', label: 'Global Health Observatory: số liệu sức khỏe toàn cầu', note: 'Dữ liệu chuẩn để so sánh tình trạng sức khỏe giữa các quốc gia' },
+      { icon: '⚠️', label: 'Áp lực chính trị từ quốc gia tài trợ — không hoàn hảo', note: 'Vẫn là nguồn tốt nhất hiện có, nhưng đọc cùng CDC và NICE để so sánh' },
+    ],
+  },
+  {
+    num: '03', icon: '🏛️', name: 'CDC', url: 'cdc.gov',
+    desc: 'Trung tâm Kiểm soát và Phòng ngừa Bệnh tật Hoa Kỳ',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80',
+    keyFact: '🏛️ CDC (Centers for Disease Control and Prevention) là cơ quan y tế hàng đầu của Hoa Kỳ với ngân sách hơn 8 tỷ USD/năm và hơn 10.000 nhân viên. Tuy là cơ quan Mỹ, hướng dẫn CDC được toàn thế giới tham khảo vì chất lượng nghiên cứu và hạ tầng dữ liệu mạnh.',
+    details: [
+      'Lịch sử và sứ mệnh CDC: CDC thành lập năm 1946 tại Atlanta, Georgia, ban đầu để kiểm soát sốt rét. Ngày nay sứ mệnh mở rộng sang toàn bộ sức khỏe cộng đồng: bệnh truyền nhiễm, bệnh mãn tính, an toàn thực phẩm, sức khỏe nghề nghiệp, và y tế môi trường. CDC không phải cơ quan quản lý (như FDA) — CDC nghiên cứu, theo dõi, và đưa ra khuyến nghị; FDA phê duyệt thuốc và thiết bị y tế.',
+      'MMWR — tạp chí theo dõi bệnh tật hàng tuần: MMWR (Morbidity and Mortality Weekly Report) được xuất bản từ năm 1952, là nguồn dữ liệu dịch tễ học quan trọng nhất Hoa Kỳ. Xuất bản hàng tuần, miễn phí, bao gồm: báo cáo ca bệnh đặc biệt, xu hướng bệnh truyền nhiễm, kết quả nghiên cứu dịch tễ. MMWR là nơi đầu tiên đăng báo cáo về HIV/AIDS (1981) và Legionnaires\' disease. Đăng ký nhận qua email tại cdc.gov/mmwr.',
+      'Vaccine safety — hệ thống giám sát toàn diện nhất thế giới: CDC vận hành VAERS (Vaccine Adverse Event Reporting System) — nơi báo cáo phản ứng phụ sau tiêm. Hiểu đúng VAERS: đây là hệ thống giám sát tín hiệu (signal detection), không phải bằng chứng nhân quả. Bất kỳ ai cũng có thể báo cáo — kể cả sự kiện không liên quan đến vaccine. VSD (Vaccine Safety Datalink) dùng dữ liệu điện tử từ 10 hệ thống y tế lớn để xác nhận tín hiệu từ VAERS.',
+      'Travel Health — thông tin thiết yếu cho người đi nước ngoài: CDC Travel Health (wwwnc.cdc.gov/travel) cung cấp thông tin vaccine và phòng ngừa bệnh theo từng quốc gia đến. Cập nhật cảnh báo dịch bệnh theo thời gian thực (Watch Level 1 → Warning Level 3). Thông tin về thuốc phòng sốt rét theo khu vực. Hữu ích đặc biệt khi du lịch đến Đông Nam Á, châu Phi, Nam Mỹ.',
+      'CDC Wonder — dữ liệu y tế công cộng Hoa Kỳ: CDC Wonder (wonder.cdc.gov) — hệ thống truy vấn dữ liệu miễn phí cung cấp số liệu tử vong, tỷ lệ bệnh, và thống kê dân số Hoa Kỳ. Hữu ích cho: tìm tỷ lệ tử vong do các nguyên nhân cụ thể, xu hướng bệnh theo năm, phân bổ địa lý. Dữ liệu có thể xuất ra CSV để phân tích.',
+      'Hạn chế của CDC: CDC là cơ quan Mỹ — khuyến nghị phản ánh điều kiện, dịch tễ học, và hệ thống y tế Mỹ. Một số khuyến nghị (ví dụ vaccine schedule) có thể khác với Việt Nam vì khác dịch tễ học địa phương. Trong COVID-19, CDC bị chỉ trích vì thay đổi hướng dẫn nhiều lần — nhưng đây thực ra là cập nhật theo bằng chứng mới, không phải mâu thuẫn. Với Việt Nam, Bộ Y tế VN và WHO vẫn là tham chiếu chính.',
+    ],
+    points: [
+      { icon: '📰', label: 'MMWR hàng tuần: theo dõi xu hướng bệnh dịch miễn phí', note: 'Đăng ký email tại cdc.gov/mmwr để nhận báo cáo tự động' },
+      { icon: '💉', label: 'VAERS: hệ thống giám sát vaccine — không phải bằng chứng nhân quả', note: 'Báo cáo sau tiêm ≠ do vaccine gây ra — chỉ là tín hiệu cần điều tra thêm' },
+      { icon: '✈️', label: 'Travel Health: vaccine và cảnh báo dịch bệnh theo quốc gia', note: 'Kiểm tra trước mỗi chuyến đi quốc tế để biết cần tiêm vaccine nào' },
+      { icon: '🇺🇸', label: 'Khuyến nghị cho Mỹ — tham chiếu chéo với WHO cho VN', note: 'Dịch tễ học khác nhau: lịch vaccine và ngưỡng điều trị có thể không giống VN' },
+    ],
+  },
+  {
+    num: '04', icon: '🇻🇳', name: 'Bộ Y tế Việt Nam', url: 'moh.gov.vn',
+    desc: 'Thông tin y tế chính thức tại Việt Nam',
+    color: '#dc2626', rgb: '220,38,38',
+    img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
+    keyFact: '🇻🇳 Bộ Y tế Việt Nam là cơ quan quản lý nhà nước cao nhất về y tế tại Việt Nam — ban hành Thông tư, Quyết định, và hướng dẫn chuyên môn có hiệu lực pháp lý. Mọi thuốc, thực phẩm chức năng, và thiết bị y tế lưu hành tại VN đều phải được Bộ Y tế cấp phép.',
+    details: [
+      'Cơ cấu và thẩm quyền Bộ Y tế VN: Bộ Y tế VN thành lập từ 1945 với tên ban đầu là Bộ Y tế và Cứu thương. Cục Quản lý Dược (DAV) — phê duyệt thuốc lưu hành tại VN, tra cứu tại drugbank.vn. Cục An toàn thực phẩm (VFA) — quản lý TPCN và thực phẩm chức năng. Cục Quản lý Khám chữa bệnh — cấp phép cơ sở khám chữa bệnh. Vụ Truyền thông và Thi đua khen thưởng — phụ trách thông tin y tế công cộng.',
+      'Kiểm tra thuốc và TPCN được cấp phép: Tra cứu số đăng ký thuốc tại dichvucong.gov.vn (mục Dược phẩm). Mọi thuốc hợp pháp tại VN đều có số đăng ký dạng "VD-XXXXX-XX" (thuốc nội) hoặc "VN-XXXXX-XX" (thuốc ngoại). TPCN có số công bố dạng "XNQC-XXXXX/ATTP". Nếu sản phẩm không có số đăng ký hợp lệ — đây là dấu hiệu sản phẩm không được phép lưu hành.',
+      'Hướng dẫn chuyên môn và phác đồ điều trị: Bộ Y tế ban hành "Hướng dẫn chẩn đoán và điều trị" cho hầu hết các bệnh phổ biến: tiểu đường, tăng huyết áp, tim mạch, COVID-19, v.v. Những hướng dẫn này được bác sĩ toàn quốc tuân theo. Tìm tại moh.gov.vn → "Văn bản quy phạm pháp luật" → Quyết định. Đây là nguồn tốt nhất để biết phác đồ điều trị chuẩn được áp dụng tại VN.',
+      'Danh sách thuốc bị cấm, thu hồi, và cảnh báo: Bộ Y tế định kỳ công bố danh sách thuốc giả, thuốc không đạt chất lượng, và thuốc bị thu hồi. Tìm tại moh.gov.vn → "Cảnh báo y tế". Đây là thông tin quan trọng: nếu thuốc bạn đang dùng bị thu hồi, trang này sẽ thông báo. Ứng dụng "Thuốc quốc gia" (iOS/Android) — tra cứu thuốc được cấp phép và thông tin thu hồi.',
+      'Sức khỏe Việt Nam (suckhoedoisong.vn) — tờ báo của Bộ Y tế: Sức khỏe & Đời sống (suckhoedoisong.vn) là cơ quan ngôn luận của Bộ Y tế VN. Thông tin thường được kiểm duyệt về mặt y tế bởi chuyên gia. Tuy nhiên: đây vẫn là tờ báo — viết cho đại chúng, không phải văn bản hướng dẫn chuyên môn. Với quyết định y tế quan trọng, tham khảo văn bản Thông tư/Quyết định gốc thay vì bài báo.',
+      'Cảnh báo về mạo danh Bộ Y tế: Nhiều trang web và tài khoản mạng xã hội mạo danh Bộ Y tế hoặc sử dụng logo BYT để tăng uy tín. Trang chính thức: moh.gov.vn (đuôi .gov.vn). Kênh YouTube chính thức: "Bộ Y tế". Fanpage Facebook chính thức: có tick xanh xác minh. Nếu thấy "Bộ Y tế khuyến cáo..." trên mạng xã hội, tìm văn bản gốc tại moh.gov.vn để xác nhận.',
+    ],
+    points: [
+      { icon: '💊', label: 'Tra cứu số đăng ký thuốc: VD-XXXXX (nội) / VN-XXXXX (ngoại)', note: 'Thuốc không có số đăng ký hợp lệ = chưa được phép lưu hành tại VN' },
+      { icon: '📋', label: 'Hướng dẫn chẩn đoán và điều trị — phác đồ chuẩn cho bác sĩ VN', note: 'moh.gov.vn → Văn bản quy phạm pháp luật → Quyết định' },
+      { icon: '⚠️', label: 'Danh sách thuốc bị thu hồi cập nhật thường xuyên', note: 'Kiểm tra moh.gov.vn → Cảnh báo y tế nếu lo lắng về thuốc đang dùng' },
+      { icon: '🔒', label: 'Chỉ tin trang .gov.vn — nhiều trang mạo danh Bộ Y tế', note: 'Tìm văn bản gốc tại moh.gov.vn thay vì tin bài chia sẻ trên mạng xã hội' },
+    ],
+  },
+  {
+    num: '05', icon: '📋', name: 'UpToDate', url: 'uptodate.com',
+    desc: 'Tài liệu tham khảo lâm sàng được bác sĩ toàn cầu tin dùng',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1584982751601-97ddc0501cb3?w=800&q=80',
+    keyFact: '📋 UpToDate là công cụ hỗ trợ quyết định lâm sàng (clinical decision support) được hơn 2 triệu bác sĩ tại 190 quốc gia sử dụng. Mỗi bài được soạn thảo bởi chuyên gia lĩnh vực và cập nhật liên tục khi có bằng chứng mới. Nghiên cứu độc lập cho thấy bệnh viện sử dụng UpToDate có kết quả lâm sàng tốt hơn.',
+    details: [
+      'UpToDate là gì và ai sử dụng: UpToDate (thuộc Wolters Kluwer) là cơ sở dữ liệu y văn tổng hợp — không phải tạp chí, không phải search engine. Mỗi "topic" (chủ đề) là một bài viết toàn diện về cách chẩn đoán và điều trị một bệnh cụ thể, viết bởi 1–3 chuyên gia đầu ngành và được peer-review nội bộ. Cập nhật liên tục: mỗi bài đều có "Last updated" — thường vài tháng một lần. Hơn 12.500 topic, hơn 6.900 tác giả và biên tập viên.',
+      'Hệ thống đánh giá bằng chứng GRADE: UpToDate dùng hệ thống GRADE để phân loại khuyến nghị. Mức độ khuyến nghị: Grade 1 (strong — "chúng tôi khuyến nghị") vs Grade 2 (weak — "chúng tôi gợi ý"). Chất lượng bằng chứng: A (High — RCT lớn), B (Moderate), C (Low — expert opinion). Ví dụ: "Grade 1A = khuyến nghị mạnh, bằng chứng RCT chất lượng cao" — mức đáng tin cậy nhất.',
+      'Nghiên cứu về tác động thực tế: nghiên cứu đăng trên Journal of Medical Internet Research cho thấy bệnh nhân tại bệnh viện sử dụng UpToDate có nguy cơ biến chứng thấp hơn 10–11% và thời gian nằm viện ngắn hơn. Người dùng UpToDate ra quyết định điều trị tốt hơn so với không dùng — đây là bằng chứng thực tế về giá trị của tài liệu tham khảo chất lượng cao.',
+      'Hạn chế: UpToDate là dịch vụ trả phí ($X00/năm cá nhân) — không miễn phí như PubMed hay WHO. Tuy nhiên nhiều bệnh viện và đại học đăng ký cho nhân viên/sinh viên. Nếu bạn là bệnh nhân: không nên tự đọc UpToDate để tự điều trị — nội dung viết cho bác sĩ, với nhiều sắc thái lâm sàng phức tạp. Thay vào đó, bạn có thể hỏi bác sĩ "UpToDate nói gì về điều này?" để khuyến khích tra cứu có bằng chứng.',
+      'Patient Education — phần dành cho bệnh nhân: UpToDate có phần "Patient Education" miễn phí — viết ở ngôn ngữ dễ hiểu hơn cho người không chuyên. Truy cập tại uptodate.com/contents/table-of-contents/patient-education. Bao gồm giải thích bệnh, thuốc, và thủ thuật bằng ngôn ngữ đơn giản. Đây là nguồn thông tin bệnh nhân tốt hơn nhiều so với các trang web sức khỏe thương mại.',
+      'Các tài nguyên tương tự (miễn phí hơn): DynaMed (EBSCO) — tương tự UpToDate, miễn phí cho nhiều thư viện y khoa. BMJ Best Practice — miễn phí cho nhiều quốc gia. NICE Guidelines (nice.org.uk) — hướng dẫn lâm sàng Anh Quốc, miễn phí và chất lượng rất cao. Australian Clinical Practice Guidelines — miễn phí, nhiều topic cập nhật tốt. ClinicalKey (Elsevier) — thường có qua thư viện đại học y.',
+    ],
+    points: [
+      { icon: '👨‍⚕️', label: '2 triệu bác sĩ tại 190 quốc gia tin dùng hàng ngày', note: 'Bệnh viện dùng UpToDate có biến chứng thấp hơn 10–11% theo nghiên cứu' },
+      { icon: '🏆', label: 'GRADE 1A = khuyến nghị mạnh + bằng chứng RCT cao nhất', note: 'Mỗi khuyến nghị đều có phân loại rõ ràng — không phải ý kiến tùy tiện' },
+      { icon: '🎓', label: 'Patient Education: phần miễn phí viết cho bệnh nhân', note: 'uptodate.com/contents/table-of-contents/patient-education' },
+      { icon: '💡', label: 'Hỏi bác sĩ "UpToDate nói gì?" để khuyến khích tra cứu bằng chứng', note: 'NICE, DynaMed, BMJ Best Practice là lựa chọn tương tự và miễn phí hơn' },
+    ],
+  },
+  {
+    num: '06', icon: '🔬', name: 'Examine.com', url: 'examine.com',
+    desc: 'Tổng hợp bằng chứng về bổ sung dinh dưỡng và thảo dược',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+    keyFact: '🔬 Examine.com là tổ chức phi lợi nhuận độc lập, không nhận quảng cáo hoặc tài trợ từ ngành công nghiệp thực phẩm chức năng. Đây là nguồn tốt nhất hiện có để tìm hiểu bằng chứng khoa học về TPCN, thảo dược, và dinh dưỡng — vì họ tổng hợp hàng trăm nghiên cứu và đánh giá trung thực kể cả khi bằng chứng yếu.',
+    details: [
+      'Mô hình kinh doanh độc lập và khách quan: Examine.com được thành lập năm 2011 với mô hình không nhận quảng cáo và không có mối quan hệ tài chính với ngành TPCN. Doanh thu từ đăng ký thành viên trả phí và bán ấn phẩm ("Examine Research Digest"). Điều này là quan trọng vì: hầu hết trang web về TPCN có thu nhập từ quảng cáo hoặc affiliate — tạo ra xung đột lợi ích cực kỳ lớn. Examine không có động cơ để phóng đại lợi ích của bất kỳ sản phẩm nào.',
+      'Phương pháp tổng hợp bằng chứng: Với mỗi supplement (ví dụ: Vitamin D, Omega-3, Creatine, Ashwagandha), Examine tổng hợp tất cả nghiên cứu có sẵn và phân loại theo: kết quả được nghiên cứu (outcomes), phân loại bằng chứng (A–D), hướng tác dụng (positive/neutral/negative/mixed), và lưu ý về khoảng trống trong nghiên cứu. Thang đánh giá: A = nhiều RCT chất lượng cao nhất quán; D = chỉ nghiên cứu in vitro hoặc trên chuột.',
+      'Ví dụ minh họa về tính trung thực: Creatine — Examine đánh giá "Grade A" (bằng chứng mạnh) cho tăng sức mạnh và khối cơ trong ngắn hạn, "an toàn cho người khỏe mạnh". Multivitamin — Examine đánh giá "bằng chứng hỗn hợp và yếu" cho lợi ích sức khỏe ở người không thiếu hụt vi chất — trung thực dù multivitamin là ngành tỷ đô. Detox juice — "không có bằng chứng" — khác hoàn toàn với cách nhiều trang web trình bày.',
+      'Examine Research Digest (ERD) — newsletter khoa học: ERD là tóm tắt nghiên cứu dinh dưỡng mới nhất, xuất bản hàng tháng bởi đội nghiên cứu Examine. Mỗi số phân tích 5–10 nghiên cứu mới nhất với ngôn ngữ dễ hiểu nhưng chính xác khoa học. Hữu ích cho: người muốn cập nhật khoa học dinh dưỡng mà không đọc PubMed. Trả phí nhưng nhiều issue trước đây miễn phí tại examine.com/research-digest.',
+      'Hạn chế của Examine: Tập trung vào TPCN và dinh dưỡng — không phải tài nguyên cho tất cả chủ đề y tế (không có thông tin về thuốc kê đơn, phác đồ điều trị bệnh). Không phải tài liệu lâm sàng — không thay thế tư vấn bác sĩ. Một số topic nhỏ hơn có thể chưa được cập nhật thường xuyên. Phần nội dung sâu nhất yêu cầu đăng ký thành viên trả phí.',
+      'Cách dùng Examine.com thực tế: Khi ai đó giới thiệu TPCN mới: vào examine.com, gõ tên supplement → đọc "Summary" (miễn phí) → xem "Evidence Grade" → xem "What works, what doesn\'t, what\'s unknown". So sánh với: HRE (Human Effect Matrix) — xem tất cả outcomes được nghiên cứu trong một bảng. Kết hợp với: Labdoor.com (kiểm tra chất lượng thực tế của sản phẩm cụ thể — TPCN có đúng hàm lượng ghi trên nhãn không).',
+    ],
+    points: [
+      { icon: '🚫', label: 'Không quảng cáo, không affiliate — không có xung đột lợi ích', note: 'Doanh thu từ đăng ký thành viên: không ai trả tiền để Examine khen sản phẩm' },
+      { icon: '📊', label: 'Grade A–D: tóm tắt hàng trăm nghiên cứu thành 1 đánh giá', note: 'Creatine = A (mạnh). Multivitamin cho người đủ vi chất = bằng chứng yếu/hỗn hợp' },
+      { icon: '🔍', label: 'HRE: xem tất cả outcomes được nghiên cứu trong 1 bảng', note: 'Hữu ích để thấy supplement X thực ra được nghiên cứu cho mục đích nào' },
+      { icon: '⚡', label: 'Kết hợp với Labdoor.com: kiểm tra chất lượng thực tế sản phẩm', note: 'TPCN có thể đúng về công thức nhưng sai hàm lượng — Labdoor đo thực tế' },
+    ],
+  },
 ];
+
+function SourceCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-4 cursor-pointer transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.55)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 20px rgba(${item.rgb},0.12)` : 'none', transform: hovered ? 'translateY(-2px)' : 'translateY(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
+          style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>{item.icon}</div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-0.5">
+            <span className="font-bold text-base text-text">{item.name}</span>
+            <span className="text-xs px-2 py-0.5 rounded-full font-bold transition-opacity duration-200"
+              style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>Chi tiết →</span>
+          </div>
+          <div className="text-xs font-mono mb-1" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.url}</div>
+          <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SourceModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.name} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>Nguồn {item.num}/06</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-1 leading-snug" style={{ color: item.color }}>{item.name}</h2>
+          <div className="text-xs font-mono mb-2" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.url}</div>
+          <p className="text-sm mb-5 leading-relaxed" style={{ color: 'rgba(209,213,219,0.8)' }}>{item.desc}</p>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 06</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function PatternCard({ item, onClick }) {
   const [hovered, setHovered] = useState(false);
@@ -546,6 +772,7 @@ function MisinfoChecker() {
 export default function HealthMediaLiteracyPage() {
   const [filterModal, setFilterModal] = useState(null);
   const [patternModal, setPatternModal] = useState(null);
+  const [sourceModal, setSourceModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -625,14 +852,10 @@ export default function HealthMediaLiteracyPage() {
 
       <RevealBlock delay={3} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nguồn Thông Tin Đáng Tin Cậy</h2>
-        <p className="text-muted text-lg mb-5">Bookmark những nguồn này để tra cứu khi cần.</p>
+        <p className="text-muted text-lg mb-5">Bookmark những nguồn này để tra cứu khi cần. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {TRUSTED_SOURCES.map((s, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4 hover:border-indigo-500/30 transition-colors">
-              <div className="font-bold text-lg text-text mb-1">{s.name}</div>
-              <div className="text-base font-mono text-muted mb-1">{s.url}</div>
-              <p className="text-base text-muted">{s.desc}</p>
-            </div>
+            <SourceCard key={i} item={s} onClick={() => setSourceModal(i)} />
           ))}
         </div>
       </RevealBlock>
@@ -661,6 +884,17 @@ export default function HealthMediaLiteracyPage() {
           onNext={() => setPatternModal(i => Math.min(DANGEROUS_PATTERNS.length - 1, i + 1))}
           hasPrev={patternModal > 0}
           hasNext={patternModal < DANGEROUS_PATTERNS.length - 1}
+        />
+      )}
+
+      {sourceModal !== null && (
+        <SourceModal
+          item={TRUSTED_SOURCES[sourceModal]}
+          onClose={() => setSourceModal(null)}
+          onPrev={() => setSourceModal(i => Math.max(0, i - 1))}
+          onNext={() => setSourceModal(i => Math.min(TRUSTED_SOURCES.length - 1, i + 1))}
+          hasPrev={sourceModal > 0}
+          hasNext={sourceModal < TRUSTED_SOURCES.length - 1}
         />
       )}
     </div>

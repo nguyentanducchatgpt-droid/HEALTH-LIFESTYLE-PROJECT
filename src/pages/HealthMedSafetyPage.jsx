@@ -379,6 +379,93 @@ const SUPPLEMENT_CHECK = [
   },
 ];
 
+const DOCTOR_ITEMS = [
+  {
+    icon: '💊', label: 'Tất cả thuốc đang dùng',
+    note: 'Kể cả OTC, vitamin, thảo dược — không phải chỉ thuốc kê đơn.',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
+    keyFact: '💊 Tương tác thuốc-thuốc là nguyên nhân gây ra hàng chục nghìn ca nhập viện có thể phòng ngừa mỗi năm. Bác sĩ không thể kiểm tra tương tác nếu không biết đầy đủ danh sách thuốc đang dùng — kể cả OTC và thảo dược.',
+    details: [
+      'Tại sao OTC cũng quan trọng: aspirin, ibuprofen, antacid, thuốc cảm, thuốc ngủ không kê đơn đều có tương tác thực sự với thuốc kê đơn. Ibuprofen + ACE inhibitor → suy thận cấp. Aspirin + warfarin → tăng chảy máu nghiêm trọng. Antacid chứa nhôm/magie + fluoroquinolone → giảm hấp thu kháng sinh.',
+      'Thực phẩm chức năng và thảo dược không phải "vô hại": St. John\'s Wort giảm nồng độ 50+ loại thuốc; dầu cá > 3g/ngày + warfarin → tăng chảy máu; CoQ10 ảnh hưởng INR; tỏi liều cao tác dụng chống đông. Nhiều người không khai báo vì nghĩ "chỉ là TPCN, bác sĩ không cần biết".',
+      'Medication reconciliation — kiểm tra chéo danh sách thuốc: sai sót trong medication reconciliation (đối chiếu thuốc) là một trong các lỗi y khoa phổ biến nhất, đặc biệt khi chuyển viện, nhập viện, hoặc phẫu thuật. Bệnh nhân có danh sách thuốc đầy đủ giảm đáng kể nguy cơ sai sót.',
+      'Cách chuẩn bị tốt nhất cho buổi khám: mang theo tất cả hộp/lọ thuốc đang dùng (hoặc chụp ảnh nhãn), kể cả vitamin, omega-3, magie, thảo dược. Nói rõ tần suất, liều dùng, và thời gian đã dùng. Cập nhật danh sách mỗi khi có thay đổi.',
+      'Ứng dụng hữu ích: lưu danh sách thuốc trong điện thoại (ảnh hoặc ghi chú), hoặc dùng app như Medisafe, MyChart để theo dõi và chia sẻ với bác sĩ. Một số bệnh viện cho phép bệnh nhân cập nhật danh sách thuốc qua portal trước buổi khám.',
+      'Nhóm cần đặc biệt thận trọng: người > 65 tuổi dùng ≥ 5 loại thuốc (polypharmacy) — nguy cơ tương tác tăng theo cấp số nhân; người khám nhiều bác sĩ chuyên khoa (mỗi bác sĩ chỉ biết phần của mình); người vừa xuất viện (danh sách thuốc thay đổi); người dùng thuốc narrow therapeutic index (warfarin, digoxin, phenytoin, lithium).',
+    ],
+    points: [
+      { icon: '📋', label: 'Mang theo tất cả hộp/lọ thuốc khi khám', note: 'Kể cả vitamin và thảo dược — chụp ảnh nhãn nếu tiện hơn' },
+      { icon: '⚠️', label: 'OTC tương tác với thuốc kê đơn', note: 'Ibuprofen + ACE inhibitor → suy thận; aspirin + warfarin → chảy máu' },
+      { icon: '🌿', label: 'Thảo dược "tự nhiên" vẫn tương tác', note: 'St. John\'s Wort ảnh hưởng 50+ loại thuốc kê đơn' },
+      { icon: '📱', label: 'Lưu danh sách thuốc trong điện thoại', note: 'Cập nhật mỗi khi có thay đổi — chia sẻ với mọi bác sĩ' },
+    ],
+  },
+  {
+    icon: '⚠️', label: 'Dị ứng thuốc đã gặp trước đây',
+    note: 'Báo cả loại phản ứng, mức độ nặng nhẹ, không chỉ tên thuốc.',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80',
+    keyFact: '🚨 Phản vệ (anaphylaxis) do thuốc có thể gây tử vong trong vòng vài phút. Thông tin dị ứng không đầy đủ hoặc không chính xác có thể khiến bác sĩ tránh những thuốc an toàn, hoặc nguy hiểm hơn — dùng thuốc gây dị ứng chéo.',
+    details: [
+      'Phân biệt dị ứng thực sự, bất dung nạp, và tác dụng phụ: DỊ ỨNG (allergy): phản ứng miễn dịch IgE-mediated — mề đay, phù nề, khó thở, sốc phản vệ. BẤT DUNG NẠP (intolerance): không qua miễn dịch — buồn nôn, đau đầu, đau dạ dày với codeine, đỏ mặt với vancomycin (red man syndrome). TÁC DỤNG PHỤ dự đoán được — không phải dị ứng. Phân biệt quan trọng vì bác sĩ quản lý khác nhau.',
+      'Phổ mức độ nghiêm trọng — cần báo rõ: NHẸ: phát ban giới hạn, ngứa không lan rộng → có thể thử premedication. TRUNG BÌNH: mề đay lan rộng, phù môi, buồn nôn/nôn → tránh thuốc đó, thận trọng với thuốc liên quan. NẶNG/PHẢN VỆ: khó thở, tụt huyết áp, mất ý thức → tránh tuyệt đối cả nhóm, ghi vào hồ sơ cấp cứu, đeo vòng cảnh báo.',
+      'Dị ứng chéo quan trọng phải biết: Penicillin → cephalosporin thế hệ 1-2 (1–10% chéo); thế hệ 3-4 thấp hơn (<1%). Aspirin/NSAID → dị ứng chéo toàn nhóm NSAID ở người nhạy cảm (Samter\'s triad: polyp mũi + hen + nhạy cảm aspirin). Sulfonamide (sulfamethoxazole) → furosemide, thiazide, celecoxib (chia sẻ cấu trúc sulfonyl). Iodine/hải sản → không phải chống chỉ định thuốc cản quang iodine (misconception phổ biến — không liên quan cơ chế).',
+      'Thông tin cần báo đầy đủ: tên thuốc gây dị ứng (brand và generic nếu biết), loại phản ứng (phát ban, khó thở, sưng, buồn nôn), thời gian phản ứng xảy ra sau khi uống (tức thì vs vài giờ vs vài ngày), mức độ nghiêm trọng (có phải đi cấp cứu không?), và điều trị đã dùng (tự hết vs cần antihistamine vs phải epinephrine).',
+      'Penicillin allergy — vấn đề phổ biến bị hiểu sai: ~10% dân số báo cáo dị ứng penicillin, nhưng sau khi xét nghiệm chuẩn, chỉ 1% thực sự dị ứng. 90% người "dị ứng penicillin" thực ra an toàn khi dùng. Hậu quả của label sai: bác sĩ phải dùng kháng sinh thay thế đắt hơn, rộng phổ hơn, và kém hiệu quả hơn cho nhiều nhiễm khuẩn — góp phần đề kháng kháng sinh. Nếu nghi ngờ bị label sai, hỏi bác sĩ về skin testing để xác nhận.',
+      'Vòng cảnh báo dị ứng và thẻ thông tin: người có tiền sử phản vệ nặng nên đeo MedicAlert bracelet và mang theo auto-injector epinephrine (EpiPen). Trong hồ sơ điện tử (EMR), dị ứng thuốc nên được cập nhật mỗi lần khám để hệ thống cảnh báo tự động khi bác sĩ kê đơn. Báo dị ứng rõ ràng với BẤT KỲ nhân viên y tế nào — kể cả nha sĩ và dược sĩ.',
+    ],
+    points: [
+      { icon: '🔴', label: 'Báo loại phản ứng + mức độ nghiêm trọng', note: 'Phát ban nhẹ vs sốc phản vệ → bác sĩ quản lý hoàn toàn khác' },
+      { icon: '🔄', label: 'Dị ứng chéo: penicillin → cephalosporin', note: 'Aspirin → tất cả NSAID; sulfa → furosemide, thiazide' },
+      { icon: '💉', label: 'Phản vệ nặng: đeo vòng MedicAlert + EpiPen', note: 'Cập nhật dị ứng vào hồ sơ y tế ở mọi cơ sở điều trị' },
+      { icon: '🧪', label: '90% "dị ứng penicillin" thực ra không dị ứng', note: 'Hỏi bác sĩ về skin testing nếu nghi ngờ label sai' },
+    ],
+  },
+  {
+    icon: '🤰', label: 'Đang mang thai hoặc cho con bú',
+    note: 'Kể cả đang có kế hoạch mang thai — một số thuốc gây dị tật từ trước khi biết có thai.',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80',
+    keyFact: '🤰 Cửa sổ nhạy cảm nhất là tuần 2–8 của thai kỳ — thường trước khi người mẹ biết mình có thai. Một số thuốc gây dị tật nặng ngay cả khi dùng một liều duy nhất trong giai đoạn này.',
+    details: [
+      'Cửa sổ teratogenic quan trọng: Tuần 1–2: "all-or-nothing" — phôi chết hoặc phát triển bình thường. Tuần 3–8 (organogenesis): giai đoạn nguy hiểm nhất — tim, não, tủy sống, chi, mắt hình thành → thuốc gây dị tật tác động mạnh nhất. Tuần 9–40: cơ quan đã hình thành nhưng vẫn phát triển — thuốc có thể ảnh hưởng chức năng (không phải cấu trúc). Đây là lý do phải báo ngay cả "chỉ đang cố gắng mang thai".',
+      'Thuốc tuyệt đối chống chỉ định khi mang thai (Category X / nhóm D nguy cơ cao): Isotretinoin (Accutane — trị mụn) → dị tật tim, não nghiêm trọng, thai chết lưu; chương trình iPLEDGE yêu cầu 2 biện pháp tránh thai. Methotrexate (điều trị vảy nến, ung thư, viêm khớp) → chấm dứt thai kỳ, dị tật nghiêm trọng. Valproate (thuốc chống động kinh, hưng-trầm cảm) → dị tật ống thần kinh (spina bifida), chậm phát triển nhận thức. Warfarin → "warfarin embryopathy" trong tam cá nguyệt 1; xuất huyết thai trong tam cá nguyệt 3.',
+      'Thuốc thường dùng nhưng cần thận trọng: NSAID (ibuprofen, naproxen) — an toàn trong tam cá nguyệt 1-2, nhưng TRÁNH trong tam cá nguyệt 3 (đóng ductus arteriosus sớm). ACE inhibitor / ARB — tránh trong tam cá nguyệt 2-3 (suy thận thai nhi). Fluoroquinolone — tránh nếu có thể (ảnh hưởng sụn khớp thai nhi). Benzodiazepine — hội chứng cai thuốc ở trẻ sơ sinh.',
+      'Thuốc an toàn trong mang thai: paracetamol (acetaminophen) — vẫn là giảm đau an toàn nhất trong thai kỳ (nhưng dùng liều thấp nhất, ngắn nhất cần thiết). Nhiều kháng sinh: amoxicillin, cephalosporin, azithromycin. Acid folic (400–800 mcg/ngày từ trước mang thai) — giảm 70% nguy cơ dị tật ống thần kinh. Sắt, canxi, DHA — nhu cầu tăng trong thai kỳ.',
+      'Cho con bú và thuốc: hầu hết thuốc truyền vào sữa mẹ ở nồng độ thấp (1–2% liều mẹ) → thường an toàn. TRÁNH: methotrexate, isotretinoin, chloramphenicol, ergotamine, lithium, một số thuốc tâm thần. Database đáng tin cậy: LactMed (NIH) — miễn phí, cập nhật liên tục, cho biết nồng độ trong sữa và nguy cơ với trẻ bú. Dược sĩ bệnh viện cũng có thể tra cứu nhanh.',
+      'Thuốc mãn tính và mang thai: người đang điều trị bệnh mãn tính (động kinh, huyết áp, tiểu đường, tâm thần, hen) cần lên kế hoạch trước khi mang thai với bác sĩ chuyên khoa. Nhiều bệnh nặng hơn khi mang thai nếu không điều trị — nguy cơ không điều trị đôi khi lớn hơn nguy cơ của thuốc. Không tự ngưng thuốc mãn tính khi phát hiện có thai — cần tham khảo bác sĩ ngay.',
+    ],
+    points: [
+      { icon: '📅', label: 'Tuần 3–8: nguy hiểm nhất — thường chưa biết có thai', note: 'Báo ngay cả "đang cố gắng" để bác sĩ chọn thuốc phù hợp' },
+      { icon: '🚫', label: 'Isotretinoin, methotrexate, valproate = tuyệt đối tránh', note: 'Chương trình iPLEDGE bắt buộc 2 biện pháp tránh thai với Accutane' },
+      { icon: '🤱', label: 'LactMed (NIH) — tra cứu an toàn thuốc khi cho bú', note: 'Miễn phí, cập nhật liên tục — dược sĩ cũng có thể tra cứu' },
+      { icon: '💊', label: 'Không tự ngưng thuốc mãn tính khi biết có thai', note: 'Bệnh không điều trị đôi khi nguy hiểm hơn thuốc — hỏi bác sĩ ngay' },
+    ],
+  },
+  {
+    icon: '🫀', label: 'Bệnh nền: gan, thận, tim',
+    note: 'Chức năng tạng quyết định liều thuốc và lựa chọn thuốc — ngay cả khi bệnh "đang kiểm soát tốt".',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
+    keyFact: '🫀 Liều thuốc tiêu chuẩn trên tờ hướng dẫn được tính cho người có chức năng thận-gan bình thường. Người suy thận hay suy gan có thể tích lũy thuốc đến mức độc — ngay cả ở "liều bình thường".',
+    details: [
+      'Thận và thanh thải thuốc (renal clearance): 60–70% thuốc hoặc chất chuyển hóa hoạt tính được đào thải qua thận. GFR (Glomerular Filtration Rate) / CrCl (Creatinine Clearance) quyết định liều nhiều loại thuốc: metformin (chống chỉ định GFR < 30), kháng sinh aminoglycoside (liều theo CrCl), gabapentin (giảm liều mạnh khi suy thận), digoxin (độc tính tăng khi thận suy). Người cao tuổi thường GFR giảm mà không biết — creatinine máu "bình thường" nhưng GFR thực tế thấp.',
+      'Gan và chuyển hóa thuốc (hepatic metabolism): hầu hết thuốc được chuyển hóa tại gan qua enzyme CYP450. Xơ gan, viêm gan nặng, suy gan → giảm chức năng enzyme, giảm lưu lượng máu gan, giảm protein huyết tương (albumin thấp → thuốc gắn protein tăng phần tự do → tăng tác dụng). Warfarin rất nhạy với chức năng gan — INR dao động mạnh khi gan suy; paracetamol liều giảm còn 2g/ngày; codeine có thể tích lũy morphine.',
+      'Suy tim và phân bố thuốc: suy tim giảm cung lượng tim → giảm tưới máu gan và thận → thuốc chuyển hóa và thải trừ chậm hơn. Phù nề trong suy tim tăng thể tích phân bố của thuốc thân nước. Digoxin trong suy tim: chỉ còn dùng để kiểm soát nhịp tim ở liều thấp — ngưỡng độc hẹp. Một số thuốc chống chỉ định trong suy tim: NSAID (giữ nước, tăng tiền gánh), thiazolidinedione, verapamil/diltiazem liều cao.',
+      'Đái tháo đường và chức năng thận: tiểu đường type 2 là nguyên nhân hàng đầu gây bệnh thận mãn tính. GFR quyết định: metformin (không dùng khi GFR < 30), SGLT-2 inhibitor kém hiệu quả khi GFR < 45, liều insulin cần điều chỉnh khi thận suy (insulin bị phân hủy một phần ở thận). Kiểm tra GFR ít nhất mỗi 6–12 tháng ở người tiểu đường.',
+      'COPD và lựa chọn thuốc: beta-blocker (propranolol, metoprolol) chống chỉ định tương đối hoặc tuyệt đối ở COPD nặng — gây co thắt phế quản. Tuy nhiên, beta-blocker chọn lọc (bisoprolol, atenolol) và cardioselective thường an toàn ở COPD nhẹ-trung bình khi có chỉ định tim mạch. Aspirin và NSAID có thể gây co thắt phế quản ở 10–20% COPD/hen (aspirin-exacerbated respiratory disease). Báo cả COPD/hen khi kê thuốc tim mạch.',
+      'Kể cả "đang kiểm soát tốt": bệnh nền được kiểm soát vẫn ảnh hưởng đến dược động học. Người tiểu đường type 2 kiểm soát tốt nhưng có GFR 50 ml/min vẫn cần chỉnh liều nhiều thuốc. Người cao huyết áp kiểm soát tốt nhưng dùng ACE inhibitor vẫn không nên dùng thêm NSAID. Không nên giấu bệnh nền vì "đang ổn" — bác sĩ cần thông tin để kê đơn an toàn.',
+    ],
+    points: [
+      { icon: '🧪', label: 'GFR / CrCl quyết định liều kháng sinh & metformin', note: 'Creatinine "bình thường" nhưng GFR vẫn có thể thấp ở người cao tuổi' },
+      { icon: '🫀', label: 'NSAID chống chỉ định ở suy tim, suy thận', note: 'Giữ nước, tăng tải tim — nguy hiểm ngay cả khi chỉ dùng 1–2 viên' },
+      { icon: '🩺', label: 'Xơ gan → warfarin, paracetamol cần giảm liều', note: 'Albumin thấp → tăng phần thuốc tự do → tăng tác dụng và độc tính' },
+      { icon: '💬', label: '"Đang kiểm soát tốt" vẫn phải khai báo', note: 'Bệnh nền ổn định vẫn ảnh hưởng dược động học — luôn thông báo' },
+    ],
+  },
+];
+
 function SupplementCard({ item, onClick }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -429,6 +516,106 @@ function SupplementModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, h
               {item.icon}
             </div>
             <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>TPCN · Hướng dẫn</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-1 leading-snug" style={{ color: item.color }}>{item.label}</h2>
+          <p className="text-sm mb-4 leading-relaxed" style={{ color: 'rgba(209,213,219,0.8)' }}>{item.note}</p>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+function DoctorCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-4 cursor-pointer transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.55)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 18px rgba(${item.rgb},0.1)` : 'none', transform: hovered ? 'translateX(4px)' : 'translateX(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-center gap-3 mb-2">
+        <span className="text-2xl shrink-0 w-9 h-9 rounded-xl flex items-center justify-center"
+          style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},${hovered ? '0.4' : '0.2'})` }}>{item.icon}</span>
+        <span className="font-bold text-sm text-text leading-snug flex-1">{item.label}</span>
+        <span className="text-xs px-2 py-0.5 rounded-full font-bold shrink-0 transition-opacity duration-200"
+          style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>→</span>
+      </div>
+      <p className="text-xs text-muted leading-relaxed pl-12">{item.note}</p>
+    </div>
+  );
+}
+
+function DoctorModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.4 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>Thông tin cần báo bác sĩ</span>
           </div>
           <button onClick={onClose}
             className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
@@ -716,6 +903,7 @@ export default function HealthMedSafetyPage() {
   const [medModal, setMedModal] = useState(null);
   const [dangerModal, setDangerModal] = useState(null);
   const [suppModal, setSuppModal] = useState(null);
+  const [doctorModal, setDoctorModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -799,14 +987,12 @@ export default function HealthMedSafetyPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold text-text mb-3">Luôn Nói Với Bác Sĩ / Dược Sĩ</h3>
-          <ul className="space-y-2 text-lg text-muted">
-            <li>• Tất cả thuốc đang dùng (kể cả OTC, vitamin, thảo dược)</li>
-            <li>• Dị ứng thuốc đã gặp trước đây</li>
-            <li>• Đang mang thai, cho con bú, hoặc có kế hoạch mang thai</li>
-            <li>• Bệnh nền: gan, thận, tim — ảnh hưởng lớn đến lựa chọn và liều thuốc</li>
-          </ul>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Luôn Nói Với Bác Sĩ / Dược Sĩ</h2>
+        <p className="text-muted text-lg mb-6">Bốn thông tin bác sĩ cần biết để kê thuốc an toàn cho bạn. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {DOCTOR_ITEMS.map((d, i) => (
+            <DoctorCard key={i} item={d} onClick={() => setDoctorModal(i)} />
+          ))}
         </div>
       </RevealBlock>
 
@@ -814,6 +1000,18 @@ export default function HealthMedSafetyPage() {
       <p className="text-base text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục sức khỏe. Không thay thế tư vấn của bác sĩ hoặc dược sĩ.</p>
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
 
+      {doctorModal !== null && (
+        <DoctorModal
+          item={DOCTOR_ITEMS[doctorModal]}
+          idx={doctorModal}
+          total={DOCTOR_ITEMS.length}
+          onClose={() => setDoctorModal(null)}
+          onPrev={() => setDoctorModal(i => Math.max(0, i - 1))}
+          onNext={() => setDoctorModal(i => Math.min(DOCTOR_ITEMS.length - 1, i + 1))}
+          hasPrev={doctorModal > 0}
+          hasNext={doctorModal < DOCTOR_ITEMS.length - 1}
+        />
+      )}
       {suppModal !== null && (
         <SupplementModal
           item={SUPPLEMENT_CHECK[suppModal]}

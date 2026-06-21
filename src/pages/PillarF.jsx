@@ -674,6 +674,194 @@ function F2WorkoutLog() {
   );
 }
 
+// --- Nutrition log items ---
+const NUTRI_LOG_ITEMS = [
+  {
+    key: 'protein', label: 'Protein đủ?', icon: '🥩', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Protein là macronutrient duy nhất cơ thể không tích trữ được — cần nạp đều qua từng bữa. 20–30g protein/bữa là ngưỡng tối ưu cho tổng hợp cơ, no lâu và kiểm soát đường huyết ổn định.',
+    details: [
+      'Mỗi bữa chính nên có 1 nguồn đạm rõ ràng: ức gà (~25g/100g), cá hồi (~20g/100g), trứng (~6g/quả), thịt bò (~25g/100g), đậu phụ cứng (~8g/100g), đậu lăng (~9g/100g).',
+      'Protein giúp no lâu nhờ thermic effect cao nhất — cơ thể đốt 20–30% calo từ protein chỉ để tiêu hóa. Hỗ trợ kiểm soát cân nặng tự nhiên mà không cần đếm calo.',
+      'Phân bổ đều 3 bữa tốt hơn dồn buổi tối: cơ thể hấp thu và sử dụng hiệu quả hơn cho tổng hợp protein cơ và phục hồi (protein timing research).',
+      'Đạm thực vật + động vật đều có giá trị. Kết hợp 2 nguồn thực vật (gạo + đậu) cho amino acid profile đầy đủ tương đương thịt — không cần ăn thịt mỗi bữa.',
+      'Dấu hiệu thiếu đạm: mệt mỏi dai dẳng, tóc và móng yếu, vết thương lành chậm, thèm đồ ngọt sau bữa ăn (cơ thể tìm năng lượng nhanh thay thế).',
+      'Quy tắc đơn giản: nhìn vào đĩa ăn — không thấy nguồn đạm rõ ràng thì thêm 1 quả trứng hoặc 1 hộp sữa chua Hy Lạp. Dễ thực hiện nhất, tác động ngay.',
+    ],
+    points: [
+      { icon: '🥚', label: '20–30g / Bữa', note: 'Ngưỡng tối ưu tổng hợp cơ và no lâu' },
+      { icon: '🐟', label: 'Đa Dạng Nguồn', note: 'Thịt/cá/trứng/đậu — đổi xoay để đủ amino acid' },
+      { icon: '⏰', label: 'Chia Đều 3 Bữa', note: 'Không dồn buổi tối — hấp thu và sử dụng tốt hơn' },
+      { icon: '💪', label: 'Giữ Khối Cơ', note: 'Quan trọng sau 30 tuổi — cơ tự thoái hóa ~1%/năm' },
+    ],
+  },
+  {
+    key: 'veg', label: 'Rau đủ?', icon: '🥦', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'WHO khuyến nghị ≥5 phần (400g) rau quả/ngày. Mỗi phần thêm giảm 4% nguy cơ tim mạch và 3% nguy cơ ung thư (phân tích 95 nghiên cứu, 2019). 2 phần là ngưỡng khởi đầu thực tế.',
+    details: [
+      '1 phần = 1 nắm tay (~80g): 1 quả chuối, 1 nắm rau cải, 3 muỗng canh rau nấu chín, 1 bát salad nhỏ. Không cần cân — ước lượng bằng tay của chính bạn.',
+      'Màu sắc = vi chất khác nhau: đỏ (lycopene - tim mạch), cam/vàng (beta-carotene - mắt), xanh lá (chlorophyll - gan), tím (anthocyanin - não), trắng (allicin - miễn dịch).',
+      'Rau sống và rau nấu có lợi ích khác nhau. Kết hợp cả hai trong ngày là lý tưởng — không cần cầu kỳ, chỉ cần đa dạng màu sắc và cách chế biến.',
+      'Fiber từ rau quả nuôi vi khuẩn đường ruột có lợi (prebiotics), giảm LDL, làm chậm hấp thu đường, và tạo no lâu. Không supplement nào thay thế được rau thật.',
+      'Mẹo dễ nhất: thêm 1 nắm rau vào bất kỳ bữa nào; trái cây làm snack; sinh tố rau/quả buổi sáng (5 phút, không cần chế biến phức tạp).',
+      'Rau đông lạnh không kém tươi về dinh dưỡng — thường đông lạnh ngay sau thu hoạch khi dưỡng chất cao nhất. Tiện và ít lãng phí hơn rau tươi.',
+    ],
+    points: [
+      { icon: '🥦', label: '1 Nắm Tay = 1 Phần', note: '~80g — ước lượng bằng tay của bạn, không cần cân' },
+      { icon: '🌈', label: 'Ăn Đa Màu Sắc', note: 'Mỗi màu = phytochemical bảo vệ sức khỏe khác nhau' },
+      { icon: '🦠', label: 'Nuôi Đường Ruột', note: 'Fiber là thức ăn vi khuẩn có lợi — supplement không thay được' },
+      { icon: '❄️', label: 'Đông Lạnh Vẫn Tốt', note: 'Dinh dưỡng ngang tươi — tiện lợi và ít lãng phí hơn' },
+    ],
+  },
+  {
+    key: 'water', label: 'Nước đủ?', icon: '💧', color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mất nước chỉ 1–2% trọng lượng cơ thể giảm hiệu suất nhận thức 10–15% và thể chất 20–30%. Khát nước là dấu hiệu đã mất nước nhẹ — không nên đợi đến khi khát.',
+    details: [
+      'Công thức cá nhân: cân nặng (kg) × 35 ml = lượng cơ bản/ngày. 60kg → 2,100 ml; 70kg → 2,450 ml; 80kg → 2,800 ml. Thêm ~500 ml/giờ vận động mạnh hoặc trời nóng.',
+      'Nước lọc là tốt nhất. Trà xanh không đường, cà phê vừa phải, soup cũng tính. Nước ngọt và nước ép có đường KHÔNG tính — chứa calo rỗng, không hydrate hiệu quả.',
+      'Chia đều cả ngày: 1 ly khi thức dậy, 1 ly trước mỗi bữa ăn, 1 ly mỗi 2 tiếng khi làm việc, 1 ly nhỏ trước ngủ (không quá nhiều để tránh thức đêm).',
+      'Màu nước tiểu là thước đo tốt nhất: vàng nhạt như nước rơm = đủ. Vàng đậm hoặc cam = cần uống thêm ngay. Trong suốt = có thể uống quá nhiều.',
+      'Uống quá nhiều (>4L/ngày với người ít vận động) có thể gây hạ natri máu — hiếm nhưng nguy hiểm. Mục tiêu là uống ĐỦ, không phải uống càng nhiều càng tốt.',
+      'Nhu cầu tăng khi: sốt (+500ml), ăn nhiều muối/protein, ngồi điều hòa lạnh nhiều giờ (không khí khô), mang thai (+300ml), tập luyện cường độ cao.',
+    ],
+    points: [
+      { icon: '📐', label: 'Công Thức Cá Nhân', note: 'Cân nặng (kg) × 35 ml = mục tiêu riêng của bạn' },
+      { icon: '🌡️', label: 'Quan Sát Nước Tiểu', note: 'Vàng nhạt = đủ. Vàng đậm = uống thêm ngay' },
+      { icon: '⏰', label: 'Chia Đều Cả Ngày', note: 'Uống dồn kém hiệu quả — thận chỉ xử lý ~1L/giờ' },
+      { icon: '🚫', label: 'Không Đợi Khát', note: 'Khát = đã mất nước nhẹ rồi — uống trước khi khát' },
+    ],
+  },
+  {
+    key: 'sugar', label: 'Ít đồ ngọt?', icon: '🍬', color: '#f43f5e', rgb: '244,63,94',
+    img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'WHO khuyến nghị đường tự do < 10% tổng calo/ngày (~ 50g với người 2000kcal), lý tưởng < 5% (~ 25g). Người Việt trung bình tiêu thụ 46g đường/ngày — gần ngưỡng giới hạn tối đa.',
+    details: [
+      'Đường tự do bao gồm: đường thêm vào thức ăn (đường cát, mật ong, siro), nước ngọt, nước ép trái cây đóng hộp, và các sản phẩm chế biến. Không tính đường tự nhiên trong trái cây tươi.',
+      '1 lon nước ngọt (~40g đường) đã gần hết ngưỡng khuyến nghị cả ngày. Trà sữa, cà phê ngọt, bánh ngọt, mì ăn liền — đường ẩn trong hầu hết đồ ăn chế biến sẵn.',
+      'Đường gây nghiện theo cơ chế dopamine tương tự một số chất kích thích — não nhận tín hiệu phần thưởng ngay lập tức, dẫn đến thèm đường nhiều hơn sau mỗi lần ăn.',
+      'Giảm đường từ từ hiệu quả hơn cắt đột ngột: thay thế dần — trà ít đường → không đường, nước ngọt → nước có gas → nước lọc. Vị giác thích nghi trong 2–4 tuần.',
+      'Trái cây tươi có đường tự nhiên nhưng kèm fiber và vi chất — không cần hạn chế như đường tự do. Fiber làm chậm hấp thu, ngăn tăng đường huyết đột ngột.',
+      'Nhãn thực phẩm: tìm "added sugars" (đường thêm vào) — khác với "total sugars" vốn bao gồm cả đường tự nhiên. Các tên ẩn: glucose, fructose, corn syrup, maltose, dextrose.',
+    ],
+    points: [
+      { icon: '🎯', label: '<25g / Ngày Là Lý Tưởng', note: 'WHO: dưới 5% tổng calo — khoảng 6 muỗng cà phê' },
+      { icon: '🥤', label: 'Nước Ngọt Là Nguồn Lớn Nhất', note: '1 lon = ~40g — gần hết ngưỡng cả ngày' },
+      { icon: '🧠', label: 'Đường Gây Thèm Thêm', note: 'Cơ chế dopamine — não muốn nhiều hơn sau mỗi lần ăn' },
+      { icon: '🍊', label: 'Trái Cây Tươi Không Bị Tính', note: 'Fiber đi kèm ngăn tăng đường huyết đột ngột' },
+    ],
+  },
+];
+
+// --- NutriLogCard: dual-zone (toggle Có/Chưa + open modal) ---
+function NutriLogCard({ item, value, onToggle, onOpen }) {
+  const [hovered, setHovered] = useState(false);
+  const isDone = value === 'Có';
+  const isNo = value === 'Chưa';
+  return (
+    <div className="flex items-center gap-3 p-3 transition-all duration-200"
+      style={{ background: hovered ? `rgba(${item.rgb},0.05)` : 'transparent' }}
+      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      {/* Toggle zone */}
+      <div className="flex gap-1.5 shrink-0">
+        {['Có', 'Chưa'].map(opt => (
+          <button key={opt} onClick={() => onToggle(item.key, opt)}
+            className="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all duration-200"
+            style={value === opt
+              ? { background: opt === 'Có' ? item.color : '#ef4444', color: 'white', borderColor: opt === 'Có' ? item.color : '#ef4444' }
+              : { borderColor: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.35)', background: 'transparent' }}>
+            {opt}
+          </button>
+        ))}
+      </div>
+      {/* Content zone — opens modal */}
+      <button onClick={onOpen} className="flex-1 flex items-center gap-2.5 text-left min-w-0 cursor-pointer">
+        <span className={`text-xl shrink-0 transition-all duration-200 ${isDone ? '' : isNo ? 'grayscale opacity-50' : ''}`}>{item.icon}</span>
+        <span className={`text-sm font-semibold leading-snug flex-1 truncate transition-colors ${isDone ? '' : isNo ? 'line-through text-muted' : 'text-text'}`}
+          style={isDone ? { color: item.color } : {}}>
+          {item.label}
+        </span>
+        <span className="text-[11px] font-bold shrink-0 transition-all duration-200"
+          style={{ color: hovered ? item.color : 'rgba(255,255,255,0.2)' }}>Chi tiết →</span>
+      </button>
+    </div>
+  );
+}
+
+// --- NutriLogModal ---
+function NutriLogModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-4" style={{ color: item.color }}>{item.icon} {item.label}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {NUTRI_LOG_ITEMS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // --- Meal plan data ---
 const MEAL_ITEMS = [
   {
@@ -907,6 +1095,7 @@ function F3MealPlan() {
     } catch { return {}; }
   });
   const [mealModal, setMealModal] = useState(null);
+  const [nutriModal, setNutriModal] = useState(null);
 
   function setVal(key, val) {
     const u = { ...log, [key]: val };
@@ -946,25 +1135,30 @@ function F3MealPlan() {
           hasPrev={mealModal > 0} hasNext={mealModal < MEAL_ITEMS.length - 1}
         />
       )}
-      <div className="rounded-2xl border border-border bg-surface p-4">
-        <h3 className="font-bold text-text mb-3 text-lg">Nhật Ký Dinh Dưỡng Hôm Nay</h3>
-        <div className="space-y-2">
-          {[['protein', 'Protein đủ?', '🥩'], ['veg', 'Rau đủ?', '🥦'], ['water', 'Nước đủ?', '💧'], ['sugar', 'Ít đồ ngọt?', '🍬']].map(([k, label, ic]) => (
-            <div key={k} className="flex items-center gap-3">
-              <span>{ic}</span>
-              <span className="text-lg text-text flex-1">{label}</span>
-              <div className="flex gap-2">
-                {['Có', 'Chưa'].map(opt => (
-                  <button key={opt} onClick={() => setVal(k, opt)} className="px-3 py-1 rounded-lg text-base font-bold border transition-colors"
-                    style={log[k] === opt ? { background: COLOR, color: 'white', borderColor: COLOR } : { borderColor: 'var(--border)', color: 'var(--muted)' }}>
-                    {opt}
-                  </button>
-                ))}
-              </div>
-            </div>
+      <div className="rounded-2xl border border-border bg-surface overflow-hidden">
+        <div className="flex items-center justify-between px-3 py-2.5 border-b border-border">
+          <h3 className="font-bold text-text">Nhật Ký Dinh Dưỡng Hôm Nay</h3>
+          <span className="text-xs text-muted">Nhấn để xem chi tiết</span>
+        </div>
+        <div className="divide-y divide-white/5">
+          {NUTRI_LOG_ITEMS.map((item) => (
+            <NutriLogCard key={item.key} item={item} value={log[item.key]} onToggle={setVal} onOpen={() => setNutriModal(item.key)} />
           ))}
         </div>
       </div>
+      {nutriModal !== null && (() => {
+        const item = NUTRI_LOG_ITEMS.find(x => x.key === nutriModal);
+        const idx = NUTRI_LOG_ITEMS.findIndex(x => x.key === nutriModal);
+        return (
+          <NutriLogModal
+            item={item} idx={idx}
+            onClose={() => setNutriModal(null)}
+            onPrev={() => setNutriModal(NUTRI_LOG_ITEMS[Math.max(0, idx - 1)].key)}
+            onNext={() => setNutriModal(NUTRI_LOG_ITEMS[Math.min(NUTRI_LOG_ITEMS.length - 1, idx + 1)].key)}
+            hasPrev={idx > 0} hasNext={idx < NUTRI_LOG_ITEMS.length - 1}
+          />
+        );
+      })()}
     </div>
   );
 }

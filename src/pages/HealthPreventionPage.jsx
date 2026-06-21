@@ -270,6 +270,97 @@ const VACCINE_SCHEDULE = [
   },
 ];
 
+const CANCER_SCREENING = [
+  {
+    num: '01', icon: '🔭', title: 'Ung Thư Đại Tràng',
+    schedule: 'Nội soi từ 45 tuổi, mỗi 10 năm',
+    who: 'Tất cả người ≥ 45 tuổi',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=80',
+    keyFact: '🔭 Ung thư đại tràng và trực tràng (colorectal cancer) là loại ung thư phổ biến thứ 3 thế giới — nhưng là loại ung thư CÓ THỂ PHÒNG NGỪA tốt nhất nhờ tầm soát. Nội soi đại tràng không chỉ phát hiện sớm — còn loại bỏ ngay polyp tiền ung thư trong cùng một thủ thuật, phá vỡ chuỗi tiến triển thành ung thư.',
+    details: [
+      'Tại sao ung thư đại tràng đặc biệt: hành trình từ polyp → ung thư mất 10–15 năm — cửa sổ cơ hội dài nhất trong các loại ung thư. Adenomatous polyp (polyp tuyến) là tiền thân chính: bắt đầu lành tính, dần tích lũy đột biến gen (APC, KRAS, TP53) → ung thư xâm lấn. Nội soi đại tràng phát hiện VÀ cắt bỏ polyp ngay lập tức (polypectomy) → phá vỡ chuỗi tiến triển. Đây là lý do tầm soát ung thư đại tràng có thể NGĂN NGỪA ung thư — không chỉ phát hiện sớm.',
+      'Các phương pháp tầm soát và so sánh: Colonoscopy (nội soi đại tràng): tiêu chuẩn vàng — quan sát toàn bộ đại tràng, cắt polyp ngay. Mỗi 10 năm nếu kết quả bình thường. FIT (Fecal Immunochemical Test — xét nghiệm máu ẩn trong phân): không xâm lấn, tại nhà, mỗi năm. Nếu dương tính → cần nội soi xác nhận. Độ nhạy 60–80% với ung thư. CT colonography (nội soi ảo): không xâm lấn, mỗi 5 năm. Không cắt polyp được. Flexible sigmoidoscopy: chỉ xem phần cuối đại tràng, mỗi 5 năm.',
+      'Ai nên bắt đầu sớm hơn 45 tuổi: nguy cơ cao cần tầm soát từ 40 tuổi (hoặc sớm hơn): tiền sử cá nhân polyp hoặc ung thư đại tràng, người thân bậc một (bố/mẹ, anh/chị/em) có ung thư đại tràng — bắt đầu tầm soát sớm hơn 10 năm so với tuổi chẩn đoán của người thân, hoặc từ 40 tuổi tùy cái nào sớm hơn. Hội chứng di truyền: Lynch syndrome (HNPCC) — bắt đầu tầm soát từ 20–25 tuổi, mỗi 1–2 năm. Familial Adenomatous Polyposis (FAP) — có thể cần cắt toàn bộ đại tràng dự phòng.',
+      'Chuẩn bị nội soi — điều nhiều người e ngại: chuẩn bị ruột (bowel prep) trước nội soi là phần khó chịu nhất: uống dung dịch tẩy ruột (polyethylene glycol) buổi chiều/tối hôm trước. Thủ thuật nội soi thực sự: thường 20–30 phút, dùng thuốc镇静 (sedation) nhẹ — hầu hết bệnh nhân không nhớ thủ thuật. Phục hồi: về nhà trong ngày, có thể có đầy hơi nhẹ. Tỷ lệ biến chứng nặng (thủng, chảy máu): < 0.3% — rất thấp cho thủ thuật xâm lấn. Sự không thoải mái của chuẩn bị < lợi ích của phát hiện ung thư sớm.',
+      'Yếu tố nguy cơ ung thư đại tràng cần biết: chế độ ăn nhiều thịt đỏ/chế biến sẵn và ít chất xơ. Béo phì (BMI > 30) — tăng nguy cơ 30–40%. Ít vận động thể chất. Hút thuốc lá. Rượu bia. Tiểu đường type 2. Bệnh viêm ruột (Crohn, viêm loét đại tràng). Sự kết hợp nhiều yếu tố nguy cơ: người có 3+ yếu tố nguy cơ có thể xem xét bắt đầu tầm soát trước 45 tuổi. Aspirin liều thấp có bằng chứng giảm polyp tái phát — nhưng cần thảo luận với bác sĩ về lợi ích/nguy cơ chảy máu.',
+      'Tình hình Việt Nam: tỷ lệ ung thư đại tràng tại VN đang tăng nhanh — ước tính tăng 3–4%/năm, phản ánh thay đổi lối sống (ăn nhiều thịt đỏ, ít rau, ít vận động, béo phì tăng). Tầm soát ung thư đại tràng chưa phổ biến tại VN — đa số ca được chẩn đoán ở giai đoạn muộn (III–IV). Nội soi đại tràng có sẵn tại các bệnh viện lớn: BV Đại học Y Hà Nội, BV Bạch Mai, BV Chợ Rẫy, BV Ung Bướu TP.HCM. Chi phí khoảng 500.000–1.500.000 VNĐ tùy cơ sở.',
+    ],
+    points: [
+      { icon: '✂️', label: 'Nội soi = phát hiện VÀ cắt polyp ngay — ngăn ngừa ung thư', note: 'Hành trình polyp → ung thư mất 10–15 năm — cửa sổ cơ hội dài nhất' },
+      { icon: '📋', label: 'FIT test tại nhà hàng năm: thay thế nếu không muốn nội soi', note: 'Nếu FIT dương tính → nội soi xác nhận ngay, không trì hoãn' },
+      { icon: '👨‍👩‍👧', label: 'Người thân bậc một có ung thư đại tràng: bắt đầu sớm hơn 10 năm', note: 'Lynch syndrome: tầm soát từ 20–25 tuổi, mỗi 1–2 năm' },
+      { icon: '🍖', label: 'Thịt đỏ/chế biến sẵn + ít chất xơ + béo phì: nhóm nguy cơ cao', note: 'VN: tỷ lệ tăng 3–4%/năm — đa số chẩn đoán giai đoạn muộn' },
+    ],
+  },
+  {
+    num: '02', icon: '🎗️', title: 'Ung Thư Vú',
+    schedule: 'Mamogram từ 40–45 tuổi, mỗi 1–2 năm',
+    who: 'Phụ nữ ≥ 40–45 tuổi',
+    color: '#ec4899', rgb: '236,72,153',
+    img: 'https://images.unsplash.com/photo-1576671081837-49000212a370?w=800&q=80',
+    keyFact: '🎗️ Ung thư vú là loại ung thư phổ biến nhất ở phụ nữ toàn cầu. Phát hiện ở giai đoạn I (u < 2cm, chưa lan hạch): tỷ lệ sống 5 năm > 99%. Phát hiện ở giai đoạn IV (đã di căn): tỷ lệ sống 5 năm chỉ 28%. Mamogram định kỳ là công cụ duy nhất được chứng minh giảm tử vong do ung thư vú ở phụ nữ nguy cơ trung bình.',
+    details: [
+      'Mamogram — tại sao là tiêu chuẩn vàng: mamogram (chụp X-quang vú liều thấp) có thể phát hiện khối u từ 2–3mm — nhỏ hơn nhiều so với ngưỡng sờ thấy bằng tay (thường > 1–2cm). Phát hiện sớm ở giai đoạn này thường không cần hóa trị, ít phẫu thuật triệt để hơn. Digital breast tomosynthesis (3D mammography): cải tiến của mamogram 2D — giảm recall rate và tăng phát hiện ung thư xâm lấn, đặc biệt ở phụ nữ có mô vú dày. Đang thay thế dần mamogram 2D tại các trung tâm lớn.',
+      'Tranh luận về tuổi bắt đầu — tại sao có hướng dẫn khác nhau: USPSTF (2024): khuyến nghị bắt đầu từ 40 tuổi (thay đổi từ 50 tuổi năm 2016). ACS: bắt đầu từ 40 tuổi (có thể lựa chọn), 45 tuổi (khuyến nghị mạnh). Sự khác biệt phản ánh sự đánh đổi: bắt đầu sớm hơn (40 tuổi) → phát hiện sớm hơn VÀ nhiều kết quả dương tính giả hơn (false positives — gây lo lắng và sinh thiết không cần thiết). Quyết định cuối cùng phụ thuộc vào nguy cơ cá nhân và sở thích của bệnh nhân sau khi thảo luận với bác sĩ.',
+      'Phụ nữ nguy cơ cao — tầm soát tăng cường: nguy cơ suốt đời > 20%: cần MRI vú hàng năm bên cạnh mamogram. Đối tượng nguy cơ cao: đột biến gen BRCA1/BRCA2 (nguy cơ ung thư vú suốt đời 50–85%), tiền sử chiếu xạ vùng ngực (ví dụ điều trị u lympho Hodgkin), tiền sử gia đình mạnh (mẹ/chị em có ung thư vú < 50 tuổi). Xét nghiệm gen BRCA: nên xem xét nếu ≥ 2 người thân thế hệ 1 có ung thư vú hoặc 1 người thân có cả ung thư vú + buồng trứng. Tại VN: xét nghiệm BRCA có tại BV Vinmec, BV Ung Bướu.',
+      'Mật độ mô vú (breast density) — yếu tố ít được biết đến: phụ nữ có mô vú dày (dense breast — khoảng 40% phụ nữ): mamogram kém nhạy hơn (ung thư "ẩn" trong mô dày), VÀ bản thân mô vú dày là yếu tố nguy cơ độc lập. Phụ nữ mô vú dày có thể được hưởng lợi từ: siêu âm vú bổ sung hàng năm (tăng phát hiện thêm 2–4 ung thư/1.000 phụ nữ), hoặc MRI vú nếu nguy cơ cao. Kết quả mamogram sẽ ghi mật độ mô vú (BI-RADS density A–D).',
+      'Tự khám vú — vai trò đúng đắn: tự khám vú hàng tháng KHÔNG được chứng minh làm giảm tử vong do ung thư vú trong các RCT lớn. Tuy nhiên: khoảng 30–40% ung thư vú được phát hiện bởi bản thân người bệnh qua cảm nhận thay đổi. Khuyến nghị hiện tại: "breast awareness" — nhận biết vú bình thường của mình và báo cáo ngay bất kỳ thay đổi nào (cục u, da vỏ cam, thụt núm vú, tiết dịch bất thường). Không cần tuân theo quy trình tự khám cố định — chỉ cần nhận biết và báo cáo thay đổi.',
+      'Tầm soát ung thư vú tại Việt Nam: ung thư vú là loại ung thư phổ biến nhất ở phụ nữ VN (chiếm 21.5% các loại ung thư ở phụ nữ). Tuổi mắc bệnh trung bình ở VN thấp hơn các nước phương Tây (40–50 vs 60–65). Tỷ lệ phát hiện giai đoạn muộn tại VN còn cao — phần lớn do không tầm soát định kỳ. Mamogram có tại các BV lớn: BV K Hà Nội, BV Ung Bướu TP.HCM, Vinmec, các BV đa khoa tư nhân. Chi phí mamogram: 300.000–800.000 VNĐ. Siêu âm vú (bổ sung hoặc thay thế ở phụ nữ trẻ/mô vú dày): 150.000–400.000 VNĐ.',
+    ],
+    points: [
+      { icon: '📊', label: 'Giai đoạn I: sống > 99%. Giai đoạn IV: chỉ 28% — phát hiện sớm = sống', note: 'Mamogram phát hiện u từ 2–3mm — nhỏ hơn nhiều so với sờ thấy bằng tay' },
+      { icon: '🧬', label: 'BRCA1/BRCA2: nguy cơ ung thư vú suốt đời 50–85%', note: 'Xét nghiệm gen nếu ≥ 2 người thân gần có ung thư vú — có tại Vinmec' },
+      { icon: '🫁', label: 'Mô vú dày (40% phụ nữ): mamogram kém nhạy, cần siêu âm bổ sung', note: 'BI-RADS density C–D trên kết quả mamogram = mô vú dày' },
+      { icon: '🇻🇳', label: 'VN: phụ nữ mắc ung thư vú trẻ hơn TG — bắt đầu tầm soát từ 40', note: '21.5% ung thư ở nữ VN — phần lớn phát hiện giai đoạn muộn do không tầm soát' },
+    ],
+  },
+  {
+    num: '03', icon: '🔬', title: 'Ung Thư Cổ Tử Cung',
+    schedule: 'Pap smear mỗi 3 năm (từ 21t) hoặc HPV test mỗi 5 năm (từ 25t)',
+    who: 'Phụ nữ 21–65 tuổi',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80',
+    keyFact: '🔬 Ung thư cổ tử cung là loại ung thư CÓ THỂ LOẠI TRỪ HOÀN TOÀN — qua kết hợp vaccine HPV (ngăn nhiễm) và tầm soát định kỳ (phát hiện tổn thương tiền ung thư). Khi điều trị tiền ung thư (CIN 2–3): tỷ lệ khỏi > 95%. Ung thư xâm lấn giai đoạn IV: tỷ lệ sống 5 năm chỉ 17%.',
+    details: [
+      'Hành trình từ HPV → tiền ung thư → ung thư: nhiễm HPV nguy cơ cao (chủ yếu HPV-16/18) → tế bào cổ tử cung bắt đầu biến đổi bất thường. CIN 1 (tổn thương nhẹ): 60–80% tự khỏi. CIN 2 (trung bình): 40–50% tự khỏi, 20% tiến triển. CIN 3 (nặng, tiền ung thư): ít tự khỏi hơn, 12–30% tiến triển thành ung thư xâm lấn trong 10 năm nếu không điều trị. Toàn bộ hành trình từ nhiễm HPV → ung thư xâm lấn: trung bình 10–20 năm — tầm soát định kỳ có đủ thời gian phát hiện và can thiệp.',
+      'Pap smear vs HPV test — sự khác biệt: Pap smear (cytology): lấy tế bào cổ tử cung, soi dưới kính hiển vi để phát hiện tế bào bất thường. Độ nhạy 55–80% cho CIN 2+. Mỗi 3 năm. HPV test: phát hiện DNA virus HPV nguy cơ cao trong mẫu tế bào cổ tử cung. Độ nhạy > 95% cho CIN 2+. Mỗi 5 năm. Co-test (Pap smear + HPV test cùng lúc): độ nhạy cao nhất, mỗi 5 năm. Xu hướng hiện tại: chuyển sang HPV test đơn thuần hoặc co-test thay vì chỉ Pap smear — do độ nhạy cao hơn và chu kỳ dài hơn.',
+      'Đọc kết quả Pap smear và HPV test: Pap smear bình thường: lặp lại theo lịch. ASC-US (Atypical Squamous Cells of Undetermined Significance): làm HPV test phản xạ — nếu HPV âm tính: quay lại tầm soát bình thường; nếu HPV dương tính: soi cổ tử cung (colposcopy). LSIL (Low-grade Squamous Intraepithelial Lesion = CIN 1): thường theo dõi. HSIL (High-grade = CIN 2–3): soi cổ tử cung và sinh thiết → điều trị. HPV dương tính (không có kết quả cytology bất thường): xét nghiệm lại sau 1 năm hoặc soi cổ tử cung tùy chủng (HPV-16/18 vs chủng khác).',
+      'Điều trị tiền ung thư — can thiệp đơn giản, hiệu quả cao: CIN 2–3 được điều trị bằng: LEEP (Loop Electrosurgical Excision Procedure) — cắt bỏ mô cổ tử cung bằng vòng điện dưới gây tê tại chỗ, 10–15 phút, thực hiện tại phòng khám ngoại trú. Tỷ lệ thành công > 90–95%. Cryotherapy (áp lạnh): chỉ cho tổn thương nhỏ, ít được dùng hơn. Conization (khoét chóp): lấy phần lớn hơn, dùng khi nghi ngờ xâm lấn. Sau điều trị: theo dõi chặt với HPV test + Pap smear mỗi 6–12 tháng × 3 năm.',
+      'Tại sao có thể ngừng tầm soát sau 65 tuổi: phụ nữ 65+ tuổi có lịch sử tầm soát đầy đủ và kết quả bình thường (3 lần Pap âm tính hoặc 2 lần co-test âm tính trong 10 năm, với lần gần nhất trong 5 năm) có thể ngừng tầm soát — nguy cơ phát triển ung thư cổ tử cung sau này rất thấp. KHÔNG áp dụng cho: phụ nữ có lịch sử CIN 2+ (cần theo dõi 20–25 năm sau điều trị), suy giảm miễn dịch, hoặc chưa tầm soát đầy đủ.',
+      'Tầm soát ung thư cổ tử cung tại Việt Nam: ung thư CTC là loại ung thư thường gặp thứ 2 ở phụ nữ VN (sau ung thư vú). Tỷ lệ tầm soát còn thấp đặc biệt ở nông thôn. Tầm soát có tại hầu hết BV phụ sản: BV Từ Dũ, BV Phụ Sản Hà Nội, các BV đa khoa. Chi phí Pap smear: 100.000–300.000 VNĐ. HPV test: 500.000–1.000.000 VNĐ. Chương trình tầm soát miễn phí/chi phí thấp: một số tỉnh thành có chương trình sàng lọc cộng đồng — kiểm tra tại trạm y tế địa phương.',
+    ],
+    points: [
+      { icon: '🛡️', label: 'HPV test mỗi 5 năm: độ nhạy > 95% cho CIN 2+ — tốt hơn Pap smear', note: 'Co-test (Pap + HPV): độ nhạy cao nhất, chu kỳ 5 năm thay vì 3 năm' },
+      { icon: '✂️', label: 'LEEP điều trị CIN 2–3: 10–15 phút, ngoại trú, hiệu quả > 95%', note: 'Tiền ung thư can thiệp đơn giản → ung thư xâm lấn cần phẫu thuật nặng' },
+      { icon: '🎂', label: 'Ngừng tầm soát sau 65t nếu lịch sử bình thường ≥ 10 năm', note: 'Không áp dụng nếu tiền sử CIN 2+ — cần theo dõi thêm 20–25 năm' },
+      { icon: '💜', label: 'Vaccine HPV + tầm soát định kỳ = có thể loại trừ ung thư CTC', note: 'Australia đã giảm 90%+ ung thư CTC ở thế hệ được tiêm vaccine' },
+    ],
+  },
+  {
+    num: '04', icon: '🫁', title: 'Ung Thư Phổi',
+    schedule: 'CT liều thấp hàng năm (50–80 tuổi, hút ≥ 20 gói-năm)',
+    who: 'Người hút thuốc nặng 50–80 tuổi',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=800&q=80',
+    keyFact: '🫁 Ung thư phổi giết chết nhiều người hơn ung thư vú, đại tràng, và tuyến tiền liệt cộng lại. 85% ca được chẩn đoán ở giai đoạn muộn (III–IV) khi triệu chứng đã rõ ràng. NLST (2011): CT liều thấp hàng năm giảm 20% tử vong do ung thư phổi và 6.7% tổng tử vong — lợi ích lớn nhất từng thấy trong tầm soát ung thư.',
+    details: [
+      'Tại sao ung thư phổi khó phát hiện sớm: phổi không có thụ thể đau — u phổi giai đoạn sớm hoàn toàn không có triệu chứng. Đến khi ho ra máu, đau ngực, hoặc khó thở: thường đã giai đoạn III–IV. Tỷ lệ sống 5 năm theo giai đoạn: giai đoạn IA (u < 3cm, chưa lan): 92%. Giai đoạn IIB: 53%. Giai đoạn IIIA: 36%. Giai đoạn IV (di căn): 10%. Đây là lý do tầm soát bằng CT có thể cứu mạng — phát hiện u ở giai đoạn IA khi có thể cắt bỏ hoàn toàn.',
+      'LDCT (Low-Dose CT) — tại sao không phải X-quang ngực: X-quang ngực thông thường: độ phân giải thấp, không phát hiện được u < 1cm, bỏ sót nhiều u ở giai đoạn sớm — KHÔNG được chứng minh giảm tử vong do ung thư phổi. LDCT (CT liều thấp): cắt lớp 3D, phân giải cao, phát hiện u từ 3–4mm. Liều phóng xạ thấp hơn CT ngực thông thường 80–90% — tương đương khoảng 5–10 lần X-quang ngực. Thực hiện trong < 10 phút, không cần thuốc cản quang, không đau.',
+      'NLST và NELSON — hai nghiên cứu thay đổi hướng dẫn: NLST (National Lung Screening Trial, Mỹ, 53.454 người): LDCT hàng năm × 3 năm vs X-quang ngực → giảm 20% tử vong do ung thư phổi, giảm 6.7% tử vong mọi nguyên nhân. NELSON trial (Hà Lan/Bỉ, 2020): LDCT × 4 vòng → giảm 24% tử vong ở nam, giảm 33% ở nữ. Đây là cơ sở để USPSTF, ACS, ALA khuyến nghị tầm soát LDCT hàng năm cho người đủ tiêu chuẩn.',
+      '"Gói-năm" (pack-year) — cách tính: 1 gói-năm = hút 1 gói (20 điếu)/ngày × 1 năm. Công thức: pack-years = (số gói/ngày) × (số năm hút). Ví dụ: hút 1 gói/ngày × 20 năm = 20 pack-years. Hút nửa gói/ngày × 40 năm = 20 pack-years. Tiêu chuẩn đủ điều kiện LDCT: 50–80 tuổi, lịch sử hút ≥ 20 pack-years, đang hút hoặc đã bỏ < 15 năm. Người bỏ thuốc > 15 năm: nguy cơ giảm dần nhưng vẫn cao hơn người không hút — tham khảo bác sĩ.',
+      'Kết quả dương tính giả — thực tế cần biết: LDCT phát hiện nhiều "nốt phổi" (pulmonary nodules) — đa số lành tính. Trong NLST: 39.1% người được CT có ít nhất 1 kết quả dương tính; trong số đó, 96.4% là dương tính giả (không phải ung thư). Quy trình xử lý nốt phổi: nốt nhỏ < 6mm → theo dõi CT lần tiếp theo (1 năm). Nốt 6–8mm → CT theo dõi 3–6 tháng. Nốt > 8mm → PET scan, sinh thiết. Hầu hết không cần sinh thiết ngay — được quản lý theo giao thức Lung-RADS.',
+      'Ung thư phổi ở người không hút thuốc — thực tế đáng lo ngại: khoảng 15–20% ung thư phổi ở người KHÔNG bao giờ hút thuốc (đặc biệt ở phụ nữ châu Á). Yếu tố nguy cơ: hút thuốc thụ động, ô nhiễm không khí (PM2.5, radon), tiếp xúc amiăng, đột biến gen (EGFR mutations phổ biến ở người không hút, đặc biệt phụ nữ Đông Á). Tại VN: ô nhiễm không khí Hà Nội và TP.HCM ở mức đáng lo ngại. Hiện chưa có khuyến nghị tầm soát chuẩn cho người không hút thuốc — nhưng bất kỳ triệu chứng nghi ngờ (ho kéo dài, khó thở, đau ngực) cần khám ngay.',
+    ],
+    points: [
+      { icon: '📉', label: 'LDCT giảm 20–33% tử vong ung thư phổi — lợi ích tầm soát lớn nhất', note: 'Giai đoạn IA: sống > 92%. Giai đoạn IV: chỉ 10% — phát hiện sớm = khác biệt hoàn toàn' },
+      { icon: '🧮', label: 'Tính pack-years: gói/ngày × số năm hút. ≥ 20 = đủ điều kiện', note: 'Bỏ thuốc < 15 năm + 50–80 tuổi: vẫn đủ điều kiện tầm soát LDCT' },
+      { icon: '⚡', label: 'X-quang ngực KHÔNG giảm tử vong ung thư phổi — chỉ LDCT hiệu quả', note: 'LDCT liều thấp hơn CT thường 80–90% — an toàn để làm hàng năm' },
+      { icon: '👩', label: 'Phụ nữ châu Á không hút thuốc: đột biến EGFR — nguy cơ riêng', note: 'Ô nhiễm PM2.5 VN + nấu ăn khói là yếu tố nguy cơ cần lưu ý' },
+    ],
+  },
+];
+
 function VaccineCard({ item, onClick }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -367,6 +458,116 @@ function VaccineModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
             >← Trước</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 06</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+function ScreeningCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-4 cursor-pointer transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.55)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 20px rgba(${item.rgb},0.12)` : 'none', transform: hovered ? 'translateY(-2px)' : 'translateY(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
+          style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>{item.icon}</div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap mb-2">
+            <span className="font-bold text-sm text-text leading-snug">{item.title}</span>
+            <span className="text-xs px-2 py-0.5 rounded-full font-bold transition-opacity duration-200"
+              style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>Chi tiết →</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: `rgba(${item.rgb},0.1)`, color: item.color }}>📅 {item.schedule}</span>
+            <span className="text-xs px-2 py-0.5 rounded-full text-muted" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>👤 {item.who}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ScreeningModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.title} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>Tầm soát {item.num}/04</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-2 leading-snug" style={{ color: item.color }}>{item.title}</h2>
+          <div className="flex flex-wrap gap-2 mb-5">
+            <span className="text-xs px-3 py-1 rounded-full font-bold" style={{ background: `rgba(${item.rgb},0.12)`, color: item.color }}>📅 {item.schedule}</span>
+            <span className="text-xs px-3 py-1 rounded-full text-muted" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>👤 {item.who}</span>
+          </div>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 04</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
@@ -522,6 +723,7 @@ export default function HealthPreventionPage() {
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [pillarModal, setPillarModal] = useState(null);
   const [vaccineModal, setVaccineModal] = useState(null);
+  const [screeningModal, setScreeningModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -604,14 +806,12 @@ export default function HealthPreventionPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold text-text mb-3">Tầm Soát Ung Thư Theo Tuổi</h3>
-          <div className="space-y-2 text-lg text-muted">
-            <p>• <strong className="text-text">Ung thư đại tràng:</strong> Nội soi bắt đầu từ 45 tuổi, mỗi 10 năm (hoặc mỗi năm nếu FIT dương tính)</p>
-            <p>• <strong className="text-text">Ung thư vú:</strong> Mamogram từ 40–45 tuổi, mỗi 1–2 năm</p>
-            <p>• <strong className="text-text">Ung thư cổ tử cung:</strong> Pap smear từ 21 tuổi, mỗi 3 năm; hoặc HPV test từ 25 tuổi, mỗi 5 năm</p>
-            <p>• <strong className="text-text">Ung thư phổi:</strong> CT liều thấp cho người 50–80 tuổi hút ≥ 20 gói-năm</p>
-          </div>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Tầm Soát Ung Thư Theo Tuổi</h2>
+        <p className="text-muted text-lg mb-6">Phát hiện sớm là sự khác biệt giữa chữa khỏi và không chữa được. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {CANCER_SCREENING.map((s, i) => (
+            <ScreeningCard key={i} item={s} onClick={() => setScreeningModal(i)} />
+          ))}
         </div>
       </RevealBlock>
 
@@ -637,6 +837,17 @@ export default function HealthPreventionPage() {
           onNext={() => setPillarModal(i => Math.min(PREVENTION_PILLARS.length - 1, i + 1))}
           hasPrev={pillarModal > 0}
           hasNext={pillarModal < PREVENTION_PILLARS.length - 1}
+        />
+      )}
+
+      {screeningModal !== null && (
+        <ScreeningModal
+          item={CANCER_SCREENING[screeningModal]}
+          onClose={() => setScreeningModal(null)}
+          onPrev={() => setScreeningModal(i => Math.max(0, i - 1))}
+          onNext={() => setScreeningModal(i => Math.min(CANCER_SCREENING.length - 1, i + 1))}
+          hasPrev={screeningModal > 0}
+          hasNext={screeningModal < CANCER_SCREENING.length - 1}
         />
       )}
     </div>

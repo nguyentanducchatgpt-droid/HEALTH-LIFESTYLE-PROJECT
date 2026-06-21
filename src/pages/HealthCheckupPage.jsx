@@ -329,6 +329,97 @@ const EXTENDED_PACKAGES = [
   },
 ];
 
+const PREP_TIPS = [
+  {
+    num: '01', icon: '🍽️', title: 'Nhịn ăn đúng cách',
+    color: '#14b8a6', rgb: '20,184,166',
+    subtitle: 'Glucose · Cholesterol · Triglyceride · Hormone tuyến giáp',
+    triggers: 'Buổi tối trước và sáng hôm đi lấy máu — áp dụng cho hầu hết gói khám cơ bản',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+    keyFact: '🍽️ Nhịn ăn đúng cách là bước chuẩn bị quan trọng nhất — sai sót nhỏ có thể làm kết quả xét nghiệm sai lệch đáng kể. Glucose máu sau ăn tăng 20–50%, triglyceride tăng 50–100%, và nhiều chỉ số khác thay đổi trong 8–12 giờ sau ăn. Hiểu đúng QUY TẮC nhịn ăn giúp bạn có kết quả chính xác nhất.',
+    details: [
+      'Thời gian nhịn ăn tối thiểu cho từng loại xét nghiệm: Glucose đói (fasting glucose): nhịn ăn ≥ 8 giờ — bắt buộc, không thể thay thế. Ăn trước → glucose giả tăng → chẩn đoán sai tiểu đường. Lipid panel (Cholesterol/LDL/HDL/Triglyceride): nhịn ≥ 9–12 giờ — Triglyceride đặc biệt nhạy với thức ăn, tăng 50–100% sau bữa ăn nhiều mỡ. Xét nghiệm sắt (Serum iron): nhịn ≥ 8–12 giờ — sắt huyết thanh dao động lớn trong ngày và tăng sau ăn. HbA1c, CBC (huyết đồ), chức năng thận, chức năng gan: KHÔNG cần nhịn ăn — có thể làm bất kỳ lúc nào.',
+      'Được phép và không được phép trong thời gian nhịn ăn: ✅ ĐƯỢC PHÉP: Nước lọc thường (uống nhiều để dễ lấy máu, tĩnh mạch đầy hơn). Thuốc theo đơn bác sĩ — uống với ít nước lọc (trừ khi bác sĩ dặn ngừng thuốc cụ thể). ❌ KHÔNG ĐƯỢC: Bất kỳ thức ăn hoặc đồ uống có calo: cà phê (kể cả đen không đường — kích thích gan tiết glucose), trà, nước ép, sữa, kẹo cao su có đường, vitamin gummies. Hút thuốc lá: nicotine làm tăng glucose và catecholamine. Tập thể dục cường độ cao ngay trước lấy máu: tăng enzym cơ (CK, ALT/AST), lactate, glucose.',
+      'Thời điểm lý tưởng đi lấy máu: 7–9 giờ sáng sau nhịn ăn qua đêm — cơ thể ở trạng thái cơ bản (basal state), cortisol buổi sáng ổn định, glucose chưa bị ảnh hưởng bởi hoạt động ban ngày. Tránh lấy máu sau 11 giờ sáng — nhịn ăn kéo dài > 16 giờ bắt đầu gây tăng triglyceride do lipolysis (phân giải mỡ). Ngày trước xét nghiệm: ăn bình thường, không cần ăn kiêng đặc biệt (chỉ tránh bữa tối quá nhiều mỡ và rượu bia). Rượu bia: không uống 24–48 giờ trước khi xét nghiệm gan và lipid.',
+      'Các xét nghiệm nội tiết tố có yêu cầu riêng biệt: TSH (tuyến giáp): không cần nhịn ăn, nhưng nên lấy máu buổi sáng (TSH cao nhất lúc nửa đêm đến sáng sớm, thấp nhất chiều tối). Nếu đang uống thuốc tuyến giáp (Levothyroxine): uống THUỐC SAU KHI lấy máu (uống trước sẽ làm TSH giảm giả tạo). Testosterone: lấy máu 7–10 giờ sáng (T cao nhất buổi sáng, giảm 20–35% vào chiều tối). Cortisol: lấy máu trước 9 giờ sáng cho cortisol buổi sáng chuẩn. Insulin đói: nhịn ăn ≥ 8 giờ — quan trọng như glucose để đánh giá kháng insulin.',
+      'Uống đủ nước — bước thường bị bỏ qua: Mất nước làm máu đặc hơn → tĩnh mạch xẹp → lấy máu khó, cần chích nhiều lần. Mất nước nhẹ làm tăng: creatinine (giả tăng 10–20%), hematocrit, protein, natri. Uống 1–2 ly nước lọc (400–500ml) 30–60 phút trước khi lấy máu: giúp tĩnh mạch dễ lấy hơn mà không ảnh hưởng kết quả. Không uống quá nhiều nước (> 1 lít trong 1 giờ): có thể pha loãng natri (hyponatremia giả). Nguyên tắc: nhịn ĂN nhưng KHÔNG nhịn NƯỚC (nước lọc thường).',
+      'Xử lý tình huống đặc biệt và lưu ý khi đến phòng xét nghiệm: Quên nhịn ăn sáng (đã ăn rồi): thông báo cho y tá/bác sĩ ngay — không giấu. Có thể lấy máu HbA1c, CBC, chức năng tuyến giáp (không bị ảnh hưởng), hoặc đặt lịch lại cho glucose và lipid. Tiểu đường đang dùng insulin: không bỏ insulin sáng — tiêm sau khi lấy máu. Thảo luận với bác sĩ về insulin regimen trong ngày xét nghiệm. Phụ nữ trong kỳ kinh: ảnh hưởng CBC (hồng cầu, hematocrit thấp hơn). Thông báo để ghi chú vào phiếu. Bổ sung sắt: dừng 3–5 ngày trước khi xét nghiệm sắt huyết thanh và ferritin để tránh nhiễu.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Nhịn ≥ 8h: glucose; ≥ 12h: lipid — không có ngoại lệ', note: 'HbA1c, CBC, chức năng thận, TSH: không cần nhịn — làm bất kỳ lúc nào' },
+      { icon: '💧', label: 'Uống 400–500ml nước lọc trước lấy máu — tĩnh mạch đầy, dễ lấy', note: 'Nhịn ĂN nhưng không nhịn NƯỚC — đây là quy tắc số 1 bị nhầm nhất' },
+      { icon: '🕗', label: '7–9 giờ sáng: thời điểm lý tưởng cho hầu hết xét nghiệm', note: 'Nhịn > 16 giờ: triglyceride tăng giả do lipolysis — cũng không tốt' },
+      { icon: '⚠️', label: 'Ăn rồi mới nhớ: thông báo ngay — không giấu y tá hoặc bác sĩ', note: 'Rượu bia: tránh 24–48h trước xét nghiệm gan và lipid' },
+    ],
+  },
+  {
+    num: '02', icon: '📋', title: 'Mang hồ sơ và thuốc đang dùng',
+    color: '#f59e0b', rgb: '245,158,11',
+    subtitle: 'Bệnh án cũ · Kết quả xét nghiệm trước · Toa thuốc · Tiền sử gia đình',
+    triggers: 'Mỗi lần đi khám — đặc biệt quan trọng khi gặp bác sĩ mới hoặc khám tổng quát hàng năm',
+    img: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80',
+    keyFact: '📋 Bác sĩ cần biết bạn là ai về mặt y tế — không chỉ tình trạng hôm nay. Hồ sơ y tế đầy đủ giúp bác sĩ phát hiện xu hướng bất thường, tránh kê thuốc tương tác, không làm lại xét nghiệm đã có, và đưa ra quyết định điều trị cá nhân hóa. 5 phút chuẩn bị hồ sơ có thể tiết kiệm hàng triệu đồng và quan trọng hơn là tính mạng.',
+    details: [
+      'Kết quả xét nghiệm và hình ảnh cũ — tài sản y tế quý nhất: Mang theo kết quả của MỌI lần khám trong 2–3 năm gần nhất: xét nghiệm máu, nước tiểu, X-quang, siêu âm, CT, MRI, ECG, nội soi. Tại sao: xu hướng theo năm quan trọng hơn con số tuyệt đối. LDL 3.5 mmol/L trong 5 năm liên tục ổn định khác hoàn toàn với LDL từ 2.8 tăng lên 3.5 trong 1 năm. Creatinine tăng 20% so với năm ngoái (dù vẫn trong ngưỡng "bình thường"): dấu hiệu suy giảm chức năng thận đang tiến triển. Cách lưu trữ thực tế: scan/chụp ảnh tất cả phiếu kết quả lưu vào Google Drive hoặc folder điện thoại theo năm — không chỉ giữ bản gốc dễ mất.',
+      'Danh sách thuốc đang dùng — không bao giờ bỏ qua: Liệt kê ĐẦY ĐỦ: tên thuốc, liều lượng, tần suất, thời điểm uống. Bao gồm: thuốc kê đơn, thuốc không kê đơn (Paracetamol, NSAID, kháng histamine), thực phẩm chức năng (vitamin, omega-3, thảo dược), thuốc tránh thai, thuốc bổ sung hormone. Tại sao quan trọng: Metformin ảnh hưởng Vitamin B12 (cần theo dõi). Statin + một số kháng sinh/thuốc kháng nấm → tăng nguy cơ độc cơ (myopathy). Warfarin tương tác với hàng trăm loại thuốc và thực phẩm. Thực phẩm chức năng thảo dược: nhiều loại ảnh hưởng enzyme gan CYP450 — bác sĩ cần biết. Cách đơn giản: chụp ảnh tất cả vỉ thuốc và lọ thực phẩm chức năng bạn đang dùng.',
+      'Tiền sử bệnh bản thân và gia đình — bối cảnh y tế cá nhân: Tiền sử bản thân: các bệnh đã được chẩn đoán (kể cả "đã khỏi"), phẫu thuật và can thiệp (kể cả ngày tháng), dị ứng thuốc và phản ứng bất lợi đã gặp (ghi cụ thể biểu hiện — "nổi mẩn đỏ" vs "khó thở" là hai mức độ khác nhau hoàn toàn), tiêm vaccine (đặc biệt quan trọng để biết còn thiếu vaccine nào). Tiền sử gia đình: bố/mẹ/anh/chị/em ruột mắc bệnh gì, mắc năm mấy tuổi? Bệnh tim mạch sớm (< 55 tuổi ở cha, < 65 tuổi ở mẹ), ung thư (loại gì?), đột quỵ, tiểu đường, loãng xương, bệnh thần kinh — ảnh hưởng trực tiếp đến chiến lược tầm soát của bạn.',
+      'Toa thuốc và hồ sơ chuyên khoa — đặc biệt quan trọng khi khám đa khoa: Toa thuốc gốc (original prescription): bác sĩ thấy liều và lý do kê ban đầu — giúp tránh kê đè, chỉnh liều phù hợp. Thư giới thiệu hoặc tóm tắt từ bác sĩ chuyên khoa: ví dụ tóm tắt của bác sĩ tim mạch, nội tiết, thận — bác sĩ đa khoa cần để có bức tranh toàn diện. Kết quả sinh thiết, giải phẫu bệnh: quan trọng nếu có tiền sử u/khối bất thường. Trong tình trạng khẩn cấp: thông tin thuốc đang dùng có thể ngăn tương tác thuốc nghiêm trọng. Ứng dụng quản lý sức khỏe: nhiều bệnh viện lớn tại VN có app lưu hồ sơ điện tử — sử dụng để không bao giờ quên mang hồ sơ.',
+      'Ghi chú về các triệu chứng mới xuất hiện: kể từ lần khám trước, bạn có triệu chứng gì mới không? Ghi chú trước khi đến vì rất dễ quên khi gặp bác sĩ. Mô tả theo OPQRST: Onset (bắt đầu khi nào?), Provocation/Palliation (gì làm nặng hơn/nhẹ hơn?), Quality (đặc điểm: đau như thế nào?), Radiation (lan tỏa đâu?), Severity (mức độ 1–10?), Timing (liên tục hay từng cơn?). Thay đổi về cân nặng: tăng/giảm > 5kg không chủ ý trong 3–6 tháng là dấu hiệu quan trọng. Thay đổi giấc ngủ, năng lượng, tâm trạng — những điều bạn cho là "bình thường" có thể không bình thường về mặt y học.',
+      'Tổ chức hồ sơ y tế cá nhân một lần để dùng mãi: Tạo folder Google Drive "Hồ sơ Sức Khỏe" với các thư mục con: Xét nghiệm máu (theo năm), Hình ảnh (X-quang, siêu âm, CT), Đơn thuốc, Kết quả nội soi, Tiêm chủng. Chia sẻ folder với người thân hoặc người chăm sóc chính để họ có thể truy cập khi cần (đặc biệt trong cấp cứu). Apple Health / Google Fit / Samsung Health: có thể lưu thông tin sức khỏe cơ bản, thuốc đang dùng, dị ứng — hiển thị từ màn hình khóa trong cấp cứu. Quy tắc vàng: scan TẤT CẢ phiếu kết quả ngay trong ngày nhận — để phòng làm mất bản gốc.',
+    ],
+    points: [
+      { icon: '📈', label: 'Xu hướng theo năm: LDL tăng 20% trong ngưỡng vẫn là cảnh báo', note: 'Con số tuyệt đối kém ý nghĩa hơn xu hướng thay đổi theo thời gian' },
+      { icon: '💊', label: 'Chụp ảnh TẤT CẢ thuốc + thực phẩm chức năng đang dùng', note: 'Thảo dược "tự nhiên" có thể tương tác nghiêm trọng với thuốc kê đơn' },
+      { icon: '👨‍👩‍👧', label: 'Tiền sử gia đình bệnh tim/ung thư: quyết định chiến lược tầm soát của bạn', note: 'Bố tim mạch sớm < 55t → bạn cần tầm soát sớm hơn 10–15 năm' },
+      { icon: '☁️', label: 'Google Drive "Hồ Sơ Sức Khỏe": scan phiếu trong ngày nhận, dùng mãi', note: 'Chia sẻ folder với người thân — truy cập được trong tình huống cấp cứu' },
+    ],
+  },
+  {
+    num: '03', icon: '💬', title: 'Chuẩn bị câu hỏi cho bác sĩ',
+    color: '#a855f7', rgb: '168,85,247',
+    subtitle: 'Danh sách câu hỏi · Ưu tiên triệu chứng · Mục tiêu của buổi khám',
+    triggers: 'Buổi tối trước hoặc sáng sớm trước khi đến phòng khám — 5 phút chuẩn bị, tiết kiệm nhiều thứ',
+    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    keyFact: '💬 Cuộc khám bệnh trung bình kéo dài 7–15 phút. Không chuẩn bị → bạn ra khỏi phòng khám mà vẫn không biết kết quả xét nghiệm có ý nghĩa gì, không biết phải làm gì tiếp theo, và còn nhiều câu hỏi quan trọng chưa kịp hỏi. 5 phút chuẩn bị câu hỏi trước là đầu tư nhỏ có tác động lớn nhất đến chất lượng chăm sóc sức khỏe của bạn.',
+    details: [
+      'Tại sao hầu hết cuộc khám bệnh không đạt hiệu quả tối đa: Bệnh nhân thường ra khỏi phòng khám mà không hiểu: chẩn đoán cụ thể là gì và ý nghĩa, kết quả xét nghiệm bất thường nghĩa là gì trong thực tế, cần làm gì tiếp theo và khi nào, khi nào cần gặp bác sĩ khẩn trước lần tái khám. Nghiên cứu (Makoul, 2001): bệnh nhân nhớ < 50% thông tin được nói trong phòng khám. Stress, âm thanh, thông tin nhiều → khả năng tiếp thu giảm mạnh. Giải pháp đơn giản nhất: viết câu hỏi ra giấy/điện thoại TRƯỚC khi vào phòng khám.',
+      'Cấu trúc buổi khám hiệu quả — 3 câu hỏi bắt đầu: Jerry Groopman MD (How Doctors Think): bác sĩ thường ngắt bệnh nhân trong 18 giây đầu. Bạn có thể thay đổi điều này bằng cách bắt đầu bằng: "Tôi có 3 điều muốn nói hôm nay — có được không?" rồi trình bày ngắn gọn. Kết thúc buổi khám, luôn hỏi: "Điều quan trọng nhất tôi cần làm sau buổi khám hôm nay là gì?" → câu hỏi đơn giản nhất nhưng đảm bảo bạn ra về với action plan rõ ràng. Nếu không hiểu điều gì: "Bác sĩ có thể giải thích lại bằng ngôn ngữ thông thường không?" — đây là quyền của bạn, không phải yêu cầu quá đáng.',
+      'Danh sách câu hỏi mẫu cho cuộc khám định kỳ: Về kết quả xét nghiệm: "Chỉ số nào bất thường và mức độ bất thường như thế nào?", "So với năm ngoái, xu hướng của tôi có đáng lo ngại không?", "Ngưỡng nào thì cần điều trị bằng thuốc?". Về lối sống: "Thay đổi gì tôi có thể làm ngay để cải thiện kết quả này?", "Trong 3 tháng tới tôi nên tập trung thay đổi điều gì nhất?". Về tầm soát: "Có xét nghiệm nào tôi nên làm thêm dựa trên tuổi/tiền sử gia đình không?", "Khi nào thì cần quay lại khám?". Về thuốc đang dùng: "Thuốc này có thể ảnh hưởng đến kết quả xét nghiệm nào không?".',
+      'Triệu chứng cần ưu tiên trình bày — OPQRST: Khi mô tả triệu chứng, sử dụng khung OPQRST giúp bác sĩ phân loại nhanh: Onset: "Bắt đầu khi nào? Đột ngột hay từ từ?". Provocation: "Gì làm nặng hơn? Gì làm nhẹ hơn?". Quality: "Đặc điểm: đau âm ỉ, nhói, rát, tức, đè?". Radiation: "Có lan ra đâu không?". Severity: "Mức độ 1–10?". Timing: "Liên tục hay từng cơn? Kéo dài bao lâu?". Nếu có nhiều triệu chứng: ưu tiên 1–2 điều quan trọng nhất — bác sĩ không thể xử lý 10 vấn đề trong 10 phút. Chuẩn bị trước giúp bạn biết mình muốn ưu tiên điều gì.',
+      'Hiểu kết quả xét nghiệm — câu hỏi thông minh để hỏi bác sĩ: Đừng chỉ hỏi "Có bình thường không?" mà hỏi: "Kết quả này nằm ở đâu trong phân phối bình thường — thấp, trung bình, cao?". "Ngưỡng "bình thường" trong phiếu kết quả là ngưỡng dân số chung — ngưỡng tối ưu cho tôi cụ thể là bao nhiêu?". LDL 2.9 mmol/L: trong ngưỡng bình thường, nhưng nếu bạn đã có bệnh tim mạch, mục tiêu < 1.8 mmol/L. Glucose 5.5 mmol/L: bình thường, nhưng nếu có yếu tố nguy cơ tiểu đường, cần theo dõi chặt hơn. Hỏi về follow-up: "Nếu tôi thay đổi lối sống trong 3 tháng, chỉ số này có thể cải thiện bao nhiêu %?".',
+      'Ghi chú trong phòng khám — không xấu hổ, là thông minh: Ghi chú ngay trong phòng khám: không cần giải thích, bác sĩ tốt đều hoan nghênh bệnh nhân chủ động. Ghi: chẩn đoán chính xác (spelling), tên thuốc mới kê và lý do, ngày tái khám và điều kiện quay lại sớm hơn, xét nghiệm cần làm thêm và khi nào làm. Hỏi thêm nếu chưa rõ: "Tôi có thể chụp ảnh toa thuốc không?" — hầu hết bác sĩ đồng ý. Sau buổi khám: đọc lại ghi chú trong vòng 24 giờ — ghi chú thêm câu hỏi mới nảy sinh. Nếu bệnh viện có cổng thông tin bệnh nhân (patient portal): xem kết quả và ghi chú của bác sĩ ở đó.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Cuộc khám trung bình 7–15 phút: chuẩn bị câu hỏi để tận dụng tối đa', note: 'Bệnh nhân nhớ < 50% thông tin trong phòng khám — ghi chú ngay tại chỗ' },
+      { icon: '🎯', label: '"Điều quan trọng nhất tôi cần làm sau hôm nay là gì?" — câu hỏi vàng', note: 'Luôn kết thúc buổi khám với action plan rõ ràng, không mơ hồ' },
+      { icon: '📝', label: 'OPQRST: khung mô tả triệu chứng giúp bác sĩ phân loại nhanh nhất', note: 'Ưu tiên 1–2 vấn đề chính — không thể giải quyết 10 vấn đề trong 10 phút' },
+      { icon: '📸', label: 'Ghi chú và chụp ảnh toa thuốc trong phòng khám — bác sĩ tốt hoan nghênh', note: 'Đọc lại ghi chú trong 24h — câu hỏi mới thường nảy sinh sau khi ra về' },
+    ],
+  },
+  {
+    num: '04', icon: '📁', title: 'Ghi lại và lưu trữ kết quả',
+    color: '#22c55e', rgb: '34,197,94',
+    subtitle: 'Hồ sơ cá nhân · Theo dõi xu hướng · So sánh năm · Chia sẻ với gia đình',
+    triggers: 'Ngay trong ngày nhận kết quả — thiết lập một lần, hưởng lợi suốt đời',
+    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    keyFact: '📁 Theo dõi xu hướng theo năm quan trọng hơn con số tuyệt đối tại một thời điểm. Glucose 5.4 mmol/L hôm nay bình thường — nhưng nếu 3 năm trước là 4.8, 2 năm trước 5.0, năm ngoái 5.2, hôm nay 5.4: đây là tín hiệu cảnh báo rõ ràng dù vẫn "trong ngưỡng bình thường". Hồ sơ y tế cá nhân được lưu đúng cách là công cụ phòng bệnh hiệu quả nhất bạn có thể tự tạo ra.',
+    details: [
+      'Tại sao ghi chép kết quả quan trọng hơn bạn nghĩ: Phát hiện xu hướng bệnh tiền lâm sàng: nhiều bệnh như tiểu đường, bệnh thận mãn tính, suy giáp tiến triển chậm trong nhiều năm trước khi vượt ngưỡng "bất thường". Chỉ theo dõi dữ liệu theo năm mới thấy được. So sánh trước và sau can thiệp: bạn thay đổi chế độ ăn và tập thể dục — sau 3 tháng, LDL giảm 15% và TG giảm 30%: số liệu cụ thể là động lực mạnh hơn cảm giác chủ quan. Tránh làm lại xét nghiệm không cần thiết: bác sĩ mới có hồ sơ cũ → không kê xét nghiệm trùng lặp → tiết kiệm chi phí và thời gian. Phục hồi thông tin sau sự cố: khi bệnh viện cũ không còn hồ sơ, thiết bị bị mất — hồ sơ cá nhân của bạn là bản sao lưu không thể thay thế.',
+      'Hệ thống lưu trữ kết quả đơn giản và bền vững: Google Drive (miễn phí, cross-device): tạo folder "Sức Khỏe" → sub-folder theo năm (2023, 2024, 2025). Mỗi lần khám: scan/chụp ảnh toàn bộ phiếu → đặt tên file theo quy tắc "YYYYMMDD_Loại.jpg" (ví dụ: 20241215_XetNghiemMau.jpg). Ưu điểm: tìm kiếm dễ dàng, chia sẻ được, không bao giờ mất, truy cập từ mọi thiết bị. Dự phòng thêm: AirDrop/email chính mình một bản. iPhone Photos / Google Photos: album riêng "Hồ Sơ Y Tế" — tự động sao lưu lên cloud. Microsoft OneNote/Notion: kết hợp ảnh kết quả + ghi chú tóm tắt của bác sĩ + danh sách thuốc.',
+      'Bảng theo dõi chỉ số sức khỏe theo năm — template đơn giản: Tạo một file Excel/Google Sheets với các cột: Ngày khám | Cơ sở y tế | Chỉ số | Giá trị | Đơn vị | Ngưỡng bình thường | Ghi chú. Các chỉ số cần theo dõi tối thiểu theo năm: Cân nặng, BMI, Huyết áp (thấp/cao), Nhịp tim nghỉ. Xét nghiệm máu: Glucose đói, HbA1c (nếu làm), Total Cholesterol, LDL, HDL, TG, Creatinine, eGFR, ALT, AST, Hb/Hct. Cập nhật sau mỗi lần khám: < 5 phút nhập số liệu, nhưng sau 5 năm bạn có dữ liệu vô giá về sức khỏe của mình.',
+      'Chia sẻ thông minh với gia đình và người chăm sóc: Chia sẻ folder Google Drive với: vợ/chồng hoặc người thân gần nhất, con cái (nếu bạn đã lớn tuổi), và bản thân ở email phụ. Quyền truy cập: "Xem" đủ, không cần "Chỉnh sửa". Apple Health Emergency Card / Android Emergency Info: lưu tên thuốc đang dùng, dị ứng, nhóm máu, người liên hệ khẩn — hiển thị từ màn hình khóa. Quan trọng trong cấp cứu: cứu xe cứu thương không biết bạn đang dùng thuốc chống đông → nguy hiểm tính mạng. Chia sẻ với bác sĩ gia đình: nếu bạn đã có bác sĩ gia đình theo dõi lâu dài, cấp quyền truy cập hồ sơ của bạn cho họ.',
+      'Đọc và hiểu kết quả xét nghiệm của mình: Bạn có quyền nhận, đọc và hiểu kết quả xét nghiệm của mình — không chỉ phụ thuộc vào bác sĩ giải thích. Nguồn tham khảo đáng tin: Lab Tests Online (labtestsonline.org), MedlinePlus (medlineplus.gov), Mayo Clinic Lab Tests. Hiểu ngưỡng tham chiếu: ngưỡng "bình thường" trong phiếu kết quả là ngưỡng dân số chung, không phải ngưỡng tối ưu cho bạn cụ thể. LDL 3.0 có thể "bình thường" nhưng không phải "tối ưu" cho người > 50 tuổi có tăng HA. Phân biệt bất thường cần hành động ngay và bất thường cần theo dõi: không phải mọi kết quả nằm ngoài ngưỡng đều là khẩn cấp — hỏi bác sĩ "Chỉ số này cần xử trí trong bao lâu?".',
+      'Thiết lập nhắc nhở tái khám và xét nghiệm định kỳ: Đặt lịch nhắc trên điện thoại: tái khám theo chỉ định bác sĩ, xét nghiệm máu định kỳ (hàng năm hoặc theo tần suất khuyến nghị). Tạo "Lịch Sức Khỏe" riêng trong Google Calendar: màu sắc riêng, nhắc trước 1 tuần. Không phụ thuộc vào trí nhớ: ngay cả người có kỷ luật nhất cũng quên lịch khám nếu không có nhắc nhở. Quy tắc "khám định kỳ cuối năm": nhiều người đặt lịch khám tổng quát vào tháng 11–12 hàng năm — dễ nhớ, cuối năm thường có tinh thần kiểm tra tổng kết. Chia sẻ lịch với người thân để họ cũng nhắc nhở bạn.',
+    ],
+    points: [
+      { icon: '📈', label: 'Glucose 4.8→5.0→5.2→5.4 qua 4 năm: cảnh báo dù vẫn "bình thường"', note: 'Xu hướng phát hiện bệnh sớm hơn bất kỳ xét nghiệm đơn lẻ nào' },
+      { icon: '☁️', label: 'Google Sheets + Drive: 5 phút nhập sau mỗi khám, dữ liệu 5 năm vô giá', note: 'Đặt tên file "YYYYMMDD_Loại.jpg" — tìm kiếm dễ dàng sau nhiều năm' },
+      { icon: '🆘', label: 'Emergency Card trên điện thoại: thuốc + dị ứng từ màn hình khóa', note: 'Thông tin này có thể cứu mạng khi bạn bất tỉnh hoặc không nói được' },
+      { icon: '🔔', label: 'Google Calendar "Lịch Sức Khỏe": nhắc trước 1 tuần — không bao giờ quên', note: 'Quy tắc "khám tháng 11–12 hàng năm": dễ nhớ, dễ thành thói quen' },
+    ],
+  },
+];
+
 function ExtendedCard({ item, onClick }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -618,6 +709,7 @@ export default function HealthCheckupPage() {
   const [checked, setChecked] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_checkup_done') || '[]'); } catch { return []; } });
   const [checkupModal, setCheckupModal] = useState(null);
   const [extendedModal, setExtendedModal] = useState(null);
+  const [prepModal, setPrepModal] = useState(null);
 
   function toggle(i) {
     const updated = checked.includes(i) ? checked.filter(c => c !== i) : [...checked, i];
@@ -715,14 +807,12 @@ export default function HealthCheckupPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold text-text mb-3">Chuẩn Bị Trước Khi Đi Khám</h3>
-          <ul className="space-y-2 text-lg text-muted">
-            <li>• Nhịn ăn 8–12 tiếng (chỉ uống nước lọc) cho các xét nghiệm máu yêu cầu đói</li>
-            <li>• Mang theo hồ sơ bệnh án cũ, toa thuốc đang dùng</li>
-            <li>• Liệt kê trước các câu hỏi muốn hỏi bác sĩ</li>
-            <li>• Ghi lại kết quả vào hồ sơ cá nhân để theo dõi xu hướng theo năm</li>
-          </ul>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Chuẩn Bị Trước Khi Đi Khám</h2>
+        <p className="text-muted text-lg mb-6">4 bước chuẩn bị giúp mỗi lần đi khám đều có kết quả chính xác và hiệu quả nhất. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {PREP_TIPS.map((tip, i) => (
+            <ExtendedCard key={i} item={tip} onClick={() => setPrepModal(i)} />
+          ))}
         </div>
       </RevealBlock>
 
@@ -749,6 +839,17 @@ export default function HealthCheckupPage() {
           onNext={() => setExtendedModal(i => Math.min(EXTENDED_PACKAGES.length - 1, i + 1))}
           hasPrev={extendedModal > 0}
           hasNext={extendedModal < EXTENDED_PACKAGES.length - 1}
+        />
+      )}
+      {prepModal !== null && (
+        <ExtendedModal
+          item={PREP_TIPS[prepModal]}
+          total={PREP_TIPS.length}
+          onClose={() => setPrepModal(null)}
+          onPrev={() => setPrepModal(i => Math.max(0, i - 1))}
+          onNext={() => setPrepModal(i => Math.min(PREP_TIPS.length - 1, i + 1))}
+          hasPrev={prepModal > 0}
+          hasNext={prepModal < PREP_TIPS.length - 1}
         />
       )}
     </div>

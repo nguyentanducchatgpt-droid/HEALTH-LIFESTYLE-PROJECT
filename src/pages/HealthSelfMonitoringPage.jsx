@@ -173,6 +173,93 @@ const DAILY_CHECK = [
   { q: 'Đã vận động ít nhất 20 phút chưa?', type: 'bool', key: 'exercise' },
 ];
 
+const PRINCIPLES = [
+  {
+    num: '01', icon: '🔄', title: 'Nhất Quán Về Điều Kiện Đo',
+    subtitle: 'Cùng thời điểm · Cùng thiết bị · Cùng trạng thái',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    keyFact: '🔄 Tính nhất quán quan trọng hơn tần suất. Đo cân nặng 10 lần/tuần với điều kiện khác nhau mỗi lần ít có giá trị hơn đo 1 lần/tuần vào đúng điều kiện chuẩn. Biến thiên đo lường (measurement variability) là kẻ thù lớn nhất của việc theo dõi sức khỏe — nó tạo ra "nhiễu" che khuất tín hiệu thực.',
+    details: [
+      'Tại sao điều kiện đo quan trọng hơn số lần đo: mỗi chỉ số sức khỏe có "noise" tự nhiên do sinh lý học — cân nặng dao động 1–2kg/ngày do nước, glycogen, thức ăn; huyết áp dao động 10–20 mmHg tùy thời điểm, căng thẳng, và hoạt động gần đó. Nếu đo ở các điều kiện khác nhau, bạn đang đo "noise" chứ không phải tín hiệu thực. Chỉ khi kiểm soát điều kiện đo, sự thay đổi quan sát được mới phản ánh thay đổi thực sự của cơ thể.',
+      'Chuẩn hóa từng chỉ số — cụ thể: Cân nặng: sáng, sau vệ sinh, trước ăn uống, cùng lượng quần áo (hoặc không mặc), cùng cân. Huyết áp: ngồi nghỉ 5 phút trước đo, sáng + tối, trước khi dùng thuốc (nếu có), không cà phê/tập thể dục 30 phút trước. Nhịp tim nghỉ: ngay khi thức dậy, chưa ra khỏi giường. Đường huyết: đói 8h (buổi sáng) và đúng 2h sau bữa ăn. Vòng eo: sáng, thở ra bình thường, cùng vị trí trên cơ thể, cùng thước dây.',
+      'Thiết bị — chọn và dùng nhất quán: mỗi thiết bị có systematic error (sai số hệ thống) riêng. Nếu cân bạn luôn cho kết quả cao hơn 0.5kg so với thực tế — không quan trọng, miễn là bạn dùng cùng cân đó mỗi lần (xu hướng vẫn chính xác). Vấn đề phát sinh khi bạn đổi cân giữa chừng — lúc đó bạn không biết sự thay đổi là do cơ thể hay do thiết bị. Với huyết áp: cùng cánh tay (thường tay không thuận thấp hơn 5–10 mmHg), cùng vị trí băng quấn.',
+      'Thời điểm đo — circadian rhythm ảnh hưởng mọi chỉ số: cơ thể có nhịp sinh học 24h ảnh hưởng đến tất cả chỉ số sinh lý. Huyết áp thấp nhất lúc 3–4h sáng, tăng dần và đạt đỉnh buổi sáng (morning surge) — lý do đột quỵ hay xảy ra buổi sáng. Cortisol cao nhất 8–9h sáng (ảnh hưởng đường huyết và huyết áp). Nhiệt độ cơ thể thấp nhất 4–6h sáng, cao nhất 17–19h. Nếu đo huyết áp sáng hôm nay và chiều hôm sau — chênh lệch có thể do thời điểm đo, không phải do sức khỏe.',
+      'Tạo ritual (thói quen cố định): gắn việc đo với một hành động đã có sẵn mỗi ngày (habit stacking). Ví dụ: "Sau khi vệ sinh xong, tôi bước lên cân" — không cần nhớ, không cần nhắc nhở. "Trước khi pha cà phê sáng, tôi đo huyết áp 5 phút." Điều này vừa đảm bảo nhất quán thời điểm, vừa xây dựng thói quen bền vững. James Clear (Atomic Habits): thói quen mạnh nhất là thói quen được gắn với môi trường và hành động đã tồn tại.',
+      'Ghi lại điều kiện bất thường: khi bạn phải đo trong điều kiện khác thường (đo trưa thay vì sáng, đo sau khi tập thể thao), hãy ghi chú rõ ràng thay vì bỏ qua dữ liệu. Điểm dữ liệu đó vẫn có thể hữu ích — nhưng cần được đánh dấu để không nhầm lẫn khi phân tích xu hướng. App như Cronometer, Samsung Health, Apple Health đều cho phép thêm ghi chú kèm theo mỗi lần đo.',
+    ],
+    points: [
+      { icon: '📐', label: 'Cùng điều kiện mỗi lần > đo nhiều với điều kiện khác nhau', note: 'Noise ẩn dấu tín hiệu — kiểm soát điều kiện mới thấy thay đổi thực' },
+      { icon: '⚙️', label: 'Cùng thiết bị: sai số hệ thống ổn định thì xu hướng vẫn đúng', note: 'Đổi thiết bị giữa chừng = không thể so sánh dữ liệu trước và sau' },
+      { icon: '⏰', label: 'Circadian rhythm ảnh hưởng mọi chỉ số — giờ đo phải cố định', note: 'HA sáng vs chiều có thể chênh 10–20 mmHg mà không phải do bệnh' },
+      { icon: '🔗', label: 'Habit stacking: gắn đo với hành động sáng cố định', note: '"Sau vệ sinh → bước lên cân" — tự động, không cần nhớ' },
+    ],
+  },
+  {
+    num: '02', icon: '✍️', title: 'Ghi Ngay, Không Trì Hoãn',
+    subtitle: 'Bộ nhớ không đáng tin cậy · Ghi ngay lúc đo',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80',
+    keyFact: '✍️ Bộ nhớ con người không thiết kế để lưu trữ số liệu chính xác. Sau 20 phút, chúng ta quên 40% những gì vừa trải nghiệm (Ebbinghaus Forgetting Curve). Với chỉ số sức khỏe — số liệu bạn nhớ được sau vài giờ thường là con số "cảm giác đúng" chứ không phải con số thực, bị ảnh hưởng bởi kỳ vọng và cảm xúc hiện tại.',
+    details: [
+      'Forgetting Curve (Hermann Ebbinghaus, 1885): nghiên cứu kinh điển về trí nhớ: ngay sau khi học/quan sát = 100% nhớ. Sau 20 phút = nhớ 60%. Sau 1 giờ = nhớ 44%. Sau 1 ngày = nhớ 33%. Sau 1 tuần = nhớ 25%. Với chỉ số huyết áp hay đường huyết — bạn sẽ không nhớ chính xác 127/84 hay 132/86 sau vài giờ. Bạn sẽ nhớ "huyết áp hơi cao" — nhưng hơi cao là bao nhiêu thì không còn chắc chắn.',
+      'Memory distortion — trí nhớ bị bóp méo: không chỉ là quên — chúng ta còn "nhớ sai". Nếu hôm nay bạn cảm thấy mệt, bạn có xu hướng nhớ lại huyết áp hôm trước là "cao hơn bình thường" dù thực ra bình thường. Confirmation bias (thiên kiến xác nhận): chúng ta nhớ những con số phù hợp với niềm tin hoặc cảm xúc hiện tại. Với theo dõi sức khỏe, điều này rất nguy hiểm — có thể dẫn đến lo lắng không cần thiết hoặc bỏ qua vấn đề thực sự.',
+      'Ghi ngay — thiết lập quy trình cụ thể: đặt điện thoại cạnh cân và máy đo huyết áp — không thể đo xong mà không thấy điện thoại ngay. Dùng app tích hợp thiết bị Bluetooth (Omron Connect, Withings Health Mate, Xiaomi Mi Fit) — tự động sync dữ liệu khi đo xong, không cần nhập tay. Nếu không có thiết bị smart: dùng sticky note dán ở nơi đo — ghi vào tờ đó ngay lập tức, sau đó chuyển sang app/bảng tính vào cuối ngày.',
+      'Hệ thống ghi chép tối giản — friction phải bằng 0: công thức thành công: mỗi giây thêm vào quy trình ghi chép = giảm 10% khả năng thực hiện dài hạn. Tốt nhất: thiết bị Bluetooth sync tự động → không cần làm gì. Tốt: shortcut trên màn hình chính điện thoại mở thẳng vào màn hình nhập liệu app sức khỏe. Không nên: "tôi sẽ nhập vào excel sau khi ăn sáng xong" — quá nhiều bước, quá nhiều cơ hội để quên hoặc trì hoãn. Apple Health Shortcut: tạo shortcut nhập cân nặng, huyết áp 1 chạm từ màn hình khóa.',
+      'Paper backup — khi không có điện thoại: một cuốn sổ nhỏ hoặc notebook đặt cạnh cân và máy đo HA là backup tốt nhất. Ghi ngày + giờ + số liệu. Lợi ích của giấy: không cần mở khóa điện thoại, không có notification làm phân tâm, không lo hết pin. Nghiên cứu về note-taking: ghi tay giúp nhớ tốt hơn ghi điện thoại — nên ngay cả khi dùng app, việc nhìn và ghi số bằng tay một lần giúp bạn "thực sự thấy" số liệu đó, không chỉ tap vào ô.',
+      'Xử lý dữ liệu bỏ lỡ: nếu quên ghi một ngày — không cố nhớ lại và điền vào. Ghi "không có dữ liệu" hoặc để trống — trung thực hơn. Khoảng trống trong dữ liệu không phải vấn đề — nó là thông tin (cho thấy những ngày nào bạn thường bỏ qua). Nếu bỏ lỡ nhiều ngày liên tục — không "bù lại" bằng cách đo nhiều lần trong ngày. Reset lại thói quen: xác định lý do bỏ lỡ (đi du lịch? bận rộn?) và tìm giải pháp cho lần tới.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Sau 1 giờ: nhớ chính xác 44% — sau 1 ngày chỉ còn 33%', note: 'Ebbinghaus Forgetting Curve: trí nhớ giảm theo hàm số mũ' },
+      { icon: '📱', label: 'Thiết bị Bluetooth sync tự động = friction bằng 0', note: 'Omron Connect, Withings, Xiaomi Mi Fit tự ghi vào app khi đo' },
+      { icon: '⚡', label: 'Shortcut 1 chạm từ màn hình khóa — tối giản quy trình ghi', note: 'Mỗi giây thêm vào quy trình = giảm 10% khả năng duy trì' },
+      { icon: '📓', label: 'Sổ giấy cạnh thiết bị = backup hoàn hảo, không cần điện thoại', note: 'Ghi tay giúp bạn "thực sự thấy" số liệu — không chỉ tap blind' },
+    ],
+  },
+  {
+    num: '03', icon: '📈', title: 'Nhìn Xu Hướng 4–8 Tuần',
+    subtitle: 'Không lo biến động ngày · Tín hiệu nằm trong xu hướng',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    keyFact: '📈 Mỗi điểm dữ liệu đơn lẻ là "điểm ồn" — xu hướng mới là "tín hiệu". Cân nặng tăng 0.8kg từ hôm qua đến hôm nay không có nghĩa lý gì — nhưng cân nặng tăng 0.8kg mỗi tuần trong 4 tuần liên tiếp là tín hiệu rõ ràng. Não người không giỏi nhìn xu hướng tự nhiên — chúng ta cần công cụ để lọc nhiễu.',
+    details: [
+      'Noise vs Signal — phân biệt hai loại thay đổi: "Noise" (nhiễu): thay đổi ngẫu nhiên, tạm thời, không liên quan đến sức khỏe thực sự. Ví dụ: cân tăng 1.5kg sau bữa tối muối nhiều (giữ nước). Huyết áp tăng 15 mmHg sau cuộc họp căng thẳng. Nhịp tim tăng 8 lần/phút sau 3 ly cà phê. "Signal" (tín hiệu): thay đổi có hệ thống, ổn định theo thời gian, phản ánh thay đổi thực sự. Ví dụ: cân tăng 0.5kg/tuần đều đặn trong 8 tuần. Huyết áp trung bình tăng 8 mmHg trong 4 tuần. Nhịp tim nghỉ giảm 7 lần/phút sau 12 tuần chạy bộ đều đặn.',
+      'Thời gian cần thiết để thấy xu hướng rõ ràng: cân nặng: 2–4 tuần (dao động ngày che khuất xu hướng ngắn hơn). Huyết áp: 7–14 ngày (trung bình 7 ngày mới phản ánh đúng). Nhịp tim nghỉ: 4–8 tuần (tim mạch thích nghi chậm). Đường huyết (HbA1c): 8–12 tuần (phản ánh trung bình 2–3 tháng). Mức năng lượng: 2–4 tuần (nhận ra pattern theo tuần). Kết luận: với hầu hết chỉ số, bạn cần ít nhất 4 tuần dữ liệu để có bức tranh đáng tin cậy.',
+      'Công cụ tính đường xu hướng: app Happy Scale (iOS): tự động tính đường xu hướng từ cân nặng, lọc bỏ dao động ngày — hiển thị "weighted moving average". Apple Health: biểu đồ tự động với đường trend. Google Sheets / Excel: hàm AVERAGE(rolling window) hoặc =TREND(). Withings / Garmin / Oura: dashboard tự động với trend analysis. Whoop: "strain vs recovery" trend theo tuần và tháng. Nguyên tắc: bất kỳ app nào hiển thị đường trend (không chỉ điểm dữ liệu) đều tốt hơn nhìn vào số liệu thô.',
+      'Moving average — cách đơn giản nhất để lọc nhiễu: moving average 7 ngày cho cân nặng: (cân ngày 1 + 2 + 3 + 4 + 5 + 6 + 7) / 7. Hôm nay giá trị này thay đổi như thế nào so với tuần trước? Nếu tăng 0.1–0.2kg/tuần: trend nhẹ lên. Nếu giảm 0.2–0.5kg/tuần: đang giảm mỡ. Cách làm thủ công: tính trung bình 7 ngày cuối mỗi tuần và so sánh với tuần trước — 5 phút/tuần, không cần phần mềm phức tạp.',
+      'Biến động bình thường — không nên lo lắng: cân nặng: dao động ±1.5kg trong ngày — bình thường. Huyết áp: ±10 mmHg tâm thu giữa 2 lần đo cách nhau 1h — bình thường. Nhịp tim: ±5–10 lần/phút tùy ngày — bình thường. Đường huyết sau ăn: tăng 40–60 mg/dL rồi về ngưỡng bình thường sau 2h — hoàn toàn sinh lý. Biến động không bình thường (cần chú ý): huyết áp thay đổi > 30 mmHg giữa 2 lần đo liên tiếp (5 phút cách nhau) không rõ lý do. Cân tăng > 2kg trong 1 ngày (phù nề bất thường). Nhịp tim tăng > 15 lần/phút so với baseline kéo dài > 2 ngày.',
+      'Review định kỳ — lịch nhìn lại dữ liệu: hàng tuần (5 phút chủ nhật): nhìn 7 ngày vừa rồi — có gì bất thường không? Hàng tháng (15 phút): so sánh 4 tuần, trend đang đi hướng nào? Quý (30 phút): nhìn lại 3 tháng — mục tiêu đã đạt chưa? Cần điều chỉnh gì không? Review định kỳ biến dữ liệu thô thành insight hành động. Không review = data không có giá trị. Lập lịch cụ thể (ví dụ: tối chủ nhật sau bữa ăn) và giữ nguyên lịch đó.',
+    ],
+    points: [
+      { icon: '📊', label: 'Cần 4+ tuần dữ liệu để thấy xu hướng đáng tin cậy', note: 'Ít hơn 4 tuần: không thể phân biệt noise với signal thực' },
+      { icon: '📱', label: 'Happy Scale, Apple Health: tự tính moving average — lọc noise', note: 'Bất kỳ app nào hiển thị đường trend đều tốt hơn nhìn số lẻ' },
+      { icon: '📅', label: 'Review hàng tuần 5 phút + hàng tháng 15 phút', note: 'Data không review = data không có giá trị — lập lịch cố định' },
+      { icon: '✅', label: 'Biến động ngày ±1.5kg cân, ±10 mmHg HA — bình thường', note: 'Chỉ lo khi thay đổi hệ thống ổn định > 2–4 tuần liên tục' },
+    ],
+  },
+  {
+    num: '04', icon: '🧘', title: 'Không Ám Ảnh Với Số',
+    subtitle: 'Nhận biết thay đổi · Không tối ưu hóa mỗi ngày',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80',
+    keyFact: '🧘 Theo dõi sức khỏe là công cụ — không phải mục tiêu. Khi việc theo dõi bắt đầu gây lo lắng, ám ảnh, hoặc ảnh hưởng tiêu cực đến hành vi (ăn ít hơn vì cân tăng, từ chối ăn với bạn bè, kiểm tra huyết áp 5 lần/ngày), đó là dấu hiệu cần dừng lại và đánh giá lại mối quan hệ của bạn với dữ liệu.',
+    details: [
+      'Mục đích đúng đắn của theo dõi sức khỏe: phát hiện xu hướng bất thường sớm để hành động kịp thời. Hiểu cơ thể phản ứng với thay đổi lối sống (thực phẩm, tập luyện, ngủ). Có dữ liệu khách quan để thảo luận với bác sĩ. Tạo động lực bằng cách thấy tiến bộ rõ ràng. KHÔNG phải: đạt điểm hoàn hảo mỗi ngày, so sánh với người khác, tối ưu hóa từng chi tiết. Nếu theo dõi không giúp bạn sống tốt hơn, bạn không cần làm điều đó.',
+      'Orthorexia Nervosa và "quantified self" obsession: Orthorexia Nervosa: ám ảnh về ăn uống "hoàn hảo" — mở rộng ra là ám ảnh về các chỉ số sức khỏe "hoàn hảo". Quantified Self Obsession: hiện tượng ngày càng phổ biến với wearable — người dùng theo dõi mọi thứ, lo lắng khi thiếu dữ liệu, và cảm thấy tồi tệ khi số liệu không tốt. Nghiên cứu (Etkin, 2016): việc theo dõi quá chi tiết (tracking) có thể làm giảm intrinsic motivation — bạn bắt đầu tập thể dục vì số steps thay vì vì cảm giác tốt.',
+      'Dấu hiệu cảnh báo — theo dõi đang trở nên không lành mạnh: kiểm tra cân nhiều hơn 1 lần/ngày và cảm thấy cần phải. Hủy kế hoạch ăn uống với bạn bè/gia đình vì lo ảnh hưởng đến chỉ số. Cảm thấy tội lỗi hoặc thất bại khi một ngày "không hoàn hảo" về số liệu. Lo lắng không ngủ được khi theo dõi thấy số bất thường nhỏ. Liên tục tra cứu ý nghĩa của từng thay đổi nhỏ. Mọi quyết định lối sống đều phải dựa vào số liệu thay vì cảm giác.',
+      'Thiết lập ranh giới lành mạnh: chỉ đo tần suất cần thiết (cân 1×/tuần, huyết áp sáng + tối, không nhiều hơn). Không kiểm tra app nhiều lần trong ngày. Có ngày/tuần "nghỉ" không theo dõi hoàn toàn. Không chia sẻ số liệu sức khỏe cá nhân lên mạng xã hội để "thi đua". Nhớ rằng mục tiêu là sống tốt — không phải có số liệu đẹp. Nếu một chỉ số gây lo lắng liên tục, tạm dừng theo dõi chỉ số đó 2–4 tuần.',
+      'Tiêu chuẩn "đủ tốt" thay vì "hoàn hảo": cân nặng trong vùng mục tiêu ±2kg = tốt, không cần điều chỉnh liên tục. Huyết áp trung bình tuần < 130/80 = tốt, không cần tối ưu hóa thêm. Ngủ 7+ tiếng 5/7 ngày trong tuần = tốt, không cần 8 giờ chính xác mỗi đêm. Nhịp tim nghỉ ổn định hoặc giảm nhẹ theo tháng = tốt. Nguyên tắc 80/20: nếu 80% ngày bạn đạt được mức "tốt", kết quả sức khỏe dài hạn sẽ tốt — không cần 100% mỗi ngày.',
+      'Khi nào nên dừng hoặc giảm theo dõi: nếu theo dõi gây stress nhiều hơn lợi ích, hãy thử: dừng hoàn toàn 2 tuần và quan sát cảm giác. Nếu cảm thấy nhẹ nhõm — có thể bạn đang theo dõi quá nhiều, cần tìm mức cân bằng. Nếu cảm thấy lo lắng vì không có dữ liệu — đây cũng là tín hiệu cần chú ý (phụ thuộc vào số). Tham khảo chuyên gia tâm lý nếu ám ảnh với sức khỏe (health anxiety) ảnh hưởng đến cuộc sống hàng ngày. Bác sĩ chỉ cần xu hướng — không cần mỗi điểm dữ liệu.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Mục đích: phát hiện thay đổi bất thường, không phải điểm hoàn hảo', note: 'Theo dõi là công cụ phục vụ sức khỏe — không phải mục tiêu tự nó' },
+      { icon: '⚠️', label: 'Đo cân > 1×/ngày + cảm thấy cần phải: dấu hiệu cảnh báo', note: 'Từ chối ăn với bạn bè vì lo chỉ số = theo dõi không còn lành mạnh' },
+      { icon: '✅', label: '80/20: tốt 80% ngày = kết quả dài hạn tốt — không cần 100%', note: 'Cân ±2kg mục tiêu, HA < 130/80 trung bình tuần = đủ tốt' },
+      { icon: '🛑', label: 'Dừng 2 tuần nếu theo dõi gây stress nhiều hơn lợi ích', note: 'Cảm thấy nhẹ nhõm khi không đo = dấu hiệu đang theo dõi quá nhiều' },
+    ],
+  },
+];
+
 function MetricCard({ item, onClick }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -283,6 +370,110 @@ function MetricModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
   );
 }
 
+function PrincipleCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-4 cursor-pointer transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.55)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 20px rgba(${item.rgb},0.12)` : 'none', transform: hovered ? 'translateY(-2px)' : 'translateY(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
+          style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>{item.icon}</div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap mb-1">
+            <span className="font-bold text-sm text-text leading-snug">{item.title}</span>
+            <span className="text-xs px-2 py-0.5 rounded-full font-bold transition-opacity duration-200"
+              style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>Chi tiết →</span>
+          </div>
+          <p className="text-xs text-muted leading-relaxed">{item.subtitle}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PrincipleModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.title} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>Nguyên tắc {item.num}/04</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-1 leading-snug" style={{ color: item.color }}>{item.title}</h2>
+          <p className="text-sm mb-5" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.subtitle}</p>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 04</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function RevealBlock({ children, delay = 0, className = '' }) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -373,6 +564,7 @@ function DailyCheckForm() {
 export default function HealthSelfMonitoringPage() {
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [metricModal, setMetricModal] = useState(null);
+  const [principleModal, setPrincipleModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -451,14 +643,12 @@ export default function HealthSelfMonitoringPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5 space-y-3" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold text-text">Nguyên Tắc Theo Dõi Hiệu Quả</h3>
-          <ul className="space-y-2 text-lg text-muted">
-            <li>• <strong className="text-text">Nhất quán về điều kiện đo</strong> — cùng thời điểm, cùng thiết bị, cùng trạng thái</li>
-            <li>• <strong className="text-text">Ghi ngay, không trì hoãn</strong> — bộ nhớ không đáng tin cậy</li>
-            <li>• <strong className="text-text">Nhìn xu hướng 4–8 tuần</strong>, không lo lắng về biến động ngày</li>
-            <li>• <strong className="text-text">Không ám ảnh với số</strong> — mục tiêu là nhận biết thay đổi, không phải tối ưu hóa mỗi ngày</li>
-          </ul>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nguyên Tắc Theo Dõi Hiệu Quả</h2>
+        <p className="text-muted text-lg mb-6">4 nguyên tắc cốt lõi để dữ liệu bạn thu thập thực sự có ý nghĩa. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {PRINCIPLES.map((p, i) => (
+            <PrincipleCard key={i} item={p} onClick={() => setPrincipleModal(i)} />
+          ))}
         </div>
       </RevealBlock>
 
@@ -473,6 +663,17 @@ export default function HealthSelfMonitoringPage() {
           onNext={() => setMetricModal(i => Math.min(METRICS.length - 1, i + 1))}
           hasPrev={metricModal > 0}
           hasNext={metricModal < METRICS.length - 1}
+        />
+      )}
+
+      {principleModal !== null && (
+        <PrincipleModal
+          item={PRINCIPLES[principleModal]}
+          onClose={() => setPrincipleModal(null)}
+          onPrev={() => setPrincipleModal(i => Math.max(0, i - 1))}
+          onNext={() => setPrincipleModal(i => Math.min(PRINCIPLES.length - 1, i + 1))}
+          hasPrev={principleModal > 0}
+          hasNext={principleModal < PRINCIPLES.length - 1}
         />
       )}
     </div>

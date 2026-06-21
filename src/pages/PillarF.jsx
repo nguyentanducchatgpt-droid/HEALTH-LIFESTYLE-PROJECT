@@ -1362,6 +1362,167 @@ function F4Lifestyle() {
   );
 }
 
+// --- Mind tracker items data ---
+const MIND_ITEMS = {
+  stress: {
+    key: 'stress', icon: '😓', label: 'Mức stress hôm nay',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress ngắn hạn (acute stress) thực ra có lợi — tăng hiệu suất, cảnh giác, và học hỏi. Nguy hiểm là stress mãn tính (>7/10 kéo dài nhiều ngày): cortisol cao liên tục phá vỡ hệ miễn dịch, trí nhớ, và sức khỏe tim mạch.',
+    details: [
+      'Stress mãn tính (cortisol cao kéo dài): thu nhỏ vùng hippocampus (trí nhớ), suy yếu prefrontal cortex (ra quyết định), và tăng hoạt động amygdala (phản ứng sợ hãi). Theo nghĩa đen làm thay đổi cấu trúc não.',
+      'Chỉ số stress 7–8/10 hơn 3 ngày liên tiếp = tín hiệu cần can thiệp ngay. Không phải chờ đến khi kiệt sức (burnout) mới xử lý — burnout mất 3–6 tháng để phục hồi hoàn toàn.',
+      '"Stress inoculation": tiếp xúc có kiểm soát với stress nhỏ (tập luyện khó, cold shower, deadline hợp lý) xây dựng khả năng chịu đựng stress lớn hơn — như vaccine cho não.',
+      'Kỹ thuật hạ stress nhanh nhất được chứng minh: thở ra dài hơn hít vào (4 hít - 6 thở ra). Kích hoạt vagus nerve → hệ phó giao cảm trong 60–90 giây. Dùng được mọi lúc mọi nơi.',
+      'Nguyên nhân stress thường bị bỏ qua: thiếu ngủ (ngủ 6h tăng cortisol 37%), caffeine quá nhiều (>400mg/ngày), đường và thực phẩm siêu chế biến, và thiếu vận động thể chất.',
+      'Journaling về stress giảm cảm giác stress ngay lập tức: viết ra giúp não "ngoại hóa" lo lắng ra khỏi vòng lặp suy nghĩ liên tục, giải phóng working memory để xử lý vấn đề thực tế.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Stress Ngắn = Có Lợi', note: 'Acute stress tăng hiệu suất — mãn tính mới nguy' },
+      { icon: '🧠', label: 'Thay Đổi Cấu Trúc Não', note: 'Cortisol cao kéo dài thu nhỏ hippocampus thật sự' },
+      { icon: '💨', label: 'Thở Ra Dài Hơn', note: '4 hít - 6 thở ra — vagus nerve trong 60–90 giây' },
+      { icon: '😴', label: 'Ngủ Thiếu = Cortisol +37%', note: 'Ngủ đủ là biện pháp chống stress số 1' },
+    ],
+  },
+  mood: {
+    key: 'mood', icon: '🙂', label: 'Tâm trạng hôm nay',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tâm trạng (mood) khác với cảm xúc (emotion): cảm xúc kéo dài vài giây đến vài phút, tâm trạng kéo dài giờ đến ngày. Theo dõi tâm trạng hàng ngày giúp nhận ra pattern và can thiệp sớm trước khi trở thành trầm cảm.',
+    details: [
+      'Theo dõi tâm trạng 21 ngày liên tiếp: nghiên cứu cho thấy người dùng mood tracker nhận ra được "early warning signs" của tâm trạng xấu sắp đến trước 1–2 ngày, cho phép can thiệp phòng ngừa.',
+      'Tâm trạng bị ảnh hưởng mạnh bởi: ánh sáng tự nhiên (thiếu ánh sáng → serotonin thấp), vận động (10 phút đi bộ tăng mood ngay), xã hội (kết nối với người khác là nhu cầu sinh học), và ăn uống (đường ruột sản xuất 90% serotonin).',
+      'Behavioral activation: khi mood thấp, người ta thường giảm hoạt động → mood giảm thêm → giảm hoạt động hơn nữa (vòng xoáy). Phá vỡ bằng cách làm 1 việc nhỏ dù không muốn — mood thường cải thiện sau đó.',
+      'Mood contagion (lây lan tâm trạng): não có mirror neurons phản chiếu trạng thái cảm xúc của người xung quanh. 15 phút với người tích cực có thể cải thiện mood; ngược lại với người tiêu cực.',
+      'Sáng sớm là thời điểm mood dễ bị ảnh hưởng nhất (limbic system chưa "khởi động"). Tránh: xem tin tức ngay khi dậy, check email công việc, gặp người khó chịu đầu tiên. Bắt đầu với 5 phút yên tĩnh.',
+      'Mood thấp kéo dài >2 tuần, không có nguyên nhân rõ ràng = nên nói chuyện với chuyên gia. Không phải "yếu đuối" — là tín hiệu sinh học cần hỗ trợ.',
+    ],
+    points: [
+      { icon: '📊', label: 'Theo Dõi = Phòng Ngừa', note: 'Nhận ra pattern 1–2 ngày trước để can thiệp sớm' },
+      { icon: '☀️', label: 'Ánh Sáng + Vận Động', note: '10 phút đi bộ ngoài trời — tăng serotonin ngay' },
+      { icon: '🔄', label: 'Phá Vòng Xoáy', note: 'Mood thấp → ít hoạt động → thấp hơn: làm 1 việc nhỏ' },
+      { icon: '🧬', label: '90% Serotonin Từ Ruột', note: 'Ăn đa dạng, ít đường = hỗ trợ tâm trạng từ gốc' },
+    ],
+  },
+  calm: {
+    key: 'calm', icon: '🧘', label: 'Calm practice hôm nay',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: '5 phút calm practice mỗi ngày giảm cortisol 15–20% sau 4 tuần nhất quán (Harvard Medical School). Không cần ngồi thiền "đúng chuẩn" — bất kỳ hoạt động nào kích hoạt hệ phó giao cảm đều tính.',
+    details: [
+      'Calm practice là bất kỳ hoạt động nào đưa bạn vào trạng thái "rest and digest": thở chậm có chủ đích, đi bộ không điện thoại, viết nhật ký, thiền, yoga nhẹ, đọc sách, tắm nước ấm, nghe nhạc chú tâm.',
+      'Box breathing (4-4-4-4): hít vào 4s → nín 4s → thở ra 4s → nín 4s. Lặp 4–6 lần = 1.5–2.5 phút. Navy SEALs dùng để giữ bình tĩnh trong tình huống áp lực cực cao — bạn cũng dùng được.',
+      'Nhất quán quan trọng hơn thời lượng: 5 phút/ngày mỗi ngày hiệu quả hơn 30 phút/tuần vào cuối tuần. Não học nhận tín hiệu thư giãn tốt hơn khi luyện tập đều đặn.',
+      'Default Mode Network (DMN): khi não "nghỉ ngơi" không tập trung vào nhiệm vụ, DMN hoạt động — xử lý cảm xúc, củng cố ký ức, và tạo sự kết nối sáng tạo. Calm practice cho DMN "chạy".',
+      'Đi bộ không điện thoại 10 phút: vừa tăng bước chân, vừa kích hoạt calm state, vừa cho DMN hoạt động. Một hoạt động đạt 3 mục tiêu cùng lúc — hiệu quả nhất trong danh sách.',
+      'Journaling 3 câu: "Hôm nay tôi biết ơn điều gì?", "Điều gì đang chiếm tâm trí tôi?", "Ngày mai tôi muốn làm tốt hơn điều gì?" — 5 phút, tác động lớn đến clarity và tâm trạng.',
+    ],
+    points: [
+      { icon: '⏱️', label: '5 Phút Là Đủ', note: 'Nhất quán quan trọng hơn thời lượng — tích lũy 4 tuần' },
+      { icon: '📦', label: 'Box Breathing', note: '4-4-4-4 — Navy SEALs dùng, bạn cũng dùng được' },
+      { icon: '🚶', label: 'Đi Bộ Không Phone', note: '10 phút: bước chân + calm + DMN — 3 trong 1' },
+      { icon: '📝', label: 'Journaling 3 Câu', note: 'Biết ơn + lo lắng + cải thiện — 5 phút clarity lớn' },
+    ],
+  },
+  journal: {
+    key: 'journal', icon: '📝', label: 'Ghi nhanh 1 dòng',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Expressive writing (viết về cảm xúc và suy nghĩ) 15–20 phút/ngày × 3–4 ngày liên tiếp: giảm lo âu, cải thiện hệ miễn dịch, giảm lượt khám bác sĩ (James Pennebaker, UT Austin). Hiệu quả kéo dài 4–6 tuần sau.',
+    details: [
+      'Viết ra giúp "ngoại hóa" lo lắng ra khỏi vòng lặp suy nghĩ trong đầu. Não không cần tiếp tục "giữ" thông tin đó trong working memory → giải phóng năng lực nhận thức cho việc khác.',
+      '"Ghi nhanh 1 dòng" đủ để tạo thói quen: ngưỡng thấp tối đa (1 câu, 10–15 từ). Sau khi bắt đầu viết, 70% người tiếp tục viết nhiều hơn nhờ quán tính. Đừng đặt mục tiêu cao ngay từ đầu.',
+      'Brain dump buổi sáng: viết 3 trang bất kỳ điều gì trong đầu khi vừa dậy (Morning Pages — Julia Cameron). Không cần hay, không cần logic — mục tiêu là xả hết "mental clutter" trước ngày mới.',
+      'Gratitude journaling (ghi biết ơn): não không thể cảm nhận lo lắng và biết ơn đồng thời. 3 điều biết ơn cụ thể (không lặp lại) mỗi ngày tái cấu trúc mạng lưới thần kinh nhận thức tích cực sau 3–4 tuần.',
+      'Pre-sleep journaling: viết ra những việc chưa làm xong và kế hoạch ngày mai trước khi ngủ. Nghiên cứu Michael Scullin (Baylor): giảm thời gian để vào giấc ngủ trung bình 9 phút — não ngừng "nhắc nhở".',
+      'Không cần journal đẹp hay có cấu trúc: note phone, giấy nhỏ, voice memo đều tính. Quan trọng là quá trình "chuyển từ trong đầu ra ngoài" — không phải phương tiện hay hình thức.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Giải Phóng Working Memory', note: 'Viết ra = não không cần giữ → tập trung hơn' },
+      { icon: '🙏', label: 'Gratitude 3 Điều', note: 'Biết ơn + lo lắng không cùng tồn tại trong não' },
+      { icon: '🌙', label: 'Viết Trước Ngủ', note: 'Kế hoạch ngày mai → ngủ nhanh hơn 9 phút' },
+      { icon: '📱', label: 'Bất Kỳ Phương Tiện Nào', note: 'Phone/giấy/voice — quan trọng là viết ra, không phải nơi' },
+    ],
+  },
+};
+
+// --- MindModal ---
+function MindModal({ itemKey, onClose, onPrev, onNext, hasPrev, hasNext, keys }) {
+  const item = MIND_ITEMS[itemKey];
+  const idx = keys.indexOf(itemKey);
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-4" style={{ color: item.color }}>{item.icon} {item.label}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {keys.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+const MIND_KEYS = ['stress', 'mood', 'calm', 'journal'];
+
 // --- F5 Mind Tracker tab ---
 function F5MindTracker() {
   const MOODS = ['😞', '😐', '🙂', '😊', '🤩'];
@@ -1372,6 +1533,7 @@ function F5MindTracker() {
       return s.data || { stress: 5, mood: 2, calm: false, journal: '' };
     } catch { return { stress: 5, mood: 2, calm: false, journal: '' }; }
   });
+  const [mindModal, setMindModal] = useState(null);
 
   function set(k, v) {
     const u = { ...data, [k]: v };
@@ -1379,18 +1541,37 @@ function F5MindTracker() {
     localStorage.setItem('healthapp_f_mind', JSON.stringify({ date: new Date().toLocaleDateString('vi-VN'), data: u }));
   }
 
+  const stressColor = data.stress >= 7 ? '#ef4444' : data.stress >= 5 ? '#f97316' : '#22c55e';
+
+  function DetailBtn({ itemKey }) {
+    const item = MIND_ITEMS[itemKey];
+    return (
+      <button onClick={() => setMindModal(itemKey)}
+        className="text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all duration-200 hover:opacity-80 shrink-0"
+        style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
+        Chi tiết →
+      </button>
+    );
+  }
+
   return (
     <div className="space-y-4">
+      {/* Stress */}
       <div className="rounded-2xl border border-border bg-surface p-4">
         <div className="flex items-center gap-2 mb-2">
           <span>😓</span>
           <span className="text-lg text-text flex-1">Mức stress hôm nay</span>
-          <span className="font-black" style={{ color: data.stress >= 7 ? '#ef4444' : data.stress >= 5 ? '#f97316' : '#22c55e' }}>{data.stress}/10</span>
+          <span className="font-black" style={{ color: stressColor }}>{data.stress}/10</span>
+          <DetailBtn itemKey="stress" />
         </div>
         <input type="range" min={1} max={10} value={data.stress} onChange={e => set('stress', +e.target.value)} className="w-full" />
       </div>
+      {/* Mood */}
       <div className="rounded-2xl border border-border bg-surface p-4">
-        <span className="text-lg text-text block mb-3">Tâm trạng hôm nay</span>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-lg text-text flex-1">Tâm trạng hôm nay</span>
+          <DetailBtn itemKey="mood" />
+        </div>
         <div className="flex gap-3 justify-center">
           {MOODS.map((m, i) => (
             <button key={i} onClick={() => set('mood', i)}
@@ -1401,20 +1582,38 @@ function F5MindTracker() {
           ))}
         </div>
       </div>
+      {/* Calm practice */}
       <div className="rounded-2xl border border-border bg-surface p-4">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-lg text-text">Đã có calm practice hôm nay?</span>
-          <button onClick={() => set('calm', !data.calm)} className="px-4 py-1.5 rounded-xl text-lg font-bold transition-colors"
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-lg text-text flex-1">Đã có calm practice hôm nay?</span>
+          <button onClick={() => set('calm', !data.calm)} className="px-4 py-1.5 rounded-xl text-base font-bold transition-colors shrink-0"
             style={data.calm ? { background: '#a855f7', color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
             {data.calm ? '✓ Đã làm' : 'Chưa'}
           </button>
+          <DetailBtn itemKey="calm" />
         </div>
         <p className="text-base text-muted">Thở chậm, thiền, đi bộ không điện thoại, journaling...</p>
       </div>
+      {/* Journal */}
       <div className="rounded-2xl border border-border bg-surface p-4">
-        <span className="text-lg text-text block mb-2">Ghi nhanh 1 dòng</span>
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-lg text-text flex-1">Ghi nhanh 1 dòng</span>
+          <DetailBtn itemKey="journal" />
+        </div>
         <textarea value={data.journal} onChange={e => set('journal', e.target.value)} rows={2} placeholder="Hôm nay tôi cảm thấy... / Điều làm tôi khó tập trung là..." className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted resize-none" />
       </div>
+      {mindModal !== null && (() => {
+        const idx = MIND_KEYS.indexOf(mindModal);
+        return (
+          <MindModal
+            itemKey={mindModal} keys={MIND_KEYS}
+            onClose={() => setMindModal(null)}
+            onPrev={() => setMindModal(MIND_KEYS[Math.max(0, idx - 1)])}
+            onNext={() => setMindModal(MIND_KEYS[Math.min(MIND_KEYS.length - 1, idx + 1)])}
+            hasPrev={idx > 0} hasNext={idx < MIND_KEYS.length - 1}
+          />
+        );
+      })()}
     </div>
   );
 }

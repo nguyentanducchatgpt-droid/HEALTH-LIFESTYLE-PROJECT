@@ -674,19 +674,230 @@ function F2WorkoutLog() {
   );
 }
 
+// --- Meal plan data ---
+const MEAL_ITEMS = [
+  {
+    meal: 'Sáng', icon: '🌅', color: '#f59e0b', rgb: '245,158,11',
+    formula: 'Đạm + tinh bột tốt + trái cây/rau',
+    eg: 'Trứng + yến mạch + chuối',
+    img: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bữa sáng giàu protein (≥20g) giảm cảm giác thèm ăn trong ngày và ổn định đường huyết. Nghiên cứu Columbia University: bỏ bữa sáng tăng 27% nguy cơ bệnh tim mạch.',
+    details: [
+      'Protein bữa sáng là ưu tiên số 1: trứng (6g/quả), sữa chua Hy Lạp (15–20g/hộp), đậu phụ, phô mai tươi. Giúp no đến tận trưa và kiểm soát cortisol buổi sáng.',
+      'Tinh bột bữa sáng chọn loại phức hợp: yến mạch, bánh mì nguyên cám, khoai lang. Tránh bánh ngọt, ngũ cốc đường cao — gây tăng đường huyết đột ngột và mệt lúc 10h.',
+      'Trái cây buổi sáng là lý tưởng: đường tự nhiên + fiber + vitamin. Chuối cho năng lượng nhanh, táo cho fiber lâu no, berries cho antioxidant mạnh.',
+      'Uống 1–2 ly nước trước bữa sáng — sau ngủ 7–8h cơ thể đang thiếu nước. Uống nước trước ăn giúp tiêu hóa tốt hơn và tránh ăn quá nhiều.',
+      'Không có thời gian? 3 options nhanh: trứng chiên/luộc + chuối (5 phút), sữa chua + hoa quả (2 phút), smoothie protein + yến mạch (3 phút blender).',
+      'Thời điểm tốt nhất: 30–60 phút sau khi thức dậy, đồng bộ cortisol buổi sáng (đỉnh 8–9h). Không nên ăn ngay khi mắt còn ngủ — chờ cơ thể tỉnh hẳn.',
+    ],
+    points: [
+      { icon: '🥚', label: 'Ưu Tiên Protein', note: '≥20g protein — no lâu, giảm thèm ăn cả ngày' },
+      { icon: '🌾', label: 'Tinh Bột Phức Hợp', note: 'Yến mạch / bánh nguyên cám — không tăng đường đột ngột' },
+      { icon: '🍌', label: 'Trái Cây Tươi', note: 'Fiber + vitamin — lý tưởng nhất vào buổi sáng' },
+      { icon: '💧', label: 'Nước Trước Ăn', note: 'Hydrate sau 7–8h không uống — tăng tiêu hóa' },
+    ],
+  },
+  {
+    meal: 'Trưa', icon: '☀️', color: '#22c55e', rgb: '34,197,94',
+    formula: '½ rau + ¼ đạm + ¼ tinh bột',
+    eg: 'Cơm + cá + rau luộc',
+    img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bữa trưa cân bằng theo Harvard Plate (½ rau + ¼ đạm + ¼ tinh bột) duy trì năng lượng ổn định chiều. Bữa trưa quá nhiều tinh bột → hiệu suất làm việc giảm 15–20% sau 2 tiếng.',
+    details: [
+      '½ đĩa rau/canh là nền tảng: rau xào, canh rau, salad — không giới hạn. Fiber từ rau làm chậm tiêu hóa, ổn định đường huyết, tạo môi trường đường ruột tốt.',
+      '¼ đĩa đạm: cá (tốt nhất), ức gà, thịt nạc, trứng, đậu phụ. Bữa trưa là thời điểm cơ thể hấp thu protein hiệu quả — đừng bỏ qua nguồn đạm.',
+      '¼ đĩa tinh bột: cơm trắng, bún, mì đều ổn — chỉ cần giữ tỷ lệ ¼ thay vì ½ hay hơn. Gạo lứt, khoai lang tốt hơn nhưng không bắt buộc.',
+      'Nước canh/soup là cộng thêm tốt: cung cấp nước, điện giải, và vi chất tan trong nước. Bữa cơm Việt có canh là truyền thống rất khoa học.',
+      'Tránh: bữa trưa thiếu đạm rõ ràng, đồ chiên nhiều dầu (tăng gánh tiêu hóa chiều), bỏ bữa trưa (cortisol tăng, thèm ăn tối mạnh hơn).',
+      'Meal prep bữa trưa: nấu 1 lần cho 2–3 ngày. Cơm + đạm + rau giữ ngăn mát 3 ngày. Sáng hâm nóng + thêm rau tươi nếu muốn.',
+    ],
+    points: [
+      { icon: '🥦', label: '½ Đĩa Là Rau', note: 'Không giới hạn — càng nhiều rau càng tốt' },
+      { icon: '🐟', label: '¼ Đĩa Đạm', note: 'Cá lý tưởng nhất — omega-3 tốt cho não buổi chiều' },
+      { icon: '🍚', label: '¼ Đĩa Tinh Bột', note: 'Giữ tỷ lệ — không phải kiêng, chỉ cần cân bằng' },
+      { icon: '🍵', label: 'Canh Là Cộng Thêm', note: 'Hydrate + vi chất — truyền thống Việt rất khoa học' },
+    ],
+  },
+  {
+    meal: 'Phụ', icon: '🌿', color: '#84cc16', rgb: '132,204,22',
+    formula: 'Đạm nhẹ hoặc trái cây',
+    eg: 'Sữa chua + trái cây',
+    img: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bữa phụ lành mạnh (100–200 kcal) duy trì năng lượng ổn định 3–4h sau bữa trưa, ngăn thèm ăn lúc 4–5h chiều — thời điểm nhiều người sập bẫy đồ ăn vặt không lành mạnh.',
+    details: [
+      'Thời điểm lý tưởng: 2.5–3h sau bữa trưa (thường 3–4h chiều). Đây là lúc đường huyết bắt đầu giảm, não cần glucose, và dễ thèm đồ ngọt hoặc cà phê.',
+      'Options tốt nhất: sữa chua Hy Lạp (protein cao + probiotic), trái cây tươi (chuối/táo/cam), một nắm nhỏ hạt (almonds/walnuts), phô mai tươi, trứng luộc.',
+      'Bữa phụ KHÔNG nên là: bánh ngọt, snack đóng gói, đồ chiên, nước ngọt, mì gói — tăng đường huyết nhanh rồi sụp ngay → mệt hơn trước khi ăn.',
+      'Kích thước đúng: 100–200 kcal, không phải một bữa ăn đầy đủ. Nếu không đói thực sự (dạ dày rỗng, không chỉ miệng muốn ăn) — có thể bỏ qua.',
+      'Uống nước trước khi quyết định ăn phụ: 20% lần "đói" thực ra là đang khát. Uống 1 ly nước, đợi 10 phút — nếu vẫn đói thì mới ăn.',
+      'Cho người tập luyện: bữa phụ chiều có thể là pre-workout nhẹ nếu tập từ 5–7h tối. Chuối + protein (sữa chua/shake) 60–90 phút trước tập.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Đúng Thời Điểm', note: '3–4h chiều — ngăn đói kéo đến tối rồi ăn quá nhiều' },
+      { icon: '🥛', label: 'Sữa Chua Là Lý Tưởng', note: 'Protein + probiotic + calci trong 1 lựa chọn duy nhất' },
+      { icon: '💧', label: 'Nước Trước Đã', note: '20% "đói" thực ra là khát — thử nước trước 10 phút' },
+      { icon: '🥜', label: 'Hạt Nhỏ Tốt', note: 'Almonds / walnuts — healthy fat + protein + no lâu' },
+    ],
+  },
+  {
+    meal: 'Tối', icon: '🌙', color: '#6366f1', rgb: '99,102,241',
+    formula: 'Đạm + rau nhiều + tinh bột vừa',
+    eg: 'Gà/cá + salad + khoai',
+    img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bữa tối quyết định chất lượng giấc ngủ và phục hồi. Ăn quá no, quá muộn (sau 9h), hoặc nhiều tinh bột tinh sẽ tăng đường huyết khi ngủ — ảnh hưởng hormone tăng trưởng tiết 11h–1h sáng.',
+    details: [
+      'Đạm bữa tối quan trọng cho phục hồi ban đêm: cơ thể tổng hợp và sửa chữa mô trong khi ngủ. Cá hồi, ức gà, trứng, đậu phụ — dễ tiêu hơn thịt đỏ vào buổi tối.',
+      'Rau càng nhiều càng tốt: salad, rau hấp, súp rau — cung cấp fiber và vi chất mà không thêm nhiều calo. Rau nhiều bữa tối giúp tiêu hóa tốt qua đêm.',
+      'Tinh bột buổi tối: giảm ½ so với bữa trưa nhưng không cần cắt hoàn toàn. Khoai lang tốt hơn cơm trắng vào buổi tối (GI thấp hơn, fiber cao hơn).',
+      'Thời điểm ăn tối: lý tưởng 6–7h30, kết thúc ít nhất 2–3h trước khi ngủ. Ăn muộn → dạ dày hoạt động khi ngủ → giấc ngủ kém, trào ngược.',
+      'Tránh: alcohol nhiều (ức chế REM sleep), đồ chiên xào nhiều dầu (khó tiêu), đường và tinh bột tinh nhiều (tăng đường huyết khi ngủ).',
+      'After-dinner walk: 10–15 phút đi bộ nhẹ sau bữa tối giảm đường huyết sau ăn 25–30% — không cần tập nặng, chỉ cần di chuyển nhẹ là đủ.',
+    ],
+    points: [
+      { icon: '🕕', label: 'Ăn Trước 8h', note: 'Kết thúc 2–3h trước ngủ — tốt cho giấc ngủ và tiêu hóa' },
+      { icon: '🥗', label: 'Rau Là Ưu Tiên', note: 'Không giới hạn — fiber + vi chất, ít calo' },
+      { icon: '🍠', label: 'Khoai Lang Tốt Hơn', note: 'GI thấp hơn cơm trắng — đường huyết ổn định khi ngủ' },
+      { icon: '🚶', label: 'Đi Bộ 10–15 Phút', note: 'Sau ăn — giảm đường huyết 25–30% mà không cần tập nặng' },
+    ],
+  },
+  {
+    meal: 'Sau tập', icon: '💪', color: '#ef4444', rgb: '239,68,68',
+    formula: 'Đạm nhanh + carb dễ tiêu',
+    eg: 'Sữa/whey + chuối',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Trong "anabolic window" 30–60 phút sau tập: protein kích hoạt tổng hợp cơ tối đa, carb nhanh tái nạp glycogen. Bỏ bữa sau tập = bỏ phí tới 50% hiệu quả buổi tập.',
+    details: [
+      '"Anabolic window": 30–60 phút sau tập là khi cơ bắp nhạy cảm nhất với insulin và protein. Tổng hợp protein cơ tăng tối đa trong khung giờ này.',
+      'Protein sau tập: 20–40g là đủ. Whey protein hấp thu nhanh nhất (15–20 phút), sau đó là trứng, sữa tươi, sữa chua Hy Lạp, ức gà. Quan trọng là có protein.',
+      'Carb sau tập: chuối, bánh mì trắng, cơm trắng, nước ép trái cây — đường đơn/đường nhanh để tái nạp glycogen. Đây là lúc hiếm hoi cần carb nhanh.',
+      'Nước và điện giải: uống bù lại mồ hôi (~500ml/giờ tập). Thêm chút muối hoặc sports drink nếu tập dài hơn 60 phút và ra nhiều mồ hôi.',
+      'Không cần bữa sau tập nếu: buổi tập < 30 phút nhẹ, ăn bữa chính trong vòng 2h sau tập, hoặc mục tiêu giảm mỡ cần deficit calo nghiêm ngặt.',
+      'Cẩn thận "bù đắp" sau tập: nhiều người ăn nhiều hơn lượng đốt được. Bữa sau tập là để phục hồi — không phải phần thưởng cho ăn tự do.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Trong 30–60 Phút', note: 'Anabolic window — tổng hợp cơ tối đa trong khung giờ này' },
+      { icon: '🥛', label: 'Protein 20–40g', note: 'Whey/trứng/sữa — hấp thu nhanh, phù hợp sau tập' },
+      { icon: '🍌', label: 'Carb Nhanh OK', note: 'Chuối / cơm trắng — tái nạp glycogen ngay sau tập' },
+      { icon: '💧', label: 'Bù Nước Đủ', note: '~500ml/giờ tập — ưu tiên bù nước trước bù thức ăn' },
+    ],
+  },
+];
+
+// --- MealCard ---
+function MealCard({ item, idx, onOpen }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <button
+      onClick={() => onOpen(idx)}
+      className="w-full flex items-center gap-3 p-3 text-left border-b last:border-b-0 transition-all duration-200"
+      style={{
+        borderColor: 'rgba(255,255,255,0.06)',
+        background: hovered ? `rgba(${item.rgb},0.07)` : 'transparent',
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="w-9 h-9 rounded-xl flex items-center justify-center text-xl shrink-0"
+        style={{ background: `rgba(${item.rgb},0.12)`, border: `1.5px solid rgba(${item.rgb},0.3)` }}>
+        {item.icon}
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-2 mb-0.5">
+          <span className="font-bold text-base" style={{ color: item.color }}>{item.meal}</span>
+          <span className="text-xs text-muted truncate">{item.formula}</span>
+        </div>
+        <p className="text-xs text-muted truncate">Vd: {item.eg}</p>
+      </div>
+      <span className="text-[11px] font-bold shrink-0 px-2 py-0.5 rounded-lg transition-all duration-200"
+        style={{ color: hovered ? item.color : 'rgba(255,255,255,0.25)', background: hovered ? `rgba(${item.rgb},0.12)` : 'transparent' }}>
+        Chi tiết →
+      </span>
+    </button>
+  );
+}
+
+// --- MealModal ---
+function MealModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        {/* Hero */}
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.meal} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>Bữa {item.meal}</h2>
+          <p className="font-semibold text-base mb-6" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.formula} · Vd: {item.eg}</p>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {MEAL_ITEMS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // --- F3 Meal Plan tab ---
 function F3MealPlan() {
   const PLATE_PARTS = [
     { label: '½ đĩa — Rau, canh, salad, trái cây ít ngọt', color: '#22c55e', pct: 50 },
     { label: '¼ đĩa — Đạm: thịt, cá, trứng, đậu', color: '#f97316', pct: 25 },
     { label: '¼ đĩa — Tinh bột: cơm, bún, khoai, yến mạch', color: '#eab308', pct: 25 },
-  ];
-  const MEALS = [
-    { meal: 'Sáng', formula: 'Đạm + tinh bột tốt + trái cây/rau', eg: 'Trứng + yến mạch + chuối' },
-    { meal: 'Trưa', formula: '½ rau + ¼ đạm + ¼ tinh bột', eg: 'Cơm + cá + rau luộc' },
-    { meal: 'Phụ', formula: 'Đạm nhẹ hoặc trái cây', eg: 'Sữa chua + trái cây' },
-    { meal: 'Tối', formula: 'Đạm + rau nhiều + tinh bột vừa', eg: 'Gà/cá + salad + khoai' },
-    { meal: 'Sau tập', formula: 'Đạm nhanh + carb dễ tiêu', eg: 'Sữa/whey + chuối' },
   ];
   const [log, setLog] = useState(() => {
     try {
@@ -695,6 +906,7 @@ function F3MealPlan() {
       return s.data || {};
     } catch { return {}; }
   });
+  const [mealModal, setMealModal] = useState(null);
 
   function setVal(key, val) {
     const u = { ...log, [key]: val };
@@ -717,17 +929,23 @@ function F3MealPlan() {
         <p className="text-base text-muted">+ Một lượng nhỏ chất béo tốt: dầu olive, bơ, các loại hạt.</p>
       </div>
       <div className="rounded-2xl border border-border bg-surface overflow-hidden">
-        <div className="grid grid-cols-3 text-base font-bold uppercase tracking-widest p-3 border-b border-border" style={{ color: COLOR }}>
-          <span>Bữa</span><span>Công thức</span><span>Ví dụ</span>
+        <div className="flex items-center justify-between px-3 py-2.5 border-b border-border">
+          <span className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>Thực Đơn Theo Bữa</span>
+          <span className="text-xs text-muted">Nhấn để xem chi tiết</span>
         </div>
-        {MEALS.map((m, i) => (
-          <div key={i} className="grid grid-cols-3 p-3 border-b border-border/50 text-base">
-            <span className="font-bold text-text">{m.meal}</span>
-            <span className="text-muted">{m.formula}</span>
-            <span className="text-muted">{m.eg}</span>
-          </div>
+        {MEAL_ITEMS.map((m, i) => (
+          <MealCard key={i} item={m} idx={i} onOpen={setMealModal} />
         ))}
       </div>
+      {mealModal !== null && (
+        <MealModal
+          item={MEAL_ITEMS[mealModal]} idx={mealModal}
+          onClose={() => setMealModal(null)}
+          onPrev={() => setMealModal(i => Math.max(0, i - 1))}
+          onNext={() => setMealModal(i => Math.min(MEAL_ITEMS.length - 1, i + 1))}
+          hasPrev={mealModal > 0} hasNext={mealModal < MEAL_ITEMS.length - 1}
+        />
+      )}
       <div className="rounded-2xl border border-border bg-surface p-4">
         <h3 className="font-bold text-text mb-3 text-lg">Nhật Ký Dinh Dưỡng Hôm Nay</h3>
         <div className="space-y-2">

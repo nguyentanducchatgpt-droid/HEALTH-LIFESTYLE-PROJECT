@@ -148,13 +148,237 @@ const PREVENTION_PILLARS = [
 ];
 
 const VACCINE_SCHEDULE = [
-  { vaccine: 'Cúm mùa', frequency: 'Hàng năm', who: 'Tất cả người lớn' },
-  { vaccine: 'COVID-19', frequency: 'Theo khuyến cáo hiện tại', who: 'Tất cả người lớn' },
-  { vaccine: 'Tdap (Bạch hầu, Uốn ván, Ho gà)', frequency: 'Nhắc lại mỗi 10 năm', who: 'Tất cả người lớn' },
-  { vaccine: 'Viêm gan B', frequency: '3 mũi nếu chưa tiêm', who: 'Người chưa có miễn dịch' },
-  { vaccine: 'HPV', frequency: '2–3 mũi', who: '9–45 tuổi, ưu tiên trước quan hệ tình dục' },
-  { vaccine: 'Phế cầu', frequency: '1–2 mũi', who: '≥ 65 tuổi hoặc bệnh mãn tính' },
+  {
+    num: '01', icon: '🤧', vaccine: 'Cúm mùa', frequency: 'Hàng năm', who: 'Tất cả người lớn',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
+    keyFact: '🤧 Virus cúm đột biến mỗi năm — vaccine năm ngoái không bảo vệ cho năm nay. WHO giám sát các chủng virus cúm đang lưu hành toàn cầu và cập nhật công thức vaccine mỗi năm. Tiêm vaccine cúm hàng năm giảm 40–60% nguy cơ mắc cúm và giảm đáng kể nguy cơ biến chứng nặng.',
+    details: [
+      'Tại sao phải tiêm cúm mỗi năm: không giống vaccine sởi hay viêm gan B cho miễn dịch suốt đời, virus cúm (Influenza A và B) có tốc độ đột biến cực cao — đặc biệt protein H (hemagglutinin) và N (neuraminidase) trên bề mặt. Mỗi mùa, các chủng mới chiếm ưu thế. WHO vận hành mạng lưới 150 trung tâm giám sát tại 114 quốc gia để dự đoán chủng nào sẽ lưu hành và cập nhật công thức vaccine 2 lần/năm (cho Bắc và Nam bán cầu).',
+      'Hiệu quả thực tế và ai được lợi nhiều nhất: hiệu quả vaccine cúm dao động 40–60% tùy năm (phụ thuộc mức độ khớp giữa vaccine và chủng lưu hành). Nghe có vẻ thấp, nhưng ngay cả khi "không khớp hoàn toàn", vaccine vẫn giảm mức độ nặng của bệnh, giảm nhập viện, và giảm tử vong. Đối tượng được lợi nhất: người ≥ 65 tuổi (nguy cơ biến chứng cao nhất), phụ nữ mang thai (bảo vệ cả mẹ và bé), trẻ em 6 tháng – 5 tuổi, người có bệnh mãn tính (tim, phổi, tiểu đường), và nhân viên y tế.',
+      'Thời điểm tiêm tối ưu tại Việt Nam: mùa cúm ở Việt Nam khác miền: miền Bắc đỉnh cúm vào mùa đông (tháng 11–3), miền Nam đỉnh cúm liên quan mùa mưa (tháng 5–10). Nên tiêm trước mùa cúm 2–4 tuần để cơ thể tạo đủ kháng thể. Thực tế: có thể tiêm bất kỳ lúc nào trong năm — muộn hơn vẫn tốt hơn không tiêm. Miễn dịch đạt đỉnh sau 2 tuần và kéo dài khoảng 6–12 tháng.',
+      'Biến chứng cúm — tại sao không nên xem thường: cúm không phải "cảm lạnh nặng hơn". Influenza có thể gây viêm phổi nguyên phát (do virus) hoặc thứ phát (do vi khuẩn bội nhiễm), viêm cơ tim, viêm não, và suy đa tạng. Tử vong do cúm toàn cầu: 290.000–650.000 người/năm (WHO). Tại Mỹ mùa cúm 2017–2018 đặc biệt nặng: 810.000 ca nhập viện và 61.000 ca tử vong. Trẻ em dưới 5 tuổi và người trên 65 chiếm phần lớn ca tử vong.',
+      'Herd immunity và bảo vệ cộng đồng: khi tỷ lệ tiêm vaccine cúm trong cộng đồng cao (> 60–70%), người không thể tiêm được (sơ sinh < 6 tháng, người dị ứng nặng) cũng được bảo vệ gián tiếp vì virus khó lây lan. Tiêm vaccine không chỉ bảo vệ bạn — còn bảo vệ ông bà, trẻ nhỏ, và người bệnh xung quanh bạn. Đây là lý do nhân viên y tế được khuyến nghị tiêm vaccine cúm hàng năm bắt buộc tại nhiều nước.',
+      'Vaccine cúm tứ giá (quadrivalent) — lựa chọn hiện đại: vaccine cúm thế hệ cũ chỉ bảo vệ 3 chủng (trivalent). Vaccine tứ giá (quadrivalent, 4 chủng) bảo vệ rộng hơn: 2 chủng A (H1N1 và H3N2) + 2 chủng B. Hiện nay WHO khuyến nghị vaccine tứ giá. Tại Việt Nam, có sẵn tại các trung tâm tiêm chủng lớn (VNVC, Safpo). Giá khoảng 200.000–350.000 VNĐ — đầu tư nhỏ so với chi phí điều trị cúm biến chứng.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Virus đột biến mỗi năm — vaccine năm ngoái hết hiệu lực', note: 'WHO cập nhật công thức 2 lần/năm theo giám sát 114 quốc gia' },
+      { icon: '👴', label: '≥ 65 tuổi, mang thai, bệnh mãn tính: ưu tiên tiêm hàng năm', note: 'Ngay cả 40–60% hiệu quả vẫn giảm đáng kể biến chứng nặng và tử vong' },
+      { icon: '🗓️', label: 'VN: tiêm trước mùa đông (miền Bắc) hoặc trước mùa mưa (miền Nam)', note: 'Muộn vẫn tốt hơn không — miễn dịch đạt đỉnh sau 2 tuần' },
+      { icon: '💉', label: 'Chọn vaccine tứ giá (quadrivalent) — bảo vệ 4 chủng thay vì 3', note: 'Có tại VNVC, Safpo — khoảng 200–350k VNĐ/mũi' },
+    ],
+  },
+  {
+    num: '02', icon: '🦠', vaccine: 'COVID-19', frequency: 'Theo khuyến cáo hiện tại', who: 'Tất cả người lớn',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=800&q=80',
+    keyFact: '🦠 Bối cảnh COVID-19 liên tục thay đổi — khuyến nghị vaccine cập nhật theo tình hình miễn dịch cộng đồng, chủng lưu hành, và bằng chứng mới. Nguyên tắc chung: người nguy cơ cao (≥ 60 tuổi, bệnh mãn tính, suy giảm miễn dịch) được lợi nhiều nhất từ mũi nhắc lại định kỳ.',
+    details: [
+      'Công nghệ mRNA — cuộc cách mạng vaccine: vaccine Pfizer-BioNTech và Moderna dùng công nghệ mRNA — đây là lần đầu tiên công nghệ này được triển khai ở quy mô lớn. mRNA không bao giờ vào nhân tế bào, không tương tác với DNA. Tế bào đọc mRNA để tạo ra protein spike của SARS-CoV-2, kích thích hệ miễn dịch tạo kháng thể và tế bào T/B nhớ. mRNA bị phân hủy hoàn toàn trong vài ngày — không tồn tại lâu dài trong cơ thể.',
+      'Hiệu quả theo thời gian và tại sao cần mũi nhắc: miễn dịch sau vaccine (và sau nhiễm) giảm theo thời gian, đặc biệt với các chủng mới. Kháng thể trung hòa giảm nhanh nhất (vài tháng), nhưng tế bào T và B nhớ bền hơn — đây là lý do vaccine vẫn bảo vệ tốt khỏi bệnh nặng dù kháng thể giảm. Mũi nhắc (booster) "đánh thức" hệ miễn dịch, tăng cả kháng thể lẫn tế bào nhớ, và được cập nhật để khớp với chủng đang lưu hành (như vaccine cúm).',
+      'Đối tượng ưu tiên mũi nhắc nhất: người ≥ 60 tuổi (nguy cơ COVID nặng cao nhất, hệ miễn dịch suy giảm tự nhiên theo tuổi). Suy giảm miễn dịch (ghép tạng, hóa trị, HIV không kiểm soát). Bệnh mãn tính nặng (COPD, đái tháo đường, suy tim). Nhân viên y tế (tiếp xúc cao, bảo vệ bệnh nhân dễ tổn thương). Tại Việt Nam: theo dõi khuyến cáo Bộ Y tế — cập nhật tại moh.gov.vn.',
+      'Long COVID — lý do thêm để phòng ngừa nhiễm: khoảng 10–30% người mắc COVID-19 (kể cả ca nhẹ) có triệu chứng kéo dài > 12 tuần sau nhiễm — gọi là Long COVID hay Post-COVID Condition. Triệu chứng phổ biến: mệt mỏi mãn tính, khó tập trung ("brain fog"), khó thở, đau khớp. Cơ chế đang nghiên cứu: viêm mãn tính, rối loạn tự miễn, và tổn thương vi mạch. Vaccine giảm nguy cơ Long COVID khoảng 50% theo một số nghiên cứu.',
+      'An toàn và tác dụng phụ: tác dụng phụ phổ biến (ngắn hạn, tự khỏi): đau tại chỗ tiêm (70–80%), mệt mỏi (60%), nhức đầu (55%), ớn lạnh (40%). Myocarditis (viêm cơ tim) sau vaccine mRNA: hiếm gặp, chủ yếu ở nam trẻ 16–29 tuổi sau mũi 2. Tỷ lệ: khoảng 12–40 ca/triệu liều — và đa số tự khỏi trong vài ngày. Quan trọng: nguy cơ viêm cơ tim do COVID-19 thực sự cao hơn nhiều lần so với do vaccine. Hơn 13 tỷ liều đã tiêm toàn cầu — hồ sơ an toàn ngắn-trung hạn được theo dõi chặt chẽ.',
+      'Tại sao không thể dựa vào "miễn dịch tự nhiên" hoàn toàn: miễn dịch sau nhiễm không đồng đều — người bệnh nặng thường có miễn dịch mạnh hơn người bệnh nhẹ. Nguy cơ để mắc COVID tự nhiên để có miễn dịch là không thể chấp nhận (tử vong, Long COVID, nguy cơ cho người xung quanh). Hybrid immunity (nhiễm + vaccine) thường cho miễn dịch rộng và bền hơn vaccine hoặc nhiễm đơn thuần. Hiện nay, hầu hết dân số đã có hybrid immunity ở mức độ nào đó — nhắc lại định kỳ giúp duy trì bảo vệ.',
+    ],
+    points: [
+      { icon: '🧬', label: 'mRNA không vào nhân tế bào, không tương tác DNA', note: 'Phân hủy hoàn toàn trong vài ngày — công nghệ đột phá, an toàn ngắn-trung hạn' },
+      { icon: '🔋', label: 'Kháng thể giảm sau vài tháng — tế bào T/B nhớ bền hơn', note: 'Vaccine vẫn bảo vệ tốt khỏi bệnh nặng dù kháng thể đo được giảm' },
+      { icon: '😮‍💨', label: 'Long COVID: 10–30% ca nhẹ vẫn có triệu chứng > 12 tuần', note: 'Vaccine giảm nguy cơ Long COVID ~50% — thêm lý do để phòng ngừa nhiễm' },
+      { icon: '👴', label: '≥ 60 tuổi + bệnh mãn tính: ưu tiên mũi nhắc theo khuyến cáo BYT', note: 'Theo dõi moh.gov.vn để cập nhật khuyến nghị mới nhất cho Việt Nam' },
+    ],
+  },
+  {
+    num: '03', icon: '🔬', vaccine: 'Tdap (Bạch hầu, Uốn ván, Ho gà)', frequency: 'Nhắc lại mỗi 10 năm', who: 'Tất cả người lớn',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
+    keyFact: '🔬 Miễn dịch từ vaccine Tdap tiêm thời thơ ấu giảm dần — đến tuổi trưởng thành, nhiều người không còn được bảo vệ đầy đủ. Ho gà (whooping cough) đang tái xuất hiện ở người lớn tại nhiều quốc gia. Uốn ván có thể gây tử vong — và vi khuẩn tồn tại khắp nơi trong đất và môi trường.',
+    details: [
+      'Ba bệnh trong một vaccine: Bạch hầu (Diphtheria): vi khuẩn Corynebacterium diphtheriae tạo độc tố gây màng giả ở họng → tắc đường thở, viêm cơ tim, liệt thần kinh. Tỷ lệ tử vong 5–10%, trẻ em cao hơn. Việt Nam có dịch bạch hầu tại vùng cao năm 2020 do tỷ lệ tiêm thấp. Uốn ván (Tetanus): Clostridium tetani trong đất, bụi, phân → qua vết thương → co giật cơ nặng → tỷ lệ tử vong 10–80% tùy mức độ. Ho gà (Pertussis): Bordetella pertussis → ho kịch phát 100 ngày ("trăm ngày ho"), nguy hiểm nhất cho trẻ sơ sinh < 6 tháng.',
+      'Tại sao người lớn cần nhắc lại: tiêm chủng cơ bản (DTaP) cho trẻ em thường hoàn tất ở 4–6 tuổi. Miễn dịch kháng bạch hầu và ho gà giảm sau 5–10 năm. Uốn ván: miễn dịch kéo dài hơn (~10 năm) nhưng vẫn cần nhắc. Khuyến nghị CDC và WHO: nhắc 1 mũi Tdap cho người lớn chưa tiêm Tdap (nếu trước đây chỉ tiêm Td). Sau đó: nhắc Td (không có thành phần ho gà) mỗi 10 năm. Đặc biệt: phụ nữ mang thai nên tiêm Tdap mỗi thai kỳ (tuần 27–36).',
+      'Ho gà tái xuất hiện — không phải bệnh của trẻ em: nhiều ổ dịch ho gà lớn gần đây (Mỹ 2012: 48.277 ca — cao nhất từ 1955) phần lớn ở thanh thiếu niên và người lớn. Người lớn không tiêm nhắc mang vi khuẩn không có triệu chứng điển hình (chỉ ho dai dẳng vài tuần), sau đó lây cho trẻ sơ sinh < 6 tháng chưa hoàn thành lịch tiêm — đây là đối tượng nguy hiểm nhất (tử vong do ho gà > 90% ở trẻ < 6 tháng). Chiến lược "cocooning": tiêm Tdap cho cha mẹ, anh chị em, ông bà trước khi em bé ra đời.',
+      'Uốn ván — nguy cơ thường trực: vi khuẩn Clostridium tetani bào tử tồn tại trong đất, phân động vật, và bụi đường — không thể tránh hoàn toàn. Bất kỳ vết thương nào (đinh rỉ sét, cắt sâu, bỏng, vết cắn động vật) đều có thể là cổng vào. Triệu chứng khởi phát 3–21 ngày sau nhiễm: co cứng hàm (lockjaw), co giật toàn thân, rối loạn thần kinh tự động. Không có thuốc điều trị đặc hiệu — chỉ chăm sóc hỗ trợ (ICU, máy thở). Tỷ lệ tử vong tại các nước đang phát triển vẫn lên đến 50–80%.',
+      'Tiêm nhắc uốn ván sau chấn thương: nếu bị vết thương nguy cơ (sâu, bẩn, tiếp xúc đất/phân): cần tiêm nhắc nếu chưa tiêm trong 5 năm qua (thay vì 10 năm). Nếu không rõ lịch tiêm hoặc chưa hoàn thành: tiêm đủ 3 mũi (0, 1 tháng, 6–12 tháng). Immunoglobulin uốn ván (TIG): tiêm cùng lúc với vaccine cho vết thương nặng ở người chưa tiêm đủ — cung cấp miễn dịch thụ động tức thì trong khi chờ vaccine tạo miễn dịch chủ động.',
+      'Phụ nữ mang thai — tiêm Tdap mỗi thai kỳ: CDC và WHO khuyến nghị tiêm Tdap ở tuần 27–36 mỗi thai kỳ (không chỉ thai kỳ đầu tiên). Lý do: kháng thể mẹ truyền qua nhau thai cho bé — bảo vệ bé ngay từ khi sinh đến khi bé đủ tuổi tiêm vaccine (2 tháng). Nghiên cứu cho thấy hiệu quả bảo vệ trẻ sơ sinh đến 93% khi mẹ tiêm Tdap trong thai kỳ. An toàn: Tdap đã được chứng minh an toàn trong thai kỳ qua nhiều nghiên cứu lớn.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Nhắc lại mỗi 10 năm — miễn dịch trẻ em giảm dần theo tuổi', note: 'Vết thương nguy cơ: nhắc nếu chưa tiêm trong 5 năm (không phải 10)' },
+      { icon: '👶', label: 'Ho gà: người lớn không triệu chứng lây cho sơ sinh < 6 tháng', note: 'Chiến lược cocooning: tiêm cho cha mẹ, ông bà trước khi em bé ra đời' },
+      { icon: '🌱', label: 'Uốn ván trong đất, bụi — không thể tránh, tử vong đến 50–80%', note: 'Không có thuốc đặc hiệu — chỉ phòng ngừa bằng vaccine mới hiệu quả' },
+      { icon: '🤰', label: 'Mang thai: tiêm Tdap tuần 27–36 mỗi thai kỳ — bảo vệ bé từ khi sinh', note: 'Kháng thể mẹ truyền qua nhau thai — hiệu quả bảo vệ bé đến 93%' },
+    ],
+  },
+  {
+    num: '04', icon: '🫀', vaccine: 'Viêm gan B', frequency: '3 mũi nếu chưa tiêm', who: 'Người chưa có miễn dịch',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1576671081837-49000212a370?w=800&q=80',
+    keyFact: '🫀 Việt Nam thuộc vùng lưu hành viêm gan B cao (hyperendemic) — tỷ lệ nhiễm HBsAg trong dân số 8–10%. Viêm gan B mãn tính là nguyên nhân hàng đầu gây xơ gan và ung thư gan tế bào (HCC) tại Việt Nam. Vaccine viêm gan B hiệu quả > 95% và cho miễn dịch suốt đời ở người tiêm đủ 3 mũi.',
+    details: [
+      'Viêm gan B tại Việt Nam — gánh nặng thực sự: Việt Nam có khoảng 8–10 triệu người nhiễm HBV mãn tính (HBsAg dương tính). Ung thư gan là loại ung thư phổ biến hàng 2 và là nguyên nhân tử vong do ung thư hàng đầu ở nam giới Việt Nam — 75–80% do HBV. Viêm gan B lây qua: máu (truyền máu, dùng chung kim tiêm, xăm, châm cứu không vô trùng), quan hệ tình dục, và lây dọc từ mẹ sang con (đây là con đường chính tại Việt Nam).',
+      'Lây qua đường nào và không lây qua đường nào: LÂY: máu và dịch cơ thể (tinh dịch, dịch âm đạo, sữa mẹ), từ mẹ sang con (chu sinh), dùng chung dao cạo, bàn chải đánh răng, kim tiêm. KHÔNG LÂY: bắt tay, ôm, hôn má, chia sẻ thức ăn, ho, hắt hơi, nước bơi hồ. HBV chứa trong máu ở nồng độ cao hơn HIV gấp 50–100 lần — lây qua tiếp xúc máu rất nhỏ. Dụng cụ làm nail, xăm, và châm cứu không vô trùng là nguồn lây quan trọng cần lưu ý.',
+      'Phác đồ tiêm — 3 mũi cơ bản và kiểm tra miễn dịch: phác đồ chuẩn: mũi 1 (0 tháng) → mũi 2 (1 tháng) → mũi 3 (6 tháng). Phác đồ nhanh: 0–1–2 tháng + mũi 4 lúc 12 tháng (dùng khi cần bảo vệ nhanh, ví dụ trước du lịch). Sau hoàn thành 3 mũi: kiểm tra Anti-HBs (kháng thể bảo vệ) sau 1–2 tháng. Anti-HBs ≥ 10 mIU/mL = đã được bảo vệ. Anti-HBs < 10 mIU/mL = "non-responder" (khoảng 5–10% người lớn) — cần tiêm thêm 3 mũi nữa và kiểm tra lại.',
+      'Trước khi tiêm — cần xét nghiệm gì: xét nghiệm HBsAg (đang nhiễm HBV không?), Anti-HBs (đã có miễn dịch chưa?), và Anti-HBc (tiếp xúc HBV cũ?). Nếu HBsAg dương tính: không tiêm vaccine — cần điều trị HBV. Nếu Anti-HBs dương tính (≥ 10 mIU/mL): đã có miễn dịch, không cần tiêm. Nếu cả hai âm tính: chưa miễn dịch, nên tiêm ngay. Tại Việt Nam, nhiều người đã nhiễm HBV (8–10%) hoặc đã có miễn dịch từ tiêm trẻ em — xét nghiệm trước để tránh tiêm không cần thiết.',
+      'Bảo vệ sơ sinh — mũi đầu trong 24 giờ: trẻ sinh ra từ mẹ HBsAg dương tính có nguy cơ nhiễm HBV 70–90% nếu không có can thiệp. Giao thức hiện tại: tiêm vaccine viêm gan B ngay trong vòng 12–24 giờ sau sinh + HBIG (hepatitis B immune globulin) — giảm nguy cơ nhiễm xuống < 5–10%. Đây là lý do vaccine viêm gan B nằm trong chương trình tiêm chủng quốc gia VN từ năm 1997, với mũi đầu trong 24 giờ. Trẻ sinh từ mẹ không biết HBsAg: xét nghiệm mẹ ngay và tiêm vaccine sớm nhất có thể.',
+      'Người lớn cần tiêm: ai nên ưu tiên nếu chưa tiêm hoặc không rõ lịch tiêm: nhân viên y tế (tiếp xúc máu cao). Người có nhiều bạn tình hoặc quan hệ đồng giới nam. Người dùng ma túy tiêm. Người sống cùng hoặc quan hệ tình dục với người HBsAg dương tính. Bệnh nhân thận mãn tính/lọc máu (thường cần liều cao hơn). Du khách đến vùng lưu hành HBV cao. Và thực ra: tất cả người lớn chưa có miễn dịch đều nên tiêm — vaccine an toàn, hiệu quả, và cho miễn dịch suốt đời.',
+    ],
+    points: [
+      { icon: '🇻🇳', label: 'VN: 8–10 triệu người nhiễm HBV — ung thư gan hàng đầu nam giới', note: 'Lây từ mẹ sang con là con đường chính — vaccine đầu trong 24h sau sinh' },
+      { icon: '🧪', label: 'Xét nghiệm HBsAg + Anti-HBs trước khi tiêm', note: 'Nếu đã có miễn dịch hoặc đang nhiễm: không cần/không nên tiêm vaccine' },
+      { icon: '✅', label: 'Anti-HBs ≥ 10 mIU/mL sau 3 mũi = bảo vệ suốt đời', note: '5–10% không đáp ứng — kiểm tra sau 1–2 tháng, tiêm thêm nếu cần' },
+      { icon: '🍺', label: 'Lây qua dụng cụ nail, xăm, châm cứu không vô trùng', note: 'HBV trong máu đậm đặc hơn HIV 50–100 lần — rủi ro tiếp xúc nhỏ vẫn lây' },
+    ],
+  },
+  {
+    num: '05', icon: '🎗️', vaccine: 'HPV', frequency: '2–3 mũi', who: '9–45 tuổi, ưu tiên trước quan hệ tình dục',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80',
+    keyFact: '🎗️ Vaccine HPV là vaccine đầu tiên và duy nhất chứng minh có thể NGĂN NGỪA UNG THƯ — không phải chỉ phòng bệnh nhiễm trùng. HPV gây 99% ung thư cổ tử cung, 90% ung thư hậu môn, 70% ung thư họng miệng. Hiệu quả vaccine lên đến 97–99% với các chủng HPV nguy cơ cao khi tiêm trước khi phơi nhiễm.',
+    details: [
+      'HPV là gì và tại sao phổ biến đến vậy: Human Papillomavirus (HPV) là virus lây qua tiếp xúc da-da khi quan hệ tình dục — bao gồm quan hệ âm đạo, hậu môn, và miệng. Ước tính 80–90% người có hoạt động tình dục sẽ nhiễm ít nhất 1 chủng HPV trong đời. Hầu hết nhiễm tự khỏi trong 1–2 năm nhờ hệ miễn dịch. Vấn đề: một số chủng (đặc biệt HPV-16 và HPV-18) tồn tại lâu dài → tích hợp vào DNA tế bào → gây biến đổi ác tính. Không có triệu chứng trong giai đoạn nhiễm — không biết mình đang mang virus.',
+      'Các bệnh HPV gây ra: ung thư cổ tử cung (CTC): 99% do HPV — HPV-16 và HPV-18 chiếm 70% ca. Ung thư hậu môn: 90% do HPV. Ung thư âm hộ, âm đạo, dương vật: 40–90% do HPV. Ung thư vùng miệng/họng (oropharyngeal): HPV-16 gây 70–80% ca, đang tăng nhanh ở nam giới. Mụn cóc sinh dục (condyloma): HPV-6 và HPV-11 (chủng nguy cơ thấp). Gardasil 9 bảo vệ khỏi 9 chủng: HPV-6, 11, 16, 18, 31, 33, 45, 52, 58 — bao phủ ~90% ca ung thư CTC.',
+      'Lịch tiêm theo tuổi: 9–14 tuổi (trước phơi nhiễm): 2 mũi (0 và 6–12 tháng) — hệ miễn dịch ở độ tuổi này đáp ứng mạnh hơn, nên 2 mũi đủ tạo miễn dịch tương đương 3 mũi ở người lớn. 15–45 tuổi: 3 mũi (0, 2, và 6 tháng). Trên 45 tuổi: FDA Mỹ mở rộng đến 45, nhưng lợi ích giảm dần vì khả năng đã phơi nhiễm HPV cao hơn — tham khảo bác sĩ. Quan trọng: vaccine hiệu quả nhất TRƯỚC khi phơi nhiễm — nhưng vẫn có lợi ở người đã hoạt động tình dục (bảo vệ các chủng chưa nhiễm).',
+      'Nam giới có nên tiêm không: Có, hoàn toàn nên. Nam giới cũng bị ung thư hậu môn, dương vật, và ung thư vùng họng (oropharyngeal) do HPV. HPV-16 gây ung thư họng ở nam tăng nhanh ở Mỹ và châu Âu. Mụn cóc sinh dục (HPV-6/11): gây khó chịu và lo lắng, điều trị tốn kém. Vaccine nam giới cũng giảm lây lan HPV cho bạn tình. CDC khuyến nghị HPV vaccine cho mọi người đến 26 tuổi không phân biệt giới tính, và cân nhắc đến 45 tuổi.',
+      'Hiệu quả thực tế sau khi triển khai đại trà: Australia bắt đầu chương trình HPV vaccine quốc gia năm 2007 cho nữ, 2013 cho nam. Kết quả đến 2023: ung thư cổ tử cung ở phụ nữ dưới 30 tuổi giảm 90%+ — tiến đến mục tiêu loại trừ ung thư CTC. Scotland: giảm 89% tỷ lệ ung thư cổ tử cung ở phụ nữ tiêm vaccine năm 12–13 tuổi. Đây là bằng chứng thực tế mạnh nhất: vaccine hoạt động không chỉ trong thử nghiệm lâm sàng mà trong dân số thực.',
+      'Vaccine HPV và tầm soát ung thư CTC: vaccine không thay thế tầm soát (Pap smear / HPV test). Lý do: vaccine bảo vệ ~90% nhưng không phải 100% chủng. Người đã tiêm vẫn cần tầm soát định kỳ. Hướng dẫn tầm soát hiện tại: Pap smear mỗi 3 năm (từ 21 tuổi), hoặc HPV test + Pap smear (co-test) mỗi 5 năm (từ 30 tuổi), hoặc HPV test đơn thuần mỗi 5 năm (từ 25 tuổi). Tại Việt Nam: HPV test ngày càng có nhiều tại bệnh viện lớn.',
+    ],
+    points: [
+      { icon: '🛡️', label: 'Vaccine đầu tiên chứng minh NGĂN NGỪA UNG THƯ — không chỉ nhiễm trùng', note: 'Gardasil 9 bảo vệ 9 chủng HPV — bao gồm 90% ca ung thư cổ tử cung' },
+      { icon: '👦', label: 'Nam giới nên tiêm — ung thư họng do HPV-16 đang tăng nhanh', note: 'CDC khuyến nghị cho mọi người đến 26 tuổi, cân nhắc đến 45 tuổi' },
+      { icon: '🇦🇺', label: 'Australia: ung thư CTC giảm 90%+ ở thế hệ tiêm vaccine', note: 'Bằng chứng dân số thực — loại trừ ung thư CTC đang tiến đến được' },
+      { icon: '🔬', label: 'Vaccine không thay thế Pap smear / HPV test định kỳ', note: 'Tầm soát mỗi 3–5 năm vẫn cần thiết — 90% bảo vệ không phải 100%' },
+    ],
+  },
+  {
+    num: '06', icon: '🫁', vaccine: 'Phế cầu', frequency: '1–2 mũi', who: '≥ 65 tuổi hoặc bệnh mãn tính',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80',
+    keyFact: '🫁 Streptococcus pneumoniae (phế cầu) là nguyên nhân hàng đầu gây viêm phổi do vi khuẩn, viêm màng não, và nhiễm khuẩn huyết ở người lớn tuổi. Tại các nước có chương trình vaccine phế cầu toàn quốc, tỷ lệ viêm phổi nặng và tử vong ở người ≥ 65 tuổi giảm 50–80%.',
+    details: [
+      'Streptococcus pneumoniae — kẻ cơ hội nguy hiểm nhất: phế cầu là vi khuẩn thường trú trong mũi họng của 5–40% người khỏe mạnh (tỷ lệ cao hơn ở trẻ em và người cao tuổi). Phần lớn thời gian không gây bệnh — nhưng khi hệ miễn dịch suy yếu (do cúm, COVID, tuổi cao, bệnh mãn tính): vi khuẩn xâm nhập xuống phổi, vào máu, hoặc vào màng não. Có hơn 90 serotype (chủng) phế cầu — vaccine bảo vệ các serotype gây bệnh nặng nhất.',
+      'Các bệnh phế cầu gây ra: viêm phổi do vi khuẩn (pneumococcal pneumonia): biểu hiện sốt cao, ho đờm, khó thở — cần nhập viện, đôi khi ICU. Tỷ lệ tử vong ở người cao tuổi: 20–30%. Viêm màng não mủ (meningitis): sốt, cứng cổ, sợ ánh sáng — tỷ lệ tử vong 20–30%, di chứng thần kinh nặng (điếc, liệt) ở người sống sót. Nhiễm khuẩn huyết (bacteremia/sepsis): vi khuẩn vào máu — tử vong cao đặc biệt ở người cao tuổi và suy giảm miễn dịch.',
+      'Hai loại vaccine phế cầu — PCV và PPSV: PPSV23 (Pneumovax): vaccine đa đường (polysaccharide) bảo vệ 23 serotype. Chỉ tạo miễn dịch ngắn hạn (5–7 năm), không tạo miễn dịch tế bào B nhớ, kém hiệu quả ở trẻ < 2 tuổi. PCV13 (Prevenar 13) / PCV15 / PCV20: vaccine liên hợp (conjugate) — protein gắn vào polysaccharide → kích hoạt tế bào T + B nhớ → miễn dịch bền hơn, hiệu quả hơn. PCV20 (Prevnar 20) mới nhất bảo vệ 20 serotype — đang thay thế dần PCV13. Hiện tại khuyến nghị: PCV20 hoặc PCV15 + PPSV23.',
+      'Ai nên tiêm và lịch tiêm: ≥ 65 tuổi: PCV20 1 mũi (hoặc PCV15 rồi PPSV23 sau ≥ 1 năm). 19–64 tuổi có nguy cơ cao: bệnh phổi mãn tính (COPD, hen), tim mạch, tiểu đường, bệnh thận mãn tính, gan mạn, mất lách, HIV, suy giảm miễn dịch. Hút thuốc lá cũng là yếu tố nguy cơ (phá hủy niêm mạc đường hô hấp). Trẻ em < 5 tuổi: PCV được đưa vào lịch tiêm chủng quốc gia — bảo vệ trẻ và giảm lây lan trong cộng đồng (herd protection cho người cao tuổi).',
+      'Hiệu quả vaccine trong thực tế: sau khi Mỹ triển khai PCV13 cho người lớn năm 2014: viêm phổi do phế cầu serotype trong vaccine giảm 91–93% ở người ≥ 65 tuổi trong vài năm. Tỷ lệ nhiễm khuẩn huyết và viêm màng não phế cầu giảm đáng kể. Vaccine phế cầu nhi đồng (PCV) còn tạo herd protection gián tiếp cho người cao tuổi: trẻ ít mang vi khuẩn → lây ít hơn cho ông bà. Đây là ví dụ quan trọng về lợi ích cộng đồng của vaccine.',
+      'Phân biệt viêm phổi do virus vs vi khuẩn: viêm phổi do virus (bao gồm COVID, cúm): không đáp ứng với kháng sinh, điều trị hỗ trợ. Viêm phổi do phế cầu (vi khuẩn): cần kháng sinh (amoxicillin/clavulanate, azithromycin, fluoroquinolone). Kháng kháng sinh (antibiotic resistance): S. pneumoniae ngày càng kháng penicillin và macrolide — thêm lý do để phòng ngừa bằng vaccine thay vì chỉ phụ thuộc kháng sinh điều trị. Tại Việt Nam, kháng kháng sinh ở phế cầu ở mức cao.',
+    ],
+    points: [
+      { icon: '👴', label: '≥ 65 tuổi: viêm phổi phế cầu tử vong 20–30% — tiêm 1 mũi PCV20', note: 'Bệnh phổi, tim mạch, tiểu đường 19–64 tuổi: cũng nên tiêm' },
+      { icon: '💊', label: 'Phế cầu ngày càng kháng kháng sinh — phòng tốt hơn điều trị', note: 'Kháng penicillin và macrolide cao tại VN — vaccine là tuyến phòng thủ hiệu quả nhất' },
+      { icon: '🧒', label: 'Trẻ tiêm PCV giảm lây phế cầu cho ông bà — herd protection', note: 'PCV trong lịch tiêm quốc gia VN bảo vệ cả trẻ và cộng đồng người cao tuổi' },
+      { icon: '🏥', label: 'PCV20: 1 mũi bảo vệ 20 serotype — thay thế phác đồ 2-vaccine cũ', note: 'Prevnar 20 đơn giản hóa lịch tiêm so với PCV15 + PPSV23 trước đây' },
+    ],
+  },
 ];
+
+function VaccineCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-4 cursor-pointer transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${item.rgb},0.55)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 20px rgba(${item.rgb},0.12)` : 'none', transform: hovered ? 'translateY(-2px)' : 'translateY(0)' }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
+          style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>{item.icon}</div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap mb-1">
+            <span className="font-bold text-sm text-text leading-snug">{item.vaccine}</span>
+            <span className="text-xs px-2 py-0.5 rounded-full font-bold transition-opacity duration-200"
+              style={{ background: `rgba(${item.rgb},0.12)`, color: item.color, opacity: hovered ? 1 : 0 }}>Chi tiết →</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: `rgba(${item.rgb},0.1)`, color: item.color }}>⏰ {item.frequency}</span>
+            <span className="text-xs px-2 py-0.5 rounded-full text-muted" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>👤 {item.who}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function VaccineModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = e => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.vaccine} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-6 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: `rgba(${item.rgb},0.18)`, color: item.color, border: `1px solid rgba(${item.rgb},0.4)` }}>Vaccine {item.num}/06</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-xl md:text-2xl mb-2 leading-snug" style={{ color: item.color }}>{item.vaccine}</h2>
+          <div className="flex flex-wrap gap-2 mb-5">
+            <span className="text-xs px-3 py-1 rounded-full font-bold" style={{ background: `rgba(${item.rgb},0.12)`, color: item.color }}>⏰ {item.frequency}</span>
+            <span className="text-xs px-3 py-1 rounded-full text-muted" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>👤 {item.who}</span>
+          </div>
+          <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}`, color: 'rgba(229,231,235,0.88)' }}>
+            {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-3"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 06</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function PillarCard({ item, onClick }) {
   const [hovered, setHovered] = useState(false);
@@ -297,6 +521,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthPreventionPage() {
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [pillarModal, setPillarModal] = useState(null);
+  const [vaccineModal, setVaccineModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -370,26 +595,11 @@ export default function HealthPreventionPage() {
 
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Lịch Tiêm Vaccine Người Lớn</h2>
-        <p className="text-muted text-lg mb-6">Vaccine không chỉ dành cho trẻ em — người lớn cũng cần cập nhật lịch tiêm định kỳ.</p>
-        <div className="overflow-x-auto">
-          <table className="w-full text-lg">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-3 px-3 font-bold text-text">Vaccine</th>
-                <th className="text-left py-3 px-3 font-bold text-text">Tần suất</th>
-                <th className="text-left py-3 px-3 font-bold text-text">Đối tượng</th>
-              </tr>
-            </thead>
-            <tbody>
-              {VACCINE_SCHEDULE.map((v, i) => (
-                <tr key={i} className="border-b border-border/50 hover:bg-white/3 transition-colors">
-                  <td className="py-3 px-3 font-medium text-text">{v.vaccine}</td>
-                  <td className="py-3 px-3 text-muted">{v.frequency}</td>
-                  <td className="py-3 px-3 text-muted">{v.who}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <p className="text-muted text-lg mb-6">Vaccine không chỉ dành cho trẻ em — người lớn cũng cần cập nhật lịch tiêm định kỳ. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {VACCINE_SCHEDULE.map((v, i) => (
+            <VaccineCard key={i} item={v} onClick={() => setVaccineModal(i)} />
+          ))}
         </div>
       </RevealBlock>
 
@@ -407,6 +617,17 @@ export default function HealthPreventionPage() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+
+      {vaccineModal !== null && (
+        <VaccineModal
+          item={VACCINE_SCHEDULE[vaccineModal]}
+          onClose={() => setVaccineModal(null)}
+          onPrev={() => setVaccineModal(i => Math.max(0, i - 1))}
+          onNext={() => setVaccineModal(i => Math.min(VACCINE_SCHEDULE.length - 1, i + 1))}
+          hasPrev={vaccineModal > 0}
+          hasNext={vaccineModal < VACCINE_SCHEDULE.length - 1}
+        />
+      )}
 
       {pillarModal !== null && (
         <PillarModal

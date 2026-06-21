@@ -1163,6 +1163,149 @@ function F3MealPlan() {
   );
 }
 
+// --- Lifestyle items data ---
+const LIFESTYLE_ITEMS = [
+  {
+    key: 'sleep', icon: '😴', label: 'Giấc ngủ tối qua',
+    min: 4, max: 10, step: 0.5, unit: 'giờ',
+    color: '#14b8a6', rgb: '20,184,166',
+    good: v => v >= 7 ? '#22c55e' : v >= 6 ? '#eab308' : '#ef4444',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngủ đủ 7–9 giờ không chỉ là nghỉ ngơi — não bộ đang "bảo trì hệ thống": xóa độc tố amyloid-beta (nguy cơ Alzheimer), củng cố ký ức, tái tạo hormone tăng trưởng và tế bào miễn dịch.',
+    details: [
+      '7–9 giờ là ngưỡng khuyến nghị của National Sleep Foundation cho người trưởng thành. Dưới 6 giờ liên tục 2 tuần = hiệu suất nhận thức tương đương thức 24 giờ liên tục.',
+      'Giai đoạn REM (20–25% tổng giấc ngủ, chủ yếu sau 5–6h): não xử lý cảm xúc, củng cố ký ức dài hạn, tạo kết nối sáng tạo. Cắt ngắn giấc ngủ = mất REM.',
+      'Ngủ đủ giấc trong 1 tuần: testosterone tăng như 10 năm trẻ hơn (nam); cortisol giảm 15%; leptin (hormone no) tăng, ghrelin (hormone đói) giảm — hỗ trợ kiểm soát cân nặng tự nhiên.',
+      'Nợ ngủ không trả được hoàn toàn bằng ngủ bù cuối tuần. Ngủ bù 1–2h có ích, nhưng không phục hồi hoàn toàn hiệu suất nhận thức và hormone bị ảnh hưởng trong tuần.',
+      'Chất lượng quan trọng hơn số giờ: 7 giờ ngủ liên tục không gián đoạn tốt hơn 9 giờ ngủ chập chờn. Đánh giá bằng cảm giác tỉnh táo sau 15–20 phút dậy.',
+      'Nhiệt độ phòng 18–20°C là yếu tố môi trường tác động nhất. Cơ thể cần hạ nhiệt độ lõi ~1°C để vào giấc ngủ sâu — phòng mát hỗ trợ quá trình này hiệu quả.',
+    ],
+    points: [
+      { icon: '🧠', label: '7–9 Giờ Là Chuẩn', note: '<6 giờ = hiệu suất như thức 24h liên tục' },
+      { icon: '🌙', label: 'REM Là Quan Trọng', note: 'Xuất hiện sau 5–6h — cắt ngắn giấc ngủ mất REM' },
+      { icon: '💉', label: 'Hormone Tự Tái Tạo', note: 'GH, testosterone, leptin phục hồi trong giấc ngủ sâu' },
+      { icon: '🌡️', label: 'Phòng Mát 18–20°C', note: 'Yếu tố môi trường tác động nhất đến chất lượng ngủ' },
+    ],
+  },
+  {
+    key: 'steps', icon: '🚶', label: 'Số bước chân hôm nay',
+    min: 1000, max: 15000, step: 500, unit: 'bước',
+    color: '#f59e0b', rgb: '245,158,11',
+    good: v => v >= 8000 ? '#22c55e' : v >= 5000 ? '#eab308' : '#ef4444',
+    img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nghiên cứu JAMA 2019 trên 16,000 người: mỗi 1,000 bước thêm giảm 15% nguy cơ tử vong sớm. Lợi ích tăng dần đến 7,500 bước/ngày — sau đó ổn định. Không cần 10,000 mới có lợi.',
+    details: [
+      '10,000 bước/ngày là con số marketing từ pedometer Nhật 1965 — không có cơ sở khoa học cụ thể. Nghiên cứu hiện đại cho thấy lợi ích tối ưu ở 7,000–8,000 bước/ngày.',
+      'NEAT (Non-Exercise Activity Thermogenesis): hoạt động không phải tập luyện — đi bộ, đứng, fidgeting — chiếm 15–50% tổng calo đốt mỗi ngày. Tăng NEAT hiệu quả hơn tập gym 1h rồi ngồi cả ngày.',
+      'Ngưỡng nguy hiểm: dưới 5,000 bước/ngày tương quan với tăng nguy cơ tiểu đường loại 2, bệnh tim mạch, và tử vong sớm. Đây là ngưỡng cần vượt qua đầu tiên.',
+      'Đi bộ sau bữa ăn 10–15 phút: giảm đường huyết sau ăn 25–30%, cải thiện độ nhạy insulin, giảm cảm giác nặng nề và buồn ngủ sau ăn. Hiệu quả nhất trong 30 phút sau ăn.',
+      'Hack số bước: đỗ xe xa hơn 200m, đi thang bộ thay thang máy, bước đi khi gọi điện, xuống xe buýt 1–2 trạm trước. Dễ thêm 2,000–3,000 bước mà không cần thay đổi lịch.',
+      'Cường độ cũng quan trọng: đi bộ nhanh (>100 bước/phút, >5km/h) tốt hơn đi chậm cùng số bước. Có thể nói chuyện nhưng hơi khó thở = cường độ lý tưởng.',
+    ],
+    points: [
+      { icon: '🎯', label: '7,000–8,000 Là Đủ', note: '10,000 bước là marketing — lợi ích tối ưu ở 7–8k' },
+      { icon: '🔥', label: 'NEAT Quan Trọng', note: 'Di chuyển hàng ngày đốt nhiều calo hơn bạn nghĩ' },
+      { icon: '🍽️', label: 'Đi Bộ Sau Ăn', note: '10–15 phút sau ăn — giảm đường huyết 25–30%' },
+      { icon: '⚡', label: 'Nhanh Hơn Là Tốt Hơn', note: '>100 bước/phút = zone cardio nhẹ, hiệu quả hơn' },
+    ],
+  },
+  {
+    key: 'energy', icon: '⚡', label: 'Mức năng lượng',
+    min: 1, max: 10, step: 1, unit: '/10',
+    color: '#a855f7', rgb: '168,85,247',
+    good: v => v >= 7 ? '#22c55e' : v >= 5 ? '#eab308' : '#ef4444',
+    img: 'https://images.unsplash.com/photo-1495837174058-628aafc7d610?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Năng lượng là chỉ số tổng hợp phản ánh chất lượng ngủ, dinh dưỡng, hydration, stress và vận động. Năng lượng thấp kéo dài (<=5/10 hơn 3 ngày liên tiếp) là tín hiệu cần điều chỉnh hệ thống.',
+    details: [
+      'Nguyên nhân phổ biến nhất: thiếu ngủ (cộng hưởng nhanh nhất), mất nước nhẹ (chỉ 1–2% đã giảm 20% hiệu suất), bỏ bữa sáng, ăn ít protein, và ngồi quá lâu không vận động.',
+      'Chu kỳ năng lượng tự nhiên (ultradian rhythm): mỗi ~90–120 phút có 1 chu kỳ tập trung cao → giảm năng lượng → nghỉ ngắn → phục hồi. Làm việc theo chu kỳ này hiệu quả hơn.',
+      '"2:30 PM slump" (mệt chiều): do đường huyết giảm sau bữa trưa kết hợp nhịp sinh học. Fix: đi bộ 10 phút + uống nước + ánh sáng tự nhiên — không cần cà phê hay đồ ngọt.',
+      'Tập luyện tăng năng lượng ngay: 10–20 phút tập vừa phải tăng norepinephrine và dopamine, kéo dài 2–4 giờ. Ngược lại với cảm giác mệt hơn mà nhiều người lo trước khi tập.',
+      'Thiền/thở 5 phút phục hồi nhanh hơn caffeine: kích hoạt hệ thần kinh phó giao cảm trong 60–90 giây, giảm cortisol, tăng tập trung mà không có crash sau đó.',
+      'Theo dõi pattern: ghi chú ngày nào năng lượng cao/thấp và liên hệ với ngủ, ăn, vận động, stress. Sau 2–3 tuần sẽ thấy pattern rõ để tối ưu hóa.',
+    ],
+    points: [
+      { icon: '😴', label: 'Ngủ Là Nhanh Nhất', note: 'Thiếu ngủ = nguyên nhân năng lượng thấp phổ biến nhất' },
+      { icon: '💧', label: 'Kiểm Tra Nước', note: 'Mất nước 1–2% giảm 20% hiệu suất — uống ngay' },
+      { icon: '🏃', label: 'Tập = Tăng Năng Lượng', note: '10–20 phút tập nhẹ — norepinephrine kéo dài 2–4h' },
+      { icon: '📊', label: 'Theo Dõi Pattern', note: '2–3 tuần ghi chú → thấy rõ nguyên nhân năng lượng thấp' },
+    ],
+  },
+];
+
+// --- LifestyleModal ---
+function LifestyleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-4" style={{ color: item.color }}>{item.icon} {item.label}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {LIFESTYLE_ITEMS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // --- F4 Lifestyle tab ---
 function F4Lifestyle() {
   const [data, setData] = useState(() => {
@@ -1172,6 +1315,7 @@ function F4Lifestyle() {
       return s.data || { sleep: 7, steps: 5000, energy: 7 };
     } catch { return { sleep: 7, steps: 5000, energy: 7 }; }
   });
+  const [lifestyleModal, setLifestyleModal] = useState(null);
 
   function set(k, v) {
     const u = { ...data, [k]: v };
@@ -1181,20 +1325,36 @@ function F4Lifestyle() {
 
   return (
     <div className="space-y-4">
-      {[
-        { key: 'sleep', icon: '😴', label: 'Giấc ngủ tối qua', min: 4, max: 10, step: 0.5, unit: 'giờ', good: v => v >= 7 ? '#22c55e' : v >= 6 ? '#eab308' : '#ef4444' },
-        { key: 'steps', icon: '🚶', label: 'Số bước chân hôm nay', min: 1000, max: 15000, step: 500, unit: 'bước', good: v => v >= 8000 ? '#22c55e' : v >= 5000 ? '#eab308' : '#ef4444' },
-        { key: 'energy', icon: '⚡', label: 'Mức năng lượng', min: 1, max: 10, step: 1, unit: '/10', good: v => v >= 7 ? '#22c55e' : v >= 5 ? '#eab308' : '#ef4444' },
-      ].map(item => (
-        <div key={item.key} className="rounded-2xl border border-border bg-surface p-4">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">{item.icon}</span>
-            <span className="text-lg text-text font-medium flex-1">{item.label}</span>
-            <span className="text-2xl font-black" style={{ color: item.good(data[item.key]) }}>{data[item.key]}<span className="text-base font-normal ml-0.5">{item.unit}</span></span>
+      {LIFESTYLE_ITEMS.map((item, i) => {
+        const val = data[item.key];
+        const valColor = item.good(val);
+        return (
+          <div key={item.key} className="rounded-2xl border border-border bg-surface p-4 transition-all duration-200"
+            style={{ borderColor: lifestyleModal === i ? `rgba(${item.rgb},0.35)` : undefined }}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">{item.icon}</span>
+              <span className="text-lg text-text font-medium flex-1">{item.label}</span>
+              <span className="text-2xl font-black" style={{ color: valColor }}>{val}<span className="text-base font-normal ml-0.5">{item.unit}</span></span>
+              <button onClick={() => setLifestyleModal(i)}
+                className="text-[11px] font-bold px-2.5 py-1 rounded-lg ml-2 transition-all duration-200 hover:opacity-80"
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
+                Chi tiết →
+              </button>
+            </div>
+            <input type="range" min={item.min} max={item.max} step={item.step} value={val}
+              onChange={e => set(item.key, +e.target.value)} className="w-full" />
           </div>
-          <input type="range" min={item.min} max={item.max} step={item.step} value={data[item.key]} onChange={e => set(item.key, +e.target.value)} className="w-full" />
-        </div>
-      ))}
+        );
+      })}
+      {lifestyleModal !== null && (
+        <LifestyleModal
+          item={LIFESTYLE_ITEMS[lifestyleModal]} idx={lifestyleModal}
+          onClose={() => setLifestyleModal(null)}
+          onPrev={() => setLifestyleModal(i => Math.max(0, i - 1))}
+          onNext={() => setLifestyleModal(i => Math.min(LIFESTYLE_ITEMS.length - 1, i + 1))}
+          hasPrev={lifestyleModal > 0} hasNext={lifestyleModal < LIFESTYLE_ITEMS.length - 1}
+        />
+      )}
       <div className="rounded-2xl border p-3 text-base text-muted" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.04)` }}>
         Dữ liệu lưu theo ngày trong thiết bị của bạn. <Link to="/pillar/f/lifestyle-tracker" className="underline" style={{ color: COLOR }}>Xem lịch sử →</Link>
       </div>

@@ -7,28 +7,180 @@ const ORBIT_ID = 'e-assess-orbit-kf';
 const ORBIT_CLASS = 'e-assess-orbit-ring';
 const ORBIT_PROP = '--e-assess-orbit-angle';
 
+const SCORE_COLORS = [
+  { color: '#ef4444', rgb: '239,68,68',  label: 'Cần cải thiện' },
+  { color: '#f97316', rgb: '249,115,22', label: 'Chưa đạt' },
+  { color: '#eab308', rgb: '234,179,8',  label: 'Tạm ổn' },
+  { color: '#22c55e', rgb: '34,197,94',  label: 'Tốt' },
+  { color: '#3b82f6', rgb: '59,130,246', label: 'Xuất sắc' },
+];
+
 const QUESTIONS = [
-  // Physical activity (Q1-3)
-  { id: 1, cat: 'Vận Động', q: 'Bạn vận động thể chất ít nhất 20 phút bao nhiêu ngày/tuần?', opts: ['Không vận động', '1–2 ngày', '3–4 ngày', '5–6 ngày', 'Hàng ngày'] },
-  { id: 2, cat: 'Vận Động', q: 'Bạn có thường xuyên ngồi liên tục > 2 giờ không nghỉ không?', opts: ['Hầu như mọi ngày', 'Thường xuyên', 'Đôi khi', 'Hiếm khi', 'Hầu như không'] },
-  { id: 3, cat: 'Vận Động', q: 'Bạn có tập sức mạnh (tạ, thể dục) ít nhất 2 lần/tuần không?', opts: ['Không bao giờ', 'Hiếm khi', 'Đôi khi', 'Thường xuyên', 'Luôn luôn'] },
-  // Nutrition (Q4-6)
-  { id: 4, cat: 'Dinh Dưỡng', q: 'Bạn ăn rau và trái cây bao nhiêu phần mỗi ngày?', opts: ['Hầu như không', '1 phần', '2–3 phần', '4–5 phần', '≥ 5 phần'] },
-  { id: 5, cat: 'Dinh Dưỡng', q: 'Bạn có thường xuyên ăn đồ chế biến sẵn / fast food không?', opts: ['Hàng ngày', '4–6 lần/tuần', '2–3 lần/tuần', '1 lần/tuần', 'Hiếm khi'] },
-  { id: 6, cat: 'Dinh Dưỡng', q: 'Bạn uống đủ nước (khoảng 2L/ngày) không?', opts: ['Không bao giờ', 'Hiếm khi', 'Đôi khi', 'Thường xuyên', 'Luôn luôn'] },
-  // Sleep (Q7-8)
-  { id: 7, cat: 'Giấc Ngủ', q: 'Bạn thường ngủ bao nhiêu tiếng mỗi đêm?', opts: ['< 5 giờ', '5–6 giờ', '6–7 giờ', '7–8 giờ', '> 8 giờ'] },
-  { id: 8, cat: 'Giấc Ngủ', q: 'Bạn cảm thấy thế nào khi thức dậy vào buổi sáng?', opts: ['Rất mệt', 'Mệt', 'Bình thường', 'Tỉnh táo', 'Rất tỉnh táo và sẵn sàng'] },
-  // Stress/Mind (Q9-11)
-  { id: 9, cat: 'Tâm Trí', q: 'Mức độ stress hằng ngày của bạn?', opts: ['Cực kỳ cao', 'Cao', 'Trung bình', 'Thấp', 'Rất thấp'] },
-  { id: 10, cat: 'Tâm Trí', q: 'Bạn có thực hành kỹ thuật thư giãn (thở sâu, thiền, yoga) không?', opts: ['Không bao giờ', 'Hiếm khi', 'Đôi khi', 'Thường xuyên', 'Hàng ngày'] },
-  // Preventive (Q12-13)
-  { id: 11, cat: 'Phòng Bệnh', q: 'Bạn đi khám sức khỏe định kỳ bao nhiêu?', opts: ['Không bao giờ', 'Khi thấy bệnh mới đi', 'Mỗi 2–3 năm', 'Hàng năm', 'Thường xuyên hơn khi cần'] },
-  { id: 12, cat: 'Phòng Bệnh', q: 'Bạn có hút thuốc hoặc uống rượu bia thường xuyên không?', opts: ['Hút thuốc + uống nhiều', 'Một trong hai nhiều', 'Một trong hai ít', 'Đôi khi một trong hai', 'Không có cả hai'] },
-  // Knowledge (Q13-15)
-  { id: 13, cat: 'Kiến Thức', q: 'Bạn chủ động tìm hiểu thông tin sức khỏe bao nhiêu?', opts: ['Không bao giờ', 'Hiếm khi', 'Đôi khi', 'Thường xuyên', 'Hàng ngày'] },
-  { id: 14, cat: 'Kiến Thức', q: 'Bạn có biết các chỉ số sức khỏe cơ bản của mình (BMI, HA, đường huyết) không?', opts: ['Không biết', 'Biết một phần', 'Biết nhưng không theo dõi', 'Biết và theo dõi thỉnh thoảng', 'Biết và theo dõi đều đặn'] },
-  { id: 15, cat: 'Kiến Thức', q: 'Bạn tin tưởng khả năng tự quản lý sức khỏe của mình không?', opts: ['Không tự tin chút nào', 'Ít tự tin', 'Tự tin vừa phải', 'Tự tin', 'Rất tự tin'] },
+  {
+    id: 1, cat: 'Vận Động', q: 'Bạn vận động thể chất ít nhất 20 phút bao nhiêu ngày/tuần?',
+    opts: ['Không vận động', '1–2 ngày', '3–4 ngày', '5–6 ngày', 'Hàng ngày'],
+    insights: [
+      'Không vận động là yếu tố nguy cơ độc lập cho bệnh tim, tiểu đường và tử vong sớm. Bắt đầu ngay: 10 phút đi bộ mỗi ngày — không cần đủ 30 phút.',
+      'Tốt hơn không vận động nhưng chưa đạt ngưỡng khuyến nghị. WHO khuyến nghị 150 phút/tuần — 1–2 ngày chỉ đạt 40–60 phút. Tăng thêm 1–2 ngày nữa.',
+      'Bạn đang gần ngưỡng khuyến nghị. 3–4 ngày × 30 phút = 90–120 phút/tuần. Thêm 30 phút/tuần nữa là đạt tối ưu.',
+      'Xuất sắc! Bạn đạt và vượt ngưỡng 150 phút/tuần của WHO. Nguy cơ bệnh tim và tiểu đường giảm đáng kể. Duy trì!',
+      'Tuyệt vời! Vận động hàng ngày giảm nguy cơ bệnh tim 35%, tiểu đường 50%, và cải thiện tâm trạng rõ rệt.',
+    ],
+  },
+  {
+    id: 2, cat: 'Vận Động', q: 'Bạn có thường xuyên ngồi liên tục > 2 giờ không nghỉ không?',
+    opts: ['Hầu như mọi ngày', 'Thường xuyên', 'Đôi khi', 'Hiếm khi', 'Hầu như không'],
+    insights: [
+      'Ngồi liên tục > 2 giờ tăng nguy cơ tim mạch và tiểu đường dù bạn có tập thể dục. Đặt nhắc mỗi 45–60 phút đứng dậy đi 5 phút.',
+      'Vẫn ở mức đáng lo. Thử quy tắc 50-10: mỗi 50 phút ngồi = 10 phút đứng/đi lại. Một vòng đi bộ nhỏ mang lại lợi ích lớn.',
+      'Tạm ổn nhưng còn cải thiện được. Mục tiêu: không ngồi liên tục quá 90 phút bất kỳ lúc nào trong ngày.',
+      'Tốt! Bạn đã thành công tránh ngồi quá lâu — một trong những thói quen quan trọng nhất của dân văn phòng hiện đại.',
+      'Tuyệt vời! Đứng/di chuyển thường xuyên bảo vệ tim mạch, cột sống và cải thiện tuần hoàn máu suốt cả ngày.',
+    ],
+  },
+  {
+    id: 3, cat: 'Vận Động', q: 'Bạn có tập sức mạnh (tạ, thể dục) ít nhất 2 lần/tuần không?',
+    opts: ['Không bao giờ', 'Hiếm khi', 'Đôi khi', 'Thường xuyên', 'Luôn luôn'],
+    insights: [
+      'Tập sức mạnh không cần gym: 10 push-up + 10 squat + 30s plank mỗi ngày là đủ để bắt đầu. Xây dựng cơ bắp bảo vệ xương và chuyển hóa.',
+      'Chưa đủ nhưng có ý thức. WHO khuyến nghị 2 buổi sức mạnh/tuần. Squat, plank, push-up tại nhà 15 phút × 2 lần là đủ.',
+      'Bạn đang đúng hướng. Tập sức mạnh 2×/tuần giảm nguy cơ tiểu đường 34% và giúp kiểm soát cân nặng lâu dài hiệu quả hơn cardio.',
+      'Rất tốt! Tập sức mạnh đều đặn duy trì khối cơ, tăng trao đổi chất khi nghỉ, bảo vệ xương và cải thiện posture.',
+      'Xuất sắc! Tập sức mạnh nhất quán là nền tảng sức khỏe lâu dài. Đảm bảo protein đủ (1.6–2.0g/kg) và ngày nghỉ phục hồi đúng.',
+    ],
+  },
+  {
+    id: 4, cat: 'Dinh Dưỡng', q: 'Bạn ăn rau và trái cây bao nhiêu phần mỗi ngày?',
+    opts: ['Hầu như không', '1 phần', '2–3 phần', '4–5 phần', '≥ 5 phần'],
+    insights: [
+      'Thiếu rau quả = thiếu fiber, vitamin, khoáng chất và phytochemicals bảo vệ tế bào. Bước nhỏ: thêm 1 nắm rau sống vào mỗi bữa ăn.',
+      'Chưa đủ. WHO khuyến nghị ≥ 5 phần (400g)/ngày. Thêm 1 quả táo hoặc 1 bát rau xào mỗi ngày là bước tiến đầu tiên dễ thực hiện.',
+      'Tiến bộ tốt nhưng còn xa ngưỡng tối ưu. Mỗi bữa chính: nửa đĩa là rau — quy tắc "đĩa khỏe" đơn giản nhất để tăng rau mỗi ngày.',
+      'Gần đạt ngưỡng WHO! 4–5 phần rau quả giảm đáng kể nguy cơ bệnh tim, đột quỵ và một số loại ung thư. Tuyệt vời!',
+      'Xuất sắc! ≥5 phần/ngày được chứng minh giảm tử vong tim mạch 25% và nguy cơ ung thư đại tràng 20%. Tiếp tục duy trì!',
+    ],
+  },
+  {
+    id: 5, cat: 'Dinh Dưỡng', q: 'Bạn có thường xuyên ăn đồ chế biến sẵn / fast food không?',
+    opts: ['Hàng ngày', '4–6 lần/tuần', '2–3 lần/tuần', '1 lần/tuần', 'Hiếm khi'],
+    insights: [
+      'Thực phẩm chế biến sẵn chứa nhiều muối, đường ẩn, chất béo trans và phụ gia. Ăn hàng ngày tăng nguy cơ tim mạch, béo phì và ung thư.',
+      'Quá thường xuyên. Muối và đường ẩn tích lũy nhanh. Bắt đầu thay thế 2 bữa/tuần bằng cơm nhà — hiệu quả lớn hơn bạn nghĩ.',
+      'Tạm chấp nhận được nhưng hãy giảm xuống 1 lần/tuần. Mỗi bữa tự nấu là đầu tư trực tiếp cho sức khỏe dài hạn và tiết kiệm chi phí.',
+      'Tốt! 1 lần/tuần là mức hợp lý — ít ảnh hưởng tổng thể nếu phần còn lại của chế độ ăn lành mạnh. Duy trì tốt!',
+      'Xuất sắc! Hạn chế thực phẩm chế biến sẵn là một trong những quyết định dinh dưỡng có tác động lớn nhất đến sức khỏe lâu dài.',
+    ],
+  },
+  {
+    id: 6, cat: 'Dinh Dưỡng', q: 'Bạn uống đủ nước (khoảng 2L/ngày) không?',
+    opts: ['Không bao giờ', 'Hiếm khi', 'Đôi khi', 'Thường xuyên', 'Luôn luôn'],
+    insights: [
+      'Mất nước mãn tính ảnh hưởng chức năng thận, não và da. Bắt đầu: 1 ly nước ngay khi thức dậy, 1 ly trước mỗi bữa ăn.',
+      'Chưa đủ. Khát nước là dấu hiệu đã mất nước nhẹ rồi. Đặt mục tiêu: 1 ly nước mỗi giờ trong giờ làm việc — đặt bình trên bàn.',
+      'Tạm ổn nhưng không đều. Mang theo bình nước 500ml–1L để nhắc nhở uống trong ngày. Nhìn thấy bình = uống ngay.',
+      'Tốt! Uống nước đều đặn hỗ trợ chức năng thận, da, tiêu hóa và tập trung. Đây là thói quen đơn giản nhưng nhiều người thiếu.',
+      'Tuyệt vời! Uống đủ nước nhất quán là một trong những thói quen sức khỏe cơ bản và hiệu quả nhất. Tiếp tục duy trì!',
+    ],
+  },
+  {
+    id: 7, cat: 'Giấc Ngủ', q: 'Bạn thường ngủ bao nhiêu tiếng mỗi đêm?',
+    opts: ['< 5 giờ', '5–6 giờ', '6–7 giờ', '7–8 giờ', '> 8 giờ'],
+    insights: [
+      'Ngủ < 5 giờ tăng nguy cơ tiểu đường 48%, bệnh tim 45%, và ảnh hưởng nghiêm trọng đến miễn dịch, trí nhớ và cân nặng. Cần ưu tiên ngủ ngay.',
+      'Thiếu ngủ mãn tính. "Nợ ngủ" không thể bù hoàn toàn vào cuối tuần. Thêm 30 phút ngủ mỗi đêm trong 1 tuần: bạn sẽ nhận ra sự khác biệt.',
+      'Gần đủ nhưng chưa tối ưu. NSF khuyến nghị 7–9 giờ cho người trưởng thành. Thêm 30–60 phút ngủ sẽ cải thiện rõ rệt năng lượng và trí nhớ.',
+      'Đây là ngưỡng tối ưu! 7–8 giờ ngủ đêm là nền tảng của sức khỏe toàn diện — não, tim và hệ miễn dịch đều hoạt động tốt nhất.',
+      'Tốt nếu chất lượng ngủ cao. Nếu ngủ > 9 giờ thường xuyên và vẫn mệt, hãy kiểm tra ngưng thở khi ngủ (sleep apnea) với bác sĩ.',
+    ],
+  },
+  {
+    id: 8, cat: 'Giấc Ngủ', q: 'Bạn cảm thấy thế nào khi thức dậy vào buổi sáng?',
+    opts: ['Rất mệt', 'Mệt', 'Bình thường', 'Tỉnh táo', 'Rất tỉnh táo và sẵn sàng'],
+    insights: [
+      'Mệt khi thức dậy mãn tính là dấu hiệu cần điều tra: thiếu sắt, suy giáp, ngưng thở khi ngủ hoặc trầm cảm. Nên gặp bác sĩ để kiểm tra.',
+      'Mệt sau ngủ đủ giấc không phải bình thường. Kiểm tra: tránh màn hình 1h trước ngủ, phòng tối và mát (18–20°C), giờ ngủ cố định.',
+      'OK nhưng bạn có thể tốt hơn. Giờ ngủ/thức đều đặn ngay cả cuối tuần cải thiện đáng kể chất lượng giấc ngủ trong vài tuần.',
+      'Tốt! Thức dậy tỉnh táo là dấu hiệu giấc ngủ chất lượng tốt và cơ thể đang phục hồi hiệu quả qua đêm.',
+      'Tuyệt vời! Đây là trạng thái lý tưởng — giấc ngủ của bạn hiệu quả, chu kỳ ngủ hoàn chỉnh và cơ thể phục hồi tối đa.',
+    ],
+  },
+  {
+    id: 9, cat: 'Tâm Trí', q: 'Mức độ stress hằng ngày của bạn?',
+    opts: ['Cực kỳ cao', 'Cao', 'Trung bình', 'Thấp', 'Rất thấp'],
+    insights: [
+      'Stress cực cao mãn tính là nguy cơ sức khỏe nghiêm trọng: tăng cortisol → tăng huyết áp, đường huyết, ức chế miễn dịch. Cần can thiệp chuyên nghiệp.',
+      'Stress cao kéo dài ảnh hưởng tim mạch, tiêu hóa và miễn dịch. Ưu tiên 1 kỹ thuật thư giãn hàng ngày — chỉ 10 phút đủ tạo tác động tích lũy.',
+      'Mức stress trung bình có thể kiểm soát. Thêm 10 phút đi bộ hoặc thở sâu vào cuối ngày làm việc để "xả" căng thẳng tích lũy.',
+      'Rất tốt! Stress thấp giúp hệ miễn dịch, tim mạch và tâm trạng hoạt động tối ưu. Duy trì các thói quen quản lý stress của bạn.',
+      'Tuyệt vời! Kiểm soát stress xuất sắc là kỹ năng sống quý giá. Chia sẻ cách bạn duy trì sự bình thản với người xung quanh.',
+    ],
+  },
+  {
+    id: 10, cat: 'Tâm Trí', q: 'Bạn có thực hành kỹ thuật thư giãn (thở sâu, thiền, yoga) không?',
+    opts: ['Không bao giờ', 'Hiếm khi', 'Đôi khi', 'Thường xuyên', 'Hàng ngày'],
+    insights: [
+      'Bắt đầu đơn giản nhất: thở 4-7-8 (hít 4 giây, nín 7, thở ra 8) × 3 lần trước khi ngủ. 2 phút mỗi đêm là đủ để bắt đầu thay đổi.',
+      'Chưa thành thói quen. Thử: 5 phút thở sâu bụng sau bữa trưa. Nhỏ nhưng đủ tạo sự khác biệt trong ngày dài áp lực.',
+      'Tốt hơn không có nhưng chưa đủ để tạo tác động tích lũy. Ngay cả 5–10 phút/ngày nhất quán hiệu quả hơn 1 giờ/tuần không đều.',
+      'Rất tốt! Thực hành thư giãn đều đặn giảm cortisol, cải thiện huyết áp và chất lượng giấc ngủ. Tiếp tục duy trì thói quen này.',
+      'Xuất sắc! Thực hành thiền/thở sâu hàng ngày là một trong những thói quen có nhiều bằng chứng khoa học nhất về lợi ích sức khỏe.',
+    ],
+  },
+  {
+    id: 11, cat: 'Phòng Bệnh', q: 'Bạn đi khám sức khỏe định kỳ bao nhiêu?',
+    opts: ['Không bao giờ', 'Khi thấy bệnh mới đi', 'Mỗi 2–3 năm', 'Hàng năm', 'Thường xuyên hơn khi cần'],
+    insights: [
+      'Không khám định kỳ = bệnh chỉ phát hiện khi đã có triệu chứng nặng. Ung thư giai đoạn 1 vs giai đoạn 4: tỷ lệ sống khác nhau 5–10 lần.',
+      'Điều trị triệu chứng tốn kém hơn và ít hiệu quả hơn phòng ngừa nhiều. Gói khám cơ bản ~500.000–1.500.000 VNĐ/năm là đầu tư nhỏ cho sức khỏe lớn.',
+      'Khá ổn nhưng nhiều bệnh (tăng HA, tiểu đường) thay đổi đáng kể trong 1–2 năm. Khám hàng năm là lý tưởng từ 35–40 tuổi.',
+      'Tuyệt vời! Khám định kỳ hàng năm cho sức khỏe của bạn cơ hội phát hiện sớm và điều trị hiệu quả nhất có thể.',
+      'Xuất sắc! Theo dõi sức khỏe chủ động với tần suất phù hợp theo nguy cơ cá nhân là cách tiếp cận thông minh nhất.',
+    ],
+  },
+  {
+    id: 12, cat: 'Phòng Bệnh', q: 'Bạn có hút thuốc hoặc uống rượu bia thường xuyên không?',
+    opts: ['Hút thuốc + uống nhiều', 'Một trong hai nhiều', 'Một trong hai ít', 'Đôi khi một trong hai', 'Không có cả hai'],
+    insights: [
+      'Hút thuốc + uống nhiều rượu là tổ hợp nguy hiểm nhất cho gan, phổi và tim. Không cần bỏ hoàn toàn ngay: giảm 50% trong 30 ngày đã là thành công lớn.',
+      'Dù là thuốc hay rượu, mức "nhiều" gây tổn thương tích lũy. Mục tiêu 30 ngày đầu: giảm ngay 50%. Tìm hỗ trợ từ bác sĩ hoặc ứng dụng cai thuốc.',
+      'Hướng đúng, cần giảm tiếp. Không có mức rượu bia nào hoàn toàn an toàn theo WHO 2023. Mỗi ly bỏ được là lợi ích sức khỏe thực sự.',
+      'Gần như lý tưởng. Sử dụng không thường xuyên ít ảnh hưởng đến sức khỏe tổng thể — duy trì được là quan trọng nhất.',
+      'Xuất sắc! Không hút thuốc và không uống rượu bia là hai trong số các quyết định có tác động lớn nhất đến tuổi thọ và chất lượng sống.',
+    ],
+  },
+  {
+    id: 13, cat: 'Kiến Thức', q: 'Bạn chủ động tìm hiểu thông tin sức khỏe bao nhiêu?',
+    opts: ['Không bao giờ', 'Hiếm khi', 'Đôi khi', 'Thường xuyên', 'Hàng ngày'],
+    insights: [
+      'Kiến thức sức khỏe là nền tảng của mọi quyết định đúng đắn. Bắt đầu: đọc 1 bài sức khỏe uy tín mỗi tuần. Trang này là điểm khởi đầu tốt.',
+      'Ít thông tin dẫn đến quyết định sức khỏe kém. Đăng ký 1 newsletter sức khỏe uy tín — thông tin sẽ tự đến bạn mỗi tuần.',
+      'Bạn quan tâm nhưng chưa đủ đều. Dành 15 phút/tuần đọc nội dung từ nguồn khoa học đáng tin là đầu tư thời gian cực tốt.',
+      'Rất tốt! Cập nhật thường xuyên giúp bạn ra quyết định sức khỏe tốt hơn và phát hiện sớm những thay đổi đáng lo ngại.',
+      'Xuất sắc! Bạn là người học tập sức khỏe chủ động. Nhớ chọn lọc nguồn uy tín và tư duy phản biện — không phải mọi thứ trên mạng đều đúng.',
+    ],
+  },
+  {
+    id: 14, cat: 'Kiến Thức', q: 'Bạn có biết các chỉ số sức khỏe cơ bản của mình (BMI, HA, đường huyết) không?',
+    opts: ['Không biết', 'Biết một phần', 'Biết nhưng không theo dõi', 'Biết và theo dõi thỉnh thoảng', 'Biết và theo dõi đều đặn'],
+    insights: [
+      'Không biết BMI, huyết áp, đường huyết giống như lái xe không có đồng hồ. 1 lần khám cơ bản sẽ cho bạn tất cả số liệu cần thiết.',
+      'Hiểu một phần là điểm tốt để bắt đầu. Tìm hiểu nốt các chỉ số còn thiếu — Google "ngưỡng BMI, huyết áp bình thường" và ghi nhớ.',
+      'Biết nhưng không theo dõi là lãng phí thông tin. Lập 1 bảng Excel đơn giản ghi lại các chỉ số sau mỗi lần khám — 5 phút thôi.',
+      'Tốt! Theo dõi thỉnh thoảng giúp phát hiện xu hướng. Tăng tần suất lên mỗi 6–12 tháng để có dữ liệu đủ có giá trị.',
+      'Xuất sắc! Theo dõi chỉ số đều đặn là công cụ phòng bệnh mạnh nhất bạn có thể tự thực hiện. Xu hướng quan trọng hơn số tuyệt đối.',
+    ],
+  },
+  {
+    id: 15, cat: 'Kiến Thức', q: 'Bạn tin tưởng khả năng tự quản lý sức khỏe của mình không?',
+    opts: ['Không tự tin chút nào', 'Ít tự tin', 'Tự tin vừa phải', 'Tự tin', 'Rất tự tin'],
+    insights: [
+      'Không tự tin là bình thường khi bắt đầu. Trang web này được xây dựng để giúp bạn từng bước. Bắt đầu từ 1 thay đổi nhỏ nhất có thể làm ngay hôm nay.',
+      'Tự tin sẽ đến từ kiến thức và hành động nhỏ. Chọn 1 thói quen từ trang web này và thực hiện trong 21 ngày — thành công nhỏ tạo tự tin lớn.',
+      'Đây là nền tảng tốt để phát triển. Tiếp tục học hỏi và thực hành — tự tin sẽ tăng theo kinh nghiệm và kết quả thực tế.',
+      'Rất tốt! Tự tin quản lý sức khỏe giúp bạn duy trì thói quen lâu dài và ứng phó tốt hơn khi sức khỏe có vấn đề.',
+      'Xuất sắc! Bạn là người chủ động với sức khỏe của mình. Chia sẻ kiến thức và kinh nghiệm với người xung quanh — đó là điều tuyệt vời nhất.',
+    ],
+  },
 ];
 
 const CATS = ['Vận Động', 'Dinh Dưỡng', 'Giấc Ngủ', 'Tâm Trí', 'Phòng Bệnh', 'Kiến Thức'];
@@ -151,21 +303,37 @@ export default function HealthAssessmentPage() {
                   {q.cat !== prevCat && (
                     <div className="text-base font-bold uppercase tracking-widest mb-3 px-1" style={{ color: COLOR }}>— {q.cat}</div>
                   )}
-                  <div className="rounded-2xl border border-border bg-surface p-4">
-                    <p className="text-lg text-text font-medium mb-3">{i + 1}. {q.q}</p>
+                  <div className="rounded-2xl border bg-surface p-4 transition-all duration-300"
+                    style={{ borderColor: answers[q.id] !== undefined ? `rgba(${SCORE_COLORS[answers[q.id]].rgb},0.25)` : 'rgba(255,255,255,0.08)' }}>
+                    <p className="text-base text-text font-medium mb-3">{i + 1}. {q.q}</p>
                     <div className="flex flex-col gap-2">
-                      {q.opts.map((opt, j) => (
-                        <button key={j} onClick={() => setAnswer(q.id, j)}
-                          className="flex items-center gap-3 rounded-xl border p-3 text-left text-lg transition-colors"
-                          style={answers[q.id] === j ? { borderColor: COLOR, background: `rgba(${RGB},0.08)`, color: 'var(--text)' } : { borderColor: 'var(--border)', color: 'var(--muted)' }}>
-                          <div className="w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center"
-                            style={answers[q.id] === j ? { borderColor: COLOR, background: COLOR } : { borderColor: 'var(--border)' }}>
-                            {answers[q.id] === j && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
-                          </div>
-                          {opt}
-                        </button>
-                      ))}
+                      {q.opts.map((opt, j) => {
+                        const sc = SCORE_COLORS[j];
+                        const selected = answers[q.id] === j;
+                        return (
+                          <button key={j} onClick={() => setAnswer(q.id, j)}
+                            className="flex items-center gap-3 rounded-xl p-3 text-left transition-all duration-200"
+                            style={{
+                              border: `1.5px solid ${selected ? sc.color : 'rgba(255,255,255,0.08)'}`,
+                              background: selected ? `rgba(${sc.rgb},0.12)` : 'rgba(255,255,255,0.02)',
+                              boxShadow: selected ? `0 0 12px rgba(${sc.rgb},0.15)` : 'none',
+                              transform: selected ? 'translateX(2px)' : 'translateX(0)',
+                            }}>
+                            <div className="w-3 h-3 rounded-full shrink-0 transition-all duration-200"
+                              style={{ background: selected ? sc.color : 'rgba(255,255,255,0.2)', boxShadow: selected ? `0 0 6px ${sc.color}` : 'none' }} />
+                            <span className="flex-1 text-sm" style={{ color: selected ? '#e5e7eb' : 'rgba(156,163,175,0.85)' }}>{opt}</span>
+                            {selected && <span className="text-xs font-bold shrink-0" style={{ color: sc.color }}>{sc.label}</span>}
+                          </button>
+                        );
+                      })}
                     </div>
+                    {answers[q.id] !== undefined && (
+                      <div className="mt-3 pl-4 border-l-2 py-1" style={{ borderColor: SCORE_COLORS[answers[q.id]].color }}>
+                        <p className="text-xs leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                          {q.insights[answers[q.id]]}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               );

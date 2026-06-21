@@ -237,14 +237,166 @@ const QUICK_WO = [
 
 // --- Test items ---
 const TEST_ITEMS = [
-  { label: 'Cân nặng', unit: 'kg', how: 'Cân buổi sáng, sau vệ sinh, trước ăn' },
-  { label: 'Vòng eo', unit: 'cm', how: 'Đo ngang rốn sau khi thở ra nhẹ' },
-  { label: 'Sit-to-stand 1 phút', unit: 'lần', how: 'Đứng lên ngồi xuống từ ghế, không dùng tay đỡ' },
-  { label: 'Plank (gối hoặc thường)', unit: 'giây', how: 'Giữ tư thế plank đến khi không thể nữa' },
-  { label: 'Đi bộ 6 phút', unit: 'm / cảm giác', how: 'Ghi quãng đường hoặc mức gắng sức (dễ/vừa/khó)' },
-  { label: 'Giấc ngủ trung bình', unit: 'giờ/đêm', how: 'Trung bình 7 ngày qua' },
-  { label: 'Stress tự chấm', unit: '/10', how: 'Mức stress cảm nhận trung bình tuần qua' },
-  { label: 'Năng lượng tự chấm', unit: '/10', how: 'Mức năng lượng cảm nhận trung bình tuần qua' },
+  {
+    label: 'Cân nặng', unit: 'kg', how: 'Cân buổi sáng, sau vệ sinh, trước ăn',
+    icon: '⚖️', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cân nặng có thể dao động 1–3kg trong ngày do nước, thức ăn, và glycogen cơ — không phải mỡ. Chỉ so sánh có ý nghĩa khi đo cùng điều kiện: sáng sớm, sau vệ sinh, trước ăn, cùng loại quần áo.',
+    details: [
+      'Điều kiện chuẩn: sáng sớm sau khi vệ sinh, trước bữa sáng và nước đầu tiên. Cùng thời điểm, cùng quần áo mỗi lần đo. Sai điều kiện → sai lệch 1–3kg không phản ánh thực tế.',
+      'Trend quan trọng hơn số đơn lẻ: theo dõi trung bình 7–14 ngày thay vì so sánh ngày-với-ngày. Dao động ngày trong 1–3kg là bình thường (nước, muối, glycogen cơ, chu kỳ kinh nguyệt).',
+      'Cân không đo được mọi thứ: người tập luyện có thể tăng 2–3kg cơ trong khi giảm mỡ cùng thời gian — cân nặng không đổi nhưng cơ thể thay đổi rõ rệt. Kết hợp đo vòng eo + cảm giác quần áo.',
+      'BMI có giới hạn: không phân biệt được cơ và mỡ. Người tập gym nhiều có thể BMI "thừa cân" nhưng cơ thể khỏe mạnh. Vòng eo + tỷ lệ cơ/mỡ là chỉ số tốt hơn.',
+      'Setpoint theory: cơ thể có "điểm cân bằng" được điều chỉnh bởi leptin và ghrelin. Giảm cân nhanh kích hoạt cơ chế bảo vệ (tăng đói, giảm chuyển hóa). Thay đổi chậm và bền vững hơn.',
+      'Mục tiêu thực tế: giảm 0.5–1kg/tuần là tối đa để giảm mỡ (không phải cơ). Hơn thế thường là nước và cơ — sẽ tái phát sau khi ăn uống trở lại.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Cùng Điều Kiện Mỗi Lần', note: 'Sáng sớm, sau vệ sinh, trước ăn — quan trọng nhất' },
+      { icon: '📈', label: 'Trend 7–14 Ngày', note: 'Trung bình tuần quan trọng hơn số đơn lẻ' },
+      { icon: '💪', label: 'Kết Hợp Đo Vòng Eo', note: 'Cân không đo được tỷ lệ cơ/mỡ thay đổi' },
+      { icon: '🐢', label: '0.5–1kg/tuần Là Chuẩn', note: 'Nhanh hơn thường là nước và cơ — sẽ tái phát' },
+    ],
+  },
+  {
+    label: 'Vòng eo', unit: 'cm', how: 'Đo ngang rốn sau khi thở ra nhẹ',
+    icon: '📏', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vòng eo là chỉ số sức khỏe tim mạch tốt hơn BMI và cân nặng. WHO: nguy cơ tăng khi >80cm (nữ) / >94cm (nam), nguy cơ cao khi >88cm (nữ) / >102cm (nam). Mỡ nội tạng (bụng) nguy hiểm hơn mỡ dưới da.',
+    details: [
+      'Mỡ nội tạng (visceral fat) bao quanh các cơ quan nội tạng trong bụng — khác hoàn toàn với mỡ dưới da. Tiết ra các cytokine viêm và adipokine gây kháng insulin, tăng huyết áp, và rối loạn lipid máu.',
+      'Cách đo chuẩn: đứng thẳng, thở ra nhẹ (không hóp bụng), đặt thước ngang qua rốn, đo vòng eo nhỏ nhất. Không nhịn thở, không hóp — kết quả sẽ sai lệch 3–5cm.',
+      'Waist-to-height ratio (WHtR): vòng eo ÷ chiều cao < 0.5 là an toàn. Ví dụ: cao 170cm → vòng eo < 85cm. Chỉ số này tốt hơn BMI trong dự đoán nguy cơ tim mạch và tiểu đường.',
+      'Giảm vòng eo không cần tập bụng: mỡ nội tạng đáp ứng tốt nhất với cardio (30 phút × 3–5 lần/tuần), kiểm soát insulin (giảm đường và tinh bột tinh), và ngủ đủ giấc. Sit-up không đốt mỡ bụng trực tiếp.',
+      'Giảm 5–10% vòng eo (dù không giảm nhiều cân nặng): giảm nguy cơ tiểu đường loại 2 tới 58%, cải thiện huyết áp, và giảm cholesterol LDL. Thay đổi nhỏ = lợi ích lớn.',
+      'Theo dõi mỗi 4 tuần: vòng eo thay đổi chậm hơn cân nặng nhưng phản ánh thay đổi thực sự của mỡ cơ thể hơn. 1–2cm giảm sau 4 tuần là tiến bộ có ý nghĩa.',
+    ],
+    points: [
+      { icon: '⚠️', label: 'Ngưỡng Nguy Hiểm', note: '>88cm (nữ) / >102cm (nam) — nguy cơ tim mạch cao' },
+      { icon: '🔥', label: 'Cardio Giảm Mỡ Bụng', note: 'Tốt hơn sit-up — mỡ nội tạng phản ứng với cardio' },
+      { icon: '📐', label: 'WHtR < 0.5', note: 'Vòng eo ÷ chiều cao — tốt hơn BMI trong dự đoán nguy cơ' },
+      { icon: '🍬', label: 'Giảm Đường = Hiệu Quả Nhất', note: 'Insulin cao thúc đẩy tích trữ mỡ nội tạng' },
+    ],
+  },
+  {
+    label: 'Sit-to-stand 1 phút', unit: 'lần', how: 'Đứng lên ngồi xuống từ ghế, không dùng tay đỡ',
+    icon: '🪑', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sit-to-stand test đo sức mạnh cơ chân và khả năng chức năng. Nghiên cứu European Journal of Preventive Cardiology: người không thể đứng dậy từ sàn mà không dùng tay có nguy cơ tử vong sớm cao hơn 6.5 lần so với người làm được dễ dàng.',
+    details: [
+      'Cơ đùi trước (quadriceps) và cơ mông (glutes) là nhóm cơ lớn nhất cơ thể — quyết định khả năng đứng, ngồi, leo cầu thang, và tự chủ trong sinh hoạt hàng ngày khi lớn tuổi.',
+      'Ngưỡng tham chiếu: người 40–49 tuổi: ≥12 lần/phút (tốt), 8–11 lần (trung bình), <8 lần (cần cải thiện). Người 50–59 tuổi: ≥10 lần tốt. Điều chỉnh theo tuổi.',
+      'Bài tập cải thiện: squat (cơ đùi + mông), lunges, step-up lên bậc thang, glute bridge. Chỉ cần 10–15 phút × 2–3 lần/tuần để tăng số lần sit-to-stand đáng kể sau 4–6 tuần.',
+      'Kỹ thuật đúng: ngồi trên ghế cao 45cm, tay chéo trước ngực, đứng hẳn lên (chân thẳng) → ngồi xuống nhẹ nhàng. Không dùng tay đỡ, không nảy người. Đếm số lần hoàn chỉnh trong 1 phút.',
+      'Mất sức mạnh cơ chân theo tuổi (sarcopenia): sau 30 tuổi mất ~1% sức mạnh/năm nếu không tập. Sau 65 tuổi tốc độ tăng gấp đôi. Tập sức mạnh 2–3 lần/tuần ngăn chặn quá trình này hiệu quả.',
+      'Chức năng trong thực tế: khả năng đứng lên-ngồi xuống tốt = ít nguy cơ té ngã, ít phụ thuộc vào người khác, duy trì chất lượng cuộc sống khi già. Đây là chỉ số "tuổi thọ chức năng" thực tế nhất.',
+    ],
+    points: [
+      { icon: '🦵', label: 'Cơ Chân Là Quan Trọng Nhất', note: 'Nhóm cơ lớn nhất — quyết định tự chủ khi lớn tuổi' },
+      { icon: '📊', label: '≥12 Lần/Phút Là Tốt', note: 'Ngưỡng cho người 40–49 tuổi — điều chỉnh theo tuổi' },
+      { icon: '🏋️', label: 'Squat + Lunges', note: 'Cải thiện rõ sau 4–6 tuần tập 2–3 lần/tuần' },
+      { icon: '⏰', label: 'Mất 1%/Năm Sau 30 Tuổi', note: 'Sarcopenia — tập sức mạnh là biện pháp duy nhất' },
+    ],
+  },
+  {
+    label: 'Plank (gối hoặc thường)', unit: 'giây', how: 'Giữ tư thế plank đến khi không thể nữa',
+    icon: '🏋️', color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Plank test đo sức bền core (cơ lõi) — nhóm cơ bụng sâu, cơ lưng, và cơ hông hoạt động cùng lúc. Core mạnh = tư thế tốt, giảm đau lưng, tăng hiệu quả mọi bài tập, và ổn định toàn thân.',
+    details: [
+      'Core không chỉ là cơ bụng 6 múi (rectus abdominis) mà gồm: transverse abdominis (cơ bụng sâu nhất, như đai tự nhiên), multifidus (cơ lưng dọc sống), cơ hông, và cơ chậu. Tất cả hoạt động cùng lúc trong plank.',
+      'Ngưỡng tham chiếu: dưới 30 giây = cần cải thiện nhiều; 30–60 giây = trung bình; 60–120 giây = tốt; trên 2 phút = rất tốt. Plank gối tốt hơn plank thường sai kỹ thuật.',
+      'Kỹ thuật đúng: cánh tay thẳng hoặc chống bằng khuỷu tay, thân người thẳng hàng từ đầu đến gót (như một tấm ván), không để hông cao hoặc thấp, không nín thở — thở đều.',
+      'Cải thiện plank: dead bug (bài tập nền tốt nhất cho core sâu), bird dog, hollow body hold, pallof press. Plank lâu hơn bằng cách tập đúng kỹ thuật 30–60 giây × 3 set, mỗi tuần tăng 5–10 giây.',
+      'Core mạnh = giảm đau lưng: 80% người sẽ bị đau lưng ít nhất 1 lần trong đời. Nguyên nhân phổ biến nhất là core yếu và tư thế sai — cả hai được cải thiện bởi tập core đúng cách.',
+      'Plank là test và bài tập: 3 set × 30–60 giây plank mỗi ngày vừa đo lường tiến bộ vừa là bài tập chức năng hiệu quả không cần thiết bị.',
+    ],
+    points: [
+      { icon: '🎯', label: '60–120 Giây Là Tốt', note: 'Gối đúng kỹ thuật tốt hơn thường sai kỹ thuật' },
+      { icon: '🏗️', label: 'Core = Đai Tự Nhiên', note: 'Cơ bụng sâu ổn định cột sống — không phải 6 múi' },
+      { icon: '🌿', label: 'Dead Bug Là Nền Tảng', note: 'Bài tập core sâu tốt nhất — thêm vào routine' },
+      { icon: '💆', label: 'Giảm Đau Lưng', note: 'Core yếu = nguyên nhân số 1 đau lưng mãn tính' },
+    ],
+  },
+  {
+    label: 'Đi bộ 6 phút', unit: 'm / cảm giác', how: 'Ghi quãng đường hoặc mức gắng sức (dễ/vừa/khó)',
+    icon: '🚶', color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '6-Minute Walk Test (6MWT) là test tim mạch được dùng trong y khoa để đánh giá thể lực tổng thể và sức khỏe tim phổi. Quãng đường >500m (nam) / >450m (nữ) ở tốc độ bình thường = năng lực tim mạch tốt.',
+    details: [
+      '6MWT đo khả năng tim phổi cung cấp oxy cho cơ trong khi vận động liên tục. Là bài kiểm tra chức năng toàn diện nhất có thể tự thực hiện mà không cần thiết bị y tế.',
+      'Ngưỡng tham chiếu người khỏe mạnh: nam 40–49 tuổi: 550–650m; nữ 40–49 tuổi: 500–600m. Tiến bộ 50–100m sau 4 tuần tập là cải thiện có ý nghĩa lâm sàng.',
+      'Nếu không đo được quãng đường: dùng thang RPE (cảm giác gắng sức): Dễ = thoải mái, có thể hát; Vừa = có thể nói chuyện nhưng hơi khó thở; Khó = chỉ nói được vài từ. Theo dõi RPE theo thời gian cũng có giá trị.',
+      'Cải thiện 6MWT: đi bộ nhanh 30 phút × 3–5 lần/tuần là đủ để tăng quãng đường đáng kể sau 4–8 tuần. Không cần chạy — đi bộ nhanh với cường độ vừa phải là lý tưởng cho người mới.',
+      'Cardio zone 2 (có thể nói chuyện nhưng khó thở): 60–70% nhịp tim tối đa. Đây là zone đốt mỡ hiệu quả nhất và xây dựng nền tảng aerobic bền vững. 6MWT là bài tập trong zone 2.',
+      'Nhiệt độ, mùa, và địa hình ảnh hưởng đến kết quả: so sánh cùng điều kiện. Buổi sáng mát và đường phẳng cho kết quả tốt hơn buổi chiều nóng hoặc địa hình dốc.',
+    ],
+    points: [
+      { icon: '❤️', label: 'Test Tim Phổi Thực Tế', note: '6MWT được dùng trong y khoa — không cần thiết bị' },
+      { icon: '📏', label: '>500m Là Tốt', note: 'Tốc độ bình thường — cải thiện 50–100m/4 tuần' },
+      { icon: '💬', label: 'Dùng RPE Nếu Không Đo Được', note: 'Dễ/Vừa/Khó — track cảm giác theo thời gian' },
+      { icon: '🔥', label: 'Zone 2 = Đốt Mỡ Tốt Nhất', note: 'Có thể nói chuyện nhưng khó thở — hiệu quả nhất' },
+    ],
+  },
+  {
+    label: 'Giấc ngủ trung bình', unit: 'giờ/đêm', how: 'Trung bình 7 ngày qua',
+    icon: '😴', color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Trung bình giấc ngủ 7 ngày quan trọng hơn giấc ngủ từng đêm. Nợ ngủ tích lũy trong tuần ảnh hưởng đến hormone, trao đổi chất, và nhận thức theo cách cộng dồn — không hồi phục hoàn toàn chỉ bằng ngủ bù cuối tuần.',
+    details: [
+      'Trung bình <6 giờ/đêm trong 7 ngày: tăng 30% nguy cơ mắc bệnh (immune suppression rõ rệt), giảm 37% khả năng tiêm vaccine có hiệu quả, và tăng gấp 4 lần nguy cơ cảm lạnh.',
+      'Ngủ và cân nặng: thiếu ngủ tăng ghrelin (hormone đói) 24% và giảm leptin (hormone no) 18% — dẫn đến thèm ăn nhiều hơn ~300 kcal/ngày và ưa tinh bột/đường.',
+      '7–9 giờ là range lý tưởng cho đa số người trưởng thành. Một số người ngủ tốt với 6.5 giờ (short sleepers — do gene), nhưng đây là thiểu số (<3% dân số). Không nên tự coi mình là trường hợp này.',
+      'Consistency quan trọng: ngủ cùng giờ ±30 phút mỗi đêm (kể cả cuối tuần) ổn định circadian rhythm tốt hơn nhiều so với ngủ bù cuối tuần. Giờ dậy cố định quan trọng hơn giờ ngủ.',
+      'Alcohol và giấc ngủ: rượu giúp ngủ nhanh hơn nhưng phá vỡ giấc ngủ REM và làm tăng thức giữa đêm. 1–2 đơn vị alcohol = mất ~1 giờ ngủ chất lượng trong đêm đó.',
+      'Ngủ trưa (20–30 phút): cải thiện nhận thức và tâm trạng sau bữa trưa mà không ảnh hưởng giấc ngủ tối nếu ngủ trước 3h chiều và không quá 30 phút (tránh vào deep sleep).',
+    ],
+    points: [
+      { icon: '📊', label: 'Trung Bình Tuần Quan Trọng', note: 'Nợ ngủ tích lũy — không trả được hoàn toàn bằng bù' },
+      { icon: '🍔', label: 'Thiếu Ngủ = Đói Hơn', note: 'Ghrelin +24%, Leptin -18% — +300 kcal thèm ăn/ngày' },
+      { icon: '⏰', label: 'Cùng Giờ Dậy Mỗi Ngày', note: 'Quan trọng hơn giờ ngủ — kể cả thứ 7, chủ nhật' },
+      { icon: '🍷', label: 'Alcohol Phá Vỡ REM', note: '1–2 ly = mất ~1 giờ ngủ chất lượng đêm đó' },
+    ],
+  },
+  {
+    label: 'Stress tự chấm', unit: '/10', how: 'Mức stress cảm nhận trung bình tuần qua',
+    icon: '😓', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress tự cảm nhận (perceived stress) là chỉ số tốt hơn cortisol máu trong việc dự đoán kết quả sức khỏe dài hạn. Theo dõi xu hướng hàng tuần quan trọng hơn con số từng ngày.',
+    details: [
+      'Perceived stress scale (PSS) là công cụ được dùng rộng rãi nhất trong nghiên cứu tâm lý — đánh giá mức độ cảm nhận stress, không phải nguyên nhân. Cách chấm tự đánh giá này có giá trị khoa học thực sự.',
+      'Stress 7–8/10 kéo dài >1 tuần: tín hiệu cần can thiệp ngay. Stress mãn tính ở mức này tăng nguy cơ burnout, rối loạn lo âu, và suy giảm miễn dịch đáng kể.',
+      'Trend quan trọng hơn điểm số: nếu stress từ 8 xuống 6 sau 4 tuần áp dụng can thiệp (ngủ tốt hơn, tập luyện, thiền) — đó là tiến bộ có ý nghĩa dù 6 vẫn cao.',
+      'Stress tự chấm cao không phải lúc nào cũng có nguyên nhân từ công việc: thiếu ngủ, ít vận động, cô lập xã hội, và dinh dưỡng kém đều làm tăng cảm giác stress mà không có stressor cụ thể.',
+      'Ngưỡng tốt: 4–5/10 là stress "bình thường" và thậm chí có ích. <3/10 kéo dài có thể chỉ ra thiếu thách thức và kích thích (boredom, underperformance). Mục tiêu là 4–5/10, không phải 0.',
+      'Kết hợp với các chỉ số khác: stress cao + ngủ kém + năng lượng thấp = tín hiệu overtraining hoặc burnout. Stress cao nhưng ngủ tốt + năng lượng cao = tốt (eustress — stress tích cực).',
+    ],
+    points: [
+      { icon: '📉', label: 'Trend Quan Trọng Hơn Số', note: 'Stress giảm từ 8 → 6 là tiến bộ thực sự' },
+      { icon: '⚠️', label: '>7/10 Kéo Dài = Can Thiệp', note: 'Burnout và suy miễn dịch bắt đầu từ đây' },
+      { icon: '✅', label: '4–5/10 Là Lý Tưởng', note: 'Không phải 0 — eustress có ích cho hiệu suất' },
+      { icon: '🔗', label: 'Xem Kết Hợp Với Ngủ + Năng Lượng', note: 'Stress cao + ngủ tốt = khác với stress cao + mất ngủ' },
+    ],
+  },
+  {
+    label: 'Năng lượng tự chấm', unit: '/10', how: 'Mức năng lượng cảm nhận trung bình tuần qua',
+    icon: '⚡', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Năng lượng trung bình tuần (7–10 ngày) là chỉ số phục hồi tổng thể tốt hơn năng lượng từng ngày vốn dao động nhiều. Năng lượng trung bình tăng sau 4 tuần can thiệp (ngủ, dinh dưỡng, vận động) là dấu hiệu hệ thống đang phục hồi.',
+    details: [
+      'Năng lượng 7–8/10 liên tục = hệ thống hoạt động tốt: ngủ đủ, dinh dưỡng ổn, tập luyện phù hợp, stress được quản lý. Đây là mục tiêu dài hạn, không phải trạng thái thường xuyên tức thì.',
+      'Năng lượng thấp kéo dài (<5/10 hơn 2 tuần) với không rõ nguyên nhân: check ngay các nguyên nhân phổ biến — sắt/ferritin thấp (đặc biệt phụ nữ), vitamin D thiếu hụt, hypothyroidism, hoặc thiếu máu.',
+      'Energy management khác time management: năng lượng có thể được tái tạo (bằng ngủ, nghỉ, vận động, dinh dưỡng) trong khi thời gian không thể. Quản lý năng lượng quan trọng hơn quản lý lịch trình.',
+      'Sau tập luyện tốt: năng lượng tăng 2–4 giờ ngay sau bài tập vừa phải (do endorphin, norepinephrine). Tuy nhiên overtraining (tập quá nặng quá nhiều) gây năng lượng thấp kéo dài — theo dõi xu hướng.',
+      'Chu kỳ năng lượng tự nhiên: sáng (cao sau 9h), trưa (giảm 1–3h), chiều (tăng nhẹ 3–5h), tối (giảm để chuẩn bị ngủ). Lên kế hoạch việc quan trọng theo chu kỳ này thay vì chống lại nó.',
+      'Đường và năng lượng: đường và carb tinh gây tăng năng lượng nhanh rồi sụp (energy crash). Protein + fat + fiber ổn định năng lượng trong 3–4 giờ. Bữa ăn quyết định đường cong năng lượng cả ngày.',
+    ],
+    points: [
+      { icon: '📊', label: 'Trung Bình Tuần Quan Trọng', note: 'Dao động ngày là bình thường — trend mới quan trọng' },
+      { icon: '🩺', label: '<5/10 Kéo Dài → Kiểm Tra', note: 'Sắt, Vit D, tuyến giáp — nguyên nhân y tế phổ biến' },
+      { icon: '🔋', label: 'Tái Tạo Được Bằng Ngủ+Ăn', note: 'Energy management quan trọng hơn time management' },
+      { icon: '🍽️', label: 'Bữa Ăn = Đường Cong Năng Lượng', note: 'Protein+fat+fiber ổn định hơn đường và carb tinh' },
+    ],
+  },
 ];
 
 // --- Teaser sections ---
@@ -1618,10 +1770,86 @@ function F5MindTracker() {
   );
 }
 
+// --- TestModal ---
+function TestModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = TEST_ITEMS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{item.icon} {item.label}</h2>
+          <p className="text-sm mb-4" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.unit} · {item.how}</p>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {TEST_ITEMS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // --- F6 Progress Test tab ---
 function F6Test() {
   const [vals, setVals] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_f_test') || '{}'); } catch { return {}; } });
   const [saved, setSaved] = useState(false);
+  const [testModal, setTestModal] = useState(null);
 
   function set(k, v) { setVals(p => ({ ...p, [k]: v })); }
   function save() {
@@ -1640,14 +1868,25 @@ function F6Test() {
       <p className="text-lg text-muted">Thực hiện test đầu vào và mỗi 4 tuần một lần để đo tiến bộ toàn diện.</p>
       <div className="space-y-2">
         {TEST_ITEMS.map((item, i) => (
-          <div key={i} className="rounded-2xl border border-border bg-surface p-3 flex items-center gap-3">
-            <div className="flex-1">
-              <div className="text-lg text-text font-medium">{item.label}</div>
-              <div className="text-base text-muted">{item.how}</div>
+          <div key={i} className="rounded-2xl border bg-surface p-3 flex items-center gap-3 transition-colors duration-200"
+            style={{ borderColor: testModal === i ? `rgba(${item.rgb},0.45)` : 'var(--border)' }}>
+            <button onClick={() => setTestModal(i)}
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-xl shrink-0 transition-all duration-200 hover:scale-110"
+              style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
+              {item.icon}
+            </button>
+            <div className="flex-1 min-w-0">
+              <div className="text-base text-text font-medium leading-tight">{item.label}</div>
+              <div className="text-xs text-muted truncate">{item.how}</div>
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <input value={vals[item.label] || ''} onChange={e => set(item.label, e.target.value)} placeholder="0" className="w-16 bg-bg border border-border rounded-lg px-2 py-1 text-lg text-text text-center" />
-              <span className="text-base text-muted w-16">{item.unit}</span>
+              <span className="text-xs text-muted w-14 leading-tight">{item.unit}</span>
+              <button onClick={() => setTestModal(i)}
+                className="text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all duration-200 hover:opacity-80 shrink-0"
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
+                Chi tiết →
+              </button>
             </div>
           </div>
         ))}
@@ -1656,6 +1895,16 @@ function F6Test() {
         {saved ? '✓ Đã lưu!' : 'Lưu Kết Quả Test'}
       </button>
       <Link to="/pillar/f/progress-test" className="block text-center text-base" style={{ color: COLOR }}>Xem bảng so sánh 4 tuần →</Link>
+      {testModal !== null && (
+        <TestModal
+          idx={testModal}
+          onClose={() => setTestModal(null)}
+          onPrev={() => setTestModal(i => Math.max(0, i - 1))}
+          onNext={() => setTestModal(i => Math.min(TEST_ITEMS.length - 1, i + 1))}
+          hasPrev={testModal > 0}
+          hasNext={testModal < TEST_ITEMS.length - 1}
+        />
+      )}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 ﻿import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
@@ -69,15 +70,130 @@ const HERO_STATS = [
 
 // --- Daily checklist data ---
 const DAILY_MIN = [
-  { label: 'Vận động ít nhất 10 phút', icon: '🏃', cat: 'A' },
-  { label: 'Ăn đủ 1 nguồn đạm mỗi bữa chính', icon: '🥩', cat: 'B' },
-  { label: 'Ăn ít nhất 2 phần rau/trái cây', icon: '🥗', cat: 'B' },
-  { label: 'Uống đủ nước theo nhu cầu cá nhân', icon: '💧', cat: 'C' },
-  { label: 'Chuẩn bị/ngủ sớm hơn hôm qua', icon: '😴', cat: 'C' },
-  { label: 'Dành 3–5 phút thở/chậm lại', icon: '🧘', cat: 'D' },
+  {
+    label: 'Vận động ít nhất 10 phút', icon: '🏃', cat: 'A',
+    tip: 'Bất kỳ: đi bộ, leo cầu thang, đạp xe đều tính',
+    img: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nghiên cứu JAMA 2019 trên 120,000 người cho thấy 10 phút vận động/ngày đã giảm nguy cơ tử vong sớm 15%. Không cần gym, không cần đồ thể thao đặc biệt — chỉ cần di chuyển.',
+    details: [
+      '10 phút vận động liên tục đủ để kích hoạt hệ tim mạch và giải phóng endorphin. Tất cả đều tính: đi bộ nhanh, leo cầu thang, đạp xe, bơi lội, nhảy dây, chơi với con.',
+      'Tích lũy được: 3 lần × 10 phút = 30 phút, tương đương về lợi ích tim mạch với 1 lần × 30 phút liên tục theo ACSM (American College of Sports Medicine).',
+      'Thời điểm tốt nhất là thời điểm bạn thực sự làm được. Sáng sớm đặt tông tích cực; buổi tối xả stress. Không có thời điểm "hoàn hảo" nào cả.',
+      '"2-minute rule": nếu không muốn tập, cam kết chỉ 2 phút. Khi bắt đầu rồi, 90% người tiếp tục quá 10 phút nhờ quán tính của hành động.',
+      'Habit stack — gắn với hành vi có sẵn: sau ăn sáng, trước khi tắm, lúc chờ con. Không cần thêm thời gian riêng, chỉ cần ghép vào lịch đã có.',
+      'Mục tiêu dài hạn là 150 phút/tuần (WHO) — nhưng 10 phút/ngày là ngưỡng khởi đầu đã được chứng minh và bền vững nhất để xây thói quen từ đầu.',
+    ],
+    points: [
+      { icon: '⏱️', label: '10 Phút Là Đủ', note: 'Bắt đầu từ 10 phút — ngưỡng có bằng chứng khoa học' },
+      { icon: '🎯', label: 'Mọi Hoạt Động Tính', note: 'Đi bộ, leo thang, đạp xe — không bắt buộc phải đến gym' },
+      { icon: '🧠', label: 'Cải Thiện Tâm Trạng', note: 'Endorphin tăng trong 5 phút đầu, kéo dài vài giờ' },
+      { icon: '📈', label: 'Tích Lũy Hiệu Quả', note: '3 × 10 phút = lợi ích tim mạch tương đương 30 phút liên tục' },
+    ],
+  },
+  {
+    label: 'Ăn đủ 1 nguồn đạm mỗi bữa chính', icon: '🥩', cat: 'B',
+    tip: 'Thịt/cá/trứng/đậu phụ — chọn 1 nguồn là đủ',
+    img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Protein là macronutrient duy nhất không tích trữ được trong cơ thể — cần nạp đều qua từng bữa. 20–30g protein/bữa là ngưỡng tối ưu cho tổng hợp cơ, no lâu và kiểm soát đường huyết ổn định.',
+    details: [
+      'Mỗi bữa chính nên có 1 nguồn đạm rõ ràng: ức gà (~25g/100g), cá (~20g/100g), trứng (~6g/quả), thịt bò (~25g/100g), đậu phụ cứng (~8g/100g), đậu lăng nấu chín (~9g/100g).',
+      'Protein giúp no lâu hơn carb và fat nhờ thermic effect cao nhất (cơ thể đốt 20–30% calo từ protein chỉ để tiêu hóa) — hỗ trợ kiểm soát cân nặng tự nhiên.',
+      'Đạm thực vật và động vật đều có giá trị. Kết hợp 2 nguồn thực vật (gạo + đậu) cho amino acid profile đầy đủ tương đương thịt — không cần phải ăn thịt mỗi bữa.',
+      'Phân bổ đều 3 bữa tốt hơn dồn buổi tối — cơ thể hấp thu và sử dụng hiệu quả hơn cho tổng hợp protein cơ và phục hồi (theo protein timing research).',
+      'Dấu hiệu thiếu đạm: mệt mỏi dai dẳng, tóc và móng yếu, vết thương lành chậm, thèm đồ ngọt sau bữa ăn (cơ thể tìm năng lượng nhanh thay thế).',
+      'Quy tắc đơn giản: nhìn vào đĩa ăn — không thấy nguồn đạm rõ ràng thì thêm 1 quả trứng hoặc 1 hộp sữa chua Hy Lạp. Dễ thực hiện nhất, tác động ngay.',
+    ],
+    points: [
+      { icon: '🥚', label: '20–30g / Bữa', note: 'Ngưỡng tối ưu tổng hợp cơ và no lâu' },
+      { icon: '🐟', label: 'Đa Dạng Nguồn', note: 'Thịt/cá/trứng/đậu — đổi xoay để đủ amino acid' },
+      { icon: '⏰', label: 'Chia Đều 3 Bữa', note: 'Không dồn buổi tối — hấp thu và sử dụng tốt hơn' },
+      { icon: '💪', label: 'Giữ Khối Cơ', note: 'Quan trọng sau 30 tuổi — cơ tự thoái hóa ~1%/năm' },
+    ],
+  },
+  {
+    label: 'Ăn ít nhất 2 phần rau/trái cây', icon: '🥗', cat: 'B',
+    tip: '1 nắm tay = 1 phần. Ăn đa màu sắc càng tốt',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'WHO khuyến nghị ≥5 phần (400g) rau quả/ngày. 2 phần là ngưỡng khởi đầu thực tế — mỗi phần thêm giảm 4% nguy cơ tim mạch và 3% nguy cơ ung thư (phân tích 95 nghiên cứu, 2019).',
+    details: [
+      '1 phần = 1 nắm tay (~80g): 1 quả chuối, 1 nắm rau cải, 3 muỗng canh rau nấu chín, 1 bát salad nhỏ, hoặc 1 ly nước ép nguyên chất không đường.',
+      'Màu sắc = vi chất khác nhau: đỏ (lycopene - tim mạch), cam/vàng (beta-carotene - mắt), xanh lá (chlorophyll - gan), tím (anthocyanin - não), trắng (allicin - miễn dịch).',
+      'Rau sống và rau nấu có lợi ích khác nhau. Kết hợp cả hai trong ngày là lý tưởng — không cần cầu kỳ, chỉ cần đa dạng.',
+      'Fiber từ rau quả nuôi vi khuẩn đường ruột có lợi (prebiotics), giảm LDL, làm chậm hấp thu đường, và tạo no lâu. Không supplement nào thay thế được rau thật.',
+      'Mẹo dễ nhất: thêm 1 nắm rau vào bất kỳ bữa nào; trái cây làm snack thay đồ ngọt; sinh tố rau/quả buổi sáng (5 phút, không cần chế biến phức tạp).',
+      'Rau đông lạnh không kém tươi về dinh dưỡng — thường được đông lạnh ngay sau thu hoạch khi dưỡng chất cao nhất. Tiện và ít lãng phí hơn rau tươi.',
+    ],
+    points: [
+      { icon: '🥦', label: '1 Nắm Tay = 1 Phần', note: '~80g — không cần cân, ước lượng bằng tay của bạn' },
+      { icon: '🌈', label: 'Ăn Đa Màu Sắc', note: 'Mỗi màu = phytochemical bảo vệ sức khỏe khác nhau' },
+      { icon: '🦠', label: 'Nuôi Đường Ruột', note: 'Fiber là thức ăn vi khuẩn có lợi — supplement không thay được' },
+      { icon: '❄️', label: 'Đông Lạnh Vẫn Tốt', note: 'Dinh dưỡng ngang tươi — tiện lợi và ít lãng phí hơn' },
+    ],
+  },
+  {
+    label: 'Uống đủ nước theo nhu cầu cá nhân', icon: '💧', cat: 'C',
+    tip: 'Cân nặng × 35 ml = mục tiêu ngày của bạn',
+    img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mất nước chỉ 1–2% trọng lượng cơ thể giảm hiệu suất nhận thức 10–15% và thể chất 20–30%. Khát nước là dấu hiệu đã mất nước nhẹ — không nên đợi đến khi khát.',
+    details: [
+      'Công thức cá nhân: cân nặng (kg) × 35 ml = lượng cơ bản/ngày. 60kg → 2,100 ml; 70kg → 2,450 ml; 80kg → 2,800 ml. Thêm ~500 ml/giờ vận động mạnh hoặc trời nóng.',
+      'Nước lọc là tốt nhất. Trà xanh không đường, cà phê vừa phải, và soup cũng tính. Nước ngọt và nước ép có đường KHÔNG tính vào tổng — chứa calo rỗng, không hydrate hiệu quả.',
+      'Chia đều cả ngày: 1 ly khi thức dậy, 1 ly trước mỗi bữa ăn, 1 ly mỗi 2 tiếng khi làm việc, 1 ly nhỏ trước ngủ (không quá nhiều để tránh thức đêm).',
+      'Màu nước tiểu là thước đo tốt nhất: vàng nhạt như nước rơm = đủ. Vàng đậm hoặc cam = cần uống thêm ngay. Trong suốt = có thể uống quá nhiều.',
+      'Uống quá nhiều (>4L/ngày với người ít vận động) có thể gây hạ natri máu — hiếm nhưng nguy hiểm. Mục tiêu là uống ĐỦ, không phải uống càng nhiều càng tốt.',
+      'Nhu cầu tăng khi: sốt (+500ml), ăn nhiều muối/protein, ngồi điều hòa lạnh nhiều giờ (không khí khô hút ẩm qua da và hơi thở), mang thai (+300ml).',
+    ],
+    points: [
+      { icon: '📐', label: 'Công Thức Cá Nhân', note: 'Cân nặng (kg) × 35 ml = mục tiêu riêng của bạn' },
+      { icon: '🌡️', label: 'Quan Sát Nước Tiểu', note: 'Vàng nhạt = đủ. Vàng đậm = uống thêm ngay' },
+      { icon: '⏰', label: 'Chia Đều Cả Ngày', note: 'Uống dồn kém hiệu quả — thận chỉ xử lý ~1L/giờ' },
+      { icon: '🚫', label: 'Không Đợi Khát', note: 'Khát = đã mất nước nhẹ rồi — uống trước khi khát' },
+    ],
+  },
+  {
+    label: 'Chuẩn bị/ngủ sớm hơn hôm qua', icon: '😴', cat: 'C',
+    tip: 'Tắt màn hình 30 phút trước khi ngủ',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thêm 30 phút ngủ/đêm (từ 6.5h → 7h) giảm 24% nguy cơ bệnh tim và 14% nguy cơ tiểu đường theo nghiên cứu 500,000 người UK Biobank. Không cần ngủ hoàn hảo — chỉ cần tiến từng chút.',
+    details: [
+      'Mục tiêu không phải "ngủ sớm hơn 1 tiếng ngay" — mà là sớm hơn hôm qua 15–30 phút. Thay đổi đột ngột phá vỡ circadian rhythm. Tiến từ từ bền vững hơn.',
+      '"Không xem điện thoại 30 phút trước ngủ" là quy tắc đơn giản nhất với tác động lớn nhất. Ánh sáng xanh từ màn hình ức chế melatonin (hormone ngủ) mạnh như ánh sáng ban ngày.',
+      'Chuẩn bị môi trường: tắt đèn lớn → đèn nhỏ 60 phút trước; nhiệt độ phòng 18–20°C; phòng tối nhất có thể. Nhiệt độ là yếu tố môi trường tác động nhất đến chất lượng ngủ.',
+      'Wind-down routine 20–30 phút: tắm nước ấm (nhiệt độ cơ thể giảm sau đó kích thích buồn ngủ), đọc sách giấy, nghe nhạc nhẹ. Cùng một routine mỗi đêm → não liên kết với ngủ.',
+      'Giờ thức dậy cố định quan trọng hơn giờ ngủ: cố định giờ thức kể cả cuối tuần điều chỉnh đồng hồ sinh học hiệu quả hơn nhiều so với cố gắng đi ngủ sớm.',
+      'Không ngủ được sau 20 phút: dậy ra, đọc sách giấy trong ánh đèn mờ đến khi buồn ngủ thật sự mới nằm lại. Nằm mãi không ngủ tạo liên kết "giường = lo lắng".',
+    ],
+    points: [
+      { icon: '📅', label: 'Tiến Từng Bước Nhỏ', note: 'Sớm hơn 15 phút/ngày — không nhảy 1 tiếng ngay' },
+      { icon: '📵', label: 'Không Điện Thoại 30p', note: 'Ánh sáng xanh ức chế melatonin như ánh mặt trời' },
+      { icon: '🌡️', label: 'Phòng Mát 18–20°C', note: 'Yếu tố môi trường tác động nhất đến chất lượng ngủ' },
+      { icon: '⏰', label: 'Giờ Thức Cố Định', note: 'Quan trọng hơn giờ ngủ — kể cả thứ 7, chủ nhật' },
+    ],
+  },
+  {
+    label: 'Dành 3–5 phút thở/chậm lại', icon: '🧘', cat: 'D',
+    tip: 'Box breathing 4-4-4-4 hoặc đơn giản là ngồi yên',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thở chậm và sâu kích hoạt hệ thần kinh phó giao cảm trong vòng 60–90 giây — phản ứng ngược hoàn toàn với stress. 5 phút thở có chủ đích/ngày giảm cortisol 15–20% sau 4 tuần nhất quán.',
+    details: [
+      'Box breathing (4-4-4-4): hít vào 4 giây, nín 4, thở ra 4, nín 4. Lặp 4–6 lần = 1.5–2.5 phút. Được Navy SEALs dùng để giữ bình tĩnh trong tình huống áp lực cực cao.',
+      '4-7-8 breathing (cho giấc ngủ): hít 4 giây, nín 7, thở ra chậm 8 giây. Thở ra dài hơn hít vào kích hoạt phản ứng thư giãn mạnh hơn — phù hợp nhất trước khi ngủ.',
+      'Thở bụng đúng cách: 1 tay lên bụng, 1 tay lên ngực. Hít vào để bụng phình ra, ngực ít di chuyển. Đây là cách thở tự nhiên của trẻ sơ sinh — nhiều người lớn đã quên.',
+      'Nhất quán quan trọng hơn thời lượng: 5 phút/ngày mỗi ngày hiệu quả hơn 30 phút/tuần vào cuối tuần. Não học nhận tín hiệu thư giãn tốt hơn khi luyện tập đều đặn.',
+      'Thời điểm hiệu quả: ngay sau thức dậy trước điện thoại, trước bữa ăn để tiêu hóa tốt hơn, khi stress tăng, như phần wind-down trước khi ngủ.',
+      'Đơn giản nhất: ngồi thẳng lưng, nhắm mắt, tập trung vào hơi thở. Khi tâm trí phân tâm — nhẹ nhàng đưa về hơi thở. Đây là nền tảng của mọi thực hành thiền.',
+    ],
+    points: [
+      { icon: '📦', label: 'Box Breathing 4-4-4-4', note: 'Navy SEALs dùng trong áp lực — bạn cũng dùng được' },
+      { icon: '🫁', label: 'Thở Bụng Đúng Cách', note: 'Bụng phình khi hít vào — cách thở tự nhiên nhiều người quên' },
+      { icon: '⏱️', label: '5 Phút Mỗi Ngày', note: 'Nhất quán quan trọng hơn thời lượng — tích lũy sau 4 tuần' },
+      { icon: '🧘', label: 'Bất Kỳ Lúc Nào', note: 'Trước ăn, sau thức dậy, khi stress — không cần thời gian riêng' },
+    ],
+  },
 ];
 
 const CAT_COLORS = { A: '#22c55e', B: '#84cc16', C: '#14b8a6', D: '#a855f7', E: '#3b82f6', F: COLOR };
+const CAT_RGBS   = { A: '34,197,94', B: '132,204,22', C: '20,184,166', D: '168,85,247', E: '59,130,246', F: RGB };
 
 // --- Weekly checklist ---
 const WEEKLY_ITEMS = [
@@ -165,6 +281,118 @@ const TEASER_SECTIONS = [
     ],
   },
 ];
+
+// --- DailyMinCard: dual-zone (checkbox left, detail right) ---
+function DailyMinCard({ item, idx, checked, onToggle, onOpen }) {
+  const [hovered, setHovered] = useState(false);
+  const color = CAT_COLORS[item.cat];
+  const rgb   = CAT_RGBS[item.cat];
+  const isDone = !!checked[idx];
+  return (
+    <div className="flex items-stretch rounded-2xl border bg-surface overflow-hidden transition-all duration-200"
+      style={{ borderColor: hovered ? `rgba(${rgb},0.45)` : isDone ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.08)', boxShadow: hovered ? `0 0 18px rgba(${rgb},0.1)` : 'none' }}
+      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      {/* Checkbox zone */}
+      <button onClick={() => onToggle(idx)}
+        className="flex items-center justify-center px-4 shrink-0 border-r border-white/5 transition-colors"
+        style={{ background: isDone ? `rgba(${rgb},0.1)` : 'transparent' }}>
+        <div className="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-200"
+          style={isDone ? { background: color, borderColor: color } : { borderColor: 'rgba(255,255,255,0.25)' }}>
+          {isDone && <span className="text-white text-[10px] font-black leading-none">✓</span>}
+        </div>
+      </button>
+      {/* Detail zone */}
+      <button onClick={() => onOpen(idx)} className="flex-1 flex items-center gap-3 py-3 px-4 text-left cursor-pointer">
+        <span className="text-xl shrink-0">{item.icon}</span>
+        <div className="flex-1 min-w-0">
+          <span className={`text-sm font-semibold leading-snug ${isDone ? 'line-through text-muted' : 'text-text'}`}>{item.label}</span>
+          <p className="text-xs text-muted mt-0.5 truncate">{item.tip}</p>
+        </div>
+        <div className="shrink-0 flex flex-col items-end gap-1">
+          <span className="text-xs font-bold w-6 h-6 rounded-lg flex items-center justify-center" style={{ color: '#0a0a0a', background: color }}>{item.cat}</span>
+          <span className="text-[10px]" style={{ color: `rgba(${rgb},0.5)` }}>Chi tiết →</span>
+        </div>
+      </button>
+    </div>
+  );
+}
+
+function DailyMinModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const color = CAT_COLORS[item.cat];
+  const rgb   = CAT_RGBS[item.cat];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        {/* Hero */}
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          <span className="text-xs font-bold px-2 py-0.5 rounded-full inline-block mb-2" style={{ color: '#0a0a0a', background: color }}>Trụ Cột {item.cat}</span>
+          <h2 className="font-bold text-2xl md:text-3xl mb-4" style={{ color }}>{item.label}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: color, background: `rgba(${rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 // --- RevealBlock ---
 function RevealBlock({ children, delay = 0, className = '' }) {
@@ -319,6 +547,7 @@ function F1Checklist() {
   const [weekData, setWeekData] = useState(() => {
     try { return JSON.parse(localStorage.getItem('healthapp_f_weekly') || '{}'); } catch { return {}; }
   });
+  const [dailyModal, setDailyModal] = useState(null);
 
   function toggle(i) {
     const u = { ...checked, [i]: !checked[i] };
@@ -347,17 +576,18 @@ function F1Checklist() {
           <p className="text-base text-muted mb-3">{msg} — Làm được 70% là thắng.</p>
           <div className="space-y-2">
             {DAILY_MIN.map((item, i) => (
-              <button key={i} onClick={() => toggle(i)} className="w-full flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 text-left hover:border-orange-500/30 transition-colors">
-                <div className="w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors"
-                  style={checked[i] ? { background: CAT_COLORS[item.cat], borderColor: CAT_COLORS[item.cat] } : { borderColor: 'var(--border)' }}>
-                  {checked[i] && <span className="text-white text-base font-bold">✓</span>}
-                </div>
-                <span className="text-xl">{item.icon}</span>
-                <span className={`text-lg flex-1 ${checked[i] ? 'line-through text-muted' : 'text-text'}`}>{item.label}</span>
-                <span className="text-base px-1.5 py-0.5 rounded font-bold" style={{ background: `${CAT_COLORS[item.cat]}20`, color: CAT_COLORS[item.cat] }}>{item.cat}</span>
-              </button>
+              <DailyMinCard key={i} item={item} idx={i} checked={checked} onToggle={toggle} onOpen={setDailyModal} />
             ))}
           </div>
+          {dailyModal !== null && (
+            <DailyMinModal
+              item={DAILY_MIN[dailyModal]} idx={dailyModal} total={DAILY_MIN.length}
+              onClose={() => setDailyModal(null)}
+              onPrev={() => setDailyModal(i => Math.max(0, i - 1))}
+              onNext={() => setDailyModal(i => Math.min(DAILY_MIN.length - 1, i + 1))}
+              hasPrev={dailyModal > 0} hasNext={dailyModal < DAILY_MIN.length - 1}
+            />
+          )}
         </>
       ) : (
         <div className="space-y-3">

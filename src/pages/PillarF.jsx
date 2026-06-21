@@ -219,19 +219,70 @@ const SCORE_ITEMS = [
 // --- Quick workouts ---
 const QUICK_WO = [
   {
-    dur: '5 phút', label: 'Reset Cơ Thể', color: '#22c55e',
+    dur: '5 phút', label: 'Reset Cơ Thể', color: '#22c55e', rgb: '34,197,94',
+    icon: '🌬️',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
     steps: ['1 phút thở chậm / thở cơ hoành', '1 phút xoay vai, mở ngực', '1 phút Cat-cow hoặc thoracic twist', '1 phút Hip hinge nhẹ hoặc squat ghế', '1 phút Child pose / thở chậm'],
     note: 'Mục tiêu: duy trì chuỗi thói quen, không phải đốt mỡ.',
+    keyFact: '5 phút mỗi ngày đủ để duy trì thói quen vận động — ngay cả khi không có thời gian cho bài dài hơn. Nghiên cứu cho thấy consistency quan trọng hơn cường độ: 5 phút × 7 ngày hiệu quả hơn 35 phút × 1 ngày/tuần.',
+    details: [
+      'Mục tiêu chính của bài 5 phút không phải đốt mỡ hay tăng cơ — mà là duy trì chuỗi thói quen (habit chain) và không để cơ thể "đóng băng" sau nhiều giờ ngồi hoặc ngày nghỉ lười biếng.',
+      'Thở cơ hoành (diaphragmatic breathing): hít vào bằng mũi 4 giây, bụng phồng lên (không phải ngực), thở ra bằng miệng 6 giây. Kích hoạt hệ phó giao cảm — giảm cortisol và chuẩn bị cơ thể cho vận động.',
+      'Xoay vai và mở ngực: counteract tư thế ngồi cong lưng suốt ngày. Cơ ngực trước (pectoral) và cơ vai trước (anterior deltoid) bị rút ngắn — xoay vai ra sau kéo giãn chúng, mở không gian lồng ngực.',
+      'Cat-cow: kết hợp gập lưng (cat) và ưỡn lưng (cow) tạo mobility cho cột sống toàn bộ chiều dài. Kích hoạt dịch khớp và giảm căng cứng do ngồi lâu — đặc biệt hiệu quả sau ngủ hoặc làm việc lâu.',
+      'Hip hinge nhẹ (romanian deadlift không tạ): kéo giãn hamstring và glutes — hai nhóm cơ bị ức chế nhiều nhất khi ngồi. Đứng thẳng, ngả người về trước bằng cách gập hông (không cong lưng), tay chạm đầu gối, rồi đứng lên.',
+      'Child pose kết thúc: giải phóng lưng dưới và hông, tạo cảm giác thư giãn toàn thân. Thở sâu trong tư thế này kích hoạt phản xạ thư giãn — giúp cơ thể và tâm trí sẵn sàng cho công việc hoặc nghỉ ngơi tiếp theo.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Duy Trì Habit Chain', note: 'Không bỏ ngày — ngay cả khi chỉ 5 phút' },
+      { icon: '🫁', label: 'Thở Cơ Hoành Trước', note: 'Giảm cortisol, kích hoạt phó giao cảm' },
+      { icon: '🪑', label: 'Chống Tư Thế Ngồi', note: 'Mở ngực + hip hinge counteract ngồi máy tính' },
+      { icon: '😌', label: 'Kết Thúc Bằng Child Pose', note: 'Thư giãn thực sự — không cắt ngắn bước này' },
+    ],
   },
   {
-    dur: '10 phút', label: 'Toàn Thân Người Mới', color: COLOR,
+    dur: '10 phút', label: 'Toàn Thân Người Mới', color: '#f97316', rgb: '249,115,22',
+    icon: '🏃',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
     steps: ['2 phút khởi động: đi bộ tại chỗ, xoay vai, squat ghế', '6 phút × 2 vòng: Squat 30s → Push-up gối 30s → Glute bridge 30s → Dead bug 30s', '2 phút giãn cơ + thở'],
     note: 'Phù hợp người mới, sáng sớm hoặc giờ nghỉ trưa.',
+    keyFact: '10 phút đủ để kích hoạt tất cả nhóm cơ chính (chân, ngực, lưng, core) và tạo phản ứng hormone tích cực. Bài 2 vòng này được thiết kế để người mới hoàn thành được ngay từ ngày đầu — không cần thiết bị, không cần kinh nghiệm.',
+    details: [
+      'Khởi động 2 phút là bắt buộc — không được bỏ qua dù bài ngắn. Đi bộ tại chỗ tăng nhiệt độ cơ và nhịp tim, xoay vai mở khớp vai và cột sống ngực, squat ghế kích hoạt cơ đùi và mông trước khi tải nặng hơn.',
+      'Circuit 2 vòng: mỗi động tác 30 giây → chuyển ngay không nghỉ. Squat đứng bình thường (hoặc từ ghế nếu cần) → Push-up gối (điều chỉnh cho người mới, hoàn toàn hiệu quả) → Glute bridge nằm ngửa → Dead bug.',
+      'Squat cơ bản: đứng chân rộng bằng vai, ngồi xuống như ngồi ghế sau lưng, gối không vượt quá mũi chân quá nhiều, lưng thẳng. Kích hoạt quadriceps, glutes, và core ổn định đồng thời.',
+      'Push-up gối: không kém hiệu quả hơn push-up thường nếu làm đúng kỹ thuật. Thân người thẳng từ đầu gối đến vai, hạ thấp ngực gần chạm sàn, đẩy lên hết. Đây là khởi điểm — sẽ chuyển sang push-up thường sau 4–6 tuần.',
+      'Glute bridge: nằm ngửa, gối gập 90°, đẩy hông lên cao cho đến khi đùi và thân tạo thành đường thẳng. Giữ 2 giây ở trên đỉnh để kích hoạt cơ mông tối đa. Rất quan trọng cho người ngồi nhiều (cơ mông bị ức chế).',
+      'Dead bug: bài tập core sâu (transverse abdominis) tốt nhất cho người mới. Nằm ngửa, nâng chân và tay lên 90°, từ từ hạ tay và chân đối diện xuống sàn rồi đưa lên. Lưng dưới phải luôn ép sàn — nếu không thể giữ lưng, biên độ chuyển động quá lớn.',
+    ],
+    points: [
+      { icon: '⏱️', label: '2 Phút Khởi Động Bắt Buộc', note: 'Không bỏ qua dù bài ngắn — phòng tránh chấn thương' },
+      { icon: '🔄', label: '2 Vòng Circuit', note: '4 động tác × 30s × 2 vòng = 6 phút hiệu quả' },
+      { icon: '🦵', label: 'Push-up Gối Hoàn Toàn OK', note: 'Đúng kỹ thuật quan trọng hơn kiểu push-up' },
+      { icon: '🌱', label: 'Nền Tảng 4–6 Tuần', note: 'Sau đó chuyển sang push-up thường và tăng vòng' },
+    ],
   },
   {
-    dur: '20 phút', label: 'Full Body Chuẩn', color: '#ef4444',
+    dur: '20 phút', label: 'Full Body Chuẩn', color: '#ef4444', rgb: '239,68,68',
+    icon: '💪',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
     steps: ['4 phút khởi động', '12 phút × 3 vòng: Squat/Sit-to-stand → Push-up → Band row → Glute bridge → Plank/Dead bug', '4 phút cooldown giãn cơ'],
     note: 'Đủ để tạo hiệu quả rõ ràng nếu duy trì 3–4 lần/tuần.',
+    keyFact: '20 phút × 3–4 lần/tuần là ngưỡng tối thiểu để tạo thích nghi cơ học và hormone đáng kể. Bài 3 vòng này kích thích tất cả 5 nhóm cơ chính, tạo EPOC (đốt mỡ sau tập) và kích thích tổng hợp protein cơ trong 24–48 giờ sau đó.',
+    details: [
+      'Khởi động 4 phút: đi bộ tại chỗ 1 phút, xoay khớp toàn thân 1 phút, squat nhẹ 1 phút, inchworm hoặc world\'s greatest stretch 1 phút. Nhiệt độ cơ và độ nhớt khớp phải đạt mức tối ưu trước khi tập chính.',
+      '3 vòng circuit: mỗi động tác 40–45 giây, nghỉ 15 giây giữa các động tác, nghỉ 60 giây giữa các vòng. Squat (cơ chân) → Push-up (ngực + triceps + vai) → Band row (lưng + biceps) → Glute bridge (mông + hamstring) → Plank (core).',
+      'Band row (dây kháng lực): đặt dây ở điểm cố định ngang ngực, kéo về phía mình bằng cách gập khuỷu tay, siết cơ lưng ở cuối hành trình. Kích hoạt rhomboids, mid-traps, và lats — nhóm cơ thường yếu ở người ngồi nhiều.',
+      'Tại sao 3 vòng quan trọng hơn 2 vòng: vòng 3 tạo metabolic stress cao nhất (cơ đã kiệt sức một phần) — đây là stimulus chính cho tổng hợp protein cơ. EPOC (excess post-exercise oxygen consumption) tăng đáng kể sau vòng 3.',
+      'Cooldown 4 phút không thể cắt: hạ nhịp tim từ từ (đi bộ 1 phút), giãn quadriceps 30s mỗi bên, giãn hamstring 30s, pigeon pose (hông) 30s mỗi bên, child pose 1 phút. Bỏ cooldown tăng nguy cơ chóng mặt và đau nhức cơ ngày hôm sau.',
+      'Tần suất: 3–4 lần/tuần với ít nhất 1 ngày nghỉ giữa các buổi tập cùng nhóm cơ. Cơ cần 48 giờ để phục hồi và tái tạo. Tập hàng ngày mà không thay đổi bài sẽ gây overtraining và kém hiệu quả hơn.',
+    ],
+    points: [
+      { icon: '🔥', label: 'EPOC Sau Tập', note: 'Đốt mỡ tiếp tục 24–48h sau — tập 3 vòng tạo hiệu ứng này' },
+      { icon: '🔗', label: 'Band Row Cho Lưng', note: 'Nhóm cơ thường bị bỏ qua — quan trọng nhất' },
+      { icon: '💤', label: '48h Nghỉ Phục Hồi', note: 'Tập 3–4 lần/tuần, xen kẽ — không hàng ngày' },
+      { icon: '🧘', label: 'Cooldown 4 Phút Bắt Buộc', note: 'Không cắt — giảm đau nhức và nguy cơ chóng mặt' },
+    ],
   },
 ];
 
@@ -1909,19 +1960,125 @@ function F6Test() {
   );
 }
 
+// --- QuickWoModal ---
+function QuickWoModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const wo = QUICK_WO[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${wo.rgb},0.28)`, boxShadow: `0 0 80px rgba(${wo.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={wo.img} alt={wo.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${wo.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${wo.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${wo.rgb},0.18)`, border: `2px solid rgba(${wo.rgb},0.45)` }}>{wo.icon}</div>
+          <div className="absolute bottom-5 left-24">
+            <span className="font-black text-2xl" style={{ color: wo.color }}>{wo.dur}</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-4" style={{ color: wo.color }}>{wo.icon} {wo.label}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: wo.color, background: `rgba(${wo.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{wo.keyFact}</p>
+          </div>
+          <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: `rgba(${wo.rgb},0.7)` }}>Các bước thực hiện</h3>
+          <ol className="space-y-2 mb-8">
+            {wo.steps.map((s, j) => (
+              <li key={j} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${wo.rgb},0.14)`, color: wo.color }}>{j + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{s}</span>
+              </li>
+            ))}
+          </ol>
+          <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: `rgba(${wo.rgb},0.7)` }}>Chi tiết khoa học</h3>
+          <ul className="space-y-3 mb-8">
+            {wo.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${wo.rgb},0.14)`, color: wo.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: `rgba(${wo.rgb},0.4)`, background: `rgba(${wo.rgb},0.04)` }}>
+            <p className="text-sm italic" style={{ color: `rgba(${wo.rgb},0.85)` }}>{wo.note}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {wo.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${wo.rgb},0.06)`, border: `1px solid rgba(${wo.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? wo.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${wo.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${wo.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {QUICK_WO.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? wo.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${wo.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${wo.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // --- F7 Quick Workouts tab ---
 function F7QuickWorkouts() {
   const [open, setOpen] = useState(0);
+  const [woModal, setWoModal] = useState(null);
+
   return (
     <div className="space-y-3">
       <p className="text-lg text-muted">Nguyên tắc: Có 5 phút vẫn làm được. Không bỏ hẳn — chỉ cần chọn bản ngắn hơn.</p>
       {QUICK_WO.map((wo, i) => (
-        <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
-          <button onClick={() => setOpen(open === i ? -1 : i)} className="w-full flex items-center gap-3 p-4 text-left hover:bg-white/5 transition-colors">
-            <span className="font-black text-lg w-16" style={{ color: wo.color }}>{wo.dur}</span>
-            <span className="font-bold text-lg text-text flex-1">{wo.label}</span>
-            <span className="text-muted">{open === i ? '▲' : '▼'}</span>
-          </button>
+        <div key={i} className="rounded-2xl border bg-surface overflow-hidden transition-colors duration-200"
+          style={{ borderColor: woModal === i ? `rgba(${wo.rgb},0.45)` : 'var(--border)' }}>
+          <div className="flex items-center gap-3 p-4">
+            <button onClick={() => setWoModal(i)}
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-xl shrink-0 transition-all duration-200 hover:scale-110"
+              style={{ background: `rgba(${wo.rgb},0.12)`, border: `1px solid rgba(${wo.rgb},0.25)` }}>
+              {wo.icon}
+            </button>
+            <button onClick={() => setOpen(open === i ? -1 : i)} className="flex-1 flex items-center gap-3 text-left">
+              <span className="font-black text-lg w-16 shrink-0" style={{ color: wo.color }}>{wo.dur}</span>
+              <span className="font-bold text-lg text-text flex-1">{wo.label}</span>
+              <span className="text-muted mr-1">{open === i ? '▲' : '▼'}</span>
+            </button>
+            <button onClick={() => setWoModal(i)}
+              className="text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all duration-200 hover:opacity-80 shrink-0"
+              style={{ color: wo.color, background: `rgba(${wo.rgb},0.1)`, border: `1px solid rgba(${wo.rgb},0.25)` }}>
+              Chi tiết →
+            </button>
+          </div>
           {open === i && (
             <div className="px-4 pb-4 border-t border-border pt-3 space-y-2">
               <ol className="space-y-1">
@@ -1937,6 +2094,16 @@ function F7QuickWorkouts() {
         </div>
       ))}
       <Link to="/pillar/f/quick-workouts" className="block text-center text-base py-2" style={{ color: COLOR }}>Xem đầy đủ thư viện bài nhanh →</Link>
+      {woModal !== null && (
+        <QuickWoModal
+          idx={woModal}
+          onClose={() => setWoModal(null)}
+          onPrev={() => setWoModal(i => Math.max(0, i - 1))}
+          onNext={() => setWoModal(i => Math.min(QUICK_WO.length - 1, i + 1))}
+          hasPrev={woModal > 0}
+          hasNext={woModal < QUICK_WO.length - 1}
+        />
+      )}
     </div>
   );
 }

@@ -244,34 +244,214 @@ const BASIC_PACKAGE = [
 
 const EXTENDED_PACKAGES = [
   {
-    title: 'Có nguy cơ tim mạch',
-    icon: '❤️',
-    color: '#ef4444',
-    triggers: 'Hút thuốc, HA cao, tiểu đường, mỡ máu cao, béo phì, gia đình có tiền sử',
-    tests: ['Siêu âm tim (Echocardiography)', 'Test gắng sức (Stress ECG)', 'CRP siêu nhạy', 'Homocysteine'],
+    num: '01', icon: '❤️', title: 'Có nguy cơ tim mạch', color: '#ef4444', rgb: '239,68,68',
+    subtitle: 'Siêu âm tim · Stress ECG · CRP siêu nhạy · Homocysteine',
+    triggers: 'Hút thuốc, HA cao, tiểu đường, mỡ máu cao, béo phì, gia đình có tiền sử bệnh tim mạch sớm',
+    img: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=800&q=80',
+    keyFact: '❤️ Bệnh tim mạch là nguyên nhân tử vong số 1 toàn cầu — nhưng 80% trường hợp có thể phòng ngừa hoặc làm chậm tiến triển nếu phát hiện sớm và can thiệp kịp thời. Người có yếu tố nguy cơ cần thêm các xét nghiệm chuyên sâu ngoài gói cơ bản để đánh giá nguy cơ thực sự và chức năng tim.',
+    details: [
+      'Siêu âm tim (Echocardiography) — nhìn thấy tim đang hoạt động: siêu âm tim 2D/Doppler cho phép đánh giá: cấu trúc tim (kích thước buồng tim, độ dày thành tim), chức năng tâm thu (EF — ejection fraction: phân suất tống máu, bình thường ≥ 55%), chức năng tâm trương (đánh giá độ cứng thành tim), van tim (hở, hẹp van), màng ngoài tim (tràn dịch). EF < 40%: suy tim với phân suất tống máu giảm (HFrEF) — cần điều trị tích cực. LVH (phì đại thất trái): hậu quả của tăng HA mãn tính. Siêu âm tim chính xác hơn ECG trong đánh giá chức năng tim thực sự.',
+      'Test gắng sức (Stress ECG / Treadmill Test) — phát hiện thiếu máu cơ tim ẩn: ECG nghỉ ngơi bình thường không loại trừ bệnh mạch vành. Tại sao: mạch vành hẹp 50–70% chỉ gây thiếu máu cơ tim khi gắng sức, không phải lúc nghỉ. Quy trình: bệnh nhân chạy trên máy chạy bộ với cường độ tăng dần theo giao thức Bruce. Dương tính: ST hạ ≥ 1mm, đau ngực điển hình, tụt HA, rối loạn nhịp khi gắng sức. Độ nhạy 68%, độ đặc hiệu 77% cho bệnh mạch vành đáng kể. Chỉ định: đau ngực không rõ nguyên nhân, nguy cơ tim mạch trung bình–cao, trước khi bắt đầu tập luyện cường độ cao từ 50 tuổi. Chống chỉ định: nhồi máu cơ tim cấp, đau thắt ngực không ổn định, suy tim mất bù.',
+      'CRP siêu nhạy (hs-CRP) — viêm mãn tính và tim mạch: hs-CRP đo mức độ viêm toàn thân với độ chính xác cao hơn CRP thông thường. Giá trị nguy cơ tim mạch (không phải nhiễm trùng cấp): < 1.0 mg/L: nguy cơ thấp; 1.0–3.0: trung bình; > 3.0 mg/L: cao. JUPITER Trial (2008): statin ở người có LDL bình thường nhưng hs-CRP > 2 mg/L giảm 44% biến cố tim mạch. hs-CRP dự đoán nguy cơ tim mạch độc lập với cholesterol — người có LDL "tốt" nhưng viêm mãn tính vẫn có nguy cơ cao. Nguyên nhân tăng hs-CRP: béo phì, hút thuốc, lười vận động, chế độ ăn xấu, ngủ kém, stress mãn tính. Giảm hs-CRP bằng: tập thể dục, ăn Địa Trung Hải, ngủ đủ giấc, bỏ thuốc lá.',
+      'Homocysteine — amino acid nguy hiểm cho mạch máu: Homocysteine là amino acid được tạo ra trong quá trình chuyển hóa methionine (từ protein). Mức bình thường: < 15 μmol/L (lý tưởng < 10). Tăng Homocysteine (Hyperhomocysteinemia): tổn thương nội mô mạch máu → tăng nguy cơ nhồi máu cơ tim, đột quỵ, huyết khối tĩnh mạch. Meta-analysis: homocysteine tăng 5 μmol/L → tăng nguy cơ bệnh mạch vành 20%, đột quỵ 59%. Nguyên nhân tăng: thiếu vitamin B6, B9 (folate), B12 — ba cofactor chính trong chu trình chuyển hóa homocysteine. Thuốc làm tăng: Metformin (giảm hấp thu B12), thuốc chống động kinh. Điều trị: bổ sung B6 + B9 + B12 thường đủ để đưa về bình thường — rẻ và an toàn.',
+      'Điểm nguy cơ tim mạch 10 năm (Framingham / SCORE2): công cụ tính toán xác suất biến cố tim mạch trong 10 năm dựa trên: tuổi, giới tính, huyết áp, cholesterol, tình trạng hút thuốc, tiểu đường. < 5%: nguy cơ thấp — tập trung lối sống. 5–10%: nguy cơ trung bình — xem xét statin nếu LDL cao. > 10%: nguy cơ cao — điều trị tích cực. > 20%: nguy cơ rất cao — mục tiêu LDL < 55 mg/dL và điều trị đa thuốc. Các yếu tố tăng nguy cơ không có trong công thức: hs-CRP cao, homocysteine cao, tiền sử gia đình bệnh tim sớm, hội chứng ngưng thở khi ngủ.',
+      'Tần suất và ai cần gói tim mạch mở rộng: Chỉ định gói tim mạch mở rộng: nam ≥ 45 tuổi HOẶC nữ ≥ 55 tuổi với ≥ 1 yếu tố nguy cơ (HA cao, tiểu đường, hút thuốc, mỡ máu cao, gia đình có bệnh tim sớm). Bất kỳ tuổi nào có nguy cơ Framingham > 10%. Đái tháo đường từ 10 năm trở lên. Bệnh thận mãn tính giai đoạn 3+. Tiền sử tiền sản giật nặng (nguy cơ tim mạch lâu dài). Tần suất: nguy cơ thấp–trung bình: 2–3 năm/lần. Nguy cơ cao: hàng năm hoặc theo chỉ định bác sĩ.',
+    ],
+    points: [
+      { icon: '🫀', label: 'EF < 40%: suy tim — siêu âm tim phát hiện trước khi triệu chứng rõ', note: 'LVH trên siêu âm: bằng chứng tăng HA đã ảnh hưởng cơ tim nhiều năm' },
+      { icon: '🏃', label: 'Stress ECG: phát hiện mạch vành hẹp 50–70% chỉ thấy khi gắng sức', note: 'Bắt buộc trước khi tập luyện cường độ cao từ 50 tuổi có yếu tố nguy cơ' },
+      { icon: '🔬', label: 'hs-CRP > 3 mg/L + LDL bình thường: vẫn nguy cơ cao — cần statin', note: 'JUPITER Trial: statin giảm 44% biến cố tim mạch ở nhóm viêm cao' },
+      { icon: '💊', label: 'Homocysteine cao: bổ sung B6+B9+B12 thường đủ điều trị — rẻ và an toàn', note: 'Tăng homocysteine 5 μmol/L: nguy cơ đột quỵ tăng 59%' },
+    ],
   },
   {
-    title: 'Phụ nữ > 40 tuổi',
-    icon: '🌸',
-    color: '#ec4899',
-    triggers: 'Mọi phụ nữ từ 40 tuổi, hoặc sớm hơn nếu có yếu tố nguy cơ',
-    tests: ['Siêu âm vú (mỗi năm)', 'Mamogram (mỗi 1–2 năm từ 40–45)', 'Pap smear hoặc HPV test (mỗi 3–5 năm)', 'DEXA scan (loãng xương từ 50 tuổi hoặc mãn kinh)'],
+    num: '02', icon: '🌸', title: 'Phụ nữ > 40 tuổi', color: '#ec4899', rgb: '236,72,153',
+    subtitle: 'Siêu âm vú · Mammogram · Pap smear / HPV · DEXA scan',
+    triggers: 'Mọi phụ nữ từ 40 tuổi, hoặc sớm hơn nếu có yếu tố nguy cơ (gia đình mắc ung thư vú, BRCA+)',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    keyFact: '🌸 Ung thư vú và ung thư cổ tử cung là hai ung thư phổ biến nhất ở phụ nữ Việt Nam — cả hai đều có tỷ lệ chữa khỏi rất cao nếu phát hiện sớm. Phụ nữ > 40 tuổi cần thêm tầm soát chuyên biệt ngoài gói cơ bản: siêu âm vú hàng năm, mammogram, Pap smear/HPV test, và DEXA scan cho loãng xương.',
+    details: [
+      'Siêu âm vú — tầm soát hàng năm cho phụ nữ châu Á: Phụ nữ châu Á thường có mô vú dày (dense breast) — mammogram khó phát hiện trong mô vú dày, nhưng siêu âm vú hiệu quả. Siêu âm vú phát hiện: u nang (cyst) lành tính, u đặc (fibroadenoma), và các khối bất thường cần sinh thiết. Khuyến nghị: mỗi năm 1 lần từ 30–35 tuổi ở phụ nữ có yếu tố nguy cơ; từ 40 tuổi cho tất cả. Siêu âm vú không thay thế hoàn toàn mammogram — kết hợp cả hai tốt nhất.',
+      'Mammogram (Chụp X-quang vú) — tiêu chuẩn vàng tầm soát ung thư vú: Mammogram phát hiện canxi hóa vi thể (microcalcifications) — dấu hiệu sớm ung thư vú trong situ (DCIS) mà siêu âm không thấy. Khuyến nghị (ACS 2023): tầm soát hàng năm từ 40–44 tuổi (tùy chọn, thảo luận với bác sĩ), bắt buộc từ 45 tuổi. Từ 55 tuổi: có thể chuyển sang 2 năm/lần nếu nguy cơ thấp. Nguy cơ cao (BRCA1/2, tiền sử xạ trị ngực, tiền sử gia đình mạnh): MRI vú hàng năm bổ sung. Digital breast tomosynthesis (3D mammogram): chính xác hơn mammogram 2D, đặc biệt trong mô vú dày.',
+      'Pap smear và HPV test — tầm soát ung thư cổ tử cung: Ung thư cổ tử cung: nguyên nhân > 99% là HPV (Human Papillomavirus). Phòng ngừa: vaccine HPV (Gardasil 9) hiệu quả > 90% nếu tiêm trước khi phơi nhiễm (tốt nhất 9–14 tuổi). Phụ nữ 21–29 tuổi: Pap smear mỗi 3 năm. 30–65 tuổi: Co-testing Pap + HPV mỗi 5 năm (HOẶC Pap mỗi 3 năm, HOẶC HPV primary testing mỗi 5 năm). > 65 tuổi với kết quả âm tính đầy đủ: có thể ngừng tầm soát. HPV primary testing: phát hiện HPV type nguy cơ cao (16/18) trực tiếp — nhạy hơn Pap smear, đang thay thế dần.',
+      'DEXA scan — đo mật độ xương, phát hiện loãng xương: DEXA (Dual-Energy X-ray Absorptiometry) đo BMD (Bone Mineral Density) tại cột sống thắt lưng và cổ xương đùi. T-score: ≥ -1.0: bình thường; -1.0 đến -2.5: giảm mật độ xương (Osteopenia); ≤ -2.5: Loãng xương (Osteoporosis). Khuyến nghị: tất cả phụ nữ ≥ 65 tuổi. Trước 65 tuổi nếu: mãn kinh sớm (< 45 tuổi), dùng corticosteroid > 3 tháng, tiền sử gãy xương do lực thấp, gia đình có loãng xương nặng, BMI thấp < 19. FRAX score: tính toán nguy cơ gãy xương 10 năm — hướng dẫn quyết định điều trị.',
+      'Hội chứng mãn kinh và quản lý sức khỏe sau 40: Perimenopause (tiền mãn kinh): 4–8 năm trước mãn kinh — kinh nguyệt không đều, bốc hỏa, đổ mồ hôi đêm, thay đổi tâm trạng, khó ngủ, khô âm đạo. FSH và Estradiol: đo để đánh giá tình trạng hormone và tư vấn điều trị. Liệu pháp hormone thay thế (HRT): giảm triệu chứng mãn kinh, bảo vệ xương — nhưng cần đánh giá nguy cơ cá nhân (ung thư vú, huyết khối, tiền sử bệnh tim mạch) với bác sĩ phụ khoa. Khuyến nghị hiện tại: HRT tương đối an toàn cho phụ nữ khỏe mạnh < 60 tuổi hoặc trong 10 năm đầu mãn kinh.',
+      'Tầm soát ung thư buồng trứng và nội mạc tử cung: Ung thư buồng trứng: không có phương pháp tầm soát hiệu quả đã được chứng minh giảm tử vong cho người nguy cơ bình thường. CA-125 + siêu âm đầu dò âm đạo: dùng cho người nguy cơ cao (BRCA+, hội chứng Lynch). Ung thư nội mạc tử cung: ra máu bất thường sau mãn kinh → siêu âm qua đầu dò âm đạo (đo độ dày nội mạc) + sinh thiết nội mạc. Không tầm soát thường quy cho người không có triệu chứng. BRCA testing: nếu có ≥ 2 người thân bậc 1 mắc ung thư vú/buồng trứng hoặc ung thư vú nam — hội chẩn di truyền ung thư.',
+    ],
+    points: [
+      { icon: '🎗️', label: 'Siêu âm vú hàng năm từ 40t: phát hiện sớm trong mô vú dày châu Á', note: 'Kết hợp siêu âm + mammogram: độ nhạy tăng đáng kể so với chỉ 1 phương pháp' },
+      { icon: '💉', label: 'Vaccine HPV trước khi phơi nhiễm: ngăn > 90% ung thư cổ tử cung', note: 'Pap + HPV co-testing mỗi 5 năm từ 30–65t: tiêu chuẩn hiện hành' },
+      { icon: '🦴', label: 'DEXA từ 65t (hoặc sớm hơn nếu mãn kinh sớm): ngăn gãy xương hông', note: 'T-score ≤ -2.5: loãng xương — điều trị giảm 40–70% nguy cơ gãy xương' },
+      { icon: '🩸', label: 'Ra máu bất thường sau mãn kinh: siêu âm đầu dò + sinh thiết ngay', note: 'Ung thư nội mạc tử cung phát hiện sớm: tỷ lệ sống 5 năm > 95%' },
+    ],
   },
   {
-    title: 'Nam giới > 40 tuổi',
-    icon: '💙',
-    color: '#3b82f6',
-    triggers: 'Mọi nam giới từ 40 tuổi, hoặc sớm hơn nếu có tiền sử gia đình',
-    tests: ['PSA (kháng nguyên đặc hiệu tiền liệt tuyến)', 'Testosterone (nếu có triệu chứng)', 'Siêu âm tiền liệt tuyến nếu PSA bất thường'],
+    num: '03', icon: '💙', title: 'Nam giới > 40 tuổi', color: '#3b82f6', rgb: '59,130,246',
+    subtitle: 'PSA · Testosterone · Siêu âm tiền liệt tuyến · Tầm soát ung thư đại trực tràng',
+    triggers: 'Mọi nam giới từ 40 tuổi, hoặc sớm hơn nếu có tiền sử gia đình ung thư tiền liệt tuyến hoặc đại tràng',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    keyFact: '💙 Ung thư tiền liệt tuyến là ung thư phổ biến nhất ở nam giới tại các nước phát triển và đang tăng nhanh tại Việt Nam. Phát hiện ở giai đoạn khu trú (PSA < 10, Gleason thấp): tỷ lệ sống 10 năm > 98%. Ngoài ra, testosterone thấp và bệnh đại tràng là hai vấn đề thường gặp ở nam > 40 tuổi cần tầm soát chủ động.',
+    details: [
+      'PSA (Prostate-Specific Antigen) — tầm soát ung thư tiền liệt tuyến: PSA là protein do tuyến tiền liệt sản xuất. PSA < 4 ng/mL: bình thường; 4–10 ng/mL: "vùng xám" — cần đánh giá thêm; > 10 ng/mL: nguy cơ cao ung thư tiền liệt tuyến. PSA density, PSA velocity, free/total PSA ratio: các chỉ số bổ sung giúp phân biệt lành/ác tính trong vùng xám. PSA 4–10 ng/mL: ~25% là ung thư; > 10 ng/mL: > 50% là ung thư. Nguyên nhân PSA tăng lành tính: tăng sinh lành tính tiền liệt tuyến (BPH — rất phổ biến > 50 tuổi), viêm tuyến tiền liệt (Prostatitis), sau quan hệ tình dục, sau đặt sonde tiểu. Khuyến nghị tầm soát: thảo luận lợi ích/nguy cơ với bác sĩ từ 50 tuổi (45 tuổi nếu nguy cơ cao — người Mỹ gốc Phi hoặc tiền sử gia đình). MRI tiền liệt tuyến: chính xác hơn siêu âm trong phân loại tổn thương.',
+      'Chỉ số IPSS và siêu âm tiền liệt tuyến — tăng sinh lành tính: IPSS (International Prostate Symptom Score): bảng câu hỏi 7 điều về triệu chứng đường tiểu dưới (tiểu nhiều lần, tiểu đêm, tiểu ngắt quãng, cảm giác tiểu không hết, tiểu gấp). Siêu âm tiền liệt tuyến qua ổ bụng hoặc trực tràng (TRUS): đo thể tích tuyến > 30ml → BPH. BPH (Benign Prostatic Hyperplasia): không ác tính nhưng gây khó chịu và biến chứng (bí tiểu cấp, nhiễm trùng tiểu, suy thận). Kết hợp PSA + siêu âm + IPSS + thăm khám trực tràng (DRE): đánh giá toàn diện sức khỏe tuyến tiền liệt.',
+      'Testosterone và sức khỏe hormone nam: Testosterone toàn phần (Total Testosterone): bình thường 300–1.000 ng/dL. Testosterone tự do (Free Testosterone): hoạt động sinh học, phụ thuộc SHBG. Thiếu hụt testosterone (Hypogonadism): Total T < 300 ng/dL + triệu chứng. Triệu chứng testosterone thấp: mệt mỏi, giảm ham muốn tình dục, rối loạn cương dương, giảm khối cơ, tăng mỡ bụng, trầm cảm, loãng xương. Nguyên nhân giảm T tự nhiên: T giảm ~1–2%/năm từ 30–40 tuổi. Béo phì, stress mãn tính, ngủ kém, rượu bia, bệnh mãn tính đều làm T giảm nhanh hơn. Điều trị: liệu pháp thay thế testosterone (TRT) — chỉ định khi T thấp + có triệu chứng; cần loại trừ ung thư tiền liệt tuyến trước.',
+      'Tầm soát ung thư đại trực tràng ở nam giới: Ung thư đại trực tràng (CRC): nguyên nhân tử vong ung thư thứ 2 ở nam giới toàn cầu. Tiến triển từ polyp lành tính → ung thư mất 5–10 năm — cửa sổ thời gian vàng để can thiệp. Phương pháp tầm soát: Nội soi đại tràng (Colonoscopy): tiêu chuẩn vàng — phát hiện VÀ cắt bỏ polyp trong cùng một lần thủ thuật; 10 năm/lần nếu âm tính. Xét nghiệm DNA phân (Cologuard): không xâm lấn, nhạy 92% với CRC; 3 năm/lần. FIT (Fecal Immunochemical Test): phát hiện máu ẩn trong phân; hàng năm. Khuyến nghị: tất cả người > 45 tuổi (trước đây 50 tuổi) tầm soát ít nhất 1 lần.',
+      'Tầm soát phình động mạch chủ bụng (AAA) ở nam giới hút thuốc: AAA = phình đường kính > 3cm động mạch chủ bụng. Vỡ AAA: tử vong 80–90% trước khi đến viện. USPSTF: siêu âm bụng 1 lần cho nam 65–75 tuổi từng hút thuốc lá. Kết quả: AAA < 3cm: bình thường. 3.0–5.4cm: theo dõi siêu âm định kỳ. ≥ 5.5cm hoặc tăng > 1cm/6 tháng: phẫu thuật chương trình (tỷ lệ tử vong < 5%). 1/3 nam giới hút thuốc kéo dài có AAA — chi phí 1 siêu âm có thể cứu mạng.',
+      'Tầm soát ung thư tinh hoàn và chăm sóc sức khỏe sinh sản nam: Ung thư tinh hoàn: ung thư phổ biến nhất ở nam 15–35 tuổi; hiếm hơn sau 40. Tự khám tinh hoàn hàng tháng: ngay sau tắm khi cơ thể thư giãn, nhẹ nhàng sờ toàn bộ bề mặt tinh hoàn. Dấu hiệu cần khám ngay: khối u cứng không đau, to bất thường một bên, cảm giác nặng nề bìu. Tỷ lệ chữa khỏi giai đoạn 1: > 99%. Testosterone thấp + tinh trùng kém: liên quan đến tăng nguy cơ tim mạch, tiểu đường, và tử vong sớm — không chỉ là vấn đề sinh sản. Kiểm tra tinh dịch đồ nếu có kế hoạch sinh con sau 35 tuổi.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Ung thư TLT giai đoạn khu trú: tỷ lệ sống 10 năm > 98%', note: 'PSA 4–10 ng/mL: 25% là ung thư — MRI tiền liệt tuyến phân loại chính xác' },
+      { icon: '💪', label: 'Testosterone < 300 ng/dL + mệt, giảm libido: thảo luận TRT với bác sĩ', note: 'T giảm 1–2%/năm từ 30t — béo phì, stress, ngủ kém đẩy nhanh quá trình' },
+      { icon: '🔍', label: 'Nội soi đại tràng từ 45t: cắt polyp trước khi thành ung thư 5–10 năm', note: '1 lần nội soi âm tính: không cần làm lại trong 10 năm' },
+      { icon: '💣', label: 'Nam 65–75t hút thuốc: siêu âm bụng 1 lần tầm soát AAA — có thể cứu mạng', note: 'AAA ≥ 5.5cm: phẫu thuật chương trình tử vong < 5% vs vỡ cấp tử vong 80%' },
+    ],
   },
   {
-    title: 'Tiền sử gia đình ung thư',
-    icon: '🧬',
-    color: '#8b5cf6',
-    triggers: 'Ba/mẹ/anh/chị/em ruột mắc ung thư đại tràng, vú, buồng trứng, dạ dày',
-    tests: ['Nội soi đại tràng từ 40 tuổi (hoặc sớm hơn 10 năm so với người thân mắc bệnh)', 'Xét nghiệm gen BRCA (nếu nguy cơ cao)', 'Nội soi dạ dày nếu tiền sử gia đình'],
+    num: '04', icon: '🧬', title: 'Tiền sử gia đình ung thư', color: '#8b5cf6', rgb: '139,92,246',
+    subtitle: 'Nội soi đại tràng · BRCA testing · Nội soi dạ dày · Hội chẩn di truyền',
+    triggers: 'Ba/mẹ/anh/chị/em ruột mắc ung thư đại tràng, vú, buồng trứng, dạ dày, hoặc ≥ 2 người thân cùng loại ung thư',
+    img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80',
+    keyFact: '🧬 5–10% các ca ung thư là do đột biến gen di truyền — nhưng chỉ một phần nhỏ trong số đó được phát hiện và theo dõi đúng cách. Người có tiền sử gia đình ung thư cần tầm soát sớm hơn và thường xuyên hơn dân số chung. Xét nghiệm gen (genetic testing) có thể thay đổi hoàn toàn chiến lược phòng ngừa cá nhân.',
+    details: [
+      'Nội soi đại tràng (Colonoscopy) — tầm soát sớm hơn nếu có tiền sử gia đình: Nguy cơ ung thư đại tràng di truyền: FAP (Familial Adenomatous Polyposis) — đột biến APC — hàng nghìn polyp từ tuổi trẻ, tiến triển thành ung thư 100% nếu không phẫu thuật. Lynch Syndrome (HNPCC) — đột biến MLH1/MSH2/MSH6/PMS2 — nguy cơ ung thư đại tràng 70–80%, ung thư nội mạc tử cung 40–60%. Khuyến nghị theo tiền sử: 1 người thân bậc 1 mắc CRC < 60 tuổi → nội soi từ 40 tuổi HOẶC sớm hơn 10 năm so với tuổi mắc bệnh của người thân. ≥ 2 người thân bậc 1 → bắt đầu từ 40 tuổi và lặp lại mỗi 5 năm. Lynch Syndrome: nội soi hàng năm từ 20–25 tuổi.',
+      'Xét nghiệm gen BRCA1/2 — nguy cơ ung thư vú và buồng trứng: BRCA1 đột biến: nguy cơ ung thư vú 55–72% đến 70 tuổi; ung thư buồng trứng 44%. BRCA2 đột biến: ung thư vú 45–69%; ung thư buồng trứng 17%. BRCA cũng tăng nguy cơ ở nam: ung thư vú nam (6%), ung thư tiền liệt tuyến (20–40%). Chỉ định xét nghiệm BRCA: ≥ 2 người thân bậc 1/2 mắc ung thư vú hoặc buồng trứng. Ung thư vú ở người thân < 50 tuổi. Ung thư vú hai bên. Ung thư vú ở nam giới trong gia đình. Người gốc Do Thái Ashkenazi (nguy cơ đột biến BRCA 1/40). Nếu BRCA+: MRI vú hàng năm từ 25–30 tuổi, xem xét phẫu thuật dự phòng (mastectomy phòng ngừa giảm nguy cơ 90%).',
+      'Ngoài BRCA — các hội chứng di truyền ung thư khác cần biết: Lynch Syndrome (HNPCC): đột biến MLH1, MSH2, MSH6, PMS2 → nguy cơ cao nhiều loại ung thư: đại tràng (70–80%), nội mạc tử cung (40–60%), buồng trứng (10–12%), dạ dày (6–13%), đường tiết niệu. Xét nghiệm: MMR IHC hoặc MSI testing trên mô ung thư, sau đó xét nghiệm gen germline. Li-Fraumeni Syndrome: đột biến TP53 → nhiều loại ung thư từ trẻ (sarcoma, vú, não, thượng thận). PTEN Hamartoma Syndrome (Cowden): đột biến PTEN → ung thư vú, tuyến giáp, nội mạc. Phân tích panel gen đa cancer (multi-gene panel): xét nghiệm 20–100 gen liên quan ung thư trong 1 lần — chi phí đang giảm mạnh.',
+      'Nội soi dạ dày (Gastroscopy) — tầm soát ung thư dạ dày: Ung thư dạ dày: VN có tỷ lệ cao — đứng thứ 3 trong các ung thư phổ biến ở nam giới. H. pylori: nguyên nhân hàng đầu → viêm dạ dày mãn → loét → ung thư dạ dày (nguy cơ tăng 6×). Test H. pylori (breath test, stool antigen, hoặc sinh thiết qua nội soi) và điều trị diệt trừ giảm đáng kể nguy cơ ung thư dạ dày. Tiền sử gia đình mắc ung thư dạ dày: nội soi dạ dày từ 40 tuổi (hoặc sớm hơn 10 năm). Hội chứng ung thư dạ dày lan tỏa di truyền (HDGC): đột biến CDH1 → nguy cơ ung thư dạ dày type lan tỏa 80% đến 80 tuổi — xem xét cắt dạ dày dự phòng.',
+      'Hội chẩn di truyền ung thư (Genetic Counseling) — bước đầu tiên: trước khi xét nghiệm gen: nhà tư vấn di truyền (genetic counselor) đánh giá rủi ro cá nhân và gia đình, giải thích ý nghĩa và giới hạn của xét nghiệm, tư vấn tâm lý và đạo đức. Sau xét nghiệm: giải thích kết quả (dương tính/âm tính/variant của ý nghĩa không chắc chắn — VUS), lập kế hoạch tầm soát và phòng ngừa cá nhân hóa, tư vấn cho người thân trong gia đình. VUS (Variant of Uncertain Significance): không thể kết luận lành hay bệnh — cần theo dõi và cập nhật khi bằng chứng tích lũy thêm. Bảo mật kết quả gen: cần hiểu quyền lợi và rủi ro về bảo hiểm/việc làm trước khi xét nghiệm.',
+      'Phòng ngừa chủ động cho người nguy cơ cao — không chỉ là tầm soát: Chemoprevention: Tamoxifen/Raloxifene cho phụ nữ BRCA+ giảm nguy cơ ung thư vú 50%. Aspirin liều thấp: giảm nguy cơ ung thư đại tràng 30–40% ở Lynch Syndrome — nhưng cân nhắc nguy cơ chảy máu tiêu hóa. Phẫu thuật dự phòng: Mastectomy dự phòng (BRCA+): giảm nguy cơ ung thư vú > 90%. Salpingo-oophorectomy (cắt vòi trứng + buồng trứng) dự phòng (BRCA+): giảm nguy cơ ung thư buồng trứng 80–85%. Colectomy dự phòng (FAP): loại bỏ hoàn toàn nguy cơ ung thư đại tràng. Lối sống: BMI bình thường, không hút thuốc, hạn chế rượu, tập thể dục đều đặn — giảm nguy cơ ung thư ngay cả ở người có đột biến di truyền.',
+    ],
+    points: [
+      { icon: '🧬', label: 'BRCA1+: ung thư vú 55–72%, buồng trứng 44% — MRI vú từ 25t', note: 'Mastectomy dự phòng BRCA+: giảm nguy cơ > 90% — quyết định cá nhân hóa' },
+      { icon: '🔭', label: 'Lynch Syndrome: nội soi đại tràng hàng năm từ 20–25 tuổi', note: 'Nguy cơ ung thư đại tràng 70–80% và nội mạc tử cung 40–60%' },
+      { icon: '🫙', label: 'H. pylori: diệt trừ giảm nguy cơ ung thư dạ dày 6× — test và điều trị', note: 'Nội soi dạ dày từ 40t nếu có người thân mắc ung thư dạ dày' },
+      { icon: '🧑‍⚕️', label: 'Hội chẩn di truyền trước xét nghiệm gen: hiểu rõ ý nghĩa và quyền lợi', note: 'VUS (kết quả không chắc chắn) phổ biến — cần cập nhật khi có thêm bằng chứng' },
+    ],
   },
 ];
+
+function ExtendedCard({ item, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="rounded-2xl border bg-surface p-5 cursor-pointer transition-all duration-200"
+      style={{
+        borderColor: hovered ? `rgba(${item.rgb},0.5)` : 'rgba(255,255,255,0.08)',
+        boxShadow: hovered ? `0 0 24px rgba(${item.rgb},0.12)` : 'none',
+        transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
+      }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-2xl">{item.icon}</span>
+        <div className="flex-1">
+          <h3 className="font-bold text-base text-text leading-snug">{item.title}</h3>
+          <p className="text-xs text-muted mt-0.5 line-clamp-1">{item.triggers}</p>
+        </div>
+        <span className="text-xs font-bold px-2 py-1 rounded-full shrink-0" style={{ color: item.color, background: `rgba(${item.rgb},0.12)` }}>Chi tiết →</span>
+      </div>
+      <p className="text-xs font-semibold" style={{ color: `rgba(${item.rgb},0.75)` }}>{item.subtitle}</p>
+    </div>
+  );
+}
+
+function ExtendedModal({ item, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.title} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          <div className="absolute top-4 right-4 flex items-center gap-2">
+            <span className="text-xs font-bold px-2 py-1 rounded-full" style={{ color: item.color, background: `rgba(${item.rgb},0.18)`, border: `1px solid rgba(${item.rgb},0.3)` }}>
+              Nhóm {item.num}/{String(total).padStart(2, '0')}
+            </span>
+            <button onClick={onClose}
+              className="w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+              style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+          </div>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{item.title}</h2>
+          <p className="font-semibold text-sm mb-3" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.subtitle}</p>
+          <div className="mb-6 pl-4 border-l-2 py-1" style={{ borderColor: item.color }}>
+            <p className="text-xs font-semibold mb-1" style={{ color: `rgba(${item.rgb},0.6)` }}>Áp dụng khi:</p>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.triggers}</p>
+          </div>
+
+          <div className="mb-6 pl-4 border-l-2 py-1" style={{ borderColor: `rgba(${item.rgb},0.4)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.85)' }}>{item.keyFact}</p>
+          </div>
+
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / {String(total).padStart(2, '0')}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: 'rgba(255,255,255,0.5)' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function CheckupCard({ item, idx, checked, onToggle, onOpen }) {
   const [hovered, setHovered] = useState(false);
@@ -436,8 +616,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthCheckupPage() {
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [checked, setChecked] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_checkup_done') || '[]'); } catch { return []; } });
-  const [openExtended, setOpenExtended] = useState(null);
   const [checkupModal, setCheckupModal] = useState(null);
+  const [extendedModal, setExtendedModal] = useState(null);
 
   function toggle(i) {
     const updated = checked.includes(i) ? checked.filter(c => c !== i) : [...checked, i];
@@ -526,31 +706,10 @@ export default function HealthCheckupPage() {
 
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Gói Mở Rộng Theo Nguy Cơ</h2>
-        <p className="text-muted text-lg mb-6">Trao đổi với bác sĩ về gói khám phù hợp với hồ sơ nguy cơ cá nhân của bạn.</p>
-        <div className="space-y-3">
+        <p className="text-muted text-lg mb-6">Trao đổi với bác sĩ về gói khám phù hợp với hồ sơ nguy cơ cá nhân của bạn. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <div className="grid sm:grid-cols-2 gap-3">
           {EXTENDED_PACKAGES.map((pkg, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface overflow-hidden">
-              <button onClick={() => setOpenExtended(openExtended === i ? null : i)} className="w-full flex items-center gap-3 p-4 text-left hover:bg-white/5 transition-colors">
-                <span className="text-2xl">{pkg.icon}</span>
-                <div className="flex-1">
-                  <div className="font-bold text-lg text-text">{pkg.title}</div>
-                </div>
-                <span className="text-muted">{openExtended === i ? '▲' : '▼'}</span>
-              </button>
-              {openExtended === i && (
-                <div className="px-4 pb-4 border-t border-border pt-3 space-y-3">
-                  <p className="text-base text-muted"><strong style={{ color: pkg.color }}>Áp dụng khi: </strong>{pkg.triggers}</p>
-                  <ul className="space-y-1">
-                    {pkg.tests.map((t, j) => (
-                      <li key={j} className="flex gap-2 text-lg text-muted">
-                        <span style={{ color: pkg.color }} className="shrink-0">+</span>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+            <ExtendedCard key={i} item={pkg} onClick={() => setExtendedModal(i)} />
           ))}
         </div>
       </RevealBlock>
@@ -579,6 +738,17 @@ export default function HealthCheckupPage() {
           onNext={() => setCheckupModal(i => Math.min(BASIC_PACKAGE.length - 1, i + 1))}
           hasPrev={checkupModal > 0}
           hasNext={checkupModal < BASIC_PACKAGE.length - 1}
+        />
+      )}
+      {extendedModal !== null && (
+        <ExtendedModal
+          item={EXTENDED_PACKAGES[extendedModal]}
+          total={EXTENDED_PACKAGES.length}
+          onClose={() => setExtendedModal(null)}
+          onPrev={() => setExtendedModal(i => Math.max(0, i - 1))}
+          onNext={() => setExtendedModal(i => Math.min(EXTENDED_PACKAGES.length - 1, i + 1))}
+          hasPrev={extendedModal > 0}
+          hasNext={extendedModal < EXTENDED_PACKAGES.length - 1}
         />
       )}
     </div>

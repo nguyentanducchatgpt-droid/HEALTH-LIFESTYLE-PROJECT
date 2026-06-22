@@ -219,13 +219,210 @@ const SCHEDULE = [
 ];
 
 const TIPS = [
-  { icon: '🌈', tip: 'Đa dạng màu sắc = đa dạng dinh dưỡng. Mỗi tuần thay 1 loại rau.' },
-  { icon: '🧊', tip: 'Cơm gạo lứt để tủ lạnh qua đêm = tăng tinh bột kháng (tốt hơn cho đường huyết).' },
-  { icon: '🔄', tip: 'Làm 2 loại đạm khác nhau: 1 kiểu đậm đà + 1 kiểu nhẹ nhàng hơn.' },
-  { icon: '📦', tip: 'Hộp thủy tinh tốt hơn hộp nhựa — không mùi, gia nhiệt được trực tiếp.' },
-  { icon: '🧂', tip: 'Nêm gia vị sau khi hâm nóng, không cần cho vào hộp — giữ tươi hơn.' },
-  { icon: '⏰', tip: 'Meal prep tốt nhất vào tối Chủ nhật — fresh cho thứ 2–4.' },
+  {
+    icon: '🌈', color: '#22c55e', rgb: '34,197,94',
+    tip: 'Đa dạng màu sắc = đa dạng dinh dưỡng. Mỗi tuần thay 1 loại rau.',
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mỗi màu rau quả đại diện cho một nhóm phytonutrient khác nhau — pigment tự nhiên bảo vệ thực vật cũng bảo vệ tế bào người ăn. Nghiên cứu American Gut Project cho thấy người ăn ≥30 loại thực vật/tuần có gut microbiome đa dạng hơn đáng kể so với người ăn <10 loại.',
+    details: [
+      'Màu xanh (broccoli, rau muống, cải bó xôi): chlorophyll + folate + vitamin K + iron + lutein/zeaxanthin. Lutein và zeaxanthin bảo vệ mắt khỏi thoái hóa điểm vàng (AMD). Folate thiết yếu cho tổng hợp DNA và quan trọng với phụ nữ mang thai (giảm neural tube defects 70%).',
+      'Màu đỏ/hồng (cà chua, ớt đỏ, dưa hấu): lycopene — carotenoid mạnh nhất chống oxy hóa tế bào tim mạch và tiền liệt tuyến. Lycopene trong cà chua tăng hấp thu khi nấu chín có dầu (fat-soluble carotenoid) — cà chua xào dầu hấp thu lycopene cao hơn cà chua sống 3–4 lần.',
+      'Màu cam/vàng (cà rốt, khoai lang, ớt vàng): beta-carotene — tiền vitamin A. Hấp thu tăng mạnh khi có chất béo. Cà rốt xào dầu hấp thu beta-carotene cao hơn cà rốt sống 6.5 lần. Vitamin A thiết yếu cho thị lực, hệ miễn dịch, và tái tạo da.',
+      'Màu tím (cà tím, bắp cải tím, việt quất): anthocyanins — flavonoid mạnh. Nghiên cứu cho thấy anthocyanins cải thiện trí nhớ ngắn hạn, giảm viêm não, và bảo vệ thành mạch máu. Cà tím có nasunin — antioxidant bảo vệ lipid trong màng tế bào não.',
+      'Màu trắng/nâu nhạt (tỏi, hành tây, nấm): allicin (tỏi) + quercetin (hành tây) + ergothioneine (nấm — antioxidant độc đáo, chỉ có trong nấm, không tổng hợp được từ thực vật khác). Hành tây tím có quercetin cao gấp 3–4 lần hành tây trắng.',
+      'Mục tiêu 30 loại thực vật/tuần: đây là target từ American Gut Project sau phân tích >10,000 mẫu microbiome. Đếm tất cả: rau, trái cây, đậu, hạt, ngũ cốc, gia vị (1 loại gia vị = 1 điểm). Đa dạng > số lượng — 30 loại mỗi 30g còn tốt hơn 3 loại mỗi 300g về gut diversity.',
+    ],
+    points: [
+      { icon: '🟢', label: 'Xanh → Folate + Lutein', note: 'Bảo vệ DNA tổng hợp và mắt khỏi thoái hóa điểm vàng (AMD)' },
+      { icon: '🔴', label: 'Đỏ → Lycopene + Dầu', note: 'Cà chua xào dầu: hấp thu lycopene cao hơn sống 3–4 lần' },
+      { icon: '🟠', label: 'Cam → Beta-Carotene', note: 'Cà rốt xào dầu: hấp thu beta-carotene cao hơn sống 6.5 lần' },
+      { icon: '🫐', label: '30 Loại Thực Vật/Tuần', note: 'American Gut Project: 30+ loại → gut microbiome vượt trội, miễn dịch tốt hơn' },
+    ],
+  },
+  {
+    icon: '🧊', color: '#3b82f6', rgb: '59,130,246',
+    tip: 'Cơm gạo lứt để tủ lạnh qua đêm = tăng tinh bột kháng (tốt hơn cho đường huyết).',
+    img: 'https://images.unsplash.com/photo-1536304993881-ff86e0c9ef3e?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Resistant starch (tinh bột kháng) trong cơm để lạnh qua đêm tăng 3–4 lần so với cơm mới nấu. Resistant starch không tiêu hóa được ở ruột non — đi thẳng xuống ruột già, nuôi vi khuẩn có lợi và sản xuất butyrate, giảm glycemic index và bảo vệ ruột kết.',
+    details: [
+      'Resistant starch là gì: tinh bột không tiêu hóa được bởi enzyme amylase ở ruột non. Có 4 loại; loại RS3 (retrograde) được tạo ra khi tinh bột nấu chín rồi làm lạnh — tinh bột tái kết tinh thành cấu trúc mà enzyme không phân cắt được.',
+      'Tác dụng với đường huyết: resistant starch làm chậm tiêu hóa và hấp thu glucose → glycemic index (GI) giảm đáng kể. Cơm lứt mới nấu GI ~55; cơm lứt để lạnh và hâm nóng lại GI ~35–40. Giảm blood sugar spike sau ăn — có lợi cho cả người bình thường và tiểu đường type 2.',
+      'Tác dụng với gut microbiome: resistant starch là prebiotic hàng đầu — nuôi Bifidobacterium, Lactobacillus, và Faecalibacterium prausnitzii (vi khuẩn liên quan đến giảm viêm). Lên men resistant starch → sản xuất butyrate, propionate, acetate (short-chain fatty acids).',
+      'Butyrate — nhiên liệu của tế bào ruột kết: butyrate là nguồn năng lượng chính của colonocytes. Thiếu butyrate → tế bào ruột chết sớm → tăng intestinal permeability (leaky gut). Butyrate cũng giảm viêm toàn thân và được nghiên cứu trong ngăn ngừa ung thư ruột kết.',
+      'Hâm nóng lại có làm mất resistant starch không: một phần RS3 bị phá vỡ khi hâm nóng, nhưng vẫn cao hơn cơm mới nấu. Nghiên cứu 2015: cơm để lạnh 24h rồi hâm nóng có resistant starch cao hơn cơm mới nấu 2.5 lần. Ăn nguội (kiểu sushi rice) giữ nhiều RS3 nhất.',
+      'Áp dụng thực tế: nấu cơm tối hôm trước, để nguội 30 phút mở nắp → đậy nắp, tủ lạnh qua đêm. Sáng hôm sau hâm nóng 2 phút microwave. Không cần thay đổi gì trong thói quen — chỉ cần nấu sớm hơn 1 ngày. Đây là "hack" đơn giản nhất để upgrade meal prep.',
+    ],
+    points: [
+      { icon: '🔬', label: 'GI Giảm Còn 35–40', note: 'Cơm lứt mới nấu GI ~55; sau làm lạnh + hâm = ~35–40 — no lâu hơn' },
+      { icon: '🦠', label: 'Prebiotic Nuôi Gut Bacteria', note: 'Resistant starch nuôi Bifidobacterium → sản xuất butyrate bảo vệ ruột' },
+      { icon: '⚡', label: 'Butyrate = Nhiên Liệu Ruột', note: 'Thiếu butyrate → leaky gut → viêm toàn thân — cơm lạnh phòng ngừa tự nhiên' },
+      { icon: '🍱', label: 'Nấu Tối Hôm Trước = Tốt Hơn', note: 'Cơm lạnh 24h rồi hâm: resistant starch cao hơn cơm mới nấu 2.5 lần' },
+    ],
+  },
+  {
+    icon: '🔄', color: '#f97316', rgb: '249,115,22',
+    tip: 'Làm 2 loại đạm khác nhau: 1 kiểu đậm đà + 1 kiểu nhẹ nhàng hơn.',
+    img: 'https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đa dạng nguồn protein cung cấp amino acid profile đầy đủ hơn và ngăn ngán — nguyên nhân #1 khiến người bỏ meal prep. Mỗi nguồn đạm có profile amino acid và micronutrients đặc trưng: leucine từ gà, omega-3 từ cá, choline từ trứng — kết hợp tối ưu hơn chuyên biệt.',
+    details: [
+      'Tại sao 2 nguồn đạm: mỗi protein có profile amino acid khác nhau. Gà ức: leucine cao nhất → kích hoạt MPS tốt nhất. Cá hồi: taurine + EPA/DHA → anti-inflammatory + brain function. Trứng: choline → liver health + brain. Đa dạng nguồn > chuyên biệt 1 nguồn về tổng hợp dinh dưỡng.',
+      '1 đậm đà + 1 nhẹ nhàng là combo thực tế nhất: đậm đà (gà kho gừng, cá áp chảo sốt tỏi) và nhẹ nhàng (gà luộc trắng, trứng luộc, đậu phụ hấp). Hôm nào ngán đồ đậm → ăn đồ nhẹ. Hôm nào muốn hương vị mạnh → đồ đậm đà. Linh hoạt theo mood thay vì bị ép ăn 1 kiểu.',
+      'Leucine threshold — amino acid kích hoạt MPS: mỗi bữa cần ≥2.5–3g leucine để kích hoạt muscle protein synthesis tối đa. Gà ức 150g = ~3.2g leucine (đủ standalone). Trứng 2 quả = ~1.1g leucine (cần combine thêm protein khác). Kết hợp trứng + cơm + đậu phụ trong bữa đủ threshold.',
+      'Protein timing: phân bổ 20–40g/bữa (3–4 bữa/ngày) hiệu quả hơn ăn 80g 1 lần. Bữa sau tập trong 2h đầu quan trọng nhất cho recovery. Protein trước ngủ (casein — sữa, phô mai tươi) hỗ trợ overnight muscle repair thêm 10–15%.',
+      'Protein thực vật trong meal prep: đậu phụ (PDCAAS 0.91), đậu lăng, đậu đen là options tốt cho người muốn giảm thịt. Kết hợp legumes + grains (đậu + cơm) trong cùng bữa hoặc cùng ngày → complete amino acid profile tương đương thịt. Không cần "perfect combining" mỗi bữa — daily total amino acid balance đủ.',
+      'Rotation mỗi tuần để không ngán: Tuần 1: gà + cá. Tuần 2: bò + trứng. Tuần 3: heo + đậu phụ. Rotation đảm bảo đa dạng micronutrients (iron từ thịt đỏ, omega-3 từ cá, choline từ trứng mỗi tuần) và giữ meal prep thú vị sau nhiều tháng.',
+    ],
+    points: [
+      { icon: '💪', label: '≥2.5g Leucine/Bữa', note: 'Threshold kích hoạt MPS tối đa — gà ức 150g = 3.2g leucine đủ' },
+      { icon: '🔄', label: 'Rotate Nguồn Mỗi Tuần', note: 'Tuần gà/cá, tuần bò/trứng — đa dạng micronutrient + không ngán dài hạn' },
+      { icon: '🌱', label: 'Đậu + Cơm = Complete Protein', note: 'Legumes + grains cùng ngày → amino acid profile đầy đủ như thịt' },
+      { icon: '🎭', label: 'Đậm Đà + Nhẹ Nhàng Combo', note: 'Hai phong cách nấu → chọn theo mood mỗi ngày, không bị ép ăn 1 kiểu' },
+    ],
+  },
+  {
+    icon: '📦', color: '#f59e0b', rgb: '245,158,11',
+    tip: 'Hộp thủy tinh tốt hơn hộp nhựa — không mùi, gia nhiệt được trực tiếp.',
+    img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Hộp thủy tinh là lựa chọn tốt nhất cho meal prep: không thấm mùi, an toàn hâm microwave, bền 10+ năm, và không release hóa chất vào thức ăn khi nhiệt độ thay đổi. Chi phí ban đầu cao hơn nhưng rẻ hơn nhựa về dài hạn (cost per use thấp hơn 2x sau 2 năm).',
+    details: [
+      'BPA và BPA-free: BPA (bisphenol A) trong nhựa polycarbonate bị FDA cấm trong bình sữa trẻ em từ 2012. "BPA-free" nhựa thường thay bằng BPS hoặc BPF — nghiên cứu 2020–2023 cho thấy BPS/BPF có tác dụng endocrine disruptor tương tự BPA. Giải pháp tốt nhất: tránh hâm nhựa, hoặc chuyển sang thủy tinh.',
+      'Leaching nhiều nhất khi: (1) nhiệt độ cao (hâm microwave), (2) acid tiếp xúc lâu (cà chua, chanh trong hộp nhựa), (3) nhựa bị trầy xước (tăng diện tích tiếp xúc). Thủy tinh hoàn toàn inert — không phản ứng với thức ăn ở bất kỳ nhiệt độ nào, acid hay base.',
+      'Mùi và staining: nhựa thấm mùi sau 3–6 tháng (đặc biệt sốt nghệ, cà chua, tỏi). Thủy tinh không thấm mùi, không bị stain dù dùng hàng năm. Rửa máy rửa bát không làm mờ thủy tinh — nhựa có thể deform hoặc vàng ở nhiệt độ cao.',
+      'Gia nhiệt microwave: hộp thủy tinh borosilicate (Pyrex, Anchor Hocking) chịu nhiệt -40°C đến 300°C, an toàn chuyển trực tiếp từ tủ đông → microwave → bàn ăn. Hộp nhựa "microwave safe" có nghĩa là không biến dạng — không đảm bảo không leach hóa chất khi nóng.',
+      'Longevity và cost per use: thủy tinh tốt bền 10–15 năm. Nhựa thường thay sau 1–2 năm do stain, mùi, hoặc trầy xước. Chi phí/năm: thủy tinh ~50k/năm (hộp 200k / 4 năm thực tế) vs. nhựa ~100k/năm (hộp 50k / 6 tháng). Thủy tinh rẻ hơn sau 2 năm đầu.',
+      'Kích thước và hãng tốt: 750ml (bữa vừa) và 1,000ml (bữa đầy đủ với nhiều rau) là 2 size nên có. Nắp lock kín tốt hơn nắp snap. Hộp vuông/chữ nhật tiết kiệm diện tích tủ lạnh hơn hộp tròn. Hãng đáng mua: Pyrex (Mỹ), Weck (Đức), IKEA 365+.',
+    ],
+    points: [
+      { icon: '🧪', label: 'BPA-Free ≠ An Toàn Tuyệt Đối', note: 'BPS/BPF thay BPA cũng có endocrine disruption — thủy tinh không có vấn đề này' },
+      { icon: '🔥', label: '-40°C → 300°C Borosilicate', note: 'Tủ đông thẳng microwave — zero leaching ở mọi nhiệt độ và mọi loại thức ăn' },
+      { icon: '💰', label: 'Rẻ Hơn Sau 2 Năm', note: '~50k/năm (thủy tinh) vs. ~100k/năm (nhựa) — ROI rõ ràng về dài hạn' },
+      { icon: '📐', label: 'Vuông 1L > Tròn', note: 'Xếp tủ lạnh gọn hơn; Pyrex, Weck, IKEA 365+ là lựa chọn tốt' },
+    ],
+  },
+  {
+    icon: '🧂', color: '#6366f1', rgb: '99,102,241',
+    tip: 'Nêm gia vị sau khi hâm nóng, không cần cho vào hộp — giữ tươi hơn.',
+    img: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Gia vị trong hộp kín qua nhiều ngày = hương thơm bay hơi + rau/thịt bị over-marinated thay đổi texture. Nêm sau khi hâm là cách đơn giản nhất để mỗi bữa ăn tươi ngon như mới nấu, dù đã prep từ 2–3 ngày trước. Đây là bí quyết khác biệt giữa meal prep "ngon" và meal prep "meh."',
+    details: [
+      'Tại sao không nêm vào hộp: hương thơm của gia vị (terpenes, volatile compounds) bay hơi trong môi trường kín ẩm ấm qua 2–3 ngày. Tỏi trong hộp kín 3 ngày mất 60–70% allicin. Ớt tươi trong hộp 2 ngày mất màu và vị cay. Nêm vào hộp = lãng phí gia vị, bữa ăn nhạt và tẻ nhạt.',
+      'Nước chấm và sốt để riêng: nước mắm, sốt tương, sốt cà chua làm rau và thịt bị over-marinated sau 2–3 ngày — mất texture giòn/mềm tự nhiên. Ví dụ ngoại lệ tốt: trứng luộc ngâm nước mắm/xì dầu 1 ngày (muốn marinate sâu). Rau xào ngâm sốt 3 ngày → nhũn, mất màu xanh.',
+      'Gia vị nêm sau tốt nhất: tỏi phi thêm, tiêu xay, chanh/giấm (acid), ớt tươi, hành lá, rau mùi, ngò gai. Đây là volatile aromatics — phát huy tốt nhất khi mới thêm vào bữa ăn đã hâm nóng. Muối có thể cho vào hộp nhưng tốt hơn nêm sau để điều chỉnh theo khẩu vị từng ngày.',
+      'Acid là "flavor brightener" của đầu bếp: vài giọt chanh hoặc giấm thêm trước khi ăn "brighten" toàn bộ hương vị bữa ăn — giống như muối nhưng không tăng sodium. Kỹ thuật này được dạy trong mọi trường culinary. Acid cũng tăng iron absorption từ rau lá xanh lên đến 3 lần (vitamin C + iron).',
+      'Dầu ô liu extra virgin (EVOO) drizzle sau hâm: polyphenols trong EVOO (oleocanthal, oleuropein) bị phá hủy ở >180°C. Nấu với EVOO lãng phí phần quý nhất. Drizzle lên thức ăn đã hâm nóng (60–70°C) = giữ nguyên toàn bộ polyphenols anti-inflammatory. 1–2 muỗng cà phê đủ.',
+      'Xây dựng seasoning station nhỏ: chuẩn bị bên cạnh lò vi sóng — lọ tỏi phi sẵn (bảo quản 3–4 ngày trong tủ lạnh), lọ tiêu xay, chanh tươi, ớt, EVOO. 30 giây nêm sau khi hâm = bữa ăn ngon hơn hẳn. Đây là khác biệt giữa meal prep "meh" và meal prep "wow" mà đầu bếp tại nhà ít chú ý.',
+    ],
+    points: [
+      { icon: '💨', label: 'Volatile Aromatics Bay Hơi', note: 'Tỏi hộp kín 3 ngày mất 60–70% allicin — nêm sau để giữ nguyên hương' },
+      { icon: '🍋', label: 'Acid = Flavor Brightener', note: 'Chanh/giấm sau hâm = tươi toàn bữa + tăng iron absorption rau xanh 3x' },
+      { icon: '🫒', label: 'EVOO Drizzle Sau Hâm', note: 'Polyphenols bị phá >180°C — drizzle 60–70°C giữ toàn bộ anti-inflammatory' },
+      { icon: '🧄', label: 'Seasoning Station Bên Lò Vi Sóng', note: 'Tỏi phi + tiêu + chanh + ớt + EVOO: 30 giây nêm = bữa ăn "wow"' },
+    ],
+  },
+  {
+    icon: '⏰', color: '#14b8a6', rgb: '20,184,166',
+    tip: 'Meal prep tốt nhất vào tối Chủ nhật — fresh cho thứ 2–4.',
+    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Tối Chủ nhật là "golden window" của meal prep: siêu thị vừa restocked cuối tuần, bạn còn năng lượng sau ngày nghỉ, và thứ 2–4 là đỉnh workload tuần — khi bạn ít thời gian nấu nhất. Meal prep đúng thời điểm quyết định 70% khả năng duy trì thói quen lâu dài.',
+    details: [
+      'Tại sao Chủ nhật tối không phải buổi sáng: sáng Chủ nhật thường bận (family time, brunch, nghỉ ngơi). Buổi tối 7–9h: năng lượng còn đủ, nhà yên tĩnh, không bị gián đoạn. Thức ăn sẵn sàng trước khi thứ 2 bắt đầu — không phải vội vàng sáng thứ 2 khi đã bận rộn với công việc.',
+      'Fresh window của meal prep: gà/cá nấu chín tươi ngon nhất 3 ngày đầu (thứ 2–4). Sau ngày thứ 4, chất lượng bắt đầu giảm — không nguy hiểm nhưng kém ngon, texture thay đổi. Nếu muốn ăn thứ 5–7: mini-prep 20 phút vào tối thứ 3 hoặc thứ 4 (chỉ cần nấu thêm đạm, cơm còn đủ).',
+      'Two-session strategy tốt nhất: Chủ nhật tối — prep cho thứ 2–4 (45 phút full). Thứ 3 hoặc 4 tối — mini-prep cho thứ 5–7 (20–25 phút, đơn giản hơn vì còn cơm/tinh bột từ lần trước). Chiến lược này tốt hơn prep 1 lần cho cả 7 ngày về chất lượng thức ăn và hương vị.',
+      'Grocery shopping Chủ nhật chiều: siêu thị thường nhập hàng mới thứ 6–thứ 7 cuối tuần. Mua Chủ nhật chiều → nấu tối hôm đó = nguyên liệu tươi nhất có thể. Tránh mua thứ 2 sáng — thường hết hàng tươi sau cuối tuần (gà, cá tươi hết trước).',
+      'Cơm nấu Chủ nhật đủ cả tuần: cơm gạo lứt bảo quản tủ lạnh 3–5 ngày, tủ đông 2–3 tháng. Nấu 1 nồi lớn Chủ nhật → không cần nấu cơm mới mỗi ngày. Cơm để tủ lạnh qua đêm còn có lợi resistant starch (tip số 2). Win-win.',
+      'Từ chore thành ritual: gắn meal prep với ritual cố định giúp duy trì thói quen. Mở playlist yêu thích, pha cốc trà hoặc cà phê, nấu ăn trong 45 phút. Đây không chỉ là cooking — đây là Sunday self-care ritual. Người duy trì meal prep thành công thường mô tả nó là "me time" thay vì việc phải làm.',
+    ],
+    points: [
+      { icon: '📅', label: 'Thứ 2–4 = Đỉnh Workload', note: 'Ít thời gian nấu nhất → prep sẵn từ Chủ nhật = cứu cánh tuần bận' },
+      { icon: '🕐', label: 'Fresh Window: 3 Ngày Đầu', note: 'Gà/cá ngon nhất thứ 2–4; mini-prep tối thứ 3–4 cho nửa sau tuần' },
+      { icon: '🛒', label: 'Mua Chiều + Nấu Tối CN', note: 'Siêu thị restocked cuối tuần — nguyên liệu tươi nhất cả tuần' },
+      { icon: '🎵', label: 'Ritual > Chore', note: 'Playlist + đồ uống + 45 phút = Sunday self-care ritual dễ duy trì' },
+    ],
+  },
 ];
+
+function TipModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = TIPS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.tip} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        <div className="p-6 md:p-8">
+          <p className="font-bold text-lg md:text-xl mb-4 leading-snug" style={{ color: item.color }}>{item.tip}</p>
+          <div className="rounded-xl p-3 mb-5 text-sm text-muted leading-relaxed"
+            style={{ borderLeft: `3px solid ${item.color}`, background: `rgba(${item.rgb},0.07)` }}>
+            <strong style={{ color: item.color }}>Key fact:</strong> {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {TIPS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function ScheduleModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const item = SCHEDULE[idx];
@@ -413,6 +610,7 @@ export default function ToolsMealPrepPage() {
   const [openComp, setOpenComp] = useState(null);
   const [prepModal, setPrepModal] = useState(null);
   const [scheduleModal, setScheduleModal] = useState(null);
+  const [tipModal, setTipModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -534,9 +732,14 @@ export default function ToolsMealPrepPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Tips Không Ngán</h2>
         <div className="grid sm:grid-cols-2 gap-3">
           {TIPS.map((t, i) => (
-            <div key={i} className="rounded-xl border border-border bg-surface p-4">
+            <div key={i}
+              className="group relative rounded-xl border bg-surface p-4 cursor-pointer hover:bg-white/5 transition-colors"
+              style={{ borderColor: tipModal === i ? `rgba(${t.rgb},0.45)` : 'var(--border)' }}
+              onClick={() => setTipModal(i)}>
               <span className="text-2xl block mb-2">{t.icon}</span>
-              <p className="text-lg text-muted">{t.tip}</p>
+              <p className="text-base text-muted leading-snug">{t.tip}</p>
+              <span className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold px-2 py-1 rounded-full"
+                style={{ color: t.color, background: `rgba(${t.rgb},0.12)`, border: `1px solid rgba(${t.rgb},0.3)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -553,6 +756,17 @@ export default function ToolsMealPrepPage() {
           onNext={() => setPrepModal(i => Math.min(PREP_TEMPLATE.length - 1, i + 1))}
           hasPrev={prepModal > 0}
           hasNext={prepModal < PREP_TEMPLATE.length - 1}
+        />
+      )}
+
+      {tipModal !== null && (
+        <TipModal
+          idx={tipModal}
+          onClose={() => setTipModal(null)}
+          onPrev={() => setTipModal(i => Math.max(0, i - 1))}
+          onNext={() => setTipModal(i => Math.min(TIPS.length - 1, i + 1))}
+          hasPrev={tipModal > 0}
+          hasNext={tipModal < TIPS.length - 1}
         />
       )}
 

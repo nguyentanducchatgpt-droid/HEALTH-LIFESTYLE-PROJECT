@@ -340,6 +340,89 @@ const REVIEW_ITEMS = [
 ];
 const REVIEW_QS = REVIEW_ITEMS.map(r => r.q);
 
+const TIPS_ITEMS = [
+  {
+    icon: '🌙', color: '#f97316', rgb: '249,115,22',
+    tip: 'Tick checklist vào buổi tối trước khi ngủ, không cần tick ngay khi làm',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Review vào buổi tối hiệu quả hơn nhờ "end-of-day reflection effect" — não đang tổng kết ngày, không bị phân tâm. Nghiên cứu của Teresa Amabile (Harvard) cho thấy nhật ký buổi tối tăng cảm giác tiến bộ và động lực hơn bất kỳ thời điểm nào khác.',
+    details: [
+      'Tick checklist buổi tối cho phép nhìn lại cả ngày một cách khách quan — không bị áp lực phải ghi chép ngay khi đang bận. Bạn có thể nhớ lại mọi hoạt động đã làm và đánh dấu chính xác hơn.',
+      'Buổi tối là thời điểm não chuyển sang chế độ consolidation — kết nối ký ức và học hỏi. Review lúc này giúp ghi sâu hành vi tốt vào long-term memory, tăng khả năng lặp lại hôm sau.',
+      'Thiết lập ritual: 5 phút trước khi ngủ, mở checklist, tick từng mục và ghi ngắn 1 câu về ngày hôm đó. Tính nhất quán của thời điểm quan trọng hơn thời lượng review.',
+      'Không cần tick đúng ngay khi vừa làm xong — điều này gây phân tâm và biến checklist thành nguồn lo lắng thay vì công cụ hỗ trợ. Tách biệt hành động và ghi chép là điều bình thường.',
+      'Nếu quên review một ngày, đừng cố gắng tái tạo — chỉ bắt đầu lại từ hôm nay. Tính liên tục của thói quen quan trọng hơn dữ liệu hoàn hảo cho mỗi ngày riêng lẻ.',
+      'Combine với wind-down routine: sau đánh răng, sau tắm, hoặc trước khi đặt điện thoại xuống. Habit stacking vào thói quen có sẵn giúp duy trì mà không cần willpower thêm.',
+    ],
+    points: [
+      { icon: '🧠', label: 'End-of-Day Effect', note: 'Não tổng kết ngày — reflection hiệu quả và chính xác nhất' },
+      { icon: '⏰', label: 'Tách Hành Động & Ghi Chép', note: 'Làm xong rồi mới tick — không gián đoạn flow' },
+      { icon: '🌙', label: 'Ritual Trước Ngủ', note: '5 phút → ghi sâu vào long-term memory qua giấc ngủ' },
+      { icon: '🔗', label: 'Habit Stack', note: 'Gắn vào thói quen đêm có sẵn — không cần nhớ thêm' },
+    ],
+  },
+  {
+    icon: '🎯', color: '#f59e0b', rgb: '245,158,11',
+    tip: 'Mục tiêu là ≥ 5/6 mỗi ngày. 6/6 mỗi ngày là không thực tế lâu dài',
+    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b6f2f?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'BJ Fogg (Stanford) và James Clear đều xác nhận: tiêu chuẩn "hoàn hảo" là kẻ thù của tính nhất quán. 5/6 trong 300 ngày tốt hơn nhiều so với 6/6 trong 30 ngày rồi bỏ cuộc. "Never miss twice" — không bỏ lỡ 2 ngày liên tiếp là quy tắc đơn giản nhất để duy trì.',
+    details: [
+      '≥5/6 là ngưỡng thực tế vì cuộc sống luôn có biến số: hôm nay bận hơn, ốm nhẹ, du lịch, căng thẳng công việc. Ngưỡng linh hoạt này giúp bạn duy trì mà không cảm thấy thất bại khi có 1 mục bị bỏ.',
+      'Nghiên cứu habit formation của Phillippa Lally (UCL) cho thấy bỏ 1 ngày không ảnh hưởng đến việc hình thành thói quen nếu bạn tiếp tục ngay hôm sau. Mất thói quen xảy ra khi bỏ nhiều ngày liên tiếp.',
+      '6/6 mỗi ngày tạo ra áp lực hoàn hảo (perfectionism trap) — khi bỏ 1 mục bất kỳ, nhiều người cảm thấy "đã hỏng rồi" và bỏ cả checklist. "All-or-nothing thinking" là nguyên nhân #1 thất bại thói quen.',
+      'Quy tắc "2-day rule" của Matt D\'Avella: không bao giờ để 2 ngày liên tiếp không làm. 1 ngày bỏ là nghỉ ngơi bình thường; 2 ngày bỏ là bắt đầu mất đà. Áp dụng vào từng mục trong checklist.',
+      'Tính điểm theo tuần hiệu quả hơn theo ngày: ≥35/42 (5 mục × 7 ngày) trong tuần là thành công. Nhìn dài hơn giảm thiểu ảnh hưởng của 1-2 ngày xấu và cho thấy xu hướng thực sự.',
+      'Ăn mừng progress: sau 7 ngày đạt ≥5/6, tự thưởng nhỏ (phim, món ăn yêu thích, thời gian tự do). Positive reinforcement củng cố neural pathway của thói quen mạnh hơn willpower.',
+    ],
+    points: [
+      { icon: '🎯', label: '≥5/6 Là Thành Công', note: 'Tiêu chuẩn linh hoạt — bền vững hơn 100% perfectionism' },
+      { icon: '📅', label: 'Never Miss Twice', note: 'Bỏ 1 ngày OK — bỏ 2 ngày liên tiếp là nguy hiểm' },
+      { icon: '📊', label: 'Tính Theo Tuần', note: '≥35/42 mục/tuần — xu hướng quan trọng hơn ngày đơn lẻ' },
+      { icon: '🏆', label: 'Ăn Mừng Progress', note: 'Tự thưởng sau 7 ngày — reinforcement mạnh hơn willpower' },
+    ],
+  },
+  {
+    icon: '🔍', color: '#3b82f6', rgb: '59,130,246',
+    tip: 'Nếu liên tục bỏ 1 mục — đó là tín hiệu cần điều chỉnh, không phải thất bại',
+    img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Khi bạn liên tục bỏ cùng 1 mục trong ≥5 ngày, đó không phải laziness — đó là friction signal. James Clear gọi đây là "implementation intention gap": môi trường hoặc thiết kế chưa hỗ trợ hành vi đó. Giải pháp là redesign, không phải try harder.',
+    details: [
+      'Pattern recognition: nếu cùng 1 mục liên tục bị bỏ trong 5–7 ngày, dừng lại và tự hỏi 3 câu: (1) Tôi biết tại sao cần làm không? (2) Tôi biết làm như thế nào không? (3) Môi trường của tôi có hỗ trợ không?',
+      'Thường xuyên bỏ mục "Vận động" nghĩa là: thời điểm chưa đúng, không có không gian, hoặc mục tiêu quá lớn. Giải pháp: đổi sang đi bộ 10 phút lúc trưa, hoặc 3 phút stretching ngay sau thức dậy.',
+      'Rào cản phổ biến nhất không phải thiếu motivation — mà là friction (ma sát): phòng gym quá xa, không có đồ tập sẵn, thời điểm bị gián đoạn. Giảm friction 1 bước thường giải quyết được vấn đề.',
+      'Redesign môi trường: đặt đồ tập ngay cạnh giường, chuẩn bị chai nước trước, đặt rau vào tầm nhìn trong tủ lạnh. Những thay đổi vật lý nhỏ trong môi trường hiệu quả gấp 3 lần quyết tâm.',
+      'Nếu đã thử nhiều cách mà vẫn bỏ liên tục, câu hỏi cuối: mục này có thực sự phù hợp với lifestyle hiện tại của tôi không? Đôi khi cần thay mục bằng hành vi tương đương nhưng dễ thực hiện hơn.',
+      'Ghi nhật ký friction 1 tuần: mỗi khi bỏ 1 mục, ghi ngắn "lý do + lúc mấy giờ". Sau 7 ngày, pattern rõ ràng — và giải pháp thường rất cụ thể và dễ thực hiện hơn bạn nghĩ.',
+    ],
+    points: [
+      { icon: '🔍', label: 'Friction Signal', note: 'Liên tục bỏ = môi trường chưa hỗ trợ, không phải laziness' },
+      { icon: '🔧', label: 'Redesign Môi Trường', note: 'Thay đổi vật lý nhỏ hiệu quả hơn tăng willpower' },
+      { icon: '📝', label: 'Nhật Ký Friction', note: 'Ghi lý do bỏ 7 ngày — pattern và giải pháp sẽ rõ' },
+      { icon: '🔄', label: 'Thay Mục Nếu Cần', note: 'Hành vi tương đương dễ hơn vẫn tốt hơn bỏ hẳn' },
+    ],
+  },
+  {
+    icon: '📚', color: '#a855f7', rgb: '168,85,247',
+    tip: 'Review tuần là thời điểm để học hỏi, không phải để chỉ trích bản thân',
+    img: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Self-compassion (Kristin Neff, ĐH Texas) cho thấy người tự nhân hậu với bản thân sau thất bại có khả năng cải thiện cao hơn 40% so với người tự chỉ trích. Review không phải tòa án — là phòng thí nghiệm để học hỏi và điều chỉnh.',
+    details: [
+      'Review tuần là retrospective — không phải performance review. Câu hỏi đúng là "Tuần này tôi học được gì?" không phải "Tôi đã làm tốt chưa?". Thay đổi góc nhìn này thay đổi hoàn toàn cảm xúc và kết quả.',
+      'Bắt đầu review bằng điều tích cực: "Tuần này tôi đã làm được gì, dù nhỏ?". Não người bị bias về tiêu cực (negativity bias) — cần chủ động tìm điểm tích cực để có bức tranh cân bằng và chính xác.',
+      'Self-compassion không phải self-pity hay excuse-making. Đó là đối xử với bản thân như với một người bạn đang gặp khó khăn: hiểu, hỗ trợ, và đề xuất cải thiện — không phán xét hay trách móc.',
+      'Sau khi note điểm tốt, mới xem điểm chưa được — và luôn frame theo hướng "lần sau tôi có thể làm gì khác?" thay vì "tại sao tôi lại làm vậy?". Tương lai-focused review tạo năng lượng hành động.',
+      'Growth mindset (Carol Dweck) nhìn mọi kết quả là data, không phải verdict. Tuần kém = data cho thấy cần điều chỉnh. Tuần tốt = data xác nhận điều đang hoạt động. Cả hai đều có giá trị như nhau.',
+      'Kết thúc review bằng 1 cam kết nhỏ cho tuần sau: không phải list dài — chỉ 1 điều cụ thể, thực tế và đo được. "Tuần sau tôi sẽ đi bộ sau bữa tối mỗi ngày" tốt hơn "Tuần sau tôi sẽ cố gắng hơn".',
+    ],
+    points: [
+      { icon: '💜', label: 'Self-Compassion', note: 'Tự nhân hậu → cải thiện tốt hơn 40% so với tự chỉ trích' },
+      { icon: '🔬', label: 'Review = Lab', note: 'Mọi kết quả là data để học — không phải verdict để phán xét' },
+      { icon: '🌱', label: 'Growth Mindset', note: 'Tuần kém = tín hiệu điều chỉnh, không phải thất bại cá nhân' },
+      { icon: '🎯', label: '1 Cam Kết Nhỏ', note: 'Kết thúc review bằng 1 hành động cụ thể cho tuần sau' },
+    ],
+  },
+];
+
 const LS_DAILY = 'healthapp_f_daily';
 const LS_WEEKLY = 'healthapp_f_weekly';
 const LS_REVIEW = 'healthapp_f_review';
@@ -634,6 +717,78 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
+function TipsModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = TIPS_ITEMS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.tip} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: `rgba(${item.rgb},0.6)` }}>Tip {idx + 1}/{TIPS_ITEMS.length}</p>
+          <h2 className="font-bold text-xl md:text-2xl mb-5 leading-snug" style={{ color: item.color }}>{item.tip}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {TIPS_ITEMS.length}</span>
+            <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 export default function ToolsChecklistPage() {
   const today = new Date().toISOString().slice(0, 10);
   const [daily, setDaily] = useState(() => {
@@ -649,6 +804,7 @@ export default function ToolsChecklistPage() {
   const [dailyModal, setDailyModal] = useState(null);
   const [weeklyModal, setWeeklyModal] = useState(null);
   const [reviewModal, setReviewModal] = useState(null);
+  const [tipsModal, setTipsModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -836,14 +992,20 @@ export default function ToolsChecklistPage() {
 
       {/* Tips */}
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold text-text mb-3" style={{ color: COLOR }}>💡 Tips Sử Dụng Checklist</h3>
-          <ul className="space-y-2 text-lg text-muted">
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Tick checklist vào buổi tối trước khi ngủ, không cần tick ngay khi làm</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Mục tiêu là ≥ 5/6 mỗi ngày. 6/6 mỗi ngày là không thực tế lâu dài</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Nếu liên tục bỏ 1 mục — đó là tín hiệu cần điều chỉnh, không phải thất bại</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Review tuần là thời điểm để học hỏi, không phải để chỉ trích bản thân</li>
-          </ul>
+        <h3 className="font-bold text-lg mb-4" style={{ color: COLOR }}>💡 Tips Sử Dụng Checklist</h3>
+        <div className="space-y-3">
+          {TIPS_ITEMS.map((item, i) => (
+            <div key={i} className="rounded-2xl border bg-surface p-4 flex items-center gap-3 cursor-pointer group transition-all"
+              style={{ borderColor: tipsModal === i ? `rgba(${item.rgb},0.45)` : 'var(--border)' }}
+              onClick={() => setTipsModal(i)}>
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center text-lg shrink-0"
+                style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>{item.icon}</div>
+              <p className="flex-1 text-base text-muted leading-snug">{item.tip}</p>
+              <button className="text-[11px] font-bold px-2.5 py-1 rounded-lg shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}
+                onClick={e => { e.stopPropagation(); setTipsModal(i); }}>Chi tiết →</button>
+            </div>
+          ))}
         </div>
       </RevealBlock>
 
@@ -880,6 +1042,16 @@ export default function ToolsChecklistPage() {
           onNext={() => setReviewModal(i => Math.min(REVIEW_ITEMS.length - 1, i + 1))}
           hasPrev={reviewModal > 0}
           hasNext={reviewModal < REVIEW_ITEMS.length - 1}
+        />
+      )}
+      {tipsModal !== null && (
+        <TipsModal
+          idx={tipsModal}
+          onClose={() => setTipsModal(null)}
+          onPrev={() => setTipsModal(i => Math.max(0, i - 1))}
+          onNext={() => setTipsModal(i => Math.min(TIPS_ITEMS.length - 1, i + 1))}
+          hasPrev={tipsModal > 0}
+          hasNext={tipsModal < TIPS_ITEMS.length - 1}
         />
       )}
     </div>

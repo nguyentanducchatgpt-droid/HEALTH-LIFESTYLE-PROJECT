@@ -260,16 +260,163 @@ const WEEKLY_TARGETS = [
   },
 ];
 
-const REVIEW_QS = [
-  'Điều gì hoạt động tốt tuần này?',
-  'Điều gì khó nhất và vì sao?',
-  'Tuần sau cần thay đổi gì?',
-  'Mức năng lượng tổng thể tuần này (1–10)?',
+const REVIEW_ITEMS = [
+  {
+    q: 'Điều gì hoạt động tốt tuần này?', icon: '✅', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Xác định điều đang hoạt động là bước quan trọng nhất trong review — không phải để tự khen, mà để nhận ra pattern thành công cần được nhân rộng. Não bộ học từ thành công hiệu quả hơn từ thất bại khi được phân tích đúng cách.',
+    details: [
+      'Tại sao câu hỏi này quan trọng: confirmation bias thường làm chúng ta nhớ những gì đi sai và quên những gì đi đúng. Ghi lại những gì hoạt động chủ động counteract bias này — tạo "evidence bank" của sự thành công.',
+      'Cách trả lời hiệu quả: không chỉ liệt kê sự kiện ("Tôi tập 3 buổi") mà phân tích tại sao nó hoạt động ("Tôi tập được 3 buổi vì đã chuẩn bị quần áo tập từ tối hôm trước"). Yếu tố tạo ra thành công quan trọng hơn bản thân thành công.',
+      'Tìm pattern nhỏ: đôi khi "điều hoạt động tốt" không phải là cả buổi tập mà chỉ là một quyết định nhỏ (uống nước ngay khi thức dậy, đặt báo thức sớm hơn 10 phút). Những pattern nhỏ này dễ nhân rộng hơn.',
+      'Liên kết với cảm xúc: "Hôm nào tôi tập được thì tôi cảm thấy thế nào? Điều gì đã xảy ra trước đó?" Cảm xúc là chỉ báo mạnh mẽ — ngày tâm trạng tốt thường có pattern gì chung?',
+      'Ít nhất 1 điều cụ thể: ngay cả tuần "tệ nhất" cũng có ít nhất 1 điều đã làm đúng. Tìm và ghi lại — không phải để tự lừa mình mà để tạo đà (momentum) cho tuần sau.',
+      'Nhân rộng thành công: sau khi xác định "điều hoạt động tốt", hỏi tiếp "Làm sao để tôi làm điều này thêm 1 lần nữa tuần sau?" Đây là câu hỏi tạo ra hành động cụ thể, không chỉ insight.',
+    ],
+    points: [
+      { icon: '🔍', label: 'Phân Tích Tại Sao', note: 'Yếu tố tạo thành công quan trọng hơn bản thân thành công' },
+      { icon: '🧩', label: 'Tìm Pattern Nhỏ', note: '1 quyết định nhỏ có thể là chìa khóa — đừng bỏ qua' },
+      { icon: '📝', label: 'Ít Nhất 1 Điều', note: 'Mọi tuần đều có điều đi đúng — tìm và ghi lại' },
+      { icon: '➡️', label: 'Nhân Rộng Cụ Thể', note: '"Làm sao để làm thêm lần nữa?" — không chỉ insight' },
+    ],
+  },
+  {
+    q: 'Điều gì khó nhất và vì sao?', icon: '🔍', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b6173?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Câu hỏi "vì sao" biến một sự kiện thành insight. Không hỏi vì sao thì khó khăn chỉ là một thất bại lặp đi lặp lại. Hỏi vì sao giúp phân loại: đây là vấn đề về hệ thống (cần thay đổi cách làm), kỹ năng (cần luyện tập), hay hoàn cảnh (cần chấp nhận)?',
+    details: [
+      'Phân loại khó khăn trước khi giải quyết: (1) Vấn đề hệ thống — không có thời gian vì lịch chưa được sắp xếp đúng. (2) Vấn đề kỹ năng — chưa biết cách nấu ăn lành mạnh nhanh. (3) Vấn đề hoàn cảnh — công việc đột xuất. Mỗi loại cần giải pháp khác nhau.',
+      '"5 Whys" technique: hỏi "Tại sao?" 5 lần liên tiếp để tìm nguyên nhân gốc rễ. "Tôi không tập được" → Tại sao? "Không có thời gian" → Tại sao? "Về nhà muộn" → Tại sao? "Cuộc họp kéo dài" → Tại sao? "Không đặt giới hạn thời gian họp" → Đây là vấn đề thực sự cần giải quyết.',
+      'Phân biệt khó khăn thực sự và lý do biện hộ: "Tôi mệt quá không tập được" có thể là sự thật — hoặc có thể là lý do biện hộ cho inertia (quán tính). Hỏi: "Nếu ai đó trả tôi 1 triệu để tập 10 phút, tôi có làm được không?" Câu trả lời tiết lộ nhiều.',
+      'Không cố giải quyết tất cả: chỉ chọn 1 khó khăn cần giải quyết tuần sau. Giải quyết nhiều thứ cùng lúc = không giải quyết được gì. "Điều khó nhất" trong review nên dẫn đến "thay đổi duy nhất" trong câu hỏi tiếp theo.',
+      'Hoàn cảnh vs quyết định: phân biệt những gì trong tầm kiểm soát và những gì không. "Con ốm cả tuần" là hoàn cảnh — không thể kiểm soát. "Tôi không chuẩn bị thức ăn sẵn" là quyết định — có thể thay đổi. Chỉ tập trung giải quyết những gì trong tầm kiểm soát.',
+      'Tránh self-blame: mục tiêu của câu hỏi này là học hỏi, không phải tự chỉ trích. Giọng văn: "Hệ thống chưa tốt ở đâu?" thay vì "Tôi đã lười biếng như thế nào?" Framing ảnh hưởng rất lớn đến khả năng thay đổi thực sự.',
+    ],
+    points: [
+      { icon: '🌳', label: '5 Whys Technique', note: 'Hỏi "tại sao" 5 lần để tìm nguyên nhân gốc rễ thực sự' },
+      { icon: '🗂️', label: 'Phân Loại Trước', note: 'Hệ thống / Kỹ năng / Hoàn cảnh — mỗi loại cần giải pháp khác' },
+      { icon: '1️⃣', label: 'Chỉ Chọn 1 Vấn Đề', note: 'Giải quyết nhiều thứ cùng lúc = không giải quyết được gì' },
+      { icon: '🔬', label: 'Hệ Thống, Không Phải Bản Thân', note: '"Hệ thống chưa tốt ở đâu?" — không phải "Tôi lười như thế nào?"' },
+    ],
+  },
+  {
+    q: 'Tuần sau cần thay đổi gì?', icon: '🔄', color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Câu hỏi này biến insight thành cam kết hành động. Không có câu hỏi này, review chỉ là nhìn lại quá khứ. Thay đổi hiệu quả nhất là thay đổi nhỏ, cụ thể, và có thể đo đếm được — không phải "cố gắng hơn" hay "quyết tâm hơn".',
+    details: [
+      '"Thay đổi" phải là hệ thống, không phải ý chí: "Tôi sẽ cố gắng dậy sớm hơn" không phải thay đổi hệ thống. "Tôi sẽ đặt báo thức trước 15 phút và để điện thoại ở phòng khác tối nay" mới là thay đổi hệ thống. Ý chí cạn kiệt — hệ thống không.',
+      'Nguyên tắc 1% cải thiện: thay đổi nhỏ 1% mỗi tuần = cải thiện 52% sau 1 năm. Không cần "đại tu" toàn bộ lối sống mỗi tuần. 1 thay đổi nhỏ, cụ thể, được duy trì — hiệu quả hơn 10 thay đổi lớn bị bỏ sau 3 ngày.',
+      'Cấu trúc "If-Then" (implementation intention): "Nếu [tình huống X xảy ra], tôi sẽ [hành động Y]." Ví dụ: "Nếu tôi về nhà sau 7h, tôi sẽ làm bài 5 phút thay vì 20 phút." Nghiên cứu cho thấy if-then planning tăng tỷ lệ thực hiện lên 2–3 lần.',
+      'Thay đổi môi trường trước thay đổi hành vi: môi trường ảnh hưởng đến hành vi nhiều hơn ý chí. Để thảm tập trước giường tối nay → dễ tập sáng mai hơn. Để rau cắt sẵn trong tủ lạnh → dễ ăn đủ rau hơn. Thiết kế môi trường để hành vi mục tiêu trở thành default.',
+      'Chỉ cam kết 1 thay đổi: viết rõ 1 thay đổi cụ thể cho tuần sau — không phải danh sách 5 điều. "Tôi sẽ [hành động cụ thể] vào [thời điểm cụ thể] ở [địa điểm cụ thể]." Cụ thể hóa tối đa = khả năng thực hiện cao nhất.',
+      'Review thay đổi tuần trước: trước khi quyết định thay đổi tuần sau, nhìn lại: "Tuần trước tôi đã cam kết thay đổi gì? Có thực hiện được không?" Nếu không — tại sao? Cùng vấn đề có thể cần giải pháp khác, không phải cam kết mạnh hơn.',
+    ],
+    points: [
+      { icon: '⚙️', label: 'Hệ Thống, Không Phải Ý Chí', note: 'Thiết kế môi trường để hành vi tốt trở thành default' },
+      { icon: '1️⃣', label: 'Chỉ 1 Thay Đổi', note: 'Cụ thể: ai / làm gì / khi nào / ở đâu — không phải "cố hơn"' },
+      { icon: '🎯', label: 'If-Then Planning', note: '"Nếu X xảy ra, tôi sẽ Y" — tăng tỷ lệ thực hiện 2–3 lần' },
+      { icon: '📈', label: '1% Mỗi Tuần', note: 'Nhỏ + nhất quán = 52% cải thiện sau 1 năm' },
+    ],
+  },
+  {
+    q: 'Mức năng lượng tổng thể tuần này (1–10)?', icon: '⚡', color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mức năng lượng là chỉ số tổng hợp phản ánh chất lượng của tất cả 6 trụ cột sức khỏe cùng lúc: ngủ, dinh dưỡng, vận động, stress, tâm trí, và môi trường xã hội. Theo dõi theo tuần giúp nhận ra xu hướng và các yếu tố ẩn ảnh hưởng đến năng lượng.',
+    details: [
+      'Thang 1–10 cần được cá nhân hóa: 5 của bạn có thể khác 5 của người khác. Quan trọng là nhất quán trong cách bạn đánh giá qua thời gian. Ví dụ: 8–10 = cảm thấy mạnh mẽ, tập trung, tâm trạng tốt. 5–7 = bình thường, đủ sức làm việc. 1–4 = mệt mỏi, khó tập trung, cáu gắt.',
+      'Năng lượng là chỉ báo sức khỏe tổng thể: nếu điểm năng lượng liên tục ≤5 trong 3 tuần dù đang làm tốt các mục tiêu — có thể có vấn đề ẩn: thiếu máu, thyroid, vitamin D thấp, hoặc overtraining. Đây là tín hiệu cần kiểm tra sức khỏe.',
+      'Tìm correlation: so sánh điểm năng lượng với dữ liệu tracker tuần đó. "Tuần 8/10 năng lượng: tôi ngủ ≥7 tiếng 5 ngày, tập 3 buổi, ăn đủ rau 6 ngày." Theo thời gian, pattern rõ ràng hơn — biết được yếu tố nào ảnh hưởng nhiều nhất đến năng lượng cá nhân.',
+      'Energy management vs time management: nhiều người quản lý thời gian giỏi nhưng năng lượng kém — làm việc đủ giờ nhưng hiệu quả thấp. Điểm năng lượng tuần giúp nhận ra: khi nào cần nghỉ ngơi nhiều hơn thay vì cố thêm giờ làm việc.',
+      'Chu kỳ năng lượng tự nhiên: một số người có năng lượng cao đầu tuần và thấp cuối tuần. Một số người ngược lại. Theo dõi 4–6 tuần giúp nhận ra chu kỳ cá nhân — lên lịch công việc quan trọng vào ngày năng lượng cao nhất.',
+      'Điểm 10 không phải mục tiêu: điểm năng lượng 7–8 nhất quán thực tế hơn và bền vững hơn điểm 10 hiếm gặp. Mục tiêu là tăng điểm trung bình từ 5 lên 6–7 trong 4–8 tuần — không phải đạt 10 mọi ngày.',
+    ],
+    points: [
+      { icon: '📊', label: 'Cá Nhân Hóa Thang Đo', note: 'Nhất quán theo thời gian quan trọng hơn so sánh với người khác' },
+      { icon: '🔗', label: 'So Sánh Với Tracker', note: 'Tìm yếu tố nào ảnh hưởng năng lượng nhiều nhất — pattern cá nhân' },
+      { icon: '⚠️', label: '≤5 Ba Tuần Liên Tục', note: 'Tín hiệu cần kiểm tra sức khỏe — thiếu máu, thyroid, vitamin D' },
+      { icon: '🎯', label: 'Mục Tiêu 7–8 Nhất Quán', note: 'Trung bình cao bền vững tốt hơn đỉnh cao hiếm gặp' },
+    ],
+  },
 ];
+const REVIEW_QS = REVIEW_ITEMS.map(r => r.q);
 
 const LS_DAILY = 'healthapp_f_daily';
 const LS_WEEKLY = 'healthapp_f_weekly';
 const LS_REVIEW = 'healthapp_f_review';
+
+function ReviewModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = REVIEW_ITEMS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.q} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: `rgba(${item.rgb},0.6)` }}>Câu hỏi review {idx + 1}/{REVIEW_ITEMS.length}</p>
+          <h2 className="font-bold text-xl md:text-2xl mb-5 leading-snug" style={{ color: item.color }}>{item.icon} {item.q}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {REVIEW_ITEMS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function WeeklyModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const item = WEEKLY_TARGETS[idx];
@@ -501,6 +648,7 @@ export default function ToolsChecklistPage() {
   const [reviewOpen, setReviewOpen] = useState(false);
   const [dailyModal, setDailyModal] = useState(null);
   const [weeklyModal, setWeeklyModal] = useState(null);
+  const [reviewModal, setReviewModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -651,16 +799,34 @@ export default function ToolsChecklistPage() {
         </button>
         {reviewOpen && (
           <div className="mt-3 rounded-2xl border border-border bg-surface p-5 space-y-4">
-            {REVIEW_QS.map((q, i) => (
-              <div key={i}>
-                <label className="text-lg font-medium text-text block mb-2">{i + 1}. {q}</label>
+            {REVIEW_ITEMS.map((item, i) => (
+              <div key={i} className="rounded-2xl border bg-surface/50 p-4 group"
+                style={{ borderColor: reviewModal === i ? `rgba(${item.rgb},0.45)` : 'var(--border)' }}>
+                <div className="flex items-center gap-3 mb-2">
+                  <button
+                    onClick={() => setReviewModal(i)}
+                    className="w-9 h-9 rounded-xl flex items-center justify-center text-lg shrink-0 cursor-pointer transition-all"
+                    style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
+                    {item.icon}
+                  </button>
+                  <label className="flex-1 text-base font-medium text-text cursor-pointer" onClick={() => setReviewModal(i)}>
+                    {i + 1}. {item.q}
+                  </label>
+                  <button
+                    onClick={() => setReviewModal(i)}
+                    className="text-[11px] font-bold px-2.5 py-1 rounded-lg shrink-0 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
+                    Chi tiết →
+                  </button>
+                </div>
                 <textarea
                   value={review[i] ?? ''}
                   onChange={e => setReviewVal(i, e.target.value)}
+                  onClick={e => e.stopPropagation()}
                   rows={2}
                   placeholder="Nhập câu trả lời..."
                   className="w-full px-3 py-2 rounded-xl border bg-transparent text-lg text-text placeholder-muted resize-none focus:outline-none"
-                  style={{ borderColor: `rgba(${RGB},0.3)` }}
+                  style={{ borderColor: `rgba(${item.rgb},0.3)` }}
                 />
               </div>
             ))}
@@ -704,6 +870,16 @@ export default function ToolsChecklistPage() {
           onNext={() => setWeeklyModal(i => Math.min(WEEKLY_TARGETS.length - 1, i + 1))}
           hasPrev={weeklyModal > 0}
           hasNext={weeklyModal < WEEKLY_TARGETS.length - 1}
+        />
+      )}
+      {reviewModal !== null && (
+        <ReviewModal
+          idx={reviewModal}
+          onClose={() => setReviewModal(null)}
+          onPrev={() => setReviewModal(i => Math.max(0, i - 1))}
+          onNext={() => setReviewModal(i => Math.min(REVIEW_ITEMS.length - 1, i + 1))}
+          hasPrev={reviewModal > 0}
+          hasNext={reviewModal < REVIEW_ITEMS.length - 1}
         />
       )}
     </div>

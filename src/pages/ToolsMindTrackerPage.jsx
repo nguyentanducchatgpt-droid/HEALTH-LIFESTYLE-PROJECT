@@ -134,10 +134,308 @@ const CALM_OPTIONS = [
 ];
 
 const JOURNAL_QS = [
-  'Điều gì làm bạn căng thẳng nhất hôm nay?',
-  'Điều gì bạn biết ơn hôm nay?',
-  'Ngày mai bạn muốn cảm thấy thế nào?',
+  {
+    q: 'Điều gì làm bạn căng thẳng nhất hôm nay?', color: '#ef4444', rgb: '239,68,68', icon: '🌡️',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Đặt tên cụ thể cho stressor (nguồn gây stress) là bước đầu tiên để xử lý nó. Nghiên cứu affect labeling (Matthew Lieberman, UCLA) cho thấy viết ra điều khiến bạn lo lắng giảm hoạt động amygdala ngay lập tức — não chuyển từ "cảm xúc thô" sang "ngôn ngữ và lý luận".',
+    details: [
+      'Tại sao câu hỏi này quan trọng: nhiều người sống với stress mơ hồ — cảm giác nặng nề nhưng không biết vì sao. Buộc bản thân viết ra 1 nguồn gây stress cụ thể nhất ngày hôm nay chuyển nó từ trạng thái "diffuse anxiety" sang vấn đề có thể nhìn rõ và xử lý.',
+      'Cách viết hiệu quả nhất: cụ thể hóa. Không phải "tôi stress vì công việc" mà là "tôi stress vì deadline dự án X vào thứ Sáu và tôi chưa hoàn thành phần Y". Cụ thể → não xác định vấn đề rõ hơn → giải pháp xuất hiện dễ hơn.',
+      'Phân biệt stressor vs. emotion: "Cuộc họp với sếp" là stressor; "Sợ bị đánh giá thấp" là emotion. Viết cả hai nếu có thể. Nhận ra emotion giúp bạn xử lý cảm xúc thay vì chỉ cố gắng giải quyết sự kiện bên ngoài.',
+      'Cognitive reframing trong khi viết: sau khi viết stressor, thử thêm: "Điều tôi có thể kiểm soát trong việc này là..." Câu hỏi này kích hoạt prefrontal cortex — vùng não kiểm soát chủ động — và giảm cảm giác bất lực.',
+      'Dumping vs. ruminating: mục tiêu là viết ra và để đó — không phải tiếp tục suy nghĩ về nó. Sau khi viết, hít thở sâu 3 lần và nói với bản thân: "Tôi đã ghi lại. Bây giờ tôi để nó xuống." Externalizing = giải phóng working memory.',
+      'Pattern recognition sau 1 tuần: đọc lại 7 câu trả lời này cho thấy stressor thực sự của bạn. Thường thấy: cùng 1–2 nguồn gây stress lặp lại → đây là vấn đề cần giải quyết gốc rễ, không chỉ manage ngày qua ngày.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Affect Labeling', note: 'Đặt tên stress → giảm amygdala ngay lập tức (UCLA, Lieberman)' },
+      { icon: '🎯', label: 'Cụ Thể Hóa Stressor', note: '"Công việc" → "deadline X thứ Sáu" — não giải quyết tốt hơn' },
+      { icon: '⚖️', label: 'Stressor vs. Emotion', note: 'Ghi cả sự kiện lẫn cảm xúc để xử lý toàn diện hơn' },
+      { icon: '📊', label: 'Pattern 7 Ngày', note: 'Đọc lại 1 tuần — thấy nguồn stress lặp lại cần xử lý gốc' },
+    ],
+  },
+  {
+    q: 'Điều gì bạn biết ơn hôm nay?', color: '#f59e0b', rgb: '245,158,11', icon: '🙏',
+    img: 'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Gratitude journaling thực sự thay đổi não. Nghiên cứu của Robert Emmons (UC Davis) và Martin Seligman: viết 3 điều biết ơn mỗi ngày trong 3 tuần tăng hạnh phúc 25%, giảm triệu chứng trầm cảm, và hiệu quả kéo dài 6 tháng sau khi dừng thực hành.',
+    details: [
+      'Negativity bias và tại sao cần gratitude: não người tiến hóa để chú ý vào nguy hiểm — tỉ lệ 5:1 (5 trải nghiệm tiêu cực cần thiết để cân bằng 1 tích cực trong trí nhớ). Gratitude journaling chủ động counter-balance bias này bằng cách buộc não tìm kiếm positive.',
+      'Specificity tăng hiệu quả: "Tôi biết ơn gia đình" ít hiệu quả hơn "Tôi biết ơn vì hôm nay mẹ gọi hỏi thăm lúc tôi đang mệt nhất". Cụ thể → emotional resonance cao hơn → oxytocin và serotonin tăng nhiều hơn.',
+      'Novelty quan trọng: não quen với điều lặp lại và không còn tiết dopamine. Viết cùng 3 điều mỗi ngày ("sức khỏe, gia đình, công việc") mất hiệu quả sau 2–3 tuần. Cố tìm 1 điều mới, nhỏ và cụ thể mỗi ngày.',
+      '"Why" powerful hơn "what": thay vì "tôi biết ơn vì có việc làm", thêm "vì nó cho tôi cảm giác đóng góp và ổn định tài chính để chăm sóc gia đình". Giải thích lý do kết nối điều biết ơn với giá trị sâu hơn — tác động cảm xúc mạnh hơn nhiều.',
+      'Gratitude letter (advanced): thỉnh thoảng viết một lá thư dài về điều/người bạn biết ơn — không cần gửi. Nghiên cứu cho thấy đây là bài tập có tác động mạnh nhất trong tâm lý học tích cực, kể cả so với liệu pháp khác.',
+      'Timing tốt nhất: tối trước khi ngủ là hiệu quả nhất — não trong trạng thái consolidation (dọn dẹp và lưu trữ ký ức). Kết thúc ngày với gratitude giúp last impression trước ngủ là tích cực → cải thiện giấc ngủ và mood buổi sáng.',
+    ],
+    points: [
+      { icon: '📈', label: 'Hạnh Phúc +25%', note: '3 tuần viết gratitude — Emmons & Seligman (UC Davis)' },
+      { icon: '🔍', label: 'Cụ Thể + Mới Mỗi Ngày', note: 'Specificity + novelty = não tiết serotonin nhiều hơn' },
+      { icon: '❓', label: '"Why" > "What"', note: 'Thêm lý do → kết nối giá trị sâu → tác động cảm xúc mạnh hơn' },
+      { icon: '🌙', label: 'Tối Trước Ngủ', note: 'Last impression tích cực trước ngủ → cải thiện giấc ngủ' },
+    ],
+  },
+  {
+    q: 'Ngày mai bạn muốn cảm thấy thế nào?', color: '#14b8a6', rgb: '20,184,166', icon: '🌅',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Intention setting (đặt ý định) kích hoạt reticular activating system (RAS) — bộ lọc của não chú ý vào những gì bạn đã định hướng. Viết rõ cảm xúc bạn muốn ngày mai giúp não "scan" cho cơ hội tạo ra cảm xúc đó, thay vì phản ứng ngẫu nhiên với sự kiện.',
+    details: [
+      'Tại sao focus vào cảm xúc, không phải task: "Ngày mai tôi muốn hoàn thành 3 việc" là goal setting. "Ngày mai tôi muốn cảm thấy tập trung và bình tĩnh" là emotional intention. Cảm xúc là kim chỉ nam tốt hơn task list — chúng định hình cách bạn xử lý mọi tình huống.',
+      'Reticular Activating System (RAS): phần não lọc ~11 triệu bits thông tin/giây (chỉ cho 40 bits đi vào ý thức). RAS ưu tiên thứ bạn nghĩ đến gần đây. Viết cảm xúc muốn cảm thấy → RAS tìm kiếm bằng chứng của cảm xúc đó suốt ngày hôm sau.',
+      'Mental rehearsal: sau khi viết cảm xúc muốn cảm thấy, dành 30 giây hình dung 1 tình huống cụ thể ngày mai và bạn phản ứng với cảm xúc đó. Hình dung kích hoạt cùng neural pathway với trải nghiệm thực — athlete olympics dùng điều này mỗi ngày.',
+      'Liên kết với hành động: thêm 1 hành động nhỏ hỗ trợ cảm xúc đó. "Tôi muốn cảm thấy tập trung → tôi sẽ không check điện thoại 1 giờ đầu sáng". Cầu nối giữa intention và behavior là quan trọng để không chỉ là ước muốn.',
+      'If-then planning: "Nếu tôi cảm thấy lo lắng ngày mai, tôi sẽ thở sâu 3 lần". Nghiên cứu của Peter Gollwitzer (NYU) cho thấy if-then planning tăng khả năng thực hiện hành động mong muốn lên 2–3 lần so với chỉ intention thông thường.',
+      'Consistency với self-concept: các nghiên cứu self-concept cho thấy bạn hành động theo cách bạn tin là bạn. Viết "ngày mai tôi muốn cảm thấy năng lượng và proactive" củng cố identity là người năng lượng và proactive — theo thời gian tạo thành self-fulfilling prophecy tích cực.',
+    ],
+    points: [
+      { icon: '🔭', label: 'RAS Lọc Thực Tế', note: 'Não tìm bằng chứng của cảm xúc bạn đã define trước ngủ' },
+      { icon: '🏆', label: 'Mental Rehearsal', note: '30 giây hình dung kích hoạt cùng neural path với thực tế' },
+      { icon: '🔗', label: 'If-Then Planning', note: '"Nếu X xảy ra, tôi sẽ Y" — tăng khả năng thực hiện 2–3x' },
+      { icon: '🪞', label: 'Self-Concept Building', note: 'Viết cảm xúc muốn = củng cố identity bạn đang xây dựng' },
+    ],
+  },
 ];
+
+const WARNING_SIGNS = [
+  {
+    label: 'Stress ≥ 7 trong 3 ngày liên tiếp', icon: '🔴', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1568027762272-e4da8b386fe9?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress mạn tính (≥7/10 kéo dài >3 ngày) là trạng thái sinh lý khác biệt so với stress cấp tính. Cortisol liên tục cao phá hủy hippocampus (trí nhớ), ức chế hệ miễn dịch, và là tiền đề trực tiếp của burnout — không phải "buồn thoáng qua" mà là dấu hiệu cần hành động ngay.',
+    details: [
+      'Stress cấp vs. mạn tính: stress cấp (đột ngột, có nguyên nhân rõ) → cortisol tăng → giải quyết → cortisol giảm. Đây là bình thường và có lợi. Stress mạn tính (không có điểm dừng, kéo dài) → cortisol không giảm → bắt đầu gây hại thực sự.',
+      'Tác động của cortisol kéo dài: phá hủy tế bào thần kinh hippocampus (trí nhớ và không gian) → giải thích vì sao khi rất stress bạn hay quên và mất phương hướng. Ức chế sản xuất lymphocytes → dễ bệnh hơn. Tăng visceral fat ngay cả khi ăn uống không thay đổi.',
+      'HPA axis dysregulation: khi stress kéo dài, hệ hypothalamus-pituitary-adrenal "kiệt sức" dần → cortisol pattern bất thường → ngủ không sâu, dậy mệt dù ngủ đủ giờ, energy thấp lúc sáng sớm. Đây là "HPA fatigue" — dấu hiệu burnout đang đến.',
+      'Các bước cần làm ngay: (1) Giảm stressor nếu có thể — xác định 1 thứ có thể bỏ/hoãn/delegate; (2) Tăng recovery: ngủ 30 phút thêm, 1 lần thở box breathing 5 phút; (3) Nói chuyện với người tin tưởng — social support giảm cortisol đo được.',
+      'Khi nào cần chuyên gia: nếu stress ≥7 liên tục >2 tuần kèm theo: không thể ngủ, không thể ăn, không thể tập trung làm việc cơ bản, hoặc cảm giác tuyệt vọng — đây là dấu hiệu cần gặp chuyên gia tâm lý, không tự xử lý một mình.',
+      'Stress ≥7 không phải "yếu đuối": 1/4 người trưởng thành tại các nước phát triển trải qua burnout ít nhất 1 lần. Nhận ra dấu hiệu sớm và hành động sớm là dấu hiệu của trí tuệ cảm xúc cao, không phải sức yếu.',
+    ],
+    points: [
+      { icon: '🧬', label: 'Cortisol Phá Hippocampus', note: 'Giải thích quên, mất tập trung khi stress mạn tính kéo dài' },
+      { icon: '🛡️', label: 'Miễn Dịch Suy Giảm', note: 'Cortisol cao → lymphocytes giảm → dễ bệnh hơn đáng kể' },
+      { icon: '⚡', label: 'Hành Động Ngay', note: 'Giảm 1 stressor + tăng recovery + nói chuyện với ai đó' },
+      { icon: '👨‍⚕️', label: '>2 Tuần → Chuyên Gia', note: 'Kéo dài + mất ngủ/ăn/tập trung → cần tìm hỗ trợ chuyên nghiệp' },
+    ],
+  },
+  {
+    label: 'Mệt mỏi/căng thẳng là mood chủ đạo cả tuần', icon: '🟠', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mood là "emotional weather" — biến động theo ngày là bình thường. Nhưng khi một mood tiêu cực (mệt mỏi, căng thẳng, chán nản) là chủ đạo cả tuần (5/7 ngày), đây không còn là weather mà là "emotional climate" — cần tìm nguyên nhân hệ thống.',
+    details: [
+      'Mood vs. emotion: emotion là phản ứng ngắn với sự kiện cụ thể (buồn khi nghe tin xấu, vui khi ăn ngon). Mood là trạng thái nền kéo dài hơn (cả ngày mệt mỏi dù không có gì cụ thể xảy ra). Mood ảnh hưởng cách bạn filter mọi trải nghiệm.',
+      'Persistent negative mood — nguyên nhân thường gặp: (1) Sleep debt tích lũy — thiếu ngủ 1–1.5h mỗi đêm trong 1 tuần; (2) Thiếu sunlight — ít ra ngoài, làm việc trong phòng kín; (3) Social isolation — ít tiếp xúc con người thực; (4) Nutritional deficiency — thiếu sắt, B12, vitamin D rất phổ biến.',
+      'Emotional contagion: mood lan sang người xung quanh. Người luôn mệt mỏi, căng thẳng có xu hướng thu hút hoặc giữ lại năng lượng tiêu cực trong môi trường — tạo vòng lặp tự củng cố. Nhận ra điều này không phải để tự trách mà để tìm môi trường hỗ trợ.',
+      'Mood tracking insight: ghi mood cả tuần cho thấy pattern. Mệt mỏi nhiều vào thứ Hai–Ba? → cuối tuần không thực sự nghỉ ngơi. Mệt mỏi nhiều buổi chiều? → ultradian dip + caffeine crash. Pattern → can thiệp đúng điểm.',
+      'Ngưỡng can thiệp: 1–2 ngày mood xấu = bình thường, self-care đơn giản. 3–4 ngày liên tiếp = xem lại sleep, nutrition, social contact. 5+ ngày = nói chuyện với người thân/bạn thân, cân nhắc gặp chuyên gia.',
+      'Behavioral activation (CBT technique): khi mood thấp, bản năng là thu mình lại. Điều này tạo ra vòng lặp tệ hơn. Làm ngược lại: chủ động làm 1 hoạt động nhỏ mang lại pleasure hoặc achievement — ngay cả khi không muốn. Hành động → mood thay đổi, không phải ngược lại.',
+    ],
+    points: [
+      { icon: '🌤️', label: 'Weather vs. Climate', note: 'Mood xấu 1–2 ngày = thời tiết. Cả tuần = khí hậu cần xem lại' },
+      { icon: '🔍', label: 'Tìm Nguồn Gốc Hệ Thống', note: 'Sleep debt, thiếu sun, social isolation, thiếu dinh dưỡng' },
+      { icon: '📈', label: 'Behavioral Activation', note: 'Làm 1 việc nhỏ dù không muốn — hành động đổi mood, không ngược' },
+      { icon: '🤝', label: '5+ Ngày → Nói Chuyện', note: 'Tìm người tin tưởng, đừng tự xử lý một mình' },
+    ],
+  },
+  {
+    label: 'Không thực hành calm nào trong 3 ngày', icon: '🟡', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Calm practices (thở, thiền, đi bộ, journaling) là "mental hygiene" — giống như đánh răng cho tâm trí. Bỏ 3 ngày không khác gì không đánh răng 3 ngày. Không thấy hậu quả ngay, nhưng "plaque" tâm lý (stress tích lũy, ruminative thoughts) đang build up.',
+    details: [
+      'Tại sao 3 ngày là ngưỡng: thần kinh học cho thấy không thực hành mindfulness/calm trong 3+ ngày khiến stress response dễ trigger hơn — amygdala "sensitized". Người thực hành thường xuyên có amygdala response chậm hơn và weaker hơn với cùng một stressor.',
+      'Consistency > intensity: 5 phút thở sâu mỗi ngày hiệu quả hơn 30 phút thiền mỗi tuần. Reason: neuroplasticity cần consistent repetition để build stable neural pathway. Gap 3+ ngày = pathway "weaken" và cần rebuild từ đầu.',
+      'Busy = most need calm: nghịch lý phổ biến — bận nhất là lúc bỏ qua calm practice nhất. Nhưng đây cũng là lúc cần nhất. Người thực hành 10 năm đều nói: ngày họ không có 5 phút là ngày họ cần 30 phút.',
+      'Thiết kế để không bỏ: minimum viable dose. Nếu không thể 10 phút, làm 2 phút. 3 lần box breathing = đủ để count là "thực hành ngày hôm nay". Đừng để perfect là kẻ thù của done.',
+      'Environmental triggers: đặt reminder vật lý (gối thiền, sổ tay, đồng hồ tắt báo) ở vị trí dễ thấy. Kết nối calm practice với habit đã có (sau đánh răng, trước coffee) — habit stacking giảm cognitive load để nhớ.',
+      'Tự tha thứ và reset: bỏ 3 ngày không phải lý do để bỏ hẳn. Não có xu hướng "all-or-nothing" khi fail ("đã bỏ 3 ngày rồi thì thôi luôn"). Nhận ra pattern này, tự tha thứ, và làm 2 phút ngay hôm nay — reset streak từ đây.',
+    ],
+    points: [
+      { icon: '🦷', label: 'Mental Hygiene 3 Ngày', note: 'Như không đánh răng 3 ngày — không thấy ngay nhưng tích lũy' },
+      { icon: '⚡', label: '5 Phút/Ngày > 30 Phút/Tuần', note: 'Consistency builds neural pathway — gap 3 ngày weakens nó' },
+      { icon: '🎯', label: 'Minimum Viable Dose', note: '3 lần box breathing = đủ count — đừng để perfect block done' },
+      { icon: '🔗', label: 'Habit Stacking', note: 'Gắn với habit có sẵn (sau đánh răng) — không cần nhớ' },
+    ],
+  },
+  {
+    label: 'Không ngủ được dù mệt', icon: '🟣', color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Không ngủ được dù mệt" là triệu chứng của cortisol cao kéo dài, anxiety, hoặc "hyperarousal" — não đang ở trạng thái threat-detection liên tục. Đây khác với insomnia thông thường và là dấu hiệu nghiêm trọng cần giải quyết gốc rễ, không chỉ cải thiện sleep hygiene.',
+    details: [
+      'Hyperarousal là gì: hệ thần kinh giao cảm (fight-or-flight) không tắt được dù cơ thể mệt. Cortisol và norepinephrine cao → não "quét" liên tục tìm nguy hiểm → không thể let go để ngủ. Giống như cố ngủ trong khi còi báo động đang kêu.',
+      'Paradoxical insomnia: khi quá mệt, nhiều người trở nên "wired and tired" — mệt thể xác nhưng não hyperactive. Nguyên nhân: overfatigue làm cortisol tăng thêm (như một lần cuối trước khi collapse). Vòng lặp này cần phá vỡ.',
+      'Sleep anxiety: nếu nằm xuống → nghĩ đến việc không ngủ được → lo lắng → cortisol tăng → không ngủ được → lo lắng hơn. CBT cho insomnia (CBT-I) là điều trị hiệu quả nhất — hiệu quả hơn thuốc ngủ dài hạn theo nghiên cứu Stanford.',
+      'Phân biệt với sleep apnea: nếu ngủ được nhưng dậy mệt, ngáy, đau đầu buổi sáng → sleep apnea. Nếu không thể ngủ dù mệt → hyperarousal/anxiety. Khác nhau về nguyên nhân và cách xử lý.',
+      'Ngay tối nay: (1) Không nằm trên giường quá 20 phút nếu không ngủ được — dậy đọc sách (ánh sáng mờ) rồi quay lại; (2) Box breathing 4-7-8 liên tục 4–5 lần; (3) Viết ra mọi thứ đang nghĩ (brain dump) vào sổ — externalizing giảm mental noise.',
+      'Khi nào cần gặp bác sĩ: mất ngủ >3 tuần liên tiếp kèm theo giảm khả năng làm việc, mood thấp liên tục, lo lắng không kiểm soát được. Đây không phải laziness — là rối loạn cần điều trị. CBT-I thường cần 6–8 buổi với chuyên gia.',
+    ],
+    points: [
+      { icon: '🚨', label: 'Hyperarousal — Không Phải Lười', note: 'Hệ thần kinh giao cảm không tắt — không thể "cố" ngủ được' },
+      { icon: '🔄', label: 'Sleep Anxiety Vòng Lặp', note: 'Lo không ngủ → cortisol tăng → không ngủ → vòng lặp' },
+      { icon: '📖', label: 'CBT-I Hiệu Quả Hơn Thuốc', note: '6–8 buổi CBT-I — Stanford: tốt hơn thuốc ngủ dài hạn' },
+      { icon: '📝', label: 'Brain Dump Trước Ngủ', note: 'Viết ra mọi thứ đang nghĩ → externalizing → giảm mental noise' },
+    ],
+  },
+  {
+    label: 'Không muốn nói chuyện với ai', icon: '⚫', color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1509909756405-be0199881695?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Withdrawal (thu mình, tránh né xã hội) là một trong những dấu hiệu sớm và nghiêm trọng nhất của burnout và trầm cảm. Paradox: khi cần hỗ trợ nhất thì lại muốn cô lập nhất. Social connection là "medicine" quan trọng nhất không thể tự tổng hợp.',
+    details: [
+      'Social withdrawal và não: khi não ở trạng thái stress mạn tính hoặc depression, social processing network hoạt động kém — con người "tốn năng lượng" hơn bình thường. Cảm giác "không muốn gặp ai" là não đang bảo tồn năng lượng, không phải bạn ghét người.',
+      'Oxytocin và healing: tiếp xúc xã hội (kể cả chỉ 10 phút nói chuyện thật sự với người thân) tiết oxytocin → giảm cortisol → cảm giác ấm áp và an toàn. Không thể tự tổng hợp bằng một mình — đây là lý do "talk to someone" không phải lời khuyên nhàm mà là neuroscience.',
+      'Phân biệt introvert recharge vs. withdrawal: introvert cần thời gian một mình để nạp năng lượng — bình thường và lành mạnh. Withdrawal là tránh né ngay cả người thân tin tưởng, ngay cả khi biết sẽ giúp được, ngay cả khi được mời. Difference: muốn một mình (healthy) vs. không muốn bất kỳ ai (warning sign).',
+      'Bước nhỏ nhất có thể: không cần gặp nhóm đông. 1 tin nhắn cho 1 người thân: "Dạo này mình hơi nặng nề, bạn có 5 phút chat không?" Chỉ vậy thôi. Não cần bắt đầu nhỏ để vượt qua activation energy của withdrawal.',
+      'Vulnerability và connection: Brené Brown (nghiên cứu shame/vulnerability) cho thấy khả năng nói "tôi đang không ổn" với người tin tưởng là predictor mạnh nhất của wellbeing và resilience dài hạn. Người hay withdrawal thường có shame/fear of judgment cao — cần nhận ra điều này.',
+      'Professional support không phải điểm yếu: nếu withdrawal kéo dài >1 tuần kèm mất hứng thú với mọi thứ trước đây từng thích, mood trống rỗng/buồn liên tục, hoặc suy nghĩ tiêu cực về bản thân — đây là dấu hiệu cần gặp chuyên gia tâm lý. Tâm lý trị liệu là can thiệp y tế, không phải "xa xỉ".',
+    ],
+    points: [
+      { icon: '🧪', label: 'Oxytocin = Giảm Cortisol', note: '10 phút nói chuyện thật sự với người thân đã tạo thay đổi đo được' },
+      { icon: '⚖️', label: 'Introvert Recharge ≠ Withdrawal', note: 'Muốn một mình (OK) vs. tránh tất cả mọi người (warning)' },
+      { icon: '💬', label: 'Tin Nhắn 1 Người = Bắt Đầu', note: '"Mình nặng nề dạo này, có 5 phút không?" — bước đủ nhỏ nhất' },
+      { icon: '👨‍⚕️', label: '>1 Tuần + Mất Hứng Thú', note: 'Cần tìm chuyên gia tâm lý — đây là can thiệp y tế, không xa xỉ' },
+    ],
+  },
+];
+
+function JournalModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = JOURNAL_QS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.q} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `rgba(${item.rgb},0.6)` }}>Câu hỏi {idx + 1}/{JOURNAL_QS.length}</p>
+          <h2 className="font-bold text-xl md:text-2xl mb-5 leading-snug" style={{ color: item.color }}>{idx + 1}. {item.q}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {JOURNAL_QS.length}</span>
+            <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+function WarnModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = WARNING_SIGNS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `rgba(${item.rgb},0.6)` }}>Dấu hiệu {idx + 1}/{WARNING_SIGNS.length}</p>
+          <h2 className="font-bold text-xl md:text-2xl mb-5 leading-snug" style={{ color: item.color }}>{item.label}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {WARNING_SIGNS.length}</span>
+            <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function CalmModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const item = CALM_OPTIONS[idx];
@@ -235,6 +533,8 @@ export default function ToolsMindTrackerPage() {
     try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch { return {}; }
   });
   const [calmModal, setCalmModal] = useState(null);
+  const [journalModal, setJournalModal] = useState(null);
+  const [warnModal, setWarnModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -371,9 +671,16 @@ export default function ToolsMindTrackerPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nhật Ký 3 Câu</h2>
         <p className="text-muted text-lg mb-6">3 câu hỏi đơn giản, 3–5 phút, giúp bạn xử lý cảm xúc và đặt ý định cho ngày mai.</p>
         <div className="space-y-4">
-          {JOURNAL_QS.map((q, i) => (
+          {JOURNAL_QS.map((jq, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4">
-              <label className="text-lg font-medium text-text block mb-2">{i + 1}. {q}</label>
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <label className="text-lg font-medium text-text leading-snug">{i + 1}. {jq.q}</label>
+                <button onClick={() => setJournalModal(i)}
+                  className="text-[11px] font-bold px-2.5 py-1 rounded-lg cursor-pointer transition-all shrink-0 mt-0.5"
+                  style={{ color: jq.color, background: `rgba(${jq.rgb},0.1)`, border: `1px solid rgba(${jq.rgb},0.25)` }}>
+                  Chi tiết →
+                </button>
+              </div>
               <textarea value={data.journal[i] ?? ''} onChange={e => updateJournal(i, e.target.value)}
                 rows={2} placeholder="Nhập suy nghĩ của bạn..." className="w-full px-3 py-2 rounded-xl border bg-transparent text-lg text-text placeholder-muted resize-none focus:outline-none"
                 style={{ borderColor: `rgba(${RGB},0.3)` }} />
@@ -415,15 +722,24 @@ export default function ToolsMindTrackerPage() {
         </RevealBlock>
       )}
 
-      {/* Tips */}
+      {/* Warning signs */}
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold mb-3" style={{ color: COLOR }}>💡 Dấu Hiệu Cần Giảm Tải</h3>
-          <ul className="space-y-2 text-lg text-muted">
-            {['Stress ≥ 7 trong 3 ngày liên tiếp', 'Mệt mỏi/căng thẳng là mood chủ đạo cả tuần', 'Không thực hành calm nào trong 3 ngày', 'Không ngủ được dù mệt', 'Không muốn nói chuyện với ai'].map((tip, i) => (
-              <li key={i} className="flex gap-2"><span style={{ color: COLOR }}>⚠</span>{tip}</li>
-            ))}
-          </ul>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>💡 Dấu Hiệu Cần Giảm Tải</h2>
+        <p className="text-muted text-base mb-4">Nhận ra sớm để hành động trước khi kiệt sức thực sự. Click để xem giải thích và cách xử lý.</p>
+        <div className="space-y-2">
+          {WARNING_SIGNS.map((w, i) => (
+            <div key={i}
+              className="group flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all duration-200"
+              style={{ borderColor: warnModal === i ? `rgba(${w.rgb},0.45)` : 'rgba(255,255,255,0.08)', background: warnModal === i ? `rgba(${w.rgb},0.07)` : 'transparent' }}
+              onClick={() => setWarnModal(i)}>
+              <span className="text-lg shrink-0" style={{ color: w.color }}>⚠</span>
+              <span className="text-base text-muted flex-1 leading-snug">{w.label}</span>
+              <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                style={{ color: w.color, background: `rgba(${w.rgb},0.1)`, border: `1px solid rgba(${w.rgb},0.25)` }}>
+                Chi tiết →
+              </span>
+            </div>
+          ))}
         </div>
       </RevealBlock>
 
@@ -438,6 +754,26 @@ export default function ToolsMindTrackerPage() {
           onNext={() => setCalmModal(i => Math.min(CALM_OPTIONS.length - 1, i + 1))}
           hasPrev={calmModal > 0}
           hasNext={calmModal < CALM_OPTIONS.length - 1}
+        />
+      )}
+      {journalModal !== null && (
+        <JournalModal
+          idx={journalModal}
+          onClose={() => setJournalModal(null)}
+          onPrev={() => setJournalModal(i => Math.max(0, i - 1))}
+          onNext={() => setJournalModal(i => Math.min(JOURNAL_QS.length - 1, i + 1))}
+          hasPrev={journalModal > 0}
+          hasNext={journalModal < JOURNAL_QS.length - 1}
+        />
+      )}
+      {warnModal !== null && (
+        <WarnModal
+          idx={warnModal}
+          onClose={() => setWarnModal(null)}
+          onPrev={() => setWarnModal(i => Math.max(0, i - 1))}
+          onNext={() => setWarnModal(i => Math.min(WARNING_SIGNS.length - 1, i + 1))}
+          hasPrev={warnModal > 0}
+          hasNext={warnModal < WARNING_SIGNS.length - 1}
         />
       )}
     </div>

@@ -322,6 +322,164 @@ const WORKOUTS = [
   },
 ];
 
+const SITUATIONS = [
+  {
+    situation: 'Đang rất bận, có 5 phút', recommend: 'Bài 5 phút Reset',
+    icon: '⏰', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: '5 phút không phải là ít — đủ để duy trì habit chain và ngăn não bộ "xóa" thói quen vận động. Nghiên cứu về habit formation cho thấy tính liên tục (streak) quan trọng hơn thời lượng: 5 phút mỗi ngày hiệu quả hơn 35 phút một lần mỗi tuần.',
+    details: [
+      'Habit loop (vòng lặp thói quen): mỗi ngày không tập là một lần não bộ "ghi đè" lên thói quen cũ. 5 phút đủ để giữ cue → routine → reward loop hoạt động — ngay cả khi không tạo ra thay đổi thể chất đáng kể.',
+      'Ngưỡng "không tập hôm nay": bỏ 1 ngày không sao, bỏ 2 ngày liên tiếp bắt đầu nguy hiểm, bỏ 3 ngày trở lên = phải xây lại từ đầu về mặt tâm lý. 5 phút duy trì chuỗi — đó là tất cả mục tiêu.',
+      'Reset sinh lý học: 5 phút vận động nhẹ (thở cơ hoành + xoay vai + squat nhẹ) giảm cortisol đáng kể, tăng BDNF (yếu tố tăng trưởng thần kinh), và cải thiện tâm trạng qua endorphin tức thì.',
+      'Khi nào dùng bài 5 phút: deadline dồn dập, đang đi công tác, trẻ bệnh, mệt mỏi thực sự — bất kỳ tình huống nào mà 10+ phút là không thực tế. Không có lý do nào đủ để bỏ hoàn toàn khi bài 5 phút tồn tại.',
+      'Hiệu ứng "just start": tâm lý học cho thấy 80% người tiếp tục tập lâu hơn sau khi bắt đầu — ngay cả khi ban đầu chỉ định làm 5 phút. Sức ỳ (inertia) là vấn đề lớn nhất, không phải thời gian.',
+      'Lên lịch cứng: đặt alarm cho 5 phút vào cùng giờ mỗi ngày (sáng sớm sau đánh răng, hoặc giờ ăn trưa). Gắn với anchor habit đã có sẵn để giảm ma sát quyết định.',
+    ],
+    points: [
+      { icon: '🔗', label: 'Duy Trì Habit Chain', note: 'Streak quan trọng hơn thời lượng — đừng phá chuỗi' },
+      { icon: '🧠', label: 'Just Start Effect', note: '80% người tiếp tục dài hơn sau khi bắt đầu 5 phút' },
+      { icon: '⚗️', label: 'Giảm Cortisol Tức Thì', note: 'BDNF + endorphin tăng — đủ để cải thiện tâm trạng' },
+      { icon: '⚓', label: 'Gắn Với Anchor Habit', note: 'Sau đánh răng, sau ăn trưa — giảm ma sát quyết định' },
+    ],
+  },
+  {
+    situation: 'Mới bắt đầu, còn ngại', recommend: 'Bài 10 phút Người Mới',
+    icon: '🌱', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cảm giác ngại và e dè khi mới bắt đầu là phản ứng bình thường của não bộ trước thứ gì đó chưa quen. Bài 10 phút được thiết kế để vượt qua rào cản này: đủ ngắn để không đáng sợ, đủ cấu trúc để không bỡ ngỡ, đủ toàn diện để cảm thấy đã làm gì đó.',
+    details: [
+      'Novice advantage (lợi thế người mới): người chưa tập bao giờ có thể thấy cải thiện rõ rệt chỉ sau 2–3 tuần — nhanh hơn nhiều so với người đã tập lâu. Cơ thể thích nghi rất mạnh khi gặp kích thích mới lần đầu.',
+      'Tại sao 10 phút phù hợp: đủ ngắn để vượt qua lực cản tâm lý ("chỉ 10 phút thôi"), nhưng đủ để kích hoạt tất cả nhóm cơ chính. Không cần chuẩn bị gì — không cần quần áo tập đặc biệt, không cần thiết bị, không cần không gian lớn.',
+      'Kiến thức thay cho kỹ thuật: bài 10 phút dùng 4 động tác mà cơ thể đã quen (ngồi xuống, đẩy lên, nằm ngửa nâng hông, nằm ngửa giữ thăng bằng). Không cần học kỹ thuật phức tạp trước khi bắt đầu — học trong khi làm.',
+      'Sai lầm phổ biến của người mới: chọn bài quá khó ngay từ đầu → thất bại → bỏ cuộc. Bài 10 phút thiết kế để thành công ngay từ lần đầu — quan trọng để não bộ ghi nhận "ta làm được".',
+      'Tiến bộ trong 4 tuần đầu: tuần 1–2 quen với chuyển động và không còn đau nhức ngày hôm sau. Tuần 3–4 bắt đầu cảm thấy dễ hơn, muốn thêm nhiều hơn. Đây là dấu hiệu chuyển sang bài 20 phút.',
+      'Môi trường tập: chọn chỗ riêng tư nếu vẫn ngại — phòng ngủ, sân thượng, hoặc bất cứ đâu bạn thoải mái. Không cần gym, không cần người hướng dẫn, không cần gương. Chỉ cần một tấm thảm và 10 phút.',
+    ],
+    points: [
+      { icon: '🚀', label: 'Novice Advantage', note: 'Người mới cải thiện nhanh nhất — 2–3 tuần thấy rõ' },
+      { icon: '✅', label: 'Thiết Kế Để Thành Công', note: 'Đủ dễ để hoàn thành lần đầu — xây confidence' },
+      { icon: '📅', label: 'Tuần 3–4 Chuyển Cấp', note: 'Cảm thấy quá dễ = dấu hiệu chuyển sang bài 20 phút' },
+      { icon: '🏠', label: 'Không Cần Gym', note: 'Phòng ngủ + tấm thảm + 10 phút — đủ để bắt đầu' },
+    ],
+  },
+  {
+    situation: 'Muốn kết quả thực sự', recommend: 'Bài 20 phút Full Body',
+    icon: '💪', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: '20 phút × 3–4 lần/tuần vượt ngưỡng tối thiểu để tạo thích nghi cơ học thực sự: tổng hợp protein cơ tăng trong 24–48h sau tập, trao đổi chất tăng (EPOC), và cải thiện nhạy cảm insulin. Đây là ngưỡng "đủ để thay đổi cơ thể".',
+    details: [
+      'EPOC (Excess Post-exercise Oxygen Consumption): sau bài 20 phút cường độ vừa-cao, cơ thể tiếp tục đốt thêm 100–200 kcal trong 12–24 giờ tiếp theo để phục hồi. Hiệu ứng này không xảy ra với bài 5–10 phút cường độ thấp.',
+      'Muscle protein synthesis (MPS): 3 vòng circuit tạo đủ mechanical tension và metabolic stress để kích hoạt mTOR pathway — tín hiệu chính cho tổng hợp protein cơ. MPS đỉnh cao nhất 2–4 giờ sau tập và kéo dài 24–48 giờ.',
+      'Ngưỡng 3–4 lần/tuần: dưới 3 lần, cơ thể không có đủ kích thích để duy trì thích nghi. Trên 5 lần cùng nhóm cơ mà không có ngày nghỉ = overtraining. 3–4 lần với 48h nghỉ giữa các buổi là tối ưu.',
+      'Tiến bộ thấy rõ sau 6–8 tuần: tuần 1–4 thích nghi thần kinh (cơ mạnh hơn nhưng chưa to hơn), tuần 5–8 bắt đầu hypertrophy (cơ to hơn thực sự). Đừng bỏ cuộc trước tuần 6.',
+      'Dinh dưỡng quyết định 70%: 20 phút tập mà ăn uống không hỗ trợ = kết quả hạn chế. Protein 1.6–2g/kg/ngày là yêu cầu tối thiểu để cơ phục hồi và phát triển. Không cần thực phẩm bổ sung — chỉ cần đủ protein từ thức ăn.',
+      'Tracking tiến bộ: đo sức mạnh (số reps mỗi động tác), đo vóc dáng (vòng eo, vòng cánh tay), và chụp ảnh mỗi 4 tuần. Cân nặng là chỉ số kém nhất — có thể không đổi hoặc tăng trong khi cơ thể thực sự đang thay đổi.',
+    ],
+    points: [
+      { icon: '🔥', label: 'EPOC 12–24 Giờ', note: 'Đốt thêm 100–200 kcal sau tập — hiệu ứng kéo dài' },
+      { icon: '🗓️', label: '3–4 Lần/Tuần Là Tối Ưu', note: 'Ít hơn = không đủ kích thích. Nhiều hơn = overtraining' },
+      { icon: '🥩', label: 'Protein 1.6–2g/kg', note: '70% kết quả đến từ dinh dưỡng — không thể bỏ qua' },
+      { icon: '📸', label: 'Ảnh 4 Tuần / Lần', note: 'Đừng dùng cân làm thước đo duy nhất — ảnh chính xác hơn' },
+    ],
+  },
+  {
+    situation: 'Ngày không tập nặng', recommend: 'Bài 30 phút Cardio',
+    icon: '🚶', color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Active recovery (phục hồi chủ động) hiệu quả hơn passive recovery (nghỉ hoàn toàn) cho hầu hết mọi người. Cardio nhẹ ngày nghỉ tăng tuần hoàn máu đến cơ đang phục hồi, giảm DOMS (đau nhức cơ), và duy trì aerobic base.',
+    details: [
+      'DOMS (Delayed Onset Muscle Soreness): đau nhức cơ xuất hiện 24–72 giờ sau tập nặng — do vi tổn thương cơ và phản ứng viêm nhẹ. Đây là dấu hiệu cơ đang phục hồi và thích nghi, không phải chấn thương. Cardio nhẹ tăng lưu lượng máu đến vùng bị DOMS, giúp dọn dẹp chất thải trao đổi chất nhanh hơn.',
+      'Zone 2 cardio ngày phục hồi: 55–65% HRmax (cảm giác thoải mái, có thể nói chuyện dễ dàng). Đủ để tăng tuần hoàn mà không tạo thêm stress cho cơ đang phục hồi. Bài 30 phút Cardio được thiết kế ở cường độ này.',
+      'Aerobic base building: tim mạch cần được tập luyện riêng biệt với sức mạnh. Người tập sức mạnh 3–4 lần/tuần mà không làm cardio thường có VO2max thấp — giới hạn khả năng tổng thể và tốc độ phục hồi.',
+      'Tâm lý ngày nghỉ: nhiều người cảm thấy tội lỗi hoặc không yên khi nghỉ hoàn toàn. Bài 30 phút cardio nhẹ giải quyết tâm lý này mà không gây hại cho phục hồi — win-win.',
+      'Phân bổ tuần lý tưởng: Thứ 2, 4, 6: Full Body 20 phút (hoặc chia theo nhóm cơ). Thứ 3, 5: Cardio 30 phút. Thứ 7: tuỳ chọn — cardio nhẹ hoặc nghỉ. Chủ nhật: nghỉ hoàn toàn. Tổng: 5 buổi/tuần, không buổi nào quá 30 phút.',
+      'Low-impact là ưu điểm: bài 30 phút không nhảy mạnh hoặc chạy — tốt cho người thừa cân, có vấn đề khớp gối/cổ chân, hoặc đang phục hồi sau chấn thương nhẹ. Cardio trong nhà loại bỏ rào cản thời tiết.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Active > Passive Recovery', note: 'Cardio nhẹ giúp cơ hồi phục nhanh hơn nghỉ hoàn toàn' },
+      { icon: '💓', label: 'Zone 2: 55–65% HRmax', note: 'Thoải mái, có thể nói chuyện — không thở hổn hển' },
+      { icon: '🗓️', label: 'Thứ 3 & 5 Trong Tuần', note: 'Giữa 2 ngày tập nặng — phân bổ lý tưởng' },
+      { icon: '🦴', label: 'Low Impact Trong Nhà', note: 'Không tải khớp — tốt cho người đang phục hồi chấn thương' },
+    ],
+  },
+];
+
+function SituationModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const s = SITUATIONS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${s.rgb},0.28)`, boxShadow: `0 0 80px rgba(${s.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={s.img} alt={s.situation} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${s.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${s.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${s.rgb},0.18)`, border: `2px solid rgba(${s.rgb},0.45)` }}>{s.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `rgba(${s.rgb},0.6)` }}>Tình huống</p>
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: s.color }}>{s.icon} {s.situation}</h2>
+          <p className="text-base font-semibold mb-5" style={{ color: `rgba(${s.rgb},0.8)` }}>→ {s.recommend}</p>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: s.color, background: `rgba(${s.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{s.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {s.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${s.rgb},0.14)`, color: s.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {s.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${s.rgb},0.06)`, border: `1px solid rgba(${s.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? s.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${s.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${s.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {SITUATIONS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? s.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${s.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${s.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function StepModal({ wi, si, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const wo = WORKOUTS[wi];
   const step = wo.steps[si];
@@ -422,6 +580,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function ToolsQuickWorkoutsPage() {
   const [open, setOpen] = useState(0);
   const [stepModal, setStepModal] = useState(null); // { wi, si }
+  const [sitModal, setSitModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -537,16 +696,18 @@ export default function ToolsQuickWorkoutsPage() {
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Chọn Bài Tập Thế Nào?</h2>
         <div className="grid sm:grid-cols-2 gap-3">
-          {[
-            { situation: 'Đang rất bận, có 5 phút', recommend: 'Bài 5 phút Reset', icon: '⏰' },
-            { situation: 'Mới bắt đầu, còn ngại', recommend: 'Bài 10 phút Người Mới', icon: '🌱' },
-            { situation: 'Muốn kết quả thực sự', recommend: 'Bài 20 phút Full Body', icon: '💪' },
-            { situation: 'Ngày không tập nặng', recommend: 'Bài 30 phút Cardio', icon: '🚶' },
-          ].map((s, i) => (
-            <div key={i} className="rounded-xl border border-border p-4">
-              <div className="text-2xl mb-2">{s.icon}</div>
-              <div className="text-base text-muted mb-1">Tình huống: {s.situation}</div>
-              <div className="text-lg font-bold" style={{ color: COLOR }}>→ {s.recommend}</div>
+          {SITUATIONS.map((s, i) => (
+            <div key={i}
+              className="rounded-xl border p-4 cursor-pointer group transition-all duration-200 hover:scale-[1.02]"
+              style={{ borderColor: sitModal === i ? `rgba(${s.rgb},0.5)` : 'var(--border)', background: sitModal === i ? `rgba(${s.rgb},0.07)` : 'var(--surface)' }}
+              onClick={() => setSitModal(i)}>
+              <div className="flex items-start justify-between gap-2">
+                <div className="text-2xl mb-2">{s.icon}</div>
+                <span className="text-[11px] font-bold px-2 py-0.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                  style={{ color: s.color, background: `rgba(${s.rgb},0.1)`, border: `1px solid rgba(${s.rgb},0.25)` }}>Chi tiết →</span>
+              </div>
+              <div className="text-sm text-muted mb-1">Tình huống: {s.situation}</div>
+              <div className="text-base font-bold" style={{ color: s.color }}>→ {s.recommend}</div>
             </div>
           ))}
         </div>
@@ -569,6 +730,16 @@ export default function ToolsQuickWorkoutsPage() {
           />
         );
       })()}
+      {sitModal !== null && (
+        <SituationModal
+          idx={sitModal}
+          onClose={() => setSitModal(null)}
+          onPrev={() => setSitModal(i => Math.max(0, i - 1))}
+          onNext={() => setSitModal(i => Math.min(SITUATIONS.length - 1, i + 1))}
+          hasPrev={sitModal > 0}
+          hasNext={sitModal < SITUATIONS.length - 1}
+        />
+      )}
     </div>
   );
 }

@@ -8,6 +8,109 @@ const ORBIT_ID = 'f-mp-orbit-kf';
 const ORBIT_CLASS = 'f-mp-orbit-ring';
 const LS_KEY = 'healthapp_f_meal';
 
+const EATING_RULES = [
+  {
+    num: '01', icon: '🥩', color: '#f97316', rgb: '249,115,22',
+    rule: 'Ăn đủ đạm mỗi bữa — đây là ưu tiên số 1',
+    img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Protein là macronutrient có thermic effect cao nhất (20–30% calo tiêu hóa), satiety index cao nhất, và là nền tảng duy nhất để xây và giữ khối cơ. Không có quy tắc dinh dưỡng nào mang lại ROI cao hơn: 1 thay đổi đơn giản → ảnh hưởng đến tất cả mục tiêu sức khỏe.',
+    details: [
+      'Protein kích hoạt peptide no (PYY, GLP-1) mạnh hơn carb và fat — bữa ăn đủ đạm giữ no 30–40% lâu hơn, tự nhiên giảm total calorie intake mà không cần đếm calo hay nhịn ăn.',
+      'Thermic effect of food: cơ thể đốt 20–30 kcal để tiêu hóa 100 kcal từ protein, so với 5–10 kcal từ carb và 0–3 kcal từ fat. Ăn protein nhiều hơn literally tăng trao đổi chất.',
+      'Sau 30 tuổi, cơ thể mất ~1% khối cơ mỗi năm (sarcopenia) nếu không có stimulation từ tập luyện và protein đủ. Ưu tiên protein từ bây giờ là đầu tư cho khả năng vận động và sức khỏe metabolic 20–30 năm sau.',
+      'Nguồn đạm nhanh nhất: trứng (6g/quả, 5 phút nấu), đậu phụ cứng (8g/100g, ăn sống được), sữa chua Hy Lạp (10g/100g, không cần nấu), cá mòi hộp (20g/hộp, mở ra ăn ngay).',
+      'Dấu hiệu thiếu đạm: mệt mỏi dù ngủ đủ, tóc rụng nhiều, vết thương lành chậm, thèm đồ ngọt sau bữa ăn, giảm cân nhưng không giảm mỡ (giảm cơ). Phổ biến hơn nhiều người nghĩ — đặc biệt ở người ăn kiêng.',
+      'Ưu tiên số 1 không có nghĩa là bỏ qua mọi thứ khác — nghĩa là khi chỉ có thể thay đổi 1 thứ, thay đổi protein. Khi đã đủ protein, mọi quy tắc khác sẽ dễ follow hơn tự nhiên.',
+    ],
+    points: [
+      { icon: '🔥', label: 'Thermic Effect 20–30%', note: 'Tự đốt calo khi tiêu hóa — trao đổi chất tăng' },
+      { icon: '⏱️', label: 'No Lâu Hơn 30–40%', note: 'PYY và GLP-1 kích hoạt mạnh — giảm calo tự nhiên' },
+      { icon: '💪', label: 'Chống Sarcopenia', note: 'Mất 1%/năm sau 30 tuổi — protein là bảo hiểm dài hạn' },
+      { icon: '🥚', label: 'Nguồn Nhanh 5 Phút', note: 'Trứng/đậu phụ/sữa chua — không cần nấu phức tạp' },
+    ],
+  },
+  {
+    num: '02', icon: '🥦', color: '#22c55e', rgb: '34,197,94',
+    rule: 'Ăn rau trước → no nhanh hơn, ít calo hơn',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Thứ tự ăn ảnh hưởng trực tiếp đến đường huyết và lượng thức ăn tiêu thụ. Nghiên cứu của Cornell University: ăn rau trước giảm tổng lượng thức ăn 20% và giảm đường huyết sau ăn 37% so với ăn tinh bột trước. Thứ tự: rau → đạm → tinh bột.',
+    details: [
+      'Cơ chế đường huyết: fiber trong rau tạo lớp gel trong dạ dày làm chậm hấp thu glucose từ tinh bột ăn sau. Kết quả: đường huyết tăng từ từ, đỉnh thấp hơn, không có spike → không có crash → không có cơn thèm ăn cấp tính sau đó.',
+      'Cơ chế no: dạ dày có thể tích hữu hạn. Rau có mật độ calo rất thấp (15–35 kcal/100g) nhưng thể tích lớn — chiếm không gian trong dạ dày, kích hoạt stretch receptors báo hiệu no sớm hơn.',
+      'Thứ tự lý tưởng: canh/soup (hydration + khởi động dạ dày) → rau (fiber + no) → đạm (protein + tiếp tục no) → tinh bột cuối cùng (calo dày đặc nhưng bạn đã no 70–80% rồi). Đây là cách ăn truyền thống Nhật Bản.',
+      'Áp dụng thực tế với bữa ăn Việt: ăn canh rau trước, sau đó rau xào hoặc rau luộc, rồi mới gắp thịt/cá, cuối cùng mới ăn cơm. Không cần thay đổi món — chỉ thay đổi thứ tự gắp.',
+      'Thứ tự ăn quan trọng hơn thành phần bữa ăn trong ngắn hạn: cùng bữa cơm thịt rau, ăn rau trước vs ăn cơm trước có thể chênh lệch đến 200–300 kcal tiêu thụ và đường huyết peak khác nhau 30–40%.',
+      'Thói quen đơn giản nhất để bắt đầu: ngay bây giờ, với bữa tiếp theo, gắp rau đầu tiên. Không cần thay đổi gì khác. Làm 21 ngày liên tiếp để tự động hóa.',
+    ],
+    points: [
+      { icon: '📉', label: 'Đường Huyết Giảm 37%', note: 'Cornell: rau trước → glucose spike thấp hơn đáng kể' },
+      { icon: '🫙', label: 'Chiếm Không Gian Dạ Dày', note: 'Ít calo nhưng thể tích lớn — no sớm hơn tự nhiên' },
+      { icon: '🍱', label: 'Thứ Tự: Canh→Rau→Đạm→Tinh Bột', note: 'Truyền thống Nhật — được khoa học xác nhận' },
+      { icon: '🔄', label: '21 Ngày Tự Động Hóa', note: 'Chỉ thay đổi thứ tự gắp — dễ nhất trong 5 quy tắc' },
+    ],
+  },
+  {
+    num: '03', icon: '⏰', color: '#f59e0b', rgb: '245,158,11',
+    rule: 'Không bỏ bữa — đói sẽ ăn bù nhiều hơn',
+    img: 'https://images.unsplash.com/photo-1495214783159-3503fd1b572d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bỏ bữa không giảm tổng calo tiêu thụ trong ngày — nghiên cứu University of Illinois: bỏ bữa sáng dẫn đến ăn nhiều hơn 400–600 kcal trong các bữa còn lại, net result = tương đương hoặc nhiều hơn so với không bỏ bữa. Cơ thể tự compensate bằng cơn đói cấp tính.',
+    details: [
+      'Ghrelin (hormone đói) tăng dần theo giờ không ăn — sau 5–6 giờ đói đỉnh điểm, quyết định ăn gì và ăn bao nhiêu bị ghrelin kiểm soát, không phải lý trí. "Đói cấp độ 8–9 không ai ăn salad" là sự thật sinh học.',
+      'Bỏ bữa → đói cấp tính → ăn nhanh hơn → não nhận tín hiệu no sau 20 phút → đã ăn quá nhiều rồi. Tốc độ ăn khi đói tăng 40–60% so với khi không quá đói, kéo theo lượng thức ăn nạp trước khi não "ngắt".',
+      'Bỏ bữa kéo dài cortisol cao: không ăn trong >4 giờ khiến cortisol tăng để duy trì đường huyết qua gluconeogenesis. Cortisol cao → insulin resistance → cơ thể ưu tiên tích trữ mỡ bụng.',
+      'Intermittent fasting (IF) khác với bỏ bữa ngẫu nhiên: IF có kế hoạch rõ ràng, cơ thể thích ứng qua nhiều tuần. Bỏ bữa ngẫu nhiên vì bận/quên là cortisol spike không có benefit của IF có cấu trúc.',
+      'Bữa ăn đơn giản vẫn tốt hơn bỏ: 1 quả chuối + 1 hộp sữa chua = 5 phút, 200–250 kcal, đủ protein và fiber để ngăn ghrelin spike. Không cần bữa ăn hoàn hảo — chỉ cần không bỏ hoàn toàn.',
+      'Meal prep giải quyết vấn đề "không có thời gian": chuẩn bị 3 bữa cho ngày hôm sau trong 20 phút tối hôm trước. Người bận nhất cũng có 20 phút tối — đây là ROI tốt nhất trong thời gian nấu ăn.',
+    ],
+    points: [
+      { icon: '⚡', label: 'Bù 400–600 kcal Tự Động', note: 'Illinois: bỏ bữa sáng → ăn nhiều hơn trong ngày' },
+      { icon: '🧠', label: 'Ghrelin Kiểm Soát Quyết Định', note: 'Đói 8–9/10 không ai chọn salad — sinh học thắng lý trí' },
+      { icon: '📈', label: 'Cortisol Tăng Sau 4h Nhịn', note: 'Insulin resistance → tích mỡ bụng — ngược mục tiêu' },
+      { icon: '🍌', label: 'Bữa Đơn Giản Vẫn Tốt', note: 'Chuối + sữa chua = 5 phút, đủ ngăn ghrelin spike' },
+    ],
+  },
+  {
+    num: '04', icon: '🚫', color: '#ef4444', rgb: '239,68,68',
+    rule: 'Hạn chế thực phẩm siêu chế biến, không cần loại bỏ hoàn toàn',
+    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ultra-processed food (UPF) chiếm >50% lượng calo trung bình của người Việt thành thị. Nghiên cứu Cell Metabolism 2019: diet UPF khiến người ăn thêm 500 kcal/ngày tự động so với whole food — không phải thiếu willpower, mà thiếu satiety signal do UPF bypass cơ chế no tự nhiên.',
+    details: [
+      'NOVA classification: Group 4 (UPF) = thực phẩm có ≥5 ingredients, chứa emulsifier/stabilizer/flavor enhancer/colorant. Ví dụ phổ biến: mì ăn liền, bánh ngọt đóng gói, xúc xích, nước ngọt, snack mặn, sữa chua có đường nhiều.',
+      'Tại sao UPF khó dừng: được thiết kế để kích thích dopamine tối đa qua "bliss point" (tỷ lệ đường/muối/fat tối ưu), texture được tối ưu để "vanish" trong miệng (giảm chewing time → giảm satiety signal), và mùi nhân tạo kích thích ăn thêm.',
+      '"Hạn chế không loại bỏ" là chiến lược bền vững hơn: cấm hoàn toàn dẫn đến rebound (ăn nhiều hơn sau khi "phá lệ"). 80/20 rule — 80% whole food, 20% UPF — giảm harm trong khi vẫn sống bình thường.',
+      'Thay thế dần thay vì cắt đột ngột: thay nước ngọt bằng nước lọc + lát chanh; mì gói → cháo + trứng; snack mặn → hạt điều/chuối. Mỗi lần thay thế 1 item là tiến bộ thực sự.',
+      'Đọc nhãn 3 tiêu chí: (1) >5 ingredients? (2) Có tên chất hóa học không nhận ra? (3) Added sugar trong top 3 ingredients? Nếu 2/3 = UPF. Không cần học thuộc — chỉ cần kiểm tra 3 điều này.',
+      'UPF và đường ruột: emulsifier trong UPF phá vỡ lớp mucus bảo vệ ruột, gây viêm mãn tính nhẹ và giảm đa dạng vi khuẩn có lợi. Tác động tích lũy theo năm — không thấy ngay nhưng là một trong những nguyên nhân chính của metabolic syndrome.',
+    ],
+    points: [
+      { icon: '🧪', label: '+500 kcal/Ngày Tự Động', note: 'UPF bypass cơ chế no — không phải thiếu willpower' },
+      { icon: '🎯', label: '80/20 Rule', note: '80% whole food + 20% UPF — bền vững hơn cấm hoàn toàn' },
+      { icon: '📋', label: '3 Tiêu Chí Đọc Nhãn', note: '>5 ingredients, chất hóa học, sugar top 3 = UPF' },
+      { icon: '🔄', label: 'Thay Thế Dần', note: 'Mỗi item thay được là tiến bộ — không cần hoàn hảo ngay' },
+    ],
+  },
+  {
+    num: '05', icon: '💧', color: '#3b82f6', rgb: '59,130,246',
+    rule: 'Uống nước thay vì nước ngọt, cà phê sữa nhiều đường',
+    img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Liquid calories là loại calo dễ bị undercount nhất — không kích hoạt satiety signal như solid food. 1 lon Coca-Cola = 140 kcal, 1 ly cà phê sữa đá = 200–350 kcal, 1 ly trà sữa = 300–600 kcal. Người thay thế liquid calories bằng nước giảm trung bình 200–300 kcal/ngày mà không cảm thấy đói hơn.',
+    details: [
+      'Liquid calories không gây no: dạ dày xử lý liquid nhanh hơn solid, ít kích hoạt stretch receptors, và ít kích hoạt gut peptide no (CCK, PYY). Uống 350 kcal từ nước ngọt ≠ ăn 350 kcal từ cơm về cảm giác no.',
+      'Nước ngọt và insulin: fructose từ HFCS (high-fructose corn syrup) trong nước ngọt được xử lý trực tiếp bởi gan, không qua insulin như glucose. Kết quả: không gây no, không giảm ghrelin, chuyển hóa thành triglyceride và mỡ gan.',
+      'Cà phê sữa đá Việt Nam: một ly trung bình chứa 3–4 muỗng cà phê đường cộng sữa đặc — 200–350 kcal, 40–60g đường. 2 ly/ngày = 400–700 kcal chỉ từ đồ uống. Thay bằng cà phê đen hoặc cà phê sữa ít đường = tiết kiệm 300–600 kcal.',
+      'Trà sữa: 300–600 kcal/ly tùy size và topping. Nếu uống 3 lần/tuần = 900–1,800 kcal "ẩn" mỗi tuần — tương đương 1–2 ngày ăn uống. Không cần bỏ hoàn toàn, nhưng cần biết để tính vào.',
+      'Alternatives không nhàm: sparkling water (nước có gas) + lát chanh/bạc hà; trà xanh/đen không đường; nước dừa tươi (ít đường hơn nước dừa đóng hộp); café đen espresso (0 calo). Variety làm dễ duy trì hơn.',
+      'Thay thế từng bước: tuần 1 thay 1 ly nước ngọt/ngày bằng nước lọc; tuần 2 giảm lượng đường trong cà phê 50%; tuần 3 thay 1 ly trà sữa/tuần bằng trà không đường. Progress không phải perfection.',
+    ],
+    points: [
+      { icon: '🧮', label: '200–300 kcal/Ngày Giảm', note: 'Thay nước ngọt → không đói hơn, ít calo hơn đáng kể' },
+      { icon: '🚫', label: 'Liquid Calories Không Gây No', note: 'Dạ dày không "đọc" liquid như solid — dễ overconsume' },
+      { icon: '🍋', label: 'Alternatives Ngon Hơn', note: 'Sparkling water + chanh, trà xanh, nước dừa tươi' },
+      { icon: '📅', label: 'Giảm Từng Tuần', note: 'Thay 1 item/tuần — bền vững hơn cắt đột ngột' },
+    ],
+  },
+];
+
 const PLATE_SECTIONS = [
   { pct: 50, label: '½ Rau & Trái Cây', color: '#22c55e', desc: 'Rau lá xanh, cà chua, cà rốt, bông cải, dưa leo, chuối, cam' },
   { pct: 25, label: '¼ Đạm', color: '#f59e0b', desc: 'Thịt gà, cá, trứng, đậu phụ, tôm, thịt heo nạc' },
@@ -195,6 +298,81 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
+function EatingRulesModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = EATING_RULES[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.rule} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <span className="text-3xl font-black leading-none" style={{ color: item.color }}>{item.num}</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `rgba(${item.rgb},0.6)` }}>Quy tắc {idx + 1}/{EATING_RULES.length}</p>
+          <h2 className="font-bold text-xl md:text-2xl mb-5 leading-snug" style={{ color: item.color }}>{item.rule}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {EATING_RULES.length}</span>
+            <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function NutritionFieldModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const item = NUTRITION_FIELDS[idx];
   useEffect(() => {
@@ -359,6 +537,7 @@ export default function ToolsMealPlanPage() {
   const [openMeal, setOpenMeal] = useState(null);
   const [mealModal, setMealModal] = useState(null);
   const [nutritionModal, setNutritionModal] = useState(null);
+  const [rulesModal, setRulesModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -520,15 +699,21 @@ export default function ToolsMealPlanPage() {
 
       {/* Quick rules */}
       <RevealBlock delay={3} className="mb-10">
-        <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
-          <h3 className="font-bold mb-3" style={{ color: COLOR }}>⚡ 5 Quy Tắc Ăn Uống Quan Trọng Nhất</h3>
-          <ol className="space-y-2 text-lg text-muted">
-            {['Ăn đủ đạm mỗi bữa — đây là ưu tiên số 1', 'Ăn rau trước → no nhanh hơn, ít calo hơn', 'Không bỏ bữa — đói sẽ ăn bù nhiều hơn', 'Hạn chế thực phẩm siêu chế biến, không cần loại bỏ hoàn toàn', 'Uống nước thay vì nước ngọt, cà phê sữa nhiều đường'].map((rule, i) => (
-              <li key={i} className="flex gap-2">
-                <span className="font-bold shrink-0" style={{ color: COLOR }}>{i + 1}.</span>{rule}
-              </li>
-            ))}
-          </ol>
+        <h3 className="font-bold mb-1" style={{ color: COLOR }}>⚡ 5 Quy Tắc Ăn Uống Quan Trọng Nhất</h3>
+        <p className="text-sm text-muted mb-4">Click vào từng quy tắc để xem lý do khoa học và cách áp dụng.</p>
+        <div className="space-y-2">
+          {EATING_RULES.map((item, i) => (
+            <div key={i}
+              className="flex items-center gap-3 rounded-xl px-4 py-3 cursor-pointer group transition-all"
+              style={{ background: rulesModal === i ? `rgba(${item.rgb},0.08)` : `rgba(${RGB},0.03)`, border: `1px solid ${rulesModal === i ? `rgba(${item.rgb},0.4)` : `rgba(${RGB},0.12)`}` }}
+              onClick={() => setRulesModal(i)}>
+              <span className="font-black text-base w-8 shrink-0 text-center" style={{ color: item.color }}>{item.num}</span>
+              <span className="text-2xl shrink-0">{item.icon}</span>
+              <span className="flex-1 text-base text-muted leading-snug">{item.rule}</span>
+              <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                style={{ color: item.color }}>→</span>
+            </div>
+          ))}
         </div>
       </RevealBlock>
 
@@ -553,6 +738,16 @@ export default function ToolsMealPlanPage() {
           onNext={() => setNutritionModal(i => Math.min(NUTRITION_FIELDS.length - 1, i + 1))}
           hasPrev={nutritionModal > 0}
           hasNext={nutritionModal < NUTRITION_FIELDS.length - 1}
+        />
+      )}
+      {rulesModal !== null && (
+        <EatingRulesModal
+          idx={rulesModal}
+          onClose={() => setRulesModal(null)}
+          onPrev={() => setRulesModal(i => Math.max(0, i - 1))}
+          onNext={() => setRulesModal(i => Math.min(EATING_RULES.length - 1, i + 1))}
+          hasPrev={rulesModal > 0}
+          hasNext={rulesModal < EATING_RULES.length - 1}
         />
       )}
     </div>

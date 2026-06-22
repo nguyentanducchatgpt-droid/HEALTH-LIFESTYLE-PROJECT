@@ -115,11 +115,101 @@ const TRACKER_FIELDS = [
 ];
 
 const STEPS_RANGES = [
-  { label: '< 3,000', color: '#ef4444', note: 'Ngồi nhiều — cần tăng' },
-  { label: '3,000–5,000', color: '#f59e0b', note: 'Dưới mức khuyến nghị' },
-  { label: '5,000–7,500', color: '#84cc16', note: 'Đủ tối thiểu' },
-  { label: '7,500–10,000', color: '#22c55e', note: 'Tốt' },
-  { label: '> 10,000', color: '#14b8a6', note: 'Xuất sắc' },
+  {
+    label: '< 3,000', color: '#ef4444', rgb: '239,68,68', note: 'Ngồi nhiều — cần tăng', icon: '🪑',
+    img: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Dưới 3,000 bước/ngày là mức "sedentary" hoàn toàn — tương đương ngồi 10–12 giờ liên tục. Nghiên cứu NHS (2022) cho thấy nhóm này có nguy cơ tử vong sớm cao hơn 70% so với nhóm đi 7,000+ bước, và nguy cơ mắc tiểu đường type 2 cao hơn 2.3 lần.',
+    details: [
+      'Sedentary lifestyle định nghĩa: <3,000 bước/ngày OR ngồi >8h/ngày. Cả hai điều kiện này thường đi cùng nhau — người làm văn phòng ngồi máy tính thường chỉ đạt 2,000–2,500 bước nếu không có ý thức di chuyển thêm.',
+      'Tác động lên hệ cơ xương: không dùng cơ liên tục → cơ bắp teo dần (atrophy), đặc biệt cơ mông và đùi. Sau 2 tuần ngồi nhiều, sức mạnh cơ giảm 1–3% mỗi ngày. Mất cơ liên quan trực tiếp đến insulin resistance và chuyển hóa chậm.',
+      'Tác động tuần hoàn: khi ngồi, cơ đùi ép tĩnh mạch → máu lưu thông kém → tăng nguy cơ huyết khối tĩnh mạch sâu (DVT), đặc biệt sau 4+ giờ ngồi không nghỉ. Phù chân buổi chiều là dấu hiệu sớm phổ biến.',
+      'Lipoprotein lipase (LPL): enzyme quan trọng đốt mỡ máu, hoạt động gần như hoàn toàn tắt khi ngồi. Ngay cả người tập gym 1 giờ/ngày nhưng ngồi 9 giờ còn lại vẫn có LPL thấp trong 9 giờ đó — gọi là "active couch potato syndrome".',
+      'Bước đầu tiên thực tế: không cần tăng đột ngột. Mỗi tuần tăng 500 bước là đủ. Từ 2,500 lên 3,000 → 3,500 → 4,000 trong 4 tuần. Não cần xây dựng thói quen từ từ hơn là cú sốc đột ngột dễ bỏ cuộc.',
+      'Sitting breaks: dù chỉ đạt <3,000 bước/ngày, đứng dậy 2–3 phút mỗi 30–45 phút ngồi đã giảm tác hại đáng kể. Đặt timer trên điện thoại là cách đơn giản nhất để bắt đầu mà không cần thay đổi nhiều thói quen.',
+    ],
+    points: [
+      { icon: '⚠️', label: 'Nguy Cơ Tử Vong +70%', note: 'So với nhóm 7,000+ bước — theo nghiên cứu NHS 2022' },
+      { icon: '🔥', label: 'LPL Gần Như Tắt', note: 'Enzyme đốt mỡ máu ngừng hoạt động khi ngồi liên tục' },
+      { icon: '💉', label: 'Tiểu Đường Type 2 ×2.3', note: 'Nguy cơ tăng 2.3 lần so với nhóm hoạt động bình thường' },
+      { icon: '🎯', label: '+500 Bước/Tuần', note: 'Tăng dần từ từ bền vững hơn tăng đột ngột rồi bỏ cuộc' },
+    ],
+  },
+  {
+    label: '3,000–5,000', color: '#f59e0b', rgb: '245,158,11', note: 'Dưới mức khuyến nghị', icon: '🚶',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '3,000–5,000 bước là mức "lightly active" — có di chuyển nhưng chưa đủ để nhận được lợi ích sức khỏe tối ưu. Đây là mức phổ biến của người làm văn phòng có ý thức đi lại nhưng chưa có thói quen vận động. Lợi ích sức khỏe bắt đầu xuất hiện nhưng còn hạn chế.',
+    details: [
+      'Ngưỡng "lightly active": 3,000–5,000 bước tương đương khoảng 2.4–4 km đi bộ nhẹ, đốt thêm ~150–250 kcal so với người hoàn toàn tĩnh. Đủ để giảm risk tim mạch nhẹ nhưng chưa đủ để duy trì weight management hiệu quả.',
+      'Gap giữa 5,000 và 7,000 bước rất quan trọng: nghiên cứu cho thấy lợi ích nhảy vọt khi vượt ngưỡng 6,000–7,000. Tăng từ 4,000 lên 7,000 bước giảm nguy cơ tử vong sớm ~45% — lợi ích lớn nhất trong toàn bộ range bước chân.',
+      'Người ở mức này thường có: ngày làm việc 8h với 1–2 lần đi toilet, đi lại trong văn phòng/nhà, không tập thêm buổi chiều. Điểm yếu: không có sustained walking session nào, chỉ là movement rải rác.',
+      'Cải thiện dễ nhất: thêm 1 lần đi bộ bữa trưa 15–20 phút (khoảng 1,500–2,000 bước) đã đưa từ mức này lên 5,000–6,500. Không cần thay đổi cả routine, chỉ thêm 1 habit sau ăn trưa.',
+      'Insulin sensitivity: dù ở mức này, mỗi 1,000 bước tăng thêm cải thiện insulin sensitivity ~3–5%. Người tiền tiểu đường hoặc có nguy cơ metabolic nên target ít nhất 6,000 bước sớm.',
+      'Mental health: đi bộ đủ để ra ngoài, tiếp xúc thiên nhiên, ánh sáng tự nhiên đã cải thiện mood và giảm cortisol — ngay cả ở mức 3,000–5,000. Lợi ích tâm lý xuất hiện sớm hơn lợi ích thể chất.',
+    ],
+    points: [
+      { icon: '📈', label: 'Lợi Ích Bắt Đầu', note: 'Chưa tối ưu nhưng tốt hơn hẳn <3,000 — tiếp tục tăng' },
+      { icon: '🎯', label: 'Gap Quan Trọng: 5K→7K', note: 'Vượt 7,000 bước = lợi ích sức khỏe nhảy vọt nhất' },
+      { icon: '🍽️', label: 'Bữa Trưa +1,500 Bước', note: '15 phút đi bộ sau ăn = thêm ~1,500 bước dễ dàng nhất' },
+      { icon: '🧠', label: 'Mood Cải Thiện Sớm', note: 'Ánh sáng + thiên nhiên giảm cortisol ngay từ mức này' },
+    ],
+  },
+  {
+    label: '5,000–7,500', color: '#84cc16', rgb: '132,204,22', note: 'Đủ tối thiểu', icon: '🏃',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    keyFact: '5,000–7,500 bước là mức "moderately active" — đây là ngưỡng tối thiểu để nhận được phần lớn lợi ích sức khỏe từ vận động. WHO khuyến nghị ít nhất 150 phút vận động vừa/tuần, tương đương ~7,000–8,000 bước/ngày. Đây là nền tảng tốt để xây dựng thêm.',
+    details: [
+      'Vì sao 5,000 là ngưỡng tối thiểu có ý nghĩa: tại mức này, cơ thể duy trì đủ NEAT (non-exercise activity thermogenesis) để hỗ trợ chuyển hóa bình thường. Dưới 5,000, metabolism bắt đầu "thích nghi" bằng cách giảm calo đốt để bảo toàn năng lượng.',
+      'Insulin sensitivity tại mức này: 5,000–7,500 bước/ngày cải thiện insulin sensitivity đủ để giảm nguy cơ tiểu đường type 2 ~30–40%. Kết hợp với ăn uống hợp lý, đây là mức có thể maintain healthy weight dài hạn.',
+      'Cardiovascular health: LPL (lipoprotein lipase) hoạt động đủ để giảm triglycerides và tăng HDL (cholesterol tốt). Nhóm 6,000–7,500 bước có huyết áp trung bình thấp hơn 3–5 mmHg so với nhóm <5,000.',
+      'Weight management: ở mức này TDEE (tổng calo đốt) tăng thêm ~200–350 kcal/ngày so với sedentary. Đủ để tạo mild deficit nếu ăn uống controlled — không cần tập gym thêm nếu mục tiêu là maintain weight (không tăng).',
+      'Bone density: đi bộ là weight-bearing exercise quan trọng cho xương. 5,000+ bước/ngày đủ để duy trì bone density, giảm nguy cơ osteoporosis đặc biệt ở phụ nữ sau 40 tuổi.',
+      'Mục tiêu tiếp theo từ mức này: tăng lên 7,500–8,000 bước bằng cách thêm 1 buổi đi bộ buổi tối 20 phút sau bữa tối. Đây là thói quen có lợi nhất cho giấc ngủ và blood sugar sau ăn.',
+    ],
+    points: [
+      { icon: '✅', label: 'WHO Tối Thiểu Đạt Được', note: '150 phút vận động vừa/tuần ≈ 7,000 bước/ngày' },
+      { icon: '🔥', label: '+200–350 kcal/Ngày', note: 'Tăng TDEE đủ để hỗ trợ maintain healthy weight' },
+      { icon: '🩸', label: 'Tiểu Đường -30–40%', note: 'Insulin sensitivity cải thiện rõ rệt từ ngưỡng này' },
+      { icon: '🦴', label: 'Bảo Vệ Xương', note: 'Weight-bearing exercise duy trì bone density dài hạn' },
+    ],
+  },
+  {
+    label: '7,500–10,000', color: '#22c55e', rgb: '34,197,94', note: 'Tốt', icon: '💪',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '7,500–10,000 bước là "sweet spot" thực tế — nghiên cứu JAMA Internal Medicine 2021 (15,000 người) xác nhận lợi ích sức khỏe plateau ở ~8,000 bước. Đây là mức đạt được 80–90% lợi ích tối đa mà không đòi hỏi thay đổi quá lớn trong lịch sinh hoạt.',
+    details: [
+      'Sweet spot 7,500–8,000 bước: nghiên cứu lớn nhất về bước chân (JAMA 2021, theo dõi 4.4 năm) cho thấy nguy cơ tử vong sớm giảm 65% so với <4,000 bước tại mức 7,000–8,000, và chỉ giảm thêm 5–8% khi tăng lên 10,000+. ROI tốt nhất tại đây.',
+      'Chất lượng bước chân quan trọng: 7,500 bước bao gồm 1–2 buổi đi bộ liên tục 15–20 phút mỗi ngày mang lại nhiều lợi ích cardiovascular hơn 10,000 bước rải rác lẻ tẻ suốt ngày. Zone 2 cardio (đi nhanh có thể nói chuyện) là dạng tốt nhất.',
+      'Sleep quality: người đạt 7,500+ bước ngủ sâu hơn và ít thức giữa đêm hơn — tăng NREM deep sleep 15–20%. Cơ chế: cơ thể tiêu hao đủ năng lượng → homeostatic sleep pressure tăng → ngủ nhanh và sâu hơn.',
+      'Cognitive benefits: đi bộ 30 phút liên tục (tương đương ~3,000 bước) tăng BDNF (brain-derived neurotrophic factor) — "phân bón cho não" — ngay sau đó. Người đạt 7,500+ bước có grey matter volume cao hơn và memory scores tốt hơn dài hạn.',
+      'Longevity marker: đây là mức bước chân dự báo tuổi thọ tốt nhất theo nghiên cứu. Mỗi 2,000 bước tăng từ 7,500 lên 10,000 giảm thêm 8–11% nguy cơ tử vong sớm — tuy nhiên lợi ích này nhỏ hơn nhiều so với bước nhảy từ <5,000 lên 7,500.',
+      'Duy trì dài hạn: người đạt 7,500+ bước hằng ngày trong 6+ tháng hiếm khi bỏ thói quen — vì ở mức này đã cảm nhận rõ sự khác biệt về năng lượng, giấc ngủ, và mood mỗi ngày. Self-reinforcing loop tích cực.',
+    ],
+    points: [
+      { icon: '🏆', label: 'Sweet Spot ROI Tốt Nhất', note: '80–90% lợi ích tối đa — không cần phải đạt 10,000' },
+      { icon: '🧠', label: 'BDNF Tăng Ngay', note: 'Đi 30 phút liên tục tăng "phân bón não" tức thì' },
+      { icon: '😴', label: 'Deep Sleep +15–20%', note: 'Cơ thể tiêu hao đủ năng lượng → ngủ sâu và nhanh hơn' },
+      { icon: '📉', label: 'Tử Vong Sớm -65%', note: 'So với <4,000 bước — theo JAMA Internal Medicine 2021' },
+    ],
+  },
+  {
+    label: '> 10,000', color: '#14b8a6', rgb: '20,184,166', note: 'Xuất sắc', icon: '🌟',
+    img: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=80&auto=format&fit=crop',
+    keyFact: '>10,000 bước/ngày là mức "highly active" — đạt được bằng kết hợp lifestyle active (không chỉ tập gym) hoặc công việc đòi hỏi vận động. Lợi ích sức khỏe tiếp tục tăng nhẹ nhưng phần lớn đã được nhận ở 7,500–8,000. Ở mức này, quality > quantity — cách đi quan trọng hơn số bước.',
+    details: [
+      'Con số 10,000 đến từ đâu: máy đếm bước Nhật "Manpo-kei" (万歩計) năm 1964 — tên thiết bị có nghĩa là "10,000 bước meter". Không có nghiên cứu khoa học nào đặt ra con số 10,000 ban đầu. Tuy nhiên, đây là con số marketing hiệu quả đã trở thành benchmark toàn cầu.',
+      'Lợi ích thực sự ở 10,000+: tiếp tục giảm nguy cơ ung thư đại trực tràng (30–40% so với <3,000), cải thiện lipid profile, và giữ weight off hiệu quả hơn. Đặc biệt lợi ích rõ nhất là với người có tiền sử gia đình ung thư đại tràng.',
+      'Running vs. walking ở mức này: nếu 10,000 bước đạt được qua chạy bộ ~45–50 phút, lợi ích cardiovascular cao hơn nhiều so với đạt qua đi bộ nhẹ cả ngày. Zone 2 và Zone 4 cardio (interval) trong walking sessions là "chất lượng cao" hơn.',
+      'Recovery cần thiết: người thường xuyên >12,000–15,000 bước/ngày (ví dụ: hướng dẫn viên tour, y tá, nhân viên warehouse) cần chú ý overuse injuries — đặc biệt plantar fasciitis, shin splints, và knee stress. Giày tốt và stretching hằng ngày là bắt buộc.',
+      'Zone 2 walking: đi bộ nhanh đủ để nhịp tim đạt 60–70% max (có thể nói nhưng hơi thở nhanh) trong 20–30 phút liên tục là loại bài tập aerobic tốt nhất cho mitochondrial health và longevity — dễ đạt được ở mức 10,000+ bước.',
+      'Tracking mindset: ở mức này, theo dõi HRV (heart rate variability) bên cạnh bước chân cho thấy recovery quality. Ngày HRV thấp (sau stress hoặc ngủ kém) → reduce steps về 7,000–8,000 thay vì cố đạt 10,000+. Listen to your body > hit the number.',
+    ],
+    points: [
+      { icon: '🏅', label: 'Highly Active Lifestyle', note: 'Trên ngưỡng khuyến nghị — lợi ích tiếp tục tăng nhẹ' },
+      { icon: '🎽', label: 'Zone 2 Walking = Longevity', note: '20–30 phút liên tục trong zone tim 60–70% tốt nhất' },
+      { icon: '🦵', label: 'Chú Ý Overuse Injury', note: 'Plantar fasciitis, shin splints — giày tốt + stretching' },
+      { icon: '📊', label: 'HRV > Bước Chân Mù Quáng', note: 'HRV thấp → giảm bước về 7,000–8,000 để phục hồi' },
+    ],
+  },
 ];
 
 function TrackerModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
@@ -194,6 +284,82 @@ function TrackerModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   );
 }
 
+function StepsModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = STEPS_RANGES[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+            <div className="text-3xl font-black" style={{ color: item.color }}>{item.label}</div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `rgba(${item.rgb},0.6)` }}>Mức {idx + 1}/{STEPS_RANGES.length}</p>
+          <h2 className="font-bold text-xl md:text-2xl mb-1 leading-snug" style={{ color: item.color }}>{item.label} bước/ngày</h2>
+          <p className="text-base font-semibold mb-5" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.note}</p>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {STEPS_RANGES.length}</span>
+            <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function RevealBlock({ children, delay = 0, className = '' }) {
   const [v, setV] = useState(false);
   const ref = useRef(null);
@@ -218,6 +384,7 @@ export default function ToolsLifestyleTrackerPage() {
     try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch { return {}; }
   });
   const [trackerModal, setTrackerModal] = useState(null);
+  const [stepsModal, setStepsModal] = useState(null);
 
   const InfoBtn = ({ fieldIdx }) => {
     const f = TRACKER_FIELDS[fieldIdx];
@@ -406,10 +573,17 @@ export default function ToolsLifestyleTrackerPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Hướng Dẫn Bước Chân</h2>
         <div className="space-y-2">
           {STEPS_RANGES.map((r, i) => (
-            <div key={i} className="flex items-center gap-3 p-3 rounded-xl border border-border">
-              <div className="w-3 h-3 rounded-full" style={{ background: r.color }} />
-              <span className="text-lg font-medium text-text w-32">{r.label}</span>
-              <span className="text-base text-muted">{r.note}</span>
+            <div key={i}
+              className="group flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all duration-200"
+              style={{ borderColor: stepsModal === i ? `rgba(${r.rgb},0.45)` : 'var(--border)', background: stepsModal === i ? `rgba(${r.rgb},0.07)` : 'transparent' }}
+              onClick={() => setStepsModal(i)}>
+              <div className="w-3 h-3 rounded-full shrink-0" style={{ background: r.color }} />
+              <span className="text-lg font-medium text-text w-32 shrink-0">{r.label}</span>
+              <span className="text-base text-muted flex-1">{r.note}</span>
+              <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                style={{ color: r.color, background: `rgba(${r.rgb},0.1)`, border: `1px solid rgba(${r.rgb},0.25)` }}>
+                Chi tiết →
+              </span>
             </div>
           ))}
         </div>
@@ -459,6 +633,16 @@ export default function ToolsLifestyleTrackerPage() {
           onNext={() => setTrackerModal(i => Math.min(TRACKER_FIELDS.length - 1, i + 1))}
           hasPrev={trackerModal > 0}
           hasNext={trackerModal < TRACKER_FIELDS.length - 1}
+        />
+      )}
+      {stepsModal !== null && (
+        <StepsModal
+          idx={stepsModal}
+          onClose={() => setStepsModal(null)}
+          onPrev={() => setStepsModal(i => Math.max(0, i - 1))}
+          onNext={() => setStepsModal(i => Math.min(STEPS_RANGES.length - 1, i + 1))}
+          hasPrev={stepsModal > 0}
+          hasNext={stepsModal < STEPS_RANGES.length - 1}
         />
       )}
     </div>

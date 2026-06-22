@@ -116,11 +116,106 @@ const PREP_TEMPLATE = [
 ];
 
 const SCHEDULE = [
-  { step: 1, time: '0–5 phút', action: 'Chuẩn bị', desc: 'Rã đông thịt (nếu cần), vo gạo/nấu cơm, bật bếp, lấy rau ra.' },
-  { step: 2, time: '5–15 phút', action: 'Nấu đạm', desc: 'Luộc gà hoặc áp chảo cá. Song song luộc trứng 8–10 phút.' },
-  { step: 3, time: '15–25 phút', action: 'Xào rau', desc: 'Xào 2 loại rau khác nhau. Luộc thêm 1 loại nếu muốn.' },
-  { step: 4, time: '25–35 phút', action: 'Phân chia', desc: 'Chia tinh bột, đạm, rau vào hộp. Cân bằng theo đĩa ăn chuẩn.' },
-  { step: 5, time: '35–45 phút', action: 'Bảo quản', desc: 'Để nguội trước khi đậy nắp. Tủ lạnh 3 ngày, tủ đông 1 tuần.' },
+  {
+    step: 1, time: '0–5 phút', action: 'Chuẩn bị', desc: 'Rã đông thịt (nếu cần), vo gạo/nấu cơm, bật bếp, lấy rau ra.',
+    icon: '🔧', color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop',
+    keyFact: '5 phút chuẩn bị đầu tiên quyết định 80% hiệu quả của cả buổi meal prep. Rã đông sai cách là nguyên nhân phổ biến nhất gây ngộ độc thực phẩm — vi khuẩn nhân đôi mỗi 20 phút ở nhiệt độ phòng. Mise en place (chuẩn bị đồ dùng trước) là kỹ thuật của đầu bếp chuyên nghiệp giúp giảm 40–50% thời gian bếp.',
+    details: [
+      'Rã đông thịt đúng cách: chuyển từ tủ đông xuống ngăn mát từ tối hôm trước (8–12h) là phương pháp an toàn nhất. KHÔNG rã đông ở nhiệt độ phòng — vùng nhiệt nguy hiểm (4°C–60°C) là môi trường vi khuẩn nhân đôi mỗi 20 phút. Nếu cần nhanh: ngâm túi kín trong nước lạnh, thay nước mỗi 30 phút.',
+      'Mise en place (chuẩn bị trước): kỹ thuật của đầu bếp chuyên nghiệp — lấy hết hộp đựng, dao, thớt, nồi, chảo ra trước khi bắt đầu. Không phải tìm từng thứ khi đang nấu. Giảm 40–50% thời gian bếp so với không chuẩn bị.',
+      'Vo gạo lứt và tỉ lệ nước: vo 2–3 lần cho đến khi nước bớt đục. Tỉ lệ: 1 cup gạo lứt : 2–2.5 cups nước (nhiều hơn gạo trắng do cám cứng). Ngâm trước 30 phút giúp gạo chín đều và mềm hơn. Nấu bật rice cooker và tiếp tục làm các việc khác.',
+      'Batch cooking mindset: ngay từ đầu phải think in batches — nấu nhiều hơn mức cần, phân chia sau. Nấu 400g gà thay vì 200g không tốn thêm thời gian đáng kể nhưng cho protein cho 2 ngày. Lên kế hoạch số bữa ăn trước khi mua nguyên liệu.',
+      'Kiểm tra inventory trước khi bắt đầu: check tủ lạnh xem đã có gì, thiếu gì. Plan combo bữa ăn — gà hôm nay ăn với rau gì, nước chấm nào. Biết trước plan giúp không phải dừng giữa chừng để nghĩ.',
+      'An toàn thực phẩm từ bước đầu: rửa tay 20 giây với xà phòng trước khi bắt đầu và sau khi chạm thịt sống. Dùng thớt riêng cho thịt sống và rau (màu khác nhau). Cross-contamination là nguyên nhân phổ biến nhất gây food poisoning tại gia.',
+    ],
+    points: [
+      { icon: '❄️', label: 'Rã Đông Tủ Lạnh 8–12h', note: 'An toàn nhất — tránh vùng nhiệt 4–60°C vi khuẩn nhân đôi mỗi 20 phút' },
+      { icon: '🍳', label: 'Mise en Place Trước', note: 'Đầu bếp pro lấy hết đồ dùng ra trước — giảm 40–50% thời gian bếp' },
+      { icon: '🌾', label: 'Ngâm Gạo Lứt 30 Phút', note: 'Gạo lứt ngâm trước → chín đều hơn, mềm hơn, ít tốn nước hơn' },
+      { icon: '🔢', label: 'Think in Batches', note: 'Nấu 400g thay 200g không tốn thêm thời gian — protein đủ 2 ngày' },
+    ],
+  },
+  {
+    step: 2, time: '5–15 phút', action: 'Nấu đạm', desc: 'Luộc gà hoặc áp chảo cá. Song song luộc trứng 8–10 phút.',
+    icon: '🍳', color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1604503468506-a8da13d11d36?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Gà ức là protein king của meal prep: 31g protein/100g, ít fat, bảo quản 3–4 ngày. Kỹ thuật nấu protein đúng cách giúp gà không bị khô cứng — đây là vấn đề phổ biến nhất khiến người ta bỏ meal prep. Luộc sôi sùng sục là lỗi kỹ thuật cơ bản nhất.',
+    details: [
+      'Luộc gà ức đúng cách (poaching): nước lạnh + gà ức → đun sôi → hạ lửa nhỏ nhất → luộc 12–15 phút (tùy độ dày). KHÔNG luộc sôi sùng sục — nhiệt độ cao làm protein co rút nhanh, mất nước, gà khô xơ. Nhiệt độ bên trong đạt 74°C là chín hoàn hảo.',
+      'Áp chảo đúng kỹ thuật (pan-sear): chảo nóng đỏ trước khi cho gà/cá vào (dầu bốc khói nhẹ). 3–4 phút mỗi mặt với lửa trung-cao. KHÔNG đậy nắp khi áp chảo — hơi nước tích tụ mất màu vàng caramel. Maillard reaction tạo ra hàng trăm hợp chất hương vị ở bề mặt.',
+      'Song song luộc trứng: trứng từ tủ lạnh cho vào nước nguội → đun sôi → 8 phút (lòng đỏ chín hoàn toàn cho meal prep). Ngay khi tắt bếp, chuyển vào tô nước đá lạnh 5 phút — dừng cooking process và bóc vỏ dễ hơn. Bảo quản vỏ còn nguyên 7 ngày trong tủ lạnh.',
+      'Tính lượng đạm cần nấu: thịt mất ~35% trọng lượng sau nấu do nước bốc hơi. Muốn 4 bữa × 100g cooked → cần nấu ~615g thịt tươi. Nấu dư 10–15% để có buffer cho ngày lỡ kế hoạch hoặc ăn thêm bữa.',
+      'Đa dạng nguồn đạm: lý tưởng là làm 2 nguồn song song — gà ức (đạm cơ bản) + trứng luộc (tiện lợi, không cần ăn nóng) hoặc cá (omega-3). Tận dụng tối đa 2 bếp: gà trên bếp chính, trứng trên bếp phụ.',
+      'Rest time cho thịt: sau khi nấu xong, để thịt nghỉ 5 phút trước khi cắt — juice phân phối lại vào thịt thay vì chảy ra hết khi cắt ngay. Cắt khi còn ấm (không quá nóng, không quá nguội) — dễ thao tác nhất và ít bị vụn.',
+    ],
+    points: [
+      { icon: '🌡️', label: '74°C = Gà Chín Hoàn Hảo', note: 'Lửa nhỏ sau khi sôi — không sùng sục → gà mềm, không khô xơ' },
+      { icon: '🔥', label: 'Chảo Nóng Đỏ Trước Khi Cho Vào', note: 'Maillard reaction → caramel bề mặt → hàng trăm hợp chất hương vị' },
+      { icon: '🥚', label: 'Trứng Nước Lạnh → 8 Phút', note: 'Nước đá sau tắt bếp — dừng cooking, bóc vỏ dễ, bảo quản 7 ngày' },
+      { icon: '⚖️', label: '615g Tươi = 4 Bữa 100g', note: 'Thịt mất ~35% sau nấu — tính ngược để mua đúng lượng, tránh thiếu' },
+    ],
+  },
+  {
+    step: 3, time: '15–25 phút', action: 'Xào rau', desc: 'Xào 2 loại rau khác nhau. Luộc thêm 1 loại nếu muốn.',
+    icon: '🥢', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Xào rau đúng kỹ thuật giữ lại >85% vitamin và phytonutrients. Luộc nước sôi mất 20–30% vitamin C vào nước; xào nhanh nhiệt cao mất <15%. Hai loại rau khác nhau = đa dạng phytonutrient và tránh ngán sau 3 ngày.',
+    details: [
+      'Kỹ thuật stir-fry đúng: chảo hoặc wok nóng đỏ, dầu smoking point cao (dầu hướng dương, dầu cám gạo — không dùng dầu ô liu extra virgin vì điểm khói thấp). Tỏi vào trước 10 giây, sau đó rau. Lửa to nhất. Xào liên tục 3–5 phút, không đậy nắp. Rau còn hơi cứng là đúng độ.',
+      'Thứ tự xào theo độ cứng: rau cứng vào trước (cà rốt, su su, broccoli cắt nhỏ), rau mềm sau (rau muống, cải thảo, đậu que). Quy tắc: rau cứng vào trước 1–2 phút rồi mới cho rau mềm. Sai thứ tự → rau cứng chưa chín, rau mềm đã nát.',
+      'Hấp vs. luộc vs. xào: hấp tốt nhất (giữ >90% vitamin C), luộc mất 20–30% vào nước, xào nhanh mất <15%. Tuy nhiên xào có ưu điểm: dầu giúp hấp thụ vitamin A, E, K, carotenoids (fat-soluble). Trường hợp lý tưởng: hấp broccoli, xào rau lá xanh.',
+      'KHÔNG cho thêm nước khi xào rau: nước làm rau bị luộc thay vì xào, mất màu xanh tươi và tạo nước thừa trong hộp meal prep. Rau tự ra nước trong quá trình xào là bình thường — đây là nước rau, không phải thiếu nước.',
+      'Ráo nước là bước không thể bỏ: sau xào/luộc, để rau trên rổ hoặc trải mâm 3–5 phút. Hơi nóng bốc hơi, không đọng đáy hộp. Rau đổ vào hộp còn ẩm → sau 2–3 ngày thành vũng nước → rau nhớt. Đây là lý do #1 khiến meal prep rau thất bại.',
+      '2 loại rau = 2 trải nghiệm: súp lơ hôm nay ăn với gà nước mắm chanh, đậu que ngày mai ăn với cá sốt cà. Đa dạng không chỉ về dinh dưỡng mà còn texture và hương vị. Làm cùng 1 loại rau 3 ngày là lý do #1 gây ngán và bỏ meal prep.',
+    ],
+    points: [
+      { icon: '🔥', label: 'Lửa To + Chảo Nóng Đỏ', note: 'Stir-fry đúng: xào nhanh nhiệt cao — giữ màu xanh, giữ dinh dưỡng' },
+      { icon: '📋', label: 'Rau Cứng Trước 1–2 Phút', note: 'Cà rốt/broccoli trước, rau lá sau — tránh cứng sống hoặc nát nhũn' },
+      { icon: '💧', label: 'Ráo Nước Trước Khi Hộp', note: 'Quan trọng nhất: rau ẩm trong hộp → nhớt sau 1 ngày — không bỏ bước này' },
+      { icon: '🌈', label: '2 Loại Rau = 2 Trải Nghiệm', note: 'Đa dạng phytonutrient + tránh ngán — lý do #1 gây bỏ meal prep' },
+    ],
+  },
+  {
+    step: 4, time: '25–35 phút', action: 'Phân chia', desc: 'Chia tinh bột, đạm, rau vào hộp. Cân bằng theo đĩa ăn chuẩn.',
+    icon: '📦', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Phân chia đúng tỉ lệ là bước biến "nấu ăn" thành "meal prep" thực sự. Không phân chia ngay sau nấu là sai lầm phổ biến nhất: thức ăn ở nhiệt độ phòng > 2 giờ → vi khuẩn phát triển nhanh. Hộp đúng loại và label ngày là yếu tố an toàn thực phẩm.',
+    details: [
+      'Healthy Plate Model khi phân chia: 50% rau (theo volume) + 25% tinh bột + 25% đạm. Rau chiếm nửa hộp nhưng chỉ 10–15% calo bữa ăn — đây là chiến lược fill-up mà không fill-out hiệu quả nhất. Theo thể tích, không phải trọng lượng.',
+      'Phân chia ngay khi còn ấm: không chờ nguội hoàn toàn mới chia. Mục tiêu: chia trong vòng 30 phút sau khi nấu xong. Thức ăn ở 4–60°C quá 2 giờ → vùng nguy hiểm. Rau ráo nước + thịt nghỉ 5 phút → bắt đầu chia ngay.',
+      'Lượng theo phần: 150–200g tinh bột (cooked) + 100–120g đạm + nhiều rau nhất có thể. Ban đầu dùng cân hoặc cup để "calibrate" mắt. Sau 3–4 lần meal prep, bạn ước lượng chính xác bằng mắt — không cần đong đo mỗi lần.',
+      'Label hộp bắt buộc: dùng băng keo y tế hoặc marker xóa được ghi ngày nấu. Hộp tủ lạnh: tối đa 3–4 ngày. Hộp tủ đông: 1–2 tuần. Rule FIFO: First In First Out — hộp cũ ăn trước. Không label dẫn đến ăn nhầm thứ tự và lãng phí.',
+      'Hộp thủy tinh (glass container) là tốt nhất: không thấm mùi, gia nhiệt trực tiếp trong microwave an toàn, nhìn thấy nội dung. Hộp nhựa BPA-free chấp nhận được nhưng không nên hâm nóng trực tiếp. Kích thước 750ml–1L phù hợp cho 1 bữa chính đầy đủ.',
+      'Để riêng hay để chung: thức ăn cơ bản (đạm + rau + tinh bột) để chung trong 1 hộp ổn. Nước chấm/sốt luôn để riêng — chan khi ăn tránh rau bị ngấm. Rau sống (salad) luôn để riêng, không prep chung với thức ăn nóng đã nấu.',
+    ],
+    points: [
+      { icon: '🍽️', label: '50% Rau + 25% Đạm + 25% Bột', note: 'Healthy Plate Model — 50% rau theo volume chỉ chiếm 10–15% calo' },
+      { icon: '⏱️', label: 'Chia Trong 30 Phút Sau Nấu', note: 'Vùng nguy hiểm 4–60°C: vi khuẩn phát triển nhanh sau 2h nhiệt độ phòng' },
+      { icon: '🏷️', label: 'Label Ngày — FIFO', note: 'Hộp cũ hơn ăn trước — tủ lạnh 3–4 ngày, tủ đông 1–2 tuần' },
+      { icon: '🫙', label: 'Thủy Tinh 750ml–1L', note: 'Không thấm mùi, hâm microwave an toàn, nhìn thấy nội dung rõ' },
+    ],
+  },
+  {
+    step: 5, time: '35–45 phút', action: 'Bảo quản', desc: 'Để nguội trước khi đậy nắp. Tủ lạnh 3 ngày, tủ đông 1 tuần.',
+    icon: '🧊', color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Bảo quản đúng cách giữ 80–90% dinh dưỡng và hương vị trong 3 ngày. Hai lỗi phổ biến nhất: đậy nắp khi còn quá nóng (tạo hơi nước → môi trường vi khuẩn trong hộp kín) và không đánh dấu ngày nấu (ăn nhầm thứ tự, lãng phí hoặc ngộ độc).',
+    details: [
+      'Để nguội đúng cách trước tủ lạnh: để hộp mở không đậy nắp ở nhiệt độ phòng 20–30 phút. Mục tiêu: nhiệt độ xuống dưới 60°C trước khi đậy nắp và cho vào tủ. Đậy nắp sớm → hơi nước ngưng tụ bên trong → môi trường ẩm + ấm → vi khuẩn phát triển nhanh hơn dù đã trong tủ lạnh.',
+      'Không cho thức ăn nóng vào tủ lạnh ngay: nhiệt độ tủ lạnh tăng → ảnh hưởng nhiệt đến các hộp khác → giảm thời gian bảo quản của TẤT CẢ thức ăn trong tủ. Nguyên tắc: chờ không còn bốc hơi nóng, không nghi ngút khói.',
+      'Thời hạn bảo quản: tủ lạnh (4°C) — gà/cá nấu chín: 3–4 ngày; trứng luộc còn vỏ: 5–7 ngày; cơm: 3–5 ngày. Tủ đông (-18°C) — thịt/cá đã nấu: 1–2 tháng; cơm/tinh bột: 2–3 tháng. Tủ đông giảm texture nhưng an toàn dài hạn.',
+      'Sắp xếp tủ lạnh đúng nguyên tắc: shelf trên cùng → đồ chín, ăn ngay. Shelf giữa → meal prep boxes. Shelf dưới cùng → thịt cá sống (tránh nhỏ xuống đồ khác). Ngăn rau → rau sống chưa cắt. Cross-contamination trong tủ lạnh là nguyên nhân phổ biến gây food poisoning tại nhà.',
+      'Hâm nóng đúng cách: microwave 2–3 phút, đậy khăn giấy ẩm lên hộp để không bị khô. Chảo: thêm vài giọt nước, đậy nắp, lửa nhỏ 3–5 phút. Nhiệt độ trung tâm phải đạt 74°C (nóng bốc hơi) = an toàn. Chỉ hâm phần sẽ ăn — không hâm rồi để lại tủ lạnh.',
+      'Dấu hiệu meal prep hỏng: mùi lạ khác thường, màu xỉn đi (thịt xám, rau vàng), texture nhớt hoặc nhầy. Nguyên tắc: "When in doubt, throw it out." Chi phí bỏ 1 hộp meal prep (~50k) nhỏ hơn nhiều so với chi phí ngộ độc thực phẩm. Sức khỏe không đáng đánh đổi.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Nguội 20–30 Phút Trước Tủ', note: 'Đậy sớm → hơi nước + vi khuẩn trong hộp kín dù đã vào tủ lạnh' },
+      { icon: '🌡️', label: 'Tủ Lạnh 4°C → 3–4 Ngày', note: 'Gà/cá 3–4 ngày; tủ đông -18°C → 1–2 tháng an toàn' },
+      { icon: '📋', label: 'Sắp: Chín Trên, Sống Dưới', note: 'Thịt sống shelf dưới cùng — tránh nhỏ xuống đồ chín gây ngộ độc' },
+      { icon: '🔥', label: 'Hâm Đến 74°C = An Toàn', note: 'Nóng bốc hơi = đủ nhiệt. Chỉ hâm phần sẽ ăn, không hâm 2 lần' },
+    ],
+  },
 ];
 
 const TIPS = [
@@ -131,6 +226,90 @@ const TIPS = [
   { icon: '🧂', tip: 'Nêm gia vị sau khi hâm nóng, không cần cho vào hộp — giữ tươi hơn.' },
   { icon: '⏰', tip: 'Meal prep tốt nhất vào tối Chủ nhật — fresh cho thứ 2–4.' },
 ];
+
+function ScheduleModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = SCHEDULE[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.action} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl font-black"
+              style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)`, color: item.color }}>{item.step}</div>
+            <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ color: item.color, background: `rgba(${item.rgb},0.2)`, border: `1px solid rgba(${item.rgb},0.35)` }}>{item.time}</span>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{item.icon} {item.action}</h2>
+          <div className="rounded-xl p-3 mb-5 text-sm text-muted leading-relaxed"
+            style={{ borderLeft: `3px solid ${item.color}`, background: `rgba(${item.rgb},0.07)` }}>
+            <strong style={{ color: item.color }}>Key fact:</strong> {item.keyFact}
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-xs text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
+            >← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>Bước {item.step} / {SCHEDULE.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
+            >Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function PrepModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const item = PREP_TEMPLATE[idx];
@@ -233,6 +412,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function ToolsMealPrepPage() {
   const [openComp, setOpenComp] = useState(null);
   const [prepModal, setPrepModal] = useState(null);
+  const [scheduleModal, setScheduleModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -330,16 +510,20 @@ export default function ToolsMealPrepPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Lịch Nấu 45 Phút</h2>
         <p className="text-muted text-lg mb-6">Làm song song đúng thứ tự để tiết kiệm thời gian tối đa.</p>
         <div className="space-y-3">
-          {SCHEDULE.map(s => (
-            <div key={s.step} className="flex gap-4 items-start p-4 rounded-2xl border border-border bg-surface">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-black text-lg" style={{ background: `rgba(${RGB},0.15)`, color: COLOR }}>{s.step}</div>
+          {SCHEDULE.map((s, i) => (
+            <div key={s.step} className="group flex gap-4 items-center p-4 rounded-2xl border bg-surface transition-colors cursor-pointer hover:bg-white/5"
+              style={{ borderColor: scheduleModal === i ? `rgba(${s.rgb},0.45)` : 'var(--border)' }}
+              onClick={() => setScheduleModal(i)}>
+              <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-black text-lg" style={{ background: `rgba(${s.rgb},0.15)`, color: s.color }}>{s.step}</div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="font-bold text-text text-lg">{s.action}</span>
-                  <span className="text-base px-2 py-0.5 rounded-full" style={{ color: COLOR, background: `rgba(${RGB},0.1)` }}>{s.time}</span>
+                  <span className="text-sm px-2 py-0.5 rounded-full" style={{ color: s.color, background: `rgba(${s.rgb},0.1)` }}>{s.time}</span>
                 </div>
-                <p className="text-lg text-muted">{s.desc}</p>
+                <p className="text-base text-muted">{s.desc}</p>
               </div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold px-3 py-1 rounded-full shrink-0"
+                style={{ color: s.color, background: `rgba(${s.rgb},0.12)`, border: `1px solid rgba(${s.rgb},0.3)` }}>Chi tiết →</span>
             </div>
           ))}
         </div>
@@ -369,6 +553,17 @@ export default function ToolsMealPrepPage() {
           onNext={() => setPrepModal(i => Math.min(PREP_TEMPLATE.length - 1, i + 1))}
           hasPrev={prepModal > 0}
           hasNext={prepModal < PREP_TEMPLATE.length - 1}
+        />
+      )}
+
+      {scheduleModal !== null && (
+        <ScheduleModal
+          idx={scheduleModal}
+          onClose={() => setScheduleModal(null)}
+          onPrev={() => setScheduleModal(i => Math.max(0, i - 1))}
+          onNext={() => setScheduleModal(i => Math.min(SCHEDULE.length - 1, i + 1))}
+          hasPrev={scheduleModal > 0}
+          hasNext={scheduleModal < SCHEDULE.length - 1}
         />
       )}
     </div>

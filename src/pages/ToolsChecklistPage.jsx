@@ -138,12 +138,126 @@ const DAILY_ITEMS = [
 ];
 
 const WEEKLY_TARGETS = [
-  { label: 'Buổi tập sức mạnh', target: '2–4 buổi', icon: '💪', unit: 'buổi' },
-  { label: 'Buổi cardio/đi bộ dài', target: '2–5 buổi', icon: '🚶', unit: 'buổi' },
-  { label: 'Ngày ăn đủ rau', target: '≥ 5 ngày', icon: '🥦', unit: 'ngày' },
-  { label: 'Ngày ngủ ≥ 7 tiếng', target: '≥ 4 ngày', icon: '😴', unit: 'ngày' },
-  { label: 'Ngày có calm practice', target: '≥ 4 ngày', icon: '🧘', unit: 'ngày' },
-  { label: 'Ngày ghi nhật ký', target: '≥ 5 ngày', icon: '📝', unit: 'ngày' },
+  {
+    label: 'Buổi tập sức mạnh', target: '2–4 buổi', icon: '💪', unit: 'buổi',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: '2–4 buổi tập sức mạnh/tuần là ngưỡng tối ưu theo nghiên cứu: đủ để tạo thích nghi cơ học (hypertrophy, sức mạnh) mà không gây overtraining. Dưới 2 buổi thường không đủ kích thích, trên 5 buổi cùng nhóm cơ không có ngày nghỉ gây giảm hiệu quả.',
+    details: [
+      'Nguyên tắc overload tiệm tiến: cơ thích nghi và phát triển khi bị kích thích vượt ngưỡng hiện tại. Mỗi tuần tăng nhẹ — thêm 1 rep, thêm 1–2kg, hoặc giảm thời gian nghỉ. Không có overload = không có tiến bộ.',
+      'Thời điểm tập tốt nhất: chiều muộn (4–7h PM) khi nhiệt độ cơ thể cao nhất, testosterone và cortisol ở mức cân bằng tốt. Buổi sáng cũng ổn — quan trọng là nhất quán hơn là thời điểm hoàn hảo.',
+      'Compound movements trước isolation: Squat, deadlift, push-up, row là bài tập đa khớp kích hoạt nhiều nhóm cơ cùng lúc — thực hiện đầu buổi khi năng lượng cao nhất. Curl bắp tay, leg extension là isolation — làm sau.',
+      'Rest days giữa các buổi: cơ phát triển trong thời gian nghỉ, không phải lúc tập. 48 giờ nghỉ giữa 2 buổi tập cùng nhóm cơ là tối thiểu. Tập full body: 3 ngày/tuần xen kẽ. Tập split: 4–5 ngày với mỗi nhóm cơ 2×/tuần.',
+      'Dấu hiệu tập đủ: cơ mỏi rõ ràng cuối buổi nhưng không kiệt sức, đau nhức nhẹ 24–48h sau (DOMS bình thường), và thấy tiến bộ (dù nhỏ) mỗi 1–2 tuần. Không tiến bộ sau 3 tuần = cần tăng kích thích hoặc kiểm tra dinh dưỡng/ngủ.',
+      'Người mới bắt đầu từ 2 buổi/tuần: full body workout 2×/tuần đủ tạo kết quả ấn tượng trong 8–12 tuần đầu vì novice advantage. Tăng lên 3 buổi sau 2 tháng. Không cần tập nhiều hơn 4 buổi trong năm đầu tiên.',
+    ],
+    points: [
+      { icon: '📈', label: 'Overload Tiệm Tiến', note: 'Tăng nhẹ mỗi tuần — không tăng = không tiến bộ' },
+      { icon: '💤', label: '48h Nghỉ Giữa Buổi', note: 'Cơ lớn trong thời gian nghỉ — không phải lúc tập' },
+      { icon: '🏋️', label: 'Compound Trước Isolation', note: 'Squat/push-up đầu buổi khi năng lượng cao nhất' },
+      { icon: '🌱', label: 'Bắt Đầu Từ 2 Buổi', note: 'Novice advantage: kết quả ấn tượng chỉ với 2×/tuần' },
+    ],
+  },
+  {
+    label: 'Buổi cardio/đi bộ dài', target: '2–5 buổi', icon: '🚶', unit: 'buổi',
+    color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cardio Zone 2 (có thể nói chuyện nhưng hơi khó thở) là cách tốt nhất để tăng sức bền tim mạch, đốt mỡ, và cải thiện trao đổi chất. Đi bộ nhanh 30–60 phút đạt Zone 2 mà không tải nặng lên khớp như chạy bộ.',
+    details: [
+      'Zone 2 là gì: 60–70% nhịp tim tối đa (HRmax = 220 - tuổi). Ví dụ: 35 tuổi → HRmax = 185 → Zone 2 = 111–130 bpm. Cảm giác: thở hơi nhanh, có thể nói chuyện nhưng không thể hát. Test đơn giản nhất.',
+      'Tại sao Zone 2 tốt nhất: kích hoạt ty thể (mitochondria) trong cơ chuyển hóa mỡ thành năng lượng. Đây là nền tảng của mọi vận động viên chuyên nghiệp — họ dành 80% thời gian tập ở Zone 2.',
+      'Đi bộ vs chạy bộ: đi bộ nhanh tạo ít tác động lên khớp gối và cổ chân hơn chạy bộ tới 3 lần. Cho người thừa cân, người mới, hoặc người có vấn đề khớp — đi bộ nhanh là lựa chọn cardio lý tưởng.',
+      'NEAT (Non-Exercise Activity Thermogenesis): các hoạt động trong ngày (đi lại, leo cầu thang, đứng) đốt 15–50% tổng calo hàng ngày — nhiều hơn 1 buổi tập gym. Tăng bước chân trong ngày đóng góp vào mục tiêu cardio.',
+      'Kết hợp sức mạnh và cardio: tập sức mạnh ngày chẵn (Thứ 2, 4, 6), đi bộ dài ngày lẻ (Thứ 3, 5, 7). Hoặc cardio Zone 2 30 phút SAU tập sức mạnh (glycogen đã cạn → đốt mỡ hiệu quả hơn).',
+      'Đo tiến bộ: sau 4–8 tuần đi bộ nhất quán, cùng tốc độ nhưng nhịp tim thấp hơn = tim khỏe mạnh hơn. Hoặc: cùng nhịp tim nhưng tốc độ cao hơn. Đây là cải thiện thực sự của aerobic fitness.',
+    ],
+    points: [
+      { icon: '💓', label: 'Zone 2: 60–70% HRmax', note: 'Có thể nói chuyện nhưng không thể hát — đúng cường độ' },
+      { icon: '🏃', label: 'Đi Bộ Tốt Như Chạy', note: '3x ít tải khớp hơn chạy — phù hợp mọi người' },
+      { icon: '⚡', label: 'NEAT Quan Trọng', note: 'Bước chân cả ngày đốt nhiều calo hơn 1 buổi gym' },
+      { icon: '📉', label: 'Nhịp Tim Thấp Hơn Theo Tuần', note: 'Cùng tốc độ, nhịp tim giảm = tim đang khỏe lên' },
+    ],
+  },
+  {
+    label: 'Ngày ăn đủ rau', target: '≥ 5 ngày', icon: '🥦', unit: 'ngày',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'WHO khuyến nghị ít nhất 400g rau và trái cây/ngày (5 phần). Người Việt Nam trung bình chỉ đạt 60–70% mức này. Rau xanh là thực phẩm duy nhất có mật độ dinh dưỡng cao (vitamins, minerals, fiber, phytochemicals) với mật độ calo thấp — không thể thay thế bằng bất kỳ supplement nào.',
+    details: [
+      'Tại sao 5 ngày/tuần thay vì 7 ngày: mục tiêu thực tế hơn để duy trì lâu dài. Ăn đủ rau 5 ngày và thực sự duy trì 52 tuần hiệu quả hơn ăn "hoàn hảo" 7 ngày rồi bỏ sau 2 tuần.',
+      'Fiber là lý do số 1: 25–38g chất xơ/ngày giảm nguy cơ ung thư đại trực tràng 17%, bệnh tim 24%, và tiểu đường type 2 18%. Rau xanh là nguồn fiber dễ tiếp cận nhất — 100g rau xanh cung cấp 2–4g fiber.',
+      'Đa dạng màu sắc = đa dạng phytochemicals: xanh lá (chlorophyll, folate), đỏ/cam (lycopene, beta-carotene), tím (anthocyanins), trắng/vàng (quercetin, allicin). Mỗi màu bảo vệ các cơ quan khác nhau — không có loại rau nào "tốt nhất".',
+      'Rau nấu chín vs sống: một số chất dinh dưỡng tăng khi nấu (lycopene trong cà chua, beta-carotene trong cà rốt), một số giảm (vitamin C, folate). Nguyên tắc thực tế: đa dạng cả sống lẫn chín — không cần phân tích quá nhiều.',
+      'Cách dễ nhất để ăn đủ rau: thêm rau vào bất kỳ bữa nào đã có sẵn. Trứng chiên thêm cải, phở thêm rau sống, cơm trắng thêm canh rau. Không cần nấu món rau riêng nếu là rào cản.',
+      'Rau đông lạnh hoàn toàn hợp lệ: được đông lạnh ngay sau thu hoạch ở đỉnh điểm dinh dưỡng — thường giữ được nhiều vitamin hơn rau tươi đã để qua nhiều ngày. Tiện lợi và rẻ hơn.',
+    ],
+    points: [
+      { icon: '🌈', label: 'Ăn Đủ Màu Sắc', note: 'Mỗi màu rau bảo vệ cơ quan khác nhau — đa dạng là chìa khóa' },
+      { icon: '🧵', label: '25–38g Fiber/Ngày', note: 'Rau xanh là nguồn fiber tốt nhất — giảm nguy cơ ung thư 17%' },
+      { icon: '❄️', label: 'Rau Đông Lạnh Cũng Tốt', note: 'Đông lạnh ngay sau thu hoạch — thường tốt hơn rau để lâu ngày' },
+      { icon: '➕', label: 'Thêm Vào Bữa Có Sẵn', note: 'Không cần nấu riêng — thêm vào trứng, phở, cơm đang có' },
+    ],
+  },
+  {
+    label: 'Ngày ngủ ≥ 7 tiếng', target: '≥ 4 ngày', icon: '😴', unit: 'ngày',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Ngủ đủ 7–9 tiếng/đêm ít nhất 4 ngày/tuần là ngưỡng tối thiểu để ngăn tích lũy "sleep debt". Ngủ không đủ tích lũy — ảnh hưởng đến hormone, trao đổi chất, nhận thức, và hệ miễn dịch theo cách cộng dồn không hồi phục hoàn toàn chỉ bằng ngủ bù.',
+    details: [
+      'Sleep debt (nợ ngủ) là có thật: mỗi đêm ngủ thiếu 1 tiếng tích lũy thâm hụt chức năng nhận thức. Sau 1 tuần ngủ 6 tiếng/đêm, hiệu suất nhận thức giảm tương đương như thức 24 tiếng liên tục — nhưng người đó cảm thấy bình thường.',
+      'Hormone bị ảnh hưởng: leptin (hormone no) giảm 18%, ghrelin (hormone đói) tăng 24% sau chỉ 2 đêm ngủ <6 tiếng. Kết quả: ăn thêm 300–500 kcal/ngày mà không hay. Đây là lý do số 1 nhiều người thất bại khi ăn kiêng nhưng thiếu ngủ.',
+      'Giấc ngủ và cơ bắp: 70% GH (growth hormone) được tiết ra trong giai đoạn ngủ sâu (slow-wave sleep). Thiếu ngủ = thiếu GH = cơ phục hồi kém sau tập, tổng hợp protein cơ giảm 18–25%. Tập gym mà ngủ kém = lãng phí.',
+      'Circadian rhythm: đồng hồ sinh học điều chỉnh hơn 20,000 gene. Ngủ sai giờ (ngủ ngày, thức khuya bất quy tắc) phá vỡ rhythm này — ngay cả khi tổng số giờ ngủ đủ. Nhất quán giờ ngủ/thức là yếu tố quan trọng nhất.',
+      'Melatonin tự nhiên: ánh sáng xanh (màn hình) ức chế melatonin hiệu quả như ánh sáng ban ngày. Tắt màn hình 30–60 phút trước ngủ, hoặc dùng chế độ night mode và giảm độ sáng. Đây là can thiệp đơn giản nhất có tác động lớn nhất.',
+      'Nếu không thể ngủ đủ mọi đêm: 4 đêm ≥ 7 tiếng/tuần vẫn đủ để duy trì chức năng tốt. Ưu tiên "không bỏ" hơn là "hoàn hảo". Nếu có 3 ngày ngủ ít (deadline, con ốm), bù bằng ngủ trưa 20 phút trong ngày đó.',
+    ],
+    points: [
+      { icon: '💸', label: 'Sleep Debt Tích Lũy', note: 'Mỗi đêm thiếu 1 tiếng cộng dồn — không hồi phục bằng ngủ bù' },
+      { icon: '🍔', label: 'Thiếu Ngủ = Đói Hơn', note: 'Leptin -18%, Ghrelin +24% → +300–500 kcal/ngày' },
+      { icon: '💪', label: 'GH Tiết Ban Đêm', note: '70% tăng trưởng cơ xảy ra khi ngủ — tập mà thiếu ngủ = lãng phí' },
+      { icon: '⏰', label: 'Nhất Quán Giờ Thức', note: 'Cố định giờ dậy kể cả cuối tuần — quan trọng hơn giờ ngủ' },
+    ],
+  },
+  {
+    label: 'Ngày có calm practice', target: '≥ 4 ngày', icon: '🧘', unit: 'ngày',
+    color: '#6366f1', rgb: '99,102,241',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Calm practice (thực hành bình tâm) — bất kỳ hoạt động nào có chủ đích làm chậm hệ thần kinh: thở, thiền, đi bộ không điện thoại, viết nhật ký, đọc sách giấy. 5–10 phút/ngày × 4 ngày/tuần nhất quán giảm cortisol đo được và tăng HRV sau 4 tuần.',
+    details: [
+      'Định nghĩa rộng của calm practice: không nhất thiết phải ngồi thiền theo kiểu truyền thống. Bất kỳ hoạt động nào kích hoạt hệ thần kinh phó giao cảm có chủ đích — thở chậm, thiền, yoga, đi bộ trong thiên nhiên không xem điện thoại, tắm nước ấm có ý thức.',
+      'Chronically elevated cortisol: stress kéo dài (không có calm practice) giữ cortisol cao liên tục — gây tích trữ mỡ bụng, giảm testosterone, suy giảm miễn dịch, và làm mòn hippocampus (trí nhớ). Calm practice là "hạ cortisol theo lịch".',
+      'HRV (Heart Rate Variability) là chỉ số đo được: calm practice tăng HRV — khoảng dao động nhịp tim giữa các nhịp đập. HRV cao = hệ thần kinh linh hoạt, phục hồi tốt, stress thấp. Đo bằng nhiều smartwatch/app miễn phí.',
+      'Thiền 5 phút đủ: nghiên cứu Harvard cho thấy 8 tuần thiền 27 phút/ngày thay đổi cấu trúc não (amygdala nhỏ lại, cortex trước lớn hơn). Nhưng ngay cả 5 phút/ngày cũng đủ để giảm stress và cải thiện tập trung nếu nhất quán.',
+      'Đi bộ không điện thoại: Default Mode Network (mạng lưới não khi không tập trung vào nhiệm vụ cụ thể) cần thời gian "offline" để xử lý thông tin, tổng hợp ký ức, và sáng tạo. Scroll điện thoại chiếm mất thời gian DMN quan trọng này.',
+      'Xây dựng thói quen: gắn calm practice với anchor habit đã có (sau cà phê sáng, trước bữa tối, sau đánh răng tối). 5 phút đủ để bắt đầu. Không cần app, không cần hướng dẫn viên — chỉ cần ngồi yên và chú ý vào hơi thở.',
+    ],
+    points: [
+      { icon: '🌊', label: 'Bất Kỳ Hoạt Động Nào', note: 'Thở, thiền, đi bộ — miễn là có chủ đích và tắt điện thoại' },
+      { icon: '📊', label: 'Đo Bằng HRV', note: 'Smartwatch đo được — HRV tăng sau 4 tuần nhất quán' },
+      { icon: '🧠', label: 'Hạ Cortisol Mãn Tính', note: 'Cortisol cao liên tục = mỡ bụng + suy giảm miễn dịch' },
+      { icon: '⚓', label: 'Gắn Với Anchor Habit', note: 'Sau cà phê sáng hoặc trước ngủ — giảm ma sát quyết định' },
+    ],
+  },
+  {
+    label: 'Ngày ghi nhật ký', target: '≥ 5 ngày', icon: '📝', unit: 'ngày',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Journaling (ghi nhật ký) là công cụ tâm lý được nghiên cứu nhiều nhất với chi phí bằng 0. 15–20 phút viết về cảm xúc và suy nghĩ × 3–5 ngày/tuần cải thiện sức khỏe tâm thần, giảm triệu chứng lo âu và trầm cảm, và tăng khả năng xử lý stress theo nghiên cứu của James Pennebaker (UT Austin).',
+    details: [
+      'Expressive writing (viết biểu đạt): viết về cảm xúc và suy nghĩ (không chỉ sự kiện) giúp não "mã hóa" và xử lý trải nghiệm khó khăn. Prefrontal cortex (lý trí) kiểm soát amygdala (cảm xúc) tốt hơn khi được luyện tập qua viết.',
+      'Nhật ký biết ơn (gratitude journaling): viết 3 điều biết ơn mỗi ngày trong 3 tuần tăng mức độ hạnh phúc 25% và giảm triệu chứng trầm cảm 23% (nghiên cứu Martin Seligman). Não tìm kiếm những gì nó tập trung vào — viết biết ơn thay đổi bộ lọc chú ý.',
+      'Morning Pages (Julia Cameron): 3 trang viết tay ngay sau khi thức dậy, không lọc, không chỉnh sửa. Mục tiêu là "xả" các suy nghĩ lặp đi lặp lại ra khỏi đầu để não sạch hơn cho ngày mới. Không cần hay, không cần đọc lại.',
+      'Nhật ký tập luyện: ghi lại workout mỗi buổi tạo accountability và dễ theo dõi overload tiệm tiến. Người ghi nhật ký tập luyện đạt mục tiêu fitness nhanh hơn 40% theo nghiên cứu 2019 (Journal of Medical Internet Research).',
+      'Ghi 1 dòng cũng đủ: không cần viết cả trang mỗi ngày. "Hôm nay tôi cảm thấy..." + 1–2 câu là đủ để kích hoạt lợi ích tâm lý. Bắt đầu nhỏ → duy trì lâu dài quan trọng hơn viết nhiều nhưng không nhất quán.',
+      'Kỹ thuật review: cuối tuần đọc lại nhật ký tuần đó trong 5 phút. Nhận ra pattern (ngày nào tâm trạng tốt/tệ, tại sao), điều chỉnh tuần sau. Đây là cơ chế feedback loop mạnh nhất để cải thiện chất lượng cuộc sống.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Prefrontal Kiểm Soát Amygdala', note: 'Viết về cảm xúc giúp lý trí điều tiết cảm xúc tốt hơn' },
+      { icon: '🙏', label: 'Biết Ơn 3 Điều/Ngày', note: '+25% hạnh phúc sau 3 tuần — thay đổi bộ lọc chú ý của não' },
+      { icon: '1️⃣', label: '1 Dòng Cũng Đủ', note: 'Nhất quán quan trọng hơn độ dài — bắt đầu thật nhỏ' },
+      { icon: '🔄', label: 'Review Cuối Tuần', note: 'Đọc lại 5 phút → nhận ra pattern → điều chỉnh tuần sau' },
+    ],
+  },
 ];
 
 const REVIEW_QS = [
@@ -156,6 +270,81 @@ const REVIEW_QS = [
 const LS_DAILY = 'healthapp_f_daily';
 const LS_WEEKLY = 'healthapp_f_weekly';
 const LS_REVIEW = 'healthapp_f_review';
+
+function WeeklyModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = WEEKLY_TARGETS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `rgba(${item.rgb},0.6)` }}>Mục tiêu hàng tuần</p>
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{item.icon} {item.label}</h2>
+          <p className="text-sm font-semibold mb-5" style={{ color: `rgba(${item.rgb},0.7)` }}>Mục tiêu: {item.target}</p>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span style={{ color: 'rgba(209,213,219,0.85)' }}>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {WEEKLY_TARGETS.length}</span>
+            <button onClick={() => hasNext && onNext()}
+              className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function DailyCard({ item, idx, checked, onToggle, onOpen }) {
   const [hovered, setHovered] = useState(false);
@@ -311,6 +500,7 @@ export default function ToolsChecklistPage() {
   });
   const [reviewOpen, setReviewOpen] = useState(false);
   const [dailyModal, setDailyModal] = useState(null);
+  const [weeklyModal, setWeeklyModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -414,23 +604,36 @@ export default function ToolsChecklistPage() {
         <p className="text-muted text-lg mb-6">Nhập số liệu thực tế tuần này. Không cần hoàn hảo — chỉ cần trung thực.</p>
         <div className="space-y-3">
           {WEEKLY_TARGETS.map((item, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-surface p-4">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl">{item.icon}</span>
-                <div className="flex-1">
-                  <div className="text-lg font-medium text-text">{item.label}</div>
-                  <div className="text-base text-muted">Mục tiêu: {item.target}</div>
+            <div key={i} className="rounded-2xl border bg-surface p-4 transition-colors duration-200 group"
+              style={{ borderColor: weeklyModal === i ? `rgba(${item.rgb},0.45)` : 'var(--border)' }}>
+              <div className="flex items-center gap-3 mb-2">
+                <button onClick={() => setWeeklyModal(i)}
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-2xl shrink-0 transition-all duration-200 hover:scale-110"
+                  style={{ background: `rgba(${item.rgb},0.12)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
+                  {item.icon}
+                </button>
+                <div className="flex-1 min-w-0 cursor-pointer" onClick={() => setWeeklyModal(i)}>
+                  <div className="text-base font-medium text-text leading-tight">{item.label}</div>
+                  <div className="text-xs text-muted">Mục tiêu: {item.target}</div>
                 </div>
-                <input
-                  type="number" min="0" max="7"
-                  value={weekly[i] ?? ''}
-                  onChange={e => setWeeklyVal(i, e.target.value)}
-                  placeholder="0"
-                  className="w-16 text-center px-2 py-1.5 rounded-xl text-lg font-bold border bg-transparent"
-                  style={{ borderColor: `rgba(${RGB},0.3)`, color: COLOR }}
-                />
+                <div className="flex items-center gap-2 shrink-0">
+                  <input
+                    type="number" min="0" max="7"
+                    value={weekly[i] ?? ''}
+                    onChange={e => setWeeklyVal(i, e.target.value)}
+                    onClick={e => e.stopPropagation()}
+                    placeholder="0"
+                    className="w-16 text-center px-2 py-1.5 rounded-xl text-lg font-bold border bg-transparent"
+                    style={{ borderColor: `rgba(${item.rgb},0.3)`, color: item.color }}
+                  />
+                  <button onClick={() => setWeeklyModal(i)}
+                    className="text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all duration-200 hover:opacity-80 opacity-0 group-hover:opacity-100 shrink-0"
+                    style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
+                    Chi tiết →
+                  </button>
+                </div>
               </div>
-              <div className="text-base text-muted text-right">{item.unit} đã thực hiện</div>
+              <div className="text-xs text-muted text-right">{item.unit} đã thực hiện</div>
             </div>
           ))}
         </div>
@@ -491,6 +694,16 @@ export default function ToolsChecklistPage() {
           onNext={() => setDailyModal(i => Math.min(DAILY_ITEMS.length - 1, i + 1))}
           hasPrev={dailyModal > 0}
           hasNext={dailyModal < DAILY_ITEMS.length - 1}
+        />
+      )}
+      {weeklyModal !== null && (
+        <WeeklyModal
+          idx={weeklyModal}
+          onClose={() => setWeeklyModal(null)}
+          onPrev={() => setWeeklyModal(i => Math.max(0, i - 1))}
+          onNext={() => setWeeklyModal(i => Math.min(WEEKLY_TARGETS.length - 1, i + 1))}
+          hasPrev={weeklyModal > 0}
+          hasNext={weeklyModal < WEEKLY_TARGETS.length - 1}
         />
       )}
     </div>

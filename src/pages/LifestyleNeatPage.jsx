@@ -666,13 +666,128 @@ function NeatModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext
   );
 }
 
+const NEAT_DAILY_CHECKLIST = [
+  {
+    title: 'Đứng dậy sau mỗi 45–60 phút ngồi', pct: '1 lần',
+    icon: '🪑', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sau 60 phút ngồi bất động, hoạt động lipoprotein lipase (LPL) — enzyme đốt mỡ chính trong cơ bắp — giảm 90%. Đứng dậy đi lại chỉ 2 phút kích hoạt lại LPL gần như tức thì.',
+    detail: 'Ngồi liên tục hơn 60 phút là hành vi có hại riêng biệt — không thể bù đắp bằng tập gym 1 tiếng sau đó. Đứng dậy thường xuyên là can thiệp NEAT quan trọng nhất cho người ngồi văn phòng.',
+    details: [
+      'LPL (lipoprotein lipase) là enzyme chuyển triglyceride từ máu vào tế bào cơ để đốt làm năng lượng. Khi cơ bắp bất động, LPL "tắt" — mỡ lưu thông trong máu thay vì được đốt trong cơ.',
+      'Quy tắc 45–60 phút: không phải 90 phút như nhiều người nghĩ. Tác động tiêu cực lên LPL và đường huyết bắt đầu rõ ràng sau 60 phút. 45 phút là ngưỡng an toàn phòng ngừa.',
+      'Chỉ cần 2 phút đứng dậy: không cần bài tập, không cần thay đồ. Đứng lấy nước, đi vệ sinh, đứng tại chỗ, xoay vai — bất kỳ hoạt động đứng và di chuyển nào đều đủ để reset LPL.',
+      'Công cụ: timer 50 phút (Pomodoro + đứng dậy), app nhắc nhở trên điện thoại/đồng hồ, hoặc đặt cốc nước nhỏ buộc phải đứng lấy nhiều lần.',
+      'Sau bữa ăn quan trọng hơn: ngồi ngay sau ăn kéo dài đỉnh glucose sau ăn. 10 phút đứng hoặc đi nhẹ sau bữa trưa cải thiện insulin response tương đương 15–20 phút đi bộ riêng.',
+      'Standing desk không đủ: đứng bất động cũng tệ nếu không xen kẽ. Cần cả hai: xen kẽ ngồi-đứng VÀ di chuyển nhỏ (lắc chân, squat nhỏ) khi đứng.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Timer 45–50 phút', note: 'Pomodoro kết hợp đứng dậy' },
+      { icon: '🔄', label: 'Ngồi ↔ Đứng', note: 'Xen kẽ, không chỉ standing desk' },
+      { icon: '💧', label: 'Cốc nước nhỏ', note: 'Buộc đứng dậy tự nhiên hơn' },
+      { icon: '🍽️', label: 'Quan trọng sau ăn', note: '10 phút = 15–20 phút đi bộ riêng' },
+    ],
+  },
+  {
+    title: 'Đi bộ sau ít nhất 1 bữa ăn hôm nay', pct: '10 phút',
+    icon: '🚶', color: '#059669', rgb: '5,150,105',
+    img: 'https://images.unsplash.com/photo-1571019613576-2b22c76fd955?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Meta-analysis 2022 xác nhận: đi bộ 10 phút sau ăn giảm đỉnh glucose 30–50% — hiệu quả hơn đi bộ 30 phút xa bữa ăn về quản lý glucose postprandial.',
+    detail: 'Cơ bắp đang co (đi bộ) hấp thu glucose qua GLUT-4 không cần insulin — giảm tải cho tuyến tụy và làm phẳng đường cong glucose sau ăn. Đây là can thiệp NEAT có bằng chứng khoa học mạnh nhất.',
+    details: [
+      'GLUT-4 cơ chế: khi cơ co, GLUT-4 transporter di chuyển lên bề mặt tế bào cơ và hấp thu glucose trực tiếp từ máu — hoàn toàn độc lập với insulin. Đây là lý do tập thể dục cải thiện đường huyết ngay cả ở người kháng insulin.',
+      'Thời điểm tối ưu: bắt đầu trong vòng 15–30 phút sau kết thúc bữa ăn — trước khi đỉnh glucose đạt mức cao nhất (~45–60 phút sau ăn). Đợi hơn 1 giờ sau ăn ít hiệu quả hơn nhiều.',
+      '"Ít nhất 1 bữa" thực tế nhất là bữa trưa: giờ nghỉ có sẵn, bữa trưa thường nhiều carb nhất trong ngày. 10 phút đi quanh văn phòng hoặc ra ngoài block đủ tạo ra sự khác biệt đo được.',
+      'Tốc độ: không cần đi nhanh. Tốc độ thoải mái (~4–5 km/h) đã kích hoạt đủ GLUT-4 trong cơ chân. Đi nhanh hơn không tăng thêm đáng kể hiệu quả giảm glucose post-meal.',
+      'Kết hợp được: vừa đi vừa nghe podcast, gọi điện cho gia đình, hoặc đi cùng đồng nghiệp. Biến walk sau ăn thành "thời gian thưởng" thay vì "phải làm".',
+      'Tác động lâu dài: thực hiện đều đặn 3 tháng cải thiện HbA1c (đường huyết dài hạn) trung bình 0.5–1% — đáng kể cho người có nguy cơ tiểu đường type 2.',
+    ],
+    points: [
+      { icon: '📉', label: 'Giảm 30–50% glucose', note: 'Trong 15–30p đầu sau ăn' },
+      { icon: '🍱', label: 'Bữa trưa dễ nhất', note: 'Nhiều carb + có giờ nghỉ' },
+      { icon: '🎧', label: 'Kết hợp podcast', note: 'Biến thành thời gian thưởng' },
+      { icon: '📊', label: 'HbA1c -0.5–1%', note: 'Sau 3 tháng đều đặn' },
+    ],
+  },
+  {
+    title: 'Đạt mục tiêu bước cá nhân', pct: '7.000+',
+    icon: '👟', color: '#34d399', rgb: '52,211,153',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mỗi 1.000 bước thêm/ngày liên kết với giảm 10–15% nguy cơ tử vong sớm — lợi ích tiếp tục đến ~8.000 bước/ngày. Con số "10.000 bước" là marketing từ 1965, không phải khoa học.',
+    detail: 'Mục tiêu bước chân cá nhân hóa — quan trọng hơn con số tuyệt đối. Baseline của bạn quyết định mục tiêu hợp lý, và đạt mục tiêu đó đều đặn bền vững hơn thỉnh thoảng vượt xa rồi lại thấp.',
+    details: [
+      '"Mục tiêu cá nhân" quan trọng hơn 10.000 bước: nếu baseline 3.000 bước/ngày, mục tiêu 5.000 là phù hợp. Tăng 1.000–1.500 bước mỗi 2–3 tuần đến khi đạt 7.000–8.000 là lộ trình bền vững nhất.',
+      'Cách thiết lập: theo dõi bước chân tự nhiên 7 ngày không cố gắng, tính trung bình, đặt mục tiêu = trung bình + 1.500 bước. Sau 3 tuần đạt đều đặn, tăng thêm 1.000.',
+      'Tracking tạo tác động: chỉ cần đo (điện thoại, đồng hồ) làm tăng trung bình 26% số bước mà không thay đổi gì khác — phản hồi nhìn thấy được tạo ra động lực tự điều chỉnh hành vi.',
+      'Chiến lược không cần thêm thời gian: cầu thang thay thang máy (+100–300 bước), gửi xe xa hơn (+400–600 bước), đi vệ sinh tầng khác (+100–200 bước), walking meeting (+500–1.000 bước).',
+      '7.500 bước là ngưỡng plateau lợi ích: nghiên cứu Harvard 2019 trên 16.000+ người cho thấy lợi ích tử vong plateau ở ~7.500 bước. 10.000 không xấu nhưng không cần thiết phải đạt được mỗi ngày.',
+      'Ngày ít bước (<50% mục tiêu): 5 phút micro-workout tại chỗ (squat, calf raise, marching) không thay thế được nhưng duy trì thói quen và giảm thiểu tác động tiêu cực của ngày ít vận động.',
+    ],
+    points: [
+      { icon: '📊', label: 'Baseline +1.500 bước', note: 'Thực tế hơn nhảy lên 10.000 ngay' },
+      { icon: '📱', label: 'Tracking +26%', note: 'Chỉ đo đã tự nhiên cải thiện' },
+      { icon: '🪜', label: 'Cầu thang + xa hơn', note: '+500–800 bước không tốn thời gian' },
+      { icon: '🎯', label: '7.500 bước', note: 'Ngưỡng plateau lợi ích sức khỏe' },
+    ],
+  },
+  {
+    title: 'Có ít nhất 1 lần vận động ngắn trong giờ làm', pct: '5 phút',
+    icon: '💪', color: '#6ee7b7', rgb: '110,231,183',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: '"Exercise snacking" — 4× micro-workout 5 phút phân bổ đều trong ngày cải thiện mood, energy và tập trung tốt hơn 1 buổi tập 20 phút liên tục (nghiên cứu 2022).',
+    detail: 'Micro-workout 3–5 phút xen kẽ trong giờ làm — không cần thay đồ, không cần thiết bị. Đủ để kích hoạt tuần hoàn, tăng BDNF và dopamine, và tạo "break" chất lượng cho não.',
+    details: [
+      '"Exercise snacking": khái niệm vận động ngắn xen kẽ trong ngày. Nghiên cứu 2022 tại McMaster University cho thấy 3× 20-second "vigorous exercise snack" cải thiện cardiorespiratory fitness tương đương 30 phút tập liên tục.',
+      'Không cần đồ gym: 10 squat, 10 push-up vào tường, 20 calf raise, 30 giây plank, hoặc vươn vai + xoay cổ 2 phút. Không gây đổ mồ hôi, không cần thay đồ, thực hiện được ngay tại bàn làm việc.',
+      'Lợi ích nhận thức tức thì: 5 phút vận động nhẹ tăng BDNF và dopamine — cải thiện tập trung 1–2 giờ tiếp theo. "Break vận động" hiệu quả hơn "break xem điện thoại" về phục hồi chú ý.',
+      'Thời điểm tốt nhất: sau 90 phút làm việc tập trung cao (khi não bắt đầu đuối), hoặc ngay sau cuộc họp căng thẳng để giải phóng cortisol tích lũy.',
+      'Tích hợp vào timer: khi timer 45–50 phút báo đứng dậy, thay vì chỉ đứng lấy nước, làm 10 squat hoặc stretch 2 phút. Biến "break bắt buộc" thành "exercise snack". Không tốn thêm thời gian.',
+      'Cộng dồn: 2 lần × 5 phút/ngày = 50 phút NEAT bổ sung/tuần — tương đương gần 1 buổi tập nhẹ thêm mỗi tuần từ những "snack" nhỏ trong giờ làm.',
+    ],
+    points: [
+      { icon: '🍎', label: 'Exercise snacking', note: '4× 5 phút tốt hơn 1× 20 phút' },
+      { icon: '🧠', label: 'BDNF + dopamine', note: 'Tập trung tốt hơn 1–2h sau' },
+      { icon: '⏰', label: 'Sau 90 phút làm', note: 'Khi não đuối là hiệu quả nhất' },
+      { icon: '📈', label: '50 phút NEAT/tuần', note: 'Từ 2× 5 phút mỗi ngày làm' },
+    ],
+  },
+  {
+    title: 'Không ngồi liên tục hơn 90 phút', pct: 'max 90p',
+    icon: '⏱️', color: '#a7f3d0', rgb: '167,243,208',
+    img: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Nghiên cứu trên 800.000 người: ngồi nhiều nhất (>8h/ngày) có nguy cơ tử vong cao hơn 73% so với nhóm ít ngồi — ngay cả sau khi điều chỉnh cho yếu tố tập luyện. Đây là nguy cơ độc lập.',
+    detail: '90 phút là giới hạn cứng — sau đó tác động tiêu cực lên trao đổi chất, tuần hoàn và cơ xương khớp tích lũy nhanh. Ngay cả người tập gym đều đặn vẫn bị ảnh hưởng nếu ngồi liên tục.',
+    details: [
+      'Tại sao 90 phút là giới hạn: đây cũng là chu kỳ Ultradian rhythm — não làm việc theo chu kỳ 90 phút tập trung cao rồi cần nghỉ. Đứng dậy sau 90 phút vừa tốt cho sinh lý vừa phù hợp nhịp não.',
+      'Tác động lên cột sống: sau 90 phút ngồi, đĩa đệm bị nén và mất nước dần. Không có mạch máu trực tiếp, đĩa đệm nhận dinh dưỡng qua cơ chế áp suất — di chuyển giúp "bơm" dịch vào đĩa đệm.',
+      'Lưu thông máu chân: ngồi > 90 phút làm chậm máu tĩnh mạch ở chân, tăng nguy cơ huyết khối tĩnh mạch sâu (DVT) đặc biệt ở người có yếu tố nguy cơ. Đây là lý do khuyến cáo đứng dậy trên chuyến bay dài.',
+      'Không giống nhau với "ngồi bao nhiêu tiếng mỗi ngày": người ngồi 8 tiếng chia nhỏ thành các đoạn 45–60 phút khác hoàn toàn về mặt sinh lý so với người ngồi 8 tiếng liên tục chỉ nghỉ ăn trưa.',
+      'Giải pháp thực tế: timer 80 phút (để break trước khi đến 90 phút), standing desk xen kẽ 20–30 phút sau mỗi 60–70 phút ngồi, hoặc walking meeting để phá vỡ các block ngồi dài.',
+      'Dấu hiệu đã ngồi quá lâu: cổ vai gáy căng, mắt mỏi, lưng dưới ê ẩm, khó tập trung — đây là tín hiệu cơ thể cần di chuyển, không phải "bình thường khi làm việc".',
+    ],
+    points: [
+      { icon: '🧠', label: 'Ultradian 90 phút', note: 'Nhịp não + cơ thể đều cần break' },
+      { icon: '🦴', label: 'Đĩa đệm mất nước', note: 'Di chuyển bơm dịch vào đĩa đệm' },
+      { icon: '⚠️', label: 'Nguy cơ độc lập', note: 'Tập gym không bù được ngồi liên tục' },
+      { icon: '⏰', label: 'Timer 80 phút', note: 'Break trước khi đến ngưỡng 90 phút' },
+    ],
+  },
+];
+
 export default function LifestyleNeatPage() {
-  const [checks, setChecks] = useState({});
+  const [checks, setChecks] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('healthapp_neat_daily_checks')) || {}; } catch { return {}; }
+  });
   const [teeIdx, setTeeIdx] = useState(null);
   const [activityIdx, setActivityIdx] = useState(null);
   const [breakIdx, setBreakIdx] = useState(null);
   const [officeIdx, setOfficeIdx] = useState(null);
   const [stepIdx, setStepIdx] = useState(null);
+  const [checklistModal, setChecklistModal] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem('healthapp_neat_daily_checks', JSON.stringify(checks));
+  }, [checks]);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -854,16 +969,45 @@ export default function LifestyleNeatPage() {
       {/* Daily NEAT checklist */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>NEAT Checklist Hằng Ngày</h2>
-        <div className="space-y-3 mb-4">
-          {['Đứng dậy sau mỗi 45–60 phút ngồi ít nhất 1 lần', 'Đi bộ sau ít nhất 1 bữa ăn hôm nay', 'Đạt mục tiêu bước cá nhân', 'Có ít nhất 1 lần vận động ngắn trong giờ làm việc', 'Không ngồi liên tục hơn 90 phút'].map((item, i) => (
-            <label key={i} className="flex items-center gap-3 cursor-pointer group p-3 rounded-xl hover:bg-white/5 transition-colors">
-              <div onClick={() => setChecks(p => ({ ...p, [i]: !p[i] }))}
-                className="w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all border"
-                style={{ background: checks[i] ? COLOR : 'transparent', borderColor: COLOR }}>
-                {checks[i] && <span className="text-black text-base font-bold">✓</span>}
-              </div>
-              <span className="text-lg text-muted group-hover:text-text transition-colors">{item}</span>
-            </label>
+        <div className="space-y-1.5 mb-4">
+          {NEAT_DAILY_CHECKLIST.map((item, i) => (
+            <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
+              style={{
+                border: '1px solid',
+                borderColor: checks[i] ? `rgba(${item.rgb},0.35)` : checklistModal === i ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.05)',
+                background: checks[i] ? `rgba(${item.rgb},0.07)` : 'transparent',
+                transition: 'border-color 0.2s, background 0.2s',
+              }}>
+              {/* Checkbox */}
+              <button onClick={() => setChecks(p => ({ ...p, [i]: !p[i] }))}
+                className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl"
+                aria-label={checks[i] ? 'Bỏ đánh dấu' : 'Đánh dấu hoàn thành'}>
+                <div className="w-5 h-5 rounded-md flex items-center justify-center border-2 transition-all"
+                  style={{
+                    borderColor: checks[i] ? item.color : 'rgba(255,255,255,0.25)',
+                    background: checks[i] ? item.color : 'transparent',
+                    boxShadow: checks[i] ? `0 0 8px rgba(${item.rgb},0.5)` : 'none',
+                  }}>
+                  {checks[i] && (
+                    <svg viewBox="0 0 12 10" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-2.5">
+                      <path d="M1 5l3.5 3.5L11 1"/>
+                    </svg>
+                  )}
+                </div>
+              </button>
+              {/* Label + detail trigger */}
+              <button onClick={() => setChecklistModal(i)}
+                className="flex-1 flex items-center justify-between py-2 pr-3 text-left group/label cursor-pointer">
+                <span className={`flex items-center gap-2 text-lg transition-colors ${checks[i] ? 'text-text' : 'text-muted group-hover/label:text-text'}`}>
+                  <span className="text-base">{item.icon}</span>
+                  <span className={checks[i] ? 'line-through opacity-60' : ''}>{item.title}</span>
+                </span>
+                <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity shrink-0 ml-2" style={{ color: item.color }}>
+                  Chi tiết
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </span>
+              </button>
+            </div>
           ))}
         </div>
         <div className="h-2 rounded-full overflow-hidden mb-1" style={{ background: `rgba(${RGB},0.15)` }}>
@@ -930,6 +1074,20 @@ export default function LifestyleNeatPage() {
           onNext={() => setActivityIdx(i => Math.min(NEAT_ACTIVITIES.length - 1, i + 1))}
           hasPrev={activityIdx > 0}
           hasNext={activityIdx < NEAT_ACTIVITIES.length - 1}
+        />
+      )}
+
+      {/* ── Daily checklist modal ── */}
+      {checklistModal !== null && (
+        <NeatModal
+          item={NEAT_DAILY_CHECKLIST[checklistModal]}
+          idx={checklistModal}
+          total={NEAT_DAILY_CHECKLIST.length}
+          onClose={() => setChecklistModal(null)}
+          onPrev={() => setChecklistModal(i => Math.max(0, i - 1))}
+          onNext={() => setChecklistModal(i => Math.min(NEAT_DAILY_CHECKLIST.length - 1, i + 1))}
+          hasPrev={checklistModal > 0}
+          hasNext={checklistModal < NEAT_DAILY_CHECKLIST.length - 1}
         />
       )}
 

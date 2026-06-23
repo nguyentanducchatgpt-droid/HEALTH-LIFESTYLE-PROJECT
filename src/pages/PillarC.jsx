@@ -935,6 +935,93 @@ const C3_LEVELS = [
   },
 ];
 
+const C3_NEAT_CHECKLIST = [
+  {
+    label: 'Đứng dậy sau mỗi 45–60 phút ngồi',
+    icon: '🪑', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
+    detail: 'Ngồi liên tục hơn 60 phút ức chế enzyme đốt mỡ và làm tăng glucose máu — đứng dậy 2 phút mỗi giờ đủ để đảo ngược phần lớn tác hại này.',
+    keyFact: 'Sau 60 phút ngồi bất động, hoạt động lipoprotein lipase (LPL) — enzyme chính đốt mỡ trong cơ bắp — giảm 90%. Đứng dậy và di chuyển chỉ 2 phút kích hoạt lại LPL trong vòng vài giây.',
+    details: [
+      'Cơ chế sinh học: ngồi bất động làm cơ chân không co, kéo dài trạng thái "off" của LPL. Điều này không liên quan đến mức độ tập luyện — ngay cả người tập gym thường xuyên cũng bị ảnh hưởng nếu ngồi liên tục sau đó.',
+      'Quy tắc 45–60 phút (không phải 90 phút): nghiên cứu Levine 2009 cho thấy tác động tiêu cực bắt đầu rõ ràng sau 60 phút. 45 phút là ngưỡng phòng ngừa tốt hơn với margin an toàn.',
+      'Chỉ cần 2 phút: không cần stretching dài hay bài tập — chỉ cần đứng dậy, đi vài bước, hoặc đứng tại chỗ trong 2 phút là đủ để kích hoạt lại LPL và cải thiện lưu thông máu.',
+      'Công cụ nhắc nhở: đặt timer 50 phút (Pomodoro + đứng dậy) hoặc dùng app nhắc đứng dậy. Một số người đặt cốc nước nhỏ (200ml) để phải đứng dậy lấy nước thường xuyên hơn.',
+      'Standing desk không đủ: đứng bất động cũng tệ hơn việc ngồi-đứng xen kẽ. Cần cả hai: xen kẽ tư thế VÀ di chuyển nhỏ khi đứng (lắc chân, chuyển trọng tâm, squat nhỏ).',
+      'Sau bữa ăn đặc biệt quan trọng: ngồi ngay sau ăn kéo dài đỉnh glucose và insulin. 10 phút đứng dậy hoặc đi nhẹ sau bữa trưa cải thiện độ nhạy insulin chiều tương đương 15–20 phút đi bộ riêng.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Timer 45–50 phút', note: 'Pomodoro kết hợp đứng dậy' },
+      { icon: '💧', label: 'Cốc nước nhỏ', note: 'Buộc đứng dậy tự nhiên hơn' },
+      { icon: '🔄', label: 'Ngồi ↔ Đứng', note: 'Xen kẽ tốt hơn chỉ standing desk' },
+      { icon: '🍽️', label: 'Đứng sau bữa ăn', note: '10 phút = 15–20 phút đi bộ riêng' },
+    ],
+  },
+  {
+    label: 'Đi bộ sau ít nhất 1 bữa ăn',
+    icon: '🚶', color: '#059669', rgb: '5,150,105',
+    img: 'https://images.unsplash.com/photo-1571019613576-2b22c76fd955?w=800&q=80&auto=format&fit=crop',
+    detail: 'Đi bộ sau bữa ăn là một trong những can thiệp NEAT hiệu quả nhất: giảm đỉnh glucose sau ăn, tăng insulin sensitivity, và cải thiện tiêu hóa — chỉ cần 10–15 phút.',
+    keyFact: 'Đi bộ 10 phút sau bữa ăn giảm đỉnh glucose máu trung bình 30–50% so với ngồi nghỉ — hiệu quả hơn đi bộ 30 phút lúc xa bữa ăn theo một số nghiên cứu về quản lý glucose.',
+    details: [
+      'Cơ chế: trong 30–90 phút sau ăn, glucose từ tiêu hóa đổ vào máu. Cơ bắp đang co (đi bộ) hấp thu glucose trực tiếp qua GLUT-4 transporter mà không cần insulin — "hút" glucose ra khỏi máu theo cơ chế cơ học, không phụ thuộc hormone.',
+      'Chỉ cần 10 phút: tốc độ đi bộ thoải mái (không cần nhanh) đã kích hoạt cơ chân đủ để hấp thu glucose. 15–20 phút hiệu quả hơn nhưng 10 phút vẫn tạo ra sự khác biệt đo được.',
+      'Thời điểm tốt nhất: bắt đầu trong vòng 15–30 phút sau khi kết thúc bữa ăn — trước khi đỉnh glucose sau ăn đạt mức cao nhất (~45–60 phút sau ăn). Đợi 1–2 giờ sau ăn mới đi bộ ít hiệu quả hơn nhiều.',
+      'Tiêu hóa và đi bộ: lo ngại rằng đi bộ sau ăn "cản trở tiêu hóa" là hiểu lầm phổ biến. Đi bộ nhẹ thực ra kích thích co bóp đường tiêu hóa (GI motility) và giảm cảm giác nặng bụng sau ăn.',
+      '"Ít nhất 1 bữa ăn" thực tế nhất là bữa trưa: có thể đi bộ quanh văn phòng, ra ngoài 10 phút, hoặc cầu thang. Bữa tối sau 7pm: đi bộ giúp hạ nhiệt độ lõi nhẹ, hỗ trợ chuyển tiếp sang trạng thái ngủ.',
+      'Habit stacking: kết hợp đi bộ sau ăn với việc gọi điện thoại, nghe podcast, hoặc đi cùng đồng nghiệp. Việc gắn thói quen vào hoạt động có sẵn tăng tỷ lệ duy trì từ 20% lên 80%+.',
+    ],
+    points: [
+      { icon: '📉', label: 'Giảm 30–50% glucose', note: 'Hiệu quả nhất trong 30p đầu sau ăn' },
+      { icon: '⏰', label: 'Bắt đầu 15–30p sau ăn', note: 'Trước đỉnh glucose 45–60 phút' },
+      { icon: '🍱', label: 'Bữa trưa dễ nhất', note: 'Đi bộ quanh văn phòng 10 phút' },
+      { icon: '🔗', label: 'Habit stacking', note: 'Kết hợp với gọi điện/podcast' },
+    ],
+  },
+  {
+    label: 'Đạt mục tiêu bước cá nhân',
+    icon: '👟', color: '#34d399', rgb: '52,211,153',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    detail: 'Mục tiêu bước chân cá nhân hóa — không nhất thiết phải là 10.000 bước. Baseline của bạn quyết định mục tiêu hợp lý, và chỉ cần đạt mục tiêu đó đều đặn hơn là thỉnh thoảng vượt xa rồi lại thấp.',
+    keyFact: 'Mỗi 1.000 bước thêm mỗi ngày liên kết với giảm 10–15% nguy cơ tử vong sớm — và lợi ích này tiếp tục tăng đến khoảng 8.000–10.000 bước/ngày, sau đó plateau. Không có ngưỡng tối thiểu — bất kỳ bước chân thêm nào cũng có giá trị.',
+    details: [
+      '"Mục tiêu cá nhân" quan trọng hơn con số tuyệt đối: nếu baseline của bạn là 3.000 bước/ngày, mục tiêu 5.000 là phù hợp và tăng trưởng bền vững. Nhảy thẳng lên 10.000 thường thất bại sau 1–2 tuần.',
+      'Cách thiết lập mục tiêu: theo dõi bước chân tự nhiên trong 7 ngày (không cố gắng thêm), tính trung bình, rồi đặt mục tiêu là trung bình + 1.500–2.000 bước. Sau 3 tuần đạt được đều đặn, tăng thêm 1.000 bước.',
+      'Tracking tạo ra tác động: chỉ cần đo lường số bước chân (điện thoại, đồng hồ) làm tăng trung bình số bước 26% mà không cần thay đổi gì khác. Việc nhìn thấy con số tạo ra phản hồi tự nhiên để điều chỉnh hành vi.',
+      'Chiến lược đạt mục tiêu bước dễ nhất: cầu thang thay thang máy (50–200 bước), gửi xe xa hơn 200m (400–600 bước khứ hồi), đi vệ sinh ở tầng khác (100–200 bước mỗi lần). Không cần thay đổi lịch trình.',
+      '10.000 bước là con số marketing từ máy đo bước chân Nhật năm 1965 (万歩計 — manpokei), không phải con số khoa học. Nghiên cứu của Harvard 2019 trên 16.000+ phụ nữ cho thấy lợi ích plateau ở 7.500 bước cho nhóm người cao tuổi.',
+      'Ngày ít bước (dưới 50% mục tiêu): 5 phút micro-workout tại chỗ (squat 20 lần, calf raise 30 lần, marching) không thay thế được nhưng duy trì thói quen vận động và giảm thiểu tác động tiêu cực của ngày ít di chuyển.',
+    ],
+    points: [
+      { icon: '📊', label: 'Baseline +1.500 bước', note: 'Mục tiêu thực tế hơn 10.000 ngay' },
+      { icon: '📱', label: 'Tracking +26% tự nhiên', note: 'Chỉ đo là đã cải thiện' },
+      { icon: '🪜', label: 'Cầu thang + xe xa', note: 'Thêm 500–800 bước không tốn thời gian' },
+      { icon: '🎯', label: '7.500 bước', note: 'Ngưỡng plateau lợi ích sức khỏe' },
+    ],
+  },
+  {
+    label: 'Có 1–2 lần vận động ngắn trong giờ làm',
+    icon: '💪', color: '#6ee7b7', rgb: '110,231,183',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    detail: 'Micro-workout 3–5 phút xen kẽ trong giờ làm — không cần thay đồ, không cần thiết bị, nhưng đủ để kích hoạt tuần hoàn, tăng cảnh giác và phục vụ như "break" chất lượng cho não.',
+    keyFact: '4× micro-workout 5 phút (tổng 20 phút) phân bổ đều trong ngày cải thiện mood, energy và tập trung tốt hơn 1 buổi tập 20 phút liên tục theo nghiên cứu về "exercise snacking" 2022.',
+    details: [
+      '"Exercise snacking" — khái niệm vận động ngắn xen kẽ trong ngày — được nghiên cứu ngày càng nhiều với kết quả tích cực về cả chỉ số tim mạch lẫn hiệu suất nhận thức ngắn hạn.',
+      'Vận động ngắn lý tưởng trong giờ làm: không cần dụng cụ, không cần thay đồ, không gây đổ mồ hôi đáng kể. 10 squat, 10 push-up vào tường, 20 calf raise, 30 giây plank, hoặc đơn giản là vươn vai + xoay cổ 2 phút.',
+      'Lợi ích nhận thức: 5 phút đi bộ hoặc vận động nhẹ tăng BDNF (brain-derived neurotrophic factor) và dopamine — hai chất giúp tập trung và học tập. Tác động kéo dài 1–2 giờ sau khi tập, giải thích tại sao "break vận động" làm việc hiệu quả hơn "break xem điện thoại".',
+      'Thời điểm tốt nhất trong giờ làm: sau 90 phút tập trung cao (khi não bắt đầu đuối), hoặc ngay sau cuộc họp căng thẳng (để giải phóng cortisol tích lũy). Tránh trước các task đòi hỏi sự tập trung cao ngay lập tức.',
+      'Kết hợp với timer: khi timer 45–50 phút báo đứng dậy, thay vì chỉ đứng lấy nước, làm 10–15 squat hoặc stretch 2 phút — biến "break bắt buộc" thành "exercise snack". Không tốn thêm thời gian nào.',
+      'Tích lũy có ý nghĩa: 2 lần × 5 phút vận động ngắn = 10 phút/ngày × 5 ngày = 50 phút/tuần NEAT bổ sung ngoài bước chân. Tương đương gần 1 buổi tập nhẹ thêm mỗi tuần từ các "snack" nhỏ.',
+    ],
+    points: [
+      { icon: '🍎', label: 'Exercise snacking', note: '4× 5 phút tốt hơn 1× 20 phút' },
+      { icon: '🧠', label: 'BDNF + dopamine', note: 'Tập trung tốt hơn 1–2h sau đó' },
+      { icon: '⏰', label: 'Sau 90 phút làm', note: 'Khi não bắt đầu đuối hiệu quả' },
+      { icon: '📈', label: '50 phút NEAT/tuần', note: 'Từ 2× 5 phút mỗi ngày làm' },
+    ],
+  },
+];
+
 const C3_IDEAS = [
   'Đi cầu thang thay vì thang máy 1–2 tầng',
   'Gửi xe xa hơn một chút khi đi làm',
@@ -1862,6 +1949,7 @@ export default function PillarC() {
   const [scoreModalIdx, setScoreModalIdx] = useState(null);
   const [trackModalIdx, setTrackModalIdx] = useState(null);
   const [sleepChecklistModal, setSleepChecklistModal] = useState(null);
+  const [neatChecklistModal, setNeatChecklistModal] = useState(null);
   const [morningMode, setMorningMode] = useState('5');
   const [morningModalIdx, setMorningModalIdx] = useState(null);
   const [breathMode, setBreathMode] = useState(0);
@@ -2366,16 +2454,45 @@ export default function PillarC() {
                   <p className="text-base text-muted">Mỗi 45–60 phút ngồi, đứng dậy 2 phút. Đi lấy nước, xoay vai, vươn người, calf raise. <strong>Đừng đợi đau mới đứng dậy.</strong></p>
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>NEAT Checklist</h3>
-                <div className="space-y-2 mb-4">
-                  {['Đứng dậy sau mỗi 45–60 phút ngồi', 'Đi bộ sau ít nhất 1 bữa ăn', 'Đạt mục tiêu bước cá nhân', 'Có 1–2 lần vận động ngắn trong giờ làm'].map((item, i) => (
-                    <label key={i} className="flex items-center gap-3 cursor-pointer group">
-                      <div onClick={() => setNeatChecks(p => ({ ...p, [i]: !p[i] }))}
-                        className="w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all border"
-                        style={{ background: neatChecks[i] ? '#10b981' : 'transparent', borderColor: '#10b981' }}>
-                        {neatChecks[i] && <span className="text-black text-base font-bold">✓</span>}
-                      </div>
-                      <span className="text-lg text-muted group-hover:text-text transition-colors">{item}</span>
-                    </label>
+                <div className="space-y-1.5 mb-4">
+                  {C3_NEAT_CHECKLIST.map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
+                      style={{
+                        border: '1px solid',
+                        borderColor: neatChecks[i] ? `rgba(${item.rgb},0.35)` : neatChecklistModal === i ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.05)',
+                        background: neatChecks[i] ? `rgba(${item.rgb},0.07)` : 'transparent',
+                        transition: 'border-color 0.2s, background 0.2s',
+                      }}>
+                      {/* Checkbox */}
+                      <button onClick={() => setNeatChecks(p => ({ ...p, [i]: !p[i] }))}
+                        className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl"
+                        aria-label={neatChecks[i] ? 'Bỏ đánh dấu' : 'Đánh dấu hoàn thành'}>
+                        <div className="w-5 h-5 rounded-md flex items-center justify-center border-2 transition-all"
+                          style={{
+                            borderColor: neatChecks[i] ? item.color : 'rgba(255,255,255,0.25)',
+                            background: neatChecks[i] ? item.color : 'transparent',
+                            boxShadow: neatChecks[i] ? `0 0 8px rgba(${item.rgb},0.5)` : 'none',
+                          }}>
+                          {neatChecks[i] && (
+                            <svg viewBox="0 0 12 10" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-2.5">
+                              <path d="M1 5l3.5 3.5L11 1"/>
+                            </svg>
+                          )}
+                        </div>
+                      </button>
+                      {/* Label + detail trigger */}
+                      <button onClick={() => setNeatChecklistModal(i)}
+                        className="flex-1 flex items-center justify-between py-2 pr-3 text-left group/label cursor-pointer">
+                        <span className={`flex items-center gap-2 text-lg transition-colors ${neatChecks[i] ? 'text-text' : 'text-muted group-hover/label:text-text'}`}>
+                          <span className="text-base">{item.icon}</span>
+                          <span className={neatChecks[i] ? 'line-through opacity-60' : ''}>{item.label}</span>
+                        </span>
+                        <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity shrink-0 ml-2" style={{ color: item.color }}>
+                          Chi tiết
+                          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                        </span>
+                      </button>
+                    </div>
                   ))}
                 </div>
                 <div className="h-2 rounded-full overflow-hidden mb-6" style={{ background: 'rgba(16,185,129,0.15)' }}>
@@ -2860,6 +2977,19 @@ export default function PillarC() {
           onNext={() => setC2EnergyIdx(i => Math.min(C2_ENERGY_TIPS.length - 1, i + 1))}
           hasPrev={c2EnergyIdx > 0}
           hasNext={c2EnergyIdx < C2_ENERGY_TIPS.length - 1}
+        />
+      )}
+
+      {/* ── C3 NEAT checklist modal ── */}
+      {neatChecklistModal !== null && (
+        <C0ItemModal
+          item={C3_NEAT_CHECKLIST[neatChecklistModal]}
+          idx={neatChecklistModal}
+          onClose={() => setNeatChecklistModal(null)}
+          onPrev={() => setNeatChecklistModal(i => Math.max(0, i - 1))}
+          onNext={() => setNeatChecklistModal(i => Math.min(C3_NEAT_CHECKLIST.length - 1, i + 1))}
+          hasPrev={neatChecklistModal > 0}
+          hasNext={neatChecklistModal < C3_NEAT_CHECKLIST.length - 1}
         />
       )}
 

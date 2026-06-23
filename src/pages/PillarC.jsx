@@ -1023,14 +1023,174 @@ const C3_NEAT_CHECKLIST = [
 ];
 
 const C3_IDEAS = [
-  'Đi cầu thang thay vì thang máy 1–2 tầng',
-  'Gửi xe xa hơn một chút khi đi làm',
-  'Nghe điện thoại khi đứng hoặc đi lại',
-  'Họp ngắn thực hiện khi đi bộ',
-  'Đặt bình nước xa bàn để phải đứng dậy',
-  'Đi bộ 5 phút trước khi vào nhà sau công việc',
-  'Dọn nhà 10 phút — cũng là vận động!',
-  'Đi bộ sau ít nhất 1 bữa ăn/ngày',
+  {
+    label: 'Đi cầu thang thay vì thang máy 1–2 tầng',
+    icon: '🪜', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+    detail: 'Cầu thang là một trong những can thiệp NEAT đơn giản và hiệu quả nhất — kết hợp bước chân + leo bậc nâng nhịp tim nhẹ và đốt calorie gấp 3 lần so với đi bộ phẳng.',
+    keyFact: 'Leo cầu thang 2 phút tiêu thụ tương đương 15–20 phút đi bộ nhẹ về mặt năng lượng tương đối — và đủ để tăng nhịp tim vào vùng light cardio.',
+    details: [
+      'Cầu thang đốt khoảng 8–11 kcal/phút (so với 3–4 kcal/phút khi đi bộ phẳng) — cùng thời gian, calorie tiêu thụ cao hơn 2–3 lần do lực tác dụng lên cơ mông, đùi và bắp chân.',
+      '1–2 tầng là ngưỡng không gây đổ mồ hôi và không tốn thêm thời gian đáng kể. Không cần thay đồ, không cần giày thể thao — chỉ cần ra khỏi thang máy sớm hơn 1 nút.',
+      'Cộng dồn: 4 lần lên xuống 2 tầng mỗi ngày làm = ~5–8 phút leo cầu thang/ngày = ~150–200 kcal thêm/tuần từ 1 thói quen đơn giản. Sau 1 năm: tương đương ~8.000 kcal hay gần 1kg mỡ.',
+      'Cardiorespiratory fitness: nghiên cứu cho thấy leo cầu thang thường xuyên cải thiện VO2max (khả năng hấp thu oxy) và sức mạnh cơ đùi ở người ít vận động tương tự như chương trình tập cardio nhẹ.',
+      'Tâm lý: không cần "thời gian tập luyện riêng" — đây là vận động tích hợp trong sinh hoạt. Không có cảm giác "phải đi tập", chỉ là "chọn cầu thang thay vì thang máy".',
+      'Bắt đầu nhỏ: nếu văn phòng ở tầng 10, đi thang máy đến tầng 8 rồi leo 2 tầng. Không cần leo toàn bộ ngay — tăng dần 1 tầng mỗi tuần.',
+    ],
+    points: [
+      { icon: '🔥', label: '8–11 kcal/phút', note: 'Gấp 2–3 lần đi bộ phẳng' },
+      { icon: '🏗️', label: '1–2 tầng', note: 'Không đổ mồ hôi, không tốn thời gian' },
+      { icon: '📈', label: 'VO2max tăng', note: 'Cardio nhẹ tích hợp vào ngày làm' },
+      { icon: '🗓️', label: '~1kg/năm', note: 'Từ 4 lần leo cầu thang mỗi ngày' },
+    ],
+  },
+  {
+    label: 'Gửi xe xa hơn một chút khi đi làm',
+    icon: '🚗', color: '#059669', rgb: '5,150,105',
+    img: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80&auto=format&fit=crop',
+    detail: 'Gửi xe xa thêm 200–300m tạo ra thêm 400–600 bước mỗi ngày (khứ hồi) — không tốn thêm thời gian đáng kể và là NEAT gần như "miễn phí".',
+    keyFact: 'Gửi xe xa thêm 300m mỗi chiều = 600 bước thêm × 5 ngày = 3.000 bước/tuần = ~156.000 bước/năm — tương đương 75km đi bộ thêm không cần "tập luyện".',
+    details: [
+      '300m thêm mỗi chiều chỉ mất 3–4 phút đi bộ — hầu hết người không cảm nhận đây là "tập thể dục" mà chỉ là đi bộ đến chỗ làm. Đây là điểm mấu chốt của NEAT: vận động tích hợp vào sinh hoạt.',
+      'Tâm lý học thói quen: khi quyết định "gửi xe xa" là một lần mỗi sáng, không cần suy nghĩ lại mỗi ngày. Habit cue rõ ràng (đến chỗ làm → gửi xa) giúp duy trì lâu dài.',
+      'Khuyến khích thêm ánh sáng sáng: đi bộ ngoài trời buổi sáng vừa tăng NEAT vừa nhận ánh sáng tự nhiên để đặt lại đồng hồ sinh học — hai lợi ích từ một quyết định.',
+      'Biến thể: xuống xe buýt/tàu một trạm sớm, đỗ xe ở tầng trên cùng của bãi (leo cầu thang thêm), hoặc đi bộ từ nhà đến điểm gửi xe thay vì lái đến tận nơi.',
+      'Ngày mưa/nóng: vẫn gửi xa nhưng đi nhanh hơn — 3 phút đi nhanh vẫn có giá trị NEAT và tốt hơn không làm gì. Có ô/mũ sẵn trong xe.',
+      'Cộng dồn với cầu thang: gửi xe xa + leo cầu thang 2 tầng mỗi ngày = ~700–800 bước thêm + mini cardio boost mỗi sáng. Hai thói quen nhỏ, tác động cộng hưởng.',
+    ],
+    points: [
+      { icon: '📍', label: '300m thêm = 600 bước', note: 'Khứ hồi gần như miễn phí' },
+      { icon: '☀️', label: 'Ánh sáng sáng', note: 'NEAT + circadian cùng lúc' },
+      { icon: '🧠', label: 'Quyết định 1 lần', note: 'Không cần suy nghĩ lại mỗi ngày' },
+      { icon: '📅', label: '75km/năm', note: 'Từ thói quen 3–4 phút mỗi sáng' },
+    ],
+  },
+  {
+    label: 'Nghe điện thoại khi đứng hoặc đi lại',
+    icon: '📞', color: '#34d399', rgb: '52,211,153',
+    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop',
+    detail: 'Cuộc gọi điện thoại là cơ hội vận động hoàn toàn tự do — bạn không cần tập trung vào màn hình, chỉ cần tai nghe và đứng dậy đi lại.',
+    keyFact: 'Người có công việc thường xuyên di chuyển khi nói chuyện điện thoại (walking meetings, standing calls) đốt thêm trung bình 300–500 kcal/ngày so với người ngồi làm mọi thứ — chỉ từ thay đổi này.',
+    details: [
+      'Tại sao điện thoại là cơ hội vàng: bạn không nhìn màn hình khi nghe điện thoại, tay không cần gõ phím — hoàn toàn có thể vừa nghe vừa đi lại mà không ảnh hưởng chất lượng cuộc gọi.',
+      'Đứng hay đi? Đi lại (walking) tốt hơn đứng yên vì: tăng bước chân, kích hoạt nhiều cơ hơn, tăng lưu thông máu não giúp tư duy rõ hơn, và thực tế tăng khả năng lắng nghe và ghi nhớ thông tin.',
+      'Nghiên cứu về walking meetings: Stanford 2014 cho thấy đi bộ trong khi brainstorm tăng tư duy sáng tạo 81% so với ngồi — nhiều công ty lớn (Apple, Facebook, Twitter) có văn hóa walking 1:1.',
+      'Thực tế: đặt tai nghe không dây (AirPods, earbuds) sạc ngay cạnh điện thoại — khi có cuộc gọi, cắm vào và đứng dậy là phản xạ tự động. Không cần quyết định gì thêm.',
+      'Trong nhà: có thể đi vòng quanh phòng khách, đi ra ban công, hoặc đứng gần cửa sổ. Không cần không gian lớn — 10m² đủ để đi 50–100 bước trong 5 phút cuộc gọi.',
+      'Lợi ích nhận thức: đứng + đi nhẹ trong khi nói chuyện tăng lưu lượng máu não, giúp suy nghĩ rõ hơn và phản ứng nhanh hơn trong cuộc gọi — bạn cũng nói chuyện tốt hơn.',
+    ],
+    points: [
+      { icon: '🎧', label: 'Tai nghe không dây', note: 'Đặt cạnh điện thoại — tự động hóa' },
+      { icon: '🧠', label: 'Sáng tạo +81%', note: 'Walking brainstorm (Stanford 2014)' },
+      { icon: '🚶', label: 'Đi lại > đứng yên', note: 'Nhiều cơ hơn, tư duy tốt hơn' },
+      { icon: '⚡', label: '300–500 kcal/ngày', note: 'Từ đứng/đi khi gọi điện' },
+    ],
+  },
+  {
+    label: 'Họp ngắn thực hiện khi đi bộ',
+    icon: '🤝', color: '#6ee7b7', rgb: '110,231,183',
+    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80&auto=format&fit=crop',
+    detail: 'Walking meeting — họp khi đi bộ — là format ngày càng phổ biến trong văn hóa công ty hiện đại, phù hợp cho cuộc gặp 1:1, brainstorm, và feedback không cần trình chiếu.',
+    keyFact: 'Cuộc họp đứng (standing meeting) giảm thời gian họp trung bình 25% và walking meeting tăng sự tập trung và mức năng lượng của người tham gia so với họp ngồi trong phòng kín.',
+    details: [
+      'Phù hợp nhất cho: họp 1:1, catch-up ngắn, feedback không chính thức, brainstorm ý tưởng, và check-in hàng ngày. Không phù hợp cho: trình bày slides, ký hợp đồng, ghi chép phức tạp.',
+      'Lợi ích tâm lý: không gian mở và chuyển động vật lý phá vỡ "power dynamic" của phòng họp truyền thống — nhiều người cởi mở hơn, thành thật hơn khi không đối mặt trực tiếp mà đi song song.',
+      'Cách đề xuất: "Mình đi bộ một vòng xung quanh tòa nhà trong lúc talk nhé?" hoặc đơn giản là "Walking meeting?" — nhiều người sẵn sàng hơn bạn nghĩ, đặc biệt cho các cuộc gặp không chính thức.',
+      'Outdoor vs indoor: đi bộ ngoài trời thêm lợi ích ánh sáng tự nhiên + không khí — nhưng indoor (hành lang, lobby) cũng được nếu thời tiết không thuận lợi.',
+      'Ghi chú: dùng voice memo hoặc ghi âm ngắn thay vì ghi trên giấy/điện thoại. Hoặc tóm tắt bằng email ngay sau khi kết thúc — trí nhớ còn tươi trong 5 phút đầu.',
+      'Tích lũy: 2 walking meeting 20 phút/tuần = 40 phút đi bộ thêm/tuần hoàn toàn trong giờ làm, không cần cắt giờ nghỉ hay thêm thời gian.',
+    ],
+    points: [
+      { icon: '✅', label: 'Họp 1:1 và brainstorm', note: 'Format phù hợp nhất' },
+      { icon: '💬', label: 'Cởi mở hơn', note: 'Không đối mặt → thành thật hơn' },
+      { icon: '⏱️', label: 'Giảm 25% thời gian họp', note: 'Standing/walking meeting ngắn hơn' },
+      { icon: '📅', label: '40 phút đi bộ/tuần', note: 'Từ 2 walking meeting 20 phút' },
+    ],
+  },
+  {
+    label: 'Đặt bình nước xa bàn để phải đứng dậy',
+    icon: '💧', color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80&auto=format&fit=crop',
+    detail: 'Thiết kế môi trường để buộc phải vận động — đặt bình nước xa bàn tạo ra "friction có lợi" khiến mỗi lần uống nước trở thành một lần đứng dậy đi lại.',
+    keyFact: 'Uống đủ nước (2–2.5L/ngày) kết hợp với bình nước nhỏ (500ml) = 4–5 lần đứng dậy bắt buộc mỗi ngày — tự động tạo ra ngắt quãng ngồi mà không cần nhớ hay cài timer.',
+    details: [
+      'Nguyên tắc "thiết kế môi trường": thay vì dựa vào ý chí để nhớ đứng dậy, tạo ra cấu trúc vật lý buộc hành vi xảy ra tự động. James Clear (Atomic Habits) gọi đây là "environment design".',
+      'Bình nước 500ml (không phải 1L): buộc phải đi lấy nước 4–5 lần thay vì 2 lần. Mỗi lần là 20–50 bước và 1–2 phút đứng dậy — đủ để kích hoạt LPL và phá vỡ chuỗi ngồi dài.',
+      'Xa bao nhiêu là đủ: 10–20m là lý tưởng — đủ xa để phải đứng dậy và đi vài bước, không quá xa để trở thành bất tiện. Bếp, bình nước hành lang, hoặc phòng khác trong văn phòng.',
+      'Bonus: đứng dậy lấy nước cũng là cơ hội thêm: calf raise khi chờ nước rót, vươn vai, hoặc đi vòng qua chỗ đồng nghiệp để trao đổi nhanh thay vì nhắn tin.',
+      'Kết hợp với bài tập uống nước: sau mỗi lần uống, 10 squat hoặc calf raise. Nhỏ đến mức không cần thay đồ, đủ để đánh thức cơ chân sau thời gian ngồi dài.',
+      'Uống nước đủ cũng là lợi ích trực tiếp: mất nước 1–2% làm giảm khả năng tập trung 15–20% và tăng cảm giác mệt mỏi. Bình nước xa bàn buộc uống nước đều đặn hơn cốc nước to để ngay cạnh.',
+    ],
+    points: [
+      { icon: '🏗️', label: 'Environment design', note: 'Không cần ý chí — cơ cấu tự động' },
+      { icon: '🥤', label: 'Bình 500ml', note: '4–5 lần đứng dậy/ngày bắt buộc' },
+      { icon: '🧠', label: 'Tập trung +20%', note: 'Uống đủ nước giảm mệt mỏi' },
+      { icon: '🦵', label: '10 squat sau uống nước', note: 'Micro-workout tích hợp tự nhiên' },
+    ],
+  },
+  {
+    label: 'Đi bộ 5 phút trước khi vào nhà sau công việc',
+    icon: '🚪', color: '#059669', rgb: '5,150,105',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    detail: 'Khoảng đệm chuyển tiếp từ "mode làm việc" sang "mode thư giãn" — 5 phút đi bộ trước khi vào nhà giúp cortisol hạ và tâm trí tách khỏi công việc hiệu quả hơn ngồi xe/tàu đến thẳng.',
+    keyFact: '"Transition ritual" — nghi thức chuyển tiếp — làm giảm spillover stress từ công việc vào cuộc sống gia đình. 5 phút đi bộ đủ để cortisol giảm đo được và "mental switch" xảy ra.',
+    details: [
+      'Work-life spillover: không có nghi thức chuyển tiếp, não vẫn ở "work mode" khi về nhà — tiếp tục xử lý vấn đề công việc trong vô thức, gây khó thư giãn, căng thẳng tối và ngủ kém.',
+      '5 phút đi bộ ngoài trời là "decompression ritual": nhịp thở sâu hơn tự nhiên, nhịp tim giảm nhẹ, cortisol bắt đầu giảm. Não chuyển từ sympathetic (giao cảm) sang parasympathetic (phó giao cảm).',
+      'Không cần xa: đi vòng quanh block nhà, ra nhận thư rồi đi bộ thêm, hoặc xuống xe/xe buýt sớm vài trạm. Quan trọng là outdoor và không nhìn điện thoại trong 5 phút đó.',
+      'Kết hợp mindfulness: trong 5 phút đi bộ, chú ý đến những gì nhìn thấy, nghe thấy, cảm nhận thay vì nghĩ về email chưa trả lời. Đây là mindful walking đơn giản nhất.',
+      '"Bookend ritual": sáng (ra ngoài 10 phút ánh sáng sau thức dậy) + tối (5 phút đi bộ trước vào nhà) tạo ra cấu trúc ngày rõ ràng cho hệ thần kinh — giúp điều tiết cortisol cả ngày.',
+      'Thêm NEAT: 5 phút đi bộ × 5 ngày = 25 phút/tuần thêm hoàn toàn không tốn thời gian riêng — đây là thời gian "không làm gì" (ngồi trong xe, chờ tàu) được chuyển thành vận động.',
+    ],
+    points: [
+      { icon: '🧘', label: 'Decompression ritual', note: 'Chuyển từ work mode → home mode' },
+      { icon: '📵', label: 'Không điện thoại', note: '5 phút để não thực sự nghỉ' },
+      { icon: '🌇', label: 'Outdoor', note: 'Ánh sáng tự nhiên hỗ trợ cortisol hạ' },
+      { icon: '📚', label: 'Bookend ritual', note: 'Sáng + tối = cấu trúc ngày rõ ràng' },
+    ],
+  },
+  {
+    label: 'Dọn nhà 10 phút — cũng là vận động!',
+    icon: '🧹', color: '#34d399', rgb: '52,211,153',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+    detail: 'Dọn nhà là NEAT cao nhất trong các hoạt động sinh hoạt hàng ngày — đứng, đi lại, cúi người, với tay, mang vác nhẹ — kết hợp nhiều nhóm cơ và vùng vận động.',
+    keyFact: 'Dọn nhà 10 phút đốt 40–60 kcal tùy cường độ — tương đương 15–20 phút đi bộ nhẹ. Và không gian sạch sẽ sau đó có tác động tích cực lên tâm trạng và khả năng tập trung.',
+    details: [
+      'NEAT từ dọn nhà bao gồm: đứng liên tục (active standing), di chuyển qua các phòng (walking), cúi nhặt đồ (hip hinge nhẹ), với tay lên cao (shoulder mobility), mang vác nhẹ (cơ tay và lõi).',
+      '10 phút không cần dọn toàn bộ nhà: 1 phòng hoặc 1 khu vực — bếp, phòng ngủ, bàn làm việc. Chia nhỏ thành "micro-dọn" 10 phút giúp dễ bắt đầu và không cảm thấy nặng nề.',
+      'Habit stacking tối ưu: dọn nhà 10 phút ngay sau ăn tối — vừa tăng NEAT sau bữa ăn (giảm glucose), vừa tạo không gian sạch trước khi bắt đầu routine tối.',
+      'Tâm lý học môi trường: môi trường lộn xộn tăng cortisol và giảm khả năng tập trung (research từ Princeton Neuroscience). Dọn nhà không chỉ là NEAT mà còn là đầu tư vào chất lượng nghỉ ngơi tối.',
+      'Cường độ điều chỉnh: "hăng" như hút bụi, lau sàn = 50–60 kcal/10 phút; "nhẹ" như sắp xếp, thu dọn = 30–40 kcal/10 phút. Cả hai đều có giá trị.',
+      '"Cũng là vận động" là mindset quan trọng nhất: xóa ranh giới giữa "tập luyện" và "sinh hoạt hàng ngày". Mọi hoạt động đòi hỏi cơ bắp đều là vận động có giá trị.',
+    ],
+    points: [
+      { icon: '🔥', label: '40–60 kcal/10 phút', note: 'Tương đương đi bộ 15–20 phút' },
+      { icon: '🍽️', label: 'Sau ăn tối', note: 'NEAT + giảm glucose sau ăn' },
+      { icon: '🧠', label: 'Giảm cortisol', note: 'Không gian sạch → tâm trí nhẹ hơn' },
+      { icon: '💡', label: 'Mindset shift', note: 'Sinh hoạt hàng ngày = vận động' },
+    ],
+  },
+  {
+    label: 'Đi bộ sau ít nhất 1 bữa ăn/ngày',
+    icon: '🍽️', color: '#6ee7b7', rgb: '110,231,183',
+    img: 'https://images.unsplash.com/photo-1571019613576-2b22c76fd955?w=800&q=80&auto=format&fit=crop',
+    detail: 'Can thiệp NEAT đơn giản nhất với tác động đo được trên glucose máu — 10 phút đi bộ sau ăn hiệu quả hơn 30 phút đi bộ xa bữa ăn về quản lý glucose sau ăn.',
+    keyFact: 'Meta-analysis 2022 (7 RCT) xác nhận: đi bộ 2–5 phút sau ăn giảm đỉnh glucose sau ăn 12%, đi bộ 10 phút giảm 30–50% — hiệu quả nhất khi bắt đầu trong 30 phút đầu sau ăn.',
+    details: [
+      'Cơ chế: trong 30–90 phút sau ăn, glucose từ tiêu hóa đổ vào máu. Cơ bắp đang co (đi bộ) hấp thu glucose qua GLUT-4 không cần insulin — giảm tải cho tuyến tụy và làm phẳng đường cong glucose.',
+      'Thời điểm tối ưu: bắt đầu trong vòng 15–30 phút sau khi kết thúc bữa ăn. Đợi hơn 1 giờ sau ăn ít hiệu quả hơn nhiều vì đỉnh glucose đã qua.',
+      '"Ít nhất 1 bữa" là ngưỡng thực tế — không cần làm sau cả 3 bữa. Bữa trưa thường dễ nhất (có giờ nghỉ) và tác động lớn nhất vì bữa trưa thường là bữa nhiều carb nhất trong ngày.',
+      'Tốc độ: không cần đi nhanh. Tốc độ thoải mái (~4–5 km/h, có thể nói chuyện) đã đủ để kích hoạt GLUT-4 trong cơ chân. Đi nhanh không tăng thêm đáng kể hiệu quả giảm glucose.',
+      'Kết hợp với điện thoại: đây là thời điểm tốt để nghe podcast, gọi điện cho người thân, hoặc nghe nhạc — biến walk sau ăn thành thời gian "tự thưởng" thay vì "phải làm".',
+      'Tác động lâu dài: người thực hiện đi bộ sau ăn đều đặn trong 3 tháng cải thiện HbA1c (chỉ số đường huyết dài hạn) trung bình 0.5–1% — đáng kể cho người có nguy cơ tiểu đường type 2.',
+    ],
+    points: [
+      { icon: '📉', label: 'Giảm 30–50% glucose', note: '10 phút trong 30p đầu sau ăn' },
+      { icon: '🍱', label: 'Bữa trưa dễ nhất', note: 'Nhiều carb nhất + có giờ nghỉ' },
+      { icon: '🎧', label: 'Kết hợp podcast', note: 'Biến thành thời gian "tự thưởng"' },
+      { icon: '📊', label: 'HbA1c -0.5–1%', note: 'Sau 3 tháng đều đặn' },
+    ],
+  },
 ];
 
 const C4_ROUTINE = [
@@ -1950,6 +2110,7 @@ export default function PillarC() {
   const [trackModalIdx, setTrackModalIdx] = useState(null);
   const [sleepChecklistModal, setSleepChecklistModal] = useState(null);
   const [neatChecklistModal, setNeatChecklistModal] = useState(null);
+  const [neatIdeaModal, setNeatIdeaModal] = useState(null);
   const [morningMode, setMorningMode] = useState('5');
   const [morningModalIdx, setMorningModalIdx] = useState(null);
   const [breathMode, setBreathMode] = useState(0);
@@ -2501,9 +2662,20 @@ export default function PillarC() {
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>Ý tưởng tăng NEAT</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {C3_IDEAS.map((idea, i) => (
-                    <div key={i} className="flex items-center gap-2 text-base text-muted p-2 rounded-lg" style={{ background: 'rgba(16,185,129,0.04)' }}>
-                      <span style={{ color: '#10b981' }}>→</span>{idea}
-                    </div>
+                    <button key={i} onClick={() => setNeatIdeaModal(i)}
+                      className="flex items-center gap-2 text-base text-left p-2.5 rounded-lg group cursor-pointer transition-all hover:bg-white/5"
+                      style={{
+                        background: `rgba(${idea.rgb},0.05)`,
+                        border: `1px solid rgba(${idea.rgb},0.12)`,
+                        transition: 'border-color 0.2s, background 0.2s',
+                      }}>
+                      <span className="text-lg shrink-0">{idea.icon}</span>
+                      <span className="flex-1 text-muted group-hover:text-text transition-colors">{idea.label}</span>
+                      <span className="flex items-center gap-0.5 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0" style={{ color: idea.color }}>
+                        Chi tiết
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                      </span>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -2977,6 +3149,19 @@ export default function PillarC() {
           onNext={() => setC2EnergyIdx(i => Math.min(C2_ENERGY_TIPS.length - 1, i + 1))}
           hasPrev={c2EnergyIdx > 0}
           hasNext={c2EnergyIdx < C2_ENERGY_TIPS.length - 1}
+        />
+      )}
+
+      {/* ── C3 NEAT ideas modal ── */}
+      {neatIdeaModal !== null && (
+        <C0ItemModal
+          item={C3_IDEAS[neatIdeaModal]}
+          idx={neatIdeaModal}
+          onClose={() => setNeatIdeaModal(null)}
+          onPrev={() => setNeatIdeaModal(i => Math.max(0, i - 1))}
+          onNext={() => setNeatIdeaModal(i => Math.min(C3_IDEAS.length - 1, i + 1))}
+          hasPrev={neatIdeaModal > 0}
+          hasNext={neatIdeaModal < C3_IDEAS.length - 1}
         />
       )}
 

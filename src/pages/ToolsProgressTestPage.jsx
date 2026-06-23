@@ -278,6 +278,161 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
+const READ_TIPS = [
+  {
+    label: 'Không so sánh với người khác — chỉ so với chính mình lần trước',
+    title: 'Không So Sánh Với Người Khác',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cuộc đua duy nhất đáng tham gia là cuộc đua với phiên bản cũ của chính bạn',
+    details: [
+      'Mỗi người có điểm xuất phát khác nhau: gen di truyền, lịch sử tập luyện, thói quen ngủ, mức stress — so sánh chỉ số với người khác là so sánh hai phương trình hoàn toàn khác nhau.',
+      'Mạng xã hội chỉ hiển thị kết quả đẹp nhất của người khác, không phải hành trình thực tế — bạn đang so sánh cuộc sống thực của mình với highlight reel của họ.',
+      'Nghiên cứu tâm lý học chỉ ra: người so sánh với người khác có động lực ngắn hạn nhưng kiệt sức nhanh hơn; người tập trung vào tiến bộ bản thân duy trì được lâu dài hơn.',
+      'Câu hỏi đúng không phải "Tôi có tốt hơn X không?" mà là "Tôi có tốt hơn tôi của 4 tuần trước không?"',
+      'Ngay cả 1 chỉ số cải thiện nhỏ — ngủ từ 5.5h lên 6h, plank từ 15s lên 20s — là tiến bộ thực sự đáng ăn mừng.',
+      'Ghi chú cảm xúc bên cạnh số liệu: "Tuần này cảm thấy nhẹ hơn khi leo cầu thang" — những quan sát này không đo được bằng số nhưng có giá trị thực.',
+    ],
+    points: [
+      { icon: '🔄', label: 'So sánh đúng', note: 'Chỉ so với chính mình' },
+      { icon: '📱', label: 'Tránh bẫy MXH', note: 'Highlight reel ≠ thực tế' },
+      { icon: '🎯', label: 'Câu hỏi đúng', note: 'Tôi tốt hơn 4 tuần trước chưa?' },
+      { icon: '🌱', label: 'Ăn mừng nhỏ', note: 'Mọi tiến bộ đều có giá trị' },
+    ],
+  },
+  {
+    label: 'Tiến bộ nhỏ đều ổn — tốt hơn 1% mỗi tuần = 50% tốt hơn sau 1 năm',
+    title: 'Sức Mạnh Của Tiến Bộ Nhỏ',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cải thiện 1% mỗi tuần tạo ra kết quả lớn hơn 50% sau 1 năm — sức mạnh của lãi kép',
+    details: [
+      'Toán học đơn giản: 1.01^52 tuần = 1.68 — nghĩa là cải thiện 1% mỗi tuần trong 1 năm tạo ra kết quả tốt hơn 68%, không phải chỉ 52%.',
+      'Ngược lại: giảm 1% mỗi tuần (0.99^52) = chỉ còn 59% so với ban đầu — bỏ cuộc từng bước nhỏ cũng hủy hoại theo cấp số nhân.',
+      '"Tốt hơn 1%" không cần đo lường chính xác — chỉ cần mỗi tuần có một điều gì đó nhỉnh hơn: plank thêm 5 giây, ngủ thêm 15 phút, căng thẳng giảm 0.5 điểm.',
+      'Phần nguy hiểm nhất trong hành trình sức khỏe không phải là thất bại — mà là kỳ vọng kết quả lớn quá nhanh và bỏ cuộc khi không thấy.',
+      'James Clear (Atomic Habits): "Bạn không tăng lên ngang tầm mục tiêu, bạn rơi xuống ngang tầm hệ thống". Xây hệ thống nhỏ > đặt mục tiêu lớn.',
+      'Mỗi test 4 tuần chỉ cần 1–2 chỉ số tiến bộ rõ là đủ để biết hệ thống đang hoạt động — tiếp tục.',
+    ],
+    points: [
+      { icon: '📈', label: 'Lãi kép', note: '+1%/tuần = +68% sau 1 năm' },
+      { icon: '🧩', label: 'Hệ thống', note: 'Xây thói quen > đặt mục tiêu lớn' },
+      { icon: '⏳', label: 'Kiên nhẫn', note: 'Kết quả lớn cần thời gian nhỏ đều' },
+      { icon: '🎯', label: 'Ngưỡng thành công', note: '1–2 chỉ số tốt hơn = đúng hướng' },
+    ],
+  },
+  {
+    label: 'Nếu 3/8 chỉ số tốt hơn — đang đi đúng hướng',
+    title: 'Đọc Điểm Số Toàn Diện',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Không phải tất cả 8 chỉ số cải thiện cùng lúc — đó là điều bình thường và đúng về sinh lý',
+    details: [
+      'Cơ thể không cải thiện đồng đều tất cả các hệ cùng lúc: tuần 1–4 thường thấy cải thiện thể lực trước, tuần 5–8 thấy cải thiện giấc ngủ và năng lượng, tuần 9–12 mới thấy thay đổi hình dáng.',
+      'Nếu 3/8 chỉ số tốt hơn sau 4 tuần = tiến bộ thực sự. Nếu 5/8 trở lên = xuất sắc. Đừng đòi hỏi tất cả 8/8.',
+      'Chú ý mối liên hệ giữa các chỉ số: ngủ tốt hơn thường kéo năng lượng tăng và stress giảm — đây là "ripple effect" (hiệu ứng lan tỏa) của một thay đổi.',
+      'Chỉ số nào đang tốt? Đó là mảng bạn đang làm đúng — tiếp tục. Chỉ số nào đứng im hoặc tệ hơn? Đó là tín hiệu cần điều chỉnh cụ thể.',
+      'Cân nặng và vòng eo thường thay đổi chậm hơn các chỉ số chức năng (plank, sit-to-stand) — đừng dùng hai chỉ số này làm thước đo duy nhất.',
+      'Sau 12 tuần: tổng kết xem chỉ số nào cải thiện nhiều nhất, chỉ số nào ì nhất — đó là bản đồ của cơ thể bạn cho chu kỳ tiếp theo.',
+    ],
+    points: [
+      { icon: '✅', label: 'Tốt', note: '3–4/8 chỉ số cải thiện' },
+      { icon: '🏆', label: 'Xuất sắc', note: '5/8 trở lên cải thiện' },
+      { icon: '🔗', label: 'Liên hệ', note: 'Một thay đổi kéo nhiều chỉ số khác' },
+      { icon: '🗺️', label: 'Bản đồ', note: 'Chỉ số ì nhất = ưu tiên chu kỳ sau' },
+    ],
+  },
+  {
+    label: 'Nếu tất cả đứng im — cần thay đổi gì đó trong lịch tập hoặc dinh dưỡng',
+    title: 'Khi Kết Quả Không Thay Đổi',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Plateau không phải thất bại — đó là tín hiệu cơ thể đã thích nghi và cần kích thích mới',
+    details: [
+      'Nếu tất cả 8 chỉ số không thay đổi sau 4 tuần, trước tiên kiểm tra: bạn có thực sự thực hiện đúng kế hoạch không? Nhật ký tập/ăn thực tế so với kế hoạch.',
+      'Nguyên nhân phổ biến nhất của plateau: cường độ tập không tăng theo thời gian (cơ thể đã thích nghi); thiếu protein; ngủ dưới 6.5 giờ; stress mãn tính cao.',
+      'Quy tắc điều chỉnh: thay đổi một biến mỗi lần — nếu thay đổi tập luyện VÀ dinh dưỡng cùng lúc, bạn không biết cái nào có tác dụng.',
+      'Cách phá plateau vận động: thêm 10–15% khối lượng tập, hoặc thêm 1 buổi/tuần, hoặc đổi loại bài tập cho cùng nhóm cơ.',
+      'Cách phá plateau dinh dưỡng: kiểm tra protein (≥ 1.6g/kg cân nặng), giảm đồ uống có calo ẩn (nước ngọt, cà phê sữa), thêm rau vào mỗi bữa.',
+      'Nếu điều chỉnh 2 chu kỳ (8 tuần) mà vẫn không thay đổi — đây là lúc xem xét gặp chuyên gia dinh dưỡng hoặc huấn luyện viên để được đánh giá trực tiếp.',
+    ],
+    points: [
+      { icon: '🔍', label: 'Kiểm tra trước', note: 'Thực hiện đúng kế hoạch chưa?' },
+      { icon: '⚙️', label: 'Đổi 1 biến', note: 'Không đổi mọi thứ cùng lúc' },
+      { icon: '💪', label: 'Tăng cường độ', note: '+10–15% khối lượng hoặc +1 buổi' },
+      { icon: '🥗', label: 'Dinh dưỡng', note: 'Protein ≥ 1.6g/kg, thêm rau' },
+    ],
+  },
+];
+
+function ReadTipModal({ item, idx, total, onClose, onPrev, onNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && idx > 0) onPrev();
+      if (e.key === 'ArrowRight' && idx < total - 1) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, idx, total]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.title} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-2" style={{ color: item.color }}>{item.title}</h2>
+          <div className="rounded-xl border-l-4 px-4 py-3 mb-6" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.07)` }}>
+            <p className="text-base font-semibold" style={{ color: item.color }}>✦ {item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => idx > 0 && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: idx > 0 ? item.color : 'rgba(255,255,255,0.2)', background: idx > 0 ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${idx > 0 ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: idx > 0 ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
+            <button onClick={() => idx < total - 1 && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: idx < total - 1 ? item.color : 'rgba(255,255,255,0.2)', background: idx < total - 1 ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${idx < total - 1 ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: idx < total - 1 ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function TestItemModal({ item, idx, total, onClose, onPrev, onNext }) {
   useEffect(() => {
     const onKey = (e) => {
@@ -439,6 +594,7 @@ export default function ToolsProgressTestPage() {
   const [testLabel, setTestLabel] = useState('Baseline');
   const [openItem, setOpenItem] = useState(null);
   const [testModal, setTestModal] = useState(null);
+  const [readTipModal, setReadTipModal] = useState(null);
   const [milestoneModal, setMilestoneModal] = useState(null);
 
   useEffect(() => {
@@ -614,11 +770,16 @@ export default function ToolsProgressTestPage() {
       <RevealBlock delay={3} className="mb-10">
         <div className="rounded-2xl border p-5" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.05)` }}>
           <h3 className="font-bold mb-3" style={{ color: COLOR }}>📌 Cách Đọc Kết Quả</h3>
-          <ul className="space-y-2 text-lg text-muted">
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Không so sánh với người khác — chỉ so với chính mình lần trước</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Tiến bộ nhỏ đều ổn — tốt hơn 1% mỗi tuần = 50% tốt hơn sau 1 năm</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Nếu 3/8 chỉ số tốt hơn — đang đi đúng hướng</li>
-            <li className="flex gap-2"><span style={{ color: COLOR }}>→</span>Nếu tất cả đứng im — cần thay đổi gì đó trong lịch tập hoặc dinh dưỡng</li>
+          <ul className="space-y-2">
+            {READ_TIPS.map((tip, i) => (
+              <li key={i}
+                onClick={() => setReadTipModal(i)}
+                className="flex items-center gap-2 text-lg text-muted rounded-xl px-2 py-1.5 -mx-2 cursor-pointer group hover:bg-white/5 transition-colors">
+                <span style={{ color: tip.color }} className="shrink-0">→</span>
+                <span className="flex-1">{tip.label}</span>
+                <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0" style={{ color: tip.color }}>Chi tiết →</span>
+              </li>
+            ))}
           </ul>
         </div>
       </RevealBlock>
@@ -626,6 +787,16 @@ export default function ToolsProgressTestPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
 
+      {readTipModal !== null && (
+        <ReadTipModal
+          item={READ_TIPS[readTipModal]}
+          idx={readTipModal}
+          total={READ_TIPS.length}
+          onClose={() => setReadTipModal(null)}
+          onPrev={() => setReadTipModal(i => Math.max(0, i - 1))}
+          onNext={() => setReadTipModal(i => Math.min(READ_TIPS.length - 1, i + 1))}
+        />
+      )}
       {testModal !== null && (
         <TestItemModal
           item={TEST_ITEMS[testModal]}

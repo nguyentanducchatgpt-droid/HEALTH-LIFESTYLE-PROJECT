@@ -1749,6 +1749,9 @@ export default function PillarC() {
   const [c5ScheduleIdx, setC5ScheduleIdx] = useState(null);
   const [c6ProtocolIdx, setC6ProtocolIdx] = useState(null);
   const [sleepChecks, setSleepChecks] = useState({});
+  const [scoreChecks, setScoreChecks] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('healthapp_c0_score_checks')) || {}; } catch { return {}; }
+  });
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
   const [zoneModalIdx, setZoneModalIdx] = useState(null);
@@ -1808,9 +1811,14 @@ export default function PillarC() {
     return () => { const el = document.getElementById(id); if (el) el.remove(); };
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('healthapp_c0_score_checks', JSON.stringify(scoreChecks));
+  }, [scoreChecks]);
+
   const tab = TABS.find(t => t.id === activeTab) || TABS[1];
   const sleepProgress = C1_CHECKLIST.filter((_, i) => sleepChecks[i]).length;
   const neatProgress = [0, 1, 2, 3].filter(i => neatChecks[i]).length;
+  const lifestyleScore = C0_SCORE.reduce((sum, row, i) => sum + (scoreChecks[i] ? row.pts : 0), 0);
 
   const handleTabClick = (id) => {
     setActiveTab(id);
@@ -1960,21 +1968,73 @@ export default function PillarC() {
                   ))}
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: TEAL }}>Lifestyle Score — 100 điểm</h3>
-                <div className="space-y-1.5 mb-6">
+                <div className="space-y-1.5 mb-3">
                   {C0_SCORE.map((row, i) => (
-                    <button key={i} onClick={() => setScoreModalIdx(i)}
-                      className="w-full flex items-center justify-between text-lg rounded-xl px-3 py-2 group cursor-pointer transition-all hover:bg-white/5"
-                      style={{ borderColor: scoreModalIdx === i ? `rgba(${row.rgb},0.4)` : 'transparent', border: '1px solid', transition: 'border-color 0.2s, background 0.2s' }}>
-                      <span className="flex items-center gap-2 text-muted group-hover:text-text transition-colors">
-                        <span className="text-base">{row.icon}</span>
-                        {row.label}
-                      </span>
-                      <span className="flex items-center gap-2 shrink-0">
-                        <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: row.color }}>Chi tiết →</span>
-                        <span className="font-bold tabular-nums" style={{ color: row.color }}>{row.pts} đ</span>
-                      </span>
-                    </button>
+                    <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
+                      style={{
+                        border: '1px solid',
+                        borderColor: scoreChecks[i] ? `rgba(${row.rgb},0.35)` : scoreModalIdx === i ? `rgba(${row.rgb},0.25)` : 'rgba(255,255,255,0.05)',
+                        background: scoreChecks[i] ? `rgba(${row.rgb},0.07)` : 'transparent',
+                        transition: 'border-color 0.2s, background 0.2s',
+                      }}>
+                      {/* Checkbox zone */}
+                      <button
+                        onClick={() => setScoreChecks(p => ({ ...p, [i]: !p[i] }))}
+                        className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl transition-all"
+                        style={{ cursor: 'pointer' }}
+                        aria-label={scoreChecks[i] ? 'Bỏ đánh dấu' : 'Đánh dấu hoàn thành'}
+                      >
+                        <div className="w-5 h-5 rounded-md flex items-center justify-center border-2 transition-all"
+                          style={{
+                            borderColor: scoreChecks[i] ? row.color : 'rgba(255,255,255,0.25)',
+                            background: scoreChecks[i] ? row.color : 'transparent',
+                            boxShadow: scoreChecks[i] ? `0 0 8px rgba(${row.rgb},0.5)` : 'none',
+                          }}>
+                          {scoreChecks[i] && (
+                            <svg viewBox="0 0 12 10" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-2.5">
+                              <path d="M1 5l3.5 3.5L11 1"/>
+                            </svg>
+                          )}
+                        </div>
+                      </button>
+                      {/* Label + modal zone */}
+                      <button onClick={() => setScoreModalIdx(i)}
+                        className="flex-1 flex items-center justify-between text-lg py-2 pr-3 text-left group/label cursor-pointer"
+                      >
+                        <span className={`flex items-center gap-2 transition-colors ${scoreChecks[i] ? 'text-text' : 'text-muted group-hover/label:text-text'}`}>
+                          <span className="text-base">{row.icon}</span>
+                          <span className={scoreChecks[i] ? 'line-through opacity-60' : ''}>{row.label}</span>
+                        </span>
+                        <span className="flex items-center gap-2 shrink-0">
+                          <span className="text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity" style={{ color: row.color }}>Chi tiết →</span>
+                          <span className="font-bold tabular-nums" style={{ color: scoreChecks[i] ? row.color : `rgba(${row.rgb},0.5)` }}>{row.pts} đ</span>
+                        </span>
+                      </button>
+                    </div>
                   ))}
+                </div>
+                {/* Score total bar */}
+                <div className="mb-6 p-3 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.07)`, border: `1px solid rgba(${TEAL_RGB},0.18)` }}>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-semibold" style={{ color: TEAL }}>Tổng điểm hôm nay</span>
+                    <span className="text-xl font-black tabular-nums" style={{ color: lifestyleScore >= 80 ? '#22c55e' : lifestyleScore >= 50 ? TEAL : '#f59e0b' }}>
+                      {lifestyleScore} <span className="text-sm font-semibold opacity-60">/ 100</span>
+                    </span>
+                  </div>
+                  <div className="h-2 rounded-full overflow-hidden" style={{ background: `rgba(${TEAL_RGB},0.15)` }}>
+                    <div className="h-full rounded-full transition-all duration-500"
+                      style={{
+                        width: `${lifestyleScore}%`,
+                        background: lifestyleScore >= 80
+                          ? 'linear-gradient(90deg,#22c55e,#16a34a)'
+                          : lifestyleScore >= 50
+                          ? `linear-gradient(90deg,${TEAL},#0d9488)`
+                          : 'linear-gradient(90deg,#f59e0b,#d97706)',
+                      }} />
+                  </div>
+                  <p className="text-xs text-muted mt-1.5">
+                    {lifestyleScore >= 80 ? '🏆 Xuất sắc — lối sống rất tốt!' : lifestyleScore >= 50 ? '✦ Tốt — tiếp tục duy trì!' : '💪 Bắt đầu tích điểm từng ngày'}
+                  </p>
                 </div>
                 <div className="p-4 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.08)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
                   <p className="text-lg font-semibold mb-3" style={{ color: TEAL }}>Chọn track phù hợp với bạn:</p>

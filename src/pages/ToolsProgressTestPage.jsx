@@ -10,14 +10,174 @@ const LS_KEY = 'healthapp_f_test';
 const LS_HIST = 'healthapp_f_test_hist';
 
 const TEST_ITEMS = [
-  { key: 'weight', label: 'Cân nặng', unit: 'kg', icon: '⚖️', how: 'Cân buổi sáng, sau vệ sinh, trước khi ăn', betterDir: 'Phụ thuộc mục tiêu' },
-  { key: 'waist', label: 'Vòng eo', unit: 'cm', icon: '📏', how: 'Đo ngang rốn sau khi thở ra nhẹ, không hít vào', betterDir: 'Giảm là tốt (≤ 80cm nữ, ≤ 90cm nam)' },
-  { key: 'sts', label: 'Sit-to-stand 1 phút', unit: 'lần', icon: '🪑', how: 'Đứng lên ngồi xuống từ ghế, không dùng tay đỡ, đếm trong 60 giây', betterDir: 'Tăng là tốt (≥ 20 lần = tốt)' },
-  { key: 'plank', label: 'Plank (gối hoặc thường)', unit: 'giây', icon: '💪', how: 'Giữ tư thế plank đến khi không thể nữa, lưng thẳng', betterDir: 'Tăng là tốt (≥ 60 giây = tốt)' },
-  { key: 'walk6', label: 'Đi bộ 6 phút', unit: 'm hoặc cảm giác', icon: '🚶', how: 'Đi bộ nhanh nhất có thể trong 6 phút, ghi quãng đường hoặc mức dễ/vừa/khó', betterDir: 'Cảm giác nhẹ hơn hoặc quãng đường xa hơn là tốt' },
-  { key: 'sleep', label: 'Giấc ngủ TB', unit: 'giờ/đêm', icon: '😴', how: 'Trung bình 7 ngày qua, ước lượng gần nhất', betterDir: 'Mục tiêu ≥ 7 giờ' },
-  { key: 'stress', label: 'Stress tự chấm', unit: '/10', icon: '🌡️', how: 'Mức stress cảm nhận trung bình tuần qua (1 = bình thản, 10 = quá tải)', betterDir: 'Giảm là tốt (≤ 4 = tốt)' },
-  { key: 'energy', label: 'Năng lượng tự chấm', unit: '/10', icon: '⚡', how: 'Mức năng lượng cảm nhận trung bình tuần qua (1 = kiệt sức, 10 = tràn đầy)', betterDir: 'Tăng là tốt (≥ 7 = tốt)' },
+  {
+    key: 'weight', label: 'Cân nặng', unit: 'kg', icon: '⚖️',
+    how: 'Cân buổi sáng, sau vệ sinh, trước khi ăn', betterDir: 'Phụ thuộc mục tiêu',
+    color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Cân nặng là chỉ số dễ đo nhất nhưng ít thông tin nhất về sức khỏe thực sự',
+    details: [
+      'Cân nặng dao động 1–3 kg trong ngày tùy theo nước, thức ăn và thời điểm — vì vậy luôn đo cùng điều kiện: sáng sớm, sau vệ sinh, trước ăn uống.',
+      'Một mình cân nặng không nói lên đủ: hai người cùng 70 kg có thể có % mỡ và sức khỏe hoàn toàn khác nhau.',
+      'Mục tiêu giảm cân: kỳ vọng giảm 0.5–1 kg/tuần là tốc độ lành mạnh. Giảm nhanh hơn thường đồng nghĩa mất cơ.',
+      'Mục tiêu tăng cơ: cân tăng chậm 0.5 kg/tháng là dấu hiệu tốt — không cần tăng nhanh hơn nếu không dùng hỗ trợ.',
+      'Mục tiêu recomp: cân nặng có thể không đổi nhiều tuần dù cơ thể đang cải thiện hình dáng và thể lực.',
+      'Không nên cân hàng ngày nếu dễ bị ảnh hưởng tâm lý — 1 lần/tuần hoặc mỗi 4 tuần theo mốc test là đủ.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Thời điểm', note: 'Sáng sớm, sau vệ sinh, trước ăn' },
+      { icon: '📊', label: 'Tần suất', note: '1 lần/tuần hoặc mỗi 4 tuần' },
+      { icon: '🎯', label: 'Mục tiêu', note: 'Phụ thuộc goal cá nhân' },
+      { icon: '💡', label: 'Lưu ý', note: 'Không so sánh ngày qua ngày' },
+    ],
+  },
+  {
+    key: 'waist', label: 'Vòng eo', unit: 'cm', icon: '📏',
+    how: 'Đo ngang rốn sau khi thở ra nhẹ, không hít vào', betterDir: 'Giảm là tốt (≤ 80cm nữ, ≤ 90cm nam)',
+    color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Vòng eo phản ánh mỡ nội tạng — chỉ số sức khỏe tim mạch tốt hơn BMI',
+    details: [
+      'Mỡ bụng (nội tạng) nguy hiểm hơn mỡ dưới da vì bao quanh các cơ quan và tạo viêm mãn tính — vòng eo đo trực tiếp nguy cơ này.',
+      'Cách đo chuẩn: thở ra nhẹ, đặt thước ngang qua rốn, giữ thước ngang và không kéo căng, đọc số sau khi thở ra.',
+      'Ngưỡng nguy hiểm: nữ > 80 cm, nam > 90 cm — nguy cơ tim mạch và tiểu đường type 2 tăng đáng kể.',
+      'Ngưỡng rủi ro cao: nữ > 88 cm, nam > 102 cm — cần can thiệp dinh dưỡng và vận động ngay.',
+      'Vòng eo giảm sớm hơn cân nặng khi bắt đầu tập và ăn đúng — đây thường là dấu hiệu đầu tiên của sự thay đổi.',
+      'Đo 1 lần mỗi 4 tuần cùng thời điểm trong ngày — buổi sáng trước ăn cho kết quả nhất quán nhất.',
+    ],
+    points: [
+      { icon: '📍', label: 'Vị trí đo', note: 'Ngang rốn, thước nằm ngang' },
+      { icon: '🫁', label: 'Kỹ thuật', note: 'Sau khi thở ra nhẹ' },
+      { icon: '⚠️', label: 'Ngưỡng cảnh báo', note: '> 80 cm (nữ), > 90 cm (nam)' },
+      { icon: '📉', label: 'Tốt hơn khi', note: 'Giảm đều theo từng 4 tuần' },
+    ],
+  },
+  {
+    key: 'sts', label: 'Sit-to-stand 1 phút', unit: 'lần', icon: '🪑',
+    how: 'Đứng lên ngồi xuống từ ghế, không dùng tay đỡ, đếm trong 60 giây', betterDir: 'Tăng là tốt (≥ 20 lần = tốt)',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Sit-to-stand dự đoán nguy cơ té ngã và tuổi thọ tốt hơn nhiều bài test phức tạp',
+    details: [
+      'Nghiên cứu từ European Journal of Cardiology (2012) chỉ ra: điểm sit-to-stand thấp liên quan đến tỷ lệ tử vong cao hơn 5–6 lần trong 6 năm theo dõi.',
+      'Bài test đo đồng thời sức mạnh chân, khả năng giữ thăng bằng, phối hợp cơ và sức bền tim mạch trong 60 giây.',
+      'Cách thực hiện chuẩn: ngồi ghế thẳng (không có tay vịn), đứng lên hoàn toàn — hai chân thẳng, sau đó ngồi xuống nhẹ nhàng. Đếm số lần hoàn chỉnh trong 60 giây.',
+      'Không được dùng tay đỡ vào đùi hoặc ghế — đây là lỗi phổ biến làm kết quả cao ảo.',
+      'Mức tốt theo độ tuổi: 20–39 tuổi ≥ 25 lần; 40–59 tuổi ≥ 20 lần; 60+ tuổi ≥ 15 lần.',
+      'Tăng 3–5 lần sau mỗi 4 tuần là tiến bộ xuất sắc — cho thấy sức mạnh chân và thể lực cải thiện rõ.',
+    ],
+    points: [
+      { icon: '🪑', label: 'Thiết bị', note: 'Ghế thẳng, không tay vịn' },
+      { icon: '🚫', label: 'Không dùng tay', note: 'Không đỡ vào đùi hay ghế' },
+      { icon: '🏆', label: 'Mục tiêu', note: '≥ 20 lần/phút là tốt' },
+      { icon: '📈', label: 'Tiến bộ', note: '+3–5 lần mỗi 4 tuần' },
+    ],
+  },
+  {
+    key: 'plank', label: 'Plank (gối hoặc thường)', unit: 'giây', icon: '💪',
+    how: 'Giữ tư thế plank đến khi không thể nữa, lưng thẳng', betterDir: 'Tăng là tốt (≥ 60 giây = tốt)',
+    color: '#ef4444', rgb: '239,68,68',
+    img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Plank đo sức mạnh lõi cơ thể — nền tảng của mọi vận động và bảo vệ cột sống',
+    details: [
+      'Sức mạnh lõi (core) không chỉ là bụng 6 múi — mà là khả năng giữ ổn định toàn bộ thân mình khi vận động, ngăn chấn thương lưng và cải thiện tư thế.',
+      'Plank trên gối hoàn toàn hợp lệ nếu chưa đủ sức — quan trọng là tư thế thẳng từ gối/mũi chân đến đầu, không để hông võng hay nhô cao.',
+      'Dừng khi: hông bắt đầu võng, lưng dưới đau, không giữ được hơi thở đều — không cố ép qua các tín hiệu này.',
+      'Tiến bộ từ 20 giây lên 60 giây là bước ngoặt lớn. Trên 60 giây, bạn đã có nền sức mạnh lõi cơ bản.',
+      'Mức tham chiếu: người mới < 30 giây; trung bình 30–60 giây; tốt > 60 giây; xuất sắc > 90 giây.',
+      'Sau khi đạt 90 giây, thay vì giữ lâu hơn, hãy chuyển sang các biến thể khó hơn: plank có chân nâng, plank xoay, side plank.',
+    ],
+    points: [
+      { icon: '📐', label: 'Tư thế', note: 'Thẳng từ đầu đến chân/gối' },
+      { icon: '🛑', label: 'Dừng khi', note: 'Hông võng hoặc lưng đau' },
+      { icon: '🏆', label: 'Mục tiêu', note: '≥ 60 giây (tốt)' },
+      { icon: '⬆️', label: 'Nâng cấp', note: 'Trên 90 giây → biến thể khó hơn' },
+    ],
+  },
+  {
+    key: 'walk6', label: 'Đi bộ 6 phút', unit: 'm hoặc cảm giác', icon: '🚶',
+    how: 'Đi bộ nhanh nhất có thể trong 6 phút, ghi quãng đường hoặc mức dễ/vừa/khó', betterDir: 'Cảm giác nhẹ hơn hoặc quãng đường xa hơn là tốt',
+    color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '6-Minute Walk Test là công cụ đo sức bền tim phổi được WHO khuyến nghị',
+    details: [
+      'Test đi bộ 6 phút (6MWT) là bài đánh giá sức bền tim phổi phổ biến nhất trong y học phục hồi chức năng — không cần thiết bị đắt tiền.',
+      'Đi trên đoạn thẳng (hành lang, công viên), đi nhanh nhất có thể duy trì được trong 6 phút — không chạy, không dừng hẳn.',
+      'Nếu không đo được khoảng cách: ghi nhận cảm giác — "dễ/vừa/khó". Cùng một lộ trình cảm thấy nhẹ hơn sau 4 tuần = đã tiến bộ.',
+      'Mức tham chiếu (người trưởng thành): < 400m = cần cải thiện; 400–550m = trung bình; > 550m = tốt; > 650m = xuất sắc.',
+      'Tốc độ cải thiện: thêm 20–50m sau mỗi 4 tuần là tiến bộ đáng kể cho người mới bắt đầu.',
+      'Bài test này cũng phản ánh gián tiếp chất lượng giấc ngủ và phục hồi — nếu cảm thấy khó hơn dù đã tập, có thể đang thiếu ngủ hoặc overtrain.',
+    ],
+    points: [
+      { icon: '🗺️', label: 'Địa điểm', note: 'Đoạn thẳng, bằng phẳng' },
+      { icon: '⚡', label: 'Cường độ', note: 'Nhanh nhất duy trì được' },
+      { icon: '🏆', label: 'Mục tiêu', note: '> 550m hoặc cảm giác nhẹ hơn' },
+      { icon: '📈', label: 'Tiến bộ', note: '+20–50m mỗi 4 tuần' },
+    ],
+  },
+  {
+    key: 'sleep', label: 'Giấc ngủ TB', unit: 'giờ/đêm', icon: '😴',
+    how: 'Trung bình 7 ngày qua, ước lượng gần nhất', betterDir: 'Mục tiêu ≥ 7 giờ',
+    color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Giấc ngủ là "steroid tự nhiên" — thiếu ngủ phá hỏng mọi nỗ lực tập luyện và ăn uống',
+    details: [
+      'Trong giấc ngủ sâu (deep sleep), cơ thể tiết GH (Growth Hormone) để sửa chữa cơ bắp, phục hồi mô và củng cố hệ miễn dịch — thiếu ngủ = thiếu phục hồi.',
+      'Nghiên cứu cho thấy ngủ < 6 giờ/đêm làm tăng cảm giác đói (tăng ghrelin, giảm leptin), khiến khó kiểm soát ăn uống hơn 30–40%.',
+      'Mục tiêu: 7–9 giờ/đêm cho người trưởng thành. Trẻ hơn và tập nặng hơn cần tiệm cận 9 giờ.',
+      'Chất lượng quan trọng không kém số giờ: ngủ 8 giờ nhưng thức giấc nhiều lần kém hơn ngủ 7 giờ liên tục sâu.',
+      'Dấu hiệu ngủ tốt: tỉnh dậy tự nhiên không cần báo thức, không buồn ngủ sau 3 giờ chiều, cảm giác sảng khoái buổi sáng.',
+      'Nếu điểm ngủ không cải thiện dù đang tập đều — đây là vấn đề cần giải quyết trước mọi thứ khác.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Mục tiêu', note: '7–9 giờ/đêm' },
+      { icon: '💤', label: 'Chất lượng', note: 'Ngủ liên tục, không thức giữa đêm' },
+      { icon: '⚠️', label: 'Nguy hiểm', note: 'Dưới 6 giờ = phá hoại mọi nỗ lực' },
+      { icon: '🌙', label: 'Ưu tiên', note: 'Sửa ngủ trước khi tăng tập' },
+    ],
+  },
+  {
+    key: 'stress', label: 'Stress tự chấm', unit: '/10', icon: '🌡️',
+    how: 'Mức stress cảm nhận trung bình tuần qua (1 = bình thản, 10 = quá tải)', betterDir: 'Giảm là tốt (≤ 4 = tốt)',
+    color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Stress mãn tính tăng cortisol — phá hoại cơ bắp, tích mỡ bụng và suy giảm miễn dịch',
+    details: [
+      'Cortisol (hormone stress) ở mức cao kéo dài làm cơ thể phân giải cơ bắp để lấy năng lượng và ưu tiên tích trữ mỡ bụng.',
+      'Thang điểm tự chấm: 1–3 = bình thản, kiểm soát tốt; 4–6 = stress vừa, có thể quản lý; 7–8 = cao, ảnh hưởng sức khỏe; 9–10 = quá tải, cần can thiệp.',
+      'Stress ở mức 5–6/10 liên tục nhiều tuần nguy hiểm hơn stress đỉnh 9/10 ngắn ngày vì cơ thể không có thời gian phục hồi.',
+      'Nếu điểm stress tăng qua các mốc test dù đang "tập tốt" — đây là cảnh báo cần giảm cường độ hoặc thêm ngày nghỉ.',
+      'Các công cụ giảm stress hiệu quả: hít thở 4-7-8, thiền 10 phút/ngày, đi bộ thiên nhiên, viết nhật ký.',
+      'Mục tiêu: giảm trung bình ≥ 1 điểm sau mỗi 4 tuần nếu điểm ban đầu ≥ 6.',
+    ],
+    points: [
+      { icon: '📊', label: 'Thang điểm', note: '1 (bình thản) đến 10 (quá tải)' },
+      { icon: '⚠️', label: 'Ngưỡng', note: 'Trên 6 = cần chú ý' },
+      { icon: '🧘', label: 'Công cụ', note: 'Hít thở, thiền, đi bộ thiên nhiên' },
+      { icon: '📉', label: 'Mục tiêu', note: 'Dưới 4 là vùng an toàn' },
+    ],
+  },
+  {
+    key: 'energy', label: 'Năng lượng tự chấm', unit: '/10', icon: '⚡',
+    how: 'Mức năng lượng cảm nhận trung bình tuần qua (1 = kiệt sức, 10 = tràn đầy)', betterDir: 'Tăng là tốt (≥ 7 = tốt)',
+    color: '#eab308', rgb: '234,179,8',
+    img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Năng lượng tổng thể là thước đo tổng hợp nhất — phản ánh ngủ, dinh dưỡng, vận động cùng lúc',
+    details: [
+      'Năng lượng tự chấm là "chỉ số tổng hợp" tốt nhất: nếu ngủ đủ, ăn đủ chất và tập vừa sức, điểm năng lượng sẽ tăng tự nhiên.',
+      'Thang điểm: 1–3 = kiệt sức, khó hoàn thành việc cơ bản; 4–6 = trung bình, hoạt động được; 7–8 = tốt, năng suất cao; 9–10 = tràn đầy, hiếm gặp.',
+      'Điểm năng lượng thấp (< 5) kéo dài dù số liệu khác ổn = dấu hiệu thiếu sắt, thiếu B12, hoặc bệnh tiềm ẩn cần kiểm tra.',
+      'Năng lượng buổi chiều (2–4 giờ) thường xuống thấp tự nhiên — đây không phải bệnh, mà là nhịp sinh học (circadian dip).',
+      'Nếu năng lượng giảm sau khi tăng cường độ tập — đây là dấu hiệu overtrain hoặc thiếu carbohydrate trong khẩu phần.',
+      'Mục tiêu: tăng trung bình ≥ 1 điểm sau mỗi 4 tuần nếu điểm ban đầu < 6.',
+    ],
+    points: [
+      { icon: '📊', label: 'Thang điểm', note: '1 (kiệt sức) đến 10 (tràn đầy)' },
+      { icon: '🎯', label: 'Mục tiêu', note: 'Duy trì ≥ 7 điểm' },
+      { icon: '🔍', label: 'Chú ý', note: 'Dưới 5 kéo dài → kiểm tra sức khỏe' },
+      { icon: '📈', label: 'Tiến bộ', note: '+1 điểm/4 tuần là tốt' },
+    ],
+  },
 ];
 
 const MILESTONES = [
@@ -118,6 +278,83 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
+function TestItemModal({ item, idx, total, onClose, onPrev, onNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && idx > 0) onPrev();
+      if (e.key === 'ArrowRight' && idx < total - 1) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, idx, total]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>
+            {item.icon}
+          </div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{item.label}</h2>
+          <p className="font-semibold text-sm mb-4" style={{ color: `rgba(${item.rgb},0.7)` }}>📊 {item.betterDir}</p>
+          <div className="rounded-xl border-l-4 px-4 py-3 mb-6" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.07)` }}>
+            <p className="text-base font-semibold" style={{ color: item.color }}>✦ {item.keyFact}</p>
+          </div>
+          <div className="rounded-xl border px-4 py-3 mb-6" style={{ borderColor: `rgba(${item.rgb},0.2)`, background: `rgba(${item.rgb},0.05)` }}>
+            <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: item.color }}>📋 Cách đo</p>
+            <p className="text-base text-muted">{item.how}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => idx > 0 && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: idx > 0 ? item.color : 'rgba(255,255,255,0.2)', background: idx > 0 ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${idx > 0 ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: idx > 0 ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
+            <button onClick={() => idx < total - 1 && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: idx < total - 1 ? item.color : 'rgba(255,255,255,0.2)', background: idx < total - 1 ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${idx < total - 1 ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: idx < total - 1 ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function MilestoneModal({ item, idx, total, onClose, onPrev, onNext }) {
   useEffect(() => {
     const onKey = (e) => {
@@ -201,6 +438,7 @@ export default function ToolsProgressTestPage() {
   const [testDate, setTestDate] = useState(new Date().toISOString().slice(0, 10));
   const [testLabel, setTestLabel] = useState('Baseline');
   const [openItem, setOpenItem] = useState(null);
+  const [testModal, setTestModal] = useState(null);
   const [milestoneModal, setMilestoneModal] = useState(null);
 
   useEffect(() => {
@@ -309,22 +547,28 @@ export default function ToolsProgressTestPage() {
 
           <div className="space-y-3 mb-5">
             {TEST_ITEMS.map((item, i) => (
-              <div key={item.key} className="rounded-xl border border-border overflow-hidden">
-                <button onClick={() => setOpenItem(openItem === i ? null : i)} className="w-full flex items-center gap-3 p-3 hover:bg-white/5 transition-colors text-left">
-                  <span className="text-2xl">{item.icon}</span>
-                  <div className="flex-1">
-                    <div className="text-lg font-medium text-text">{item.label}</div>
-                    <div className="text-base text-muted">{inputs[item.key] ? `${inputs[item.key]} ${item.unit}` : 'Chưa nhập'}</div>
-                  </div>
-                  <span className="text-muted text-lg">{openItem === i ? '▲' : '▼'}</span>
-                </button>
+              <div key={item.key} className="rounded-xl border border-border overflow-hidden group"
+                style={{ borderColor: testModal === i ? `rgba(${item.rgb},0.4)` : undefined, transition: 'border-color 0.2s' }}>
+                <div className="flex items-center gap-3 p-3">
+                  <button onClick={() => setTestModal(i)} className="flex items-center gap-3 flex-1 text-left hover:opacity-80 transition-opacity">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div className="flex-1">
+                      <div className="text-lg font-medium text-text">{item.label}</div>
+                      <div className="text-base text-muted">{inputs[item.key] ? `${inputs[item.key]} ${item.unit}` : 'Chưa nhập'}</div>
+                    </div>
+                    <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mr-2" style={{ color: item.color }}>Chi tiết →</span>
+                  </button>
+                  <button onClick={() => setOpenItem(openItem === i ? null : i)} className="text-muted text-lg px-2 py-1 hover:text-text transition-colors shrink-0">
+                    {openItem === i ? '▲' : '▼'}
+                  </button>
+                </div>
                 {openItem === i && (
                   <div className="px-3 pb-3 border-t border-border pt-2">
                     <p className="text-base text-muted mb-2">📋 {item.how}</p>
-                    <p className="text-base mb-2" style={{ color: COLOR }}>📊 {item.betterDir}</p>
+                    <p className="text-base mb-2" style={{ color: item.color }}>📊 {item.betterDir}</p>
                     <input type="text" value={inputs[item.key] ?? ''} onChange={e => setVal(item.key, e.target.value)}
                       placeholder={`Nhập ${item.unit}`} className="w-full px-3 py-2 rounded-lg border bg-transparent text-lg text-text placeholder-muted focus:outline-none"
-                      style={{ borderColor: `rgba(${RGB},0.3)` }} />
+                      style={{ borderColor: `rgba(${item.rgb},0.3)` }} />
                   </div>
                 )}
               </div>
@@ -382,6 +626,16 @@ export default function ToolsProgressTestPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
 
+      {testModal !== null && (
+        <TestItemModal
+          item={TEST_ITEMS[testModal]}
+          idx={testModal}
+          total={TEST_ITEMS.length}
+          onClose={() => setTestModal(null)}
+          onPrev={() => setTestModal(i => Math.max(0, i - 1))}
+          onNext={() => setTestModal(i => Math.min(TEST_ITEMS.length - 1, i + 1))}
+        />
+      )}
       {milestoneModal !== null && (
         <MilestoneModal
           item={MILESTONES[milestoneModal]}

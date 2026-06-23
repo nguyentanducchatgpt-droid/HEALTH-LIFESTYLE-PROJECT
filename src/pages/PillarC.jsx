@@ -1748,11 +1748,15 @@ export default function PillarC() {
   const [c5MethodIdx, setC5MethodIdx] = useState(null);
   const [c5ScheduleIdx, setC5ScheduleIdx] = useState(null);
   const [c6ProtocolIdx, setC6ProtocolIdx] = useState(null);
-  const [sleepChecks, setSleepChecks] = useState({});
+  const [sleepChecks, setSleepChecks] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('healthapp_c1_sleep_checks')) || {}; } catch { return {}; }
+  });
   const [scoreChecks, setScoreChecks] = useState(() => {
     try { return JSON.parse(localStorage.getItem('healthapp_c0_score_checks')) || {}; } catch { return {}; }
   });
-  const [neatChecks, setNeatChecks] = useState({});
+  const [neatChecks, setNeatChecks] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('healthapp_c3_neat_checks')) || {}; } catch { return {}; }
+  });
   const [openZone, setOpenZone] = useState(null);
   const [zoneModalIdx, setZoneModalIdx] = useState(null);
   const [scoreModalIdx, setScoreModalIdx] = useState(null);
@@ -1814,6 +1818,14 @@ export default function PillarC() {
   useEffect(() => {
     localStorage.setItem('healthapp_c0_score_checks', JSON.stringify(scoreChecks));
   }, [scoreChecks]);
+
+  useEffect(() => {
+    localStorage.setItem('healthapp_c1_sleep_checks', JSON.stringify(sleepChecks));
+  }, [sleepChecks]);
+
+  useEffect(() => {
+    localStorage.setItem('healthapp_c3_neat_checks', JSON.stringify(neatChecks));
+  }, [neatChecks]);
 
   const tab = TABS.find(t => t.id === activeTab) || TABS[1];
   const sleepProgress = C1_CHECKLIST.filter((_, i) => sleepChecks[i]).length;

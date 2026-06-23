@@ -442,11 +442,111 @@ const C1_STEPS = [
 ];
 
 const C1_CHECKLIST = [
-  'Giảm màn hình trước ngủ 30+ phút',
-  'Không uống caffeine sau 15h',
-  'Có routine tối 5–30 phút',
-  'Lên giường trong khung giờ dự kiến',
-  'Ngủ đủ hoặc tốt hơn hôm qua',
+  {
+    label: 'Giảm màn hình trước ngủ 30+ phút',
+    icon: '📵', color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&q=80&auto=format&fit=crop',
+    detail: 'Ánh sáng xanh từ màn hình ức chế melatonin — hormone báo hiệu ngủ. Tắt màn hình 30 phút trước khi ngủ là can thiệp đơn giản nhất để cải thiện chất lượng giấc ngủ.',
+    keyFact: 'Ánh sáng xanh (480nm) ức chế melatonin hiệu quả gấp 2 lần ánh sáng trắng thông thường — 1 giờ nhìn màn hình tối có thể trì hoãn giấc ngủ 30–45 phút ngay cả sau khi tắt điện thoại.',
+    details: [
+      'Melatonin bắt đầu tăng 2 giờ trước giờ ngủ thông thường của bạn. Ánh sáng màn hình trong khung giờ này làm gián đoạn quá trình tích lũy melatonin, khiến bạn khó buồn ngủ hơn.',
+      '30 phút là ngưỡng tối thiểu — lý tưởng là 60 phút không màn hình. Nhưng nếu chưa làm được, chỉ cần giảm 30 phút cuối trước ngủ đã có tác động đo được lên thời gian đi vào giấc ngủ.',
+      'Giải pháp thực tế: bật Night Mode/f.lux từ 7–8pm (giảm ánh sáng xanh), giảm độ sáng màn hình 30–40% sau 9pm. Nếu phải dùng màn hình, kính chặn ánh sáng xanh (amber lens) hiệu quả hơn Night Mode đơn thuần.',
+      'Thay thế màn hình 30 phút cuối: đọc sách giấy dưới đèn vàng, viết nhật ký, thiền nhẹ, nghe podcast âm thanh (không nhìn màn hình), hoặc nói chuyện — bất cứ hoạt động không phát ánh sáng xanh vào mắt.',
+      'Thói quen đặt điện thoại ra xa giường (charge ở phòng khác hoặc đầu kia phòng ngủ) giảm cám dỗ check điện thoại trước ngủ và sau khi thức giữa đêm — hai thói quen phá hoại giấc ngủ phổ biến nhất.',
+      'Tín hiệu thành công: bạn bắt đầu cảm thấy buồn ngủ đúng giờ dự kiến thay vì phải "cố ngủ". Melatonin hoạt động đúng nhịp khi không bị ánh sáng xanh gián đoạn.',
+    ],
+    points: [
+      { icon: '📱', label: 'Night Mode 7–8pm', note: 'Sớm hơn bạn nghĩ là cần' },
+      { icon: '📚', label: 'Sách giấy thay màn hình', note: 'Đèn vàng không ức chế melatonin' },
+      { icon: '🔌', label: 'Phone xa giường', note: 'Giảm cám dỗ check lúc nửa đêm' },
+      { icon: '😴', label: 'Buồn ngủ đúng giờ', note: 'Dấu hiệu melatonin hoạt động đúng' },
+    ],
+  },
+  {
+    label: 'Không uống caffeine sau 15h',
+    icon: '☕', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop',
+    detail: 'Caffeine có half-life 5–7 giờ trong cơ thể — ly cà phê 3pm vẫn còn 50% hoạt động lúc 8–10pm, âm thầm phá hoại chất lượng ngủ sâu ngay cả khi bạn có thể đi vào giấc ngủ.',
+    keyFact: 'Caffeine không chỉ khó ngủ — nó giảm giấc ngủ sóng chậm (deep sleep) tới 20% ngay cả ở người "không nhạy caffeine". Bạn ngủ được nhưng chất lượng phục hồi kém hơn đáng kể.',
+    details: [
+      'Caffeine hoạt động bằng cách chặn adenosine receptors — adenosine là phân tử "tích mệt mỏi" xây dựng dần trong ngày. Khi caffeine chặn receptor này, não không nhận tín hiệu buồn ngủ dù cơ thể thực sự mệt.',
+      'Half-life 5–7 giờ có nghĩa: 200mg caffeine (2 espresso) lúc 3pm → 100mg vẫn còn hoạt động lúc 8–10pm. Với người chuyển hóa caffeine chậm (gene CYP1A2 biến thể), half-life lên đến 9–10 giờ.',
+      'Cut-off 3pm (15h) là ngưỡng an toàn cho hầu hết người. Nếu bạn ngủ lúc 10pm, caffeine uống lúc 3pm chỉ còn 25–50mg lúc đi ngủ — dưới ngưỡng ảnh hưởng đáng kể với hầu hết người.',
+      'Nguồn caffeine ẩn thường bị bỏ qua: trà xanh 25–50mg/tách, trà đen 40–70mg, chocolate đen 20–30mg/30g, nước tăng lực 80–150mg, một số đau đầu thuốc có 65mg caffeine mỗi viên.',
+      'Khi "cần" caffeine buổi chiều: thay bằng trà xanh (có L-theanine làm chậm hấp thu và giảm anxiety) hoặc đi bộ 10 phút ra ngoài — ánh sáng tự nhiên + vận động tăng cảnh giác hiệu quả như 100mg caffeine mà không ảnh hưởng giấc ngủ.',
+      'Nếu phải uống caffeine muộn (họp tối, ca đêm): uống với thức ăn để làm chậm hấp thu, chọn nguồn ít caffeine hơn (matcha thay espresso), và chấp nhận ngủ muộn hơn 30–45 phút tối hôm đó.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Cut-off 3pm', note: 'An toàn cho hầu hết người ngủ 10pm' },
+      { icon: '🧬', label: 'Gene CYP1A2', note: 'Chuyển hóa chậm cần cut-off sớm hơn' },
+      { icon: '🍵', label: 'Matcha thay espresso', note: 'L-theanine làm mượt caffeine' },
+      { icon: '🏃', label: 'Đi bộ 10 phút', note: 'Bằng 100mg caffeine — không ảnh hưởng ngủ' },
+    ],
+  },
+  {
+    label: 'Có routine tối 5–30 phút',
+    icon: '🌙', color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80&auto=format&fit=crop',
+    detail: 'Routine tối là "tín hiệu" nhất quán báo cho não biết đã đến lúc chuyển sang chế độ ngủ — hệ thần kinh cần thời gian wind-down chủ động, không thể chuyển trực tiếp từ làm việc sang ngủ.',
+    keyFact: 'Não cần 20–30 phút để hạ nhiệt độ lõi cơ thể và tăng melatonin đủ mức để đi vào giấc ngủ sâu. Làm việc hoặc xem nội dung kích thích đến phút cuối trước ngủ giữ nhiệt độ lõi và cortisol cao, trì hoãn onset giấc ngủ.',
+    details: [
+      'Routine tối hoạt động vì conditioning (điều kiện hóa): khi bạn làm cùng một chuỗi hoạt động trước ngủ mỗi đêm, não học cách liên kết chuỗi đó với buồn ngủ. Sau 2–3 tuần, chỉ cần bắt đầu routine là đã cảm thấy buồn ngủ.',
+      'Thời gian tối thiểu hiệu quả: 5 phút. Ngay cả routine ngắn (rửa mặt → đánh răng → nằm thở 1 phút) cũng tạo được tín hiệu chuyển tiếp nếu thực hiện nhất quán mỗi đêm.',
+      'Thành phần routine hiệu quả nhất: giảm ánh sáng và tiếng ồn → vệ sinh cá nhân → hoạt động thư giãn thụ động (đọc sách, viết nhật ký, thiền nhẹ) → breathing. Tránh các hoạt động kích thích tư duy (giải bài, tranh luận, lên kế hoạch).',
+      'Nhiệt độ: tắm/tắm vòi sen nước ấm 1–2 giờ trước ngủ nghịch lý giúp ngủ nhanh hơn — nhiệt từ nước ấm kéo máu ra ngoài da, sau đó nhiệt tản ra ngoài làm hạ nhiệt độ lõi cơ thể nhanh hơn bình thường.',
+      'Viết nhật ký 5 phút trước ngủ (đặc biệt "to-do list" cho ngày mai) giảm thời gian đi vào giấc ngủ trung bình 9 phút theo nghiên cứu 2018 — vì não không cần "nhắc" bản thân về các việc chưa làm trong đêm.',
+      'Bắt đầu nhỏ: chọn 1 hoạt động 5 phút và làm nhất quán 7 ngày trước khi thêm hoạt động thứ 2. Routine phức tạp ngay từ đầu ít được duy trì hơn routine đơn giản được thực hiện đều đặn.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Conditioning', note: '2–3 tuần để não học liên kết' },
+      { icon: '🛁', label: 'Tắm nước ấm', note: '1–2h trước ngủ hạ nhiệt độ lõi' },
+      { icon: '📓', label: 'Viết to-do list', note: 'Giảm 9 phút thời gian đi vào ngủ' },
+      { icon: '✅', label: 'Bắt đầu 1 việc', note: '5 phút nhất quán tốt hơn 30 phút lúc có' },
+    ],
+  },
+  {
+    label: 'Lên giường trong khung giờ dự kiến',
+    icon: '🛏️', color: '#2dd4bf', rgb: '45,212,191',
+    img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80&auto=format&fit=crop',
+    detail: 'Thời điểm lên giường nhất quán — dù không ngủ ngay — giúp đồng hồ sinh học học được "giờ ngủ" của bạn và chuẩn bị melatonin đúng thời điểm.',
+    keyFact: 'Giường ngủ phải là tín hiệu duy nhất cho não: "đây là nơi ngủ". Làm việc, xem phim, lướt mạng trên giường phá vỡ liên kết này — não bắt đầu coi giường là nơi tỉnh táo, không phải ngủ.',
+    details: [
+      'Stimulus control therapy: một trong những kỹ thuật CBT-I (Cognitive Behavioral Therapy for Insomnia) được chứng minh hiệu quả nhất. Nguyên tắc cốt lõi: giường = ngủ và sex only, không làm bất cứ gì khác trên giường.',
+      '"Khung giờ dự kiến" nghĩa là lên giường trong cửa sổ 30 phút xung quanh giờ ngủ mục tiêu. Không cần chính xác 10:30pm mỗi đêm, nhưng 10:00–11:00pm ổn định hơn nhiều so với 9pm hôm nay 1am hôm sau.',
+      'Nếu không ngủ được sau 20 phút nằm: dậy ra khỏi giường, làm gì đó nhạt nhẽo dưới ánh sáng yếu cho đến khi buồn ngủ thực sự, rồi mới quay lại giường. Nằm trằn trọc tạo ra anxiety về giường và làm xấu hơn về lâu dài.',
+      'Tránh "trả nợ ngủ" bằng cách ngủ bù muộn — nếu ngủ muộn 1 hôm, vẫn dậy đúng giờ thông thường hôm sau và chịu buồn ngủ một ngày để tái thiết áp lực ngủ (sleep pressure) cho tối hôm đó.',
+      'Môi trường giường: chỉ dùng giường để ngủ, giúp cải thiện "sleep efficiency" (tỷ lệ thời gian thực sự ngủ / tổng thời gian nằm trên giường). Sleep efficiency dưới 85% là dấu hiệu cần điều chỉnh.',
+      'Chuẩn bị giường hàng đêm (giũ gối, sắp xếp chăn) như một bước trong routine tối — hành động vật lý nhỏ này hoạt động như "trigger" kép: báo hiệu não và tạo môi trường thoải mái để ngủ.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Cửa sổ 30 phút', note: 'Không cần chính xác từng phút' },
+      { icon: '🛋️', label: 'Giường = chỉ để ngủ', note: 'CBT-I stimulus control' },
+      { icon: '🚶', label: 'Không ngủ được → dậy', note: 'Sau 20 phút, ra khỏi giường' },
+      { icon: '📊', label: 'Sleep efficiency >85%', note: 'Chỉ số chất lượng quan trọng' },
+    ],
+  },
+  {
+    label: 'Ngủ đủ hoặc tốt hơn hôm qua',
+    icon: '⭐', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    detail: 'Tiêu chí linh hoạt nhất — không yêu cầu hoàn hảo ngay lập tức mà hướng đến cải thiện tích lũy. "Tốt hơn hôm qua" tạo momentum bền vững hơn "đạt chuẩn tuyệt đối".',
+    keyFact: '"Ngủ đủ" là chủ quan — dấu hiệu khách quan: tỉnh dậy trước hoặc cùng lúc báo thức, không buồn ngủ trước 2pm, có thể tập trung làm việc mà không cần caffeine trong 3 giờ đầu.',
+    details: [
+      '"Hoặc tốt hơn hôm qua" quan trọng hơn "đạt 7 giờ". Nếu hôm qua ngủ 5 giờ và hôm nay ngủ 5.5 giờ — bạn đang đi đúng hướng. Tiến bộ từng bước bền vững hơn thay đổi đột ngột.',
+      'Dấu hiệu ngủ đủ (không cần tracker): tỉnh dậy không cần báo thức hoặc trước khi báo thức reo; không buồn ngủ trong khoảng 1–2 giờ sau khi thức; có thể tập trung 90 phút liên tục buổi sáng mà không cần caffeine.',
+      'Giấc ngủ theo chu kỳ 90 phút: mỗi chu kỳ bao gồm light sleep → deep sleep → REM. Thức dậy giữa chu kỳ (vd: lúc 4.5 giờ) cảm giác tệ hơn thức dậy sau 6 giờ (4 chu kỳ hoàn chỉnh). Tính giờ ngủ theo bội số 90 phút + 15 phút để đi vào giấc.',
+      'Tracking đơn giản: ghi lại giờ lên giường và giờ thức dậy mỗi sáng (10 giây). Sau 1 tuần nhìn lại pattern — quan sát những ngày ngủ tốt và xác định yếu tố tạo ra giấc ngủ tốt đó.',
+      'Giấc ngủ kém 1–2 đêm là bình thường và không gây hại lâu dài — áp lực "phải ngủ được" (sleep anxiety) thực ra là nguyên nhân phổ biến của mất ngủ mạn tính. Chấp nhận đêm xấu và tập trung vào thói quen, không phải kết quả.',
+      'Ngủ ngắn (nap) 10–20 phút trước 3pm có thể bù đắp một phần thiếu ngủ đêm trước mà không ảnh hưởng đến giấc ngủ tối. Nap trên 30 phút hoặc sau 3pm rủi ro làm giảm "sleep pressure" tối hôm đó.',
+    ],
+    points: [
+      { icon: '📈', label: 'Tiến bộ từng bước', note: '"Tốt hơn hôm qua" bền vững hơn' },
+      { icon: '⏰', label: 'Bội số 90 phút', note: 'Tính giờ ngủ theo chu kỳ' },
+      { icon: '📝', label: 'Tracking 10 giây', note: 'Ghi giờ ngủ/thức mỗi sáng' },
+      { icon: '😌', label: 'Chấp nhận đêm xấu', note: 'Sleep anxiety làm mất ngủ nặng hơn' },
+    ],
+  },
 ];
 
 const C2_MORNING_5 = [
@@ -1761,6 +1861,7 @@ export default function PillarC() {
   const [zoneModalIdx, setZoneModalIdx] = useState(null);
   const [scoreModalIdx, setScoreModalIdx] = useState(null);
   const [trackModalIdx, setTrackModalIdx] = useState(null);
+  const [sleepChecklistModal, setSleepChecklistModal] = useState(null);
   const [morningMode, setMorningMode] = useState('5');
   const [morningModalIdx, setMorningModalIdx] = useState(null);
   const [breathMode, setBreathMode] = useState(0);
@@ -2105,16 +2206,45 @@ export default function PillarC() {
                   ))}
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: TEAL }}>Checklist Ngủ Hằng Ngày</h3>
-                <div className="space-y-2 mb-4">
+                <div className="space-y-1.5 mb-4">
                   {C1_CHECKLIST.map((item, i) => (
-                    <label key={i} className="flex items-center gap-3 cursor-pointer group">
-                      <div onClick={() => setSleepChecks(p => ({ ...p, [i]: !p[i] }))}
-                        className="w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all border"
-                        style={{ background: sleepChecks[i] ? TEAL : 'transparent', borderColor: TEAL }}>
-                        {sleepChecks[i] && <span className="text-black text-base font-bold">✓</span>}
-                      </div>
-                      <span className="text-lg text-muted group-hover:text-text transition-colors">{item}</span>
-                    </label>
+                    <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
+                      style={{
+                        border: '1px solid',
+                        borderColor: sleepChecks[i] ? `rgba(${item.rgb},0.35)` : sleepChecklistModal === i ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.05)',
+                        background: sleepChecks[i] ? `rgba(${item.rgb},0.07)` : 'transparent',
+                        transition: 'border-color 0.2s, background 0.2s',
+                      }}>
+                      {/* Checkbox */}
+                      <button onClick={() => setSleepChecks(p => ({ ...p, [i]: !p[i] }))}
+                        className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl"
+                        aria-label={sleepChecks[i] ? 'Bỏ đánh dấu' : 'Đánh dấu hoàn thành'}>
+                        <div className="w-5 h-5 rounded-md flex items-center justify-center border-2 transition-all"
+                          style={{
+                            borderColor: sleepChecks[i] ? item.color : 'rgba(255,255,255,0.25)',
+                            background: sleepChecks[i] ? item.color : 'transparent',
+                            boxShadow: sleepChecks[i] ? `0 0 8px rgba(${item.rgb},0.5)` : 'none',
+                          }}>
+                          {sleepChecks[i] && (
+                            <svg viewBox="0 0 12 10" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-2.5">
+                              <path d="M1 5l3.5 3.5L11 1"/>
+                            </svg>
+                          )}
+                        </div>
+                      </button>
+                      {/* Label + detail trigger */}
+                      <button onClick={() => setSleepChecklistModal(i)}
+                        className="flex-1 flex items-center justify-between py-2 pr-3 text-left group/label cursor-pointer">
+                        <span className={`flex items-center gap-2 text-lg transition-colors ${sleepChecks[i] ? 'text-text' : 'text-muted group-hover/label:text-text'}`}>
+                          <span className="text-base">{item.icon}</span>
+                          <span className={sleepChecks[i] ? 'line-through opacity-60' : ''}>{item.label}</span>
+                        </span>
+                        <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity shrink-0 ml-2" style={{ color: item.color }}>
+                          Chi tiết
+                          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                        </span>
+                      </button>
+                    </div>
                   ))}
                 </div>
                 <div className="h-2 rounded-full overflow-hidden mb-1" style={{ background: `rgba(${TEAL_RGB},0.15)` }}>
@@ -2730,6 +2860,19 @@ export default function PillarC() {
           onNext={() => setC2EnergyIdx(i => Math.min(C2_ENERGY_TIPS.length - 1, i + 1))}
           hasPrev={c2EnergyIdx > 0}
           hasNext={c2EnergyIdx < C2_ENERGY_TIPS.length - 1}
+        />
+      )}
+
+      {/* ── C1 sleep checklist modal ── */}
+      {sleepChecklistModal !== null && (
+        <C0ItemModal
+          item={C1_CHECKLIST[sleepChecklistModal]}
+          idx={sleepChecklistModal}
+          onClose={() => setSleepChecklistModal(null)}
+          onPrev={() => setSleepChecklistModal(i => Math.max(0, i - 1))}
+          onNext={() => setSleepChecklistModal(i => Math.min(C1_CHECKLIST.length - 1, i + 1))}
+          hasPrev={sleepChecklistModal > 0}
+          hasNext={sleepChecklistModal < C1_CHECKLIST.length - 1}
         />
       )}
 

@@ -29,6 +29,82 @@ const PC = {
   F: { c:'#f97316', bg:'rgba(249,115,22,0.08)',  br:'rgba(249,115,22,0.22)',  t:'text-orange-400', l:'Công Cụ',    icon:'🛠️' },
 };
 
+// ── Checklist Item Modal ─────────────────────────────────────────────────────
+function ChecklistItemModal({ item, dayColor, dayRgb, onClose }) {
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${dayRgb},0.28)`, boxShadow: `0 0 80px rgba(${dayRgb},0.14)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.label} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${dayRgb},0.06) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${dayColor}, transparent)` }} />
+          <div className="absolute bottom-4 left-5 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${dayRgb},0.18)`, border: `2px solid rgba(${dayRgb},0.4)` }}>
+              {item.icon}
+            </div>
+            <h2 className="font-bold text-white text-lg leading-tight">{item.label}</h2>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-5 md:p-7">
+          {/* Why callout */}
+          <div className="rounded-xl p-4 mb-5" style={{ background: `rgba(${dayRgb},0.07)`, border: `1px solid rgba(${dayRgb},0.2)` }}>
+            <p className="text-base font-semibold leading-relaxed" style={{ color: dayColor }}>💡 {item.why}</p>
+          </div>
+
+          {/* Numbered details */}
+          <ul className="space-y-3 mb-6">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${dayRgb},0.14)`, color: dayColor }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* 2-col points */}
+          <div className="grid grid-cols-2 gap-2.5 mb-4">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                style={{ background: `rgba(${dayRgb},0.06)`, border: `1px solid rgba(${dayRgb},0.14)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-muted opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Pillar Detail Modal ──────────────────────────────────────────────────────
 function PillarDetailModal({ card, onClose }) {
   const { info, p } = card;
@@ -143,7 +219,28 @@ const SEVEN_DAYS = [
       img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
       details:['Buổi sáng, cortisol tự nhiên tăng nhanh (cortisol awakening response) — 3 hơi thở sâu kích hoạt hệ phó giao cảm, giảm stress phản xạ ngay từ đầu ngày.','4s hít - 4s giữ - 4s thở ra là box breathing đơn giản nhất. Navy SEALs dùng kỹ thuật này để bình tĩnh trước áp lực cực độ.','Chỉ 30 giây nhưng tạo "anchor" tích cực: não liên kết thức dậy với bình tĩnh thay vì stress. Sau 21 ngày, thói quen này thành tự động.'],
       points:[{icon:'🫁',label:'4s hít vào',note:'Bằng mũi, thở bụng phình ra'},{icon:'⏸️',label:'4s giữ',note:'Giữ yên, không căng thẳng'},{icon:'💨',label:'4s thở ra',note:'Từ từ qua miệng hoặc mũi'},{icon:'🔁',label:'3 lần',note:'30 giây đủ để não chuyển mode'}] },
-    checklist:['Tập 20 phút (6 động tác)','Đạm ở ≥2/3 bữa','Uống 1.8L nước','Ngủ trước 23h','3 hơi thở buổi sáng'],
+    checklist:[
+      { label:'Tập 20 phút (6 động tác)', icon:'🏃', img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+        why:'20 phút đủ kích hoạt toàn thân và xây motor patterns nền tảng — nhất quán quan trọng hơn thời lượng.',
+        details:['6 động tác (Squat, Hinge, Push, Pull, Core, Thở) bao phủ ~95% chuyển động chức năng. Mastering chúng là nền tảng cho mọi tiến bộ tiếp theo.','20 phút đủ tăng nhịp tim, kích hoạt cơ và tạo adaptation mà không gây overtraining. Người mới tập quá nặng quá sớm thường bỏ cuộc trước tuần 2.','Nhất quán > cường độ: 20 phút đều đặn 5 ngày/tuần hiệu quả hơn 2 tiếng gián đoạn — não cần lặp lại 300–500 lần để cài motor pattern vào autopilot.'],
+        points:[{icon:'⏱',label:'20 phút là đủ',note:'Tạo kích thích, không quá mệt'},{icon:'🔄',label:'6 động tác cơ bản',note:'Squat·Hinge·Push·Pull·Core·Thở'},{icon:'✅',label:'Form trước số lần',note:'Kỹ thuật đúng tránh chấn thương'},{icon:'📅',label:'Nhất quán',note:'Mỗi ngày 20\' > 2 tiếng cuối tuần'}] },
+      { label:'Đạm ở ≥2/3 bữa', icon:'🥩', img:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+        why:'Cơ thể không lưu trữ đạm — cần nạp đều đặn mỗi bữa để protein synthesis hoạt động liên tục.',
+        details:['Khác với mỡ và carb, cơ thể không có kho dự trữ amino acids. Ăn đạm ở 2 bữa ngày đầu là mục tiêu thực tế — không cần hoàn hảo ngay từ ngày 1.','Protein synthesis (quá trình xây cơ) cần amino acids có mặt trong máu liên tục. 1 bữa đủ đạm/ngày không đủ để duy trì chu kỳ này.','1 lòng bàn tay đạm/bữa ≈ 25–35g — đủ kích hoạt protein synthesis và không cần cân đo chính xác ở nhà hàng hay ngoài đường.'],
+        points:[{icon:'🍳',label:'Sáng: trứng/sữa',note:'~12–20g, nhanh và đơn giản'},{icon:'🍗',label:'Trưa: thịt/cá',note:'~25–35g, bữa chính quan trọng nhất'},{icon:'🐟',label:'Tối: đạm nhẹ',note:'Cá/đậu hũ — dễ tiêu về đêm'},{icon:'👋',label:'1 lòng bàn tay',note:'Ước lượng nhanh mọi lúc mọi nơi'}] },
+      { label:'Uống 1.8L nước', icon:'💧', img:'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80',
+        why:'Mất 1–2% nước cơ thể đã giảm hiệu suất tập và khả năng tập trung — phần lớn người đang thiếu nước mà không biết.',
+        details:['Mất 1% nước → giảm 5–8% hiệu suất thể lực. Mất 2% → khó tập trung, mood xấu hơn, đau đầu. Khát là dấu hiệu đã thiếu nước — cần uống trước khi khát.','1.8L ngày đầu là target khởi đầu thực tế. Sau 7 ngày tăng lên 2–2.5L tùy mức vận động. Tăng dần giúp thận điều chỉnh tự nhiên.','Màu nước tiểu là biểu đồ hydration: vàng nhạt = đủ, trong = hơi nhiều, vàng đậm = thiếu nước rõ rệt — dễ check hơn app.'],
+        points:[{icon:'🌅',label:'Sáng: 300ml đầu',note:'Thận sạch, não tỉnh trước cà phê'},{icon:'🏋',label:'Trước/trong tập',note:'200–300ml bù trước khi khát'},{icon:'🍽',label:'Trước bữa ăn',note:'200ml — no nhanh, ít calo hơn'},{icon:'📱',label:'Đặt nhắc nhở',note:'Mỗi 2 giờ 1 ly là đạt 1.8L'}] },
+      { label:'Ngủ trước 23h', icon:'🌙', img:'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+        why:'Cortisol tự nhiên giảm sau 22h30 — ngủ trước 23h đồng bộ với nhịp sinh học cho giấc ngủ sâu nhất.',
+        details:['Nhịp sinh học tiết cortisol thấp nhất sau 22h30 và melatonin tăng từ 21h. Ngủ trước 23h đồng bộ với 2 hormone này — giấc ngủ sâu hơn từ ngay phút đầu.','Mỗi giờ ngủ trước nửa đêm giá trị gấp đôi sau nửa đêm về chất lượng phục hồi — deep sleep và REM nhiều hơn trong 4 giờ đầu của đêm.','Giờ thức dậy cố định quan trọng hơn giờ ngủ — dậy cùng giờ mỗi ngày (kể cả cuối tuần) giúp cơ thể tự thiết lập sleep pressure.'],
+        points:[{icon:'🕙',label:'23h là deadline',note:'Giờ đi ngủ, không phải lên giường'},{icon:'📵',label:'Phone xa giường',note:'Ánh sáng xanh ức chế melatonin 50%'},{icon:'🌡️',label:'Phòng 18–22°C',note:'Nhiệt độ thấp = tín hiệu ngủ cho não'},{icon:'⏰',label:'Alarm cố định',note:'Dậy cùng giờ = quality ngủ tốt hơn'}] },
+      { label:'3 hơi thở buổi sáng', icon:'🫁', img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+        why:'30 giây kích hoạt hệ phó giao cảm — tắt phản ứng stress mặc định của buổi sáng trước khi nó bắt đầu.',
+        details:['Cortisol tăng mạnh ngay khi thức dậy (Cortisol Awakening Response). 3 hơi thở sâu chậm gửi tín hiệu "an toàn" đến não — giảm CAR và lo âu sáng sớm.','Hít 4s–giữ 4s–thở 4s (box breathing) kích hoạt hệ phó giao cảm trong dưới 30 giây. Hiệu quả hơn uống cà phê về mặt tỉnh táo cấp độ não.','Làm trước khi nhìn điện thoại — 30 giây này "đặt tone" cho cả ngày. Xem tin tức hoặc notifications ngay khi thức gây stress phản xạ ngay từ sáng.'],
+        points:[{icon:'🌅',label:'Làm ngay khi thức',note:'Trước khi nhìn điện thoại'},{icon:'4️⃣',label:'4s–4s–4s',note:'Box breathing — dễ nhớ nhất'},{icon:'🧠',label:'Giảm cortisol sáng',note:'Ít lo âu — tone tốt cho cả ngày'},{icon:'⚓',label:'Tạo anchor sáng',note:'30 giây đặt nền cho ngày mới'}] },
+    ],
   },
   {
     n:2, theme:'Đạm & Nước — Hai Ưu Tiên Đầu', emoji:'💧', tag:'Protein & Hydration',
@@ -165,7 +262,28 @@ const SEVEN_DAYS = [
       img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
       details:['Viết ra điều tốt trong ngày kích hoạt dopamine và serotonin — não "học" rằng ngày hôm nay có giá trị, giảm lo âu trước khi ngủ.','3 câu hỏi đơn giản: Tốt gì? Học gì? Ngày mai làm gì? Không cần dài, không cần hoàn hảo — chỉ cần thật.','Viết tay tốt hơn gõ phím: bút và giấy kích hoạt vùng não xử lý sâu hơn, giúp ký ức được củng cố tốt hơn trong giấc ngủ.'],
       points:[{icon:'✅',label:'Tốt gì hôm nay',note:'Dù nhỏ — đủ để ghi nhận'},{icon:'📚',label:'Học được gì',note:'1 điều mới, dù từ sai lầm'},{icon:'🎯',label:'Ngày mai làm gì',note:'1 ưu tiên cụ thể'},{icon:'✍️',label:'Viết tay',note:'Tốt hơn gõ phím cho việc phản chiếu'}] },
-    checklist:['Đạm cả 3 bữa','Uống 2L nước','Morning routine 10\'','Nhật ký tối 3 dòng','Tập 22 phút'],
+    checklist:[
+      { label:'Đạm cả 3 bữa', icon:'🥩', img:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+        why:'Protein synthesis cần amino acids liên tục — 3 bữa đủ đạm tối ưu hóa quá trình xây cơ cả ngày.',
+        details:['Cơ thể không thể "save" amino acids từ bữa này sang bữa khác. Ăn đạm 3 bữa kích hoạt protein synthesis 3 lần/ngày thay vì 1–2 lần.','Bữa sáng là quan trọng nhất — sau 8 giờ nhịn ngủ, cơ thể đang trong trạng thái catabolism (phân hủy cơ). Đạm sáng đảo ngược điều này ngay lập tức.','Mục tiêu thực tế: mỗi bữa có 1 nguồn đạm bằng lòng bàn tay. Không cần cân gram hay đếm macro — cứ nhìn lòng bàn tay là đủ.'],
+        points:[{icon:'🍳',label:'Sáng: bắt buộc',note:'Kết thúc catabolism sau ngủ'},{icon:'🍗',label:'Trưa: bữa chính',note:'Bữa đạm lớn nhất trong ngày'},{icon:'🐟',label:'Tối: duy trì',note:'Cá/đậu hũ nhẹ hơn trưa'},{icon:'📊',label:'~1.6g/kg/ngày',note:'Mục tiêu cho người hoạt động'}] },
+      { label:'Uống 2L nước', icon:'💧', img:'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80',
+        why:'Tăng từ 1.8L → 2L — cơ thể bắt đầu quen với nhịp thủy hóa tối ưu và thận điều chỉnh dần.',
+        details:['Tăng dần 200ml/ngày giúp thận điều chỉnh tự nhiên — không gây cảm giác bị ép uống nhiều quá mức.','Bình 500ml × 4 lần = 2L. Đặt trên bàn, nhìn thấy = tự nhắc. Không cần app phức tạp nếu có bình trước mắt.','Trà xanh và nước lọc tính vào tổng; cà phê và rượu bia không tính — thậm chí làm mất nước thêm (diuretic).'],
+        points:[{icon:'🍶',label:'Bình 500ml × 4',note:'Nhìn thấy = nhắc uống'},{icon:'🍵',label:'Trà xanh tính được',note:'Bonus antioxidant miễn phí'},{icon:'☕',label:'Cà phê không tính',note:'Diuretic — bù thêm 1 ly/ly cà phê'},{icon:'💛',label:'Vàng nhạt = đủ',note:'Màu nước tiểu là biểu đồ tốt nhất'}] },
+      { label:"Morning routine 10'", icon:'🌅', img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+        why:'10 phút có cấu trúc buổi sáng khởi động não và tạo momentum — nhất quán quan trọng hơn độ phức tạp.',
+        details:['Não cần 20–30 phút sau thức dậy để hoạt động hiệu quả. Routine nhẹ 10 phút là cách khởi động não mà không gây stress ngay từ sáng.','10 phút đủ cho 3 thành phần: thể chất (hơi thở + vận động nhẹ) + tinh thần (đặt ý định) + nạp lượng (uống nước). Không cần thêm gì.','Nhất quán quan trọng hơn hoàn hảo: 10 phút đơn giản mỗi ngày > 1 giờ elaborate routine thỉnh thoảng. Não cần pattern lặp lại để build habit.'],
+        points:[{icon:'🫁',label:'Hơi thở (1\')',note:'3 box breathing — reset cortisol'},{icon:'🤸',label:'Vận động nhẹ (5\')',note:'Stretch + joint rotation toàn thân'},{icon:'✍️',label:'Đặt ý định (2\')',note:'"Hôm nay tôi sẽ hoàn thành..."'},{icon:'💧',label:'Nước (2\')',note:'300ml trước cà phê buổi sáng'}] },
+      { label:'Nhật ký tối 3 dòng', icon:'📓', img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+        why:'Reflection tối giải phóng "mental chatter" — đóng tab não và giúp ngủ sâu hơn ngay đêm nay.',
+        details:['Chỉ cần 3 dòng: (1) Hôm nay làm được gì, (2) Khó khăn gặp phải, (3) Một điều ngày mai sẽ thay đổi. Không cần đẹp, không cần dài — 5 phút là đủ.','Viết tay kích hoạt vùng não xử lý cảm xúc hiệu quả hơn gõ phím — và không có thông báo làm phân tán.','Unfinished business (việc chưa xong) khiến não tiếp tục "chạy" khi ngủ. Viết ra là cách "đóng tab" — não mới có thể thực sự nghỉ ngơi.'],
+        points:[{icon:'✅',label:'Làm được gì',note:'Ghi nhận dù nhỏ — build self-trust'},{icon:'🔍',label:'Khó khăn gì',note:'Không phán xét, chỉ quan sát'},{icon:'🔄',label:'Ngày mai đổi gì',note:'1 điều cụ thể là đủ'},{icon:'✋',label:'Viết tay',note:'Không gõ điện thoại — không thông báo'}] },
+      { label:'Tập 22 phút', icon:'🏋', img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+        why:'+2 phút so với ngày 1 — progressive overload áp dụng ngay cả với thời gian, không chỉ tạ.',
+        details:['Progressive overload không chỉ là tăng tạ — tăng thời gian, số lần, hoặc giảm nghỉ đều là overload hợp lệ và hiệu quả.','Ngày 2 mục tiêu: tăng 1–2 lần lặp/bài hoặc thêm 1 set so với ngày 1. Chọn 1 thôi, không cần cả hai.','Form vẫn chuẩn và không đau = dấu hiệu tốt để tăng volume. Đau khớp hoặc form xấu = giảm lại ngay.'],
+        points:[{icon:'📈',label:'+2 phút hôm nay',note:'Progressive overload về thời gian'},{icon:'➕',label:'+1 lần hoặc +1 set',note:'Nhỏ thôi — adaptation thật sự'},{icon:'✅',label:'Form vẫn chuẩn',note:'Quality > quantity mọi lúc'},{icon:'💪',label:'Build momentum',note:'7 ngày nhất quán > 1 ngày cực khổ'}] },
+    ],
   },
   {
     n:3, theme:'Ăn Ngoài Thông Minh & Cardio Nhẹ', emoji:'🚶', tag:'Smart Eating + Walk',
@@ -187,7 +305,28 @@ const SEVEN_DAYS = [
       img:'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80',
       details:['Box breathing kích hoạt hệ phó giao cảm (rest-and-digest) — đối lập với giao cảm (fight-or-flight). Chỉ cần 4–5 vòng để cảm nhận rõ sự thay đổi.','Navy SEALs sử dụng kỹ thuật 4-4-4-4 này để bình tĩnh trước tình huống áp lực cực độ — hiệu quả được chứng minh trong nhiều nghiên cứu thần kinh học.','5 phút = 5 vòng đủ để nhịp tim giảm 10–15 bpm và cortisol giảm đáng kể — dùng trước cuộc họp căng thẳng hoặc tối trước ngủ.'],
       points:[{icon:'🫁',label:'Hít vào 4s',note:'Thở bụng, từ từ và đều'},{icon:'⏸️',label:'Giữ 4s',note:'Không gồng — giữ nhẹ nhàng'},{icon:'💨',label:'Thở ra 4s',note:'Từ từ, hết hoàn toàn'},{icon:'⏸️',label:'Giữ 4s',note:'Bình tĩnh trước khi lặp lại'}] },
-    checklist:['Đi bộ 20 phút','Bữa ngoài theo công thức','Không phone 30\' trước ngủ','Box breathing 5\'','Uống đủ nước'],
+    checklist:[
+      { label:'Đi bộ 20 phút', icon:'🚶', img:'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&q=80',
+        why:'Đi bộ sau ăn 10 phút giảm đường huyết ~22% — tốt hơn nhiều loại thuốc cho người khỏe mạnh.',
+        details:['20 phút đi bộ sau bữa ăn là insulin sensitizer tự nhiên — cơ co lại hấp thụ glucose mà không cần insulin nhiều, giảm spike đường huyết sau ăn ~22%.','Zone 2 cardio (đi bộ nhanh — vừa thở vừa nói được) đốt mỡ hiệu quả nhất và không gây stress cơ đủ để cản phục hồi.','Đi ngoài trời có bonus: vitamin D từ ánh nắng sáng + không khí tươi + giảm cortisol thêm 15%. Tất cả không đạt được trên máy chạy bộ trong nhà.'],
+        points:[{icon:'🍽',label:'Sau bữa ăn',note:'Hiệu quả nhất: 10–30 phút sau ăn'},{icon:'💨',label:'Vừa đi vừa nói được',note:'Zone 2 — đốt mỡ, không mệt nhiều'},{icon:'☀️',label:'Ngoài trời',note:'Vitamin D + không khí tươi'},{icon:'📱',label:'App đếm bước',note:'Tích lũy bước về cuối ngày để check'}] },
+      { label:'Bữa ngoài theo công thức', icon:'🍱', img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',
+        why:'Công thức đĩa ăn lành mạnh giúp ăn ngoài mà vẫn đúng track — không cần từ chối hay lo lắng.',
+        details:['Công thức đĩa: ½ rau · ¼ đạm · ¼ tinh bột. Áp dụng ở bất kỳ quán nào — phở (bỏ nước béo + thêm rau), cơm văn phòng (thêm đậu hũ), bún bò (thêm rau muống).','Không cần từ chối ăn ngoài — từ chối xã hội gây tốn kém tâm lý hơn ăn thêm 100 kcal. Chỉ cần điều chỉnh tỷ lệ, không phải thực đơn.','Tip thực tế: gọi thêm rau sống/luộc, đổi nước ngọt → trà không đường. 2 thay đổi này đủ tạo khác biệt lớn mà không khó thực hiện.'],
+        points:[{icon:'🥗',label:'½ đĩa rau',note:'Rau luộc/sống/canh đều tính'},{icon:'🍗',label:'¼ đĩa đạm',note:'Thịt/cá/trứng/đậu hũ'},{icon:'🍚',label:'¼ đĩa tinh bột',note:'Cơm/phở/bún — không cần kiêng'},{icon:'🍵',label:'Đổi đồ uống',note:'Trà không đường > nước ngọt'}] },
+      { label:"Không phone 30' trước ngủ", icon:'📵', img:'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80',
+        why:'Ánh sáng xanh từ màn hình ức chế melatonin tới 50% — phá hoại chất lượng giấc ngủ sâu nghiêm trọng.',
+        details:['Ánh sáng xanh (blue light, 480nm) từ điện thoại ức chế sản xuất melatonin lên tới 50%. Hậu quả: khó vào sleep onset hơn 30–45 phút, giảm deep sleep.','Đặt phone ra ngoài phòng ngủ là cách hiệu quả nhất — không có cám dỗ = không cần willpower. Thay thế bằng sách giấy, viết nhật ký, hoặc nói chuyện.','30 phút là minimum — nếu có thể 1 giờ thì tốt hơn. Melatonin cần 20–30 phút để tăng đủ mức sau khi tắt màn hình.'],
+        points:[{icon:'📱',label:'Phone ra khỏi phòng',note:'Tốt nhất — không cám dỗ'},{icon:'🔵',label:'Night mode nếu cần',note:'Giảm blue light — tốt hơn không làm gì'},{icon:'📚',label:'Đọc sách giấy',note:'Thay thế tốt nhất cho phone'},{icon:'⏱',label:'30\' tối thiểu',note:'Melatonin cần 20–30\' để tăng đủ'}] },
+      { label:"Box breathing 5'", icon:'🫁', img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+        why:'Box breathing 5 phút giảm nhịp tim và cortisol — chuẩn bị não cho giấc ngủ sâu và phục hồi tối đa.',
+        details:['Box breathing (4s–4s–4s–4s) được Navy SEALs dùng để bình tĩnh dưới áp lực cực độ. Nếu hiệu quả với họ, chắc chắn hiệu quả với stress hàng ngày.','5 phút box breathing đủ để giảm nhịp tim ~10 bpm và cortisol đáng kể. Làm tối = dễ ngủ hơn và sâu hơn — bổ sung cho việc không dùng phone.','Hít bằng mũi hiệu quả hơn miệng — mũi lọc không khí, làm ấm và tạo nitric oxide kích hoạt phó giao cảm tốt hơn.'],
+        points:[{icon:'4️⃣',label:'4s–4s–4s–4s',note:'Hít · Giữ · Thở · Giữ'},{icon:'👃',label:'Hít bằng mũi',note:'Kích hoạt phó giao cảm nhanh hơn'},{icon:'💓',label:'Giảm ~10 bpm',note:'5 phút thấy khác biệt rõ'},{icon:'🌙',label:'Kết hợp với không phone',note:'2 việc này cộng hưởng hiệu quả'}] },
+      { label:'Uống đủ nước', icon:'💧', img:'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80',
+        why:'Ngày 3 kiểm tra thói quen uống nước đã hình thành chưa — nhất quán 3 ngày đầu là nền tảng của habit.',
+        details:['Đến ngày 3, bắt đầu nhận ra pattern cá nhân: uống ít vào giờ nào, quên lúc nào. Đây là dữ liệu thực tế để điều chỉnh thói quen.','Habit formation: hành động lặp lại ở cùng ngữ cảnh (cùng giờ, cùng cốc) được não ghi nhớ nhanh hơn hành động ngẫu nhiên.','Thêm điện giải (muối + chanh + mật ong) vào 1 ly sáng nếu hay bị chuột rút hoặc sau tập nhiều mồ hôi — đặc biệt quan trọng ngày 3.'],
+        points:[{icon:'💛',label:'Vàng nhạt = đủ',note:'Màu nước tiểu là biểu đồ hydration'},{icon:'🍋',label:'Chanh + muối sáng',note:'Electrolytes tự nhiên sau ngủ'},{icon:'🔁',label:'Cùng giờ mỗi ngày',note:'Context cố định xây habit nhanh hơn'},{icon:'✅',label:'Ngày 3 = habit check',note:'Thói quen đang hình thành — giữ tiếp'}] },
+    ],
   },
   {
     n:4, theme:'Rau Xanh & Phục Hồi Tích Cực', emoji:'🥗', tag:'Greens & Recovery',
@@ -209,7 +348,28 @@ const SEVEN_DAYS = [
       img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
       details:['Thiền không yêu cầu "không có suy nghĩ" — đó là hiểu nhầm phổ biến nhất. Mục tiêu là nhận ra khi tâm trí đi lạc và nhẹ nhàng quay lại hơi thở.','Default Mode Network (vùng não hoạt động khi ta "không làm gì") liên quan đến lo âu và overthinking. Thiền giảm hoạt động DMN — giảm lo lắng về tương lai và quá khứ.','5 phút thiền mỗi ngày đủ để thấy kết quả sau 8 tuần: giảm cortisol, tăng gray matter vùng prefrontal cortex, cải thiện khả năng kiểm soát cảm xúc.'],
       points:[{icon:'🧘',label:'Ngồi thoải mái',note:'Ghế, sàn, hoặc giường đều được'},{icon:'👁️',label:'Nhắm mắt',note:'Giảm kích thích thị giác'},{icon:'🫁',label:'Chú ý hơi thở',note:'Cảm nhận bụng phình/xẹp'},{icon:'💭',label:'Không phán xét',note:'Suy nghĩ đến = nhận ra, quay lại thở'}] },
-    checklist:['Giãn cơ 15 phút','Rau ở ≥2 bữa','8.000 bước','Thiền 5 phút','Ngủ 7–9h'],
+    checklist:[
+      { label:'Giãn cơ 15 phút', icon:'🧘', img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+        why:'Giãn cơ sau tập tăng lưu lượng máu đến mô cơ, giảm DOMS và đẩy nhanh phục hồi thực sự.',
+        details:['Static stretching (giữ 30–45 giây) tốt nhất sau tập nặng — tăng flexibility và giảm tension cơ. Làm trước tập thì ngược lại: giảm sức mạnh tạm thời.','Foam rolling phá vỡ adhesions (điểm dính) trong fascia, tăng blood flow đến cơ — hiệu quả hơn nghỉ hoàn toàn và rẻ hơn massage.','15 phút = 3 nhóm cơ chính đã dùng. Không cần giãn toàn thân mỗi ngày — ưu tiên phần vừa tập hoặc đang tight nhất.'],
+        points:[{icon:'⏱',label:'30–45s/nhóm cơ',note:'Static stretch sau tập — không trước'},{icon:'🔘',label:'Foam roll trước',note:'Phá adhesion → blood flow tốt hơn'},{icon:'🎯',label:'Nhóm cơ vừa tập',note:'Đùi · Mông · Lưng dưới · Vai'},{icon:'😤',label:'Thở ra khi giữ',note:'Thở ra sâu = cơ giãn nhiều hơn'}] },
+      { label:'Rau ở ≥2 bữa', icon:'🥬', img:'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&q=80',
+        why:'Chất xơ từ rau nuôi vi khuẩn đường ruột — 70% hệ miễn dịch nằm ở ruột, không phải ở máu.',
+        details:['Vi khuẩn đường ruột cần chất xơ (prebiotic) để sản xuất short-chain fatty acids và serotonin — thiếu rau = hệ miễn dịch yếu và mood thấp hơn.','Đa dạng màu sắc rau = đa dạng dinh dưỡng: xanh đậm (folate, sắt), đỏ/cam (lycopene, beta-carotene), tím (anthocyanin). Ít nhất 3 màu mỗi ngày.','Rau luộc giữ được 70–80% dinh dưỡng và dễ ăn nhiều hơn rau sống — lựa chọn thực tế nhất cho ngày bận.'],
+        points:[{icon:'🥬',label:'Rau xanh đậm',note:'Rau muống·cải·bông cải — folate, sắt'},{icon:'🥕',label:'Cam/đỏ',note:'Cà rốt·cà chua — beta-carotene'},{icon:'🧄',label:'Tỏi + hành tây',note:'Prebiotic mạnh nhất cho đường ruột'},{icon:'🎨',label:'≥3 màu/ngày',note:'Màu khác = dinh dưỡng khác nhau'}] },
+      { label:'8.000 bước', icon:'👟', img:'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&q=80',
+        why:'8.000 bước/ngày giảm 51% nguy cơ tử vong sớm — không cần đi liên tục mới đạt hiệu quả.',
+        details:['Nghiên cứu JAMA 2021: 8.000 bước/ngày giảm 51% nguy cơ tử vong so với 4.000 bước. Không cần đến 10.000 — lợi ích lớn nhất đến khoảng 7.000–8.000 bước.','Tổng bước tích lũy suốt ngày (đi lại trong nhà, cầu thang, ra ngoài mua đồ) có hiệu quả tương đương đi liên tục. Không cần dành riêng 1 giờ đi bộ.','5 phút ánh nắng sáng (6–9h) khi ra ngoài: reset đồng hồ sinh học + kích hoạt vitamin D — 2 bonus không thể có trên máy chạy bộ trong nhà.'],
+        points:[{icon:'📱',label:'App đếm bước',note:'Có sẵn trong health app điện thoại'},{icon:'🪜',label:'Dùng cầu thang',note:'Mỗi tầng = ~100–120 bước thêm'},{icon:'☀️',label:'5\' ra ngoài sáng',note:'Reset đồng hồ sinh học + vitamin D'},{icon:'🚶',label:'Đi lúc giải lao',note:'5\' mỗi giờ = 500–700 bước/lần'}] },
+      { label:'Thiền 5 phút', icon:'🧘', img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+        why:'5 phút thiền/ngày đủ để giảm cortisol và tăng gray matter vùng kiểm soát cảm xúc sau 8 tuần.',
+        details:['Thiền không yêu cầu "không có suy nghĩ" — đây là hiểu nhầm phổ biến nhất. Mục tiêu là nhận ra khi tâm trí đi lạc và nhẹ nhàng quay lại hơi thở.','Default Mode Network (vùng não hoạt động khi "không làm gì") liên quan đến lo âu và overthinking. Thiền giảm hoạt động DMN — giảm lo lắng về tương lai và quá khứ.','5 phút mỗi ngày đủ để thấy kết quả sau 8 tuần: giảm cortisol, tăng gray matter prefrontal cortex, cải thiện kiểm soát cảm xúc.'],
+        points:[{icon:'🧘',label:'Ngồi thoải mái',note:'Ghế · sàn · giường đều được'},{icon:'👁️',label:'Nhắm mắt',note:'Giảm kích thích thị giác'},{icon:'🫁',label:'Chú ý hơi thở',note:'Cảm nhận bụng phình/xẹp'},{icon:'💭',label:'Suy nghĩ đến = ok',note:'Nhận ra → nhẹ nhàng quay lại thở'}] },
+      { label:'Ngủ 7–9h', icon:'😴', img:'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+        why:'7–9h là range phục hồi tối ưu — dưới 6h làm suy giảm miễn dịch và motor learning rõ rệt.',
+        details:['Sleep deprivation (<6h): giảm 70% NK cells (tế bào miễn dịch tiêu diệt ung thư), tăng cortisol, insulin resistance tăng, motor skills giảm 20–30%.','7–9h là range WHO recommend. Người trẻ hoạt động nhiều thường cần gần 9h hơn 7h. Không có người nào "chỉ cần 5h" lâu dài mà không ảnh hưởng sức khỏe.','Chất lượng quan trọng hơn số lượng: 7h ngủ sâu > 9h ngủ đứt đoạn. Dấu hiệu ngủ sâu: không thức giữa đêm, dậy cảm thấy sảng khoái.'],
+        points:[{icon:'🌙',label:'7–9h là range',note:'Người hoạt động nhiều → gần 9h'},{icon:'📉',label:'<6h là nguy hiểm',note:'NK cells giảm 70% sau 1 đêm'},{icon:'✨',label:'Chất lượng > số lượng',note:'Ngủ sâu, ít thức giữa đêm'},{icon:'⏰',label:'Giờ thức cố định',note:'Quan trọng hơn cả giờ ngủ'}] },
+    ],
   },
   {
     n:5, theme:'Ngày Tập Mạnh & Carb Nạp Năng Lượng', emoji:'💪', tag:'Strong Training Day',
@@ -231,7 +391,28 @@ const SEVEN_DAYS = [
       img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
       details:['Ý định (intention) khác với mục tiêu (goal) — ý định là hành động cụ thể trong ngày hôm nay, không phải kết quả dài hạn. "Hôm nay tôi sẽ tập lúc 6h" rõ hơn "Tôi muốn khỏe mạnh".','Viết ra và đọc to kích hoạt Reticular Activating System (RAS) — bộ lọc của não sẽ chú ý đến cơ hội thực hiện ý định đó suốt ngày.','Nghiên cứu về implementation intention (Peter Gollwitzer) cho thấy viết ra "Tôi sẽ làm X lúc Y ở Z" tăng tỷ lệ thực hiện lên 91% so với chỉ muốn làm.'],
       points:[{icon:'✍️',label:'Viết 1 câu cụ thể',note:'"Hôm nay lúc 6h tôi sẽ tập"'},{icon:'🗣️',label:'Đọc to 1 lần',note:'Âm thanh kích hoạt RAS hiệu quả hơn'},{icon:'🎯',label:'Cụ thể + có giờ',note:'When + What = tỷ lệ thực hiện +91%'},{icon:'🌙',label:'Xem lại tối',note:'Làm được chưa? Học gì từ hôm nay?'}] },
-    checklist:['Tập 30\' sức mạnh','Carb trước + đạm sau tập','Không caffeine sau 14h','Đặt ý định sáng','Ngủ 7–9h'],
+    checklist:[
+      { label:"Tập 30' sức mạnh", icon:'💪', img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+        why:'30 phút compound movements ở RPE 7/10 là zone đúng: đủ kích thích adaptation mà không gây overtraining.',
+        details:['RPE 7/10 (Rate of Perceived Exertion): mệt nhưng form vẫn chuẩn, có thể làm thêm 3 lần nếu cần. Zone này kích hoạt adaptation mà không gây burnout sau 2–3 tuần.','Compound movements (Squat, Lunge, Push, Row, Plank) kích hoạt nhiều nhóm cơ cùng lúc — hiệu quả nhất trong 30 phút giới hạn.','3 set/bài là standard: đủ để kích hoạt hypertrophy mà không cần session dài hơn 45 phút. Volume tối ưu hơn volume tối đa.'],
+        points:[{icon:'📊',label:'RPE 7/10',note:'Mệt, form chuẩn, còn 3 lần dự phòng'},{icon:'🏋',label:'Compound moves',note:'Squat·Lunge·Push·Row·Plank'},{icon:'3️⃣',label:'3 set/bài',note:'Standard kích thích adaptation'},{icon:'📈',label:'+1–2 lần vs ngày 1',note:'Progressive overload nhỏ nhưng thật'}] },
+      { label:'Carb trước + đạm sau tập', icon:'🍌', img:'https://images.unsplash.com/photo-1517093728197-df2b8b01f48a?w=800&q=80',
+        why:'Carb nạp glycogen trước tập, đạm sau tập kích hoạt protein synthesis trong anabolic window 30–90 phút.',
+        details:['Trước tập 30–60 phút: ăn carb dễ tiêu (chuối, bánh mì, cơm trắng) — glycogen là nhiên liệu duy nhất cho bài tập cường độ cao. Thiếu glycogen = mệt sớm và form tệ hơn.','Anabolic window sau tập (30–90 phút): cơ thể hấp thụ đạm và carb hiệu quả nhất để phục hồi và xây cơ. Bỏ bữa sau tập = bỏ lãng công tập.','1.620 kcal ngày tập nhiều hơn ngày thường — cơ thể cần thêm năng lượng để xây cơ và phục hồi. Đây không phải ăn nhiều, đây là ăn đúng.'],
+        points:[{icon:'🍌',label:'Carb 30–60\' trước',note:'Chuối·bánh mì·cơm — dễ tiêu'},{icon:'🍗',label:'Đạm 30–90\' sau',note:'Cơm + ức gà hoặc sữa đậu nành'},{icon:'⚡',label:'Carb = nhiên liệu',note:'Glycogen cho cơ hoạt động tối đa'},{icon:'🧱',label:'Đạm = vật liệu',note:'Amino acids xây cơ trong giấc ngủ'}] },
+      { label:'Không caffeine sau 14h', icon:'☕', img:'https://images.unsplash.com/photo-1497935586047-9395ee065e52?w=800&q=80',
+        why:'Caffeine có half-life 5–7 giờ — uống lúc 15h thì đến 22h vẫn còn 50% trong máu, phá deep sleep.',
+        details:['Half-life caffeine 5–7 giờ: 200mg lúc 15h → còn 100mg lúc 21–22h → giảm deep sleep đáng kể kể cả khi vẫn ngủ được.','Deep sleep (slow-wave sleep) bị giảm bởi caffeine — đây là phase quan trọng nhất cho phục hồi cơ và memory consolidation. Bỏ lỡ deep sleep = tập nặng mà cơ không xây.','14h là cut-off an toàn cho hầu hết người. Người nhạy caffeine hơn nên dừng lúc 12h.'],
+        points:[{icon:'⏰',label:'Cut-off 14h',note:'An toàn cho hầu hết người'},{icon:'📊',label:'Half-life 5–7h',note:'15h → còn 50% lúc 21–22h'},{icon:'💤',label:'Deep sleep bị phá',note:'Cơ không xây được nếu thiếu deep sleep'},{icon:'🍵',label:'Trà thảo mộc thay thế',note:'Chamomile·gừng·bạc hà — không caffeine'}] },
+      { label:'Đặt ý định sáng', icon:'✍️', img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+        why:'Implementation intention tăng tỷ lệ thực hiện từ 39% lên 91% theo nghiên cứu của NYU.',
+        details:['Ý định khác mục tiêu: "Hôm nay lúc 6h tôi sẽ tập 30 phút ở phòng khách" rõ hơn "Tôi muốn khỏe mạnh" rất nhiều về tỷ lệ thực hiện thực tế.','Viết ra và đọc to kích hoạt Reticular Activating System (RAS) — bộ lọc của não sẽ chú ý đến cơ hội thực hiện ý định đó suốt ngày.','Peter Gollwitzer (NYU) nghiên cứu: viết "Tôi sẽ làm X lúc Y ở Z" tăng tỷ lệ thực hiện từ 39% lên 91% — con số đáng kể nhất về habit formation.'],
+        points:[{icon:'✍️',label:'Viết 1 câu cụ thể',note:'"Lúc 6h tôi sẽ tập ở phòng khách"'},{icon:'🗣️',label:'Đọc to 1 lần',note:'Âm thanh kích hoạt RAS tốt hơn đọc thầm'},{icon:'⏰',label:'Có giờ + địa điểm',note:'When + Where = tỷ lệ thực hiện +91%'},{icon:'🌙',label:'Review tối',note:'Làm được chưa? Học gì từ hôm nay?'}] },
+      { label:'Ngủ 7–9h', icon:'😴', img:'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+        why:'Ngủ sau tập nặng là khi growth hormone tiết mạnh nhất — cơ xây trong giấc ngủ, không phải trong phòng gym.',
+        details:['Growth hormone tiết ra 70–80% trong deep sleep đầu đêm (23h–1h). Ngủ sớm sau ngày tập nặng = tối ưu hóa GH và phục hồi cơ.','Sleep deprivation sau ngày tập làm giảm muscle protein synthesis 18–20% dù đã ăn đủ đạm — công tập thành vô nghĩa.','Warm-down sau tập (stretch 15\' + box breathing 5\') + không caffeine sau 14h = 2 yếu tố đẩy chất lượng giấc ngủ tối hôm nay lên đáng kể.'],
+        points:[{icon:'💪',label:'GH tiết 23h–1h',note:'Ngủ đúng giờ = tối ưu hóa tập luyện'},{icon:'📊',label:'-18–20% muscle synthesis',note:'Thiếu ngủ sau tập = lãng phí công'},{icon:'🌙',label:'Ngủ sớm hơn thường',note:'Ngày tập nặng → thêm 30–60\''},{icon:'🛌',label:'Phòng mát + tối + yên',note:'3 điều kiện vật lý cho giấc ngủ sâu'}] },
+    ],
   },
   {
     n:6, theme:'Chuẩn Bị Cho Tuần Mới', emoji:'🗂️', tag:'Meal Prep Weekend',
@@ -253,7 +434,28 @@ const SEVEN_DAYS = [
       img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
       details:['Weekly review là công cụ tăng trưởng được sử dụng bởi hầu hết CEO và người hiệu suất cao — biến 7 ngày trải nghiệm thành bài học actionable cho tuần sau.','3 câu hỏi cốt lõi: (1) Tuần này làm tốt gì? (2) Chưa tốt gì? (3) Tuần tới cải thiện 1 điều gì? Chỉ 1 — không cần thay đổi tất cả một lúc.','Không tự chỉ trích quá mức — weekly review là tool học hỏi, không phải tòa án. Mục tiêu là nhìn lại với tâm thế tò mò, không phải tội lỗi.'],
       points:[{icon:'✅',label:'Làm tốt gì',note:'Ghi nhận dù nhỏ — builds momentum'},{icon:'🔍',label:'Chưa tốt gì',note:'Không phán xét — chỉ quan sát'},{icon:'🎯',label:'1 cải thiện tuần mới',note:'Chỉ 1 — không overcommit'},{icon:'📋',label:'Plan tuần tiếp',note:'Đặt lịch tập + meal plan trước'}] },
-    checklist:['Meal prep 45 phút','Yoga/đi bộ 30\'','Dọn dẹp không gian','Tổng kết tuần 10\'','Plan thực đơn tuần mới'],
+    checklist:[
+      { label:'Meal prep 45 phút', icon:'🍱', img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',
+        why:'Meal prep là "tự động hóa" quyết định ăn gì — không cần willpower khi đói và mệt vào buổi tối.',
+        details:['Khi đói và không có gì sẵn, não chọn thức ăn tiện lợi nhất (thường là processed food). Meal prep loại bỏ quyết định đó — đã có sẵn thì chỉ cần lấy ra ăn.','45 phút cuối tuần chuẩn bị đủ đạm + tinh bột + rau cho 5–7 ngày. Không cần nấu mọi thứ — luộc nguyên liệu là đủ.','Batch cooking tối ưu nhất: luộc 12 trứng (5 phút), hấp 500g ức gà (15 phút), nấu cơm nhiều (10 phút). 3 thứ này là backbone đủ cho 5 ngày.'],
+        points:[{icon:'🥚',label:'12 trứng luộc',note:'Để tủ 1 tuần — đạm nhanh mọi lúc'},{icon:'🍗',label:'500g ức gà hấp',note:'Chia 5 hộp — trưa 5 ngày xong'},{icon:'🍚',label:'Cơm nhiều',note:'Để tủ 3–4 ngày — vi sóng là xong'},{icon:'⏱',label:'45 phút là đủ',note:'Không cần nấu phức tạp để thành công'}] },
+      { label:"Yoga/đi bộ 30'", icon:'🧘', img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+        why:'Active recovery cuối tuần tốt hơn nghỉ hoàn toàn — tăng lưu lượng máu mà không tạo thêm stress cơ.',
+        details:['Active recovery tăng blood flow đến cơ, đẩy nhanh thanh thải lactate và giảm DOMS — hiệu quả hơn nằm nghỉ hoàn toàn trên sofa.','Yoga nhẹ kết hợp hít thở sâu kích hoạt hệ phó giao cảm, giảm cortisol — sau 1 tuần làm việc và tập luyện, "reset" hệ thần kinh là điều cần thiết.','30 phút đi bộ ngoài trời cuối tuần: nắng + không khí tươi + bước chân nhẹ = bộ 3 tốt nhất để nạp lại năng lượng cho tuần mới.'],
+        points:[{icon:'🚶',label:'Đi bộ ngoài trời',note:'Nắng + không khí tươi + bước nhẹ'},{icon:'🧘',label:'Yoga nhẹ',note:'Restorative yoga — kích hoạt phó giao cảm'},{icon:'💆',label:'Không tập nặng',note:'Recovery = đầu tư, không phải thua cuộc'},{icon:'🌳',label:'Thiên nhiên bonus',note:'Giảm cortisol thêm 15% theo nghiên cứu'}] },
+      { label:'Dọn dẹp không gian', icon:'✨', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+        why:'Không gian lộn xộn gây cognitive load liên tục — não phải xử lý mọi thứ nhìn thấy dù không cần.',
+        details:['Nghiên cứu Princeton 2011: môi trường lộn xộn giảm khả năng tập trung và tăng cortisol. Não xử lý tất cả kích thích thị giác dù không cần thiết.','Dọn dẹp 15–20 phút = "digital detox" cho não về phương diện thị giác. Hiệu quả nhất: dọn bàn làm việc, phòng ngủ và bếp — 3 nơi dùng nhiều nhất.','Thứ tự nhanh nhất: bỏ rác (5\') → gom đồ về chỗ (5\') → lau mặt bàn (5\') → nhìn quanh một lần cuối (5\'). Không cần hoàn hảo.'],
+        points:[{icon:'🗑',label:'Bỏ rác trước',note:'Thứ không cần → ra ngoài trước'},{icon:'🛏',label:'Phòng ngủ',note:'Não bắt đầu ngày trong môi trường sạch'},{icon:'🍽',label:'Bếp sạch',note:'Không gian nấu sạch = cook nhiều hơn'},{icon:'🧠',label:'Giảm cognitive load',note:'Mắt không xử lý môi trường nữa'}] },
+      { label:"Tổng kết tuần 10'", icon:'📊', img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+        why:'10 phút nhìn lại cả tuần giúp học từ trải nghiệm thực tế và điều chỉnh hướng đi trước khi tuần mới bắt đầu.',
+        details:['Weekly review không cần phức tạp: (1) Làm được gì trong tuần, (2) Khó khăn lớn nhất, (3) 1–2 điều sẽ làm khác tuần tới. 10 phút đủ.','Nhìn lại pattern: ngày nào tập nhiều nhất? Ngày nào bỏ? Lý do bỏ là gì? Đây là dữ liệu thực tế để tuần sau điều chỉnh schedule.','Ăn mừng nhỏ: viết 3 điều làm tốt trong tuần. Não cần reinforcement positive để duy trì motivation — không thể chỉ ghi nhận thất bại.'],
+        points:[{icon:'✅',label:'3 điều làm tốt',note:'Bắt đầu với positive — build momentum'},{icon:'🔍',label:'1 khó khăn lớn nhất',note:'1 điều thôi — đủ để học'},{icon:'🔄',label:'1–2 điều đổi tuần sau',note:'Cụ thể và thực tế'},{icon:'🎯',label:'Pattern check',note:'Ngày nào tập? Ngày nào bỏ? Vì sao?'}] },
+      { label:'Plan thực đơn tuần mới', icon:'📝', img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',
+        why:'Lên kế hoạch ăn trước khi đói = quyết định bằng lý trí — không phải bằng amygdala đang đói.',
+        details:['Khi đói, quyết định ăn gì do amygdala (cảm xúc) điều khiển — không phải prefrontal cortex (lý trí). Plan trước = luôn thắng amygdala.','Không cần plan chi tiết từng bữa — chỉ cần list nguyên liệu cần mua và 3–4 bữa chính sẽ nấu. 5–10 phút là đủ để plan 1 tuần.','Kết hợp grocery shopping sau khi plan: mua đúng những gì cần, không bị cám dỗ bởi đồ processed food khi đi siêu thị đói.'],
+        points:[{icon:'📋',label:'List nguyên liệu',note:'Mua gì = nấu gì — đơn giản thế thôi'},{icon:'🍽',label:'3–4 bữa chính',note:'Không cần plan 21 bữa/tuần'},{icon:'🛒',label:'Shopping sau khi plan',note:'Không đi siêu thị khi đói'},{icon:'♻️',label:'Tận dụng meal prep',note:'Plan để batch cooking ngày mai'}] },
+    ],
   },
   {
     n:7, theme:'Phục Hồi Hoàn Toàn & Nhìn Lại', emoji:'🌿', tag:'Rest & Reflect',
@@ -275,7 +477,28 @@ const SEVEN_DAYS = [
       img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
       details:['Hoàn thành 7 ngày đầu là mốc quan trọng hơn bạn nghĩ — hầu hết người không tập không vượt qua được ngưỡng này. Đây là bằng chứng bạn khác đa số.','3 điều làm được (dù nhỏ) + 1 cần cải thiện + 1 cam kết tiếp theo: cấu trúc này cân bằng giữa ghi nhận và học hỏi — không quá tự phê bình, không quá tự mãn.','Chia sẻ kết quả 7 ngày với 1 người — accountability partner tăng tỷ lệ tiếp tục lên đến 65% theo nghiên cứu của American Society of Training & Development.'],
       points:[{icon:'🏆',label:'3 điều làm được',note:'Ghi nhận momentum — dù nhỏ'},{icon:'🔍',label:'1 cần cải thiện',note:'Chỉ 1 — tập trung vào điều quan trọng nhất'},{icon:'💪',label:'1 cam kết tiếp',note:'Tuần 2 bắt đầu với gì?'},{icon:'👥',label:'Chia sẻ với ai đó',note:'Accountability +65% tỷ lệ tiếp tục'}] },
-    checklist:['Nghỉ / đi bộ nhẹ','Ăn nhẹ dễ tiêu','Lên kế hoạch tuần tới','Nhật ký tổng kết 7 ngày','Ngủ sớm trước 22h30'],
+    checklist:[
+      { label:'Nghỉ / đi bộ nhẹ', icon:'🚶', img:'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&q=80',
+        why:'Supercompensation: cơ thể không chỉ phục hồi về ban đầu mà còn xây thêm sức mạnh trong ngày nghỉ.',
+        details:['Supercompensation xảy ra 24–72h sau tập nặng — cơ thể phục hồi và xây thêm để chuẩn bị cho tải trọng tương tự. Ngày nghỉ là phần của chương trình tập, không phải ngoài lề.','Active rest (đi bộ nhẹ 20–30 phút) tốt hơn complete rest — tăng blood flow, giảm DOMS, không gây thêm stress cơ.','Cảm giác "phải tập mới tốt" vào ngày nghỉ là attachment, không phải thiếu recovery. Nhận ra cảm giác này và để nó qua — đây cũng là mindset training.'],
+        points:[{icon:'💪',label:'Cơ xây lúc nghỉ',note:'Supercompensation — kế hoạch từ đầu'},{icon:'🚶',label:'Đi bộ nhẹ ổn',note:'20–30\' nhẹ giúp recovery tốt hơn'},{icon:'😴',label:'Ngủ thêm 30\'',note:'Rest day = cho phép ngủ thêm'},{icon:'🧠',label:'Mental rest',note:'Không lo bài tập tiếp theo'}] },
+      { label:'Ăn nhẹ dễ tiêu', icon:'🥣', img:'https://images.unsplash.com/photo-1548940740-204726a19be3?w=800&q=80',
+        why:'Hệ tiêu hóa cũng cần nghỉ ngơi — ăn nhẹ 1 ngày/tuần giảm viêm đường ruột và nạp lại enzyme tiêu hóa.',
+        details:['Gut rest (ăn nhẹ, dễ tiêu) 1 ngày/tuần giúp lining đường ruột phục hồi và vi khuẩn đường ruột cân bằng lại — tương tự rest day cho cơ bắp.','Cháo, soup, canh rau dễ tiêu nhất: ít chất xơ thô, nhiều nước, ít năng lượng để tiêu hóa. Hệ tiêu hóa xử lý nhanh mà không cần nhiều enzyme.','1.240 kcal thấp hơn bình thường — không tập nặng nên nhu cầu năng lượng thấp hơn. Lắng nghe cơ thể thay vì ép đủ calo.'],
+        points:[{icon:'🍲',label:'Canh rau / soup',note:'Nhẹ nhất cho đường ruột'},{icon:'🥣',label:'Cháo',note:'Dễ tiêu nhất — ít enzyme nhất'},{icon:'🍊',label:'Trái cây',note:'Enzyme tự nhiên hỗ trợ tiêu hóa'},{icon:'💧',label:'Uống nhiều nước',note:'2–2.5L ngày nghỉ — flush toxin'}] },
+      { label:'Lên kế hoạch tuần tới', icon:'📅', img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+        why:'Planning trước khi tuần bắt đầu loại bỏ quyết định thời gian thực — tiết kiệm willpower cho điều quan trọng hơn.',
+        details:['Decision fatigue: mỗi quyết định nhỏ (tập hay không, ăn gì) tiêu tốn willpower. Plan trước = não không cần quyết định lại, chỉ cần thực thi.','Block calendar cho buổi tập = commitment thật sự. "Tôi sẽ tập" < "Tôi block Thứ 2, 3, 5 lúc 6h30 để tập" về tỷ lệ thực hiện rất nhiều.','Grocery list chuẩn bị sẵn = không thiếu nguyên liệu lành mạnh giữa tuần = không phải đặt đồ ăn nhanh "vì không có gì ăn".'],
+        points:[{icon:'📅',label:'Block calendar',note:'Đặt lịch tập = commitment thật sự'},{icon:'🛒',label:'Grocery list',note:'Mua đủ = không thiếu giữa tuần'},{icon:'🎯',label:'Mục tiêu tuần 2',note:'Tăng gì? Cải thiện điều gì?'},{icon:'📝',label:'Meal plan sơ bộ',note:'3 bữa chính — không cần chi tiết'}] },
+      { label:'Nhật ký tổng kết 7 ngày', icon:'📖', img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+        why:'7 ngày đầu là mốc quan trọng nhất — hầu hết người bỏ cuộc trước ngày 4. Bạn đã vượt ngưỡng này.',
+        details:['Hoàn thành 7 ngày liên tiếp là thành tích khó hơn bạn nghĩ. Phần lớn người thử thói quen mới bỏ cuộc trước ngày 4 — bạn đã vượt qua ngưỡng quan trọng nhất.','Nhật ký 7 ngày không phải đánh giá thành tích — là bức tranh chụp điểm xuất phát để sau 3 tháng so sánh. Khi nhìn lại sẽ thấy sự khác biệt rõ ràng.','Cấu trúc đơn giản nhất: (1) Điều ngạc nhiên nhất trong 7 ngày, (2) Khó khăn lớn nhất, (3) 1 cam kết tiếp theo. 15 phút đủ.'],
+        points:[{icon:'🏆',label:'3 điều làm được',note:'Dù nhỏ — ghi nhận để build trust'},{icon:'🔍',label:'Khó nhất là gì',note:'Học từ khó khăn thật hơn thành công'},{icon:'💪',label:'1 cam kết tuần 2',note:'Cụ thể và đo được'},{icon:'👥',label:'Chia sẻ với ai đó',note:'Accountability +65% tỷ lệ tiếp tục'}] },
+      { label:'Ngủ sớm trước 22h30', icon:'🌙', img:'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+        why:'Ngủ trước 22h30 ngày cuối tuần reset đồng hồ sinh học — chống social jetlag cho thứ 2 tuần mới.',
+        details:['Social jetlag — thức khuya cuối tuần, dậy muộn — gây trạng thái tương tự jetlag nhẹ vào thứ 2. Ngủ đúng giờ 7 ngày liên tiếp loại bỏ hoàn toàn điều này.','Ngủ thêm 30–60 phút ngày nghỉ (không quá 1 tiếng so với ngày thường) giúp trả "sleep debt" mà không gây social jetlag.','Ngày 7 ngủ trước 22h30 = dậy sảng khoái vào thứ 2, bắt đầu tuần 2 với năng lượng cao nhất. Đây là cuộc đầu tư cho tuần tiếp theo.'],
+        points:[{icon:'⏰',label:'22h30 target',note:'Sớm hơn thường 30\' — trả sleep debt'},{icon:'🔄',label:'Reset đồng hồ sinh học',note:'Chống social jetlag thứ 2'},{icon:'📵',label:'Phone off lúc 21h',note:'Chuẩn bị để ngủ sớm hơn'},{icon:'🌅',label:'Tuần 2 bắt đầu đỉnh',note:'7 ngày nhất quán — kết quả tuần 2 sẽ tốt hơn'}] },
+    ],
   },
 ];
 
@@ -593,6 +816,7 @@ export default function Program() {
   const initTab = new URLSearchParams(location.search).get('tab') || '7d';
   const [journey, setJourney] = useState(initTab);
   const [activeCard, setActiveCard] = useState(null);
+  const [activeChecklistItem, setActiveChecklistItem] = useState(null);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -860,12 +1084,32 @@ export default function Program() {
                 <RevealBlock delay={160} className="rounded-2xl border p-5 mb-6" style={{ borderColor: `rgba(${day.rgb},0.25)`, background: `rgba(${day.rgb},0.04)` }}>
                   <h3 className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: day.color }}>✅ {t('program.checklist_day_label', { n: day.n, defaultValue: `Checklist Ngày ${day.n}` })}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {day.checklist.map((item,i) => (
-                      <div key={i} className="flex items-center gap-2.5 text-lg text-muted">
-                        <span className="w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center" style={{ borderColor: `rgba(${day.rgb},0.4)` }}>
-                          <span className="w-1.5 h-1.5 rounded-full" style={{ background: day.color }} />
-                        </span>
-                        <span className="text-base leading-relaxed">{item}</span>
+                    {day.checklist.map((item, i) => (
+                      <div
+                        key={i}
+                        onClick={() => setActiveChecklistItem({ item, dayColor: day.color, dayRgb: day.rgb })}
+                        className="flex items-center justify-between gap-2 cursor-pointer rounded-xl px-3 py-2 transition-all duration-150 hover:bg-white/5 group/cl"
+                        style={{ border: '1px solid transparent' }}
+                        onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${day.rgb},0.2)`}
+                        onMouseLeave={e => e.currentTarget.style.borderColor = 'transparent'}
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <span className="w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center" style={{ borderColor: `rgba(${day.rgb},0.4)` }}>
+                            <span className="w-1.5 h-1.5 rounded-full" style={{ background: day.color }} />
+                          </span>
+                          <span className="text-base text-muted leading-relaxed truncate">{typeof item === 'object' ? item.label : item}</span>
+                        </div>
+                        {typeof item === 'object' && (
+                          <span
+                            className="flex items-center gap-1 text-[10px] font-bold px-2 py-1 rounded-lg shrink-0 opacity-50 group-hover/cl:opacity-100 transition-opacity"
+                            style={{ color: day.color, background: `rgba(${day.rgb},0.1)`, border: `1px solid rgba(${day.rgb},0.2)` }}
+                          >
+                            Chi tiết
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
+                              <path d="M3 8h10M9 4l4 4-4 4"/>
+                            </svg>
+                          </span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -1449,6 +1693,14 @@ export default function Program() {
 
     {activeCard && (
       <PillarDetailModal card={activeCard} onClose={() => setActiveCard(null)} />
+    )}
+    {activeChecklistItem && (
+      <ChecklistItemModal
+        item={activeChecklistItem.item}
+        dayColor={activeChecklistItem.dayColor}
+        dayRgb={activeChecklistItem.dayRgb}
+        onClose={() => setActiveChecklistItem(null)}
+      />
     )}
   </>
   );

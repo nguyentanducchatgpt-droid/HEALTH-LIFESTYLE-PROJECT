@@ -798,9 +798,75 @@ const C4_ROUTINE = [
 ];
 
 const C4_ZONES = [
-  { zone: 'Cổ vai gáy', icon: '🦴', exercises: ['Chin tuck 10 lần', 'Shoulder roll', 'Doorway stretch', 'Scapular squeeze', 'Thoracic twist'] },
-  { zone: 'Lưng', icon: '🫀', exercises: ['Dead bug 10 lần', 'Bird-dog 10 lần', 'Glute bridge 15 lần', 'Child pose 1 phút', 'Hip flexor stretch'] },
-  { zone: 'Gối', icon: '🦵', exercises: ['Sit-to-stand 10 lần', 'Glute bridge 15 lần', 'Calf raise 15 lần', 'Split squat bám tường (nhẹ)', 'Hamstring stretch'] },
+  {
+    zone: 'Cổ vai gáy', icon: '🦴',
+    exercises: ['Chin tuck 10 lần', 'Shoulder roll', 'Doorway stretch', 'Scapular squeeze', 'Thoracic twist'],
+    label: 'Phục Hồi Cổ Vai Gáy',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1571019613914-85f342c6a11e?w=800&q=80&auto=format&fit=crop',
+    detail: 'Cổ vai gáy là vùng chịu đựng nhiều nhất của người ngồi làm việc — 5 bài tập mục tiêu giải phóng cơ thang, cổ và lưng trên hiệu quả.',
+    keyFact: 'Mỗi centimeter đầu nhô về phía trước (forward head posture) tăng tải lên cột sống cổ thêm 4–5 kg — sau 8 giờ ngồi màn hình, cơ cổ gánh thêm 20–25 kg tải dư thừa.',
+    details: [
+      'Chin tuck (kéo cằm về sau): không cúi đầu mà kéo cằm ngang về phía sau, tạo "double chin" nhẹ. 10 lần × giữ 3 giây — bài tập đơn giản nhất để chống forward head posture và kích hoạt cơ cổ sâu.',
+      'Shoulder roll 10–15 vòng mỗi chiều: giải phóng cơ thang trên (upper trapezius) và levator scapulae — hai cơ co cứng nhất ở người ngồi nhiều và gây đau cổ vai gáy kinh điển.',
+      'Doorway stretch: đứng trong khung cửa, hai tay bám ngang vai, nghiêng người ra trước để cảm nhận căng cơ ngực — kéo giãn pectoralis minor thường co rút khiến vai đổ về phía trước.',
+      'Scapular squeeze: kéo hai bả vai về phía nhau, giữ 5 giây, lặp 10–15 lần — kích hoạt rhomboid và lower trapezius, hai cơ thường bị ức chế do ngồi sai tư thế kéo dài.',
+      'Thoracic twist: ngồi thẳng, đặt tay đối diện lên vai, xoay thân mình (không phải lưng dưới) từng bên 5–8 lần — cột sống ngực cứng gây đau cổ và lưng dưới bù trừ.',
+      'Thứ tự lý tưởng: Chin tuck → Shoulder roll → Thoracic twist → Doorway stretch → Scapular squeeze. 5–8 phút đủ cho một session phục hồi cổ vai gáy hoàn chỉnh.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Chin tuck', note: 'Chống forward head posture' },
+      { icon: '🔄', label: 'Shoulder roll 2 chiều', note: 'Giải phóng cơ thang trên' },
+      { icon: '🚪', label: 'Doorway stretch', note: 'Kéo giãn cơ ngực nhỏ' },
+      { icon: '🦋', label: 'Scapular squeeze', note: 'Kích hoạt rhomboid + lower trap' },
+    ],
+  },
+  {
+    zone: 'Lưng', icon: '🫀',
+    exercises: ['Dead bug 10 lần', 'Bird-dog 10 lần', 'Glute bridge 15 lần', 'Child pose 1 phút', 'Hip flexor stretch'],
+    label: 'Phục Hồi Vùng Lưng',
+    color: '#818cf8', rgb: '129,140,248',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    detail: '5 bài tập kết hợp kích hoạt cơ lõi, giải phóng cơ gấp hông và kéo giãn — tiếp cận đau lưng từ nhiều góc độ khác nhau.',
+    keyFact: '90% trường hợp đau lưng dưới không đặc hiệu có thể cải thiện đáng kể chỉ bằng tập luyện đúng — và 3 nhóm cơ quan trọng nhất cần kích hoạt là cơ lõi, cơ mông và cơ đùi sau.',
+    details: [
+      'Dead bug: nằm ngửa, tay giơ thẳng lên, chân gập 90°, hạ tay và chân đối diện cùng lúc mà không để lưng dưới rời sàn. Kích hoạt transversus abdominis (cơ bụng sâu nhất) — bài tập lõi an toàn nhất cho lưng đau.',
+      'Bird-dog: quỳ bốn điểm, giơ tay phải và chân trái thẳng đồng thời, giữ 3 giây, đổi bên — 10 lần mỗi bên. Kích hoạt multifidus (cơ sâu dọc cột sống) và cải thiện ổn định lõi.',
+      'Glute bridge 15 lần: nằm ngửa gối gập 90°, nâng hông lên, giữ 2 giây. Kích hoạt cơ mông (glutes) thường bị ức chế khi ngồi nhiều — mông yếu buộc lưng bù trừ và gây đau.',
+      'Child pose 1 phút: kéo giãn erector spinae và QL (quadratus lumborum). Thở sâu hướng vào lưng khi ở tư thế này — mỗi nhịp thở ra giúp cơ buông lỏng thêm.',
+      'Hip flexor stretch lunge 60 giây mỗi bên: psoas và iliacus căng do ngồi nhiều kéo lưng dưới ưỡn, nén đĩa đệm L4–L5 — đây thường là nguyên nhân sâu xa của đau lưng dưới mạn tính.',
+      'Thứ tự lý tưởng: Dead bug → Bird-dog → Glute bridge → Hip flexor stretch → Child pose. Từ kích hoạt cơ lõi → kích hoạt mông → giải phóng cơ đối kháng → thư giãn hoàn toàn.',
+    ],
+    points: [
+      { icon: '🐛', label: 'Dead bug', note: 'Kích hoạt cơ lõi sâu an toàn nhất' },
+      { icon: '🐦', label: 'Bird-dog', note: 'Kích hoạt multifidus dọc cột sống' },
+      { icon: '🍑', label: 'Glute bridge', note: 'Kích hoạt mông — giảm tải lưng' },
+      { icon: '🧘', label: 'Child pose', note: 'Kéo giãn và thư giãn hoàn toàn' },
+    ],
+  },
+  {
+    zone: 'Gối', icon: '🦵',
+    exercises: ['Sit-to-stand 10 lần', 'Glute bridge 15 lần', 'Calf raise 15 lần', 'Split squat bám tường (nhẹ)', 'Hamstring stretch'],
+    label: 'Phục Hồi Vùng Gối',
+    color: '#e879f9', rgb: '232,121,249',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    detail: '5 bài tập tăng cường cơ xung quanh gối, cải thiện linh hoạt gân kheo và tăng khả năng chịu lực — không cần thiết bị.',
+    keyFact: 'Gối đau không phải do gối "yếu" — mà do cơ mông, đùi và bắp chân yếu khiến gối chịu tải không cân bằng. Tăng sức mạnh cơ xung quanh = giảm đau gối hiệu quả.',
+    details: [
+      'Sit-to-stand 10 lần: đứng lên ngồi xuống từ ghế, không dùng tay — vừa là bài test vừa là bài tập. Kích hoạt quadriceps và glutes, tăng dần tải lên gối theo cách kiểm soát an toàn.',
+      'Glute bridge 15 lần: kích hoạt cơ mông giảm tải gối. Mông yếu làm gối bị kéo vào trong (knee valgus) khi đứng và vận động — nguyên nhân phổ biến nhất của đau gối trước.',
+      'Calf raise 15 lần: tăng sức mạnh cơ bắp chân và gân Achilles — hỗ trợ hấp thu lực va chạm từ dưới lên, giảm tải trọng truyền lên gối khi đi lại mỗi ngày.',
+      'Split squat bám tường: squat một chân với tường đỡ thăng bằng, chỉ xuống đến mức gối không đau, lên chậm. Bài tập đơn hướng an toàn nhất cho gối đau nhẹ đến trung bình.',
+      'Hamstring stretch 60 giây mỗi bên: gân kheo căng tăng tải lên mặt sau gối và giảm phạm vi vận động — kéo giãn hamstring giảm trực tiếp áp lực lên khớp gối sau.',
+      'Lưu ý quan trọng: nếu đau gối cấp tính, sưng tấy, hoặc đau khi leo cầu thang ngay cả nhẹ — cần gặp bác sĩ hoặc PT trước khi tự tập. 5 bài này phù hợp cho đau gối mạn tính nhẹ đến trung bình.',
+    ],
+    points: [
+      { icon: '🪑', label: 'Sit-to-stand', note: 'Kích hoạt quad và glute cùng lúc' },
+      { icon: '🍑', label: 'Glute bridge', note: 'Chống knee valgus — đau gối trước' },
+      { icon: '🦶', label: 'Calf raise', note: 'Hấp thu lực — giảm tải gối' },
+      { icon: '⚠️', label: 'Đau cấp tính', note: 'Gặp bác sĩ trước khi tự tập' },
+    ],
+  },
 ];
 
 const C5_SIGNALS = [
@@ -1479,6 +1545,7 @@ export default function PillarC() {
   const [sleepChecks, setSleepChecks] = useState({});
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
+  const [zoneModalIdx, setZoneModalIdx] = useState(null);
   const [morningMode, setMorningMode] = useState('5');
   const [morningModalIdx, setMorningModalIdx] = useState(null);
   const [breathMode, setBreathMode] = useState(0);
@@ -1940,19 +2007,23 @@ export default function PillarC() {
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#a78bfa' }}>Phục Hồi Theo Vùng Đau Mỏi</h3>
                 <div className="space-y-2">
                   {C4_ZONES.map((z, i) => (
-                    <div key={i} className="rounded-xl overflow-hidden border" style={{ borderColor: 'rgba(167,139,250,0.15)' }}>
-                      <button onClick={() => setOpenZone(openZone === i ? null : i)}
-                        className="w-full flex items-center justify-between p-3 text-left" style={{ background: 'rgba(167,139,250,0.06)' }}>
-                        <span className="flex items-center gap-2 font-semibold text-lg text-text">
+                    <div key={i} className="rounded-xl overflow-hidden border group"
+                      style={{ borderColor: zoneModalIdx === i ? `rgba(${z.rgb},0.4)` : 'rgba(167,139,250,0.15)', transition: 'border-color 0.2s' }}>
+                      <div className="flex items-center justify-between p-3" style={{ background: `rgba(${z.rgb},0.06)` }}>
+                        <button onClick={() => setZoneModalIdx(i)}
+                          className="flex items-center gap-2 font-semibold text-lg text-text flex-1 text-left hover:opacity-80 transition-opacity">
                           <span>{z.icon}</span>{z.zone}
-                        </span>
-                        <span style={{ color: '#a78bfa' }}>{openZone === i ? '▲' : '▼'}</span>
-                      </button>
+                          <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity ml-2" style={{ color: z.color }}>Chi tiết →</span>
+                        </button>
+                        <button onClick={() => setOpenZone(openZone === i ? null : i)} className="px-2 py-1" style={{ color: z.color }}>
+                          {openZone === i ? '▲' : '▼'}
+                        </button>
+                      </div>
                       {openZone === i && (
                         <div className="p-3 space-y-1">
                           {z.exercises.map((ex, j) => (
                             <div key={j} className="text-base text-muted flex items-center gap-2">
-                              <span style={{ color: '#a78bfa' }}>•</span>{ex}
+                              <span style={{ color: z.color }}>•</span>{ex}
                             </div>
                           ))}
                         </div>
@@ -2368,6 +2439,19 @@ export default function PillarC() {
           onNext={() => setC2EnergyIdx(i => Math.min(C2_ENERGY_TIPS.length - 1, i + 1))}
           hasPrev={c2EnergyIdx > 0}
           hasNext={c2EnergyIdx < C2_ENERGY_TIPS.length - 1}
+        />
+      )}
+
+      {/* ── C4 recovery zone modal ── */}
+      {zoneModalIdx !== null && (
+        <C0ItemModal
+          item={C4_ZONES[zoneModalIdx]}
+          idx={zoneModalIdx}
+          onClose={() => setZoneModalIdx(null)}
+          onPrev={() => setZoneModalIdx(i => Math.max(0, i - 1))}
+          onNext={() => setZoneModalIdx(i => Math.min(C4_ZONES.length - 1, i + 1))}
+          hasPrev={zoneModalIdx > 0}
+          hasNext={zoneModalIdx < C4_ZONES.length - 1}
         />
       )}
 

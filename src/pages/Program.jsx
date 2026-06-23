@@ -29,6 +29,92 @@ const PC = {
   F: { c:'#f97316', bg:'rgba(249,115,22,0.08)',  br:'rgba(249,115,22,0.22)',  t:'text-orange-400', l:'Công Cụ',    icon:'🛠️' },
 };
 
+// ── Journey Detail Modal ─────────────────────────────────────────────────────
+function JourneyDetailModal({ journey: j, onClose, onSelect }) {
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${j.rgb},0.28)`, boxShadow: `0 0 80px rgba(${j.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-48 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={j.img} alt={j.label} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${j.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${j.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-5 flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-3xl"
+              style={{ background: `rgba(${j.rgb},0.18)`, border: `2px solid rgba(${j.rgb},0.4)` }}>
+              {j.icon}
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: j.color }}>{j.sub}</p>
+              <h2 className="font-bold text-white text-xl leading-tight">{j.label}</h2>
+            </div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-5 md:p-7">
+          {/* Description */}
+          <p className="text-base font-semibold mb-5 leading-relaxed" style={{ color: `rgba(${j.rgb},0.75)` }}>{j.desc}</p>
+
+          {/* Numbered details */}
+          <ul className="space-y-3 mb-6">
+            {j.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${j.rgb},0.14)`, color: j.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* 2-col points */}
+          <div className="grid grid-cols-2 gap-2.5 mb-6">
+            {j.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                style={{ background: `rgba(${j.rgb},0.06)`, border: `1px solid rgba(${j.rgb},0.14)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={() => { onSelect(); onClose(); }}
+            className="w-full py-3 rounded-2xl font-bold text-base transition-all duration-200 hover:opacity-90"
+            style={{ background: `rgba(${j.rgb},0.15)`, color: j.color, border: `1px solid rgba(${j.rgb},0.3)` }}
+          >
+            Xem lộ trình này →
+          </button>
+
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Checklist Item Modal ─────────────────────────────────────────────────────
 function ChecklistItemModal({ item, dayColor, dayRgb, onClose }) {
   useEffect(() => {
@@ -686,10 +772,66 @@ const PROGRESS_ROWS = [
 
 // ── Journey config ───────────────────────────────────────────────────────────
 const JOURNEYS = [
-  { id:'7d',     label:'7 Ngày Khởi Động',  sub:'Tuần đầu tiên',        icon:'🌱', color:'#22c55e', rgb:'34,197,94',   desc:'Bắt đầu nhẹ nhàng với 7 ngày đầu tiên. Mỗi ngày tích hợp đủ 4 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí.' },
-  { id:'12w',    label:'12 Tuần Cơ Bản',   sub:'Chương trình nền tảng', icon:'📈', color:'#84cc16', rgb:'132,204,22', desc:'3 giai đoạn 12 tuần: Khởi Động → Xây Nền → Cá Nhân Hóa. Đủ thời gian để thay đổi thói quen não bộ vĩnh viễn.' },
-  { id:'24w',    label:'24 Tuần Nâng Cao',  sub:'Chương trình toàn diện', icon:'🎓', color:'#a855f7', rgb:'168,85,247', desc:'6 giai đoạn 24 tuần: từ người mới đến làm chủ hoàn toàn hệ thống sức khỏe cá nhân. Carb cycling + supplement + mastery.' },
-  { id:'sample', label:'Lộ Trình Mẫu',      sub:'Ví dụ thực tế',          icon:'🗺️', color:'#0ea5e9', rgb:'14,165,233',  desc:'Xem lộ trình 12 tuần của một người thực tế: 32 tuổi, nhân viên văn phòng, mục tiêu giảm 5kg và tăng năng lượng.' },
+  { id:'7d', label:'7 Ngày Khởi Động', sub:'Tuần đầu tiên', icon:'🌱', color:'#22c55e', rgb:'34,197,94',
+    desc:'Bắt đầu nhẹ nhàng với 7 ngày đầu tiên. Mỗi ngày tích hợp đủ 4 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí.',
+    img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',
+    details:[
+      '7 ngày đầu tích hợp đủ 4 trụ cột mỗi ngày: Vận động (20–30\') + Dinh dưỡng (đủ đạm 2–3 bữa) + Lối sống (ngủ trước 23h) + Tâm trí (hơi thở sáng). Không cần hoàn hảo — làm đủ 4 là thành công.',
+      '7 ngày đầu là thử thách khó nhất — phần lớn người bỏ cuộc trước ngày 4. Mục tiêu không phải kết quả thể hình mà là xây "ngôn ngữ" cơ thể và thiết lập neural pathway cho thói quen.',
+      'Cấu trúc 7 ngày: Ngày 1–3 (học form + đặt nền tảng) → Ngày 4 (active recovery) → Ngày 5 (tập sức mạnh) → Ngày 6 (meal prep + yoga) → Ngày 7 (nghỉ + lên kế hoạch tuần mới).',
+    ],
+    points:[
+      { icon:'🌱', label:'Ngày 1–3', note:'Học 6 chuyển động + đủ đạm + ngủ 23h' },
+      { icon:'💪', label:'Ngày 4–5', note:'Recovery + tập sức mạnh 30\'' },
+      { icon:'🗂️', label:'Ngày 6', note:'Meal prep + active recovery' },
+      { icon:'🌿', label:'Ngày 7', note:'Nghỉ hoàn toàn + kế hoạch tuần mới' },
+    ],
+  },
+  { id:'12w', label:'12 Tuần Cơ Bản', sub:'Chương trình nền tảng', icon:'📈', color:'#84cc16', rgb:'132,204,22',
+    desc:'3 giai đoạn 12 tuần: Khởi Động → Xây Nền → Cá Nhân Hóa. Đủ thời gian để thay đổi thói quen não bộ vĩnh viễn.',
+    img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    details:[
+      '3 giai đoạn rõ ràng: Tuần 1–4 (Khởi Động — hình thành 5 thói quen cốt lõi) → Tuần 5–8 (Xây Nền — tăng volume và intensity) → Tuần 9–12 (Cá Nhân Hóa — điều chỉnh theo kết quả thực tế).',
+      'Nghiên cứu UCL: trung bình 66 ngày để hành động tự động hóa hoàn toàn. 12 tuần = 84 ngày — vượt ngưỡng này. Sau 12 tuần, không còn cần willpower để tập — nó trở thành autopilot.',
+      'Bao gồm 5 bài test hàng tháng để đo tiến độ thực tế: Plank, Push-up, Squat 1 phút, Đi bộ 1km và chu vi eo. Dữ liệu thật để biết mình đang tiến hay cần điều chỉnh.',
+    ],
+    points:[
+      { icon:'🌱', label:'Tuần 1–4', note:'Khởi Động — 5 thói quen cốt lõi' },
+      { icon:'📈', label:'Tuần 5–8', note:'Xây Nền — tăng volume & intensity' },
+      { icon:'🎯', label:'Tuần 9–12', note:'Cá Nhân Hóa — điều chỉnh theo kết quả' },
+      { icon:'📊', label:'Test hàng tháng', note:'5 bài đo tiến độ thực tế' },
+    ],
+  },
+  { id:'24w', label:'24 Tuần Nâng Cao', sub:'Chương trình toàn diện', icon:'🎓', color:'#a855f7', rgb:'168,85,247',
+    desc:'6 giai đoạn 24 tuần: từ người mới đến làm chủ hoàn toàn hệ thống sức khỏe cá nhân. Carb cycling + supplement + mastery.',
+    img:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
+    details:[
+      '6 giai đoạn: Khởi Động (1–4) → Xây Nền (5–8) → Tăng Tốc (9–12) → Chuyên Sâu (13–16) → Nâng Cao (17–20) → Mastery (21–24). Mỗi giai đoạn xây trên nền của giai đoạn trước.',
+      'Nội dung nâng cao giai đoạn 3–6: Carb cycling (điều chỉnh carb theo ngày tập/nghỉ), basic supplementation (protein, creatine, vitamin D), và periodization (deload week có cấu trúc).',
+      'Sau 24 tuần, bạn hiểu cơ thể của chính mình đủ để tự thiết kế chương trình tiếp theo. Đây là điểm khác biệt với 12 tuần — không chỉ khỏe hơn mà còn tự chủ hoàn toàn.',
+    ],
+    points:[
+      { icon:'🏗️', label:'Giai đoạn 1–2', note:'Xây nền tảng từ cơ bản đến trung bình' },
+      { icon:'⚡', label:'Giai đoạn 3–4', note:'Carb cycling + supplementation cơ bản' },
+      { icon:'🎓', label:'Giai đoạn 5–6', note:'Mastery — tự thiết kế chương trình' },
+      { icon:'🧬', label:'Cá nhân hóa', note:'Hiểu cơ thể riêng của mình hoàn toàn' },
+    ],
+  },
+  { id:'sample', label:'Lộ Trình Mẫu', sub:'Ví dụ thực tế', icon:'🗺️', color:'#0ea5e9', rgb:'14,165,233',
+    desc:'Xem lộ trình 12 tuần của một người thực tế: 32 tuổi, nhân viên văn phòng, mục tiêu giảm 5kg và tăng năng lượng.',
+    img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    details:[
+      'Lộ trình thực tế của Tuấn — 32 tuổi, nhân viên văn phòng, 78kg, mục tiêu giảm 5kg và tăng năng lượng. Xem ngày làm gì, ăn gì, tập gì và kết quả cụ thể từng tuần.',
+      'Không phải lộ trình lý tưởng — là lộ trình thực tế với những ngày bỏ lỡ, những lần ăn ngoài không theo kế hoạch, và cách điều chỉnh khi bị gián đoạn. Thực tế hơn mọi "perfect plan".',
+      'Bao gồm: tracking calo theo tuần, kết quả cân và đo lường từng tháng, những sai lầm gặp phải và cách sửa — cộng với 4 bài học rút ra cho người muốn tự thiết kế lộ trình của mình.',
+    ],
+    points:[
+      { icon:'👤', label:'Tuấn: 78kg → 73kg', note:'12 tuần, thực tế không lý tưởng' },
+      { icon:'📊', label:'Tracking thực tế', note:'Calo · cân nặng · chu vi eo/tuần' },
+      { icon:'❌', label:'Sai lầm + cách sửa', note:'Học từ thực tế hơn lý thuyết' },
+      { icon:'📝', label:'4 bài học quan trọng', note:'Insight sau 12 tuần thực hành' },
+    ],
+  },
 ];
 
 const SUB_TABS_12W = [
@@ -817,6 +959,7 @@ export default function Program() {
   const [journey, setJourney] = useState(initTab);
   const [activeCard, setActiveCard] = useState(null);
   const [activeChecklistItem, setActiveChecklistItem] = useState(null);
+  const [activeJourneyInfo, setActiveJourneyInfo] = useState(null);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -982,11 +1125,25 @@ export default function Program() {
               >
                 {active && <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ background: `radial-gradient(ellipse at top left, rgba(${j.rgb},0.25), transparent 70%)` }} />}
                 <div className="relative">
-                  <span className="text-4xl block mb-2">{j.icon}</span>
+                  <div className="flex items-start justify-between mb-2">
+                    <span className="text-4xl">{j.icon}</span>
+                    {active && <div className="w-2 h-2 rounded-full mt-1" style={{ background: j.color }} />}
+                  </div>
                   <div className="font-bold text-lg text-text leading-tight mb-0.5">{j.label}</div>
                   <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: j.color }}>{j.sub}</div>
-                  <p className="text-base text-muted leading-relaxed">{j.desc}</p>
-                  {active && <div className="absolute top-0 right-0 w-2 h-2 rounded-full" style={{ background: j.color }} />}
+                  <p className="text-base text-muted leading-relaxed mb-3">{j.desc}</p>
+                  {j.details && (
+                    <span
+                      onClick={e => { e.stopPropagation(); setActiveJourneyInfo(j); }}
+                      className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-lg opacity-50 group-hover:opacity-100 transition-opacity cursor-pointer"
+                      style={{ color: j.color, background: `rgba(${j.rgb},0.1)`, border: `1px solid rgba(${j.rgb},0.22)` }}
+                    >
+                      Chi tiết
+                      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
+                        <path d="M3 8h10M9 4l4 4-4 4"/>
+                      </svg>
+                    </span>
+                  )}
                 </div>
               </button>
             );
@@ -1691,6 +1848,13 @@ export default function Program() {
 
     </div>
 
+    {activeJourneyInfo && (
+      <JourneyDetailModal
+        journey={activeJourneyInfo}
+        onClose={() => setActiveJourneyInfo(null)}
+        onSelect={() => { setJourney(activeJourneyInfo.id); setExpandedPhase(0); setSubTab('phases'); }}
+      />
+    )}
     {activeCard && (
       <PillarDetailModal card={activeCard} onClose={() => setActiveCard(null)} />
     )}

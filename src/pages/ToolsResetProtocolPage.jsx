@@ -126,6 +126,89 @@ const RESET_SCENARIOS = [
   },
 ];
 
+const QUICK_ACTIONS = [
+  {
+    action: 'Uống 1 ly nước', why: 'Hydration là nền tảng phục hồi nhanh nhất',
+    icon: '💧', color: '#3b82f6', rgb: '59,130,246',
+    img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Mất chỉ 1–2% nước cơ thể đã giảm hiệu suất nhận thức 10–15% và tâm trạng rõ rệt. Uống 300–500ml nước là hành động reset đơn giản nhất, nhanh nhất, và có bằng chứng khoa học rõ ràng nhất để phục hồi trạng thái bình thường.',
+    details: [
+      'Mất nước nhẹ (1–2%) xảy ra trước khi bạn cảm thấy khát — khát nước là tín hiệu muộn. Sau 1 ngày ăn mặn, uống ít, hoặc stress cao, cơ thể dễ ở trạng thái thiếu nước nhẹ mà không biết.',
+      'Nước ảnh hưởng đến não trực tiếp: não chứa 75% là nước. Mất nước 1–2% giảm khả năng tập trung và làm tăng cảm giác mệt mỏi. University of Connecticut: thiếu nước nhẹ gây mood thấp hơn và cảm giác mọi thứ khó khăn hơn.',
+      'Cơ chế flush: uống nước kích thích thận lọc và bài tiết natri dư, các chất chuyển hóa từ stress, và cortisol breakdown products. Không phải "detox" thần kỳ — chỉ là hỗ trợ chức năng sinh lý bình thường của thận.',
+      'Tại sao 300–500ml thay vì "uống nhiều vào": uống quá nhanh quá nhiều (>1L trong 30 phút) có thể gây cảm giác buồn nôn và loãng natri máu nhẹ. 300–500ml trong 5–10 phút là lượng tối ưu để reset hydration nhanh và an toàn.',
+      'Nước ấm vs nước lạnh: nước ấm (~40°C) kích thích peristalsis và hệ tiêu hóa tốt hơn. Nước lạnh hấp thu nhanh hơn vào máu (~20%). Cả hai đều tốt — chọn theo cảm giác cơ thể lúc đó, không cần nguyên tắc cứng nhắc.',
+      'Kết hợp sau khi uống: hít thở sâu 3–5 lần. Hydration + deep breathing kết hợp tạo parasympathetic activation mạnh hơn từng thứ riêng lẻ — phục hồi từ stress nhanh hơn đáng kể so với chỉ làm 1 trong 2.',
+    ],
+    points: [
+      { icon: '🧠', label: 'Não 75% Là Nước', note: 'Thiếu 1–2% → mood thấp, khó tập trung ngay tức thì' },
+      { icon: '🚿', label: 'Flush Cortisol Dư', note: 'Thận lọc breakdown products của stress hormone' },
+      { icon: '🌡️', label: '300–500ml Là Đủ', note: 'Không cần uống nhiều — đây là lượng tối ưu để reset' },
+      { icon: '💨', label: 'Kết Hợp Thở Sâu', note: 'Hydration + breathing = parasympathetic activation mạnh hơn' },
+    ],
+  },
+  {
+    action: 'Đi bộ 5 phút', why: 'Kích hoạt cơ thể, cải thiện tâm trạng tức thì',
+    icon: '🚶', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    keyFact: '5 phút đi bộ đủ để tăng BDNF (brain-derived neurotrophic factor), giảm cortisol đo được, và cải thiện mood đáng kể. Đây không phải bài tập — đây là công cụ neurochemistry tức thì không cần bất kỳ thiết bị hay chuẩn bị nào.',
+    details: [
+      'BDNF — "phân bón não": chỉ cần 5 phút vận động nhẹ đã kích hoạt tiết BDNF, protein tăng cường neuroplasticity và cải thiện mood. Đây là cơ chế tại sao "đi bộ giải tỏa đầu óc" không chỉ là cảm giác chủ quan — có nền tảng sinh hóa thực sự.',
+      'Cortisol giảm trong 5 phút: vận động nhẹ (RPE 2–3) kích hoạt parasympathetic nervous system, trực tiếp giảm cortisol. Khác với tập nặng (tăng cortisol tạm thời) — đi bộ nhẹ đưa cortisol về baseline nhanh hơn ngồi yên.',
+      'Vòng lặp dopamine: di chuyển về phía trước (locomotion) kích hoạt dopamine pathway trong não. Đây là lý do tại sao walking — đặc biệt outdoors — có tác dụng chống trầm cảm nhẹ được nghiên cứu chứng minh qua nhiều RCT.',
+      'Ngoài trời > trong nhà: ánh sáng tự nhiên kích hoạt serotonin production và reset đồng hồ sinh học. 5 phút ngoài trời tốt hơn 15 phút trên máy chạy bộ trong phòng tối về tác động mood ngay lập tức.',
+      'Không cần đích đến: đi vòng quanh tòa nhà, dọc hành lang, hoặc ra ban công. Mục tiêu không phải quãng đường — là thay đổi trạng thái cơ thể và môi trường visual. Thay đổi context vật lý giúp não "thoát" khỏi vòng lặp suy nghĩ.',
+      'Sau khi đi bộ về: không ngồi ngay vào màn hình. 30–60 giây dừng lại, nhìn xa, thở sâu trước khi tiếp tục. Transition này củng cố tác dụng của việc đi bộ và ngăn cortisol rebound ngay lập tức.',
+    ],
+    points: [
+      { icon: '🧬', label: 'BDNF Tức Thì', note: '5 phút đủ kích hoạt "phân bón não" — neuroplasticity' },
+      { icon: '📉', label: 'Cortisol Giảm Thật Sự', note: 'Parasympathetic activation — không phải chỉ cảm giác' },
+      { icon: '☀️', label: 'Ngoài Trời Tốt Hơn', note: 'Ánh sáng tự nhiên → serotonin + reset đồng hồ sinh học' },
+      { icon: '🔄', label: 'Đổi Trạng Thái', note: 'Mục tiêu không phải khoảng cách — là thay đổi context' },
+    ],
+  },
+  {
+    action: 'Ăn 1 bữa có rau', why: 'Bắt đầu lại từ điều đơn giản nhất',
+    icon: '🥗', color: '#84cc16', rgb: '132,204,22',
+    img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Rau xanh chứa folate — precursor của serotonin và dopamine. Một bữa có rau sau giai đoạn ăn lệch không phải "bù trừ" — đây là tín hiệu cho cả đường ruột lẫn tâm lý: "mọi thứ đang quay trở lại bình thường." Gut-brain axis phản ứng với fiber trong vòng 4–6 giờ.',
+    details: [
+      'Gut-brain axis và rau xanh: ~95% serotonin được sản xuất ở đường ruột, không phải não. Vi khuẩn đường ruột cần fiber từ rau để hoạt động và sản xuất neurotransmitter. Một bữa có rau ngay lập tức cung cấp substrate cho vi khuẩn có lợi.',
+      'Folate và tâm trạng: rau lá xanh (rau cải, rau muống, súp lơ) giàu folate — thiếu folate liên quan đến trầm cảm và lo lắng. Không cần bổ sung nhiều ngày — ngay 1 bữa có rau đã tăng folate intake đáng kể.',
+      'Tâm lý của "hành động nhỏ nhất": sau giai đoạn ăn tệ, mục tiêu không phải là bữa ăn hoàn hảo ngay lập tức — mà là 1 tín hiệu cụ thể rằng bạn đang quay lại. Rau là thứ dễ thêm nhất vào bất kỳ bữa ăn nào.',
+      'Không cần rau cao cấp: cải thìa luộc, rau muống xào, canh rau ngót — rau Việt sẵn có đều đủ dinh dưỡng. Đừng hoãn vì "chưa có kale" hay "chưa mua organics". Rau nào cũng tốt hơn không có rau.',
+      'Thêm rau vào bữa hiện có: không cần nấu riêng. Thêm rau thơm vào tô bún/phở, ăn thêm rau sống với bất kỳ món chính, hoặc uống 1 ly sinh tố rau quả. Lowering barrier to action là chiến lược quan trọng nhất.',
+      'Reset signal cho não: ăn rau sau giai đoạn ăn lệch gửi tín hiệu tâm lý — "tôi đang chăm sóc cơ thể mình." Identity reinforcement này quan trọng không kém dinh dưỡng từ rau — nó reset mental state về lối sống lành mạnh.',
+    ],
+    points: [
+      { icon: '🦠', label: '95% Serotonin Ở Ruột', note: 'Fiber nuôi vi khuẩn tốt → sản xuất neurotransmitter' },
+      { icon: '🌿', label: 'Folate Tăng Ngay', note: 'Rau lá xanh → precursor serotonin và dopamine' },
+      { icon: '🎯', label: 'Tín Hiệu Nhỏ Nhất', note: 'Không cần bữa hoàn hảo — 1 phần rau là đủ để restart' },
+      { icon: '🥬', label: 'Rau Nào Cũng Được', note: 'Cải thìa, rau muống, rau ngót — không cần rau cao cấp' },
+    ],
+  },
+  {
+    action: 'Ngủ đúng giờ tối nay', why: 'Giấc ngủ là công cụ phục hồi mạnh nhất',
+    icon: '🌙', color: '#a855f7', rgb: '168,85,247',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    keyFact: 'Một đêm ngủ đúng giờ và đủ giấc reset cortisol về baseline, tăng GH tiết trong slow-wave sleep, và cải thiện insulin sensitivity cho ngày hôm sau. Không có supplement hay bài tập nào thay thế được 1 đêm ngủ tốt về khả năng phục hồi toàn diện.',
+    details: [
+      'Tại sao "đúng giờ" quan trọng không kém "đủ giờ": circadian rhythm tiết melatonin theo giờ cố định — ngủ lúc 23h khác với ngủ lúc 2h dù cùng 8 tiếng. Ngủ sớm hơn → nhiều slow-wave sleep (giai đoạn GH tiết mạnh nhất) hơn.',
+      'GH và slow-wave sleep: 75–80% GH được tiết trong 90 phút đầu tiên của giai đoạn 3 NREM (ngủ sâu). Ngủ đúng giờ → đi vào slow-wave sleep sớm hơn trong đêm → GH peak cao hơn → phục hồi cơ và tế bào tốt hơn.',
+      'Cortisol reset qua đêm: cortisol theo nhịp sinh học — tự nhiên thấp nhất lúc nửa đêm đến 3h sáng và bắt đầu tăng từ 6–8h sáng. 1 đêm ngủ tốt cho phép cycle này hoàn thành đúng nghĩa — cortisol về baseline.',
+      'Insulin sensitivity ngày hôm sau: chỉ 1 đêm thiếu ngủ giảm insulin sensitivity 25%. Ngủ đủ giấc đúng giờ = bữa sáng hôm sau cơ thể xử lý glucose tốt hơn → ít tích mỡ hơn, năng lượng ổn định hơn suốt buổi sáng.',
+      'Chuẩn bị ngủ đúng giờ trong 30 phút: tắt màn hình, giảm ánh sáng (dim → melatonin bắt đầu tăng), viết ra 3 việc quan trọng cần làm ngày mai (clearing mental RAM), nhiệt độ phòng 18–20°C. Không cần ritual phức tạp.',
+      'Nếu không ngủ được ngay: đừng stress về việc không ngủ — sleep anxiety là nguyên nhân phổ biến nhất của insomnia. Nằm im, thở chậm, và để cơ thể nghỉ ngơi cũng có giá trị ngay cả khi chưa ngủ được.',
+    ],
+    points: [
+      { icon: '⏰', label: '"Đúng Giờ" Quan Trọng', note: 'Ngủ sớm → nhiều slow-wave sleep → GH peak cao hơn' },
+      { icon: '📉', label: 'Cortisol Về Baseline', note: 'Cycle sinh học hoàn thành đúng nghĩa trong 1 đêm tốt' },
+      { icon: '⚡', label: 'Insulin Sensitivity +25%', note: 'Ngủ đủ → cơ thể xử lý glucose tốt hơn ngày hôm sau' },
+      { icon: '📝', label: 'Clear Mental RAM', note: 'Viết 3 việc ngày mai trước ngủ — giảm lo lắng đêm khuya' },
+    ],
+  },
+];
+
 const GENERAL_RULES = [
   'Một ngày tệ không phải thất bại — đó là dữ liệu để học hỏi',
   'Lỡ nhịp là chuyện bình thường với 100% người luyện tập lâu dài',
@@ -133,6 +216,78 @@ const GENERAL_RULES = [
   'Không bao giờ bù tập bằng cách tập gấp đôi — dễ chấn thương',
   'Nếu lỡ nhịp nhiều hơn 1 lần/tuần — lịch đang quá tham vọng, cần điều chỉnh',
 ];
+
+function QuickModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const item = QUICK_ACTIONS[idx];
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && hasNext) onNext();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${item.rgb},0.28)`, boxShadow: `0 0 80px rgba(${item.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={item.img} alt={item.action} className="w-full h-full object-cover" style={{ opacity: 0.38 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${item.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }} />
+          <div className="absolute bottom-5 left-6 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+            style={{ background: `rgba(${item.rgb},0.18)`, border: `2px solid rgba(${item.rgb},0.45)` }}>{item.icon}</div>
+          <button onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `rgba(${item.rgb},0.6)` }}>Reset Ngay Lập Tức — {idx + 1}/{QUICK_ACTIONS.length}</p>
+          <h2 className="font-bold text-2xl md:text-3xl mb-5" style={{ color: item.color }}>{item.action}</h2>
+          <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {item.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'rgba(209,213,219,0.85)' }}>
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            {item.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
+                style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
+                <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm leading-snug" style={{ color: '#e5e7eb' }}>{pt.label}</p>
+                  <p className="text-xs mt-0.5" style={{ color: 'rgba(156,163,175,0.9)' }}>{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <button onClick={() => hasPrev && onPrev()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {QUICK_ACTIONS.length}</span>
+            <button onClick={() => hasNext && onNext()} className="text-xs font-bold px-4 py-2 rounded-xl"
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function RevealBlock({ children, delay = 0, className = '' }) {
   const [v, setV] = useState(false);
@@ -227,6 +382,7 @@ function ResetModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 export default function ToolsResetProtocolPage() {
   const [open, setOpen] = useState(null);
   const [resetModal, setResetModal] = useState(null);
+  const [quickModal, setQuickModal] = useState(null);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -343,16 +499,20 @@ export default function ToolsResetProtocolPage() {
 
       {/* Quick reset */}
       <RevealBlock delay={2} className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>⚡ Reset Ngay Lập Tức (1 Hành Động)</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>⚡ Reset Ngay Lập Tức (1 Hành Động)</h2>
+        <p className="text-muted text-lg mb-4">Click vào từng hành động để xem khoa học đằng sau.</p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {[
-            { action: 'Uống 1 ly nước', why: 'Hydration là nền tảng phục hồi nhanh nhất' },
-            { action: 'Đi bộ 5 phút', why: 'Kích hoạt cơ thể, cải thiện tâm trạng tức thì' },
-            { action: 'Ăn 1 bữa có rau', why: 'Bắt đầu lại từ điều đơn giản nhất' },
-            { action: 'Ngủ đúng giờ tối nay', why: 'Giấc ngủ là công cụ phục hồi mạnh nhất' },
-          ].map((item, i) => (
-            <div key={i} className="rounded-xl border border-border bg-surface p-4">
-              <div className="font-bold text-text text-lg mb-1" style={{ color: COLOR }}>{item.action}</div>
+          {QUICK_ACTIONS.map((item, i) => (
+            <div key={i}
+              onClick={() => setQuickModal(i)}
+              className="rounded-xl border bg-surface p-4 cursor-pointer group transition-all hover:bg-white/5"
+              style={{ borderColor: quickModal === i ? `rgba(${item.rgb},0.45)` : 'var(--border)', transition: 'border-color 0.2s' }}>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xl">{item.icon}</span>
+                <div className="font-bold text-text text-lg" style={{ color: item.color }}>{item.action}</div>
+                <span className="ml-auto text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                  style={{ color: item.color }}>Chi tiết →</span>
+              </div>
               <div className="text-base text-muted">{item.why}</div>
             </div>
           ))}
@@ -362,6 +522,16 @@ export default function ToolsResetProtocolPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
 
+      {quickModal !== null && (
+        <QuickModal
+          idx={quickModal}
+          onClose={() => setQuickModal(null)}
+          onPrev={() => setQuickModal(i => Math.max(0, i - 1))}
+          onNext={() => setQuickModal(i => Math.min(QUICK_ACTIONS.length - 1, i + 1))}
+          hasPrev={quickModal > 0}
+          hasNext={quickModal < QUICK_ACTIONS.length - 1}
+        />
+      )}
       {resetModal !== null && (
         <ResetModal
           idx={resetModal}

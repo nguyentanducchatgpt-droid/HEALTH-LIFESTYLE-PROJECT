@@ -131,13 +131,219 @@ const C0_ITEMS = [
 ];
 
 const C0_SCORE = [
-  { label: 'Ngủ ≥ 7 giờ hoặc cải thiện', pts: 20 },
-  { label: 'Giờ ngủ tương đối ổn định', pts: 15 },
-  { label: 'Có ánh sáng/vận động sáng', pts: 15 },
-  { label: 'Số bước / NEAT đạt mục tiêu', pts: 15 },
-  { label: 'Không ngồi quá lâu liên tục', pts: 10 },
-  { label: 'Có phục hồi/mobility/thở', pts: 15 },
-  { label: 'Giảm màn hình/caffeine tối', pts: 10 },
+  {
+    label: 'Ngủ ≥ 7 giờ hoặc cải thiện', pts: 20,
+    icon: '😴', color: '#14b8a6', rgb: '20,184,166',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    detail: 'Tiêu chí quan trọng nhất trong Lifestyle Score — ngủ đủ giờ là nền tảng cho mọi cải thiện sức khỏe khác.',
+    keyFact: 'Chỉ 1 đêm ngủ dưới 6 tiếng làm giảm 40% khả năng ghi nhớ và tăng cortisol 37% hôm sau — ảnh hưởng lan đến cả dinh dưỡng, vận động và tâm lý.',
+    details: [
+      'Mục tiêu tối thiểu là 7 giờ — không phải 8 giờ. Nhiều nghiên cứu cho thấy 7–9 giờ là khoảng tối ưu cho người trưởng thành, và 7 giờ là ngưỡng đủ để hầu hết chức năng nhận thức hoạt động bình thường.',
+      '"Hoặc cải thiện" nghĩa là nếu trước đây bạn ngủ 5 tiếng và nay tăng lên 6 tiếng, bạn vẫn được điểm — tiến bộ quan trọng hơn hoàn hảo ngay lập tức.',
+      'Chất lượng > số lượng: 7 giờ ngủ sâu liên tục tốt hơn 9 giờ ngủ gián đoạn. Hai chỉ số thực tế cần quan sát: (1) tỉnh dậy tự nhiên không cần báo thức, (2) không buồn ngủ trước 2pm.',
+      'Thiếu ngủ mạn tính (dưới 6 giờ liên tục nhiều tuần) liên kết với tăng nguy cơ tiểu đường type 2, béo phì, bệnh tim mạch và rối loạn tâm lý — ngay cả khi cảm giác "quen rồi".',
+      'Ngủ bù cuối tuần không xóa được nợ ngủ tích lũy trong tuần — chỉ giúp một phần chức năng nhận thức phục hồi nhưng không phục hồi được tổn thương trao đổi chất và miễn dịch.',
+      'Chiến lược đơn giản nhất: cố định giờ thức dậy trước, rồi điều chỉnh giờ đi ngủ dần dần — não sẽ tự điều chỉnh chu kỳ ngủ xung quanh giờ thức cố định.',
+    ],
+    points: [
+      { icon: '🎯', label: 'Mục tiêu', note: '7–9 giờ/đêm cho người trưởng thành' },
+      { icon: '📈', label: 'Tiến bộ', note: 'Tăng dần từng 30 phút mỗi tuần' },
+      { icon: '⏰', label: 'Cố định giờ thức', note: 'Quan trọng hơn giờ đi ngủ' },
+      { icon: '🔋', label: 'Tỉnh táo 2pm', note: 'Dấu hiệu bạn ngủ đủ giấc' },
+    ],
+  },
+  {
+    label: 'Giờ ngủ tương đối ổn định', pts: 15,
+    icon: '🕙', color: '#0d9488', rgb: '13,148,136',
+    img: 'https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80&auto=format&fit=crop',
+    detail: 'Nhất quán về thời điểm ngủ quan trọng hơn số giờ ngủ — đồng hồ sinh học cần được neo vào một lịch trình đều đặn.',
+    keyFact: 'Thay đổi giờ ngủ hơn 90 phút giữa ngày thường và cuối tuần (social jet lag) có cùng tác động tiêu cực lên trao đổi chất như bay qua 1–2 múi giờ mỗi tuần.',
+    details: [
+      '"Tương đối ổn định" có nghĩa lệch không quá 60 phút giữa các ngày — không cần chính xác từng phút nhưng cần có khung cố định để não dự đoán được và chuẩn bị cho giấc ngủ.',
+      'Đồng hồ sinh học (circadian rhythm) điều phối hơn 20.000 gen và hàng trăm hormone theo chu kỳ 24 giờ — khi lịch ngủ không đều, tất cả các chu kỳ này bị lệch pha và hoạt động kém hiệu quả.',
+      'Cuối tuần ngủ muộn hơn 2 tiếng so với ngày thường tạo ra "social jet lag" — làm giảm độ nhạy insulin, tăng cảm giác thèm ăn đồ ngọt và béo vào Thứ Hai.',
+      'Chiến lược: đặt báo thức "đi ngủ" (không chỉ báo thức dậy) 30 phút trước giờ ngủ mục tiêu — gợi ý não bắt đầu quá trình wind-down mỗi ngày ở cùng một thời điểm.',
+      'Ánh sáng buổi sáng là "neo" mạnh nhất để cố định nhịp circadian — 10–15 phút ánh sáng tự nhiên sau khi thức dậy đặt lại đồng hồ sinh học hiệu quả hơn bất kỳ supplement nào.',
+      'Nếu bạn phải ngủ muộn hơn 1 tiếng trong 1 ngày: giữ nguyên giờ thức dậy (không ngủ bù), chấp nhận buổi sáng hơi mệt, và tối hôm đó cơ thể sẽ tự điều chỉnh về đúng lịch.',
+    ],
+    points: [
+      { icon: '🔄', label: 'Lệch ≤ 60 phút', note: 'Ngưỡng an toàn giữa các ngày' },
+      { icon: '📅', label: 'Cuối tuần', note: 'Không ngủ muộn hơn 90 phút' },
+      { icon: '☀️', label: 'Ánh sáng sáng', note: 'Neo nhịp sinh học mạnh nhất' },
+      { icon: '⏰', label: 'Báo thức đi ngủ', note: 'Nhắc wind-down đúng giờ' },
+    ],
+  },
+  {
+    label: 'Có ánh sáng/vận động sáng', pts: 15,
+    icon: '🌅', color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    detail: 'Hai tín hiệu mạnh nhất để đặt lại đồng hồ sinh học mỗi sáng — kết hợp cho hiệu quả cộng hưởng.',
+    keyFact: 'Tiếp xúc ánh sáng mặt trời trong 30–60 phút đầu sau khi thức dậy ức chế hoàn toàn melatonin ban ngày và tăng cortisol theo nhịp tự nhiên — thiết lập nền tảng cho năng lượng ổn định cả ngày.',
+    details: [
+      'Ánh sáng tự nhiên buổi sáng kích hoạt tế bào ipRGC trong mắt — gửi tín hiệu trực tiếp đến suprachiasmatic nucleus (SCN), đồng hồ trung tâm của não để bắt đầu đếm ngược 14–16 giờ đến giờ ngủ.',
+      'Cường độ cần thiết: 1.000–10.000 lux (ánh sáng ngoài trời), so với chỉ 100–500 lux trong nhà với đèn LED thông thường — đây là lý do tại sao ngồi cạnh cửa sổ không đủ thay thế 10 phút ra ngoài.',
+      'Vận động sáng (5–15 phút đi bộ, stretching, hoặc light cardio) tăng nhiệt độ lõi cơ thể và dopamine — hai tín hiệu tỉnh thức mạnh hơn caffeine mà không gây rebound mệt mỏi buổi chiều.',
+      'Không có mặt trời (ngày mưa/mùa đông): đèn therapy light 10.000 lux 10–20 phút, hoặc ánh sáng trời mây (vẫn khoảng 1.000–5.000 lux ngoài trời, cao hơn trong nhà nhiều lần).',
+      'Kết hợp lý tưởng: đi bộ 10 phút ngoài trời ngay sau khi thức dậy — vừa ánh sáng, vừa vận động, vừa kích hoạt nhiệt độ cơ thể. Ba tín hiệu circadian cùng một lúc.',
+      'Tránh kính râm trong 10–15 phút đầu ra ngoài — kính lọc ánh sáng UV cần thiết để kích hoạt phản xạ đồng hồ sinh học qua mắt.',
+    ],
+    points: [
+      { icon: '☀️', label: '10 phút ra ngoài', note: 'Tốt hơn 1 giờ cạnh cửa sổ' },
+      { icon: '🏃', label: 'Vận động nhẹ', note: 'Đi bộ hoặc stretching 5–15 phút' },
+      { icon: '👓', label: 'Không kính râm', note: '10 phút đầu để nhận ánh sáng' },
+      { icon: '💡', label: 'Mưa/mây', note: 'Vẫn ra ngoài hoặc đèn 10.000 lux' },
+    ],
+  },
+  {
+    label: 'Số bước / NEAT đạt mục tiêu', pts: 15,
+    icon: '🚶', color: '#22c55e', rgb: '34,197,94',
+    img: 'https://images.unsplash.com/photo-1571019613576-2b22c76fd955?w=800&q=80&auto=format&fit=crop',
+    detail: 'NEAT (Non-Exercise Activity Thermogenesis) — năng lượng đốt từ mọi vận động ngoài tập luyện — có thể chiếm 15–50% tổng năng lượng tiêu thụ mỗi ngày.',
+    keyFact: 'Người có công việc hoạt động đốt hơn người ngồi bàn giấy 2.000 kcal/ngày chỉ qua NEAT — tương đương chạy marathon mỗi ngày mà không cần tập gym.',
+    details: [
+      '7.000–10.000 bước/ngày là mục tiêu hợp lý cho hầu hết người lớn không vận động chuyên nghiệp. Dưới 5.000 bước/ngày được phân loại là "sedentary" và liên kết với nguy cơ bệnh chuyển hóa cao.',
+      'NEAT không chỉ là số bước: đứng lên 2 phút mỗi giờ, cầu thang thay thang máy, đứng khi nói chuyện điện thoại, đi bộ ngắn sau bữa ăn — tất cả cộng dồn thành năng lượng đốt đáng kể.',
+      '"Đạt mục tiêu" không cần 10.000 bước mỗi ngày — mục tiêu cá nhân hóa: nếu baseline của bạn là 3.000 bước, mục tiêu 5.000 là phù hợp và tăng dần 500–1.000 bước mỗi tuần.',
+      'Đi bộ sau bữa ăn 10–15 phút đặc biệt hiệu quả: giảm đỉnh glucose sau ăn 30–50%, tăng insulin sensitivity và giảm cảm giác nặng bụng — đây là NEAT hiệu quả nhất theo giờ thực hiện.',
+      'Tracker bước chân (điện thoại, đồng hồ thông minh) tăng số bước trung bình 26% theo meta-analysis — đơn giản là việc đo lường tạo ra động lực thay đổi hành vi.',
+      'Nếu một ngày đặc biệt ít bước (dưới 3.000): 5 phút squat, lunges, calf raise hoặc marching tại chỗ trước khi ngủ để kích hoạt cơ và trao đổi chất — không thay thế được nhưng giảm thiểu tác động tiêu cực.',
+    ],
+    points: [
+      { icon: '👟', label: '7.000–10.000 bước', note: 'Mục tiêu hợp lý phần lớn người' },
+      { icon: '🍽️', label: 'Đi bộ sau ăn', note: 'NEAT hiệu quả nhất theo giờ' },
+      { icon: '📱', label: 'Dùng tracker', note: 'Tăng bước đi 26% tự nhiên' },
+      { icon: '🪜', label: 'Cầu thang > thang máy', note: 'NEAT cộng dồn mỗi ngày' },
+    ],
+  },
+  {
+    label: 'Không ngồi quá lâu liên tục', pts: 10,
+    icon: '🪑', color: '#f97316', rgb: '249,115,22',
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
+    detail: 'Ngồi liên tục hơn 60–90 phút là hành vi có hại riêng biệt — không thể được "bù đắp" bằng tập gym 1 tiếng sau đó.',
+    keyFact: '"Sitting is the new smoking" — ngồi liên tục >90 phút làm tăng nguy cơ bệnh chuyển hóa, ngay cả ở người tập gym thường xuyên. Đứng dậy 2–3 phút mỗi 60 phút đủ để đảo ngược phần lớn tác hại này.',
+    details: [
+      'Ngồi lâu gây ức chế lipoprotein lipase (LPL) — enzyme đốt mỡ trong cơ bắp. Sau 60 phút ngồi bất động, LPL giảm 90% hoạt động, và huyết đường + triglyceride bắt đầu tăng dần.',
+      'Quy tắc 60 phút: đứng dậy, di chuyển tối thiểu 2–3 phút sau mỗi 60 phút ngồi. Không cần bài tập — chỉ cần đứng, đi lấy nước, vươn vai, hoặc đi vệ sinh là đủ để kích hoạt lại LPL.',
+      'Nguy cơ độc lập: nghiên cứu trên 800.000 người cho thấy ngồi nhiều nhất (>8h/ngày) có nguy cơ tử vong cao hơn 73% so với nhóm ít ngồi nhất — ngay cả sau khi điều chỉnh yếu tố tập luyện.',
+      'Công cụ đơn giản: đặt timer 50 phút (Pomodoro kết hợp đứng dậy), dùng standing desk xen kẽ ngồi, hoặc đặt cốc nước nhỏ để buộc phải đứng dậy lấy nước nhiều hơn.',
+      'Sau bữa ăn đặc biệt quan trọng: ngồi ngay sau ăn kéo dài đỉnh glucose sau ăn và tăng tích trữ mỡ. 10 phút đứng hoặc đi nhẹ sau ăn cải thiện đáng kể phản ứng insulin.',
+      'Standing desk không đủ nếu đứng bất động: cần xen kẽ ngồi-đứng (không đứng >2h liên tục) và thêm vận động nhỏ khi đứng — lắc chân, chuyển trọng tâm, squat nhỏ.',
+    ],
+    points: [
+      { icon: '⏱️', label: 'Quy tắc 60 phút', note: 'Đứng dậy 2–3 phút mỗi giờ' },
+      { icon: '💧', label: 'Cốc nước nhỏ', note: 'Buộc đứng dậy tự nhiên nhiều hơn' },
+      { icon: '🍽️', label: 'Đứng sau ăn', note: '10 phút giảm đỉnh glucose' },
+      { icon: '📊', label: 'Độc lập với gym', note: 'Tập gym không bù được ngồi nhiều' },
+    ],
+  },
+  {
+    label: 'Có phục hồi/mobility/thở', pts: 15,
+    icon: '🧘', color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    detail: 'Phục hồi chủ động, mobility và thở có chủ đích — ba trụ cột để hệ thần kinh tự trị chuyển sang chế độ parasympathetic và cơ thể thực sự hồi phục.',
+    keyFact: 'HRV (Heart Rate Variability) — chỉ số phục hồi thần kinh — tăng 18% sau 10 phút thở có chủ đích so với nghỉ ngơi thụ động cùng thời gian. Phục hồi chủ động hiệu quả gấp đôi phục hồi thụ động.',
+    details: [
+      'Phục hồi chủ động: 10 phút foam rolling, nhẹ nhàng di chuyển các khớp, hoặc yoga nhẹ — kích thích lưu thông máu đến cơ bắp mà không tạo thêm stress sinh lý, đẩy nhanh loại bỏ lactate và chất thải trao đổi chất.',
+      'Mobility không phải stretching đơn thuần: là khả năng kiểm soát chủ động phạm vi vận động của khớp. Ít nhất 5 phút mobility động (dynamic mobility) mỗi ngày duy trì chức năng khớp tốt hơn stretching tĩnh kéo dài.',
+      'Thở có chủ đích: thở 4-7-8 (hít 4 giây, giữ 7 giây, thở ra 8 giây) kích hoạt phó giao cảm trong 3–5 phút, giảm cortisol và nhịp tim. Box breathing (4-4-4-4) đặc biệt hiệu quả sau stress cao điểm.',
+      'Thời điểm tối ưu: ngay trước khi ngủ (5–10 phút) giúp chuyển tiếp từ trạng thái tỉnh táo sang buồn ngủ hiệu quả hơn nhiều so với nằm nhìn điện thoại; sau khi thức dậy để thiết lập tone thần kinh cho cả ngày.',
+      'Tối thiểu đủ điểm: 10 phút/ngày bất kỳ kết hợp nào của ba yếu tố trên. Không cần hoàn hảo — 5 phút stretching + 5 phút thở đã đủ để kích hoạt phản ứng parasympathetic có thể đo được.',
+      'Tín hiệu thiếu phục hồi: cơ bắp căng cứng mạn tính, nhịp tim nghỉ cao hơn bình thường, khó đi vào giấc ngủ, cáu kỉnh không rõ lý do — đây là dấu hiệu hệ thần kinh giao cảm đang chiếm ưu thế.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Thở 4-7-8', note: 'Kích hoạt phó giao cảm trong 5 phút' },
+      { icon: '🔄', label: 'Dynamic mobility', note: 'Tốt hơn static stretching' },
+      { icon: '🌙', label: 'Trước khi ngủ', note: '10 phút giúp chuyển tiếp hiệu quả' },
+      { icon: '📈', label: 'HRV +18%', note: 'So với nghỉ ngơi thụ động' },
+    ],
+  },
+  {
+    label: 'Giảm màn hình/caffeine tối', pts: 10,
+    icon: '🌙', color: '#818cf8', rgb: '129,140,248',
+    img: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&q=80&auto=format&fit=crop',
+    detail: 'Hai tác nhân phổ biến nhất phá vỡ chất lượng giấc ngủ — ánh sáng xanh từ màn hình và caffeine tồn tại trong cơ thể lâu hơn bạn nghĩ.',
+    keyFact: 'Caffeine có half-life 5–7 giờ trong cơ thể — một ly cà phê lúc 3pm vẫn còn 50% trong máu lúc 8–10pm. Ánh sáng màn hình lúc 9pm ức chế melatonin đến 50% trong 1–2 giờ tiếp theo.',
+    details: [
+      'Caffeine half-life 5–7 giờ: nếu uống 200mg caffeine (2 espresso) lúc 2pm, lúc 9pm vẫn còn ~100mg "hoạt động". Ngưỡng ảnh hưởng giấc ngủ bắt đầu từ 80mg caffeine — nhiều người "thấy mình không nhạy caffeine" nhưng thực ra chất lượng giấc ngủ đang kém đi.',
+      'Màn hình buổi tối: ánh sáng xanh (wavelength 480nm) ức chế melatonin hiệu quả nhất — chiều tối, màn hình điện thoại, laptop phát chủ yếu ánh sáng xanh và "lừa" não nghĩ vẫn còn ban ngày.',
+      'Giải pháp thực tế màn hình: bật Night Mode/f.lux từ 6–7pm (giảm ánh sáng xanh), giảm độ sáng màn hình về 30–40% sau 8pm, hoặc đeo kính chặn ánh sáng xanh (amber-tinted) từ sau 9pm.',
+      'Giải pháp caffeine: cut-off cứng lúc 1–2pm nếu bạn định ngủ lúc 10–11pm. Nếu cần caffeine buổi chiều, chọn trà xanh (ít caffeine hơn, có L-theanine chống anxiety) thay vì cà phê.',
+      'Deceptive caffeine sources: trà xanh 30–50mg, trà đen 40–70mg, chocolate đen 25mg/30g, nước tăng lực 80–150mg — những nguồn này thường bị bỏ qua khi đếm lượng caffeine trong ngày.',
+      'Không nhất thiết phải "zero screen" từ 8pm: đọc sách với đèn vàng, xem video với Night Mode, hoặc họp Zoom cuối ngày với độ sáng thấp vẫn tốt hơn nhiều so với lướt mạng với màn hình sáng rực.',
+    ],
+    points: [
+      { icon: '☕', label: 'Cut-off 1–2pm', note: 'Half-life 5–7h vẫn ảnh hưởng tối' },
+      { icon: '📱', label: 'Night Mode 6–7pm', note: 'Bật sớm hơn bạn nghĩ cần' },
+      { icon: '🌕', label: 'Kính amber', note: 'Block ánh sáng xanh từ 9pm' },
+      { icon: '🍫', label: 'Caffeine ẩn', note: 'Trà, chocolate đen, nước tăng lực' },
+    ],
+  },
+];
+
+const C0_TRACKS = [
+  {
+    label: 'Track Cơ Bản', icon: '🌱', color: '#14b8a6', rgb: '20,184,166',
+    desc: 'Ngủ muộn, mệt mỏi, ít vận động',
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80&auto=format&fit=crop',
+    detail: 'Track dành cho người đang bắt đầu từ đầu — chưa có thói quen sức khỏe ổn định, năng lượng thấp hoặc thiếu ngủ mạn tính.',
+    keyFact: 'Nghiên cứu cho thấy thay đổi 1 thói quen nền tảng (ngủ đúng giờ) có thể tự động cải thiện 3–4 thói quen khác mà không cần cố gắng — hiệu ứng domino của keystone habit.',
+    details: [
+      'Dành cho ai: ngủ muộn hơn 12am thường xuyên, thức dậy mệt mỏi, ít vận động (dưới 5.000 bước/ngày), năng lượng dao động lớn trong ngày, hoặc mới bắt đầu quan tâm đến sức khỏe.',
+      'Ưu tiên số 1: cố định giờ thức dậy — đây là can thiệp đơn giản nhất có tác động lớn nhất. Không cần tập gym, không cần ăn kiêng — chỉ cần thức dậy cùng một giờ 7 ngày/tuần trong 2 tuần.',
+      'Tuần 1–2: chỉ làm 1 việc — ra ngoài 10 phút mỗi sáng sau khi thức dậy. Kết hợp ánh sáng + vận động nhẹ + nhiệt độ không khí ngoài trời đủ để bắt đầu đặt lại circadian rhythm.',
+      'Tuần 3–4: thêm quy tắc "không màn hình 30 phút trước ngủ". Đọc sách giấy, thiền nhẹ hoặc nghe audio êm — bất kỳ hoạt động nào không phát ánh sáng xanh vào mắt.',
+      'Tuần 5–8: dần dần tăng bước chân (từ baseline +1.000 bước/tuần), thêm 10 phút stretching trước ngủ. Không thêm quá 1 thói quen mới mỗi 2 tuần để tránh overwhelm.',
+      'Dấu hiệu sẵn sàng nâng lên Track Bận Rộn: ngủ 7+ giờ ≥5 ngày/tuần, thức dậy không cần báo thức đôi khi, năng lượng buổi sáng cải thiện rõ rệt so với trước.',
+    ],
+    points: [
+      { icon: '⏰', label: 'Cố định giờ thức', note: 'Thay đổi 1 việc duy nhất đầu tiên' },
+      { icon: '☀️', label: 'Ra ngoài 10 phút', note: 'Ánh sáng sáng — bước đầu tiên' },
+      { icon: '📵', label: 'Không màn hình 30p', note: 'Trước khi ngủ — tuần 3–4' },
+      { icon: '🌱', label: '1 thói quen/2 tuần', note: 'Không thêm quá nhiều cùng lúc' },
+    ],
+  },
+  {
+    label: 'Track Bận Rộn', icon: '⚡', color: '#f59e0b', rgb: '245,158,11',
+    desc: 'Thiếu thời gian, làm việc nhiều, ngồi lâu',
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop',
+    detail: 'Track dành cho người có lịch làm việc dày đặc — ưu tiên hiệu quả tối đa, can thiệp ngắn nhưng có tác động cao, tích hợp vào thói quen hiện có thay vì tạo thêm gánh nặng.',
+    keyFact: 'Micro-habits (thói quen 2–5 phút) tích hợp vào lịch trình hiện có có tỷ lệ duy trì cao hơn 80% so với thói quen mới tốn thêm thời gian riêng — theo nghiên cứu về habit formation.',
+    details: [
+      'Dành cho ai: làm việc 8–12 giờ/ngày, ngồi bàn giấy phần lớn thời gian, khó sắp xếp lịch tập gym, thường bỏ bữa ăn hoặc ăn vội, năng lượng tốt nhưng phục hồi kém.',
+      'Chiến lược cốt lõi: "habit stacking" — gắn thói quen sức khỏe vào việc đang làm. Cuộc họp đứng, đi bộ khi gọi điện, squat khi chờ cà phê pha — không cần thêm thời gian, chỉ thay đổi cách làm.',
+      'Quy tắc 60 phút thiết yếu: timer nhắc đứng dậy 2–3 phút mỗi giờ — đây là ưu tiên số 1 cho người ngồi văn phòng. Dễ thực hiện nhất và tác động trao đổi chất lớn nhất theo giờ đầu tư.',
+      'Tối ưu hóa bữa ăn: prep bữa trưa tối hôm trước (5 phút), có sẵn snack lành mạnh trong tầm tay, uống đủ nước bằng cách đặt chai nước lớn trên bàn thay vì cốc nhỏ.',
+      'Recovery ngắn nhưng chất lượng: 5 phút box breathing sau 1 cuộc họp căng thẳng, 10 phút đi bộ sau bữa ăn trưa, stretching cổ vai gáy trong khi đọc email.',
+      'Caffeine protocol cho người bận: không trước 90 phút sau thức dậy (cortisol tự nhiên cao nhất — caffeine vào lúc này ít hiệu quả), cut-off 1pm, không quá 400mg/ngày (2–4 ly cà phê).',
+    ],
+    points: [
+      { icon: '🔗', label: 'Habit stacking', note: 'Gắn thói quen vào việc đang làm' },
+      { icon: '⏱️', label: 'Timer 60 phút', note: 'Đứng dậy — ưu tiên số 1 văn phòng' },
+      { icon: '🧘', label: '5 phút box breathing', note: 'Sau cuộc họp căng thẳng' },
+      { icon: '☕', label: 'Caffeine 90p sau dậy', note: 'Hiệu quả hơn ngay khi thức dậy' },
+    ],
+  },
+  {
+    label: 'Track Tập Nhiều', icon: '💪', color: '#a855f7', rgb: '168,85,247',
+    desc: 'Gym/chạy/đạp/bơi nhiều, cần phục hồi tốt hơn',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&auto=format&fit=crop',
+    detail: 'Track dành cho người tập luyện cường độ cao thường xuyên — vấn đề không phải thiếu vận động mà là thiếu phục hồi, dẫn đến cao nguyên hoặc chấn thương.',
+    keyFact: 'Phục hồi không phải "không làm gì" — là quá trình chủ động. Người tập nhiều mà không đầu tư vào recovery thường đạt đỉnh sớm hơn và mất thành tích nhanh hơn người tập ít nhưng phục hồi tốt.',
+    details: [
+      'Dành cho ai: tập gym ≥4 buổi/tuần, chạy/đạp/bơi thường xuyên, tham gia giải thi đấu, đang tăng volume/intensity, hoặc cảm thấy tập mãi không thấy tiến bộ mặc dù cố gắng.',
+      'Ngủ là nơi diễn ra 80% phục hồi cơ bắp: GH (growth hormone) tiết peak lúc ngủ sâu giai đoạn N3, cortisol giảm thấp nhất lúc ngủ để tái tổng hợp cơ — thiếu ngủ giảm gain cơ 30–60%.',
+      'HRV monitoring: theo dõi Heart Rate Variability buổi sáng (trước khi dậy) 3 ngày liên tiếp thấp → dấu hiệu overtraining. Hôm đó nên tập nhẹ hoặc recovery, không cố push để đạt PR.',
+      'Protein timing cho người tập nhiều: 0.4g/kg mỗi bữa ăn (không nhất thiết phải trong 30 phút sau tập — cửa sổ anabolic kéo dài 3–4 giờ sau tập với điều kiện đã ăn trước đó). Tổng ngày: 1.6–2.2g/kg.',
+      'Deload chủ động: mỗi 4–6 tuần tập nặng, giảm 40–50% volume (trọng lượng và số set) trong 1 tuần — không bỏ tập mà tập nhẹ. Deload cải thiện performance sau đó tốt hơn tập liên tục không nghỉ.',
+      'Recovery toolkit tối thiểu cho người tập nhiều: 10 phút foam rolling sau buổi tập, 5 phút breathing protocol trước ngủ, 7–9 giờ ngủ (người tập cần nhiều hơn người không tập), và 1 ngày active recovery mỗi tuần.',
+    ],
+    points: [
+      { icon: '😴', label: 'Ngủ 7–9h', note: '80% phục hồi cơ diễn ra lúc ngủ sâu' },
+      { icon: '📊', label: 'HRV monitoring', note: 'Đo phục hồi thần kinh hàng sáng' },
+      { icon: '🗓️', label: 'Deload 4–6 tuần', note: 'Giảm 40–50% volume 1 tuần' },
+      { icon: '🥩', label: 'Protein 1.6–2.2g/kg', note: 'Trải đều qua 4–5 bữa ăn' },
+    ],
+  },
 ];
 
 const C1_STEPS = [
@@ -1546,6 +1752,8 @@ export default function PillarC() {
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
   const [zoneModalIdx, setZoneModalIdx] = useState(null);
+  const [scoreModalIdx, setScoreModalIdx] = useState(null);
+  const [trackModalIdx, setTrackModalIdx] = useState(null);
   const [morningMode, setMorningMode] = useState('5');
   const [morningModalIdx, setMorningModalIdx] = useState(null);
   const [breathMode, setBreathMode] = useState(0);
@@ -1752,26 +1960,37 @@ export default function PillarC() {
                   ))}
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: TEAL }}>Lifestyle Score — 100 điểm</h3>
-                <div className="space-y-2 mb-6">
+                <div className="space-y-1.5 mb-6">
                   {C0_SCORE.map((row, i) => (
-                    <div key={i} className="flex items-center justify-between text-lg">
-                      <span className="text-muted">{row.label}</span>
-                      <span className="font-bold tabular-nums" style={{ color: TEAL }}>{row.pts} đ</span>
-                    </div>
+                    <button key={i} onClick={() => setScoreModalIdx(i)}
+                      className="w-full flex items-center justify-between text-lg rounded-xl px-3 py-2 group cursor-pointer transition-all hover:bg-white/5"
+                      style={{ borderColor: scoreModalIdx === i ? `rgba(${row.rgb},0.4)` : 'transparent', border: '1px solid', transition: 'border-color 0.2s, background 0.2s' }}>
+                      <span className="flex items-center gap-2 text-muted group-hover:text-text transition-colors">
+                        <span className="text-base">{row.icon}</span>
+                        {row.label}
+                      </span>
+                      <span className="flex items-center gap-2 shrink-0">
+                        <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: row.color }}>Chi tiết →</span>
+                        <span className="font-bold tabular-nums" style={{ color: row.color }}>{row.pts} đ</span>
+                      </span>
+                    </button>
                   ))}
                 </div>
                 <div className="p-4 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.08)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
                   <p className="text-lg font-semibold mb-3" style={{ color: TEAL }}>Chọn track phù hợp với bạn:</p>
                   <div className="grid gap-2">
-                    {[
-                      { t: 'Track Cơ Bản', d: 'Ngủ muộn, mệt mỏi, ít vận động' },
-                      { t: 'Track Bận Rộn', d: 'Thiếu thời gian, làm việc nhiều, ngồi lâu' },
-                      { t: 'Track Tập Nhiều', d: 'Gym/chạy/đạp/bơi nhiều, cần phục hồi tốt hơn' },
-                    ].map((tr, i) => (
-                      <div key={i} className="p-2 rounded-lg text-lg" style={{ background: `rgba(${TEAL_RGB},0.05)` }}>
-                        <span className="font-semibold text-text">{tr.t}</span>
-                        <span className="text-muted"> — {tr.d}</span>
-                      </div>
+                    {C0_TRACKS.map((tr, i) => (
+                      <button key={i} onClick={() => setTrackModalIdx(i)}
+                        className="w-full p-2 rounded-lg text-lg text-left group cursor-pointer transition-all hover:bg-white/5"
+                        style={{ background: `rgba(${tr.rgb},0.06)`, border: `1px solid rgba(${tr.rgb},0.15)`, transition: 'border-color 0.2s, background 0.2s' }}>
+                        <span className="flex items-center justify-between">
+                          <span>
+                            <span className="font-semibold text-text">{tr.label}</span>
+                            <span className="text-muted"> — {tr.desc}</span>
+                          </span>
+                          <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-3" style={{ color: tr.color }}>Chi tiết →</span>
+                        </span>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -2439,6 +2658,32 @@ export default function PillarC() {
           onNext={() => setC2EnergyIdx(i => Math.min(C2_ENERGY_TIPS.length - 1, i + 1))}
           hasPrev={c2EnergyIdx > 0}
           hasNext={c2EnergyIdx < C2_ENERGY_TIPS.length - 1}
+        />
+      )}
+
+      {/* ── C0 score criterion modal ── */}
+      {scoreModalIdx !== null && (
+        <C0ItemModal
+          item={C0_SCORE[scoreModalIdx]}
+          idx={scoreModalIdx}
+          onClose={() => setScoreModalIdx(null)}
+          onPrev={() => setScoreModalIdx(i => Math.max(0, i - 1))}
+          onNext={() => setScoreModalIdx(i => Math.min(C0_SCORE.length - 1, i + 1))}
+          hasPrev={scoreModalIdx > 0}
+          hasNext={scoreModalIdx < C0_SCORE.length - 1}
+        />
+      )}
+
+      {/* ── C0 track modal ── */}
+      {trackModalIdx !== null && (
+        <C0ItemModal
+          item={C0_TRACKS[trackModalIdx]}
+          idx={trackModalIdx}
+          onClose={() => setTrackModalIdx(null)}
+          onPrev={() => setTrackModalIdx(i => Math.max(0, i - 1))}
+          onNext={() => setTrackModalIdx(i => Math.min(C0_TRACKS.length - 1, i + 1))}
+          hasPrev={trackModalIdx > 0}
+          hasNext={trackModalIdx < C0_TRACKS.length - 1}
         />
       )}
 

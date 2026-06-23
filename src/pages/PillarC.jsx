@@ -244,17 +244,185 @@ const C1_CHECKLIST = [
 ];
 
 const C2_MORNING_5 = [
-  { time: '1 phút', action: 'Uống 1 ly nước' },
-  { time: '2 phút', action: 'Mở rèm / ra ngoài trời lấy ánh sáng' },
-  { time: '1 phút', action: 'Đi bộ nhẹ tại chỗ + xoay vai, xoay hông' },
-  { time: '1 phút', action: 'Hít thở sâu 4–6 nhịp' },
+  {
+    time: '1 phút', action: 'Uống 1 ly nước',
+    icon: '💧', label: 'Uống 1 ly nước',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=800&q=80&auto=format&fit=crop',
+    detail: 'Bước đơn giản nhất với tác động tức thì — cơ thể mất nước sau 7–9 giờ ngủ không uống gì.',
+    keyFact: 'Mất chỉ 1–2% nước trong cơ thể đã làm giảm hiệu suất nhận thức 10–15% — và bạn thường đạt mức này ngay khi vừa thức dậy.',
+    details: [
+      'Sau 7–9 giờ không uống nước khi ngủ, cơ thể bắt đầu ngày mới ở trạng thái thiếu nước nhẹ — trực tiếp gây ra cảm giác mơ màng và chậm chạp buổi sáng.',
+      'Não chứa ~75% nước — thiếu nước nhẹ làm chậm dẫn truyền thần kinh, giảm tập trung và tăng cảm giác mệt mỏi ngay cả trước khi uống cà phê.',
+      'Uống nước trước cà phê: caffeine lúc bụng đói + cơ thể mất nước tăng cortisol không cần thiết và gây khó chịu dạ dày cho nhiều người.',
+      '200–300ml nước là lý tưởng — không cần uống cả lít ngay một lúc. Uống từ từ trong 5–10 phút đầu tiên.',
+      'Mẹo đơn giản: đặt bình nước ngay cạnh giường tối hôm trước — loại bỏ hoàn toàn ma sát để thói quen xảy ra tự động.',
+      'Cảm giác "chưa tỉnh" sau khi thức (sleep inertia) thường giảm nhanh hơn sau khi uống nước + ra ánh sáng — không phải lúc nào cũng cần cà phê.',
+    ],
+    points: [
+      { icon: '🥛', label: '200–300ml ngay khi thức', note: 'Trước cà phê và bữa sáng' },
+      { icon: '🛏️', label: 'Đặt bình cạnh giường', note: 'Tự động hóa thói quen đêm trước' },
+      { icon: '🧠', label: 'Não cần nước', note: 'Giảm mơ màng, tăng tập trung' },
+      { icon: '⚡', label: 'Giảm sleep inertia', note: 'Cảm giác "chưa tỉnh" tan nhanh hơn' },
+    ],
+  },
+  {
+    time: '2 phút', action: 'Mở rèm / ra ngoài trời lấy ánh sáng',
+    icon: '☀️', label: 'Mở rèm / Ánh sáng tự nhiên',
+    color: '#f59e0b', rgb: '245,158,11',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    detail: 'Ánh sáng tự nhiên là "nút reset" mạnh nhất cho đồng hồ sinh học — quan trọng hơn bất kỳ thói quen sáng nào khác.',
+    keyFact: 'Ánh sáng ngoài trời (10.000–100.000 lux) mạnh gấp 100–1.000 lần đèn trong nhà — 5 phút ra ngoài hiệu quả hơn bật đèn cả buổi sáng.',
+    details: [
+      'Mắt có tế bào nhạy sáng đặc biệt (ipRGCs) kết nối trực tiếp với "đồng hồ chủ" của cơ thể (SCN). Ánh sáng buổi sáng "chốt" giờ thức và kích hoạt chuỗi hormone cho cả ngày.',
+      'Trong 30–60 phút đầu sau khi thức, ánh sáng kích hoạt Cortisol Awakening Response (CAR) — đây là cortisol tốt giúp bạn tỉnh táo, không phải cortisol stress.',
+      'Ngày흐mây, mưa nhỏ vẫn đủ hiệu quả — ánh sáng ngoài trời tối thiểu 1.000–2.000 lux, mạnh hơn đèn trong nhà 10–20 lần dù không có nắng.',
+      'Mở rèm thay vì ra ngoài cũng có tác dụng nếu cửa sổ lớn và hướng đông — nhưng không hiệu quả bằng 5 phút thực sự ra ngoài.',
+      'Không đeo kính râm trong 5 phút đầu — kính làm giảm tác dụng. Nhìn về phía bầu trời (không nhìn thẳng vào mặt trời) là đủ.',
+      'Ánh sáng sáng còn tăng serotonin — tiền chất của melatonin về đêm. Nhiều serotonin ban ngày = ngủ sâu hơn về tối.',
+    ],
+    points: [
+      { icon: '⏱️', label: '5 phút là đủ', note: 'Ra ngoài ngay sau khi thức' },
+      { icon: '🌥️', label: 'Ngày흐mây vẫn tốt', note: 'Ngoài trời sáng hơn trong nhà 100x' },
+      { icon: '👓', label: 'Không đeo kính râm', note: 'Để mắt nhận ánh sáng tự nhiên' },
+      { icon: '🌅', label: 'Trong 1 giờ đầu', note: 'Kích hoạt cortisol tốt cho cả ngày' },
+    ],
+  },
+  {
+    time: '1 phút', action: 'Đi bộ nhẹ tại chỗ + xoay vai, xoay hông',
+    icon: '🚶', label: 'Đi bộ nhẹ + Xoay khớp',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
+    detail: '60 giây vận động nhẹ đủ để đánh thức hệ tuần hoàn, bơm máu đến não và bôi trơn khớp sau 7–9 giờ nằm yên.',
+    keyFact: '60 giây vận động nhẹ buổi sáng kích hoạt hệ tuần hoàn và bôi trơn khớp — giảm đáng kể cứng khớp và đau mỏi trong ngày dài.',
+    details: [
+      'Sau 7–9 giờ ngủ, dịch hoạt bao khớp ít hơn và sụn khớp chưa được "bôi trơn" — vài phút vận động nhẹ đầu ngày phân phối dịch khớp, giảm cứng khớp sáng.',
+      'Đi bộ tại chỗ 30–60 giây: bơm máu từ chân về tim, tăng huyết áp từ từ thay vì đứng dậy đột ngột, giảm chóng mặt buổi sáng.',
+      'Xoay vai: cơ vai và cổ co cứng nhất sau ngủ. 10–15 vòng mỗi chiều giải phóng cơ thang (trapezius) và giảm căng cổ hiệu quả.',
+      'Xoay hông: khớp háng là khớp lớn nhất cơ thể và thường cứng nhất sau ngủ — xoay tròn 10–15 vòng mỗi bên "thức dậy" khớp và cơ vùng chậu.',
+      'Không cần không gian — tất cả có thể thực hiện ngay tại chỗ đứng, thậm chí bên cạnh giường ngủ.',
+      '1 phút này là "thông báo" cho cơ thể rằng ngày mới bắt đầu — hiệu quả hơn nằm thêm 5–10 phút sau khi chuông báo thức.',
+    ],
+    points: [
+      { icon: '💧', label: 'Bôi trơn khớp', note: 'Dịch hoạt bao phân phối khi vận động' },
+      { icon: '🩸', label: 'Tăng tuần hoàn', note: 'Máu từ chân lên não nhẹ nhàng' },
+      { icon: '🦴', label: 'Xoay vai 10–15 vòng', note: 'Giải phóng cơ thang sau ngủ' },
+      { icon: '🌀', label: 'Xoay hông 10–15 vòng', note: 'Thức dậy khớp háng lớn nhất cơ thể' },
+    ],
+  },
+  {
+    time: '1 phút', action: 'Hít thở sâu 4–6 nhịp',
+    icon: '🫁', label: 'Hít thở sâu 4–6 nhịp',
+    color: '#06b6d4', rgb: '6,182,212',
+    img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop',
+    detail: 'Kết thúc routine 5 phút bằng hít thở sâu — cài đặt tần số thần kinh cho cả ngày trước khi đối mặt với bất kỳ thứ gì.',
+    keyFact: '4–6 nhịp thở cơ hoành chậm đủ để kích hoạt hệ phó giao cảm — trạng thái "calm but alert" lý tưởng để bắt đầu ngày.',
+    details: [
+      'Buổi sáng, hệ thần kinh giao cảm (fight-or-flight) thường cao do cortisol tăng — vài nhịp thở sâu giúp cân bằng lại sang trạng thái tập trung bình tĩnh.',
+      'Kỹ thuật đơn giản nhất: hít vào mũi 4 giây (bụng phồng ra, ngực ít nâng), thở ra miệng 6 giây. Lặp 4–6 lần.',
+      'Thở ra dài hơn hít vào kích hoạt dây thần kinh phế vị (vagus nerve) — làm chậm nhịp tim và hạ huyết áp trong vòng 60 giây.',
+      'Sau 4–6 nhịp thở đúng, HRV (heart rate variability) tăng có thể đo được — chỉ số quan trọng nhất của trạng thái phục hồi và tập trung.',
+      'Trong khi thở, đặt câu hỏi: "Hôm nay tôi muốn cảm thấy thế nào? Việc quan trọng nhất là gì?" — kích hoạt prefrontal cortex trước khi vào luồng phản xạ.',
+      'Chỉ 1 phút nhưng tác dụng kéo dài: nhịp thở chậm buổi sáng thiết lập "baseline" thần kinh cho cả ngày, giúp phục hồi bình tĩnh nhanh hơn khi gặp stress.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Bụng phồng, ngực ít nâng', note: 'Thở cơ hoành đúng cách' },
+      { icon: '⏱️', label: 'Hít 4s, thở ra 6s', note: 'Thở ra dài hơn = kích hoạt phó giao cảm' },
+      { icon: '🧠', label: 'Đặt ý định cho ngày', note: 'Kích hoạt prefrontal cortex' },
+      { icon: '❤️', label: 'Tăng HRV', note: 'Chỉ số phục hồi và tập trung' },
+    ],
+  },
 ];
 
 const C2_MORNING_10 = [
-  { time: '2 phút', action: 'Uống nước, mở cửa, tiếp xúc ánh sáng tự nhiên' },
-  { time: '3 phút', action: 'Đi bộ nhẹ trong nhà hoặc ra ngoài' },
-  { time: '3 phút', action: 'Mobility: cổ vai gáy, xoay hông, vươn người' },
-  { time: '2 phút', action: 'Thở chậm + xác định 1 việc chính trong ngày' },
+  {
+    time: '2 phút', action: 'Uống nước, mở cửa, tiếp xúc ánh sáng tự nhiên',
+    icon: '💧', label: 'Nước + Ánh sáng tự nhiên',
+    color: '#0ea5e9', rgb: '14,165,233',
+    img: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=800&q=80&auto=format&fit=crop',
+    detail: 'Bộ đôi quan trọng nhất của buổi sáng — cùng thực hiện trong 2 phút để tối đa hóa hiệu quả đánh thức sinh lý.',
+    keyFact: 'Nước + ánh sáng tự nhiên trong 2 phút đầu là "double reset" mạnh nhất cho đồng hồ sinh học — hiệu quả hơn bất kỳ supplement nào.',
+    details: [
+      'Uống 200–300ml nước ngay khi thức: não chứa ~75% nước, thiếu nước nhẹ sau ngủ làm giảm hiệu suất nhận thức 10–15% trước khi bạn kịp nhận ra.',
+      'Ra ngoài hoặc mở cửa lấy ánh sáng: các tế bào nhạy sáng trong mắt (ipRGCs) gửi tín hiệu đến đồng hồ sinh học — ánh sáng sáng kích hoạt cortisol tốt cho cả ngày.',
+      'Thực hiện hai việc cùng lúc: uống nước trong khi đứng cạnh cửa sổ mở hoặc ngoài hiên — tiết kiệm thời gian và tạo "combo thói quen" dễ duy trì.',
+      'Không cần trời nắng — ngày흐mây vẫn đủ sáng. Ánh sáng ngoài trời tối thiểu 1.000–2.000 lux, mạnh hơn đèn trong nhà rất nhiều.',
+      '2 phút đầu quan trọng hơn bất kỳ 2 phút nào khác trong ngày về mặt thiết lập sinh lý — đây là thời điểm cơ thể nhận tín hiệu "ngày mới bắt đầu".',
+      'Mẹo: đêm trước đặt bình nước cạnh giường + đặt báo thức cạnh cửa ra vào để tự nhiên thực hiện cả hai khi dậy.',
+    ],
+    points: [
+      { icon: '💧', label: '200–300ml nước', note: 'Trước cà phê — luôn luôn' },
+      { icon: '🌅', label: 'Ánh sáng ngay khi thức', note: 'Mở cửa hoặc ra ngoài 1–2 phút' },
+      { icon: '🔗', label: 'Làm cùng lúc', note: 'Uống nước khi đứng ngoài cửa' },
+      { icon: '⏰', label: '2 phút đầu quan trọng nhất', note: 'Thiết lập toàn bộ sinh lý cho ngày' },
+    ],
+  },
+  {
+    time: '3 phút', action: 'Đi bộ nhẹ trong nhà hoặc ra ngoài',
+    icon: '🚶', label: 'Đi bộ nhẹ 3 phút',
+    color: '#10b981', rgb: '16,185,129',
+    img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop',
+    detail: '3 phút đi bộ nhẹ sau ngủ dậy bơm máu toàn thân, đánh thức hệ tiêu hóa và chuẩn bị cơ khớp cho ngày dài.',
+    keyFact: '3 phút đi bộ nhẹ buổi sáng tăng lưu lượng máu đến cơ bắp và não lên 20–30% — hiệu quả hơn caffeine trong 15 phút đầu tiên.',
+    details: [
+      'Sau đêm ngủ, máu tập trung nhiều ở cơ quan nội tạng — đi bộ nhẹ "phân phối lại" máu đến cơ bắp và não, tạo cảm giác tỉnh táo tự nhiên.',
+      'Không cần ra ngoài nếu thời tiết xấu: đi bộ trong nhà 3–4 vòng hoặc lên xuống cầu thang 2–3 lần cũng đủ để đánh thức tuần hoàn.',
+      'Ra ngoài đi bộ: kết hợp được cả ánh sáng tự nhiên và vận động — đây là "double benefit" lý tưởng nhất.',
+      'Tốc độ lý tưởng: thoải mái, không gắng sức — nhịp tim chỉ cần tăng nhẹ 10–15% so với nghỉ ngơi. Đây là thức dậy, không phải tập luyện.',
+      'Hệ tiêu hóa cũng được đánh thức: vận động nhẹ kích thích nhu động ruột, giúp buổi sáng "thông suốt" hơn.',
+      '3 phút này cũng là thời gian để não "khởi động lại" sau giấc ngủ — nhiều người phát hiện ý tưởng tốt nhất trong ngày xuất hiện khi đi bộ sáng.',
+    ],
+    points: [
+      { icon: '🩸', label: 'Phân phối máu', note: 'Từ nội tạng → cơ bắp và não' },
+      { icon: '🌿', label: 'Ra ngoài tốt nhất', note: 'Kết hợp ánh sáng + vận động' },
+      { icon: '🐢', label: 'Tốc độ thoải mái', note: 'Không gắng sức — chỉ thức dậy' },
+      { icon: '💭', label: 'Não khởi động', note: 'Ý tưởng tốt xuất hiện khi đi bộ' },
+    ],
+  },
+  {
+    time: '3 phút', action: 'Mobility: cổ vai gáy, xoay hông, vươn người',
+    icon: '🌀', label: 'Mobility: Cổ Vai Gáy + Hông',
+    color: '#a78bfa', rgb: '167,139,250',
+    img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80&auto=format&fit=crop',
+    detail: '3 phút mobility đúng vị trí cơ thể cần nhất — cổ vai gáy và hông là hai vùng cứng nhất sau ngủ.',
+    keyFact: '3 phút mobility buổi sáng mỗi ngày hiệu quả hơn 30 phút stretching ngẫu nhiên cuối tuần — tính nhất quán tạo thay đổi cấu trúc lâu dài.',
+    details: [
+      'Cổ vai gáy: sau ngủ, cơ thang (trapezius) và levator scapulae thường là vùng căng cứng nhất. Xoay đầu từ từ mỗi chiều 5–8 lần + nghiêng tai về mỗi vai 5 giây.',
+      'Xoay vai: 10–15 vòng về phía trước, 10–15 vòng về phía sau — hai chiều có tác dụng khác nhau (kéo giãn cơ trước ngực và kích hoạt cơ sau vai).',
+      'Vươn người: đứng thẳng, hai tay đan nhau giơ cao đầu, vươn lên trong khi nhón gót — kéo giãn toàn bộ cột sống sau 7–9 giờ nằm ngang.',
+      'Xoay hông: đứng hai chân rộng bằng vai, tay trên hông, xoay vòng 10–15 lần mỗi chiều — "bôi trơn" khớp háng lớn nhất cơ thể.',
+      'Không cần gây đau — chỉ cần đến giới hạn nhẹ và cảm nhận cơ căng. Mobility sáng là thức dậy cơ thể, không phải kéo giãn sâu.',
+      'Sau 4–6 tuần đều đặn mỗi sáng, tầm vận động khớp vai và hông tăng rõ rệt — ngồi làm việc ít đau mỏi cổ vai gáy hơn.',
+    ],
+    points: [
+      { icon: '🦴', label: 'Cổ vai gáy trước', note: 'Vùng cứng nhất sau ngủ' },
+      { icon: '🌀', label: 'Xoay hông 2 chiều', note: 'Bôi trơn khớp háng lớn nhất' },
+      { icon: '⬆️', label: 'Vươn người lên cao', note: 'Kéo giãn toàn bộ cột sống' },
+      { icon: '🔁', label: 'Mỗi ngày 3 phút', note: 'Hiệu quả hơn 30 phút cuối tuần' },
+    ],
+  },
+  {
+    time: '2 phút', action: 'Thở chậm + xác định 1 việc chính trong ngày',
+    icon: '🎯', label: 'Thở chậm + Đặt ý định',
+    color: '#06b6d4', rgb: '6,182,212',
+    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
+    detail: 'Kết thúc routine 10 phút bằng thở + tư duy — cài đặt cả tần số thần kinh lẫn hướng tập trung cho cả ngày.',
+    keyFact: 'Xác định 1 việc quan trọng nhất trước khi nhìn vào điện thoại giúp não hoạt động chủ động — tránh bẫy "phản ứng với hộp thư đến" cả ngày.',
+    details: [
+      'Thở chậm: hít vào 4 giây, giữ 2 giây, thở ra 6 giây. Lặp 4–6 lần. Thở ra dài hơn kích hoạt dây phế vị, hạ nhịp tim và mang lại bình tĩnh có thể đo được.',
+      'Xác định 1 việc chính: trả lời câu hỏi "Nếu hôm nay tôi chỉ làm được 1 việc, đó là gì?" — kỹ thuật từ GTD và Essentialism để tránh bị cuốn vào công việc không quan trọng.',
+      'Làm điều này trước khi kiểm tra điện thoại: sau khi nhìn vào thông báo/email, não chuyển sang "phản ứng" mode — khó quay lại "chủ động" mode.',
+      'Kết hợp với hình dung: trong khi thở, hình dung mình đã hoàn thành xong việc đó và cảm giác thế nào — kích hoạt mạch thần kinh và tăng động lực.',
+      'Ghi nhanh 1 câu vào sổ hoặc điện thoại: "Hôm nay: [việc X]" — viết ra tăng cam kết thêm 42% so với chỉ nghĩ trong đầu.',
+      '2 phút này là ranh giới giữa sáng đầu ngày và phần còn lại — người thực hiện đều đặn thường cảm thấy "chủ động" và ít bị cuốn theo công việc phản xạ hơn.',
+    ],
+    points: [
+      { icon: '🫁', label: 'Hít 4s, thở ra 6s', note: 'Kích hoạt vagus nerve, hạ nhịp tim' },
+      { icon: '🎯', label: '1 việc quan trọng nhất', note: 'Trả lời trước khi mở điện thoại' },
+      { icon: '📝', label: 'Viết ra 1 câu', note: '+42% cam kết so với chỉ nghĩ' },
+      { icon: '🧠', label: 'Chủ động thay vì phản ứng', note: 'Tránh bẫy hộp thư đến sáng sớm' },
+    ],
+  },
 ];
 
 const C2_ENERGY_TIPS = [
@@ -1312,6 +1480,7 @@ export default function PillarC() {
   const [neatChecks, setNeatChecks] = useState({});
   const [openZone, setOpenZone] = useState(null);
   const [morningMode, setMorningMode] = useState('5');
+  const [morningModalIdx, setMorningModalIdx] = useState(null);
   const [breathMode, setBreathMode] = useState(0);
   const tabBarRef = useRef(null);
 
@@ -1622,9 +1791,13 @@ export default function PillarC() {
                 </div>
                 <div className="space-y-2 mb-7">
                   {(morningMode === '5' ? C2_MORNING_5 : C2_MORNING_10).map((row, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.12)' }}>
-                      <span className="text-base font-bold tabular-nums w-12 shrink-0" style={{ color: '#06b6d4' }}>{row.time}</span>
-                      <span className="text-lg text-text">{row.action}</span>
+                    <div key={i}
+                      onClick={() => setMorningModalIdx(i)}
+                      className="flex items-center gap-3 p-3 rounded-xl cursor-pointer group transition-all hover:bg-white/5"
+                      style={{ background: `rgba(${row.rgb},0.05)`, border: `1px solid rgba(${row.rgb},0.15)`, transition: 'border-color 0.2s, background 0.2s' }}>
+                      <span className="text-base font-bold tabular-nums w-12 shrink-0" style={{ color: row.color }}>{row.time}</span>
+                      <span className="text-lg text-text flex-1">{row.action}</span>
+                      <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0" style={{ color: row.color }}>Chi tiết →</span>
                     </div>
                   ))}
                 </div>
@@ -2168,6 +2341,22 @@ export default function PillarC() {
           hasNext={c3LevelIdx < C3_LEVELS.length - 1}
         />
       )}
+
+      {/* ── C2 morning routine modal ── */}
+      {morningModalIdx !== null && (() => {
+        const list = morningMode === '5' ? C2_MORNING_5 : C2_MORNING_10;
+        return (
+          <C0ItemModal
+            item={list[morningModalIdx]}
+            idx={morningModalIdx}
+            onClose={() => setMorningModalIdx(null)}
+            onPrev={() => setMorningModalIdx(i => Math.max(0, i - 1))}
+            onNext={() => setMorningModalIdx(i => Math.min(list.length - 1, i + 1))}
+            hasPrev={morningModalIdx > 0}
+            hasNext={morningModalIdx < list.length - 1}
+          />
+        );
+      })()}
 
       {/* ── C2 energy tips modal — reuses C0ItemModal (same data shape) ── */}
       {c2EnergyIdx !== null && (

@@ -29,6 +29,89 @@ const PC = {
   F: { c:'#f97316', bg:'rgba(249,115,22,0.08)',  br:'rgba(249,115,22,0.22)',  t:'text-orange-400', l:'Công Cụ',    icon:'🛠️' },
 };
 
+// ── Quick Link Modal ─────────────────────────────────────────────────────────
+function QuickLinkModal({ ql, onClose }) {
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${ql.rgb},0.28)`, boxShadow: `0 0 80px rgba(${ql.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Hero image */}
+        <div className="relative h-44 rounded-t-3xl overflow-hidden shrink-0">
+          <img src={ql.img} alt={ql.label} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${ql.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${ql.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-5 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${ql.rgb},0.18)`, border: `2px solid rgba(${ql.rgb},0.4)` }}>
+              {ql.icon}
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: ql.color }}>{ql.sub}</p>
+              <h2 className="font-bold text-white text-lg leading-tight">{ql.label}</h2>
+            </div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+
+        {/* Content */}
+        <div className="p-5 md:p-7">
+          <p className="text-base font-semibold mb-5 leading-relaxed" style={{ color: `rgba(${ql.rgb},0.75)` }}>{ql.desc}</p>
+
+          <ul className="space-y-3 mb-6">
+            {ql.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${ql.rgb},0.14)`, color: ql.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid grid-cols-2 gap-2.5 mb-6">
+            {ql.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                style={{ background: `rgba(${ql.rgb},0.06)`, border: `1px solid rgba(${ql.rgb},0.14)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <Link
+            to={ql.to}
+            onClick={onClose}
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl font-bold text-base transition-all duration-200 hover:opacity-90"
+            style={{ background: `rgba(${ql.rgb},0.15)`, color: ql.color, border: `1px solid rgba(${ql.rgb},0.3)` }}
+          >
+            Xem chi tiết →
+          </Link>
+
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Journey Detail Modal ─────────────────────────────────────────────────────
 function JourneyDetailModal({ journey: j, onClose, onSelect }) {
   useEffect(() => {
@@ -771,6 +854,106 @@ const PROGRESS_ROWS = [
 ];
 
 // ── Journey config ───────────────────────────────────────────────────────────
+// ── Quick link cards data ────────────────────────────────────────────────────
+const QUICK_LINKS_DATA = [
+  { to:'/pillar/a',         icon:'🏃', color:'#22c55e', rgb:'34,197,94',
+    label:'Vận Động & Tập Luyện', sub:'6 mẫu · Khung ngày · Lộ trình',
+    img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    desc:'Từ 6 chuyển động cơ bản đến lộ trình 12 tuần cá nhân hóa — hướng dẫn đầy đủ cho người mới và người muốn nâng cấp.',
+    details:[
+      '6 chuyển động cơ bản (Squat, Hinge, Push, Pull, Core, Thở) là ngôn ngữ của cơ thể — mastering chúng trước khi thêm bất kỳ thứ gì khác là cách tiếp cận hiệu quả và an toàn nhất.',
+      'Khung ngày tập chuẩn: 5 phút khởi động + 20–30 phút chính + 5–10 phút giãn cơ + 5 phút mind reset. Cấu trúc này tối ưu hóa hiệu quả và phục hồi trong mỗi buổi tập.',
+      'Lộ trình 12 tuần chia 3 giai đoạn rõ ràng với bài test tiến độ mỗi 4 tuần — không đoán mò, đo lường được, điều chỉnh theo kết quả thực tế.',
+    ],
+    points:[
+      {icon:'🏋',label:'6 chuyển động cơ bản',note:'Nền tảng của mọi chương trình tập'},
+      {icon:'⏱',label:'Khung ngày chuẩn',note:'5\' khởi động + 20–30\' chính + giãn'},
+      {icon:'📅',label:'Lộ trình 12 tuần',note:'3 giai đoạn · test tiến độ định kỳ'},
+      {icon:'📊',label:'Nhịp tuần',note:'3 sức mạnh + 2 cardio + 2 recovery'},
+    ],
+  },
+  { to:'/pillar/b/roadmap', icon:'🥗', color:'#84cc16', rgb:'132,204,22',
+    label:'Lộ Trình Dinh Dưỡng', sub:'12 tuần · Macro · Meal prep',
+    img:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+    desc:'Hệ thống dinh dưỡng 12 tuần: từ đĩa ăn cơ bản đến macro và meal prep nâng cao — không kiêng khem, chỉ ăn thông minh hơn.',
+    details:[
+      '12 tuần dinh dưỡng không phải về kiêng khem — mà về ăn đủ và ăn đúng: đủ đạm để xây cơ, đủ carb để có năng lượng, đủ chất xơ để hệ tiêu hóa khỏe mạnh.',
+      '3 giai đoạn: Tuần 1–4 (học công thức đĩa cơ bản) → Tuần 5–8 (tính TDEE và theo dõi macro) → Tuần 9–12 (meal prep và cá nhân hóa hoàn toàn).',
+      'Tích hợp TDEE calculator cá nhân hóa — nhập cân nặng, chiều cao, tuổi và mức vận động để nhận kế hoạch phù hợp với nhu cầu calo và macro của riêng bạn.',
+    ],
+    points:[
+      {icon:'🍽',label:'Công thức đĩa ăn',note:'½ rau · ¼ đạm · ¼ tinh bột'},
+      {icon:'🔢',label:'TDEE calculator',note:'Cá nhân hóa calo & macro'},
+      {icon:'📦',label:'Meal prep guide',note:'45 phút/tuần cho 5–7 ngày ăn chuẩn'},
+      {icon:'📈',label:'Tăng dần theo tuần',note:'Không cú sốc — điều chỉnh từng bước'},
+    ],
+  },
+  { to:'/pillar/b/7day',    icon:'📅', color:'#84cc16', rgb:'132,204,22',
+    label:'Thực Đơn 7 Ngày', sub:'Bữa ăn theo ngày · Shopping list',
+    img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',
+    desc:'Thực đơn 7 ngày chi tiết từng bữa với shopping list sẵn sàng — sao chép và nấu, không cần nghĩ gì thêm.',
+    details:[
+      '7 ngày thực đơn chi tiết sáng · trưa · tối với kcal và macro đã tính sẵn. Template rõ ràng để làm theo ngay — phù hợp nhất cho người mới bắt đầu.',
+      'Shopping list đi kèm tổng hợp tất cả nguyên liệu cho cả tuần — 1 lần đi chợ là đủ. Không phải sáng nào cũng phải nghĩ "hôm nay ăn gì".',
+      'Thực đơn đa dạng hóa — không ăn lặp > 2 lần/tuần cho cùng một món. Đủ đạm, đủ rau, phù hợp ẩm thực Việt Nam hàng ngày.',
+    ],
+    points:[
+      {icon:'🍳',label:'3 bữa/ngày × 7 ngày',note:'21 bữa có sẵn macro & kcal'},
+      {icon:'🛒',label:'Shopping list',note:'1 lần đi chợ cho cả tuần'},
+      {icon:'🇻🇳',label:'Ẩm thực Việt Nam',note:'Nguyên liệu quen thuộc trong nước'},
+      {icon:'🔄',label:'Không lặp > 2 lần',note:'Đa dạng dinh dưỡng mỗi ngày'},
+    ],
+  },
+  { to:'/pillar/c/roadmap', icon:'🌿', color:'#14b8a6', rgb:'20,184,166',
+    label:'Lối Sống 12 Tuần', sub:'Ngủ · NEAT · Nhịp sinh học',
+    img:'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&q=80',
+    desc:'Lộ trình lối sống 12 tuần — tối ưu giấc ngủ, tăng vận động tự nhiên và đồng bộ với nhịp sinh học.',
+    details:[
+      'Ngủ là "siêu năng lực" của sức khỏe — 12 tuần lối sống bắt đầu từ tối ưu giấc ngủ: giờ ngủ nhất quán, phòng mát tối, không blue light. Mọi thứ khác hiệu quả hơn khi ngủ đủ.',
+      'NEAT (Non-Exercise Activity Thermogenesis) — vận động không phải tập gym: đi bộ, đứng, cầu thang — có thể đốt 300–500 kcal/ngày ở người năng động. Tăng NEAT dễ hơn tăng thời gian tập gym.',
+      'Nhịp sinh học (circadian rhythm) điều chỉnh hormone, năng lượng và mood. Lộ trình giúp đồng bộ lịch sinh hoạt với đồng hồ sinh học để tối ưu hóa tự nhiên — không cần thay đổi quá nhiều.',
+    ],
+    points:[
+      {icon:'😴',label:'Tối ưu giấc ngủ',note:'Phòng mát · tối · giờ nhất quán'},
+      {icon:'🚶',label:'Tăng NEAT',note:'300–500 kcal/ngày từ vận động tự nhiên'},
+      {icon:'🔄',label:'Nhịp sinh học',note:'Đồng bộ lịch sinh hoạt với circadian'},
+      {icon:'📱',label:'Digital wellness',note:'Quản lý screen time & dopamine'},
+    ],
+  },
+  { to:'/pillar/d/roadmap', icon:'🧘', color:'#a855f7', rgb:'168,85,247',
+    label:'Tâm Trí 12 Tuần', sub:'Thiền · Thở · Journaling',
+    img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+    desc:'Lộ trình tâm trí 12 tuần — giảm stress, tăng tập trung và xây khả năng tự nhận thức bằng 3 công cụ: thiền, thở và nhật ký.',
+    details:[
+      'Thiền không phải "không suy nghĩ" — mà là luyện nhận ra khi tâm trí đi lạc và nhẹ nhàng quay lại. 5 phút/ngày đủ thay đổi gray matter vùng prefrontal cortex sau 8 tuần.',
+      'Hơi thở là công cụ duy nhất kiểm soát ý thức và tác động trực tiếp đến hệ thần kinh tự trị. Box breathing (4s–4s–4s–4s) giảm cortisol và nhịp tim trong dưới 30 giây.',
+      'Journaling 3 dòng tối — viết ra "unfinished business" — giúp não "đóng tab", giảm mental chatter trước ngủ và tăng chất lượng học từ trải nghiệm hàng ngày.',
+    ],
+    points:[
+      {icon:'🧘',label:'Thiền 5 phút/ngày',note:'Thay đổi não bộ sau 8 tuần'},
+      {icon:'🫁',label:'Box breathing',note:'4s–4s–4s–4s — giảm cortisol <30s'},
+      {icon:'📓',label:'Journaling 3 dòng',note:'Đóng tab não — ngủ sâu hơn'},
+      {icon:'🎯',label:'Đặt ý định sáng',note:'RAS activation — tỷ lệ thực hiện +91%'},
+    ],
+  },
+  { to:'/pillar/f/roadmap', icon:'🛠️', color:'#f97316', rgb:'249,115,22',
+    label:'Lộ Trình Công Cụ', sub:'Checklist · Tracker · Test',
+    img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+    desc:'Bộ công cụ theo dõi tiến độ đầy đủ: checklist hàng ngày, tracker tuần và bài test 4 tuần — đo lường thật để tiến bộ thật.',
+    details:[
+      'Checklist hàng ngày gồm 5 mục cốt lõi: tập đủ không, ăn đủ đạm không, uống đủ nước không, ngủ trước 23h không, thực hành tâm trí không. Tích vào cuối ngày = awareness thật sự.',
+      'Tracker tuần giúp nhìn pattern: tuần nào tập đủ, tuần nào thiếu, lý do tại sao — dữ liệu này quan trọng hơn cảm giác "hình như tôi đang tốt hơn".',
+      'Bài test 4 tuần: 5 chỉ số đo được — Plank tĩnh, Push-up tối đa, Squat 1 phút, Đi bộ 1km, chu vi eo. Số liệu thật → điều chỉnh thật → tiến bộ thật.',
+    ],
+    points:[
+      {icon:'✅',label:'Checklist hàng ngày',note:'5 mục cốt lõi · tích vào cuối ngày'},
+      {icon:'📊',label:'Tracker theo tuần',note:'Pattern > cảm giác chủ quan'},
+      {icon:'📈',label:'Test 4 tuần',note:'Plank · Push-up · Squat · 1km · eo'},
+      {icon:'🎯',label:'Dữ liệu thật',note:'Đo lường → điều chỉnh → tiến bộ'},
+    ],
+  },
+];
+
 const JOURNEYS = [
   { id:'7d', label:'7 Ngày Khởi Động', sub:'Tuần đầu tiên', icon:'🌱', color:'#22c55e', rgb:'34,197,94',
     desc:'Bắt đầu nhẹ nhàng với 7 ngày đầu tiên. Mỗi ngày tích hợp đủ 4 trụ cột: Vận động · Dinh dưỡng · Lối sống · Tâm trí.',
@@ -960,6 +1143,7 @@ export default function Program() {
   const [activeCard, setActiveCard] = useState(null);
   const [activeChecklistItem, setActiveChecklistItem] = useState(null);
   const [activeJourneyInfo, setActiveJourneyInfo] = useState(null);
+  const [activeQuickLink, setActiveQuickLink] = useState(null);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -1799,28 +1983,29 @@ export default function Program() {
         <div className="border-t border-border/50 pt-10 mb-6">
           <h2 className="text-base font-bold uppercase tracking-widest text-muted mb-4 text-center">{t('program.deep_dive_title', 'Đi Sâu Vào Từng Trụ Cột')}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-            {[
-              { to:'/pillar/a',          icon:'🏃', color:'#22c55e' },
-              { to:'/pillar/b/roadmap',  icon:'🥗', color:'#84cc16' },
-              { to:'/pillar/b/7day',     icon:'📅', color:'#84cc16' },
-              { to:'/pillar/c/roadmap',  icon:'🌿', color:'#14b8a6' },
-              { to:'/pillar/d/roadmap',  icon:'🧘', color:'#a855f7' },
-              { to:'/pillar/f/roadmap',  icon:'🛠️', color:'#f97316' },
-            ].map((link, idx) => {
-              const ql = localQuickLinks?.[idx];
-              const label = ql?.label || ['Vận Động & Tập Luyện','Lộ Trình Dinh Dưỡng','Thực Đơn 7 Ngày','Lối Sống 12 Tuần','Tâm Trí 12 Tuần','Lộ Trình Công Cụ'][idx];
-              const sub = ql?.sub || ['6 mẫu · Khung ngày · Lộ trình','12 tuần · Macro · Meal prep','Bữa ăn theo ngày · Shopping list','Ngủ · NEAT · Nhịp sinh học','Thiền · Thở · Journaling','Checklist · Tracker · Test'][idx];
+            {QUICK_LINKS_DATA.map((ql, idx) => {
+              const tql = localQuickLinks?.[idx];
+              const label = tql?.label || ql.label;
+              const sub = tql?.sub || ql.sub;
               return (
-                <Link key={link.to} to={link.to}
-                  className="flex items-start gap-3 p-3.5 rounded-2xl border border-border bg-surface hover:border-[var(--lc)] hover:-translate-y-0.5 transition-all duration-200 group"
-                  style={{ '--lc': `rgba(${link.color.replace('#','').match(/.{2}/g).map(x=>parseInt(x,16)).join(',')},0.35)` }}
+                <div
+                  key={ql.to}
+                  onClick={() => setActiveQuickLink(ql)}
+                  className="flex items-start gap-3 p-3.5 rounded-2xl border border-border bg-surface cursor-pointer group transition-all duration-200 hover:-translate-y-0.5"
+                  style={{ '--lc': `rgba(${ql.rgb},0.35)` }}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${ql.rgb},0.35)`}
+                  onMouseLeave={e => e.currentTarget.style.borderColor = ''}
                 >
-                  <span className="text-2xl shrink-0">{link.icon}</span>
-                  <div className="min-w-0">
+                  <span className="text-2xl shrink-0">{ql.icon}</span>
+                  <div className="min-w-0 flex-1">
                     <div className="font-semibold text-text text-base leading-snug">{label}</div>
                     <div className="text-[10px] text-muted mt-0.5 leading-relaxed">{sub}</div>
                   </div>
-                </Link>
+                  <span
+                    className="shrink-0 self-center text-[10px] font-bold px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ color: ql.color, background: `rgba(${ql.rgb},0.1)`, border: `1px solid rgba(${ql.rgb},0.2)` }}
+                  >→</span>
+                </div>
               );
             })}
           </div>
@@ -1865,6 +2050,9 @@ export default function Program() {
         dayRgb={activeChecklistItem.dayRgb}
         onClose={() => setActiveChecklistItem(null)}
       />
+    )}
+    {activeQuickLink && (
+      <QuickLinkModal ql={activeQuickLink} onClose={() => setActiveQuickLink(null)} />
     )}
   </>
   );

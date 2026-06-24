@@ -2,6 +2,101 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+/* ── Helper: auto-derive 4 key points from section items ── */
+function makePoints(items) {
+  const icons = ['📌', '✅', '🎯', '💡'];
+  return (items || []).slice(0, 4).map((item, i) => {
+    const match = item.match(/^(.+?)\s*[—–]\s*(.+)$/);
+    if (match) return { icon: icons[i], label: match[1].trim(), note: match[2].trim() };
+    const words = item.split(' ');
+    const cut = Math.min(Math.ceil(words.length / 2), 5);
+    return { icon: icons[i], label: words.slice(0, cut).join(' '), note: words.slice(cut).join(' ') || '—' };
+  });
+}
+
+/* ── Section detail modal ── */
+function SectionModal({ section, meta, pillarTitle, pillarIcon, onClose }) {
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+
+  const rgb = meta.rgb;
+  const color = meta.accent;
+  const img = meta.image;
+  const points = makePoints(section.items);
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${rgb},0.28)`, boxShadow: `0 0 80px rgba(${rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        {/* Hero */}
+        <div className="relative h-44 rounded-t-3xl overflow-hidden">
+          <img src={img} alt={section.title} className="w-full h-full object-cover" style={{ opacity: 0.45 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
+          <div className="absolute bottom-4 left-5 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${rgb},0.18)`, border: `2px solid rgba(${rgb},0.4)` }}>
+              {pillarIcon}
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color }}>{pillarTitle}</p>
+              <h2 className="font-bold text-white text-lg leading-tight max-w-xs">{section.title}</h2>
+            </div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        {/* Content */}
+        <div className="p-5 md:p-7">
+          {/* All items as numbered list */}
+          <ul className="space-y-2.5 mb-5">
+            {(section.items || []).map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          {/* Quick link */}
+          <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${rgb},0.12)` }}>
+            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${rgb},0.5)` }}>Khám Phá Chi Tiết</p>
+            <div className="flex flex-wrap gap-2">
+              <Link to={`/pillar/${meta.id}`} onClick={onClose}
+                className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
+                style={{ color, background: `rgba(${rgb},0.1)`, border: `1px solid rgba(${rgb},0.22)` }}>
+                <span>{pillarIcon}</span> {pillarTitle} →
+              </Link>
+            </div>
+          </div>
+          {/* Key points */}
+          <div className="grid grid-cols-2 gap-2.5">
+            {points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.14)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── Per-pillar metadata ──────────────────────────────────────────── */
 const PILLAR_META = [
   {
@@ -13,7 +108,7 @@ const PILLAR_META = [
     imgOverlay: 'from-green-950/60',
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1000&q=75',
     imgAlt: 'Người đang tập thể dục',
-    accent: '#22c55e',
+    accent: '#22c55e', rgb: '34,197,94',
   },
   {
     key: 'pillarB', id: 'b', label: 'B',
@@ -24,7 +119,7 @@ const PILLAR_META = [
     imgOverlay: 'from-lime-950/60',
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1000&q=75',
     imgAlt: 'Thực phẩm lành mạnh đa dạng màu sắc',
-    accent: '#84cc16',
+    accent: '#84cc16', rgb: '132,204,22',
   },
   {
     key: 'pillarC', id: 'c', label: 'C',
@@ -35,7 +130,7 @@ const PILLAR_META = [
     imgOverlay: 'from-teal-950/60',
     image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1000&q=75',
     imgAlt: 'Thiền định buổi sáng yên bình',
-    accent: '#14b8a6',
+    accent: '#14b8a6', rgb: '20,184,166',
   },
   {
     key: 'pillarD', id: 'd', label: 'D',
@@ -46,7 +141,7 @@ const PILLAR_META = [
     imgOverlay: 'from-purple-950/60',
     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1000&q=75',
     imgAlt: 'Thiền định tâm trí bình an',
-    accent: '#a855f7',
+    accent: '#a855f7', rgb: '168,85,247',
   },
   {
     key: 'pillarE', id: 'e', label: 'E',
@@ -57,7 +152,7 @@ const PILLAR_META = [
     imgOverlay: 'from-blue-950/60',
     image: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=1000&q=75',
     imgAlt: 'Kiến thức sức khỏe y khoa',
-    accent: '#3b82f6',
+    accent: '#3b82f6', rgb: '59,130,246',
   },
   {
     key: 'pillarF', id: 'f', label: 'F',
@@ -68,7 +163,7 @@ const PILLAR_META = [
     imgOverlay: 'from-orange-950/60',
     image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1000&q=75',
     imgAlt: 'Công cụ theo dõi sức khỏe và lập kế hoạch',
-    accent: '#f97316',
+    accent: '#f97316', rgb: '249,115,22',
   },
 ];
 
@@ -78,6 +173,7 @@ export default function Pillars() {
   const { t }           = useTranslation();
   const { t: tPillars } = useTranslation('pillars');
   const [activeTab, setActiveTab] = useState(0);
+  const [activeSection, setActiveSection] = useState(null);
 
   const pillars = PILLAR_META.map(meta => ({
     meta,
@@ -288,8 +384,9 @@ export default function Pillars() {
             {sections.map((section, i) => (
               <div
                 key={i}
-                className={`bg-surface border border-border hover:${m.border} rounded-2xl overflow-hidden transition-all duration-300 group`}
+                className={`bg-surface border border-border hover:${m.border} rounded-2xl overflow-hidden transition-all duration-300 group cursor-pointer hover:-translate-y-0.5 hover:shadow-lg`}
                 style={{ animationDelay: `${i * 50}ms` }}
+                onClick={() => setActiveSection({ section, idx: i })}
               >
                 {/* Section top bar */}
                 <div className={`h-[2px] bg-gradient-to-r ${m.bar} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
@@ -319,6 +416,12 @@ export default function Pillars() {
                       </li>
                     )}
                   </ul>
+                  <div className={`mt-3 pt-3 border-t border-border/40 flex items-center justify-between`}>
+                    <span className="text-[10px] text-muted/50 uppercase tracking-wider">{section.items?.length || 0} mục</span>
+                    <span className={`text-[10px] font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${m.textColor}`}>
+                      Xem chi tiết →
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -367,6 +470,15 @@ export default function Pillars() {
         </div>
       </div>
 
+      {activeSection && (
+        <SectionModal
+          section={activeSection.section}
+          meta={m}
+          pillarTitle={p?.title || ''}
+          pillarIcon={p?.icon || ''}
+          onClose={() => setActiveSection(null)}
+        />
+      )}
     </div>
   );
 }

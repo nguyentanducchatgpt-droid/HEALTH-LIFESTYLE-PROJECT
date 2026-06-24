@@ -1344,6 +1344,8 @@ const SUCCESS_TIPS = [
   },
 ];
 
+const PROGRESS_KEY = 'healthapp_progress_test';
+
 const PROGRESS_ROWS = [
   { metric:'Sức Bền Tim Mạch', test:'Đi bộ nhanh 6 phút', unit:'m',
     icon:'❤️', color:'#22c55e', rgb:'34,197,94',
@@ -2181,6 +2183,16 @@ export default function Program() {
   const [activeWeeklyItem, setActiveWeeklyItem] = useState(null);
   const [activeSuccessTip, setActiveSuccessTip] = useState(null);
   const [activeProgressRow, setActiveProgressRow] = useState(null);
+  const [progressData, setProgressData] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; } catch { return {}; }
+  });
+  const updateProgress = (metricKey, field, val) => {
+    setProgressData(prev => {
+      const next = { ...prev, [metricKey]: { ...(prev[metricKey] || {}), [field]: val } };
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify(next));
+      return next;
+    });
+  };
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -2863,36 +2875,82 @@ export default function Program() {
                         </tr>
                       </thead>
                       <tbody>
-                        {PROGRESS_ROWS.map((row,i) => (
-                          <tr key={i}
-                            className="border-b border-border/50 transition-colors duration-150 last:border-0 cursor-pointer group/row"
-                            style={{}}
-                            onMouseEnter={e => { e.currentTarget.style.background = `rgba(${row.rgb},0.05)`; }}
-                            onMouseLeave={e => { e.currentTarget.style.background = ''; }}
-                            onClick={() => setActiveProgressRow(row)}
-                          >
-                            <td className="px-5 py-3 font-semibold text-text text-lg">
-                              <span className="flex items-center gap-2">
-                                <span className="text-xl shrink-0">{row.icon}</span>
-                                <span className="group-hover/row:underline decoration-dotted" style={{ textDecorationColor: row.color }}>{row.metric}</span>
-                                <span className="text-[10px] font-bold opacity-0 group-hover/row:opacity-60 transition-opacity" style={{ color: row.color }}>→</span>
-                              </span>
-                            </td>
-                            <td className="px-5 py-3 text-muted text-base leading-relaxed">{row.test}</td>
-                            <td className="px-4 py-3 text-center"><span className="inline-block text-base font-semibold text-teal-400 bg-teal-500/8 border border-teal-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
-                            <td className="px-4 py-3 text-center"><span className="inline-block text-base font-semibold text-accent bg-accent/8 border border-accent/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
-                            <td className="px-4 py-3 text-center"><span className="inline-block text-base font-semibold text-purple-400 bg-purple-500/8 border border-purple-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
-                            {journey === '24w' && <td className="px-4 py-3 text-center"><span className="inline-block text-base font-semibold text-orange-400 bg-orange-500/8 border border-orange-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>}
-                          </tr>
-                        ))}
+                        {(() => {
+                          const COL_META = [
+                            { field:'baseline', text:'#2dd4bf', bg:'rgba(20,184,166,0.08)', border:'rgba(20,184,166,0.22)' },
+                            { field:'week4',    text:'#22c55e', bg:'rgba(34,197,94,0.08)',  border:'rgba(34,197,94,0.22)'  },
+                            { field:'week12',   text:'#c084fc', bg:'rgba(168,85,247,0.08)', border:'rgba(168,85,247,0.22)' },
+                            { field:'week24',   text:'#fb923c', bg:'rgba(249,115,22,0.08)', border:'rgba(249,115,22,0.22)' },
+                          ];
+                          const visibleCols = journey === '24w' ? COL_META : COL_META.slice(0,3);
+                          return PROGRESS_ROWS.map((row,i) => (
+                            <tr key={i}
+                              className="border-b border-border/50 transition-colors duration-150 last:border-0 group/row"
+                              onMouseEnter={e => { e.currentTarget.style.background = `rgba(${row.rgb},0.04)`; }}
+                              onMouseLeave={e => { e.currentTarget.style.background = ''; }}
+                            >
+                              {/* Metric name — click opens modal */}
+                              <td className="px-5 py-3 font-semibold text-text text-lg cursor-pointer"
+                                onClick={() => setActiveProgressRow(row)}>
+                                <span className="flex items-center gap-2">
+                                  <span className="text-xl shrink-0">{row.icon}</span>
+                                  <span className="group-hover/row:underline decoration-dotted" style={{ textDecorationColor: row.color }}>{row.metric}</span>
+                                  <span className="text-[10px] font-bold opacity-0 group-hover/row:opacity-60 transition-opacity" style={{ color: row.color }}>→</span>
+                                </span>
+                              </td>
+                              {/* Test description */}
+                              <td className="px-5 py-3 text-muted text-base leading-relaxed">{row.test}</td>
+                              {/* Editable value cells */}
+                              {visibleCols.map(cm => {
+                                const val = progressData[row.metric]?.[cm.field] || '';
+                                return (
+                                  <td key={cm.field} className="px-4 py-3 text-center" onClick={e => e.stopPropagation()}>
+                                    {row.unit === 'Không/Có' ? (
+                                      <button
+                                        onClick={() => updateProgress(row.metric, cm.field, val === '' ? 'Có' : val === 'Có' ? 'Không' : '')}
+                                        className="inline-flex items-center justify-center px-3 py-1 rounded-full border text-base font-semibold cursor-pointer hover:opacity-80 transition-opacity"
+                                        style={{ color: cm.text, background: cm.bg, borderColor: cm.border, minWidth: '90px' }}
+                                      >
+                                        {val || '___'}
+                                      </button>
+                                    ) : (
+                                      <label className="inline-flex items-center justify-center gap-1 px-2.5 py-1 rounded-full border cursor-text"
+                                        style={{ color: cm.text, background: cm.bg, borderColor: cm.border }}>
+                                        <input
+                                          type="text"
+                                          inputMode="decimal"
+                                          value={val}
+                                          onChange={e => updateProgress(row.metric, cm.field, e.target.value)}
+                                          placeholder="___"
+                                          className="w-10 text-center text-base font-semibold bg-transparent outline-none placeholder:text-white/25"
+                                          style={{ color: cm.text, caretColor: cm.text }}
+                                        />
+                                        <span className="text-base font-semibold select-none">{row.unit}</span>
+                                      </label>
+                                    )}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          ));
+                        })()}
                       </tbody>
                     </table>
                   </div>
                 </div>
-                <RevealBlock delay={200} className="mt-4 p-4 rounded-2xl border border-accent/15 bg-accent/4">
-                  <p className="text-base text-muted">
-                    🛠️ {t('program.test_tool_note', 'Dùng Công cụ Bài Test Tiến Bộ để lưu kết quả và so sánh qua các mốc tự động.')}
+                <RevealBlock delay={200} className="mt-4 p-4 rounded-2xl border border-accent/15 bg-accent/4 flex items-center justify-between gap-4 flex-wrap">
+                  <p className="text-base text-muted flex-1">
+                    💾 Kết quả được tự động lưu vào trình duyệt. Nhấn vào ô để nhập — chỉ số <strong className="text-accent">Linh Hoạt</strong> click để chuyển đổi Có/Không.
                   </p>
+                  <button
+                    onClick={() => {
+                      const ok = window.confirm('Xóa toàn bộ dữ liệu test đã lưu?');
+                      if (ok) { setProgressData({}); localStorage.removeItem(PROGRESS_KEY); }
+                    }}
+                    className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-xl border border-red-500/25 text-red-400/70 bg-red-500/5 hover:bg-red-500/10 transition-colors cursor-pointer"
+                  >
+                    🗑 Xóa dữ liệu
+                  </button>
                 </RevealBlock>
               </div>
             )}

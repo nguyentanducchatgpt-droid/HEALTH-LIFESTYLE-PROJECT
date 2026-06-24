@@ -1025,22 +1025,237 @@ const SUB_TABS_12W = [
   { id:'test',   label:'Bài Test', icon:'📈' },
 ];
 
-// ── PillarRow ────────────────────────────────────────────────────────────────
-function PillarRow({ id, text }) {
-  const p = PC[id];
+// ── Pillar Assets for Phase Modal ────────────────────────────────────────────
+const PILLAR_ASSETS = {
+  A: {
+    img: 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800&q=80',
+    points: [
+      { icon: '🏋️', label: 'Form trước volume', note: 'Kỹ thuật đúng từ đầu = an toàn lâu dài' },
+      { icon: '⏱️', label: '20–25 phút đủ', note: 'Thời gian không phải yếu tố quyết định' },
+      { icon: '🔄', label: 'Khởi động bắt buộc', note: '5 phút warm-up giảm 80% chấn thương' },
+      { icon: '📝', label: 'Workout Log', note: 'Ghi lại buổi tập = thấy tiến bộ rõ ràng' },
+    ],
+  },
+  B: {
+    img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+    points: [
+      { icon: '🍽️', label: 'Đĩa ăn chuẩn', note: '½ rau · ¼ đạm · ¼ tinh bột mỗi bữa' },
+      { icon: '💧', label: 'Uống đủ nước', note: '1.8–2L/ngày = chuyển hóa tốt hơn rõ rệt' },
+      { icon: '🥩', label: 'Đạm mỗi bữa', note: '1 lòng bàn tay đạm = đủ no + giữ cơ' },
+      { icon: '🚫', label: 'Giảm đồ ngọt', note: 'Không cần cắt hoàn toàn — giảm dần là đủ' },
+    ],
+  },
+  C: {
+    img: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+    points: [
+      { icon: '🌙', label: 'Ngủ trước 23h', note: 'Giấc ngủ = thuốc phục hồi hiệu quả nhất' },
+      { icon: '📵', label: 'Không phone', note: '30\' trước ngủ = melatonin tăng tự nhiên' },
+      { icon: '👟', label: '7.500 bước/ngày', note: 'NEAT thấp làm giảm TDEE đáng kể' },
+      { icon: '☀️', label: 'Ánh nắng sáng', note: 'Reset đồng hồ sinh học mỗi sáng' },
+    ],
+  },
+  D: {
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    points: [
+      { icon: '🌬️', label: '3 hơi thở sâu', note: 'Kích hoạt hệ thần kinh phó giao cảm' },
+      { icon: '📖', label: 'Nhật ký 3 dòng', note: 'Clarify tư duy + build gratitude mỗi tối' },
+      { icon: '📦', label: 'Box breathing', note: '4-4-4-4 = giảm cortisol tức thì' },
+      { icon: '🧠', label: 'Awareness đầu tiên', note: 'Nhận ra trạng thái = bước đầu kiểm soát' },
+    ],
+  },
+  F: {
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80',
+    points: [
+      { icon: '✅', label: 'Daily Checklist', note: 'Habit tracker trực quan mỗi ngày' },
+      { icon: '📊', label: 'Workout Log', note: 'Data → pattern → cải thiện có hướng' },
+      { icon: '🔬', label: 'Baseline Test', note: 'Điểm xuất phát = tiêu chuẩn so sánh' },
+      { icon: '🔄', label: 'Weekly Review', note: '10 phút review = 10x hiệu quả tuần sau' },
+    ],
+  },
+};
+
+// ── PillarPhaseModal ──────────────────────────────────────────────────────────
+function PillarPhaseModal({ pillarId, text, phase, onClose }) {
+  const p = PC[pillarId];
+  const assets = PILLAR_ASSETS[pillarId];
+  const details = text.split(' · ');
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
   return (
-    <div className="flex items-start gap-3 p-3 rounded-xl" style={{ background: p.bg, border: `1px solid ${p.br}` }}>
-      <span className="text-lg shrink-0 mt-0.5">{p.icon}</span>
-      <div className="min-w-0">
-        <span className="text-[10px] font-bold uppercase tracking-widest block mb-0.5" style={{ color: p.c }}>{p.l}</span>
-        <p className="text-base text-muted leading-relaxed">{text}</p>
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${phase.rgb},0.28)`, boxShadow: `0 0 80px rgba(${phase.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-44 rounded-t-3xl overflow-hidden">
+          <img src={assets.img} alt={p.l} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${phase.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${p.c}, transparent)` }} />
+          <div className="absolute bottom-4 left-5 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${phase.rgb},0.18)`, border: `2px solid rgba(${phase.rgb},0.4)` }}>
+              {p.icon}
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: p.c }}>{p.l} · {phase.weeks}</p>
+              <h2 className="font-bold text-white text-lg leading-tight">{phase.name}</h2>
+            </div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-5 md:p-7">
+          <p className="text-sm font-semibold mb-5 leading-relaxed" style={{ color: `rgba(${phase.rgb},0.75)` }}>
+            Nội dung trọng tâm của trụ cột <strong style={{ color: p.c }}>{p.l}</strong> trong giai đoạn {phase.weeks}:
+          </p>
+          <ul className="space-y-2.5 mb-6">
+            {details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${phase.rgb},0.14)`, color: p.c }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-2.5">
+            {assets.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                style={{ background: `rgba(${phase.rgb},0.06)`, border: `1px solid rgba(${phase.rgb},0.14)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
       </div>
     </div>
   );
 }
 
+// ── PhaseItemModal (KPI + Milestone) ─────────────────────────────────────────
+const KPI_POINTS = [
+  { icon: '📊', label: 'Cách đo lường', note: 'Dùng Workout Log hoặc Checklist hàng ngày' },
+  { icon: '📅', label: 'Tần suất kiểm tra', note: 'Cuối mỗi tuần — không kiểm tra từng ngày' },
+  { icon: '💪', label: 'Khi chưa đạt', note: 'Ghi chú nguyên nhân → điều chỉnh plan' },
+  { icon: '🎯', label: 'Mục đích thật sự', note: 'Xây thói quen — không chỉ đạt con số' },
+];
+const MILESTONE_POINTS = [
+  { icon: '🏆', label: 'Ý nghĩa thật', note: 'Vượt qua giai đoạn khó nhất — tiếp tục thôi' },
+  { icon: '📖', label: 'Ghi vào nhật ký', note: 'Document lại ngày đạt — để nhìn lại sau' },
+  { icon: '🔜', label: 'Bước tiếp theo', note: 'Cột mốc tiếp theo đang chờ — giữ đà' },
+  { icon: '👥', label: 'Chia sẻ với ai đó', note: 'Accountability tăng 65% tỷ lệ tiếp tục' },
+];
+
+function PhaseItemModal({ text, phase, type, onClose }) {
+  const isKpi = type === 'kpi';
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+  const details = isKpi ? [
+    `Chỉ số này đo lường thực tế qua từng tuần — không phải cảm giác mà là con số bạn có thể kiểm tra trong giai đoạn ${phase.weeks}.`,
+    'Đạt được chỉ số này là tín hiệu rõ ràng cho thấy nền tảng đang được xây đúng hướng và thói quen đang hình thành bền vững.',
+    'Nếu chưa đạt — không sao. Ghi lại nguyên nhân và điều chỉnh cách tiếp cận, không phải hạ thấp mục tiêu.',
+  ] : [
+    `Cột mốc này đánh dấu bước tiến thực sự trong giai đoạn ${phase.weeks} — không phải về con số mà về sự nhất quán đã hình thành.`,
+    'Khi đạt được cột mốc này, bạn đang xây dựng được nền móng vững chắc — tinh thần và thể chất đều đang đi đúng hướng.',
+    'Ghi lại ngày bạn đạt cột mốc này. Đây sẽ là điểm tham chiếu để nhìn lại sau 3–6 tháng nữa với sự tự hào thực sự.',
+  ];
+  const img = isKpi
+    ? 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
+    : 'https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?w=800&q=80';
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${phase.rgb},0.28)`, boxShadow: `0 0 80px rgba(${phase.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        <div className="relative h-36 rounded-t-3xl overflow-hidden">
+          <img src={img} alt={type} className="w-full h-full object-cover" style={{ opacity: 0.45 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${phase.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${phase.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-5 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
+              style={{ background: `rgba(${phase.rgb},0.18)`, border: `2px solid rgba(${phase.rgb},0.4)` }}>
+              {isKpi ? '📊' : '🏆'}
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: phase.color }}>
+                {isKpi ? 'Chỉ Số Mục Tiêu' : 'Cột Mốc Giai Đoạn'} · {phase.weeks}
+              </p>
+              <h2 className="font-bold text-white text-sm leading-snug max-w-xs">{text}</h2>
+            </div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        <div className="p-5 md:p-7">
+          <ul className="space-y-2.5 mb-6">
+            {details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${phase.rgb},0.14)`, color: phase.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-2.5">
+            {(isKpi ? KPI_POINTS : MILESTONE_POINTS).map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                style={{ background: `rgba(${phase.rgb},0.06)`, border: `1px solid rgba(${phase.rgb},0.14)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── PillarRow ────────────────────────────────────────────────────────────────
+function PillarRow({ id, text, onClick }) {
+  const p = PC[id];
+  return (
+    <div
+      className="flex items-start gap-3 p-3 rounded-xl cursor-pointer group transition-all duration-200 hover:-translate-y-0.5"
+      style={{ background: p.bg, border: `1px solid ${p.br}` }}
+      onClick={onClick}
+      onMouseEnter={e => e.currentTarget.style.borderColor = p.c + '55'}
+      onMouseLeave={e => e.currentTarget.style.borderColor = p.br}
+    >
+      <span className="text-lg shrink-0 mt-0.5">{p.icon}</span>
+      <div className="min-w-0 flex-1">
+        <span className="text-[10px] font-bold uppercase tracking-widest block mb-0.5" style={{ color: p.c }}>{p.l}</span>
+        <p className="text-sm text-muted leading-relaxed">{text}</p>
+      </div>
+      <span className="shrink-0 self-center text-[10px] font-bold px-2 py-1 rounded-lg opacity-50 group-hover:opacity-100 transition-opacity"
+        style={{ color: p.c, background: p.bg, border: `1px solid ${p.br}` }}>→</span>
+    </div>
+  );
+}
+
 // ── PhaseCard ────────────────────────────────────────────────────────────────
-function PhaseCard({ phase, idx, expanded, onToggle }) {
+function PhaseCard({ phase, idx, expanded, onToggle, onPillarClick, onKpiClick, onMilestoneClick }) {
   const { t } = useTranslation();
   const isEven = idx % 2 === 0;
   return (
@@ -1095,7 +1310,9 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
               <div>
                 <h4 className="text-base font-bold uppercase tracking-widest text-muted mb-3">{t('program.pillar_section_header', 'Nội Dung Theo Trụ Cột')}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {Object.entries(phase.pillars).map(([k,v]) => <PillarRow key={k} id={k} text={v} />)}
+                  {Object.entries(phase.pillars).map(([k,v]) => (
+                    <PillarRow key={k} id={k} text={v} onClick={() => onPillarClick({ pillarId: k, text: v, phase })} />
+                  ))}
                 </div>
               </div>
               {/* KPIs */}
@@ -1103,9 +1320,12 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
                 <h4 className="text-base font-bold uppercase tracking-widest text-muted mb-3">{t('program.kpi_section_header', 'Chỉ Số Mục Tiêu')}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                   {phase.kpis.map((kpi, i) => (
-                    <div key={i} className="flex items-start gap-2 text-base text-muted">
-                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: phase.color }} />
-                      <span>{kpi}</span>
+                    <div key={i}
+                      className="flex items-start gap-2 text-sm text-muted cursor-pointer group rounded-lg px-2 py-1 transition-colors hover:bg-white/5"
+                      onClick={() => onKpiClick({ text: kpi, phase })}>
+                      <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 transition-transform group-hover:scale-125" style={{ background: phase.color }} />
+                      <span className="flex-1 group-hover:text-text/80 transition-colors">{kpi}</span>
+                      <span className="shrink-0 text-[10px] font-bold opacity-0 group-hover:opacity-50 transition-opacity" style={{ color: phase.color }}>→</span>
                     </div>
                   ))}
                 </div>
@@ -1115,9 +1335,12 @@ function PhaseCard({ phase, idx, expanded, onToggle }) {
                 <h4 className="text-base font-bold uppercase tracking-widest text-muted mb-3">{t('program.milestone_header', 'Cột Mốc Giai Đoạn')}</h4>
                 <div className="flex flex-wrap gap-2">
                   {phase.milestones.map((m, i) => (
-                    <span key={i} className="text-base px-3 py-1.5 rounded-full border font-medium" style={{ color: phase.color, borderColor: `rgba(${phase.rgb},0.3)`, background: `rgba(${phase.rgb},0.08)` }}>
+                    <button key={i}
+                      className="text-sm px-3 py-1.5 rounded-full border font-medium cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                      style={{ color: phase.color, borderColor: `rgba(${phase.rgb},0.3)`, background: `rgba(${phase.rgb},0.08)` }}
+                      onClick={() => onMilestoneClick({ text: m, phase })}>
                       ✓ {m}
-                    </span>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -1144,6 +1367,8 @@ export default function Program() {
   const [activeChecklistItem, setActiveChecklistItem] = useState(null);
   const [activeJourneyInfo, setActiveJourneyInfo] = useState(null);
   const [activeQuickLink, setActiveQuickLink] = useState(null);
+  const [activePillarRow, setActivePillarRow] = useState(null);
+  const [activePhaseItem, setActivePhaseItem] = useState(null);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -1531,7 +1756,11 @@ export default function Program() {
                 <div className="relative">
                   <div className="absolute left-6 top-6 bottom-6 w-px" style={{ background: journey==='12w' ? 'linear-gradient(to bottom, #22c55e, #84cc16, #a855f7)' : 'linear-gradient(to bottom, #22c55e, #84cc16, #a855f7, #f97316, #3b82f6, #a855f7)' }} />
                   {phases12.map((phase,i) => (
-                    <PhaseCard key={phase.id} phase={phase} idx={i} expanded={expandedPhase===i} onToggle={() => setExpandedPhase(expandedPhase===i ? -1 : i)} />
+                    <PhaseCard key={phase.id} phase={phase} idx={i} expanded={expandedPhase===i} onToggle={() => setExpandedPhase(expandedPhase===i ? -1 : i)}
+                      onPillarClick={setActivePillarRow}
+                      onKpiClick={d => setActivePhaseItem({ ...d, type: 'kpi' })}
+                      onMilestoneClick={d => setActivePhaseItem({ ...d, type: 'milestone' })}
+                    />
                   ))}
                 </div>
 
@@ -2053,6 +2282,22 @@ export default function Program() {
     )}
     {activeQuickLink && (
       <QuickLinkModal ql={activeQuickLink} onClose={() => setActiveQuickLink(null)} />
+    )}
+    {activePillarRow && (
+      <PillarPhaseModal
+        pillarId={activePillarRow.pillarId}
+        text={activePillarRow.text}
+        phase={activePillarRow.phase}
+        onClose={() => setActivePillarRow(null)}
+      />
+    )}
+    {activePhaseItem && (
+      <PhaseItemModal
+        text={activePhaseItem.text}
+        phase={activePhaseItem.phase}
+        type={activePhaseItem.type}
+        onClose={() => setActivePhaseItem(null)}
+      />
     )}
   </>
   );

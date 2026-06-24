@@ -1345,14 +1345,166 @@ const SUCCESS_TIPS = [
 ];
 
 const PROGRESS_ROWS = [
-  { metric:'Sức Bền Tim Mạch',   test:'Đi bộ nhanh 6 phút',            unit:'m'         },
-  { metric:'Sức Mạnh Thân Trên', test:'Push-up tối đa liên tiếp',       unit:'lần'       },
-  { metric:'Sức Mạnh Hạ Chi',    test:'Đứng lên ngồi xuống 1 phút',    unit:'lần'       },
-  { metric:'Linh Hoạt',          test:'Cúi chạm ngón chân',             unit:'Không/Có'  },
-  { metric:'Cân Nặng',           test:'Cân buổi sáng chưa ăn',          unit:'kg'        },
-  { metric:'Vòng Eo',            test:'Đo sau thở ra tự nhiên',         unit:'cm'        },
-  { metric:'Nhịp Tim Lúc Nghỉ',  test:'Sau nằm yên 5 phút',            unit:'bpm'       },
-  { metric:'Chất Lượng Ngủ',     test:'Tự đánh giá 1–10',              unit:'điểm'      },
+  { metric:'Sức Bền Tim Mạch', test:'Đi bộ nhanh 6 phút', unit:'m',
+    icon:'❤️', color:'#22c55e', rgb:'34,197,94',
+    img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    name:'Sức Bền Tim Mạch', time:'BÀI TEST',
+    details:[
+      'Bài test đi bộ nhanh 6 phút (6MWT) là tiêu chuẩn y tế quốc tế để đánh giá sức bền tim mạch — được dùng trong lâm sàng và nghiên cứu thể thao. Đơn giản, không cần thiết bị, chính xác.',
+      'Cách thực hiện: tìm đường thẳng hoặc vỉa hè bằng phẳng, đi nhanh nhất có thể trong đúng 6 phút (không chạy), đo tổng quãng đường. Mặc quần áo thoải mái, giày đế bằng.',
+      'Mục tiêu cải thiện: người mới tập thường tăng 50–150m sau 4 tuần nhất quán. Tuần 12: tăng 150–300m là kết quả tốt. Người trẻ bình thường: 500–700m/6 phút.',
+    ],
+    points:[
+      { icon:'📏', label:'Đo quãng đường', note:'Càng xa trong 6 phút = tim mạch tốt hơn' },
+      { icon:'🚶', label:'Đi nhanh nhất có thể', note:'Không chạy — đi nhanh tối đa' },
+      { icon:'📈', label:'+50–150m sau 4 tuần', note:'Mục tiêu cải thiện thực tế' },
+      { icon:'⏰', label:'Test sáng sớm', note:'Sau khi thức dậy, trước ăn sáng' },
+    ],
+    links:[
+      { icon:'🔬', label:'Progress Test Tool', to:'/pillar/f/progress-test' },
+      { icon:'🏃', label:'Khung Ngày Tập', to:'/pillar/a/framework' },
+    ],
+  },
+  { metric:'Sức Mạnh Thân Trên', test:'Push-up tối đa liên tiếp', unit:'lần',
+    icon:'💪', color:'#84cc16', rgb:'132,204,22',
+    img:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80',
+    name:'Sức Mạnh Thân Trên', time:'BÀI TEST',
+    details:[
+      'Push-up tối đa liên tiếp (không dừng) là test sức mạnh thân trên đơn giản và đáng tin cậy nhất. Đo sức mạnh cơ ngực, vai, tam đầu và khả năng stabilize lõi cùng lúc.',
+      'Cách thực hiện: tư thế push-up chuẩn (lưng thẳng, lõi cứng), thực hiện liên tiếp không nghỉ đến khi không thể thêm 1 rep hoàn chỉnh nữa. Không tính rep có lưng cong hoặc hông chảy.',
+      'Chuẩn tham chiếu: nam 30 tuổi ≥25 rep = tốt, ≥35 = rất tốt. Nữ 30 tuổi ≥15 rep = tốt, ≥25 = rất tốt. Người mới thường tăng 5–15 rep sau 8 tuần tập đúng.',
+    ],
+    points:[
+      { icon:'📐', label:'Form hoàn chỉnh bắt buộc', note:'Không đếm rep sai tư thế' },
+      { icon:'💪', label:'Ngực · vai · tam đầu', note:'3 nhóm cơ thân trên đo cùng lúc' },
+      { icon:'🔢', label:'Nam ≥25 · Nữ ≥15 = tốt', note:'Chuẩn tham chiếu tuổi 30' },
+      { icon:'📈', label:'+5–15 rep/8 tuần', note:'Mục tiêu cải thiện thực tế' },
+    ],
+    links:[
+      { icon:'🏃', label:'6 Mẫu Vận Động', to:'/pillar/a/movements' },
+      { icon:'🔬', label:'Progress Test Tool', to:'/pillar/f/progress-test' },
+    ],
+  },
+  { metric:'Sức Mạnh Hạ Chi', test:'Đứng lên ngồi xuống 1 phút', unit:'lần',
+    icon:'🦵', color:'#22c55e', rgb:'34,197,94',
+    img:'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800&q=80',
+    name:'Sức Mạnh Hạ Chi', time:'BÀI TEST',
+    details:[
+      'Bài test đứng lên ngồi xuống 1 phút (Chair Stand Test) đo sức mạnh đùi, mông và khả năng phối hợp thần kinh cơ hạ chi. Đây là chỉ số dự đoán nguy cơ té ngã và chất lượng cuộc sống dài hạn.',
+      'Cách thực hiện: ngồi trên ghế không có tay vịn (cao 43–46cm), tay khoanh trước ngực, đứng lên ngồi xuống hoàn toàn càng nhiều lần càng tốt trong đúng 1 phút.',
+      'Chuẩn tham chiếu: nam 30 tuổi ≥23 lần = tốt. Nữ 30 tuổi ≥21 lần = tốt. Người mới tập thường tăng 5–10 lần/phút sau 8 tuần. Dưới 14 lần/phút là ngưỡng cảnh báo sức khỏe.',
+    ],
+    points:[
+      { icon:'🪑', label:'Ghế không tay vịn', note:'Cao 43–46cm là chuẩn' },
+      { icon:'🦵', label:'Đùi + mông + balance', note:'3 yếu tố hạ chi được đo cùng lúc' },
+      { icon:'📊', label:'Nam ≥23 · Nữ ≥21/phút', note:'Chuẩn tham chiếu tuổi 30' },
+      { icon:'⚠️', label:'<14 lần/phút = cảnh báo', note:'Nguy cơ té ngã và chấn thương cao' },
+    ],
+    links:[
+      { icon:'🏃', label:'6 Mẫu Vận Động', to:'/pillar/a/movements' },
+      { icon:'🔬', label:'Progress Test Tool', to:'/pillar/f/progress-test' },
+    ],
+  },
+  { metric:'Linh Hoạt', test:'Cúi chạm ngón chân', unit:'Không/Có',
+    icon:'🤸', color:'#14b8a6', rgb:'20,184,166',
+    img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+    name:'Linh Hoạt', time:'BÀI TEST',
+    details:[
+      'Sit-and-Reach Test (cúi với ngón tay chạm đất khi duỗi thẳng chân) đo độ linh hoạt cơ đùi sau (hamstring) và lưng dưới — hai vùng cứng nhất ở người ngồi nhiều, liên quan trực tiếp đến đau lưng.',
+      'Cách thực hiện: ngồi trên sàn, chân duỗi thẳng, từ từ cúi người ra trước trong 3 giây, đến điểm tối đa mà không cong gối. Kết quả: Có = tay chạm hoặc vượt qua ngón chân. Không = tay dừng trước ngón chân.',
+      'Từ "Không" → "Có" thường mất 4–8 tuần giãn tĩnh đều đặn (30 giây × 2 lần/buổi tập). Đây là một trong những cải thiện có thể thấy sớm nhất — động lực tốt cho người mới.',
+    ],
+    points:[
+      { icon:'🦵', label:'Hamstring + lưng dưới', note:'Hai vùng cứng nhất ở người ngồi nhiều' },
+      { icon:'🐢', label:'Cúi chậm 3 giây', note:'Không nảy — giãn tĩnh mới có tác dụng' },
+      { icon:'📅', label:'4–8 tuần → thấy kết quả', note:'Một trong những cải thiện nhanh nhất' },
+      { icon:'💺', label:'Liên quan đau lưng', note:'Hamstring cứng → kéo chậu trước → đau lưng' },
+    ],
+    links:[
+      { icon:'🌿', label:'Phục Hồi Tích Cực', to:'/pillar/c/recovery' },
+      { icon:'🔬', label:'Progress Test Tool', to:'/pillar/f/progress-test' },
+    ],
+  },
+  { metric:'Cân Nặng', test:'Cân buổi sáng chưa ăn', unit:'kg',
+    icon:'⚖️', color:'#84cc16', rgb:'132,204,22',
+    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    name:'Cân Nặng', time:'BÀI TEST',
+    details:[
+      'Cân sáng sớm (sau khi đi vệ sinh, trước khi ăn uống) là thời điểm chính xác nhất và nhất quán nhất để theo dõi cân nặng. Có thể dao động 1–2.5kg trong ngày tùy nước, thức ăn.',
+      'Đừng bị ám ảnh bởi số cân hàng ngày — cân trọng lượng dao động là bình thường. Theo dõi xu hướng 7–14 ngày: trung bình tuần này so với tuần trước mới có ý nghĩa.',
+      'Cân nặng chỉ là 1 trong 6 chỉ số — không phải chỉ số duy nhất. Người tập sức mạnh có thể cân nặng không giảm nhưng body composition (tỷ lệ cơ/mỡ) cải thiện rõ rệt. Kết hợp với vòng eo để có bức tranh đầy đủ hơn.',
+    ],
+    points:[
+      { icon:'⏰', label:'Sáng sớm nhất quán', note:'Sau WC, trước ăn — cùng điều kiện' },
+      { icon:'📊', label:'Xu hướng 7–14 ngày', note:'Trung bình tuần quan trọng hơn ngày' },
+      { icon:'⚖️', label:'Dao động ±1–2.5kg bình thường', note:'Nước + thức ăn trong đường tiêu hóa' },
+      { icon:'🔗', label:'Kết hợp với vòng eo', note:'2 chỉ số cùng nhau = bức tranh rõ hơn' },
+    ],
+    links:[
+      { icon:'🥗', label:'Dinh Dưỡng & TDEE', to:'/pillar/b' },
+      { icon:'🔬', label:'Progress Test Tool', to:'/pillar/f/progress-test' },
+    ],
+  },
+  { metric:'Vòng Eo', test:'Đo sau thở ra tự nhiên', unit:'cm',
+    icon:'📏', color:'#f97316', rgb:'249,115,22',
+    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    name:'Vòng Eo', time:'BÀI TEST',
+    details:[
+      'Vòng eo là chỉ số sức khỏe tim mạch và chuyển hóa quan trọng hơn cân nặng. Mỡ nội tạng (visceral fat) quanh eo liên quan trực tiếp đến tiểu đường type 2, bệnh tim và huyết áp cao.',
+      'Cách đo chuẩn: thở ra tự nhiên (không hút bụng, không phình bụng), đặt thước dây ngang rốn hoặc điểm giữa xương sườn thấp nhất và xương chậu, đọc số khi thở ra xong.',
+      'Ngưỡng nguy cơ: nam >90cm, nữ >80cm là ngưỡng cảnh báo WHO (châu Á). Mục tiêu giảm 1–2cm/tháng với tập luyện + ăn đúng là thực tế và bền vững.',
+    ],
+    points:[
+      { icon:'⚠️', label:'Nam >90 · Nữ >80cm', note:'Ngưỡng nguy cơ WHO cho châu Á' },
+      { icon:'🫁', label:'Thở ra tự nhiên khi đo', note:'Không hút bụng — đo thực chất' },
+      { icon:'📉', label:'Giảm 1–2cm/tháng', note:'Mục tiêu thực tế và bền vững' },
+      { icon:'❤️', label:'Tim mạch + chuyển hóa', note:'Mỡ nội tạng nguy hiểm hơn mỡ dưới da' },
+    ],
+    links:[
+      { icon:'🥗', label:'Dinh Dưỡng', to:'/pillar/b' },
+      { icon:'🔬', label:'Progress Test Tool', to:'/pillar/f/progress-test' },
+    ],
+  },
+  { metric:'Nhịp Tim Lúc Nghỉ', test:'Sau nằm yên 5 phút', unit:'bpm',
+    icon:'❤️', color:'#3b82f6', rgb:'59,130,246',
+    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    name:'Nhịp Tim Lúc Nghỉ', time:'BÀI TEST',
+    details:[
+      'Resting Heart Rate (RHR) là chỉ số sức khỏe tim mạch đơn giản và mạnh nhất. Tim hiệu quả hơn = bơm nhiều máu hơn mỗi nhịp = cần ít nhịp hơn để cung cấp oxy. RHR giảm = tim mạnh hơn.',
+      'Cách đo chuẩn: nằm yên tĩnh 5 phút (không nói chuyện, không nhìn điện thoại), dùng ngón trỏ và giữa đặt lên mạch cổ tay hoặc cổ, đếm trong 60 giây. Buổi sáng sớm khi vừa thức dậy là chính xác nhất.',
+      'Chuẩn tham chiếu: 60–80 bpm bình thường. <60 bpm = tim mạch tốt (VĐV thường 40–60). >100 bpm lúc nghỉ = tachycardia, cần kiểm tra. Người tập cardio đều đặn có thể giảm RHR 5–15 bpm sau 8–12 tuần.',
+    ],
+    points:[
+      { icon:'💓', label:'60–80 bpm bình thường', note:'<60 = tim khỏe · >100 = cần kiểm tra' },
+      { icon:'📉', label:'-5–15 bpm/8–12 tuần', note:'Kết quả từ cardio đều đặn' },
+      { icon:'⏰', label:'Sáng sớm chính xác nhất', note:'Sau thức dậy, trước uống cà phê' },
+      { icon:'📱', label:'Smartwatch tiện nhất', note:'Đo tự động liên tục khi ngủ' },
+    ],
+    links:[
+      { icon:'🌿', label:'Lối Sống', to:'/pillar/c' },
+      { icon:'🔬', label:'Progress Test Tool', to:'/pillar/f/progress-test' },
+    ],
+  },
+  { metric:'Chất Lượng Ngủ', test:'Tự đánh giá 1–10', unit:'điểm',
+    icon:'😴', color:'#a855f7', rgb:'168,85,247',
+    img:'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+    name:'Chất Lượng Ngủ', time:'BÀI TEST',
+    details:[
+      'Chất lượng ngủ tự đánh giá (1–10) là chỉ số chủ quan nhưng có giá trị: tương quan cao với hiệu suất tập luyện, cảm xúc và năng suất ngày hôm sau. Nghiên cứu cho thấy tự đánh giá chính xác hơn số giờ ngủ đơn thuần.',
+      'Thang đánh giá: 1–3 = ngủ rất kém (thức nhiều lần, mệt khi dậy), 4–6 = trung bình (thức 1–2 lần hoặc dậy không tươi), 7–8 = tốt (ngủ sâu, dậy tỉnh táo), 9–10 = xuất sắc (tràn đầy năng lượng khi thức dậy).',
+      'Mục tiêu: điểm trung bình 7+ liên tục 2 tuần. 3 yếu tố cải thiện nhanh nhất: giờ ngủ nhất quán (±15 phút), phòng mát và tối, không nhìn màn hình 30 phút trước ngủ.',
+    ],
+    points:[
+      { icon:'🎯', label:'Mục tiêu ≥7/10', note:'Trung bình 2 tuần liên tiếp' },
+      { icon:'⏰', label:'Giờ ngủ nhất quán', note:'±15 phút mỗi ngày = cải thiện nhanh nhất' },
+      { icon:'🌡️', label:'Phòng mát + tối', note:'18–20°C + blackout = ngủ sâu hơn' },
+      { icon:'📵', label:'No screen 30 phút trước', note:'Blue light ức chế melatonin' },
+    ],
+    links:[
+      { icon:'🌀', label:'Nhịp Sinh Học', to:'/pillar/c/circadian' },
+      { icon:'🔬', label:'Progress Test Tool', to:'/pillar/f/progress-test' },
+    ],
+  },
 ];
 
 // ── Journey config ───────────────────────────────────────────────────────────
@@ -2028,6 +2180,7 @@ export default function Program() {
   const [activeDailyBlock, setActiveDailyBlock] = useState(null);
   const [activeWeeklyItem, setActiveWeeklyItem] = useState(null);
   const [activeSuccessTip, setActiveSuccessTip] = useState(null);
+  const [activeProgressRow, setActiveProgressRow] = useState(null);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -2711,8 +2864,20 @@ export default function Program() {
                       </thead>
                       <tbody>
                         {PROGRESS_ROWS.map((row,i) => (
-                          <tr key={i} className="border-b border-border/50 hover:bg-purple-500/3 transition-colors duration-150 last:border-0">
-                            <td className="px-5 py-3 font-semibold text-text text-lg">{row.metric}</td>
+                          <tr key={i}
+                            className="border-b border-border/50 transition-colors duration-150 last:border-0 cursor-pointer group/row"
+                            style={{}}
+                            onMouseEnter={e => { e.currentTarget.style.background = `rgba(${row.rgb},0.05)`; }}
+                            onMouseLeave={e => { e.currentTarget.style.background = ''; }}
+                            onClick={() => setActiveProgressRow(row)}
+                          >
+                            <td className="px-5 py-3 font-semibold text-text text-lg">
+                              <span className="flex items-center gap-2">
+                                <span className="text-xl shrink-0">{row.icon}</span>
+                                <span className="group-hover/row:underline decoration-dotted" style={{ textDecorationColor: row.color }}>{row.metric}</span>
+                                <span className="text-[10px] font-bold opacity-0 group-hover/row:opacity-60 transition-opacity" style={{ color: row.color }}>→</span>
+                              </span>
+                            </td>
                             <td className="px-5 py-3 text-muted text-base leading-relaxed">{row.test}</td>
                             <td className="px-4 py-3 text-center"><span className="inline-block text-base font-semibold text-teal-400 bg-teal-500/8 border border-teal-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
                             <td className="px-4 py-3 text-center"><span className="inline-block text-base font-semibold text-accent bg-accent/8 border border-accent/20 px-2.5 py-1 rounded-full whitespace-nowrap">___ {row.unit}</span></td>
@@ -3000,6 +3165,9 @@ export default function Program() {
     )}
     {activeSuccessTip && (
       <DailyBlockModal block={{ ...activeSuccessTip, name: activeSuccessTip.title, time: 'BÍ QUYẾT' }} onClose={() => setActiveSuccessTip(null)} />
+    )}
+    {activeProgressRow && (
+      <DailyBlockModal block={activeProgressRow} onClose={() => setActiveProgressRow(null)} />
     )}
   </>
   );

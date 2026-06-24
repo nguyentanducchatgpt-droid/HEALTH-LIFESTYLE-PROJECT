@@ -1228,12 +1228,120 @@ const ADJUST_TIPS_DATA = [
 ];
 
 const SUCCESS_TIPS = [
-  { icon:'🔁', title:'Nhất Quán Hơn Cường Độ',     desc:'3–5 buổi/tuần đều đặn quan trọng hơn 1 buổi kiệt sức. 20 phút mỗi ngày thắng 2 giờ mỗi tháng.' },
-  { icon:'📈', title:'Tăng Tải Từ Từ',              desc:'Tăng không quá 10% volume/tuần. Quy tắc này ngăn chấn thương và burnout về lâu dài.' },
-  { icon:'😴', title:'Ngủ Là Thuốc Phục Hồi',       desc:'7–9h mỗi đêm. Cơ lớn lúc ngủ, không phải lúc tập. Thiếu ngủ giảm hiệu suất 20–30%.' },
-  { icon:'🥗', title:'Đạm Đủ Mỗi Ngày',             desc:'1.6–2g protein/kg cân nặng. Ưu tiên thực phẩm nguyên chất: trứng, thịt nạc, đậu hũ, sữa chua Hy Lạp.' },
-  { icon:'📓', title:'Ghi Nhật Ký Tập',              desc:'5 phút/buổi: ghi số set, số lần, cảm giác. Nhật ký cho bạn thấy tiến bộ mà mắt thường không thấy.' },
-  { icon:'🧠', title:'Kiên Nhẫn Với Kết Quả',       desc:'Kết quả thực sự đến sau 4–8 tuần nhất quán. Những tuần đầu là não đang học — không phải lười biếng.' },
+  { icon:'🔁', title:'Nhất Quán Hơn Cường Độ', desc:'3–5 buổi/tuần đều đặn quan trọng hơn 1 buổi kiệt sức. 20 phút mỗi ngày thắng 2 giờ mỗi tháng.',
+    color:'#22c55e', rgb:'34,197,94',
+    img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    details:[
+      'Nhất quán tạo ra thói quen thần kinh (neural habit loop): não bộ ngừng cần ý chí sau 21–66 ngày lặp lại — tập trở thành tự động như đánh răng. Cường độ cao không tạo được điều này.',
+      'Nghiên cứu từ James Clear (Atomic Habits): người tập 3 buổi × 20 phút/tuần liên tục 1 năm đạt kết quả vượt trội so với người tập 5 buổi × 60 phút nhưng bỏ sau 3 tháng.',
+      'Quy tắc "không bao giờ bỏ 2 lần liên tiếp": 1 buổi bỏ = ổn, 2 buổi liên tiếp = bắt đầu mất thói quen, 3 buổi = phải xây lại từ đầu. Bảo vệ chuỗi quan trọng hơn hoàn hảo.',
+    ],
+    points:[
+      { icon:'🧠', label:'Habit loop thần kinh', note:'21–66 ngày = tập trở thành tự động' },
+      { icon:'⏱️', label:'20 phút đủ', note:'Nhất quán > thời lượng trong giai đoạn đầu' },
+      { icon:'🔗', label:'Không bỏ 2 liên tiếp', note:'Rule đơn giản nhất để duy trì' },
+      { icon:'📅', label:'3 buổi/tuần tối thiểu', note:'Đủ kích thích thích nghi cơ thể' },
+    ],
+    links:[
+      { icon:'📅', label:'Nhịp Tuần', to:'/pillar/a/weekly' },
+      { icon:'✅', label:'Daily Checklist', to:'/pillar/f/checklist' },
+    ],
+  },
+  { icon:'📈', title:'Tăng Tải Từ Từ', desc:'Tăng không quá 10% volume/tuần. Quy tắc này ngăn chấn thương và burnout về lâu dài.',
+    color:'#84cc16', rgb:'132,204,22',
+    img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+    details:[
+      '"10% rule" là nguyên tắc vàng của progressive overload: tăng tổng volume (sets × reps × tạ) không quá 10% mỗi tuần. Vượt ngưỡng này, nguy cơ chấn thương tăng gấp đôi theo nghiên cứu thể thao.',
+      'Ví dụ thực tế: tuần này tập 100 "đơn vị" (10 set × 10 reps) → tuần sau tối đa 110. Không tăng tạ + reps + sets cùng lúc — chỉ thay đổi 1 biến mỗi lần.',
+      'Deload 1 tuần mỗi tháng (giảm 40% volume): không phải "tập nhẹ" — đây là khi cơ thể supercompensate (phục hồi vượt mức), mạnh hơn trước. Bỏ deload = mất 15–20% kết quả dài hạn.',
+    ],
+    points:[
+      { icon:'📊', label:'Volume = sets×reps×tạ', note:'Đo tổng tuần, không chỉ từng buổi' },
+      { icon:'🛑', label:'+10% tối đa/tuần', note:'Vượt ngưỡng = chấn thương gần hơn' },
+      { icon:'🔄', label:'Deload 1 tuần/tháng', note:'Supercompensation = mạnh hơn sau nghỉ' },
+      { icon:'📝', label:'1 biến/lần', note:'Tạ HOẶC reps HOẶC sets — không cả ba' },
+    ],
+    links:[
+      { icon:'📊', label:'Workout Log', to:'/pillar/f/workout-log' },
+      { icon:'📈', label:'Theo Dõi Tiến Bộ', to:'/pillar/a/progress' },
+    ],
+  },
+  { icon:'😴', title:'Ngủ Là Thuốc Phục Hồi', desc:'7–9h mỗi đêm. Cơ lớn lúc ngủ, không phải lúc tập. Thiếu ngủ giảm hiệu suất 20–30%.',
+    color:'#a855f7', rgb:'168,85,247',
+    img:'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+    details:[
+      'Growth Hormone (GH) — hormone xây cơ và đốt mỡ chính — tiết ra 70% trong giấc ngủ sâu (slow-wave sleep). Không có ngủ sâu = không có GH = tập gym không có kết quả.',
+      'Thiếu ngủ 6h (thay vì 8h) chỉ trong 1 tuần: sức mạnh tối đa giảm 20%, testosterone giảm 10–15%, cortisol tăng 37%, khả năng học kỹ năng vận động giảm 40%.',
+      'Tối ưu ngủ không phải chỉ là số giờ: chất lượng quan trọng hơn. Phòng mát 18–20°C, tối hoàn toàn (blackout curtain), không điện thoại 30 phút trước. Giờ ngủ nhất quán = circadian rhythm ổn định.',
+    ],
+    points:[
+      { icon:'💪', label:'GH tiết ra 70% khi ngủ', note:'Hormone xây cơ — không thể thay thế' },
+      { icon:'🌡️', label:'Phòng mát 18–20°C', note:'Nhiệt độ ảnh hưởng ngủ sâu' },
+      { icon:'📵', label:'Không phone 30 phút trước', note:'Blue light ức chế melatonin' },
+      { icon:'⏰', label:'Giờ ngủ nhất quán', note:'±15 phút mỗi ngày = circadian ổn' },
+    ],
+    links:[
+      { icon:'🌿', label:'Lối Sống & Ngủ', to:'/pillar/c' },
+      { icon:'🌀', label:'Nhịp Sinh Học', to:'/pillar/c/circadian' },
+    ],
+  },
+  { icon:'🥗', title:'Đạm Đủ Mỗi Ngày', desc:'1.6–2g protein/kg cân nặng. Ưu tiên thực phẩm nguyên chất: trứng, thịt nạc, đậu hũ, sữa chua Hy Lạp.',
+    color:'#84cc16', rgb:'132,204,22',
+    img:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+    details:[
+      'Protein là nguyên liệu duy nhất xây cơ — không có protein đủ, dù tập bao nhiêu cũng không có kết quả. 1.6–2g/kg là dải khuyến nghị từ meta-analysis 49 nghiên cứu (Morton 2018).',
+      'Phân bổ đều quan trọng hơn tổng: 4–5 bữa × 20–40g protein/bữa kích thích protein synthesis nhiều hơn 2 bữa × 80g dù cùng tổng lượng. Bữa sáng ≥20g đặc biệt quan trọng.',
+      'Nguồn đạm tốt nhất trong ẩm thực Việt: trứng (6g/quả), ức gà (31g/100g), đậu hũ cứng (8–12g/100g), sữa chua Hy Lạp (10g/100g), đậu lăng (9g/100g nấu chín).',
+    ],
+    points:[
+      { icon:'🧮', label:'1.6–2g/kg cân nặng', note:'Ví dụ 65kg → 104–130g đạm/ngày' },
+      { icon:'⏰', label:'Phân bổ 4–5 bữa', note:'20–40g/bữa > 1–2 bữa lớn' },
+      { icon:'🍳', label:'Bữa sáng ≥20g', note:'Protein sáng = MPS cao cả ngày' },
+      { icon:'🇻🇳', label:'Nguồn Việt Nam', note:'Trứng · ức gà · đậu hũ cứng' },
+    ],
+    links:[
+      { icon:'🥗', label:'Dinh Dưỡng', to:'/pillar/b' },
+      { icon:'🍱', label:'Thực Đơn 7 Ngày', to:'/pillar/b/7day' },
+    ],
+  },
+  { icon:'📓', title:'Ghi Nhật Ký Tập', desc:'5 phút/buổi: ghi số set, số lần, cảm giác. Nhật ký cho bạn thấy tiến bộ mà mắt thường không thấy.',
+    color:'#f97316', rgb:'249,115,22',
+    img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+    details:[
+      'Nhật ký tập là "bản đồ tiến bộ" — không có nó, bạn đang lái xe mà không có GPS. Người ghi nhật ký đạt mục tiêu thể chất nhanh hơn 42% so với người không ghi (nghiên cứu AJPH 2012).',
+      'Tối thiểu cần ghi: bài tập · tạ · set/reps · RPE (1–10) · cảm giác chung. 5 phút ngay sau tập khi còn nhớ — không để đến hôm sau. Dùng app (Strong, Hevy) hoặc sổ tay đều được.',
+      'Cách dùng nhật ký: review 4 tuần/lần. RPE liên tục 7–8 → có thể tăng tải. RPE liên tục 9–10 → cần giảm volume hoặc deload. Stagnation (không tiến) → đổi rep range hoặc bài tập.',
+    ],
+    points:[
+      { icon:'🎯', label:'42% nhanh hơn đạt mục tiêu', note:'Người ghi nhật ký vs không ghi' },
+      { icon:'📱', label:'App hoặc sổ tay', note:'Strong · Hevy · sổ tay — không quan trọng' },
+      { icon:'⏱️', label:'5 phút ngay sau tập', note:'Khi còn nhớ — không để hôm sau' },
+      { icon:'🔍', label:'Review 4 tuần/lần', note:'Tìm pattern để điều chỉnh thông minh' },
+    ],
+    links:[
+      { icon:'📊', label:'Workout Log', to:'/pillar/f/workout-log' },
+      { icon:'🔬', label:'Progress Test', to:'/pillar/f/progress-test' },
+    ],
+  },
+  { icon:'🧠', title:'Kiên Nhẫn Với Kết Quả', desc:'Kết quả thực sự đến sau 4–8 tuần nhất quán. Những tuần đầu là não đang học — không phải lười biếng.',
+    color:'#3b82f6', rgb:'59,130,246',
+    img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    details:[
+      'Tuần 1–3: cơ thể đang xây "neural pathways" mới — không phải tạo cơ mới mà là dạy não bộ cách điều khiển cơ hiệu quả hơn. Cảm giác vẫn "yếu" là bình thường và là bước cần thiết.',
+      'Tuần 4–6: "neuromuscular adaptation" hoàn chỉnh — lực tăng 20–40% mà không cần cơ lớn hơn. Đây là lý do người mới tập thấy mạnh hơn rất nhanh trong 6 tuần đầu.',
+      'Tuần 7+: hypertrophy (tăng kích thước cơ) bắt đầu rõ. Body composition thay đổi thấy được. Nhưng cần ít nhất 12 tuần nhất quán để người khác nhận ra sự thay đổi.',
+    ],
+    points:[
+      { icon:'⚡', label:'Tuần 1–3: não học trước', note:'Neural pathways — không phải cơ tăng' },
+      { icon:'💪', label:'Tuần 4–6: mạnh hơn 20–40%', note:'Neuromuscular adaptation đầy đủ' },
+      { icon:'📅', label:'12 tuần: thấy rõ', note:'Người khác nhận ra sau 3 tháng' },
+      { icon:'🔬', label:'Test 4 tuần/lần', note:'Đo để thấy tiến bộ trước khi thấy được' },
+    ],
+    links:[
+      { icon:'🗺️', label:'Lộ Trình 12 Tuần', to:'/program' },
+      { icon:'🔬', label:'Progress Test', to:'/pillar/f/progress-test' },
+    ],
+  },
 ];
 
 const PROGRESS_ROWS = [
@@ -1919,6 +2027,7 @@ export default function Program() {
   const [activePhaseItem, setActivePhaseItem] = useState(null);
   const [activeDailyBlock, setActiveDailyBlock] = useState(null);
   const [activeWeeklyItem, setActiveWeeklyItem] = useState(null);
+  const [activeSuccessTip, setActiveSuccessTip] = useState(null);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -2556,13 +2665,22 @@ export default function Program() {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-teal-500/4 pointer-events-none" />
                 <div className="absolute inset-0 grid-dots opacity-15 pointer-events-none" />
                 <div className="relative p-6 md:p-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {SUCCESS_TIPS.map((tip,i) => (
-                      <RevealBlock key={i} delay={i*60} className="flex items-start gap-3 group">
-                        <span className="text-3xl shrink-0 group-hover:scale-110 transition-transform duration-200 mt-0.5">{tip.icon}</span>
-                        <div>
-                          <h3 className="font-bold text-text text-lg mb-1 group-hover:text-accent transition-colors duration-200">{tip.title}</h3>
-                          <p className="text-base text-muted leading-relaxed">{tip.desc}</p>
+                      <RevealBlock key={i} delay={i*60}>
+                        <div
+                          className="flex items-start gap-3 p-4 rounded-2xl cursor-pointer group transition-all duration-200 hover:-translate-y-0.5"
+                          style={{ border: `1px solid rgba(${tip.rgb},0.12)`, background: `rgba(${tip.rgb},0.03)` }}
+                          onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${tip.rgb},0.35)`; e.currentTarget.style.background = `rgba(${tip.rgb},0.07)`; }}
+                          onMouseLeave={e => { e.currentTarget.style.borderColor = `rgba(${tip.rgb},0.12)`; e.currentTarget.style.background = `rgba(${tip.rgb},0.03)`; }}
+                          onClick={() => setActiveSuccessTip(tip)}
+                        >
+                          <span className="text-3xl shrink-0 group-hover:scale-110 transition-transform duration-200 mt-0.5">{tip.icon}</span>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-bold text-text text-lg mb-1 transition-colors duration-200" style={{}}>{tip.title}</h3>
+                            <p className="text-base text-muted leading-relaxed">{tip.desc}</p>
+                            <span className="inline-block mt-2 text-[10px] font-bold opacity-0 group-hover:opacity-60 transition-opacity" style={{ color: tip.color }}>Chi tiết →</span>
+                          </div>
                         </div>
                       </RevealBlock>
                     ))}
@@ -2879,6 +2997,9 @@ export default function Program() {
     )}
     {activeWeeklyItem && (
       <DailyBlockModal block={activeWeeklyItem} onClose={() => setActiveWeeklyItem(null)} />
+    )}
+    {activeSuccessTip && (
+      <DailyBlockModal block={{ ...activeSuccessTip, name: activeSuccessTip.title, time: 'BÍ QUYẾT' }} onClose={() => setActiveSuccessTip(null)} />
     )}
   </>
   );

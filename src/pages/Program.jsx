@@ -1035,6 +1035,12 @@ const PILLAR_ASSETS = {
       { icon: '🔄', label: 'Khởi động bắt buộc', note: '5 phút warm-up giảm 80% chấn thương' },
       { icon: '📝', label: 'Workout Log', note: 'Ghi lại buổi tập = thấy tiến bộ rõ ràng' },
     ],
+    links: [
+      { icon: '🏃', label: '6 Mẫu Vận Động', to: '/pillar/a/movements' },
+      { icon: '📐', label: 'Khung Ngày Tập', to: '/pillar/a/framework' },
+      { icon: '📅', label: 'Nhịp Tuần', to: '/pillar/a/weekly' },
+      { icon: '📈', label: 'Theo Dõi Tiến Bộ', to: '/pillar/a/progress' },
+    ],
   },
   B: {
     img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
@@ -1043,6 +1049,12 @@ const PILLAR_ASSETS = {
       { icon: '💧', label: 'Uống đủ nước', note: '1.8–2L/ngày = chuyển hóa tốt hơn rõ rệt' },
       { icon: '🥩', label: 'Đạm mỗi bữa', note: '1 lòng bàn tay đạm = đủ no + giữ cơ' },
       { icon: '🚫', label: 'Giảm đồ ngọt', note: 'Không cần cắt hoàn toàn — giảm dần là đủ' },
+    ],
+    links: [
+      { icon: '🍽️', label: 'Đĩa Ăn & Khẩu Phần', to: '/pillar/b/content' },
+      { icon: '🥩', label: 'Protein Guide', to: '/pillar/b/protein' },
+      { icon: '🧮', label: 'Tính TDEE (B0)', to: '/pillar/b' },
+      { icon: '📋', label: 'Thực Đơn 7 Ngày', to: '/pillar/b/7day' },
     ],
   },
   C: {
@@ -1053,6 +1065,12 @@ const PILLAR_ASSETS = {
       { icon: '👟', label: '7.500 bước/ngày', note: 'NEAT thấp làm giảm TDEE đáng kể' },
       { icon: '☀️', label: 'Ánh nắng sáng', note: 'Reset đồng hồ sinh học mỗi sáng' },
     ],
+    links: [
+      { icon: '🌙', label: 'Tối Ưu Giấc Ngủ', to: '/pillar/c/sleep' },
+      { icon: '🌅', label: 'Nhịp Sinh Học', to: '/pillar/c/circadian' },
+      { icon: '👟', label: 'NEAT & Bước Chân', to: '/pillar/c/neat' },
+      { icon: '🌬️', label: 'Thở & Hồi Phục', to: '/pillar/c/breathing' },
+    ],
   },
   D: {
     img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
@@ -1062,6 +1080,12 @@ const PILLAR_ASSETS = {
       { icon: '📦', label: 'Box breathing', note: '4-4-4-4 = giảm cortisol tức thì' },
       { icon: '🧠', label: 'Awareness đầu tiên', note: 'Nhận ra trạng thái = bước đầu kiểm soát' },
     ],
+    links: [
+      { icon: '🌬️', label: 'Kỹ Thuật Thở', to: '/pillar/d/breathing' },
+      { icon: '📖', label: 'Viết Nhật Ký', to: '/pillar/d/journaling' },
+      { icon: '🧘', label: 'Thiền Định', to: '/pillar/d/meditation' },
+      { icon: '🧠', label: 'Quản Lý Căng Thẳng', to: '/pillar/d/stress' },
+    ],
   },
   F: {
     img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80',
@@ -1070,6 +1094,12 @@ const PILLAR_ASSETS = {
       { icon: '📊', label: 'Workout Log', note: 'Data → pattern → cải thiện có hướng' },
       { icon: '🔬', label: 'Baseline Test', note: 'Điểm xuất phát = tiêu chuẩn so sánh' },
       { icon: '🔄', label: 'Weekly Review', note: '10 phút review = 10x hiệu quả tuần sau' },
+    ],
+    links: [
+      { icon: '✅', label: 'Daily Checklist', to: '/pillar/f/checklist' },
+      { icon: '📊', label: 'Workout Log', to: '/pillar/f/workout-log' },
+      { icon: '🔬', label: 'Progress Test', to: '/pillar/f/progress-test' },
+      { icon: '📈', label: 'Health Score', to: '/pillar/f/health-score' },
     ],
   },
 };
@@ -1114,7 +1144,7 @@ function PillarPhaseModal({ pillarId, text, phase, onClose }) {
           <p className="text-sm font-semibold mb-5 leading-relaxed" style={{ color: `rgba(${phase.rgb},0.75)` }}>
             Nội dung trọng tâm của trụ cột <strong style={{ color: p.c }}>{p.l}</strong> trong giai đoạn {phase.weeks}:
           </p>
-          <ul className="space-y-2.5 mb-6">
+          <ul className="space-y-2.5 mb-5">
             {details.map((d, di) => (
               <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
                 <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
@@ -1123,6 +1153,23 @@ function PillarPhaseModal({ pillarId, text, phase, onClose }) {
               </li>
             ))}
           </ul>
+
+          {/* Quick-access links */}
+          <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${phase.rgb},0.12)` }}>
+            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${phase.rgb},0.5)` }}>
+              Khám Phá Chi Tiết
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {assets.links.map((lk, li) => (
+                <Link key={li} to={lk.to} onClick={onClose}
+                  className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
+                  style={{ color: p.c, background: `rgba(${phase.rgb},0.1)`, border: `1px solid rgba(${phase.rgb},0.22)` }}>
+                  <span>{lk.icon}</span> {lk.label} →
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="grid grid-cols-2 gap-2.5">
             {assets.points.map((pt, pi) => (
               <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"

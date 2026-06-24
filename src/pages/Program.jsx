@@ -1202,6 +1202,18 @@ const MILESTONE_POINTS = [
   { icon: '🔜', label: 'Bước tiếp theo', note: 'Cột mốc tiếp theo đang chờ — giữ đà' },
   { icon: '👥', label: 'Chia sẻ với ai đó', note: 'Accountability tăng 65% tỷ lệ tiếp tục' },
 ];
+const KPI_LINKS = [
+  { icon: '🔬', label: 'Progress Test', to: '/pillar/f/progress-test' },
+  { icon: '📊', label: 'Workout Log', to: '/pillar/f/workout-log' },
+  { icon: '✅', label: 'Daily Checklist', to: '/pillar/f/checklist' },
+  { icon: '📈', label: 'Health Score', to: '/pillar/f/health-score' },
+];
+const MILESTONE_LINKS = [
+  { icon: '🔬', label: 'Test Tiến Bộ', to: '/pillar/f/progress-test' },
+  { icon: '🗓️', label: 'Lộ Trình 12 Tuần', to: '/program?tab=12w' },
+  { icon: '📋', label: 'Chương Trình Mẫu', to: '/sample-programs' },
+  { icon: '🏆', label: 'Khám Phá 6 Trụ Cột', to: '/pillars' },
+];
 
 function PhaseItemModal({ text, phase, type, onClose }) {
   const isKpi = type === 'kpi';
@@ -1251,7 +1263,7 @@ function PhaseItemModal({ text, phase, type, onClose }) {
             style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
         </div>
         <div className="p-5 md:p-7">
-          <ul className="space-y-2.5 mb-6">
+          <ul className="space-y-2.5 mb-5">
             {details.map((d, di) => (
               <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
                 <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
@@ -1260,6 +1272,23 @@ function PhaseItemModal({ text, phase, type, onClose }) {
               </li>
             ))}
           </ul>
+
+          {/* Quick-access links */}
+          <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${phase.rgb},0.12)` }}>
+            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${phase.rgb},0.5)` }}>
+              {isKpi ? 'Công Cụ Đo Lường' : 'Khám Phá Tiếp Theo'}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {(isKpi ? KPI_LINKS : MILESTONE_LINKS).map((lk, li) => (
+                <Link key={li} to={lk.to} onClick={onClose}
+                  className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
+                  style={{ color: phase.color, background: `rgba(${phase.rgb},0.1)`, border: `1px solid rgba(${phase.rgb},0.22)` }}>
+                  <span>{lk.icon}</span> {lk.label} →
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="grid grid-cols-2 gap-2.5">
             {(isKpi ? KPI_POINTS : MILESTONE_POINTS).map((pt, pi) => (
               <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"

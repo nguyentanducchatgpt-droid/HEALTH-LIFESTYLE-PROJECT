@@ -964,6 +964,60 @@ const WEEKLY_PANEL = [
     moves: ['Squat — 3×12', 'Hinge (Deadlift) — 3×10', 'Push (Push-up) — 3×10', 'Pull (Row) — 3×10', 'Core (Plank) — 3×30s'],
     tips: ['Form trước cường độ — không tăng tải khi chưa đúng tư thế', 'Khởi động 5\' bắt buộc trước mỗi buổi', 'Tăng không quá 10% volume/tuần', 'Ghi RPE + số lần vào nhật ký ngay sau buổi tập'],
     avoid: 'Không tập 2 ngày liên tiếp — cơ cần 48h để tái tạo',
+    movesData: [
+      { icon:'🏋️', name:'Squat — 3×12', time:'BÀI 1', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800&q=80',
+        details:['Squat là "vua" bài tập hạ chi — kích hoạt đùi trước, đùi sau, mông và lõi cùng lúc. 3 set × 12 reps với body weight hoặc tạ vừa là điểm khởi đầu hoàn hảo.','Kỹ thuật then chốt: đầu gối theo hướng ngón chân, ngực thẳng, mông ngồi xuống như ngồi ghế sau lưng. Không để đầu gối đổ vào trong.','Khi đã quen 3×12 dễ dàng, tăng 1 set hoặc thêm 2.5kg. Không tăng cả hai cùng lúc — progressive overload có kiểm soát.'],
+        points:[{icon:'🦵',label:'Hạ chi toàn diện',note:'Đùi trước · đùi sau · mông'},{icon:'📐',label:'Đầu gối theo ngón chân',note:'Không đổ vào trong'},{icon:'⬆️',label:'Ngực thẳng',note:'Không cúi người quá nhiều'},{icon:'📊',label:'3×12 → tăng dần',note:'Tăng 1 set hoặc +2.5kg'}],
+        links:[{icon:'🏃',label:'6 Mẫu Vận Động',to:'/pillar/a/movements'},{icon:'📈',label:'Theo Dõi Tiến Bộ',to:'/pillar/a/progress'}] },
+      { icon:'⚡', name:'Hinge (Deadlift) — 3×10', time:'BÀI 2', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=80',
+        details:['Hinge là chuyển động gấp hông — kích hoạt đùi sau, mông và lưng dưới. Romanian Deadlift với tạ nhẹ là biến thể an toàn nhất để bắt đầu.','Kỹ thuật: giữ lưng thẳng, đẩy hông ra sau (không cúi gập lưng), cảm nhận căng cơ đùi sau khi hạ xuống. Đẩy hông về trước khi đứng dậy.','Đây là bài tập phòng chống đau lưng hiệu quả nhất — lưng dưới mạnh = ít đau khi ngồi lâu. 3×10 với form đúng quan trọng hơn nặng.'],
+        points:[{icon:'🍑',label:'Mông & đùi sau',note:'Cơ nhóm posterior chain'},{icon:'🔒',label:'Lưng thẳng',note:'Không bao giờ cong lưng khi deadlift'},{icon:'🦴',label:'Phòng đau lưng',note:'Lưng dưới mạnh = dứt đau lưng mãn'},{icon:'🐢',label:'Chậm khi hạ',note:'2 giây hạ = kích thích cơ tốt hơn'}],
+        links:[{icon:'🏃',label:'6 Mẫu Vận Động',to:'/pillar/a/movements'},{icon:'📐',label:'Khung Ngày Tập',to:'/pillar/a/framework'}] },
+      { icon:'💪', name:'Push (Push-up) — 3×10', time:'BÀI 3', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80',
+        details:['Push-up kích hoạt ngực, vai trước và tam đầu cánh tay. Không cần tạ — body weight đủ khi form đúng và kiểm soát tốt tempo.','Nếu push-up sàn còn khó: bắt đầu với push-up nghiêng (tay trên ghế/tường), giảm góc dần khi mạnh hơn. Không bao giờ "giảm tải" bằng cách cong lưng.','3×10 với pause 1 giây dưới cùng hiệu quả hơn 3×20 nhanh. Paused push-up = loại bỏ momentum, 100% cơ.'],
+        points:[{icon:'🫁',label:'Ngực + vai + tam đầu',note:'3 nhóm cơ thân trên mỗi lần'},{icon:'⬇️',label:'Pause dưới cùng',note:'1s giữ = loại bỏ momentum'},{icon:'📐',label:'Lưng thẳng như ván',note:'Cốt lõi cứng suốt chuyển động'},{icon:'📈',label:'Push-up nghiêng → sàn',note:'Tiến trình tự nhiên cho người mới'}],
+        links:[{icon:'🏃',label:'6 Mẫu Vận Động',to:'/pillar/a/movements'},{icon:'⚡',label:'Quick Workouts',to:'/pillar/f/quick-workouts'}] },
+      { icon:'🔄', name:'Pull (Row) — 3×10', time:'BÀI 4', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80',
+        details:['Pull/Row kích hoạt lưng giữa, lưng rộng và nhị đầu. Cân bằng Push-Pull là nguyên tắc số 1 để tránh chấn thương vai và đau lưng trên dài hạn.','Dumbbell row, resistance band row, hoặc cạnh bàn row (không có dụng cụ) đều hiệu quả. Quan trọng là co bóp lưng giữa khi kéo về — không chỉ dùng tay.','Hầu hết người mới tập quá nhiều Push và quá ít Pull — mất cân bằng cơ vai trước/sau dẫn đến đau vai sau 3–6 tháng. Giữ tỷ lệ 1:1.'],
+        points:[{icon:'🔙',label:'Lưng giữa & lưng rộng',note:'Cân bằng với Push = vai khỏe'},{icon:'🤏',label:'Co bóp bả vai',note:'Kéo bằng lưng, không chỉ tay'},{icon:'⚖️',label:'Push:Pull = 1:1',note:'Cân bằng ngăn chấn thương vai'},{icon:'🪑',label:'Không cần phòng gym',note:'Bàn/ghế/band đều dùng được'}],
+        links:[{icon:'🏃',label:'6 Mẫu Vận Động',to:'/pillar/a/movements'},{icon:'📈',label:'Theo Dõi Tiến Bộ',to:'/pillar/a/progress'}] },
+      { icon:'🛡️', name:'Core (Plank) — 3×30s', time:'BÀI 5', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+        details:['Plank và core stability là nền tảng của MỌI bài tập khác — không phải để có "6 múi" mà để cột sống được bảo vệ khi tập nặng hơn.','3×30 giây plank chuẩn: cổ trung lập, hông không chảy xuống, lõi cứng như đang chịu đòn. 30 giây chuẩn hiệu quả hơn 2 phút sai tư thế.','Tiến trình: Plank sàn 30s → 45s → 60s → thêm shoulder tap → plank một chân. Đừng vội tiến nếu lưng còn bị chảy.'],
+        points:[{icon:'⚙️',label:'Nền tảng mọi bài tập',note:'Core yếu = mọi bài khác kém hiệu quả'},{icon:'📐',label:'Hông không chảy',note:'Tưởng tượng ván thẳng từ gót đến đầu'},{icon:'🧠',label:'Kích hoạt thần kinh',note:'Siết bụng chủ động, không thụ động'},{icon:'⏱️',label:'30s chuẩn > 2\' sai',note:'Chất lượng trước thời gian'}],
+        links:[{icon:'🏃',label:'6 Mẫu Vận Động',to:'/pillar/a/movements'},{icon:'📐',label:'Khung Ngày Tập',to:'/pillar/a/framework'}] },
+    ],
+    tipsData: [
+      { icon:'📐', name:'Form trước cường độ', time:'NGUYÊN TẮC', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
+        details:['Form sai với tạ nặng = chấn thương chỉ là vấn đề thời gian. Form đúng với tạ nhẹ = an toàn vĩnh viễn và kích thích cơ hiệu quả hơn.','Kiểm tra form: quay video góc bên trong buổi đầu, so sánh với hướng dẫn chuẩn. Hầu hết sai lầm không thấy được khi không có gương.','Khi nào tăng tải: tất cả reps trong set đều chuẩn + cảm thấy dễ + nghỉ giữa set đủ phục hồi. Chỉ tăng 1 biến (tạ HOẶC reps) mỗi tuần.'],
+        points:[{icon:'🔬',label:'Form = bảo vệ khớp',note:'Chấn thương từ form sai có thể dài hạn'},{icon:'📹',label:'Quay video kiểm tra',note:'Điện thoại góc bên = coach miễn phí'},{icon:'⚖️',label:'1 biến/tuần',note:'Chỉ tăng tạ HOẶC reps, không cả hai'},{icon:'🐢',label:'Tempo chậm',note:'2s hạ · 1s giữ · 1s đẩy = form tốt hơn'}],
+        links:[{icon:'🏃',label:'6 Mẫu Vận Động',to:'/pillar/a/movements'},{icon:'📊',label:'Workout Log',to:'/pillar/f/workout-log'}] },
+      { icon:'🔥', name:'Khởi động 5\' bắt buộc', time:'NGUYÊN TẮC', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+        details:['70% chấn thương xảy ra trong 10 phút đầu buổi tập không khởi động. Cơ lạnh co bóp kém, kéo giãn kém và nhận tín hiệu thần kinh chậm hơn 30%.','Công thức 5 phút: xoay khớp từ trên xuống (cổ → vai → hông → gối) 30s/vị trí + 1 phút đi bộ nhanh hoặc jumping jack. Tổng 4–5 phút là đủ.','Khi vội chỉ có 3 phút: xoay 3 khớp lớn + 10 jumping jack + 5 arm circle. Không bỏ hoàn toàn — không có ngoại lệ.'],
+        points:[{icon:'🌡️',label:'Cơ ấm = hiệu quả hơn 20%',note:'Nhiệt độ cơ tăng = co bóp mạnh hơn'},{icon:'⚡',label:'Kích hoạt thần kinh',note:'Neural drive chuẩn bị cho tải nặng'},{icon:'⏱️',label:'Tối thiểu 3 phút',note:'Không có lý do chính đáng để bỏ'},{icon:'🦴',label:'Khớp linh hoạt trước',note:'Xoay từ cổ xuống — không bỏ bước này'}],
+        links:[{icon:'📐',label:'Khung Ngày Tập',to:'/pillar/a/framework'},{icon:'🏃',label:'6 Mẫu Vận Động',to:'/pillar/a/movements'}] },
+      { icon:'📈', name:'Tăng không quá 10% volume/tuần', time:'NGUYÊN TẮC', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+        details:['"10% rule" là quy tắc phổ thông nhất trong thể thao: tăng tổng volume (sets × reps × tạ) không quá 10% mỗi tuần. Vượt ngưỡng này = nguy cơ chấn thương tăng gấp đôi.','Ví dụ thực tế: tuần này tập 10 set tổng → tuần sau tối đa 11 set. Không tăng tạ + reps + sets cùng lúc.','Khi cơ thể báo hiệu: đau dai dẳng (khác với đau cơ bình thường), ngủ kém hơn, motivation giảm mạnh = dấu hiệu overtraining. Cần giảm 20% volume 1 tuần.'],
+        points:[{icon:'📊',label:'Volume = sets×reps×tạ',note:'Tính tổng tuần, không chỉ/buổi'},{icon:'🛑',label:'+10% tối đa',note:'Vượt ngưỡng = chấn thương gần hơn'},{icon:'🔄',label:'Deload 1 tuần/tháng',note:'Giảm 40% volume = phục hồi sâu'},{icon:'📝',label:'Ghi workout log',note:'Không log = không biết đang tăng bao nhiêu'}],
+        links:[{icon:'📊',label:'Workout Log',to:'/pillar/f/workout-log'},{icon:'📈',label:'Theo Dõi Tiến Bộ',to:'/pillar/a/progress'}] },
+      { icon:'📓', name:'Ghi RPE + số lần sau buổi tập', time:'NGUYÊN TẮC', color:'#22c55e', rgb:'34,197,94',
+        img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+        details:['RPE (Rate of Perceived Exertion) 1–10 là công cụ tự đánh giá cường độ: RPE 6 = nói chuyện được · RPE 8 = khó nói · RPE 10 = không còn sức. Ghi ngay sau mỗi buổi.','5 phút ghi nhật ký tập = dữ liệu để tăng tải thông minh. Nhìn lại 4 tuần: RPE 7 liên tục → tăng tải. RPE 9 liên tục → giữ nguyên hoặc deload.','Tối thiểu cần ghi: bài tập · tạ · set/reps · RPE. Dùng app hoặc sổ tay — không quan trọng, quan trọng là nhất quán.'],
+        points:[{icon:'🎯',label:'RPE 7–8 là mục tiêu',note:'Đủ nặng để kích thích, đủ nhẹ để phục hồi'},{icon:'📱',label:'App hoặc sổ tay',note:'Dữ liệu tốt hơn trí nhớ luôn'},{icon:'🔍',label:'Review 4 tuần/lần',note:'Tìm pattern: đang tăng hay giậm chân?'},{icon:'⚡',label:'5 phút sau buổi tập',note:'Khi còn nhớ — không để đến hôm sau'}],
+        links:[{icon:'📊',label:'Workout Log',to:'/pillar/f/workout-log'},{icon:'✅',label:'Daily Checklist',to:'/pillar/f/checklist'}] },
+    ],
+    avoidData: { icon:'⚠️', name:'Không tập 2 ngày liên tiếp', time:'CẢNH BÁO', color:'#22c55e', rgb:'34,197,94',
+      img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+      details:['Cơ không lớn lúc tập — cơ lớn lúc nghỉ. Sợi cơ cần 48–72h để tái tạo protein và phục hồi hoàn toàn. Tập lại trước đó = chấn thương vi mô chồng lên chấn thương vi mô.','Cảm giác "đau cơ" (DOMS) ngày 2 sau tập sức mạnh là bình thường và an toàn. Tập lại ngay lúc còn đau = kéo dài thời gian hồi phục, không rút ngắn.','Lịch 3×/tuần cách ngày (T2·T4·T6) là thiết kế tối ưu: đủ kích thích + đủ nghỉ ngơi. Nếu muốn tập hàng ngày: xen kẽ sức mạnh và cardio nhẹ/phục hồi.'],
+      points:[{icon:'⏳',label:'48–72h phục hồi',note:'Sợi cơ cần thời gian tái tạo protein'},{icon:'😴',label:'Ngủ = thuốc phục hồi',note:'Protein synthesis cao nhất lúc ngủ sâu'},{icon:'📅',label:'T2·T4·T6 là tối ưu',note:'Cách ngày = tập + nghỉ xen kẽ'},{icon:'🔄',label:'Tập hàng ngày?',note:'Xen kẽ sức mạnh + cardio nhẹ/recovery'}],
+      links:[{icon:'🌿',label:'Phục Hồi Tích Cực',to:'/pillar/c/recovery'},{icon:'📅',label:'Nhịp Tuần',to:'/pillar/a/weekly'}] },
   },
   {
     img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=70',
@@ -971,6 +1025,60 @@ const WEEKLY_PANEL = [
     moves: ['Đi bộ nhanh — nhịp tim 100–120 bpm', 'Đạp xe tĩnh / ngoài trời', 'Leo cầu thang (NEAT)', 'Bơi lội nhẹ / aqua jogging', 'Nhảy dây nhẹ — 10\' đủ'],
     tips: ['Sau bữa trưa = giảm đường huyết 20–30%', 'Đi bộ đến chỗ làm = NEAT miễn phí', 'Nghe podcast / nhạc để tăng commitment', 'Nhịp tim mục tiêu = (220 - tuổi) × 60–70%'],
     avoid: 'Không chạy nhanh ngay sau bữa ăn — chờ ít nhất 30 phút',
+    movesData: [
+      { icon:'🚶', name:'Đi bộ nhanh — 100–120 bpm', time:'HOẠT ĐỘNG 1', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+        details:['Đi bộ nhanh (brisk walk) là cardio hoàn hảo nhất cho người mới: ít chấn thương, đốt mỡ hiệu quả, có thể duy trì hàng ngày. Nhịp tim mục tiêu 100–120 bpm = Zone 2.','Zone 2 cardio = đốt chủ yếu mỡ làm nhiên liệu, tăng khả năng hấp thụ oxy (VO2max), cải thiện sức bền tim mạch. Có thể nói chuyện nhưng hơi thở nhanh hơn bình thường.','30 phút đi bộ nhanh sau bữa trưa giảm đường huyết 20–30% — hiệu quả tương đương uống thuốc tiểu đường nhẹ theo nghiên cứu 2023.'],
+        points:[{icon:'❤️',label:'Zone 2 cardio',note:'100–120 bpm = đốt mỡ tối ưu'},{icon:'🧠',label:'Tăng sức bền não',note:'Cardio tăng BDNF — protein tăng trưởng não'},{icon:'🩸',label:'Kiểm soát đường huyết',note:'-20–30% sau ăn 10–15 phút'},{icon:'🦴',label:'Ít chấn thương nhất',note:'Impact thấp = khớp gối và lưng an toàn'}],
+        links:[{icon:'🌿',label:'NEAT & Lối Sống',to:'/pillar/c/neat'},{icon:'🔄',label:'Phục Hồi Tích Cực',to:'/pillar/c/recovery'}] },
+      { icon:'🚴', name:'Đạp xe tĩnh / ngoài trời', time:'HOẠT ĐỘNG 2', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+        details:['Đạp xe là cardio lý tưởng nếu đầu gối hoặc hông nhạy cảm — zero impact, dễ điều chỉnh cường độ và có thể kết hợp với thông tin/giải trí.','Xe tĩnh trong nhà: dễ thêm vào thói quen sáng hoặc tối, xem phim/nghe podcast cùng lúc. Xe ngoài trời: thêm lợi ích ánh sáng tự nhiên và không khí.','Cường độ mục tiêu: có thể nói được một câu ngắn mà không hụt hơi. Thấp hơn = không đủ kích thích. Cao hơn = chuyển sang interval training (không phải mục tiêu hôm nay).'],
+        points:[{icon:'🦴',label:'Zero impact',note:'Tốt cho người đầu gối yếu'},{icon:'🎬',label:'Kết hợp giải trí',note:'Xem phim + đạp xe = commitment cao hơn'},{icon:'☀️',label:'Ngoài trời = thêm lợi ích',note:'Ánh sáng tự nhiên tốt cho circadian'},{icon:'⚙️',label:'Điều chỉnh cường độ dễ',note:'Kháng lực cao = interval, thấp = Zone 2'}],
+        links:[{icon:'🌿',label:'Nhịp Sinh Học',to:'/pillar/c/circadian'},{icon:'🌀',label:'NEAT',to:'/pillar/c/neat'}] },
+      { icon:'🪜', name:'Leo cầu thang (NEAT)', time:'HOẠT ĐỘNG 3', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80',
+        details:['NEAT (Non-Exercise Activity Thermogenesis) là năng lượng đốt từ hoạt động không phải tập gym. Leo cầu thang là NEAT dễ tích hợp nhất vào cuộc sống hàng ngày.','Nghiên cứu cho thấy người tích cực NEAT đốt thêm 300–500 kcal/ngày so với người ngồi nhiều — mà không cần tập thêm một buổi nào. Leo cầu thang 10 phút/ngày = 70 phút cardio/tuần miễn phí.','Mẹo tích hợp: luôn chọn cầu thang thay thang máy, đỗ xe xa hơn 200m, đứng thay ngồi khi họp. Cộng dồn mới quan trọng, không phải mỗi lần.'],
+        points:[{icon:'🔥',label:'300–500 kcal/ngày',note:'NEAT tích cực = đốt thêm không cần tập'},{icon:'🪜',label:'Cầu thang = tập mông',note:'10 bước = kích hoạt glute tốt'},{icon:'⏱️',label:'Tích hợp vào sinh hoạt',note:'Không cần thời gian riêng — chỉ thay thói quen'},{icon:'📊',label:'10.000 bước/ngày',note:'Mục tiêu NEAT cơ bản khuyến nghị'}],
+        links:[{icon:'🌀',label:'NEAT & Lifestyle',to:'/pillar/c/neat'},{icon:'📈',label:'Theo Dõi',to:'/pillar/a/progress'}] },
+      { icon:'🏊', name:'Bơi lội nhẹ / aqua jogging', time:'HOẠT ĐỘNG 4', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
+        details:['Bơi lội là cardio toàn thân tốt nhất — kích hoạt cơ thân trên, thân dưới và lõi đồng thời, trong khi áp lực lên khớp gần bằng không.','Aqua jogging (chạy dưới nước với dây phao) là lựa chọn hay cho người đang phục hồi chấn thương — cường độ như chạy bộ nhưng zero impact.','Nếu không có hồ bơi gần: thay bằng đi bộ nhanh 25 phút. Đừng bỏ buổi cardio vì thiếu dụng cụ — thay thế tốt luôn tốt hơn bỏ.'],
+        points:[{icon:'💦',label:'Cardio toàn thân',note:'Thân trên · thân dưới · lõi cùng lúc'},{icon:'🦴',label:'Áp lực khớp ~0',note:'Tốt nhất cho người đau khớp gối'},{icon:'🩹',label:'Phục hồi chấn thương',note:'Aqua jogging = chạy không impact'},{icon:'🔄',label:'Thay thế linh hoạt',note:'Không có hồ? Đi bộ nhanh 25 phút'}],
+        links:[{icon:'🔄',label:'Phục Hồi',to:'/pillar/c/recovery'},{icon:'🌀',label:'Lối Sống',to:'/pillar/c/neat'}] },
+      { icon:'⏭️', name:'Nhảy dây nhẹ — 10\' đủ', time:'HOẠT ĐỘNG 5', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1434596922112-19c563067271?w=800&q=80',
+        details:['10 phút nhảy dây nhẹ = 30 phút đi bộ về năng lượng đốt — hiệu quả thời gian cao nhất trong các dạng cardio đơn giản. Giá dây nhảy 50–100k, dùng hàng chục năm.','Kỹ thuật cho người mới: bước chân đôi (không nhảy một chân), cổ tay quay dây (không phải cánh tay), đổ trọng lực về mũi bàn chân. Nhảy chậm đều tốt hơn nhanh mà vấp.','Nếu 10 phút liên tục còn khó: xen kẽ 30s nhảy + 30s nghỉ × 10 vòng. Interval nhảy dây = cardio + coordination + sức bền trong 1 bài.'],
+        points:[{icon:'⚡',label:'10 phút = 30 phút đi bộ',note:'Calorie/phút cao nhất trong cardio đơn'},{icon:'🏠',label:'Tập trong phòng được',note:'Không cần ra ngoài hay dụng cụ to'},{icon:'🦶',label:'Bàn chân hấp thụ',note:'Đổ trọng lực mũi chân, không gót'},{icon:'🔄',label:'Interval nếu chưa quen',note:'30s nhảy + 30s nghỉ × 10 vòng'}],
+        links:[{icon:'⚡',label:'Quick Workouts',to:'/pillar/f/quick-workouts'},{icon:'📐',label:'Khung Ngày',to:'/pillar/a/framework'}] },
+    ],
+    tipsData: [
+      { icon:'🍽️', name:'Sau bữa trưa = giảm đường huyết', time:'MẸO', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+        details:['10–15 phút đi bộ sau ăn trưa giảm đường huyết 20–30% — hiệu quả cao nhất trong tất cả thời điểm đi bộ trong ngày theo nghiên cứu CGM (liên tục theo dõi đường huyết).','Cơ chế: đường từ bữa ăn vào máu → cơ chân đang hoạt động hấp thụ glucose → không cần insulin nhiều → đường huyết ổn định. Đặc biệt quan trọng nếu có tiểu đường hoặc tiền tiểu đường.','Không cần tốc độ cao — đi bộ thư thái 10 phút là đủ. Ngay cả đứng thay ngồi sau ăn cũng giảm đột biến đường huyết 10–15%.'],
+        points:[{icon:'🩸',label:'-20–30% đường huyết',note:'Hiệu quả nhất của đi bộ sau ăn'},{icon:'⏱️',label:'10–15 phút là đủ',note:'Không cần dài — cần đúng thời điểm'},{icon:'💡',label:'Không cần nhanh',note:'Thư thái vẫn hiệu quả — quan trọng là di chuyển'},{icon:'🔬',label:'Nghiên cứu CGM 2023',note:'Dữ liệu từ đeo thiết bị đường huyết liên tục'}],
+        links:[{icon:'🥗',label:'Dinh Dưỡng',to:'/pillar/b'},{icon:'🌀',label:'NEAT',to:'/pillar/c/neat'}] },
+      { icon:'🚶', name:'Đi bộ đến chỗ làm = NEAT miễn phí', time:'MẸO', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80',
+        details:['Tích hợp đi bộ vào di chuyển hàng ngày = NEAT tự động không cần ý chí. Đỗ xe cách 500m, xuống xe buýt sớm 1 trạm, đi bộ giờ trưa — cộng dồn 30–60 phút/ngày dễ dàng.','NEAT không đếm là "tập gym" nhưng đóng góp 15–30% tổng calorie đốt hàng ngày ở người năng động. Người ngồi văn phòng NEAT thấp hơn người bán hàng 1500–2000 kcal/ngày.','Không cần thay đổi lớn — chỉ cần thay 1 thói quen: luôn chọn cầu thang, luôn đỗ xa hơn, luôn đứng khi họp điện thoại. 3 thay đổi này = 200–300 kcal/ngày.'],
+        points:[{icon:'🔄',label:'NEAT tự động',note:'Không cần nhớ tập — tích hợp vào thói quen'},{icon:'📊',label:'15–30% calorie đốt',note:'NEAT đóng góp lớn như tập gym'},{icon:'🏢',label:'3 thay đổi đơn giản',note:'Cầu thang · đỗ xa · đứng khi họp'},{icon:'💰',label:'Hoàn toàn miễn phí',note:'Không phí gym, không trang thiết bị'}],
+        links:[{icon:'🌀',label:'NEAT & Lối Sống',to:'/pillar/c/neat'},{icon:'🌿',label:'Lifestyle',to:'/pillar/c'}] },
+      { icon:'🎧', name:'Nghe podcast / nhạc tăng commitment', time:'MẸO', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+        details:['Chỉ được nghe podcast/nhạc yêu thích khi đang đi bộ hoặc cardio — tạo "reward" đặc biệt cho buổi tập. Hiệu ứng "temptation bundling" tăng tỷ lệ duy trì thói quen 51%.','Nghiên cứu từ Wharton School: người dùng temptation bundling (chỉ nghe audiobook khi tập) tập thêm 51% so với nhóm không dùng. Không phải ý chí — là thiết kế hệ thống.','Chọn nội dung chỉ nghe khi cardio: podcast series dài, audiobook hấp dẫn, playlist đặc biệt. Cảm giác "chờ được nghe tiếp" là động lực ra ngoài.'],
+        points:[{icon:'🎯',label:'Temptation bundling',note:'Reward tốt + hành động khó = duy trì tốt hơn'},{icon:'📈',label:'+51% tần suất tập',note:'Nghiên cứu thực tế từ Wharton School'},{icon:'🎵',label:'Playlist "chỉ khi tập"',note:'Nhạc này = não biết đến giờ tập rồi'},{icon:'📚',label:'Audiobook series dài',note:'Muốn nghe tiếp = muốn ra ngoài đi bộ'}],
+        links:[{icon:'🧘',label:'Tâm Trí',to:'/pillar/d'},{icon:'🌀',label:'NEAT',to:'/pillar/c/neat'}] },
+      { icon:'❤️', name:'Nhịp tim mục tiêu 60–70% max', time:'MẸO', color:'#3b82f6', rgb:'59,130,246',
+        img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+        details:['Công thức: nhịp tim tối đa = 220 - tuổi. Zone 2 cardio = 60–70% max nhịp tim. Ví dụ 30 tuổi: max = 190 bpm → Zone 2 = 114–133 bpm.','Zone 2 đặc biệt hiệu quả cho: đốt mỡ (cơ thể dùng mỡ làm nhiên liệu chính), cải thiện sức bền tim mạch dài hạn, phục hồi sau tập nặng.','Cách đơn giản nhất đo Zone 2 không cần thiết bị: bạn phải có thể nói được 1–2 câu đầy đủ mà không hụt hơi. Nhanh hơn = Zone 3, chậm hơn = Zone 1.'],
+        points:[{icon:'🧮',label:'220 - tuổi = max HR',note:'Ví dụ 30t: max 190 → Zone2: 114–133'},{icon:'🔥',label:'Zone 2 = đốt mỡ',note:'Mỡ là nguồn nhiên liệu chính ở 60–70%'},{icon:'💬',label:'Talk test đơn giản',note:'Nói được 1 câu = Zone 2 đúng'},{icon:'📱',label:'Smartwatch tiện hơn',note:'Không cần tính toán — thiết bị tự đo'}],
+        links:[{icon:'🌿',label:'Lối Sống',to:'/pillar/c'},{icon:'📈',label:'Theo Dõi Tiến Bộ',to:'/pillar/a/progress'}] },
+    ],
+    avoidData: { icon:'⚠️', name:'Không chạy nhanh ngay sau bữa ăn', time:'CẢNH BÁO', color:'#3b82f6', rgb:'59,130,246',
+      img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+      details:['Sau bữa ăn, máu tập trung về hệ tiêu hóa để xử lý thức ăn. Chạy nhanh ngay lúc này = tranh giành máu giữa cơ và ruột → chuột rút bụng, buồn nôn, đau bên hông.','30 phút nghỉ sau ăn nhẹ, 60–90 phút sau bữa đầy đủ. Đi bộ nhẹ nhàng sau ăn là ngoại lệ — đủ chậm để không tranh giành máu tiêu hóa.','Nếu phải tập ngay: ăn snack nhỏ 100–150 kcal (chuối, bánh gạo) thay vì bữa đầy. Dạ dày nhẹ = tập thoải mái hơn nhiều.'],
+      points:[{icon:'🩸',label:'Máu tranh giành',note:'Cơ vs ruột = chuột rút, buồn nôn'},{icon:'⏱️',label:'Chờ 30–90 phút',note:'30p sau snack nhẹ · 90p sau bữa đầy'},{icon:'🚶',label:'Đi bộ nhẹ OK',note:'Đủ chậm để không ảnh hưởng tiêu hóa'},{icon:'🍌',label:'Snack nhỏ trước tập',note:'100–150 kcal = năng lượng không nặng bụng'}],
+      links:[{icon:'🥗',label:'Dinh Dưỡng & Meal Plan',to:'/pillar/b'},{icon:'🌀',label:'NEAT',to:'/pillar/c/neat'}] },
   },
   {
     img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=70',
@@ -978,6 +1086,60 @@ const WEEKLY_PANEL = [
     moves: ['Giãn cơ tĩnh — giữ 30–60s/vị trí', 'Foam roll toàn thân — 10\'', 'Yoga nhẹ / yin yoga', 'Đi bộ thư giãn công viên', 'Massage nhẹ / tự massage bằng bóng'],
     tips: ['Đây là "tập vô hình" — cơ lớn lúc phục hồi', 'Breathing: hít 4s → giữ 4s → thở ra 6s', 'Đây là lúc nghe body signal tốt nhất', 'Uống nhiều nước hơn bình thường'],
     avoid: 'Tránh coi đây là ngày lười biếng — phục hồi có chủ đích = cơ lớn hơn',
+    movesData: [
+      { icon:'🧘', name:'Giãn cơ tĩnh — 30–60s/vị trí', time:'HOẠT ĐỘNG 1', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+        details:['Giãn tĩnh (static stretch) sau tập: giữ 30–60 giây mỗi nhóm cơ, không nảy, không đau. Ưu tiên nhóm cơ vừa tập nặng: đùi trước, đùi sau, hông, ngực, vai.','Giãn đúng cách giảm DOMS (đau cơ hôm sau) 20–30% và phục hồi độ dài cơ để tránh cứng cơ dài hạn. Không cần flexibility — cần consistency.','Thứ tự chuẩn: bắt đầu nhóm cơ lớn (đùi, mông, lưng) trước nhóm cơ nhỏ (bắp tay, bắp chân). Giữ nhẹ nhàng — cảm giác kéo căng, không phải đau.'],
+        points:[{icon:'⏱️',label:'30–60 giây/vị trí',note:'Dưới 20s không đủ hiệu quả'},{icon:'😌',label:'Kéo căng, không đau',note:'Nếu đau = kéo quá → giảm biên độ'},{icon:'🔄',label:'Nhóm cơ lớn trước',note:'Đùi · mông · lưng → vai · ngực → bắp tay'},{icon:'📉',label:'-20–30% DOMS',note:'Đau cơ hôm sau giảm đáng kể'}],
+        links:[{icon:'🌿',label:'Phục Hồi Tích Cực',to:'/pillar/c/recovery'},{icon:'📐',label:'Khung Ngày Tập',to:'/pillar/a/framework'}] },
+      { icon:'🧴', name:'Foam roll toàn thân — 10\'', time:'HOẠT ĐỘNG 2', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        details:['Foam rolling (self-myofascial release) phá vỡ "điểm kích hoạt" (trigger point) trong cơ — nút thắt nhỏ gây đau và hạn chế vận động. 10 phút trên roller = massage 20 phút.','Kỹ thuật: lăn chậm 2–3 giây/cm, khi gặp điểm đau dừng lại 20–30 giây cho đến khi dịu. Không lăn nhanh liên tục — không có tác dụng.','Ưu tiên: đùi sau (hamstring), đùi ngoài (IT band), bắp chân, lưng trên (không lăn cổ và lưng dưới). Dùng trước giãn tĩnh để kết quả tốt hơn.'],
+        points:[{icon:'🎯',label:'Điểm kích hoạt',note:'Dừng ở điểm đau 20–30s cho đến khi dịu'},{icon:'🔙',label:'Lưu ý lưng dưới',note:'KHÔNG foam roll lưng dưới — dùng tennis ball thay'},{icon:'⏰',label:'Trước giãn tĩnh',note:'Foam roll trước = giãn cơ hiệu quả hơn 30%'},{icon:'💰',label:'Roller 150–300k',note:'Dùng hàng chục năm — đáng đầu tư'}],
+        links:[{icon:'🌿',label:'Phục Hồi',to:'/pillar/c/recovery'},{icon:'🔄',label:'Lối Sống',to:'/pillar/c'}] },
+      { icon:'🧘', name:'Yoga nhẹ / yin yoga', time:'HOẠT ĐỘNG 3', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        details:['Yin yoga (giữ tư thế 2–5 phút) tác động vào mô liên kết sâu (fascia, ligament) — không chỉ cơ bắp. Tăng phạm vi vận động khớp theo cách mà giãn thông thường không làm được.','Phù hợp cho ngày phục hồi vì nhịp độ chậm, không có cường độ và mang lại trạng thái thư giãn sâu nhờ kích hoạt hệ thần kinh parasympathetic.','Không biết bắt đầu từ đâu: YouTube "Yoga with Adriene — Yin yoga for beginners" là điểm khởi đầu miễn phí hoàn hảo.'],
+        points:[{icon:'⏳',label:'Giữ 2–5 phút/tư thế',note:'Dài hơn giãn thông thường — đúng mục đích'},{icon:'🔗',label:'Tác động fascia',note:'Mô liên kết sâu — không chỉ cơ bắp'},{icon:'😌',label:'Kích hoạt PSNS',note:'Thần kinh "nghỉ-tiêu hóa" → thư giãn sâu'},{icon:'📱',label:'YouTube miễn phí',note:'Yoga with Adriene = tốt nhất cho người mới'}],
+        links:[{icon:'🌿',label:'Phục Hồi',to:'/pillar/c/recovery'},{icon:'🧘',label:'Tâm Trí',to:'/pillar/d'}] },
+      { icon:'🌳', name:'Đi bộ thư giãn công viên', time:'HOẠT ĐỘNG 4', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80',
+        details:['Đi bộ trong môi trường xanh (công viên, cây cối) giảm cortisol 16% và huyết áp 10% so với đi bộ cùng khoảng cách trong đô thị — theo nghiên cứu Nhật Bản về "Shinrin-yoku" (tắm rừng).','Đây là cardio recovery hoàn hảo: nhịp tim 60–80 bpm, kích thích hệ thần kinh parasympathetic, tăng vitamin D từ ánh nắng sáng sớm.','Không có công viên: thay bằng đi bộ phố ít xe, khu dân cư yên tĩnh, hoặc 20 phút quanh tòa nhà nơi làm việc. Môi trường tĩnh quan trọng hơn có cây hay không.'],
+        points:[{icon:'🌿',label:'-16% cortisol',note:'Thiên nhiên giảm stress hormone tốt hơn phố'},{icon:'☀️',label:'Vitamin D tự nhiên',note:'Sáng sớm ngoài trời = tốt nhất'},{icon:'😌',label:'Recovery cardio',note:'60–80 bpm = kích thích PSNS'},{icon:'🧠',label:'Shinrin-yoku',note:'Tắm rừng Nhật Bản — nghiên cứu 30 năm'}],
+        links:[{icon:'🌿',label:'Phục Hồi Tích Cực',to:'/pillar/c/recovery'},{icon:'🌀',label:'NEAT',to:'/pillar/c/neat'}] },
+      { icon:'💆', name:'Massage nhẹ / tự massage bằng bóng', time:'HOẠT ĐỘNG 5', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+        details:['Tennis ball hoặc lacrosse ball là công cụ tự massage tốt nhất cho các điểm khó tiếp cận: lòng bàn chân, bắp chân, vai và lưng trên. Đặt bóng, đổ trọng lực lên và xoay chậm.','Tự massage cơ chân mỗi tối trước ngủ: dùng tay day ấn nhẹ bắp chân theo hướng từ dưới lên (về tim). 5 phút/chân = giảm DOMS và ngủ sâu hơn.','Không có dụng cụ: dùng tay mát-xa nhẹ nhóm cơ vừa tập, kết hợp thở sâu. Không cần kỹ thuật chuyên sâu — áp lực nhẹ + nhất quán là đủ.'],
+        points:[{icon:'🎾',label:'Tennis ball đa năng',note:'Lòng bàn chân · bắp chân · vai'},{icon:'🩸',label:'Lưu thông máu',note:'Từ chân lên tim = giảm sưng'},{icon:'😴',label:'Trước khi ngủ',note:'5 phút massage chân → ngủ sâu hơn'},{icon:'💰',label:'Hoàn toàn miễn phí',note:'Chỉ cần tay + kiên nhẫn'}],
+        links:[{icon:'🌿',label:'Phục Hồi',to:'/pillar/c/recovery'},{icon:'🧘',label:'Tâm Trí',to:'/pillar/d'}] },
+    ],
+    tipsData: [
+      { icon:'💪', name:'"Tập vô hình" — cơ lớn lúc phục hồi', time:'MẸO', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+        details:['Cơ không lớn lúc tập gym — cơ lớn lúc nghỉ ngơi và ngủ. Tập = phá vỡ sợi cơ. Nghỉ = tái tạo sợi cơ to hơn trước. Bỏ nghỉ = không có cơ, chỉ có mệt.','Protein synthesis (tổng hợp protein cơ) đạt đỉnh 24–48h SAU tập nặng — đúng trong ngày phục hồi. Đây là "ngày tập vô hình" quan trọng không kém ngày tập gym.','Ngày phục hồi bao gồm: ăn đủ đạm (1.6–2g/kg), ngủ 7–9h, hydration tốt và hoạt động nhẹ nhàng. Thiếu bất kỳ yếu tố nào = kết quả tập giảm đáng kể.'],
+        points:[{icon:'💤',label:'Ngủ = xây cơ',note:'GH (growth hormone) tiết ra lúc ngủ sâu'},{icon:'🥩',label:'Đạm đủ 1.6–2g/kg',note:'Nguyên liệu xây cơ — không thể thiếu'},{icon:'💧',label:'Hydration tốt',note:'Cơ 75% là nước — thiếu nước = phục hồi chậm'},{icon:'🔄',label:'Active recovery',note:'Vận động nhẹ tăng lưu thông máu phục hồi'}],
+        links:[{icon:'🥗',label:'Dinh Dưỡng',to:'/pillar/b'},{icon:'🌿',label:'Phục Hồi',to:'/pillar/c/recovery'}] },
+      { icon:'🌬️', name:'Breathing: 4s hít · 4s giữ · 6s thở ra', time:'MẸO', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        details:['Thở ra dài hơn hít vào (tỷ lệ 4:4:6 hoặc 4:6) kích hoạt hệ thần kinh phó giao cảm (rest & digest) — đối lập với giao cảm (fight & flight). Dùng trong ngày phục hồi để thư giãn sâu hơn.','5 phút thở 4-4-6 giảm nhịp tim nghỉ 5–10 bpm và cortisol 15–20% — hiệu quả tương đương 30 phút thiền cho người mới. Kỹ thuật đơn giản nhất trong tất cả breathing exercises.','Thực hành: nằm ngửa, tay lên bụng, hít 4s (bụng phình), giữ 4s, thở ra 6s (bụng xẹp). Lặp 5–10 lần. Cảm giác buồn ngủ sau đó là bình thường và tốt.'],
+        points:[{icon:'😌',label:'4:4:6 = PSNS activation',note:'Thở ra dài hơn hít vào = thư giãn'},{icon:'❤️',label:'-5–10 bpm nhịp tim',note:'5 phút thở = hiệu quả ngay lập tức'},{icon:'🛌',label:'Nằm ngửa hiệu quả nhất',note:'Tay trên bụng để cảm nhận thở bụng'},{icon:'😴',label:'Buồn ngủ = tốt',note:'Hệ PSNS hoạt động đúng'}],
+        links:[{icon:'🌬️',label:'Kỹ Thuật Thở',to:'/pillar/d/breathing'},{icon:'🧘',label:'Thiền Định',to:'/pillar/d/meditation'}] },
+      { icon:'👂', name:'Nghe body signal tốt nhất trong ngày này', time:'MẸO', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+        details:['Ngày phục hồi là thời điểm tốt nhất để scan cơ thể: vùng nào còn căng? Khớp nào còn khó chịu? Năng lượng tổng thể như thế nào? Những tín hiệu này hướng dẫn tuần tập tiếp theo.','Phân biệt 3 loại đau: DOMS (đau cơ bình thường, 24–72h sau tập, tự hết) · Acute pain (đau nhọn khi tập, dừng ngay) · Chronic pain (đau dai dẳng >7 ngày, cần bác sĩ).','Body scan 5 phút buổi sáng: nằm yên, quét từ đầu xuống chân, chú ý không phán xét. Kỹ năng này phát triển theo thời gian và giúp tránh chấn thương từ sớm.'],
+        points:[{icon:'🔍',label:'Scan từ đầu xuống chân',note:'Chú ý — không phán xét'},{icon:'🚦',label:'3 loại đau',note:'DOMS bình thường · Acute dừng ngay · Chronic → bác sĩ'},{icon:'📅',label:'Hướng dẫn tuần tiếp',note:'Tín hiệu hôm nay = điều chỉnh lịch tập'},{icon:'🧠',label:'Kỹ năng tự nhận thức',note:'Tốt hơn theo thời gian — như học một ngôn ngữ'}],
+        links:[{icon:'🧘',label:'Tâm Trí',to:'/pillar/d'},{icon:'🌿',label:'Phục Hồi',to:'/pillar/c/recovery'}] },
+      { icon:'💧', name:'Uống nhiều nước hơn bình thường', time:'MẸO', color:'#14b8a6', rgb:'20,184,166',
+        img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        details:['Ngày sau tập nặng, cơ thể cần thêm nước để: vận chuyển chất dinh dưỡng đến cơ đang phục hồi, loại bỏ sản phẩm chuyển hóa (lactate, creatine) và duy trì thể tích máu.','Mục tiêu: 2–2.5L nước/ngày trong ngày phục hồi (thay vì 1.5–2L ngày thường). Uống đều đặn suốt ngày — không uống 1L một lúc.','Dấu hiệu đủ nước: nước tiểu màu vàng nhạt (như nước chanh nhạt). Vàng đậm = thiếu nước. Trong suốt = uống quá nhiều (hiếm nhưng có thể gây mất điện giải).'],
+        points:[{icon:'💧',label:'2–2.5L ngày phục hồi',note:'Cao hơn 20–30% so với ngày thường'},{icon:'⏰',label:'Đều đặn suốt ngày',note:'Không uống dồn — thận xử lý không kịp'},{icon:'🟡',label:'Màu nước tiểu',note:'Vàng nhạt = lý tưởng'},{icon:'⚡',label:'Electrolyte nếu ra nhiều mồ hôi',note:'Thêm muối nhỏ vào nước hoặc uống nước dừa'}],
+        links:[{icon:'🥗',label:'Dinh Dưỡng',to:'/pillar/b'},{icon:'🌿',label:'Lối Sống',to:'/pillar/c'}] },
+    ],
+    avoidData: { icon:'⚠️', name:'Phục hồi có chủ đích ≠ lười biếng', time:'CẢNH BÁO', color:'#14b8a6', rgb:'20,184,166',
+      img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+      details:['Tâm lý "bỏ tập = thua" là sai lầm phổ biến nhất của người mới. Phục hồi không phải bỏ tập — phục hồi là một buổi tập, chỉ là loại khác.','Overtraining (tập quá nhiều không nghỉ đủ) giảm hiệu suất, tăng nguy cơ chấn thương và gây burnout tâm lý. Elite athlete cũng có 1–2 ngày recovery/tuần trong lịch.','Active recovery (phục hồi tích cực) tốt hơn complete rest: vận động nhẹ tăng lưu thông máu đến cơ, đẩy nhanh loại bỏ chất thải chuyển hóa và giảm cứng cơ.'],
+      points:[{icon:'🧠',label:'Mindset quan trọng',note:'Phục hồi = tập — chỉ loại khác'},{icon:'⚡',label:'Overtraining là thật',note:'Hiệu suất giảm khi không nghỉ đủ'},{icon:'🏃',label:'Active > passive rest',note:'Vận động nhẹ phục hồi nhanh hơn nằm im'},{icon:'🏆',label:'Elite athlete cũng nghỉ',note:'Lịch của họ có recovery days như bạn'}],
+      links:[{icon:'🌿',label:'Phục Hồi Tích Cực',to:'/pillar/c/recovery'},{icon:'📅',label:'Nhịp Tuần',to:'/pillar/a/weekly'}] },
   },
   {
     img: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=900&q=70',
@@ -985,7 +1147,84 @@ const WEEKLY_PANEL = [
     moves: ['Đọc sách / nghe nhạc thư giãn', 'Thiền 10–15 phút', 'Dành thời gian với gia đình', 'Nấu ăn lành mạnh meal prep', 'Lên kế hoạch cho tuần mới'],
     tips: ['Nghỉ không phải thua — đây là khi protein synthesis cao nhất', 'Ngủ 8h+ nếu có thể — golden window tái tạo', 'Review nhật ký tuần: 3 điều tốt, 1 cải thiện', 'Lên kế hoạch thực đơn + lịch tập cho tuần tới'],
     avoid: 'Đừng tập "bù" nếu bỏ buổi — điều chỉnh lịch thay vì tập gấp đôi',
+    movesData: [
+      { icon:'📚', name:'Đọc sách / nghe nhạc thư giãn', time:'HOẠT ĐỘNG 1', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80',
+        details:['Đọc sách 30 phút/ngày giảm căng thẳng 68% theo nghiên cứu Đại học Sussex 2009 — hiệu quả hơn đi bộ (42%), uống trà (54%) và nghe nhạc (61%) cùng thời gian.','Chủ đề cho ngày nghỉ: sách phi hư cấu nhẹ (kỹ năng, lịch sử), tiểu thuyết cuốn hút, hoặc tái đọc sách yêu thích. Tránh sách liên quan công việc để não thực sự nghỉ ngơi.','Môi trường đọc quan trọng: ánh sáng đủ, tư thế thoải mái, không có thông báo điện thoại. 20 phút đọc tập trung > 1 tiếng đọc bị ngắt quãng.'],
+        points:[{icon:'😌',label:'-68% stress',note:'Đọc sách hiệu quả hơn yoga hay đi bộ'},{icon:'🧠',label:'Não thực sự nghỉ',note:'Chủ đề nhẹ nhàng — không công việc'},{icon:'📵',label:'Không thông báo',note:'20 phút tập trung > 1h bị ngắt'},{icon:'💡',label:'Audiobook cũng được',note:'Nhắm mắt + audiobook = thiền + học'}],
+        links:[{icon:'🧘',label:'Tâm Trí',to:'/pillar/d'},{icon:'💡',label:'Kiến Thức Sức Khỏe',to:'/pillar/e'}] },
+      { icon:'🧘', name:'Thiền 10–15 phút', time:'HOẠT ĐỘNG 2', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+        details:['10–15 phút thiền ngày nghỉ là "nạp pin" tâm lý cho tuần mới. Thiền không phải không suy nghĩ — mà là nhận ra khi tâm trí đi lạc và nhẹ nhàng quay lại hơi thở.','Sau 8 tuần thiền 10 phút/ngày: gray matter vùng prefrontal cortex dày hơn (liên quan quyết định và tự kiểm soát), amygdala thu nhỏ (liên quan phản ứng stress).','Cách đơn giản nhất: ngồi thoải mái, nhắm mắt, đếm thở từ 1 đến 10, khi bị lạc đếm lại từ 1. 10 phút này là bắt đầu của mọi thứ.'],
+        points:[{icon:'🧠',label:'Thay đổi não bộ',note:'Sau 8 tuần — đo được bằng MRI'},{icon:'😌',label:'Không phải "không suy nghĩ"',note:'Nhận ra lạc + quay lại = đúng kỹ thuật'},{icon:'1️⃣',label:'Đếm thở 1–10',note:'Kỹ thuật đơn giản nhất, hiệu quả nhất'},{icon:'⏰',label:'Sáng > tối',note:'Thiền sáng sớm: ngày bắt đầu tốt hơn'}],
+        links:[{icon:'🧘',label:'Thiền Định',to:'/pillar/d/meditation'},{icon:'🌬️',label:'Kỹ Thuật Thở',to:'/pillar/d/breathing'}] },
+      { icon:'👨‍👩‍👧', name:'Dành thời gian với gia đình', time:'HOẠT ĐỘNG 3', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800&q=80',
+        details:['Kết nối xã hội mạnh là yếu tố dự đoán tuổi thọ số 1 — quan trọng hơn không hút thuốc, tập thể dục và ăn uống lành mạnh theo nghiên cứu Harvard 80 năm.','Chất lượng hơn số lượng: 30 phút ăn tối không điện thoại với gia đình có giá trị hơn 3 giờ ngồi cùng nhau mà ai cũng nhìn màn hình riêng.','Ngày nghỉ là thời gian tốt nhất để nạp năng lượng xã hội: ăn chung, chơi board game, đi dạo, hoặc nấu ăn cùng nhau. Ký ức tạo ra đây bền hơn kết quả tập gym.'],
+        points:[{icon:'❤️',label:'Tuổi thọ #1',note:'Kết nối xã hội quan trọng hơn tập gym'},{icon:'📵',label:'Không điện thoại khi ăn',note:'30 phút present > 3h ngồi cùng'},{icon:'🎲',label:'Hoạt động chung',note:'Nấu ăn · board game · đi dạo'},{icon:'🧠',label:'Nạp năng lượng tinh thần',note:'Introvert hay extrovert đều cần kết nối'}],
+        links:[{icon:'🧘',label:'Tâm Trí',to:'/pillar/d'},{icon:'🌿',label:'Lối Sống',to:'/pillar/c'}] },
+      { icon:'🥘', name:'Nấu ăn lành mạnh / meal prep', time:'HOẠT ĐỘNG 4', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
+        details:['45–60 phút meal prep Chủ nhật = 5–7 ngày ăn chuẩn không cần nghĩ. Nấu trước: cơm hoặc ngũ cốc nguyên hạt, protein (thịt/đậu/trứng), rau đã cắt sẵn.','Meal prep không phải nấu sẵn từng bữa — mà là chuẩn bị nguyên liệu để lắp ghép nhanh. 3 hộp protein + 2 hộp ngũ cốc + 1 hộp rau = hàng chục tổ hợp bữa ăn.','Nguyên tắc batch cooking: nấu 1 lần số lượng × 4. Chia hộp, tủ lạnh 4 ngày, tủ đông 2–3 tháng. Tiết kiệm tiền, tiết kiệm thời gian, kiểm soát dinh dưỡng tốt hơn.'],
+        points:[{icon:'⏱️',label:'45 phút = 7 ngày ăn chuẩn',note:'Đầu tư thời gian tốt nhất trong tuần'},{icon:'🧩',label:'Nguyên liệu · không bữa',note:'Chuẩn sẵn để lắp ghép linh hoạt'},{icon:'💰',label:'Tiết kiệm chi phí',note:'Ăn ngoài 3× đắt hơn tự nấu'},{icon:'🎯',label:'Kiểm soát macro',note:'Biết mình ăn gì = đạt mục tiêu dễ hơn'}],
+        links:[{icon:'🥗',label:'Dinh Dưỡng',to:'/pillar/b'},{icon:'📦',label:'Meal Prep Guide',to:'/pillar/b/mealprep'}] },
+      { icon:'📋', name:'Lên kế hoạch cho tuần mới', time:'HOẠT ĐỘNG 5', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+        details:['15 phút review + plan cuối tuần tăng tỷ lệ thực hiện kế hoạch tuần tiếp theo lên 70–80% (so với không plan = 30–40%). Não cần hình dung cụ thể để thực hiện.','Review 5 phút: 3 điều tốt tuần qua, 1 điều cần cải thiện, RPE trung bình có hợp lý không. Không phán xét — chỉ quan sát.','Plan 10 phút: ghi lịch tập T2–CN, menu 3–4 bữa cần chuẩn bị, 1 thói quen mới muốn thêm. Cụ thể hơn = tỷ lệ thực hiện cao hơn. "Tập gym" → "Push-up 3×10 lúc 7h sáng T2".'],
+        points:[{icon:'📈',label:'+70–80% thực hiện',note:'Plan cụ thể vs không plan'},{icon:'🔍',label:'Review 5 phút trước',note:'3 tốt · 1 cải thiện · RPE check'},{icon:'✏️',label:'Cụ thể = hiệu quả',note:'"7h sáng T2" thay vì "sớm trong tuần"'},{icon:'📓',label:'Viết ra không chỉ nghĩ',note:'Viết = cam kết với bản thân'}],
+        links:[{icon:'✅',label:'Daily Checklist',to:'/pillar/f/checklist'},{icon:'📊',label:'Workout Log',to:'/pillar/f/workout-log'}] },
+    ],
+    tipsData: [
+      { icon:'💪', name:'Protein synthesis cao nhất ngày nghỉ', time:'MẸO', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800&q=80',
+        details:['Protein synthesis (tổng hợp protein cơ) đạt đỉnh 24–48h sau buổi tập nặng — tức là trong ngày nghỉ của bạn. "Ngày nghỉ" thực ra là "ngày cơ lớn nhất".','Để tận dụng protein synthesis: ăn đủ đạm (1.6–2g/kg), phân bổ đều qua 4–5 bữa (20–40g/bữa), ngủ đủ 7–9h. Thiếu 1 trong 3 = giảm kết quả tập đáng kể.','Nghỉ không phải không làm gì — nghỉ là tối ưu hóa phục hồi: đạm đủ + ngủ đủ + stress thấp. Ba yếu tố này quyết định 80% kết quả tập gym.'],
+        points:[{icon:'⏰',label:'24–48h sau tập',note:'Đỉnh protein synthesis trong ngày nghỉ'},{icon:'🥩',label:'1.6–2g protein/kg',note:'Không thể xây cơ thiếu nguyên liệu'},{icon:'😴',label:'7–9h ngủ',note:'GH tiết ra lúc ngủ sâu = hormone xây cơ'},{icon:'😌',label:'Stress thấp',note:'Cortisol cao = protein synthesis thấp'}],
+        links:[{icon:'🥗',label:'Dinh Dưỡng',to:'/pillar/b'},{icon:'🌿',label:'Phục Hồi',to:'/pillar/c/recovery'}] },
+      { icon:'😴', name:'Ngủ 8h+ — golden window tái tạo', time:'MẸO', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
+        details:['Ngủ đủ là "siêu năng lực" phục hồi: Growth Hormone (GH) tiết ra 70% trong giấc ngủ sâu (deep sleep), testosterone tăng 10–15% sau 8h ngủ, cortisol giảm xuống baseline.','Chủ nhật là ngày tốt nhất để "trả nợ ngủ": nếu thiếu ngủ cả tuần, 1–2h ngủ thêm Chủ nhật giúp phục hồi 60–70% hiệu suất nhận thức (không thể phục hồi hoàn toàn, nhưng đáng).','Môi trường ngủ tối ưu: phòng mát (18–20°C), tối hoàn toàn, không tiếng ồn. Không điện thoại 30 phút trước ngủ. Giờ ngủ nhất quán quan trọng hơn số giờ ngủ.'],
+        points:[{icon:'💪',label:'GH tiết ra 70% khi ngủ',note:'Hormone xây cơ chính — không thể bỏ'},{icon:'🌡️',label:'Phòng mát 18–20°C',note:'Nhiệt độ ảnh hưởng chất lượng ngủ sâu'},{icon:'📵',label:'Không điện thoại 30\'',note:'Blue light ức chế melatonin'},{icon:'⏰',label:'Giờ ngủ nhất quán',note:'Lịch ngủ ổn > tổng giờ ngủ'}],
+        links:[{icon:'🌿',label:'Lối Sống & Ngủ',to:'/pillar/c'},{icon:'🌀',label:'Nhịp Sinh Học',to:'/pillar/c/circadian'}] },
+      { icon:'📓', name:'Review nhật ký: 3 tốt + 1 cải thiện', time:'MẸO', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+        details:['5 phút review cuối tuần với tỷ lệ 3:1 (3 điểm tốt : 1 cải thiện) giúp não học từ thành công, không chỉ từ thất bại. Não có xu hướng ghi nhớ tiêu cực nhiều hơn 3× — 3:1 cân bằng lại.','Câu hỏi review hiệu quả: "Tuần này tôi tự hào nhất điều gì?" · "Tôi đã nhất quán ở đâu?" · "Một điều làm khác đi tuần sau để tốt hơn 1%?"','Viết ra (không chỉ nghĩ) = ghi nhớ tốt hơn 42% và cam kết cao hơn. 5 phút mỗi Chủ nhật xây nên awareness tích lũy theo tháng — không thể thấy ngắn hạn nhưng rõ ràng sau 1 năm.'],
+        points:[{icon:'🎯',label:'Tỷ lệ 3:1',note:'3 điểm tốt trước 1 cải thiện'},{icon:'✏️',label:'Viết ra',note:'Viết > nghĩ: +42% ghi nhớ'},{icon:'📈',label:'Cải thiện 1%/tuần',note:'52 tuần × 1% = +67% cuối năm'},{icon:'🔍',label:'3 câu hỏi chuẩn',note:'Tự hào · nhất quán · điều chỉnh'}],
+        links:[{icon:'📊',label:'Workout Log',to:'/pillar/f/workout-log'},{icon:'✅',label:'Daily Checklist',to:'/pillar/f/checklist'}] },
+      { icon:'📅', name:'Lên kế hoạch thực đơn + lịch tập', time:'MẸO', color:'#a855f7', rgb:'168,85,247',
+        img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+        details:['Người có kế hoạch bữa ăn tuần trước ăn lành mạnh hơn 42% và chi tiêu ít hơn 25% cho thức ăn so với người quyết định ngẫu hứng mỗi ngày (nghiên cứu 2016).','Kế hoạch lịch tập tuần tới: cụ thể hóa thứ, giờ, bài tập. Không phải "tập T2" mà là "Squat 3×12 + Hinge 3×10 lúc 6h30 T2". Cụ thể = não biết cần chuẩn bị gì.','Kiểm tra lịch tuần trước lên kế hoạch: có meeting dài → đổi buổi tập sang giờ khác. Lên kế hoạch = không bao giờ "không có thời gian" vì đã chặn thời gian trước.'],
+        points:[{icon:'🥘',label:'Meal plan = ăn chuẩn hơn 42%',note:'Quyết định trước > quyết định ngẫu hứng'},{icon:'📅',label:'Block thời gian tập',note:'Đặt lịch như meeting — không cancel'},{icon:'🔄',label:'Kiểm tra lịch tuần',note:'Dự đoán xung đột = không miss buổi tập'},{icon:'✏️',label:'Càng cụ thể càng tốt',note:'Thứ + giờ + bài tập = cam kết thật'}],
+        links:[{icon:'🥗',label:'Thực Đơn 7 Ngày',to:'/pillar/b/7day'},{icon:'📦',label:'Meal Prep',to:'/pillar/b/mealprep'}] },
+    ],
+    avoidData: { icon:'⚠️', name:'Đừng tập "bù" nếu bỡ buổi', time:'CẢNH BÁO', color:'#a855f7', rgb:'168,85,247',
+      img:'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800&q=80',
+      details:['Tập "bù" (tập gấp đôi sau khi bỏ) tăng nguy cơ chấn thương, gây burnout tinh thần và tạo mối quan hệ cảm xúc tiêu cực với việc tập luyện. Tuần tốt nhất là tuần nhất quán — không phải tuần có 1 buổi siêu nặng.','Cách đúng khi bỡ buổi: điều chỉnh lịch tuần (đổi T2 → T3), không thêm buổi tập. Tổng 3 buổi/tuần vẫn đạt được — chỉ thay đổi ngày.','Tư duy "không bao giờ bỏ 2 lần liên tiếp" tốt hơn "tập gấp đôi để bù". 1 buổi bỡ = không sao. 2 buổi liên tiếp bỡ = bắt đầu mất thói quen. 3 buổi liên tiếp = phải bắt đầu lại từ đầu.'],
+      points:[{icon:'🔄',label:'Điều chỉnh · không tập bù',note:'Đổi ngày · giữ tổng 3 buổi/tuần'},{icon:'🧠',label:'"Không bỏ 2 liên tiếp"',note:'Rule đơn giản nhất để duy trì thói quen'},{icon:'📅',label:'Lịch linh hoạt',note:'T2/T4/T6 chỉ là gợi ý — không phải luật'},{icon:'❤️',label:'Quan hệ tích cực với tập',note:'Tập vì thích · không vì tội lỗi'}],
+      links:[{icon:'📅',label:'Nhịp Tuần',to:'/pillar/a/weekly'},{icon:'✅',label:'Daily Checklist',to:'/pillar/f/checklist'}] },
   },
+];
+
+const ADJUST_TIPS_DATA = [
+  { icon:'⚡', name:'Siêu bận: T2/T4/CN — 3 buổi/tuần', time:'LỰA CHỌN', color:'#3b82f6', rgb:'59,130,246',
+    img:'https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80',
+    details:['3 buổi/tuần cách ngày (T2/T4/T7 hoặc T2/T4/CN) là lịch tối thiểu để duy trì và phát triển sức mạnh. Nghiên cứu cho thấy 3 buổi/tuần đạt 80–85% kết quả của 5 buổi/tuần.','Full-body 3×/tuần hiệu quả hơn split 5–6×/tuần cho người bắt đầu và trung cấp: mỗi nhóm cơ được kích thích 3 lần/tuần thay vì 1 lần — tần suất > volume cho người mới.','Khi siêu bận: ưu tiên buổi 20 phút đúng hơn hủy hoàn toàn. 3 buổi 20 phút/tuần nhất quán tốt hơn nhiều so với 2 buổi 1h không đều.'],
+    points:[{icon:'📊',label:'3 buổi = 80–85% kết quả 5 buổi',note:'Hiệu quả thời gian tốt nhất'},{icon:'🔄',label:'Full-body > split',note:'Mỗi nhóm cơ 3×/tuần tốt hơn 1×'},{icon:'⏱️',label:'20 phút là đủ',note:'Nhất quán quan trọng hơn thời lượng'},{icon:'📅',label:'T2/T4/CN gợi ý',note:'Bất kỳ 3 ngày cách ngày đều được'}],
+    links:[{icon:'📅',label:'Nhịp Tuần',to:'/pillar/a/weekly'},{icon:'⚡',label:'Quick Workouts',to:'/pillar/f/quick-workouts'}] },
+  { icon:'🔄', name:'Shift làm việc: linh hoạt ngày', time:'LỰA CHỌN', color:'#3b82f6', rgb:'59,130,246',
+    img:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
+    details:['Làm ca không có nghĩa là không thể tập — nghĩa là cần lịch linh hoạt hơn. Quy tắc: duy trì 3–4 buổi/tuần, không cố định ngày trong tuần.','Tập trước hay sau ca đều được — quan trọng là khoảng cách với giờ ngủ: không tập nặng trong vòng 2h trước khi cần ngủ (tăng cortisol, khó ngủ).','Ca đêm đặc biệt: tập nhẹ trước ca (warm-up cơ thể), tập sức mạnh sau ca (khi cơ thể đã "thức") + ngủ ngay sau. Không tập cardio mạnh ngay trước giờ ngủ.'],
+    points:[{icon:'📅',label:'3–4 buổi/tuần',note:'Không cần cố định T2/T4/T6'},{icon:'😴',label:'Tránh tập nặng 2h trước ngủ',note:'Cortisol cao → khó ngủ'},{icon:'🌙',label:'Ca đêm: tập nhẹ trước ca',note:'Warm-up cơ thể cho ca làm việc dài'},{icon:'⚙️',label:'Điều chỉnh mỗi tuần',note:'Nhìn lịch làm việc trước · plan sau'}],
+    links:[{icon:'📅',label:'Nhịp Tuần',to:'/pillar/a/weekly'},{icon:'🌀',label:'Nhịp Sinh Học',to:'/pillar/c/circadian'}] },
+  { icon:'🌱', name:'Mới bắt đầu: 3 buổi/tuần × 20–25 phút', time:'LỰA CHỌN', color:'#3b82f6', rgb:'59,130,246',
+    img:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80',
+    details:['Người mới tập: bắt đầu với ít hơn bạn nghĩ là cần. 3 buổi × 20 phút với body weight đủ để tạo thói quen, đủ kích thích thần kinh cơ, và không gây overtraining.','Tuần 1–2: form trước mọi thứ. Không tăng tải, không tăng reps — chỉ lặp để cơ và thần kinh quen với chuyển động. Cảm giác "dễ quá" là bình thường và tốt.','Tuần 3–4: khi tất cả bài đều cảm thấy kiểm soát tốt, thêm 1 set. Tuần 5+: tăng reps hoặc tải nhẹ. Tiến trình chậm = tiến trình bền vững.'],
+    points:[{icon:'🐌',label:'Ít hơn bạn nghĩ',note:'Bắt đầu nhỏ = dễ thành thói quen hơn'},{icon:'🧠',label:'Tuần 1–2: chỉ học form',note:'Thần kinh cơ cần thời gian "học"'},{icon:'📈',label:'Tăng từ tuần 3+',note:'Cảm thấy kiểm soát tốt → mới tăng'},{icon:'💡',label:'Dễ = đang tiến bộ',note:'Cảm giác dễ nghĩa là cơ đang thích nghi'}],
+    links:[{icon:'🏃',label:'6 Mẫu Vận Động',to:'/pillar/a/movements'},{icon:'📐',label:'Khung Ngày Tập',to:'/pillar/a/framework'}] },
+  { icon:'🚶', name:'Cardio nhẹ: đi bộ đến chỗ làm = NEAT', time:'LỰA CHỌN', color:'#3b82f6', rgb:'59,130,246',
+    img:'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80',
+    details:['Tích hợp cardio vào di chuyển hàng ngày = NEAT tự động, không cần thời gian riêng. Đỗ xe cách 500m, đi bộ 10 phút đến trạm xe buýt, leo thang bộ = 30–45 phút "cardio" miễn phí.','NEAT đóng góp 15–30% tổng calorie đốt của người năng động — tương đương 1 buổi tập gym/tuần. Người đứng/đi nhiều trong công việc có TDEE cao hơn 500–700 kcal so với người ngồi.','Không cần quần áo gym, không cần phòng gym, không cần thời gian đặc biệt. Chỉ cần một quyết định nhỏ mỗi lần: cầu thang hay thang máy?'],
+    points:[{icon:'🔄',label:'NEAT tự động',note:'Thay đổi thói quen di chuyển · không thêm thời gian'},{icon:'📊',label:'500–700 kcal/ngày',note:'NEAT cao vs NEAT thấp — cùng cân nặng'},{icon:'💰',label:'Hoàn toàn miễn phí',note:'Không phí gym · không trang bị'},{icon:'🧗',label:'Cầu thang luôn',note:'Rule đơn giản nhất để tăng NEAT'}],
+    links:[{icon:'🌀',label:'NEAT & Lifestyle',to:'/pillar/c/neat'},{icon:'🌿',label:'Lối Sống',to:'/pillar/c'}] },
 ];
 
 const SUCCESS_TIPS = [
@@ -1679,6 +1918,7 @@ export default function Program() {
   const [activePillarRow, setActivePillarRow] = useState(null);
   const [activePhaseItem, setActivePhaseItem] = useState(null);
   const [activeDailyBlock, setActiveDailyBlock] = useState(null);
+  const [activeWeeklyItem, setActiveWeeklyItem] = useState(null);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -2226,14 +2466,18 @@ export default function Program() {
                         </h4>
                         <ul className="space-y-2">
                           {panel.moves.map((m, i) => (
-                            <li key={i} className="flex items-start gap-3 p-2.5 rounded-xl transition-all duration-150 hover:bg-white/3 group/move">
+                            <li key={i}
+                              className="flex items-start gap-3 p-2.5 rounded-xl transition-all duration-150 hover:bg-white/3 group/move cursor-pointer"
+                              onClick={() => panel.movesData && setActiveWeeklyItem(panel.movesData[i])}
+                            >
                               <span
                                 className="mt-0.5 w-5 h-5 rounded-full shrink-0 flex items-center justify-center text-[10px] font-bold text-white"
                                 style={{ background: `rgba(${meta.rgb},0.7)` }}
                               >
                                 {i + 1}
                               </span>
-                              <span className="text-base text-muted group-hover/move:text-text transition-colors duration-150">{m}</span>
+                              <span className="text-base text-muted group-hover/move:text-text transition-colors duration-150 flex-1">{m}</span>
+                              <span className="shrink-0 text-[10px] font-bold opacity-0 group-hover/move:opacity-50 transition-opacity self-center" style={{ color: meta.c }}>→</span>
                             </li>
                           ))}
                         </ul>
@@ -2246,18 +2490,24 @@ export default function Program() {
                         </h4>
                         <ul className="space-y-2 mb-4">
                           {panel.tips.map((tip, i) => (
-                            <li key={i} className="flex items-start gap-2 text-base text-muted">
+                            <li key={i}
+                              className="flex items-start gap-2 text-base text-muted group/tip cursor-pointer px-2 py-1.5 rounded-xl transition-all duration-150 hover:bg-white/3"
+                              onClick={() => panel.tipsData && setActiveWeeklyItem(panel.tipsData[i])}
+                            >
                               <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: meta.c }} />
-                              {tip}
+                              <span className="flex-1 group-hover/tip:text-text/80 transition-colors">{tip}</span>
+                              <span className="shrink-0 text-[10px] font-bold opacity-0 group-hover/tip:opacity-50 transition-opacity self-center" style={{ color: meta.c }}>→</span>
                             </li>
                           ))}
                         </ul>
                         {/* Avoid note */}
                         <div
-                          className="p-3 rounded-xl border text-base"
+                          className="p-3 rounded-xl border text-base cursor-pointer group/avoid transition-all duration-150 hover:opacity-90"
                           style={{ borderColor: `rgba(${meta.rgb},0.2)`, background: `rgba(${meta.rgb},0.06)`, color: meta.c }}
+                          onClick={() => panel.avoidData && setActiveWeeklyItem(panel.avoidData)}
                         >
-                          ⚠️ <span className="text-muted">{panel.avoid}</span>
+                          ⚠️ <span className="text-muted group-hover/avoid:text-text/80 transition-colors">{panel.avoid}</span>
+                          <span className="ml-2 text-[10px] font-bold opacity-0 group-hover/avoid:opacity-60 transition-opacity" style={{ color: meta.c }}>→</span>
                         </div>
                       </div>
                     </div>
@@ -2280,17 +2530,20 @@ export default function Program() {
                   {/* Adjust schedule tip */}
                   <RevealBlock delay={200} className="p-4 rounded-2xl border border-blue-500/15 bg-blue-500/4 mt-4">
                     <h3 className="text-base font-bold uppercase tracking-widest text-blue-400 mb-3">📌 {t('program.adjust_schedule_title', 'Điều Chỉnh Cho Lịch Của Bạn')}</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-base text-muted">
-                      {(() => {
-                        const tips = t('program.adjust_tips', { returnObjects: true });
-                        const tArr = Array.isArray(tips) ? tips : [
-                          'Siêu bận: T2/T4/CN — 3 buổi/tuần là đủ ổn định',
-                          'Shift làm việc: linh hoạt ngày, giữ đủ 3–4 buổi/tuần',
-                          'Mới bắt đầu: 3 buổi/tuần, mỗi buổi 20–25 phút',
-                          'Cardio nhẹ: đi bộ đến nơi làm = tích hợp NEAT tự nhiên',
-                        ];
-                        return tArr.map((tip, i) => <p key={i}>• {tip}</p>);
-                      })()}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {ADJUST_TIPS_DATA.map((tip, i) => (
+                        <button key={i}
+                          className="flex items-start gap-2 text-left px-3 py-2.5 rounded-xl group/adj transition-all duration-150 hover:-translate-y-0.5 cursor-pointer"
+                          style={{ background: `rgba(${tip.rgb},0.04)`, border: `1px solid rgba(${tip.rgb},0.12)` }}
+                          onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${tip.rgb},0.3)`; }}
+                          onMouseLeave={e => { e.currentTarget.style.borderColor = `rgba(${tip.rgb},0.12)`; }}
+                          onClick={() => setActiveWeeklyItem(tip)}
+                        >
+                          <span className="text-base shrink-0 mt-0.5">{tip.icon}</span>
+                          <span className="text-base text-muted group-hover/adj:text-text/80 transition-colors flex-1">• {tip.name}</span>
+                          <span className="shrink-0 text-[10px] font-bold opacity-0 group-hover/adj:opacity-60 transition-opacity self-center" style={{ color: tip.color }}>→</span>
+                        </button>
+                      ))}
                     </div>
                   </RevealBlock>
                 </div>
@@ -2623,6 +2876,9 @@ export default function Program() {
     )}
     {activeDailyBlock && (
       <DailyBlockModal block={activeDailyBlock} onClose={() => setActiveDailyBlock(null)} />
+    )}
+    {activeWeeklyItem && (
+      <DailyBlockModal block={activeWeeklyItem} onClose={() => setActiveWeeklyItem(null)} />
     )}
   </>
   );

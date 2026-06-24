@@ -216,6 +216,307 @@ const ITEMS = [
 |------|---------|-----------|-------|
 | `Home.jsx` | WHY_ITEMS (4 cards) | `expandedWhy` | per-item |
 | `PillarB.jsx` | MantraCards (7 cards) | `mantraIdx` | lime `#84cc16` |
+| `Program.jsx` | DAILY_BLOCKS, DAILY_PRINCIPLES, weekly items, success tips | `activeDailyBlock`, `activeWeeklyItem`, `activeSuccessTip` | purple `#a855f7` |
+| `SamplePrograms.jsx` | Phase info cards (focus/nutrition/milestone) + 7 day-cards | `activeItem` inside `ProgramDetail` | per-phase color |
+| `Pillars.jsx` | All pillar section cards (A–F, 3–8 sections each) | `activeSection` | per-pillar accent |
+
+---
+
+### Critical Rule — animate-fade-in-up (same as RevealBlock)
+
+`animate-fade-in-up` also uses `transform: translateY()`, creating the same CSS containing-block issue.
+
+**Fix:** Render modal OUTSIDE the `<div className="animate-fade-in-up">` wrapper using a React Fragment.
+
+```jsx
+// ✅ CORRECT — Fragment wraps the animated div + modal side by side
+function ProgramDetail({ ... }) {
+  const [activeItem, setActiveItem] = useState(null);
+  // useState MUST be declared BEFORE any early return
+  if (!goal || !curPhase) return null;
+
+  return (
+    <>
+      <div className="animate-fade-in-up">
+        {/* all content, clickable cards */}
+      </div>
+      {activeItem && <DailyBlockModal block={activeItem} onClose={() => setActiveItem(null)} />}
+    </>
+  );
+}
+```
+
+**Gotcha with hooks + early return:** If the component has an early `return null`, declare `useState` BEFORE the early return to avoid React hooks order violation.
+
+---
+
+### DailyBlockModal — Compact Variant (no prev/next)
+
+Used when cards are independent (not a sequential list). Lighter than the full `DetailModal`.
+
+```jsx
+function DailyBlockModal({ block, onClose }) {
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${block.rgb},0.28)`, boxShadow: `0 0 80px rgba(${block.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        {/* Hero */}
+        <div className="relative h-44 rounded-t-3xl overflow-hidden">
+          <img src={block.img} alt={block.name} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${block.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${block.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-5 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${block.rgb},0.18)`, border: `2px solid rgba(${block.rgb},0.4)` }}>
+              {block.icon}
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: block.color }}>{block.time || 'CHI TIẾT'}</p>
+              <h2 className="font-bold text-white text-lg leading-tight max-w-xs">{block.name}</h2>
+            </div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        {/* Content */}
+        <div className="p-5 md:p-7">
+          {/* Numbered detail list */}
+          <ul className="space-y-2.5 mb-5">
+            {block.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${block.rgb},0.14)`, color: block.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          {/* Quick links */}
+          <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${block.rgb},0.12)` }}>
+            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${block.rgb},0.5)` }}>Khám Phá Chi Tiết</p>
+            <div className="flex flex-wrap gap-2">
+              {block.links.map((lk, li) => (
+                <Link key={li} to={lk.to} onClick={onClose}
+                  className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
+                  style={{ color: block.color, background: `rgba(${block.rgb},0.1)`, border: `1px solid rgba(${block.rgb},0.22)` }}>
+                  <span>{lk.icon}</span> {lk.label} →
+                </Link>
+              ))}
+            </div>
+          </div>
+          {/* Key points 2-col grid */}
+          <div className="grid grid-cols-2 gap-2.5">
+            {block.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                style={{ background: `rgba(${block.rgb},0.06)`, border: `1px solid rgba(${block.rgb},0.14)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+### Block data shape for DailyBlockModal
+
+```js
+const block = {
+  icon: '🏋️',
+  name: 'Card Title',          // modal heading
+  time: 'THỨ 2',              // small label above heading (day, intensity, category, etc.)
+  color: '#22c55e',            // hex accent color
+  rgb: '34,197,94',            // rgb string for rgba()
+  img: 'https://images.unsplash.com/...?w=800&q=80',
+  details: [                   // numbered list (3–5 sentences)
+    'First sentence...',
+    'Second sentence...',
+    'Third sentence...',
+  ],
+  points: [                    // 2-col key highlights (4 items)
+    { icon: '🔄', label: 'Short label', note: 'One-line explanation' },
+    { icon: '✅', label: 'Short label', note: 'One-line explanation' },
+    { icon: '⏱️', label: 'Short label', note: 'One-line explanation' },
+    { icon: '🎯', label: 'Short label', note: 'One-line explanation' },
+  ],
+  links: [                     // quick navigation links (1–3)
+    { icon: '🏋️', label: 'Link label', to: '/pillar/a' },
+  ],
+};
+```
+
+---
+
+### SectionModal — For i18n-Driven Section Grids
+
+Used when section data comes from i18n JSON (no hardcoded `details`/`points`). Auto-generates key points from item text via `makePoints()`.
+
+```jsx
+/* ── Helper: auto-derive 4 key points from section items ── */
+function makePoints(items) {
+  const icons = ['📌', '✅', '🎯', '💡'];
+  return (items || []).slice(0, 4).map((item, i) => {
+    const match = item.match(/^(.+?)\s*[—–]\s*(.+)$/);
+    if (match) return { icon: icons[i], label: match[1].trim(), note: match[2].trim() };
+    const words = item.split(' ');
+    const cut = Math.min(Math.ceil(words.length / 2), 5);
+    return { icon: icons[i], label: words.slice(0, cut).join(' '), note: words.slice(cut).join(' ') || '—' };
+  });
+}
+
+function SectionModal({ section, meta, pillarTitle, pillarIcon, onClose }) {
+  useEffect(() => { /* same ESC + overflow pattern */ }, [onClose]);
+  const points = makePoints(section.items);
+
+  return (
+    // same DailyBlockModal structure but:
+    // - icon = pillarIcon, name = section.title, time = pillarTitle
+    // - details = section.items (ALL items, not just 4)
+    // - points = makePoints(section.items)
+    // - links = [{ icon: pillarIcon, label: pillarTitle, to: /pillar/${meta.id} }]
+  );
+}
+```
+
+**Usage in Pillars.jsx:**
+```jsx
+// 1. Add rgb to PILLAR_META entries
+const PILLAR_META = [
+  { ..., accent: '#22c55e', rgb: '34,197,94' },   // A
+  { ..., accent: '#84cc16', rgb: '132,204,22' },  // B
+  { ..., accent: '#14b8a6', rgb: '20,184,166' },  // C
+  { ..., accent: '#a855f7', rgb: '168,85,247' },  // D
+  { ..., accent: '#3b82f6', rgb: '59,130,246' },  // E
+  { ..., accent: '#f97316', rgb: '249,115,22' },  // F
+];
+
+// 2. State + click on card
+const [activeSection, setActiveSection] = useState(null);
+// on card: onClick={() => setActiveSection({ section, idx: i })}
+
+// 3. Modal OUTSIDE animate-fade-in-up
+<div key={activeTab} className="animate-fade-in-up">
+  {/* section cards */}
+</div>
+{activeSection && (
+  <SectionModal
+    section={activeSection.section}
+    meta={m}
+    pillarTitle={p?.title || ''}
+    pillarIcon={p?.icon || ''}
+    onClose={() => setActiveSection(null)}
+  />
+)}
+```
+
+**Hover hint on cards:**
+```jsx
+<div className="... cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
+  onClick={() => setActiveSection({ section, idx: i })}>
+  {/* existing card content */}
+  <div className="mt-3 pt-3 border-t border-border/40 flex items-center justify-between">
+    <span className="text-[10px] text-muted/50 uppercase tracking-wider">{section.items?.length || 0} mục</span>
+    <span className={`text-[10px] font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${m.textColor}`}>
+      Xem chi tiết →
+    </span>
+  </div>
+</div>
+```
+
+---
+
+### programData.js — Enriching WEEKLY_SCHEDULE for Modals
+
+When day-cards need click-to-expand, add these fields to each entry in `WEEKLY_SCHEDULE`:
+
+```js
+// D object must include hex + rgb (not just Tailwind classes)
+const D = {
+  green:  { bg:'bg-green-500/10 border-green-500/25 text-green-400', dot:'bg-green-400', hex:'#22c55e', rgb:'34,197,94'   },
+  teal:   { bg:'bg-teal-500/10 ...',  dot:'bg-teal-400',   hex:'#14b8a6', rgb:'20,184,166'  },
+  blue:   { bg:'bg-blue-500/10 ...',  dot:'bg-blue-400',   hex:'#3b82f6', rgb:'59,130,246'  },
+  purple: { bg:'bg-purple-500/10 ...', dot:'bg-purple-400', hex:'#a855f7', rgb:'168,85,247' },
+  orange: { bg:'bg-orange-500/10 ...', dot:'bg-orange-400', hex:'#f97316', rgb:'249,115,22' },
+  yellow: { bg:'bg-yellow-500/10 ...', dot:'bg-yellow-400', hex:'#eab308', rgb:'234,179,8'  },
+  red:    { bg:'bg-red-500/10 ...',   dot:'bg-red-400',    hex:'#ef4444', rgb:'239,68,68'   },
+  gray:   { bg:'bg-surface ...',      dot:'bg-muted/40',   hex:'#6b7280', rgb:'107,114,128' },
+};
+
+// Each WEEKLY_SCHEDULE entry enriched shape:
+{
+  day: 'T2', type: 'Strength A', icon: '🏋️', c: D.green,
+  detail: 'Short summary shown in card',       // existing compact text
+  img: 'https://images.unsplash.com/...?w=800&q=80',  // NEW
+  details: [                                           // NEW — 3 sentences
+    'Sentence 1 explaining the full workout...',
+    'Sentence 2 with technique tips...',
+    'Sentence 3 with progression notes...',
+  ],
+  points: [                                            // NEW — 4 key points
+    { icon: '🔄', label: '2–3 hiệp × 8–12 reps', note: 'Nghỉ 60s giữa các hiệp' },
+    { icon: '✅', label: 'Form trước thể lực',    note: '6 reps đúng > 12 reps sai' },
+    { icon: '⏱️', label: '20–25 phút',           note: 'Không kể khởi động 5 phút' },
+    { icon: '🎯', label: 'RPE 5–6/10',           note: 'Còn nói chuyện thoải mái' },
+  ],
+  links: [{ icon: '🏋️', label: '6 Mẫu Vận Động', to: '/pillar/a/movements' }],  // NEW
+}
+```
+
+**Wiring up in the component:**
+```jsx
+// PHASE_COLORS_HEX parallel to PHASE_COLORS
+const PHASE_COLORS_HEX = [
+  { hex: '#22c55e', rgb: '34,197,94'  },
+  { hex: '#84cc16', rgb: '132,204,22' },
+  { hex: '#14b8a6', rgb: '20,184,166' },
+  { hex: '#3b82f6', rgb: '59,130,246' },
+  { hex: '#a855f7', rgb: '168,85,247' },
+  { hex: '#ec4899', rgb: '236,72,153' },
+];
+const phHex = PHASE_COLORS_HEX[phIdx] || PHASE_COLORS_HEX[0];
+
+// Day-card click handler
+onClick={() => s.details && setActiveItem({
+  icon: s.icon, name: s.type, time: s.day,
+  color: s.c.hex, rgb: s.c.rgb,
+  img: s.img || SCHEDULE_IMAGES[s.icon] || 'fallback-url',
+  details: s.details,
+  points: s.points,
+  links: s.links,
+})}
+
+// Phase info card click handler (built dynamically from curPhase)
+onClick={() => setActiveItem({
+  icon: curPhase.icon, name: `${curPhase.name} — Tập Trọng Tâm`, time: curPhase.intensity,
+  color: phHex.hex, rgb: phHex.rgb,
+  img: curPhase.image || 'fallback-url',
+  details: [curPhase.focus, curPhase.desc, `Giai đoạn ${curPhase.tag}: tuần ${curPhase.range[0]}–${curPhase.range[1]}`],
+  points: [
+    { icon: '🎯', label: 'Mức độ',    note: curPhase.intensity },
+    { icon: '📅', label: 'Giai đoạn', note: `Tuần ${curPhase.range[0]}–${curPhase.range[1]}` },
+    { icon: '🏷️', label: 'Phân loại', note: curPhase.tag },
+    { icon: '📈', label: 'Tiến bộ',   note: 'Tăng nhẹ mỗi tuần, lắng nghe cơ thể' },
+  ],
+  links: [{ icon: '🏋️', label: 'Vận Động & Tập Luyện', to: '/pillar/a' }],
+})}
+```
 
 ---
 

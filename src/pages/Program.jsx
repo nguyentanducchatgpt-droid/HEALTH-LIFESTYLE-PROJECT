@@ -779,10 +779,165 @@ const TWENTY_FOUR_PHASES = [...TWELVE_PHASES, ...ADV_PHASES];
 
 // ── Daily framework ──────────────────────────────────────────────────────────
 const DAILY_BLOCKS = [
-  { time:'5 phút',     name:'Khởi Động',          desc:'Khớp linh hoạt · nâng nhiệt cơ thể',     icon:'🔥', color:'#22c55e' },
-  { time:'10–20 phút', name:'Vận Động Chính',      desc:'Sức mạnh hoặc cardio theo lịch',          icon:'💪', color:'#84cc16' },
-  { time:'5–10 phút',  name:'Giãn Cơ & Hạ Nhiệt', desc:'Kéo giãn · hạ nhịp tim · thư giãn cơ',  icon:'🧘', color:'#14b8a6' },
-  { time:'5 phút',     name:'Mind Reset',          desc:'Thở sâu hoặc thiền ngắn · đặt ý định',   icon:'🌿', color:'#a855f7' },
+  {
+    time:'5 phút', name:'Khởi Động', desc:'Khớp linh hoạt · nâng nhiệt cơ thể', icon:'🔥', color:'#22c55e', rgb:'34,197,94',
+    img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    details:[
+      '5 phút khởi động giảm 70% nguy cơ chấn thương — đây không phải "tùy chọn" mà là bước bắt buộc. Cơ lạnh co bóp chậm, kém đàn hồi và nhận tín hiệu thần kinh chậm hơn 30%.',
+      'Công thức đơn giản: xoay khớp từ trên xuống (cổ → vai → hông → gối → cổ chân) 30 giây/vị trí + 1 phút đi bộ nhanh hoặc jumping jack. Tổng 4–5 phút là đủ.',
+      'Ngay cả khi vội, giữ tối thiểu 3 phút: xoay khớp lớn + 10 jumping jack + 5 arm circle mỗi bên. Không bao giờ bỏ hoàn toàn.',
+    ],
+    points:[
+      { icon:'🦴', label:'Khớp linh hoạt', note:'Xoay từ trên xuống 30s/vị trí' },
+      { icon:'🌡️', label:'Nâng nhiệt cơ', note:'Cơ ấm co bóp hiệu quả hơn 20%' },
+      { icon:'⚡', label:'Kích hoạt thần kinh', note:'Neural drive cho buổi tập chính' },
+      { icon:'🛡️', label:'Giảm chấn thương', note:'70% injury từ bỏ warm-up' },
+    ],
+    links:[
+      { icon:'🏃', label:'6 Mẫu Vận Động', to:'/pillar/a/movements' },
+      { icon:'📐', label:'Khung Ngày Tập', to:'/pillar/a/framework' },
+    ],
+  },
+  {
+    time:'10–20 phút', name:'Vận Động Chính', desc:'Sức mạnh hoặc cardio theo lịch', icon:'💪', color:'#84cc16', rgb:'132,204,22',
+    img:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
+    details:[
+      'T2/T4/T6 = Sức mạnh (Squat, Hinge, Push, Pull, Core). T3/T5 = Cardio nhẹ (đi bộ nhanh, đạp xe, 100–130 bpm). T7 = Phục hồi tích cực. CN = Nghỉ hoàn toàn.',
+      'RPE mục tiêu: 6–8/10. Không quá dễ (không có kích thích thích nghi) cũng không quá nặng (không phục hồi kịp). Ghi RPE ngay sau mỗi buổi.',
+      'Nguyên tắc vàng: form trước volume, volume trước intensity. Tăng không quá 10% tổng volume mỗi tuần để tránh overtraining.',
+    ],
+    points:[
+      { icon:'💪', label:'Ngày sức mạnh', note:'T2/T4/T6 — 6 mẫu vận động cơ bản' },
+      { icon:'🚶', label:'Ngày cardio nhẹ', note:'T3/T5 — nhịp tim 100–130 bpm' },
+      { icon:'📊', label:'RPE 6–8/10', note:'Đủ kích thích, vẫn phục hồi được' },
+      { icon:'📈', label:'Tăng 10%/tuần', note:'Progressive overload có kiểm soát' },
+    ],
+    links:[
+      { icon:'🏃', label:'6 Mẫu Vận Động', to:'/pillar/a/movements' },
+      { icon:'📅', label:'Nhịp Tuần', to:'/pillar/a/weekly' },
+    ],
+  },
+  {
+    time:'5–10 phút', name:'Giãn Cơ & Hạ Nhiệt', desc:'Kéo giãn · hạ nhịp tim · thư giãn cơ', icon:'🧘', color:'#14b8a6', rgb:'20,184,166',
+    img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+    details:[
+      'Sau tập mạnh, cơ đang ở trạng thái co rút. Giãn tĩnh 30s/nhóm cơ giúp phục hồi độ dài cơ và giảm DOMS (đau cơ hôm sau) 20–30%.',
+      'Hạ nhịp tim đúng cách: đi bộ chậm 2 phút → giãn cơ → thở sâu. Không ngồi hoặc nằm xuống ngay sau tập nặng — máu dồn ở tay chân không kịp trở về tim.',
+      'Foam rolling trước giãn tĩnh (nếu có): 30 giây/nhóm cơ lớn. Ưu tiên: đùi sau, bắp chân, hông, lưng trên. Tác dụng tốt hơn giãn đơn thuần.',
+    ],
+    points:[
+      { icon:'🔄', label:'Giãn tĩnh 30s', note:'Giữ không nảy — nhóm cơ vừa tập' },
+      { icon:'❤️', label:'Hạ nhịp tim', note:'Đi chậm 2\' trước khi giãn cơ' },
+      { icon:'😌', label:'Kích hoạt PSNS', note:'Hệ thần kinh từ fight → rest' },
+      { icon:'🧴', label:'Foam roll', note:'30s/nhóm cơ lớn nếu có dụng cụ' },
+    ],
+    links:[
+      { icon:'🌿', label:'Phục Hồi Tích Cực', to:'/pillar/c/recovery' },
+      { icon:'📐', label:'Khung Ngày Tập', to:'/pillar/a/framework' },
+    ],
+  },
+  {
+    time:'5 phút', name:'Mind Reset', desc:'Thở sâu hoặc thiền ngắn · đặt ý định', icon:'🌿', color:'#a855f7', rgb:'168,85,247',
+    img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    details:[
+      '5 phút cuối là cầu nối từ "mode tập" sang "mode sống". Đây là lúc não bộ consolidate (củng cố) ký ức vận động — bỏ qua là mất một phần lợi ích của buổi tập.',
+      'Công thức: 3 hơi thở sâu (4s hít – 4s giữ – 6s thở ra) → 2 phút ngồi im hoặc đi bộ im lặng → đặt 1 ý định cụ thể cho phần còn lại của ngày.',
+      'Nếu không có thời gian: 5 phút đi bộ im lặng (không phone, không nhạc) thay thế hoàn toàn. Tác dụng tương đương với thiền ngồi nhờ kích hoạt Default Mode Network.',
+    ],
+    points:[
+      { icon:'🌬️', label:'3 hơi thở sâu', note:'4-4-6 giảm cortisol trong 90 giây' },
+      { icon:'🎯', label:'Đặt ý định', note:'1 điều muốn làm tốt nhất hôm nay' },
+      { icon:'🚶', label:'Thay thế: đi bộ', note:'5\' im lặng = thiền động hiệu quả' },
+      { icon:'🧠', label:'Củng cố ký ức', note:'Não encode bài học tập sau khi dừng' },
+    ],
+    links:[
+      { icon:'🌬️', label:'Kỹ Thuật Thở', to:'/pillar/d/breathing' },
+      { icon:'🧘', label:'Thiền Định', to:'/pillar/d/meditation' },
+    ],
+  },
+];
+
+const DAILY_PRINCIPLES = [
+  {
+    text:"Không bỏ 5' khởi động — giảm 70% nguy cơ chấn thương",
+    icon:'🛡️', color:'#22c55e', rgb:'34,197,94',
+    img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    details:[
+      '70% chấn thương trong tập luyện xảy ra ở buổi tập không khởi động đủ. Con số từ nghiên cứu y học thể thao — không phải ước tính.',
+      'Cơ lạnh co bóp chậm, kém đàn hồi và nhận tín hiệu thần kinh chậm hơn 30%. 5 phút khởi động giải quyết cả ba vấn đề này cùng lúc.',
+      'Ngay cả khi vội, giữ tối thiểu 3 phút: xoay khớp lớn + 10 jumping jack + 10 arm circle. Không bao giờ bỏ hoàn toàn — không có ngoại lệ.',
+    ],
+    points:[
+      { icon:'⏱️', label:'Tối thiểu 3 phút', note:'Không có lý do để bỏ hoàn toàn' },
+      { icon:'🦴', label:'Xoay khớp trước', note:'Cổ → vai → hông → gối → cổ chân' },
+      { icon:'❤️', label:'Nâng nhịp tim nhẹ', note:'Jumping jack hoặc đi bộ 1 phút đủ' },
+      { icon:'🛡️', label:'Không thương lượng', note:'Không thể bỏ — chỉ có thể rút ngắn' },
+    ],
+    links:[
+      { icon:'🔥', label:'Xem Khung Ngày', to:'/pillar/a/framework' },
+      { icon:'🏃', label:'6 Mẫu Vận Động', to:'/pillar/a/movements' },
+    ],
+  },
+  {
+    text:"Mind Reset có thể thay bằng 5' đi bộ im lặng",
+    icon:'🚶', color:'#a855f7', rgb:'168,85,247',
+    img:'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80',
+    details:[
+      '5 phút đi bộ im lặng (không phone, không nhạc) kích hoạt Default Mode Network — cùng vùng não với thiền định chính thức.',
+      'Thiền "formal" (ngồi, nhắm mắt) không bắt buộc. Điều bắt buộc là: im lặng + ý thức hiện tại + không có kích thích. Đi bộ thỏa mãn cả ba.',
+      'Áp dụng ngay: sau buổi tập, để phone trong túi, đi bộ từ phòng gym ra xe/nhà. 5 phút đó là Mind Reset hoàn toàn hợp lệ.',
+    ],
+    points:[
+      { icon:'📵', label:'Không phone', note:'Stimulation = ngược với reset' },
+      { icon:'👁️', label:'Chú ý môi trường', note:'Nhìn xung quanh thay vì màn hình' },
+      { icon:'🌬️', label:'Thở tự nhiên', note:'Không cần kiểm soát — để tự nhiên' },
+      { icon:'🧠', label:'DMN activation', note:'Não bộ xử lý và củng cố trong im lặng' },
+    ],
+    links:[
+      { icon:'🌬️', label:'Kỹ Thuật Thở', to:'/pillar/d/breathing' },
+      { icon:'🧘', label:'Thiền Định', to:'/pillar/d/meditation' },
+    ],
+  },
+  {
+    text:"Nếu chỉ có 20 phút: 5' khởi động + 10' chính + 5' giãn",
+    icon:'⏱️', color:'#84cc16', rgb:'132,204,22',
+    img:'https://images.unsplash.com/photo-1434596922112-19c563067271?w=800&q=80',
+    details:[
+      '20 phút luôn tốt hơn 0 phút. Nghiên cứu chứng minh 1 set/bài tập đã có 60–70% lợi ích so với 3 set — khi thời gian hạn chế, ưu tiên nhất quán hơn là hoàn hảo.',
+      'Công thức 20 phút: 5\' khởi động → 10\' vận động chính (2–3 bài, 1–2 set, không nghỉ dài) → 5\' giãn cơ + thở. Bỏ Mind Reset riêng — kết hợp vào cuối giãn cơ.',
+      'Khi chỉ có 20 phút, dùng circuit training: thực hiện liên tục 2–3 bài không nghỉ giữa các bài, chỉ nghỉ khi kết thúc vòng. Tiết kiệm 5–8 phút so với nghỉ bình thường.',
+    ],
+    points:[
+      { icon:'⏰', label:'20 phút đủ', note:'Luôn tốt hơn bỏ hoàn toàn' },
+      { icon:'🏃', label:'2–3 bài chính', note:'Ít bài hơn, ít nghỉ hơn' },
+      { icon:'🔗', label:'Circuit training', note:'Đi liên tục để tiết kiệm thời gian' },
+      { icon:'📐', label:'Ưu tiên form', note:'Thà ít rep đúng hơn nhiều rep sai' },
+    ],
+    links:[
+      { icon:'📐', label:'Khung Ngày Tập', to:'/pillar/a/framework' },
+      { icon:'⚡', label:'Quick Workouts', to:'/pillar/f/quick-workouts' },
+    ],
+  },
+  {
+    text:"Nếu có 40 phút: thêm Giãn cơ và Mind Reset đầy đủ",
+    icon:'🌟', color:'#f97316', rgb:'249,115,22',
+    img:'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80',
+    details:[
+      '40 phút là "golden zone" — đủ cho buổi tập hoàn chỉnh mà không quá dài gây mệt mỏi tinh thần hoặc khó duy trì thói quen.',
+      'Phân bổ 40 phút: 5\' khởi động → 20\' vận động chính (thêm set hoặc thêm 1 bài) → 10\' giãn cơ đủ cho mọi nhóm cơ → 5\' Mind Reset đầy đủ.',
+      'Nếu thường xuyên có 40 phút: thêm foam rolling 5 phút trước giãn tĩnh, hoặc thiền ngồi thay vì chỉ thở sâu. Đây là phiên bản "full program" mỗi ngày.',
+    ],
+    points:[
+      { icon:'⏳', label:'Golden zone', note:'40 phút = hiệu quả & bền vững nhất' },
+      { icon:'🧴', label:'Thêm foam roll', note:'5\' trước giãn tĩnh nếu có dụng cụ' },
+      { icon:'🧘', label:'Thiền đầy đủ', note:'5\' ngồi im thay vì chỉ 3 nhịp thở' },
+      { icon:'📊', label:'Thêm 1 bài', note:'Tăng set hoặc weak point exercise' },
+    ],
+    links:[
+      { icon:'📐', label:'Khung Ngày Tập', to:'/pillar/a/framework' },
+      { icon:'🌿', label:'Phục Hồi', to:'/pillar/c/recovery' },
+    ],
+  },
 ];
 
 const WEEKLY_RHYTHM = [
@@ -1024,6 +1179,84 @@ const SUB_TABS_12W = [
   { id:'tips',   label:'Nguyên Tắc', icon:'💡' },
   { id:'test',   label:'Bài Test', icon:'📈' },
 ];
+
+// ── DailyBlockModal (shared for DAILY_BLOCKS + DAILY_PRINCIPLES) ─────────────
+function DailyBlockModal({ block, onClose }) {
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+  }, [onClose]);
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(14px)' }}
+      onClick={onClose}>
+      <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+        style={{ background: '#0d0d0d', borderColor: `rgba(${block.rgb},0.28)`, boxShadow: `0 0 80px rgba(${block.rgb},0.15)` }}
+        onClick={e => e.stopPropagation()}>
+        {/* Hero */}
+        <div className="relative h-44 rounded-t-3xl overflow-hidden">
+          <img src={block.img} alt={block.name} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(${block.rgb},0.08) 50%, #0d0d0d 100%)` }} />
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${block.color}, transparent)` }} />
+          <div className="absolute bottom-4 left-5 flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center text-2xl"
+              style={{ background: `rgba(${block.rgb},0.18)`, border: `2px solid rgba(${block.rgb},0.4)` }}>
+              {block.icon}
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: block.color }}>{block.time || 'NGUYÊN TẮC'}</p>
+              <h2 className="font-bold text-white text-lg leading-tight max-w-xs">{block.name || block.text}</h2>
+            </div>
+          </div>
+          <button onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
+        </div>
+        {/* Content */}
+        <div className="p-5 md:p-7">
+          <ul className="space-y-2.5 mb-5">
+            {block.details.map((d, di) => (
+              <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                  style={{ background: `rgba(${block.rgb},0.14)`, color: block.color }}>{di + 1}</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          {/* Quick links */}
+          <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${block.rgb},0.12)` }}>
+            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${block.rgb},0.5)` }}>Khám Phá Chi Tiết</p>
+            <div className="flex flex-wrap gap-2">
+              {block.links.map((lk, li) => (
+                <Link key={li} to={lk.to} onClick={onClose}
+                  className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
+                  style={{ color: block.color, background: `rgba(${block.rgb},0.1)`, border: `1px solid rgba(${block.rgb},0.22)` }}>
+                  <span>{lk.icon}</span> {lk.label} →
+                </Link>
+              ))}
+            </div>
+          </div>
+          {/* Key points */}
+          <div className="grid grid-cols-2 gap-2.5">
+            {block.points.map((pt, pi) => (
+              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                style={{ background: `rgba(${block.rgb},0.06)`, border: `1px solid rgba(${block.rgb},0.14)` }}>
+                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                <div>
+                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ── Pillar Assets for Phase Modal ────────────────────────────────────────────
 const PILLAR_ASSETS = {
@@ -1445,6 +1678,7 @@ export default function Program() {
   const [activeQuickLink, setActiveQuickLink] = useState(null);
   const [activePillarRow, setActivePillarRow] = useState(null);
   const [activePhaseItem, setActivePhaseItem] = useState(null);
+  const [activeDailyBlock, setActiveDailyBlock] = useState(null);
 
   useEffect(() => {
     const tab = new URLSearchParams(location.search).get('tab');
@@ -1863,30 +2097,42 @@ export default function Program() {
                   <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent -translate-y-1/2 pointer-events-none" />
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {DAILY_BLOCKS.map((block,i) => (
-                      <RevealBlock key={i} delay={i*80} className="relative bg-surface border border-border rounded-2xl p-5 text-center hover:border-accent/30 hover:shadow-[0_0_24px_rgba(34,197,94,0.07)] transition-all duration-300 group">
-                        <span className="absolute top-3 right-3 text-[10px] font-bold text-muted/30">{String(i+1).padStart(2,'0')}</span>
-                        <span className="text-4xl block mb-3 group-hover:scale-110 transition-transform duration-300">{block.icon}</span>
-                        <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: block.color }}>{block.time}</p>
-                        <h3 className="font-bold text-lg text-text mb-1.5">{block.name}</h3>
-                        <p className="text-base text-muted leading-relaxed">{block.desc}</p>
-                        {i < 3 && <span className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-border text-xl z-10">›</span>}
+                      <RevealBlock key={i} delay={i*80}>
+                        <div
+                          className="relative bg-surface border border-border rounded-2xl p-5 text-center transition-all duration-300 group cursor-pointer hover:-translate-y-0.5"
+                          onClick={() => setActiveDailyBlock(block)}
+                          onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${block.rgb},0.45)`; e.currentTarget.style.boxShadow = `0 0 24px rgba(${block.rgb},0.12)`; }}
+                          onMouseLeave={e => { e.currentTarget.style.borderColor = ''; e.currentTarget.style.boxShadow = ''; }}
+                        >
+                          <span className="absolute top-3 right-3 text-[10px] font-bold text-muted/30">{String(i+1).padStart(2,'0')}</span>
+                          <span className="text-4xl block mb-3 group-hover:scale-110 transition-transform duration-300">{block.icon}</span>
+                          <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: block.color }}>{block.time}</p>
+                          <h3 className="font-bold text-lg text-text mb-1.5">{block.name}</h3>
+                          <p className="text-sm text-muted leading-relaxed">{block.desc}</p>
+                          <span className="inline-block mt-2 text-[10px] font-bold opacity-50 group-hover:opacity-100 transition-opacity"
+                            style={{ color: block.color }}>Chi tiết →</span>
+                          {i < 3 && <span className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-border text-xl z-10">›</span>}
+                        </div>
                       </RevealBlock>
                     ))}
                   </div>
                 </div>
                 <RevealBlock delay={320} className="mt-8 p-5 rounded-2xl border border-accent/15 bg-accent/4">
                   <h3 className="text-base font-bold uppercase tracking-widest text-accent mb-3">💡 {t('program.daily_principles_title', 'Nguyên Tắc Khung Ngày')}</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base text-muted">
-                    {(() => {
-                      const principles = t('program.daily_principles', { returnObjects: true });
-                      const pArr = Array.isArray(principles) ? principles : [
-                        "Không bỏ 5' khởi động — giảm 70% nguy cơ chấn thương",
-                        "Mind Reset có thể thay bằng 5' đi bộ im lặng",
-                        "Nếu chỉ có 20 phút: 5' khởi động + 10' chính + 5' giãn",
-                        "Nếu có 40 phút: thêm Giãn cơ và Mind Reset đầy đủ"
-                      ];
-                      return pArr.map((p, i) => <p key={i}>• {p}</p>);
-                    })()}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {DAILY_PRINCIPLES.map((pr, i) => (
+                      <button key={i}
+                        className="flex items-start gap-2.5 text-left px-3 py-2.5 rounded-xl cursor-pointer group transition-all duration-200 hover:-translate-y-0.5"
+                        style={{ background: `rgba(${pr.rgb},0.04)`, border: `1px solid rgba(${pr.rgb},0.12)` }}
+                        onMouseEnter={e => { e.currentTarget.style.borderColor = `rgba(${pr.rgb},0.35)`; }}
+                        onMouseLeave={e => { e.currentTarget.style.borderColor = `rgba(${pr.rgb},0.12)`; }}
+                        onClick={() => setActiveDailyBlock(pr)}
+                      >
+                        <span className="text-base shrink-0 mt-0.5">{pr.icon}</span>
+                        <span className="text-sm text-muted leading-relaxed group-hover:text-text/80 transition-colors flex-1">• {pr.text}</span>
+                        <span className="shrink-0 text-[10px] font-bold opacity-0 group-hover:opacity-60 transition-opacity self-center" style={{ color: pr.color }}>→</span>
+                      </button>
+                    ))}
                   </div>
                 </RevealBlock>
               </div>
@@ -2374,6 +2620,9 @@ export default function Program() {
         type={activePhaseItem.type}
         onClose={() => setActivePhaseItem(null)}
       />
+    )}
+    {activeDailyBlock && (
+      <DailyBlockModal block={activeDailyBlock} onClose={() => setActiveDailyBlock(null)} />
     )}
   </>
   );

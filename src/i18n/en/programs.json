@@ -1,0 +1,167 @@
+{
+  "goal_types": {
+    "beginner":  { "title": "Beginner",       "subtitle": "20–30 min/day" },
+    "busy":      { "title": "Super Busy",     "subtitle": "10 min/day" },
+    "fatloss":   { "title": "Fat Loss",       "subtitle": "30–40 min/day" },
+    "muscle":    { "title": "Muscle Gain",    "subtitle": "With weights / resistance bands" },
+    "endurance": { "title": "Endurance",      "subtitle": "Zone 2 Cardio" },
+    "advanced":  { "title": "Advanced",       "subtitle": "Gym + Cycling + Swimming" }
+  },
+  "goal_cards": {
+    "beginner":  { "tag": "0–3 months",          "badge": "Easy to start" },
+    "busy":      { "tag": "Any schedule",         "badge": "Most flexible" },
+    "fatloss":   { "tag": "Slightly overweight",  "badge": "Most popular" },
+    "muscle":    { "tag": "Weights / bands",      "badge": "Muscle gain" },
+    "endurance": { "tag": "Cardio fitness",       "badge": "Zone 2 Cardio" },
+    "advanced":  { "tag": "Good fitness base",    "badge": "Multi-sport" }
+  },
+  "phases": {
+    "beginner": [
+      { "name": "Getting Started",  "desc": "Learn basic form and build a habit — get the technique right before adding volume.", "focus": "Sit-to-stand, wall push-up, glute bridge, dead bug, brisk walk 20–25'", "nutrition": "Apply the ½ veg – ¼ protein – ¼ carb plate for one meal per day", "milestone": "Complete 7/7 days; write 5 lines in a training journal each session" },
+      { "name": "Building Base",    "desc": "Keep week 1 structure but add slightly: +1 set or +5–10% reps.", "focus": "Squat to chair 3×10, knee push-up 3×10, cardio 30', technique micro-lesson", "nutrition": "Every main meal includes one protein source: eggs, fish, lean meat, beans", "milestone": "Plank 30 s unbroken; brisk walk 30' comfortably" },
+      { "name": "Strengthening",    "desc": "5 exercises per strength session, cardio 30', introduce light dumbbells.", "focus": "Goblet squat, standard push-up, band row, light RDL, plank 40 s", "nutrition": "Smart carbs around workouts; 2 L water per day", "milestone": "Squat 3×12 with good form; brisk walk 35' comfortably" },
+      { "name": "Progressing",      "desc": "Increase volume and intensity steadily; start tracking measurements.", "focus": "Goblet squat 3×12, push-up 3×10, dumbbell row, RDL, split squat", "nutrition": "Add more fibre, limit sugary drinks, drink enough water", "milestone": "Push-up 3×10 proper form; plank 45 s; brisk walk 40' Zone 2" },
+      { "name": "Developing",       "desc": "Shorten rest periods and raise exercise difficulty with good form.", "focus": "Split squat, incline push-up, Romanian deadlift, light intervals", "nutrition": "Meal prep 2 meals/week to ensure adequate protein", "milestone": "Complete 4-week test: waist, sit-to-stand, plank, 12-min walk" },
+      { "name": "Mastery",          "desc": "Personalised routine based on your progress; sustainable long term.", "focus": "Choose exercises by goal; test every 4 weeks; adjust flexibly", "nutrition": "Maintain the healthy plate; no strict dieting needed", "milestone": "Complete 24 weeks — stronger body, sustainable habits" }
+    ],
+    "busy": [
+      { "name": "Getting Started",   "desc": "10 min/day — 'win through consistency, not grandeur'.", "focus": "2' warm-up + 6' circuit (squat 30 s, push 30 s, plank 30 s) + 2' breathing", "nutrition": "One meal per day with protein: eggs, yogurt, beans, fish", "milestone": "28/28 days without missing a session, even if only 10 min" },
+      { "name": "Keeping the Streak","desc": "Increase to 12–15 min when possible; hold at 10' on busy days.", "focus": "Add one AMRAP round or add dead bug/bird-dog to the circuit", "nutrition": "Eat slowly, don't skip breakfast, stay hydrated", "milestone": "Body feels more flexible; less back fatigue after long days" },
+      { "name": "More Efficient",    "desc": "Add a lunchtime micro-session of 5–10' if possible; keep morning at 10'.", "focus": "Morning: push/pull/squat/core 10'. Lunch: brisk walk 5–10' if available", "nutrition": "Don't skip breakfast; protein within 30 min post-workout", "milestone": "Total 20' movement/day achieved most days" },
+      { "name": "Progressing",       "desc": "Upgrade to 15 min/day when schedule allows; 3-round circuit.", "focus": "15': full-body strength circuit 3 rounds + cardio 3–5'", "nutrition": "Small meal prep: 2–3 protein meals ready each week", "milestone": "Energy levels noticeably better throughout the day" },
+      { "name": "Developing",        "desc": "20' on good days, 10' on busy days — a flexible system.", "focus": "Flexible 10' vs 20' by schedule; add strength on weekends", "nutrition": "Weekend meal prep to cover protein + vegetables all week", "milestone": "Habit maintained automatically without reminders" },
+      { "name": "Mastery",           "desc": "Sustainable habit — as automatic as brushing teeth.", "focus": "Personal flexible system; self-adjusting day-to-day and week-to-week", "nutrition": "Maintain protein + hydration; no extreme dieting", "milestone": "6 months consistent — healthy habits are now instinct" }
+    ],
+    "fatloss": [
+      { "name": "Foundation",      "desc": "3 strength + 2 Zone 2 cardio + 2 recovery sessions — don't overtrain.", "focus": "Strength A/B/C full body + brisk walk/cycling 30–35' Zone 2", "nutrition": "½ plate veg, ¼ protein, ¼ carb — drink 2 L water per day", "milestone": "Build a 5-session/week habit; record initial waist measurement" },
+      { "name": "Cardio Build",    "desc": "Cardio +5'/week; strength stays the same; increase daily NEAT.", "focus": "Zone 2 cardio: 35–40'; add 2,000–3,000 extra steps per day", "nutrition": "Protein ≥ 1 palm size per meal; limit sugary drinks", "milestone": "40' Zone 2 comfortably; −0.5 to −1 cm waist" },
+      { "name": "Combining",       "desc": "Introduce light interval cardio; strength increases to 5 exercises/session.", "focus": "2' fast + 2' slow ×5 alternating cardio; strength 5 ex/session", "nutrition": "Smart carbs: eat around workouts, reduce evening carbs", "milestone": "Waist down 2–3 cm; lighter feeling climbing stairs" },
+      { "name": "Progressing",     "desc": "Steady volume increase; track weight + waist weekly.", "focus": "Strength volume up; cardio 40–45'; NEAT target 8,000 steps", "nutrition": "Track protein daily; basic macro balance", "milestone": "Noticeable body composition change; daily steps up significantly" },
+      { "name": "Peak",            "desc": "Stronger strength + steady-state cardio; don't skip meals.", "focus": "Circuit training + Zone 2 cardio; track morning weight", "nutrition": "Meal prep, enough protein, no meal skipping, avoid late-night eating", "milestone": "Reached initial weight goal; energy levels improved" },
+      { "name": "Maintenance",     "desc": "Slightly reduce volume; train sustainably; no extreme dieting.", "focus": "Maintain 3 strength + 2 cardio; review goals and adjust", "nutrition": "Naturally balanced eating; no strict restrictions", "milestone": "6 months sustained — healthy body, healthy eating habits" }
+    ],
+    "muscle": [
+      { "name": "Foundation",      "desc": "Learn lifting form: basic Push/Pull/Legs split, RPE 7 while keeping technique.", "focus": "Goblet squat, push-up/bench, band/dumbbell row, RDL, plank", "nutrition": "Protein 1.6–2 g/kg bodyweight; eat enough calories for recovery", "milestone": "Learn correct form for 5 foundational movements; no joint pain" },
+      { "name": "Volume Build",    "desc": "Increase sets and reps; perfect form is the top priority.", "focus": "Squat 4×10, bench/push 3×10, row 3×10, OHP 3×10, deadlift 3×8", "nutrition": "Eat enough calories; protein within 30 min post-workout; carbs pre-workout", "milestone": "Squat 4×10 with good form; clearly feel muscles working" },
+      { "name": "Combining",       "desc": "Add compound movements, light load increases, clearer Upper/Lower split.", "focus": "Deadlift 4×6–8, pull-up/lat pulldown, dips/close-grip push, hip thrust", "nutrition": "Carbs pre-workout; protein post; sufficient healthy fats (fish, avocado, nuts)", "milestone": "Deadlift 1.5× bodyweight; 5 pull-ups" },
+      { "name": "Progressing",     "desc": "Upper A/B + Lower A/B: 4 days/week; steady strength gains.", "focus": "Upper A (chest/back), Upper B (shoulder/arm), Lower A/B (quad/ham)", "nutrition": "Sufficient calories; attention to healthy fats; protein every 3–4 hours", "milestone": "Consistent compound lift gains each week" },
+      { "name": "Developing",      "desc": "Highest volume in the cycle; strength test every 4 weeks; check PRs.", "focus": "5–6 exercises/session; 3–4 sets; rest 90–120 s compound, 60 s accessories", "nutrition": "Serious meal prep; protein every 3–4 hours; adequate carbs on training days", "milestone": "Squat/Bench/Deadlift PR vs week 1" },
+      { "name": "Advanced",        "desc": "Specialise on weak points; deload week 24; plan the next cycle.", "focus": "Follow individual progress; 1 deload week every 4–6 weeks", "nutrition": "Balance micro-cycles: cut/bulk based on goal", "milestone": "6 months — look back at visible body and strength transformation" }
+    ],
+    "endurance": [
+      { "name": "Aerobic Base",    "desc": "Pure Zone 2 cardio + minimal strength to maintain muscle.", "focus": "30' walk/cycling Zone 2 (can still speak short sentences) + squat, push, row, glute", "nutrition": "Enough carbs for energy; drink 2–2.5 L water per day", "milestone": "30' Zone 2 walk/cycling without breathlessness" },
+      { "name": "Volume Build",    "desc": "Cardio +5'/week; add light intervals once per week.", "focus": "35–40' Zone 2 + 4 interval bouts 2' fast (Zone 3–4), alternate 2' easy", "nutrition": "Add electrolytes when sweating heavily; carbs before long sessions", "milestone": "40' Zone 2 comfortable; heart rate recovers faster" },
+      { "name": "Building",        "desc": "Cardio 40–50'; add tempo run or moderate cycling intervals.", "focus": "Tempo run 20' (Zone 3) or cycling intervals; strength 2×/week to keep muscle", "nutrition": "Carbs around long sessions; protein for recovery post-workout", "milestone": "Steady 20' tempo run; cardio fitness clearly improved" },
+      { "name": "Progressing",     "desc": "Long ride/run on weekends 60–75'; maintain midweek intervals.", "focus": "Long Zone 2 Saturday (60–75'); intervals Wednesday; strength 2×", "nutrition": "Recovery nutrition: protein + carbs 30 min after long session", "milestone": "Complete 60' Zone 2 without breaks; stable heart rate" },
+      { "name": "Peak",            "desc": "Peak endurance; long ride/run 75–90'; conquer your target.", "focus": "Long Zone 2 75–90'; race-pace intervals 4–6 bouts ×3–5'", "nutrition": "Fuelling strategy for long sessions; replace electrolytes; adequate carbs", "milestone": "Event-ready: 10 km, cycling race, or open-water swim" },
+      { "name": "Maintenance",     "desc": "Sustain aerobic base without overtraining; balance cardio and muscle.", "focus": "Balance endurance and strength; recover properly; don't fear rest days", "nutrition": "Balanced diet; add iron if training hard; stay well hydrated", "milestone": "6 months — strong aerobic base; more efficient body" }
+    ],
+    "advanced": [
+      { "name": "Adaptation",             "desc": "Cycling 40' + Gym + Swimming 50'/day — adapt to high training volume.", "focus": "Upper/Lower/Push/Pull/Full body per standard 6-day/week schedule", "nutrition": "~3,000 kcal heavy days; ~2,800 moderate days; protein ~155 g/day", "milestone": "Complete the full 7-day schedule without excessive fatigue" },
+      { "name": "Volume Build",           "desc": "+5–10% gym volume per week; keep cycling and swimming stable.", "focus": "Increase reps on gym accessories; cycling stays Zone 2–3; swim 1,500–2,000 m", "nutrition": "Increase kcal on heavy training days; replace electrolytes after long rides", "milestone": "Complete weekly schedule with better energy than week 1" },
+      { "name": "Developing",             "desc": "Add Zone 3–4 cycling intervals; build swim to 1,500–2,000 m consistently.", "focus": "Cycling Zone 3 intervals; swim 1,500–2,000 m/session; gym RPE 7–8", "nutrition": "Macro tracking on heavy days; carbs around endurance sessions", "milestone": "Swim 1,500 m unbroken; cycling 5×3' Zone 4 intervals" },
+      { "name": "Peak",                   "desc": "Peak training load: gym 5 days + cycling 5 days + swimming 5 days/week.", "focus": "Long ride 120' Saturday; full gym 5 days; swim to maintain technique", "nutrition": "Enough calories; 7–8 h sleep/night; stretching after every session", "milestone": "Complete 120' ride; gym PR on compound lifts" },
+      { "name": "Deload + Maintenance",   "desc": "Deload week 17: reduce volume 30%, keep intensity — genuine recovery.", "focus": "Reduce volume 30%; keep intensity; prioritise sleep and massage", "nutrition": "Prioritise 7–8 h sleep; supplement omega-3 and magnesium", "milestone": "Post-deload: feel fresh, motivated to train again" },
+      { "name": "Mastery",                "desc": "Sustainable cycle: adjust by HRV and body signals.", "focus": "Monitor HRV; adjust flexibly; never ignore signs of fatigue", "nutrition": "Long-term balance; no extremes; maintain protein intake", "milestone": "6 months elite training — outstanding cardio and muscular health" }
+    ]
+  },
+  "schedule": {
+    "beginner": [
+      { "type": "Strength A",  "detail": "Squat, wall push-up, glute bridge, knee plank" },
+      { "type": "Light Cardio","detail": "Brisk walk 20–25', still able to speak short sentences" },
+      { "type": "Strength B",  "detail": "Hip hinge, towel row, split squat, dead bug" },
+      { "type": "Mobility",    "detail": "Full-body stretch 15–20': hips, thighs, shoulders" },
+      { "type": "Strength C",  "detail": "Sit-to-stand, glute bridge, bird-dog, calf raise" },
+      { "type": "Cardio",      "detail": "Outdoor walk 25–30' at moderate pace" },
+      { "type": "Rest",        "detail": "Week review + 5-line training journal entry" }
+    ],
+    "busy": [
+      { "type": "Strength",       "detail": "Squat 30 s, push 30 s, glute bridge 30 s, plank 20 s × 2 rounds" },
+      { "type": "Cardio",         "detail": "Step touch 40 s + march in place 40 s × 3 rounds" },
+      { "type": "Core",           "detail": "Dead bug 30 s, bird-dog 30 s, knee plank 20 s × 2 rounds" },
+      { "type": "Mobility",       "detail": "10' full body: neck, shoulders, hips, hamstrings" },
+      { "type": "Strength",       "detail": "Squat, band row, glute bridge, wall push-up × 2 rounds" },
+      { "type": "Walk",           "detail": "10' brisk walk or stair climbing" },
+      { "type": "Breathe & Meditate","detail": "5' box breathing + 5' journaling / short meditation" }
+    ],
+    "fatloss": [
+      { "type": "Strength A",  "detail": "Squat, push-up, band row, glute bridge, plank" },
+      { "type": "Cardio Z2",   "detail": "Walk/cycling 30–35' Zone 2 — still able to talk" },
+      { "type": "Strength B",  "detail": "Hip hinge, split squat, dead bug, calf raise" },
+      { "type": "NEAT",        "detail": "Mobility 15' + target +2,000 extra steps in the day" },
+      { "type": "Strength C",  "detail": "Push-up, scapular squeeze, glute bridge, bird-dog" },
+      { "type": "Long Cardio", "detail": "Brisk walk/cycling 35–45' moderate heart rate" },
+      { "type": "Recovery",    "detail": "Light walk 20' + review weight & waist measurements" }
+    ],
+    "muscle": [
+      { "type": "Upper A",        "detail": "Bench/push-up, row, OHP, lat pulldown, curl" },
+      { "type": "Lower A",        "detail": "Squat, Romanian deadlift, leg press, calf, plank" },
+      { "type": "Light Cardio",   "detail": "Walk 25–30' + full-body stretching" },
+      { "type": "Upper B",        "detail": "Incline press, pull-up/lat, lateral raise, tricep" },
+      { "type": "Lower B",        "detail": "Deadlift, hip thrust, walking lunge, core" },
+      { "type": "Light Full Body","detail": "Squat, push, row, plank — RPE 6, form focus" },
+      { "type": "Active Rest",    "detail": "Mobility 10–15' + full rest if fatigued" }
+    ],
+    "endurance": [
+      { "type": "Cardio Z2",          "detail": "Walk/cycling 30' Zone 2 + core 5'" },
+      { "type": "Minimal Strength",   "detail": "Squat, push-up, band row, glute bridge 3×10" },
+      { "type": "Intervals",          "detail": "5' easy + 5 rounds: 2' fast + 2' easy + 5' cool-down" },
+      { "type": "Mobility",           "detail": "Neck, shoulders, back, hips, hamstrings 15–20'" },
+      { "type": "Strength + Balance", "detail": "Split squat, RDL, bird-dog, plank, calf raise" },
+      { "type": "Long Endurance",     "detail": "45–60' walk/cycling Zone 2 moderate pace" },
+      { "type": "Recovery",           "detail": "Light walk 20–30' or full rest if fatigued" }
+    ],
+    "advanced": [
+      { "type": "Cycling + Upper + Swim","detail": "Cycling 40' Zone 2–3 + Gym Upper 30' + Swim 50'" },
+      { "type": "Lower + Swim",          "detail": "Gym Lower 45' (Squat, RDL, Leg press) + Swim 50'" },
+      { "type": "Cycling + Push + Swim", "detail": "Cycling 40' + Gym Push 30' + Swim 50'" },
+      { "type": "Pull + Swim",           "detail": "Gym Pull 45' (Deadlift, row, face pull) + Swim 50'" },
+      { "type": "Cycling + Full + Swim", "detail": "Cycling 40' + Gym Full body 30' + Swim 50'" },
+      { "type": "Long Ride",             "detail": "90–120' Zone 2 + Mobility 20'" },
+      { "type": "Recovery Ride",         "detail": "Easy cycling 60' Zone 1–2 — active recovery" }
+    ]
+  },
+  "ui": {
+    "week_label": "week",
+    "focus_label": "Focus Training",
+    "nutrition_label": "Nutrition",
+    "milestone_label": "Milestone",
+    "weekly_schedule": "Sample Weekly Schedule",
+    "current_week": "Current Week",
+    "focus_modal_title": "Focus Training",
+    "nutrition_modal_title": "Nutrition",
+    "milestone_modal_title": "Milestone",
+    "nutrition_modal_time": "NUTRITION",
+    "milestone_modal_time": "GOAL",
+    "intensity_label": "Intensity",
+    "phase_label": "Phase",
+    "category_label": "Category",
+    "progress_label": "Progress",
+    "progress_note": "Increase gradually each week; listen to your body",
+    "phase_weeks": "Week {{start}}–{{end}}",
+    "phase_tag_detail": "Phase {{tag}}: week {{start}}–{{end}}",
+    "if_achieve_early": "If you hit the milestone before week {{week}}, increase intensity or add new exercises.",
+    "progress_eval": "Evaluate progress every 2 weeks: compare form, completion time, and how your endurance feels.",
+    "water_note": "Drink 2–2.5 litres of water daily; prioritise plain water and fresh vegetable juices.",
+    "meal_timing_note": "Eat 3 full meals; limit unhealthy snacks, especially after 8 pm.",
+    "plate_label": "Standard plate",
+    "plate_note": "½ veg – ¼ protein – ¼ carb",
+    "water_label": "Daily water",
+    "water_note_short": "2–2.5 L; more when training",
+    "meal_time_label": "Meal timing",
+    "meal_time_note": "Main meals 4–5 hours apart",
+    "protein_label": "Protein per meal",
+    "protein_note": "Eggs, fish, lean meat, tofu",
+    "complete_label": "Hit the milestone",
+    "complete_note": "Tick each day on the calendar",
+    "measure_label": "Measure",
+    "measure_note": "Photos, numbers, training journal",
+    "adjust_label": "Adjust",
+    "adjust_note": "Flexible when busy or unwell",
+    "reward_label": "Reward",
+    "reward_note": "Treat yourself when you hit a milestone",
+    "exercise_link_label": "Exercise & Training",
+    "nutrition_link_label": "Nutrition & Meal Plans",
+    "tools_link_label": "Tools & Resources"
+  }
+}

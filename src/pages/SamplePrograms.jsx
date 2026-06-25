@@ -123,6 +123,7 @@ function useCountUp(target, duration = 1000, enabled = false) {
 /*  DailyBlockModal                                */
 /* ─────────────────────────────────────────────── */
 function DailyBlockModal({ block, onClose }) {
+  const { t } = useTranslation();
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -165,7 +166,7 @@ function DailyBlockModal({ block, onClose }) {
             ))}
           </ul>
           <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${block.rgb},0.12)` }}>
-            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${block.rgb},0.5)` }}>Khám Phá Chi Tiết</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${block.rgb},0.5)` }}>{t('modal.explore_detail')}</p>
             <div className="flex flex-wrap gap-2">
               {block.links.map((lk, li) => (
                 <Link key={li} to={lk.to} onClick={onClose}
@@ -188,7 +189,7 @@ function DailyBlockModal({ block, onClose }) {
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{t('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -208,12 +209,30 @@ function ProgramDetail({ goalId, weeks }) {
   const curPhase  = activePhs[activePhs.length - 1];
 
   const [activeItem, setActiveItem] = useState(null);
+  const { t: tP } = useTranslation('programs');
 
   if (!goal || !curPhase) return null;
 
   const phIdx = activePhs.length - 1;
   const pCol  = PHASE_COLORS[phIdx] || PHASE_COLORS[0];
   const phHex = PHASE_COLORS_HEX[phIdx] || PHASE_COLORS_HEX[0];
+
+  // Translated phase data with fallback to source data
+  const phArrRaw   = tP(`phases.${goalId}`, { returnObjects: true });
+  const phArr      = Array.isArray(phArrRaw) ? phArrRaw : [];
+  const phTrans    = phArr[phIdx] || {};
+  const pName      = phTrans.name      || curPhase.name;
+  const pDesc      = phTrans.desc      || curPhase.desc;
+  const pFocus     = phTrans.focus     || curPhase.focus;
+  const pNutrition = phTrans.nutrition || curPhase.nutrition;
+  const pMilestone = phTrans.milestone || curPhase.milestone;
+  const phNames    = phArr.map(p => p.name || '');
+
+  const schedArrRaw = tP(`schedule.${goalId}`, { returnObjects: true });
+  const schedArr    = Array.isArray(schedArrRaw) ? schedArrRaw : [];
+
+  const gtRaw  = tP(`goal_types.${goalId}`, { returnObjects: true });
+  const gTitle = (gtRaw && typeof gtRaw === 'object' && gtRaw.title) ? gtRaw.title : goal.title;
 
   return (
     <>
@@ -240,7 +259,7 @@ function ProgramDetail({ goalId, weeks }) {
           <div className="flex-1">
             <div className="flex flex-wrap gap-2 mb-3">
               <span className={`text-[10px] font-bold px-3 py-1 rounded-full border ${goal.badge} uppercase tracking-wider`}>
-                {goal.icon} {goal.title}
+                {goal.icon} {gTitle}
               </span>
               <span className="text-[10px] font-bold px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/60">
                 {curPhase.intensity}
@@ -250,14 +269,14 @@ function ProgramDetail({ goalId, weeks }) {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-2 leading-tight">
-              {weeks} tuần · {curPhase.name}
+              {weeks} {tP('ui.week_label')} · {pName}
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed max-w-lg">{curPhase.desc}</p>
+            <p className="text-white/60 text-lg leading-relaxed max-w-lg">{pDesc}</p>
           </div>
 
           {/* Right: week position */}
           <div className="shrink-0 text-right">
-            <div className="text-white/30 text-base mb-1 uppercase tracking-widest">Tuần hiện tại</div>
+            <div className="text-white/30 text-base mb-1 uppercase tracking-widest">{tP('ui.current_week')}</div>
             <div className={`text-6xl font-black ${goal.text}`}>{weeks}</div>
             <div className="text-white/40 text-base">/ 24</div>
           </div>
@@ -282,7 +301,7 @@ function ProgramDetail({ goalId, weeks }) {
                     />
                   </div>
                   <div className="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover/ph:opacity-100 transition-opacity duration-200 whitespace-nowrap bg-black/80 border border-white/10 rounded-lg px-2 py-0.5 text-[9px] text-white z-10 pointer-events-none">
-                    {ph.icon} {ph.name}
+                    {ph.icon} {phNames[i] || ph.name}
                   </div>
                 </div>
               );
@@ -307,26 +326,26 @@ function ProgramDetail({ goalId, weeks }) {
               {curPhase.icon}
             </div>
             <div>
-              <h3 className={`font-bold ${goal.text}`}>{curPhase.name}</h3>
-              <p className="text-[11px] text-muted">Tuần {curPhase.range[0]}–{Math.min(curPhase.range[1], weeks)}</p>
+              <h3 className={`font-bold ${goal.text}`}>{pName}</h3>
+              <p className="text-[11px] text-muted">{tP('ui.week_label')} {curPhase.range[0]}–{Math.min(curPhase.range[1], weeks)}</p>
             </div>
           </div>
           <div className="bg-bg/60 rounded-xl p-4 border border-border/40 cursor-pointer hover:border-white/20 transition-colors duration-200"
             onClick={() => setActiveItem({
-              icon: curPhase.icon, name: `${curPhase.name} — Tập Trọng Tâm`, time: curPhase.intensity,
+              icon: curPhase.icon, name: `${pName} — ${tP('ui.focus_modal_title')}`, time: curPhase.intensity,
               color: phHex.hex, rgb: phHex.rgb,
               img: curPhase.image || 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
-              details: [curPhase.focus, curPhase.desc, `Giai đoạn ${curPhase.tag}: tuần ${curPhase.range[0]}–${curPhase.range[1]}`],
+              details: [pFocus, pDesc, tP('ui.phase_tag_detail', { tag: curPhase.tag, start: curPhase.range[0], end: curPhase.range[1] })],
               points: [
-                { icon:'🎯', label:'Mức độ', note: curPhase.intensity },
-                { icon:'📅', label:'Giai đoạn', note:`Tuần ${curPhase.range[0]}–${curPhase.range[1]}` },
-                { icon:'🏷️', label:'Phân loại', note: curPhase.tag },
-                { icon:'📈', label:'Tiến bộ', note:'Tăng nhẹ mỗi tuần, lắng nghe cơ thể' },
+                { icon:'🎯', label: tP('ui.intensity_label'), note: curPhase.intensity },
+                { icon:'📅', label: tP('ui.phase_label'), note: tP('ui.phase_weeks', { start: curPhase.range[0], end: curPhase.range[1] }) },
+                { icon:'🏷️', label: tP('ui.category_label'), note: curPhase.tag },
+                { icon:'📈', label: tP('ui.progress_label'), note: tP('ui.progress_note') },
               ],
-              links: [{ icon:'🏋️', label:'Vận Động & Tập Luyện', to:'/pillar/a' }],
+              links: [{ icon:'🏋️', label: tP('ui.exercise_link_label'), to:'/pillar/a' }],
             })}>
-            <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">🏋️ Tập trọng tâm</p>
-            <p className="text-lg text-text leading-relaxed">{curPhase.focus}</p>
+            <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">🏋️ {tP('ui.focus_label')}</p>
+            <p className="text-lg text-text leading-relaxed">{pFocus}</p>
           </div>
         </div>
 
@@ -334,45 +353,45 @@ function ProgramDetail({ goalId, weeks }) {
         <div className="flex flex-col gap-4">
           <div className="flex-1 rounded-2xl border border-border bg-surface p-4 cursor-pointer hover:border-white/20 transition-colors duration-200"
             onClick={() => setActiveItem({
-              icon: '🥗', name: `${curPhase.name} — Dinh Dưỡng`, time: 'DINH DƯỠNG',
+              icon: '🥗', name: `${pName} — ${tP('ui.nutrition_modal_title')}`, time: tP('ui.nutrition_modal_time'),
               color: '#84cc16', rgb: '132,204,22',
               img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80',
               details: [
-                curPhase.nutrition,
-                'Uống 2–2.5 lít nước mỗi ngày, ưu tiên nước lọc và nước ép rau quả tươi.',
-                'Ăn đủ 3 bữa chính, hạn chế đồ ăn vặt không lành mạnh, đặc biệt sau 20h.',
+                pNutrition,
+                tP('ui.water_note'),
+                tP('ui.meal_timing_note'),
               ],
               points: [
-                { icon:'🍽️', label:'Đĩa ăn chuẩn', note:'½ rau – ¼ đạm – ¼ tinh bột' },
-                { icon:'💧', label:'Nước mỗi ngày', note:'2–2.5 lít, tăng khi tập' },
-                { icon:'⏰', label:'Thời gian ăn', note:'Bữa chính cách nhau 4–5 tiếng' },
-                { icon:'🥩', label:'Protein mỗi bữa', note:'Trứng, cá, thịt nạc, đậu hũ' },
+                { icon:'🍽️', label: tP('ui.plate_label'), note: tP('ui.plate_note') },
+                { icon:'💧', label: tP('ui.water_label'), note: tP('ui.water_note_short') },
+                { icon:'⏰', label: tP('ui.meal_time_label'), note: tP('ui.meal_time_note') },
+                { icon:'🥩', label: tP('ui.protein_label'), note: tP('ui.protein_note') },
               ],
-              links: [{ icon:'🥗', label:'Dinh Dưỡng & Thực Đơn', to:'/pillar/b' }],
+              links: [{ icon:'🥗', label: tP('ui.nutrition_link_label'), to:'/pillar/b' }],
             })}>
-            <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">🥗 Dinh dưỡng</p>
-            <p className="text-base text-text leading-relaxed">{curPhase.nutrition}</p>
+            <p className="text-[10px] font-bold text-muted uppercase tracking-wider mb-2">🥗 {tP('ui.nutrition_label')}</p>
+            <p className="text-base text-text leading-relaxed">{pNutrition}</p>
           </div>
           <div className={`rounded-2xl border ${goal.border} bg-surface p-4 cursor-pointer hover:border-white/20 transition-colors duration-200`}
             onClick={() => setActiveItem({
-              icon: '🏁', name: `${curPhase.name} — Mốc Đánh Dấu`, time: 'MỤC TIÊU',
+              icon: '🏁', name: `${pName} — ${tP('ui.milestone_modal_title')}`, time: tP('ui.milestone_modal_time'),
               color: phHex.hex, rgb: phHex.rgb,
               img: curPhase.image || 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80',
               details: [
-                curPhase.milestone,
-                'Đánh giá tiến độ sau mỗi 2 tuần: so sánh form, thời gian hoàn thành và cảm giác sức bền.',
-                `Nếu đạt mốc trước tuần ${curPhase.range[1]}, tăng mức độ hoặc thêm bài tập mới.`,
+                pMilestone,
+                tP('ui.progress_eval'),
+                tP('ui.if_achieve_early', { week: curPhase.range[1] }),
               ],
               points: [
-                { icon:'✅', label:'Hoàn thành mốc', note:'Đánh dấu từng ngày trong lịch' },
-                { icon:'📊', label:'Đo lường', note:'Ảnh, số liệu, nhật ký tập' },
-                { icon:'🔄', label:'Điều chỉnh', note:'Linh hoạt khi bận hoặc ốm' },
-                { icon:'🏆', label:'Phần thưởng', note:'Tặng bản thân khi đạt mốc' },
+                { icon:'✅', label: tP('ui.complete_label'), note: tP('ui.complete_note') },
+                { icon:'📊', label: tP('ui.measure_label'), note: tP('ui.measure_note') },
+                { icon:'🔄', label: tP('ui.adjust_label'), note: tP('ui.adjust_note') },
+                { icon:'🏆', label: tP('ui.reward_label'), note: tP('ui.reward_note') },
               ],
-              links: [{ icon:'📋', label:'Công Cụ & Tài Nguyên', to:'/pillar/f' }],
+              links: [{ icon:'📋', label: tP('ui.tools_link_label'), to:'/pillar/f' }],
             })}>
-            <p className={`text-[10px] font-bold uppercase tracking-wider mb-2 ${goal.text}`}>🏁 Mốc đánh dấu</p>
-            <p className="text-base text-text leading-relaxed">{curPhase.milestone}</p>
+            <p className={`text-[10px] font-bold uppercase tracking-wider mb-2 ${goal.text}`}>🏁 {tP('ui.milestone_label')}</p>
+            <p className="text-base text-text leading-relaxed">{pMilestone}</p>
           </div>
         </div>
       </div>
@@ -381,18 +400,21 @@ function ProgramDetail({ goalId, weeks }) {
       <div>
         <h3 className="text-base font-bold text-muted uppercase tracking-widest mb-4 flex items-center gap-2">
           <span className="w-px h-4 bg-border" />
-          Lịch mẫu 1 tuần
+          {tP('ui.weekly_schedule')}
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2">
           {sched.map((s, i) => {
             const img = SCHEDULE_IMAGES[s.icon];
+            const sTrans = schedArr[i] || {};
+            const sType   = sTrans.type   || s.type;
+            const sDetail = sTrans.detail || s.detail;
             return (
               <div
                 key={i}
                 className="group relative overflow-hidden rounded-2xl border border-border hover:border-border-bright bg-surface transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
                 style={{ animationDelay: `${i * 60}ms` }}
                 onClick={() => s.details && setActiveItem({
-                  icon: s.icon, name: s.type, time: s.day,
+                  icon: s.icon, name: sType, time: s.day,
                   color: s.c.hex, rgb: s.c.rgb,
                   img: s.img || SCHEDULE_IMAGES[s.icon] || 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
                   details: s.details,
@@ -423,8 +445,8 @@ function ProgramDetail({ goalId, weeks }) {
                 )}
                 {/* Text */}
                 <div className="p-3">
-                  <p className="text-base font-semibold text-text leading-tight mb-1 group-hover:text-accent transition-colors duration-200">{s.type}</p>
-                  <p className="text-[10px] text-muted leading-snug">{s.detail}</p>
+                  <p className="text-base font-semibold text-text leading-tight mb-1 group-hover:text-accent transition-colors duration-200">{sType}</p>
+                  <p className="text-[10px] text-muted leading-snug">{sDetail}</p>
                 </div>
               </div>
             );
@@ -441,7 +463,8 @@ function ProgramDetail({ goalId, weeks }) {
 /*  Main page                                       */
 /* ─────────────────────────────────────────────── */
 export default function SamplePrograms() {
-  const { t }                = useTranslation();
+  const { t }              = useTranslation();
+  const { t: tP }          = useTranslation('programs');
   const [goalType,     setGoalType]     = useState(null);
   const [weekDuration, setWeekDuration] = useState(null);
   const [hoveredWeek,  setHoveredWeek]  = useState(null);
@@ -635,7 +658,7 @@ export default function SamplePrograms() {
                       data-goal={g.id}
                     >
                       <span>{g.icon}</span>
-                      <span className={goalType === g.id ? g.text : 'text-muted'}>{g.title}</span>
+                      <span className={goalType === g.id ? g.text : 'text-muted'}>{tP(`goal_types.${g.id}.title`)}</span>
                       <span className="text-[10px] text-muted/50">{g.rpe}</span>
                     </button>
                   ))}
@@ -706,7 +729,7 @@ export default function SamplePrograms() {
                   {/* Top badge */}
                   <div className="absolute top-3 left-3">
                     <span className={`text-[10px] font-bold px-2 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-white/80`}>
-                      {card?.tag}
+                      {tP(`goal_cards.${g.id}.tag`)}
                     </span>
                   </div>
 
@@ -719,7 +742,7 @@ export default function SamplePrograms() {
                         </span>
                       ) : (
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/10 backdrop-blur-sm text-white/60 border border-white/10">
-                          {card.badge}
+                          {tP(`goal_cards.${g.id}.badge`)}
                         </span>
                       )}
                     </div>
@@ -730,8 +753,8 @@ export default function SamplePrograms() {
                     <div className="flex items-end justify-between">
                       <div>
                         <p className="text-3xl mb-1.5 group-hover:scale-110 transition-transform duration-300 inline-block">{g.icon}</p>
-                        <h3 className="font-black text-xl text-white leading-tight">{g.title}</h3>
-                        <p className="text-base text-white/60 mt-0.5">{g.subtitle}</p>
+                        <h3 className="font-black text-xl text-white leading-tight">{tP(`goal_types.${g.id}.title`)}</h3>
+                        <p className="text-base text-white/60 mt-0.5">{tP(`goal_types.${g.id}.subtitle`)}</p>
                       </div>
                       <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                         isSelected
@@ -781,8 +804,8 @@ export default function SamplePrograms() {
               <img src={selectedCard?.heroImg} alt="" className="w-full h-full object-cover" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className={`font-bold text-lg ${selectedGoal?.text}`}>{selectedGoal?.icon} {selectedGoal?.title}</p>
-              <p className="text-base text-muted">{selectedGoal?.subtitle} · {selectedGoal?.rpe}</p>
+              <p className={`font-bold text-lg ${selectedGoal?.text}`}>{selectedGoal?.icon} {goalType ? tP(`goal_types.${goalType}.title`) : ''}</p>
+              <p className="text-base text-muted">{goalType ? tP(`goal_types.${goalType}.subtitle`) : ''} · {selectedGoal?.rpe}</p>
             </div>
             <button
               type="button"

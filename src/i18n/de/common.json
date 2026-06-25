@@ -1142,7 +1142,13 @@
     "view_all": "Alles ansehen",
     "topics": "Themen",
     "items": "Inhalte",
-    "more_items": "weitere Inhalte"
+    "more_items": "weitere Inhalte",
+    "section_items": "Inhalte",
+    "section_view_detail": "Details ansehen →"
+  },
+  "modal": {
+    "explore_detail": "Details erkunden",
+    "close_hint": "ESC drücken oder außerhalb klicken zum Schließen"
   },
   "ui": {
     "show_detail": "▼ Details",

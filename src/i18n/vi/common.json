@@ -909,7 +909,13 @@
     "view_all": "Xem Toàn Bộ",
     "topics": "chủ đề",
     "items": "nội dung",
-    "more_items": "nội dung khác"
+    "more_items": "nội dung khác",
+    "section_items": "mục",
+    "section_view_detail": "Xem chi tiết →"
+  },
+  "modal": {
+    "explore_detail": "Khám Phá Chi Tiết",
+    "close_hint": "Nhấn ESC hoặc click bên ngoài để đóng"
   },
   "ui": {
     "show_detail": "▼ chi tiết",

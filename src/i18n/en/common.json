@@ -1142,7 +1142,13 @@
     "view_all": "View All",
     "topics": "topics",
     "items": "items",
-    "more_items": "more items"
+    "more_items": "more items",
+    "section_items": "items",
+    "section_view_detail": "View details →"
+  },
+  "modal": {
+    "explore_detail": "Explore Details",
+    "close_hint": "Press ESC or click outside to close"
   },
   "ui": {
     "show_detail": "▼ details",

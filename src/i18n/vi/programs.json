@@ -1,0 +1,167 @@
+{
+  "goal_types": {
+    "beginner":  { "title": "Người mới",  "subtitle": "20-30 phút/ngày" },
+    "busy":      { "title": "Siêu bận",   "subtitle": "10 phút/ngày" },
+    "fatloss":   { "title": "Giảm mỡ",   "subtitle": "30-40 phút/ngày" },
+    "muscle":    { "title": "Tăng cơ",   "subtitle": "Có tạ / dây kháng lực" },
+    "endurance": { "title": "Sức bền",   "subtitle": "Cardio Zone 2" },
+    "advanced":  { "title": "Nâng cao",  "subtitle": "Gym + Đạp xe + Bơi" }
+  },
+  "goal_cards": {
+    "beginner":  { "tag": "0–3 tháng",       "badge": "Dễ bắt đầu" },
+    "busy":      { "tag": "Mọi lịch trình",  "badge": "Linh hoạt nhất" },
+    "fatloss":   { "tag": "Thừa cân nhẹ",   "badge": "Phổ biến nhất" },
+    "muscle":    { "tag": "Có tạ / dây",     "badge": "Tăng cơ" },
+    "endurance": { "tag": "Tim phổi khỏe",   "badge": "Cardio Zone 2" },
+    "advanced":  { "tag": "Nền thể lực tốt", "badge": "Đa môn" }
+  },
+  "phases": {
+    "beginner": [
+      { "name": "Bắt nhịp",   "desc": "Học form cơ bản, tạo thói quen — tập đúng trước khi tập nhiều.", "focus": "Sit-to-stand, wall push-up, glute bridge, dead bug, đi bộ 20-25'", "nutrition": "Áp dụng đĩa ½ rau – ¼ đạm – ¼ tinh bột 1 bữa/ngày", "milestone": "Hoàn thành 7/7 ngày, ghi nhật ký 5 dòng/buổi" },
+      { "name": "Củng cố",    "desc": "Giữ cấu trúc tuần 1 nhưng tăng nhẹ: +1 hiệp hoặc +5-10% reps.", "focus": "Squat to chair 3×10, knee push-up 3×10, cardio 30', micro-lesson kỹ thuật", "nutrition": "Mỗi bữa chính có 1 nguồn đạm: trứng, cá, thịt nạc, đậu", "milestone": "Plank 30s liên tục, đi bộ 30' thoải mái" },
+      { "name": "Tăng nền",   "desc": "5 bài/buổi strength, cardio 30', giới thiệu dumbbell nhẹ.", "focus": "Goblet squat, push-up chuẩn, band row, RDL nhẹ, plank 40s", "nutrition": "Carb thông minh quanh buổi tập, đủ nước 2L/ngày", "milestone": "Squat 3×12 form đẹp, đi bộ nhanh 35' thoải mái" },
+      { "name": "Tiến bộ",    "desc": "Tăng volume và cường độ đồng đều, bắt đầu theo dõi số đo.", "focus": "Goblet squat 3×12, push-up 3×10, dumbbell row, RDL, split squat", "nutrition": "Bổ sung chất xơ, hạn chế nước ngọt, uống đủ nước", "milestone": "Push-up 3×10 chuẩn, plank 45s, đi bộ 40' Zone 2" },
+      { "name": "Phát triển", "desc": "Rút thời gian nghỉ, tăng độ khó bài tập theo form đẹp.", "focus": "Split squat, incline push-up, Romanian deadlift, interval nhẹ", "nutrition": "Meal prep 2 bữa/tuần để đảm bảo đạm đủ", "milestone": "Hoàn thành 4 tuần test: vòng eo, sit-to-stand, plank, đi bộ 12'" },
+      { "name": "Thuần thục", "desc": "Lộ trình cá nhân hóa theo tiến bộ, duy trì bền vững.", "focus": "Tự chọn bài theo mục tiêu, test 4 tuần/lần, điều chỉnh linh hoạt", "nutrition": "Duy trì đĩa lành mạnh, không cần kiêng nghiêm ngặt", "milestone": "Hoàn thành 24 tuần — cơ thể mạnh hơn, thói quen bền vững" }
+    ],
+    "busy": [
+      { "name": "Bắt nhịp",      "desc": "10 phút/ngày — \"thắng bằng sự đều đặn, không cần hoành tráng\".", "focus": "2' warm-up + 6' circuit (squat 30s, push 30s, plank 30s) + 2' thở", "nutrition": "1 bữa mỗi ngày có đạm: trứng, sữa chua, đậu, cá", "milestone": "28/28 ngày không bỏ buổi nào dù chỉ 10 phút" },
+      { "name": "Giữ chuỗi",     "desc": "Tăng nhẹ lên 12-15 phút khi có thể, giữ nguyên 10' ngày bận.", "focus": "Tăng 1 vòng AMRAP hoặc thêm dead bug/bird-dog vào circuit", "nutrition": "Ăn chậm, không bỏ bữa sáng, uống đủ nước", "milestone": "Cơ thể dẻo dai hơn, ít mỏi lưng hơn sau ngày dài" },
+      { "name": "Tăng hiệu quả", "desc": "Thêm micro session buổi trưa 5-10' nếu có thể, giữ sáng 10'.", "focus": "Sáng: push/pull/squat/core 10'. Trưa: đi bộ 5-10' nếu có", "nutrition": "Không bỏ bữa sáng, protein sau tập 30 phút", "milestone": "Tổng 20' vận động/ngày đạt được hầu hết các ngày" },
+      { "name": "Tiến bộ",       "desc": "Nâng lên 15 phút/ngày nếu lịch cho phép, circuit 3 vòng.", "focus": "15': strength circuit full body 3 vòng + cardio 3-5'", "nutrition": "Meal prep nhỏ: chuẩn bị 2-3 bữa có đạm mỗi tuần", "milestone": "Cảm giác năng lượng cả ngày rõ ràng hơn" },
+      { "name": "Phát triển",    "desc": "20' ngày tốt, 10' ngày bận — hệ thống linh hoạt.", "focus": "Linh hoạt 10' vs 20' theo lịch, thêm strength ngày cuối tuần", "nutrition": "Meal prep cuối tuần đảm bảo protein + rau cả tuần", "milestone": "Tự động duy trì thói quen không cần nhắc nhở" },
+      { "name": "Thuần thục",    "desc": "Thói quen bền vững, không cần nghĩ nhiều — tự nhiên như đánh răng.", "focus": "Hệ thống linh hoạt cá nhân, tự điều chỉnh theo ngày và tuần", "nutrition": "Duy trì đạm + nước, không kiêng cực đoan", "milestone": "6 tháng kiên trì — thói quen lành mạnh đã thành bản năng" }
+    ],
+    "fatloss": [
+      { "name": "Nền tảng",   "desc": "3 strength + 2 cardio Zone 2 + 2 recovery — không tập quá sức.", "focus": "Strength A/B/C full body + đi bộ nhanh/đạp 30-35' Zone 2", "nutrition": "½ đĩa rau, ¼ đạm, ¼ tinh bột — uống đủ nước 2L/ngày", "milestone": "Lập thói quen 5 buổi/tuần, ghi vòng eo ban đầu" },
+      { "name": "Tăng cardio","desc": "Cardio tăng +5'/tuần, strength giữ nguyên, tăng NEAT hằng ngày.", "focus": "Cardio Zone 2: 35-40', đi thêm 2000-3000 bước/ngày", "nutrition": "Protein ≥1 lòng bàn tay/bữa, hạn chế nước ngọt", "milestone": "Cardio 40' Zone 2 thoải mái, -0.5 đến -1cm vòng eo" },
+      { "name": "Kết hợp",    "desc": "Giới thiệu interval cardio nhẹ, strength tăng lên 5 bài/buổi.", "focus": "2' nhanh + 2' chậm ×5 xen kẽ cardio, strength 5 bài/buổi", "nutrition": "Carb thông minh: ăn trước/sau tập, giảm buổi tối", "milestone": "Vòng eo giảm 2-3cm, cảm giác nhẹ nhàng leo cầu thang" },
+      { "name": "Tiến bộ",    "desc": "Volume tăng đều, theo dõi cân nặng + vòng eo hằng tuần.", "focus": "Strength volume tăng, cardio 40-45', NEAT target 8000 bước", "nutrition": "Theo dõi protein hằng ngày, cân bằng macro cơ bản", "milestone": "Thể trạng cải thiện rõ, số bước/ngày tăng đáng kể" },
+      { "name": "Đỉnh cao",   "desc": "Kết hợp strength mạnh hơn + cardio steady state, không bỏ bữa.", "focus": "Circuit training + cardio Zone 2, theo dõi cân nặng buổi sáng", "nutrition": "Meal prep, đủ protein, không bỏ bữa, tránh ăn khuya", "milestone": "Đạt mục tiêu giảm cân ban đầu, năng lượng tốt hơn" },
+      { "name": "Duy trì",    "desc": "Giảm nhẹ volume, tập bền vững, không kiêng khem cực đoan.", "focus": "Duy trì 3 strength + 2 cardio, đánh giá mục tiêu và điều chỉnh", "nutrition": "Ăn cân bằng tự nhiên, không kiêng nghiêm ngặt", "milestone": "6 tháng duy trì — cơ thể khỏe, thói quen ăn uống lành mạnh" }
+    ],
+    "muscle": [
+      { "name": "Nền tảng",    "desc": "Học form nâng tạ: Push/Pull/Legs split cơ bản, RPE 7 giữ kỹ thuật.", "focus": "Goblet squat, push-up/bench, band/dumbbell row, RDL, plank", "nutrition": "Protein 1.6-2g/kg cân nặng, ăn đủ calo để phục hồi", "milestone": "Học đúng form 5 bài nền tảng, không đau khớp" },
+      { "name": "Tăng volume", "desc": "Tăng số hiệp và số lần lặp, giữ form đẹp là ưu tiên số 1.", "focus": "Squat 4×10, bench/push 3×10, row 3×10, OHP 3×10, deadlift 3×8", "nutrition": "Ăn đủ calo, đạm sau tập 30 phút, carb trước tập", "milestone": "Squat 4×10 với form đẹp, cảm nhận rõ cơ bắp làm việc" },
+      { "name": "Kết hợp",    "desc": "Thêm bài compound, tăng tải nhẹ, Upper/Lower split rõ hơn.", "focus": "Deadlift 4×6-8, pull-up/lat pulldown, dips/close-grip push, hip thrust", "nutrition": "Carb trước tập, protein sau, đủ chất béo tốt (cá, bơ, hạt)", "milestone": "Deadlift 1.5× trọng lượng cơ thể, pull-up 5 reps" },
+      { "name": "Tiến bộ",    "desc": "Upper A/B + Lower A/B: 4 ngày/tuần, strength tăng đều.", "focus": "Upper A (chest/back), Upper B (shoulder/arm), Lower A/B (quad/ham)", "nutrition": "Đủ calo, chú ý chất béo tốt, protein mỗi 3-4 giờ", "milestone": "Tăng đều đặn trên các bài compound qua từng tuần" },
+      { "name": "Phát triển", "desc": "Volume cao nhất chu kỳ, test sức mạnh mỗi 4 tuần, kiểm tra PR.", "focus": "5-6 bài/buổi, 3-4 hiệp, nghỉ 90-120s compound, 60s bài phụ", "nutrition": "Meal prep nghiêm túc, protein mỗi 3-4 giờ, đủ carb ngày tập", "milestone": "Squat/Bench/Deadlift PR so với tuần 1" },
+      { "name": "Nâng cao",   "desc": "Chuyên biệt hóa theo bộ phận yếu, deload tuần 24, lên kế hoạch tiếp.", "focus": "Theo tiến bộ cá nhân, 1 tuần deload mỗi 4-6 tuần", "nutrition": "Cân bằng micro-cycle: cut/bulk theo mục tiêu", "milestone": "6 tháng — nhìn lại cơ thể và sức mạnh biến đổi rõ rệt" }
+    ],
+    "endurance": [
+      { "name": "Nền aerobic", "desc": "Zone 2 cardio thuần + strength tối thiểu để giữ cơ.", "focus": "30' đi bộ/đạp Zone 2 (còn nói được câu ngắn) + squat, push, row, glute", "nutrition": "Carb đủ để có năng lượng, uống 2-2.5L nước/ngày", "milestone": "Đi bộ/đạp 30' Zone 2 thoải mái không thở dốc" },
+      { "name": "Tăng volume", "desc": "Cardio +5'/tuần, thêm interval nhẹ một buổi/tuần.", "focus": "35-40' Zone 2 + 4 đoạn interval 2' nhanh (Zone 3–4), xen kẽ 2' chậm", "nutrition": "Bổ sung điện giải khi mồ hôi nhiều, carb trước buổi dài", "milestone": "Cardio 40' Zone 2 thoải mái, nhịp tim phục hồi nhanh hơn" },
+      { "name": "Xây dựng",   "desc": "Cardio 40-50', thêm tempo run hoặc đạp interval trung bình.", "focus": "Tempo run 20' (Zone 3) hoặc đạp interval, strength 2×/tuần giữ cơ", "nutrition": "Carb quanh buổi tập dài, protein phục hồi sau tập", "milestone": "Tempo run 20' ổn định, tim phổi cải thiện rõ" },
+      { "name": "Tiến bộ",    "desc": "Long ride/run cuối tuần 60-75', duy trì interval ngày giữa tuần.", "focus": "Long Zone 2 ngày T7 (60-75'), interval ngày T3, strength 2×", "nutrition": "Recovery nutrition: protein + carb 30 phút sau buổi dài", "milestone": "Hoàn thành 60' Zone 2 không đứt, nhịp tim ổn định" },
+      { "name": "Đỉnh cao",   "desc": "Peak endurance, long ride/run 75-90', chinh phục mục tiêu.", "focus": "Long Zone 2 75-90', race pace interval 4-6 đoạn ×3-5'", "nutrition": "Fuel strategy cho buổi dài, bù điện giải, carb đủ", "milestone": "Sẵn sàng cho sự kiện: 10km, đua xe đạp, hoặc bơi lội" },
+      { "name": "Duy trì",    "desc": "Duy trì nền aerobic mà không overtrain, cân bằng cơ và tim phổi.", "focus": "Cân bằng sức bền và sức mạnh, phục hồi đủ, không ngại nghỉ", "nutrition": "Ăn cân bằng, bổ sung sắt nếu tập nặng, uống đủ nước", "milestone": "6 tháng — nền aerobic mạnh, cơ thể hiệu quả hơn" }
+    ],
+    "advanced": [
+      { "name": "Làm quen",        "desc": "Đạp 40' + Gym + Bơi 50'/ngày — làm quen khối lượng lớn.", "focus": "Upper/Lower/Push/Pull/Full body theo lịch chuẩn 6 ngày/tuần", "nutrition": "~3000 kcal ngày nặng, ~2800 ngày vừa, protein ~155g/ngày", "milestone": "Hoàn thành lịch 7 ngày đầy đủ mà không quá mệt" },
+      { "name": "Tăng volume",     "desc": "+5-10% volume gym mỗi tuần, giữ đạp xe và bơi ổn định.", "focus": "Tăng reps bài phụ gym, đạp giữ Zone 2-3, bơi 1500-2000m", "nutrition": "Tăng kcal ngày tập nặng, bù điện giải sau đạp dài", "milestone": "Hoàn thành lịch tuần với năng lượng tốt hơn tuần 1" },
+      { "name": "Phát triển",      "desc": "Thêm interval đạp xe Zone 3-4, tăng bơi lên 1500-2000m ổn định.", "focus": "Đạp intervals Zone 3, bơi 1500-2000m/buổi, gym duy trì RPE 7-8", "nutrition": "Macro tracking ngày tập nặng, carb quanh endurance", "milestone": "Bơi 1500m liên tục, đạp interval 5×3' Zone 4" },
+      { "name": "Đỉnh cao",        "desc": "Peak training load: gym 5 ngày + đạp 5 ngày + bơi 5 ngày/tuần.", "focus": "Đạp dài 120' T7, gym đầy đủ 5 ngày, bơi duy trì kỹ thuật", "nutrition": "Đủ calo, ngủ 7-8h/đêm, stretching sau mỗi buổi tập", "milestone": "Đạp 120' hoàn thành, gym PR trên compound lifts" },
+      { "name": "Deload + Duy trì","desc": "Deload tuần 17: giảm 30% volume, giữ cường độ — phục hồi thật sự.", "focus": "Giảm volume 30%, giữ cường độ, ưu tiên ngủ và massage", "nutrition": "Ưu tiên ngủ 7-8h, bổ sung omega-3, magie", "milestone": "Sau deload: cảm giác tươi tắn, muốn tập tiếp" },
+      { "name": "Thuần thục",      "desc": "Chu kỳ bền vững: điều chỉnh theo HRV và tín hiệu cơ thể.", "focus": "Theo dõi HRV, điều chỉnh linh hoạt, không bỏ qua dấu hiệu mệt", "nutrition": "Cân bằng dài hạn, không cực đoan, duy trì protein", "milestone": "6 tháng elite training — sức khỏe tim phổi và cơ bắp vượt trội" }
+    ]
+  },
+  "schedule": {
+    "beginner": [
+      { "type": "Strength A", "detail": "Squat, wall push-up, glute bridge, plank gối" },
+      { "type": "Cardio nhẹ", "detail": "Đi bộ nhanh 20–25', còn nói được câu ngắn" },
+      { "type": "Strength B", "detail": "Hip hinge, towel row, split squat, dead bug" },
+      { "type": "Mobility",   "detail": "Giãn cơ toàn thân 15–20': hông, đùi, vai" },
+      { "type": "Strength C", "detail": "Sit-to-stand, glute bridge, bird-dog, calf raise" },
+      { "type": "Cardio",     "detail": "Đi bộ ngoài trời 25–30' tốc độ vừa" },
+      { "type": "Nghỉ ngơi", "detail": "Review tuần + nhật ký 5 dòng tập luyện" }
+    ],
+    "busy": [
+      { "type": "Strength",    "detail": "Squat 30s, push 30s, glute bridge 30s, plank 20s × 2 vòng" },
+      { "type": "Cardio",      "detail": "Step touch 40s + march in place 40s × 3 vòng" },
+      { "type": "Core",        "detail": "Dead bug 30s, bird-dog 30s, plank gối 20s × 2 vòng" },
+      { "type": "Mobility",    "detail": "10' toàn thân: cổ, vai, hông, đùi sau" },
+      { "type": "Strength",    "detail": "Squat, band row, glute bridge, wall push-up × 2 vòng" },
+      { "type": "Đi bộ",       "detail": "10' đi bộ nhanh hoặc leo cầu thang" },
+      { "type": "Thở & Thiền", "detail": "5' thở box + 5' journaling / thiền ngắn" }
+    ],
+    "fatloss": [
+      { "type": "Strength A",  "detail": "Squat, push-up, band row, glute bridge, plank" },
+      { "type": "Cardio Z2",   "detail": "Đi bộ/đạp xe 30–35' Zone 2 — còn nói được" },
+      { "type": "Strength B",  "detail": "Hip hinge, split squat, dead bug, calf raise" },
+      { "type": "NEAT",        "detail": "Mobility 15' + mục tiêu +2000 bước trong ngày" },
+      { "type": "Strength C",  "detail": "Push-up, scapular squeeze, glute bridge, bird-dog" },
+      { "type": "Cardio dài",  "detail": "Đi bộ nhanh/đạp 35–45' nhịp tim vừa phải" },
+      { "type": "Recovery",    "detail": "Đi bộ nhẹ 20' + review cân nặng & vòng eo" }
+    ],
+    "muscle": [
+      { "type": "Upper A",        "detail": "Bench/push-up, row, OHP, lat pulldown, curl" },
+      { "type": "Lower A",        "detail": "Squat, Romanian deadlift, leg press, calf, plank" },
+      { "type": "Cardio nhẹ",     "detail": "Đi bộ 25–30' + giãn cơ toàn thân" },
+      { "type": "Upper B",        "detail": "Incline press, pull-up/lat, lateral raise, tricep" },
+      { "type": "Lower B",        "detail": "Deadlift, hip thrust, walking lunge, core" },
+      { "type": "Full body nhẹ",  "detail": "Squat, push, row, plank — RPE 6, form focus" },
+      { "type": "Nghỉ chủ động",  "detail": "Mobility 10–15' + nghỉ hoàn toàn nếu mệt" }
+    ],
+    "endurance": [
+      { "type": "Cardio Z2",          "detail": "Đi bộ/đạp 30' Zone 2 + core 5'" },
+      { "type": "Strength tối thiểu", "detail": "Squat, push-up, band row, glute bridge 3×10" },
+      { "type": "Interval",           "detail": "5' chậm + 5 vòng: 2' nhanh + 2' chậm + 5' cool" },
+      { "type": "Mobility",           "detail": "Giãn cổ vai gáy, lưng, hông, đùi sau 15–20'" },
+      { "type": "Strength + Balance", "detail": "Split squat, RDL, bird-dog, plank, calf raise" },
+      { "type": "Long endurance",     "detail": "45–60' đi bộ/đạp Zone 2 nhịp vừa" },
+      { "type": "Recovery",           "detail": "Đi bộ nhẹ 20–30' hoặc nghỉ hoàn toàn nếu mệt" }
+    ],
+    "advanced": [
+      { "type": "Đạp + Upper + Bơi", "detail": "Đạp 40' Zone 2–3 + Gym Upper 30' + Bơi 50'" },
+      { "type": "Lower + Bơi",       "detail": "Gym Lower 45' (Squat, RDL, Leg press) + Bơi 50'" },
+      { "type": "Đạp + Push + Bơi", "detail": "Đạp 40' + Gym Push 30' + Bơi 50'" },
+      { "type": "Pull + Bơi",        "detail": "Gym Pull 45' (Deadlift, row, face pull) + Bơi 50'" },
+      { "type": "Đạp + Full + Bơi", "detail": "Đạp 40' + Gym Full body 30' + Bơi 50'" },
+      { "type": "Đạp dài",           "detail": "90–120' Zone 2 + Mobility 20'" },
+      { "type": "Recovery ride",     "detail": "Đạp nhẹ 60' Zone 1–2 — phục hồi chủ động" }
+    ]
+  },
+  "ui": {
+    "week_label": "tuần",
+    "focus_label": "Tập trọng tâm",
+    "nutrition_label": "Dinh dưỡng",
+    "milestone_label": "Mốc đánh dấu",
+    "weekly_schedule": "Lịch mẫu 1 tuần",
+    "current_week": "Tuần hiện tại",
+    "focus_modal_title": "Tập Trọng Tâm",
+    "nutrition_modal_title": "Dinh Dưỡng",
+    "milestone_modal_title": "Mốc Đánh Dấu",
+    "nutrition_modal_time": "DINH DƯỠNG",
+    "milestone_modal_time": "MỤC TIÊU",
+    "intensity_label": "Mức độ",
+    "phase_label": "Giai đoạn",
+    "category_label": "Phân loại",
+    "progress_label": "Tiến bộ",
+    "progress_note": "Tăng nhẹ mỗi tuần, lắng nghe cơ thể",
+    "phase_weeks": "Tuần {{start}}–{{end}}",
+    "phase_tag_detail": "Giai đoạn {{tag}}: tuần {{start}}–{{end}}",
+    "if_achieve_early": "Nếu đạt mốc trước tuần {{week}}, tăng mức độ hoặc thêm bài tập mới.",
+    "progress_eval": "Đánh giá tiến độ sau mỗi 2 tuần: so sánh form, thời gian hoàn thành và cảm giác sức bền.",
+    "water_note": "Uống 2–2.5 lít nước mỗi ngày, ưu tiên nước lọc và nước ép rau quả tươi.",
+    "meal_timing_note": "Ăn đủ 3 bữa chính, hạn chế đồ ăn vặt không lành mạnh, đặc biệt sau 20h.",
+    "plate_label": "Đĩa ăn chuẩn",
+    "plate_note": "½ rau – ¼ đạm – ¼ tinh bột",
+    "water_label": "Nước mỗi ngày",
+    "water_note_short": "2–2.5 lít, tăng khi tập",
+    "meal_time_label": "Thời gian ăn",
+    "meal_time_note": "Bữa chính cách nhau 4–5 tiếng",
+    "protein_label": "Protein mỗi bữa",
+    "protein_note": "Trứng, cá, thịt nạc, đậu hũ",
+    "complete_label": "Hoàn thành mốc",
+    "complete_note": "Đánh dấu từng ngày trong lịch",
+    "measure_label": "Đo lường",
+    "measure_note": "Ảnh, số liệu, nhật ký tập",
+    "adjust_label": "Điều chỉnh",
+    "adjust_note": "Linh hoạt khi bận hoặc ốm",
+    "reward_label": "Phần thưởng",
+    "reward_note": "Tặng bản thân khi đạt mốc",
+    "exercise_link_label": "Vận Động & Tập Luyện",
+    "nutrition_link_label": "Dinh Dưỡng & Thực Đơn",
+    "tools_link_label": "Công Cụ & Tài Nguyên"
+  }
+}

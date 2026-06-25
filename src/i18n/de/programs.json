@@ -1,0 +1,167 @@
+{
+  "goal_types": {
+    "beginner":  { "title": "Einsteiger",     "subtitle": "20–30 Min./Tag" },
+    "busy":      { "title": "Sehr beschäftigt","subtitle": "10 Min./Tag" },
+    "fatloss":   { "title": "Fettabbau",      "subtitle": "30–40 Min./Tag" },
+    "muscle":    { "title": "Muskelaufbau",   "subtitle": "Mit Gewichten / Widerstandsbändern" },
+    "endurance": { "title": "Ausdauer",       "subtitle": "Zone-2-Cardio" },
+    "advanced":  { "title": "Fortgeschrittene","subtitle": "Gym + Radfahren + Schwimmen" }
+  },
+  "goal_cards": {
+    "beginner":  { "tag": "0–3 Monate",          "badge": "Einfacher Einstieg" },
+    "busy":      { "tag": "Jeder Zeitplan",       "badge": "Flexibelste Option" },
+    "fatloss":   { "tag": "Leichtes Übergewicht", "badge": "Beliebteste Option" },
+    "muscle":    { "tag": "Gewichte / Bänder",    "badge": "Muskelaufbau" },
+    "endurance": { "tag": "Herzkreislauf-Fitness","badge": "Zone-2-Cardio" },
+    "advanced":  { "tag": "Gute Fitnessbasis",    "badge": "Mehrsport" }
+  },
+  "phases": {
+    "beginner": [
+      { "name": "Einstieg",       "desc": "Grundtechnik erlernen und eine Gewohnheit aufbauen — erst korrekt, dann mehr.", "focus": "Sit-to-Stand, Wandliegestütz, Gesäßbrücke, Dead Bug, zügiges Gehen 20–25'", "nutrition": "½-Teller-Gemüse, ¼-Protein, ¼-Kohlenhydrate bei einer Mahlzeit pro Tag anwenden", "milestone": "7/7 Tage absolviert; 5 Zeilen Trainingstagbuch je Einheit" },
+      { "name": "Aufbau",         "desc": "Struktur aus Woche 1 beibehalten, aber leicht steigern: +1 Satz oder +5–10 % Wdh.", "focus": "Squat to Chair 3×10, Kniestütz 3×10, Cardio 30', Technik-Mikro-Lektion", "nutrition": "Jede Hauptmahlzeit mit einer Proteinquelle: Eier, Fisch, mageres Fleisch, Hülsenfrüchte", "milestone": "Plank 30 s ohne Unterbrechung; zügiger Spaziergang 30' angenehm" },
+      { "name": "Kräftigung",     "desc": "5 Übungen je Krafteinheit, Cardio 30', leichte Kurzhanteln einführen.", "focus": "Goblet Squat, normaler Liegestütz, Ruderband, leichtes RDL, Plank 40 s", "nutrition": "Kluge Kohlenhydrate rund ums Training; 2 L Wasser täglich", "milestone": "Squat 3×12 mit sauberer Form; zügiger Spaziergang 35' angenehm" },
+      { "name": "Fortschritt",    "desc": "Volumen und Intensität gleichmäßig steigern; Maße beginnen zu verfolgen.", "focus": "Goblet Squat 3×12, Liegestütz 3×10, Kurzhantelrudern, RDL, Ausfallschritt", "nutrition": "Mehr Ballaststoffe, zuckerhaltige Getränke einschränken, ausreichend trinken", "milestone": "Liegestütz 3×10 korrekt; Plank 45 s; zügiges Gehen 40' Zone 2" },
+      { "name": "Entwicklung",    "desc": "Pausen verkürzen und Übungsschwierigkeit bei sauberer Form erhöhen.", "focus": "Ausfallschritt, geneigter Liegestütz, Romanian Deadlift, leichte Intervalle", "nutrition": "Meal Prep 2 Mahlzeiten/Woche zur Sicherstellung ausreichender Proteinzufuhr", "milestone": "4-Wochen-Test abschließen: Taillenumfang, Sit-to-Stand, Plank, 12-Min-Gehtest" },
+      { "name": "Meisterschaft",  "desc": "Individueller Plan nach Fortschritt; langfristig nachhaltig.", "focus": "Übungen nach Ziel wählen; alle 4 Wochen testen; flexibel anpassen", "nutrition": "Gesunde Ernährung beibehalten; kein striktes Diäten erforderlich", "milestone": "24 Wochen abgeschlossen — stärkerer Körper, nachhaltige Gewohnheiten" }
+    ],
+    "busy": [
+      { "name": "Einstieg",          "desc": "10 Min./Tag — 'durch Beständigkeit gewinnen, nicht durch Aufwand'.", "focus": "2' Aufwärmen + 6' Zirkel (Squat 30 s, Liegestütz 30 s, Plank 30 s) + 2' Atemübungen", "nutrition": "Eine Mahlzeit täglich mit Protein: Eier, Joghurt, Hülsenfrüchte, Fisch", "milestone": "28/28 Tage ohne Ausfall, auch wenn nur 10 Min." },
+      { "name": "Serie halten",      "desc": "Auf 12–15 Min. erhöhen wenn möglich; an vollen Tagen bei 10' bleiben.", "focus": "Eine zusätzliche AMRAP-Runde oder Dead Bug/Bird-Dog in den Zirkel einfügen", "nutrition": "Langsam essen, Frühstück nicht auslassen, ausreichend trinken", "milestone": "Körper fühlt sich beweglicher an; weniger Rückenermüdung nach langen Tagen" },
+      { "name": "Effizienz steigern","desc": "Mittags-Mikrosession von 5–10' hinzufügen wenn möglich; morgens bei 10' bleiben.", "focus": "Morgens: Liegestütz/Rudern/Squat/Core 10'. Mittags: Spaziergang 5–10' wenn möglich", "nutrition": "Frühstück nicht auslassen; Protein innerhalb von 30 Min. nach dem Training", "milestone": "Insgesamt 20' Bewegung/Tag an den meisten Tagen erreicht" },
+      { "name": "Fortschritt",       "desc": "Auf 15 Min./Tag steigern wenn der Zeitplan es erlaubt; 3-Runden-Zirkel.", "focus": "15': Ganzkörper-Kraftzirkel 3 Runden + Cardio 3–5'", "nutrition": "Kleine Meal Prep: 2–3 proteinreiche Mahlzeiten wöchentlich vorbereiten", "milestone": "Energieniveau den ganzen Tag deutlich besser" },
+      { "name": "Entwicklung",       "desc": "20' an guten Tagen, 10' an vollen Tagen — ein flexibles System.", "focus": "Flexibel 10' vs. 20' je nach Zeitplan; am Wochenende Kraft hinzufügen", "nutrition": "Wochenend-Meal-Prep für Protein + Gemüse die ganze Woche", "milestone": "Gewohnheit wird ohne Erinnerungen automatisch aufrechterhalten" },
+      { "name": "Meisterschaft",     "desc": "Nachhaltige Gewohnheit — so automatisch wie Zähneputzen.", "focus": "Persönliches flexibles System; selbstständige Anpassung täglich und wöchentlich", "nutrition": "Protein + Flüssigkeitszufuhr aufrechterhalten; kein extremes Diäten", "milestone": "6 Monate konsequent — gesunde Gewohnheiten sind jetzt Instinkt" }
+    ],
+    "fatloss": [
+      { "name": "Grundlage",      "desc": "3 Kraft + 2 Zone-2-Cardio + 2 Erholungseinheiten — kein Übertraining.", "focus": "Kraft A/B/C Ganzkörper + zügiges Gehen/Radfahren 30–35' Zone 2", "nutrition": "½ Teller Gemüse, ¼ Protein, ¼ Kohlenhydrate — 2 L Wasser täglich trinken", "milestone": "5-Einheiten/Woche-Gewohnheit aufbauen; anfänglichen Taillenumfang notieren" },
+      { "name": "Cardio-Aufbau",  "desc": "Cardio +5'/Woche; Kraft bleibt gleich; tägliche NEAT erhöhen.", "focus": "Zone-2-Cardio: 35–40'; zusätzlich 2.000–3.000 Schritte/Tag gehen", "nutrition": "Protein ≥ 1 Handflächengröße pro Mahlzeit; zuckerhaltige Getränke einschränken", "milestone": "40' Zone 2 angenehm; −0,5 bis −1 cm Taillenumfang" },
+      { "name": "Kombinieren",    "desc": "Leichte Intervall-Cardio einführen; Kraft auf 5 Übungen/Einheit erhöhen.", "focus": "2' schnell + 2' langsam ×5 Wechsel-Cardio; Kraft 5 Übungen/Einheit", "nutrition": "Kluge Kohlenhydrate: rund ums Training essen, abends reduzieren", "milestone": "Taillenumfang −2–3 cm; leichteres Gefühl beim Treppensteigen" },
+      { "name": "Fortschritt",    "desc": "Stetiger Volumenzuwachs; Gewicht + Taillenumfang wöchentlich verfolgen.", "focus": "Kraftvolumen erhöhen; Cardio 40–45'; NEAT-Ziel 8.000 Schritte", "nutrition": "Protein täglich verfolgen; grundlegendes Makro-Gleichgewicht", "milestone": "Deutliche Körperzusammensetzungsveränderung; Tagesschritte deutlich höher" },
+      { "name": "Höchstleistung", "desc": "Stärkeres Krafttraining + Steady-State-Cardio; keine Mahlzeiten auslassen.", "focus": "Zirkeltraining + Zone-2-Cardio; Morgengewicht verfolgen", "nutrition": "Meal Prep, ausreichend Protein, keine ausgelassenen Mahlzeiten, kein Spätessen", "milestone": "Erstes Gewichtsziel erreicht; Energieniveau verbessert" },
+      { "name": "Erhaltung",      "desc": "Volumen leicht reduzieren; nachhaltig trainieren; kein extremes Diäten.", "focus": "3 Kraft + 2 Cardio beibehalten; Ziele überprüfen und anpassen", "nutrition": "Natürlich ausgewogene Ernährung; keine strikten Einschränkungen", "milestone": "6 Monate gehalten — gesunder Körper, gesunde Essgewohnheiten" }
+    ],
+    "muscle": [
+      { "name": "Grundlage",       "desc": "Hebetechnik erlernen: grundlegendes Push/Pull/Legs-Split, RPE 7 bei sauberer Technik.", "focus": "Goblet Squat, Liegestütz/Bankdrücken, Ruderband/Kurzhantel, RDL, Plank", "nutrition": "Protein 1,6–2 g/kg Körpergewicht; genug Kalorien für Erholung essen", "milestone": "Korrekte Technik bei 5 Grundübungen erlernen; keine Gelenkschmerzen" },
+      { "name": "Volumen-Aufbau",  "desc": "Sätze und Wiederholungen erhöhen; perfekte Form ist oberste Priorität.", "focus": "Squat 4×10, Bankdrücken/Liegestütz 3×10, Rudern 3×10, OHP 3×10, Kreuzheben 3×8", "nutrition": "Genug Kalorien essen; Protein 30 Min. nach dem Training; Kohlenhydrate vor dem Training", "milestone": "Squat 4×10 mit sauberer Form; Muskeln deutlich spüren" },
+      { "name": "Kombinieren",     "desc": "Compound-Übungen hinzufügen, leichte Laststeigerungen, klareres Ober-/Unterkörper-Split.", "focus": "Kreuzheben 4×6–8, Klimmzug/Lat Pulldown, Dips/Enggriffliegestütz, Hip Thrust", "nutrition": "Kohlenhydrate vor dem Training; Protein danach; ausreichend gesunde Fette (Fisch, Avocado, Nüsse)", "milestone": "Kreuzheben 1,5× Körpergewicht; 5 Klimmzüge" },
+      { "name": "Fortschritt",     "desc": "Oberkörper A/B + Unterkörper A/B: 4 Tage/Woche; stetige Kraftzuwächse.", "focus": "Oberkörper A (Brust/Rücken), B (Schulter/Arm), Unterkörper A/B (Quad/Hamstring)", "nutrition": "Ausreichend Kalorien; auf gesunde Fette achten; Protein alle 3–4 Stunden", "milestone": "Stetige wöchentliche Zuwächse bei Compound-Übungen" },
+      { "name": "Entwicklung",     "desc": "Höchstes Volumen im Zyklus; Krafttest alle 4 Wochen; Bestleistungen überprüfen.", "focus": "5–6 Übungen/Einheit; 3–4 Sätze; Pause 90–120 s Compound, 60 s Zubringer", "nutrition": "Ernsthaftes Meal Prep; Protein alle 3–4 Stunden; ausreichend Kohlenhydrate an Trainingstagen", "milestone": "Squat/Bankdrücken/Kreuzheben-Bestleistung vs. Woche 1" },
+      { "name": "Fortgeschrittene","desc": "Auf Schwachstellen spezialisieren; Deload Woche 24; nächsten Zyklus planen.", "focus": "Individuellem Fortschritt folgen; 1 Deload-Woche alle 4–6 Wochen", "nutrition": "Mikro-Zyklen ausbalancieren: Diät/Aufbauphase je nach Ziel", "milestone": "6 Monate — sichtbare Körper- und Krafttransformation" }
+    ],
+    "endurance": [
+      { "name": "Aerobe Basis",   "desc": "Reines Zone-2-Cardio + minimale Kraft zum Muskelerhalt.", "focus": "30' Gehen/Radfahren Zone 2 (noch kurze Sätze sprechen können) + Squat, Liegestütz, Rudern, Gesäß", "nutrition": "Ausreichend Kohlenhydrate für Energie; 2–2,5 L Wasser täglich trinken", "milestone": "30' Zone-2-Gehen/Radfahren ohne Kurzatmigkeit" },
+      { "name": "Volumen-Aufbau", "desc": "Cardio +5'/Woche; leichte Intervalle einmal pro Woche hinzufügen.", "focus": "35–40' Zone 2 + 4 Intervallabschnitte 2' schnell (Zone 3–4), abwechselnd 2' langsam", "nutrition": "Elektrolyte ergänzen wenn stark geschwitzt wird; Kohlenhydrate vor langen Einheiten", "milestone": "40' Zone 2 angenehm; Herzfrequenz erholt sich schneller" },
+      { "name": "Aufbau",         "desc": "Cardio 40–50'; Tempo-Lauf oder moderate Rad-Intervalle hinzufügen.", "focus": "Tempo-Lauf 20' (Zone 3) oder Rad-Intervalle; Kraft 2×/Woche zum Muskelerhalt", "nutrition": "Kohlenhydrate rund um lange Einheiten; Protein zur Erholung nach dem Training", "milestone": "Stabiler 20-minütiger Tempo-Lauf; Ausdauer klar verbessert" },
+      { "name": "Fortschritt",    "desc": "Lange Ausfahrt/Lauf am Wochenende 60–75'; Midweek-Intervalle aufrechterhalten.", "focus": "Langer Zone-2-Samstag (60–75'); Intervalle Mittwoch; Kraft 2×", "nutrition": "Regenerationsernährung: Protein + Kohlenhydrate 30 Min. nach langen Einheiten", "milestone": "60' Zone 2 ohne Unterbrechung; stabiler Herzfrequenz" },
+      { "name": "Höchstleistung", "desc": "Maximale Ausdauer; lange Ausfahrt/Lauf 75–90'; Ziel erreichen.", "focus": "Langer Zone-2-Lauf 75–90'; Renntempo-Intervalle 4–6 Abschnitte ×3–5'", "nutrition": "Versorgungsstrategie für lange Einheiten; Elektrolyte ersetzen; ausreichend Kohlenhydrate", "milestone": "Eventbereit: 10 km, Radrennen oder Freiwasserschwimmen" },
+      { "name": "Erhaltung",      "desc": "Aerobe Basis aufrechterhalten ohne Übertraining; Cardio und Muskelkraft ausbalancieren.", "focus": "Ausdauer und Kraft ausbalancieren; ausreichend erholen; Ruhetage nicht scheuen", "nutrition": "Ausgewogene Ernährung; Eisen ergänzen bei intensivem Training; gut hydratisiert bleiben", "milestone": "6 Monate — starke aerobe Basis; effizienterer Körper" }
+    ],
+    "advanced": [
+      { "name": "Eingewöhnung",           "desc": "Radfahren 40' + Gym + Schwimmen 50'/Tag — Gewöhnung an hohes Trainingsvolumen.", "focus": "Ober-/Unterkörper/Drücken/Ziehen/Ganzkörper nach standardem 6-Tage/Woche-Plan", "nutrition": "~3.000 kcal an schweren Tagen; ~2.800 an mittleren Tagen; Protein ~155 g/Tag", "milestone": "Den kompletten 7-Tage-Plan ohne übermäßige Erschöpfung absolvieren" },
+      { "name": "Volumen-Aufbau",         "desc": "+5–10 % Gym-Volumen pro Woche; Radfahren und Schwimmen stabil halten.", "focus": "Wiederholungen bei Zubringer-Übungen erhöhen; Radfahren Zone 2–3; Schwimmen 1.500–2.000 m", "nutrition": "Kalorien an schweren Trainingstagen erhöhen; Elektrolyte nach langen Ausfahrten ersetzen", "milestone": "Wochenplan mit besserer Energie als Woche 1 absolvieren" },
+      { "name": "Entwicklung",            "desc": "Zone-3–4-Radintervalle hinzufügen; Schwimmen auf 1.500–2.000 m stetig aufbauen.", "focus": "Rad-Intervalle Zone 3; Schwimmen 1.500–2.000 m/Einheit; Gym RPE 7–8", "nutrition": "Makro-Tracking an schweren Tagen; Kohlenhydrate rund um Ausdauereinheiten", "milestone": "1.500 m Schwimmen am Stück; Rad 5×3' Zone-4-Intervalle" },
+      { "name": "Höchstleistung",         "desc": "Maximale Trainingsbelastung: Gym 5 Tage + Rad 5 Tage + Schwimmen 5 Tage/Woche.", "focus": "Lange Ausfahrt 120' Samstag; volles Gym 5 Tage; Schwimmen zur Technikerhaltung", "nutrition": "Ausreichend Kalorien; 7–8 h Schlaf/Nacht; Dehnen nach jeder Einheit", "milestone": "120' Ausfahrt abschließen; Gym-Bestleistung bei Compound-Übungen" },
+      { "name": "Deload + Erhaltung",     "desc": "Deload Woche 17: Volumen 30 % reduzieren, Intensität halten — echte Erholung.", "focus": "Volumen 30 % reduzieren; Intensität halten; Schlaf und Massage priorisieren", "nutrition": "7–8 h Schlaf priorisieren; Omega-3 und Magnesium ergänzen", "milestone": "Nach Deload: frisch fühlen, motiviert weiterzumachen" },
+      { "name": "Meisterschaft",          "desc": "Nachhaltiger Zyklus: Anpassung nach HRV und Körpersignalen.", "focus": "HRV überwachen; flexibel anpassen; Erschöpfungszeichen nie ignorieren", "nutrition": "Langfristiges Gleichgewicht; keine Extreme; Proteinzufuhr aufrechterhalten", "milestone": "6 Monate Elite-Training — herausragende Herz-Kreislauf- und Muskelgesundheit" }
+    ]
+  },
+  "schedule": {
+    "beginner": [
+      { "type": "Kraft A",        "detail": "Squat, Wandliegestütz, Gesäßbrücke, Knieplank" },
+      { "type": "Leichtes Cardio","detail": "Zügiger Spaziergang 20–25', noch kurze Sätze sprechen" },
+      { "type": "Kraft B",        "detail": "Hüftgelenk-Übung, Handtuchrudern, Ausfallschritt, Dead Bug" },
+      { "type": "Mobility",       "detail": "Ganzkörper-Dehnen 15–20': Hüfte, Oberschenkel, Schultern" },
+      { "type": "Kraft C",        "detail": "Sit-to-Stand, Gesäßbrücke, Bird-Dog, Wadenerhebung" },
+      { "type": "Cardio",         "detail": "Outdoor-Spaziergang 25–30' in moderatem Tempo" },
+      { "type": "Ruhetag",        "detail": "Wochenrückblick + 5-Zeilen-Trainingstagbuch" }
+    ],
+    "busy": [
+      { "type": "Kraft",             "detail": "Squat 30 s, Liegestütz 30 s, Gesäßbrücke 30 s, Plank 20 s × 2 Runden" },
+      { "type": "Cardio",            "detail": "Seitschritt 40 s + auf der Stelle marschieren 40 s × 3 Runden" },
+      { "type": "Core",              "detail": "Dead Bug 30 s, Bird-Dog 30 s, Knieplank 20 s × 2 Runden" },
+      { "type": "Mobility",          "detail": "10' Ganzkörper: Nacken, Schultern, Hüfte, Oberschenkelrückseite" },
+      { "type": "Kraft",             "detail": "Squat, Ruderband, Gesäßbrücke, Wandliegestütz × 2 Runden" },
+      { "type": "Gehen",             "detail": "10' zügiges Gehen oder Treppensteigen" },
+      { "type": "Atmen & Meditieren","detail": "5' Box-Atmung + 5' Tagebuch / kurze Meditation" }
+    ],
+    "fatloss": [
+      { "type": "Kraft A",      "detail": "Squat, Liegestütz, Ruderband, Gesäßbrücke, Plank" },
+      { "type": "Cardio Z2",    "detail": "Gehen/Radfahren 30–35' Zone 2 — noch reden können" },
+      { "type": "Kraft B",      "detail": "Hüftgelenk-Übung, Ausfallschritt, Dead Bug, Wadenerhebung" },
+      { "type": "NEAT",         "detail": "Mobility 15' + Ziel +2.000 zusätzliche Schritte am Tag" },
+      { "type": "Kraft C",      "detail": "Liegestütz, Schulterblatt-Squeeze, Gesäßbrücke, Bird-Dog" },
+      { "type": "Langes Cardio","detail": "Zügiges Gehen/Radfahren 35–45' moderate Herzfrequenz" },
+      { "type": "Erholung",     "detail": "Leichter Spaziergang 20' + Gewicht & Taillenmaße überprüfen" }
+    ],
+    "muscle": [
+      { "type": "Oberkörper A",      "detail": "Bankdrücken/Liegestütz, Rudern, OHP, Lat Pulldown, Curl" },
+      { "type": "Unterkörper A",     "detail": "Squat, Romanian Deadlift, Beinpresse, Wade, Plank" },
+      { "type": "Leichtes Cardio",   "detail": "Gehen 25–30' + Ganzkörper-Dehnen" },
+      { "type": "Oberkörper B",      "detail": "Schrägbankdrücken, Klimmzug/Lat, Seitheben, Trizeps" },
+      { "type": "Unterkörper B",     "detail": "Kreuzheben, Hip Thrust, Ausfallschrittgehen, Core" },
+      { "type": "Leichter Ganzkörper","detail": "Squat, Liegestütz, Rudern, Plank — RPE 6, Technikfokus" },
+      { "type": "Aktive Erholung",   "detail": "Mobility 10–15' + vollständige Ruhe bei Erschöpfung" }
+    ],
+    "endurance": [
+      { "type": "Cardio Z2",          "detail": "Gehen/Radfahren 30' Zone 2 + Core 5'" },
+      { "type": "Minimale Kraft",     "detail": "Squat, Liegestütz, Ruderband, Gesäßbrücke 3×10" },
+      { "type": "Intervalle",         "detail": "5' leicht + 5 Runden: 2' schnell + 2' leicht + 5' Cool-down" },
+      { "type": "Mobility",           "detail": "Nacken, Schultern, Rücken, Hüfte, Oberschenkelrückseite 15–20'" },
+      { "type": "Kraft + Balance",    "detail": "Ausfallschritt, RDL, Bird-Dog, Plank, Wadenerhebung" },
+      { "type": "Lange Ausdauer",     "detail": "45–60' Gehen/Radfahren Zone 2 moderates Tempo" },
+      { "type": "Erholung",           "detail": "Leichter Spaziergang 20–30' oder vollständige Ruhe bei Erschöpfung" }
+    ],
+    "advanced": [
+      { "type": "Rad + Oberkörper + Schwimmen","detail": "Radfahren 40' Zone 2–3 + Gym Oberkörper 30' + Schwimmen 50'" },
+      { "type": "Unterkörper + Schwimmen",     "detail": "Gym Unterkörper 45' (Squat, RDL, Beinpresse) + Schwimmen 50'" },
+      { "type": "Rad + Drücken + Schwimmen",   "detail": "Radfahren 40' + Gym Drücken 30' + Schwimmen 50'" },
+      { "type": "Ziehen + Schwimmen",          "detail": "Gym Ziehen 45' (Kreuzheben, Rudern, Face Pull) + Schwimmen 50'" },
+      { "type": "Rad + Ganzkörper + Schwimmen","detail": "Radfahren 40' + Gym Ganzkörper 30' + Schwimmen 50'" },
+      { "type": "Lange Ausfahrt",              "detail": "90–120' Zone 2 + Mobility 20'" },
+      { "type": "Erholungsfahrt",              "detail": "Leichtes Radfahren 60' Zone 1–2 — aktive Erholung" }
+    ]
+  },
+  "ui": {
+    "week_label": "Woche",
+    "focus_label": "Trainings-Schwerpunkt",
+    "nutrition_label": "Ernährung",
+    "milestone_label": "Meilenstein",
+    "weekly_schedule": "Beispiel-Wochenplan",
+    "current_week": "Aktuelle Woche",
+    "focus_modal_title": "Trainings-Schwerpunkt",
+    "nutrition_modal_title": "Ernährung",
+    "milestone_modal_title": "Meilenstein",
+    "nutrition_modal_time": "ERNÄHRUNG",
+    "milestone_modal_time": "ZIEL",
+    "intensity_label": "Intensität",
+    "phase_label": "Phase",
+    "category_label": "Kategorie",
+    "progress_label": "Fortschritt",
+    "progress_note": "Jede Woche leicht steigern; auf den Körper hören",
+    "phase_weeks": "Woche {{start}}–{{end}}",
+    "phase_tag_detail": "Phase {{tag}}: Woche {{start}}–{{end}}",
+    "if_achieve_early": "Wenn du den Meilenstein vor Woche {{week}} erreichst, erhöhe die Intensität oder füge neue Übungen hinzu.",
+    "progress_eval": "Fortschritt alle 2 Wochen bewerten: Form, Ausführungszeit und Ausdauergefühl vergleichen.",
+    "water_note": "Täglich 2–2,5 Liter Wasser trinken; stilles Wasser und frische Gemüsesäfte bevorzugen.",
+    "meal_timing_note": "3 vollständige Mahlzeiten essen; ungesunde Snacks einschränken, besonders nach 20 Uhr.",
+    "plate_label": "Standard-Teller",
+    "plate_note": "½ Gemüse – ¼ Protein – ¼ Kohlenhydrate",
+    "water_label": "Wasser täglich",
+    "water_note_short": "2–2,5 L; mehr beim Training",
+    "meal_time_label": "Mahlzeiten-Timing",
+    "meal_time_note": "Hauptmahlzeiten 4–5 Stunden auseinander",
+    "protein_label": "Protein pro Mahlzeit",
+    "protein_note": "Eier, Fisch, mageres Fleisch, Tofu",
+    "complete_label": "Meilenstein erreicht",
+    "complete_note": "Jeden Tag im Kalender abhaken",
+    "measure_label": "Messen",
+    "measure_note": "Fotos, Zahlen, Trainingstagbuch",
+    "adjust_label": "Anpassen",
+    "adjust_note": "Flexibel bei Stress oder Krankheit",
+    "reward_label": "Belohnung",
+    "reward_note": "Sich selbst belohnen wenn ein Meilenstein erreicht ist",
+    "exercise_link_label": "Sport & Training",
+    "nutrition_link_label": "Ernährung & Mahlzeitenpläne",
+    "tools_link_label": "Werkzeuge & Ressourcen"
+  }
+}

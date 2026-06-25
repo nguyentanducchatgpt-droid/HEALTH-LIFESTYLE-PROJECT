@@ -16,6 +16,7 @@ function makePoints(items) {
 
 /* ── Section detail modal ── */
 function SectionModal({ section, meta, pillarTitle, pillarIcon, onClose }) {
+  const { t } = useTranslation();
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -68,7 +69,7 @@ function SectionModal({ section, meta, pillarTitle, pillarIcon, onClose }) {
           </ul>
           {/* Quick link */}
           <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${rgb},0.12)` }}>
-            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${rgb},0.5)` }}>Khám Phá Chi Tiết</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${rgb},0.5)` }}>{t('modal.explore_detail')}</p>
             <div className="flex flex-wrap gap-2">
               <Link to={`/pillar/${meta.id}`} onClick={onClose}
                 className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
@@ -90,7 +91,7 @@ function SectionModal({ section, meta, pillarTitle, pillarIcon, onClose }) {
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{t('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -417,9 +418,9 @@ export default function Pillars() {
                     )}
                   </ul>
                   <div className={`mt-3 pt-3 border-t border-border/40 flex items-center justify-between`}>
-                    <span className="text-[10px] text-muted/50 uppercase tracking-wider">{section.items?.length || 0} mục</span>
+                    <span className="text-[10px] text-muted/50 uppercase tracking-wider">{section.items?.length || 0} {t('pillars_page.section_items')}</span>
                     <span className={`text-[10px] font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${m.textColor}`}>
-                      Xem chi tiết →
+                      {t('pillars_page.section_view_detail')}
                     </span>
                   </div>
                 </div>

@@ -1408,6 +1408,231 @@
         ]
       }
     ],
+    "tiers_full": [
+      {
+        "level": "Beginner", "sub": "Weeks 1–4",
+        "keyFact": "80% of results come from the most basic habits — no need to count calories from the start.",
+        "detail": "The beginner phase focuses on building awareness and healthy eating habits. The goal isn't perfection but consistency.",
+        "details": [
+          "Prioritize protein at every meal: chicken breast, eggs, fish, tofu, yogurt — helps you stay full longer and reduces sugar cravings after meals.",
+          "Vegetables in 2/3 of main meals supply micronutrients, fiber, and slow blood sugar absorption.",
+          "Water is the foundation: 6–8 glasses/day helps your body metabolize better and reduces confusing thirst for hunger.",
+          "At this stage, awareness matters more than counting: knowing which meal lacked protein or had too many carbs is enough.",
+          "Cut sugary drinks and ultra-processed snacks — this single change creates the biggest impact with the least effort.",
+          "No complex meal plan needed: just ask yourself after every meal — 'Did I get protein? Did I get vegetables?'"
+        ],
+        "points": [
+          { "icon": "🥩", "label": "Protein at every meal", "note": "Meat, fish, eggs, tofu" },
+          { "icon": "🥦", "label": "Veggies in 2/3 meals", "note": "Boiled, stir-fried, or in soup" },
+          { "icon": "💧", "label": "6–8 glasses/day", "note": "Drink 1 glass before each meal" },
+          { "icon": "🚫", "label": "Cut ultra-processed", "note": "Soda, packaged snacks" }
+        ]
+      },
+      {
+        "level": "Standard", "sub": "Weeks 5–12",
+        "keyFact": "½–¼–¼ plate + enough daily protein solves 90% of nutritional needs without a complex tracking app.",
+        "detail": "The standard phase moves habits from awareness to real structure. You start planning meals, tracking protein, and learning to read nutrition labels.",
+        "details": [
+          "½–¼–¼ plate: half the plate for veg and protein, a quarter for carbs, a quarter for animal protein — the simplest formula to balance any meal.",
+          "Meal prep 1–2 times/week saves 30–60 minutes each day and reduces poor food decisions when hungry (the worst time to decide).",
+          "Minimally processed food means choosing ingredients as close to their natural state as possible — steamed chicken breast instead of chicken sausage.",
+          "Track protein (~1.6–2g/kg body weight) — the single most important metric: enough protein helps preserve muscle, keeps you full, and aids recovery.",
+          "Reading nutrition labels: focus on 3 figures — calories/serving, protein, and the first ingredient listed.",
+          "At this stage you begin seeing body changes — this is the time to maintain rather than constantly changing the plan."
+        ],
+        "points": [
+          { "icon": "🍽️", "label": "½–¼–¼ Plate", "note": "Veg + protein + carbs" },
+          { "icon": "📦", "label": "Weekly meal prep", "note": "1–2 sessions, saves time" },
+          { "icon": "🏷️", "label": "Read nutrition labels", "note": "Calories, protein, ingredients" },
+          { "icon": "📊", "label": "Track protein", "note": "1.6–2g per kg body weight" }
+        ]
+      },
+      {
+        "level": "Advanced", "sub": "Month 3+",
+        "keyFact": "Personalizing macros to your TDEE and specific goal improves training performance and body composition by 25–40%.",
+        "detail": "The advanced phase is for those who have built a solid foundation and want to optimize nutrition for a specific goal — fat loss, muscle gain, or performance improvement.",
+        "details": [
+          "Personalized TDEE: instead of using a generic formula, you adjust based on actual body feedback every 2–4 weeks of tracking.",
+          "Carb cycling optimizes glycogen: on heavy training days, increase carbs 20–30% for energy; on rest days, cut carbs slightly, increase fat a little for fat burning.",
+          "Nutrient timing: 20–30g protein + fast carbs within 30–60 minutes after training improves muscle synthesis and speeds recovery.",
+          "Inbody scale once a month provides real data on muscle mass, body fat %, visceral fat — far more accurate than just tracking body weight.",
+          "Adjust plan every 4–6 weeks based on data: if body fat hasn't dropped after 4 weeks, cut 100–150 kcal; if losing muscle, increase protein.",
+          "At this stage, data-driven consistency and patience matter more than any 'secret' — the body changes over weeks, not days."
+        ],
+        "points": [
+          { "icon": "🧮", "label": "Personalized TDEE", "note": "Adjust from actual body feedback" },
+          { "icon": "🔄", "label": "Carb cycling", "note": "High on training days, low on rest" },
+          { "icon": "⏱️", "label": "Nutrient timing", "note": "Pre/intra/post workout" },
+          { "icon": "📈", "label": "Body composition", "note": "Inbody every 4 weeks" }
+        ]
+      }
+    ],
+    "meal_split_full": [
+      {
+        "title": "Don't Skip Breakfast", "desc": "Breakfast activates metabolism and stabilizes blood sugar throughout the day.",
+        "keyFact": "Consistently skipping breakfast raises morning cortisol, slows metabolism, and intensifies sugar/fat cravings at lunch and dinner.",
+        "detail": "Breakfast breaks the overnight fast (8–10 hours), activates thermogenesis (the calorie-burning process of digestion), and stabilizes blood sugar before the brain starts working. No need for a large breakfast — 300–400 kcal with protein + slow carbs is enough.",
+        "details": [
+          "Cortisol naturally peaks in the morning (Cortisol Awakening Response). Skipping breakfast keeps cortisol elevated longer, pushing the body to burn muscle protein instead of fat.",
+          "Low morning blood sugar → poor brain function → difficulty concentrating, irritability, increased cravings for sweets as a quick fix.",
+          "Ideal breakfast: 300–400 kcal, 20–30g protein, slow carbs (oatmeal, whole-grain bread) — no need for perfect macros.",
+          "No time? Boiled eggs + milk + banana = 5 minutes, 350 kcal, 25g protein. Enough to kick-start the day.",
+          "If you genuinely can't eat in the morning (no appetite), eat within 1 hour of waking instead of skipping entirely."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Activate thermogenesis", "note": "Burn calories from the first meal" },
+          { "icon": "🧠", "label": "Stabilize blood sugar", "note": "Brain works better all morning" },
+          { "icon": "💪", "label": "20–30g protein", "note": "Protect muscle, stay full until lunch" },
+          { "icon": "⏰", "label": "Within 1 hour", "note": "Eat early after waking up" }
+        ]
+      },
+      {
+        "title": "Protein at Every Meal", "desc": "Protein keeps you full longer, protects muscle, and burns extra calories during digestion.",
+        "keyFact": "Protein has a TEF (Thermic Effect of Food) of 20–30% — the body burns 20–30 kcal just to digest 100 kcal of protein. Carbs and fat only burn 5–8%.",
+        "detail": "Protein is the only macro that simultaneously keeps you full longer (increases PYY, GLP-1, reduces ghrelin), protects muscle during calorie cuts, and generates heat during digestion. Distributing protein evenly across 3–4 meals optimizes muscle protein synthesis (MPS) better than concentrating it in 1–2 meals.",
+        "details": [
+          "Protein target: 1.6–2.2g/kg body weight/day. Split evenly across 3–4 meals, 25–40g each — optimal for muscle protein synthesis (MPS).",
+          "Complete protein sources (all 9 essential amino acids): meat, fish, eggs, dairy, soy. Combining rice + beans also creates complete protein.",
+          "Protein slows the overall digestion rate of a meal, stabilizing post-meal blood sugar — better effect if eating protein BEFORE carbs in the same meal.",
+          "Protein snacks (yogurt, cheese sticks, boiled eggs) control between-meal hunger better than pure-carb snacks like crackers.",
+          "Strength trainers need 2.0–2.2g/kg; those maintaining or losing slightly need 1.6–1.8g/kg; sedentary individuals need at least 1.2g/kg."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "TEF 20–30%", "note": "Burns calories while digesting protein" },
+          { "icon": "💪", "label": "25–40g/meal", "note": "Activates optimal MPS" },
+          { "icon": "😋", "label": "Stay full longer", "note": "Increases PYY, reduces ghrelin" },
+          { "icon": "🎯", "label": "1.6–2.2g/kg", "note": "Total daily protein target" }
+        ]
+      },
+      {
+        "title": "Eat Vegetables Before Carbs", "desc": "Vegetables slow sugar absorption and reduce the insulin spike after meals.",
+        "keyFact": "Eating vegetables before rice can reduce the post-meal blood sugar peak by 40–50% compared to eating rice first — Weill Cornell Medicine research.",
+        "detail": "Fiber in vegetables creates a viscous gel layer in the intestine, slowing amylase enzymes that break down starch and reducing glucose absorption into the blood. Result: lower insulin peak, longer fullness, and less fat storage even eating the same calories.",
+        "details": [
+          "Mechanism: soluble fiber (pectin, beta-glucan) forms a gel coating the small intestine wall, slowing starch-digesting enzymes and glucose absorption.",
+          "Weill Cornell study (2015): eating veg/protein before rice reduced glucose peak by 37–40% vs. eating rice first. Effect lasts up to 2 hours after the meal.",
+          "No need to eat each item separately — just start the meal with a few bites of vegetable before eating rice to create the buffering effect.",
+          "Most effective vegetables: broccoli, cauliflower, leafy greens, okra (high soluble fiber). At least 1–2 handfuls of veg per main meal.",
+          "Similar effect occurs with protein — eating protein before carbs also slows glucose absorption. Combining veg + protein before rice is the optimal strategy."
+        ],
+        "points": [
+          { "icon": "📉", "label": "40% glucose reduction", "note": "Stabilizes blood sugar after meals" },
+          { "icon": "🧪", "label": "Soluble fiber", "note": "Creates gel, slows carb absorption" },
+          { "icon": "🍽️", "label": "Eat veg FIRST", "note": "Just a few bites first is enough" },
+          { "icon": "⏱️", "label": "2-hour effect", "note": "Blood sugar buffer lasts after meal" }
+        ]
+      },
+      {
+        "title": "Proper Meal Spacing", "desc": "Don't go more than 5 hours without eating — prevents overeating at the next meal.",
+        "keyFact": "Ideal meal spacing: 3–5 hours. Under 3 hours: insulin hasn't returned to baseline. Over 5 hours: blood sugar too low → uncontrolled eating binge.",
+        "detail": "Meal spacing affects hunger/satiety hormones (ghrelin/leptin), blood sugar levels, and eating psychology. Going too long without food triggers 'emergency eating' — the brain prioritizes high-calorie foods, eats fast, and barely registers fullness until well past overeating.",
+        "details": [
+          "Ghrelin (hunger hormone) peaks after 4–5 hours without food. When ghrelin is too high, portion control drops significantly — the brain prioritizes high-energy, fast foods.",
+          "3–5 hour spacing: optimal for fully digesting the previous meal, allowing insulin to return to baseline before starting a new meal.",
+          "A 100–200 kcal snack after 3–4 hours (when meals are far apart) helps prevent ghrelin from peaking too high and keeps energy stable.",
+          "No need to eat at exactly the same time every day — what matters is TOTAL calories and spacing enough to avoid being too hungry before main meals.",
+          "Signs of poor meal spacing: eating very fast, not feeling full even after eating a lot, intense sweet/salty cravings after meals."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "3–5 hours/meal", "note": "Optimal spacing between meals" },
+          { "icon": "🍎", "label": "100–200 kcal snack", "note": "Prevents ghrelin from spiking too high" },
+          { "icon": "🧠", "label": "Emergency eating", "note": "Fasting too long → loss of control when eating" },
+          { "icon": "📊", "label": "Insulin baseline", "note": "Needs time to return before next meal" }
+        ]
+      },
+      {
+        "title": "Light Dinner", "desc": "Reduce starchy carbs at dinner if not training; increase vegetables and protein instead.",
+        "keyFact": "Insulin sensitivity decreases 20–25% in the evening compared to the morning — the same amount of carbs at dinner will raise blood sugar higher and store fat more easily than at breakfast.",
+        "detail": "The body has a circadian rhythm that affects how different foods are processed. Evening: insulin less sensitive, metabolism slower, body preparing for sleep. A heavy, carb-rich dinner raises blood sugar and reduces sleep quality.",
+        "details": [
+          "Circadian rhythm and insulin: insulin receptors work best in the morning, less responsive in the evening. Eating many carbs at night = same carbs but higher blood sugar than in the morning.",
+          "Ideal dinner: moderate protein (30–40g) + lots of vegetables (fiber helps fullness, stabilizes evening blood sugar) + minimal carbs (small sweet potato or brown rice).",
+          "Exception: if you train in the evening, the body needs carbs after training to replenish glycogen. Eating carbs after a late workout is necessary — not wrong.",
+          "Eating dinner too full or too close to bedtime (less than 2 hours) reduces sleep quality: higher body temperature, digestion competes with overnight recovery.",
+          "Simple dinner: steamed fish/chicken + vegetable soup + small portion of brown rice. 400–500 kcal total, filling, easy to digest, doesn't disrupt sleep."
+        ],
+        "points": [
+          { "icon": "🌙", "label": "Circadian rhythm", "note": "Insulin less sensitive in the evening" },
+          { "icon": "🥗", "label": "Veg + protein", "note": "Optimal dinner formula" },
+          { "icon": "💤", "label": "2 hours before bed", "note": "Finish digesting before sleep" },
+          { "icon": "🏋️", "label": "Exception: post-workout", "note": "Late training → carbs after are needed" }
+        ]
+      }
+    ],
+    "tdee_benefits_full": [
+      {
+        "title": "Eat on Target", "desc": "Know exactly how many kcal you need per day — no guessing when you want to lose fat, gain muscle, or maintain.",
+        "keyFact": "A ±200 kcal/day deviation from your actual TDEE can make or break a fat loss/muscle gain journey in just 2–3 weeks.",
+        "detail": "Without knowing your TDEE, you're guessing your daily calories. On average, people underestimate their food intake by 20–40%. TDEE gives you a concrete number to adjust toward your exact goal — fat loss (cut 400 kcal), maintenance (match TDEE), or muscle gain (add 300 kcal).",
+        "details": [
+          "Fat loss goal: eat TDEE − 400 kcal/day. This is a safe deficit that doesn't burn muscle or lower your BMR (basal metabolic rate).",
+          "Muscle gain goal: eat TDEE + 300 kcal/day. A modest surplus helps build muscle without accumulating too much fat.",
+          "Maintenance goal: eat exactly TDEE. This is the most stable body state — no loss, no gain.",
+          "Many people fail not from lack of willpower, but from not knowing how much they're eating. TDEE provides a concrete 'anchor' to hold to.",
+          "No need to count every calorie forever — just track for 2–4 weeks to recalibrate your brain's sense of hunger to actual needs."
+        ],
+        "points": [
+          { "icon": "📉", "label": "Fat loss", "note": "TDEE − 400 kcal, muscle-safe" },
+          { "icon": "💪", "label": "Muscle gain", "note": "TDEE + 300 kcal, minimal surplus" },
+          { "icon": "⚖️", "label": "Maintenance", "note": "Eat at TDEE, stable state" },
+          { "icon": "🧭", "label": "Calorie anchor", "note": "Reference point, no more guessing" }
+        ]
+      },
+      {
+        "title": "Avoid Energy Imbalance", "desc": "Eat enough to maintain energy and muscle, avoid 'crash' from aggressive cuts or fat gain from overeating.",
+        "keyFact": "Cutting calories below BMR (resting energy) triggers 'starvation mode' — the body burns muscle instead of fat and reduces BMR by up to 20%.",
+        "detail": "Chronic energy deficiency (eating below BMR) causes metabolic adaptation: the body lowers its BMR to survive, burns muscle for fuel, and stores fat again as soon as normal eating resumes. Conversely, large caloric surplus (>500 kcal/day) stores fat faster than it builds muscle.",
+        "details": [
+          "BMR (Basal Metabolic Rate) is the minimum energy for organs to function at complete rest. Eating below BMR = the body 'eating' itself.",
+          "'Metabolic adaptation' after aggressive calorie cuts: BMR drops 10–20%, body prioritizes burning muscle protein over stored fat.",
+          "Signs of chronic energy deficiency: afternoon fatigue, difficulty concentrating, intense sugar cravings, poor sleep quality, hair loss.",
+          "Large surplus (>500 kcal/day) doesn't build muscle faster — it only accelerates fat storage, worsening the muscle-to-fat ratio.",
+          "Ideal goal: always stay within −400 to +300 kcal of TDEE. This is the safe 'anabolic window'."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "BMR floor", "note": "Never eat below this number" },
+          { "icon": "💀", "label": "Starvation Mode", "note": "Aggressive cuts → burns muscle, lowers BMR" },
+          { "icon": "📊", "label": "Safe zone", "note": "−400 to +300 kcal from TDEE" },
+          { "icon": "⚠️", "label": "Warning signs", "note": "Fatigue, sugar cravings, hair loss" }
+        ]
+      },
+      {
+        "title": "Adjust at the Right Moment", "desc": "No progress after 2 weeks? Increase/decrease exactly 100–200 kcal instead of overhauling the entire diet.",
+        "keyFact": "Changing 100 kcal/day = 700 kcal/week = ~0.1 kg of fat/week. Small adjustments, clear results, no need to overhaul everything.",
+        "detail": "The body adapts to calorie intake after 2–3 weeks. When the scale doesn't move despite your efforts, that's a signal to adjust — not quit. TDEE allows precise fine-tuning instead of trial and error.",
+        "details": [
+          "Plateau is normal — not failure. The body automatically adjusts its TDEE when body weight changes.",
+          "No progress after 2 weeks of consistent eating → reduce by another 100–150 kcal/day. Simple, no need to overhaul everything.",
+          "No weight gain after 2 weeks of muscle-building training → add 100–150 kcal/day, prioritize protein and carbs around workouts.",
+          "Weigh in the morning, after using the bathroom, before eating — take a 7-day average. Daily fluctuations of 0.5–2 kg are normal due to water.",
+          "Re-feed day (increasing calories 1 day/week) helps reset leptin, reduces fatigue and mental strain during a long fat-loss phase."
+        ],
+        "points": [
+          { "icon": "🎚️", "label": "100 kcal change", "note": "~0.1 kg/week — fine-tune" },
+          { "icon": "⏳", "label": "Wait 2 weeks", "note": "Enough time to see a clear trend" },
+          { "icon": "🔁", "label": "Re-feed day", "note": "Reset leptin during long-term cut" },
+          { "icon": "📉", "label": "7-day average", "note": "Removes water-weight fluctuations" }
+        ]
+      },
+      {
+        "title": "Update as Your Body Changes", "desc": "TDEE shifts when weight changes. Recalculate every 4 weeks to stay consistently effective.",
+        "keyFact": "Losing 5 kg = TDEE decreases ~100 kcal/day. Without updating → forced plateau after 4–6 weeks even when eating correctly.",
+        "detail": "TDEE is not a fixed number — it changes with body weight, age, and activity level. Someone who has lost 5 kg needs fewer calories than they did at 5 kg heavier. Not updating TDEE is the most common reason for inevitable plateaus.",
+        "details": [
+          "Every 1 kg lost/gained → TDEE changes by about 20–25 kcal/day. Losing 5 kg = TDEE drops 100–125 kcal/day.",
+          "Recalculate TDEE after every 4 weeks or when weight changes by ≥ 2–3 kg. Re-enter your new weight into the B0 calculator.",
+          "Activity level also changes over time — from 'sedentary' to 'moderately active' as you get used to a training schedule.",
+          "After 3–6 months of training, muscle-to-fat ratio improves → BMR increases slightly (muscle burns more calories than fat at rest).",
+          "No complex app needed: recalculate TDEE every 4 weeks using the B0 tool here — takes 2 minutes, saves 4 weeks of guessing."
+        ],
+        "points": [
+          { "icon": "📅", "label": "Every 4 weeks", "note": "Ideal recalculation frequency" },
+          { "icon": "⚖️", "label": "±2–3 kg", "note": "Threshold requiring immediate recalculation" },
+          { "icon": "🏋️", "label": "Activity level", "note": "Also changes as training progresses" },
+          { "icon": "🧮", "label": "Use B0 here", "note": "Recalculate in 2 minutes" }
+        ]
+      }
+    ],
     "safety_label": "Safety First",
     "safety_headline": "Safety first, results next, sustainability is the ultimate goal.",
     "safety_body": "This information is for general educational purposes and does not replace professional advice. If you have underlying conditions (diabetes, kidney, heart, eating disorders), consult a doctor or registered dietitian before changing your diet.",

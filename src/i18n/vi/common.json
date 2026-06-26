@@ -918,7 +918,9 @@
     "close_hint": "Nhấn ESC hoặc click bên ngoài để đóng",
     "prev": "← Trước",
     "next": "Sau →",
-    "apply_title": "Áp Dụng Thực Tế"
+    "apply_title": "Áp Dụng Thực Tế",
+    "see_detail": "Xem chi tiết →",
+    "practice_title": "Chi Tiết Thực Hành"
   },
   "ui": {
     "show_detail": "▼ chi tiết",

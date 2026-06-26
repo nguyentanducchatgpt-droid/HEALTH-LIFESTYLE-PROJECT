@@ -1151,7 +1151,9 @@
     "close_hint": "ESC drücken oder außerhalb klicken zum Schließen",
     "prev": "← Zurück",
     "next": "Weiter →",
-    "apply_title": "Praktische Anwendung"
+    "apply_title": "Praktische Anwendung",
+    "see_detail": "Details ansehen →",
+    "practice_title": "Übungsdetails"
   },
   "ui": {
     "show_detail": "▼ Details",

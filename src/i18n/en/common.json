@@ -1151,7 +1151,9 @@
     "close_hint": "Press ESC or click outside to close",
     "prev": "← Prev",
     "next": "Next →",
-    "apply_title": "Practical Application"
+    "apply_title": "Practical Application",
+    "see_detail": "View details →",
+    "practice_title": "Practice Details"
   },
   "ui": {
     "show_detail": "▼ details",

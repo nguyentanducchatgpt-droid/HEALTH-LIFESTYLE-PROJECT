@@ -3364,6 +3364,7 @@ function MealsPanel({ s, activeGoal = 'maintenance' }) {
 
 // ─── Tracking Tab Card — orbit ring + 3D tilt + gleam ────────────────────────
 function TrackingTabCard({ section, active, onClick }) {
+  const { t: tCommon } = useTranslation('common');
   const ref = useRef(null);
   const [hov, setHov] = useState(false);
   const [gleam, setGleam] = useState(0);
@@ -3505,7 +3506,7 @@ function TrackingTabCard({ section, active, onClick }) {
 
           {!active && (
             <div className="mt-3 flex items-center gap-1" style={{ color: `${c}70` }}>
-              <span className="text-[10px] font-semibold">Xem chi tiết</span>
+              <span className="text-[10px] font-semibold">{tCommon('modal.see_detail')}</span>
               <span className="text-lg">→</span>
             </div>
           )}
@@ -5284,6 +5285,7 @@ function TDEEBenefitModal({ b, idx, onClose, onPrev, onNext, hasPrev, hasNext })
 // ─── CalcPanel (B0) — Interactive TDEE calculator ───────────────────────────
 function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, setSex, activityKey, setActivityKey, goalKey, setGoalKey, userStats: s, onBenefitOpen, onMealSplitOpen, onAccuracyOpen }) {
   const { t: tPillars } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
   const b0tr = tPillars('pillarB.b0', { returnObjects: true }) || {};
   const activityTr = tPillars('pillarB.activity_levels', { returnObjects: true }) || [];
   const goalTr = tPillars('pillarB.goal_modifiers', { returnObjects: true }) || [];
@@ -5526,7 +5528,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
                   <p className="text-lg font-bold mb-1" style={{ color: b.color }}>{btr.title || b.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{btr.desc || b.desc}</p>
                   <span className="inline-flex items-center gap-1 mt-2 text-[10px] font-bold opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: b.color }}>
-                    Xem chi tiết
+                    {tCommon('modal.see_detail')}
                     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
                     </svg>
@@ -5554,7 +5556,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
               {b0tr.accuracy_body || 'Công thức Mifflin-St Jeor có sai số ±10–15% vì không tính được tỷ lệ cơ/mỡ. Dùng TDEE như điểm khởi đầu — theo dõi cân nặng 1–2 tuần, nếu cân không đổi thì lượng bạn đang ăn chính là TDEE thực tế của bạn.'}
             </p>
             <span className="inline-flex items-center gap-1 mt-2 text-[10px] font-bold text-amber-400/50 group-hover:text-amber-400 transition-colors">
-              Xem chi tiết
+              {tCommon('modal.see_detail')}
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
               </svg>
@@ -5582,7 +5584,7 @@ function CalcPanel({ weight, setWeight, height, setHeight, age, setAge, sex, set
               </div>
               <p className="text-[11px] text-muted leading-relaxed mb-2">{b0tr.meal_split_rules?.[i]?.desc || r.desc}</p>
               <span className="inline-flex items-center gap-1 text-[10px] font-bold opacity-40 group-hover:opacity-100 transition-opacity" style={{ color: '#8b5cf6' }}>
-                Xem chi tiết
+                {tCommon('modal.see_detail')}
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
                 </svg>
@@ -5756,7 +5758,7 @@ function MealSplitModal({ r, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 
           <p className="text-base text-muted leading-relaxed mb-6">{r.detail}</p>
 
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: MS_COLOR }}>Chi Tiết Thực Hành</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: MS_COLOR }}>{tCommon('modal.practice_title')}</p>
           <ul className="space-y-3 mb-8">
             {r.details.map((d, di) => (
               <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
@@ -7041,6 +7043,7 @@ function MantraDetail({ m, onClose, onPrev, onNext, hasPrev, hasNext }) {
 
 // ─── MantraCard — image + click-to-expand ─────────────────────────────────────
 function MantraCard({ m, i, onOpen }) {
+  const { t: tCommon } = useTranslation('common');
   const [hov, setHov] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
   const [ready, setReady] = useState(false);
@@ -7122,7 +7125,7 @@ function MantraCard({ m, i, onOpen }) {
         <div className="flex items-center gap-1 mt-3 pt-2.5 border-t transition-all duration-300"
           style={{ borderColor: hov ? 'rgba(132,204,22,0.2)' : 'rgba(255,255,255,0.06)' }}>
           <span className="text-[10px] font-bold transition-colors duration-200"
-            style={{ color: hov ? LIME : 'rgba(148,163,184,0.4)' }}>Xem chi tiết</span>
+            style={{ color: hov ? LIME : 'rgba(148,163,184,0.4)' }}>{tCommon('modal.see_detail')}</span>
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3 transition-all duration-300"
             style={{ color: hov ? LIME : 'rgba(148,163,184,0.3)', transform: hov ? 'translateX(3px)' : 'translateX(0)' }}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4" />
@@ -7686,6 +7689,33 @@ export default function PillarB() {
     detail:  tPillars(`pillarB.mantras.${i}.detail`,  { defaultValue: m.detail }),
     tips:    tPillars(`pillarB.mantras.${i}.tips`,    { returnObjects: true, defaultValue: m.tips }),
   }));
+  const translatedTiers = TIERS.map((t, i) => ({
+    ...t,
+    level:   tPillars(`pillarB.tiers_full.${i}.level`,   { defaultValue: t.level }),
+    sub:     tPillars(`pillarB.tiers_full.${i}.sub`,     { defaultValue: t.sub }),
+    keyFact: tPillars(`pillarB.tiers_full.${i}.keyFact`, { defaultValue: t.keyFact }),
+    detail:  tPillars(`pillarB.tiers_full.${i}.detail`,  { defaultValue: t.detail }),
+    details: tPillars(`pillarB.tiers_full.${i}.details`, { returnObjects: true, defaultValue: t.details }),
+    points:  tPillars(`pillarB.tiers_full.${i}.points`,  { returnObjects: true, defaultValue: t.points }),
+  }));
+  const translatedBenefits = TDEE_BENEFITS.map((b, i) => ({
+    ...b,
+    title:   tPillars(`pillarB.tdee_benefits_full.${i}.title`,   { defaultValue: b.title }),
+    desc:    tPillars(`pillarB.tdee_benefits_full.${i}.desc`,    { defaultValue: b.desc }),
+    keyFact: tPillars(`pillarB.tdee_benefits_full.${i}.keyFact`, { defaultValue: b.keyFact }),
+    detail:  tPillars(`pillarB.tdee_benefits_full.${i}.detail`,  { defaultValue: b.detail }),
+    details: tPillars(`pillarB.tdee_benefits_full.${i}.details`, { returnObjects: true, defaultValue: b.details }),
+    points:  tPillars(`pillarB.tdee_benefits_full.${i}.points`,  { returnObjects: true, defaultValue: b.points }),
+  }));
+  const translatedMealSplit = MEAL_SPLIT_RULES.map((r, i) => ({
+    ...r,
+    title:   tPillars(`pillarB.meal_split_full.${i}.title`,   { defaultValue: r.title }),
+    desc:    tPillars(`pillarB.meal_split_full.${i}.desc`,    { defaultValue: r.desc }),
+    keyFact: tPillars(`pillarB.meal_split_full.${i}.keyFact`, { defaultValue: r.keyFact }),
+    detail:  tPillars(`pillarB.meal_split_full.${i}.detail`,  { defaultValue: r.detail }),
+    details: tPillars(`pillarB.meal_split_full.${i}.details`, { returnObjects: true, defaultValue: r.details }),
+    points:  tPillars(`pillarB.meal_split_full.${i}.points`,  { returnObjects: true, defaultValue: r.points }),
+  }));
   const [mantraIdx, setMantraIdx] = useState(null);
   const [benefitIdx, setBenefitIdx] = useState(null);
   const [mealSplitIdx, setMealSplitIdx] = useState(null);
@@ -8201,7 +8231,7 @@ export default function PillarB() {
                 </ul>
 
                 <div className="mt-4 text-[10px] font-bold flex items-center gap-1 opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: tier.color }}>
-                  Xem chi tiết
+                  {tCommon('modal.see_detail')}
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                 </div>
               </div>
@@ -8665,7 +8695,7 @@ export default function PillarB() {
       {/* ── Tier level modal — outside all RevealBlocks so position:fixed works ── */}
       {tierIdx !== null && (
         <TierModal
-          tier={TIERS[tierIdx]}
+          tier={translatedTiers[tierIdx]}
           idx={tierIdx}
           onClose={() => setTierIdx(null)}
           onPrev={() => setTierIdx(i => Math.max(0, i - 1))}
@@ -8690,13 +8720,13 @@ export default function PillarB() {
       {/* ── TDEE benefit modal — outside all RevealBlocks so position:fixed works ── */}
       {benefitIdx !== null && (
         <TDEEBenefitModal
-          b={TDEE_BENEFITS[benefitIdx]}
+          b={translatedBenefits[benefitIdx]}
           idx={benefitIdx}
           onClose={() => setBenefitIdx(null)}
           onPrev={() => setBenefitIdx(i => Math.max(0, i - 1))}
-          onNext={() => setBenefitIdx(i => Math.min(TDEE_BENEFITS.length - 1, i + 1))}
+          onNext={() => setBenefitIdx(i => Math.min(translatedBenefits.length - 1, i + 1))}
           hasPrev={benefitIdx > 0}
-          hasNext={benefitIdx < TDEE_BENEFITS.length - 1}
+          hasNext={benefitIdx < translatedBenefits.length - 1}
         />
       )}
 
@@ -8706,13 +8736,13 @@ export default function PillarB() {
       {/* ── Meal split modal — outside all RevealBlocks so position:fixed works ── */}
       {mealSplitIdx !== null && (
         <MealSplitModal
-          r={MEAL_SPLIT_RULES[mealSplitIdx]}
+          r={translatedMealSplit[mealSplitIdx]}
           idx={mealSplitIdx}
           onClose={() => setMealSplitIdx(null)}
           onPrev={() => setMealSplitIdx(i => Math.max(0, i - 1))}
-          onNext={() => setMealSplitIdx(i => Math.min(MEAL_SPLIT_RULES.length - 1, i + 1))}
+          onNext={() => setMealSplitIdx(i => Math.min(translatedMealSplit.length - 1, i + 1))}
           hasPrev={mealSplitIdx > 0}
-          hasNext={mealSplitIdx < MEAL_SPLIT_RULES.length - 1}
+          hasNext={mealSplitIdx < translatedMealSplit.length - 1}
         />
       )}
 

@@ -1429,6 +1429,231 @@
         ]
       }
     ],
+    "tiers_full": [
+      {
+        "level": "Anfänger", "sub": "Wochen 1–4",
+        "keyFact": "80 % der Ergebnisse stammen aus den grundlegendsten Gewohnheiten — kein Kalorienzählen von Anfang an nötig.",
+        "detail": "Die Anfängerphase konzentriert sich auf den Aufbau von Bewusstsein und gesunden Essgewohnheiten. Das Ziel ist nicht Perfektion, sondern Konsistenz.",
+        "details": [
+          "Protein bei jeder Mahlzeit priorisieren: Hühnerbrust, Eier, Fisch, Tofu, Joghurt — hält länger satt und reduziert Zuckerverlangen nach dem Essen.",
+          "Gemüse in 2/3 der Hauptmahlzeiten liefert Mikronährstoffe, Ballaststoffe und verlangsamt die Blutzuckeraufnahme.",
+          "Wasser ist die Basis: 6–8 Gläser täglich helfen dem Körper beim Stoffwechsel und vermeiden Verwechslung von Durst und Hunger.",
+          "In dieser Phase zählt Bewusstsein mehr als Zahlen: zu wissen, welche Mahlzeit zu wenig Protein oder zu viele Kohlenhydrate hatte, reicht.",
+          "Zuckerhaltige Getränke und stark verarbeitete Snacks reduzieren — diese Änderung hat die größte Wirkung mit dem geringsten Aufwand.",
+          "Kein komplexer Ernährungsplan nötig: nur nach jeder Mahlzeit fragen — 'Hatte ich Protein? Hatte ich Gemüse?'"
+        ],
+        "points": [
+          { "icon": "🥩", "label": "Protein bei jeder Mahlzeit", "note": "Fleisch, Fisch, Eier, Tofu" },
+          { "icon": "🥦", "label": "Gemüse 2/3 Mahlzeiten", "note": "Gekocht, gebraten oder in Suppe" },
+          { "icon": "💧", "label": "6–8 Gläser täglich", "note": "1 Glas vor jeder Mahlzeit trinken" },
+          { "icon": "🚫", "label": "Hochverarbeitetes reduzieren", "note": "Softdrinks, verpackte Snacks" }
+        ]
+      },
+      {
+        "level": "Standard", "sub": "Wochen 5–12",
+        "keyFact": "½–¼–¼ Teller + ausreichend tägliches Protein lösen 90 % der Ernährungsbedürfnisse ohne komplexe Tracking-App.",
+        "detail": "Die Standardphase entwickelt Gewohnheiten von Bewusstsein zu echter Struktur. Sie beginnen Mahlzeiten zu planen, Protein zu tracken und Nährwertkennzeichnungen zu lesen.",
+        "details": [
+          "½–¼–¼ Teller: halber Teller Gemüse und Protein, ein Viertel Kohlenhydrate, ein Viertel tierisches Protein — die einfachste Formel für ausgewogene Mahlzeiten.",
+          "Meal Prep 1–2 Mal pro Woche spart täglich 30–60 Minuten und reduziert schlechte Ernährungsentscheidungen bei Hunger.",
+          "Minimal verarbeitete Lebensmittel bedeutet Zutaten so nah wie möglich am natürlichen Zustand zu wählen — gedämpfte Hühnerbrust statt Hühnerwurst.",
+          "Protein tracken (~1,6–2g/kg Körpergewicht) — der wichtigste Wert: ausreichend Protein erhält Muskeln, sättigt länger und unterstützt Regeneration.",
+          "Nährwertkennzeichnungen lesen: 3 Angaben beachten — Kalorien/Portion, Protein und die erste Zutat in der Zutatenliste.",
+          "In dieser Phase beginnt man Körperveränderungen zu sehen — jetzt ist Beibehaltung wichtiger als ständige Planänderungen."
+        ],
+        "points": [
+          { "icon": "🍽️", "label": "½–¼–¼ Teller", "note": "Gemüse + Protein + Kohlenhydrate" },
+          { "icon": "📦", "label": "Wöchentliches Meal Prep", "note": "1–2 Mal, spart Zeit" },
+          { "icon": "🏷️", "label": "Nährwertkennzeichnung lesen", "note": "Kalorien, Protein, Zutaten" },
+          { "icon": "📊", "label": "Protein tracken", "note": "1,6–2g pro kg Körpergewicht" }
+        ]
+      },
+      {
+        "level": "Fortgeschritten", "sub": "Monat 3+",
+        "keyFact": "Makros auf Ihren TDEE und spezifisches Ziel zu personalisieren verbessert Trainingsleistung und Körperzusammensetzung um 25–40 %.",
+        "detail": "Die Fortgeschrittenenstufe ist für diejenigen, die ein solides Fundament aufgebaut haben und die Ernährung für ein spezifisches Ziel optimieren möchten — Fettabbau, Muskelaufbau oder Leistungssteigerung.",
+        "details": [
+          "Personalisierter TDEE: statt einer allgemeinen Formel passen Sie nach echtem Körperfeedback alle 2–4 Wochen an.",
+          "Carb Cycling optimiert Glykogen: an schweren Trainingstagen Kohlenhydrate um 20–30 % erhöhen; an Ruhetagen leicht reduzieren, Fett etwas erhöhen.",
+          "Nährstoff-Timing: 20–30g Protein + schnelle Kohlenhydrate innerhalb von 30–60 Minuten nach dem Training verbessert Muskelsynthese und beschleunigt Erholung.",
+          "Inbody-Waage einmal monatlich liefert echte Daten über Muskelmasse, Körperfettanteil, viszerales Fett — viel genauer als nur das Gewicht zu tracken.",
+          "Plan alle 4–6 Wochen basierend auf Daten anpassen: wenn Körperfett nach 4 Wochen nicht sinkt, 100–150 kcal kürzen; wenn Muskeln verloren gehen, Protein erhöhen.",
+          "In dieser Phase zählen datengetriebene Konsequenz und Geduld mehr als jedes 'Geheimnis' — der Körper verändert sich über Wochen, nicht Tage."
+        ],
+        "points": [
+          { "icon": "🧮", "label": "Personalisierter TDEE", "note": "Basierend auf echtem Körperfeedback" },
+          { "icon": "🔄", "label": "Carb Cycling", "note": "Hoch an Trainingstagen, niedrig an Ruhetagen" },
+          { "icon": "⏱️", "label": "Nährstoff-Timing", "note": "Pre/Intra/Post-Workout" },
+          { "icon": "📈", "label": "Körperzusammensetzung", "note": "Inbody alle 4 Wochen" }
+        ]
+      }
+    ],
+    "meal_split_full": [
+      {
+        "title": "Frühstück nicht auslassen", "desc": "Frühstück aktiviert den Stoffwechsel und stabilisiert den Blutzucker den ganzen Tag.",
+        "keyFact": "Regelmäßiges Frühstücksauslassen erhöht den Morgencortisol, verlangsamt den Stoffwechsel und verstärkt Zucker-/Fettverlangen zu Mittag und Abend.",
+        "detail": "Frühstück bricht die nächtliche Fastenperiode (8–10 Stunden), aktiviert die Thermogenese und stabilisiert den Blutzucker bevor das Gehirn zu arbeiten beginnt. Kein großes Frühstück nötig — 300–400 kcal mit Protein + langsame Kohlenhydrate reicht.",
+        "details": [
+          "Cortisol steigt natürlich morgens an. Frühstücksauslassen hält Cortisol länger erhöht und lässt den Körper Muskelprotein statt Fett verbrennen.",
+          "Niedriger Morgenblutzucker → schlechte Gehirnfunktion → Konzentrationsschwierigkeiten, Reizbarkeit, verstärktes Verlangen nach Süßem.",
+          "Ideales Frühstück: 300–400 kcal, 20–30g Protein, langsame Kohlenhydrate (Haferflocken, Vollkornbrot).",
+          "Keine Zeit? Hartgekochte Eier + Milch + Banane = 5 Minuten, 350 kcal, 25g Protein.",
+          "Wenn Sie morgens wirklich nicht essen können, essen Sie innerhalb 1 Stunde nach dem Aufwachen statt ganz auszulassen."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Thermogenese aktivieren", "note": "Kalorien ab der ersten Mahlzeit verbrennen" },
+          { "icon": "🧠", "label": "Blutzucker stabilisieren", "note": "Gehirn arbeitet den ganzen Morgen besser" },
+          { "icon": "💪", "label": "20–30g Protein", "note": "Muskeln schützen, bis Mittagessen satt" },
+          { "icon": "⏰", "label": "Innerhalb 1 Stunde", "note": "Früh nach dem Aufwachen essen" }
+        ]
+      },
+      {
+        "title": "Protein bei jeder Mahlzeit", "desc": "Protein sättigt länger, schützt Muskeln und verbrennt beim Verdauen zusätzliche Kalorien.",
+        "keyFact": "Protein hat einen TEF von 20–30 % — der Körper verbrennt 20–30 kcal nur um 100 kcal Protein zu verdauen. Kohlenhydrate und Fett nur 5–8 %.",
+        "detail": "Protein ist das einzige Makro das gleichzeitig länger sättigt, Muskeln bei Kaloriendefizit schützt und Wärme beim Verdauen erzeugt. Gleichmäßige Verteilung über 3–4 Mahlzeiten optimiert die Muskelproteinsynthese besser als Konzentration auf 1–2 Mahlzeiten.",
+        "details": [
+          "Proteinziel: 1,6–2,2g/kg Körpergewicht/Tag. Gleichmäßig über 3–4 Mahlzeiten aufteilen, je 25–40g.",
+          "Vollständige Proteinquellen: Fleisch, Fisch, Eier, Milchprodukte, Soja. Reis + Bohnen kombiniert ergibt auch vollständiges Protein.",
+          "Protein verlangsamt die Gesamtverdauungsrate und stabilisiert den Blutzucker — besser wenn Protein VOR Kohlenhydraten gegessen wird.",
+          "Protein-Snacks (Joghurt, Käsestangen, hartgekochte Eier) kontrollieren den Hunger zwischen Mahlzeiten besser als reine Kohlenhydrat-Snacks.",
+          "Kraftsportler brauchen 2,0–2,2g/kg; Erhaltungsmodus 1,6–1,8g/kg; wenig aktive Personen mindestens 1,2g/kg."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "TEF 20–30 %", "note": "Kalorien beim Verdauen von Protein verbrennen" },
+          { "icon": "💪", "label": "25–40g/Mahlzeit", "note": "Aktiviert optimale Muskelsynthese" },
+          { "icon": "😋", "label": "Länger satt", "note": "Erhöht PYY, reduziert Ghrelin" },
+          { "icon": "🎯", "label": "1,6–2,2g/kg", "note": "Tägliches Proteinziel" }
+        ]
+      },
+      {
+        "title": "Gemüse vor Kohlenhydraten essen", "desc": "Gemüse verlangsamt die Zuckeraufnahme und reduziert den Insulinspike nach dem Essen.",
+        "keyFact": "Gemüse vor Reis zu essen kann den Blutzuckerspitzenwert nach dem Essen um 40–50 % reduzieren — Weill Cornell Medicine Forschung.",
+        "detail": "Ballaststoffe in Gemüse bilden eine viskose Gelschicht im Darm, verlangsamen Amylase-Enzyme beim Stärkeabbau und reduzieren Glukoseaufnahme ins Blut. Ergebnis: niedrigerer Insulinspike, längere Sättigung und weniger Fettspeicherung trotz gleicher Kalorien.",
+        "details": [
+          "Mechanismus: lösliche Ballaststoffe bilden ein Gel an der Dünndarmwand, verlangsamen stärkeverdauende Enzyme und Glukoseaufnahme.",
+          "Weill Cornell Studie (2015): Gemüse/Protein vor Reis essen reduzierte Glukosespitzenwert um 37–40 %. Wirkung hält bis 2 Stunden nach der Mahlzeit an.",
+          "Kein separates Essen nötig — nur die Mahlzeit mit ein paar Bissen Gemüse beginnen, bevor Reis gegessen wird.",
+          "Effektivstes Gemüse: Brokkoli, Blumenkohl, Blattgemüse, Okra. Mindestens 1–2 Handvoll pro Hauptmahlzeit.",
+          "Ähnlicher Effekt mit Protein — Gemüse + Protein vor Reis kombinieren ist die optimale Strategie."
+        ],
+        "points": [
+          { "icon": "📉", "label": "40 % Glukosereduktion", "note": "Stabilisiert Blutzucker nach dem Essen" },
+          { "icon": "🧪", "label": "Lösliche Ballaststoffe", "note": "Bildet Gel, verlangsamt Kohlenhydrataufnahme" },
+          { "icon": "🍽️", "label": "Gemüse ZUERST essen", "note": "Nur ein paar Bissen zuerst reicht" },
+          { "icon": "⏱️", "label": "2-Stunden-Wirkung", "note": "Blutzucker-Puffer nach der Mahlzeit" }
+        ]
+      },
+      {
+        "title": "Angemessene Mahlzeitenabstände", "desc": "Nicht länger als 5 Stunden ohne Essen — verhindert übermäßiges Essen bei der nächsten Mahlzeit.",
+        "keyFact": "Ideale Mahlzeitenabstände: 3–5 Stunden. Unter 3 Stunden: Insulin noch nicht auf Grundwert. Über 5 Stunden: Blutzucker zu niedrig → unkontrolliertes Überessen.",
+        "detail": "Mahlzeitenabstände beeinflussen Hunger-/Sättigungshormone (Ghrelin/Leptin), Blutzuckerspiegel und Esspsychologie. Zu langes Warten ohne Essen löst 'Notfallessen' aus.",
+        "details": [
+          "Ghrelin (Hungerhormon) erreicht nach 4–5 Stunden ohne Essen seinen Höhepunkt. Bei zu hohem Ghrelin sinkt die Portionskontrolle erheblich.",
+          "3–5 Stunden Abstand: optimal für vollständige Verdauung der vorherigen Mahlzeit, Insulin kann auf Grundniveau zurückkehren.",
+          "Ein 100–200 kcal Snack nach 3–4 Stunden hilft Ghrelin-Spitzen zu verhindern und Energie stabil zu halten.",
+          "Kein exakter Essenszeitplan nötig — wichtig ist GESAMT-Kalorien und ausreichend Abstand um nicht zu hungrig zu sein.",
+          "Zeichen schlechter Mahlzeitenabstände: sehr schnelles Essen, kein Sättigungsgefühl, starkes Verlangen nach Süßem/Salzigem."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "3–5 Stunden/Mahlzeit", "note": "Optimale Abstände zwischen Mahlzeiten" },
+          { "icon": "🍎", "label": "100–200 kcal Snack", "note": "Verhindert zu hohen Ghrelin-Anstieg" },
+          { "icon": "🧠", "label": "Notfallessen", "note": "Zu langes Fasten → Kontrollverlust" },
+          { "icon": "📊", "label": "Insulin-Grundniveau", "note": "Braucht Zeit vor nächster Mahlzeit" }
+        ]
+      },
+      {
+        "title": "Leichtes Abendessen", "desc": "Stärkehaltige Kohlenhydrate abends reduzieren wenn kein Training; stattdessen mehr Gemüse und Protein.",
+        "keyFact": "Insulinsensitivität sinkt abends um 20–25 % gegenüber morgens — die gleiche Menge Kohlenhydrate beim Abendessen erhöht Blutzucker stärker und speichert leichter Fett.",
+        "detail": "Der Körper hat einen circadianen Rhythmus der beeinflusst wie verschiedene Lebensmittel verarbeitet werden. Abends: Insulin weniger sensibel, Stoffwechsel langsamer, Körper bereitet sich auf Schlaf vor.",
+        "details": [
+          "Circadianer Rhythmus: Insulinrezeptoren arbeiten morgens am besten, abends weniger reaktiv. Viele Kohlenhydrate abends = höherer Blutzucker als morgens.",
+          "Ideales Abendessen: moderates Protein (30–40g) + viel Gemüse + minimale Kohlenhydrate (kleiner Süßkartoffel oder brauner Reis).",
+          "Ausnahme: wenn Sie abends trainieren, braucht der Körper Kohlenhydrate nach dem Training zur Glykogen-Wiederauffüllung.",
+          "Zu volles Abendessen oder zu nah vor dem Schlafen (unter 2 Stunden) reduziert die Schlafqualität.",
+          "Einfaches Abendessen: gedämpfter Fisch/Hühnchen + Gemüsesuppe + kleine Portion brauner Reis. 400–500 kcal gesamt."
+        ],
+        "points": [
+          { "icon": "🌙", "label": "Circadianer Rhythmus", "note": "Insulin abends weniger sensibel" },
+          { "icon": "🥗", "label": "Gemüse + Protein", "note": "Optimale Abendessensformel" },
+          { "icon": "💤", "label": "2 Stunden vor dem Schlafen", "note": "Verdauung vor dem Schlafen abschließen" },
+          { "icon": "🏋️", "label": "Ausnahme: nach Training", "note": "Spätes Training → Kohlenhydrate danach nötig" }
+        ]
+      }
+    ],
+    "tdee_benefits_full": [
+      {
+        "title": "Richtig Kalorien essen", "desc": "Genau wissen wie viele kcal Sie täglich brauchen — kein Raten beim Fettabbau, Muskelaufbau oder Erhalt.",
+        "keyFact": "Eine ±200 kcal/Tag Abweichung von Ihrem tatsächlichen TDEE kann eine Fettabbau-/Muskelaufbau-Reise in nur 2–3 Wochen begründen oder zerstören.",
+        "detail": "Ohne TDEE zu kennen, schätzen Sie Ihre täglichen Kalorien. Im Durchschnitt unterschätzen Menschen ihre Nahrungsaufnahme um 20–40 %. TDEE gibt Ihnen eine konkrete Zahl für Ihr genaues Ziel — Fettabbau (400 kcal kürzen), Erhalt oder Muskelaufbau (300 kcal hinzufügen).",
+        "details": [
+          "Fettabbau-Ziel: TDEE − 400 kcal/Tag essen. Sicheres Defizit das keine Muskeln verbrennt oder den BMR senkt.",
+          "Muskelaufbau-Ziel: TDEE + 300 kcal/Tag essen. Bescheidener Überschuss hilft Muskeln aufzubauen ohne zu viel Fett anzusetzen.",
+          "Erhalt-Ziel: genau TDEE essen. Der stabilste Körperzustand — kein Verlust, keine Zunahme.",
+          "Viele scheitern nicht an mangelndem Willen, sondern daran nicht zu wissen wie viel sie essen. TDEE bietet einen konkreten 'Anker'.",
+          "Kein ewiges Kalorienzählen nötig — nur 2–4 Wochen tracken um das Gehirn auf echte Bedarfssignale neu zu kalibrieren."
+        ],
+        "points": [
+          { "icon": "📉", "label": "Fettabbau", "note": "TDEE − 400 kcal, muskelsicher" },
+          { "icon": "💪", "label": "Muskelaufbau", "note": "TDEE + 300 kcal, minimaler Überschuss" },
+          { "icon": "⚖️", "label": "Erhalt", "note": "Bei TDEE essen, stabiler Zustand" },
+          { "icon": "🧭", "label": "Kalori-Anker", "note": "Referenzpunkt, kein Raten mehr" }
+        ]
+      },
+      {
+        "title": "Energieungleichgewicht vermeiden", "desc": "Genug essen um Energie und Muskeln zu erhalten, 'Absturz' durch aggressive Kürzungen oder Fettzunahme durch Überessen vermeiden.",
+        "keyFact": "Kalorien unter den BMR zu kürzen löst den 'Hungermodus' aus — der Körper verbrennt Muskeln statt Fett und reduziert den BMR um bis zu 20 %.",
+        "detail": "Chronischer Energiemangel verursacht Stoffwechseladaptation: der Körper senkt seinen BMR zum Überleben, verbrennt Muskeln als Brennstoff. Umgekehrt speichert ein großer Kalorienüberschuss (>500 kcal/Tag) Fett schneller als Muskeln aufgebaut werden.",
+        "details": [
+          "BMR ist die Mindestenergie damit Organe in vollständiger Ruhe funktionieren. Unter BMR essen = der Körper 'frisst sich selbst'.",
+          "'Stoffwechseladaptation' nach aggressiven Kürzungen: BMR sinkt um 10–20 %, Körper priorisiert Muskelprotein statt gespeichertes Fett.",
+          "Zeichen chronischen Energiemangels: Nachmittagsmüdigkeit, Konzentrationsschwierigkeiten, starkes Verlangen nach Zucker, schlechter Schlaf, Haarausfall.",
+          "Großer Überschuss (>500 kcal/Tag) baut keine Muskeln schneller — beschleunigt nur Fettspeicherung.",
+          "Ideales Ziel: immer im Bereich von −400 bis +300 kcal gegenüber TDEE bleiben."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "BMR-Minimum", "note": "Niemals unter diese Zahl essen" },
+          { "icon": "💀", "label": "Hungermodus", "note": "Aggressive Kürzungen → Muskeln verbrennen, BMR sinkt" },
+          { "icon": "📊", "label": "Sicherer Bereich", "note": "−400 bis +300 kcal gegenüber TDEE" },
+          { "icon": "⚠️", "label": "Warnsignale", "note": "Müdigkeit, Zuckerverlangen, Haarausfall" }
+        ]
+      },
+      {
+        "title": "Zum richtigen Zeitpunkt anpassen", "desc": "Nach 2 Wochen kein Fortschritt? Genau 100–200 kcal erhöhen/reduzieren statt die gesamte Ernährung umzuwerfen.",
+        "keyFact": "100 kcal/Tag ändern = 700 kcal/Woche = ~0,1 kg Fett/Woche. Kleine Anpassungen, klare Ergebnisse, kein komplettes Umwerfen nötig.",
+        "detail": "Der Körper passt sich nach 2–3 Wochen an die Kalorienaufnahme an. Wenn die Waage trotz Bemühungen nicht reagiert, ist das ein Signal zum Anpassen — nicht zum Aufgeben.",
+        "details": [
+          "Plateau ist normal — kein Versagen. Der Körper passt seinen TDEE automatisch an wenn sich das Körpergewicht ändert.",
+          "Nach 2 Wochen konsequentem Essen kein Fortschritt → weitere 100–150 kcal/Tag reduzieren.",
+          "Nach 2 Wochen Muskelaufbau-Training keine Gewichtszunahme → 100–150 kcal/Tag hinzufügen.",
+          "Morgens wiegen, nach dem Toilettengang — 7-Tage-Durchschnitt nehmen. Tägliche Schwankungen von 0,5–2 kg sind normal.",
+          "Re-feed Tag (1 Tag/Woche Kalorien erhöhen) hilft Leptin zu resetzen und reduziert Müdigkeit während langer Fettabbauphasen."
+        ],
+        "points": [
+          { "icon": "🎚️", "label": "100 kcal Änderung", "note": "~0,1 kg/Woche — Feinabstimmung" },
+          { "icon": "⏳", "label": "2 Wochen warten", "note": "Genug Zeit einen klaren Trend zu sehen" },
+          { "icon": "🔁", "label": "Re-feed Tag", "note": "Leptin bei längerem Abbau resetten" },
+          { "icon": "📉", "label": "7-Tage-Durchschnitt", "note": "Wassergewichtsschwankungen eliminieren" }
+        ]
+      },
+      {
+        "title": "Entsprechend dem Körper aktualisieren", "desc": "TDEE verändert sich wenn Gewicht sich ändert. Alle 4 Wochen neu berechnen um konsequent effektiv zu bleiben.",
+        "keyFact": "5 kg abnehmen = TDEE sinkt um ~100 kcal/Tag. Ohne Aktualisierung → erzwungenes Plateau nach 4–6 Wochen trotz korrektem Essen.",
+        "detail": "TDEE ist keine feste Zahl — sie ändert sich mit Körpergewicht, Alter und Aktivitätsniveau. Den TDEE nicht zu aktualisieren ist der häufigste Grund für unvermeidliche Plateaus.",
+        "details": [
+          "Pro 1 kg zu-/abgenommen → TDEE ändert sich um etwa 20–25 kcal/Tag. 5 kg abnehmen = TDEE sinkt 100–125 kcal/Tag.",
+          "TDEE alle 4 Wochen oder wenn Gewicht sich um ≥ 2–3 kg ändert neu berechnen. Neues Gewicht in den B0-Rechner eingeben.",
+          "Aktivitätsniveau ändert sich auch mit der Zeit — von 'sitzend' auf 'mäßig aktiv' wenn man sich an einen Trainingsplan gewöhnt.",
+          "Nach 3–6 Monaten Training verbessert sich das Muskel-Fett-Verhältnis → BMR steigt leicht.",
+          "TDEE alle 4 Wochen mit dem B0-Tool hier neu berechnen — dauert 2 Minuten, spart 4 Wochen Raten."
+        ],
+        "points": [
+          { "icon": "📅", "label": "Alle 4 Wochen", "note": "Ideale Neuberechnungsfrequenz" },
+          { "icon": "⚖️", "label": "±2–3 kg", "note": "Schwellenwert für sofortige Neuberechnung" },
+          { "icon": "🏋️", "label": "Aktivitätsniveau", "note": "Ändert sich auch mit Trainingsfortschritt" },
+          { "icon": "🧮", "label": "B0 hier nutzen", "note": "Neuberechnung in 2 Minuten" }
+        ]
+      }
+    ],
     "safety_label": "Sicherheit zuerst",
     "safety_headline": "Sicherheit zuerst, Effektivität danach, Nachhaltigkeit ist das ultimative Ziel.",
     "safety_body": "Diese Informationen dienen allgemeinen Bildungszwecken und ersetzen keine professionelle Beratung. Bei Vorerkrankungen (Diabetes, Nieren-, Herz-Kreislauf-Erkrankungen, Essstörungen) vor einer Ernährungsumstellung einen Arzt oder Ernährungsberater konsultieren.",

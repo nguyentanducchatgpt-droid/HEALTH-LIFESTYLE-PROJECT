@@ -231,6 +231,16 @@ function ProgramDetail({ goalId, weeks }) {
   const schedArrRaw = tP(`schedule.${goalId}`, { returnObjects: true });
   const schedArr    = Array.isArray(schedArrRaw) ? schedArrRaw : [];
 
+  const LINK_LABEL_MAP = {
+    '/pillar/a/movements': 'link_movements',
+    '/pillar/c':           'link_lifestyle',
+    '/pillar/a/recovery':  'link_recovery',
+    '/pillar/d':           'link_mind',
+    '/pillar/a':           'exercise_link_label',
+    '/pillar/a/framework': 'link_framework',
+    '/pillar/b':           'link_nutrition_short',
+  };
+
   const gtRaw  = tP(`goal_types.${goalId}`, { returnObjects: true });
   const gTitle = (gtRaw && typeof gtRaw === 'object' && gtRaw.title) ? gtRaw.title : goal.title;
 
@@ -414,12 +424,15 @@ function ProgramDetail({ goalId, weeks }) {
                 className="group relative overflow-hidden rounded-2xl border border-border hover:border-border-bright bg-surface transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
                 style={{ animationDelay: `${i * 60}ms` }}
                 onClick={() => s.details && setActiveItem({
-                  icon: s.icon, name: sType, time: s.day,
+                  icon: s.icon, name: sType, time: tP(`days.${s.day}`) || s.day,
                   color: s.c.hex, rgb: s.c.rgb,
                   img: s.img || SCHEDULE_IMAGES[s.icon] || 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
-                  details: s.details,
-                  points: s.points,
-                  links: s.links,
+                  details: sTrans.details || s.details,
+                  points: sTrans.points || s.points,
+                  links: (s.links || []).map(lk => ({
+                    ...lk,
+                    label: lk.to in LINK_LABEL_MAP ? (tP(`ui.${LINK_LABEL_MAP[lk.to]}`) || lk.label) : lk.label,
+                  })),
                 })}
               >
                 {/* Image thumb */}
@@ -539,10 +552,10 @@ export default function SamplePrograms() {
         }
 
         const STATS = [
-          { icon:'🎯', num:6,   suf:'',  label:'Mục tiêu',  c:'#22c55e', rgb:'34,197,94'   },
-          { icon:'📅', num:24,  suf:'',  label:'Tuần mẫu',  c:'#84cc16', rgb:'132,204,22'  },
-          { icon:'📋', num:6,   suf:'',  label:'Loại lịch', c:'#14b8a6', rgb:'20,184,166'  },
-          { icon:'⏱️', num:10, suf:'+', label:'Phút/ngày', c:'#a855f7', rgb:'168,85,247'  },
+          { icon:'🎯', num:6,   suf:'',  label: tP('hero.stats.goals'),     c:'#22c55e', rgb:'34,197,94'   },
+          { icon:'📅', num:24,  suf:'',  label: tP('hero.stats.weeks'),     c:'#84cc16', rgb:'132,204,22'  },
+          { icon:'📋', num:6,   suf:'',  label: tP('hero.stats.schedules'), c:'#14b8a6', rgb:'20,184,166'  },
+          { icon:'⏱️', num:10, suf:'+', label: tP('hero.stats.min_day'),   c:'#a855f7', rgb:'168,85,247'  },
         ];
 
         const BG_IMGS = [
@@ -592,11 +605,11 @@ export default function SamplePrograms() {
 
               {/* ── title ── */}
               <h1 className="font-black leading-[1.05] tracking-tight mb-5" style={{ fontSize:'clamp(2.6rem,5.5vw,4.2rem)' }}>
-                <span className="sp-title-l1 block text-text">Tìm lộ trình</span>
+                <span className="sp-title-l1 block text-text">{tP('hero.title_line1')}</span>
                 <span className="sp-title-l2 block"
                   style={{ background:'linear-gradient(110deg,#22c55e 0%,#5eead4 45%,#a78bfa 85%)',
                     WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent' }}>
-                  phù hợp bạn
+                  {tP('hero.title_line2')}
                 </span>
               </h1>
 
@@ -607,8 +620,7 @@ export default function SamplePrograms() {
               {/* ── subtitle ── */}
               <p className="sp-sub-in text-muted/80 text-lg leading-relaxed max-w-[460px] mb-8"
                 style={{ animationDelay:'.52s' }}>
-                6 mục tiêu · 24 tuần · Mỗi lộ trình xây dựng theo nguyên tắc:
-                tập đúng form trước, tăng volume sau, cá nhân hóa theo tiến bộ.
+                {tP('hero.subtitle')}
               </p>
 
               {/* ── stat cards with counter animation ── */}
@@ -669,7 +681,7 @@ export default function SamplePrograms() {
 
             {/* ── scroll hint ── */}
             <div className="sp-scroll-bob absolute bottom-5 left-1/2 flex flex-col items-center gap-1 text-muted/35 text-[10px] uppercase tracking-widest pointer-events-none">
-              <span>Chọn mục tiêu</span>
+              <span>{tP('hero.scroll_hint')}</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
@@ -686,7 +698,7 @@ export default function SamplePrograms() {
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-3">
               <span className="w-8 h-8 rounded-full bg-accent/15 border border-accent/30 text-accent text-lg font-black flex items-center justify-center">1</span>
-              <h2 className="text-2xl font-bold text-text">Bạn muốn đạt được gì?</h2>
+              <h2 className="text-2xl font-bold text-text">{tP('hero.step1_heading')}</h2>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
           </div>

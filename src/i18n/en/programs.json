@@ -67,58 +67,646 @@
   },
   "schedule": {
     "beginner": [
-      { "type": "Strength A",  "detail": "Squat, wall push-up, glute bridge, knee plank" },
-      { "type": "Light Cardio","detail": "Brisk walk 20–25', still able to speak short sentences" },
-      { "type": "Strength B",  "detail": "Hip hinge, towel row, split squat, dead bug" },
-      { "type": "Mobility",    "detail": "Full-body stretch 15–20': hips, thighs, shoulders" },
-      { "type": "Strength C",  "detail": "Sit-to-stand, glute bridge, bird-dog, calf raise" },
-      { "type": "Cardio",      "detail": "Outdoor walk 25–30' at moderate pace" },
-      { "type": "Rest",        "detail": "Week review + 5-line training journal entry" }
+      {
+        "type": "Strength A",
+        "detail": "Squat, wall push-up, glute bridge, knee plank",
+        "details": [
+          "Strength A covers 4 foundational movement patterns: squat (controlled sit-to-stand), wall push-up (safe for beginners), glute bridge (glute activation), and knee plank. Do 2–3 sets × 8–12 reps for each exercise.",
+          "Wall push-ups train the chest, front deltoid, and triceps at a gentle angle — ideal for building upper-body strength in weeks 1–4 without overloading. Once 3×15 feels easy, progress to an incline push-up off a table.",
+          "Rest 60 seconds between sets. In your first session, prioritise form over rep count. After 4 weeks, add 1 set or 2–3 reps once technique is consistent."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "2–3 sets × 8–12 reps", "note": "Rest 60 s between sets" },
+          { "icon": "✅", "label": "Form first", "note": "6 clean reps beat 12 sloppy ones" },
+          { "icon": "⏱️", "label": "20–25 min", "note": "Plus a 5-min warm-up — non-negotiable" },
+          { "icon": "🎯", "label": "RPE 5–6 / 10", "note": "You can still hold a conversation" }
+        ]
+      },
+      {
+        "type": "Light Cardio",
+        "detail": "Brisk walk 20–25', still able to speak short sentences",
+        "details": [
+          "A brisk walk at Zone 2 intensity — you can say a short sentence but not hold a full conversation. This builds your aerobic base without taxing the muscles recovering from Monday's strength session.",
+          "Aim for 20–25 minutes at a pace that feels 'comfortably challenging'. If you can sing, speed up; if you can't say a word, slow down. Heart rate should sit around 60–70 % of your maximum.",
+          "Focus on posture: shoulders back, core lightly engaged, arms swinging naturally. Even a 20-minute walk done consistently beats sporadic longer sessions."
+        ],
+        "points": [
+          { "icon": "❤️", "label": "Zone 2 heart rate", "note": "60–70 % of max HR" },
+          { "icon": "🗣️", "label": "Talk test", "note": "Short sentences OK, singing not" },
+          { "icon": "⏱️", "label": "20–25 min", "note": "Consistent pace throughout" },
+          { "icon": "👟", "label": "Outdoor preferred", "note": "Fresh air improves mood and adherence" }
+        ]
+      },
+      {
+        "type": "Strength B",
+        "detail": "Hip hinge, towel row, split squat, dead bug",
+        "details": [
+          "Strength B targets the posterior chain and balance: hip hinge (load the glutes/hamstrings instead of the back), towel row (upper-back at home), split squat (single-leg stability), and dead bug (anti-rotation core).",
+          "The hip hinge is critical for long-term back health. Practise 'pushing hips back toward the wall' as a cue. Once it clicks, the Romanian deadlift progression becomes safe and effective.",
+          "For the split squat, use a wall or chair for balance in the first weeks. Keep the front knee tracking over your second toe. Start with 8 reps per side, 2 sets."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Hip hinge priority", "note": "Glutes & hamstrings, not lower back" },
+          { "icon": "⚖️", "label": "Split squat balance", "note": "Use a wall if needed — no shame" },
+          { "icon": "🔄", "label": "2 sets to start", "note": "Add a 3rd set in weeks 3–4" },
+          { "icon": "🧠", "label": "Dead bug focus", "note": "Keep lower back flat on the floor" }
+        ]
+      },
+      {
+        "type": "Mobility",
+        "detail": "Full-body stretch 15–20': hips, thighs, shoulders",
+        "details": [
+          "A 15–20 minute mobility session targeting areas most affected by strength training: hip flexors (tightened by sitting), hamstrings, chest and shoulder openers, and thoracic spine rotation.",
+          "Hold each stretch for 30–45 seconds and breathe into the tension rather than forcing the range. Mobility is a long-term investment — your squat depth and injury resilience depend on it.",
+          "Suggested flow: cat-cow 2 min → child's pose 1 min → pigeon stretch each side 2 min → doorway chest stretch 1 min → seated hamstring stretch 2 min → thoracic rotation 2 min."
+        ],
+        "points": [
+          { "icon": "🌬️", "label": "Breathe into stretch", "note": "Don't force — relax and deepen" },
+          { "icon": "⏱️", "label": "30–45 s per stretch", "note": "Shorter holds don't change tissue" },
+          { "icon": "🦴", "label": "Hip flexor priority", "note": "Sitting all day shortens them" },
+          { "icon": "♻️", "label": "Weekly commitment", "note": "Once a week beats never" }
+        ]
+      },
+      {
+        "type": "Strength C",
+        "detail": "Sit-to-stand, glute bridge, bird-dog, calf raise",
+        "details": [
+          "Strength C revisits Monday's patterns at lower volume and introduces bird-dog — an anti-extension core exercise that also trains coordination between opposite arm and leg.",
+          "Sit-to-stand builds functional leg strength from a chair, directly transferable to daily life. Focus on controlling the descent as much as the rise — the eccentric phase builds more strength.",
+          "Calf raises are often overlooked but crucial for ankle stability. Do them slowly: 2 seconds up, 1 second hold, 3 seconds down. 3×15 reps is sufficient."
+        ],
+        "points": [
+          { "icon": "🪑", "label": "Sit-to-stand", "note": "Control the descent — builds strength" },
+          { "icon": "🦅", "label": "Bird-dog form", "note": "Spine neutral, no hip rotation" },
+          { "icon": "🦶", "label": "Calf raise tempo", "note": "2 up · 1 hold · 3 down" },
+          { "icon": "🔁", "label": "Active recovery", "note": "Lower volume than Mon/Wed — intentional" }
+        ]
+      },
+      {
+        "type": "Cardio",
+        "detail": "Outdoor walk 25–30' at moderate pace",
+        "details": [
+          "A slightly longer walk than Tuesday — 25–30 minutes at a moderate pace. The goal is to accumulate aerobic volume without creating fatigue heading into the weekend.",
+          "Use this session to de-stress and reset mentally. Walking in natural light also helps regulate sleep-wake cycles, which directly improves recovery from strength training.",
+          "Optional: add 5 minutes of gentle bodyweight lunges or step-ups at the end to keep legs active. Skip if your legs feel heavy from the week."
+        ],
+        "points": [
+          { "icon": "🌿", "label": "Outdoor walking", "note": "Natural light boosts mood and sleep" },
+          { "icon": "⏱️", "label": "25–30 min", "note": "Slightly longer than Tuesday's walk" },
+          { "icon": "😌", "label": "Mental reset", "note": "De-stress before the weekend" },
+          { "icon": "💡", "label": "Optional finish", "note": "5 min gentle lunges if legs allow" }
+        ]
+      },
+      {
+        "type": "Rest",
+        "detail": "Week review + 5-line training journal entry",
+        "details": [
+          "Rest day is not wasted — it's when your body actually rebuilds. Gentle walking or stretching is fine. Avoid any intense exercise.",
+          "Take 5 minutes to write in your training journal: what felt good this week, what was hard, one thing to focus on next week. Research shows journalling triples habit retention.",
+          "Also review your sleep, hydration, and diet from the week. These three factors account for over 60 % of training results. Adjust anything clearly off before next week."
+        ],
+        "points": [
+          { "icon": "📓", "label": "Journal 5 lines", "note": "Reflection triples habit retention" },
+          { "icon": "💤", "label": "Prioritise sleep", "note": "7–9 h — the free recovery tool" },
+          { "icon": "💧", "label": "Hydration check", "note": "Did you hit 2 L this week?" },
+          { "icon": "🔄", "label": "Plan next week", "note": "One thing to improve?" }
+        ]
+      }
     ],
     "busy": [
-      { "type": "Strength",       "detail": "Squat 30 s, push 30 s, glute bridge 30 s, plank 20 s × 2 rounds" },
-      { "type": "Cardio",         "detail": "Step touch 40 s + march in place 40 s × 3 rounds" },
-      { "type": "Core",           "detail": "Dead bug 30 s, bird-dog 30 s, knee plank 20 s × 2 rounds" },
-      { "type": "Mobility",       "detail": "10' full body: neck, shoulders, hips, hamstrings" },
-      { "type": "Strength",       "detail": "Squat, band row, glute bridge, wall push-up × 2 rounds" },
-      { "type": "Walk",           "detail": "10' brisk walk or stair climbing" },
-      { "type": "Breathe & Meditate","detail": "5' box breathing + 5' journaling / short meditation" }
+      {
+        "type": "Strength",
+        "detail": "Squat 30 s, push 30 s, glute bridge 30 s, plank 20 s × 2 rounds",
+        "details": [
+          "Monday's 10-minute circuit: squat (lower body), push-up (upper push), glute bridge (posterior chain), and knee plank (core). Do 2 complete rounds with transitions under 10 seconds.",
+          "The goal is to move — imperfect but consistent. Even 10 minutes of circuit training done 5–6× per week produces measurable cardiovascular and strength improvements over 3 months.",
+          "Set a timer for 10 minutes and cycle through continuously. If you finish before the timer, start a 3rd round. Quality of movement matters more than speed."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "10 min flat", "note": "No commute, no equipment needed" },
+          { "icon": "🔄", "label": "2+ rounds", "note": "Aim for 3 rounds once adapted" },
+          { "icon": "💪", "label": "Full-body circuit", "note": "Lower + push + posterior + core" },
+          { "icon": "🏆", "label": "Win = showing up", "note": "Done > perfect" }
+        ]
+      },
+      {
+        "type": "Cardio",
+        "detail": "Step touch 40 s + march in place 40 s × 3 rounds",
+        "details": [
+          "Tuesday's low-impact cardio needs zero space and zero equipment. Step touch and marching in place keep the heart rate up without joint impact — ideal for tight schedules and indoor spaces.",
+          "3 rounds of 40 s step touch + 40 s march = roughly 4 minutes of continuous movement. Pair with 5 minutes of breathing and you have a complete 10-minute session.",
+          "If time allows, go for 4 rounds. Monitor your breathing: you should feel slightly winded but still able to say a word."
+        ],
+        "points": [
+          { "icon": "🏠", "label": "Indoor-friendly", "note": "No space or gear needed" },
+          { "icon": "🦵", "label": "Low impact", "note": "Joint-safe — good for all ages" },
+          { "icon": "🔄", "label": "3–4 rounds", "note": "~4–6 min active movement" },
+          { "icon": "💓", "label": "Lightly breathless", "note": "Should feel lightly challenged" }
+        ]
+      },
+      {
+        "type": "Core",
+        "detail": "Dead bug 30 s, bird-dog 30 s, knee plank 20 s × 2 rounds",
+        "details": [
+          "Wednesday is dedicated to core stability — the foundation of all movement. Dead bug trains anti-extension, bird-dog trains anti-rotation, and knee plank builds isometric endurance.",
+          "These exercises look simple but require real concentration. Keep your lower back flat and breathe throughout. Never hold your breath during planks.",
+          "2 rounds fit in 6–7 minutes. Add 2–3 minutes of neck and shoulder rolls to finish as a mini mobility break."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Anti-extension", "note": "Dead bug: back flat, breathe" },
+          { "icon": "🦅", "label": "Anti-rotation", "note": "Bird-dog: hips level, no twisting" },
+          { "icon": "⏱️", "label": "Plank 20 s", "note": "Quality over duration — no sagging hips" },
+          { "icon": "🌬️", "label": "Never hold breath", "note": "Exhale on the hard part" }
+        ]
+      },
+      {
+        "type": "Mobility",
+        "detail": "10' full body: neck, shoulders, hips, hamstrings",
+        "details": [
+          "Thursday is a 10-minute full-body mobility flow — the session purely dedicated to feeling better. Neck rolls, shoulder circles, hip circles, and a seated hamstring stretch form the sequence.",
+          "Mobility training reduces injury risk, improves posture (critical for desk workers), and speeds up recovery from the strength sessions earlier in the week.",
+          "Suggested flow: neck rolls 30 s each direction → shoulder circles 30 s → thoracic extension over a chair 1 min → hip circles 1 min each side → seated hamstring stretch 1 min each side."
+        ],
+        "points": [
+          { "icon": "🧘", "label": "Mindful movement", "note": "Slow and controlled — feel each joint" },
+          { "icon": "💺", "label": "Desk-worker essential", "note": "Counters hours of sitting" },
+          { "icon": "⏱️", "label": "10 min", "note": "Even 5 min beats zero" },
+          { "icon": "🔄", "label": "Full sequence", "note": "Neck → shoulders → hips → hamstrings" }
+        ]
+      },
+      {
+        "type": "Strength",
+        "detail": "Squat, band row, glute bridge, wall push-up × 2 rounds",
+        "details": [
+          "Friday's circuit mirrors Monday's but adds the band row — introducing a pulling pattern to balance the pushing done earlier. No resistance band? Substitute a towel-row using a door handle.",
+          "After a full week of short sessions, Friday might feel easier than expected. That's adaptation at work. If it genuinely feels too easy, add a 3rd round or slow each rep to a 2-second count.",
+          "Keep transitions between exercises under 10 seconds. The goal is keeping the heart rate elevated throughout the 10 minutes."
+        ],
+        "points": [
+          { "icon": "🏋️", "label": "Band row added", "note": "Balances the push from Monday" },
+          { "icon": "🔄", "label": "2–3 rounds", "note": "Add a 3rd if feeling strong" },
+          { "icon": "⏱️", "label": "Fast transitions", "note": "Under 10 s between exercises" },
+          { "icon": "📈", "label": "Notice adaptation", "note": "Getting easier = progress" }
+        ]
+      },
+      {
+        "type": "Walk",
+        "detail": "10' brisk walk or stair climbing",
+        "details": [
+          "Saturday is an active recovery day — gentle enough to let your body repair but moving enough to keep the streak alive. A 10-minute brisk walk or a few flights of stairs is plenty.",
+          "Walking in natural light on Saturday morning helps reset the circadian rhythm, improving sleep quality going into Sunday. Even a walk to a local shop counts.",
+          "For stair climbing: aim for 4–6 flights at a relaxed pace. Monitor your breathing. This is restorative movement, not a workout."
+        ],
+        "points": [
+          { "icon": "🚶", "label": "Active recovery", "note": "Move without taxing the body" },
+          { "icon": "☀️", "label": "Outdoor if possible", "note": "Natural light resets sleep cycles" },
+          { "icon": "🏢", "label": "Stairs option", "note": "4–6 flights, relaxed pace" },
+          { "icon": "💆", "label": "Low stress", "note": "Recovery, not a workout" }
+        ]
+      },
+      {
+        "type": "Breathe & Meditate",
+        "detail": "5' box breathing + 5' journaling / short meditation",
+        "details": [
+          "Sunday is for nervous system recovery. Box breathing (4 s inhale → 4 s hold → 4 s exhale → 4 s hold) activates the parasympathetic system, reducing cortisol and improving sleep quality.",
+          "Follow with 5 minutes of journaling: one line about the week's wins, one about what was hard, one intention for next week. Brief reflective writing improves habit adherence and motivation.",
+          "Alternatively, use a guided meditation app for 5–10 minutes. The goal is mental rest — not more stimulus."
+        ],
+        "points": [
+          { "icon": "🌬️", "label": "Box breathing", "note": "4-4-4-4 s: inhale, hold, exhale, hold" },
+          { "icon": "📓", "label": "Journal 3 lines", "note": "Win · Hard · Intention for next week" },
+          { "icon": "🧘", "label": "Or guided meditation", "note": "5–10 min app-based is fine" },
+          { "icon": "💤", "label": "Sleep prep", "note": "Reduces cortisol → better sleep" }
+        ]
+      }
     ],
     "fatloss": [
-      { "type": "Strength A",  "detail": "Squat, push-up, band row, glute bridge, plank" },
-      { "type": "Cardio Z2",   "detail": "Walk/cycling 30–35' Zone 2 — still able to talk" },
-      { "type": "Strength B",  "detail": "Hip hinge, split squat, dead bug, calf raise" },
-      { "type": "NEAT",        "detail": "Mobility 15' + target +2,000 extra steps in the day" },
-      { "type": "Strength C",  "detail": "Push-up, scapular squeeze, glute bridge, bird-dog" },
-      { "type": "Long Cardio", "detail": "Brisk walk/cycling 35–45' moderate heart rate" },
-      { "type": "Recovery",    "detail": "Light walk 20' + review weight & waist measurements" }
+      {
+        "type": "Strength A",
+        "detail": "Squat, push-up, band row, glute bridge, plank",
+        "details": [
+          "Strength A is a 5-exercise full-body circuit that preserves and builds muscle while in a calorie deficit. Muscle mass is your metabolism — protect it with 3 strength sessions per week.",
+          "The band row is crucial here: most fat-loss programs over-emphasise push movements. The row counterbalances and supports good posture, which directly improves exercise performance.",
+          "Complete 3 sets × 10–12 reps per exercise. Rest 45–60 seconds. The moderate rest period keeps heart rate elevated while maintaining enough recovery for good technique."
+        ],
+        "points": [
+          { "icon": "💪", "label": "Preserve muscle", "note": "Muscle = your metabolism — protect it" },
+          { "icon": "🔄", "label": "3 sets × 10–12 reps", "note": "Rest 45–60 s between sets" },
+          { "icon": "🎯", "label": "Full-body priority", "note": "More muscles = more calories burned" },
+          { "icon": "📈", "label": "Add weight gradually", "note": "Heavier = more fat burned at rest" }
+        ]
+      },
+      {
+        "type": "Cardio Z2",
+        "detail": "Walk/cycling 30–35' Zone 2 — still able to talk",
+        "details": [
+          "Zone 2 cardio (60–70 % max HR) is the most efficient fat-burning zone. At this intensity, your body preferentially uses fat as fuel rather than glycogen. It also creates very little recovery debt.",
+          "The talk test: you should be able to speak 4–5 words comfortably, but not sing. If you're gasping, slow down. If you're chatting freely, speed up slightly.",
+          "Walking briskly or cycling at 65–70 % effort for 30–35 minutes burns approximately 200–280 kcal and creates an ideal caloric deficit combined with your diet."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "Fat-burning zone", "note": "60–70 % max HR uses fat as fuel" },
+          { "icon": "🗣️", "label": "Talk test", "note": "4–5 words comfortably — not singing" },
+          { "icon": "⏱️", "label": "30–35 min", "note": "200–280 kcal burned" },
+          { "icon": "♻️", "label": "Low recovery cost", "note": "Doesn't interfere with strength days" }
+        ]
+      },
+      {
+        "type": "Strength B",
+        "detail": "Hip hinge, split squat, dead bug, calf raise",
+        "details": [
+          "Strength B shifts focus to the posterior chain and single-leg movements: hip hinge (glutes/hamstrings), split squat (balance + leg strength), dead bug (core stability), and calf raise (ankle/lower-leg).",
+          "The hip hinge — done correctly — is one of the most effective movements for shaping the glutes and hamstrings while protecting the lower back. Cue: 'hinge at hips, push hips back, keep chest tall'.",
+          "Split squats expose bilateral strength imbalances that regular squats mask. Starting with the split squat ensures even leg development and reduces injury risk as training volume increases."
+        ],
+        "points": [
+          { "icon": "🍑", "label": "Hip hinge cue", "note": "Push hips back, chest tall, neutral back" },
+          { "icon": "⚖️", "label": "Split squat", "note": "Exposes and fixes leg imbalances" },
+          { "icon": "🧠", "label": "Dead bug", "note": "Anti-extension: back flat, breathe out" },
+          { "icon": "🦶", "label": "Calf raise", "note": "Slow and controlled — 2 up, 3 down" }
+        ]
+      },
+      {
+        "type": "NEAT",
+        "detail": "Mobility 15' + target +2,000 extra steps in the day",
+        "details": [
+          "NEAT (Non-Exercise Activity Thermogenesis) — all the movement you do outside structured workouts — accounts for 15–30 % of daily calorie burn. Adding 2,000 steps burns an extra 80–120 kcal.",
+          "Today's session starts with 15 minutes of mobility (hip flexors, hamstrings, thoracic spine). Then aim to add 2,000 extra steps throughout the day: take stairs, park farther away, walk during calls.",
+          "Tracking steps with a phone or watch makes NEAT measurable. Long-term, NEAT-active people burn 300–500 more kcal per day than sedentary peers of the same body size."
+        ],
+        "points": [
+          { "icon": "🚶", "label": "+2,000 steps", "note": "Extra 80–120 kcal burned" },
+          { "icon": "🧘", "label": "Mobility 15 min", "note": "Hips, hamstrings, thoracic spine" },
+          { "icon": "📱", "label": "Track your steps", "note": "What gets measured gets done" },
+          { "icon": "🔑", "label": "NEAT matters most", "note": "15–30 % of daily calorie burn" }
+        ]
+      },
+      {
+        "type": "Strength C",
+        "detail": "Push-up, scapular squeeze, glute bridge, bird-dog",
+        "details": [
+          "Strength C introduces the scapular squeeze — a corrective exercise that counters the forward-rounded posture from desk work and helps the shoulder girdle function properly during pushing and rowing movements.",
+          "Glute bridge here serves as both a strength exercise and an active stretch for the hip flexors, which get tight from sitting. Focus on squeezing the glutes hard at the top of each rep.",
+          "3 sets × 12 reps. Shorter rest than Monday/Wednesday (40 s) to slightly elevate heart rate and increase caloric burn without sacrificing form quality."
+        ],
+        "points": [
+          { "icon": "🦅", "label": "Scapular squeeze", "note": "Counters desk-worker posture" },
+          { "icon": "🍑", "label": "Glute bridge hard squeeze", "note": "Full hip extension — don't rush" },
+          { "icon": "🔄", "label": "3 sets × 12 reps", "note": "Rest 40 s — slightly faster pace" },
+          { "icon": "🧠", "label": "Bird-dog control", "note": "Opposite arm + leg — stay level" }
+        ]
+      },
+      {
+        "type": "Long Cardio",
+        "detail": "Brisk walk/cycling 35–45' moderate heart rate",
+        "details": [
+          "Saturday's longer Zone 2 session is the weekly 'long slow distance' — a cardio term for sustained, moderate-intensity work that trains the aerobic system and burns significant calories.",
+          "At 35–45 minutes, this session burns 250–350 kcal. Combine with a 200–300 kcal daily food deficit and you have a weekly deficit of approximately 3,000 kcal — roughly 0.4 kg of fat per week.",
+          "Listen to your body: if your legs feel tired from Friday's strength session, walk at an easy pace. If you feel fresh, push the pace slightly. Recovery is as important as effort."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "250–350 kcal burned", "note": "Biggest calorie session of the week" },
+          { "icon": "⏱️", "label": "35–45 min", "note": "Zone 2 — brisk walk or easy cycling" },
+          { "icon": "👂", "label": "Listen to your body", "note": "Tired from Friday? Go easy today" },
+          { "icon": "📅", "label": "Weekly deficit", "note": "~0.4 kg fat loss per week when combined" }
+        ]
+      },
+      {
+        "type": "Recovery",
+        "detail": "Light walk 20' + review weight & waist measurements",
+        "details": [
+          "Sunday is active recovery and data day. A 20-minute easy walk at a conversational pace helps clear lactate, reduces muscle soreness, and keeps the movement habit intact.",
+          "After the walk, take your weekly weight and waist measurement. Do this at the same time (ideally morning, after the bathroom). Trend over 4 weeks matters more than any single measurement.",
+          "If the scale went up, don't panic — water retention from increased training and carbs is normal. Track the 4-week moving average instead. Waist circumference is often the more reliable fat-loss indicator."
+        ],
+        "points": [
+          { "icon": "🚶", "label": "Easy walk 20 min", "note": "Conversational pace — no effort" },
+          { "icon": "📏", "label": "Waist measurement", "note": "Best fat-loss indicator — track weekly" },
+          { "icon": "⚖️", "label": "Morning weigh-in", "note": "Same time, same conditions every Sunday" },
+          { "icon": "📊", "label": "4-week trend", "note": "One number means nothing — trend matters" }
+        ]
+      }
     ],
     "muscle": [
-      { "type": "Upper A",        "detail": "Bench/push-up, row, OHP, lat pulldown, curl" },
-      { "type": "Lower A",        "detail": "Squat, Romanian deadlift, leg press, calf, plank" },
-      { "type": "Light Cardio",   "detail": "Walk 25–30' + full-body stretching" },
-      { "type": "Upper B",        "detail": "Incline press, pull-up/lat, lateral raise, tricep" },
-      { "type": "Lower B",        "detail": "Deadlift, hip thrust, walking lunge, core" },
-      { "type": "Light Full Body","detail": "Squat, push, row, plank — RPE 6, form focus" },
-      { "type": "Active Rest",    "detail": "Mobility 10–15' + full rest if fatigued" }
+      {
+        "type": "Upper A",
+        "detail": "Bench/push-up, row, OHP, lat pulldown, curl",
+        "details": [
+          "Upper A is a horizontal push + pull session: bench press or push-up (horizontal push), row (horizontal pull), overhead press (vertical push), lat pulldown (vertical pull), and bicep curl (arm isolation).",
+          "Always pair push and pull within the same session to maintain shoulder balance. If you only push without pulling, the anterior deltoid and pec minor shorten over time, causing shoulder impingement.",
+          "Complete 3 sets × 8–10 reps for compound movements (bench, row, OHP, lat pulldown), 3×12 for the curl. Rest 90 seconds between compound sets."
+        ],
+        "points": [
+          { "icon": "⚖️", "label": "Push-pull balance", "note": "Every push needs an equal pull" },
+          { "icon": "🏋️", "label": "3 sets × 8–10 reps", "note": "90 s rest on compound lifts" },
+          { "icon": "💪", "label": "Compound priority", "note": "Bench, row, OHP, lat pulldown first" },
+          { "icon": "🎯", "label": "RPE 7–8 / 10", "note": "2 reps left in the tank" }
+        ]
+      },
+      {
+        "type": "Lower A",
+        "detail": "Squat, Romanian deadlift, leg press, calf, plank",
+        "details": [
+          "Lower A is quad-dominant: squat (primary quad driver), Romanian deadlift (hip hinge and hamstring), leg press (quad volume), calf raise (lower leg), and plank (core stability between sets).",
+          "The squat and RDL are complementary — squat loads the knee joint and quad, while RDL loads the hip joint and hamstring. Together they give complete lower-body development without imbalances.",
+          "Start with 4 sets × 6–8 reps for squats at RPE 7. Add the RDL at 3×8–10. Finish with leg press 3×12 and calves 3×15. Plank 30–45 s between sets when resting."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Squat + RDL combo", "note": "Quad + hamstring — complete lower body" },
+          { "icon": "🏋️", "label": "4 sets × 6–8 reps squat", "note": "RPE 7 — 2–3 reps left in tank" },
+          { "icon": "🔄", "label": "Leg press for volume", "note": "3×12 after compound work" },
+          { "icon": "⚖️", "label": "Calf + plank", "note": "Often ignored — train them anyway" }
+        ]
+      },
+      {
+        "type": "Light Cardio",
+        "detail": "Walk 25–30' + full-body stretching",
+        "details": [
+          "Wednesday is active recovery between two heavy lower-body days. A 25–30 minute walk at Zone 1–2 intensity flushes metabolic waste products from Monday and Tuesday, reducing next-day soreness.",
+          "Follow the walk with a 10-minute full-body stretching sequence, focusing on the hip flexors, hamstrings, and chest and shoulder areas stressed during the first two days.",
+          "This session also functions as a mental reset mid-week. The combination of light movement and stretching has been shown to reduce training fatigue and improve sleep quality."
+        ],
+        "points": [
+          { "icon": "🚶", "label": "Zone 1–2 walk", "note": "Flushes waste, reduces soreness" },
+          { "icon": "🧘", "label": "Full-body stretch", "note": "Hips, hamstrings, chest, shoulders" },
+          { "icon": "😌", "label": "Mental reset", "note": "Mid-week decompression — important" },
+          { "icon": "💤", "label": "Improves sleep", "note": "Light movement + stretch = better recovery" }
+        ]
+      },
+      {
+        "type": "Upper B",
+        "detail": "Incline press, pull-up/lat, lateral raise, tricep",
+        "details": [
+          "Upper B shifts emphasis to the upper chest (incline press), upper back and lats (pull-up or lat pulldown), and shoulder and arm accessories (lateral raise, tricep extension).",
+          "Incline press at 30–45 degrees targets the clavicular head of the pec, which often lags behind the sternal head trained in flat bench. This creates a fuller, more complete chest.",
+          "Lateral raises are the primary exercise for creating shoulder width. Use a weight you can control for a full 3-second negative. Swinging and using momentum defeats the purpose."
+        ],
+        "points": [
+          { "icon": "📐", "label": "Incline 30–45°", "note": "Upper chest — often undertrained" },
+          { "icon": "🏋️", "label": "Pull-up priority", "note": "Or lat pulldown if not there yet" },
+          { "icon": "💪", "label": "Lateral raise slow", "note": "3-second negative — no swinging" },
+          { "icon": "🎯", "label": "RPE 7–8", "note": "2 clean reps left in tank" }
+        ]
+      },
+      {
+        "type": "Lower B",
+        "detail": "Deadlift, hip thrust, walking lunge, core",
+        "details": [
+          "Lower B is hip-dominant and targets the glutes, hamstrings, and lower back: deadlift (full posterior chain), hip thrust (direct glute isolation), walking lunge (leg and balance), and core finisher.",
+          "The conventional deadlift is the king of posterior chain exercises. Key cues: bar close to shins, hips hinge back, chest tall, push floor away — don't pull the bar up. This is a push, not a pull.",
+          "Hip thrust with a barbell or dumbbell directly loads the glutes through full hip extension — something squats and deadlifts can't fully achieve. 3×10–12 with a 2-second squeeze at the top."
+        ],
+        "points": [
+          { "icon": "🏆", "label": "Deadlift is king", "note": "Push floor away — don't yank the bar" },
+          { "icon": "🍑", "label": "Hip thrust isolation", "note": "2-second squeeze at top — feel the glutes" },
+          { "icon": "⚖️", "label": "Walking lunge", "note": "Unilateral — exposes and fixes imbalances" },
+          { "icon": "🧠", "label": "Core finisher", "note": "Plank or dead bug — 2–3 sets" }
+        ]
+      },
+      {
+        "type": "Light Full Body",
+        "detail": "Squat, push, row, plank — RPE 6, form focus",
+        "details": [
+          "Saturday's light full-body session maintains movement patterns at low intensity (RPE 6 — 4 reps left in tank). This is not a workout to build muscle — it's a session to stay active and reinforce technique.",
+          "Use this session to work on weak points in technique you noticed earlier in the week. Slow each rep down to 3 seconds on the negative phase. Record yourself if possible.",
+          "No need to add weight. The goal is movement quality and active recovery. Finish in 25–30 minutes maximum."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "RPE 6 only", "note": "4 reps in tank — deliberately easy" },
+          { "icon": "📹", "label": "Film your form", "note": "Saturday is the ideal technique check day" },
+          { "icon": "⏱️", "label": "25–30 min max", "note": "Finish early — don't turn it into a full session" },
+          { "icon": "🔄", "label": "Technique focus", "note": "Fix what was off earlier this week" }
+        ]
+      },
+      {
+        "type": "Active Rest",
+        "detail": "Mobility 10–15' + full rest if fatigued",
+        "details": [
+          "Sunday is genuine rest. If you feel recovered and energised, do 10–15 minutes of mobility work (hip circles, shoulder circles, pigeon pose, hamstring stretch). If you feel tired, rest completely.",
+          "Overtraining is real. After 5–6 days of structured training, the body needs 24–48 hours without significant stress to consolidate the adaptations from the week.",
+          "Use Sunday to plan next week's sessions, ensure recovery nutrition (protein + carbs), and review your progress log. Long-term success depends on sustainable rhythms, not heroic weekly efforts."
+        ],
+        "points": [
+          { "icon": "💤", "label": "Complete rest OK", "note": "Tired today = body rebuilding" },
+          { "icon": "🧘", "label": "10–15 min mobility", "note": "If you feel good — not if you're tired" },
+          { "icon": "🥩", "label": "Recovery nutrition", "note": "Protein + carbs today matter" },
+          { "icon": "📅", "label": "Plan next week", "note": "Prepared athletes out-perform reactive ones" }
+        ]
+      }
     ],
     "endurance": [
-      { "type": "Cardio Z2",          "detail": "Walk/cycling 30' Zone 2 + core 5'" },
-      { "type": "Minimal Strength",   "detail": "Squat, push-up, band row, glute bridge 3×10" },
-      { "type": "Intervals",          "detail": "5' easy + 5 rounds: 2' fast + 2' easy + 5' cool-down" },
-      { "type": "Mobility",           "detail": "Neck, shoulders, back, hips, hamstrings 15–20'" },
-      { "type": "Strength + Balance", "detail": "Split squat, RDL, bird-dog, plank, calf raise" },
-      { "type": "Long Endurance",     "detail": "45–60' walk/cycling Zone 2 moderate pace" },
-      { "type": "Recovery",           "detail": "Light walk 20–30' or full rest if fatigued" }
+      {
+        "type": "Cardio Z2",
+        "detail": "Walk/cycling 30' Zone 2 + core 5'",
+        "details": [
+          "Monday's Zone 2 session is the cornerstone of endurance training. Zone 2 (60–70 % max HR) develops mitochondrial density in slow-twitch muscle fibres — the engine of aerobic performance.",
+          "After 30 minutes of Zone 2 cardio, add 5 minutes of core work: plank, dead bug, or bird-dog. Core strength is underrated in endurance sports — it holds your running and cycling posture when tired.",
+          "The talk test: you should be able to speak in short sentences but not comfortably carry on a long conversation. Heart rate monitor or RPE 5–6 works equally well."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Mitochondrial engine", "note": "Zone 2 = more mitochondria per cell" },
+          { "icon": "❤️", "label": "60–70 % max HR", "note": "Or RPE 5–6: conversational effort" },
+          { "icon": "🧠", "label": "+5 min core", "note": "Holds form when you're tired in a race" },
+          { "icon": "📅", "label": "Cornerstone session", "note": "The most important workout of the week" }
+        ]
+      },
+      {
+        "type": "Minimal Strength",
+        "detail": "Squat, push-up, band row, glute bridge 3×10",
+        "details": [
+          "Tuesday's minimal strength session takes just 20–25 minutes and prevents the muscle loss that often accompanies high-cardio training plans. Muscle loss slows metabolism and reduces running economy.",
+          "3 sets × 10 reps of squat, push-up, band row, and glute bridge covers all major movement patterns. These are maintenance sets, not growth sets — keep weight moderate and don't train to failure.",
+          "This session also doubles as an active recovery from Monday's cardio. Keep intensity low (RPE 6), rest 45–60 seconds between sets, and finish with 5 minutes of light stretching."
+        ],
+        "points": [
+          { "icon": "💪", "label": "Muscle maintenance", "note": "Prevents muscle loss on high cardio plans" },
+          { "icon": "🎯", "label": "Not a growth session", "note": "RPE 6 — maintenance only" },
+          { "icon": "⏱️", "label": "20–25 min", "note": "3×10, rest 45–60 s" },
+          { "icon": "🏃", "label": "Running economy", "note": "Stronger muscles = better form at mile 8" }
+        ]
+      },
+      {
+        "type": "Intervals",
+        "detail": "5' easy + 5 rounds: 2' fast + 2' easy + 5' cool-down",
+        "details": [
+          "Wednesday's interval session is where aerobic fitness gains accelerate. After a 5-minute easy warm-up, complete 5 rounds of 2 minutes at high intensity (Zone 4–5, RPE 8) alternated with 2 minutes easy.",
+          "Zone 4–5 intervals develop VO2max — the maximum amount of oxygen your body can use during exercise. A higher VO2max means faster sustainable paces at all distances.",
+          "Cool down with 5 minutes at an easy pace. Total session: approximately 30 minutes. Perceived exertion during the hard intervals should be 8–9/10 — genuinely uncomfortable."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Zone 4–5 effort", "note": "RPE 8–9: genuinely hard" },
+          { "icon": "📈", "label": "VO2max builder", "note": "Fastest way to improve aerobic capacity" },
+          { "icon": "🔄", "label": "5 rounds × 2+2 min", "note": "20 min total interval work" },
+          { "icon": "❄️", "label": "5 min cool-down", "note": "Never stop abruptly after high intensity" }
+        ]
+      },
+      {
+        "type": "Mobility",
+        "detail": "Neck, shoulders, back, hips, hamstrings 15–20'",
+        "details": [
+          "Thursday is a complete rest from cardiovascular work. The 15–20 minute mobility session focuses on the areas most stressed by endurance training: hip flexors, IT band (lateral thigh), hamstrings, and thoracic spine.",
+          "Endurance athletes often develop stiffness in the hip flexors (shortened by cycling) and hamstrings (tightened by running). Regular mobility work prevents these imbalances from becoming injuries.",
+          "Suggested sequence: neck rolls 1 min → chest opener 1 min → cat-cow 2 min → hip flexor lunge stretch 2 min each side → IT band foam roll 2 min each side → seated hamstring stretch 2 min each side."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Cycling tight spots", "note": "Hip flexors and thoracic spine" },
+          { "icon": "🏃", "label": "Running tight spots", "note": "Hamstrings and IT band" },
+          { "icon": "🌬️", "label": "Breathe into tension", "note": "30–45 s holds with slow exhales" },
+          { "icon": "🛡️", "label": "Injury prevention", "note": "Flexibility gaps become injuries at high volume" }
+        ]
+      },
+      {
+        "type": "Strength + Balance",
+        "detail": "Split squat, RDL, bird-dog, plank, calf raise",
+        "details": [
+          "Friday's strength session adds single-leg exercises (split squat, Romanian deadlift) that directly translate to running efficiency. Single-leg strength prevents the compensatory patterns that cause most running injuries.",
+          "Bird-dog and plank maintain the core stability needed to hold form during long efforts. Research shows that runners with strong cores maintain stride efficiency for longer, delaying the point where form breaks down.",
+          "Keep intensity low-moderate (RPE 6–7). This is a support session for your endurance training, not the star of the show. 3×10 per exercise, rest 45 seconds."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Single-leg strength", "note": "Prevents compensatory injury patterns" },
+          { "icon": "🧠", "label": "Core for endurance", "note": "Delays form breakdown at mile 8–10" },
+          { "icon": "🎯", "label": "RPE 6–7 only", "note": "Support session — not the main event" },
+          { "icon": "🦶", "label": "Calf raise essential", "note": "Calves take 6× bodyweight per step running" }
+        ]
+      },
+      {
+        "type": "Long Endurance",
+        "detail": "45–60' walk/cycling Zone 2 moderate pace",
+        "details": [
+          "Saturday's long session is the weekly anchor of endurance training. Going from 30 minutes on Monday to 45–60 minutes today progressively builds aerobic base without overtraining.",
+          "Maintain strict Zone 2: if your pace naturally feels easy, resist the urge to push harder. The goal is fat oxidation adaptation — the ability to use fat as fuel efficiently, which protects glycogen stores in long events.",
+          "Bring water for sessions over 45 minutes. For cycling, a light snack is optional but not required at this duration. Focus on smooth, consistent effort throughout."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "45–60 min", "note": "Longest session of the week" },
+          { "icon": "🔥", "label": "Fat oxidation", "note": "Teach body to burn fat, spare glycogen" },
+          { "icon": "💧", "label": "Bring water", "note": "Hydrate every 15 min — don't wait to feel thirsty" },
+          { "icon": "🐢", "label": "Stay in Zone 2", "note": "Resist urge to push harder — trust the process" }
+        ]
+      },
+      {
+        "type": "Recovery",
+        "detail": "Light walk 20–30' or full rest if fatigued",
+        "details": [
+          "Sunday is recovery. The decision between a light walk and complete rest should be guided by how you feel: slight fatigue = easy walk; significant fatigue or soreness = complete rest. Never push through real fatigue.",
+          "A 20–30 minute easy walk at Zone 1 (fully conversational) promotes blood flow without creating training stress. This is often called 'active recovery' and is preferred over complete inactivity for most athletes.",
+          "Use Sunday to refuel with quality food: protein + carbohydrates to replenish glycogen and support muscle repair. Good Sunday nutrition directly improves Monday's performance."
+        ],
+        "points": [
+          { "icon": "👂", "label": "Listen to your body", "note": "Significant fatigue = complete rest" },
+          { "icon": "🚶", "label": "Zone 1 only", "note": "Fully conversational — zero effort" },
+          { "icon": "🍽️", "label": "Recovery nutrition", "note": "Protein + carbs today = better Monday" },
+          { "icon": "💤", "label": "Sleep quality", "note": "Target 8 h tonight — peak recovery" }
+        ]
+      }
     ],
     "advanced": [
-      { "type": "Cycling + Upper + Swim","detail": "Cycling 40' Zone 2–3 + Gym Upper 30' + Swim 50'" },
-      { "type": "Lower + Swim",          "detail": "Gym Lower 45' (Squat, RDL, Leg press) + Swim 50'" },
-      { "type": "Cycling + Push + Swim", "detail": "Cycling 40' + Gym Push 30' + Swim 50'" },
-      { "type": "Pull + Swim",           "detail": "Gym Pull 45' (Deadlift, row, face pull) + Swim 50'" },
-      { "type": "Cycling + Full + Swim", "detail": "Cycling 40' + Gym Full body 30' + Swim 50'" },
-      { "type": "Long Ride",             "detail": "90–120' Zone 2 + Mobility 20'" },
-      { "type": "Recovery Ride",         "detail": "Easy cycling 60' Zone 1–2 — active recovery" }
+      {
+        "type": "Cycling + Upper + Swim",
+        "detail": "Cycling 40' Zone 2–3 + Gym Upper 30' + Swim 50'",
+        "details": [
+          "Monday is the heaviest tri-modal day: cycling builds aerobic base, upper-body gym work maintains strength, and swimming develops technique and shoulder endurance. Total training volume: ~2 hours.",
+          "Cycling first while fresh to get quality Zone 2–3 effort. Gym upper-body at moderate intensity (RPE 7) — push-up/bench, row, OHP, lat pulldown. Swim last as the aerobic finisher.",
+          "Sequence matters: cycling before gym to avoid pre-fatiguing the legs for lower-body gym days later in the week. Total calorie burn for the day: approximately 700–900 kcal."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Cycling first", "note": "Fresh legs for quality Zone 2–3 output" },
+          { "icon": "🏋️", "label": "Gym Upper moderate", "note": "RPE 7 — not to failure" },
+          { "icon": "🏊", "label": "Swim as finisher", "note": "Technique + aerobic — not sprinting" },
+          { "icon": "🔥", "label": "~700–900 kcal", "note": "Fuel well: carbs before + protein after" }
+        ]
+      },
+      {
+        "type": "Lower + Swim",
+        "detail": "Gym Lower 45' (Squat, RDL, Leg press) + Swim 50'",
+        "details": [
+          "Tuesday focuses on lower-body strength + swimming. Lower-body gym work is done at full intensity (RPE 8) since cycling is off today. Squat 4×6, RDL 3×8, leg press 3×10 as the main compound lifts.",
+          "Swimming after lower-body gym uses the upper body and cardiovascular system with legs already pre-fatigued. This trains swimming technique under fatigue — valuable race-day simulation.",
+          "Prioritise 1,500–2,000 m of total swimming. Focus on stroke efficiency, not speed. Pull buoy sets are useful to isolate the upper body if legs feel very tired."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Full leg effort", "note": "RPE 8 — no cycling today so push legs" },
+          { "icon": "🏊", "label": "Swim under fatigue", "note": "Trains race-day resilience" },
+          { "icon": "🎯", "label": "1,500–2,000 m swim", "note": "Efficiency over speed" },
+          { "icon": "🦾", "label": "Pull buoy option", "note": "Isolate upper body if legs are spent" }
+        ]
+      },
+      {
+        "type": "Cycling + Push + Swim",
+        "detail": "Cycling 40' + Gym Push 30' + Swim 50'",
+        "details": [
+          "Wednesday mirrors Monday but with a push-focused gym session (bench/push-up, OHP, dips, tricep) instead of full upper body. This allows for higher specificity and slightly more volume on pushing muscles.",
+          "Cycling at Zone 2–3 (40 minutes) maintains aerobic volume mid-week. Push gym session at RPE 7 — not maximal, as the goal is training volume accumulation, not peak strength output.",
+          "Swimming completes the tri-modal day. Focus on freestyle technique: hand entry in line with shoulder, full arm extension, hip rotation. Quality of stroke beats raw distance at this stage."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Zone 2–3 cycling", "note": "Maintain aerobic volume mid-week" },
+          { "icon": "💪", "label": "Push focus gym", "note": "Bench, OHP, dips, tricep" },
+          { "icon": "🏊", "label": "Technique swim", "note": "Hand entry, hip rotation, full extension" },
+          { "icon": "🎯", "label": "RPE 7 gym", "note": "Volume day — not maximal effort" }
+        ]
+      },
+      {
+        "type": "Pull + Swim",
+        "detail": "Gym Pull 45' (Deadlift, row, face pull) + Swim 50'",
+        "details": [
+          "Thursday is pull-focused strength + swimming. Deadlift (4×6, RPE 8) as the primary compound movement, followed by horizontal row (3×10) and face pull (3×15 for shoulder health).",
+          "The face pull is non-negotiable for advanced athletes doing heavy push volume: it trains the posterior deltoid and external rotators, preventing the shoulder impingement that sidelines many high-volume trainers.",
+          "Swimming after the pull session naturally continues the rowing pattern in water, training the lats, rhomboids, and biceps through a different range of motion. Total volume: 1,500–2,000 m."
+        ],
+        "points": [
+          { "icon": "🏆", "label": "Deadlift 4×6", "note": "RPE 8 — primary strength indicator" },
+          { "icon": "🦾", "label": "Face pull essential", "note": "Prevents shoulder impingement at high volume" },
+          { "icon": "🏊", "label": "Lats in water", "note": "Row → swim: same muscles, different plane" },
+          { "icon": "⚖️", "label": "Push-pull balance", "note": "Week total: equal push and pull volume" }
+        ]
+      },
+      {
+        "type": "Cycling + Full + Swim",
+        "detail": "Cycling 40' + Gym Full body 30' + Swim 50'",
+        "details": [
+          "Friday's session is full tri-modal: cycling + full-body gym + swim. The full-body gym session (30 minutes) at low intensity (RPE 6) reinforces movement patterns without creating significant fatigue heading into Saturday's long ride.",
+          "Full-body gym at RPE 6 means: squat, push, row, plank — all at about 60 % of maximum effort. This is technique maintenance, not strength building. Use the session to refine any weak points noticed earlier in the week.",
+          "Friday's swim should be relaxed (Zone 1–2). The goal is to stay aerobically active, maintain swim feel in the water, and prepare psychologically for Saturday's long effort."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Zone 2 cycling", "note": "Active prep for Saturday's long ride" },
+          { "icon": "🎯", "label": "Gym RPE 6 only", "note": "Technique, not strength today" },
+          { "icon": "🏊", "label": "Zone 1–2 swim", "note": "Stay loose, preserve energy" },
+          { "icon": "💤", "label": "Sleep priority tonight", "note": "8+ h before Saturday's long effort" }
+        ]
+      },
+      {
+        "type": "Long Ride",
+        "detail": "90–120' Zone 2 + Mobility 20'",
+        "details": [
+          "Saturday's long ride is the weekly peak training stimulus. 90–120 minutes in Zone 2 (65–70 % max HR) builds maximal aerobic base, fat oxidation capacity, and mental endurance.",
+          "Fuel during the ride: for sessions over 75 minutes, consume 30–40 g of fast carbohydrates every 30–40 minutes (banana, energy bar, rice cake). Hydrate with 500–750 ml per hour.",
+          "After the ride, spend 20 minutes on mobility: hip flexors (tightened by cycling position), thoracic spine (hunched over handlebars), and hamstrings. This recovery work prevents cumulative stiffness over the training cycle."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "90–120 min Zone 2", "note": "The week's peak aerobic stimulus" },
+          { "icon": "🍌", "label": "Fuel every 30–40 min", "note": "30–40 g carbs after 75 min mark" },
+          { "icon": "💧", "label": "750 ml/hour", "note": "Hydration is performance, not comfort" },
+          { "icon": "🧘", "label": "20 min mobility after", "note": "Prevents cumulative stiffness — non-optional" }
+        ]
+      },
+      {
+        "type": "Recovery Ride",
+        "detail": "Easy cycling 60' Zone 1–2 — active recovery",
+        "details": [
+          "Sunday's recovery ride is one of the most important sessions of the week. Zone 1–2 cycling (55–65 % max HR) flushes lactate from Saturday's long effort, reduces muscle soreness, and maintains training frequency without adding stress.",
+          "This is the session where athletes make the most mistakes: going too hard because they feel good after Saturday's rest. Zone 1–2 means you should be able to comfortably read a book while pedalling.",
+          "After the ride, prioritise nutrition (protein + complex carbohydrates), hydration, and sleep preparation. The adaptations from a week of training are consolidated during Sunday night's sleep."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Zone 1–2 only", "note": "If you're breathing hard — slow down" },
+          { "icon": "♻️", "label": "Lactate flush", "note": "Clears Saturday's metabolic waste" },
+          { "icon": "🍽️", "label": "Refuel well today", "note": "Protein + carbs → Sunday night adaptation" },
+          { "icon": "💤", "label": "Sleep 8+ h tonight", "note": "Where this week's gains are consolidated" }
+        ]
+      }
     ]
   },
   "ui": {
@@ -162,6 +750,28 @@
     "reward_note": "Treat yourself when you hit a milestone",
     "exercise_link_label": "Exercise & Training",
     "nutrition_link_label": "Nutrition & Meal Plans",
-    "tools_link_label": "Tools & Resources"
+    "tools_link_label": "Tools & Resources",
+    "link_movements": "Movement Patterns",
+    "link_lifestyle": "Healthy Lifestyle",
+    "link_recovery": "Active Recovery",
+    "link_mind": "Peaceful Mind",
+    "link_framework": "Daily Framework",
+    "link_nutrition_short": "Nutrition"
+  },
+  "hero": {
+    "title_line1": "Find Your",
+    "title_line2": "Ideal Plan",
+    "subtitle": "6 goals · 24 weeks · Every program is built on one principle: get the technique right, then add volume, then personalise to your progress.",
+    "stats": {
+      "goals": "Goals",
+      "weeks": "Sample Weeks",
+      "schedules": "Schedule Types",
+      "min_day": "Min/Day"
+    },
+    "scroll_hint": "Choose a goal",
+    "step1_heading": "What do you want to achieve?"
+  },
+  "days": {
+    "T2": "MON", "T3": "TUE", "T4": "WED", "T5": "THU", "T6": "FRI", "T7": "SAT", "CN": "SUN"
   }
 }

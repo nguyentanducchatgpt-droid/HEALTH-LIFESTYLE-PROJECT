@@ -162,6 +162,28 @@
     "reward_note": "Tặng bản thân khi đạt mốc",
     "exercise_link_label": "Vận Động & Tập Luyện",
     "nutrition_link_label": "Dinh Dưỡng & Thực Đơn",
-    "tools_link_label": "Công Cụ & Tài Nguyên"
+    "tools_link_label": "Công Cụ & Tài Nguyên",
+    "link_movements": "6 Mẫu Vận Động",
+    "link_lifestyle": "Lối Sống Khỏe",
+    "link_recovery": "Phục Hồi Tích Cực",
+    "link_mind": "Tâm Trí An Nhiên",
+    "link_framework": "Khung Ngày Tập",
+    "link_nutrition_short": "Dinh Dưỡng"
+  },
+  "hero": {
+    "title_line1": "Tìm lộ trình",
+    "title_line2": "phù hợp bạn",
+    "subtitle": "6 mục tiêu · 24 tuần · Mỗi lộ trình xây dựng theo nguyên tắc: tập đúng form trước, tăng volume sau, cá nhân hóa theo tiến bộ.",
+    "stats": {
+      "goals": "Mục tiêu",
+      "weeks": "Tuần mẫu",
+      "schedules": "Loại lịch",
+      "min_day": "Phút/ngày"
+    },
+    "scroll_hint": "Chọn mục tiêu",
+    "step1_heading": "Bạn muốn đạt được gì?"
+  },
+  "days": {
+    "T2": "T2", "T3": "T3", "T4": "T4", "T5": "T5", "T6": "T6", "T7": "T7", "CN": "CN"
   }
 }

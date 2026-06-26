@@ -67,58 +67,646 @@
   },
   "schedule": {
     "beginner": [
-      { "type": "Kraft A",        "detail": "Squat, Wandliegestütz, Gesäßbrücke, Knieplank" },
-      { "type": "Leichtes Cardio","detail": "Zügiger Spaziergang 20–25', noch kurze Sätze sprechen" },
-      { "type": "Kraft B",        "detail": "Hüftgelenk-Übung, Handtuchrudern, Ausfallschritt, Dead Bug" },
-      { "type": "Mobility",       "detail": "Ganzkörper-Dehnen 15–20': Hüfte, Oberschenkel, Schultern" },
-      { "type": "Kraft C",        "detail": "Sit-to-Stand, Gesäßbrücke, Bird-Dog, Wadenerhebung" },
-      { "type": "Cardio",         "detail": "Outdoor-Spaziergang 25–30' in moderatem Tempo" },
-      { "type": "Ruhetag",        "detail": "Wochenrückblick + 5-Zeilen-Trainingstagbuch" }
+      {
+        "type": "Kraft A",
+        "detail": "Squat, Wandliegestütz, Gesäßbrücke, Knieplank",
+        "details": [
+          "Kraft A umfasst 4 grundlegende Bewegungsmuster: Kniebeuge (kontrolliertes Aufstehen), Wandliegestütz (sicher für Anfänger), Gesäßbrücke (Gesäßaktivierung) und Knieplank. Je Übung: 2–3 Sätze × 8–12 Wdh.",
+          "Der Wandliegestütz trainiert Brust, vordere Schulter und Trizeps wirkungsvoll — ideal für den Aufbau von Oberkörperkraft in den ersten 4 Wochen ohne Überlastung. Wenn 3×15 leicht fühlt, auf einen geneigten Liegestütz am Tisch wechseln.",
+          "60 Sekunden Pause zwischen den Sätzen. In der ersten Einheit Fokus auf korrekte Technik, nicht auf hohe Wdh.-Zahl. Nach 4 Wochen auf 3 Sätze steigern oder 2–3 Wdh. hinzufügen."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "2–3 Sätze × 8–12 Wdh.", "note": "60 s Pause zwischen den Sätzen" },
+          { "icon": "✅", "label": "Form vor Kraft", "note": "6 korrekte Wdh. > 12 mit schlechter Technik" },
+          { "icon": "⏱️", "label": "20–25 Minuten", "note": "Plus 5 Min. Aufwärmen — obligatorisch" },
+          { "icon": "🎯", "label": "RPE 5–6 / 10", "note": "Du kannst noch danach reden" }
+        ]
+      },
+      {
+        "type": "Leichtes Cardio",
+        "detail": "Zügiger Spaziergang 20–25', noch kurze Sätze sprechen",
+        "details": [
+          "Ein zügiger Spaziergang bei Zone-2-Intensität — kurze Sätze sprechen ist möglich, aber kein langes Gespräch. Dies baut die aerobe Basis auf, ohne die sich erholenden Muskeln vom Montag zu belasten.",
+          "Ziel: 20–25 Minuten in einem Tempo, das sich 'angenehm anspruchsvoll' anfühlt. Wenn du singen kannst, schneller gehen; wenn du kein Wort herausbekommst, langsamer machen. Herzfrequenz: ca. 60–70 % des Maximums.",
+          "Achte auf die Haltung: Schultern zurück, Rumpf leicht angespannt, Arme schwingen natürlich. Selbst ein regelmäßiger 20-Minuten-Spaziergang überbietet sporadisch längere Einheiten."
+        ],
+        "points": [
+          { "icon": "❤️", "label": "Zone-2-Herzfrequenz", "note": "60–70 % der max. HF" },
+          { "icon": "🗣️", "label": "Sprechtest", "note": "Kurze Sätze OK, Singen nicht" },
+          { "icon": "⏱️", "label": "20–25 Minuten", "note": "Gleichmäßiges Tempo" },
+          { "icon": "👟", "label": "Draußen bevorzugt", "note": "Frische Luft verbessert Stimmung und Durchhaltung" }
+        ]
+      },
+      {
+        "type": "Kraft B",
+        "detail": "Hüftgelenk-Übung, Handtuchrudern, Ausfallschritt, Dead Bug",
+        "details": [
+          "Kraft B zielt auf die hintere Kette und Balance: Hüftgelenk-Übung (Gesäß/Hamstring statt Rücken belasten), Handtuchrudern (oberer Rücken zuhause), Ausfallschritt (Einbein-Stabilität) und Dead Bug (Anti-Rotations-Core).",
+          "Die Hüftgelenk-Übung ist entscheidend für langfristige Rückengesundheit. Übungshinweis: 'Hüfte zur Wand drücken' als Cue. Wenn das sitzt, wird die Romanian-Deadlift-Progression sicher und effektiv.",
+          "Beim Ausfallschritt in den ersten Wochen eine Wand oder einen Stuhl zur Unterstützung nutzen. Knie über der zweiten Zehe halten. Mit 8 Wdh. je Seite, 2 Sätzen beginnen."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Hüftgelenk-Priorität", "note": "Gesäß & Hamstring, nicht Lendenwirbel" },
+          { "icon": "⚖️", "label": "Ausfallschritt Balance", "note": "Wand nutzen wenn nötig — kein Problem" },
+          { "icon": "🔄", "label": "2 Sätze zum Start", "note": "In Woche 3–4 auf 3 Sätze steigern" },
+          { "icon": "🧠", "label": "Dead Bug Fokus", "note": "Rücken flach auf dem Boden halten" }
+        ]
+      },
+      {
+        "type": "Mobility",
+        "detail": "Ganzkörper-Dehnen 15–20': Hüfte, Oberschenkel, Schultern",
+        "details": [
+          "Eine 15–20-minütige Mobility-Session, die auf die durch Krafttraining belasteten Bereiche zielt: Hüftbeuger (durch Sitzen verkürzt), Hamstrings, Brust- und Schulteröffner sowie Brustwirbelsäulenrotation.",
+          "Jede Dehnung 30–45 Sekunden halten und in die Spannung atmen statt zu forcieren. Mobility ist eine langfristige Investition — Kniebeugetiefe und Verletzungsresistenz hängen davon ab.",
+          "Empfohlene Abfolge: Katze-Kuh 2 Min. → Kindshaltung 1 Min. → Taubenpose jede Seite 2 Min. → Türrahmen-Brustdehnung 1 Min. → Sitzende Hamstring-Dehnung 2 Min. → Brustwirbelsäulenrotation 2 Min."
+        ],
+        "points": [
+          { "icon": "🌬️", "label": "In Dehnung atmen", "note": "Nicht forcieren — entspannen und vertiefen" },
+          { "icon": "⏱️", "label": "30–45 s je Dehnung", "note": "Kürzere Haltezeiten verändern nichts" },
+          { "icon": "🦴", "label": "Hüftbeuger-Priorität", "note": "Stundenlange Sitzarbeit verkürzt sie" },
+          { "icon": "♻️", "label": "Wöchentliches Engagement", "note": "Einmal pro Woche schlägt nie" }
+        ]
+      },
+      {
+        "type": "Kraft C",
+        "detail": "Sit-to-Stand, Gesäßbrücke, Bird-Dog, Wadenerhebung",
+        "details": [
+          "Kraft C wiederholt die Montags-Muster bei niedrigerem Volumen und führt Bird-Dog ein — eine Anti-Extensionsübung für den Rumpf, die auch die Koordination zwischen Gegenarm und -bein trainiert.",
+          "Sit-to-Stand baut funktionelle Beinmuskulatur vom Stuhl aus — direkt übertragbar auf den Alltag. Den Abstieg genauso kontrollieren wie den Aufstieg — die exzentrische Phase baut mehr Kraft auf.",
+          "Wadenerhebungen werden oft unterschätzt, sind aber entscheidend für Knöchelstabilität. Langsam ausführen: 2 s hoch, 1 s halten, 3 s runter. 3×15 Wdh. genügt."
+        ],
+        "points": [
+          { "icon": "🪑", "label": "Sit-to-Stand", "note": "Abstieg kontrollieren — baut Kraft auf" },
+          { "icon": "🦅", "label": "Bird-Dog Form", "note": "Neutrale Wirbelsäule, keine Hüftrotation" },
+          { "icon": "🦶", "label": "Wadenhebung Tempo", "note": "2 hoch · 1 halten · 3 runter" },
+          { "icon": "🔁", "label": "Aktive Erholung", "note": "Weniger Volumen als Mo/Mi — bewusst" }
+        ]
+      },
+      {
+        "type": "Cardio",
+        "detail": "Outdoor-Spaziergang 25–30' in moderatem Tempo",
+        "details": [
+          "Ein etwas längerer Spaziergang als am Dienstag — 25–30 Minuten in moderatem Tempo. Ziel ist aerobe Volumenakkumulation ohne Erschöpfung vor dem Wochenende.",
+          "Diese Session nutzen, um Stress abzubauen und sich mental zu erholen. Gehen im Tageslicht reguliert auch den Schlaf-Wach-Rhythmus, was die Erholung vom Krafttraining direkt verbessert.",
+          "Optional: 5 Minuten leichte Ausfallschritte oder Step-ups zum Abschluss hinzufügen. Bei schweren Beinen aus der Woche weglassen."
+        ],
+        "points": [
+          { "icon": "🌿", "label": "Outdoor-Spaziergang", "note": "Tageslicht verbessert Stimmung und Schlaf" },
+          { "icon": "⏱️", "label": "25–30 Minuten", "note": "Etwas länger als Dienstags" },
+          { "icon": "😌", "label": "Mentale Erholung", "note": "Entspannung vor dem Wochenende" },
+          { "icon": "💡", "label": "Optionaler Abschluss", "note": "5 Min. leichte Ausfallschritte wenn Beine OK" }
+        ]
+      },
+      {
+        "type": "Ruhetag",
+        "detail": "Wochenrückblick + 5-Zeilen-Trainingstagbuch",
+        "details": [
+          "Der Ruhetag ist kein verlorener Tag — dann baut der Körper tatsächlich auf. Leichtes Gehen oder Dehnen ist in Ordnung. Intensive Übungen vermeiden.",
+          "5 Minuten ins Trainingstagbuch schreiben: was diese Woche gut war, was schwer fiel, ein Fokus für nächste Woche. Tagebuch führen verdreifacht nachweislich die Gewohnheitstreue.",
+          "Auch Schlaf, Hydration und Ernährung der Woche überprüfen. Diese drei Faktoren machen mehr als 60 % der Trainingsergebnisse aus. Offensichtliche Schwächen vor nächster Woche korrigieren."
+        ],
+        "points": [
+          { "icon": "📓", "label": "5 Zeilen Tagebuch", "note": "Reflexion verdreifacht Gewohnheitstreue" },
+          { "icon": "💤", "label": "Schlaf priorisieren", "note": "7–9 h — das kostenlose Erholungswerkzeug" },
+          { "icon": "💧", "label": "Hydrations-Check", "note": "Hast du diese Woche 2 L erreicht?" },
+          { "icon": "🔄", "label": "Nächste Woche planen", "note": "Eine Sache verbessern?" }
+        ]
+      }
     ],
     "busy": [
-      { "type": "Kraft",             "detail": "Squat 30 s, Liegestütz 30 s, Gesäßbrücke 30 s, Plank 20 s × 2 Runden" },
-      { "type": "Cardio",            "detail": "Seitschritt 40 s + auf der Stelle marschieren 40 s × 3 Runden" },
-      { "type": "Core",              "detail": "Dead Bug 30 s, Bird-Dog 30 s, Knieplank 20 s × 2 Runden" },
-      { "type": "Mobility",          "detail": "10' Ganzkörper: Nacken, Schultern, Hüfte, Oberschenkelrückseite" },
-      { "type": "Kraft",             "detail": "Squat, Ruderband, Gesäßbrücke, Wandliegestütz × 2 Runden" },
-      { "type": "Gehen",             "detail": "10' zügiges Gehen oder Treppensteigen" },
-      { "type": "Atmen & Meditieren","detail": "5' Box-Atmung + 5' Tagebuch / kurze Meditation" }
+      {
+        "type": "Kraft",
+        "detail": "Squat 30 s, Liegestütz 30 s, Gesäßbrücke 30 s, Plank 20 s × 2 Runden",
+        "details": [
+          "Montags 10-Minuten-Zirkel: Kniebeuge (Unterkörper), Liegestütz (Drücken oben), Gesäßbrücke (hintere Kette) und Knieplank (Core). 2 vollständige Runden mit Übergängen unter 10 Sekunden.",
+          "Das Ziel ist Bewegung — unvollkommen aber konsequent. Selbst 10 Minuten Zirkeltraining 5–6× pro Woche bringen nach 3 Monaten messbare Herz-Kreislauf- und Kraftverbesserungen.",
+          "Timer auf 10 Minuten stellen und kontinuierlich durchlaufen. Wenn du vor dem Timer fertig bist, eine 3. Runde beginnen. Bewegungsqualität ist wichtiger als Geschwindigkeit."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "Exakt 10 Minuten", "note": "Kein Anfahrtsweg, keine Ausrüstung nötig" },
+          { "icon": "🔄", "label": "2+ Runden", "note": "Auf 3 Runden anpassen sobald möglich" },
+          { "icon": "💪", "label": "Ganzkörper-Zirkel", "note": "Unten + Drücken + hinten + Core" },
+          { "icon": "🏆", "label": "Sieg = Erscheinen", "note": "Erledigt > Perfekt" }
+        ]
+      },
+      {
+        "type": "Cardio",
+        "detail": "Seitschritt 40 s + auf der Stelle marschieren 40 s × 3 Runden",
+        "details": [
+          "Dienstags gelenkschonende Cardio-Einheit ohne Platz- oder Ausrüstungsbedarf. Seitschritte und Marschieren auf der Stelle halten die Herzfrequenz hoch ohne Gelenkbelastung.",
+          "3 Runden mit 40 s Seitschritt + 40 s Marschieren = etwa 4 Minuten kontinuierliche Bewegung. Kombiniert mit 5 Minuten Atemübungen ergibt das eine komplette 10-Minuten-Einheit.",
+          "Bei mehr Zeit 4 Runden anstreben. Atmung beobachten: leicht außer Atem, aber noch ein Wort sagen können."
+        ],
+        "points": [
+          { "icon": "🏠", "label": "Zimmertauglich", "note": "Kein Platz oder Ausrüstung nötig" },
+          { "icon": "🦵", "label": "Gelenkschonend", "note": "Sicher für alle Altersgruppen" },
+          { "icon": "🔄", "label": "3–4 Runden", "note": "~4–6 Min. aktive Bewegung" },
+          { "icon": "💓", "label": "Leicht außer Atem", "note": "Sollte leicht fordern" }
+        ]
+      },
+      {
+        "type": "Core",
+        "detail": "Dead Bug 30 s, Bird-Dog 30 s, Knieplank 20 s × 2 Runden",
+        "details": [
+          "Mittwoch ist der Rumpfstabilität gewidmet — dem Fundament aller Bewegung. Dead Bug trainiert Anti-Extension, Bird-Dog Anti-Rotation und Knieplank isometrische Ausdauer.",
+          "Diese Übungen sehen einfach aus, erfordern aber echte Konzentration. Lendenwirbel flach halten und durchatmen. Niemals den Atem während Planks anhalten.",
+          "2 Runden passen in 6–7 Minuten. Mit 2–3 Minuten Nacken- und Schulterkreisen abschließen als Mini-Mobilitätspause."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Anti-Extension", "note": "Dead Bug: Rücken flach, atmen" },
+          { "icon": "🦅", "label": "Anti-Rotation", "note": "Bird-Dog: Hüfte eben, nicht drehen" },
+          { "icon": "⏱️", "label": "Plank 20 s", "note": "Qualität statt Dauer — keine durchhängende Hüfte" },
+          { "icon": "🌬️", "label": "Niemals Luft anhalten", "note": "Beim schweren Teil ausatmen" }
+        ]
+      },
+      {
+        "type": "Mobility",
+        "detail": "10' Ganzkörper: Nacken, Schultern, Hüfte, Oberschenkelrückseite",
+        "details": [
+          "Donnerstag ist ein 10-minütiger Ganzkörper-Mobility-Flow — die einzige Session, die rein dem Wohlbefinden gewidmet ist. Nackenkreise, Schulterkreise, Hüftkreise und sitzende Hamstring-Dehnung bilden die Sequenz.",
+          "Mobilitätstraining reduziert Verletzungsrisiko, verbessert die Haltung (entscheidend für Büroarbeiter) und beschleunigt die Erholung von den Krafteinheiten der Woche.",
+          "Empfohlene Abfolge: Nackenkreise 30 s je Richtung → Schulterkreise 30 s → Brustwirbelsäulenextension am Stuhl 1 Min. → Hüftkreise 1 Min. je Seite → sitzende Hamstring-Dehnung 1 Min. je Seite."
+        ],
+        "points": [
+          { "icon": "🧘", "label": "Achtsame Bewegung", "note": "Langsam und kontrolliert — jedes Gelenk spüren" },
+          { "icon": "💺", "label": "Büroarbeiter-Muss", "note": "Kompensiert stundenlange Sitzarbeit" },
+          { "icon": "⏱️", "label": "10 Minuten", "note": "Selbst 5 Min. schlägt null" },
+          { "icon": "🔄", "label": "Vollständige Abfolge", "note": "Nacken → Schultern → Hüfte → Hamstring" }
+        ]
+      },
+      {
+        "type": "Kraft",
+        "detail": "Squat, Ruderband, Gesäßbrücke, Wandliegestütz × 2 Runden",
+        "details": [
+          "Der Freitags-Zirkel spiegelt Montag, fügt aber das Ruderband hinzu — ein Zugmuster als Ausgleich zum Drücken von Montag. Kein Widerstandsband? Handtuchrudern an einer Türklinke ersetzen.",
+          "Nach einer vollen Woche kurzer Einheiten kann sich Freitag leichter anfühlen als erwartet. Das ist Adaptation. Falls es wirklich zu leicht ist, eine 3. Runde hinzufügen oder jede Wdh. auf 2 Sekunden verlangsamen.",
+          "Übergänge zwischen Übungen unter 10 Sekunden halten. Ziel ist es, die Herzfrequenz während der gesamten 10 Minuten erhöht zu halten."
+        ],
+        "points": [
+          { "icon": "🏋️", "label": "Ruderband hinzugefügt", "note": "Gleicht das Drücken von Montag aus" },
+          { "icon": "🔄", "label": "2–3 Runden", "note": "3. Runde hinzufügen wenn Kraft da" },
+          { "icon": "⏱️", "label": "Schnelle Übergänge", "note": "Unter 10 s zwischen Übungen" },
+          { "icon": "📈", "label": "Adaptation bemerken", "note": "Leichter werden = Fortschritt" }
+        ]
+      },
+      {
+        "type": "Gehen",
+        "detail": "10' zügiges Gehen oder Treppensteigen",
+        "details": [
+          "Samstag ist aktiver Erholungstag — sanft genug für die Körperreparatur, aber bewegt genug, um die Serie am Leben zu halten. Ein 10-minütiger zügiger Spaziergang oder einige Stockwerke Treppensteigen reichen aus.",
+          "Gehen im Tageslicht am Samstagmorgen hilft, den zirkadianen Rhythmus zu regulieren und verbessert die Schlafqualität bis Sonntag. Selbst ein Spaziergang zum nächsten Laden zählt.",
+          "Beim Treppensteigen: 4–6 Stockwerke in entspanntem Tempo anstreben. Atmung beobachten. Das ist Erholung, kein Training."
+        ],
+        "points": [
+          { "icon": "🚶", "label": "Aktive Erholung", "note": "Bewegen ohne den Körper zu belasten" },
+          { "icon": "☀️", "label": "Draußen wenn möglich", "note": "Tageslicht reguliert Schlafrhythmus" },
+          { "icon": "🏢", "label": "Treppen-Option", "note": "4–6 Stockwerke, entspanntes Tempo" },
+          { "icon": "💆", "label": "Kein Stress", "note": "Erholung, kein Training" }
+        ]
+      },
+      {
+        "type": "Atmen & Meditieren",
+        "detail": "5' Box-Atmung + 5' Tagebuch / kurze Meditation",
+        "details": [
+          "Sonntag dient der Erholung des Nervensystems. Box-Atmung (4 s einatmen → 4 s halten → 4 s ausatmen → 4 s halten) aktiviert das Parasympathikus-System und reduziert Cortisol.",
+          "Anschließend 5 Minuten Tagebuch schreiben: eine Zeile über die Erfolge der Woche, eine über Schwierigkeiten, eine Absicht für nächste Woche. Kurzes reflektives Schreiben verbessert Gewohnheitstreue und Motivation.",
+          "Alternativ eine geführte Meditations-App für 5–10 Minuten nutzen. Ziel ist geistige Erholung — nicht mehr Reize."
+        ],
+        "points": [
+          { "icon": "🌬️", "label": "Box-Atmung", "note": "4-4-4-4 s: einatmen, halten, ausatmen, halten" },
+          { "icon": "📓", "label": "3 Zeilen Tagebuch", "note": "Erfolg · Schwierigkeit · Absicht" },
+          { "icon": "🧘", "label": "Oder geführte Meditation", "note": "5–10 Min. App-gestützt ist fein" },
+          { "icon": "💤", "label": "Schlafvorbereitung", "note": "Reduziert Cortisol → besserer Schlaf" }
+        ]
+      }
     ],
     "fatloss": [
-      { "type": "Kraft A",      "detail": "Squat, Liegestütz, Ruderband, Gesäßbrücke, Plank" },
-      { "type": "Cardio Z2",    "detail": "Gehen/Radfahren 30–35' Zone 2 — noch reden können" },
-      { "type": "Kraft B",      "detail": "Hüftgelenk-Übung, Ausfallschritt, Dead Bug, Wadenerhebung" },
-      { "type": "NEAT",         "detail": "Mobility 15' + Ziel +2.000 zusätzliche Schritte am Tag" },
-      { "type": "Kraft C",      "detail": "Liegestütz, Schulterblatt-Squeeze, Gesäßbrücke, Bird-Dog" },
-      { "type": "Langes Cardio","detail": "Zügiges Gehen/Radfahren 35–45' moderate Herzfrequenz" },
-      { "type": "Erholung",     "detail": "Leichter Spaziergang 20' + Gewicht & Taillenmaße überprüfen" }
+      {
+        "type": "Kraft A",
+        "detail": "Squat, Liegestütz, Ruderband, Gesäßbrücke, Plank",
+        "details": [
+          "Kraft A ist ein 5-Übungen-Ganzkörper-Zirkel, der Muskeln beim Kaloriendefizit erhält und aufbaut. Muskelmasse ist der Stoffwechsel — sie mit 3 Krafteinheiten pro Woche schützen.",
+          "Das Ruderband ist hier entscheidend: Die meisten Fettabbauprogramme betonen Drücken zu sehr. Das Rudern gleicht aus und unterstützt gute Haltung, was die Trainingsleistung direkt verbessert.",
+          "3 Sätze × 10–12 Wdh. je Übung. Pause 45–60 s. Die moderate Pause hält die Herzfrequenz erhöht und maximiert den Kalorienverbrauch bei guter Technik."
+        ],
+        "points": [
+          { "icon": "💪", "label": "Muskel erhalten", "note": "Muskel = dein Stoffwechsel — schütze ihn" },
+          { "icon": "🔄", "label": "3 Sätze × 10–12 Wdh.", "note": "Pause 45–60 s zwischen Sätzen" },
+          { "icon": "🎯", "label": "Ganzkörper-Priorität", "note": "Mehr Muskeln = mehr verbrannte Kalorien" },
+          { "icon": "📈", "label": "Gewicht schrittweise erhöhen", "note": "Schwerer = mehr Ruhestoffwechsel" }
+        ]
+      },
+      {
+        "type": "Cardio Z2",
+        "detail": "Gehen/Radfahren 30–35' Zone 2 — noch reden können",
+        "details": [
+          "Zone-2-Cardio (60–70 % max. HF) ist die effizienteste Fettverbrennungszone. Bei dieser Intensität nutzt der Körper bevorzugt Fett als Brennstoff statt Glykogen und erzeugt kaum Erholungsschulden.",
+          "Sprechtest: 4–5 Wörter bequem sprechen können, aber nicht singen. Bei Keuchen langsamer werden; bei freiem Plaudern etwas schneller gehen.",
+          "Zügiges Gehen oder Radfahren bei 65–70 % Effort für 30–35 Minuten verbrennt ca. 200–280 kcal und schafft kombiniert mit der Ernährung ein ideales Kaloriendefizit."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "Fettverbrennungszone", "note": "60–70 % max. HF nutzt Fett als Brennstoff" },
+          { "icon": "🗣️", "label": "Sprechtest", "note": "4–5 Wörter bequem — kein Singen" },
+          { "icon": "⏱️", "label": "30–35 Minuten", "note": "200–280 kcal verbrannt" },
+          { "icon": "♻️", "label": "Geringe Erholungskosten", "note": "Stört Krafttage nicht" }
+        ]
+      },
+      {
+        "type": "Kraft B",
+        "detail": "Hüftgelenk-Übung, Ausfallschritt, Dead Bug, Wadenerhebung",
+        "details": [
+          "Kraft B verlagert den Fokus auf die hintere Kette und Einbeinbewegungen: Hüftgelenk (Gesäß/Hamstring), Ausfallschritt (Balance + Beinkraft), Dead Bug (Core-Stabilität) und Wadenerhebung (Unterschenkel).",
+          "Die korrekt ausgeführte Hüftgelenk-Übung ist eine der effektivsten Bewegungen zur Formgebung von Gesäß und Hamstring bei Schonung des unteren Rückens. Cue: 'Hüfte zurückdrücken, Brust hoch, neutraler Rücken'.",
+          "Ausfallschritte decken bilaterale Kraftungleichgewichte auf, die normale Kniebeugen verbergen. Der Start mit Ausfallschritten sichert gleichmäßige Beinentwicklung und reduziert Verletzungsrisiko."
+        ],
+        "points": [
+          { "icon": "🍑", "label": "Hüftgelenk-Cue", "note": "Hüfte zurück, Brust hoch, neutraler Rücken" },
+          { "icon": "⚖️", "label": "Ausfallschritt", "note": "Deckt Kraftungleichgewichte auf und behebt sie" },
+          { "icon": "🧠", "label": "Dead Bug", "note": "Anti-Extension: Rücken flach, ausatmen" },
+          { "icon": "🦶", "label": "Wadenerhebung langsam", "note": "Kontrolliert — 2 hoch, 3 runter" }
+        ]
+      },
+      {
+        "type": "NEAT",
+        "detail": "Mobility 15' + Ziel +2.000 zusätzliche Schritte am Tag",
+        "details": [
+          "NEAT (Non-Exercise Activity Thermogenesis) — alle Bewegung außerhalb strukturierter Trainings — macht 15–30 % des täglichen Kalorienverbrauchs aus. 2.000 extra Schritte verbrennen zusätzlich 80–120 kcal.",
+          "Die heutige Session beginnt mit 15 Minuten Mobility (Hüftbeuger, Hamstrings, Brustwirbelsäule). Dann 2.000 extra Schritte anstreben: Treppen nehmen, weiter parken, beim Telefonieren gehen.",
+          "Schritte mit Telefon oder Uhr tracken macht NEAT messbar. Langfristig verbrennen NEAT-aktive Menschen 300–500 kcal täglich mehr als sitzende bei gleicher Körpergröße."
+        ],
+        "points": [
+          { "icon": "🚶", "label": "+2.000 Schritte", "note": "Extra 80–120 kcal verbrannt" },
+          { "icon": "🧘", "label": "Mobility 15 Min.", "note": "Hüftbeuger, Hamstrings, Brustwirbelsäule" },
+          { "icon": "📱", "label": "Schritte tracken", "note": "Was gemessen wird, wird getan" },
+          { "icon": "🔑", "label": "NEAT zählt am meisten", "note": "15–30 % des täglichen Kalorienverbrauchs" }
+        ]
+      },
+      {
+        "type": "Kraft C",
+        "detail": "Liegestütz, Schulterblatt-Squeeze, Gesäßbrücke, Bird-Dog",
+        "details": [
+          "Kraft C führt den Schulterblatt-Squeeze ein — eine korrigierende Übung, die der nach vorn gerundeten Sitzhaltung entgegenwirkt und dem Schultergürtel beim Drücken und Rudern richtig zu funktionieren hilft.",
+          "Die Gesäßbrücke dient hier sowohl als Kraftübung als auch als aktive Dehnung der Hüftbeuger, die durch Sitzen verkürzt werden. Fokus: Gesäß oben fest anspannen.",
+          "3 Sätze × 12 Wdh. Kürzere Pause als Mo/Mi (40 s), um die Herzfrequenz leicht zu erhöhen und den Kalorienverbrauch zu steigern ohne die Technikqualität zu opfern."
+        ],
+        "points": [
+          { "icon": "🦅", "label": "Schulterblatt-Squeeze", "note": "Korrigiert Büroarbeiter-Haltung" },
+          { "icon": "🍑", "label": "Gesäßbrücke fest", "note": "Volle Hüftstreckung — nicht hetzen" },
+          { "icon": "🔄", "label": "3 Sätze × 12 Wdh.", "note": "Pause 40 s — etwas schnelleres Tempo" },
+          { "icon": "🧠", "label": "Bird-Dog Kontrolle", "note": "Gegenarm + Bein — eben bleiben" }
+        ]
+      },
+      {
+        "type": "Langes Cardio",
+        "detail": "Zügiges Gehen/Radfahren 35–45' moderate Herzfrequenz",
+        "details": [
+          "Samstags längere Zone-2-Session ist das wöchentliche 'Long Slow Distance' — ein Cardio-Konzept für anhaltende, moderate Belastung, die das aerobe System trainiert und erhebliche Kalorien verbrennt.",
+          "Bei 35–45 Minuten verbrennt diese Session 250–350 kcal. Kombiniert mit einem täglichen Ernährungsdefizit von 200–300 kcal ergibt das ein wöchentliches Defizit von ca. 3.000 kcal — etwa 0,4 kg Fett pro Woche.",
+          "Auf den Körper hören: Bei müden Beinen vom Freitagstraining langsam gehen. Bei frischem Gefühl das Tempo leicht erhöhen. Erholung ist genauso wichtig wie Anstrengung."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "250–350 kcal verbrannt", "note": "Die größte Kalorieneinheit der Woche" },
+          { "icon": "⏱️", "label": "35–45 Minuten", "note": "Zone 2 — zügiges Gehen oder leichtes Radfahren" },
+          { "icon": "👂", "label": "Auf Körper hören", "note": "Müde von Freitag? Heute leicht nehmen" },
+          { "icon": "📅", "label": "Wöchentliches Defizit", "note": "~0,4 kg Fettabbau/Woche kombiniert" }
+        ]
+      },
+      {
+        "type": "Erholung",
+        "detail": "Leichter Spaziergang 20' + Gewicht & Taillenmaße überprüfen",
+        "details": [
+          "Sonntag ist aktive Erholung und Datentag. Ein 20-minütiger leichter Spaziergang im Gesprächstempo fördert die Laktatclearance, reduziert Muskelkater und hält die Bewegungsgewohnheit aufrecht.",
+          "Nach dem Spaziergang wöchentliches Gewicht und Taillenumfang messen. Immer zur gleichen Zeit (idealerweise morgens, nach dem Bad). Der 4-Wochen-Trend ist wichtiger als ein einzelner Wert.",
+          "Falls die Waage gestiegen ist: nicht in Panik geraten — Wasserretention durch erhöhtes Training und Kohlenhydrate ist normal. Den 4-Wochen-Durchschnitt verfolgen. Taillenumfang ist oft der zuverlässigere Fettabbau-Indikator."
+        ],
+        "points": [
+          { "icon": "🚶", "label": "Leichter Spaziergang 20 Min.", "note": "Gesprächstempo — kein Effort" },
+          { "icon": "📏", "label": "Taillenumfang", "note": "Bester Fettabbau-Indikator — wöchentlich" },
+          { "icon": "⚖️", "label": "Morgen-Wiegen", "note": "Gleiche Zeit, gleiche Bedingungen jeden Sonntag" },
+          { "icon": "📊", "label": "4-Wochen-Trend", "note": "Eine Zahl bedeutet nichts — Trend zählt" }
+        ]
+      }
     ],
     "muscle": [
-      { "type": "Oberkörper A",      "detail": "Bankdrücken/Liegestütz, Rudern, OHP, Lat Pulldown, Curl" },
-      { "type": "Unterkörper A",     "detail": "Squat, Romanian Deadlift, Beinpresse, Wade, Plank" },
-      { "type": "Leichtes Cardio",   "detail": "Gehen 25–30' + Ganzkörper-Dehnen" },
-      { "type": "Oberkörper B",      "detail": "Schrägbankdrücken, Klimmzug/Lat, Seitheben, Trizeps" },
-      { "type": "Unterkörper B",     "detail": "Kreuzheben, Hip Thrust, Ausfallschrittgehen, Core" },
-      { "type": "Leichter Ganzkörper","detail": "Squat, Liegestütz, Rudern, Plank — RPE 6, Technikfokus" },
-      { "type": "Aktive Erholung",   "detail": "Mobility 10–15' + vollständige Ruhe bei Erschöpfung" }
+      {
+        "type": "Oberkörper A",
+        "detail": "Bankdrücken/Liegestütz, Rudern, OHP, Lat Pulldown, Curl",
+        "details": [
+          "Oberkörper A ist eine horizontale Druck- und Zug-Session: Bankdrücken oder Liegestütz (horizontales Drücken), Rudern (horizontales Ziehen), Schulterdrücken (vertikales Drücken), Lat Pulldown (vertikales Ziehen) und Bizeps-Curl (Arm-Isolation).",
+          "Druck und Zug immer in derselben Session kombinieren für Schulterbalance. Nur drücken ohne ziehen verkürzt langfristig den vorderen Deltamuskel und den kleinen Brustmuskel und verursacht Schulterimpingement.",
+          "3 Sätze × 8–10 Wdh. für Compound-Bewegungen (Bankdrücken, Rudern, OHP, Lat Pulldown), 3×12 für den Curl. Pause 90 Sekunden zwischen Compound-Sätzen."
+        ],
+        "points": [
+          { "icon": "⚖️", "label": "Druck-Zug-Balance", "note": "Jedes Drücken braucht gleiches Ziehen" },
+          { "icon": "🏋️", "label": "3 Sätze × 8–10 Wdh.", "note": "90 s Pause bei Compound-Übungen" },
+          { "icon": "💪", "label": "Compound-Priorität", "note": "Bankdrücken, Rudern, OHP, Lat-Pull zuerst" },
+          { "icon": "🎯", "label": "RPE 7–8 / 10", "note": "2 Wdh. im Tank gelassen" }
+        ]
+      },
+      {
+        "type": "Unterkörper A",
+        "detail": "Squat, Romanian Deadlift, Beinpresse, Wade, Plank",
+        "details": [
+          "Unterkörper A ist quadrizepsdominant: Kniebeuge (primärer Quadrizeps-Treiber), Romanian Deadlift (Hüftgelenk und Hamstring), Beinpresse (Quadrizeps-Volumen), Wadenerhebung (Unterschenkel) und Plank (Core-Stabilität zwischen Sätzen).",
+          "Kniebeuge und RDL ergänzen sich — die Kniebeuge belastet das Kniegelenk und den Quadrizeps, während das RDL das Hüftgelenk und den Hamstring belastet. Zusammen liefern sie vollständige Unterkörperentwicklung ohne Ungleichgewichte.",
+          "4 Sätze × 6–8 Wdh. Kniebeugen bei RPE 7 beginnen. RDL mit 3×8–10 hinzufügen. Mit Beinpresse 3×12 und Waden 3×15 abschließen. Plank 30–45 s zwischen Sätzen in den Pausen einbauen."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Kniebeuge + RDL Kombo", "note": "Quad + Hamstring — vollständiger Unterkörper" },
+          { "icon": "🏋️", "label": "4 Sätze × 6–8 Wdh. Squat", "note": "RPE 7 — 2–3 Wdh. im Tank" },
+          { "icon": "🔄", "label": "Beinpresse für Volumen", "note": "3×12 nach Compound-Arbeit" },
+          { "icon": "⚖️", "label": "Wade + Plank", "note": "Oft ignoriert — trotzdem trainieren" }
+        ]
+      },
+      {
+        "type": "Leichtes Cardio",
+        "detail": "Gehen 25–30' + Ganzkörper-Dehnen",
+        "details": [
+          "Mittwoch ist aktive Erholung zwischen zwei schweren Unterkörper-Tagen. Ein 25–30-minütiger Spaziergang bei Zone 1–2-Intensität spült Stoffwechselabfallprodukte aus Montag und Dienstag und reduziert den nächsten-Tag-Muskelkater.",
+          "Anschließend eine 10-minütige Ganzkörper-Dehnsequenz, mit Fokus auf Hüftbeuger, Hamstrings sowie Brust und Schultern, die in den ersten zwei Tagen beansprucht wurden.",
+          "Diese Session dient auch als mentaler Reset in der Wochenmitte. Die Kombination aus leichter Bewegung und Dehnen reduziert nachweislich die Trainingsermüdung und verbessert die Schlafqualität."
+        ],
+        "points": [
+          { "icon": "🚶", "label": "Zone 1–2 Spaziergang", "note": "Spült Abfallprodukte, reduziert Kater" },
+          { "icon": "🧘", "label": "Ganzkörper-Dehnen", "note": "Hüften, Hamstrings, Brust, Schultern" },
+          { "icon": "😌", "label": "Mentaler Reset", "note": "Wochenmitte-Entlastung — wichtig" },
+          { "icon": "💤", "label": "Verbessert Schlaf", "note": "Leichte Bewegung + Dehnen = bessere Erholung" }
+        ]
+      },
+      {
+        "type": "Oberkörper B",
+        "detail": "Schrägbankdrücken, Klimmzug/Lat, Seitheben, Trizeps",
+        "details": [
+          "Oberkörper B verlagert den Schwerpunkt auf den oberen Brustmuskel (Schrägbankdrücken), den oberen Rücken und die Lats (Klimmzug oder Lat Pulldown) sowie Schulter- und Arm-Accessories (Seitheben, Trizeps-Streckung).",
+          "Schrägbankdrücken bei 30–45 Grad zielt auf den Schlüsselbein-Kopf des Brustmuskels, der oft hinter dem Brustbein-Kopf beim flachen Bankdrücken zurückbleibt. Das schafft eine vollere, vollständigere Brust.",
+          "Seitheben sind die primäre Übung für Schulterbreite. Ein Gewicht wählen, das eine volle 3-sekündige negative Phase kontrollieren lässt. Schwingen und Schwung nutzen verfehlt den Zweck."
+        ],
+        "points": [
+          { "icon": "📐", "label": "Schräg 30–45°", "note": "Obere Brust — oft untertrainiert" },
+          { "icon": "🏋️", "label": "Klimmzug-Priorität", "note": "Oder Lat Pulldown wenn noch nicht so weit" },
+          { "icon": "💪", "label": "Seitheben langsam", "note": "3 Sekunden negativ — kein Schwingen" },
+          { "icon": "🎯", "label": "RPE 7–8", "note": "2 saubere Wdh. im Tank" }
+        ]
+      },
+      {
+        "type": "Unterkörper B",
+        "detail": "Kreuzheben, Hip Thrust, Ausfallschrittgehen, Core",
+        "details": [
+          "Unterkörper B ist hüftdominant und zielt auf Gesäß, Hamstrings und unteren Rücken: Kreuzheben (vollständige hintere Kette), Hip Thrust (direkte Gesäßisolation), Ausfallschritte (Bein und Balance) und Core-Abschluss.",
+          "Das konventionelle Kreuzheben ist der König der Hinterketten-Übungen. Schlüssel-Cues: Stange körpernah, Hüfte zurückschieben, Brust hoch, Boden wegdrücken — nicht die Stange hochziehen. Es ist ein Drücken, kein Ziehen.",
+          "Hip Thrust mit Langhantel oder Kurzhantel lädt das Gesäß direkt durch volle Hüftstreckung — etwas, das Kniebeugen und Kreuzheben nicht vollständig erreichen können. 3×10–12 mit 2-sekündiger Anspannung oben."
+        ],
+        "points": [
+          { "icon": "🏆", "label": "Kreuzheben ist König", "note": "Boden wegdrücken — nicht Stange reißen" },
+          { "icon": "🍑", "label": "Hip Thrust Isolation", "note": "2 Sekunden Anspannung oben — Gesäß spüren" },
+          { "icon": "⚖️", "label": "Ausfallschritte gehen", "note": "Unilateral — deckt Ungleichgewichte auf" },
+          { "icon": "🧠", "label": "Core-Abschluss", "note": "Plank oder Dead Bug — 2–3 Sätze" }
+        ]
+      },
+      {
+        "type": "Leichter Ganzkörper",
+        "detail": "Squat, Liegestütz, Rudern, Plank — RPE 6, Technikfokus",
+        "details": [
+          "Samstags leichte Ganzkörper-Session hält Bewegungsmuster bei niedriger Intensität (RPE 6 — 4 Wdh. im Tank) aufrecht. Das ist keine Session zum Muskelaufbau — sondern um aktiv zu bleiben und die Technik zu festigen.",
+          "Diese Session nutzen, um Schwachstellen der Technik aus der Woche zu bearbeiten. Jede Wiederholung in der negativen Phase auf 3 Sekunden verlangsamen. Sich wenn möglich filmen.",
+          "Kein Gewicht hinzufügen. Das Ziel ist Bewegungsqualität und aktive Erholung. In maximal 25–30 Minuten fertig werden."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "Nur RPE 6", "note": "4 Wdh. im Tank — bewusst leicht" },
+          { "icon": "📹", "label": "Technik filmen", "note": "Samstag ist der ideale Technik-Check-Tag" },
+          { "icon": "⏱️", "label": "Max. 25–30 Min.", "note": "Früh aufhören — keine volle Session draus machen" },
+          { "icon": "🔄", "label": "Technikfokus", "note": "Korrigieren was diese Woche falsch war" }
+        ]
+      },
+      {
+        "type": "Aktive Erholung",
+        "detail": "Mobility 10–15' + vollständige Ruhe bei Erschöpfung",
+        "details": [
+          "Sonntag ist echte Erholung. Bei gutem Erholungsgefühl 10–15 Minuten Mobility (Hüftkreise, Schulterkreise, Taubenpose, Hamstring-Dehnung) durchführen. Bei Müdigkeit vollständig ausruhen.",
+          "Übertraining ist real. Nach 5–6 Tagen strukturierten Trainings braucht der Körper 24–48 Stunden ohne nennenswerten Stress, um die Adaptationen der Woche zu festigen.",
+          "Sonntag nutzen, um die nächste Woche zu planen, für gute Erholungsernährung (Protein + Kohlenhydrate) zu sorgen und den Fortschrittsbericht zu überprüfen. Langfristiger Erfolg hängt von nachhaltigen Rhythmen ab, nicht von heroischen Wochenleistungen."
+        ],
+        "points": [
+          { "icon": "💤", "label": "Vollständige Ruhe OK", "note": "Müde heute = Körper baut auf" },
+          { "icon": "🧘", "label": "10–15 Min. Mobility", "note": "Wenn du dich gut fühlst — nicht wenn müde" },
+          { "icon": "🥩", "label": "Erholungsernährung", "note": "Protein + Kohlenhydrate heute wichtig" },
+          { "icon": "📅", "label": "Nächste Woche planen", "note": "Vorbereitete Athleten übertreffen reaktive" }
+        ]
+      }
     ],
     "endurance": [
-      { "type": "Cardio Z2",          "detail": "Gehen/Radfahren 30' Zone 2 + Core 5'" },
-      { "type": "Minimale Kraft",     "detail": "Squat, Liegestütz, Ruderband, Gesäßbrücke 3×10" },
-      { "type": "Intervalle",         "detail": "5' leicht + 5 Runden: 2' schnell + 2' leicht + 5' Cool-down" },
-      { "type": "Mobility",           "detail": "Nacken, Schultern, Rücken, Hüfte, Oberschenkelrückseite 15–20'" },
-      { "type": "Kraft + Balance",    "detail": "Ausfallschritt, RDL, Bird-Dog, Plank, Wadenerhebung" },
-      { "type": "Lange Ausdauer",     "detail": "45–60' Gehen/Radfahren Zone 2 moderates Tempo" },
-      { "type": "Erholung",           "detail": "Leichter Spaziergang 20–30' oder vollständige Ruhe bei Erschöpfung" }
+      {
+        "type": "Cardio Z2",
+        "detail": "Gehen/Radfahren 30' Zone 2 + Core 5'",
+        "details": [
+          "Montags Zone-2-Session ist das Fundament des Ausdauertrainings. Zone 2 (60–70 % max. HF) entwickelt die Mitochondriendichte in langsam zuckenden Muskelfasern — den Motor der aeroben Leistung.",
+          "Nach 30 Minuten Zone-2-Cardio 5 Minuten Core-Arbeit hinzufügen: Plank, Dead Bug oder Bird-Dog. Core-Kraft wird bei Ausdauersportarten unterschätzt — sie hält Lauf- und Radsport-Haltung bei Erschöpfung.",
+          "Sprechtest: kurze Sätze sprechen können, aber kein langes Gespräch führen. Herzfrequenzmessgerät oder RPE 5–6 funktioniert gleichermaßen gut."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Mitochondrien-Motor", "note": "Zone 2 = mehr Mitochondrien pro Zelle" },
+          { "icon": "❤️", "label": "60–70 % max. HF", "note": "Oder RPE 5–6: Gesprächsanstrengung" },
+          { "icon": "🧠", "label": "+5 Min. Core", "note": "Hält Form bei Erschöpfung im Rennen" },
+          { "icon": "📅", "label": "Kerneinheit", "note": "Das wichtigste Training der Woche" }
+        ]
+      },
+      {
+        "type": "Minimale Kraft",
+        "detail": "Squat, Liegestütz, Ruderband, Gesäßbrücke 3×10",
+        "details": [
+          "Dienstags minimale Krafteinheit dauert nur 20–25 Minuten und verhindert den Muskelverlust, der oft mit intensivem Cardio-Training einhergeht. Muskelverlust verlangsamt den Stoffwechsel und vermindert die Laufökonomie.",
+          "3 Sätze × 10 Wdh. von Kniebeuge, Liegestütz, Ruderband und Gesäßbrücke decken alle wichtigen Bewegungsmuster ab. Das sind Erhaltungssätze, keine Aufbausätze — moderates Gewicht, nicht bis zum Versagen.",
+          "Diese Session dient auch als aktive Erholung vom Montags-Cardio. Intensität niedrig (RPE 6), Pause 45–60 s zwischen Sätzen, mit 5 Minuten leichtem Dehnen abschließen."
+        ],
+        "points": [
+          { "icon": "💪", "label": "Muskelerhalt", "note": "Verhindert Muskelverlust bei hohem Cardio" },
+          { "icon": "🎯", "label": "Keine Aufbau-Session", "note": "RPE 6 — nur Erhaltung" },
+          { "icon": "⏱️", "label": "20–25 Minuten", "note": "3×10, Pause 45–60 s" },
+          { "icon": "🏃", "label": "Laufökonomie", "note": "Stärkere Muskeln = bessere Form bei km 8" }
+        ]
+      },
+      {
+        "type": "Intervalle",
+        "detail": "5' leicht + 5 Runden: 2' schnell + 2' leicht + 5' Cool-down",
+        "details": [
+          "Mittwochs Intervall-Session beschleunigt die aeroben Fitnesszuwächse. Nach 5 Minuten leichtem Aufwärmen 5 Runden mit 2 Minuten hoher Intensität (Zone 4–5, RPE 8) abwechselnd mit 2 Minuten leicht absolvieren.",
+          "Zone 4–5-Intervalle entwickeln die VO2max — die maximale Sauerstoffmenge, die der Körper bei Belastung nutzen kann. Eine höhere VO2max bedeutet schnellere nachhaltige Tempi auf allen Distanzen.",
+          "Mit 5 Minuten leichtem Tempo cool-down abschließen. Gesamtdauer: ca. 30 Minuten. Die wahrgenommene Anstrengung bei den harten Intervallen sollte 8–9/10 sein — wirklich unangenehm."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Zone 4–5 Effort", "note": "RPE 8–9: wirklich hart" },
+          { "icon": "📈", "label": "VO2max-Aufbau", "note": "Schnellster Weg zur Verbesserung der Ausdauerkapazität" },
+          { "icon": "🔄", "label": "5 Runden × 2+2 Min.", "note": "20 Min. gesamt Intervallarbeit" },
+          { "icon": "❄️", "label": "5 Min. Cool-down", "note": "Niemals abrupt nach hoher Intensität aufhören" }
+        ]
+      },
+      {
+        "type": "Mobility",
+        "detail": "Nacken, Schultern, Rücken, Hüfte, Oberschenkelrückseite 15–20'",
+        "details": [
+          "Donnerstag ist vollständige Ruhe vom Herz-Kreislauf-Training. Die 15–20-minütige Mobility-Session konzentriert sich auf die durch Ausdauertraining am meisten beanspruchten Bereiche: Hüftbeuger, IT-Band, Hamstrings und Brustwirbelsäule.",
+          "Ausdauersportler entwickeln oft Steifheit in den Hüftbeugern (durch Radfahren verkürzt) und Hamstrings (durch Laufen angespannt). Regelmäßige Mobility-Arbeit verhindert, dass diese Ungleichgewichte zu Verletzungen werden.",
+          "Empfohlene Abfolge: Nackenkreise 1 Min. → Brust-Öffner 1 Min. → Katze-Kuh 2 Min. → Hüftbeuger-Ausfallschritt-Dehnung 2 Min. je Seite → IT-Band Schaumrolle 2 Min. je Seite → sitzende Hamstring-Dehnung 2 Min. je Seite."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Rad-Problemstellen", "note": "Hüftbeuger und Brustwirbelsäule" },
+          { "icon": "🏃", "label": "Lauf-Problemstellen", "note": "Hamstrings und IT-Band" },
+          { "icon": "🌬️", "label": "In Spannung atmen", "note": "30–45 s Halten mit langsamen Ausatmen" },
+          { "icon": "🛡️", "label": "Verletzungsprävention", "note": "Flexibilitätslücken werden bei hohem Volumen Verletzungen" }
+        ]
+      },
+      {
+        "type": "Kraft + Balance",
+        "detail": "Ausfallschritt, RDL, Bird-Dog, Plank, Wadenerhebung",
+        "details": [
+          "Freitags Krafteinheit fügt Einbein-Übungen (Ausfallschritt, Romanian Deadlift) hinzu, die direkt auf Laufeffizienz übertragen. Einbein-Kraft verhindert kompensatorische Muster, die die meisten Laufverletzungen verursachen.",
+          "Bird-Dog und Plank erhalten die Core-Stabilität, die nötig ist, um die Form bei langen Anstrengungen zu halten. Forschung zeigt, dass Läufer mit starkem Core die Schrittmuster länger effizient halten.",
+          "Intensität niedrig-moderat (RPE 6–7) halten. Das ist eine Unterstützungs-Session für das Ausdauertraining, nicht der Star. 3×10 je Übung, Pause 45 Sekunden."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Einbein-Kraft", "note": "Verhindert kompensatorische Verletzungsmuster" },
+          { "icon": "🧠", "label": "Core für Ausdauer", "note": "Verzögert Formverlust bei km 8–10" },
+          { "icon": "🎯", "label": "Nur RPE 6–7", "note": "Unterstützungs-Session — nicht die Hauptveranstaltung" },
+          { "icon": "🦶", "label": "Wadenerhebung unverzichtbar", "note": "Waden tragen beim Laufen 6× Körpergewicht pro Schritt" }
+        ]
+      },
+      {
+        "type": "Lange Ausdauer",
+        "detail": "45–60' Gehen/Radfahren Zone 2 moderates Tempo",
+        "details": [
+          "Samstags lange Session ist der wöchentliche Anker des Ausdauertrainings. Von 30 Minuten am Montag auf 45–60 Minuten heute baut die aerobe Basis schrittweise auf ohne Übertraining.",
+          "Strikte Zone 2 einhalten: Wenn das Tempo natürlich leicht wirkt, dem Impuls widerstehen, härter zu drücken. Das Ziel ist Fettoxidations-Adaptation — die Fähigkeit, Fett effizient als Brennstoff zu nutzen und Glykogen bei langen Events zu schonen.",
+          "Bei Sessions über 45 Minuten Wasser mitbringen. Beim Radfahren ist eine leichte Kleinigkeit optional aber bei dieser Dauer nicht erforderlich. Auf gleichmäßigen, konsistenten Effort fokussieren."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "45–60 Minuten", "note": "Längste Session der Woche" },
+          { "icon": "🔥", "label": "Fettoxidation", "note": "Körper beibringen Fett zu verbrennen, Glykogen zu schonen" },
+          { "icon": "💧", "label": "Wasser mitnehmen", "note": "Alle 15 Min. trinken — nicht auf Durst warten" },
+          { "icon": "🐢", "label": "In Zone 2 bleiben", "note": "Impuls widerstehen härter zu drücken — dem Prozess vertrauen" }
+        ]
+      },
+      {
+        "type": "Erholung",
+        "detail": "Leichter Spaziergang 20–30' oder vollständige Ruhe bei Erschöpfung",
+        "details": [
+          "Sonntag ist Erholung. Die Entscheidung zwischen leichtem Spaziergang und vollständiger Ruhe sollte durch das Körpergefühl geleitet werden: leichte Müdigkeit = leichter Spaziergang; starke Müdigkeit oder Schmerzen = vollständige Ruhe. Niemals durch echte Erschöpfung kämpfen.",
+          "Ein 20–30-minütiger leichter Spaziergang bei Zone 1 (vollständig gesprächsfähig) fördert die Durchblutung ohne Trainingsbelastung. Dies wird oft 'aktive Erholung' genannt und ist für die meisten Athleten besser als vollständige Inaktivität.",
+          "Sonntag gut auffüllen mit Qualitätsernährung: Protein + Kohlenhydrate zur Glykogen-Auffüllung und Muskelreparatur. Gute Sonntagsernährung verbessert direkt Montags Leistung."
+        ],
+        "points": [
+          { "icon": "👂", "label": "Auf Körper hören", "note": "Starke Müdigkeit = vollständige Ruhe" },
+          { "icon": "🚶", "label": "Nur Zone 1", "note": "Vollständig gesprächsfähig — null Effort" },
+          { "icon": "🍽️", "label": "Erholungsernährung", "note": "Protein + Kohlenhydrate heute = besserer Montag" },
+          { "icon": "💤", "label": "8+ h Schlaf heute Nacht", "note": "Wo die Wochenzuwächse konsolidiert werden" }
+        ]
+      }
     ],
     "advanced": [
-      { "type": "Rad + Oberkörper + Schwimmen","detail": "Radfahren 40' Zone 2–3 + Gym Oberkörper 30' + Schwimmen 50'" },
-      { "type": "Unterkörper + Schwimmen",     "detail": "Gym Unterkörper 45' (Squat, RDL, Beinpresse) + Schwimmen 50'" },
-      { "type": "Rad + Drücken + Schwimmen",   "detail": "Radfahren 40' + Gym Drücken 30' + Schwimmen 50'" },
-      { "type": "Ziehen + Schwimmen",          "detail": "Gym Ziehen 45' (Kreuzheben, Rudern, Face Pull) + Schwimmen 50'" },
-      { "type": "Rad + Ganzkörper + Schwimmen","detail": "Radfahren 40' + Gym Ganzkörper 30' + Schwimmen 50'" },
-      { "type": "Lange Ausfahrt",              "detail": "90–120' Zone 2 + Mobility 20'" },
-      { "type": "Erholungsfahrt",              "detail": "Leichtes Radfahren 60' Zone 1–2 — aktive Erholung" }
+      {
+        "type": "Rad + Oberkörper + Schwimmen",
+        "detail": "Radfahren 40' Zone 2–3 + Gym Oberkörper 30' + Schwimmen 50'",
+        "details": [
+          "Montag ist der schwerste tri-modale Tag: Radfahren baut aerobe Basis, Oberkörper-Gym erhält Kraft und Schwimmen entwickelt Technik und Schulterausdauer. Gesamtes Trainingsvolumen: ~2 Stunden.",
+          "Zuerst Radfahren bei frischen Beinen für qualitativ hochwertige Zone 2–3-Leistung. Gym Oberkörper bei moderater Intensität (RPE 7) — Liegestütz/Bankdrücken, Rudern, OHP, Lat Pulldown. Schwimmen zuletzt als aerober Abschluss.",
+          "Reihenfolge ist wichtig: Radfahren vor dem Gym um die Beine nicht für Unterkörper-Gym-Tage später in der Woche vorauszuermüden. Gesamter Kalorienverbrauch des Tages: ca. 700–900 kcal."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Radfahren zuerst", "note": "Frische Beine für Zone 2–3 Qualitätsleistung" },
+          { "icon": "🏋️", "label": "Gym Oberkörper moderat", "note": "RPE 7 — nicht bis zum Versagen" },
+          { "icon": "🏊", "label": "Schwimmen als Abschluss", "note": "Technik + Aerob — kein Sprinten" },
+          { "icon": "🔥", "label": "~700–900 kcal", "note": "Gut tanken: Kohlenhydrate davor + Protein danach" }
+        ]
+      },
+      {
+        "type": "Unterkörper + Schwimmen",
+        "detail": "Gym Unterkörper 45' (Squat, RDL, Beinpresse) + Schwimmen 50'",
+        "details": [
+          "Dienstag fokussiert auf Unterkörper-Kraft + Schwimmen. Unterkörper-Gym bei voller Intensität (RPE 8), da kein Radfahren heute. Kniebeuge 4×6, RDL 3×8, Beinpresse 3×10 als Haupt-Compound-Übungen.",
+          "Schwimmen nach dem Unterkörper-Gym nutzt Oberkörper und Herz-Kreislauf-System bei bereits vorersch öpften Beinen. Das trainiert Schwimmtechnik unter Erschöpfung — wertvolle Renntag-Simulation.",
+          "1.500–2.000 m Gesamtschwimmvolumen anstreben. Fokus auf Schlagtechnik, nicht Geschwindigkeit. Pull-Buoy-Sätze sind nützlich um den Oberkörper zu isolieren wenn Beine sehr erschöpft sind."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Voller Bein-Effort", "note": "RPE 8 — heute kein Radfahren, also Beine pushen" },
+          { "icon": "🏊", "label": "Schwimmen unter Erschöpfung", "note": "Trainiert Renntag-Resilienz" },
+          { "icon": "🎯", "label": "1.500–2.000 m Schwimmen", "note": "Effizienz über Geschwindigkeit" },
+          { "icon": "🦾", "label": "Pull-Buoy-Option", "note": "Oberkörper isolieren wenn Beine erschöpft" }
+        ]
+      },
+      {
+        "type": "Rad + Drücken + Schwimmen",
+        "detail": "Radfahren 40' + Gym Drücken 30' + Schwimmen 50'",
+        "details": [
+          "Mittwoch spiegelt Montag, aber mit einer Drück-fokussierten Gym-Session (Bankdrücken/Liegestütz, OHP, Dips, Trizeps) statt vollem Oberkörper. Das erlaubt höhere Spezifität und etwas mehr Volumen bei Drückmuskeln.",
+          "Radfahren bei Zone 2–3 (40 Minuten) hält aerobe Volumen in der Wochenmitte. Gym-Drück-Session bei RPE 7 — nicht maximal, da das Ziel Trainingsvolumen-Akkumulation ist, nicht Spitzenleistung.",
+          "Das Schwimmen komplettiert den tri-modalen Tag. Fokus auf Kraulschwimm-Technik: Handeintritt auf Schulterlinie, volle Armstreckung, Hüftrotation. Schlagqualität schlägt rohe Distanz in diesem Stadium."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Zone 2–3 Radfahren", "note": "Aerobe Volumen in Wochenmitte erhalten" },
+          { "icon": "💪", "label": "Drück-Gym-Fokus", "note": "Bankdrücken, OHP, Dips, Trizeps" },
+          { "icon": "🏊", "label": "Technik-Schwimmen", "note": "Handeintritt, Hüftrotation, volle Streckung" },
+          { "icon": "🎯", "label": "Gym RPE 7", "note": "Volumen-Tag — kein maximaler Effort" }
+        ]
+      },
+      {
+        "type": "Ziehen + Schwimmen",
+        "detail": "Gym Ziehen 45' (Kreuzheben, Rudern, Face Pull) + Schwimmen 50'",
+        "details": [
+          "Donnerstag ist Zieh-fokussierte Kraft + Schwimmen. Kreuzheben (4×6, RPE 8) als primäre Compound-Übung, gefolgt von horizontalem Rudern (3×10) und Face Pull (3×15 für Schultergesundheit).",
+          "Der Face Pull ist für fortgeschrittene Athleten mit hohem Drückvolumen unverzichtbar: er trainiert den hinteren Deltamuskel und die Außenrotatoren und verhindert das Schulterimpingement, das viele Hochvolumen-Trainer außer Gefecht setzt.",
+          "Schwimmen nach der Zugeinheit setzt das Rudermuster im Wasser fort und trainiert Lats, Rhomboide und Bizeps durch eine andere Bewegungsebene. Gesamtvolumen: 1.500–2.000 m."
+        ],
+        "points": [
+          { "icon": "🏆", "label": "Kreuzheben 4×6", "note": "RPE 8 — primärer Kraftindikator" },
+          { "icon": "🦾", "label": "Face Pull unverzichtbar", "note": "Verhindert Schulterimpingement bei hohem Volumen" },
+          { "icon": "🏊", "label": "Lats im Wasser", "note": "Rudern → Schwimmen: gleiche Muskeln, andere Ebene" },
+          { "icon": "⚖️", "label": "Druck-Zug-Balance", "note": "Wochengesamt: gleiches Druck- und Zugvolumen" }
+        ]
+      },
+      {
+        "type": "Rad + Ganzkörper + Schwimmen",
+        "detail": "Radfahren 40' + Gym Ganzkörper 30' + Schwimmen 50'",
+        "details": [
+          "Freitags Session ist vollständig tri-modal: Radfahren + Ganzkörper-Gym + Schwimmen. Die Ganzkörper-Gym-Session (30 Minuten) bei niedriger Intensität (RPE 6) festigt Bewegungsmuster ohne signifikante Erschöpfung vor Samstags langer Ausfahrt.",
+          "Ganzkörper-Gym bei RPE 6 bedeutet: Kniebeuge, Liegestütz, Rudern, Plank — alles bei ca. 60 % maximaler Anstrengung. Das ist Techniker-Wartung, kein Kraftaufbau. Schwachstellen aus der Woche verfeinern.",
+          "Freitags Schwimmen sollte entspannt sein (Zone 1–2). Ziel ist aerob aktiv bleiben, das Wassergefühl erhalten und sich psychologisch auf Samstags lange Anstrengung vorbereiten."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Zone 2 Radfahren", "note": "Aktive Vorbereitung auf Samstags lange Ausfahrt" },
+          { "icon": "🎯", "label": "Gym nur RPE 6", "note": "Technik, keine Kraft heute" },
+          { "icon": "🏊", "label": "Zone 1–2 Schwimmen", "note": "Locker bleiben, Energie erhalten" },
+          { "icon": "💤", "label": "Schlaf-Priorität heute Nacht", "note": "8+ h vor Samstags langer Anstrengung" }
+        ]
+      },
+      {
+        "type": "Lange Ausfahrt",
+        "detail": "90–120' Zone 2 + Mobility 20'",
+        "details": [
+          "Samstags lange Ausfahrt ist der wöchentliche Spitzentrainingsreiz. 90–120 Minuten in Zone 2 (65–70 % max. HF) baut maximale aerobe Basis, Fettoxidationskapazität und mentale Ausdauer.",
+          "Während der Ausfahrt tanken: bei Sessions über 75 Minuten alle 30–40 Minuten 30–40 g schnelle Kohlenhydrate konsumieren (Banane, Energieriegel, Reiskuchen). Hydration: 500–750 ml pro Stunde.",
+          "Nach der Ausfahrt 20 Minuten Mobility: Hüftbeuger (durch Radfahrposition verkürzt), Brustwirbelsäule (über Lenker gebeugt) und Hamstrings. Diese Erholungsarbeit verhindert kumulierte Steifigkeit über den Trainingszyklus."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "90–120 Min. Zone 2", "note": "Wöchentlicher Spitzenreiz für Ausdauer" },
+          { "icon": "🍌", "label": "Alle 30–40 Min. tanken", "note": "30–40 g Kohlenhydrate nach 75-Min.-Marke" },
+          { "icon": "💧", "label": "750 ml/Stunde", "note": "Hydration ist Leistung, kein Komfort" },
+          { "icon": "🧘", "label": "20 Min. Mobility danach", "note": "Verhindert kumulierte Steifigkeit — nicht optional" }
+        ]
+      },
+      {
+        "type": "Erholungsfahrt",
+        "detail": "Leichtes Radfahren 60' Zone 1–2 — aktive Erholung",
+        "details": [
+          "Sonntags Erholungsfahrt ist eine der wichtigsten Sessions der Woche. Zone 1–2 Radfahren (55–65 % max. HF) spült Laktat aus Samstags langer Anstrengung, reduziert Muskelkater und erhält Trainingsfrequenz ohne Belastung.",
+          "Das ist die Session, bei der Athleten die meisten Fehler machen: zu hart fahren weil sie sich nach Samstags Erholung gut fühlen. Zone 1–2 bedeutet: bequem ein Buch lesen können beim Treten.",
+          "Nach der Fahrt Ernährung (Protein + komplexe Kohlenhydrate), Hydration und Schlafvorbereitung priorisieren. Die Adaptationen einer Woche Training werden in Sonntagnacht konsolidiert."
+        ],
+        "points": [
+          { "icon": "🚴", "label": "Nur Zone 1–2", "note": "Wenn du außer Atem bist — langsamer werden" },
+          { "icon": "♻️", "label": "Laktat spülen", "note": "Reinigt Samstags metabolische Abfälle" },
+          { "icon": "🍽️", "label": "Heute gut tanken", "note": "Protein + Kohlenhydrate → Sonntagnacht Adaptation" },
+          { "icon": "💤", "label": "8+ h Schlaf heute Nacht", "note": "Wo die Wochenzuwächse konsolidiert werden" }
+        ]
+      }
     ]
   },
   "ui": {
@@ -162,6 +750,28 @@
     "reward_note": "Sich selbst belohnen wenn ein Meilenstein erreicht ist",
     "exercise_link_label": "Sport & Training",
     "nutrition_link_label": "Ernährung & Mahlzeitenpläne",
-    "tools_link_label": "Werkzeuge & Ressourcen"
+    "tools_link_label": "Werkzeuge & Ressourcen",
+    "link_movements": "Bewegungsmuster",
+    "link_lifestyle": "Gesunder Lebensstil",
+    "link_recovery": "Aktive Erholung",
+    "link_mind": "Ruhiger Geist",
+    "link_framework": "Tagesrahmen",
+    "link_nutrition_short": "Ernährung"
+  },
+  "hero": {
+    "title_line1": "Finde deinen",
+    "title_line2": "Idealen Plan",
+    "subtitle": "6 Ziele · 24 Wochen · Jedes Programm basiert auf einem Prinzip: erst die Technik perfektionieren, dann das Volumen steigern, dann nach Fortschritt individualisieren.",
+    "stats": {
+      "goals": "Ziele",
+      "weeks": "Beispiel-Wochen",
+      "schedules": "Plantypen",
+      "min_day": "Min./Tag"
+    },
+    "scroll_hint": "Ziel auswählen",
+    "step1_heading": "Was möchtest du erreichen?"
+  },
+  "days": {
+    "T2": "MO", "T3": "DI", "T4": "MI", "T5": "DO", "T6": "FR", "T7": "SA", "CN": "SO"
   }
 }

@@ -1153,7 +1153,8 @@
     "next": "Weiter →",
     "apply_title": "Praktische Anwendung",
     "see_detail": "Details ansehen →",
-    "practice_title": "Übungsdetails"
+    "practice_title": "Übungsdetails",
+    "see_detail_label": "Details ansehen"
   },
   "ui": {
     "show_detail": "▼ Details",

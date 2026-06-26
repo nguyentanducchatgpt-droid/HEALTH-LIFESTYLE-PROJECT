@@ -373,6 +373,519 @@
         "previewItems": ["Week 4 test", "Week 8 test", "Week 12 test", "Radar chart", "6 personal goals", "A/B/C/D score", "Coach notes"],
         "cta": "Track progress"
       }
+    ],
+    "principles_full": [
+      {
+        "keyFact": "6 fundamental movement patterns (Squat, Hinge, Push, Pull, Carry, Core) cover 95% of all fitness exercises needed for a lifetime.",
+        "detail": "Poor technique doesn't just cause injury — it wastes every session. Learning correctly from the start helps the brain record the right motor pattern, and the body executes it more efficiently over time. The human body is designed to perform 6 fundamental movement patterns. Mastering these 6 is enough to train for life — no complex equipment or fancy exercises needed.",
+        "details": [
+          "Poor technique creates 'bad motor patterns' — the brain memorizes incorrect movement and automates it. Correcting later is much harder than learning correctly from the start.",
+          "6 fundamental movement patterns: Squat (sitting down), Hip Hinge (hip fold), Push (pressing), Pull (rowing), Carry (carrying), Core (stabilizing). Every complex exercise is a variation of these 6.",
+          "Correct technique with light weight is more effective than poor technique with heavy weight. The principle of 'progressive overload' is only safe when form is solid.",
+          "Self-recording video or a mirror is the most effective free tool for checking technique. Every 2 weeks, record 1 fundamental exercise and self-assess.",
+          "No gym or equipment needed: just 2 square meters of space, a mat, and bodyweight are enough to learn all 6 movement patterns correctly."
+        ],
+        "points": [
+          { "icon": "🏋️", "label": "Squat & Hinge", "note": "Foundation of lower-body strength" },
+          { "icon": "💪", "label": "Push & Pull", "note": "Complete upper-body balance" },
+          { "icon": "🧱", "label": "Carry & Core", "note": "Spinal stability during movement" },
+          { "icon": "📹", "label": "Video self-check", "note": "Free visual feedback tool" }
+        ]
+      },
+      {
+        "keyFact": "3 sessions/week for 12 weeks = 36 sessions. 7 sessions/week for 3 weeks = 21 sessions then quit. The math supports consistency.",
+        "detail": "The brain builds 'neural superhighways' through regular repetition — not through high intensity. Neuromuscular adaptation occurs with appropriate stimulus, adequate rest, and stable repetition cycles. Training too much too soon elevates cortisol long-term, disrupts sleep, depletes willpower — and ultimately leads to quitting. Build consistency first, increase intensity later.",
+        "details": [
+          "The brain needs 21–66 days to automate a new behavior. During this phase, willpower is a finite resource — design habits to consume the least willpower possible.",
+          "The 'minimum effective dose' principle: the minimum training stimulus still creates adaptation. 20 minutes with good form beats 90 minutes with fatigued form.",
+          "Recovery is not wasted time — it's when the body actually adapts and gets stronger. Skipping recovery breaks the adaptation cycle.",
+          "Habit stacking: attach your workout to an existing habit (after morning coffee, before showering). Reduces the 'friction' of starting.",
+          "When you miss a day: apply the 'never miss twice' rule. Missing 1 day is an incident; missing 2 consecutive days starts a new habit (the habit of not training)."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "21–66 days", "note": "Time for the brain to automate a habit" },
+          { "icon": "📅", "label": "3 sessions/week", "note": "Optimal frequency for beginners" },
+          { "icon": "😴", "label": "Adequate recovery", "note": "Body adapts during rest, not training" },
+          { "icon": "🔗", "label": "Habit Stacking", "note": "Attach training to existing habits" }
+        ]
+      },
+      {
+        "keyFact": "Just 4 simple metrics: reps increased, plank time, waist circumference, and energy levels. No complex equipment needed.",
+        "detail": "Fitness progress happens slowly and non-linearly — without clear feedback, the brain can't distinguish 'making progress' from 'standing still'. Measurement creates a clear feedback loop: you know what to adjust, and more importantly, you see that you're actually progressing even if slowly.",
+        "details": [
+          "4 types of metrics to track: (1) Strength — reps/weight increase; (2) Endurance — plank time, step count; (3) Body composition — waist/hip measurement; (4) Function — energy levels, sleep quality.",
+          "4-week test cycle: not arbitrary — 4 weeks is enough to see clear adaptation without losing direction.",
+          "Record results with whatever tool works for you: phone notes, spreadsheet, handwritten journal. What matters is RECORDING, not the tool.",
+          "Compare with yourself last week, not with others. 5% improvement every 4 weeks after 1 year = 80% improvement from baseline.",
+          "When results don't change after 4 weeks: not failure — it's a signal to adjust (add load, change exercises, improve sleep/nutrition)."
+        ],
+        "points": [
+          { "icon": "💪", "label": "Strength", "note": "Reps & weight increase over time" },
+          { "icon": "📏", "label": "Body composition", "note": "Waist, hips — more meaningful than scale weight" },
+          { "icon": "⚡", "label": "Energy", "note": "The most important functional metric" },
+          { "icon": "🔄", "label": "4-week cycle", "note": "Review & adjust on a regular schedule" }
+        ]
+      }
+    ],
+    "highlight_modals_full": [
+      {
+        "modalTitle": "HD Video Per Exercise — Why Watching Correctly Matters More Than Reading",
+        "keyFact": "Learning movement technique via video activates the brain's mirror neurons — the body begins learning the movement pattern even before practice. Watching from the correct angles reduces technique learning time by 40%.",
+        "detail": "Training technique cannot be learned from text alone. HD video from multiple angles allows the brain to analyze 3D movement — something 2D images or text descriptions simply cannot convey.",
+        "details": [
+          "Mirror neurons: When you watch someone else perform a movement, the same motor-control brain regions in your own brain activate — this is the mechanism for learning movement through observation.",
+          "Camera angle matters: The side (sagittal) view shows squat depth and back position. The front (frontal) view shows bilateral symmetry. The rear view shows spinal alignment. A video covering all 3 angles is best.",
+          "Movement cues: 'Sit between your feet' is more effective than 'bend knees 90°'. 'Push the floor down' is more effective than 'extend the knee'. Good cues activate the right muscles better than pure technical descriptions.",
+          "Viewing speed: Watching slow-motion at 0.5× speed helps you spot movement phases that the naked eye misses at full speed — especially important for deadlifts and overhead press.",
+          "Level comparison: Watching the same exercise at beginner, intermediate and advanced levels side by side helps the brain build a visual roadmap of progress — knowing where you are and what the destination looks like.",
+          "Watch first, then practice: Motor Learning research shows watching video 2–3 times before practicing improves first-session technique by 28% compared to those who only read descriptions."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Mirror neurons", "note": "Brain learns technique while watching, before practice" },
+          { "icon": "📐", "label": "3 camera angles", "note": "Sagittal · Frontal · Posterior — none missing" },
+          { "icon": "⏪", "label": "Slow-motion 0.5×", "note": "Spot movement phases missed at full speed" },
+          { "icon": "📈", "label": "+28% technique", "note": "Watching video before training beats reading descriptions" }
+        ]
+      },
+      {
+        "modalTitle": "3 Levels Per Exercise — Progress That Never Stalls",
+        "keyFact": "Progressive Overload principle: the body only keeps developing when stimulus gradually increases over time. 3 levels per exercise create a clear progression path for at least 6–18 months.",
+        "detail": "Most people quit training not because they're lazy — but because they hit a plateau and don't know what the next step is. 3 clear levels per exercise solve this: there's always something to aim for.",
+        "details": [
+          "Level 1 — Basic (Beginner): Full range of motion with support or low load. Goal is learning the correct movement pattern, not volume. Example: Goblet squat with a light dumbbell.",
+          "Level 2 — Intermediate: Same movement pattern but less support or increased load. Technique is stable, now focus on strength progression. Example: Barbell back squat.",
+          "Level 3 — Advanced: Added difficulty through unilateral (one leg/arm), special tempo, or extended range. Examples: Pistol squat, pause squat, tempo squat 4-0-1-0.",
+          "Level-up criteria: Not impulsive — based on specific criteria (10 reps × 3 sets with perfect technique at current level). Don't level up before meeting the criteria.",
+          "Time between levels: Beginners typically take 4–8 weeks per level. Intermediate takes 8–16 weeks. There's no 'too slow' — only 'right time' or 'not yet ready'.",
+          "When stuck at a level: Not from lack of effort — usually from insufficient volume (add 1–2 sets), insufficient protein, or poor sleep. Fix these 3 factors before worrying about technique."
+        ],
+        "points": [
+          { "icon": "🪜", "label": "6–18 month roadmap", "note": "3 levels = sufficient challenge for at least 1.5 years" },
+          { "icon": "✅", "label": "Level-up criteria", "note": "10 reps × 3 sets with perfect form = ready" },
+          { "icon": "⏱️", "label": "4–8 weeks per level", "note": "Normal for beginners — don't compare with others" },
+          { "icon": "🔄", "label": "Plateau = lack of volume", "note": "Add 1–2 sets before worrying about technique" }
+        ]
+      },
+      {
+        "modalTitle": "Science-Based Warm-Up — 5–8 Minutes You Can't Skip",
+        "keyFact": "Proper warm-up raises muscle temperature by 1–2°C, improves neuromuscular transmission, and reduces joint viscosity. Result: peak strength increases 15–20%, injury risk decreases 20–30%.",
+        "detail": "Warm-up isn't a ritual — it has specific physiological functions. Cold muscles contract less effectively, neural transmission is slower, and joints lack lubrication. 5–8 minutes of proper warm-up completely transforms session quality.",
+        "details": [
+          "Muscle temperature: Each 1°C temperature increase = 2–4% faster muscle contraction speed. 5 minutes of warm-up is enough to raise deep muscle temperature by 1–2°C — equivalent to a 4–8% increase in contraction speed and strength.",
+          "Synovial fluid: In the morning or after prolonged sitting, joint fluid is thick and scarce. Light movement during warm-up stimulates synovial fluid secretion, reducing friction and risk of cartilage damage.",
+          "Neural pre-activation: Warm-up activates motor neurons needed in the session. Starting with exercises similar to the training pattern (mobility squat before a squat session) is more effective than general jogging.",
+          "Dynamic > Static: Dynamic warm-up (leg swings, hip circles, arm circles) is better than static stretching before training. Static stretch before training can temporarily reduce peak strength by 5–10%.",
+          "Progressive intensity: Start light → gradually increase intensity. Don't start immediately with your heaviest exercises. Rule of thumb: 2–3 warm-up sets at 50–70% of working weight before main sets.",
+          "Psychological warm-up: Warm-up time is also when the brain 'switches mode' from work/daily life to the training session. Don't skip this psychological warm-up — it affects focus and motivation."
+        ],
+        "points": [
+          { "icon": "🌡️", "label": "+1–2°C muscle temp", "note": "= +4–8% contraction speed and strength" },
+          { "icon": "💧", "label": "Stimulates synovial fluid", "note": "Reduces friction, protects joint cartilage" },
+          { "icon": "⚡", "label": "Neural pre-activation", "note": "Activates the correct motor neurons you'll use" },
+          { "icon": "🚫", "label": "No static stretch before", "note": "Reduces peak strength by 5–10% if done before training" }
+        ]
+      },
+      {
+        "modalTitle": "4 Standard Time Blocks — Scientific Structure for Every Session",
+        "keyFact": "4 blocks serve 4 different physiological functions: Warm-Up (neural activation) → Main Workout (stimulus) → Cool-Down (recovery initiation) → Mind Reset (ANS regulation). Missing any block reduces overall effectiveness.",
+        "detail": "The 4-block structure isn't arbitrary — each block serves a phase in the physiological cycle of a training session. When 1 block is missing, the entire physiological chain is broken and overall effectiveness decreases even if the main workout volume stays the same.",
+        "details": [
+          "Block 1 — Warm-Up (5–10 min): Raises muscle temperature, activates neuromuscular systems, lubricates joints. Skipping = 15–20% reduction in peak strength and increased risk of sudden tendon strain.",
+          "Block 2 — Main Workout (10–150 min): The core of the session. Strength, cardio, or combined. This is the only block that can flex in duration — the others should stay consistent.",
+          "Block 3 — Cool-Down (5–10 min): Static stretch post-workout (not before) while muscles are warm helps increase range of motion and reduce DOMS. Hold each position ≥30 seconds — under 15 seconds has no effect.",
+          "Block 4 — Mind Reset (5 min): Adjusts the autonomic nervous system from sympathetic (fight/flight) to parasympathetic (rest/digest). Controlled breathing is the fastest way to achieve this.",
+          "Time ratios: For a 60-min session: Warm-Up 8' + Main 40' + Cool-Down 7' + Mind Reset 5'. For 20 min: 4' + 10' + 4' + 2'. The ratio flexes, the structure stays the same.",
+          "Common mistakes: Skipping warm-up because 'too busy', skipping cool-down because 'boring', skipping mind reset because 'not necessary'. The result is a session with only Block 2 — missing the 3 most important parts for sustainability."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "Warm-up non-negotiable", "note": "+15–20% peak strength when warmed up properly" },
+          { "icon": "⚡", "label": "Main Workout", "note": "The only block fully flexible in duration" },
+          { "icon": "🧘", "label": "Cool-down after (not before)", "note": "≥30 sec per position for real effect" },
+          { "icon": "🌬️", "label": "Mind Reset 5 min", "note": "Switch sympathetic → parasympathetic fastest" }
+        ]
+      },
+      {
+        "modalTitle": "8 Time Levels — From 20 Minutes to 3 Hours, All Planned",
+        "keyFact": "'Too busy to train today' is usually not about time — it's about lacking a plan for short sessions. 20 structured minutes is more effective than 1 unplanned hour.",
+        "detail": "8 time levels from 20 to 180 minutes ensure there's always a suitable plan for however much time you have that day — no excuse to skip just because 'not enough time'.",
+        "details": [
+          "Level 20 min (Super busy): Warm-Up 4' + Full-body circuit 12' + Quick stretch 3' + Breath 1'. 3 compound exercises (squat/push/hinge), 3 sets × 8 reps. Zero wasted seconds.",
+          "Level 30 min (Quick): Add 1 exercise or 1 set per exercise. Or replace circuits with supersets (2 exercises back-to-back, shorter rest).",
+          "Level 45 min (Standard): Can split into strength (25') + light cardio (10') or focus entirely on strength with more thorough warm-up.",
+          "Level 60 min (Complete): Enough time for focused lower or upper body training with full warm-up and meaningful cool-down. This is the 'ideal session' for most working adults.",
+          "Level 90–120 min (Advanced): Add accessory work after main lift, or combine strength + LISS cardio (low-intensity steady-state). Needs additional nutrition during/after the session.",
+          "Level 180 min (Intensive): Suitable for athletes or special training days. Requires special attention to hydration, intra-workout nutrition (carbs during session), and recovery afterward."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "20 minutes is enough", "note": "Structured full-body circuit is no worse than 1 hour" },
+          { "icon": "📅", "label": "8 levels = 8 ready plans", "note": "Always have a plan regardless of available time" },
+          { "icon": "🎯", "label": "60 min = ideal", "note": "Enough for a complete session without time pressure" },
+          { "icon": "🚫", "label": "No 'too busy'", "note": "Only 'no plan for a short session yet'" }
+        ]
+      },
+      {
+        "modalTitle": "Minute-by-Minute Detail — No More 'What to Train Next'",
+        "keyFact": "People who train with a specific minute-by-minute plan complete 94% of intended volume. Those without a detailed plan only complete 67% — skipping exercises, cutting sets short, resting too long.",
+        "detail": "Minute-by-minute planning doesn't mean being rigid — it means knowing exactly what you'll do in each phase. This clarity eliminates all 'dead time' (wasted time due to hesitation) from your session.",
+        "details": [
+          "Dead time in sessions: Hesitation between exercises, deciding next sets, finding equipment. Gym surveys show dead time takes up 20–35% of time for unplanned gym sessions.",
+          "Rest timer vs. feel: Resting by feel tends to run 40% longer than necessary. Timer: 60–90 seconds for hypertrophy, 3–5 minutes for max strength effort. Being specific = more efficient.",
+          "Prioritize exercises: Train the most important exercise first when energy is highest. Accessory work last. If the session gets cut short, you've already completed the most important part.",
+          "Supersets and giant sets: Pair 2–3 exercises not targeting the same primary muscle group consecutively (e.g., squat + pull-up + plank). Increases density (volume/time) without extending total session time.",
+          "Simple tracking: Note immediately after each set (exercise, reps, weight). 2–3 minutes per session. Helps decide the next set quickly and build progression logic for the next session.",
+          "Adaptive planning: A minute-by-minute plan isn't unchangeable — it's a starting point. Adjust when needed (more tired than expected, missing equipment) but don't break the overall structure."
+        ],
+        "points": [
+          { "icon": "✅", "label": "94% vs 67%", "note": "Volume completion with/without detailed plan" },
+          { "icon": "⏱️", "label": "Rest timer", "note": "60–90\" for hypertrophy · 3–5' for max strength" },
+          { "icon": "🔝", "label": "Prioritize first", "note": "Most important exercise first while energy is high" },
+          { "icon": "📝", "label": "Track 2–3 min/session", "note": "Enough for consistent progressive overload" }
+        ]
+      },
+      {
+        "modalTitle": "3 Weekly Rhythm Phases — From Start to Personalization",
+        "keyFact": "General Adaptation Syndrome (GAS, Selye 1950): the body responds to stress in 3 phases — Alarm (shock) → Resistance (adaptation) → Exhaustion (if not rested). A 3-phase weekly rhythm reflects this physiological cycle.",
+        "detail": "3 weekly rhythm phases aren't arbitrarily set — they reflect how the body learns to adapt to training load over time. Skipping any phase leads to injury or failure to achieve results.",
+        "details": [
+          "Phase 1 — Start (Weeks 1–4): 3 sessions/week, low-moderate intensity, focused on learning technique. Goal: build the habit, not fitness. No need to train to muscular failure.",
+          "Phase 2 — Build (Weeks 5–12): 4 sessions/week, controlled volume and intensity increase. This is the main muscle gain/fat loss phase — the body is adapting fastest.",
+          "Phase 3 — Advance (Week 13+): 5–6 sessions/week, personalized for specific goals. Only enter this phase when the base is solid enough — no shortcuts.",
+          "Deload weeks: After every 4–6 weeks of increasing volume, 1 week at 40–50% reduced intensity. Supercompensation occurs during this deload week — it's actually the strongest week physiologically.",
+          "Why you can't skip the 3 phases: Starting directly in Phase 3 (5–6 sessions/week) = overuse injury within 4–8 weeks. ACSM statistics: 70% of people who train too much too soon get injured within the first 3 months.",
+          "Phase transitions: No specific day to 'enter a new phase' — based on body signals: good recovery (no lingering pain), stable performance, good sleep, stable mood."
+        ],
+        "points": [
+          { "icon": "🌱", "label": "Phase 1: Build habits", "note": "Learn technique + build habit — not fitness yet" },
+          { "icon": "💪", "label": "Phase 2: Build base", "note": "Weeks 5–12: fastest muscle gain/fat loss" },
+          { "icon": "🎯", "label": "Phase 3: Personalize", "note": "Week 13+: optimize for your specific goal" },
+          { "icon": "🔄", "label": "Deload = strongest week", "note": "Supercompensation happens during reduced training" }
+        ]
+      },
+      {
+        "modalTitle": "6 Goal-Based Programs — Find the Rhythm That Suits You Best",
+        "keyFact": "'One size fits all' doesn't exist in training. 6 programs designed for 6 different profiles in terms of goal, available time, and starting point. Choosing the wrong program = no results despite hard effort.",
+        "detail": "Many people fail not from lack of discipline — but because they're following a program that doesn't fit their situation. A beginner following a professional athlete's schedule, or a busy person trying to maintain 6 sessions/week — neither is sustainable.",
+        "details": [
+          "Program 1 — Super Busy (2 sessions/week): Full-body each session, 45 minutes, 4–5 compound exercises. Sufficient to maintain muscle and overall health. Suitable for: people working >50 hours/week or with major family responsibilities.",
+          "Program 2 — Beginner (3 sessions/week): A/B alternating (Full-body A and Full-body B alternating). Most effective for beginners because frequency is high enough to learn technique without overloading.",
+          "Program 3 — Popular (4 sessions/week): Upper/Lower split. 2 upper days, 2 lower days. Enough for notable progress with sufficient rest between sessions. Suitable for: most non-professional people.",
+          "Program 4 — Advanced (5 sessions/week): Push/Pull/Legs or Upper-Lower-Full. Requires solid technique foundation and high recovery capacity. Not suitable for people under high stress or with poor sleep.",
+          "Program 5 — Intensive (6 sessions/week): Train each muscle group separately (bro split) or Daily Undulating Periodization. Requires 12+ months experience and optimal nutrition-sleep conditions.",
+          "Program 6 — Athlete (6 sessions + supplementary cardio): Combines strength training, sport-specific cardio, and mobility work. Not a goal everyone needs to reach — but shows the potential for development."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Programs 1–2: Start", "note": "2–3 sessions/week for beginners and busy people" },
+          { "icon": "💪", "label": "Program 3: Sweet spot", "note": "4 sessions/week most popular, best results" },
+          { "icon": "🔑", "label": "Choose based on reality", "note": "Sustainable rhythm > ideal rhythm you can't maintain" },
+          { "icon": "📈", "label": "Build gradually", "note": "Stable for 4 weeks then add 1 session — no skipping" }
+        ]
+      },
+      {
+        "modalTitle": "Proper Rest — Recovery Is Essential, Not Laziness",
+        "keyFact": "Muscles don't grow stronger during training — but during rest afterward. A rest day isn't a day of 'doing nothing' — it's when the body actually builds what you stimulated during the session.",
+        "detail": "The 'no pain no gain' and 'rest is for the weak' culture has harmed millions of athletes. Adequate rest isn't a sign of weakness — it's an essential training skill used by professional athletes.",
+        "details": [
+          "Active recovery vs. passive rest: Rest days don't mean lying still. 20–30 minutes of walking, light yoga, or light swimming at low intensity (<60% max HR) actually speeds up recovery by increasing blood flow without creating additional load.",
+          "Sleep is recovery tool #1: Growth hormone (GH) is secreted 70–80% during slow-wave sleep. Missing 1 hour of sleep = 18–21% reduction in muscle protein synthesis (MPS) and increased cortisol. No supplement compensates for poor sleep.",
+          "Nutrition on rest days: Don't reduce protein on rest days — muscle protein synthesis continues 24–48h post-workout. Carbs can be slightly reduced but don't eliminate — glycogen needs to be replenished.",
+          "HRV (Heart Rate Variability): Simplest metric to measure recovery. High morning HRV = good recovery. Low HRV over multiple consecutive days = need more rest or reduce intensity. Many smartwatches measure this.",
+          "Resting Heart Rate trend: If RHR increases 5–10 BPM above baseline for 3+ consecutive days — this is an overtraining signal. Need 1–2 extra rest days or 40–50% volume reduction.",
+          "Psychological recovery: Rest days are also psychological recovery. Training every day without enthusiasm, forcing yourself — this is a signal to rest even if the body 'doesn't hurt'. Motivation burnout typically comes before physical burnout."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Active recovery better", "note": "Light walk > lying still on rest days" },
+          { "icon": "😴", "label": "Sleep = GH +70–80%", "note": "No supplement compensates for poor sleep" },
+          { "icon": "💓", "label": "HRV tracks recovery", "note": "Smartwatch measures it — high HRV = recovered" },
+          { "icon": "🧠", "label": "Psychological burnout first", "note": "Lost motivation is an earlier signal than physical pain" }
+        ]
+      },
+      {
+        "modalTitle": "Clear Progress Ladder — Know Exactly What Your Next Step Is",
+        "keyFact": "Lack of clarity about 'the next step' is the #1 reason people quit training (IHRSA 2019). Not laziness, not lack of time — but 'I don't know what I need to do next'.",
+        "detail": "The progress ladder isn't a title or competition. It's a positioning system — helping you know where you are now, what's needed to advance, and what the next step looks like specifically.",
+        "details": [
+          "The problem with 'free training': No clear criteria = not knowing when you're 'good enough'. Training without knowing if you're progressing = losing motivation after 4–8 weeks.",
+          "5 clear levels with specific criteria: Level 1 (walk 30'/day) → Level 2 (10 push-ups, plank 30\") → Level 3 (bodyweight squat, run 2km) → Level 4 (squat 1.5BW, 5km <30') → Level 5 (athlete).",
+          "Why 5 levels, not more: Granular enough to know where you are, not so many that it causes overwhelm. 5 levels also aligns with about 1–5 years of serious training.",
+          "Testing into the right level: Assess yourself based on objective criteria (reps, time, load), not feelings. Many people overestimate or underestimate their actual level.",
+          "Rewards for leveling up: New exercise types (unilateral, olympic lifting), increased training frequency, or adding specialized cardio. Each level unlocks new capabilities — this is the dynamic reward.",
+          "Don't compare with others: The ladder is personal — based on your own baseline, not others' benchmarks. A 50-year-old at Level 3 is much better than a 20-year-old at Level 3 who is plateauing."
+        ],
+        "points": [
+          { "icon": "🗺️", "label": "Clear positioning", "note": "Knowing where you are = 70% less likely to quit" },
+          { "icon": "✅", "label": "Objective criteria", "note": "Reps · Time · Load — not feelings" },
+          { "icon": "🏆", "label": "Rewards for leveling up", "note": "Each level unlocks new capabilities and exercises" },
+          { "icon": "🚫", "label": "Don't compare", "note": "The ladder is personal — your own baseline" }
+        ]
+      },
+      {
+        "modalTitle": "3-Period Testing — Weeks 4, 8, and 12 Are Key Milestones",
+        "keyFact": "What gets measured gets managed (Peter Drucker). 3 test periods in the first 12 weeks allow adjustments based on real data — not feelings. People with a specific test schedule achieve goals 2.5× more effectively.",
+        "detail": "3 test periods aren't about checking up — they're about adjusting. Week 4 shows whether the plan is working. Week 8 reveals the progression rate. Week 12 gives a full evaluation and sets the plan for the next phase.",
+        "details": [
+          "Week 4 test — Calibration: After 4 weeks, the body has passed the initial neural adaptation phase. This test shows whether the plan is suitable (progressing) or needs adjustment (not progressing significantly).",
+          "Week 8 test — Trend analysis: Compare with week 4. If progress >10% = plan is working well. If <5% = review nutrition and sleep. If performance decreased = overtraining.",
+          "Week 12 test — Full evaluation: Comprehensive assessment of all 4 dimensions (strength, endurance, flexibility, recovery). These results form the foundation for designing the next 12-week plan.",
+          "Testing on the right day: Don't test after a heavy session, when tired or sick, or after a poor night's sleep. Consistent conditions allow accurate comparison between periods.",
+          "Adjustments based on tests: Week 4 test poor → increase protein or sleep before changing volume. Week 8 test good → increase volume by 5–10%. Don't change multiple things at once.",
+          "Create a ritual: Turn test day into a ceremony — same time, same warm-up, same music if applicable. Rituals help the mind enter the right state and produce more consistent results."
+        ],
+        "points": [
+          { "icon": "📅", "label": "Week 4: Calibration", "note": "Is the plan working? Adjust early if needed" },
+          { "icon": "📈", "label": "Week 8: Trend", "note": ">10% progress = heading in the right direction" },
+          { "icon": "🏁", "label": "Week 12: Full eval", "note": "Foundation for the next 12-week plan" },
+          { "icon": "🎭", "label": "Create a test ritual", "note": "Same conditions each time = reliable results" }
+        ]
+      },
+      {
+        "modalTitle": "4-Dimension Radar Chart — Strength · Endurance · Flexibility · Recovery",
+        "keyFact": "The 4 dimensions aren't 4 separate tests — they're a comprehensive physical health assessment system. VO2 max (endurance) is the #1 predictor of longevity according to a JAMA 2018 study of 122,000 people.",
+        "detail": "Fitness isn't one-dimensional. The strongest person isn't necessarily the healthiest. The most enduring person isn't necessarily recovering well. A 4-dimension radar chart is the simplest way to see the 'complete picture' of physical health — not just strengths.",
+        "details": [
+          "Dimension 1 — Strength: Measures ability to produce force. Simple tests: max push-up reps, 5RM squat, 3RM deadlift. Strength is the foundation — lacking strength limits all other dimensions.",
+          "Dimension 2 — Endurance (Cardiovascular): VO2 max is the gold standard but hard to measure. Alternatives: 1.5km run time, beep test, or 12-minute Cooper test. VO2 max is the strongest predictor of cardiovascular mortality and longevity.",
+          "Dimension 3 — Flexibility (Mobility): Not about being as flexible as a dancer — but having enough range of motion to safely perform fundamental movement patterns. Tests: overhead squat, hip flexor length, shoulder mobility.",
+          "Dimension 4 — Recovery: Composite of HRV trend, resting heart rate, sleep quality (PSQI score), and time to recover from DOMS after a standard session. This dimension improves when the other 3 are balanced.",
+          "Asymmetry is a warning sign: If one dimension is >30% lower than others → prioritize improving that dimension in the next phase. Don't try to optimize strengths when there's a clear weakness.",
+          "How to draw the radar chart: Score each dimension 1–10 based on the progress ladder criteria (Level 1 = 2 points, Level 2 = 4 points, etc.). Draw on 4 axes and connect into a quadrilateral. Goal: the most even shape, not the highest score on one axis."
+        ],
+        "points": [
+          { "icon": "❤️", "label": "VO2 max = longevity", "note": "JAMA 2018: 122,000 people — the #1 predictor" },
+          { "icon": "⚠️", "label": "Asymmetry = danger", "note": ">30% difference = prioritize the weak dimension" },
+          { "icon": "📐", "label": "Score 1–10 per dimension", "note": "Based on progress ladder criteria — objective" },
+          { "icon": "🎯", "label": "Even quadrilateral", "note": "Goal: balance — not high score in just one dimension" }
+        ]
+      }
+    ],
+    "detail_modals_full": [
+      {
+        "modalTitle": "Why Only 6 Patterns? — The Biomechanics Behind Thousands of Exercises",
+        "keyFact": "Biomechanists analyzed >3,000 exercises and found all of them are variations of 6 fundamental movement patterns. Master the 6 = foundation for 95% of all exercises in your lifetime.",
+        "detail": "The 6-pattern framework wasn't arbitrarily invented — it's the result of biomechanical analysis from thousands of different exercises. Each pattern represents a joint-muscle chain coordinating in a way the human body was evolutionarily designed for.",
+        "details": [
+          "Squat (kneeling): Simultaneous hip + knee + ankle flexion — activates 60–70% of total body muscle mass, most important for lower-body strength.",
+          "Hip Hinge: Hip flexion while keeping spine neutral — foundation of deadlift, Romanian DL, kettlebell swing. Glutes and hamstrings develop maximally.",
+          "Push: From floor push-up to overhead press — develops chest, shoulder, tricep along horizontal and vertical axes.",
+          "Pull: From band pull to pull-up — balances the push pattern, develops back, biceps, rhomboids. Reduces risk of rounded shoulders from excessive pushing.",
+          "Carry: Walking with load — activates core 360°, improves posture, mimics functional movement in real life.",
+          "Core & Breath (anti-movement/collapse): Plank, dead bug, pallof press — not sit-ups, but resisting unwanted movement. Breathing is the baseline condition for all other patterns."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "Full-body coverage", "note": "6 patterns = 100% major muscle groups activated evenly" },
+          { "icon": "♾️", "label": "Unlimited variations", "note": "Each pattern has 5–15+ variations from easy to very hard" },
+          { "icon": "🛡️", "label": "Long-term safety", "note": "No structural weak points are left unaddressed" },
+          { "icon": "🧠", "label": "Easy to remember", "note": "Design your own session with just 1 exercise per pattern" }
+        ]
+      },
+      {
+        "modalTitle": "Unlimited Variations — Same Pattern, Endless Levels of Progress",
+        "keyFact": "Each pattern has a spectrum from extremely easy to extremely difficult within the same progression chain. No need to switch exercises — just move up the spectrum when ready.",
+        "detail": "The most common mistake in training is constantly changing exercises instead of going deeper into one pattern. Chair squat → goblet squat → barbell squat → pistol squat: same pattern, four different levels.",
+        "details": [
+          "Regression: Every pattern has a super-easy version for beginners, injury recovery, or fatigued days. There's never 'no exercise to do'.",
+          "Progression: Add load, reduce support, increase range, change tempo — 4 axes of progress for each pattern without needing additional equipment.",
+          "Unilateral (one leg/arm): Pistol squat, single-leg RDL, archer push-up — doubles difficulty without heavier weights. Reveals bilateral imbalances.",
+          "Tempo: 4-second eccentric instead of 1 second increases time under tension (TUT) by 300–400%. Same weight, much harder, more effective for muscle growth.",
+          "Environment: Sand, uneven floor, sandbags instead of barbells — change the stability factor without changing the fundamental pattern.",
+          "Transfer ability: Master the goblet squat → barbell squat becomes easier immediately; master push-ups → bench press is instant. Same pattern, different tool."
+        ],
+        "points": [
+          { "icon": "📈", "label": "Clear progress", "note": "Know exactly what the next step requires" },
+          { "icon": "🏠", "label": "No equipment needed", "note": "Bodyweight is enough to reach intermediate-advanced level" },
+          { "icon": "🔧", "label": "4 axes of progress", "note": "Load · Support · Range · Tempo" },
+          { "icon": "⚡", "label": "Long-term consistency", "note": "Never boring with a clear progression spectrum" }
+        ]
+      },
+      {
+        "modalTitle": "Full-Body Balance — Designed With No Weak Points",
+        "keyFact": "Most sports injuries aren't from weakness — but from imbalance. Too much Push without enough Pull → shoulder pain. Too much Squat without enough Hinge → lower back pain.",
+        "detail": "The human body evolved to perform these 6 movements in a balanced ratio. When training too much of one pattern and neglecting the opposing pattern, muscular imbalances appear and injury is only a matter of time.",
+        "details": [
+          "Push + Pull: A 1:1 volume ratio between pushing and pulling reduces shoulder pain risk by 60%. Many gym-goers push 3× more than they pull — this is the most common cause of rotator cuff injuries.",
+          "Squat + Hinge: Squats develop the quads (front of thighs), Hinges develop glutes/hamstrings (back of thighs). Standard quad:hamstring ratio is 3:2; imbalance → knee injury.",
+          "Bilateral + Unilateral: Barbell squats are great for strength, but single-leg squats reveal bilateral imbalances. Add at least 1 unilateral exercise per pattern per week.",
+          "Core anti-movement: The spine isn't designed to bend under load — but to resist unwanted movement. Plank is better than crunches for back health.",
+          "Breath under load: Valsalva maneuver when lifting heavy protects the spine. Poor breathing = unstable core = harmful load on spinal discs.",
+          "Suggested weekly training ratio: 2× squat + 2× hinge + 2× push + 2× pull + 2× carry + daily core/breath = no structural weak points."
+        ],
+        "points": [
+          { "icon": "🛡️", "label": "Injury prevention", "note": "Balanced push/pull reduces shoulder pain risk 60%" },
+          { "icon": "💪", "label": "Comprehensive development", "note": "No muscle group is neglected" },
+          { "icon": "🦵", "label": "Squat/Hinge balanced", "note": "Quad:hamstring = 3:2 is the healthy ratio" },
+          { "icon": "🌬️", "label": "Breath is the foundation", "note": "Proper breathing protects the spine under any load" }
+        ]
+      },
+      {
+        "modalTitle": "The Brain Needs Structure — Make Fewer Decisions, Train Better",
+        "keyFact": "Baumeister (1998) research on 'decision fatigue' shows each small decision depletes willpower. People with a structured training plan maintain consistency 62% vs 23% in those without a plan (Annesi, 2003).",
+        "detail": "Entering the gym without knowing what to do forces the brain to constantly make decisions: what to train, how many sets, how long to rest. That energy would be better spent on training quality. Structure eliminates this problem entirely.",
+        "details": [
+          "Decision fatigue in training: Every time you decide 'what to do next' mid-session, decision quality decreases. Result: trailing off toward the end of the session, skipping hard exercises, cutting time short.",
+          "Structured plan → automatic execution: When you know exactly what you'll do, the brain shifts to 'auto-pilot'. Technical quality and intensity both improve because the brain isn't busy planning.",
+          "Lower barrier to start: 'I'll do A → B → C' is easier to start than 'what should I train today?' Low startup barrier = fewer missed sessions.",
+          "Habit stacking: Structure allows attaching training to existing habits. 'After dinner → 5-minute warm-up' is more sustainable than 'I'll train sometime tonight'.",
+          "Flexibility within structure: Have 45 minutes instead of 60? Proportionally reduce each block's time. The framework stays the same — the content flexes.",
+          "Long-term adherence: A 12-month study (Conn et al., 2011) found the structured group maintained 68% of sessions vs 34% in the unstructured group."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Fewer decisions", "note": "Auto-pilot = higher training quality" },
+          { "icon": "📈", "label": "62% vs 23%", "note": "Consistency rate with/without a structured plan" },
+          { "icon": "🚀", "label": "Easier to start", "note": "Low barrier when you already know exactly what to do" },
+          { "icon": "🔄", "label": "Smart flexibility", "note": "Structure flexes with available time, doesn't break" }
+        ]
+      },
+      {
+        "modalTitle": "4 Time Blocks — A Universal Structure from 20 to 180 Minutes",
+        "keyFact": "4 blocks (Warm-Up → Main Workout → Cool-Down → Mind Reset) serve 4 different physiological functions that can't replace each other. Removing any block reduces effectiveness and increases risk.",
+        "detail": "Each block isn't arbitrary — they serve a specific physiological function. Warm-Up activates the neuromuscular system. Main Workout creates the growth stimulus. Cool-Down supports recovery. Mind Reset regulates the autonomic nervous system.",
+        "details": [
+          "Warm-Up (5–10 min): Raises muscle temperature by 1–2°C, increases joint fluid viscosity, activates neuromuscular transmission. Skipping = 15–20% reduction in peak strength and increased tendon injury risk.",
+          "Main Workout (10–150 min): The core — strength, cardio, or combined. This is the only block that can be fully extended or shortened based on available time.",
+          "Cool-Down (5–10 min): Static stretch post-workout reduces DOMS by 20–40%. Minimum hold time 30 seconds/position for real effect — less than that doesn't count.",
+          "Mind Reset (5 min): Cyclic sighing activates the parasympathetic system, reduces cortisol, prepares the brain for the rest of the day. Not optional — it's the best recovery investment.",
+          "When shortening a session: Prioritize keeping warm-up + mind reset intact. Cut from main workout. A 20-min session: 5' + 10' + 3' + 2' — still all 4 blocks.",
+          "Flexible order within main workout block: Strength before cardio if muscle gain is the goal. Cardio before strength if cardiovascular endurance is the goal. 4 blocks stay the same, content within blocks is flexible."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "Warm-up non-negotiable", "note": "+15–20% peak strength, -30% injury risk" },
+          { "icon": "⚡", "label": "Main Workout", "note": "The only block fully flexible in duration" },
+          { "icon": "🧘", "label": "Cool-down effective", "note": "≥30 sec/position to actually reduce DOMS" },
+          { "icon": "🌙", "label": "Mind Reset is investment", "note": "5 minutes = better recovery for 23 remaining hours" }
+        ]
+      },
+      {
+        "modalTitle": "5-Minute Mind Reset — Cortisol, Recovery, and Better Sleep",
+        "keyFact": "Stanford research (Spiegel et al., 2023) shows cyclic sighing reduces cortisol by 15% and improves positive affect more than mindfulness meditation or box breathing in 5 minutes of practice.",
+        "detail": "5 minutes post-workout is when cortisol is at its peak. If you rush out immediately, this elevated cortisol follows you through the rest of your day, affecting nighttime sleep and muscle recovery.",
+        "details": [
+          "Post-workout cortisol: Exercise is good stress (eustress), but cortisol rises during and after training. Without proper reduction → difficult nighttime sleep, slower muscle recovery.",
+          "Cyclic sighing: Inhale fully through nose → take another short sniff through nose → exhale long and slow through mouth. Repeat 5–10 times. Activates the parasympathetic system faster than any other breathing technique.",
+          "Box breathing (4-4-4-4): Good alternative if not comfortable with cyclic sighing. Inhale 4 sec → hold 4 → exhale 4 → hold 4. Used by special forces to reduce cortisol before/after missions.",
+          "Don't lie down: Sit or stand, eyes closed or focused on a fixed point. Lying down may lead to falling asleep, disrupting nighttime sleep schedule.",
+          "Improved sleep: People who train in the evening + 5-minute mind reset sleep 18% more deeply than those who stop training abruptly. Melatonin isn't suppressed by cortisol.",
+          "Cumulative benefits: Groups that consistently practice 5 minutes of mind reset post-workout for 8 weeks have 12% lower baseline cortisol levels and significantly lower self-reported stress."
+        ],
+        "points": [
+          { "icon": "📉", "label": "Cortisol -15%", "note": "Cyclic sighing most effective in 5 minutes" },
+          { "icon": "😴", "label": "Sleep 18% deeper", "note": "Especially when training in the evening" },
+          { "icon": "💪", "label": "Better muscle recovery", "note": "Lower cortisol = higher GH during deep sleep" },
+          { "icon": "🧠", "label": "Calm is not weakness", "note": "Mind reset is a skill, not a sign of weakness" }
+        ]
+      },
+      {
+        "modalTitle": "The 48–72 Hour Recovery Window — Muscles Grow at Rest, Not During Training",
+        "keyFact": "Muscle Protein Synthesis (MPS) peaks 24–36 hours after training and returns to baseline after 48–72 hours. Training the same muscle group within 24 hours = disrupts regeneration. Training after 72 hours = missing the growth window.",
+        "detail": "The paradox of training is that muscles don't get stronger during the workout — but during rest afterward. Training creates micro-damage in muscle fibers. The body repairs these micro-tears bigger and stronger — but only when given sufficient time.",
+        "details": [
+          "Muscle Protein Synthesis (MPS): After strength training, MPS increases 25–150% and sustains for 24–48 hours. This is the most critical window for protein from meals to be used for muscle regeneration.",
+          "DOMS (Delayed Onset Muscle Soreness): Soreness 24–72 hours after training is a sign of micro-damage being repaired — not dangerous, but training heavily on the same muscle group during DOMS slows regeneration.",
+          "Glycogen resynthesis: After high-intensity cardio, muscle glycogen needs 24–48 hours to fully replenish with a normal diet. Training again when glycogen is low = poor performance and more muscle used as fuel.",
+          "CNS fatigue: The central nervous system becomes fatigued after heavy sessions. Can't be measured by muscle sensation alone — even when legs don't hurt, the CNS may not have recovered from heavy squats.",
+          "Growth hormone during sleep: GH is most secreted during slow-wave sleep, suppressed by high cortisol. Adequate rest and sleep are essential conditions for MPS to occur maximally.",
+          "Weekly rhythm design principles: Same primary muscle group at least 48 hours apart (ideally 72 hours). Upper/lower split alternating rather than consecutive. Active recovery on rest days doesn't impair recovery if intensity is low."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "MPS peaks 24–48h", "note": "When protein from meals is used most" },
+          { "icon": "⏱️", "label": "Rest 48–72h", "note": "Same muscle group — not sooner, not later" },
+          { "icon": "😴", "label": "GH during deep sleep", "note": "Growth hormone mainly secreted in slow-wave sleep" },
+          { "icon": "🧠", "label": "CNS fatigues too", "note": "Central nervous system recovers slower than muscles" }
+        ]
+      },
+      {
+        "modalTitle": "3 Adaptation Phases — Sustainable Progress Without Burnout",
+        "keyFact": "SAID Principle (Specific Adaptation to Imposed Demand): the body only adapts to the specific type of stimulus imposed. 3 adaptation phases (neural → structural → performance) occur sequentially and cannot be skipped.",
+        "detail": "One of the most common mistakes beginners make is increasing too fast — more training days, more volume, more intensity — before the body has completed the first adaptation phase. The result is usually injury or burnout.",
+        "details": [
+          "Phase 1 — Neural (Weeks 1–4): Not muscles growing but the brain learning to recruit more motor units. Strength increases 20–40% in the first 4 weeks = neural optimization, not hypertrophy.",
+          "Phase 2 — Structural (Weeks 5–12): True hypertrophy begins — protein is added to muscle fibers. Requires adequate protein (1.6–2.2g/kg/day) and sufficient sleep (7–9 hours) for this phase to occur.",
+          "Phase 3 — Performance (Week 13+): Body has the foundation → can optimize for specific goals (maximum strength, endurance, speed). True personalization begins here.",
+          "Structured deload: After 4–6 weeks of consecutive volume increases, 1 week at 40–50% reduced load allows supercompensation (above-baseline recovery). No deload = gradual performance decline.",
+          "Overtraining signs: Performance decreases despite adequate rest, resting heart rate 5–10 BPM above baseline for 3+ days, persistently poor mood, poor sleep without other cause.",
+          "Linear vs non-linear progression: Beginners → linear (same load increase each week). Intermediate and above → non-linear (heavy/medium/light week alternating). Failing to recognize this transition = early plateau."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Weeks 1–4: Neural", "note": "Brain learns, muscles don't grow yet — strength +20–40%" },
+          { "icon": "💪", "label": "Weeks 5–12: Hypertrophy", "note": "Muscles mature with adequate protein + sleep" },
+          { "icon": "🎯", "label": "Week 13+: Personalized", "note": "Foundation built → optimize for your specific goal" },
+          { "icon": "🔄", "label": "Deload is mandatory", "note": "1 week reduced load after 4–6 weeks to supercompensate" }
+        ]
+      },
+      {
+        "modalTitle": "Sustainable Training Rhythm — The Best Rhythm Is the One You Can Maintain for 12 Months",
+        "keyFact": "'2 sessions/week × 12 months = 96 sessions' beats '6 sessions/week × 6 weeks = 36 sessions'. Total accumulated volume long-term, not short-term intensity, determines real results.",
+        "detail": "Fitness culture often glorifies high intensity and frequent training. But the most consistent long-term research shows the most important variable isn't intensity — it's consistency. Someone training 2 sessions/week for 5 years achieves better results than someone training 5/week for 6 months then quitting.",
+        "details": [
+          "Minimum Effective Dose (MED): 2 strength sessions/week is enough to maintain and build muscle for non-professionals. No need to train more if you can't sustain it — start with the MED.",
+          "Never miss twice rule: Missing 1 session = normal. Missing 2 consecutive sessions = starting to lose momentum. The simplest rule to maintain consistency is never allowing 2 consecutive missed sessions.",
+          "6 programs from few to many: Super busy (2/week) → Beginner (3) → Popular (4) → Advanced (5) → Intensive (6) → Athlete (6 + supplementary cardio).",
+          "Scale up gradually: Maintain consistency at a lower level for 4 weeks then add 1 session. Don't jump from 2 to 5 — burnout arrives very quickly.",
+          "Social accountability: Training with 1 other person increases adherence by 37% (Plante et al., 1996). No partner? Online community or check-in apps also work.",
+          "Identity shift: People who maintain 12+ months typically no longer 'try to train' — they've become 'a person who trains'. Identity-based habits are more durable than goal-based habits."
+        ],
+        "points": [
+          { "icon": "📅", "label": "96 > 36 sessions", "note": "2/week × 12 months > 6/week × 6 weeks" },
+          { "icon": "✌️", "label": "Never miss twice", "note": "Simplest rule to maintain momentum" },
+          { "icon": "🤝", "label": "Partner +37%", "note": "Accountability partner significantly increases adherence" },
+          { "icon": "🆔", "label": "Identity shift", "note": "'I am a person who trains' is more durable than 'trying'" }
+        ]
+      },
+      {
+        "modalTitle": "Periodic Testing — Measure Accurately for Reliable Progress",
+        "keyFact": "Performing tests is a separate skill that takes 2–3 sessions to master. Inconsistent test conditions (after heavy training, poor sleep) can change results by ±15–20%, making you think you've progressed or regressed incorrectly.",
+        "detail": "Fitness testing isn't just 'training and counting'. For results to be meaningful and comparable over time, test conditions must be consistent: same time of day, same sleep state, same warm-up, same equipment.",
+        "details": [
+          "Schedule tests in advance: 3 test periods — Week 4, Week 8, Week 12 — placed in the calendar from the start, not dependent on feeling 'ready'. Test day is not a heavy training day.",
+          "Standardized test conditions: 8+ hours sleep the night before, no heavy training 48 hours prior, same time slot (e.g., Saturday morning), same 10-minute warm-up. Record all conditions.",
+          "±15–20% variation is not real progress: If test conditions differ, different results don't reflect actual fitness. Only compare tests with the same conditions.",
+          "Testing is a skill requiring practice: The first test is often suboptimal because of performance pressure unfamiliarity. Week 4 test = learning how to test. Week 8 and 12 = reliable data for comparison.",
+          "Detailed record-keeping: Record not just results but also subjective feeling (1–10), previous night's sleep, caffeine intake, weather. This metadata explains outliers.",
+          "Choose tests matching your goal: Muscle gain → 5RM squat/deadlift. Endurance → 2km run or beep test. Flexibility → sit-and-reach. Recovery → resting heart rate trend."
+        ],
+        "points": [
+          { "icon": "📅", "label": "Scheduled tests", "note": "Weeks 4, 8, 12 — not dependent on feelings" },
+          { "icon": "🎯", "label": "Consistent conditions", "note": "Same time, sleep, warm-up each test" },
+          { "icon": "📝", "label": "Record metadata", "note": "Explains outliers and unexpected results" },
+          { "icon": "🎓", "label": "Testing is a skill", "note": "First 1–2 sessions to learn, 3+ for reliable data" }
+        ]
+      },
+      {
+        "modalTitle": "4-Dimension Radar Chart — See Hidden Weaknesses a Single Metric Can't Show",
+        "keyFact": "Someone with high strength but poor flexibility has a higher injury risk than a well-rounded trainer, even if they're 'stronger' in the conventional sense. 4 dimensions reveal hidden imbalances invisible through 1 metric.",
+        "detail": "Fitness isn't one-dimensional. The strong person may lack endurance. The enduring person may lack strength. The flexible person may recover slowly. A 4-dimension radar chart shows the 'real picture' of your physical condition — not just your strengths.",
+        "details": [
+          "Dimension 1 — Strength: Measured by representative test (squat BW ×1.5 for men, ×1.0 for women is a decent level). Strength is the foundation — lacking strength limits all other dimensions.",
+          "Dimension 2 — Endurance: VO2 max or simpler test like 1.5km run. VO2 max is the strongest predictor of cardiovascular mortality — more important than most other health metrics.",
+          "Dimension 3 — Flexibility: Not just for dancers — having enough range of motion to safely perform basic movement patterns. Lacking flexibility = compensation patterns = injury.",
+          "Dimension 4 — Recovery: Composite of HRV trend (decreasing = good), resting heart rate, sleep quality (PSQI <5), and subjective recovery time after a standard heavy session.",
+          "Asymmetry is a warning sign: Strong + inflexible = rotator cuff injury, hip impingement. Enduring + no strength base = stress fracture. Strong + poor recovery = cumulative overtraining.",
+          "How to use the radar chart: Draw at weeks 1, 4, 8, 12. The most concave dimension = prioritize training for the next phase. Goal: not the highest score on each dimension — but the most even shape."
+        ],
+        "points": [
+          { "icon": "📊", "label": "4 critical dimensions", "note": "Strength · Endurance · Flexibility · Recovery" },
+          { "icon": "⚠️", "label": "Strong + stiff = dangerous", "note": "Hidden imbalance is a common injury cause" },
+          { "icon": "❤️", "label": "VO2 max = longevity", "note": "Strongest predictor of cardiovascular mortality" },
+          { "icon": "🎯", "label": "More even shape", "note": "Goal: balance — not the highest score on 1 dimension" }
+        ]
+      },
+      {
+        "modalTitle": "5 Progress Levels — Know Your Exact Position and What Comes Next",
+        "keyFact": "20–30% of people who quit training within 90 days don't do so from laziness — but because they don't know where they are or what the next step is (IHRSA, 2019). The level structure directly addresses this.",
+        "detail": "5 levels aren't a title or competition — they're a map. Knowing you're at Level 2 and what the criteria to reach Level 3 are = clear direction = less likely to quit. No map = getting lost.",
+        "details": [
+          "Level 1 — Basic Activity: Walk 30 minutes/day, 3 times/week. No gym needed. This is the starting point for completely sedentary people. Goal: build the habit of movement before thinking about intensity.",
+          "Level 2 — Foundation: Can complete 3 sessions/week with 6 fundamental patterns at basic level (10 push-ups, goblet squat BW × 20 reps, plank 30 seconds). Most beginners achieve this in 4–8 weeks.",
+          "Level 3 — Intermediate: Sufficient strength to squat BW, deadlift BW ×1.2, 20 push-ups. Endurance: run 2km without stopping. This is the 'basically healthy' level by medical standards.",
+          "Level 4 — Advanced: Squat BW ×1.5 (men) / ×1.0 (women). 5km <30 minutes. Pull-up 5 reps (men) / 2 reps (women). Requires 6–18 months of systematic training from zero.",
+          "Level 5 — Athlete: Squat BW ×2.0+. 5km <22 minutes. Requires good genetics + long time + specialized programming. Not a goal everyone needs to reach.",
+          "Reality: 80% of health benefits come from Levels 1–3. No need for Levels 4–5 to have good health and longevity. Knowing this reduces pressure and helps maintain long-term consistency."
+        ],
+        "points": [
+          { "icon": "🗺️", "label": "Level = map", "note": "Knowing position + next step = less likely to quit" },
+          { "icon": "🏁", "label": "Levels 1–3 = sufficient", "note": "80% of health benefits from foundation to intermediate" },
+          { "icon": "📅", "label": "4–8 weeks to Level 2", "note": "Beginners reach foundation in 1–2 months" },
+          { "icon": "🎯", "label": "6–18 months to Level 4", "note": "Advanced takes time — no shortcuts" }
+        ]
+      }
     ]
   },
   "pillarB": {

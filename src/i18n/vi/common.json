@@ -920,7 +920,8 @@
     "next": "Sau →",
     "apply_title": "Áp Dụng Thực Tế",
     "see_detail": "Xem chi tiết →",
-    "practice_title": "Chi Tiết Thực Hành"
+    "practice_title": "Chi Tiết Thực Hành",
+    "see_detail_label": "Xem chi tiết"
   },
   "ui": {
     "show_detail": "▼ chi tiết",

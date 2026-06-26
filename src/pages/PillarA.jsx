@@ -821,7 +821,7 @@ function PrincipleModal({ p, idx, total, onClose, onPrev, onNext, hasPrev, hasNe
           <p className="text-base text-muted leading-relaxed mb-6">{p.detail}</p>
 
           {/* Numbered detail list */}
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: PA_COLOR }}>Chi Tiết Thực Hành</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: PA_COLOR }}>{tCommon('modal.practice_title')}</p>
           <ul className="space-y-3 mb-8">
             {p.details.map((d, di) => (
               <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
@@ -1223,6 +1223,32 @@ export default function PillarA() {
     };
   });
 
+  const translatedPrinciples = PRINCIPLES.map((p, i) => ({
+    ...p,
+    keyFact:  tPillars(`pillarA.principles_full.${i}.keyFact`,  { defaultValue: p.keyFact }),
+    detail:   tPillars(`pillarA.principles_full.${i}.detail`,   { defaultValue: p.detail }),
+    details:  tPillars(`pillarA.principles_full.${i}.details`,  { returnObjects: true, defaultValue: p.details }),
+    points:   tPillars(`pillarA.principles_full.${i}.points`,   { returnObjects: true, defaultValue: p.points }),
+  }));
+
+  const translatedHighlightModals = HIGHLIGHT_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: tPillars(`pillarA.highlight_modals_full.${i}.modalTitle`, { defaultValue: m.modalTitle }),
+    keyFact:    tPillars(`pillarA.highlight_modals_full.${i}.keyFact`,    { defaultValue: m.keyFact }),
+    detail:     tPillars(`pillarA.highlight_modals_full.${i}.detail`,     { defaultValue: m.detail }),
+    details:    tPillars(`pillarA.highlight_modals_full.${i}.details`,    { returnObjects: true, defaultValue: m.details }),
+    points:     tPillars(`pillarA.highlight_modals_full.${i}.points`,     { returnObjects: true, defaultValue: m.points }),
+  }));
+
+  const translatedDetailModals = DETAIL_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: tPillars(`pillarA.detail_modals_full.${i}.modalTitle`, { defaultValue: m.modalTitle }),
+    keyFact:    tPillars(`pillarA.detail_modals_full.${i}.keyFact`,    { defaultValue: m.keyFact }),
+    detail:     tPillars(`pillarA.detail_modals_full.${i}.detail`,     { defaultValue: m.detail }),
+    details:    tPillars(`pillarA.detail_modals_full.${i}.details`,    { returnObjects: true, defaultValue: m.details }),
+    points:     tPillars(`pillarA.detail_modals_full.${i}.points`,     { returnObjects: true, defaultValue: m.points }),
+  }));
+
   const [principleIdx, setPrincipleIdx] = useState(null);
   const [detailModal, setDetailModal] = useState(null);     // { tabIdx, itemIdx }
   const [highlightModal, setHighlightModal] = useState(null); // { tabIdx, itemIdx }
@@ -1498,7 +1524,7 @@ export default function PillarA() {
                   <p className="text-lg font-bold text-text mb-1.5 group-hover:text-green-400 transition-colors">{pt.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{pt.body}</p>
                   <span className="inline-flex items-center gap-1 mt-3 text-[10px] font-bold text-green-500/50 group-hover:text-green-400 transition-colors">
-                    Xem chi tiết
+                    {tCommon('modal.see_detail_label')}
                     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4"/>
                     </svg>
@@ -1750,7 +1776,7 @@ export default function PillarA() {
 
       {/* Highlight modal — outside all RevealBlocks so position:fixed works */}
       {highlightModal !== null && (() => {
-        const hItem = HIGHLIGHT_MODALS[highlightModal.tabIdx * 3 + highlightModal.itemIdx];
+        const hItem = translatedHighlightModals[highlightModal.tabIdx * 3 + highlightModal.itemIdx];
         return hItem ? (
           <TabDetailModal
             item={hItem}
@@ -1766,7 +1792,7 @@ export default function PillarA() {
 
       {/* Tab detail modal — outside all RevealBlocks so position:fixed works */}
       {detailModal !== null && (() => {
-        const modalItem = DETAIL_MODALS[detailModal.tabIdx * 3 + detailModal.itemIdx];
+        const modalItem = translatedDetailModals[detailModal.tabIdx * 3 + detailModal.itemIdx];
         return modalItem ? (
           <TabDetailModal
             item={modalItem}
@@ -1783,7 +1809,7 @@ export default function PillarA() {
       {/* Principle modal — outside all RevealBlocks so position:fixed works */}
       {principleIdx !== null && (
         <PrincipleModal
-          p={PRINCIPLES[principleIdx]}
+          p={translatedPrinciples[principleIdx]}
           idx={principleIdx}
           total={PRINCIPLES.length}
           onClose={() => setPrincipleIdx(null)}

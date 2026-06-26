@@ -373,6 +373,519 @@
         "previewItems": ["Woche 4 Test", "Woche 8 Test", "Woche 12 Test", "Radardiagramm", "6 persönliche Ziele", "A/B/C/D Punkte", "Coach-Notizen"],
         "cta": "Fortschritt verfolgen"
       }
+    ],
+    "principles_full": [
+      {
+        "keyFact": "6 grundlegende Bewegungsmuster (Kniebeuge, Hüftangel, Drücken, Ziehen, Tragen, Rumpf) decken 95% aller Fitnessübungen für ein Leben lang ab.",
+        "detail": "Falsche Technik schadet nicht nur — sie verschwendet jede Einheit. Richtiges Lernen von Anfang an hilft dem Gehirn, das richtige Bewegungsmuster abzuspeichern, das der Körper im Laufe der Zeit effizienter ausführt. Der menschliche Körper ist darauf ausgelegt, 6 grundlegende Bewegungsmuster auszuführen. Diese 6 zu beherrschen reicht aus, um ein Leben lang zu trainieren — kein komplexes Equipment oder ausgefallene Übungen nötig.",
+        "details": [
+          "Schlechte Technik erzeugt 'falsche Bewegungsmuster' — das Gehirn memoriert die falsche Bewegung und automatisiert sie. Später zu korrigieren ist viel schwieriger, als von Anfang an richtig zu lernen.",
+          "6 grundlegende Bewegungsmuster: Kniebeuge (Hinsetzen), Hüftangel (Hüftbeugung), Drücken (Pressen), Ziehen (Rudern), Tragen (Lastenträger), Rumpf (Stabilisieren). Jede komplexe Übung ist eine Variation dieser 6.",
+          "Korrekte Technik mit leichtem Gewicht ist effektiver als schlechte Technik mit schwerem Gewicht. Das Prinzip des 'progressiven Overloads' ist nur sicher, wenn die Form korrekt ist.",
+          "Selbstaufnahme per Handy oder ein Spiegel ist das effektivste kostenlose Werkzeug zur Techniküberprüfung. Alle 2 Wochen eine Grundübung aufnehmen und selbst beurteilen.",
+          "Kein Fitnessstudio oder Equipment nötig: nur 2 Quadratmeter Platz, eine Matte und das eigene Körpergewicht reichen aus, um alle 6 Bewegungsmuster korrekt zu erlernen."
+        ],
+        "points": [
+          { "icon": "🏋️", "label": "Kniebeuge & Hüftangel", "note": "Fundament der Unterkörperstärke" },
+          { "icon": "💪", "label": "Drücken & Ziehen", "note": "Vollständige Oberkörperbalance" },
+          { "icon": "🧱", "label": "Tragen & Rumpf", "note": "Wirbelsäulenstabilität bei der Bewegung" },
+          { "icon": "📹", "label": "Video-Selbstkontrolle", "note": "Kostenloses visuelles Feedback-Werkzeug" }
+        ]
+      },
+      {
+        "keyFact": "3 Einheiten/Woche über 12 Wochen = 36 Einheiten. 7 Einheiten/Woche über 3 Wochen = 21 Einheiten dann aufgehört. Die Mathematik spricht für Konsequenz.",
+        "detail": "Das Gehirn baut 'neuronale Schnellstraßen' durch regelmäßige Wiederholung — nicht durch hohe Intensität. Neuromuskuläre Anpassung erfolgt mit geeignetem Reiz, ausreichend Erholung und stabilen Wiederholungszyklen. Zu viel Training zu schnell erhöht langfristig Kortisol, stört den Schlaf, erschöpft die Willenskraft — und führt letztendlich zum Aufgeben. Erst Konsequenz aufbauen, dann Intensität erhöhen.",
+        "details": [
+          "Das Gehirn braucht 21–66 Tage, um ein neues Verhalten zu automatisieren. In dieser Phase ist Willenskraft eine begrenzte Ressource — gestalte Gewohnheiten so, dass sie so wenig Willenskraft wie möglich verbrauchen.",
+          "Das Prinzip der 'minimalen effektiven Dosis': Der minimale Trainingsreiz erzeugt noch Anpassung. 20 Minuten mit guter Form schlägt 90 Minuten mit erschöpfter Form.",
+          "Erholung ist keine verschwendete Zeit — in ihr passt sich der Körper tatsächlich an und wird stärker. Erholung auszulassen unterbricht den Anpassungszyklus.",
+          "Habit Stacking: Das Training an eine bestehende Gewohnheit knüpfen (nach dem Morgenkaffee, vor dem Duschen). Reduziert die 'Reibung' des Anfangs.",
+          "Wenn du einen Tag verpasst: Wende die 'Niemals zweimal verpassen'-Regel an. 1 Tag verpassen ist ein Zwischenfall; 2 aufeinanderfolgende Tage zu verpassen beginnt eine neue Gewohnheit."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "21–66 Tage", "note": "Zeit für das Gehirn, eine Gewohnheit zu automatisieren" },
+          { "icon": "📅", "label": "3 Einheiten/Woche", "note": "Optimale Häufigkeit für Anfänger" },
+          { "icon": "😴", "label": "Ausreichend Erholung", "note": "Körper passt sich in Ruhe an, nicht beim Training" },
+          { "icon": "🔗", "label": "Habit Stacking", "note": "Training an bestehende Gewohnheiten knüpfen" }
+        ]
+      },
+      {
+        "keyFact": "Nur 4 einfache Metriken: erhöhte Wiederholungen, Plank-Zeit, Taillenumfang und Energieniveau. Kein komplexes Equipment nötig.",
+        "detail": "Fitnessfortschritt verläuft langsam und nichtlinear — ohne klares Feedback kann das Gehirn 'Fortschritt machen' nicht von 'Stillstand' unterscheiden. Messung erzeugt eine klare Feedback-Schleife: Du weißt, was du anpassen musst, und siehst vor allem, dass du tatsächlich Fortschritte machst, auch wenn es langsam geht.",
+        "details": [
+          "4 Typen von Metriken: (1) Kraft — Steigerung der Wdh/Gewichte; (2) Ausdauer — Plank-Zeit, Schrittanzahl; (3) Körperzusammensetzung — Taille/Hüfte messen; (4) Funktion — Energieniveau, Schlafqualität.",
+          "4-Wochen-Testzyklus: nicht willkürlich — 4 Wochen reichen aus, um klare Anpassung zu sehen, ohne die Richtung zu verlieren.",
+          "Ergebnisse mit welchem Werkzeug auch immer festhalten: Handynotizen, Tabellenkalkulation, handgeschriebenes Journal. Was zählt ist das AUFZEICHNEN, nicht das Werkzeug.",
+          "Mit dir selbst letzte Woche vergleichen, nicht mit anderen. 5% Verbesserung alle 4 Wochen nach 1 Jahr = 80% Verbesserung gegenüber dem Ausgangswert.",
+          "Wenn sich Ergebnisse nach 4 Wochen nicht ändern: kein Versagen — es ist ein Signal zur Anpassung (Belastung erhöhen, Übungen wechseln, Schlaf/Ernährung verbessern)."
+        ],
+        "points": [
+          { "icon": "💪", "label": "Kraft", "note": "Wdh & Gewichte steigen über die Zeit" },
+          { "icon": "📏", "label": "Körperzusammensetzung", "note": "Taille, Hüfte — aussagekräftiger als das Waaggewicht" },
+          { "icon": "⚡", "label": "Energie", "note": "Die wichtigste funktionelle Metrik" },
+          { "icon": "🔄", "label": "4-Wochen-Zyklus", "note": "Regelmäßig überprüfen & anpassen" }
+        ]
+      }
+    ],
+    "highlight_modals_full": [
+      {
+        "modalTitle": "HD-Video pro Übung — Warum richtiges Anschauen wichtiger ist als Lesen",
+        "keyFact": "Bewegungstechnik per Video zu lernen aktiviert die Spiegelneuronen des Gehirns — der Körper beginnt das Bewegungsmuster zu erlernen, noch bevor geübt wird. Das Anschauen aus den richtigen Winkeln reduziert die Lernzeit für Technik um 40%.",
+        "detail": "Trainingstechnik kann allein aus Text nicht gelernt werden. HD-Video aus mehreren Winkeln ermöglicht dem Gehirn, 3D-Bewegung zu analysieren — etwas, das 2D-Bilder oder Textbeschreibungen einfach nicht vermitteln können.",
+        "details": [
+          "Spiegelneuronen: Wenn du jemanden eine Bewegung ausführen siehst, aktivieren sich dieselben motorischen Regionen deines Gehirns — dies ist der Mechanismus des Lernens von Bewegung durch Beobachtung.",
+          "Kamerawinkel ist wichtig: Die Seitenansicht zeigt Kniebeugetiefe und Rückenposition. Die Vorderansicht zeigt bilaterale Symmetrie. Die Rückansicht zeigt Wirbelsäulenausrichtung.",
+          "Bewegungshinweise: 'Zwischen die Füße setzen' ist effektiver als 'Knie 90° beugen'. 'Boden wegdrücken' ist effektiver als 'Knie strecken'. Gute Cues aktivieren die richtigen Muskeln besser.",
+          "Abspielgeschwindigkeit: Zeitlupe bei 0,5-facher Geschwindigkeit hilft, Bewegungsphasen zu erkennen, die das bloße Auge bei normaler Geschwindigkeit übersieht.",
+          "Levelvergleich: Dieselbe Übung auf Anfänger-, Mittel- und Fortgeschrittenenniveau nebeneinander zu sehen hilft dem Gehirn, eine visuelle Fortschritts-Roadmap aufzubauen.",
+          "Erst anschauen, dann üben: Motoriklernforschung zeigt, dass das 2–3-malige Anschauen von Videos vor dem Üben die Technik in der ersten Einheit um 28% verbessert."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Spiegelneuronen", "note": "Gehirn lernt Technik beim Anschauen, vor dem Üben" },
+          { "icon": "📐", "label": "3 Kamerawinkel", "note": "Sagittal · Frontal · Posterior — keiner fehlt" },
+          { "icon": "⏪", "label": "Zeitlupe 0,5×", "note": "Bewegungsphasen erkennen, die bei Normalgeschwindigkeit fehlen" },
+          { "icon": "📈", "label": "+28% Technik", "note": "Video vor dem Training schlägt Beschreibungen lesen" }
+        ]
+      },
+      {
+        "modalTitle": "3 Stufen pro Übung — Fortschritt, der nie stagniert",
+        "keyFact": "Prinzip des progressiven Overloads: Der Körper entwickelt sich nur weiter, wenn der Reiz im Laufe der Zeit allmählich zunimmt. 3 Stufen pro Übung schaffen einen klaren Fortschrittspfad für mindestens 6–18 Monate.",
+        "detail": "Die meisten Menschen hören mit dem Training nicht auf, weil sie faul sind — sondern weil sie ein Plateau erreichen und nicht wissen, was der nächste Schritt ist. 3 klare Stufen pro Übung lösen dies: Es gibt immer ein Ziel.",
+        "details": [
+          "Stufe 1 — Grundlegend (Anfänger): Voller Bewegungsumfang mit Unterstützung oder niedrigem Gewicht. Ziel ist das Erlernen des korrekten Bewegungsmusters, nicht das Volumen.",
+          "Stufe 2 — Mittel: Gleiches Bewegungsmuster, aber weniger Unterstützung oder erhöhte Last. Technik ist stabil, jetzt Fokus auf Kraftfortschritt. Beispiel: Langhantel-Kniebeuge.",
+          "Stufe 3 — Fortgeschritten: Erhöhte Schwierigkeit durch Unilateral (ein Bein/Arm), spezielles Tempo oder erweiterten Bewegungsumfang. Beispiele: Pistol Squat, Pause Squat.",
+          "Level-up-Kriterien: Nicht impulsiv — basierend auf spezifischen Kriterien (10 Wdh × 3 Sätze mit perfekter Technik). Nicht aufsteigen, bevor die Kriterien erfüllt sind.",
+          "Zeit zwischen Stufen: Anfänger brauchen typischerweise 4–8 Wochen pro Stufe. Mittelstufe braucht 8–16 Wochen. Es gibt kein 'zu langsam'.",
+          "Wenn auf einer Stufe feststeckend: Meist aus unzureichendem Volumen (1–2 Sätze hinzufügen), unzureichendem Protein oder schlechtem Schlaf. Diese 3 Faktoren zuerst korrigieren."
+        ],
+        "points": [
+          { "icon": "🪜", "label": "6–18 Monate Roadmap", "note": "3 Stufen = ausreichende Herausforderung für mindestens 1,5 Jahre" },
+          { "icon": "✅", "label": "Level-up-Kriterien", "note": "10 Wdh × 3 Sätze mit perfekter Form = bereit" },
+          { "icon": "⏱️", "label": "4–8 Wochen pro Stufe", "note": "Normal für Anfänger — nicht mit anderen vergleichen" },
+          { "icon": "🔄", "label": "Plateau = fehlendes Volumen", "note": "1–2 Sätze hinzufügen, bevor man sich Sorgen um Technik macht" }
+        ]
+      },
+      {
+        "modalTitle": "Wissenschaftliches Aufwärmen — 5–8 Minuten, die man nicht überspringen kann",
+        "keyFact": "Richtiges Aufwärmen erhöht die Muskeltemperatur um 1–2°C, verbessert die neuromuskuläre Übertragung und reduziert die Gelenksviskosität. Ergebnis: Maximalkraft steigt um 15–20%, Verletzungsrisiko sinkt um 20–30%.",
+        "detail": "Aufwärmen ist kein Ritual — es hat spezifische physiologische Funktionen. Kalte Muskeln kontrahieren weniger effektiv, die neuronale Übertragung ist langsamer und Gelenken fehlt Schmierung.",
+        "details": [
+          "Muskeltemperatur: Jede 1°C Temperaturerhöhung = 2–4% schnellere Muskelkontraktionsgeschwindigkeit. 5 Minuten Aufwärmen reichen aus, um die Tiefenmuskeltemperatur um 1–2°C zu erhöhen.",
+          "Gelenkflüssigkeit: Morgens oder nach langem Sitzen ist die Gelenkflüssigkeit dick. Leichte Bewegung beim Aufwärmen stimuliert die Sekretion von Synovialflüssigkeit und reduziert Reibung.",
+          "Neuronale Voraktivierung: Aufwärmen aktiviert Motoneuronen, die in der Einheit benötigt werden. Mit übungsähnlichen Bewegungen zu beginnen ist effektiver als allgemeines Joggen.",
+          "Dynamisch > Statisch: Dynamisches Aufwärmen ist besser als statisches Dehnen vor dem Training. Statisches Dehnen vor dem Training kann die Maximalkraft vorübergehend um 5–10% reduzieren.",
+          "Progressive Intensität: Leicht beginnen → Intensität schrittweise erhöhen. Faustregel: 2–3 Aufwärmsätze bei 50–70% des Arbeitsgewichts vor Hauptsätzen.",
+          "Psychologisches Aufwärmen: Die Aufwärmzeit ist auch, wenn das Gehirn vom Arbeits-/Alltagsmodus in den Trainingsmodus 'umschaltet'. Dieses psychologische Aufwärmen nicht überspringen."
+        ],
+        "points": [
+          { "icon": "🌡️", "label": "+1–2°C Muskeltemperatur", "note": "= +4–8% Kontraktionsgeschwindigkeit und Kraft" },
+          { "icon": "💧", "label": "Stimuliert Gelenkflüssigkeit", "note": "Reduziert Reibung, schützt Gelenkknorpel" },
+          { "icon": "⚡", "label": "Neuronale Voraktivierung", "note": "Aktiviert die richtigen Motoneuronen für die Einheit" },
+          { "icon": "🚫", "label": "Kein statisches Dehnen vorher", "note": "Reduziert Maximalkraft um 5–10% vor dem Training" }
+        ]
+      },
+      {
+        "modalTitle": "4 Standard-Zeitblöcke — Wissenschaftliche Struktur für jede Einheit",
+        "keyFact": "4 Blöcke dienen 4 verschiedenen physiologischen Funktionen: Aufwärmen (neuronale Aktivierung) → Haupttraining (Reiz) → Abkühlen (Erholungseinleitung) → Entspannung (ANS-Regulierung). Das Fehlen eines Blocks reduziert die Gesamteffektivität.",
+        "detail": "Die 4-Block-Struktur ist nicht willkürlich — jeder Block dient einer Phase im physiologischen Zyklus einer Trainingseinheit. Wenn 1 Block fehlt, wird die gesamte physiologische Kette unterbrochen.",
+        "details": [
+          "Block 1 — Aufwärmen (5–10 Min): Erhöht Muskeltemperatur, aktiviert neuromuskuläre Systeme, schmiert Gelenke. Überspringen = 15–20% Reduktion der Maximalkraft.",
+          "Block 2 — Haupttraining (10–150 Min): Der Kern der Einheit. Kraft, Cardio oder kombiniert. Dies ist der einzige Block, der in der Dauer flexibel sein kann.",
+          "Block 3 — Abkühlen (5–10 Min): Statisches Dehnen nach dem Training hilft, den Bewegungsumfang zu erhöhen und Muskelkater zu reduzieren. Jede Position ≥30 Sekunden halten.",
+          "Block 4 — Entspannung (5 Min): Stellt das autonome Nervensystem von sympathisch auf parasympathisch um. Kontrolliertes Atmen ist der schnellste Weg.",
+          "Zeitverhältnisse: Für eine 60-Min-Einheit: Aufwärmen 8' + Haupttraining 40' + Abkühlen 7' + Entspannung 5'. Für 20 Min: 4' + 10' + 4' + 2'.",
+          "Häufige Fehler: Aufwärmen überspringen weil 'zu beschäftigt', Abkühlen überspringen weil 'langweilig', Entspannung überspringen weil 'nicht nötig'. Ergebnis: Einheit mit nur Block 2."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "Aufwärmen nicht verhandelbar", "note": "+15–20% Maximalkraft bei richtigem Aufwärmen" },
+          { "icon": "⚡", "label": "Haupttraining", "note": "Der einzige Block vollständig flexibel in der Dauer" },
+          { "icon": "🧘", "label": "Abkühlen nach (nicht vorher)", "note": "≥30 Sek pro Position für echte Wirkung" },
+          { "icon": "🌬️", "label": "Entspannung 5 Min", "note": "Sympathisch → parasympathisch am schnellsten umschalten" }
+        ]
+      },
+      {
+        "modalTitle": "8 Zeitstufen — Von 20 Minuten bis 3 Stunden, alles geplant",
+        "keyFact": "'Heute zu beschäftigt zum Training' liegt meist nicht an der Zeit — sondern daran, keinen Plan für kurze Einheiten zu haben. 20 strukturierte Minuten sind effektiver als 1 ungeplante Stunde.",
+        "detail": "8 Zeitstufen von 20 bis 180 Minuten stellen sicher, dass es immer einen passenden Plan gibt, egal wie viel Zeit verfügbar ist — keine Ausrede wegen 'nicht genug Zeit'.",
+        "details": [
+          "Stufe 20 Min (Sehr beschäftigt): Aufwärmen 4' + Ganzkörper-Circuit 12' + Schnelles Dehnen 3' + Atmung 1'. 3 Verbundübungen, 3 Sätze × 8 Wdh. Null verschwendete Sekunden.",
+          "Stufe 30 Min (Schnell): 1 Übung oder 1 Satz pro Übung hinzufügen. Oder Circuits durch Supersätze ersetzen (2 Übungen hintereinander, kürzere Pause).",
+          "Stufe 45 Min (Standard): Kann in Kraft (25') + leichtes Cardio (10') aufgeteilt oder vollständig auf Kraft mit gründlicherem Aufwärmen konzentriert werden.",
+          "Stufe 60 Min (Vollständig): Genug Zeit für fokussiertes Unter- oder Oberkörpertraining mit vollständigem Aufwärmen und bedeutungsvollem Abkühlen.",
+          "Stufe 90–120 Min (Fortgeschritten): Ergänzungsarbeit nach dem Hauptlift hinzufügen oder Kraft + LISS-Cardio kombinieren.",
+          "Stufe 180 Min (Intensiv): Geeignet für Sportler oder besondere Trainingstage. Erfordert besondere Aufmerksamkeit für Hydration und Intra-Workout-Ernährung."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "20 Minuten reichen", "note": "Strukturierter Ganzkörper-Circuit ist nicht schlechter als 1 Stunde" },
+          { "icon": "📅", "label": "8 Stufen = 8 fertige Pläne", "note": "Immer einen Plan haben, unabhängig von der verfügbaren Zeit" },
+          { "icon": "🎯", "label": "60 Min = ideal", "note": "Reicht für eine vollständige Einheit ohne Zeitdruck" },
+          { "icon": "🚫", "label": "Kein 'zu beschäftigt'", "note": "Nur 'noch kein Plan für kurze Einheit'" }
+        ]
+      },
+      {
+        "modalTitle": "Minutengenaue Planung — Kein 'Was als nächstes trainieren?' mehr",
+        "keyFact": "Menschen, die mit einem minutengenauen Plan trainieren, vollenden 94% des geplanten Volumens. Diejenigen ohne detaillierten Plan vollenden nur 67% — überspringen Übungen, kürzen Sätze ab, rasten zu lang.",
+        "detail": "Minutengenaue Planung bedeutet nicht starr zu sein — es bedeutet, in jeder Phase genau zu wissen, was getan wird. Diese Klarheit eliminiert alle 'Totzeiten' aus der Einheit.",
+        "details": [
+          "Totzeit in Einheiten: Zögern zwischen Übungen, Entscheiden über nächste Sätze, Equipment suchen. Studien zeigen, dass Totzeit 20–35% der Zeit bei ungeplanten Einheiten ausmacht.",
+          "Pausentimer vs. Gefühl: Pausieren nach Gefühl tendiert dazu, 40% länger als nötig zu dauern. Timer: 60–90 Sekunden für Hypertrophie, 3–5 Minuten für Maximalkraft.",
+          "Übungen priorisieren: Die wichtigste Übung zuerst trainieren, wenn die Energie am höchsten ist. Ergänzungsarbeit zuletzt.",
+          "Supersätze: 2–3 Übungen, die nicht dieselbe primäre Muskelgruppe ansprechen, aufeinanderfolgend kombinieren. Erhöht die Dichte ohne die Gesamtzeit zu verlängern.",
+          "Einfaches Tracking: Direkt nach jedem Satz notieren (Übung, Wdh, Gewicht). 2–3 Minuten pro Einheit reichen für konsistenten progressiven Overload.",
+          "Adaptive Planung: Ein Plan ist nicht unveränderlich — er ist ein Ausgangspunkt. Bei Bedarf anpassen, aber die Gesamtstruktur nicht brechen."
+        ],
+        "points": [
+          { "icon": "✅", "label": "94% vs. 67%", "note": "Volumenvollendung mit/ohne detaillierten Plan" },
+          { "icon": "⏱️", "label": "Pausentimer", "note": "60–90\" für Hypertrophie · 3–5' für Maximalkraft" },
+          { "icon": "🔝", "label": "Priorität zuerst", "note": "Wichtigste Übung zuerst, wenn Energie hoch ist" },
+          { "icon": "📝", "label": "2–3 Min/Einheit tracken", "note": "Reicht für konsistenten progressiven Overload" }
+        ]
+      },
+      {
+        "modalTitle": "3 Wochenrhythmus-Phasen — Von Beginn bis Personalisierung",
+        "keyFact": "Allgemeines Anpassungssyndrom (GAS, Selye 1950): Der Körper reagiert auf Stress in 3 Phasen — Alarm (Schock) → Widerstand (Anpassung) → Erschöpfung (wenn nicht erholt). Ein 3-Phasen-Wochenrhythmus spiegelt diesen Zyklus wider.",
+        "detail": "3 Wochenrhythmus-Phasen sind nicht willkürlich festgelegt — sie spiegeln wider, wie der Körper lernt, sich im Laufe der Zeit an die Trainingsbelastung anzupassen.",
+        "details": [
+          "Phase 1 — Start (Wochen 1–4): 3 Einheiten/Woche, niedrig-moderate Intensität, fokussiert auf das Erlernen von Technik. Ziel: Gewohnheit aufbauen, nicht Fitness.",
+          "Phase 2 — Aufbau (Wochen 5–12): 4 Einheiten/Woche, kontrollierte Volumen- und Intensitätssteigerung. Hauptphase für Muskelaufbau/Fettabbau — der Körper passt sich am schnellsten an.",
+          "Phase 3 — Fortschritt (Woche 13+): 5–6 Einheiten/Woche, für spezifische Ziele personalisiert. Diese Phase nur betreten, wenn die Basis solide genug ist.",
+          "Deload-Wochen: Nach je 4–6 Wochen steigendem Volumen, 1 Woche mit 40–50% reduzierter Intensität. Superkompensation tritt in dieser Woche auf.",
+          "Warum die 3 Phasen nicht übersprungen werden können: ACSM-Statistiken: 70% der Menschen, die zu viel zu schnell trainieren, verletzen sich in den ersten 3 Monaten.",
+          "Phasenübergänge: Kein bestimmter Tag — basierend auf Körpersignalen: gute Erholung, stabile Leistung, guter Schlaf, stabile Stimmung."
+        ],
+        "points": [
+          { "icon": "🌱", "label": "Phase 1: Gewohnheiten aufbauen", "note": "Technik lernen + Gewohnheit aufbauen — noch keine Fitness" },
+          { "icon": "💪", "label": "Phase 2: Basis aufbauen", "note": "Wochen 5–12: schnellster Muskelaufbau/Fettabbau" },
+          { "icon": "🎯", "label": "Phase 3: Personalisieren", "note": "Woche 13+: für spezifisches Ziel optimieren" },
+          { "icon": "🔄", "label": "Deload = stärkste Woche", "note": "Superkompensation tritt bei reduziertem Training auf" }
+        ]
+      },
+      {
+        "modalTitle": "6 Zielorientierte Programme — Finde den Rhythmus, der am besten zu dir passt",
+        "keyFact": "'One size fits all' gibt es beim Training nicht. 6 Programme für 6 verschiedene Profile in Bezug auf Ziel, verfügbare Zeit und Ausgangspunkt. Das falsche Programm zu wählen = keine Ergebnisse trotz harter Arbeit.",
+        "detail": "Viele Menschen scheitern nicht aus mangelnder Disziplin — sondern weil sie einem Programm folgen, das nicht zu ihrer Situation passt.",
+        "details": [
+          "Programm 1 — Sehr beschäftigt (2 Einheiten/Woche): Ganzkörper pro Einheit, 45 Minuten, 4–5 Verbundübungen. Geeignet für: Menschen, die >50 Stunden/Woche arbeiten.",
+          "Programm 2 — Anfänger (3 Einheiten/Woche): A/B abwechselnd. Am effektivsten für Anfänger, weil die Häufigkeit hoch genug ist, um Technik zu lernen.",
+          "Programm 3 — Beliebt (4 Einheiten/Woche): Ober-/Unterkörper-Split. Reicht für merklichen Fortschritt mit ausreichend Erholung.",
+          "Programm 4 — Fortgeschritten (5 Einheiten/Woche): Erfordert solide Technikgrundlage und hohe Erholungskapazität.",
+          "Programm 5 — Intensiv (6 Einheiten/Woche): Erfordert 12+ Monate Erfahrung und optimale Ernährungs-Schlaf-Bedingungen.",
+          "Programm 6 — Sportler (6 Einheiten + ergänzendes Cardio): Kombiniert Krafttraining, sportspezifisches Cardio und Mobilitätsarbeit."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Programme 1–2: Start", "note": "2–3 Einheiten/Woche für Anfänger und Beschäftigte" },
+          { "icon": "💪", "label": "Programm 3: Sweet Spot", "note": "4 Einheiten/Woche am beliebtesten, beste Ergebnisse" },
+          { "icon": "🔑", "label": "Basierend auf Realität wählen", "note": "Nachhaltiger Rhythmus > idealer, nicht aufrechtzuerhaltender" },
+          { "icon": "📈", "label": "Schrittweise aufbauen", "note": "4 Wochen stabil, dann 1 Einheit hinzufügen" }
+        ]
+      },
+      {
+        "modalTitle": "Richtige Erholung — Regeneration ist essenziell, keine Faulheit",
+        "keyFact": "Muskeln werden nicht während des Trainings stärker — sondern in der Erholung danach. Ein Ruhetag ist kein Tag des 'Nichtstuns' — es ist, wenn der Körper tatsächlich aufbaut, was stimuliert wurde.",
+        "detail": "Die Kultur des 'No pain no gain' hat Millionen von Sportlern geschadet. Ausreichende Erholung ist kein Zeichen von Schwäche — es ist eine essentielle Trainingsfähigkeit.",
+        "details": [
+          "Aktive Erholung vs. passive Ruhe: 20–30 Minuten Gehen, leichtes Yoga oder leichtes Schwimmen bei niedriger Intensität beschleunigt die Erholung tatsächlich.",
+          "Schlaf ist Erholungswerkzeug Nr. 1: Wachstumshormon (GH) wird zu 70–80% während des Tiefschlafs ausgeschüttet. 1 Stunde Schlaf fehlen = 18–21% Reduktion der Muskelproteinsynthese.",
+          "Ernährung an Ruhetagen: Protein an Ruhetagen nicht reduzieren — Muskelproteinsynthese setzt sich 24–48 Stunden nach dem Training fort.",
+          "HRV (Herzratenvariabilität): Einfachste Metrik zur Messung der Erholung. Hohe HRV morgens = gute Erholung. Niedrige HRV über mehrere Tage = mehr Ruhe nötig.",
+          "Ruhepuls-Trend: Wenn Ruhepuls über 3+ Tage 5–10 bpm über dem Ausgangswert liegt — Übertrainingssignal. 1–2 zusätzliche Ruhetage oder 40–50% Volumenreduktion nötig.",
+          "Psychologische Erholung: Jeden Tag ohne Begeisterung trainieren — dies ist ein Signal zum Ausruhen, auch wenn der Körper 'nicht schmerzt'."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Aktive Erholung besser", "note": "Leichtes Gehen > Stillliegen an Ruhetagen" },
+          { "icon": "😴", "label": "Schlaf = GH +70–80%", "note": "Kein Supplement kompensiert schlechten Schlaf" },
+          { "icon": "💓", "label": "HRV verfolgt Erholung", "note": "Smartwatch misst es — hohe HRV = erholt" },
+          { "icon": "🧠", "label": "Psychologischer Burnout zuerst", "note": "Verlorene Motivation ist ein früheres Signal als körperlicher Schmerz" }
+        ]
+      },
+      {
+        "modalTitle": "Klare Fortschrittsleiter — Wisse genau, was dein nächster Schritt ist",
+        "keyFact": "Mangelnde Klarheit über 'den nächsten Schritt' ist der Nr.-1-Grund, warum Menschen mit dem Training aufhören (IHRSA 2019). Nicht Faulheit, nicht Zeitmangel — sondern 'Ich weiß nicht, was ich als nächstes tun muss'.",
+        "detail": "Die Fortschrittsleiter ist kein Titel oder Wettbewerb. Sie ist ein Positionierungssystem — hilft zu wissen, wo man gerade ist, was zum Aufsteigen benötigt wird und wie der nächste Schritt konkret aussieht.",
+        "details": [
+          "Das Problem mit 'freiem Training': Keine klaren Kriterien = nicht wissen, wann man 'gut genug' ist. Training ohne zu wissen, ob man Fortschritte macht = Motivation verlieren.",
+          "5 klare Stufen: Stufe 1 (30'/Tag gehen) → Stufe 2 (10 Liegestütze, Plank 30\") → Stufe 3 (KG-Kniebeuge, 2km laufen) → Stufe 4 (Kniebeuge 1,5×KG, 5km <30') → Stufe 5 (Sportler).",
+          "Warum 5 Stufen, nicht mehr: Granular genug, um zu wissen, wo man ist, nicht so viele, dass es überfordert. 5 Stufen entsprechen etwa 1–5 Jahren ernsthaftem Training.",
+          "In die richtige Stufe testen: Sich selbst anhand objektiver Kriterien einschätzen (Wdh, Zeit, Last), nicht nach Gefühlen.",
+          "Belohnungen für das Aufsteigen: Neue Übungstypen (Unilateral, Olympisches Heben), erhöhte Trainingshäufigkeit. Jede Stufe schaltet neue Fähigkeiten frei.",
+          "Nicht mit anderen vergleichen: Die Leiter ist persönlich — basierend auf dem eigenen Ausgangswert. Ein 50-Jähriger auf Stufe 3 ist viel besser als ein stagnierenter 20-Jähriger."
+        ],
+        "points": [
+          { "icon": "🗺️", "label": "Klare Positionierung", "note": "Wissen, wo man ist = 70% weniger wahrscheinlich aufzuhören" },
+          { "icon": "✅", "label": "Objektive Kriterien", "note": "Wdh · Zeit · Last — keine Gefühle" },
+          { "icon": "🏆", "label": "Belohnungen für Aufsteigen", "note": "Jede Stufe schaltet neue Fähigkeiten und Übungen frei" },
+          { "icon": "🚫", "label": "Nicht vergleichen", "note": "Die Leiter ist persönlich — eigener Ausgangswert" }
+        ]
+      },
+      {
+        "modalTitle": "3-Perioden-Tests — Wochen 4, 8 und 12 sind Schlüsselmeilensteine",
+        "keyFact": "What gets measured gets managed (Peter Drucker). 3 Testperioden in den ersten 12 Wochen ermöglichen Anpassungen auf Basis echter Daten. Menschen mit einem Testplan erreichen Ziele 2,5× effektiver.",
+        "detail": "3 Testperioden dienen nicht der Kontrolle — sondern der Anpassung. Woche 4 zeigt, ob der Plan funktioniert. Woche 8 zeigt die Fortschrittsrate. Woche 12 liefert eine vollständige Bewertung.",
+        "details": [
+          "Woche-4-Test — Kalibrierung: Nach 4 Wochen hat der Körper die anfängliche neuronale Anpassungsphase überwunden. Zeigt, ob der Plan geeignet ist oder angepasst werden muss.",
+          "Woche-8-Test — Trendanalyse: Mit Woche 4 vergleichen. Fortschritt >10% = Plan funktioniert gut. <5% = Ernährung und Schlaf überprüfen. Leistungsabfall = Übertraining.",
+          "Woche-12-Test — Vollständige Bewertung: Umfassende Beurteilung aller 4 Dimensionen. Diese Ergebnisse bilden die Grundlage für den nächsten 12-Wochen-Plan.",
+          "Test am richtigen Tag: Nicht nach einer schweren Einheit, wenn müde oder krank. Konsistente Bedingungen ermöglichen genaue Vergleiche.",
+          "Anpassungen: Woche-4-Test schlecht → Protein oder Schlaf erhöhen. Woche-8-Test gut → Volumen um 5–10% erhöhen. Nicht mehrere Dinge gleichzeitig ändern.",
+          "Ein Ritual schaffen: Den Testtag zu einer Zeremonie machen — gleiche Zeit, gleiches Aufwärmen. Rituale helfen dem Geist, konsistente Ergebnisse zu liefern."
+        ],
+        "points": [
+          { "icon": "📅", "label": "Woche 4: Kalibrierung", "note": "Funktioniert der Plan? Früh anpassen wenn nötig" },
+          { "icon": "📈", "label": "Woche 8: Trend", "note": ">10% Fortschritt = in die richtige Richtung" },
+          { "icon": "🏁", "label": "Woche 12: Vollbewertung", "note": "Grundlage für den nächsten 12-Wochen-Plan" },
+          { "icon": "🎭", "label": "Test-Ritual schaffen", "note": "Gleiche Bedingungen jedes Mal = zuverlässige Ergebnisse" }
+        ]
+      },
+      {
+        "modalTitle": "4-dimensionales Radardiagramm — Kraft · Ausdauer · Flexibilität · Erholung",
+        "keyFact": "Die 4 Dimensionen sind nicht 4 separate Tests — sie sind ein umfassendes körperliches Gesundheitsbewertungssystem. VO2 max ist laut JAMA 2018 (122.000 Menschen) der Nr.-1-Prädiktor für Langlebigkeit.",
+        "detail": "Fitness ist nicht eindimensional. Die stärkste Person ist nicht unbedingt die gesündeste. Ein 4-dimensionales Radardiagramm zeigt das 'vollständige Bild' — nicht nur Stärken.",
+        "details": [
+          "Dimension 1 — Kraft: Misst die Fähigkeit, Kraft zu erzeugen. Einfache Tests: maximale Liegestütz-Wdh, 5RM Kniebeuge. Kraft ist das Fundament — fehlende Kraft begrenzt alle anderen Dimensionen.",
+          "Dimension 2 — Ausdauer (kardiovaskulär): VO2 max ist der Goldstandard. Alternativen: 1,5 km Laufzeit, Beep-Test oder 12-Minuten-Cooper-Test.",
+          "Dimension 3 — Flexibilität (Mobilität): Nicht darum so flexibel wie ein Tänzer zu sein — sondern genug Bewegungsumfang für grundlegende Bewegungsmuster zu haben.",
+          "Dimension 4 — Erholung: Zusammensetzung aus HRV-Trend, Ruhepuls, Schlafqualität und Zeit zur Erholung nach einer Standardeinheit.",
+          "Asymmetrie ist ein Warnsignal: Wenn eine Dimension >30% unter den anderen liegt → in der nächsten Phase Priorität auf die Verbesserung setzen.",
+          "Wie das Radardiagramm gezeichnet wird: Jede Dimension 1–10 auf Basis der Fortschrittsleiter-Kriterien bewerten. Ziel: die gleichmäßigste Form, nicht der höchste Wert auf einer Achse."
+        ],
+        "points": [
+          { "icon": "❤️", "label": "VO2 max = Langlebigkeit", "note": "JAMA 2018: 122.000 Menschen — Nr.-1-Prädiktor" },
+          { "icon": "⚠️", "label": "Asymmetrie = Gefahr", "note": ">30% Unterschied = schwache Dimension priorisieren" },
+          { "icon": "📐", "label": "Wert 1–10 pro Dimension", "note": "Basierend auf Fortschrittsleiter-Kriterien — objektiv" },
+          { "icon": "🎯", "label": "Gleichmäßiges Viereck", "note": "Ziel: Balance — nicht hoher Wert in nur einer Dimension" }
+        ]
+      }
+    ],
+    "detail_modals_full": [
+      {
+        "modalTitle": "Warum nur 6 Muster? — Die Biomechanik hinter tausenden Übungen",
+        "keyFact": "Biomechaniker analysierten >3.000 Übungen und fanden, dass alle Variationen von 6 grundlegenden Bewegungsmustern sind. Die 6 meistern = Grundlage für 95% aller Übungen deines Lebens.",
+        "detail": "Das 6-Muster-Framework ist das Ergebnis biomechanischer Analyse von tausenden verschiedenen Übungen. Jedes Muster repräsentiert eine Gelenk-Muskel-Kette, für die der menschliche Körper evolutionär ausgelegt ist.",
+        "details": [
+          "Kniebeuge: Gleichzeitige Hüft- + Knie- + Sprunggelenksbeugung — aktiviert 60–70% der gesamten Körpermuskulatur, am wichtigsten für Unterkörperkraft.",
+          "Hüftangel: Hüftbeugung bei neutraler Wirbelsäule — Fundament von Kreuzheben, Romanian DL, Kettlebell Swing. Gesäß- und Beinbeugemuskeln entwickeln sich maximal.",
+          "Drücken: Vom Liegestütz bis zum Schulterdrücken — entwickelt Brust, Schultern, Trizeps entlang horizontaler und vertikaler Achsen.",
+          "Ziehen: Vom Band-Rudern bis zum Klimmzug — balanciert das Drückmuster, entwickelt Rücken, Bizeps, Rhomboiden.",
+          "Tragen: Gehen mit Last — aktiviert Core 360°, verbessert Haltung, imitiert funktionelle Bewegung im Alltag.",
+          "Rumpf & Atmung: Plank, Dead Bug, Pallof Press — nicht Sit-ups, sondern unerwünschte Bewegung widerstehen. Atmung ist Grundbedingung für alle anderen Muster."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "Ganzkörperdeckung", "note": "6 Muster = 100% große Muskelgruppen gleichmäßig aktiviert" },
+          { "icon": "♾️", "label": "Unbegrenzte Variationen", "note": "Jedes Muster hat 5–15+ Variationen von leicht bis sehr schwer" },
+          { "icon": "🛡️", "label": "Langzeitsicherheit", "note": "Keine strukturellen Schwachstellen werden unbehandelt gelassen" },
+          { "icon": "🧠", "label": "Leicht zu merken", "note": "Eigene Einheit mit nur 1 Übung pro Muster gestalten" }
+        ]
+      },
+      {
+        "modalTitle": "Unbegrenzte Variationen — Gleiches Muster, endlose Fortschrittsstufen",
+        "keyFact": "Jedes Muster hat ein Spektrum von extrem leicht bis extrem schwer. Kein Übungswechsel nötig — einfach das Spektrum aufsteigen, wenn bereit.",
+        "detail": "Der häufigste Fehler ist das ständige Wechseln von Übungen anstatt tiefer in ein Muster einzutauchen. Stuhl-Kniebeuge → Goblet Squat → Langhantel-Kniebeuge → Pistol Squat: gleiches Muster, vier Stufen.",
+        "details": [
+          "Regression: Jedes Muster hat eine sehr einfache Version für Anfänger, Verletzungsrehabilitation oder erschöpfte Tage. Es gibt nie 'keine Übung zu tun'.",
+          "Progression: Last hinzufügen, Unterstützung reduzieren, Bewegungsumfang erhöhen, Tempo ändern — 4 Fortschrittsachsen ohne zusätzliches Equipment.",
+          "Unilateral (ein Bein/Arm): Pistol Squat, Single-Leg RDL, Archer Liegestütz — verdoppelt die Schwierigkeit ohne schwerere Gewichte. Enthüllt bilaterale Ungleichgewichte.",
+          "Tempo: 4-sekündige exzentrische statt 1 Sekunde erhöht die Zeit unter Spannung (TUT) um 300–400%. Gleiches Gewicht, viel schwerer, effektiver für Muskelwachstum.",
+          "Umgebung: Sand, unebener Boden, Sandsäcke statt Langhantel — ändert den Stabilitätsfaktor ohne das grundlegende Muster zu ändern.",
+          "Transfer: Goblet Squat meistern → Langhantel-Kniebeuge wird sofort leichter. Gleiches Muster, anderes Werkzeug."
+        ],
+        "points": [
+          { "icon": "📈", "label": "Klarer Fortschritt", "note": "Genau wissen, was der nächste Schritt erfordert" },
+          { "icon": "🏠", "label": "Kein Equipment nötig", "note": "Körpergewicht reicht für mittleres bis fortgeschrittenes Niveau" },
+          { "icon": "🔧", "label": "4 Fortschrittsachsen", "note": "Last · Unterstützung · Bewegungsumfang · Tempo" },
+          { "icon": "⚡", "label": "Langfristige Konsistenz", "note": "Nie langweilig mit klarem Fortschrittsspektrum" }
+        ]
+      },
+      {
+        "modalTitle": "Ganzkörperbalance — Ohne Schwachstellen konzipiert",
+        "keyFact": "Die meisten Sportverletzungen entstehen nicht aus Schwäche — sondern aus Ungleichgewicht. Zu viel Drücken ohne genug Ziehen → Schulterschmerzen. Zu viel Kniebeuge ohne genug Hüftangel → Rückenschmerzen.",
+        "detail": "Der menschliche Körper hat sich entwickelt, um diese 6 Bewegungen in einem ausgewogenen Verhältnis auszuführen. Muskelungleichgewichte entstehen, wenn zu viel von einem Muster trainiert wird.",
+        "details": [
+          "Drücken + Ziehen: Ein 1:1-Volumenverhältnis reduziert das Schulterschmerzenrisiko um 60%. Viele Fitnessstudiobesucher drücken 3× mehr als sie ziehen — häufigste Ursache für Rotatorenmanschettenverletzungen.",
+          "Kniebeuge + Hüftangel: Kniebeugen entwickeln die Oberschenkel, Hüftangel entwickeln Gesäß/Beinbeuger. Standard-Quad:Hamstring-Verhältnis ist 3:2; Ungleichgewicht → Knieverletzung.",
+          "Bilateral + Unilateral: Langhantelkniebeugen sind gut für Kraft, aber einbeinige Kniebeugen enthüllen bilaterale Ungleichgewichte.",
+          "Core-Anti-Bewegung: Die Wirbelsäule ist nicht darauf ausgelegt, unter Last zu biegen — sondern unerwünschte Bewegung zu widerstehen. Plank ist besser als Crunches für Rückengesundheit.",
+          "Atmung unter Last: Valsalva-Manöver beim schweren Heben schützt die Wirbelsäule. Schlechte Atmung = instabiler Rumpf.",
+          "Empfohlenes Wochenverhältnis: 2× Kniebeuge + 2× Hüftangel + 2× Drücken + 2× Ziehen + 2× Tragen + täglicher Rumpf/Atmung = keine Schwachstellen."
+        ],
+        "points": [
+          { "icon": "🛡️", "label": "Verletzungsprävention", "note": "Ausgewogenes Drücken/Ziehen reduziert Schulterrisiko um 60%" },
+          { "icon": "💪", "label": "Umfassende Entwicklung", "note": "Keine Muskelgruppe wird vernachlässigt" },
+          { "icon": "🦵", "label": "Kniebeuge/Hüftangel ausgewogen", "note": "Quad:Hamstring = 3:2 ist das gesunde Verhältnis" },
+          { "icon": "🌬️", "label": "Atmung ist das Fundament", "note": "Richtiges Atmen schützt die Wirbelsäule unter jeder Last" }
+        ]
+      },
+      {
+        "modalTitle": "Das Gehirn braucht Struktur — Weniger Entscheidungen, besser trainieren",
+        "keyFact": "Baumeister (1998): Jede kleine Entscheidung baut Willenskraft ab. Menschen mit strukturiertem Trainingsplan halten 62% Konsistenz vs. 23% ohne Plan (Annesi, 2003).",
+        "detail": "Das Fitnessstudio ohne zu wissen, was zu tun ist zu betreten, zwingt das Gehirn ständig zu entscheiden. Struktur eliminiert dieses Problem vollständig.",
+        "details": [
+          "Entscheidungsmüdigkeit beim Training: Jedes Mal, wenn man 'was als nächstes' entscheidet, nimmt die Entscheidungsqualität ab. Ergebnis: am Ende der Einheit nachlassen, schwere Übungen überspringen.",
+          "Strukturierter Plan → automatische Ausführung: Wenn man genau weiß, was man tun wird, wechselt das Gehirn in den 'Autopiloten'. Technische Qualität und Intensität verbessern sich.",
+          "Niedrigere Einstiegshürde: 'Ich mache A → B → C' ist leichter zu beginnen als 'Was soll ich heute trainieren?' Niedrige Einstiegshürde = weniger verpasste Einheiten.",
+          "Habit Stacking: Struktur ermöglicht das Knüpfen von Training an bestehende Gewohnheiten. 'Nach dem Abendessen → 5-Minuten-Aufwärmen' ist nachhaltiger.",
+          "Flexibilität innerhalb der Struktur: 45 Minuten statt 60? Proportional die Zeit jedes Blocks reduzieren. Das Framework bleibt gleich — der Inhalt ist flexibel.",
+          "Langfristige Adhärenz: Studie fand, dass die strukturierte Gruppe 68% der Einheiten aufrechterhielt vs. 34% in der unstrukturierten Gruppe."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Weniger Entscheidungen", "note": "Autopilot = höhere Trainingsqualität" },
+          { "icon": "📈", "label": "62% vs. 23%", "note": "Konsistenzrate mit/ohne strukturierten Plan" },
+          { "icon": "🚀", "label": "Leichter zu beginnen", "note": "Niedrige Hürde, wenn man genau weiß, was zu tun ist" },
+          { "icon": "🔄", "label": "Smarte Flexibilität", "note": "Struktur passt sich verfügbarer Zeit an, bricht nicht" }
+        ]
+      },
+      {
+        "modalTitle": "4 Zeitblöcke — Eine universelle Struktur von 20 bis 180 Minuten",
+        "keyFact": "4 Blöcke dienen 4 verschiedenen physiologischen Funktionen, die sich nicht ersetzen können. Einen Block zu entfernen reduziert die Effektivität und erhöht das Risiko.",
+        "detail": "Jeder Block dient einer spezifischen physiologischen Funktion. Aufwärmen aktiviert das neuromuskuläre System. Haupttraining erzeugt den Wachstumsreiz. Abkühlen unterstützt die Erholung. Entspannung reguliert das ANS.",
+        "details": [
+          "Aufwärmen (5–10 Min): Erhöht die Muskeltemperatur um 1–2°C, aktiviert neuromuskuläre Übertragung. Überspringen = 15–20% Reduktion der Maximalkraft.",
+          "Haupttraining (10–150 Min): Der Kern — Kraft, Cardio oder kombiniert. Der einzige Block, der vollständig verlängert oder verkürzt werden kann.",
+          "Abkühlen (5–10 Min): Statisches Dehnen nach dem Training reduziert Muskelkater um 20–40%. Mindesthaltezeit 30 Sekunden/Position.",
+          "Entspannung (5 Min): Zyklisches Seufzen aktiviert das parasympathische System, reduziert Kortisol. Nicht optional — beste Erholungsinvestition.",
+          "Bei Verkürzung: Priorität auf Aufwärmen + Entspannung. Eine 20-Min-Einheit: 5' + 10' + 3' + 2' — immer noch alle 4 Blöcke.",
+          "Flexible Reihenfolge im Hauptblock: Kraft vor Cardio wenn Muskelaufbau das Ziel. Cardio vor Kraft wenn kardiovaskuläre Ausdauer das Ziel."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "Aufwärmen nicht verhandelbar", "note": "+15–20% Maximalkraft, -30% Verletzungsrisiko" },
+          { "icon": "⚡", "label": "Haupttraining", "note": "Der einzige Block vollständig flexibel in der Dauer" },
+          { "icon": "🧘", "label": "Abkühlen wirksam", "note": "≥30 Sek/Position um Muskelkater tatsächlich zu reduzieren" },
+          { "icon": "🌙", "label": "Entspannung ist Investition", "note": "5 Minuten = bessere Erholung für die restlichen 23 Stunden" }
+        ]
+      },
+      {
+        "modalTitle": "5-Minuten-Entspannung — Kortisol, Erholung und besserer Schlaf",
+        "keyFact": "Stanford-Forschung (Spiegel et al., 2023): Zyklisches Seufzen reduziert Kortisol um 15% und verbessert positiven Affekt mehr als Achtsamkeitsmeditation in 5 Minuten.",
+        "detail": "5 Minuten nach dem Training sind, wenn Kortisol seinen Höhepunkt erreicht. Sofort herauszugehen bedeutet, erhöhtes Kortisol in den Rest des Tages mitzunehmen und Nachtschlaf zu beeinträchtigen.",
+        "details": [
+          "Post-Training-Kortisol: Training ist guter Stress, aber Kortisol steigt danach. Ohne richtige Reduktion → schwieriger Nachtschlaf, langsamere Muskelerholung.",
+          "Zyklisches Seufzen: Vollständig durch die Nase einatmen → kurzen weiteren Schnüffel → lang und langsam durch den Mund ausatmen. 5–10 Mal wiederholen. Aktiviert parasympathisches System am schnellsten.",
+          "Box-Atmung (4-4-4-4): Gute Alternative. Einatmen 4 Sek → halten 4 → ausatmen 4 → halten 4. Von Spezialkräften zur Kortisolreduktion verwendet.",
+          "Nicht hinlegen: Sitzen oder stehen, Augen geschlossen. Hinlegen kann zum Einschlafen führen und Nachtschlafplan stören.",
+          "Verbesserter Schlaf: Menschen, die abends trainieren + 5-Minuten-Entspannung schlafen 18% tiefer als diejenigen, die abrupt aufhören.",
+          "Kumulative Vorteile: 8 Wochen konsistente Praxis → 12% niedrigere Grundkortisol-Spiegel und deutlich niedrigerer selbst berichteter Stress."
+        ],
+        "points": [
+          { "icon": "📉", "label": "Kortisol -15%", "note": "Zyklisches Seufzen am effektivsten in 5 Minuten" },
+          { "icon": "😴", "label": "Schlaf 18% tiefer", "note": "Besonders beim Abendtraining" },
+          { "icon": "💪", "label": "Bessere Muskelerholung", "note": "Niedrigeres Kortisol = höheres GH während Tiefschlaf" },
+          { "icon": "🧠", "label": "Ruhe ist keine Schwäche", "note": "Entspannung ist eine Fähigkeit, kein Zeichen von Schwäche" }
+        ]
+      },
+      {
+        "modalTitle": "Das 48–72-Stunden-Erholungsfenster — Muskeln wachsen in Ruhe, nicht beim Training",
+        "keyFact": "Muskelproteinsynthese (MPS) erreicht 24–36 Stunden nach dem Training ihren Höhepunkt und kehrt nach 48–72 Stunden zum Ausgangswert zurück. Dieselbe Gruppe <24h trainieren = Regeneration stören.",
+        "detail": "Muskeln werden nicht während des Workouts stärker — sondern in der Erholung danach. Training verursacht Mikro-Schäden. Der Körper repariert diese Mikro-Risse größer und stärker — wenn ausreichend Zeit gegeben.",
+        "details": [
+          "Muskelproteinsynthese (MPS): Nach Krafttraining steigt MPS um 25–150% und hält 24–48 Stunden an. Kritisches Fenster für Protein zur Muskelregeneration.",
+          "DOMS (verzögerter Muskelkater): Schmerzen 24–72 Stunden nach dem Training sind ein Zeichen reparierter Mikro-Schäden. Schweres Training bei DOMS verlangsamt die Regeneration.",
+          "Glykogen-Resynthese: Nach intensivem Cardio braucht Muskelglykogen 24–48 Stunden zur vollständigen Auffüllung. Bei niedrigem Glykogen erneut trainieren = schlechte Leistung.",
+          "ZNS-Ermüdung: Das zentrale Nervensystem ermüdet nach schweren Einheiten. Kann nicht allein durch Muskelgefühl gemessen werden.",
+          "Wachstumshormon während des Schlafs: GH wird am meisten während des Tiefschlafs ausgeschüttet, durch hohes Kortisol unterdrückt.",
+          "Wochenrhythmus-Prinzipien: Gleiche primäre Muskelgruppe mindestens 48 Stunden auseinander (idealerweise 72 Stunden)."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "MPS Höhepunkt 24–48h", "note": "Wenn Protein aus Mahlzeiten am meisten genutzt wird" },
+          { "icon": "⏱️", "label": "48–72h Ruhe", "note": "Gleiche Muskelgruppe — nicht früher, nicht später" },
+          { "icon": "😴", "label": "GH während Tiefschlaf", "note": "Wachstumshormon hauptsächlich während Tiefschlaf ausgeschüttet" },
+          { "icon": "🧠", "label": "ZNS ermüdet auch", "note": "Zentrales Nervensystem erholt sich langsamer als Muskeln" }
+        ]
+      },
+      {
+        "modalTitle": "3 Anpassungsphasen — Nachhaltiger Fortschritt ohne Burnout",
+        "keyFact": "SAID-Prinzip: Der Körper passt sich nur an den spezifischen Typ des aufgezwungenen Reizes an. 3 Anpassungsphasen (neural → strukturell → Leistung) treten sequenziell auf und können nicht übersprungen werden.",
+        "detail": "Zu schnell zu steigern — mehr Trainingstage, mehr Volumen, mehr Intensität — bevor der Körper die erste Anpassungsphase abgeschlossen hat, führt meist zu Verletzung oder Burnout.",
+        "details": [
+          "Phase 1 — Neural (Wochen 1–4): Das Gehirn lernt, mehr Motoreinheiten zu rekrutieren. Kraftsteigerung um 20–40% in den ersten 4 Wochen = neuronale Optimierung, keine Hypertrophie.",
+          "Phase 2 — Strukturell (Wochen 5–12): Echte Hypertrophie beginnt. Erfordert ausreichend Protein (1,6–2,2g/kg/Tag) und ausreichend Schlaf (7–9 Stunden).",
+          "Phase 3 — Leistung (Woche 13+): Körper hat Grundlage → kann für spezifische Ziele optimiert werden. Echte Personalisierung beginnt hier.",
+          "Strukturierter Deload: Nach 4–6 Wochen aufeinanderfolgender Volumensteigerungen, 1 Woche bei 40–50% reduzierter Last für Superkompensation.",
+          "Übertrainingszeichen: Leistungsabfall trotz ausreichend Ruhe, Ruhepuls 5–10 bpm über Ausgangswert für 3+ Tage, persistently schlechte Stimmung.",
+          "Linear vs. nichtlinear: Anfänger → linear (gleiche Laststeigerung). Mittelstufe → nichtlinear (schwere/mittlere/leichte Woche). Diesen Übergang nicht zu erkennen = frühes Plateau."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Wochen 1–4: Neural", "note": "Gehirn lernt, Muskeln wachsen noch nicht — Kraft +20–40%" },
+          { "icon": "💪", "label": "Wochen 5–12: Hypertrophie", "note": "Muskeln reifen mit ausreichend Protein + Schlaf" },
+          { "icon": "🎯", "label": "Woche 13+: Personalisiert", "note": "Grundlage aufgebaut → für spezifisches Ziel optimieren" },
+          { "icon": "🔄", "label": "Deload ist Pflicht", "note": "1 Woche reduzierte Last nach 4–6 Wochen zur Superkompensation" }
+        ]
+      },
+      {
+        "modalTitle": "Nachhaltiger Trainingsrhythmus — Der beste Rhythmus ist der, den du 12 Monate durchhalten kannst",
+        "keyFact": "'2 Einheiten/Woche × 12 Monate = 96 Einheiten' schlägt '6/Woche × 6 Wochen = 36 Einheiten'. Langfristig angesammeltes Volumen, nicht kurzfristige Intensität, bestimmt echte Ergebnisse.",
+        "detail": "Fitnesskultur verherrlicht hohe Intensität. Aber die konsistenteste Langzeitforschung zeigt: die wichtigste Variable ist nicht Intensität — sondern Konsistenz.",
+        "details": [
+          "Minimale effektive Dosis (MED): 2 Krafteinheiten/Woche reichen aus, um Muskeln für Nicht-Profis zu erhalten. Mit der MED beginnen — nicht mehr, wenn es nicht aufrechterhalten werden kann.",
+          "Niemals zweimal verpassen: 1 Einheit verpassen = normal. 2 aufeinanderfolgend = beginnt Schwung zu verlieren. Die einfachste Regel zur Aufrechterhaltung der Konsistenz.",
+          "6 Programme von wenig zu viel: Sehr beschäftigt (2/Woche) → Anfänger (3) → Beliebt (4) → Fortgeschritten (5) → Intensiv (6) → Sportler (6 + Cardio).",
+          "Schrittweise aufsteigen: 4 Wochen Konsistenz auf niedrigerem Niveau, dann 1 Einheit hinzufügen. Nicht von 2 auf 5 springen — Burnout kommt schnell.",
+          "Soziale Verantwortlichkeit: Mit 1 anderen Person trainieren erhöht die Adhärenz um 37% (Plante et al., 1996). Online-Community oder Check-in-Apps funktionieren auch.",
+          "Identitätswechsel: Menschen, die 12+ Monate durchhalten, sind zu 'einer Person, die trainiert' geworden. Identitätsbasierte Gewohnheiten sind dauerhafter als zielbasierte."
+        ],
+        "points": [
+          { "icon": "📅", "label": "96 > 36 Einheiten", "note": "2/Woche × 12 Monate > 6/Woche × 6 Wochen" },
+          { "icon": "✌️", "label": "Niemals zweimal verpassen", "note": "Einfachste Regel, um Schwung aufrechtzuerhalten" },
+          { "icon": "🤝", "label": "Partner +37%", "note": "Verantwortlichkeitspartner erhöht Adhärenz erheblich" },
+          { "icon": "🆔", "label": "Identitätswechsel", "note": "'Ich trainiere' ist dauerhafter als 'ich versuche es'" }
+        ]
+      },
+      {
+        "modalTitle": "Periodisches Testen — Genau messen für zuverlässigen Fortschritt",
+        "keyFact": "Inkonsistente Testbedingungen können Ergebnisse um ±15–20% verändern. Tests sind eine separate Fähigkeit, die 2–3 Einheiten zum Erlernen braucht.",
+        "detail": "Fitnesstests sind nicht nur 'Training und Zählen'. Testbedingungen müssen konsistent sein: gleiche Tageszeit, gleicher Schlafzustand, gleiches Aufwärmen, gleiches Equipment.",
+        "details": [
+          "Tests im Voraus planen: 3 Testperioden — Woche 4, 8, 12 — von Anfang an im Kalender. Testtag ist kein schwerer Trainingstag.",
+          "Standardisierte Bedingungen: 8+ Stunden Schlaf die Nacht zuvor, kein schweres Training 48 Stunden zuvor, gleicher Zeitslot, gleiches 10-Minuten-Aufwärmen.",
+          "±15–20% Variation ist kein echter Fortschritt: Nur Tests mit gleichen Bedingungen vergleichen.",
+          "Testen ist eine Fähigkeit: Der erste Test ist oft suboptimal. Woche 4 = lernen wie man testet. Woche 8 und 12 = zuverlässige Daten.",
+          "Detaillierte Aufzeichnung: Ergebnisse + subjektives Gefühl (1–10), Schlaf, Koffeinaufnahme. Metadaten erklären Ausreißer.",
+          "Tests passend zum Ziel wählen: Muskelaufbau → 5RM Kniebeuge. Ausdauer → 2km Lauf. Flexibilität → Sit-and-Reach. Erholung → Ruhepuls-Trend."
+        ],
+        "points": [
+          { "icon": "📅", "label": "Geplante Tests", "note": "Wochen 4, 8, 12 — nicht abhängig von Gefühlen" },
+          { "icon": "🎯", "label": "Konsistente Bedingungen", "note": "Gleiche Zeit, Schlaf, Aufwärmen bei jedem Test" },
+          { "icon": "📝", "label": "Metadaten aufzeichnen", "note": "Erklärt Ausreißer und unerwartete Ergebnisse" },
+          { "icon": "🎓", "label": "Testen ist eine Fähigkeit", "note": "Erste 1–2 Einheiten zum Erlernen, 3+ für zuverlässige Daten" }
+        ]
+      },
+      {
+        "modalTitle": "4-dimensionales Radardiagramm — Versteckte Schwächen sehen",
+        "keyFact": "Jemand mit hoher Kraft aber schlechter Flexibilität hat ein höheres Verletzungsrisiko als ein ausgewogener Trainer. 4 Dimensionen enthüllen versteckte Ungleichgewichte, die 1 Metrik nicht zeigen kann.",
+        "detail": "Die starke Person hat möglicherweise mangelnde Ausdauer. Die ausdauernde Person hat möglicherweise mangelnde Kraft. Ein 4-dimensionales Radardiagramm zeigt das 'echte Bild' des körperlichen Zustands.",
+        "details": [
+          "Dimension 1 — Kraft: Gemessen durch repräsentativen Test (Kniebeuge KG ×1,5 für Männer, ×1,0 für Frauen). Kraft ist das Fundament — fehlende Kraft begrenzt alle anderen Dimensionen.",
+          "Dimension 2 — Ausdauer: VO2 max oder einfacherer Test wie 1,5 km Lauf. VO2 max ist der stärkste Prädiktor für kardiovaskuläre Sterblichkeit.",
+          "Dimension 3 — Flexibilität: Nicht nur für Tänzer — genug Bewegungsumfang für grundlegende Bewegungsmuster. Fehlende Flexibilität = Kompensationsmuster = Verletzung.",
+          "Dimension 4 — Erholung: Zusammensetzung aus HRV-Trend, Ruhepuls, Schlafqualität und subjektiver Erholungszeit.",
+          "Asymmetrie ist ein Warnsignal: Stark + unflexibel = Rotatorenmanschettenverletzung. Ausdauernd + keine Kraftbasis = Stressfraktur. Stark + schlechte Erholung = kumulative Übertraining.",
+          "Radardiagramm verwenden: In Wochen 1, 4, 8, 12 zeichnen. Die konkavste Dimension = in der nächsten Phase priorisieren."
+        ],
+        "points": [
+          { "icon": "📊", "label": "4 kritische Dimensionen", "note": "Kraft · Ausdauer · Flexibilität · Erholung" },
+          { "icon": "⚠️", "label": "Stark + steif = gefährlich", "note": "Verstecktes Ungleichgewicht ist eine häufige Verletzungsursache" },
+          { "icon": "❤️", "label": "VO2 max = Langlebigkeit", "note": "Stärkster Prädiktor für kardiovaskuläre Sterblichkeit" },
+          { "icon": "🎯", "label": "Gleichmäßigere Form", "note": "Ziel: Balance — nicht der höchste Wert in 1 Dimension" }
+        ]
+      },
+      {
+        "modalTitle": "5 Fortschrittsstufen — Kenne deine genaue Position und was als nächstes kommt",
+        "keyFact": "20–30% der Menschen, die das Training innerhalb von 90 Tagen aufgeben, tun dies nicht aus Faulheit — sondern weil sie nicht wissen, wo sie sind oder was der nächste Schritt ist (IHRSA, 2019).",
+        "detail": "5 Stufen sind kein Titel oder Wettbewerb — sie sind eine Karte. Wissen, dass man auf Stufe 2 ist und was die Kriterien für Stufe 3 sind = klare Richtung = weniger wahrscheinlich aufzuhören.",
+        "details": [
+          "Stufe 1 — Grundaktivität: 30 Minuten/Tag gehen, 3 Mal/Woche. Kein Fitnessstudio nötig. Ziel: die Gewohnheit der Bewegung aufbauen, bevor an Intensität gedacht wird.",
+          "Stufe 2 — Fundament: 3 Einheiten/Woche mit 6 grundlegenden Mustern auf Grundniveau (10 Liegestütze, Goblet Squat KG × 20 Wdh, Plank 30 Sekunden). Die meisten Anfänger erreichen dies in 4–8 Wochen.",
+          "Stufe 3 — Mittel: Kniebeuge KG, Kreuzheben KG ×1,2, 20 Liegestütze. Ausdauer: 2 km ohne Anhalten laufen. Das 'grundlegend gesunde' Niveau nach medizinischen Standards.",
+          "Stufe 4 — Fortgeschritten: Kniebeuge KG ×1,5 (Männer) / ×1,0 (Frauen). 5 km <30 Minuten. Klimmzug 5 Wdh (Männer). Erfordert 6–18 Monate systematisches Training.",
+          "Stufe 5 — Sportler: Kniebeuge KG ×2,0+. 5 km <22 Minuten. Erfordert gute Genetik + lange Zeit + spezialisiertes Programm.",
+          "Realität: 80% der Gesundheitsvorteile kommen von Stufen 1–3. Stufen 4–5 nicht nötig für gute Gesundheit und Langlebigkeit."
+        ],
+        "points": [
+          { "icon": "🗺️", "label": "Stufe = Karte", "note": "Position kennen + nächster Schritt = weniger wahrscheinlich aufzuhören" },
+          { "icon": "🏁", "label": "Stufen 1–3 = ausreichend", "note": "80% der Gesundheitsvorteile von Fundament bis Mittel" },
+          { "icon": "📅", "label": "4–8 Wochen bis Stufe 2", "note": "Anfänger erreichen Fundament in 1–2 Monaten" },
+          { "icon": "🎯", "label": "6–18 Monate bis Stufe 4", "note": "Fortgeschritten braucht Zeit — keine Abkürzungen" }
+        ]
+      }
     ]
   },
   "pillarB": {

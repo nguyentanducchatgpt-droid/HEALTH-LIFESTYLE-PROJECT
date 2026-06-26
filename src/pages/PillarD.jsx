@@ -36,18 +36,22 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 // ─── Box Breathing Timer (D2 tab) ───────────────────────────────────────────
 function BoxBreathTimer({ color }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillarTr = tPillars('pillarD', { returnObjects: true });
   const [phase, setPhase] = useState('idle');
   const [count, setCount] = useState(0);
   const [running, setRunning] = useState(false);
   const iRef = useRef(null);
   const phaseIdxRef = useRef(0);
   const countRef = useRef(0);
-  const PHASES = [
-    { key: 'inhale', label: 'Hít vào', dur: 4 },
-    { key: 'hold1',  label: 'Giữ',     dur: 4 },
-    { key: 'exhale', label: 'Thở ra',  dur: 4 },
-    { key: 'hold2',  label: 'Giữ',     dur: 4 },
-  ];
+  const PHASES = Array.isArray(pillarTr?.phases) && pillarTr.phases.length === 4
+    ? pillarTr.phases.map(p => ({ ...p, dur: 4 }))
+    : [
+        { key: 'inhale', label: 'Hít vào', dur: 4 },
+        { key: 'hold1',  label: 'Giữ',     dur: 4 },
+        { key: 'exhale', label: 'Thở ra',  dur: 4 },
+        { key: 'hold2',  label: 'Giữ',     dur: 4 },
+      ];
   const startStop = () => {
     if (running) {
       clearInterval(iRef.current);
@@ -68,6 +72,8 @@ function BoxBreathTimer({ color }) {
   useEffect(() => () => clearInterval(iRef.current), []);
   const curPhase = PHASES.find(p => p.key === phase) || PHASES[0];
   const pct = phase !== 'idle' ? ((curPhase.dur - count) / curPhase.dur) * 100 : 0;
+  const btnStart = pillarTr?.btn_start || '▶ Bắt đầu';
+  const btnStop = pillarTr?.btn_stop || '⏹ Dừng lại';
   return (
     <div className="rounded-2xl border border-border bg-bg p-5 flex flex-col items-center gap-3 max-w-xs mx-auto">
       <div className="text-base font-bold uppercase tracking-widest text-muted">Box Breathing · 4-4-4-4</div>
@@ -78,11 +84,11 @@ function BoxBreathTimer({ color }) {
         </svg>
         <div className="text-center">
           <div className="text-4xl font-bold text-text">{running ? count : '▶'}</div>
-          <div className="text-base text-muted">{running ? curPhase.label : 'Bắt đầu'}</div>
+          <div className="text-base text-muted">{running ? curPhase.label : ''}</div>
         </div>
       </div>
       <button onClick={startStop} className="px-5 py-2 rounded-full text-lg font-bold transition-all" style={{ background: running ? 'rgba(239,68,68,0.15)' : `rgba(${PURPLE_RGB},0.15)`, color: running ? '#ef4444' : color, border: `1px solid ${running ? 'rgba(239,68,68,0.3)' : `rgba(${PURPLE_RGB},0.3)`}` }}>
-        {running ? 'Dừng' : 'Bắt đầu'}
+        {running ? btnStop : btnStart}
       </button>
     </div>
   );
@@ -90,20 +96,26 @@ function BoxBreathTimer({ color }) {
 
 // ─── Journal Prompt (D4 tab) ─────────────────────────────────────────────────
 function JournalPrompt({ color, onPromptClick }) {
+  const { t: tPillars } = useTranslation('pillars');
+  const pillarTr = tPillars('pillarD', { returnObjects: true });
   const [answers, setAnswers] = useState({});
-  const PROMPTS = [
-    { id: 'p1', q: 'Hôm nay mình đang cảm thấy gì?' },
-    { id: 'p2', q: 'Điều gì làm mình căng nhất?' },
-    { id: 'p3', q: 'Hôm nay mình làm tốt điều gì, dù nhỏ?' },
-    { id: 'p4', q: 'Ngày mai chỉ cần làm 1 việc quan trọng nào?' },
-    { id: 'p5', q: 'Một câu tử tế mình muốn nói với bản thân?' },
+  const DEFAULT_PROMPTS = [
+    'Hôm nay mình đang cảm thấy gì?',
+    'Điều gì làm mình căng nhất?',
+    'Hôm nay mình làm tốt điều gì, dù nhỏ?',
+    'Ngày mai chỉ cần làm 1 việc quan trọng nào?',
+    'Một câu tử tế mình muốn nói với bản thân?',
   ];
+  const prompts = Array.isArray(pillarTr?.journal_prompts) && pillarTr.journal_prompts.length >= 5
+    ? pillarTr.journal_prompts
+    : DEFAULT_PROMPTS;
+  const placeholder = pillarTr?.journal_placeholder || 'Viết tự do, không cần hay...';
   return (
     <div className="space-y-3">
-      {PROMPTS.map((p, i) => (
-        <div key={p.id} className="group/prompt rounded-xl border border-border bg-bg p-3">
+      {prompts.map((q, i) => (
+        <div key={i} className="group/prompt rounded-xl border border-border bg-bg p-3">
           <div className="flex items-start justify-between gap-2 mb-1.5">
-            <div className="text-base font-bold" style={{ color }}>{i + 1}. {p.q}</div>
+            <div className="text-base font-bold" style={{ color }}>{i + 1}. {q}</div>
             {onPromptClick && (
               <button
                 onClick={() => onPromptClick(i)}
@@ -112,7 +124,7 @@ function JournalPrompt({ color, onPromptClick }) {
               >chi tiết →</button>
             )}
           </div>
-          <textarea value={answers[p.id] || ''} onChange={e => setAnswers(prev => ({ ...prev, [p.id]: e.target.value }))} rows={2} placeholder="Viết tự do, không cần hay..." className="w-full text-lg bg-transparent text-text placeholder:text-muted/40 resize-none outline-none" />
+          <textarea value={answers[i] || ''} onChange={e => setAnswers(prev => ({ ...prev, [i]: e.target.value }))} rows={2} placeholder={placeholder} className="w-full text-lg bg-transparent text-text placeholder:text-muted/40 resize-none outline-none" />
         </div>
       ))}
     </div>
@@ -1267,6 +1279,7 @@ function D7Panel({ color, onItemClick }) {
 }
 
 function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1342,14 +1355,14 @@ function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -1408,6 +1421,7 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function PillarD() {
   const { t: tPillars } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
   const pillar = tPillars('pillarD', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('d0');
   const [d0Modal, setD0Modal] = useState(null);
@@ -1475,7 +1489,9 @@ export default function PillarD() {
     return () => document.getElementById(ORBIT_ID)?.remove();
   }, []);
 
-  const tab = TABS.find(t => t.id === activeTab) || TABS[0];
+  const tabsTr = Array.isArray(pillar?.hub_tabs) ? pillar.hub_tabs : [];
+  const mergedTabs = TABS.map((t, i) => ({ ...t, label: tabsTr[i]?.label || t.label }));
+  const tab = mergedTabs.find(t => t.id === activeTab) || mergedTabs[0];
   const Panel = PANEL_MAP[activeTab] || D0Panel;
 
   const HERO_STATS = [
@@ -1490,7 +1506,7 @@ export default function PillarD() {
       {/* Breadcrumb */}
       <Link to="/pillars" className="inline-flex items-center gap-2 text-base text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        Sống Khỏe 360
+        {tCommon('nav.pillars')}
       </Link>
 
       {/* Hero */}
@@ -1540,7 +1556,7 @@ export default function PillarD() {
           style={{ background: 'rgba(10,10,10,0.96)', backdropFilter: 'blur(14px)' }}>
           <div className="relative flex items-end overflow-x-auto scrollbar-none"
             style={{ borderBottom: '1.5px solid rgba(255,255,255,0.09)' }}>
-            {TABS.map(t => {
+            {mergedTabs.map(t => {
               const active = activeTab === t.id;
               return (
                 <button key={t.id} onClick={() => setActiveTab(t.id)}
@@ -1577,7 +1593,7 @@ export default function PillarD() {
               <span className="text-3xl">{tab.icon}</span>
               <div>
                 <h2 className="text-xl font-bold text-text">{tab.label}</h2>
-                <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Tâm Trí An Nhiên</div>
+                <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · {pillar?.title || 'Tâm Trí An Nhiên'}</div>
               </div>
             </div>
             <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} onLevelClick={activeTab === 'd5' ? setD5Modal : undefined} onHabitClick={activeTab === 'd6' ? setD6Modal : undefined} onItemClick={activeTab === 'd7' ? setD7Modal : undefined} />

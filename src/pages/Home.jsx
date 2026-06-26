@@ -243,8 +243,9 @@ const REVIEWS = [
 ];
 
 export default function Home() {
-  const { t }     = useTranslation();
-  const { t: tP } = useTranslation('pillars');
+  const { t }             = useTranslation();
+  const { t: tCommon }    = useTranslation('common');
+  const { t: tP }         = useTranslation('pillars');
   const stats        = t('home.stats',          { returnObjects: true });
   const journeysTr   = t('home.journeys',       { returnObjects: true });
   const whyItemsTr   = t('home.why_items',      { returnObjects: true });
@@ -1172,7 +1173,7 @@ export default function Home() {
                 </div>
 
                 {/* Footer hint */}
-                <p className="text-center text-xs text-muted mt-6 opacity-50">Nhấn ESC hoặc click bên ngoài để đóng</p>
+                <p className="text-center text-xs text-muted mt-6 opacity-50">{tCommon('modal.close_hint')}</p>
               </div>
             </div>
           </div>

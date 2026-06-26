@@ -373,7 +373,10 @@
         "previewItems": ["Tuần 4 test", "Tuần 8 test", "Tuần 12 test", "Radar chart", "6 mục tiêu cá nhân", "Điểm A/B/C/D", "Coach notes"],
         "cta": "Theo dõi tiến bộ"
       }
-    ]
+    ],
+    "highlights_label": "Điểm nổi bật",
+    "details_label": "Hiểu sâu hơn",
+    "preview_label": "Nội dung bên trong"
   },
   "pillarB": {
     "id": "b",
@@ -1390,6 +1393,16 @@
       {"step":3,"text":"Ăn protein trong 30–60 phút"},
       {"step":4,"text":"Nghỉ ngơi hoặc đi bộ nhẹ"}
     ],
+    "hub_tabs": [
+      {"label": "Đánh Giá"},
+      {"label": "Giấc Ngủ"},
+      {"label": "Nhịp Sinh Học"},
+      {"label": "NEAT"},
+      {"label": "Phục Hồi"},
+      {"label": "Deload"},
+      {"label": "Thở"},
+      {"label": "Môi Trường"}
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {
@@ -1488,6 +1501,26 @@
       "Dòng 4: Có đau hoặc khó chịu không?",
       "Dòng 5: Lần sau tôi muốn cải thiện điều gì?"
     ],
+    "hub_tabs": [
+      {"label": "Nhập Môn"},
+      {"label": "Stress"},
+      {"label": "Thở"},
+      {"label": "Thiền"},
+      {"label": "Journaling"},
+      {"label": "Digital Detox"},
+      {"label": "Kỷ Luật Mềm"},
+      {"label": "Theo Dõi"}
+    ],
+    "journal_prompts": [
+      "Hôm nay mình đang cảm thấy gì?",
+      "Điều gì làm mình căng nhất?",
+      "Hôm nay mình làm tốt điều gì, dù nhỏ?",
+      "Ngày mai chỉ cần làm 1 việc quan trọng nào?",
+      "Một câu tử tế mình muốn nói với bản thân?"
+    ],
+    "journal_placeholder": "Viết tự do, không cần hay...",
+    "btn_start": "▶ Bắt đầu",
+    "btn_stop": "⏹ Dừng lại",
     "videos": ["BREATH"]
   },
   "pillarE": {
@@ -1567,6 +1600,16 @@
       "Ngủ 7–9h/đêm — thiếu ngủ tăng nguy cơ bệnh mãn tính",
       "Quản lý stress: thiền, tập luyện, kết nối xã hội",
       "Khám sức khỏe định kỳ 1 lần/năm"
+    ],
+    "hub_tabs": [
+      {"label": "Hồ Sơ"},
+      {"label": "Hiểu Chỉ Số"},
+      {"label": "Tự Theo Dõi"},
+      {"label": "Dấu Nguy Hiểm"},
+      {"label": "Phòng Bệnh"},
+      {"label": "Khám Định Kỳ"},
+      {"label": "An Toàn Thuốc"},
+      {"label": "Lọc Thông Tin"}
     ],
     "videos": []
   },
@@ -1660,6 +1703,16 @@
       {"capability":"Sức mạnh chân","test":"Đứng lên ngồi xuống 1 phút","week1":"___ lần","week4":"___ lần"},
       {"capability":"Linh hoạt","test":"Chạm ngón tay sàn","week1":"Không/Có","week4":"Không/Có"},
       {"capability":"Thói quen","test":"Số buổi tập/tuần","week1":"___ buổi","week4":"___ buổi"}
+    ],
+    "hub_tabs": [
+      {"label": "Dashboard"},
+      {"label": "Checklist"},
+      {"label": "Nhật Ký Tập"},
+      {"label": "Thực Đơn"},
+      {"label": "Lifestyle"},
+      {"label": "Tâm Trí"},
+      {"label": "Test 4 Tuần"},
+      {"label": "Thư Viện"}
     ],
     "videos": []
   }

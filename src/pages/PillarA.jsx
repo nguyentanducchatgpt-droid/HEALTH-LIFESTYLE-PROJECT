@@ -759,6 +759,7 @@ const PA_COLOR = '#22c55e';
 const PA_RGB   = '34,197,94';
 
 function PrincipleModal({ p, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -851,15 +852,15 @@ function PrincipleModal({ p, idx, total, onClose, onPrev, onNext, hasPrev, hasNe
               onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasPrev ? PA_COLOR : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${PA_RGB},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${PA_RGB},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{idx + 1} / {total}</span>
             <button
               onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasNext ? PA_COLOR : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${PA_RGB},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${PA_RGB},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -869,6 +870,7 @@ function PrincipleModal({ p, idx, total, onClose, onPrev, onNext, hasPrev, hasNe
 // ─── TabDetailModal ──────────────────────────────────────────────────────────────
 
 function TabDetailModal({ item, itemIdx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   const { color, rgb } = item;
   useEffect(() => {
     const onKey = (e) => {
@@ -931,7 +933,7 @@ function TabDetailModal({ item, itemIdx, onClose, onPrev, onNext, hasPrev, hasNe
           <p className="text-sm text-muted leading-relaxed mb-5">{item.detail}</p>
 
           {/* Numbered detail list */}
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color }}>Chi Tiết Thực Hành</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color }}>{tCommon('modal.apply_title')}</p>
           <ul className="space-y-3 mb-7">
             {item.details.map((d, di) => (
               <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
@@ -962,15 +964,15 @@ function TabDetailModal({ item, itemIdx, onClose, onPrev, onNext, hasPrev, hasNe
               onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{itemIdx + 1} / 3</span>
             <button
               onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>

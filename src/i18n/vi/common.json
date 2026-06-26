@@ -915,7 +915,10 @@
   },
   "modal": {
     "explore_detail": "Khám Phá Chi Tiết",
-    "close_hint": "Nhấn ESC hoặc click bên ngoài để đóng"
+    "close_hint": "Nhấn ESC hoặc click bên ngoài để đóng",
+    "prev": "← Trước",
+    "next": "Sau →",
+    "apply_title": "Áp Dụng Thực Tế"
   },
   "ui": {
     "show_detail": "▼ chi tiết",

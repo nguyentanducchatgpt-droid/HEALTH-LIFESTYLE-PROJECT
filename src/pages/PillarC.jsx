@@ -1782,6 +1782,7 @@ function TeaserSection({ title, children }) {
 // ─── C0ItemModal ──────────────────────────────────────────────────────────────
 
 function C0ItemModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1862,14 +1863,14 @@ function C0ItemModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
               style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {C0_ITEMS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
               style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -1879,6 +1880,7 @@ function C0ItemModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 // ─── C1StepModal ─────────────────────────────────────────────────────────────
 
 function C1StepModal({ step, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1965,14 +1967,14 @@ function C1StepModal({ step, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
               style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Bước trước</button>
-            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>Bước {idx + 1} / {C1_STEPS.length}</span>
+            >{tCommon('modal.prev')}</button>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {C1_STEPS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
               style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Bước sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -2004,6 +2006,7 @@ const STANDUP_DATA  = {
 };
 
 function StandUpModal({ onClose }) {
+  const { t: tCommon } = useTranslation('common');
   const d = STANDUP_DATA;
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -2073,7 +2076,7 @@ function StandUpModal({ onClose }) {
             ))}
           </div>
 
-          <p className="text-center text-xs text-muted opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -2084,6 +2087,7 @@ function StandUpModal({ onClose }) {
 
 export default function PillarC() {
   const { t: tPillars } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
   const pillar = tPillars('pillarC', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('c1');
   const [c0Idx, setC0Idx] = useState(null);
@@ -2177,7 +2181,9 @@ export default function PillarC() {
     localStorage.setItem('healthapp_c3_neat_checks', JSON.stringify(neatChecks));
   }, [neatChecks]);
 
-  const tab = TABS.find(t => t.id === activeTab) || TABS[1];
+  const tabsTr = Array.isArray(pillar?.hub_tabs) ? pillar.hub_tabs : [];
+  const mergedTabs = TABS.map((t, i) => ({ ...t, label: tabsTr[i]?.label || t.label }));
+  const tab = mergedTabs.find(t => t.id === activeTab) || mergedTabs[1];
   const sleepProgress = C1_CHECKLIST.filter((_, i) => sleepChecks[i]).length;
   const neatProgress = [0, 1, 2, 3].filter(i => neatChecks[i]).length;
   const lifestyleScore = C0_SCORE.reduce((sum, row, i) => sum + (scoreChecks[i] ? row.pts : 0), 0);
@@ -2194,7 +2200,7 @@ export default function PillarC() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pb-24">
       <Link to="/pillars" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-teal-400 transition-colors">
-        ← Sống Khỏe 360
+        ← {tCommon('nav.pillars')}
       </Link>
 
       {/* Hero */}
@@ -2266,7 +2272,7 @@ export default function PillarC() {
         style={{ background: 'rgba(10,10,10,0.96)', backdropFilter: 'blur(14px)' }}>
         <div ref={tabBarRef} className="relative flex items-end overflow-x-auto scrollbar-hide"
           style={{ borderBottom: '1.5px solid rgba(255,255,255,0.09)' }}>
-          {TABS.map(t => {
+          {mergedTabs.map(t => {
             const active = activeTab === t.id;
             return (
               <button key={t.id} onClick={() => handleTabClick(t.id)}

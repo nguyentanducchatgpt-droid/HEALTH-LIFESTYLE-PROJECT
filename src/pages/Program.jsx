@@ -31,6 +31,7 @@ const PC = {
 
 // ── Quick Link Modal ─────────────────────────────────────────────────────────
 function QuickLinkModal({ ql, onClose }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -105,7 +106,7 @@ function QuickLinkModal({ ql, onClose }) {
             Xem chi tiết →
           </Link>
 
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -114,6 +115,7 @@ function QuickLinkModal({ ql, onClose }) {
 
 // ── Journey Detail Modal ─────────────────────────────────────────────────────
 function JourneyDetailModal({ journey: j, onClose, onSelect }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -191,7 +193,7 @@ function JourneyDetailModal({ journey: j, onClose, onSelect }) {
             Xem lộ trình này →
           </button>
 
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -200,6 +202,7 @@ function JourneyDetailModal({ journey: j, onClose, onSelect }) {
 
 // ── Checklist Item Modal ─────────────────────────────────────────────────────
 function ChecklistItemModal({ item, dayColor, dayRgb, onClose }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -267,7 +270,7 @@ function ChecklistItemModal({ item, dayColor, dayRgb, onClose }) {
             ))}
           </div>
 
-          <p className="text-center text-xs text-muted opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -276,6 +279,7 @@ function ChecklistItemModal({ item, dayColor, dayRgb, onClose }) {
 
 // ── Pillar Detail Modal ──────────────────────────────────────────────────────
 function PillarDetailModal({ card, onClose }) {
+  const { t: tCommon } = useTranslation('common');
   const { info, p } = card;
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
@@ -359,7 +363,7 @@ function PillarDetailModal({ card, onClose }) {
             </div>
           )}
 
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -1683,6 +1687,7 @@ const SUB_TABS_12W = [
 
 // ── DailyBlockModal (shared for DAILY_BLOCKS + DAILY_PRINCIPLES) ─────────────
 function DailyBlockModal({ block, onClose }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -1752,7 +1757,7 @@ function DailyBlockModal({ block, onClose }) {
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -1840,6 +1845,7 @@ const PILLAR_ASSETS = {
 
 // ── PillarPhaseModal ──────────────────────────────────────────────────────────
 function PillarPhaseModal({ pillarId, text, phase, onClose }) {
+  const { t: tCommon } = useTranslation('common');
   const p = PC[pillarId];
   const assets = PILLAR_ASSETS[pillarId];
   const details = text.split(' · ');
@@ -1916,7 +1922,7 @@ function PillarPhaseModal({ pillarId, text, phase, onClose }) {
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -1950,6 +1956,7 @@ const MILESTONE_LINKS = [
 ];
 
 function PhaseItemModal({ text, phase, type, onClose }) {
+  const { t: tCommon } = useTranslation('common');
   const isKpi = type === 'kpi';
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
@@ -2035,7 +2042,7 @@ function PhaseItemModal({ text, phase, type, onClose }) {
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>

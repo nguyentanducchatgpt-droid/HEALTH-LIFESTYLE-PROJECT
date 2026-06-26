@@ -1148,7 +1148,10 @@
   },
   "modal": {
     "explore_detail": "Explore Details",
-    "close_hint": "Press ESC or click outside to close"
+    "close_hint": "Press ESC or click outside to close",
+    "prev": "← Prev",
+    "next": "Next →",
+    "apply_title": "Practical Application"
   },
   "ui": {
     "show_detail": "▼ details",

@@ -358,6 +358,7 @@ const SCHEDULE = [
 ];
 
 function ScheduleModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -421,14 +422,14 @@ function ScheduleModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, has
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
-              ← Trước</button>
+            {tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
-              Sau →</button>
+              {tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>,
@@ -2154,9 +2155,12 @@ const TAB_CONTENT = { e0: TabE0, e1: TabE1, e2: TabE2, e3: TabE3, e4: TabE4, e5:
 
 export default function PillarE() {
   const { t: tPillars } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
   const pillar = tPillars('pillarE', { returnObjects: true });
   const [activeTab, setActiveTab] = useState('e0');
-  const tab = TABS.find(t => t.id === activeTab);
+  const tabsTr = Array.isArray(pillar?.hub_tabs) ? pillar.hub_tabs : [];
+  const mergedTabs = TABS.map((t, i) => ({ ...t, label: tabsTr[i]?.label || t.label }));
+  const tab = mergedTabs.find(t => t.id === activeTab);
   const TabPanel = TAB_CONTENT[activeTab];
 
   useEffect(() => {
@@ -2208,7 +2212,7 @@ export default function PillarE() {
   return (
     <div className="px-4 md:px-6 max-w-5xl mx-auto pb-24">
       <Link to="/pillars" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
-        <span>←</span><span>Sống Khỏe 360</span>
+        <span>←</span><span>{tCommon('nav.pillars')}</span>
       </Link>
 
       <RevealBlock className="flex items-start gap-6 mb-10 relative">
@@ -2253,7 +2257,7 @@ export default function PillarE() {
           style={{ background: 'rgba(10,10,10,0.96)', backdropFilter: 'blur(14px)' }}>
           <div className="relative flex items-end overflow-x-auto scrollbar-hide"
             style={{ borderBottom: '1.5px solid rgba(255,255,255,0.09)' }}>
-            {TABS.map(t => {
+            {mergedTabs.map(t => {
               const active = activeTab === t.id;
               return (
                 <button key={t.id} onClick={() => setActiveTab(t.id)}
@@ -2292,7 +2296,7 @@ export default function PillarE() {
             <div className="flex items-center gap-3 mb-5">
               <span className="text-3xl">{tab.icon}</span>
               <div>
-                <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · Trụ Cột E</div>
+                <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · {pillar?.title || 'Kiến Thức Sức Khỏe'}</div>
                 <div className="text-xl font-bold text-text">{tab.label}</div>
               </div>
             </div>

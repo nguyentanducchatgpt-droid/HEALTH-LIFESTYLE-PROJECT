@@ -557,13 +557,55 @@
       ]
     },
     "mantras": [
-      {"text": "Eat Enough", "sub": "No starvation or extreme cuts", "desc": "The body needs enough energy to function, recover and build muscle. Extreme calorie cuts slow metabolism and cause unwanted muscle loss."},
-      {"text": "Eat Regularly", "sub": "No impulse eating, no skipping", "desc": "Your biological clock works best when fed on schedule. Regular meal timing stabilizes blood sugar and controls unusual cravings."},
-      {"text": "Eat Real Food", "sub": "Minimize ultra-processed, fewer additives", "desc": "Whole foods retain their micronutrients, fiber and natural enzymes. Ultra-processed foods trigger overeating through neurological mechanisms."},
-      {"text": "Eat for Your Goals", "sub": "Not trends or ads", "desc": "Keto, IF, low-carb can all work — but only when suited to your body, lifestyle and specific goals. No single diet fits everyone."},
-      {"text": "Protein is the Foundation", "sub": "Veggies are allies, carbs are fuel", "desc": "Protein (1.6–2.2g/kg body weight) protects muscle, increases satiety and burns extra calories through digestion. The most important macro for any goal."},
-      {"text": "One Off Meal", "sub": "Doesn't ruin a long journey", "desc": "One pizza meal doesn't make you fat, just as one salad doesn't make you lean. Results come from weekly habits, not a single meal."},
-      {"text": "Be Sustainable", "sub": "Best diet is the one you can keep", "desc": "A perfect diet in theory that can't be maintained in practice is worthless. 80% consistent for 1 year always beats 100% perfect for 3 weeks then quitting."}
+      {
+        "text": "Eat Enough", "sub": "No starvation or extreme cuts",
+        "desc": "The body needs enough energy to function, recover and build muscle. Extreme calorie cuts slow metabolism and cause unwanted muscle loss.",
+        "keyFact": "2018 study (JAMA): eating adequate calories with the right composition outperforms strict calorie restriction by 40%",
+        "detail": "Many people assume cutting calories as much as possible is best. But the body adapts: prolonged energy deficits reduce metabolic rate by 10–20%, thyroid hormones drop, and the body begins breaking down muscle for fuel. A deficit of 300–500 kcal/day is the safe zone for fat loss without muscle loss.",
+        "tips": ["1,600–2,400 kcal/day depending on activity level", "Don't consistently skip breakfast", "Eat slowly — the brain needs 20 minutes to sense fullness"]
+      },
+      {
+        "text": "Eat Regularly", "sub": "No impulse eating, no skipping",
+        "desc": "Your biological clock works best when fed on schedule. Regular meal timing stabilizes blood sugar and controls unusual cravings.",
+        "keyFact": "People who eat breakfast consistently have a BMI 1.5 points lower on average than those who regularly skip it",
+        "detail": "Cortisol — the alertness hormone — peaks in the morning and declines through a 24h cycle. When you eat on schedule, the digestive biological clock syncs with this cycle: digestive enzymes secrete at their strongest and nutrient absorption is optimized. Skipping meals creates abnormal insulin spikes at the next meal, leading to more efficient fat storage.",
+        "tips": ["3 main meals within the same time frame each day", "Don't go more than 5 consecutive hours without eating", "Prepare food in advance so you never skip meals"]
+      },
+      {
+        "text": "Eat Real Food", "sub": "Minimize ultra-processed, fewer additives",
+        "desc": "Whole foods retain their micronutrients, fiber and natural enzymes. Ultra-processed foods trigger overeating through neurological mechanisms.",
+        "keyFact": "Ultra-processed food accounts for 60% of average daily calories for urban dwellers today",
+        "detail": "Ultra-processed food (UPF) is engineered to bypass natural fullness mechanisms: combining salt + sugar + fat at ratios that maximize dopamine activation. NIH 2019 research found people on a UPF diet consume an extra 500 kcal/day compared to those eating whole foods, even with the same food volume. Micronutrients (vitamin B complex, zinc, iron) in whole foods are critical for metabolism.",
+        "tips": ["Prioritize vegetables, fresh meat, eggs, fish", "Read ingredient labels before buying", "Rule of thumb: fewer than 5 ingredients per product"]
+      },
+      {
+        "text": "Eat for Your Goals", "sub": "Not trends or ads",
+        "desc": "Keto, IF, low-carb can all work — but only when suited to your body, lifestyle and specific goals. No single diet fits everyone.",
+        "keyFact": "After 2 years, the success rate of every diet is equivalent if there's adequate protein and lifestyle compatibility",
+        "detail": "A 2020 meta-analysis (NEJM) comparing 14 popular diets: after 6 months, the difference in weight loss between diets was only 1–2kg. The deciding factors aren't the diet's name but: (1) sustainable calorie deficit, (2) adequate protein, (3) lifestyle compatibility. Keto suits sedentary people; High-carb suits athletes; IF suits busy people.",
+        "tips": ["Define your goals clearly first", "Test consistently for at least 4 weeks", "Measure results objectively with data"]
+      },
+      {
+        "text": "Protein is the Foundation", "sub": "Veggies are allies, carbs are fuel",
+        "desc": "Protein (1.6–2.2g/kg body weight) protects muscle, increases satiety and burns extra calories through digestion. The most important macro for any goal.",
+        "keyFact": "Increasing protein from 15% to 30% of total calories naturally reduces intake by 441 kcal/day without counting calories",
+        "detail": "Protein has the highest Thermic Effect of the 3 macros: digesting protein burns 20–30% of its own calorie content, vs. carbs at 5–10% and fat at 0–3%. This means 100 kcal of protein only provides 70–80 kcal net. Leucine in animal protein activates mTOR — the primary signaling pathway for muscle synthesis. Distributing 30–40g protein evenly across 3–4 meals is more optimal than concentrating it in 1–2 meals.",
+        "tips": ["1.6–2.2g protein/kg body weight/day", "Include a protein source in every meal", "Eggs, meat, legumes, Greek yogurt"]
+      },
+      {
+        "text": "One Off Meal", "sub": "Doesn't ruin a long journey",
+        "desc": "One pizza meal doesn't make you fat, just as one salad doesn't make you lean. Results come from weekly habits, not a single meal.",
+        "keyFact": "'The 90/10 rule': maintaining 90% good habits allows 10% flexibility while still achieving long-term results",
+        "detail": "A 'cheat meal' of about 1,000–1,500 kcal can affect weight by 0.2–0.4kg — mostly glycogen and retained water, not actual fat. The added glycogen will deplete within 1–2 subsequent days. The real danger is the 'already ruined, might as well continue' mindset (all-or-nothing thinking). Strategy: plan flexible meals rather than letting them happen on impulse.",
+        "tips": ["1–2 flexible meals/week is normal", "Return to your regular routine immediately after", "Don't 'compensate' by skipping meals"]
+      },
+      {
+        "text": "Be Sustainable", "sub": "Best diet is the one you can keep",
+        "desc": "A perfect diet in theory that can't be maintained in practice is worthless. 80% consistent for 1 year always beats 100% perfect for 3 weeks then quitting.",
+        "keyFact": "Eating habits take an average of 66 days to form (not 21 days as commonly believed)",
+        "detail": "'Identity-based habits' (James Clear): instead of saying 'I want to eat healthy', say 'I am someone who prioritizes health'. Every time you choose to eat right, you're voting for that identity. Sustainability comes from reducing friction: preparing food in advance, placing vegetables at eye level in the fridge. Willpower is a limited resource — systems are unlimited.",
+        "tips": ["Start with the smallest possible change", "Build systems — don't rely on willpower", "Modify favorite dishes instead of eliminating them"]
+      }
     ],
     "spirit_card": {
       "label": "MINDSET",
@@ -1538,6 +1580,16 @@
       {"step":3,"text":"Eat protein within 30–60 min"},
       {"step":4,"text":"Rest or take a light walk"}
     ],
+    "hub_tabs": [
+      {"label": "Assessment"},
+      {"label": "Sleep"},
+      {"label": "Circadian Rhythm"},
+      {"label": "NEAT"},
+      {"label": "Recovery"},
+      {"label": "Deload"},
+      {"label": "Breathing"},
+      {"label": "Environment"}
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {
@@ -1636,6 +1688,26 @@
       "Line 4: Any pain or discomfort?",
       "Line 5: What do I want to improve next time?"
     ],
+    "hub_tabs": [
+      {"label": "Introduction"},
+      {"label": "Stress"},
+      {"label": "Breathing"},
+      {"label": "Meditation"},
+      {"label": "Journaling"},
+      {"label": "Digital Detox"},
+      {"label": "Soft Discipline"},
+      {"label": "Tracking"}
+    ],
+    "journal_prompts": [
+      "What am I feeling today?",
+      "What is stressing me out the most?",
+      "What did I do well today, even if small?",
+      "What is the one important thing I need to do tomorrow?",
+      "What is one kind thing I want to say to myself?"
+    ],
+    "journal_placeholder": "Write freely, no need to be perfect...",
+    "btn_start": "▶ Start",
+    "btn_stop": "⏹ Stop",
     "videos": ["BREATH"]
   },
   "pillarE": {
@@ -1715,6 +1787,16 @@
       "Sleep 7–9h/night — poor sleep increases chronic disease risk",
       "Manage stress: meditation, training, social connection",
       "Annual health check-up once per year"
+    ],
+    "hub_tabs": [
+      {"label": "Profile"},
+      {"label": "Understanding Metrics"},
+      {"label": "Self-Monitoring"},
+      {"label": "Warning Signs"},
+      {"label": "Prevention"},
+      {"label": "Regular Checkups"},
+      {"label": "Medication Safety"},
+      {"label": "Filtering Info"}
     ],
     "videos": []
   },
@@ -1808,6 +1890,16 @@
       {"capability":"Lower Strength","test":"Sit-to-stand 1 min","week1":"___ reps","week4":"___ reps"},
       {"capability":"Flexibility","test":"Touch floor with fingers","week1":"No/Yes","week4":"No/Yes"},
       {"capability":"Habit","test":"Sessions per week","week1":"___ sessions","week4":"___ sessions"}
+    ],
+    "hub_tabs": [
+      {"label": "Dashboard"},
+      {"label": "Checklist"},
+      {"label": "Training Log"},
+      {"label": "Meal Plan"},
+      {"label": "Lifestyle"},
+      {"label": "Mind"},
+      {"label": "4-Week Test"},
+      {"label": "Library"}
     ],
     "videos": []
   }

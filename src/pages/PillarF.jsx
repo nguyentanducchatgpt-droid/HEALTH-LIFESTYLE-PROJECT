@@ -521,6 +521,7 @@ function DailyMinCard({ item, idx, checked, onToggle, onOpen }) {
 }
 
 function DailyMinModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   const color = CAT_COLORS[item.cat];
   const rgb   = CAT_RGBS[item.cat];
   useEffect(() => {
@@ -583,13 +584,13 @@ function DailyMinModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, has
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+              style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+              style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>,
@@ -994,6 +995,7 @@ function NutriLogCard({ item, value, onToggle, onOpen }) {
 
 // --- NutriLogModal ---
 function NutriLogModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1051,13 +1053,13 @@ function NutriLogModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext })
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {NUTRI_LOG_ITEMS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>,
@@ -1209,6 +1211,7 @@ function MealCard({ item, idx, onOpen }) {
 
 // --- MealModal ---
 function MealModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1269,13 +1272,13 @@ function MealModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {MEAL_ITEMS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>,
@@ -1438,6 +1441,7 @@ const LIFESTYLE_ITEMS = [
 
 // --- LifestyleModal ---
 function LifestyleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1495,13 +1499,13 @@ function LifestyleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {LIFESTYLE_ITEMS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>,
@@ -1651,6 +1655,7 @@ const MIND_ITEMS = {
 
 // --- MindModal ---
 function MindModal({ itemKey, onClose, onPrev, onNext, hasPrev, hasNext, keys }) {
+  const { t: tCommon } = useTranslation('common');
   const item = MIND_ITEMS[itemKey];
   const idx = keys.indexOf(itemKey);
   useEffect(() => {
@@ -1710,13 +1715,13 @@ function MindModal({ itemKey, onClose, onPrev, onNext, hasPrev, hasNext, keys })
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {keys.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>,
@@ -1823,6 +1828,7 @@ function F5MindTracker() {
 
 // --- TestModal ---
 function TestModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   const item = TEST_ITEMS[idx];
   useEffect(() => {
     const onKey = (e) => {
@@ -1882,13 +1888,13 @@ function TestModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+              style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {TEST_ITEMS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+              style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>,
@@ -1962,6 +1968,7 @@ function F6Test() {
 
 // --- QuickWoModal ---
 function QuickWoModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   const wo = QUICK_WO[idx];
   useEffect(() => {
     const onKey = (e) => {
@@ -2037,13 +2044,13 @@ function QuickWoModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
           <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasPrev ? wo.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${wo.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${wo.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>← Trước</button>
+              style={{ color: hasPrev ? wo.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${wo.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${wo.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {QUICK_WO.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
-              style={{ color: hasNext ? wo.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${wo.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${wo.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>Sau →</button>
+              style={{ color: hasNext ? wo.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${wo.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${wo.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>,
@@ -2111,9 +2118,12 @@ function F7QuickWorkouts() {
 // --- Main component ---
 export default function PillarF() {
   const { t: tPillars } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
   const pillar = tPillars('pillarF', { returnObjects: true });
   const [tab, setTab] = useState('f0');
   const tabBarRef = useRef(null);
+  const tabsTr = Array.isArray(pillar?.hub_tabs) ? pillar.hub_tabs : [];
+  const mergedTabs = TABS.map((t, i) => ({ ...t, label: tabsTr[i]?.label || t.label }));
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -2127,7 +2137,7 @@ export default function PillarF() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pb-24">
-      <Link to="/pillars" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Sống Khỏe 360</Link>
+      <Link to="/pillars" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {tCommon('nav.pillars')}</Link>
 
       {/* Hero */}
       <div className="flex items-start gap-6 mb-10 relative">
@@ -2177,7 +2187,7 @@ export default function PillarF() {
         style={{ background: 'rgba(10,10,10,0.96)', backdropFilter: 'blur(14px)' }}>
         <div className="relative flex items-end overflow-x-auto scrollbar-hide"
           style={{ borderBottom: '1.5px solid rgba(255,255,255,0.09)' }}>
-          {TABS.map(t => {
+          {mergedTabs.map(t => {
             const active = tab === t.id;
             return (
               <button key={t.id} onClick={() => setTab(t.id)}
@@ -2212,8 +2222,8 @@ export default function PillarF() {
       <RevealBlock key={tab} delay={0} className="mb-14">
         <div className="rounded-2xl border p-5 md:p-6" style={{ borderColor: `rgba(${RGB},0.15)`, animation: `pb-frame-f0 4s ease-in-out infinite` }}>
           <div className="flex items-center gap-2 mb-5">
-            <span className="text-2xl">{TABS.find(t => t.id === tab)?.icon}</span>
-            <h2 className="text-xl font-bold text-text">{TABS.find(t => t.id === tab)?.label}</h2>
+            <span className="text-2xl">{mergedTabs.find(t => t.id === tab)?.icon}</span>
+            <h2 className="text-xl font-bold text-text">{mergedTabs.find(t => t.id === tab)?.label}</h2>
           </div>
           {tabContent[tab]}
         </div>

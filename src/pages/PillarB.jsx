@@ -5082,6 +5082,7 @@ const TDEE_BENEFITS = [
 
 // ─── TierModal — full-screen overlay for level cards (rendered at PillarB root) ─
 function TierModal({ tier, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -5167,14 +5168,14 @@ function TierModal({ tier, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
               style={{ color: hasPrev ? color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {TIERS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-colors"
               style={{ color: hasNext ? color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -5183,6 +5184,7 @@ function TierModal({ tier, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 
 // ─── TDEEBenefitModal — full-screen overlay (rendered at PillarB root, outside RevealBlocks) ─
 function TDEEBenefitModal({ b, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -5237,7 +5239,7 @@ function TDEEBenefitModal({ b, idx, onClose, onPrev, onNext, hasPrev, hasNext })
 
           <p className="text-base text-muted leading-relaxed mb-6">{b.detail}</p>
 
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: b.color }}>Chi Tiết</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: b.color }}>{tCommon('modal.apply_title')}</p>
           <ul className="space-y-3 mb-8">
             {b.details.map((d, di) => (
               <li key={di} className="flex gap-3 text-sm text-muted leading-relaxed">
@@ -5265,14 +5267,14 @@ function TDEEBenefitModal({ b, idx, onClose, onPrev, onNext, hasPrev, hasNext })
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasPrev ? b.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${b.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${b.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{idx + 1} / {TDEE_BENEFITS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasNext ? b.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${b.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${b.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -5617,6 +5619,7 @@ const ACCURACY_DATA = {
 };
 
 function AccuracyModal({ onClose }) {
+  const { t: tCommon } = useTranslation('common');
   const d = ACCURACY_DATA;
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -5663,7 +5666,7 @@ function AccuracyModal({ onClose }) {
 
           <p className="text-base text-muted leading-relaxed mb-6">{d.detail}</p>
 
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: AC_COLOR }}>Cách Hiệu Chỉnh Thực Tế</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: AC_COLOR }}>{tCommon('modal.apply_title')}</p>
           <ul className="space-y-3 mb-8">
             {d.details.map((item, i) => (
               <li key={i} className="flex gap-3 text-sm text-muted leading-relaxed">
@@ -5687,7 +5690,7 @@ function AccuracyModal({ onClose }) {
             ))}
           </div>
 
-          <p className="text-center text-xs text-muted opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -5699,6 +5702,7 @@ const MS_COLOR = '#8b5cf6';
 const MS_RGB   = '139,92,246';
 
 function MealSplitModal({ r, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -5780,14 +5784,14 @@ function MealSplitModal({ r, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasPrev ? MS_COLOR : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${MS_RGB},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${MS_RGB},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{r.n} / {MEAL_SPLIT_RULES.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasNext ? MS_COLOR : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${MS_RGB},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${MS_RGB},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -6939,6 +6943,7 @@ function AdvancedPanel({ s }) {
 
 // ─── MantraDetail — full-screen modal overlay (rendered outside all RevealBlocks) ─
 function MantraDetail({ m, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t: tCommon } = useTranslation('common');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -7002,7 +7007,7 @@ function MantraDetail({ m, onClose, onPrev, onNext, hasPrev, hasNext }) {
           <p className="text-base text-muted leading-relaxed mb-6">{m.detail}</p>
 
           {/* Tips as numbered list */}
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: '#84cc16' }}>Áp Dụng Thực Tế</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] mb-3" style={{ color: '#84cc16' }}>{tCommon('modal.apply_title')}</p>
           <ul className="space-y-3 mb-8">
             {m.tips.map((tip, j) => (
               <li key={j} className="flex gap-3 text-sm text-muted leading-relaxed">
@@ -7019,15 +7024,15 @@ function MantraDetail({ m, onClose, onPrev, onNext, hasPrev, hasNext }) {
               onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasPrev ? '#84cc16' : 'rgba(255,255,255,0.2)', background: hasPrev ? 'rgba(132,204,22,0.1)' : 'transparent', border: `1px solid ${hasPrev ? 'rgba(132,204,22,0.25)' : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{tCommon('modal.prev')}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{m.n} / 07</span>
             <button
               onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl transition-all"
               style={{ color: hasNext ? '#84cc16' : 'rgba(255,255,255,0.2)', background: hasNext ? 'rgba(132,204,22,0.1)' : 'transparent', border: `1px solid ${hasNext ? 'rgba(132,204,22,0.25)' : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{tCommon('modal.next')}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
       </div>
     </div>
@@ -7674,9 +7679,12 @@ export default function PillarB() {
   const pillar = tPillars('pillarB', { returnObjects: true });
   const translatedMantras = MANTRAS.map((m, i) => ({
     ...m,
-    text: tPillars(`pillarB.mantras.${i}.text`, { defaultValue: m.text }),
-    sub:  tPillars(`pillarB.mantras.${i}.sub`,  { defaultValue: m.sub }),
-    desc: tPillars(`pillarB.mantras.${i}.desc`, { defaultValue: m.desc }),
+    text:    tPillars(`pillarB.mantras.${i}.text`,    { defaultValue: m.text }),
+    sub:     tPillars(`pillarB.mantras.${i}.sub`,     { defaultValue: m.sub }),
+    desc:    tPillars(`pillarB.mantras.${i}.desc`,    { defaultValue: m.desc }),
+    keyFact: tPillars(`pillarB.mantras.${i}.keyFact`, { defaultValue: m.keyFact }),
+    detail:  tPillars(`pillarB.mantras.${i}.detail`,  { defaultValue: m.detail }),
+    tips:    tPillars(`pillarB.mantras.${i}.tips`,    { returnObjects: true, defaultValue: m.tips }),
   }));
   const [mantraIdx, setMantraIdx] = useState(null);
   const [benefitIdx, setBenefitIdx] = useState(null);

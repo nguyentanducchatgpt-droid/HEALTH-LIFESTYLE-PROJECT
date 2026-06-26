@@ -557,13 +557,55 @@
       ]
     },
     "mantras": [
-      {"text": "Genug essen", "sub": "Kein Aushungern oder extreme Cuts", "desc": "Der Körper braucht genug Energie zum Funktionieren, Erholen und Muskelaufbau. Extreme Kalorienreduktion verlangsamt den Stoffwechsel und verursacht Muskelverlust."},
-      {"text": "Regelmäßig essen", "sub": "Kein Impulsfood, keine ausgelassenen Mahlzeiten", "desc": "Ihr biologischer Rhythmus funktioniert am besten bei geregelten Mahlzeiten. Regelmäßiges Essen stabilisiert den Blutzucker und kontrolliert Heißhunger."},
-      {"text": "Echtes Essen", "sub": "Weniger Verarbeitetes, weniger Zusätze", "desc": "Vollwertige Lebensmittel behalten Mikronährstoffe, Ballaststoffe und natürliche Enzyme. Stark verarbeitete Lebensmittel fördern Überessen durch neurologische Mechanismen."},
-      {"text": "Zielorientiert essen", "sub": "Nicht Trends oder Werbung folgen", "desc": "Keto, IF, Low-Carb können alle funktionieren — aber nur wenn sie zu Ihrem Körper, Lebensstil und Zielen passen. Keine Diät passt für alle."},
-      {"text": "Protein als Fundament", "sub": "Gemüse ist Verbündeter, Carbs sind Treibstoff", "desc": "Protein (1.6–2.2g/kg Körpergewicht) schützt Muskeln, erhöht Sättigung und verbrennt extra Kalorien. Das wichtigste Makronährstoff für jedes Ziel."},
-      {"text": "Eine schlechte Mahlzeit", "sub": "Ruiniert nicht die lange Reise", "desc": "Eine Pizza macht nicht fett, wie ein Salat nicht schlank macht. Ergebnisse kommen aus wöchentlichen Gewohnheiten, nicht einer Mahlzeit."},
-      {"text": "Nachhaltig bleiben", "sub": "Die beste Diät ist die, die man beibehält", "desc": "Eine perfekte Diät die nicht durchhaltbar ist, ist wertlos. 80% konsequent für 1 Jahr schlägt 100% perfekt für 3 Wochen dann aufgeben."}
+      {
+        "text": "Genug essen", "sub": "Kein Aushungern oder extreme Cuts",
+        "desc": "Der Körper braucht genug Energie zum Funktionieren, Erholen und Muskelaufbau. Extreme Kalorienreduktion verlangsamt den Stoffwechsel und verursacht Muskelverlust.",
+        "keyFact": "Studie 2018 (JAMA): ausreichend Kalorien mit der richtigen Zusammensetzung übertrifft strenge Kalorienrestriktion um 40%",
+        "detail": "Viele Menschen nehmen an, je mehr Kalorien eingespart werden, desto besser. Doch der Körper passt sich an: Langanhaltende Energiedefizite senken den Stoffwechsel um 10–20%, Schilddrüsenhormone sinken, und der Körper beginnt, Muskel als Energiequelle abzubauen. Ein Defizit von 300–500 kcal/Tag ist die sichere Zone für Fettabbau ohne Muskelverlust.",
+        "tips": ["1.600–2.400 kcal/Tag je nach Aktivitätsniveau", "Frühstück nicht regelmäßig auslassen", "Langsam essen — das Gehirn braucht 20 Minuten um Sättigung zu spüren"]
+      },
+      {
+        "text": "Regelmäßig essen", "sub": "Kein Impulsfood, keine ausgelassenen Mahlzeiten",
+        "desc": "Ihr biologischer Rhythmus funktioniert am besten bei geregelten Mahlzeiten. Regelmäßiges Essen stabilisiert den Blutzucker und kontrolliert Heißhunger.",
+        "keyFact": "Menschen die regelmäßig frühstücken haben einen durchschnittlich 1,5 Punkte niedrigeren BMI als jene die es häufig auslassen",
+        "detail": "Cortisol — das Wachheitshormon — erreicht morgens seinen Höhepunkt und nimmt im 24h-Zyklus ab. Bei geregelten Mahlzeiten synchronisiert sich die Verdauungs-Innenuhr: Verdauungsenzyme sind am stärksten aktiv, die Nährstoffaufnahme ist optimiert. Mahlzeiten auslassen erzeugt abnormale Insulinspitzen bei der nächsten Mahlzeit und fördert effizientere Fettspeicherung.",
+        "tips": ["3 Hauptmahlzeiten täglich im gleichen Zeitfenster", "Nicht länger als 5 Stunden ohne Essen", "Mahlzeiten vorbereiten damit keine ausgelassen werden"]
+      },
+      {
+        "text": "Echtes Essen", "sub": "Weniger Verarbeitetes, weniger Zusätze",
+        "desc": "Vollwertige Lebensmittel behalten Mikronährstoffe, Ballaststoffe und natürliche Enzyme. Stark verarbeitete Lebensmittel fördern Überessen durch neurologische Mechanismen.",
+        "keyFact": "Ultra-verarbeitete Lebensmittel machen heute 60% der täglichen Kalorienzufuhr von Stadtbewohnern aus",
+        "detail": "Ultra-verarbeitete Lebensmittel (UPF) sind darauf ausgelegt, natürliche Sättigungsmechanismen zu umgehen: Salz + Zucker + Fett in Verhältnissen die die Dopaminausschüttung maximieren. NIH 2019 fand, dass UPF-Esser täglich 500 kcal mehr aufnehmen als Vollwertkost-Esser bei gleicher Nahrungsmenge. Mikronährstoffe (Vitamin-B-Komplex, Zink, Eisen) in Vollwertkost sind entscheidend für den Stoffwechsel.",
+        "tips": ["Gemüse, frisches Fleisch, Eier, Fisch bevorzugen", "Zutaten-Etiketten vor dem Kauf lesen", "Faustregel: weniger als 5 Zutaten pro Produkt"]
+      },
+      {
+        "text": "Zielorientiert essen", "sub": "Nicht Trends oder Werbung folgen",
+        "desc": "Keto, IF, Low-Carb können alle funktionieren — aber nur wenn sie zu Ihrem Körper, Lebensstil und Zielen passen. Keine Diät passt für alle.",
+        "keyFact": "Nach 2 Jahren ist die Erfolgsrate jeder Diät gleichwertig, wenn ausreichend Protein und Lebensstil-Kompatibilität gegeben ist",
+        "detail": "Eine Meta-Analyse 2020 (NEJM) verglich 14 populäre Diäten: nach 6 Monaten war der Gewichtsunterschied zwischen den Diäten nur 1–2 kg. Die entscheidenden Faktoren sind nicht der Name der Diät, sondern: (1) nachhaltiges Kaloriendefizit, (2) ausreichend Protein, (3) Lebensstil-Kompatibilität. Keto passt zu wenig aktiven Menschen; High-Carb zu Sportlern; IF zu Vielbeschäftigten.",
+        "tips": ["Ziele klar definieren zuerst", "Mindestens 4 Wochen konsequent testen", "Ergebnisse objektiv mit Daten messen"]
+      },
+      {
+        "text": "Protein als Fundament", "sub": "Gemüse ist Verbündeter, Carbs sind Treibstoff",
+        "desc": "Protein (1.6–2.2g/kg Körpergewicht) schützt Muskeln, erhöht Sättigung und verbrennt extra Kalorien. Das wichtigste Makronährstoff für jedes Ziel.",
+        "keyFact": "Protein von 15% auf 30% der Gesamtkalorien erhöhen reduziert die Aufnahme natürlich um 441 kcal/Tag ohne Kalorienzählen",
+        "detail": "Protein hat den höchsten Thermischen Effekt der 3 Makros: Proteinverdauung verbrennt 20–30% seiner eigenen Kalorienmenge, vs. Kohlenhydrate 5–10% und Fett 0–3%. Das bedeutet 100 kcal Protein liefern netto nur 70–80 kcal. Leucin im tierischen Protein aktiviert mTOR — den primären Signalweg für Muskelsynthese. 30–40g Protein gleichmäßig auf 3–4 Mahlzeiten zu verteilen ist optimaler als in 1–2 Mahlzeiten zu konzentrieren.",
+        "tips": ["1,6–2,2g Protein/kg Körpergewicht/Tag", "Bei jeder Mahlzeit eine Proteinquelle einplanen", "Eier, Fleisch, Hülsenfrüchte, Griechischer Joghurt"]
+      },
+      {
+        "text": "Eine schlechte Mahlzeit", "sub": "Ruiniert nicht die lange Reise",
+        "desc": "Eine Pizza macht nicht fett, wie ein Salat nicht schlank macht. Ergebnisse kommen aus wöchentlichen Gewohnheiten, nicht einer Mahlzeit.",
+        "keyFact": "'Die 90/10-Regel': 90% gute Gewohnheiten aufrechterhalten erlaubt 10% Flexibilität und trotzdem Langzeiterfolg",
+        "detail": "Eine 'Cheat-Mahlzeit' von etwa 1.000–1.500 kcal kann das Gewicht um 0,2–0,4 kg beeinflussen — hauptsächlich Glykogen und Wassereinlagerung, kein echtes Fett. Das ergänzte Glykogen leert sich innerhalb von 1–2 Folgetagen. Die echte Gefahr ist die 'schon ruiniert, mach weiter'-Mentalität (Alles-oder-nichts-Denken). Strategie: flexible Mahlzeiten planen statt sie spontan passieren zu lassen.",
+        "tips": ["1–2 flexible Mahlzeiten/Woche ist normal", "Danach sofort zur gewohnten Routine zurückkehren", "Nicht durch Mahlzeiten auslassen 'kompensieren'"]
+      },
+      {
+        "text": "Nachhaltig bleiben", "sub": "Die beste Diät ist die, die man beibehält",
+        "desc": "Eine perfekte Diät die nicht durchhaltbar ist, ist wertlos. 80% konsequent für 1 Jahr schlägt 100% perfekt für 3 Wochen dann aufgeben.",
+        "keyFact": "Essgewohnheiten brauchen durchschnittlich 66 Tage um sich zu festigen (nicht 21 Tage wie oft angenommen)",
+        "detail": "'Identity-based habits' (James Clear): statt 'Ich will gesund essen' sagen 'Ich bin jemand der Gesundheit priorisiert'. Jedes Mal wenn du richtig isst, stimmst du für diese Identität. Nachhaltigkeit entsteht durch Reibungsreduktion: Mahlzeiten vorbereiten, Gemüse auf Augenhöhe im Kühlschrank. Willenskraft ist begrenzt — Systeme nicht.",
+        "tips": ["Mit der kleinsten möglichen Änderung beginnen", "Systeme aufbauen — nicht auf Willenskraft verlassen", "Lieblingsgerichte anpassen statt sie zu streichen"]
+      }
     ],
     "spirit_card": {
       "label": "MINDSET",
@@ -1559,6 +1601,16 @@
       {"step":3,"text":"Protein innerhalb von 30–60 Min essen"},
       {"step":4,"text":"Ausruhen oder leicht spazieren gehen"}
     ],
+    "hub_tabs": [
+      {"label": "Bewertung"},
+      {"label": "Schlaf"},
+      {"label": "Zirkadianrhythmus"},
+      {"label": "NEAT"},
+      {"label": "Erholung"},
+      {"label": "Deload"},
+      {"label": "Atmung"},
+      {"label": "Umgebung"}
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {
@@ -1657,6 +1709,26 @@
       "Zeile 4: Schmerzen oder Beschwerden?",
       "Zeile 5: Was möchte ich beim nächsten Mal verbessern?"
     ],
+    "hub_tabs": [
+      {"label": "Einführung"},
+      {"label": "Stress"},
+      {"label": "Atmung"},
+      {"label": "Meditation"},
+      {"label": "Journaling"},
+      {"label": "Digital Detox"},
+      {"label": "Sanfte Disziplin"},
+      {"label": "Nachverfolgung"}
+    ],
+    "journal_prompts": [
+      "Was fühle ich heute?",
+      "Was stresst mich am meisten?",
+      "Was habe ich heute gut gemacht, auch wenn es klein war?",
+      "Was ist die eine wichtige Sache, die ich morgen tun muss?",
+      "Was ist ein freundliches Wort, das ich zu mir selbst sagen möchte?"
+    ],
+    "journal_placeholder": "Frei schreiben, muss nicht perfekt sein...",
+    "btn_start": "▶ Start",
+    "btn_stop": "⏹ Stopp",
     "videos": ["BREATH"]
   },
   "pillarE": {
@@ -1736,6 +1808,16 @@
       "7–9h/Nacht schlafen — Schlafmangel erhöht Risiko chronischer Erkrankungen",
       "Stress managen: Meditation, Training, soziale Kontakte",
       "Einmal jährlich zur Vorsorgeuntersuchung"
+    ],
+    "hub_tabs": [
+      {"label": "Profil"},
+      {"label": "Kennzahlen verstehen"},
+      {"label": "Selbstüberwachung"},
+      {"label": "Warnsignale"},
+      {"label": "Prävention"},
+      {"label": "Regelmäßige Vorsorge"},
+      {"label": "Arzneimittelsicherheit"},
+      {"label": "Infos filtern"}
     ],
     "videos": []
   },
@@ -1829,6 +1911,16 @@
       {"capability":"Unterkörperkraft","test":"Aufstehen & Hinsetzen 1 Min","week1":"___ Wdh.","week4":"___ Wdh."},
       {"capability":"Flexibilität","test":"Boden mit Fingern berühren","week1":"Nein/Ja","week4":"Nein/Ja"},
       {"capability":"Gewohnheit","test":"Trainingseinheiten/Woche","week1":"___ Einh.","week4":"___ Einh."}
+    ],
+    "hub_tabs": [
+      {"label": "Dashboard"},
+      {"label": "Checkliste"},
+      {"label": "Trainingsprotokoll"},
+      {"label": "Ernährungsplan"},
+      {"label": "Lifestyle"},
+      {"label": "Geist"},
+      {"label": "4-Wochen-Test"},
+      {"label": "Bibliothek"}
     ],
     "videos": []
   }

@@ -1225,6 +1225,7 @@ export default function PillarA() {
 
   const translatedPrinciples = PRINCIPLES.map((p, i) => ({
     ...p,
+    title:    tPillars(`pillarA.principles.${i}.title`,          { defaultValue: p.title }),
     keyFact:  tPillars(`pillarA.principles_full.${i}.keyFact`,  { defaultValue: p.keyFact }),
     detail:   tPillars(`pillarA.principles_full.${i}.detail`,   { defaultValue: p.detail }),
     details:  tPillars(`pillarA.principles_full.${i}.details`,  { returnObjects: true, defaultValue: p.details }),

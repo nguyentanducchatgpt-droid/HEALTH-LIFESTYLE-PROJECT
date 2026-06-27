@@ -773,5 +773,11 @@
   },
   "days": {
     "T2": "MO", "T3": "DI", "T4": "MI", "T5": "DO", "T6": "FR", "T7": "SA", "CN": "SO"
+  },
+  "cta": {
+    "heading": "Bereit anzufangen?",
+    "desc": "Sieh den vollständigen 12-Wochen-Fahrplan, den Tagesrahmen, den Wochenrhythmus und das Fortschrittstest-Set.",
+    "btn_program": "← 12-Wochen-Fahrplan",
+    "btn_start": "Training starten →"
   }
 }

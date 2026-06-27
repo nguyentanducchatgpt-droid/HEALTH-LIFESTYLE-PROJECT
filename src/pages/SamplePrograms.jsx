@@ -928,21 +928,21 @@ export default function SamplePrograms() {
         <div className="relative p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
           <div className="text-6xl shrink-0">🚀</div>
           <div className="flex-1 text-center md:text-left">
-            <h2 className="text-2xl font-bold text-text mb-2">Sẵn sàng bắt đầu?</h2>
-            <p className="text-muted text-lg leading-relaxed">Xem lộ trình 12 tuần đầy đủ, khung ngày, nhịp tuần và bộ test tiến bộ.</p>
+            <h2 className="text-2xl font-bold text-text mb-2">{tP('cta.heading')}</h2>
+            <p className="text-muted text-lg leading-relaxed">{tP('cta.desc')}</p>
           </div>
           <div className="flex gap-3 shrink-0">
             <Link
               to="/program"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-border hover:border-accent/30 text-text text-lg font-medium rounded-xl transition-all duration-200 hover:-translate-y-0.5"
             >
-              ← Lộ trình 12 tuần
+              {tP('cta.btn_program')}
             </Link>
             <Link
               to="/pillar/a"
               className="btn-shimmer inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-bg font-bold rounded-xl transition-all duration-200 text-lg shadow-[0_0_24px_rgba(34,197,94,0.20)] hover:shadow-[0_0_36px_rgba(34,197,94,0.35)] hover:-translate-y-0.5"
             >
-              Bắt đầu tập →
+              {tP('cta.btn_start')}
             </Link>
           </div>
         </div>

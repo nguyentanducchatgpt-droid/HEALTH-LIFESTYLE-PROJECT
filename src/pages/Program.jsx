@@ -1965,13 +1965,13 @@ function PhaseItemModal({ text, phase, type, onClose }) {
     return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
   }, [onClose]);
   const details = isKpi ? [
-    `Chỉ số này đo lường thực tế qua từng tuần — không phải cảm giác mà là con số bạn có thể kiểm tra trong giai đoạn ${phase.weeks}.`,
-    'Đạt được chỉ số này là tín hiệu rõ ràng cho thấy nền tảng đang được xây đúng hướng và thói quen đang hình thành bền vững.',
-    'Nếu chưa đạt — không sao. Ghi lại nguyên nhân và điều chỉnh cách tiếp cận, không phải hạ thấp mục tiêu.',
+    tCommon('program.kpi_detail_1', { weeks: phase.weeks, defaultValue: `Chỉ số này đo lường thực tế qua từng tuần — không phải cảm giác mà là con số bạn có thể kiểm tra trong giai đoạn ${phase.weeks}.` }),
+    tCommon('program.kpi_detail_2', { defaultValue: 'Đạt được chỉ số này là tín hiệu rõ ràng cho thấy nền tảng đang được xây đúng hướng và thói quen đang hình thành bền vững.' }),
+    tCommon('program.kpi_detail_3', { defaultValue: 'Nếu chưa đạt — không sao. Ghi lại nguyên nhân và điều chỉnh cách tiếp cận, không phải hạ thấp mục tiêu.' }),
   ] : [
-    `Cột mốc này đánh dấu bước tiến thực sự trong giai đoạn ${phase.weeks} — không phải về con số mà về sự nhất quán đã hình thành.`,
-    'Khi đạt được cột mốc này, bạn đang xây dựng được nền móng vững chắc — tinh thần và thể chất đều đang đi đúng hướng.',
-    'Ghi lại ngày bạn đạt cột mốc này. Đây sẽ là điểm tham chiếu để nhìn lại sau 3–6 tháng nữa với sự tự hào thực sự.',
+    tCommon('program.milestone_detail_1', { weeks: phase.weeks, defaultValue: `Cột mốc này đánh dấu bước tiến thực sự trong giai đoạn ${phase.weeks} — không phải về con số mà về sự nhất quán đã hình thành.` }),
+    tCommon('program.milestone_detail_2', { defaultValue: 'Khi đạt được cột mốc này, bạn đang xây dựng được nền móng vững chắc — tinh thần và thể chất đều đang đi đúng hướng.' }),
+    tCommon('program.milestone_detail_3', { defaultValue: 'Ghi lại ngày bạn đạt cột mốc này. Đây sẽ là điểm tham chiếu để nhìn lại sau 3–6 tháng nữa với sự tự hào thực sự.' }),
   ];
   const img = isKpi
     ? 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
@@ -1994,7 +1994,7 @@ function PhaseItemModal({ text, phase, type, onClose }) {
             </div>
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: phase.color }}>
-                {isKpi ? 'Chỉ Số Mục Tiêu' : 'Cột Mốc Giai Đoạn'} · {phase.weeks}
+                {isKpi ? tCommon('program.kpi_type_label', 'Chỉ Số Mục Tiêu') : tCommon('program.milestone_type_label', 'Cột Mốc Giai Đoạn')} · {phase.weeks}
               </p>
               <h2 className="font-bold text-white text-sm leading-snug max-w-xs">{text}</h2>
             </div>
@@ -2017,7 +2017,7 @@ function PhaseItemModal({ text, phase, type, onClose }) {
           {/* Quick-access links */}
           <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${phase.rgb},0.12)` }}>
             <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${phase.rgb},0.5)` }}>
-              {isKpi ? 'Công Cụ Đo Lường' : 'Khám Phá Tiếp Theo'}
+              {isKpi ? tCommon('program.kpi_links_header', 'Công Cụ Đo Lường') : tCommon('program.milestone_links_header', 'Khám Phá Tiếp Theo')}
             </p>
             <div className="flex flex-wrap gap-2">
               {(isKpi ? KPI_LINKS : MILESTONE_LINKS).map((lk, li) => (
@@ -2051,7 +2051,9 @@ function PhaseItemModal({ text, phase, type, onClose }) {
 
 // ── PillarRow ────────────────────────────────────────────────────────────────
 function PillarRow({ id, text, onClick }) {
+  const { t } = useTranslation();
   const p = PC[id];
+  const label = t(`program.pillar_labels.${id}`, { defaultValue: p.l });
   return (
     <div
       className="flex items-start gap-3 p-3 rounded-xl cursor-pointer group transition-all duration-200 hover:-translate-y-0.5"
@@ -2062,7 +2064,7 @@ function PillarRow({ id, text, onClick }) {
     >
       <span className="text-lg shrink-0 mt-0.5">{p.icon}</span>
       <div className="min-w-0 flex-1">
-        <span className="text-[10px] font-bold uppercase tracking-widest block mb-0.5" style={{ color: p.c }}>{p.l}</span>
+        <span className="text-[10px] font-bold uppercase tracking-widest block mb-0.5" style={{ color: p.c }}>{label}</span>
         <p className="text-sm text-muted leading-relaxed">{text}</p>
       </div>
       <span className="shrink-0 self-center text-[10px] font-bold px-2 py-1 rounded-lg opacity-50 group-hover:opacity-100 transition-opacity"
@@ -2227,6 +2229,8 @@ export default function Program() {
     : PC;
   const tQuickLinks = t('program.quick_links', { returnObjects: true });
   const localQuickLinks = Array.isArray(tQuickLinks) ? tQuickLinks : null;
+  const tWeeklyDays = t('program.weekly_days', { returnObjects: true });
+  const localWeekly = Array.isArray(tWeeklyDays) ? tWeeklyDays.map((d, i) => ({ ...WEEKLY_RHYTHM[i], ...d })) : WEEKLY_RHYTHM;
   const localSubTabs = [
     { id:'phases', label: t('program.sub_tab_phases', 'Lộ Trình'),  icon:'🗓️' },
     { id:'daily',  label: t('program.sub_tab_daily',  'Khung Ngày'), icon:'⏱️' },
@@ -2661,7 +2665,7 @@ export default function Program() {
 
             {/* ── Weekly rhythm tab ────────── */}
             {subTab === 'weekly' && (() => {
-              const day   = WEEKLY_RHYTHM[weeklyTab];
+              const day   = localWeekly[weeklyTab];
               const meta  = TAB_META[weeklyTab];
               const panel = WEEKLY_PANEL[weeklyTab];
               return (
@@ -2670,7 +2674,7 @@ export default function Program() {
                   <div className="relative mb-0">
                     {/* tab bar track */}
                     <div className="flex gap-1 overflow-x-auto scrollbar-hide pb-0 relative z-10" style={{ borderBottom: `2px solid rgba(${meta.rgb},0.22)` }}>
-                      {WEEKLY_RHYTHM.map((d, i) => {
+                      {localWeekly.map((d, i) => {
                         const m = TAB_META[i];
                         const active = weeklyTab === i;
                         return (
@@ -2727,9 +2731,9 @@ export default function Program() {
                       {/* Stats badges */}
                       <div className="absolute bottom-4 right-4 flex gap-2">
                         {[
-                          { l:'Thời lượng', v: panel.duration },
-                          { l:'Cường độ',   v: panel.intensity },
-                          { l:'Tần suất',   v: panel.sessions },
+                          { l: t('program.weekly_stat_duration', 'Thời lượng'), v: panel.duration },
+                          { l: t('program.weekly_stat_intensity', 'Cường độ'),  v: panel.intensity },
+                          { l: t('program.weekly_stat_sessions',  'Tần suất'),  v: panel.sessions },
                         ].map((s,i) => (
                           <div key={i} className="hidden sm:flex flex-col items-center px-3 py-1.5 rounded-xl bg-black/50 border border-white/10 backdrop-blur-sm">
                             <span className="text-[10px] text-white/50 uppercase tracking-wider">{s.l}</span>
@@ -2743,7 +2747,7 @@ export default function Program() {
                       {/* Exercises */}
                       <div>
                         <h4 className="text-[11px] font-bold uppercase tracking-widest mb-3" style={{ color: meta.c }}>
-                          Bài Tập / Hoạt Động
+                          {t('program.weekly_moves_header', 'Bài Tập / Hoạt Động')}
                         </h4>
                         <ul className="space-y-2">
                           {panel.moves.map((m, i) => (
@@ -2767,7 +2771,7 @@ export default function Program() {
                       {/* Tips */}
                       <div>
                         <h4 className="text-[11px] font-bold uppercase tracking-widest mb-3" style={{ color: meta.c }}>
-                          Nguyên Tắc Thực Hiện
+                          {t('program.weekly_tips_header', 'Nguyên Tắc Thực Hiện')}
                         </h4>
                         <ul className="space-y-2 mb-4">
                           {panel.tips.map((tip, i) => (
@@ -3139,10 +3143,11 @@ export default function Program() {
               const tql = localQuickLinks?.[idx];
               const label = tql?.label || ql.label;
               const sub = tql?.sub || ql.sub;
+              const mergedQl = { ...ql, label, sub };
               return (
                 <div
                   key={ql.to}
-                  onClick={() => setActiveQuickLink(ql)}
+                  onClick={() => setActiveQuickLink(mergedQl)}
                   className="flex items-start gap-3 p-3.5 rounded-2xl border border-border bg-surface cursor-pointer group transition-all duration-200 hover:-translate-y-0.5"
                   style={{ '--lc': `rgba(${ql.rgb},0.35)` }}
                   onMouseEnter={e => e.currentTarget.style.borderColor = `rgba(${ql.rgb},0.35)`}

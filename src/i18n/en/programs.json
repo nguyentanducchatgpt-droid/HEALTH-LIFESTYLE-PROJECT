@@ -773,5 +773,11 @@
   },
   "days": {
     "T2": "MON", "T3": "TUE", "T4": "WED", "T5": "THU", "T6": "FRI", "T7": "SAT", "CN": "SUN"
+  },
+  "cta": {
+    "heading": "Ready to Start?",
+    "desc": "View the full 12-week roadmap, daily framework, weekly rhythm and progress test kit.",
+    "btn_program": "← 12-week roadmap",
+    "btn_start": "Start training →"
   }
 }

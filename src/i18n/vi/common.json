@@ -526,7 +526,22 @@
     "sub_tab_daily": "Khung Ngày",
     "sub_tab_weekly": "Nhịp Tuần",
     "sub_tab_tips": "Nguyên Tắc",
-    "sub_tab_test": "Bài Test"
+    "sub_tab_test": "Bài Test",
+    "weekly_stat_duration": "Thời lượng",
+    "weekly_stat_intensity": "Cường độ",
+    "weekly_stat_sessions": "Tần suất",
+    "weekly_moves_header": "Bài Tập / Hoạt Động",
+    "weekly_tips_header": "Nguyên Tắc Thực Hiện",
+    "kpi_type_label": "Chỉ Số Mục Tiêu",
+    "milestone_type_label": "Cột Mốc Giai Đoạn",
+    "kpi_links_header": "Công Cụ Đo Lường",
+    "milestone_links_header": "Khám Phá Tiếp Theo",
+    "kpi_detail_1": "Chỉ số này đo lường thực tế qua từng tuần — không phải cảm giác mà là con số bạn có thể kiểm tra trong giai đoạn {{weeks}}.",
+    "kpi_detail_2": "Đạt được chỉ số này là tín hiệu rõ ràng cho thấy nền tảng đang được xây đúng hướng và thói quen đang hình thành bền vững.",
+    "kpi_detail_3": "Nếu chưa đạt — không sao. Ghi lại nguyên nhân và điều chỉnh cách tiếp cận, không phải hạ thấp mục tiêu.",
+    "milestone_detail_1": "Cột mốc này đánh dấu bước tiến thực sự trong giai đoạn {{weeks}} — không phải về con số mà về sự nhất quán đã hình thành.",
+    "milestone_detail_2": "Khi đạt được cột mốc này, bạn đang xây dựng được nền móng vững chắc — tinh thần và thể chất đều đang đi đúng hướng.",
+    "milestone_detail_3": "Ghi lại ngày bạn đạt cột mốc này. Đây sẽ là điểm tham chiếu để nhìn lại sau 3–6 tháng nữa với sự tự hào thực sự."
   },
   "contact": {
     "title": "Liên Hệ",

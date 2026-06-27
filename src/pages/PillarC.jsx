@@ -2329,7 +2329,7 @@ export default function PillarC() {
                         <div className="text-muted text-base mt-0.5">{item.desc}</div>
                       </div>
                       <div className="shrink-0 flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: item.color }}>
-                        Chi tiết
+                        {tCommon('modal.see_detail_label')}
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                       </div>
                     </div>
@@ -2374,7 +2374,7 @@ export default function PillarC() {
                           <span className={scoreChecks[i] ? 'line-through opacity-60' : ''}>{row.label}</span>
                         </span>
                         <span className="flex items-center gap-2 shrink-0">
-                          <span className="text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity" style={{ color: row.color }}>Chi tiết →</span>
+                          <span className="text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity" style={{ color: row.color }}>{tCommon('modal.see_detail')}</span>
                           <span className="font-bold tabular-nums" style={{ color: scoreChecks[i] ? row.color : `rgba(${row.rgb},0.5)` }}>{row.pts} đ</span>
                         </span>
                       </button>
@@ -2416,7 +2416,7 @@ export default function PillarC() {
                             <span className="font-semibold text-text">{tr.label}</span>
                             <span className="text-muted"> — {tr.desc}</span>
                           </span>
-                          <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-3" style={{ color: tr.color }}>Chi tiết →</span>
+                          <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-3" style={{ color: tr.color }}>{tCommon('modal.see_detail')}</span>
                         </span>
                       </button>
                     ))}
@@ -2454,7 +2454,7 @@ export default function PillarC() {
                         <div className="text-muted text-base mt-1 leading-relaxed">{s.desc}</div>
                       </div>
                       <div className="shrink-0 flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: s.color }}>
-                        Chi tiết
+                        {tCommon('modal.see_detail_label')}
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                       </div>
                     </div>
@@ -2495,7 +2495,7 @@ export default function PillarC() {
                           <span className={sleepChecks[i] ? 'line-through opacity-60' : ''}>{item.label}</span>
                         </span>
                         <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity shrink-0 ml-2" style={{ color: item.color }}>
-                          Chi tiết
+                          {tCommon('modal.see_detail_label')}
                           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                         </span>
                       </button>
@@ -2540,7 +2540,7 @@ export default function PillarC() {
                       style={{ background: `rgba(${row.rgb},0.05)`, border: `1px solid rgba(${row.rgb},0.15)`, transition: 'border-color 0.2s, background 0.2s' }}>
                       <span className="text-base font-bold tabular-nums w-12 shrink-0" style={{ color: row.color }}>{row.time}</span>
                       <span className="text-lg text-text flex-1">{row.action}</span>
-                      <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0" style={{ color: row.color }}>Chi tiết →</span>
+                      <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0" style={{ color: row.color }}>{tCommon('modal.see_detail')}</span>
                     </div>
                   ))}
                 </div>
@@ -2562,7 +2562,7 @@ export default function PillarC() {
                         <div className="text-muted text-base mt-0.5">{t.desc}</div>
                       </div>
                       <div className="shrink-0 flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: t.color }}>
-                        Chi tiết
+                        {tCommon('modal.see_detail_label')}
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                       </div>
                     </div>
@@ -2614,7 +2614,7 @@ export default function PillarC() {
                   <div className="flex items-center justify-between mb-1">
                     <p className="text-lg font-bold" style={{ color: '#10b981' }}>⏱ Quy tắc đứng dậy 2 phút</p>
                     <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#10b981' }}>
-                      Chi tiết
+                      {tCommon('modal.see_detail_label')}
                       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                     </span>
                   </div>
@@ -2655,7 +2655,7 @@ export default function PillarC() {
                           <span className={neatChecks[i] ? 'line-through opacity-60' : ''}>{item.label}</span>
                         </span>
                         <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity shrink-0 ml-2" style={{ color: item.color }}>
-                          Chi tiết
+                          {tCommon('modal.see_detail_label')}
                           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                         </span>
                       </button>
@@ -2678,7 +2678,7 @@ export default function PillarC() {
                       <span className="text-lg shrink-0">{idea.icon}</span>
                       <span className="flex-1 text-muted group-hover:text-text transition-colors">{idea.label}</span>
                       <span className="flex items-center gap-0.5 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0" style={{ color: idea.color }}>
-                        Chi tiết
+                        {tCommon('modal.see_detail_label')}
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                       </span>
                     </button>
@@ -2729,7 +2729,7 @@ export default function PillarC() {
                         <button onClick={() => setZoneModalIdx(i)}
                           className="flex items-center gap-2 font-semibold text-lg text-text flex-1 text-left hover:opacity-80 transition-opacity">
                           <span>{z.icon}</span>{z.zone}
-                          <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity ml-2" style={{ color: z.color }}>Chi tiết →</span>
+                          <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity ml-2" style={{ color: z.color }}>{tCommon('modal.see_detail')}</span>
                         </button>
                         <button onClick={() => setOpenZone(openZone === i ? null : i)} className="px-2 py-1" style={{ color: z.color }}>
                           {openZone === i ? '▲' : '▼'}
@@ -2786,7 +2786,7 @@ export default function PillarC() {
                         <div className="font-semibold text-text text-lg" style={{ color: m.color }}>{m.label}</div>
                         <div className="text-muted text-base mt-0.5">{m.desc}</div>
                       </div>
-                      <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60" style={{ color: m.color, background: `rgba(${m.rgb},0.1)` }}>Chi tiết →</span>
+                      <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60" style={{ color: m.color, background: `rgba(${m.rgb},0.1)` }}>{tCommon('modal.see_detail')}</span>
                     </div>
                   ))}
                 </div>

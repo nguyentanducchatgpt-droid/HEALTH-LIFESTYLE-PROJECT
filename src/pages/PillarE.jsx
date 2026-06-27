@@ -541,6 +541,7 @@ const DAILY_CHECKS = [
 ];
 
 function TabE2() {
+  const { t: tCommon } = useTranslation('common');
   const [checks, setChecks] = useState({});
   const [schedModal, setSchedModal] = useState(null);
   const [dailyModal, setDailyModal] = useState(null);
@@ -563,7 +564,7 @@ function TabE2() {
               </div>
               <p className="text-base text-muted leading-relaxed flex-1">{s.tip}</p>
               <span className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0"
-                style={{ color: s.color, borderColor: `rgba(${s.rgb},0.35)`, background: `rgba(${s.rgb},0.08)` }}>Chi tiết →</span>
+                style={{ color: s.color, borderColor: `rgba(${s.rgb},0.35)`, background: `rgba(${s.rgb},0.08)` }}>{tCommon('modal.see_detail')}</span>
             </div>
           ))}
         </div>
@@ -588,7 +589,7 @@ function TabE2() {
                 onClick={() => setDailyModal(i)}
                 className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0 transition-all hover:opacity-80"
                 style={{ color: item.color, borderColor: `rgba(${item.rgb},0.35)`, background: `rgba(${item.rgb},0.08)` }}>
-                Chi tiết →
+                {tCommon('modal.see_detail')}
               </button>
             </div>
           ))}
@@ -876,6 +877,7 @@ const SOON_ITEMS = [
 ];
 
 function TabE3() {
+  const { t: tCommon } = useTranslation('common');
   const [emergModal, setEmergModal] = useState(null);
   const [soonModal, setSoonModal] = useState(null);
   return (
@@ -897,7 +899,7 @@ function TabE3() {
               <span className="font-bold text-lg" style={{ color: g.color }}>{g.cat}</span>
             </div>
             <span className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0"
-              style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>Chi tiết →</span>
+              style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>{tCommon('modal.see_detail')}</span>
           </div>
           <ul className="space-y-1">
             {g.signs.map(s => (
@@ -1042,6 +1044,7 @@ const DISEASE_GROUPS = [
 ];
 
 function TabE4() {
+  const { t: tCommon } = useTranslation('common');
   const [groupModal, setGroupModal] = useState(null);
   return (
     <div className="space-y-4">
@@ -1060,7 +1063,7 @@ function TabE4() {
                 <span className="font-bold text-lg" style={{ color: g.color }}>{g.metric}</span>
               </div>
               <span className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0"
-                style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>Chi tiết →</span>
+                style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>{tCommon('modal.see_detail')}</span>
             </div>
             <ul className="space-y-1.5">
               {g.items.map(it => (
@@ -1390,6 +1393,7 @@ const CHECK_EXPANDED = [
 ];
 
 function TabE5() {
+  const { t: tCommon } = useTranslation('common');
   const [basicModal, setBasicModal] = useState(null);
   const [expandedModal, setExpandedModal] = useState(null);
   return (
@@ -1426,7 +1430,7 @@ function TabE5() {
                   <span>{g.icon}</span>+ {g.metric}
                 </p>
                 <span className="text-[10px] font-bold px-2 py-1 rounded-full border shrink-0"
-                  style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>Chi tiết →</span>
+                  style={{ color: g.color, borderColor: `rgba(${g.rgb},0.35)`, background: `rgba(${g.rgb},0.08)` }}>{tCommon('modal.see_detail')}</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {g.items.map(it => <span key={it} className="text-base text-muted px-2 py-0.5 rounded-full border border-border">{it}</span>)}

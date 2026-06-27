@@ -103,7 +103,7 @@ function QuickLinkModal({ ql, onClose }) {
             className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl font-bold text-base transition-all duration-200 hover:opacity-90"
             style={{ background: `rgba(${ql.rgb},0.15)`, color: ql.color, border: `1px solid rgba(${ql.rgb},0.3)` }}
           >
-            Xem chi tiết →
+            {tCommon('modal.see_detail')}
           </Link>
 
           <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
@@ -2378,7 +2378,7 @@ export default function Program() {
                       className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-lg opacity-50 group-hover:opacity-100 transition-opacity cursor-pointer"
                       style={{ color: j.color, background: `rgba(${j.rgb},0.1)`, border: `1px solid rgba(${j.rgb},0.22)` }}
                     >
-                      Chi tiết
+                      {t('modal.see_detail_label')}
                       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
                         <path d="M3 8h10M9 4l4 4-4 4"/>
                       </svg>
@@ -2462,7 +2462,7 @@ export default function Program() {
                               className="flex items-center gap-1 text-[10px] font-bold px-2 py-1 rounded-lg opacity-50 hover:opacity-100 transition-opacity"
                               style={{ color: p.c, background: `rgba(${p.br.match(/rgba\((\d+,\d+,\d+)/)?.[1]||'255,255,255'},0.1)`, border: `1px solid ${p.br}` }}
                             >
-                              Chi tiết
+                              {t('modal.see_detail_label')}
                               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
                                 <path d="M3 8h10M9 4l4 4-4 4"/>
                               </svg>
@@ -2501,7 +2501,7 @@ export default function Program() {
                             className="flex items-center gap-1 text-[10px] font-bold px-2 py-1 rounded-lg shrink-0 opacity-50 group-hover/cl:opacity-100 transition-opacity"
                             style={{ color: day.color, background: `rgba(${day.rgb},0.1)`, border: `1px solid rgba(${day.rgb},0.2)` }}
                           >
-                            Chi tiết
+                            {t('modal.see_detail_label')}
                             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
                               <path d="M3 8h10M9 4l4 4-4 4"/>
                             </svg>
@@ -2631,7 +2631,7 @@ export default function Program() {
                           <h3 className="font-bold text-lg text-text mb-1.5">{block.name}</h3>
                           <p className="text-sm text-muted leading-relaxed">{block.desc}</p>
                           <span className="inline-block mt-2 text-[10px] font-bold opacity-50 group-hover:opacity-100 transition-opacity"
-                            style={{ color: block.color }}>Chi tiết →</span>
+                            style={{ color: block.color }}>{t('modal.see_detail')}</span>
                           {i < 3 && <span className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-border text-xl z-10">›</span>}
                         </div>
                       </RevealBlock>
@@ -2851,7 +2851,7 @@ export default function Program() {
                           <div className="flex-1 min-w-0">
                             <h3 className="font-bold text-text text-lg mb-1 transition-colors duration-200" style={{}}>{tip.title}</h3>
                             <p className="text-base text-muted leading-relaxed">{tip.desc}</p>
-                            <span className="inline-block mt-2 text-[10px] font-bold opacity-0 group-hover:opacity-60 transition-opacity" style={{ color: tip.color }}>Chi tiết →</span>
+                            <span className="inline-block mt-2 text-[10px] font-bold opacity-0 group-hover:opacity-60 transition-opacity" style={{ color: tip.color }}>{t('modal.see_detail')}</span>
                           </div>
                         </div>
                       </RevealBlock>

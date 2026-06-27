@@ -513,7 +513,7 @@ function DailyMinCard({ item, idx, checked, onToggle, onOpen }) {
         </div>
         <div className="shrink-0 flex flex-col items-end gap-1">
           <span className="text-xs font-bold w-6 h-6 rounded-lg flex items-center justify-center" style={{ color: '#0a0a0a', background: color }}>{item.cat}</span>
-          <span className="text-[10px]" style={{ color: `rgba(${rgb},0.5)` }}>Chi tiết →</span>
+          <span className="text-[10px]" style={{ color: `rgba(${rgb},0.5)` }}>{tCommon('modal.see_detail')}</span>
         </div>
       </button>
     </div>
@@ -987,7 +987,7 @@ function NutriLogCard({ item, value, onToggle, onOpen }) {
           {item.label}
         </span>
         <span className="text-[11px] font-bold shrink-0 transition-all duration-200"
-          style={{ color: hovered ? item.color : 'rgba(255,255,255,0.2)' }}>Chi tiết →</span>
+          style={{ color: hovered ? item.color : 'rgba(255,255,255,0.2)' }}>{tCommon('modal.see_detail')}</span>
       </button>
     </div>
   );
@@ -1178,6 +1178,7 @@ const MEAL_ITEMS = [
 
 // --- MealCard ---
 function MealCard({ item, idx, onOpen }) {
+  const { t: tCommon } = useTranslation('common');
   const [hovered, setHovered] = useState(false);
   return (
     <button
@@ -1203,7 +1204,7 @@ function MealCard({ item, idx, onOpen }) {
       </div>
       <span className="text-[11px] font-bold shrink-0 px-2 py-0.5 rounded-lg transition-all duration-200"
         style={{ color: hovered ? item.color : 'rgba(255,255,255,0.25)', background: hovered ? `rgba(${item.rgb},0.12)` : 'transparent' }}>
-        Chi tiết →
+        {tCommon('modal.see_detail')}
       </span>
     </button>
   );
@@ -1515,6 +1516,7 @@ function LifestyleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }
 
 // --- F4 Lifestyle tab ---
 function F4Lifestyle() {
+  const { t: tCommon } = useTranslation('common');
   const [data, setData] = useState(() => {
     try {
       const s = JSON.parse(localStorage.getItem('healthapp_f_lifestyle') || '{}');
@@ -1545,7 +1547,7 @@ function F4Lifestyle() {
               <button onClick={() => setLifestyleModal(i)}
                 className="text-[11px] font-bold px-2.5 py-1 rounded-lg ml-2 transition-all duration-200 hover:opacity-80"
                 style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
-                Chi tiết →
+                {tCommon('modal.see_detail')}
               </button>
             </div>
             <input type="range" min={item.min} max={item.max} step={item.step} value={val}
@@ -1752,12 +1754,13 @@ function F5MindTracker() {
   const stressColor = data.stress >= 7 ? '#ef4444' : data.stress >= 5 ? '#f97316' : '#22c55e';
 
   function DetailBtn({ itemKey }) {
+    const { t: tCommon } = useTranslation('common');
     const item = MIND_ITEMS[itemKey];
     return (
       <button onClick={() => setMindModal(itemKey)}
         className="text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all duration-200 hover:opacity-80 shrink-0"
         style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
-        Chi tiết →
+        {tCommon('modal.see_detail')}
       </button>
     );
   }
@@ -1904,6 +1907,7 @@ function TestModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 
 // --- F6 Progress Test tab ---
 function F6Test() {
+  const { t: tCommon } = useTranslation('common');
   const [vals, setVals] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_f_test') || '{}'); } catch { return {}; } });
   const [saved, setSaved] = useState(false);
   const [testModal, setTestModal] = useState(null);
@@ -1942,7 +1946,7 @@ function F6Test() {
               <button onClick={() => setTestModal(i)}
                 className="text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all duration-200 hover:opacity-80 shrink-0"
                 style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
-                Chi tiết →
+                {tCommon('modal.see_detail')}
               </button>
             </div>
           </div>
@@ -2060,6 +2064,7 @@ function QuickWoModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 
 // --- F7 Quick Workouts tab ---
 function F7QuickWorkouts() {
+  const { t: tCommon } = useTranslation('common');
   const [open, setOpen] = useState(0);
   const [woModal, setWoModal] = useState(null);
 
@@ -2083,7 +2088,7 @@ function F7QuickWorkouts() {
             <button onClick={() => setWoModal(i)}
               className="text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all duration-200 hover:opacity-80 shrink-0"
               style={{ color: wo.color, background: `rgba(${wo.rgb},0.1)`, border: `1px solid rgba(${wo.rgb},0.25)` }}>
-              Chi tiết →
+              {tCommon('modal.see_detail')}
             </button>
           </div>
           {open === i && (

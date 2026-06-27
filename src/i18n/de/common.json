@@ -494,32 +494,43 @@
         "label": "24-Wochen-Fortgeschritten",
         "sub": "Vollständiges Programm",
         "desc": "6 Phasen: vom Anfänger zur vollständigen Beherrschung deines persönlichen Gesundheitssystems."
+      },
+      {
+        "label": "Beispiel-Fahrplan",
+        "sub": "Reales Beispiel",
+        "desc": "Echter 12-Wochen-Fahrplan: 32 Jahre, Büroangestellter, Ziel: 5 kg abnehmen und mehr Energie."
       }
     ],
     "quick_links": [
       {
         "label": "Bewegung & Training",
-        "sub": "6 Muster · Tagesrahmen · Roadmap"
+        "sub": "6 Muster · Tagesrahmen · Roadmap",
+        "desc": "Von 6 Grundbewegungen bis zum personalisierten 12-Wochen-Fahrplan — vollständiger Leitfaden für Anfänger und Fortgeschrittene."
       },
       {
         "label": "Ernährungs-Roadmap",
-        "sub": "12 Wochen · Makro · Meal Prep"
+        "sub": "12 Wochen · Makro · Meal Prep",
+        "desc": "12-Wochen-Ernährungssystem: vom Basisteller-Modell zu Makros und Meal Prep — kein Verzicht, nur klügeres Essen."
       },
       {
         "label": "7-Tage-Ernährungsplan",
-        "sub": "Tägliche Mahlzeiten · Einkaufsliste"
+        "sub": "Tägliche Mahlzeiten · Einkaufsliste",
+        "desc": "Detaillierter 7-Tage-Mahlzeitenplan mit Einkaufsliste — einfach kopieren und kochen, kein Nachdenken nötig."
       },
       {
         "label": "Lebensstil 12 Wochen",
-        "sub": "Schlaf · NEAT · Circadianrhythmus"
+        "sub": "Schlaf · NEAT · Circadianrhythmus",
+        "desc": "12-Wochen-Lebensstil-Fahrplan — Schlaf optimieren, natürliche Bewegung steigern und mit dem zirkadianen Rhythmus synchronisieren."
       },
       {
         "label": "Geist 12 Wochen",
-        "sub": "Meditation · Atmung · Journaling"
+        "sub": "Meditation · Atmung · Journaling",
+        "desc": "12-Wochen-Geist-Fahrplan — Stress reduzieren, Fokus verbessern und Selbstwahrnehmung aufbauen mit 3 Werkzeugen: Meditation, Atmung, Journaling."
       },
       {
         "label": "Werkzeuge-Roadmap",
-        "sub": "Checkliste · Tracker · Test"
+        "sub": "Checkliste · Tracker · Test",
+        "desc": "Vollständiges Fortschritts-Tracking: Tages-Checkliste, Wochen-Tracker und 4-Wochen-Test — real messen für echten Fortschritt."
       }
     ],
     "sub_tab_phases": "Roadmap",
@@ -542,6 +553,32 @@
     "milestone_detail_1": "Dieser Meilenstein markiert echten Fortschritt in Phase {{weeks}} — nicht über Zahlen, sondern über die aufgebaute Konsequenz.",
     "milestone_detail_2": "Wenn du diesen Meilenstein erreichst, baust du ein solides Fundament auf — Geist und Körper gehen beide in die richtige Richtung.",
     "milestone_detail_3": "Notiere das Datum, an dem du diesen Meilenstein erreichst. Das wird ein Referenzpunkt sein, auf den du nach 3–6 weiteren Monaten mit echtem Stolz zurückblickst.",
+    "journey_cta": "Diesen Fahrplan ansehen →",
+    "principle_tag": "GRUNDSATZ",
+    "kpi_points": [
+      { "label": "Wie messen", "note": "Workout Log oder Tages-Checkliste nutzen" },
+      { "label": "Prüfhäufigkeit", "note": "Ende jeder Woche — nicht täglich prüfen" },
+      { "label": "Wenn nicht erreicht", "note": "Grund notieren → Plan anpassen" },
+      { "label": "Eigentlicher Zweck", "note": "Gewohnheiten aufbauen — nicht nur Zahlen erreichen" }
+    ],
+    "milestone_points": [
+      { "label": "Echte Bedeutung", "note": "Die schwerste Phase überstanden — einfach weitermachen" },
+      { "label": "Im Tagebuch festhalten", "note": "Datum notieren — um später zurückzublicken" },
+      { "label": "Nächster Schritt", "note": "Der nächste Meilenstein wartet — Schwung behalten" },
+      { "label": "Mit jemandem teilen", "note": "Accountability steigert Ausdauer um 65%" }
+    ],
+    "kpi_links": [
+      { "label": "Fortschrittstest" },
+      { "label": "Trainingsprotokoll" },
+      { "label": "Tages-Checkliste" },
+      { "label": "Gesundheitsscore" }
+    ],
+    "milestone_links": [
+      { "label": "Fortschrittstest" },
+      { "label": "12-Wochen-Fahrplan" },
+      { "label": "Beispielprogramme" },
+      { "label": "6 Säulen Entdecken" }
+    ],
     "seven_days": [
       {
         "theme": "Leicht Starten — Grundlagen Aufbauen",

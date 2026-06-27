@@ -494,32 +494,43 @@
         "label": "24-Week Advanced",
         "sub": "Complete program",
         "desc": "6 phases: from beginner to full mastery of your personal health system. Carb cycling + supplement + mastery."
+      },
+      {
+        "label": "Sample Roadmap",
+        "sub": "Real-world example",
+        "desc": "A real person's 12-week roadmap: 32-year-old office worker, target: lose 5kg and boost energy."
       }
     ],
     "quick_links": [
       {
         "label": "Movement & Training",
-        "sub": "6 patterns · Daily framework · Roadmap"
+        "sub": "6 patterns · Daily framework · Roadmap",
+        "desc": "From 6 fundamental movements to a personalized 12-week roadmap — complete guide for beginners and those ready to level up."
       },
       {
         "label": "Nutrition Roadmap",
-        "sub": "12 weeks · Macro · Meal prep"
+        "sub": "12 weeks · Macro · Meal prep",
+        "desc": "A 12-week nutrition system: from basic plate model to macros and advanced meal prep — no deprivation, just smarter eating."
       },
       {
         "label": "7-Day Meal Plan",
-        "sub": "Daily meals · Shopping list"
+        "sub": "Daily meals · Shopping list",
+        "desc": "Detailed 7-day meal plan with per-meal breakdowns and a ready-made shopping list — just copy and cook, no extra thinking."
       },
       {
         "label": "Lifestyle 12 Weeks",
-        "sub": "Sleep · NEAT · Circadian rhythm"
+        "sub": "Sleep · NEAT · Circadian rhythm",
+        "desc": "A 12-week lifestyle roadmap — optimize sleep, boost natural movement and sync with your circadian rhythm."
       },
       {
         "label": "Mind 12 Weeks",
-        "sub": "Meditation · Breathing · Journaling"
+        "sub": "Meditation · Breathing · Journaling",
+        "desc": "12-week mindset roadmap — reduce stress, improve focus and build self-awareness with 3 tools: meditation, breathing and journaling."
       },
       {
         "label": "Tools Roadmap",
-        "sub": "Checklist · Tracker · Test"
+        "sub": "Checklist · Tracker · Test",
+        "desc": "Complete progress tracking toolkit: daily checklist, weekly tracker and 4-week test — measure real to progress real."
       }
     ],
     "sub_tab_phases": "Roadmap",
@@ -542,6 +553,32 @@
     "milestone_detail_1": "This milestone marks real progress in phase {{weeks}} — not about numbers but about the consistency you have built.",
     "milestone_detail_2": "When you reach this milestone, you are building a solid foundation — mind and body are both going in the right direction.",
     "milestone_detail_3": "Record the date you hit this milestone. This will be a reference point to look back on after 3–6 more months with genuine pride.",
+    "journey_cta": "View this roadmap →",
+    "principle_tag": "PRINCIPLE",
+    "kpi_points": [
+      { "label": "How to measure", "note": "Use Workout Log or Daily Checklist" },
+      { "label": "Check frequency", "note": "End of each week — not every day" },
+      { "label": "When not achieved", "note": "Note the reason → adjust the plan" },
+      { "label": "True purpose", "note": "Build habits — not just hit numbers" }
+    ],
+    "milestone_points": [
+      { "label": "Real meaning", "note": "Passed the hardest phase — just keep going" },
+      { "label": "Record in journal", "note": "Note the date — to look back on later" },
+      { "label": "Next step", "note": "Next milestone is waiting — keep momentum" },
+      { "label": "Share with someone", "note": "Accountability boosts persistence by 65%" }
+    ],
+    "kpi_links": [
+      { "label": "Progress Test" },
+      { "label": "Workout Log" },
+      { "label": "Daily Checklist" },
+      { "label": "Health Score" }
+    ],
+    "milestone_links": [
+      { "label": "Progress Test" },
+      { "label": "12-Week Roadmap" },
+      { "label": "Sample Programs" },
+      { "label": "Explore 6 Pillars" }
+    ],
     "seven_days": [
       {
         "theme": "Start Light — Build Your Foundation",

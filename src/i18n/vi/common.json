@@ -494,6 +494,11 @@
         "label": "24 Tuần Nâng Cao",
         "sub": "Chương trình toàn diện",
         "desc": "6 giai đoạn 24 tuần: từ người mới đến làm chủ hoàn toàn hệ thống sức khỏe cá nhân. Carb cycling + supplement + mastery."
+      },
+      {
+        "label": "Lộ Trình Mẫu",
+        "sub": "Ví dụ thực tế",
+        "desc": "Xem lộ trình 12 tuần của một người thực tế: 32 tuổi, nhân viên văn phòng, mục tiêu giảm 5kg và tăng năng lượng."
       }
     ],
     "quick_links": [
@@ -541,7 +546,33 @@
     "kpi_detail_3": "Nếu chưa đạt — không sao. Ghi lại nguyên nhân và điều chỉnh cách tiếp cận, không phải hạ thấp mục tiêu.",
     "milestone_detail_1": "Cột mốc này đánh dấu bước tiến thực sự trong giai đoạn {{weeks}} — không phải về con số mà về sự nhất quán đã hình thành.",
     "milestone_detail_2": "Khi đạt được cột mốc này, bạn đang xây dựng được nền móng vững chắc — tinh thần và thể chất đều đang đi đúng hướng.",
-    "milestone_detail_3": "Ghi lại ngày bạn đạt cột mốc này. Đây sẽ là điểm tham chiếu để nhìn lại sau 3–6 tháng nữa với sự tự hào thực sự."
+    "milestone_detail_3": "Ghi lại ngày bạn đạt cột mốc này. Đây sẽ là điểm tham chiếu để nhìn lại sau 3–6 tháng nữa với sự tự hào thực sự.",
+    "journey_cta": "Xem lộ trình này →",
+    "principle_tag": "NGUYÊN TẮC",
+    "kpi_points": [
+      { "label": "Cách đo lường", "note": "Dùng Workout Log hoặc Checklist hàng ngày" },
+      { "label": "Tần suất kiểm tra", "note": "Cuối mỗi tuần — không kiểm tra từng ngày" },
+      { "label": "Khi chưa đạt", "note": "Ghi chú nguyên nhân → điều chỉnh plan" },
+      { "label": "Mục đích thật sự", "note": "Xây thói quen — không chỉ đạt con số" }
+    ],
+    "milestone_points": [
+      { "label": "Ý nghĩa thật", "note": "Vượt qua giai đoạn khó nhất — tiếp tục thôi" },
+      { "label": "Ghi vào nhật ký", "note": "Document lại ngày đạt — để nhìn lại sau" },
+      { "label": "Bước tiếp theo", "note": "Cột mốc tiếp theo đang chờ — giữ đà" },
+      { "label": "Chia sẻ với ai đó", "note": "Accountability tăng 65% tỷ lệ tiếp tục" }
+    ],
+    "kpi_links": [
+      { "label": "Test Tiến Bộ" },
+      { "label": "Nhật Ký Tập" },
+      { "label": "Checklist Ngày" },
+      { "label": "Điểm Sức Khỏe" }
+    ],
+    "milestone_links": [
+      { "label": "Test Tiến Bộ" },
+      { "label": "Lộ Trình 12 Tuần" },
+      { "label": "Chương Trình Mẫu" },
+      { "label": "Khám Phá 6 Trụ Cột" }
+    ]
   },
   "contact": {
     "title": "Liên Hệ",

@@ -190,7 +190,7 @@ function JourneyDetailModal({ journey: j, onClose, onSelect }) {
             className="w-full py-3 rounded-2xl font-bold text-base transition-all duration-200 hover:opacity-90"
             style={{ background: `rgba(${j.rgb},0.15)`, color: j.color, border: `1px solid rgba(${j.rgb},0.3)` }}
           >
-            Xem lộ trình này →
+            {tCommon('program.journey_cta', 'Xem lộ trình này →')}
           </button>
 
           <p className="text-center text-xs text-muted mt-4 opacity-40">{tCommon('modal.close_hint')}</p>
@@ -1712,7 +1712,7 @@ function DailyBlockModal({ block, onClose }) {
               {block.icon}
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: block.color }}>{block.time || 'NGUYÊN TẮC'}</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: block.color }}>{block.time || tCommon('program.principle_tag', 'NGUYÊN TẮC')}</p>
               <h2 className="font-bold text-white text-lg leading-tight max-w-xs">{block.name || block.text}</h2>
             </div>
           </div>
@@ -1958,6 +1958,15 @@ const MILESTONE_LINKS = [
 function PhaseItemModal({ text, phase, type, onClose }) {
   const { t: tCommon } = useTranslation('common');
   const isKpi = type === 'kpi';
+
+  const tKpiPts = tCommon('program.kpi_points', { returnObjects: true });
+  const localKpiPoints = Array.isArray(tKpiPts) ? tKpiPts.map((p, i) => ({ ...KPI_POINTS[i], ...p })) : KPI_POINTS;
+  const tMsPts = tCommon('program.milestone_points', { returnObjects: true });
+  const localMilestonePoints = Array.isArray(tMsPts) ? tMsPts.map((p, i) => ({ ...MILESTONE_POINTS[i], ...p })) : MILESTONE_POINTS;
+  const tKpiLks = tCommon('program.kpi_links', { returnObjects: true });
+  const localKpiLinks = Array.isArray(tKpiLks) ? tKpiLks.map((l, i) => ({ ...KPI_LINKS[i], ...l })) : KPI_LINKS;
+  const tMsLks = tCommon('program.milestone_links', { returnObjects: true });
+  const localMilestoneLinks = Array.isArray(tMsLks) ? tMsLks.map((l, i) => ({ ...MILESTONE_LINKS[i], ...l })) : MILESTONE_LINKS;
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -2020,7 +2029,7 @@ function PhaseItemModal({ text, phase, type, onClose }) {
               {isKpi ? tCommon('program.kpi_links_header', 'Công Cụ Đo Lường') : tCommon('program.milestone_links_header', 'Khám Phá Tiếp Theo')}
             </p>
             <div className="flex flex-wrap gap-2">
-              {(isKpi ? KPI_LINKS : MILESTONE_LINKS).map((lk, li) => (
+              {(isKpi ? localKpiLinks : localMilestoneLinks).map((lk, li) => (
                 <Link key={li} to={lk.to} onClick={onClose}
                   className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
                   style={{ color: phase.color, background: `rgba(${phase.rgb},0.1)`, border: `1px solid rgba(${phase.rgb},0.22)` }}>
@@ -2031,7 +2040,7 @@ function PhaseItemModal({ text, phase, type, onClose }) {
           </div>
 
           <div className="grid grid-cols-2 gap-2.5">
-            {(isKpi ? KPI_POINTS : MILESTONE_POINTS).map((pt, pi) => (
+            {(isKpi ? localKpiPoints : localMilestonePoints).map((pt, pi) => (
               <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
                 style={{ background: `rgba(${phase.rgb},0.06)`, border: `1px solid rgba(${phase.rgb},0.14)` }}>
                 <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
@@ -2220,7 +2229,10 @@ export default function Program() {
 
   // Translated data — fall back to hardcoded Vietnamese constants if key missing
   const tJourneys = t('program.journeys', { returnObjects: true });
-  const localJourneys = Array.isArray(tJourneys) ? tJourneys.map((j, i) => ({ ...JOURNEYS[i], ...j })) : JOURNEYS;
+  const localJourneys = JOURNEYS.map((j, i) => {
+    const tJ = Array.isArray(tJourneys) ? tJourneys[i] : null;
+    return tJ ? { ...j, ...tJ } : j;
+  });
   const tSevenDays = t('program.seven_days', { returnObjects: true });
   const localSevenDays = Array.isArray(tSevenDays) ? tSevenDays.map((d, i) => ({ ...SEVEN_DAYS[i], ...d })) : SEVEN_DAYS;
   const tPillarLabels = t('program.pillar_labels', { returnObjects: true });
@@ -3143,7 +3155,8 @@ export default function Program() {
               const tql = localQuickLinks?.[idx];
               const label = tql?.label || ql.label;
               const sub = tql?.sub || ql.sub;
-              const mergedQl = { ...ql, label, sub };
+              const desc = tql?.desc || ql.desc;
+              const mergedQl = { ...ql, label, sub, desc };
               return (
                 <div
                   key={ql.to}

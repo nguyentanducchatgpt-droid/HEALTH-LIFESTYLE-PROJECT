@@ -246,29 +246,33 @@ function ChecklistItemModal({ item, dayColor, dayRgb, onClose }) {
           </div>
 
           {/* Numbered details */}
-          <ul className="space-y-3 mb-6">
-            {item.details.map((d, di) => (
-              <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
-                <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
-                  style={{ background: `rgba(${dayRgb},0.14)`, color: dayColor }}>{di + 1}</span>
-                <span>{d}</span>
-              </li>
-            ))}
-          </ul>
+          {Array.isArray(item.details) && (
+            <ul className="space-y-3 mb-6">
+              {item.details.map((d, di) => (
+                <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
+                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
+                    style={{ background: `rgba(${dayRgb},0.14)`, color: dayColor }}>{di + 1}</span>
+                  <span>{d}</span>
+                </li>
+              ))}
+            </ul>
+          )}
 
           {/* 2-col points */}
-          <div className="grid grid-cols-2 gap-2.5 mb-4">
-            {item.points.map((pt, pi) => (
-              <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
-                style={{ background: `rgba(${dayRgb},0.06)`, border: `1px solid rgba(${dayRgb},0.14)` }}>
-                <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
-                <div>
-                  <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
-                  <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+          {Array.isArray(item.points) && (
+            <div className="grid grid-cols-2 gap-2.5 mb-4">
+              {item.points.map((pt, pi) => (
+                <div key={pi} className="flex items-start gap-2.5 rounded-xl p-3.5"
+                  style={{ background: `rgba(${dayRgb},0.06)`, border: `1px solid rgba(${dayRgb},0.14)` }}>
+                  <span className="text-xl shrink-0 mt-0.5">{pt.icon}</span>
+                  <div>
+                    <p className="font-bold text-sm text-text leading-snug">{pt.label}</p>
+                    <p className="text-xs text-muted mt-0.5 leading-relaxed">{pt.note}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           <p className="text-center text-xs text-muted opacity-40">{tCommon('modal.close_hint')}</p>
         </div>
@@ -2243,6 +2247,13 @@ export default function Program() {
       B: tD.B ? { ...d.B, ...tD.B } : d.B,
       C: tD.C ? { ...d.C, ...tD.C } : d.C,
       D: tD.D ? { ...d.D, ...tD.D } : d.D,
+      // Preserve full checklist objects from constant; only translate label if tD.checklist is a string array
+      checklist: Array.isArray(tD.checklist)
+        ? d.checklist.map((ci, idx) => ({
+            ...ci,
+            label: typeof tD.checklist[idx] === 'string' ? tD.checklist[idx] : (tD.checklist[idx]?.label ?? ci.label),
+          }))
+        : d.checklist,
     };
   });
   const tPillarLabels = t('program.pillar_labels', { returnObjects: true });

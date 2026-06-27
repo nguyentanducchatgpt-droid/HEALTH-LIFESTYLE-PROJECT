@@ -691,23 +691,131 @@
           "title": "Learn 6 Fundamental Movements",
           "detail": "Squat · Hinge · Push · Pull · Core · Breath",
           "time": "20 min",
-          "note": "Perfect form before load. Don't worry about reps — that's your only goal today."
+          "note": "Perfect form before load. Don't worry about reps — that's your only goal today.",
+          "details": [
+            "These 6 movement patterns cover ~95% of functional movements in daily life and sports — mastering them is the foundation for all future progress.",
+            "Day 1 requires no high reps or heavy weight — the goal is to feel the correct muscles working. Once form is solid, reps and weight will naturally follow.",
+            "The brain needs 300–500 correct repetitions to install a motor pattern into autopilot. This is why training 3–4×/week in the first 4 weeks matters more than training a lot right away."
+          ],
+          "points": [
+            {
+              "icon": "🦵",
+              "label": "Squat + Hinge",
+              "note": "Lower body — quads, glutes, lower back"
+            },
+            {
+              "icon": "💪",
+              "label": "Push + Pull",
+              "note": "Upper body balance — prevents shoulder imbalance"
+            },
+            {
+              "icon": "🧱",
+              "label": "Core + Breath",
+              "note": "Foundation for all safe training"
+            },
+            {
+              "icon": "🔁",
+              "label": "Form before volume",
+              "note": "Technique builds the base — reps come later"
+            }
+          ]
         },
         "B": {
           "title": "Eat 3 Protein-Rich Meals",
           "detail": "2 eggs morning · chicken breast lunch · fish/tofu dinner",
           "kcal": "~1,410 kcal",
-          "note": "No need to cut carbs. Add veg and reduce sweets — enough for day one."
+          "note": "No need to cut carbs. Add veg and reduce sweets — enough for day one.",
+          "details": [
+            "Protein is the building block for muscle, tissue repair, and hormones — you don't need a lot, but you need it consistently at every meal to see results.",
+            "One palm of protein per meal is the simplest rule: no measuring, works when eating out, and sufficient for most people at a maintenance level.",
+            "No need to 'eat clean' 100% on day one. Simply adding protein to your existing meals is enough to create meaningful change."
+          ],
+          "points": [
+            {
+              "icon": "🍳",
+              "label": "Morning: 2 eggs",
+              "note": "~12g protein, fast and affordable"
+            },
+            {
+              "icon": "🍗",
+              "label": "Lunch: chicken breast",
+              "note": "~30g protein per 100g, main meal"
+            },
+            {
+              "icon": "🐟",
+              "label": "Dinner: fish/tofu",
+              "note": "Easy to digest, light for the evening"
+            },
+            {
+              "icon": "💧",
+              "label": "Water + absorption",
+              "note": "Drink enough water to help the body process protein"
+            }
+          ]
         },
         "C": {
           "title": "Sleep Before 11 PM",
           "detail": "Dark + cool room · phone away from bed · 7–9h",
-          "note": "More important than any workout — priority #1."
+          "note": "More important than any workout — priority #1.",
+          "details": [
+            "Cortisol naturally drops after 10:30 PM — sleeping before 11 PM aligns with your circadian rhythm, leading to deeper sleep, easier waking, and better recovery.",
+            "Blue light from phones suppresses melatonin by up to 50% — keep your phone out of the bedroom or enable night mode at least 1 hour before bed.",
+            "A cool room (64–72°F / 18–22°C) and complete darkness are the two most important physical factors that determine sleep depth."
+          ],
+          "points": [
+            {
+              "icon": "🕙",
+              "label": "Target 11 PM",
+              "note": "Bedtime, not just time to lie down"
+            },
+            {
+              "icon": "📵",
+              "label": "Phone away from bed",
+              "note": "Keep it out of the room or face-down"
+            },
+            {
+              "icon": "🌡️",
+              "label": "64–72°F / 18–22°C",
+              "note": "Optimal room temperature for deep sleep"
+            },
+            {
+              "icon": "⏰",
+              "label": "7–9 hours",
+              "note": "Minimum duration for full recovery"
+            }
+          ]
         },
         "D": {
           "title": "3 Deep Breaths on Waking",
           "detail": "Inhale 4s · hold 4s · exhale 4s — repeat 3 times",
-          "note": "30 seconds sets an anchor for the whole day."
+          "note": "30 seconds sets an anchor for the whole day.",
+          "details": [
+            "In the morning, cortisol rises rapidly (Cortisol Awakening Response) — 3 slow deep breaths activate the parasympathetic system, reducing reflexive stress right at the start of the day.",
+            "4s inhale – 4s hold – 4s exhale is the simplest form of box breathing. Navy SEALs use this technique to stay calm under extreme pressure.",
+            "Just 30 seconds creates a positive 'anchor': the brain links waking up with calm instead of stress. After 21 days, this habit becomes automatic."
+          ],
+          "points": [
+            {
+              "icon": "🫁",
+              "label": "Inhale 4s",
+              "note": "Through the nose, belly expands"
+            },
+            {
+              "icon": "⏸️",
+              "label": "Hold 4s",
+              "note": "Hold gently, no tension"
+            },
+            {
+              "icon": "💨",
+              "label": "Exhale 4s",
+              "note": "Slowly through mouth or nose"
+            },
+            {
+              "icon": "🔁",
+              "label": "3 cycles",
+              "note": "30 seconds is enough to shift the brain's mode"
+            }
+          ]
         },
         "checklist": [
           "Train 20 min (6 movements)",
@@ -724,23 +832,131 @@
           "title": "Repeat 6 Movements + Add 1 Set",
           "detail": "Same workout · add 1 set per movement",
           "time": "22 min",
-          "note": "The brain learns through repetition — don't skip it even if it feels too simple."
+          "note": "The brain learns through repetition — don't skip it even if it feels too simple.",
+          "details": [
+            "The brain learns through correct repetition — not through variety. Day 2 with the same 6 exercises is far better motor learning than switching to new ones.",
+            "The simplest progressive overload: +1 set per exercise. Yesterday 2 sets → today 3 sets. Gradual adaptation is more sustainable than shocking the body.",
+            "Log each session: reps, perceived effort (1–10), form notes. This small data will transform how you train."
+          ],
+          "points": [
+            {
+              "icon": "🔁",
+              "label": "Repetition = learning",
+              "note": "300+ reps to become motor autopilot"
+            },
+            {
+              "icon": "➕",
+              "label": "+1 set per exercise",
+              "note": "Simplest form of progressive overload"
+            },
+            {
+              "icon": "📝",
+              "label": "Log your session",
+              "note": "Reps + effort level after each workout"
+            },
+            {
+              "icon": "⏱",
+              "label": "2-0-1 tempo",
+              "note": "2s down, no pause, 1s up"
+            }
+          ]
         },
         "B": {
           "title": "Protein at Every Main Meal",
           "detail": "Oats + eggs · meat/fish/veg · tofu",
           "kcal": "~1,380 kcal",
-          "note": "1 palm of protein per meal — the simplest rule to avoid protein shortfall."
+          "note": "1 palm of protein per meal — the simplest rule to avoid protein shortfall.",
+          "details": [
+            "The amino acid pool in the blood needs replenishing every 4–5 hours — eating protein evenly across 3 meals is more effective than eating a large amount once.",
+            "Muscle Protein Synthesis (MPS) — the muscle-building process — only activates when sufficient leucine is present. It's found in animal protein and legumes. Aim for 20–30g per meal.",
+            "You don't need to eat pure meat — combining plant protein (tofu, lentils, oats) with animal protein gives you a complete amino acid profile."
+          ],
+          "points": [
+            {
+              "icon": "🌅",
+              "label": "Morning: oats + eggs",
+              "note": "~20g protein, keeps you full longer"
+            },
+            {
+              "icon": "☀️",
+              "label": "Lunch: meat + fish + veg",
+              "note": "~30g protein, most important meal"
+            },
+            {
+              "icon": "🌙",
+              "label": "Dinner: tofu",
+              "note": "~15–20g protein, easy to digest"
+            },
+            {
+              "icon": "💊",
+              "label": "~120g total/day",
+              "note": "For a 60kg person with moderate activity"
+            }
+          ]
         },
         "C": {
           "title": "10-Minute Morning Routine",
           "detail": "Drink water · 5 min sunlight · write 1 daily goal",
-          "note": "A morning anchor helps the brain switch on earlier."
+          "note": "A morning anchor helps the brain switch on earlier.",
+          "details": [
+            "Cortisol naturally peaks in the first 30–45 minutes after waking — this is when the brain is most active. Capitalize on this with a morning routine instead of scrolling.",
+            "Natural morning light resets the circadian clock and activates serotonin — even 5 minutes standing by a window or balcony is enough.",
+            "Write 1 daily intention in under one line: the brain will automatically seek opportunities to fulfill it throughout the day, thanks to the reticular activating system."
+          ],
+          "points": [
+            {
+              "icon": "💧",
+              "label": "Drink 1 glass of water",
+              "note": "Right after waking, before coffee"
+            },
+            {
+              "icon": "☀️",
+              "label": "5 min sunlight",
+              "note": "A window or balcony is enough"
+            },
+            {
+              "icon": "✍️",
+              "label": "1 daily intention",
+              "note": "Handwritten, under one line, specific"
+            },
+            {
+              "icon": "📵",
+              "label": "No phone for 30 min",
+              "note": "Avoid early morning dopamine spikes"
+            }
+          ]
         },
         "D": {
           "title": "3-Line Evening Journal",
           "detail": "What went well · what I learned · what to do tomorrow",
-          "note": "5 min before bed. Doesn't need to be good — just honest."
+          "note": "5 min before bed. Doesn't need to be good — just honest.",
+          "details": [
+            "Writing down something positive from the day activates dopamine and serotonin — the brain 'learns' that today had value, reducing pre-sleep anxiety.",
+            "3 simple questions: What went well? What did I learn? What will I do tomorrow? No need for length or perfection — just be honest.",
+            "Handwriting beats typing: pen and paper engage deeper brain processing, helping memories consolidate better during sleep."
+          ],
+          "points": [
+            {
+              "icon": "✅",
+              "label": "What went well",
+              "note": "Even small wins count"
+            },
+            {
+              "icon": "📚",
+              "label": "What did I learn",
+              "note": "1 new thing, even from mistakes"
+            },
+            {
+              "icon": "🎯",
+              "label": "Tomorrow's priority",
+              "note": "1 specific action"
+            },
+            {
+              "icon": "✍️",
+              "label": "Write by hand",
+              "note": "Better than typing for reflection"
+            }
+          ]
         },
         "checklist": [
           "Protein all 3 meals",
@@ -757,23 +973,131 @@
           "title": "Brisk Walk 20 Minutes",
           "detail": "Light cardio · heart rate 100–120 · muscle recovery",
           "time": "20 min",
-          "note": "Walk after lunch: lowers blood sugar 20–30%, builds base endurance."
+          "note": "Walk after lunch: lowers blood sugar 20–30%, builds base endurance.",
+          "details": [
+            "A brisk walk after lunch reduces post-meal blood sugar spikes by 20–30%, improving insulin sensitivity and reducing the afternoon energy slump.",
+            "Low-intensity cardio (heart rate 100–120 bpm) actually helps muscle recovery better than sitting still — it increases blood flow to muscles without adding fatigue.",
+            "20 minutes of walking accumulates 2,000–2,500 steps — covering 25–30% of the daily 8,000-step goal, with no equipment needed."
+          ],
+          "points": [
+            {
+              "icon": "🍽️",
+              "label": "Best after lunch",
+              "note": "Lowers blood sugar immediately post-meal"
+            },
+            {
+              "icon": "❤️",
+              "label": "100–120 bpm",
+              "note": "Recovery cardio zone, non-fatiguing"
+            },
+            {
+              "icon": "👣",
+              "label": "2,000–2,500 steps",
+              "note": "25–30% of daily step goal"
+            },
+            {
+              "icon": "🌳",
+              "label": "Go outdoors",
+              "note": "Natural light + movement = double benefit"
+            }
+          ]
         },
         "B": {
           "title": "Handle Eating Out Smartly",
           "detail": "1 protein + 2 veg + moderate carbs = the eating-out formula",
           "kcal": "~1,450 kcal",
-          "note": "No need to avoid social meals — just use a simple strategy."
+          "note": "No need to avoid social meals — just use a simple strategy.",
+          "details": [
+            "Formula 1P+2V+S: 1 portion protein + 2 portions vegetables + moderate starch. Works at any restaurant — no need to read nutrition labels.",
+            "Choose your protein first, then pick sides — this order reduces the chance of ending up with a meal that's too low in protein.",
+            "Don't skip social meals — that creates more psychological cost than eating an extra 100 kcal. Smart eating out is 100× more sustainable than strict clean eating."
+          ],
+          "points": [
+            {
+              "icon": "🍗",
+              "label": "Protein first",
+              "note": "Choose your main protein source first"
+            },
+            {
+              "icon": "🥦",
+              "label": "2 portions of veg",
+              "note": "Salad + soup/stir-fry, or 2 veggie sides"
+            },
+            {
+              "icon": "🍚",
+              "label": "Moderate starch",
+              "note": "½ bowl rice/noodles — no need to eliminate"
+            },
+            {
+              "icon": "🥤",
+              "label": "Skip sugary drinks",
+              "note": "Water or unsweetened tea instead"
+            }
+          ]
         },
         "C": {
           "title": "No Phone 30 Min Before Bed",
           "detail": "Replace with: reading · breathing · light stretching",
-          "note": "Blue light suppresses melatonin — one small habit improves sleep depth."
+          "note": "Blue light suppresses melatonin — one small habit improves sleep depth.",
+          "details": [
+            "Blue light (480nm) from screens suppresses melatonin by up to 50%. It takes 30–60 minutes for hormone levels to recover after turning off the screen.",
+            "Scrolling social media at night triggers a dopamine loop — the brain can't switch off even when your eyes are tired. This is why you feel 'not sleepy' after lying down for a while.",
+            "Replace the last 30 minutes with reading a physical book or light stretching — both naturally lower heart rate and prepare the body for sleep."
+          ],
+          "points": [
+            {
+              "icon": "💙",
+              "label": "Blue light suppresses",
+              "note": "Melatonin drops 50% with screen use"
+            },
+            {
+              "icon": "🔄",
+              "label": "Dopamine loop",
+              "note": "Brain can't switch off even when eyes are tired"
+            },
+            {
+              "icon": "📖",
+              "label": "Replace with a book",
+              "note": "Physical books don't emit blue light"
+            },
+            {
+              "icon": "🧘",
+              "label": "Or light stretching",
+              "note": "5–10 min stretch = sleep signal for the brain"
+            }
+          ]
         },
         "D": {
           "title": "Box Breathing 5 Minutes",
           "detail": "Inhale 4 · hold 4 · exhale 4 · hold 4 — repeat 5 rounds",
-          "note": "Use when stressed, before meetings, or before bed."
+          "note": "Use when stressed, before meetings, or before bed.",
+          "details": [
+            "Box breathing activates the parasympathetic nervous system (rest-and-digest) — the opposite of the sympathetic system (fight-or-flight). Just 4–5 cycles produce a noticeable shift.",
+            "Navy SEALs use this 4-4-4-4 technique to stay calm under extreme pressure — its effectiveness is backed by multiple neuroscience studies.",
+            "5 minutes = 5 cycles, enough to reduce heart rate by 10–15 bpm and significantly lower cortisol. Use it before a stressful meeting or at night before sleep."
+          ],
+          "points": [
+            {
+              "icon": "🫁",
+              "label": "Inhale 4s",
+              "note": "Breathe from the belly, slow and steady"
+            },
+            {
+              "icon": "⏸️",
+              "label": "Hold 4s",
+              "note": "No tension — hold gently"
+            },
+            {
+              "icon": "💨",
+              "label": "Exhale 4s",
+              "note": "Slow and complete"
+            },
+            {
+              "icon": "⏸️",
+              "label": "Hold 4s",
+              "note": "Stay calm before repeating"
+            }
+          ]
         },
         "checklist": [
           "Walk 20 min",
@@ -790,23 +1114,131 @@
           "title": "Active Recovery 15 Minutes",
           "detail": "Stretch · foam roll · light yoga · no heavy training",
           "time": "15 min",
-          "note": "Recovery = invisible training. Muscles grow at rest, not during effort."
+          "note": "Recovery = invisible training. Muscles grow at rest, not during effort.",
+          "details": [
+            "Muscles grow while resting, not while training — heavy exercise only creates the stimulus. Recovery is when the body actually builds strength.",
+            "Foam rolling breaks up adhesions in muscle tissue and increases blood flow to the muscle — reducing DOMS (post-workout soreness) more effectively than complete rest.",
+            "Light yoga (restorative yoga) combined with deep breathing activates the parasympathetic system — reducing cortisol and improving sleep quality that night."
+          ],
+          "points": [
+            {
+              "icon": "🛌",
+              "label": "Muscles grow at rest",
+              "note": "Sleep + recovery = growth stimulus"
+            },
+            {
+              "icon": "🔘",
+              "label": "Foam roll 5 min",
+              "note": "Break adhesions, boost blood flow"
+            },
+            {
+              "icon": "🧘",
+              "label": "Light yoga 5 min",
+              "note": "Activates parasympathetic system"
+            },
+            {
+              "icon": "🚫",
+              "label": "No heavy training",
+              "note": "Rest day = investment, not failure"
+            }
+          ]
         },
         "B": {
           "title": "Vegetable Priority Day",
           "detail": "Salad · soup · steamed veg · more than usual",
           "kcal": "~1,300 kcal",
-          "note": "Fiber feeds gut bacteria — immune system and mood both benefit."
+          "note": "Fiber feeds gut bacteria — immune system and mood both benefit.",
+          "details": [
+            "70% of the immune system resides in the gut — gut bacteria need fiber (prebiotics) from leafy greens to function well, produce serotonin, and reduce inflammation.",
+            "A variety of colorful vegetables means a variety of phytochemicals and vitamins: dark green (folate, iron), red/orange (lycopene, beta-carotene), purple (anthocyanins).",
+            "1,300 kcal on a veggie-light day doesn't mean hunger — fiber keeps you full longer than starch because it doesn't digest quickly. Full belly, lower calories."
+          ],
+          "points": [
+            {
+              "icon": "🥬",
+              "label": "Dark leafy greens",
+              "note": "Folate, iron, vitamin K"
+            },
+            {
+              "icon": "🥕",
+              "label": "Orange/red vegetables",
+              "note": "Beta-carotene, lycopene"
+            },
+            {
+              "icon": "🧅",
+              "label": "Garlic + onion",
+              "note": "Strongest prebiotics for gut health"
+            },
+            {
+              "icon": "🎨",
+              "label": "≥5 colors per day",
+              "note": "Different colors = different nutrients"
+            }
+          ]
         },
         "C": {
           "title": "8,000 Steps + Sunlight",
           "detail": "Total 8k steps through the day · 5 min morning sunlight",
-          "note": "No need to walk continuously. Steps accumulate throughout the day."
+          "note": "No need to walk continuously. Steps accumulate throughout the day.",
+          "details": [
+            "8,000 steps per day don't have to be continuous — research shows that total steps accumulated throughout the day (walking around the house, taking stairs, going outside) have the same benefit.",
+            "5 minutes of morning sunlight (6–9 AM) resets the circadian clock and triggers vitamin D production — both directly impact energy levels and mood.",
+            "A step-counting app (built into your phone) helps you realize how much you've actually walked — usually less than you think, and more once you start paying attention."
+          ],
+          "points": [
+            {
+              "icon": "📱",
+              "label": "Step-counting app",
+              "note": "Already built into your phone's health app"
+            },
+            {
+              "icon": "☀️",
+              "label": "5 min morning sun",
+              "note": "6–9 AM, resets circadian clock"
+            },
+            {
+              "icon": "🪜",
+              "label": "Use the stairs",
+              "note": "Each floor = ~100–120 extra steps"
+            },
+            {
+              "icon": "🚶",
+              "label": "Walk during breaks",
+              "note": "5 min/hour = 500–700 steps each time"
+            }
+          ]
         },
         "D": {
           "title": "Meditation 5 Minutes",
           "detail": "Sit · close eyes · focus on breath · no judgment",
-          "note": "You don't need to empty your mind — just notice and gently return to breath."
+          "note": "You don't need to empty your mind — just notice and gently return to breath.",
+          "details": [
+            "Meditation doesn't require 'no thoughts' — that's the most common misconception. The goal is simply to notice when the mind wanders and gently return to the breath.",
+            "The Default Mode Network (active when 'doing nothing') is linked to anxiety and overthinking. Meditation reduces DMN activity — reducing worry about the future and past.",
+            "5 minutes of daily meditation is enough to see results after 8 weeks: lower cortisol, increased gray matter in the prefrontal cortex, improved emotional regulation."
+          ],
+          "points": [
+            {
+              "icon": "🧘",
+              "label": "Sit comfortably",
+              "note": "Chair, floor, or bed — all fine"
+            },
+            {
+              "icon": "👁️",
+              "label": "Close your eyes",
+              "note": "Reduces visual stimulation"
+            },
+            {
+              "icon": "🫁",
+              "label": "Focus on the breath",
+              "note": "Feel the belly rise and fall"
+            },
+            {
+              "icon": "💭",
+              "label": "No judgment",
+              "note": "Thoughts arise = notice them, return to breath"
+            }
+          ]
         },
         "checklist": [
           "Stretch 15 min",
@@ -823,23 +1255,131 @@
           "title": "Full-Body Strength 30 Minutes",
           "detail": "3 sets/exercise · Squat + Lunge + Push + Row + Plank",
           "time": "30 min",
-          "note": "RPE 7/10 — feel tired but not depleted. That is the right zone."
+          "note": "RPE 7/10 — feel tired but not depleted. That is the right zone.",
+          "details": [
+            "RPE 7/10 is the right zone — feel tired, could do 3 more reps if needed, but not exhausted. This zone triggers adaptation without causing overtraining.",
+            "Compound movements (Squat, Lunge, Push, Row, Plank) activate multiple muscle groups simultaneously — more efficient than isolation exercises in the same 30 minutes.",
+            "Progressive overload on day 5: if you did 10 Squats × 2 sets on day 1, today do 12 reps × 3 sets. Small steady increases beat large sporadic ones."
+          ],
+          "points": [
+            {
+              "icon": "📊",
+              "label": "RPE 7/10",
+              "note": "Tired but form is still solid"
+            },
+            {
+              "icon": "🏋",
+              "label": "3 sets per exercise",
+              "note": "Squat + Lunge + Push + Row + Plank"
+            },
+            {
+              "icon": "💪",
+              "label": "Compound moves",
+              "note": "Multiple muscle groups = most efficient"
+            },
+            {
+              "icon": "📈",
+              "label": "Progressive overload",
+              "note": "+1–2 reps or +1 set vs last week"
+            }
+          ]
         },
         "B": {
           "title": "Carbs Before + Protein After Training",
           "detail": "Before: banana · After: rice + chicken · ~1,620 kcal",
           "kcal": "~1,620 kcal",
-          "note": "Carbs = fuel. Protein = muscle-building material. Don't skip the post-workout meal."
+          "note": "Carbs = fuel. Protein = muscle-building material. Don't skip the post-workout meal.",
+          "details": [
+            "Eat carbs 30–60 minutes before training: glycogen (muscle fuel) needs to be topped up. A banana or bread is a quick, easy-to-digest option that won't weigh you down.",
+            "The anabolic window post-workout (30–90 min): the body absorbs protein and carbs most efficiently to repair and build muscle. Skipping this meal wastes your workout.",
+            "1,620 kcal on a training day is more than the usual 1,410 kcal — the body needs extra energy for muscle building and recovery. This isn't overeating, it's eating right."
+          ],
+          "points": [
+            {
+              "icon": "🍌",
+              "label": "Carbs 30–60 min before",
+              "note": "Banana / bread / white rice"
+            },
+            {
+              "icon": "🍗",
+              "label": "Protein 30–90 min after",
+              "note": "Rice + chicken or protein shake"
+            },
+            {
+              "icon": "⚡",
+              "label": "Carbs = fuel",
+              "note": "Glycogen lets muscles perform at max"
+            },
+            {
+              "icon": "🧱",
+              "label": "Protein = material",
+              "note": "Amino acids build muscle during sleep"
+            }
+          ]
         },
         "C": {
           "title": "Optimize Tonight's Sleep",
           "detail": "18–22C · complete darkness · no caffeine after 2 PM",
-          "note": "Sleep after heavy training = the most critical time for muscle repair."
+          "note": "Sleep after heavy training = the most critical time for muscle repair.",
+          "details": [
+            "Growth hormone (GH) is released mainly during deep sleep from 11 PM–1 AM — this is when muscles truly regenerate after a hard workout. Missing sleep wastes your training effort.",
+            "Caffeine has a half-life of 5–7 hours — a coffee at 3 PM still has 50% caffeine in the bloodstream at 10 PM, significantly reducing deep sleep quality.",
+            "A completely dark room matters more than most people realize — light through closed eyelids still suppresses melatonin. Blackout curtains or a sleep mask solve this."
+          ],
+          "points": [
+            {
+              "icon": "🌡️",
+              "label": "64–72°F / 18–22°C",
+              "note": "Cooler temperature signals sleep to the brain"
+            },
+            {
+              "icon": "🌑",
+              "label": "Complete darkness",
+              "note": "Blackout curtains or sleep mask"
+            },
+            {
+              "icon": "☕",
+              "label": "No caffeine after 2 PM",
+              "note": "Half-life 5–7h — still active at 10 PM"
+            },
+            {
+              "icon": "💪",
+              "label": "GH peaks 11 PM–1 AM",
+              "note": "Sleeping on time maximizes training gains"
+            }
+          ]
         },
         "D": {
           "title": "Set Morning Intention",
           "detail": "Write 1 sentence: Today I will ___ then read it aloud",
-          "note": "Clear intention leads to ~35% more consistent action."
+          "note": "Clear intention leads to ~35% more consistent action.",
+          "details": [
+            "An intention differs from a goal — an intention is a specific action for today, not a long-term outcome. 'I will train at 6 AM today' is far clearer than 'I want to be healthy'.",
+            "Writing it down and reading it aloud activates the Reticular Activating System (RAS) — the brain's filter will notice opportunities to fulfill the intention throughout the day.",
+            "Research by Peter Gollwitzer (NYU) on implementation intentions shows that writing 'I will do X at Y in Z' increases follow-through from 39% to 91%."
+          ],
+          "points": [
+            {
+              "icon": "✍️",
+              "label": "Write 1 specific sentence",
+              "note": "'At 6 AM I will train in the living room'"
+            },
+            {
+              "icon": "🗣️",
+              "label": "Read it aloud once",
+              "note": "Sound activates RAS more effectively"
+            },
+            {
+              "icon": "🎯",
+              "label": "Specific + with a time",
+              "note": "When + What = 91% follow-through rate"
+            },
+            {
+              "icon": "🌙",
+              "label": "Review tonight",
+              "note": "Did I do it? What did I learn today?"
+            }
+          ]
         },
         "checklist": [
           "30 min strength training",
@@ -856,23 +1396,131 @@
           "title": "Light Yoga / Walk 30 Minutes",
           "detail": "Active recovery · no heavy training on first weekend",
           "time": "30 min",
-          "note": "Weekend = recharge time. Don't let training pressure damage your motivation."
+          "note": "Weekend = recharge time. Don't let training pressure damage your motivation.",
+          "details": [
+            "The first weekend should be about recharging, not exhaustion. The pressure to train hard every day is the top reason beginners quit.",
+            "Light yoga (yin or restorative yoga) increases parasympathetic tone — helping the body and mind shift from 'survive mode' to 'recover mode'.",
+            "A 30-minute outdoor walk boosts endorphins, vitamin D, and serotonin — 3 mental health benefits that require no gym or equipment."
+          ],
+          "points": [
+            {
+              "icon": "🧘",
+              "label": "Yoga 20–30 min",
+              "note": "Yin or restorative yoga is ideal"
+            },
+            {
+              "icon": "🚶",
+              "label": "Walk outdoors",
+              "note": "Nature naturally boosts serotonin"
+            },
+            {
+              "icon": "🎵",
+              "label": "Listen to music/podcasts",
+              "note": "Combine learning while walking"
+            },
+            {
+              "icon": "🚫",
+              "label": "No heavy training",
+              "note": "Week 1 — build habits, not records"
+            }
+          ]
         },
         "B": {
           "title": "Meal Prep 45 Minutes",
           "detail": "Cook 2 proteins · veg · carbs · portion into containers",
           "kcal": "~1,495 kcal",
-          "note": "Meal prep eliminates 60% of impulsive food decisions — set the environment to win."
+          "note": "Meal prep eliminates 60% of impulsive food decisions — set the environment to win.",
+          "details": [
+            "Decision fatigue (exhaustion from making choices) is the real cause of unhealthy eating — not lack of willpower. Meal prep eliminates those decisions.",
+            "45 minutes on the weekend saves ~2 hours during the week — no more wondering 'what do I eat today', no ordering fast food because nothing is ready, no skipping meals when busy.",
+            "Basic batch cooking: cook 2 proteins (chicken + eggs), 1 large batch of vegetables, 1 pot of rice/potatoes. Divide into containers = 4–5 lunches ready."
+          ],
+          "points": [
+            {
+              "icon": "⏱",
+              "label": "45 min = saves 2 hrs",
+              "note": "No need to cook 4–5 weekday lunches"
+            },
+            {
+              "icon": "🍱",
+              "label": "2 proteins ready",
+              "note": "Boiled chicken + boiled eggs = most flexible"
+            },
+            {
+              "icon": "🥦",
+              "label": "Pre-cut vegetables",
+              "note": "Salads and stir-fries are faster this way"
+            },
+            {
+              "icon": "📦",
+              "label": "Pre-portioned containers",
+              "note": "Open and eat — removes decisions = success"
+            }
+          ]
         },
         "C": {
           "title": "Tidy Your Space",
           "detail": "Desk clean · bedroom tidy · fridge organized",
-          "note": "Tidy space reduces cortisol 20% — directly impacts sleep quality and focus."
+          "note": "Tidy space reduces cortisol 20% — directly impacts sleep quality and focus.",
+          "details": [
+            "A cluttered space continuously activates the brain's threat-processing area — creating a low-level 'background stress' even when you're not aware of it. Tidying up genuinely reduces cortisol.",
+            "Arrange the fridge with a 'healthy default' — vegetables and protein at eye level, snacks at the back. Your environment determines 80% of your eating behavior.",
+            "A tidy bedroom = the brain knows this is a rest space. When a work desk and belongings are in the bedroom, the brain can't fully switch off."
+          ],
+          "points": [
+            {
+              "icon": "🖥️",
+              "label": "Clear the work desk",
+              "note": "Only keep what you need for today"
+            },
+            {
+              "icon": "🛏️",
+              "label": "Bedroom = rest space",
+              "note": "No work desk in the bedroom"
+            },
+            {
+              "icon": "🧊",
+              "label": "Organize the fridge",
+              "note": "Healthy food visible = default behavior"
+            },
+            {
+              "icon": "🌿",
+              "label": "Space = mindset",
+              "note": "Tidy environment = clear mind"
+            }
+          ]
         },
         "D": {
           "title": "10-Minute Weekly Review",
           "detail": "What went well · what needs work · what to improve next week",
-          "note": "Weekly review = the fastest growth tool. Turn experiences into lessons."
+          "note": "Weekly review = the fastest growth tool. Turn experiences into lessons.",
+          "details": [
+            "A weekly review is the growth tool used by most high-performers and CEOs — it turns 7 days of experience into actionable lessons for the next week.",
+            "3 core questions: (1) What did I do well this week? (2) What needs improvement? (3) What will I improve by just 1 thing next week? Only 1 — no need to change everything at once.",
+            "Don't be overly self-critical — a weekly review is a learning tool, not a courtroom. The goal is to reflect with curiosity, not guilt."
+          ],
+          "points": [
+            {
+              "icon": "✅",
+              "label": "What went well",
+              "note": "Acknowledge it, even if small — builds momentum"
+            },
+            {
+              "icon": "🔍",
+              "label": "What didn't go well",
+              "note": "No judgment — just observe"
+            },
+            {
+              "icon": "🎯",
+              "label": "1 improvement next week",
+              "note": "Just 1 — don't overcommit"
+            },
+            {
+              "icon": "📋",
+              "label": "Plan the coming week",
+              "note": "Schedule workouts + meal plan in advance"
+            }
+          ]
         },
         "checklist": [
           "Meal prep 45 min",
@@ -889,23 +1537,131 @@
           "title": "Complete Rest Day",
           "detail": "Rest day · gentle walk if you like · focus on recovery",
           "time": "Optional",
-          "note": "Rest day is not failure. Your body is building strength from last week's training."
+          "note": "Rest day is not failure. Your body is building strength from last week's training.",
+          "details": [
+            "Supercompensation — the body doesn't just recover to its baseline but builds further to prepare for a similar load. Rest day = an investment, not a waste.",
+            "Rest day doesn't mean lying still — a light 20–30 minute walk increases blood flow, reduces DOMS, and helps muscles recover faster than complete inactivity.",
+            "Feeling like you 'have to train to feel okay' on a rest day is a sign of attachment, not lack of recovery. Notice this feeling and let it pass — this is also mindset training."
+          ],
+          "points": [
+            {
+              "icon": "💪",
+              "label": "Muscles grow at rest",
+              "note": "Supercompensation — you genuinely need rest"
+            },
+            {
+              "icon": "🚶",
+              "label": "Light walk if you want",
+              "note": "20–30 min easy helps recovery"
+            },
+            {
+              "icon": "😴",
+              "label": "Sleep a bit more",
+              "note": "Rest day = permission for extra 30 min"
+            },
+            {
+              "icon": "🧠",
+              "label": "Mental rest",
+              "note": "Don't stress about tomorrow's workout"
+            }
+          ]
         },
         "B": {
           "title": "Light, Easy-to-Digest Meals",
           "detail": "Vegetable soup · congee · fruit · ~1,240 kcal",
           "kcal": "~1,240 kcal",
-          "note": "Let your digestive system rest — less processed, more produce, enough water."
+          "note": "Let your digestive system rest — less processed, more produce, enough water.",
+          "details": [
+            "The digestive system also needs rest — eating light, easy-to-digest meals one day a week reduces gut inflammation and improves nutrient absorption for the next week.",
+            "Congee, soup, and vegetable broth are the easiest to digest: low in rough fiber, high in water, low energy cost to process. The digestive system gets a well-deserved break.",
+            "1,240 kcal is lower than usual because you're not training hard today — energy demand is lower, no need to force yourself to eat more. Listen to your body."
+          ],
+          "points": [
+            {
+              "icon": "🍲",
+              "label": "Vegetable soup/broth",
+              "note": "Easy to digest, high water content, low calorie"
+            },
+            {
+              "icon": "🥣",
+              "label": "Congee/porridge",
+              "note": "Lightest on the gut — least enzyme needed"
+            },
+            {
+              "icon": "🍊",
+              "label": "Fruit",
+              "note": "Natural enzymes aid digestion"
+            },
+            {
+              "icon": "💧",
+              "label": "Drink more water",
+              "note": "2–2.5L on rest day to flush toxins"
+            }
+          ]
         },
         "C": {
           "title": "Plan the New Week",
           "detail": "Schedule training · prep meal plan · review goals",
-          "note": "Preparation = winning 80% — no daily improvisation needed."
+          "note": "Preparation = winning 80% — no daily improvisation needed.",
+          "details": [
+            "Planning removes friction — when you've already set 'Monday 6:30 AM workout', the brain doesn't need to decide again. Every small decision drains willpower — planning saves it for what matters.",
+            "A grocery list prepared on Sunday means no missing healthy ingredients mid-week. A fridge full of healthy food = no need to order fast food because 'there's nothing to eat'.",
+            "Reviewing your 3-month goals every Sunday helps check whether this week's actions are on the right track. Adjusting early is better than adjusting after going the wrong way for too long."
+          ],
+          "points": [
+            {
+              "icon": "📅",
+              "label": "Schedule workouts",
+              "note": "Block calendar = a real commitment"
+            },
+            {
+              "icon": "🛒",
+              "label": "Grocery list",
+              "note": "Buy in advance = no gaps mid-week"
+            },
+            {
+              "icon": "🎯",
+              "label": "Review your goals",
+              "note": "Are this week's actions on track?"
+            },
+            {
+              "icon": "📝",
+              "label": "Rough meal plan",
+              "note": "3 main meals — no need for detail"
+            }
+          ]
         },
         "D": {
           "title": "7-Day Wrap-Up",
           "detail": "3 wins · 1 area to improve · 1 commitment going forward",
-          "note": "Look back to learn and move forward with more insight — not to criticize yourself."
+          "note": "Look back to learn and move forward with more insight — not to criticize yourself.",
+          "details": [
+            "Completing 7 days is a bigger milestone than you think — most people who try a new habit quit before day 4. This is proof you're different from the majority.",
+            "3 things done (even small) + 1 to improve + 1 commitment going forward: this structure balances acknowledgment with learning — not too self-critical, not too complacent.",
+            "Share your 7-day results with one person — an accountability partner increases continuation rates by up to 65%, according to the American Society of Training & Development."
+          ],
+          "points": [
+            {
+              "icon": "🏆",
+              "label": "3 things accomplished",
+              "note": "Acknowledge momentum — even if small"
+            },
+            {
+              "icon": "🔍",
+              "label": "1 to improve",
+              "note": "Just 1 — focus on what matters most"
+            },
+            {
+              "icon": "💪",
+              "label": "1 commitment forward",
+              "note": "What does week 2 start with?"
+            },
+            {
+              "icon": "👥",
+              "label": "Share with someone",
+              "note": "Accountability = +65% continuation rate"
+            }
+          ]
         },
         "checklist": [
           "Rest / gentle walk",

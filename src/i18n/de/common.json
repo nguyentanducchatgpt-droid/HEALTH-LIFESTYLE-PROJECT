@@ -691,23 +691,131 @@
           "title": "6 Grundbewegungen Lernen",
           "detail": "Squat · Hinge · Push · Pull · Core · Atem",
           "time": "20 Min",
-          "note": "Perfekte Form vor Gewicht. Keine Sorge um Wiederholungen — das ist dein einziges Ziel heute."
+          "note": "Perfekte Form vor Gewicht. Keine Sorge um Wiederholungen — das ist dein einziges Ziel heute.",
+          "details": [
+            "Diese 6 Bewegungsmuster decken ~95% der funktionellen Bewegungen im Alltag und Sport ab — sie zu meistern ist das Fundament für jeden weiteren Fortschritt.",
+            "Tag 1 erfordert weder viele Wiederholungen noch schweres Gewicht — das Ziel ist, die richtigen Muskeln zu spüren. Sobald die Technik sitzt, kommen Wiederholungen und Gewicht von selbst.",
+            "Das Gehirn braucht 300–500 korrekte Wiederholungen, um ein Bewegungsmuster auf Autopilot zu installieren. Deshalb ist 3–4×/Woche Training in den ersten 4 Wochen wichtiger als sofort viel zu trainieren."
+          ],
+          "points": [
+            {
+              "icon": "🦵",
+              "label": "Squat + Hinge",
+              "note": "Unterkörper — Oberschenkel, Gesäß, unterer Rücken"
+            },
+            {
+              "icon": "💪",
+              "label": "Push + Pull",
+              "note": "Oberkörper-Balance — verhindert Schulterungleichgewicht"
+            },
+            {
+              "icon": "🧱",
+              "label": "Core + Atmung",
+              "note": "Grundlage für sicheres Training"
+            },
+            {
+              "icon": "🔁",
+              "label": "Technik vor Volumen",
+              "note": "Korrekte Form zuerst — Wiederholungen kommen später"
+            }
+          ]
         },
         "B": {
           "title": "3 Proteinreiche Mahlzeiten Essen",
           "detail": "2 Eier morgens · Hühnerbrust mittags · Fisch/Tofu abends",
           "kcal": "~1.410 kcal",
-          "note": "Keine Kohlenhydrate streichen. Mehr Gemüse und weniger Süßes — das reicht für Tag eins."
+          "note": "Keine Kohlenhydrate streichen. Mehr Gemüse und weniger Süßes — das reicht für Tag eins.",
+          "details": [
+            "Protein ist der Baustoff für Muskel, Gewebereparatur und Hormone — nicht viel, aber regelmäßig bei jeder Mahlzeit ist entscheidend.",
+            "Eine Handflächengröße Protein pro Mahlzeit ist die einfachste Regel: kein Abwiegen, funktioniert auch beim Essen gehen, und reicht für die meisten Menschen zur Erhaltung.",
+            "Kein 100% 'sauberes Essen' am Tag 1 nötig. Einfach Protein zu bestehenden Mahlzeiten hinzufügen reicht, um spürbare Veränderungen zu bewirken."
+          ],
+          "points": [
+            {
+              "icon": "🍳",
+              "label": "Morgens: 2 Eier",
+              "note": "~12g Protein, schnell und günstig"
+            },
+            {
+              "icon": "🍗",
+              "label": "Mittags: Hühnerbrust",
+              "note": "~30g Protein pro 100g, Hauptmahlzeit"
+            },
+            {
+              "icon": "🐟",
+              "label": "Abends: Fisch/Tofu",
+              "note": "Leicht verdaulich, bekömmlich am Abend"
+            },
+            {
+              "icon": "💧",
+              "label": "Wasser + Aufnahme",
+              "note": "Ausreichend trinken für die Proteinverarbeitung"
+            }
+          ]
         },
         "C": {
           "title": "Vor 23 Uhr Schlafen",
           "detail": "Dunkles kühles Zimmer · Handy weg vom Bett · 7–9h",
-          "note": "Wichtiger als jedes Training — Priorität Nr. 1."
+          "note": "Wichtiger als jedes Training — Priorität Nr. 1.",
+          "details": [
+            "Cortisol sinkt nach 22:30 Uhr natürlich — vor 23 Uhr schlafen synchronisiert sich mit dem Biorhythmus, führt zu tieferem Schlaf, leichterem Aufwachen und besserer Erholung.",
+            "Blaues Licht von Handys unterdrückt Melatonin um bis zu 50% — Handy aus dem Schlafzimmer oder Nachtmodus mindestens 1 Stunde vor dem Schlafen.",
+            "Ein kühles Zimmer (18–22°C) und vollständige Dunkelheit sind die zwei wichtigsten physischen Faktoren für die Schlaftiefe."
+          ],
+          "points": [
+            {
+              "icon": "🕙",
+              "label": "Ziel: 23 Uhr",
+              "note": "Einschlafzeit, nicht nur Hinlegezeit"
+            },
+            {
+              "icon": "📵",
+              "label": "Handy weg vom Bett",
+              "note": "Außerhalb des Zimmers oder umgedreht"
+            },
+            {
+              "icon": "🌡️",
+              "label": "18–22°C",
+              "note": "Optimale Zimmertemperatur für Tiefschlaf"
+            },
+            {
+              "icon": "⏰",
+              "label": "7–9 Stunden",
+              "note": "Mindestdauer für vollständige Erholung"
+            }
+          ]
         },
         "D": {
           "title": "3 Tiefe Atemzüge beim Aufwachen",
           "detail": "Einatmen 4s · Halten 4s · Ausatmen 4s — 3 Mal wiederholen",
-          "note": "30 Sekunden setzen einen Anker für den ganzen Tag."
+          "note": "30 Sekunden setzen einen Anker für den ganzen Tag.",
+          "details": [
+            "Morgens steigt Cortisol schnell (Cortisol Awakening Response) — 3 langsame, tiefe Atemzüge aktivieren das Parasympathikus-System und reduzieren reflexartigen Stress gleich zu Beginn des Tages.",
+            "4s einatmen – 4s halten – 4s ausatmen ist die einfachste Form des Box-Breathings. Navy SEALs nutzen diese Technik, um unter extremem Druck ruhig zu bleiben.",
+            "Nur 30 Sekunden schaffen einen positiven 'Anker': Das Gehirn verknüpft Aufwachen mit Ruhe statt Stress. Nach 21 Tagen wird diese Gewohnheit automatisch."
+          ],
+          "points": [
+            {
+              "icon": "🫁",
+              "label": "4s einatmen",
+              "note": "Durch die Nase, Bauch wölbt sich"
+            },
+            {
+              "icon": "⏸️",
+              "label": "4s halten",
+              "note": "Ruhig halten, keine Anspannung"
+            },
+            {
+              "icon": "💨",
+              "label": "4s ausatmen",
+              "note": "Langsam durch Mund oder Nase"
+            },
+            {
+              "icon": "🔁",
+              "label": "3 Zyklen",
+              "note": "30 Sekunden reichen, um den Gehirnmodus zu wechseln"
+            }
+          ]
         },
         "checklist": [
           "20 Min trainieren (6 Bewegungen)",
@@ -724,23 +832,131 @@
           "title": "6 Bewegungen Wiederholen + 1 Satz Hinzufügen",
           "detail": "Gleiches Training · 1 Satz pro Bewegung hinzufügen",
           "time": "22 Min",
-          "note": "Das Gehirn lernt durch Wiederholung — auch wenn es zu einfach wirkt."
+          "note": "Das Gehirn lernt durch Wiederholung — auch wenn es zu einfach wirkt.",
+          "details": [
+            "Das Gehirn lernt durch korrekte Wiederholung — nicht durch Abwechslung. Tag 2 mit denselben 6 Übungen ist viel besseres motorisches Lernen als neue Übungen einzuführen.",
+            "Die einfachste progressive Überlastung: +1 Satz pro Übung. Gestern 2 Sätze → heute 3 Sätze. Allmähliche Anpassung ist nachhaltiger als Schocktraining.",
+            "Protokolliere jede Einheit: Wiederholungen, gefühlte Anstrengung (1–10), Techniknotizen. Diese kleinen Daten werden dein Training transformieren."
+          ],
+          "points": [
+            {
+              "icon": "🔁",
+              "label": "Wiederholung = Lernen",
+              "note": "300+ Mal für motorischen Autopilot"
+            },
+            {
+              "icon": "➕",
+              "label": "+1 Satz pro Übung",
+              "note": "Einfachste Form progressiver Überlastung"
+            },
+            {
+              "icon": "📝",
+              "label": "Einheit protokollieren",
+              "note": "Wiederholungen + Anstrengungsgrad danach"
+            },
+            {
+              "icon": "⏱",
+              "label": "2-0-1 Tempo",
+              "note": "2s runter, keine Pause, 1s hoch"
+            }
+          ]
         },
         "B": {
           "title": "Protein Bei Jeder Hauptmahlzeit",
           "detail": "Haferflocken + Eier · Fleisch/Fisch/Gemüse · Tofu",
           "kcal": "~1.380 kcal",
-          "note": "1 Handflächengröße Protein pro Mahlzeit — einfachste Regel gegen Proteinmangel."
+          "note": "1 Handflächengröße Protein pro Mahlzeit — einfachste Regel gegen Proteinmangel.",
+          "details": [
+            "Der Aminosäurepool im Blut muss alle 4–5 Stunden aufgefüllt werden — Protein gleichmäßig über 3 Mahlzeiten zu essen ist effektiver als eine große Menge auf einmal.",
+            "Muskelproteinsynthese (MPS) — der Muskelaufbauprozess — wird nur aktiviert, wenn ausreichend Leucin vorhanden ist. Ziel: 20–30g pro Mahlzeit.",
+            "Kein reines Fleisch nötig — pflanzliches Protein (Tofu, Linsen, Haferflocken) mit tierischem Protein kombinieren für ein vollständiges Aminosäureprofil."
+          ],
+          "points": [
+            {
+              "icon": "🌅",
+              "label": "Morgens: Haferflocken+Eier",
+              "note": "~20g Protein, sättigt länger"
+            },
+            {
+              "icon": "☀️",
+              "label": "Mittags: Fleisch+Fisch+Gemüse",
+              "note": "~30g Protein, wichtigste Mahlzeit"
+            },
+            {
+              "icon": "🌙",
+              "label": "Abends: Tofu",
+              "note": "~15–20g Protein, leicht verdaulich"
+            },
+            {
+              "icon": "💊",
+              "label": "~120g gesamt/Tag",
+              "note": "Für 60kg-Person mit mittlerer Aktivität"
+            }
+          ]
         },
         "C": {
           "title": "10-Minuten-Morgenroutine",
           "detail": "Wasser trinken · 5 Min Sonnenlicht · 1 Tagesziel aufschreiben",
-          "note": "Ein Morgenanker hilft dem Gehirn früher einzuschalten."
+          "note": "Ein Morgenanker hilft dem Gehirn früher einzuschalten.",
+          "details": [
+            "Cortisol erreicht natürlich in den ersten 30–45 Minuten nach dem Aufwachen seinen Höhepunkt — dann ist das Gehirn am aktivsten. Nutze dies mit einer Morgenroutine statt Scrollen.",
+            "Natürliches Morgenlicht setzt die innere Uhr zurück und aktiviert Serotonin — selbst 5 Minuten am Fenster oder auf dem Balkon reichen.",
+            "Schreibe eine tägliche Absicht in einer Zeile: Das Gehirn sucht dank des Retikulären Aktivierungssystems (RAS) automatisch nach Möglichkeiten, sie umzusetzen."
+          ],
+          "points": [
+            {
+              "icon": "💧",
+              "label": "Ein Glas Wasser trinken",
+              "note": "Direkt nach dem Aufwachen, vor dem Kaffee"
+            },
+            {
+              "icon": "☀️",
+              "label": "5 Min Sonnenlicht",
+              "note": "Fenster oder Balkon reichen"
+            },
+            {
+              "icon": "✍️",
+              "label": "1 Tagesabsicht",
+              "note": "Handgeschrieben, unter einer Zeile, konkret"
+            },
+            {
+              "icon": "📵",
+              "label": "Kein Handy 30 Min",
+              "note": "Frühe Dopamin-Spitzen vermeiden"
+            }
+          ]
         },
         "D": {
           "title": "3-Zeilen-Abendjournal",
           "detail": "Was gut lief · was ich gelernt habe · was ich morgen tue",
-          "note": "5 Min vor dem Schlaf. Muss nicht gut sein — nur ehrlich."
+          "note": "5 Min vor dem Schlaf. Muss nicht gut sein — nur ehrlich.",
+          "details": [
+            "Etwas Positives aufzuschreiben aktiviert Dopamin und Serotonin — das Gehirn 'lernt', dass der Tag Wert hatte, und reduziert Angst vor dem Einschlafen.",
+            "3 einfache Fragen: Was lief gut? Was habe ich gelernt? Was mache ich morgen? Keine Länge, keine Perfektion nötig — nur Ehrlichkeit.",
+            "Handschrift schlägt Tippen: Stift und Papier aktivieren tiefere Gehirnverarbeitung und helfen, Erinnerungen besser im Schlaf zu festigen."
+          ],
+          "points": [
+            {
+              "icon": "✅",
+              "label": "Was lief gut",
+              "note": "Auch Kleinigkeiten zählen"
+            },
+            {
+              "icon": "📚",
+              "label": "Was habe ich gelernt",
+              "note": "1 Neues, auch aus Fehlern"
+            },
+            {
+              "icon": "🎯",
+              "label": "Morgens Priorität",
+              "note": "1 konkrete Aktion"
+            },
+            {
+              "icon": "✍️",
+              "label": "Handschriftlich",
+              "note": "Besser als Tippen für Reflexion"
+            }
+          ]
         },
         "checklist": [
           "Protein bei allen 3 Mahlzeiten",
@@ -757,23 +973,131 @@
           "title": "20 Minuten Flott Gehen",
           "detail": "Leichtes Cardio · Herzfrequenz 100–120 · Muskelregeneration",
           "time": "20 Min",
-          "note": "Nach dem Mittagessen gehen: senkt Blutzucker 20–30%, baut Grundausdauer auf."
+          "note": "Nach dem Mittagessen gehen: senkt Blutzucker 20–30%, baut Grundausdauer auf.",
+          "details": [
+            "Zügiges Gehen nach dem Mittagessen senkt den Blutzuckeranstieg nach dem Essen um 20–30%, verbessert die Insulinsensitivität und reduziert den Nachmittagstiefpunkt.",
+            "Leichte Cardio-Zone (Herzfrequenz 100–120 bpm) hilft der Muskulatur besser zu erholen als Stillsitzen — erhöht die Durchblutung ohne zusätzliche Erschöpfung.",
+            "20 Minuten Gehen sammeln 2.000–2.500 Schritte — das deckt 25–30% des täglichen 8.000-Schritte-Ziels, ganz ohne Geräte."
+          ],
+          "points": [
+            {
+              "icon": "🍽️",
+              "label": "Am besten nach dem Mittagessen",
+              "note": "Senkt Blutzucker direkt nach der Mahlzeit"
+            },
+            {
+              "icon": "❤️",
+              "label": "100–120 bpm",
+              "note": "Erholungszone, nicht ermüdend"
+            },
+            {
+              "icon": "👣",
+              "label": "2.000–2.500 Schritte",
+              "note": "25–30% des Tagesziels"
+            },
+            {
+              "icon": "🌳",
+              "label": "Ins Freie gehen",
+              "note": "Natürliches Licht + Bewegung = doppelter Nutzen"
+            }
+          ]
         },
         "B": {
           "title": "Clever Auswärts Essen",
           "detail": "1 Protein + 2 Gemüse + moderate Kohlenhydrate = Auswärts-Formel",
           "kcal": "~1.450 kcal",
-          "note": "Keine sozialen Mahlzeiten meiden — nur eine einfache Strategie anwenden."
+          "note": "Keine sozialen Mahlzeiten meiden — nur eine einfache Strategie anwenden.",
+          "details": [
+            "Formel 1P+2G+K: 1 Portion Protein + 2 Portionen Gemüse + moderat Kohlenhydrate. Funktioniert in jedem Restaurant — kein Nährwertetikett nötig.",
+            "Zuerst das Protein wählen, dann die Beilagen — diese Reihenfolge verhindert, dass die Mahlzeit zu wenig Protein enthält.",
+            "Soziale Mahlzeiten nicht ablehnen — das kostet psychisch mehr als 100 kcal extra zu essen. Klug auswärts essen ist 100× nachhaltiger als strikt 'clean' zu essen."
+          ],
+          "points": [
+            {
+              "icon": "🍗",
+              "label": "Protein zuerst",
+              "note": "Hauptproteinquelle zuerst wählen"
+            },
+            {
+              "icon": "🥦",
+              "label": "2 Portionen Gemüse",
+              "note": "Salat + Suppe/Pfanne, oder 2 Gemüsegerichte"
+            },
+            {
+              "icon": "🍚",
+              "label": "Moderate Kohlenhydrate",
+              "note": "½ Schüssel Reis/Nudeln — nicht weglassen"
+            },
+            {
+              "icon": "🥤",
+              "label": "Zuckerhaltige Getränke weglassen",
+              "note": "Wasser oder ungesüßter Tee stattdessen"
+            }
+          ]
         },
         "C": {
           "title": "30 Min Vor Dem Schlaf Kein Handy",
           "detail": "Ersetzen durch: Lesen · Atmen · Leichtes Dehnen",
-          "note": "Blaues Licht hemmt Melatonin — eine kleine Gewohnheit verbessert die Schlaftiefe."
+          "note": "Blaues Licht hemmt Melatonin — eine kleine Gewohnheit verbessert die Schlaftiefe.",
+          "details": [
+            "Blaues Licht (480 nm) von Bildschirmen unterdrückt die Melatoninproduktion um bis zu 50%. Es dauert 30–60 Minuten, bis sich der Hormonspiegel nach dem Ausschalten des Bildschirms erholt.",
+            "Abends in sozialen Medien scrollen löst eine Dopamin-Schleife aus — das Gehirn kann nicht abschalten, obwohl die Augen müde sind. Das ist der Grund für das Gefühl 'nicht müde' trotz langem Liegen.",
+            "Die letzten 30 Minuten mit einem gedruckten Buch oder leichtem Dehnen ersetzen — beide Aktivitäten senken natürlich die Herzfrequenz und bereiten den Körper auf den Schlaf vor."
+          ],
+          "points": [
+            {
+              "icon": "💙",
+              "label": "Blaues Licht unterdrückt",
+              "note": "Melatonin sinkt 50% bei Bildschirmnutzung"
+            },
+            {
+              "icon": "🔄",
+              "label": "Dopamin-Schleife",
+              "note": "Gehirn schaltet nicht ab, obwohl Augen müde"
+            },
+            {
+              "icon": "📖",
+              "label": "Durch Buch ersetzen",
+              "note": "Gedruckte Bücher emittieren kein blaues Licht"
+            },
+            {
+              "icon": "🧘",
+              "label": "Oder leicht dehnen",
+              "note": "5–10 Min Dehnen = Schlafsignal ans Gehirn"
+            }
+          ]
         },
         "D": {
           "title": "Box-Atmung 5 Minuten",
           "detail": "Einatmen 4 · Halten 4 · Ausatmen 4 · Halten 4 — 5 Runden wiederholen",
-          "note": "Bei Stress, vor Meetings oder vor dem Schlaf einsetzen."
+          "note": "Bei Stress, vor Meetings oder vor dem Schlaf einsetzen.",
+          "details": [
+            "Box-Breathing aktiviert das parasympathische Nervensystem (Rest-and-Digest) — das Gegenteil des sympathischen Systems (Kampf oder Flucht). Schon 4–5 Zyklen bringen eine spürbare Veränderung.",
+            "Navy SEALs nutzen diese 4-4-4-4-Technik, um unter extremem Druck ruhig zu bleiben — ihre Wirksamkeit ist durch zahlreiche Neurowissenschaftsstudien belegt.",
+            "5 Minuten = 5 Zyklen, genug um die Herzfrequenz um 10–15 bpm zu senken und Cortisol deutlich zu reduzieren. Vor einem stressigen Meeting oder abends vor dem Schlafen."
+          ],
+          "points": [
+            {
+              "icon": "🫁",
+              "label": "4s einatmen",
+              "note": "Vom Bauch, langsam und gleichmäßig"
+            },
+            {
+              "icon": "⏸️",
+              "label": "4s halten",
+              "note": "Keine Anspannung — sanft halten"
+            },
+            {
+              "icon": "💨",
+              "label": "4s ausatmen",
+              "note": "Langsam und vollständig"
+            },
+            {
+              "icon": "⏸️",
+              "label": "4s halten",
+              "note": "Ruhig bleiben vor dem nächsten Zyklus"
+            }
+          ]
         },
         "checklist": [
           "20 Min gehen",
@@ -790,23 +1114,131 @@
           "title": "15 Minuten Aktive Erholung",
           "detail": "Dehnen · Schaumrolle · Leichtes Yoga · Kein schweres Training",
           "time": "15 Min",
-          "note": "Erholung = unsichtbares Training. Muskeln wachsen in Ruhe, nicht beim Training."
+          "note": "Erholung = unsichtbares Training. Muskeln wachsen in Ruhe, nicht beim Training.",
+          "details": [
+            "Muskeln wachsen in der Erholung, nicht beim Training — schwere Übung erzeugt nur den Reiz. Erholung ist der Moment, in dem der Körper wirklich Stärke aufbaut.",
+            "Faszienrollen bricht Verklebungen im Muskelgewebe auf und erhöht die Durchblutung — reduziert DOMS (Muskelkater) effektiver als vollständige Ruhe.",
+            "Leichtes Yoga (Restorative Yoga) kombiniert mit tiefer Atmung aktiviert das Parasympathikus-System — senkt Cortisol und verbessert die Schlafqualität in dieser Nacht."
+          ],
+          "points": [
+            {
+              "icon": "🛌",
+              "label": "Muskeln wachsen in Ruhe",
+              "note": "Schlaf + Erholung = Wachstumsreiz"
+            },
+            {
+              "icon": "🔘",
+              "label": "5 Min Faszienrolle",
+              "note": "Verklebungen lösen, Durchblutung fördern"
+            },
+            {
+              "icon": "🧘",
+              "label": "5 Min leichtes Yoga",
+              "note": "Aktiviert Parasympathikus"
+            },
+            {
+              "icon": "🚫",
+              "label": "Kein schweres Training",
+              "note": "Ruhetag = Investition, kein Versagen"
+            }
+          ]
         },
         "B": {
           "title": "Gemüse-Prioritäts-Tag",
           "detail": "Salat · Suppe · Gedämpftes Gemüse · Mehr als üblich",
           "kcal": "~1.300 kcal",
-          "note": "Ballaststoffe ernähren Darmbakterien — Immunsystem und Stimmung profitieren beide."
+          "note": "Ballaststoffe ernähren Darmbakterien — Immunsystem und Stimmung profitieren beide.",
+          "details": [
+            "70% des Immunsystems befinden sich im Darm — Darmbakterien brauchen Ballaststoffe (Prebiotika) aus grünem Gemüse, um gut zu funktionieren, Serotonin zu produzieren und Entzündungen zu reduzieren.",
+            "Farbvielfalt beim Gemüse bedeutet Vielfalt an Phytochemikalien und Vitaminen: dunkelgrün (Folat, Eisen), rot/orange (Lykopin, Beta-Carotin), lila (Anthocyane).",
+            "1.300 kcal an einem gemüsereichen Tag bedeutet keine Hungertag — Ballaststoffe sättigen länger als Stärke, da sie nicht schnell verdaut werden. Voller Bauch bei weniger Kalorien."
+          ],
+          "points": [
+            {
+              "icon": "🥬",
+              "label": "Dunkelgrünes Blattgemüse",
+              "note": "Folat, Eisen, Vitamin K"
+            },
+            {
+              "icon": "🥕",
+              "label": "Oranges/rotes Gemüse",
+              "note": "Beta-Carotin, Lykopin"
+            },
+            {
+              "icon": "🧅",
+              "label": "Knoblauch + Zwiebeln",
+              "note": "Stärkste Prebiotika für die Darmgesundheit"
+            },
+            {
+              "icon": "🎨",
+              "label": "≥5 Farben pro Tag",
+              "note": "Verschiedene Farben = verschiedene Nährstoffe"
+            }
+          ]
         },
         "C": {
           "title": "8.000 Schritte + Sonnenlicht",
           "detail": "Gesamt 8k Schritte über den Tag · 5 Min Morgensonne",
-          "note": "Kein kontinuierliches Gehen nötig. Schritte summieren sich über den Tag."
+          "note": "Kein kontinuierliches Gehen nötig. Schritte summieren sich über den Tag.",
+          "details": [
+            "8.000 Schritte pro Tag müssen nicht am Stück gehen — Studien zeigen, dass angesammelte Schritte im Laufe des Tages (Haushalt, Treppen, draußen) denselben Nutzen haben.",
+            "5 Minuten Morgensonne (6–9 Uhr) setzt die innere Uhr zurück und kurbelt die Vitamin-D-Produktion an — beides wirkt sich direkt auf Energielevel und Stimmung aus.",
+            "Eine Schrittzähl-App (bereits im Handy integriert) hilft zu erkennen, wie viel man wirklich läuft — oft weniger als gedacht, und mehr sobald man anfängt, darauf zu achten."
+          ],
+          "points": [
+            {
+              "icon": "📱",
+              "label": "Schrittzähl-App",
+              "note": "Bereits in der Health-App vorhanden"
+            },
+            {
+              "icon": "☀️",
+              "label": "5 Min Morgensonne",
+              "note": "6–9 Uhr, setzt innere Uhr zurück"
+            },
+            {
+              "icon": "🪜",
+              "label": "Treppen benutzen",
+              "note": "Jede Etage = ~100–120 Schritte extra"
+            },
+            {
+              "icon": "🚶",
+              "label": "In Pausen gehen",
+              "note": "5 Min/Stunde = 500–700 Schritte pro Mal"
+            }
+          ]
         },
         "D": {
           "title": "5 Minuten Meditation",
           "detail": "Sitzen · Augen schließen · Auf Atem fokussieren · Kein Urteil",
-          "note": "Du musst deinen Geist nicht leeren — einfach bemerken und sanft zum Atem zurückkehren."
+          "note": "Du musst deinen Geist nicht leeren — einfach bemerken und sanft zum Atem zurückkehren.",
+          "details": [
+            "Meditation erfordert keine 'Gedankenlosigkeit' — das ist das häufigste Missverständnis. Das Ziel ist, zu bemerken, wenn der Geist abschweifte, und sanft zum Atem zurückzukehren.",
+            "Das Default Mode Network (aktiv wenn man 'nichts tut') ist mit Angst und Grübeln verbunden. Meditation reduziert die DMN-Aktivität — weniger Sorgen über Zukunft und Vergangenheit.",
+            "5 Minuten tägliche Meditation reichen, um nach 8 Wochen Ergebnisse zu sehen: niedrigeres Cortisol, mehr graue Substanz im präfrontalen Kortex, verbesserte Emotionsregulation."
+          ],
+          "points": [
+            {
+              "icon": "🧘",
+              "label": "Bequem sitzen",
+              "note": "Stuhl, Boden oder Bett — alles geht"
+            },
+            {
+              "icon": "👁️",
+              "label": "Augen schließen",
+              "note": "Reduziert visuelle Reize"
+            },
+            {
+              "icon": "🫁",
+              "label": "Auf den Atem achten",
+              "note": "Bauch beim Ein- und Ausatmen spüren"
+            },
+            {
+              "icon": "💭",
+              "label": "Kein Urteil",
+              "note": "Gedanken kommen = wahrnehmen, zum Atem zurück"
+            }
+          ]
         },
         "checklist": [
           "15 Min dehnen",
@@ -823,23 +1255,131 @@
           "title": "30 Minuten Ganzkörperkraft",
           "detail": "3 Sätze/Übung · Squat + Ausfallschritte + Push + Row + Plank",
           "time": "30 Min",
-          "note": "RPE 7/10 — müde aber nicht erschöpft fühlen. Das ist die richtige Zone."
+          "note": "RPE 7/10 — müde aber nicht erschöpft fühlen. Das ist die richtige Zone.",
+          "details": [
+            "RPE 7/10 ist die richtige Zone — müde fühlen, könnte bei Bedarf 3 weitere Wiederholungen machen, aber nicht erschöpft. Diese Zone löst Anpassung ohne Übertraining aus.",
+            "Verbundübungen (Squat, Lunge, Push, Row, Plank) aktivieren mehrere Muskelgruppen gleichzeitig — effizienter als Isolationsübungen in denselben 30 Minuten.",
+            "Progressive Überlastung an Tag 5: Wenn du an Tag 1 10 Kniebeugen × 2 Sätze gemacht hast, mach heute 12 Wiederholungen × 3 Sätze. Kleine stetige Steigerungen schlagen große sporadische."
+          ],
+          "points": [
+            {
+              "icon": "📊",
+              "label": "RPE 7/10",
+              "note": "Müde, aber Technik noch sauber"
+            },
+            {
+              "icon": "🏋",
+              "label": "3 Sätze pro Übung",
+              "note": "Squat + Lunge + Push + Row + Plank"
+            },
+            {
+              "icon": "💪",
+              "label": "Verbundübungen",
+              "note": "Mehrere Muskelgruppen = am effizientesten"
+            },
+            {
+              "icon": "📈",
+              "label": "Progressive Überlastung",
+              "note": "+1–2 Wiederh. oder +1 Satz vs. letzte Woche"
+            }
+          ]
         },
         "B": {
           "title": "Kohlenhydrate Vor + Protein Nach Training",
           "detail": "Vorher: Banane · Nachher: Reis + Hähnchen · ~1.620 kcal",
           "kcal": "~1.620 kcal",
-          "note": "Kohlenhydrate = Kraftstoff. Protein = Muskelbaustoff. Mahlzeit nach Training nicht auslassen."
+          "note": "Kohlenhydrate = Kraftstoff. Protein = Muskelbaustoff. Mahlzeit nach Training nicht auslassen.",
+          "details": [
+            "Kohlenhydrate 30–60 Minuten vor dem Training essen: Glykogen (Muskelbrennstoff) muss aufgefüllt werden. Eine Banane oder Brot ist schnell, leicht verdaulich und liegt nicht im Magen.",
+            "Das anabole Fenster nach dem Training (30–90 Min): Der Körper nimmt Protein und Kohlenhydrate am effizientesten auf, um Muskeln zu reparieren und aufzubauen. Diese Mahlzeit auslassen verschwendet dein Training.",
+            "1.620 kcal an einem Trainingstag ist mehr als die üblichen kcal — der Körper braucht mehr Energie für Muskelaufbau und Erholung. Das ist kein Überessen, das ist richtiges Essen."
+          ],
+          "points": [
+            {
+              "icon": "🍌",
+              "label": "Kohlenhydrate 30–60 Min vorher",
+              "note": "Banane / Brot / weißer Reis"
+            },
+            {
+              "icon": "🍗",
+              "label": "Protein 30–90 Min danach",
+              "note": "Reis + Hühnchen oder Protein-Shake"
+            },
+            {
+              "icon": "⚡",
+              "label": "Kohlenhydrate = Treibstoff",
+              "note": "Glykogen lässt Muskeln maximal leisten"
+            },
+            {
+              "icon": "🧱",
+              "label": "Protein = Baustoff",
+              "note": "Aminosäuren bauen Muskeln im Schlaf"
+            }
+          ]
         },
         "C": {
           "title": "Den Heutigen Schlaf Optimieren",
           "detail": "18–22°C · Vollständige Dunkelheit · Kein Koffein nach 14 Uhr",
-          "note": "Schlaf nach schwerem Training = wichtigste Zeit für Muskelreparatur."
+          "note": "Schlaf nach schwerem Training = wichtigste Zeit für Muskelreparatur.",
+          "details": [
+            "Wachstumshormon (GH) wird hauptsächlich während des Tiefschlafs von 23–1 Uhr ausgeschüttet — dann regenerieren Muskeln wirklich nach einem harten Training. Schlafen auslassen verschwendet das Training.",
+            "Koffein hat eine Halbwertszeit von 5–7 Stunden — Kaffee um 15 Uhr hat um 22 Uhr noch 50% Koffein im Blut und reduziert den Tiefschlaf deutlich.",
+            "Ein komplett dunkles Zimmer ist wichtiger als viele denken — Licht durch geschlossene Augenlider unterdrückt immer noch Melatonin. Verdunkelungsvorhänge oder Schlafmaske lösen das Problem."
+          ],
+          "points": [
+            {
+              "icon": "🌡️",
+              "label": "18–22°C",
+              "note": "Kühlere Temperatur signalisiert dem Gehirn Schlaf"
+            },
+            {
+              "icon": "🌑",
+              "label": "Vollständige Dunkelheit",
+              "note": "Verdunkelungsvorhänge oder Schlafmaske"
+            },
+            {
+              "icon": "☕",
+              "label": "Kein Koffein nach 14 Uhr",
+              "note": "Halbwertszeit 5–7h — noch aktiv um 22 Uhr"
+            },
+            {
+              "icon": "💪",
+              "label": "GH-Spitze 23–1 Uhr",
+              "note": "Pünktlich schlafen maximiert Trainingserfolg"
+            }
+          ]
         },
         "D": {
           "title": "Morgenabsicht Setzen",
           "detail": "1 Satz schreiben: Heute werde ich ___ dann laut vorlesen",
-          "note": "Klare Absicht führt zu ~35% konsistenterem Handeln."
+          "note": "Klare Absicht führt zu ~35% konsistenterem Handeln.",
+          "details": [
+            "Eine Absicht unterscheidet sich von einem Ziel — eine Absicht ist eine konkrete Handlung für heute, kein langfristiges Ergebnis. 'Ich trainiere heute um 6 Uhr' ist viel klarer als 'Ich möchte gesund sein'.",
+            "Aufschreiben und laut vorlesen aktiviert das Retikuläre Aktivierungssystem (RAS) — der Filter des Gehirns sucht den ganzen Tag nach Möglichkeiten, die Absicht umzusetzen.",
+            "Forschung von Peter Gollwitzer (NYU): Das Schreiben von 'Ich werde X um Y in Z tun' erhöht die Umsetzungsrate von 39% auf 91%."
+          ],
+          "points": [
+            {
+              "icon": "✍️",
+              "label": "1 konkreten Satz schreiben",
+              "note": "'Um 6 Uhr trainiere ich im Wohnzimmer'"
+            },
+            {
+              "icon": "🗣️",
+              "label": "Einmal laut vorlesen",
+              "note": "Klang aktiviert RAS effektiver"
+            },
+            {
+              "icon": "🎯",
+              "label": "Konkret + mit Uhrzeit",
+              "note": "Wann + Was = 91% Umsetzungsrate"
+            },
+            {
+              "icon": "🌙",
+              "label": "Abends überprüfen",
+              "note": "Hab ich es getan? Was lerne ich heute?"
+            }
+          ]
         },
         "checklist": [
           "30 Min Krafttraining",
@@ -856,23 +1396,131 @@
           "title": "Leichtes Yoga / 30 Minuten Gehen",
           "detail": "Aktive Erholung · Kein schweres Training am ersten Wochenende",
           "time": "30 Min",
-          "note": "Wochenende = Aufladezeit. Trainingsdruck nicht die Motivation beschädigen lassen."
+          "note": "Wochenende = Aufladezeit. Trainingsdruck nicht die Motivation beschädigen lassen.",
+          "details": [
+            "Das erste Wochenende sollte der Erholung dienen, nicht der Erschöpfung. Der Druck, jeden Tag hart zu trainieren, ist der Hauptgrund, warum Anfänger aufgeben.",
+            "Leichtes Yoga (Yin- oder Restorative Yoga) erhöht den parasympathischen Tonus — hilft dem Körper und Geist, vom 'Überlebensmodus' in den 'Erholungsmodus' zu wechseln.",
+            "Ein 30-minütiger Spaziergang im Freien steigert Endorphine, Vitamin D und Serotonin — 3 mentale Gesundheitsvorteile ohne Fitnessstudio oder Geräte."
+          ],
+          "points": [
+            {
+              "icon": "🧘",
+              "label": "Yoga 20–30 Min",
+              "note": "Yin oder Restorative Yoga ist ideal"
+            },
+            {
+              "icon": "🚶",
+              "label": "Im Freien gehen",
+              "note": "Natur steigert Serotonin natürlich"
+            },
+            {
+              "icon": "🎵",
+              "label": "Musik/Podcasts hören",
+              "note": "Lernen und Gehen kombinieren"
+            },
+            {
+              "icon": "🚫",
+              "label": "Kein schweres Training",
+              "note": "Woche 1 — Gewohnheiten aufbauen, keine Rekorde brechen"
+            }
+          ]
         },
         "B": {
           "title": "45 Minuten Mahlzeiten Vorbereiten",
           "detail": "2 Proteine kochen · Gemüse · Kohlenhydrate · In Behälter portionieren",
           "kcal": "~1.495 kcal",
-          "note": "Meal Prep eliminiert 60% der impulsiven Essentscheidungen — Umgebung zum Gewinnen einrichten."
+          "note": "Meal Prep eliminiert 60% der impulsiven Essentscheidungen — Umgebung zum Gewinnen einrichten.",
+          "details": [
+            "Entscheidungsmüdigkeit (Erschöpfung durch viele Entscheidungen) ist der wahre Grund für ungesundes Essen — nicht mangelnde Willenskraft. Meal Prep eliminiert diese Entscheidungen.",
+            "45 Minuten am Wochenende sparen ~2 Stunden unter der Woche — kein tägliches Nachdenken 'was esse ich heute', kein Fast Food weil nichts vorbereitet ist, keine ausgelassenen Mahlzeiten.",
+            "Basis-Batch-Cooking: 2 Proteine kochen (Hühnchen + Eier), eine große Gemüseportion, einen Topf Reis/Kartoffeln. In Behälter aufteilen = 4–5 Mittagessen bereit."
+          ],
+          "points": [
+            {
+              "icon": "⏱",
+              "label": "45 Min = 2h gespart",
+              "note": "Keine 4–5 Mittagessen mehr kochen"
+            },
+            {
+              "icon": "🍱",
+              "label": "2 Proteine bereit",
+              "note": "Gekochtes Hühnchen + Eier = flexibel"
+            },
+            {
+              "icon": "🥦",
+              "label": "Vorgeschnittenes Gemüse",
+              "note": "Salate und Pfannengerichte schneller"
+            },
+            {
+              "icon": "📦",
+              "label": "Vorportionierte Behälter",
+              "note": "Aufmachen und essen — weniger Entscheidungen"
+            }
+          ]
         },
         "C": {
           "title": "Raum Aufräumen",
           "detail": "Schreibtisch aufgeräumt · Schlafzimmer ordentlich · Kühlschrank organisiert",
-          "note": "Ordentlicher Raum reduziert Cortisol um 20% — direkte Auswirkung auf Schlaf und Fokus."
+          "note": "Ordentlicher Raum reduziert Cortisol um 20% — direkte Auswirkung auf Schlaf und Fokus.",
+          "details": [
+            "Ein unordentlicher Raum aktiviert ständig das Bedrohungszentrum des Gehirns — erzeugt leichten 'Hintergrundstress' auch wenn du es nicht bewusst wahrnimmst. Aufräumen senkt Cortisol wirklich.",
+            "Den Kühlschrank mit 'gesundem Standard' organisieren — Gemüse und Protein auf Augenhöhe, Snacks ganz hinten. Deine Umgebung bestimmt 80% deines Essverhaltens.",
+            "Ein aufgeräumtes Schlafzimmer = das Gehirn weiß, dass dies ein Ruheplatz ist. Wenn ein Schreibtisch und Gegenstände im Schlafzimmer sind, kann das Gehirn nicht vollständig abschalten."
+          ],
+          "points": [
+            {
+              "icon": "🖥️",
+              "label": "Schreibtisch aufräumen",
+              "note": "Nur das behalten, was heute gebraucht wird"
+            },
+            {
+              "icon": "🛏️",
+              "label": "Schlafzimmer = Ruheplatz",
+              "note": "Kein Schreibtisch im Schlafzimmer"
+            },
+            {
+              "icon": "🧊",
+              "label": "Kühlschrank organisieren",
+              "note": "Gesundes Essen sichtbar = Standard-Verhalten"
+            },
+            {
+              "icon": "🌿",
+              "label": "Raum = Geist",
+              "note": "Ordentliche Umgebung = klarer Geist"
+            }
+          ]
         },
         "D": {
           "title": "10-Minuten-Wochenrückblick",
           "detail": "Was gut lief · was verbessert werden muss · was nächste Woche besser wird",
-          "note": "Wochenrückblick = schnellstes Wachstumstool. Erfahrungen in Lektionen umwandeln."
+          "note": "Wochenrückblick = schnellstes Wachstumstool. Erfahrungen in Lektionen umwandeln.",
+          "details": [
+            "Eine wöchentliche Rückschau ist das Wachstumswerkzeug, das die meisten Hochleistenden und CEOs nutzen — sie verwandelt 7 Tage Erfahrung in umsetzbare Lehren für die nächste Woche.",
+            "3 Kernfragen: (1) Was habe ich diese Woche gut gemacht? (2) Was muss verbessert werden? (3) Was werde ich nur in 1 Sache nächste Woche verbessern? Nur 1 — nicht alles auf einmal ändern.",
+            "Nicht zu selbstkritisch sein — eine wöchentliche Rückschau ist ein Lernwerkzeug, kein Gericht. Das Ziel ist neugieriges Reflektieren, nicht Schuldgefühle."
+          ],
+          "points": [
+            {
+              "icon": "✅",
+              "label": "Was lief gut",
+              "note": "Anerkennen, auch wenn klein — baut Schwung auf"
+            },
+            {
+              "icon": "🔍",
+              "label": "Was lief nicht gut",
+              "note": "Kein Urteil — nur beobachten"
+            },
+            {
+              "icon": "🎯",
+              "label": "1 Verbesserung nächste Woche",
+              "note": "Nur 1 — nicht zu viel versprechen"
+            },
+            {
+              "icon": "📋",
+              "label": "Komende Woche planen",
+              "note": "Training + Ernährungsplan im Voraus festlegen"
+            }
+          ]
         },
         "checklist": [
           "Meal Prep 45 Min",
@@ -889,23 +1537,131 @@
           "title": "Vollständiger Ruhetag",
           "detail": "Ruhetag · sanftes Gehen wenn gewünscht · Fokus auf Erholung",
           "time": "Optional",
-          "note": "Ruhetag ist kein Versagen. Dein Körper baut Kraft aus dem Training der letzten Woche auf."
+          "note": "Ruhetag ist kein Versagen. Dein Körper baut Kraft aus dem Training der letzten Woche auf.",
+          "details": [
+            "Superkompensation — der Körper erholt sich nicht nur zum Ausgangswert, sondern baut weiter, um sich auf eine ähnliche Belastung vorzubereiten. Ruhetag = Investition, keine Verschwendung.",
+            "Ruhetag bedeutet nicht still liegen — ein leichter 20–30-minütiger Spaziergang erhöht die Durchblutung, reduziert DOMS und hilft den Muskeln, sich schneller zu erholen als vollständige Inaktivität.",
+            "Das Gefühl 'trainieren zu müssen, um sich gut zu fühlen' an einem Ruhetag ist ein Zeichen von Anhaftung, nicht mangelnder Erholung. Dieses Gefühl wahrnehmen und vorbeigehen lassen — das ist auch mentales Training."
+          ],
+          "points": [
+            {
+              "icon": "💪",
+              "label": "Muskeln wachsen in Ruhe",
+              "note": "Superkompensation — wirklich notwendig"
+            },
+            {
+              "icon": "🚶",
+              "label": "Leichter Spaziergang wenn gewünscht",
+              "note": "20–30 Min leicht hilft der Erholung"
+            },
+            {
+              "icon": "😴",
+              "label": "Etwas mehr schlafen",
+              "note": "Ruhetag = Erlaubnis für 30 Min extra"
+            },
+            {
+              "icon": "🧠",
+              "label": "Mentale Ruhe",
+              "note": "Kein Stress wegen des nächsten Trainings"
+            }
+          ]
         },
         "B": {
           "title": "Leichte, Leicht Verdauliche Mahlzeiten",
           "detail": "Gemüsesuppe · Brei · Obst · ~1.240 kcal",
           "kcal": "~1.240 kcal",
-          "note": "Verdauungssystem einen Tag ausruhen lassen — weniger verarbeitet, mehr Obst/Gemüse, genug Wasser."
+          "note": "Verdauungssystem einen Tag ausruhen lassen — weniger verarbeitet, mehr Obst/Gemüse, genug Wasser.",
+          "details": [
+            "Das Verdauungssystem braucht ebenfalls Erholung — leichte, leicht verdauliche Mahlzeiten einmal pro Woche reduzieren Darmentzündungen und verbessern die Nährstoffaufnahme für die nächste Woche.",
+            "Brei, Suppe und Gemüsebrühe sind am leichtesten zu verdauen: wenig grobe Ballaststoffe, viel Wasser, geringer Energieaufwand für die Verdauung. Das Verdauungssystem bekommt eine wohlverdiente Pause.",
+            "1.240 kcal ist niedriger als üblich, weil du heute nicht hart trainierst — der Energiebedarf ist geringer, kein Druck mehr zu essen. Auf den Körper hören."
+          ],
+          "points": [
+            {
+              "icon": "🍲",
+              "label": "Gemüsesuppe/-brühe",
+              "note": "Leicht verdaulich, viel Wasser, wenig Kalorien"
+            },
+            {
+              "icon": "🥣",
+              "label": "Brei/Porridge",
+              "note": "Am leichtesten für den Darm"
+            },
+            {
+              "icon": "🍊",
+              "label": "Obst",
+              "note": "Natürliche Enzyme unterstützen Verdauung"
+            },
+            {
+              "icon": "💧",
+              "label": "Mehr Wasser trinken",
+              "note": "2–2,5L am Ruhetag zum Entgiften"
+            }
+          ]
         },
         "C": {
           "title": "Neue Woche Planen",
           "detail": "Training einplanen · Ernährungsplan vorbereiten · Ziele überprüfen",
-          "note": "Vorbereitung = 80% Sieg — keine tägliche Improvisation nötig."
+          "note": "Vorbereitung = 80% Sieg — keine tägliche Improvisation nötig.",
+          "details": [
+            "Planung beseitigt Reibung — wenn man bereits festgelegt hat 'Montag 6:30 Uhr Training', muss das Gehirn nicht erneut entscheiden. Jede kleine Entscheidung kostet Willenskraft — Planung spart sie für Wichtiges.",
+            "Eine Einkaufsliste am Sonntag bedeutet, dass in der Woche keine gesunden Zutaten fehlen. Ein Kühlschrank voller gesunder Lebensmittel = kein Fast Food bestellen 'weil nichts da ist'.",
+            "Die 3-Monatsziele jeden Sonntag überprüfen — prüfen, ob die Handlungen dieser Woche auf dem richtigen Weg sind. Früh korrigieren ist besser als nach langer Fehlrichtung."
+          ],
+          "points": [
+            {
+              "icon": "📅",
+              "label": "Training einplanen",
+              "note": "Kalender blockieren = echte Verpflichtung"
+            },
+            {
+              "icon": "🛒",
+              "label": "Einkaufsliste",
+              "note": "Im Voraus einkaufen = keine Lücken"
+            },
+            {
+              "icon": "🎯",
+              "label": "Ziele überprüfen",
+              "note": "Sind diese Woche die Aktionen richtig?"
+            },
+            {
+              "icon": "📝",
+              "label": "Grober Ernährungsplan",
+              "note": "3 Hauptmahlzeiten — keine Details nötig"
+            }
+          ]
         },
         "D": {
           "title": "7-Tage-Zusammenfassung",
           "detail": "3 Erfolge · 1 Verbesserungsbereich · 1 Verpflichtung für die Zukunft",
-          "note": "Zurückblicken um zu lernen und mit mehr Einblick vorwärtszugehen — nicht um sich zu kritisieren."
+          "note": "Zurückblicken um zu lernen und mit mehr Einblick vorwärtszugehen — nicht um sich zu kritisieren.",
+          "details": [
+            "7 Tage durchzuhalten ist ein größerer Meilenstein als du denkst — die meisten Menschen, die eine neue Gewohnheit versuchen, geben vor Tag 4 auf. Das ist der Beweis, dass du anders bist.",
+            "3 erledigte Dinge (auch kleine) + 1 zu verbessern + 1 Engagement für die Zukunft: Diese Struktur balanciert Anerkennung mit Lernen — nicht zu selbstkritisch, nicht zu selbstgefällig.",
+            "Das 7-Tages-Ergebnis mit einer Person teilen — ein Verantwortungspartner erhöht die Weitermachrate um bis zu 65% laut der American Society of Training & Development."
+          ],
+          "points": [
+            {
+              "icon": "🏆",
+              "label": "3 erledigte Dinge",
+              "note": "Schwung anerkennen — auch wenn klein"
+            },
+            {
+              "icon": "🔍",
+              "label": "1 zu verbessern",
+              "note": "Nur 1 — Fokus auf das Wichtigste"
+            },
+            {
+              "icon": "💪",
+              "label": "1 Engagement vorwärts",
+              "note": "Womit beginnt Woche 2?"
+            },
+            {
+              "icon": "👥",
+              "label": "Mit jemandem teilen",
+              "note": "Verantwortlichkeit = +65% Weitermachrate"
+            }
+          ]
         },
         "checklist": [
           "Ruhen / sanft gehen",

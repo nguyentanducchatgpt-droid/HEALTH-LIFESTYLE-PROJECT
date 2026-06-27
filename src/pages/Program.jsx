@@ -2234,7 +2234,17 @@ export default function Program() {
     return tJ ? { ...j, ...tJ } : j;
   });
   const tSevenDays = t('program.seven_days', { returnObjects: true });
-  const localSevenDays = Array.isArray(tSevenDays) ? tSevenDays.map((d, i) => ({ ...SEVEN_DAYS[i], ...d })) : SEVEN_DAYS;
+  const localSevenDays = SEVEN_DAYS.map((d, i) => {
+    const tD = Array.isArray(tSevenDays) ? tSevenDays[i] : null;
+    if (!tD) return d;
+    return {
+      ...d, ...tD,
+      A: tD.A ? { ...d.A, ...tD.A } : d.A,
+      B: tD.B ? { ...d.B, ...tD.B } : d.B,
+      C: tD.C ? { ...d.C, ...tD.C } : d.C,
+      D: tD.D ? { ...d.D, ...tD.D } : d.D,
+    };
+  });
   const tPillarLabels = t('program.pillar_labels', { returnObjects: true });
   const localPC = (tPillarLabels && typeof tPillarLabels === 'object' && !Array.isArray(tPillarLabels))
     ? Object.fromEntries(Object.entries(PC).map(([k, v]) => [k, { ...v, l: tPillarLabels[k] || v.l }]))
@@ -2243,6 +2253,47 @@ export default function Program() {
   const localQuickLinks = Array.isArray(tQuickLinks) ? tQuickLinks : null;
   const tWeeklyDays = t('program.weekly_days', { returnObjects: true });
   const localWeekly = Array.isArray(tWeeklyDays) ? tWeeklyDays.map((d, i) => ({ ...WEEKLY_RHYTHM[i], ...d })) : WEEKLY_RHYTHM;
+
+  // Daily blocks translation (preserve img/details/points/links from constant)
+  const tDailyBlocks = t('program.daily_blocks', { returnObjects: true });
+  const localDailyBlocks = DAILY_BLOCKS.map((b, i) => {
+    const tB = Array.isArray(tDailyBlocks) ? tDailyBlocks[i] : null;
+    return tB ? { ...b, ...tB } : b;
+  });
+
+  // Daily principles translation (translate text, preserve details/points/links)
+  const tDailyPrins = t('program.daily_principles', { returnObjects: true });
+  const localDailyPrinciples = DAILY_PRINCIPLES.map((pr, i) => {
+    const tPr = Array.isArray(tDailyPrins) ? tDailyPrins[i] : null;
+    if (!tPr) return pr;
+    return typeof tPr === 'string' ? { ...pr, text: tPr } : { ...pr, ...tPr };
+  });
+
+  // Phase translations (preserve color/rgb/img/id/emoji from constant; override text fields)
+  const tTwelvePhases = t('program.twelve_phases', { returnObjects: true });
+  const localTwelvePhases = TWELVE_PHASES.map((ph, i) => {
+    const tPh = Array.isArray(tTwelvePhases) ? tTwelvePhases[i] : null;
+    if (!tPh) return ph;
+    return {
+      ...ph, ...tPh,
+      pillars: tPh.pillars ? { ...ph.pillars, ...tPh.pillars } : ph.pillars,
+      kpis: Array.isArray(tPh.kpis) ? tPh.kpis : ph.kpis,
+      milestones: Array.isArray(tPh.milestones) ? tPh.milestones : ph.milestones,
+    };
+  });
+  const tAdvPhases = t('program.adv_phases', { returnObjects: true });
+  const localAdvPhases = ADV_PHASES.map((ph, i) => {
+    const tPh = Array.isArray(tAdvPhases) ? tAdvPhases[i] : null;
+    if (!tPh) return ph;
+    return {
+      ...ph, ...tPh,
+      pillars: tPh.pillars ? { ...ph.pillars, ...tPh.pillars } : ph.pillars,
+      kpis: Array.isArray(tPh.kpis) ? tPh.kpis : ph.kpis,
+      milestones: Array.isArray(tPh.milestones) ? tPh.milestones : ph.milestones,
+    };
+  });
+  const localTwentyFourPhases = [...localTwelvePhases, ...localAdvPhases];
+
   const localSubTabs = [
     { id:'phases', label: t('program.sub_tab_phases', 'Lộ Trình'),  icon:'🗓️' },
     { id:'daily',  label: t('program.sub_tab_daily',  'Khung Ngày'), icon:'⏱️' },
@@ -2251,7 +2302,7 @@ export default function Program() {
     { id:'test',   label: t('program.sub_tab_test',   'Bài Test'),  icon:'📈' },
   ];
 
-  const phases12 = journey === '12w' ? TWELVE_PHASES : TWENTY_FOUR_PHASES;
+  const phases12 = journey === '12w' ? localTwelvePhases : localTwentyFourPhases;
 
   useEffect(() => {
     const id = 'pg-hero-kf';
@@ -2633,7 +2684,7 @@ export default function Program() {
                 <div className="relative">
                   <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent -translate-y-1/2 pointer-events-none" />
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {DAILY_BLOCKS.map((block,i) => (
+                    {localDailyBlocks.map((block,i) => (
                       <RevealBlock key={i} delay={i*80}>
                         <div
                           className="relative bg-surface border border-border rounded-2xl p-5 text-center transition-all duration-300 group cursor-pointer hover:-translate-y-0.5"
@@ -2657,7 +2708,7 @@ export default function Program() {
                 <RevealBlock delay={320} className="mt-8 p-5 rounded-2xl border border-accent/15 bg-accent/4">
                   <h3 className="text-base font-bold uppercase tracking-widest text-accent mb-3">💡 {t('program.daily_principles_title', 'Nguyên Tắc Khung Ngày')}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {DAILY_PRINCIPLES.map((pr, i) => (
+                    {localDailyPrinciples.map((pr, i) => (
                       <button key={i}
                         className="flex items-start gap-2.5 text-left px-3 py-2.5 rounded-xl cursor-pointer group transition-all duration-200 hover:-translate-y-0.5"
                         style={{ background: `rgba(${pr.rgb},0.04)`, border: `1px solid rgba(${pr.rgb},0.12)` }}

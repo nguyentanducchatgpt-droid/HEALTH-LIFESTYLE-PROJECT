@@ -2247,12 +2247,14 @@ export default function Program() {
       B: tD.B ? { ...d.B, ...tD.B } : d.B,
       C: tD.C ? { ...d.C, ...tD.C } : d.C,
       D: tD.D ? { ...d.D, ...tD.D } : d.D,
-      // Preserve full checklist objects from constant; only translate label if tD.checklist is a string array
+      // Merge checklist: handle both string arrays (legacy) and full object arrays
       checklist: Array.isArray(tD.checklist)
-        ? d.checklist.map((ci, idx) => ({
-            ...ci,
-            label: typeof tD.checklist[idx] === 'string' ? tD.checklist[idx] : (tD.checklist[idx]?.label ?? ci.label),
-          }))
+        ? d.checklist.map((ci, idx) => {
+            const tCi = tD.checklist[idx];
+            if (typeof tCi === 'string') return { ...ci, label: tCi };
+            if (tCi && typeof tCi === 'object') return { ...ci, ...tCi };
+            return ci;
+          })
         : d.checklist,
     };
   });

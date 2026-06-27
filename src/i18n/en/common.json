@@ -547,22 +547,130 @@
       {
         "label": "7-Day Kickstart",
         "sub": "First week",
-        "desc": "Start gently with 7 days. Each day integrates all 4 pillars: Movement · Nutrition · Lifestyle · Mind."
+        "desc": "Start gently with 7 days. Each day integrates all 4 pillars: Movement · Nutrition · Lifestyle · Mind.",
+        "details": [
+          "The first 7 days integrate all 4 pillars every day: Movement (20–30 min) + Nutrition (protein at 2–3 meals) + Lifestyle (sleep before 11 PM) + Mind (morning breaths). No need to be perfect — doing all 4 is success.",
+          "The first 7 days are the hardest challenge — most people quit before day 4. The goal isn't body composition results but building the body's 'language' and establishing neural pathways for habits.",
+          "7-day structure: Days 1–3 (learn form + lay the foundation) → Day 4 (active recovery) → Day 5 (strength training) → Day 6 (meal prep + yoga) → Day 7 (rest + plan the new week)."
+        ],
+        "points": [
+          {
+            "icon": "🌱",
+            "label": "Days 1–3",
+            "note": "Learn 6 movements + protein + sleep by 11 PM"
+          },
+          {
+            "icon": "💪",
+            "label": "Days 4–5",
+            "note": "Recovery + 30-min strength training"
+          },
+          {
+            "icon": "🗂️",
+            "label": "Day 6",
+            "note": "Meal prep + active recovery"
+          },
+          {
+            "icon": "🌿",
+            "label": "Day 7",
+            "note": "Complete rest + plan the new week"
+          }
+        ]
       },
       {
         "label": "12-Week Foundation",
         "sub": "Core program",
-        "desc": "3 phases: Kickstart → Build Base → Personalize. Enough time to rewire brain habits permanently."
+        "desc": "3 phases: Kickstart → Build Base → Personalize. Enough time to rewire brain habits permanently.",
+        "details": [
+          "3 clear phases: Weeks 1–4 (Foundation — form 5 core habits) → Weeks 5–8 (Build Base — increase volume and intensity) → Weeks 9–12 (Personalize — adjust based on actual results).",
+          "UCL research: on average 66 days for behavior to become fully automatic. 12 weeks = 84 days — surpassing that threshold. After 12 weeks, no willpower needed to train — it becomes autopilot.",
+          "Includes 5 monthly tests to measure real progress: Plank, Push-up, 1-minute Squat, 1km Walk, and waist circumference. Real data to know if you're progressing or need to adjust."
+        ],
+        "points": [
+          {
+            "icon": "🌱",
+            "label": "Weeks 1–4",
+            "note": "Foundation — 5 core habits"
+          },
+          {
+            "icon": "📈",
+            "label": "Weeks 5–8",
+            "note": "Build Base — increase volume & intensity"
+          },
+          {
+            "icon": "🎯",
+            "label": "Weeks 9–12",
+            "note": "Personalize — adjust based on results"
+          },
+          {
+            "icon": "📊",
+            "label": "Monthly test",
+            "note": "5 benchmarks to measure real progress"
+          }
+        ]
       },
       {
         "label": "24-Week Advanced",
         "sub": "Complete program",
-        "desc": "6 phases: from beginner to full mastery of your personal health system. Carb cycling + supplement + mastery."
+        "desc": "6 phases: from beginner to full mastery of your personal health system. Carb cycling + supplement + mastery.",
+        "details": [
+          "6 phases: Foundation (1–4) → Build Base (5–8) → Accelerate (9–12) → Advanced (13–16) → Optimize (17–20) → Mastery (21–24). Each phase builds on the previous one.",
+          "Advanced content in phases 3–6: Carb cycling (adjusting carbs on training/rest/off days), basic supplementation (protein, creatine, vitamin D), and periodization (structured deload weeks).",
+          "After 24 weeks, you understand your body well enough to design your own next program. This is what sets it apart from 12 weeks — not just healthier, but fully self-sufficient."
+        ],
+        "points": [
+          {
+            "icon": "🏗️",
+            "label": "Phases 1–2",
+            "note": "Build foundation from beginner to intermediate"
+          },
+          {
+            "icon": "⚡",
+            "label": "Phases 3–4",
+            "note": "Carb cycling + basic supplementation"
+          },
+          {
+            "icon": "🎓",
+            "label": "Phases 5–6",
+            "note": "Mastery — design your own program"
+          },
+          {
+            "icon": "🧬",
+            "label": "Personalized",
+            "note": "Understand your own body completely"
+          }
+        ]
       },
       {
         "label": "Sample Roadmap",
         "sub": "Real-world example",
-        "desc": "A real person's 12-week roadmap: 32-year-old office worker, target: lose 5kg and boost energy."
+        "desc": "A real person's 12-week roadmap: 32-year-old office worker, target: lose 5kg and boost energy.",
+        "details": [
+          "The real journey of Tuan — 32 years old, office worker, 78kg, goal to lose 5kg and increase energy. See what he did each day, what he ate, how he trained, and specific results week by week.",
+          "Not an ideal journey — a real one with missed days, unplanned meals out, and how to adjust when interrupted. More realistic than any 'perfect plan'.",
+          "Includes: weekly calorie tracking, monthly weight and measurement results, mistakes encountered and how to fix them — plus 4 key lessons for anyone wanting to design their own program."
+        ],
+        "points": [
+          {
+            "icon": "👤",
+            "label": "Tuan: 78kg → 73kg",
+            "note": "12 weeks, real not ideal"
+          },
+          {
+            "icon": "📊",
+            "label": "Real tracking",
+            "note": "Calories · weight · waist/week"
+          },
+          {
+            "icon": "❌",
+            "label": "Mistakes + fixes",
+            "note": "Learn from reality more than theory"
+          },
+          {
+            "icon": "📝",
+            "label": "4 key lessons",
+            "note": "Insights after 12 weeks in practice"
+          }
+        ]
       }
     ],
     "quick_links": [
@@ -818,11 +926,161 @@
           ]
         },
         "checklist": [
-          "Train 20 min (6 movements)",
-          "Protein in 2/3+ meals",
-          "Drink 1.8L water",
-          "Sleep before 11 PM",
-          "3 morning deep breaths"
+          {
+            "label": "Train 20 min (6 movements)",
+            "why": "20 minutes is enough to activate the whole body and build foundational motor patterns — consistency matters more than duration.",
+            "details": [
+              "The 6 movements (Squat, Hinge, Push, Pull, Core, Breath) cover ~95% of functional movement. Mastering them is the foundation for all future progress.",
+              "20 minutes is enough to raise heart rate, activate muscles, and create adaptation without overtraining. Beginners who push too hard too early usually quit before week 2.",
+              "Consistency > intensity: 20 min consistently 5 days/week is more effective than 2 hours sporadically — the brain needs 300–500 repetitions to install a motor pattern into autopilot."
+            ],
+            "points": [
+              {
+                "icon": "⏱",
+                "label": "20 min is enough",
+                "note": "Creates stimulus, not too tiring"
+              },
+              {
+                "icon": "🔄",
+                "label": "6 basic movements",
+                "note": "Squat·Hinge·Push·Pull·Core·Breath"
+              },
+              {
+                "icon": "✅",
+                "label": "Form before reps",
+                "note": "Correct technique prevents injury"
+              },
+              {
+                "icon": "📅",
+                "label": "Consistency",
+                "note": "20 min daily > 2 hours on weekends"
+              }
+            ]
+          },
+          {
+            "label": "Protein in 2/3+ meals",
+            "why": "The body can't store protein — it needs regular replenishment at each meal to keep protein synthesis running continuously.",
+            "details": [
+              "Unlike fat and carbs, the body has no amino acid reserves. Eating protein at 2 meals on day 1 is a realistic goal — no need to be perfect on day 1.",
+              "Muscle Protein Synthesis (MPS) needs amino acids continuously in the bloodstream. 1 protein meal a day isn't enough to sustain this cycle.",
+              "One palm of protein per meal ≈ 25–35g — enough to trigger MPS without needing to weigh food precisely at home or restaurants."
+            ],
+            "points": [
+              {
+                "icon": "🍳",
+                "label": "Morning: eggs/dairy",
+                "note": "~12–20g, fast and simple"
+              },
+              {
+                "icon": "🍗",
+                "label": "Lunch: meat/fish",
+                "note": "~25–35g, the most important meal"
+              },
+              {
+                "icon": "🐟",
+                "label": "Dinner: light protein",
+                "note": "Fish/tofu — easy to digest at night"
+              },
+              {
+                "icon": "👋",
+                "label": "1 palm as a guide",
+                "note": "Quick estimate anywhere, anytime"
+              }
+            ]
+          },
+          {
+            "label": "Drink 1.8L water",
+            "why": "Losing just 1–2% of body water already reduces training performance and concentration — most people are dehydrated without knowing it.",
+            "details": [
+              "Losing 1% water → reduces physical performance by 5–8%. Losing 2% → difficulty concentrating, worse mood, headaches. Feeling thirsty means you're already dehydrated — drink before you're thirsty.",
+              "1.8L on day 1 is a practical starting target. After 7 days, increase to 2–2.5L depending on activity level. Gradual increases let the kidneys adjust naturally.",
+              "Urine color is a hydration chart: light yellow = enough, clear = slightly too much, dark yellow = clearly dehydrated — easier to check than any app."
+            ],
+            "points": [
+              {
+                "icon": "🌅",
+                "label": "Morning: 300ml first",
+                "note": "Cleanse kidneys, wake the brain before coffee"
+              },
+              {
+                "icon": "🏋",
+                "label": "Before/during workout",
+                "note": "200–300ml before you feel thirsty"
+              },
+              {
+                "icon": "🍽",
+                "label": "Before meals",
+                "note": "200ml — feel full faster, fewer calories"
+              },
+              {
+                "icon": "📱",
+                "label": "Set reminders",
+                "note": "Every 2 hours = reach 1.8L by end of day"
+              }
+            ]
+          },
+          {
+            "label": "Sleep before 11 PM",
+            "why": "Cortisol naturally drops after 10:30 PM — sleeping before 11 PM aligns with your circadian rhythm for the deepest sleep.",
+            "details": [
+              "The circadian rhythm lowers cortisol after 10:30 PM and melatonin rises from 9 PM. Sleeping before 11 PM aligns with these 2 hormones — deeper sleep from the very first minute.",
+              "Every hour of sleep before midnight is worth twice as much as after midnight for recovery quality — more deep sleep and REM in the first 4 hours of the night.",
+              "A consistent wake-up time matters more than bedtime — waking at the same time every day (even weekends) helps the body naturally build sleep pressure."
+            ],
+            "points": [
+              {
+                "icon": "🕙",
+                "label": "11 PM is the deadline",
+                "note": "Bedtime, not just lying down"
+              },
+              {
+                "icon": "📵",
+                "label": "Phone away from bed",
+                "note": "Blue light suppresses melatonin by 50%"
+              },
+              {
+                "icon": "🌡️",
+                "label": "64–72°F / 18–22°C",
+                "note": "Low temperature = sleep signal for the brain"
+              },
+              {
+                "icon": "⏰",
+                "label": "Fixed alarm time",
+                "note": "Same wake time = better sleep quality"
+              }
+            ]
+          },
+          {
+            "label": "3 morning deep breaths",
+            "why": "30 seconds activates the parasympathetic system — turning off the morning's default stress response before it even starts.",
+            "details": [
+              "Cortisol spikes sharply upon waking (Cortisol Awakening Response). 3 slow deep breaths signal 'safety' to the brain — reducing CAR and early morning anxiety.",
+              "Inhale 4s–hold 4s–exhale 4s (box breathing) activates the parasympathetic system in under 30 seconds. More alerting than coffee at the brain level.",
+              "Do it before looking at your phone — these 30 seconds 'set the tone' for the whole day. Seeing notifications right after waking triggers reflexive stress from the morning."
+            ],
+            "points": [
+              {
+                "icon": "🌅",
+                "label": "Right on waking",
+                "note": "Before looking at your phone"
+              },
+              {
+                "icon": "4️⃣",
+                "label": "4s–4s–4s",
+                "note": "Box breathing — easiest to remember"
+              },
+              {
+                "icon": "🧠",
+                "label": "Reduce morning cortisol",
+                "note": "Less anxiety — good tone for the whole day"
+              },
+              {
+                "icon": "⚓",
+                "label": "Create a morning anchor",
+                "note": "30 seconds sets the foundation for the day"
+              }
+            ]
+          }
         ]
       },
       {
@@ -959,11 +1217,161 @@
           ]
         },
         "checklist": [
-          "Protein all 3 meals",
-          "Drink 2L water",
-          "Morning routine 10 min",
-          "Evening journal 3 lines",
-          "Train 22 min"
+          {
+            "label": "Protein at all 3 meals",
+            "why": "Protein synthesis needs amino acids continuously — 3 protein-rich meals optimizes the muscle-building process all day.",
+            "details": [
+              "The body can't 'save' amino acids from one meal to the next. Eating protein at 3 meals triggers protein synthesis 3 times a day instead of 1–2 times.",
+              "Breakfast is most important — after 8 hours of sleep fasting, the body is in catabolism (muscle breakdown). Morning protein immediately reverses this.",
+              "Practical goal: each meal has 1 palm-size protein source. No need to count grams or track macros — just look at your palm."
+            ],
+            "points": [
+              {
+                "icon": "🍳",
+                "label": "Morning: essential",
+                "note": "End catabolism after sleep"
+              },
+              {
+                "icon": "🍗",
+                "label": "Lunch: main meal",
+                "note": "Largest protein meal of the day"
+              },
+              {
+                "icon": "🐟",
+                "label": "Dinner: maintain",
+                "note": "Fish/tofu — lighter than lunch"
+              },
+              {
+                "icon": "📊",
+                "label": "~1.6g/kg/day",
+                "note": "Target for active individuals"
+              }
+            ]
+          },
+          {
+            "label": "Drink 2L water",
+            "why": "Increasing from 1.8L → 2L — the body starts getting used to optimal hydration rhythm and kidneys gradually adjust.",
+            "details": [
+              "Increasing 200ml/day allows kidneys to adjust naturally — no feeling of being forced to drink too much.",
+              "500ml bottle × 4 = 2L. Keep it on the desk, visible = self-reminder. No complicated app needed if you have a bottle in sight.",
+              "Green tea and plain water count toward the total; coffee and alcohol don't — they actually cause additional water loss (diuretic)."
+            ],
+            "points": [
+              {
+                "icon": "🍶",
+                "label": "500ml bottle × 4",
+                "note": "Visible = reminds you to drink"
+              },
+              {
+                "icon": "🍵",
+                "label": "Green tea counts",
+                "note": "Free antioxidant bonus"
+              },
+              {
+                "icon": "☕",
+                "label": "Coffee doesn't count",
+                "note": "Diuretic — add 1 glass per coffee cup"
+              },
+              {
+                "icon": "💛",
+                "label": "Light yellow = enough",
+                "note": "Urine color is the best hydration chart"
+              }
+            ]
+          },
+          {
+            "label": "Morning routine 10 min",
+            "why": "10 minutes of structured morning routine kick-starts the brain and creates momentum — consistency matters more than complexity.",
+            "details": [
+              "The brain needs 20–30 minutes after waking to function effectively. A light 10-minute routine warms up the brain without causing stress right from the morning.",
+              "10 minutes is enough for 3 components: physical (breathing + light movement) + mental (setting intention) + fueling (drinking water). Nothing more needed.",
+              "Consistency over perfection: 10 simple minutes every day > a 1-hour elaborate routine occasionally. The brain needs repeated patterns to build habits."
+            ],
+            "points": [
+              {
+                "icon": "🫁",
+                "label": "Breathing (1 min)",
+                "note": "3 box breaths — reset cortisol"
+              },
+              {
+                "icon": "🤸",
+                "label": "Light movement (5 min)",
+                "note": "Stretch + joint rotation full body"
+              },
+              {
+                "icon": "✍️",
+                "label": "Set intention (2 min)",
+                "note": "\"Today I will complete...\""
+              },
+              {
+                "icon": "💧",
+                "label": "Water (2 min)",
+                "note": "300ml before morning coffee"
+              }
+            ]
+          },
+          {
+            "label": "3-line evening journal",
+            "why": "Evening reflection releases mental chatter — closes the brain's open tabs and helps you sleep more deeply tonight.",
+            "details": [
+              "Just 3 lines: (1) What I accomplished today, (2) Challenges faced, (3) One thing I'll change tomorrow. No need for beauty or length — 5 minutes is enough.",
+              "Handwriting engages emotion-processing brain regions more effectively than typing — and there are no notifications to distract.",
+              "Unfinished business keeps the brain running during sleep. Writing it down is how to 'close the tabs' — only then can the brain truly rest."
+            ],
+            "points": [
+              {
+                "icon": "✅",
+                "label": "What I accomplished",
+                "note": "Acknowledge even small wins — builds self-trust"
+              },
+              {
+                "icon": "🔍",
+                "label": "What was challenging",
+                "note": "No judgment — just observe"
+              },
+              {
+                "icon": "🔄",
+                "label": "Change for tomorrow",
+                "note": "1 specific thing is enough"
+              },
+              {
+                "icon": "✋",
+                "label": "Write by hand",
+                "note": "Don't type on phone — no notifications"
+              }
+            ]
+          },
+          {
+            "label": "Train 22 min",
+            "why": "+2 minutes vs day 1 — progressive overload applied even to time, not just weights.",
+            "details": [
+              "Progressive overload isn't just increasing weight — increasing time, reps, or decreasing rest are all valid and effective forms of overload.",
+              "Day 2 goal: increase 1–2 reps per exercise or add 1 set compared to day 1. Choose just one — no need for both.",
+              "Form still solid and no pain = a good sign to increase volume. Joint pain or poor form = reduce immediately."
+            ],
+            "points": [
+              {
+                "icon": "📈",
+                "label": "+2 min today",
+                "note": "Progressive overload in time"
+              },
+              {
+                "icon": "➕",
+                "label": "+1 rep or +1 set",
+                "note": "Small — but real adaptation"
+              },
+              {
+                "icon": "✅",
+                "label": "Form still clean",
+                "note": "Quality > quantity always"
+              },
+              {
+                "icon": "💪",
+                "label": "Build momentum",
+                "note": "7 consistent days > 1 brutal day"
+              }
+            ]
+          }
         ]
       },
       {
@@ -1100,11 +1508,161 @@
           ]
         },
         "checklist": [
-          "Walk 20 min",
-          "Eating-out formula",
-          "No phone 30 min before bed",
-          "Box breathing 5 min",
-          "Drink enough water"
+          {
+            "label": "Walk 20 min",
+            "why": "Walking 10 min after eating reduces blood sugar by ~22% — better than many medications for healthy individuals.",
+            "details": [
+              "20 minutes of walking after a meal is a natural insulin sensitizer — muscles contracting absorb glucose without needing as much insulin, reducing post-meal blood sugar spike by ~22%.",
+              "Zone 2 cardio (brisk walk — can talk while moving) burns fat most efficiently and doesn't stress muscles enough to interfere with recovery.",
+              "Walking outdoors has bonuses: vitamin D from morning sunlight + fresh air + cortisol reduction of an additional 15%. None of this is achievable on a treadmill indoors."
+            ],
+            "points": [
+              {
+                "icon": "🍽",
+                "label": "After eating",
+                "note": "Most effective: 10–30 min after a meal"
+              },
+              {
+                "icon": "💨",
+                "label": "Can talk while walking",
+                "note": "Zone 2 — burns fat, not tiring"
+              },
+              {
+                "icon": "☀️",
+                "label": "Outdoors",
+                "note": "Vitamin D + fresh air"
+              },
+              {
+                "icon": "📱",
+                "label": "Step-counting app",
+                "note": "Accumulate steps throughout the day"
+              }
+            ]
+          },
+          {
+            "label": "Eat out by formula",
+            "why": "The healthy plate formula lets you eat out and stay on track — no need to decline meals or worry.",
+            "details": [
+              "Plate formula: ½ vegetables · ¼ protein · ¼ starch. Works at any restaurant — just adjust proportions to what's available.",
+              "No need to decline eating out — declining social eating costs more psychological energy than eating an extra 100 kcal. Just adjust the proportions, not the menu.",
+              "Practical tip: order extra raw/boiled vegetables, swap soft drinks → unsweetened tea. These 2 changes make a big difference without being hard to do."
+            ],
+            "points": [
+              {
+                "icon": "🥗",
+                "label": "½ plate vegetables",
+                "note": "Boiled/raw veg/soup all count"
+              },
+              {
+                "icon": "🍗",
+                "label": "¼ plate protein",
+                "note": "Meat/fish/eggs/tofu"
+              },
+              {
+                "icon": "🍚",
+                "label": "¼ plate starch",
+                "note": "Rice/noodles — no need to cut out"
+              },
+              {
+                "icon": "🍵",
+                "label": "Switch drinks",
+                "note": "Unsweetened tea > soft drinks"
+              }
+            ]
+          },
+          {
+            "label": "No phone 30 min before sleep",
+            "why": "Blue light from screens suppresses melatonin by up to 50% — seriously damaging deep sleep quality.",
+            "details": [
+              "Blue light (480nm) from phones suppresses melatonin production by up to 50%. Result: harder to fall asleep (delayed by 30–45 min), less deep sleep.",
+              "Putting the phone outside the bedroom is the most effective approach — no temptation = no willpower needed. Replace with a paper book, journal, or conversation.",
+              "30 minutes is the minimum — 1 hour is better. Melatonin needs 20–30 minutes to rise to sufficient levels after turning off the screen."
+            ],
+            "points": [
+              {
+                "icon": "📱",
+                "label": "Phone out of the room",
+                "note": "Best approach — no temptation"
+              },
+              {
+                "icon": "🔵",
+                "label": "Night mode if needed",
+                "note": "Reduces blue light — better than nothing"
+              },
+              {
+                "icon": "📚",
+                "label": "Read a paper book",
+                "note": "Best replacement for the phone"
+              },
+              {
+                "icon": "⏱",
+                "label": "30 min minimum",
+                "note": "Melatonin needs 20–30 min to rise"
+              }
+            ]
+          },
+          {
+            "label": "Box breathing 5 min",
+            "why": "5 minutes of box breathing reduces heart rate and cortisol — primes the brain for deep sleep and maximum recovery.",
+            "details": [
+              "Box breathing (4s–4s–4s–4s) is used by Navy SEALs to stay calm under extreme pressure. If it works for them, it definitely works for everyday stress.",
+              "5 minutes of box breathing is enough to reduce heart rate by ~10 bpm and significantly lower cortisol. Done at night = easier and deeper sleep.",
+              "Breathing through the nose is more effective than the mouth — the nose filters air, warms it, and produces nitric oxide which activates the parasympathetic system more effectively."
+            ],
+            "points": [
+              {
+                "icon": "4️⃣",
+                "label": "4s–4s–4s–4s",
+                "note": "Inhale · Hold · Exhale · Hold"
+              },
+              {
+                "icon": "👃",
+                "label": "Breathe through nose",
+                "note": "Activates parasympathetic faster"
+              },
+              {
+                "icon": "💓",
+                "label": "Reduces ~10 bpm",
+                "note": "Feel the difference in 5 minutes"
+              },
+              {
+                "icon": "🌙",
+                "label": "Combined with no phone",
+                "note": "These 2 habits amplify each other"
+              }
+            ]
+          },
+          {
+            "label": "Drink enough water",
+            "why": "Day 3 checks if the water-drinking habit has formed — 3 consecutive days of consistency is the foundation of this habit.",
+            "details": [
+              "By day 3, you start noticing personal patterns: which hours you drink less, when you forget. This real data helps adjust the habit.",
+              "Habit formation: actions repeated in the same context (same time, same cup) are remembered by the brain faster than random actions.",
+              "Add electrolytes (salt + lemon + honey) to 1 morning glass if you get cramps or sweat a lot after training — especially important on day 3."
+            ],
+            "points": [
+              {
+                "icon": "💛",
+                "label": "Light yellow = enough",
+                "note": "Urine color is the hydration chart"
+              },
+              {
+                "icon": "🍋",
+                "label": "Lemon + salt in morning",
+                "note": "Natural electrolytes after sleep"
+              },
+              {
+                "icon": "🔁",
+                "label": "Same time every day",
+                "note": "Fixed context builds habit faster"
+              },
+              {
+                "icon": "✅",
+                "label": "Day 3 = habit check",
+                "note": "Habit is forming — keep going"
+              }
+            ]
+          }
         ]
       },
       {
@@ -1241,11 +1799,161 @@
           ]
         },
         "checklist": [
-          "Stretch 15 min",
-          "Veg in 2+ meals",
-          "8,000 steps",
-          "Meditate 5 min",
-          "Sleep 7–9h"
+          {
+            "label": "Stretch 15 min",
+            "why": "Post-workout stretching increases blood flow to muscle tissue, reduces DOMS, and genuinely accelerates recovery.",
+            "details": [
+              "Static stretching (hold 30–45 seconds) is best after heavy training — increases flexibility and reduces muscle tension. Before training, it temporarily reduces strength.",
+              "Foam rolling breaks adhesions in the fascia, increases blood flow to muscles — more effective than complete rest and cheaper than massage.",
+              "15 minutes = 3 main muscle groups used. No need to stretch the whole body every day — prioritize what was just trained or what feels tightest."
+            ],
+            "points": [
+              {
+                "icon": "⏱",
+                "label": "30–45s per group",
+                "note": "Static stretch after training — not before"
+              },
+              {
+                "icon": "🔘",
+                "label": "Foam roll first",
+                "note": "Break adhesions → better blood flow"
+              },
+              {
+                "icon": "🎯",
+                "label": "Muscles just trained",
+                "note": "Quads · Glutes · Lower back · Shoulders"
+              },
+              {
+                "icon": "😤",
+                "label": "Exhale when holding",
+                "note": "Deeper exhale = muscles relax more"
+              }
+            ]
+          },
+          {
+            "label": "Veg at 2+ meals",
+            "why": "Fiber from vegetables feeds gut bacteria — 70% of the immune system lives in the gut, not the bloodstream.",
+            "details": [
+              "Gut bacteria need fiber (prebiotics) to produce short-chain fatty acids and serotonin — without vegetables, the immune system weakens and mood drops.",
+              "Colorful variety in vegetables = nutritional diversity: dark green (folate, iron), red/orange (lycopene, beta-carotene), purple (anthocyanins). At least 3 colors per day.",
+              "Boiled vegetables retain 70–80% of nutrients and are easier to eat in large amounts than raw — the most practical choice for busy days."
+            ],
+            "points": [
+              {
+                "icon": "🥬",
+                "label": "Dark leafy greens",
+                "note": "Spinach·cabbage·broccoli — folate, iron"
+              },
+              {
+                "icon": "🥕",
+                "label": "Orange/red veg",
+                "note": "Carrot·tomato — beta-carotene"
+              },
+              {
+                "icon": "🧄",
+                "label": "Garlic + onion",
+                "note": "Strongest prebiotics for gut health"
+              },
+              {
+                "icon": "🎨",
+                "label": "≥3 colors/day",
+                "note": "Different colors = different nutrients"
+              }
+            ]
+          },
+          {
+            "label": "8,000 steps",
+            "why": "8,000 steps/day reduces risk of early death by 51% — no need to walk continuously to get the benefit.",
+            "details": [
+              "JAMA 2021 study: 8,000 steps/day reduces mortality risk by 51% compared to 4,000 steps. No need for 10,000 — the biggest benefits peak around 7,000–8,000 steps.",
+              "Total accumulated steps throughout the day (walking around the house, stairs, going out to shop) are as effective as continuous walking. No need for a dedicated 1-hour walk.",
+              "5 minutes of morning sunlight (6–9 AM) when going outside: resets circadian clock + activates vitamin D — 2 bonuses not achievable on an indoor treadmill."
+            ],
+            "points": [
+              {
+                "icon": "📱",
+                "label": "Step-counting app",
+                "note": "Already in your phone's health app"
+              },
+              {
+                "icon": "🪜",
+                "label": "Use the stairs",
+                "note": "Each floor = ~100–120 extra steps"
+              },
+              {
+                "icon": "☀️",
+                "label": "5 min morning outdoors",
+                "note": "Reset circadian clock + vitamin D"
+              },
+              {
+                "icon": "🚶",
+                "label": "Walk during breaks",
+                "note": "5 min/hour = 500–700 steps each time"
+              }
+            ]
+          },
+          {
+            "label": "Meditate 5 min",
+            "why": "5 min of meditation/day is enough to reduce cortisol and increase gray matter in emotion-regulating regions after 8 weeks.",
+            "details": [
+              "Meditation doesn't require 'no thoughts' — this is the most common misconception. The goal is to notice when the mind wanders and gently return to the breath.",
+              "The Default Mode Network (active when 'doing nothing') is linked to anxiety and overthinking. Meditation reduces DMN activity — less worry about the future and past.",
+              "5 minutes a day is enough to see results after 8 weeks: lower cortisol, more gray matter in the prefrontal cortex, improved emotional control."
+            ],
+            "points": [
+              {
+                "icon": "🧘",
+                "label": "Sit comfortably",
+                "note": "Chair · floor · bed — all fine"
+              },
+              {
+                "icon": "👁️",
+                "label": "Close your eyes",
+                "note": "Reduces visual stimulation"
+              },
+              {
+                "icon": "🫁",
+                "label": "Focus on breath",
+                "note": "Feel belly rising and falling"
+              },
+              {
+                "icon": "💭",
+                "label": "Thoughts are OK",
+                "note": "Notice → gently return to breath"
+              }
+            ]
+          },
+          {
+            "label": "Sleep 7–9 hours",
+            "why": "7–9 hours is the optimal recovery range — below 6 hours noticeably impairs immunity and motor learning.",
+            "details": [
+              "Sleep deprivation (<6h): reduces NK cells (cancer-fighting immune cells) by 70%, raises cortisol, increases insulin resistance, reduces motor skills by 20–30%.",
+              "7–9 hours is the WHO recommended range. Active people usually need closer to 9 hours than 7. No one can 'only need 5 hours' long-term without health consequences.",
+              "Quality over quantity: 7 hours of deep sleep > 9 hours of interrupted sleep. Signs of deep sleep: no waking during the night, feeling refreshed upon waking."
+            ],
+            "points": [
+              {
+                "icon": "🌙",
+                "label": "7–9h is the range",
+                "note": "Active individuals → closer to 9h"
+              },
+              {
+                "icon": "📉",
+                "label": "<6h is dangerous",
+                "note": "NK cells drop 70% after just 1 night"
+              },
+              {
+                "icon": "✨",
+                "label": "Quality > quantity",
+                "note": "Deep sleep, minimal waking"
+              },
+              {
+                "icon": "⏰",
+                "label": "Fixed alarm",
+                "note": "Same wake time = better sleep quality"
+              }
+            ]
+          }
         ]
       },
       {
@@ -1382,11 +2090,161 @@
           ]
         },
         "checklist": [
-          "30 min strength training",
-          "Carbs before + protein after",
-          "No caffeine after 2 PM",
-          "Set morning intention",
-          "Sleep 7–9h"
+          {
+            "label": "Train 30 min strength",
+            "why": "30 minutes of compound movements at RPE 7/10 is the right zone: enough to stimulate adaptation without causing overtraining.",
+            "details": [
+              "RPE 7/10 (Rate of Perceived Exertion): tired but form is still clean, could do 3 more reps if needed. This zone triggers adaptation without burnout after 2–3 weeks.",
+              "Compound movements (Squat, Lunge, Push, Row, Plank) activate multiple muscle groups simultaneously — the most effective use of a 30-minute session.",
+              "3 sets per exercise is standard: enough to trigger hypertrophy without sessions longer than 45 minutes. Optimal volume over maximum volume."
+            ],
+            "points": [
+              {
+                "icon": "📊",
+                "label": "RPE 7/10",
+                "note": "Tired, form clean, 3 reps left in reserve"
+              },
+              {
+                "icon": "🏋",
+                "label": "Compound moves",
+                "note": "Squat·Lunge·Push·Row·Plank"
+              },
+              {
+                "icon": "3️⃣",
+                "label": "3 sets per exercise",
+                "note": "Standard trigger for adaptation"
+              },
+              {
+                "icon": "📈",
+                "label": "+1–2 reps vs day 1",
+                "note": "Small progressive overload — real adaptation"
+              }
+            ]
+          },
+          {
+            "label": "Carbs before + protein after workout",
+            "why": "Carbs replenish glycogen before training, protein after triggers protein synthesis in the 30–90 min anabolic window.",
+            "details": [
+              "30–60 min before training: eat easy-to-digest carbs (banana, bread, white rice) — glycogen is the only fuel for high-intensity training. Low glycogen = early fatigue and poor form.",
+              "Anabolic window post-workout (30–90 min): the body absorbs protein and carbs most efficiently to repair and build muscle. Skipping this meal wastes the workout.",
+              "1,620 kcal on training days is more than usual — the body needs extra energy to build muscle and recover. This isn't overeating, it's eating correctly."
+            ],
+            "points": [
+              {
+                "icon": "🍌",
+                "label": "Carbs 30–60 min before",
+                "note": "Banana·bread·rice — easy to digest"
+              },
+              {
+                "icon": "🍗",
+                "label": "Protein 30–90 min after",
+                "note": "Rice + chicken or protein shake"
+              },
+              {
+                "icon": "⚡",
+                "label": "Carbs = fuel",
+                "note": "Glycogen for muscles to perform at max"
+              },
+              {
+                "icon": "🧱",
+                "label": "Protein = material",
+                "note": "Amino acids build muscle during sleep"
+              }
+            ]
+          },
+          {
+            "label": "No caffeine after 2 PM",
+            "why": "Caffeine has a half-life of 5–7 hours — a cup at 3 PM still has 50% in the bloodstream at 10 PM, destroying deep sleep.",
+            "details": [
+              "Caffeine half-life 5–7 hours: 200mg at 3 PM → still 100mg at 9–10 PM → significantly reduces deep sleep even if you still fall asleep.",
+              "Deep sleep (slow-wave sleep) is reduced by caffeine — this is the most important phase for muscle recovery and memory consolidation. Missing deep sleep = heavy training with no muscle gain.",
+              "2 PM is the safe cutoff for most people. Those more sensitive to caffeine should stop at noon."
+            ],
+            "points": [
+              {
+                "icon": "⏰",
+                "label": "Cut-off at 2 PM",
+                "note": "Safe for most people"
+              },
+              {
+                "icon": "📊",
+                "label": "Half-life 5–7h",
+                "note": "3 PM → still 50% at 9–10 PM"
+              },
+              {
+                "icon": "💤",
+                "label": "Deep sleep disrupted",
+                "note": "No muscle gain without deep sleep"
+              },
+              {
+                "icon": "🍵",
+                "label": "Herbal tea instead",
+                "note": "Chamomile·ginger·mint — no caffeine"
+              }
+            ]
+          },
+          {
+            "label": "Set morning intention",
+            "why": "Implementation intention increases follow-through from 39% to 91% according to NYU research.",
+            "details": [
+              "Intention is different from a goal: 'Today at 6 AM I will train for 30 minutes in the living room' is far more specific than 'I want to be healthy' about actual follow-through rate.",
+              "Writing it down and reading aloud activates the Reticular Activating System (RAS) — the brain's filter will notice opportunities to fulfill the intention throughout the day.",
+              "Peter Gollwitzer (NYU) research: writing 'I will do X at Y in Z' increases follow-through from 39% to 91% — a key finding about habit formation."
+            ],
+            "points": [
+              {
+                "icon": "✍️",
+                "label": "Write 1 specific sentence",
+                "note": "\"At 6 AM I will train in the living room\""
+              },
+              {
+                "icon": "🗣️",
+                "label": "Read it aloud once",
+                "note": "Sound activates RAS better than silent reading"
+              },
+              {
+                "icon": "⏰",
+                "label": "Time + location",
+                "note": "When + Where = 91% follow-through"
+              },
+              {
+                "icon": "🌙",
+                "label": "Evening review",
+                "note": "Did I do it? What did I learn today?"
+              }
+            ]
+          },
+          {
+            "label": "Sleep 7–9 hours",
+            "why": "Sleeping after heavy training is when growth hormone is released most — muscles are built during sleep, not in the gym.",
+            "details": [
+              "Growth hormone is released 70–80% during early-night deep sleep (11 PM–1 AM). Sleeping early after a heavy training day = optimizing GH and muscle recovery.",
+              "Sleep deprivation after training reduces muscle protein synthesis by 18–20% even when eating enough protein — making all training effort meaningless.",
+              "Cool-down after training (15 min stretch + 5 min box breathing) + no caffeine after 2 PM = 2 factors that significantly boost tonight's sleep quality."
+            ],
+            "points": [
+              {
+                "icon": "💪",
+                "label": "GH peaks 11 PM–1 AM",
+                "note": "Sleep on time = maximize training gains"
+              },
+              {
+                "icon": "📊",
+                "label": "-18–20% muscle synthesis",
+                "note": "Sleep debt after training = wasted effort"
+              },
+              {
+                "icon": "🌙",
+                "label": "Sleep earlier than usual",
+                "note": "Heavy training day → add 30–60 min"
+              },
+              {
+                "icon": "🛌",
+                "label": "Cool + dark + quiet",
+                "note": "3 physical conditions for deep sleep"
+              }
+            ]
+          }
         ]
       },
       {
@@ -1523,11 +2381,161 @@
           ]
         },
         "checklist": [
-          "Meal prep 45 min",
-          "Yoga/walk 30 min",
-          "Tidy space",
-          "Weekly review 10 min",
-          "Plan next week's meals"
+          {
+            "label": "Meal prep 45 min",
+            "why": "Meal prep automates the decision of what to eat — no need for willpower when hungry and tired in the evening.",
+            "details": [
+              "When hungry with nothing ready, the brain chooses the most convenient food (usually processed food). Meal prep removes that decision — it's already there, just take it out and eat.",
+              "45 minutes on the weekend prepares enough protein + starch + vegetables for 5–7 days. No need to cook everything — boiling ingredients is sufficient.",
+              "Optimal batch cooking: boil 12 eggs (5 min), steam 500g chicken breast (15 min), cook a big pot of rice (10 min). These 3 things are the backbone for 5 days."
+            ],
+            "points": [
+              {
+                "icon": "🥚",
+                "label": "12 boiled eggs",
+                "note": "Refrigerates 1 week — quick protein anytime"
+              },
+              {
+                "icon": "🍗",
+                "label": "500g steamed chicken",
+                "note": "Divided into 5 containers — 5 lunches done"
+              },
+              {
+                "icon": "🍚",
+                "label": "A big pot of rice",
+                "note": "Lasts 3–4 days in fridge — microwave and done"
+              },
+              {
+                "icon": "⏱",
+                "label": "45 min is enough",
+                "note": "No need for complex cooking to succeed"
+              }
+            ]
+          },
+          {
+            "label": "Yoga/walk 30 min",
+            "why": "Active recovery on the weekend is better than complete rest — increases blood flow without creating additional muscle stress.",
+            "details": [
+              "Active recovery increases blood flow to muscles, accelerates lactate clearance and reduces DOMS — more effective than lying completely still.",
+              "Light yoga combined with deep breathing activates the parasympathetic system, reduces cortisol — after a week of work and training, 'resetting' the nervous system is essential.",
+              "30-minute outdoor walk on weekends: sun + fresh air + light steps = the best trio for recharging for the new week."
+            ],
+            "points": [
+              {
+                "icon": "🚶",
+                "label": "Walk outdoors",
+                "note": "Sun + fresh air + light steps"
+              },
+              {
+                "icon": "🧘",
+                "label": "Light yoga",
+                "note": "Restorative yoga — activates parasympathetic"
+              },
+              {
+                "icon": "💆",
+                "label": "No heavy training",
+                "note": "Recovery = investment, not losing"
+              },
+              {
+                "icon": "🌳",
+                "label": "Nature bonus",
+                "note": "Reduces cortisol 15% more according to research"
+              }
+            ]
+          },
+          {
+            "label": "Declutter space",
+            "why": "Clutter causes continuous cognitive load — the brain has to process everything it sees even when it's not needed.",
+            "details": [
+              "Princeton 2011 research: cluttered environments reduce concentration and increase cortisol. The brain processes all visual stimuli even when unnecessary.",
+              "15–20 minutes of tidying = a 'visual digital detox' for the brain. Most effective: clear the work desk, bedroom, and kitchen — the 3 most-used spaces.",
+              "Fastest order: throw out trash (5 min) → put things back in place (5 min) → wipe surfaces (5 min) → one final look-around (5 min). No need for perfection."
+            ],
+            "points": [
+              {
+                "icon": "🗑",
+                "label": "Trash first",
+                "note": "Things not needed → out first"
+              },
+              {
+                "icon": "🛏",
+                "label": "Bedroom",
+                "note": "Brain starts each day in a clean environment"
+              },
+              {
+                "icon": "🍽",
+                "label": "Clean kitchen",
+                "note": "Clean cooking space = cook more often"
+              },
+              {
+                "icon": "🧠",
+                "label": "Reduces cognitive load",
+                "note": "Eyes no longer process the environment"
+              }
+            ]
+          },
+          {
+            "label": "Weekly review 10 min",
+            "why": "10 minutes looking back at the whole week helps learn from real experience and adjust direction before the new week starts.",
+            "details": [
+              "Weekly review doesn't need to be complicated: (1) What was accomplished this week, (2) Biggest challenge, (3) 1–2 things to do differently next week. 10 minutes is enough.",
+              "Look back at patterns: which days did you train the most? Which days did you miss? Why? This real data lets you adjust the schedule for next week.",
+              "Small celebration: write 3 things done well this week. The brain needs positive reinforcement to maintain motivation — you can't only track failures."
+            ],
+            "points": [
+              {
+                "icon": "✅",
+                "label": "3 things done well",
+                "note": "Start with positive — build momentum"
+              },
+              {
+                "icon": "🔍",
+                "label": "1 biggest challenge",
+                "note": "Just 1 — enough to learn from"
+              },
+              {
+                "icon": "🔄",
+                "label": "1–2 changes next week",
+                "note": "Specific and realistic"
+              },
+              {
+                "icon": "🎯",
+                "label": "Pattern check",
+                "note": "Which days trained? Which skipped? Why?"
+              }
+            ]
+          },
+          {
+            "label": "Plan next week's meals",
+            "why": "Planning what to eat before you're hungry = decisions made by reason — not by a hungry amygdala.",
+            "details": [
+              "When hungry, food decisions are controlled by the amygdala (emotion) — not the prefrontal cortex (reason). Plan ahead = always beat the amygdala.",
+              "No need for detailed meal-by-meal planning — just list ingredients to buy and 3–4 main meals to cook. 5–10 minutes is enough to plan a whole week.",
+              "Combine grocery shopping after planning: buy exactly what you need, without being tempted by processed food when shopping while hungry."
+            ],
+            "points": [
+              {
+                "icon": "📋",
+                "label": "Ingredient list",
+                "note": "Buy what = cook what — that simple"
+              },
+              {
+                "icon": "🍽",
+                "label": "3–4 main meals",
+                "note": "No need to plan all 21 meals/week"
+              },
+              {
+                "icon": "🛒",
+                "label": "Shop after planning",
+                "note": "Don't go to the supermarket hungry"
+              },
+              {
+                "icon": "♻️",
+                "label": "Leverage meal prep",
+                "note": "Plan to batch cook tomorrow"
+              }
+            ]
+          }
         ]
       },
       {
@@ -1664,11 +2672,161 @@
           ]
         },
         "checklist": [
-          "Rest / gentle walk",
-          "Light easy-to-digest meals",
-          "Plan next week",
-          "7-day wrap-up journal",
-          "Early sleep before 10:30 PM"
+          {
+            "label": "Rest / light walk",
+            "why": "Supercompensation: the body doesn't just recover to its original state — it builds extra strength during the rest day.",
+            "details": [
+              "Supercompensation occurs 24–72 hours after heavy training — the body recovers and builds further to prepare for a similar load. Rest day is part of the training program, not outside of it.",
+              "Active rest (light walk 20–30 min) is better than complete rest — increases blood flow, reduces DOMS, doesn't add muscle stress.",
+              "Feeling 'must train to feel good' on rest days is attachment, not lack of recovery. Notice this feeling and let it pass — this is also mindset training."
+            ],
+            "points": [
+              {
+                "icon": "💪",
+                "label": "Muscles grow at rest",
+                "note": "Supercompensation — planned from the start"
+              },
+              {
+                "icon": "🚶",
+                "label": "Light walk is fine",
+                "note": "20–30 min easy helps recovery better"
+              },
+              {
+                "icon": "😴",
+                "label": "Sleep 30 min more",
+                "note": "Rest day = permission to sleep in"
+              },
+              {
+                "icon": "🧠",
+                "label": "Mental rest",
+                "note": "Don't worry about the next workout"
+              }
+            ]
+          },
+          {
+            "label": "Light easy-to-digest meals",
+            "why": "The digestive system also needs rest — 1 light eating day per week reduces gut inflammation and replenishes digestive enzymes.",
+            "details": [
+              "Gut rest (light, easy-to-digest eating) 1 day per week helps the intestinal lining recover and gut bacteria rebalance — similar to a rest day for muscles.",
+              "Congee, soup, vegetable broth are most easily digested: low in rough fiber, high in water, low energy cost to process. The digestive system processes quickly without needing many enzymes.",
+              "1,240 kcal is lower than usual — not training hard today so energy demand is lower. Listen to the body rather than forcing yourself to hit a calorie target."
+            ],
+            "points": [
+              {
+                "icon": "🍲",
+                "label": "Vegetable soup/broth",
+                "note": "Lightest for the gut"
+              },
+              {
+                "icon": "🥣",
+                "label": "Congee/porridge",
+                "note": "Most easily digested — fewest enzymes needed"
+              },
+              {
+                "icon": "🍊",
+                "label": "Fruit",
+                "note": "Natural enzymes support digestion"
+              },
+              {
+                "icon": "💧",
+                "label": "Drink more water",
+                "note": "2–2.5L on rest day to flush toxins"
+              }
+            ]
+          },
+          {
+            "label": "Plan the upcoming week",
+            "why": "Planning before the week starts removes real-time decisions — saves willpower for more important things.",
+            "details": [
+              "Decision fatigue: each small decision (train or not, what to eat) drains willpower. Planning ahead = brain doesn't need to decide again, just execute.",
+              "Blocking calendar time for workouts = a real commitment. 'I will train' < 'I block Mon/Wed/Fri at 6:30 AM for training' in terms of follow-through rate.",
+              "Grocery list prepared in advance = no missing healthy ingredients mid-week = no ordering fast food 'because there's nothing to eat'."
+            ],
+            "points": [
+              {
+                "icon": "📅",
+                "label": "Block calendar",
+                "note": "Schedule workouts = real commitment"
+              },
+              {
+                "icon": "🛒",
+                "label": "Grocery list",
+                "note": "Buy in advance = no mid-week gaps"
+              },
+              {
+                "icon": "🎯",
+                "label": "Week 2 goal",
+                "note": "What to increase? What to improve?"
+              },
+              {
+                "icon": "📝",
+                "label": "Rough meal plan",
+                "note": "3 main meals — no detail needed"
+              }
+            ]
+          },
+          {
+            "label": "7-day journal summary",
+            "why": "The first 7 days are the most important milestone — most people quit before day 4. You've surpassed that threshold.",
+            "details": [
+              "Completing 7 consecutive days is harder than you think. Most people trying a new habit quit before day 4 — you've crossed the most important threshold.",
+              "The 7-day journal isn't a performance review — it's a snapshot of the starting point to compare against in 3 months. Looking back, the difference will be clear.",
+              "Simplest structure: (1) Most surprising thing in 7 days, (2) Biggest challenge, (3) 1 commitment going forward. 15 minutes is enough."
+            ],
+            "points": [
+              {
+                "icon": "🏆",
+                "label": "3 things accomplished",
+                "note": "Even small — builds self-trust"
+              },
+              {
+                "icon": "🔍",
+                "label": "What was hardest",
+                "note": "Learning from real difficulty > success"
+              },
+              {
+                "icon": "💪",
+                "label": "1 commitment for week 2",
+                "note": "Specific and measurable"
+              },
+              {
+                "icon": "👥",
+                "label": "Share with someone",
+                "note": "Accountability = +65% continuation rate"
+              }
+            ]
+          },
+          {
+            "label": "Sleep early before 10:30 PM",
+            "why": "Sleeping before 10:30 PM on the last day of the week resets the circadian clock — prevents social jetlag for Monday.",
+            "details": [
+              "Social jetlag — staying up late on weekends, sleeping in — causes a state similar to mild jetlag on Monday. Sleeping at the correct time for 7 consecutive days eliminates this completely.",
+              "Sleeping an extra 30–60 minutes on rest days (not more than 1 hour beyond usual) helps repay 'sleep debt' without causing social jetlag.",
+              "Day 7 sleep before 10:30 PM = wake up refreshed on Monday, starting week 2 with peak energy. This is an investment in the next week."
+            ],
+            "points": [
+              {
+                "icon": "⏰",
+                "label": "10:30 PM target",
+                "note": "30 min earlier than usual — repay sleep debt"
+              },
+              {
+                "icon": "🔄",
+                "label": "Reset circadian clock",
+                "note": "Prevents Monday social jetlag"
+              },
+              {
+                "icon": "📵",
+                "label": "Phone off at 9 PM",
+                "note": "Prepare for earlier sleep"
+              },
+              {
+                "icon": "🌅",
+                "label": "Week 2 starts strong",
+                "note": "7 consistent days — week 2 results will be better"
+              }
+            ]
+          }
         ]
       }
     ],

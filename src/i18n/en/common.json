@@ -3957,7 +3957,441 @@
           "Increase no more than 10% volume per week",
           "Record RPE + reps in workout log immediately after session"
         ],
-        "avoid": "Never train 2 consecutive days — muscles need 48h to regenerate"
+        "avoid": "Never train 2 consecutive days — muscles need 48h to regenerate",
+        "movesData": [
+          {
+            "time": "EXERCISE 1",
+            "name": "Squat — 3×12",
+            "details": [
+              "Squat activates quads, glutes, and core simultaneously — the single best lower-body exercise. 3 sets × 12 reps with bodyweight or light load is the ideal starting point.",
+              "Key technique: knees track over toes, chest upright, sit hips back as if onto a chair. Never let knees cave inward.",
+              "When 3×12 feels easy: add one set or +2.5 kg. Never increase both at once — one variable at a time."
+            ],
+            "points": [
+              {
+                "icon": "🦵",
+                "label": "Full lower body",
+                "note": "Quads · glutes · hamstrings"
+              },
+              {
+                "icon": "📐",
+                "label": "Knees track toes",
+                "note": "Don't let them cave inward"
+              },
+              {
+                "icon": "⬆️",
+                "label": "Chest upright",
+                "note": "Avoid leaning too far forward"
+              },
+              {
+                "icon": "📊",
+                "label": "3×12 → progress",
+                "note": "Add 1 set OR +2.5 kg, not both"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Movement Patterns",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📈",
+                "label": "Track Progress",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          },
+          {
+            "time": "EXERCISE 2",
+            "name": "Hinge (Deadlift) — 3×10",
+            "details": [
+              "Hip hinge activates hamstrings, glutes, and lower back. Romanian Deadlift with light weight is the safest variant to start.",
+              "Technique: keep back straight, push hips back (not round the spine), feel hamstring stretch as you lower. Drive hips forward to stand.",
+              "This is the best exercise to prevent back pain — strong lower back = less pain from long sitting. 3×10 with good form beats heavy with poor form."
+            ],
+            "points": [
+              {
+                "icon": "🍑",
+                "label": "Glutes & hamstrings",
+                "note": "Posterior chain strength"
+              },
+              {
+                "icon": "🔒",
+                "label": "Flat back always",
+                "note": "Never round spine during deadlift"
+              },
+              {
+                "icon": "🦴",
+                "label": "Prevents back pain",
+                "note": "Strong lower back = chronic pain gone"
+              },
+              {
+                "icon": "🐢",
+                "label": "Slow on the way down",
+                "note": "2-second lower = better muscle stimulus"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Movement Patterns",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📐",
+                "label": "Daily Framework",
+                "to": "/pillar/a/framework"
+              }
+            ]
+          },
+          {
+            "time": "EXERCISE 3",
+            "name": "Push (Push-up) — 3×10",
+            "details": [
+              "Push-ups activate chest, front deltoids, and triceps. No equipment needed — bodyweight is enough when form and tempo are controlled.",
+              "If floor push-ups are too hard: start with incline push-ups (hands on bench/wall), reduce angle as you get stronger. Never 'cheat' by arching your back.",
+              "3×10 with a 1-second pause at the bottom outperforms 3×20 fast reps. Paused push-up eliminates momentum — 100% muscle."
+            ],
+            "points": [
+              {
+                "icon": "🫁",
+                "label": "Chest + shoulders + triceps",
+                "note": "3 upper-body muscle groups each rep"
+              },
+              {
+                "icon": "⬇️",
+                "label": "Pause at the bottom",
+                "note": "1s hold = eliminates momentum"
+              },
+              {
+                "icon": "📐",
+                "label": "Plank-straight back",
+                "note": "Core tight throughout the movement"
+              },
+              {
+                "icon": "📈",
+                "label": "Incline → floor",
+                "note": "Natural progression for beginners"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Movement Patterns",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "⚡",
+                "label": "Quick Workouts",
+                "to": "/pillar/f/quick-workouts"
+              }
+            ]
+          },
+          {
+            "time": "EXERCISE 4",
+            "name": "Pull (Row) — 3×10",
+            "details": [
+              "Pull/Row activates mid-back, lats, and biceps. Balancing push with pull is the #1 rule to avoid shoulder injuries and upper back pain long-term.",
+              "Dumbbell row, resistance band row, or table row (no equipment) all work. Key: squeeze the mid-back on the pull — don't just use your arms.",
+              "Most beginners overtrain push and neglect pull — muscle imbalance leads to shoulder pain after 3–6 months. Keep a 1:1 push-to-pull ratio."
+            ],
+            "points": [
+              {
+                "icon": "🔙",
+                "label": "Mid-back & lats",
+                "note": "Balanced with push = healthy shoulders"
+              },
+              {
+                "icon": "🤏",
+                "label": "Squeeze shoulder blades",
+                "note": "Pull with your back, not just arms"
+              },
+              {
+                "icon": "⚖️",
+                "label": "Push:Pull = 1:1",
+                "note": "Balance prevents shoulder injury"
+              },
+              {
+                "icon": "🪑",
+                "label": "No gym needed",
+                "note": "Table/chair/band all work"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Movement Patterns",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📈",
+                "label": "Track Progress",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          },
+          {
+            "time": "EXERCISE 5",
+            "name": "Core (Plank) — 3×30s",
+            "details": [
+              "Plank and core stability are the foundation of every other exercise — not for a six-pack, but to protect the spine when lifting heavier.",
+              "3×30s standard plank: neutral neck, hips not sagging, core rigid as if bracing for a punch. 30s perfect beats 2 minutes sloppy.",
+              "Progression: floor plank 30s → 45s → 60s → add shoulder taps → single-leg plank. Don't rush if back still sags."
+            ],
+            "points": [
+              {
+                "icon": "⚙️",
+                "label": "Foundation of all lifts",
+                "note": "Weak core = every exercise less effective"
+              },
+              {
+                "icon": "📐",
+                "label": "Hips don't sag",
+                "note": "Imagine a straight board heel to head"
+              },
+              {
+                "icon": "🧠",
+                "label": "Active neural drive",
+                "note": "Actively brace — don't just hold passively"
+              },
+              {
+                "icon": "⏱️",
+                "label": "30s perfect > 2 min sloppy",
+                "note": "Quality before duration"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Movement Patterns",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📐",
+                "label": "Daily Framework",
+                "to": "/pillar/a/framework"
+              }
+            ]
+          }
+        ],
+        "tipsData": [
+          {
+            "time": "PRINCIPLE",
+            "name": "Form Before Intensity",
+            "details": [
+              "Bad form with heavy weight = injury is only a matter of time. Good form with light weight = safe forever and better muscle activation.",
+              "Check form: film yourself from the side in the first session, compare with standard guides. Most mistakes are invisible without a mirror.",
+              "When to increase load: all reps in the set are clean + feels easy + rest between sets is sufficient. Only change 1 variable (weight OR reps) per week."
+            ],
+            "points": [
+              {
+                "icon": "🔬",
+                "label": "Form protects joints",
+                "note": "Form-related injuries can be long-lasting"
+              },
+              {
+                "icon": "📹",
+                "label": "Film yourself to check",
+                "note": "Phone at side angle = free coach"
+              },
+              {
+                "icon": "⚖️",
+                "label": "1 variable per week",
+                "note": "Weight OR reps, never both"
+              },
+              {
+                "icon": "🐢",
+                "label": "Slow tempo",
+                "note": "2s down · 1s hold · 1s push = better form"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Movement Patterns",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              }
+            ]
+          },
+          {
+            "time": "PRINCIPLE",
+            "name": "Mandatory 5-Minute Warm-Up",
+            "details": [
+              "70% of injuries happen in the first 10 minutes of training without a warm-up. Cold muscles contract slowly, stretch poorly, and receive neural signals 30% slower.",
+              "5-minute formula: joint rotations top-down (neck → shoulders → hips → knees) 30s each + 1 minute brisk walk or jumping jacks. Total 4–5 minutes is enough.",
+              "When rushed, only 3 minutes: rotate 3 major joints + 10 jumping jacks + 5 arm circles. Never skip entirely — no exceptions."
+            ],
+            "points": [
+              {
+                "icon": "🌡️",
+                "label": "Warm muscles = 20% more effective",
+                "note": "Muscle temperature up = stronger contractions"
+              },
+              {
+                "icon": "⚡",
+                "label": "Neural activation",
+                "note": "Neural drive prepares for heavier loads"
+              },
+              {
+                "icon": "⏱️",
+                "label": "Minimum 3 minutes",
+                "note": "No valid reason to skip this"
+              },
+              {
+                "icon": "🦴",
+                "label": "Joints first",
+                "note": "Top-down rotation — don't skip this step"
+              }
+            ],
+            "links": [
+              {
+                "icon": "📐",
+                "label": "Daily Framework",
+                "to": "/pillar/a/framework"
+              },
+              {
+                "icon": "🏃",
+                "label": "6 Movement Patterns",
+                "to": "/pillar/a/movements"
+              }
+            ]
+          },
+          {
+            "time": "PRINCIPLE",
+            "name": "Max +10% Volume Per Week",
+            "details": [
+              "The '10% rule' is the most universal rule in sports: increase total volume (sets × reps × weight) by no more than 10% per week. Exceed this threshold and injury risk doubles.",
+              "Practical example: this week 10 total sets → next week max 11 sets. Don't increase weight + reps + sets at the same time.",
+              "When your body signals overreach: persistent pain (different from normal muscle soreness), worse sleep, sharp drop in motivation = signs of overtraining. Reduce volume 20% for one week."
+            ],
+            "points": [
+              {
+                "icon": "📊",
+                "label": "Volume = sets×reps×weight",
+                "note": "Count weekly total, not per session"
+              },
+              {
+                "icon": "🛑",
+                "label": "Max +10% per week",
+                "note": "Exceed threshold = injury risk doubles"
+              },
+              {
+                "icon": "🔄",
+                "label": "Deload 1 week/month",
+                "note": "40% volume reduction = deep recovery"
+              },
+              {
+                "icon": "📝",
+                "label": "Track workout log",
+                "note": "No log = no idea how much you're increasing"
+              }
+            ],
+            "links": [
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              },
+              {
+                "icon": "📈",
+                "label": "Track Progress",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          },
+          {
+            "time": "PRINCIPLE",
+            "name": "Log RPE + Reps After Each Session",
+            "details": [
+              "RPE (Rate of Perceived Exertion) 1–10 is a self-assessment tool: RPE 6 = can talk easily · RPE 8 = hard to talk · RPE 10 = nothing left. Log right after each session.",
+              "5 minutes of training journaling = data to load intelligently. Review 4 weeks back: consistent RPE 7 → increase load. Consistent RPE 9 → hold or deload.",
+              "Minimum to log: exercise · weight · sets/reps · RPE. App or notebook — doesn't matter, what matters is consistency."
+            ],
+            "points": [
+              {
+                "icon": "🎯",
+                "label": "RPE 7–8 is the target",
+                "note": "Hard enough to stimulate, light enough to recover"
+              },
+              {
+                "icon": "📱",
+                "label": "App or notebook",
+                "note": "Data beats memory every time"
+              },
+              {
+                "icon": "🔍",
+                "label": "Review every 4 weeks",
+                "note": "Find patterns: progressing or stalling?"
+              },
+              {
+                "icon": "⚡",
+                "label": "5 min right after session",
+                "note": "While fresh — don't wait until tomorrow"
+              }
+            ],
+            "links": [
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              },
+              {
+                "icon": "✅",
+                "label": "Daily Checklist",
+                "to": "/pillar/f/checklist"
+              }
+            ]
+          }
+        ],
+        "avoidData": {
+          "time": "WARNING",
+          "name": "Never Train 2 Days in a Row",
+          "details": [
+            "Muscles don't grow during training — they grow during rest. Muscle fibers need 48–72h to rebuild protein and fully recover. Training again before that = micro-damage on top of micro-damage.",
+            "The 'DOMS' feeling (delayed onset muscle soreness) on day 2 after strength training is normal and safe. Training through it extends recovery — doesn't shorten it.",
+            "3×/week every other day (Mon·Wed·Fri) is the optimal design: enough stimulation + enough rest. Want daily training? Alternate strength with light cardio/recovery."
+          ],
+          "points": [
+            {
+              "icon": "⏳",
+              "label": "48–72h recovery",
+              "note": "Muscle fibers need time to rebuild"
+            },
+            {
+              "icon": "😴",
+              "label": "Sleep = recovery medicine",
+              "note": "Protein synthesis peaks during deep sleep"
+            },
+            {
+              "icon": "📅",
+              "label": "Mon·Wed·Fri is optimal",
+              "note": "Alternating days = train + rest balanced"
+            },
+            {
+              "icon": "🔄",
+              "label": "Daily training?",
+              "note": "Alternate strength + light cardio/recovery"
+            }
+          ],
+          "links": [
+            {
+              "icon": "🌿",
+              "label": "Active Recovery",
+              "to": "/pillar/c/recovery"
+            },
+            {
+              "icon": "📅",
+              "label": "Weekly Rhythm",
+              "to": "/pillar/a/weekly"
+            }
+          ]
+        }
       },
       {
         "sessions": "2×/week",
@@ -3975,7 +4409,441 @@
           "Listen to podcasts / music to increase commitment",
           "Target heart rate = (220 - age) × 60–70%"
         ],
-        "avoid": "Don't run fast immediately after meals — wait at least 30 minutes"
+        "avoid": "Don't run fast immediately after meals — wait at least 30 minutes",
+        "movesData": [
+          {
+            "time": "ACTIVITY 1",
+            "name": "Brisk Walk — 100–120 bpm",
+            "details": [
+              "Brisk walking is the perfect cardio for beginners: low injury risk, effective fat burning, and sustainable daily. Target heart rate 100–120 bpm = Zone 2.",
+              "Zone 2 cardio primarily burns fat as fuel, improves oxygen uptake (VO2max), and builds cardiovascular endurance. You can speak but breathing is slightly elevated.",
+              "30-minute brisk walk after lunch reduces blood sugar by 20–30% — as effective as mild diabetes medication according to 2023 CGM research."
+            ],
+            "points": [
+              {
+                "icon": "❤️",
+                "label": "Zone 2 cardio",
+                "note": "100–120 bpm = optimal fat burning"
+              },
+              {
+                "icon": "🧠",
+                "label": "Boosts brain endurance",
+                "note": "Cardio increases BDNF — brain growth protein"
+              },
+              {
+                "icon": "🩸",
+                "label": "Controls blood sugar",
+                "note": "-20–30% after eating 10–15 min of walking"
+              },
+              {
+                "icon": "🦴",
+                "label": "Lowest injury risk",
+                "note": "Low impact = safe for knees and back"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "NEAT & Lifestyle",
+                "to": "/pillar/c/neat"
+              },
+              {
+                "icon": "🔄",
+                "label": "Active Recovery",
+                "to": "/pillar/c/recovery"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 2",
+            "name": "Stationary / Outdoor Cycling",
+            "details": [
+              "Cycling is ideal cardio if knees or hips are sensitive — zero impact, easy to adjust intensity, and can be combined with content/entertainment.",
+              "Indoor bike: easy to add to morning or evening routine, watch shows or listen to podcasts simultaneously. Outdoor: adds benefits of natural light and fresh air.",
+              "Target intensity: you can say a short sentence without gasping. Slower = not enough stimulus. Faster = interval training territory (not today's goal)."
+            ],
+            "points": [
+              {
+                "icon": "🦴",
+                "label": "Zero impact",
+                "note": "Great for sensitive knees"
+              },
+              {
+                "icon": "🎬",
+                "label": "Combine with entertainment",
+                "note": "Watching + cycling = higher commitment"
+              },
+              {
+                "icon": "☀️",
+                "label": "Outdoors = extra benefits",
+                "note": "Natural light supports circadian rhythm"
+              },
+              {
+                "icon": "⚙️",
+                "label": "Easy intensity control",
+                "note": "High resistance = interval, low = Zone 2"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Circadian Rhythm",
+                "to": "/pillar/c/circadian"
+              },
+              {
+                "icon": "🌀",
+                "label": "NEAT",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 3",
+            "name": "Stair Climbing (NEAT)",
+            "details": [
+              "NEAT (Non-Exercise Activity Thermogenesis) is energy burned from non-gym activity. Stair climbing is the easiest NEAT to integrate into daily life.",
+              "Research shows active NEAT people burn 300–500 kcal/day more than sedentary people — without any extra workouts. 10 minutes of stairs/day = 70 free minutes of weekly cardio.",
+              "Integration tips: always take stairs over elevators, park 200m away, stand instead of sit during calls. Cumulative effect matters most — not each individual choice."
+            ],
+            "points": [
+              {
+                "icon": "🔥",
+                "label": "300–500 kcal/day",
+                "note": "Active NEAT = burns extra without workouts"
+              },
+              {
+                "icon": "🪜",
+                "label": "Stairs = glute training",
+                "note": "10 steps = effective glute activation"
+              },
+              {
+                "icon": "⏱️",
+                "label": "Integrated into daily life",
+                "note": "No extra time — just swap habits"
+              },
+              {
+                "icon": "📊",
+                "label": "10,000 steps/day",
+                "note": "Basic recommended NEAT target"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌀",
+                "label": "NEAT & Lifestyle",
+                "to": "/pillar/c/neat"
+              },
+              {
+                "icon": "📈",
+                "label": "Track Progress",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 4",
+            "name": "Light Swimming / Aqua Jogging",
+            "details": [
+              "Swimming is the best full-body cardio — activates upper body, lower body, and core simultaneously, while joint stress is near zero.",
+              "Aqua jogging (running in water with a flotation belt) is excellent for injury recovery — same intensity as running but zero impact.",
+              "No pool nearby? Replace with 25 minutes of brisk walking. Never skip a cardio session due to lack of equipment — a good substitute always beats skipping."
+            ],
+            "points": [
+              {
+                "icon": "💦",
+                "label": "Full-body cardio",
+                "note": "Upper · lower · core simultaneously"
+              },
+              {
+                "icon": "🦴",
+                "label": "Near-zero joint stress",
+                "note": "Best for sensitive knees"
+              },
+              {
+                "icon": "🩹",
+                "label": "Injury rehabilitation",
+                "note": "Aqua jogging = running without impact"
+              },
+              {
+                "icon": "🔄",
+                "label": "Flexible alternatives",
+                "note": "No pool? Brisk walk 25 minutes"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🔄",
+                "label": "Active Recovery",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🌀",
+                "label": "Lifestyle",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 5",
+            "name": "Jump Rope — 10 Min Is Enough",
+            "details": [
+              "10 minutes of light jump rope = 30 minutes of walking in calories burned — the highest time-efficiency of simple cardio forms. A jump rope costs very little and lasts decades.",
+              "Beginner technique: both feet together (not single-leg), wrists rotate the rope (not arms), weight on the balls of your feet. Slow and steady beats fast with trips.",
+              "If 10 straight minutes is too hard: alternate 30s jump + 30s rest × 10 rounds. Interval jump rope = cardio + coordination + endurance in one exercise."
+            ],
+            "points": [
+              {
+                "icon": "⚡",
+                "label": "10 min = 30 min walking",
+                "note": "Highest calorie/minute in simple cardio"
+              },
+              {
+                "icon": "🏠",
+                "label": "Works indoors",
+                "note": "No outdoor access or large equipment needed"
+              },
+              {
+                "icon": "🦶",
+                "label": "Land on balls of feet",
+                "note": "Weight forward, not on heels"
+              },
+              {
+                "icon": "🔄",
+                "label": "Intervals if not ready",
+                "note": "30s on + 30s rest × 10 rounds"
+              }
+            ],
+            "links": [
+              {
+                "icon": "⚡",
+                "label": "Quick Workouts",
+                "to": "/pillar/f/quick-workouts"
+              },
+              {
+                "icon": "📐",
+                "label": "Daily Framework",
+                "to": "/pillar/a/framework"
+              }
+            ]
+          }
+        ],
+        "tipsData": [
+          {
+            "time": "TIP",
+            "name": "After Lunch = Lower Blood Sugar",
+            "details": [
+              "10–15 minutes of walking after lunch reduces blood sugar by 20–30% — the most effective time window for walking according to CGM (continuous glucose monitor) studies.",
+              "Mechanism: glucose from the meal enters the blood → active leg muscles absorb glucose → less insulin required → stable blood sugar. Especially important with diabetes or pre-diabetes.",
+              "No speed required — a leisurely 10-minute walk is sufficient. Even standing instead of sitting after eating reduces blood sugar spikes by 10–15%."
+            ],
+            "points": [
+              {
+                "icon": "🩸",
+                "label": "-20–30% blood sugar",
+                "note": "Most effective time for post-meal walking"
+              },
+              {
+                "icon": "⏱️",
+                "label": "10–15 min is enough",
+                "note": "Don't need long — need the right timing"
+              },
+              {
+                "icon": "💡",
+                "label": "No need to go fast",
+                "note": "Leisurely still works — just move"
+              },
+              {
+                "icon": "🔬",
+                "label": "CGM research 2023",
+                "note": "Data from continuous glucose monitoring devices"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Nutrition",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "🌀",
+                "label": "NEAT",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "Walk to Work = Free NEAT",
+            "details": [
+              "Integrating walking into daily commutes = automatic NEAT that requires no willpower. Park 500m away, exit the bus one stop early, walk during lunch — easily accumulate 30–60 min/day.",
+              "NEAT doesn't count as 'gym training' but contributes 15–30% of total daily calories burned for active people. Office workers have 1500–2000 kcal/day less NEAT than active salespeople.",
+              "No big change needed — just swap one habit: always take stairs, always park further, always stand during phone calls. 3 changes = 200–300 kcal/day."
+            ],
+            "points": [
+              {
+                "icon": "🔄",
+                "label": "Automatic NEAT",
+                "note": "No willpower — built into daily habits"
+              },
+              {
+                "icon": "📊",
+                "label": "15–30% of calories burned",
+                "note": "NEAT contributes as much as gym workouts"
+              },
+              {
+                "icon": "🏢",
+                "label": "3 simple changes",
+                "note": "Stairs · park further · stand during calls"
+              },
+              {
+                "icon": "💰",
+                "label": "Completely free",
+                "note": "No gym fees, no equipment"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌀",
+                "label": "NEAT & Lifestyle",
+                "to": "/pillar/c/neat"
+              },
+              {
+                "icon": "🌿",
+                "label": "Lifestyle",
+                "to": "/pillar/c"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "Podcast / Music Boosts Commitment",
+            "details": [
+              "Only listen to your favorite podcast/music while walking or doing cardio — creates a special 'reward' for the workout. 'Temptation bundling' increases habit adherence by 51%.",
+              "Research from Wharton School: people using temptation bundling (only listening to audiobooks when exercising) exercised 51% more than those who didn't. Not willpower — system design.",
+              "Choose content you can only access during cardio: long podcast series, gripping audiobook, special playlist. The urge to hear 'what happens next' becomes your motivation to go outside."
+            ],
+            "points": [
+              {
+                "icon": "🎯",
+                "label": "Temptation bundling",
+                "note": "Good reward + hard action = better adherence"
+              },
+              {
+                "icon": "📈",
+                "label": "+51% exercise frequency",
+                "note": "Real research from Wharton School"
+              },
+              {
+                "icon": "🎵",
+                "label": "'Workout only' playlist",
+                "note": "That music = brain knows it's training time"
+              },
+              {
+                "icon": "📚",
+                "label": "Long audiobook series",
+                "note": "Want to keep listening = want to go for a walk"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Mindfulness",
+                "to": "/pillar/d"
+              },
+              {
+                "icon": "🌀",
+                "label": "NEAT",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "Target Heart Rate 60–70% Max",
+            "details": [
+              "Formula: max heart rate = 220 − age. Zone 2 cardio = 60–70% of max heart rate. Example age 30: max = 190 bpm → Zone 2 = 114–133 bpm.",
+              "Zone 2 is especially effective for: fat burning (the body uses fat as primary fuel), improving long-term cardiovascular endurance, recovering after heavy training.",
+              "Simplest way to gauge Zone 2 without devices: you must be able to say 1–2 complete sentences without gasping. Faster = Zone 3, slower = Zone 1."
+            ],
+            "points": [
+              {
+                "icon": "🧮",
+                "label": "220 − age = max HR",
+                "note": "E.g. age 30: max 190 → Zone 2: 114–133"
+              },
+              {
+                "icon": "🔥",
+                "label": "Zone 2 = fat burning",
+                "note": "Fat is the primary fuel at 60–70%"
+              },
+              {
+                "icon": "💬",
+                "label": "Simple talk test",
+                "note": "Can say 1 sentence = Zone 2"
+              },
+              {
+                "icon": "📱",
+                "label": "Smartwatch is convenient",
+                "note": "No math needed — device measures automatically"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Lifestyle",
+                "to": "/pillar/c"
+              },
+              {
+                "icon": "📈",
+                "label": "Track Progress",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          }
+        ],
+        "avoidData": {
+          "time": "WARNING",
+          "name": "Don't Sprint Right After Eating",
+          "details": [
+            "After a meal, blood flows to the digestive system to process food. Running hard immediately = competition for blood between muscles and intestines → stomach cramps, nausea, side stitches.",
+            "Wait 30 minutes after a light snack, 60–90 minutes after a full meal. Gentle walking after eating is the exception — slow enough not to divert digestive blood flow.",
+            "If you must train immediately: have a small 100–150 kcal snack (banana, rice cake) instead of a full meal. Light stomach = much more comfortable workout."
+          ],
+          "points": [
+            {
+              "icon": "🩸",
+              "label": "Blood competition",
+              "note": "Muscles vs gut = cramps, nausea"
+            },
+            {
+              "icon": "⏱️",
+              "label": "Wait 30–90 minutes",
+              "note": "30min after snack · 90min after full meal"
+            },
+            {
+              "icon": "🚶",
+              "label": "Light walk is OK",
+              "note": "Slow enough to not affect digestion"
+            },
+            {
+              "icon": "🍌",
+              "label": "Small pre-workout snack",
+              "note": "100–150 kcal = energy without heaviness"
+            }
+          ],
+          "links": [
+            {
+              "icon": "🥗",
+              "label": "Nutrition & Meal Plan",
+              "to": "/pillar/b"
+            },
+            {
+              "icon": "🌀",
+              "label": "NEAT",
+              "to": "/pillar/c/neat"
+            }
+          ]
+        }
       },
       {
         "sessions": "1×/week",
@@ -3993,7 +4861,441 @@
           "Best time to listen to body signals",
           "Drink more water than usual"
         ],
-        "avoid": "Don't treat this as a lazy day — intentional recovery = bigger muscles"
+        "avoid": "Don't treat this as a lazy day — intentional recovery = bigger muscles",
+        "movesData": [
+          {
+            "time": "ACTIVITY 1",
+            "name": "Static Stretch — 30–60s Each",
+            "details": [
+              "Static stretching after training: hold 30–60 seconds per muscle group, no bouncing, no pain. Prioritize muscles just trained: quads, hamstrings, hips, chest, shoulders.",
+              "Proper stretching reduces DOMS (delayed muscle soreness) by 20–30% and restores muscle length to prevent chronic tightness. You don't need flexibility — you need consistency.",
+              "Correct order: start with large muscles (thighs, glutes, back) before small muscles (biceps, calves). Gentle pull — should feel a stretch, not pain."
+            ],
+            "points": [
+              {
+                "icon": "⏱️",
+                "label": "30–60 seconds each",
+                "note": "Under 20s is not effective enough"
+              },
+              {
+                "icon": "😌",
+                "label": "Stretch, don't hurt",
+                "note": "If it hurts = too far, reduce range"
+              },
+              {
+                "icon": "🔄",
+                "label": "Large muscles first",
+                "note": "Thighs · glutes · back → shoulders → arms"
+              },
+              {
+                "icon": "📉",
+                "label": "-20–30% DOMS",
+                "note": "Next-day muscle soreness significantly reduced"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Active Recovery",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "📐",
+                "label": "Daily Framework",
+                "to": "/pillar/a/framework"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 2",
+            "name": "Foam Roll Full Body — 10 Min",
+            "details": [
+              "Foam rolling (self-myofascial release) breaks up 'trigger points' in muscles — small knots causing pain and limiting movement. 10 minutes on a roller equals a 20-minute massage.",
+              "Technique: roll slowly 2–3 seconds per cm, pause 20–30 seconds when you hit a painful spot until it softens. Don't roll continuously fast — that's ineffective.",
+              "Priority areas: hamstrings, IT band (outer thigh), calves, upper back (not neck or lower back). Use before static stretching for better results."
+            ],
+            "points": [
+              {
+                "icon": "🎯",
+                "label": "Trigger points",
+                "note": "Pause on sore spots 20–30s until they ease"
+              },
+              {
+                "icon": "🔙",
+                "label": "Lower back warning",
+                "note": "DON'T foam roll lower back — use tennis ball instead"
+              },
+              {
+                "icon": "⏰",
+                "label": "Before static stretching",
+                "note": "Foam roll first = 30% more effective stretching"
+              },
+              {
+                "icon": "💰",
+                "label": "Roller costs little",
+                "note": "Lasts decades — worth every penny"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Recovery",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🔄",
+                "label": "Lifestyle",
+                "to": "/pillar/c"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 3",
+            "name": "Light Yoga / Yin Yoga",
+            "details": [
+              "Yin yoga (holding poses 2–5 minutes) targets deep connective tissue (fascia, ligaments) — not just muscles. Increases joint range of motion in ways regular stretching cannot.",
+              "Ideal for recovery days because of slow pace, zero intensity, and deep relaxation through parasympathetic nervous system activation.",
+              "Don't know where to start: search YouTube 'Yoga with Adriene — Yin yoga for beginners' — the perfect free starting point."
+            ],
+            "points": [
+              {
+                "icon": "⏳",
+                "label": "Hold 2–5 min per pose",
+                "note": "Longer than regular stretch — intentional"
+              },
+              {
+                "icon": "🔗",
+                "label": "Targets fascia",
+                "note": "Deep connective tissue — beyond just muscle"
+              },
+              {
+                "icon": "😌",
+                "label": "Activates PSNS",
+                "note": "'Rest & digest' nervous system → deep relaxation"
+              },
+              {
+                "icon": "📱",
+                "label": "Free on YouTube",
+                "note": "Yoga with Adriene = best for beginners"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Recovery",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🧘",
+                "label": "Mindfulness",
+                "to": "/pillar/d"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 4",
+            "name": "Relaxing Park Walk",
+            "details": [
+              "Walking in green environments (parks, trees) reduces cortisol by 16% and blood pressure by 10% compared to the same distance in urban settings — Japanese research on 'Shinrin-yoku' (forest bathing).",
+              "This is perfect recovery cardio: heart rate 60–80 bpm, stimulates parasympathetic nervous system, boosts vitamin D from morning sunlight.",
+              "No park nearby: replace with walking on quiet streets, residential areas, or 20 minutes around your workplace. A calm environment matters more than whether trees are present."
+            ],
+            "points": [
+              {
+                "icon": "🌿",
+                "label": "-16% cortisol",
+                "note": "Nature lowers stress hormones better than city"
+              },
+              {
+                "icon": "☀️",
+                "label": "Natural vitamin D",
+                "note": "Morning outdoor light = the best source"
+              },
+              {
+                "icon": "😌",
+                "label": "Recovery cardio",
+                "note": "60–80 bpm = PSNS activation"
+              },
+              {
+                "icon": "🧠",
+                "label": "Shinrin-yoku",
+                "note": "Japanese forest bathing — 30 years of research"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Active Recovery",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🌀",
+                "label": "NEAT",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 5",
+            "name": "Self-Massage with Ball",
+            "details": [
+              "Tennis ball or lacrosse ball is the best self-massage tool for hard-to-reach areas: soles of feet, calves, shoulders, upper back. Place the ball, put weight on it, and rotate slowly.",
+              "Self-massage of calf muscles each evening before bed: press upward (toward heart) with hands. 5 min per leg = reduced DOMS and deeper sleep.",
+              "No tools: use your hands to gently massage the muscles you just trained, combined with deep breathing. No advanced technique needed — light pressure + consistency is enough."
+            ],
+            "points": [
+              {
+                "icon": "🎾",
+                "label": "Tennis ball is versatile",
+                "note": "Foot soles · calves · shoulders"
+              },
+              {
+                "icon": "🩸",
+                "label": "Improves circulation",
+                "note": "Foot to heart direction = reduces swelling"
+              },
+              {
+                "icon": "😴",
+                "label": "Before bed",
+                "note": "5 min leg massage → deeper sleep"
+              },
+              {
+                "icon": "💰",
+                "label": "Completely free",
+                "note": "Just need hands + patience"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Recovery",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🧘",
+                "label": "Mindfulness",
+                "to": "/pillar/d"
+              }
+            ]
+          }
+        ],
+        "tipsData": [
+          {
+            "time": "TIP",
+            "name": "'Invisible Training' — Muscles Grow During Recovery",
+            "details": [
+              "Muscles don't grow during gym training — they grow during rest and sleep. Training = breaking down muscle fibers. Rest = rebuilding them bigger than before. Skip rest = no muscle gains, just fatigue.",
+              "Protein synthesis (muscle protein building) peaks 24–48h AFTER heavy training — exactly during your recovery day. This is the 'invisible workout' as important as the gym session.",
+              "Recovery day includes: eating enough protein (1.6–2g/kg), sleeping 7–9h, good hydration, and gentle movement. Missing any one factor significantly reduces your training results."
+            ],
+            "points": [
+              {
+                "icon": "💤",
+                "label": "Sleep = muscle building",
+                "note": "GH (growth hormone) releases during deep sleep"
+              },
+              {
+                "icon": "🥩",
+                "label": "1.6–2g protein/kg",
+                "note": "Building material — can't be skipped"
+              },
+              {
+                "icon": "💧",
+                "label": "Good hydration",
+                "note": "Muscle is 75% water — dehydration slows recovery"
+              },
+              {
+                "icon": "🔄",
+                "label": "Active recovery",
+                "note": "Light movement improves blood flow to recovering muscles"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Nutrition",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "🌿",
+                "label": "Recovery",
+                "to": "/pillar/c/recovery"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "Breathing: 4s In · 4s Hold · 6s Out",
+            "details": [
+              "Exhaling longer than inhaling (4:4:6 or 4:6 ratio) activates the parasympathetic nervous system (rest & digest) — the opposite of the sympathetic (fight & flight). Use on recovery days for deeper relaxation.",
+              "5 minutes of 4-4-6 breathing reduces resting heart rate by 5–10 bpm and cortisol by 15–20% — as effective as 30 minutes of meditation for beginners. The simplest of all breathing exercises.",
+              "Practice: lie on your back, hand on belly, inhale 4s (belly rises), hold 4s, exhale 6s (belly falls). Repeat 5–10 times. Feeling drowsy afterward is normal and a good sign."
+            ],
+            "points": [
+              {
+                "icon": "😌",
+                "label": "4:4:6 = PSNS activation",
+                "note": "Longer exhale = relaxation response"
+              },
+              {
+                "icon": "❤️",
+                "label": "-5–10 bpm heart rate",
+                "note": "5 minutes of breathing = immediate effect"
+              },
+              {
+                "icon": "🛌",
+                "label": "Lying down is most effective",
+                "note": "Hand on belly to feel diaphragm breathing"
+              },
+              {
+                "icon": "😴",
+                "label": "Drowsiness is good",
+                "note": "PSNS working correctly"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌬️",
+                "label": "Breathing Technique",
+                "to": "/pillar/d/breathing"
+              },
+              {
+                "icon": "🧘",
+                "label": "Meditation",
+                "to": "/pillar/d/meditation"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "Listen to Body Signals Best on This Day",
+            "details": [
+              "Recovery day is the best time to scan your body: which areas are still tight? Which joints are uncomfortable? What is your overall energy like? These signals guide next week's training.",
+              "Distinguish 3 types of pain: DOMS (normal muscle soreness, 24–72h after training, self-resolving) · Acute pain (sharp pain during training, stop immediately) · Chronic pain (persistent >7 days, see a doctor).",
+              "5-minute morning body scan: lie still, scan from head to toe, notice without judgment. This skill develops over time and helps prevent injuries early."
+            ],
+            "points": [
+              {
+                "icon": "🔍",
+                "label": "Scan head to toe",
+                "note": "Notice — without judgment"
+              },
+              {
+                "icon": "🚦",
+                "label": "3 types of pain",
+                "note": "DOMS normal · Acute stop · Chronic → doctor"
+              },
+              {
+                "icon": "📅",
+                "label": "Guides next week",
+                "note": "Today's signals = adjust next training schedule"
+              },
+              {
+                "icon": "🧠",
+                "label": "Self-awareness skill",
+                "note": "Improves over time — like learning a language"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Mindfulness",
+                "to": "/pillar/d"
+              },
+              {
+                "icon": "🌿",
+                "label": "Recovery",
+                "to": "/pillar/c/recovery"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "Drink More Water Than Usual",
+            "details": [
+              "The day after heavy training, the body needs extra water to: transport nutrients to recovering muscles, eliminate metabolic waste (lactate, creatine), and maintain blood volume.",
+              "Target: 2–2.5L water/day on recovery days (vs the usual 1.5–2L). Drink steadily throughout the day — don't drink 1L all at once.",
+              "Signs of proper hydration: urine the color of pale lemonade. Dark yellow = dehydrated. Clear = too much water (rare but can cause electrolyte loss)."
+            ],
+            "points": [
+              {
+                "icon": "💧",
+                "label": "2–2.5L on recovery days",
+                "note": "20–30% more than a normal day"
+              },
+              {
+                "icon": "⏰",
+                "label": "Steady throughout the day",
+                "note": "Don't gulp it all at once — kidneys can't keep up"
+              },
+              {
+                "icon": "🟡",
+                "label": "Urine color",
+                "note": "Pale yellow = ideal"
+              },
+              {
+                "icon": "⚡",
+                "label": "Electrolytes if you sweat a lot",
+                "note": "Add small amount of salt or drink coconut water"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Nutrition",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "🌿",
+                "label": "Lifestyle",
+                "to": "/pillar/c"
+              }
+            ]
+          }
+        ],
+        "avoidData": {
+          "time": "WARNING",
+          "name": "Intentional Recovery ≠ Being Lazy",
+          "details": [
+            "The mindset 'skipping = losing' is the most common mistake for beginners. Recovery is not skipping training — recovery IS a training session, just a different kind.",
+            "Overtraining (too much training without enough rest) reduces performance, increases injury risk, and causes psychological burnout. Elite athletes also schedule 1–2 recovery days per week.",
+            "Active recovery (intentional light movement) beats complete rest: gentle movement improves blood flow to muscles, accelerates removal of metabolic waste, and reduces muscle stiffness."
+          ],
+          "points": [
+            {
+              "icon": "🧠",
+              "label": "Mindset matters",
+              "note": "Recovery = training — just a different type"
+            },
+            {
+              "icon": "⚡",
+              "label": "Overtraining is real",
+              "note": "Performance drops when rest is insufficient"
+            },
+            {
+              "icon": "🏃",
+              "label": "Active > passive rest",
+              "note": "Light movement recovers faster than lying still"
+            },
+            {
+              "icon": "🏆",
+              "label": "Elite athletes rest too",
+              "note": "Their schedules include recovery days just like yours"
+            }
+          ],
+          "links": [
+            {
+              "icon": "🌿",
+              "label": "Active Recovery",
+              "to": "/pillar/c/recovery"
+            },
+            {
+              "icon": "📅",
+              "label": "Weekly Rhythm",
+              "to": "/pillar/a/weekly"
+            }
+          ]
+        }
       },
       {
         "sessions": "1×/week",
@@ -4011,7 +5313,441 @@
           "Focus on nutrition and sleep quality",
           "Mental recovery as important as physical"
         ],
-        "avoid": "Don't feel guilty about resting — recovery is part of the program"
+        "avoid": "Don't feel guilty about resting — recovery is part of the program",
+        "movesData": [
+          {
+            "time": "ACTIVITY 1",
+            "name": "Reading / Relaxing Music",
+            "details": [
+              "Reading for 30 minutes/day reduces stress by 68% according to a University of Sussex 2009 study — more effective than walking (42%), drinking tea (54%), and listening to music (61%) for the same duration.",
+              "Topic for rest days: light non-fiction (skills, history), engaging novels, or re-reading a favorite book. Avoid work-related books so the brain truly rests.",
+              "Reading environment matters: good lighting, comfortable posture, no phone notifications. 20 minutes of focused reading > 1 hour of interrupted reading."
+            ],
+            "points": [
+              {
+                "icon": "😌",
+                "label": "-68% stress",
+                "note": "Reading beats yoga and walking for stress relief"
+              },
+              {
+                "icon": "🧠",
+                "label": "Brain truly rests",
+                "note": "Light topics — nothing work-related"
+              },
+              {
+                "icon": "📵",
+                "label": "No notifications",
+                "note": "20 focused minutes > 1 hour of interruptions"
+              },
+              {
+                "icon": "💡",
+                "label": "Audiobooks work too",
+                "note": "Eyes closed + audiobook = meditation + learning"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Mindfulness",
+                "to": "/pillar/d"
+              },
+              {
+                "icon": "💡",
+                "label": "Health Knowledge",
+                "to": "/pillar/e"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 2",
+            "name": "Meditation 10–15 Min",
+            "details": [
+              "10–15 minutes of meditation on rest day is a 'mental recharge' for the new week. Meditation isn't about having no thoughts — it's about noticing when the mind wanders and gently returning to the breath.",
+              "After 8 weeks of 10 min/day meditation: prefrontal cortex gray matter thickens (linked to decision-making and self-control), amygdala shrinks (linked to stress reactions).",
+              "Simplest method: sit comfortably, close eyes, count breaths from 1 to 10, restart from 1 when distracted. 10 minutes is where everything begins."
+            ],
+            "points": [
+              {
+                "icon": "🧠",
+                "label": "Changes the brain",
+                "note": "Measurable on MRI after 8 weeks"
+              },
+              {
+                "icon": "😌",
+                "label": "Not 'no thoughts'",
+                "note": "Noticing + returning = the correct technique"
+              },
+              {
+                "icon": "1️⃣",
+                "label": "Count breaths 1–10",
+                "note": "Simplest technique, most effective"
+              },
+              {
+                "icon": "⏰",
+                "label": "Morning > evening",
+                "note": "Morning meditation: better start to the day"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Meditation",
+                "to": "/pillar/d/meditation"
+              },
+              {
+                "icon": "🌬️",
+                "label": "Breathing Technique",
+                "to": "/pillar/d/breathing"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 3",
+            "name": "Family / Social Time",
+            "details": [
+              "Strong social connection is the #1 predictor of longevity — more important than not smoking, exercising, or eating healthy according to an 80-year Harvard study.",
+              "Quality over quantity: 30 minutes of dinner without phones with family is worth more than 3 hours together where everyone is on their own screen.",
+              "Rest day is the best time to recharge social energy: eat together, play board games, go for a walk, or cook together. The memories made here outlast gym results."
+            ],
+            "points": [
+              {
+                "icon": "❤️",
+                "label": "Longevity #1 factor",
+                "note": "Social connection more important than exercise"
+              },
+              {
+                "icon": "📵",
+                "label": "No phones during meals",
+                "note": "30 min present > 3h together but distracted"
+              },
+              {
+                "icon": "🎲",
+                "label": "Shared activities",
+                "note": "Cook · board games · walk together"
+              },
+              {
+                "icon": "🧠",
+                "label": "Recharge mental energy",
+                "note": "Introverts and extroverts both need connection"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Mindfulness",
+                "to": "/pillar/d"
+              },
+              {
+                "icon": "🌿",
+                "label": "Lifestyle",
+                "to": "/pillar/c"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 4",
+            "name": "Healthy Cooking / Meal Prep",
+            "details": [
+              "45–60 minutes of Sunday meal prep = 5–7 days of clean eating without having to think. Pre-cook: whole grains, protein (meat/legumes/eggs), and pre-cut vegetables.",
+              "Meal prep isn't cooking each meal in advance — it's preparing ingredients to assemble quickly. 3 containers of protein + 2 of grains + 1 of vegetables = dozens of meal combinations.",
+              "Batch cooking principle: cook 4× the quantity at once. Divide into containers, fridge for 4 days, freezer for 2–3 months. Saves money, saves time, better nutrition control."
+            ],
+            "points": [
+              {
+                "icon": "⏱️",
+                "label": "45 min = 7 days of clean eating",
+                "note": "Best time investment of the week"
+              },
+              {
+                "icon": "🧩",
+                "label": "Ingredients, not meals",
+                "note": "Prep components to assemble flexibly"
+              },
+              {
+                "icon": "💰",
+                "label": "Saves money",
+                "note": "Eating out costs 3× more than home cooking"
+              },
+              {
+                "icon": "🎯",
+                "label": "Controls macros",
+                "note": "Know what you eat = easier to reach goals"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Nutrition",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "📦",
+                "label": "Meal Prep Guide",
+                "to": "/pillar/b/mealprep"
+              }
+            ]
+          },
+          {
+            "time": "ACTIVITY 5",
+            "name": "Plan the New Week",
+            "details": [
+              "15 minutes of review + planning at week's end increases next week's execution rate to 70–80% (vs no planning = 30–40%). The brain needs specific visualization to act.",
+              "5-minute review: 3 things that went well, 1 thing to improve, was average RPE reasonable. No judgment — just observe.",
+              "10-minute plan: write training schedule Mon–Sun, 3–4 meals to prepare, 1 new habit to try. More specific = higher execution. 'Gym workout' → '3×10 push-ups at 7am Mon'."
+            ],
+            "points": [
+              {
+                "icon": "📈",
+                "label": "+70–80% execution",
+                "note": "Specific plan vs no plan"
+              },
+              {
+                "icon": "🔍",
+                "label": "5-min review first",
+                "note": "3 good · 1 improve · RPE check"
+              },
+              {
+                "icon": "✏️",
+                "label": "Specific = effective",
+                "note": "'7am Mon' beats 'sometime this week'"
+              },
+              {
+                "icon": "📓",
+                "label": "Write, don't just think",
+                "note": "Writing = commitment to yourself"
+              }
+            ],
+            "links": [
+              {
+                "icon": "✅",
+                "label": "Daily Checklist",
+                "to": "/pillar/f/checklist"
+              },
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              }
+            ]
+          }
+        ],
+        "tipsData": [
+          {
+            "time": "TIP",
+            "name": "Protein Synthesis Peaks on Rest Day",
+            "details": [
+              "Protein synthesis (muscle protein building) peaks 24–48h after a hard training session — meaning during your rest day. 'Rest day' is actually the day your muscles grow the most.",
+              "To maximize protein synthesis: eat enough protein (1.6–2g/kg), distributed across 4–5 meals (20–40g each), sleep 7–9h. Missing 1 of the 3 significantly reduces training results.",
+              "Rest isn't doing nothing — rest is optimizing recovery: sufficient protein + sufficient sleep + low stress. These 3 factors determine 80% of gym results."
+            ],
+            "points": [
+              {
+                "icon": "⏰",
+                "label": "24–48h after training",
+                "note": "Protein synthesis peaks on rest day"
+              },
+              {
+                "icon": "🥩",
+                "label": "1.6–2g protein/kg",
+                "note": "Can't build muscle without the raw material"
+              },
+              {
+                "icon": "😴",
+                "label": "7–9h sleep",
+                "note": "GH releases during deep sleep = muscle-building hormone"
+              },
+              {
+                "icon": "😌",
+                "label": "Low stress",
+                "note": "High cortisol = low protein synthesis"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Nutrition",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "🌿",
+                "label": "Recovery",
+                "to": "/pillar/c/recovery"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "8h+ Sleep — Golden Restoration Window",
+            "details": [
+              "Sleep is the 'superpower' of recovery: Growth Hormone (GH) secretes 70% during deep sleep, testosterone increases 10–15% after 8h sleep, cortisol drops to baseline.",
+              "Sunday is the best day to 'repay sleep debt': if you've been short on sleep all week, 1–2 extra hours on Sunday recovers 60–70% of cognitive performance (can't fully recover, but worth it).",
+              "Optimal sleep environment: cool room (18–20°C), completely dark, no noise. No phone 30 minutes before sleep. Consistent sleep schedule matters more than total hours."
+            ],
+            "points": [
+              {
+                "icon": "💪",
+                "label": "GH releases 70% during sleep",
+                "note": "Primary muscle-building hormone — can't skip"
+              },
+              {
+                "icon": "🌡️",
+                "label": "Cool room 18–20°C",
+                "note": "Temperature affects deep sleep quality"
+              },
+              {
+                "icon": "📵",
+                "label": "No phone 30 min before",
+                "note": "Blue light suppresses melatonin"
+              },
+              {
+                "icon": "⏰",
+                "label": "Consistent sleep schedule",
+                "note": "Regular schedule > total hours"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Lifestyle & Sleep",
+                "to": "/pillar/c"
+              },
+              {
+                "icon": "🌀",
+                "label": "Circadian Rhythm",
+                "to": "/pillar/c/circadian"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "Journal Review: 3 Good + 1 Improvement",
+            "details": [
+              "A 5-minute weekly review with a 3:1 ratio (3 positives : 1 improvement) helps the brain learn from success, not just failure. The brain naturally remembers negatives 3× more — 3:1 rebalances this.",
+              "Effective review questions: 'What am I most proud of this week?' · 'Where was I most consistent?' · 'One thing to do differently next week to improve by 1%?'",
+              "Writing down (not just thinking) = 42% better retention and higher commitment. 5 minutes each Sunday builds cumulative awareness by month — invisible short-term but clear after 1 year."
+            ],
+            "points": [
+              {
+                "icon": "🎯",
+                "label": "3:1 ratio",
+                "note": "3 positives before 1 improvement"
+              },
+              {
+                "icon": "✏️",
+                "label": "Write it down",
+                "note": "Writing > thinking: +42% retention"
+              },
+              {
+                "icon": "📈",
+                "label": "1% improvement/week",
+                "note": "52 weeks × 1% = +67% by year end"
+              },
+              {
+                "icon": "🔍",
+                "label": "3 standard questions",
+                "note": "Proud · consistent · adjust"
+              }
+            ],
+            "links": [
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              },
+              {
+                "icon": "✅",
+                "label": "Daily Checklist",
+                "to": "/pillar/f/checklist"
+              }
+            ]
+          },
+          {
+            "time": "TIP",
+            "name": "Plan Meals + Training Schedule",
+            "details": [
+              "People with a weekly meal plan eat 42% healthier and spend 25% less on food versus deciding impulsively each day (2016 study).",
+              "Next week's training plan: be specific — day, time, exercises. Not 'train Monday' but 'Squat 3×12 + Hinge 3×10 at 6:30am Monday'. Specific = brain knows what to prepare.",
+              "Check your weekly calendar before planning: long meeting on Tuesday → move training to a different time. Planning = never 'no time' because you've blocked the time in advance."
+            ],
+            "points": [
+              {
+                "icon": "🥘",
+                "label": "Meal plan = 42% healthier",
+                "note": "Deciding in advance > impulsive choices"
+              },
+              {
+                "icon": "📅",
+                "label": "Block training time",
+                "note": "Schedule like a meeting — don't cancel"
+              },
+              {
+                "icon": "🔄",
+                "label": "Check weekly calendar",
+                "note": "Predict conflicts = never miss a session"
+              },
+              {
+                "icon": "✏️",
+                "label": "More specific = better",
+                "note": "Day + time + exercises = real commitment"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "7-Day Meal Plan",
+                "to": "/pillar/b/7day"
+              },
+              {
+                "icon": "📦",
+                "label": "Meal Prep",
+                "to": "/pillar/b/mealprep"
+              }
+            ]
+          }
+        ],
+        "avoidData": {
+          "time": "WARNING",
+          "name": "Don't 'Make Up' Missed Sessions",
+          "details": [
+            "'Make-up training' (doubling up after a missed session) increases injury risk, causes psychological burnout, and creates a negative emotional relationship with exercise. The best week is a consistent week — not one with a monster session.",
+            "The right response when you miss a session: adjust the weekly schedule (shift Monday to Tuesday), don't add an extra session. Total 3 sessions/week is still achievable — just on different days.",
+            "The 'never miss twice in a row' mindset beats 'make up every miss'. 1 missed session = no problem. 2 consecutive misses = habit starts to fade. 3 in a row = rebuilding from scratch."
+          ],
+          "points": [
+            {
+              "icon": "🔄",
+              "label": "Adjust, don't make up",
+              "note": "Shift the day · keep 3 sessions/week total"
+            },
+            {
+              "icon": "🧠",
+              "label": "'Never miss twice'",
+              "note": "Simplest rule to maintain habits"
+            },
+            {
+              "icon": "📅",
+              "label": "Flexible schedule",
+              "note": "Mon/Wed/Fri is a suggestion — not a law"
+            },
+            {
+              "icon": "❤️",
+              "label": "Positive relationship with training",
+              "note": "Train because you enjoy it — not from guilt"
+            }
+          ],
+          "links": [
+            {
+              "icon": "📅",
+              "label": "Weekly Rhythm",
+              "to": "/pillar/a/weekly"
+            },
+            {
+              "icon": "✅",
+              "label": "Daily Checklist",
+              "to": "/pillar/f/checklist"
+            }
+          ]
+        }
       }
     ],
     "pillar_phase_intro_prefix": "Core content of pillar",

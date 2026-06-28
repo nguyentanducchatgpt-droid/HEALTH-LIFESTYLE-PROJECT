@@ -2305,7 +2305,15 @@ export default function Program() {
   const tWeeklyPanel = t('program.weekly_panel', { returnObjects: true });
   const localWeeklyPanel = WEEKLY_PANEL.map((panel, i) => {
     const tP = Array.isArray(tWeeklyPanel) ? tWeeklyPanel[i] : null;
-    return tP ? { ...panel, ...tP } : panel;
+    if (!tP) return panel;
+    const movesData = panel.movesData.map((md, j) =>
+      tP.movesData?.[j] ? { ...md, ...tP.movesData[j] } : md
+    );
+    const tipsData = panel.tipsData.map((td, j) =>
+      tP.tipsData?.[j] ? { ...td, ...tP.tipsData[j] } : td
+    );
+    const avoidData = tP.avoidData ? { ...panel.avoidData, ...tP.avoidData } : panel.avoidData;
+    return { ...panel, ...tP, movesData, tipsData, avoidData };
   });
 
   // Phase translations (preserve color/rgb/img/id/emoji from constant; override text fields)

@@ -3957,7 +3957,441 @@
           "Maximal 10% Volumen pro Woche steigern",
           "RPE + Wiederholungen sofort nach der Einheit im Trainingslog notieren"
         ],
-        "avoid": "Niemals 2 aufeinanderfolgende Tage trainieren — Muskeln brauchen 48h zur Regeneration"
+        "avoid": "Niemals 2 aufeinanderfolgende Tage trainieren — Muskeln brauchen 48h zur Regeneration",
+        "movesData": [
+          {
+            "time": "ÜBUNG 1",
+            "name": "Kniebeuge — 3×12",
+            "details": [
+              "Die Kniebeuge ist die 'Königin' der Übungen und aktiviert Oberschenkel, Gesäß und Rumpf gleichzeitig. 3 Sätze × 12 Wiederholungen mit Körpergewicht oder moderatem Gewicht ist der ideale Einstieg.",
+              "Technik: Knie in Richtung der Zehen, Brust aufrecht, Hüfte absenken als würde man sich auf einen Stuhl dahinter setzen. Knie niemals nach innen fallen lassen.",
+              "Wenn 3×12 sich leicht anfühlt: einen Satz hinzufügen oder 2,5 kg mehr. Nie beides gleichzeitig erhöhen — immer nur eine Variable."
+            ],
+            "points": [
+              {
+                "icon": "🦵",
+                "label": "Kompletter Unterkörper",
+                "note": "Oberschenkel · Gesäß · Rumpf"
+              },
+              {
+                "icon": "📐",
+                "label": "Knie über Zehen",
+                "note": "Nicht nach innen fallen lassen"
+              },
+              {
+                "icon": "⬆️",
+                "label": "Brust aufrecht",
+                "note": "Oberkörper nicht zu weit vorbeugen"
+              },
+              {
+                "icon": "📊",
+                "label": "3×12 → steigern",
+                "note": "1 Satz ODER +2,5 kg — nicht beides"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Bewegungsmuster",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📈",
+                "label": "Fortschritt verfolgen",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          },
+          {
+            "time": "ÜBUNG 2",
+            "name": "Hinge (Deadlift) — 3×10",
+            "details": [
+              "Die Hüftbeuge aktiviert Oberschenkelrückseite, Gesäß und unteren Rücken. Romanian Deadlift mit leichtem Gewicht ist die sicherste Variante für den Einstieg.",
+              "Technik: Rücken gerade halten, Hüfte nach hinten schieben (nicht den Rücken runden), Dehnung der hinteren Oberschenkel beim Absenken spüren. Hüfte nach vorne treiben beim Aufrichten.",
+              "Das ist die effektivste Übung gegen Rückenschmerzen — starker unterer Rücken = weniger Schmerzen beim langen Sitzen. 3×10 mit guter Form schlägt schwer mit schlechter Form."
+            ],
+            "points": [
+              {
+                "icon": "🍑",
+                "label": "Gesäß & hintere Oberschenkel",
+                "note": "Posterior Chain Stärke"
+              },
+              {
+                "icon": "🔒",
+                "label": "Rücken immer gerade",
+                "note": "Niemals den Rücken beim Deadlift runden"
+              },
+              {
+                "icon": "🦴",
+                "label": "Verhindert Rückenschmerzen",
+                "note": "Starker unterer Rücken = chronische Schmerzen weg"
+              },
+              {
+                "icon": "🐢",
+                "label": "Langsam absenken",
+                "note": "2 Sekunden runter = besserer Muskelreiz"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Bewegungsmuster",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📐",
+                "label": "Tagesrahmen",
+                "to": "/pillar/a/framework"
+              }
+            ]
+          },
+          {
+            "time": "ÜBUNG 3",
+            "name": "Push (Liegestütz) — 3×10",
+            "details": [
+              "Liegestütze aktivieren Brust, vordere Schultern und Trizeps. Kein Equipment nötig — das Körpergewicht reicht, wenn Form und Tempo kontrolliert sind.",
+              "Wenn Boden-Liegestütze zu schwer sind: mit Schräg-Liegestützen beginnen (Hände auf Bank/Wand), Winkel mit zunehmender Stärke verringern. Niemals den Rücken durchbiegen als 'Abkürzung'.",
+              "3×10 mit 1 Sekunde Pause unten schlägt 3×20 schnelle Wiederholungen. Pause eliminiert Schwung — 100% Muskelarbeit."
+            ],
+            "points": [
+              {
+                "icon": "🫁",
+                "label": "Brust + Schultern + Trizeps",
+                "note": "3 Oberkörper-Muskelgruppen pro Wiederholung"
+              },
+              {
+                "icon": "⬇️",
+                "label": "Pause unten",
+                "note": "1 Sekunde halten = Schwung eliminieren"
+              },
+              {
+                "icon": "📐",
+                "label": "Rücken gerade wie ein Brett",
+                "note": "Rumpf während der gesamten Bewegung angespannt"
+              },
+              {
+                "icon": "📈",
+                "label": "Schräg → Boden",
+                "note": "Natürliche Progression für Anfänger"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Bewegungsmuster",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "⚡",
+                "label": "Quick Workouts",
+                "to": "/pillar/f/quick-workouts"
+              }
+            ]
+          },
+          {
+            "time": "ÜBUNG 4",
+            "name": "Pull (Rudern) — 3×10",
+            "details": [
+              "Pull/Rudern aktiviert mittleren Rücken, Latissimus und Bizeps. Push-Pull-Balance ist Regel Nr. 1 zur Vermeidung von Schulter- und Rückenschmerzen langfristig.",
+              "Kurzhantel-Rudern, Widerstandsband-Rudern oder Tisch-Rudern (kein Equipment) sind alle effektiv. Wichtig: Rücken beim Ziehen zusammendrücken — nicht nur mit den Armen ziehen.",
+              "Die meisten Anfänger übertrainieren Push und vernachlässigen Pull — Muskelungleichgewicht führt nach 3–6 Monaten zu Schulterschmerzen. Push:Pull-Verhältnis 1:1 einhalten."
+            ],
+            "points": [
+              {
+                "icon": "🔙",
+                "label": "Mittlerer Rücken & Lat",
+                "note": "Balance mit Push = gesunde Schultern"
+              },
+              {
+                "icon": "🤏",
+                "label": "Schulterblätter zusammendrücken",
+                "note": "Mit dem Rücken ziehen, nicht nur mit Armen"
+              },
+              {
+                "icon": "⚖️",
+                "label": "Push:Pull = 1:1",
+                "note": "Balance verhindert Schulterverletzungen"
+              },
+              {
+                "icon": "🪑",
+                "label": "Kein Gym nötig",
+                "note": "Tisch / Stuhl / Band funktionieren alle"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Bewegungsmuster",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📈",
+                "label": "Fortschritt verfolgen",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          },
+          {
+            "time": "ÜBUNG 5",
+            "name": "Rumpf (Plank) — 3×30s",
+            "details": [
+              "Plank und Rumpfstabilität sind die Grundlage jeder anderen Übung — nicht für ein Sixpack, sondern um die Wirbelsäule beim schwereren Heben zu schützen.",
+              "3×30s Standard-Plank: neutraler Nacken, Hüften nicht absacken, Rumpf starr wie beim Abwehren eines Schlags. 30 Sekunden perfekt schlägt 2 Minuten schlampig.",
+              "Progression: Boden-Plank 30s → 45s → 60s → Schulter-Taps hinzufügen → Einbein-Plank. Nicht eilen, solange der Rücken noch absackt."
+            ],
+            "points": [
+              {
+                "icon": "⚙️",
+                "label": "Grundlage aller Übungen",
+                "note": "Schwacher Rumpf = jede Übung weniger effektiv"
+              },
+              {
+                "icon": "📐",
+                "label": "Hüften nicht absacken",
+                "note": "Stell dir ein gerades Brett von Ferse bis Kopf vor"
+              },
+              {
+                "icon": "🧠",
+                "label": "Aktive neuronale Ansteuerung",
+                "note": "Aktiv anspannen — nicht nur passiv halten"
+              },
+              {
+                "icon": "⏱️",
+                "label": "30s perfekt > 2 min schlampig",
+                "note": "Qualität vor Dauer"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Bewegungsmuster",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📐",
+                "label": "Tagesrahmen",
+                "to": "/pillar/a/framework"
+              }
+            ]
+          }
+        ],
+        "tipsData": [
+          {
+            "time": "PRINZIP",
+            "name": "Form vor Intensität",
+            "details": [
+              "Schlechte Form mit schwerem Gewicht = Verletzung ist nur eine Frage der Zeit. Gute Form mit leichtem Gewicht = dauerhaft sicher und bessere Muskelaktivierung.",
+              "Form prüfen: in der ersten Einheit von der Seite filmen, mit Standardanleitungen vergleichen. Die meisten Fehler sind ohne Spiegel unsichtbar.",
+              "Wann die Last erhöhen: alle Wiederholungen im Satz sind sauber + fühlt sich leicht an + ausreichend Erholung zwischen den Sätzen. Nur 1 Variable (Gewicht ODER Wdh.) pro Woche ändern."
+            ],
+            "points": [
+              {
+                "icon": "🔬",
+                "label": "Form schützt Gelenke",
+                "note": "Formbedingte Verletzungen können langanhaltend sein"
+              },
+              {
+                "icon": "📹",
+                "label": "Von der Seite filmen",
+                "note": "Handy seitlich = kostenloser Coach"
+              },
+              {
+                "icon": "⚖️",
+                "label": "1 Variable pro Woche",
+                "note": "Gewicht ODER Wdh. — niemals beides"
+              },
+              {
+                "icon": "🐢",
+                "label": "Langsames Tempo",
+                "note": "2s runter · 1s halten · 1s hoch = bessere Form"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🏃",
+                "label": "6 Bewegungsmuster",
+                "to": "/pillar/a/movements"
+              },
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              }
+            ]
+          },
+          {
+            "time": "PRINZIP",
+            "name": "Pflichtaufwärmen 5 Minuten",
+            "details": [
+              "70% der Verletzungen passieren in den ersten 10 Minuten ohne Aufwärmen. Kalte Muskeln kontrahieren langsamer, dehnen schlechter und empfangen Nervensignale 30% langsamer.",
+              "5-Minuten-Formel: Gelenkrotationen von oben nach unten (Nacken → Schultern → Hüften → Knie) 30s jeweils + 1 Minute zügiges Gehen oder Hampelmänner. Gesamt 4–5 Minuten reichen.",
+              "Wenn es eilt, nur 3 Minuten: 3 große Gelenke rotieren + 10 Hampelmänner + 5 Armkreisen. Niemals ganz weglassen — keine Ausnahmen."
+            ],
+            "points": [
+              {
+                "icon": "🌡️",
+                "label": "Warme Muskeln = 20% effektiver",
+                "note": "Erhöhte Muskeltemperatur = stärkere Kontraktionen"
+              },
+              {
+                "icon": "⚡",
+                "label": "Neuromuskuläre Aktivierung",
+                "note": "Nervensystem bereitet sich auf Belastung vor"
+              },
+              {
+                "icon": "⏱️",
+                "label": "Minimum 3 Minuten",
+                "note": "Kein gültiger Grund, das zu überspringen"
+              },
+              {
+                "icon": "🦴",
+                "label": "Gelenke zuerst",
+                "note": "Von oben nach unten rotieren — diesen Schritt nicht überspringen"
+              }
+            ],
+            "links": [
+              {
+                "icon": "📐",
+                "label": "Tagesrahmen",
+                "to": "/pillar/a/framework"
+              },
+              {
+                "icon": "🏃",
+                "label": "6 Bewegungsmuster",
+                "to": "/pillar/a/movements"
+              }
+            ]
+          },
+          {
+            "time": "PRINZIP",
+            "name": "Maximal +10% Volumen pro Woche",
+            "details": [
+              "Die '10%-Regel' ist die universellste Regel im Sport: Gesamtvolumen (Sätze × Wdh. × Gewicht) um maximal 10% pro Woche erhöhen. Diesen Schwellenwert überschreiten = Verletzungsrisiko verdoppelt sich.",
+              "Praktisches Beispiel: diese Woche 10 Gesamtsätze → nächste Woche maximal 11 Sätze. Nicht Gewicht + Wdh. + Sätze gleichzeitig erhöhen.",
+              "Wenn der Körper Überbelastung signalisiert: anhaltende Schmerzen, schlechterer Schlaf, starker Motivationsabfall = Zeichen von Übertraining. Volumen 1 Woche um 20% reduzieren."
+            ],
+            "points": [
+              {
+                "icon": "📊",
+                "label": "Volumen = Sätze×Wdh.×Gewicht",
+                "note": "Wochentotal zählen, nicht pro Einheit"
+              },
+              {
+                "icon": "🛑",
+                "label": "Maximal +10% pro Woche",
+                "note": "Schwellenwert überschreiten = Verletzung näher"
+              },
+              {
+                "icon": "🔄",
+                "label": "Deload 1 Woche/Monat",
+                "note": "40% Volumenreduktion = tiefe Erholung"
+              },
+              {
+                "icon": "📝",
+                "label": "Workout Log führen",
+                "note": "Kein Log = keine Ahnung wie viel man steigert"
+              }
+            ],
+            "links": [
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              },
+              {
+                "icon": "📈",
+                "label": "Fortschritt verfolgen",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          },
+          {
+            "time": "PRINZIP",
+            "name": "RPE + Wdh. nach jeder Einheit notieren",
+            "details": [
+              "RPE (Rate of Perceived Exertion) 1–10 ist ein Selbstbewertungstool: RPE 6 = kann problemlos sprechen · RPE 8 = schwer zu sprechen · RPE 10 = nichts mehr übrig. Direkt nach jeder Einheit notieren.",
+              "5 Minuten Trainingsprotokoll = Daten für intelligente Laststeigerung. Letzten 4 Wochen rückblicken: konstant RPE 7 → Last erhöhen. Konstant RPE 9 → halten oder Deload.",
+              "Mindestanforderungen: Übung · Gewicht · Sätze/Wdh. · RPE. App oder Notizbuch — egal, Hauptsache konsequent."
+            ],
+            "points": [
+              {
+                "icon": "🎯",
+                "label": "RPE 7–8 ist das Ziel",
+                "note": "Hart genug für Reiz, leicht genug für Erholung"
+              },
+              {
+                "icon": "📱",
+                "label": "App oder Notizbuch",
+                "note": "Daten schlagen immer das Gedächtnis"
+              },
+              {
+                "icon": "🔍",
+                "label": "Alle 4 Wochen reviewen",
+                "note": "Muster finden: Fortschritt oder Stillstand?"
+              },
+              {
+                "icon": "⚡",
+                "label": "5 Min direkt nach der Einheit",
+                "note": "Solange es noch frisch ist — nicht bis morgen warten"
+              }
+            ],
+            "links": [
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              },
+              {
+                "icon": "✅",
+                "label": "Daily Checklist",
+                "to": "/pillar/f/checklist"
+              }
+            ]
+          }
+        ],
+        "avoidData": {
+          "time": "WARNUNG",
+          "name": "Niemals 2 Tage hintereinander trainieren",
+          "details": [
+            "Muskeln wachsen nicht beim Training — sie wachsen beim Ausruhen. Muskelfasern brauchen 48–72h zum Wiederaufbau. Vorher wieder trainieren = Mikroverletzungen auf Mikroverletzungen.",
+            "Das 'DOMS'-Gefühl (Muskelkater) am 2. Tag nach dem Krafttraining ist normal und sicher. Trotz Schmerzen weiterzutrainieren verlängert die Erholung — verkürzt sie nicht.",
+            "3×/Woche jeden zweiten Tag (Mo·Mi·Fr) ist das optimale Design: ausreichend Reiz + ausreichend Ruhe. Tägliches Training gewünscht? Kraft mit leichtem Cardio/Erholung abwechseln."
+          ],
+          "points": [
+            {
+              "icon": "⏳",
+              "label": "48–72h Erholung",
+              "note": "Muskelfasern brauchen Zeit zur Proteinneusynthese"
+            },
+            {
+              "icon": "😴",
+              "label": "Schlaf = Erholungsmedizin",
+              "note": "Proteinsynthese am höchsten im Tiefschlaf"
+            },
+            {
+              "icon": "📅",
+              "label": "Mo·Mi·Fr ist optimal",
+              "note": "Abwechselnde Tage = Training + Ruhe ausgeglichen"
+            },
+            {
+              "icon": "🔄",
+              "label": "Tägliches Training?",
+              "note": "Kraft + leichtes Cardio/Erholung abwechseln"
+            }
+          ],
+          "links": [
+            {
+              "icon": "🌿",
+              "label": "Aktive Erholung",
+              "to": "/pillar/c/recovery"
+            },
+            {
+              "icon": "📅",
+              "label": "Wochenrhythmus",
+              "to": "/pillar/a/weekly"
+            }
+          ]
+        }
       },
       {
         "sessions": "2×/Woche",
@@ -3975,7 +4409,441 @@
           "Podcasts / Musik hören um Commitment zu steigern",
           "Ziel-Herzfrequenz = (220 - Alter) × 60–70%"
         ],
-        "avoid": "Nicht direkt nach dem Essen laufen — mindestens 30 Minuten warten"
+        "avoid": "Nicht direkt nach dem Essen laufen — mindestens 30 Minuten warten",
+        "movesData": [
+          {
+            "time": "AKTIVITÄT 1",
+            "name": "Flotter Spaziergang — 100–120 bpm",
+            "details": [
+              "Flotte Spaziergänge sind das perfekte Cardio für Anfänger: geringes Verletzungsrisiko, effektive Fettverbrennung und täglich durchhaltbar. Zielpuls 100–120 bpm = Zone 2.",
+              "Zone 2 verbrennt hauptsächlich Fett als Brennstoff, verbessert die Sauerstoffaufnahme (VO2max) und baut Herz-Kreislauf-Ausdauer auf. Man kann sprechen, aber die Atmung ist leicht erhöht.",
+              "30 Minuten zügiges Gehen nach dem Mittagessen senkt den Blutzucker um 20–30% — laut CGM-Studie 2023 so effektiv wie leichte Diabetesmedikamente."
+            ],
+            "points": [
+              {
+                "icon": "❤️",
+                "label": "Zone 2 Cardio",
+                "note": "100–120 bpm = optimale Fettverbrennung"
+              },
+              {
+                "icon": "🧠",
+                "label": "Gehirnausdauer steigern",
+                "note": "Cardio erhöht BDNF — Hirnwachstumsprotein"
+              },
+              {
+                "icon": "🩸",
+                "label": "Blutzucker kontrollieren",
+                "note": "-20–30% nach 10–15 Min Gehen nach dem Essen"
+              },
+              {
+                "icon": "🦴",
+                "label": "Geringstes Verletzungsrisiko",
+                "note": "Geringer Impact = sicher für Knie und Rücken"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "NEAT & Lebensstil",
+                "to": "/pillar/c/neat"
+              },
+              {
+                "icon": "🔄",
+                "label": "Aktive Erholung",
+                "to": "/pillar/c/recovery"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 2",
+            "name": "Stationäres / Outdoor-Fahrrad",
+            "details": [
+              "Radfahren ist ideales Cardio bei empfindlichen Knien oder Hüften — kein Impact, einfache Intensitätsanpassung und kombinierbar mit Unterhaltung.",
+              "Indoor-Bike: leicht in die Morgen- oder Abendroutine integrierbar, dabei Serien oder Podcasts hören. Outdoor: zusätzlicher Nutzen durch natürliches Licht und frische Luft.",
+              "Zielintensität: man kann einen kurzen Satz sagen ohne außer Atem zu kommen. Langsamer = nicht genug Reiz. Schneller = Intervalltraining (heute nicht das Ziel)."
+            ],
+            "points": [
+              {
+                "icon": "🦴",
+                "label": "Kein Impact",
+                "note": "Ideal für empfindliche Knie"
+              },
+              {
+                "icon": "🎬",
+                "label": "Mit Unterhaltung kombinierbar",
+                "note": "Serien + Radfahren = höhere Durchhaltung"
+              },
+              {
+                "icon": "☀️",
+                "label": "Outdoor = Extra-Vorteile",
+                "note": "Natürliches Licht unterstützt den Biorhythmus"
+              },
+              {
+                "icon": "⚙️",
+                "label": "Einfache Intensitätskontrolle",
+                "note": "Hoher Widerstand = Intervall, niedrig = Zone 2"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Biorhythmus",
+                "to": "/pillar/c/circadian"
+              },
+              {
+                "icon": "🌀",
+                "label": "NEAT",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 3",
+            "name": "Treppensteigen (NEAT)",
+            "details": [
+              "NEAT (Non-Exercise Activity Thermogenesis) ist Energie, die durch nicht-sportliche Aktivitäten verbrannt wird. Treppensteigen ist die am einfachsten in den Alltag integrierbare NEAT-Aktivität.",
+              "Forschungen zeigen, dass aktive NEAT-Menschen täglich 300–500 kcal mehr verbrennen als sitzende Menschen — ohne zusätzliche Workouts. 10 Minuten Treppen/Tag = 70 kostenlose Cardio-Minuten pro Woche.",
+              "Integrationstipps: immer Treppen statt Aufzug wählen, 200m weiter parken, bei Anrufen stehen statt sitzen. Der kumulative Effekt ist entscheidend — nicht jede einzelne Entscheidung."
+            ],
+            "points": [
+              {
+                "icon": "🔥",
+                "label": "300–500 kcal/Tag",
+                "note": "Aktives NEAT = mehr verbrennen ohne Workout"
+              },
+              {
+                "icon": "🪜",
+                "label": "Treppen = Gesäßtraining",
+                "note": "10 Stufen = effektive Glutealaktivierung"
+              },
+              {
+                "icon": "⏱️",
+                "label": "In den Alltag integriert",
+                "note": "Keine extra Zeit — nur Gewohnheiten tauschen"
+              },
+              {
+                "icon": "📊",
+                "label": "10.000 Schritte/Tag",
+                "note": "Empfohlenes NEAT-Basisziel"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌀",
+                "label": "NEAT & Lebensstil",
+                "to": "/pillar/c/neat"
+              },
+              {
+                "icon": "📈",
+                "label": "Fortschritt verfolgen",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 4",
+            "name": "Leichtes Schwimmen / Aqua-Jogging",
+            "details": [
+              "Schwimmen ist das beste Ganzkörper-Cardio — aktiviert Ober- und Unterkörper sowie Rumpf gleichzeitig, bei nahezu null Gelenkbelastung.",
+              "Aqua-Jogging (Laufen im Wasser mit Auftriebsgürtel) ist hervorragend für Verletzungsrehabilitation — gleiche Intensität wie Laufen, aber ohne Impact.",
+              "Kein Schwimmbad in der Nähe? Durch 25 Minuten zügiges Gehen ersetzen. Niemals eine Cardio-Einheit wegen fehlendem Equipment ausfallen lassen — eine gute Alternative schlägt immer das Weglassen."
+            ],
+            "points": [
+              {
+                "icon": "💦",
+                "label": "Ganzkörper-Cardio",
+                "note": "Ober- · Unterkörper · Rumpf gleichzeitig"
+              },
+              {
+                "icon": "🦴",
+                "label": "Nahezu null Gelenkbelastung",
+                "note": "Bestes Cardio bei Knieproblemen"
+              },
+              {
+                "icon": "🩹",
+                "label": "Verletzungsrehabilitation",
+                "note": "Aqua-Jogging = Laufen ohne Impact"
+              },
+              {
+                "icon": "🔄",
+                "label": "Flexible Alternativen",
+                "note": "Kein Bad? Zügiges Gehen 25 Minuten"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🔄",
+                "label": "Aktive Erholung",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🌀",
+                "label": "Lebensstil",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 5",
+            "name": "Seilspringen — 10 Min reichen",
+            "details": [
+              "10 Minuten leichtes Seilspringen = 30 Minuten Spaziergang in verbrannten Kalorien — die höchste Zeiteffizienz einfacher Cardio-Formen. Ein Springseil kostet wenig und hält jahrzehntelang.",
+              "Anfängertechnik: beide Füße zusammen (nicht einbeinig), Handgelenke drehen das Seil (nicht die Arme), Gewicht auf den Fußballen. Langsam und gleichmäßig schlägt schnell mit Stolpern.",
+              "Wenn 10 Minuten am Stück noch zu schwer sind: 30s Springen + 30s Pause × 10 Runden abwechseln. Intervall-Seilspringen = Cardio + Koordination + Ausdauer in einer Übung."
+            ],
+            "points": [
+              {
+                "icon": "⚡",
+                "label": "10 Min = 30 Min Gehen",
+                "note": "Höchste Kalorien/Minute im einfachen Cardio"
+              },
+              {
+                "icon": "🏠",
+                "label": "Funktioniert drinnen",
+                "note": "Kein Ausgang oder große Geräte nötig"
+              },
+              {
+                "icon": "🦶",
+                "label": "Auf den Fußballen landen",
+                "note": "Gewicht nach vorne, nicht auf die Fersen"
+              },
+              {
+                "icon": "🔄",
+                "label": "Intervalle wenn noch nicht bereit",
+                "note": "30s an + 30s Pause × 10 Runden"
+              }
+            ],
+            "links": [
+              {
+                "icon": "⚡",
+                "label": "Quick Workouts",
+                "to": "/pillar/f/quick-workouts"
+              },
+              {
+                "icon": "📐",
+                "label": "Tagesrahmen",
+                "to": "/pillar/a/framework"
+              }
+            ]
+          }
+        ],
+        "tipsData": [
+          {
+            "time": "TIPP",
+            "name": "Nach dem Mittagessen = Blutzucker senken",
+            "details": [
+              "10–15 Minuten Gehen nach dem Mittagessen senkt den Blutzucker um 20–30% — das effektivste Zeitfenster für Spaziergänge laut CGM-Studien (kontinuierliche Glukoseüberwachung).",
+              "Mechanismus: Glukose aus der Mahlzeit gelangt ins Blut → aktive Beinmuskeln nehmen Glukose auf → weniger Insulin benötigt → stabiler Blutzucker. Besonders wichtig bei Diabetes oder Prä-Diabetes.",
+              "Keine Geschwindigkeit nötig — ein gemütlicher 10-Minuten-Spaziergang reicht. Sogar Stehen statt Sitzen nach dem Essen reduziert Blutzuckerspitzen um 10–15%."
+            ],
+            "points": [
+              {
+                "icon": "🩸",
+                "label": "-20–30% Blutzucker",
+                "note": "Effektivstes Zeitfenster für Spaziergänge"
+              },
+              {
+                "icon": "⏱️",
+                "label": "10–15 Min reichen",
+                "note": "Nicht lang — sondern zur richtigen Zeit"
+              },
+              {
+                "icon": "💡",
+                "label": "Kein schnelles Tempo nötig",
+                "note": "Gemütlich funktioniert auch — Hauptsache bewegen"
+              },
+              {
+                "icon": "🔬",
+                "label": "CGM-Forschung 2023",
+                "note": "Daten von kontinuierlichen Glukosemessgeräten"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Ernährung",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "🌀",
+                "label": "NEAT",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "Zu Fuß zur Arbeit = kostenlose NEAT",
+            "details": [
+              "Gehen in die tägliche Mobilität integrieren = automatisches NEAT ohne Willenskraft. 500m weiter parken, eine Haltestelle früher aussteigen, mittags spazieren gehen — 30–60 Min/Tag leicht kumulieren.",
+              "NEAT zählt nicht als 'Gym-Training', trägt aber 15–30% der täglich verbrannten Gesamtkalorien bei aktiven Menschen bei. Büroarbeiter haben 1500–2000 kcal/Tag weniger NEAT als aktive Verkäufer.",
+              "Keine große Veränderung nötig — nur eine Gewohnheit tauschen: immer Treppen, immer weiter parken, immer stehen bei Telefonaten. 3 Änderungen = 200–300 kcal/Tag."
+            ],
+            "points": [
+              {
+                "icon": "🔄",
+                "label": "Automatisches NEAT",
+                "note": "Keine Willenskraft — in Gewohnheiten integriert"
+              },
+              {
+                "icon": "📊",
+                "label": "15–30% der Kalorien",
+                "note": "NEAT trägt so viel bei wie Gym-Training"
+              },
+              {
+                "icon": "🏢",
+                "label": "3 einfache Änderungen",
+                "note": "Treppen · weiter parken · bei Anrufen stehen"
+              },
+              {
+                "icon": "💰",
+                "label": "Völlig kostenlos",
+                "note": "Keine Gym-Gebühren, keine Ausrüstung"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌀",
+                "label": "NEAT & Lebensstil",
+                "to": "/pillar/c/neat"
+              },
+              {
+                "icon": "🌿",
+                "label": "Lebensstil",
+                "to": "/pillar/c"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "Podcast / Musik steigert Commitment",
+            "details": [
+              "Lieblingspodcast oder -musik nur beim Gehen oder Cardio hören — schafft eine besondere 'Belohnung' für das Workout. 'Temptation Bundling' erhöht die Gewohnheitstreue um 51%.",
+              "Forschung der Wharton School: Menschen mit Temptation Bundling (nur beim Sport Hörbücher hören) trainierten 51% mehr als die Kontrollgruppe. Nicht Willenskraft — Systemdesign.",
+              "Inhalte wählen, die nur beim Cardio zugänglich sind: lange Podcast-Serien, spannende Hörbücher, spezielle Playlist. Das Verlangen 'wie es weitergeht' wird zur Motivation nach draußen zu gehen."
+            ],
+            "points": [
+              {
+                "icon": "🎯",
+                "label": "Temptation Bundling",
+                "note": "Gute Belohnung + schwere Handlung = bessere Treue"
+              },
+              {
+                "icon": "📈",
+                "label": "+51% Trainingsfrequenz",
+                "note": "Echte Forschung der Wharton School"
+              },
+              {
+                "icon": "🎵",
+                "label": "'Nur beim Training'-Playlist",
+                "note": "Diese Musik = Gehirn weiß es ist Trainingszeit"
+              },
+              {
+                "icon": "📚",
+                "label": "Lange Hörbuch-Serien",
+                "note": "Weiterhören wollen = nach draußen gehen wollen"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Mentaltraining",
+                "to": "/pillar/d"
+              },
+              {
+                "icon": "🌀",
+                "label": "NEAT",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "Zielpuls 60–70% Maximum",
+            "details": [
+              "Formel: maximaler Puls = 220 − Alter. Zone 2 Cardio = 60–70% des maximalen Pulses. Beispiel Alter 30: max = 190 bpm → Zone 2 = 114–133 bpm.",
+              "Zone 2 ist besonders effektiv für: Fettverbrennung (Körper nutzt Fett als Hauptbrennstoff), Verbesserung der langfristigen kardiovaskulären Ausdauer, Erholung nach intensivem Training.",
+              "Einfachster Weg Zone 2 ohne Geräte zu messen: man muss 1–2 vollständige Sätze sagen können ohne außer Atem zu kommen. Schneller = Zone 3, langsamer = Zone 1."
+            ],
+            "points": [
+              {
+                "icon": "🧮",
+                "label": "220 − Alter = max HF",
+                "note": "Bsp. Alter 30: max 190 → Zone 2: 114–133"
+              },
+              {
+                "icon": "🔥",
+                "label": "Zone 2 = Fettverbrennung",
+                "note": "Fett ist Hauptbrennstoff bei 60–70%"
+              },
+              {
+                "icon": "💬",
+                "label": "Einfacher Sprechtest",
+                "note": "1 Satz sagen können = Zone 2"
+              },
+              {
+                "icon": "📱",
+                "label": "Smartwatch ist praktisch",
+                "note": "Kein Rechnen nötig — Gerät misst automatisch"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Lebensstil",
+                "to": "/pillar/c"
+              },
+              {
+                "icon": "📈",
+                "label": "Fortschritt verfolgen",
+                "to": "/pillar/a/progress"
+              }
+            ]
+          }
+        ],
+        "avoidData": {
+          "time": "WARNUNG",
+          "name": "Nicht sofort nach dem Essen sprinten",
+          "details": [
+            "Nach dem Essen fließt Blut zum Verdauungssystem zur Nahrungsverarbeitung. Sofort schnell laufen = Blutkonkurrenz zwischen Muskeln und Darm → Magenkrämpfe, Übelkeit, Seitenstechen.",
+            "30 Minuten warten nach einem leichten Snack, 60–90 Minuten nach einer vollständigen Mahlzeit. Leichtes Gehen nach dem Essen ist die Ausnahme — langsam genug um den Blutfluss zum Verdauungssystem nicht zu unterbrechen.",
+            "Muss man sofort trainieren: kleinen 100–150 kcal Snack (Banane, Reiswaffel) statt einer vollständigen Mahlzeit. Leichter Magen = wesentlich angenehmeres Training."
+          ],
+          "points": [
+            {
+              "icon": "🩸",
+              "label": "Blutkonkurrenz",
+              "note": "Muskeln vs Darm = Krämpfe, Übelkeit"
+            },
+            {
+              "icon": "⏱️",
+              "label": "30–90 Minuten warten",
+              "note": "30min nach Snack · 90min nach Hauptmahlzeit"
+            },
+            {
+              "icon": "🚶",
+              "label": "Leichtes Gehen ist OK",
+              "note": "Langsam genug um Verdauung nicht zu stören"
+            },
+            {
+              "icon": "🍌",
+              "label": "Kleiner Pre-Workout-Snack",
+              "note": "100–150 kcal = Energie ohne Schwere"
+            }
+          ],
+          "links": [
+            {
+              "icon": "🥗",
+              "label": "Ernährung & Mahlzeitenplan",
+              "to": "/pillar/b"
+            },
+            {
+              "icon": "🌀",
+              "label": "NEAT",
+              "to": "/pillar/c/neat"
+            }
+          ]
+        }
       },
       {
         "sessions": "1×/Woche",
@@ -3993,7 +4861,441 @@
           "Beste Zeit um auf Körpersignale zu achten",
           "Mehr Wasser trinken als gewöhnlich"
         ],
-        "avoid": "Diesen Tag nicht als Faultag betrachten — bewusste Erholung = mehr Muskelwachstum"
+        "avoid": "Diesen Tag nicht als Faultag betrachten — bewusste Erholung = mehr Muskelwachstum",
+        "movesData": [
+          {
+            "time": "AKTIVITÄT 1",
+            "name": "Statisches Dehnen — 30–60s",
+            "details": [
+              "Statisches Dehnen nach dem Training: 30–60 Sekunden pro Muskelgruppe halten, kein Federn, kein Schmerz. Priorität auf gerade trainierte Muskeln: Oberschenkel, Kniesehnen, Hüften, Brust, Schultern.",
+              "Richtiges Dehnen reduziert DOMS (verzögerter Muskelkater) um 20–30% und stellt die Muskellänge wieder her. Du brauchst keine Flexibilität — du brauchst Konsequenz.",
+              "Richtige Reihenfolge: große Muskeln zuerst (Oberschenkel, Gesäß, Rücken) vor kleinen (Bizeps, Waden). Sanftes Ziehen — Dehnung spüren, nicht Schmerz."
+            ],
+            "points": [
+              {
+                "icon": "⏱️",
+                "label": "30–60 Sekunden pro Stelle",
+                "note": "Unter 20s ist nicht effektiv genug"
+              },
+              {
+                "icon": "😌",
+                "label": "Dehnen, nicht schmerzen",
+                "note": "Wenn es schmerzt = zu weit, Amplitude reduzieren"
+              },
+              {
+                "icon": "🔄",
+                "label": "Große Muskeln zuerst",
+                "note": "Oberschenkel · Gesäß · Rücken → Schultern → Arme"
+              },
+              {
+                "icon": "📉",
+                "label": "-20–30% Muskelkater",
+                "note": "Schmerzen am nächsten Tag deutlich reduziert"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Aktive Erholung",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "📐",
+                "label": "Tagesrahmen",
+                "to": "/pillar/a/framework"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 2",
+            "name": "Foam Roll Ganzkörper — 10 Min",
+            "details": [
+              "Foam Rolling (myofasziale Selbstmassage) bricht 'Triggerpunkte' in Muskeln auf — kleine Knoten, die Schmerzen verursachen und die Beweglichkeit einschränken. 10 Minuten auf der Rolle entsprechen einer 20-Minuten-Massage.",
+              "Technik: langsam 2–3 Sekunden pro cm rollen, 20–30 Sekunden an schmerzhaften Punkten anhalten bis sie nachlassen. Nicht schnell durchrollen — das hat keinen Effekt.",
+              "Prioritätsbereiche: Oberschenkelrückseite, IT-Band (äußerer Oberschenkel), Waden, oberer Rücken (nicht Nacken oder unterer Rücken). Vor dem statischen Dehnen für bessere Ergebnisse."
+            ],
+            "points": [
+              {
+                "icon": "🎯",
+                "label": "Triggerpunkte",
+                "note": "An schmerzhaften Punkten 20–30s anhalten"
+              },
+              {
+                "icon": "🔙",
+                "label": "Unterer Rücken Warnung",
+                "note": "NICHT den unteren Rücken rollen — Tennisball stattdessen"
+              },
+              {
+                "icon": "⏰",
+                "label": "Vor dem statischen Dehnen",
+                "note": "Foam Roll zuerst = 30% effektiveres Dehnen"
+              },
+              {
+                "icon": "💰",
+                "label": "Rolle kostet wenig",
+                "note": "Hält jahrzehntelang — jede Investition wert"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Erholung",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🔄",
+                "label": "Lebensstil",
+                "to": "/pillar/c"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 3",
+            "name": "Leichtes Yoga / Yin Yoga",
+            "details": [
+              "Yin Yoga (Posen 2–5 Minuten halten) wirkt auf tiefes Bindegewebe (Faszien, Bänder) — nicht nur Muskeln. Erhöht die Gelenkbeweglichkeit auf eine Art, die normales Dehnen nicht kann.",
+              "Ideal für Erholungstage wegen des langsamen Tempos, keiner Intensität und tiefer Entspannung durch Aktivierung des parasympathischen Nervensystems.",
+              "Nicht sicher wo anfangen: YouTube 'Yoga with Adriene — Yin yoga for beginners' ist der perfekte kostenlose Startpunkt."
+            ],
+            "points": [
+              {
+                "icon": "⏳",
+                "label": "2–5 Min pro Pose halten",
+                "note": "Länger als normales Dehnen — beabsichtigt"
+              },
+              {
+                "icon": "🔗",
+                "label": "Wirkt auf Faszien",
+                "note": "Tiefes Bindegewebe — nicht nur Muskeln"
+              },
+              {
+                "icon": "😌",
+                "label": "Aktiviert PNS",
+                "note": "'Ruhe & Verdauen'-Nervensystem → tiefe Entspannung"
+              },
+              {
+                "icon": "📱",
+                "label": "Kostenlos auf YouTube",
+                "note": "Yoga with Adriene = bestes für Anfänger"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Erholung",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🧘",
+                "label": "Mentaltraining",
+                "to": "/pillar/d"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 4",
+            "name": "Entspannter Spaziergang im Park",
+            "details": [
+              "Spazieren in grüner Umgebung (Parks, Bäume) reduziert Cortisol um 16% und Blutdruck um 10% im Vergleich zur gleichen Strecke in städtischer Umgebung — japanische Forschung zu 'Shinrin-yoku' (Waldbaden).",
+              "Das ist perfektes Recovery-Cardio: Puls 60–80 bpm, aktiviert das parasympathische Nervensystem, steigert Vitamin D aus dem Morgensonnenlicht.",
+              "Kein Park in der Nähe: Durch Spaziergang auf ruhigen Straßen oder 20 Minuten rund um das Bürogebäude ersetzen. Eine ruhige Umgebung ist wichtiger als das Vorhandensein von Bäumen."
+            ],
+            "points": [
+              {
+                "icon": "🌿",
+                "label": "-16% Cortisol",
+                "note": "Natur senkt Stresshormone besser als Stadt"
+              },
+              {
+                "icon": "☀️",
+                "label": "Natürliches Vitamin D",
+                "note": "Morgenlicht draußen = die beste Quelle"
+              },
+              {
+                "icon": "😌",
+                "label": "Recovery-Cardio",
+                "note": "60–80 bpm = PNS-Aktivierung"
+              },
+              {
+                "icon": "🧠",
+                "label": "Shinrin-yoku",
+                "note": "Japanisches Waldbaden — 30 Jahre Forschung"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Aktive Erholung",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🌀",
+                "label": "NEAT",
+                "to": "/pillar/c/neat"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 5",
+            "name": "Selbstmassage mit Ball",
+            "details": [
+              "Tennisball oder Lacrosse-Ball ist das beste Selbstmassagewerkzeug für schwer erreichbare Bereiche: Fußsohlen, Waden, Schultern und oberer Rücken. Ball platzieren, Körpergewicht draufgeben und langsam drehen.",
+              "Tägliche Wadenselbstmassage vor dem Schlafen: Hände von unten nach oben drücken (Richtung Herz). 5 Minuten pro Bein = weniger Muskelkater und tieferer Schlaf.",
+              "Kein Werkzeug vorhanden: Hände nutzen um gerade trainierte Muskeln sanft zu massieren, kombiniert mit tiefer Atmung. Keine fortgeschrittene Technik nötig — leichter Druck + Konsequenz reichen."
+            ],
+            "points": [
+              {
+                "icon": "🎾",
+                "label": "Tennisball ist vielseitig",
+                "note": "Fußsohlen · Waden · Schultern"
+              },
+              {
+                "icon": "🩸",
+                "label": "Verbessert Durchblutung",
+                "note": "Richtung Herz = weniger Schwellung"
+              },
+              {
+                "icon": "😴",
+                "label": "Vor dem Schlafen",
+                "note": "5 Min Beinmassage → tieferer Schlaf"
+              },
+              {
+                "icon": "💰",
+                "label": "Völlig kostenlos",
+                "note": "Nur Hände + Geduld nötig"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Erholung",
+                "to": "/pillar/c/recovery"
+              },
+              {
+                "icon": "🧘",
+                "label": "Mentaltraining",
+                "to": "/pillar/d"
+              }
+            ]
+          }
+        ],
+        "tipsData": [
+          {
+            "time": "TIPP",
+            "name": "\"Unsichtbares Training\" — Muskeln wachsen beim Erholen",
+            "details": [
+              "Muskeln wachsen nicht beim Gym-Training — sie wachsen beim Ausruhen und Schlafen. Training = Muskelfasern aufbrechen. Ruhe = sie größer wieder aufbauen. Ruhe überspringen = keine Muskeln, nur Erschöpfung.",
+              "Proteinsynthese erreicht ihren Höhepunkt 24–48 Stunden NACH dem intensiven Training — genau an deinem Erholungstag. Das ist das 'unsichtbare Workout', das genauso wichtig ist wie die Gym-Einheit.",
+              "Erholungstag beinhaltet: ausreichend Protein essen (1,6–2g/kg), 7–9h schlafen, gute Flüssigkeitszufuhr und leichte Bewegung. Ein Faktor fehlt = Trainingsergebnisse deutlich reduziert."
+            ],
+            "points": [
+              {
+                "icon": "💤",
+                "label": "Schlaf = Muskelaufbau",
+                "note": "GH (Wachstumshormon) im Tiefschlaf ausgeschüttet"
+              },
+              {
+                "icon": "🥩",
+                "label": "1,6–2g Protein/kg",
+                "note": "Baumaterial — kann nicht weggelassen werden"
+              },
+              {
+                "icon": "💧",
+                "label": "Gute Flüssigkeitszufuhr",
+                "note": "Muskel ist zu 75% Wasser — Dehydrierung verlangsamt Erholung"
+              },
+              {
+                "icon": "🔄",
+                "label": "Aktive Erholung",
+                "note": "Leichte Bewegung verbessert Blutfluss zu erholenden Muskeln"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Ernährung",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "🌿",
+                "label": "Erholung",
+                "to": "/pillar/c/recovery"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "Atmung: 4s ein · 4s halten · 6s aus",
+            "details": [
+              "Länger ausatmen als einatmen (Verhältnis 4:4:6 oder 4:6) aktiviert das parasympathische Nervensystem (Ruhe & Verdauen) — Gegenteil des Sympathikus (Kampf & Flucht). An Erholungstagen für tiefere Entspannung einsetzen.",
+              "5 Minuten 4-4-6-Atmung reduziert den Ruhepuls um 5–10 bpm und Cortisol um 15–20% — so effektiv wie 30 Minuten Meditation für Anfänger. Die einfachste aller Atemübungen.",
+              "Praxis: auf dem Rücken liegen, Hand auf Bauch, 4s einatmen (Bauch hebt sich), 4s halten, 6s ausatmen (Bauch senkt sich). 5–10 Mal wiederholen. Schläfrigkeit danach ist normal und gut."
+            ],
+            "points": [
+              {
+                "icon": "😌",
+                "label": "4:4:6 = PNS-Aktivierung",
+                "note": "Längeres Ausatmen = Entspannungsreaktion"
+              },
+              {
+                "icon": "❤️",
+                "label": "-5–10 bpm Puls",
+                "note": "5 Min Atmung = sofortige Wirkung"
+              },
+              {
+                "icon": "🛌",
+                "label": "Liegen ist am effektivsten",
+                "note": "Hand auf Bauch für Zwerchfellatmung"
+              },
+              {
+                "icon": "😴",
+                "label": "Schläfrigkeit ist gut",
+                "note": "PNS funktioniert richtig"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌬️",
+                "label": "Atemtechnik",
+                "to": "/pillar/d/breathing"
+              },
+              {
+                "icon": "🧘",
+                "label": "Meditation",
+                "to": "/pillar/d/meditation"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "Körpersignale an diesem Tag am besten wahrnehmen",
+            "details": [
+              "Der Erholungstag ist der beste Zeitpunkt für einen Körperscan: Welche Bereiche sind noch verspannt? Welche Gelenke sind noch unangenehm? Wie ist die Gesamtenergie? Diese Signale leiten die nächste Trainingswoche.",
+              "3 Schmerzarten unterscheiden: DOMS (normaler Muskelkater, 24–72h nach Training, verschwindet von selbst) · Akuter Schmerz (stechend beim Training, sofort aufhören) · Chronischer Schmerz (anhaltend >7 Tage, Arzt aufsuchen).",
+              "5-Minuten-Morgenscan: ruhig liegen, von Kopf bis Fuß scannen, beobachten ohne zu urteilen. Diese Fähigkeit entwickelt sich mit der Zeit und hilft Verletzungen früh zu verhindern."
+            ],
+            "points": [
+              {
+                "icon": "🔍",
+                "label": "Von Kopf bis Fuß scannen",
+                "note": "Beobachten — ohne zu urteilen"
+              },
+              {
+                "icon": "🚦",
+                "label": "3 Schmerzarten",
+                "note": "DOMS normal · Akut stoppen · Chronisch → Arzt"
+              },
+              {
+                "icon": "📅",
+                "label": "Leitet nächste Woche",
+                "note": "Heutige Signale = nächsten Trainingsplan anpassen"
+              },
+              {
+                "icon": "🧠",
+                "label": "Selbstwahrnehmungsfähigkeit",
+                "note": "Verbessert sich mit der Zeit — wie eine Sprache lernen"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Mentaltraining",
+                "to": "/pillar/d"
+              },
+              {
+                "icon": "🌿",
+                "label": "Erholung",
+                "to": "/pillar/c/recovery"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "Mehr Wasser trinken als gewöhnlich",
+            "details": [
+              "Am Tag nach intensivem Training braucht der Körper extra Wasser um: Nährstoffe zu erholenden Muskeln zu transportieren, Stoffwechselabfälle zu beseitigen und das Blutvolumen aufrechtzuerhalten.",
+              "Ziel: 2–2,5L Wasser/Tag an Erholungstagen (vs. übliche 1,5–2L). Gleichmäßig über den Tag verteilt trinken — nicht 1L auf einmal.",
+              "Zeichen ausreichender Hydration: Urin in der Farbe von blassem Zitronensaft. Dunkelgelb = dehydriert. Klar = zu viel Wasser (selten, aber möglich, kann Elektrolytverlust verursachen)."
+            ],
+            "points": [
+              {
+                "icon": "💧",
+                "label": "2–2,5L an Erholungstagen",
+                "note": "20–30% mehr als an normalen Tagen"
+              },
+              {
+                "icon": "⏰",
+                "label": "Gleichmäßig über den Tag",
+                "note": "Nicht auf einmal trinken — Nieren kommen nicht nach"
+              },
+              {
+                "icon": "🟡",
+                "label": "Urinfarbe",
+                "note": "Blassgelb = ideal"
+              },
+              {
+                "icon": "⚡",
+                "label": "Elektrolyte bei starkem Schwitzen",
+                "note": "Kleine Menge Salz hinzufügen oder Kokosnusswasser"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Ernährung",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "🌿",
+                "label": "Lebensstil",
+                "to": "/pillar/c"
+              }
+            ]
+          }
+        ],
+        "avoidData": {
+          "time": "WARNUNG",
+          "name": "Gezielte Erholung ≠ Faulheit",
+          "details": [
+            "Die Denkweise 'ausfallen = verlieren' ist der häufigste Fehler für Anfänger. Erholung ist kein Ausfallen — Erholung IST eine Trainingseinheit, nur eine andere Art.",
+            "Übertraining (zu viel Training ohne ausreichend Ruhe) reduziert die Leistung, erhöht das Verletzungsrisiko und verursacht psychischen Burnout. Elite-Athleten planen auch 1–2 Erholungstage pro Woche.",
+            "Aktive Erholung (gezielte leichte Bewegung) ist besser als komplette Ruhe: leichte Bewegung verbessert den Blutfluss zu Muskeln, beschleunigt die Beseitigung von Stoffwechselabfällen und reduziert Muskelsteifheit."
+          ],
+          "points": [
+            {
+              "icon": "🧠",
+              "label": "Denkweise ist wichtig",
+              "note": "Erholung = Training — nur eine andere Art"
+            },
+            {
+              "icon": "⚡",
+              "label": "Übertraining ist real",
+              "note": "Leistung nimmt ab wenn Ruhe fehlt"
+            },
+            {
+              "icon": "🏃",
+              "label": "Aktiv > passiv ruhen",
+              "note": "Leichte Bewegung erholt schneller als Stillliegen"
+            },
+            {
+              "icon": "🏆",
+              "label": "Elite-Athleten ruhen auch",
+              "note": "Ihr Trainingsplan enthält Erholungstage wie deiner"
+            }
+          ],
+          "links": [
+            {
+              "icon": "🌿",
+              "label": "Aktive Erholung",
+              "to": "/pillar/c/recovery"
+            },
+            {
+              "icon": "📅",
+              "label": "Wochenrhythmus",
+              "to": "/pillar/a/weekly"
+            }
+          ]
+        }
       },
       {
         "sessions": "1×/Woche",
@@ -4011,7 +5313,441 @@
           "Fokus auf Ernährung und Schlafqualität",
           "Mentale Erholung genauso wichtig wie körperliche"
         ],
-        "avoid": "Kein schlechtes Gewissen beim Ausruhen — Erholung ist Teil des Programms"
+        "avoid": "Kein schlechtes Gewissen beim Ausruhen — Erholung ist Teil des Programms",
+        "movesData": [
+          {
+            "time": "AKTIVITÄT 1",
+            "name": "Lesen / Entspannungsmusik",
+            "details": [
+              "30 Minuten Lesen pro Tag reduziert Stress um 68% laut einer Universität Sussex-Studie 2009 — effektiver als Spazierengehen (42%), Tee trinken (54%) und Musik hören (61%) für die gleiche Dauer.",
+              "Themen für Ruhetage: leichte Sachbücher (Fähigkeiten, Geschichte), fesselnde Romane oder ein Lieblingsbuch erneut lesen. Arbeitsbezogene Bücher vermeiden damit das Gehirn wirklich ausruht.",
+              "Leseumgebung ist wichtig: gutes Licht, bequeme Haltung, keine Handybenachrichtigungen. 20 Minuten konzentriertes Lesen > 1 Stunde unterbrochenes Lesen."
+            ],
+            "points": [
+              {
+                "icon": "😌",
+                "label": "-68% Stress",
+                "note": "Lesen schlägt Yoga und Spazierengehen"
+              },
+              {
+                "icon": "🧠",
+                "label": "Gehirn erholt sich wirklich",
+                "note": "Leichte Themen — nichts Berufliches"
+              },
+              {
+                "icon": "📵",
+                "label": "Keine Benachrichtigungen",
+                "note": "20 konzentrierte Minuten > 1h mit Unterbrechungen"
+              },
+              {
+                "icon": "💡",
+                "label": "Hörbücher funktionieren auch",
+                "note": "Augen schließen + Hörbuch = Meditation + Lernen"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Mentaltraining",
+                "to": "/pillar/d"
+              },
+              {
+                "icon": "💡",
+                "label": "Gesundheitswissen",
+                "to": "/pillar/e"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 2",
+            "name": "Meditation 10–15 Min",
+            "details": [
+              "10–15 Minuten Meditation am Ruhetag ist eine 'mentale Aufladung' für die neue Woche. Meditation bedeutet nicht keine Gedanken — sondern bemerken wenn der Geist abschweift und sanft zur Atmung zurückkehren.",
+              "Nach 8 Wochen 10 Min/Tag Meditation: graue Substanz im präfrontalen Kortex verdickt sich (verknüpft mit Entscheidungsfindung), Amygdala schrumpft (verknüpft mit Stressreaktionen).",
+              "Einfachste Methode: bequem sitzen, Augen schließen, Atemzüge von 1 bis 10 zählen, bei Ablenkung von 1 neu beginnen. 10 Minuten ist der Anfang von allem."
+            ],
+            "points": [
+              {
+                "icon": "🧠",
+                "label": "Verändert das Gehirn",
+                "note": "Nach 8 Wochen im MRI messbar"
+              },
+              {
+                "icon": "😌",
+                "label": "Nicht 'keine Gedanken'",
+                "note": "Bemerken + zurückkehren = richtige Technik"
+              },
+              {
+                "icon": "1️⃣",
+                "label": "Atemzüge 1–10 zählen",
+                "note": "Einfachste Technik, effektivste Technik"
+              },
+              {
+                "icon": "⏰",
+                "label": "Morgens > abends",
+                "note": "Morgenmeditation: besserer Tagesbeginn"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Meditation",
+                "to": "/pillar/d/meditation"
+              },
+              {
+                "icon": "🌬️",
+                "label": "Atemtechnik",
+                "to": "/pillar/d/breathing"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 3",
+            "name": "Zeit mit der Familie",
+            "details": [
+              "Starke soziale Verbindungen sind der beste Prädiktor für Langlebigkeit — wichtiger als Nichtrauchen, Sport treiben und gesund essen laut einer 80-jährigen Harvard-Studie.",
+              "Qualität über Quantität: 30 Minuten Abendessen ohne Handys mit der Familie ist wertvoller als 3 Stunden zusammen wo jeder auf seinen eigenen Bildschirm schaut.",
+              "Ruhetag ist der beste Zeitpunkt für sozialen Energieausgleich: gemeinsam essen, Brettspiele spielen, spazieren gehen oder gemeinsam kochen. Die hier geschaffenen Erinnerungen überdauern Gym-Ergebnisse."
+            ],
+            "points": [
+              {
+                "icon": "❤️",
+                "label": "Langlebigkeit #1",
+                "note": "Soziale Verbindung wichtiger als Sport"
+              },
+              {
+                "icon": "📵",
+                "label": "Kein Handy beim Essen",
+                "note": "30 Min präsent > 3h gemeinsam aber abgelenkt"
+              },
+              {
+                "icon": "🎲",
+                "label": "Gemeinsame Aktivitäten",
+                "note": "Kochen · Brettspiele · Spazierengehen"
+              },
+              {
+                "icon": "🧠",
+                "label": "Mentale Energie aufladen",
+                "note": "Introvertierte und Extrovertierte brauchen Verbindung"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🧘",
+                "label": "Mentaltraining",
+                "to": "/pillar/d"
+              },
+              {
+                "icon": "🌿",
+                "label": "Lebensstil",
+                "to": "/pillar/c"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 4",
+            "name": "Gesundes Kochen / Meal Prep",
+            "details": [
+              "45–60 Minuten Sonntagskochen = 5–7 Tage sauberes Essen ohne Nachdenken. Vorkochen: Vollkorngetreide, Protein (Fleisch/Hülsenfrüchte/Eier), vorgeschnittenes Gemüse.",
+              "Meal Prep bedeutet nicht jede Mahlzeit vorkochen — sondern Zutaten vorbereiten, die schnell zusammengestellt werden. 3 Protein-Behälter + 2 Getreide + 1 Gemüse = Dutzende Mahlzeitenkombinationen.",
+              "Batch-Cooking-Prinzip: 4× die Menge auf einmal kochen. In Behälter aufteilen, Kühlschrank 4 Tage, Gefrierschrank 2–3 Monate. Spart Geld, Zeit und bessere Nährstoffkontrolle."
+            ],
+            "points": [
+              {
+                "icon": "⏱️",
+                "label": "45 Min = 7 Tage sauber essen",
+                "note": "Beste Zeitinvestition der Woche"
+              },
+              {
+                "icon": "🧩",
+                "label": "Zutaten, nicht Mahlzeiten",
+                "note": "Komponenten vorbereiten für flexible Zusammenstellung"
+              },
+              {
+                "icon": "💰",
+                "label": "Spart Geld",
+                "note": "Auswärts essen kostet 3× mehr als selbst kochen"
+              },
+              {
+                "icon": "🎯",
+                "label": "Makros kontrollieren",
+                "note": "Wissen was man isst = Ziele leichter erreichen"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Ernährung",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "📦",
+                "label": "Meal Prep Guide",
+                "to": "/pillar/b/mealprep"
+              }
+            ]
+          },
+          {
+            "time": "AKTIVITÄT 5",
+            "name": "Neue Woche planen",
+            "details": [
+              "15 Minuten Review + Planung am Wochenende erhöht die Ausführungsrate für nächste Woche auf 70–80% (vs. keine Planung = 30–40%). Das Gehirn braucht konkrete Visualisierung um zu handeln.",
+              "5-Minuten-Review: 3 gut gelaufene Dinge, 1 Verbesserungspunkt, war der durchschnittliche RPE angemessen. Kein Urteilen — nur beobachten.",
+              "10-Minuten-Plan: Trainingsplan Mo–So aufschreiben, 3–4 Mahlzeiten die vorzubereiten sind, 1 neue Gewohnheit zum Ausprobieren. Spezifischer = höhere Ausführungsrate. 'Gym Training' → 'Kniebeugen 3×10 um 7 Uhr Mo'."
+            ],
+            "points": [
+              {
+                "icon": "📈",
+                "label": "+70–80% Ausführung",
+                "note": "Konkreter Plan vs. keine Planung"
+              },
+              {
+                "icon": "🔍",
+                "label": "5-Min-Review zuerst",
+                "note": "3 gut · 1 verbessern · RPE prüfen"
+              },
+              {
+                "icon": "✏️",
+                "label": "Spezifisch = effektiv",
+                "note": "'7 Uhr Mo' schlägt 'irgendwann diese Woche'"
+              },
+              {
+                "icon": "📓",
+                "label": "Aufschreiben, nicht nur denken",
+                "note": "Schreiben = Selbstverpflichtung"
+              }
+            ],
+            "links": [
+              {
+                "icon": "✅",
+                "label": "Daily Checklist",
+                "to": "/pillar/f/checklist"
+              },
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              }
+            ]
+          }
+        ],
+        "tipsData": [
+          {
+            "time": "TIPP",
+            "name": "Proteinsynthese höchste am Ruhetag",
+            "details": [
+              "Proteinsynthese (Muskelproteinaufbau) erreicht ihren Höhepunkt 24–48h nach einer intensiven Trainingseinheit — also an deinem Ruhetag. 'Ruhetag' ist eigentlich der Tag, an dem deine Muskeln am meisten wachsen.",
+              "Um die Proteinsynthese zu maximieren: ausreichend Protein essen (1,6–2g/kg), über 4–5 Mahlzeiten verteilt (20–40g/Mahlzeit), 7–9h schlafen. Eines der 3 fehlt = Trainingsergebnisse deutlich reduziert.",
+              "Ruhen ist nicht nichts tun — Ruhen ist die Erholung optimieren: ausreichend Protein + ausreichend Schlaf + niedriger Stress. Diese 3 Faktoren bestimmen 80% der Gym-Ergebnisse."
+            ],
+            "points": [
+              {
+                "icon": "⏰",
+                "label": "24–48h nach Training",
+                "note": "Proteinsynthese-Höhepunkt am Ruhetag"
+              },
+              {
+                "icon": "🥩",
+                "label": "1,6–2g Protein/kg",
+                "note": "Ohne Rohmaterial kein Muskelaufbau"
+              },
+              {
+                "icon": "😴",
+                "label": "7–9h Schlaf",
+                "note": "GH im Tiefschlaf = Muskelaufbauhormon"
+              },
+              {
+                "icon": "😌",
+                "label": "Niedriger Stress",
+                "note": "Hoher Cortisol = niedrige Proteinsynthese"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "Ernährung",
+                "to": "/pillar/b"
+              },
+              {
+                "icon": "🌿",
+                "label": "Erholung",
+                "to": "/pillar/c/recovery"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "8h+ Schlaf — goldenes Erholungsfenster",
+            "details": [
+              "Schlaf ist die 'Superkraft' der Erholung: Wachstumshormon (GH) wird zu 70% im Tiefschlaf ausgeschüttet, Testosteron steigt um 10–15% nach 8h Schlaf, Cortisol fällt auf Ausgangswert.",
+              "Sonntag ist der beste Tag um 'Schlafschulden zu bezahlen': 1–2 Stunden extra Schlaf erholen 60–70% der kognitiven Leistung (nicht vollständig wiederherstellbar, aber es lohnt sich).",
+              "Optimale Schlafumgebung: kühles Zimmer (18–20°C), völlig dunkel, kein Lärm. Kein Handy 30 Minuten vor dem Schlafen. Konsequenter Schlafrhythmus wichtiger als Gesamtstunden."
+            ],
+            "points": [
+              {
+                "icon": "💪",
+                "label": "GH zu 70% im Schlaf",
+                "note": "Wichtigstes Muskelaufbauhormon — nicht weglassen"
+              },
+              {
+                "icon": "🌡️",
+                "label": "Kühles Zimmer 18–20°C",
+                "note": "Temperatur beeinflusst Tiefschlafqualität"
+              },
+              {
+                "icon": "📵",
+                "label": "Kein Handy 30 Min vorher",
+                "note": "Blaues Licht unterdrückt Melatonin"
+              },
+              {
+                "icon": "⏰",
+                "label": "Konsequenter Schlafrhythmus",
+                "note": "Regelmäßigkeit > Gesamtstunden"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🌿",
+                "label": "Lebensstil & Schlaf",
+                "to": "/pillar/c"
+              },
+              {
+                "icon": "🌀",
+                "label": "Biorhythmus",
+                "to": "/pillar/c/circadian"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "Tagebuch-Review: 3 Gut + 1 Verbesserung",
+            "details": [
+              "5-Minuten-Wochenrückblick mit 3:1-Verhältnis (3 Positives : 1 Verbesserung) hilft dem Gehirn vom Erfolg zu lernen, nicht nur von Misserfolgen. Das Gehirn erinnert Negatives 3× häufiger — 3:1 gleicht das aus.",
+              "Effektive Review-Fragen: 'Worauf bin ich diese Woche am stolzesten?' · 'Wo war ich am konsequentesten?' · 'Eine Sache die ich nächste Woche anders machen würde für 1% Verbesserung?'",
+              "Aufschreiben (nicht nur denken) = 42% bessere Erinnerung und höhere Commitment. 5 Minuten jeden Sonntag baut kumulatives Bewusstsein über Monate auf."
+            ],
+            "points": [
+              {
+                "icon": "🎯",
+                "label": "3:1-Verhältnis",
+                "note": "3 Positives vor 1 Verbesserung"
+              },
+              {
+                "icon": "✏️",
+                "label": "Aufschreiben",
+                "note": "Schreiben > Denken: +42% Erinnerung"
+              },
+              {
+                "icon": "📈",
+                "label": "1% Verbesserung/Woche",
+                "note": "52 Wochen × 1% = +67% am Jahresende"
+              },
+              {
+                "icon": "🔍",
+                "label": "3 Standardfragen",
+                "note": "Stolz · konsequent · anpassen"
+              }
+            ],
+            "links": [
+              {
+                "icon": "📊",
+                "label": "Workout Log",
+                "to": "/pillar/f/workout-log"
+              },
+              {
+                "icon": "✅",
+                "label": "Daily Checklist",
+                "to": "/pillar/f/checklist"
+              }
+            ]
+          },
+          {
+            "time": "TIPP",
+            "name": "Mahlzeiten + Trainingsplan aufstellen",
+            "details": [
+              "Menschen mit wöchentlichem Mahlzeitenplan essen 42% gesünder und geben 25% weniger für Essen aus als Menschen die jeden Tag spontan entscheiden (Studie 2016).",
+              "Trainingsplan für nächste Woche: konkret — Tag, Uhrzeit, Übungen. Nicht 'Montag trainieren' sondern 'Kniebeugen 3×12 + Hinge 3×10 um 6:30 Uhr Montag'. Spezifisch = Gehirn weiß was vorzubereiten ist.",
+              "Wochenkalender prüfen vor dem Planen: langes Meeting Dienstag → Training auf anderen Zeitpunkt verlegen. Planen = nie 'keine Zeit' weil die Zeit bereits blockiert ist."
+            ],
+            "points": [
+              {
+                "icon": "🥘",
+                "label": "Mahlzeitenplan = 42% gesünder",
+                "note": "Im Voraus entscheiden > spontane Entscheidungen"
+              },
+              {
+                "icon": "📅",
+                "label": "Trainingszeit blockieren",
+                "note": "Wie ein Meeting planen — nicht absagen"
+              },
+              {
+                "icon": "🔄",
+                "label": "Wochenkalender prüfen",
+                "note": "Konflikte vorhersehen = nie Einheit verpassen"
+              },
+              {
+                "icon": "✏️",
+                "label": "Je spezifischer desto besser",
+                "note": "Tag + Uhrzeit + Übungen = echte Verpflichtung"
+              }
+            ],
+            "links": [
+              {
+                "icon": "🥗",
+                "label": "7-Tage-Ernährungsplan",
+                "to": "/pillar/b/7day"
+              },
+              {
+                "icon": "📦",
+                "label": "Meal Prep",
+                "to": "/pillar/b/mealprep"
+              }
+            ]
+          }
+        ],
+        "avoidData": {
+          "time": "WARNUNG",
+          "name": "Verpasste Einheiten nicht \"nachholen\"",
+          "details": [
+            "'Nachhol-Training' (doppelt trainieren nach verpasster Einheit) erhöht das Verletzungsrisiko, verursacht psychischen Burnout und schafft eine negative emotionale Beziehung zum Sport. Die beste Woche ist eine konsequente — nicht eine mit einer Monster-Einheit.",
+            "Richtige Reaktion wenn eine Einheit verpasst: Wochenplan anpassen (Montag auf Dienstag verschieben), keine extra Einheit hinzufügen. Gesamt 3 Einheiten/Woche noch erreichbar — nur andere Tage.",
+            "Die Denkweise 'Niemals zweimal hintereinander ausfallen' schlägt 'alles nachholen'. 1 verpasste Einheit = kein Problem. 2 hintereinander = Gewohnheit beginnt zu verblassen. 3 = von vorne anfangen."
+          ],
+          "points": [
+            {
+              "icon": "🔄",
+              "label": "Anpassen, nicht nachholen",
+              "note": "Tag verschieben · 3 Einheiten/Woche gesamt halten"
+            },
+            {
+              "icon": "🧠",
+              "label": "'Nie zweimal ausfallen'",
+              "note": "Einfachste Regel um Gewohnheiten aufrechtzuerhalten"
+            },
+            {
+              "icon": "📅",
+              "label": "Flexibler Plan",
+              "note": "Mo/Mi/Fr ist Vorschlag — kein Gesetz"
+            },
+            {
+              "icon": "❤️",
+              "label": "Positive Beziehung zum Sport",
+              "note": "Trainieren weil man es mag — nicht aus Schuldgefühlen"
+            }
+          ],
+          "links": [
+            {
+              "icon": "📅",
+              "label": "Wochenrhythmus",
+              "to": "/pillar/a/weekly"
+            },
+            {
+              "icon": "✅",
+              "label": "Daily Checklist",
+              "to": "/pillar/f/checklist"
+            }
+          ]
+        }
       }
     ],
     "pillar_phase_intro_prefix": "Kerninhalte der Säule",

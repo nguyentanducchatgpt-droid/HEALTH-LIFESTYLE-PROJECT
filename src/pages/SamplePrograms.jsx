@@ -502,6 +502,13 @@ export default function SamplePrograms() {
     return phs.find(p => p.range[0] <= w && w <= p.range[1]);
   };
 
+  /* Translated phase names for the current goal */
+  const tPhasesForGoal = (() => {
+    if (!goalType) return [];
+    const r = tP(`phases.${goalType}`, { returnObjects: true });
+    return Array.isArray(r) ? r : [];
+  })();
+
   return (
     <div className="max-w-5xl mx-auto -mt-4">
 
@@ -802,11 +809,11 @@ export default function SamplePrograms() {
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-3">
               <span className={`w-8 h-8 rounded-full border text-lg font-black flex items-center justify-center ${selectedGoal?.bg} ${selectedGoal?.border} ${selectedGoal?.text}`}>2</span>
-              <h2 className="text-2xl font-bold text-text">Bạn có bao nhiêu tuần?</h2>
+              <h2 className="text-2xl font-bold text-text">{tP('ui.step2_heading')}</h2>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
             {weekDuration && (
-              <span className={`text-lg font-bold ${selectedGoal?.text}`}>{weekDuration} tuần đã chọn</span>
+              <span className={`text-lg font-bold ${selectedGoal?.text}`}>{tP('ui.weeks_selected', { count: weekDuration })}</span>
             )}
           </div>
 
@@ -824,7 +831,7 @@ export default function SamplePrograms() {
               onClick={() => { setGoalType(null); setWeekDuration(null); }}
               className="shrink-0 text-base text-muted hover:text-text px-3 py-1.5 rounded-lg border border-border hover:border-border-bright transition-colors duration-150"
             >
-              Đổi
+              {tP('ui.change_btn')}
             </button>
           </div>
 
@@ -865,7 +872,7 @@ export default function SamplePrograms() {
                   {/* Tooltip on hover */}
                   {ph && (isHovered && !isActive) && (
                     <div className="absolute -top-9 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap bg-surface border border-border rounded-lg px-2 py-1 text-[9px] font-semibold text-text shadow-xl pointer-events-none">
-                      {ph.icon} {ph.name}
+                      {ph.icon} {tPhasesForGoal[phIdx]?.name || ph.name}
                     </div>
                   )}
                 </button>
@@ -881,7 +888,7 @@ export default function SamplePrograms() {
                 <div key={i} className="flex items-center gap-1.5 text-[10px] text-muted">
                   <div className={`w-2 h-2 rounded-full ${pCol.bar}`} />
                   <span className="font-medium">{ph.icon} T{ph.range[0]}–{ph.range[1]}</span>
-                  <span className={pCol.text}>{ph.name}</span>
+                  <span className={pCol.text}>{tPhasesForGoal[i]?.name || ph.name}</span>
                 </div>
               );
             })}
@@ -897,7 +904,7 @@ export default function SamplePrograms() {
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-3">
               <span className={`w-8 h-8 rounded-full border text-lg font-black flex items-center justify-center ${selectedGoal?.bg} ${selectedGoal?.border} ${selectedGoal?.text}`}>3</span>
-              <h2 className="text-2xl font-bold text-text">Lộ trình của bạn</h2>
+              <h2 className="text-2xl font-bold text-text">{tP('ui.step3_heading')}</h2>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
           </div>
@@ -909,13 +916,13 @@ export default function SamplePrograms() {
       {!goalType && (
         <div className="py-20 text-center">
           <div className="text-6xl mb-4 opacity-30">🗂️</div>
-          <p className="text-muted text-lg">Chọn mục tiêu ở trên để bắt đầu</p>
+          <p className="text-muted text-lg">{tP('ui.empty_goal')}</p>
         </div>
       )}
       {goalType && !weekDuration && (
         <div className="py-16 text-center">
           <div className={`text-6xl mb-4 ${selectedGoal?.text}`}>{selectedGoal?.icon}</div>
-          <p className="text-muted text-lg">Chọn số tuần để xem lộ trình chi tiết</p>
+          <p className="text-muted text-lg">{tP('ui.empty_weeks')}</p>
         </div>
       )}
 

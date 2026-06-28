@@ -756,7 +756,13 @@
     "link_recovery": "Aktive Erholung",
     "link_mind": "Ruhiger Geist",
     "link_framework": "Tagesrahmen",
-    "link_nutrition_short": "Ernährung"
+    "link_nutrition_short": "Ernährung",
+    "step2_heading": "Wie viele Wochen hast du?",
+    "weeks_selected": "{{count}} Wochen ausgewählt",
+    "change_btn": "Ändern",
+    "step3_heading": "Dein Trainingsplan",
+    "empty_goal": "Wähle oben ein Ziel, um zu beginnen",
+    "empty_weeks": "Wähle die Anzahl der Wochen für deinen detaillierten Plan"
   },
   "hero": {
     "title_line1": "Finde deinen",

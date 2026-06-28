@@ -168,7 +168,13 @@
     "link_recovery": "Phục Hồi Tích Cực",
     "link_mind": "Tâm Trí An Nhiên",
     "link_framework": "Khung Ngày Tập",
-    "link_nutrition_short": "Dinh Dưỡng"
+    "link_nutrition_short": "Dinh Dưỡng",
+    "step2_heading": "Bạn có bao nhiêu tuần?",
+    "weeks_selected": "{{count}} tuần đã chọn",
+    "change_btn": "Đổi",
+    "step3_heading": "Lộ trình của bạn",
+    "empty_goal": "Chọn mục tiêu ở trên để bắt đầu",
+    "empty_weeks": "Chọn số tuần để xem lộ trình chi tiết"
   },
   "hero": {
     "title_line1": "Tìm lộ trình",

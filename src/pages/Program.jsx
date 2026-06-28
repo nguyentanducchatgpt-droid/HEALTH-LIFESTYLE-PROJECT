@@ -3263,8 +3263,8 @@ export default function Program() {
                 >
                   <span className="text-2xl shrink-0">{ql.icon}</span>
                   <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-text text-base leading-snug">{label}</div>
-                    <div className="text-[10px] text-muted mt-0.5 leading-relaxed">{sub}</div>
+                    <div className="font-semibold text-text text-base leading-snug">{mergedQl.label}</div>
+                    <div className="text-[10px] text-muted mt-0.5 leading-relaxed">{mergedQl.sub}</div>
                   </div>
                   <span
                     className="shrink-0 self-center text-[10px] font-bold px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"

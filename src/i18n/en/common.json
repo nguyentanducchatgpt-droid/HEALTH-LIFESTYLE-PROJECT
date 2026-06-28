@@ -367,27 +367,183 @@
     "daily_blocks": [
       {
         "time": "5 min",
-        "name": "Warm Up",
-        "desc": "Joint mobility, raise body temperature",
-        "icon": "🔥"
+        "name": "Warm-Up",
+        "desc": "Joint mobility · raise body temperature",
+        "icon": "🔥",
+        "details": [
+          "5 minutes of warm-up reduces injury risk by 70% — this isn't 'optional', it's mandatory. Cold muscles contract slowly, have less elasticity, and receive neural signals 30% slower.",
+          "Simple formula: joint rotations from top to bottom (neck → shoulders → hips → knees → ankles) 30 seconds each + 1 minute brisk walking or jumping jacks. Total 4–5 minutes is enough.",
+          "Even when rushed, maintain at least 3 minutes: rotate major joints + 10 jumping jacks + 5 arm circles per side. Never skip entirely."
+        ],
+        "points": [
+          {
+            "icon": "🦴",
+            "label": "Joint mobility",
+            "note": "Rotate top to bottom, 30s per joint"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Raise muscle temp",
+            "note": "Warm muscles contract 20% more efficiently"
+          },
+          {
+            "icon": "⚡",
+            "label": "Neural activation",
+            "note": "Neural drive prepares for main workout"
+          },
+          {
+            "icon": "🛡️",
+            "label": "Reduce injury risk",
+            "note": "70% of injuries come from skipping warm-up"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🏃",
+            "label": "6 Movement Patterns",
+            "to": "/pillar/a/movements"
+          },
+          {
+            "icon": "📐",
+            "label": "Daily Training Framework",
+            "to": "/pillar/a/framework"
+          }
+        ]
       },
       {
         "time": "10–20 min",
         "name": "Main Workout",
-        "desc": "Strength exercises or cardio",
-        "icon": "💪"
+        "desc": "Strength or cardio per schedule",
+        "icon": "💪",
+        "details": [
+          "Mon/Wed/Fri = Strength (Squat, Hinge, Push, Pull, Core). Tue/Thu = Light Cardio (brisk walk, cycling, 100–130 bpm). Sat = Active Recovery. Sun = Complete rest.",
+          "Target RPE: 6–8/10. Not too easy (no adaptation stimulus) but not too hard (unable to recover). Record RPE immediately after each session.",
+          "Golden principle: form before volume, volume before intensity. Increase no more than 10% total volume per week to avoid overtraining."
+        ],
+        "points": [
+          {
+            "icon": "💪",
+            "label": "Strength days",
+            "note": "Mon/Wed/Fri — 6 fundamental movements"
+          },
+          {
+            "icon": "🚶",
+            "label": "Light cardio days",
+            "note": "Tue/Thu — heart rate 100–130 bpm"
+          },
+          {
+            "icon": "📊",
+            "label": "RPE 6–8/10",
+            "note": "Enough stimulus, still able to recover"
+          },
+          {
+            "icon": "📈",
+            "label": "Increase 10%/week",
+            "note": "Controlled progressive overload"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🏃",
+            "label": "6 Movement Patterns",
+            "to": "/pillar/a/movements"
+          },
+          {
+            "icon": "📅",
+            "label": "Weekly Rhythm",
+            "to": "/pillar/a/weekly"
+          }
+        ]
       },
       {
         "time": "5–10 min",
-        "name": "Cool Down & Recovery",
-        "desc": "Stretching, lower body temperature",
-        "icon": "🧘"
+        "name": "Cooldown Stretch",
+        "desc": "Static stretch · lower heart rate · relax muscles",
+        "icon": "🧘",
+        "details": [
+          "After intense training, muscles are contracted. Static stretching 30s per muscle group helps restore muscle length and reduces DOMS (next-day soreness) by 20–30%.",
+          "Proper cool-down: slow walk 2 minutes → stretch → deep breathing. Don't sit or lie down immediately after heavy training — blood pooling in extremities can't return to the heart fast enough.",
+          "Foam rolling before static stretching (if available): 30 seconds per major muscle group. Priority: hamstrings, calves, hips, upper back. Better results than stretching alone."
+        ],
+        "points": [
+          {
+            "icon": "🔄",
+            "label": "Static stretch 30s",
+            "note": "Hold without bouncing — just-trained muscles"
+          },
+          {
+            "icon": "❤️",
+            "label": "Lower heart rate",
+            "note": "Walk slowly 2 min before stretching"
+          },
+          {
+            "icon": "😌",
+            "label": "Activate PSNS",
+            "note": "Nervous system from fight → rest"
+          },
+          {
+            "icon": "🧴",
+            "label": "Foam roll",
+            "note": "30s per major muscle group if available"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌿",
+            "label": "Active Recovery",
+            "to": "/pillar/c/recovery"
+          },
+          {
+            "icon": "📐",
+            "label": "Daily Training Framework",
+            "to": "/pillar/a/framework"
+          }
+        ]
       },
       {
         "time": "5 min",
         "name": "Mind Reset",
-        "desc": "Deep breathing or short meditation",
-        "icon": "🌿"
+        "desc": "Deep breathing or brief meditation · set intention",
+        "icon": "🌿",
+        "details": [
+          "The final 5 minutes bridges 'training mode' to 'living mode'. This is when the brain consolidates motor memory — skipping it means losing part of the session's benefit.",
+          "Formula: 3 deep breaths (4s inhale – 4s hold – 6s exhale) → 2 minutes sitting quietly or silent walking → set 1 specific intention for the rest of the day.",
+          "If no time: 5 minutes silent walking (no phone, no music) is a complete substitute. Equivalent effect to seated meditation through Default Mode Network activation."
+        ],
+        "points": [
+          {
+            "icon": "🌬️",
+            "label": "3 deep breaths",
+            "note": "4-4-6 reduces cortisol in 90 seconds"
+          },
+          {
+            "icon": "🎯",
+            "label": "Set intention",
+            "note": "1 thing you want to do best today"
+          },
+          {
+            "icon": "🚶",
+            "label": "Alternative: walk silently",
+            "note": "5' silence = effective moving meditation"
+          },
+          {
+            "icon": "🧠",
+            "label": "Consolidate memory",
+            "note": "Brain encodes session lessons after stopping"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌬️",
+            "label": "Breathing Techniques",
+            "to": "/pillar/d/breathing"
+          },
+          {
+            "icon": "🧘",
+            "label": "Meditation",
+            "to": "/pillar/d/meditation"
+          }
+        ]
       }
     ],
     "weekly_days": [
@@ -420,33 +576,267 @@
     "tips": [
       {
         "icon": "🔁",
-        "title": "Consistency over intensity",
-        "desc": "Training 3–5 times/week consistently beats heavy sessions followed by long breaks. 20 min daily beats 2 hours monthly."
+        "title": "Consistency Over Intensity",
+        "desc": "3–5 sessions/week consistently beats one exhausting session. 20 minutes daily outperforms 2 hours monthly.",
+        "details": [
+          "Consistency creates neural habit loops: the brain stops requiring willpower after 21–66 days of repetition — exercise becomes as automatic as brushing teeth. High intensity alone cannot create this.",
+          "Research from James Clear (Atomic Habits): people training 3 sessions × 20 min/week consistently for 1 year outperform those training 5 sessions × 60 min who quit after 3 months.",
+          "The 'never skip twice in a row' rule: skipping once = okay, twice in a row = habit starts breaking, three times = rebuild from scratch. Protecting the streak matters more than perfection."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "Neural habit loop",
+            "note": "21–66 days = exercise becomes automatic"
+          },
+          {
+            "icon": "⏱️",
+            "label": "20 minutes is enough",
+            "note": "Consistency > duration in early stages"
+          },
+          {
+            "icon": "🔗",
+            "label": "Never skip twice",
+            "note": "Simplest rule to maintain the habit"
+          },
+          {
+            "icon": "📅",
+            "label": "3 sessions/week minimum",
+            "note": "Enough stimulus for body adaptation"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📅",
+            "label": "Weekly Rhythm",
+            "to": "/pillar/a/weekly"
+          },
+          {
+            "icon": "✅",
+            "label": "Daily Checklist",
+            "to": "/pillar/f/checklist"
+          }
+        ]
       },
       {
         "icon": "📈",
-        "title": "Progressive overload",
-        "desc": "Increase no more than 10% volume or sets per week. This rule prevents injury and burnout over the long term."
+        "title": "Gradual Progressive Overload",
+        "desc": "Increase no more than 10% volume/week. This rule prevents injury and burnout long-term.",
+        "details": [
+          "The '10% rule' is the golden principle of progressive overload: increase total volume (sets × reps × weight) by no more than 10% per week. Exceeding this doubles injury risk according to sports science research.",
+          "Practical example: if you train 100 'units' this week (10 sets × 10 reps) → max 110 next week. Don't increase weight + reps + sets simultaneously — change only one variable at a time.",
+          "Deload 1 week per month (reduce 40% volume): this isn't 'light training' — it's when the body supercompensates (recovers beyond baseline), emerging stronger. Skipping deloads costs 15–20% of long-term results."
+        ],
+        "points": [
+          {
+            "icon": "📊",
+            "label": "Volume = sets×reps×weight",
+            "note": "Track weekly total, not just per session"
+          },
+          {
+            "icon": "🛑",
+            "label": "Max +10% per week",
+            "note": "Exceeding this brings injury closer"
+          },
+          {
+            "icon": "🔄",
+            "label": "Deload 1 week/month",
+            "note": "Supercompensation = stronger after rest"
+          },
+          {
+            "icon": "📝",
+            "label": "One variable at a time",
+            "note": "Weight OR reps OR sets — not all three"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📊",
+            "label": "Workout Log",
+            "to": "/pillar/f/workout-log"
+          },
+          {
+            "icon": "📈",
+            "label": "Track Progress",
+            "to": "/pillar/a/progress"
+          }
+        ]
       },
       {
         "icon": "😴",
-        "title": "Sleep is the recovery drug",
-        "desc": "7–9h every night. Muscles grow while you sleep, not while you train. Sleep deprivation reduces performance by 20–30%."
+        "title": "Sleep Is Recovery Medicine",
+        "desc": "7–9h per night. Muscles grow during sleep, not during training. Sleep deprivation reduces performance by 20–30%.",
+        "details": [
+          "Growth Hormone (GH) — the primary muscle-building and fat-burning hormone — is secreted 70% during deep sleep (slow-wave sleep). No deep sleep = no GH = gym training produces no results.",
+          "Sleeping only 6h (instead of 8h) for just one week: maximum strength drops 20%, testosterone falls 10–15%, cortisol rises 37%, motor skill learning capacity decreases 40%.",
+          "Sleep optimization isn't just about hours: quality matters more. Room temperature 18–20°C, complete darkness (blackout curtains), no phone 30 minutes before bed. Consistent bedtime = stable circadian rhythm."
+        ],
+        "points": [
+          {
+            "icon": "💪",
+            "label": "GH secreted 70% during sleep",
+            "note": "Muscle-building hormone — irreplaceable"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Cool room 18–20°C",
+            "note": "Temperature directly affects sleep depth"
+          },
+          {
+            "icon": "📵",
+            "label": "No phone 30 min before",
+            "note": "Blue light suppresses melatonin"
+          },
+          {
+            "icon": "⏰",
+            "label": "Consistent sleep schedule",
+            "note": "±15 min daily = stable circadian rhythm"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌿",
+            "label": "Lifestyle & Sleep",
+            "to": "/pillar/c"
+          },
+          {
+            "icon": "🌀",
+            "label": "Circadian Rhythm",
+            "to": "/pillar/c/circadian"
+          }
+        ]
       },
       {
         "icon": "🥗",
-        "title": "Hit your protein daily",
-        "desc": "1.6–2g protein/kg bodyweight. Prioritize whole foods: eggs, lean meat, tofu, Greek yogurt."
+        "title": "Enough Protein Daily",
+        "desc": "1.6–2g protein/kg body weight. Prioritize whole foods: eggs, lean meat, tofu, Greek yogurt.",
+        "details": [
+          "Protein is the only building material for muscle — without sufficient protein, no amount of training yields results. 1.6–2g/kg is the evidence-based range from a meta-analysis of 49 studies (Morton 2018).",
+          "Distribution matters more than total: 4–5 meals × 20–40g protein/meal stimulates protein synthesis more than 2 meals × 80g even with the same total. Breakfast ≥20g is particularly important.",
+          "Best protein sources: eggs (6g/egg), chicken breast (31g/100g), firm tofu (8–12g/100g), Greek yogurt (10g/100g), lentils (9g/100g cooked)."
+        ],
+        "points": [
+          {
+            "icon": "🧮",
+            "label": "1.6–2g/kg body weight",
+            "note": "E.g. 65kg → 104–130g protein/day"
+          },
+          {
+            "icon": "⏰",
+            "label": "Spread over 4–5 meals",
+            "note": "20–40g/meal > 1–2 large meals"
+          },
+          {
+            "icon": "🍳",
+            "label": "Breakfast ≥20g",
+            "note": "Morning protein = MPS all day"
+          },
+          {
+            "icon": "🌱",
+            "label": "Quality whole food sources",
+            "note": "Eggs · chicken · tofu · Greek yogurt"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🥗",
+            "label": "Nutrition",
+            "to": "/pillar/b"
+          },
+          {
+            "icon": "🍱",
+            "label": "7-Day Meal Plan",
+            "to": "/pillar/b/7day"
+          }
+        ]
       },
       {
         "icon": "📓",
-        "title": "Keep a training journal",
-        "desc": "Just 5 min per session: log sets, reps, how you felt. Journals let you see progress when your body cannot."
+        "title": "Log Your Workouts",
+        "desc": "5 min/session: record sets, reps, feeling. A training log reveals progress your eyes can't see.",
+        "details": [
+          "A workout log is your 'progress map' — without it, you're driving without GPS. People who log their workouts reach fitness goals 42% faster than those who don't (AJPH 2012 study).",
+          "Minimum to record: exercise · weight · sets/reps · RPE (1–10) · general feeling. Log immediately after training while it's fresh — don't wait until the next day. App or notebook both work.",
+          "How to use your log: review every 4 weeks. RPE consistently 7–8 → increase load. RPE consistently 9–10 → reduce volume or deload. No progress → change rep range or exercise."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "42% faster goal achievement",
+            "note": "Loggers vs non-loggers — real data"
+          },
+          {
+            "icon": "📱",
+            "label": "App or notebook",
+            "note": "Strong · Hevy · paper — doesn't matter"
+          },
+          {
+            "icon": "⏱️",
+            "label": "5 min right after training",
+            "note": "While you still remember — not next day"
+          },
+          {
+            "icon": "🔍",
+            "label": "Review every 4 weeks",
+            "note": "Find patterns to adjust intelligently"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📊",
+            "label": "Workout Log",
+            "to": "/pillar/f/workout-log"
+          },
+          {
+            "icon": "🔬",
+            "label": "Progress Test",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
         "icon": "🧠",
-        "title": "Be patient with results",
-        "desc": "Real results come after 4–8 weeks of consistent training. The early weeks are your body learning, not being lazy."
+        "title": "Patience With Results",
+        "desc": "Real results come after 4–8 weeks of consistency. Early weeks are the brain learning — not laziness.",
+        "details": [
+          "Weeks 1–3: the body is building new neural pathways — not creating new muscle but teaching the brain to control muscles more efficiently. Feeling 'still weak' is normal and a necessary step.",
+          "Weeks 4–6: neuromuscular adaptation completes — strength increases 20–40% without muscles getting bigger. This is why beginners feel dramatically stronger in the first 6 weeks.",
+          "Week 7+: hypertrophy (muscle size increase) begins to show. Body composition changes become visible. But 12 weeks of consistency are needed before others notice the change."
+        ],
+        "points": [
+          {
+            "icon": "⚡",
+            "label": "Weeks 1–3: brain learns first",
+            "note": "Neural pathways — not muscle growth yet"
+          },
+          {
+            "icon": "💪",
+            "label": "Weeks 4–6: 20–40% stronger",
+            "note": "Full neuromuscular adaptation"
+          },
+          {
+            "icon": "📅",
+            "label": "12 weeks: visible change",
+            "note": "Others notice after 3 months"
+          },
+          {
+            "icon": "🔬",
+            "label": "Test every 4 weeks",
+            "note": "Measure to see progress before you see it"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🗺️",
+            "label": "12-Week Roadmap",
+            "to": "/program"
+          },
+          {
+            "icon": "🔬",
+            "label": "Progress Test",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       }
     ],
     "progress_title": "4-Week & 12-Week Progress Test",
@@ -454,34 +844,268 @@
     "progress_note": "Test in the morning after waking, before eating. Record and compare across checkpoints.",
     "progress_rows": [
       {
-        "metric": "Cardiovascular endurance",
-        "test": "6-minute fast walk",
-        "unit": "m"
+        "metric": "Cardiovascular Endurance",
+        "test": "6-minute brisk walk",
+        "unit": "m",
+        "details": [
+          "The 6-Minute Walk Test (6MWT) is the international medical standard for assessing cardiovascular endurance — used in clinical practice and sports research. Simple, requires no equipment, and accurate.",
+          "How to perform: find a straight flat path or sidewalk, walk as fast as possible for exactly 6 minutes (no running), measure total distance. Wear comfortable clothes and flat shoes.",
+          "Improvement targets: beginners typically improve 50–150m after 4 weeks of consistent training. Week 12: improving 150–300m is a good result. Healthy young adults: 500–700m/6 minutes."
+        ],
+        "points": [
+          {
+            "icon": "📏",
+            "label": "Measure distance covered",
+            "note": "Further in 6 minutes = better cardiovascular fitness"
+          },
+          {
+            "icon": "🚶",
+            "label": "Walk as fast as possible",
+            "note": "No running — maximum brisk walking"
+          },
+          {
+            "icon": "📈",
+            "label": "+50–150m after 4 weeks",
+            "note": "Realistic improvement target"
+          },
+          {
+            "icon": "⏰",
+            "label": "Test in the morning",
+            "note": "After waking, before breakfast"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🔬",
+            "label": "Progress Test Tool",
+            "to": "/pillar/f/progress-test"
+          },
+          {
+            "icon": "🏃",
+            "label": "Daily Training Framework",
+            "to": "/pillar/a/framework"
+          }
+        ]
       },
       {
-        "metric": "Upper body strength",
-        "test": "Max consecutive push-ups",
-        "unit": "reps"
+        "metric": "Upper Body Strength",
+        "test": "Maximum consecutive push-ups",
+        "unit": "reps",
+        "details": [
+          "Maximum consecutive push-ups (without stopping) is the simplest and most reliable upper body strength test. Measures chest, shoulder, and tricep strength plus core stabilization simultaneously.",
+          "How to perform: standard push-up position (straight back, tight core), perform continuously without stopping until unable to complete one more full rep. Don't count reps with bent back or sagging hips.",
+          "Reference standards: men age 30 ≥25 reps = good, ≥35 = excellent. Women age 30 ≥15 reps = good, ≥25 = excellent. Beginners typically gain 5–15 reps after 8 weeks of proper training."
+        ],
+        "points": [
+          {
+            "icon": "📐",
+            "label": "Full form required",
+            "note": "Don't count reps with poor form"
+          },
+          {
+            "icon": "💪",
+            "label": "Chest · shoulder · tricep",
+            "note": "3 upper body muscle groups tested at once"
+          },
+          {
+            "icon": "🔢",
+            "label": "Men ≥25 · Women ≥15 = good",
+            "note": "Reference standard for age 30"
+          },
+          {
+            "icon": "📈",
+            "label": "+5–15 reps/8 weeks",
+            "note": "Realistic improvement target"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🏃",
+            "label": "6 Movement Patterns",
+            "to": "/pillar/a/movements"
+          },
+          {
+            "icon": "🔬",
+            "label": "Progress Test Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
-        "metric": "Lower body strength",
+        "metric": "Lower Body Strength",
         "test": "Sit-to-stand 1 minute",
-        "unit": "reps"
+        "unit": "reps",
+        "details": [
+          "The 1-minute Sit-to-Stand Test measures thigh and glute strength plus lower body neuromuscular coordination. This metric predicts fall risk and long-term quality of life.",
+          "How to perform: sit on an armless chair (43–46cm high), arms crossed on chest, stand up and sit down completely as many times as possible in exactly 1 minute.",
+          "Reference standards: men age 30 ≥23 reps = good. Women age 30 ≥21 reps = good. Beginners typically improve 5–10 reps/minute after 8 weeks. Below 14 reps/minute is a health warning threshold."
+        ],
+        "points": [
+          {
+            "icon": "🪑",
+            "label": "Armless chair",
+            "note": "43–46cm height is the standard"
+          },
+          {
+            "icon": "🦵",
+            "label": "Thighs + glutes + balance",
+            "note": "3 lower body factors tested simultaneously"
+          },
+          {
+            "icon": "📊",
+            "label": "Men ≥23 · Women ≥21/min",
+            "note": "Reference standard for age 30"
+          },
+          {
+            "icon": "⚠️",
+            "label": "<14 reps/min = warning",
+            "note": "High fall and injury risk"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🏃",
+            "label": "6 Movement Patterns",
+            "to": "/pillar/a/movements"
+          },
+          {
+            "icon": "🔬",
+            "label": "Progress Test Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
         "metric": "Flexibility",
-        "test": "Bend and touch floor with fingers",
-        "unit": "No / Yes"
+        "test": "Sit-and-reach toe touch",
+        "unit": "Yes/No",
+        "details": [
+          "The Sit-and-Reach Test measures hamstring and lower back flexibility — the two tightest areas in sedentary people, directly related to back pain.",
+          "How to perform: sit on the floor with legs straight, slowly lean forward over 3 seconds to your maximum point without bending knees. Result: Yes = hands reach or pass toes. No = hands stop short of toes.",
+          "Going from 'No' → 'Yes' typically takes 4–8 weeks of consistent static stretching (30 seconds × 2 per session). This is one of the earliest visible improvements — great motivation for beginners."
+        ],
+        "points": [
+          {
+            "icon": "🦵",
+            "label": "Hamstrings + lower back",
+            "note": "Two tightest areas for desk workers"
+          },
+          {
+            "icon": "🐢",
+            "label": "Lean slowly — 3 seconds",
+            "note": "No bouncing — static stretch only"
+          },
+          {
+            "icon": "📅",
+            "label": "4–8 weeks to see results",
+            "note": "One of the fastest improvements"
+          },
+          {
+            "icon": "💺",
+            "label": "Related to back pain",
+            "note": "Tight hamstrings → anterior pelvic tilt → back pain"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌿",
+            "label": "Active Recovery",
+            "to": "/pillar/c/recovery"
+          },
+          {
+            "icon": "🔬",
+            "label": "Progress Test Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
-        "metric": "Body weight",
-        "test": "Morning weigh-in, before eating",
-        "unit": "kg"
+        "metric": "Body Weight",
+        "test": "Morning weight before eating",
+        "unit": "kg",
+        "details": [
+          "Morning weight before eating is the most consistent measurement: same conditions every time eliminates variables. Daily weight naturally fluctuates 1–2kg from water retention, food, hormones — look at weekly averages.",
+          "Track trends, not single numbers: weight trending downward over 4 weeks = success, even if individual days go up. Water weight changes can mask fat loss for 1–2 weeks.",
+          "Weigh at the same time, same conditions: after waking, after bathroom, before drinking or eating. Consistency of conditions matters far more than which scale you use."
+        ],
+        "points": [
+          {
+            "icon": "📅",
+            "label": "Same time each morning",
+            "note": "After waking, before eating or drinking"
+          },
+          {
+            "icon": "📊",
+            "label": "Track weekly averages",
+            "note": "Daily fluctuations of 1–2kg are normal"
+          },
+          {
+            "icon": "📈",
+            "label": "Look for 4-week trends",
+            "note": "Direction matters more than daily numbers"
+          },
+          {
+            "icon": "⚖️",
+            "label": "Same scale, same conditions",
+            "note": "Consistency > accuracy of equipment"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🥗",
+            "label": "Nutrition",
+            "to": "/pillar/b"
+          },
+          {
+            "icon": "🔬",
+            "label": "Progress Test Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
-        "metric": "Resting heart rate",
-        "test": "After 5 min lying still",
-        "unit": "bpm"
+        "metric": "Waist Circumference",
+        "test": "Measure after natural exhale",
+        "unit": "cm",
+        "details": [
+          "Waist circumference is a stronger health predictor than BMI: it directly reflects visceral fat (fat around organs) — linked to cardiovascular disease, type 2 diabetes, and metabolic syndrome risk.",
+          "How to measure: stand relaxed, find your natural waist (between lower rib and hip bone), wrap tape horizontally. Measure after a natural exhale — not forced exhale, not holding breath.",
+          "Health targets: men <90cm (Asian standard) and women <80cm significantly reduce metabolic disease risk. Losing 5–10cm over 12 weeks of proper training and nutrition is a realistic goal."
+        ],
+        "points": [
+          {
+            "icon": "📏",
+            "label": "Between rib and hip bone",
+            "note": "Natural waist, not tightest point"
+          },
+          {
+            "icon": "💨",
+            "label": "After natural exhale",
+            "note": "Relaxed — not forced exhale"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Men <90 · Women <80cm",
+            "note": "Asian metabolic disease risk threshold"
+          },
+          {
+            "icon": "📈",
+            "label": "-5–10cm over 12 weeks",
+            "note": "Realistic goal with consistent training"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🥗",
+            "label": "Nutrition Roadmap",
+            "to": "/pillar/b/roadmap"
+          },
+          {
+            "icon": "🔬",
+            "label": "Progress Test Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       }
     ],
     "cta_title": "Ready to Start?",
@@ -510,10 +1134,174 @@
     "sample_programs_cta": "View roadmap →",
     "daily_principles_title": "Daily Framework Principles",
     "daily_principles": [
-      "Never skip the 5 min warm-up — reduces injury risk by 70%",
-      "Mind Reset can be replaced by 5 min of silent walking",
-      "Only have 20 min? 5 min warm-up + 10 min main + 5 min cool-down",
-      "Have 40 min? Add full cool-down and Mind Reset"
+      {
+        "text": "Never skip the 5-min warm-up — reduces injury risk by 70%",
+        "details": [
+          "70% of training injuries occur in sessions without adequate warm-up. This figure comes from sports medicine research — not an estimate.",
+          "Cold muscles contract slowly, have less elasticity, and receive neural signals 30% slower. 5 minutes of warm-up addresses all three issues simultaneously.",
+          "Even when rushed, maintain at least 3 minutes: rotate major joints + 10 jumping jacks + 10 arm circles. Never skip entirely — no exceptions."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "3 minutes minimum",
+            "note": "No reason to skip entirely"
+          },
+          {
+            "icon": "🦴",
+            "label": "Joint rotations first",
+            "note": "Neck → shoulders → hips → knees → ankles"
+          },
+          {
+            "icon": "❤️",
+            "label": "Raise heart rate slightly",
+            "note": "Jumping jacks or brisk walk for 1 minute"
+          },
+          {
+            "icon": "🛡️",
+            "label": "Non-negotiable",
+            "note": "Cannot skip — can only shorten"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🔥",
+            "label": "See Daily Framework",
+            "to": "/pillar/a/framework"
+          },
+          {
+            "icon": "🏃",
+            "label": "6 Movement Patterns",
+            "to": "/pillar/a/movements"
+          }
+        ]
+      },
+      {
+        "text": "Mind Reset can be replaced with 5 minutes of silent walking",
+        "details": [
+          "5 minutes of silent walking (no phone, no music) activates the Default Mode Network — the same brain region as formal meditation.",
+          "Formal meditation (sitting, eyes closed) is not required. What is required: silence + present awareness + no stimulation. Walking satisfies all three.",
+          "Apply immediately: after training, leave your phone in your bag and walk from the gym to your car/home. Those 5 minutes are a completely valid Mind Reset."
+        ],
+        "points": [
+          {
+            "icon": "📵",
+            "label": "No phone",
+            "note": "Stimulation = opposite of reset"
+          },
+          {
+            "icon": "👁️",
+            "label": "Attend to environment",
+            "note": "Look around instead of a screen"
+          },
+          {
+            "icon": "🌬️",
+            "label": "Natural breathing",
+            "note": "No control needed — just let it happen"
+          },
+          {
+            "icon": "🧠",
+            "label": "DMN activation",
+            "note": "Brain processes and consolidates in silence"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌬️",
+            "label": "Breathing Techniques",
+            "to": "/pillar/d/breathing"
+          },
+          {
+            "icon": "🧘",
+            "label": "Meditation",
+            "to": "/pillar/d/meditation"
+          }
+        ]
+      },
+      {
+        "text": "If only 20 minutes: 5' warm-up + 10' main + 5' stretch",
+        "details": [
+          "20 minutes is always better than 0 minutes. Research shows 1 set per exercise already provides 60–70% of the benefit of 3 sets — when time is limited, prioritize consistency over perfection.",
+          "20-minute formula: 5' warm-up → 10' main workout (2–3 exercises, 1–2 sets, minimal rest) → 5' stretch + breathing. Skip the separate Mind Reset — combine it into the end of the stretch.",
+          "When only 20 minutes are available, use circuit training: perform 2–3 exercises continuously without rest between exercises, only resting after completing a round. Saves 5–8 minutes vs. normal rest."
+        ],
+        "points": [
+          {
+            "icon": "⏰",
+            "label": "20 minutes is enough",
+            "note": "Always better than skipping entirely"
+          },
+          {
+            "icon": "🏃",
+            "label": "2–3 main exercises",
+            "note": "Fewer exercises, less rest"
+          },
+          {
+            "icon": "🔗",
+            "label": "Circuit training",
+            "note": "Move continuously to save time"
+          },
+          {
+            "icon": "📐",
+            "label": "Prioritize form",
+            "note": "Fewer reps with good form > many reps with bad"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📐",
+            "label": "Daily Training Framework",
+            "to": "/pillar/a/framework"
+          },
+          {
+            "icon": "⚡",
+            "label": "Quick Workouts",
+            "to": "/pillar/f/quick-workouts"
+          }
+        ]
+      },
+      {
+        "text": "If 40 minutes: add full Cooldown Stretch and Mind Reset",
+        "details": [
+          "40 minutes is the 'golden zone' — enough for a complete session without being so long it causes mental fatigue or makes the habit hard to maintain.",
+          "40-minute allocation: 5' warm-up → 20' main workout (add sets or 1 more exercise) → 10' full cooldown for all muscle groups → 5' full Mind Reset.",
+          "If you regularly have 40 minutes: add 5 minutes of foam rolling before static stretching, or seated meditation instead of just deep breaths. This is the 'full program' version every day."
+        ],
+        "points": [
+          {
+            "icon": "⏳",
+            "label": "Golden zone",
+            "note": "40 min = most effective & sustainable"
+          },
+          {
+            "icon": "🧴",
+            "label": "Add foam rolling",
+            "note": "5' before static stretching if available"
+          },
+          {
+            "icon": "🧘",
+            "label": "Full meditation",
+            "note": "5' seated instead of just 3 breaths"
+          },
+          {
+            "icon": "📊",
+            "label": "Add one exercise",
+            "note": "Increase sets or add weak-point exercise"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📐",
+            "label": "Daily Training Framework",
+            "to": "/pillar/a/framework"
+          },
+          {
+            "icon": "🌿",
+            "label": "Active Recovery",
+            "to": "/pillar/c/recovery"
+          }
+        ]
+      }
     ],
     "adjust_schedule_title": "Adapt to Your Schedule",
     "adjust_tips": [
@@ -675,34 +1463,196 @@
     ],
     "quick_links": [
       {
-        "label": "Movement & Training",
+        "label": "Exercise & Training",
         "sub": "6 patterns · Daily framework · Roadmap",
-        "desc": "From 6 fundamental movements to a personalized 12-week roadmap — complete guide for beginners and those ready to level up."
+        "desc": "From 6 fundamental movements to a personalized 12-week roadmap — complete guide for beginners and those wanting to level up.",
+        "details": [
+          "The 6 fundamental movements (Squat, Hinge, Push, Pull, Core, Breathe) are the language of the body — mastering them before adding anything else is the safest and most effective approach.",
+          "Standard daily training framework: 5 minutes warm-up + 20–30 minutes main workout + 5–10 minutes cooldown stretch + 5 minutes mind reset. This structure optimizes performance and recovery.",
+          "The 12-week roadmap divides into 3 clear phases with progress tests every 4 weeks — no guesswork, measurable, adjustable based on real results."
+        ],
+        "points": [
+          {
+            "icon": "🏋",
+            "label": "6 fundamental movements",
+            "note": "Foundation of every training program"
+          },
+          {
+            "icon": "⏱",
+            "label": "Standard daily framework",
+            "note": "5' warmup + 20–30' main + cooldown"
+          },
+          {
+            "icon": "📅",
+            "label": "12-week roadmap",
+            "note": "3 phases · periodic progress tests"
+          },
+          {
+            "icon": "📊",
+            "label": "Weekly rhythm",
+            "note": "3 strength + 2 cardio + 2 recovery"
+          }
+        ]
       },
       {
         "label": "Nutrition Roadmap",
         "sub": "12 weeks · Macro · Meal prep",
-        "desc": "A 12-week nutrition system: from basic plate model to macros and advanced meal prep — no deprivation, just smarter eating."
+        "desc": "12-week nutrition system: from basic plate model to advanced macro tracking and meal prep — no restriction, just eating smarter.",
+        "details": [
+          "12-week nutrition is not about restriction — it's about eating enough and eating right: enough protein to build muscle, enough carbs for energy, enough fiber for digestive health.",
+          "3 phases: Weeks 1–4 (learn the basic plate formula) → Weeks 5–8 (calculate TDEE and track macros) → Weeks 9–12 (meal prep and full personalization).",
+          "Integrated TDEE calculator for personalization — enter weight, height, age, and activity level to get a plan that fits your personal calorie and macro needs."
+        ],
+        "points": [
+          {
+            "icon": "🍽",
+            "label": "Plate formula",
+            "note": "½ vegetables · ¼ protein · ¼ carbs"
+          },
+          {
+            "icon": "🔢",
+            "label": "TDEE calculator",
+            "note": "Personalize calories & macros"
+          },
+          {
+            "icon": "📦",
+            "label": "Meal prep guide",
+            "note": "45 min/week for 5–7 days of clean eating"
+          },
+          {
+            "icon": "📈",
+            "label": "Progressive improvement",
+            "note": "No shock — gradual adjustments each week"
+          }
+        ]
       },
       {
         "label": "7-Day Meal Plan",
-        "sub": "Daily meals · Shopping list",
-        "desc": "Detailed 7-day meal plan with per-meal breakdowns and a ready-made shopping list — just copy and cook, no extra thinking."
+        "sub": "Meals by day · Shopping list",
+        "desc": "Detailed 7-day meal plan with every meal and a ready-made shopping list — just copy and cook, no extra thinking needed.",
+        "details": [
+          "7 days of detailed meal plans for breakfast, lunch, and dinner with pre-calculated calories and macros. Clear template to follow immediately — ideal for beginners.",
+          "Included shopping list consolidates all ingredients for the whole week — one shopping trip is enough. No more morning decisions about 'what to eat today'.",
+          "Diverse menu — no meal repeated more than twice per week. Sufficient protein, vegetables, and suitable for everyday cooking."
+        ],
+        "points": [
+          {
+            "icon": "🍳",
+            "label": "3 meals/day × 7 days",
+            "note": "21 meals with pre-calculated macros & kcal"
+          },
+          {
+            "icon": "🛒",
+            "label": "Shopping list included",
+            "note": "One trip to the store for the whole week"
+          },
+          {
+            "icon": "🌿",
+            "label": "Whole food ingredients",
+            "note": "Recognizable everyday ingredients"
+          },
+          {
+            "icon": "🔄",
+            "label": "No repeats > 2×/week",
+            "note": "Nutritional variety every day"
+          }
+        ]
       },
       {
-        "label": "Lifestyle 12 Weeks",
+        "label": "12-Week Lifestyle",
         "sub": "Sleep · NEAT · Circadian rhythm",
-        "desc": "A 12-week lifestyle roadmap — optimize sleep, boost natural movement and sync with your circadian rhythm."
+        "desc": "12-week lifestyle roadmap — optimize sleep, increase natural movement, and sync with your circadian rhythm.",
+        "details": [
+          "Sleep is the 'superpower' of health — the 12-week lifestyle plan starts with optimizing sleep: consistent sleep schedule, cool dark room, no blue light. Everything else works better when you sleep well.",
+          "NEAT (Non-Exercise Activity Thermogenesis) — movement outside the gym: walking, standing, stairs — can burn 300–500 kcal/day in active people. Increasing NEAT is easier than adding gym time.",
+          "The circadian rhythm regulates hormones, energy, and mood. The roadmap helps synchronize daily routines with your biological clock for natural optimization — without drastic changes."
+        ],
+        "points": [
+          {
+            "icon": "😴",
+            "label": "Optimize sleep",
+            "note": "Cool · dark room · consistent schedule"
+          },
+          {
+            "icon": "🚶",
+            "label": "Increase NEAT",
+            "note": "300–500 kcal/day from natural movement"
+          },
+          {
+            "icon": "🔄",
+            "label": "Circadian rhythm",
+            "note": "Sync daily schedule with biological clock"
+          },
+          {
+            "icon": "📱",
+            "label": "Digital wellness",
+            "note": "Manage screen time & dopamine"
+          }
+        ]
       },
       {
-        "label": "Mind 12 Weeks",
+        "label": "12-Week Mind",
         "sub": "Meditation · Breathing · Journaling",
-        "desc": "12-week mindset roadmap — reduce stress, improve focus and build self-awareness with 3 tools: meditation, breathing and journaling."
+        "desc": "12-week mind roadmap — reduce stress, improve focus, and build self-awareness with 3 tools: meditation, breathing, and journaling.",
+        "details": [
+          "Meditation isn't about 'not thinking' — it's training to notice when the mind wanders and gently return. 5 minutes/day is enough to change gray matter in the prefrontal cortex after 8 weeks.",
+          "Breathing is the only tool that consciously controls the autonomic nervous system. Box breathing (4s–4s–4s–4s) reduces cortisol and heart rate in under 30 seconds.",
+          "Evening journaling (3 lines) — writing out 'unfinished business' — helps the brain 'close tabs', reduces mental chatter before sleep, and improves learning from daily experience."
+        ],
+        "points": [
+          {
+            "icon": "🧘",
+            "label": "5 min/day meditation",
+            "note": "Brain changes after 8 weeks"
+          },
+          {
+            "icon": "🫁",
+            "label": "Box breathing",
+            "note": "4s–4s–4s–4s — reduces cortisol in <30s"
+          },
+          {
+            "icon": "📓",
+            "label": "3-line journaling",
+            "note": "Close mental tabs — sleep deeper"
+          },
+          {
+            "icon": "🎯",
+            "label": "Morning intention setting",
+            "note": "RAS activation — +91% completion rate"
+          }
+        ]
       },
       {
-        "label": "Tools Roadmap",
-        "sub": "Checklist · Tracker · Test",
-        "desc": "Complete progress tracking toolkit: daily checklist, weekly tracker and 4-week test — measure real to progress real."
+        "label": "Tools & Resources",
+        "sub": "Checklist · Log · Progress tests",
+        "desc": "Practical tools for daily tracking: habit checklist, workout log, baseline tests, and weekly reviews.",
+        "details": [
+          "A daily checklist makes habits visual — seeing unchecked boxes is stronger motivation than willpower alone. Checking each box gives a small dopamine reward that reinforces the behavior.",
+          "The workout log is data you can't remember accurately: weight, reps, RPE, and how you felt. 4-week reviews reveal patterns — are you progressing or plateauing?",
+          "Baseline tests every 4 weeks give objective feedback. You might feel 'the same' but the numbers show 50m more on the 6MWT or 5 more push-ups — proof that keeps you going."
+        ],
+        "points": [
+          {
+            "icon": "✅",
+            "label": "Daily Checklist",
+            "note": "Visual habit tracker every day"
+          },
+          {
+            "icon": "📊",
+            "label": "Workout Log",
+            "note": "Data → patterns → smart improvement"
+          },
+          {
+            "icon": "🔬",
+            "label": "Baseline Test",
+            "note": "Starting point = your personal benchmark"
+          },
+          {
+            "icon": "🔄",
+            "label": "Weekly Review",
+            "note": "10 min review = 10x more effective next week"
+          }
+        ]
       }
     ],
     "sub_tab_phases": "Roadmap",
@@ -2989,7 +3939,84 @@
         ],
         "note": "After 24 weeks, you are no longer 'trying to be healthy' — you have become a person who lives healthily. That is the difference."
       }
-    ]
+    ],
+    "weekly_panel": [
+      {
+        "sessions": "3×/week",
+        "rest": "60–90s",
+        "moves": [
+          "Squat — 3×12",
+          "Hinge (Deadlift) — 3×10",
+          "Push (Push-up) — 3×10",
+          "Pull (Row) — 3×10",
+          "Core (Plank) — 3×30s"
+        ],
+        "tips": [
+          "Form before intensity — don't increase load until technique is correct",
+          "5-min warm-up mandatory before each session",
+          "Increase no more than 10% volume per week",
+          "Record RPE + reps in workout log immediately after session"
+        ],
+        "avoid": "Never train 2 consecutive days — muscles need 48h to regenerate"
+      },
+      {
+        "sessions": "2×/week",
+        "rest": "N/A",
+        "moves": [
+          "Brisk walk — target 100–120 bpm",
+          "Stationary / outdoor cycling",
+          "Stair climbing (NEAT)",
+          "Light swimming / aqua jogging",
+          "Jump rope light — 10' is enough"
+        ],
+        "tips": [
+          "After lunch = reduces blood sugar 20–30%",
+          "Walking to work = free NEAT",
+          "Listen to podcasts / music to increase commitment",
+          "Target heart rate = (220 - age) × 60–70%"
+        ],
+        "avoid": "Don't run fast immediately after meals — wait at least 30 minutes"
+      },
+      {
+        "sessions": "1×/week",
+        "rest": "Flexible",
+        "moves": [
+          "Static stretch — hold 30–60s per position",
+          "Full body foam rolling — 10'",
+          "Light yoga / yin yoga",
+          "Relaxed park walk",
+          "Light massage / self-massage with ball"
+        ],
+        "tips": [
+          "This is 'invisible training' — muscles grow during recovery",
+          "Breathing: inhale 4s → hold 4s → exhale 6s",
+          "Best time to listen to body signals",
+          "Drink more water than usual"
+        ],
+        "avoid": "Don't treat this as a lazy day — intentional recovery = bigger muscles"
+      },
+      {
+        "sessions": "1×/week",
+        "rest": "Full rest",
+        "moves": [
+          "Complete rest",
+          "Gentle walk if desired",
+          "Nature time",
+          "Social activities",
+          "Light stretching if body requests"
+        ],
+        "tips": [
+          "True rest accelerates recovery more than light training",
+          "Prepare for next week's training",
+          "Focus on nutrition and sleep quality",
+          "Mental recovery as important as physical"
+        ],
+        "avoid": "Don't feel guilty about resting — recovery is part of the program"
+      }
+    ],
+    "pillar_phase_intro_prefix": "Core content of pillar",
+    "pillar_phase_intro_middle": "in phase",
+    "pillar_explore_header": "Explore In Detail"
   },
   "contact": {
     "title": "Contact",

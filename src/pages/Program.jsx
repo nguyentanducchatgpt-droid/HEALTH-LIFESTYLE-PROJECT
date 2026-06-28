@@ -1850,7 +1850,12 @@ const PILLAR_ASSETS = {
 // ── PillarPhaseModal ──────────────────────────────────────────────────────────
 function PillarPhaseModal({ pillarId, text, phase, onClose }) {
   const { t: tCommon } = useTranslation('common');
-  const p = PC[pillarId];
+  const pBase = PC[pillarId];
+  const tPillarLabels = tCommon('program.pillar_labels', { returnObjects: true });
+  const translatedLabel = (tPillarLabels && typeof tPillarLabels === 'object' && !Array.isArray(tPillarLabels))
+    ? tPillarLabels[pillarId] || pBase.l
+    : pBase.l;
+  const p = { ...pBase, l: translatedLabel };
   const assets = PILLAR_ASSETS[pillarId];
   const details = text.split(' · ');
   useEffect(() => {
@@ -1886,7 +1891,7 @@ function PillarPhaseModal({ pillarId, text, phase, onClose }) {
         </div>
         <div className="p-5 md:p-7">
           <p className="text-sm font-semibold mb-5 leading-relaxed" style={{ color: `rgba(${phase.rgb},0.75)` }}>
-            Nội dung trọng tâm của trụ cột <strong style={{ color: p.c }}>{p.l}</strong> trong giai đoạn {phase.weeks}:
+            {tCommon('program.pillar_phase_intro_prefix', 'Nội dung trọng tâm của trụ cột')} <strong style={{ color: p.c }}>{p.l}</strong> {tCommon('program.pillar_phase_intro_middle', 'trong giai đoạn')} {phase.weeks}:
           </p>
           <ul className="space-y-2.5 mb-5">
             {details.map((d, di) => (
@@ -1901,7 +1906,7 @@ function PillarPhaseModal({ pillarId, text, phase, onClose }) {
           {/* Quick-access links */}
           <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${phase.rgb},0.12)` }}>
             <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${phase.rgb},0.5)` }}>
-              Khám Phá Chi Tiết
+              {tCommon('program.pillar_explore_header', 'Khám Phá Chi Tiết')}
             </p>
             <div className="flex flex-wrap gap-2">
               {assets.links.map((lk, li) => (
@@ -2280,6 +2285,27 @@ export default function Program() {
     const tPr = Array.isArray(tDailyPrins) ? tDailyPrins[i] : null;
     if (!tPr) return pr;
     return typeof tPr === 'string' ? { ...pr, text: tPr } : { ...pr, ...tPr };
+  });
+
+  // Success tips translation
+  const tSuccessTips = t('program.tips', { returnObjects: true });
+  const localSuccessTips = SUCCESS_TIPS.map((tip, i) => {
+    const tT = Array.isArray(tSuccessTips) ? tSuccessTips[i] : null;
+    return tT ? { ...tip, ...tT } : tip;
+  });
+
+  // Progress rows translation
+  const tProgressRows = t('program.progress_rows', { returnObjects: true });
+  const localProgressRows = PROGRESS_ROWS.map((row, i) => {
+    const tR = Array.isArray(tProgressRows) ? tProgressRows[i] : null;
+    return tR ? { ...row, ...tR } : row;
+  });
+
+  // Weekly panel translation
+  const tWeeklyPanel = t('program.weekly_panel', { returnObjects: true });
+  const localWeeklyPanel = WEEKLY_PANEL.map((panel, i) => {
+    const tP = Array.isArray(tWeeklyPanel) ? tWeeklyPanel[i] : null;
+    return tP ? { ...panel, ...tP } : panel;
   });
 
   // Phase translations (preserve color/rgb/img/id/emoji from constant; override text fields)
@@ -2743,7 +2769,7 @@ export default function Program() {
             {subTab === 'weekly' && (() => {
               const day   = localWeekly[weeklyTab];
               const meta  = TAB_META[weeklyTab];
-              const panel = WEEKLY_PANEL[weeklyTab];
+              const panel = localWeeklyPanel[weeklyTab];
               return (
                 <div>
                   {/* ── Browser-tab row ── */}
@@ -2918,7 +2944,7 @@ export default function Program() {
                 <div className="absolute inset-0 grid-dots opacity-15 pointer-events-none" />
                 <div className="relative p-6 md:p-8">
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {SUCCESS_TIPS.map((tip,i) => (
+                    {localSuccessTips.map((tip,i) => (
                       <RevealBlock key={i} delay={i*60}>
                         <div
                           className="flex items-start gap-3 p-4 rounded-2xl cursor-pointer group transition-all duration-200 hover:-translate-y-0.5"
@@ -2970,7 +2996,7 @@ export default function Program() {
                             { field:'week24',   text:'#fb923c', bg:'rgba(249,115,22,0.08)', border:'rgba(249,115,22,0.22)' },
                           ];
                           const visibleCols = journey === '24w' ? COL_META : COL_META.slice(0,3);
-                          return PROGRESS_ROWS.map((row,i) => (
+                          return localProgressRows.map((row,i) => (
                             <tr key={i}
                               className="border-b border-border/50 transition-colors duration-150 last:border-0 group/row"
                               onMouseEnter={e => { e.currentTarget.style.background = `rgba(${row.rgb},0.04)`; }}
@@ -3217,10 +3243,7 @@ export default function Program() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {QUICK_LINKS_DATA.map((ql, idx) => {
               const tql = localQuickLinks?.[idx];
-              const label = tql?.label || ql.label;
-              const sub = tql?.sub || ql.sub;
-              const desc = tql?.desc || ql.desc;
-              const mergedQl = { ...ql, label, sub, desc };
+              const mergedQl = tql ? { ...ql, ...tql } : ql;
               return (
                 <div
                   key={ql.to}

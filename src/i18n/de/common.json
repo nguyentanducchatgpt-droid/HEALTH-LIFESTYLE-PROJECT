@@ -368,26 +368,182 @@
       {
         "time": "5 Min",
         "name": "Aufwärmen",
-        "desc": "Gelenkbeweglichkeit, Körpertemperatur erhöhen",
-        "icon": "🔥"
+        "desc": "Gelenkbeweglichkeit · Körpertemperatur erhöhen",
+        "icon": "🔥",
+        "details": [
+          "5 Minuten Aufwärmen reduziert das Verletzungsrisiko um 70% — das ist kein 'Optional', sondern Pflicht. Kalte Muskeln kontrahieren langsamer, sind weniger elastisch und empfangen Nervensignale 30% langsamer.",
+          "Einfache Formel: Gelenkrotationen von oben nach unten (Nacken → Schultern → Hüften → Knie → Knöchel) je 30 Sekunden + 1 Minute zügiges Gehen oder Jumping Jacks. Insgesamt 4–5 Minuten reichen.",
+          "Selbst wenn es eilig ist: mindestens 3 Minuten halten — große Gelenke rotieren + 10 Jumping Jacks + 5 Arm Circles je Seite. Niemals komplett überspringen."
+        ],
+        "points": [
+          {
+            "icon": "🦴",
+            "label": "Gelenkbeweglichkeit",
+            "note": "Rotation von oben nach unten, 30s je Gelenk"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Muskeltemperatur erhöhen",
+            "note": "Warme Muskeln kontrahieren 20% effizienter"
+          },
+          {
+            "icon": "⚡",
+            "label": "Neuronale Aktivierung",
+            "note": "Neural Drive bereitet Haupttraining vor"
+          },
+          {
+            "icon": "🛡️",
+            "label": "Verletzungsrisiko senken",
+            "note": "70% der Verletzungen durch fehlendes Aufwärmen"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🏃",
+            "label": "6 Bewegungsmuster",
+            "to": "/pillar/a/movements"
+          },
+          {
+            "icon": "📐",
+            "label": "Tages-Trainingsrahmen",
+            "to": "/pillar/a/framework"
+          }
+        ]
       },
       {
         "time": "10–20 Min",
         "name": "Haupttraining",
-        "desc": "Kraftübungen oder Cardio",
-        "icon": "💪"
+        "desc": "Kraft oder Cardio nach Plan",
+        "icon": "💪",
+        "details": [
+          "Mo/Mi/Fr = Kraft (Kniebeuge, Hüftscharnier, Drücken, Ziehen, Rumpf). Di/Do = Leichtes Cardio (zügiges Gehen, Radfahren, 100–130 bpm). Sa = Aktive Erholung. So = Vollständige Ruhe.",
+          "Ziel-RPE: 6–8/10. Nicht zu leicht (kein Anpassungsreiz) aber nicht zu schwer (keine Erholung möglich). RPE direkt nach jeder Einheit notieren.",
+          "Goldenes Prinzip: Form vor Volumen, Volumen vor Intensität. Maximal 10% Gesamtvolumen pro Woche steigern, um Übertraining zu vermeiden."
+        ],
+        "points": [
+          {
+            "icon": "💪",
+            "label": "Krafttage",
+            "note": "Mo/Mi/Fr — 6 Grundbewegungen"
+          },
+          {
+            "icon": "🚶",
+            "label": "Leichte Cardiotage",
+            "note": "Di/Do — Herzfrequenz 100–130 bpm"
+          },
+          {
+            "icon": "📊",
+            "label": "RPE 6–8/10",
+            "note": "Genug Reiz, trotzdem erholbar"
+          },
+          {
+            "icon": "📈",
+            "label": "10% pro Woche steigern",
+            "note": "Kontrollierte progressive Überlastung"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🏃",
+            "label": "6 Bewegungsmuster",
+            "to": "/pillar/a/movements"
+          },
+          {
+            "icon": "📅",
+            "label": "Wochenrhythmus",
+            "to": "/pillar/a/weekly"
+          }
+        ]
       },
       {
         "time": "5–10 Min",
-        "name": "Abkühlen & Erholung",
-        "desc": "Dehnen, Körpertemperatur senken",
-        "icon": "🧘"
+        "name": "Abkühlen & Dehnen",
+        "desc": "Statisches Dehnen · Herzfrequenz senken · Muskeln entspannen",
+        "icon": "🧘",
+        "details": [
+          "Nach intensivem Training sind die Muskeln kontrahiert. Statisches Dehnen je 30s pro Muskelgruppe hilft, die Muskellänge wiederherzustellen und DOMS (Muskelkater am nächsten Tag) um 20–30% zu reduzieren.",
+          "Richtiges Abkühlen: 2 Minuten langsam gehen → dehnen → tief atmen. Nicht sofort sitzen oder hinlegen nach schwerem Training — Blutansammlung in den Extremitäten kann nicht schnell genug zum Herzen zurück.",
+          "Foam Rolling vor dem statischen Dehnen (falls vorhanden): 30 Sekunden pro großer Muskelgruppe. Priorität: hintere Oberschenkel, Waden, Hüften, oberer Rücken."
+        ],
+        "points": [
+          {
+            "icon": "🔄",
+            "label": "Statisches Dehnen 30s",
+            "note": "Halten ohne Federn — trainierte Muskeln"
+          },
+          {
+            "icon": "❤️",
+            "label": "Herzfrequenz senken",
+            "note": "2 Min langsam gehen vor dem Dehnen"
+          },
+          {
+            "icon": "😌",
+            "label": "PNS aktivieren",
+            "note": "Nervensystem von Kampf → Ruhe"
+          },
+          {
+            "icon": "🧴",
+            "label": "Foam Roll",
+            "note": "30s pro großer Muskelgruppe bei Verfügbarkeit"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌿",
+            "label": "Aktive Erholung",
+            "to": "/pillar/c/recovery"
+          },
+          {
+            "icon": "📐",
+            "label": "Tages-Trainingsrahmen",
+            "to": "/pillar/a/framework"
+          }
+        ]
       },
       {
         "time": "5 Min",
         "name": "Mind Reset",
-        "desc": "Tiefes Atmen oder kurze Meditation",
-        "icon": "🌿"
+        "desc": "Tiefes Atmen oder kurze Meditation · Absicht setzen",
+        "icon": "🌿",
+        "details": [
+          "Die letzten 5 Minuten überbrücken 'Trainings-Modus' und 'Lebens-Modus'. Hier konsolidiert das Gehirn motorische Erinnerungen — Auslassen bedeutet, einen Teil des Einheitennutzens zu verlieren.",
+          "Formel: 3 tiefe Atemzüge (4s einatmen – 4s halten – 6s ausatmen) → 2 Minuten still sitzen oder schweigendes Gehen → 1 konkrete Absicht für den Rest des Tages setzen.",
+          "Falls keine Zeit: 5 Minuten schweigendes Gehen (kein Handy, keine Musik) ist ein vollständiger Ersatz. Gleiche Wirkung wie Sitzmeditation durch Default Mode Network Aktivierung."
+        ],
+        "points": [
+          {
+            "icon": "🌬️",
+            "label": "3 tiefe Atemzüge",
+            "note": "4-4-6 senkt Cortisol in 90 Sekunden"
+          },
+          {
+            "icon": "🎯",
+            "label": "Absicht setzen",
+            "note": "1 Sache, die heute am besten gelingen soll"
+          },
+          {
+            "icon": "🚶",
+            "label": "Alternative: schweigendes Gehen",
+            "note": "5 Min Stille = effektive Bewegungsmeditation"
+          },
+          {
+            "icon": "🧠",
+            "label": "Erinnerung festigen",
+            "note": "Gehirn enkodiert Trainingslektionen nach dem Stopp"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌬️",
+            "label": "Atemtechniken",
+            "to": "/pillar/d/breathing"
+          },
+          {
+            "icon": "🧘",
+            "label": "Meditation",
+            "to": "/pillar/d/meditation"
+          }
+        ]
       }
     ],
     "weekly_days": [
@@ -420,33 +576,267 @@
     "tips": [
       {
         "icon": "🔁",
-        "title": "Konstanz schlägt Intensität",
-        "desc": "3–5-mal pro Woche regelmäßig zu trainieren ist wichtiger als intensive Sessions mit langen Pausen."
+        "title": "Kontinuität vor Intensität",
+        "desc": "3–5 regelmäßige Einheiten/Woche übertrumpfen eine erschöpfende Einheit. 20 Minuten täglich schlägt 2 Stunden monatlich.",
+        "details": [
+          "Kontinuität schafft neuronale Gewohnheitsschleifen: Das Gehirn braucht nach 21–66 Tagen Wiederholung keine Willenskraft mehr — Sport wird automatisch wie Zähneputzen. Hohe Intensität allein schafft das nicht.",
+          "Forschung von James Clear (Atomic Habits): Menschen, die 1 Jahr lang konsequent 3 Einheiten × 20 Min/Woche trainieren, übertreffen jene, die 5 Einheiten × 60 Min machen, aber nach 3 Monaten aufhören.",
+          "Die Regel 'niemals zweimal in Folge auslassen': einmal auslassen = okay, zweimal = Gewohnheit beginnt zu brechen, dreimal = neu aufbauen. Die Serie schützen ist wichtiger als Perfektion."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "Neuronale Gewohnheitsschleife",
+            "note": "21–66 Tage = Sport wird automatisch"
+          },
+          {
+            "icon": "⏱️",
+            "label": "20 Minuten reichen",
+            "note": "Kontinuität > Dauer in der Anfangsphase"
+          },
+          {
+            "icon": "🔗",
+            "label": "Niemals zweimal auslassen",
+            "note": "Einfachste Regel zur Aufrechterhaltung"
+          },
+          {
+            "icon": "📅",
+            "label": "3 Einheiten/Woche Minimum",
+            "note": "Genug Reiz für körperliche Anpassung"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📅",
+            "label": "Wochenrhythmus",
+            "to": "/pillar/a/weekly"
+          },
+          {
+            "icon": "✅",
+            "label": "Tages-Checkliste",
+            "to": "/pillar/f/checklist"
+          }
+        ]
       },
       {
         "icon": "📈",
-        "title": "Progressiver Aufbau",
-        "desc": "Nicht mehr als 10% Volumen oder Sätze pro Woche steigern. Diese Regel verhindert Verletzungen langfristig."
+        "title": "Progressive Überlastung",
+        "desc": "Max. 10% Volumen/Woche steigern. Diese Regel verhindert langfristig Verletzungen und Burnout.",
+        "details": [
+          "Die '10%-Regel' ist das goldene Prinzip der progressiven Überlastung: Gesamtvolumen (Sätze × Wiederholungen × Gewicht) um maximal 10% pro Woche steigern. Überschreitung verdoppelt das Verletzungsrisiko.",
+          "Praxisbeispiel: Diese Woche 100 'Einheiten' (10 Sätze × 10 Wdh.) → nächste Woche max. 110. Nicht gleichzeitig Gewicht + Wdh. + Sätze erhöhen — immer nur eine Variable ändern.",
+          "Deload 1 Woche pro Monat (40% Volumen reduzieren): kein 'leichtes Training' — hier findet Superkompensation statt (Erholung über Ausgangsniveau), man wird stärker. Deload weglassen kostet 15–20% der Langzeitergebnisse."
+        ],
+        "points": [
+          {
+            "icon": "📊",
+            "label": "Volumen = Sätze×Wdh.×Gewicht",
+            "note": "Wochentotal erfassen, nicht nur je Einheit"
+          },
+          {
+            "icon": "🛑",
+            "label": "Max. +10% pro Woche",
+            "note": "Überschreitung bringt Verletzung näher"
+          },
+          {
+            "icon": "🔄",
+            "label": "Deload 1 Woche/Monat",
+            "note": "Superkompensation = stärker nach Pause"
+          },
+          {
+            "icon": "📝",
+            "label": "Eine Variable pro Mal",
+            "note": "Gewicht ODER Wdh. ODER Sätze — nicht alle drei"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📊",
+            "label": "Trainingslog",
+            "to": "/pillar/f/workout-log"
+          },
+          {
+            "icon": "📈",
+            "label": "Fortschritt verfolgen",
+            "to": "/pillar/a/progress"
+          }
+        ]
       },
       {
         "icon": "😴",
-        "title": "Schlaf ist die Erholungsmedizin",
-        "desc": "7–9h jede Nacht. Muskeln wachsen im Schlaf, nicht beim Training. Schlafmangel reduziert die Leistung um 20–30%."
+        "title": "Schlaf ist Erholungsmedizin",
+        "desc": "7–9 Std. pro Nacht. Muskeln wachsen im Schlaf, nicht beim Training. Schlafmangel senkt die Leistung um 20–30%.",
+        "details": [
+          "Wachstumshormon (GH) — das primäre Muskelaufbau- und Fettverbrennungshormon — wird zu 70% im Tiefschlaf (Slow-Wave-Sleep) ausgeschüttet. Kein Tiefschlaf = kein GH = Training ohne Ergebnis.",
+          "Nur 6h Schlaf (statt 8h) für eine Woche: Maximalkraft sinkt um 20%, Testosteron fällt um 10–15%, Cortisol steigt um 37%, motorisches Lernvermögen sinkt um 40%.",
+          "Schlafoptimierung geht über Stundenzahl: Qualität ist wichtiger. Zimmertemperatur 18–20°C, vollständige Dunkelheit, 30 Min vor dem Schlafen kein Smartphone. Konsistente Schlafzeit = stabiler Circadianrhythmus."
+        ],
+        "points": [
+          {
+            "icon": "💪",
+            "label": "GH zu 70% im Schlaf",
+            "note": "Muskelaufbauhormon — nicht ersetzbar"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Kühles Zimmer 18–20°C",
+            "note": "Temperatur beeinflusst Schlaftiefe direkt"
+          },
+          {
+            "icon": "📵",
+            "label": "Kein Smartphone 30 Min vorher",
+            "note": "Blaues Licht unterdrückt Melatonin"
+          },
+          {
+            "icon": "⏰",
+            "label": "Feste Schlafzeiten",
+            "note": "±15 Min täglich = stabiler Circadianrhythmus"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌿",
+            "label": "Lebensstil & Schlaf",
+            "to": "/pillar/c"
+          },
+          {
+            "icon": "🌀",
+            "label": "Circadianer Rhythmus",
+            "to": "/pillar/c/circadian"
+          }
+        ]
       },
       {
         "icon": "🥗",
         "title": "Täglich genug Protein",
-        "desc": "1,6–2g Protein/kg Körpergewicht. Vollwertige Lebensmittel bevorzugen: Eier, mageres Fleisch, Tofu, griechischer Joghurt."
+        "desc": "1,6–2g Protein/kg Körpergewicht. Vollwertige Lebensmittel bevorzugen: Eier, mageres Fleisch, Tofu, griechischer Joghurt.",
+        "details": [
+          "Protein ist das einzige Baumaterial für Muskeln — ohne ausreichend Protein erzielt kein Training Ergebnisse. 1,6–2g/kg ist der evidenzbasierte Bereich aus einer Meta-Analyse von 49 Studien (Morton 2018).",
+          "Verteilung wichtiger als Gesamtmenge: 4–5 Mahlzeiten × 20–40g Protein/Mahlzeit stimuliert die Proteinsynthese mehr als 2 Mahlzeiten × 80g bei gleicher Gesamtmenge. Frühstück ≥20g besonders wichtig.",
+          "Beste Proteinquellen: Eier (6g/Ei), Hähnchenbrust (31g/100g), fester Tofu (8–12g/100g), griechischer Joghurt (10g/100g), Linsen (9g/100g gekocht)."
+        ],
+        "points": [
+          {
+            "icon": "🧮",
+            "label": "1,6–2g/kg Körpergewicht",
+            "note": "Bsp. 65kg → 104–130g Protein/Tag"
+          },
+          {
+            "icon": "⏰",
+            "label": "Auf 4–5 Mahlzeiten verteilen",
+            "note": "20–40g/Mahlzeit > 1–2 große Mahlzeiten"
+          },
+          {
+            "icon": "🍳",
+            "label": "Frühstück ≥20g",
+            "note": "Morgenprotein = MPS den ganzen Tag"
+          },
+          {
+            "icon": "🌱",
+            "label": "Hochwertige Vollwertquellen",
+            "note": "Eier · Hähnchen · Tofu · gr. Joghurt"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🥗",
+            "label": "Ernährung",
+            "to": "/pillar/b"
+          },
+          {
+            "icon": "🍱",
+            "label": "7-Tage-Ernährungsplan",
+            "to": "/pillar/b/7day"
+          }
+        ]
       },
       {
         "icon": "📓",
-        "title": "Trainingstagebuch führen",
-        "desc": "Nur 5 Min pro Einheit: Sätze, Wiederholungen, Befinden aufschreiben. Das Tagebuch zeigt Fortschritte, die man sonst nicht sieht."
+        "title": "Trainingsjournal führen",
+        "desc": "5 Min/Einheit: Sätze, Wdh., Gefühl aufzeichnen. Das Journal zeigt Fortschritte, die das Auge nicht sieht.",
+        "details": [
+          "Ein Trainingsjournal ist deine 'Fortschrittskarte' — ohne es fährst du ohne GPS. Wer aufzeichnet, erreicht Fitnessziele 42% schneller als ohne (AJPH-Studie 2012).",
+          "Mindestens aufzeichnen: Übung · Gewicht · Sätze/Wdh. · RPE (1–10) · allgemeines Gefühl. Sofort nach dem Training — nicht erst am nächsten Tag. App oder Notizbuch sind gleich gut.",
+          "So nutzt du das Journal: alle 4 Wochen reviewen. RPE konstant 7–8 → Belastung erhöhen. RPE konstant 9–10 → Volumen reduzieren oder deloaden. Kein Fortschritt → Rep-Bereich oder Übung wechseln."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "42% schnelleres Erreichen",
+            "note": "Aufzeichner vs. Nicht-Aufzeichner"
+          },
+          {
+            "icon": "📱",
+            "label": "App oder Notizbuch",
+            "note": "Strong · Hevy · Papier — egal"
+          },
+          {
+            "icon": "⏱️",
+            "label": "5 Min direkt nach Training",
+            "note": "Solange man sich noch erinnert"
+          },
+          {
+            "icon": "🔍",
+            "label": "Review alle 4 Wochen",
+            "note": "Muster finden für intelligente Anpassung"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📊",
+            "label": "Trainingslog",
+            "to": "/pillar/f/workout-log"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fortschrittstest",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
         "icon": "🧠",
         "title": "Geduld mit Ergebnissen",
-        "desc": "Echte Ergebnisse kommen nach 4–8 Wochen konsequentem Training. Die ersten Wochen lernt der Körper — er ist nicht faul."
+        "desc": "Echte Ergebnisse kommen nach 4–8 Wochen Kontinuität. Die ersten Wochen lernt das Gehirn — keine Faulheit.",
+        "details": [
+          "Wochen 1–3: Der Körper baut neue neuronale Bahnen — nicht neue Muskeln, sondern das Gehirn lernt, Muskeln effizienter zu steuern. Sich 'noch schwach' zu fühlen ist normal und notwendig.",
+          "Wochen 4–6: Neuromuskuläre Anpassung abgeschlossen — Kraft steigt um 20–40% ohne Muskelwachstum. Deshalb fühlen Anfänger in den ersten 6 Wochen dramatische Kraftzuwächse.",
+          "Ab Woche 7: Hypertrophie (Muskelgrößenzunahme) wird sichtbar. Körperzusammensetzung verändert sich messbar. Für sichtbare Veränderungen sind mindestens 12 Wochen Kontinuität nötig."
+        ],
+        "points": [
+          {
+            "icon": "⚡",
+            "label": "Wochen 1–3: Gehirn lernt zuerst",
+            "note": "Neuronale Bahnen — noch kein Muskelwachstum"
+          },
+          {
+            "icon": "💪",
+            "label": "Wochen 4–6: 20–40% stärker",
+            "note": "Vollständige neuromuskuläre Anpassung"
+          },
+          {
+            "icon": "📅",
+            "label": "12 Wochen: sichtbar",
+            "note": "Andere bemerken Veränderung nach 3 Monaten"
+          },
+          {
+            "icon": "🔬",
+            "label": "Test alle 4 Wochen",
+            "note": "Messen um Fortschritt vor Sichtbarkeit zu sehen"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🗺️",
+            "label": "12-Wochen-Fahrplan",
+            "to": "/program"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fortschrittstest",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       }
     ],
     "progress_title": "Fortschrittstest (Woche 4 & 12)",
@@ -454,34 +844,268 @@
     "progress_note": "Morgens nach dem Aufwachen testen, vor dem Frühstück. Ergebnisse notieren und vergleichen.",
     "progress_rows": [
       {
-        "metric": "Kardiovaskuläre Ausdauer",
-        "test": "6-Minuten-Schnellgang",
-        "unit": "m"
+        "metric": "Herz-Kreislauf-Ausdauer",
+        "test": "6-Minuten-Gehtest",
+        "unit": "m",
+        "details": [
+          "Der 6-Minuten-Gehtest (6MWT) ist der internationale medizinische Standard zur Bewertung der Herz-Kreislauf-Ausdauer — in Klinik und Sportforschung eingesetzt. Einfach, ohne Geräte und präzise.",
+          "Durchführung: geraden, flachen Weg oder Bürgersteig finden, so schnell wie möglich exakt 6 Minuten gehen (nicht laufen), Gesamtdistanz messen. Bequeme Kleidung und flache Schuhe tragen.",
+          "Verbesserungsziele: Einsteiger verbessern sich typischerweise um 50–150m nach 4 Wochen konsequentem Training. Woche 12: 150–300m Verbesserung ist ein gutes Ergebnis."
+        ],
+        "points": [
+          {
+            "icon": "📏",
+            "label": "Distanz messen",
+            "note": "Weiter in 6 Minuten = bessere Herzgesundheit"
+          },
+          {
+            "icon": "🚶",
+            "label": "So schnell gehen wie möglich",
+            "note": "Nicht laufen — maximales Gehtempo"
+          },
+          {
+            "icon": "📈",
+            "label": "+50–150m nach 4 Wochen",
+            "note": "Realistisches Verbesserungsziel"
+          },
+          {
+            "icon": "⏰",
+            "label": "Morgens testen",
+            "note": "Nach dem Aufwachen, vor dem Frühstück"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🔬",
+            "label": "Fortschrittstest-Tool",
+            "to": "/pillar/f/progress-test"
+          },
+          {
+            "icon": "🏃",
+            "label": "Tages-Trainingsrahmen",
+            "to": "/pillar/a/framework"
+          }
+        ]
       },
       {
         "metric": "Oberkörperkraft",
-        "test": "Maximale Liegestütze",
-        "unit": "Wdh."
+        "test": "Maximale Liegestütze in Folge",
+        "unit": "Wdh.",
+        "details": [
+          "Maximale Liegestütze ohne Pause ist der einfachste und zuverlässigste Test für die Oberkörperkraft. Misst Brust-, Schulter- und Trizepskraft plus Rumpfstabilisierung gleichzeitig.",
+          "Durchführung: Standard-Liegestütz-Position (gerader Rücken, angespannter Rumpf), durchgehend ohne Pause bis zur Erschöpfung. Wiederholungen mit gebogenem Rücken oder hängenden Hüften nicht zählen.",
+          "Referenzwerte: Männer 30 Jahre ≥25 Wdh. = gut, ≥35 = sehr gut. Frauen 30 Jahre ≥15 Wdh. = gut, ≥25 = sehr gut. Einsteiger gewinnen nach 8 Wochen oft 5–15 Wiederholungen."
+        ],
+        "points": [
+          {
+            "icon": "📐",
+            "label": "Vollständige Form erforderlich",
+            "note": "Wdh. mit schlechter Form nicht zählen"
+          },
+          {
+            "icon": "💪",
+            "label": "Brust · Schulter · Trizeps",
+            "note": "3 Oberkörpermuskeln gleichzeitig getestet"
+          },
+          {
+            "icon": "🔢",
+            "label": "Männer ≥25 · Frauen ≥15 = gut",
+            "note": "Referenzwert für 30 Jahre"
+          },
+          {
+            "icon": "📈",
+            "label": "+5–15 Wdh./8 Wochen",
+            "note": "Realistisches Verbesserungsziel"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🏃",
+            "label": "6 Bewegungsmuster",
+            "to": "/pillar/a/movements"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fortschrittstest-Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
         "metric": "Unterkörperkraft",
-        "test": "Aufstehen-Hinsetzen 1 Minute",
-        "unit": "Wdh."
+        "test": "Aufstehen und Hinsetzen 1 Minute",
+        "unit": "Wdh.",
+        "details": [
+          "Der 1-Minuten-Aufstehtest (Chair Stand Test) misst Oberschenkel- und Gesäßkraft sowie die neuromuskuläre Koordination des Unterkörpers — prädiktiv für Sturzrisiko und Lebensqualität.",
+          "Durchführung: auf einem Stuhl ohne Armlehnen sitzen (43–46cm hoch), Arme vor der Brust verschränken, 1 Minute so oft wie möglich vollständig aufstehen und setzen.",
+          "Referenzwerte: Männer 30 Jahre ≥23 Wdh. = gut. Frauen 30 Jahre ≥21 Wdh. = gut. Einsteiger verbessern sich nach 8 Wochen oft um 5–10 Wdh./Minute."
+        ],
+        "points": [
+          {
+            "icon": "🪑",
+            "label": "Stuhl ohne Armlehnen",
+            "note": "43–46cm Höhe ist Standard"
+          },
+          {
+            "icon": "🦵",
+            "label": "Oberschenkel + Gesäß + Balance",
+            "note": "3 Unterkörperfaktoren gleichzeitig"
+          },
+          {
+            "icon": "📊",
+            "label": "Männer ≥23 · Frauen ≥21/Min",
+            "note": "Referenzwert für 30 Jahre"
+          },
+          {
+            "icon": "⚠️",
+            "label": "<14 Wdh./Min = Warnsignal",
+            "note": "Hohes Sturz- und Verletzungsrisiko"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🏃",
+            "label": "6 Bewegungsmuster",
+            "to": "/pillar/a/movements"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fortschrittstest-Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
-        "metric": "Flexibilität",
-        "test": "Bücken, Boden mit Fingern berühren",
-        "unit": "Nein / Ja"
+        "metric": "Beweglichkeit",
+        "test": "Vorbeuge Zehenberührung",
+        "unit": "Ja/Nein",
+        "details": [
+          "Der Sit-and-Reach-Test misst die Flexibilität der hinteren Oberschenkelmuskeln und des unteren Rückens — die beiden steifsten Bereiche bei Menschen, die viel sitzen.",
+          "Durchführung: auf dem Boden sitzen, Beine gestreckt, langsam über 3 Sekunden vorbeugen bis zum Maximum ohne Knie zu beugen. Ergebnis: Ja = Hände erreichen Zehen. Nein = Hände stoppen vorher.",
+          "Von 'Nein' → 'Ja' dauert typischerweise 4–8 Wochen konsequentes statisches Dehnen (30 Sekunden × 2 pro Einheit). Eine der frühesten sichtbaren Verbesserungen — gute Motivation."
+        ],
+        "points": [
+          {
+            "icon": "🦵",
+            "label": "Ischiokrurale Muskeln + unterer Rücken",
+            "note": "Steifste Bereiche bei Büromenschen"
+          },
+          {
+            "icon": "🐢",
+            "label": "Langsam vorbeugen — 3 Sekunden",
+            "note": "Nicht federn — statisches Dehnen"
+          },
+          {
+            "icon": "📅",
+            "label": "4–8 Wochen → Ergebnisse sichtbar",
+            "note": "Eine der schnellsten Verbesserungen"
+          },
+          {
+            "icon": "💺",
+            "label": "Zusammenhang mit Rückenschmerzen",
+            "note": "Steife Ischio → Beckenkippung → Rückenschmerz"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌿",
+            "label": "Aktive Erholung",
+            "to": "/pillar/c/recovery"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fortschrittstest-Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
         "metric": "Körpergewicht",
-        "test": "Morgens nüchtern wiegen",
-        "unit": "kg"
+        "test": "Morgengewicht vor dem Essen",
+        "unit": "kg",
+        "details": [
+          "Morgengewicht vor dem Essen ist die konsistenteste Messung: gleiche Bedingungen jedes Mal eliminieren Variablen. Das Gewicht schwankt täglich natürlich um 1–2kg — Wochendurchschnitte betrachten.",
+          "Trends verfolgen, nicht einzelne Zahlen: Gewicht über 4 Wochen sinkend = Erfolg, auch wenn einzelne Tage höher sind. Wassergewichtveränderungen können Fettverlust 1–2 Wochen verschleiern.",
+          "Gleiche Zeit, gleiche Bedingungen: nach dem Aufwachen, nach dem Bad, vor dem Essen oder Trinken. Konsistenz der Bedingungen wichtiger als die Waage selbst."
+        ],
+        "points": [
+          {
+            "icon": "📅",
+            "label": "Jeden Morgen gleiche Zeit",
+            "note": "Nach Aufwachen, vor Essen/Trinken"
+          },
+          {
+            "icon": "📊",
+            "label": "Wochendurchschnitte verfolgen",
+            "note": "Tägliche Schwankungen von 1–2kg sind normal"
+          },
+          {
+            "icon": "📈",
+            "label": "4-Wochen-Trends beachten",
+            "note": "Richtung wichtiger als Tageszahlen"
+          },
+          {
+            "icon": "⚖️",
+            "label": "Gleiche Waage, gleiche Bedingungen",
+            "note": "Konsistenz > Genauigkeit des Geräts"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🥗",
+            "label": "Ernährung",
+            "to": "/pillar/b"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fortschrittstest-Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       },
       {
-        "metric": "Ruhepuls",
-        "test": "Nach 5 Min ruhig Liegen",
-        "unit": "bpm"
+        "metric": "Taillenumfang",
+        "test": "Messen nach natürlichem Ausatmen",
+        "unit": "cm",
+        "details": [
+          "Der Taillenumfang ist ein stärkerer Gesundheitsindikator als der BMI: er spiegelt direkt das viszerale Fett (Fett um die Organe) wider — verbunden mit Herzerkrankungen, Typ-2-Diabetes und metabolischem Syndrom.",
+          "Messung: entspannt stehen, natürliche Taille finden (zwischen unterster Rippe und Hüftknochen), Maßband horizontal anlegen. Nach natürlichem Ausatmen messen — weder forciertes Ausatmen noch Einhalten.",
+          "Gesundheitsziele: Männer <90cm und Frauen <80cm reduzieren das Risiko metabolischer Erkrankungen deutlich. 5–10cm Reduktion über 12 Wochen ist ein realistisches Ziel."
+        ],
+        "points": [
+          {
+            "icon": "📏",
+            "label": "Zwischen Rippe und Hüfte",
+            "note": "Natürliche Taille, nicht engste Stelle"
+          },
+          {
+            "icon": "💨",
+            "label": "Nach natürlichem Ausatmen",
+            "note": "Entspannt — kein forciertes Ausatmen"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Männer <90 · Frauen <80cm",
+            "note": "Metabolisches Risikoschwelle"
+          },
+          {
+            "icon": "📈",
+            "label": "-5–10cm über 12 Wochen",
+            "note": "Realistisches Ziel mit konsequentem Training"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🥗",
+            "label": "Ernährungsfahrplan",
+            "to": "/pillar/b/roadmap"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fortschrittstest-Tool",
+            "to": "/pillar/f/progress-test"
+          }
+        ]
       }
     ],
     "cta_title": "Bereit loszulegen?",
@@ -510,10 +1134,174 @@
     "sample_programs_cta": "Roadmap ansehen →",
     "daily_principles_title": "Tagesrahmen-Prinzipien",
     "daily_principles": [
-      "Nie das 5-Min-Aufwärmen überspringen — reduziert Verletzungsrisiko um 70%",
-      "Mind Reset kann durch 5 Min stilles Gehen ersetzt werden",
-      "Nur 20 Min? 5 Min Aufwärmen + 10 Min Haupt + 5 Min Abkühlen",
-      "40 Min? Volles Abkühlen und Mind Reset hinzufügen"
+      {
+        "text": "Niemals das 5-Min-Aufwärmen überspringen — reduziert Verletzungsrisiko um 70%",
+        "details": [
+          "70% der Trainingsverletzungen treten in Einheiten ohne ausreichendes Aufwärmen auf. Diese Zahl stammt aus der Sportmedizin — keine Schätzung.",
+          "Kalte Muskeln kontrahieren langsamer, haben weniger Elastizität und empfangen Nervensignale 30% langsamer. 5 Minuten Aufwärmen lösen alle drei Probleme gleichzeitig.",
+          "Selbst bei Zeitmangel: mindestens 3 Minuten halten — große Gelenke rotieren + 10 Jumping Jacks + 10 Arm Circles. Niemals komplett überspringen — keine Ausnahmen."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "Mindestens 3 Minuten",
+            "note": "Kein Grund, komplett zu überspringen"
+          },
+          {
+            "icon": "🦴",
+            "label": "Gelenkrotationen zuerst",
+            "note": "Nacken → Schultern → Hüften → Knie → Knöchel"
+          },
+          {
+            "icon": "❤️",
+            "label": "Herzfrequenz leicht erhöhen",
+            "note": "Jumping Jacks oder 1 Min zügiges Gehen reicht"
+          },
+          {
+            "icon": "🛡️",
+            "label": "Nicht verhandelbar",
+            "note": "Kann nicht überspringen — nur verkürzen"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🔥",
+            "label": "Tagesrahmen ansehen",
+            "to": "/pillar/a/framework"
+          },
+          {
+            "icon": "🏃",
+            "label": "6 Bewegungsmuster",
+            "to": "/pillar/a/movements"
+          }
+        ]
+      },
+      {
+        "text": "Mind Reset kann durch 5 Minuten schweigendes Gehen ersetzt werden",
+        "details": [
+          "5 Minuten schweigendes Gehen (kein Handy, keine Musik) aktiviert das Default Mode Network — dasselbe Gehirnareal wie bei formeller Meditation.",
+          "Formelle Meditation (sitzen, Augen schließen) ist nicht zwingend. Was erforderlich ist: Stille + Gewahrheit im Moment + keine Stimulation. Gehen erfüllt alle drei.",
+          "Sofort anwenden: nach dem Training Handy in die Tasche stecken und schweigend vom Gym zum Auto/nach Hause gehen. Diese 5 Minuten sind ein vollständig gültiger Mind Reset."
+        ],
+        "points": [
+          {
+            "icon": "📵",
+            "label": "Kein Handy",
+            "note": "Stimulation = Gegenteil von Reset"
+          },
+          {
+            "icon": "👁️",
+            "label": "Umgebung wahrnehmen",
+            "note": "Umschauen statt auf Bildschirm starren"
+          },
+          {
+            "icon": "🌬️",
+            "label": "Natürliches Atmen",
+            "note": "Keine Kontrolle nötig — einfach fließen lassen"
+          },
+          {
+            "icon": "🧠",
+            "label": "DMN-Aktivierung",
+            "note": "Gehirn verarbeitet und festigt in der Stille"
+          }
+        ],
+        "links": [
+          {
+            "icon": "🌬️",
+            "label": "Atemtechniken",
+            "to": "/pillar/d/breathing"
+          },
+          {
+            "icon": "🧘",
+            "label": "Meditation",
+            "to": "/pillar/d/meditation"
+          }
+        ]
+      },
+      {
+        "text": "Bei nur 20 Minuten: 5' Aufwärmen + 10' Haupttraining + 5' Dehnen",
+        "details": [
+          "20 Minuten sind immer besser als 0 Minuten. Forschung zeigt, dass 1 Satz pro Übung bereits 60–70% des Nutzens von 3 Sätzen bringt — bei begrenzter Zeit Kontinuität über Perfektion stellen.",
+          "20-Minuten-Formel: 5' Aufwärmen → 10' Haupttraining (2–3 Übungen, 1–2 Sätze, minimale Pause) → 5' Dehnen + Atmen. Mind Reset in das Ende des Dehnens integrieren.",
+          "Bei nur 20 Minuten: Zirkeltraining nutzen — 2–3 Übungen ohne Pause zwischen den Übungen ausführen, nur nach einer Runde pausieren. Spart 5–8 Minuten gegenüber normaler Pause."
+        ],
+        "points": [
+          {
+            "icon": "⏰",
+            "label": "20 Minuten reichen",
+            "note": "Immer besser als komplett auslassen"
+          },
+          {
+            "icon": "🏃",
+            "label": "2–3 Hauptübungen",
+            "note": "Weniger Übungen, weniger Pause"
+          },
+          {
+            "icon": "🔗",
+            "label": "Zirkeltraining",
+            "note": "Kontinuierlich bewegen um Zeit zu sparen"
+          },
+          {
+            "icon": "📐",
+            "label": "Form priorisieren",
+            "note": "Weniger korrekte Wdh. > viele falsche"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📐",
+            "label": "Tages-Trainingsrahmen",
+            "to": "/pillar/a/framework"
+          },
+          {
+            "icon": "⚡",
+            "label": "Schnelle Workouts",
+            "to": "/pillar/f/quick-workouts"
+          }
+        ]
+      },
+      {
+        "text": "Bei 40 Minuten: volles Abkühlen und Mind Reset hinzufügen",
+        "details": [
+          "40 Minuten ist die 'goldene Zone' — genug für eine vollständige Einheit ohne so lang zu sein, dass mentale Erschöpfung entsteht oder die Gewohnheit schwer wird.",
+          "40-Minuten-Aufteilung: 5' Aufwärmen → 20' Haupttraining (Satz oder Übung hinzufügen) → 10' volles Dehnen aller Muskelgruppen → 5' vollständiger Mind Reset.",
+          "Bei regelmäßigen 40 Minuten: 5 Minuten Foam Rolling vor statischem Dehnen hinzufügen, oder Sitzmeditation statt nur 3 Atemzüge. Dies ist die 'Vollprogramm'-Version täglich."
+        ],
+        "points": [
+          {
+            "icon": "⏳",
+            "label": "Goldene Zone",
+            "note": "40 Min = effektivste & nachhaltigste"
+          },
+          {
+            "icon": "🧴",
+            "label": "Foam Rolling hinzufügen",
+            "note": "5' vor statischem Dehnen bei Verfügbarkeit"
+          },
+          {
+            "icon": "🧘",
+            "label": "Volle Meditation",
+            "note": "5' sitzen statt nur 3 Atemzüge"
+          },
+          {
+            "icon": "📊",
+            "label": "Eine Übung hinzufügen",
+            "note": "Satz erhöhen oder Schwachpunkt-Übung"
+          }
+        ],
+        "links": [
+          {
+            "icon": "📐",
+            "label": "Tages-Trainingsrahmen",
+            "to": "/pillar/a/framework"
+          },
+          {
+            "icon": "🌿",
+            "label": "Aktive Erholung",
+            "to": "/pillar/c/recovery"
+          }
+        ]
+      }
     ],
     "adjust_schedule_title": "An Deinen Zeitplan Anpassen",
     "adjust_tips": [
@@ -676,33 +1464,195 @@
     "quick_links": [
       {
         "label": "Bewegung & Training",
-        "sub": "6 Muster · Tagesrahmen · Roadmap",
-        "desc": "Von 6 Grundbewegungen bis zum personalisierten 12-Wochen-Fahrplan — vollständiger Leitfaden für Anfänger und Fortgeschrittene."
+        "sub": "6 Muster · Tagesrahmen · Fahrplan",
+        "desc": "Von 6 Grundbewegungen zum personalisierten 12-Wochen-Fahrplan — vollständiger Leitfaden für Einsteiger und Fortgeschrittene.",
+        "details": [
+          "Die 6 Grundbewegungen (Kniebeuge, Hüftscharnier, Drücken, Ziehen, Rumpf, Atmen) sind die Sprache des Körpers — sie zuerst zu meistern, bevor etwas anderes hinzukommt, ist der sicherste und effektivste Ansatz.",
+          "Standardmäßiger Tages-Trainingsrahmen: 5 Minuten Aufwärmen + 20–30 Minuten Haupttraining + 5–10 Minuten Dehnen + 5 Minuten Mind Reset. Diese Struktur optimiert Leistung und Erholung.",
+          "Der 12-Wochen-Fahrplan teilt sich in 3 klare Phasen mit Fortschrittstests alle 4 Wochen — kein Rätselraten, messbar, anpassbar an echte Ergebnisse."
+        ],
+        "points": [
+          {
+            "icon": "🏋",
+            "label": "6 Grundbewegungen",
+            "note": "Fundament jedes Trainingsprogramms"
+          },
+          {
+            "icon": "⏱",
+            "label": "Standard-Tagesrahmen",
+            "note": "5' Aufwärmen + 20–30' Haupt + Dehnen"
+          },
+          {
+            "icon": "📅",
+            "label": "12-Wochen-Fahrplan",
+            "note": "3 Phasen · periodische Fortschrittstests"
+          },
+          {
+            "icon": "📊",
+            "label": "Wochenrhythmus",
+            "note": "3 Kraft + 2 Cardio + 2 Erholung"
+          }
+        ]
       },
       {
-        "label": "Ernährungs-Roadmap",
-        "sub": "12 Wochen · Makro · Meal Prep",
-        "desc": "12-Wochen-Ernährungssystem: vom Basisteller-Modell zu Makros und Meal Prep — kein Verzicht, nur klügeres Essen."
+        "label": "Ernährungsfahrplan",
+        "sub": "12 Wochen · Makros · Meal-Prep",
+        "desc": "12-Wochen-Ernährungssystem: vom Grundteller-Modell bis zu Makros und Meal-Prep — keine Restriktion, nur klüger essen.",
+        "details": [
+          "12 Wochen Ernährung bedeutet keine Restriktion — es geht darum, genug und richtig zu essen: genug Protein für Muskelaufbau, genug Kohlenhydrate für Energie, genug Ballaststoffe für Darmgesundheit.",
+          "3 Phasen: Wochen 1–4 (Grundteller-Formel lernen) → Wochen 5–8 (TDEE berechnen und Makros tracken) → Wochen 9–12 (Meal-Prep und vollständige Personalisierung).",
+          "Integrierter TDEE-Rechner — Gewicht, Größe, Alter und Aktivitätslevel eingeben, um einen auf deine Bedürfnisse zugeschnittenen Plan zu erhalten."
+        ],
+        "points": [
+          {
+            "icon": "🍽",
+            "label": "Teller-Formel",
+            "note": "½ Gemüse · ¼ Protein · ¼ Kohlenhydrate"
+          },
+          {
+            "icon": "🔢",
+            "label": "TDEE-Rechner",
+            "note": "Kalorien & Makros personalisieren"
+          },
+          {
+            "icon": "📦",
+            "label": "Meal-Prep-Guide",
+            "note": "45 Min/Woche für 5–7 Tage sauberes Essen"
+          },
+          {
+            "icon": "📈",
+            "label": "Schrittweise Verbesserung",
+            "note": "Kein Schock — graduelle wöchentliche Anpassungen"
+          }
+        ]
       },
       {
         "label": "7-Tage-Ernährungsplan",
-        "sub": "Tägliche Mahlzeiten · Einkaufsliste",
-        "desc": "Detaillierter 7-Tage-Mahlzeitenplan mit Einkaufsliste — einfach kopieren und kochen, kein Nachdenken nötig."
+        "sub": "Mahlzeiten pro Tag · Einkaufsliste",
+        "desc": "Detaillierter 7-Tage-Ernährungsplan mit jeder Mahlzeit und fertiger Einkaufsliste — einfach kopieren und kochen.",
+        "details": [
+          "7 Tage detaillierte Mahlzeitenpläne für Frühstück, Mittagessen und Abendessen mit vorberechneten Kalorien und Makros. Klare Vorlage zum sofortigen Nachkochen — ideal für Einsteiger.",
+          "Beigelegte Einkaufsliste fasst alle Zutaten für die gesamte Woche zusammen — einmal einkaufen reicht. Kein tägliches Überlegen 'was esse ich heute?'.",
+          "Abwechslungsreicher Speiseplan — keine Mahlzeit mehr als zweimal pro Woche. Ausreichend Protein, Gemüse und alltagstaugliche Zutaten."
+        ],
+        "points": [
+          {
+            "icon": "🍳",
+            "label": "3 Mahlzeiten/Tag × 7 Tage",
+            "note": "21 Mahlzeiten mit vorberechneten Makros"
+          },
+          {
+            "icon": "🛒",
+            "label": "Einkaufsliste inklusive",
+            "note": "Einmal einkaufen für die ganze Woche"
+          },
+          {
+            "icon": "🌿",
+            "label": "Vollwertige Zutaten",
+            "note": "Alltagszutaten ohne Exoten"
+          },
+          {
+            "icon": "🔄",
+            "label": "Keine Wiederholung >2×/Woche",
+            "note": "Tägliche Nährstoffvielfalt"
+          }
+        ]
       },
       {
         "label": "Lebensstil 12 Wochen",
         "sub": "Schlaf · NEAT · Circadianrhythmus",
-        "desc": "12-Wochen-Lebensstil-Fahrplan — Schlaf optimieren, natürliche Bewegung steigern und mit dem zirkadianen Rhythmus synchronisieren."
+        "desc": "12-Wochen-Lebensstil-Fahrplan — Schlaf optimieren, natürliche Bewegung steigern und mit dem zirkadianen Rhythmus synchronisieren.",
+        "details": [
+          "Schlaf ist die 'Superkraft' der Gesundheit — der 12-Wochen-Lebensstilplan beginnt mit Schlafoptimierung: konsistente Schlafzeiten, kühles dunkles Zimmer, kein Blaues Licht. Alles andere funktioniert besser wenn man ausgeschlafen ist.",
+          "NEAT (Non-Exercise Activity Thermogenesis) — Bewegung außerhalb des Gyms: Gehen, Stehen, Treppensteigen — kann bei aktiven Menschen 300–500 kcal/Tag verbrennen. NEAT zu erhöhen ist einfacher als Gym-Zeit zu steigern.",
+          "Der zirkadiane Rhythmus reguliert Hormone, Energie und Stimmung. Der Fahrplan hilft, den Tagesablauf mit der biologischen Uhr zu synchronisieren — ohne drastische Veränderungen."
+        ],
+        "points": [
+          {
+            "icon": "😴",
+            "label": "Schlaf optimieren",
+            "note": "Kühl · dunkel · konsistente Zeiten"
+          },
+          {
+            "icon": "🚶",
+            "label": "NEAT steigern",
+            "note": "300–500 kcal/Tag durch natürliche Bewegung"
+          },
+          {
+            "icon": "🔄",
+            "label": "Zirkadianer Rhythmus",
+            "note": "Tagesplan mit biologischer Uhr synchronisieren"
+          },
+          {
+            "icon": "📱",
+            "label": "Digitales Wohlbefinden",
+            "note": "Bildschirmzeit & Dopamin managen"
+          }
+        ]
       },
       {
         "label": "Geist 12 Wochen",
-        "sub": "Meditation · Atmung · Journaling",
-        "desc": "12-Wochen-Geist-Fahrplan — Stress reduzieren, Fokus verbessern und Selbstwahrnehmung aufbauen mit 3 Werkzeugen: Meditation, Atmung, Journaling."
+        "sub": "Meditation · Atemübungen · Journaling",
+        "desc": "12-Wochen-Geist-Fahrplan — Stress reduzieren, Fokus verbessern und Selbstwahrnehmung aufbauen mit 3 Werkzeugen.",
+        "details": [
+          "Meditation bedeutet nicht 'nicht denken' — es ist das Training, zu bemerken wenn der Geist abschweift und sanft zurückzukehren. 5 Minuten/Tag verändern graue Substanz im präfrontalen Kortex nach 8 Wochen.",
+          "Atemkontrolle ist das einzige Werkzeug, das das autonome Nervensystem bewusst beeinflusst. Box-Breathing (4s–4s–4s–4s) reduziert Cortisol und Herzfrequenz in unter 30 Sekunden.",
+          "Abend-Journaling (3 Zeilen) — 'unerledigte Geschäfte' aufschreiben — hilft dem Gehirn 'Tabs zu schließen', reduziert mentales Rauschen vor dem Schlafen und verbessert das Lernen aus Alltagserfahrungen."
+        ],
+        "points": [
+          {
+            "icon": "🧘",
+            "label": "5 Min/Tag Meditation",
+            "note": "Gehirnveränderung nach 8 Wochen"
+          },
+          {
+            "icon": "🫁",
+            "label": "Box-Breathing",
+            "note": "4s–4s–4s–4s — Cortisol in <30s senken"
+          },
+          {
+            "icon": "📓",
+            "label": "3-Zeilen-Journaling",
+            "note": "Mentale Tabs schließen — tiefer schlafen"
+          },
+          {
+            "icon": "🎯",
+            "label": "Morgens Absicht setzen",
+            "note": "RAS-Aktivierung — +91% Umsetzungsrate"
+          }
+        ]
       },
       {
-        "label": "Werkzeuge-Roadmap",
-        "sub": "Checkliste · Tracker · Test",
-        "desc": "Vollständiges Fortschritts-Tracking: Tages-Checkliste, Wochen-Tracker und 4-Wochen-Test — real messen für echten Fortschritt."
+        "label": "Werkzeuge & Ressourcen",
+        "sub": "Checkliste · Log · Fortschrittstests",
+        "desc": "Praktische Werkzeuge für tägliches Tracking: Gewohnheits-Checkliste, Trainingslog, Basistests und Wochenreviews.",
+        "details": [
+          "Eine tägliche Checkliste macht Gewohnheiten visuell — unerledigte Kästchen zu sehen motiviert stärker als Willenskraft allein. Jedes Abhaken gibt eine kleine Dopaminbelohnung.",
+          "Das Trainingslog enthält Daten, die man sich nicht genau merken kann: Gewicht, Wiederholungen, RPE, Gefühl. 4-Wochen-Reviews zeigen Muster — macht man Fortschritte oder stagniert man?",
+          "Basistests alle 4 Wochen geben objektives Feedback. Man fühlt sich vielleicht 'gleich', aber die Zahlen zeigen 50m mehr beim 6MWT oder 5 mehr Liegestütze — Beweis der Motivation."
+        ],
+        "points": [
+          {
+            "icon": "✅",
+            "label": "Tages-Checkliste",
+            "note": "Visueller Gewohnheits-Tracker täglich"
+          },
+          {
+            "icon": "📊",
+            "label": "Trainingslog",
+            "note": "Daten → Muster → kluge Verbesserung"
+          },
+          {
+            "icon": "🔬",
+            "label": "Basistest",
+            "note": "Ausgangspunkt = persönlicher Benchmark"
+          },
+          {
+            "icon": "🔄",
+            "label": "Wochenreview",
+            "note": "10 Min Review = 10x effektiver nächste Woche"
+          }
+        ]
       }
     ],
     "sub_tab_phases": "Roadmap",
@@ -2989,7 +3939,84 @@
         ],
         "note": "Nach 24 Wochen bist du nicht mehr am Gesundwerden - du bist eine Person geworden, die gesund lebt. Das ist der Unterschied."
       }
-    ]
+    ],
+    "weekly_panel": [
+      {
+        "sessions": "3×/Woche",
+        "rest": "60–90s",
+        "moves": [
+          "Kniebeuge — 3×12",
+          "Hüftscharnier (Deadlift) — 3×10",
+          "Drücken (Liegestütz) — 3×10",
+          "Ziehen (Rudern) — 3×10",
+          "Rumpf (Plank) — 3×30s"
+        ],
+        "tips": [
+          "Form vor Intensität — Belastung nicht erhöhen bis Technik korrekt ist",
+          "5-Min-Aufwärmen Pflicht vor jeder Einheit",
+          "Maximal 10% Volumen pro Woche steigern",
+          "RPE + Wiederholungen sofort nach der Einheit im Trainingslog notieren"
+        ],
+        "avoid": "Niemals 2 aufeinanderfolgende Tage trainieren — Muskeln brauchen 48h zur Regeneration"
+      },
+      {
+        "sessions": "2×/Woche",
+        "rest": "N/A",
+        "moves": [
+          "Zügiges Gehen — Ziel 100–120 bpm",
+          "Stationäres / Outdoor-Radfahren",
+          "Treppensteigen (NEAT)",
+          "Leichtes Schwimmen / Aqua Jogging",
+          "Seilspringen leicht — 10' reichen"
+        ],
+        "tips": [
+          "Nach dem Mittagessen = Blutzucker um 20–30% senken",
+          "Zur Arbeit laufen = kostenloses NEAT",
+          "Podcasts / Musik hören um Commitment zu steigern",
+          "Ziel-Herzfrequenz = (220 - Alter) × 60–70%"
+        ],
+        "avoid": "Nicht direkt nach dem Essen laufen — mindestens 30 Minuten warten"
+      },
+      {
+        "sessions": "1×/Woche",
+        "rest": "Flexibel",
+        "moves": [
+          "Statisches Dehnen — 30–60s pro Position halten",
+          "Foam Rolling am ganzen Körper — 10'",
+          "Leichtes Yoga / Yin Yoga",
+          "Entspannter Spaziergang im Park",
+          "Leichte Massage / Selbstmassage mit Ball"
+        ],
+        "tips": [
+          "Das ist 'unsichtbares Training' — Muskeln wachsen während der Erholung",
+          "Atmung: 4s einatmen → 4s halten → 6s ausatmen",
+          "Beste Zeit um auf Körpersignale zu achten",
+          "Mehr Wasser trinken als gewöhnlich"
+        ],
+        "avoid": "Diesen Tag nicht als Faultag betrachten — bewusste Erholung = mehr Muskelwachstum"
+      },
+      {
+        "sessions": "1×/Woche",
+        "rest": "Vollständige Ruhe",
+        "moves": [
+          "Vollständige Ruhe",
+          "Leichter Spaziergang nach Wunsch",
+          "Zeit in der Natur",
+          "Soziale Aktivitäten",
+          "Leichtes Dehnen wenn der Körper es verlangt"
+        ],
+        "tips": [
+          "Echte Ruhe beschleunigt Erholung mehr als leichtes Training",
+          "Nächste Trainingswoche vorbereiten",
+          "Fokus auf Ernährung und Schlafqualität",
+          "Mentale Erholung genauso wichtig wie körperliche"
+        ],
+        "avoid": "Kein schlechtes Gewissen beim Ausruhen — Erholung ist Teil des Programms"
+      }
+    ],
+    "pillar_phase_intro_prefix": "Kerninhalte der Säule",
+    "pillar_phase_intro_middle": "in der Phase",
+    "pillar_explore_header": "Im Detail erkunden"
   },
   "contact": {
     "title": "Kontakt",

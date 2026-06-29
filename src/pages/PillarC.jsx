@@ -1881,6 +1881,7 @@ function C0ItemModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 
 function C1StepModal({ step, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const { t: tCommon } = useTranslation('common');
+  const { t: tPillars } = useTranslation('pillars');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1917,7 +1918,7 @@ function C1StepModal({ step, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
             </div>
             <span className="text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full"
               style={{ color, background: `rgba(${rgb},0.2)`, border: `1px solid rgba(${rgb},0.35)` }}>
-              Bước {step.step}
+              {tPillars('pillarC.c1_step_prefix', { defaultValue: 'Bước' })} {step.step}
             </span>
           </div>
           <button onClick={onClose}
@@ -2183,6 +2184,18 @@ export default function PillarC() {
 
   const tabsTr = Array.isArray(pillar?.hub_tabs) ? pillar.hub_tabs : [];
   const mergedTabs = TABS.map((t, i) => ({ ...t, label: tabsTr[i]?.label || t.label }));
+
+  const c1StepsTr = tPillars('pillarC.c1_steps', { returnObjects: true });
+  const localC1Steps = C1_STEPS.map((s, i) => ({
+    ...s,
+    ...(Array.isArray(c1StepsTr) && c1StepsTr[i] ? c1StepsTr[i] : {}),
+  }));
+
+  const c3LevelsTr = tPillars('pillarC.c3_levels', { returnObjects: true });
+  const localC3Levels = C3_LEVELS.map((l, i) => ({
+    ...l,
+    ...(Array.isArray(c3LevelsTr) && c3LevelsTr[i] ? c3LevelsTr[i] : {}),
+  }));
   const tab = mergedTabs.find(t => t.id === activeTab) || mergedTabs[1];
   const sleepProgress = C1_CHECKLIST.filter((_, i) => sleepChecks[i]).length;
   const neatProgress = [0, 1, 2, 3].filter(i => neatChecks[i]).length;
@@ -2438,7 +2451,7 @@ export default function PillarC() {
                 <h2 className="text-2xl font-bold mb-1" style={{ color: TEAL }}>Vệ Sinh Giấc Ngủ 4 Bước</h2>
                 <p className="text-muted text-lg mb-6">Ngủ không phải là "thời gian chết". Ngủ là lúc cơ thể sửa chữa cơ bắp, cân bằng hormone và phục hồi tâm lý.</p>
                 <div className="grid gap-3 mb-8">
-                  {C1_STEPS.map((s, i) => (
+                  {localC1Steps.map((s, i) => (
                     <div
                       key={s.step}
                       role="button"
@@ -2450,7 +2463,7 @@ export default function PillarC() {
                     >
                       <span className="text-3xl shrink-0">{s.icon}</span>
                       <div className="flex-1 min-w-0">
-                        <div className="font-semibold text-text text-lg">Bước {s.step}: {s.title}</div>
+                        <div className="font-semibold text-text text-lg">{tPillars('pillarC.c1_step_prefix', { defaultValue: 'Bước' })} {s.step}: {s.title}</div>
                         <div className="text-muted text-base mt-1 leading-relaxed">{s.desc}</div>
                       </div>
                       <div className="shrink-0 flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: s.color }}>
@@ -2460,7 +2473,7 @@ export default function PillarC() {
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: TEAL }}>Checklist Ngủ Hằng Ngày</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: TEAL }}>{tPillars('pillarC.c1_checklist_heading', { defaultValue: 'Checklist Ngủ Hằng Ngày' })}</h3>
                 <div className="space-y-1.5 mb-4">
                   {C1_CHECKLIST.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
@@ -2585,7 +2598,7 @@ export default function PillarC() {
                 <p className="text-muted text-lg mb-6">NEAT là toàn bộ vận động ngoài buổi tập: đi bộ, đứng lên, làm việc nhà. Với người bận rộn, NEAT quan trọng không kém buổi tập gym.</p>
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>Mục tiêu bước theo cấp độ</h3>
                 <div className="grid gap-2 mb-6">
-                  {C3_LEVELS.map((l, i) => (
+                  {localC3Levels.map((l, i) => (
                     <div
                       key={i}
                       role="button"
@@ -2612,15 +2625,15 @@ export default function PillarC() {
                   style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' }}
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <p className="text-lg font-bold" style={{ color: '#10b981' }}>⏱ Quy tắc đứng dậy 2 phút</p>
+                    <p className="text-lg font-bold" style={{ color: '#10b981' }}>{tPillars('pillarC.c3_standup_title', { defaultValue: '⏱ Quy tắc đứng dậy 2 phút' })}</p>
                     <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#10b981' }}>
                       {tCommon('modal.see_detail_label')}
                       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                     </span>
                   </div>
-                  <p className="text-base text-muted">Mỗi 45–60 phút ngồi, đứng dậy 2 phút. Đi lấy nước, xoay vai, vươn người, calf raise. <strong>Đừng đợi đau mới đứng dậy.</strong></p>
+                  <p className="text-base text-muted">{tPillars('pillarC.c3_standup_desc', { defaultValue: 'Mỗi 45–60 phút ngồi, đứng dậy 2 phút. Đi lấy nước, xoay vai, vươn người, calf raise. Đừng đợi đau mới đứng dậy.' })}</p>
                 </div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>NEAT Checklist</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>{tPillars('pillarC.c3_neat_checklist_heading', { defaultValue: 'NEAT Checklist' })}</h3>
                 <div className="space-y-1.5 mb-4">
                   {C3_NEAT_CHECKLIST.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
@@ -3119,11 +3132,11 @@ export default function PillarC() {
       {/* ── C3 level modal — reuses C0ItemModal (same data shape) ── */}
       {c3LevelIdx !== null && (
         <C0ItemModal
-          item={C3_LEVELS[c3LevelIdx]}
+          item={localC3Levels[c3LevelIdx]}
           idx={c3LevelIdx}
           onClose={() => setC3LevelIdx(null)}
           onPrev={() => setC3LevelIdx(i => Math.max(0, i - 1))}
-          onNext={() => setC3LevelIdx(i => Math.min(C3_LEVELS.length - 1, i + 1))}
+          onNext={() => setC3LevelIdx(i => Math.min(localC3Levels.length - 1, i + 1))}
           hasPrev={c3LevelIdx > 0}
           hasNext={c3LevelIdx < C3_LEVELS.length - 1}
         />
@@ -3239,11 +3252,11 @@ export default function PillarC() {
       {/* ── C1 step modal — outside all RevealBlocks so position:fixed works ── */}
       {c1Idx !== null && (
         <C1StepModal
-          step={C1_STEPS[c1Idx]}
+          step={localC1Steps[c1Idx]}
           idx={c1Idx}
           onClose={() => setC1Idx(null)}
           onPrev={() => setC1Idx(i => Math.max(0, i - 1))}
-          onNext={() => setC1Idx(i => Math.min(C1_STEPS.length - 1, i + 1))}
+          onNext={() => setC1Idx(i => Math.min(localC1Steps.length - 1, i + 1))}
           hasPrev={c1Idx > 0}
           hasNext={c1Idx < C1_STEPS.length - 1}
         />

@@ -1689,9 +1689,44 @@ const SUB_TABS_12W = [
   { id:'test',   label:'Bài Test', icon:'📈' },
 ];
 
+// ── Vietnamese link label → programs.json key map ────────────────────────────
+const LINK_LABEL_MAP = {
+  '6 Mẫu Vận Động':        'ui.link_movements',
+  'Khung Ngày Tập':         'ui.link_framework',
+  'Khung Ngày':             'ui.link_framework',
+  'Xem Khung Ngày':         'ui.link_framework',
+  'Nhịp Tuần':              'ui.link_weekly_rhythm',
+  'Theo Dõi Tiến Bộ':       'ui.link_progress',
+  'Theo Dõi':               'ui.link_progress',
+  'Phục Hồi Tích Cực':      'ui.link_recovery',
+  'Phục Hồi':               'ui.link_recovery',
+  'Lối Sống':               'ui.link_lifestyle',
+  'Lối Sống Khỏe':          'ui.link_lifestyle',
+  'Lối Sống & Ngủ':         'ui.link_lifestyle',
+  'NEAT & Lối Sống':        'ui.link_neat',
+  'NEAT & Bước Chân':       'ui.link_neat_steps',
+  'Nhịp Sinh Học':          'ui.link_circadian',
+  'Tâm Trí':                'ui.link_mind_short',
+  'Kỹ Thuật Thở':           'ui.link_breathing',
+  'Thở & Hồi Phục':         'ui.link_breathe_recovery',
+  'Thiền Định':             'ui.link_meditation',
+  'Dinh Dưỡng':             'ui.link_nutrition_short',
+  'Dinh Dưỡng & Meal Plan': 'ui.link_nutrition_short',
+  'Dinh Dưỡng & TDEE':      'ui.link_nutrition_short',
+  'Kiến Thức Sức Khỏe':     'ui.link_knowledge',
+  'Thực Đơn 7 Ngày':        'ui.link_7day_menu',
+  'Lộ Trình 12 Tuần':       'ui.link_12week',
+  'Đĩa Ăn & Khẩu Phần':    'ui.link_plate_portion',
+  'Tính TDEE (B0)':         'ui.link_tdee_calc',
+  'Tối Ưu Giấc Ngủ':        'ui.link_sleep_opt',
+  'Viết Nhật Ký':           'ui.link_journaling',
+  'Quản Lý Căng Thẳng':     'ui.link_stress',
+};
+
 // ── DailyBlockModal (shared for DAILY_BLOCKS + DAILY_PRINCIPLES) ─────────────
 function DailyBlockModal({ block, onClose }) {
   const { t: tCommon } = useTranslation('common');
+  const { t: tProg } = useTranslation('programs');
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -1737,13 +1772,13 @@ function DailyBlockModal({ block, onClose }) {
           </ul>
           {/* Quick links */}
           <div className="mb-5 pb-5" style={{ borderBottom: `1px solid rgba(${block.rgb},0.12)` }}>
-            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${block.rgb},0.5)` }}>Khám Phá Chi Tiết</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: `rgba(${block.rgb},0.5)` }}>{tCommon('program.pillar_explore_header', 'Khám Phá Chi Tiết')}</p>
             <div className="flex flex-wrap gap-2">
               {block.links.map((lk, li) => (
                 <Link key={li} to={lk.to} onClick={onClose}
                   className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
                   style={{ color: block.color, background: `rgba(${block.rgb},0.1)`, border: `1px solid rgba(${block.rgb},0.22)` }}>
-                  <span>{lk.icon}</span> {lk.label} →
+                  <span>{lk.icon}</span> {LINK_LABEL_MAP[lk.label] ? tProg(LINK_LABEL_MAP[lk.label], { defaultValue: lk.label }) : lk.label} →
                 </Link>
               ))}
             </div>
@@ -1850,6 +1885,7 @@ const PILLAR_ASSETS = {
 // ── PillarPhaseModal ──────────────────────────────────────────────────────────
 function PillarPhaseModal({ pillarId, text, phase, onClose }) {
   const { t: tCommon } = useTranslation('common');
+  const { t: tProg } = useTranslation('programs');
   const pBase = PC[pillarId];
   const tPillarLabels = tCommon('program.pillar_labels', { returnObjects: true });
   const translatedLabel = (tPillarLabels && typeof tPillarLabels === 'object' && !Array.isArray(tPillarLabels))
@@ -1913,7 +1949,7 @@ function PillarPhaseModal({ pillarId, text, phase, onClose }) {
                 <Link key={li} to={lk.to} onClick={onClose}
                   className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl transition-all duration-150 hover:opacity-90 hover:scale-105"
                   style={{ color: p.c, background: `rgba(${phase.rgb},0.1)`, border: `1px solid rgba(${phase.rgb},0.22)` }}>
-                  <span>{lk.icon}</span> {lk.label} →
+                  <span>{lk.icon}</span> {LINK_LABEL_MAP[lk.label] ? tProg(LINK_LABEL_MAP[lk.label], { defaultValue: lk.label }) : lk.label} →
                 </Link>
               ))}
             </div>

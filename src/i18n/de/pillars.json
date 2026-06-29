@@ -2349,6 +2349,183 @@
       {"label": "Atmung"},
       {"label": "Umgebung"}
     ],
+    "c1_step_prefix": "Schritt",
+    "c1_checklist_heading": "Tägliche Schlaf-Checkliste",
+    "c3_standup_title": "⏱ Die 2-Minuten-Aufsteh-Regel",
+    "c3_standup_desc": "Alle 45–60 Minuten Sitzen aufstehen für 2 Minuten. Wasser holen, Schultern kreisen, dehnen, Wadenheben. Nicht warten, bis Schmerzen kommen.",
+    "c3_neat_checklist_heading": "NEAT Checkliste",
+    "c1_steps": [
+      {
+        "title": "Feste Schlaf- und Aufwachzeiten",
+        "desc": "Nicht perfekt, aber innerhalb von 60 Minuten bleiben – auch am Wochenende.",
+        "keyFact": "Jeden Tag zur gleichen Zeit einzuschlafen und aufzuwachen ist wichtiger als die reine Schlafdauer – Konsequenz ist der Schlüssel zu Tiefschlaf.",
+        "detail": "Deine innere Uhr wird hauptsächlich durch die Aufwachzeit gesteuert, nicht durch die Einschlafzeit. Eine feste Aufwachzeit reguliert den gesamten Schlafrhythmus.",
+        "details": [
+          "Das Gehirn nutzt die Aufwachzeit als 'Anker', um rückwärts das natürliche Müdigkeitsfenster zu berechnen – deshalb ist die Aufwachzeit wichtiger als die Einschlafzeit.",
+          "'Sozialer Jetlag' – spät schlafen und spät aufwachen am Wochenende – erzeugt denselben Effekt wie wöchentlich 2–3 Zeitzonen zu überqueren.",
+          "Nach 3–4 Wochen konsequenter Aufwachzeiten stellt sich Müdigkeit ganz natürlich zum richtigen Zeitpunkt ein.",
+          "Keine frühere Schlafenszeit erzwingen – zuerst die Aufwachzeit festlegen. Die Schlafenszeit passt sich in 1–2 Wochen selbst an.",
+          "Wenn du mal spät ins Bett gehst: trotzdem zur normalen Zeit aufstehen, nicht ausschlafen – sonst bricht das Muster.",
+          "Helles Licht in den ersten 30 Minuten nach dem Aufwachen (nach draußen oder Vorhänge öffnen) verankert die Aufwachzeit schneller in der inneren Uhr."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Feste Aufwachzeit", "note": "Wichtiger als die Einschlafzeit" },
+          { "icon": "📅", "label": "Auch am Wochenende", "note": "±60 Minuten ist akzeptabel" },
+          { "icon": "☀️", "label": "Licht nach dem Aufwachen", "note": "30 Min draußen oder Vorhänge auf" },
+          { "icon": "🗓️", "label": "3–4 Wochen aufbauen", "note": "Dann kommt Müdigkeit wie von selbst" }
+        ]
+      },
+      {
+        "title": "Starkes Licht am Abend reduzieren",
+        "desc": "Ab 21–22 Uhr Lichter dimmen und Bildschirme reduzieren. Helles Licht abends unterdrückt Melatonin.",
+        "keyFact": "Schon 10–15 Minuten Blaulichtexposition am Abend genügen, um Melatonin für 2–3 Stunden um 50 % zu unterdrücken – laut Harvard-Forschung.",
+        "detail": "Melatonin – das Hormon, das 'Nacht ist da' signalisiert – steigt etwa 2 Stunden vor dem natürlichen Schlafzeitpunkt an. Blaulicht von Bildschirmen ist sein größter Feind.",
+        "details": [
+          "Smartphone-, Computer- und TV-Bildschirme strahlen Blaulicht (450–490 nm) ab – die Wellenlänge, die das Gehirn als Tageslicht interpretiert und die Melatoninproduktion blockiert.",
+          "Blaulichtfilter-Brillen oder Nachtmodus reduzieren Blaulicht um ca. 20–30 % – hilfreich, aber keine vollständige Lösung.",
+          "Raumbeleuchtung ab 21 Uhr dimmen und auf warmes Bernsteinlicht (<3000K) wechseln sendet dem Gehirn ein viel wirksameres 'Nacht kommt'-Signal als jede Filter-App.",
+          "30 Minuten vor dem Schlafen ein Papierbuch lesen verkürzt die Einschlafdauer um durchschnittlich 12 Minuten und verbessert die Schlafqualität.",
+          "Blaulichtblockierende Brillen (Bernsteinglas) ab 20 Uhr sind die wirksamste Lösung, wenn du abends am Bildschirm arbeiten musst.",
+          "Raumbeleuchtung (helles Deckenlicht) hat mehr Einfluss als ein kleines Smartphone – zuerst den Raum verdunkeln, dann über Nachtmodus nachdenken."
+        ],
+        "points": [
+          { "icon": "🌑", "label": "Licht ab 21 Uhr dimmen", "note": "Auf warmes Licht <3000K wechseln" },
+          { "icon": "📵", "label": "Ab 22 Uhr kein Bildschirm", "note": "Oder Blaulichtbrille tragen" },
+          { "icon": "📚", "label": "Papierbuch lesen", "note": "30 Min vor dem Schlafen statt Bildschirm" },
+          { "icon": "⚙️", "label": "Nachtmodus", "note": "Ab 19–20 Uhr aktivieren, nicht erst beim Schlafen" }
+        ]
+      },
+      {
+        "title": "Körperliche Stimulation reduzieren",
+        "desc": "Kein Koffein nach 14–15 Uhr, kein intensives Training kurz vor dem Schlafen, keine stressigen Aufgaben direkt vor dem Einschlafen.",
+        "keyFact": "Koffein hat eine Halbwertszeit von 5–6 Stunden: Ein Kaffee um 15 Uhr hat um 21 Uhr noch 50 % seiner Wirkung – genug, um Tiefschlaf zu stören.",
+        "detail": "Stimulation durch Koffein, intensives Training oder Stress schafft ein körperliches Umfeld, das das genaue Gegenteil von dem ist, was der Körper für Tiefschlaf braucht.",
+        "details": [
+          "Koffein blockiert Adenosin-Rezeptoren – Adenosin ist das Müdigkeitsmolekül. Wenn Koffein nachlässt, 'flutet' Adenosin zurück und verursacht plötzliche Erschöpfung.",
+          "Koffein-empfindliche Menschen: Getränke mit Koffein nach dem Mittag reichen aus, um den Schlaf zu beeinflussen – das ist genetisch, kein Zeichen schwacher Willenskraft.",
+          "Intensives Training 2–3 Stunden vor dem Schlafen erhöht Cortisol und Körperkerntemperatur – beides erschwert das Einschlafen. Leichte Übungen (Spaziergang, Yoga) sind in Ordnung.",
+          "Stressige Arbeit vor dem Schlafen aktiviert den 'Problemlösungs-Modus' des Gehirns – das sympathische Nervensystem bleibt auch nach dem Laptop-Schließen aktiv.",
+          "'Abwind-Phase' 30–60 Minuten: E-Mails/Arbeit stoppen, leichte Tätigkeiten ohne Entscheidungen. Das Gehirn braucht Zeit, um von 'Kampfmodus' in 'Ruhemodus' zu wechseln.",
+          "Alkohol hilft beim Einschlafen, stört aber REM- und Tiefschlaf in der zweiten Nachthälfte – die Schlafqualität insgesamt ist deutlich schlechter."
+        ],
+        "points": [
+          { "icon": "☕", "label": "Koffein bis 14–15 Uhr", "note": "5–6 Stunden Halbwertszeit im Blut" },
+          { "icon": "🏋️", "label": "Leichtes Training abends", "note": "Spazieren/Yoga OK, hartes Training nein" },
+          { "icon": "💼", "label": "Arbeit bis 21 Uhr", "note": "30–60 Min Abwind vor dem Schlafen" },
+          { "icon": "🍺", "label": "Abendalkohol begrenzen", "note": "Stört REM, obwohl er Einschlafen erleichtert" }
+        ]
+      },
+      {
+        "title": "Schlafzimmer optimieren",
+        "desc": "Dunkel, kühl (~18–21°C), leise. Das Bett hauptsächlich zum Schlafen nutzen – nicht zum Arbeiten oder Videoschauen.",
+        "keyFact": "18–21°C Raumtemperatur ist die optimale Bedingung für Tiefschlaf – die Körperkerntemperatur muss um 1–2°C sinken, um Tiefschlaf zu erreichen.",
+        "detail": "Das Schlafzimmer ist eine Umgebung, die Schlafverhalten auslöst. Wenn das Gehirn das Bett mit Arbeit, Bildschirm oder Stress verbindet, hört es auf, 'Bett = Schlaf' als Signal zu lesen.",
+        "details": [
+          "Ein kühleres Zimmer hilft tiefer zu schlafen, weil Gehirn und Körper ihre Temperatur senken müssen, um in Tiefschlaf (NREM-Phase 3) einzutreten.",
+          "Vollständige (oder fast vollständige) Dunkelheit ist wichtiger als viele denken: Straßenlicht durch dünne Vorhänge reicht aus, um die Schlafqualität zu verringern.",
+          "'Stimuluskontrolle': Das Bett ist nur zum Schlafen und für Intimität – kein Arbeiten, keine Filme schauen, kein Social-Media-Scrollen im Bett.",
+          "Intermittierender Lärm (Verkehr, Stimmen) stört den Schlaf mehr als kontinuierliches Hintergrundrauschen – weißes Rauschen oder ein leiser Ventilator kann helfen.",
+          "Matratzen- und Kissenqualität beeinflusst Schlafhaltung und Morgenschmerzen – die lohnendste Schlafzimmerinvestition bei morgendlichen Schmerzen.",
+          "Ein aufgeräumtes Schlafzimmer reduziert 'visuelles Rauschen' – Forschungen zeigen, dass unordentliche Zimmer mit Einschlafschwierigkeiten verbunden sind."
+        ],
+        "points": [
+          { "icon": "❄️", "label": "18–21°C", "note": "Optimale Temperatur für Tiefschlaf" },
+          { "icon": "🌑", "label": "Vollständige Dunkelheit", "note": "Verdunklungsvorhänge oder Schlafmaske" },
+          { "icon": "🔇", "label": "Lärm reduzieren", "note": "Weißes Rauschen maskiert intermittierende Geräusche" },
+          { "icon": "🛏️", "label": "Bett nur zum Schlafen", "note": "Kein Arbeiten, kein Bildschirm im Bett" }
+        ]
+      }
+    ],
+    "c3_levels": [
+      {
+        "level": "Einsteiger",
+        "label": "Einsteiger",
+        "steps": "+1.000–2.000 Schritte über Ausgangswert",
+        "desc": "+1.000–2.000 Schritte über deinen aktuellen Ausgangswert",
+        "keyFact": "Bereits 1.000 Schritte/Tag mehr als bisher reduziert das Herzerkrankungsrisiko um 10 % und die Frühsterblichkeit um 15 % – selbst das kleinste Ziel hat klare Vorteile.",
+        "detail": "Der beste Startpunkt sind nicht 10.000 Schritte – sondern irgendwas über deinem aktuellen Level. Der Körper reagiert auf Veränderung, nicht auf absolute Zahlen.",
+        "details": [
+          "Zuerst den Ausgangswert messen: Handy oder Smartwatch 3–5 Tage ohne Gewohnheitsänderung tragen und den echten Durchschnitt notieren.",
+          "1.000–2.000 Schritte ÜBER diesem Ausgangswert erhöhen – nicht verglichen mit 'dem 10.000-Schritte-Ziel anderer'. Bei 2.000 Schritten jetzt → auf 3.000–4.000 zielen.",
+          "Studien bestätigen: Gesundheitsvorteile beginnen bei der allerersten kleinen Erhöhung – einen Aufwärtstrend zu schaffen ist wichtiger als zu einer großen Zahl zu springen.",
+          "In dieser Phase nicht täglich genau tracken – nur das Gefühl 'Ich habe mich heute mehr bewegt als sonst' zählt als Erfolg.",
+          "1 kleine Gewohnheit hinzufügen: nach dem Essen spazieren, 1 Treppe nehmen, 1 Parkplatz weiter parken. Jede kleine Gewohnheit ergibt ca. 200–500 Schritte.",
+          "Nach 2–3 Wochen steigt der Ausgangswert natürlich – dann noch 500–1.000 Schritte mehr hinzufügen statt beim gleichen Ziel zu bleiben."
+        ],
+        "points": [
+          { "icon": "📊", "label": "Erst Ausgangswert messen", "note": "3–5 Tage tracken ohne Änderungen" },
+          { "icon": "➕", "label": "+1.000–2.000 erhöhen", "note": "Verglichen mit dem eigenen Ausgangswert" },
+          { "icon": "🔁", "label": "Alle 2–3 Wochen erhöhen", "note": "Nicht zu schnell steigern" },
+          { "icon": "🏃", "label": "Kleine Gewohnheiten summieren", "note": "200–500 Schritte pro Gewohnheit" }
+        ]
+      },
+      {
+        "level": "Grundlevel",
+        "label": "Grundlevel",
+        "steps": "6.000–8.000 Schritte/Tag",
+        "desc": "6.000–8.000 Schritte/Tag",
+        "keyFact": "7.000 Schritte/Tag reduziert die Frühsterblichkeit um 50–70 % gegenüber unter 2.000 Schritten – das ist der größte 'Wendepunkt' in der Schrittforschung.",
+        "detail": "Der Bereich 6.000–8.000 bietet das beste Gesundheitsnutzen-zu-Zeitaufwand-Verhältnis – genug für signifikante Wirkung, ohne dedizierte Gehsessions zu benötigen.",
+        "details": [
+          "JAMA Internal Medicine 2019-Studie mit 16.741 Frauen: 7.500 Schritte/Tag reduzierten Frühsterblichkeit um 65 % vs. der 2.700-Schritte-Gruppe. Nutzen plateaut bei 7.500–8.000.",
+          "Auf diesem Level braucht man keine separaten Gehsessions – verteilte Bewegung den ganzen Tag (Büroweg, Treppen, Besorgungen) reicht aus.",
+          "6.000–8.000 Schritte entsprechen ca. 45–60 Minuten akkumulierter Bewegung – bei einem vollen Terminkalender vollständig machbar.",
+          "Dies ist das nachhaltigste Level langfristig ohne Aufgaben-Gefühl – herausfordernd genug, aber nicht überwältigend.",
+          "Wöchentlich tracken statt täglich: ein 7-Tage-Durchschnitt zählt mehr als täglich das genaue Ziel zu treffen.",
+          "Wenn du dieses Level 3–4 Wochen konstant erreichst, passt sich der Körper an – 6.000 Schritte fühlen sich leicht und natürlich an."
+        ],
+        "points": [
+          { "icon": "📉", "label": "7.000 Schritte = Wendepunkt", "note": "Frühsterblichkeitsrisiko –50–70 %" },
+          { "icon": "⏱️", "label": "45–60 Min akkumuliert", "note": "Kein Gehen am Stück nötig" },
+          { "icon": "📅", "label": "Wöchentlichen Schnitt tracken", "note": "Flexibler als tägliches Tracking" },
+          { "icon": "🔄", "label": "3–4 Wochen durchhalten", "note": "Dann wird es automatisch" }
+        ]
+      },
+      {
+        "level": "Gesünder",
+        "label": "Gesünder",
+        "steps": "8.000–10.000 Schritte/Tag",
+        "desc": "8.000–10.000 Schritte/Tag",
+        "keyFact": "Das 10.000-Schritte-Ziel stammt aus einer japanischen Marketingkampagne von 1965 – echte Wissenschaft zeigt maximale Vorteile bereits bei ca. 8.000–9.000 Schritten.",
+        "detail": "8.000–10.000 Schritte bringen klare Verbesserungen bei Herzausdauer, Gewichtsmanagement und Stimmung. Dies ist das Level, um 'gesünder zu werden', nicht nur 'Krankheit zu vermeiden'.",
+        "details": [
+          "Das 10.000-Schritte-Ziel wurde 1965 von Yamasa beim Launch des 'Manpo-kei' (万歩計) Pedometers erfunden. Damals gab es keine wissenschaftliche Grundlage.",
+          "Moderne Forschung zeigt: Gesundheitsvorteile steigen am stärksten von 0→7.000 Schritten, und weiter moderater von 7.000→10.000 Schritten.",
+          "Bei 8.000–10.000 Schritten beginnen sich zu verbessern: stabileres Gewicht, tieferer Schlaf, bessere Stimmung und erhöhte Ausdauer.",
+          "Um das natürlich zu erreichen: 1 Morgen- oder Abendspaziergang von 20–30 Minuten plus verteilte Bewegung über den Tag reicht.",
+          "Zügiges Gehen (man kann reden, aber atmet schneller) schafft mehr Herzkreislauf-Nutzen als langsames Gehen mit gleicher Schrittzahl.",
+          "Auf diesem Level beginnt Qualität zu zählen: manchmal auf unebenem Gelände oder bergauf gehen schafft zusätzliche Herausforderung."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "20–30 Min Spaziergang", "note": "+ verteilte Bewegung über den Tag" },
+          { "icon": "💨", "label": "Zügiges Gehen", "note": "Höheres Tempo mit erhöhter Herzfrequenz ist besser" },
+          { "icon": "📐", "label": "Qualität > Quantität", "note": "Hügeliges Gelände = extra Herausforderung" },
+          { "icon": "🎯", "label": "8.000–9.000 optimal", "note": "10.000 ist Marketing, keine Wissenschaft" }
+        ]
+      },
+      {
+        "level": "Sportlich",
+        "label": "Sportlich",
+        "steps": "Individuell nach Erholung",
+        "desc": "Individuell nach deiner Erholungskapazität",
+        "keyFact": "Menschen, die 4–5-mal/Woche intensiv trainieren, benötigen möglicherweise weniger Schritte, da der Körper bereits genug Bewegungsreize erhält – zu viele Schritte in der Erholung verlangsamen den Fortschritt.",
+        "detail": "Wenn du bereits einem strukturierten Trainingsprogramm folgst, muss NEAT mit Erholungsbedarf abgeglichen werden – 'mehr ist immer besser' gilt nicht. Auf den Körper hören ist wichtiger als eine Schrittzahl zu erreichen.",
+        "details": [
+          "Intensiv Trainierende sollten Schrittziele nach Trainingsplan anpassen: nach einem schweren Bein-Tag → weniger gehen für Muskelregeneration; an leichten Tagen → mehr Schritte.",
+          "Zeichen, dass du NEAT reduzieren solltest: Ruheherzfrequenz 5–7 Schläge höher als üblich, Trainingsleistung über 2–3 aufeinanderfolgende Einheiten sinkend, Muskelkater länger als 72 Stunden.",
+          "Für Gym-Gänger ist 'aktive Erholung' – leichtes Gehen (3.000–5.000 entspannte Schritte) am Tag nach schwerem Training – oft besser als komplette Ruhe.",
+          "Die gesamte wöchentliche Trainingslast umfasst Gym-Einheiten + NEAT – bei intensivem Training NEAT etwas zu reduzieren ist die intelligente Selbstregulation des Körpers.",
+          "Für Wettkämpfer oder 5–6-mal/Woche Trainierende: abwechselnde Hochlast- und Deload-Wochen führen zu besserem Langzeitfortschritt.",
+          "Tracking-Tool: morgendliche Herzfrequenzvariabilität (HRV) ist der beste Indikator, ob tägliche Gesamtbewegung erhöht oder verringert werden sollte."
+        ],
+        "points": [
+          { "icon": "⚖️", "label": "Training + NEAT ausgleichen", "note": "Schritte in der Erholung nicht erzwingen" },
+          { "icon": "📈", "label": "Morgen-HRV", "note": "Bester Indikator für Erholungsstatus" },
+          { "icon": "🔄", "label": "Hoch/Niedrig-Wochen", "note": "Periodischer Deload für Langzeitfortschritt" },
+          { "icon": "🦵", "label": "Nach schwerem Bein-Tag", "note": "Schritte reduzieren, Erholung priorisieren" }
+        ]
+      }
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {

@@ -2328,6 +2328,183 @@
       {"label": "Breathing"},
       {"label": "Environment"}
     ],
+    "c1_step_prefix": "Step",
+    "c1_checklist_heading": "Daily Sleep Checklist",
+    "c3_standup_title": "⏱ The 2-Minute Stand-Up Rule",
+    "c3_standup_desc": "Every 45–60 minutes of sitting, stand up for 2 minutes. Get water, roll your shoulders, stretch, do calf raises. Don't wait until you're in pain to stand up.",
+    "c3_neat_checklist_heading": "NEAT Checklist",
+    "c1_steps": [
+      {
+        "title": "Fix your sleep/wake schedule",
+        "desc": "No need to be perfectly precise, but aim to keep variation within 60 minutes across days, including weekends.",
+        "keyFact": "Going to sleep and waking at the same time each day matters more than total hours slept — consistency is the #1 factor for deep sleep.",
+        "detail": "Your circadian clock is set primarily by your wake time, not your bedtime. Fixing your wake time is the key to regulating your entire sleep cycle.",
+        "details": [
+          "The brain uses your wake time as an 'anchor' to count back to the natural sleepiness window — which is why waking at the same time matters more than going to bed at the same time.",
+          "'Social jet lag' — sleeping late and waking late on weekends — creates an effect equivalent to crossing 2–3 time zones every week for your body.",
+          "After 3–4 weeks of consistent wake times, feelings of sleepiness will naturally appear at the right time without any deliberate effort.",
+          "No need to force an earlier bedtime right away — just fix your WAKE time first. Your sleep time will self-adjust within 1–2 weeks.",
+          "If you're forced to stay up late, still wake at your normal time the next day instead of sleeping in — sleeping in breaks the circadian pattern you're building.",
+          "Bright light in the first 30 minutes after waking (go outside or open the curtains) helps 'lock' your wake time into your circadian clock much faster."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Fixed wake time", "note": "More important than your bedtime" },
+          { "icon": "📅", "label": "Including weekends", "note": "±60 minutes is acceptable" },
+          { "icon": "☀️", "label": "Light after waking", "note": "Go outside or open curtains for 30 min" },
+          { "icon": "🗓️", "label": "3–4 weeks to form", "note": "Then natural sleepiness arrives on cue" }
+        ]
+      },
+      {
+        "title": "Reduce bright light in the evening",
+        "desc": "Dim the lights and reduce screens from 9–10 PM. Bright light at night suppresses natural melatonin.",
+        "keyFact": "Just 10–15 minutes of blue light exposure in the evening is enough to suppress melatonin by 50% for the next 2–3 hours — according to Harvard research.",
+        "detail": "Melatonin — the hormone that signals 'night is here' — begins to rise about 2 hours before your natural sleep time. Blue light from screens is its number-one enemy.",
+        "details": [
+          "Phone, computer, and TV screens emit blue light (450–490 nm) — the wavelength the brain 'reads' as daytime and uses to block melatonin production.",
+          "Blue-light filtering glasses or Night Mode reduces blue light by roughly 20–30% — helpful but not a complete solution.",
+          "Dimming home lights from 9 PM and switching to warm amber light (<3000K) sends a 'night is coming' signal to the brain far more effectively than any color-filter app.",
+          "Reading a paper book instead of a screen 30 minutes before bed cuts average time to fall asleep by 12 minutes and improves sleep quality.",
+          "Wearing blue-light blocking glasses (amber lens) from 8 PM is the most effective solution if you must use screens late for work.",
+          "Ambient room lighting (bright overhead lights) has more impact than a small phone screen — prioritize darkening the room before worrying about Night Mode."
+        ],
+        "points": [
+          { "icon": "🌑", "label": "Dim lights from 9 PM", "note": "Switch to warm light <3000K" },
+          { "icon": "📵", "label": "No screens after 10 PM", "note": "Or use blue-light-blocking glasses" },
+          { "icon": "📚", "label": "Read a paper book", "note": "Replace screens for 30 min before bed" },
+          { "icon": "⚙️", "label": "Night Mode", "note": "Enable from 7–8 PM, not just at bedtime" }
+        ]
+      },
+      {
+        "title": "Reduce physical stimulation",
+        "desc": "Avoid caffeine after 2–3 PM, avoid intense exercise close to bedtime, and avoid stressful work right before sleep.",
+        "keyFact": "Caffeine has a half-life of 5–6 hours: a coffee at 3 PM still has 50% of its active compounds in your blood at 9 PM — enough to disrupt deep sleep even if you can fall asleep.",
+        "detail": "Stimulation from caffeine, heavy exercise, or stressful work creates a physiological environment that is the opposite of what your body needs to enter deep sleep.",
+        "details": [
+          "Caffeine works by blocking adenosine receptors — adenosine is the sleepiness-accumulating molecule. When caffeine wears off, adenosine 'floods back', causing sudden fatigue.",
+          "Caffeine-sensitive people: drinks with caffeine after noon are enough to affect sleep — this is genetic, not a sign of weak willpower.",
+          "Heavy training within 2–3 hours of bedtime raises cortisol and core body temperature — both make it harder to sleep. Light exercise (walking, yoga) is fine.",
+          "Stressful work before sleep activates the brain's 'problem-solving mode' — the sympathetic nervous system stays active even after you close your laptop.",
+          "'Wind-down' 30–60 minutes: stop email/work, do light activities requiring no decisions. The brain needs time to shift from 'fight mode' to 'rest mode'.",
+          "Alcohol helps you fall asleep faster but disrupts REM and deep sleep in the second half of the night — overall sleep quality is significantly worse."
+        ],
+        "points": [
+          { "icon": "☕", "label": "Cut caffeine after 2–3 PM", "note": "5–6 hour half-life stays in your blood" },
+          { "icon": "🏋️", "label": "Light exercise near bedtime", "note": "Walking/yoga OK, heavy training — no" },
+          { "icon": "💼", "label": "Stop work at 9 PM", "note": "Wind-down 30–60 min before sleep" },
+          { "icon": "🍺", "label": "Limit evening alcohol", "note": "Disrupts REM though it helps you fall asleep" }
+        ]
+      },
+      {
+        "title": "Optimize your bedroom",
+        "desc": "Dark, cool (~18–21°C), quiet. Use the bed mainly for sleeping — not for working or watching videos.",
+        "keyFact": "A room temperature of 18–21°C is the optimal condition for deep sleep — your core body temperature needs to drop 1–2°C to enter deep sleep.",
+        "detail": "The bedroom is an environment that triggers sleep behavior. When the brain associates bed with work, screens, or stress, it stops reading 'bed = sleep' as a signal.",
+        "details": [
+          "A cooler room helps you sleep more deeply because your brain and body need to lower their temperature to enter deep sleep (NREM stage 3).",
+          "Complete (or near-complete) darkness matters more than many people think: street light through thin curtains is enough to reduce sleep quality.",
+          "'Stimulus control': the bed is only for sleeping and intimacy — no working, no watching movies, no scrolling social media in bed.",
+          "Intermittent noise (traffic, voices) disrupts sleep more than continuous background noise — white noise or a gentle fan can help mask intermittent sounds.",
+          "Mattress and pillow quality affect sleep posture and morning aches — this is the most worthwhile bedroom investment if you wake up in pain.",
+          "Keeping your bedroom tidy reduces 'visual noise' — research shows cluttered rooms are associated with difficulty falling asleep and lighter sleep."
+        ],
+        "points": [
+          { "icon": "❄️", "label": "18–21°C", "note": "Optimal temperature for deep sleep" },
+          { "icon": "🌑", "label": "Complete darkness", "note": "Blackout curtains or sleep mask" },
+          { "icon": "🔇", "label": "Reduce noise", "note": "White noise masks intermittent sounds" },
+          { "icon": "🛏️", "label": "Bed is for sleep only", "note": "No work, no screens in bed" }
+        ]
+      }
+    ],
+    "c3_levels": [
+      {
+        "level": "Beginner",
+        "label": "Beginner",
+        "steps": "+1,000–2,000 steps above baseline",
+        "desc": "+1,000–2,000 steps above your current baseline",
+        "keyFact": "Adding just 1,000 steps/day above your current level already reduces cardiovascular disease risk by 10% and early mortality by 15% — even the smallest goal has clear benefits.",
+        "detail": "The best starting point is not 10,000 steps — it's anywhere above your current level. The body responds to change, not to absolute numbers.",
+        "details": [
+          "First measure your baseline: wear your phone or smartwatch for 3–5 days without changing habits, and record your actual average.",
+          "Increase by 1,000–2,000 steps above THAT baseline — not compared to 'someone else's 10,000 goal'. If you walk 2,000 steps now, aim for 3,000–4,000.",
+          "Studies confirm health benefits begin with the very first small increase — creating an upward trend matters more than jumping to a big number.",
+          "At this stage, you don't need to track precisely every day — just feeling 'I moved more than usual today' is a success.",
+          "Add 1 small habit: walk after a meal, take 1 flight of stairs, park one spot further. Each small habit adds roughly 200–500 steps.",
+          "After 2–3 weeks your baseline rises naturally — then increase by another 500–1,000 steps rather than holding the same target."
+        ],
+        "points": [
+          { "icon": "📊", "label": "Measure baseline first", "note": "Track 3–5 days without changing habits" },
+          { "icon": "➕", "label": "+1,000–2,000 increase", "note": "Compared to your own baseline" },
+          { "icon": "🔁", "label": "Increase every 2–3 weeks", "note": "Don't jump too fast" },
+          { "icon": "🏃", "label": "Small habits add up", "note": "200–500 steps per habit" }
+        ]
+      },
+      {
+        "level": "Basic",
+        "label": "Basic",
+        "steps": "6,000–8,000 steps/day",
+        "desc": "6,000–8,000 steps/day",
+        "keyFact": "7,000 steps/day reduces early mortality risk by 50–70% compared to under 2,000 steps — this is the largest single 'inflection point' in the step-count research.",
+        "detail": "The 6,000–8,000 range offers the best health benefit per time invested — enough for significant impact without needing dedicated walking sessions.",
+        "details": [
+          "JAMA Internal Medicine 2019 study of 16,741 women: 7,500 steps/day reduced early mortality by 65% vs. the 2,700-step group. Benefits plateau around 7,500–8,000 steps.",
+          "At this level you don't need separate walking sessions — distributed movement throughout the day (office walking, stairs, errands) is enough.",
+          "6,000–8,000 steps equals roughly 45–60 minutes of accumulated movement — completely achievable on a busy schedule.",
+          "This is the most sustainable level long-term without feeling like a task — challenging enough but not overwhelming.",
+          "Track weekly rather than daily: a 7-day average matters more than hitting the exact target every day.",
+          "Once you consistently hit this level for 3–4 weeks, your body adapts — 6,000 steps will feel easy and natural."
+        ],
+        "points": [
+          { "icon": "📉", "label": "7,000 steps = inflection point", "note": "Reduces early mortality risk 50–70%" },
+          { "icon": "⏱️", "label": "45–60 min accumulated", "note": "No need to walk all at once" },
+          { "icon": "📅", "label": "Track weekly average", "note": "More flexible than daily tracking" },
+          { "icon": "🔄", "label": "Maintain 3–4 weeks", "note": "Then it becomes automatic" }
+        ]
+      },
+      {
+        "level": "Healthier",
+        "label": "Healthier",
+        "steps": "8,000–10,000 steps/day",
+        "desc": "8,000–10,000 steps/day",
+        "keyFact": "The 10,000 steps/day figure originates from a 1965 Japanese marketing campaign — actual science shows maximum benefits are achieved at around 8,000–9,000 steps.",
+        "detail": "8,000–10,000 steps brings clear improvements in cardiovascular endurance, weight management, and mood. This is the level to 'get healthier', not just 'avoid disease'.",
+        "details": [
+          "The 10,000 steps target was created by Yamasa in 1965 when they launched the 'Manpo-kei' (万歩計) pedometer. No science backed that number at the time.",
+          "Modern research shows health benefits increase most sharply from 0→7,000 steps, and continue increasing more slowly from 7,000→10,000 steps.",
+          "At 8,000–10,000 steps you begin seeing improvements in: more stable weight, deeper sleep, better mood, and increased endurance.",
+          "To reach this naturally: 1 morning or evening walk of 20–30 minutes plus distributed movement throughout the day is enough.",
+          "Brisk walking (you can talk but breathing is faster) creates more cardiovascular benefit than slow walking with the same step count.",
+          "At this level, quality starts to matter: occasionally walking on uneven terrain or uphill adds extra cardiovascular challenge."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "20–30 min walk", "note": "+ distributed movement all day" },
+          { "icon": "💨", "label": "Brisk walk", "note": "Faster pace with elevated heart rate is better" },
+          { "icon": "📐", "label": "Quality > quantity", "note": "Hilly terrain adds extra challenge" },
+          { "icon": "🎯", "label": "8,000–9,000 is optimal", "note": "10,000 is marketing, not science" }
+        ]
+      },
+      {
+        "level": "Athletic",
+        "label": "Athletic",
+        "steps": "Personalized by recovery",
+        "desc": "Personalized according to your recovery capacity",
+        "keyFact": "People training 4–5 days/week at high intensity may need fewer steps because the body already receives enough movement stimulus — forcing more steps during recovery can slow progress.",
+        "detail": "When you're already following a structured training program, NEAT must be balanced with recovery needs — it's not 'more is always better'. Listening to your body matters more than hitting a step count.",
+        "details": [
+          "Heavy trainers may need to adjust step goals by training schedule: after a heavy leg day → reduce walking for muscle recovery; on easy days → increase steps.",
+          "Signs you need to reduce NEAT: resting heart rate 5–7 bpm higher than usual, training performance declining over 2–3 consecutive sessions, muscle soreness lasting 72+ hours.",
+          "For gym-goers, 'active recovery' light walking (3,000–5,000 easy steps) the day after heavy training is often better than complete rest.",
+          "Total weekly training load includes gym sessions + NEAT — when training heavily, naturally reducing NEAT a little is the body's intelligent self-regulation.",
+          "For competitors or those training 5–6 days/week: alternating high-load weeks with low-load deload weeks leads to better long-term progress.",
+          "Tracking tool: morning heart rate variability (HRV) is the best indicator of whether to increase or decrease total daily movement."
+        ],
+        "points": [
+          { "icon": "⚖️", "label": "Balance training + NEAT", "note": "Don't force steps during recovery" },
+          { "icon": "📈", "label": "Morning HRV", "note": "Best indicator of recovery status" },
+          { "icon": "🔄", "label": "High/low load weeks", "note": "Periodic deload for long-term progress" },
+          { "icon": "🦵", "label": "After heavy leg day", "note": "Reduce steps, prioritize recovery" }
+        ]
+      }
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {

@@ -2196,6 +2196,37 @@ export default function PillarC() {
     ...l,
     ...(Array.isArray(c3LevelsTr) && c3LevelsTr[i] ? c3LevelsTr[i] : {}),
   }));
+
+  const c0ItemsTr = tPillars('pillarC.c0_items', { returnObjects: true });
+  const localC0Items = C0_ITEMS.map((item, i) => ({
+    ...item,
+    ...(Array.isArray(c0ItemsTr) && c0ItemsTr[i] ? c0ItemsTr[i] : {}),
+  }));
+
+  const c0ScoreTr = tPillars('pillarC.c0_score', { returnObjects: true });
+  const localC0Score = C0_SCORE.map((row, i) => ({
+    ...row,
+    ...(Array.isArray(c0ScoreTr) && c0ScoreTr[i] ? c0ScoreTr[i] : {}),
+  }));
+
+  const c2Morning5Tr = tPillars('pillarC.c2_morning_5', { returnObjects: true });
+  const localC2Morning5 = C2_MORNING_5.map((row, i) => ({
+    ...row,
+    ...(Array.isArray(c2Morning5Tr) && c2Morning5Tr[i] ? c2Morning5Tr[i] : {}),
+  }));
+
+  const c2Morning10Tr = tPillars('pillarC.c2_morning_10', { returnObjects: true });
+  const localC2Morning10 = C2_MORNING_10.map((row, i) => ({
+    ...row,
+    ...(Array.isArray(c2Morning10Tr) && c2Morning10Tr[i] ? c2Morning10Tr[i] : {}),
+  }));
+
+  const c2EnergyTipsTr = tPillars('pillarC.c2_energy_tips', { returnObjects: true });
+  const localC2EnergyTips = C2_ENERGY_TIPS.map((t, i) => ({
+    ...t,
+    ...(Array.isArray(c2EnergyTipsTr) && c2EnergyTipsTr[i] ? c2EnergyTipsTr[i] : {}),
+  }));
+
   const tab = mergedTabs.find(t => t.id === activeTab) || mergedTabs[1];
   const sleepProgress = C1_CHECKLIST.filter((_, i) => sleepChecks[i]).length;
   const neatProgress = [0, 1, 2, 3].filter(i => neatChecks[i]).length;
@@ -2240,12 +2271,20 @@ export default function PillarC() {
 
       {/* Hero stats with tooltips */}
       <RevealBlock className="flex flex-wrap gap-6 mb-10">
-        {[
-          { v: '7–9h', l: 'Ngủ mỗi đêm', tip: 'Người lớn cần 7–9 giờ ngủ để phục hồi tối ưu. Ngủ kém làm giảm hiệu quả tập luyện và kiểm soát ăn uống.' },
-          { v: '300+', l: 'kcal NEAT/ngày', tip: 'NEAT (Non-Exercise Activity Thermogenesis) có thể đốt 300–500 kcal/ngày mà không cần tập gym.' },
-          { v: '8 module', l: 'Lối sống C0–C7', tip: '8 module từ đánh giá ban đầu đến thiết kế môi trường, bao phủ toàn bộ nhịp sống 24h.' },
-          { v: '1%', l: 'Cải thiện mỗi ngày', tip: 'Triết lý cốt lõi: không cần hoàn hảo ngay. Sửa 1% mỗi ngày đúng chỗ tạo nên sự thay đổi bền vững.' },
-        ].map((s, i) => (
+        {(() => {
+          const heroStatsTr = tPillars('pillarC.c_hero_stats', { returnObjects: true });
+          const baseStats = [
+            { v: '7–9h', l: 'Ngủ mỗi đêm', tip: 'Người lớn cần 7–9 giờ ngủ để phục hồi tối ưu. Ngủ kém làm giảm hiệu quả tập luyện và kiểm soát ăn uống.' },
+            { v: '300+', l: 'kcal NEAT/ngày', tip: 'NEAT (Non-Exercise Activity Thermogenesis) có thể đốt 300–500 kcal/ngày mà không cần tập gym.' },
+            { v: '8 module', l: 'Lối sống C0–C7', tip: '8 module từ đánh giá ban đầu đến thiết kế môi trường, bao phủ toàn bộ nhịp sống 24h.' },
+            { v: '1%', l: 'Cải thiện mỗi ngày', tip: 'Triết lý cốt lõi: không cần hoàn hảo ngay. Sửa 1% mỗi ngày đúng chỗ tạo nên sự thay đổi bền vững.' },
+          ];
+          const stats = baseStats.map((s, i) => ({
+            ...s,
+            ...(Array.isArray(heroStatsTr) && heroStatsTr[i] ? heroStatsTr[i] : {}),
+          }));
+          return stats;
+        })().map((s, i) => (
           <div key={i} className="group/stat relative">
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none
               opacity-0 group-hover/stat:opacity-100 scale-90 group-hover/stat:scale-100
@@ -2323,10 +2362,10 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-2xl font-bold mb-1" style={{ color: TEAL }}>Đánh Giá Lối Sống Ban Đầu</h2>
-                <p className="text-muted text-lg mb-6">Biết điểm xuất phát trước khi thay đổi. Không đánh giá để phán xét — đánh giá để chọn điểm bắt đầu đúng nhất.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: TEAL }}>{tPillars('pillarC.c0_heading', { defaultValue: 'Đánh Giá Lối Sống Ban Đầu' })}</h2>
+                <p className="text-muted text-lg mb-6">{tPillars('pillarC.c0_desc', { defaultValue: 'Biết điểm xuất phát trước khi thay đổi. Không đánh giá để phán xét — đánh giá để chọn điểm bắt đầu đúng nhất.' })}</p>
                 <div className="grid gap-3 mb-6">
-                  {C0_ITEMS.map((item, i) => (
+                  {localC0Items.map((item, i) => (
                     <div
                       key={i}
                       role="button"
@@ -2348,9 +2387,9 @@ export default function PillarC() {
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: TEAL }}>Lifestyle Score — 100 điểm</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: TEAL }}>{tPillars('pillarC.c0_score_heading', { defaultValue: 'Lifestyle Score — 100 điểm' })}</h3>
                 <div className="space-y-1.5 mb-3">
-                  {C0_SCORE.map((row, i) => (
+                  {localC0Score.map((row, i) => (
                     <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
                       style={{
                         border: '1px solid',
@@ -2397,7 +2436,7 @@ export default function PillarC() {
                 {/* Score total bar */}
                 <div className="mb-6 p-3 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.07)`, border: `1px solid rgba(${TEAL_RGB},0.18)` }}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold" style={{ color: TEAL }}>Tổng điểm hôm nay</span>
+                    <span className="text-sm font-semibold" style={{ color: TEAL }}>{tPillars('pillarC.c0_score_total_label', { defaultValue: 'Tổng điểm hôm nay' })}</span>
                     <span className="text-xl font-black tabular-nums" style={{ color: lifestyleScore >= 80 ? '#22c55e' : lifestyleScore >= 50 ? TEAL : '#f59e0b' }}>
                       {lifestyleScore} <span className="text-sm font-semibold opacity-60">/ 100</span>
                     </span>
@@ -2414,11 +2453,15 @@ export default function PillarC() {
                       }} />
                   </div>
                   <p className="text-xs text-muted mt-1.5">
-                    {lifestyleScore >= 80 ? '🏆 Xuất sắc — lối sống rất tốt!' : lifestyleScore >= 50 ? '✦ Tốt — tiếp tục duy trì!' : '💪 Bắt đầu tích điểm từng ngày'}
+                    {lifestyleScore >= 80
+                      ? tPillars('pillarC.c0_score_msg_excellent', { defaultValue: '🏆 Xuất sắc — lối sống rất tốt!' })
+                      : lifestyleScore >= 50
+                      ? tPillars('pillarC.c0_score_msg_good', { defaultValue: '✦ Tốt — tiếp tục duy trì!' })
+                      : tPillars('pillarC.c0_score_msg_start', { defaultValue: '💪 Bắt đầu tích điểm từng ngày' })}
                   </p>
                 </div>
                 <div className="p-4 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.08)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
-                  <p className="text-lg font-semibold mb-3" style={{ color: TEAL }}>Chọn track phù hợp với bạn:</p>
+                  <p className="text-lg font-semibold mb-3" style={{ color: TEAL }}>{tPillars('pillarC.c0_tracks_heading', { defaultValue: 'Chọn track phù hợp với bạn:' })}</p>
                   <div className="grid gap-2">
                     {C0_TRACKS.map((tr, i) => (
                       <button key={i} onClick={() => setTrackModalIdx(i)}
@@ -2438,7 +2481,7 @@ export default function PillarC() {
               </div>
             </div>
             <Link to="/pillar/c/assessment" className="inline-flex items-center gap-2 text-lg font-semibold" style={{ color: TEAL }}>
-              Xem đánh giá đầy đủ →
+              {tPillars('pillarC.c0_full_link', { defaultValue: 'Xem đánh giá đầy đủ →' })}
             </Link>
           </RevealBlock>
         )}
@@ -2532,8 +2575,8 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-2xl font-bold mb-1" style={{ color: '#06b6d4' }}>Nhịp Sinh Học & Năng Lượng</h2>
-                <p className="text-muted text-lg mb-6">Năng lượng không chỉ đến từ cà phê. Năng lượng đến từ ánh sáng, nước, vận động nhẹ, bữa ăn và nhịp làm việc đúng.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#06b6d4' }}>{tPillars('pillarC.c2_heading', { defaultValue: 'Nhịp Sinh Học & Năng Lượng' })}</h2>
+                <p className="text-muted text-lg mb-6">{tPillars('pillarC.c2_desc', { defaultValue: 'Năng lượng không chỉ đến từ cà phê. Năng lượng đến từ ánh sáng, nước, vận động nhẹ, bữa ăn và nhịp làm việc đúng.' })}</p>
                 <div className="flex gap-2 mb-5">
                   {['5', '10'].map(m => (
                     <button key={m} onClick={() => setMorningMode(m)}
@@ -2541,12 +2584,12 @@ export default function PillarC() {
                       style={morningMode === m
                         ? { background: 'rgba(6,182,212,0.15)', color: '#06b6d4', border: '1px solid rgba(6,182,212,0.3)' }
                         : { color: 'var(--color-muted)', border: '1px solid var(--color-border)' }}>
-                      Routine sáng {m} phút
+                      {tPillars('pillarC.c2_routine_label', { defaultValue: 'Routine sáng {m} phút' }).replace('{m}', m)}
                     </button>
                   ))}
                 </div>
                 <div className="space-y-2 mb-7">
-                  {(morningMode === '5' ? C2_MORNING_5 : C2_MORNING_10).map((row, i) => (
+                  {(morningMode === '5' ? localC2Morning5 : localC2Morning10).map((row, i) => (
                     <div key={i}
                       onClick={() => setMorningModalIdx(i)}
                       className="flex items-center gap-3 p-3 rounded-xl cursor-pointer group transition-all hover:bg-white/5"
@@ -2557,9 +2600,9 @@ export default function PillarC() {
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#06b6d4' }}>5 Yếu Tố Tạo Năng Lượng</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#06b6d4' }}>{tPillars('pillarC.c2_energy_heading', { defaultValue: '5 Yếu Tố Tạo Năng Lượng' })}</h3>
                 <div className="grid gap-2">
-                  {C2_ENERGY_TIPS.map((t, i) => (
+                  {localC2EnergyTips.map((t, i) => (
                     <div
                       key={i}
                       role="button"
@@ -3064,13 +3107,13 @@ export default function PillarC() {
       {/* ── C0 item modal — outside all RevealBlocks so position:fixed works ── */}
       {c0Idx !== null && (
         <C0ItemModal
-          item={C0_ITEMS[c0Idx]}
+          item={localC0Items[c0Idx]}
           idx={c0Idx}
           onClose={() => setC0Idx(null)}
           onPrev={() => setC0Idx(i => Math.max(0, i - 1))}
-          onNext={() => setC0Idx(i => Math.min(C0_ITEMS.length - 1, i + 1))}
+          onNext={() => setC0Idx(i => Math.min(localC0Items.length - 1, i + 1))}
           hasPrev={c0Idx > 0}
-          hasNext={c0Idx < C0_ITEMS.length - 1}
+          hasNext={c0Idx < localC0Items.length - 1}
         />
       )}
 
@@ -3144,7 +3187,7 @@ export default function PillarC() {
 
       {/* ── C2 morning routine modal ── */}
       {morningModalIdx !== null && (() => {
-        const list = morningMode === '5' ? C2_MORNING_5 : C2_MORNING_10;
+        const list = morningMode === '5' ? localC2Morning5 : localC2Morning10;
         return (
           <C0ItemModal
             item={list[morningModalIdx]}
@@ -3161,7 +3204,7 @@ export default function PillarC() {
       {/* ── C2 energy tips modal — reuses C0ItemModal (same data shape) ── */}
       {c2EnergyIdx !== null && (
         <C0ItemModal
-          item={C2_ENERGY_TIPS[c2EnergyIdx]}
+          item={localC2EnergyTips[c2EnergyIdx]}
           idx={c2EnergyIdx}
           onClose={() => setC2EnergyIdx(null)}
           onPrev={() => setC2EnergyIdx(i => Math.max(0, i - 1))}
@@ -3213,7 +3256,7 @@ export default function PillarC() {
       {/* ── C0 score criterion modal ── */}
       {scoreModalIdx !== null && (
         <C0ItemModal
-          item={C0_SCORE[scoreModalIdx]}
+          item={localC0Score[scoreModalIdx]}
           idx={scoreModalIdx}
           onClose={() => setScoreModalIdx(null)}
           onPrev={() => setScoreModalIdx(i => Math.max(0, i - 1))}

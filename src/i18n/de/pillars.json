@@ -2349,6 +2349,515 @@
       {"label": "Atmung"},
       {"label": "Umgebung"}
     ],
+    "c_hero_stats": [
+      { "l": "Schlaf pro Nacht", "tip": "Erwachsene benötigen 7–9 Stunden Schlaf für optimale Erholung. Schlechter Schlaf reduziert die Trainingsleistung und die Appetitkontrolle." },
+      { "l": "kcal NEAT/Tag", "tip": "NEAT (Non-Exercise Activity Thermogenesis) kann täglich 300–500 kcal verbrennen — ohne ein einziges Gym-Training." },
+      { "l": "Lebensstil-Module", "tip": "8 Module von der Erstbewertung bis zum Umgebungsdesign — decken deinen gesamten 24-Stunden-Rhythmus ab." },
+      { "l": "Täglich besser", "tip": "Kernphilosophie: Kein sofortiger Perfektionismus nötig. Jeden Tag 1% an der richtigen Stelle verbessern — für dauerhaften Wandel." }
+    ],
+    "c0_heading": "Erste Lebensstil-Bewertung",
+    "c0_desc": "Kenne deinen Ausgangspunkt, bevor du Änderungen vornimmst. Es geht nicht ums Urteilen — sondern darum, den richtigen Startpunkt zu finden.",
+    "c0_score_heading": "Lifestyle Score — 100 Punkte",
+    "c0_score_total_label": "Heutiger Gesamtpunktestand",
+    "c0_score_msg_excellent": "🏆 Ausgezeichnet — toller Lebensstil!",
+    "c0_score_msg_good": "✦ Gut — weiter so!",
+    "c0_score_msg_start": "💪 Fang an, täglich Punkte zu sammeln",
+    "c0_tracks_heading": "Wähle den passenden Track für dich:",
+    "c0_full_link": "Vollständige Bewertung ansehen →",
+    "c0_items": [
+      {
+        "icon": "😴", "label": "Schlaf", "desc": "Schlaf-/Aufwachzeiten, Stunden, Qualität",
+        "keyFact": "7–9 Stunden Qualitätsschlaf verbessern die Trainingsleistung um 20–25% und reduzieren das Risiko chronischer Erkrankungen erheblich.",
+        "detail": "Schlaf ist die Grundlage für alles — Muskelregeneration, Hormonbalance, Gedächtnis und Appetitkontrolle.",
+        "details": [
+          "Protokolliere 7 Tage lang deine Schlaf- und Aufwachzeiten — das ist deine echte Ausgangslage, nicht deine Absicht.",
+          "Qualität zählt mehr als Quantität: 6 Stunden Tiefschlaf schlagen 8 Stunden unruhigen Schlaf.",
+          "Konsistente Schlafzeiten (Schwankung ≤60 Min täglich, auch am Wochenende) regulieren deine innere Uhr besser als jede andere Gewohnheit.",
+          "Melatonin steigt 2 Stunden vor deiner natürlichen Müdigkeit — blaues Licht von Bildschirmen und schwere Mahlzeiten blockieren diesen Prozess.",
+          "Tiefschlaf findet hauptsächlich in der ersten Nachthälfte statt — nach Mitternacht schlafen gehen kostet mehr Tiefschlaf als erwartet.",
+          "Wenn du nach 7+ Stunden unerholt aufwachst → das ist ein Signal, deine Abendgewohnheiten anzupassen, nicht mehr Kaffee zu trinken."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Konsistente Schlafzeiten", "note": "Schwankung ≤60 Min täglich" },
+          { "icon": "🌙", "label": "Schlafqualität", "note": "Jeden Morgen 1–10 bewerten" },
+          { "icon": "💤", "label": "7–9 Stunden/Nacht", "note": "Für gesunde Erwachsene" },
+          { "icon": "📊", "label": "7 Tage tracken", "note": "Ausgangslage vor Verbesserung aufbauen" }
+        ]
+      },
+      {
+        "icon": "⚡", "label": "Energie", "desc": "Wann du am wachsten bist, wann am müdesten",
+        "keyFact": "Dein zirkadianer Rhythmus bestimmt ~60% deines Energieniveaus — kenne deinen eigenen Zyklus, um mit ihm zu arbeiten statt dagegen.",
+        "detail": "Energie ist kein Willensakt — es ist Physiologie. Zu wissen, wann dein Gehirn am schärfsten ist, hilft dir, jede Stunde optimal zu nutzen.",
+        "details": [
+          "Protokolliere dein Energieniveau alle 2–3 Stunden für 3 Tage (1–10): das ist der einzige Weg, deinen wahren Chronotyp zu entdecken.",
+          "Die meisten Menschen haben Energiepeak um 9–11 Uhr und 15–17 Uhr, mit einem deutlichen Einbruch um 13–15 Uhr.",
+          "Bei höchster Konzentration → tiefe kognitive Arbeit. Bei größter Müdigkeit → Meetings, E-Mails, Routineaufgaben.",
+          "Der ultradiane Zyklus beträgt ~90 Minuten: Das Gehirn arbeitet ~90 Minuten intensiv und braucht dann 10–20 Minuten Pause.",
+          "Koffein maskiert Adenosin (das Schläfrigkeitsmolekül) statt echter Energie — übermäßiger Gebrauch stört deinen natürlichen Zyklus.",
+          "Morgendliches Sonnenlicht ist der stärkste 'Reset-Knopf' für deine innere Uhr — schon 5 Minuten draußen nach dem Aufwachen reichen."
+        ],
+        "points": [
+          { "icon": "📈", "label": "Energiepeak", "note": "Typischerweise 9–11 Uhr und 15–17 Uhr" },
+          { "icon": "🔄", "label": "90-Minuten-Zyklus", "note": "10–20 Min Pause nach jedem Zyklus" },
+          { "icon": "☀️", "label": "Morgenlicht", "note": "5 Min draußen direkt nach dem Aufwachen" },
+          { "icon": "☕", "label": "Koffein gezielt", "note": "90 Min nach dem Aufwachen trinken" }
+        ]
+      },
+      {
+        "icon": "🚶", "label": "Tägliche Bewegung", "desc": "Schritte, Sitzzeit, leichte Bewegung",
+        "keyFact": "8.000 Schritte/Tag reduzieren das Frühsterblichkeitsrisiko um 51% laut einer JAMA-Studie von 2021 — ohne Gym.",
+        "detail": "NEAT — Bewegung außerhalb des Gyms — kann 15–50% des gesamten täglichen Energieverbrauchs ausmachen. Die 'Geheimwaffe', die die meisten übersehen.",
+        "details": [
+          "Zähle deine aktuellen Schritte, bevor du ein Ziel setzt — viele Gym-Gänger gehen nur 3.000–4.000 Schritte, weil sie den ganzen Tag sitzen.",
+          "Sitzen >8 Stunden erhöht das Herzkreislaufrisiko unabhängig vom Training — steh alle 45–60 Minuten auf.",
+          "Jede zusätzliche 1.000 Schritte über deiner aktuellen Baseline bringt messbare Gesundheitsvorteile.",
+          "Leichte Bewegung nach Mahlzeiten (5–10 Min Gehen) reduziert den postprandialen Blutzucker um 20–30%.",
+          "Die Dauer des ununterbrochenen Sitzens zählt mehr als die Gesamtsitzzeit.",
+          "Praktisches Ziel: Wöchentlich um 500–1.000 Schritte erhöhen, bis 7.000–8.000 Schritte/Tag erreicht sind."
+        ],
+        "points": [
+          { "icon": "👣", "label": "7.000–8.000 Schritte", "note": "Das realistischste Ziel" },
+          { "icon": "⏱️", "label": "Alle 45–60 Min aufstehen", "note": "Schaden durch langes Sitzen entgegenwirken" },
+          { "icon": "🍽️", "label": "Nach dem Essen gehen", "note": "5–10 Min kontrollieren den Blutzucker" },
+          { "icon": "📱", "label": "Schrittzähler nutzen", "note": "Oder den eingebauten im Smartphone" }
+        ]
+      },
+      {
+        "icon": "🔄", "label": "Erholung", "desc": "Nacken/Schulter/Rücken/Knieschmerzen; Übertrainingszeichen",
+        "keyFact": "40% der Sportverletzungen kommen nicht vom Übertraining — sondern von unzureichender Erholung und ignorierten Frühwarnsignalen.",
+        "detail": "Erholung ist keine passive Ruhe — sie ist eine Sammlung aktiver Praktiken, die dem Körper helfen, sich zu regenerieren.",
+        "details": [
+          "Nacken-, Schulter- und Lendenwirbelsäulenschmerzen nach Schreibtischarbeit sind Signale für schwache Muskeln und schlechte Haltung.",
+          "Unterscheide verzögerten Muskelkater (DOMS — dumpfer Schmerz 1–3 Tage nach dem Training) von Gelenk-/Sehnenschmerzen.",
+          "5–10 Min Mobilität täglich ist effektiver als 1 Stunde Foam Rolling pro Woche — Konsistenz schlägt Intensität.",
+          "Übertrainingszeichen: Ruheherzfrequenz 5–7 Schläge über Normal, Schlaflosigkeit trotz Erschöpfung, sinkende Leistung über 2–3 Einheiten.",
+          "Eine Deload-Woche (Training 40–50% reduzieren) alle 4–6 Wochen ermöglicht tiefe Erholung.",
+          "Kälte/Wärme, Massage und Dehnen sind alle Werkzeuge — keines ist universell das beste."
+        ],
+        "points": [
+          { "icon": "🩺", "label": "Schmerzart erkennen", "note": "Muskelkater vs. Gelenk-/Sehnenschmerz" },
+          { "icon": "🧘", "label": "Mobilität 5–10 Min/Tag", "note": "Konsistenz schlägt Intensität" },
+          { "icon": "📉", "label": "Übertrainingszeichen", "note": "Hohe HF, Schlaflosigkeit, sinkende Leistung" },
+          { "icon": "🔁", "label": "Deload alle 4–6 Wochen", "note": "Volumen 40–50% für eine Woche reduzieren" }
+        ]
+      },
+      {
+        "icon": "📱", "label": "Abendgewohnheiten", "desc": "Bildschirme, Mahlzeitenzeiten, Schlafzimmer, Arbeit",
+        "keyFact": "Bildschirme mit blauem Licht nach 20 Uhr verzögern die Melatoninausschüttung um 1–3 Stunden und reduzieren die Schlafqualität um ~20%, laut Harvard-Forschung.",
+        "detail": "Was du in den 2 Stunden vor dem Schlafengehen tust, bestimmt die Qualität der folgenden 7–8 Stunden Schlaf.",
+        "details": [
+          "Telefon-, TV- und Laptop-Bildschirme emittieren blaues Licht, das Melatonin unterdrückt — Nachtmodus oder Blaulicht-Filterbrillen ab 20 Uhr.",
+          "Idealerweise vor 20 Uhr abendessen — eine schwere Mahlzeit kurz vor dem Schlafen erhöht die Kernkörpertemperatur.",
+          "Stressige Arbeit nach 21 Uhr aktiviert Kortisol — das Gehirn braucht mindestens 60 Minuten ohne Arbeit vor dem Schlaf.",
+          "Schlafzimmer unter 20°C halten — die Körpertemperatur sinkt während des Schlafs, eine kühle Umgebung erleichtert diesen Prozess.",
+          "Schon eine kurze 5-minütige Abendroutine (Duschen, leichtes Lesen) signalisiert dem Gehirn: Schlafenszeit naht.",
+          "Nicht alles auf einmal ändern — 1 Gewohnheit wählen, 2–3 Wochen beibehalten, dann die nächste hinzufügen."
+        ],
+        "points": [
+          { "icon": "🌑", "label": "Bildschirme ab 20 Uhr reduzieren", "note": "Nachtmodus oder Blaulichtbrille" },
+          { "icon": "🍽️", "label": "Abendessen vor 20 Uhr", "note": "Keine schweren Mahlzeiten kurz vor dem Schlafen" },
+          { "icon": "❄️", "label": "Kühler Raum <20°C", "note": "Optimale Temperatur für Tiefschlaf" },
+          { "icon": "📖", "label": "5–30 Min Abendroutine", "note": "Signalisiert dem Gehirn: Schlafenszeit" }
+        ]
+      }
+    ],
+    "c0_score": [
+      {
+        "label": "Schlaf ≥7h oder verbessert",
+        "detail": "Das wichtigste Kriterium im Lifestyle Score — ausreichend Schlaf ist die Grundlage für jede andere Gesundheitsverbesserung.",
+        "keyFact": "Bereits eine Nacht mit weniger als 6 Stunden Schlaf reduziert die Gedächtniskonsolidierung um 40% und erhöht Kortisol am nächsten Tag um 37%.",
+        "details": [
+          "Das Minimalziel sind 7 Stunden — nicht 8. Studien zeigen, dass 7–9 Stunden der optimale Bereich für Erwachsene ist.",
+          "'Oder verbessert' bedeutet: Wenn du vorher 5 Stunden schliefst und jetzt 6, erhältst du trotzdem die Punkte — Fortschritt zählt mehr als sofortige Perfektion.",
+          "Qualität > Quantität: 7 Stunden ununterbrochener Tiefschlaf schlagen 9 Stunden fragmentierten Schlaf.",
+          "Chronischer Schlafmangel (unter 6 Stunden über mehrere Wochen) ist mit höherem Risiko für Typ-2-Diabetes und Herzerkrankungen verbunden.",
+          "Schlafnachholen am Wochenende tilgt keine angesammelten Schlafschulden vollständig.",
+          "Einfachste Strategie: Zuerst die Aufwachzeit festlegen, dann schrittweise die Einschlafzeit anpassen."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "Ziel", "note": "7–9 Stunden/Nacht für Erwachsene" },
+          { "icon": "📈", "label": "Fortschritt", "note": "Schrittweise um 30 Min/Woche erhöhen" },
+          { "icon": "⏰", "label": "Aufwachzeit festlegen", "note": "Wichtiger als die Einschlafzeit" },
+          { "icon": "🔋", "label": "Wach um 14 Uhr", "note": "Ein Zeichen für ausreichend Schlaf" }
+        ]
+      },
+      {
+        "label": "Relativ konsistente Schlafzeiten",
+        "detail": "Die Konsistenz der Schlafzeiten zählt mehr als die Gesamtschlafdauer — die innere Uhr braucht einen festen Anker.",
+        "keyFact": "Schlafzeiten um mehr als 90 Minuten zwischen Werk- und Wochenendtagen zu variieren hat denselben negativen Stoffwechseleffekt wie wöchentlich 1–2 Zeitzonen zu wechseln.",
+        "details": [
+          "'Relativ konsistent' bedeutet höchstens 60 Minuten Schwankung zwischen Tagen — du musst nicht minutengenau sein.",
+          "Der zirkadiane Rhythmus koordiniert über 20.000 Gene auf einem 24-Stunden-Zyklus — unregelmäßige Schlafzeiten stören alle diese Prozesse.",
+          "Am Wochenende 2 Stunden später schlafen erzeugt 'sozialen Jetlag' — reduziert die Insulinsensitivität.",
+          "Strategie: 30 Minuten vor Ziel-Einschlafzeit einen 'Schlafalarm' setzen.",
+          "Morgendliches Licht ist der stärkste Anker für deinen zirkadianen Rhythmus.",
+          "Wenn du eine Stunde länger aufbleiben muss: Normale Aufwachzeit beibehalten, der Körper korrigiert sich bis zum nächsten Abend."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Schwankung ≤60 Min", "note": "Sicherer Schwellenwert zwischen Tagen" },
+          { "icon": "📅", "label": "Wochenenden", "note": "Nicht mehr als 90 Min länger schlafen" },
+          { "icon": "☀️", "label": "Morgenlicht", "note": "Der stärkste zirkadiane Anker" },
+          { "icon": "⏰", "label": "Schlafalarm", "note": "Pünktliches Abschalten einleiten" }
+        ]
+      },
+      {
+        "label": "Morgenlicht oder Bewegung",
+        "detail": "Die zwei stärksten Signale zum Reset deiner inneren Uhr jeden Morgen — kombiniere sie für einen synergistischen Effekt.",
+        "keyFact": "Sonnenlichtexposition in den ersten 30–60 Minuten nach dem Aufwachen unterdrückt vollständig das Tagesmelatonin und erhöht Kortisol auf natürliche Weise.",
+        "details": [
+          "Morgendliches Sonnenlicht aktiviert ipRGC-Zellen in den Augen — sendet ein direktes Signal an den SCN, die zentrale Uhr des Gehirns.",
+          "Benötigte Intensität: 1.000–10.000 Lux (Tageslicht), gegenüber nur 100–500 Lux drinnen — deshalb zählt draußen sein.",
+          "Morgendliche Bewegung (5–15 Min Gehen) erhöht die Kernkörpertemperatur und Dopamin — zwei Wachhaltesignale, die anhaltender sind als Koffein.",
+          "Kein Sonnenschein (Regen/Winter): eine 10.000-Lux-Lichttherapielampe für 10–20 Minuten funktioniert ebenfalls.",
+          "Ideale Kombination: ein 10-minütiger Spaziergang direkt nach dem Aufwachen — Licht, Bewegung und frische Luft auf einmal.",
+          "Keine Sonnenbrille in den ersten 10–15 Minuten draußen — Brillen filtern das UV-Licht, das den zirkadianen Reflex auslöst."
+        ],
+        "points": [
+          { "icon": "☀️", "label": "10 Min draußen", "note": "Besser als 1 Stunde am Fenster" },
+          { "icon": "🏃", "label": "Leichte Bewegung", "note": "Spaziergang oder Dehnen für 5–15 Min" },
+          { "icon": "👓", "label": "Keine Sonnenbrille", "note": "Erste 10 Min natürliches Licht empfangen" },
+          { "icon": "💡", "label": "Bewölkte Tage", "note": "Trotzdem raus oder 10.000-Lux-Lampe nutzen" }
+        ]
+      },
+      {
+        "label": "Schritte / NEAT-Ziel erreicht",
+        "detail": "NEAT — Kalorien durch alle Bewegung außerhalb strukturierter Übungen — kann 15–50% des gesamten täglichen Energieverbrauchs ausmachen.",
+        "keyFact": "Menschen mit aktiven Jobs verbrennen täglich über 2.000 kcal mehr als Büroarbeiter durch NEAT allein — entspricht täglich einem Marathon ohne Gym.",
+        "details": [
+          "7.000–10.000 Schritte/Tag ist ein realistisches Ziel für die meisten Nicht-Profis. Unter 5.000 Schritte gilt als 'sedentär'.",
+          "NEAT ist nicht nur Schritte: 2 Minuten jede Stunde aufstehen, Treppen statt Aufzug, im Stehen telefonieren — alles zählt.",
+          "'Ziel erreichen' erfordert nicht jeden Tag 10.000 Schritte — bei einer Baseline von 3.000 ist ein Ziel von 5.000 angemessen.",
+          "10–15 Minuten nach Mahlzeiten gehen reduziert Blutzuckerspitzen um 30–50%.",
+          "Schrittzähler erhöhen die durchschnittlichen Tagesschritte um 26% laut einer Meta-Analyse.",
+          "An einem besonders sitzintensiven Tag: 5 Minuten Kniebeugen, Ausfallschritte oder Wadenheben vor dem Schlafengehen."
+        ],
+        "points": [
+          { "icon": "👟", "label": "7.000–10.000 Schritte", "note": "Realistisches Ziel für die meisten" },
+          { "icon": "🍽️", "label": "Nach Mahlzeiten gehen", "note": "Effektivstes NEAT" },
+          { "icon": "📱", "label": "Tracker nutzen", "note": "Erhöht Schritte natürlich um 26%" },
+          { "icon": "🪜", "label": "Treppen > Aufzug", "note": "NEAT summiert sich täglich" }
+        ]
+      },
+      {
+        "label": "Kein langes Sitzen",
+        "detail": "Länger als 60–90 Minuten am Stück sitzen ist unabhängig schädlich — eine Stunde im Gym kann das nicht ausgleichen.",
+        "keyFact": "'Sitzen ist das neue Rauchen' — ununterbrochenes Sitzen >90 Minuten erhöht das Stoffwechselrisiko, auch bei regelmäßigen Gym-Gängern.",
+        "details": [
+          "Langes Sitzen unterdrückt Lipoproteinlipase (LPL) — das fetttverbrennende Enzym. Nach 60 Minuten Inaktivität fällt LPL um 90%.",
+          "Die 60-Minuten-Regel: alle 60 Minuten Sitzen für mindestens 2–3 Minuten aufstehen und bewegen.",
+          "Eine Studie mit 800.000 Menschen fand, dass jene, die am meisten saßen (>8 Std/Tag), ein 73% höheres Sterberisiko hatten.",
+          "Einfache Hilfsmittel: 50-Minuten-Timer, Stehpult oder ein kleines Wasserglas für häufigeres Aufstehen.",
+          "Direkt nach dem Essen sitzen verlängert den Blutzuckerpeak und erhöht die Fetteinlagerung. 10 Minuten Stehen nach dem Essen hilft.",
+          "Ein Stehpult allein reicht nicht, wenn man reglos steht — Sitzen und Stehen wechseln, nicht länger als 2 Stunden stehen."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "60-Minuten-Regel", "note": "Alle Stunde 2–3 Min aufstehen" },
+          { "icon": "💧", "label": "Kleines Wasserglas", "note": "Zwingt natürlich zum häufigeren Aufstehen" },
+          { "icon": "🍽️", "label": "Nach Mahlzeiten stehen", "note": "10 Min reduziert Blutzuckerspitze" },
+          { "icon": "📊", "label": "Unabhängig vom Gym", "note": "Training gleicht tägliches Sitzen nicht aus" }
+        ]
+      },
+      {
+        "label": "Erholung / Mobilität / Atmung",
+        "detail": "Aktive Erholung, Mobilität und bewusstes Atmen — drei Säulen, die das autonome Nervensystem in den Parasympathikus-Modus versetzen.",
+        "keyFact": "HRV steigt nach 10 Minuten bewusstem Atmen um 18% im Vergleich zu passiver Ruhe gleicher Dauer.",
+        "details": [
+          "Aktive Erholung: 10 Minuten Foam Rolling oder sanfte Gelenkbewegung — stimuliert die Durchblutung ohne physiologischen Stress.",
+          "Mobilität ist nicht nur Dehnen: Es ist die Fähigkeit, die volle Gelenkbeweglichkeit aktiv zu kontrollieren. Täglich mindestens 5 Min dynamische Mobilität.",
+          "Bewusstes Atmen: Die 4-7-8-Technik (einatmen 4s, halten 7s, ausatmen 8s) aktiviert das parasympathische Nervensystem innerhalb von 3–5 Minuten.",
+          "Optimaler Zeitpunkt: kurz vor dem Schlafen (5–10 Min) hilft beim Übergang von wach zu schläfrig.",
+          "Minimum für den Punkt: 10 Minuten/Tag einer beliebigen Kombination der drei Elemente.",
+          "Zeichen unzureichender Erholung: chronisch verspannte Muskeln, erhöhte Ruheherzfrequenz, Einschlafschwierigkeiten, unerklärliche Reizbarkeit."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "4-7-8 Atmung", "note": "Aktiviert Parasympathikus in 5 Min" },
+          { "icon": "🔄", "label": "Dynamische Mobilität", "note": "Besser als statisches Dehnen" },
+          { "icon": "🌙", "label": "Vor dem Schlafen", "note": "10 Min erleichtern den Übergang" },
+          { "icon": "📈", "label": "HRV +18%", "note": "Vs. passive Ruhe gleicher Dauer" }
+        ]
+      },
+      {
+        "label": "Weniger Abendbildschirm / Koffein",
+        "detail": "Die zwei häufigsten Störer der Schlafqualität — blaues Licht von Bildschirmen und Koffein, das länger im Körper verweilt als gedacht.",
+        "keyFact": "Koffein hat eine Halbwertszeit von 5–7 Stunden — ein Kaffee um 15 Uhr hat um 20–22 Uhr noch 50% Aktivität im Blut.",
+        "details": [
+          "Koffein-Halbwertszeit 5–7 Stunden: 200 mg Koffein um 14 Uhr — ~100 mg sind um 21 Uhr noch aktiv.",
+          "Abendbildschirme: Blaues Licht (~480 nm) ist der wirksamste Melatonin-Unterdrücker — Handy und Laptop 'täuschen' das Gehirn, es sei noch Tag.",
+          "Praktische Bildschirmlösungen: Nachtmodus ab 18–19 Uhr aktivieren, Helligkeit nach 20 Uhr auf 30–40% dimmen, oder Bernsteinbrille ab 21 Uhr.",
+          "Koffein-Lösungen: Harter Stopp um 13–14 Uhr, wenn du um 22–23 Uhr schlafen willst.",
+          "Versteckte Koffeinquellen: Grüntee 30–50 mg, Schwarztee 40–70 mg, dunkle Schokolade 25 mg/30g — oft übersehen.",
+          "'Null Bildschirm ab 20 Uhr' ist nicht nötig — Lesen bei warmem Licht ist weit besser als helles Handy-Scrollen."
+        ],
+        "points": [
+          { "icon": "☕", "label": "Stopp um 13–14 Uhr", "note": "HWZ 5–7h wirkt noch abends nach" },
+          { "icon": "📱", "label": "Nachtmodus ab 18–19 Uhr", "note": "Früher als du denkst nötig" },
+          { "icon": "🌕", "label": "Bernsteinbrille", "note": "Blaues Licht ab 21 Uhr blockieren" },
+          { "icon": "🍫", "label": "Verstecktes Koffein", "note": "Tee, dunkle Schokolade, Energy-Drinks" }
+        ]
+      }
+    ],
+    "c2_heading": "Biorhythmus & Energie",
+    "c2_desc": "Energie kommt nicht nur aus Kaffee. Sie kommt aus Licht, Wasser, leichter Bewegung, Essen und dem Arbeiten im Einklang mit deinem natürlichen Rhythmus.",
+    "c2_routine_label": "Morgenroutine {m} Min.",
+    "c2_energy_heading": "5 Energie-Faktoren",
+    "c2_morning_5": [
+      {
+        "time": "1 Min.", "action": "Ein Glas Wasser trinken", "label": "Ein Glas Wasser trinken",
+        "detail": "Der einfachste Schritt mit sofortiger Wirkung — dein Körper ist nach 7–9 Stunden Schlaf ohne Trinken dehydriert.",
+        "keyFact": "Bereits 1–2% Wasserverlust reichen aus, um die kognitive Leistung um 10–15% zu senken — und du erreichst diesen Zustand typischerweise genau beim Aufwachen.",
+        "details": [
+          "Nach 7–9 Stunden ohne Trinken startet der Körper den Tag in leichter Dehydration — verursacht direkt das morgendliche Träge-Gefühl.",
+          "Das Gehirn besteht zu ~75% aus Wasser — selbst leichte Dehydration verlangsamt die neuronale Übertragung und reduziert die Konzentration.",
+          "Wasser vor dem Kaffee trinken: Koffein auf nüchternen Magen bei Dehydration erhöht unnötig Kortisol.",
+          "200–300 ml Wasser sind ideal — kein ganzer Liter auf einmal nötig, langsam trinken über die ersten 5–10 Minuten.",
+          "Einfacher Gewohnheitsauslöser: Abends eine Wasserflasche ans Bett stellen.",
+          "Das 'Noch-nicht-richtig-wach-Gefühl' nach dem Aufwachen (Schlafträgheit) verblasst nach Wasser und Licht oft schneller."
+        ],
+        "points": [
+          { "icon": "🥛", "label": "200–300 ml sofort", "note": "Vor Kaffee und Frühstück" },
+          { "icon": "🛏️", "label": "Flasche am Nachttisch", "note": "Gewohnheit abends automatisieren" },
+          { "icon": "🧠", "label": "Gehirn braucht Wasser", "note": "Reduziert Schläfrigkeit, schärft Fokus" },
+          { "icon": "⚡", "label": "Schlafträgheit reduzieren", "note": "'Noch-nicht-wach-Gefühl' verblasst schneller" }
+        ]
+      },
+      {
+        "time": "2 Min.", "action": "Vorhänge öffnen / natürliches Licht", "label": "Vorhänge öffnen / Natürliches Licht",
+        "detail": "Natürliches Licht ist der stärkste Reset-Knopf für deine innere Uhr — wichtiger als jede andere Morgengewohnheit.",
+        "keyFact": "Tageslicht (10.000–100.000 Lux) ist 100–1.000 Mal stärker als Innenbeleuchtung — 5 Minuten draußen übertrumpfen alle Lampen im Zimmer.",
+        "details": [
+          "Die Augen enthalten spezielle lichtempfindliche Zellen (ipRGCs), direkt mit dem 'Masteruhr' des Gehirns (SCN) verbunden. Morgenlicht 'verankert' deine Aufwachzeit.",
+          "In den ersten 30–60 Minuten nach dem Aufwachen aktiviert Licht die Cortisol Awakening Response (CAR) — das gute Kortisol, das dich wach macht.",
+          "Bewölkte oder regnerische Tage funktionieren ebenfalls — Tageslicht hat draußen mindestens 1.000–2.000 Lux, auch ohne Sonne.",
+          "Vorhänge öffnen statt rauszugehen hilft bei großem Ostfenster — aber nicht so effektiv wie 5 Minuten wirklich draußen.",
+          "Keine Sonnenbrille in den ersten 5 Minuten — Brillen reduzieren die Wirkung.",
+          "Morgenlicht erhöht auch Serotonin — den Vorläufer von nächtlichem Melatonin. Mehr Serotonin tagsüber = tieferer Schlaf nachts."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "5 Min reichen", "note": "Direkt nach dem Aufwachen rausgehen" },
+          { "icon": "🌥️", "label": "Bewölkte Tage funktionieren", "note": "Draußen ist 100x heller als drinnen" },
+          { "icon": "👓", "label": "Keine Sonnenbrille", "note": "Augen natürliches Licht empfangen lassen" },
+          { "icon": "🌅", "label": "In der ersten Stunde", "note": "Aktiviert gutes Kortisol für den Tag" }
+        ]
+      },
+      {
+        "time": "1 Min.", "action": "Leichtes Treten auf der Stelle + Schulter- und Hüftkreisen", "label": "Leichte Bewegung + Gelenkkreisen",
+        "detail": "60 Sekunden sanfte Bewegung reichen aus, um das Kreislaufsystem zu wecken und Gelenke nach 7–9 Stunden Liegen zu schmieren.",
+        "keyFact": "60 Sekunden sanfte Morgenbewegung aktivieren die Durchblutung und schmieren Gelenke — reduzieren Steifheit und Schmerzen deutlich.",
+        "details": [
+          "Nach 7–9 Stunden Schlaf ist die Gelenkflüssigkeit (Synovia) reduziert — ein paar Minuten sanfte Bewegung verteilt die Gelenkflüssigkeit und reduziert Morgensteifheit.",
+          "Auf der Stelle treten für 30–60 Sekunden: pumpt Blut aus den Beinen zurück zum Herzen und reduziert Schwindel beim schnellen Aufstehen.",
+          "Schulterkreisen: 10–15 Kreise je Richtung löst den Trapezius und lindert Nackenverspannungen.",
+          "Hüftkreisen: das Hüftgelenk ist das größte des Körpers und nach dem Schlaf oft am steifsten.",
+          "Kein Platz nötig — alles lässt sich direkt neben dem Bett machen.",
+          "Diese 1 Minute ist eine 'Benachrichtigung' an deinen Körper, dass ein neuer Tag begonnen hat."
+        ],
+        "points": [
+          { "icon": "💧", "label": "Gelenke schmieren", "note": "Synovia verteilt sich durch Bewegung" },
+          { "icon": "🩸", "label": "Durchblutung ankurbeln", "note": "Blut von Beinen zum Gehirn, sanft" },
+          { "icon": "🦴", "label": "Schulterkreisen 10–15x", "note": "Löst den Trapezius nach dem Schlaf" },
+          { "icon": "🌀", "label": "Hüftkreisen 10–15x", "note": "Weckt das größte Gelenk des Körpers" }
+        ]
+      },
+      {
+        "time": "1 Min.", "action": "4–6 tiefe Atemzüge", "label": "4–6 tiefe Atemzüge",
+        "detail": "Schließe die 5-Minuten-Routine mit bewusstem Atmen ab — stelle die Frequenz deines Nervensystems für den ganzen Tag ein.",
+        "keyFact": "4–6 langsame Zwerchfellatmungen genügen, um das parasympathische Nervensystem zu aktivieren — den idealen 'ruhig, aber wach'-Zustand.",
+        "details": [
+          "Morgens ist das sympathische Nervensystem oft erhöht wegen steigendem Kortisol — ein paar langsame Atemzüge bringen Gleichgewicht zum ruhigen Fokus.",
+          "Einfachste Technik: 4 Sekunden durch die Nase einatmen (Bauch hebt sich), 6 Sekunden durch den Mund ausatmen. 4–6 Mal wiederholen.",
+          "Ein längeres Ausatmen als Einatmen aktiviert den Vagusnerv — verlangsamt den Herzschlag innerhalb von 60 Sekunden.",
+          "Nach 4–6 richtigen Atemzügen steigt HRV messbar — der wichtigste Indikator für Erholung und fokussierte Bereitschaft.",
+          "Beim Atmen fragen: 'Wie möchte ich mich heute fühlen?' — aktiviert den präfrontalen Kortex.",
+          "Nur 1 Minute, aber die Wirkung hält an: langsames Morgenatmen etabliert eine neuronale 'Baseline' für den ganzen Tag."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Bauch hebt sich, Brust bleibt unten", "note": "Korrekte Zwerchfellatmung" },
+          { "icon": "⏱️", "label": "Einatmen 4s, Ausatmen 6s", "note": "Längeres Ausatmen = Parasympathikus aktivieren" },
+          { "icon": "🧠", "label": "Intention setzen", "note": "Aktiviert den präfrontalen Kortex" },
+          { "icon": "❤️", "label": "Erhöht HRV", "note": "Schlüsselindikator für Erholung und Fokus" }
+        ]
+      }
+    ],
+    "c2_morning_10": [
+      {
+        "time": "2 Min.", "action": "Wasser + Tür öffnen, natürliches Licht", "label": "Wasser + Natürliches Licht",
+        "detail": "Das wichtigste Duo des Morgens — beides zusammen in 2 Minuten für maximale physiologische Aufwacheffekte.",
+        "keyFact": "Wasser + natürliches Licht in den ersten 2 Minuten ist der stärkste 'Doppelreset' für deine innere Uhr.",
+        "details": [
+          "200–300 ml Wasser direkt nach dem Aufwachen trinken: leichte Dehydration nach dem Schlaf reduziert kognitive Leistung um 10–15%.",
+          "Rausgehen oder Tür öffnen für Licht: Morgenlicht aktiviert das gute Kortisol für den ganzen Tag.",
+          "Beides gleichzeitig: Wasser trinken, während du an der offenen Tür stehst — spart Zeit und schafft eine Gewohnheitskombi.",
+          "Kein Sonnenschein nötig — ein bewölkter Tag funktioniert. Tageslicht draußen ist mindestens 1.000–2.000 Lux.",
+          "Die ersten 2 Minuten zählen mehr als jede andere 2-Minuten-Periode für die physiologische Tageseinstellung.",
+          "Tipp: Abends Wasserflasche ans Bett stellen und Wecker nahe der Haustür platzieren."
+        ],
+        "points": [
+          { "icon": "💧", "label": "200–300 ml Wasser", "note": "Vor dem Kaffee — immer" },
+          { "icon": "🌅", "label": "Licht beim Aufwachen", "note": "Tür öffnen oder 1–2 Min rausgehen" },
+          { "icon": "🔗", "label": "Beides zusammen", "note": "Wasser trinken im Licht stehend" },
+          { "icon": "⏰", "label": "Erste 2 Min wichtigsten", "note": "Setzt den physiologischen Ton für den Tag" }
+        ]
+      },
+      {
+        "time": "3 Min.", "action": "Leichter Spaziergang drinnen oder draußen", "label": "Leichter Spaziergang 3 Min.",
+        "detail": "3 Minuten sanftes Gehen nach dem Aufwachen pumpt Blut durch den Körper, weckt das Verdauungssystem und bereitet Muskeln und Gelenke für den Tag vor.",
+        "keyFact": "3 Minuten sanftes Morgengehen erhöhen die Durchblutung von Muskeln und Gehirn um 20–30% — effektiver als Koffein in den ersten 15 Minuten.",
+        "details": [
+          "Nach dem Schlaf konzentriert sich Blut in den inneren Organen — ein leichter Spaziergang 'verteilt' es zu Muskeln und Gehirn.",
+          "Bei schlechtem Wetter nicht raus nötig: 3–4 Runden durch die Wohnung oder 2–3 Treppenläufe reichen.",
+          "Draußen gehen kombiniert natürliches Licht mit Bewegung — der ideale 'Doppelnutzen'.",
+          "Ideales Tempo: entspannt, keine Anstrengung — Herzfrequenz muss nur 10–15% über Ruhe steigen.",
+          "Das Verdauungssystem wacht ebenfalls auf: leichte Bewegung stimuliert die Darmbewegung.",
+          "Diese 3 Minuten geben dem Gehirn Zeit zum 'Hochfahren' — viele finden ihre besten Ideen beim Morgenspaziergang."
+        ],
+        "points": [
+          { "icon": "🩸", "label": "Blut umverteilen", "note": "Von Organen → Muskeln und Gehirn" },
+          { "icon": "🌿", "label": "Draußen ist am besten", "note": "Kombiniert Licht + Bewegung" },
+          { "icon": "🐢", "label": "Leichtes Tempo", "note": "Keine Anstrengung — nur Aufwachen" },
+          { "icon": "💭", "label": "Gehirn startet", "note": "Beste Ideen kommen oft beim Morgenspaziergang" }
+        ]
+      },
+      {
+        "time": "3 Min.", "action": "Mobilität: Nacken/Schultern/Hüften", "label": "Mobilität: Nacken, Schultern & Hüften",
+        "detail": "3 Minuten Mobilität an genau den richtigen Stellen — Nacken, Schultern und Hüften sind die drei steifsten Bereiche nach dem Schlaf.",
+        "keyFact": "3 Minuten Morgenmobilität täglich ist effektiver als 30 Minuten sporadisches Wochenend-Dehnen.",
+        "details": [
+          "Nacken und Schultern: Kopf langsam je Richtung 5–8 Mal drehen, dann je Ohr 5 Sekunden zur Schulter neigen.",
+          "Schulterkreisen: 10–15 Kreise vorwärts, 10–15 Kreise rückwärts — beide Richtungen wirken unterschiedlich.",
+          "Ganzkörper-Streckung: Finger verschränken, Arme über den Kopf heben und strecken, dabei auf Zehenspitzen gehen — dekomprimiert die gesamte Wirbelsäule.",
+          "Hüftkreisen: Füße schulterbreit, 10–15 Mal je Richtung kreisen.",
+          "Kein Schmerz nötig — nur bis zur sanften Grenze gehen. Morgenmobilität ist Aufwachen, kein tiefes Dehnen.",
+          "Nach 4–6 Wochen täglicher Praxis verbessert sich die Beweglichkeit von Schultern und Hüften sichtbar."
+        ],
+        "points": [
+          { "icon": "🦴", "label": "Nacken/Schultern zuerst", "note": "Steifste Bereiche nach dem Schlaf" },
+          { "icon": "🌀", "label": "Hüftkreisen beide Richtungen", "note": "Schmiert das größte Gelenk" },
+          { "icon": "⬆️", "label": "Ganzkörper-Streckung", "note": "Dekomprimiert die gesamte Wirbelsäule" },
+          { "icon": "🔁", "label": "3 Min täglich", "note": "Effektiver als 30 Min am Wochenende" }
+        ]
+      },
+      {
+        "time": "2 Min.", "action": "Langsames Atmen + Intention für den Tag setzen", "label": "Langsames Atmen + Intention setzen",
+        "detail": "Schließe die 10-Minuten-Routine mit Atmung und Mindset ab — kalibriere Nervensystemfrequenz und Fokusrichtung für den ganzen Tag.",
+        "keyFact": "Die wichtigste Aufgabe zu identifizieren, bevor du aufs Handy schaust, hält das Gehirn den ganzen Tag im proaktiven Modus.",
+        "details": [
+          "Langsames Atmen: 4 Sekunden einatmen, 2 Sekunden halten, 6 Sekunden ausatmen. 4–6 Mal wiederholen.",
+          "1 Hauptaufgabe identifizieren: 'Was wäre meine wichtigste Sache heute, wenn ich nur eine tun könnte?'",
+          "Vor dem Handy-Check: Sobald du Benachrichtigungen gesehen hast, schaltet das Gehirn in 'reaktiven' Modus.",
+          "Mit Visualisierung kombinieren: Beim Atmen vorstellen, die Aufgabe abgeschlossen zu haben.",
+          "1 Satz in ein Notizbuch schreiben: 'Heute: [Aufgabe X]' — schriftlich festhalten erhöht die Umsetzung um 42%.",
+          "Diese 2 Minuten sind die Grenze zwischen Morgen und dem Rest des Tages."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Einatmen 4s, Ausatmen 6s", "note": "Aktiviert Vagusnerv, senkt Herzfrequenz" },
+          { "icon": "🎯", "label": "1 wichtigste Aufgabe", "note": "Vor dem Handy beantworten" },
+          { "icon": "📝", "label": "In 1 Satz aufschreiben", "note": "+42% Umsetzung vs. nur denken" },
+          { "icon": "🧠", "label": "Proaktiv, nicht reaktiv", "note": "Morgendliche Posteingangs-Falle vermeiden" }
+        ]
+      }
+    ],
+    "c2_energy_tips": [
+      {
+        "label": "Morgenlicht",
+        "desc": "3–5 Minuten natürliches Licht direkt nach dem Aufwachen. Signalisiert dem Körper, dass der Tag begonnen hat.",
+        "keyFact": "Morgendliches Sonnenlicht ist der stärkste Reiz zum Reset der inneren Uhr — 5 Minuten draußen sind 10x effektiver als Innenbeleuchtung.",
+        "detail": "Die Augen enthalten spezialisierte lichtempfindliche Zellen (ipRGCs), direkt mit dem SCN — der Körperuhr — verbunden. Morgenlicht verankert die Aufwachzeit und löst eine Hormankaskade aus.",
+        "details": [
+          "Morgendliches Sonnenlicht (10.000–100.000 Lux) ist 100–1.000 Mal stärker als Innenbeleuchtung (~100–500 Lux).",
+          "In den ersten 30–60 Minuten nach dem Aufwachen aktiviert Licht die Cortisol Awakening Response.",
+          "5 Minuten Morgenlicht brauchen keinen strahlenden Sonnenschein — ein bewölkter Tag funktioniert ebenfalls.",
+          "Sonnenbrille beim Rausgehen morgens reduziert die Wirkung — Augen direktes Licht empfangen lassen (nie in die Sonne schauen).",
+          "Wenn draußen nicht möglich: Vorhänge weit öffnen und 10–15 Minuten nah am Fenster sitzen.",
+          "Morgenlicht erhöht Serotonin — den Vorläufer von nächtlichem Melatonin. Mehr Serotonin tagsüber = tieferer Schlaf nachts."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "5 Min reichen", "note": "Direkt nach dem Aufwachen rausgehen" },
+          { "icon": "🌥️", "label": "Bewölkte Tage funktionieren", "note": "Draußen immer heller als drinnen" },
+          { "icon": "👓", "label": "Keine Sonnenbrille", "note": "Augen natürliches Licht empfangen lassen" },
+          { "icon": "🌅", "label": "In der ersten Stunde", "note": "Aktiviert gutes Kortisol für den Tag" }
+        ]
+      },
+      {
+        "label": "Wasser zuerst",
+        "desc": "200–300 ml Wasser direkt nach dem Aufwachen trinken. Der Körper verliert Wasser während 7–9 Stunden Schlaf.",
+        "keyFact": "1–2% Wasserverlust reichen bereits aus, um die kognitive Leistung um 10–15% zu senken — und du erreichst diesen Zustand typischerweise genau beim Aufwachen.",
+        "detail": "Nach 7–9 Stunden ohne Trinken startet der Körper den Tag leicht dehydriert. Wasser trinken ist eine der einfachsten Morgengewohnheiten mit den deutlichsten Vorteilen.",
+        "details": [
+          "Das Gehirn besteht zu ~75% aus Wasser — selbst leichte Dehydration verlangsamt die neuronale Übertragung und erhöht Morgenträgheit.",
+          "Wasser vor dem Kaffee trinken: Koffein auf nüchternen Magen bei Dehydration erhöht Kortisol.",
+          "200–300 ml ist ideal — kein ganzer Liter auf einmal; langsam über die ersten 10–15 Minuten trinken.",
+          "Stilles Wasser oder warmes Wasser sind beide fine. Optional: Prise Salz oder Zitrone für bessere Aufnahme.",
+          "Abends Wasserflasche ans Bett stellen — entfernt alle Hindernisse.",
+          "Das 'Schläfrige' Gefühl in den ersten 10–20 Minuten nach dem Aufwachen verblasst nach Wasser und Licht oft schneller."
+        ],
+        "points": [
+          { "icon": "🥛", "label": "200–300 ml sofort", "note": "Vor Kaffee und Frühstück" },
+          { "icon": "🛏️", "label": "Flasche am Nachttisch", "note": "Gewohnheit automatisieren" },
+          { "icon": "🧠", "label": "Gehirn braucht Wasser", "note": "Reduziert Schläfrigkeit, schärft Fokus" },
+          { "icon": "⚡", "label": "Reduziert Schlafträgheit", "note": "'Noch-nicht-wach-Gefühl' nach dem Schlaf" }
+        ]
+      },
+      {
+        "label": "Protein bei erster Mahlzeit",
+        "desc": "Protein beim Frühstück stabilisiert den Blutzucker und verhindert den Nachmittagsenergieabfall.",
+        "keyFact": "Eine proteinreiche erste Mahlzeit (~25–30g) kontrolliert den Appetit den ganzen Tag durch GLP-1-Erhöhung und Ghrelin-Senkung.",
+        "detail": "Frühstück ist nicht für jeden obligatorisch, aber wenn du morgens isst, ist Protein die wichtigste Komponente.",
+        "details": [
+          "Ein Frühstück reich an raffinierten Kohlenhydraten (Weißbrot) lässt den Blutzucker um 10–11 Uhr absacken.",
+          "25–30g Protein beim Frühstück verlangsamt die Aufnahme, stabilisiert den Blutzucker und erhält die Sättigung bis nahe Mittag.",
+          "Einfache Morgeneiweiß-Quellen: 3 Eier (~18g), 200g griechischer Joghurt (~17g), 80g kalte Hähnchenbrust (~26g).",
+          "Frühstück muss nicht direkt nach dem Aufwachen sein — viele kommen gut bis 9–10 Uhr ohne Essen aus.",
+          "Kaffee + Zucker ist kein Frühstück — das ist ein kurzfristiger Kortisol- und Blutzuckerspike.",
+          "Ideale Kombination: Protein + Ballaststoffe (Gemüse, Obst) für die erste Mahlzeit."
+        ],
+        "points": [
+          { "icon": "🥚", "label": "25–30g Protein", "note": "Ziel für die erste Mahlzeit" },
+          { "icon": "📉", "label": "Reine Kohlenhydrate vermeiden", "note": "Verursacht Blutzuckersturz um 10–11 Uhr" },
+          { "icon": "🕘", "label": "Nicht sofort essen nötig", "note": "Iss wenn hungrig, aber mit Protein" },
+          { "icon": "🧀", "label": "Schnelle Proteinquellen", "note": "Eier, griechischer Joghurt, Käse" }
+        ]
+      },
+      {
+        "label": "Spaziergang nach dem Essen",
+        "desc": "5–10 Minuten Gehen nach dem Mittagessen hält wach, verhindert Nachmittagsträgheit und stabilisiert den Blutzucker.",
+        "keyFact": "Ein 10-minütiger Spaziergang nach einer Mahlzeit senkt den postprandialen Blutzucker um 22% — effektiver als 30 Minuten Sport zu anderer Zeit.",
+        "detail": "Der Nachmittagsenergiepegel-Einbruch ist ein natürliches physiologisches Phänomen — du kannst ihn durch leichte Bewegung deutlich reduzieren.",
+        "details": [
+          "Nach einer Mahlzeit leitet der Körper Blut zum Verdauungssystem und der Blutzucker steigt — Sitzen verlängert diesen Prozess.",
+          "Leichtes Gehen aktiviert Muskeln, Glucose aus dem Blut aufzunehmen (ohne Insulin) — 10 Minuten Gehen senkt den Blutzucker erheblich.",
+          "Nicht schnell oder weit gehen nötig — nur 'Bewegen' genügt. Eine Runde ums Büro oder 1–2 Treppen haben denselben Effekt.",
+          "Ideales Timing: innerhalb von 20–30 Minuten nach Ende der Mahlzeit beginnen.",
+          "Der Mittagseinbruch erreicht natürlich um 13–15 Uhr seinen Höhepunkt — Gehen + Tageslicht ist die stärkste Kombination.",
+          "Ein kurzer Spaziergang draußen setzt auch das Denken zurück, reduziert Stress und verbessert den Nachmittagsfokus."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "5–10 Min reichen", "note": "Kein langer Workout nötig" },
+          { "icon": "🕐", "label": "Innerhalb 30 Min nach dem Essen", "note": "Blutzucker auf Höhepunkt — bestes Timing" },
+          { "icon": "📉", "label": "Senkt Blutzucker um 22%", "note": "Effektiver als Sport zu anderer Zeit" },
+          { "icon": "🧠", "label": "Nachmittags-Reset", "note": "Reduziert natürlichen Mittagseinbruch" }
+        ]
+      },
+      {
+        "label": "Koffein gezielt einsetzen",
+        "desc": "Koffein nicht vor Wasser oder Essen trinken. Koffein nach 15 Uhr vermeiden bei Schlafproblemen.",
+        "keyFact": "Kaffee direkt nach dem Aufwachen zu trinken, wenn Kortisol auf Höchststand ist (6–9 Uhr), verschwendet den Koffeineffekt — 90–120 Minuten nach dem Aufwachen ist das optimale Fenster.",
+        "detail": "Koffein ist ein mächtiges Werkzeug, wenn richtig eingesetzt, und ein Schlaffeind bei Übergebrauch.",
+        "details": [
+          "Kortisol erreicht 30–45 Minuten nach dem Aufwachen seinen Höhepunkt — Kaffee in dieser Zeit bringt nichts und erhöht die Koffeintoleranz.",
+          "Kaffee 90–120 Minuten nach dem Aufwachen liefert maximale und länger anhaltende Wachheit.",
+          "Kaffee auf nüchternen Magen erhöht Kortisol und Magensäure — nach Wasser und einem leichten Snack trinken.",
+          "Koffeins Halbwertszeit beträgt 5–6 Stunden: ein Kaffee um 15 Uhr hat um 21 Uhr noch 50% Koffein im Blut.",
+          "Menschen, die 'koffeinunempfindlich' glauben zu sein, sind oft noch in ihrer Schlafqualität beeinträchtigt ohne es zu merken.",
+          "Praktische Grenze: 1–2 Tassen Kaffee täglich, vor 14 Uhr. Grüntee und Matcha zählen ebenfalls."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "90 Min nach dem Aufwachen", "note": "Kortisol sinkt — Koffein wirkt erst jetzt" },
+          { "icon": "🥛", "label": "Zuerst Wasser", "note": "Nüchternen Magen + Dehydration vermeiden" },
+          { "icon": "🕒", "label": "Stopp nach 14 Uhr", "note": "HWZ 5–6h wirkt noch abends" },
+          { "icon": "🍵", "label": "Tee auch zählen", "note": "Grüntee und Matcha haben beide Koffein" }
+        ]
+      }
+    ],
     "c1_step_prefix": "Schritt",
     "c1_checklist_heading": "Tägliche Schlaf-Checkliste",
     "c3_standup_title": "⏱ Die 2-Minuten-Aufsteh-Regel",

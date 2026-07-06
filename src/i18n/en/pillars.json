@@ -2328,6 +2328,515 @@
       {"label": "Breathing"},
       {"label": "Environment"}
     ],
+    "c_hero_stats": [
+      { "l": "Sleep per night", "tip": "Adults need 7–9 hours of sleep for optimal recovery. Poor sleep reduces training performance and appetite control." },
+      { "l": "kcal NEAT/day", "tip": "NEAT (Non-Exercise Activity Thermogenesis) can burn 300–500 kcal/day without any gym session." },
+      { "l": "Lifestyle modules", "tip": "8 modules from initial assessment to environment design, covering your full 24-hour rhythm." },
+      { "l": "Better every day", "tip": "Core philosophy: no need to be perfect immediately. Fix 1% in the right place each day for lasting change." }
+    ],
+    "c0_heading": "Initial Lifestyle Assessment",
+    "c0_desc": "Know your starting point before making changes. This is not about judging — it's about finding the right place to begin.",
+    "c0_score_heading": "Lifestyle Score — 100 points",
+    "c0_score_total_label": "Today's total score",
+    "c0_score_msg_excellent": "🏆 Excellent — great lifestyle!",
+    "c0_score_msg_good": "✦ Good — keep it up!",
+    "c0_score_msg_start": "💪 Start earning points day by day",
+    "c0_tracks_heading": "Choose the track that fits you:",
+    "c0_full_link": "View full assessment →",
+    "c0_items": [
+      {
+        "icon": "😴", "label": "Sleep", "desc": "Sleep/wake times, hours, quality",
+        "keyFact": "7–9 hours of quality sleep improves training performance by 20–25% and significantly reduces the risk of chronic disease.",
+        "detail": "Sleep is the foundation of everything — muscle recovery, hormone balance, memory, and appetite control. This is the first metric to assess.",
+        "details": [
+          "Record your bedtime and wake time for 7 consecutive days — this is your real baseline, not your intention.",
+          "Quality matters more than quantity: 6 hours of deep sleep beats 8 hours of restless sleep. Rate your quality 1–10 each morning.",
+          "Consistent sleep timing (variation ≤60 min each day, including weekends) regulates your circadian clock better than any other habit.",
+          "Melatonin starts rising 2 hours before you naturally feel sleepy — blue light from screens and heavy food block this process.",
+          "Deep sleep occurs mostly in the first half of the night — going to bed after midnight loses more deep sleep than you'd expect.",
+          "If you wake up feeling unrefreshed after 7+ hours → this is a signal to adjust your evening habits, not to drink more coffee."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Consistent sleep time", "note": "Variation ≤60 min each day" },
+          { "icon": "🌙", "label": "Sleep quality", "note": "Rate 1–10 each morning" },
+          { "icon": "💤", "label": "7–9 hours/night", "note": "For healthy adults" },
+          { "icon": "📊", "label": "Track for 7 days", "note": "Build a baseline before improving" }
+        ]
+      },
+      {
+        "icon": "⚡", "label": "Energy", "desc": "When you're most alert, when you're most tired",
+        "keyFact": "Your circadian rhythm determines ~60% of your energy level throughout the day — know your own cycle to work with it, not against it.",
+        "detail": "Energy is not willpower — it's physiology. Knowing when your brain is sharpest and when your body needs rest helps you get the most from every hour.",
+        "details": [
+          "Log your energy level every 2–3 hours for 3 days (1–10): this is the only way to discover your true chronotype.",
+          "Most people have energy peaks at 9–11 AM and 3–5 PM, with a sharp dip at 1–3 PM after lunch.",
+          "When you're sharpest → do deep cognitive work. When you're most tired → schedule meetings, email, routine tasks.",
+          "The Ultradian cycle is ~90 minutes: the brain works at high intensity for ~90 minutes and then needs 10–20 minutes of rest.",
+          "Caffeine masks adenosine (the sleepiness molecule) rather than creating real energy — overuse disrupts your natural cycle.",
+          "Morning sunlight is the strongest 'reset button' for your circadian clock — even 5 minutes outside after waking is enough."
+        ],
+        "points": [
+          { "icon": "📈", "label": "Energy peaks", "note": "Typically 9–11 AM and 3–5 PM" },
+          { "icon": "🔄", "label": "90-minute cycle", "note": "Rest 10–20 min after each cycle" },
+          { "icon": "☀️", "label": "Morning light", "note": "5 min outside right after waking" },
+          { "icon": "☕", "label": "Smart caffeine", "note": "Drink 90 min after waking" }
+        ]
+      },
+      {
+        "icon": "🚶", "label": "Daily movement", "desc": "Steps, sitting time, light movement",
+        "keyFact": "8,000 steps/day reduces early mortality risk by 51% according to a 2021 JAMA study — and you don't need a gym to reach this number.",
+        "detail": "NEAT — movement outside the gym — can account for 15–50% of total daily energy expenditure. This is the 'secret weapon' most people overlook.",
+        "details": [
+          "Count your current steps before setting a goal — many gym-goers still take only 3,000–4,000 steps because they sit all day.",
+          "Sitting >8 hours continuously raises cardiovascular disease risk independently of gym exercise — stand up every 45–60 minutes.",
+          "Every additional 1,000 steps above your current baseline creates measurable health benefits — no need to jump straight to 10,000.",
+          "Light movement after meals (5–10 min walk) reduces post-meal blood glucose by 20–30%, far more effective than sitting still.",
+          "Continuous sitting time matters more than total sitting time: 8 hours of sitting with hourly stand-ups beats 4 hours of unbroken sitting.",
+          "Practical target: increase by 500–1,000 steps per week until you naturally reach 7,000–8,000 steps/day."
+        ],
+        "points": [
+          { "icon": "👣", "label": "7,000–8,000 steps", "note": "The most realistic target" },
+          { "icon": "⏱️", "label": "Stand up every 45–60 min", "note": "Counter the harm of prolonged sitting" },
+          { "icon": "🍽️", "label": "Walk after meals", "note": "5–10 min controls blood glucose" },
+          { "icon": "📱", "label": "Use a step tracker", "note": "Or your phone's built-in pedometer" }
+        ]
+      },
+      {
+        "icon": "🔄", "label": "Recovery", "desc": "Neck/shoulder/back/knee pain; overtraining signs",
+        "keyFact": "40% of sports injuries and chronic pain don't come from overtraining — they come from insufficient recovery and ignoring early warning signs.",
+        "detail": "Recovery is not passive rest — it's a collection of active practices that help the body rebuild, reduce inflammation, and prepare for the next session.",
+        "details": [
+          "Neck, shoulder, and lower back pain after desk work is a signal of weak muscles and poor posture — not something you just have to accept.",
+          "Distinguish delayed onset muscle soreness (DOMS — dull ache 1–3 days post-workout) from joint/tendon pain (sharp, localized → rest and check it).",
+          "5–10 min of mobility daily is more effective than 1 hour of foam rolling per week — consistency beats recovery intensity.",
+          "Signs of overtraining: resting heart rate 5–7 bpm above normal, insomnia despite fatigue, performance declining over 2–3 consecutive sessions.",
+          "A deload week (reduce training volume 40–50%) every 4–6 weeks enables deep recovery and typically precedes a performance breakthrough.",
+          "Cold/heat, massage, and stretching are all tools — none is universally best. Try them and observe your body's response."
+        ],
+        "points": [
+          { "icon": "🩺", "label": "Identify pain type", "note": "Muscle soreness vs. joint/tendon pain" },
+          { "icon": "🧘", "label": "Mobility 5–10 min/day", "note": "Consistency beats intensity" },
+          { "icon": "📉", "label": "Overtraining signs", "note": "High HR, insomnia, declining performance" },
+          { "icon": "🔁", "label": "Deload every 4–6 weeks", "note": "Reduce volume 40–50% for one week" }
+        ]
+      },
+      {
+        "icon": "📱", "label": "Evening habits", "desc": "Screens, meal timing, bedroom, work",
+        "keyFact": "Blue-light screens after 8 PM delay melatonin secretion by 1–3 hours and reduce sleep quality by ~20%, according to Harvard research.",
+        "detail": "What you do in the 2 hours before bed determines the quality of the 7–8 hours of sleep that follow. This is the easiest intervention window with the greatest impact.",
+        "details": [
+          "Phone, TV, and laptop screens emit blue light that suppresses melatonin — use Night Mode or blue-light-filtering glasses from 8 PM.",
+          "Ideally eat dinner before 8 PM — a heavy meal close to bedtime raises core body temperature, disrupts deep sleep, and increases acid reflux risk.",
+          "Stressful work after 9 PM activates cortisol — the brain needs at least 60 minutes away from work before sleep to truly wind down.",
+          "Keep the bedroom below 20°C — body temperature drops during sleep, and a cool environment makes this process more natural.",
+          "Even a short 5-minute evening routine (shower, light reading, brief journaling) signals to the brain: it's nearly time to sleep.",
+          "You don't need to do everything at once — pick 1 habit change, maintain it for 2–3 weeks, then add the next one."
+        ],
+        "points": [
+          { "icon": "🌑", "label": "Reduce screens after 8 PM", "note": "Night mode or blue-light glasses" },
+          { "icon": "🍽️", "label": "Eat dinner before 8 PM", "note": "No heavy meals close to bedtime" },
+          { "icon": "❄️", "label": "Cool room <20°C", "note": "Optimal temperature for deep sleep" },
+          { "icon": "📖", "label": "5–30 min evening routine", "note": "Cues the brain to prepare for sleep" }
+        ]
+      }
+    ],
+    "c0_score": [
+      {
+        "label": "Sleep ≥7h or improving",
+        "detail": "The most important criterion in the Lifestyle Score — getting enough sleep is the foundation for every other health improvement.",
+        "keyFact": "Just one night of less than 6 hours of sleep reduces memory consolidation by 40% and increases cortisol by 37% the next day.",
+        "details": [
+          "The minimum target is 7 hours — not 8. Research shows 7–9 hours is the optimal range for adults.",
+          "'Or improving' means if you previously slept 5 hours and now sleep 6, you still earn the points — progress matters more than perfection.",
+          "Quality > quantity: 7 hours of unbroken deep sleep beats 9 hours of fragmented sleep.",
+          "Chronic sleep deprivation (under 6 hours for multiple consecutive weeks) is linked to higher risk of type 2 diabetes and cardiovascular disease.",
+          "Weekend sleep catch-up does not erase accumulated sleep debt — it partially restores some cognitive function but cannot undo the metabolic damage.",
+          "Simplest strategy: fix your wake time first, then gradually adjust your bedtime."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "Target", "note": "7–9 hours/night for adults" },
+          { "icon": "📈", "label": "Progress", "note": "Increase gradually by 30 min per week" },
+          { "icon": "⏰", "label": "Fix your wake time", "note": "More important than your bedtime" },
+          { "icon": "🔋", "label": "Alert at 2 PM", "note": "A sign you're getting enough sleep" }
+        ]
+      },
+      {
+        "label": "Relatively consistent sleep time",
+        "detail": "Consistency of sleep timing matters more than total sleep hours — the circadian clock needs to be anchored to a regular schedule.",
+        "keyFact": "Varying sleep time by more than 90 minutes between weekdays and weekends has the same negative metabolic impact as crossing 1–2 time zones every week.",
+        "details": [
+          "'Relatively consistent' means no more than 60 minutes of variation across days — you don't need to be minute-precise.",
+          "The circadian rhythm coordinates over 20,000 genes and hundreds of hormones on a 24-hour cycle.",
+          "Sleeping 2 hours later on weekends creates 'social jet lag' — reducing insulin sensitivity and increasing cravings.",
+          "Strategy: set a 'bedtime alarm' 30 minutes before your target sleep time — cues the brain to start winding down.",
+          "Morning light is the strongest anchor for fixing your circadian rhythm.",
+          "If you must stay up 1 hour later: keep your normal wake time and your body will self-correct by the following evening."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Variation ≤60 min", "note": "Safe threshold between days" },
+          { "icon": "📅", "label": "Weekends", "note": "Don't sleep more than 90 min later" },
+          { "icon": "☀️", "label": "Morning light", "note": "The strongest circadian anchor" },
+          { "icon": "⏰", "label": "Bedtime alarm", "note": "Prompt wind-down at the right time" }
+        ]
+      },
+      {
+        "label": "Morning light or movement",
+        "detail": "The two most powerful signals to reset your circadian clock each morning — combine them for a synergistic effect.",
+        "keyFact": "Sunlight exposure in the first 30–60 minutes after waking fully suppresses daytime melatonin and raises cortisol along its natural rhythm.",
+        "details": [
+          "Morning natural light activates ipRGC cells in the eyes — sending a direct signal to the brain's central clock (SCN).",
+          "Required intensity: 1,000–10,000 lux (outdoor light), versus only 100–500 lux indoors — this is why going outside matters.",
+          "Morning movement (5–15 min walk, stretching) raises core body temperature and dopamine — two wakefulness signals more lasting than caffeine.",
+          "No sunshine (rain/winter): a 10,000-lux light therapy lamp for 10–20 minutes still works.",
+          "Ideal combination: a 10-minute outdoor walk right after waking — light, movement, and fresh air all at once.",
+          "Avoid sunglasses in the first 10–15 minutes outside — glasses filter the UV light needed to trigger the circadian reflex."
+        ],
+        "points": [
+          { "icon": "☀️", "label": "10 min outside", "note": "Better than 1 hour next to a window" },
+          { "icon": "🏃", "label": "Light movement", "note": "Walk or stretching for 5–15 min" },
+          { "icon": "👓", "label": "No sunglasses", "note": "First 10 min to receive natural light" },
+          { "icon": "💡", "label": "Cloudy days", "note": "Still go outside or use a 10,000-lux lamp" }
+        ]
+      },
+      {
+        "label": "Steps / NEAT goal achieved",
+        "detail": "NEAT — calories burned through all movement outside structured exercise — can account for 15–50% of total daily energy expenditure.",
+        "keyFact": "People with active jobs burn over 2,000 kcal/day more than desk workers through NEAT alone — equivalent to running a marathon every day without a gym.",
+        "details": [
+          "7,000–10,000 steps/day is a reasonable target for most non-professional adults. Under 5,000 steps/day is 'sedentary'.",
+          "NEAT isn't just steps: standing up for 2 minutes every hour, taking stairs, standing while on the phone — it all adds up.",
+          "'Hitting the goal' doesn't require 10,000 steps every day — personalize: if your baseline is 3,000, a goal of 5,000 is appropriate.",
+          "Walking 10–15 minutes after meals reduces post-meal glucose peaks by 30–50% and improves insulin sensitivity.",
+          "Step trackers increase average daily steps by 26% according to a meta-analysis — simply measuring creates motivation.",
+          "On a sedentary day: 5 minutes of squats, lunges, or calf raises before bed activates muscles and reduces the negative impact."
+        ],
+        "points": [
+          { "icon": "👟", "label": "7,000–10,000 steps", "note": "Realistic target for most people" },
+          { "icon": "🍽️", "label": "Walk after meals", "note": "Most time-efficient NEAT" },
+          { "icon": "📱", "label": "Use a tracker", "note": "Naturally increases steps by 26%" },
+          { "icon": "🪜", "label": "Stairs > elevator", "note": "NEAT accumulates every day" }
+        ]
+      },
+      {
+        "label": "No prolonged sitting",
+        "detail": "Sitting continuously for more than 60–90 minutes is independently harmful — it cannot be 'offset' by an hour at the gym afterward.",
+        "keyFact": "'Sitting is the new smoking' — sitting continuously for >90 minutes raises metabolic disease risk even in regular gym-goers.",
+        "details": [
+          "Prolonged sitting suppresses lipoprotein lipase (LPL) — the fat-burning enzyme. After 60 minutes, LPL drops 90% in activity.",
+          "The 60-minute rule: stand up and move for at least 2–3 minutes after every 60 minutes of sitting.",
+          "A study of 800,000 people found those who sat the most (>8h/day) had a 73% higher mortality risk.",
+          "Simple tools: set a 50-minute timer, use a standing desk, or place a small water glass to force more frequent stand-ups.",
+          "Sitting immediately after eating extends the glucose peak and increases fat storage. 10 minutes of standing after eating helps.",
+          "A standing desk alone isn't enough if you stand motionless — alternate sitting and standing every 2 hours."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "60-minute rule", "note": "Stand up for 2–3 min every hour" },
+          { "icon": "💧", "label": "Small water glass", "note": "Forces you to stand up more naturally" },
+          { "icon": "🍽️", "label": "Stand after meals", "note": "10 min reduces glucose peak" },
+          { "icon": "📊", "label": "Independent of gym", "note": "Exercise doesn't offset sitting all day" }
+        ]
+      },
+      {
+        "label": "Recovery / mobility / breathing",
+        "detail": "Active recovery, mobility, and intentional breathing — three pillars that shift the autonomic nervous system to parasympathetic mode.",
+        "keyFact": "HRV increases by 18% after 10 minutes of intentional breathing compared to passive rest of the same duration.",
+        "details": [
+          "Active recovery: 10 minutes of foam rolling or gentle joint movement — stimulates blood flow without adding physiological stress.",
+          "Mobility is not just stretching: it's the ability to actively control the full range of motion. At least 5 minutes of dynamic mobility daily.",
+          "Intentional breathing: the 4-7-8 technique (inhale 4s, hold 7s, exhale 8s) activates the parasympathetic nervous system within 3–5 minutes.",
+          "Optimal timing: just before sleep (5–10 min) helps transition from alert to drowsy far more effectively than scrolling.",
+          "Minimum to earn the point: 10 minutes/day of any combination of the three elements above.",
+          "Signs of insufficient recovery: chronically tight muscles, resting heart rate above normal, difficulty falling asleep, unexplained irritability."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "4-7-8 breathing", "note": "Activates parasympathetic in 5 min" },
+          { "icon": "🔄", "label": "Dynamic mobility", "note": "Better than static stretching" },
+          { "icon": "🌙", "label": "Before sleep", "note": "10 min eases the transition" },
+          { "icon": "📈", "label": "HRV +18%", "note": "vs. passive rest of the same duration" }
+        ]
+      },
+      {
+        "label": "Reduced evening screens / caffeine",
+        "detail": "The two most common disruptors of sleep quality — blue light from screens and caffeine that lingers in your body far longer than you think.",
+        "keyFact": "Caffeine has a 5–7 hour half-life — one coffee at 3 PM still has 50% activity in your blood at 8–10 PM.",
+        "details": [
+          "Caffeine half-life 5–7 hours: if you drink 200 mg caffeine at 2 PM, ~100 mg is still 'active' at 9 PM.",
+          "Evening screens: blue light (~480 nm) is the most effective suppressor of melatonin — phones and laptops 'trick' the brain into thinking it's daytime.",
+          "Practical screen solutions: enable Night Mode from 6–7 PM, dim brightness to 30–40% after 8 PM, or wear amber glasses after 9 PM.",
+          "Caffeine solutions: a hard cut-off at 1–2 PM if you plan to sleep at 10–11 PM.",
+          "Deceptive caffeine sources: green tea 30–50 mg, black tea 40–70 mg, dark chocolate 25 mg/30g — often overlooked.",
+          "You don't have to go 'zero screen' from 8 PM — reading with warm lighting is far better than scrolling with a bright screen."
+        ],
+        "points": [
+          { "icon": "☕", "label": "Cut-off at 1–2 PM", "note": "Half-life 5–7h still affects you at night" },
+          { "icon": "📱", "label": "Night Mode from 6–7 PM", "note": "Earlier than you think you need" },
+          { "icon": "🌕", "label": "Amber glasses", "note": "Block blue light from 9 PM" },
+          { "icon": "🍫", "label": "Hidden caffeine", "note": "Tea, dark chocolate, energy drinks" }
+        ]
+      }
+    ],
+    "c2_heading": "Circadian Rhythm & Energy",
+    "c2_desc": "Energy doesn't just come from coffee. It comes from light, water, light movement, food, and working in sync with your natural rhythm.",
+    "c2_routine_label": "Morning routine {m} min",
+    "c2_energy_heading": "5 Energy-Building Factors",
+    "c2_morning_5": [
+      {
+        "time": "1 min", "action": "Drink a glass of water", "label": "Drink a glass of water",
+        "detail": "The simplest step with immediate impact — your body is dehydrated after 7–9 hours of sleep.",
+        "keyFact": "Losing just 1–2% of body water reduces cognitive performance by 10–15% — and you typically reach this level the moment you wake up.",
+        "details": [
+          "After 7–9 hours without drinking, your body starts the day in a state of mild dehydration.",
+          "The brain is ~75% water — even mild dehydration slows neural transmission and reduces focus.",
+          "Drink water before coffee: caffeine on an empty stomach while dehydrated spikes cortisol.",
+          "200–300 ml of water is ideal — no need to drink a whole liter at once.",
+          "Simple habit cue: place a water bottle on your nightstand the evening before.",
+          "The 'not quite awake' feeling after waking typically fades faster after drinking water and getting light."
+        ],
+        "points": [
+          { "icon": "🥛", "label": "200–300 ml right away", "note": "Before coffee and breakfast" },
+          { "icon": "🛏️", "label": "Bottle on the nightstand", "note": "Automate the habit the night before" },
+          { "icon": "🧠", "label": "Brain needs water", "note": "Reduces grogginess, sharpens focus" },
+          { "icon": "⚡", "label": "Reduces sleep inertia", "note": "'Not quite awake' feeling fades faster" }
+        ]
+      },
+      {
+        "time": "2 min", "action": "Open curtains / get natural light", "label": "Open curtains / Natural light",
+        "detail": "Natural light is the most powerful reset button for your circadian clock — more important than any other morning habit.",
+        "keyFact": "Outdoor light (10,000–100,000 lux) is 100–1,000 times stronger than indoor lighting — 5 minutes outside beats leaving lights on all morning.",
+        "details": [
+          "Your eyes contain special light-sensitive cells (ipRGCs) connected directly to the brain's 'master clock' (SCN).",
+          "Morning light activates the Cortisol Awakening Response (CAR) — the good cortisol that makes you alert.",
+          "Cloudy or rainy days still work — outdoor light is at least 1,000–2,000 lux even without sun.",
+          "Opening curtains still helps if you have a large east-facing window — but not as effective as 5 minutes outside.",
+          "Don't wear sunglasses in the first 5 minutes — glasses reduce the benefit.",
+          "Morning light also boosts serotonin — the precursor of nighttime melatonin. More serotonin = deeper sleep at night."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "5 min is enough", "note": "Go outside right after waking" },
+          { "icon": "🌥️", "label": "Cloudy days still work", "note": "Outdoors is 100x brighter than indoors" },
+          { "icon": "👓", "label": "No sunglasses", "note": "Let your eyes receive natural light" },
+          { "icon": "🌅", "label": "Within the first hour", "note": "Activates the good cortisol for the day" }
+        ]
+      },
+      {
+        "time": "1 min", "action": "Light walk in place + shoulder and hip rotations", "label": "Light walk + joint rotations",
+        "detail": "60 seconds of gentle movement is enough to wake up your circulatory system and lubricate joints after 7–9 hours lying still.",
+        "keyFact": "60 seconds of gentle morning movement activates circulation and lubricates joints — reducing stiffness and aches through the day.",
+        "details": [
+          "After 7–9 hours of sleep, synovial fluid in the joints is reduced — gentle movement distributes joint fluid and reduces morning stiffness.",
+          "Marching in place for 30–60 seconds pumps blood from legs back to the heart and reduces dizziness.",
+          "Shoulder rotations: 10–15 circles each direction releases the trapezius and relieves neck tension effectively.",
+          "Hip rotations: the hip joint is the largest in the body and often the stiffest after sleep — 10–15 circles each side.",
+          "No space needed — everything can be done right beside the bed.",
+          "This 1 minute is a 'notification' to your body that a new day has begun."
+        ],
+        "points": [
+          { "icon": "💧", "label": "Lubricate joints", "note": "Synovial fluid distributes with movement" },
+          { "icon": "🩸", "label": "Boost circulation", "note": "Blood from legs to brain, gently" },
+          { "icon": "🦴", "label": "Shoulder rotations 10–15x", "note": "Releases the trapezius after sleep" },
+          { "icon": "🌀", "label": "Hip rotations 10–15x", "note": "Wakes up the body's largest joint" }
+        ]
+      },
+      {
+        "time": "1 min", "action": "4–6 deep breaths", "label": "4–6 deep breaths",
+        "detail": "Close the 5-minute routine with intentional breathing — setting your nervous system frequency for the whole day.",
+        "keyFact": "4–6 slow diaphragmatic breaths activate the parasympathetic nervous system — reaching the ideal 'calm but alert' state.",
+        "details": [
+          "In the morning, the sympathetic nervous system is often elevated due to rising cortisol — slow deep breaths rebalance toward calm focus.",
+          "Simplest technique: inhale through your nose for 4 seconds (belly expands), exhale through mouth for 6 seconds. Repeat 4–6 times.",
+          "A longer exhale than inhale activates the vagus nerve — slowing heart rate and lowering blood pressure within 60 seconds.",
+          "After 4–6 proper breaths, HRV increases measurably — the most important marker of recovery and focused readiness.",
+          "While breathing, ask yourself: 'How do I want to feel today?' — activates the prefrontal cortex.",
+          "Just 1 minute but the effect lasts: slow morning breathing establishes a neural 'baseline' for the whole day."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Belly expands, chest stays down", "note": "Correct diaphragmatic breathing" },
+          { "icon": "⏱️", "label": "Inhale 4s, exhale 6s", "note": "Longer exhale = activates parasympathetic" },
+          { "icon": "🧠", "label": "Set your intention", "note": "Activates the prefrontal cortex" },
+          { "icon": "❤️", "label": "Raises HRV", "note": "Key marker of recovery and focus" }
+        ]
+      }
+    ],
+    "c2_morning_10": [
+      {
+        "time": "2 min", "action": "Water + open door, get natural light", "label": "Water + Natural light",
+        "detail": "The most important duo of the morning — do both together in 2 minutes to maximize the physiological wake-up effect.",
+        "keyFact": "Water + natural light in the first 2 minutes is the strongest 'double reset' for your circadian clock.",
+        "details": [
+          "Drink 200–300 ml of water right after waking: mild dehydration after sleep reduces cognitive performance 10–15%.",
+          "Step outside or open the door for light: morning light activates the good cortisol for the whole day.",
+          "Do both at the same time: drink your water while standing at the open door — saves time and creates a habit combo.",
+          "Sunshine not required — a cloudy day still works. Outdoor light is at least 1,000–2,000 lux.",
+          "The first 2 minutes matter more than any other 2 minutes in the day for establishing physiology.",
+          "Tip: place your water bottle by the bed and set your alarm near the front door."
+        ],
+        "points": [
+          { "icon": "💧", "label": "200–300 ml water", "note": "Before coffee — always" },
+          { "icon": "🌅", "label": "Light right when you wake", "note": "Open door or step outside 1–2 min" },
+          { "icon": "🔗", "label": "Do them together", "note": "Drink water while standing in the light" },
+          { "icon": "⏰", "label": "First 2 min are most important", "note": "Sets the entire physiological tone for the day" }
+        ]
+      },
+      {
+        "time": "3 min", "action": "Light walk indoors or outside", "label": "Light walk for 3 min",
+        "detail": "3 minutes of gentle walking pumps blood throughout the body, wakes up the digestive system, and prepares muscles and joints for the day.",
+        "keyFact": "3 minutes of gentle morning walking increases blood flow to muscles and brain by 20–30% — more effective than caffeine in the first 15 minutes.",
+        "details": [
+          "After sleep, blood is concentrated in the internal organs — a light walk 'redistributes' it to muscles and the brain.",
+          "No need to go outside in bad weather: walking 3–4 laps around your home is enough to wake up circulation.",
+          "Going outside combines natural light with movement — the ideal 'double benefit'.",
+          "Ideal pace: comfortable, no exertion — heart rate only needs to rise by 10–15% above resting.",
+          "The digestive system also wakes up: light movement stimulates intestinal motility.",
+          "These 3 minutes also give the brain time to 'reboot' after sleep — best ideas often appear on a morning walk."
+        ],
+        "points": [
+          { "icon": "🩸", "label": "Redistribute blood", "note": "From organs → muscles and brain" },
+          { "icon": "🌿", "label": "Outside is best", "note": "Combines light + movement" },
+          { "icon": "🐢", "label": "Easy pace", "note": "No exertion — just waking up" },
+          { "icon": "💭", "label": "Brain boots up", "note": "Best ideas often appear on a morning walk" }
+        ]
+      },
+      {
+        "time": "3 min", "action": "Mobility: neck/shoulders/hips", "label": "Mobility: Neck, Shoulders & Hips",
+        "detail": "3 minutes of mobility in exactly the right spots — neck, shoulders, and hips are the three stiffest areas after sleep.",
+        "keyFact": "3 minutes of morning mobility every day is more effective than 30 minutes of sporadic weekend stretching.",
+        "details": [
+          "Neck and shoulders: slowly rotate your head each direction 5–8 times, then tilt each ear toward the shoulder for 5 seconds.",
+          "Shoulder circles: 10–15 circles forward, 10–15 circles backward — the two directions work differently.",
+          "Full-body reach: interlace your fingers, raise arms overhead, and reach up while rising onto toes — decompresses the entire spine.",
+          "Hip circles: stand feet shoulder-width apart, rotate 10–15 times each direction.",
+          "No pain needed — only reach to a gentle limit. Morning mobility is about waking the body, not deep stretching.",
+          "After 4–6 weeks of daily practice, shoulder and hip range of motion visibly improves."
+        ],
+        "points": [
+          { "icon": "🦴", "label": "Neck/shoulders first", "note": "The stiffest area after sleep" },
+          { "icon": "🌀", "label": "Hip circles both ways", "note": "Lubricates the largest joint" },
+          { "icon": "⬆️", "label": "Full-body overhead reach", "note": "Decompresses the entire spine" },
+          { "icon": "🔁", "label": "3 min every day", "note": "More effective than 30 min on the weekend" }
+        ]
+      },
+      {
+        "time": "2 min", "action": "Slow breathing + set your intention for the day", "label": "Slow breathing + Set intention",
+        "detail": "Close the 10-minute routine with breathing and mindset — calibrating both your nervous system and your focus direction for the whole day.",
+        "keyFact": "Identifying the single most important task before looking at your phone keeps your brain operating proactively all day.",
+        "details": [
+          "Slow breathing: inhale 4 seconds, hold 2 seconds, exhale 6 seconds. Repeat 4–6 times.",
+          "Identify 1 main task: answer 'If I could only do one thing today, what would it be?'",
+          "Do this before checking your phone: once you've seen notifications, the brain shifts to 'reactive' mode.",
+          "Combine with visualization: while breathing, picture yourself having completed that task.",
+          "Write 1 sentence in a notebook: 'Today: [task X]' — writing it down increases follow-through by 42%.",
+          "These 2 minutes are the boundary between early morning and the rest of the day."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Inhale 4s, exhale 6s", "note": "Activates vagus nerve, lowers heart rate" },
+          { "icon": "🎯", "label": "1 most important task", "note": "Answer before opening your phone" },
+          { "icon": "📝", "label": "Write it in 1 sentence", "note": "+42% follow-through vs. just thinking it" },
+          { "icon": "🧠", "label": "Proactive, not reactive", "note": "Avoid the morning inbox trap" }
+        ]
+      }
+    ],
+    "c2_energy_tips": [
+      {
+        "label": "Morning light",
+        "desc": "Get 3–5 minutes of natural light right after waking. Signals your body that the day has begun.",
+        "keyFact": "Morning natural light is the most powerful stimulus for resetting the circadian clock — 5 minutes outside is 10x more effective than turning on indoor lights.",
+        "detail": "Your eyes contain specialized light-sensitive cells (ipRGCs) directly connected to the body's master clock (SCN). Morning light 'locks in' your wake time and triggers a hormone cascade for the entire day.",
+        "details": [
+          "Morning natural light (10,000–100,000 lux) is 100–1,000 times stronger than indoor lighting (~100–500 lux).",
+          "Within the first 30–60 minutes after waking, light exposure activates the Cortisol Awakening Response.",
+          "5 minutes of morning natural light doesn't require bright sunshine — a cloudy day still works.",
+          "Wearing sunglasses when going outside reduces the effect — let your eyes receive direct light.",
+          "If you can't go outside, open the curtains fully and sit close to the window for 10–15 minutes.",
+          "Morning light also boosts serotonin — the precursor to nighttime melatonin. More serotonin = deeper sleep at night."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "5 min is enough", "note": "Go outside right after waking" },
+          { "icon": "🌥️", "label": "Cloudy days still work", "note": "Outdoors is always brighter than indoors" },
+          { "icon": "👓", "label": "No sunglasses", "note": "Let your eyes receive natural light" },
+          { "icon": "🌅", "label": "Within the first hour", "note": "Activates good cortisol for the day" }
+        ]
+      },
+      {
+        "label": "Water first thing",
+        "desc": "Drink 200–300 ml of water right after waking. The body loses water during 7–9 hours of sleep.",
+        "keyFact": "Losing 1–2% of body water is already enough to reduce cognitive performance 10–15% and increase fatigue.",
+        "detail": "After 7–9 hours without drinking, your body starts the day mildly dehydrated. Drinking water is one of the simplest morning habits with the clearest benefits.",
+        "details": [
+          "The brain is ~75% water — even mild dehydration slows neural transmission and increases morning grogginess.",
+          "Drink water before coffee: caffeine on an empty stomach while dehydrated spikes cortisol.",
+          "200–300 ml is the ideal amount — no need to drink a full liter; sip slowly over the first 10–15 minutes.",
+          "Plain water or warm water are both fine. Adding a pinch of salt or lemon is optional.",
+          "Place a water bottle on your nightstand the evening before — removes all friction.",
+          "The 'sleepy' feeling in the first 10–20 minutes after waking typically fades faster after drinking water and getting light."
+        ],
+        "points": [
+          { "icon": "🥛", "label": "200–300 ml right away", "note": "Before coffee and breakfast" },
+          { "icon": "🛏️", "label": "Bottle on the nightstand", "note": "Automate the habit" },
+          { "icon": "🧠", "label": "Brain needs water", "note": "Reduces grogginess, sharpens focus" },
+          { "icon": "⚡", "label": "Reduces sleep inertia", "note": "The 'not quite awake' feeling after sleep" }
+        ]
+      },
+      {
+        "label": "Protein in first meal",
+        "desc": "Protein at breakfast stabilizes blood sugar and prevents the afternoon energy crash.",
+        "keyFact": "A protein-rich first meal (~25–30g) controls appetite all day by raising GLP-1 and reducing ghrelin more effectively than simple carbohydrates.",
+        "detail": "Breakfast isn't mandatory for everyone, but if you do eat in the morning, protein is the most important component.",
+        "details": [
+          "A breakfast high in refined carbs (white bread) spikes blood glucose and crashes around 10–11 AM.",
+          "25–30g of protein at breakfast slows absorption, stabilizes blood glucose, and maintains satiety through to near lunchtime.",
+          "Easy morning protein sources: 3 eggs (~18g), 200g Greek yogurt (~17g), 80g cold chicken breast (~26g).",
+          "You don't have to eat breakfast right after waking — many people do fine fasting until 9–10 AM.",
+          "Coffee + sugar is not breakfast — it's a short-term cortisol and blood sugar spike that will crash your energy earlier.",
+          "Ideal combination: protein + fiber (vegetables, fruit) for your first meal."
+        ],
+        "points": [
+          { "icon": "🥚", "label": "25–30g protein", "note": "Target for your first meal" },
+          { "icon": "📉", "label": "Avoid pure carbs", "note": "Causes blood sugar crash at 10–11 AM" },
+          { "icon": "🕘", "label": "No need to eat right away", "note": "Eat when hungry, but include protein" },
+          { "icon": "🧀", "label": "Quick protein sources", "note": "Eggs, Greek yogurt, cheese" }
+        ]
+      },
+      {
+        "label": "Post-meal walk",
+        "desc": "5–10 minutes of walking after lunch keeps you alert, prevents post-meal drowsiness, and stabilizes blood sugar.",
+        "keyFact": "A 10-minute walk after a meal reduces post-meal blood glucose by 22% — more effective than a 30-minute walk at any other time of day.",
+        "detail": "The post-lunch energy dip is a natural physiological phenomenon — but you can significantly reduce it by moving lightly.",
+        "details": [
+          "After a meal, blood redirects to the digestive system and blood glucose rises — staying seated prolongs this.",
+          "Light walking activates muscles to absorb glucose from the blood (without insulin) — just 10 minutes reduces blood glucose significantly.",
+          "No need to walk fast — just 'moving' is enough. A loop around the office or 1–2 flights of stairs all have the same effect.",
+          "Ideal timing: start walking within 20–30 minutes after finishing your meal.",
+          "The post-lunch dip naturally peaks at 1–3 PM — walking + natural light is the most powerful combo to push through.",
+          "A short walk outside also resets your thinking, reduces stress, and improves afternoon focus."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "5–10 min is enough", "note": "No long workout needed" },
+          { "icon": "🕐", "label": "Within 30 min of eating", "note": "Blood glucose is peaking — best timing" },
+          { "icon": "📉", "label": "Reduces blood glucose 22%", "note": "More effective than exercising at other times" },
+          { "icon": "🧠", "label": "Afternoon mental reset", "note": "Reduces the natural post-lunch dip" }
+        ]
+      },
+      {
+        "label": "Smart caffeine",
+        "desc": "Don't drink caffeine before water or food. Avoid caffeine after 3 PM if you have trouble sleeping.",
+        "keyFact": "Drinking coffee right after waking when cortisol is at its peak (6–9 AM) wastes caffeine's effect — waiting 90–120 minutes is the optimal window.",
+        "detail": "Caffeine is a powerful tool when used correctly, and an enemy of sleep when overused.",
+        "details": [
+          "Cortisol peaks 30–45 minutes after waking — drinking coffee at this time adds nothing and increases caffeine tolerance.",
+          "Drinking coffee 90–120 minutes after waking delivers maximum and longer-lasting alertness.",
+          "Coffee on an empty stomach raises cortisol and stomach acid — drink it after water and a light snack.",
+          "Caffeine's half-life is 5–6 hours: a coffee at 3 PM still has 50% caffeine in your bloodstream at 9 PM.",
+          "'People who are not caffeine-sensitive' are often still affected in their sleep quality without realizing it.",
+          "Practical limit: 1–2 cups of coffee per day, consumed before 2 PM. Green tea and matcha also count."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Drink 90 min after waking", "note": "Cortisol drops — caffeine finally works" },
+          { "icon": "🥛", "label": "Water first", "note": "Avoid empty stomach + dehydration" },
+          { "icon": "🕒", "label": "Cut off after 2 PM", "note": "Half-life 5–6h lingers into evening" },
+          { "icon": "🍵", "label": "Count tea too", "note": "Green tea and matcha both have caffeine" }
+        ]
+      }
+    ],
     "c1_step_prefix": "Step",
     "c1_checklist_heading": "Daily Sleep Checklist",
     "c3_standup_title": "⏱ The 2-Minute Stand-Up Rule",

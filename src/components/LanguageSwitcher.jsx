@@ -2,39 +2,10 @@
 import { useTranslation } from 'react-i18next';
 
 const LANGS = [
-  {
-    code: 'vi',
-    label: 'Tiếng Việt',
-    flagSrc: 'https://flagcdn.com/w40/vn.png',
-    flagAlt: 'Cờ Việt Nam',
-  },
-  {
-    code: 'en',
-    label: 'English',
-    flagSrc: 'https://flagcdn.com/w40/gb.png',
-    flagAlt: 'United Kingdom flag',
-  },
-  {
-    code: 'de',
-    label: 'Deutsch',
-    flagSrc: 'https://flagcdn.com/w40/de.png',
-    flagAlt: 'Deutschland Flagge',
-  },
+  { code: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
+  { code: 'en', label: 'English',    flag: '🇬🇧' },
+  { code: 'de', label: 'Deutsch',    flag: '🇩🇪' },
 ];
-
-function Flag({ src, alt }) {
-  return (
-    <img
-      src={src}
-      alt={alt}
-      width={20}
-      height={14}
-      className="rounded-sm object-cover shrink-0"
-      style={{ width: 20, height: 14 }}
-      loading="lazy"
-    />
-  );
-}
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -60,7 +31,7 @@ export default function LanguageSwitcher() {
         aria-haspopup="listbox"
         aria-expanded={open}
       >
-        <Flag src={currentLang.flagSrc} alt={currentLang.flagAlt} />
+        <span className="text-base leading-none">{currentLang.flag}</span>
         <span className="hidden sm:inline text-muted text-sm">{currentLang.label}</span>
         <span
           className={`text-muted text-[10px] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
@@ -72,7 +43,7 @@ export default function LanguageSwitcher() {
       {open && (
         <div className="absolute right-0 top-full mt-2 w-48 glass border border-border-bright rounded-2xl shadow-2xl overflow-hidden z-50 animate-scale-in">
           <div className="p-1.5">
-            {LANGS.map(({ code, label, flagSrc, flagAlt }) => (
+            {LANGS.map(({ code, label, flag }) => (
               <button
                 key={code}
                 role="option"
@@ -84,7 +55,7 @@ export default function LanguageSwitcher() {
                     : 'text-muted hover:text-text hover:bg-white/5'
                 }`}
               >
-                <Flag src={flagSrc} alt={flagAlt} />
+                <span className="text-lg leading-none shrink-0">{flag}</span>
                 <span>{label}</span>
                 {current === code && (
                   <span className="ml-auto text-accent text-[10px] font-bold">✓</span>

@@ -671,6 +671,12 @@ function TeaserSection({ title, children }) {
 
 // --- F0 Dashboard tab ---
 function F0Dashboard() {
+  const { t: tPillarsFD } = useTranslation('pillars');
+  const scoreItemsTr = tPillarsFD('pillarF.score_items', { returnObjects: true });
+  const mergedScoreItems = SCORE_ITEMS.map((item, i) => ({
+    ...item,
+    labelTr: (Array.isArray(scoreItemsTr) && scoreItemsTr[i]?.label) || item.label,
+  }));
   const [scores, setScores] = useState(() => {
     try { return JSON.parse(localStorage.getItem('healthapp_f_score_today') || '{}'); } catch { return {}; }
   });
@@ -681,7 +687,7 @@ function F0Dashboard() {
     localStorage.setItem('healthapp_f_score_today', JSON.stringify(u));
   }
 
-  const total = SCORE_ITEMS.reduce((s, item) => s + (scores[item.label] || 0), 0);
+  const total = mergedScoreItems.reduce((s, item) => s + (scores[item.label] || 0), 0);
   const level = total >= 80 ? { label: 'Ngày Rất Tốt 🔥', color: '#22c55e' } : total >= 60 ? { label: 'Ngày Ổn ✓', color: COLOR } : total >= 40 ? { label: 'Duy Trì Tối Thiểu', color: '#eab308' } : { label: 'Ngày Reset', color: '#ef4444' };
 
   return (
@@ -698,10 +704,10 @@ function F0Dashboard() {
           <div className="h-full rounded-full transition-all duration-700" style={{ width: `${total}%`, background: level.color }} />
         </div>
         <div className="space-y-3">
-          {SCORE_ITEMS.map((item, i) => (
+          {mergedScoreItems.map((item, i) => (
             <div key={i} className="flex items-center gap-3">
               <span className="text-lg">{item.icon}</span>
-              <span className="text-base text-muted flex-1">{item.label}</span>
+              <span className="text-base text-muted flex-1">{item.labelTr}</span>
               <span className="text-base text-muted w-8 text-right">{item.pts}đ</span>
               <div className="flex gap-1">
                 {[0, Math.round(item.pts * 0.4), Math.round(item.pts * 0.7), item.pts].map((v, j) => (
@@ -740,6 +746,21 @@ function F0Dashboard() {
 
 // --- F1 Checklist tab ---
 function F1Checklist() {
+  const { t: tPillarsF1 } = useTranslation('pillars');
+  const dailyMinTr = tPillarsF1('pillarF.daily_min', { returnObjects: true });
+  const weeklyItemsTr = tPillarsF1('pillarF.weekly_items', { returnObjects: true });
+  const mergedDailyMin = DAILY_MIN.map((item, i) => ({
+    ...item,
+    label: (Array.isArray(dailyMinTr) && dailyMinTr[i]?.label) || item.label,
+    tip: (Array.isArray(dailyMinTr) && dailyMinTr[i]?.tip) || item.tip,
+    keyFact: (Array.isArray(dailyMinTr) && dailyMinTr[i]?.keyFact) || item.keyFact,
+    details: (Array.isArray(dailyMinTr) && Array.isArray(dailyMinTr[i]?.details) && dailyMinTr[i].details.length) ? dailyMinTr[i].details : item.details,
+    points: (Array.isArray(dailyMinTr) && Array.isArray(dailyMinTr[i]?.points) && dailyMinTr[i].points.length) ? dailyMinTr[i].points : item.points,
+  }));
+  const mergedWeeklyItems = WEEKLY_ITEMS.map((item, i) => ({
+    ...item,
+    label: (Array.isArray(weeklyItemsTr) && weeklyItemsTr[i]?.label) || item.label,
+  }));
   const [checked, setChecked] = useState(() => {
     try {
       const s = JSON.parse(localStorage.getItem('healthapp_f_daily') || '{}');
@@ -760,7 +781,7 @@ function F1Checklist() {
   }
 
   const doneCount = Object.values(checked).filter(Boolean).length;
-  const pct = Math.round((doneCount / DAILY_MIN.length) * 100);
+  const pct = Math.round((doneCount / mergedDailyMin.length) * 100);
   const msg = doneCount >= 5 ? '🔥 Ngày tốt!' : doneCount >= 3 ? '✓ Đạt mức duy trì' : '→ Cứ từng bước một';
 
   return (
@@ -775,27 +796,27 @@ function F1Checklist() {
             <div className="flex-1 h-2 bg-bg rounded-full overflow-hidden">
               <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, background: COLOR }} />
             </div>
-            <span className="text-lg font-bold" style={{ color: COLOR }}>{doneCount}/{DAILY_MIN.length}</span>
+            <span className="text-lg font-bold" style={{ color: COLOR }}>{doneCount}/{mergedDailyMin.length}</span>
           </div>
           <p className="text-base text-muted mb-3">{msg} — Làm được 70% là thắng.</p>
           <div className="space-y-2">
-            {DAILY_MIN.map((item, i) => (
+            {mergedDailyMin.map((item, i) => (
               <DailyMinCard key={i} item={item} idx={i} checked={checked} onToggle={toggle} onOpen={setDailyModal} />
             ))}
           </div>
           {dailyModal !== null && (
             <DailyMinModal
-              item={DAILY_MIN[dailyModal]} idx={dailyModal} total={DAILY_MIN.length}
+              item={mergedDailyMin[dailyModal]} idx={dailyModal} total={mergedDailyMin.length}
               onClose={() => setDailyModal(null)}
               onPrev={() => setDailyModal(i => Math.max(0, i - 1))}
-              onNext={() => setDailyModal(i => Math.min(DAILY_MIN.length - 1, i + 1))}
-              hasPrev={dailyModal > 0} hasNext={dailyModal < DAILY_MIN.length - 1}
+              onNext={() => setDailyModal(i => Math.min(mergedDailyMin.length - 1, i + 1))}
+              hasPrev={dailyModal > 0} hasNext={dailyModal < mergedDailyMin.length - 1}
             />
           )}
         </>
       ) : (
         <div className="space-y-3">
-          {WEEKLY_ITEMS.map((item, i) => (
+          {mergedWeeklyItems.map((item, i) => (
             <div key={i} className="rounded-2xl border border-border bg-surface p-4 flex items-center gap-3">
               <span className="text-2xl">{item.icon}</span>
               <div className="flex-1">
@@ -1832,7 +1853,19 @@ function F5MindTracker() {
 // --- TestModal ---
 function TestModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const { t: tCommon } = useTranslation('common');
-  const item = TEST_ITEMS[idx];
+  const { t: tPillarsTM } = useTranslation('pillars');
+  const testItemsTr = tPillarsTM('pillarF.test_items', { returnObjects: true });
+  const baseItem = TEST_ITEMS[idx];
+  const tr = Array.isArray(testItemsTr) ? testItemsTr[idx] : null;
+  const item = {
+    ...baseItem,
+    label: tr?.label || baseItem?.label,
+    unit: tr?.unit || baseItem?.unit,
+    how: tr?.how || baseItem?.how,
+    keyFact: tr?.keyFact || baseItem?.keyFact,
+    details: (Array.isArray(tr?.details) && tr.details.length) ? tr.details : baseItem?.details,
+    points: (Array.isArray(tr?.points) && tr.points.length) ? tr.points : baseItem?.points,
+  };
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1908,6 +1941,14 @@ function TestModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 // --- F6 Progress Test tab ---
 function F6Test() {
   const { t: tCommon } = useTranslation('common');
+  const { t: tPillarsF6 } = useTranslation('pillars');
+  const testItemsTr = tPillarsF6('pillarF.test_items', { returnObjects: true });
+  const mergedTestItems = TEST_ITEMS.map((item, i) => ({
+    ...item,
+    labelTr: (Array.isArray(testItemsTr) && testItemsTr[i]?.label) || item.label,
+    unitTr: (Array.isArray(testItemsTr) && testItemsTr[i]?.unit) || item.unit,
+    howTr: (Array.isArray(testItemsTr) && testItemsTr[i]?.how) || item.how,
+  }));
   const [vals, setVals] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_f_test') || '{}'); } catch { return {}; } });
   const [saved, setSaved] = useState(false);
   const [testModal, setTestModal] = useState(null);
@@ -1928,7 +1969,7 @@ function F6Test() {
     <div className="space-y-3">
       <p className="text-lg text-muted">Thực hiện test đầu vào và mỗi 4 tuần một lần để đo tiến bộ toàn diện.</p>
       <div className="space-y-2">
-        {TEST_ITEMS.map((item, i) => (
+        {mergedTestItems.map((item, i) => (
           <div key={i} className="rounded-2xl border bg-surface p-3 flex items-center gap-3 transition-colors duration-200"
             style={{ borderColor: testModal === i ? `rgba(${item.rgb},0.45)` : 'var(--border)' }}>
             <button onClick={() => setTestModal(i)}
@@ -1937,12 +1978,12 @@ function F6Test() {
               {item.icon}
             </button>
             <div className="flex-1 min-w-0">
-              <div className="text-base text-text font-medium leading-tight">{item.label}</div>
-              <div className="text-xs text-muted truncate">{item.how}</div>
+              <div className="text-base text-text font-medium leading-tight">{item.labelTr}</div>
+              <div className="text-xs text-muted truncate">{item.howTr}</div>
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <input value={vals[item.label] || ''} onChange={e => set(item.label, e.target.value)} placeholder="0" className="w-16 bg-bg border border-border rounded-lg px-2 py-1 text-lg text-text text-center" />
-              <span className="text-xs text-muted w-14 leading-tight">{item.unit}</span>
+              <span className="text-xs text-muted w-14 leading-tight">{item.unitTr}</span>
               <button onClick={() => setTestModal(i)}
                 className="text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all duration-200 hover:opacity-80 shrink-0"
                 style={{ color: item.color, background: `rgba(${item.rgb},0.1)`, border: `1px solid rgba(${item.rgb},0.25)` }}>
@@ -1973,7 +2014,18 @@ function F6Test() {
 // --- QuickWoModal ---
 function QuickWoModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const { t: tCommon } = useTranslation('common');
-  const wo = QUICK_WO[idx];
+  const { t: tPillarsQW } = useTranslation('pillars');
+  const quickWoTr = tPillarsQW('pillarF.quick_wo', { returnObjects: true });
+  const baseWo = QUICK_WO[idx];
+  const trWo = Array.isArray(quickWoTr) ? quickWoTr[idx] : null;
+  const wo = {
+    ...baseWo,
+    dur: trWo?.dur || baseWo?.dur,
+    label: trWo?.label || baseWo?.label,
+    keyFact: trWo?.keyFact || baseWo?.keyFact,
+    details: (Array.isArray(trWo?.details) && trWo.details.length) ? trWo.details : baseWo?.details,
+    points: (Array.isArray(trWo?.points) && trWo.points.length) ? trWo.points : baseWo?.points,
+  };
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -2065,13 +2117,20 @@ function QuickWoModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 // --- F7 Quick Workouts tab ---
 function F7QuickWorkouts() {
   const { t: tCommon } = useTranslation('common');
+  const { t: tPillarsF7 } = useTranslation('pillars');
+  const quickWoTr = tPillarsF7('pillarF.quick_wo', { returnObjects: true });
+  const mergedQuickWo = QUICK_WO.map((wo, i) => ({
+    ...wo,
+    dur: (Array.isArray(quickWoTr) && quickWoTr[i]?.dur) || wo.dur,
+    label: (Array.isArray(quickWoTr) && quickWoTr[i]?.label) || wo.label,
+  }));
   const [open, setOpen] = useState(0);
   const [woModal, setWoModal] = useState(null);
 
   return (
     <div className="space-y-3">
       <p className="text-lg text-muted">Nguyên tắc: Có 5 phút vẫn làm được. Không bỏ hẳn — chỉ cần chọn bản ngắn hơn.</p>
-      {QUICK_WO.map((wo, i) => (
+      {mergedQuickWo.map((wo, i) => (
         <div key={i} className="rounded-2xl border bg-surface overflow-hidden transition-colors duration-200"
           style={{ borderColor: woModal === i ? `rgba(${wo.rgb},0.45)` : 'var(--border)' }}>
           <div className="flex items-center gap-3 p-4">
@@ -2129,6 +2188,11 @@ export default function PillarF() {
   const tabBarRef = useRef(null);
   const tabsTr = Array.isArray(pillar?.hub_tabs) ? pillar.hub_tabs : [];
   const mergedTabs = TABS.map((t, i) => ({ ...t, label: tabsTr[i]?.label || t.label }));
+  const heroStatsTr = Array.isArray(pillar?.hero_stats) ? pillar.hero_stats : [];
+  const mergedHeroStats = HERO_STATS.map((s, i) => ({
+    ...s,
+    l: heroStatsTr[i]?.l || s.l,
+  }));
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -2161,7 +2225,7 @@ export default function PillarF() {
 
       {/* Hero stats */}
       <div className="flex flex-wrap gap-4 mb-8">
-        {HERO_STATS.map((s, i) => (
+        {mergedHeroStats.map((s, i) => (
           <div key={i} className="group/stat relative">
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/stat:opacity-100 scale-90 group-hover/stat:scale-100 -translate-y-1 group-hover/stat:translate-y-0 transition-all duration-200 origin-bottom">
               <ThoughtBubble text={s.tip} idx={`hero-f-${i}`} color={COLOR} />

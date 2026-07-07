@@ -262,8 +262,10 @@ const D7_ITEM_MODALS = [
 ];
 
 function CalmScore({ color, onItemClick }) {
+  const { t: tPillarsTr } = useTranslation('pillars');
+  const d7ModalsTr = tPillarsTr('pillarD.d7_modals', { returnObjects: true });
   const [checks, setChecks] = useState({});
-  const ITEMS = [
+  const ITEMS_BASE = [
     { id: 'breath', label: 'Thở/thiền ≥ 3 phút', pts: 25 },
     { id: 'journal', label: 'Journal 1–5 dòng', pts: 20 },
     { id: 'detox', label: 'Digital detox ≥ 10 phút', pts: 15 },
@@ -271,6 +273,10 @@ function CalmScore({ color, onItemClick }) {
     { id: 'routine', label: 'Routine tối hoặc reset trước ngủ', pts: 15 },
     { id: 'soft', label: 'Kỷ luật mềm: không tự trách', pts: 15 },
   ];
+  const ITEMS = ITEMS_BASE.map((item, i) => ({
+    ...item,
+    label: (Array.isArray(d7ModalsTr) && d7ModalsTr[i]?.modalTitle) || item.label,
+  }));
   const score = ITEMS.reduce((s, i) => s + (checks[i.id] ? i.pts : 0), 0);
   const level = score >= 80 ? { label: 'Xuất sắc', color: '#10b981' } : score >= 60 ? { label: 'Tốt', color: color } : score >= 40 ? { label: 'Đạt', color: '#f59e0b' } : { label: 'Cần cố', color: '#f97316' };
   return (
@@ -448,12 +454,13 @@ const D0_CARDS = [
   { icon: '🌱', title: 'D6 – Kỷ Luật Mềm', desc: 'Không tự trách. Quy tắc 1% quay lại. Thói quen nhỏ bền vững.' },
 ];
 
-function D0Panel({ color, onCardClick }) {
+function D0Panel({ color, onCardClick, cards }) {
+  const displayCards = cards || D0_CARDS;
   return (
     <div className="space-y-4">
       <p className="text-lg text-muted leading-relaxed">Trụ cột D không biến bạn thành người "luôn bình tĩnh". Nó cung cấp bộ công cụ dùng ngay khi căng: thở khi stress, viết khi rối, tắt màn hình khi quá tải.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        {D0_CARDS.map((m, i) => (
+        {displayCards.map((m, i) => (
           <div
             key={m.title}
             className={`group/card rounded-xl border bg-bg p-4 transition-all duration-200 ${onCardClick ? 'cursor-pointer border-border hover:border-purple-500/40 hover:bg-white/[0.03] hover:shadow-[0_0_18px_rgba(168,85,247,0.08)]' : 'border-border hover:border-purple-500/20'}`}
@@ -1494,6 +1501,40 @@ export default function PillarD() {
   const tab = mergedTabs.find(t => t.id === activeTab) || mergedTabs[0];
   const Panel = PANEL_MAP[activeTab] || D0Panel;
 
+  const d0CardsTr = Array.isArray(pillar?.d0_cards) ? pillar.d0_cards : [];
+  const mergedD0Cards = D0_CARDS.map((c, i) => ({
+    ...c,
+    title: d0CardsTr[i]?.title || c.title,
+    desc: d0CardsTr[i]?.desc || c.desc,
+  }));
+  const d0ModalsTr = Array.isArray(pillar?.d0_cards) ? pillar.d0_cards : [];
+  const mergedD0CardModals = D0_CARD_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: d0ModalsTr[i]?.title || m.modalTitle,
+    keyFact: m.keyFact,
+    detail: m.detail,
+    details: m.details,
+    points: m.points,
+  }));
+  const d1ModalsTr = Array.isArray(pillar?.d1_modals) ? pillar.d1_modals : [];
+  const mergedD1LayerModals = D1_LAYER_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: d1ModalsTr[i]?.modalTitle || m.modalTitle,
+    keyFact: d1ModalsTr[i]?.keyFact || m.keyFact,
+    detail: d1ModalsTr[i]?.detail || m.detail,
+    details: Array.isArray(d1ModalsTr[i]?.details) && d1ModalsTr[i].details.length ? d1ModalsTr[i].details : m.details,
+    points: Array.isArray(d1ModalsTr[i]?.points) && d1ModalsTr[i].points.length ? d1ModalsTr[i].points : m.points,
+  }));
+  const d7ModalsTr = Array.isArray(pillar?.d7_modals) ? pillar.d7_modals : [];
+  const mergedD7ItemModals = D7_ITEM_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: d7ModalsTr[i]?.modalTitle || m.modalTitle,
+    keyFact: d7ModalsTr[i]?.keyFact || m.keyFact,
+    detail: d7ModalsTr[i]?.detail || m.detail,
+    details: Array.isArray(d7ModalsTr[i]?.details) && d7ModalsTr[i].details.length ? d7ModalsTr[i].details : m.details,
+    points: Array.isArray(d7ModalsTr[i]?.points) && d7ModalsTr[i].points.length ? d7ModalsTr[i].points : m.points,
+  }));
+
   const HERO_STATS = [
     { v: '8', l: 'Module', tip: 'D0–D7: từ nhập môn, stress, thở, thiền, journal, detox, kỷ luật đến theo dõi', idx: 'hero-d-0' },
     { v: '5ph', l: 'Mỗi ngày', tip: '5 phút Mind Reset mỗi ngày là đủ để bắt đầu thay đổi trạng thái tinh thần', idx: 'hero-d-1' },
@@ -1596,7 +1637,7 @@ export default function PillarD() {
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: tab.color }}>{tab.id.toUpperCase()} · {pillar?.title || 'Tâm Trí An Nhiên'}</div>
               </div>
             </div>
-            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} onLevelClick={activeTab === 'd5' ? setD5Modal : undefined} onHabitClick={activeTab === 'd6' ? setD6Modal : undefined} onItemClick={activeTab === 'd7' ? setD7Modal : undefined} />
+            <Panel color={tab.color} onCardClick={activeTab === 'd0' ? setD0Modal : undefined} onLayerClick={activeTab === 'd1' ? setD1Modal : undefined} onTechClick={activeTab === 'd2' ? setD2Modal : undefined} onModeClick={activeTab === 'd3' ? setD3Modal : undefined} onPromptClick={activeTab === 'd4' ? setD4Modal : undefined} onLevelClick={activeTab === 'd5' ? setD5Modal : undefined} onHabitClick={activeTab === 'd6' ? setD6Modal : undefined} onItemClick={activeTab === 'd7' ? setD7Modal : undefined} cards={activeTab === 'd0' ? mergedD0Cards : undefined} />
           </div>
         </div>
       </RevealBlock>
@@ -1642,26 +1683,26 @@ export default function PillarD() {
 
       {d0Modal !== null && (
         <CardModal
-          item={D0_CARD_MODALS[d0Modal]}
+          item={mergedD0CardModals[d0Modal]}
           onClose={() => setD0Modal(null)}
           onPrev={() => setD0Modal(i => Math.max(0, i - 1))}
-          onNext={() => setD0Modal(i => Math.min(D0_CARD_MODALS.length - 1, i + 1))}
+          onNext={() => setD0Modal(i => Math.min(mergedD0CardModals.length - 1, i + 1))}
           hasPrev={d0Modal > 0}
-          hasNext={d0Modal < D0_CARD_MODALS.length - 1}
-          total={D0_CARD_MODALS.length}
+          hasNext={d0Modal < mergedD0CardModals.length - 1}
+          total={mergedD0CardModals.length}
           idx={d0Modal}
         />
       )}
 
       {d1Modal !== null && (
         <CardModal
-          item={D1_LAYER_MODALS[d1Modal]}
+          item={mergedD1LayerModals[d1Modal]}
           onClose={() => setD1Modal(null)}
           onPrev={() => setD1Modal(i => Math.max(0, i - 1))}
-          onNext={() => setD1Modal(i => Math.min(D1_LAYER_MODALS.length - 1, i + 1))}
+          onNext={() => setD1Modal(i => Math.min(mergedD1LayerModals.length - 1, i + 1))}
           hasPrev={d1Modal > 0}
-          hasNext={d1Modal < D1_LAYER_MODALS.length - 1}
-          total={D1_LAYER_MODALS.length}
+          hasNext={d1Modal < mergedD1LayerModals.length - 1}
+          total={mergedD1LayerModals.length}
           idx={d1Modal}
         />
       )}
@@ -1733,13 +1774,13 @@ export default function PillarD() {
 
       {d7Modal !== null && (
         <CardModal
-          item={D7_ITEM_MODALS[d7Modal]}
+          item={mergedD7ItemModals[d7Modal]}
           onClose={() => setD7Modal(null)}
           onPrev={() => setD7Modal(i => Math.max(0, i - 1))}
-          onNext={() => setD7Modal(i => Math.min(D7_ITEM_MODALS.length - 1, i + 1))}
+          onNext={() => setD7Modal(i => Math.min(mergedD7ItemModals.length - 1, i + 1))}
           hasPrev={d7Modal > 0}
-          hasNext={d7Modal < D7_ITEM_MODALS.length - 1}
-          total={D7_ITEM_MODALS.length}
+          hasNext={d7Modal < mergedD7ItemModals.length - 1}
+          total={mergedD7ItemModals.length}
           idx={d7Modal}
         />
       )}

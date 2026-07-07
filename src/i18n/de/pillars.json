@@ -3655,6 +3655,239 @@
         ]
       }
     ],
+    "lifestyle_ui": {
+      "questions_counter": "Fragen",
+      "submit_btn": "→ Ergebnisse anzeigen",
+      "reset_btn": "Nochmals durchführen",
+      "results_heading": "Detailaufschlüsselung",
+      "prev_btn": "← Zurück",
+      "tracks_heading": "Prioritäre Maßnahmen für Sie",
+      "saved_score_label": "Letzte Bewertung",
+      "answered_label": "Fragen verbleibend"
+    },
+    "lifestyle_tracks": [
+      {
+        "name": "Track 1: Fundament aufbauen",
+        "desc": "Ihr Lebensstil braucht grundlegende Verbesserungen. Starten Sie mit 1–2 der einfachsten Gewohnheiten.",
+        "actions": [
+          "Schlaf von 7–8 Stunden als erstes priorisieren",
+          "Ziel von 6.000 Schritten pro Tag setzen",
+          "Täglich mindestens 1,5 L Wasser trinken",
+          "Den 12-Wochen-Fahrplan für einen konkreten Plan ansehen"
+        ]
+      },
+      {
+        "name": "Track 2: Stärken",
+        "desc": "Sie haben ein Fundament — jetzt optimieren und konsequenter werden.",
+        "actions": [
+          "Schlafqualität verbessern (Abendroutine vor dem Schlafen)",
+          "NEAT erhöhen: 8.000–10.000 Schritte",
+          "Die Abendumgebung gestalten",
+          "Mit 5 Minuten Atemübungen täglich beginnen"
+        ]
+      },
+      {
+        "name": "Track 3: Optimierung",
+        "desc": "Ihr Lebensstil ist solide — konzentrieren Sie sich auf Feinabstimmung und nachhaltige Aufrechterhaltung.",
+        "actions": [
+          "Biometrisches Tracking hinzufügen (HRV, Schlafphasen)",
+          "Periodische Entlastungszyklen (Deload) planen",
+          "Den vollständigen 100-Punkte-Lifestyle-Score ausprobieren",
+          "Die eigene Reise teilen und andere inspirieren"
+        ]
+      }
+    ],
+    "lifestyle_questions": [
+      {
+        "category": "Schlaf",
+        "q": "Wie viele Stunden schlafen Sie pro Nacht im Durchschnitt?",
+        "options": [
+          "Unter 5 Stunden",
+          "5–6 Stunden",
+          "6–7 Stunden",
+          "7–9 Stunden"
+        ],
+        "modalTitle": "Schlafdauer — Das nicht verhandelbare biologische Fundament",
+        "keyFact": "7–9 Stunden ist die Empfehlung der National Sleep Foundation für Erwachsene zwischen 18 und 64 Jahren, basierend auf Hunderten streng kontrollierter Studien. Dies ist kein vages Ideal — es ist das biologische Minimum, damit das Gehirn vollständig abschließen kann: glymphatische Reinigung (Entfernung von Amyloid-Beta und Stoffwechselabfällen), Gedächtniskonsolidierung (hippocampale Übertragung vom Kurzzeit- ins Langzeitgedächtnis) und Hormonausschüttung (Wachstumshormon-Peak in N3, Cortisol-Reset). Unter 7 Stunden bleiben diese Prozesse jede Nacht unvollständig und erzeugen ein Schlafdefizit, das durch Wochenend-Nachholschlaf nicht ausgeglichen werden kann.",
+        "detail": "Van-Dongen-Studie (Penn, 2003): 6 Stunden Schlaf pro Nacht über 14 Tage verursachten eine kognitive Beeinträchtigung, die zwei aufeinanderfolgenden schlaflosen Nächten entsprach — die Probanden bemerkten es jedoch nicht, weil das Gehirn das Defizit normalisiert hatte. Nach zwei Wochen Kurzschlaf verliert man die Fähigkeit, den eigenen Beeinträchtigungsgrad genau einzuschätzen.",
+        "details": [
+          "Akkumuliertes Schlafdefizit ohne Bewusstsein: Van Dongen (Penn, 2003) teilte 48 Personen 14 Tage lang 4, 6 oder 8 Stunden Schlaf zu. Die 6-Stunden-Gruppe zeigte nach 14 Tagen eine kognitive Beeinträchtigung, die der 2-tägig schlaflos gebliebenen Gruppe entsprach — berichtete aber 'sich gut zu fühlen'. Das Gehirn passt sich an Schlafentzug so an, dass die Fähigkeit, die eigene Leistung korrekt zu beurteilen, verloren geht. Deshalb sagen viele: 'Ich bin es gewohnt, wenig zu schlafen' — sie haben die Beeinträchtigung normalisiert.",
+          "Glymphatisches System und Amyloid-Beta: das glymphatische System (entdeckt 2012 von Maiken Nedergaard) ist das Lymphsystem des Gehirns. Es ist hauptsächlich im Schlaf aktiv und pumpt Liquor durch den Interstitialraum, um Amyloid-Beta, Tau-Protein und Stoffwechselabfälle auszuschwemmen. Im Wachzustand ist es nahezu inaktiv — die Aktivität steigt im Schlaf um 60 %. Chronischer Schlafentzug → Amyloid-Beta akkumuliert → das Kennzeichen von Alzheimer beginnt Jahrzehnte früher. Schon eine einzige schlaflose Nacht erhöht messbar das Amyloid-Beta im Liquor.",
+          "Gedächtniskonsolidierung und Hippocampus: im Schlaf 'replayed' der Hippocampus die Erlebnisse des Tages, um sie vom Kurzzeitgedächtnis in den Langzeitspeicher im Neokortex zu übertragen. Dieser Prozess findet besonders in N2 (Schlafspindeln) und N3 (Tiefschlaf) statt. Fehlen diese Phasen → schlechte Retention, ineffizientes Lernen, emotionale Erinnerungen werden nicht korrekt verarbeitet. Vor einer Prüfung lernen, ohne ausreichend zu schlafen, ist weniger effektiv als weniger zu lernen und vollständig zu schlafen.",
+          "Wachstumshormon und körperliche Erholung: 70–80 % der täglichen Wachstumshormon-Ausschüttung erfolgt im Tiefschlaf (N3) in der ersten Nachthälfte. GH steuert Muskelproteinsynthese, Fettstoffwechsel, Immunfunktion und Gewebereparatur. Bei weniger als 6 Stunden Schlaf sinkt die GH-Ausschüttung deutlich → schlechte Muskelregeneration nach dem Training, Schwierigkeiten beim Fettabbau, geschwächte Immunfunktion. Deshalb schlafen Spitzensportler 9–10 Stunden pro Nacht — nicht aus Faulheit, sondern zur Trainingsoptimierung.",
+          "Cortisol-Rhythmus und Schlafmangel: Cortisol hat normalerweise ein Minimum um Mitternacht–2 Uhr und einen Peak um 7–9 Uhr (Cortisol Awakening Response). Schlafentzug → Cortisol ganztags erhöht (kein Minimum) → chronischer Stresszustand → Entzündungsmarker steigen, Insulinresistenz nimmt zu, viszerales Fett akkumuliert. Schon 1 Woche mit 5 Stunden Schlaf: Nüchternblutzucker steigt, Insulinsensitivität sinkt deutlich — metabolisch vergleichbar mit einigen Kilogramm Bauchfett mehr.",
+          "Punktschwellen spiegeln Evidenz wider: 15 Punkte für 7–9 Stunden, da dieser Bereich in Bevölkerungsstudien die besten Ergebnisse zeigt. Über 10 Stunden korreliert in Beobachtungsstudien mit höherer Mortalität (Confounder: Kranke schlafen mehr). Unter 6 Stunden ist ein klarer Risikofaktor für Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Adipositas, Depression und kognitiven Abbau — kein bloßer Zusammenhang, sondern eine kausale Beziehung, die in kontrollierten Schlafentzugsexperimenten nachgewiesen wurde."
+        ],
+        "points": [
+          { "label": "Glymphatische Reinigung von Amyloid-Beta +60% im Schlaf", "note": "Schlafmangel = Toxin-Ansammlung, Hippocampus schrumpft — Alzheimer-Risiko beginnt Jahrzehnte früher" },
+          { "label": "6 h × 14 Nächte = Beeinträchtigung wie 2 schlaflose Nächte", "note": "Van Dongen Penn: kognitives Defizit bleibt unbemerkt, weil das Gehirn es schrittweise normalisiert" },
+          { "label": "70–80 % des GH wird im N3-Tiefschlaf ausgeschüttet", "note": "Muskelregeneration, Fettstoffwechsel, Immunfunktion — GH-Peak geht bei Schlafmangel verloren" },
+          { "label": "8 Stunden vor dem Aufwachen ins Bett", "note": "30 Min. Wind-down + Puffer = 8 Stunden im Bett nötig, um tatsächlich 7 Stunden Schlaf zu erreichen" }
+        ]
+      },
+      {
+        "category": "Schlaf",
+        "q": "Wie würden Sie Ihre Schlafqualität bewerten?",
+        "options": [
+          "Sehr schlecht — häufige Schlaflosigkeit",
+          "Gering — Schlaf ist nicht erholsam",
+          "Mittel — gelegentlich schwer einzuschlafen",
+          "Gut — schläft regelmäßig gut"
+        ],
+        "modalTitle": "Schlafqualität — Architektur ist wichtiger als Stunden",
+        "keyFact": "Schlafqualität hängt von der Schlafarchitektur ab — dem Verhältnis und der Verteilung von N1, N2, N3 und REM über die Nacht. Jemand, der 8 Stunden schläft, aber häufig aufwacht (wenig N3), hat schlechtere kognitive Funktion und Erholung als jemand, der 6,5 Stunden durchgehend tief schläft. Polysomnographie-Studien: das Gefühl, nach dem Schlaf 'erholt' zu sein, wird am besten durch die Dauer des Tiefschlafs (N3) und die REM-Qualität vorhergesagt — nicht durch die Gesamtschlafdauer. Diese Frage bewertet die subjektive Schlafqualität als Indikator für eine effektive Schlafarchitektur.",
+        "detail": "Der Pittsburgh Sleep Quality Index (PSQI) — das am weitesten validierte Instrument — bewertet 7 Komponenten: subjektive Qualität, Einschlaflatenz, Dauer, Effizienz, Störungen, Medikamenteneinnahme und Tagesbeeinträchtigung. 'Gut — schläft regelmäßig gut' entspricht dem PSQI-'guten Schläfer' (Score ≤5) — die Grundlage, auf der alle Erholungsprozesse aufgebaut werden.",
+        "details": [
+          "'Sehr schlecht — häufige Schlaflosigkeit' entspricht der DSM-5-Insomnie-Störung: Schwierigkeit einzuschlafen >30 Min., nächtliches Erwachen >30 Min. oder frühzeitiges Erwachen ohne Wiedereinschlafen — mindestens 3 Nächte/Woche über ≥3 Monate, mit Leidensdruck oder Beeinträchtigung. Prävalenz: 10–15 % der Erwachsenen haben chronische Insomnie. Insomnie erhöht das Depressionsrisiko um das Zehnfache sowie das Risiko für Angststörungen und Herz-Kreislauf-Erkrankungen. KVT-I (Kognitive Verhaltenstherapie bei Insomnie) ist die Erstlinienbehandlung — langfristig wirksamer als Schlafmittel.",
+          "'Gering — Schlaf ist nicht erholsam' ist die Zone 'Schlafen ohne Tiefe': Tiefschlaf (N3) ist reduziert, Schlaffragmentierung hoch, WASO (Wachzeit nach dem Einschlafen) erhöht. Häufige Ursachen: Schlafzimmer zu warm (N3 erfordert Absinken der Körperkerntemperatur → <20°C nötig), Alkohol (unterdrückt N3 nach anfänglicher Sedierung), später Koffeinkonsum (Halbwertszeit 5–6 Stunden; Koffein um 15 Uhr ist um 21 Uhr noch zu 25 % aktiv), abendliches blaues Licht (verzögert Melatonin-Onset), Schlafapnoe bei lautem Schnarchen.",
+          "'Mittel — gelegentlich schwer einzuschlafen' ist oft mit Stressvariabilität und inkonsistenten Schlafzeiten verbunden. 'Sozialer Jetlag' — am Wochenende spät schlafen und spät aufwachen — desynchronisiert den zirkadianen Rhythmus und verursacht Schwierigkeiten beim Einschlafen am Sonntagabend und Aufwachen am Montagmorgen. Jede Stunde sozialer Jetlag erhöht das Adipositasrisiko um 30 % (Roenneberg, 2012). Wichtigste Maßnahme: konstante Schlaf-/Aufwachzeit ±30 Minuten auch an Wochenenden festlegen — die wirkungsvollste Verbesserung mit dem geringsten Aufwand.",
+          "'Gut — schläft regelmäßig gut' ist gekennzeichnet durch: Einschlaflatenz <20 Min. (Zeit vom Hinlegen bis zum Einschlafen), WASO <30 Min. insgesamt, Aufwachen erholt ohne Aufwand innerhalb von 15 Min., Träume erinnern (Indikator für ausreichend REM), und Schlafeffizienz ≥85 % (Schlafzeit / Zeit im Bett × 100). Dies ist der Zustand, der allen Erholungsprozessen erlaubt, jede Nacht vollständig abzuschließen.",
+          "Hyperarousal und kognitive Insomnie: chronische Insomnie wird häufig durch Hyperarousal aufrechterhalten — das Stressreaktionssystem (HPA-Achse, sympathisches NS) ist chronisch aktiviert, auch wenn man im Bett liegt. 'Konditioniertes Arousal': das Bett wird zum Auslöser für Wachheit statt für Schlaf (klassische Konditionierung). Stimuluskontrolle (nur ins Bett legen, wenn man wirklich schläfrig ist) und Schlafrestriktionstherapie sind die wirksamsten Verhaltensinterventionen — langfristig wirksamer als Z-Substanzen oder Benzodiazepine.",
+          "Optimierungsfahrplan nach Niveau: Von 'Sehr schlecht' → 'Gering': Schlafrestriktionstherapie (feste Aufwachzeit unabhängig von der Schlafdauer), Koffein nach 13 Uhr reduzieren, Raumtemperatur 18–20°C. Von 'Gering' → 'Mittel': 1-stündiges Abendritual (gedämpftes Licht, keine Bildschirme, kühle Dusche vor dem Schlafen). Von 'Mittel' → 'Gut': feste Schlafenszeit ±30 Min. 7 Tage/Woche, Morgensonnenlicht zur zirkadianen Verankerung. Von 'Gut' → Beibehalten: Magnesiumglycinat 300–400 mg vor dem Schlafen, Schlaf-Tracking zur Mustererkennung."
+        ],
+        "points": [
+          { "label": "Schlafarchitektur > Gesamtdauer", "note": "N3 + REM-Gleichgewicht bestimmt Erholung — 6 h Tiefschlaf ist besser als 8 h unterbrochener Schlaf" },
+          { "label": "Raumtemperatur >22°C reduziert N3 deutlich", "note": "Körperkerntemperatur muss sinken, um Tiefschlaf zu erreichen — Temperatur ist der einfachste Hebel" },
+          { "label": "Alkohol: leicht einschlafen → N3-Unterdrückung → erschöpft aufwachen", "note": "Architektur wird gestört, auch bei ausreichender Stundenzahl — 'geschlafen' ≠ 'gut geschlafen' mit Alkohol" },
+          { "label": "Konstante Schlafenszeit 7 Nächte ist die wichtigste Maßnahme", "note": "Sozialer Jetlag am Wochenende desynchronisiert die ganze Woche — Timing vor Dauer korrigieren" }
+        ]
+      },
+      {
+        "category": "NEAT & Bewegung",
+        "q": "Wie viele Schritte gehen Sie durchschnittlich pro Tag?",
+        "options": [
+          "Unter 3.000 Schritte",
+          "3.000–6.000 Schritte",
+          "6.000–10.000 Schritte",
+          "Über 10.000 Schritte"
+        ],
+        "modalTitle": "Tägliche Schritte — NEAT ist das Fundament der Alltagsgesundheit",
+        "keyFact": "NEAT (Non-Exercise Activity Thermogenesis) — Energie aus jeder Bewegung außer strukturiertem Training — kann 15–50 % des gesamten täglichen Energieverbrauchs ausmachen. JAMA Internal Medicine 2021 (16.741 Frauen): Mortalitätsrisiko sinkt ab 2.700 Schritten, Plateau bei ca. 7.500 Schritten. JAMA Neurology 2022 (78.500 Personen): 9.800 Schritte/Tag → 51 % geringeres Demenzrisiko, 57 % weniger Angst/Depression. Das 10.000-Schritte-Ziel stammt aus einer japanischen Pedometermarketingkampagne von 1964 — nicht evidenzbasiert. 6.000–10.000 Schritte ist der tatsächliche Sweet Spot.",
+        "detail": "Sedentäres Verhalten ist ein unabhängiger Risikofaktor, selbst bei regelmäßigem Training: Wer 1 Stunde/Tag ins Fitnessstudio geht, aber die restlichen 9–10 Stunden sitzt, hat immer noch ein erhöhtes Stoffwechselrisiko. Lipoproteinlipase (LPL) — das Enzym, das Fett und Glucose verarbeitet — wird durch Sitzen inaktiviert. Schon 2–3 Minuten Stehen oder Gehen stellt die LPL-Aktivität wieder her. Deshalb sind Schritte unabhängig von strukturiertem Training wichtig.",
+        "details": [
+          "NEAT und täglicher Gesamtenergieverbrauch: 'von Natur aus aktive' Menschen verbrennen durch NEAT täglich 350 kcal mehr als 'von Natur aus sedentäre' Menschen — ohne Fitnessstudio (Levine, Mayo Clinic). Über ein Jahr kumuliert: entspricht 36 kg Fett. Nicht Genetik — sondern unbewusste Bewegungsgewohnheiten: Telefonieren im Stehen, Gehen beim Sprechen, Zappeln. Fitnessstudio 1 Stunde/Tag = 4 % der Wachzeit. Die restlichen 96 % bestimmen NEAT und Gesundheitsergebnisse.",
+          "8.000 Schritte: das evidenzbasierte Ziel: JAMA Internal Medicine 2021 Meta-Analyse (47.471 Personen): jede zusätzliche 1.000 Schritte reduziert die Mortalität um 6–36 %, mit abnehmenden Erträgen ab 8.000 Schritten. JAMA Neurology 2022: 9.800 Schritte sind 'optimal' für Demenzprävention — aber bereits 3.800 Schritte/Tag senken das Demenzrisiko um 25 %. Die Verbesserung von 2.000 → 6.000 Schritten hat größere Auswirkungen als von 8.000 → 12.000 — 10.000 Schritte sind nicht nötig für einen bedeutsamen Nutzen.",
+          "Schritte und kognitive Funktion: Gehen erhöht das Hippocampusvolumen — eine der wenigen Interventionen, die bei Erwachsenen physisch graue Substanz wachsen lassen können. BDNF (Brain-Derived Neurotrophic Factor) — der 'Miracle-Gro fürs Gehirn' (Ratey) — steigt nach 20–30 Minuten moderatem Gehen. BDNF verbessert Langzeitpotenzierung (neues Lernen), Neuroplastizität und Depressions-Resilienz. 20 Minuten Gehen vor dem Lernen verbessert die Lernleistung — der Effekt hält in nachfolgende kognitive Aufgaben an.",
+          "Postprandiales Gehen und Blutzucker: 10–15 Minuten nach einer Mahlzeit zu gehen senkt den postprandialen Blutzuckerpeak um 30–50 % durch nicht-insulinabhängige Glucoseaufnahme in die Muskeln (GLUT4-Translokation ohne Insulinsignal). Wirksam auch bei insulinresistenten Personen. 3 × 10 Min. nach Mahlzeiten = 30 Min. Bewegung + ca. 2.500 Schritte + signifikantes Blutzuckermanagement. Kein bestimmtes Tempo erforderlich — gemächliches Gehen löst den Effekt aus.",
+          "Praktische Integration (keine zusätzliche Zeit nötig): die Lücke von sedentär (3.000) zu moderat (7.000–8.000) = 4.000–5.000 Schritte = 35–45 Minuten. Integrationsmöglichkeiten: 400 m weiter parken (800 Schritte × 2 Wege), Treppensteigen (100–150 Schritte/Etage), 15 Minuten nach dem Mittagessen gehen (~1.500 Schritte), im Stehen telefonieren. Gesamt: +4.000 Schritte ohne dedizierte 'Trainingszeit' — nur Mikro-Entscheidungen ändern.",
+          "Tempo und Intensität: 8.000 gemächliche Schritte (100–110 Schritte/Min.) bieten moderaten kardiovaskulären Nutzen. Zügiges Gehen (120–130 Schritte/Min., leicht außer Atem) erfüllt die WHO-Richtlinie für moderate aerobe Aktivität (150 Min./Woche). Ideale Kombination: 6.000 NEAT-Schritte aus täglichen Aktivitäten + 2.000 zügige Abendschritte = sowohl NEAT-Ziel als auch Kardio-Richtlinie erfüllt. Eine Kadenz-App auf dem Smartphone hilft, das Tempo automatisch beizubehalten."
+        ],
+        "points": [
+          { "label": "Mortalitätsvorteil Plateau bei 7.500–8.000 Schritten", "note": "JAMA 2021: Lücke 2.000→7.000 hat größere Wirkung als 8.000→12.000 — nicht auf 10.000 fixieren" },
+          { "label": "BDNF nach dem Gehen = Miracle-Gro fürs Gehirn", "note": "Hippocampusvolumen wächst mit regelmäßigem Gehen — Gedächtnis, Lernen und Depressions-Resilienz verbessern sich" },
+          { "label": "10 Min. nach Mahlzeit gehen = −30–50 % Glucosepeak", "note": "GLUT4-Translokation ohne Insulin — wirksam auch bei insulinresistenten Personen" },
+          { "label": "Weiter parken + Treppensteigen = +4.000 Schritte/Tag", "note": "Null Mehrzeit — in normale Mikro-Entscheidungen integriert, keine dedizierte 'Trainingszeit' nötig" }
+        ]
+      },
+      {
+        "category": "Zirkadianer Rhythmus",
+        "q": "Gehen Sie morgens nach draußen oder setzen sich natürlichem Licht aus?",
+        "options": [
+          "Fast nie",
+          "Selten (< 2 Tage/Woche)",
+          "Manchmal (3–4 Tage)",
+          "Regelmäßig (5+ Tage)"
+        ],
+        "modalTitle": "Morgenlicht — Der stärkste Zeitgeber zum Zurücksetzen der inneren Uhr",
+        "keyFact": "Frühes Morgenlicht ist der stärkste 'Zeitgeber', um die zirkadiane Uhr täglich zu kalibrieren. ipRGC — intrinsisch photosensitive retinale Ganglienzellen — enthalten Melanopsin und benötigen >1.000 lux, um das vollständige zirkadiane Signal an den SCN (Nucleus suprachiasmaticus) im Hypothalamus zu senden. Das hellste Zimmer Ihres Hauses erreicht nur 300–1.000 lux — unzureichend. Im Freien im Schatten: 10.000–20.000 lux. Das Signal von ipRGC → SCN → Melatonin-Unterdrückung → Cortisol-Awakening-Response-Aktivierung → der gesamte zirkadiane Kaskaden-Prozess beginnt zur richtigen Zeit.",
+        "detail": "Die ungleiche Punktevergabe (0/3/8/15) spiegelt die Dosis-Wirkungs-Beziehung für die Häufigkeit wider: 5+ Tage/Woche ist die notwendige Frequenz, um einen starken zirkadianen Anker aufrechtzuerhalten. Weniger Tage lassen den zirkadianen Rhythmus 'driften'. 3–4 Tage ist deutlich besser als 1–2 Tage, und 5+ Tage ist der Punkt, an dem die zirkadiane Synchronisation stabil und konsistent wird.",
+        "details": [
+          "ipRGC und Melanopsin: 1999 von David Berson (Brown University) entdeckt, sind ipRGCs die dritte Art von Photorezeptoren in der Netzhaut — nicht zum 'Sehen', sondern ausschließlich zur Messung der Bestrahlungsstärke (Lichtintensität) und zur Signalgebung an den SCN. Peak-Empfindlichkeit: 480 nm (Cyan-Blau). Hohe Schwelle — erfordert ausreichend starkes und anhaltendes Licht. Blinde Menschen (ohne Stäbchen/Zapfen) behalten normale zirkadiane Rhythmen bei, wenn die ipRGCs intakt sind. Sonnenbrillen, Korrektionsbrillen und Kontaktlinsen reduzieren alle das Signal, das die ipRGCs erreicht.",
+          "Sonnenlicht im Freien vs. Innenlicht: Sommersonne in Mitteleuropa: 50.000–100.000 lux. Schatten im Freien: 10.000–20.000 lux. In Fensternähe (Glas): 500–1.000 lux. Hellstes Zimmer drinnen: 100–500 lux. SAD-Lampe mit 10.000 lux. ipRGCs benötigen >1.000 lux über 10–30 Min., um vollständig zu reagieren. Deshalb kann 'am Fenster sitzen' das Draußensein nicht ersetzen. Sie müssen nicht in die Sonne schauen — das Umgebungslicht im Freien genügt.",
+          "Cortisol Awakening Response (CAR): die CAR ist ein natürlicher Cortisolanstieg von 50–100 % in den ersten 30–60 Minuten nach dem Aufwachen — notwendig für Alertness, Immunaktivierung und metabolischen Start. Morgenlicht verstärkt und schärft die CAR. Ohne Morgenlicht → abgeschwächte CAR → anhaltender 'Brain Fog' → erhöhte Koffeinabhängigkeit (Koffein blockiert nur Adenosin, ersetzt aber nicht die Cortisolfunktion). Andrew Huberman (Stanford Neurowissenschaft): 'Morgenlicht betrachten ist das Wichtigste, was Sie jeden Tag tun können.'",
+          "Serotonin–Melatonin-Pipeline: Morgenlicht → ipRGC → Raphe-Kerne → Serotoninsynthese steigt. Serotonin ist die direkte Vorstufe von Melatonin (über N-Acetyltransferase). 'Mehr Morgenserotonin jetzt = mehr Melatonin heute Abend.' SAD (Saisonal abhängige Depression) wird effektiv mit 10.000-lux-Morgenlicht behandelt, da Lichtmangel am Morgen → niedrige Serotoninspiegel → Depression. Mitteleuropäische Büroarbeiter, die den ganzen Tag drinnen verbringen, unterscheiden sich nicht von Skandinaviern im Winter.",
+          "Das goldene Zeitfenster und Timing: die ersten 30–60 Minuten nach dem Aufwachen haben den maximalen Einfluss auf die zirkadiane Phasenverankerung. Licht nach diesem Fenster ist immer noch gesundheitsförderlich, aber der zirkadiane Einfluss nimmt ab. Bewölkter Himmel: 10.000–20.000 lux im Freien — immer noch ausreichend. Nicht möglich nach draußen zu gehen: eine 10.000-lux-SAD-Lampe 20–30 Minuten beim Frühstück ist ein evidenzbasierter Ersatz. Schon 5 Minuten im Freien am Morgen haben einen messbaren Effekt auf das zirkadiane Timing.",
+          "Konsistenz ist entscheidend: 2 Wochenendtage auslassen → leichte zirkadiane Phasendrift → Sonntagsinsomnie, Montagmorgen-Schwerfälligkeit. Der zirkadiane Rhythmus braucht wie Wasseraufnahme oder Zähneputzen ein tägliches Reset. Ideal: jeden Morgen 5–10 Minuten im Freien innerhalb der ersten 30 Minuten nach dem Aufwachen, täglich auch am Wochenende — besonders am Wochenende, wenn man oft länger aufbleibt. Beim Morgen-Session keine Sonnenbrille tragen (reduziert lux, die die Netzhaut erreichen)."
+        ],
+        "points": [
+          { "label": "Hellstes Zimmer drinnen: 100–500 lux — unzureichend", "note": "ipRGCs benötigen >1.000 lux — muss nach draußen; am Fenster sitzen ersetzt kein Outdoor-Licht" },
+          { "label": "CAR-Verstärkung = natürliche Morgenenergie", "note": "Stärkere Cortisol Awakening Response → tiefere Wachheit, weniger Koffein nötig, stabile Stimmung" },
+          { "label": "Morgenserotonin → mehr Melatonin heute Abend", "note": "Pipeline: Morgenlicht → Serotonin jetzt → besseres Melatonin abends → tieferer Schlaf" },
+          { "label": "5+ Tage/Woche: stabile zirkadiane Synchronisation", "note": "2 Wochenendtage auslassen → Drift → Schlafschwierigkeiten Sonntag, Aufwachen Montag — Konsistenz ist entscheidend" }
+        ]
+      },
+      {
+        "category": "Stressmanagement",
+        "q": "Wie hoch ist Ihr chronisches Stressniveau?",
+        "options": [
+          "Sehr hoch — beeinträchtigt den Alltag",
+          "Hoch — schwer zu kontrollieren",
+          "Mittel — handhabbar",
+          "Niedrig — gut ausgewogen"
+        ],
+        "modalTitle": "Chronischer Stress — Der stille Saboteur aller Körpersysteme",
+        "keyFact": "Chronischer Stress (anhaltender Distress) unterscheidet sich grundlegend von akutem Stress (kurzfristiger positiver Eustress). Bei chronisch aktivierter HPA-Achse: Cortisol dauerhaft erhöht ohne Minimum → unterdrückt den Hippocampus (Gedächtnis, Lernen) → der Hippocampus schrumpft buchstäblich bei chronischem Stress (Sapolsky, Stanford). Gleichzeitig: Immunsuppression, Insulinresistenz, viszerale Fetteinlagerung und Schlafstörungen. Die Höchstpunktzahl dieser Frage beträgt nur 10 (nicht 15), da Stress kontextabhängig ist — 'handhabbar' ist der realistische Zielwert.",
+        "detail": "Wahrgenommener Stress (subjektiv) ist wichtiger als der objektive Stressor — bei gleicher Arbeitslast empfindet eine Person es als herausfordernd (Eustress), eine andere als überwältigend (Distress). Denkweise und Kontrollgefühl bestimmen die Cortisol-Reaktion mehr als der Stressor selbst (Alia Crum, Stanford Mind & Body Lab Experimente).",
+        "details": [
+          "HPA-Achsen-Dysregulation und Gehirnanatomie: normale HPA-Achse: Stressor → CRH (Hypothalamus) → ACTH (Hypophyse) → Cortisol (Nebenniere) → negative Rückkopplung. Chronischer Stress: Rückkopplungshemmung ist abgestumpft → Cortisol chronisch erhöht. Folgen: (a) Hippocampus schrumpft — Cortisol ist in hohen Konzentrationen neurotoxisch, verursacht dendritische Atrophie in der CA3-Region. (b) Amygdala hyperaktiviert → erhöhte emotionale Reaktivität und Angstspirale. (c) PFC-Ausdünnung → beeinträchtigte Entscheidungsfindung und Impulskontrolle. Stress verändert buchstäblich die Gehirnanatomie in die entgegengesetzte Richtung der Meditation (die PFC-Volumen erhöht und Amygdala reduziert).",
+          "Immunsuppression und Wundheilung: kurzfristiger akuter Stress → Immunboost (evolutionäre Vorbereitung zur Wundheilung). Chronischer Stress → Immunsuppression: Anzahl und Funktion der NK-Zellen (natürliche Killerzellen) nimmt ab → reduzierte Tumorüberwachung. Impfantworten sind bei chronischem Stress schwächer (Cohen, CMU: gestresste Medizinstudenten hatten niedrigere Antikörperreaktionen auf den Hepatitis-B-Impfstoff). Wundheilung 40–60 % langsamer (Kiecolt-Glaser: hoch gestresste Pflegepersonen heilten Wunden 40 % langsamer als Kontrollgruppen).",
+          "Viszerales Fett und Cortisol-Mechanismus: Cortisol fördert viszerale Adipogenese (tiefes Bauchfett) durch: (a) Dichte Glukokortikoid-Rezeptoren im Omentum. (b) Lipoproteinlipase-Aktivierung in viszeralen Adipozyten. (c) Erhöhter Appetit auf kalorienreiche Nahrung (Cortisol erhöht Belohnungssensitivität für Zucker/Fett). Viszerales Fett ist metabolisch aktiv — es sezerniert entzündliche Zytokine (IL-6, TNF-α), verschlimmert Insulinresistenz und kardiovaskuläres Risiko. Stress verursacht nicht nur Gewichtszunahme — sondern die gefährlichste Art davon.",
+          "Stress → Insomnie-Feedback-Schleife: Cortisol und Melatonin haben invertierte Rhythmen. Chronischer Stress → Cortisol abends erhöht → unterdrückt Melatonin-Onset → Einschlafschwierigkeiten → Schlafentzug → höheres Cortisol am nächsten Tag → sich selbst verstärkende Abwärtsspirale. Hyperarousal bleibt im Schlaf bestehen: höhere Gehirntemperatur, schnellere EEG-Aktivität, erhöhter Stoffwechsel — ein physiologischer Zustand, der mit Tiefschlaf unvereinbar ist. 'Stress verursacht Insomnie, Insomnie verursacht mehr Stress' (Harvey, 2002) — die Schleife muss von beiden Seiten unterbrochen werden.",
+          "Wahrnehmung wichtiger als Stressor: Alia Crum (Stanford) Experiment: Gruppen, die sagten 'Stress ist stärkend' vs. 'Stress ist lähmend' — bei gleicher Stresslast zeigte die 'stärkend'-Gruppe bessere kardiovaskuläre Reaktionen (höheres DHEA-Cortisol-Verhältnis, schnellere Cortisol-Erholung), weniger Symptome und höhere Leistung. Kelly McGonigal (TED 2013): Menschen, die Stress als Herausforderung statt als Bedrohung sehen, haben dramatisch unterschiedliche Gesundheitsergebnisse, kontrolliert für objektive Stressoren. Umdeuten ist keine Verleugnung — es verändert die physiologische Reaktion.",
+          "Evidenzbasierte Interventionen: (a) Box-Atmung (4-4-4-4): nachweislich Cortisol-Reduktion innerhalb von 5–10 Min. — von Navy SEALs, Rettungskräften und ICU-Pflegepersonal verwendet. (b) Zone-2-Cardio 30 Min.: reduziert Cortisol, erhöht BDNF, verbessert HRV — die robusteste Evidenz für Stressabbau. (c) Kälteexposition 30–60 Sek.: erhöht Noradrenalin um 300 %, reduziert Angst chronisch (Huberman). (d) Soziale Verbindung: Oxytocin ist das physiologische Gegenmittel zu Cortisol. (e) Naturaufenthalt: 20 Min. in der Natur (kein Training nötig) reduziert Speichelcortisol um 21 % (Hunter, 2019)."
+        ],
+        "points": [
+          { "label": "Hippocampus schrumpft buchstäblich bei chronischem Stress", "note": "Sapolsky Stanford: Cortisol ist neurotoxisch — schlechtes Gedächtnis und Lernen ist eine strukturelle Veränderung" },
+          { "label": "Wundheilung 40–60 % langsamer unter Stress", "note": "Kiecolt-Glaser: Immunsuppression ist buchstäblich und messbar — keine Metapher" },
+          { "label": "Box-Atmung reduziert Cortisol in 5 Minuten", "note": "4-4-4-4 bewiesen: Navy-SEAL-Technik — sofortig, kostenlos, kein Equipment nötig" },
+          { "label": "Stresswahrnehmung > Stressorintensität", "note": "Crum Stanford: 'stärkendes' Mindset → anderes Cortisol-Profil bei gleicher objektiver Stresslast" }
+        ]
+      },
+      {
+        "category": "Umgebung",
+        "q": "Wie lange vor dem Schlafen benutzen Sie Ihr Handy oder Bildschirme?",
+        "options": [
+          "Bis ich einschlafe",
+          ">1 Stunde vor dem Schlafen",
+          "30–60 Minuten vor dem Schlafen",
+          "Keine Bildschirme 30+ Min. vor dem Schlafen"
+        ],
+        "modalTitle": "Bildschirme vor dem Schlafen — Blaues Licht und kognitive Erregung stören den Schlaf",
+        "keyFact": "Bildschirme vor dem Schlafen beeinflussen den Schlaf durch 2 unabhängige Mechanismen, nicht nur einen: (1) BLAUES LICHT (480 nm) unterdrückt Melatonin — Charles Czeisler (Harvard, 2014): 4 Stunden vor dem Schlafen ein iPad lesen reduzierte Melatonin um 55 %, verzögerte den Schlafbeginn um 10 Min., reduzierte REM-Schlaf um 40 % und erhöhte Schläfrigkeit am nächsten Tag. (2) KOGNITIVE ERREGUNG — Inhalte (Nachrichten, soziale Medien, E-Mails) aktivieren Amygdala und PFC und halten einen sympathischen Zustand aufrecht, der mit dem Einschlafen unvereinbar ist. Wichtig: Nachtmodus/Bernsteingläser adressieren nur Mechanismus Nr. 1 und beheben kognitive Erregung nicht — vollständig bildschirmfreie Zeit ist erforderlich.",
+        "detail": "Höchstpunktzahl 10 (nicht 15), da Bildschirmverhalten ein Umweltfaktor ist und keine biologische Baseline wie Schlafstunden. 'Keine Bildschirme 30 Minuten' ist die realistische Mindestempfehlung — optimal sind 1 Stunde+, aber 30 Minuten ist der evidenzbasierte Schwellenwert. Der Inhaltstyp spielt ebenfalls eine Rolle: beruhigende Inhalte + gedimmter Bildschirm < stimulierende Inhalte + heller Bildschirm < gar kein Bildschirm.",
+        "details": [
+          "Melatonin-Unterdrückungsmechanismus: ipRGCs in der Netzhaut sind am empfindlichsten für 480-nm-blaues Licht — dieselbe Wellenlänge, die LCD/LED-Bildschirme am stärksten emittieren. Signalweg: ipRGC → SCN → Zirbeldrüse unterdrückt → Melatoninsekretion sinkt. Das Ausmaß der Unterdrückung hängt von Helligkeit und Dauer ab. Handy-Bildschirm volle Helligkeit: ~500–800 lux (ausreichend, um Melatonin deutlich zu unterdrücken). Nachtmodus reduziert Unterdrückung um ca. 25–30 % — eine Verbesserung, aber nicht ausreichend. Timing: 1–2 Stunden vor dem Schlafen ist das empfindlichste Fenster für den Melatonin-Onset.",
+          "Czeisler Harvard 2014 Studie (PNAS): 12 Probanden, rigoroses Crossover-Design — 4 Stunden vor dem Schlafen E-Reader lesen vs. gedrucktes Buch lesen, 5 Nächte pro Bedingung. E-Reader-Bedingung: Melatonin-Onset um ca. 1,5 Stunden verzögert, Gesamtmelatonin reduziert, Einschlaflatenz um 10 Min. erhöht, REM-Schlaf reduziert und Wachheit am nächsten Morgen schlechter — selbst wenn die Gesamtschlafdauer gleich war. Kleine, aber streng kontrollierte Studie, mehrfach mit konsistenten Ergebnissen repliziert.",
+          "Kognitive Erregung ist der zweite Mechanismus: Inhalte (soziale Medien, Nachrichten, E-Mails, Spiele) aktivieren Bedrohungserkennung (Amygdala) und exekutive Verarbeitung (PFC) und halten das sympathische Nervensystem aktiv. Die Stressreaktion nach dem Weglegen des Handys hat einen 'Nachlauf' von 15–30 Minuten: Cortisol erhöht, Herzfrequenz erhöht, Gedanken rasen. Twitter-Nachrichten über Politik lesen → Cortisol steigt → 30 Minuten später beim Einschlafen noch erhöht. Bernsteingläser adressieren Melatonin-Unterdrückung, aber tun nichts für kognitive Erregung.",
+          "Recency-Effekt: der Zustand, den Sie am Ende des Tages ins Bett mitnehmen, bestimmt die Einschlafqualität. Bis 22 Uhr einen Film schauen, ausschalten um 22 Uhr, schlafen um 23 Uhr (1 Stunde bildschirmfrei) = viel besser. Handy von 22:30–23:00 scrollen, schlafen um 23:00 (0 Min. bildschirmfrei) = schlechteste Option. Nicht die gesamte Bildschirmzeit — sondern die Bildschirmzeit im letzten Fenster vor dem Schlafen. Das 'Wind-down-Fenster' am Ende des Tages ist entscheidend, ähnlich wie ein Aufwärmen vor dem Sport — aber umgekehrt: das System muss abkühlen.",
+          "Ersetzen, nicht nur einschränken: 'Kein Handy benutzen' ist ein negativer Befehl — willensabhängig und inkonsistent. Effektiver: das Wind-down-Fenster mit Alternativen füllen — ein physisches Buch lesen, Tagebuch schreiben (Stift/Papier), leichtes Dehnen oder Yoga Nidra, ein warmes Bad (senkt Körperkerntemperatur → schnelleres Einschlafen), mit Partner/Familie sprechen. Das Handy in einem anderen Zimmer laden eliminiert nächtliches Scrollen UND morgendliches Checken — eine Verhaltensänderung mit doppeltem Nutzen.",
+          "Bewertungslogik: 'Bis ich einschlafe' (0 Punkte): Melatonin maximal unterdrückt + maximale kognitive Erregung gleichzeitig beim Zubettgehen. '>1 Stunde vor dem Schlafen' (3 Punkte): verbessert, aber noch im sensiblen Fenster. '30–60 Minuten' (8 Punkte): das klinisch empfohlene Minimum. 'Keine Bildschirme 30+ Min.' (10 Punkte): lässt Melatonin natürlich ansteigen + kognitive Erregung klingt ab. Höchstpunktzahl 10 (nicht 15), da eine Höchstpunktzahl biologischen Baselines vorbehalten ist — Umweltverhalten ist ein unterstützender Faktor."
+        ],
+        "points": [
+          { "label": "480-nm-Blaulicht unterdrückt Melatonin um 55 %", "note": "Czeisler Harvard: iPad 4 Stunden vor dem Schlafen → 1,5-Stunden-Verzögerung, REM −40 %, erhöhte Tagesschläfrigkeit" },
+          { "label": "Kognitive Erregung: stärker und nicht durch Nachtmodus behoben", "note": "Inhalte aktivieren Amygdala → sympathischer Zustand hält 30 Min. an — Bernsteingläser lösen das nicht" },
+          { "label": "Die letzten 30 Minuten sind das wichtigste Fenster", "note": "Zustand beim Zubettgehen = Einschlafqualität — die letzte Stunde ist wichtiger als die erste Stunde des Abends" },
+          { "label": "Handy in anderem Zimmer laden = kein Willenskraft nötig", "note": "Umgebungsgestaltung schlägt Willenskraft — kann nicht scrollen, wenn das Handy nicht im Zimmer ist" }
+        ]
+      },
+      {
+        "category": "Hydration",
+        "q": "Wie viel Wasser trinken Sie pro Tag?",
+        "options": [
+          "Unter 1 Liter",
+          "1–1,5 Liter",
+          "1,5–2,5 Liter",
+          "Ausreichend nach Formel (Körpergewicht × 35 ml)"
+        ],
+        "modalTitle": "Tägliche Hydration — Wasser beeinflusst jedes biologische System",
+        "keyFact": "Schon 1–2 % Dehydration (700 ml–1,4 L bei einer 70-kg-Person) verursacht: 12 % Konzentrationsverlust, schlechteres Kurzzeitgedächtnis, langsamere Reaktionszeit und erhöhtes Anstrengungsempfinden (Aufgaben fühlen sich schwerer an). Das Gehirn besteht zu 73 % aus Wasser — Neurotransmission verlangsamt sich, bevor Sie Durst spüren. Durstgefühl tritt NACH einer Dehydration von 1–2 % auf — kein zuverlässiges Frühwarnsignal. Die Körpergewichtsformel × 35 ml personalisiert die Aufnahme nach Körpergröße (z. B. 70 kg × 35 ml = 2,45 L, 60 kg = 2,1 L).",
+        "detail": "Punkte für 'Ausreichend nach Formel' sind 10 (nicht 15), da Hydration ein unterstützender Lebensstilfaktor ist. 1,5–2,5 L (8 Punkte) ist für viele kleinere oder weniger aktive Personen ausreichend. Unter 1 L (0 Punkte) ist für die meisten Erwachsenen eindeutig unzureichend und verursacht messbare Leistungseinbußen innerhalb von Stunden. Hellgelber Urin ist der einfachste Indikator für ausreichende Hydration.",
+        "details": [
+          "Dehydration und kognitive Funktion: David Benton (Swansea) Meta-Analyse: 1–2 % Dehydration reduziert konsistent Aufmerksamkeit, psychomotorische Leistung und Sofortgedächtnis — mit größeren Effektgrößen bei Aufgaben, die anhaltende Aufmerksamkeit erfordern. Ganio (2011): 1,36 % Dehydration bei jungen Frauen reduzierte Stimmung, erhöhte das Anstrengungsempfinden und verringerte die Konzentration — selbst ohne Sport (leichte Dehydration durch Nachtschlaf). Morgens sind Sie typischerweise bereits 300–500 ml dehydriert durch Atmen und Schwitzen über Nacht.",
+          "Nieren und Entgiftung: die Nieren filtern täglich 180 L Plasma und resorbieren 99 % (scheiden 1–2 L als Urin aus). Unzureichende Aufnahme → konzentrierter Urin → erhöhtes Nierensteinrisiko (Pearle, UpToDate: Urinvolumen <1 L/Tag = signifikantes Risiko). HWI-Risiko steigt bei verringertem Urinfluss → Bakterien werden nicht ausreichend ausgespült. Urinfarbe ist der beste Indikator: hellgelb (1–3 auf der Urinfarbskala) = ausreichend; dunkel = dehydriert; farblos = überhydriert (verdünnte Elektrolyte — ebenfalls nicht ideal).",
+          "Stoffwechsel und Gewichtsmanagement: Michael Boschmann (Charité Berlin): 500 ml kaltes Wasser trinken erhöht den Stoffwechsel für 30–40 Minuten um 30 % (Thermogenese, um Wasser auf Körpertemperatur zu erwärmen). 30 Minuten vor einer Mahlzeit 500 ml trinken: Magendehnung → Appetitunterdrückung + bessere Unterscheidung von 'Hunger vs. Durst'-Signalen. Davy (2010): Probanden, die 12 Wochen lang 500 ml vor jeder Mahlzeit tranken, verloren 44 % mehr Gewicht als die Kontrollgruppe. Viel Überessen entsteht, weil Durst mit Hunger verwechselt wird (Signale werden im Hypothalamus nahe beieinander verarbeitet).",
+          "Elektrolyte und Hydrationqualität: Wasser allein ist keine optimale Hydration — Elektrolyte (Na⁺, K⁺, Mg²⁺) sind notwendig, um die osmotische Balance aufrechtzuerhalten. Personen, die viel trainieren, stark schwitzen oder sich in heißer Umgebung befinden, sollten dem Wasser Elektrolyte hinzufügen. DIY-Elektrolyt: 500 ml Wasser + Prise Meersalz + Zitronensaft + Spritzer Honig. Kokoswasser: natürliches Elektrolytgetränk, kein Zuckerzusatz nötig. Vorsicht: Hyponatriämie (verdünntes Natrium) bei übermäßig großen Mengen reinen Wassers in kurzer Zeit.",
+          "Praktische Hydrations-Gewohnheiten: (1) Gleich nach dem Aufwachen 500 ml Wasser — abends vorbereiten, um das Nachtdefizit auszugleichen. (2) Eine 1-L-Flasche auf dem Schreibtisch — visueller Hinweis und einfaches Tracking. (3) 1–2 Gläser 30 Minuten vor jeder Mahlzeit. (4) 1 Glas nach jeder Tasse Kaffee (leichtes Diuretikum). (5) App-Erinnerung alle 1–1,5 Stunden. (6) Mit Zitronenscheiben oder Gurke aufgießen, wenn reines Wasser schwer zu trinken ist. Ziel: hellgelber Urin bis 10 Uhr = auf Kurs für den ganzen Tag.",
+          "Hydration und körperliche Leistung: 2 % Dehydration → Ausdauerleistung sinkt um 10–15 % (Nielsen, 2002). Kraft und Power: 5–8 % Reduktion bei 2 % Defizit. Für Trainierende: Ziel 40 ml × Körpergewicht (statt 35 ml), 400–600 ml in den 2 Stunden vor dem Training, 150–250 ml alle 15–20 Min. während des Trainings, 500–750 ml nach dem Training pro 0,5 kg Gewichtsverlust (geschätzt aus Pre/Post-Trainingsgewicht). Gelenkknorpel besteht zu 80 % aus Wasser — Dehydration erhöht Gelenksteifheit und Schmerzen bei Bewegungen."
+        ],
+        "points": [
+          { "label": "Formel: kg × 35 ml = personalisiertes Tagesziel", "note": "70 kg = 2,45 L, 60 kg = 2,1 L — pauschale '2 L für alle' ist ungenau" },
+          { "label": "1 % dehydriert = −12 % Konzentration bevor Durst auftritt", "note": "Durst ist ein spätes Signal — nach Plan trinken, nicht auf Durst warten" },
+          { "label": "Wasserflasche auf dem Schreibtisch = bester visueller Hinweis", "note": "Flasche sehen → ans Trinken denken — Umgebungsgestaltung schlägt Willenskraft und Reminder-App" },
+          { "label": "500 ml morgens früh = Nachtdefizit ausgleichen", "note": "Jede Nacht verlieren Sie 300–500 ml durch Atmen und Schwitzen — vor dem ersten Schluck bereits dehydriert" }
+        ]
+      }
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {
@@ -3773,7 +4006,181 @@
     "journal_placeholder": "Frei schreiben, muss nicht perfekt sein...",
     "btn_start": "▶ Start",
     "btn_stop": "⏹ Stopp",
-    "videos": ["BREATH"]
+    "videos": ["BREATH"],
+    "d0_cards": [
+      { "title": "D1 – Stress verstehen", "desc": "Die 3 Schichten des Stresses erkennen: Körper, Emotion, Verhalten. Die Angst-Gewohnheits-Schleife." },
+      { "title": "D2 – Atmen & Verlangsamen", "desc": "Zwerchfellatmung, Box-Atmung 4-4-4-4, 4-7-8-Atmung, 2-Minuten-Reset." },
+      { "title": "D3 – Meditation & Achtsamkeit", "desc": "3-Minuten-Meditation für Anfänger. 5-Minuten Body-Scan. Achtsames Essen und Gehen." },
+      { "title": "D4 – Tagebuch in 5 Zeilen", "desc": "5 Abend-Fragen. Brain-Dump bei Überwältigung. Tagebuchführung nach einem schlechten Tag." },
+      { "title": "D5 – Digitale Entgiftung", "desc": "3 Stufen: leicht → standard → fortgeschritten. Bildschirmzeit vor dem Schlafen reduzieren, Benachrichtigungen deaktivieren." },
+      { "title": "D6 – Sanfte Disziplin", "desc": "Keine Selbstvorwürfe. Die 1%-Comeback-Regel. Kleine, dauerhafte Gewohnheiten." }
+    ],
+    "d1_modals": [
+      {
+        "modalTitle": "Körperschicht",
+        "keyFact": "Körperliche Stresssymptome sind keine Schwäche — sie sind automatische Reaktionen des Nervensystems. Wenn die Amygdala eine Bedrohung erkennt (real oder wahrgenommen), aktiviert die HPA-Achse innerhalb von 90 Sekunden Cortisol und Adrenalin. Die Herzfrequenz steigt, Muskeln verspannen sich, Blut fließt in die Gliedmaßen, die Verdauung stoppt. Dies ist Evolutionsmechanismus — optimal zum Fliehen vor einem Tiger, schädlich, wenn täglich durch Arbeits-E-Mails ausgelöst.",
+        "detail": "Der Körper signalisiert Stress immer als Erstes — bevor das Bewusstsein es erkennt. Spannungskopfschmerzen, verspannte Schultern, flache Atmung, Magenbeschwerden sind allesamt neurologische Ausgaben der Stressskaskade. Diese Signale frühzeitig zu erkennen — bevor sie sich verstärken — ist eine erlernbare Fähigkeit.",
+        "details": [
+          "HPA-Achse und Cortisol: der Hypothalamus-Hypophysen-Nebennierenrinden-Kreislauf ist für akute Bedrohungen ausgelegt. Chronische Aktivierung hält den Cortisolspiegel erhöht, unterdrückt das Immunsystem, stört die Schlafarchitektur (REM-Reduktion) und beschleunigt die zelluläre Alterung (Telomerverkürzung). Sapolsky (Stanford) zeigte, dass chronischer psychosozialer Stress dieselben Organschäden wie Trauma verursacht.",
+          "Somatische Marker: Antonio Damasios Forschung zeigt, dass der Körper 'somatische Marker' — körperliche Empfindungen, die mit emotionalen Zuständen verbunden sind — erzeugt, bevor das rationale Gehirn ein Problem artikulieren kann. Ein enger Brustkorb in einem Meeting, Übelkeit vor einer Präsentation: der Körper weiß es vor dem Verstand. Körper-Scanning (2–5 Min/Tag) trainiert das Erkennen dieser Signale.",
+          "Muskelverspannung und der Schmerzkreislauf: chronischer Stress führt zu anhaltender Muskelkontraktion, besonders im Trapezius, Nacken und unteren Rücken. Anhaltende Verspannung → Laktatansammlungen → Triggerpunkte → übertragener Schmerz → mehr Stress durch Schmerz. Progressive Muskelentspannung (PME) — bewusstes Anspannen und Loslassen von Muskelgruppen — unterbricht diesen Kreislauf.",
+          "Atmung und der autonome Umschalter: der Vagusnerv — der 10. Hirnnerv — ist der Weg für 'Ruhe und Verdauung'. Langsame, tiefe Ausatmung (länger als Einatmung) aktiviert den Vagustonus und verschiebt das ANS vom Sympathikus zum Parasympathikus. Box-Atmung (4-4-4-4) erreicht diese Verschiebung in 3–5 Zyklen.",
+          "Schlaf als körperliche Stresserholung: Tiefschlaf (N3) ist der Zeitpunkt, an dem Wachstumshormon ausgeschüttet wird — das primäre Reparatursignal für durch Cortisol geschädigtes Gewebe. REM-Schlaf verarbeitet emotionale Erinnerungen und reduziert deren Amygdala-Ladung. Chronischer Schlafentzug hält den Körper in einem anhaltenden, niedriggradigen Stresszustand."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Cortisol steigt in 90 Sekunden", "note": "HPA-Achse aktiviert schneller als das Bewusstsein — körperliche Signale zuerst erkennen" },
+          { "icon": "💪", "label": "Muskelverspannung ist messbar", "note": "Trapeziusspannung ist ein zuverlässiger Biomarker für chronischen Stress" },
+          { "icon": "🫁", "label": "Lange Ausatmung = parasympathische Verschiebung", "note": "Ausatmung länger als Einatmung → Vagustonus → HRV-Anstieg in 3–5 Atemzügen" },
+          { "icon": "😴", "label": "Schlaf repariert Cortisol-Schäden", "note": "N3-Tiefschlaf setzt WH frei — das primäre Anti-Cortisol-Erholungssignal" }
+        ]
+      },
+      {
+        "modalTitle": "Emotionale Schicht",
+        "keyFact": "Emotionen sind neurochemische Ereignisse von 90 Sekunden Dauer — der Rest ist eine Entscheidung, sie aufrechtzuerhalten (Jill Bolte Taylor, Harvard-Neurowissenschaftlerin). Die Amygdala feuert, eine chemische Kaskade überschwemmt den Körper, erreicht in 90 Sekunden ihren Höhepunkt und klingt ab. Was sie verlängert, ist das Narrativ, das der präfrontale Kortex um die Empfindung aufbaut. Deshalb funktioniert 'Name it to tame it' (Daniel Siegel): ein Gefühl benennen aktiviert den lateralen präfrontalen Kortex, der die Amygdala hemmt.",
+        "detail": "Emotionales Stressmanagement geht nicht um Unterdrückung — Unterdrückung erhöht die Amygdala-Reaktivität langfristig. Es geht um genaues Benennen, das Zulassen der Empfindung ohne narrative Verstärkung und den Aufbau eines emotionalen Vokabulars. Das Ziel ist emotionale Granularität: die Fähigkeit, 'frustriert' von 'ängstlich' von 'überwältigt' zu unterscheiden.",
+        "details": [
+          "Emotionen als Information: Paul Ekmans Theorie der Basisemotionen identifiziert 7 universelle emotionale Ausdrücke über Kulturen hinweg. Jede trägt Information: Angst = wahrgenommene Bedrohung; Ärger = wahrgenommene Ungerechtigkeit; Trauer = wahrgenommener Verlust; Freude = Zielerreichung. Emotionen als Daten statt als zu eliminierende Probleme zu behandeln, verändert die Beziehung zu ihnen fundamental.",
+          "Affektives Benennen (Affect Labeling): Lieberman et al. (UCLA, 2007) zeigte, dass das Benennen von Emotionen im fMRI die Amygdala-Aktivierung effektiver reduziert als Ablenkung. Je präziser das Label (z.B. 'Ich fühle vorweggenommene Angst' vs. 'Ich fühle mich schlecht'), desto größer der regulatorische Effekt.",
+          "Die Grübelfalle: Das Default-Mode-Netzwerk (DMN) — aktiv beim 'Gedankenwandern' — ist das neuronale Substrat des Grübelns. Chronischer Stress hält das DMN hyperaktiv und erzeugt repetitive negative selbstbezügliche Gedanken. Das DMN deaktiviert sich bei fokussierten Aufgaben, Meditation und Flow-Zuständen.",
+          "Selbstmitgefühl vs. Selbstkritik: Kristin Neffs Forschung zeigt, dass Selbstmitgefühl das Pflegesystem (Oxytocin, Opioide) aktiviert und bedrohungsbasierte Verarbeitung reduziert. Selbstkritik aktiviert dieselben Bedrohungswege wie externe Kritik — das Gehirn kann sie nicht unterscheiden.",
+          "Aufbau der emotionalen Regulationskapazität: Regelmäßige Meditation verdickt physisch den präfrontalen Kortex (Lazar, Harvard, 2005). Bereits 8 Wochen MBSR (Mindfulness-Based Stress Reduction) reduziert die Amygdala-Graumatterdichte und erhöht die präfrontal-amygdale Hemmkonnektivität."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "Emotionen dauern 90 Sekunden", "note": "Der Rest ist die Geschichte — 'Name it to tame it' unterbricht die Narrativ-Schleife" },
+          { "icon": "🔬", "label": "Präzise Labels reduzieren Amygdala-Feuern", "note": "Lieberman 2007: emotionale Granularität → messbar niedrigere Bedrohungsaktivierung" },
+          { "icon": "🌀", "label": "Grübeln = DMN-Hyperaktivierung", "note": "Jede fokussierte Aufgabe deaktiviert DMN — schon 10 Min unterbrechen die Schleife" },
+          { "icon": "💛", "label": "Selbstmitgefühl aktiviert Oxytocin", "note": "Keine Selbstindulgenz — es schaltet die Motivation von angstbasiert auf meisterlungsorientiert" }
+        ]
+      },
+      {
+        "modalTitle": "Verhaltensschicht",
+        "keyFact": "Verhalten unter Stress folgt vorhersehbaren Mustern: Annäherung (Konfrontation), Vermeidung (Rückzug) oder automatisch (Gewohnheitsschleifen). Die 'Tend-and-befriend'-Reaktion (Taylor, UCLA) — soziale Verbindung bei Bedrohung suchen — ist der evolutionär älteste und effektivste Stresspuffer, vermittelt durch Oxytocin und Endorphine.",
+        "detail": "Verhaltens-Stressreaktionen umfassen sowohl adaptive (Sport, soziale Verbindung, Problemlösung) als auch maladaptive Muster (Substanzgebrauch, Prokrastination, sozialer Rückzug). Die Schlüsselerkenntnis der Verhaltenswissenschaft: unter Stress fällt das Gehirn in die stärkste Gewohnheit zurück, nicht in die 'beste' Handlung.",
+        "details": [
+          "Gewohnheitsschleifen unter Stress: Charles Duhiggs Gewohnheitsschleife (Auslöser → Routine → Belohnung) wird unter Cortisol-Belastung automatisch, weil das Gehirn vom präfrontal-kortexgesteuerten deliberativen Verhalten zur striatumgesteuerten Gewohnheitsausführung wechselt. Deshalb greifen Sie unter Stress zum Telefon, essen Zucker oder schnappen andere an.",
+          "Soziale Verbindung als Stresspuffer: Sheldon Cohens berühmte 'Erkältungsstudie' (Carnegie Mellon): Menschen mit vielfältigen sozialen Netzwerken erkrankten 4× seltener nach Virusexposition. Soziale Verbindung reduziert Cortisol, erhöht Oxytocin und Endorphine und aktiviert den ventralen Vagalkomplex.",
+          "Vermeidung und der Angst-Aufrechterhaltungs-Kreislauf: Vermeidung bietet sofortige Erleichterung (negative Verstärkung), erhält aber die Angst langfristig aufrecht, indem sie Habituation verhindert. Das CBT-Kernprinzip der Exposition: Der einzige Weg, Angst vor einem Reiz zu reduzieren, ist, ihm zu begegnen, ohne die befürchtete Folge zu erfahren.",
+          "Verhaltensaktivierung: eine Kern-CBT-D (Depression) und Stressmanagement-Intervention. Unter Stress/Depression reduziert Aktivitätsrückzug die positive Verstärkung, was negativen Affekt vertieft, was die Motivation für Aktivität reduziert — ein Teufelskreis. Verhaltensaktivierung unterbricht ihn durch das Einplanen kleiner, früher genossener Aktivitäten unabhängig von der Stimmung.",
+          "Umgebungsgestaltung: BJ Foggs Tiny Habits zeigt, dass Verhaltensänderung zu 80% Umgebungsgestaltung und zu 20% Willenskraft ist. Praktische Anwendungen: Handyladegerät außerhalb des Schlafzimmers, Laufschuhe sichtbar an der Tür, gesunde Snacks auf Augenhöhe. Unter hohem Cortisol ist Willenskraft die erste erschöpfte Ressource — Umgebungsgestaltung ist die stresssichere Verhaltensänderungsstrategie."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Stress = Standard zur stärksten Gewohnheit", "note": "Präfrontaler Kortex geht offline — Striatum übernimmt — zuerst Umgebung gestalten" },
+          { "icon": "🤝", "label": "Soziale Verbindung = 4× weniger Krankheiten", "note": "Cohen (CMU): vielfältige soziale Netzwerke reduzieren direkt Cortisol und erhöhen Oxytocin" },
+          { "icon": "🚪", "label": "Vermeidung erhält Angst dauerhaft", "note": "CBT: nur Habituation durch kleine Expositionen reduziert die Bedrohungseinschätzung der Amygdala" },
+          { "icon": "🏃", "label": "Handlung geht der Stimmung voraus", "note": "Verhaltensaktivierung: Aktivität zuerst einplanen — Stimmung folgt nach 5–10 Minuten" }
+        ]
+      }
+    ],
+    "d7_modals": [
+      {
+        "modalTitle": "Atmen/Meditation ≥ 3 Min · +25 Pkt",
+        "keyFact": "3 Minuten bewusstes Atmen ist die minimale wirksame Dosis für messbare HRV-Verbesserung (Herzratenvariabilität). Zaccaro et al. (2018) Meta-Analyse: langsames Atmen mit 6 Atemzügen/Min (5 Sek ein / 5 Sek aus) aktiviert maximal den Barorezeptorreflex und erhöht die HRV um ~40% in einzelnen Sitzungen. Box-Atmung (4-4-4-4) erzielt ähnliche Ergebnisse. HRV-Anstieg = messbare parasympathische Aktivierung = direkte Cortisol-Reduktionskaskade.",
+        "detail": "Das 25-Punkte-Gewicht spiegelt sowohl Schwierigkeit als auch Wirkung wider. Atemarbeit erfordert bewusstes Loslösen vom Standardmodus der Ablenkung. Aber es ist die einzige schnellste evidenzbasierte Intervention, um das autonome Nervensystem vom Sympathikus zum Parasympathikus zu verlagern.",
+        "details": [
+          "Physiologischer Mechanismus: langsames Atmen bei 6 Atemzügen/Min (0,1 Hz) bringt das kardiovaskuläre System in seine Resonanzfrequenz — maximiert RSA (Respiratorische Sinusarrhythmie) und Barorezeptorreflex-Verstärkung. Porges' Polyvagal-Theorie: dies aktiviert den ventralen Vagalkomplex, das 'soziale Engagementsystem', das mit Ruhe, Verbindung und Neugier assoziiert ist.",
+          "Meditation — strukturelle Gehirnveränderungen: 8 Wochen MBSR (achtsamkeitsbasierte Stressreduktion, ~27 Stunden insgesamt) reduziert die Amygdala-Graumatterdichte (Hölzel et al., Harvard, 2011). Erhöht die kortikale Dicke in Insula, anteriorem Cingulum und somatosensorischem Kortex. Langzeitmeditierende zeigen reduzierte altersbedingte kortikale Ausdünnung.",
+          "Minimale wirksame Dosis: Zeidan et al. (2010): 4 Tage × 20 Min = signifikante Verbesserungen bei Arbeitsgedächtnis, kognitiver Flexibilität und Stimmung. Mrazek et al. (2013): 8 Min Achtsamkeit reduzierte Gedankenwandern und verbesserte GRE-Leseverständnis. Sogar 3 Minuten fokussiertes Atmen unterbricht die DMN-Grübel-Schleife.",
+          "Body-Scan-Spezifika: der 5-Minuten-Body-Scan (Kopf-bis-Zehen progressive Aufmerksamkeit) aktiviert die Insula — den interozeptiven Kortex — und erhöht die Präzision der interozeptiven Signale. Verbesserte Interozeption → frühzeitigere Erkennung von Stresssignalen → größeres Fenster für Regulationsreaktion.",
+          "Praktisches Protokoll: beginnen Sie mit 3 Zyklen Box-Atmung (4 Sek Einatmen → 4 Sek Halten → 4 Sek Ausatmen → 4 Sek Halten). Für Anfänger: 3 Min sind ohne App erreichbar. Fortschritt: 3 Min → 5 Min → 10 Min über 4 Wochen. Morgendliche Praxis verankert die Cortisol-Aufwachreaktion; abendliche Praxis reguliert präschlafende sympathische Erregung herunter."
+        ],
+        "points": [
+          { "icon": "💨", "label": "3 Min minimale wirksame Dosis", "note": "Zaccaro 2018: langsames Atmen hebt HRV um ~40% in einer einzigen Sitzung" },
+          { "icon": "🧘", "label": "8 Wochen MBSR schrumpft die Amygdala", "note": "Hölzel (Harvard 2011): strukturelle Graumattemreduktion in angstverarbeitenden Regionen" },
+          { "icon": "🫀", "label": "6 Atemzüge/Min = kardiovaskuläre Resonanz", "note": "0,1 Hz bringt Barorezeptorreflex in Resonanz — maximale parasympathische Aktivierung" },
+          { "icon": "🔄", "label": "Unterbricht DMN-Grübel-Schleife", "note": "Schon 3 Min fokussiertes Atmen deaktiviert das Default-Mode-Netzwerk" }
+        ]
+      },
+      {
+        "modalTitle": "Tagebuch 1–5 Zeilen · +20 Pkt",
+        "keyFact": "James Pennebakers (UT Austin) wegweisende Forschung: Schreiben über stressige Ereignisse für 15–20 Min über 4 Tage → 43% weniger Arztbesuche, verbesserte Immunmarker (T-Lymphozyten- und NK-Zell-Zahlen) und weniger Grübeln 6 Monate später. Der Mechanismus: sprachliche Verarbeitung emotionaler Erfahrungen verschiebt sie von der Amygdala (Bedrohungsreaktion) zum Hippocampus (Narrativgedächtnis) — reduziert ihre emotionale Ladung.",
+        "detail": "Tagebuchführung ist kein Diariumsschreiben — es ist bewusste emotionale Verarbeitung durch Sprache. Der Schlüssel ist nicht Länge oder Qualität; es ist der Akt, gefühlte Erfahrung in Worte zu übersetzen. Sogar 1 Satz über das, was Sie heute gestresst hat, initiiert den Narrativ-Verarbeitungsweg.",
+        "details": [
+          "Pennebakers Expressive-Writing-Protokoll: Teilnehmer schrieben 15–20 Min über 4 aufeinanderfolgende Tage über ihre 'tiefsten Gedanken und Gefühle' zu traumatischen/stressigen Ereignissen. Ergebnisse: 43% Reduktion der Gesundheitszentrumbesuche, verbesserte T-Helfer-Zell-Verhältnisse, niedrigere Cortisolwerte im Speichel.",
+          "Mechanismus — die Narrativverschiebung: der linke dorsomediale präfrontale Kortex (Sprache/Narrativverarbeitung) und die rechte Amygdala (Bedrohungsreaktion) stehen in einer Hemmbeziehung. Wenn Sie eine emotionale Erfahrung in Worte fassen, aktiviert sich der Narrativkortex und die Amygdala beruhigt sich.",
+          "Dankbarkeits-Tagebuch — spezifischer Mechanismus: Emmons & McCullough (2003): Dankbarkeits-Tagebuch 3×/Woche → 35% höhere Lebenszufriedenheitswerte, 25% mehr Bewegung, bessere Schlafqualität. Neural: Dankbarkeit aktiviert den medialen präfrontalen Kortex und Nucleus accumbens. Wichtig: Spezifität ist wichtiger als Menge.",
+          "Brain-Dump bei Überwältigung: wenn das Arbeitsgedächtnis überlastet ist, führt das Aufschreiben ein 'RAM-Clearing' durch — das Auslagern der Punkte befreit kognitive Ressourcen. Dies reduziert die wahrgenommene kognitive Belastung, was direkt die Bedrohungseinschätzung der Amygdala reduziert.",
+          "Konsistenz vs. Tiefe: Klein & Boals (2001) zeigten, dass sogar kurzes (7 Min) strukturiertes Schreiben über stressige Ereignisse Arbeitsgedächtnis-Intrusionen reduzierte und Abschlussexamensnoten verbesserte. Die Gewohnheit des täglichen Auslagerns, wie kurz auch immer, ist schützender als gelegentliche Tiefsitzungen."
+        ],
+        "points": [
+          { "icon": "✍️", "label": "Pennebaker: −43% Arztbesuche", "note": "4 Tage × 15 Min expressives Schreiben → messbare Immun- und Cortisol-Verbesserungen" },
+          { "icon": "🧠", "label": "Sprache beruhigt die Amygdala", "note": "Lieberman: ein Gefühl benennen reduziert das Amygdala-fMRI-Signal in Sekunden" },
+          { "icon": "🙏", "label": "Spezifische Dankbarkeit > generische Dankbarkeit", "note": "Emmons 2003: präzise Punkte → größere Lebenszufriedenheitssteigerung" },
+          { "icon": "📤", "label": "Brain-Dump leert Arbeitsgedächtnis-RAM", "note": "Auslagern von Sorgengedanken reduziert wahrgenommene kognitive Belastung" }
+        ]
+      },
+      {
+        "modalTitle": "Digitale Entgiftung ≥ 10 Min · +15 Pkt",
+        "keyFact": "Smartphone-Nutzung aktiviert denselben Dopamin-Belohnungsweg wie Glücksspiel — variabler Verstärkungsplan (man weiß nie, wann eine Benachrichtigung wertvoll ist). Durchschnittsperson überprüft das Telefon 96×/Tag. Bildschirmfreie Zeit wird jetzt als 'Offline-Erholung' kategorisiert — dasselbe Konzept wie physische Erholung nach dem Sport.",
+        "detail": "Digitale Entgiftung richtet sich nicht gegen Technologie — es geht um absichtliche Offline-Erholung, die jetzt ein klinisches Konzept ist. Das Gehirn benötigt Perioden ohne digitale Eingabe, um Informationen zu konsolidieren, die Dopamin-Empfindlichkeit zurückzusetzen und dem DMN zu ermöglichen, konstruktive Selbstreflexion zu durchlaufen.",
+        "details": [
+          "Die Dopamin-Falle — variabler Verstärkungsplan: B.F. Skinners Ratten drückten den Hebel am häufigsten, wenn Belohnungen unvorhersehbar waren (variabler Verstärkungsplan). Genau so funktionieren Social-Media-Benachrichtigungen: Sie überprüfen, weil es etwas Belohnenswertes geben könnte. Dies erzeugt eine zwanghafte Überprüfungsschleife.",
+          "Aufmerksamkeitsrückstand: Sophie Leroy (2009) prägte 'Aufmerksamkeitsrückstand' — nach dem Wechseln von Aufgabe A zur Überprüfung einer Benachrichtigung bleibt ein Teil Ihrer Aufmerksamkeit bei der Benachrichtigung. EEG-Studien zeigen, dass dieser Rückstand durchschnittlich 23 Minuten nach einer Benachrichtigungsunterbrechung anhält.",
+          "Vorschlaf-Bildschirmeffekte: Blaues Licht (460–480 nm) von Bildschirmen unterdrückt die Melatoninproduktion über ipRGC-Stimulation. Chang et al. (2014, PNAS): iPad vor dem Schlafengehen lesen → 55% weniger Melatonin, 10 Min länger zum Einschlafen, 90 Min weniger REM-Schlaf.",
+          "Natur als Gegenmittel: Attention Restoration Theory (Kaplan, 1995): natürliche Umgebungen bieten 'sanfte Faszination', die die Aufmerksamkeit mühelos erfasst, ohne kognitiven Aufwand — sodass gerichtete Aufmerksamkeit sich erholen kann. Berman et al. (2008): ein 50-minütiger Spaziergang im Park verbesserte das Arbeitsgedächtnis um 20% gegenüber einem Stadtspaziergang.",
+          "Praktischer gestufter Ansatz: Stufe 1 (leicht): handyfreie Mahlzeiten — 10 Min pro Mahlzeit = 30 Min/Tag Entgiftung. Stufe 2 (standard): handyfrei in den ersten 30 Minuten des Tages und 30 Minuten vor dem Schlafen. Stufe 3 (fortgeschritten): handyfreie Arbeitsblöcke + ein voller Tag/Woche digitaler Sabbat."
+        ],
+        "points": [
+          { "icon": "📱", "label": "96 Telefonüberprüfungen/Tag im Durchschnitt", "note": "Variabler Dopamin-Verstärkungsplan — jede 'leere' Überprüfung erhöht die Dringlichkeit für die nächste" },
+          { "icon": "🧩", "label": "Aufmerksamkeitsrückstand dauert 23 Minuten", "note": "Leroy 2009: eine einzige Benachrichtigungsunterbrechung kostet fast eine halbe Stunde fokussierter Aufmerksamkeit" },
+          { "icon": "🌙", "label": "Bildschirm = 55% weniger Melatonin", "note": "Chang 2014 (PNAS): iPad vor dem Schlaf → 90 Min weniger REM trotz gleicher Gesamtschlafdauer" },
+          { "icon": "🌿", "label": "10 Min Natur = +20% Arbeitsgedächtnis", "note": "Berman 2008: Parkspaziergang vs. Stadtspaziergang — Natur stellt gerichtete Aufmerksamkeitskapazität wieder her" }
+        ]
+      },
+      {
+        "modalTitle": "Stress heute anerkennen · +10 Pkt",
+        "keyFact": "Stressanerkennung — einfach einen Stressor benennen und akzeptieren, anstatt zu unterdrücken oder zu grübeln — aktiviert den ventrolateralen präfrontalen Kortex (vlPFC), der direkt die Amygdala hemmt. James Gross' (Stanford) Prozessmodell der Emotionsregulation: kognitive Neubewertung ist die effektivste langfristige Regulationsstrategie, erfordert aber zunächst die Anerkennung, dass der Stressor existiert.",
+        "detail": "Der 10-Punkte-Wert spiegelt wider, dass Anerkennung eine Voraussetzungskompetenz ist — sie ermöglicht alle anderen Regulationsstrategien. Viele Menschen überspringen die Anerkennung völlig und gehen direkt zur Problemlösung oder Ablenkung über. Eine 60-sekündige Anerkennungspraxis aktiviert denselben Regulationsweg wie formale Therapie.",
+        "details": [
+          "Der Unterdrückungskosten: Richard Lazarus und James Gross stellten fest, dass emotionale Unterdrückung — Gefühle wegschieben ohne Verarbeitung — anhaltende präfrontale Anstrengung erfordert und kognitive Ressourcen erschöpft. Menschen, die gewohnheitsmäßig Emotionen unterdrücken, zeigen höheres Basis-Cortisol, schnellere autonome Erregung bei neuen Stressoren und schlechtere Beziehungsqualität.",
+          "Kognitiver Neubewertungsmechanismus: Neubewertung bedeutet, die Bedeutung der Situation zu ändern, nicht die Situation selbst. Beispiel: 'Ich bin nervös wegen dieser Präsentation' → neu bewertet als 'Mein Körper bereitet mich vor — Erregung wird meine Leistung verbessern.' Jamieson et al. (2012): Angst als Aufregung umzudeuten verbesserte die Mathe-Leistung unter Stress.",
+          "Akzeptanz und Verpflichtung: ACT (Acceptance and Commitment Therapy) rahmt Stressanerkennung als 'Defusion' — Gedanken und Gefühle als Ereignisse im Bewusstsein sehen, nicht als Fakten. 'Ich bemerke, dass ich den Gedanken habe, dass das überwältigend ist' vs. 'Das ist überwältigend.' Diese sprachliche Distanzierung reduziert emotionale Reaktivität ohne Unterdrückung.",
+          "Die Stress-Mentalität: Alia Crum (Stanford) zeigte, dass Menschen, die Stress als fördernd betrachteten, kognitiv besser abschnitten, gesündere Cortisol-Profile hatten (Spitze dann schnelle Erholung) und mehr Vitalität berichteten. Die 'Stress ist fördernd'-Mentalität ist selbst eine Form der Neubewertung.",
+          "Einminütige Anerkennungspraxis: sitzen Sie 60 Sekunden ruhig. Geben Sie den Stressor explizit an (laut oder schriftlich): 'Ich bin gestresst wegen [X].' Folgen Sie mit: 'Das ist eine normale Reaktion — mein Nervensystem versucht, mich zu schützen.' Dann nehmen Sie 3 langsame Atemzüge. Diese Sequenz — benennen → normalisieren → atmen — engagiert alle drei Regulationswege in unter 90 Sekunden."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "Benennen beruhigt (vlPFC)", "note": "Gross (Stanford): Anerkennung aktiviert hemmende präfrontale Wege, bevor Regulation möglich ist" },
+          { "icon": "🚫", "label": "Unterdrückung kostet kognitive Ressourcen", "note": "Lazarus: gewohnheitsmäßige Unterdrücker zeigen höheres Basis-Cortisol und schnellere Stressreaktivität" },
+          { "icon": "🔄", "label": "Neubewertung erfordert zuerst Anerkennung", "note": "Jamieson 2012: 'Angst als Aufregung' verbesserte Prüfungsleistung — aber erst nach Benennung des Gefühls" },
+          { "icon": "💪", "label": "Stress-Mentalität wichtig: Crum (Stanford)", "note": "'Stress als fördernd'-Überzeugung → gesünderes Cortisol-Profil und bessere kognitive Leistung" }
+        ]
+      },
+      {
+        "modalTitle": "Abendroutine · +15 Pkt",
+        "keyFact": "Eine Abend-Wind-Down-Routine ist eine der evidenzbasiertesten Schlafhygiene-Interventionen. Matthew Walker (Why We Sleep): Das Gehirn kann nicht abrupt von hoher Erregung zu Schlaf wechseln — es braucht eine schrittweise Verlangsamung. 90-minütiges Wind-Down produziert den tiefsten N3-Tiefschlaf. Die Routine funktioniert, indem sie Melatonin-kompatible Verhaltensweisen (gedämpftes Licht, niedrige Stimulation, kühlere Temperatur) 90 Minuten vor der Zielschlafzeit einleitet.",
+        "detail": "Der Wert einer Abendroutine liegt in ihrer Signalfunktion — dem Nervensystem zu sagen, dass die Bedrohungsüberwachung sicher abnehmen kann. Cortisol muss unter einen Schwellenwert fallen, damit der Schlaf beginnt. Eine vorhersehbare, wiederholte Sequenz (die Routine selbst) wird ein konditionierter Stimulus für Schläfrigkeit.",
+        "details": [
+          "Melatonin-Timing und Licht: Melatonin wird durch Licht >10 Lux (helles Zimmer) unterdrückt. Gedämpfte Beleuchtung (<10 Lux) für 60–90 Min vor dem Schlafengehen ermöglicht den planmäßigen Melatonin-Anstieg. Rotes/orangefarbenes Licht (>590 nm) statt blauem/weißem (460 nm) reduziert die Unterdrückung weiter.",
+          "Temperaturprotokoll: die Kernkörpertemperatur muss um ~1°C sinken, damit der Schlaf beginnt. Ein warmes Bad oder eine Dusche 1–2 Stunden vor dem Schlafen löst paradoxerweise eine Abkühlungsreaktion aus. Walker: 'Das warme Bad vor dem Schlaf ist wahrscheinlich die am meisten unterschätzte Schlafintervention.' Zimmertemperatur: 16–19°C ist der evidenzbasierte Bereich.",
+          "Kognitives Wind-Down — das Sorgentagebuch: Borkovecs Sorgen-Verschiebungstechnik: reservieren Sie 15 Min am frühen Abend als 'designierte Sorgenzeit' — schreiben Sie alle aktuellen Sorgen + einen nächsten Handlungsschritt für jede auf. Wenn Sorgengedanken zur Schlafenszeit auftauchen, erinnern Sie sich, dass sie bereits geplant sind.",
+          "Alkohol und Schlaf: Alkohol beschleunigt den Schlafbeginn (Sedierung), fragmentiert aber den Schlaf in der zweiten Nachthälfte, indem er REM blockiert und Rebounderregung verursacht. Ein einziges Getränk reduziert den REM-Schlaf um 20%. Regelmäßiger Abendalkohol hält ein chronisches REM-Schlaf-Defizit aufrecht.",
+          "Atmung und Körper vor dem Schlaf: Yoga Nidra (Non-Sleep Deep Rest, NSDR) — eine geführte Body-Scan-Praxis von 10–30 Min — produziert Gehirnzustände vergleichbar mit N1–N2-Schlaf bei teilweiser Bewusstheit. Sogar eine 5-minütige progressive Muskelentspannung reduziert die Einschlaflatenz durchschnittlich um 12 Minuten."
+        ],
+        "points": [
+          { "icon": "🌙", "label": "90-Minuten-Verlangsamungsfenster", "note": "Walker: abrupter Übergang von hoher Erregung zu Schlaf ist unmöglich — das Gehirn braucht schrittweises Wind-Down" },
+          { "icon": "🌡️", "label": "Warmes Bad → Rebounder-Kühlung", "note": "Kernkörpertemperatur muss um 1°C sinken — Bad 1–2 Stunden vorher löst dies aus" },
+          { "icon": "📝", "label": "Sorgentagebuch reduziert Schlaf-Grübeln", "note": "Scullin 2018: morgige Aufgabenliste halbiert Schlafzeitintrusionsgedanken" },
+          { "icon": "🍷", "label": "1 Getränk = −20% REM-Schlaf", "note": "Alkohol blockiert REM in der zweiten Nachthälfte — REM-Defizit beeinträchtigt emotionale Verarbeitung" }
+        ]
+      },
+      {
+        "modalTitle": "Sanfte Disziplin: Keine Selbstvorwürfe · +15 Pkt",
+        "keyFact": "Selbstmitgefühl — sich selbst mit derselben Freundlichkeit zu begegnen, die man einem guten Freund nach einem Misserfolg entgegenbringen würde — ist positiv mit Motivation, Resilienz und langfristiger Gewohnheitseinhaltung korreliert. Kristin Neff (UT Austin): Selbstmitgefühl-Skalenwerte sagen bessere akademische Leistung, weniger Prokrastination und größere Bereitschaft, nach dem Scheitern erneut zu versuchen, vorher.",
+        "detail": "Sanfte Disziplin ist die Verhaltensumsetzung des Selbstmitgefühls. Nach dem Verpassen einer Praxis lautet die Frage nicht 'Warum kann ich das nicht?' (Selbstkritik, Bedrohungsaktivierung), sondern 'Was hat das erschwert, und was kann ich anpassen?' (Problemlösung, Annäherungsaktivierung).",
+        "details": [
+          "Selbstkritik als Bedrohungsreaktion: das Gehirn verarbeitet selbstkritische Gedanken mit denselben neuronalen Schaltkreisen wie externe Bedrohungen — hauptsächlich die Amygdala und hypothalamische Bedrohungsabwehrsysteme. Paul Gilberts Compassionate Mind Training: Selbstkritik aktiviert das Bedrohungssystem (Kampf/Flucht), das für Lernen und Gewohnheitsänderung kontraproduktiv ist.",
+          "Selbstmitgefühl-Komponenten (Neffs Triade): (1) Achtsamkeit — schmerzhafte Erfahrungen anerkennen, ohne sich damit zu überidentifizieren; (2) Gemeinsame Menschlichkeit — erkennen, dass Kampf eine universelle menschliche Erfahrung ist, kein persönliches Versagen; (3) Selbstfreundlichkeit — mit Wärme statt Urteil reagieren.",
+          "Die 1%-Comeback-Regel: basiert auf dem Konzept der Aggregation marginaler Gewinne (Dave Brailsford, British Cycling). Nach einem verpassten Tag ist das Ziel nicht, morgen mit doppeltem Aufwand zu kompensieren — das führt zu Boom-Bust-Zyklen. Stattdessen: die 1%-Anpassung identifizieren, die die morgige Praxis etwas einfacher macht.",
+          "Identitätsbasierte Gewohnheiten: James Clears Atomic Habits-Rahmen — jede Handlung ist eine Stimme für die Art von Person, die man sein möchte. Selbstkritik nach einer verpassten Praxis ('Ich habe wieder versagt') ist eine Identitätsstimme für 'Person, die versagt.' Umrahmen ('Normalerweise mache ich das — heute war eine Ausnahme') bewahrt die Identitätsstimme.",
+          "Erholung, nicht Perfektion: B.J. Foggs Tiny Habits-Forschung: der stärkste Einzelprädiktor für langfristige Gewohnheitspflege ist die Fähigkeit, sich schnell nach Störungen zu erholen — nicht die Fähigkeit, eine perfekte Serie aufrechtzuerhalten. Menschen, die perfekte Serien aufrechterhalten, berichten mehr Stress um die Gewohnheit und geben sie nach einem Bruch eher vollständig auf."
+        ],
+        "points": [
+          { "icon": "💛", "label": "Selbstmitgefühl = höhere Motivation", "note": "Neff: Selbstmitgefühl sagt größere Bereitschaft zum erneuten Versuch vorher — keine niedrigeren Standards" },
+          { "icon": "🧠", "label": "Selbstkritik = Bedrohungsaktivierung", "note": "Gilbert: das Gehirn kann Selbstangriff nicht von externer Bedrohung unterscheiden — Scham verursacht Rückzug" },
+          { "icon": "📈", "label": "1%-Anpassung, nicht doppelter Aufwand", "note": "Kompensation nach verpassten Tagen verursacht Boom-Bust-Zyklen → Aufgabe. Kleine Anpassung gewinnt." },
+          { "icon": "🔄", "label": "Schnelle Erholung > perfekte Serie", "note": "Fogg (Tiny Habits): resiliente Erholung nach Störung ist der Nr.-1-Prädiktor für langfristige Einhaltung" }
+        ]
+      }
+    ]
   },
   "pillarE": {
     "id": "e",
@@ -3966,6 +4373,350 @@
       {"label": "4-Wochen-Test"},
       {"label": "Bibliothek"}
     ],
-    "videos": []
+    "videos": [],
+    "hero_stats": [
+      { "l": "Module" },
+      { "l": "Wochen" },
+      { "l": "Punkte/Tag" },
+      { "l": "Min/Tag" }
+    ],
+    "daily_min": [
+      {
+        "label": "Mindestens 10 Minuten bewegen",
+        "tip": "Alles zählt: Gehen, Treppensteigen, Radfahren",
+        "keyFact": "Eine JAMA-Studie 2019 mit 120.000 Teilnehmern zeigte, dass 10 Minuten Bewegung pro Tag das Risiko eines vorzeitigen Todes um 15 % senkt. Kein Fitnessstudio, keine besondere Ausrüstung — einfach bewegen.",
+        "details": [
+          "10 aufeinanderfolgende Minuten Bewegung reichen aus, um das Herz-Kreislauf-System zu aktivieren und Endorphine freizusetzen. Alles zählt: zügiges Gehen, Treppensteigen, Radfahren, Schwimmen, Seilspringen, mit Kindern spielen.",
+          "Akkumulation funktioniert: 3 × 10 Minuten = 30 Minuten, gleichwertig im kardiovaskulären Nutzen wie 1 × 30 aufeinanderfolgende Minuten laut ACSM (American College of Sports Medicine).",
+          "Der beste Zeitpunkt ist derjenige, zu dem Sie es wirklich tun. Morgens gibt es einen positiven Ton; abends baut es Stress ab. Es gibt keinen 'perfekten' Zeitpunkt.",
+          "'2-Minuten-Regel': Wenn Sie nicht trainieren wollen, verpflichten Sie sich zu nur 2 Minuten. Einmal begonnen, setzen 90 % der Menschen dank der Handlungsenergie über 10 Minuten hinaus fort.",
+          "Habit-Stacking — an vorhandene Verhaltensweise koppeln: nach dem Frühstück, vor dem Duschen, beim Warten auf Kinder. Keine extra Zeit nötig — einfach Bewegung in den bestehenden Tagesplan integrieren.",
+          "Langzielziel ist 150 Min/Woche (WHO) — aber 10 Min/Tag ist die nachgewiesene, nachhaltigste Startschwelle, um die Gewohnheit von Grund auf aufzubauen."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "10 Minuten reichen", "note": "Mit 10 Minuten beginnen — die evidenzbasierte Mindestdosis" },
+          { "icon": "🎯", "label": "Jede Aktivität zählt", "note": "Gehen, Treppen, Radfahren — kein Fitnessstudio nötig" },
+          { "icon": "🧠", "label": "Stimmungsverbesserung", "note": "Endorphine steigen in den ersten 5 Minuten, halten mehrere Stunden an" },
+          { "icon": "📈", "label": "Akkumulation funktioniert", "note": "3 × 10 Min = gleichwertiger kardiovaskulärer Nutzen wie 30 aufeinanderfolgende Minuten" }
+        ]
+      },
+      {
+        "label": "Mindestens 1 Proteinquelle pro Hauptmahlzeit essen",
+        "tip": "Fleisch/Fisch/Eier/Tofu — 1 Quelle pro Mahlzeit reicht",
+        "keyFact": "Protein ist das einzige Makronährstoff, das im Körper nicht gespeichert werden kann — es muss gleichmäßig über die Mahlzeiten hinweg aufgenommen werden. 20–30 g Protein pro Mahlzeit ist der optimale Schwellenwert für Muskelproteinsynthese, Sättigung und stabile Blutzuckerkontrolle.",
+        "details": [
+          "Jede Hauptmahlzeit sollte 1 klare Proteinquelle haben: Hähnchenbrust (~25 g/100 g), Fisch (~20 g/100 g), Ei (~6 g/Stück), Rindfleisch (~25 g/100 g), fester Tofu (~8 g/100 g), gekochte Linsen (~9 g/100 g).",
+          "Protein hält länger satt als Kohlenhydrate und Fett durch den höchsten thermischen Effekt (der Körper verbrennt 20–30 % der Proteinkalorien allein zur Verdauung) — unterstützt die natürliche Gewichtskontrolle.",
+          "Pflanzliches und tierisches Protein sind beide wertvoll. Die Kombination von 2 pflanzlichen Quellen (Reis + Hülsenfrüchte) liefert ein vollständiges Aminosäureprofil gleichwertig zu Fleisch — kein Fleisch bei jeder Mahlzeit nötig.",
+          "Gleichmäßige Verteilung über 3 Mahlzeiten ist besser als die Abendmahlzeit zu belasten — der Körper absorbiert und nutzt Protein effektiver für die Muskelproteinsynthese und Erholung.",
+          "Anzeichen von Proteinmangel: anhaltende Müdigkeit, schwaches Haar und schwache Nägel, langsame Wundheilung, Zucker-Heißhunger nach dem Essen (der Körper sucht schnelle Energie).",
+          "Einfache Regel: auf den Teller schauen — keine klare Proteinquelle sichtbar? Ein Ei oder einen Becher griechischen Joghurt hinzufügen. Einfachste Umsetzung, sofortige Wirkung."
+        ],
+        "points": [
+          { "icon": "🥚", "label": "20–30 g / Mahlzeit", "note": "Optimaler Schwellenwert für Muskelsynthese und anhaltende Sättigung" },
+          { "icon": "🐟", "label": "Quellen variieren", "note": "Fleisch/Fisch/Eier/Hülsenfrüchte — wechseln für vollständige Aminosäuren" },
+          { "icon": "⏰", "label": "Auf 3 Mahlzeiten verteilen", "note": "Nicht auf abends konzentrieren — bessere Absorption und Nutzung" },
+          { "icon": "💪", "label": "Muskelmasse erhalten", "note": "Wichtig ab 30 — Muskelabbau ~1 %/Jahr ohne Reiz" }
+        ]
+      },
+      {
+        "label": "Mindestens 2 Portionen Gemüse/Obst essen",
+        "tip": "1 Faust = 1 Portion. Je mehr Farben, desto besser",
+        "keyFact": "Die WHO empfiehlt ≥5 Portionen (400 g) Obst und Gemüse pro Tag. 2 Portionen ist ein realistischer Startschwellenwert — jede weitere Portion senkt das Herz-Kreislauf-Risiko um 4 % und das Krebsrisiko um 3 % (Analyse von 95 Studien, 2019).",
+        "details": [
+          "1 Portion = 1 Faust (~80 g): 1 Banane, 1 Faust Blattgemüse, 3 Esslöffel gekochtes Gemüse, 1 kleiner Salatnapf oder 1 Glas reiner, ungesüßter Saft.",
+          "Farben = verschiedene Mikronährstoffe: Rot (Lycopin — Herz), Orange/Gelb (Beta-Carotin — Augen), Grün (Chlorophyll — Leber), Lila (Anthocyane — Gehirn), Weiß (Allicin — Immunsystem).",
+          "Rohes und gekochtes Gemüse haben unterschiedliche Vorteile. Beides im Tagesverlauf zu kombinieren ist ideal — keine Kompliziertheit, nur Abwechslung.",
+          "Ballaststoffe aus Obst und Gemüse ernähren nützliche Darmbakterien (Präbiotika), senken LDL, verlangsamen die Zuckeraufnahme und erzeugen anhaltende Sättigung. Kein Nahrungsergänzungsmittel kann echtes Gemüse ersetzen.",
+          "Einfachster Tipp: 1 Faust Gemüse zu jeder Mahlzeit hinzufügen; Obst als Snack statt Süßigkeiten; morgens ein Gemüse-/Frucht-Smoothie (5 Minuten, keine komplexe Zubereitung).",
+          "Tiefkühlgemüse ist ernährungsphysiologisch gleichwertig mit frischem — oft direkt nach der Ernte eingefroren, wenn die Nährstoffe am höchsten sind. Praktischer und weniger verschwenderisch als Frisches."
+        ],
+        "points": [
+          { "icon": "🥦", "label": "1 Faust = 1 Portion", "note": "~80 g — keine Waage nötig, mit der eigenen Faust abschätzen" },
+          { "icon": "🌈", "label": "Mehrere Farben essen", "note": "Jede Farbe = ein anderes gesundheitsschützendes Phytochemikalie" },
+          { "icon": "🦠", "label": "Darm ernähren", "note": "Ballaststoffe ernähren nützliche Bakterien — kein Supplement kann das ersetzen" },
+          { "icon": "❄️", "label": "Tiefkühl ist in Ordnung", "note": "Ernährungsphysiologisch gleichwertig mit frisch — praktisch und weniger verschwenderisch" }
+        ]
+      },
+      {
+        "label": "Ausreichend Wasser trinken",
+        "tip": "Körpergewicht × 35 ml = Ihr Tagesziel",
+        "keyFact": "Schon eine Dehydrierung von 1–2 % des Körpergewichts reduziert die kognitive Leistung um 10–15 % und die körperliche Leistung um 20–30 %. Durst ist ein Zeichen leichter Dehydrierung — nicht erst warten, bis man Durst hat.",
+        "details": [
+          "Persönliche Formel: Körpergewicht (kg) × 35 ml = Basistagesmenge. 60 kg → 2.100 ml; 70 kg → 2.450 ml; 80 kg → 2.800 ml. +500 ml pro Stunde intensiver Bewegung oder bei Hitze.",
+          "Leitungswasser ist am besten. Ungesüßter grüner Tee, moderater Kaffee und Suppen zählen ebenfalls. Softdrinks und gesüßte Säfte zählen NICHT — sie enthalten leere Kalorien und hydratisieren nicht effizient.",
+          "Gleichmäßig über den Tag verteilen: 1 Glas beim Aufwachen, 1 Glas vor jeder Mahlzeit, 1 Glas alle 2 Stunden bei der Arbeit, 1 kleines Glas vor dem Schlaf (nicht zu viel, um nächtliches Aufwachen zu vermeiden).",
+          "Urinfarbe ist das beste Maß: blassgelb wie Stroh = ausreichend. Dunkelgelb oder Orange = sofort mehr trinken. Klar = möglicherweise zu viel trinken.",
+          "Zu viel trinken (>4 L/Tag bei wenig aktiven Personen) kann Hyponatriämie verursachen — selten, aber gefährlich. Das Ziel ist AUSREICHEND zu trinken, nicht so viel wie möglich.",
+          "Bedarf steigt bei: Fieber (+500 ml), hoher Salz-/Proteinaufnahme, stundenlangem Aufenthalt in klimatisierten Räumen (trockene Luft entzieht Feuchtigkeit durch Haut und Atem), Schwangerschaft (+300 ml)."
+        ],
+        "points": [
+          { "icon": "📐", "label": "Persönliche Formel", "note": "Körpergewicht (kg) × 35 ml = Ihr persönliches Tagesziel" },
+          { "icon": "🌡️", "label": "Urinfarbe beobachten", "note": "Blassgelb = ausreichend. Dunkelgelb = sofort mehr trinken" },
+          { "icon": "⏰", "label": "Über den Tag verteilen", "note": "Alles auf einmal trinken ist weniger effektiv — Nieren verarbeiten ~1 L/Stunde" },
+          { "icon": "🚫", "label": "Nicht auf Durst warten", "note": "Durst = bereits leicht dehydriert — vor dem Durst trinken" }
+        ]
+      },
+      {
+        "label": "Früher schlafen als gestern / vorbereiten",
+        "tip": "Bildschirme 30 Minuten vor dem Schlafen ausschalten",
+        "keyFact": "30 Minuten mehr Schlaf pro Nacht (von 6,5 h → 7 h) senkt das Herzerkrankungsrisiko um 24 % und das Diabetesrisiko um 14 %, laut einer Studie mit 500.000 UK-Biobank-Teilnehmern. Keine Perfektion nötig — einfach schrittweise verbessern.",
+        "details": [
+          "Das Ziel ist nicht 'sofort 1 Stunde früher schlafen' — sondern 15–30 Minuten früher als gestern. Abrupte Veränderungen stören den zirkadianen Rhythmus. Schrittweise Anpassung ist nachhaltiger.",
+          "'Kein Handy 30 Minuten vor dem Schlafen' ist die einfachste Regel mit der größten Wirkung. Blaues Licht von Bildschirmen unterdrückt Melatonin (das Schlafhormon) so stark wie Tageslicht.",
+          "Umgebung vorbereiten: große Lichter ausschalten → gedämpfte Beleuchtung 60 Minuten vor dem Schlafengehen; Raumtemperatur 18–20 °C; Raum so dunkel wie möglich. Die Temperatur ist der einflussreichste Umweltfaktor für die Schlafqualität.",
+          "Wind-Down-Routine 20–30 Minuten: warmes Bad (Körpertemperatur sinkt danach und löst Schläfrigkeit aus), Papierbuch lesen, sanfte Musik hören. Die gleiche Routine jeden Abend → das Gehirn verbindet sie mit Schlaf.",
+          "Feste Aufwachzeit ist wichtiger als feste Schlafenszeit: eine konstante Aufwachzeit auch am Wochenende reguliert die biologische Uhr weit effektiver als der Versuch, früher einzuschlafen.",
+          "Kein Einschlafen nach 20 Minuten: aufstehen, bei gedämpftem Licht ein Papierbuch lesen, bis man wirklich schläfrig ist, dann zurück ins Bett. Waches Liegen erzeugt die Assoziation 'Bett = Angst'."
+        ],
+        "points": [
+          { "icon": "📅", "label": "Schrittweise verbessern", "note": "15 Minuten früher pro Nacht — keine ganze Stunde auf einmal" },
+          { "icon": "📵", "label": "Kein Bildschirm 30 Min vorher", "note": "Blaues Licht unterdrückt Melatonin so stark wie Sonnenlicht" },
+          { "icon": "🌡️", "label": "Kühles Zimmer 18–20 °C", "note": "Der einflussreichste Umweltfaktor für die Schlafqualität" },
+          { "icon": "⏰", "label": "Feste Aufwachzeit", "note": "Wichtiger als feste Schlafenszeit — auch am Wochenende" }
+        ]
+      },
+      {
+        "label": "3–5 Minuten atmen / verlangsamen",
+        "tip": "Box-Atmung 4-4-4-4 oder einfach still sitzen",
+        "keyFact": "Langsames, tiefes Atmen aktiviert das parasympathische Nervensystem innerhalb von 60–90 Sekunden — eine vollständige Umkehr der Stressreaktion. 5 Minuten bewusstes Atmen pro Tag senkt Cortisol nach 4 Wochen Konsistenz um 15–20 %.",
+        "details": [
+          "Box-Atmung (4-4-4-4): 4 Sekunden einatmen, 4 halten, 4 ausatmen, 4 halten. 4–6 Zyklen wiederholen = 1,5–2,5 Minuten. Wird von Navy SEALs eingesetzt, um unter extremem Druck ruhig zu bleiben.",
+          "4-7-8-Atmung (für den Schlaf): 4 Sekunden einatmen, 7 halten, 8 Sekunden langsam ausatmen. Längeres Ausatmen als Einatmen löst eine stärkere Entspannungsreaktion aus — am besten geeignet vor dem Schlaf.",
+          "Zwerchfellatmung: eine Hand auf den Bauch, eine auf die Brust. Einatmen, so dass sich der Bauch hebt und die Brust sich wenig bewegt. So atmen Neugeborene natürlich — viele Erwachsene haben es vergessen.",
+          "Konsistenz über Dauer: 5 Minuten/Tag jeden Tag ist effektiver als 30 Minuten einmal pro Woche. Das Gehirn lernt, das Entspannungssignal bei regelmäßiger Übung besser zu erkennen.",
+          "Effektivste Zeitpunkte: direkt nach dem Aufwachen vor dem Handy, vor den Mahlzeiten für bessere Verdauung, wenn Stress steigt, als Teil des Wind-Downs vor dem Schlaf.",
+          "Einfachste Version: aufrecht sitzen, Augen schließen, Aufmerksamkeit auf den Atem lenken. Wenn der Geist abschweift — sanft zum Atem zurücklenken. Dies ist die Grundlage aller Meditationspraktiken."
+        ],
+        "points": [
+          { "icon": "📦", "label": "Box-Atmung 4-4-4-4", "note": "Von Navy SEALs unter Druck eingesetzt — jeder kann das" },
+          { "icon": "🫁", "label": "Aus dem Bauch atmen", "note": "Bauch hebt sich beim Einatmen — natürliches Atemmuster, das viele vergessen haben" },
+          { "icon": "⏱️", "label": "5 Minuten pro Tag", "note": "Konsistenz wichtiger als Dauer — Ergebnisse akkumulieren nach 4 Wochen" },
+          { "icon": "🧘", "label": "Jederzeit", "note": "Vor dem Essen, nach dem Aufwachen, bei Stress — kein extra Zeitslot nötig" }
+        ]
+      }
+    ],
+    "weekly_items": [
+      { "label": "Krafttrainingseinheiten" },
+      { "label": "Cardio- / Langgeheinheiten" },
+      { "label": "Tage mit ausreichend Gemüse" },
+      { "label": "Tage mit gutem Schlaf" },
+      { "label": "Tage mit Calm-Praxis" },
+      { "label": "Tage mit Tagebuchführung" }
+    ],
+    "score_items": [
+      { "label": "Bewegung / Training" },
+      { "label": "Gehen / NEAT" },
+      { "label": "Grundernährung" },
+      { "label": "Wasseraufnahme" },
+      { "label": "Schlaf / Erholung" },
+      { "label": "Geist / Calm-Praxis" },
+      { "label": "Tagebuchführung" }
+    ],
+    "quick_wo": [
+      {
+        "dur": "5 Min",
+        "label": "Körper-Reset",
+        "keyFact": "5 Minuten täglich reichen aus, um die Bewegungsgewohnheit aufrechtzuerhalten — auch wenn keine Zeit für eine längere Einheit ist. Forschung zeigt: Konsistenz schlägt Intensität: 5 Min × 7 Tage ist effektiver als 35 Min × 1 Tag/Woche.",
+        "details": [
+          "Das Hauptziel der 5-Minuten-Einheit ist nicht Fettverbrennung oder Muskelaufbau — sondern die Aufrechterhaltung der Gewohnheitskette und die Verhinderung, dass der Körper nach Stunden des Sitzens oder einem faulen Ruhetag 'einfriert'.",
+          "Zwerchfellatmung: 4 Sekunden durch die Nase einatmen, Bauch hebt sich (nicht Brust), 6 Sekunden durch den Mund ausatmen. Aktiviert das parasympathische Nervensystem — senkt Cortisol und bereitet den Körper auf Bewegung vor.",
+          "Schulterrollen und Brust öffnen: wirkt der Rundrücken-Haltung durch langes Sitzen entgegen. Die Brustmuskulatur und vordere Schultermuskulatur verkürzen sich — Schultern nach hinten rollen dehnt sie und öffnet den Brustraum.",
+          "Cat-Cow: Kombination von Rückenbeugung (Cat) und Rückenstreckung (Cow) schafft Mobilität entlang der gesamten Wirbelsäule. Schmiert die Gelenke und reduziert Steifheit durch langes Sitzen — besonders effektiv nach dem Schlafen oder langer Schreibtischarbeit.",
+          "Leichte Hüftbeuge (Bodyweight Romanian Deadlift): dehnt Hamstrings und Gesäßmuskel — die zwei durch Sitzen am stärksten gehemmten Muskelgruppen. Aufrecht stehen, an der Hüfte nach vorne beugen (Rücken nicht runden), Hände zu den Knien, dann wieder aufstehen.",
+          "Child's Pose zum Abschluss: löst unteren Rücken und Hüften, erzeugt ein Ganzkörper-Entspannungsgefühl. Tiefes Atmen in dieser Position aktiviert den Entspannungsreflex — Körper und Geist bleiben für die nächste Aufgabe oder Erholung bereit."
+        ],
+        "points": [
+          { "icon": "🔗", "label": "Gewohnheitskette aufrechterhalten", "note": "Keinen Tag auslassen — auch nur 5 Minuten" },
+          { "icon": "🫁", "label": "Zuerst Zwerchfellatmung", "note": "Senkt Cortisol, aktiviert Parasympathikus" },
+          { "icon": "🪑", "label": "Sitzhaltung entgegenwirken", "note": "Brustöffnung + Hüftbeuge wirken Schreibtischhaltung entgegen" },
+          { "icon": "😌", "label": "Mit Child's Pose enden", "note": "Echte Entspannung — diesen Schritt nicht kürzen" }
+        ]
+      },
+      {
+        "dur": "10 Min",
+        "label": "Ganzkörper Anfänger",
+        "keyFact": "10 Minuten reichen aus, um alle wichtigen Muskelgruppen (Beine, Brust, Rücken, Core) zu aktivieren und eine positive Hormonantwort zu erzeugen. Dieses 2-Runden-Circuit ist für Anfänger konzipiert, die es vom ersten Tag an abschließen können — keine Ausrüstung, keine Erfahrung nötig.",
+        "details": [
+          "2-Minuten-Aufwärmen ist Pflicht — nie überspringen, auch bei einer kurzen Einheit nicht. Auf der Stelle marschieren erhöht Muskeltemperatur und Herzfrequenz, Schulterrollen öffnen Schulter- und Brustwirbelsäule, Stuhl-Kniebeugen aktivieren Oberschenkel und Gesäß vor stärkerer Belastung.",
+          "2-Runden-Circuit: jede Übung 30 Sekunden → sofort weitermachen ohne Pause. Kniebeuge → Knie-Liegestütz → Glute Bridge → Dead Bug.",
+          "Grundlegende Kniebeuge: schulterbreiter Stand, nach hinten unten setzen als würde man auf einen Stuhl hinter sich sitzen, Knie nicht zu stark über die Zehenspitzen hinaus, Rücken gerade. Aktiviert Quadrizeps, Gesäßmuskel und Core gleichzeitig.",
+          "Knie-Liegestütz: bei korrekter Ausführung nicht weniger effektiv als der reguläre Liegestütz. Körper gerade von Knien bis Schultern, Brust nahe zum Boden absenken, vollständig hochdrücken. Dies ist der Startpunkt — nach 4–6 Wochen zum regulären Liegestütz wechseln.",
+          "Glute Bridge: auf dem Rücken liegen, Knie 90° gebeugt, Hüften hochdrücken bis Oberschenkel und Rumpf eine gerade Linie bilden. 2 Sekunden oben halten für maximale Gesäßmuskelaktivierung. Sehr wichtig für Menschen, die viel sitzen (Gesäßmuskel wird gehemmt).",
+          "Dead Bug: die beste tiefe Core-Übung (Transversus abdominis) für Anfänger. Auf dem Rücken liegen, Beine und Arme auf 90° anheben, gegenüberliegenden Arm und gegenüberliegendes Bein langsam zum Boden absenken und zurückbringen. Unterer Rücken muss durchgehend auf dem Boden bleiben — wenn nicht möglich, Bewegungsumfang reduzieren."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "2 Min Aufwärmen ist Pflicht", "note": "Nie überspringen, auch bei kurzer Einheit — verhindert Verletzungen" },
+          { "icon": "🔄", "label": "2-Runden-Circuit", "note": "4 Übungen × 30s × 2 Runden = 6 effiziente Minuten" },
+          { "icon": "🦵", "label": "Knie-Liegestütz ist in Ordnung", "note": "Die Ausführungsqualität ist wichtiger als die Liegestützvariante" },
+          { "icon": "🌱", "label": "Grundlage für 4–6 Wochen", "note": "Dann zum regulären Liegestütz und mehr Runden wechseln" }
+        ]
+      },
+      {
+        "dur": "20 Min",
+        "label": "Ganzkörper Standard",
+        "keyFact": "20 Minuten × 3–4-mal/Woche ist der Mindestschwellenwert für signifikante mechanische und hormonelle Anpassung. Dieses 3-Runden-Circuit stimuliert alle 5 großen Muskelgruppen, erzeugt EPOC (Nachbrenneffekt) und stimuliert die Muskelproteinsynthese für 24–48 Stunden danach.",
+        "details": [
+          "4-Minuten-Aufwärmen: 1 Min auf der Stelle marschieren, 1 Min Gelenke kreisen, 1 Min leichte Kniebeugen, 1 Min Inchworm oder World's Greatest Stretch. Muskeltemperatur und Gelenksviskosität müssen vor der Haupteinheit optimal sein.",
+          "3-Runden-Circuit: jede Übung 40–45 Sekunden, 15 Sekunden Pause zwischen Übungen, 60 Sekunden Pause zwischen Runden. Kniebeuge (Beine) → Liegestütz (Brust + Trizeps + Schultern) → Band Row (Rücken + Bizeps) → Glute Bridge (Gesäß + Hamstrings) → Plank (Core).",
+          "Band Row (Widerstandsband): Band auf Brusthöhe befestigen, durch Beugen der Ellbogen zu sich ziehen, Rückenmuskel am Ende der Bewegung anspannen. Aktiviert Rhomboiden, mittlere Trapezmuskel und Latissimus — Muskelgruppen, die bei Menschen mit viel Sitzen typischerweise schwach sind.",
+          "Warum 3 Runden wichtiger sind als 2: Runde 3 erzeugt den höchsten Stoffwechselstress (Muskeln sind teilweise erschöpft) — das ist der Hauptreiz für die Muskelproteinsynthese. EPOC steigt nach Runde 3 signifikant.",
+          "4-Minuten-Cool-Down ist nicht verhandelbar: Herzfrequenz schrittweise senken (1 Min gehen), Quadrizeps-Dehnung 30s pro Seite, Hamstring-Dehnung 30s, Pigeon Pose (Hüfte) 30s pro Seite, Child's Pose 1 Min. Cool-Down überspringen erhöht das Risiko von Schwindel und Muskelkater am nächsten Tag.",
+          "Häufigkeit: 3–4-mal/Woche mit mindestens 1 Ruhetag zwischen Einheiten für dieselben Muskelgruppen. Muskeln brauchen 48 Stunden zur Erholung und zum Wiederaufbau. Täglich ohne Variation trainieren verursacht Übertraining und schlechtere Ergebnisse."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "EPOC nach dem Training", "note": "Fettverbrennung setzt sich 24–48h fort — 3 Runden erzeugen diesen Effekt" },
+          { "icon": "🔗", "label": "Band Row für den Rücken", "note": "Die am häufigsten vernachlässigte Muskelgruppe — die wichtigste" },
+          { "icon": "💤", "label": "48h Erholung", "note": "3–4-mal/Woche, abwechseln — nicht täglich" },
+          { "icon": "🧘", "label": "4-Min Cool-Down ist Pflicht", "note": "Nie kürzen — reduziert Muskelkater und Schwindelgefahr" }
+        ]
+      }
+    ],
+    "test_items": [
+      {
+        "label": "Körpergewicht", "unit": "kg", "how": "Morgens wiegen, nach der Toilette, vor dem Essen",
+        "keyFact": "Das Körpergewicht kann an einem einzelnen Tag um 1–3 kg schwanken — aufgrund von Wasser, Nahrung und Muskelglykogen, nicht Fett. Vergleiche sind nur unter identischen Bedingungen sinnvoll: morgens nach der Toilette, vor dem Essen, mit derselben Kleidung.",
+        "details": [
+          "Standardbedingungen: morgens nach der Toilette, vor dem Frühstück und dem ersten Getränk. Gleiche Uhrzeit, gleiche Kleidung bei jeder Messung. Falsche Bedingungen → 1–3 kg Abweichung, die die Realität nicht widerspiegelt.",
+          "Trend wichtiger als Einzelzahl: 7–14-Tage-Durchschnitt verfolgen statt Tages-zu-Tages-Vergleich. Tägliche Schwankungen von 1–3 kg sind normal (Wasser, Salz, Muskelglykogen, Menstruationszyklus).",
+          "Die Waage misst nicht alles: jemand der trainiert kann gleichzeitig 2–3 kg Muskeln aufbauen, während er Fett verliert — das Gewicht bleibt gleich, aber der Körper verändert sich deutlich. Mit Taillenumfang + Kleidungsgefühl kombinieren.",
+          "BMI hat Grenzen: er kann nicht zwischen Muskel und Fett unterscheiden. Jemand der intensiv trainiert kann einen 'übergewichtigen' BMI haben, aber einen vollständig gesunden Körper. Taillenumfang + Körperfettanteil sind bessere Indikatoren.",
+          "Setpoint-Theorie: der Körper hat einen durch Leptin und Ghrelin regulierten 'Gleichgewichtspunkt'. Schneller Gewichtsverlust aktiviert Schutzmechanismen (erhöhter Hunger, niedrigerer Stoffwechsel). Langsame, nachhaltige Veränderung ist effektiver.",
+          "Realistisches Ziel: 0,5–1 kg/Woche Verlust ist das Maximum für Fettabbau (nicht Muskel). Mehr ist üblicherweise Wasser und Muskel — wird sich nach normaler Ernährung wieder einstellen."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Immer gleiche Bedingungen", "note": "Morgens nach Toilette, vor dem Essen — der wichtigste Faktor" },
+          { "icon": "📈", "label": "7–14-Tage-Trend", "note": "Wochendurchschnitt wichtiger als Einzelzahl" },
+          { "icon": "💪", "label": "Mit Taillenumfang kombinieren", "note": "Waage misst keine veränderte Muskel-Fett-Ratio" },
+          { "icon": "🐢", "label": "0,5–1 kg/Woche ist Standard", "note": "Schneller = oft Wasser und Muskeln — wird sich wieder einstellen" }
+        ]
+      },
+      {
+        "label": "Taillenumfang", "unit": "cm", "how": "Auf Nabelhöhe nach leichtem Ausatmen messen",
+        "keyFact": "Der Taillenumfang ist ein besserer kardiovaskulärer Gesundheitsindikator als BMI oder Körpergewicht. WHO: Risiko steigt bei >80 cm (Frauen) / >94 cm (Männer), hohes Risiko bei >88 cm (Frauen) / >102 cm (Männer). Viszeralfett (Bauch) ist gefährlicher als subkutanes Fett.",
+        "details": [
+          "Viszerales Fett umgibt die inneren Organe im Bauch — völlig anders als subkutanes Fett. Es setzt entzündliche Zytokine und Adipokine frei, die Insulinresistenz, erhöhten Blutdruck und Lipidstoffwechselstörungen verursachen.",
+          "Korrekte Messung: aufrecht stehen, leicht ausatmen (nicht einziehen), Maßband auf Nabelhöhe an der schmalsten Stelle anlegen. Nicht den Atem anhalten, nicht einziehen — Ergebnis weicht sonst um 3–5 cm ab.",
+          "Taille-zu-Körpergröße-Verhältnis (WHtR): Taillenumfang ÷ Körpergröße < 0,5 ist sicher. Beispiel: 170 cm groß → Taille < 85 cm. Dieser Indikator ist besser als BMI für die Vorhersage von Herz-Kreislauf- und Diabetesrisiko.",
+          "Taillenumfang reduzieren erfordert keine Bauchübungen: Viszeralfett reagiert am besten auf Cardio (30 Min × 3–5-mal/Woche), Insulinkontrolle (Zucker und raffinierte Kohlenhydrate reduzieren) und ausreichend Schlaf. Sit-ups verbrennen kein Bauchfett direkt.",
+          "5–10 % Taillenumfang reduzieren (auch ohne viel Gewichtsverlust): senkt Typ-2-Diabetes-Risiko um 58 %, verbessert Blutdruck und senkt LDL-Cholesterin. Kleine Veränderung = großer Nutzen.",
+          "Alle 4 Wochen messen: der Taillenumfang verändert sich langsamer als das Gewicht, spiegelt aber echte Fettmasseveränderungen genauer wider. 1–2 cm Abnahme in 4 Wochen ist ein bedeutsamer Fortschritt."
+        ],
+        "points": [
+          { "icon": "⚠️", "label": "Gefahrenschwellen", "note": ">88 cm (Frauen) / >102 cm (Männer) — hohes Herz-Kreislauf-Risiko" },
+          { "icon": "🔥", "label": "Cardio reduziert Bauchfett", "note": "Besser als Sit-ups — Viszeralfett reagiert gut auf Cardio" },
+          { "icon": "📐", "label": "WHtR < 0,5", "note": "Taille ÷ Körpergröße — besser als BMI für Risikovorhersage" },
+          { "icon": "🍬", "label": "Zucker reduzieren = am effektivsten", "note": "Hoher Insulinspiegel fördert Viszeralfetteinlagerung" }
+        ]
+      },
+      {
+        "label": "Aufstehen & Hinsetzen (1 Minute)", "unit": "Wdh.", "how": "Vom Stuhl aufstehen und hinsetzen, ohne Hände zu benutzen",
+        "keyFact": "Der Aufsteh-Test ist ein validiertes Maß für funktionelle Unterkörperkraft und ein unabhängiger Langlebigkeitsprädiktor. Eine European Heart Journal-Studie (2012, 2.002 Personen, 51–80 Jahre): jeder verlorene Punkt vom Maximalwert 10 war mit einem 21 % höheren Gesamtsterberisiko verbunden.",
+        "details": [
+          "Technik: auf einem normalen Stuhl sitzen, Füße flach auf dem Boden. Vollständig aufstehen, dann vollständig hinsetzen. Keine Hände, Arme oder Oberschenkel zur Unterstützung. Jede vollständige Wiederholung (voll hoch + voll runter) in 1 Minute zählen.",
+          "Referenzwerte: >25 Wdh./Min = ausgezeichnet für alle Altersgruppen. 20–25 = gut. 15–20 = mäßig. <15 = verbesserungsbedürftig. Unter 30 Jahren: >30 Wdh. ist der Maßstab.",
+          "Warum das wichtig ist: die Bewegung erfordert gleichzeitig Quadrizepskraft, Hüftstreckerkraft, Balance und Koordination — ein umfassender Funktionsstärketest. Sagt Sturzrisiko bei älteren Erwachsenen genauer vorher als isolierte Krafttests.",
+          "EHS-Studie (de Backer 2012): 2.002 Teilnehmer im Alter von 51–80. Startpunktzahl basierend auf Schneidersitz-Auf- und Absteigen. Jede Hilfe (Hand, Knie) zieht 0,5 Punkt ab. Wertung <8/10 war mit einem 5–6× höheren Sterberisiko über die nächsten 6 Jahre verbunden.",
+          "Fortschrittsziel: 2–3 Wiederholungen/Woche steigern. Strategien: Wandkniebeugen (teilweise Kniebeugen gegen die Wand für Sicherheit), Stuhl-Kniebeugen, Goblet-Kniebeugen mit leichtem Gewicht. Auf einen niedrigeren Stuhl wechseln, wenn der aktuelle leicht geworden ist.",
+          "Anpassung in 4 Wochen: ein konsistenter Anfänger kann sich durch 3 × 10 Stuhl-Kniebeugen täglich in 4 Wochen von 10 auf über 20 Wiederholungen verbessern. Funktionelle Kraft verbessert sich schneller als ästhetische Muskeln — in 2–3 Wochen spürbar."
+        ],
+        "points": [
+          { "icon": "📊", "label": ">25 Wdh. = Ausgezeichnet", "note": "20–25 gut · 15–20 mäßig · <15 verbesserungsbedürftig" },
+          { "icon": "⚰️", "label": "Sagt Langlebigkeit vorher", "note": "EHS 2012: jeder verlorene Punkt = 21 % höheres Gesamtsterberisiko" },
+          { "icon": "⚖️", "label": "Testet Balance + Kraft", "note": "Quadrizeps, Gesäß, Hüftstrecker, Koordination — alles gleichzeitig" },
+          { "icon": "📈", "label": "+2–3 Wdh./Woche Ziel", "note": "Konsequente Praxis: 3 × 10 Stuhlkniebeugen/Tag → schnelle Verbesserung" }
+        ]
+      },
+      {
+        "label": "Liegestütz-Maximum", "unit": "Wdh.", "how": "So viele wie möglich mit korrekter Form, ohne Pause",
+        "keyFact": "Das Liegestütz-Maximum ist das einfachste validierte Maß für muskuläre Ausdauer im Oberkörper. Eine Studie in JAMA Network Open 2019 (1.562 männliche Feuerwehrleute): Diejenigen mit >40 Liegestützen hatten ein um 96 % niedrigeres Herz-Kreislauf-Ereignisrisiko als diejenigen mit <10.",
+        "details": [
+          "Korrekte Ausführung (Pflicht): Körper gerade von Kopf bis Ferse, Hände etwas breiter als Schulterbreite, Ellbogen 45° (nicht ausgestellt), Brust berührt fast den Boden, dann vollständig strecken. 1 Wiederholung mit schlechter Form zählt nicht — sie überschätzt die tatsächliche Kapazität.",
+          "Knie-Liegestütz für Anfänger: Körper gerade von Knien bis Schultern. Genauso gültig für den Kraftaufbau — nur kürzerer Hebelarm. Sobald man 15–20 Knie-Liegestütze komfortabel schafft, zum regulären Liegestütz wechseln.",
+          "Referenzwerte (reguläre Liegestütze): Männer unter 40: >40 ausgezeichnet, 25–40 gut, 15–25 mäßig, <15 verbesserungsbedürftig. Frauen unter 40: >30 ausgezeichnet, 20–30 gut, 10–20 mäßig, <10 verbesserungsbedürftig.",
+          "Beteiligte Muskeln: Pectoralis major (Brust, Hauptbeweger), Trizeps brachii (sekundär), vorderer Deltamuskel (Schulter), Serratus anterior (Schulterblatt-Stabilisator) und der gesamte Core zur Körperstabilisierung. Eine Ganzkörperübung, die als Oberkörperübung getarnt ist.",
+          "JAMA 2019 (Yang et al.): der Liegestütz-Test war in derselben Population ein besserer Prädiktor für das CVD-Risiko als der submaximale Laufbandtest. Einfach, kostenlos, zugänglich und keine Ausrüstung nötig.",
+          "Fortschrittsprotokoll: 3 Sätze × Maximum minus 2 Wiederholungen (2 vor Maximum aufhören), 60–90 Sekunden Pause, 3-mal/Woche. In 4 Wochen: +5–10 Wiederholungen Verbesserung zu erwarten. In 8 Wochen: +15–20 Wiederholungen vom Ausgangswert."
+        ],
+        "points": [
+          { "icon": "❤️", "label": ">40 Wdh. = −96 % CVD-Risiko", "note": "JAMA 2019: Liegestützkapazität sagt Herzereignisse besser vorher als Laufbandtests" },
+          { "icon": "📐", "label": "Form zuerst", "note": "Ellbogen 45° · Brust nah am Boden · Körper gerade — Qualität zählt" },
+          { "icon": "🦵", "label": "Knie-Liegestütz ist gültig", "note": "Gleiche Muskeln — kürzerer Hebelarm. Nach 15–20 Knie-Wdh. zum regulären wechseln" },
+          { "icon": "📈", "label": "+5–10 Wdh. in 4 Wochen", "note": "3 Sätze × nahezu Maximum × 3 Tage/Woche = schnelle Verbesserung" }
+        ]
+      },
+      {
+        "label": "6-Minuten-Gehdistanz", "unit": "Meter", "how": "So schnell wie möglich 6 Minuten gehen — Gesamtdistanz messen",
+        "keyFact": "Der 6-Minuten-Gehtest (6MGT) ist ein Standard-Klinikttest für die kardiorespiratorische Fitness, der weltweit in Krankenhäusern eingesetzt wird. Vorhergesagte Distanz für gesunde Erwachsene: Männer 40–49 Jahre: 555–700 m. Frauen 40–49: 480–620 m. Eine Distanz unter 400 m deutet auf geringe kardiovaskuläre Fitness hin und erfordert eine ärztliche Beurteilung.",
+        "details": [
+          "Durchführungsprotokoll: bekannte Distanzstrecke verwenden (Laufbahn, Korridor, Parkrunde). 6 Minuten so schnell wie möglich gehen ohne zu laufen. Gesamtdistanz notieren. 30 Minuten vor dem Test ausruhen. 2 Stunden vorher: kein intensives Training, keine schweren Mahlzeiten.",
+          "Kardiorespiratorische Fitness (VO2-max-Schätzung): 6MGT-Distanz korreliert stark mit VO2-max (r=0,73). VO2-max ist der stärkste Einzelprädiktor für Langlebigkeit — stärker als Blutdruck, Blutzucker oder Cholesterin. Jede 1-MET-Steigerung des VO2-max = 13 % niedrigeres Sterberisiko (Myers, NEJM).",
+          "Vergleich mit Gehtempo: Gehen bei 5 km/h = 500 m in 6 Minuten. Bei 6 km/h = 600 m. Bei 7 km/h = 700 m. Eine Schrittfrequenz von 100 Schritten/Min entspricht ungefähr 5 km/h.",
+          "Verbesserungsstrategie: Nordic Walking (Stöcke) erhöht die Distanz um 10–20 % durch Einbeziehen des Oberkörpers. HIIT-Einheiten einmal pro Woche erhöhen VO2-max effizienter als reines Steady-State-Cardio. Schrittweise Steigerung: 500 m pro Woche zum Ziel hinzufügen.",
+          "Klinische Bedeutung: eine Verbesserung der 6MGT-Distanz um 30 m entspricht einer klinisch bedeutsamen Verbesserung der Lebensqualität (MCID = Minimum Clinically Important Difference). 54 m = große signifikante Veränderung. Auch bei Gesunden zeigt konsistenter Fortschritt verbesserte kardiovaskuläre Effizienz.",
+          "Monatlich testen: Im Gegensatz zum Gewicht, das täglich schwankt, verändert sich der 6MGT langsam, aber bedeutsam. 20–30 m Steigerung über 4 Wochen = messbarer kardiovaskulärer Fitnessgewinn. Immer dieselbe Strecke für gültigen Vergleich verwenden."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Standard-Klinikttest", "note": "Weltweit in der Kardiologie eingesetzt — validiert und zuverlässig" },
+          { "icon": "❤️", "label": "VO2-max = Nr. 1 Langlebigkeitsprädiktor", "note": "Myers (NEJM): jede 1-MET-Steigerung = 13 % niedrigeres Sterberisiko" },
+          { "icon": "📏", "label": "Ziel: 500–700 m", "note": "Alters- und geschlechtsabhängig — unter 400 m erfordert ärztliche Abklärung" },
+          { "icon": "📈", "label": "+30 m = klinisch bedeutsam", "note": "MCID: 30 m Verbesserung = realer Lebensqualitätsnutzen" }
+        ]
+      },
+      {
+        "label": "Ruhepuls", "unit": "bpm", "how": "60 Sekunden den Puls vor dem Aufstehen zählen",
+        "keyFact": "Der Ruhepuls (RHR) ist einer der einfachsten und wirkungsvollsten Biomarker für kardiovaskuläre Gesundheit und Fitness. Jede Steigerung des RHR um 10 bpm über 60 ist mit einem 14 % höheren Gesamtsterberisiko verbunden (Kopenhagener Herzgesundheitsstudie, 30 Jahre, 29.000 Personen). Ausdauerspitzenathleten haben einen RHR von 40–50 bpm.",
+        "details": [
+          "Messmethode: beim Aufwachen, vor dem Aufstehen, vor dem Blick aufs Handy. 1–2 Minuten in einer bequemen Position ruhen. Herzschläge zählen (Zeige- und Mittelfinger am Handgelenk oder am Hals) für volle 60 Sekunden. 3 aufeinanderfolgende Morgen für Genauigkeit mitteln.",
+          "Referenzbereiche: <60 bpm = ausgezeichnet (trainiert/sehr fit). 60–70 = gut. 71–80 = durchschnittlich. 81–90 = unterdurchschnittlich. >90 = mögliche Bedenken, bei anhaltender Erhöhung Arzt aufsuchen.",
+          "Warum Ausdauertraining den RHR senkt: regelmäßiges Cardio erhöht das Schlagvolumen (Menge Blut, die das Herz pro Schlag pumpt) — sodass das Herz weniger Schläge pro Minute benötigt, um den gleichen Herzauswurf zu liefern. Ein effizienteres Herz in Ruhe ist ein Leben lang weniger belastet.",
+          "HRV (Herzratenvariabilität): die ausgefeiltere Metrik ist nicht der RHR, sondern die HRV — die Variation des Zeitintervalls zwischen aufeinanderfolgenden Herzschlägen. Hohe HRV = bessere Flexibilität des autonomen Nervensystems = niedrigerer Stress = schnellere Erholung. Der RHR ist der einfache Proxy; ein Wearable liefert die HRV.",
+          "Tägliche Schwankung: der RHR steigt um 5–10 bpm bei Übertraining, Krankheit oder Schlafmangel. Eine anhaltende Erhöhung ist ein frühes Warnsignal. Morgen-RHR über Wochen verfolgen gibt einen persönlichen Basiswert — Abweichungen von >5 bpm über dem Basiswert erfordern Ruhe oder Erholungsaufmerksamkeit.",
+          "RHR verbessern: 8 Wochen konsistentes Zone-2-Cardio (Gesprächstempo, 30 Min × 3–5-mal/Woche) senkt den RHR typischerweise um 5–10 bpm. Dies ist eine der schnellsten messbaren Verbesserungen durch ein neues Trainingsprogramm."
+        ],
+        "points": [
+          { "icon": "❤️", "label": "<60 bpm = Ausgezeichnet", "note": "Kopenhagener Studie: jede 10 bpm über 60 = 14 % höheres Sterberisiko" },
+          { "icon": "📊", "label": "Vor dem Aufstehen messen", "note": "Gleiche Zeit, vor dem Handy — genauester RHR-Messwert" },
+          { "icon": "📈", "label": "Zone-2-Cardio senkt RHR", "note": "8 Wochen konsequentes Cardio → −5–10 bpm Senkung" },
+          { "icon": "🔋", "label": "Erhöhung = Erholungssignal", "note": "+5 bpm über Basiswert → ausruhen oder Trainingsintensität reduzieren" }
+        ]
+      },
+      {
+        "label": "Schlafqualitätsbewertung", "unit": "/10", "how": "Schlafqualität der letzten Nacht morgens von 1–10 bewerten",
+        "keyFact": "Subjektive Schlafqualität (eigene Bewertung der Schlafqualität) korreliert mit Gesundheitsergebnissen genauso stark wie objektive Schlafdaten. Pittsburgh Sleep Quality Index (PSQI): konsistent <6/10 ist mit einem deutlich höheren Risiko für Depression, Herz-Kreislauf-Erkrankungen und Stoffwechselstörungen verbunden.",
+        "details": [
+          "Was zu bewerten ist: 10 = erfrischt aufgewacht, voller Energie, keine nächtlichen Unterbrechungen. 7–9 = meist gut. 5–6 = akzeptabel, aber nicht optimal. <5 = schlecht. Direkt beim Aufwachen bewerten — das Urteil ist dann am genauesten.",
+          "Faktoren, die die subjektive Qualität über die Dauer hinaus beeinflussen: Schlafarchitektur (Anteil an tiefem N3-Schlaf und REM-Schlaf), Schlafdurchgängigkeit (Fragmentierung), Schlafeffizienz (% der im Bett verbrachten Zeit, in der man tatsächlich schläft) und zirkadiane Ausrichtung (Schlafen zur biologisch geeigneten Zeit).",
+          "Anhaltend schlechte Bewertungen: wenn die Bewertung ≥3 Nächte/Woche <6 ist, Folgendes evaluieren: Alkoholkonsum abends, Koffein nach 14 Uhr, Blaulichtexposition vor dem Schlafengehen, unregelmäßige Schlaf-/Wachzeiten oder Schlafzimmerumgebung (Temperatur, Licht, Lärm).",
+          "Schlafphasen und subjektive Qualität: N3-Tiefschlaf (20–25 % der Nacht) ist für die körperliche Wiederherstellung verantwortlich — Muskelreparatur, Immunstärkung und Gedächtniskonsolidierung. Unzureichendes N3 → müde aufwachen trotz ausreichender Dauer. REM-Schlaf ist für emotionale Verarbeitung und Kreativität verantwortlich.",
+          "Verhältnis von Quantität zu Qualität: 7 Stunden hochwertiger Schlaf übertrifft 9 Stunden fragmentierten Schlaf. Schlafeffizienz (Schlafzeit ÷ Zeit im Bett) >85 % ist der klinische Schwellenwert für gute Schlafqualität. Jemand, der 7 Stunden schläft, aber 9 Stunden im Bett ist, hat 78 % Effizienz — Verbesserungspotenzial vorhanden.",
+          "Trend verfolgen: wenn die Durchschnittsbewertung über 4 Wochen von 5 auf 7 steigt, ist das eine messbare Schlafqualitätsverbesserung, die mit verbesserter kognitiver Leistung, Stimmungsstabilität und Immunfunktion korreliert."
+        ],
+        "points": [
+          { "icon": "⭐", "label": "<6/10 = Warnsignal", "note": "PSQI: konsistent niedrige Werte verbunden mit Depression und Herz-Kreislauf-Risiko" },
+          { "icon": "🌊", "label": "N3-Tiefschlaf = körperliche Erholung", "note": "Sogar 7h ohne ausreichend N3 → trotzdem müde beim Aufwachen" },
+          { "icon": "📊", "label": "Direkt beim Aufwachen bewerten", "note": "Genauester Moment — Erinnerung an Schlafqualität verblasst schnell" },
+          { "icon": "🔄", "label": "Bewertung verbessert sich mit Gewohnheiten", "note": "Kein Bildschirm 30 Min vorher + kühles Zimmer + feste Aufwachzeit → messbare Verbesserung" }
+        ]
+      },
+      {
+        "label": "Allgemeines Energieniveau", "unit": "/10", "how": "Gesamtenergie und Vitalität am Ende des Tages von 1–10 bewerten",
+        "keyFact": "Das tägliche Energieniveau ist das umfassendste subjektive Maß für Lifestyle-Integration — es spiegelt das Gesamtergebnis von Schlaf, Ernährung, Bewegung, Hydration und Stressmanagement wider. Ein konsistenter Energiewert <5/10 ist ein zuverlässiger Indikator, dass mindestens eine Grundpfeiler-Säule nicht ausreichend funktioniert.",
+        "details": [
+          "Was zu bewerten ist: 10 = ganztägig voller Energie, kein Nachmittagseinbruch, mentale Klarheit, körperliche Leistungsfähigkeit vorhanden. 5–7 = funktionsfähig, aber nicht optimiert. <5 = spürbare Müdigkeit beeinträchtigt Leistung und Stimmung. Täglich zur gleichen Zeit bewerten (Tagesende funktioniert am besten).",
+          "Das Nachmittagsenergietief (14–15 Uhr): ein natürliches zirkadianes Phänomen — die Kernkörpertemperatur sinkt leicht, die Wachheit nimmt ab. Wirksame Strategien: 20-minütiger Mittagsschlaf, 10-minütiger zügiger Spaziergang oder helle Lichtexposition. Koffein nach 14 Uhr verzögert den Schlafbeginn — nicht empfohlen.",
+          "Energie und Ernährung: Blutzuckerspitzen und -abstürze (durch raffinierte Kohlenhydrate und Zucker) sind der Haupttreiber von Energieinstabilität. Protein + Ballaststoffe + Fett bei jeder Mahlzeit → langsamere Glukosefreisetzung → stabile Energie. Fehlende Proteinquelle beim Frühstück → 30 % wahrscheinlicher, nachmittags einen Energieeinbruch zu melden.",
+          "Chronische Müdigkeit vs. Lifestyle-Müdigkeit: wenn die Energie trotz ausreichend Schlaf (7–9h), guter Ernährung und regelmäßiger Bewegung konsistent <5/10 ist, Folgendes evaluieren: eisenmangelbedingte Anämie, Schilddrüsenfunktionsstörung, Vitamin-D-Mangel oder Schlafapnoe. Diese erfordern ärztliche Abklärung.",
+          "Energie und Bewegung: paradoxerweise erhöht Sport die Energie. Ein 10-minütiger Spaziergang steigert die Energie für 2 Stunden (Thayer, CSU). Regelmäßiges Training erhöht die basale Mitochondriendichte — der Körper hat buchstäblich mehr 'Energiefabriken' auf Zellebene. Tage ohne Bewegung → niedrigerer Energiebasiswert.",
+          "Ziel: Durchschnittlicher Energiewert ≥7/10 über ein 2-Wochen-Fenster. Wenn konsistent darunter, systematisch jeden Pfeiler evaluieren (Schlaf → Ernährung → Hydration → Bewegung → Stress) — eine Änderung auf einmal, 1 Woche Beobachtung jeweils."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Ziel ≥ 7/10 im Durchschnitt", "note": "Über 2 Wochen — konsistent <5/10 signalisiert Pfeilerversagen" },
+          { "icon": "🍽️", "label": "Protein + Ballaststoffe → stabile Energie", "note": "Blutzuckerspitzen durch raffinierte Kohlenhydrate sind der Haupttreiber von Einbrüchen" },
+          { "icon": "🚶", "label": "10 Min Gehen = +2h Energie", "note": "Thayer (CSU): sogar kurze Bewegung steigert die Energie messbar" },
+          { "icon": "🔍", "label": "Konsistent <5/10? Ursache suchen", "note": "Anämie, Schilddrüse, Vitamin D oder Schlafapnoe können die Ursache sein" }
+        ]
+      }
+    ]
   }
 }

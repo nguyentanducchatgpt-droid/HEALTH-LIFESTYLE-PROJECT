@@ -3634,6 +3634,239 @@
         ]
       }
     ],
+    "lifestyle_ui": {
+      "questions_counter": "questions",
+      "submit_btn": "→ View Results",
+      "reset_btn": "Retake",
+      "results_heading": "Category Breakdown",
+      "prev_btn": "← Prev",
+      "tracks_heading": "Priority Actions for You",
+      "saved_score_label": "Last Assessment",
+      "answered_label": "questions remaining"
+    },
+    "lifestyle_tracks": [
+      {
+        "name": "Track 1: Building the Foundation",
+        "desc": "Your lifestyle needs basic improvement. Start with 1–2 of the simplest habits.",
+        "actions": [
+          "Prioritize 7–8 hours of sleep first",
+          "Set a goal of 6,000 steps per day",
+          "Drink at least 1.5 L of water daily",
+          "Check the 12-week roadmap for a concrete plan"
+        ]
+      },
+      {
+        "name": "Track 2: Strengthening",
+        "desc": "You have a foundation — now optimize and be more consistent.",
+        "actions": [
+          "Improve sleep quality (pre-sleep routine)",
+          "Increase NEAT: 8,000–10,000 steps",
+          "Design your evening environment",
+          "Start 5 minutes of breathing practice daily"
+        ]
+      },
+      {
+        "name": "Track 3: Optimization",
+        "desc": "Your lifestyle is solid — focus on fine-tuning and sustainable maintenance.",
+        "actions": [
+          "Add biometric tracking (HRV, sleep stages)",
+          "Design periodic deload cycles",
+          "Try the full 100-point Lifestyle Score",
+          "Share your journey and inspire others"
+        ]
+      }
+    ],
+    "lifestyle_questions": [
+      {
+        "category": "Sleep",
+        "q": "How many hours do you sleep per night on average?",
+        "options": [
+          "Under 5 hours",
+          "5–6 hours",
+          "6–7 hours",
+          "7–9 hours"
+        ],
+        "modalTitle": "Sleep Duration — The Non-Negotiable Biological Foundation",
+        "keyFact": "7–9 hours is the National Sleep Foundation recommendation for adults 18–64, built on hundreds of rigorously controlled studies. This is not a vague ideal — it is the biological minimum for the brain to complete: glymphatic clearance (removing amyloid beta and metabolic waste), memory consolidation (hippocampal transfer from short-term to long-term), and hormone secretion (growth hormone peaks in N3, cortisol reset). Below 7 h → these processes are incomplete each night, creating a sleep debt that cannot be repaid with weekend catch-up sleep.",
+        "detail": "Van Dongen study (Penn, 2003): sleeping 6 h/night for 14 days produced cognitive impairment equivalent to 2 nights of total sleep deprivation — yet participants did not realize it because the brain had normalized the deficit. After 2 weeks of short sleep, you lose the ability to accurately gauge how impaired you are.",
+        "details": [
+          "Accumulated sleep debt without awareness: Van Dongen (Penn, 2003) assigned 48 subjects to 4 h, 6 h, or 8 h per night for 14 days. The 6-h group at day 14 showed cognitive impairment equivalent to the no-sleep group at 2 consecutive days — yet they reported 'feeling fine.' The brain adapts to sleep deprivation in a way that causes you to lose the ability to accurately evaluate your own performance. This is why many people say 'I'm used to sleeping less' — they have normalized the impairment.",
+          "Glymphatic system and amyloid beta: the glymphatic system (discovered 2012 by Maiken Nedergaard) is the brain's lymphatic system, active primarily during sleep by pumping CSF through the interstitial space to flush amyloid beta, tau protein, and metabolic waste. The system is nearly inactive while awake — activity increases 60% during sleep. Chronic sleep deprivation → amyloid beta accumulates → the hallmark of Alzheimer's begins decades earlier. Even a single night of sleep deprivation measurably increases amyloid beta in CSF.",
+          "Memory consolidation and the hippocampus: during sleep, the hippocampus 'replays' the day's experiences to transfer them from short-term memory to long-term storage in the neocortex. This process occurs especially during N2 (sleep spindles) and N3 (slow-wave sleep). Missing these stages → poor retention, inefficient learning, and emotional memories not processed correctly. Studying the night before an exam without adequate sleep = less effective than studying less but sleeping fully.",
+          "Growth Hormone and physical recovery: 70–80% of daily GH secretion occurs during slow-wave sleep (N3) in the first half of the night. GH governs muscle protein synthesis, fat metabolism, immune function, and tissue repair. People sleeping <6 h show significantly reduced GH secretion → poor post-workout muscle recovery, difficulty losing fat, weakened immune function. This is why elite athletes sleep 9–10 h/night — not laziness, but training optimization.",
+          "Cortisol rhythm and sleep restriction: cortisol normally has a nadir around midnight–2 am and a peak at 7–9 am (Cortisol Awakening Response). Sleep deprivation → cortisol elevated all day (no nadir) → chronic stress state → inflammatory markers rise, insulin resistance increases, visceral fat accumulates. Just 1 week of 5-h sleep: fasting glucose rises, insulin sensitivity drops markedly — metabolically equivalent to gaining several kilograms of abdominal fat.",
+          "Score thresholds reflect evidence: 15 points for 7–9 h because this range shows the best outcomes in population studies. 10+ h correlates with higher mortality in observational data (confounding: ill people sleep more). Under 6 h is a clear risk factor for cardiovascular disease, type 2 diabetes, obesity, depression, and cognitive decline — not merely correlation but causal relationship verified in controlled sleep restriction experiments."
+        ],
+        "points": [
+          { "label": "Glymphatic flush of amyloid beta +60% during sleep", "note": "Sleep deprivation = toxin build-up, hippocampus shrinks — Alzheimer's risk begins decades earlier" },
+          { "label": "6 h × 14 nights = impairment of 2 sleepless nights", "note": "Van Dongen Penn: cognitive deficit goes unnoticed because the brain normalizes gradually" },
+          { "label": "70–80% of GH released during N3 deep sleep", "note": "Muscle recovery, fat metabolism, immune function — GH peak is lost with insufficient sleep" },
+          { "label": "Bed 8 hours before wake time", "note": "30-min wind-down + buffer = need 8 h in bed to actually achieve 7 h of sleep" }
+        ]
+      },
+      {
+        "category": "Sleep",
+        "q": "How would you rate your sleep quality?",
+        "options": [
+          "Very poor — frequent insomnia",
+          "Low — sleep is not restful",
+          "Average — occasionally hard to fall asleep",
+          "Good — sleep well consistently"
+        ],
+        "modalTitle": "Sleep Quality — Architecture Matters More Than Hours",
+        "keyFact": "Sleep quality depends on sleep architecture — the ratio and distribution of N1, N2, N3, and REM across the night. A person sleeping 8 h but with frequent interruptions (little N3) has worse cognitive function and recovery than someone sleeping 6.5 h of continuous deep sleep. Polysomnography studies: feeling 'refreshed' after sleep is best predicted by slow-wave sleep (N3) duration and REM quality — not total hours. This question evaluates subjective sleep quality, a proxy for effective sleep architecture.",
+        "detail": "The Pittsburgh Sleep Quality Index (PSQI) — the most widely validated tool — assesses 7 components: subjective quality, latency, duration, efficiency, disturbances, medication use, and daytime dysfunction. 'Good — sleep well consistently' corresponds to the PSQI 'good sleeper' (score ≤5) — the baseline on which all recovery processes are built.",
+        "details": [
+          "'Very poor — frequent insomnia' meets the DSM-5 insomnia disorder criteria: difficulty falling asleep >30 min, waking at night >30 min, or waking early and unable to return to sleep — at least 3 nights/week for ≥3 months, causing distress or impairment. Prevalence: 10–15% of adults have chronic insomnia. Insomnia increases depression risk 10-fold, as well as anxiety disorders and cardiovascular disease. CBT-I (Cognitive Behavioral Therapy for Insomnia) is first-line treatment — more effective than sleeping pills long-term.",
+          "'Low — sleep is not restful' is the zone of 'sleep without depth': deep sleep (N3) is reduced, sleep fragmentation is high, WASO (wake after sleep onset) is elevated. Common causes: bedroom too warm (N3 requires body temperature to drop → needs <20°C), alcohol (suppresses N3 after initial sedation), late caffeine (half-life 5–6 h; caffeine at 3 pm is still 25% active at 9 pm), evening blue light (delays melatonin onset), sleep apnea if snoring loudly.",
+          "'Average — occasionally hard to fall asleep' is often linked to stress variability and an inconsistent schedule. 'Social jetlag' — staying up late and waking late on weekends — desynchronizes the circadian rhythm, causing difficulty sleeping Sunday night and waking Monday morning. Each hour of social jetlag carries a 30% increased obesity risk (Roenneberg, 2012). Key fix: lock a consistent sleep/wake time ±30 minutes every day including weekends — the highest impact improvement for the least effort.",
+          "'Good — sleep well consistently' is characterized by: sleep latency <20 min (time from lying down to falling asleep), WASO <30 min total, waking refreshed without effort within 15 min, remembering dreams (indicator of sufficient REM), and sleep efficiency ≥85% (sleep time / time in bed × 100). This is the state that allows all recovery processes to complete fully each night.",
+          "Hyperarousal and cognitive insomnia: chronic insomnia is often maintained by hyperarousal — the stress response system (HPA axis, sympathetic NS) is chronically activated even when lying in bed. 'Conditioned arousal': the bed becomes a trigger for wakefulness rather than sleep (classical conditioning). Stimulus control (lying in bed only when genuinely sleepy) and sleep restriction therapy are the most effective behavioral interventions — more effective than z-drugs or benzodiazepines for long-term outcomes.",
+          "Optimization roadmap by level: From 'Very poor' → 'Low': sleep restriction therapy (fixed wake time regardless of how long you slept), reduce caffeine after 1 pm, keep room at 18–20°C. From 'Low' → 'Average': 1-hour wind-down ritual (dim light, no screens, cool shower before bed). From 'Average' → 'Good': lock consistent bedtime ±30 min 7 days/week, morning sunlight to anchor circadian rhythm. From 'Good' → maintain: magnesium glycinate 300–400 mg before bed, sleep tracking to identify patterns."
+        ],
+        "points": [
+          { "label": "Sleep architecture > total duration", "note": "N3 + REM balance determines refreshed or not — 6 h deep sleep beats 8 h interrupted" },
+          { "label": "Room >22°C significantly reduces N3", "note": "Core body temperature must drop to enter deep sleep — temperature is the easiest lever to optimize" },
+          { "label": "Alcohol: easy to fall asleep → N3 suppression → wake up tired", "note": "Architecture is disrupted even with enough hours — 'slept' ≠ 'slept well' with alcohol before bed" },
+          { "label": "Consistent bedtime 7 nights is the key fix", "note": "Weekend social jetlag desynchronizes the whole week — fix timing before fixing duration" }
+        ]
+      },
+      {
+        "category": "NEAT & Movement",
+        "q": "What is your average daily step count?",
+        "options": [
+          "Under 3,000 steps",
+          "3,000–6,000 steps",
+          "6,000–10,000 steps",
+          "Over 10,000 steps"
+        ],
+        "modalTitle": "Daily Steps — NEAT Is the Foundation of Everyday Health",
+        "keyFact": "NEAT (Non-Exercise Activity Thermogenesis) — energy from all movement outside structured exercise — can account for 15–50% of total daily energy expenditure. JAMA Internal Medicine 2021 (16,741 women): mortality risk decreases from 2,700 steps, plateaus at ~7,500 steps. JAMA Neurology 2022 (78,500 people): 9,800 steps/day → 51% lower dementia risk, 57% less anxiety/depression. The 10,000-step goal is a marketing figure from a Japanese pedometer in 1964 — not evidence-based. 6,000–10,000 steps is the real sweet spot.",
+        "detail": "Sedentary behavior is an independent risk factor even with regular exercise: someone who goes to the gym 1 h/day but sits for the remaining 9–10 h still has elevated metabolic risk. Lipoprotein lipase (LPL) — the enzyme that processes fat and glucose — is inactivated by sitting. Just 2–3 minutes of standing or walking restores LPL activity. This is why steps matter independently of structured exercise.",
+        "details": [
+          "NEAT and total daily energy: 'naturally active' people burn an extra 350 kcal/day through NEAT compared to 'naturally sedentary' people — without going to the gym (Levine, Mayo Clinic). Accumulated over one year: equivalent to 36 kg of fat. Not genetics — it is unconscious movement habits: standing while on the phone, walking while talking, fidgeting. Gym 1 h/day = 4% of waking hours. The remaining 96% determines NEAT and health outcomes.",
+          "8,000 steps: the evidence-based target: JAMA Internal Medicine 2021 meta-analysis (47,471 people): each additional 1,000 steps reduces mortality 6–36%, with diminishing returns from 8,000 steps. JAMA Neurology 2022: 9,800 steps is 'optimal' for dementia prevention — but 3,800 steps/day already reduces dementia risk 25%. The improvement from 2,000 → 6,000 steps has greater impact than from 8,000 → 12,000 — you don't need 10,000 to see meaningful benefit.",
+          "Steps and cognitive function: walking increases hippocampal volume — one of the few interventions that can physically grow gray matter in adults. BDNF (Brain-Derived Neurotrophic Factor) — the 'Miracle-Gro for the brain' (Ratey) — rises after 20–30 minutes of moderate walking. BDNF improves long-term potentiation (new learning), neuroplasticity, and depression resilience. 20 minutes of walking before studying improves academic performance — the effect carries over into subsequent cognitive tasks.",
+          "Postprandial walking and blood sugar: walking 10–15 minutes after a meal reduces the postprandial blood glucose spike by 30–50% through non-insulin-dependent glucose uptake into muscles (GLUT4 translocation without an insulin signal). Effective even in insulin-resistant individuals. 3 × 10 min after meals = 30 min of movement + ~2,500 steps + significant blood sugar management. No speed required — casual walking triggers the effect.",
+          "Practical integration (no extra time needed): the gap from sedentary (3,000) to moderate (7,000–8,000) = 4,000–5,000 steps = 35–45 minutes. Integration strategies: park 400 m away (800 steps × 2 trips), take stairs (100–150 steps/floor), walk after lunch 15 min (~1,500 steps), stand while on the phone. Total: +4,000 steps without needing dedicated 'exercise time' — only micro-decision changes.",
+          "Pace and intensity: 8,000 casual steps (100–110 steps/min) provide moderate cardiovascular benefit. Brisk walking (120–130 steps/min, slightly breathless) meets the WHO moderate-intensity aerobic guideline (150 min/week). Ideal mix: 6,000 NEAT steps from daily activities + 2,000 brisk evening steps = achieving both NEAT target and cardio guideline. A cadence app on a smartphone helps maintain pace automatically."
+        ],
+        "points": [
+          { "label": "Mortality benefit plateaus at 7,500–8,000 steps", "note": "JAMA 2021: the gap 2,000→7,000 has greater impact than 8,000→12,000 — don't fixate on 10,000" },
+          { "label": "BDNF after walking = Miracle-Gro for the brain", "note": "Hippocampal volume grows with regular walking — memory, learning, and depression resilience improve" },
+          { "label": "Walk 10 min after meals = −30–50% glucose spike", "note": "GLUT4 translocation without insulin — effective even in insulin-resistant individuals" },
+          { "label": "Parking farther + stairs = +4,000 steps/day", "note": "Zero extra time — integrated into normal micro-decisions, no dedicated 'exercise time' needed" }
+        ]
+      },
+      {
+        "category": "Circadian Rhythm",
+        "q": "Do you go outside or get natural morning light?",
+        "options": [
+          "Almost never",
+          "Rarely (< 2 days/week)",
+          "Sometimes (3–4 days)",
+          "Regularly (5+ days)"
+        ],
+        "modalTitle": "Morning Light — The Strongest Zeitgeber to Reset Your Biological Clock",
+        "keyFact": "Early morning light is the strongest 'zeitgeber' (time-giver) for calibrating the circadian clock each day. ipRGC — intrinsically photosensitive retinal ganglion cells — contain melanopsin and require >1,000 lux to fully trigger the circadian signal to the SCN (suprachiasmatic nucleus) in the hypothalamus. The brightest room in your house reaches only 300–1,000 lux — insufficient. Outdoors in shade: 10,000–20,000 lux. The signal from ipRGC → SCN → melatonin suppression → Cortisol Awakening Response activation → the entire circadian cascade begins at the correct time.",
+        "detail": "The uneven scoring (0/3/8/15) reflects the dose-response relationship for frequency: 5+ days/week is the frequency needed to maintain a strong circadian anchor. Fewer days allow the circadian rhythm to 'drift' over time. 3–4 days is significantly better than 1–2 days, and 5+ days is the point at which circadian entrainment becomes stable and consistent.",
+        "details": [
+          "ipRGC and melanopsin: discovered in 1999 by David Berson (Brown University), ipRGCs are the third type of photoreceptor in the retina — not for 'seeing' but solely to measure irradiance (light intensity) and signal the SCN. Peak sensitivity: 480 nm (cyan-blue). High threshold — requires light that is both bright and sustained. Blind people (lacking rods/cones) still maintain normal circadian rhythms if ipRGCs are intact. Sunglasses, prescription glasses, and contact lenses all reduce the signal reaching ipRGCs.",
+          "Outdoor sunlight vs. indoor light: Vietnamese summer sun: 50,000–100,000 lux. Outdoor shade: 10,000–20,000 lux. Near a glass window: 500–1,000 lux. Brightest room indoors: 100–500 lux. SAD lamp at 10,000 lux. ipRGCs need >1,000 lux sustained 10–30 min to fully trigger. This explains why 'sitting near a window' cannot replace 'going outside.' You don't need to look at the sun — ambient outdoor light is sufficient.",
+          "Cortisol Awakening Response (CAR): CAR is a natural cortisol surge of 50–100% in the first 30–60 minutes after waking — necessary for alertness, immune activation, and metabolic startup. Morning light amplifies and sharpens the CAR. Without morning light → blunted CAR → prolonged 'brain fog' → increased caffeine dependency (caffeine only blocks adenosine, it cannot replace cortisol function). Andrew Huberman (Stanford Neuroscience): 'Morning light viewing is the single most important thing you can do each day.'",
+          "Serotonin–melatonin pipeline: morning light → ipRGC → raphe nuclei → serotonin synthesis increases. Serotonin is the direct precursor of melatonin (via N-acetyltransferase). 'More morning serotonin now = more melatonin tonight.' SAD (Seasonal Affective Disorder) is effectively treated with 10,000-lux morning light because lack of morning light → low serotonin → depression. Vietnam is near the equator, yet office workers spending all day indoors are no different from Scandinavians in winter.",
+          "The golden window and timing: the first 30–60 minutes after waking has the maximum impact for circadian phase anchoring. Light received after this window still benefits health, but circadian impact is reduced. Overcast sky: 10,000–20,000 lux outdoors — still adequate. Cannot go outside: a 10,000-lux SAD lamp for 20–30 minutes during breakfast is an evidence-based substitute. Even 5 minutes outdoors in the morning has a measurable effect on circadian timing.",
+          "Consistency is critical: skipping 2 weekend days → slight circadian phase drift → Sunday insomnia, Monday morning grogginess. The circadian rhythm needs a daily reset just like water intake or brushing teeth. Ideal: go outside 5–10 minutes within the first 30 minutes after waking, every day including weekends — especially weekends when you tend to stay up late. Do not wear sunglasses during the morning session (reduces lux reaching the retina)."
+        ],
+        "points": [
+          { "label": "Brightest indoor room: 100–500 lux — insufficient", "note": "ipRGCs need >1,000 lux — must go outside; sitting near a window cannot replace outdoor light" },
+          { "label": "CAR amplification = natural morning energy", "note": "Stronger Cortisol Awakening Response → deeper alertness, less caffeine needed, stable mood" },
+          { "label": "Morning serotonin → more melatonin tonight", "note": "Pipeline: morning light → serotonin now → better melatonin tonight → deeper sleep" },
+          { "label": "5+ days/week: stable circadian entrainment", "note": "Skipping 2 weekend days → drift → difficulty sleeping Sunday, waking Monday — consistency is key" }
+        ]
+      },
+      {
+        "category": "Stress Management",
+        "q": "What is your level of chronic stress?",
+        "options": [
+          "Very high — affecting daily functioning",
+          "High — difficult to control",
+          "Moderate — manageable",
+          "Low — well balanced"
+        ],
+        "modalTitle": "Chronic Stress — The Silent Saboteur of Every Body System",
+        "keyFact": "Chronic stress (prolonged distress) is completely different from acute stress (short-term positive eustress). When the HPA axis is chronically activated: cortisol remains elevated with no nadir → suppresses the hippocampus (memory, learning) → the hippocampus literally shrinks with chronic stress (Sapolsky, Stanford). Simultaneously: immune suppression, insulin resistance, visceral fat deposition, and sleep disruption occur. The maximum score for this question is only 10 (not 15) because stress is context-dependent — 'manageable' is the realistic threshold to reach.",
+        "detail": "Perceived stress (subjective) matters more than the objective stressor — with the same workload, one person perceives it as challenging (eustress), another perceives it as overwhelming (distress). Mindset and sense of control determine the cortisol response more than the stressor itself (Alia Crum, Stanford Mind & Body Lab experiments).",
+        "details": [
+          "HPA axis dysregulation and brain anatomy: normal HPA axis: stressor → CRH (hypothalamus) → ACTH (pituitary) → cortisol (adrenal) → negative feedback. Chronic stress: feedback inhibition is blunted → cortisol chronically elevated. Consequences: (a) Hippocampus shrinks — cortisol is neurotoxic at high concentrations, causing dendritic atrophy in the CA3 region. (b) Amygdala hyperactivates → increased emotional reactivity and fear generalization. (c) PFC thinning → impaired decision-making and impulse control. Stress literally reshapes brain anatomy in the opposite direction of meditation (which increases PFC volume and decreases amygdala).",
+          "Immune suppression and wound healing: short-term acute stress → immune boost (evolutionary preparation to heal wounds). Chronic stress → immune suppression: NK (natural killer) cell count and function decrease → reduced tumor surveillance. Vaccine responses are weaker with chronic stress (Cohen, CMU: stressed medical students had lower antibody responses to the hepatitis B vaccine). Wound healing is 40–60% slower (Kiecolt-Glaser: high-stress caregivers healed wounds 40% slower than controls).",
+          "Visceral fat and cortisol mechanism: cortisol promotes visceral adipogenesis (deep belly fat) through: (a) Dense glucocorticoid receptors in the omentum. (b) Lipoprotein lipase activation in visceral adipocytes. (c) Increased appetite for high-calorie foods (cortisol raises reward sensitivity for sugar/fat). Visceral fat is metabolically active — it secretes inflammatory cytokines (IL-6, TNF-α), worsening insulin resistance and cardiovascular risk. Stress doesn't just cause weight gain — it causes the most dangerous kind.",
+          "Stress → insomnia feedback loop: cortisol and melatonin have inversely related rhythms. Chronic stress → cortisol elevated at night → suppresses melatonin onset → difficulty sleeping → sleep deprivation → higher cortisol next day → a self-reinforcing downward spiral. Hyperarousal persists during sleep: higher brain temperature, faster EEG activity, elevated metabolic rate — a physiological state incompatible with deep sleep. 'Stress causes insomnia, insomnia causes more stress' (Harvey, 2002) — the loop must be broken from both sides.",
+          "Perception matters more than the stressor: Alia Crum (Stanford) experiment: groups told 'stress is enhancing' vs. 'stress is debilitating' — with identical stress loads, the 'enhancing' group showed better cardiovascular responses (higher DHEA-to-cortisol ratio, faster cortisol recovery), fewer symptoms, and higher performance. Kelly McGonigal (TED 2013): people who view stress as a challenge vs. a threat have dramatically different health outcomes, controlling for objective stressors. Reframing is not denial — it changes the physiological response.",
+          "Evidence-based interventions: (a) Box breathing (4-4-4-4): proven to reduce cortisol within 5–10 minutes — used by Navy SEALs, emergency responders, and ICU nurses. (b) Zone 2 cardio 30 minutes: reduces cortisol, increases BDNF, improves HRV — the most robust evidence for stress relief. (c) Cold exposure 30–60 seconds: raises norepinephrine 300%, chronically reduces anxiety (Huberman). (d) Social connection: oxytocin is the physiological antidote to cortisol. (e) Nature exposure: 20 minutes in nature (no exercise needed) reduces salivary cortisol 21% (Hunter, 2019)."
+        ],
+        "points": [
+          { "label": "Hippocampus literally shrinks with chronic stress", "note": "Sapolsky Stanford: cortisol is neurotoxic — poor memory and learning is a structural change, not just a feeling" },
+          { "label": "Wound healing 40–60% slower when stressed", "note": "Kiecolt-Glaser: immune suppression is literal and measurable — not a metaphor" },
+          { "label": "Box breathing reduces cortisol within 5 minutes", "note": "4-4-4-4 proven: Navy SEAL technique — immediate, zero cost, zero equipment required" },
+          { "label": "Stress perception > stressor intensity", "note": "Crum Stanford: 'enhancing' mindset → different cortisol profile with the same objective stress load" }
+        ]
+      },
+      {
+        "category": "Environment",
+        "q": "How long before bed do you use your phone or screens?",
+        "options": [
+          "Until I fall asleep",
+          ">1 hour before bed",
+          "30–60 minutes before bed",
+          "No screens 30+ minutes before bed"
+        ],
+        "modalTitle": "Screens Before Bed — Blue Light and Cognitive Arousal Disrupt Sleep",
+        "keyFact": "Screens before bed affect sleep through 2 independent mechanisms, not just one: (1) BLUE LIGHT (480 nm) suppresses melatonin — Charles Czeisler (Harvard, 2014): reading an iPad 4 h before bed reduced melatonin by 55%, delayed sleep onset by 10 min, reduced REM sleep by 40%, and increased next-day drowsiness. (2) COGNITIVE AROUSAL — content (news, social media, email) activates the amygdala and PFC, maintaining a sympathetic state incompatible with sleep onset. Important: even night mode / amber glasses only address mechanism #1 and do not fix cognitive arousal — completely screen-free time is required.",
+        "detail": "Maximum score 10 (not 15) because screen behavior is an environmental factor, not a biological baseline like sleep hours. 'No screens 30 minutes' is the realistic minimum recommendation — optimal is 1 h+, but 30 minutes is the evidence-backed threshold. Content type also matters: calming content + dim screen < stimulating content + bright screen < no screen entirely.",
+        "details": [
+          "Melatonin suppression mechanism: ipRGCs in the retina are most sensitive to 480 nm blue light — the same wavelength that LCD/LED screens emit most. Signal pathway: ipRGC → SCN → pineal gland suppressed → melatonin secretion decreases. The degree of suppression depends on brightness and duration. Full-brightness phone screen: ~500–800 lux (enough to significantly suppress melatonin). Night mode reduces suppression by ~25–30% — an improvement but not sufficient. Timing: 1–2 hours before bed is the most sensitive window for melatonin onset.",
+          "Czeisler Harvard 2014 study (PNAS): 12 participants, rigorous crossover design — reading an e-reader for 4 h before bed vs. reading a printed book, 5 nights per condition. E-reader condition: melatonin onset delayed ~1.5 h, total melatonin reduced, sleep onset latency increased 10 min, REM sleep reduced, and next-morning alertness worse — even when total sleep hours were identical. A small but tightly controlled study replicated multiple times with consistent findings.",
+          "Cognitive arousal is the second mechanism: content (social media, news, email, games) activates threat detection (amygdala) and executive processing (PFC), keeping the sympathetic nervous system active. The stress response after putting the phone down has a 'tail' lasting 15–30 minutes: cortisol elevated, heart rate elevated, mind racing. Reading about politics on Twitter → cortisol rises → still elevated 30 minutes later when trying to sleep. Amber glasses address melatonin suppression, but do nothing for cognitive arousal.",
+          "Recency effect: the state you bring to bed at the end of the day determines sleep onset quality. Watching a film until 10 pm, turning off at 10 pm, sleeping at 11 pm (1 h screen-free) = much better. Scrolling phone 10:30–11 pm, sleeping at 11 pm (0 min screen-free) = worst. It is not total screen time — it is screen time in the final window before sleep. The 'wind-down window' at the end of the day is critical, like a warm-up before exercise but in reverse — the system needs to cool down.",
+          "Replace, not just restrict: 'don't use your phone' is a negative command — willpower-dependent and inconsistent. More effective: fill the wind-down window with alternatives — reading a physical book, journaling (pen/paper), light stretching or yoga nidra, a warm bath (lowers core body temperature → faster sleep onset), talking with a partner/family member. Charging your phone in another room eliminates bedtime scrolling AND morning checking — a two-for-one behavior change.",
+          "Assessment scoring rationale: 'Until I fall asleep' (0 points): melatonin maximally suppressed + maximum cognitive arousal simultaneously at bedtime. '>1 h before bed' (3 points): improved but still within the sensitive window. '30–60 minutes' (8 points): the minimum clinically recommended. 'No screens 30 min+' (10 points): lets melatonin rise naturally + cognitive arousal dissipates. Maximum score 10 (not 15) because a perfect score is reserved for biological baselines — environmental behavior is a supporting factor."
+        ],
+        "points": [
+          { "label": "480 nm blue light suppresses melatonin by 55%", "note": "Czeisler Harvard: iPad 4 h before bed → 1.5-h delay, REM −40%, increased next-day drowsiness" },
+          { "label": "Cognitive arousal: stronger and not fixed by night mode", "note": "Content activates the amygdala → sympathetic state persists 30 min — amber glasses don't solve this" },
+          { "label": "The final 30 minutes is the most critical window", "note": "The state you bring to bed = sleep onset quality — the last hour matters more than the first hours of the evening" },
+          { "label": "Charging phone in another room = zero willpower needed", "note": "Environmental design beats willpower — can't scroll if the phone isn't in the room" }
+        ]
+      },
+      {
+        "category": "Hydration",
+        "q": "How much water do you drink per day?",
+        "options": [
+          "Under 1 liter",
+          "1–1.5 liters",
+          "1.5–2.5 liters",
+          "Enough by formula (body weight × 35 ml)"
+        ],
+        "modalTitle": "Daily Hydration — Water Affects Every Biological System",
+        "keyFact": "Just 1–2% dehydration (700 ml–1.4 L for a 70 kg person) causes: 12% reduction in concentration, impaired short-term memory, slower reaction time, and increased perceived effort (tasks feel harder). The brain is 73% water — neurotransmission slows before you feel thirsty. Thirst appears AFTER you are already 1–2% dehydrated — it is not a reliable early warning. The body-weight formula × 35 ml personalizes intake by body size (e.g., 70 kg × 35 ml = 2.45 L, 60 kg = 2.1 L).",
+        "detail": "Score for 'Enough by formula' is 10 (not 15) because hydration is a supportive lifestyle factor. 1.5–2.5 L (8 points) is adequate for many smaller or less active individuals. Under 1 L (0 points) is clearly inadequate for most adults and causes measurable performance impairment within hours. Pale yellow urine is the simplest proxy for adequate hydration.",
+        "details": [
+          "Dehydration and cognitive function: David Benton (Swansea) meta-analysis: 1–2% dehydration consistently reduces attention, psychomotor performance, and immediate memory — with larger effect sizes in tasks requiring sustained attention. Ganio (2011): 1.36% dehydration in young women reduced mood, increased perceived task difficulty, and reduced concentration — even without exercise (mild dehydration from overnight loss). In the morning you typically wake already 300–500 ml dehydrated from breathing and sweating overnight.",
+          "Kidneys and toxic clearance: the kidneys filter 180 L of plasma per day, reabsorbing 99% (excreting 1–2 L as urine). Insufficient intake → concentrated urine → increased kidney stone risk (Pearle, UpToDate: urine volume <1 L/day = significant risk). UTI risk rises as urinary flow decreases → bacteria are not adequately flushed. Urine color is the best proxy: pale yellow (1–3 on the urine color chart) = adequate; dark = dehydrated; colorless = over-hydrated (diluted electrolytes — also not ideal).",
+          "Metabolism and weight management: Michael Boschmann (Charité Berlin): drinking 500 ml of cold water raises metabolic rate by 30% for 30–40 minutes (thermogenesis to warm the water to body temperature). Drinking 500 ml 30 minutes before a meal: stomach distension → appetite suppression + better differentiation of 'hungry vs. thirsty' signals. Davy (2010): participants who drank 500 ml before each meal for 12 weeks lost 44% more weight than the control group. Much overeating occurs because thirst is confused with hunger (signals processed closely together in the hypothalamus).",
+          "Electrolytes and hydration quality: water alone is not optimal hydration — electrolytes (Na⁺, K⁺, Mg²⁺) are needed to maintain osmotic balance. People who exercise heavily, sweat a lot, or are in hot environments should add electrolytes to water. DIY electrolyte: 500 ml water + pinch of sea salt + squeeze of lemon + dash of honey. Coconut water: a natural electrolyte drink, no added sugar needed. Caution: hyponatremia (diluted sodium) if drinking too much plain water in a short period.",
+          "Practical hydration habits: (1) 500 ml of water immediately upon waking — set it out the night before to restore the overnight deficit. (2) A 1 L bottle on the desk — visual cue to drink and easy tracking. (3) 1–2 glasses 30 minutes before each meal. (4) 1 glass after every cup of coffee (mild diuretic). (5) App reminder every 1–1.5 h. (6) Infuse with lemon slices or cucumber if plain water is hard to drink enough of. Target: pale yellow urine by 10 am = on track for the whole day.",
+          "Hydration and physical performance: 2% dehydration → endurance performance drops 10–15% (Nielsen, 2002). Strength and power: 5–8% reduction with a 2% deficit. For those who train: target 40 ml × body weight (instead of 35 ml), 400–600 ml in the 2 h before exercise, 150–250 ml every 15–20 min during exercise, 500–750 ml after exercise per 0.5 kg lost (estimated from pre/post-workout weight). Articular cartilage is 80% water — dehydration increases joint stiffness and pain during movement."
+        ],
+        "points": [
+          { "label": "Formula: kg × 35 ml = personalized daily target", "note": "70 kg = 2.45 L, 60 kg = 2.1 L — a flat '2 L for everyone' is inaccurate" },
+          { "label": "1% dehydrated = −12% concentration before feeling thirsty", "note": "Thirst is a late signal — drink on a schedule, don't wait for thirst to start" },
+          { "label": "Water bottle on the desk = best visual cue", "note": "See the bottle → remember to drink — environmental design beats willpower and reminder apps" },
+          { "label": "500 ml first thing in the morning = restore overnight deficit", "note": "Each night you lose 300–500 ml from breathing and sweating — you're already dehydrated before your first sip" }
+        ]
+      }
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {
@@ -3752,7 +3985,181 @@
     "journal_placeholder": "Write freely, no need to be perfect...",
     "btn_start": "▶ Start",
     "btn_stop": "⏹ Stop",
-    "videos": ["BREATH"]
+    "videos": ["BREATH"],
+    "d0_cards": [
+      { "title": "D1 – Understanding Stress", "desc": "Identify the 3 layers of stress: body, emotion, behavior. The anxiety–habit loop." },
+      { "title": "D2 – Breathe & Slow Down", "desc": "Diaphragmatic breathing, box breathing 4-4-4-4, 4-7-8 breathing, 2-minute reset." },
+      { "title": "D3 – Meditation & Mindfulness", "desc": "3-minute meditation for beginners. 5-minute body scan. Mindful eating and walking." },
+      { "title": "D4 – Journaling in 5 Lines", "desc": "5 questions each evening. Brain dump when overwhelmed. Journaling after a bad day." },
+      { "title": "D5 – Digital Detox", "desc": "3 levels: easy → standard → advanced. Reduce screen time before sleep, turn off notifications." },
+      { "title": "D6 – Gentle Discipline", "desc": "No self-blame. The 1% comeback rule. Small, lasting habits." }
+    ],
+    "d1_modals": [
+      {
+        "modalTitle": "Body Layer",
+        "keyFact": "Physical symptoms of stress are not weakness — they are automatic nervous-system responses. When the amygdala detects a threat (real or perceived), the HPA axis releases cortisol and adrenaline within 90 seconds. Heart rate rises, muscles tense, blood redirects to limbs, digestion halts. This is evolution's survival mechanism — optimal for running from a tiger, harmful when triggered daily by work emails.",
+        "detail": "The body is always the first to signal stress — before conscious awareness. Tension headaches, tight shoulders, shallow breathing, gut discomfort are all neurological outputs of the stress cascade. Recognizing these signals early — before they compound — is a learnable skill.",
+        "details": [
+          "HPA axis and cortisol: the hypothalamus → pituitary → adrenal gland cascade is designed for acute threats. Chronic activation keeps cortisol elevated, suppressing the immune system, disrupting sleep architecture (REM reduction), and accelerating cellular aging (telomere shortening). Sapolsky (Stanford) showed chronic psychosocial stress causes the same organ damage as trauma.",
+          "Somatic markers: Antonio Damasio's research shows the body creates 'somatic markers' — physical sensations linked to emotional states — before the rational brain can articulate a problem. A tight chest in a meeting, nausea before a presentation: the body knows before the mind. Body scanning (2–5 min/day) trains recognition of these signals, shortening the stress-awareness gap.",
+          "Muscle tension and the pain cycle: chronic stress causes sustained muscle contraction, particularly in the trapezius, neck, and lower back. Persistent tension → lactic acid buildup → trigger points → referred pain → more stress from pain. Progressive Muscle Relaxation (PMR) — deliberately tensing then releasing muscle groups — breaks this cycle. Even 10 minutes of PMR before sleep reduces cortisol markers measurably.",
+          "Breathing and the autonomic switch: the vagus nerve — the 10th cranial nerve — is the pathway for 'rest and digest.' Slow, deep exhalation (longer than inhalation) activates vagal tone and shifts the ANS from sympathetic to parasympathetic. Box breathing (4-4-4-4) achieves this shift in 3–5 cycles. This is why breathwork is the fastest evidence-based stress intervention.",
+          "Sleep as physical stress recovery: slow-wave sleep (N3) is when growth hormone is released — the primary repair signal for cortisol-damaged tissue. REM sleep processes emotional memories, reducing their amygdala charge. Chronic sleep debt keeps the body in a persistent low-grade stress state, amplifying all stress responses. You cannot 'mental-health' your way out of physical stress without adequate sleep."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Cortisol rises in 90 seconds", "note": "HPA axis activates faster than conscious thought — recognize physical signals first" },
+          { "icon": "💪", "label": "Muscle tension is measurable", "note": "Trapezius tension is a reliable biomarker of chronic stress — check it consciously" },
+          { "icon": "🫁", "label": "Long exhale = parasympathetic shift", "note": "Exhale longer than inhale → vagal tone → HRV increase in 3–5 breaths" },
+          { "icon": "😴", "label": "Sleep repairs cortisol damage", "note": "N3 slow-wave sleep releases GH — the primary anti-cortisol recovery signal" }
+        ]
+      },
+      {
+        "modalTitle": "Emotional Layer",
+        "keyFact": "Emotions are neurochemical events lasting 90 seconds — the rest is a choice to keep them going (Jill Bolte Taylor, Harvard neuroscientist). The amygdala fires, a chemical cascade floods the body, peaks in 90 seconds, and subsides. What extends it is the narrative the prefrontal cortex builds around the sensation. This is why 'name it to tame it' (Daniel Siegel) works: labeling an emotion activates the lateral prefrontal cortex, which inhibits the amygdala.",
+        "detail": "Emotional stress management is not about suppression — suppression increases amygdala reactivity long-term. It is about accurate labeling, allowing the sensation without narrative amplification, and building emotional vocabulary. The goal is emotional granularity: the ability to distinguish 'frustrated' from 'anxious' from 'overwhelmed' — each with different optimal responses.",
+        "details": [
+          "Emotions as information: Paul Ekman's basic emotion theory identifies 7 universal emotional expressions across cultures. Each carries information: fear = perceived threat; anger = perceived injustice; sadness = perceived loss; joy = goal progress. Treating emotions as data rather than problems to eliminate changes the relationship with them fundamentally — reduces avoidance, increases response flexibility.",
+          "Affective labeling (affect labeling): Lieberman et al. (UCLA, 2007) showed that labeling emotions in fMRI reduces amygdala activation more effectively than distraction. The more precise the label (e.g., 'I feel anticipatory dread' vs. 'I feel bad'), the greater the regulatory effect. This is why expanding emotional vocabulary (through reading fiction, journaling, therapy) has measurable effects on stress resilience.",
+          "The rumination trap: the default mode network (DMN) — active during 'mind-wandering' — is the neural substrate of rumination. Chronic stress keeps the DMN hyperactive, generating repetitive negative self-referential thought. DMN deactivates during focused tasks, meditation, and flow states. Even 10 minutes of focused activity (reading, cooking, running) disrupts the rumination loop by shifting DMN → task-positive network.",
+          "Self-compassion vs. self-criticism: Kristin Neff's research shows self-compassion (treating oneself with the kindness you'd show a good friend) activates the caregiving system (oxytocin, opioids) and reduces threat-based processing. Self-criticism activates the same threat pathways as external criticism — the body cannot distinguish between them. Self-compassion is not lowering standards; it is switching the motivational system from fear-based to mastery-based.",
+          "Building emotional regulation capacity: the prefrontal cortex — the regulatory seat — is the last brain region to fully develop (mid-20s) and the first to lose function under acute stress. Regular meditation physically thickens the prefrontal cortex (Lazar, Harvard, 2005). Even 8 weeks of MBSR (Mindfulness-Based Stress Reduction, 8 hours total) reduces amygdala gray matter density and increases prefrontal-amygdala inhibitory connectivity."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "Emotions last 90 seconds", "note": "The rest is the story you tell — 'name it to tame it' breaks the narrative loop" },
+          { "icon": "🔬", "label": "Precise labels reduce amygdala firing", "note": "Lieberman 2007: emotional granularity → measurably lower threat activation" },
+          { "icon": "🌀", "label": "Rumination = DMN hyperactivation", "note": "Any focused task deactivates DMN — even 10 min breaks the loop" },
+          { "icon": "💛", "label": "Self-compassion activates oxytocin", "note": "Not self-indulgence — it switches motivation from fear-based to mastery-based" }
+        ]
+      },
+      {
+        "modalTitle": "Behavioral Layer",
+        "keyFact": "Behavior under stress follows predictable patterns: approach (confrontation), avoidance (withdrawal), or automatic (habit loops). The 'tend-and-befriend' response (Taylor, UCLA) — seeking social connection under threat — is the evolutionarily oldest and most effective stress buffer, mediated by oxytocin and endorphins. Modern stress management treats behavior as the most modifiable layer — because unlike the autonomic nervous system, behavior responds directly to intentional design.",
+        "detail": "Behavioral stress responses include both adaptive (exercise, social connection, problem-solving) and maladaptive patterns (substance use, procrastination, social withdrawal, overworking). The key insight from behavioral science: under stress, the brain defaults to the strongest habit, not the 'best' action. Designing the environment so the path of least resistance is the adaptive response is more effective than willpower.",
+        "details": [
+          "Habit loops under stress: Charles Duhigg's habit loop (cue → routine → reward) becomes automatic under cortisol load because the brain shifts from prefrontal-cortex-driven deliberate behavior to striatum-driven habit execution. This is why under stress you reach for your phone, eat sugar, or snap at people — these are the strongest established routines. Replacing the routine (same cue, same reward, different behavior) is more effective than trying to eliminate the cue.",
+          "Social connection as stress buffer: Sheldon Cohen's famous 'cold study' (Carnegie Mellon): people with diverse social networks were 4× less likely to develop colds after virus exposure, and reported less severe symptoms. Social connection reduces cortisol, increases oxytocin and endorphins, and activates the ventral vagal complex (the social engagement system described by Polyvagal Theory). Even brief, positive social interactions — a chat with a neighbor — measurably reduce stress biomarkers.",
+          "Avoidance and the anxiety maintenance cycle: avoidance provides immediate relief (negative reinforcement) but maintains anxiety long-term by preventing habituation. CBT's core exposure principle: the only way to reduce anxiety about a stimulus is to encounter it without the feared consequence occurring. Behavioral avoidance keeps the amygdala's threat estimate of the avoided stimulus permanently elevated. Small exposures — a 30-second micro-confrontation — begin the habituation process.",
+          "Behavioral activation: a core CBT-D (depression) and stress-management intervention. Under stress/depression, activity withdrawal reduces positive reinforcement, which deepens negative affect, which reduces motivation for activity — a vicious cycle. Behavioral activation breaks it by scheduling small, previously enjoyed activities regardless of mood. The sequence is action → mood improvement, not wait for mood → then act. The first 5 minutes of any activity are the hardest.",
+          "Environment design: Wansink's work (food environment) and BJ Fogg's Tiny Habits show that behavior change is 80% environment design, 20% willpower. Practical applications: phone charger outside the bedroom (removes screen time cue), running shoes visible by the door (activation energy reduction), single-serve healthy snacks at eye level. Under high cortisol, willpower is the first resource depleted — environment design is the stress-proof behavior change strategy."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Stress = default to strongest habit", "note": "Prefrontal cortex goes offline — striatum runs the show — design environment first" },
+          { "icon": "🤝", "label": "Social connection = 4× fewer illnesses", "note": "Cohen (CMU): diverse social networks directly reduce cortisol and increase oxytocin" },
+          { "icon": "🚪", "label": "Avoidance maintains anxiety forever", "note": "CBT: only habituation through small exposures reduces the amygdala's threat estimate" },
+          { "icon": "🏃", "label": "Action precedes mood — not the reverse", "note": "Behavioral activation: schedule the activity first — mood follows after 5–10 minutes" }
+        ]
+      }
+    ],
+    "d7_modals": [
+      {
+        "modalTitle": "Breathing/Meditation ≥ 3 Min · +25 pts",
+        "keyFact": "3 minutes of deliberate breathing is the minimum effective dose for measurable HRV (Heart Rate Variability) improvement. Zaccaro et al. (2018) meta-analysis: slow breathing at 6 breaths/min (5 sec in / 5 sec out) maximally activates the baroreflex and increases HRV by ~40% in single sessions. Box breathing (4-4-4-4) achieves similar results. HRV increase = measurable parasympathetic activation = direct cortisol reduction cascade.",
+        "detail": "The 25-point weight reflects both difficulty and impact. Breathwork requires intentional disengagement from the default mode of distraction — harder than passive activities. But it is the single fastest evidence-based intervention to shift the autonomic nervous system from sympathetic to parasympathetic. 3 minutes is accessible to everyone, anywhere, without equipment.",
+        "details": [
+          "Physiological mechanism: slow breathing at 6 breaths/min (0.1 Hz) entrains the cardiovascular system at its resonant frequency — maximizing RSA (respiratory sinus arrhythmia) and baroreflex gain. Porges' Polyvagal Theory: this activates the ventral vagal complex, the 'social engagement' system associated with calm, connection, and curiosity. The myelinated vagal pathway (fast-responding) contrasts with the unmyelinated dorsal vagal (shutdown/freeze) — breathwork specifically activates the former.",
+          "Meditation: structural brain changes: 8 weeks of MBSR (mindfulness-based stress reduction, ~27 hours total) reduces amygdala gray matter density (Hölzel et al., Harvard, 2011). Increases cortical thickness in the insula, anterior cingulate, and somatosensory cortex — areas governing interoception, attention, and body awareness. Long-term meditators show reduced age-related cortical thinning — meditation may slow brain aging.",
+          "Minimum effective dose: Zeidan et al. (2010): 4 days × 20 min = significant improvements in working memory, cognitive flexibility, and mood. Mrazek et al. (2013): 8 min mindfulness reduced mind-wandering and improved GRE reading comprehension. Even 3 minutes of focused breathing disrupts the default-mode-network rumination loop — the primary source of stress amplification.",
+          "Body scan specifics: the 5-minute body scan (head-to-toe progressive attention) activates the insula — the interoceptive cortex — increasing the precision of interoceptive signals. Improved interoception → earlier detection of stress signals → larger window for regulatory response. People with higher interoceptive accuracy show better emotional regulation and lower anxiety trait scores.",
+          "Practical protocol: start with 3 cycles of box breathing (4 sec inhale → 4 sec hold → 4 sec exhale → 4 sec hold). For beginners: 3 min is achievable without any app — just a clock or counting. Progress: 3 min → 5 min → 10 min over 4 weeks. Morning practice anchors the cortisol awakening response; evening practice down-regulates pre-sleep sympathetic arousal."
+        ],
+        "points": [
+          { "icon": "💨", "label": "3 min minimum effective dose", "note": "Zaccaro 2018: slow breathing raises HRV ~40% in a single session" },
+          { "icon": "🧘", "label": "8 weeks MBSR shrinks the amygdala", "note": "Hölzel (Harvard 2011): structural gray matter reduction in fear-processing regions" },
+          { "icon": "🫀", "label": "6 breaths/min = cardiovascular resonance", "note": "0.1 Hz entrains baroreflex — maximum parasympathetic activation" },
+          { "icon": "🔄", "label": "Breaks DMN rumination loop", "note": "Even 3 min focused breathing deactivates default-mode-network — reduces stress amplification" }
+        ]
+      },
+      {
+        "modalTitle": "Journal 1–5 Lines · +20 pts",
+        "keyFact": "James Pennebaker's (UT Austin) landmark research: writing about stressful events for 15–20 min over 4 days → reduced doctor visits 43%, improved immune markers (T-lymphocyte and NK cell counts), and reduced rumination 6 months later. The mechanism: linguistic processing of emotional experiences shifts them from the amygdala (threat response) to the hippocampus (narrative memory) — reducing their emotional charge. Even 1–5 lines activates this pathway.",
+        "detail": "Journaling is not diary-keeping — it is deliberate emotional processing through language. The key is not length or quality; it is the act of translating felt experience into words. Even 1 sentence about what stressed you today initiates the narrative-processing pathway. The 5-line format (5 evening questions) structures this into a brief, consistent practice.",
+        "details": [
+          "Pennebaker's expressive writing protocol: participants wrote about their 'deepest thoughts and feelings' about traumatic/stressful events for 15–20 min across 4 consecutive days. Controls wrote about superficial topics. Results: 43% reduction in health-center visits, improved T-helper cell ratios (immune competence), lower cortisol levels in saliva. The effect was not immediate — it emerged over 6 weeks as the narrative processed. Crying during writing predicted better long-term outcomes.",
+          "Mechanism — the narrative shift: the left dorsomedial prefrontal cortex (language/narrative processing) and the right amygdala (threat response) are in inhibitory relationship. When you put an emotional experience into words, the narrative cortex activates and the amygdala quiets. Brain imaging (Lieberman, UCLA): simply choosing an emotion word ('angry,' 'scared') reduces amygdala fMRI signal within seconds. Journaling extends this process to sustained inhibition.",
+          "Gratitude journaling — specific mechanism: Emmons & McCullough (2003): gratitude journaling 3x/week → 35% higher life satisfaction scores, 25% more exercise, better sleep quality. Neural mechanism: gratitude activates the medial prefrontal cortex and nucleus accumbens (reward system), reducing the amygdala's relative weighting of threat stimuli. Important: specificity matters more than quantity — 'My colleague made me tea today' has more effect than 'I'm grateful for my friends.'",
+          "Brain dump for overwhelm: when the working memory is overloaded (too many worry thoughts), writing them down performs 'RAM clearing' — externalizing the items frees cognitive resources. This reduces the perceived cognitive load, which directly reduces the amygdala's threat estimation. A full brain dump (5–10 min of writing everything stressful) + then sorting by controllable/uncontrollable is a complete acute stress intervention.",
+          "Consistency vs. depth: Klein & Boals (2001) showed even brief (7 min) structured writing about stressful events reduced working memory intrusions and improved final exam scores. You don't need a literary narrative — even 3 bullet points ('What stressed me · What I did · What I'll do differently') triggers the processing pathway. The habit of daily externalizing, however brief, is more protective than occasional deep sessions."
+        ],
+        "points": [
+          { "icon": "✍️", "label": "Pennebaker: −43% doctor visits", "note": "4 days × 15 min expressive writing → measurable immune and cortisol improvements" },
+          { "icon": "🧠", "label": "Language quiets the amygdala", "note": "Lieberman: naming an emotion reduces amygdala fMRI signal within seconds" },
+          { "icon": "🙏", "label": "Specific gratitude > generic gratitude", "note": "Emmons 2003: precise items ('colleague made tea') → greater life satisfaction increase" },
+          { "icon": "📤", "label": "Brain dump clears working memory RAM", "note": "Externalizing worry thoughts reduces perceived cognitive load → lower amygdala threat estimate" }
+        ]
+      },
+      {
+        "modalTitle": "Digital Detox ≥ 10 Min · +15 pts",
+        "keyFact": "Smartphone use activates the same dopamine-reward pathway as gambling — variable-ratio reinforcement schedule (you never know when there's a notification worth having). Average person checks phone 96× /day (Asurion 2019). Screen-free time is now categorized as 'offline recovery' — the same concept as physical recovery after exercise. Even 10 minutes of screen-free time measurably reduces cortisol and increases parasympathetic tone.",
+        "detail": "Digital detox is not about anti-technology — it is about intentional offline recovery, which is now a clinical concept. The brain needs periods of no digital input to consolidate information, reset dopamine sensitivity, and allow the default mode network to cycle through constructive self-reflection (not just rumination). The minimum dose is 10 minutes — enough for one complete DMN processing cycle.",
+        "details": [
+          "The dopamine trap — variable-ratio reinforcement: B.F. Skinner's rats pressed the lever most frantically when rewards were unpredictable (variable-ratio schedule). This is exactly how social media notifications work: you check because there might be something rewarding. Each check that finds nothing increases urgency for the next check. This creates a compulsive checking loop that elevates baseline dopamine seeking, reducing sensitivity to other rewards (food, conversation, nature).",
+          "Attention residue: Sophie Leroy (2009) coined 'attention residue' — after switching from Task A to check a notification, even if you return to Task A, part of your attention remains on the notification. EEG studies show this residue persists 23 minutes on average after a notification interruption. In a standard workday with 96 phone checks, true focused work is nearly impossible. 10-minute device-free blocks are the minimum unit of recovered attention.",
+          "Pre-sleep screen effects: blue light (460–480 nm) from screens suppresses melatonin production via ipRGC stimulation — same cells targeted by morning sunlight. Chang et al. (2014, PNAS): reading on an iPad before bed → 55% less melatonin, took 10 min longer to fall asleep, 90 min less REM sleep, and felt more drowsy the next morning despite same total sleep time. Even 'night mode' (warm color filter) reduces but does not eliminate the effect — the content engagement is also alerting.",
+          "Nature as antidote: Attention Restoration Theory (Kaplan, 1995): natural environments provide 'soft fascination' — capturing attention effortlessly without cognitive effort — allowing directed attention to recover. Even 10 minutes looking at a park, garden, or even images of nature (vs. urban scenes) reduces cortisol and restores attention capacity. Berman et al. (2008): a 50-minute walk in a park improved working memory 20% vs. an urban walk.",
+          "Practical tiered approach: Level 1 (easy): phone-free meals — 10 min each meal = 30 min/day detox + improved meal satisfaction and portion control (eating while distracted increases caloric intake 15–35%). Level 2 (standard): phone-free first 30 minutes of the day and 30 minutes before sleep — the two most circadian-critical windows. Level 3 (advanced): phone-free work blocks (90-min Pomodoro sessions) + one full day/week digital sabbath. Start with Level 1 for 2 weeks."
+        ],
+        "points": [
+          { "icon": "📱", "label": "96 phone checks/day average", "note": "Variable-ratio dopamine schedule — each check for 'nothing' increases urgency for the next" },
+          { "icon": "🧩", "label": "Attention residue lasts 23 minutes", "note": "Leroy 2009: a single notification interruption costs nearly half an hour of focused attention" },
+          { "icon": "🌙", "label": "Screen = 55% less melatonin", "note": "Chang 2014 (PNAS): iPad before bed → 90 min less REM despite same total sleep duration" },
+          { "icon": "🌿", "label": "10 min nature = +20% working memory", "note": "Berman 2008: park walk vs. urban walk — nature restores directed attention capacity" }
+        ]
+      },
+      {
+        "modalTitle": "Acknowledge Stress Today · +10 pts",
+        "keyFact": "Stress acknowledgment — simply naming and accepting a stressor rather than suppressing or ruminating — activates the ventrolateral prefrontal cortex (vlPFC), which directly inhibits the amygdala. James Gross's (Stanford) Process Model of Emotion Regulation: cognitive reappraisal (reframing the meaning of a stressor) is the most effective long-term regulation strategy, but it requires first acknowledging the stressor exists. Suppression — the alternative — is associated with higher sympathetic activation and worse health outcomes.",
+        "detail": "The 10-point value reflects that acknowledgment is a prerequisite skill — it enables all other regulation strategies. Many people skip acknowledgment entirely, moving straight to problem-solving or distraction. This prevents the emotional processing that reduces the amygdala's stored threat charge. A 60-second acknowledgment practice ('I am stressed about X, and that is a normal response') activates the same regulatory pathway as formal therapy.",
+        "details": [
+          "The suppression cost: Richard Lazarus and James Gross established that emotional suppression — pushing feelings away without processing — requires sustained prefrontal effort, depleting cognitive resources. People who habitually suppress emotions show higher baseline cortisol, faster autonomic arousal to new stressors, and worse relationship quality. The 'pressure cooker' model: suppressed stress re-emerges more intensely, often displaced (snapping at unrelated people/situations).",
+          "Cognitive reappraisal mechanism: reappraisal is changing the meaning of the situation, not the situation itself. Example: 'I'm nervous about this presentation' → reappraised as 'My body is preparing me — arousal will sharpen my performance.' Jamieson et al. (2012, Journal of Experimental Psychology): reappraising anxiety as excitement improved math performance under stress. Reappraisal is only possible after acknowledging the original emotion.",
+          "Acceptance and commitment: ACT (Acceptance and Commitment Therapy) frames stress acknowledgment as 'defusion' — seeing thoughts and feelings as events in consciousness rather than facts. 'I notice I am having the thought that this is overwhelming' vs. 'This is overwhelming.' This linguistic distancing reduces emotional reactivity without suppression. fMRI studies confirm that ACT-style defusion reduces amygdala activation comparably to CBT reappraisal.",
+          "The stress mindset: Alia Crum (Stanford) showed that people who viewed stress as enhancing performed better cognitively, had healthier cortisol profiles (spike then rapid recovery), and reported more vitality — compared to people who viewed stress as harmful. The 'stress is enhancing' mindset is itself a form of reappraisal. Kelly McGonigal's TED talk popularized this: the stress response is only harmful if you believe it is. Acknowledging stress without catastrophizing is the behavioral implementation.",
+          "One-minute acknowledgment practice: sit quietly for 60 seconds. State the stressor explicitly (aloud or in writing): 'I am stressed about [X].' Follow with: 'This is a normal response — my nervous system is trying to protect me.' Then take 3 slow breaths. This sequence — name → normalize → breathe — engages all three regulatory pathways (linguistic, cognitive, physiological) in under 90 seconds."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "Name it to tame it (vlPFC)", "note": "Gross (Stanford): acknowledgment activates inhibitory prefrontal pathways before regulation is possible" },
+          { "icon": "🚫", "label": "Suppression costs cognitive resources", "note": "Lazarus: habitual suppressors show higher baseline cortisol and faster stress reactivity" },
+          { "icon": "🔄", "label": "Reappraisal requires acknowledgment first", "note": "Jamieson 2012: 'anxiety as excitement' improved exam performance — but only after naming the feeling" },
+          { "icon": "💪", "label": "Stress mindset matters: Crum (Stanford)", "note": "'Stress as enhancing' belief → healthier cortisol profile and better cognitive performance" }
+        ]
+      },
+      {
+        "modalTitle": "Evening Routine · +15 pts",
+        "keyFact": "An evening wind-down routine is one of the most evidence-based sleep hygiene interventions. Matthew Walker (Why We Sleep): the brain cannot switch abruptly from high arousal to sleep — it needs a graduated deceleration. 90-minute wind-down produces the deepest N3 slow-wave sleep. The routine works by beginning melatonin-compatible behaviors (dim light, low stimulation, cooler temperature) 90 minutes before target sleep time — aligning behavioral signals with the biological circadian signal.",
+        "detail": "The value of an evening routine is in its signal function — telling the nervous system that threat-monitoring can safely decrease. Cortisol must fall below a threshold for sleep onset. A predictable, repeated sequence (the routine itself) becomes a conditioned stimulus for sleepiness, using Pavlovian conditioning principles — the body learns to prepare for sleep when the routine begins.",
+        "details": [
+          "Melatonin timing and light: melatonin is suppressed by light >10 lux (bright room) and completely suppressed by >200 lux (typical room lighting). Dim lighting (<10 lux, equivalent to candlelight) for 60–90 min before bed allows melatonin to rise on schedule. Using red/orange light (>590 nm) instead of blue/white (460 nm) reduces the suppression further. Small nightlights, salt lamps, or bias lighting behind the TV are practical implementations. The goal: create a lighting environment that signals 'night' to the ipRGC photodetectors.",
+          "Temperature protocol: core body temperature must drop ~1°C for sleep onset. The body sheds heat through peripheral vasodilation (warm hands and feet = heat release). A warm shower or bath 1–2 hours before sleep (not immediately before) triggers a counterintuitive rebound cooling as body heat is drawn to the surface and radiates away after exiting. Walker: 'The warm bath before bed is probably the most underutilized sleep intervention.' Room temperature: 16–19°C is the evidence-based range for optimal sleep architecture.",
+          "Cognitive wind-down — the worry journal: Borkovec's worry postponement technique: set aside 15 min in the early evening as a 'designated worry time' — write down all current worries + one next action step for each. When worry thoughts arise at bedtime, remind yourself they are already scheduled. This technique reduces sleep-onset rumination significantly. Alternative: the 'Tomorrow's List' — writing a specific task list for tomorrow reduces bedtime task-intrusion by 50% (Scullin et al., 2018).",
+          "Alcohol and sleep: alcohol is the most commonly used self-medication for sleep — and one of the most counterproductive. It accelerates sleep onset (sedation) but fragments sleep in the second half of the night by blocking REM and causing rebound arousal as it metabolizes (peak effect at ~3 AM). A single drink reduces REM sleep 20%. Regular evening alcohol maintains a chronic REM sleep deficit, which impairs emotional processing and memory consolidation. Replacing alcohol with the evening routine is a direct upgrade.",
+          "Breath and body before bed: Yoga Nidra (non-sleep deep rest, NSDR) — a guided body scan practice lasting 10–30 min — produces brain states comparable to N1–N2 sleep while maintaining partial consciousness. Andrew Huberman recommends NSDR for recovery and sleep onset. Even a 5-minute progressive muscle relaxation reduces sleep onset latency by an average of 12 minutes (Lichstein meta-analysis). The combination of dim light + cool room + PMR or body scan is the minimum effective evening routine package."
+        ],
+        "points": [
+          { "icon": "🌙", "label": "90-min deceleration window", "note": "Walker: abrupt high→sleep transition is impossible — the brain needs graduated wind-down" },
+          { "icon": "🌡️", "label": "Warm bath → rebound cooling", "note": "Core body temp must drop 1°C for sleep onset — bath 1–2 hours before triggers this" },
+          { "icon": "📝", "label": "Worry journal reduces bedtime rumination", "note": "Scullin 2018: tomorrow's task list cuts bedtime task-intrusion thoughts in half" },
+          { "icon": "🍷", "label": "1 drink = −20% REM sleep", "note": "Alcohol blocks REM in the second half of the night — REM debt impairs emotional processing" }
+        ]
+      },
+      {
+        "modalTitle": "Gentle Discipline: No Self-Blame · +15 pts",
+        "keyFact": "Self-compassion — treating oneself with the same kindness extended to a good friend after failure — is positively correlated with motivation, resilience, and long-term habit adherence. Kristin Neff (UT Austin): self-compassion scale scores predict better academic performance, lower procrastination, and greater willingness to try again after failure. Crucially, self-compassion is not self-indulgence — it does not reduce standards or accountability. It switches the motivational system from fear-avoidance to mastery-approach.",
+        "detail": "Gentle discipline is the behavioral implementation of self-compassion. After missing a practice, the question is not 'Why can't I do this?' (self-criticism, threat activation) but 'What made this difficult, and what can I adjust?' (problem-solving, approach activation). This reframe keeps the prefrontal cortex engaged — rather than shutting it down with shame-induced threat response.",
+        "details": [
+          "Self-criticism as threat response: the brain processes self-critical thoughts using the same neural circuitry as external threats — primarily the amygdala and hypothalamic threat-defense systems. Paul Gilbert's Compassionate Mind Training: self-criticism activates the threat system (fight/flight), which is counterproductive for learning and habit change. Shame — the most intense form of self-criticism — causes withdrawal (avoidance) and reduces the probability of re-engagement with the behavior.",
+          "Self-compassion components (Neff's triad): (1) Mindfulness — acknowledging the painful experience without over-identifying with it; (2) Common humanity — recognizing that struggle is a universal human experience, not a personal failing; (3) Self-kindness — responding with warmth rather than judgment. All three components independently predict resilience — but together they produce a synergistic effect not seen when any one is missing.",
+          "The 1% comeback rule: based on the aggregation of marginal gains concept (Dave Brailsford, British Cycling). After a missed day, the goal is not to compensate with double effort tomorrow — that leads to boom-bust cycles and eventual abandonment. Instead, identify the 1% adjustment that makes tomorrow's practice slightly easier. Example: missed morning breathing? → tomorrow, set breathing audio already queued. Missed journaling? → Leave journal open on the desk the night before.",
+          "Identity-based habits: James Clear's Atomic Habits framework — every action is a vote for the kind of person you want to be. Self-criticism after a missed practice ('I failed again') is an identity vote for 'person who fails.' Reframing ('I typically do this — today was an exception') preserves the identity vote. Long-term adherence is more strongly predicted by identity alignment than motivation level or willpower availability.",
+          "Recovery, not perfection: B.J. Fogg's Tiny Habits research: the single strongest predictor of long-term habit maintenance is the ability to recover quickly after disruption — not the ability to maintain a perfect streak. People who maintain perfect streaks report higher stress around the habit and are more likely to completely abandon it after a break ('all or nothing' thinking). The evidence-based goal is resilient recovery, not flawless execution."
+        ],
+        "points": [
+          { "icon": "💛", "label": "Self-compassion = higher motivation", "note": "Neff: self-compassion predicts greater willingness to try again — not lower standards" },
+          { "icon": "🧠", "label": "Self-criticism = threat activation", "note": "Gilbert: the brain cannot distinguish self-attack from external threat — shame causes withdrawal" },
+          { "icon": "📈", "label": "1% adjustment, not double effort", "note": "Compensation after missed days causes boom-bust cycles → abandonment. Tiny adjustment wins." },
+          { "icon": "🔄", "label": "Quick recovery > perfect streak", "note": "Fogg (Tiny Habits): resilient recovery after disruption is the #1 predictor of long-term adherence" }
+        ]
+      }
+    ]
   },
   "pillarE": {
     "id": "e",
@@ -3945,6 +4352,350 @@
       {"label": "4-Week Test"},
       {"label": "Library"}
     ],
-    "videos": []
+    "videos": [],
+    "hero_stats": [
+      { "l": "Modules" },
+      { "l": "Weeks" },
+      { "l": "Points/day" },
+      { "l": "Min/day" }
+    ],
+    "daily_min": [
+      {
+        "label": "Move at least 10 minutes",
+        "tip": "Anything counts: walking, climbing stairs, cycling",
+        "keyFact": "A 2019 JAMA study of 120,000 people found that 10 minutes of movement per day reduces premature mortality risk by 15%. No gym, no special equipment — just move.",
+        "details": [
+          "10 consecutive minutes of movement is enough to activate the cardiovascular system and release endorphins. Everything counts: brisk walking, stair climbing, cycling, swimming, jump rope, playing with kids.",
+          "Accumulation works: 3 × 10 minutes = 30 minutes, equivalent in cardiovascular benefit to 1 × 30 consecutive minutes according to ACSM (American College of Sports Medicine).",
+          "The best time is the time you will actually do it. Morning sets a positive tone; evening releases stress. There is no 'perfect' time.",
+          "'2-minute rule': if you don't want to exercise, commit to just 2 minutes. Once started, 90% of people continue past 10 minutes through the momentum of action.",
+          "Habit stack — attach to existing behavior: after breakfast, before a shower, while waiting for kids. No extra time needed — just attach movement to an existing schedule slot.",
+          "Long-term goal is 150 min/week (WHO) — but 10 min/day is the proven, most sustainable starting threshold for building the habit from scratch."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "10 Minutes Is Enough", "note": "Start with 10 minutes — the evidence-based minimum effective dose" },
+          { "icon": "🎯", "label": "Any Activity Counts", "note": "Walking, stairs, cycling — no gym required" },
+          { "icon": "🧠", "label": "Mood Improvement", "note": "Endorphins rise in the first 5 minutes, lasting several hours" },
+          { "icon": "📈", "label": "Accumulation Works", "note": "3 × 10 min = equivalent cardiovascular benefit to 30 continuous minutes" }
+        ]
+      },
+      {
+        "label": "Eat at least 1 protein source per main meal",
+        "tip": "Meat/fish/eggs/tofu — choose 1 source per meal",
+        "keyFact": "Protein is the only macronutrient that cannot be stored in the body — it must be consumed steadily across meals. 20–30g protein per meal is the optimal threshold for muscle protein synthesis, satiety, and stable blood sugar control.",
+        "details": [
+          "Each main meal should have 1 clear protein source: chicken breast (~25g/100g), fish (~20g/100g), egg (~6g each), beef (~25g/100g), firm tofu (~8g/100g), cooked lentils (~9g/100g).",
+          "Protein keeps you fuller longer than carbs and fat due to the highest thermic effect (the body burns 20–30% of protein calories just to digest it) — supporting natural weight control.",
+          "Plant and animal protein are both valuable. Combining 2 plant sources (rice + beans) provides a complete amino acid profile equivalent to meat — no need for meat at every meal.",
+          "Distributing evenly across 3 meals is better than loading in the evening — the body absorbs and uses protein more effectively for muscle protein synthesis and recovery.",
+          "Signs of protein deficiency: persistent fatigue, weak hair and nails, slow wound healing, sugar cravings after meals (the body seeks fast energy).",
+          "Simple rule: look at your plate — if there is no clear protein source, add 1 egg or 1 container of Greek yogurt. Easiest to execute, immediate impact."
+        ],
+        "points": [
+          { "icon": "🥚", "label": "20–30g / Meal", "note": "Optimal threshold for muscle synthesis and lasting satiety" },
+          { "icon": "🐟", "label": "Diversify Sources", "note": "Meat/fish/eggs/beans — rotate for complete amino acids" },
+          { "icon": "⏰", "label": "Distribute Across 3 Meals", "note": "Don't load in the evening — better absorption and utilization" },
+          { "icon": "💪", "label": "Preserve Muscle Mass", "note": "Critical after age 30 — muscle declines ~1%/year without stimulus" }
+        ]
+      },
+      {
+        "label": "Eat at least 2 servings of vegetables/fruit",
+        "tip": "1 fist = 1 serving. More colors the better",
+        "keyFact": "WHO recommends ≥5 servings (400g) of fruits and vegetables per day. 2 servings is a realistic starting threshold — each additional serving reduces cardiovascular risk by 4% and cancer risk by 3% (analysis of 95 studies, 2019).",
+        "details": [
+          "1 serving = 1 fist (~80g): 1 banana, 1 fist of greens, 3 tablespoons of cooked vegetables, 1 small salad bowl, or 1 glass of pure unsweetened juice.",
+          "Colors = different micronutrients: red (lycopene — heart), orange/yellow (beta-carotene — eyes), green (chlorophyll — liver), purple (anthocyanin — brain), white (allicin — immunity).",
+          "Raw and cooked vegetables have different benefits. Combining both throughout the day is ideal — no need for complexity, just variety.",
+          "Fiber from produce feeds beneficial gut bacteria (prebiotics), lowers LDL, slows sugar absorption, and creates lasting satiety. No supplement can replace real vegetables.",
+          "Easiest tip: add 1 fist of vegetables to any meal; use fruit as a snack instead of sweets; make a vegetable/fruit smoothie in the morning (5 minutes, no complex prep).",
+          "Frozen vegetables are nutritionally equivalent to fresh — often frozen immediately after harvest when nutrients are highest. More convenient and less wasteful than fresh."
+        ],
+        "points": [
+          { "icon": "🥦", "label": "1 Fist = 1 Serving", "note": "~80g — no scale needed, estimate with your own fist" },
+          { "icon": "🌈", "label": "Eat Multiple Colors", "note": "Each color = a different health-protective phytochemical" },
+          { "icon": "🦠", "label": "Feed Your Gut", "note": "Fiber feeds beneficial bacteria — no supplement can replace it" },
+          { "icon": "❄️", "label": "Frozen Is Fine", "note": "Nutritionally equivalent to fresh — convenient and less wasteful" }
+        ]
+      },
+      {
+        "label": "Drink enough water for your personal needs",
+        "tip": "Body weight × 35 ml = your daily goal",
+        "keyFact": "Dehydration of only 1–2% of body weight reduces cognitive performance by 10–15% and physical performance by 20–30%. Thirst is a sign of mild dehydration — don't wait until you're thirsty.",
+        "details": [
+          "Personal formula: body weight (kg) × 35 ml = base daily amount. 60 kg → 2,100 ml; 70 kg → 2,450 ml; 80 kg → 2,800 ml. Add ~500 ml per hour of intense exercise or hot weather.",
+          "Plain water is best. Unsweetened green tea, moderate coffee, and soups also count. Sodas and sweetened juices do NOT count — they contain empty calories and don't hydrate efficiently.",
+          "Spread evenly throughout the day: 1 glass when waking, 1 glass before each meal, 1 glass every 2 hours during work, 1 small glass before sleep (not too much to avoid waking up).",
+          "Urine color is the best measure: pale yellow like straw = adequate. Dark yellow or orange = drink more immediately. Colorless = possibly overdrinking.",
+          "Overdrinking (>4L/day for sedentary people) can cause hyponatremia — rare but dangerous. The goal is to drink ENOUGH, not as much as possible.",
+          "Needs increase with: fever (+500 ml), high salt/protein intake, hours in air conditioning (dry air draws moisture through skin and breath), pregnancy (+300 ml)."
+        ],
+        "points": [
+          { "icon": "📐", "label": "Personal Formula", "note": "Body weight (kg) × 35 ml = your own daily target" },
+          { "icon": "🌡️", "label": "Check Urine Color", "note": "Pale yellow = adequate. Dark yellow = drink more immediately" },
+          { "icon": "⏰", "label": "Spread Throughout the Day", "note": "Drinking all at once is less effective — kidneys process ~1L/hour" },
+          { "icon": "🚫", "label": "Don't Wait Until Thirsty", "note": "Thirst = already mildly dehydrated — drink before thirst" }
+        ]
+      },
+      {
+        "label": "Prepare for / go to bed earlier than yesterday",
+        "tip": "Turn off screens 30 minutes before sleep",
+        "keyFact": "An extra 30 minutes of sleep per night (from 6.5h → 7h) reduces heart disease risk by 24% and diabetes risk by 14%, per a study of 500,000 people from UK Biobank. No need for perfection — just improve incrementally.",
+        "details": [
+          "The goal is not 'sleep 1 hour earlier immediately' — but 15–30 minutes earlier than yesterday. Abrupt changes disrupt the circadian rhythm. Gradual change is more sustainable.",
+          "'No phone 30 minutes before sleep' is the simplest rule with the greatest impact. Blue light from screens suppresses melatonin (the sleep hormone) as powerfully as daylight.",
+          "Prepare the environment: switch off bright lights → use dim light 60 minutes before bed; room temperature 18–20°C; room as dark as possible. Temperature is the single most impactful environmental factor for sleep quality.",
+          "Wind-down routine 20–30 minutes: warm bath (body temperature drops afterward, triggering sleepiness), reading a paper book, listening to gentle music. Same routine every night → brain associates it with sleep.",
+          "Fixed wake time is more important than fixed bedtime: maintaining a consistent wake time even on weekends regulates the biological clock far more effectively than trying to sleep earlier.",
+          "Can't sleep after 20 minutes: get up, read a paper book in dim light until genuinely sleepy, then return to bed. Lying awake creates the association 'bed = anxiety'."
+        ],
+        "points": [
+          { "icon": "📅", "label": "Improve Incrementally", "note": "15 minutes earlier per night — don't jump a full hour immediately" },
+          { "icon": "📵", "label": "No Screens 30 Min Before", "note": "Blue light suppresses melatonin as powerfully as sunlight" },
+          { "icon": "🌡️", "label": "Cool Room 18–20°C", "note": "The single most impactful environmental factor for sleep quality" },
+          { "icon": "⏰", "label": "Fixed Wake Time", "note": "More important than fixed bedtime — including weekends" }
+        ]
+      },
+      {
+        "label": "Spend 3–5 minutes breathing / slowing down",
+        "tip": "Box breathing 4-4-4-4 or simply sit still",
+        "keyFact": "Slow, deep breathing activates the parasympathetic nervous system within 60–90 seconds — a complete reversal of the stress response. 5 minutes of deliberate breathing per day reduces cortisol 15–20% after 4 weeks of consistency.",
+        "details": [
+          "Box breathing (4-4-4-4): inhale for 4 seconds, hold 4, exhale 4, hold 4. Repeat 4–6 cycles = 1.5–2.5 minutes. Used by Navy SEALs to maintain calm under extreme pressure.",
+          "4-7-8 breathing (for sleep): inhale 4 seconds, hold 7, exhale slowly for 8 seconds. Longer exhale than inhale triggers a stronger relaxation response — best suited for before sleep.",
+          "Diaphragmatic breathing: one hand on the belly, one on the chest. Inhale so the belly rises, chest moves little. This is how newborns breathe naturally — many adults have forgotten.",
+          "Consistency over duration: 5 minutes/day every day is more effective than 30 minutes once a week. The brain learns to recognize the relaxation signal better with regular practice.",
+          "Most effective timing: right after waking before the phone, before meals for better digestion, when stress rises, as part of a wind-down before sleep.",
+          "Simplest version: sit with a straight back, close eyes, focus on the breath. When the mind wanders — gently return attention to the breath. This is the foundation of all meditation practice."
+        ],
+        "points": [
+          { "icon": "📦", "label": "Box Breathing 4-4-4-4", "note": "Used by Navy SEALs under pressure — anyone can do this" },
+          { "icon": "🫁", "label": "Breathe from the Belly", "note": "Belly rises on inhale — the natural breathing pattern many adults have forgotten" },
+          { "icon": "⏱️", "label": "5 Minutes per Day", "note": "Consistency matters more than duration — results accumulate after 4 weeks" },
+          { "icon": "🧘", "label": "Anytime", "note": "Before eating, after waking, under stress — no dedicated time slot needed" }
+        ]
+      }
+    ],
+    "weekly_items": [
+      { "label": "Strength training sessions" },
+      { "label": "Cardio / long walk sessions" },
+      { "label": "Days eating enough vegetables" },
+      { "label": "Days with good sleep" },
+      { "label": "Days with a calm practice" },
+      { "label": "Days journaling" }
+    ],
+    "score_items": [
+      { "label": "Movement / exercise" },
+      { "label": "Walking / NEAT" },
+      { "label": "Basic nutrition" },
+      { "label": "Water intake" },
+      { "label": "Sleep / recovery" },
+      { "label": "Mind / calm practice" },
+      { "label": "Journaling" }
+    ],
+    "quick_wo": [
+      {
+        "dur": "5 min",
+        "label": "Body Reset",
+        "keyFact": "5 minutes every day is enough to maintain the movement habit — even when there is no time for a longer session. Research shows consistency beats intensity: 5 min × 7 days is more effective than 35 min × 1 day/week.",
+        "details": [
+          "The primary goal of the 5-minute session is not fat burning or muscle building — it is maintaining the habit chain and preventing the body from 'freezing up' after hours of sitting or a lazy rest day.",
+          "Diaphragmatic breathing: inhale through the nose for 4 seconds, belly rises (not chest), exhale through the mouth for 6 seconds. Activates the parasympathetic nervous system — lowers cortisol and prepares the body for movement.",
+          "Shoulder rolls and chest opening: counteracts the rounded-back posture from sitting all day. The pectoral and anterior deltoid muscles shorten — rolling the shoulders backward stretches them and opens the thoracic cavity.",
+          "Cat-cow: combining spinal flexion (cat) and extension (cow) creates mobility along the full length of the spine. Lubricates the joints and reduces stiffness from prolonged sitting — especially effective after sleep or long desk work.",
+          "Light hip hinge (bodyweight Romanian deadlift): stretches the hamstrings and glutes — the two muscle groups most inhibited by sitting. Stand tall, hinge forward at the hips (not rounding the back), hands reach toward knees, then stand back up.",
+          "Child's pose finish: releases the lower back and hips, creating a full-body relaxation sensation. Deep breathing in this position activates the relaxation reflex — leaving the body and mind ready for the next task or rest."
+        ],
+        "points": [
+          { "icon": "🔗", "label": "Maintain Habit Chain", "note": "Don't skip a day — even just 5 minutes" },
+          { "icon": "🫁", "label": "Diaphragmatic Breathing First", "note": "Lowers cortisol, activates parasympathetic system" },
+          { "icon": "🪑", "label": "Counter Sitting Posture", "note": "Chest opening + hip hinge counteract desk posture" },
+          { "icon": "😌", "label": "End with Child's Pose", "note": "True relaxation — don't cut this step short" }
+        ]
+      },
+      {
+        "dur": "10 min",
+        "label": "Full Body Beginner",
+        "keyFact": "10 minutes is enough to activate all major muscle groups (legs, chest, back, core) and create a positive hormonal response. This 2-round circuit is designed for beginners to complete from day one — no equipment, no experience needed.",
+        "details": [
+          "2-minute warm-up is mandatory — never skip it even in a short session. Marching in place raises muscle temperature and heart rate, shoulder rolls open the shoulder and thoracic spine, chair squats activate the quads and glutes before heavier loading.",
+          "2-round circuit: each exercise for 30 seconds → move immediately with no rest. Squat → Knee push-up → Glute bridge → Dead bug.",
+          "Basic squat: stand with feet shoulder-width apart, sit back and down as if reaching for a chair behind you, knees not excessively past toes, back straight. Activates quadriceps, glutes, and core simultaneously.",
+          "Knee push-up: not less effective than a standard push-up when done with proper form. Body straight from knees to shoulders, chest lowers near the floor, push fully back up. This is the starting point — progress to standard push-ups after 4–6 weeks.",
+          "Glute bridge: lie on your back, knees bent 90°, push hips up until thighs and torso form a straight line. Hold 2 seconds at the top for maximum glute activation. Very important for people who sit a lot (glutes become inhibited).",
+          "Dead bug: the best deep core exercise (transverse abdominis) for beginners. Lie on your back, raise legs and arms to 90°, slowly lower the opposite arm and leg toward the floor then bring them back. Lower back must stay pressed to the floor throughout — if you can't maintain it, reduce the range of motion."
+        ],
+        "points": [
+          { "icon": "⏱️", "label": "2-Min Warm-Up Mandatory", "note": "Never skip even in a short session — prevents injury" },
+          { "icon": "🔄", "label": "2-Round Circuit", "note": "4 exercises × 30s × 2 rounds = 6 efficient minutes" },
+          { "icon": "🦵", "label": "Knee Push-Ups Are Fine", "note": "Proper form matters more than the push-up variation" },
+          { "icon": "🌱", "label": "Foundation for 4–6 Weeks", "note": "Then progress to standard push-ups and add rounds" }
+        ]
+      },
+      {
+        "dur": "20 min",
+        "label": "Full Body Standard",
+        "keyFact": "20 minutes × 3–4 times/week is the minimum threshold to create significant mechanical and hormonal adaptation. This 3-round circuit stimulates all 5 major muscle groups, generates EPOC (post-exercise fat burning), and stimulates muscle protein synthesis for 24–48 hours afterward.",
+        "details": [
+          "4-minute warm-up: march in place 1 min, full-body joint circles 1 min, light squats 1 min, inchworm or world's greatest stretch 1 min. Muscle temperature and joint viscosity must reach optimal levels before the main session.",
+          "3-round circuit: each exercise 40–45 seconds, rest 15 seconds between exercises, rest 60 seconds between rounds. Squat (legs) → Push-up (chest + triceps + shoulders) → Band row (back + biceps) → Glute bridge (glutes + hamstrings) → Plank (core).",
+          "Band row (resistance band): anchor the band at chest height, pull toward yourself by bending the elbows, squeeze the back muscles at the end of the movement. Activates rhomboids, mid-traps, and lats — muscle groups that are typically weak in people who sit a lot.",
+          "Why 3 rounds matters more than 2: round 3 creates the highest metabolic stress (muscles are partially fatigued) — this is the primary stimulus for muscle protein synthesis. EPOC (excess post-exercise oxygen consumption) increases significantly after round 3.",
+          "4-minute cooldown is non-negotiable: gradually lower heart rate (walk 1 min), quad stretch 30s each side, hamstring stretch 30s, pigeon pose (hip) 30s each side, child's pose 1 min. Skipping cooldown increases risk of dizziness and next-day muscle soreness.",
+          "Frequency: 3–4 times/week with at least 1 rest day between sessions targeting the same muscle groups. Muscles need 48 hours to recover and rebuild. Training daily without varying the workout causes overtraining and worse results."
+        ],
+        "points": [
+          { "icon": "🔥", "label": "EPOC After Training", "note": "Fat continues burning for 24–48h — 3 rounds create this effect" },
+          { "icon": "🔗", "label": "Band Row for the Back", "note": "The most commonly neglected muscle group — the most important" },
+          { "icon": "💤", "label": "48h Recovery", "note": "Train 3–4 times/week, alternating days — not daily" },
+          { "icon": "🧘", "label": "4-Min Cooldown Mandatory", "note": "Never cut — reduces soreness and dizziness risk" }
+        ]
+      }
+    ],
+    "test_items": [
+      {
+        "label": "Body weight", "unit": "kg", "how": "Weigh in the morning, after using the bathroom, before eating",
+        "keyFact": "Body weight can fluctuate 1–3 kg within a single day due to water, food, and muscle glycogen — not fat. Comparisons are only meaningful under identical conditions: morning after bathroom, before eating, same clothing.",
+        "details": [
+          "Standard conditions: morning after using the bathroom, before breakfast and the first drink. Same time, same clothing each measurement. Wrong conditions → 1–3 kg variance that doesn't reflect reality.",
+          "Trend matters more than a single number: track a 7–14 day average rather than day-to-day comparisons. Daily fluctuations of 1–3 kg are normal (water, salt, muscle glycogen, menstrual cycle).",
+          "The scale doesn't measure everything: someone training may gain 2–3 kg of muscle while losing fat simultaneously — weight stays the same but the body composition changes significantly. Combine with waist measurement + how clothes fit.",
+          "BMI has limits: it cannot distinguish muscle from fat. Someone who trains intensively may have an 'overweight' BMI but a completely healthy body. Waist circumference + body fat percentage are better indicators.",
+          "Setpoint theory: the body has a 'balance point' regulated by leptin and ghrelin. Rapid weight loss triggers protective mechanisms (increased hunger, lower metabolism). Slow, sustainable change is more effective.",
+          "Realistic goal: losing 0.5–1 kg/week is the maximum for fat loss (not muscle). More than that is usually water and muscle — which will return once normal eating resumes."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Same Conditions Every Time", "note": "Morning after bathroom, before eating — the most critical factor" },
+          { "icon": "📈", "label": "7–14 Day Trend", "note": "Weekly average matters more than any single number" },
+          { "icon": "💪", "label": "Combine with Waist Measurement", "note": "Scale doesn't measure changing muscle-to-fat ratio" },
+          { "icon": "🐢", "label": "0.5–1 kg/week Is the Standard", "note": "Faster usually means water and muscle loss — will rebound" }
+        ]
+      },
+      {
+        "label": "Waist circumference", "unit": "cm", "how": "Measure at navel level after a gentle exhale",
+        "keyFact": "Waist circumference is a better cardiovascular health indicator than BMI or body weight. WHO: risk increases at >80 cm (women) / >94 cm (men), high risk at >88 cm (women) / >102 cm (men). Visceral fat (belly) is more dangerous than subcutaneous fat.",
+        "details": [
+          "Visceral fat surrounds the internal organs inside the abdomen — completely different from subcutaneous fat. It secretes inflammatory cytokines and adipokines that cause insulin resistance, elevated blood pressure, and lipid disorders.",
+          "Correct measurement: stand straight, exhale gently (don't suck in), place the tape measure across the navel at the narrowest point. No holding breath, no sucking in — results will be off by 3–5 cm.",
+          "Waist-to-height ratio (WHtR): waist circumference ÷ height < 0.5 is safe. Example: 170 cm tall → waist < 85 cm. This indicator outperforms BMI in predicting cardiovascular and diabetes risk.",
+          "Reducing waist circumference doesn't require ab exercises: visceral fat responds best to cardio (30 min × 3–5 times/week), insulin control (reducing sugar and refined carbs), and adequate sleep. Sit-ups don't burn belly fat directly.",
+          "Reducing 5–10% of waist circumference (even without much weight loss): lowers type 2 diabetes risk by 58%, improves blood pressure, and reduces LDL cholesterol. Small change = large benefit.",
+          "Track every 4 weeks: waist changes more slowly than weight but reflects real fat mass changes more accurately. 1–2 cm decrease in 4 weeks is meaningful progress."
+        ],
+        "points": [
+          { "icon": "⚠️", "label": "Danger Thresholds", "note": ">88 cm (women) / >102 cm (men) — high cardiovascular risk" },
+          { "icon": "🔥", "label": "Cardio Reduces Belly Fat", "note": "Better than sit-ups — visceral fat responds well to cardio" },
+          { "icon": "📐", "label": "WHtR < 0.5", "note": "Waist ÷ height — better than BMI for predicting risk" },
+          { "icon": "🍬", "label": "Reduce Sugar = Most Effective", "note": "High insulin drives visceral fat storage" }
+        ]
+      },
+      {
+        "label": "Sit-to-stand (1 minute)", "unit": "reps", "how": "Stand up and sit down from a chair without using hands",
+        "keyFact": "The sit-to-stand test is a validated measure of lower-body functional strength and an independent predictor of longevity. A European Heart Journal study (2012, 2,002 people, 51–80 years): each point lost from the maximum score of 10 was associated with a 21% increase in all-cause mortality.",
+        "details": [
+          "Technique: sit in a standard chair with feet flat on the floor. Stand up fully, then sit back down completely. Do not use your hands, arms, or thighs for support. Count every complete rep (fully up + fully down) in 1 minute.",
+          "Reference values: >25 reps/min = excellent for all ages. 20–25 = good. 15–20 = moderate. <15 = needs improvement. Under 30 years of age: >30 reps is the benchmark.",
+          "Why this matters: the movement requires quad strength, hip extensor strength, balance, and coordination simultaneously — a comprehensive functional strength test. It predicts fall risk in older adults more accurately than isolated strength tests.",
+          "EHS Study (de Backer 2012): 2,002 participants aged 51–80. Starting score based on cross-legged sitting/standing. Each support used (hand, knee) deducted 0.5 point. Score <8/10 was associated with a 5–6× higher mortality risk over the next 6 years.",
+          "Progress target: aim to increase by 2–3 reps/week. Strategies: wall squats (partial squats against a wall for safety), chair squats, goblet squats with light weight. Progress to a lower chair once current chair is easy.",
+          "Adaptation in 4 weeks: a consistent beginner can improve from 10 to 20+ reps in 4 weeks of 3 × 10 chair squat practice per day. Functional strength improves faster than aesthetic muscle — noticeable in 2–3 weeks."
+        ],
+        "points": [
+          { "icon": "📊", "label": ">25 Reps = Excellent", "note": "20–25 good · 15–20 moderate · <15 needs work" },
+          { "icon": "⚰️", "label": "Predicts Longevity", "note": "EHS 2012: each point lost = 21% increase in all-cause mortality risk" },
+          { "icon": "⚖️", "label": "Tests Balance + Strength", "note": "Quads, glutes, hip extensors, coordination — all at once" },
+          { "icon": "📈", "label": "+2–3 Reps/Week Goal", "note": "Consistent practice: 3 × 10 chair squats/day → fast improvement" }
+        ]
+      },
+      {
+        "label": "Push-up max", "unit": "reps", "how": "As many as possible with correct form, no rest",
+        "keyFact": "Push-up max is the simplest validated measure of upper-body muscular endurance. A 2019 JAMA Network Open study (1,562 male firefighters): those who could do >40 push-ups had a 96% lower cardiovascular event risk (heart attack, heart failure) than those who did <10 push-ups.",
+        "details": [
+          "Correct form (mandatory): straight body from head to heels, hands slightly wider than shoulders, elbows at 45° (not flared out), chest touches or comes close to the floor, then fully extends. 1 bad-form rep does not count — it overestimates actual capacity.",
+          "Knee push-up for beginners: body straight from knees to shoulders. Equally valid for building strength — just a shorter lever arm. Once you can do 15–20 knee push-ups comfortably, progress to standard push-ups.",
+          "Reference values (standard push-ups): men under 40: >40 excellent, 25–40 good, 15–25 moderate, <15 needs work. Women under 40: >30 excellent, 20–30 good, 10–20 moderate, <10 needs work.",
+          "Muscles involved: pectoralis major (chest, primary mover), triceps brachii (secondary), anterior deltoid (shoulder), serratus anterior (scapular stabilizer), and the entire core for body stabilization. A full-body exercise disguised as an upper body exercise.",
+          "JAMA 2019 (Yang et al.): the push-up test was more predictive of CVD risk than the submaximal treadmill test in the same population. Simple, free, accessible, and no equipment required.",
+          "Progress protocol: 3 sets × failure-minus-2 reps (stop 2 before max), 60–90 second rest, 3 times/week. In 4 weeks, expect +5–10 rep improvement. In 8 weeks, +15–20 reps from baseline."
+        ],
+        "points": [
+          { "icon": "❤️", "label": ">40 Reps = −96% CVD Risk", "note": "JAMA 2019: push-up capacity predicts heart events better than treadmill tests" },
+          { "icon": "📐", "label": "Form First", "note": "Elbow at 45° · chest near floor · body straight — quality counts" },
+          { "icon": "🦵", "label": "Knee Push-Up Is Valid", "note": "Same muscles — shorter lever. Progress to standard after 15–20 knee reps" },
+          { "icon": "📈", "label": "+5–10 Reps in 4 Weeks", "note": "3 sets × near-max × 3 days/week = rapid improvement" }
+        ]
+      },
+      {
+        "label": "6-minute walk distance", "unit": "meters", "how": "Walk as fast as possible for 6 minutes — measure total distance",
+        "keyFact": "The 6-Minute Walk Test (6MWT) is a standard clinical test for cardiorespiratory fitness used in hospitals worldwide. Predicted distance for healthy adults: men 40–49 years: 555–700 m. Women 40–49: 480–620 m. Distance below 400 m indicates low cardiovascular fitness requiring medical evaluation.",
+        "details": [
+          "Execution protocol: use a known-distance path (track, hallway, park loop). Walk as fast as you can without running for exactly 6 minutes. Record total distance. Rest for 30 minutes before the test. Avoid 2 hours before: no intense exercise, no heavy meals.",
+          "Cardiorespiratory fitness (VO2 max estimate): 6MWT distance correlates strongly with VO2 max (r=0.73). VO2 max is the single strongest predictor of longevity — stronger than blood pressure, blood sugar, or cholesterol. Every 1 MET increase in VO2 max = 13% lower mortality risk (Myers, NEJM).",
+          "Comparison with brisk walking pace: walking at 5 km/h = 500 m in 6 minutes. Walking at 6 km/h = 600 m. Walking at 7 km/h = 700 m. A cadence of 100 steps/min corresponds approximately to 5 km/h.",
+          "Improvement strategy: Nordic walking (poles) increases distance by 10–20% by engaging the upper body. HIIT sessions once a week raise VO2 max more efficiently than steady-state cardio alone. Gradual increase: add 500 m per week to your target.",
+          "Clinical significance: a 30 m improvement in 6MWT distance corresponds to a clinically meaningful improvement in quality of life (MCID = minimal clinically important difference). 54 m = large significant change. Even in healthy people, consistent progress indicates improved cardiovascular efficiency.",
+          "Test monthly: unlike weight which fluctuates daily, the 6MWT changes slowly but meaningfully. A 20–30 m increase over 4 weeks = measurable cardiovascular fitness gain. Use the same course each time for valid comparison."
+        ],
+        "points": [
+          { "icon": "🏃", "label": "Standard Clinical Test", "note": "Used in cardiology hospitals globally — validated and reliable" },
+          { "icon": "❤️", "label": "VO2 Max = #1 Longevity Predictor", "note": "Myers (NEJM): each 1 MET increase = 13% lower mortality risk" },
+          { "icon": "📏", "label": "Target: 500–700 m", "note": "Age and sex dependent — below 400 m warrants medical attention" },
+          { "icon": "📈", "label": "+30 m = Clinically Meaningful", "note": "MCID: 30 m improvement = real-world quality of life benefit" }
+        ]
+      },
+      {
+        "label": "Resting heart rate", "unit": "bpm", "how": "Count pulse for 60 seconds before getting out of bed",
+        "keyFact": "Resting heart rate (RHR) is one of the simplest and most powerful biomarkers of cardiovascular health and fitness. Every 10 bpm increase in RHR above 60 is associated with a 14% increase in all-cause mortality (Copenhagen City Heart Study, 30 years, 29,000 people). Elite endurance athletes have RHR of 40–50 bpm.",
+        "details": [
+          "Measurement method: upon waking, before getting up, before checking your phone. Rest 1–2 minutes in a comfortable position. Count heartbeats (index and middle finger on the wrist or neck) for a full 60 seconds. Average 3 consecutive mornings for accuracy.",
+          "Reference ranges: <60 bpm = excellent (trained/very fit). 60–70 = good. 71–80 = average. 81–90 = below average. >90 = potential concern, check with a doctor if persistent.",
+          "Why aerobic exercise lowers RHR: regular cardio increases stroke volume (amount of blood the heart pumps per beat) — so the heart needs fewer beats per minute to deliver the same cardiac output. A heart that pumps more efficiently at rest is less stressed over a lifetime.",
+          "HRV (Heart Rate Variability): the more sophisticated metric is not RHR but HRV — the variation in time between consecutive heartbeats. High HRV = better autonomic nervous system flexibility = lower stress = faster recovery. RHR is the simple proxy; a wearable device gives HRV.",
+          "Daily fluctuation: RHR increases 5–10 bpm when overtraining, sick, or not sleeping enough. A persistent elevation is an early warning signal. Tracking morning RHR over weeks gives a personal baseline — deviation of >5 bpm from baseline warrants rest or recovery attention.",
+          "Improving RHR: 8 weeks of consistent zone 2 cardio (conversational pace, 30 min × 3–5 times/week) typically reduces RHR by 5–10 bpm. This is one of the fastest measurable improvements from a new training regimen."
+        ],
+        "points": [
+          { "icon": "❤️", "label": "<60 bpm = Excellent", "note": "Copenhagen study: each 10 bpm above 60 = 14% higher mortality" },
+          { "icon": "📊", "label": "Measure Before Getting Up", "note": "Same time, before phone — most accurate RHR reading" },
+          { "icon": "📈", "label": "Zone 2 Cardio Lowers RHR", "note": "8 weeks of consistent cardio → −5–10 bpm reduction" },
+          { "icon": "🔋", "label": "Elevation = Recovery Signal", "note": "+5 bpm above baseline → rest or reduce training intensity" }
+        ]
+      },
+      {
+        "label": "Sleep quality score", "unit": "/10", "how": "Rate last night's sleep quality from 1–10 each morning",
+        "keyFact": "Subjective sleep quality (your own rating of sleep quality) is as strongly correlated with health outcomes as objective sleep data. Pittsburgh Sleep Quality Index (PSQI): consistently <6/10 is associated with significantly higher risk of depression, cardiovascular disease, and metabolic disorders.",
+        "details": [
+          "What to rate: 10 = woke up refreshed, full of energy, no mid-night wake-ups. 7–9 = mostly good. 5–6 = acceptable but not great. <5 = poor. Rate immediately upon waking — the judgment is most accurate then.",
+          "Factors affecting subjective quality beyond duration: sleep architecture (proportion of deep N3 sleep and REM sleep), sleep continuity (fragmentation), sleep efficiency (% of time in bed actually sleeping), and circadian alignment (sleeping at the biologically appropriate time).",
+          "Poor ratings that persist: if scoring <6 for 3+ nights per week, evaluate: alcohol evening use, caffeine after 2pm, blue light exposure before bed, irregular sleep/wake times, or bedroom environment (temperature, light, noise).",
+          "Sleep stages and subjective quality: N3 deep sleep (20–25% of the night) is responsible for physical restoration — muscle repair, immune strengthening, and memory consolidation. Insufficient N3 → waking feeling unrestored despite adequate duration. REM sleep is responsible for emotional processing and creativity.",
+          "The relationship between quantity and quality: 7 hours of high-quality sleep is superior to 9 hours of fragmented sleep. Sleep efficiency (time asleep ÷ time in bed) >85% is the clinical threshold for good sleep quality. Someone who sleeps 7 hours but is in bed for 9 hours has 78% efficiency — room for improvement.",
+          "Tracking trend: if average score increases from 5 to 7 over 4 weeks, it is a measurable improvement in sleep quality that correlates with improved cognitive performance, mood stability, and immune function. Use the rating as a feedback signal for behavioral sleep interventions."
+        ],
+        "points": [
+          { "icon": "⭐", "label": "<6/10 = Risk Signal", "note": "PSQI: consistent low scores linked to depression and cardiovascular risk" },
+          { "icon": "🌊", "label": "N3 Deep Sleep = Physical Restoration", "note": "Even 7h without enough N3 → still feeling tired upon waking" },
+          { "icon": "📊", "label": "Rate Immediately on Waking", "note": "Most accurate at that moment — memory of sleep quality fades fast" },
+          { "icon": "🔄", "label": "Score Improves with Habits", "note": "No screen 30 min before + cool room + fixed wake time → measurable improvement" }
+        ]
+      },
+      {
+        "label": "Overall energy level", "unit": "/10", "how": "Rate your overall energy and vitality at the end of each day",
+        "keyFact": "Daily energy level is the most comprehensive subjective measure of lifestyle integration — it reflects the combined result of sleep, nutrition, movement, hydration, and stress management. A consistent energy score <5/10 is a reliable indicator that at least one foundational pillar is not functioning adequately.",
+        "details": [
+          "What to rate: 10 = full of energy throughout the day, no afternoon slump, mental clarity, physical capacity available. 5–7 = functional but not optimized. <5 = noticeable fatigue affecting performance and mood. Rate at the same time each day (end of day works best).",
+          "The afternoon energy dip (2–3 PM): a natural circadian phenomenon — core body temperature dips slightly, alertness decreases. Powerful strategies: 20-minute nap, 10-minute brisk walk, or bright light exposure. Caffeine after 2 PM delays sleep onset — not recommended.",
+          "Energy and nutrition: blood sugar spikes and crashes (from refined carbs and sugar) are the primary driver of energy instability. Protein + fiber + fat at each meal → slower glucose release → stable energy. Missing a protein source at breakfast → 30% more likely to report afternoon energy crash.",
+          "Chronic fatigue vs. lifestyle fatigue: if energy is consistently <5/10 despite adequate sleep (7–9h), good nutrition, and regular movement, evaluate for iron-deficiency anemia, thyroid dysfunction, vitamin D deficiency, or sleep apnea. These require medical investigation.",
+          "Energy and movement: paradoxically, exercise increases energy. A 10-minute walk raises energy for 2 hours (Thayer, CSU). Regular exercise raises baseline mitochondrial density — the body literally has more 'energy factories' at the cellular level. Sedentary days → lower energy baseline.",
+          "Target: average energy score ≥7/10 across a 2-week window. If consistently below, systematically evaluate each pillar (sleep → nutrition → hydration → movement → stress) — one change at a time, 1 week of observation each."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Target ≥ 7/10 Average", "note": "Over 2 weeks — consistent <5/10 signals a pillar is failing" },
+          { "icon": "🍽️", "label": "Protein + Fiber → Stable Energy", "note": "Blood sugar spikes from refined carbs are the top driver of slumps" },
+          { "icon": "🚶", "label": "10-Min Walk = +2h Energy", "note": "Thayer (CSU): even brief movement measurably raises energy" },
+          { "icon": "🔍", "label": "<5/10 Consistently? Investigate", "note": "Anemia, thyroid, vitamin D, or sleep apnea may be the cause" }
+        ]
+      }
+    ]
   }
 }

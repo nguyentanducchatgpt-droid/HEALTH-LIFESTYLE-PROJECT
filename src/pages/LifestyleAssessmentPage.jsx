@@ -309,6 +309,41 @@ function AssessmentModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, h
 
 export default function LifestyleAssessmentPage() {
   const { t: tPillars } = useTranslation('pillars');
+
+  const questionsRaw = tPillars('pillarC.lifestyle_questions', { returnObjects: true });
+  const localQuestions = QUESTIONS.map((q, i) => {
+    const tr = Array.isArray(questionsRaw) && questionsRaw[i] ? questionsRaw[i] : {};
+    return {
+      ...q,
+      category: tr.category || q.category,
+      q: tr.q || q.q,
+      modalTitle: tr.modalTitle || q.modalTitle,
+      keyFact: tr.keyFact || q.keyFact,
+      detail: tr.detail || q.detail,
+      details: Array.isArray(tr.details) && tr.details.length ? tr.details : q.details,
+      points: Array.isArray(tr.points) && tr.points.length
+        ? q.points.map((p, pi) => ({ ...p, ...(tr.points[pi] || {}) }))
+        : q.points,
+      options: q.options.map((opt, oi) => ({
+        ...opt,
+        label: (Array.isArray(tr.options) && tr.options[oi]) || opt.label,
+      })),
+    };
+  });
+
+  const tracksRaw = tPillars('pillarC.lifestyle_tracks', { returnObjects: true });
+  const localTracks = TRACKS.map((t, i) => {
+    const tr = Array.isArray(tracksRaw) && tracksRaw[i] ? tracksRaw[i] : {};
+    return {
+      ...t,
+      name: tr.name || t.name,
+      desc: tr.desc || t.desc,
+      actions: Array.isArray(tr.actions) && tr.actions.length ? tr.actions : t.actions,
+    };
+  });
+
+  const lifestyleUI = tPillars('pillarC.lifestyle_ui', { returnObjects: true }) || {};
+
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [savedScore, setSavedScore] = useState(null);
@@ -344,8 +379,8 @@ export default function LifestyleAssessmentPage() {
 
   const totalScore = Object.values(answers).reduce((sum, pts) => sum + pts, 0);
   const answeredCount = Object.keys(answers).length;
-  const progress = Math.round((answeredCount / QUESTIONS.length) * 100);
-  const track = TRACKS.find(t => totalScore >= t.min && totalScore <= t.max) || TRACKS[0];
+  const progress = Math.round((answeredCount / localQuestions.length) * 100);
+  const track = localTracks.find(t => totalScore >= t.min && totalScore <= t.max) || localTracks[0];
 
   const handleSubmit = () => {
     setSubmitted(true);
@@ -392,7 +427,7 @@ export default function LifestyleAssessmentPage() {
           <div className="rounded-2xl border p-4 flex items-center gap-4" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
             <div className="text-3xl">📊</div>
             <div className="flex-1">
-              <div className="text-base font-bold uppercase tracking-widest mb-0.5" style={{ color: COLOR }}>Đánh Giá Gần Nhất</div>
+              <div className="text-base font-bold uppercase tracking-widest mb-0.5" style={{ color: COLOR }}>{lifestyleUI.saved_score_label || 'Đánh Giá Gần Nhất'}</div>
               <div className="text-lg text-text">{savedScore.score}/{savedScore.max} điểm · {savedScore.track}</div>
               <div className="text-base text-muted">{new Date(savedScore.date).toLocaleDateString('vi-VN')}</div>
             </div>
@@ -408,7 +443,7 @@ export default function LifestyleAssessmentPage() {
           {/* Progress */}
           <RevealBlock className="mb-8">
             <div className="flex justify-between text-base text-muted mb-2">
-              <span>{answeredCount}/{QUESTIONS.length} câu hỏi</span>
+              <span>{answeredCount}/{localQuestions.length} {lifestyleUI.questions_counter || 'câu hỏi'}</span>
               <span style={{ color: COLOR }}>{progress}%</span>
             </div>
             <div className="h-2 bg-surface rounded-full overflow-hidden">
@@ -418,7 +453,7 @@ export default function LifestyleAssessmentPage() {
 
           {/* Questions */}
           <div className="space-y-6 mb-10">
-            {QUESTIONS.map((q, qi) => (
+            {localQuestions.map((q, qi) => (
               <RevealBlock key={q.id} delay={qi * 50} className="rounded-2xl border border-border bg-surface p-5">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{q.icon}</span>
@@ -444,8 +479,8 @@ export default function LifestyleAssessmentPage() {
             ))}
           </div>
 
-          <button onClick={handleSubmit} disabled={answeredCount < QUESTIONS.length} className="w-full py-4 rounded-2xl font-bold text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed" style={{ background: answeredCount === QUESTIONS.length ? COLOR : 'rgba(107,114,128,0.3)' }}>
-            {answeredCount < QUESTIONS.length ? `Còn ${QUESTIONS.length - answeredCount} câu chưa trả lời` : '→ Xem Kết Quả'}
+          <button onClick={handleSubmit} disabled={answeredCount < localQuestions.length} className="w-full py-4 rounded-2xl font-bold text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed" style={{ background: answeredCount === localQuestions.length ? COLOR : 'rgba(107,114,128,0.3)' }}>
+            {answeredCount < localQuestions.length ? `${localQuestions.length - answeredCount} ${lifestyleUI.answered_label || 'câu chưa trả lời'}` : (lifestyleUI.submit_btn || '→ Xem Kết Quả')}
           </button>
         </>
       ) : (
@@ -468,9 +503,9 @@ export default function LifestyleAssessmentPage() {
 
           {/* Category breakdown */}
           <div className="rounded-2xl border border-border bg-surface p-5">
-            <div className="text-lg font-bold text-text mb-4">Chi Tiết Từng Khía Cạnh</div>
+            <div className="text-lg font-bold text-text mb-4">{lifestyleUI.results_heading || 'Chi Tiết Từng Khía Cạnh'}</div>
             <div className="space-y-3">
-              {QUESTIONS.map(q => {
+              {localQuestions.map(q => {
                 const pts = answers[q.id] ?? 0;
                 const maxPts = Math.max(...q.options.map(o => o.pts));
                 const pct = Math.round((pts / maxPts) * 100);
@@ -494,7 +529,7 @@ export default function LifestyleAssessmentPage() {
 
           {/* Actions */}
           <div className="rounded-2xl border p-5" style={{ borderColor: `${track.color}30`, background: `${track.color}06` }}>
-            <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: track.color }}>Hành Động Ưu Tiên Cho Bạn</div>
+            <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: track.color }}>{lifestyleUI.tracks_heading || 'Hành Động Ưu Tiên Cho Bạn'}</div>
             <ul className="space-y-2">
               {track.actions.map((a, i) => (
                 <li key={i} className="flex items-start gap-3 text-lg text-text">
@@ -507,7 +542,7 @@ export default function LifestyleAssessmentPage() {
 
           <div className="flex gap-3">
             <button onClick={reset} className="flex-1 py-3 rounded-xl border border-border text-lg text-muted hover:text-text hover:border-teal-500/30 transition-colors">
-              Làm Lại
+              {lifestyleUI.reset_btn || 'Làm Lại'}
             </button>
             <Link to="/pillar/c/roadmap" className="flex-1 py-3 rounded-xl text-white text-lg font-bold text-center transition-colors" style={{ background: COLOR }}>
               Xem Lộ Trình →
@@ -534,14 +569,14 @@ export default function LifestyleAssessmentPage() {
       {/* ── Assessment question modal — outside all RevealBlocks ── */}
       {assessIdx !== null && (
         <AssessmentModal
-          item={QUESTIONS[assessIdx]}
+          item={localQuestions[assessIdx]}
           idx={assessIdx}
-          total={QUESTIONS.length}
+          total={localQuestions.length}
           onClose={() => setAssessIdx(null)}
           onPrev={() => setAssessIdx(i => Math.max(0, i - 1))}
-          onNext={() => setAssessIdx(i => Math.min(QUESTIONS.length - 1, i + 1))}
+          onNext={() => setAssessIdx(i => Math.min(localQuestions.length - 1, i + 1))}
           hasPrev={assessIdx > 0}
-          hasNext={assessIdx < QUESTIONS.length - 1}
+          hasNext={assessIdx < localQuestions.length - 1}
         />
       )}
     </div>

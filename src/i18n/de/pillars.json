@@ -2862,6 +2862,112 @@
     "c1_desc": "Schlaf ist keine 'tote Zeit'. Schlaf ist der Moment, in dem der Körper Muskeln repariert, Hormone ausbalanciert und die Psyche erholt.",
     "c1_step_prefix": "Schritt",
     "c1_checklist_heading": "Tägliche Schlaf-Checkliste",
+    "c1_checklist": [
+      {
+        "label": "Bildschirm 30+ Min vor dem Schlafen reduzieren",
+        "detail": "Blaues Licht von Bildschirmen unterdrückt Melatonin — das schlafanzeigende Hormon. Bildschirme 30 Minuten vor dem Schlafen auszuschalten ist die einfachste Maßnahme zur Verbesserung der Schlafqualität.",
+        "keyFact": "Blaues Licht (480 nm) unterdrückt Melatonin doppelt so wirksam wie normales weißes Licht — eine Stunde Bildschirmzeit nachts kann den Schlaf um 30–45 Minuten verzögern, selbst nachdem das Gerät ausgeschaltet ist.",
+        "details": [
+          "Melatonin beginnt 2 Stunden vor der üblichen Schlafenszeit zu steigen. Bildschirmlicht in diesem Zeitfenster stört die Melatoninakkumulation und erschwert das Einschlafen.",
+          "30 Minuten ist das Minimum — ideal sind 60 Minuten ohne Bildschirm. Aber selbst die letzten 30 Minuten zu vermeiden hat messbare Auswirkungen auf die Einschlafzeit.",
+          "Praktische Lösungen: Night Mode/f.lux ab 19–20 Uhr aktivieren, Helligkeit nach 21 Uhr um 30–40 % reduzieren. Bei Pflichtnutzung wirken Blaulicht-Brillen (Bernsteinlinsen) besser als Night Mode allein.",
+          "Bildschirmersatz: gedrucktes Buch unter warmem Licht lesen, Tagebuch schreiben, leicht meditieren, einen Podcast hören (ohne Bildschirmnutzung).",
+          "Das Handy vom Bett fernhalten (in einem anderen Zimmer laden) verringert den Drang, es vor dem Schlafen oder nachts zu checken.",
+          "Erfolgssignal: Du wirst zur Zielzeit schläfrig, statt dich zum Schlafen zwingen zu müssen. Melatonin läuft im Takt, wenn es nicht durch blaues Licht gestört wird."
+        ],
+        "points": [
+          { "icon": "📱", "label": "Night Mode ab 19 Uhr", "note": "Früher als du denkst nötig" },
+          { "icon": "📚", "label": "Buch statt Bildschirm", "note": "Warmes Licht unterdrückt kein Melatonin" },
+          { "icon": "🔌", "label": "Handy vom Bett fernhalten", "note": "Reduziert nächtliches Checken" },
+          { "icon": "😴", "label": "Pünktlich schläfrig", "note": "Zeichen, dass Melatonin korrekt wirkt" }
+        ]
+      },
+      {
+        "label": "Kein Koffein nach 15 Uhr",
+        "detail": "Koffein hat eine Halbwertszeit von 5–7 Stunden — ein Kaffee um 15 Uhr hat um 20–22 Uhr noch 50 % Wirksamkeit und sabotiert den Tiefschlaf, auch wenn man einschlafen kann.",
+        "keyFact": "Koffein macht nicht nur das Einschlafen schwerer — es reduziert den Tiefschlaf um bis zu 20 %, selbst bei Menschen, die sich als 'koffeinunempfindlich' bezeichnen.",
+        "details": [
+          "Koffein blockiert Adenosin-Rezeptoren — Adenosin ist das 'Müdigkeitsmolekül', das sich tagsüber ansammelt. Wenn Koffein diese Rezeptoren blockiert, empfängt das Gehirn keine Schläfrigkeitssignale, obwohl der Körper müde ist.",
+          "Halbwertszeit 5–7 Stunden: 200 mg Koffein (2 Espresso) um 15 Uhr → 100 mg noch aktiv um 20–22 Uhr. Bei langsamen Metabolisierern (CYP1A2-Genvariante) beträgt die Halbwertszeit bis zu 9–10 Stunden.",
+          "Stopp um 15 Uhr ist für die meisten sicher. Bei Einschlafzeit 22 Uhr sind bis zur Schlafenszeit nur noch 25–50 mg aktiv — unter der relevanten Schwelle.",
+          "Versteckte Koffeinquellen: Grüntee 25–50 mg/Tasse, Schwarztee 40–70 mg, Zartbitterschokolade 20–30 mg/30 g, Energy Drinks 80–150 mg, einige Kopfschmerzmittel 65 mg pro Tablette.",
+          "Nachmittags Energie brauchen: Grüntee (L-Theanin verlangsamt Aufnahme) oder 10-minütiger Spaziergang — genauso wirksam wie 100 mg Koffein, ohne Schlafauswirkungen.",
+          "Wenn spätes Koffein unvermeidbar: mit Essen nehmen, koffeinärmere Quelle wählen (Matcha statt Espresso), und 30–45 Minuten spätere Einschlafzeit akzeptieren."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Stopp um 15 Uhr", "note": "Sicher für die meisten, die um 22 Uhr schlafen" },
+          { "icon": "🧬", "label": "CYP1A2-Gen", "note": "Langsame Metabolisierer brauchen früheren Stopp" },
+          { "icon": "🍵", "label": "Matcha statt Espresso", "note": "L-Theanin glättet die Koffeinwirkung" },
+          { "icon": "🏃", "label": "10-Minuten-Spaziergang", "note": "Wie 100 mg Koffein — kein Schlafeffekt" }
+        ]
+      },
+      {
+        "label": "5–30 minütige Abendroutine aufbauen",
+        "detail": "Eine Abendroutine ist ein konsistentes Signal, das dem Gehirn mitteilt: Es ist Zeit, in den Schlafmodus zu wechseln — das Nervensystem braucht aktive Entspannungszeit.",
+        "keyFact": "Das Gehirn braucht 20–30 Minuten, um die Körperkerntemperatur zu senken und Melatonin ausreichend zu erhöhen. Bis zur letzten Minute zu arbeiten hält Temperatur und Cortisol hoch.",
+        "details": [
+          "Abendroutinen wirken durch Konditionierung: Wenn du jeden Abend dieselbe Abfolge ausführst, lernt das Gehirn, diese mit Schläfrigkeit zu verbinden. Nach 2–3 Wochen löst allein der Routinebeginn Schläfrigkeit aus.",
+          "Minimale effektive Zeit: 5 Minuten. Selbst eine kurze Routine (Gesicht waschen → Zähneputzen → 1 Minute atmen) erzeugt ein Übergangssignal, wenn sie täglich ausgeführt wird.",
+          "Effektivste Bestandteile: Licht und Lärm reduzieren → Körperpflege → passive Entspannung (Lesen, Tagebuch, Meditation) → Atemübungen. Geistig stimulierende Aktivitäten vermeiden.",
+          "Temperatur: Ein warmes Bad 1–2 Stunden vor dem Schlafen senkt die Körperkerntemperatur schneller — Wärme zieht Blut zur Hautoberfläche, das dann nach außen abgegeben wird.",
+          "5 Minuten Tagebuch (besonders eine To-do-Liste) reduziert die Einschlafzeit um 9 Minuten (Studie 2018) — das Gehirn muss Aufgaben nachts nicht mehr 'erinnern'.",
+          "Klein anfangen: eine 5-minütige Aktivität 7 Tage konsequent durchführen, dann eine zweite hinzufügen. Einfach und regelmäßig schlägt komplex und gelegentlich."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Konditionierung", "note": "2–3 Wochen bis das Gehirn die Verbindung lernt" },
+          { "icon": "🛁", "label": "Warmes Bad/Dusche", "note": "1–2h vor dem Schlafen senkt Kerntemperatur" },
+          { "icon": "📓", "label": "To-do-Liste schreiben", "note": "Reduziert Einschlafzeit um 9 Minuten" },
+          { "icon": "✅", "label": "Mit einer Sache beginnen", "note": "5 konsequente Minuten schlagen 30 gelegentliche" }
+        ]
+      },
+      {
+        "label": "Im angestrebten Zeitfenster ins Bett gehen",
+        "detail": "Eine konsistente Schlafenszeit hilft der inneren Uhr, die Schlafzeit zu lernen und Melatonin im richtigen Moment bereitzustellen.",
+        "keyFact": "Das Bett muss das einzige Signal für das Gehirn sein: 'Dies ist der Ort zum Schlafen'. Arbeiten, Fernsehen oder Scrollen im Bett zerstört diese Assoziation.",
+        "details": [
+          "Stimuluskontrolle (CBT-I): Bett = nur Schlafen (und Sex), keine anderen Aktivitäten im Bett.",
+          "'Angestrebtes Zeitfenster' bedeutet, innerhalb von 30 Minuten um die Zielschlafzeit ins Bett zu gehen. Keine minutengenaue Präzision nötig — aber 22–23 Uhr regelmäßig ist weit besser als wechselnde Extremzeiten.",
+          "Wenn du nach 20 Minuten nicht schläfst: aufstehen, bei schwachem Licht etwas Langweiliges tun, bis du wirklich schläfrig bist, dann zurück ins Bett. Unruhiges Liegen erzeugt Bettangst.",
+          "'Schlafschulden' durch Ausschlafen vermeiden — bei spätem Einschlafen trotzdem zur normalen Zeit aufstehen, um den Schlafdruck für den nächsten Abend aufzubauen.",
+          "Bett nur zum Schlafen nutzen verbessert die Schlafeffizienz (Anteil tatsächlicher Schlafzeit). Unter 85 % ist ein Zeichen, dass Anpassungen nötig sind.",
+          "Das Bett herrichten (Kissen, Decke) als Routineschritt wirkt als Trigger: signalisiert dem Gehirn und schafft eine komfortable Umgebung."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "30-Minuten-Fenster", "note": "Keine minutengenaue Präzision nötig" },
+          { "icon": "🛋️", "label": "Bett = nur Schlafen", "note": "CBT-I Stimuluskontrolle" },
+          { "icon": "🚶", "label": "Nicht einschlafen → aufstehen", "note": "Nach 20 Minuten das Bett verlassen" },
+          { "icon": "📊", "label": "Schlafeffizienz >85 %", "note": "Wichtige Qualitätskennzahl" }
+        ]
+      },
+      {
+        "label": "Genug oder besser als gestern schlafen",
+        "detail": "Das flexibelste Kriterium — kein sofortiger Perfektionsanspruch, sondern kumulative Verbesserung. 'Besser als gestern' schafft nachhaltigeres Momentum als absolute Standards.",
+        "keyFact": "'Genug Schlaf' ist subjektiv — objektive Zeichen: vor oder mit dem Wecker aufwachen, keine Schläfrigkeit vor 14 Uhr, 3 Stunden morgens ohne Koffein konzentriert arbeiten können.",
+        "details": [
+          "'Oder besser als gestern' ist wichtiger als '7 Stunden erreichen'. 5,5 Stunden heute statt 5 gestern — du bewegst dich in die richtige Richtung. Schrittweiser Fortschritt ist nachhaltiger.",
+          "Zeichen für ausreichenden Schlaf (kein Tracker): vor oder mit dem Wecker aufwachen; keine Schläfrigkeit 1–2 Stunden nach dem Aufwachen; 90 Minuten morgens ohne Koffein konzentriert arbeiten.",
+          "Schlaf in 90-Minuten-Zyklen: Leichtschlaf → Tiefschlaf → REM. Mitten im Zyklus aufzuwachen fühlt sich schlechter an als nach einem vollständigen Zyklus. 90-Minuten-Vielfache + 15 Minuten Einschlafzeit planen.",
+          "Einfaches Tracking: Schlafenszeit und Aufwachzeit täglich notieren (10 Sekunden). Nach 1 Woche das Muster analysieren und gute Nächte mit ihren Faktoren identifizieren.",
+          "1–2 schlechte Nächte sind normal und verursachen keinen dauerhaften Schaden — Schlafangst ist eine häufige Ursache chronischer Schlaflosigkeit. Eine schlechte Nacht akzeptieren und sich auf Gewohnheiten konzentrieren.",
+          "Kurzschlaf (10–20 Min vor 15 Uhr) kann Schlafverlust teilweise ausgleichen. Nickerchen über 30 Min oder nach 15 Uhr riskieren, den Schlafdruck für den Abend zu reduzieren."
+        ],
+        "points": [
+          { "icon": "📈", "label": "Schrittweiser Fortschritt", "note": "'Besser als gestern' ist nachhaltiger" },
+          { "icon": "⏰", "label": "90-Minuten-Vielfache", "note": "Schlafzeit nach Zyklen planen" },
+          { "icon": "📝", "label": "10-Sekunden-Tracking", "note": "Schlaf-/Aufwachzeit täglich notieren" },
+          { "icon": "😌", "label": "Schlechte Nacht akzeptieren", "note": "Schlafangst verschlimmert Schlaflosigkeit" }
+        ]
+      }
+    ],
+    "c1_progress_great": "Sehr gut!",
+    "c1_progress_good": "Guter Fortschritt",
+    "c1_progress_building": "Gewohnheit aufbauen",
+    "c1_link_sleep": "Die vollständige Schlafwissenschaft →",
+    "explore_deep_heading": "Tief Eintauchen",
+    "explore_deep_desc": "12 vertiefte Themen zum gesunden Lebensstil — von der Schlafwissenschaft bis zur Gestaltung des Wohnumfelds.",
+    "assessment_breadcrumb": "← Gesunder Lebensstil",
+    "assessment_title": "Lebensstil-Bewertung",
+    "assessment_desc": "Bewerte deinen aktuellen Lebensstil in 7 wichtigen Bereichen. Die Ergebnisse zeigen, in welchem Track du dich befindest, und schlagen prioritäre Maßnahmen vor.",
     "c3_standup_title": "⏱ Die 2-Minuten-Aufsteh-Regel",
     "c3_standup_desc": "Alle 45–60 Minuten Sitzen aufstehen für 2 Minuten. Wasser holen, Schultern kreisen, dehnen, Wadenheben. Nicht warten, bis Schmerzen kommen.",
     "c3_neat_checklist_heading": "NEAT Checkliste",

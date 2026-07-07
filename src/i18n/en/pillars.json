@@ -2841,6 +2841,112 @@
     "c1_desc": "Sleep is not 'dead time'. Sleep is when the body repairs muscles, balances hormones, and restores mental health.",
     "c1_step_prefix": "Step",
     "c1_checklist_heading": "Daily Sleep Checklist",
+    "c1_checklist": [
+      {
+        "label": "Reduce screen time 30+ min before bed",
+        "detail": "Blue light from screens suppresses melatonin — the sleep-signaling hormone. Turning off screens 30 minutes before bed is the simplest intervention to improve sleep quality.",
+        "keyFact": "Blue light (480nm) suppresses melatonin twice as effectively as regular white light — one hour of screen time at night can delay sleep by 30–45 minutes even after the device is off.",
+        "details": [
+          "Melatonin starts rising 2 hours before your usual bedtime. Screen light during this window disrupts melatonin accumulation, making it harder to feel sleepy.",
+          "30 minutes is the minimum — ideally 60 minutes screen-free. But even cutting the last 30 minutes before bed has a measurable impact on sleep onset time.",
+          "Practical solutions: enable Night Mode/f.lux from 7–8 PM, dim screen brightness 30–40% after 9 PM. If you must use screens, amber-lens blue-light glasses work better than Night Mode alone.",
+          "Replace screens in the last 30 minutes: read a physical book under warm light, journal, meditate lightly, listen to a podcast (without looking at a screen).",
+          "Keeping your phone away from the bed (charging in another room) reduces the urge to check it before sleep and during night wakings — two of the most common sleep-disrupting habits.",
+          "Success signal: you start feeling sleepy at your target bedtime instead of having to 'force' sleep. Melatonin runs on schedule when not disrupted by blue light."
+        ],
+        "points": [
+          { "icon": "📱", "label": "Night Mode 7–8 PM", "note": "Earlier than you think you need it" },
+          { "icon": "📚", "label": "Book instead of screen", "note": "Warm light doesn't suppress melatonin" },
+          { "icon": "🔌", "label": "Phone away from bed", "note": "Reduces midnight check-in urge" },
+          { "icon": "😴", "label": "Sleepy on time", "note": "Sign that melatonin is working correctly" }
+        ]
+      },
+      {
+        "label": "No caffeine after 3 PM",
+        "detail": "Caffeine has a 5–7 hour half-life — a 3 PM coffee still has 50% activity at 8–10 PM, silently degrading deep sleep quality even if you can fall asleep.",
+        "keyFact": "Caffeine doesn't just make sleep harder — it reduces slow-wave (deep) sleep by up to 20% even in people who consider themselves 'caffeine insensitive'.",
+        "details": [
+          "Caffeine works by blocking adenosine receptors — adenosine is the 'fatigue molecule' that builds up throughout the day. When caffeine blocks these receptors, the brain doesn't receive sleepiness signals even when the body is genuinely tired.",
+          "Half-life of 5–7 hours means: 200 mg caffeine (2 espressos) at 3 PM → 100 mg still active at 8–10 PM. For slow metabolizers (CYP1A2 gene variant), half-life reaches 9–10 hours.",
+          "The 3 PM cut-off is safe for most people. If you sleep at 10 PM, caffeine consumed at 3 PM drops to only 25–50 mg by bedtime — below the significant threshold for most people.",
+          "Hidden caffeine sources: green tea 25–50 mg/cup, black tea 40–70 mg, dark chocolate 20–30 mg/30 g, energy drinks 80–150 mg, some headache medications contain 65 mg per tablet.",
+          "When you need afternoon energy: switch to green tea (L-theanine slows absorption) or take a 10-minute walk — natural light and movement boost alertness as well as 100 mg caffeine without affecting sleep.",
+          "If you must have caffeine late: take it with food, choose a lower-caffeine source (matcha over espresso), and accept going to bed 30–45 minutes later that night."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Cut-off at 3 PM", "note": "Safe for most people sleeping at 10 PM" },
+          { "icon": "🧬", "label": "CYP1A2 gene", "note": "Slow metabolizers need an earlier cut-off" },
+          { "icon": "🍵", "label": "Matcha instead of espresso", "note": "L-theanine smooths the caffeine curve" },
+          { "icon": "🏃", "label": "10-minute walk", "note": "Equals 100 mg caffeine — no sleep impact" }
+        ]
+      },
+      {
+        "label": "Have a 5–30 min evening routine",
+        "detail": "An evening routine is a consistent signal telling the brain it's time to shift into sleep mode — the nervous system needs active wind-down time and can't jump directly from working to sleeping.",
+        "keyFact": "The brain needs 20–30 minutes to lower core body temperature and raise melatonin enough to enter deep sleep. Working or consuming stimulating content up to bedtime keeps core temperature and cortisol elevated.",
+        "details": [
+          "Evening routines work through conditioning: when you perform the same sequence of activities before bed each night, the brain learns to associate that sequence with sleepiness. After 2–3 weeks, just starting the routine triggers drowsiness.",
+          "Minimum effective time: 5 minutes. Even a short routine (wash face → brush teeth → 1 minute of breathing) creates a transition signal when done consistently every night.",
+          "Most effective components: reduce light and noise → personal hygiene → passive relaxation (reading, journaling, light meditation) → breathing. Avoid mentally stimulating activities (problem-solving, planning).",
+          "Temperature: a warm shower or bath 1–2 hours before bed paradoxically speeds up sleep — heat draws blood to the skin surface, then dissipates, lowering core body temperature faster.",
+          "Journaling 5 minutes before bed (especially writing a to-do list for tomorrow) reduces sleep onset time by an average of 9 minutes (2018 study) — the brain doesn't need to remind itself of tasks during the night.",
+          "Start small: pick one 5-minute activity and do it consistently for 7 days before adding another. A simple routine done regularly beats a complex one done occasionally."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Conditioning", "note": "2–3 weeks for the brain to learn the link" },
+          { "icon": "🛁", "label": "Warm shower/bath", "note": "1–2h before bed lowers core temperature" },
+          { "icon": "📓", "label": "Write a to-do list", "note": "Reduces sleep onset time by 9 minutes" },
+          { "icon": "✅", "label": "Start with one thing", "note": "5 consistent minutes beats 30 occasional" }
+        ]
+      },
+      {
+        "label": "Get to bed within your target window",
+        "detail": "A consistent bedtime — even if you don't fall asleep immediately — helps your circadian clock learn your sleep time and prepare melatonin at the right moment.",
+        "keyFact": "Bed must be the only signal your brain receives: 'this is the place for sleep'. Working, watching movies, or scrolling in bed breaks this association — the brain starts treating bed as a place for wakefulness.",
+        "details": [
+          "Stimulus control therapy (CBT-I): core principle is bed = sleep and sex only, no other activities in bed.",
+          "'Target window' means getting into bed within 30 minutes of your goal sleep time. No need to hit exactly 10:30 PM every night, but staying in the 10:00–11:00 PM range is far better than 9 PM one night and 1 AM the next.",
+          "If you can't sleep after 20 minutes: get up and do something boring under low light until genuinely sleepy, then return to bed. Lying there restless creates bed-anxiety and makes things worse long-term.",
+          "Avoid repaying sleep debt by sleeping in — if you sleep late one night, still wake at your normal time the next day and tolerate drowsiness to rebuild sleep pressure for that evening.",
+          "Using your bed only for sleep improves sleep efficiency (ratio of actual sleep to total time in bed). Sleep efficiency below 85% is a sign adjustments are needed.",
+          "Making your bed each evening (fluffing the pillow, arranging the blanket) as a routine step acts as a dual trigger: signals the brain and creates a comfortable environment."
+        ],
+        "points": [
+          { "icon": "🎯", "label": "30-minute window", "note": "No need to be precise to the minute" },
+          { "icon": "🛋️", "label": "Bed = sleep only", "note": "CBT-I stimulus control" },
+          { "icon": "🚶", "label": "Can't sleep → get up", "note": "After 20 minutes, leave the bed" },
+          { "icon": "📊", "label": "Sleep efficiency >85%", "note": "An important quality metric" }
+        ]
+      },
+      {
+        "label": "Sleep enough or better than yesterday",
+        "detail": "The most flexible criterion — not requiring immediate perfection but aiming for cumulative improvement. 'Better than yesterday' creates more sustainable momentum than chasing an absolute standard.",
+        "keyFact": "'Enough sleep' is subjective — objective signs: waking up before or at your alarm, no drowsiness before 2 PM, able to focus for 3 hours in the morning without caffeine.",
+        "details": [
+          "'Or better than yesterday' matters more than 'hit 7 hours'. If you slept 5 hours last night and 5.5 hours tonight — you're moving in the right direction. Gradual progress is more sustainable than sudden change.",
+          "Signs of enough sleep (no tracker needed): wake up without needing an alarm; no drowsiness in the 1–2 hours after waking; able to focus for 90 consecutive minutes in the morning without caffeine.",
+          "Sleep in 90-minute cycles: each cycle includes light sleep → deep sleep → REM. Waking mid-cycle (e.g., at 4.5 hours) feels worse than waking after 6 hours (4 complete cycles). Aim for multiples of 90 minutes + 15 minutes to fall asleep.",
+          "Simple tracking: note your bedtime and wake time each morning (10 seconds). After 1 week, review the pattern and identify what made your best sleep nights happen.",
+          "1–2 bad nights of sleep are normal and cause no lasting harm — sleep anxiety (the pressure to 'have to sleep well') is one of the most common causes of chronic insomnia. Accept a bad night and focus on habits, not outcomes.",
+          "Short naps (10–20 minutes before 3 PM) can partially compensate for the previous night's sleep loss without affecting evening sleep. Naps over 30 minutes or after 3 PM risk reducing sleep pressure for that evening."
+        ],
+        "points": [
+          { "icon": "📈", "label": "Incremental progress", "note": "'Better than yesterday' is more sustainable" },
+          { "icon": "⏰", "label": "90-minute multiples", "note": "Calculate sleep time by cycle" },
+          { "icon": "📝", "label": "10-second tracking", "note": "Log sleep/wake time each morning" },
+          { "icon": "😌", "label": "Accept a bad night", "note": "Sleep anxiety makes insomnia worse" }
+        ]
+      }
+    ],
+    "c1_progress_great": "Well done!",
+    "c1_progress_good": "Good progress",
+    "c1_progress_building": "Building the habit",
+    "c1_link_sleep": "See the full sleep science →",
+    "explore_deep_heading": "Explore In Depth",
+    "explore_deep_desc": "12 in-depth topics on healthy lifestyle — from sleep science to designing your living environment.",
+    "assessment_breadcrumb": "← Healthy Lifestyle",
+    "assessment_title": "Lifestyle Assessment",
+    "assessment_desc": "Assess your current lifestyle across 7 important dimensions. Your results will identify which Track you're on and suggest priority actions suited to you.",
     "c3_standup_title": "⏱ The 2-Minute Stand-Up Rule",
     "c3_standup_desc": "Every 45–60 minutes of sitting, stand up for 2 minutes. Get water, roll your shoulders, stretch, do calf raises. Don't wait until you're in pain to stand up.",
     "c3_neat_checklist_heading": "NEAT Checklist",

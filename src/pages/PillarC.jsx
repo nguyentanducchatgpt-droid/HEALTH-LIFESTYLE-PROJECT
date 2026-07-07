@@ -2272,8 +2272,14 @@ export default function PillarC() {
     ...(Array.isArray(c7AreasTr) && c7AreasTr[i] ? c7AreasTr[i] : {}),
   }));
 
+  const c1ChecklistTr = tPillars('pillarC.c1_checklist', { returnObjects: true });
+  const localC1Checklist = C1_CHECKLIST.map((item, i) => ({
+    ...item,
+    ...(Array.isArray(c1ChecklistTr) && c1ChecklistTr[i] ? c1ChecklistTr[i] : {}),
+  }));
+
   const tab = mergedTabs.find(t => t.id === activeTab) || mergedTabs[1];
-  const sleepProgress = C1_CHECKLIST.filter((_, i) => sleepChecks[i]).length;
+  const sleepProgress = localC1Checklist.filter((_, i) => sleepChecks[i]).length;
   const neatProgress = [0, 1, 2, 3].filter(i => neatChecks[i]).length;
   const lifestyleScore = C0_SCORE.reduce((sum, row, i) => sum + (scoreChecks[i] ? row.pts : 0), 0);
 
@@ -2563,7 +2569,7 @@ export default function PillarC() {
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: TEAL }}>{tPillars('pillarC.c1_checklist_heading', { defaultValue: 'Checklist Ngủ Hằng Ngày' })}</h3>
                 <div className="space-y-1.5 mb-4">
-                  {C1_CHECKLIST.map((item, i) => (
+                  {localC1Checklist.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
                       style={{
                         border: '1px solid',
@@ -2604,13 +2610,13 @@ export default function PillarC() {
                   ))}
                 </div>
                 <div className="h-2 rounded-full overflow-hidden mb-1" style={{ background: `rgba(${TEAL_RGB},0.15)` }}>
-                  <div className="h-full rounded-full transition-all duration-500" style={{ width: `${sleepProgress / C1_CHECKLIST.length * 100}%`, background: TEAL }} />
+                  <div className="h-full rounded-full transition-all duration-500" style={{ width: `${sleepProgress / localC1Checklist.length * 100}%`, background: TEAL }} />
                 </div>
-                <p className="text-base text-muted">{sleepProgress}/{C1_CHECKLIST.length} — {sleepProgress >= 4 ? 'Tốt lắm!' : sleepProgress >= 3 ? 'Đạt mức tốt' : 'Đang xây dựng thói quen'}</p>
+                <p className="text-base text-muted">{sleepProgress}/{localC1Checklist.length} — {sleepProgress >= 4 ? tPillars('pillarC.c1_progress_great', { defaultValue: 'Tốt lắm!' }) : sleepProgress >= 3 ? tPillars('pillarC.c1_progress_good', { defaultValue: 'Đạt mức tốt' }) : tPillars('pillarC.c1_progress_building', { defaultValue: 'Đang xây dựng thói quen' })}</p>
               </div>
             </div>
             <Link to="/pillar/c/sleep" className="inline-flex items-center gap-2 text-lg font-semibold" style={{ color: TEAL }}>
-              Xem khoa học giấc ngủ đầy đủ →
+              {tPillars('pillarC.c1_link_sleep', { defaultValue: 'Xem khoa học giấc ngủ đầy đủ →' })}
             </Link>
           </RevealBlock>
         )}
@@ -3025,8 +3031,8 @@ export default function PillarC() {
 
       {/* Sub-pages Teaser Grid */}
       <RevealBlock className="mb-6">
-        <h2 className="text-3xl font-bold text-text mb-1">Khám Phá Sâu</h2>
-        <p className="text-muted text-lg">12 chủ đề chuyên sâu về lối sống khỏe — từ khoa học giấc ngủ đến thiết kế môi trường sống.</p>
+        <h2 className="text-3xl font-bold text-text mb-1">{tPillars('pillarC.explore_deep_heading', { defaultValue: 'Khám Phá Sâu' })}</h2>
+        <p className="text-muted text-lg">{tPillars('pillarC.explore_deep_desc', { defaultValue: '12 chủ đề chuyên sâu về lối sống khỏe — từ khoa học giấc ngủ đến thiết kế môi trường sống.' })}</p>
       </RevealBlock>
 
       <TeaserSection title="Nền Tảng & Giấc Ngủ">
@@ -3288,13 +3294,13 @@ export default function PillarC() {
       {/* ── C1 sleep checklist modal ── */}
       {sleepChecklistModal !== null && (
         <C0ItemModal
-          item={C1_CHECKLIST[sleepChecklistModal]}
+          item={localC1Checklist[sleepChecklistModal]}
           idx={sleepChecklistModal}
           onClose={() => setSleepChecklistModal(null)}
           onPrev={() => setSleepChecklistModal(i => Math.max(0, i - 1))}
-          onNext={() => setSleepChecklistModal(i => Math.min(C1_CHECKLIST.length - 1, i + 1))}
+          onNext={() => setSleepChecklistModal(i => Math.min(localC1Checklist.length - 1, i + 1))}
           hasPrev={sleepChecklistModal > 0}
-          hasNext={sleepChecklistModal < C1_CHECKLIST.length - 1}
+          hasNext={sleepChecklistModal < localC1Checklist.length - 1}
         />
       )}
 

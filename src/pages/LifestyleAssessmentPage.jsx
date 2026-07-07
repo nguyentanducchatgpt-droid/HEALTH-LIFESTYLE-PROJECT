@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#14b8a6';
 const RGB = '20,184,166';
@@ -307,6 +308,7 @@ function AssessmentModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, h
 }
 
 export default function LifestyleAssessmentPage() {
+  const { t: tPillars } = useTranslation('pillars');
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [savedScore, setSavedScore] = useState(null);
@@ -359,16 +361,16 @@ export default function LifestyleAssessmentPage() {
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-base text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        Lối Sống Khỏe
+        {tPillars('pillarC.assessment_breadcrumb', { defaultValue: 'Lối Sống Khỏe' })}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>📋</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Đánh Giá Lối Sống</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{tPillars('pillarC.assessment_title', { defaultValue: 'Đánh Giá Lối Sống' })}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C0 · Lifestyle Assessment</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">Đánh giá lối sống hiện tại của bạn qua 7 khía cạnh quan trọng. Kết quả sẽ xác định bạn đang ở Track nào và đề xuất hành động ưu tiên phù hợp.</p>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{tPillars('pillarC.assessment_desc', { defaultValue: 'Đánh giá lối sống hiện tại của bạn qua 7 khía cạnh quan trọng. Kết quả sẽ xác định bạn đang ở Track nào và đề xuất hành động ưu tiên phù hợp.' })}</p>
         </div>
       </div>
 

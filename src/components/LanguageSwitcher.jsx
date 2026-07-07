@@ -2,10 +2,28 @@
 import { useTranslation } from 'react-i18next';
 
 const LANGS = [
-  { code: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
-  { code: 'en', label: 'English',    flag: '🇬🇧' },
-  { code: 'de', label: 'Deutsch',    flag: '🇩🇪' },
+  { code: 'vi', label: 'Tiếng Việt', flagSrc: 'https://flagcdn.com/w40/vn.png' },
+  { code: 'en', label: 'English',    flagSrc: 'https://flagcdn.com/w40/gb.png' },
+  { code: 'de', label: 'Deutsch',    flagSrc: 'https://flagcdn.com/w40/de.png' },
 ];
+
+function Flag({ src, code }) {
+  return (
+    <img
+      src={src}
+      alt={code.toUpperCase()}
+      width={22}
+      height={15}
+      className="rounded-sm object-cover shrink-0"
+      style={{ width: 22, height: 15 }}
+      onError={e => {
+        e.currentTarget.style.display = 'none';
+        if (e.currentTarget.nextSibling) e.currentTarget.nextSibling.style.display = 'inline';
+      }}
+      loading="eager"
+    />
+  );
+}
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -31,7 +49,7 @@ export default function LanguageSwitcher() {
         aria-haspopup="listbox"
         aria-expanded={open}
       >
-        <span className="text-base leading-none">{currentLang.flag}</span>
+        <Flag src={currentLang.flagSrc} code={currentLang.code} />
         <span className="hidden sm:inline text-muted text-sm">{currentLang.label}</span>
         <span
           className={`text-muted text-[10px] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
@@ -43,7 +61,7 @@ export default function LanguageSwitcher() {
       {open && (
         <div className="absolute right-0 top-full mt-2 w-48 glass border border-border-bright rounded-2xl shadow-2xl overflow-hidden z-50 animate-scale-in">
           <div className="p-1.5">
-            {LANGS.map(({ code, label, flag }) => (
+            {LANGS.map(({ code, label, flagSrc }) => (
               <button
                 key={code}
                 role="option"
@@ -55,7 +73,7 @@ export default function LanguageSwitcher() {
                     : 'text-muted hover:text-text hover:bg-white/5'
                 }`}
               >
-                <span className="text-lg leading-none shrink-0">{flag}</span>
+                <Flag src={flagSrc} code={code} />
                 <span>{label}</span>
                 {current === code && (
                   <span className="ml-auto text-accent text-[10px] font-bold">✓</span>

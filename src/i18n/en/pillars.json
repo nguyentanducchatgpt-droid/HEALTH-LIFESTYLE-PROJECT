@@ -3016,6 +3016,367 @@
         ]
       }
     ],
+    "c3_heading": "NEAT & Combat Sedentary Behavior",
+    "c3_desc": "NEAT is all movement outside your workout: walking, standing up, housework. For busy people, NEAT is as important as gym sessions.",
+    "c3_levels_heading": "Step targets by level",
+    "c3_ideas_heading": "Ideas to increase NEAT",
+    "c4_heading": "Active Recovery",
+    "c4_desc": "A recovery day is part of the program, not a failure. Recover through gentle action, not just lying down.",
+    "c4_routine_heading": "10-Minute Recovery Routine",
+    "c4_zones_heading": "Recovery by Pain Zone",
+    "c4_routine": [
+      {
+        "exercise": "Diaphragmatic breathing", "label": "Diaphragmatic breathing",
+        "duration": "1 min", "note": "Belly rises when inhaling, chest barely moves",
+        "detail": "The most important first exercise. 90% of people breathe with their chest, not the diaphragm — keeping the body in a mild state of arousal.",
+        "keyFact": "Diaphragmatic breathing activates the parasympathetic nervous system within 60 seconds — reducing cortisol and heart rate more effectively than any other relaxation technique.",
+        "details": [
+          "Chest breathing activates accessory neck and shoulder muscles — creating continuous mechanical tension in the neck and shoulders with each of your 20,000+ daily breaths.",
+          "The diaphragm sits just below the lungs — when inhaling correctly, the belly expands and the chest barely rises. This is the body's primary breathing muscle.",
+          "The vagus nerve runs through the diaphragm — slow diaphragmatic breathing directly stimulates it, activating 'rest and digest' mode.",
+          "After 5–6 slow diaphragmatic breaths (4s inhale, 6s exhale), measurable HRV improvement occurs — a better recovery indicator.",
+          "Technique: place your right hand on your belly, left on your chest. Inhale through your nose — right hand should rise, left hand stays nearly still. Exhale slowly through your mouth.",
+          "Practicing for 1 minute daily builds parasympathetic 'neural muscle' — over time the body recovers faster from stress and training."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Belly up, chest still", "note": "Diaphragm is the primary breathing muscle" },
+          { "icon": "🧠", "label": "Vagus nerve", "note": "Activates 'rest and digest' mode" },
+          { "icon": "❤️", "label": "Raises HRV", "note": "Recovery indicator improves immediately" },
+          { "icon": "⏱️", "label": "1 min = 6–8 breaths", "note": "4s inhale, 6s exhale" }
+        ]
+      },
+      {
+        "exercise": "Shoulder roll", "label": "Shoulder roll",
+        "duration": "1 min", "note": "Roll shoulders forward and backward",
+        "detail": "Shoulder roll is simple but highly effective at resetting shoulder and neck muscles after prolonged tension or desk work. Both directions have different effects.",
+        "keyFact": "Office workers spend 6–8 hours/day with shoulders hunched toward the ears — daily reverse shoulder rolls prevent chronic trapezius tightening.",
+        "details": [
+          "Rolling forward stretches the rhomboid muscles (between the shoulder blades), which are typically tight due to rounded shoulders when sitting.",
+          "Rolling backward activates the lower trapezius and serratus anterior — both commonly weakened and inhibited in people who sit a lot.",
+          "Combine with breathing: inhale as shoulders go up and back, exhale as they come down and forward — enhances muscle relaxation and parasympathetic activation.",
+          "Full range of motion matters more than speed — roll slowly, widely, feeling each muscle through the rotation rather than rolling quickly and superficially.",
+          "Note: 'clicking' sounds when rolling are normal if painless; if painful, check the rotator cuff before continuing.",
+          "1 minute ≈ 8–10 rotations per direction. After 10 seconds, the tight feeling in neck and shoulders begins to noticeably ease."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Two directions", "note": "Forward and back have different effects" },
+          { "icon": "💨", "label": "Pair with breathing", "note": "Inhale up, exhale down" },
+          { "icon": "🐢", "label": "Slow and full", "note": "Wide range matters more than speed" },
+          { "icon": "👂", "label": "Clicking sounds", "note": "Normal if there is no pain" }
+        ]
+      },
+      {
+        "exercise": "Thoracic twist", "label": "Thoracic twist",
+        "duration": "1 min", "note": "Rotate upper back, one side at a time",
+        "detail": "The thoracic spine (T1–T12) is the most neglected area in recovery, yet it bridges the neck and lower back. Loss of mobility here causes pain at both ends.",
+        "keyFact": "The thoracic spine is designed to rotate 35–40°, but desk work reduces this to 10–15° — forcing the neck and lower back to compensate.",
+        "details": [
+          "When the T-spine stiffens, the brain automatically seeks range of motion at adjacent joints — usually L4–L5 (lower back) and C4–C6 (neck), creating excess load and chronic pain.",
+          "Seated posture (forward head, rounded shoulders) continuously compresses the thoracic vertebrae forward — the thoracic twist reverses this compression.",
+          "Technique: sit tall, place your right hand on your left shoulder, rotate your torso to the right as far as possible, hold 3–5 seconds. Keep the pelvis from rotating — only the thoracic spine moves.",
+          "Inhale before rotating, exhale at maximum rotation — deflating the lungs creates space for the rib cage to rotate 10–15% deeper.",
+          "The most commonly stiff zone: T4–T8 (mid-thoracic) — feel the 'point of resistance' when twisting and hold there for an extra 2–3 seconds.",
+          "Immediate result: after 3–5 reps per side, your range of head rotation often increases noticeably — evidence that the T-spine and neck are directly linked."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Only rotate thoracic", "note": "Keep the pelvis fixed" },
+          { "icon": "💨", "label": "Exhale on rotation", "note": "Adds 10–15% more ROM" },
+          { "icon": "🎯", "label": "T4–T8 stiffest", "note": "Hold extra 2–3s at the point of resistance" },
+          { "icon": "🔗", "label": "Neck connection", "note": "Loose T-spine → less neck pain" }
+        ]
+      },
+      {
+        "exercise": "Hip flexor stretch", "label": "Hip flexor stretch",
+        "duration": "1 min × 2", "note": "Stretch hip flexors each side",
+        "detail": "The psoas and iliacus (hip flexor group) connect the lumbar spine to the femur. When tight, they pull the lower back into excessive lordosis and compress L4–L5, L5–S1 discs.",
+        "keyFact": "People sitting 8+ hours/day have continuously shortened hip flexors — pulling the pelvis into anterior tilt and causing the #1 reason for lower back pain.",
+        "details": [
+          "Sitting keeps the hip flexors in a shortened position constantly — over months, the muscles 'remember' this short length and lose flexibility even when not sitting.",
+          "Anterior pelvic tilt from tight hip flexors causes: a protruding belly despite no excess fat, a 'flat' glute appearance, and excessive lower back arch.",
+          "Lunge stretch technique: right knee on the floor, left foot forward at 90°, push the right hip forward and downward. Feeling a stretch in the front of the right thigh = correct position.",
+          "To increase intensity: slowly raise the arm on the same side as the grounded knee overhead — this stretches the psoas closer to the spine.",
+          "Hold 60 seconds per side with slow, steady breathing — no bouncing. Muscles need time for autogenic inhibition to work.",
+          "Sign of effective stretch: after 30–40 seconds, you'll feel the muscle 'release' and be able to sink 1–2 cm deeper into the stretch without force."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Lunge position", "note": "Right knee on floor, left foot forward" },
+          { "icon": "⏱️", "label": "60 seconds/side", "note": "Long hold activates autogenic inhibition" },
+          { "icon": "🚫", "label": "No bouncing", "note": "Static stretch only for hip flexors" },
+          { "icon": "⬇️", "label": "Sink deeper at 30–40s", "note": "Muscle releases, allows more depth" }
+        ]
+      },
+      {
+        "exercise": "Hamstring stretch", "label": "Hamstring stretch",
+        "duration": "1 min × 2", "note": "Stretch rear thigh each side",
+        "detail": "Tight hamstrings pull the sitting bones downward (posterior pelvic tilt) — causing the lower back to lose its natural curve and increasing disc pressure when sitting.",
+        "keyFact": "The hamstring group (biceps femoris, semimembranosus, semitendinosus) connects the sitting bones to the tibia — when tight, it affects the entire posterior chain from foot to head.",
+        "details": [
+          "Signs of tight hamstrings: difficulty touching your toes, tendency to round your lower back when bending forward, knee pain when running.",
+          "Technique: lie on your back, bend one knee to chest then slowly straighten the leg toward the ceiling. Use a towel or strap around the foot for assistance.",
+          "Alternative (standing): step one foot on a chair, lean the torso forward gently from the hips (not the back) — feel the stretch along the back of the thigh.",
+          "Breathing during the stretch: exhale slowly and feel the hamstring gradually relax — do not force, let the stretch happen passively over the full 60 seconds.",
+          "Common mistake: rounding the lower back to reach further — this takes the stretch off the hamstring and puts it on the lumbar discs.",
+          "Combined effect: after regular hip flexor + hamstring stretching, lower back pain from prolonged sitting typically improves within 2–3 weeks."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Rear thigh focus", "note": "Connects sitting bones to tibia" },
+          { "icon": "😌", "label": "Passive, no force", "note": "Let the muscle relax over 60s" },
+          { "icon": "🚫", "label": "Don't round lower back", "note": "Bends from the hips, not the spine" },
+          { "icon": "🔗", "label": "Pair with hip flexor", "note": "Together resolves lower back pain faster" }
+        ]
+      },
+      {
+        "exercise": "Child pose + breathing", "label": "Child pose + breathing",
+        "duration": "2 min", "note": "Full relaxation",
+        "detail": "Child pose is the most complete restorative posture: gently stretches the lower back, hips, and shoulders simultaneously while creating space for deep breathing.",
+        "keyFact": "Child pose combined with diaphragmatic breathing is more effective than lying flat for post-workout recovery — the gentle spinal traction increases disc hydration.",
+        "details": [
+          "Technique: kneel, bring toes together and knees apart (wide-knee child pose) or knees together (narrow), sit back toward heels, extend arms forward, forehead rests on the floor.",
+          "Breathing in child pose: focus on expanding the back ribcage — each inhale should push your back upward and outward, each exhale relaxes the back downward.",
+          "Wide-knee version (knees spread wide) allows deeper hip stretching and creates space for the belly — better for people with tight hips or large build.",
+          "Thoracic traction: extending arms forward in child pose gently elongates the thoracic and lumbar spine — reversing the day's compression from sitting.",
+          "First 30 seconds may feel slightly uncomfortable if hips and lower back are very tight — stay still, breathe, and the position will soften as muscles release.",
+          "2 minutes in child pose with slow breathing: cortisol measurably decreases, heart rate drops, and the mind calms — an optimal transition between workout and rest."
+        ],
+        "points": [
+          { "icon": "🙇", "label": "Wide-knee version", "note": "Better for tight hips" },
+          { "icon": "🫁", "label": "Back ribcage breathing", "note": "Back rises on inhale" },
+          { "icon": "↔️", "label": "Spinal traction", "note": "Arms forward decompresses spine" },
+          { "icon": "🧘", "label": "2 full minutes", "note": "Full recovery transition effect" }
+        ]
+      },
+      {
+        "exercise": "Light walk", "label": "Light walk",
+        "duration": "1–2 min", "note": "Gentle finish",
+        "detail": "Ending with 1–2 minutes of slow walking is not a formality — it is an active transition that helps the body move from recovery mode to normal daily function.",
+        "keyFact": "Slow walking after a passive stretching routine reactivates the postural muscles (glutes, core, calves) in a low-demand, natural way — avoiding the stiff 'just woke up' feeling.",
+        "details": [
+          "After 8 minutes of lying and passive stretching, standing up abruptly can cause brief lightheadedness (orthostatic hypotension) — slow walking prevents this.",
+          "Light walking pumps lymphatic fluid (the body has no lymph pump like the heart) — muscle contractions during walking are the primary driver of lymphatic return.",
+          "Focus on posture: walk tall, shoulders back, eyes level. The body carries muscle memory — walking with good form after recovery reinforces correct alignment.",
+          "The ideal pace: slow enough to breathe comfortably through the nose — this is the true aerobic recovery pace, not burning energy but restoring circulation.",
+          "If time allows: extend this to a 5-minute easy outdoor walk — natural light, fresh air, and slightly uneven terrain (sidewalk, grass) all enhance recovery quality.",
+          "This is also the time for mental reflection: what did the routine feel like? Which area still feels tight? What to prioritize in tomorrow's session?"
+        ],
+        "points": [
+          { "icon": "🚶", "label": "Slow recovery pace", "note": "Nose breathing the whole time" },
+          { "icon": "💉", "label": "Lymphatic pump", "note": "Walking drives lymphatic return" },
+          { "icon": "🧍", "label": "Upright posture", "note": "Reinforces correct alignment" },
+          { "icon": "🧠", "label": "Mental check-in", "note": "Note what still feels tight" }
+        ]
+      }
+    ],
+    "c4_zones": [
+      {
+        "zone": "Neck & Shoulders", "label": "Neck & Shoulder Recovery",
+        "exercises": ["Chin tuck 10 reps", "Shoulder roll", "Doorway stretch", "Scapular squeeze", "Thoracic twist"],
+        "detail": "The neck-shoulder area is the most affected by desk work — carrying head forward posture, rounded shoulders, and upper trapezius overload simultaneously.",
+        "keyFact": "A head shifted 2.5 cm forward effectively adds 10 kg of load to the cervical spine — compounding over thousands of hours of screen time.",
+        "details": [
+          "Chin tuck (gently retract the chin straight back) directly counters forward head posture — activates deep cervical flexors that are typically switched off by screen use.",
+          "Doorway stretch opens the anterior shoulder capsule and pectoral muscles — the two structures most shortened by keyboard and mouse work.",
+          "Scapular squeeze activates the rhomboids and mid-trapezius — these postural muscles fatigue first in desk workers and contribute to the 'shoulder hunch'.",
+          "Thoracic twist improves upper-back rotation that is lost from sustained seated flexion — restoring it reduces compensatory stress on the neck joints.",
+          "Order matters: start with chin tuck (neural reset), then mobility (shoulder roll, thoracic twist), then strength activation (scapular squeeze), then open (doorway stretch)."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Chin tuck first", "note": "Resets deep cervical flexors" },
+          { "icon": "🚪", "label": "Doorway stretch", "note": "Opens anterior shoulder capsule" },
+          { "icon": "💪", "label": "Scapular squeeze", "note": "Activates mid-trap and rhomboids" },
+          { "icon": "🔄", "label": "Thoracic twist", "note": "Restores rotation, reduces neck load" }
+        ]
+      },
+      {
+        "zone": "Back", "label": "Back Recovery",
+        "exercises": ["Dead bug 10 reps", "Bird-dog 10 reps", "Glute bridge 15 reps", "Child pose 1 min", "Hip flexor stretch"],
+        "detail": "Lower back pain from sitting almost always involves three simultaneous problems: weak core, tight hip flexors, and inhibited glutes — this five-exercise sequence addresses all three.",
+        "keyFact": "80% of adults experience lower back pain at some point — the majority from prolonged sitting causing muscle imbalance, not structural damage.",
+        "details": [
+          "Dead bug trains core anti-extension — keeping the lower back flat while limbs move, exactly the stability pattern needed to protect spinal discs under daily load.",
+          "Bird-dog trains core anti-rotation — the ability to resist twisting forces, which is more relevant to daily life and sport than pure flexion-based core exercises.",
+          "Glute bridge directly activates the gluteus maximus, which becomes inhibited ('glute amnesia') from prolonged sitting — when glutes don't fire, the lower back overcompensates.",
+          "Child pose provides passive decompression — reversing the compressive load on lumbar discs accumulated from hours of sitting (discs are like sponges, they need unloading to rehydrate).",
+          "Hip flexor stretch addresses the root cause: shortened hip flexors pulling the pelvis into anterior tilt and increasing lumbar lordosis — the structural driver of most sitting-related back pain."
+        ],
+        "points": [
+          { "icon": "🐛", "label": "Dead bug + bird-dog", "note": "Core stability before mobility" },
+          { "icon": "🍑", "label": "Glute bridge", "note": "Revives inhibited glutes" },
+          { "icon": "🙇", "label": "Child pose", "note": "Disc decompression and rehydration" },
+          { "icon": "🦵", "label": "Hip flexor stretch last", "note": "Addresses the structural root cause" }
+        ]
+      },
+      {
+        "zone": "Knee", "label": "Knee Recovery",
+        "exercises": ["Sit-to-stand 10 reps", "Glute bridge 15 reps", "Calf raise 15 reps", "Wall-assisted split squat (light)", "Hamstring stretch"],
+        "detail": "Knee pain from exercise or prolonged sitting is rarely caused by the knee joint itself — it usually comes from weakness above (glutes, quads) or tightness below (calves, hamstrings).",
+        "keyFact": "The patellofemoral joint (kneecap) compresses 3.5× body weight when sitting bent at 90° for extended periods — active recovery significantly reduces this compressive stress.",
+        "details": [
+          "Sit-to-stand is the most functional knee exercise — training the quad-dominant pattern used in daily life (getting up from chairs, stairs) in a controlled, low-load way.",
+          "Glute bridge indirectly protects the knee: strong glutes reduce the internal rotation and valgus collapse (knee caving inward) that causes most running and squat-related knee injuries.",
+          "Calf raise maintains ankle dorsiflexion mobility — restricted ankle mobility forces the knee to compensate with excess forward travel, increasing patellar tendon stress.",
+          "Wall-assisted split squat at low intensity promotes synovial fluid circulation in the knee — this 'lubricates' the joint without the compressive load of full squatting.",
+          "Hamstring stretch reduces posterior knee tension — tight hamstrings limit full knee extension and create a constant pull on the back of the knee capsule."
+        ],
+        "points": [
+          { "icon": "🧎", "label": "Sit-to-stand", "note": "Most functional knee exercise" },
+          { "icon": "🍑", "label": "Strong glutes", "note": "Prevent valgus collapse at the knee" },
+          { "icon": "🦶", "label": "Calf raise", "note": "Maintains ankle mobility for the knee" },
+          { "icon": "🦵", "label": "Hamstring stretch", "note": "Reduces posterior knee tension" }
+        ]
+      }
+    ],
+    "c6_heading": "Breathing & Heart Rate Regulation",
+    "c6_desc": "Proper breathing is a tool to regulate your body, support post-workout recovery, and improve sleep quality.",
+    "c6_protocols_heading": "Situation-specific protocols",
+    "c6_techniques": [
+      {
+        "name": "Diaphragmatic breathing",
+        "steps": "Hand on belly • Inhale through nose → belly rises • Exhale slowly through mouth • Chest barely moves",
+        "time": "1–3 min",
+        "use": "Before sleep, after workout, when stressed"
+      },
+      {
+        "name": "Box breathing",
+        "steps": "Inhale 4s • Hold 4s • Exhale 4s • Hold 4s • Repeat 4 rounds",
+        "time": "4 rounds",
+        "use": "Before workout, during stress, before sleep"
+      },
+      {
+        "name": "Extended exhale",
+        "steps": "Inhale 4s • Exhale 6s • Repeat 6–10 rounds",
+        "time": "2–3 min",
+        "use": "Insomnia, racing heart, after a tough day"
+      }
+    ],
+    "c6_protocols": [
+      {
+        "label": "Before workout", "brief": "4–6 diaphragmatic breaths",
+        "detail": "2 minutes of diaphragmatic breathing before training activates the parasympathetic system, creating a calm baseline — then a short activation drill (jumping jacks, dynamic movements) smoothly transitions to the sympathetic state for exercise.",
+        "keyFact": "Studies show athletes who breathe diaphragmatically before training have better movement control and reduced injury risk compared to those who start without a breathing routine.",
+        "details": [
+          "Goal: transition from daily stress mode (sympathetic) to focused but calm training mode — not maximum arousal, but 'clear-headed readiness'.",
+          "Technique: 4–6 diaphragmatic breaths (4s in, 6s out), then 3–5 slow controlled breaths with mental focus on the muscles to be trained.",
+          "After the breathing: do not go straight to heavy lifting — follow with 3–5 minutes of dynamic warm-up (hip circles, leg swings, arm swings).",
+          "For high-intensity training (HIIT, heavy lifting): after diaphragmatic breathing, add a quick activation sequence — 10 jumping jacks, 5 explosive push-ups — to prime the CNS.",
+          "For yoga or stretching: maintain slow diaphragmatic breathing throughout the entire session — this maximizes the parasympathetic effect and deepens range of motion."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Calm baseline", "note": "Parasympathetic before sympathetic" },
+          { "icon": "🎯", "label": "Mental focus", "note": "Breathing connects mind and muscles" },
+          { "icon": "⚡", "label": "Then activate", "note": "Dynamic warm-up follows breathing" },
+          { "icon": "🛡️", "label": "Reduces injury risk", "note": "Better movement control under load" }
+        ]
+      },
+      {
+        "label": "After workout", "brief": "Inhale 4s, exhale 6s × 6–8 rounds",
+        "detail": "Post-workout breathing is a deliberate practice to signal to the body that the 'threat' (training stress) has ended and recovery can begin. Without it, the nervous system can stay in a low-level activated state for hours.",
+        "keyFact": "Recovery begins not when you stop training — but when the parasympathetic nervous system takes over. Post-workout breathing speeds this transition by 15–20 minutes.",
+        "details": [
+          "Immediately after the last set: sit or lie down, do not rush to stretch or check your phone — spend 2 minutes doing 4s-in / 6s-out breathing.",
+          "The extended exhale (longer than inhale) directly activates the vagus nerve, rapidly drops heart rate, and reduces cortisol spike from training.",
+          "After breathing: gentle static stretching is most effective now — muscles are warm, nervous system is calm, range of motion is at its maximum.",
+          "Rehydration: drink 400–500 ml water during the breathing session — proper breathing also accelerates fluid absorption by improving gut circulation.",
+          "Mental review: use these 2 minutes to mentally note how the session felt — energy, form quality, any unusual pain. This is more valuable than logging while still under workout stress."
+        ],
+        "points": [
+          { "icon": "🛑", "label": "Stop before checking phone", "note": "2 min breathing first" },
+          { "icon": "💨", "label": "Extended exhale", "note": "6s out > 4s in drops heart rate fastest" },
+          { "icon": "💧", "label": "Drink while breathing", "note": "Improves fluid absorption" },
+          { "icon": "📝", "label": "Mental review", "note": "Note how the session felt" }
+        ]
+      },
+      {
+        "label": "Before sleep", "brief": "Diaphragmatic breathing 3 min",
+        "detail": "The transition from wakefulness to sleep is governed by the autonomic nervous system. Most people struggle to sleep not because they're not tired, but because their nervous system hasn't fully shifted to parasympathetic mode.",
+        "keyFact": "3 minutes of diaphragmatic breathing before bed consistently reduces sleep onset time by 5–10 minutes in studies — without any medication or supplements.",
+        "details": [
+          "Create the environment: dim lights (or off), phone face down, room temperature 18–20°C — these environmental cues prime the nervous system before breathing even begins.",
+          "Technique: lie on your back, knees bent if more comfortable, one hand on belly. 4s inhale through the nose, 6–8s exhale through slightly open mouth. Let the exhale be completely effortless.",
+          "If mind is racing: don't try to stop thoughts — instead, on each exhale, mentally say 'relax' and let thoughts float by without engaging them.",
+          "Progressive muscle relaxation add-on: on each exhale, consciously relax one body part (feet → calves → knees → thighs → abdomen → chest → shoulders → face) — effective for chronic insomnia.",
+          "Sleep breathing is not the same as wake breathing — once in bed, allow breathing to slow and become very shallow. Deep controlled breaths are for the first 3 minutes only; then let the body take over naturally."
+        ],
+        "points": [
+          { "icon": "🌙", "label": "Dim lights first", "note": "Environment primes the nervous system" },
+          { "icon": "🫁", "label": "4s in / 6–8s out", "note": "Effortless exhale is the key" },
+          { "icon": "💭", "label": "Don't fight thoughts", "note": "Float by without engaging" },
+          { "icon": "🛌", "label": "Let body take over", "note": "Deep control only for first 3 min" }
+        ]
+      },
+      {
+        "label": "Mid-day stress", "brief": "Box breathing 4 rounds",
+        "detail": "Box breathing (4-4-4-4) is the fastest evidence-based breathing technique for acute stress — used by Navy SEALs and emergency responders to maintain calm under pressure.",
+        "keyFact": "4 rounds of box breathing (90 seconds total) reduce salivary cortisol by a measurable amount in controlled studies — comparable to a 20-minute meditation session.",
+        "details": [
+          "Can be done anywhere: sitting at your desk, in a bathroom, before a difficult conversation. No equipment, no special position needed.",
+          "Technique: inhale through nose for 4 counts, hold for 4 counts, exhale through mouth (or nose) for 4 counts, hold empty for 4 counts. This is 1 round.",
+          "The 'hold at top' creates a brief increase in CO₂ tolerance — this is the key mechanism that trains the nervous system to remain calm even when breathing feels restricted.",
+          "The 'hold at bottom' (after exhale) temporarily increases carbon dioxide, triggering a mild breathing urge — staying calm through this reflex is the 'stress inoculation' effect.",
+          "Modification for anxiety: if holding breath feels uncomfortable, start with 3-3-3-3, or skip the holds (just 4s in, 4s out) until comfortable with the basic rhythm."
+        ],
+        "points": [
+          { "icon": "📦", "label": "4-4-4-4 pattern", "note": "In-hold-out-hold, equal counts" },
+          { "icon": "🏢", "label": "Anywhere, anytime", "note": "No equipment or position needed" },
+          { "icon": "🫁", "label": "CO₂ tolerance", "note": "The key mechanism behind the calm effect" },
+          { "icon": "📉", "label": "4 rounds = 90s", "note": "Measurable cortisol reduction" }
+        ]
+      },
+      {
+        "label": "Insomnia", "brief": "Extended exhale × 8–10 rounds",
+        "detail": "When lying awake unable to sleep, the exhale-extended breathing pattern (4s in / 6s out) is the most effective non-pharmaceutical intervention for sleep onset difficulty.",
+        "keyFact": "Extended exhale breathing activates the baroreflex — slowing the heart rate by stimulating pressure receptors in the aortic arch, directly inducing drowsiness.",
+        "details": [
+          "Difference from regular breathing: make the exhale noticeably longer than the inhale — 4s in, 6s out is the minimum ratio; some find 4s in, 8s out even more effective.",
+          "Do not try to time it exactly — rough counting is fine. The important thing is that the exhale feels longer and more effortless than the inhale.",
+          "Combine with body scan: after 4–5 rounds, scan the body from feet to head noting areas of tension without trying to fix them — the breathing gradually releases tension naturally.",
+          "If you can't focus on breathing: try 'physiological sigh' — one double inhale through the nose (sniff-sniff), then one long, slow exhale through the mouth. Repeat 3–5 times. This rapidly deflates over-inflated air sacs.",
+          "Key mindset: the goal is not 'fall asleep now' — it is 'rest the nervous system'. Sleep often arrives as a side effect of truly resting, not as a target being pursued."
+        ],
+        "points": [
+          { "icon": "😴", "label": "4s in / 6–8s out", "note": "Exhale longer activates baroreflex" },
+          { "icon": "🔍", "label": "Body scan add-on", "note": "Note tension without trying to fix it" },
+          { "icon": "😮‍💨", "label": "Physiological sigh", "note": "Double inhale + long exhale if stuck" },
+          { "icon": "🧘", "label": "Rest, not sleep", "note": "Sleep arrives as a side effect" }
+        ]
+      }
+    ],
+    "c7_heading": "Environment & Habit Design",
+    "c7_desc": "Don't rely on willpower alone. Design your environment so healthy behaviors happen more easily and naturally every day.",
+    "c7_fail_title": "The 'Off Day' Rule",
+    "c7_fail_desc": "When you miss a day: don't self-blame, don't quit entirely. Return with the smallest possible action: drink water, walk 5 minutes, sleep 15 minutes earlier.",
+    "c7_fail_note": "One off-rhythm day does not ruin your journey.",
+    "c7_areas": [
+      {
+        "area": "Morning",
+        "tips": [
+          "Place a water bottle on your nightstand",
+          "Leave your walking shoes by the door",
+          "Prepare workout clothes the night before",
+          "Keep your phone away from the bed",
+          "Make your curtains easy to open"
+        ]
+      },
+      {
+        "area": "Work",
+        "tips": [
+          "Place the water bottle far from your desk so you have to stand up",
+          "Use a 45–60 min timer",
+          "Keep a resistance band at your desk",
+          "Create a 10–15 min standing work area",
+          "Set a '2-min walk' reminder"
+        ]
+      },
+      {
+        "area": "Evening",
+        "tips": [
+          "Dim lights after 9–10 PM",
+          "Charge phone outside the bedroom",
+          "Keep a paper book by the bed",
+          "Prepare tomorrow's clothes",
+          "Write 3 tasks for tomorrow"
+        ]
+      }
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {

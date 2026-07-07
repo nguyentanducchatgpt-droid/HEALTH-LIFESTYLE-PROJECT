@@ -2227,6 +2227,36 @@ export default function PillarC() {
     ...(Array.isArray(c2EnergyTipsTr) && c2EnergyTipsTr[i] ? c2EnergyTipsTr[i] : {}),
   }));
 
+  const c4RoutineTr = tPillars('pillarC.c4_routine', { returnObjects: true });
+  const localC4Routine = C4_ROUTINE.map((r, i) => ({
+    ...r,
+    ...(Array.isArray(c4RoutineTr) && c4RoutineTr[i] ? c4RoutineTr[i] : {}),
+  }));
+
+  const c4ZonesTr = tPillars('pillarC.c4_zones', { returnObjects: true });
+  const localC4Zones = C4_ZONES.map((z, i) => ({
+    ...z,
+    ...(Array.isArray(c4ZonesTr) && c4ZonesTr[i] ? c4ZonesTr[i] : {}),
+  }));
+
+  const c6TechniquesTr = tPillars('pillarC.c6_techniques', { returnObjects: true });
+  const localC6Techniques = C6_TECHNIQUES.map((t, i) => ({
+    ...t,
+    ...(Array.isArray(c6TechniquesTr) && c6TechniquesTr[i] ? c6TechniquesTr[i] : {}),
+  }));
+
+  const c6ProtocolsTr = tPillars('pillarC.c6_protocols', { returnObjects: true });
+  const localC6Protocols = C6_PROTOCOLS.map((p, i) => ({
+    ...p,
+    ...(Array.isArray(c6ProtocolsTr) && c6ProtocolsTr[i] ? c6ProtocolsTr[i] : {}),
+  }));
+
+  const c7AreasTr = tPillars('pillarC.c7_areas', { returnObjects: true });
+  const localC7Areas = C7_AREAS.map((a, i) => ({
+    ...a,
+    ...(Array.isArray(c7AreasTr) && c7AreasTr[i] ? c7AreasTr[i] : {}),
+  }));
+
   const tab = mergedTabs.find(t => t.id === activeTab) || mergedTabs[1];
   const sleepProgress = C1_CHECKLIST.filter((_, i) => sleepChecks[i]).length;
   const neatProgress = [0, 1, 2, 3].filter(i => neatChecks[i]).length;
@@ -2637,9 +2667,9 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-2xl font-bold mb-1" style={{ color: '#10b981' }}>NEAT & Chống Ngồi Lâu</h2>
-                <p className="text-muted text-lg mb-6">NEAT là toàn bộ vận động ngoài buổi tập: đi bộ, đứng lên, làm việc nhà. Với người bận rộn, NEAT quan trọng không kém buổi tập gym.</p>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>Mục tiêu bước theo cấp độ</h3>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#10b981' }}>{tPillars('pillarC.c3_heading', { defaultValue: 'NEAT & Chống Ngồi Lâu' })}</h2>
+                <p className="text-muted text-lg mb-6">{tPillars('pillarC.c3_desc', { defaultValue: 'NEAT là toàn bộ vận động ngoài buổi tập: đi bộ, đứng lên, làm việc nhà. Với người bận rộn, NEAT quan trọng không kém buổi tập gym.' })}</p>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>{tPillars('pillarC.c3_levels_heading', { defaultValue: 'Mục tiêu bước theo cấp độ' })}</h3>
                 <div className="grid gap-2 mb-6">
                   {localC3Levels.map((l, i) => (
                     <div
@@ -2721,7 +2751,7 @@ export default function PillarC() {
                 <div className="h-2 rounded-full overflow-hidden mb-6" style={{ background: 'rgba(16,185,129,0.15)' }}>
                   <div className="h-full rounded-full transition-all duration-500" style={{ width: `${neatProgress / 4 * 100}%`, background: '#10b981' }} />
                 </div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>Ý tưởng tăng NEAT</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>{tPillars('pillarC.c3_ideas_heading', { defaultValue: 'Ý tưởng tăng NEAT' })}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {C3_IDEAS.map((idea, i) => (
                     <button key={i} onClick={() => setNeatIdeaModal(i)}
@@ -2753,11 +2783,11 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-2xl font-bold mb-1" style={{ color: '#a78bfa' }}>Phục Hồi Chủ Động</h2>
-                <p className="text-muted text-lg mb-6">Ngày phục hồi là một phần của chương trình, không phải ngày thất bại. Phục hồi bằng hành động nhẹ, không chỉ nằm nghỉ.</p>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#a78bfa' }}>Routine Phục Hồi 10 Phút</h3>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#a78bfa' }}>{tPillars('pillarC.c4_heading', { defaultValue: 'Phục Hồi Chủ Động' })}</h2>
+                <p className="text-muted text-lg mb-6">{tPillars('pillarC.c4_desc', { defaultValue: 'Ngày phục hồi là một phần của chương trình, không phải ngày thất bại. Phục hồi bằng hành động nhẹ, không chỉ nằm nghỉ.' })}</p>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#a78bfa' }}>{tPillars('pillarC.c4_routine_heading', { defaultValue: 'Routine Phục Hồi 10 Phút' })}</h3>
                 <div className="space-y-2 mb-6">
-                  {C4_ROUTINE.map((r, i) => (
+                  {localC4Routine.map((r, i) => (
                     <div
                       key={i}
                       role="button"
@@ -2776,9 +2806,9 @@ export default function PillarC() {
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#a78bfa' }}>Phục Hồi Theo Vùng Đau Mỏi</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#a78bfa' }}>{tPillars('pillarC.c4_zones_heading', { defaultValue: 'Phục Hồi Theo Vùng Đau Mỏi' })}</h3>
                 <div className="space-y-2">
-                  {C4_ZONES.map((z, i) => (
+                  {localC4Zones.map((z, i) => (
                     <div key={i} className="rounded-xl overflow-hidden border group"
                       style={{ borderColor: zoneModalIdx === i ? `rgba(${z.rgb},0.4)` : 'rgba(167,139,250,0.15)', transition: 'border-color 0.2s' }}>
                       <div className="flex items-center justify-between p-3" style={{ background: `rgba(${z.rgb},0.06)` }}>
@@ -2879,10 +2909,10 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-2xl font-bold mb-1" style={{ color: '#0ea5e9' }}>Thở & Hạ Nhịp Cơ Thể</h2>
-                <p className="text-muted text-lg mb-6">Thở đúng cách là công cụ điều hòa cơ thể, hỗ trợ phục hồi sau tập và giúp ngủ sâu hơn.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#0ea5e9' }}>{tPillars('pillarC.c6_heading', { defaultValue: 'Thở & Hạ Nhịp Cơ Thể' })}</h2>
+                <p className="text-muted text-lg mb-6">{tPillars('pillarC.c6_desc', { defaultValue: 'Thở đúng cách là công cụ điều hòa cơ thể, hỗ trợ phục hồi sau tập và giúp ngủ sâu hơn.' })}</p>
                 <div className="flex gap-2 mb-5 overflow-x-auto scrollbar-hide">
-                  {C6_TECHNIQUES.map((t, i) => (
+                  {localC6Techniques.map((t, i) => (
                     <button key={i} onClick={() => setBreathMode(i)}
                       className="px-3 py-1.5 rounded-lg text-lg font-semibold shrink-0 transition-all"
                       style={breathMode === i
@@ -2892,11 +2922,11 @@ export default function PillarC() {
                     </button>
                   ))}
                 </div>
-                {C6_TECHNIQUES[breathMode] && (
+                {localC6Techniques[breathMode] && (
                   <div className="p-5 rounded-xl mb-6" style={{ background: 'rgba(14,165,233,0.06)', border: '1px solid rgba(14,165,233,0.15)' }}>
-                    <h3 className="font-bold text-text mb-3">{C6_TECHNIQUES[breathMode].name}</h3>
+                    <h3 className="font-bold text-text mb-3">{localC6Techniques[breathMode].name}</h3>
                     <div className="flex flex-wrap gap-3 mb-3">
-                      {C6_TECHNIQUES[breathMode].steps.split(' • ').map((step, i) => (
+                      {localC6Techniques[breathMode].steps.split(' • ').map((step, i) => (
                         <div key={i} className="flex items-center gap-2 text-lg">
                           <span className="w-5 h-5 rounded-full flex items-center justify-center text-base font-bold shrink-0"
                             style={{ background: '#0ea5e9', color: 'black' }}>{i + 1}</span>
@@ -2905,14 +2935,14 @@ export default function PillarC() {
                       ))}
                     </div>
                     <div className="flex gap-4 text-base text-muted mt-3 flex-wrap">
-                      <span>⏱ {C6_TECHNIQUES[breathMode].time}</span>
-                      <span>• {C6_TECHNIQUES[breathMode].use}</span>
+                      <span>⏱ {localC6Techniques[breathMode].time}</span>
+                      <span>• {localC6Techniques[breathMode].use}</span>
                     </div>
                   </div>
                 )}
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#0ea5e9' }}>Protocol theo tình huống</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#0ea5e9' }}>{tPillars('pillarC.c6_protocols_heading', { defaultValue: 'Protocol theo tình huống' })}</h3>
                 <div className="space-y-2">
-                  {C6_PROTOCOLS.map((p, i) => (
+                  {localC6Protocols.map((p, i) => (
                     <div
                       key={i}
                       className="flex justify-between items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
@@ -2943,10 +2973,10 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-2xl font-bold mb-1" style={{ color: '#f43f5e' }}>Thiết Kế Môi Trường & Thói Quen</h2>
-                <p className="text-muted text-lg mb-6">Đừng chỉ dựa vào ý chí. Hãy thiết kế môi trường để hành vi tốt xảy ra dễ hơn, tự nhiên hơn mỗi ngày.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#f43f5e' }}>{tPillars('pillarC.c7_heading', { defaultValue: 'Thiết Kế Môi Trường & Thói Quen' })}</h2>
+                <p className="text-muted text-lg mb-6">{tPillars('pillarC.c7_desc', { defaultValue: 'Đừng chỉ dựa vào ý chí. Hãy thiết kế môi trường để hành vi tốt xảy ra dễ hơn, tự nhiên hơn mỗi ngày.' })}</p>
                 <div className="space-y-4 mb-6">
-                  {C7_AREAS.map((a, i) => (
+                  {localC7Areas.map((a, i) => (
                     <div key={i} className="p-4 rounded-xl" style={{ background: 'rgba(244,63,94,0.05)', border: '1px solid rgba(244,63,94,0.1)' }}>
                       <div className="flex items-center gap-2 mb-3">
                         <span className="text-2xl">{a.icon}</span>
@@ -2963,9 +2993,9 @@ export default function PillarC() {
                   ))}
                 </div>
                 <div className="p-4 rounded-xl" style={{ background: 'rgba(244,63,94,0.08)', border: '1px solid rgba(244,63,94,0.2)' }}>
-                  <p className="text-lg font-bold mb-2" style={{ color: '#f43f5e' }}>Quy tắc "Ngày Fail"</p>
-                  <p className="text-base text-muted leading-relaxed">Khi lỡ một ngày: không tự trách, không bỏ luôn. Quay lại bằng hành động nhỏ nhất: uống nước, đi bộ 5 phút, ngủ sớm hơn 15 phút.</p>
-                  <p className="text-base font-semibold mt-2" style={{ color: '#f43f5e' }}>Một ngày lệch nhịp không phá hỏng hành trình.</p>
+                  <p className="text-lg font-bold mb-2" style={{ color: '#f43f5e' }}>{tPillars('pillarC.c7_fail_title', { defaultValue: 'Quy tắc "Ngày Fail"' })}</p>
+                  <p className="text-base text-muted leading-relaxed">{tPillars('pillarC.c7_fail_desc', { defaultValue: 'Khi lỡ một ngày: không tự trách, không bỏ luôn. Quay lại bằng hành động nhỏ nhất: uống nước, đi bộ 5 phút, ngủ sớm hơn 15 phút.' })}</p>
+                  <p className="text-base font-semibold mt-2" style={{ color: '#f43f5e' }}>{tPillars('pillarC.c7_fail_note', { defaultValue: 'Một ngày lệch nhịp không phá hỏng hành trình.' })}</p>
                 </div>
               </div>
             </div>
@@ -3120,13 +3150,13 @@ export default function PillarC() {
       {/* ── C6 breathing protocol modal ── */}
       {c6ProtocolIdx !== null && (
         <C0ItemModal
-          item={C6_PROTOCOLS[c6ProtocolIdx]}
+          item={localC6Protocols[c6ProtocolIdx]}
           idx={c6ProtocolIdx}
           onClose={() => setC6ProtocolIdx(null)}
           onPrev={() => setC6ProtocolIdx(i => Math.max(0, i - 1))}
-          onNext={() => setC6ProtocolIdx(i => Math.min(C6_PROTOCOLS.length - 1, i + 1))}
+          onNext={() => setC6ProtocolIdx(i => Math.min(localC6Protocols.length - 1, i + 1))}
           hasPrev={c6ProtocolIdx > 0}
-          hasNext={c6ProtocolIdx < C6_PROTOCOLS.length - 1}
+          hasNext={c6ProtocolIdx < localC6Protocols.length - 1}
         />
       )}
 
@@ -3159,13 +3189,13 @@ export default function PillarC() {
       {/* ── C4 recovery routine modal ── */}
       {c4RoutineIdx !== null && (
         <C0ItemModal
-          item={C4_ROUTINE[c4RoutineIdx]}
+          item={localC4Routine[c4RoutineIdx]}
           idx={c4RoutineIdx}
           onClose={() => setC4RoutineIdx(null)}
           onPrev={() => setC4RoutineIdx(i => Math.max(0, i - 1))}
-          onNext={() => setC4RoutineIdx(i => Math.min(C4_ROUTINE.length - 1, i + 1))}
+          onNext={() => setC4RoutineIdx(i => Math.min(localC4Routine.length - 1, i + 1))}
           hasPrev={c4RoutineIdx > 0}
-          hasNext={c4RoutineIdx < C4_ROUTINE.length - 1}
+          hasNext={c4RoutineIdx < localC4Routine.length - 1}
         />
       )}
 
@@ -3282,13 +3312,13 @@ export default function PillarC() {
       {/* ── C4 recovery zone modal ── */}
       {zoneModalIdx !== null && (
         <C0ItemModal
-          item={C4_ZONES[zoneModalIdx]}
+          item={localC4Zones[zoneModalIdx]}
           idx={zoneModalIdx}
           onClose={() => setZoneModalIdx(null)}
           onPrev={() => setZoneModalIdx(i => Math.max(0, i - 1))}
-          onNext={() => setZoneModalIdx(i => Math.min(C4_ZONES.length - 1, i + 1))}
+          onNext={() => setZoneModalIdx(i => Math.min(localC4Zones.length - 1, i + 1))}
           hasPrev={zoneModalIdx > 0}
-          hasNext={zoneModalIdx < C4_ZONES.length - 1}
+          hasNext={zoneModalIdx < localC4Zones.length - 1}
         />
       )}
 

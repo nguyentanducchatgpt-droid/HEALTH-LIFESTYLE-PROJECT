@@ -3037,6 +3037,367 @@
         ]
       }
     ],
+    "c3_heading": "NEAT & Sitzverhalten bekämpfen",
+    "c3_desc": "NEAT umfasst alle Bewegungen außerhalb des Trainings: Gehen, Aufstehen, Hausarbeit. Für vielbeschäftigte Menschen ist NEAT genauso wichtig wie Gym-Einheiten.",
+    "c3_levels_heading": "Schrittziele nach Level",
+    "c3_ideas_heading": "Ideen zur Steigerung von NEAT",
+    "c4_heading": "Aktive Erholung",
+    "c4_desc": "Ein Erholungstag ist Teil des Programms, kein Versagen. Erhol dich durch sanfte Aktivität, nicht nur durch Hinlegen.",
+    "c4_routine_heading": "10-Minuten-Erholungsroutine",
+    "c4_zones_heading": "Erholung nach Schmerzzone",
+    "c4_routine": [
+      {
+        "exercise": "Zwerchfellatmung", "label": "Zwerchfellatmung",
+        "duration": "1 Min.", "note": "Bauch hebt sich beim Einatmen, Brust kaum",
+        "detail": "Die wichtigste erste Übung. 90 % der Menschen atmen mit der Brust, nicht mit dem Zwerchfell — was den Körper in einem leichten Dauerreizzustand hält.",
+        "keyFact": "Zwerchfellatmung aktiviert das parasympathische Nervensystem innerhalb von 60 Sekunden — senkt Cortisol und Herzfrequenz effektiver als jede andere Entspannungstechnik.",
+        "details": [
+          "Brustatmung aktiviert Hilfsmuskulatur in Hals und Schultern — erzeugt kontinuierliche mechanische Spannung im Nacken-Schulter-Bereich bei jedem der 20.000+ täglichen Atemzüge.",
+          "Das Zwerchfell sitzt direkt unterhalb der Lunge — beim richtigen Einatmen wölbt sich der Bauch nach außen und die Brust hebt sich kaum. Es ist der primäre Atemmuskel.",
+          "Der Vagusnerv verläuft durch das Zwerchfell — langsame Zwerchfellatmung stimuliert ihn direkt und aktiviert den 'Rest and Digest'-Modus.",
+          "Nach 5–6 langsamen Zwerchfellatem­zügen (4s ein, 6s aus) ist eine messbare HRV-Verbesserung nachweisbar — ein besserer Erholungsindikator.",
+          "Technik: rechte Hand auf den Bauch, linke auf die Brust. Durch die Nase einatmen — rechte Hand soll steigen, linke bleibt fast still. Langsam durch den Mund ausatmen.",
+          "1 Minute täglich baut parasympathischen 'Nervenmuskel' auf — langfristig erholt sich der Körper schneller von Stress und Training."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Bauch hoch, Brust still", "note": "Zwerchfell ist der primäre Atemmuskel" },
+          { "icon": "🧠", "label": "Vagusnerv", "note": "Aktiviert 'Rest and Digest'-Modus" },
+          { "icon": "❤️", "label": "HRV steigt", "note": "Erholungsindikator verbessert sich sofort" },
+          { "icon": "⏱️", "label": "1 Min = 6–8 Atemzüge", "note": "4s ein, 6s aus" }
+        ]
+      },
+      {
+        "exercise": "Schulterkreisen", "label": "Schulterkreisen",
+        "duration": "1 Min.", "note": "Schultern vorwärts und rückwärts kreisen",
+        "detail": "Schulterkreisen ist einfach, aber sehr effektiv zum Zurücksetzen der Schulter- und Nackenmuskulatur nach langer Anspannung oder Büroarbeit. Beide Richtungen haben unterschiedliche Wirkungen.",
+        "keyFact": "Büroangestellte verbringen 6–8 Std./Tag mit Schultern nahe den Ohren — tägliches Gegenkreisen verhindert chronische Trapeziusverspannung.",
+        "details": [
+          "Vorwärtskreisen dehnt die Rhomboidmuskeln (zwischen den Schulterblättern), die durch das Vorwärts-Runden der Schultern beim Sitzen typisch verspannt sind.",
+          "Rückwärtskreisen aktiviert den unteren Trapezius und Serratus anterior — beides Muskeln, die bei Vielsiitzern oft geschwächt und gehemmt sind.",
+          "Mit Atmung kombinieren: beim Aufwärts- und Rückwärtskreisen einatmen, beim Abwärts- und Vorwärtskreisen ausatmen — verbessert Muskelentspannung und parasympathische Aktivierung.",
+          "Voller Bewegungsumfang ist wichtiger als Tempo — langsam, weit kreisen und jeden Muskel spüren, statt schnell und oberflächlich.",
+          "Hinweis: Knackgeräusche beim Kreisen sind normal, wenn keine Schmerzen — bei Schmerzen Rotatorenmanschette prüfen.",
+          "1 Minute ≈ 8–10 Umdrehungen pro Richtung. Nach 10 Sekunden beginnt das Spannungsgefühl in Hals und Schultern spürbar nachzulassen."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Zwei Richtungen", "note": "Vor und zurück wirken unterschiedlich" },
+          { "icon": "💨", "label": "Mit Atmung koppeln", "note": "Einatmen hoch, ausatmen runter" },
+          { "icon": "🐢", "label": "Langsam und weit", "note": "Umfang wichtiger als Tempo" },
+          { "icon": "👂", "label": "Knackgeräusche", "note": "Normal wenn kein Schmerz" }
+        ]
+      },
+      {
+        "exercise": "Thorakale Rotation", "label": "Thorakale Rotation",
+        "duration": "1 Min.", "note": "Oberen Rücken abwechselnd drehen",
+        "detail": "Die Brustwirbelsäule (T1–T12) ist der vernachlässigtste Bereich in der Erholung, verbindet aber Hals und Lendenwirbelsäule. Mobilitätsverlust hier verursacht Schmerzen an beiden Enden.",
+        "keyFact": "Die Brustwirbelsäule ist für 35–40° Rotation ausgelegt, aber Schreibtischarbeit reduziert dies auf 10–15° — Hals und Lendenwirbelsäule müssen kompensieren.",
+        "details": [
+          "Wenn die BWS steif wird, sucht das Gehirn automatisch Bewegungsumfang an benachbarten Gelenken — meist L4–L5 (unterer Rücken) und C4–C6 (Hals), was Überlastung und chronische Schmerzen erzeugt.",
+          "Sitzhaltung (Kopf vor, runde Schultern) komprimiert die Brustwirbel ständig nach vorne — die thorakale Rotation kehrt diese Kompression um.",
+          "Technik: aufrecht sitzen, rechte Hand auf linke Schulter, Oberkörper so weit wie möglich nach rechts drehen, 3–5 Sekunden halten. Becken nicht mitdrehen — nur Brustwirbelsäule.",
+          "Vor der Drehung einatmen, beim maximalen Drehen ausatmen — die entleerten Lungen schaffen Platz für 10–15 % tiefere Rotation des Brustkorbs.",
+          "Steifster Punkt: T4–T8 (mittlere BWS) — den 'Widerstandspunkt' beim Drehen erspüren und dort 2–3 Sekunden extra halten.",
+          "Sofortiges Ergebnis: nach 3–5 Wiederholungen pro Seite verbessert sich die Kopfdrehung oft merklich — Beweis für die direkte Verbindung von BWS und Hals."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "Nur BWS drehen", "note": "Becken fixiert halten" },
+          { "icon": "💨", "label": "Ausatmen beim Drehen", "note": "Erhöht ROM um 10–15 %" },
+          { "icon": "🎯", "label": "T4–T8 steifste Zone", "note": "Extra 2–3s am Widerstandspunkt" },
+          { "icon": "🔗", "label": "Verbindung zum Hals", "note": "Lockere BWS → weniger Nackenschmerzen" }
+        ]
+      },
+      {
+        "exercise": "Hüftbeuger-Dehnung", "label": "Hüftbeuger-Dehnung",
+        "duration": "1 Min. × 2", "note": "Hüftbeuger je Seite dehnen",
+        "detail": "Psoas und Iliacus (Hüftbeugergruppe) verbinden die Lendenwirbelsäule mit dem Oberschenkelknochen. Bei Verkürzung ziehen sie den unteren Rücken in übermäßige Lordose und komprimieren L4–L5, L5–S1.",
+        "keyFact": "Personen, die 8+ Std./Tag sitzen, haben dauerhaft verkürzte Hüftbeuger — was das Becken in Anteversionstellung zieht und Hauptursache für Kreuzschmerzen ist.",
+        "details": [
+          "Langes Sitzen hält die Hüftbeuger ständig in verkürzter Position — nach Monaten 'erinnern' sich die Muskeln an diese Kürze und verlieren Flexibilität auch im Stehen.",
+          "Anteriore Beckenkippung durch verspannte Hüftbeuger verursacht: vorgewölbten Bauch trotz normalem Gewicht, 'flaches' Gesäß und übermäßige Lendenlordose.",
+          "Ausfallschritt-Dehnung: rechtes Knie auf dem Boden, linker Fuß vorne 90°, rechte Hüfte nach vorne und unten drücken. Dehngefühl vorne am rechten Oberschenkel = korrekte Position.",
+          "Intensivierung: Arm auf der Seite des Bodenknies langsam über den Kopf heben — dehnt den Psoas näher an der Wirbelsäule.",
+          "60 Sekunden pro Seite mit langsamer Atmung — kein Federn. Muskeln brauchen Zeit für die autogene Hemmung.",
+          "Zeichen effektiver Dehnung: nach 30–40 Sekunden spürt man wie der Muskel 'loslässt' und man ohne Kraft 1–2 cm tiefer sinken kann."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Ausfallschritt-Position", "note": "Knie auf Boden, Fuß vorne" },
+          { "icon": "⏱️", "label": "60 Sekunden/Seite", "note": "Langer Halt aktiviert autogene Hemmung" },
+          { "icon": "🚫", "label": "Kein Federn", "note": "Nur statische Dehnung für Hüftbeuger" },
+          { "icon": "⬇️", "label": "Tiefer nach 30–40s", "note": "Muskel lässt los, erlaubt mehr Tiefe" }
+        ]
+      },
+      {
+        "exercise": "Ischiocrurale Dehnung", "label": "Ischiocrurale Dehnung",
+        "duration": "1 Min. × 2", "note": "Ischiocrurale je Seite dehnen",
+        "detail": "Verspannte ischiocrurale Muskeln ziehen die Sitzknochen nach unten (Retroversion) — der untere Rücken verliert seine natürliche Kurve und der Scheibendruck beim Sitzen steigt.",
+        "keyFact": "Die ischiocrurale Gruppe (Bizeps femoris, Semimembranosus, Semitendinosus) verbindet Sitzknochen mit Schienbein — bei Verspannung beeinflusst sie die gesamte hintere Kette.",
+        "details": [
+          "Zeichen verspannter Ischiocruraler: Schwierigkeiten beim Zehenberühren, Tendenz zum Rundrücken beim Vorbeugen, Knieschmerzen beim Laufen.",
+          "Technik: auf dem Rücken liegen, ein Knie zur Brust ziehen, dann langsam Richtung Decke strecken. Handtuch oder Band um den Fuß zur Unterstützung verwenden.",
+          "Alternative (stehend): einen Fuß auf einen Stuhl stellen, Oberkörper sanft aus den Hüften (nicht dem Rücken) nach vorne neigen — Dehngefühl hinten am Oberschenkel.",
+          "Atmung während der Dehnung: langsam ausatmen und den Muskel allmählich entspannen lassen — nicht zwingen, Dehnung passiv über 60 Sekunden wirken lassen.",
+          "Häufiger Fehler: Rundrücken um weiter zu kommen — Dehnung wirkt dann nicht auf Ischiocrurale sondern auf Lendenband­scheiben.",
+          "Kombinationseffekt: nach regelmäßiger Hüftbeuger- und Ischiocruraler Dehnung verbessern sich Kreuzschmerzen vom Sitzen typisch innerhalb von 2–3 Wochen."
+        ],
+        "points": [
+          { "icon": "🦵", "label": "Rückseite Oberschenkel", "note": "Verbindet Sitzknochen mit Schienbein" },
+          { "icon": "😌", "label": "Passiv, kein Zwang", "note": "Muskel 60s entspannen lassen" },
+          { "icon": "🚫", "label": "Nicht rundrücken", "note": "Aus den Hüften beugen, nicht dem Rücken" },
+          { "icon": "🔗", "label": "Mit Hüftbeuger kombinieren", "note": "Zusammen lösen Kreuzschmerzen schneller" }
+        ]
+      },
+      {
+        "exercise": "Kindeshaltung + Atmung", "label": "Kindeshaltung + Atmung",
+        "duration": "2 Min.", "note": "Vollständige Entspannung",
+        "detail": "Kindeshaltung ist die vollständigste Erholungshaltung: dehnt sanft gleichzeitig Lendenwirbelsäule, Hüften und Schultern und schafft Raum für tiefes Atmen.",
+        "keyFact": "Kindeshaltung mit Zwerchfellatmung ist effektiver als flaches Liegen für die Erholung nach dem Training — die sanfte Wirbelsäulenttraktion erhöht die Bandscheiben­hydratation.",
+        "details": [
+          "Technik: knien, Zehen zusammen und Knie auseinander (weite Kindeshaltung) oder Knie zusammen (enge), auf Fersen zurücksetzen, Arme nach vorne strecken, Stirn auf dem Boden.",
+          "Atmung in Kindeshaltung: auf das Ausdehnen des hinteren Brustkorbs fokussieren — jedes Einatmen soll den Rücken nach oben und außen drücken, jedes Ausatmen entspannt den Rücken.",
+          "Weite Knie-Version ermöglicht tiefere Hüftdehnung und Platz für den Bauch — besser für Personen mit engen Hüften oder großem Körperbau.",
+          "Thorakale Traktion: Arme in Kindeshaltung nach vorne strecken elongiert sanft Brust- und Lendenwirbelsäule — kehrt die Tages­kompression durch Sitzen um.",
+          "Erste 30 Sekunden können leicht unkomfortabel sein bei sehr engen Hüften und Lendenwirbelsäule — ruhig bleiben, atmen, die Position wird weicher.",
+          "2 Minuten Kindeshaltung mit langsamer Atmung: Cortisol sinkt messbar, Herzfrequenz fällt, Geist beruhigt sich — optimaler Übergang zwischen Training und Erholung."
+        ],
+        "points": [
+          { "icon": "🙇", "label": "Weite Knie-Version", "note": "Besser bei engen Hüften" },
+          { "icon": "🫁", "label": "Hinterer Brustkorb atmet", "note": "Rücken hebt sich beim Einatmen" },
+          { "icon": "↔️", "label": "Wirbelsäulentraktion", "note": "Arme vorne dekomprimieren die Wirbelsäule" },
+          { "icon": "🧘", "label": "Volle 2 Minuten", "note": "Voller Erholungsübergangseffekt" }
+        ]
+      },
+      {
+        "exercise": "Leichtes Gehen", "label": "Leichtes Gehen",
+        "duration": "1–2 Min.", "note": "Sanfter Abschluss",
+        "detail": "Mit 1–2 Minuten langsamem Gehen zu beenden ist keine Formalität — es ist ein aktiver Übergang, der dem Körper hilft, von der Erholungsphase zur normalen Tagesfunktion überzugehen.",
+        "keyFact": "Langsames Gehen nach passivem Dehnen reaktiviert die Haltungsmuskulatur (Gesäß, Core, Waden) auf natürliche, niedrig belastende Weise — vermeidet das steife 'Gerade-aufgewacht'-Gefühl.",
+        "details": [
+          "Nach 8 Minuten Liegen und passivem Dehnen kann abruptes Aufstehen kurze Benommenheit verursachen (orthostatische Hypotonie) — langsames Gehen beugt vor.",
+          "Leichtes Gehen pumpt Lymphflüssigkeit (der Körper hat keine Lymphpumpe wie das Herz) — Muskelkontraktionen beim Gehen sind der primäre Antrieb für den Lymphrückfluss.",
+          "Auf Haltung achten: aufrecht gehen, Schultern zurück, Blick gerade. Der Körper trägt Muskelgedächtnis — gute Haltung nach der Erholung festigt korrekte Ausrichtung.",
+          "Ideales Tempo: langsam genug, um durchgehend durch die Nase zu atmen — das ist das wahre aerobe Erholungstempo, verbrennt keine Energie, stellt aber den Kreislauf wieder her.",
+          "Falls Zeit: auf 5 Minuten leichten Spaziergang im Freien ausweiten — natürliches Licht, frische Luft und leicht unebenes Terrain verbessern die Erholungsqualität.",
+          "Dies ist auch Zeit für mentale Reflexion: Wie hat sich die Routine angefühlt? Welcher Bereich ist noch gespannt? Was für morgen priorisieren?"
+        ],
+        "points": [
+          { "icon": "🚶", "label": "Langsames Tempo", "note": "Durchgehend Nasenatmung" },
+          { "icon": "💉", "label": "Lymphpumpe", "note": "Gehen treibt Lymphrückfluss an" },
+          { "icon": "🧍", "label": "Aufrechte Haltung", "note": "Festigt korrekte Ausrichtung" },
+          { "icon": "🧠", "label": "Mentaler Check-in", "note": "Notieren was noch gespannt ist" }
+        ]
+      }
+    ],
+    "c4_zones": [
+      {
+        "zone": "Nacken & Schultern", "label": "Nacken- & Schulter-Erholung",
+        "exercises": ["Chin tuck 10 Wdh.", "Schulterkreisen", "Türrahmen-Dehnung", "Schulterblatt-Zusammenziehen", "Thorakale Rotation"],
+        "detail": "Der Nacken-Schulter-Bereich ist am stärksten von Büroarbeit betroffen — Kopf-vor-Haltung, runde Schultern und obere Trapeziusüberlastung gleichzeitig.",
+        "keyFact": "Ein 2,5 cm nach vorne verschobener Kopf entspricht effektiv 10 kg zusätzlicher Last auf der Halswirbelsäule — kumuliert über tausende Stunden Bildschirmarbeit.",
+        "details": [
+          "Chin tuck (Kinn sanft gerade zurückziehen) wirkt direkt gegen Kopf-vor-Haltung — aktiviert tiefe Halsflexoren, die durch Bildschirmnutzung typisch abgeschaltet werden.",
+          "Türrahmen-Dehnung öffnet die vordere Schulterkapsel und Brustmuskeln — die zwei Strukturen, die durch Tastatur- und Mausarbeit am stärksten verkürzt werden.",
+          "Schulterblatt-Zusammenziehen aktiviert Rhomboiden und mittleren Trapezius — diese Haltungsmuskeln ermüden bei Büroarbeitern zuerst und tragen zum 'Schulter-Hunching' bei.",
+          "Thorakale Rotation verbessert die obere Rücken-Rotation, die durch langes Sitzen verloren geht — Wiederherstellen reduziert Kompensationsstress an den Halsgelenken.",
+          "Reihenfolge wichtig: zuerst Chin tuck (neurales Reset), dann Mobilität (Schulterkreisen, Thorakale Rotation), dann Kräftigung (Schulterblatt-Zusammenziehen), dann öffnen (Türrahmen-Dehnung)."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Chin tuck zuerst", "note": "Setzt tiefe Halsflexoren zurück" },
+          { "icon": "🚪", "label": "Türrahmen-Dehnung", "note": "Öffnet vordere Schulterkapsel" },
+          { "icon": "💪", "label": "Schulterblatt-Zusammenziehen", "note": "Aktiviert mittleren Trapezius" },
+          { "icon": "🔄", "label": "Thorakale Rotation", "note": "Stellt Rotation her, reduziert Nackenbelastung" }
+        ]
+      },
+      {
+        "zone": "Rücken", "label": "Rücken-Erholung",
+        "exercises": ["Dead bug 10 Wdh.", "Bird-dog 10 Wdh.", "Gesäßbrücke 15 Wdh.", "Kindeshaltung 1 Min.", "Hüftbeuger-Dehnung"],
+        "detail": "Kreuzschmerzen durch Sitzen haben fast immer drei gleichzeitige Probleme: schwacher Core, verspannte Hüftbeuger und gehemmtes Gesäß — diese Fünf-Übungs-Sequenz adressiert alle drei.",
+        "keyFact": "80 % der Erwachsenen erleben irgendwann Kreuzschmerzen — die Mehrheit durch langes Sitzen, das Muskelungleichgewicht verursacht, nicht durch strukturelle Schäden.",
+        "details": [
+          "Dead bug trainiert Core-Anti-Extension — den unteren Rücken flach halten während Gliedmaßen bewegt werden, genau das Stabilitätsmuster zum Schutz der Bandscheiben.",
+          "Bird-dog trainiert Core-Anti-Rotation — die Fähigkeit, Drehkräften zu widerstehen, relevanter für Alltag und Sport als reine Beuge-Core-Übungen.",
+          "Gesäßbrücke aktiviert direkt den Gluteus maximus, der durch langes Sitzen gehemmt wird ('Gluteus-Amnesie') — wenn Gesäß nicht zündet, kompensiert der untere Rücken.",
+          "Kindeshaltung bietet passive Dekompression — kehrt die Druckbelastung auf Lendenband­scheiben um, die durch Stundensitzen entsteht (Bandscheiben sind wie Schwämme, brauchen Entlastung).",
+          "Hüftbeuger-Dehnung adressiert die Ursache: verkürzte Hüftbeuger ziehen das Becken in Anteversionstellung und erhöhen die Lendenlordose — struktureller Treiber der meisten sitzassoziierten Rückenschmerzen."
+        ],
+        "points": [
+          { "icon": "🐛", "label": "Dead bug + Bird-dog", "note": "Core-Stabilität vor Mobilität" },
+          { "icon": "🍑", "label": "Gesäßbrücke", "note": "Gehemmtes Gesäß reaktivieren" },
+          { "icon": "🙇", "label": "Kindeshaltung", "note": "Bandscheibendekompression" },
+          { "icon": "🦵", "label": "Hüftbeuger-Dehnung zuletzt", "note": "Adressiert die strukturelle Ursache" }
+        ]
+      },
+      {
+        "zone": "Knie", "label": "Knie-Erholung",
+        "exercises": ["Aufstehen/Hinsetzen 10 Wdh.", "Gesäßbrücke 15 Wdh.", "Wadenheben 15 Wdh.", "Wandgestützter Split Squat (leicht)", "Ischiocrurale dehnen"],
+        "detail": "Knieschmerzen durch Training oder langes Sitzen entstehen selten am Kniegelenk selbst — meist durch Schwäche darüber (Gesäß, Quadrizeps) oder Verspannung darunter (Waden, Ischiocrurale).",
+        "keyFact": "Das patellofemorale Gelenk (Kniescheibe) wird mit dem 3,5-fachen Körpergewicht komprimiert beim 90°-Sitzen — aktive Erholung reduziert diesen Druck deutlich.",
+        "details": [
+          "Aufstehen/Hinsetzen ist die funktionellste Knieübung — trainiert das Quadrizeps-dominante Muster des Alltags (vom Stuhl aufstehen, Treppen) kontrolliert und mit niedriger Last.",
+          "Gesäßbrücke schützt indirekt das Knie: starkes Gesäß reduziert Innenrotation und Valgus-Kollaps (Knie nach innen), der die meisten Lauf- und Squat-Knieverletzungen verursacht.",
+          "Wadenheben erhält die Sprunggelenks-Dorsalflexion — eingeschränktes Sprunggelenk zwingt das Knie zum exzessiven Vorwärtsbewegen, erhöht die Patellarsehnenbelastung.",
+          "Wandgestützter Split Squat bei niedriger Intensität fördert die Synovialflüssigkeitszirkulation im Knie — 'schmiert' das Gelenk ohne die Kompressionslast tiefer Squats.",
+          "Ischiocrurale Dehnung reduziert die hintere Kniespannung — verspannte Ischiocrurale begrenzen die volle Kniestreckung und erzeugen dauerhaften Zug an der hinteren Kniekapsel."
+        ],
+        "points": [
+          { "icon": "🧎", "label": "Aufstehen/Hinsetzen", "note": "Funktionellste Knieübung" },
+          { "icon": "🍑", "label": "Starkes Gesäß", "note": "Verhindert Valgus-Kollaps am Knie" },
+          { "icon": "🦶", "label": "Wadenheben", "note": "Erhält Sprunggelenks­mobilität für das Knie" },
+          { "icon": "🦵", "label": "Ischiocrurale dehnen", "note": "Reduziert hintere Kniespannung" }
+        ]
+      }
+    ],
+    "c6_heading": "Atemtechniken & Herzfrequenzregulation",
+    "c6_desc": "Richtiges Atmen ist ein Werkzeug zur Körperregulation, unterstützt die Erholung nach dem Training und verbessert die Schlafqualität.",
+    "c6_protocols_heading": "Situationsspezifische Protokolle",
+    "c6_techniques": [
+      {
+        "name": "Zwerchfellatmung",
+        "steps": "Hand auf Bauch • Durch Nase einatmen → Bauch hebt sich • Langsam durch Mund ausatmen • Brust kaum bewegen",
+        "time": "1–3 Min.",
+        "use": "Vor dem Schlafen, nach dem Training, bei Stress"
+      },
+      {
+        "name": "Box breathing",
+        "steps": "4s einatmen • 4s halten • 4s ausatmen • 4s halten • 4 Runden wiederholen",
+        "time": "4 Runden",
+        "use": "Vor dem Training, bei Stress, vor dem Schlafen"
+      },
+      {
+        "name": "Verlängertes Ausatmen",
+        "steps": "4s einatmen • 6s ausatmen • 6–10 Runden wiederholen",
+        "time": "2–3 Min.",
+        "use": "Schlaflosigkeit, Herzrasen, nach einem anstrengenden Tag"
+      }
+    ],
+    "c6_protocols": [
+      {
+        "label": "Vor dem Training", "brief": "4–6 Zwerchfellatem­züge",
+        "detail": "2 Minuten Zwerchfellatmung vor dem Training aktiviert das parasympathische System und schafft eine ruhige Grundlage — dann ein kurzes Aktivierungsdrill (Jumping Jacks, dynamische Bewegungen) wechselt sanft in den sympathischen Zustand für das Training.",
+        "keyFact": "Studien zeigen, dass Athleten, die vor dem Training diaphragmatisch atmen, bessere Bewegungskontrolle und reduziertes Verletzungsrisiko haben.",
+        "details": [
+          "Ziel: Übergang vom Tagesstress-Modus (Sympathikus) in fokussierten, aber ruhigen Trainingsmodus — nicht maximale Erregung, sondern 'klare, bereite Konzentration'.",
+          "Technik: 4–6 Zwerchfellatem­züge (4s ein, 6s aus), dann 3–5 langsame kontrollierte Atemzüge mit mentaler Fokussierung auf die zu trainierenden Muskeln.",
+          "Nach dem Atmen: nicht sofort zu schweren Gewichten — 3–5 Minuten dynamisches Aufwärmen folgen (Hüftkreise, Beinschwünge, Armschwünge).",
+          "Bei hochintensivem Training (HIIT, schwere Gewichte): nach Zwerchfellatmung eine kurze Aktivierungssequenz hinzufügen — 10 Jumping Jacks, 5 explosive Liegestütze.",
+          "Für Yoga oder Dehnen: langsame Zwerchfellatmung während der gesamten Einheit beibehalten — maximiert den parasympathischen Effekt und vertieft den Bewegungsumfang."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Ruhige Grundlage", "note": "Parasympathisch vor sympathisch" },
+          { "icon": "🎯", "label": "Mentaler Fokus", "note": "Atmung verbindet Geist und Muskeln" },
+          { "icon": "⚡", "label": "Dann aktivieren", "note": "Dynamisches Aufwärmen folgt der Atmung" },
+          { "icon": "🛡️", "label": "Reduziert Verletzungsrisiko", "note": "Bessere Bewegungskontrolle unter Last" }
+        ]
+      },
+      {
+        "label": "Nach dem Training", "brief": "4s ein, 6s aus × 6–8 Runden",
+        "detail": "Post-Training-Atmung ist eine bewusste Praxis, um dem Körper zu signalisieren, dass die 'Bedrohung' (Trainingsstress) beendet ist und die Erholung beginnen kann.",
+        "keyFact": "Erholung beginnt nicht, wenn du aufhörst zu trainieren — sondern wenn das parasympathische Nervensystem übernimmt. Post-Training-Atmung beschleunigt diesen Übergang um 15–20 Minuten.",
+        "details": [
+          "Direkt nach dem letzten Satz: hinsetzen oder hinlegen, nicht zum Dehnen oder Handydurchscrollen eilen — 2 Minuten 4s-ein / 6s-aus Atmung.",
+          "Das verlängerte Ausatmen (länger als Einatmen) aktiviert direkt den Vagusnerv, senkt schnell die Herzfrequenz und reduziert den Cortisol-Spike vom Training.",
+          "Nach der Atmung: statisches Dehnen ist jetzt am effektivsten — Muskeln sind warm, Nervensystem ruhig, Bewegungsumfang maximal.",
+          "Rehydration: 400–500 ml Wasser während der Atemeinheit trinken — richtige Atmung beschleunigt auch die Flüssigkeitsaufnahme durch verbesserte Darmzirkulation.",
+          "Mentale Überprüfung: diese 2 Minuten nutzen, um mental zu notieren wie die Einheit sich angefühlt hat — Energie, Formqualität, ungewöhnliche Schmerzen."
+        ],
+        "points": [
+          { "icon": "🛑", "label": "Vor dem Handy stoppen", "note": "Erst 2 Min. atmen" },
+          { "icon": "💨", "label": "Verlängertes Ausatmen", "note": "6s aus > 4s ein senkt Herzfrequenz am schnellsten" },
+          { "icon": "💧", "label": "Beim Atmen trinken", "note": "Verbessert Flüssigkeitsaufnahme" },
+          { "icon": "📝", "label": "Mentale Überprüfung", "note": "Wie hat sich die Einheit angefühlt" }
+        ]
+      },
+      {
+        "label": "Vor dem Schlafen", "brief": "Zwerchfellatmung 3 Min.",
+        "detail": "Der Übergang von Wachheit zu Schlaf wird vom autonomen Nervensystem gesteuert. Die meisten Menschen haben Einschlafprobleme nicht weil sie nicht müde sind, sondern weil ihr Nervensystem nicht vollständig in den Parasympathikus gewechselt hat.",
+        "keyFact": "3 Minuten Zwerchfellatmung vor dem Schlafen verkürzt die Einschlafzeit in Studien konsistent um 5–10 Minuten — ohne Medikamente oder Nahrungsergänzung.",
+        "details": [
+          "Umgebung schaffen: Licht dimmen (oder aus), Handy umgedreht, Raumtemperatur 18–20°C — diese Umgebungshinweise bereiten das Nervensystem vor, bevor das Atmen beginnt.",
+          "Technik: auf dem Rücken liegen, Knie gebeugt wenn komfortabler, eine Hand auf dem Bauch. 4s durch Nase einatmen, 6–8s durch leicht geöffneten Mund ausatmen. Ausatmen vollständig mühelos.",
+          "Bei rasendem Verstand: Gedanken nicht stoppen versuchen — stattdessen bei jedem Ausatmen mental 'entspannen' sagen und Gedanken vorbeiziehen lassen ohne sie zu verfolgen.",
+          "Progressive Muskelentspannung als Zusatz: bei jedem Ausatmen bewusst einen Körperteil entspannen (Füße → Waden → Knie → Oberschenkel → Bauch → Brust → Schultern → Gesicht).",
+          "Schlafatmung ist nicht gleich Wachatmung — einmal im Bett, Atmung langsamer und flacher werden lassen. Tiefe kontrollierte Atemzüge nur für die ersten 3 Minuten, dann Körper übernehmen lassen."
+        ],
+        "points": [
+          { "icon": "🌙", "label": "Erst Licht dimmen", "note": "Umgebung bereitet Nervensystem vor" },
+          { "icon": "🫁", "label": "4s ein / 6–8s aus", "note": "Mühelos ausatmen ist der Schlüssel" },
+          { "icon": "💭", "label": "Gedanken nicht bekämpfen", "note": "Vorbeiziehen lassen ohne Reaktion" },
+          { "icon": "🛌", "label": "Körper übernehmen lassen", "note": "Tiefe Kontrolle nur erste 3 Min." }
+        ]
+      },
+      {
+        "label": "Tagesstress", "brief": "Box breathing 4 Runden",
+        "detail": "Box breathing (4-4-4-4) ist die schnellste evidenzbasierte Atemtechnik bei akutem Stress — von Navy SEALs und Ersthelfern eingesetzt um unter Druck ruhig zu bleiben.",
+        "keyFact": "4 Runden Box breathing (90 Sekunden gesamt) reduzieren Cortisol im Speichel messbar — vergleichbar mit einer 20-minütigen Meditationssitzung.",
+        "details": [
+          "Überall möglich: am Schreibtisch sitzen, auf Toilette, vor einem schwierigen Gespräch. Kein Equipment, keine besondere Position nötig.",
+          "Technik: 4 Sekunden durch Nase einatmen, 4 Sekunden halten, 4 Sekunden durch Mund (oder Nase) ausatmen, 4 Sekunden leer halten. Das ist 1 Runde.",
+          "Das 'Halten oben' erzeugt einen kurzen Anstieg der CO₂-Toleranz — der Schlüsselmechanismus, der das Nervensystem trainiert, auch bei eingeschränktem Atmen ruhig zu bleiben.",
+          "Das 'Halten unten' (nach dem Ausatmen) erhöht vorübergehend Kohlendioxid und löst einen milden Atemimpuls aus — dieser Reflex ruhig zu überbrücken ist der 'Stress-Impfungs'-Effekt.",
+          "Modifikation bei Angst: wenn Atemanhalten unkomfortabel ist, mit 3-3-3-3 beginnen, oder Halten weglassen (nur 4s ein, 4s aus) bis der Grundrhythmus sitzt."
+        ],
+        "points": [
+          { "icon": "📦", "label": "4-4-4-4 Muster", "note": "Ein-Halten-Aus-Halten, gleiche Zählungen" },
+          { "icon": "🏢", "label": "Überall, jederzeit", "note": "Kein Equipment oder Position nötig" },
+          { "icon": "🫁", "label": "CO₂-Toleranz", "note": "Schlüsselmechanismus hinter dem Ruhigbleiben" },
+          { "icon": "📉", "label": "4 Runden = 90s", "note": "Messbare Cortisol-Reduktion" }
+        ]
+      },
+      {
+        "label": "Schlaflosigkeit", "brief": "Verlängertes Ausatmen × 8–10 Runden",
+        "detail": "Wenn man wach liegt und nicht einschlafen kann, ist die ausatmen-verlängerte Atemtechnik (4s ein / 6s aus) die effektivste nicht-pharmakologische Intervention bei Einschlafstörungen.",
+        "keyFact": "Verlängertes Ausatmen aktiviert den Baroreflex — verlangsamt die Herzfrequenz durch Stimulation von Druckrezeptoren im Aortenbogen, was direkt Schläfrigkeit erzeugt.",
+        "details": [
+          "Unterschied zur normalen Atmung: das Ausatmen deutlich länger als das Einatmen machen — 4s ein, 6s aus ist das Minimum; manche finden 4s ein, 8s aus noch wirksamer.",
+          "Keine exakte Messung nötig — ungefähres Zählen reicht. Wichtig ist dass das Ausatmen länger und mühevoller wirkt als das Einatmen.",
+          "Mit Body-Scan kombinieren: nach 4–5 Runden den Körper von Füßen bis zum Kopf scannen und Spannungsbereiche bemerken ohne sie beheben zu wollen — die Atmung löst Spannung schrittweise.",
+          "Wenn Konzentration auf Atmung schwer fällt: physiologischen Seufzer versuchen — ein doppeltes Einatmen durch die Nase (Schnüffeln-Schnüffeln), dann ein langer, langsamer Ausatemzug durch den Mund. 3–5 Mal wiederholen.",
+          "Schlüssel-Einstellung: das Ziel ist nicht 'jetzt sofort einschlafen' — es ist 'das Nervensystem ausruhen'. Schlaf kommt oft als Nebeneffekt des echten Ruhens."
+        ],
+        "points": [
+          { "icon": "😴", "label": "4s ein / 6–8s aus", "note": "Längeres Ausatmen aktiviert Baroreflex" },
+          { "icon": "🔍", "label": "Body-Scan als Zusatz", "note": "Spannung bemerken ohne zu beheben" },
+          { "icon": "😮‍💨", "label": "Physiologischer Seufzer", "note": "Doppelt einatmen + langer Ausatemzug" },
+          { "icon": "🧘", "label": "Ausruhen, nicht schlafen", "note": "Schlaf kommt als Nebeneffekt" }
+        ]
+      }
+    ],
+    "c7_heading": "Umgebungs- & Gewohnheitsdesign",
+    "c7_desc": "Verlasse dich nicht nur auf Willenskraft. Gestalte deine Umgebung so, dass gesunde Verhaltensweisen leichter und natürlicher entstehen.",
+    "c7_fail_title": "Die 'Schlechter-Tag'-Regel",
+    "c7_fail_desc": "Wenn du einen Tag auslässt: keine Selbstkritik, nicht ganz aufgeben. Mit der kleinstmöglichen Aktion zurückkehren: Wasser trinken, 5 Minuten spazieren, 15 Minuten früher schlafen.",
+    "c7_fail_note": "Ein aus dem Rhythmus geratener Tag ruiniert nicht deine Reise.",
+    "c7_areas": [
+      {
+        "area": "Morgen",
+        "tips": [
+          "Wasserflasche auf den Nachttisch stellen",
+          "Laufschuhe vor die Tür stellen",
+          "Trainingskleidung am Vorabend vorbereiten",
+          "Handy weit weg vom Bett",
+          "Vorhänge leicht öffenbar machen"
+        ]
+      },
+      {
+        "area": "Arbeit",
+        "tips": [
+          "Wasserflasche weit vom Schreibtisch um aufstehen zu müssen",
+          "45–60 Min Timer nutzen",
+          "Kleines Widerstandsband auf dem Schreibtisch",
+          "10–15 Min Steharbeitsbereich einrichten",
+          "'2-Min-Gehen'-Erinnerung einstellen"
+        ]
+      },
+      {
+        "area": "Abend",
+        "tips": [
+          "Licht nach 21–22 Uhr dimmen",
+          "Handy außerhalb des Schlafzimmers laden",
+          "Papierbuch neben dem Bett",
+          "Kleidung für morgen vorbereiten",
+          "3 Aufgaben für morgen aufschreiben"
+        ]
+      }
+    ],
     "videos": ["BREATH"]
   },
   "pillarD": {

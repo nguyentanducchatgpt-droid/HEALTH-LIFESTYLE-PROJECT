@@ -3016,6 +3016,157 @@
         ]
       }
     ],
+    "c5_heading": "Deload & Load Management",
+    "c5_desc": "Deload is planned load reduction. Not a step back — a strategy to go further in the long run.",
+    "c5_signals_heading": "🚨 Signs you need to deload",
+    "c5_methods_heading": "4 Deload Methods",
+    "c5_schedules_heading": "Deload Schedule by Level",
+    "c5_signals": [
+      "Poor sleep for 2–3 consecutive nights",
+      "Familiar exercises feel much harder than usual",
+      "Persistent muscle soreness that won't recover",
+      "Resting heart rate higher than normal",
+      "Loss of motivation, irritability, fatigue",
+      "Joint pain or gradually worsening pain",
+      "Performance declining across multiple sessions"
+    ],
+    "c5_methods": [
+      {
+        "label": "Reduce sets", "desc": "Example: 4 sets → 2–3 sets. Keep intensity the same.",
+        "detail": "Reducing sets is the gentlest deload method — keeping intensity (% 1RM) the same but cutting volume. The brain and CNS get to 'decompress' while muscles maintain enough stimulus to retain strength and form.",
+        "keyFact": "Reduce total sets by 40–50% in the deload week to allow the nervous system to fully recover.",
+        "details": [
+          "Keep the same weight, just reduce sets from 4 down to 2–3 sets per exercise.",
+          "Total weekly volume drops 40–50% compared to your heavy training week — enough to trigger recovery.",
+          "Best suited for strength athletes who want to maintain technique without losing neuromuscular patterns.",
+          "Do not reduce reps further — only reduce sets to keep movement patterns stable.",
+          "After 1 week of this style deload, performance in the following week typically improves by 3–8% through supercompensation.",
+          "Pair with sleeping 30 minutes earlier to optimize CNS regeneration."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Same intensity", "note": "% 1RM unchanged, only volume drops" },
+          { "icon": "🧠", "label": "Neural recovery", "note": "CNS decompresses over 5–7 days" },
+          { "icon": "📊", "label": "40–50% volume drop", "note": "4 sets → 2–3 sets per exercise" },
+          { "icon": "🔁", "label": "Pattern preserved", "note": "Movement technique stays uninterrupted" }
+        ]
+      },
+      {
+        "label": "Reduce weight", "desc": "Lower weight by 10–20% compared to last week.",
+        "detail": "Reducing weight acts directly on the musculoskeletal system — decreasing mechanical stress on muscles and connective tissue (tendons, ligaments). Especially effective when you feel mild joint pain or stiff connective tissue after weeks of heavy training.",
+        "keyFact": "Reducing weight by 10–20% allows muscles and connective tissue to recover while the body still 'remembers' the movement.",
+        "details": [
+          "Reduce weight by 10–20% compared to last week — e.g. squat 100 kg → 80–90 kg.",
+          "Keep the same sets and reps so the body stays familiar with a similar volume pattern.",
+          "Focus on technique: slower tempo, better eccentric control.",
+          "Tendons and ligaments recover slower than muscles — this method specifically protects connective tissue.",
+          "'Feeling too easy' is normal — the goal is recovery, not performance.",
+          "After this style of deload, you typically can add 5–10% weight in the following week as the body has fully recovered."
+        ],
+        "points": [
+          { "icon": "🦴", "label": "Protects connective tissue", "note": "Tendons and ligaments get less mechanical stress" },
+          { "icon": "📐", "label": "Improves technique", "note": "Lighter weight → better focus on form" },
+          { "icon": "💪", "label": "10–20% weight drop", "note": "Same volume, muscles still stimulated" },
+          { "icon": "🔋", "label": "Recharges energy", "note": "Muscle glycogen is fully replenished" }
+        ]
+      },
+      {
+        "label": "Reduce cardio duration", "desc": "45 min → 25–30 min. Or switch to Zone 1–2.",
+        "detail": "High-intensity cardio accumulates similar stress to lifting — affecting the sympathetic nervous system, immune system, and overall energy. A cardio deload week focusing on Zone 1–2 improves blood flow to muscles (active recovery) without depleting recovery resources.",
+        "keyFact": "Zone 1–2 (60–70% max HR) boosts circulation without adding stress to the nervous system.",
+        "details": [
+          "Reduce duration from 45 min down to 25–30 min, or from 30 min to 15–20 min.",
+          "Switch from Zone 3–4 (HIIT, fast running) to Zone 1–2 (brisk walking, light cycling).",
+          "Zone 1–2: 60–70% HRmax — you can hold a comfortable conversation while exercising.",
+          "Active recovery at Zone 1–2 improves circulation, helping metabolic waste be cleared faster.",
+          "Avoid HIIT and sprints entirely during the deload week — the nervous system needs rest.",
+          "Light swimming or stationary cycling is the best option as there is no impact on the joints."
+        ],
+        "points": [
+          { "icon": "❤️", "label": "Zone 1–2 target", "note": "60–70% HRmax, conversational pace" },
+          { "icon": "🩸", "label": "Active recovery", "note": "More blood to muscles, clears metabolic waste" },
+          { "icon": "⏱️", "label": "40% less time", "note": "45 min → 25–30 min maximum" },
+          { "icon": "🚴", "label": "Prefer low-impact", "note": "Swimming, cycling — no joint impact" }
+        ]
+      },
+      {
+        "label": "Reduce intensity", "desc": "Fast running → brisk walking, light cycling, easy swimming.",
+        "detail": "Reducing intensity is the most comprehensive deload — lowering both % 1RM and target heart rate. Suitable after a peaking phase (competition, max testing), after minor injury, or when the body shows multiple overtraining signs simultaneously.",
+        "keyFact": "Comprehensive intensity reduction (both strength and cardio) is the deepest deload strategy, appropriate after extremely heavy training cycles.",
+        "details": [
+          "Fast running → brisk walking (5–6 km/h), light cycling (50–60 rpm), easy swimming (no time pressure).",
+          "Combine with reduced lifting intensity: use 50–60% 1RM, slow tempo, low reps (3–5 reps).",
+          "Most appropriate after 4–6 weeks of peaking or after competition/max testing.",
+          "The autonomic nervous system shifts from sympathetic (fight-or-flight) to parasympathetic (rest-and-digest).",
+          "Add light activities: yoga, nature walks, swimming — good for both mind and body.",
+          "Extend to 7–10 days instead of 5–7 days if this follows a long, intense training block."
+        ],
+        "points": [
+          { "icon": "🧘", "label": "Parasympathetic mode", "note": "Body fully shifts to rest-and-digest" },
+          { "icon": "🌿", "label": "Comprehensive reduction", "note": "Both strength and cardio lowered" },
+          { "icon": "🏖️", "label": "After peaking phases", "note": "After max testing or competition" },
+          { "icon": "⏳", "label": "7–10 days", "note": "Longer than standard deload when needed" }
+        ]
+      }
+    ],
+    "c5_schedules": [
+      {
+        "label": "Beginner", "freq": "Every 6–8 weeks or when showing signs of fatigue",
+        "detail": "At the beginner stage, the body is experiencing 'newbie gains' — adapting quickly to all training stimuli. Fatigue accumulates more slowly, so deloads are less frequent. But still watch closely for body signals, especially sleep quality and recovery feel.",
+        "keyFact": "Beginners typically need 6–8 weeks to accumulate enough fatigue to require a deload — the body is still adapting rapidly.",
+        "details": [
+          "Train for 6–8 continuous weeks before planning your first deload — the body needs time to adapt.",
+          "Prioritize listening to body signals over a rigid schedule: poor sleep, persistent soreness, loss of motivation.",
+          "Beginner deload week: reduce total volume by 30–40% (sets × exercises), keep technique the same.",
+          "Never skip training entirely — active deload maintains the habit and neuromuscular patterns.",
+          "After deload, beginners usually clearly feel the difference: lighter feel and able to lift heavier than the week before.",
+          "Record the deload week and the following week's results to build a pattern suited to your body."
+        ],
+        "points": [
+          { "icon": "📅", "label": "6–8 week cycle", "note": "Or sooner if showing fatigue signs" },
+          { "icon": "🌿", "label": "30–40% volume drop", "note": "Gentle, keep technique intact" },
+          { "icon": "👂", "label": "Listen to your body", "note": "Signals matter more than a rigid schedule" },
+          { "icon": "📝", "label": "Track progress", "note": "Build your own personal pattern over time" }
+        ]
+      },
+      {
+        "label": "Intermediate", "freq": "Every 4–6 weeks, reduce 10–20% volume",
+        "detail": "At the intermediate level, the body has adapted and needs higher stimulus to progress — meaning fatigue accumulates faster. Deloading every 4–6 weeks is the optimal window to maintain momentum without overtraining.",
+        "keyFact": "Intermediate trainees accumulate fatigue faster — needing a deload every 4–6 weeks to sustain long-term progress.",
+        "details": [
+          "Schedule a fixed deload every 4 weeks (if training 4–5 days/week) or 6 weeks (3 days/week).",
+          "Reduce 10–20% volume: if your normal week has 20 sets per muscle group, deload week has 16–18 sets.",
+          "Keep intensity (% 1RM) at 60–70% — enough to maintain strength without adding more fatigue.",
+          "Also reduce cardio: from 3–4 sessions/week down to 2, switch to Zone 1–2.",
+          "Use the deload week to focus on technique and mobility.",
+          "Track performance: if no improvement after deload, consider extending it by 1 more week."
+        ],
+        "points": [
+          { "icon": "📅", "label": "4–6 week cycle", "note": "Depends on your weekly training days" },
+          { "icon": "📉", "label": "10–20% volume drop", "note": "Keep intensity at 60–70% 1RM" },
+          { "icon": "🏃", "label": "Reduce cardio", "note": "Drop to Zone 1–2, 1–2 fewer sessions" },
+          { "icon": "🎯", "label": "Focus on technique", "note": "Use the lighter week to improve form" }
+        ]
+      },
+      {
+        "label": "High volume", "freq": "Every 4–5 weeks, reduce 30–40% volume",
+        "detail": "People training with high volume and intensity accumulate systemic fatigue very quickly. More frequent (4–5 weeks) and deeper (30–40% volume) deloads are mandatory — not optional. Skipping deloads at this level easily leads to overtraining syndrome, injury, or long-term plateau.",
+        "keyFact": "High-volume trainees (5–6 days/week, high volume) must reduce 30–40% volume every 4–5 weeks to avoid chronic fatigue.",
+        "details": [
+          "Schedule a hard deload every 4 weeks — don't wait for fatigue signs because they're usually noticed too late.",
+          "Reduce 30–40% total volume: from 25–30 sets/muscle group/week down to 15–18 sets.",
+          "Can combine a 'full deload' (reduce both volume and intensity) after a peaking cycle or competition.",
+          "Immune function in heavy trainers is often suppressed — the deload week is time for immune recovery.",
+          "Prioritize 8–9 hours sleep, massage, sauna (if available), and increase carb intake during the deload week.",
+          "High-volume athletes should have 2–3 'micro-deloads' (1 easy session) within the 4-week cycle to actively manage fatigue."
+        ],
+        "points": [
+          { "icon": "📅", "label": "4–5 week cycle", "note": "Hard schedule, don't wait for fatigue" },
+          { "icon": "📊", "label": "30–40% volume drop", "note": "Deeper than lower-volume athletes — mandatory" },
+          { "icon": "🛡️", "label": "Immune recovery", "note": "Heavy training suppresses immunity — deload restores it" },
+          { "icon": "🍚", "label": "Increase carb intake", "note": "Replenish muscle glycogen during the light week" }
+        ]
+      }
+    ],
     "c3_heading": "NEAT & Combat Sedentary Behavior",
     "c3_desc": "NEAT is all movement outside your workout: walking, standing up, housework. For busy people, NEAT is as important as gym sessions.",
     "c3_levels_heading": "Step targets by level",

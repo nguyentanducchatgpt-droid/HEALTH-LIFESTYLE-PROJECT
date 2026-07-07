@@ -3037,6 +3037,157 @@
         ]
       }
     ],
+    "c5_heading": "Deload & Belastungsmanagement",
+    "c5_desc": "Deload ist geplante Belastungsreduzierung. Kein Rückschritt — eine Strategie, um langfristig weiter zu kommen.",
+    "c5_signals_heading": "🚨 Zeichen, dass du einen Deload brauchst",
+    "c5_methods_heading": "4 Deload-Methoden",
+    "c5_schedules_heading": "Deload-Plan nach Trainingsniveau",
+    "c5_signals": [
+      "Schlechter Schlaf 2–3 Nächte in Folge",
+      "Vertraute Übungen fühlen sich viel schwerer an",
+      "Anhaltender Muskelkater ohne Erholung",
+      "Ruheherzfrequenz höher als normal",
+      "Motivationsverlust, Reizbarkeit, Erschöpfung",
+      "Gelenkschmerzen oder zunehmende Schmerzen",
+      "Leistungsabfall über mehrere Einheiten hinweg"
+    ],
+    "c5_methods": [
+      {
+        "label": "Sätze reduzieren", "desc": "Beispiel: 4 Sätze → 2–3 Sätze. Intensität beibehalten.",
+        "detail": "Sätze reduzieren ist die sanfteste Deload-Methode — Intensität (% 1RM) bleibt gleich, aber Volume wird gekürzt. Gehirn und ZNS können 'Druck ablassen', während die Muskeln genug Reiz behalten um Form und Kraft zu erhalten.",
+        "keyFact": "Gesamtsätze um 40–50 % in der Deload-Woche reduzieren, damit das Nervensystem vollständig erholen kann.",
+        "details": [
+          "Gleiches Gewicht behalten, nur Sätze von 4 auf 2–3 Sätze pro Übung reduzieren.",
+          "Gesamtvolumen der Woche sinkt um 40–50 % im Vergleich zur schweren Trainingswoche — genug für Erholung.",
+          "Am besten geeignet für Kraftsportler, die Technik beibehalten wollen ohne neuromuskuläre Muster zu verlieren.",
+          "Reps nicht weiter reduzieren — nur Sätze senken, um Bewegungsmuster stabil zu halten.",
+          "Nach 1 Woche Deload dieser Art verbessert sich die Leistung in der Folgewoche typisch um 3–8 % durch Superkompensation.",
+          "Mit 30 Minuten früherer Schlafenszeit kombinieren, um die ZNS-Regeneration zu optimieren."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Gleiche Intensität", "note": "% 1RM unverändert, nur Volume sinkt" },
+          { "icon": "🧠", "label": "Nervöse Erholung", "note": "ZNS dekomprimiert in 5–7 Tagen" },
+          { "icon": "📊", "label": "40–50 % Volumenabfall", "note": "4 Sätze → 2–3 Sätze pro Übung" },
+          { "icon": "🔁", "label": "Muster erhalten", "note": "Bewegungstechnik bleibt ununterbrochen" }
+        ]
+      },
+      {
+        "label": "Gewicht reduzieren", "desc": "Gewicht um 10–20 % gegenüber der Vorwoche senken.",
+        "detail": "Gewicht reduzieren wirkt direkt auf das Bewegungsapparat-System — reduziert mechanischen Stress auf Muskeln und Bindegewebe (Sehnen, Bänder). Besonders effektiv wenn du leichte Gelenkschmerzen oder steifes Bindegewebe nach Wochen intensiven Trainings spürst.",
+        "keyFact": "10–20 % Gewichtsreduktion lässt Muskeln und Bindegewebe erholen, während der Körper die Bewegung noch 'erinnert'.",
+        "details": [
+          "Gewicht um 10–20 % gegenüber Vorwoche reduzieren — z. B. Kniebeuge 100 kg → 80–90 kg.",
+          "Gleiche Satz- und Wiederholungszahl beibehalten, damit der Körper ähnliches Volumenmuster kennt.",
+          "Auf Technik fokussieren: langsameres Tempo, bessere exzentrische Kontrolle.",
+          "Sehnen und Bänder erholen sich langsamer als Muskeln — diese Methode schützt speziell Bindegewebe.",
+          "'Fühlt sich zu leicht an' ist normal — Ziel ist Erholung, nicht Leistung.",
+          "Nach diesem Deload-Stil kann in der Folgewoche typisch 5–10 % mehr Gewicht bewegt werden."
+        ],
+        "points": [
+          { "icon": "🦴", "label": "Bindegewebe schützen", "note": "Sehnen und Bänder bekommen weniger Stress" },
+          { "icon": "📐", "label": "Technik verbessern", "note": "Leichteres Gewicht → besser auf Form fokussieren" },
+          { "icon": "💪", "label": "10–20 % Gewichtsabfall", "note": "Gleiches Volume, Muskeln werden noch gereizt" },
+          { "icon": "🔋", "label": "Energie nachladen", "note": "Muskelglykogen wird vollständig aufgefüllt" }
+        ]
+      },
+      {
+        "label": "Cardio-Dauer reduzieren", "desc": "45 Min → 25–30 Min. Oder zu Zone 1–2 wechseln.",
+        "detail": "Hochintensives Cardio akkumuliert ähnlichen Stress wie Gewichtheben — beeinflusst sympathisches Nervensystem, Immunsystem und Gesamtenergie. Eine Cardio-Deload-Woche in Zone 1–2 verbessert die Durchblutung der Muskeln (aktive Erholung) ohne Erholungsressourcen zu verbrauchen.",
+        "keyFact": "Zone 1–2 (60–70 % HRmax) fördert Kreislauf ohne Stress für das Nervensystem.",
+        "details": [
+          "Dauer von 45 Min auf 25–30 Min reduzieren, oder von 30 Min auf 15–20 Min.",
+          "Von Zone 3–4 (HIIT, schnelles Laufen) auf Zone 1–2 (flottes Gehen, leichtes Radfahren) wechseln.",
+          "Zone 1–2: 60–70 % HRmax — du kannst während des Trainings bequem sprechen.",
+          "Aktive Erholung in Zone 1–2 verbessert Durchblutung, hilft Stoffwechselabfälle schneller zu entfernen.",
+          "HIIT und Sprints in der Deload-Woche vollständig vermeiden — das Nervensystem braucht Ruhe.",
+          "Leichtes Schwimmen oder Heimradfahren ist die beste Option wegen keiner Gelenkbelastung."
+        ],
+        "points": [
+          { "icon": "❤️", "label": "Zone 1–2 Ziel", "note": "60–70 % HRmax, konversationstauglich" },
+          { "icon": "🩸", "label": "Aktive Erholung", "note": "Mehr Blut zu Muskeln, Stoffwechselabfall entfernen" },
+          { "icon": "⏱️", "label": "40 % weniger Zeit", "note": "45 Min → max. 25–30 Min" },
+          { "icon": "🚴", "label": "Low-Impact bevorzugen", "note": "Schwimmen, Radfahren — keine Gelenkbelastung" }
+        ]
+      },
+      {
+        "label": "Intensität reduzieren", "desc": "Schnelles Laufen → flottes Gehen, leichtes Radfahren, entspanntes Schwimmen.",
+        "detail": "Intensität reduzieren ist der umfassendste Deload — sowohl % 1RM als auch Zielherzfrequenz werden gesenkt. Geeignet nach einer Peaking-Phase (Wettkampf, Max-Test), nach leichten Verletzungen oder wenn der Körper gleichzeitig mehrere Überlastungszeichen zeigt.",
+        "keyFact": "Umfassende Intensitätsreduktion (sowohl Kraft als auch Cardio) ist die tiefste Deload-Strategie, geeignet nach extrem intensiven Trainingszyklen.",
+        "details": [
+          "Schnelles Laufen → flottes Gehen (5–6 km/h), leichtes Radfahren (50–60 rpm), entspanntes Schwimmen (kein Zeitdruck).",
+          "Mit reduzierter Hebeintensität kombinieren: 50–60 % 1RM, langsames Tempo, niedrige Reps (3–5 Wdh.).",
+          "Am besten nach 4–6 Wochen Peaking oder nach Wettkampf/Max-Test geeignet.",
+          "Das autonome Nervensystem wechselt vom Sympathikus (Kampf-oder-Flucht) zum Parasympathikus (Ruhe).",
+          "Leichte Aktivitäten hinzufügen: Yoga, Naturspaziergang, Schwimmen — gut für Körper und Geist.",
+          "Auf 7–10 Tage ausdehnen statt 5–7 Tage wenn dies nach einem langen, intensiven Trainingsblock folgt."
+        ],
+        "points": [
+          { "icon": "🧘", "label": "Parasympathischer Modus", "note": "Körper wechselt vollständig auf Ruhe" },
+          { "icon": "🌿", "label": "Umfassende Reduktion", "note": "Sowohl Kraft als auch Cardio gesenkt" },
+          { "icon": "🏖️", "label": "Nach Peaking", "note": "Nach Max-Test oder Wettkampf" },
+          { "icon": "⏳", "label": "7–10 Tage", "note": "Länger als Standard-Deload wenn nötig" }
+        ]
+      }
+    ],
+    "c5_schedules": [
+      {
+        "label": "Anfänger", "freq": "Alle 6–8 Wochen oder bei Erschöpfungszeichen",
+        "detail": "In der Anfängerphase erlebt der Körper 'Neulings-Gewinne' — passt sich schnell an alle Trainingsreize an. Erschöpfung akkumuliert langsamer, daher sind Deloads seltener nötig. Trotzdem auf Körpersignale achten, besonders Schlafqualität und Erholungsgefühl.",
+        "keyFact": "Anfänger brauchen typisch 6–8 Wochen bis genug Erschöpfung für einen Deload akkumuliert ist — der Körper passt sich noch schnell an.",
+        "details": [
+          "6–8 Wochen kontinuierlich trainieren bevor der erste Deload geplant wird — der Körper braucht Anpassungszeit.",
+          "Körpersignale über starrem Zeitplan priorisieren: schlechter Schlaf, anhaltender Muskelkater, Motivationsverlust.",
+          "Anfänger-Deload-Woche: Gesamtvolumen um 30–40 % reduzieren (Sätze × Übungen), Technik beibehalten.",
+          "Training nie komplett auslassen — aktiver Deload erhält die Gewohnheit und neuromuskuläre Muster.",
+          "Nach Deload spüren Anfänger meist deutlich den Unterschied: leichter fühlen und schwerer heben als Vorwoche.",
+          "Deload-Woche und Ergebnis der Folgewoche aufzeichnen um ein körpereigenes Muster zu entwickeln."
+        ],
+        "points": [
+          { "icon": "📅", "label": "6–8 Wochen Zyklus", "note": "Oder früher bei Erschöpfungszeichen" },
+          { "icon": "🌿", "label": "30–40 % Volumenabfall", "note": "Sanft, Technik beibehalten" },
+          { "icon": "👂", "label": "Auf den Körper hören", "note": "Signale wichtiger als starrer Plan" },
+          { "icon": "📝", "label": "Fortschritt aufzeichnen", "note": "Eigenes persönliches Muster aufbauen" }
+        ]
+      },
+      {
+        "label": "Fortgeschrittene", "freq": "Alle 4–6 Wochen, Volume um 10–20 % reduzieren",
+        "detail": "Auf Fortgeschrittenem-Niveau hat sich der Körper angepasst und braucht höhere Reize für Fortschritt — was bedeutet, Erschöpfung akkumuliert schneller. Deloads alle 4–6 Wochen sind das optimale Fenster um Momentum zu halten ohne Übertraining.",
+        "keyFact": "Fortgeschrittene akkumulieren Erschöpfung schneller — brauchen alle 4–6 Wochen einen Deload um langfristigen Fortschritt zu erhalten.",
+        "details": [
+          "Festen Deload alle 4 Wochen planen (bei 4–5 Tagen/Woche Training) oder alle 6 Wochen (3 Tage/Woche).",
+          "10–20 % Volume reduzieren: wenn normale Woche 20 Sätze/Muskelgruppe hat, Deload-Woche 16–18 Sätze.",
+          "Intensität (% 1RM) bei 60–70 % halten — genug um Kraft zu erhalten ohne mehr Erschöpfung.",
+          "Auch Cardio reduzieren: von 3–4 Einheiten/Woche auf 2, zu Zone 1–2 wechseln.",
+          "Deload-Woche zum Fokus auf Technik und Mobilität nutzen.",
+          "Leistung verfolgen: wenn nach Deload keine Verbesserung, Deload um 1 Woche verlängern."
+        ],
+        "points": [
+          { "icon": "📅", "label": "4–6 Wochen Zyklus", "note": "Je nach wöchentlichen Trainingstagen" },
+          { "icon": "📉", "label": "10–20 % Volumenabfall", "note": "Intensität bei 60–70 % 1RM halten" },
+          { "icon": "🏃", "label": "Cardio reduzieren", "note": "Zu Zone 1–2, 1–2 Einheiten weniger" },
+          { "icon": "🎯", "label": "Technik fokussieren", "note": "Leichtere Woche für Form-Verbesserung nutzen" }
+        ]
+      },
+      {
+        "label": "Hochvolumen", "freq": "Alle 4–5 Wochen, Volume um 30–40 % reduzieren",
+        "detail": "Personen mit hohem Trainingsvolumen und -intensität akkumulieren systemische Erschöpfung sehr schnell. Häufigere (4–5 Wochen) und tiefere (30–40 % Volume) Deloads sind Pflicht — keine Option. Deloads auf diesem Niveau zu überspringen führt leicht zu Übertraining-Syndrom, Verletzungen oder langfristigem Plateau.",
+        "keyFact": "Hochvolumen-Trainierende (5–6 Tage/Woche, hohes Volume) müssen alle 4–5 Wochen 30–40 % Volume reduzieren um chronische Erschöpfung zu vermeiden.",
+        "details": [
+          "Festen Deload alle 4 Wochen einplanen — nicht auf Erschöpfungszeichen warten, diese werden meist zu spät bemerkt.",
+          "30–40 % Gesamtvolumen reduzieren: von 25–30 Sätzen/Muskelgruppe/Woche auf 15–18 Sätze.",
+          "Kann 'Full Deload' (sowohl Volume als auch Intensität reduzieren) nach Peaking-Zyklus oder Wettkampf kombinieren.",
+          "Immunfunktion bei intensiv Trainierenden oft unterdrückt — Deload-Woche ist Zeit für Immunerholung.",
+          "8–9 Stunden Schlaf priorisieren, Massage, Sauna (falls vorhanden) und Kohlenhydratzufuhr in Deload-Woche erhöhen.",
+          "Hochvolumen-Sportler sollten 2–3 'Mikro-Deloads' (1 leichte Einheit) im 4-Wochen-Zyklus haben um Erschöpfung aktiv zu managen."
+        ],
+        "points": [
+          { "icon": "📅", "label": "4–5 Wochen Zyklus", "note": "Fester Plan, nicht auf Erschöpfung warten" },
+          { "icon": "📊", "label": "30–40 % Volumenabfall", "note": "Tiefer als Niedrig-Volume — Pflicht" },
+          { "icon": "🛡️", "label": "Immunerholung", "note": "Intensives Training unterdrückt Immunität" },
+          { "icon": "🍚", "label": "Mehr Kohlenhydrate", "note": "Muskelglykogen in der leichten Woche auffüllen" }
+        ]
+      }
+    ],
     "c3_heading": "NEAT & Sitzverhalten bekämpfen",
     "c3_desc": "NEAT umfasst alle Bewegungen außerhalb des Trainings: Gehen, Aufstehen, Hausarbeit. Für vielbeschäftigte Menschen ist NEAT genauso wichtig wie Gym-Einheiten.",
     "c3_levels_heading": "Schrittziele nach Level",

@@ -2227,6 +2227,21 @@ export default function PillarC() {
     ...(Array.isArray(c2EnergyTipsTr) && c2EnergyTipsTr[i] ? c2EnergyTipsTr[i] : {}),
   }));
 
+  const c5SignalsTr = tPillars('pillarC.c5_signals', { returnObjects: true });
+  const localC5Signals = Array.isArray(c5SignalsTr) && c5SignalsTr.length ? c5SignalsTr : C5_SIGNALS;
+
+  const c5MethodsTr = tPillars('pillarC.c5_methods', { returnObjects: true });
+  const localC5Methods = C5_METHODS.map((m, i) => ({
+    ...m,
+    ...(Array.isArray(c5MethodsTr) && c5MethodsTr[i] ? c5MethodsTr[i] : {}),
+  }));
+
+  const c5SchedulesTr = tPillars('pillarC.c5_schedules', { returnObjects: true });
+  const localC5Schedules = C5_SCHEDULES.map((s, i) => ({
+    ...s,
+    ...(Array.isArray(c5SchedulesTr) && c5SchedulesTr[i] ? c5SchedulesTr[i] : {}),
+  }));
+
   const c4RoutineTr = tPillars('pillarC.c4_routine', { returnObjects: true });
   const localC4Routine = C4_ROUTINE.map((r, i) => ({
     ...r,
@@ -2846,21 +2861,21 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-2xl font-bold mb-1" style={{ color: '#f97316' }}>Deload & Quản Lý Tải</h2>
-                <p className="text-muted text-lg mb-6">Deload là giảm tải có kế hoạch. Không phải lùi bước — mà là chiến lược để đi xa hơn về lâu dài.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: '#f97316' }}>{tPillars('pillarC.c5_heading', { defaultValue: 'Deload & Quản Lý Tải' })}</h2>
+                <p className="text-muted text-lg mb-6">{tPillars('pillarC.c5_desc', { defaultValue: 'Deload là giảm tải có kế hoạch. Không phải lùi bước — mà là chiến lược để đi xa hơn về lâu dài.' })}</p>
                 <div className="p-4 rounded-xl mb-6" style={{ background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.2)' }}>
-                  <p className="text-lg font-bold mb-2" style={{ color: '#f97316' }}>🚨 Dấu hiệu cần deload</p>
+                  <p className="text-lg font-bold mb-2" style={{ color: '#f97316' }}>{tPillars('pillarC.c5_signals_heading', { defaultValue: '🚨 Dấu hiệu cần deload' })}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                    {C5_SIGNALS.map((s, i) => (
+                    {localC5Signals.map((s, i) => (
                       <div key={i} className="text-base text-muted flex items-center gap-2">
                         <span style={{ color: '#f97316' }}>!</span>{s}
                       </div>
                     ))}
                   </div>
                 </div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#f97316' }}>4 Cách Deload</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#f97316' }}>{tPillars('pillarC.c5_methods_heading', { defaultValue: '4 Cách Deload' })}</h3>
                 <div className="grid gap-3 mb-6">
-                  {C5_METHODS.map((m, i) => (
+                  {localC5Methods.map((m, i) => (
                     <div
                       key={i}
                       className="flex gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
@@ -2876,9 +2891,9 @@ export default function PillarC() {
                     </div>
                   ))}
                 </div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#f97316' }}>Lịch Deload Theo Trình Độ</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#f97316' }}>{tPillars('pillarC.c5_schedules_heading', { defaultValue: 'Lịch Deload Theo Trình Độ' })}</h3>
                 <div className="space-y-2">
-                  {C5_SCHEDULES.map((row, i) => (
+                  {localC5Schedules.map((row, i) => (
                     <div
                       key={i}
                       className="flex justify-between items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
@@ -3163,26 +3178,26 @@ export default function PillarC() {
       {/* ── C5 deload schedule modal ── */}
       {c5ScheduleIdx !== null && (
         <C0ItemModal
-          item={C5_SCHEDULES[c5ScheduleIdx]}
+          item={localC5Schedules[c5ScheduleIdx]}
           idx={c5ScheduleIdx}
           onClose={() => setC5ScheduleIdx(null)}
           onPrev={() => setC5ScheduleIdx(i => Math.max(0, i - 1))}
-          onNext={() => setC5ScheduleIdx(i => Math.min(C5_SCHEDULES.length - 1, i + 1))}
+          onNext={() => setC5ScheduleIdx(i => Math.min(localC5Schedules.length - 1, i + 1))}
           hasPrev={c5ScheduleIdx > 0}
-          hasNext={c5ScheduleIdx < C5_SCHEDULES.length - 1}
+          hasNext={c5ScheduleIdx < localC5Schedules.length - 1}
         />
       )}
 
       {/* ── C5 deload method modal ── */}
       {c5MethodIdx !== null && (
         <C0ItemModal
-          item={C5_METHODS[c5MethodIdx]}
+          item={localC5Methods[c5MethodIdx]}
           idx={c5MethodIdx}
           onClose={() => setC5MethodIdx(null)}
           onPrev={() => setC5MethodIdx(i => Math.max(0, i - 1))}
-          onNext={() => setC5MethodIdx(i => Math.min(C5_METHODS.length - 1, i + 1))}
+          onNext={() => setC5MethodIdx(i => Math.min(localC5Methods.length - 1, i + 1))}
           hasPrev={c5MethodIdx > 0}
-          hasNext={c5MethodIdx < C5_METHODS.length - 1}
+          hasNext={c5MethodIdx < localC5Methods.length - 1}
         />
       )}
 

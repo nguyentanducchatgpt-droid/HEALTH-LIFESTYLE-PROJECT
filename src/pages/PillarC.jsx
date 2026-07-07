@@ -2491,8 +2491,8 @@ export default function PillarC() {
           <RevealBlock>
             <div className={`${tab.frame} rounded-2xl mb-6`}>
               <div className="rounded-2xl bg-surface p-5 md:p-6">
-                <h2 className="text-2xl font-bold mb-1" style={{ color: TEAL }}>Vệ Sinh Giấc Ngủ 4 Bước</h2>
-                <p className="text-muted text-lg mb-6">Ngủ không phải là "thời gian chết". Ngủ là lúc cơ thể sửa chữa cơ bắp, cân bằng hormone và phục hồi tâm lý.</p>
+                <h2 className="text-2xl font-bold mb-1" style={{ color: TEAL }}>{tPillars('pillarC.c1_heading', { defaultValue: 'Vệ Sinh Giấc Ngủ 4 Bước' })}</h2>
+                <p className="text-muted text-lg mb-6">{tPillars('pillarC.c1_desc', { defaultValue: 'Ngủ không phải là "thời gian chết". Ngủ là lúc cơ thể sửa chữa cơ bắp, cân bằng hormone và phục hồi tâm lý.' })}</p>
                 <div className="grid gap-3 mb-8">
                   {localC1Steps.map((s, i) => (
                     <div

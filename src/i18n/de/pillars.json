@@ -3888,7 +3888,228 @@
         ]
       }
     ],
-    "videos": ["BREATH"]
+    "videos": ["BREATH"],
+    "c_sleep_routine_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Schlafroutine",
+      "badge": "C1 — 10 BIS 60 MIN · 7-TAGE-RESET",
+      "desc": "Eine Schlafroutine führt den Körper vom Arbeitsmodus in den Erholungsmodus. Perfektion ist nicht nötig — nur ein konsistentes Signal.",
+      "img_caption": "Bildschirme reduzieren · Dehnen · Langsam atmen",
+      "nav_prev": "← Schlafwissenschaft",
+      "nav_next": "Zirkadianrhythmus →"
+    },
+    "c_circadian_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Zirkadianrhythmus & Energie",
+      "badge": "C2 — ZIRKADIANRHYTHMUS · 24H-ENERGIE",
+      "desc": "Der Körper hat eine biologische 24-Stunden-Uhr. Im Einklang damit zu leben gibt stabile Energie, besseren Schlaf und weniger Abhängigkeit von Koffein.",
+      "img_caption": "Licht · Schlaf-Wach-Rhythmus · Energie",
+      "nav_prev": "← Schlafroutine",
+      "nav_next": "Morgenroutine →"
+    },
+    "c_morning_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Morgenroutine",
+      "badge": "C2 — 5 / 10 / 20 MIN",
+      "desc": "Der Morgen muss nicht perfekt sein. Starte deinen Körper einfach richtig. Fünf Minuten umgesetzt schlagen einen Stundenplan, der nie stattfindet.",
+      "img_caption": "Wasser · Sonnenlicht · Leichte Bewegung",
+      "nav_prev": "← Zirkadianrhythmus",
+      "nav_next": "NEAT →"
+    },
+    "c_sleep_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Schlafwissenschaft",
+      "badge": "C1 — SCHLAF · SCHLAFHYGIENE",
+      "desc": "Schlaf ist keine tote Zeit. Dann repariert der Körper Muskelgewebe, balanciert Hormone, festigt Erinnerungen und bereitet Energie für den nächsten Tag vor.",
+      "img_caption": "7–9 Stunden · Im Rhythmus schlafen",
+      "nav_prev": "← Gesunder Lebensstil",
+      "nav_next": "Schlafroutine →"
+    },
+    "c_neat_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "NEAT & Gegen Langes Sitzen",
+      "badge": "C3 — NON-EXERCISE ACTIVITY THERMOGENESIS",
+      "desc": "NEAT ist alle Bewegung außerhalb des Trainings: Gehen, Stehen, Hausarbeit, Bewegung im Alltag. Für vielbeschäftigte Menschen kann NEAT genauso wichtig sein wie das Fitnessstudio.",
+      "img_caption": "Gehen · Aufstehen · Bewegung verteilen",
+      "nav_prev": "← Morgenroutine",
+      "nav_next": "Erholung →"
+    },
+    "c_recovery_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Aktive Erholung",
+      "badge": "C4 — AKTIVE ERHOLUNG · 3 SCHMERZREGIONEN",
+      "desc": "Erholungstage sind keine Aufgabetagetage. Erholungstage sind die Tage, die Sie belastbarer machen und weiter bringen.",
+      "img_caption": "Aktive Erholung · Beweglichkeit & Durchblutung",
+      "nav_prev": "← NEAT",
+      "nav_next": "Deload →"
+    },
+    "c_deload_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Deload & Aktive Erholung",
+      "badge": "C5 · DELOAD",
+      "desc": "Deload ist keine Faulheit — es ist Strategie. Geplante Entlastungswochen sind genau der Ort, wo Sie wirklich stärker werden, weil der Körper Zeit zur Superkompensation hat.",
+      "img_caption": "Deload = Investition in die Zukunft",
+      "nav_prev": "← Aktive Erholung",
+      "nav_all": "Alle Lebensstil-Module →",
+      "nav_next": "Atemtechniken →"
+    },
+    "c_breathing_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Atemtechniken",
+      "badge": "C6 · ATEMTECHNIKEN",
+      "desc": "Sie atmen 20.000 Mal am Tag. Die meiste Zeit unbewusst und ineffizient. Nur 5 Minuten bewusstes Atmen täglich können Cortisol reduzieren, den Schlaf verbessern und die Gehirnleistung steigern.",
+      "img_caption": "Bewusstes Atmen · 3 wissenschaftlich fundierte Techniken",
+      "nav_prev": "← Deload",
+      "nav_all": "Alle Lebensstil-Module →",
+      "nav_next": "Umgebungsgestaltung →"
+    },
+    "c_environment_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Umgebungsgestaltung",
+      "badge": "C7 · UMGEBUNGSGESTALTUNG",
+      "desc": "Gutes Verhalten kommt nicht nur aus Willenskraft — sondern aus einer Umgebung, die gutes Verhalten leichter macht. Jede kleine Veränderung im Wohnraum ist ein unsichtbares, aber wirksames Verhaltensdesign.",
+      "img_caption": "Umgebung bestimmt Verhalten · 3 Lebensbereiche",
+      "nav_prev": "← Atemtechniken",
+      "nav_all": "Alle Lebensstil-Module →",
+      "nav_next": "Tägliche Checkliste →"
+    },
+    "c_checklist_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "Lebensstil-Checkliste",
+      "badge": "C8 · TÄGLICHE CHECKLISTE",
+      "desc": "7 gesunde Lebensgewohnheiten täglich — einfach, leicht zu verfolgen, die sich allmählich zu nachhaltigen Gewohnheiten aufbauen. Abhaken jeden Tag und Streak verfolgen.",
+      "img_caption": "7 Aktionen · Täglichen Fortschritt verfolgen",
+      "nav_prev": "← Umgebungsgestaltung",
+      "nav_all": "Alle Lebensstil-Module →",
+      "nav_next": "Lebensstil-Bewertung →"
+    },
+    "c_roadmap_hero": {
+      "breadcrumb": "← Gesunder Lebensstil",
+      "title": "12-Wochen-Fahrplan",
+      "badge": "LEBENSSTIL-FAHRPLAN",
+      "desc": "Die Reise von 'zu wissen, wo man steht' zu 'mit nachhaltigem Rhythmus leben'. 12 Wochen, 4 Phasen, klare Schritte — kein Stress, kein Druck.",
+      "img_caption": "12 Wochen · 4 Phasen · 8 Module",
+      "nav_prev": "← Lebensstil-Bewertung",
+      "nav_all": "Zum Hub →"
+    },
+    "c_teaser": {
+      "sections": [
+        { "title": "Grundlagen & Schlaf" },
+        { "title": "Bewegung & Erholung" },
+        { "title": "Fähigkeiten & Werkzeuge" }
+      ],
+      "cards": [
+        {
+          "category": "Bewertung",
+          "title": "Erste Lebensstil-Bewertung",
+          "accent": "Lifestyle Score · 3 Pfade",
+          "desc": "Kennen Sie Ihren Ausgangspunkt, bevor Sie Änderungen vornehmen. Selbstbewertung in 5 Bereichen: Schlaf, Energie, Bewegung, Erholung und Abendgewohnheiten.",
+          "features": ["Lifestyle Score von 100", "Den richtigen Pfad wählen", "7-Tage-Basisformular"],
+          "stats": [{ "l": "Bereiche" }, { "l": "Pfade" }],
+          "cta": "Jetzt bewerten →"
+        },
+        {
+          "category": "Schlaf",
+          "title": "Die Wissenschaft des Schlafs",
+          "accent": "C1 · Schlafhygiene · 4 Schritte",
+          "desc": "Das wichtigste Modul von Säule C. Schlaf richtig verstehen und eine solide Erholungsgrundlage aufbauen.",
+          "features": ["4-stufiges Schlafhygiene-Protokoll", "3 häufige Schlafprobleme lösen", "Tägliche Checkliste mit 5 Punkten"],
+          "stats": [{ "l": "Stunden Schlaf" }, { "l": "Schritte" }],
+          "cta": "Besser schlafen →"
+        },
+        {
+          "category": "Schlaf",
+          "title": "Einschlafroutine 30–60 Minuten",
+          "accent": "C1 · Abwind · 7-Tage-Reset",
+          "desc": "Bauen Sie eine Routine auf, die Ihren Körper vom Arbeitsmodus in den Erholungsmodus versetzt. 10- und 60-Minuten-Versionen für jeden Zeitplan.",
+          "features": ["Vollständige 60-Minuten-Routine", "Kompakte 10-Minuten-Routine", "Spätes Einschlafen in 7 Tagen korrigieren"],
+          "stats": [{ "l": "Minuten" }, { "l": "Tage Reset" }],
+          "cta": "Routine aufbauen →"
+        },
+        {
+          "category": "Zirkadianer Rhythmus",
+          "title": "Zirkadianer Rhythmus & Energie",
+          "accent": "C2 · Stabile Energie den ganzen Tag",
+          "desc": "Ihren zirkadianen Rhythmus verstehen, um Energie über 24 Stunden zu optimieren. Morgens richtig aktivieren, abends sanft abschalten.",
+          "features": ["7-Tage-Energiemap", "Lichtregeln morgens/abends", "Intelligentes Koffein-Timing"],
+          "stats": [{ "l": "Faktoren" }, { "l": "Zyklus" }],
+          "cta": "Energie optimieren →"
+        },
+        {
+          "category": "Morgenroutine",
+          "title": "Morgenroutine",
+          "accent": "C2 · 5 / 10 / 20 Minuten",
+          "desc": "Den Tag richtig beginnen, um den ganzen Tag Energie zu haben. 3 Versionen für jeden Zeitplan — von beschäftigt bis entspannt.",
+          "features": ["Grundlegende 5-Minuten-Routine", "Vollständige 10-Minuten-Routine", "Erweiterte 20-Minuten-Routine"],
+          "stats": [{ "l": "Versionen" }, { "l": "Minuten+" }],
+          "cta": "Tag starten →"
+        },
+        {
+          "category": "NEAT",
+          "title": "NEAT & Kampf gegen langes Sitzen",
+          "accent": "C3 · Bewegung im Alltag",
+          "desc": "Aktivität steigern ohne Gym-Einheiten. Für beschäftigte Menschen kann NEAT genauso wichtig sein wie strukturiertes Training.",
+          "features": ["Schrittziele nach Fitnesslevel", "2-Minuten-Aufsteh-Regel", "NEAT für Büromenschen"],
+          "stats": [{ "l": "kcal NEAT" }, { "l": "Minuten pro Stunde" }],
+          "cta": "NEAT steigern →"
+        },
+        {
+          "category": "Erholung",
+          "title": "Aktive Erholung",
+          "accent": "C4 · Aktive Erholung",
+          "desc": "Erholung ist nicht nur Hinlegen. Lernen Sie, sich mit leichten Maßnahmen zu erholen: Mobilität, Dehnen, Atmen, Foam Rolling.",
+          "features": ["10-Minuten-Erholungsroutine", "Erholung nach Schmerzzone", "Aktive Erholung nach Ziel"],
+          "stats": [{ "l": "Minuten" }, { "l": "Körperzonen" }],
+          "cta": "Besser erholen →"
+        },
+        {
+          "category": "Deload",
+          "title": "Deload & Belastungsmanagement",
+          "accent": "C5 · Geplante Lastreduzierung",
+          "desc": "Gesunde Menschen wissen, wann sie pushen, wann sie halten und wann sie einen Schritt zurückgehen müssen, um langfristig weiter zu kommen.",
+          "features": ["7 Anzeichen für einen Deload", "4 Deload-Methoden", "Deload-Plan nach Fitnesslevel"],
+          "stats": [{ "l": "Wochen/Zyklus" }, { "l": "Deload-Methoden" }],
+          "cta": "Richtig deloaden →"
+        },
+        {
+          "category": "Atmung",
+          "title": "Atemtechniken & Entspannung",
+          "accent": "C6 · 3 Kerntechniken",
+          "desc": "Richtiges Atmen reguliert das Nervensystem, unterstützt die Erholung und verbessert die Schlafqualität.",
+          "features": ["Zwerchfellatmung", "Box-Atmung", "Protokoll für 5 Situationen"],
+          "stats": [{ "l": "Techniken" }, { "l": "Minuten" }],
+          "cta": "Richtig atmen →"
+        },
+        {
+          "category": "Umgebung",
+          "title": "Wohnumgebung gestalten",
+          "accent": "C7 · Weniger Willenskraft nötig",
+          "desc": "Für nachhaltige Verhaltensänderung gestalten Sie Ihre Umgebung um. Keine eiserne Willenskraft nötig — nur die richtige Umgebung.",
+          "features": ["Morgenumgebung", "Arbeitsumgebung", "Abendumgebung"],
+          "stats": [{ "l": "Bereiche" }, { "l": "Tipps+" }],
+          "cta": "Jetzt gestalten →"
+        },
+        {
+          "category": "Tracking",
+          "title": "Lebensstil-Checkliste & Tracking",
+          "accent": "C8 · Täglich + Wöchentlich",
+          "desc": "Genug tracken, um Trends zu erkennen, aber nicht so viel, dass es zum Druck wird. 7-Punkte-Tageschecklist und wöchentliches Review.",
+          "features": ["7-Punkte-Tages-Checkliste", "5-Fragen-Wochenreview", "Sicherheits-Warnsignale"],
+          "stats": [{ "l": "Punkte/Tag" }, { "l": "Fragen/Woche" }],
+          "cta": "Tracking starten →"
+        },
+        {
+          "category": "Fahrplan",
+          "title": "12-Wochen-Lebensstil-Fahrplan",
+          "accent": "Wochen 1–12 · 3 Phasen",
+          "desc": "Von der Rhythmusfindung bis zur vollständigen Personalisierung. 12 Wochen, um Schritt für Schritt einen nachhaltigen Lebensstil aufzubauen.",
+          "features": ["Wochen 1–2: Rhythmus erkennen", "Wochen 3–6: Grundroutinen aufbauen", "Wochen 7–12: Personalisieren"],
+          "stats": [{ "l": "Wochen" }, { "l": "Phasen" }],
+          "cta": "Fahrplan ansehen →"
+        }
+      ],
+      "c_bottom_link": "← Gesunder Lebensstil 360"
+    }
   },
   "pillarD": {
     "id": "d",

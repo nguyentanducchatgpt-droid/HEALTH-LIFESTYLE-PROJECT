@@ -2278,6 +2278,10 @@ export default function PillarC() {
     ...(Array.isArray(c1ChecklistTr) && c1ChecklistTr[i] ? c1ChecklistTr[i] : {}),
   }));
 
+  const cTeaserTr = tPillars('pillarC.c_teaser', { returnObjects: true });
+  const cTeaserSections = Array.isArray(cTeaserTr?.sections) ? cTeaserTr.sections : [];
+  const cTeaserCards = Array.isArray(cTeaserTr?.cards) ? cTeaserTr.cards : [];
+
   const tab = mergedTabs.find(t => t.id === activeTab) || mergedTabs[1];
   const sleepProgress = localC1Checklist.filter((_, i) => sleepChecks[i]).length;
   const neatProgress = [0, 1, 2, 3].filter(i => neatChecks[i]).length;
@@ -3035,39 +3039,55 @@ export default function PillarC() {
         <p className="text-muted text-lg">{tPillars('pillarC.explore_deep_desc', { defaultValue: '12 chủ đề chuyên sâu về lối sống khỏe — từ khoa học giấc ngủ đến thiết kế môi trường sống.' })}</p>
       </RevealBlock>
 
-      <TeaserSection title="Nền Tảng & Giấc Ngủ">
+      <TeaserSection title={cTeaserSections[0]?.title || 'Nền Tảng & Giấc Ngủ'}>
         <TeaserCard
           to="/pillar/c/assessment" color={TEAL} rgb={TEAL_RGB}
-          icon="📋" category="Đánh Giá" title="Đánh Giá Lối Sống Ban Đầu"
-          accent="Lifestyle Score · 3 Track" desc="Biết điểm xuất phát trước khi thay đổi. Tự đánh giá 5 lĩnh vực: giấc ngủ, năng lượng, vận động, phục hồi và thói quen tối."
-          features={['Lifestyle Score 100 điểm', 'Chọn Track phù hợp', 'Baseline Form 7 ngày']}
-          stats={[{v:'5',l:'Lĩnh vực'},{v:'3',l:'Track'}]}
+          icon="📋"
+          category={cTeaserCards[0]?.category || 'Đánh Giá'}
+          title={cTeaserCards[0]?.title || 'Đánh Giá Lối Sống Ban Đầu'}
+          accent={cTeaserCards[0]?.accent || 'Lifestyle Score · 3 Track'}
+          desc={cTeaserCards[0]?.desc || 'Biết điểm xuất phát trước khi thay đổi. Tự đánh giá 5 lĩnh vực: giấc ngủ, năng lượng, vận động, phục hồi và thói quen tối.'}
+          features={cTeaserCards[0]?.features || ['Lifestyle Score 100 điểm', 'Chọn Track phù hợp', 'Baseline Form 7 ngày']}
+          stats={[{v:'5', l: cTeaserCards[0]?.stats?.[0]?.l || 'Lĩnh vực'},{v:'3', l: cTeaserCards[0]?.stats?.[1]?.l || 'Track'}]}
           image="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=70"
-          imageAlt="Đánh giá lối sống" cta="Đánh giá ngay →" />
+          imageAlt="Đánh giá lối sống"
+          cta={cTeaserCards[0]?.cta || 'Đánh giá ngay →'} />
         <TeaserCard
           to="/pillar/c/sleep" color={TEAL} rgb={TEAL_RGB}
-          icon="😴" category="Giấc Ngủ" title="Khoa Học Giấc Ngủ"
-          accent="C1 · Vệ sinh giấc ngủ · 4 bước" desc="Module quan trọng nhất của Trụ cột C. Hiểu đúng về giấc ngủ và xây nền phục hồi vững chắc cho cơ thể."
-          features={['4 bước vệ sinh giấc ngủ', 'Xử lý 3 tình huống thường gặp', 'Checklist 5 mục hằng ngày']}
-          stats={[{v:'7–9h',l:'Giờ ngủ'},{v:'4',l:'Bước'}]}
+          icon="😴"
+          category={cTeaserCards[1]?.category || 'Giấc Ngủ'}
+          title={cTeaserCards[1]?.title || 'Khoa Học Giấc Ngủ'}
+          accent={cTeaserCards[1]?.accent || 'C1 · Vệ sinh giấc ngủ · 4 bước'}
+          desc={cTeaserCards[1]?.desc || 'Module quan trọng nhất của Trụ cột C. Hiểu đúng về giấc ngủ và xây nền phục hồi vững chắc cho cơ thể.'}
+          features={cTeaserCards[1]?.features || ['4 bước vệ sinh giấc ngủ', 'Xử lý 3 tình huống thường gặp', 'Checklist 5 mục hằng ngày']}
+          stats={[{v:'7–9h', l: cTeaserCards[1]?.stats?.[0]?.l || 'Giờ ngủ'},{v:'4', l: cTeaserCards[1]?.stats?.[1]?.l || 'Bước'}]}
           image="https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=600&q=70"
-          imageAlt="Giấc ngủ" cta="Ngủ tốt hơn →" />
+          imageAlt="Giấc ngủ"
+          cta={cTeaserCards[1]?.cta || 'Ngủ tốt hơn →'} />
         <TeaserCard
           to="/pillar/c/sleep-routine" color={TEAL} rgb={TEAL_RGB}
-          icon="🌙" category="Giấc Ngủ" title="Routine Trước Ngủ 30–60 Phút"
-          accent="C1 · Chuẩn bị ngủ · Reset 7 ngày" desc="Xây dựng routine chuyển cơ thể từ chế độ làm việc sang phục hồi. Phiên bản 10 và 60 phút phù hợp mọi lịch trình."
-          features={['Routine 60 phút đầy đủ', 'Routine 10 phút rút gọn', 'Sửa ngủ muộn trong 7 ngày']}
-          stats={[{v:'10–60',l:'Phút'},{v:'7',l:'Ngày reset'}]}
+          icon="🌙"
+          category={cTeaserCards[2]?.category || 'Giấc Ngủ'}
+          title={cTeaserCards[2]?.title || 'Routine Trước Ngủ 30–60 Phút'}
+          accent={cTeaserCards[2]?.accent || 'C1 · Chuẩn bị ngủ · Reset 7 ngày'}
+          desc={cTeaserCards[2]?.desc || 'Xây dựng routine chuyển cơ thể từ chế độ làm việc sang phục hồi. Phiên bản 10 và 60 phút phù hợp mọi lịch trình.'}
+          features={cTeaserCards[2]?.features || ['Routine 60 phút đầy đủ', 'Routine 10 phút rút gọn', 'Sửa ngủ muộn trong 7 ngày']}
+          stats={[{v:'10–60', l: cTeaserCards[2]?.stats?.[0]?.l || 'Phút'},{v:'7', l: cTeaserCards[2]?.stats?.[1]?.l || 'Ngày reset'}]}
           image="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=70"
-          imageAlt="Routine ngủ" cta="Xây routine →" />
+          imageAlt="Routine ngủ"
+          cta={cTeaserCards[2]?.cta || 'Xây routine →'} />
         <TeaserCard
           to="/pillar/c/circadian" color="#06b6d4" rgb="6,182,212"
-          icon="☀️" category="Nhịp Sinh Học" title="Nhịp Sinh Học & Năng Lượng"
-          accent="C2 · Tạo năng lượng ổn định" desc="Hiểu nhịp sinh học để tối ưu năng lượng 24h. Buổi sáng bật cơ thể lên đúng cách, buổi tối hạ xuống nhẹ nhàng."
-          features={['Bản đồ năng lượng 7 ngày', 'Quy tắc ánh sáng sáng/tối', 'Caffeine thông minh']}
-          stats={[{v:'5',l:'Yếu tố'},{v:'24h',l:'Chu kỳ'}]}
+          icon="☀️"
+          category={cTeaserCards[3]?.category || 'Nhịp Sinh Học'}
+          title={cTeaserCards[3]?.title || 'Nhịp Sinh Học & Năng Lượng'}
+          accent={cTeaserCards[3]?.accent || 'C2 · Tạo năng lượng ổn định'}
+          desc={cTeaserCards[3]?.desc || 'Hiểu nhịp sinh học để tối ưu năng lượng 24h. Buổi sáng bật cơ thể lên đúng cách, buổi tối hạ xuống nhẹ nhàng.'}
+          features={cTeaserCards[3]?.features || ['Bản đồ năng lượng 7 ngày', 'Quy tắc ánh sáng sáng/tối', 'Caffeine thông minh']}
+          stats={[{v:'5', l: cTeaserCards[3]?.stats?.[0]?.l || 'Yếu tố'},{v:'24h', l: cTeaserCards[3]?.stats?.[1]?.l || 'Chu kỳ'}]}
           image="https://images.unsplash.com/photo-1495385794356-15371f348c31?w=600&q=70"
-          imageAlt="Nhịp sinh học" cta="Tối ưu năng lượng →" />
+          imageAlt="Nhịp sinh học"
+          cta={cTeaserCards[3]?.cta || 'Tối ưu năng lượng →'} />
       </TeaserSection>
 
       <TeaserSection title="Vận Động & Phục Hồi">

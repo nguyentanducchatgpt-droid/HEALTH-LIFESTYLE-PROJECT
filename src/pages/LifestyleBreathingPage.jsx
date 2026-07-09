@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#0ea5e9';
 const RGB = '14,165,233';
@@ -422,6 +423,8 @@ function BoxBreathingTimer() {
 }
 
 export default function LifestyleBreathingPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_breathing_hero', { returnObjects: true }) || {};
   const [activeTech, setActiveTech] = useState('box');
   const [scienceIdx, setScienceIdx] = useState(null);
   const [dailyPlanIdx, setDailyPlanIdx] = useState(null);
@@ -453,16 +456,16 @@ export default function LifestyleBreathingPage() {
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-base text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        Lối Sống Khỏe
+        {hero.breadcrumb || 'Lối Sống Khỏe'}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🌬️</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Kỹ Thuật Thở</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C6 · Breathing</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">Bạn thở 20.000 lần mỗi ngày. Đa số vô thức và không hiệu quả. Chỉ cần thay đổi cách thở 5 phút mỗi ngày, bạn có thể giảm cortisol, cải thiện giấc ngủ và tăng hiệu suất não bộ.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{hero.title || 'Kỹ Thuật Thở'}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>{hero.badge || 'C6 · Breathing'}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{hero.desc || 'Bạn thở 20.000 lần mỗi ngày. Đa số vô thức và không hiệu quả. Chỉ cần thay đổi cách thở 5 phút mỗi ngày, bạn có thể giảm cortisol, cải thiện giấc ngủ và tăng hiệu suất não bộ.'}</p>
         </div>
       </div>
 
@@ -621,13 +624,13 @@ export default function LifestyleBreathingPage() {
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
         <Link to="/pillar/c/deload" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
-          Deload
+          {hero.nav_prev || 'Deload'}
         </Link>
         <Link to="/pillar/c" className="text-lg text-muted hover:text-teal-400 transition-colors text-center">
-          Tất cả Module Lối Sống →
+          {hero.nav_all || 'Tất cả Module Lối Sống →'}
         </Link>
         <Link to="/pillar/c/environment" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
-          Thiết Kế Môi Trường
+          {hero.nav_next || 'Thiết Kế Môi Trường'}
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>

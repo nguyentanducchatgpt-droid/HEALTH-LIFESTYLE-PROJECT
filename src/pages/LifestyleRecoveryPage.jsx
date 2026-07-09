@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#a78bfa';
 const RGB = '167,139,250';
@@ -903,6 +904,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function LifestyleRecoveryPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_recovery_hero', { returnObjects: true }) || {};
   const [openZone, setOpenZone] = useState(null);
   const [recoveryTypeIdx, setRecoveryTypeIdx] = useState(null);
   const [routineIdx, setRoutineIdx] = useState(null);
@@ -930,7 +933,7 @@ export default function LifestyleRecoveryPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-violet-400 transition-colors">
-        ← Lối Sống Khỏe
+        {hero.breadcrumb || '← Lối Sống Khỏe'}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
@@ -940,13 +943,13 @@ export default function LifestyleRecoveryPage() {
           🔄
         </div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Phục Hồi Chủ Động</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{hero.title || 'Phục Hồi Chủ Động'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
-            C4 — Active Recovery · 3 vùng đau mỏi
+            {hero.badge || 'C4 — Active Recovery · 3 vùng đau mỏi'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Ngày phục hồi không phải ngày bỏ cuộc. Ngày phục hồi là ngày chương trình giúp bạn bền hơn, tiến xa hơn.
+            {hero.desc || 'Ngày phục hồi không phải ngày bỏ cuộc. Ngày phục hồi là ngày chương trình giúp bạn bền hơn, tiến xa hơn.'}
           </p>
         </div>
       </div>
@@ -1104,8 +1107,8 @@ export default function LifestyleRecoveryPage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/neat" className="text-muted hover:text-violet-400 transition-colors text-lg">← NEAT</Link>
-        <Link to="/pillar/c/deload" className="text-lg font-semibold" style={{ color: COLOR }}>Deload →</Link>
+        <Link to="/pillar/c/neat" className="text-muted hover:text-violet-400 transition-colors text-lg">{hero.nav_prev || '← NEAT'}</Link>
+        <Link to="/pillar/c/deload" className="text-lg font-semibold" style={{ color: COLOR }}>{hero.nav_next || 'Deload →'}</Link>
       </div>
 
       {/* ── Sample day modal — outside all RevealBlocks ── */}

@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#10b981';
 const RGB = '16,185,129';
@@ -775,6 +776,8 @@ const NEAT_DAILY_CHECKLIST = [
 ];
 
 export default function LifestyleNeatPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_neat_hero', { returnObjects: true }) || {};
   const [checks, setChecks] = useState(() => {
     try { return JSON.parse(localStorage.getItem('healthapp_neat_daily_checks')) || {}; } catch { return {}; }
   });
@@ -811,7 +814,7 @@ export default function LifestyleNeatPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-emerald-400 transition-colors">
-        ← Lối Sống Khỏe
+        {hero.breadcrumb || '← Lối Sống Khỏe'}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
@@ -821,13 +824,13 @@ export default function LifestyleNeatPage() {
           🚶
         </div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">NEAT & Chống Ngồi Lâu</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{hero.title || 'NEAT & Chống Ngồi Lâu'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
-            C3 — Non-Exercise Activity Thermogenesis
+            {hero.badge || 'C3 — Non-Exercise Activity Thermogenesis'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            NEAT là toàn bộ vận động ngoài buổi tập: đi bộ, đứng dậy, làm việc nhà, di chuyển trong ngày. Với người bận rộn, NEAT có thể quan trọng không kém buổi tập gym.
+            {hero.desc || 'NEAT là toàn bộ vận động ngoài buổi tập: đi bộ, đứng dậy, làm việc nhà, di chuyển trong ngày. Với người bận rộn, NEAT có thể quan trọng không kém buổi tập gym.'}
           </p>
         </div>
       </div>
@@ -1017,8 +1020,8 @@ export default function LifestyleNeatPage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/morning" className="text-muted hover:text-emerald-400 transition-colors text-lg">← Routine Sáng</Link>
-        <Link to="/pillar/c/recovery" className="text-lg font-semibold" style={{ color: COLOR }}>Phục Hồi →</Link>
+        <Link to="/pillar/c/morning" className="text-muted hover:text-emerald-400 transition-colors text-lg">{hero.nav_prev || '← Routine Sáng'}</Link>
+        <Link to="/pillar/c/recovery" className="text-lg font-semibold" style={{ color: COLOR }}>{hero.nav_next || 'Phục Hồi →'}</Link>
       </div>
 
       {/* ── Step goals modal — outside all RevealBlocks ── */}

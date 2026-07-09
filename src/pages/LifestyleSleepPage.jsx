@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#14b8a6';
 const RGB = '20,184,166';
@@ -622,6 +623,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function LifestyleSleepPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_sleep_hero', { returnObjects: true }) || {};
   const [openCase, setOpenCase] = useState(null);
   const [checks, setChecks] = useState({});
   const [sleepFactIdx, setSleepFactIdx] = useState(null);
@@ -652,7 +655,7 @@ export default function LifestyleSleepPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-teal-400 transition-colors">
-        ← Lối Sống Khỏe
+        {hero.breadcrumb || '← Lối Sống Khỏe'}
       </Link>
 
       {/* Hero */}
@@ -663,13 +666,13 @@ export default function LifestyleSleepPage() {
           😴
         </div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Khoa Học Giấc Ngủ</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{hero.title || 'Khoa Học Giấc Ngủ'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
-            C1 — Giấc Ngủ · Vệ Sinh Ngủ
+            {hero.badge || 'C1 — Giấc Ngủ · Vệ Sinh Ngủ'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Ngủ không phải "thời gian chết". Đây là lúc cơ thể sửa chữa mô cơ, cân bằng hormone, củng cố trí nhớ và chuẩn bị năng lượng cho ngày hôm sau.
+            {hero.desc || 'Ngủ không phải "thời gian chết". Đây là lúc cơ thể sửa chữa mô cơ, cân bằng hormone, củng cố trí nhớ và chuẩn bị năng lượng cho ngày hôm sau.'}
           </p>
         </div>
       </div>
@@ -872,8 +875,8 @@ export default function LifestyleSleepPage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c" className="text-muted hover:text-teal-400 transition-colors text-lg">← Lối Sống Khỏe</Link>
-        <Link to="/pillar/c/sleep-routine" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Trước Ngủ →</Link>
+        <Link to="/pillar/c" className="text-muted hover:text-teal-400 transition-colors text-lg">{hero.nav_prev || '← Lối Sống Khỏe'}</Link>
+        <Link to="/pillar/c/sleep-routine" className="text-lg font-semibold" style={{ color: COLOR }}>{hero.nav_next || 'Routine Trước Ngủ →'}</Link>
       </div>
 
       {/* ── Hygiene step modal ── */}

@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#14b8a6';
 const RGB = '20,184,166';
@@ -374,6 +375,8 @@ function ChecklistModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, ha
 }
 
 export default function LifestyleChecklistPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_checklist_hero', { returnObjects: true }) || {};
   const [checked, setChecked] = useState({});
   const [weekAnswers, setWeekAnswers] = useState({});
   const [weeklyQIdx, setWeeklyQIdx] = useState(null);
@@ -441,16 +444,16 @@ export default function LifestyleChecklistPage() {
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-base text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        Lối Sống Khỏe
+        {hero.breadcrumb || 'Lối Sống Khỏe'}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>✅</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Checklist Lối Sống</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C8 · Daily Checklist</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">7 hành động lối sống khỏe mỗi ngày — đơn giản, dễ theo dõi, tích lũy dần thành thói quen bền vững. Đánh dấu xong mỗi ngày, theo dõi chuỗi ngày liên tiếp.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{hero.title || 'Checklist Lối Sống'}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>{hero.badge || 'C8 · Daily Checklist'}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{hero.desc || '7 hành động lối sống khỏe mỗi ngày — đơn giản, dễ theo dõi, tích lũy dần thành thói quen bền vững. Đánh dấu xong mỗi ngày, theo dõi chuỗi ngày liên tiếp.'}</p>
         </div>
       </div>
 
@@ -595,13 +598,13 @@ export default function LifestyleChecklistPage() {
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
         <Link to="/pillar/c/environment" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
-          Thiết Kế Môi Trường
+          {hero.nav_prev || 'Thiết Kế Môi Trường'}
         </Link>
         <Link to="/pillar/c" className="text-lg text-muted hover:text-teal-400 transition-colors text-center">
-          Tất cả Module Lối Sống →
+          {hero.nav_all || 'Tất cả Module Lối Sống →'}
         </Link>
         <Link to="/pillar/c/assessment" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
-          Đánh Giá Lối Sống
+          {hero.nav_next || 'Đánh Giá Lối Sống'}
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>

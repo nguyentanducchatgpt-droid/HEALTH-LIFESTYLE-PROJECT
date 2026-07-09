@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#f97316';
 const RGB = '249,115,22';
@@ -676,6 +677,8 @@ const DELOAD_WEEK = [
 const INTENSITY_COLOR = { light: '#f97316', 'very-light': '#10b981', rest: '#6b7280' };
 
 export default function LifestyleDeloadPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_deload_hero', { returnObjects: true }) || {};
   const [methodIdx, setMethodIdx] = useState(null);
   const [frequencyIdx, setFrequencyIdx] = useState(null);
   const [deloadDayIdx, setDeloadDayIdx] = useState(null);
@@ -708,7 +711,7 @@ export default function LifestyleDeloadPage() {
       {/* Breadcrumb */}
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-base text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        Lối Sống Khỏe
+        {hero.breadcrumb || 'Lối Sống Khỏe'}
       </Link>
 
       {/* Hero */}
@@ -716,9 +719,9 @@ export default function LifestyleDeloadPage() {
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>⚡</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Deload & Phục Hồi Chủ Động</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C5 · Deload</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">Deload không phải lười biếng — đó là chiến lược. Những tuần giảm tải được lên kế hoạch chính là nơi bạn thực sự mạnh hơn, vì cơ thể có thời gian siêu bù để phát triển vượt mức ban đầu.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{hero.title || 'Deload & Phục Hồi Chủ Động'}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>{hero.badge || 'C5 · Deload'}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{hero.desc || 'Deload không phải lười biếng — đó là chiến lược. Những tuần giảm tải được lên kế hoạch chính là nơi bạn thực sự mạnh hơn, vì cơ thể có thời gian siêu bù để phát triển vượt mức ban đầu.'}</p>
         </div>
       </div>
 
@@ -866,13 +869,13 @@ export default function LifestyleDeloadPage() {
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
         <Link to="/pillar/c/recovery" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
-          Phục Hồi Chủ Động
+          {hero.nav_prev || 'Phục Hồi Chủ Động'}
         </Link>
         <Link to="/pillar/c" className="text-lg text-muted hover:text-teal-400 transition-colors text-center">
-          Tất cả Module Lối Sống →
+          {hero.nav_all || 'Tất cả Module Lối Sống →'}
         </Link>
         <Link to="/pillar/c/breathing" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
-          Kỹ Thuật Thở
+          {hero.nav_next || 'Kỹ Thuật Thở'}
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>

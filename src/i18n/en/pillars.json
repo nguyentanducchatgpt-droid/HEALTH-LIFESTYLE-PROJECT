@@ -3867,7 +3867,229 @@
         ]
       }
     ],
-    "videos": ["BREATH"]
+    "videos": ["BREATH"],
+    "c_sleep_routine_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Pre-Sleep Routine",
+      "badge": "C1 — 10 TO 60 MIN · 7-DAY RESET",
+      "desc": "A pre-sleep routine transitions your body from work mode to recovery mode. No need to be perfect — just have a consistent signal.",
+      "img_caption": "Reduce screens · Stretch · Slow breathing",
+      "nav_prev": "← Sleep Science",
+      "nav_next": "Circadian Rhythm →"
+    },
+    "c_circadian_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Circadian Rhythm & Energy",
+      "badge": "C2 — CIRCADIAN RHYTHM · 24H ENERGY",
+      "desc": "Your body has a 24-hour biological clock. Living in sync with it gives you stable energy, better sleep, and less reliance on caffeine.",
+      "img_caption": "Light · Sleep-wake rhythm · Energy",
+      "nav_prev": "← Pre-Sleep Routine",
+      "nav_next": "Morning Routine →"
+    },
+    "c_morning_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Morning Routine",
+      "badge": "C2 — 5 / 10 / 20 MIN",
+      "desc": "Your morning doesn't need to be perfect. Just start your body the right way. Five minutes done beats a one-hour plan that never happens.",
+      "img_caption": "Water · Sunlight · Light movement",
+      "nav_prev": "← Circadian Rhythm",
+      "nav_next": "NEAT →"
+    },
+    "c_sleep_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Sleep Science",
+      "badge": "C1 — SLEEP · SLEEP HYGIENE",
+      "desc": "Sleep is not dead time. It is when your body repairs muscle tissue, balances hormones, consolidates memory, and prepares energy for tomorrow.",
+      "img_caption": "7–9 hours · Sleep in rhythm",
+      "nav_prev": "← Healthy Lifestyle",
+      "nav_next": "Pre-Sleep Routine →"
+    },
+    "c_neat_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "NEAT & Beat Sedentary Sitting",
+      "badge": "C3 — NON-EXERCISE ACTIVITY THERMOGENESIS",
+      "desc": "NEAT is all movement outside your workout: walking, standing, housework, moving through the day. For busy people, NEAT can matter as much as the gym.",
+      "img_caption": "Walking · Stand up · Spread movement",
+      "nav_prev": "← Morning Routine",
+      "nav_next": "Recovery →"
+    },
+    "c_recovery_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Active Recovery",
+      "badge": "C4 — ACTIVE RECOVERY · 3 PAIN ZONES",
+      "desc": "Recovery days are not days of giving up. They are the days that make your program more sustainable and take you further.",
+      "img_caption": "Mobility · Stretching · Slow breathing",
+      "nav_prev": "← NEAT",
+      "nav_all": "All Lifestyle Modules →",
+      "nav_next": "Deload →"
+    },
+    "c_breathing_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Breathing Techniques",
+      "badge": "C6 · BREATHING",
+      "desc": "You breathe 20,000 times a day. Most of it is unconscious and inefficient. Just 5 minutes of intentional breathing daily can reduce cortisol, improve sleep, and boost brain performance.",
+      "img_caption": "Intentional breathing · 3 science-backed techniques",
+      "nav_prev": "← Deload",
+      "nav_all": "All Lifestyle Modules →",
+      "nav_next": "Environment Design →"
+    },
+    "c_environment_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Environment Design",
+      "badge": "C7 · ENVIRONMENT DESIGN",
+      "desc": "Good behavior doesn't come from willpower alone — it comes from an environment designed to make good behavior easier. Every small change in your living space is an invisible yet powerful behavior design.",
+      "img_caption": "Environment shapes behavior · 3 living spaces",
+      "nav_prev": "← Breathing Techniques",
+      "nav_all": "All Lifestyle Modules →",
+      "nav_next": "Daily Checklist →"
+    },
+    "c_deload_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Deload & Active Recovery",
+      "badge": "C5 · DELOAD",
+      "desc": "Deload is not laziness — it's strategy. Planned reduced-load weeks are precisely where you get stronger, as your body has time to supercompensate and grow beyond its previous baseline.",
+      "img_caption": "Deload = Investment in the future",
+      "nav_prev": "← Active Recovery",
+      "nav_all": "All Lifestyle Modules →",
+      "nav_next": "Breathing Techniques →"
+    },
+    "c_checklist_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "Lifestyle Checklist",
+      "badge": "C8 · DAILY CHECKLIST",
+      "desc": "7 healthy lifestyle actions every day — simple, easy to track, accumulating steadily into lasting habits. Check off each day and track your consecutive-day streaks.",
+      "img_caption": "7 actions · Track daily progress",
+      "nav_prev": "← Environment Design",
+      "nav_all": "All Lifestyle Modules →",
+      "nav_next": "Lifestyle Assessment →"
+    },
+    "c_roadmap_hero": {
+      "breadcrumb": "← Healthy Lifestyle",
+      "title": "12-Week Roadmap",
+      "badge": "LIFESTYLE ROADMAP",
+      "desc": "The journey from 'knowing where you are' to 'living a sustainable rhythm'. 12 weeks, 4 phases, clear step-by-step guidance — no rush, no pressure.",
+      "img_caption": "12 weeks · 4 phases · 8 modules",
+      "nav_prev": "← Lifestyle Assessment",
+      "nav_all": "Back to Hub →"
+    },
+    "c_teaser": {
+      "sections": [
+        { "title": "Foundation & Sleep" },
+        { "title": "Movement & Recovery" },
+        { "title": "Skills & Tools" }
+      ],
+      "cards": [
+        {
+          "category": "Assessment",
+          "title": "Initial Lifestyle Assessment",
+          "accent": "Lifestyle Score · 3 Tracks",
+          "desc": "Know your starting point before making changes. Self-assess 5 areas: sleep, energy, movement, recovery, and evening habits.",
+          "features": ["Lifestyle Score out of 100", "Choose the right track", "7-day baseline form"],
+          "stats": [{ "l": "Areas" }, { "l": "Tracks" }],
+          "cta": "Assess now →"
+        },
+        {
+          "category": "Sleep",
+          "title": "The Science of Sleep",
+          "accent": "C1 · Sleep hygiene · 4 steps",
+          "desc": "The most important module of Pillar C. Understand sleep correctly and build a solid recovery foundation for your body.",
+          "features": ["4-step sleep hygiene protocol", "Handle 3 common sleep issues", "5-item daily checklist"],
+          "stats": [{ "l": "Hours sleep" }, { "l": "Steps" }],
+          "cta": "Sleep better →"
+        },
+        {
+          "category": "Sleep",
+          "title": "Pre-Sleep Routine 30–60 Minutes",
+          "accent": "C1 · Wind-down · 7-day reset",
+          "desc": "Build a routine that transitions your body from work mode to recovery mode. 10-minute and 60-minute versions for any schedule.",
+          "features": ["Full 60-minute routine", "Condensed 10-minute routine", "Fix late sleeping in 7 days"],
+          "stats": [{ "l": "Minutes" }, { "l": "Day reset" }],
+          "cta": "Build routine →"
+        },
+        {
+          "category": "Circadian Rhythm",
+          "title": "Circadian Rhythm & Energy",
+          "accent": "C2 · Stable energy all day",
+          "desc": "Understand your circadian rhythm to optimize energy over 24 hours. Activate your body correctly in the morning, wind down gently at night.",
+          "features": ["7-day energy map", "Morning/evening light rules", "Smart caffeine timing"],
+          "stats": [{ "l": "Factors" }, { "l": "Cycle" }],
+          "cta": "Optimize energy →"
+        },
+        {
+          "category": "Morning Routine",
+          "title": "Morning Routine",
+          "accent": "C2 · 5 / 10 / 20 minutes",
+          "desc": "Start the day right to have energy all day long. 3 versions for every schedule — from busy to relaxed.",
+          "features": ["Basic 5-minute routine", "Full 10-minute routine", "Advanced 20-minute routine"],
+          "stats": [{ "l": "Versions" }, { "l": "Minutes+" }],
+          "cta": "Start your day →"
+        },
+        {
+          "category": "NEAT",
+          "title": "NEAT & Fighting Sedentary Behaviour",
+          "accent": "C3 · Movement in daily life",
+          "desc": "Increase activity without gym sessions. For busy people, NEAT can be just as important as structured workouts.",
+          "features": ["Step goals by fitness level", "2-minute stand-up rule", "NEAT for desk workers"],
+          "stats": [{ "l": "kcal NEAT" }, { "l": "Minutes per hour" }],
+          "cta": "Boost NEAT →"
+        },
+        {
+          "category": "Recovery",
+          "title": "Active Recovery",
+          "accent": "C4 · Active recovery",
+          "desc": "Recovery isn't just lying down. Learn to recover with light actions: mobility, stretching, breathing, foam rolling.",
+          "features": ["10-minute recovery routine", "Recovery by pain zone", "Active recovery by goal"],
+          "stats": [{ "l": "Minutes" }, { "l": "Body zones" }],
+          "cta": "Recover better →"
+        },
+        {
+          "category": "Deload",
+          "title": "Deload & Load Management",
+          "accent": "C5 · Planned load reduction",
+          "desc": "Healthy people know when to push, when to hold steady, and when to step back to go further in the long run.",
+          "features": ["7 signs you need a deload", "4 ways to deload", "Deload schedule by fitness level"],
+          "stats": [{ "l": "Weeks/cycle" }, { "l": "Deload methods" }],
+          "cta": "Deload correctly →"
+        },
+        {
+          "category": "Breathing",
+          "title": "Breathing Techniques & Downregulation",
+          "accent": "C6 · 3 core techniques",
+          "desc": "Correct breathing regulates the nervous system, supports recovery, and improves sleep quality.",
+          "features": ["Diaphragmatic breathing", "Box breathing", "Protocol for 5 situations"],
+          "stats": [{ "l": "Techniques" }, { "l": "Minutes" }],
+          "cta": "Breathe correctly →"
+        },
+        {
+          "category": "Environment",
+          "title": "Designing Your Living Environment",
+          "accent": "C7 · Reduce reliance on willpower",
+          "desc": "For lasting behaviour change, redesign your environment. No need for iron willpower — just the right environment.",
+          "features": ["Morning environment", "Work environment", "Evening environment"],
+          "stats": [{ "l": "Spaces" }, { "l": "Tips+" }],
+          "cta": "Design now →"
+        },
+        {
+          "category": "Tracking",
+          "title": "Lifestyle Checklist & Tracking",
+          "accent": "C8 · Daily + Weekly tracking",
+          "desc": "Track enough to spot trends, not so much it becomes pressure. 7-item daily checklist and weekly review.",
+          "features": ["7-item daily lifestyle checklist", "5-question weekly review", "Safety red flags"],
+          "stats": [{ "l": "Items/day" }, { "l": "Questions/week" }],
+          "cta": "Start tracking →"
+        },
+        {
+          "category": "Roadmap",
+          "title": "12-Week Lifestyle Roadmap",
+          "accent": "Weeks 1–12 · 3 phases",
+          "desc": "From identifying your rhythm to full personalisation. 12 weeks to build a sustainable healthy lifestyle step by step.",
+          "features": ["Weeks 1–2: Identify your rhythm", "Weeks 3–6: Build basic routines", "Weeks 7–12: Personalise"],
+          "stats": [{ "l": "Weeks" }, { "l": "Phases" }],
+          "cta": "View roadmap →"
+        }
+      ],
+      "c_bottom_link": "← Healthy Lifestyle 360"
+    }
   },
   "pillarD": {
     "id": "d",

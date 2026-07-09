@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#f43f5e';
 const RGB = '244,63,94';
@@ -816,6 +817,8 @@ function EnvModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext 
 }
 
 export default function LifestyleEnvironmentPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_environment_hero', { returnObjects: true }) || {};
   const [activeZone, setActiveZone] = useState('morning');
   const [principleIdx, setPrincipleIdx] = useState(null);
   const [zoneItemIdx, setZoneItemIdx] = useState(null);
@@ -849,16 +852,16 @@ export default function LifestyleEnvironmentPage() {
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-base text-muted hover:text-teal-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        Lối Sống Khỏe
+        {hero.breadcrumb || 'Lối Sống Khỏe'}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🏠</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Thiết Kế Môi Trường</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C7 · Environment Design</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">Hành vi tốt không chỉ từ ý chí mạnh — mà từ môi trường được thiết kế để làm cho hành vi tốt dễ hơn. Mỗi thay đổi nhỏ trong không gian sống là một "thiết kế hành vi" vô hình nhưng mạnh mẽ.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{hero.title || 'Thiết Kế Môi Trường'}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>{hero.badge || 'C7 · Environment Design'}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{hero.desc || 'Hành vi tốt không chỉ từ ý chí mạnh — mà từ môi trường được thiết kế để làm cho hành vi tốt dễ hơn. Mỗi thay đổi nhỏ trong không gian sống là một "thiết kế hành vi" vô hình nhưng mạnh mẽ.'}</p>
         </div>
       </div>
 
@@ -1048,13 +1051,13 @@ export default function LifestyleEnvironmentPage() {
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
         <Link to="/pillar/c/breathing" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
-          Kỹ Thuật Thở
+          {hero.nav_prev || 'Kỹ Thuật Thở'}
         </Link>
         <Link to="/pillar/c" className="text-lg text-muted hover:text-teal-400 transition-colors text-center">
-          Tất cả Module Lối Sống →
+          {hero.nav_all || 'Tất cả Module Lối Sống →'}
         </Link>
         <Link to="/pillar/c/checklist" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
-          Checklist Hằng Ngày
+          {hero.nav_next || 'Checklist Hằng Ngày'}
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>

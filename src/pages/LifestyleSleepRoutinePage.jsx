@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#14b8a6';
 const RGB = '20,184,166';
@@ -712,6 +713,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function LifestyleSleepRoutinePage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_sleep_routine_hero', { returnObjects: true }) || {};
   const [mode, setMode] = useState('60');
   const [routineIdx, setRoutineIdx] = useState(null);
   const [routine60Idx, setRoutine60Idx] = useState(null);
@@ -739,7 +742,7 @@ export default function LifestyleSleepRoutinePage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-teal-400 transition-colors">
-        ← Lối Sống Khỏe
+        {hero.breadcrumb || '← Lối Sống Khỏe'}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
@@ -749,13 +752,13 @@ export default function LifestyleSleepRoutinePage() {
           🌙
         </div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Routine Trước Ngủ</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{hero.title || 'Routine Trước Ngủ'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
-            C1 — 10 đến 60 phút · Reset 7 ngày
+            {hero.badge || 'C1 — 10 đến 60 phút · Reset 7 ngày'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Routine trước ngủ giúp chuyển cơ thể từ "chế độ làm việc" sang "chế độ phục hồi". Không cần hoàn hảo — chỉ cần có tín hiệu nhất quán.
+            {hero.desc || 'Routine trước ngủ giúp chuyển cơ thể từ "chế độ làm việc" sang "chế độ phục hồi". Không cần hoàn hảo — chỉ cần có tín hiệu nhất quán.'}
           </p>
         </div>
       </div>
@@ -908,8 +911,8 @@ export default function LifestyleSleepRoutinePage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/sleep" className="text-muted hover:text-teal-400 transition-colors text-lg">← Khoa Học Giấc Ngủ</Link>
-        <Link to="/pillar/c/circadian" className="text-lg font-semibold" style={{ color: COLOR }}>Nhịp Sinh Học →</Link>
+        <Link to="/pillar/c/sleep" className="text-muted hover:text-teal-400 transition-colors text-lg">{hero.nav_prev || '← Khoa Học Giấc Ngủ'}</Link>
+        <Link to="/pillar/c/circadian" className="text-lg font-semibold" style={{ color: COLOR }}>{hero.nav_next || 'Nhịp Sinh Học →'}</Link>
       </div>
 
       {/* ── Why routine modal ── */}

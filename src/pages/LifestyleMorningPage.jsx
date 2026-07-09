@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#06b6d4';
 const RGB = '6,182,212';
@@ -693,6 +694,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function LifestyleMorningPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_morning_hero', { returnObjects: true }) || {};
   const [mode, setMode] = useState('5');
   const [whyIdx, setWhyIdx] = useState(null);
   const [routineIdx, setRoutineIdx] = useState(null);
@@ -721,7 +724,7 @@ export default function LifestyleMorningPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-cyan-400 transition-colors">
-        ← Lối Sống Khỏe
+        {hero.breadcrumb || '← Lối Sống Khỏe'}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
@@ -731,13 +734,13 @@ export default function LifestyleMorningPage() {
           🌅
         </div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Routine Buổi Sáng</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{hero.title || 'Routine Buổi Sáng'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
-            C2 — 5 / 10 / 20 phút
+            {hero.badge || 'C2 — 5 / 10 / 20 phút'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Buổi sáng không cần hoàn hảo. Chỉ cần bật cơ thể lên đúng cách. 5 phút đúng còn tốt hơn kế hoạch 1 tiếng không làm được.
+            {hero.desc || 'Buổi sáng không cần hoàn hảo. Chỉ cần bật cơ thể lên đúng cách. 5 phút đúng còn tốt hơn kế hoạch 1 tiếng không làm được.'}
           </p>
         </div>
       </div>
@@ -863,8 +866,8 @@ export default function LifestyleMorningPage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/circadian" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Nhịp Sinh Học</Link>
-        <Link to="/pillar/c/neat" className="text-lg font-semibold" style={{ color: COLOR }}>NEAT →</Link>
+        <Link to="/pillar/c/circadian" className="text-muted hover:text-cyan-400 transition-colors text-lg">{hero.nav_prev || '← Nhịp Sinh Học'}</Link>
+        <Link to="/pillar/c/neat" className="text-lg font-semibold" style={{ color: COLOR }}>{hero.nav_next || 'NEAT →'}</Link>
       </div>
 
       {/* ── Practical tips modal — outside all RevealBlocks ── */}

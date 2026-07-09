@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#06b6d4';
 const RGB = '6,182,212';
@@ -626,6 +627,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function LifestyleCircadianPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const hero = tPillars('pillarC.c_circadian_hero', { returnObjects: true }) || {};
   const [energyIdx, setEnergyIdx] = useState(null);
   const [lightIdx, setLightIdx] = useState(null);
   const [caffeineIdx, setCaffeineIdx] = useState(null);
@@ -652,7 +655,7 @@ export default function LifestyleCircadianPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-cyan-400 transition-colors">
-        ← Lối Sống Khỏe
+        {hero.breadcrumb || '← Lối Sống Khỏe'}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
@@ -662,13 +665,13 @@ export default function LifestyleCircadianPage() {
           ☀️
         </div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Nhịp Sinh Học & Năng Lượng</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{hero.title || 'Nhịp Sinh Học & Năng Lượng'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full"
             style={{ color: COLOR, background: `rgba(${RGB},0.1)`, border: `1px solid rgba(${RGB},0.2)` }}>
-            C2 — Circadian Rhythm · Năng lượng 24h
+            {hero.badge || 'C2 — Circadian Rhythm · Năng lượng 24h'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Cơ thể có đồng hồ sinh học 24h. Hiểu và sống theo nhịp này giúp bạn có năng lượng ổn định, ngủ tốt hơn và không cần dựa vào caffeine để tồn tại.
+            {hero.desc || 'Cơ thể có đồng hồ sinh học 24h. Hiểu và sống theo nhịp này giúp bạn có năng lượng ổn định, ngủ tốt hơn và không cần dựa vào caffeine để tồn tại.'}
           </p>
         </div>
       </div>
@@ -838,8 +841,8 @@ export default function LifestyleCircadianPage() {
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
-        <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-lg">← Routine Trước Ngủ</Link>
-        <Link to="/pillar/c/morning" className="text-lg font-semibold" style={{ color: COLOR }}>Routine Sáng →</Link>
+        <Link to="/pillar/c/sleep-routine" className="text-muted hover:text-cyan-400 transition-colors text-lg">{hero.nav_prev || '← Routine Trước Ngủ'}</Link>
+        <Link to="/pillar/c/morning" className="text-lg font-semibold" style={{ color: COLOR }}>{hero.nav_next || 'Routine Sáng →'}</Link>
       </div>
 
       {/* ── Tracker slots modal ── */}

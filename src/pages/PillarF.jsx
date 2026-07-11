@@ -2193,6 +2193,16 @@ export default function PillarF() {
     ...s,
     l: heroStatsTr[i]?.l || s.l,
   }));
+  const teaserSecsTr = Array.isArray(pillar?.f_teaser_sections) ? pillar.f_teaser_sections : [];
+  const mergedTeaserSections = TEASER_SECTIONS.map((sec, si) => {
+    const secTr = teaserSecsTr[si] || {};
+    const cardsTr = Array.isArray(secTr.cards) ? secTr.cards : [];
+    return {
+      ...sec,
+      title: secTr.title || sec.title,
+      cards: sec.cards.map((card, ci) => ({ ...card, ...(cardsTr[ci] || {}) })),
+    };
+  });
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -2300,9 +2310,9 @@ export default function PillarF() {
 
       {/* Sub-page Teaser Grid */}
       <RevealBlock delay={1} className="mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">Công Cụ & Tài Nguyên Chi Tiết</h2>
-        <p className="text-muted text-lg mb-10">11 chuyên đề chuyên sâu để bạn xây hệ thống sống khỏe hoàn chỉnh.</p>
-        {TEASER_SECTIONS.map((sec, i) => (
+        <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">{pillar?.f_explore_title || 'Công Cụ & Tài Nguyên Chi Tiết'}</h2>
+        <p className="text-muted text-lg mb-10">{pillar?.f_explore_sub || '11 chuyên đề chuyên sâu để bạn xây hệ thống sống khỏe hoàn chỉnh.'}</p>
+        {mergedTeaserSections.map((sec, i) => (
           <TeaserSection key={i} title={sec.title}>
             {sec.cards.map((card, j) => (
               <RevealBlock key={j} delay={j + 1}>

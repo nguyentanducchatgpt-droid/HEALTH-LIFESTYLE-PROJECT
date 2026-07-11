@@ -679,6 +679,38 @@ const INTENSITY_COLOR = { light: '#f97316', 'very-light': '#10b981', rest: '#6b7
 export default function LifestyleDeloadPage() {
   const { t: tPillars } = useTranslation('pillars');
   const hero = tPillars('pillarC.c_deload_hero', { returnObjects: true }) || {};
+  const s1Title = tPillars('pillarC.c_deload_s1_title') || 'Tại Sao Cần Deload?';
+  const s1Sub = tPillars('pillarC.c_deload_s1_sub') || 'Tập luyện = kích thích. Nghỉ ngơi = thích nghi. Thiếu nghỉ = không tiến bộ. Click để hiểu cơ chế khoa học.';
+  const s2Title = tPillars('pillarC.c_deload_s2_title') || '7 Dấu Hiệu Cần Deload Ngay';
+  const s2Sub = tPillars('pillarC.c_deload_s2_sub') || 'Khi nhận thấy 3+ dấu hiệu này, đừng "cố" — hãy deload có kế hoạch. Click để xem cơ chế chi tiết.';
+  const s3Title = tPillars('pillarC.c_deload_s3_title') || '4 Phương Pháp Deload';
+  const s3Sub = tPillars('pillarC.c_deload_s3_sub') || 'Chọn phương pháp phù hợp với mục tiêu và lịch tập của bạn. Click để xem hướng dẫn chi tiết.';
+  const s4Title = tPillars('pillarC.c_deload_s4_title') || 'Tần Suất Deload Theo Trình Độ';
+  const s4Sub = tPillars('pillarC.c_deload_s4_sub') || 'Càng tập lâu năm, cơ thể càng cần deload thường xuyên hơn. Click để xem hướng dẫn chi tiết.';
+  const freqCycleLabel = tPillars('pillarC.c_deload_freq_cycle_label') || 'Chu kỳ:';
+  const freqDurLabel = tPillars('pillarC.c_deload_freq_dur_label') || 'Thời gian:';
+  const s5Title = tPillars('pillarC.c_deload_s5_title') || 'Mẫu Tuần Deload';
+  const s5Sub = tPillars('pillarC.c_deload_s5_sub') || 'Kế hoạch 7 ngày cho người tập 4–5 buổi/tuần (Giảm Volume). Click để xem lý do khoa học.';
+  const severityHigh = tPillars('pillarC.c_deload_severity_high') || '⚠️ Cao';
+  const severityMed = tPillars('pillarC.c_deload_severity_med') || '⚡ TB';
+  const detailCta = tPillars('pillarC.c_deload_detail_cta') || 'Chi tiết →';
+  const intensityLight = tPillars('pillarC.c_deload_intensity_light') || 'Nhẹ';
+  const intensityVeryLight = tPillars('pillarC.c_deload_intensity_very_light') || 'Rất nhẹ';
+  const intensityRest = tPillars('pillarC.c_deload_intensity_rest') || 'Nghỉ';
+  const nutritionLabel = tPillars('pillarC.c_deload_nutrition_label') || 'Dinh dưỡng trong tuần deload:';
+  const nutritionBody = tPillars('pillarC.c_deload_nutrition_body') || 'Giữ nguyên protein. Có thể giảm nhẹ carb nếu thấy khó chịu với việc ăn nhiều mà tập ít hơn. Không cần "ăn ít đi" — cơ thể đang sửa chữa và cần dưỡng chất.';
+  const quoteText = tPillars('pillarC.c_deload_quote') || '"Người giỏi nhất không phải là người tập nhiều nhất — mà là người biết khi nào cần dừng để tăng tốc."';
+  const quoteCite = tPillars('pillarC.c_deload_quote_cite') || '— Nguyên tắc tập luyện dài hạn';
+  const trWhy = tPillars('pillarC.c_deload_why', { returnObjects: true });
+  const WHY_DELOAD_TR = Array.isArray(trWhy) ? WHY_DELOAD.map((it, i) => ({ ...it, ...(trWhy[i] || {}) })) : WHY_DELOAD;
+  const trSignals = tPillars('pillarC.c_deload_signals', { returnObjects: true });
+  const SIGNALS_TR = Array.isArray(trSignals) ? SIGNALS.map((it, i) => ({ ...it, ...(trSignals[i] || {}) })) : SIGNALS;
+  const trMethods = tPillars('pillarC.c_deload_methods', { returnObjects: true });
+  const METHODS_TR = Array.isArray(trMethods) ? METHODS.map((it, i) => ({ ...it, ...(trMethods[i] || {}) })) : METHODS;
+  const trFreq = tPillars('pillarC.c_deload_frequency', { returnObjects: true });
+  const FREQUENCY_TR = Array.isArray(trFreq) ? FREQUENCY.map((it, i) => ({ ...it, ...(trFreq[i] || {}) })) : FREQUENCY;
+  const trWeek = tPillars('pillarC.c_deload_week', { returnObjects: true });
+  const DELOAD_WEEK_TR = Array.isArray(trWeek) ? DELOAD_WEEK.map((it, i) => ({ ...it, ...(trWeek[i] || {}) })) : DELOAD_WEEK;
   const [methodIdx, setMethodIdx] = useState(null);
   const [frequencyIdx, setFrequencyIdx] = useState(null);
   const [deloadDayIdx, setDeloadDayIdx] = useState(null);
@@ -731,7 +763,7 @@ export default function LifestyleDeloadPage() {
           <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop" alt="Deload" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Deload = Đầu Tư Cho Tương Lai</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>{hero.img_caption || 'Deload = Đầu Tư Cho Tương Lai'}</span>
           </div>
         </div>
       </div>
@@ -740,10 +772,10 @@ export default function LifestyleDeloadPage() {
 
       {/* Why deload */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Cần Deload?</h2>
-        <p className="text-muted text-lg mb-6">Tập luyện = kích thích. Nghỉ ngơi = thích nghi. Thiếu nghỉ = không tiến bộ. Click để hiểu cơ chế khoa học.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s1Title}</h2>
+        <p className="text-muted text-lg mb-6">{s1Sub}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {WHY_DELOAD.map((item, i) => (
+          {WHY_DELOAD_TR.map((item, i) => (
             <div key={i}
               className="rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
               style={{ borderColor: `rgba(${item.rgb},0.2)`, background: `rgba(${item.rgb},0.04)` }}
@@ -752,7 +784,7 @@ export default function LifestyleDeloadPage() {
               <div className="text-lg font-bold text-text mb-2" style={{ color: item.color }}>{item.title}</div>
               <div className="text-base text-muted leading-relaxed mb-3">{item.desc}</div>
               <span className="text-xs font-bold px-2 py-1 rounded-lg"
-                style={{ color: item.color, background: `rgba(${item.rgb},0.12)` }}>Chi tiết →</span>
+                style={{ color: item.color, background: `rgba(${item.rgb},0.12)` }}>{detailCta}</span>
             </div>
           ))}
         </div>
@@ -760,10 +792,10 @@ export default function LifestyleDeloadPage() {
 
       {/* 7 Signals */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>7 Dấu Hiệu Cần Deload Ngay</h2>
-        <p className="text-muted text-lg mb-6">Khi nhận thấy 3+ dấu hiệu này, đừng "cố" — hãy deload có kế hoạch. Click để xem cơ chế chi tiết.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s2Title}</h2>
+        <p className="text-muted text-lg mb-6">{s2Sub}</p>
         <div className="space-y-2">
-          {SIGNALS.map((s, i) => (
+          {SIGNALS_TR.map((s, i) => (
             <div key={i}
               className="flex items-center gap-4 p-4 rounded-2xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${s.rgb},0.05)`, border: `1px solid rgba(${s.rgb},0.2)` }}
@@ -775,10 +807,10 @@ export default function LifestyleDeloadPage() {
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-0.5 rounded-full"
                 style={{ background: s.severity === 'cao' ? `rgba(${s.rgb},0.15)` : 'rgba(107,114,128,0.15)', color: s.severity === 'cao' ? s.color : '#9ca3af' }}>
-                {s.severity === 'cao' ? '⚠️ Cao' : '⚡ TB'}
+                {s.severity === 'cao' ? severityHigh : severityMed}
               </span>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: s.color, background: `rgba(${s.rgb},0.12)` }}>Chi tiết →</span>
+                style={{ color: s.color, background: `rgba(${s.rgb},0.12)` }}>{detailCta}</span>
             </div>
           ))}
         </div>
@@ -786,10 +818,10 @@ export default function LifestyleDeloadPage() {
 
       {/* 4 Methods */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Phương Pháp Deload</h2>
-        <p className="text-muted text-lg mb-6">Chọn phương pháp phù hợp với mục tiêu và lịch tập của bạn. Click để xem hướng dẫn chi tiết.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s3Title}</h2>
+        <p className="text-muted text-lg mb-6">{s3Sub}</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {METHODS.map((m, i) => (
+          {METHODS_TR.map((m, i) => (
             <div key={m.id}
               className="rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
               style={{ borderColor: `rgba(${m.rgb},0.2)`, background: `rgba(${m.rgb},0.05)` }}
@@ -798,7 +830,7 @@ export default function LifestyleDeloadPage() {
               <div className="font-bold text-base mb-1" style={{ color: m.color }}>{m.title.split('(')[0].trim()}</div>
               <div className="text-sm text-muted mb-3 leading-relaxed">{m.desc}</div>
               <span className="text-xs font-bold px-2 py-1 rounded-lg"
-                style={{ color: m.color, background: `rgba(${m.rgb},0.12)` }}>Chi tiết →</span>
+                style={{ color: m.color, background: `rgba(${m.rgb},0.12)` }}>{detailCta}</span>
             </div>
           ))}
         </div>
@@ -806,10 +838,10 @@ export default function LifestyleDeloadPage() {
 
       {/* Frequency by level */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tần Suất Deload Theo Trình Độ</h2>
-        <p className="text-muted text-lg mb-6">Càng tập lâu năm, cơ thể càng cần deload thường xuyên hơn. Click để xem hướng dẫn chi tiết.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s4Title}</h2>
+        <p className="text-muted text-lg mb-6">{s4Sub}</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {FREQUENCY.map((f, i) => (
+          {FREQUENCY_TR.map((f, i) => (
             <div key={i}
               className="rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
               style={{ borderColor: `rgba(${f.rgb},0.2)`, background: `rgba(${f.rgb},0.05)` }}
@@ -817,10 +849,10 @@ export default function LifestyleDeloadPage() {
               <div className="text-3xl mb-3">{f.icon}</div>
               <div className="font-bold text-base mb-0.5" style={{ color: f.color }}>{f.level}</div>
               <div className="text-xs font-bold uppercase tracking-widest mb-3 opacity-60" style={{ color: f.color }}>{f.tag}</div>
-              <div className="text-sm text-muted mb-1"><span className="font-semibold text-text">Chu kỳ:</span> {f.freq}</div>
-              <div className="text-sm text-muted mb-3"><span className="font-semibold text-text">Thời gian:</span> {f.duration}</div>
+              <div className="text-sm text-muted mb-1"><span className="font-semibold text-text">{freqCycleLabel}</span> {f.freq}</div>
+              <div className="text-sm text-muted mb-3"><span className="font-semibold text-text">{freqDurLabel}</span> {f.duration}</div>
               <span className="text-xs font-bold px-2 py-1 rounded-lg"
-                style={{ color: f.color, background: `rgba(${f.rgb},0.12)` }}>Chi tiết →</span>
+                style={{ color: f.color, background: `rgba(${f.rgb},0.12)` }}>{detailCta}</span>
             </div>
           ))}
         </div>
@@ -828,10 +860,10 @@ export default function LifestyleDeloadPage() {
 
       {/* Sample deload week */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẫu Tuần Deload</h2>
-        <p className="text-muted text-lg mb-6">Kế hoạch 7 ngày cho người tập 4–5 buổi/tuần (Giảm Volume). Click để xem lý do khoa học.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s5Title}</h2>
+        <p className="text-muted text-lg mb-6">{s5Sub}</p>
         <div className="space-y-2">
-          {DELOAD_WEEK.map((d, i) => (
+          {DELOAD_WEEK_TR.map((d, i) => (
             <div key={i}
               className="flex items-center gap-4 rounded-xl p-3 border cursor-pointer transition-all duration-200 hover:scale-[1.01] hover:shadow-md"
               style={{ borderColor: `rgba(${d.rgb},0.2)`, background: `rgba(${d.rgb},0.04)` }}
@@ -843,7 +875,7 @@ export default function LifestyleDeloadPage() {
                 <div className="text-base text-muted">{d.desc}</div>
               </div>
               <div className="text-base px-2 py-0.5 rounded-full font-bold shrink-0" style={{ background: `${INTENSITY_COLOR[d.intensity]}20`, color: INTENSITY_COLOR[d.intensity] }}>
-                {d.intensity === 'light' ? 'Nhẹ' : d.intensity === 'very-light' ? 'Rất nhẹ' : 'Nghỉ'}
+                {d.intensity === 'light' ? intensityLight : d.intensity === 'very-light' ? intensityVeryLight : intensityRest}
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
                 style={{ color: d.color, background: `rgba(${d.rgb},0.12)` }}>→</span>
@@ -851,7 +883,7 @@ export default function LifestyleDeloadPage() {
           ))}
         </div>
         <div className="mt-4 rounded-xl p-4 text-lg text-muted border border-border" style={{ background: `rgba(${RGB},0.05)` }}>
-          💡 <strong style={{ color: COLOR }}>Dinh dưỡng trong tuần deload:</strong> Giữ nguyên protein. Có thể giảm nhẹ carb nếu thấy khó chịu với việc ăn nhiều mà tập ít hơn. Không cần "ăn ít đi" — cơ thể đang sửa chữa và cần dưỡng chất.
+          💡 <strong style={{ color: COLOR }}>{nutritionLabel}</strong> {nutritionBody}
         </div>
       </RevealBlock>
 
@@ -859,8 +891,8 @@ export default function LifestyleDeloadPage() {
       <RevealBlock className="mb-12">
         <blockquote className="rounded-2xl p-6 border-l-4 relative overflow-hidden" style={{ borderLeftColor: COLOR, background: `rgba(${RGB},0.05)` }}>
           <div className="text-5xl absolute right-6 top-4 opacity-10" style={{ color: COLOR }}>"</div>
-          <p className="text-xl font-medium text-text leading-relaxed italic">"Người giỏi nhất không phải là người tập nhiều nhất — mà là người biết khi nào cần dừng để tăng tốc."</p>
-          <cite className="text-base text-muted mt-3 block">— Nguyên tắc tập luyện dài hạn</cite>
+          <p className="text-xl font-medium text-text leading-relaxed italic">{quoteText}</p>
+          <cite className="text-base text-muted mt-3 block">{quoteCite}</cite>
         </blockquote>
       </RevealBlock>
 
@@ -883,7 +915,7 @@ export default function LifestyleDeloadPage() {
       {/* ── Deload day modal — outside all RevealBlocks ── */}
       {deloadDayIdx !== null && (
         <DeloadModal
-          item={DELOAD_WEEK[deloadDayIdx]}
+          item={DELOAD_WEEK_TR[deloadDayIdx]}
           idx={deloadDayIdx}
           total={DELOAD_WEEK.length}
           onClose={() => setDeloadDayIdx(null)}
@@ -897,7 +929,7 @@ export default function LifestyleDeloadPage() {
       {/* ── Frequency modal — outside all RevealBlocks ── */}
       {frequencyIdx !== null && (
         <DeloadModal
-          item={FREQUENCY[frequencyIdx]}
+          item={FREQUENCY_TR[frequencyIdx]}
           idx={frequencyIdx}
           total={FREQUENCY.length}
           onClose={() => setFrequencyIdx(null)}
@@ -911,7 +943,7 @@ export default function LifestyleDeloadPage() {
       {/* ── Methods modal — outside all RevealBlocks ── */}
       {methodIdx !== null && (
         <DeloadModal
-          item={{ ...METHODS[methodIdx], modalTitle: METHODS[methodIdx].title }}
+          item={{ ...METHODS_TR[methodIdx], modalTitle: METHODS_TR[methodIdx].title }}
           idx={methodIdx}
           total={METHODS.length}
           onClose={() => setMethodIdx(null)}
@@ -925,7 +957,7 @@ export default function LifestyleDeloadPage() {
       {/* ── Signals modal — outside all RevealBlocks ── */}
       {signalIdx !== null && (
         <DeloadModal
-          item={{ ...SIGNALS[signalIdx], modalTitle: SIGNALS[signalIdx].title }}
+          item={{ ...SIGNALS_TR[signalIdx], modalTitle: SIGNALS_TR[signalIdx].title }}
           idx={signalIdx}
           total={SIGNALS.length}
           onClose={() => setSignalIdx(null)}
@@ -939,7 +971,7 @@ export default function LifestyleDeloadPage() {
       {/* ── Why deload modal — outside all RevealBlocks ── */}
       {whyIdx !== null && (
         <DeloadModal
-          item={WHY_DELOAD[whyIdx]}
+          item={WHY_DELOAD_TR[whyIdx]}
           idx={whyIdx}
           total={WHY_DELOAD.length}
           onClose={() => setWhyIdx(null)}

@@ -450,7 +450,26 @@ export default function LifestyleBreathingPage() {
     return () => document.getElementById(ORBIT_ID)?.remove();
   }, []);
 
-  const tech = TECHNIQUES.find(t => t.id === activeTech);
+  const trTech = tPillars('pillarC.c_breath_techniques', { returnObjects: true });
+  const techniques = Array.isArray(trTech) ? TECHNIQUES.map((it, i) => ({ ...it, ...(trTech[i] || {}) })) : TECHNIQUES;
+  const trSci = tPillars('pillarC.c_breath_science', { returnObjects: true });
+  const science = Array.isArray(trSci) ? SCIENCE.map((it, i) => ({ ...it, ...(trSci[i] || {}) })) : SCIENCE;
+  const trDP = tPillars('pillarC.c_breath_daily_plan', { returnObjects: true });
+  const dailyPlan = Array.isArray(trDP) ? DAILY_PLAN.map((it, i) => ({ ...it, ...(trDP[i] || {}) })) : DAILY_PLAN;
+
+  const sec1Title = tPillars('pillarC.c_breath_sec1_title');
+  const sec1Desc = tPillars('pillarC.c_breath_sec1_desc');
+  const sec2Title = tPillars('pillarC.c_breath_sec2_title');
+  const sec2Desc = tPillars('pillarC.c_breath_sec2_desc');
+  const sec2How = tPillars('pillarC.c_breath_sec2_how');
+  const sec2Benefits = tPillars('pillarC.c_breath_sec2_benefits');
+  const sec2When = tPillars('pillarC.c_breath_sec2_when');
+  const timerTitle = tPillars('pillarC.c_breath_timer_title');
+  const timerDesc = tPillars('pillarC.c_breath_timer_desc');
+  const dailyTitle = tPillars('pillarC.c_breath_daily_title');
+  const dailyDesc = tPillars('pillarC.c_breath_daily_desc');
+
+  const tech = techniques.find(t => t.id === activeTech);
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
@@ -474,7 +493,7 @@ export default function LifestyleBreathingPage() {
           <img src="https://images.unsplash.com/photo-1518609571773-39b7d303a87b?w=800&q=80&auto=format&fit=crop" alt="Breathing" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Hít thở có chủ ý · 3 kỹ thuật khoa học</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>{hero.img_caption || 'Hít thở có chủ ý · 3 kỹ thuật khoa học'}</span>
           </div>
         </div>
       </div>
@@ -483,10 +502,10 @@ export default function LifestyleBreathingPage() {
 
       {/* Science section */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Khoa Học Đằng Sau Hơi Thở</h2>
-        <p className="text-muted text-lg mb-6">Thở là công cụ duy nhất bạn có thể điều khiển cả hệ tự chủ và ý thức. Click để xem cơ chế chi tiết.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{sec1Title}</h2>
+        <p className="text-muted text-lg mb-6">{sec1Desc}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {SCIENCE.map((s, i) => (
+          {science.map((s, i) => (
             <div key={s.title}
               className="rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
               style={{ borderColor: `rgba(${s.rgb},0.2)`, background: `rgba(${s.rgb},0.05)` }}
@@ -503,11 +522,11 @@ export default function LifestyleBreathingPage() {
 
       {/* 3 techniques */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Kỹ Thuật Thở Cốt Lõi</h2>
-        <p className="text-muted text-lg mb-6">Mỗi kỹ thuật có mục đích khác nhau — chọn đúng thời điểm để hiệu quả tối đa.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{sec2Title}</h2>
+        <p className="text-muted text-lg mb-6">{sec2Desc}</p>
 
         <div className="flex gap-2 mb-6 flex-wrap">
-          {TECHNIQUES.map(t => (
+          {techniques.map(t => (
             <button key={t.id} onClick={() => setActiveTech(t.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-lg font-medium transition-all border ${activeTech === t.id ? 'text-white' : 'text-muted border-border hover:border-sky-500/30'}`} style={{ background: activeTech === t.id ? t.color : undefined, borderColor: activeTech === t.id ? t.color : undefined }}>
               <span>{t.icon}</span>{t.title}
             </button>
@@ -527,7 +546,7 @@ export default function LifestyleBreathingPage() {
 
             <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>Cách Thực Hiện</div>
+                <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>{sec2How}</div>
                 <ol className="space-y-2">
                   {tech.steps.map((step, i) => (
                     <li key={i} className="flex items-start gap-3 text-lg text-text">
@@ -539,7 +558,7 @@ export default function LifestyleBreathingPage() {
               </div>
               <div className="space-y-4">
                 <div>
-                  <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>Lợi Ích</div>
+                  <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: tech.color }}>{sec2Benefits}</div>
                   <ul className="space-y-1">
                     {tech.benefits.map((b, i) => (
                       <li key={i} className="flex items-start gap-2 text-lg text-text"><span style={{ color: tech.color }}>✓</span>{b}</li>
@@ -547,7 +566,7 @@ export default function LifestyleBreathingPage() {
                   </ul>
                 </div>
                 <div className="rounded-xl p-3" style={{ background: `${tech.color}10` }}>
-                  <div className="text-base text-muted mb-1">⏰ Khi nào dùng</div>
+                  <div className="text-base text-muted mb-1">⏰ {sec2When}</div>
                   <div className="text-lg text-text font-medium">{tech.when}</div>
                   <div className="text-base text-muted mt-1">🕐 {tech.duration}</div>
                 </div>
@@ -559,8 +578,8 @@ export default function LifestyleBreathingPage() {
 
       {/* Interactive box breathing timer */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Box Breathing Timer</h2>
-        <p className="text-muted text-lg mb-6">Thực hành ngay — timer sẽ hướng dẫn từng bước theo nhịp 4-4-4-4.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{timerTitle}</h2>
+        <p className="text-muted text-lg mb-6">{timerDesc}</p>
         <div className="max-w-xs mx-auto">
           <BoxBreathingTimer />
         </div>
@@ -568,10 +587,10 @@ export default function LifestyleBreathingPage() {
 
       {/* Daily plan */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Kế Hoạch Thở Hằng Ngày</h2>
-        <p className="text-muted text-lg mb-6">Tích hợp 3 kỹ thuật vào thói quen hiện tại — không cần thêm thời gian riêng. Click để xem hướng dẫn chi tiết.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{dailyTitle}</h2>
+        <p className="text-muted text-lg mb-6">{dailyDesc}</p>
         <div className="space-y-3">
-          {DAILY_PLAN.map((item, i) => (
+          {dailyPlan.map((item, i) => (
             <div key={i}
               className="flex items-center gap-4 rounded-xl p-4 border cursor-pointer transition-all duration-200 hover:scale-[1.01] hover:shadow-md"
               style={{ borderColor: `rgba(${item.rgb},0.2)`, background: `rgba(${item.rgb},0.04)` }}
@@ -595,28 +614,28 @@ export default function LifestyleBreathingPage() {
       {/* ── Daily plan modal — outside all RevealBlocks ── */}
       {dailyPlanIdx !== null && (
         <BreathingModal
-          item={DAILY_PLAN[dailyPlanIdx]}
+          item={dailyPlan[dailyPlanIdx]}
           idx={dailyPlanIdx}
-          total={DAILY_PLAN.length}
+          total={dailyPlan.length}
           onClose={() => setDailyPlanIdx(null)}
           onPrev={() => setDailyPlanIdx(i => Math.max(0, i - 1))}
-          onNext={() => setDailyPlanIdx(i => Math.min(DAILY_PLAN.length - 1, i + 1))}
+          onNext={() => setDailyPlanIdx(i => Math.min(dailyPlan.length - 1, i + 1))}
           hasPrev={dailyPlanIdx > 0}
-          hasNext={dailyPlanIdx < DAILY_PLAN.length - 1}
+          hasNext={dailyPlanIdx < dailyPlan.length - 1}
         />
       )}
 
       {/* ── Science modal — outside all RevealBlocks ── */}
       {scienceIdx !== null && (
         <BreathingModal
-          item={SCIENCE[scienceIdx]}
+          item={science[scienceIdx]}
           idx={scienceIdx}
-          total={SCIENCE.length}
+          total={science.length}
           onClose={() => setScienceIdx(null)}
           onPrev={() => setScienceIdx(i => Math.max(0, i - 1))}
-          onNext={() => setScienceIdx(i => Math.min(SCIENCE.length - 1, i + 1))}
+          onNext={() => setScienceIdx(i => Math.min(science.length - 1, i + 1))}
           hasPrev={scienceIdx > 0}
-          hasNext={scienceIdx < SCIENCE.length - 1}
+          hasNext={scienceIdx < science.length - 1}
         />
       )}
 

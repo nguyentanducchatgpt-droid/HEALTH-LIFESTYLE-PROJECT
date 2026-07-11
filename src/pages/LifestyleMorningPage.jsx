@@ -663,7 +663,7 @@ function MorningModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasN
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
               ← Trước
             </button>
-            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total ?? WHY_MORNING.length}</span>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
@@ -719,7 +719,28 @@ export default function LifestyleMorningPage() {
     return () => { const el = document.getElementById(id); if (el) el.remove(); };
   }, []);
 
-  const routines = { '5': ROUTINE_5, '10': ROUTINE_10, '20': ROUTINE_20 };
+  const trR5 = tPillars('pillarC.c_morning_routine5', { returnObjects: true });
+  const routine5 = Array.isArray(trR5) ? ROUTINE_5.map((it, i) => ({ ...it, ...(trR5[i] || {}) })) : ROUTINE_5;
+  const trR10 = tPillars('pillarC.c_morning_routine10', { returnObjects: true });
+  const routine10 = Array.isArray(trR10) ? ROUTINE_10.map((it, i) => ({ ...it, ...(trR10[i] || {}) })) : ROUTINE_10;
+  const trR20 = tPillars('pillarC.c_morning_routine20', { returnObjects: true });
+  const routine20 = Array.isArray(trR20) ? ROUTINE_20.map((it, i) => ({ ...it, ...(trR20[i] || {}) })) : ROUTINE_20;
+  const trM5 = tPillars('pillarC.c_morning_mobility5', { returnObjects: true });
+  const mobility5 = Array.isArray(trM5) ? MOBILITY_5.map((it, i) => ({ ...it, ...(trM5[i] || {}) })) : MOBILITY_5;
+  const trWhy = tPillars('pillarC.c_morning_why', { returnObjects: true });
+  const whyMorning = Array.isArray(trWhy) ? WHY_MORNING.map((it, i) => ({ ...it, ...(trWhy[i] || {}) })) : WHY_MORNING;
+  const trTips = tPillars('pillarC.c_morning_tips', { returnObjects: true });
+  const practicalTips = Array.isArray(trTips) ? PRACTICAL_TIPS.map((it, i) => ({ ...it, ...(trTips[i] || {}) })) : PRACTICAL_TIPS;
+  const mornS1Title = tPillars('pillarC.c_morn_s1_title') || 'Tại Sao Buổi Sáng Quan Trọng?';
+  const mornS1Sub = tPillars('pillarC.c_morn_s1_sub') || 'Những gì bạn làm trong 30–60 phút đầu tiên thiết lập tone cho cả ngày.';
+  const mornS2Title = tPillars('pillarC.c_morn_s2_title') || '3 Phiên Bản Routine';
+  const mornS2Sub = tPillars('pillarC.c_morn_s2_sub') || 'Chọn phiên bản phù hợp với ngày hôm nay.';
+  const mornS3Title = tPillars('pillarC.c_morn_s3_title') || 'Mobility Sáng 5 Phút';
+  const mornS3Sub = tPillars('pillarC.c_morn_s3_sub') || 'Bài mobility nhẹ buổi sáng giảm cứng khớp, cải thiện tư thế và chuẩn bị cơ thể cho ngày làm việc.';
+  const mornS4Title = tPillars('pillarC.c_morn_s4_title') || 'Mẹo Thực Tế';
+  const mornCaption = tPillars('pillarC.c_morn_caption') || 'Nước · Ánh sáng · Vận động nhẹ';
+  const mornDetailLabel = tPillars('pillarC.c_morn_detail_label') || 'Chi tiết →';
+  const routines = { '5': routine5, '10': routine10, '20': routine20 };
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
@@ -754,7 +775,7 @@ export default function LifestyleMorningPage() {
             <div className="absolute bottom-4 left-6">
               <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
-                Nước · Ánh sáng · Vận động nhẹ
+                {mornCaption}
               </span>
             </div>
           </div>
@@ -765,10 +786,10 @@ export default function LifestyleMorningPage() {
 
       {/* Why morning matters */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Buổi Sáng Quan Trọng?</h2>
-        <p className="text-muted text-lg mb-6">Những gì bạn làm trong 30–60 phút đầu tiên thiết lập tone cho cả ngày.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{mornS1Title}</h2>
+        <p className="text-muted text-lg mb-6">{mornS1Sub}</p>
         <div className="grid gap-3">
-          {WHY_MORNING.map((item, i) => (
+          {whyMorning.map((item, i) => (
             <div key={i}
               className="flex gap-3 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.15)` }}
@@ -779,7 +800,7 @@ export default function LifestyleMorningPage() {
                 <p className="text-muted text-base leading-relaxed">{item.desc}</p>
               </div>
               <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
-                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>{mornDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -787,8 +808,8 @@ export default function LifestyleMorningPage() {
 
       {/* Routine plans */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Phiên Bản Routine</h2>
-        <p className="text-muted text-lg mb-5">Chọn phiên bản phù hợp với ngày hôm nay. Ngày bận = 5 phút. Ngày thường = 10 phút. Ngày rảnh = 20 phút.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{mornS2Title}</h2>
+        <p className="text-muted text-lg mb-5">{mornS2Sub}</p>
         <div className="flex gap-2 mb-6">
           {['5', '10', '20'].map(m => (
             <button key={m} onClick={() => setMode(m)}
@@ -815,7 +836,7 @@ export default function LifestyleMorningPage() {
               </div>
               <div className="text-sm font-semibold tabular-nums shrink-0" style={{ color: row.color ?? COLOR }}>{row.time}</div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: row.color ?? COLOR, background: `rgba(${row.rgb ?? RGB},0.1)` }}>Chi tiết →</span>
+                style={{ color: row.color ?? COLOR, background: `rgba(${row.rgb ?? RGB},0.1)` }}>{mornDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -823,10 +844,10 @@ export default function LifestyleMorningPage() {
 
       {/* Mobility */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mobility Sáng 5 Phút</h2>
-        <p className="text-muted text-lg mb-6">Bài mobility nhẹ buổi sáng giảm cứng khớp, cải thiện tư thế và chuẩn bị cơ thể cho ngày làm việc.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{mornS3Title}</h2>
+        <p className="text-muted text-lg mb-6">{mornS3Sub}</p>
         <div className="space-y-2">
-          {MOBILITY_5.map((ex, i) => (
+          {mobility5.map((ex, i) => (
             <div key={i}
               className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${ex.rgb},0.05)`, border: `1px solid rgba(${ex.rgb},0.18)` }}
@@ -838,7 +859,7 @@ export default function LifestyleMorningPage() {
               </div>
               <div className="text-sm font-semibold tabular-nums shrink-0" style={{ color: ex.color }}>{ex.reps}</div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: ex.color, background: `rgba(${ex.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: ex.color, background: `rgba(${ex.rgb},0.1)` }}>{mornDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -846,9 +867,9 @@ export default function LifestyleMorningPage() {
 
       {/* Practical tips */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẹo Thực Tế</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{mornS4Title}</h2>
         <div className="grid gap-3">
-          {PRACTICAL_TIPS.map((item, i) => (
+          {practicalTips.map((item, i) => (
             <div key={i}
               className="flex gap-3 items-start p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.18)` }}
@@ -859,7 +880,7 @@ export default function LifestyleMorningPage() {
                 <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
               </div>
               <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
-                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>{mornDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -873,42 +894,42 @@ export default function LifestyleMorningPage() {
       {/* ── Practical tips modal — outside all RevealBlocks ── */}
       {tipIdx !== null && (
         <MorningModal
-          item={PRACTICAL_TIPS[tipIdx]}
+          item={practicalTips[tipIdx]}
           idx={tipIdx}
-          total={PRACTICAL_TIPS.length}
+          total={practicalTips.length}
           onClose={() => setTipIdx(null)}
           onPrev={() => setTipIdx(i => Math.max(0, i - 1))}
-          onNext={() => setTipIdx(i => Math.min(PRACTICAL_TIPS.length - 1, i + 1))}
+          onNext={() => setTipIdx(i => Math.min(practicalTips.length - 1, i + 1))}
           hasPrev={tipIdx > 0}
-          hasNext={tipIdx < PRACTICAL_TIPS.length - 1}
+          hasNext={tipIdx < practicalTips.length - 1}
         />
       )}
 
       {/* ── Why morning modal — outside all RevealBlocks ── */}
       {whyIdx !== null && (
         <MorningModal
-          item={WHY_MORNING[whyIdx]}
+          item={whyMorning[whyIdx]}
           idx={whyIdx}
-          total={WHY_MORNING.length}
+          total={whyMorning.length}
           onClose={() => setWhyIdx(null)}
           onPrev={() => setWhyIdx(i => Math.max(0, i - 1))}
-          onNext={() => setWhyIdx(i => Math.min(WHY_MORNING.length - 1, i + 1))}
+          onNext={() => setWhyIdx(i => Math.min(whyMorning.length - 1, i + 1))}
           hasPrev={whyIdx > 0}
-          hasNext={whyIdx < WHY_MORNING.length - 1}
+          hasNext={whyIdx < whyMorning.length - 1}
         />
       )}
 
       {/* ── Mobility modal — outside all RevealBlocks ── */}
       {mobilityIdx !== null && (
         <MorningModal
-          item={MOBILITY_5[mobilityIdx]}
+          item={mobility5[mobilityIdx]}
           idx={mobilityIdx}
-          total={MOBILITY_5.length}
+          total={mobility5.length}
           onClose={() => setMobilityIdx(null)}
           onPrev={() => setMobilityIdx(i => Math.max(0, i - 1))}
-          onNext={() => setMobilityIdx(i => Math.min(MOBILITY_5.length - 1, i + 1))}
+          onNext={() => setMobilityIdx(i => Math.min(mobility5.length - 1, i + 1))}
           hasPrev={mobilityIdx > 0}
-          hasNext={mobilityIdx < MOBILITY_5.length - 1}
+          hasNext={mobilityIdx < mobility5.length - 1}
         />
       )}
 

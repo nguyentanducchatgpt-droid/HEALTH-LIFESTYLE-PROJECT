@@ -738,7 +738,7 @@ const PRINCIPLES = [
   },
 ];
 
-function EnvModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+function EnvModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext, labels = {} }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -800,16 +800,16 @@ function EnvModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext 
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
-              ← Trước
+              {labels.prev || '← Trước'}
             </button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {total}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
-              Sau →
+              {labels.next || 'Sau →'}
             </button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{labels.hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>
@@ -819,6 +819,45 @@ function EnvModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext 
 export default function LifestyleEnvironmentPage() {
   const { t: tPillars } = useTranslation('pillars');
   const hero = tPillars('pillarC.c_environment_hero', { returnObjects: true }) || {};
+  const s1Title = tPillars('pillarC.c_env_s1_title') || 'Nguyên Tắc Cốt Lõi — Click để xem chi tiết';
+  const s2Title = tPillars('pillarC.c_env_s2_title') || '3 Không Gian Cần Thiết Kế';
+  const s2Sub = tPillars('pillarC.c_env_s2_sub') || 'Tối ưu hóa từng giai đoạn trong ngày bắt đầu từ môi trường xung quanh bạn.';
+  const itemHint = tPillars('pillarC.c_env_item_hint') || 'Click vào từng mục để xem chi tiết khoa học';
+  const detailCta = tPillars('pillarC.c_env_detail_cta') || 'Chi tiết →';
+  const s3Title = tPillars('pillarC.c_env_s3_title') || '8 Thay Đổi Nhanh, Tác Động Lớn';
+  const s3Sub = tPillars('pillarC.c_env_s3_sub') || 'Bắt đầu với những gì dễ nhất — ngay hôm nay, không cần kế hoạch phức tạp.';
+  const s4Title = tPillars('pillarC.c_env_s4_title') || 'Thử Thách 30 Ngày';
+  const s4Sub = tPillars('pillarC.c_env_s4_sub') || 'Thực hiện từng thay đổi theo tuần — không làm tất cả một lúc.';
+  const weekHint = tPillars('pillarC.c_env_week_hint') || 'Click vào từng tuần để xem kế hoạch chi tiết';
+  const impactHigh = tPillars('pillarC.c_env_impact_high') || 'Cao';
+  const impactMed = tPillars('pillarC.c_env_impact_med') || 'Trung bình';
+  const prevLabel = tPillars('pillarC.c_env_prev') || '← Trước';
+  const nextLabel = tPillars('pillarC.c_env_next') || 'Sau →';
+  const modalHint = tPillars('pillarC.c_env_modal_hint') || 'Nhấn ESC hoặc click bên ngoài để đóng';
+  const imgCaption = tPillars('pillarC.c_env_img_caption') || 'Môi trường quyết định hành vi · 3 không gian sống';
+  const impactLabels = { 'Cao': impactHigh, 'Trung bình': impactMed };
+  const trZones = tPillars('pillarC.c_env_zones', { returnObjects: true });
+  const ENV_ZONES_TR = Array.isArray(trZones)
+    ? ENV_ZONES.map((z, zi) => {
+        const tz = trZones[zi] || {};
+        return {
+          ...z,
+          title: tz.title || z.title,
+          subtitle: tz.subtitle || z.subtitle,
+          tabLabel: tz.tabLabel,
+          items: z.items.map((item, ii) => {
+            const ti = (tz.items || [])[ii] || {};
+            return { ...item, title: ti.title || item.title, desc: ti.desc || item.desc };
+          }),
+        };
+      })
+    : ENV_ZONES;
+  const trQW = tPillars('pillarC.c_env_quick_wins', { returnObjects: true });
+  const QUICK_WINS_TR = Array.isArray(trQW) ? QUICK_WINS.map((w, i) => ({ ...w, ...(trQW[i] || {}) })) : QUICK_WINS;
+  const trWeeks = tPillars('pillarC.c_env_weeks', { returnObjects: true });
+  const WEEKS_TR = Array.isArray(trWeeks) ? WEEKS.map((w, i) => ({ ...w, ...(trWeeks[i] || {}) })) : WEEKS;
+  const trPrinciples = tPillars('pillarC.c_env_principles', { returnObjects: true });
+  const PRINCIPLES_TR = Array.isArray(trPrinciples) ? PRINCIPLES.map((p, i) => ({ ...p, ...(trPrinciples[i] || {}) })) : PRINCIPLES;
   const [activeZone, setActiveZone] = useState('morning');
   const [principleIdx, setPrincipleIdx] = useState(null);
   const [zoneItemIdx, setZoneItemIdx] = useState(null);
@@ -846,7 +885,7 @@ export default function LifestyleEnvironmentPage() {
     return () => document.getElementById(ORBIT_ID)?.remove();
   }, []);
 
-  const zone = ENV_ZONES.find(z => z.id === activeZone);
+  const zone = ENV_ZONES_TR.find(z => z.id === activeZone);
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
@@ -870,7 +909,7 @@ export default function LifestyleEnvironmentPage() {
           <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop" alt="Environment Design" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>Môi trường quyết định hành vi · 3 không gian sống</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>{imgCaption}</span>
           </div>
         </div>
       </div>
@@ -880,9 +919,9 @@ export default function LifestyleEnvironmentPage() {
       {/* Core principle */}
       <RevealBlock className="mb-12">
         <div className="rounded-2xl p-5 border" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
-          <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>Nguyên Tắc Cốt Lõi — Click để xem chi tiết</div>
+          <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>{s1Title}</div>
           <div className="grid md:grid-cols-3 gap-4">
-            {PRINCIPLES.map((p, i) => (
+            {PRINCIPLES_TR.map((p, i) => (
               <div key={p.title}
                 className="rounded-xl p-4 border cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
                 style={{ borderColor: `rgba(${p.rgb},0.2)`, background: `rgba(${p.rgb},0.06)` }}
@@ -891,7 +930,7 @@ export default function LifestyleEnvironmentPage() {
                 <div className="text-lg font-bold mb-1" style={{ color: p.color }}>{p.title}</div>
                 <div className="text-base text-muted leading-relaxed mb-3">{p.desc}</div>
                 <span className="text-xs font-bold px-2 py-1 rounded-lg"
-                  style={{ color: p.color, background: `rgba(${p.rgb},0.12)` }}>Chi tiết →</span>
+                  style={{ color: p.color, background: `rgba(${p.rgb},0.12)` }}>{detailCta}</span>
               </div>
             ))}
           </div>
@@ -900,13 +939,13 @@ export default function LifestyleEnvironmentPage() {
 
       {/* 3 Environment zones */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Không Gian Cần Thiết Kế</h2>
-        <p className="text-muted text-lg mb-6">Tối ưu hóa từng giai đoạn trong ngày bắt đầu từ môi trường xung quanh bạn.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s2Title}</h2>
+        <p className="text-muted text-lg mb-6">{s2Sub}</p>
 
         <div className="flex gap-2 mb-6 flex-wrap">
-          {ENV_ZONES.map(z => (
+          {ENV_ZONES_TR.map(z => (
             <button key={z.id} onClick={() => setActiveZone(z.id)} className={`flex items-center gap-2 px-4 py-2 rounded-full text-lg font-medium transition-all border ${activeZone === z.id ? 'text-white' : 'text-muted border-border hover:border-rose-500/30'}`} style={{ background: activeZone === z.id ? z.color : undefined, borderColor: activeZone === z.id ? z.color : undefined }}>
-              <span>{z.icon}</span>{z.title.replace('Môi Trường ', '')}
+              <span>{z.icon}</span>{z.tabLabel || z.title.replace('Môi Trường ', '')}
             </button>
           ))}
         </div>
@@ -920,7 +959,7 @@ export default function LifestyleEnvironmentPage() {
                 <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: zone.color }}>{zone.subtitle}</div>
               </div>
             </div>
-            <p className="text-sm text-muted mb-3 opacity-60">Click vào từng mục để xem chi tiết khoa học</p>
+            <p className="text-sm text-muted mb-3 opacity-60">{itemHint}</p>
             <div className="space-y-3">
               {zone.items.map((item, i) => (
                 <div key={i}
@@ -933,7 +972,7 @@ export default function LifestyleEnvironmentPage() {
                     <div className="text-base text-muted leading-relaxed mt-0.5">{item.desc}</div>
                   </div>
                   <span className="text-xs font-bold px-2 py-1 rounded-lg shrink-0 self-start mt-1"
-                    style={{ color: item.color, background: `rgba(${item.rgb},0.12)` }}>Chi tiết →</span>
+                    style={{ color: item.color, background: `rgba(${item.rgb},0.12)` }}>{detailCta}</span>
                 </div>
               ))}
             </div>
@@ -943,11 +982,11 @@ export default function LifestyleEnvironmentPage() {
 
       {/* Quick wins cards */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>8 Thay Đổi Nhanh, Tác Động Lớn</h2>
-        <p className="text-muted text-lg mb-2">Bắt đầu với những gì dễ nhất — ngay hôm nay, không cần kế hoạch phức tạp.</p>
-        <p className="text-sm text-muted mb-6 opacity-60">Click vào từng mục để xem chi tiết khoa học</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s3Title}</h2>
+        <p className="text-muted text-lg mb-2">{s3Sub}</p>
+        <p className="text-sm text-muted mb-6 opacity-60">{itemHint}</p>
         <div className="space-y-2">
-          {QUICK_WINS.map((w, i) => (
+          {QUICK_WINS_TR.map((w, i) => (
             <div key={i}
               className="flex items-center gap-4 p-4 rounded-2xl border cursor-pointer transition-all duration-200 hover:scale-[1.01] hover:shadow-lg"
               style={{ borderColor: `rgba(${w.rgb},0.2)`, background: `rgba(${w.rgb},0.05)` }}
@@ -956,7 +995,7 @@ export default function LifestyleEnvironmentPage() {
               <div className="flex-1 min-w-0">
                 <span className="text-base font-bold" style={{ color: w.color }}>{w.title}</span>
               </div>
-              <span className="px-2 py-0.5 rounded-full text-sm font-bold shrink-0" style={{ background: `${IMPACT_COLOR[w.impact]}20`, color: IMPACT_COLOR[w.impact] }}>{w.impact}</span>
+              <span className="px-2 py-0.5 rounded-full text-sm font-bold shrink-0" style={{ background: `${IMPACT_COLOR[w.impact]}20`, color: IMPACT_COLOR[w.impact] }}>{impactLabels[w.impact] || w.impact}</span>
               <span className="text-sm text-muted shrink-0 hidden sm:block">{w.time}</span>
               <span className="text-sm text-muted shrink-0 hidden sm:block">{w.cost}</span>
               <span className="text-xs font-bold px-2 py-1 rounded-lg shrink-0" style={{ color: w.color, background: `rgba(${w.rgb},0.12)` }}>→</span>
@@ -967,11 +1006,11 @@ export default function LifestyleEnvironmentPage() {
 
       {/* 30-day challenge */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thử Thách 30 Ngày</h2>
-        <p className="text-muted text-lg mb-2">Thực hiện từng thay đổi theo tuần — không làm tất cả một lúc.</p>
-        <p className="text-sm text-muted mb-6 opacity-60">Click vào từng tuần để xem kế hoạch chi tiết</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s4Title}</h2>
+        <p className="text-muted text-lg mb-2">{s4Sub}</p>
+        <p className="text-sm text-muted mb-6 opacity-60">{weekHint}</p>
         <div className="grid md:grid-cols-4 gap-3">
-          {WEEKS.map((w, i) => (
+          {WEEKS_TR.map((w, i) => (
             <div key={w.week}
               className="rounded-xl border p-4 cursor-pointer transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
               style={{ borderColor: `rgba(${w.rgb},0.25)`, background: `rgba(${w.rgb},0.06)` }}
@@ -985,7 +1024,7 @@ export default function LifestyleEnvironmentPage() {
                   </li>
                 ))}
               </ul>
-              <span className="text-xs font-bold px-2 py-1 rounded-lg" style={{ color: w.color, background: `rgba(${w.rgb},0.12)` }}>Chi tiết →</span>
+              <span className="text-xs font-bold px-2 py-1 rounded-lg" style={{ color: w.color, background: `rgba(${w.rgb},0.12)` }}>{detailCta}</span>
             </div>
           ))}
         </div>
@@ -994,28 +1033,30 @@ export default function LifestyleEnvironmentPage() {
       {/* ── 30-day challenge modal — outside all RevealBlocks ── */}
       {weekIdx !== null && (
         <EnvModal
-          item={WEEKS[weekIdx]}
+          item={WEEKS_TR[weekIdx]}
           idx={weekIdx}
-          total={WEEKS.length}
+          total={WEEKS_TR.length}
           onClose={() => setWeekIdx(null)}
           onPrev={() => setWeekIdx(i => Math.max(0, i - 1))}
-          onNext={() => setWeekIdx(i => Math.min(WEEKS.length - 1, i + 1))}
+          onNext={() => setWeekIdx(i => Math.min(WEEKS_TR.length - 1, i + 1))}
           hasPrev={weekIdx > 0}
-          hasNext={weekIdx < WEEKS.length - 1}
+          hasNext={weekIdx < WEEKS_TR.length - 1}
+          labels={{ prev: prevLabel, next: nextLabel, hint: modalHint }}
         />
       )}
 
       {/* ── Quick wins modal — outside all RevealBlocks ── */}
       {quickWinIdx !== null && (
         <EnvModal
-          item={QUICK_WINS[quickWinIdx]}
+          item={QUICK_WINS_TR[quickWinIdx]}
           idx={quickWinIdx}
-          total={QUICK_WINS.length}
+          total={QUICK_WINS_TR.length}
           onClose={() => setQuickWinIdx(null)}
           onPrev={() => setQuickWinIdx(i => Math.max(0, i - 1))}
-          onNext={() => setQuickWinIdx(i => Math.min(QUICK_WINS.length - 1, i + 1))}
+          onNext={() => setQuickWinIdx(i => Math.min(QUICK_WINS_TR.length - 1, i + 1))}
           hasPrev={quickWinIdx > 0}
-          hasNext={quickWinIdx < QUICK_WINS.length - 1}
+          hasNext={quickWinIdx < QUICK_WINS_TR.length - 1}
+          labels={{ prev: prevLabel, next: nextLabel, hint: modalHint }}
         />
       )}
 
@@ -1030,20 +1071,22 @@ export default function LifestyleEnvironmentPage() {
           onNext={() => setZoneItemIdx(i => Math.min(zone.items.length - 1, i + 1))}
           hasPrev={zoneItemIdx > 0}
           hasNext={zoneItemIdx < zone.items.length - 1}
+          labels={{ prev: prevLabel, next: nextLabel, hint: modalHint }}
         />
       )}
 
       {/* ── Principles modal — outside all RevealBlocks ── */}
       {principleIdx !== null && (
         <EnvModal
-          item={PRINCIPLES[principleIdx]}
+          item={PRINCIPLES_TR[principleIdx]}
           idx={principleIdx}
-          total={PRINCIPLES.length}
+          total={PRINCIPLES_TR.length}
           onClose={() => setPrincipleIdx(null)}
           onPrev={() => setPrincipleIdx(i => Math.max(0, i - 1))}
-          onNext={() => setPrincipleIdx(i => Math.min(PRINCIPLES.length - 1, i + 1))}
+          onNext={() => setPrincipleIdx(i => Math.min(PRINCIPLES_TR.length - 1, i + 1))}
           hasPrev={principleIdx > 0}
-          hasNext={principleIdx < PRINCIPLES.length - 1}
+          hasNext={principleIdx < PRINCIPLES_TR.length - 1}
+          labels={{ prev: prevLabel, next: nextLabel, hint: modalHint }}
         />
       )}
 

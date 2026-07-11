@@ -629,6 +629,18 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function LifestyleCircadianPage() {
   const { t: tPillars } = useTranslation('pillars');
   const hero = tPillars('pillarC.c_circadian_hero', { returnObjects: true }) || {};
+  const trEM = tPillars('pillarC.c_circ_energy_map', { returnObjects: true });
+  const energyMap = Array.isArray(trEM) ? ENERGY_MAP.map((it, i) => ({ ...it, ...(trEM[i] || {}) })) : ENERGY_MAP;
+  const trLR = tPillars('pillarC.c_circ_light_rules', { returnObjects: true });
+  const lightRules = Array.isArray(trLR) ? LIGHT_RULES.map((it, i) => ({ ...it, ...(trLR[i] || {}) })) : LIGHT_RULES;
+  const trCaf = tPillars('pillarC.c_circ_caffeine', { returnObjects: true });
+  const caffeineGuide = Array.isArray(trCaf) ? CAFFEINE_GUIDE.map((it, i) => ({ ...it, ...(trCaf[i] || {}) })) : CAFFEINE_GUIDE;
+  const trPL = tPillars('pillarC.c_circ_post_lunch', { returnObjects: true });
+  const postLunchDip = Array.isArray(trPL) ? POST_LUNCH_DIP.map((it, i) => ({ ...it, ...(trPL[i] || {}) })) : POST_LUNCH_DIP;
+  const trTR = tPillars('pillarC.c_circ_tracker', { returnObjects: true });
+  const trackerSlots = Array.isArray(trTR) ? TRACKER_SLOTS.map((it, i) => ({ ...it, ...(trTR[i] || {}) })) : TRACKER_SLOTS;
+  const s5bullets = tPillars('pillarC.c_circ_s5_bullets', { returnObjects: true });
+  const detailLabel = tPillars('pillarC.c_circ_detail_label') || 'Chi tiết →';
   const [energyIdx, setEnergyIdx] = useState(null);
   const [lightIdx, setLightIdx] = useState(null);
   const [caffeineIdx, setCaffeineIdx] = useState(null);
@@ -696,10 +708,10 @@ export default function LifestyleCircadianPage() {
 
       {/* Energy map */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Bản Đồ Năng Lượng Trong Ngày</h2>
-        <p className="text-muted text-lg mb-6">Năng lượng không đều nhau suốt ngày. Làm việc đúng loại vào đúng thời điểm giúp hiệu quả tăng rõ rệt.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_circ_s1_title') || 'Bản Đồ Năng Lượng Trong Ngày'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_circ_s1_sub') || 'Năng lượng không đều nhau suốt ngày. Làm việc đúng loại vào đúng thời điểm giúp hiệu quả tăng rõ rệt.'}</p>
         <div className="space-y-3">
-          {ENERGY_MAP.map((e, i) => (
+          {energyMap.map((e, i) => (
             <div key={i}
               className="flex gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${e.rgb},0.05)`, border: `1px solid rgba(${e.rgb},0.15)` }}
@@ -716,7 +728,7 @@ export default function LifestyleCircadianPage() {
               </div>
               <p className="text-muted text-base flex-1">{e.desc}</p>
               <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
-                style={{ color: e.color, background: `rgba(${e.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: e.color, background: `rgba(${e.rgb},0.1)` }}>{detailLabel}</span>
             </div>
           ))}
         </div>
@@ -724,10 +736,10 @@ export default function LifestyleCircadianPage() {
 
       {/* Light rules */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Quy Tắc Ánh Sáng</h2>
-        <p className="text-muted text-lg mb-6">Ánh sáng là tín hiệu quan trọng nhất điều chỉnh đồng hồ sinh học. Sáng: tăng. Tối: giảm. Đêm: giữ tối.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_circ_s2_title') || 'Quy Tắc Ánh Sáng'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_circ_s2_sub') || 'Ánh sáng là tín hiệu quan trọng nhất điều chỉnh đồng hồ sinh học. Sáng: tăng. Tối: giảm. Đêm: giữ tối.'}</p>
         <div className="grid gap-4">
-          {LIGHT_RULES.map((rule, i) => (
+          {lightRules.map((rule, i) => (
             <div key={i}
               className="p-4 rounded-xl border cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ borderColor: `rgba(${rule.rgb},0.2)`, background: `rgba(${rule.rgb},0.05)` }}
@@ -739,7 +751,7 @@ export default function LifestyleCircadianPage() {
                   <div className="text-base font-semibold" style={{ color: rule.color }}>{rule.phase}</div>
                 </div>
                 <span className="text-xs font-bold px-2 py-1 rounded-lg opacity-60 shrink-0"
-                  style={{ color: rule.color, background: `rgba(${rule.rgb},0.1)` }}>Chi tiết →</span>
+                  style={{ color: rule.color, background: `rgba(${rule.rgb},0.1)` }}>{detailLabel}</span>
               </div>
               <p className="text-muted text-base leading-relaxed">{rule.tip}</p>
             </div>
@@ -749,10 +761,10 @@ export default function LifestyleCircadianPage() {
 
       {/* Caffeine */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Caffeine Thông Minh</h2>
-        <p className="text-muted text-lg mb-6">Dùng caffeine như công cụ, không phải phao cứu sinh. Biết khi nào dùng và khi nào không.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_circ_s3_title') || 'Caffeine Thông Minh'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_circ_s3_sub') || 'Dùng caffeine như công cụ, không phải phao cứu sinh. Biết khi nào dùng và khi nào không.'}</p>
         <div className="space-y-4">
-          {CAFFEINE_GUIDE.map((g, i) => (
+          {caffeineGuide.map((g, i) => (
             <div key={i}
               className="p-4 rounded-xl border cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ borderColor: `rgba(${g.rgb},0.2)`, background: `rgba(${g.rgb},0.05)` }}
@@ -761,7 +773,7 @@ export default function LifestyleCircadianPage() {
                 <span className="text-red-400">✗</span>
                 <span className="flex-1">{g.rule}</span>
                 <span className="text-xs font-bold px-2 py-1 rounded-lg opacity-60 shrink-0"
-                  style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>Chi tiết →</span>
+                  style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>{detailLabel}</span>
               </div>
               <p className="text-muted text-base mb-2 leading-relaxed">{g.reason}</p>
               <div className="flex items-start gap-2 text-base">
@@ -775,10 +787,10 @@ export default function LifestyleCircadianPage() {
 
       {/* Post-lunch dip */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vì Sao Buồn Ngủ Sau Ăn Trưa?</h2>
-        <p className="text-muted text-lg mb-6">Đây là hiện tượng sinh học bình thường — không phải vì bạn lười.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_circ_s4_title') || 'Vì Sao Buồn Ngủ Sau Ăn Trưa?'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_circ_s4_sub') || 'Đây là hiện tượng sinh học bình thường — không phải vì bạn lười.'}</p>
         <div className="grid gap-3">
-          {POST_LUNCH_DIP.map((item, i) => (
+          {postLunchDip.map((item, i) => (
             <div key={i}
               className="p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.15)` }}
@@ -787,7 +799,7 @@ export default function LifestyleCircadianPage() {
                 <span className="text-xl">{item.icon}</span>
                 <div className="font-semibold text-text text-base flex-1">{item.cause}</div>
                 <span className="text-xs font-bold px-2 py-1 rounded-lg opacity-60 shrink-0"
-                  style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
+                  style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>{detailLabel}</span>
               </div>
               <p className="text-muted text-sm leading-relaxed">{item.solution}</p>
             </div>
@@ -797,8 +809,8 @@ export default function LifestyleCircadianPage() {
 
       {/* 7-day energy tracking */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Bài Tập: Vẽ Bản Đồ Năng Lượng 7 Ngày</h2>
-        <p className="text-muted text-lg mb-6">Theo dõi 7 ngày để biết pattern riêng của bạn.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_circ_s5_title') || 'Bài Tập: Vẽ Bản Đồ Năng Lượng 7 Ngày'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_circ_s5_sub') || 'Theo dõi 7 ngày để biết pattern riêng của bạn.'}</p>
         <div className="p-5 rounded-2xl border" style={{ borderColor: `rgba(${RGB},0.15)`, background: `rgba(${RGB},0.05)` }}>
           <div className="grid grid-cols-3 gap-2 text-sm text-muted mb-3 font-semibold px-3" style={{ color: COLOR }}>
             <span>Thời điểm</span>
@@ -806,7 +818,7 @@ export default function LifestyleCircadianPage() {
             <span>Ghi chú</span>
           </div>
           <div className="space-y-2">
-            {TRACKER_SLOTS.map((slot, i) => (
+            {trackerSlots.map((slot, i) => (
               <div key={i}
                 className="grid grid-cols-3 gap-2 items-center px-3 py-2 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
                 style={{ background: `rgba(${slot.rgb},0.06)`, border: `1px solid rgba(${slot.rgb},0.18)` }}
@@ -821,20 +833,24 @@ export default function LifestyleCircadianPage() {
                   ))}
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-muted text-sm">Ăn gì? Làm gì?</span>
+                  <span className="text-muted text-sm">{tPillars('pillarC.c_circ_tracker_note') || 'Ăn gì? Làm gì?'}</span>
                   <span className="text-xs font-bold px-2 py-0.5 rounded-lg opacity-60"
-                    style={{ color: slot.color, background: `rgba(${slot.rgb},0.12)` }}>Chi tiết →</span>
+                    style={{ color: slot.color, background: `rgba(${slot.rgb},0.12)` }}>{detailLabel}</span>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-4 text-sm text-muted">
-            <p style={{ color: COLOR }} className="font-semibold mb-1">Sau 7 ngày bạn sẽ biết:</p>
+            <p style={{ color: COLOR }} className="font-semibold mb-1">{tPillars('pillarC.c_circ_s5_after') || 'Sau 7 ngày bạn sẽ biết:'}</p>
             <ul className="space-y-1">
-              <li>→ Mình hay mệt lúc nào và vì sao</li>
-              <li>→ Caffeine có ảnh hưởng đến ngủ không</li>
-              <li>→ Bữa ăn nào làm tụt năng lượng</li>
-              <li>→ Ngủ bao nhiêu thì hôm sau tốt nhất</li>
+              {Array.isArray(s5bullets) ? s5bullets.map((b, i) => <li key={i}>{b}</li>) : (
+                <>
+                  <li>→ Mình hay mệt lúc nào và vì sao</li>
+                  <li>→ Caffeine có ảnh hưởng đến ngủ không</li>
+                  <li>→ Bữa ăn nào làm tụt năng lượng</li>
+                  <li>→ Ngủ bao nhiêu thì hôm sau tốt nhất</li>
+                </>
+              )}
             </ul>
           </div>
         </div>
@@ -848,7 +864,7 @@ export default function LifestyleCircadianPage() {
       {/* ── Tracker slots modal ── */}
       {trackerIdx !== null && (
         <EnergyModal
-          item={TRACKER_SLOTS[trackerIdx]}
+          item={trackerSlots[trackerIdx]}
           idx={trackerIdx}
           onClose={() => setTrackerIdx(null)}
           onPrev={() => setTrackerIdx(i => Math.max(0, i - 1))}
@@ -861,7 +877,7 @@ export default function LifestyleCircadianPage() {
       {/* ── Post-lunch dip modal ── */}
       {dipIdx !== null && (
         <EnergyModal
-          item={POST_LUNCH_DIP[dipIdx]}
+          item={postLunchDip[dipIdx]}
           idx={dipIdx}
           onClose={() => setDipIdx(null)}
           onPrev={() => setDipIdx(i => Math.max(0, i - 1))}
@@ -874,7 +890,7 @@ export default function LifestyleCircadianPage() {
       {/* ── Caffeine guide modal ── */}
       {caffeineIdx !== null && (
         <EnergyModal
-          item={CAFFEINE_GUIDE[caffeineIdx]}
+          item={caffeineGuide[caffeineIdx]}
           idx={caffeineIdx}
           onClose={() => setCaffeineIdx(null)}
           onPrev={() => setCaffeineIdx(i => Math.max(0, i - 1))}
@@ -887,7 +903,7 @@ export default function LifestyleCircadianPage() {
       {/* ── Light rules modal ── */}
       {lightIdx !== null && (
         <EnergyModal
-          item={LIGHT_RULES[lightIdx]}
+          item={lightRules[lightIdx]}
           idx={lightIdx}
           onClose={() => setLightIdx(null)}
           onPrev={() => setLightIdx(i => Math.max(0, i - 1))}
@@ -900,7 +916,7 @@ export default function LifestyleCircadianPage() {
       {/* ── Energy map modal — outside all RevealBlocks so position:fixed works ── */}
       {energyIdx !== null && (
         <EnergyModal
-          item={ENERGY_MAP[energyIdx]}
+          item={energyMap[energyIdx]}
           idx={energyIdx}
           onClose={() => setEnergyIdx(null)}
           onPrev={() => setEnergyIdx(i => Math.max(0, i - 1))}

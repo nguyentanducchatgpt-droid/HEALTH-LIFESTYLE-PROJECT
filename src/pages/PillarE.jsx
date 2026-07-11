@@ -542,16 +542,22 @@ const DAILY_CHECKS = [
 
 function TabE2() {
   const { t: tCommon } = useTranslation('common');
+  const { t: tP } = useTranslation('pillars');
+  const pillarE = tP('pillarE', { returnObjects: true });
+  const scheduleTr = Array.isArray(pillarE?.e_schedule) ? pillarE.e_schedule : [];
+  const SCHED = SCHEDULE.map((s, i) => ({ ...s, ...(scheduleTr[i] || {}) }));
+  const checksTr = Array.isArray(pillarE?.e_daily_checks) ? pillarE.e_daily_checks : [];
+  const CHECKS = DAILY_CHECKS.map((s, i) => ({ ...s, ...(checksTr[i] || {}) }));
   const [checks, setChecks] = useState({});
   const [schedModal, setSchedModal] = useState(null);
   const [dailyModal, setDailyModal] = useState(null);
   return (
     <div className="space-y-5">
       <div>
-        <h3 className="font-bold text-text text-lg mb-1">Lịch Theo Dõi Cơ Bản</h3>
+        <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab2_h1 || 'Lịch Theo Dõi Cơ Bản'}</h3>
         <p className="text-xs text-muted mb-3 opacity-60">Nhấp vào từng chỉ số để xem hướng dẫn và khoa học chi tiết</p>
         <div className="space-y-1.5">
-          {SCHEDULE.map((s, i) => (
+          {SCHED.map((s, i) => (
             <div key={s.metric}
               className="flex items-center gap-3 rounded-xl border border-border bg-surface/60 p-3 cursor-pointer hover:shadow-md transition-all duration-200"
               onClick={() => setSchedModal(i)}
@@ -571,10 +577,10 @@ function TabE2() {
         <p className="text-base text-muted mt-2">* Chỉ khi có nguy cơ tăng huyết áp hoặc được bác sĩ khuyến nghị.</p>
       </div>
       <div>
-        <h3 className="font-bold text-text text-lg mb-1">5 Câu Hỏi Self-Check Mỗi Ngày</h3>
+        <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab2_h2 || '5 Câu Hỏi Self-Check Mỗi Ngày'}</h3>
         <p className="text-xs text-muted mb-3 opacity-60">Tick để check · Nhấp "Chi tiết" để xem khoa học và hướng dẫn</p>
         <div className="space-y-2">
-          {DAILY_CHECKS.map((item, i) => (
+          {CHECKS.map((item, i) => (
             <div key={i}
               className="flex items-center gap-3 rounded-xl border p-3 transition-all duration-200"
               style={{ borderColor: checks[i] ? `rgba(${item.rgb},0.4)` : '#2a2a2a', background: checks[i] ? `rgba(${item.rgb},0.07)` : 'transparent' }}>
@@ -598,20 +604,20 @@ function TabE2() {
       </div>
       {schedModal !== null && (
         <ScheduleModal
-          item={SCHEDULE[schedModal]} idx={schedModal} total={SCHEDULE.length}
+          item={SCHED[schedModal]} idx={schedModal} total={SCHED.length}
           onClose={() => setSchedModal(null)}
           onPrev={() => setSchedModal(i => Math.max(0, i - 1))}
-          onNext={() => setSchedModal(i => Math.min(SCHEDULE.length - 1, i + 1))}
-          hasPrev={schedModal > 0} hasNext={schedModal < SCHEDULE.length - 1}
+          onNext={() => setSchedModal(i => Math.min(SCHED.length - 1, i + 1))}
+          hasPrev={schedModal > 0} hasNext={schedModal < SCHED.length - 1}
         />
       )}
       {dailyModal !== null && (
         <ScheduleModal
-          item={DAILY_CHECKS[dailyModal]} idx={dailyModal} total={DAILY_CHECKS.length}
+          item={CHECKS[dailyModal]} idx={dailyModal} total={CHECKS.length}
           onClose={() => setDailyModal(null)}
           onPrev={() => setDailyModal(i => Math.max(0, i - 1))}
-          onNext={() => setDailyModal(i => Math.min(DAILY_CHECKS.length - 1, i + 1))}
-          hasPrev={dailyModal > 0} hasNext={dailyModal < DAILY_CHECKS.length - 1}
+          onNext={() => setDailyModal(i => Math.min(CHECKS.length - 1, i + 1))}
+          hasPrev={dailyModal > 0} hasNext={dailyModal < CHECKS.length - 1}
         />
       )}
     </div>
@@ -878,16 +884,22 @@ const SOON_ITEMS = [
 
 function TabE3() {
   const { t: tCommon } = useTranslation('common');
+  const { t: tP } = useTranslation('pillars');
+  const pillarE = tP('pillarE', { returnObjects: true });
+  const emergTr = Array.isArray(pillarE?.e_emergency) ? pillarE.e_emergency : [];
+  const EMERG = EMERGENCY.map((s, i) => ({ ...s, ...(emergTr[i] || {}) }));
+  const soonTr = Array.isArray(pillarE?.e_soon_items) ? pillarE.e_soon_items : [];
+  const SOON = SOON_ITEMS.map((s, i) => ({ ...s, ...(soonTr[i] || {}) }));
   const [emergModal, setEmergModal] = useState(null);
   const [soonModal, setSoonModal] = useState(null);
   return (
     <div className="space-y-4">
       <div className="rounded-xl border border-red-500/30 bg-red-500/08 p-3">
-        <p className="text-lg font-bold text-red-400 mb-1">⚠️ Đi Cấp Cứu Ngay — Không Chờ</p>
+        <p className="text-lg font-bold text-red-400 mb-1">{pillarE?.e_tab3_h1 || '⚠️ Đi Cấp Cứu Ngay — Không Chờ'}</p>
         <p className="text-base text-muted">Khi có các dấu hiệu dưới đây: không tự xử trí, gọi 115 hoặc đến cơ sở y tế gần nhất.</p>
       </div>
       <p className="text-xs text-muted opacity-60">Nhấp vào từng nhóm để xem chi tiết và cách xử trí</p>
-      {EMERGENCY.map((g, i) => (
+      {EMERG.map((g, i) => (
         <div key={g.cat}
           className="rounded-2xl border border-border bg-surface/60 p-4 cursor-pointer hover:shadow-md transition-all duration-200"
           onClick={() => setEmergModal(i)}
@@ -911,10 +923,10 @@ function TabE3() {
         </div>
       ))}
       <div className="rounded-xl border border-amber-500/30 bg-amber-500/08 p-4">
-        <p className="text-base font-bold text-amber-400 mb-1">Nên Đi Khám Sớm Khi Có:</p>
+        <p className="text-base font-bold text-amber-400 mb-1">{pillarE?.e_tab3_h2 || 'Nên Đi Khám Sớm Khi Có:'}</p>
         <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng mục để xem chi tiết và hướng xử trí</p>
         <div className="grid grid-cols-2 gap-2">
-          {SOON_ITEMS.map((s, i) => (
+          {SOON.map((s, i) => (
             <div key={s.metric}
               className="flex items-center gap-2 text-base text-muted rounded-xl px-3 py-2 cursor-pointer transition-all duration-200 hover:text-text"
               style={{ background: 'rgba(245,158,11,0.04)', border: '1px solid rgba(245,158,11,0.12)' }}
@@ -930,22 +942,22 @@ function TabE3() {
       </div>
       {emergModal !== null && (
         <ScheduleModal
-          item={{ ...EMERGENCY[emergModal], metric: EMERGENCY[emergModal].cat, freq: 'Cấp cứu ngay', tip: 'Gọi 115 — không tự xử trí' }}
-          idx={emergModal} total={EMERGENCY.length}
+          item={{ ...EMERG[emergModal], metric: EMERG[emergModal].cat, freq: 'Cấp cứu ngay', tip: 'Gọi 115 — không tự xử trí' }}
+          idx={emergModal} total={EMERG.length}
           onClose={() => setEmergModal(null)}
           onPrev={() => setEmergModal(i => Math.max(0, i - 1))}
-          onNext={() => setEmergModal(i => Math.min(EMERGENCY.length - 1, i + 1))}
-          hasPrev={emergModal > 0} hasNext={emergModal < EMERGENCY.length - 1}
+          onNext={() => setEmergModal(i => Math.min(EMERG.length - 1, i + 1))}
+          hasPrev={emergModal > 0} hasNext={emergModal < EMERG.length - 1}
         />
       )}
       {soonModal !== null && (
         <ScheduleModal
-          item={SOON_ITEMS[soonModal]}
-          idx={soonModal} total={SOON_ITEMS.length}
+          item={SOON[soonModal]}
+          idx={soonModal} total={SOON.length}
           onClose={() => setSoonModal(null)}
           onPrev={() => setSoonModal(i => Math.max(0, i - 1))}
-          onNext={() => setSoonModal(i => Math.min(SOON_ITEMS.length - 1, i + 1))}
-          hasPrev={soonModal > 0} hasNext={soonModal < SOON_ITEMS.length - 1}
+          onNext={() => setSoonModal(i => Math.min(SOON.length - 1, i + 1))}
+          hasPrev={soonModal > 0} hasNext={soonModal < SOON.length - 1}
         />
       )}
     </div>
@@ -1045,13 +1057,17 @@ const DISEASE_GROUPS = [
 
 function TabE4() {
   const { t: tCommon } = useTranslation('common');
+  const { t: tP } = useTranslation('pillars');
+  const pillarE = tP('pillarE', { returnObjects: true });
+  const diseaseTr = Array.isArray(pillarE?.e_disease_groups) ? pillarE.e_disease_groups : [];
+  const DISEASES = DISEASE_GROUPS.map((s, i) => ({ ...s, ...(diseaseTr[i] || {}) }));
   const [groupModal, setGroupModal] = useState(null);
   return (
     <div className="space-y-4">
-      <p className="text-base text-muted">Tập trung vào 4 nhóm bệnh quan trọng nhất trong cuộc sống hiện đại:</p>
+      <p className="text-base text-muted">{pillarE?.e_tab4_h1 || 'Tập trung vào 4 nhóm bệnh quan trọng nhất trong cuộc sống hiện đại:'}</p>
       <p className="text-xs text-muted opacity-60">Nhấp vào từng nhóm để xem chiến lược phòng ngừa chi tiết</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {DISEASE_GROUPS.map((g, i) => (
+        {DISEASES.map((g, i) => (
           <div key={g.metric}
             className="rounded-2xl border border-border bg-surface/60 p-4 cursor-pointer transition-all duration-200 hover:shadow-md"
             onClick={() => setGroupModal(i)}
@@ -1077,12 +1093,12 @@ function TabE4() {
       </div>
       {groupModal !== null && (
         <ScheduleModal
-          item={DISEASE_GROUPS[groupModal]}
-          idx={groupModal} total={DISEASE_GROUPS.length}
+          item={DISEASES[groupModal]}
+          idx={groupModal} total={DISEASES.length}
           onClose={() => setGroupModal(null)}
           onPrev={() => setGroupModal(i => Math.max(0, i - 1))}
-          onNext={() => setGroupModal(i => Math.min(DISEASE_GROUPS.length - 1, i + 1))}
-          hasPrev={groupModal > 0} hasNext={groupModal < DISEASE_GROUPS.length - 1}
+          onNext={() => setGroupModal(i => Math.min(DISEASES.length - 1, i + 1))}
+          hasPrev={groupModal > 0} hasNext={groupModal < DISEASES.length - 1}
         />
       )}
     </div>
@@ -1394,15 +1410,21 @@ const CHECK_EXPANDED = [
 
 function TabE5() {
   const { t: tCommon } = useTranslation('common');
+  const { t: tP } = useTranslation('pillars');
+  const pillarE = tP('pillarE', { returnObjects: true });
+  const basicTr = Array.isArray(pillarE?.e_check_basic) ? pillarE.e_check_basic : [];
+  const BASIC = CHECK_BASIC.map((s, i) => ({ ...s, ...(basicTr[i] || {}) }));
+  const expandTr = Array.isArray(pillarE?.e_check_expanded) ? pillarE.e_check_expanded : [];
+  const EXPANDED = CHECK_EXPANDED.map((s, i) => ({ ...s, ...(expandTr[i] || {}) }));
   const [basicModal, setBasicModal] = useState(null);
   const [expandedModal, setExpandedModal] = useState(null);
   return (
     <div className="space-y-5">
       <div>
-        <h3 className="font-bold text-text text-lg mb-1">Gói Kiểm Tra Nền (Health Check Basic)</h3>
+        <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab5_h1 || 'Gói Kiểm Tra Nền (Health Check Basic)'}</h3>
         <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng mục để xem chi tiết và ý nghĩa xét nghiệm</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {CHECK_BASIC.map((b, i) => (
+          {BASIC.map((b, i) => (
             <div key={b.metric}
               className="flex items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-2 text-base text-muted cursor-pointer transition-all duration-200 hover:text-text"
               onClick={() => setBasicModal(i)}
@@ -1416,10 +1438,10 @@ function TabE5() {
         </div>
       </div>
       <div>
-        <h3 className="font-bold text-text text-lg mb-1">Mở Rộng Theo Nguy Cơ</h3>
+        <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab5_h2 || 'Mở Rộng Theo Nguy Cơ'}</h3>
         <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng nhóm để xem danh sách xét nghiệm bổ sung</p>
         <div className="space-y-3">
-          {CHECK_EXPANDED.map((g, i) => (
+          {EXPANDED.map((g, i) => (
             <div key={g.metric}
               className="rounded-xl border border-border bg-surface/60 p-4 cursor-pointer transition-all duration-200 hover:shadow-md"
               onClick={() => setExpandedModal(i)}
@@ -1442,22 +1464,22 @@ function TabE5() {
       <p className="text-base text-muted">Khám định kỳ không nên là "gói xét nghiệm càng nhiều càng tốt" — nên dựa trên tuổi, nguy cơ và triệu chứng của từng người.</p>
       {basicModal !== null && (
         <ScheduleModal
-          item={CHECK_BASIC[basicModal]}
-          idx={basicModal} total={CHECK_BASIC.length}
+          item={BASIC[basicModal]}
+          idx={basicModal} total={BASIC.length}
           onClose={() => setBasicModal(null)}
           onPrev={() => setBasicModal(i => Math.max(0, i - 1))}
-          onNext={() => setBasicModal(i => Math.min(CHECK_BASIC.length - 1, i + 1))}
-          hasPrev={basicModal > 0} hasNext={basicModal < CHECK_BASIC.length - 1}
+          onNext={() => setBasicModal(i => Math.min(BASIC.length - 1, i + 1))}
+          hasPrev={basicModal > 0} hasNext={basicModal < BASIC.length - 1}
         />
       )}
       {expandedModal !== null && (
         <ScheduleModal
-          item={CHECK_EXPANDED[expandedModal]}
-          idx={expandedModal} total={CHECK_EXPANDED.length}
+          item={EXPANDED[expandedModal]}
+          idx={expandedModal} total={EXPANDED.length}
           onClose={() => setExpandedModal(null)}
           onPrev={() => setExpandedModal(i => Math.max(0, i - 1))}
-          onNext={() => setExpandedModal(i => Math.min(CHECK_EXPANDED.length - 1, i + 1))}
-          hasPrev={expandedModal > 0} hasNext={expandedModal < CHECK_EXPANDED.length - 1}
+          onNext={() => setExpandedModal(i => Math.min(EXPANDED.length - 1, i + 1))}
+          hasPrev={expandedModal > 0} hasNext={expandedModal < EXPANDED.length - 1}
         />
       )}
     </div>
@@ -1681,15 +1703,21 @@ const SUPPLEMENT_CHECKS = [
 ];
 
 function TabE6() {
+  const { t: tP } = useTranslation('pillars');
+  const pillarE = tP('pillarE', { returnObjects: true });
+  const rulesTr = Array.isArray(pillarE?.e_drug_rules) ? pillarE.e_drug_rules : [];
+  const RULES = DRUG_RULES.map((s, i) => ({ ...s, ...(rulesTr[i] || {}) }));
+  const suppTr = Array.isArray(pillarE?.e_supplement_checks) ? pillarE.e_supplement_checks : [];
+  const SUPPS = SUPPLEMENT_CHECKS.map((s, i) => ({ ...s, ...(suppTr[i] || {}) }));
   const [ruleModal, setRuleModal] = useState(null);
   const [checkModal, setCheckModal] = useState(null);
   return (
     <div className="space-y-4">
       <div className="rounded-2xl border border-violet-500/30 bg-violet-500/08 p-5">
-        <p className="text-lg font-bold text-violet-400 mb-1">5 Quy Tắc Không Của Thuốc</p>
+        <p className="text-lg font-bold text-violet-400 mb-1">{pillarE?.e_tab6_h1 || '5 Quy Tắc Không Của Thuốc'}</p>
         <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng quy tắc để hiểu lý do và hậu quả</p>
         <ul className="space-y-2">
-          {DRUG_RULES.map((r, i) => (
+          {RULES.map((r, i) => (
             <li key={i}
               className="flex items-start gap-3 text-base text-muted rounded-xl px-3 py-2 cursor-pointer transition-all duration-200 hover:text-text"
               style={{ background: 'rgba(139,92,246,0.04)', border: '1px solid rgba(139,92,246,0.10)' }}
@@ -1704,10 +1732,10 @@ function TabE6() {
         </ul>
       </div>
       <div>
-        <p className="text-lg font-bold text-text mb-1">Checklist Trước Khi Dùng Thực Phẩm Bổ Sung</p>
+        <p className="text-lg font-bold text-text mb-1">{pillarE?.e_tab6_h2 || 'Checklist Trước Khi Dùng Thực Phẩm Bổ Sung'}</p>
         <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng câu hỏi để xem hướng dẫn chi tiết</p>
         <div className="space-y-2">
-          {SUPPLEMENT_CHECKS.map((q, i) => (
+          {SUPPS.map((q, i) => (
             <div key={i}
               className="flex items-start gap-3 rounded-xl border border-border bg-surface/60 p-3 text-base text-muted cursor-pointer transition-all duration-200 hover:text-text"
               onClick={() => setCheckModal(i)}
@@ -1721,7 +1749,7 @@ function TabE6() {
         </div>
       </div>
       <div className="rounded-xl border border-red-500/20 bg-red-500/06 p-4">
-        <p className="text-base font-bold text-red-400 mb-2">Cụm từ NGUY HIỂM trong quảng cáo</p>
+        <p className="text-base font-bold text-red-400 mb-2">{pillarE?.e_tab6_h3 || 'Cụm từ NGUY HIỂM trong quảng cáo'}</p>
         <div className="flex flex-wrap gap-2">
           {['"Chữa khỏi 100%"', '"Không tác dụng phụ"', '"Thải độc gan/thận"', '"Tan mỡ khi ngủ"', '"Hạ đường vĩnh viễn"', '"Không cần đi bệnh viện"'].map(t => (
             <span key={t} className="text-base px-2 py-0.5 rounded-full bg-red-500/10 text-red-400">{t}</span>
@@ -1730,22 +1758,22 @@ function TabE6() {
       </div>
       {ruleModal !== null && (
         <ScheduleModal
-          item={DRUG_RULES[ruleModal]}
-          idx={ruleModal} total={DRUG_RULES.length}
+          item={RULES[ruleModal]}
+          idx={ruleModal} total={RULES.length}
           onClose={() => setRuleModal(null)}
           onPrev={() => setRuleModal(i => Math.max(0, i - 1))}
-          onNext={() => setRuleModal(i => Math.min(DRUG_RULES.length - 1, i + 1))}
-          hasPrev={ruleModal > 0} hasNext={ruleModal < DRUG_RULES.length - 1}
+          onNext={() => setRuleModal(i => Math.min(RULES.length - 1, i + 1))}
+          hasPrev={ruleModal > 0} hasNext={ruleModal < RULES.length - 1}
         />
       )}
       {checkModal !== null && (
         <ScheduleModal
-          item={SUPPLEMENT_CHECKS[checkModal]}
-          idx={checkModal} total={SUPPLEMENT_CHECKS.length}
+          item={SUPPS[checkModal]}
+          idx={checkModal} total={SUPPS.length}
           onClose={() => setCheckModal(null)}
           onPrev={() => setCheckModal(i => Math.max(0, i - 1))}
-          onNext={() => setCheckModal(i => Math.min(SUPPLEMENT_CHECKS.length - 1, i + 1))}
-          hasPrev={checkModal > 0} hasNext={checkModal < SUPPLEMENT_CHECKS.length - 1}
+          onNext={() => setCheckModal(i => Math.min(SUPPS.length - 1, i + 1))}
+          hasPrev={checkModal > 0} hasNext={checkModal < SUPPS.length - 1}
         />
       )}
     </div>
@@ -2229,7 +2257,7 @@ export default function PillarE() {
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>{pillar?.subtitle || 'Health Literacy'}</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">{pillar?.description || 'Hiểu cơ thể mình bằng ngôn ngữ đơn giản.'}</p>
           <div className="flex flex-wrap gap-6 mt-6">
-            {['8 Module', '12 Tuần', '5 Chỉ số', '100 điểm'].map((label, i) => (
+            {(Array.isArray(pillar?.e_hero_stats) ? pillar.e_hero_stats : ['8 Module', '12 Tuần', '5 Chỉ số', '100 điểm']).map((label, i) => (
               <div key={label} className="group/stat relative">
                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/stat:opacity-100 scale-90 group-hover/stat:scale-100 -translate-y-1 group-hover/stat:translate-y-0 transition-all duration-200 origin-bottom">
                   <ThoughtBubble text={HERO_TIPS[i]} idx={`hero-e-${i}`} color={COLOR} />
@@ -2311,29 +2339,29 @@ export default function PillarE() {
 
       {/* Teaser grid */}
       <RevealBlock delay={60}>
-        <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">Khám Phá Sâu Hơn</h2>
-        <p className="text-muted mb-10">12 chủ đề chuyên sâu về kiến thức sức khỏe phổ thông</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">{pillar?.e_explore_title || 'Khám Phá Sâu Hơn'}</h2>
+        <p className="text-muted mb-10">{pillar?.e_explore_sub || '12 chủ đề chuyên sâu về kiến thức sức khỏe phổ thông'}</p>
 
-        <TeaserSection title="Chỉ Số & Đo Lường">
+        <TeaserSection title={pillar?.e_teaser_s1 || 'Chỉ Số & Đo Lường'}>
           <TeaserCard to="/pillar/e/bmi" color="#3b82f6" rgb="59,130,246" icon="⚖️" category="Chỉ Số Cơ Thể" title="BMI & Vòng Eo" accent="Sàng lọc · Nguy cơ chuyển hóa" desc="Hiểu BMI, cách đọc đúng, và tại sao vòng eo quan trọng hơn cân nặng đơn thuần." features={['Công thức tính BMI + ví dụ', 'Vì sao vòng eo quan trọng hơn', 'Kỹ thuật đo đúng chuẩn', 'Hành động theo từng kết quả']} stats={[{ v: '4', l: 'Phân loại' }, { v: 'Tuần/lần', l: 'Đo vòng eo' }]} image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" imageAlt="BMI" cta="Xem chi tiết →" />
           <TeaserCard to="/pillar/e/blood-pressure" color="#ef4444" rgb="239,68,68" icon="❤️" category="Huyết Áp" title="Đo & Hiểu Huyết Áp" accent="120/80 · Theo dõi tại nhà" desc="Tại sao huyết áp nguy hiểm thầm lặng, cách đo đúng và khi nào cần đi khám ngay." features={['Phân loại huyết áp AHA', '5 bước đo đúng kỹ thuật', 'Nhật ký huyết áp 7 ngày', 'Dấu hiệu cần cấp cứu ngay']} stats={[{ v: '5', l: 'Bước đo đúng' }, { v: '7', l: 'Ngày nhật ký' }]} image="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80" imageAlt="Blood Pressure" cta="Xem chi tiết →" />
           <TeaserCard to="/pillar/e/blood-sugar" color="#f59e0b" rgb="245,158,11" icon="🍬" category="Đường Huyết" title="Đường Huyết & HbA1c" accent="Tiền ĐTĐ · Kiểm soát lâu dài" desc="Hiểu sự khác biệt giữa đường huyết đói và HbA1c, cách phòng tiền đái tháo đường." features={['Ngưỡng bình thường và cảnh báo', 'HbA1c khác đường huyết thế nào', 'Liên hệ ăn uống và vận động', 'Khi nào cần xét nghiệm']} stats={[{ v: '8h', l: 'Nhịn trước đo' }, { v: '3 tháng', l: 'HbA1c phản ánh' }]} image="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80" imageAlt="Blood Sugar" cta="Xem chi tiết →" />
           <TeaserCard to="/pillar/e/lipids" color="#8b5cf6" rgb="139,92,246" icon="🫀" category="Mỡ Máu" title="LDL, HDL & Triglyceride" accent="Xơ vữa · Tim mạch" desc="Giải mã bảng mỡ máu: LDL 'xấu', HDL 'tốt', triglyceride cao do đâu và điều chỉnh thế nào." features={['LDL-C và xơ vữa động mạch', 'HDL-C: vai trò thực sự', 'Triglyceride và đề kháng insulin', 'Mục tiêu theo nhóm nguy cơ']} stats={[{ v: '4', l: 'Chỉ số mỡ máu' }, { v: 'mg/dL', l: 'Đơn vị' }]} image="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80" imageAlt="Lipids" cta="Xem chi tiết →" />
         </TeaserSection>
 
-        <TeaserSection title="Cảnh Báo & An Toàn">
+        <TeaserSection title={pillar?.e_teaser_s2 || 'Cảnh Báo & An Toàn'}>
           <TeaserCard to="/pillar/e/red-flags" color="#ef4444" rgb="239,68,68" icon="🚨" category="Dấu Hiệu Nguy Hiểm" title="Red Flags — Khi Nào Cấp Cứu" accent="Tim · Thần kinh · Tiêu hóa" desc="Bảng tra cứu nhanh các dấu hiệu nguy hiểm cần đến cơ sở y tế ngay — không được chờ đợi." features={['Dấu hiệu đột quỵ: F.A.S.T.', 'Đau ngực nguy hiểm vs bình thường', 'Emergency Decision Tree', '4 nhóm dấu hiệu cần cấp cứu']} stats={[{ v: '4', l: 'Nhóm nguy hiểm' }, { v: '115', l: 'Số cấp cứu' }]} image="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=800&q=80" imageAlt="Red Flags" cta="Xem ngay →" />
           <TeaserCard to="/pillar/e/medication" color="#10b981" rgb="16,185,129" icon="💊" category="An Toàn Thuốc" title="Thuốc & Thực Phẩm Bổ Sung" accent="5 Quy tắc Không · Checklist" desc="Nguyên tắc dùng thuốc an toàn, checklist trước khi mua thực phẩm chức năng." features={['5 quy tắc Không về thuốc', 'Checklist 5 câu trước khi dùng', 'Cụm từ nguy hiểm trong quảng cáo', 'Tương tác thuốc cơ bản']} stats={[{ v: '5', l: 'Quy tắc' }, { v: '5', l: 'Câu kiểm tra' }]} image="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80" imageAlt="Medication" cta="Xem chi tiết →" />
           <TeaserCard to="/pillar/e/media-literacy" color="#6366f1" rgb="99,102,241" icon="🔎" category="Lọc Thông Tin" title="Health Media Literacy" accent="TikTok · YouTube · Livestream" desc="Bộ lọc 5 câu hỏi để nhận biết thông tin sức khỏe sai lệch và nội dung nguy hiểm trên mạng." features={['5 câu hỏi kiểm chứng nguồn', 'Dấu hiệu nội dung nguy hiểm', 'Cách tra cứu nguồn đáng tin', 'Ngôn ngữ quảng cáo thao túng']} stats={[{ v: '5', l: 'Câu hỏi lọc' }, { v: '9', l: 'Từ khóa đỏ' }]} image="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80" imageAlt="Media Literacy" cta="Xem chi tiết →" />
         </TeaserSection>
 
-        <TeaserSection title="Phòng Bệnh & Theo Dõi">
+        <TeaserSection title={pillar?.e_teaser_s3 || 'Phòng Bệnh & Theo Dõi'}>
           <TeaserCard to="/pillar/e/prevention" color="#0ea5e9" rgb="14,165,233" icon="🛡️" category="Phòng Bệnh" title="Phòng Bệnh Chủ Động" accent="Tim mạch · Chuyển hóa · Cơ xương" desc="Từ kiến thức về nguy cơ đến hành động cụ thể phòng bệnh tim mạch, tiểu đường và cơ xương khớp." features={['5 nhóm bệnh quan trọng nhất', 'Hành động phòng ngừa cụ thể', 'Liên kết với Trụ cột A–D', 'Habit Risk Map cá nhân']} stats={[{ v: '5', l: 'Nhóm bệnh' }, { v: '150ph', l: 'Vận động/tuần' }]} image="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80" imageAlt="Prevention" cta="Xem chi tiết →" />
           <TeaserCard to="/pillar/e/self-monitoring" color="#14b8a6" rgb="20,184,166" icon="📈" category="Tự Theo Dõi" title="Self-Monitoring Tại Nhà" accent="Xu hướng · Không ám ảnh" desc="Hướng dẫn theo dõi chỉ số đúng cách: đo gì, khi nào, bao nhiêu lần và nhìn xu hướng thế nào." features={['Lịch theo dõi 7 chỉ số chính', '5 câu tự đánh giá hằng ngày', 'Nhật ký cân nặng & vòng eo', 'Dashboard 12 tuần đơn giản']} stats={[{ v: '7', l: 'Chỉ số theo dõi' }, { v: '5ph', l: 'Mỗi ngày' }]} image="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80" imageAlt="Self Monitoring" cta="Xem chi tiết →" />
           <TeaserCard to="/pillar/e/checkup" color="#84cc16" rgb="132,204,22" icon="📅" category="Khám Định Kỳ" title="Lộ Trình Khám Định Kỳ" accent="Theo tuổi · Theo nguy cơ" desc="Biết cần làm xét nghiệm gì, khi nào — không xét nghiệm quá nhiều, không bỏ sót quan trọng." features={['Gói Health Check Basic (11 mục)', 'Gói mở rộng theo nguy cơ', 'Câu hỏi cần chuẩn bị trước khám', 'Lưu & theo dõi kết quả']} stats={[{ v: '11', l: 'Xét nghiệm cơ bản' }, { v: 'Hằng năm', l: 'Tần suất' }]} image="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80" imageAlt="Checkup" cta="Xem chi tiết →" />
         </TeaserSection>
 
-        <TeaserSection title="Đánh Giá & Lộ Trình">
+        <TeaserSection title={pillar?.e_teaser_s4 || 'Đánh Giá & Lộ Trình'}>
           <TeaserCard to="/pillar/e/assessment" color="#3b82f6" rgb="59,130,246" icon="📝" category="Kiểm Tra Kiến Thức" title="Health Literacy Assessment" accent="100 điểm · 7 nhóm kỹ năng" desc="Bài kiểm tra 20 câu giúp đánh giá mức độ kiến thức sức khỏe và gợi ý nên tập trung vào đâu." features={['20 câu hỏi trắc nghiệm', 'Phân tích theo 7 nhóm kỹ năng', '5 cấp độ Health Literacy', 'Gợi ý module nên học tiếp']} stats={[{ v: '20', l: 'Câu hỏi' }, { v: '100', l: 'Điểm tối đa' }]} image="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80" imageAlt="Assessment" cta="Làm bài test →" />
           <TeaserCard to="/pillar/e/roadmap" color="#a855f7" rgb="168,85,247" icon="🗺️" category="Lộ Trình" title="Lộ Trình 12 Tuần Health Literacy" accent="6 Giai đoạn · Từng bước rõ ràng" desc="Hành trình từ mù mờ về sức khỏe đến tự quản lý chỉ số và phòng bệnh chủ động trong 12 tuần." features={['6 giai đoạn với mục tiêu rõ', 'Lịch 7 ngày mẫu', 'Sản phẩm cụ thể sau mỗi giai đoạn', 'Health Profile cá nhân']} stats={[{ v: '12', l: 'Tuần' }, { v: '6', l: 'Giai đoạn' }]} image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" imageAlt="Roadmap" cta="Xem lộ trình →" />
         </TeaserSection>

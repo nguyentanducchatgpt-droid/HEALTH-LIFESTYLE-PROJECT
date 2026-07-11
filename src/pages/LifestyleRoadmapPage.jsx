@@ -24,6 +24,12 @@ function RevealBlock({ children, delay = 0, className = '' }) {
   );
 }
 
+const PHIL = [
+  { icon: '🐢', title: 'Chậm mà chắc', desc: '1% cải thiện mỗi ngày. Sau 12 tuần = 37% tốt hơn tổng cộng.' },
+  { icon: '🔄', title: 'Hệ thống, không mục tiêu', desc: 'Đừng "cố gắng" từng ngày. Thiết kế để không cần cố gắng.' },
+  { icon: '🌊', title: 'Với nhịp, không chống lại', desc: 'Sống theo nhịp sinh học tự nhiên, không cưỡng ép cơ thể.' },
+];
+
 const PHASES = [
   {
     id: 'phase1',
@@ -112,6 +118,33 @@ export default function LifestyleRoadmapPage() {
   const hero = tPillars('pillarC.c_roadmap_hero', { returnObjects: true }) || {};
   const [openPhase, setOpenPhase] = useState('phase1');
 
+  const philTitle = tPillars('pillarC.c_roadmap_phil_title') || 'Triết Lý Của Lộ Trình Này';
+  const s2Title = tPillars('pillarC.c_roadmap_s2_title') || '4 Giai Đoạn 12 Tuần';
+  const s2Sub = tPillars('pillarC.c_roadmap_s2_sub') || 'Mỗi giai đoạn xây trên nền của giai đoạn trước — đừng bỏ qua bước nào.';
+  const weekLabel = tPillars('pillarC.c_roadmap_week_label') || 'Tuần';
+  const goalsLabel = tPillars('pillarC.c_roadmap_goals_label') || 'Mục Tiêu Giai Đoạn';
+  const modulesLabel = tPillars('pillarC.c_roadmap_modules_label') || 'Module Cần Học';
+  const metricsLabel = tPillars('pillarC.c_roadmap_metrics_label') || 'Đo Lường';
+  const dailyLabel = tPillars('pillarC.c_roadmap_daily_label') || 'Thời gian';
+  const s3Title = tPillars('pillarC.c_roadmap_s3_title') || 'Nhịp Ngày Lý Tưởng';
+  const s3Sub = tPillars('pillarC.c_roadmap_s3_sub') || 'Khung thời gian gợi ý — điều chỉnh theo lịch làm việc của bạn.';
+  const s4Title = tPillars('pillarC.c_roadmap_s4_title') || 'Tất Cả Module Lối Sống';
+  const s4Sub = tPillars('pillarC.c_roadmap_s4_sub') || 'Khám phá theo trình tự lộ trình hoặc bắt đầu từ chủ đề bạn cần nhất.';
+  const quoteText = tPillars('pillarC.c_roadmap_quote') || 'Không cần sống hoàn hảo. Chỉ cần sống có nhịp, có hồi phục, có quay lại.';
+  const quoteCite = tPillars('pillarC.c_roadmap_quote_cite') || '— Triết lý Lối sống khỏe';
+
+  const trPhil = tPillars('pillarC.c_roadmap_phil', { returnObjects: true });
+  const PHIL_TR = Array.isArray(trPhil) ? PHIL.map((p, i) => ({ ...p, ...(trPhil[i] || {}) })) : PHIL;
+
+  const trPhases = tPillars('pillarC.c_roadmap_phases', { returnObjects: true });
+  const PHASES_TR = Array.isArray(trPhases) ? PHASES.map((p, i) => ({ ...p, ...(trPhases[i] || {}) })) : PHASES;
+
+  const trRhythm = tPillars('pillarC.c_roadmap_daily_rhythm', { returnObjects: true });
+  const RHYTHM_TR = Array.isArray(trRhythm) ? DAILY_RHYTHM.map((r, i) => ({ ...r, ...(trRhythm[i] || {}) })) : DAILY_RHYTHM;
+
+  const trSubPages = tPillars('pillarC.c_roadmap_sub_pages', { returnObjects: true });
+  const SUBPAGES_TR = Array.isArray(trSubPages) ? SUB_PAGES.map((p, i) => ({ ...p, ...(trSubPages[i] || {}) })) : SUB_PAGES;
+
   useEffect(() => {
     const style = document.createElement('style');
     style.id = ORBIT_ID;
@@ -133,7 +166,7 @@ export default function LifestyleRoadmapPage() {
     return () => document.getElementById(ORBIT_ID)?.remove();
   }, []);
 
-  const active = PHASES.find(p => p.id === openPhase);
+  const active = PHASES_TR.find(p => p.id === openPhase);
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
@@ -157,7 +190,7 @@ export default function LifestyleRoadmapPage() {
           <img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=800&q=80&auto=format&fit=crop" alt="Roadmap" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>12 tuần · 4 giai đoạn · 8 module</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>{hero.img_caption || '12 tuần · 4 giai đoạn · 8 module'}</span>
           </div>
         </div>
       </div>
@@ -167,13 +200,9 @@ export default function LifestyleRoadmapPage() {
       {/* Philosophy */}
       <RevealBlock className="mb-12">
         <div className="rounded-2xl p-5 border" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
-          <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>Triết Lý Của Lộ Trình Này</div>
+          <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color: COLOR }}>{philTitle}</div>
           <div className="grid md:grid-cols-3 gap-4 text-lg">
-            {[
-              { icon: '🐢', title: 'Chậm mà chắc', desc: '1% cải thiện mỗi ngày. Sau 12 tuần = 37% tốt hơn tổng cộng.' },
-              { icon: '🔄', title: 'Hệ thống, không mục tiêu', desc: 'Đừng "cố gắng" từng ngày. Thiết kế để không cần cố gắng.' },
-              { icon: '🌊', title: 'Với nhịp, không chống lại', desc: 'Sống theo nhịp sinh học tự nhiên, không cưỡng ép cơ thể.' },
-            ].map(p => (
+            {PHIL_TR.map(p => (
               <div key={p.title} className="rounded-xl p-3 bg-surface border border-border">
                 <div className="text-2xl mb-2">{p.icon}</div>
                 <div className="font-bold text-text mb-1">{p.title}</div>
@@ -186,15 +215,15 @@ export default function LifestyleRoadmapPage() {
 
       {/* 4 Phases */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Giai Đoạn 12 Tuần</h2>
-        <p className="text-muted text-lg mb-6">Mỗi giai đoạn xây trên nền của giai đoạn trước — đừng bỏ qua bước nào.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s2Title}</h2>
+        <p className="text-muted text-lg mb-6">{s2Sub}</p>
 
         {/* Timeline */}
         <div className="flex gap-1 mb-6 overflow-x-auto pb-2">
-          {PHASES.map(p => (
+          {PHASES_TR.map(p => (
             <button key={p.id} onClick={() => setOpenPhase(p.id)} className="flex-1 min-w-[100px] rounded-xl p-3 text-center transition-all border" style={{ background: openPhase === p.id ? `${p.color}15` : 'var(--color-surface)', borderColor: openPhase === p.id ? p.color : 'var(--color-border)' }}>
               <div className="text-2xl mb-1">{p.icon}</div>
-              <div className="text-base font-bold" style={{ color: openPhase === p.id ? p.color : '#9ca3af' }}>Tuần {p.weeks}</div>
+              <div className="text-base font-bold" style={{ color: openPhase === p.id ? p.color : '#9ca3af' }}>{weekLabel} {p.weeks}</div>
               <div className="text-base text-muted mt-0.5 leading-tight">{p.subtitle}</div>
             </button>
           ))}
@@ -205,19 +234,19 @@ export default function LifestyleRoadmapPage() {
             <div className="flex items-center gap-3 mb-5">
               <span className="text-4xl">{active.icon}</span>
               <div>
-                <div className="text-base font-bold uppercase tracking-widest" style={{ color: active.color }}>Tuần {active.weeks}</div>
+                <div className="text-base font-bold uppercase tracking-widest" style={{ color: active.color }}>{weekLabel} {active.weeks}</div>
                 <div className="text-xl font-bold text-text">{active.title}</div>
                 <div className="text-lg text-muted">{active.focus}</div>
               </div>
               <div className="ml-auto text-right">
-                <div className="text-base text-muted">Thời gian</div>
+                <div className="text-base text-muted">{dailyLabel}</div>
                 <div className="text-lg font-bold" style={{ color: active.color }}>{active.daily}</div>
               </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-4">
               <div className="md:col-span-2">
-                <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Mục Tiêu Giai Đoạn</div>
+                <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>{goalsLabel}</div>
                 <ul className="space-y-2">
                   {active.goals.map((g, i) => (
                     <li key={i} className="flex items-start gap-2 text-lg text-text">
@@ -229,7 +258,7 @@ export default function LifestyleRoadmapPage() {
               </div>
               <div className="space-y-3">
                 <div>
-                  <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Module Cần Học</div>
+                  <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>{modulesLabel}</div>
                   <div className="flex flex-wrap gap-1">
                     {active.modules.map(m => (
                       <span key={m} className="text-base px-2 py-0.5 rounded-full font-medium" style={{ background: `${active.color}15`, color: active.color }}>{m}</span>
@@ -237,7 +266,7 @@ export default function LifestyleRoadmapPage() {
                   </div>
                 </div>
                 <div>
-                  <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>Đo Lường</div>
+                  <div className="text-base font-bold uppercase tracking-widest mb-2" style={{ color: active.color }}>{metricsLabel}</div>
                   <ul className="space-y-1">
                     {active.metrics.map((m, i) => (
                       <li key={i} className="text-base text-muted flex items-start gap-1"><span style={{ color: active.color }}>→</span>{m}</li>
@@ -252,12 +281,12 @@ export default function LifestyleRoadmapPage() {
 
       {/* Daily rhythm */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Nhịp Ngày Lý Tưởng</h2>
-        <p className="text-muted text-lg mb-6">Khung thời gian gợi ý — điều chỉnh theo lịch làm việc của bạn.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s3Title}</h2>
+        <p className="text-muted text-lg mb-6">{s3Sub}</p>
         <div className="relative">
           <div className="absolute left-[68px] top-4 bottom-4 w-px bg-border" />
           <div className="space-y-3">
-            {DAILY_RHYTHM.map((item, i) => (
+            {RHYTHM_TR.map((item, i) => (
               <div key={i} className="flex items-start gap-4">
                 <div className="text-base text-muted w-16 text-right shrink-0 pt-0.5 leading-tight">{item.time}</div>
                 <div className="w-4 h-4 rounded-full shrink-0 mt-0.5 relative z-10 flex items-center justify-center" style={{ background: item.color }}>
@@ -278,10 +307,10 @@ export default function LifestyleRoadmapPage() {
 
       {/* All sub-pages */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tất Cả Module Lối Sống</h2>
-        <p className="text-muted text-lg mb-6">Khám phá theo trình tự lộ trình hoặc bắt đầu từ chủ đề bạn cần nhất.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s4Title}</h2>
+        <p className="text-muted text-lg mb-6">{s4Sub}</p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {SUB_PAGES.map(p => (
+          {SUBPAGES_TR.map(p => (
             <Link key={p.to} to={p.to} className="rounded-xl border border-border bg-surface p-4 hover:border-teal-500/20 transition-all group">
               <div className="text-3xl mb-2">{p.icon}</div>
               <div className="text-lg font-bold text-text group-hover:text-white transition-colors">{p.title}</div>
@@ -295,8 +324,8 @@ export default function LifestyleRoadmapPage() {
       <RevealBlock className="mb-12">
         <blockquote className="rounded-2xl p-6 border-l-4 relative overflow-hidden" style={{ borderLeftColor: COLOR, background: `rgba(${RGB},0.05)` }}>
           <div className="text-5xl absolute right-6 top-4 opacity-10" style={{ color: COLOR }}>"</div>
-          <p className="text-xl font-medium text-text leading-relaxed italic">"Không cần sống hoàn hảo. Chỉ cần sống có nhịp, có hồi phục, có quay lại."</p>
-          <cite className="text-base text-muted mt-3 block">— Triết lý Lối sống khỏe</cite>
+          <p className="text-xl font-medium text-text leading-relaxed italic">"{quoteText}"</p>
+          <cite className="text-base text-muted mt-3 block">{quoteCite}</cite>
         </blockquote>
       </RevealBlock>
 

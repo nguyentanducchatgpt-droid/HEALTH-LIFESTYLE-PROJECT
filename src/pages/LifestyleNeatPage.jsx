@@ -809,6 +809,37 @@ export default function LifestyleNeatPage() {
     return () => { const el = document.getElementById(id); if (el) el.remove(); };
   }, []);
 
+  const trTee = tPillars('pillarC.c_neat_tee', { returnObjects: true });
+  const neatVsTee = Array.isArray(trTee) ? NEAT_VS_TEE.map((it,i) => ({...it,...(trTee[i]||{})})) : NEAT_VS_TEE;
+  const trAct = tPillars('pillarC.c_neat_activities', { returnObjects: true });
+  const neatActivities = Array.isArray(trAct) ? NEAT_ACTIVITIES.map((it,i) => ({...it,...(trAct[i]||{})})) : NEAT_ACTIVITIES;
+  const trOH = tPillars('pillarC.c_neat_office_hacks', { returnObjects: true });
+  const officeHacks = Array.isArray(trOH) ? OFFICE_HACKS.map((it,i) => ({...it,...(trOH[i]||{})})) : OFFICE_HACKS;
+  const trBM = tPillars('pillarC.c_neat_break_moves', { returnObjects: true });
+  const breakMoves = Array.isArray(trBM) ? BREAK_MOVES.map((it,i) => ({...it,...(trBM[i]||{})})) : BREAK_MOVES;
+  const trSG = tPillars('pillarC.c_neat_step_goals', { returnObjects: true });
+  const stepGoals = Array.isArray(trSG) ? STEP_GOALS.map((it,i) => ({...it,...(trSG[i]||{})})) : STEP_GOALS;
+  const trCL = tPillars('pillarC.c_neat_daily_checklist', { returnObjects: true });
+  const neatChecklist = Array.isArray(trCL) ? NEAT_DAILY_CHECKLIST.map((it,i) => ({...it,...(trCL[i]||{})})) : NEAT_DAILY_CHECKLIST;
+  const neatCaption = tPillars('pillarC.c_neat_caption') || 'Đi bộ · Đứng dậy · Vận động rải rác';
+  const neatS1Title = tPillars('pillarC.c_neat_s1_title') || 'NEAT Chiếm Bao Nhiêu Trong Ngày?';
+  const neatS1Sub = tPillars('pillarC.c_neat_s1_sub') || 'Tổng năng lượng tiêu thụ trong ngày (TDEE) gồm 4 thành phần chính.';
+  const neatS1Keypoint = tPillars('pillarC.c_neat_s1_keypoint') || 'Điểm mấu chốt: Buổi tập gym chỉ chiếm 5–10% tổng năng lượng. NEAT chiếm 15–30%. Người năng động có NEAT cao hơn người ngồi nhiều tới 500–700 kcal/ngày.';
+  const neatS2Title = tPillars('pillarC.c_neat_s2_title') || 'NEAT Tiêu Thụ Bao Nhiêu kcal?';
+  const neatS2Sub = tPillars('pillarC.c_neat_s2_sub') || 'Các hoạt động NEAT phổ biến và năng lượng tiêu thụ ước tính.';
+  const neatS3Title = tPillars('pillarC.c_neat_s3_title') || '⏱ Quy Tắc Đứng Dậy 2 Phút';
+  const neatS3Text = tPillars('pillarC.c_neat_s3_text') || 'Ngồi liên tục hơn 90 phút làm giảm lưu thông máu, tăng căng cơ và giảm trao đổi chất.';
+  const neatS4Title = tPillars('pillarC.c_neat_s4_title') || '6 Cách Tăng NEAT Cho Dân Văn Phòng';
+  const neatS4Sub = tPillars('pillarC.c_neat_s4_sub') || 'Click vào từng mục để xem chiến lược chi tiết và bằng chứng khoa học.';
+  const neatS5Title = tPillars('pillarC.c_neat_s5_title') || 'Mục Tiêu Bước Theo Cấp Độ';
+  const neatS5Sub = tPillars('pillarC.c_neat_s5_sub') || 'Không ép tất cả lên 10.000 bước. Tăng từ nền hiện tại, không nhảy vọt.';
+  const neatS6Title = tPillars('pillarC.c_neat_s6_title') || 'NEAT Checklist Hằng Ngày';
+  const neatDetailLabel = tPillars('pillarC.c_neat_detail_label') || 'Chi tiết →';
+  const neatDetailHover = tPillars('pillarC.c_neat_detail_hover') || 'Chi tiết';
+  const neatCheckExcellent = tPillars('pillarC.c_neat_check_excellent') || 'Xuất sắc! NEAT cao nhất trong ngày';
+  const neatCheckGood = tPillars('pillarC.c_neat_check_good') || 'Tốt';
+  const neatCheckBuilding = tPillars('pillarC.c_neat_check_building') || 'Đang xây dựng thói quen';
+
   const checkCount = [0,1,2,3,4].filter(i => checks[i]).length;
 
   return (
@@ -844,7 +875,7 @@ export default function LifestyleNeatPage() {
             <div className="absolute bottom-4 left-6">
               <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
-                Đi bộ · Đứng dậy · Vận động rải rác
+                {neatCaption}
               </span>
             </div>
           </div>
@@ -855,10 +886,10 @@ export default function LifestyleNeatPage() {
 
       {/* NEAT vs TEE */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>NEAT Chiếm Bao Nhiêu Trong Ngày?</h2>
-        <p className="text-muted text-lg mb-6">Tổng năng lượng tiêu thụ trong ngày (TDEE) gồm 4 thành phần chính.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{neatS1Title}</h2>
+        <p className="text-muted text-lg mb-6">{neatS1Sub}</p>
         <div className="space-y-3">
-          {NEAT_VS_TEE.map((item, i) => (
+          {neatVsTee.map((item, i) => (
             <div key={i}
               className="flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.2)` }}
@@ -872,21 +903,21 @@ export default function LifestyleNeatPage() {
                 <div className="text-muted text-sm">{item.desc}</div>
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>{neatDetailLabel}</span>
             </div>
           ))}
         </div>
         <div className="mt-4 p-4 rounded-xl" style={{ background: `rgba(${RGB},0.07)`, border: `1px solid rgba(${RGB},0.2)` }}>
-          <p className="text-lg text-muted"><strong style={{ color: COLOR }}>Điểm mấu chốt:</strong> Buổi tập gym chỉ chiếm 5–10% tổng năng lượng. NEAT chiếm 15–30%. Người năng động (đi lại nhiều) có NEAT cao hơn người ngồi nhiều tới 500–700 kcal/ngày.</p>
+          <p className="text-lg text-muted">{neatS1Keypoint}</p>
         </div>
       </RevealBlock>
 
       {/* NEAT activities */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>NEAT Tiêu Thụ Bao Nhiêu kcal?</h2>
-        <p className="text-muted text-lg mb-6">Các hoạt động NEAT phổ biến và năng lượng tiêu thụ ước tính.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{neatS2Title}</h2>
+        <p className="text-muted text-lg mb-6">{neatS2Sub}</p>
         <div className="grid gap-3">
-          {NEAT_ACTIVITIES.map((a, i) => (
+          {neatActivities.map((a, i) => (
             <div key={i}
               className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${a.rgb},0.05)`, border: `1px solid rgba(${a.rgb},0.18)` }}
@@ -895,7 +926,7 @@ export default function LifestyleNeatPage() {
               <span className="text-base font-semibold text-text flex-1">{a.activity}</span>
               <span className="text-base font-bold tabular-nums shrink-0" style={{ color: a.color }}>{a.kcal} kcal</span>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: a.color, background: `rgba(${a.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: a.color, background: `rgba(${a.rgb},0.1)` }}>{neatDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -904,12 +935,10 @@ export default function LifestyleNeatPage() {
       {/* 2-minute rule */}
       <RevealBlock className="mb-12">
         <div className="p-6 rounded-2xl" style={{ background: `rgba(${RGB},0.08)`, border: `1px solid rgba(${RGB},0.25)` }}>
-          <h2 className="text-2xl font-bold mb-2" style={{ color: COLOR }}>⏱ Quy Tắc Đứng Dậy 2 Phút</h2>
-          <p className="text-muted text-lg leading-relaxed mb-4">
-            Ngồi liên tục hơn 90 phút làm giảm lưu thông máu, tăng căng cơ và giảm trao đổi chất. Nghiên cứu cho thấy ngắt quãng mỗi 45–60 phút có hiệu quả hơn tập gym 1 tiếng nếu phần còn lại của ngày bạn ngồi hoàn toàn.
-          </p>
+          <h2 className="text-2xl font-bold mb-2" style={{ color: COLOR }}>{neatS3Title}</h2>
+          <p className="text-muted text-lg leading-relaxed mb-4">{neatS3Text}</p>
           <div className="grid gap-2">
-            {BREAK_MOVES.map((move, i) => (
+            {breakMoves.map((move, i) => (
               <div key={i}
                 className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
                 style={{ background: `rgba(${move.rgb},0.06)`, border: `1px solid rgba(${move.rgb},0.18)` }}
@@ -917,7 +946,7 @@ export default function LifestyleNeatPage() {
                 <span className="text-xl shrink-0">{move.icon}</span>
                 <span className="flex-1 text-base text-muted">{move.action}</span>
                 <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                  style={{ color: move.color, background: `rgba(${move.rgb},0.1)` }}>Chi tiết →</span>
+                  style={{ color: move.color, background: `rgba(${move.rgb},0.1)` }}>{neatDetailLabel}</span>
               </div>
             ))}
           </div>
@@ -926,10 +955,10 @@ export default function LifestyleNeatPage() {
 
       {/* Office hacks */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>6 Cách Tăng NEAT Cho Dân Văn Phòng</h2>
-        <p className="text-muted text-lg mb-6">Click vào từng mục để xem chiến lược chi tiết và bằng chứng khoa học.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{neatS4Title}</h2>
+        <p className="text-muted text-lg mb-6">{neatS4Sub}</p>
         <div className="grid gap-3">
-          {OFFICE_HACKS.map((h, i) => (
+          {officeHacks.map((h, i) => (
             <div key={i}
               className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${h.rgb},0.05)`, border: `1px solid rgba(${h.rgb},0.18)` }}
@@ -940,7 +969,7 @@ export default function LifestyleNeatPage() {
                 <div className="text-muted text-sm mt-0.5">{h.detail_short}</div>
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: h.color, background: `rgba(${h.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: h.color, background: `rgba(${h.rgb},0.1)` }}>{neatDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -948,10 +977,10 @@ export default function LifestyleNeatPage() {
 
       {/* Step goals */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mục Tiêu Bước Theo Cấp Độ</h2>
-        <p className="text-muted text-lg mb-6">Không ép tất cả lên 10.000 bước. Tăng từ nền hiện tại, không nhảy vọt.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{neatS5Title}</h2>
+        <p className="text-muted text-lg mb-6">{neatS5Sub}</p>
         <div className="space-y-3">
-          {STEP_GOALS.map((g, i) => (
+          {stepGoals.map((g, i) => (
             <div key={i}
               className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${g.rgb},0.05)`, border: `1px solid rgba(${g.rgb},0.18)` }}
@@ -963,7 +992,7 @@ export default function LifestyleNeatPage() {
                 <div className="text-xs text-muted mt-0.5">{g.tip}</div>
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>{neatDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -971,9 +1000,9 @@ export default function LifestyleNeatPage() {
 
       {/* Daily NEAT checklist */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>NEAT Checklist Hằng Ngày</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{neatS6Title}</h2>
         <div className="space-y-1.5 mb-4">
-          {NEAT_DAILY_CHECKLIST.map((item, i) => (
+          {neatChecklist.map((item, i) => (
             <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
               style={{
                 border: '1px solid',
@@ -1006,7 +1035,7 @@ export default function LifestyleNeatPage() {
                   <span className={checks[i] ? 'line-through opacity-60' : ''}>{item.title}</span>
                 </span>
                 <span className="flex items-center gap-1 text-[10px] font-bold opacity-0 group-hover/label:opacity-100 transition-opacity shrink-0 ml-2" style={{ color: item.color }}>
-                  Chi tiết
+                  {neatDetailHover}
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                 </span>
               </button>
@@ -1016,7 +1045,7 @@ export default function LifestyleNeatPage() {
         <div className="h-2 rounded-full overflow-hidden mb-1" style={{ background: `rgba(${RGB},0.15)` }}>
           <div className="h-full rounded-full transition-all duration-500" style={{ width: `${checkCount / 5 * 100}%`, background: COLOR }} />
         </div>
-        <p className="text-base text-muted">{checkCount}/5 — {checkCount >= 4 ? 'Xuất sắc! NEAT cao nhất trong ngày' : checkCount >= 3 ? 'Tốt' : 'Đang xây dựng thói quen'}</p>
+        <p className="text-base text-muted">{checkCount}/5 — {checkCount >= 4 ? neatCheckExcellent : checkCount >= 3 ? neatCheckGood : neatCheckBuilding}</p>
       </RevealBlock>
 
       <div className="pt-6 border-t border-border flex items-center justify-between">
@@ -1027,84 +1056,84 @@ export default function LifestyleNeatPage() {
       {/* ── Step goals modal — outside all RevealBlocks ── */}
       {stepIdx !== null && (
         <NeatModal
-          item={STEP_GOALS[stepIdx]}
+          item={stepGoals[stepIdx]}
           idx={stepIdx}
-          total={STEP_GOALS.length}
+          total={stepGoals.length}
           onClose={() => setStepIdx(null)}
           onPrev={() => setStepIdx(i => Math.max(0, i - 1))}
-          onNext={() => setStepIdx(i => Math.min(STEP_GOALS.length - 1, i + 1))}
+          onNext={() => setStepIdx(i => Math.min(stepGoals.length - 1, i + 1))}
           hasPrev={stepIdx > 0}
-          hasNext={stepIdx < STEP_GOALS.length - 1}
+          hasNext={stepIdx < stepGoals.length - 1}
         />
       )}
 
       {/* ── Office hacks modal — outside all RevealBlocks ── */}
       {officeIdx !== null && (
         <NeatModal
-          item={OFFICE_HACKS[officeIdx]}
+          item={officeHacks[officeIdx]}
           idx={officeIdx}
-          total={OFFICE_HACKS.length}
+          total={officeHacks.length}
           onClose={() => setOfficeIdx(null)}
           onPrev={() => setOfficeIdx(i => Math.max(0, i - 1))}
-          onNext={() => setOfficeIdx(i => Math.min(OFFICE_HACKS.length - 1, i + 1))}
+          onNext={() => setOfficeIdx(i => Math.min(officeHacks.length - 1, i + 1))}
           hasPrev={officeIdx > 0}
-          hasNext={officeIdx < OFFICE_HACKS.length - 1}
+          hasNext={officeIdx < officeHacks.length - 1}
         />
       )}
 
       {/* ── Break moves modal — outside all RevealBlocks ── */}
       {breakIdx !== null && (
         <NeatModal
-          item={BREAK_MOVES[breakIdx]}
+          item={breakMoves[breakIdx]}
           idx={breakIdx}
-          total={BREAK_MOVES.length}
+          total={breakMoves.length}
           onClose={() => setBreakIdx(null)}
           onPrev={() => setBreakIdx(i => Math.max(0, i - 1))}
-          onNext={() => setBreakIdx(i => Math.min(BREAK_MOVES.length - 1, i + 1))}
+          onNext={() => setBreakIdx(i => Math.min(breakMoves.length - 1, i + 1))}
           hasPrev={breakIdx > 0}
-          hasNext={breakIdx < BREAK_MOVES.length - 1}
+          hasNext={breakIdx < breakMoves.length - 1}
         />
       )}
 
       {/* ── NEAT activities modal — outside all RevealBlocks ── */}
       {activityIdx !== null && (
         <NeatModal
-          item={NEAT_ACTIVITIES[activityIdx]}
+          item={neatActivities[activityIdx]}
           idx={activityIdx}
-          total={NEAT_ACTIVITIES.length}
+          total={neatActivities.length}
           onClose={() => setActivityIdx(null)}
           onPrev={() => setActivityIdx(i => Math.max(0, i - 1))}
-          onNext={() => setActivityIdx(i => Math.min(NEAT_ACTIVITIES.length - 1, i + 1))}
+          onNext={() => setActivityIdx(i => Math.min(neatActivities.length - 1, i + 1))}
           hasPrev={activityIdx > 0}
-          hasNext={activityIdx < NEAT_ACTIVITIES.length - 1}
+          hasNext={activityIdx < neatActivities.length - 1}
         />
       )}
 
       {/* ── Daily checklist modal ── */}
       {checklistModal !== null && (
         <NeatModal
-          item={NEAT_DAILY_CHECKLIST[checklistModal]}
+          item={neatChecklist[checklistModal]}
           idx={checklistModal}
-          total={NEAT_DAILY_CHECKLIST.length}
+          total={neatChecklist.length}
           onClose={() => setChecklistModal(null)}
           onPrev={() => setChecklistModal(i => Math.max(0, i - 1))}
-          onNext={() => setChecklistModal(i => Math.min(NEAT_DAILY_CHECKLIST.length - 1, i + 1))}
+          onNext={() => setChecklistModal(i => Math.min(neatChecklist.length - 1, i + 1))}
           hasPrev={checklistModal > 0}
-          hasNext={checklistModal < NEAT_DAILY_CHECKLIST.length - 1}
+          hasNext={checklistModal < neatChecklist.length - 1}
         />
       )}
 
       {/* ── TDEE components modal — outside all RevealBlocks ── */}
       {teeIdx !== null && (
         <NeatModal
-          item={NEAT_VS_TEE[teeIdx]}
+          item={neatVsTee[teeIdx]}
           idx={teeIdx}
-          total={NEAT_VS_TEE.length}
+          total={neatVsTee.length}
           onClose={() => setTeeIdx(null)}
           onPrev={() => setTeeIdx(i => Math.max(0, i - 1))}
-          onNext={() => setTeeIdx(i => Math.min(NEAT_VS_TEE.length - 1, i + 1))}
+          onNext={() => setTeeIdx(i => Math.min(neatVsTee.length - 1, i + 1))}
           hasPrev={teeIdx > 0}
-          hasNext={teeIdx < NEAT_VS_TEE.length - 1}
+          hasNext={teeIdx < neatVsTee.length - 1}
         />
       )}
     </div>

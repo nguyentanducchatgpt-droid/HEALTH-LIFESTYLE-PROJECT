@@ -469,6 +469,7 @@ const SEVEN_DAY_PLAN = [
 ];
 
 function SleepTimingModal({ onClose }) {
+  const { t: tPillars } = useTranslation('pillars');
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -476,6 +477,25 @@ function SleepTimingModal({ onClose }) {
     return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
   }, [onClose]);
   const color = '#14b8a6'; const rgb = '20,184,166';
+  const tmDetails = tPillars('pillarC.c_sleep_timing_details', { returnObjects: true });
+  const tmPoints = tPillars('pillarC.c_sleep_timing_points', { returnObjects: true });
+  const detailList = Array.isArray(tmDetails) ? tmDetails : [
+    'N3 (ngủ sâu) tập trung nhiều nhất trong 3–4 giờ đầu tiên sau khi ngủ — đây là "cửa sổ vàng" phục hồi thể chất.',
+    'REM tập trung nhiều nhất vào 2–3 giờ cuối trước khi thức — buổi sáng sớm 4–7h là giai đoạn REM dài nhất.',
+    'Ngủ muộn 2 tiếng (2h AM thay vì 0h AM) không làm giảm tổng giờ ngủ nhưng cắt bỏ gần toàn bộ N3.',
+    'Thức dậy sớm hơn 2 tiếng (5h AM thay vì 7h AM) không giảm nhiều N3 nhưng mất phần lớn REM quan trọng.',
+    'Cùng 6 tiếng ngủ nhưng 23h–5h (nhiều N3, ít REM) khác hoàn toàn với 1h–7h (ít N3, nhiều REM).',
+    'Mục tiêu lý tưởng: ngủ 22h–23h, dậy 6h–7h — tối ưu cả N3 (đầu đêm) lẫn REM (sáng sớm).',
+  ];
+  const basePoints = [
+    { icon: '🌑', label: 'N3 cửa sổ vàng', note: '3–4 tiếng đầu đêm — không thể bù lại' },
+    { icon: '✨', label: 'REM buổi sáng', note: '4–7h AM — thức sớm mất toàn bộ REM' },
+    { icon: '😴', label: 'Ngủ muộn = mất N3', note: 'Dù ngủ đủ giờ, cơ thể không hồi phục' },
+    { icon: '⏰', label: 'Lý tưởng: 22–23h', note: 'Dậy 6–7h — cân bằng N3 + REM' },
+  ];
+  const pointList = Array.isArray(tmPoints)
+    ? basePoints.map((p, i) => ({ ...p, ...(tmPoints[i] || {}) }))
+    : basePoints;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4"
       style={{ background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(14px)' }}
@@ -485,7 +505,7 @@ function SleepTimingModal({ onClose }) {
         onClick={e => e.stopPropagation()}>
         <div className="relative h-52 rounded-t-3xl overflow-hidden shrink-0">
           <img src="https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=800&q=80&auto=format&fit=crop"
-            alt="Thời điểm ngủ" className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
+            alt={tPillars('pillarC.c_sleep_timing_title') || 'Thời điểm ngủ'} className="w-full h-full object-cover" style={{ opacity: 0.5 }} />
           <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(${rgb},0.08) 50%, #0d0d0d 100%)` }} />
           <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }} />
           <div className="absolute bottom-5 left-6 w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
@@ -494,20 +514,13 @@ function SleepTimingModal({ onClose }) {
             style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.15)' }}>✕</button>
         </div>
         <div className="p-6 md:p-8">
-          <h2 className="font-bold text-2xl md:text-3xl mb-2" style={{ color }}>Thời Điểm Ngủ & Thức Dậy</h2>
+          <h2 className="font-bold text-2xl md:text-3xl mb-2" style={{ color }}>{tPillars('pillarC.c_sleep_timing_title') || 'Thời Điểm Ngủ & Thức Dậy'}</h2>
           <div className="rounded-xl p-3 mb-5 text-sm font-semibold" style={{ background: `rgba(${rgb},0.1)`, color, border: `1px solid rgba(${rgb},0.2)` }}>
-            ✦ N3 nhiều nhất 3 giờ đầu đêm — REM nhiều nhất buổi sáng sớm. Thay đổi giờ ngủ/thức ảnh hưởng hoàn toàn khác nhau đến từng giai đoạn.
+            {tPillars('pillarC.c_sleep_timing_note') || '✦ N3 nhiều nhất 3 giờ đầu đêm — REM nhiều nhất buổi sáng sớm. Thay đổi giờ ngủ/thức ảnh hưởng hoàn toàn khác nhau đến từng giai đoạn.'}
           </div>
-          <p className="text-muted text-base leading-relaxed mb-5">Không phải tất cả các giờ ngủ đều như nhau. Cơ thể theo đồng hồ sinh học circadian — N3 và REM có "cửa sổ thời gian" tự nhiên. Hiểu điều này giúp bạn tối ưu hóa giấc ngủ không chỉ bằng số giờ mà còn bằng thời điểm.</p>
+          <p className="text-muted text-base leading-relaxed mb-5">{tPillars('pillarC.c_sleep_timing_desc') || 'Không phải tất cả các giờ ngủ đều như nhau. Cơ thể theo đồng hồ sinh học circadian — N3 và REM có "cửa sổ thời gian" tự nhiên. Hiểu điều này giúp bạn tối ưu hóa giấc ngủ không chỉ bằng số giờ mà còn bằng thời điểm.'}</p>
           <ul className="space-y-3 mb-8">
-            {[
-              'N3 (ngủ sâu) tập trung nhiều nhất trong 3–4 giờ đầu tiên sau khi ngủ — đây là "cửa sổ vàng" phục hồi thể chất.',
-              'REM tập trung nhiều nhất vào 2–3 giờ cuối trước khi thức — buổi sáng sớm 4–7h là giai đoạn REM dài nhất.',
-              'Ngủ muộn 2 tiếng (2h AM thay vì 0h AM) không làm giảm tổng giờ ngủ nhưng cắt bỏ gần toàn bộ N3.',
-              'Thức dậy sớm hơn 2 tiếng (5h AM thay vì 7h AM) không giảm nhiều N3 nhưng mất phần lớn REM quan trọng.',
-              'Cùng 6 tiếng ngủ nhưng 23h–5h (nhiều N3, ít REM) khác hoàn toàn với 1h–7h (ít N3, nhiều REM).',
-              'Mục tiêu lý tưởng: ngủ 22h–23h, dậy 6h–7h — tối ưu cả N3 (đầu đêm) lẫn REM (sáng sớm).',
-            ].map((d, di) => (
+            {detailList.map((d, di) => (
               <li key={di} className="flex gap-3 text-base text-muted leading-relaxed">
                 <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
                   style={{ background: `rgba(${rgb},0.14)`, color }}>{di + 1}</span>
@@ -516,12 +529,7 @@ function SleepTimingModal({ onClose }) {
             ))}
           </ul>
           <div className="grid grid-cols-2 gap-3 mb-6">
-            {[
-              { icon: '🌑', label: 'N3 cửa sổ vàng', note: '3–4 tiếng đầu đêm — không thể bù lại' },
-              { icon: '✨', label: 'REM buổi sáng', note: '4–7h AM — thức sớm mất toàn bộ REM' },
-              { icon: '😴', label: 'Ngủ muộn = mất N3', note: 'Dù ngủ đủ giờ, cơ thể không hồi phục' },
-              { icon: '⏰', label: 'Lý tưởng: 22–23h', note: 'Dậy 6–7h — cân bằng N3 + REM' },
-            ].map((pt, pi) => (
+            {pointList.map((pt, pi) => (
               <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
                 style={{ background: `rgba(${rgb},0.06)`, border: `1px solid rgba(${rgb},0.15)` }}>
                 <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>
@@ -625,6 +633,21 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function LifestyleSleepPage() {
   const { t: tPillars } = useTranslation('pillars');
   const hero = tPillars('pillarC.c_sleep_hero', { returnObjects: true }) || {};
+
+  const trFacts = tPillars('pillarC.c_sleep_facts', { returnObjects: true });
+  const sleepFacts = Array.isArray(trFacts) ? SLEEP_FACTS.map((it, i) => ({ ...it, ...(trFacts[i] || {}) })) : SLEEP_FACTS;
+  const trStages = tPillars('pillarC.c_sleep_stages', { returnObjects: true });
+  const sleepStages = Array.isArray(trStages) ? SLEEP_STAGES.map((it, i) => ({ ...it, ...(trStages[i] || {}) })) : SLEEP_STAGES;
+  const trHygiene = tPillars('pillarC.c_sleep_hygiene', { returnObjects: true });
+  const hygieneSteps = Array.isArray(trHygiene) ? HYGIENE_STEPS.map((it, i) => ({ ...it, ...(trHygiene[i] || {}) })) : HYGIENE_STEPS;
+  const trTrouble = tPillars('pillarC.c_sleep_trouble', { returnObjects: true });
+  const troubleCases = Array.isArray(trTrouble) ? TROUBLE_CASES.map((it, i) => ({ ...it, ...(trTrouble[i] || {}) })) : TROUBLE_CASES;
+  const tr7day = tPillars('pillarC.c_sleep_7day', { returnObjects: true });
+  const sevenDayPlan = Array.isArray(tr7day) ? SEVEN_DAY_PLAN.map((it, i) => ({ ...it, ...(tr7day[i] || {}) })) : SEVEN_DAY_PLAN;
+  const detailLabel = tPillars('pillarC.c_sleep_detail_label') || 'Chi tiết →';
+  const checklistItems = tPillars('pillarC.c_sleep_checklist', { returnObjects: true });
+  const doctorItems = tPillars('pillarC.c_sleep_doctor', { returnObjects: true });
+
   const [openCase, setOpenCase] = useState(null);
   const [checks, setChecks] = useState({});
   const [sleepFactIdx, setSleepFactIdx] = useState(null);
@@ -697,10 +720,10 @@ export default function LifestyleSleepPage() {
 
       {/* Why sleep matters */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Giấc Ngủ Quan Trọng?</h2>
-        <p className="text-muted text-lg mb-6">Muốn khỏe bền, đừng chỉ tập thêm — hãy ngủ tốt hơn.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_sleep_s1_title') || 'Tại Sao Giấc Ngủ Quan Trọng?'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_sleep_s1_sub') || 'Muốn khỏe bền, đừng chỉ tập thêm — hãy ngủ tốt hơn.'}</p>
         <div className="grid gap-3">
-          {SLEEP_FACTS.map((f, i) => (
+          {sleepFacts.map((f, i) => (
             <div key={i}
               className="flex gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${f.rgb},0.06)`, border: `1px solid rgba(${f.rgb},0.15)` }}
@@ -711,7 +734,7 @@ export default function LifestyleSleepPage() {
                 <div className="text-muted text-base leading-relaxed">{f.desc}</div>
               </div>
               <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
-                style={{ color: f.color, background: `rgba(${f.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: f.color, background: `rgba(${f.rgb},0.1)` }}>{detailLabel}</span>
             </div>
           ))}
         </div>
@@ -719,10 +742,10 @@ export default function LifestyleSleepPage() {
 
       {/* Sleep stages */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Giai Đoạn Giấc Ngủ</h2>
-        <p className="text-muted text-lg mb-6">Một chu kỳ ngủ hoàn chỉnh kéo dài ~90 phút và lặp lại 4–6 lần mỗi đêm.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_sleep_s2_title') || '4 Giai Đoạn Giấc Ngủ'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_sleep_s2_sub') || 'Một chu kỳ ngủ hoàn chỉnh kéo dài ~90 phút và lặp lại 4–6 lần mỗi đêm.'}</p>
         <div className="space-y-3">
-          {SLEEP_STAGES.map((st, i) => (
+          {sleepStages.map((st, i) => (
             <div key={i}
               className="p-4 rounded-xl border cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ borderColor: `rgba(${st.rgb},0.2)`, background: `rgba(${st.rgb},0.07)` }}
@@ -745,18 +768,18 @@ export default function LifestyleSleepPage() {
           style={{ background: `rgba(${RGB},0.07)`, border: `1px solid rgba(${RGB},0.2)` }}
           onClick={() => setSleepTimingOpen(true)}>
           <div className="flex items-start justify-between gap-3">
-            <p className="text-base text-muted"><strong style={{ color: COLOR }}>Lưu ý quan trọng:</strong> Giấc ngủ sâu (N3) nhiều nhất trong 3 giờ đầu đêm. REM nhiều nhất vào buổi sáng sớm. Ngủ muộn → mất giấc ngủ sâu; thức sớm → mất REM.</p>
-            <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg" style={{ color: COLOR, background: `rgba(${RGB},0.12)` }}>Chi tiết →</span>
+            <p className="text-base text-muted">{tPillars('pillarC.c_sleep_s2_note') || 'Lưu ý quan trọng: Giấc ngủ sâu (N3) nhiều nhất trong 3 giờ đầu đêm. REM nhiều nhất vào buổi sáng sớm. Ngủ muộn → mất giấc ngủ sâu; thức sớm → mất REM.'}</p>
+            <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg" style={{ color: COLOR, background: `rgba(${RGB},0.12)` }}>{detailLabel}</span>
           </div>
         </div>
       </RevealBlock>
 
       {/* 4 steps hygiene */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vệ Sinh Giấc Ngủ 4 Bước</h2>
-        <p className="text-muted text-lg mb-6">Không ép ngủ hoàn hảo, mà xây môi trường để cơ thể dễ ngủ hơn.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_sleep_s3_title') || 'Vệ Sinh Giấc Ngủ 4 Bước'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_sleep_s3_sub') || 'Không ép ngủ hoàn hảo, mà xây môi trường để cơ thể dễ ngủ hơn.'}</p>
         <div className="grid gap-4">
-          {HYGIENE_STEPS.map((step, i) => (
+          {hygieneSteps.map((step, i) => (
             <div key={i}
               className="p-5 rounded-2xl border cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ borderColor: `rgba(${step.rgb},0.18)`, background: `rgba(${step.rgb},0.05)` }}
@@ -767,7 +790,7 @@ export default function LifestyleSleepPage() {
                   <span className="text-2xl">{step.icon}</span>
                   <h3 className="font-bold text-text">{step.label}</h3>
                 </div>
-                <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60" style={{ color: step.color, background: `rgba(${step.rgb},0.1)` }}>Chi tiết →</span>
+                <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60" style={{ color: step.color, background: `rgba(${step.rgb},0.1)` }}>{detailLabel}</span>
               </div>
               <p className="text-muted text-base leading-relaxed mb-3">{step.content}</p>
               <div className="text-sm font-semibold px-3 py-1.5 rounded-lg inline-block" style={{ color: step.color, background: `rgba(${step.rgb},0.1)` }}>
@@ -780,10 +803,10 @@ export default function LifestyleSleepPage() {
 
       {/* 7-day reset */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Sửa Ngủ Muộn Trong 7 Ngày</h2>
-        <p className="text-muted text-lg mb-6">Không kéo giờ ngủ sớm quá mạnh ngay. Mỗi 2–3 ngày kéo sớm 15–30 phút để cơ thể thích nghi.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_sleep_s4_title') || 'Sửa Ngủ Muộn Trong 7 Ngày'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_sleep_s4_sub') || 'Không kéo giờ ngủ sớm quá mạnh ngay. Mỗi 2–3 ngày kéo sớm 15–30 phút để cơ thể thích nghi.'}</p>
         <div className="space-y-3">
-          {SEVEN_DAY_PLAN.map((day, i) => (
+          {sevenDayPlan.map((day, i) => (
             <div key={i}
               className="flex gap-4 items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${day.rgb},0.05)`, border: `1px solid rgba(${day.rgb},0.14)` }}
@@ -797,7 +820,7 @@ export default function LifestyleSleepPage() {
                 <div className="text-muted text-sm mt-0.5">{day.action}</div>
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: day.color, background: `rgba(${day.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: day.color, background: `rgba(${day.rgb},0.1)` }}>{detailLabel}</span>
             </div>
           ))}
         </div>
@@ -805,10 +828,10 @@ export default function LifestyleSleepPage() {
 
       {/* Trouble cases */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Xử Lý Tình Huống Thường Gặp</h2>
-        <p className="text-muted text-lg mb-6">3 kịch bản phổ biến nhất và cách xử lý thực tế.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_sleep_s5_title') || 'Xử Lý Tình Huống Thường Gặp'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_sleep_s5_sub') || '3 kịch bản phổ biến nhất và cách xử lý thực tế.'}</p>
         <div className="space-y-3">
-          {TROUBLE_CASES.map((c, i) => (
+          {troubleCases.map((c, i) => (
             <div key={i} className="rounded-2xl overflow-hidden border" style={{ borderColor: `rgba(${RGB},0.15)` }}>
               <button onClick={() => setOpenCase(openCase === i ? null : i)}
                 className="w-full flex items-center justify-between p-4 text-left" style={{ background: `rgba(${RGB},0.06)` }}>
@@ -834,16 +857,16 @@ export default function LifestyleSleepPage() {
 
       {/* Daily checklist */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Checklist Ngủ Hằng Ngày</h2>
-        <p className="text-muted text-lg mb-6">Không cần đạt 5/5 mỗi ngày. Đạt 3/5 là đã tốt cho người mới bắt đầu.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tPillars('pillarC.c_sleep_s6_title') || 'Checklist Ngủ Hằng Ngày'}</h2>
+        <p className="text-muted text-lg mb-6">{tPillars('pillarC.c_sleep_s6_sub') || 'Không cần đạt 5/5 mỗi ngày. Đạt 3/5 là đã tốt cho người mới bắt đầu.'}</p>
         <div className="space-y-3">
-          {[
+          {(Array.isArray(checklistItems) ? checklistItems : [
             'Giảm màn hình trước ngủ 30+ phút',
             'Không uống caffeine sau 15h',
             'Có routine tối ít nhất 5 phút (giãn cơ, thở, đọc sách)',
             'Lên giường trong khung giờ dự kiến',
             'Ngủ đủ hoặc tốt hơn hôm qua',
-          ].map((item, i) => (
+          ]).map((item, i) => (
             <label key={i} className="flex items-center gap-3 cursor-pointer group p-3 rounded-xl hover:bg-white/5 transition-colors">
               <div onClick={() => setChecks(p => ({ ...p, [i]: !p[i] }))}
                 className="w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all border"
@@ -857,15 +880,15 @@ export default function LifestyleSleepPage() {
         <div className="mt-4 h-2 rounded-full overflow-hidden" style={{ background: `rgba(${RGB},0.15)` }}>
           <div className="h-full rounded-full transition-all duration-500" style={{ width: `${checkCount / 5 * 100}%`, background: COLOR }} />
         </div>
-        <p className="text-base text-muted mt-2">{checkCount}/5 — {checkCount >= 4 ? '🌟 Xuất sắc!' : checkCount >= 3 ? '✅ Tốt!' : '⏳ Đang xây dựng'}</p>
+        <p className="text-base text-muted mt-2">{checkCount}/5 — {checkCount >= 4 ? (tPillars('pillarC.c_sleep_progress_excellent') || '🌟 Xuất sắc!') : checkCount >= 3 ? (tPillars('pillarC.c_sleep_progress_good') || '✅ Tốt!') : (tPillars('pillarC.c_sleep_progress_building') || '⏳ Đang xây dựng')}</p>
       </RevealBlock>
 
       {/* Safety note */}
       <RevealBlock className="mb-12">
         <div className="p-5 rounded-2xl border" style={{ borderColor: 'rgba(239,68,68,0.2)', background: 'rgba(239,68,68,0.05)' }}>
-          <h3 className="font-bold text-red-400 mb-3">⚠️ Khi Nào Cần Gặp Bác Sĩ?</h3>
+          <h3 className="font-bold text-red-400 mb-3">{tPillars('pillarC.c_sleep_s7_title') || '⚠️ Khi Nào Cần Gặp Bác Sĩ?'}</h3>
           <div className="space-y-1 text-lg text-muted">
-            {['Mất ngủ kéo dài hơn 3–4 tuần dù đã áp dụng vệ sinh giấc ngủ', 'Ngủ 7–9 tiếng nhưng vẫn mệt mỏi suốt ngày (có thể là sleep apnea)', 'Ngáy to, ngừng thở khi ngủ', 'Chân bứt rứt khó chịu khi ngủ (restless legs)', 'Mộng du hoặc hành vi bất thường khi ngủ'].map((item, i) => (
+            {(Array.isArray(doctorItems) ? doctorItems : ['Mất ngủ kéo dài hơn 3–4 tuần dù đã áp dụng vệ sinh giấc ngủ', 'Ngủ 7–9 tiếng nhưng vẫn mệt mỏi suốt ngày (có thể là sleep apnea)', 'Ngáy to, ngừng thở khi ngủ', 'Chân bứt rứt khó chịu khi ngủ (restless legs)', 'Mộng du hoặc hành vi bất thường khi ngủ']).map((item, i) => (
               <div key={i} className="flex items-start gap-2">
                 <span className="text-red-400 shrink-0">•</span>{item}
               </div>
@@ -882,14 +905,14 @@ export default function LifestyleSleepPage() {
       {/* ── Hygiene step modal ── */}
       {hygieneIdx !== null && (
         <SleepFactModal
-          item={HYGIENE_STEPS[hygieneIdx]}
+          item={hygieneSteps[hygieneIdx]}
           idx={hygieneIdx}
-          total={HYGIENE_STEPS.length}
+          total={hygieneSteps.length}
           onClose={() => setHygieneIdx(null)}
           onPrev={() => setHygieneIdx(i => Math.max(0, i - 1))}
-          onNext={() => setHygieneIdx(i => Math.min(HYGIENE_STEPS.length - 1, i + 1))}
+          onNext={() => setHygieneIdx(i => Math.min(hygieneSteps.length - 1, i + 1))}
           hasPrev={hygieneIdx > 0}
-          hasNext={hygieneIdx < HYGIENE_STEPS.length - 1}
+          hasNext={hygieneIdx < hygieneSteps.length - 1}
         />
       )}
 
@@ -899,41 +922,41 @@ export default function LifestyleSleepPage() {
       {/* ── Sleep stage modal ── */}
       {sleepStageIdx !== null && (
         <SleepFactModal
-          item={SLEEP_STAGES[sleepStageIdx]}
+          item={sleepStages[sleepStageIdx]}
           idx={sleepStageIdx}
-          total={SLEEP_STAGES.length}
+          total={sleepStages.length}
           onClose={() => setSleepStageIdx(null)}
           onPrev={() => setSleepStageIdx(i => Math.max(0, i - 1))}
-          onNext={() => setSleepStageIdx(i => Math.min(SLEEP_STAGES.length - 1, i + 1))}
+          onNext={() => setSleepStageIdx(i => Math.min(sleepStages.length - 1, i + 1))}
           hasPrev={sleepStageIdx > 0}
-          hasNext={sleepStageIdx < SLEEP_STAGES.length - 1}
+          hasNext={sleepStageIdx < sleepStages.length - 1}
         />
       )}
 
       {/* ── 7-day plan modal ── */}
       {sevenDayIdx !== null && (
         <SleepFactModal
-          item={SEVEN_DAY_PLAN[sevenDayIdx]}
+          item={sevenDayPlan[sevenDayIdx]}
           idx={sevenDayIdx}
-          total={SEVEN_DAY_PLAN.length}
+          total={sevenDayPlan.length}
           onClose={() => setSevenDayIdx(null)}
           onPrev={() => setSevenDayIdx(i => Math.max(0, i - 1))}
-          onNext={() => setSevenDayIdx(i => Math.min(SEVEN_DAY_PLAN.length - 1, i + 1))}
+          onNext={() => setSevenDayIdx(i => Math.min(sevenDayPlan.length - 1, i + 1))}
           hasPrev={sevenDayIdx > 0}
-          hasNext={sevenDayIdx < SEVEN_DAY_PLAN.length - 1}
+          hasNext={sevenDayIdx < sevenDayPlan.length - 1}
         />
       )}
 
       {/* ── Sleep fact modal — outside all RevealBlocks so position:fixed works ── */}
       {sleepFactIdx !== null && (
         <SleepFactModal
-          item={SLEEP_FACTS[sleepFactIdx]}
+          item={sleepFacts[sleepFactIdx]}
           idx={sleepFactIdx}
           onClose={() => setSleepFactIdx(null)}
           onPrev={() => setSleepFactIdx(i => Math.max(0, i - 1))}
-          onNext={() => setSleepFactIdx(i => Math.min(SLEEP_FACTS.length - 1, i + 1))}
+          onNext={() => setSleepFactIdx(i => Math.min(sleepFacts.length - 1, i + 1))}
           hasPrev={sleepFactIdx > 0}
-          hasNext={sleepFactIdx < SLEEP_FACTS.length - 1}
+          hasNext={sleepFactIdx < sleepFacts.length - 1}
         />
       )}
     </div>

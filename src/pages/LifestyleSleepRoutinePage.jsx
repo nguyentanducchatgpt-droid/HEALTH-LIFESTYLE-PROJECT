@@ -715,6 +715,28 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function LifestyleSleepRoutinePage() {
   const { t: tPillars } = useTranslation('pillars');
   const hero = tPillars('pillarC.c_sleep_routine_hero', { returnObjects: true }) || {};
+
+  const trR60 = tPillars('pillarC.c_sleep_routine_r60', { returnObjects: true });
+  const routine60 = Array.isArray(trR60) ? ROUTINE_60.map((it, i) => ({ ...it, ...(trR60[i] || {}) })) : ROUTINE_60;
+  const trR10 = tPillars('pillarC.c_sleep_routine_r10', { returnObjects: true });
+  const routine10 = Array.isArray(trR10) ? ROUTINE_10.map((it, i) => ({ ...it, ...(trR10[i] || {}) })) : ROUTINE_10;
+  const trMistakes = tPillars('pillarC.c_sleep_routine_mistakes', { returnObjects: true });
+  const commonMistakes = Array.isArray(trMistakes) ? COMMON_MISTAKES.map((it, i) => ({ ...it, ...(trMistakes[i] || {}) })) : COMMON_MISTAKES;
+  const trWhy = tPillars('pillarC.c_sleep_routine_why', { returnObjects: true });
+  const whyRoutine = Array.isArray(trWhy) ? WHY_ROUTINE.map((it, i) => ({ ...it, ...(trWhy[i] || {}) })) : WHY_ROUTINE;
+  const trStretch = tPillars('pillarC.c_sleep_routine_stretch', { returnObjects: true });
+  const stretchExercises = Array.isArray(trStretch) ? STRETCH_EXERCISES.map((it, i) => ({ ...it, ...(trStretch[i] || {}) })) : STRETCH_EXERCISES;
+  const srS1Title = tPillars('pillarC.c_sr_s1_title') || 'Tại Sao Cần Routine Trước Ngủ?';
+  const srS1Sub = tPillars('pillarC.c_sr_s1_sub') || 'Não cần tín hiệu để chuyển từ "mode tỉnh táo" sang "mode ngủ". Routine là bộ tín hiệu đó.';
+  const srS2Title = tPillars('pillarC.c_sr_s2_title') || 'Routine Mẫu';
+  const srS2Sub = tPillars('pillarC.c_sr_s2_sub') || 'Chọn phiên bản phù hợp với lịch trình của bạn.';
+  const srS3Title = tPillars('pillarC.c_sr_s3_title') || 'Giãn Cơ Trước Ngủ';
+  const srS3Sub = tPillars('pillarC.c_sr_s3_sub') || 'Giãn cơ nhẹ 5–10 phút trước ngủ giảm căng cơ tích lũy, tăng thư giãn và cải thiện chất lượng giấc ngủ.';
+  const srS4Title = tPillars('pillarC.c_sr_s4_title') || 'Lỗi Thường Gặp';
+  const srBtn10 = tPillars('pillarC.c_sr_btn_10') || '10 phút rút gọn';
+  const srBtn60 = tPillars('pillarC.c_sr_btn_60') || '60 phút đầy đủ';
+  const srDetailLabel = tPillars('pillarC.c_sr_detail_label') || 'Chi tiết →';
+
   const [mode, setMode] = useState('60');
   const [routineIdx, setRoutineIdx] = useState(null);
   const [routine60Idx, setRoutine60Idx] = useState(null);
@@ -783,10 +805,10 @@ export default function LifestyleSleepRoutinePage() {
 
       {/* Why routine */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Cần Routine Trước Ngủ?</h2>
-        <p className="text-muted text-lg mb-6">Não cần tín hiệu để chuyển từ "mode tỉnh táo" sang "mode ngủ". Routine là bộ tín hiệu đó.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{srS1Title}</h2>
+        <p className="text-muted text-lg mb-6">{srS1Sub}</p>
         <div className="grid gap-3">
-          {WHY_ROUTINE.map((item, i) => (
+          {whyRoutine.map((item, i) => (
             <div key={i}
               className="flex gap-3 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${item.rgb},0.05)`, border: `1px solid rgba(${item.rgb},0.14)` }}
@@ -797,7 +819,7 @@ export default function LifestyleSleepRoutinePage() {
                 <p className="text-muted text-base leading-relaxed">{item.details[0]}</p>
               </div>
               <span className="text-xs font-bold shrink-0 self-center px-2 py-1 rounded-lg opacity-60"
-                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>{srDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -805,8 +827,8 @@ export default function LifestyleSleepRoutinePage() {
 
       {/* Routine plans */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Routine Mẫu</h2>
-        <p className="text-muted text-lg mb-5">Chọn phiên bản phù hợp với lịch trình của bạn.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{srS2Title}</h2>
+        <p className="text-muted text-lg mb-5">{srS2Sub}</p>
         <div className="flex gap-2 mb-6">
           {['10', '60'].map(m => (
             <button key={m} onClick={() => setMode(m)}
@@ -814,14 +836,14 @@ export default function LifestyleSleepRoutinePage() {
               style={mode === m
                 ? { background: `rgba(${RGB},0.15)`, color: COLOR, border: `1px solid rgba(${RGB},0.3)` }
                 : { color: 'var(--color-muted)', border: '1px solid var(--color-border)' }}>
-              {m === '10' ? '10 phút rút gọn' : '60 phút đầy đủ'}
+              {m === '10' ? srBtn10 : srBtn60}
             </button>
           ))}
         </div>
 
         {mode === '10' ? (
           <div className="space-y-3">
-            {ROUTINE_10.map((row, i) => (
+            {routine10.map((row, i) => (
               <div key={i}
                 className="flex gap-4 items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
                 style={{ background: `rgba(${row.rgb},0.05)`, border: `1px solid rgba(${row.rgb},0.15)` }}
@@ -839,7 +861,7 @@ export default function LifestyleSleepRoutinePage() {
           </div>
         ) : (
           <div className="space-y-3">
-            {ROUTINE_60.map((row, i) => (
+            {routine60.map((row, i) => (
               <div key={i}
                 className="flex gap-4 items-center p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
                 style={{ background: `rgba(${row.rgb},0.05)`, border: `1px solid rgba(${row.rgb},0.15)` }}
@@ -859,10 +881,10 @@ export default function LifestyleSleepRoutinePage() {
 
       {/* Stretching */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Giãn Cơ Trước Ngủ</h2>
-        <p className="text-muted text-lg mb-6">Giãn cơ nhẹ 5–10 phút trước ngủ giảm căng cơ tích lũy, tăng thư giãn và cải thiện chất lượng giấc ngủ.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{srS3Title}</h2>
+        <p className="text-muted text-lg mb-6">{srS3Sub}</p>
         <div className="grid gap-3">
-          {STRETCH_EXERCISES.map((ex, i) => (
+          {stretchExercises.map((ex, i) => (
             <div key={i}
               className="flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${ex.rgb},0.05)`, border: `1px solid rgba(${ex.rgb},0.15)` }}
@@ -882,9 +904,9 @@ export default function LifestyleSleepRoutinePage() {
 
       {/* Common mistakes */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Lỗi Thường Gặp</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{srS4Title}</h2>
         <div className="grid gap-3">
-          {COMMON_MISTAKES.map((item, i) => (
+          {commonMistakes.map((item, i) => (
             <div
               key={i}
               className="p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
@@ -903,7 +925,7 @@ export default function LifestyleSleepRoutinePage() {
               </div>
               <div className="flex justify-end mt-2">
                 <span className="text-xs font-bold px-2 py-1 rounded-lg opacity-60"
-                  style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>Chi tiết →</span>
+                  style={{ color: item.color, background: `rgba(${item.rgb},0.1)` }}>{srDetailLabel}</span>
               </div>
             </div>
           ))}
@@ -918,70 +940,70 @@ export default function LifestyleSleepRoutinePage() {
       {/* ── Why routine modal ── */}
       {routineIdx !== null && (
         <WhyRoutineModal
-          item={WHY_ROUTINE[routineIdx]}
+          item={whyRoutine[routineIdx]}
           idx={routineIdx}
-          total={WHY_ROUTINE.length}
+          total={whyRoutine.length}
           onClose={() => setRoutineIdx(null)}
           onPrev={() => setRoutineIdx(i => Math.max(0, i - 1))}
-          onNext={() => setRoutineIdx(i => Math.min(WHY_ROUTINE.length - 1, i + 1))}
+          onNext={() => setRoutineIdx(i => Math.min(whyRoutine.length - 1, i + 1))}
           hasPrev={routineIdx > 0}
-          hasNext={routineIdx < WHY_ROUTINE.length - 1}
+          hasNext={routineIdx < whyRoutine.length - 1}
         />
       )}
 
       {/* ── Stretch exercises modal ── */}
       {stretchIdx !== null && (
         <WhyRoutineModal
-          item={STRETCH_EXERCISES[stretchIdx]}
+          item={stretchExercises[stretchIdx]}
           idx={stretchIdx}
-          total={STRETCH_EXERCISES.length}
+          total={stretchExercises.length}
           onClose={() => setStretchIdx(null)}
           onPrev={() => setStretchIdx(i => Math.max(0, i - 1))}
-          onNext={() => setStretchIdx(i => Math.min(STRETCH_EXERCISES.length - 1, i + 1))}
+          onNext={() => setStretchIdx(i => Math.min(stretchExercises.length - 1, i + 1))}
           hasPrev={stretchIdx > 0}
-          hasNext={stretchIdx < STRETCH_EXERCISES.length - 1}
+          hasNext={stretchIdx < stretchExercises.length - 1}
         />
       )}
 
       {/* ── Routine 10 timeline modal ── */}
       {routine10Idx !== null && (
         <WhyRoutineModal
-          item={ROUTINE_10[routine10Idx]}
+          item={routine10[routine10Idx]}
           idx={routine10Idx}
-          total={ROUTINE_10.length}
+          total={routine10.length}
           onClose={() => setRoutine10Idx(null)}
           onPrev={() => setRoutine10Idx(i => Math.max(0, i - 1))}
-          onNext={() => setRoutine10Idx(i => Math.min(ROUTINE_10.length - 1, i + 1))}
+          onNext={() => setRoutine10Idx(i => Math.min(routine10.length - 1, i + 1))}
           hasPrev={routine10Idx > 0}
-          hasNext={routine10Idx < ROUTINE_10.length - 1}
+          hasNext={routine10Idx < routine10.length - 1}
         />
       )}
 
       {/* ── Routine 60 timeline modal — outside all RevealBlocks so position:fixed works ── */}
       {routine60Idx !== null && (
         <WhyRoutineModal
-          item={ROUTINE_60[routine60Idx]}
+          item={routine60[routine60Idx]}
           idx={routine60Idx}
-          total={ROUTINE_60.length}
+          total={routine60.length}
           onClose={() => setRoutine60Idx(null)}
           onPrev={() => setRoutine60Idx(i => Math.max(0, i - 1))}
-          onNext={() => setRoutine60Idx(i => Math.min(ROUTINE_60.length - 1, i + 1))}
+          onNext={() => setRoutine60Idx(i => Math.min(routine60.length - 1, i + 1))}
           hasPrev={routine60Idx > 0}
-          hasNext={routine60Idx < ROUTINE_60.length - 1}
+          hasNext={routine60Idx < routine60.length - 1}
         />
       )}
 
       {/* ── Common mistakes modal ── */}
       {mistakeIdx !== null && (
         <WhyRoutineModal
-          item={COMMON_MISTAKES[mistakeIdx]}
+          item={commonMistakes[mistakeIdx]}
           idx={mistakeIdx}
-          total={COMMON_MISTAKES.length}
+          total={commonMistakes.length}
           onClose={() => setMistakeIdx(null)}
           onPrev={() => setMistakeIdx(i => Math.max(0, i - 1))}
-          onNext={() => setMistakeIdx(i => Math.min(COMMON_MISTAKES.length - 1, i + 1))}
+          onNext={() => setMistakeIdx(i => Math.min(commonMistakes.length - 1, i + 1))}
           hasPrev={mistakeIdx > 0}
-          hasNext={mistakeIdx < COMMON_MISTAKES.length - 1}
+          hasNext={mistakeIdx < commonMistakes.length - 1}
         />
       )}
     </div>

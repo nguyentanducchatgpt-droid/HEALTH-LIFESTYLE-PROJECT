@@ -930,6 +930,41 @@ export default function LifestyleRecoveryPage() {
     return () => { const el = document.getElementById(id); if (el) el.remove(); };
   }, []);
 
+  const trTypes = tPillars('pillarC.c_recovery_types', { returnObjects: true });
+  const recoveryTypes = Array.isArray(trTypes) ? RECOVERY_TYPES.map((it,i) => ({...it,...(trTypes[i]||{})})) : RECOVERY_TYPES;
+  const trRoutine = tPillars('pillarC.c_recovery_routine_10', { returnObjects: true });
+  const routine10 = Array.isArray(trRoutine) ? ROUTINE_10.map((it,i) => ({...it,...(trRoutine[i]||{})})) : ROUTINE_10;
+  const trZones = tPillars('pillarC.c_recovery_zones', { returnObjects: true });
+  const zoneFixes = Array.isArray(trZones)
+    ? ZONE_FIXES.map((zone, zi) => ({
+        ...zone,
+        ...(trZones[zi] || {}),
+        exercises: zone.exercises.map((ex, ei) => ({
+          ...ex,
+          ...((trZones[zi]?.exercises?.[ei]) || {}),
+        })),
+      }))
+    : ZONE_FIXES;
+  const trSD = tPillars('pillarC.c_recovery_sample_day', { returnObjects: true });
+  const sampleDay = Array.isArray(trSD) ? SAMPLE_DAY.map((it,i) => ({...it,...(trSD[i]||{})})) : SAMPLE_DAY;
+  const trGoal = tPillars('pillarC.c_recovery_by_goal', { returnObjects: true });
+  const recoveryByGoal = Array.isArray(trGoal) ? ACTIVE_RECOVERY_BY_GOAL.map((it,i) => ({...it,...(trGoal[i]||{})})) : ACTIVE_RECOVERY_BY_GOAL;
+  const recovCaption = tPillars('pillarC.c_recovery_caption') || 'Mobility · Giãn cơ · Thở chậm';
+  const recovS1Title = tPillars('pillarC.c_recovery_s1_title') || '3 Loại Phục Hồi';
+  const recovS1Sub = tPillars('pillarC.c_recovery_s1_sub') || 'Click vào từng loại để hiểu cơ chế và khi nào dùng đúng.';
+  const recovWhenLabel = tPillars('pillarC.c_recovery_when_label') || 'Dùng khi:';
+  const recovDetailLabel = tPillars('pillarC.c_recovery_detail_label') || 'Chi tiết →';
+  const recovS2Title = tPillars('pillarC.c_recovery_s2_title') || 'Routine Phục Hồi 10 Phút';
+  const recovS2Sub = tPillars('pillarC.c_recovery_s2_sub') || 'Routine mẫu cho ngày sau tập nặng hoặc ngày cảm thấy căng cơ. Click để xem hướng dẫn chi tiết.';
+  const recovS3Title = tPillars('pillarC.c_recovery_s3_title') || 'Phục Hồi Theo Vùng Đau Mỏi';
+  const recovS3Sub = tPillars('pillarC.c_recovery_s3_sub') || 'Chọn vùng đang đau mỏi để xem bài tập phù hợp.';
+  const recovWarning = tPillars('pillarC.c_recovery_warning') || '⚠️ Dừng ngay nếu cảm thấy đau nhói, tê lan hoặc yếu chân tay.';
+  const recovS4Title = tPillars('pillarC.c_recovery_s4_title') || 'Active Recovery Theo Mục Tiêu';
+  const recovS4Sub = tPillars('pillarC.c_recovery_s4_sub') || 'Click vào mục tiêu của bạn để xem hướng dẫn phục hồi chi tiết.';
+  const recovS5Title = tPillars('pillarC.c_recovery_s5_title') || 'Ngày Phục Hồi Mẫu';
+  const recovS5Sub = tPillars('pillarC.c_recovery_s5_sub') || 'Một ngày phục hồi không có nghĩa là nằm im cả ngày. Click để hiểu lý do khoa học đằng sau mỗi hoạt động.';
+  const recovWhyLabel = tPillars('pillarC.c_recovery_why_label') || 'Tại sao →';
+
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/c" className="inline-flex items-center gap-2 text-muted text-lg mb-8 hover:text-violet-400 transition-colors">
@@ -963,7 +998,7 @@ export default function LifestyleRecoveryPage() {
             <div className="absolute bottom-4 left-6">
               <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
-                Mobility · Giãn cơ · Thở chậm
+                {recovCaption}
               </span>
             </div>
           </div>
@@ -974,10 +1009,10 @@ export default function LifestyleRecoveryPage() {
 
       {/* Recovery types */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Loại Phục Hồi</h2>
-        <p className="text-muted text-lg mb-6">Click vào từng loại để hiểu cơ chế và khi nào dùng đúng.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{recovS1Title}</h2>
+        <p className="text-muted text-lg mb-6">{recovS1Sub}</p>
         <div className="grid gap-4">
-          {RECOVERY_TYPES.map((r, i) => (
+          {recoveryTypes.map((r, i) => (
             <div key={i}
               className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ borderColor: `rgba(${r.rgb},0.2)`, border: `1px solid rgba(${r.rgb},0.2)`, background: `rgba(${r.rgb},0.06)` }}
@@ -986,10 +1021,10 @@ export default function LifestyleRecoveryPage() {
               <div className="flex-1">
                 <div className="font-bold text-text text-base">{r.type}</div>
                 <p className="text-muted text-sm mt-0.5">{r.desc}</p>
-                <p className="text-xs mt-1 font-medium" style={{ color: r.color }}>Dùng khi: {r.best}</p>
+                <p className="text-xs mt-1 font-medium" style={{ color: r.color }}>{recovWhenLabel} {r.best}</p>
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: r.color, background: `rgba(${r.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: r.color, background: `rgba(${r.rgb},0.1)` }}>{recovDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -997,10 +1032,10 @@ export default function LifestyleRecoveryPage() {
 
       {/* 10-min routine */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Routine Phục Hồi 10 Phút</h2>
-        <p className="text-muted text-lg mb-6">Routine mẫu cho ngày sau tập nặng hoặc ngày cảm thấy căng cơ. Click để xem hướng dẫn chi tiết.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{recovS2Title}</h2>
+        <p className="text-muted text-lg mb-6">{recovS2Sub}</p>
         <div className="space-y-2">
-          {ROUTINE_10.map((r, i) => (
+          {routine10.map((r, i) => (
             <div key={i}
               className="flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${r.rgb},0.05)`, border: `1px solid rgba(${r.rgb},0.18)` }}
@@ -1012,7 +1047,7 @@ export default function LifestyleRecoveryPage() {
                 <div className="text-sm text-muted">{r.note}</div>
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: r.color, background: `rgba(${r.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: r.color, background: `rgba(${r.rgb},0.1)` }}>{recovDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -1020,10 +1055,10 @@ export default function LifestyleRecoveryPage() {
 
       {/* Zone fixes */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Phục Hồi Theo Vùng Đau Mỏi</h2>
-        <p className="text-muted text-lg mb-6">Chọn vùng đang đau mỏi để xem bài tập phù hợp.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{recovS3Title}</h2>
+        <p className="text-muted text-lg mb-6">{recovS3Sub}</p>
         <div className="space-y-3">
-          {ZONE_FIXES.map((z, i) => (
+          {zoneFixes.map((z, i) => (
             <div key={i} className="rounded-2xl overflow-hidden border" style={{ borderColor: `rgba(${RGB},0.15)` }}>
               <button onClick={() => setOpenZone(openZone === i ? null : i)}
                 className="w-full flex items-center justify-between p-4 text-left" style={{ background: `rgba(${RGB},0.06)` }}>
@@ -1050,10 +1085,10 @@ export default function LifestyleRecoveryPage() {
                       </div>
                       <span className="text-sm font-semibold tabular-nums shrink-0" style={{ color: z.color }}>{ex.reps}</span>
                       <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                        style={{ color: ex.color, background: `rgba(${ex.rgb},0.1)` }}>Chi tiết →</span>
+                        style={{ color: ex.color, background: `rgba(${ex.rgb},0.1)` }}>{recovDetailLabel}</span>
                     </div>
                   ))}
-                  <p className="text-base text-muted pt-1">⚠️ Dừng ngay nếu cảm thấy đau nhói, tê lan hoặc yếu chân tay.</p>
+                  <p className="text-base text-muted pt-1">{recovWarning}</p>
                 </div>
               )}
             </div>
@@ -1063,10 +1098,10 @@ export default function LifestyleRecoveryPage() {
 
       {/* Active recovery by goal */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Active Recovery Theo Mục Tiêu</h2>
-        <p className="text-muted text-lg mb-6">Click vào mục tiêu của bạn để xem hướng dẫn phục hồi chi tiết.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{recovS4Title}</h2>
+        <p className="text-muted text-lg mb-6">{recovS4Sub}</p>
         <div className="space-y-3">
-          {ACTIVE_RECOVERY_BY_GOAL.map((g, i) => (
+          {recoveryByGoal.map((g, i) => (
             <div key={i}
               className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${g.rgb},0.05)`, border: `1px solid rgba(${g.rgb},0.18)` }}
@@ -1078,7 +1113,7 @@ export default function LifestyleRecoveryPage() {
                 <p className="text-xs mt-1 italic text-muted">{g.note}</p>
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>Chi tiết →</span>
+                style={{ color: g.color, background: `rgba(${g.rgb},0.1)` }}>{recovDetailLabel}</span>
             </div>
           ))}
         </div>
@@ -1086,10 +1121,10 @@ export default function LifestyleRecoveryPage() {
 
       {/* Sample recovery day */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Ngày Phục Hồi Mẫu</h2>
-        <p className="text-muted text-lg mb-6">Một ngày phục hồi không có nghĩa là nằm im cả ngày. Click để hiểu lý do khoa học đằng sau mỗi hoạt động.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{recovS5Title}</h2>
+        <p className="text-muted text-lg mb-6">{recovS5Sub}</p>
         <div className="space-y-3">
-          {SAMPLE_DAY.map((row, i) => (
+          {sampleDay.map((row, i) => (
             <div key={i}
               className="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200 hover:scale-[1.01]"
               style={{ background: `rgba(${row.rgb},0.05)`, border: `1px solid rgba(${row.rgb},0.18)` }}
@@ -1100,7 +1135,7 @@ export default function LifestyleRecoveryPage() {
                 <span className="text-base text-muted">{row.action}</span>
               </div>
               <span className="text-xs font-bold shrink-0 px-2 py-1 rounded-lg opacity-60"
-                style={{ color: row.color, background: `rgba(${row.rgb},0.1)` }}>Tại sao →</span>
+                style={{ color: row.color, background: `rgba(${row.rgb},0.1)` }}>{recovWhyLabel}</span>
             </div>
           ))}
         </div>
@@ -1114,34 +1149,34 @@ export default function LifestyleRecoveryPage() {
       {/* ── Sample day modal — outside all RevealBlocks ── */}
       {sampleDayIdx !== null && (
         <RecoveryModal
-          item={SAMPLE_DAY[sampleDayIdx]}
+          item={sampleDay[sampleDayIdx]}
           idx={sampleDayIdx}
-          total={SAMPLE_DAY.length}
+          total={sampleDay.length}
           onClose={() => setSampleDayIdx(null)}
           onPrev={() => setSampleDayIdx(i => Math.max(0, i - 1))}
-          onNext={() => setSampleDayIdx(i => Math.min(SAMPLE_DAY.length - 1, i + 1))}
+          onNext={() => setSampleDayIdx(i => Math.min(sampleDay.length - 1, i + 1))}
           hasPrev={sampleDayIdx > 0}
-          hasNext={sampleDayIdx < SAMPLE_DAY.length - 1}
+          hasNext={sampleDayIdx < sampleDay.length - 1}
         />
       )}
 
       {/* ── Goal modal — outside all RevealBlocks ── */}
       {goalIdx !== null && (
         <RecoveryModal
-          item={ACTIVE_RECOVERY_BY_GOAL[goalIdx]}
+          item={recoveryByGoal[goalIdx]}
           idx={goalIdx}
-          total={ACTIVE_RECOVERY_BY_GOAL.length}
+          total={recoveryByGoal.length}
           onClose={() => setGoalIdx(null)}
           onPrev={() => setGoalIdx(i => Math.max(0, i - 1))}
-          onNext={() => setGoalIdx(i => Math.min(ACTIVE_RECOVERY_BY_GOAL.length - 1, i + 1))}
+          onNext={() => setGoalIdx(i => Math.min(recoveryByGoal.length - 1, i + 1))}
           hasPrev={goalIdx > 0}
-          hasNext={goalIdx < ACTIVE_RECOVERY_BY_GOAL.length - 1}
+          hasNext={goalIdx < recoveryByGoal.length - 1}
         />
       )}
 
       {/* ── Zone exercise modal — outside all RevealBlocks ── */}
       {zoneExState !== null && (() => {
-        const zone = ZONE_FIXES[zoneExState.zi];
+        const zone = zoneFixes[zoneExState.zi];
         const ex = zone.exercises[zoneExState.ei];
         return (
           <RecoveryModal
@@ -1160,28 +1195,28 @@ export default function LifestyleRecoveryPage() {
       {/* ── Routine 10 modal — outside all RevealBlocks ── */}
       {routineIdx !== null && (
         <RecoveryModal
-          item={ROUTINE_10[routineIdx]}
+          item={routine10[routineIdx]}
           idx={routineIdx}
-          total={ROUTINE_10.length}
+          total={routine10.length}
           onClose={() => setRoutineIdx(null)}
           onPrev={() => setRoutineIdx(i => Math.max(0, i - 1))}
-          onNext={() => setRoutineIdx(i => Math.min(ROUTINE_10.length - 1, i + 1))}
+          onNext={() => setRoutineIdx(i => Math.min(routine10.length - 1, i + 1))}
           hasPrev={routineIdx > 0}
-          hasNext={routineIdx < ROUTINE_10.length - 1}
+          hasNext={routineIdx < routine10.length - 1}
         />
       )}
 
       {/* ── Recovery types modal — outside all RevealBlocks ── */}
       {recoveryTypeIdx !== null && (
         <RecoveryModal
-          item={RECOVERY_TYPES[recoveryTypeIdx]}
+          item={recoveryTypes[recoveryTypeIdx]}
           idx={recoveryTypeIdx}
-          total={RECOVERY_TYPES.length}
+          total={recoveryTypes.length}
           onClose={() => setRecoveryTypeIdx(null)}
           onPrev={() => setRecoveryTypeIdx(i => Math.max(0, i - 1))}
-          onNext={() => setRecoveryTypeIdx(i => Math.min(RECOVERY_TYPES.length - 1, i + 1))}
+          onNext={() => setRecoveryTypeIdx(i => Math.min(recoveryTypes.length - 1, i + 1))}
           hasPrev={recoveryTypeIdx > 0}
-          hasNext={recoveryTypeIdx < RECOVERY_TYPES.length - 1}
+          hasNext={recoveryTypeIdx < recoveryTypes.length - 1}
         />
       )}
     </div>

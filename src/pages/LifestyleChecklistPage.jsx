@@ -377,6 +377,24 @@ function ChecklistModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, ha
 export default function LifestyleChecklistPage() {
   const { t: tPillars } = useTranslation('pillars');
   const hero = tPillars('pillarC.c_checklist_hero', { returnObjects: true }) || {};
+
+  const todayLabel = tPillars('pillarC.c_checklist_today_label') || 'Hôm nay';
+  const streakLabel = tPillars('pillarC.c_checklist_streak_label') || '🔥 Ngày liên tiếp';
+  const doneLabel = tPillars('pillarC.c_checklist_done_label') || 'Hoàn thành';
+  const progressTitle = tPillars('pillarC.c_checklist_progress_title') || 'Tiến trình hôm nay';
+  const completeMsg = tPillars('pillarC.c_checklist_complete_msg') || '🎉 Hoàn thành 100%! Tuyệt vời!';
+  const s1Title = tPillars('pillarC.c_checklist_s1_title') || 'Checklist Hằng Ngày';
+  const s1Sub = tPillars('pillarC.c_checklist_s1_sub') || 'Đánh dấu từng mục khi hoàn thành. Tiến trình được lưu tự động.';
+  const s2Title = tPillars('pillarC.c_checklist_s2_title') || 'Đánh Giá Cuối Tuần';
+  const s2Sub = tPillars('pillarC.c_checklist_s2_sub') || '5 câu hỏi phản tư để hiểu rõ hơn về tuần vừa qua và điều chỉnh cho tuần tiếp theo.';
+  const s2Hint = tPillars('pillarC.c_checklist_s2_hint') || 'Chọn câu trả lời · Click biểu tượng ℹ để xem phân tích chi tiết';
+  const allDoneMsg = tPillars('pillarC.c_checklist_all_done_msg') || '✓ Đã ghi nhận đánh giá tuần. Xem lại vào cuối tuần sau!';
+
+  const trItems = tPillars('pillarC.c_checklist_items', { returnObjects: true });
+  const ITEMS_TR = Array.isArray(trItems) ? DAILY_ITEMS.map((it, i) => ({ ...it, ...(trItems[i] || {}) })) : DAILY_ITEMS;
+
+  const trWeekly = tPillars('pillarC.c_checklist_weekly', { returnObjects: true });
+  const WEEKLY_TR = Array.isArray(trWeekly) ? WEEKLY_QUESTIONS.map((q, i) => ({ ...q, ...(trWeekly[i] || {}) })) : WEEKLY_QUESTIONS;
   const [checked, setChecked] = useState({});
   const [weekAnswers, setWeekAnswers] = useState({});
   const [weeklyQIdx, setWeeklyQIdx] = useState(null);
@@ -462,7 +480,7 @@ export default function LifestyleChecklistPage() {
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop" alt="Checklist" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>7 hành động · Theo dõi tiến trình hằng ngày</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>{hero.img_caption || '7 hành động · Theo dõi tiến trình hằng ngày'}</span>
           </div>
         </div>
       </div>
@@ -474,15 +492,15 @@ export default function LifestyleChecklistPage() {
         <div className="grid grid-cols-3 gap-3">
           <div className="rounded-2xl border border-border bg-surface p-4 text-center" style={{ borderColor: `rgba(${RGB},0.15)` }}>
             <div className="text-4xl font-bold" style={{ color: COLOR }}>{completedCount}/{DAILY_ITEMS.length}</div>
-            <div className="text-base text-muted mt-1">Hôm nay</div>
+            <div className="text-base text-muted mt-1">{todayLabel}</div>
           </div>
           <div className="rounded-2xl border border-border bg-surface p-4 text-center" style={{ borderColor: `rgba(${RGB},0.15)` }}>
             <div className="text-4xl font-bold" style={{ color: COLOR }}>{streak}</div>
-            <div className="text-base text-muted mt-1">🔥 Ngày liên tiếp</div>
+            <div className="text-base text-muted mt-1">{streakLabel}</div>
           </div>
           <div className="rounded-2xl border border-border bg-surface p-4 text-center" style={{ borderColor: `rgba(${RGB},0.15)` }}>
             <div className="text-4xl font-bold" style={{ color: COLOR }}>{progress}%</div>
-            <div className="text-base text-muted mt-1">Hoàn thành</div>
+            <div className="text-base text-muted mt-1">{doneLabel}</div>
           </div>
         </div>
       </RevealBlock>
@@ -491,24 +509,24 @@ export default function LifestyleChecklistPage() {
       <RevealBlock className="mb-10">
         <div className="rounded-2xl border border-border bg-surface p-4" style={{ borderColor: `rgba(${RGB},0.1)` }}>
           <div className="flex justify-between text-base text-muted mb-2">
-            <span>Tiến trình hôm nay</span>
+            <span>{progressTitle}</span>
             <span style={{ color: COLOR }}>{completedCount} / {DAILY_ITEMS.length}</span>
           </div>
           <div className="h-3 bg-bg rounded-full overflow-hidden">
             <div className="h-full rounded-full transition-all duration-500" style={{ width: `${progress}%`, background: `linear-gradient(to right, ${COLOR}, rgba(${RGB},0.6))` }} />
           </div>
           {progress === 100 && (
-            <div className="mt-3 text-center text-lg font-bold" style={{ color: COLOR }}>🎉 Hoàn thành 100%! Tuyệt vời!</div>
+            <div className="mt-3 text-center text-lg font-bold" style={{ color: COLOR }}>{completeMsg}</div>
           )}
         </div>
       </RevealBlock>
 
       {/* Daily checklist */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Checklist Hằng Ngày</h2>
-        <p className="text-muted text-lg mb-6">Đánh dấu từng mục khi hoàn thành. Tiến trình được lưu tự động.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s1Title}</h2>
+        <p className="text-muted text-lg mb-6">{s1Sub}</p>
         <div className="space-y-2">
-          {DAILY_ITEMS.map((item, di) => (
+          {ITEMS_TR.map((item, di) => (
             <div key={item.id} onClick={() => toggle(item.id)} className={`w-full flex items-center gap-4 p-4 rounded-2xl border text-left transition-all cursor-pointer ${checked[item.id] ? 'opacity-70' : 'hover:border-teal-500/20'}`} style={{ background: checked[item.id] ? `rgba(${RGB},0.08)` : 'var(--color-surface)', borderColor: checked[item.id] ? `rgba(${RGB},0.3)` : undefined }}>
               <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${checked[item.id] ? 'border-teal-400' : 'border-border'}`} style={{ background: checked[item.id] ? COLOR : undefined }}>
                 {checked[item.id] && <span className="text-white text-base font-bold">✓</span>}
@@ -531,11 +549,11 @@ export default function LifestyleChecklistPage() {
 
       {/* Weekly review */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Đánh Giá Cuối Tuần</h2>
-        <p className="text-muted text-lg mb-2">5 câu hỏi phản tư để hiểu rõ hơn về tuần vừa qua và điều chỉnh cho tuần tiếp theo.</p>
-        <p className="text-sm text-muted mb-6 opacity-60">Chọn câu trả lời · Click biểu tượng ℹ để xem phân tích chi tiết</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{s2Title}</h2>
+        <p className="text-muted text-lg mb-2">{s2Sub}</p>
+        <p className="text-sm text-muted mb-6 opacity-60">{s2Hint}</p>
         <div className="space-y-4">
-          {WEEKLY_QUESTIONS.map((q, qi) => (
+          {WEEKLY_TR.map((q, qi) => (
             <div key={q.id} className="rounded-2xl border p-4 transition-all duration-200"
               style={{ borderColor: `rgba(${q.rgb},0.2)`, background: `rgba(${q.rgb},0.04)` }}>
               <div className="flex items-start gap-3 mb-3">
@@ -561,7 +579,7 @@ export default function LifestyleChecklistPage() {
         </div>
         {Object.keys(weekAnswers).length === WEEKLY_QUESTIONS.length && (
           <div className="mt-4 rounded-xl p-4 border text-lg text-center font-medium" style={{ borderColor: `rgba(${RGB},0.3)`, background: `rgba(${RGB},0.08)`, color: COLOR }}>
-            ✓ Đã ghi nhận đánh giá tuần. Xem lại vào cuối tuần sau!
+            {allDoneMsg}
           </div>
         )}
       </RevealBlock>
@@ -569,28 +587,28 @@ export default function LifestyleChecklistPage() {
       {/* ── Daily item modal — outside all RevealBlocks ── */}
       {dailyItemIdx !== null && (
         <ChecklistModal
-          item={DAILY_ITEMS[dailyItemIdx]}
+          item={ITEMS_TR[dailyItemIdx]}
           idx={dailyItemIdx}
-          total={DAILY_ITEMS.length}
+          total={ITEMS_TR.length}
           onClose={() => setDailyItemIdx(null)}
           onPrev={() => setDailyItemIdx(i => Math.max(0, i - 1))}
-          onNext={() => setDailyItemIdx(i => Math.min(DAILY_ITEMS.length - 1, i + 1))}
+          onNext={() => setDailyItemIdx(i => Math.min(ITEMS_TR.length - 1, i + 1))}
           hasPrev={dailyItemIdx > 0}
-          hasNext={dailyItemIdx < DAILY_ITEMS.length - 1}
+          hasNext={dailyItemIdx < ITEMS_TR.length - 1}
         />
       )}
 
       {/* ── Weekly question modal — outside all RevealBlocks ── */}
       {weeklyQIdx !== null && (
         <ChecklistModal
-          item={WEEKLY_QUESTIONS[weeklyQIdx]}
+          item={WEEKLY_TR[weeklyQIdx]}
           idx={weeklyQIdx}
-          total={WEEKLY_QUESTIONS.length}
+          total={WEEKLY_TR.length}
           onClose={() => setWeeklyQIdx(null)}
           onPrev={() => setWeeklyQIdx(i => Math.max(0, i - 1))}
-          onNext={() => setWeeklyQIdx(i => Math.min(WEEKLY_QUESTIONS.length - 1, i + 1))}
+          onNext={() => setWeeklyQIdx(i => Math.min(WEEKLY_TR.length - 1, i + 1))}
           hasPrev={weeklyQIdx > 0}
-          hasNext={weeklyQIdx < WEEKLY_QUESTIONS.length - 1}
+          hasNext={weeklyQIdx < WEEKLY_TR.length - 1}
         />
       )}
 

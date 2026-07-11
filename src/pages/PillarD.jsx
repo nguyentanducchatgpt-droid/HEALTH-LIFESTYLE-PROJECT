@@ -712,15 +712,22 @@ const D2_TECH_MODALS = [
 ];
 
 const D2_TECHS_ORDER = ['diaphragm', 'box', '478', 'reset2'];
+const D2_TECHS_BASE = [
+  { id: 'diaphragm', icon: '🫁', name: 'Thở Cơ Hoành', formula: 'Hít bụng phồng → thở ra xẹp', when: 'Sau tập, trước ngủ, khi vai gáy căng', steps: ['1 tay ngực, 1 tay bụng', 'Hít vào — bụng phồng, ngực ít', 'Thở ra chậm, bụng xẹp', '1–3 phút'] },
+  { id: 'box', icon: '⬜', name: 'Box Breathing', formula: 'Hít 4 – Giữ 4 – Thở 4 – Giữ 4', when: 'Trước họp, khi bực tức, mất tập trung', steps: ['Hít vào 4 giây', 'Giữ hơi 4 giây', 'Thở ra 4 giây', 'Giữ trống 4 giây — lặp 4 vòng'] },
+  { id: '478', icon: '🌊', name: 'Thở 4-7-8', formula: 'Hít 4 – Giữ 7 – Thở 8', when: 'Buổi tối, trước ngủ, hạ nhịp sau ngày căng', steps: ['Hít vào 4 giây', 'Giữ hơi 7 giây', 'Thở ra 8 giây (nhẹ nhàng)', 'Lặp 3–4 vòng'] },
+  { id: 'reset2', icon: '⚡', name: 'Reset 2 Phút', formula: 'Dừng → Thở → Thả lỏng → Neo', when: 'Khi quá tải, giữa ngày, sau tranh cãi', steps: ['Dừng 10 giây, không cầm điện thoại', 'Thở 5 nhịp chậm qua mũi', 'Thả lỏng vai – hàm – bàn tay', 'Nói 1 câu: "Việc nhỏ tiếp theo là..."'] },
+];
 
 function D2Panel({ color, onTechClick }) {
+  const { t: tP } = useTranslation('pillars');
   const [active, setActive] = useState('box');
-  const TECHS = [
-    { id: 'diaphragm', icon: '🫁', name: 'Thở Cơ Hoành', formula: 'Hít bụng phồng → thở ra xẹp', when: 'Sau tập, trước ngủ, khi vai gáy căng', steps: ['1 tay ngực, 1 tay bụng', 'Hít vào — bụng phồng, ngực ít', 'Thở ra chậm, bụng xẹp', '1–3 phút'] },
-    { id: 'box', icon: '⬜', name: 'Box Breathing', formula: 'Hít 4 – Giữ 4 – Thở 4 – Giữ 4', when: 'Trước họp, khi bực tức, mất tập trung', steps: ['Hít vào 4 giây', 'Giữ hơi 4 giây', 'Thở ra 4 giây', 'Giữ trống 4 giây — lặp 4 vòng'] },
-    { id: '478', icon: '🌊', name: 'Thở 4-7-8', formula: 'Hít 4 – Giữ 7 – Thở 8', when: 'Buổi tối, trước ngủ, hạ nhịp sau ngày căng', steps: ['Hít vào 4 giây', 'Giữ hơi 7 giây', 'Thở ra 8 giây (nhẹ nhàng)', 'Lặp 3–4 vòng'] },
-    { id: 'reset2', icon: '⚡', name: 'Reset 2 Phút', formula: 'Dừng → Thở → Thả lỏng → Neo', when: 'Khi quá tải, giữa ngày, sau tranh cãi', steps: ['Dừng 10 giây, không cầm điện thoại', 'Thở 5 nhịp chậm qua mũi', 'Thả lỏng vai – hàm – bàn tay', 'Nói 1 câu: "Việc nhỏ tiếp theo là..."'] },
-  ];
+  const techsTr = tP('pillarD.d2_techs', { returnObjects: true });
+  const TECHS = Array.isArray(techsTr)
+    ? D2_TECHS_BASE.map((base, i) => { const tr = techsTr[i] || {}; return { ...base, name: tr.name || base.name, formula: tr.formula || base.formula, when: tr.when || base.when, steps: Array.isArray(tr.steps) ? tr.steps : base.steps }; })
+    : D2_TECHS_BASE;
+  const whenLabel = tP('pillarD.d2_when_label') || '⏰ Khi nào:';
+  const seeScience = tP('pillarD.d2_see_science') || 'Xem khoa học đằng sau →';
   const tech = TECHS.find(t => t.id === active);
   return (
     <div className="space-y-4">
@@ -734,7 +741,7 @@ function D2Panel({ color, onTechClick }) {
       {tech && (
         <div className="rounded-xl border p-4" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)`, background: `rgba(${PURPLE_RGB},0.05)` }}>
           <div className="text-lg font-bold text-text mb-1">{tech.formula}</div>
-          <div className="text-base text-muted mb-3">⏰ Khi nào: {tech.when}</div>
+          <div className="text-base text-muted mb-3">{whenLabel} {tech.when}</div>
           <ol className="space-y-1 mb-4">
             {tech.steps.map((s, i) => <li key={i} className="flex items-start gap-2 text-lg text-text"><span className="w-4 h-4 rounded-full flex items-center justify-center text-base font-bold shrink-0 mt-0.5" style={{ background: `rgba(${PURPLE_RGB},0.2)`, color }}>{i + 1}</span>{s}</li>)}
           </ol>
@@ -745,7 +752,7 @@ function D2Panel({ color, onTechClick }) {
               className="mt-4 w-full flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-bold transition-all border"
               style={{ color, borderColor: `rgba(${PURPLE_RGB},0.3)`, background: `rgba(${PURPLE_RGB},0.07)` }}
             >
-              Xem khoa học đằng sau →
+              {seeScience}
             </button>
           )}
         </div>
@@ -842,19 +849,26 @@ const D3_MODE_MODALS = [
 ];
 
 const D3_MODES_ORDER = ['3min', '5min', 'walk', 'eat'];
+const D3_MODES_BASE = [
+  { id: '3min', label: 'Thiền 3 Phút', steps: ['Ngồi thoải mái, nhắm mắt hoặc nhìn xuống', 'Cảm nhận hơi thở vào – ra ở mũi/bụng', 'Khi suy nghĩ xuất hiện, nói thầm "biết rồi"', 'Nhẹ nhàng quay lại hơi thở'] },
+  { id: '5min', label: 'Thiền 5 Phút Trước Ngủ', steps: ['1 phút thở chậm, sâu', '2 phút scan cơ thể: trán → vai → ngực → bụng → chân', '1 phút thả lỏng vùng đang căng', '1 phút tự nhắc: "Hôm nay đủ rồi, ngày mai làm tiếp"'] },
+  { id: 'walk', label: 'Chánh Niệm Đi Bộ', steps: ['Đi bộ 5–10 phút không tai nghe', 'Cảm nhận bàn chân chạm đất từng bước', 'Quan sát ánh sáng, cây cối, bầu trời', 'Thở đều, không đếm thành tích'] },
+  { id: 'eat', label: 'Chánh Niệm Khi Ăn', steps: ['Tắt màn hình khi ăn', 'Ăn chậm hơn, nhai kỹ hơn', 'Nhận ra cảm giác no – đói', 'Dừng 10 giây trước khi lấy thêm đồ ăn'] },
+];
 
 function D3Panel({ color, onModeClick }) {
+  const { t: tP } = useTranslation('pillars');
   const [mode, setMode] = useState('3min');
-  const MODES = [
-    { id: '3min', label: 'Thiền 3 Phút', steps: ['Ngồi thoải mái, nhắm mắt hoặc nhìn xuống', 'Cảm nhận hơi thở vào – ra ở mũi/bụng', 'Khi suy nghĩ xuất hiện, nói thầm "biết rồi"', 'Nhẹ nhàng quay lại hơi thở'] },
-    { id: '5min', label: 'Thiền 5 Phút Trước Ngủ', steps: ['1 phút thở chậm, sâu', '2 phút scan cơ thể: trán → vai → ngực → bụng → chân', '1 phút thả lỏng vùng đang căng', '1 phút tự nhắc: "Hôm nay đủ rồi, ngày mai làm tiếp"'] },
-    { id: 'walk', label: 'Chánh Niệm Đi Bộ', steps: ['Đi bộ 5–10 phút không tai nghe', 'Cảm nhận bàn chân chạm đất từng bước', 'Quan sát ánh sáng, cây cối, bầu trời', 'Thở đều, không đếm thành tích'] },
-    { id: 'eat', label: 'Chánh Niệm Khi Ăn', steps: ['Tắt màn hình khi ăn', 'Ăn chậm hơn, nhai kỹ hơn', 'Nhận ra cảm giác no – đói', 'Dừng 10 giây trước khi lấy thêm đồ ăn'] },
-  ];
+  const modesTr = tP('pillarD.d3_modes', { returnObjects: true });
+  const MODES = Array.isArray(modesTr)
+    ? D3_MODES_BASE.map((base, i) => { const tr = modesTr[i] || {}; return { ...base, label: tr.label || base.label, steps: Array.isArray(tr.steps) ? tr.steps : base.steps }; })
+    : D3_MODES_BASE;
+  const intro = tP('pillarD.d3_intro') || 'Thiền không phải là "không suy nghĩ". Thiền là nhận ra mình đang bị cuốn đi và quay lại nhẹ nhàng.';
+  const seeScience = tP('pillarD.d3_see_science') || 'Xem khoa học đằng sau →';
   const m = MODES.find(x => x.id === mode);
   return (
     <div className="space-y-4">
-      <p className="text-base text-muted">Thiền không phải là "không suy nghĩ". Thiền là <strong className="text-text">nhận ra mình đang bị cuốn đi và quay lại nhẹ nhàng</strong>.</p>
+      <p className="text-base text-muted">{intro}</p>
       <div className="flex gap-2 flex-wrap">
         {MODES.map(x => (
           <button key={x.id} onClick={() => setMode(x.id)} className={`px-3 py-1.5 rounded-full text-base font-medium transition-all border ${mode === x.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: mode === x.id ? color : undefined, borderColor: mode === x.id ? color : undefined }}>
@@ -878,7 +892,7 @@ function D3Panel({ color, onModeClick }) {
               className="mt-4 w-full flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-bold transition-all border"
               style={{ color, borderColor: `rgba(${PURPLE_RGB},0.3)`, background: `rgba(${PURPLE_RGB},0.07)` }}
             >
-              Xem khoa học đằng sau →
+              {seeScience}
             </button>
           )}
         </div>
@@ -996,12 +1010,15 @@ const D4_PROMPT_MODALS = [
 ];
 
 function D4Panel({ color, onPromptClick }) {
+  const { t: tP } = useTranslation('pillars');
+  const intro = tP('pillarD.d4_intro') || 'Nhiều người mệt không vì nhiều việc, mà vì mọi việc nằm lộn xộn trong đầu. Journal đưa chúng ra giấy.';
+  const shortPrompt = tP('pillarD.d4_short_prompt') || 'Phiên bản siêu ngắn: "Mình đang cảm thấy… / Mình cần… / Việc nhỏ tiếp theo là…"';
   return (
     <div className="space-y-4">
-      <p className="text-base text-muted">Nhiều người mệt không vì nhiều việc, mà vì <strong className="text-text">mọi việc nằm lộn xộn trong đầu</strong>. Journal đưa chúng ra giấy.</p>
+      <p className="text-base text-muted">{intro}</p>
       <JournalPrompt color={color} onPromptClick={onPromptClick} />
       <div className="rounded-xl border p-3 text-base text-muted" style={{ borderColor: `rgba(${PURPLE_RGB},0.15)`, background: `rgba(${PURPLE_RGB},0.05)` }}>
-        <strong style={{ color }}>Phiên bản siêu ngắn:</strong> "Mình đang cảm thấy… / Mình cần… / Việc nhỏ tiếp theo là…"
+        {shortPrompt}
       </div>
     </div>
   );
@@ -1073,17 +1090,25 @@ const D5_LEVEL_MODALS = [
   },
 ];
 
+const D5_LEVELS_BASE = [
+  { l: 1, name: 'Mức 1 – Dễ', rules: ['Không mở MXH 10 phút sau khi thức', 'Tắt thông báo không cần thiết', 'Không để điện thoại trên giường khi ngủ', 'Giảm màn hình 10–20 phút trước ngủ'] },
+  { l: 2, name: 'Mức 2 – Chuẩn', rules: ['30 phút đầu ngày không MXH', '30 phút trước ngủ không cuộn feed', '10 phút "khoảng trống" trong ngày', 'Khi ăn, không cầm điện thoại'] },
+  { l: 3, name: 'Mức 3 – Nâng Cao', rules: ['1 buổi tối/tuần ít màn hình', '1 lần đi bộ không tai nghe, không điện thoại', 'Cuối tuần 2–3 giờ "deep life": gia đình, nấu ăn, đọc sách', 'Đưa app gây nghiện ra khỏi màn hình chính'] },
+];
+
 function D5Panel({ color, onLevelClick }) {
+  const { t: tP } = useTranslation('pillars');
   const [level, setLevel] = useState(1);
-  const LEVELS = [
-    { l: 1, name: 'Mức 1 – Dễ', rules: ['Không mở MXH 10 phút sau khi thức', 'Tắt thông báo không cần thiết', 'Không để điện thoại trên giường khi ngủ', 'Giảm màn hình 10–20 phút trước ngủ'] },
-    { l: 2, name: 'Mức 2 – Chuẩn', rules: ['30 phút đầu ngày không MXH', '30 phút trước ngủ không cuộn feed', '10 phút "khoảng trống" trong ngày', 'Khi ăn, không cầm điện thoại'] },
-    { l: 3, name: 'Mức 3 – Nâng Cao', rules: ['1 buổi tối/tuần ít màn hình', '1 lần đi bộ không tai nghe, không điện thoại', 'Cuối tuần 2–3 giờ "deep life": gia đình, nấu ăn, đọc sách', 'Đưa app gây nghiện ra khỏi màn hình chính'] },
-  ];
+  const levelsTr = tP('pillarD.d5_levels', { returnObjects: true });
+  const LEVELS = Array.isArray(levelsTr)
+    ? D5_LEVELS_BASE.map((base, i) => { const tr = levelsTr[i] || {}; return { ...base, name: tr.name || base.name, rules: Array.isArray(tr.rules) ? tr.rules : base.rules }; })
+    : D5_LEVELS_BASE;
+  const intro = tP('pillarD.d5_intro') || 'Điện thoại không xấu. Vấn đề là cuộn vô thức khi não đang mệt, làm stress nặng hơn và ngủ kém hơn.';
+  const seeScience = tP('pillarD.d5_see_science') || 'Xem khoa học đằng sau →';
   const cur = LEVELS.find(x => x.l === level);
   return (
     <div className="space-y-4">
-      <p className="text-base text-muted">Điện thoại không xấu. Vấn đề là <strong className="text-text">cuộn vô thức khi não đang mệt</strong>, làm stress nặng hơn và ngủ kém hơn.</p>
+      <p className="text-base text-muted">{intro}</p>
       <div className="flex gap-2">
         {LEVELS.map(x => (
           <button key={x.l} onClick={() => setLevel(x.l)} className={`flex-1 py-2 rounded-xl text-base font-bold transition-all border ${level === x.l ? 'text-white' : 'text-muted border-border'}`} style={{ background: level === x.l ? color : undefined, borderColor: level === x.l ? color : undefined }}>
@@ -1106,7 +1131,7 @@ function D5Panel({ color, onLevelClick }) {
               className="w-full flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-bold transition-all border"
               style={{ color, borderColor: `rgba(14,165,233,0.3)`, background: `rgba(14,165,233,0.07)` }}
             >
-              Xem khoa học đằng sau →
+              {seeScience}
             </button>
           )}
         </div>
@@ -1244,22 +1269,34 @@ const D6_HABIT_MODALS = [
   },
 ];
 
+const D6_HABITS_BASE = [
+  { situation: 'Căng thẳng', habit: 'Thở 1 phút' },
+  { situation: 'Quá tải công việc', habit: 'Xả não 5 dòng' },
+  { situation: 'Trước khi ngủ', habit: 'Tắt màn hình 10–20 phút' },
+  { situation: 'Sau khi fail', habit: 'Viết 1 câu quay lại' },
+  { situation: 'Muốn ăn vặt', habit: 'Dừng 10 giây hỏi mình đói hay mệt' },
+  { situation: 'Mất động lực', habit: 'Làm bản tối thiểu 2 phút' },
+];
+
 function D6Panel({ color, onHabitClick }) {
-  const HABITS = [
-    { situation: 'Căng thẳng', habit: 'Thở 1 phút' },
-    { situation: 'Quá tải công việc', habit: 'Xả não 5 dòng' },
-    { situation: 'Trước khi ngủ', habit: 'Tắt màn hình 10–20 phút' },
-    { situation: 'Sau khi fail', habit: 'Viết 1 câu quay lại' },
-    { situation: 'Muốn ăn vặt', habit: 'Dừng 10 giây hỏi mình đói hay mệt' },
-    { situation: 'Mất động lực', habit: 'Làm bản tối thiểu 2 phút' },
-  ];
+  const { t: tP } = useTranslation('pillars');
+  const habitsTr = tP('pillarD.d6_habits', { returnObjects: true });
+  const HABITS = Array.isArray(habitsTr)
+    ? D6_HABITS_BASE.map((base, i) => { const tr = habitsTr[i] || {}; return { ...base, situation: tr.situation || base.situation, habit: tr.habit || base.habit }; })
+    : D6_HABITS_BASE;
+  const introStrong = tP('pillarD.d6_intro_strong') || 'Kỷ luật mềm';
+  const introRest = tP('pillarD.d6_intro_rest') || 'không phải dễ dãi. Đó là cách quay lại sau khi lệch nhịp — không tự mắng, không bù gấp đôi.';
+  const detailCta = tP('pillarD.d6_detail_cta') || 'chi tiết →';
+  const ruleStrong = tP('pillarD.d6_rule_strong') || 'Quy tắc 1% quay lại:';
+  const ruleText = tP('pillarD.d6_rule_text') || 'Không tập được 30 phút → làm 5 phút. Ăn quá tay → bữa tiếp theo quay lại. Ngủ muộn → tối hôm sau giảm màn hình sớm 10 phút.';
+  const ruleEnd = tP('pillarD.d6_rule_end_strong') || 'Một ngày fail không phá hỏng hành trình. Bỏ luôn mới phá.';
   return (
     <div className="space-y-4">
-      <p className="text-base text-muted"><strong className="text-text">Kỷ luật mềm</strong> không phải dễ dãi. Đó là cách quay lại sau khi lệch nhịp — không tự mắng, không bù gấp đôi.</p>
+      <p className="text-base text-muted"><strong className="text-text">{introStrong}</strong> {introRest}</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {HABITS.map((h, i) => (
           <div
-            key={h.situation}
+            key={i}
             className={`group/habit flex items-center gap-3 p-3 rounded-xl border bg-bg transition-all duration-200 ${onHabitClick ? 'cursor-pointer border-border hover:border-emerald-500/40 hover:bg-white/[0.03] hover:shadow-[0_0_14px_rgba(16,185,129,0.08)]' : 'border-border'}`}
             onClick={onHabitClick ? () => onHabitClick(i) : undefined}
           >
@@ -1269,13 +1306,13 @@ function D6Panel({ color, onHabitClick }) {
               <span
                 className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/habit:opacity-100 transition-opacity"
                 style={{ color: D6_HABIT_MODALS[i].color, borderColor: `rgba(${D6_HABIT_MODALS[i].rgb},0.35)`, background: `rgba(${D6_HABIT_MODALS[i].rgb},0.08)` }}
-              >chi tiết →</span>
+              >{detailCta}</span>
             )}
           </div>
         ))}
       </div>
       <div className="rounded-xl p-3 text-base text-muted leading-relaxed border" style={{ borderColor: `rgba(${PURPLE_RGB},0.15)`, background: `rgba(${PURPLE_RGB},0.06)` }}>
-        <strong style={{ color }}>Quy tắc 1% quay lại:</strong> Không tập được 30 phút → làm 5 phút. Ăn quá tay → bữa tiếp theo quay lại. Ngủ muộn → tối hôm sau giảm màn hình sớm 10 phút. <strong className="text-text">Một ngày fail không phá hỏng hành trình. Bỏ luôn mới phá.</strong>
+        <strong style={{ color }}>{ruleStrong}</strong> {ruleText} <strong className="text-text">{ruleEnd}</strong>
       </div>
     </div>
   );
@@ -1535,11 +1572,12 @@ export default function PillarD() {
     points: Array.isArray(d7ModalsTr[i]?.points) && d7ModalsTr[i].points.length ? d7ModalsTr[i].points : m.points,
   }));
 
+  const heroStatLabels = Array.isArray(pillar?.d_hero_stat_labels) ? pillar.d_hero_stat_labels : null;
   const HERO_STATS = [
-    { v: '8', l: 'Module', tip: 'D0–D7: từ nhập môn, stress, thở, thiền, journal, detox, kỷ luật đến theo dõi', idx: 'hero-d-0' },
-    { v: '5ph', l: 'Mỗi ngày', tip: '5 phút Mind Reset mỗi ngày là đủ để bắt đầu thay đổi trạng thái tinh thần', idx: 'hero-d-1' },
-    { v: '12', l: 'Tuần lộ trình', tip: 'Từ nhận diện stress → thiền ngắn → journaling → digital detox → kỷ luật mềm', idx: 'hero-d-2' },
-    { v: '100', l: 'Calm Score', tip: 'Thang điểm tự đánh giá mỗi ngày: thở + journal + detox + routine tối + kỷ luật mềm', idx: 'hero-d-3' },
+    { v: '8', l: heroStatLabels?.[0] || 'Module', tip: 'D0–D7: từ nhập môn, stress, thở, thiền, journal, detox, kỷ luật đến theo dõi', idx: 'hero-d-0' },
+    { v: '5ph', l: heroStatLabels?.[1] || 'Mỗi ngày', tip: '5 phút Mind Reset mỗi ngày là đủ để bắt đầu thay đổi trạng thái tinh thần', idx: 'hero-d-1' },
+    { v: '12', l: heroStatLabels?.[2] || 'Tuần lộ trình', tip: 'Từ nhận diện stress → thiền ngắn → journaling → digital detox → kỷ luật mềm', idx: 'hero-d-2' },
+    { v: '100', l: heroStatLabels?.[3] || 'Calm Score', tip: 'Thang điểm tự đánh giá mỗi ngày: thở + journal + detox + routine tối + kỷ luật mềm', idx: 'hero-d-3' },
   ];
 
   return (
@@ -1646,36 +1684,36 @@ export default function PillarD() {
       <RevealBlock className="mb-14">
         <blockquote className="rounded-2xl p-6 border-l-4 relative overflow-hidden" style={{ borderLeftColor: PURPLE, background: `rgba(${PURPLE_RGB},0.05)` }}>
           <div className="text-5xl absolute right-6 top-4 opacity-10" style={{ color: PURPLE }}>"</div>
-          <p className="text-xl font-medium text-text leading-relaxed italic">"Tâm trí an nhiên không phải là không còn áp lực, mà là biết cách hạ nhịp, quay lại và sống khỏe bền hơn mỗi ngày."</p>
-          <cite className="text-base text-muted mt-3 block">— Triết lý Tâm Trí An Nhiên</cite>
+          <p className="text-xl font-medium text-text leading-relaxed italic">{pillar?.d_quote || '"Tâm trí an nhiên không phải là không còn áp lực, mà là biết cách hạ nhịp, quay lại và sống khỏe bền hơn mỗi ngày."'}</p>
+          <cite className="text-base text-muted mt-3 block">{pillar?.d_quote_cite || '— Triết lý Tâm Trí An Nhiên'}</cite>
         </blockquote>
       </RevealBlock>
 
       {/* Teaser sections */}
       <RevealBlock>
-        <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">Khám Phá Chi Tiết</h2>
-        <p className="text-muted text-lg mb-10">12 trang chuyên sâu — từ nền tảng đến thực hành và công cụ theo dõi.</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">{pillar?.d_explore_title || 'Khám Phá Chi Tiết'}</h2>
+        <p className="text-muted text-lg mb-10">{pillar?.d_explore_sub || '12 trang chuyên sâu — từ nền tảng đến thực hành và công cụ theo dõi.'}</p>
 
-        <TeaserSection title="Nền Tảng & Nhận Diện">
+        <TeaserSection title={pillar?.d_teaser_s1 || 'Nền Tảng & Nhận Diện'}>
           <TeaserCard to="/pillar/d/stress" color="#8b5cf6" rgb="139,92,246" icon="🌪️" category="Nền Tảng" title="Hiểu Stress & Vòng Lặp Lo Âu" accent="3 tầng · Trigger · Vòng lặp" desc="Stress không phải kẻ thù. Hiểu cơ chế để nhận diện sớm và chèn điểm dừng vào vòng lặp lo âu–thói quen." features={['3 tầng: cơ thể, cảm xúc, hành vi', 'Mô hình Trigger → Hành vi → Hậu quả', 'Kỹ thuật đặt tên cho suy nghĩ']} stats={[{ v: '3', l: 'Tầng' }, { v: '5', l: 'Trigger' }]} image="https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80" imageAlt="Stress" cta="Hiểu stress →" />
           <TeaserCard to="/pillar/d/assessment" color="#a855f7" rgb="168,85,247" icon="📋" category="Đánh Giá" title="Mind & Calm Assessment" accent="7 câu hỏi · 3 Track" desc="Đánh giá trạng thái tinh thần hiện tại qua 7 khía cạnh. Xác định Track phù hợp và hành động ưu tiên." features={['Điểm Mind & Calm ban đầu', 'Xác định Track 1–3', 'Đề xuất hành động cá nhân hóa']} stats={[{ v: '7', l: 'Câu hỏi' }, { v: '3', l: 'Tracks' }]} image="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80" imageAlt="Assessment" cta="Đánh giá ngay →" />
         </TeaserSection>
 
-        <TeaserSection title="Công Cụ Thực Hành">
+        <TeaserSection title={pillar?.d_teaser_s2 || 'Công Cụ Thực Hành'}>
           <TeaserCard to="/pillar/d/breathing" color="#6366f1" rgb="99,102,241" icon="🫁" category="Thực Hành" title="Kỹ Thuật Thở" accent="4 kỹ thuật · Timer tương tác" desc="Thở cơ hoành, box breathing 4-4-4-4, thở 4-7-8 và reset 2 phút — mỗi kỹ thuật cho một tình huống cụ thể." features={['Thở cơ hoành: nền tảng', 'Box breathing: tập trung & bình tĩnh', 'Thở 4-7-8: chuẩn bị ngủ', 'Reset 2 phút: dùng ngay khi quá tải']} stats={[{ v: '4', l: 'Kỹ thuật' }, { v: '2ph', l: 'Tối thiểu' }]} image="https://images.unsplash.com/photo-1518609571773-39b7d303a87b?w=800&q=80" imageAlt="Breathing" cta="Xem kỹ thuật →" />
           <TeaserCard to="/pillar/d/meditation" color="#d946ef" rgb="217,70,239" icon="🧘" category="Thực Hành" title="Thiền Ngắn & Chánh Niệm" accent="3 phút · Body scan · Mindful walking" desc="Thiền không cần ngồi 1 tiếng. 3 phút quan sát hơi thở, 5 phút body scan trước ngủ, chánh niệm khi ăn và đi bộ." features={['Thiền 3 phút cho người mới', 'Body scan 5 phút trước ngủ', 'Chánh niệm khi ăn & đi bộ', 'Lộ trình tăng dần 3→10 phút']} stats={[{ v: '3ph', l: 'Bắt đầu' }, { v: '4', l: 'Kiểu thiền' }]} image="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80" imageAlt="Meditation" cta="Thực hành →" />
           <TeaserCard to="/pillar/d/body-scan" color="#ec4899" rgb="236,72,153" icon="🔍" category="Thực Hành" title="Body Scan" accent="10 phút · Phục hồi sâu" desc="Body scan 10 phút từng vùng cơ thể — từ trán đến ngón chân. Công cụ thiền tốt nhất cho người khó ngủ và căng cơ." features={['Scan từng vùng cơ thể có hướng dẫn', 'Progressive muscle relaxation', 'Dùng sau tập nặng hoặc trước ngủ', 'Audio guidance từng bước']} stats={[{ v: '10ph', l: 'Thời gian' }, { v: '8', l: 'Vùng scan' }]} image="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80" imageAlt="Body Scan" cta="Bắt đầu scan →" />
           <TeaserCard to="/pillar/d/journaling" color="#ec4899" rgb="236,72,153" icon="📓" category="Thực Hành" title="Journaling 5 Dòng" accent="5 phút · Mỗi tối" desc="5 câu hỏi mỗi tối giúp dọn rác trong đầu, nhận ra cảm xúc và chuẩn bị cho ngày mai nhẹ nhàng hơn." features={['Mẫu journal 5 dòng cơ bản', 'Journal khi ăn theo cảm xúc', 'Journal sau ngày fail', 'Template in & dùng']} stats={[{ v: '5', l: 'Câu hỏi' }, { v: '5ph', l: 'Mỗi tối' }]} image="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80" imageAlt="Journaling" cta="Xem template →" />
         </TeaserSection>
 
-        <TeaserSection title="Quản Lý Tâm Trí">
+        <TeaserSection title={pillar?.d_teaser_s3 || 'Quản Lý Tâm Trí'}>
           <TeaserCard to="/pillar/d/brain-dump" color="#0ea5e9" rgb="14,165,233" icon="🧠" category="Công Cụ" title="Xả Não & Brain Dump" accent="Brain dump · Vòng tròn kiểm soát" desc="Khi đầu quá nhiều việc, viết tất cả ra giấy rồi phân loại: làm ngay, lên kế hoạch, hoặc buông tạm." features={['Kỹ thuật Brain Dump 5 phút', 'Vòng tròn kiểm soát: tôi kiểm soát được gì?', 'Phân loại: làm ngay / kế hoạch / buông', 'Danh sách lo âu']} stats={[{ v: '5ph', l: 'Brain dump' }, { v: '3', l: 'Nhóm việc' }]} image="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80" imageAlt="Brain Dump" cta="Xả não ngay →" />
           <TeaserCard to="/pillar/d/digital-detox" color="#0ea5e9" rgb="14,165,233" icon="📵" category="Công Cụ" title="Digital Detox" accent="3 mức · Không cực đoan" desc="Giảm màn hình thông minh — không ép bỏ điện thoại hoàn toàn mà thiết kế môi trường số giúp não có khoảng thở." features={['3 mức: Dễ → Chuẩn → Nâng cao', 'Menu thay thế cho lướt điện thoại', 'Thiết kế môi trường số', '7-day digital detox plan']} stats={[{ v: '3', l: 'Mức độ' }, { v: '7', l: 'Ngày plan' }]} image="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" imageAlt="Digital Detox" cta="Bắt đầu detox →" />
           <TeaserCard to="/pillar/d/gentle-discipline" color="#10b981" rgb="16,185,129" icon="🌱" category="Tư Duy" title="Kỷ Luật Mềm" accent="Quy tắc 1% · Không tự trách" desc="Kỷ luật mềm là cách duy trì thói quen mà không tự làm mình kiệt sức. Quay lại bằng bản nhỏ nhất sau mỗi ngày lệch." features={['Quy tắc 1% quay lại sau ngày fail', 'Bản tối thiểu cho mọi thói quen', 'Xử lý ăn uống cảm xúc', 'Tối giản mục tiêu: 1–2 thay đổi/giai đoạn']} stats={[{ v: '1%', l: 'Quay lại' }, { v: '6', l: 'Tình huống' }]} image="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80" imageAlt="Gentle Discipline" cta="Học kỷ luật mềm →" />
           <TeaserCard to="/pillar/d/habits" color="#10b981" rgb="16,185,129" icon="🔗" category="Tư Duy" title="Thói Quen Nhỏ Bền Vững" accent="Habit stacking · 3 phút/ngày" desc="Thói quen tốt không đến từ ý chí mạnh — mà từ hệ thống nhỏ lặp lại. Ghép thói quen mới vào điểm neo hiện có." features={['Habit stacking: ghép vào thói quen cũ', 'Cue → Routine → Reward', '7 thói quen nhỏ Mind & Calm', 'Streak tracker tích hợp']} stats={[{ v: '7', l: 'Thói quen' }, { v: '21', l: 'Ngày hình thành' }]} image="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=800&q=80" imageAlt="Habits" cta="Xây thói quen →" />
         </TeaserSection>
 
-        <TeaserSection title="Theo Dõi & Lộ Trình">
+        <TeaserSection title={pillar?.d_teaser_s4 || 'Theo Dõi & Lộ Trình'}>
           <TeaserCard to="/pillar/d/checklist" color="#f59e0b" rgb="245,158,11" icon="✅" category="Công Cụ" title="Daily Calm Checklist" accent="6 mục · Calm Score · Streak" desc="Checklist hằng ngày với 6 hành động Mind & Calm. Theo dõi điểm số, chuỗi ngày liên tiếp và mood từng ngày." features={['6 mục checklist Mind & Calm', 'Calm Score 100 điểm/ngày', 'Mood tracker 😣→😄', 'Streak ngày liên tiếp']} stats={[{ v: '6', l: 'Mục hàng ngày' }, { v: '100', l: 'Điểm tối đa' }]} image="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80" imageAlt="Checklist" cta="Mở checklist →" />
           <TeaserCard to="/pillar/d/roadmap" color="#a855f7" rgb="168,85,247" icon="🗺️" category="Lộ Trình" title="Lộ Trình 12 Tuần Mind & Calm" accent="6 giai đoạn · 3–10 phút/ngày" desc="Từ nhận diện stress → thở → journaling → digital detox → kỷ luật mềm → cá nhân hóa routine. Mỗi ngày chỉ cần 3–10 phút." features={['Tuần 1–2: Nhận diện stress & reset', 'Tuần 3–4: Thở có chủ ý', 'Tuần 5–6: Journaling & xả não', 'Tuần 7–12: Detox, kỷ luật, cá nhân hóa']} stats={[{ v: '12', l: 'Tuần' }, { v: '6', l: 'Giai đoạn' }]} image="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=800&q=80" imageAlt="Roadmap" cta="Xem lộ trình →" />
         </TeaserSection>

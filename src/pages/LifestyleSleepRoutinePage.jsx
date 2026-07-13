@@ -794,7 +794,7 @@ export default function LifestyleSleepRoutinePage() {
             <div className="absolute bottom-4 left-6">
               <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                 style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', border: `1px solid rgba(${RGB},0.2)` }}>
-                Giảm màn hình · Giãn cơ · Thở chậm
+                {hero.img_caption || 'Giảm màn hình · Giãn cơ · Thở chậm'}
               </span>
             </div>
           </div>

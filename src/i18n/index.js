@@ -30,6 +30,8 @@ i18n
     ns: ['common', 'pillars', 'programs'],
     defaultNS: 'common',
     interpolation: { escapeValue: false },
+    returnNull: false,
+    returnEmptyString: false,
   });
 
 export default i18n;

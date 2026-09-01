@@ -1731,7 +1731,7 @@ function MetricDetailCard({ detail, color, onClose }) {
           <div className="space-y-4">
             {params.length > 0 && (
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-muted mb-3">Thông Số</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-muted mb-3">{t('ui.params') || 'Thông Số'}</p>
                 <div className="space-y-2.5">
                   {params.map((p, i) => (
                     <div key={i}>
@@ -1755,7 +1755,7 @@ function MetricDetailCard({ detail, color, onClose }) {
 
             {analysis && (
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-muted mb-2">Phân Tích</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-muted mb-2">{t('ui.analysis') || 'Phân Tích'}</p>
                 <p className="text-[11px] text-muted leading-relaxed">{analysis}</p>
               </div>
             )}
@@ -1775,7 +1775,7 @@ function MetricDetailCard({ detail, color, onClose }) {
 
             {suggestions.length > 0 && (
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-muted mb-2">Gợi Ý</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-muted mb-2">{t('ui.suggestions') || 'Gợi Ý'}</p>
                 <ul className="space-y-1.5">
                   {suggestions.map((s, i) => (
                     <li key={i} className="flex items-start gap-2 text-[10px] text-muted">
@@ -1791,7 +1791,7 @@ function MetricDetailCard({ detail, color, onClose }) {
               <div className="grid grid-cols-2 gap-3">
                 {pros.length > 0 && (
                   <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-green-400/60 mb-2">Ưu Điểm</p>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-green-400/60 mb-2">{t('ui.pros') || 'Ưu Điểm'}</p>
                     <ul className="space-y-1">
                       {pros.map((p, i) => (
                         <li key={i} className="flex items-start gap-1.5 text-[10px] text-muted">
@@ -1804,7 +1804,7 @@ function MetricDetailCard({ detail, color, onClose }) {
                 )}
                 {cons.length > 0 && (
                   <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-red-400/60 mb-2">Hạn Chế</p>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-red-400/60 mb-2">{t('ui.cons') || 'Hạn Chế'}</p>
                     <ul className="space-y-1">
                       {cons.map((c, i) => (
                         <li key={i} className="flex items-start gap-1.5 text-[10px] text-muted">
@@ -3970,6 +3970,7 @@ const WEEKLY_THRESHOLDS = GOAL_WEEKLY_THRESHOLDS['fat-loss'];
 // ─── B5 SVG Charts ────────────────────────────────────────────────────────────
 
 function ProgressLineChart() {
+  const { t: tB5 } = useTranslation('common');
   const [hoverWeek, setHoverWeek] = useState(null);
   const [entered, setEntered] = useState(false);
   useEffect(() => { const t = setTimeout(() => setEntered(true), 250); return () => clearTimeout(t); }, []);
@@ -3994,8 +3995,8 @@ function ProgressLineChart() {
         <div className="flex items-center gap-2">
           <span className="text-lg">📉</span>
           <div>
-            <p className="text-[11px] font-bold text-text leading-none">Biểu Đồ Cân Nặng — 12 Tuần</p>
-            <p className="text-[9px] text-muted mt-0.5">Hover vào đường lime để xem giá trị từng tuần</p>
+            <p className="text-[11px] font-bold text-text leading-none">{tB5('b5.weight_chart_title') || 'Biểu Đồ Cân Nặng — 12 Tuần'}</p>
+            <p className="text-[9px] text-muted mt-0.5">{tB5('b5.weight_chart_hint') || 'Hover vào đường lime để xem giá trị từng tuần'}</p>
           </div>
         </div>
         {/* Inline legend */}
@@ -4045,8 +4046,8 @@ function ProgressLineChart() {
           <text x={W-PR} y={H-PB+14} textAnchor="end" fontSize="7" fill="#252525">tuần</text>
 
           {/* Zone annotation text — positioned well inside SVG bounds */}
-          <text x={xs(8.2)} y={ys(-1.55)} fontSize="8" fill="rgba(132,204,22,0.55)" fontStyle="italic">✦ Vùng giảm mỡ bền vững</text>
-          <text x={xs(6.8)} y={ys(-4.9)} fontSize="8" fill="rgba(249,115,22,0.55)" fontStyle="italic">⚠ Vùng nguy cơ mất cơ</text>
+          <text x={xs(8.2)} y={ys(-1.55)} fontSize="8" fill="rgba(132,204,22,0.55)" fontStyle="italic">{tB5('b5.zone_fat_loss') || '✦ Vùng giảm mỡ bền vững'}</text>
+          <text x={xs(6.8)} y={ys(-4.9)} fontSize="8" fill="rgba(249,115,22,0.55)" fontStyle="italic">{tB5('b5.zone_muscle_risk') || '⚠ Vùng nguy cơ mất cơ'}</text>
 
           {/* Lines */}
           <path d={toD(maintain)} fill="none" stroke="#06b6d4" strokeWidth="1.4" strokeDasharray="3.5 5" opacity="0.45"
@@ -4092,9 +4093,8 @@ function ProgressLineChart() {
       {/* Science note */}
       <div className="mx-3 mb-3 rounded-xl border border-lime-500/12 bg-lime-500/[0.035] px-3 py-2">
         <p className="text-[9px] text-muted leading-relaxed">
-          <span className="text-lime-400/90 font-bold">Công thức: </span>
-          Thâm hụt 400 kcal/ngày × 7 ngày = 2,800 kcal ≈ <strong className="text-lime-400">0.36 kg mỡ/tuần</strong>.
-          Duy trì 12 tuần = giảm ~4.3 kg mỡ trong khi giữ nguyên cơ bắp. Cắt calo quá mạnh = cơ thể đốt thêm cơ để lấy năng lượng — thứ khó lấy lại nhất.
+          <span className="text-lime-400/90 font-bold">{tB5('b5.formula_label') || 'Công thức: '}</span>
+          {tB5('b5.formula_body') || 'Thâm hụt 400 kcal/ngày × 7 ngày = 2,800 kcal ≈ 0.36 kg mỡ/tuần. Duy trì 12 tuần = giảm ~4.3 kg mỡ trong khi giữ nguyên cơ bắp. Cắt calo quá mạnh = cơ thể đốt thêm cơ để lấy năng lượng — thứ khó lấy lại nhất.'}
         </p>
       </div>
     </div>
@@ -4102,6 +4102,7 @@ function ProgressLineChart() {
 }
 
 function EnergyBarChart() {
+  const { t: tB5 } = useTranslation('common');
   const [entered, setEntered] = useState(false);
   const [hoverDay, setHoverDay] = useState(null);
   useEffect(() => { const t = setTimeout(() => setEntered(true), 350); return () => clearTimeout(t); }, []);
@@ -4136,8 +4137,8 @@ function EnergyBarChart() {
         <div className="flex items-center gap-2">
           <span className="text-lg">⚡</span>
           <div>
-            <p className="text-[11px] font-bold text-text leading-none">Biểu Đồ Năng Lượng 7 Ngày</p>
-            <p className="text-[9px] text-muted mt-0.5">Mục tiêu: giữ mức ≥6/10 mỗi ngày — hover để xem nguyên nhân</p>
+            <p className="text-[11px] font-bold text-text leading-none">{tB5('b5.energy_chart_title') || 'Biểu Đồ Năng Lượng 7 Ngày'}</p>
+            <p className="text-[9px] text-muted mt-0.5">{tB5('b5.energy_chart_hint') || 'Mục tiêu: giữ mức ≥6/10 mỗi ngày — hover để xem nguyên nhân'}</p>
           </div>
         </div>
         {/* Zone legend */}
@@ -4170,9 +4171,9 @@ function EnergyBarChart() {
           ))}
 
           {/* Zone labels — INSIDE SVG bounds, right of plot area */}
-          <text x={W-PR+6} y={PT + ch*0.1 + 3} fontSize="8" fill="rgba(34,197,94,0.6)" fontWeight="600">Tốt</text>
-          <text x={W-PR+6} y={PT + ch*0.3 + 3} fontSize="8" fill="rgba(234,179,8,0.6)" fontWeight="600">Ổn</text>
-          <text x={W-PR+6} y={PT + ch*0.7 + 3} fontSize="8" fill="rgba(249,115,22,0.6)" fontWeight="600">Thấp</text>
+          <text x={W-PR+6} y={PT + ch*0.1 + 3} fontSize="8" fill="rgba(34,197,94,0.6)" fontWeight="600">{tB5('b5.energy_good') || 'Tốt'}</text>
+          <text x={W-PR+6} y={PT + ch*0.3 + 3} fontSize="8" fill="rgba(234,179,8,0.6)" fontWeight="600">{tB5('b5.energy_ok') || 'Ổn'}</text>
+          <text x={W-PR+6} y={PT + ch*0.7 + 3} fontSize="8" fill="rgba(249,115,22,0.6)" fontWeight="600">{tB5('b5.energy_low') || 'Thấp'}</text>
 
           {/* Bars */}
           {values.map((v, i) => {
@@ -4253,6 +4254,7 @@ function EnergyBarChart() {
 }
 
 function BodyCompositionChart() {
+  const { t: tB5 } = useTranslation('common');
   const [entered, setEntered] = useState(false);
   const [hoverBar, setHoverBar] = useState(null);
   useEffect(() => { const t = setTimeout(() => setEntered(true), 450); return () => clearTimeout(t); }, []);
@@ -4278,11 +4280,11 @@ function BodyCompositionChart() {
     <div>
       <div className="flex items-center gap-2 mb-1">
         <span className="text-lg">🏗️</span>
-        <p className="text-lg font-bold text-text">Thành Phần Cơ Thể — So Sánh 3 Kịch Bản</p>
+        <p className="text-lg font-bold text-text">{tB5('b5.body_comp_title') || 'Thành Phần Cơ Thể — So Sánh 3 Kịch Bản'}</p>
       </div>
       <p className="text-[10px] text-muted leading-relaxed mb-2">
-        Cùng giảm cân nhưng <span className="text-lime-400">cắt calo đúng tốc độ = giữ được toàn bộ cơ bắp</span>.
-        Cắt quá mạnh = mất thêm 3.5 kg cơ bắp — thứ rất khó lấy lại.
+        {tB5('b5.body_comp_sub1') || 'Cùng giảm cân nhưng'} <span className="text-lime-400">{tB5('b5.body_comp_sub1_accent') || 'cắt calo đúng tốc độ = giữ được toàn bộ cơ bắp'}</span>.
+        {tB5('b5.body_comp_sub2') || 'Cắt quá mạnh = mất thêm 3.5 kg cơ bắp — thứ rất khó lấy lại.'}
       </p>
       <div className="rounded-xl border border-white/7 bg-[#090909]">
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ display: 'block', overflow: 'visible' }}>
@@ -4409,6 +4411,7 @@ function BodyCompositionChart() {
 }
 
 function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
+  const { t: tB5 } = useTranslation('common');
   const thresholds = GOAL_WEEKLY_THRESHOLDS[activeGoal] || GOAL_WEEKLY_THRESHOLDS['fat-loss'];
   return (
     <div className="space-y-4">
@@ -4418,8 +4421,8 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
         <div className="p-6">
           <div className="flex items-center gap-2 mb-5">
             <div className="w-7 h-7 rounded-xl bg-cyan-500/12 border border-cyan-500/30 flex items-center justify-center text-lg">📊</div>
-            <span className="text-lg font-bold text-text">Theo Dõi Hàng Tuần</span>
-            <span className="ml-auto text-[10px] text-cyan-400/70 font-medium">Đo mỗi tuần 1 lần</span>
+            <span className="text-lg font-bold text-text">{tB5('b5.weekly_title') || 'Theo Dõi Hàng Tuần'}</span>
+            <span className="ml-auto text-[10px] text-cyan-400/70 font-medium">{tB5('b5.weekly_freq') || 'Đo mỗi tuần 1 lần'}</span>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
             {TRACKING_WEEKLY_RICH.map((item, i) => (
@@ -4449,15 +4452,15 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/50 to-transparent" />
         <div className="absolute inset-0 p-5 flex flex-col justify-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400/80 mb-1">Nguyên tắc vàng</p>
-          <p className="text-lg font-black text-text leading-snug max-w-xs">Đo trung bình 3 buổi sáng liên tiếp — không đánh giá bởi 1 con số duy nhất.</p>
-          <p className="text-[10px] text-muted/70 mt-1.5">Cân nặng biến động ±1–2kg/ngày là bình thường do muối & nước</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400/80 mb-1">{tB5('b5.golden_rule_label') || 'Nguyên tắc vàng'}</p>
+          <p className="text-lg font-black text-text leading-snug max-w-xs">{tB5('b5.golden_rule') || 'Đo trung bình 3 buổi sáng liên tiếp — không đánh giá bởi 1 con số duy nhất.'}</p>
+          <p className="text-[10px] text-muted/70 mt-1.5">{tB5('b5.golden_rule_note') || 'Cân nặng biến động ±1–2kg/ngày là bình thường do muối & nước'}</p>
         </div>
       </div>
 
       {/* ── Measurement protocol ── */}
       <div>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">Giao Thức Đo Chuẩn</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">{tB5('b5.protocol_title') || 'Giao Thức Đo Chuẩn'}</p>
         <div className="grid sm:grid-cols-2 gap-2">
           {WEEKLY_PROTOCOL.map((p, i) => (
             <div key={i} className="flex items-start gap-3 p-3.5 rounded-xl border"
@@ -4479,12 +4482,12 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
       <div>
         {/* Section heading with goal context badge */}
         <div className="flex items-center gap-2 mb-4">
-          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Giải Đọc Kết Quả</p>
+          <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">{tB5('b5.results_title') || 'Giải Đọc Kết Quả'}</p>
           <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border"
             style={{ color: thresholds[0].color, background: `${thresholds[0].color}12`, borderColor: `${thresholds[0].color}28` }}>
             {{ 'fat-loss': '🔥 Giảm Mỡ', 'muscle-gain': '💪 Tăng Cơ', 'endurance': '🏃 Sức Bền', 'maintenance': '⚖️ Duy Trì' }[activeGoal]}
           </span>
-          <span className="text-[9px] text-muted/60 italic">Di chuột vào thẻ để xem giải thích</span>
+          <span className="text-[9px] text-muted/60 italic">{tB5('b5.hover_hint') || 'Di chuột vào thẻ để xem giải thích'}</span>
         </div>
 
         <div className="space-y-5">

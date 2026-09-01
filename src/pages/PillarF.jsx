@@ -876,9 +876,9 @@ function F2WorkoutLog() {
           <input type="range" min={1} max={10} value={form.rpe} onChange={e => setForm(p => ({ ...p, rpe: +e.target.value }))} className="flex-1" />
         </div>
         <input value={form.next} onChange={e => setForm(p => ({ ...p, next: e.target.value }))} placeholder="Lần sau (vd: Tăng 2 lần squat)" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
-        <button onClick={add} className="w-full py-2 rounded-xl text-lg font-bold text-white" style={{ background: COLOR }}>+ Lưu Buổi Tập</button>
+        <button onClick={add} className="w-full py-2 rounded-xl text-lg font-bold text-white" style={{ background: COLOR }}>{tPillarsF2('pillarF.f2_save_btn') || '+ Lưu Buổi Tập'}</button>
       </div>
-      {entries.length === 0 && <p className="text-center text-muted text-lg py-6">Chưa có nhật ký. Ghi buổi tập đầu tiên.</p>}
+      {entries.length === 0 && <p className="text-center text-muted text-lg py-6">{tPillarsF2('pillarF.f2_empty_state') || 'Chưa có nhật ký. Ghi buổi tập đầu tiên.'}</p>}
       <div className="space-y-2 max-h-72 overflow-y-auto">
         {entries.map((e, i) => (
           <div key={i} className="rounded-xl border border-border bg-surface p-3">
@@ -892,7 +892,7 @@ function F2WorkoutLog() {
               <span>RPE <strong style={{ color: RPE_COLORS[e.rpe] }}>{e.rpe}</strong></span>
               {e.feeling && <span>💬 {e.feeling}</span>}
             </div>
-            {e.next && <p className="text-base text-muted mt-1">Lần sau: {e.next}</p>}
+            {e.next && <p className="text-base text-muted mt-1">{tPillarsF2('pillarF.f2_next_prefix') || 'Lần sau: '}{e.next}</p>}
           </div>
         ))}
       </div>
@@ -1588,7 +1588,7 @@ function F4Lifestyle() {
         />
       )}
       <div className="rounded-2xl border p-3 text-base text-muted" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.04)` }}>
-        Dữ liệu lưu theo ngày trong thiết bị của bạn. <Link to="/pillar/f/lifestyle-tracker" className="underline" style={{ color: COLOR }}>Xem lịch sử →</Link>
+        {tPillarsF3('pillarF.f3_data_note') || 'Dữ liệu lưu theo ngày trong thiết bị của bạn.'} <Link to="/pillar/f/lifestyle-tracker" className="underline" style={{ color: COLOR }}>Xem lịch sử →</Link>
       </div>
     </div>
   );
@@ -1999,7 +1999,7 @@ function F6Test() {
       <button onClick={save} className="w-full py-2 rounded-xl text-lg font-bold text-white transition-all" style={{ background: saved ? '#22c55e' : COLOR }}>
         {saved ? '✓ Đã lưu!' : 'Lưu Kết Quả Test'}
       </button>
-      <Link to="/pillar/f/progress-test" className="block text-center text-base" style={{ color: COLOR }}>Xem bảng so sánh 4 tuần →</Link>
+      <Link to="/pillar/f/progress-test" className="block text-center text-base" style={{ color: COLOR }}>{tPillarsF6('pillarF.f6_compare_link') || 'Xem bảng so sánh 4 tuần →'}</Link>
       {testModal !== null && (
         <TestModal
           idx={testModal}
@@ -2065,7 +2065,7 @@ function QuickWoModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
           <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: wo.color, background: `rgba(${wo.rgb},0.06)` }}>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{wo.keyFact}</p>
           </div>
-          <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: `rgba(${wo.rgb},0.7)` }}>Các bước thực hiện</h3>
+          <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: `rgba(${wo.rgb},0.7)` }}>{tCommon('modal.steps_heading') || 'Các bước thực hiện'}</h3>
           <ol className="space-y-2 mb-8">
             {wo.steps.map((s, j) => (
               <li key={j} className="flex gap-3 text-sm leading-relaxed">
@@ -2075,7 +2075,7 @@ function QuickWoModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
               </li>
             ))}
           </ol>
-          <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: `rgba(${wo.rgb},0.7)` }}>Chi tiết khoa học</h3>
+          <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: `rgba(${wo.rgb},0.7)` }}>{tCommon('modal.science_heading') || 'Chi tiết khoa học'}</h3>
           <ul className="space-y-3 mb-8">
             {wo.details.map((d, di) => (
               <li key={di} className="flex gap-3 text-sm leading-relaxed">
@@ -2167,7 +2167,7 @@ function F7QuickWorkouts() {
           )}
         </div>
       ))}
-      <Link to="/pillar/f/quick-workouts" className="block text-center text-base py-2" style={{ color: COLOR }}>Xem đầy đủ thư viện bài nhanh →</Link>
+      <Link to="/pillar/f/quick-workouts" className="block text-center text-base py-2" style={{ color: COLOR }}>{tPillarsF7('pillarF.f7_library_link') || 'Xem đầy đủ thư viện bài nhanh →'}</Link>
       {woModal !== null && (
         <QuickWoModal
           idx={woModal}
@@ -2328,7 +2328,7 @@ export default function PillarF() {
 
       {/* Bottom disclaimer */}
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-6" />
-      <p className="text-base text-muted text-center">Mọi dữ liệu được lưu cục bộ trong thiết bị của bạn, không gửi lên server. Công cụ không thay thế tư vấn y tế chuyên nghiệp.</p>
+      <p className="text-base text-muted text-center">{tCommon('f_bottom_disclaimer') || 'Mọi dữ liệu được lưu cục bộ trong thiết bị của bạn, không gửi lên server. Công cụ không thay thế tư vấn y tế chuyên nghiệp.'}</p>
     </div>
   );
 }

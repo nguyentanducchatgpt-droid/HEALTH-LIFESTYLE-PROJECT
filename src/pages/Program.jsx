@@ -3097,16 +3097,16 @@ export default function Program() {
                 </div>
                 <RevealBlock delay={200} className="mt-4 p-4 rounded-2xl border border-accent/15 bg-accent/4 flex items-center justify-between gap-4 flex-wrap">
                   <p className="text-base text-muted flex-1">
-                    💾 Kết quả được tự động lưu vào trình duyệt. Nhấn vào ô để nhập — chỉ số <strong className="text-accent">Linh Hoạt</strong> click để chuyển đổi Có/Không.
+                    {t('program_page.progress_save_note') || '💾 Kết quả được tự động lưu vào trình duyệt. Nhấn vào ô để nhập — chỉ số Linh Hoạt click để chuyển đổi Có/Không.'}
                   </p>
                   <button
                     onClick={() => {
-                      const ok = window.confirm('Xóa toàn bộ dữ liệu test đã lưu?');
+                      const ok = window.confirm(t('program_page.progress_delete_confirm') || 'Xóa toàn bộ dữ liệu test đã lưu?');
                       if (ok) { setProgressData({}); localStorage.removeItem(PROGRESS_KEY); }
                     }}
                     className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-xl border border-red-500/25 text-red-400/70 bg-red-500/5 hover:bg-red-500/10 transition-colors cursor-pointer"
                   >
-                    🗑 Xóa dữ liệu
+                    {t('program_page.progress_delete_btn') || '🗑 Xóa dữ liệu'}
                   </button>
                 </RevealBlock>
               </div>
@@ -3129,9 +3129,9 @@ export default function Program() {
                 <div className="flex flex-col md:flex-row md:items-center gap-5 mb-6">
                   <div className="w-16 h-16 rounded-2xl bg-sky-500/12 border border-sky-500/25 flex items-center justify-center text-3xl shrink-0">👨‍💼</div>
                   <div className="flex-1">
-                    <div className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">Hồ Sơ Người Dùng Mẫu</div>
-                    <h2 className="text-xl md:text-2xl font-bold text-text mb-1">Anh Tuấn — 32 tuổi, Nhân viên văn phòng</h2>
-                    <p className="text-base text-muted">TP.HCM · Ngồi nhiều 8h/ngày · Ít tập luyện 2 năm gần đây · Hay mệt · Mục tiêu: giảm 5kg + tăng năng lượng trong 12 tuần</p>
+                    <div className="text-xs font-bold uppercase tracking-widest text-sky-400 mb-1">{t('program_page.sample_profile_badge') || 'Hồ Sơ Người Dùng Mẫu'}</div>
+                    <h2 className="text-xl md:text-2xl font-bold text-text mb-1">{t('program_page.sample_profile_name') || 'Anh Tuấn — 32 tuổi, Nhân viên văn phòng'}</h2>
+                    <p className="text-base text-muted">{t('program_page.sample_profile_desc') || 'TP.HCM · Ngồi nhiều 8h/ngày · Ít tập luyện 2 năm gần đây · Hay mệt · Mục tiêu: giảm 5kg + tăng năng lượng trong 12 tuần'}</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -3154,8 +3154,8 @@ export default function Program() {
 
           {/* Phases timeline */}
           <RevealBlock className="mb-8">
-            <h2 className="text-xl font-bold mb-1" style={{ color: '#0ea5e9' }}>Lộ Trình 12 Tuần Thực Tế</h2>
-            <p className="text-base text-muted mb-6">Click từng giai đoạn để xem chi tiết từng tuần của anh Tuấn</p>
+            <h2 className="text-xl font-bold mb-1" style={{ color: '#0ea5e9' }}>{t('program_page.sample_roadmap_title') || 'Lộ Trình 12 Tuần Thực Tế'}</h2>
+            <p className="text-base text-muted mb-6">{t('program_page.sample_roadmap_sub') || 'Click từng giai đoạn để xem chi tiết từng tuần của anh Tuấn'}</p>
             <div className="space-y-4">
               {[
                 {
@@ -3240,7 +3240,7 @@ export default function Program() {
 
           {/* Key lessons */}
           <RevealBlock className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: '#0ea5e9' }}>Bài Học Từ Lộ Trình Của Tuấn</h2>
+            <h2 className="text-xl font-bold mb-4" style={{ color: '#0ea5e9' }}>{t('program_page.sample_lessons_title') || 'Bài Học Từ Lộ Trình Của Tuấn'}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { icon:'🎯', title:'Mục tiêu cụ thể thắng mọi động lực',      desc:'"-5kg trong 12 tuần" cho phép tính ngược ra deficit 400 kcal/ngày. Mơ hồ = thất bại.' },
@@ -3261,8 +3261,8 @@ export default function Program() {
           <RevealBlock className="mb-8">
             <div className="rounded-2xl border border-sky-500/25 bg-sky-500/5 p-5 flex flex-col sm:flex-row items-center gap-4">
               <div className="flex-1">
-                <div className="font-bold text-text text-base mb-1">Bắt đầu lộ trình của bạn ngay hôm nay</div>
-                <p className="text-base text-muted">Chọn 7 Ngày Khởi Động nếu bạn mới bắt đầu, hoặc 12 Tuần Cơ Bản nếu đã sẵn sàng.</p>
+                <div className="font-bold text-text text-base mb-1">{t('program_page.sample_cta_title') || 'Bắt đầu lộ trình của bạn ngay hôm nay'}</div>
+                <p className="text-base text-muted">{t('program_page.sample_cta_body') || 'Chọn 7 Ngày Khởi Động nếu bạn mới bắt đầu, hoặc 12 Tuần Cơ Bản nếu đã sẵn sàng.'}</p>
               </div>
               <div className="flex gap-2 shrink-0">
                 <button onClick={() => { setJourney('7d'); setExpandedPhase(0); setSubTab('phases'); }}

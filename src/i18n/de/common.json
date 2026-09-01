@@ -6147,13 +6147,17 @@
     "apply_title": "Praktische Anwendung",
     "see_detail": "Details ansehen →",
     "practice_title": "Übungsdetails",
-    "see_detail_label": "Details ansehen"
+    "see_detail_label": "Details ansehen",
+    "steps_heading": "Schritt-für-Schritt-Anleitung",
+    "science_heading": "Wissenschaftliche Details"
   },
+  "f_bottom_disclaimer": "Alle Daten werden lokal auf Ihrem Gerät gespeichert und nie an Server übertragen. Diese Tools ersetzen keinen professionellen medizinischen Rat.",
   "ui": {
     "show_detail": "▼ Details",
     "hide_detail": "▲ ausblenden",
     "metric_detail_label": "Kennzahl-Detail",
     "kcal_day": "kcal/Tag",
+    "score_out_of_100": "/ 100 Pkte",
     "macro_from_target": "↓ Makro-Verteilung aus dem Kalorienziel",
     "target_label": "Ziel",
     "bar_types": [
@@ -6163,6 +6167,49 @@
       "Schweres Training"
     ],
     "preworkout_note": "30–60 Min vorher",
-    "postworkout_note": "innerhalb 2h nach Training"
+    "postworkout_note": "innerhalb 2h nach Training",
+    "params": "Parameter",
+    "analysis": "Analyse",
+    "suggestions": "Empfehlungen",
+    "pros": "Vorteile",
+    "cons": "Nachteile"
+  },
+  "b5": {
+    "weight_chart_title": "Gewichtsdiagramm — 12 Wochen",
+    "weight_chart_hint": "Hovere über die Limonenlinie für den Wochenwert",
+    "zone_fat_loss": "✦ Nachhaltige Fettabbauzone",
+    "zone_muscle_risk": "⚠ Risikozone — Muskelverlust",
+    "formula_label": "Formel: ",
+    "formula_body": "400 kcal/Tag Defizit × 7 Tage = 2.800 kcal ≈ 0,36 kg Fett/Woche. 12 Wochen durchhalten = ~4,3 kg Fett verlieren bei Muskelerhalt. Zu aggressiv = Körper verbrennt Muskeln — am schwersten zurückzugewinnen.",
+    "energy_chart_title": "Energie-Diagramm — 7 Tage",
+    "energy_chart_hint": "Ziel: täglich ≥6/10 halten — hovere für den Grund",
+    "energy_good": "Gut",
+    "energy_ok": "Ok",
+    "energy_low": "Niedrig",
+    "body_comp_title": "Körperzusammensetzung — 3-Szenario-Vergleich",
+    "body_comp_sub1": "Gleicher Gewichtsverlust, richtiges Tempo =",
+    "body_comp_sub1_accent": "alle Muskeln erhalten",
+    "body_comp_sub2": "Zu aggressiv = 3,5 kg Muskeln verlieren — sehr schwer zurückzugewinnen.",
+    "weekly_title": "Wöchentliches Tracking",
+    "weekly_freq": "Einmal pro Woche messen",
+    "golden_rule_label": "Goldene Regel",
+    "golden_rule": "Durchschnitt von 3 aufeinanderfolgenden Morgen — nie nach einer Zahl urteilen.",
+    "golden_rule_note": "Gewichtsschwankungen ±1–2 kg/Tag durch Salz & Wasser sind normal",
+    "protocol_title": "Standard-Messprotokoll",
+    "results_title": "Ergebnisse interpretieren",
+    "hover_hint": "Hovere über eine Karte für die Erklärung"
+  },
+  "program_page": {
+    "progress_save_note": "💾 Ergebnisse werden automatisch im Browser gespeichert. Zum Eingeben auf eine Zelle klicken — der Flexibilitätswert wechselt per Klick zwischen Ja/Nein.",
+    "progress_delete_confirm": "Alle gespeicherten Testdaten löschen?",
+    "progress_delete_btn": "🗑 Daten löschen",
+    "sample_cta_title": "Starte deine Reise noch heute",
+    "sample_cta_body": "Wähle den 7-Tage-Start für Einsteiger oder die 12-Wochen-Basis, wenn du bereit bist.",
+    "sample_roadmap_title": "Realer 12-Wochen-Fahrplan",
+    "sample_roadmap_sub": "Klicke auf jede Phase, um Tuans wöchentliche Details zu sehen",
+    "sample_profile_badge": "Muster-Benutzerprofil",
+    "sample_profile_name": "Tuan — 32 Jahre, Büroangestellter",
+    "sample_profile_desc": "Ho-Chi-Minh-Stadt · 8h/Tag sitzend · Wenig Bewegung seit 2 Jahren · Häufige Müdigkeit · Ziel: 5 kg abnehmen + Energie steigern in 12 Wochen",
+    "sample_lessons_title": "Lektionen aus Tuans Reise"
   }
 }

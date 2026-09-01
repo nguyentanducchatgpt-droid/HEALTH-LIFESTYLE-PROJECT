@@ -2091,12 +2091,13 @@ const INFO_FILTER = [
 ];
 
 function TabE7() {
+  const { t: tE7 } = useTranslation('pillars');
   const [filterModal, setFilterModal] = useState(null);
   const [dangerModal, setDangerModal] = useState(null);
   const [safeModal, setSafeModal] = useState(null);
   return (
     <div className="space-y-4">
-      <p className="text-base text-muted">Với sự bùng nổ của TikTok, YouTube và livestream bán hàng, lọc thông tin sức khỏe là kỹ năng sống quan trọng.</p>
+      <p className="text-base text-muted">{tE7('pillarE.e7_intro') || 'Với sự bùng nổ của TikTok, YouTube và livestream bán hàng, lọc thông tin sức khỏe là kỹ năng sống quan trọng.'}</p>
       <div className="space-y-2">
         {INFO_FILTER.map((q, i) => (
           <div
@@ -2115,7 +2116,7 @@ function TabE7() {
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-xl border border-red-500/20 bg-red-500/06 p-4">
-          <p className="text-base font-bold text-red-400 mb-2">❌ Cụm từ nguy hiểm</p>
+          <p className="text-base font-bold text-red-400 mb-2">{tE7('pillarE.e7_danger_heading') || '❌ Cụm từ nguy hiểm'}</p>
           <ul className="space-y-1">
             {DANGER_PHRASES.map((p, i) => (
               <li
@@ -2130,7 +2131,7 @@ function TabE7() {
           </ul>
         </div>
         <div className="rounded-xl border border-green-500/20 bg-green-500/06 p-4">
-          <p className="text-base font-bold text-green-400 mb-2">✓ Ngôn ngữ an toàn</p>
+          <p className="text-base font-bold text-green-400 mb-2">{tE7('pillarE.e7_safe_heading') || '✓ Ngôn ngữ an toàn'}</p>
           <ul className="space-y-1">
             {SAFE_PHRASES.map((p, i) => (
               <li
@@ -2373,7 +2374,7 @@ export default function PillarE() {
       <RevealBlock delay={80} className="mt-6">
         <div className="rounded-2xl border p-5" style={{ borderColor: `${COLOR}20`, background: `${COLOR}06` }}>
           <p className="text-base text-muted leading-relaxed">
-            <strong className="font-bold" style={{ color: COLOR }}>⚕️ Lưu ý quan trọng:</strong> Trụ cột E cung cấp kiến thức và công cụ tự theo dõi — không thay thế khám bệnh, chẩn đoán hoặc điều trị cá nhân hóa. Nếu có bệnh nền hoặc đang dùng thuốc đặc trị, hãy trao đổi với bác sĩ trước khi thay đổi chế độ ăn, tập luyện hoặc bổ sung sản phẩm.
+            <strong className="font-bold" style={{ color: COLOR }}>⚕️ {pillar?.e_safety_label || 'Lưu ý quan trọng:'}</strong> {pillar?.e_safety_body || 'Trụ cột E cung cấp kiến thức và công cụ tự theo dõi — không thay thế khám bệnh, chẩn đoán hoặc điều trị cá nhân hóa. Nếu có bệnh nền hoặc đang dùng thuốc đặc trị, hãy trao đổi với bác sĩ trước khi thay đổi chế độ ăn, tập luyện hoặc bổ sung sản phẩm.'}
           </p>
         </div>
       </RevealBlock>

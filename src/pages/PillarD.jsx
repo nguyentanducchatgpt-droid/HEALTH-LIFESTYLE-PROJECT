@@ -97,6 +97,7 @@ function BoxBreathTimer({ color }) {
 // ─── Journal Prompt (D4 tab) ─────────────────────────────────────────────────
 function JournalPrompt({ color, onPromptClick }) {
   const { t: tPillars } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
   const pillarTr = tPillars('pillarD', { returnObjects: true });
   const [answers, setAnswers] = useState({});
   const DEFAULT_PROMPTS = [
@@ -121,7 +122,7 @@ function JournalPrompt({ color, onPromptClick }) {
                 onClick={() => onPromptClick(i)}
                 className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/prompt:opacity-100 transition-opacity"
                 style={{ color, borderColor: 'rgba(236,72,153,0.35)', background: 'rgba(236,72,153,0.08)' }}
-              >chi tiết →</button>
+              >{tCommon('modal.see_detail') || 'chi tiết →'}</button>
             )}
           </div>
           <textarea value={answers[i] || ''} onChange={e => setAnswers(prev => ({ ...prev, [i]: e.target.value }))} rows={2} placeholder={placeholder} className="w-full text-lg bg-transparent text-text placeholder:text-muted/40 resize-none outline-none" />
@@ -263,6 +264,7 @@ const D7_ITEM_MODALS = [
 
 function CalmScore({ color, onItemClick }) {
   const { t: tPillarsTr } = useTranslation('pillars');
+  const { t: tCommon } = useTranslation('common');
   const d7ModalsTr = tPillarsTr('pillarD.d7_modals', { returnObjects: true });
   const [checks, setChecks] = useState({});
   const ITEMS_BASE = [
@@ -284,7 +286,7 @@ function CalmScore({ color, onItemClick }) {
       <div className="flex items-center gap-4 mb-4">
         <div className="text-5xl font-bold" style={{ color: level.color }}>{score}</div>
         <div>
-          <div className="text-base text-muted">/ 100 điểm</div>
+          <div className="text-base text-muted">{tCommon('ui.score_out_of_100') || '/ 100 điểm'}</div>
           <div className="text-lg font-bold" style={{ color: level.color }}>{level.label}</div>
         </div>
         <div className="flex-1 h-2 bg-surface rounded-full overflow-hidden ml-2">
@@ -482,8 +484,8 @@ function D0Panel({ color, onCardClick, cards }) {
         ))}
       </div>
       <div className="rounded-xl border p-4 text-lg text-muted leading-relaxed" style={{ borderColor: `rgba(${PURPLE_RGB},0.2)`, background: `rgba(${PURPLE_RGB},0.06)` }}>
-        <span className="font-bold" style={{ color }}>⚠️ Quy tắc an toàn: </span>
-        Trụ cột D chỉ là giáo dục sức khỏe phổ thông. Nếu lo âu/buồn bã kéo dài nhiều tuần, mất ngủ nặng, cơn hoảng sợ lặp lại hoặc ý nghĩ tự làm hại bản thân — hãy tìm hỗ trợ chuyên môn.
+        <span className="font-bold" style={{ color }}>⚠️ {tPD0('pillarD.d0_safety_label') || 'Quy tắc an toàn: '}</span>
+        {tPD0('pillarD.d0_safety_body') || 'Trụ cột D chỉ là giáo dục sức khỏe phổ thông. Nếu lo âu/buồn bã kéo dài nhiều tuần, mất ngủ nặng, cơn hoảng sợ lặp lại hoặc ý nghĩ tự làm hại bản thân — hãy tìm hỗ trợ chuyên môn.'}
       </div>
     </div>
   );

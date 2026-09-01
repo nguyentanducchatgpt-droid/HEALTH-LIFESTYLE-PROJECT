@@ -967,13 +967,17 @@
     "apply_title": "Áp Dụng Thực Tế",
     "see_detail": "Xem chi tiết →",
     "practice_title": "Chi Tiết Thực Hành",
-    "see_detail_label": "Xem chi tiết"
+    "see_detail_label": "Xem chi tiết",
+    "steps_heading": "Các bước thực hiện",
+    "science_heading": "Chi tiết khoa học"
   },
+  "f_bottom_disclaimer": "Mọi dữ liệu được lưu cục bộ trong thiết bị của bạn, không gửi lên server. Công cụ không thay thế tư vấn y tế chuyên nghiệp.",
   "ui": {
     "show_detail": "▼ chi tiết",
     "hide_detail": "▲ ẩn",
     "metric_detail_label": "Chi Tiết Chỉ Số",
     "kcal_day": "kcal/ngày",
+    "score_out_of_100": "/ 100 điểm",
     "macro_from_target": "↓ Phân bổ macro từ kcal mục tiêu",
     "target_label": "Mục Tiêu",
     "bar_types": [
@@ -983,6 +987,49 @@
       "Tập Nặng"
     ],
     "preworkout_note": "30–60 phút trước",
-    "postworkout_note": "trong 2h sau tập"
+    "postworkout_note": "trong 2h sau tập",
+    "params": "Thông Số",
+    "analysis": "Phân Tích",
+    "suggestions": "Gợi Ý",
+    "pros": "Ưu Điểm",
+    "cons": "Hạn Chế"
+  },
+  "b5": {
+    "weight_chart_title": "Biểu Đồ Cân Nặng — 12 Tuần",
+    "weight_chart_hint": "Hover vào đường lime để xem giá trị từng tuần",
+    "zone_fat_loss": "✦ Vùng giảm mỡ bền vững",
+    "zone_muscle_risk": "⚠ Vùng nguy cơ mất cơ",
+    "formula_label": "Công thức: ",
+    "formula_body": "Thâm hụt 400 kcal/ngày × 7 ngày = 2,800 kcal ≈ 0.36 kg mỡ/tuần. Duy trì 12 tuần = giảm ~4.3 kg mỡ trong khi giữ nguyên cơ bắp. Cắt calo quá mạnh = cơ thể đốt thêm cơ để lấy năng lượng — thứ khó lấy lại nhất.",
+    "energy_chart_title": "Biểu Đồ Năng Lượng 7 Ngày",
+    "energy_chart_hint": "Mục tiêu: giữ mức ≥6/10 mỗi ngày — hover để xem nguyên nhân",
+    "energy_good": "Tốt",
+    "energy_ok": "Ổn",
+    "energy_low": "Thấp",
+    "body_comp_title": "Thành Phần Cơ Thể — So Sánh 3 Kịch Bản",
+    "body_comp_sub1": "Cùng giảm cân nhưng cắt calo đúng tốc độ =",
+    "body_comp_sub1_accent": "giữ được toàn bộ cơ bắp",
+    "body_comp_sub2": "Cắt quá mạnh = mất thêm 3.5 kg cơ bắp — thứ rất khó lấy lại.",
+    "weekly_title": "Theo Dõi Hàng Tuần",
+    "weekly_freq": "Đo mỗi tuần 1 lần",
+    "golden_rule_label": "Nguyên tắc vàng",
+    "golden_rule": "Đo trung bình 3 buổi sáng liên tiếp — không đánh giá bởi 1 con số duy nhất.",
+    "golden_rule_note": "Cân nặng biến động ±1–2kg/ngày là bình thường do muối & nước",
+    "protocol_title": "Giao Thức Đo Chuẩn",
+    "results_title": "Giải Đọc Kết Quả",
+    "hover_hint": "Di chuột vào thẻ để xem giải thích"
+  },
+  "program_page": {
+    "progress_save_note": "💾 Kết quả được tự động lưu vào trình duyệt. Nhấn vào ô để nhập — chỉ số Linh Hoạt click để chuyển đổi Có/Không.",
+    "progress_delete_confirm": "Xóa toàn bộ dữ liệu test đã lưu?",
+    "progress_delete_btn": "🗑 Xóa dữ liệu",
+    "sample_cta_title": "Bắt đầu lộ trình của bạn ngay hôm nay",
+    "sample_cta_body": "Chọn 7 Ngày Khởi Động nếu bạn mới bắt đầu, hoặc 12 Tuần Cơ Bản nếu đã sẵn sàng.",
+    "sample_roadmap_title": "Lộ Trình 12 Tuần Thực Tế",
+    "sample_roadmap_sub": "Click từng giai đoạn để xem chi tiết từng tuần của anh Tuấn",
+    "sample_profile_badge": "Hồ Sơ Người Dùng Mẫu",
+    "sample_profile_name": "Anh Tuấn — 32 tuổi, Nhân viên văn phòng",
+    "sample_profile_desc": "TP.HCM · Ngồi nhiều 8h/ngày · Ít tập luyện 2 năm gần đây · Hay mệt · Mục tiêu: giảm 5kg + tăng năng lượng trong 12 tuần",
+    "sample_lessons_title": "Bài Học Từ Lộ Trình Của Tuấn"
   }
 }

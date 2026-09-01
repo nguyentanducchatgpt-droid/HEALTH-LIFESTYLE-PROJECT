@@ -1054,6 +1054,7 @@ function AnimatedStat({ n, label, color, tooltip }) {
 // ─── Tab content panel ──────────────────────────────────────────────────────────
 
 function TabPanel({ tab, onDetailClick, onHighlightClick }) {
+  const { t: tCommon } = useTranslation('common');
   return (
     <div className={`relative overflow-hidden rounded-3xl border ${tab.border}`} style={{ background: `${tab.color}03` }}>
       {/* Top accent gradient line */}
@@ -1112,7 +1113,7 @@ function TabPanel({ tab, onDetailClick, onHighlightClick }) {
                   <p className="text-base font-bold text-text leading-tight">{h.title}</p>
                   <p className="text-[11px] text-muted mt-0.5">{h.desc}</p>
                 </div>
-                <span className="shrink-0 self-center text-[10px] font-bold opacity-0 group-hover/hl:opacity-60 transition-opacity" style={{ color: tab.color }}>chi tiết →</span>
+                <span className="shrink-0 self-center text-[10px] font-bold opacity-0 group-hover/hl:opacity-60 transition-opacity" style={{ color: tab.color }}>{tCommon('modal.see_detail') || 'chi tiết →'}</span>
               </div>
             ))}
           </div>
@@ -1140,7 +1141,7 @@ function TabPanel({ tab, onDetailClick, onHighlightClick }) {
                   <p className="text-base font-bold text-text/90 leading-tight mb-1">{d.title}</p>
                   <p className="text-[11px] text-muted leading-relaxed">{d.body}</p>
                 </div>
-                <span className="shrink-0 self-center text-[10px] font-bold opacity-0 group-hover/detail:opacity-60 transition-opacity" style={{ color: tab.color }}>chi tiết →</span>
+                <span className="shrink-0 self-center text-[10px] font-bold opacity-0 group-hover/detail:opacity-60 transition-opacity" style={{ color: tab.color }}>{tCommon('modal.see_detail') || 'chi tiết →'}</span>
               </div>
             ))}
           </div>

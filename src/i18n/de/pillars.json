@@ -8170,7 +8170,9 @@
           "cta": "Fahrplan ansehen →"
         }
       ],
-      "c_bottom_link": "← Gesunder Lebensstil 360"
+      "c_bottom_link": "← Gesunder Lebensstil 360",
+      "c_quote": "Du musst nicht perfekt leben. Lebe einfach mit Rhythmus, mit Erholung und mit der Fähigkeit zurückzukommen.",
+      "c_quote_cite": "— Philosophie Säule C"
     }
   },
   "pillarD": {
@@ -8521,7 +8523,9 @@
     "d_teaser_s1": "Grundlagen & Erkennung",
     "d_teaser_s2": "Praxis-Tools",
     "d_teaser_s3": "Gedanken-Management",
-    "d_teaser_s4": "Tracking & Roadmap"
+    "d_teaser_s4": "Tracking & Roadmap",
+    "d0_safety_label": "Sicherheitsregel: ",
+    "d0_safety_body": "Säule D ist allgemeine Gesundheitsbildung. Wenn Angst oder niedergedrückte Stimmung wochenlang anhält, bei schwerem Schlafmangel, wiederkehrenden Panikattacken oder Gedanken zur Selbstverletzung — bitte professionelle Unterstützung suchen."
   },
   "pillarE": {
     "id": "e",
@@ -8714,7 +8718,12 @@
       {"metric": "Könnte es meiner Leber oder Nieren schaden?"},
       {"metric": "Habe ich einen Arzt oder Apotheker konsultiert?"}
     ],
-    "videos": []
+    "videos": [],
+    "e_safety_label": "Wichtiger Hinweis:",
+    "e_safety_body": "Säule E vermittelt Gesundheitswissen und Selbst-Monitoring-Werkzeuge — sie ersetzt keine ärztlichen Untersuchungen, Diagnosen oder individuelle Behandlungen. Bei Vorerkrankungen oder Dauermedikation bitte vor Änderungen bei Ernährung, Training oder Nahrungsergänzungsmitteln einen Arzt konsultieren.",
+    "e7_intro": "Mit der Explosion von TikTok, YouTube und Gesundheits-Influencern ist das Filtern von Gesundheitsinformationen eine wichtige Lebenskompetenz.",
+    "e7_danger_heading": "❌ Gefährliche Phrasen",
+    "e7_safe_heading": "✓ Sichere Sprache"
   },
   "pillarF": {
     "id": "f",
@@ -8988,6 +8997,12 @@
     "f3_plate_heading": "Gesundes Teller-Template",
     "f6_intro": "Führe den Eingangstest durch und wiederhole alle 4 Wochen, um den umfassenden Fortschritt zu messen.",
     "f7_intro": "Prinzip: Auch 5 Minuten reichen. Nicht komplett auslassen — einfach die kürzere Version wählen.",
+    "f2_save_btn": "+ Training speichern",
+    "f2_empty_state": "Noch keine Einträge. Erstes Training aufzeichnen.",
+    "f2_next_prefix": "Nächstes Mal: ",
+    "f3_data_note": "Daten werden täglich auf Ihrem Gerät gespeichert.",
+    "f6_compare_link": "4-Wochen-Vergleich anzeigen →",
+    "f7_library_link": "Vollständige Schnell-Workout-Bibliothek →",
     "quick_wo": [
       {
         "dur": "5 Min",

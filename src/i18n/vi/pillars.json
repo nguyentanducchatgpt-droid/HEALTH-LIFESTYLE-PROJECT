@@ -1579,7 +1579,10 @@
     "c_env_prev": "← Trước",
     "c_env_next": "Sau →",
     "c_env_modal_hint": "Nhấn ESC hoặc click bên ngoài để đóng",
-    "c_env_img_caption": "Môi trường quyết định hành vi · 3 không gian sống"
+    "c_env_img_caption": "Môi trường quyết định hành vi · 3 không gian sống",
+    "c_bottom_link": "← Sống Khỏe 360",
+    "c_quote": "Không cần sống hoàn hảo. Chỉ cần sống có nhịp, có hồi phục, có quay lại.",
+    "c_quote_cite": "— Triết lý Trụ cột C"
   },
   "pillarD": {
     "id": "d",
@@ -1720,7 +1723,9 @@
     "d_teaser_s1": "Nền Tảng & Nhận Diện",
     "d_teaser_s2": "Công Cụ Thực Hành",
     "d_teaser_s3": "Quản Lý Tâm Trí",
-    "d_teaser_s4": "Theo Dõi & Lộ Trình"
+    "d_teaser_s4": "Theo Dõi & Lộ Trình",
+    "d0_safety_label": "Quy tắc an toàn: ",
+    "d0_safety_body": "Trụ cột D chỉ là giáo dục sức khỏe phổ thông. Nếu lo âu/buồn bã kéo dài nhiều tuần, mất ngủ nặng, cơn hoảng sợ lặp lại hoặc ý nghĩ tự làm hại bản thân — hãy tìm hỗ trợ chuyên môn."
   },
   "pillarE": {
     "id": "e",
@@ -1827,7 +1832,12 @@
     "e_tab6_h1": "5 Quy Tắc Không Của Thuốc",
     "e_tab6_h2": "Checklist Trước Khi Dùng Thực Phẩm Bổ Sung",
     "e_tab6_h3": "Cụm từ NGUY HIỂM trong quảng cáo",
-    "videos": []
+    "videos": [],
+    "e_safety_label": "Lưu ý quan trọng:",
+    "e_safety_body": "Trụ cột E cung cấp kiến thức và công cụ tự theo dõi — không thay thế khám bệnh, chẩn đoán hoặc điều trị cá nhân hóa. Nếu có bệnh nền hoặc đang dùng thuốc đặc trị, hãy trao đổi với bác sĩ trước khi thay đổi chế độ ăn, tập luyện hoặc bổ sung sản phẩm.",
+    "e7_intro": "Với sự bùng nổ của TikTok, YouTube và livestream bán hàng, lọc thông tin sức khỏe là kỹ năng sống quan trọng.",
+    "e7_danger_heading": "❌ Cụm từ nguy hiểm",
+    "e7_safe_heading": "✓ Ngôn ngữ an toàn"
   },
   "pillarF": {
     "id": "f",
@@ -1932,6 +1942,12 @@
     ],
     "f_explore_title": "Công Cụ & Tài Nguyên Chi Tiết",
     "f_explore_sub": "11 chuyên đề chuyên sâu để bạn xây hệ thống sống khỏe hoàn chỉnh.",
+    "f2_save_btn": "+ Lưu Buổi Tập",
+    "f2_empty_state": "Chưa có nhật ký. Ghi buổi tập đầu tiên.",
+    "f2_next_prefix": "Lần sau: ",
+    "f3_data_note": "Dữ liệu lưu theo ngày trong thiết bị của bạn.",
+    "f6_compare_link": "Xem bảng so sánh 4 tuần →",
+    "f7_library_link": "Xem đầy đủ thư viện bài nhanh →",
     "videos": []
   }
 }

@@ -6147,13 +6147,17 @@
     "apply_title": "Practical Application",
     "see_detail": "View details →",
     "practice_title": "Practice Details",
-    "see_detail_label": "View details"
+    "see_detail_label": "View details",
+    "steps_heading": "Step-by-step guide",
+    "science_heading": "Scientific details"
   },
+  "f_bottom_disclaimer": "All data is stored locally on your device and never sent to any server. These tools are not a substitute for professional medical advice.",
   "ui": {
     "show_detail": "▼ details",
     "hide_detail": "▲ hide",
     "metric_detail_label": "Metric Detail",
     "kcal_day": "kcal/day",
+    "score_out_of_100": "/ 100 pts",
     "macro_from_target": "↓ Macro distribution from target kcal",
     "target_label": "Target",
     "bar_types": [
@@ -6163,6 +6167,49 @@
       "Heavy Training"
     ],
     "preworkout_note": "30–60 min before",
-    "postworkout_note": "within 2h post-workout"
+    "postworkout_note": "within 2h post-workout",
+    "params": "Parameters",
+    "analysis": "Analysis",
+    "suggestions": "Suggestions",
+    "pros": "Pros",
+    "cons": "Cons"
+  },
+  "b5": {
+    "weight_chart_title": "Weight Chart — 12 Weeks",
+    "weight_chart_hint": "Hover the lime line to see each week's value",
+    "zone_fat_loss": "✦ Sustainable fat-loss zone",
+    "zone_muscle_risk": "⚠ Risk zone — muscle loss",
+    "formula_label": "Formula: ",
+    "formula_body": "400 kcal/day deficit × 7 days = 2,800 kcal ≈ 0.36 kg fat/week. Sustaining 12 weeks = lose ~4.3 kg fat while preserving muscle. Cutting too aggressively = body burns muscle for energy — the hardest thing to regain.",
+    "energy_chart_title": "Energy Chart — 7 Days",
+    "energy_chart_hint": "Goal: maintain ≥6/10 each day — hover to see reason",
+    "energy_good": "Good",
+    "energy_ok": "Fair",
+    "energy_low": "Low",
+    "body_comp_title": "Body Composition — 3-Scenario Comparison",
+    "body_comp_sub1": "Same weight loss but cutting at the right pace =",
+    "body_comp_sub1_accent": "preserving all muscle",
+    "body_comp_sub2": "Too aggressive = losing 3.5 kg of muscle — very hard to regain.",
+    "weekly_title": "Weekly Tracking",
+    "weekly_freq": "Measure once per week",
+    "golden_rule_label": "Golden rule",
+    "golden_rule": "Average 3 consecutive mornings — never judge by a single number.",
+    "golden_rule_note": "Weight fluctuates ±1–2 kg/day from salt & water — this is normal",
+    "protocol_title": "Standard Measurement Protocol",
+    "results_title": "Interpreting Results",
+    "hover_hint": "Hover over a card to see the explanation"
+  },
+  "program_page": {
+    "progress_save_note": "💾 Results are auto-saved to your browser. Click any cell to enter — the Flexibility metric toggles Yes/No on click.",
+    "progress_delete_confirm": "Delete all saved test data?",
+    "progress_delete_btn": "🗑 Clear data",
+    "sample_cta_title": "Start your journey today",
+    "sample_cta_body": "Choose 7-Day Kickstart if you're just beginning, or 12-Week Core if you're ready.",
+    "sample_roadmap_title": "Real 12-Week Roadmap",
+    "sample_roadmap_sub": "Click each phase to see Tuan's weekly detail",
+    "sample_profile_badge": "Sample User Profile",
+    "sample_profile_name": "Tuan — 32 years old, Office worker",
+    "sample_profile_desc": "Ho Chi Minh City · Sedentary 8h/day · Low activity for 2 years · Frequent fatigue · Goal: lose 5 kg + boost energy in 12 weeks",
+    "sample_lessons_title": "Lessons from Tuan's Journey"
   }
 }

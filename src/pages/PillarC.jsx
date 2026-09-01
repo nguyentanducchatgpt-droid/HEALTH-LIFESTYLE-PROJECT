@@ -3197,14 +3197,14 @@ export default function PillarC() {
         <div className="rounded-2xl p-6 text-center" style={{ background: `rgba(${TEAL_RGB},0.06)`, border: `1px solid rgba(${TEAL_RGB},0.15)` }}>
           <div className="text-4xl mb-3">🌿</div>
           <blockquote className="text-xl font-bold text-text leading-relaxed mb-2">
-            "Không cần sống hoàn hảo. Chỉ cần sống có nhịp, có hồi phục, có quay lại."
+            "{pillar?.c_quote || 'Không cần sống hoàn hảo. Chỉ cần sống có nhịp, có hồi phục, có quay lại.'}"
           </blockquote>
-          <p className="text-muted text-lg">— Triết lý Trụ cột C</p>
+          <p className="text-muted text-lg">{pillar?.c_quote_cite || '— Triết lý Trụ cột C'}</p>
         </div>
       </RevealBlock>
 
       <div className="pt-6 border-t border-border">
-        <Link to="/pillars" className="text-muted hover:text-teal-400 transition-colors text-lg">← Sống Khỏe 360</Link>
+        <Link to="/pillars" className="text-muted hover:text-teal-400 transition-colors text-lg">{pillar?.c_bottom_link || '← Sống Khỏe 360'}</Link>
       </div>
 
       {/* ── C0 item modal — outside all RevealBlocks so position:fixed works ── */}

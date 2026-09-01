@@ -8150,7 +8150,9 @@
           "cta": "View roadmap →"
         }
       ],
-      "c_bottom_link": "← Healthy Lifestyle 360"
+      "c_bottom_link": "← Healthy Lifestyle 360",
+      "c_quote": "You don't need to live perfectly. Just live with rhythm, with recovery, and with the ability to return.",
+      "c_quote_cite": "— Pillar C Philosophy"
     }
   },
   "pillarD": {
@@ -8501,7 +8503,9 @@
     "d_teaser_s1": "Foundations & Recognition",
     "d_teaser_s2": "Practice Tools",
     "d_teaser_s3": "Mind Management",
-    "d_teaser_s4": "Tracking & Roadmap"
+    "d_teaser_s4": "Tracking & Roadmap",
+    "d0_safety_label": "Safety rule: ",
+    "d0_safety_body": "Pillar D is general health education only. If anxiety or low mood persists for weeks, severe insomnia, recurring panic attacks, or thoughts of self-harm — please seek professional support."
   },
   "pillarE": {
     "id": "e",
@@ -8694,7 +8698,12 @@
       {"metric": "Could it harm my liver or kidneys?"},
       {"metric": "Have I consulted a doctor or pharmacist?"}
     ],
-    "videos": []
+    "videos": [],
+    "e_safety_label": "Important note:",
+    "e_safety_body": "Pillar E provides health knowledge and self-monitoring tools — it is not a substitute for medical check-ups, diagnosis, or personalised treatment. If you have underlying conditions or are on prescription medication, consult your doctor before changing your diet, exercise routine, or supplement use.",
+    "e7_intro": "With the explosion of TikTok, YouTube, and health influencer content, filtering health information is a critical life skill.",
+    "e7_danger_heading": "❌ Dangerous phrases",
+    "e7_safe_heading": "✓ Safe language"
   },
   "pillarF": {
     "id": "f",
@@ -8959,6 +8968,12 @@
     "f3_plate_heading": "Healthy Plate Template",
     "f6_intro": "Do the baseline test and repeat every 4 weeks to measure comprehensive progress.",
     "f7_intro": "Rule: Even 5 minutes works. Don't skip entirely — just pick a shorter version.",
+    "f2_save_btn": "+ Save Workout",
+    "f2_empty_state": "No entries yet. Log your first workout.",
+    "f2_next_prefix": "Next time: ",
+    "f3_data_note": "Data is saved daily on your device.",
+    "f6_compare_link": "View 4-week comparison →",
+    "f7_library_link": "View full quick workout library →",
     "score_items": [
       { "label": "Movement / exercise" },
       { "label": "Walking / NEAT" },

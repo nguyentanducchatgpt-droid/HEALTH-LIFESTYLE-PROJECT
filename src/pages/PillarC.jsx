@@ -3090,74 +3090,106 @@ export default function PillarC() {
           cta={cTeaserCards[3]?.cta || 'Tối ưu năng lượng →'} />
       </TeaserSection>
 
-      <TeaserSection title="Vận Động & Phục Hồi">
+      <TeaserSection title={cTeaserSections[1]?.title || 'Vận Động & Phục Hồi'}>
         <TeaserCard
           to="/pillar/c/morning" color="#06b6d4" rgb="6,182,212"
-          icon="🌅" category="Routine Sáng" title="Routine Buổi Sáng"
-          accent="C2 · 5 / 10 / 20 phút" desc="Bắt đầu ngày đúng cách để có năng lượng suốt ngày. 3 phiên bản phù hợp mọi lịch trình từ bận rộn đến rảnh rang."
-          features={['Routine sáng 5 phút cơ bản', 'Routine 10 phút đầy đủ', 'Routine 20 phút nâng cao']}
-          stats={[{v:'3',l:'Phiên bản'},{v:'5+',l:'Phút'}]}
+          icon="🌅"
+          category={cTeaserCards[4]?.category || 'Routine Sáng'}
+          title={cTeaserCards[4]?.title || 'Routine Buổi Sáng'}
+          accent={cTeaserCards[4]?.accent || 'C2 · 5 / 10 / 20 phút'}
+          desc={cTeaserCards[4]?.desc || 'Bắt đầu ngày đúng cách để có năng lượng suốt ngày. 3 phiên bản phù hợp mọi lịch trình từ bận rộn đến rảnh rang.'}
+          features={cTeaserCards[4]?.features || ['Routine sáng 5 phút cơ bản', 'Routine 10 phút đầy đủ', 'Routine 20 phút nâng cao']}
+          stats={[{v:'3', l: cTeaserCards[4]?.stats?.[0]?.l || 'Phiên bản'},{v:'5+', l: cTeaserCards[4]?.stats?.[1]?.l || 'Phút'}]}
           image="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=70"
-          imageAlt="Routine sáng" cta="Bắt đầu ngày →" />
+          imageAlt="Routine sáng"
+          cta={cTeaserCards[4]?.cta || 'Bắt đầu ngày →'} />
         <TeaserCard
           to="/pillar/c/neat" color="#10b981" rgb="16,185,129"
-          icon="🚶" category="NEAT" title="NEAT & Chống Ngồi Lâu"
-          accent="C3 · Vận động trong đời sống" desc="Tăng hoạt động không cần buổi tập gym. Với người bận rộn, NEAT có thể quan trọng không kém gym."
-          features={['Mục tiêu bước theo cấp độ', 'Quy tắc đứng dậy 2 phút', 'NEAT cho dân văn phòng']}
-          stats={[{v:'300+',l:'kcal NEAT'},{v:'2',l:'Phút mỗi giờ'}]}
+          icon="🚶"
+          category={cTeaserCards[5]?.category || 'NEAT'}
+          title={cTeaserCards[5]?.title || 'NEAT & Chống Ngồi Lâu'}
+          accent={cTeaserCards[5]?.accent || 'C3 · Vận động trong đời sống'}
+          desc={cTeaserCards[5]?.desc || 'Tăng hoạt động không cần buổi tập gym. Với người bận rộn, NEAT có thể quan trọng không kém gym.'}
+          features={cTeaserCards[5]?.features || ['Mục tiêu bước theo cấp độ', 'Quy tắc đứng dậy 2 phút', 'NEAT cho dân văn phòng']}
+          stats={[{v:'300+', l: cTeaserCards[5]?.stats?.[0]?.l || 'kcal NEAT'},{v:'2', l: cTeaserCards[5]?.stats?.[1]?.l || 'Phút mỗi giờ'}]}
           image="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=70"
-          imageAlt="NEAT đi bộ" cta="Tăng NEAT →" />
+          imageAlt="NEAT đi bộ"
+          cta={cTeaserCards[5]?.cta || 'Tăng NEAT →'} />
         <TeaserCard
           to="/pillar/c/recovery" color="#a78bfa" rgb="167,139,250"
-          icon="🔄" category="Phục Hồi" title="Phục Hồi Chủ Động"
-          accent="C4 · Active recovery" desc="Phục hồi không chỉ là nằm nghỉ. Học cách phục hồi bằng hành động nhẹ: mobility, giãn cơ, thở, foam rolling."
-          features={['Routine phục hồi 10 phút', 'Phục hồi theo vùng đau mỏi', 'Active recovery theo mục tiêu']}
-          stats={[{v:'10',l:'Phút'},{v:'3',l:'Vùng cơ thể'}]}
+          icon="🔄"
+          category={cTeaserCards[6]?.category || 'Phục Hồi'}
+          title={cTeaserCards[6]?.title || 'Phục Hồi Chủ Động'}
+          accent={cTeaserCards[6]?.accent || 'C4 · Active recovery'}
+          desc={cTeaserCards[6]?.desc || 'Phục hồi không chỉ là nằm nghỉ. Học cách phục hồi bằng hành động nhẹ: mobility, giãn cơ, thở, foam rolling.'}
+          features={cTeaserCards[6]?.features || ['Routine phục hồi 10 phút', 'Phục hồi theo vùng đau mỏi', 'Active recovery theo mục tiêu']}
+          stats={[{v:'10', l: cTeaserCards[6]?.stats?.[0]?.l || 'Phút'},{v:'3', l: cTeaserCards[6]?.stats?.[1]?.l || 'Vùng cơ thể'}]}
           image="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=70"
-          imageAlt="Phục hồi" cta="Phục hồi tốt hơn →" />
+          imageAlt="Phục hồi"
+          cta={cTeaserCards[6]?.cta || 'Phục hồi tốt hơn →'} />
         <TeaserCard
           to="/pillar/c/deload" color="#f97316" rgb="249,115,22"
-          icon="⚡" category="Deload" title="Deload & Quản Lý Tải"
-          accent="C5 · Giảm tải có kế hoạch" desc="Người khỏe biết lúc nào nên đẩy, lúc nào nên giữ, lúc nào nên lùi một bước để đi xa hơn."
-          features={['7 dấu hiệu cần deload', '4 cách thực hiện deload', 'Lịch deload theo trình độ']}
-          stats={[{v:'4–6',l:'Tuần/lần'},{v:'4',l:'Cách deload'}]}
+          icon="⚡"
+          category={cTeaserCards[7]?.category || 'Deload'}
+          title={cTeaserCards[7]?.title || 'Deload & Quản Lý Tải'}
+          accent={cTeaserCards[7]?.accent || 'C5 · Giảm tải có kế hoạch'}
+          desc={cTeaserCards[7]?.desc || 'Người khỏe biết lúc nào nên đẩy, lúc nào nên giữ, lúc nào nên lùi một bước để đi xa hơn.'}
+          features={cTeaserCards[7]?.features || ['7 dấu hiệu cần deload', '4 cách thực hiện deload', 'Lịch deload theo trình độ']}
+          stats={[{v:'4–6', l: cTeaserCards[7]?.stats?.[0]?.l || 'Tuần/lần'},{v:'4', l: cTeaserCards[7]?.stats?.[1]?.l || 'Cách deload'}]}
           image="https://images.unsplash.com/photo-1517963628607-235ccdd5476c?w=600&q=70"
-          imageAlt="Deload" cta="Deload đúng cách →" />
+          imageAlt="Deload"
+          cta={cTeaserCards[7]?.cta || 'Deload đúng cách →'} />
       </TeaserSection>
 
-      <TeaserSection title="Kỹ Năng & Công Cụ">
+      <TeaserSection title={cTeaserSections[2]?.title || 'Kỹ Năng & Công Cụ'}>
         <TeaserCard
           to="/pillar/c/breathing" color="#0ea5e9" rgb="14,165,233"
-          icon="🌬️" category="Thở" title="Kỹ Thuật Thở & Hạ Nhịp"
-          accent="C6 · 3 kỹ thuật cốt lõi" desc="Thở đúng cách điều hòa hệ thần kinh, hỗ trợ phục hồi và cải thiện chất lượng giấc ngủ."
-          features={['Thở cơ hoành', 'Box breathing', 'Protocol theo 5 tình huống']}
-          stats={[{v:'3',l:'Kỹ thuật'},{v:'1–3',l:'Phút'}]}
+          icon="🌬️"
+          category={cTeaserCards[8]?.category || 'Thở'}
+          title={cTeaserCards[8]?.title || 'Kỹ Thuật Thở & Hạ Nhịp'}
+          accent={cTeaserCards[8]?.accent || 'C6 · 3 kỹ thuật cốt lõi'}
+          desc={cTeaserCards[8]?.desc || 'Thở đúng cách điều hòa hệ thần kinh, hỗ trợ phục hồi và cải thiện chất lượng giấc ngủ.'}
+          features={cTeaserCards[8]?.features || ['Thở cơ hoành', 'Box breathing', 'Protocol theo 5 tình huống']}
+          stats={[{v:'3', l: cTeaserCards[8]?.stats?.[0]?.l || 'Kỹ thuật'},{v:'1–3', l: cTeaserCards[8]?.stats?.[1]?.l || 'Phút'}]}
           image="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=70"
-          imageAlt="Thở" cta="Thở đúng cách →" />
+          imageAlt="Thở"
+          cta={cTeaserCards[8]?.cta || 'Thở đúng cách →'} />
         <TeaserCard
           to="/pillar/c/environment" color="#f43f5e" rgb="244,63,94"
-          icon="🏠" category="Môi Trường" title="Thiết Kế Môi Trường Sống"
-          accent="C7 · Giảm phụ thuộc ý chí" desc="Muốn thay đổi hành vi bền vững, hãy thiết kế lại môi trường. Không cần ý chí mạnh, chỉ cần môi trường đúng."
-          features={['Môi trường buổi sáng', 'Môi trường làm việc', 'Môi trường buổi tối']}
-          stats={[{v:'3',l:'Không gian'},{v:'15+',l:'Gợi ý'}]}
+          icon="🏠"
+          category={cTeaserCards[9]?.category || 'Môi Trường'}
+          title={cTeaserCards[9]?.title || 'Thiết Kế Môi Trường Sống'}
+          accent={cTeaserCards[9]?.accent || 'C7 · Giảm phụ thuộc ý chí'}
+          desc={cTeaserCards[9]?.desc || 'Muốn thay đổi hành vi bền vững, hãy thiết kế lại môi trường. Không cần ý chí mạnh, chỉ cần môi trường đúng.'}
+          features={cTeaserCards[9]?.features || ['Môi trường buổi sáng', 'Môi trường làm việc', 'Môi trường buổi tối']}
+          stats={[{v:'3', l: cTeaserCards[9]?.stats?.[0]?.l || 'Không gian'},{v:'15+', l: cTeaserCards[9]?.stats?.[1]?.l || 'Gợi ý'}]}
           image="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=70"
-          imageAlt="Môi trường sống" cta="Thiết kế ngay →" />
+          imageAlt="Môi trường sống"
+          cta={cTeaserCards[9]?.cta || 'Thiết kế ngay →'} />
         <TeaserCard
           to="/pillar/c/checklist" color={TEAL} rgb={TEAL_RGB}
-          icon="✅" category="Theo Dõi" title="Checklist & Theo Dõi Lối Sống"
-          accent="C8 · Daily + Weekly tracking" desc="Theo dõi đủ để nhận xu hướng, không quá nhiều để trở thành áp lực. Daily checklist 7 mục và weekly review."
-          features={['Daily Lifestyle Checklist 7 mục', 'Weekly review 5 câu hỏi', 'Red flags an toàn']}
-          stats={[{v:'7',l:'Mục/ngày'},{v:'5',l:'Câu/tuần'}]}
+          icon="✅"
+          category={cTeaserCards[10]?.category || 'Theo Dõi'}
+          title={cTeaserCards[10]?.title || 'Checklist & Theo Dõi Lối Sống'}
+          accent={cTeaserCards[10]?.accent || 'C8 · Daily + Weekly tracking'}
+          desc={cTeaserCards[10]?.desc || 'Theo dõi đủ để nhận xu hướng, không quá nhiều để trở thành áp lực. Daily checklist 7 mục và weekly review.'}
+          features={cTeaserCards[10]?.features || ['Daily Lifestyle Checklist 7 mục', 'Weekly review 5 câu hỏi', 'Red flags an toàn']}
+          stats={[{v:'7', l: cTeaserCards[10]?.stats?.[0]?.l || 'Mục/ngày'},{v:'5', l: cTeaserCards[10]?.stats?.[1]?.l || 'Câu/tuần'}]}
           image="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=70"
-          imageAlt="Checklist" cta="Bắt đầu theo dõi →" />
+          imageAlt="Checklist"
+          cta={cTeaserCards[10]?.cta || 'Bắt đầu theo dõi →'} />
         <TeaserCard
           to="/pillar/c/roadmap" color={TEAL} rgb={TEAL_RGB}
-          icon="🗺️" category="Lộ Trình" title="Lộ Trình 12 Tuần Lối Sống"
-          accent="Tuần 1–12 · 3 giai đoạn" desc="Từ nhận diện nhịp sống đến cá nhân hóa hoàn toàn. 12 tuần xây dựng lối sống khỏe bền vững từng bước."
-          features={['Tuần 1–2: Nhận diện nhịp sống', 'Tuần 3–6: Xây routine cơ bản', 'Tuần 7–12: Cá nhân hóa']}
-          stats={[{v:'12',l:'Tuần'},{v:'3',l:'Giai đoạn'}]}
+          icon="🗺️"
+          category={cTeaserCards[11]?.category || 'Lộ Trình'}
+          title={cTeaserCards[11]?.title || 'Lộ Trình 12 Tuần Lối Sống'}
+          accent={cTeaserCards[11]?.accent || 'Tuần 1–12 · 3 giai đoạn'}
+          desc={cTeaserCards[11]?.desc || 'Từ nhận diện nhịp sống đến cá nhân hóa hoàn toàn. 12 tuần xây dựng lối sống khỏe bền vững từng bước.'}
+          features={cTeaserCards[11]?.features || ['Tuần 1–2: Nhận diện nhịp sống', 'Tuần 3–6: Xây routine cơ bản', 'Tuần 7–12: Cá nhân hóa']}
+          stats={[{v:'12', l: cTeaserCards[11]?.stats?.[0]?.l || 'Tuần'},{v:'3', l: cTeaserCards[11]?.stats?.[1]?.l || 'Giai đoạn'}]}
           image="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=70"
-          imageAlt="Lộ trình" cta="Xem lộ trình →" />
+          imageAlt="Lộ trình"
+          cta={cTeaserCards[11]?.cta || 'Xem lộ trình →'} />
       </TeaserSection>
 
       {/* Core message */}

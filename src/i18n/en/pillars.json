@@ -3645,7 +3645,11 @@
       "prev_btn": "← Prev",
       "tracks_heading": "Priority Actions for You",
       "saved_score_label": "Last Assessment",
-      "answered_label": "questions remaining"
+      "answered_label": "questions remaining",
+      "view_roadmap_btn": "View Roadmap →",
+      "nav_checklist": "Daily Checklist",
+      "nav_all": "All Lifestyle Modules →",
+      "nav_roadmap": "12-Week Roadmap"
     },
     "lifestyle_tracks": [
       {

@@ -3666,7 +3666,11 @@
       "prev_btn": "← Zurück",
       "tracks_heading": "Prioritäre Maßnahmen für Sie",
       "saved_score_label": "Letzte Bewertung",
-      "answered_label": "Fragen verbleibend"
+      "answered_label": "Fragen verbleibend",
+      "view_roadmap_btn": "Fahrplan ansehen →",
+      "nav_checklist": "Tägliche Checkliste",
+      "nav_all": "Alle Lifestyle-Module →",
+      "nav_roadmap": "12-Wochen-Fahrplan"
     },
     "lifestyle_tracks": [
       {

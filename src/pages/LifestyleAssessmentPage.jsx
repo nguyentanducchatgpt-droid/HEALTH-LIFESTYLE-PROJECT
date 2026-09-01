@@ -545,7 +545,7 @@ export default function LifestyleAssessmentPage() {
               {lifestyleUI.reset_btn || 'Làm Lại'}
             </button>
             <Link to="/pillar/c/roadmap" className="flex-1 py-3 rounded-xl text-white text-lg font-bold text-center transition-colors" style={{ background: COLOR }}>
-              Xem Lộ Trình →
+              {lifestyleUI.view_roadmap_btn || 'Xem Lộ Trình →'}
             </Link>
           </div>
         </RevealBlock>
@@ -555,13 +555,13 @@ export default function LifestyleAssessmentPage() {
       <div className="flex flex-col sm:flex-row gap-3 justify-between">
         <Link to="/pillar/c/checklist" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group">
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
-          Checklist Hằng Ngày
+          {lifestyleUI.nav_checklist || 'Checklist Hằng Ngày'}
         </Link>
         <Link to="/pillar/c" className="text-lg text-muted hover:text-teal-400 transition-colors text-center">
-          Tất cả Module Lối Sống →
+          {lifestyleUI.nav_all || 'Tất cả Module Lối Sống →'}
         </Link>
         <Link to="/pillar/c/roadmap" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
-          Lộ Trình 12 Tuần
+          {lifestyleUI.nav_roadmap || 'Lộ Trình 12 Tuần'}
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>

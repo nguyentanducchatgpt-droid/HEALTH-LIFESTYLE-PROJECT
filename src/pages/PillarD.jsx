@@ -455,10 +455,11 @@ const D0_CARDS = [
 ];
 
 function D0Panel({ color, onCardClick, cards }) {
+  const { t: tPD0 } = useTranslation('pillars');
   const displayCards = cards || D0_CARDS;
   return (
     <div className="space-y-4">
-      <p className="text-lg text-muted leading-relaxed">Trụ cột D không biến bạn thành người "luôn bình tĩnh". Nó cung cấp bộ công cụ dùng ngay khi căng: thở khi stress, viết khi rối, tắt màn hình khi quá tải.</p>
+      <p className="text-lg text-muted leading-relaxed">{tPD0('pillarD.d0_intro') || 'Trụ cột D không biến bạn thành người "luôn bình tĩnh". Nó cung cấp bộ công cụ dùng ngay khi căng: thở khi stress, viết khi rối, tắt màn hình khi quá tải.'}</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {displayCards.map((m, i) => (
           <div
@@ -473,7 +474,7 @@ function D0Panel({ color, onCardClick, cards }) {
                 <span
                   className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/card:opacity-100 transition-opacity"
                   style={{ color: D0_CARD_MODALS[i].color, borderColor: `rgba(${D0_CARD_MODALS[i].rgb},0.35)`, background: `rgba(${D0_CARD_MODALS[i].rgb},0.08)` }}
-                >chi tiết →</span>
+                >{tPD0('pillarD.d1_detail_btn') || 'chi tiết →'}</span>
               )}
             </div>
             <p className="text-base text-muted leading-relaxed">{m.desc}</p>
@@ -555,6 +556,7 @@ const D1_LAYER_MODALS = [
 ];
 
 function D1Panel({ color, onLayerClick }) {
+  const { t: tPD1 } = useTranslation('pillars');
   const [openLoop, setOpenLoop] = useState(null);
   const D1_LAYERS = [
     { icon: '💪', label: 'Cơ Thể', signs: ['Tim đập nhanh', 'Căng vai gáy', 'Thở nông', 'Khó ngủ'] },
@@ -569,7 +571,7 @@ function D1Panel({ color, onLayerClick }) {
   return (
     <div className="space-y-5">
       <div>
-        <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color }}>3 Tầng Của Stress</div>
+        <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color }}>{tPD1('pillarD.d1_stress_title') || '3 Tầng Của Stress'}</div>
         <div className="grid grid-cols-3 gap-2">
           {D1_LAYERS.map((t, i) => (
             <div
@@ -584,7 +586,7 @@ function D1Panel({ color, onLayerClick }) {
                 <div className="text-center mt-2">
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/layer:opacity-100 transition-opacity"
                     style={{ color: D1_LAYER_MODALS[i].color, borderColor: `rgba(${D1_LAYER_MODALS[i].rgb},0.35)`, background: `rgba(${D1_LAYER_MODALS[i].rgb},0.08)` }}>
-                    chi tiết →
+                    {tPD1('pillarD.d1_detail_btn') || 'chi tiết →'}
                   </span>
                 </div>
               )}
@@ -593,18 +595,18 @@ function D1Panel({ color, onLayerClick }) {
         </div>
       </div>
       <div>
-        <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color }}>Vòng Lặp Lo Âu – Thói Quen</div>
+        <div className="text-base font-bold uppercase tracking-widest mb-3" style={{ color }}>{tPD1('pillarD.d1_loops_title') || 'Vòng Lặp Lo Âu – Thói Quen'}</div>
         <div className="space-y-2">
           {LOOPS.map((l, i) => (
             <div key={i} className="rounded-xl border border-border overflow-hidden">
               <button onClick={() => setOpenLoop(openLoop === i ? null : i)} className="w-full flex items-center gap-3 p-3 hover:bg-white/5 transition-colors text-left">
-                <span className="text-lg font-medium text-text flex-1">Trigger: {l.trigger}</span>
+                <span className="text-lg font-medium text-text flex-1">{tPD1('pillarD.d1_trigger_label') || 'Trigger:'} {l.trigger}</span>
                 <span className="text-muted text-base">{openLoop === i ? '▲' : '▼'}</span>
               </button>
               {openLoop === i && (
                 <div className="px-3 pb-3">
                   <div className="flex flex-wrap gap-1 text-base">
-                    {[['💭', 'Suy nghĩ', l.thought], ['😟', 'Cảm xúc', l.emotion], ['📱', 'Hành vi', l.behavior], ['💢', 'Hậu quả', l.result]].map(([ic, lb, val]) => (
+                    {[['💭', tPD1('pillarD.d1_thought_label') || 'Suy nghĩ', l.thought], ['😟', tPD1('pillarD.d1_emotion_label') || 'Cảm xúc', l.emotion], ['📱', tPD1('pillarD.d1_behavior_label') || 'Hành vi', l.behavior], ['💢', tPD1('pillarD.d1_result_label') || 'Hậu quả', l.result]].map(([ic, lb, val]) => (
                       <div key={lb} className="rounded-lg p-2 flex-1 min-w-[120px]" style={{ background: `rgba(${PURPLE_RGB},0.08)` }}>
                         <div className="font-bold" style={{ color }}>{ic} {lb}</div>
                         <div className="text-muted mt-0.5">{val}</div>
@@ -612,7 +614,7 @@ function D1Panel({ color, onLayerClick }) {
                     ))}
                   </div>
                   <div className="mt-2 text-base text-muted p-2 rounded-lg border border-border">
-                    🔧 <strong style={{ color }}>Điểm dừng:</strong> Thở 1 phút → gọi tên cảm xúc → chọn việc nhỏ tiếp theo.
+                    {tPD1('pillarD.d1_break_point') || '🔧 Điểm dừng: Thở 1 phút → gọi tên cảm xúc → chọn việc nhỏ tiếp theo.'}
                   </div>
                 </div>
               )}

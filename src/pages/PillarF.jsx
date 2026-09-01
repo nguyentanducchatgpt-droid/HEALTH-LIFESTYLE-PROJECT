@@ -688,13 +688,13 @@ function F0Dashboard() {
   }
 
   const total = mergedScoreItems.reduce((s, item) => s + (scores[item.label] || 0), 0);
-  const level = total >= 80 ? { label: 'Ngày Rất Tốt 🔥', color: '#22c55e' } : total >= 60 ? { label: 'Ngày Ổn ✓', color: COLOR } : total >= 40 ? { label: 'Duy Trì Tối Thiểu', color: '#eab308' } : { label: 'Ngày Reset', color: '#ef4444' };
+  const level = total >= 80 ? { label: tPillarsFD('pillarF.f0_level_great') || 'Ngày Rất Tốt 🔥', color: '#22c55e' } : total >= 60 ? { label: tPillarsFD('pillarF.f0_level_ok') || 'Ngày Ổn ✓', color: COLOR } : total >= 40 ? { label: tPillarsFD('pillarF.f0_level_min') || 'Duy Trì Tối Thiểu', color: '#eab308' } : { label: tPillarsFD('pillarF.f0_level_reset') || 'Ngày Reset', color: '#ef4444' };
 
   return (
     <div className="space-y-6">
       <div className="rounded-2xl border border-border bg-surface p-5">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="font-bold text-text">Health Score Hôm Nay</h3>
+          <h3 className="font-bold text-text">{tPillarsFD('pillarF.f0_title') || 'Health Score Hôm Nay'}</h3>
           <div className="text-right">
             <div className="text-4xl font-black" style={{ color: level.color }}>{total}</div>
             <div className="text-base font-bold" style={{ color: level.color }}>{level.label}</div>
@@ -725,19 +725,19 @@ function F0Dashboard() {
       <div className="grid grid-cols-2 gap-3">
         <Link to="/pillar/f/checklist" className="rounded-2xl border border-border bg-surface p-4 hover:border-orange-500/30 transition-colors text-center">
           <div className="text-3xl mb-1">✅</div>
-          <div className="text-base font-bold text-text">Checklist Ngày</div>
+          <div className="text-base font-bold text-text">{tPillarsFD('pillarF.f0_checklist') || 'Checklist Ngày'}</div>
         </Link>
         <Link to="/pillar/f/workout-log" className="rounded-2xl border border-border bg-surface p-4 hover:border-orange-500/30 transition-colors text-center">
           <div className="text-3xl mb-1">🏋️</div>
-          <div className="text-base font-bold text-text">Ghi Nhật Ký</div>
+          <div className="text-base font-bold text-text">{tPillarsFD('pillarF.f0_journal') || 'Ghi Nhật Ký'}</div>
         </Link>
         <Link to="/pillar/f/health-score" className="rounded-2xl border border-border bg-surface p-4 hover:border-orange-500/30 transition-colors text-center">
           <div className="text-3xl mb-1">💯</div>
-          <div className="text-base font-bold text-text">Lịch Sử Điểm</div>
+          <div className="text-base font-bold text-text">{tPillarsFD('pillarF.f0_history') || 'Lịch Sử Điểm'}</div>
         </Link>
         <Link to="/pillar/f/progress-test" className="rounded-2xl border border-border bg-surface p-4 hover:border-orange-500/30 transition-colors text-center">
           <div className="text-3xl mb-1">📈</div>
-          <div className="text-base font-bold text-text">Test Tiến Bộ</div>
+          <div className="text-base font-bold text-text">{tPillarsFD('pillarF.f0_test') || 'Test Tiến Bộ'}</div>
         </Link>
       </div>
     </div>
@@ -1310,6 +1310,7 @@ function MealModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 
 // --- F3 Meal Plan tab ---
 function F3MealPlan() {
+  const { t: tPillarsF3 } = useTranslation('pillars');
   const PLATE_PARTS = [
     { label: '½ đĩa — Rau, canh, salad, trái cây ít ngọt', color: '#22c55e', pct: 50 },
     { label: '¼ đĩa — Đạm: thịt, cá, trứng, đậu', color: '#f97316', pct: 25 },
@@ -1347,8 +1348,8 @@ function F3MealPlan() {
       </div>
       <div className="rounded-2xl border border-border bg-surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2.5 border-b border-border">
-          <span className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>Thực Đơn Theo Bữa</span>
-          <span className="text-xs text-muted">Nhấn để xem chi tiết</span>
+          <span className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>{tPillarsF3('pillarF.f3_meal_section') || 'Thực Đơn Theo Bữa'}</span>
+          <span className="text-xs text-muted">{tPillarsF3('pillarF.f3_click_detail') || 'Nhấn để xem chi tiết'}</span>
         </div>
         {MEAL_ITEMS.map((m, i) => (
           <MealCard key={i} item={m} idx={i} onOpen={setMealModal} />
@@ -1365,8 +1366,8 @@ function F3MealPlan() {
       )}
       <div className="rounded-2xl border border-border bg-surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2.5 border-b border-border">
-          <h3 className="font-bold text-text">Nhật Ký Dinh Dưỡng Hôm Nay</h3>
-          <span className="text-xs text-muted">Nhấn để xem chi tiết</span>
+          <h3 className="font-bold text-text">{tPillarsF3('pillarF.f3_journal_section') || 'Nhật Ký Dinh Dưỡng Hôm Nay'}</h3>
+          <span className="text-xs text-muted">{tPillarsF3('pillarF.f3_click_detail') || 'Nhấn để xem chi tiết'}</span>
         </div>
         <div className="divide-y divide-white/5">
           {NUTRI_LOG_ITEMS.map((item) => (
@@ -1756,6 +1757,7 @@ const MIND_KEYS = ['stress', 'mood', 'calm', 'journal'];
 
 // --- F5 Mind Tracker tab ---
 function F5MindTracker() {
+  const { t: tPillarsF5 } = useTranslation('pillars');
   const MOODS = ['😞', '😐', '🙂', '😊', '🤩'];
   const [data, setData] = useState(() => {
     try {
@@ -1792,7 +1794,7 @@ function F5MindTracker() {
       <div className="rounded-2xl border border-border bg-surface p-4">
         <div className="flex items-center gap-2 mb-2">
           <span>😓</span>
-          <span className="text-lg text-text flex-1">Mức stress hôm nay</span>
+          <span className="text-lg text-text flex-1">{tPillarsF5('pillarF.f5_stress_label') || 'Mức stress hôm nay'}</span>
           <span className="font-black" style={{ color: stressColor }}>{data.stress}/10</span>
           <DetailBtn itemKey="stress" />
         </div>
@@ -1801,7 +1803,7 @@ function F5MindTracker() {
       {/* Mood */}
       <div className="rounded-2xl border border-border bg-surface p-4">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-lg text-text flex-1">Tâm trạng hôm nay</span>
+          <span className="text-lg text-text flex-1">{tPillarsF5('pillarF.f5_mood_label') || 'Tâm trạng hôm nay'}</span>
           <DetailBtn itemKey="mood" />
         </div>
         <div className="flex gap-3 justify-center">
@@ -1817,22 +1819,22 @@ function F5MindTracker() {
       {/* Calm practice */}
       <div className="rounded-2xl border border-border bg-surface p-4">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-lg text-text flex-1">Đã có calm practice hôm nay?</span>
+          <span className="text-lg text-text flex-1">{tPillarsF5('pillarF.f5_calm_label') || 'Đã có calm practice hôm nay?'}</span>
           <button onClick={() => set('calm', !data.calm)} className="px-4 py-1.5 rounded-xl text-base font-bold transition-colors shrink-0"
             style={data.calm ? { background: '#a855f7', color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
-            {data.calm ? '✓ Đã làm' : 'Chưa'}
+            {data.calm ? tPillarsF5('pillarF.f5_calm_yes') || '✓ Đã làm' : tPillarsF5('pillarF.f5_calm_no') || 'Chưa'}
           </button>
           <DetailBtn itemKey="calm" />
         </div>
-        <p className="text-base text-muted">Thở chậm, thiền, đi bộ không điện thoại, journaling...</p>
+        <p className="text-base text-muted">{tPillarsF5('pillarF.f5_calm_desc') || 'Thở chậm, thiền, đi bộ không điện thoại, journaling...'}</p>
       </div>
       {/* Journal */}
       <div className="rounded-2xl border border-border bg-surface p-4">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-lg text-text flex-1">Ghi nhanh 1 dòng</span>
+          <span className="text-lg text-text flex-1">{tPillarsF5('pillarF.f5_journal_label') || 'Ghi nhanh 1 dòng'}</span>
           <DetailBtn itemKey="journal" />
         </div>
-        <textarea value={data.journal} onChange={e => set('journal', e.target.value)} rows={2} placeholder="Hôm nay tôi cảm thấy... / Điều làm tôi khó tập trung là..." className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted resize-none" />
+        <textarea value={data.journal} onChange={e => set('journal', e.target.value)} rows={2} placeholder={tPillarsF5('pillarF.f5_journal_placeholder') || 'Hôm nay tôi cảm thấy... / Điều làm tôi khó tập trung là...'} className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted resize-none" />
       </div>
       {mindModal !== null && (() => {
         const idx = MIND_KEYS.indexOf(mindModal);

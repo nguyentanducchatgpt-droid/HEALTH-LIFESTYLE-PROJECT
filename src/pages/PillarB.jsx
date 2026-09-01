@@ -8182,20 +8182,16 @@ export default function PillarB() {
           {/* Label chip */}
           <span className="text-[9px] font-black uppercase tracking-[0.3em] px-3 py-1 rounded-full border"
             style={{ color: 'rgba(255,255,255,0.35)', borderColor: 'rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)', letterSpacing: '0.25em' }}>
-            lộ trình của bạn
+            {pillar?.tiers_label || 'lộ trình của bạn'}
           </span>
 
           {/* Main heading */}
-          <h2 className="text-2xl md:text-3xl font-black leading-tight" style={{ letterSpacing: '-0.01em' }}>
-            <span style={{ color: '#22c55e' }}>Bắt đầu</span>
-            <span className="text-text"> từ </span>
-            <span style={{ background: 'linear-gradient(90deg, #3b82f6, #a855f7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              cấp độ nào?
-            </span>
+          <h2 className="text-2xl md:text-3xl font-black leading-tight" style={{ letterSpacing: '-0.01em', background: 'linear-gradient(90deg, #22c55e, #3b82f6, #a855f7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            {pillar?.tiers_heading || 'Bắt đầu từ cấp độ nào?'}
           </h2>
 
           <p className="text-xs text-muted max-w-sm">
-            Click vào từng cấp để xem hướng dẫn chi tiết và lộ trình phù hợp
+            {pillar?.tiers_sub || 'Click vào từng cấp để xem hướng dẫn chi tiết và lộ trình phù hợp'}
           </p>
         </div>
 

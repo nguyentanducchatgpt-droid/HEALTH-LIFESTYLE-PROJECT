@@ -106,6 +106,8 @@ const HERO_TIPS = [
 ];
 
 function TabE0() {
+  const { t: tPE0 } = useTranslation('pillars');
+  const pillarE0 = tPE0('pillarE', { returnObjects: true });
   const [form, setForm] = useState(() => { try { return JSON.parse(localStorage.getItem(E0_KEY)) || {}; } catch { return {}; } });
   const set = (k, v) => { const next = { ...form, [k]: v }; setForm(next); localStorage.setItem(E0_KEY, JSON.stringify(next)); };
   const bmi = form.weight && form.height ? (form.weight / Math.pow(form.height / 100, 2)).toFixed(1) : null;
@@ -121,8 +123,8 @@ function TabE0() {
   return (
     <div className="space-y-6">
       <div className="rounded-2xl border p-4" style={{ borderColor: `${COLOR}25`, background: `${COLOR}07` }}>
-        <p className="text-lg font-semibold mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Sức Khỏe Cá Nhân (E0)</p>
-        <p className="text-base text-muted">Lưu tự động trên thiết bị. Dùng để cá nhân hóa nội dung trong toàn bộ Trụ cột E.</p>
+        <p className="text-lg font-semibold mb-1" style={{ color: COLOR }}>{pillarE0?.e0_profile_title || '✦ Hồ Sơ Sức Khỏe Cá Nhân (E0)'}</p>
+        <p className="text-base text-muted">{pillarE0?.e0_auto_save || 'Lưu tự động trên thiết bị. Dùng để cá nhân hóa nội dung trong toàn bộ Trụ cột E.'}</p>
       </div>
       <div className="grid grid-cols-2 gap-3">
         {fields.map(f => (
@@ -137,9 +139,9 @@ function TabE0() {
         ))}
       </div>
       <div>
-        <label className="text-base text-muted mb-1 block">Giới tính</label>
+        <label className="text-base text-muted mb-1 block">{pillarE0?.e0_gender || 'Giới tính'}</label>
         <div className="flex gap-2">
-          {[{ v: 'male', l: '♂ Nam' }, { v: 'female', l: '♀ Nữ' }].map(g => (
+          {[{ v: 'male', l: pillarE0?.e0_male || '♂ Nam' }, { v: 'female', l: pillarE0?.e0_female || '♀ Nữ' }].map(g => (
             <button key={g.v} onClick={() => set('sex', g.v)}
               className="flex-1 py-2 rounded-xl border text-lg font-semibold transition-all"
               style={form.sex === g.v ? { borderColor: COLOR, background: `${COLOR}20`, color: COLOR } : { borderColor: '#333', color: '#888' }}>
@@ -149,7 +151,7 @@ function TabE0() {
         </div>
       </div>
       <div>
-        <label className="text-base text-muted mb-1 block">Bệnh nền</label>
+        <label className="text-base text-muted mb-1 block">{pillarE0?.e0_conditions || 'Bệnh nền'}</label>
         <div className="flex flex-wrap gap-2">
           {diseaseOpts.map(d => (
             <button key={d} onClick={() => { const cur = form.diseases || []; const next = cur.includes(d) ? cur.filter(x => x !== d) : [...cur, d]; set('diseases', next); }}
@@ -555,7 +557,7 @@ function TabE2() {
     <div className="space-y-5">
       <div>
         <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab2_h1 || 'Lịch Theo Dõi Cơ Bản'}</h3>
-        <p className="text-xs text-muted mb-3 opacity-60">Nhấp vào từng chỉ số để xem hướng dẫn và khoa học chi tiết</p>
+        <p className="text-xs text-muted mb-3 opacity-60">{pillarE?.e_tab2_hint1 || 'Nhấp vào từng chỉ số để xem hướng dẫn và khoa học chi tiết'}</p>
         <div className="space-y-1.5">
           {SCHED.map((s, i) => (
             <div key={s.metric}
@@ -578,7 +580,7 @@ function TabE2() {
       </div>
       <div>
         <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab2_h2 || '5 Câu Hỏi Self-Check Mỗi Ngày'}</h3>
-        <p className="text-xs text-muted mb-3 opacity-60">Tick để check · Nhấp "Chi tiết" để xem khoa học và hướng dẫn</p>
+        <p className="text-xs text-muted mb-3 opacity-60">{pillarE?.e_tab2_hint2 || 'Tick để check · Nhấp "Chi tiết" để xem khoa học và hướng dẫn'}</p>
         <div className="space-y-2">
           {CHECKS.map((item, i) => (
             <div key={i}
@@ -600,7 +602,7 @@ function TabE2() {
             </div>
           ))}
         </div>
-        <p className="text-base text-muted mt-2 italic">Đo để hiểu, không đo để ám ảnh. Nhìn xu hướng 4–12 tuần quan trọng hơn một con số đơn lẻ.</p>
+        <p className="text-base text-muted mt-2 italic">{pillarE?.e_tab2_note || 'Đo để hiểu, không đo để ám ảnh. Nhìn xu hướng 4–12 tuần quan trọng hơn một con số đơn lẻ.'}</p>
       </div>
       {schedModal !== null && (
         <ScheduleModal
@@ -896,9 +898,9 @@ function TabE3() {
     <div className="space-y-4">
       <div className="rounded-xl border border-red-500/30 bg-red-500/08 p-3">
         <p className="text-lg font-bold text-red-400 mb-1">{pillarE?.e_tab3_h1 || '⚠️ Đi Cấp Cứu Ngay — Không Chờ'}</p>
-        <p className="text-base text-muted">Khi có các dấu hiệu dưới đây: không tự xử trí, gọi 115 hoặc đến cơ sở y tế gần nhất.</p>
+        <p className="text-base text-muted">{pillarE?.e_tab3_note || 'Khi có các dấu hiệu dưới đây: kh��ng tự xử trí, gọi 115 hoặc đến cơ sở y tế gần nhất.'}</p>
       </div>
-      <p className="text-xs text-muted opacity-60">Nhấp vào từng nhóm để xem chi tiết và cách xử trí</p>
+      <p className="text-xs text-muted opacity-60">{pillarE?.e_tab3_hint || 'Nhấp vào từng nhóm để xem chi tiết và cách xử trí'}</p>
       {EMERG.map((g, i) => (
         <div key={g.cat}
           className="rounded-2xl border border-border bg-surface/60 p-4 cursor-pointer hover:shadow-md transition-all duration-200"
@@ -924,7 +926,7 @@ function TabE3() {
       ))}
       <div className="rounded-xl border border-amber-500/30 bg-amber-500/08 p-4">
         <p className="text-base font-bold text-amber-400 mb-1">{pillarE?.e_tab3_h2 || 'Nên Đi Khám Sớm Khi Có:'}</p>
-        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng mục để xem chi tiết và hướng xử trí</p>
+        <p className="text-xs text-muted opacity-60 mb-3">{pillarE?.e_tab3_hint2 || 'Nhấp vào từng mục để xem chi tiết và hướng xử trí'}</p>
         <div className="grid grid-cols-2 gap-2">
           {SOON.map((s, i) => (
             <div key={s.metric}
@@ -1065,7 +1067,7 @@ function TabE4() {
   return (
     <div className="space-y-4">
       <p className="text-base text-muted">{pillarE?.e_tab4_h1 || 'Tập trung vào 4 nhóm bệnh quan trọng nhất trong cuộc sống hiện đại:'}</p>
-      <p className="text-xs text-muted opacity-60">Nhấp vào từng nhóm để xem chiến lược phòng ngừa chi tiết</p>
+      <p className="text-xs text-muted opacity-60">{pillarE?.e_tab4_hint || 'Nhấp vào từng nhóm để xem chiến lược phòng ngừa chi tiết'}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {DISEASES.map((g, i) => (
           <div key={g.metric}
@@ -1422,7 +1424,7 @@ function TabE5() {
     <div className="space-y-5">
       <div>
         <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab5_h1 || 'Gói Kiểm Tra Nền (Health Check Basic)'}</h3>
-        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng mục để xem chi tiết và ý nghĩa xét nghiệm</p>
+        <p className="text-xs text-muted opacity-60 mb-3">{pillarE?.e_tab5_hint1 || 'Nhấp vào từng mục để xem chi tiết và ý nghĩa xét nghiệm'}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {BASIC.map((b, i) => (
             <div key={b.metric}
@@ -1439,7 +1441,7 @@ function TabE5() {
       </div>
       <div>
         <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab5_h2 || 'Mở Rộng Theo Nguy Cơ'}</h3>
-        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng nhóm để xem danh sách xét nghiệm bổ sung</p>
+        <p className="text-xs text-muted opacity-60 mb-3">{pillarE?.e_tab5_hint2 || 'Nhấp vào từng nhóm để xem danh sách xét nghiệm bổ sung'}</p>
         <div className="space-y-3">
           {EXPANDED.map((g, i) => (
             <div key={g.metric}
@@ -1461,7 +1463,7 @@ function TabE5() {
           ))}
         </div>
       </div>
-      <p className="text-base text-muted">Khám định kỳ không nên là "gói xét nghiệm càng nhiều càng tốt" — nên dựa trên tuổi, nguy cơ và triệu chứng của từng người.</p>
+      <p className="text-base text-muted">{pillarE?.e_tab5_note || 'Khám định kỳ không nên là "gói xét nghiệm càng nhiều càng tốt" — nên dựa trên tuổi, nguy cơ và triệu chứng của từng người.'}</p>
       {basicModal !== null && (
         <ScheduleModal
           item={BASIC[basicModal]}
@@ -1715,7 +1717,7 @@ function TabE6() {
     <div className="space-y-4">
       <div className="rounded-2xl border border-violet-500/30 bg-violet-500/08 p-5">
         <p className="text-lg font-bold text-violet-400 mb-1">{pillarE?.e_tab6_h1 || '5 Quy Tắc Không Của Thuốc'}</p>
-        <p className="text-xs text-muted opacity-60 mb-3">Nhấp vào từng quy tắc để hiểu lý do và hậu quả</p>
+        <p className="text-xs text-muted opacity-60 mb-3">{pillarE?.e_tab6_hint || 'Nhấp vào từng quy tắc để hiểu lý do và hậu quả'}</p>
         <ul className="space-y-2">
           {RULES.map((r, i) => (
             <li key={i}

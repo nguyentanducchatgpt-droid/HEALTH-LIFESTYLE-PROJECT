@@ -782,13 +782,13 @@ function F1Checklist() {
 
   const doneCount = Object.values(checked).filter(Boolean).length;
   const pct = Math.round((doneCount / mergedDailyMin.length) * 100);
-  const msg = doneCount >= 5 ? '🔥 Ngày tốt!' : doneCount >= 3 ? '✓ Đạt mức duy trì' : '→ Cứ từng bước một';
+  const msg = doneCount >= 5 ? (tPillarsF1('pillarF.f1_msg_great') || '🔥 Ngày tốt!') : doneCount >= 3 ? (tPillarsF1('pillarF.f1_msg_ok') || '✓ Đạt mức duy trì') : (tPillarsF1('pillarF.f1_msg_start') || '→ Cứ từng bước một');
 
   return (
     <div className="space-y-5">
       <div className="flex gap-2 mb-4">
-        <button onClick={() => setWeekView(false)} className="flex-1 py-2 rounded-xl text-lg font-bold transition-colors" style={!weekView ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>Hôm Nay</button>
-        <button onClick={() => setWeekView(true)} className="flex-1 py-2 rounded-xl text-lg font-bold transition-colors" style={weekView ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>Tuần Này</button>
+        <button onClick={() => setWeekView(false)} className="flex-1 py-2 rounded-xl text-lg font-bold transition-colors" style={!weekView ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>{tPillarsF1('pillarF.f1_today_btn') || 'Hôm Nay'}</button>
+        <button onClick={() => setWeekView(true)} className="flex-1 py-2 rounded-xl text-lg font-bold transition-colors" style={weekView ? { background: COLOR, color: 'white' } : { background: 'var(--surface)', color: 'var(--muted)', border: '1px solid var(--border)' }}>{tPillarsF1('pillarF.f1_week_btn') || 'Tuần Này'}</button>
       </div>
       {!weekView ? (
         <>
@@ -798,7 +798,7 @@ function F1Checklist() {
             </div>
             <span className="text-lg font-bold" style={{ color: COLOR }}>{doneCount}/{mergedDailyMin.length}</span>
           </div>
-          <p className="text-base text-muted mb-3">{msg} — Làm được 70% là thắng.</p>
+          <p className="text-base text-muted mb-3">{msg} — {tPillarsF1('pillarF.f1_pct_win') || 'Làm được 70% là thắng.'}</p>
           <div className="space-y-2">
             {mergedDailyMin.map((item, i) => (
               <DailyMinCard key={i} item={item} idx={i} checked={checked} onToggle={toggle} onOpen={setDailyModal} />
@@ -836,7 +836,7 @@ function F1Checklist() {
               </div>
             </div>
           ))}
-          <p className="text-base text-muted">Mỗi ô tương ứng 1 ngày trong tuần. Nhấn để tick.</p>
+          <p className="text-base text-muted">{tPillarsF1('pillarF.f1_week_help') || 'Mỗi ô tương ứng 1 ngày trong tuần. Nhấn để tick.'}</p>
         </div>
       )}
     </div>
@@ -845,6 +845,7 @@ function F1Checklist() {
 
 // --- F2 Workout Log tab ---
 function F2WorkoutLog() {
+  const { t: tPillarsF2 } = useTranslation('pillars');
   const [entries, setEntries] = useState(() => {
     try { return JSON.parse(localStorage.getItem('healthapp_f_workout') || '[]'); } catch { return []; }
   });
@@ -864,7 +865,7 @@ function F2WorkoutLog() {
   return (
     <div className="space-y-4">
       <div className="rounded-2xl border border-border bg-surface p-4 space-y-3">
-        <h3 className="font-bold text-text text-lg">Ghi Buổi Tập Mới</h3>
+        <h3 className="font-bold text-text text-lg">{tPillarsF2('pillarF.f2_log_heading') || 'Ghi Buổi Tập Mới'}</h3>
         <input value={form.exercise} onChange={e => setForm(p => ({ ...p, exercise: e.target.value }))} placeholder="Bài tập (vd: Full body 20 phút)" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
         <div className="grid grid-cols-2 gap-2">
           <input value={form.duration} onChange={e => setForm(p => ({ ...p, duration: e.target.value }))} placeholder="Thời lượng (vd: 25 phút)" className="bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
@@ -1335,7 +1336,7 @@ function F3MealPlan() {
   return (
     <div className="space-y-5">
       <div className="rounded-2xl border border-border bg-surface p-4">
-        <h3 className="font-bold text-text mb-3">Template Đĩa Ăn Lành Mạnh</h3>
+        <h3 className="font-bold text-text mb-3">{tPillarsF3('pillarF.f3_plate_heading') || 'Template Đĩa Ăn Lành Mạnh'}</h3>
         <div className="space-y-2 mb-3">
           {PLATE_PARTS.map((p, i) => (
             <div key={i} className="flex items-center gap-3">
@@ -1969,7 +1970,7 @@ function F6Test() {
 
   return (
     <div className="space-y-3">
-      <p className="text-lg text-muted">Thực hiện test đầu vào và mỗi 4 tuần một lần để đo tiến bộ toàn diện.</p>
+      <p className="text-lg text-muted">{tPillarsF6('pillarF.f6_intro') || 'Thực hiện test đầu vào và mỗi 4 tuần một lần để đo tiến bộ toàn diện.'}</p>
       <div className="space-y-2">
         {mergedTestItems.map((item, i) => (
           <div key={i} className="rounded-2xl border bg-surface p-3 flex items-center gap-3 transition-colors duration-200"
@@ -2131,7 +2132,7 @@ function F7QuickWorkouts() {
 
   return (
     <div className="space-y-3">
-      <p className="text-lg text-muted">Nguyên tắc: Có 5 phút vẫn làm được. Không bỏ hẳn — chỉ cần chọn bản ngắn hơn.</p>
+      <p className="text-lg text-muted">{tPillarsF7('pillarF.f7_intro') || 'Nguyên tắc: Có 5 phút vẫn làm được. Không bỏ hẳn — chỉ cần chọn bản ngắn hơn.'}</p>
       {mergedQuickWo.map((wo, i) => (
         <div key={i} className="rounded-2xl border bg-surface overflow-hidden transition-colors duration-200"
           style={{ borderColor: woModal === i ? `rgba(${wo.rgb},0.45)` : 'var(--border)' }}>

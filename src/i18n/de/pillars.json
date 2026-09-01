@@ -8169,11 +8169,11 @@
           "stats": [{ "l": "Wochen" }, { "l": "Phasen" }],
           "cta": "Fahrplan ansehen →"
         }
-      ],
-      "c_bottom_link": "← Gesunder Lebensstil 360",
-      "c_quote": "Du musst nicht perfekt leben. Lebe einfach mit Rhythmus, mit Erholung und mit der Fähigkeit zurückzukommen.",
-      "c_quote_cite": "— Philosophie Säule C"
-    }
+      ]
+    },
+    "c_bottom_link": "← Gesunder Lebensstil 360",
+    "c_quote": "Du musst nicht perfekt leben. Lebe einfach mit Rhythmus, mit Erholung und mit der Fähigkeit zurückzukommen.",
+    "c_quote_cite": "— Philosophie Säule C"
   },
   "pillarD": {
     "id": "d",

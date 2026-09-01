@@ -8149,11 +8149,11 @@
           "stats": [{ "l": "Weeks" }, { "l": "Phases" }],
           "cta": "View roadmap →"
         }
-      ],
-      "c_bottom_link": "← Healthy Lifestyle 360",
-      "c_quote": "You don't need to live perfectly. Just live with rhythm, with recovery, and with the ability to return.",
-      "c_quote_cite": "— Pillar C Philosophy"
-    }
+      ]
+    },
+    "c_bottom_link": "← Healthy Lifestyle 360",
+    "c_quote": "You don't need to live perfectly. Just live with rhythm, with recovery, and with the ability to return.",
+    "c_quote_cite": "— Pillar C Philosophy"
   },
   "pillarD": {
     "id": "d",

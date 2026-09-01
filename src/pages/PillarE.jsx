@@ -111,15 +111,18 @@ function TabE0() {
   const [form, setForm] = useState(() => { try { return JSON.parse(localStorage.getItem(E0_KEY)) || {}; } catch { return {}; } });
   const set = (k, v) => { const next = { ...form, [k]: v }; setForm(next); localStorage.setItem(E0_KEY, JSON.stringify(next)); };
   const bmi = form.weight && form.height ? (form.weight / Math.pow(form.height / 100, 2)).toFixed(1) : null;
-  const bmiLabel = bmi ? (bmi < 18.5 ? 'Thiếu cân' : bmi < 25 ? 'Bình thường' : bmi < 30 ? 'Thừa cân' : 'Béo phì') : '';
+  const bmis = [pillarE0?.e0_bmi_underweight || 'Thiếu cân', pillarE0?.e0_bmi_normal || 'Bình thường', pillarE0?.e0_bmi_overweight || 'Thừa cân', pillarE0?.e0_bmi_obese || 'Béo phì'];
+  const bmiLabel = bmi ? (bmi < 18.5 ? bmis[0] : bmi < 25 ? bmis[1] : bmi < 30 ? bmis[2] : bmis[3]) : '';
   const bmiColor = bmi ? (bmi < 18.5 ? '#f59e0b' : bmi < 25 ? '#10b981' : bmi < 30 ? '#f59e0b' : '#ef4444') : '#888';
+  const egPfx = pillarE0?.e0_eg_prefix || 'VD';
   const fields = [
-    { k: 'age', l: 'Tuổi', t: 'number', ph: 'VD: 30', unit: 'tuổi' },
-    { k: 'weight', l: 'Cân nặng', t: 'number', ph: 'VD: 65', unit: 'kg' },
-    { k: 'height', l: 'Chiều cao', t: 'number', ph: 'VD: 168', unit: 'cm' },
-    { k: 'waist', l: 'Vòng eo', t: 'number', ph: 'VD: 80', unit: 'cm' },
+    { k: 'age', l: pillarE0?.e0_field_age || 'Tuổi', t: 'number', ph: `${egPfx}: 30`, unit: pillarE0?.e0_unit_years || 'tuổi' },
+    { k: 'weight', l: pillarE0?.e0_field_weight || 'Cân nặng', t: 'number', ph: `${egPfx}: 65`, unit: 'kg' },
+    { k: 'height', l: pillarE0?.e0_field_height || 'Chiều cao', t: 'number', ph: `${egPfx}: 168`, unit: 'cm' },
+    { k: 'waist', l: pillarE0?.e0_field_waist || 'Vòng eo', t: 'number', ph: `${egPfx}: 80`, unit: 'cm' },
   ];
-  const diseaseOpts = ['Không có bệnh nền', 'Tăng huyết áp', 'Đái tháo đường', 'Rối loạn mỡ máu', 'Bệnh tim mạch', 'Bệnh thận', 'Bệnh gan', 'Bệnh phổi'];
+  const VI_DISEASES = ['Không có bệnh nền', 'Tăng huyết áp', 'Đái tháo đường', 'Rối loạn mỡ máu', 'Bệnh tim mạch', 'Bệnh thận', 'Bệnh gan', 'Bệnh phổi'];
+  const diseaseLabels = pillarE0?.e0_diseases || VI_DISEASES;
   return (
     <div className="space-y-6">
       <div className="rounded-2xl border p-4" style={{ borderColor: `${COLOR}25`, background: `${COLOR}07` }}>
@@ -153,11 +156,11 @@ function TabE0() {
       <div>
         <label className="text-base text-muted mb-1 block">{pillarE0?.e0_conditions || 'Bệnh nền'}</label>
         <div className="flex flex-wrap gap-2">
-          {diseaseOpts.map(d => (
+          {VI_DISEASES.map((d, i) => (
             <button key={d} onClick={() => { const cur = form.diseases || []; const next = cur.includes(d) ? cur.filter(x => x !== d) : [...cur, d]; set('diseases', next); }}
               className="px-3 py-1 rounded-full text-base border transition-all"
               style={(form.diseases || []).includes(d) ? { borderColor: COLOR, background: `${COLOR}20`, color: COLOR } : { borderColor: '#333', color: '#888' }}>
-              {d}
+              {diseaseLabels[i]}
             </button>
           ))}
         </div>
@@ -170,7 +173,7 @@ function TabE0() {
           </div>
           <div>
             <div className="font-bold" style={{ color: bmiColor }}>{bmiLabel}</div>
-            <p className="text-base text-muted">Vòng eo: {form.waist || '–'} cm · {form.sex === 'female' ? 'Nữ: ngưỡng >80 cm' : 'Nam: ngưỡng >90 cm'}</p>
+            <p className="text-base text-muted">Vòng eo: {form.waist || '–'} cm · {form.sex === 'female' ? (pillarE0?.e0_waist_female || 'Nữ: ngưỡng >80 cm') : (pillarE0?.e0_waist_male || 'Nam: ngưỡng >90 cm')}</p>
           </div>
         </div>
       )}

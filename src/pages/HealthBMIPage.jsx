@@ -358,7 +358,7 @@ function WaistModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
         <div className="p-6 md:p-8">
           <div className="flex items-center gap-3 mb-1">
             <span className="text-2xl font-black" style={{ color: item.color }}>{item.group}</span>
-            <span className="text-base font-semibold text-muted">· Vòng eo & nguy cơ sức khỏe</span>
+            <span className="text-base font-semibold text-muted">{p.bmi_waist_sub || '· Vòng eo & nguy cơ sức khỏe'}</span>
           </div>
           <div className="rounded-xl px-4 py-3 mb-5 text-base font-medium leading-relaxed"
             style={{ background: `rgba(${item.rgb},0.1)`, borderLeft: `3px solid ${item.color}`, color: `rgba(${item.rgb},0.9)` }}>

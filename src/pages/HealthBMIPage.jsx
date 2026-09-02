@@ -629,17 +629,17 @@ export default function HealthBMIPage() {
               <p className="text-lg text-muted leading-relaxed flex-1">{c.action}</p>
               <div className="shrink-0 self-center">
                 <span className="text-[10px] font-bold px-2 py-1 rounded-full border"
-                  style={{ color: c.color, borderColor: `rgba(${c.rgb},0.35)`, background: `rgba(${c.rgb},0.08)` }}>Chi tiết →</span>
+                  style={{ color: c.color, borderColor: `rgba(${c.rgb},0.35)`, background: `rgba(${c.rgb},0.08)` }}>{p.e_detail_btn || 'Chi tiết →'}</span>
               </div>
             </div>
           ))}
         </div>
-        <p className="text-base text-muted mt-3">* BMI không phân biệt mỡ và cơ — người tập gym nhiều có thể BMI cao nhưng tỷ lệ mỡ thấp. Luôn kết hợp với vòng eo.</p>
+        <p className="text-base text-muted mt-3">{p.bmi_footnote || '* BMI không phân biệt mỡ và cơ — người tập gym nhiều có thể BMI cao nhưng tỷ lệ mỡ thấp. Luôn kết hợp với vòng eo.'}</p>
       </RevealBlock>
 
       <RevealBlock className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bmi_s3_h2 || 'Vòng Eo — Chỉ Số Quan Trọng Hơn Cân Nặng'}</h2>
-        <p className="text-muted text-lg mb-6">Mỡ bụng nội tạng liên quan đến nguy cơ tim mạch, đái tháo đường type 2, gan nhiễm mỡ và hội chứng chuyển hóa</p>
+        <p className="text-muted text-lg mb-6">{p.bmi_s3_sub || 'Mỡ bụng nội tạng liên quan đến nguy cơ tim mạch, đái tháo đường type 2, gan nhiễm mỡ và hội chứng chuyển hóa'}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {waistRisks.map((w, i) => (
             <div key={w.group}
@@ -650,7 +650,7 @@ export default function HealthBMIPage() {
               <div className="flex justify-between items-center mb-3">
                 <div className="font-bold text-text">{w.icon} {w.group}</div>
                 <span className="text-[10px] font-bold px-2 py-1 rounded-full border"
-                  style={{ color: w.color, borderColor: `rgba(${w.rgb},0.35)`, background: `rgba(${w.rgb},0.08)` }}>Chi tiết →</span>
+                  style={{ color: w.color, borderColor: `rgba(${w.rgb},0.35)`, background: `rgba(${w.rgb},0.08)` }}>{p.e_detail_btn || 'Chi tiết →'}</span>
               </div>
               <div className="flex gap-3">
                 <div className="flex-1 rounded-xl p-3 text-center" style={{ background: '#10b98115' }}>
@@ -662,14 +662,14 @@ export default function HealthBMIPage() {
                   <div className="text-base text-muted">{w.danger}</div>
                 </div>
               </div>
-              <p className="text-center text-xs text-muted mt-3 opacity-50">Nhấp để xem phân tích chi tiết</p>
+              <p className="text-center text-xs text-muted mt-3 opacity-50">{p.bmi_waist_click || 'Nhấp để xem phân tích chi tiết'}</p>
             </div>
           ))}
         </div>
         <div className="rounded-2xl border border-border bg-surface p-5">
-          <p className="text-lg font-bold text-text mb-3">Cách Đo Vòng Eo Đúng</p>
+          <p className="text-lg font-bold text-text mb-3">{p.bmi_waist_how_h3 || 'Cách Đo Vòng Eo Đúng'}</p>
           <ol className="space-y-2">
-            {['Đứng thẳng, hai chân rộng bằng vai', 'Thở ra nhẹ — không hóp bụng', 'Đo ngang qua giữa bờ dưới xương sườn và mào chậu (hoặc ngang rốn)', 'Dùng cùng một vị trí đo mỗi tuần', 'Đo buổi sáng trước ăn là tốt nhất'].map((s, i) => (
+            {(p.bmi_waist_how_steps || ['Đứng thẳng, hai chân rộng bằng vai', 'Thở ra nhẹ — không hóp bụng', 'Đo ngang qua giữa bờ dưới xương sườn và mào chậu (hoặc ngang rốn)', 'Dùng cùng một vị trí đo mỗi tuần', 'Đo buổi sáng trước ăn là tốt nhất']).map((s, i) => (
               <li key={i} className="flex items-start gap-3 text-lg text-muted">
                 <span className="font-black shrink-0 w-5" style={{ color: COLOR }}>{i + 1}.</span>{s}
               </li>

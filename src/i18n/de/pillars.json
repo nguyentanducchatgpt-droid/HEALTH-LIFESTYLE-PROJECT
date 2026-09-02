@@ -8774,6 +8774,11 @@
     "bmi_s2_h2": "BMI-Klassifikation & Maßnahmen",
     "bmi_s2_sub": "BMI ist ein Screening-Werkzeug — mit Taille und anderen Werten kombinieren",
     "bmi_s3_h2": "Taille — Wichtiger als das Gewicht",
+    "bmi_s3_sub": "Viszeralfett ist mit kardiovaskulärem Risiko, Typ-2-Diabetes, Fettleber und metabolischem Syndrom verbunden",
+    "bmi_footnote": "* BMI unterscheidet nicht zwischen Fett und Muskeln — Sportler können einen hohen BMI, aber niedrigen Körperfettanteil haben. Immer mit dem Taillenumfang kombinieren.",
+    "bmi_waist_click": "Klicken für detaillierte Analyse",
+    "bmi_waist_how_h3": "Taillenumfang richtig messen",
+    "bmi_waist_how_steps": ["Aufrecht stehen, Füße schulterbreit", "Sanft ausatmen — nicht einziehen", "In der Mitte zwischen unterster Rippe und Beckenkamm messen (oder Nabelhöhe)", "Jede Woche dieselbe Position verwenden", "Morgens vor dem Essen ist am besten"],
     "bp_h1": "Blutdruck",
     "bp_badge": "Vitalzeichen · Regelmäßig messen",
     "bp_desc": "Blutdruck ist die Kraft des Blutes gegen die Arterienwand. Hypertonie ohne Symptome — der 'stille Killer' — ist Hauptursache von Schlaganfall und Herzinfarkt.",
@@ -8850,11 +8855,11 @@
     "rm_s1_h2": "12-Wochen-Roadmap",
     "rm_s2_h2": "Alle Themen",
     "bmi_cats_tr": [
-      {"label": "Untergewicht", "action": "Ernährung, Muskelmasse und Grunderkrankungen prüfen. Protein und gesunde Kalorien erhöhen."},
-      {"label": "Normalgewicht", "action": "Gewicht halten. Monatliche Trends verfolgen. Auch Taillenumfang messen."},
-      {"label": "Übergewicht", "action": "Ernährung anpassen, mehr Bewegung. Taille messen, um Bauchfett zu beurteilen."},
-      {"label": "Adipositas Grad I", "action": "Langfristiger Plan nötig. Fachkundige Ernährungs- und Bewegungsberatung suchen."},
-      {"label": "Adipositas Grad II–III", "action": "Umfassende medizinische Beurteilung nötig. Spezialistenunterstützung erwägen."}
+      {"label": "Untergewicht", "action": "Ernährung, Muskelmasse und Grunderkrankungen prüfen. Protein und gesunde Kalorien erhöhen.", "keyFact": "WHO definiert Untergewicht als BMI < 18,5 kg/m². Untergewicht ist mit geschwächtem Immunsystem, Osteoporose, Anämie und erhöhter Sterblichkeit verbunden — besonders bei Frauen im gebärfähigen Alter. Niedriger BMI ist nicht immer pathologisch; schlanke Personen benötigen zusätzliche Bewertung von Taille, Blutbild und körperlicher Funktion."},
+      {"label": "Normalgewicht", "action": "Gewicht halten. Monatliche Trends verfolgen. Auch Taillenumfang messen.", "keyFact": "BMI 18,5–24,9 ist der Normalbereich laut WHO. Sharma et al. (2020): BMI 22–23 ist bei Asiaten mit der niedrigsten Sterblichkeit verbunden. Personen mit 'normalem' BMI können trotzdem ein metabolisches Syndrom haben, wenn der Taillenumfang groß ist — bekannt als TOFI (Thin Outside, Fat Inside). Körperzusammensetzung zählt mehr als die BMI-Zahl."},
+      {"label": "Übergewicht", "action": "Ernährung anpassen, mehr Bewegung. Taille messen, um Bauchfett zu beurteilen.", "keyFact": "BMI 25–29,9 gilt laut WHO als 'Übergewicht', das Bild ist aber komplex. Bei jüngeren Erwachsenen (<50 Jahre) ist Übergewicht mit erhöhtem Risiko für Typ-2-Diabetes, Bluthochdruck, Schlafapnoe und Herzerkrankungen verbunden. Der Taillenumfang ist für die Risikostratifizierung wichtiger."},
+      {"label": "Adipositas Grad I", "action": "Langfristiger Plan nötig. Fachkundige Ernährungs- und Bewegungsberatung suchen.", "keyFact": "BMI 30–34,9 (Adipositas Grad I) erhöht das Risiko für Typ-2-Diabetes (×7), Herz-Kreislauf-Erkrankungen, Arthrose und mehrere Krebsarten erheblich. Jede 5-Einheiten-Zunahme des BMI über 25 erhöht die Gesamtmortalität um 29%. Ein Gewichtsverlust von 5–10% reicht aus, um signifikante Verbesserungen zu erzielen."},
+      {"label": "Adipositas Grad II–III", "action": "Umfassende medizinische Beurteilung nötig. Spezialistenunterstützung erwägen.", "keyFact": "BMI ≥35 (Adipositas Grad II) und Grad III/morbide Adipositas (BMI ≥40) sind ernste Erkrankungen. Die Lebenserwartung sinkt je nach Schweregrad um 5–20 Jahre. Lebensstilinterventionen allein reichen auf diesem Niveau oft langfristig nicht aus — ein multidisziplinäres Team (Adipositasmedizin, Ernährung, Psychologie, Chirurgie) wird benötigt."}
     ],
     "waist_risks_tr": [
       {"group": "Männer", "normal": "Normal", "danger": "Hohes Risiko"},

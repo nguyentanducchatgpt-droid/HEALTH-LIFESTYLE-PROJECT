@@ -489,6 +489,8 @@ function SupplementCard({ item, onClick }) {
 }
 
 function SupplementModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -553,14 +555,14 @@ function SupplementModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, h
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -591,6 +593,8 @@ function DoctorCard({ item, onClick }) {
 }
 
 function DoctorModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -653,14 +657,14 @@ function DoctorModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNe
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -693,6 +697,8 @@ function DangerCard({ item, onClick }) {
 }
 
 function DangerModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -757,14 +763,14 @@ function DangerModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNe
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -799,6 +805,8 @@ function MedCard({ rule, onClick }) {
 }
 
 function MedModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -863,14 +871,14 @@ function MedModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext 
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -903,6 +911,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthMedSafetyPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const medRules = MED_RULES.map((r, i) => ({...r, ...(p.med_rules_tr?.[i] || {})}));
+  const dangerPhrases = DANGER_PHRASES.map((d, i) => ({...d, ...(p.med_danger_tr?.[i] || {})}));
   const [medModal, setMedModal] = useState(null);
   const [dangerModal, setDangerModal] = useState(null);
   const [suppModal, setSuppModal] = useState(null);
@@ -963,7 +973,7 @@ export default function HealthMedSafetyPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s1_h2 || '5 Quy Tắc An Toàn Thuốc'}</h2>
         <p className="text-muted text-lg mb-6">Áp dụng mỗi khi bắt đầu một loại thuốc mới. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-4">
-          {MED_RULES.map((r, i) => (
+          {medRules.map((r, i) => (
             <MedCard key={i} rule={r} onClick={() => setMedModal(i)} />
           ))}
         </div>
@@ -973,7 +983,7 @@ export default function HealthMedSafetyPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s2_h2 || 'Những Câu Nguy Hiểm Cần Nhớ'}</h2>
         <p className="text-muted text-lg mb-6">Những quan niệm phổ biến nhưng sai — và tại sao chúng nguy hiểm. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-3">
-          {DANGER_PHRASES.map((d, i) => (
+          {dangerPhrases.map((d, i) => (
             <DangerCard key={i} item={d} onClick={() => setDangerModal(i)} />
           ))}
         </div>
@@ -1029,26 +1039,26 @@ export default function HealthMedSafetyPage() {
       )}
       {dangerModal !== null && (
         <DangerModal
-          item={DANGER_PHRASES[dangerModal]}
+          item={dangerPhrases[dangerModal]}
           idx={dangerModal}
-          total={DANGER_PHRASES.length}
+          total={dangerPhrases.length}
           onClose={() => setDangerModal(null)}
           onPrev={() => setDangerModal(i => Math.max(0, i - 1))}
-          onNext={() => setDangerModal(i => Math.min(DANGER_PHRASES.length - 1, i + 1))}
+          onNext={() => setDangerModal(i => Math.min(dangerPhrases.length - 1, i + 1))}
           hasPrev={dangerModal > 0}
-          hasNext={dangerModal < DANGER_PHRASES.length - 1}
+          hasNext={dangerModal < dangerPhrases.length - 1}
         />
       )}
       {medModal !== null && (
         <MedModal
-          item={MED_RULES[medModal]}
+          item={medRules[medModal]}
           idx={medModal}
-          total={MED_RULES.length}
+          total={medRules.length}
           onClose={() => setMedModal(null)}
           onPrev={() => setMedModal(i => Math.max(0, i - 1))}
-          onNext={() => setMedModal(i => Math.min(MED_RULES.length - 1, i + 1))}
+          onNext={() => setMedModal(i => Math.min(medRules.length - 1, i + 1))}
           hasPrev={medModal > 0}
-          hasNext={medModal < MED_RULES.length - 1}
+          hasNext={medModal < medRules.length - 1}
         />
       )}
     </div>

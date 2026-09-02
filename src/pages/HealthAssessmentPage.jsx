@@ -219,6 +219,10 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthAssessmentPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const cats = CATS.map((c, i) => (p.ass_cats_tr && p.ass_cats_tr[i]) || c);
+  const catLabels = Object.fromEntries(CATS.map((c, i) => [c, (p.ass_cats_tr && p.ass_cats_tr[i]) || c]));
+  const levels = LEVELS.map((l, i) => ({ ...l, ...(p.ass_levels_tr?.[i] || {}) }));
+  const questions = QUESTIONS.map((q, i) => ({ ...q, ...(p.ass_questions_tr?.[i] || {}) }));
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -260,7 +264,7 @@ export default function HealthAssessmentPage() {
 
   const allAnswered = QUESTIONS.every(q => answers[q.id] !== undefined);
   const score = submitted ? calcScore() : null;
-  const level = score !== null ? LEVELS.find(l => score >= l.min && score <= l.max) : null;
+  const level = score !== null ? levels.find(l => score >= l.min && score <= l.max) : null;
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
@@ -299,12 +303,12 @@ export default function HealthAssessmentPage() {
             <span className="text-lg text-muted">{Object.keys(answers).length}/{QUESTIONS.length} câu</span>
           </div>
           <div className="space-y-6">
-            {QUESTIONS.map((q, i) => {
-              const prevCat = i > 0 ? QUESTIONS[i - 1].cat : null;
+            {questions.map((q, i) => {
+              const prevCat = i > 0 ? questions[i - 1].cat : null;
               return (
                 <div key={q.id}>
                   {q.cat !== prevCat && (
-                    <div className="text-base font-bold uppercase tracking-widest mb-3 px-1" style={{ color: COLOR }}>— {q.cat}</div>
+                    <div className="text-base font-bold uppercase tracking-widest mb-3 px-1" style={{ color: COLOR }}>— {catLabels[q.cat] || q.cat}</div>
                   )}
                   <div className="rounded-2xl border bg-surface p-4 transition-all duration-300"
                     style={{ borderColor: answers[q.id] !== undefined ? `rgba(${SCORE_COLORS[answers[q.id]].rgb},0.25)` : 'rgba(255,255,255,0.08)' }}>
@@ -346,7 +350,7 @@ export default function HealthAssessmentPage() {
             disabled={!allAnswered}
             className="mt-8 w-full py-3 rounded-xl font-bold text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed"
             style={{ background: COLOR }}>
-            {allAnswered ? 'Xem Kết Quả →' : `Trả lời thêm ${QUESTIONS.length - Object.keys(answers).length} câu nữa`}
+            {allAnswered ? (p.ass_q_submit || 'Xem Kết Quả →') : `${QUESTIONS.length - Object.keys(answers).length} ${p.ass_q_pending || 'câu nữa'}`}
           </button>
         </RevealBlock>
       ) : (
@@ -361,11 +365,11 @@ export default function HealthAssessmentPage() {
           </div>
           <h3 className="font-bold text-text mb-4">Điểm Theo Lĩnh Vực</h3>
           <div className="space-y-3 mb-8">
-            {CATS.map(cat => {
+            {CATS.map((cat, ci) => {
               const cs = catScore(cat);
               return (
                 <div key={cat} className="flex items-center gap-3">
-                  <span className="text-lg text-muted w-28 shrink-0">{cat}</span>
+                  <span className="text-lg text-muted w-28 shrink-0">{cats[ci]}</span>
                   <div className="flex-1 h-2 bg-surface rounded-full overflow-hidden">
                     <div className="h-full rounded-full" style={{ width: `${cs ?? 0}%`, background: COLOR, opacity: cs === null ? 0.3 : 1 }} />
                   </div>

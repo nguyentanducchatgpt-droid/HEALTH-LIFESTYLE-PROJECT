@@ -408,6 +408,8 @@ function SourceCard({ item, onClick }) {
 }
 
 function SourceModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -471,14 +473,14 @@ function SourceModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 06</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -508,6 +510,8 @@ function PatternCard({ item, onClick }) {
 }
 
 function PatternModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -570,14 +574,14 @@ function PatternModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 06</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -616,6 +620,8 @@ function FilterCard({ item, onClick }) {
 }
 
 function FilterModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -687,14 +693,14 @@ function FilterModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNe
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 05</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -773,6 +779,7 @@ function MisinfoChecker() {
 export default function HealthMediaLiteracyPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const filterQuestions = FILTER_QUESTIONS.map((fq, i) => { const tr = p.ml_filters_tr?.[i] || {}; return { ...fq, ...tr, ...(tr.title ? { q: tr.title } : {}), ...(tr.sub ? { good: tr.sub } : {}) }; });
   const [filterModal, setFilterModal] = useState(null);
   const [patternModal, setPatternModal] = useState(null);
   const [sourceModal, setSourceModal] = useState(null);
@@ -832,7 +839,7 @@ export default function HealthMediaLiteracyPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.ml_s1_h2 || '5 Câu Hỏi Để Lọc Thông Tin'}</h2>
         <p className="text-muted text-lg mb-6">Áp dụng mỗi khi đọc thông tin y tế trên mạng xã hội, group sức khỏe, hoặc từ người thân. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-4">
-          {FILTER_QUESTIONS.map((fq, i) => (
+          {filterQuestions.map((fq, i) => (
             <FilterCard key={i} item={fq} onClick={() => setFilterModal(i)} />
           ))}
         </div>
@@ -868,14 +875,14 @@ export default function HealthMediaLiteracyPage() {
 
       {filterModal !== null && (
         <FilterModal
-          item={FILTER_QUESTIONS[filterModal]}
+          item={filterQuestions[filterModal]}
           idx={filterModal}
-          total={FILTER_QUESTIONS.length}
+          total={filterQuestions.length}
           onClose={() => setFilterModal(null)}
           onPrev={() => setFilterModal(i => Math.max(0, i - 1))}
-          onNext={() => setFilterModal(i => Math.min(FILTER_QUESTIONS.length - 1, i + 1))}
+          onNext={() => setFilterModal(i => Math.min(filterQuestions.length - 1, i + 1))}
           hasPrev={filterModal > 0}
-          hasNext={filterModal < FILTER_QUESTIONS.length - 1}
+          hasNext={filterModal < filterQuestions.length - 1}
         />
       )}
 

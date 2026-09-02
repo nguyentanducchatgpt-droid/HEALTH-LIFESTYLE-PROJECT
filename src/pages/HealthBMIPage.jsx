@@ -178,6 +178,8 @@ const WAIST_RISKS = [
 ];
 
 function BMIModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -240,14 +242,14 @@ function BMIModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
-              ← Trước</button>
+              {p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {BMI_CATS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
-              Sau →</button>
+              {p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>
@@ -324,6 +326,8 @@ const TREND_ITEMS = [
 ];
 
 function WaistModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -386,14 +390,14 @@ function WaistModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
-              ← Trước</button>
+              {p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {WAIST_RISKS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
-              Sau →</button>
+              {p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>
@@ -401,6 +405,8 @@ function WaistModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 }
 
 function TrendModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -460,14 +466,14 @@ function TrendModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
-              ← Trước</button>
+              {p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{idx + 1} / {TREND_ITEMS.length}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
-              Sau →</button>
+              {p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>
@@ -475,13 +481,16 @@ function TrendModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 }
 
 function BMICalculator() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
+  const cats = BMI_CATS.map((c, i) => ({...c, ...(p.bmi_cats_tr?.[i] || {})}));
   const e0 = (() => { try { return JSON.parse(localStorage.getItem(E0_KEY)) || {}; } catch { return {}; } })();
   const [weight, setWeight] = useState(e0.weight || '');
   const [height, setHeight] = useState(e0.height || '');
   const [waist, setWaist] = useState(e0.waist || '');
   const [sex, setSex] = useState(e0.sex || 'male');
   const bmi = weight && height ? (weight / Math.pow(height / 100, 2)).toFixed(1) : null;
-  const cat = bmi ? BMI_CATS.find((c, i) => {
+  const cat = bmi ? cats.find((c, i) => {
     if (i === 0) return bmi < 18.5;
     if (i === 1) return bmi >= 18.5 && bmi < 25;
     if (i === 2) return bmi >= 25 && bmi < 30;
@@ -550,6 +559,9 @@ function BMICalculator() {
 export default function HealthBMIPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const cats = BMI_CATS.map((c, i) => ({...c, ...(p.bmi_cats_tr?.[i] || {})}));
+  const waistRisks = WAIST_RISKS.map((w, i) => ({...w, ...(p.waist_risks_tr?.[i] || {})}));
+  const trendItems = TREND_ITEMS.map((tr, i) => ({...tr, ...(p.trend_items_tr?.[i] || {})}));
   const [bmiModal, setBmiModal] = useState(null);
   const [waistModal, setWaistModal] = useState(null);
   const [trendModal, setTrendModal] = useState(null);
@@ -603,7 +615,7 @@ export default function HealthBMIPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bmi_s2_h2 || 'Phân Loại BMI & Hành Động'}</h2>
         <p className="text-muted text-lg mb-6">{p.bmi_s2_sub || 'BMI là chỉ số sàng lọc — cần kết hợp với vòng eo và các chỉ số khác để đánh giá toàn diện'}</p>
         <div className="space-y-3">
-          {BMI_CATS.map((c, i) => (
+          {cats.map((c, i) => (
             <div key={c.label}
               className="group/bmi rounded-2xl border border-border bg-surface p-4 flex gap-4 cursor-pointer hover:shadow-md transition-all duration-200"
               style={{ '--hc': c.color }}
@@ -629,7 +641,7 @@ export default function HealthBMIPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bmi_s3_h2 || 'Vòng Eo — Chỉ Số Quan Trọng Hơn Cân Nặng'}</h2>
         <p className="text-muted text-lg mb-6">Mỡ bụng nội tạng liên quan đến nguy cơ tim mạch, đái tháo đường type 2, gan nhiễm mỡ và hội chứng chuyển hóa</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          {WAIST_RISKS.map((w, i) => (
+          {waistRisks.map((w, i) => (
             <div key={w.group}
               className="rounded-2xl border border-border bg-surface p-5 cursor-pointer hover:shadow-md transition-all duration-200"
               onClick={() => setWaistModal(i)}
@@ -671,7 +683,7 @@ export default function HealthBMIPage() {
           <h3 className="font-bold text-text mb-1">Nhìn Xu Hướng, Không Nhìn Một Con Số</h3>
           <p className="text-xs text-muted mb-4 opacity-60">Nhấp vào mỗi kịch bản để xem phân tích chi tiết</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {TREND_ITEMS.map((item, i) => (
+            {trendItems.map((item, i) => (
               <div key={item.t}
                 className="rounded-xl border p-3 cursor-pointer hover:shadow-md transition-all duration-200"
                 style={{ borderColor: `${item.color}25`, background: `${item.color}08` }}
@@ -693,35 +705,35 @@ export default function HealthBMIPage() {
 
       {bmiModal !== null && (
         <BMIModal
-          item={BMI_CATS[bmiModal]}
+          item={cats[bmiModal]}
           idx={bmiModal}
           onClose={() => setBmiModal(null)}
           onPrev={() => setBmiModal(i => Math.max(0, i - 1))}
-          onNext={() => setBmiModal(i => Math.min(BMI_CATS.length - 1, i + 1))}
+          onNext={() => setBmiModal(i => Math.min(cats.length - 1, i + 1))}
           hasPrev={bmiModal > 0}
-          hasNext={bmiModal < BMI_CATS.length - 1}
+          hasNext={bmiModal < cats.length - 1}
         />
       )}
       {waistModal !== null && (
         <WaistModal
-          item={WAIST_RISKS[waistModal]}
+          item={waistRisks[waistModal]}
           idx={waistModal}
           onClose={() => setWaistModal(null)}
           onPrev={() => setWaistModal(i => Math.max(0, i - 1))}
-          onNext={() => setWaistModal(i => Math.min(WAIST_RISKS.length - 1, i + 1))}
+          onNext={() => setWaistModal(i => Math.min(waistRisks.length - 1, i + 1))}
           hasPrev={waistModal > 0}
-          hasNext={waistModal < WAIST_RISKS.length - 1}
+          hasNext={waistModal < waistRisks.length - 1}
         />
       )}
       {trendModal !== null && (
         <TrendModal
-          item={TREND_ITEMS[trendModal]}
+          item={trendItems[trendModal]}
           idx={trendModal}
           onClose={() => setTrendModal(null)}
           onPrev={() => setTrendModal(i => Math.max(0, i - 1))}
-          onNext={() => setTrendModal(i => Math.min(TREND_ITEMS.length - 1, i + 1))}
+          onNext={() => setTrendModal(i => Math.min(trendItems.length - 1, i + 1))}
           hasPrev={trendModal > 0}
-          hasNext={trendModal < TREND_ITEMS.length - 1}
+          hasNext={trendModal < trendItems.length - 1}
         />
       )}
     </div>

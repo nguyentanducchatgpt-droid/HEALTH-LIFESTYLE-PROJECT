@@ -187,6 +187,8 @@ function PhaseCard({ item, onClick }) {
 }
 
 function PhaseModal({ item, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -276,16 +278,16 @@ function PhaseModal({ item, total, onClose, onPrev, onNext, hasPrev, hasNext }) 
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}>
-              ← Trước
+              {p.e_prev_btn || '← Trước'}
             </button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>P{item.phase} / {total}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}>
-              Sau →
+              {p.e_next_btn || 'Sau →'}
             </button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -318,6 +320,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthRoadmapPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const phases = PHASES.map((ph, i) => ({ ...ph, ...(p.rm_phases_tr?.[i] || {}) }));
+  const subLinks = SUB_LINKS.map((s, i) => ({ ...s, ...(p.rm_links_tr?.[i] || {}) }));
   const [phaseModal, setPhaseModal] = useState(null);
 
   useEffect(() => {
@@ -375,7 +379,7 @@ export default function HealthRoadmapPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.rm_s1_h2 || 'Lộ Trình 12 Tuần'}</h2>
         <p className="text-muted text-lg mb-6">Nhấn vào từng giai đoạn để xem mục tiêu chi tiết và milestone.</p>
         <div className="space-y-3">
-          {PHASES.map((ph, i) => (
+          {phases.map((ph, i) => (
             <PhaseCard key={i} item={ph} onClick={() => setPhaseModal(i)} />
           ))}
         </div>
@@ -385,7 +389,7 @@ export default function HealthRoadmapPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.rm_s2_h2 || 'Tất Cả Chuyên Đề'}</h2>
         <p className="text-muted text-lg mb-6">Khám phá từng chủ đề theo thứ tự lộ trình hoặc nhảy vào bất kỳ chuyên đề nào bạn quan tâm.</p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {SUB_LINKS.map((s, i) => (
+          {subLinks.map((s, i) => (
             <Link key={i} to={s.to} className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 hover:border-purple-500/30 transition-colors group">
               <span className="text-2xl">{s.icon}</span>
               <span className="text-lg font-medium text-text group-hover:text-white transition-colors">{s.title}</span>
@@ -412,13 +416,13 @@ export default function HealthRoadmapPage() {
 
       {phaseModal !== null && (
         <PhaseModal
-          item={PHASES[phaseModal]}
-          total={PHASES.length}
+          item={phases[phaseModal]}
+          total={phases.length}
           onClose={() => setPhaseModal(null)}
           onPrev={() => setPhaseModal(i => Math.max(0, i - 1))}
-          onNext={() => setPhaseModal(i => Math.min(PHASES.length - 1, i + 1))}
+          onNext={() => setPhaseModal(i => Math.min(phases.length - 1, i + 1))}
           hasPrev={phaseModal > 0}
-          hasNext={phaseModal < PHASES.length - 1}
+          hasNext={phaseModal < phases.length - 1}
         />
       )}
     </div>

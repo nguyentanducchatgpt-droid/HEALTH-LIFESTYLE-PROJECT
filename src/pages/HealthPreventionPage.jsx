@@ -392,6 +392,8 @@ function VaccineCard({ item, onClick }) {
 }
 
 function VaccineModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -457,14 +459,14 @@ function VaccineModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 06</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -502,6 +504,8 @@ function ScreeningCard({ item, onClick }) {
 }
 
 function ScreeningModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -567,14 +571,14 @@ function ScreeningModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 04</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -615,6 +619,8 @@ function PillarCard({ item, onClick }) {
 }
 
 function PillarModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -683,14 +689,14 @@ function PillarModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 05</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -723,6 +729,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthPreventionPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const vaccineSchedule = VACCINE_SCHEDULE.map((v, i) => ({ ...v, ...(p.prev_vaccines_tr?.[i] || {}) }));
+  const cancerScreening = CANCER_SCREENING.map((s, i) => ({ ...s, ...(p.prev_cancer_tr?.[i] || {}) }));
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [pillarModal, setPillarModal] = useState(null);
   const [vaccineModal, setVaccineModal] = useState(null);
@@ -802,7 +810,7 @@ export default function HealthPreventionPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.prev_s2_h2 || 'Lịch Tiêm Vaccine Người Lớn'}</h2>
         <p className="text-muted text-lg mb-6">Vaccine không chỉ dành cho trẻ em — người lớn cũng cần cập nhật lịch tiêm định kỳ. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {VACCINE_SCHEDULE.map((v, i) => (
+          {vaccineSchedule.map((v, i) => (
             <VaccineCard key={i} item={v} onClick={() => setVaccineModal(i)} />
           ))}
         </div>
@@ -812,7 +820,7 @@ export default function HealthPreventionPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.prev_s3_h2 || 'Tầm Soát Ung Thư Theo Tuổi'}</h2>
         <p className="text-muted text-lg mb-6">Phát hiện sớm là sự khác biệt giữa chữa khỏi và không chữa được. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {CANCER_SCREENING.map((s, i) => (
+          {cancerScreening.map((s, i) => (
             <ScreeningCard key={i} item={s} onClick={() => setScreeningModal(i)} />
           ))}
         </div>
@@ -823,12 +831,12 @@ export default function HealthPreventionPage() {
 
       {vaccineModal !== null && (
         <VaccineModal
-          item={VACCINE_SCHEDULE[vaccineModal]}
+          item={vaccineSchedule[vaccineModal]}
           onClose={() => setVaccineModal(null)}
           onPrev={() => setVaccineModal(i => Math.max(0, i - 1))}
-          onNext={() => setVaccineModal(i => Math.min(VACCINE_SCHEDULE.length - 1, i + 1))}
+          onNext={() => setVaccineModal(i => Math.min(vaccineSchedule.length - 1, i + 1))}
           hasPrev={vaccineModal > 0}
-          hasNext={vaccineModal < VACCINE_SCHEDULE.length - 1}
+          hasNext={vaccineModal < vaccineSchedule.length - 1}
         />
       )}
 
@@ -845,12 +853,12 @@ export default function HealthPreventionPage() {
 
       {screeningModal !== null && (
         <ScreeningModal
-          item={CANCER_SCREENING[screeningModal]}
+          item={cancerScreening[screeningModal]}
           onClose={() => setScreeningModal(null)}
           onPrev={() => setScreeningModal(i => Math.max(0, i - 1))}
-          onNext={() => setScreeningModal(i => Math.min(CANCER_SCREENING.length - 1, i + 1))}
+          onNext={() => setScreeningModal(i => Math.min(cancerScreening.length - 1, i + 1))}
           hasPrev={screeningModal > 0}
-          hasNext={screeningModal < CANCER_SCREENING.length - 1}
+          hasNext={screeningModal < cancerScreening.length - 1}
         />
       )}
     </div>

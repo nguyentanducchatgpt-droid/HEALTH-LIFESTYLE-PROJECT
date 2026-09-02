@@ -290,6 +290,8 @@ function MetricCard({ item, onClick }) {
 }
 
 function MetricModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -356,14 +358,14 @@ function MetricModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 07</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -398,6 +400,8 @@ function PrincipleCard({ item, onClick }) {
 }
 
 function PrincipleModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -460,14 +464,14 @@ function PrincipleModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{item.num} / 04</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -565,6 +569,8 @@ function DailyCheckForm() {
 export default function HealthSelfMonitoringPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const metrics = METRICS.map((m, i) => ({ ...m, ...(p.sm_metrics_tr?.[i] || {}) }));
+  const principles = PRINCIPLES.map((pr, i) => ({ ...pr, ...(p.sm_principles_tr?.[i] || {}) }));
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [metricModal, setMetricModal] = useState(null);
   const [principleModal, setPrincipleModal] = useState(null);
@@ -633,7 +639,7 @@ export default function HealthSelfMonitoringPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.sm_s1_h2 || '7 Chỉ Số Cần Theo Dõi'}</h2>
         <p className="text-muted text-lg mb-6">Không nhất thiết theo dõi tất cả mỗi ngày — mỗi chỉ số có tần suất phù hợp riêng. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {METRICS.map((m, i) => (
+          {metrics.map((m, i) => (
             <MetricCard key={i} item={m} onClick={() => setMetricModal(i)} />
           ))}
         </div>
@@ -649,8 +655,8 @@ export default function HealthSelfMonitoringPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.sm_s2_h2 || 'Nguyên Tắc Theo Dõi Hiệu Quả'}</h2>
         <p className="text-muted text-lg mb-6">4 nguyên tắc cốt lõi để dữ liệu bạn thu thập thực sự có ý nghĩa. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {PRINCIPLES.map((p, i) => (
-            <PrincipleCard key={i} item={p} onClick={() => setPrincipleModal(i)} />
+          {principles.map((pr, i) => (
+            <PrincipleCard key={i} item={pr} onClick={() => setPrincipleModal(i)} />
           ))}
         </div>
       </RevealBlock>
@@ -660,23 +666,23 @@ export default function HealthSelfMonitoringPage() {
 
       {metricModal !== null && (
         <MetricModal
-          item={METRICS[metricModal]}
+          item={metrics[metricModal]}
           onClose={() => setMetricModal(null)}
           onPrev={() => setMetricModal(i => Math.max(0, i - 1))}
-          onNext={() => setMetricModal(i => Math.min(METRICS.length - 1, i + 1))}
+          onNext={() => setMetricModal(i => Math.min(metrics.length - 1, i + 1))}
           hasPrev={metricModal > 0}
-          hasNext={metricModal < METRICS.length - 1}
+          hasNext={metricModal < metrics.length - 1}
         />
       )}
 
       {principleModal !== null && (
         <PrincipleModal
-          item={PRINCIPLES[principleModal]}
+          item={principles[principleModal]}
           onClose={() => setPrincipleModal(null)}
           onPrev={() => setPrincipleModal(i => Math.max(0, i - 1))}
-          onNext={() => setPrincipleModal(i => Math.min(PRINCIPLES.length - 1, i + 1))}
+          onNext={() => setPrincipleModal(i => Math.min(principles.length - 1, i + 1))}
           hasPrev={principleModal > 0}
-          hasNext={principleModal < PRINCIPLES.length - 1}
+          hasNext={principleModal < principles.length - 1}
         />
       )}
     </div>

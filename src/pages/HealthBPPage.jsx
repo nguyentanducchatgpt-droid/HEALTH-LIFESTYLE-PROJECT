@@ -349,6 +349,8 @@ const LIFESTYLE = [
 ];
 
 function BPModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -416,14 +418,14 @@ function BPModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -432,11 +434,14 @@ function BPModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }
 }
 
 function BPEntryModal({ entry, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
-  const cls = entry.sys > 180 || entry.dia > 120 ? BP_CATS[4]
-    : entry.sys >= 140 || entry.dia >= 90 ? BP_CATS[3]
-    : entry.sys >= 130 || entry.dia >= 80 ? BP_CATS[2]
-    : entry.sys >= 120 ? BP_CATS[1]
-    : BP_CATS[0];
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
+  const bpCats = BP_CATS.map((c, i) => ({...c, ...(p.bp_cats_tr?.[i] || {})}));
+  const cls = entry.sys > 180 || entry.dia > 120 ? bpCats[4]
+    : entry.sys >= 140 || entry.dia >= 90 ? bpCats[3]
+    : entry.sys >= 130 || entry.dia >= 80 ? bpCats[2]
+    : entry.sys >= 120 ? bpCats[1]
+    : bpCats[0];
 
   useEffect(() => {
     const onKey = e => {
@@ -524,14 +529,14 @@ function BPEntryModal({ entry, idx, total, onClose, onPrev, onNext, hasPrev, has
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? cls.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${cls.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${cls.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? cls.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${cls.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${cls.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -642,6 +647,9 @@ function BPJournal() {
 export default function HealthBPPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const bpCats = BP_CATS.map((c, i) => ({...c, ...(p.bp_cats_tr?.[i] || {})}));
+  const steps = STEPS.map((s, i) => ({...s, ...(p.bp_steps_tr?.[i] || {})}));
+  const lifestyle = LIFESTYLE.map((l, i) => ({...l, ...(p.bp_lifestyle_tr?.[i] || {})}));
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [bpModal, setBpModal] = useState(null);
   const [stepModal, setStepModal] = useState(null);
@@ -719,7 +727,7 @@ export default function HealthBPPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s1_h2 || 'Phân Loại Huyết Áp (AHA 2017)'}</h2>
         <p className="text-muted text-lg mb-6">Đơn vị mmHg. Áp dụng cho người lớn ≥ 18 tuổi, không dùng thuốc huyết áp.</p>
         <div className="space-y-3">
-          {BP_CATS.map((c, i) => (
+          {bpCats.map((c, i) => (
             <div key={i}
               onClick={() => setBpModal(i)}
               className="rounded-2xl border border-border p-4 flex flex-col sm:flex-row sm:items-center gap-3 cursor-pointer transition-colors"
@@ -750,7 +758,7 @@ export default function HealthBPPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s2_h2 || 'Kỹ Thuật Đo Đúng Chuẩn'}</h2>
         <p className="text-muted text-lg mb-6">Sai kỹ thuật có thể khiến kết quả lệch 10–20 mmHg.</p>
         <div className="grid sm:grid-cols-2 gap-4">
-          {STEPS.map((s, i) => (
+          {steps.map((s, i) => (
             <div key={i}
               onClick={() => setStepModal(i)}
               className="rounded-2xl border border-border bg-surface p-4 flex gap-4 cursor-pointer hover:border-red-500/40 transition-colors">
@@ -773,7 +781,7 @@ export default function HealthBPPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s3_h2 || 'Lối Sống Kiểm Soát Huyết Áp'}</h2>
         <p className="text-muted text-lg mb-6">Thay đổi lối sống có thể giảm HA 5–20 mmHg mà không cần thuốc.</p>
         <div className="grid sm:grid-cols-2 gap-4">
-          {LIFESTYLE.map((l, i) => (
+          {lifestyle.map((l, i) => (
             <div key={i}
               onClick={() => setLifestyleModal(i)}
               className="rounded-2xl border border-border bg-surface p-4 flex gap-3 cursor-pointer hover:border-red-500/40 transition-colors">
@@ -801,38 +809,38 @@ export default function HealthBPPage() {
 
       {bpModal !== null && (
         <BPModal
-          item={BP_CATS[bpModal]}
+          item={bpCats[bpModal]}
           idx={bpModal}
-          total={BP_CATS.length}
+          total={bpCats.length}
           onClose={() => setBpModal(null)}
           onPrev={() => setBpModal(i => Math.max(0, i - 1))}
-          onNext={() => setBpModal(i => Math.min(BP_CATS.length - 1, i + 1))}
+          onNext={() => setBpModal(i => Math.min(bpCats.length - 1, i + 1))}
           hasPrev={bpModal > 0}
-          hasNext={bpModal < BP_CATS.length - 1}
+          hasNext={bpModal < bpCats.length - 1}
         />
       )}
       {stepModal !== null && (
         <BPModal
-          item={{ ...STEPS[stepModal], label: STEPS[stepModal].title, color: COLOR, rgb: RGB }}
+          item={{ ...steps[stepModal], label: steps[stepModal].title, color: COLOR, rgb: RGB }}
           idx={stepModal}
-          total={STEPS.length}
+          total={steps.length}
           onClose={() => setStepModal(null)}
           onPrev={() => setStepModal(i => Math.max(0, i - 1))}
-          onNext={() => setStepModal(i => Math.min(STEPS.length - 1, i + 1))}
+          onNext={() => setStepModal(i => Math.min(steps.length - 1, i + 1))}
           hasPrev={stepModal > 0}
-          hasNext={stepModal < STEPS.length - 1}
+          hasNext={stepModal < steps.length - 1}
         />
       )}
       {lifestyleModal !== null && (
         <BPModal
-          item={{ ...LIFESTYLE[lifestyleModal], label: LIFESTYLE[lifestyleModal].title, color: COLOR, rgb: RGB }}
+          item={{ ...lifestyle[lifestyleModal], label: lifestyle[lifestyleModal].title, color: COLOR, rgb: RGB }}
           idx={lifestyleModal}
-          total={LIFESTYLE.length}
+          total={lifestyle.length}
           onClose={() => setLifestyleModal(null)}
           onPrev={() => setLifestyleModal(i => Math.max(0, i - 1))}
-          onNext={() => setLifestyleModal(i => Math.min(LIFESTYLE.length - 1, i + 1))}
+          onNext={() => setLifestyleModal(i => Math.min(lifestyle.length - 1, i + 1))}
           hasPrev={lifestyleModal > 0}
-          hasNext={lifestyleModal < LIFESTYLE.length - 1}
+          hasNext={lifestyleModal < lifestyle.length - 1}
         />
       )}
     </div>

@@ -442,6 +442,8 @@ const TEST_FREQ = [
 ];
 
 function LipidModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -508,14 +510,14 @@ function LipidModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNex
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -548,6 +550,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthLipidsPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const lipidPanel = LIPID_PANEL.map((panel, i) => ({...panel, ...(p.lipid_panel_tr?.[i] || {})}));
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [lipidModal, setLipidModal] = useState(null);
   const [foodHelpModal, setFoodHelpModal] = useState(null);
@@ -618,7 +621,7 @@ export default function HealthLipidsPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.lip_s1_h2 || 'Bảng Lipid Máu'}</h2>
         <p className="text-muted text-lg mb-6">Nhấn vào từng chỉ số để xem chi tiết. Xét nghiệm sau nhịn ăn 9–12 tiếng để có kết quả chính xác nhất.</p>
         <div className="space-y-3">
-          {LIPID_PANEL.map((panel, i) => (
+          {lipidPanel.map((panel, i) => (
             <div key={i}
               onClick={() => setLipidModal(i)}
               className="rounded-2xl border p-4 flex items-center gap-4 cursor-pointer transition-colors"
@@ -710,14 +713,14 @@ export default function HealthLipidsPage() {
 
       {lipidModal !== null && (
         <LipidModal
-          item={LIPID_PANEL[lipidModal]}
+          item={lipidPanel[lipidModal]}
           idx={lipidModal}
-          total={LIPID_PANEL.length}
+          total={lipidPanel.length}
           onClose={() => setLipidModal(null)}
           onPrev={() => setLipidModal(i => Math.max(0, i - 1))}
-          onNext={() => setLipidModal(i => Math.min(LIPID_PANEL.length - 1, i + 1))}
+          onNext={() => setLipidModal(i => Math.min(lipidPanel.length - 1, i + 1))}
           hasPrev={lipidModal > 0}
-          hasNext={lipidModal < LIPID_PANEL.length - 1}
+          hasNext={lipidModal < lipidPanel.length - 1}
         />
       )}
       {foodHelpModal !== null && (

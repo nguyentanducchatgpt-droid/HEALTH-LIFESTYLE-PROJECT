@@ -8755,6 +8755,13 @@
     "e7_intro": "Mit der Explosion von TikTok, YouTube und Gesundheits-Influencern ist das Filtern von Gesundheitsinformationen eine wichtige Lebenskompetenz.",
     "e7_danger_heading": "❌ Gefährliche Phrasen",
     "e7_safe_heading": "✓ Sichere Sprache",
+    "e_detail_btn": "Details →",
+    "e_prev_btn": "← Zurück",
+    "e_next_btn": "Weiter →",
+    "e_esc_hint": "ESC drücken oder außerhalb klicken zum Schließen",
+    "e_profile_banner": "✦ Dein Profil",
+    "e_waist_risk_subtitle": "· Taillenumfang & Gesundheitsrisiko",
+    "e_footnote_bmi": "* BMI unterscheidet nicht zwischen Fett und Muskel — Sportler können hohen BMI mit niedrigem Körperfettanteil haben. Immer mit Taillenumfang kombinieren.",
     "sub_breadcrumb": "Gesundheitswissen",
     "sub_profile_label": "✦ Dein Profil",
     "sub_back_footer": "Zurück zu Gesundheitswissen",
@@ -8841,7 +8848,183 @@
     "rm_desc": "Eine strukturierte Reise vom Verständnis grundlegender Kennzahlen über regelmäßiges Monitoring und aktive Prävention bis hin zur nachhaltigen gesunden Lebensweise.",
     "rm_caption": "Wissen → Handeln → Nachhaltigkeit",
     "rm_s1_h2": "12-Wochen-Roadmap",
-    "rm_s2_h2": "Alle Themen"
+    "rm_s2_h2": "Alle Themen",
+    "bmi_cats_tr": [
+      {"label": "Untergewicht", "action": "Ernährung, Muskelmasse und Grunderkrankungen prüfen. Protein und gesunde Kalorien erhöhen."},
+      {"label": "Normalgewicht", "action": "Gewicht halten. Monatliche Trends verfolgen. Auch Taillenumfang messen."},
+      {"label": "Übergewicht", "action": "Ernährung anpassen, mehr Bewegung. Taille messen, um Bauchfett zu beurteilen."},
+      {"label": "Adipositas Grad I", "action": "Langfristiger Plan nötig. Fachkundige Ernährungs- und Bewegungsberatung suchen."},
+      {"label": "Adipositas Grad II–III", "action": "Umfassende medizinische Beurteilung nötig. Spezialistenunterstützung erwägen."}
+    ],
+    "waist_risks_tr": [
+      {"group": "Männer", "normal": "Normal", "danger": "Hohes Risiko"},
+      {"group": "Frauen", "normal": "Normal", "danger": "Hohes Risiko"}
+    ],
+    "trend_items_tr": [
+      {"t": "Gewicht sinkt kaum, Taille wird 3–5 cm kleiner", "n": "✓ Guter Fortschritt — Viszeralfett nimmt ab"},
+      {"t": "Gewicht stabil, Taille nimmt zu", "n": "⚠ Ernährung, Alkohol, Stress, Schlaf überprüfen"},
+      {"t": "Schnelle Taillenvergrößerung mit Müdigkeit oder Kurzatmigkeit", "n": "→ Arzt aufsuchen"}
+    ],
+    "bp_cats_tr": [
+      {"label": "Normal", "action": "Gesunden Lebensstil beibehalten, jährliche Kontrolle."},
+      {"label": "Erhöht", "action": "Lebensstiländerungen nötig. Natrium reduzieren, mehr Bewegung."},
+      {"label": "Bluthochdruck Grad 1", "action": "Lebensstil + ggf. Medikamente. Arzt aufsuchen."},
+      {"label": "Bluthochdruck Grad 2", "action": "Medikamente plus Lebensstiländerungen. Dringend zum Arzt."},
+      {"label": "Hypertensiver Notfall", "action": "Notfall: sofort 112 anrufen oder in die Notaufnahme."}
+    ],
+    "bp_steps_tr": [
+      {"title": "5 Minuten Ruhe"},
+      {"title": "Richtig hinsetzen"},
+      {"title": "Manschette korrekt anlegen"},
+      {"title": "Zweimal messen"},
+      {"title": "Ergebnisse aufzeichnen"}
+    ],
+    "bp_lifestyle_tr": [
+      {"title": "Natrium reduzieren"},
+      {"title": "Regelmäßig Sport"},
+      {"title": "Gesundes Gewicht halten"},
+      {"title": "Alkohol einschränken"},
+      {"title": "Nicht rauchen"},
+      {"title": "Stress bewältigen"}
+    ],
+    "bs_cats_tr": [
+      {"label": "Hypoglykämie", "note": "Sofort 15g schnelle Kohlenhydrate essen. Nach 15 Minuten erneut messen."},
+      {"label": "Normal (nüchtern)", "note": "Ideal. Ausgewogene Ernährung und regelmäßige Bewegung beibehalten."},
+      {"label": "Prädiabetes (nüchtern)", "note": "Hohes Risiko. Sofort Lebensstil ändern, um Fortschreiten zu verhindern."},
+      {"label": "Diabetes (nüchtern)", "note": "Mit 2 Tests bestätigen. Innerhalb 1 Woche zum Arzt."},
+      {"label": "Nach dem Essen 2h — Normal", "note": "Gute Blutzuckerreaktion nach dem Essen."},
+      {"label": "Nach dem Essen 2h — Prädiabetes", "note": "Körper hat Schwierigkeiten, Kohlenhydrate zu verarbeiten."}
+    ],
+    "hbac_cats_tr": [
+      {"label": "Normal", "note": "< 5,7% — niedriges Risiko für Typ-2-Diabetes."},
+      {"label": "Prädiabetes", "note": "5,7–6,4% — Lebensstiländerungen können dies umkehren."},
+      {"label": "Diabetes (bestätigt)", "note": "≥ 6,5% — medizinische Behandlung nötig."},
+      {"label": "Gut kontrollierter Diabetes", "note": "< 7% — ADA-Ziel für die meisten Erwachsenen mit Diabetes."}
+    ],
+    "lipid_panel_tr": [
+      {"label": "Gesamtcholesterin", "desc": "Gesamtcholesterin im Blut. Allein nicht ausreichend — muss mit LDL/HDL betrachtet werden."},
+      {"label": "LDL-C — 'Schlechtes' Cholesterin", "desc": "Lipoprotein niedriger Dichte — kann Arteriosklerose verursachen."},
+      {"label": "HDL-C — 'Gutes' Cholesterin", "desc": "Lipoprotein hoher Dichte — sammelt überschüssiges Cholesterin ein. Je höher, desto besser."},
+      {"label": "Triglyzeride", "desc": "Blutfette. Erhöht durch raffinierte Kohlenhydrate, Zucker, Alkohol und Bewegungsmangel."}
+    ],
+    "rf_groups_tr": [
+      {"title": "Schlaganfall — Sofort 112 anrufen", "tag": "NOTFALL", "action": "Sofort 112 anrufen oder Notaufnahme — jede Minute sterben 1,9 Mio. Gehirnzellen."},
+      {"title": "Herzinfarkt", "tag": "NOTFALL", "action": "Sofort 112 anrufen, 1 Aspirin 300mg kauen (falls keine Allergie), ruhen — nicht selbst fahren."},
+      {"title": "Schwere Infektion / Septischer Schock", "tag": "NOTFALL", "action": "Sofort in die Notaufnahme — nicht abwarten, ob Medikamente helfen."},
+      {"title": "Akute Atemnot", "tag": "NOTFALL", "action": "Sofort 112 anrufen. Person aufrecht hinsetzen zur Erleichterung der Atmung."}
+    ],
+    "rf_soon_tr": [
+      {"sign": "Unerklärlicher Gewichtsverlust > 5% in 1 Monat", "urgency": "Innerhalb 1–2 Wochen"},
+      {"sign": "Anhaltende Müdigkeit > 2 Wochen trotz ausreichend Schlaf", "urgency": "Innerhalb 1–2 Wochen"},
+      {"sign": "Häufiges Wasserlassen, starker Durst, verschwommenes Sehen", "urgency": "Innerhalb 1 Woche"},
+      {"sign": "Anhaltender Husten > 3 Wochen oder blutiger Auswurf", "urgency": "Innerhalb 1 Woche"},
+      {"sign": "Neue schmerzlose Schwellung irgendwo am Körper", "urgency": "Innerhalb 1–2 Wochen"},
+      {"sign": "Anhaltende Verdauungsprobleme oder Schluckbeschwerden", "urgency": "Innerhalb 1 Woche"},
+      {"sign": "Abnorme Blutungen — gynäkologisch oder rektal", "urgency": "Innerhalb 1 Woche"},
+      {"sign": "Muttermal verändert Farbe, Größe oder Form", "urgency": "Innerhalb 1–2 Wochen"}
+    ],
+    "rf_prep_tr": [
+      {"title": "112 auswendig kennen", "desc": "Im Handy gespeichert für schnellen Zugriff"},
+      {"title": "Erste-Hilfe-Kasten", "desc": "Desinfektionsmittel, Verbände, Thermometer, Blutdruckmessgerät"},
+      {"title": "FAST-Regel für Schlaganfall", "desc": "Face · Arm · Speech · Time — sofort 112 anrufen"},
+      {"title": "Notfallkontaktliste", "desc": "Sichtbar zu Hause aufhängen — besonders für Ältere"},
+      {"title": "Grundlegende Erste-Hilfe-Kenntnisse", "desc": "HLW, Wundversorgung, stabile Seitenlage erlernen"}
+    ],
+    "med_rules_tr": [
+      {"title": "Niemals Medikamente oder Dosis eigenmächtig ändern"},
+      {"title": "Zur richtigen Zeit und auf richtige Weise einnehmen"},
+      {"title": "Wechselwirkungen zwischen Medikamenten und Lebensmitteln beachten"},
+      {"title": "Verschreibungspflichtige Medikamente nicht teilen"},
+      {"title": "Medikamente richtig lagern"}
+    ],
+    "med_danger_tr": [
+      {"phrase": "'Mehr nehmen für schnellere Genesung'", "risk": "Überdosierung, Organtoxizität je nach Medikament"},
+      {"phrase": "'100% natürlich — völlig sicher'", "risk": "Natürlich ≠ sicher; Toxizität, Wechselwirkungen möglich"},
+      {"phrase": "'Ärzte wollen nicht, dass Sie das wissen'", "risk": "Verschwörungsrahmen zur Umgehung kritischen Denkens"},
+      {"phrase": "'Kein Rezept nötig'", "risk": "Maskierung ernster Symptome, Medikamentenresistenz"}
+    ],
+    "ml_filters_tr": [
+      {"title": "Wer hat diesen Inhalt erstellt?", "sub": "Qualifizierter Experte oder anonymes Konto?"},
+      {"title": "Wo wurde es veröffentlicht?", "sub": "Begutachtete Zeitschrift, seriöse Medien oder soziale Netzwerke?"},
+      {"title": "Wird Forschung zitiert?", "sub": "Werden reale, begutachtete Studien genannt?"},
+      {"title": "Wird etwas verkauft?", "sub": "Nahrungsergänzungsmittel, Kurse mit übertriebenen Versprechen?"},
+      {"title": "Gibt es einen Interessenkonflikt?", "sub": "Gesponsert? Profitiert finanziell von dem Rat?"}
+    ],
+    "prev_vaccines_tr": [
+      {"vaccine": "Grippe (Influenza)", "who": "Alle ab 6 Monaten", "freq": "Jährlich"},
+      {"vaccine": "Hepatitis B", "who": "Falls nicht immun", "freq": "3-Dosen-Serie"},
+      {"vaccine": "HPV", "who": "Frauen & Männer < 45 Jahre", "freq": "2–3 Dosen"},
+      {"vaccine": "Pneumokokken", "who": "> 65 Jahre oder chronisch krank", "freq": "1–2 Dosen"},
+      {"vaccine": "Tetanus-Diphtherie (Td)", "who": "Erwachsene alle 10 Jahre", "freq": "Alle 10 Jahre"},
+      {"vaccine": "Gürtelrose (Zoster)", "who": "> 50 Jahre", "freq": "2 Dosen (Shingrix)"}
+    ],
+    "prev_cancer_tr": [
+      {"screen": "Darmkrebs", "who": "Ab 45 Jahren", "freq": "Koloskopie/10J oder Stuhltest/Jahr"},
+      {"screen": "Brustkrebs", "who": "Frauen ab 40", "freq": "Mammographie alle 1–2 Jahre"},
+      {"screen": "Gebärmutterhalskrebs", "who": "Frauen ab 21", "freq": "Pap/3J oder HPV-Test/5J"},
+      {"screen": "Prostatakrebs", "who": "Männer ab 50", "freq": "PSA-Test — mit Arzt besprechen"},
+      {"screen": "Lungenkrebs", "who": "Raucher 50–80 J.", "freq": "Jährliches Niedrigdosis-CT"}
+    ],
+    "sm_principles_tr": [
+      {"title": "Trends verfolgen, nicht tägliche Zahlen"},
+      {"title": "Konsequent unter gleichen Bedingungen messen"},
+      {"title": "Mehrere Metriken kombinieren für das Gesamtbild"},
+      {"title": "Bei Veränderungen die Ursache untersuchen"},
+      {"title": "Daten bei Kontrolluntersuchungen mit dem Arzt teilen"}
+    ],
+    "chk_prep_tr": [
+      {"tip": "Symptome, Bedenken und Fragen vor dem Besuch aufschreiben"},
+      {"tip": "Alle aktuellen Medikamente und Nahrungsergänzungsmittel auflisten"},
+      {"tip": "Frühere Testergebnisse zum Vergleich mitbringen"},
+      {"tip": "Familiengeschichte von Herzerkrankungen, Krebs, Diabetes notieren"},
+      {"tip": "8–12 Stunden fasten, wenn Bluttests enthalten sind"}
+    ],
+    "ass_cats_tr": ["Bewegung", "Ernährung", "Schlaf", "Geist", "Vorbeugung", "Wissen"],
+    "ass_levels_tr": [
+      {"label": "Sehr verbesserungsbedürftig"},
+      {"label": "In Entwicklung"},
+      {"label": "Gut — Weiter so"},
+      {"label": "Sehr gut"},
+      {"label": "Ausgezeichnet"}
+    ],
+    "ass_q_submit": "Ergebnisse anzeigen →",
+    "ass_q_pending": "noch zu beantworten",
+    "ass_questions_tr": [
+      {"q": "An wie vielen Tagen/Woche bewegen Sie sich mindestens 20 Minuten?", "opts": ["Keine Bewegung", "1–2 Tage", "3–4 Tage", "5–6 Tage", "Täglich"]},
+      {"q": "Sitzen Sie häufig länger als 2 Stunden ohne Pause?", "opts": ["Fast jeden Tag", "Häufig", "Manchmal", "Selten", "Fast nie"]},
+      {"q": "Machen Sie mindestens 2×/Woche Krafttraining?", "opts": ["Nie", "Selten", "Manchmal", "Häufig", "Immer"]},
+      {"q": "Wie viele Portionen Gemüse und Obst essen Sie täglich?", "opts": ["Fast keine", "1 Portion", "2–3 Portionen", "4–5 Portionen", "≥ 5 Portionen"]},
+      {"q": "Essen Sie regelmäßig verarbeitete Lebensmittel / Fast Food?", "opts": ["Täglich", "4–6×/Woche", "2–3×/Woche", "1×/Woche", "Selten"]},
+      {"q": "Trinken Sie genug Wasser (ca. 2L/Tag)?", "opts": ["Nie", "Selten", "Manchmal", "Häufig", "Immer"]},
+      {"q": "Wie viele Stunden schlafen Sie pro Nacht?", "opts": ["< 5 Stunden", "5–6 Stunden", "6–7 Stunden", "7–8 Stunden", "> 8 Stunden"]},
+      {"q": "Wie fühlen Sie sich beim Aufwachen?", "opts": ["Sehr müde", "Müde", "Normal", "Wach", "Sehr wach und bereit"]},
+      {"q": "Wie hoch ist Ihr tägliches Stressniveau?", "opts": ["Extrem hoch", "Hoch", "Mittel", "Niedrig", "Sehr niedrig"]},
+      {"q": "Üben Sie Entspannungstechniken (Atemübungen, Meditation, Yoga) aus?", "opts": ["Nie", "Selten", "Manchmal", "Häufig", "Täglich"]},
+      {"q": "Wie oft gehen Sie zur Vorsorgeuntersuchung?", "opts": ["Nie", "Nur wenn krank", "Alle 2–3 Jahre", "Jährlich", "Häufiger wenn nötig"]},
+      {"q": "Rauchen Sie oder trinken Sie regelmäßig Alkohol?", "opts": ["Rauchen + viel Alkohol", "Eines von beidem, viel", "Eines von beidem, wenig", "Gelegentlich eines", "Keines von beiden"]},
+      {"q": "Wie aktiv informieren Sie sich über Gesundheitsthemen?", "opts": ["Nie", "Selten", "Manchmal", "Häufig", "Täglich"]},
+      {"q": "Kennen Sie Ihre Gesundheitswerte (BMI, Blutdruck, Blutzucker)?", "opts": ["Keine bekannt", "Einige bekannt", "Bekannt, nicht verfolgt", "Bekannt, gelegentlich verfolgt", "Bekannt, regelmäßig verfolgt"]},
+      {"q": "Wie selbstsicher sind Sie in der Verwaltung Ihrer Gesundheit?", "opts": ["Überhaupt nicht", "Wenig", "Mäßig", "Selbstsicher", "Sehr selbstsicher"]}
+    ],
+    "rm_phases_tr": [
+      {"title": "Grundlage — Den Körper kennen", "weeks": "Woche 1–2", "desc": "Persönliche Baseline aufbauen: Werte messen, Zahlen verstehen, Gesundheitsprofil erstellen.", "milestone": "Gesundheitsbewertung abschließen und Stärken/Schwächen kennen"},
+      {"title": "Aktion — Tägliche Überwachung", "weeks": "Woche 3–6", "desc": "Wichtige Werte verfolgen und täglich einchecken, um dauerhafte Gewohnheiten aufzubauen.", "milestone": "4 aufeinanderfolgende Wochen täglicher Überwachung ohne Auslassungen"},
+      {"title": "Optimierung — Aktive Vorbeugung", "weeks": "Woche 7–10", "desc": "Wissen anwenden für positive Lebensstiländerungen und Prävention chronischer Krankheiten.", "milestone": "Jährliche Untersuchung abschließen und Basis-Laborergebnisse haben"},
+      {"title": "Nachhaltigkeit — Gesundes Leben dauerhaft", "weeks": "Woche 11–12+", "desc": "Ihr Gesundheitsprogramm für das Leben aufrechterhalten und personalisieren.", "milestone": "Gesundheitsbewertung ≥ 75 Punkte beim zweiten Versuch"}
+    ],
+    "rm_links_tr": [
+      {"title": "Körpermassenindex"},
+      {"title": "Blutdruck"},
+      {"title": "Blutzucker"},
+      {"title": "Blutfette"},
+      {"title": "Warnsignale"},
+      {"title": "Arzneimittelsicherheit"},
+      {"title": "Informationsfilter"},
+      {"title": "Krankheitsprävention"},
+      {"title": "Selbstüberwachung"},
+      {"title": "Vorsorgeuntersuchung"},
+      {"title": "Gesundheitsbewertung"}
+    ]
   },
   "pillarF": {
     "id": "f",

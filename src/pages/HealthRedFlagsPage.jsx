@@ -375,6 +375,8 @@ const PREP_ITEMS = [
 ];
 
 function SoonModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -438,14 +440,14 @@ function SoonModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -454,6 +456,8 @@ function SoonModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext
 }
 
 function EmergencyModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -549,14 +553,14 @@ function EmergencyModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, ha
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs mt-4 opacity-40" style={{ color: '#9ca3af' }}>{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -589,6 +593,9 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 export default function HealthRedFlagsPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const emergencyGroups = EMERGENCY_GROUPS.map((g, i) => ({...g, ...(p.rf_groups_tr?.[i] || {})}));
+  const soonSigns = SOON_SIGNS.map((s, i) => ({...s, ...(p.rf_soon_tr?.[i] || {})}));
+  const prepItems = PREP_ITEMS.map((item, i) => { const tr = p.rf_prep_tr?.[i] || {}; return {...item, ...tr, ...(tr.title ? { sign: tr.title } : {})}; });
   const [emergencyModal, setEmergencyModal] = useState(null);
   const [soonModal, setSoonModal] = useState(null);
   const [prepModal, setPrepModal] = useState(null);
@@ -658,7 +665,7 @@ export default function HealthRedFlagsPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.rf_s1_h2 || 'Cấp Cứu Ngay Lập Tức'}</h2>
         <p className="text-muted text-lg mb-6">Các tình trạng dưới đây đòi hỏi xử lý trong phút — không phải giờ.</p>
         <div className="grid sm:grid-cols-2 gap-4">
-          {EMERGENCY_GROUPS.map((g, i) => (
+          {emergencyGroups.map((g, i) => (
             <div key={i}
               onClick={() => setEmergencyModal(i)}
               className="rounded-2xl border overflow-hidden cursor-pointer transition-all"
@@ -699,7 +706,7 @@ export default function HealthRedFlagsPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.rf_s2_h2 || 'Cần Đi Khám Sớm'}</h2>
         <p className="text-muted text-lg mb-6">Các dấu hiệu này không cần vào cấp cứu ngay nhưng cần đặt lịch khám trong thời gian ngắn. Click để xem chi tiết.</p>
         <div className="space-y-2">
-          {SOON_SIGNS.map((s, i) => (
+          {soonSigns.map((s, i) => (
             <div key={i}
               onClick={() => setSoonModal(i)}
               className="rounded-2xl border bg-surface p-4 flex items-center gap-4 cursor-pointer transition-all"
@@ -719,7 +726,7 @@ export default function HealthRedFlagsPage() {
         <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>{p.rf_s3_h2 || 'Chuẩn Bị Sẵn Sàng'}</h2>
         <p className="text-muted text-sm mb-5">4 việc cần làm ngay — click để xem hướng dẫn chi tiết</p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {PREP_ITEMS.map((p, i) => (
+          {prepItems.map((p, i) => (
             <div key={i}
               onClick={() => setPrepModal(i)}
               className="rounded-2xl border bg-surface p-4 flex gap-3 cursor-pointer transition-all"
@@ -743,38 +750,38 @@ export default function HealthRedFlagsPage() {
 
       {prepModal !== null && (
         <SoonModal
-          item={PREP_ITEMS[prepModal]}
+          item={prepItems[prepModal]}
           idx={prepModal}
-          total={PREP_ITEMS.length}
+          total={prepItems.length}
           onClose={() => setPrepModal(null)}
           onPrev={() => setPrepModal(i => Math.max(0, i - 1))}
-          onNext={() => setPrepModal(i => Math.min(PREP_ITEMS.length - 1, i + 1))}
+          onNext={() => setPrepModal(i => Math.min(prepItems.length - 1, i + 1))}
           hasPrev={prepModal > 0}
-          hasNext={prepModal < PREP_ITEMS.length - 1}
+          hasNext={prepModal < prepItems.length - 1}
         />
       )}
       {soonModal !== null && (
         <SoonModal
-          item={SOON_SIGNS[soonModal]}
+          item={soonSigns[soonModal]}
           idx={soonModal}
-          total={SOON_SIGNS.length}
+          total={soonSigns.length}
           onClose={() => setSoonModal(null)}
           onPrev={() => setSoonModal(i => Math.max(0, i - 1))}
-          onNext={() => setSoonModal(i => Math.min(SOON_SIGNS.length - 1, i + 1))}
+          onNext={() => setSoonModal(i => Math.min(soonSigns.length - 1, i + 1))}
           hasPrev={soonModal > 0}
-          hasNext={soonModal < SOON_SIGNS.length - 1}
+          hasNext={soonModal < soonSigns.length - 1}
         />
       )}
       {emergencyModal !== null && (
         <EmergencyModal
-          item={EMERGENCY_GROUPS[emergencyModal]}
+          item={emergencyGroups[emergencyModal]}
           idx={emergencyModal}
-          total={EMERGENCY_GROUPS.length}
+          total={emergencyGroups.length}
           onClose={() => setEmergencyModal(null)}
           onPrev={() => setEmergencyModal(i => Math.max(0, i - 1))}
-          onNext={() => setEmergencyModal(i => Math.min(EMERGENCY_GROUPS.length - 1, i + 1))}
+          onNext={() => setEmergencyModal(i => Math.min(emergencyGroups.length - 1, i + 1))}
           hasPrev={emergencyModal > 0}
-          hasNext={emergencyModal < EMERGENCY_GROUPS.length - 1}
+          hasNext={emergencyModal < emergencyGroups.length - 1}
         />
       )}
     </div>

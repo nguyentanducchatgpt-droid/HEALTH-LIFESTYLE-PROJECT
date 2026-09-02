@@ -8735,6 +8735,13 @@
     "e7_intro": "With the explosion of TikTok, YouTube, and health influencer content, filtering health information is a critical life skill.",
     "e7_danger_heading": "❌ Dangerous phrases",
     "e7_safe_heading": "✓ Safe language",
+    "e_detail_btn": "Details →",
+    "e_prev_btn": "← Prev",
+    "e_next_btn": "Next →",
+    "e_esc_hint": "Press ESC or click outside to close",
+    "e_profile_banner": "✦ Your Profile",
+    "e_waist_risk_subtitle": "· Waist & Health Risk",
+    "e_footnote_bmi": "* BMI does not distinguish fat from muscle — gym-goers may have high BMI but low body fat. Always combine with waist circumference.",
     "sub_breadcrumb": "Health Knowledge",
     "sub_profile_label": "✦ Your Profile",
     "sub_back_footer": "Back to Health Knowledge",
@@ -8821,7 +8828,183 @@
     "rm_desc": "A structured journey from understanding basic metrics, to regular monitoring, proactive disease prevention, and sustaining a healthy lifestyle for life.",
     "rm_caption": "Knowledge → action → sustainability",
     "rm_s1_h2": "12-Week Roadmap",
-    "rm_s2_h2": "All Topics"
+    "rm_s2_h2": "All Topics",
+    "bmi_cats_tr": [
+      {"label": "Underweight", "action": "Check diet, muscle mass, and underlying conditions. Increase protein and healthy calories."},
+      {"label": "Normal", "action": "Maintain weight. Track monthly trends. Also check waist circumference."},
+      {"label": "Overweight", "action": "Adjust diet, increase activity. Measure waist to assess abdominal fat."},
+      {"label": "Obese Class I", "action": "Long-term plan needed. Seek professional nutrition and exercise guidance."},
+      {"label": "Obese Class II–III", "action": "Comprehensive medical assessment needed. Consider specialist support."}
+    ],
+    "waist_risks_tr": [
+      {"group": "Male", "normal": "Normal", "danger": "High risk"},
+      {"group": "Female", "normal": "Normal", "danger": "High risk"}
+    ],
+    "trend_items_tr": [
+      {"t": "Weight barely drops but waist shrinks 3–5 cm", "n": "✓ Good progress — visceral fat reducing"},
+      {"t": "Weight stable, waist increasing", "n": "⚠ Review diet, alcohol, stress, sleep"},
+      {"t": "Rapid waist increase with fatigue, swelling, or shortness of breath", "n": "→ See a doctor"}
+    ],
+    "bp_cats_tr": [
+      {"label": "Normal", "action": "Maintain healthy lifestyle, annual check-up."},
+      {"label": "Elevated", "action": "Lifestyle changes needed. Reduce sodium, increase activity."},
+      {"label": "Hypertension Stage 1", "action": "Lifestyle changes + possible medication. See a doctor."},
+      {"label": "Hypertension Stage 2", "action": "Medication plus lifestyle changes required. Urgent medical attention."},
+      {"label": "Hypertensive Crisis", "action": "Emergency: call 115 immediately or go to the ER."}
+    ],
+    "bp_steps_tr": [
+      {"title": "Rest 5 Minutes"},
+      {"title": "Sit Correctly"},
+      {"title": "Position the Cuff Correctly"},
+      {"title": "Measure Twice"},
+      {"title": "Record the Results"}
+    ],
+    "bp_lifestyle_tr": [
+      {"title": "Reduce Sodium"},
+      {"title": "Exercise Regularly"},
+      {"title": "Maintain Healthy Weight"},
+      {"title": "Limit Alcohol"},
+      {"title": "No Smoking"},
+      {"title": "Manage Stress"}
+    ],
+    "bs_cats_tr": [
+      {"label": "Hypoglycaemia", "note": "Eat 15g fast carbs immediately. Recheck after 15 minutes."},
+      {"label": "Normal (fasting)", "note": "Ideal. Maintain balanced diet and regular exercise."},
+      {"label": "Pre-diabetes (fasting)", "note": "High risk. Change lifestyle now to prevent progression."},
+      {"label": "Diabetes (fasting)", "note": "Confirm with 2 tests. See a doctor within 1 week."},
+      {"label": "Post-meal 2h — Normal", "note": "Good blood sugar response after eating."},
+      {"label": "Post-meal 2h — Pre-diabetes", "note": "Body struggling to process carbs from meals."}
+    ],
+    "hbac_cats_tr": [
+      {"label": "Normal", "note": "< 5.7% — low risk of developing type 2 diabetes."},
+      {"label": "Pre-diabetes", "note": "5.7–6.4% — lifestyle changes can reverse this."},
+      {"label": "Diabetes (confirmed)", "note": "≥ 6.5% — needs medical management."},
+      {"label": "Well-Controlled Diabetes", "note": "< 7% — ADA target for most adults with diabetes."}
+    ],
+    "lipid_panel_tr": [
+      {"label": "Total Cholesterol", "desc": "Total blood cholesterol. Not sufficient alone — must be viewed with LDL/HDL."},
+      {"label": "LDL-C — 'Bad' Cholesterol", "desc": "Low-density lipoprotein — can accumulate in arterial walls causing atherosclerosis."},
+      {"label": "HDL-C — 'Good' Cholesterol", "desc": "High-density lipoprotein — collects excess cholesterol from tissues. Higher is better."},
+      {"label": "Triglycerides", "desc": "Blood fats. Elevated by refined carbs, sugar, alcohol, and lack of exercise."}
+    ],
+    "rf_groups_tr": [
+      {"title": "Stroke — Call 115 Immediately", "tag": "EMERGENCY", "action": "Call 115 or go to ER immediately — every minute 1.9 million brain cells die in stroke."},
+      {"title": "Heart Attack", "tag": "EMERGENCY", "action": "Call 115 immediately, chew 1 aspirin 300mg (if not allergic), rest — do not drive yourself."},
+      {"title": "Severe Infection / Septic Shock", "tag": "EMERGENCY", "action": "Go to emergency immediately — do not wait to see if medication helps."},
+      {"title": "Acute Shortness of Breath", "tag": "EMERGENCY", "action": "Call 115 or go to ER immediately. Sit patient upright to ease breathing."}
+    ],
+    "rf_soon_tr": [
+      {"sign": "Unexplained weight loss > 5% in 1 month", "urgency": "Within 1–2 weeks"},
+      {"sign": "Persistent fatigue > 2 weeks despite adequate sleep", "urgency": "Within 1–2 weeks"},
+      {"sign": "Frequent urination, excessive thirst, blurred vision", "urgency": "Within 1 week"},
+      {"sign": "Persistent cough > 3 weeks or bloody phlegm", "urgency": "Within 1 week"},
+      {"sign": "New painless lump anywhere on the body", "urgency": "Within 1–2 weeks"},
+      {"sign": "Persistent indigestion or difficulty swallowing", "urgency": "Within 1 week"},
+      {"sign": "Abnormal bleeding — gynaecological or rectal", "urgency": "Within 1 week"},
+      {"sign": "Mole changing colour, size, or shape (ABCDE rule)", "urgency": "Within 1–2 weeks"}
+    ],
+    "rf_prep_tr": [
+      {"title": "Memorise 115 (Emergency)", "desc": "Programme it into your phone for quick access"},
+      {"title": "First Aid Kit", "desc": "Antiseptic, bandages, thermometer, blood pressure cuff"},
+      {"title": "FAST Rule for Stroke", "desc": "Face drooping · Arm weakness · Speech difficulty · Time to call 115"},
+      {"title": "Emergency Contacts List", "desc": "Keep visible at home — especially for elderly or solo residents"},
+      {"title": "Basic First Aid Skills", "desc": "CPR, wound care, recovery position — learn at community level"}
+    ],
+    "med_rules_tr": [
+      {"title": "Never change medication or dose on your own"},
+      {"title": "Take at the correct time and in the correct way"},
+      {"title": "Be aware of food-drug interactions"},
+      {"title": "Never share prescription medications"},
+      {"title": "Store medications correctly"}
+    ],
+    "med_danger_tr": [
+      {"phrase": "'Take more for faster recovery'", "risk": "Overdose, organ toxicity depending on drug type"},
+      {"phrase": "'100% natural — completely safe'", "risk": "Natural ≠ safe; toxicity, interactions, contamination possible"},
+      {"phrase": "'Doctors don't want you to know this'", "risk": "Conspiracy framing to bypass critical thinking"},
+      {"phrase": "'No prescription needed'", "risk": "Masking serious symptoms, drug resistance, adverse effects"}
+    ],
+    "ml_filters_tr": [
+      {"title": "Who created this content?", "sub": "Qualified health professional, or anonymous account?"},
+      {"title": "Where was it published?", "sub": "Peer-reviewed journal, reputable media, or social media?"},
+      {"title": "Is research cited?", "sub": "Does it reference real, peer-reviewed studies?"},
+      {"title": "Is something being sold?", "sub": "Supplements, courses, devices with extravagant promises?"},
+      {"title": "Is there a conflict of interest?", "sub": "Sponsored? Financially benefits from the advice?"}
+    ],
+    "prev_vaccines_tr": [
+      {"vaccine": "Influenza", "who": "Everyone ≥ 6 months", "freq": "Annually"},
+      {"vaccine": "Hepatitis B", "who": "If not immune (check HBsAb)", "freq": "3-dose series"},
+      {"vaccine": "HPV", "who": "Women & men < 45 yrs", "freq": "2–3 doses"},
+      {"vaccine": "Pneumococcal", "who": "> 65 yrs or chronic disease", "freq": "1–2 doses"},
+      {"vaccine": "Tetanus-Diphtheria (Td)", "who": "Adults every 10 years", "freq": "Booster every 10 years"},
+      {"vaccine": "Shingles (Zoster)", "who": "> 50 yrs", "freq": "2 doses (Shingrix)"}
+    ],
+    "prev_cancer_tr": [
+      {"screen": "Colorectal Cancer", "who": "Age 45+", "freq": "Colonoscopy/10yr or stool test/yr"},
+      {"screen": "Breast Cancer", "who": "Women 40+", "freq": "Mammogram every 1–2 years"},
+      {"screen": "Cervical Cancer", "who": "Women from age 21", "freq": "Pap smear/3yr or HPV test/5yr"},
+      {"screen": "Prostate Cancer", "who": "Men 50+ (45 if high risk)", "freq": "PSA test — discuss with doctor"},
+      {"screen": "Lung Cancer", "who": "Smokers 50–80 (30+ pack-years)", "freq": "Annual low-dose CT scan"}
+    ],
+    "sm_principles_tr": [
+      {"title": "Track trends, not daily numbers"},
+      {"title": "Measure consistently under the same conditions"},
+      {"title": "Combine multiple metrics for the full picture"},
+      {"title": "When something changes, investigate the cause"},
+      {"title": "Share data with your doctor at check-ups"}
+    ],
+    "chk_prep_tr": [
+      {"tip": "Write down your symptoms, concerns, and questions before the visit"},
+      {"tip": "List all current medications and supplements"},
+      {"tip": "Bring previous test results for comparison"},
+      {"tip": "Note family history of heart disease, cancer, diabetes"},
+      {"tip": "Fast 8–12 hours if blood tests are included"}
+    ],
+    "ass_cats_tr": ["Exercise", "Nutrition", "Sleep", "Mind", "Prevention", "Knowledge"],
+    "ass_levels_tr": [
+      {"label": "Needs Much Improvement"},
+      {"label": "Developing"},
+      {"label": "Good — Keep Going"},
+      {"label": "Very Good"},
+      {"label": "Excellent"}
+    ],
+    "ass_q_submit": "View Results →",
+    "ass_q_pending": "more questions to go",
+    "ass_questions_tr": [
+      {"q": "How many days/week do you exercise at least 20 minutes?", "opts": ["No exercise", "1–2 days", "3–4 days", "5–6 days", "Every day"]},
+      {"q": "Do you frequently sit for more than 2 hours without a break?", "opts": ["Almost every day", "Frequently", "Sometimes", "Rarely", "Almost never"]},
+      {"q": "Do you do strength training (weights, bodyweight) at least 2×/week?", "opts": ["Never", "Rarely", "Sometimes", "Frequently", "Always"]},
+      {"q": "How many servings of vegetables and fruit do you eat per day?", "opts": ["Almost none", "1 serving", "2–3 servings", "4–5 servings", "≥ 5 servings"]},
+      {"q": "Do you regularly eat processed food / fast food?", "opts": ["Every day", "4–6×/week", "2–3×/week", "1×/week", "Rarely"]},
+      {"q": "Do you drink enough water (about 2L/day)?", "opts": ["Never", "Rarely", "Sometimes", "Frequently", "Always"]},
+      {"q": "How many hours do you typically sleep per night?", "opts": ["< 5 hours", "5–6 hours", "6–7 hours", "7–8 hours", "> 8 hours"]},
+      {"q": "How do you feel when you wake up in the morning?", "opts": ["Very tired", "Tired", "Neutral", "Alert", "Very alert and ready"]},
+      {"q": "What is your daily stress level?", "opts": ["Extremely high", "High", "Moderate", "Low", "Very low"]},
+      {"q": "Do you practise relaxation techniques (breathing, meditation, yoga)?", "opts": ["Never", "Rarely", "Sometimes", "Frequently", "Daily"]},
+      {"q": "How often do you go for routine health check-ups?", "opts": ["Never", "Only when sick", "Every 2–3 years", "Annually", "More often when needed"]},
+      {"q": "Do you smoke or drink alcohol regularly?", "opts": ["Smoke + drink heavily", "One of them, heavily", "One of them, lightly", "Occasionally either", "Neither"]},
+      {"q": "How proactively do you seek out health information?", "opts": ["Never", "Rarely", "Sometimes", "Frequently", "Daily"]},
+      {"q": "Do you know your basic health metrics (BMI, blood pressure, blood sugar)?", "opts": ["Don't know any", "Know some", "Know but don't track", "Know, track occasionally", "Know, track regularly"]},
+      {"q": "How confident are you in managing your own health?", "opts": ["Not confident at all", "Not very confident", "Moderately confident", "Confident", "Very confident"]}
+    ],
+    "rm_phases_tr": [
+      {"title": "Foundation — Know Your Body", "weeks": "Week 1–2", "desc": "Build a personal baseline: measure metrics, understand the numbers, create your health profile.", "milestone": "Complete the Health Assessment and know your strengths/weaknesses"},
+      {"title": "Action — Daily Monitoring", "weeks": "Week 3–6", "desc": "Start tracking key metrics and check in daily to build lasting habits.", "milestone": "4 consecutive weeks of daily tracking without missing a day"},
+      {"title": "Optimise — Proactive Prevention", "weeks": "Week 7–10", "desc": "Apply knowledge to make positive lifestyle changes and prevent chronic disease.", "milestone": "Complete annual check-up and have baseline lab results"},
+      {"title": "Sustain — Lifelong Healthy Living", "weeks": "Week 11–12+", "desc": "Maintain and personalise your health programme for life.", "milestone": "Health Assessment score ≥ 75 points on second attempt"}
+    ],
+    "rm_links_tr": [
+      {"title": "Body Mass Index"},
+      {"title": "Blood Pressure"},
+      {"title": "Blood Sugar"},
+      {"title": "Blood Lipids"},
+      {"title": "Danger Signs"},
+      {"title": "Medication Safety"},
+      {"title": "Information Filter"},
+      {"title": "Disease Prevention"},
+      {"title": "Self-Monitoring"},
+      {"title": "Routine Check-up"},
+      {"title": "Health Assessment"}
+    ]
   },
   "pillarF": {
     "id": "f",

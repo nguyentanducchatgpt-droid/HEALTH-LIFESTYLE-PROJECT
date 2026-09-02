@@ -477,6 +477,8 @@ const DOCTOR_SIGNS = [
 ];
 
 function BSModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') onClose();
@@ -543,14 +545,14 @@ function BSModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }
             <button onClick={() => hasPrev && onPrev()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasPrev ? item.color : 'rgba(255,255,255,0.2)', background: hasPrev ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasPrev ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasPrev ? 'pointer' : 'default' }}
-            >← Trước</button>
+            >{p.e_prev_btn || '← Trước'}</button>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>
             <button onClick={() => hasNext && onNext()}
               className="text-xs font-bold px-4 py-2 rounded-xl"
               style={{ color: hasNext ? item.color : 'rgba(255,255,255,0.2)', background: hasNext ? `rgba(${item.rgb},0.1)` : 'transparent', border: `1px solid ${hasNext ? `rgba(${item.rgb},0.25)` : 'rgba(255,255,255,0.07)'}`, cursor: hasNext ? 'pointer' : 'default' }}
-            >Sau →</button>
+            >{p.e_next_btn || 'Sau →'}</button>
           </div>
-          <p className="text-center text-xs text-muted mt-4 opacity-40">Nhấn ESC hoặc click bên ngoài để đóng</p>
+          <p className="text-center text-xs text-muted mt-4 opacity-40">{p.e_esc_hint || 'Nhấn ESC hoặc click bên ngoài để đóng'}</p>
         </div>
       </div>
     </div>,
@@ -650,6 +652,8 @@ function BSCalculator() {
 export default function HealthBloodSugarPage() {
   const { t } = useTranslation('pillars');
   const p = t('pillarE', { returnObjects: true }) || {};
+  const bsCats = BS_CATS.map((c, i) => ({...c, ...(p.bs_cats_tr?.[i] || {})}));
+  const hbacCats = HBAC_CATS.map((c, i) => ({...c, ...(p.hbac_cats_tr?.[i] || {})}));
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [bsModal, setBsModal] = useState(null);
   const [hbacModal, setHbacModal] = useState(null);
@@ -720,7 +724,7 @@ export default function HealthBloodSugarPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bs_s1_h2 || 'Phân Loại Đường Huyết'}</h2>
         <p className="text-muted text-lg mb-6">Xét nghiệm sau nhịn ăn ít nhất 8 tiếng hoặc 2 giờ sau bữa ăn (test dung nạp glucose).</p>
         <div className="space-y-2">
-          {BS_CATS.map((c, i) => (
+          {bsCats.map((c, i) => (
             <div key={i}
               onClick={() => setBsModal(i)}
               className="rounded-2xl border border-border p-4 flex flex-col sm:flex-row sm:items-center gap-3 cursor-pointer transition-colors"
@@ -743,7 +747,7 @@ export default function HealthBloodSugarPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bs_s2_h2 || 'HbA1c — Đường Huyết Trung Bình 3 Tháng'}</h2>
         <p className="text-muted text-lg mb-6">HbA1c đo lượng glucose gắn vào hemoglobin, phản ánh kiểm soát đường huyết trong 2–3 tháng qua. Không bị ảnh hưởng bởi ăn uống ngay trước đó.</p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {HBAC_CATS.map((c, i) => (
+          {hbacCats.map((c, i) => (
             <div key={i}
               onClick={() => setHbacModal(i)}
               className="rounded-2xl border border-border bg-surface p-4 cursor-pointer transition-colors"
@@ -819,26 +823,26 @@ export default function HealthBloodSugarPage() {
 
       {hbacModal !== null && (
         <BSModal
-          item={HBAC_CATS[hbacModal]}
+          item={hbacCats[hbacModal]}
           idx={hbacModal}
-          total={HBAC_CATS.length}
+          total={hbacCats.length}
           onClose={() => setHbacModal(null)}
           onPrev={() => setHbacModal(i => Math.max(0, i - 1))}
-          onNext={() => setHbacModal(i => Math.min(HBAC_CATS.length - 1, i + 1))}
+          onNext={() => setHbacModal(i => Math.min(hbacCats.length - 1, i + 1))}
           hasPrev={hbacModal > 0}
-          hasNext={hbacModal < HBAC_CATS.length - 1}
+          hasNext={hbacModal < hbacCats.length - 1}
         />
       )}
       {bsModal !== null && (
         <BSModal
-          item={BS_CATS[bsModal]}
+          item={bsCats[bsModal]}
           idx={bsModal}
-          total={BS_CATS.length}
+          total={bsCats.length}
           onClose={() => setBsModal(null)}
           onPrev={() => setBsModal(i => Math.max(0, i - 1))}
-          onNext={() => setBsModal(i => Math.min(BS_CATS.length - 1, i + 1))}
+          onNext={() => setBsModal(i => Math.min(bsCats.length - 1, i + 1))}
           hasPrev={bsModal > 0}
-          hasNext={bsModal < BS_CATS.length - 1}
+          hasNext={bsModal < bsCats.length - 1}
         />
       )}
       {dietModal !== null && (

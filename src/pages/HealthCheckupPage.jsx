@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -705,6 +706,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function HealthCheckupPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [checked, setChecked] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_checkup_done') || '[]'); } catch { return []; } });
   const [checkupModal, setCheckupModal] = useState(null);
@@ -743,18 +746,18 @@ export default function HealthCheckupPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🏥</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Khám Định Kỳ</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.chk_h1 || 'Khám Định Kỳ'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Tầm soát · Phát hiện sớm
+            {p.chk_badge || 'Tầm soát · Phát hiện sớm'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Phát hiện sớm bệnh ở giai đoạn chưa có triệu chứng là một trong những can thiệp y tế hiệu quả nhất. Tỷ lệ sống sót của ung thư phát hiện giai đoạn 1 cao hơn 5–10 lần so với giai đoạn muộn.
+            {p.chk_desc || 'Phát hiện sớm bệnh ở giai đoạn chưa có triệu chứng là một trong những can thiệp y tế hiệu quả nhất. Tỷ lệ sống sót của ung thư phát hiện giai đoạn 1 cao hơn 5–10 lần so với giai đoạn muộn.'}
           </p>
         </div>
       </div>
@@ -764,7 +767,7 @@ export default function HealthCheckupPage() {
           <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop" alt="Khám định kỳ" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Phát hiện sớm · Điều trị hiệu quả hơn
+            {p.chk_caption || 'Phát hiện sớm · Điều trị hiệu quả hơn'}
           </span>
         </div>
       </div>
@@ -774,7 +777,7 @@ export default function HealthCheckupPage() {
       {b0.age && (
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
-            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
+            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{p.sub_profile_label || '✦ Hồ Sơ Của Bạn'}</div>
             <p className="text-base text-muted">{b0.age} tuổi · Nên khám định kỳ {b0.age >= 40 ? 'mỗi 6–12 tháng với gói cơ bản và mở rộng phù hợp tuổi.' : 'hàng năm với gói cơ bản.'}</p>
           </div>
         </RevealBlock>
@@ -782,7 +785,7 @@ export default function HealthCheckupPage() {
 
       <RevealBlock delay={1} className="mb-12">
         <div className="flex items-center justify-between mb-2">
-          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>Gói Khám Cơ Bản Hàng Năm</h2>
+          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>{p.chk_s1_h2 || 'Gói Khám Cơ Bản Hàng Năm'}</h2>
           <span className="text-lg font-bold" style={{ color: COLOR }}>{doneCount}/{BASIC_PACKAGE.length}</span>
         </div>
         <div className="w-full h-2 bg-surface rounded-full mb-6 overflow-hidden">
@@ -797,7 +800,7 @@ export default function HealthCheckupPage() {
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Gói Mở Rộng Theo Nguy Cơ</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.chk_s2_h2 || 'Gói Mở Rộng Theo Nguy Cơ'}</h2>
         <p className="text-muted text-lg mb-6">Trao đổi với bác sĩ về gói khám phù hợp với hồ sơ nguy cơ cá nhân của bạn. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {EXTENDED_PACKAGES.map((pkg, i) => (
@@ -807,7 +810,7 @@ export default function HealthCheckupPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Chuẩn Bị Trước Khi Đi Khám</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.chk_s3_h2 || 'Chuẩn Bị Trước Khi Đi Khám'}</h2>
         <p className="text-muted text-lg mb-6">4 bước chuẩn bị giúp mỗi lần đi khám đều có kết quả chính xác và hiệu quả nhất. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {PREP_TIPS.map((tip, i) => (
@@ -817,7 +820,7 @@ export default function HealthCheckupPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</Link>
 
       {checkupModal !== null && (
         <CheckupModal

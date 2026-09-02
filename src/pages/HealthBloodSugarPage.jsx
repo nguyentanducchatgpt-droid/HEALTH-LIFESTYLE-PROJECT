@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -647,6 +648,8 @@ function BSCalculator() {
 }
 
 export default function HealthBloodSugarPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [bsModal, setBsModal] = useState(null);
   const [hbacModal, setHbacModal] = useState(null);
@@ -676,18 +679,18 @@ export default function HealthBloodSugarPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🍬</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Đường Huyết</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.bs_h1 || 'Đường Huyết'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Chỉ số chuyển hóa · Tiểu đường type 2
+            {p.bs_badge || 'Chỉ số chuyển hóa · Tiểu đường type 2'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Đường huyết (glucose máu) cho biết cơ thể xử lý năng lượng từ thức ăn như thế nào. Mất kiểm soát đường huyết kéo dài gây tổn thương thần kinh, thận, mắt và mạch máu.
+            {p.bs_desc || 'Đường huyết (glucose máu) cho biết cơ thể xử lý năng lượng từ thức ăn như thế nào. Mất kiểm soát đường huyết kéo dài gây tổn thương thần kinh, thận, mắt và mạch máu.'}
           </p>
         </div>
       </div>
@@ -697,7 +700,7 @@ export default function HealthBloodSugarPage() {
           <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80&auto=format&fit=crop" alt="Đường huyết" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Kiểm soát từ bữa ăn hàng ngày
+            {p.bs_caption || 'Kiểm soát từ bữa ăn hàng ngày'}
           </span>
         </div>
       </div>
@@ -707,14 +710,14 @@ export default function HealthBloodSugarPage() {
       {b0.age && (
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
-            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
+            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{p.sub_profile_label || '✦ Hồ Sơ Của Bạn'}</div>
             <p className="text-base text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age >= 45 ? 'Nên xét nghiệm đường huyết đói và HbA1c hàng năm.' : 'Xét nghiệm mỗi 3 năm nếu không có yếu tố nguy cơ.'}</p>
           </div>
         </RevealBlock>
       )}
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Phân Loại Đường Huyết</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bs_s1_h2 || 'Phân Loại Đường Huyết'}</h2>
         <p className="text-muted text-lg mb-6">Xét nghiệm sau nhịn ăn ít nhất 8 tiếng hoặc 2 giờ sau bữa ăn (test dung nạp glucose).</p>
         <div className="space-y-2">
           {BS_CATS.map((c, i) => (
@@ -737,7 +740,7 @@ export default function HealthBloodSugarPage() {
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>HbA1c — Đường Huyết Trung Bình 3 Tháng</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bs_s2_h2 || 'HbA1c — Đường Huyết Trung Bình 3 Tháng'}</h2>
         <p className="text-muted text-lg mb-6">HbA1c đo lượng glucose gắn vào hemoglobin, phản ánh kiểm soát đường huyết trong 2–3 tháng qua. Không bị ảnh hưởng bởi ăn uống ngay trước đó.</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {HBAC_CATS.map((c, i) => (
@@ -765,7 +768,7 @@ export default function HealthBloodSugarPage() {
       </RevealBlock>
 
       <RevealBlock delay={4} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Kiểm Soát Đường Huyết Bằng Lối Sống</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bs_s3_h2 || 'Kiểm Soát Đường Huyết Bằng Lối Sống'}</h2>
         <p className="text-muted text-lg mb-6">Thay đổi lối sống có thể ngăn 58% trường hợp tiền tiểu đường không tiến triển thành tiểu đường type 2 (theo nghiên cứu DPP của NIH).</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {DIET_TIPS.map((t, i) => (
@@ -787,7 +790,7 @@ export default function HealthBloodSugarPage() {
       </RevealBlock>
 
       <RevealBlock delay={5} className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Khi Nào Cần Gặp Bác Sĩ?</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bs_s4_h2 || 'Khi Nào Cần Gặp Bác Sĩ?'}</h2>
         <p className="text-muted text-lg mb-6">Những dấu hiệu này yêu cầu đánh giá y tế sớm — đừng tự theo dõi tại nhà mà không có phác đồ từ bác sĩ.</p>
         <div className="space-y-3">
           {DOCTOR_SIGNS.map((s, i) => (
@@ -812,7 +815,7 @@ export default function HealthBloodSugarPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</Link>
 
       {hbacModal !== null && (
         <BSModal

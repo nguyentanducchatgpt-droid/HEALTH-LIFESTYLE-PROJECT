@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -720,6 +721,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function HealthPreventionPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [pillarModal, setPillarModal] = useState(null);
   const [vaccineModal, setVaccineModal] = useState(null);
@@ -748,18 +751,18 @@ export default function HealthPreventionPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🛡️</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Phòng Bệnh Chủ Động</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.prev_h1 || 'Phòng Bệnh Chủ Động'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Phòng bệnh hơn chữa bệnh
+            {p.prev_badge || 'Phòng bệnh hơn chữa bệnh'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            80% các bệnh mãn tính phổ biến (tim mạch, tiểu đường type 2, một số ung thư) có thể phòng ngừa hoặc trì hoãn bằng lối sống. Đầu tư vào phòng bệnh hiệu quả gấp 10 lần so với chi phí điều trị.
+            {p.prev_desc || '80% các bệnh mãn tính phổ biến (tim mạch, tiểu đường type 2, một số ung thư) có thể phòng ngừa hoặc trì hoãn bằng lối sống. Đầu tư vào phòng bệnh hiệu quả gấp 10 lần so với chi phí điều trị.'}
           </p>
         </div>
       </div>
@@ -769,7 +772,7 @@ export default function HealthPreventionPage() {
           <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop" alt="Phòng bệnh" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            5 trụ cột phòng bệnh chủ động
+            {p.prev_caption || '5 trụ cột phòng bệnh chủ động'}
           </span>
         </div>
       </div>
@@ -779,14 +782,14 @@ export default function HealthPreventionPage() {
       {b0.age && (
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
-            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
+            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{p.sub_profile_label || '✦ Hồ Sơ Của Bạn'}</div>
             <p className="text-base text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age < 30 ? 'Thời điểm tốt nhất để xây nền tảng phòng bệnh bền vững.' : b0.age < 50 ? 'Giai đoạn quan trọng — đầu tư sức khỏe bây giờ để hưởng lợi 20–30 năm tới.' : 'Phòng bệnh vẫn rất có giá trị ở mọi độ tuổi — không bao giờ là quá muộn.'}</p>
           </div>
         </RevealBlock>
       )}
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>5 Trụ Cột Phòng Bệnh</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.prev_s1_h2 || '5 Trụ Cột Phòng Bệnh'}</h2>
         <p className="text-muted text-lg mb-6">Click vào từng trụ cột để xem chi tiết và bằng chứng khoa học. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-3">
           {PREVENTION_PILLARS.map((p, i) => (
@@ -796,7 +799,7 @@ export default function HealthPreventionPage() {
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Lịch Tiêm Vaccine Người Lớn</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.prev_s2_h2 || 'Lịch Tiêm Vaccine Người Lớn'}</h2>
         <p className="text-muted text-lg mb-6">Vaccine không chỉ dành cho trẻ em — người lớn cũng cần cập nhật lịch tiêm định kỳ. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {VACCINE_SCHEDULE.map((v, i) => (
@@ -806,7 +809,7 @@ export default function HealthPreventionPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Tầm Soát Ung Thư Theo Tuổi</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.prev_s3_h2 || 'Tầm Soát Ung Thư Theo Tuổi'}</h2>
         <p className="text-muted text-lg mb-6">Phát hiện sớm là sự khác biệt giữa chữa khỏi và không chữa được. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {CANCER_SCREENING.map((s, i) => (
@@ -816,7 +819,7 @@ export default function HealthPreventionPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</Link>
 
       {vaccineModal !== null && (
         <VaccineModal

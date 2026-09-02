@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -545,6 +546,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function HealthLipidsPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [lipidModal, setLipidModal] = useState(null);
   const [foodHelpModal, setFoodHelpModal] = useState(null);
@@ -574,18 +577,18 @@ export default function HealthLipidsPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🩸</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Mỡ Máu</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.lip_h1 || 'Mỡ Máu'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Bảng lipid máu · Tim mạch
+            {p.lip_badge || 'Bảng lipid máu · Tim mạch'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Rối loạn mỡ máu (dyslipidemia) là yếu tố nguy cơ hàng đầu của bệnh tim mạch và đột quỵ. Hầu hết trường hợp không có triệu chứng — chỉ phát hiện qua xét nghiệm máu.
+            {p.lip_desc || 'Rối loạn mỡ máu (dyslipidemia) là yếu tố nguy cơ hàng đầu của bệnh tim mạch và đột quỵ. Hầu hết trường hợp không có triệu chứng — chỉ phát hiện qua xét nghiệm máu.'}
           </p>
         </div>
       </div>
@@ -595,7 +598,7 @@ export default function HealthLipidsPage() {
           <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80&auto=format&fit=crop" alt="Mỡ máu" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Hiểu bảng lipid máu của bạn
+            {p.lip_caption || 'Hiểu bảng lipid máu của bạn'}
           </span>
         </div>
       </div>
@@ -605,14 +608,14 @@ export default function HealthLipidsPage() {
       {b0.age && (
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
-            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
+            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{p.sub_profile_label || '✦ Hồ Sơ Của Bạn'}</div>
             <p className="text-base text-muted">{b0.age} tuổi · {b0.weight}kg — {b0.age >= 35 ? 'Nên xét nghiệm bảng lipid máu đầy đủ hàng năm.' : 'Xét nghiệm mỗi 5 năm nếu không có yếu tố nguy cơ.'}</p>
           </div>
         </RevealBlock>
       )}
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Bảng Lipid Máu</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.lip_s1_h2 || 'Bảng Lipid Máu'}</h2>
         <p className="text-muted text-lg mb-6">Nhấn vào từng chỉ số để xem chi tiết. Xét nghiệm sau nhịn ăn 9–12 tiếng để có kết quả chính xác nhất.</p>
         <div className="space-y-3">
           {LIPID_PANEL.map((panel, i) => (
@@ -640,7 +643,7 @@ export default function HealthLipidsPage() {
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thực Phẩm Tốt Cho Mỡ Máu</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.lip_s2_h2 || 'Thực Phẩm Tốt Cho Mỡ Máu'}</h2>
         <p className="text-muted text-lg mb-5">Chế độ ăn đúng có thể giảm LDL 15–20% trong 6–12 tuần.</p>
         <div className="grid sm:grid-cols-2 gap-3 mb-6">
           {FOOD_HELP.map((f, i) => (
@@ -680,7 +683,7 @@ export default function HealthLipidsPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Tần Suất Xét Nghiệm</h2>
+        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>{p.lip_s3_h2 || 'Tần Suất Xét Nghiệm'}</h2>
         <p className="text-muted text-sm mb-5">Click vào từng nhóm để xem hướng dẫn chi tiết</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {TEST_FREQ.map((f, i) => (
@@ -703,7 +706,7 @@ export default function HealthLipidsPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</Link>
 
       {lipidModal !== null && (
         <LipidModal

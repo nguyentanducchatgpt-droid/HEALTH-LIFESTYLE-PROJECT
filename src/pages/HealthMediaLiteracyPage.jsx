@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -770,6 +771,8 @@ function MisinfoChecker() {
 }
 
 export default function HealthMediaLiteracyPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [filterModal, setFilterModal] = useState(null);
   const [patternModal, setPatternModal] = useState(null);
   const [sourceModal, setSourceModal] = useState(null);
@@ -797,18 +800,18 @@ export default function HealthMediaLiteracyPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🔍</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Lọc Thông Tin Y Tế</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.ml_h1 || 'Lọc Thông Tin Y Tế'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Media Literacy · Phân biệt thật giả
+            {p.ml_badge || 'Media Literacy · Phân biệt thật giả'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Thông tin y tế sai lệch (medical misinformation) là một trong những vấn đề sức khỏe công cộng lớn nhất. WHO gọi đây là "infodemic" — đại dịch thông tin. Học cách lọc thông tin là kỹ năng bảo vệ sức khỏe trong kỷ nguyên số.
+            {p.ml_desc || 'Thông tin y tế sai lệch (medical misinformation) là một trong những vấn đề sức khỏe công cộng lớn nhất. WHO gọi đây là "infodemic" — đại dịch thông tin. Học cách lọc thông tin là kỹ năng bảo vệ sức khỏe trong kỷ nguyên số.'}
           </p>
         </div>
       </div>
@@ -818,7 +821,7 @@ export default function HealthMediaLiteracyPage() {
           <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80&auto=format&fit=crop" alt="Lọc thông tin" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Tư duy phản biện · Bằng chứng khoa học
+            {p.ml_caption || 'Tư duy phản biện · Bằng chứng khoa học'}
           </span>
         </div>
       </div>
@@ -826,7 +829,7 @@ export default function HealthMediaLiteracyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock delay={0} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>5 Câu Hỏi Để Lọc Thông Tin</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.ml_s1_h2 || '5 Câu Hỏi Để Lọc Thông Tin'}</h2>
         <p className="text-muted text-lg mb-6">Áp dụng mỗi khi đọc thông tin y tế trên mạng xã hội, group sức khỏe, hoặc từ người thân. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-4">
           {FILTER_QUESTIONS.map((fq, i) => (
@@ -836,7 +839,7 @@ export default function HealthMediaLiteracyPage() {
       </RevealBlock>
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nhận Biết Thông Tin Sai Lệch</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.ml_s2_h2 || 'Nhận Biết Thông Tin Sai Lệch'}</h2>
         <p className="text-muted text-lg mb-6">6 pattern phổ biến nhất trong thông tin y tế sai lệch trên mạng. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-3">
           {DANGEROUS_PATTERNS.map((d, i) => (
@@ -851,7 +854,7 @@ export default function HealthMediaLiteracyPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Nguồn Thông Tin Đáng Tin Cậy</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.ml_s3_h2 || 'Nguồn Thông Tin Đáng Tin Cậy'}</h2>
         <p className="text-muted text-lg mb-5">Bookmark những nguồn này để tra cứu khi cần. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {TRUSTED_SOURCES.map((s, i) => (
@@ -861,7 +864,7 @@ export default function HealthMediaLiteracyPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</Link>
 
       {filterModal !== null && (
         <FilterModal

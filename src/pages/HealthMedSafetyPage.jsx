@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -900,6 +901,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function HealthMedSafetyPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [medModal, setMedModal] = useState(null);
   const [dangerModal, setDangerModal] = useState(null);
   const [suppModal, setSuppModal] = useState(null);
@@ -928,18 +931,18 @@ export default function HealthMedSafetyPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>💊</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">An Toàn Thuốc</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.med_h1 || 'An Toàn Thuốc'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Dùng thuốc đúng cách · Tránh rủi ro
+            {p.med_badge || 'Dùng thuốc đúng cách · Tránh rủi ro'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Thuốc chữa bệnh khi dùng đúng, nhưng gây hại khi dùng sai. Hiểu đúng về thuốc — bao gồm thuốc kê đơn, OTC, và thực phẩm chức năng — là kỹ năng bảo vệ sức khỏe thiết yếu.
+            {p.med_desc || 'Thuốc chữa bệnh khi dùng đúng, nhưng gây hại khi dùng sai. Hiểu đúng về thuốc — bao gồm thuốc kê đơn, OTC, và thực phẩm chức năng — là kỹ năng bảo vệ sức khỏe thiết yếu.'}
           </p>
         </div>
       </div>
@@ -949,7 +952,7 @@ export default function HealthMedSafetyPage() {
           <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&auto=format&fit=crop" alt="An toàn thuốc" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Dùng đúng thuốc · Đúng liều · Đúng lúc
+            {p.med_caption || 'Dùng đúng thuốc · Đúng liều · Đúng lúc'}
           </span>
         </div>
       </div>
@@ -957,7 +960,7 @@ export default function HealthMedSafetyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock delay={0} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>5 Quy Tắc An Toàn Thuốc</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s1_h2 || '5 Quy Tắc An Toàn Thuốc'}</h2>
         <p className="text-muted text-lg mb-6">Áp dụng mỗi khi bắt đầu một loại thuốc mới. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-4">
           {MED_RULES.map((r, i) => (
@@ -967,7 +970,7 @@ export default function HealthMedSafetyPage() {
       </RevealBlock>
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Những Câu Nguy Hiểm Cần Nhớ</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s2_h2 || 'Những Câu Nguy Hiểm Cần Nhớ'}</h2>
         <p className="text-muted text-lg mb-6">Những quan niệm phổ biến nhưng sai — và tại sao chúng nguy hiểm. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="space-y-3">
           {DANGER_PHRASES.map((d, i) => (
@@ -977,7 +980,7 @@ export default function HealthMedSafetyPage() {
       </RevealBlock>
 
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Hướng Dẫn Bổ Sung Thực Phẩm Chức Năng</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s3_h2 || 'Hướng Dẫn Bổ Sung Thực Phẩm Chức Năng'}</h2>
         <p className="text-muted text-lg mb-6">TPCN không phải thuốc nhưng cũng cần dùng đúng cách. Luôn thông báo cho bác sĩ tất cả TPCN đang dùng. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {SUPPLEMENT_CHECK.map((s, i) => (
@@ -987,7 +990,7 @@ export default function HealthMedSafetyPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Luôn Nói Với Bác Sĩ / Dược Sĩ</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s4_h2 || 'Luôn Nói Với Bác Sĩ / Dược Sĩ'}</h2>
         <p className="text-muted text-lg mb-6">Bốn thông tin bác sĩ cần biết để kê thuốc an toàn cho bạn. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {DOCTOR_ITEMS.map((d, i) => (
@@ -998,7 +1001,7 @@ export default function HealthMedSafetyPage() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <p className="text-base text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục sức khỏe. Không thay thế tư vấn của bác sĩ hoặc dược sĩ.</p>
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</Link>
 
       {doctorModal !== null && (
         <DoctorModal

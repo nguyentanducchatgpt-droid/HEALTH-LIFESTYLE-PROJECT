@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -639,6 +640,8 @@ function BPJournal() {
 }
 
 export default function HealthBPPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [bpModal, setBpModal] = useState(null);
   const [stepModal, setStepModal] = useState(null);
@@ -668,7 +671,7 @@ export default function HealthBPPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
-        ← Kiến Thức Sức Khỏe
+        ← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}
       </Link>
 
       {/* Hero */}
@@ -678,12 +681,12 @@ export default function HealthBPPage() {
           🫀
         </div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Huyết Áp</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.bp_h1 || 'Huyết Áp'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Chỉ số sinh tồn · Theo dõi thường xuyên
+            {p.bp_badge || 'Chỉ số sinh tồn · Theo dõi thường xuyên'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Huyết áp là áp lực máu tác động lên thành mạch. Tăng huyết áp không triệu chứng thường trực — được gọi là "kẻ giết người thầm lặng" — và là nguyên nhân hàng đầu của đột quỵ, nhồi máu cơ tim.
+            {p.bp_desc || 'Huyết áp là áp lực máu tác động lên thành mạch. Tăng huyết áp không triệu chứng thường trực — được gọi là "kẻ giết người thầm lặng" — và là nguyên nhân hàng đầu của đột quỵ, nhồi máu cơ tim.'}
           </p>
         </div>
       </div>
@@ -694,7 +697,7 @@ export default function HealthBPPage() {
           <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80&auto=format&fit=crop" alt="Đo huyết áp" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Đo đúng cách · Đọc đúng số
+            {p.bp_caption || 'Đo đúng cách · Đọc đúng số'}
           </span>
         </div>
       </div>
@@ -705,7 +708,7 @@ export default function HealthBPPage() {
       {b0.age && (
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4 md:p-5" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
-            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>✦ Hồ Sơ Của Bạn</div>
+            <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{p.sub_profile_label || '✦ Hồ Sơ Của Bạn'}</div>
             <p className="text-base text-muted">{b0.age} tuổi · {b0.weight}kg — Nên đo huyết áp {b0.age >= 40 ? 'mỗi 3–6 tháng' : 'mỗi năm'} và theo dõi hàng ngày nếu có nguy cơ.</p>
           </div>
         </RevealBlock>
@@ -713,7 +716,7 @@ export default function HealthBPPage() {
 
       {/* Classification */}
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Phân Loại Huyết Áp (AHA 2017)</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s1_h2 || 'Phân Loại Huyết Áp (AHA 2017)'}</h2>
         <p className="text-muted text-lg mb-6">Đơn vị mmHg. Áp dụng cho người lớn ≥ 18 tuổi, không dùng thuốc huyết áp.</p>
         <div className="space-y-3">
           {BP_CATS.map((c, i) => (
@@ -744,7 +747,7 @@ export default function HealthBPPage() {
 
       {/* Measurement technique */}
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Kỹ Thuật Đo Đúng Chuẩn</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s2_h2 || 'Kỹ Thuật Đo Đúng Chuẩn'}</h2>
         <p className="text-muted text-lg mb-6">Sai kỹ thuật có thể khiến kết quả lệch 10–20 mmHg.</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {STEPS.map((s, i) => (
@@ -767,7 +770,7 @@ export default function HealthBPPage() {
 
       {/* Lifestyle */}
       <RevealBlock delay={3} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Lối Sống Kiểm Soát Huyết Áp</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s3_h2 || 'Lối Sống Kiểm Soát Huyết Áp'}</h2>
         <p className="text-muted text-lg mb-6">Thay đổi lối sống có thể giảm HA 5–20 mmHg mà không cần thuốc.</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {LIFESTYLE.map((l, i) => (
@@ -793,7 +796,7 @@ export default function HealthBPPage() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
-        ← Quay lại Kiến Thức Sức Khỏe
+        ← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}
       </Link>
 
       {bpModal !== null && (

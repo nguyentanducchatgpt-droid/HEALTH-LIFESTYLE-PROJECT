@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -315,6 +316,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function HealthRoadmapPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [phaseModal, setPhaseModal] = useState(null);
 
   useEffect(() => {
@@ -340,18 +343,18 @@ export default function HealthRoadmapPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🗺️</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Lộ Trình Kiến Thức Sức Khỏe</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.rm_h1 || 'Lộ Trình Kiến Thức Sức Khỏe'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            12 tuần · 4 giai đoạn · Từ hiểu đến hành động
+            {p.rm_badge || '12 tuần · 4 giai đoạn · Từ hiểu đến hành động'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Lộ trình có hệ thống từ việc hiểu các chỉ số cơ bản, theo dõi thường xuyên, phòng bệnh chủ động, đến duy trì lối sống lành mạnh bền vững suốt đời.
+            {p.rm_desc || 'Lộ trình có hệ thống từ việc hiểu các chỉ số cơ bản, theo dõi thường xuyên, phòng bệnh chủ động, đến duy trì lối sống lành mạnh bền vững suốt đời.'}
           </p>
         </div>
       </div>
@@ -361,7 +364,7 @@ export default function HealthRoadmapPage() {
           <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80&auto=format&fit=crop" alt="Lộ trình sức khỏe" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Từ kiến thức → hành động → bền vững
+            {p.rm_caption || 'Từ kiến thức → hành động → bền vững'}
           </span>
         </div>
       </div>
@@ -369,7 +372,7 @@ export default function HealthRoadmapPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock delay={0} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Lộ Trình 12 Tuần</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.rm_s1_h2 || 'Lộ Trình 12 Tuần'}</h2>
         <p className="text-muted text-lg mb-6">Nhấn vào từng giai đoạn để xem mục tiêu chi tiết và milestone.</p>
         <div className="space-y-3">
           {PHASES.map((ph, i) => (
@@ -379,7 +382,7 @@ export default function HealthRoadmapPage() {
       </RevealBlock>
 
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Tất Cả Chuyên Đề</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.rm_s2_h2 || 'Tất Cả Chuyên Đề'}</h2>
         <p className="text-muted text-lg mb-6">Khám phá từng chủ đề theo thứ tự lộ trình hoặc nhảy vào bất kỳ chuyên đề nào bạn quan tâm.</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {SUB_LINKS.map((s, i) => (
@@ -405,7 +408,7 @@ export default function HealthRoadmapPage() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <p className="text-base text-muted mb-6">⚠ Nội dung mang tính giáo dục sức khỏe. Luôn tham khảo ý kiến bác sĩ cho các quyết định y tế quan trọng.</p>
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</Link>
 
       {phaseModal !== null && (
         <PhaseModal

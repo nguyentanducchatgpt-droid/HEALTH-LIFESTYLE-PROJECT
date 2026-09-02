@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const COLOR = '#3b82f6';
@@ -547,6 +548,8 @@ function BMICalculator() {
 }
 
 export default function HealthBMIPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [bmiModal, setBmiModal] = useState(null);
   const [waistModal, setWaistModal] = useState(null);
   const [trendModal, setTrendModal] = useState(null);
@@ -568,15 +571,15 @@ export default function HealthBMIPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
-        <span>←</span><span>Kiến Thức Sức Khỏe</span>
+        <span>←</span><span>{p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</span>
       </Link>
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `${COLOR}08` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>⚖️</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">BMI & Vòng Eo</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>E1 · Chỉ Số Cơ Thể</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">BMI sàng lọc tình trạng cân nặng, còn vòng eo phản ánh mỡ bụng nội tạng — nguy cơ tim mạch và chuyển hóa quan trọng hơn con số cân nặng đơn thuần.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.bmi_h1 || 'BMI & Vòng Eo'}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>{p.bmi_badge || 'E1 · Chỉ Số Cơ Thể'}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{p.bmi_desc || 'BMI sàng lọc tình trạng cân nặng, còn vòng eo phản ánh mỡ bụng nội tạng — nguy cơ tim mạch và chuyển hóa quan trọng hơn con số cân nặng đơn thuần.'}</p>
         </div>
       </div>
       <div className={`${ORBIT_CLASS} rounded-3xl p-[1.5px] mb-12`}>
@@ -584,21 +587,21 @@ export default function HealthBMIPage() {
           <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop" alt="BMI" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>Đo vòng eo 1 lần/tuần · Cân 1–3 lần/tuần</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>{p.bmi_caption || 'Đo vòng eo 1 lần/tuần · Cân 1–3 lần/tuần'}</span>
           </div>
         </div>
       </div>
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tính BMI & Đánh Giá</h2>
-        <p className="text-muted text-lg mb-6">Nhập số liệu để xem phân loại và gợi ý hành động</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bmi_s1_h2 || 'Tính BMI & Đánh Giá'}</h2>
+        <p className="text-muted text-lg mb-6">{p.bmi_s1_sub || 'Nhập số liệu để xem phân loại và gợi ý hành động'}</p>
         <BMICalculator />
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Phân Loại BMI & Hành Động</h2>
-        <p className="text-muted text-lg mb-6">BMI là chỉ số sàng lọc — cần kết hợp với vòng eo và các chỉ số khác để đánh giá toàn diện</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bmi_s2_h2 || 'Phân Loại BMI & Hành Động'}</h2>
+        <p className="text-muted text-lg mb-6">{p.bmi_s2_sub || 'BMI là chỉ số sàng lọc — cần kết hợp với vòng eo và các chỉ số khác để đánh giá toàn diện'}</p>
         <div className="space-y-3">
           {BMI_CATS.map((c, i) => (
             <div key={c.label}
@@ -623,7 +626,7 @@ export default function HealthBMIPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vòng Eo — Chỉ Số Quan Trọng Hơn Cân Nặng</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bmi_s3_h2 || 'Vòng Eo — Chỉ Số Quan Trọng Hơn Cân Nặng'}</h2>
         <p className="text-muted text-lg mb-6">Mỡ bụng nội tạng liên quan đến nguy cơ tim mạch, đái tháo đường type 2, gan nhiễm mỡ và hội chứng chuyển hóa</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {WAIST_RISKS.map((w, i) => (
@@ -685,7 +688,7 @@ export default function HealthBMIPage() {
       </RevealBlock>
 
       <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
-        <span>←</span><span>Quay lại Kiến Thức Sức Khỏe</span>
+        <span>←</span><span>{p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</span>
       </Link>
 
       {bmiModal !== null && (

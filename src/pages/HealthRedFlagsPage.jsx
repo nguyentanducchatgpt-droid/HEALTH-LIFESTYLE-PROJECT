@@ -1,4 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -586,6 +587,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function HealthRedFlagsPage() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const [emergencyModal, setEmergencyModal] = useState(null);
   const [soonModal, setSoonModal] = useState(null);
   const [prepModal, setPrepModal] = useState(null);
@@ -613,15 +616,15 @@ export default function HealthRedFlagsPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← {p.sub_breadcrumb || 'Kiến Thức Sức Khỏe'}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🚨</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Dấu Hiệu Nguy Hiểm</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{p.rf_h1 || 'Dấu Hiệu Nguy Hiểm'}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Nhận biết khẩn cấp · Cấp cứu đúng lúc
+            {p.rf_badge || 'Nhận biết khẩn cấp · Cấp cứu đúng lúc'}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
             Nhận biết đúng các dấu hiệu nguy hiểm có thể cứu sống bạn hoặc người thân. Ghi nhớ: <strong className="text-text">khi nghi ngờ — gọi 115</strong>. Không chờ đợi khi triệu chứng nghiêm trọng.
@@ -634,7 +637,7 @@ export default function HealthRedFlagsPage() {
           <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80&auto=format&fit=crop" alt="Cấp cứu" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            Gọi 115 khi nghi ngờ
+            {p.rf_caption || 'Gọi 115 khi nghi ngờ'}
           </span>
         </div>
       </div>
@@ -652,7 +655,7 @@ export default function HealthRedFlagsPage() {
 
       {/* Emergency groups */}
       <RevealBlock delay={1} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Cấp Cứu Ngay Lập Tức</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.rf_s1_h2 || 'Cấp Cứu Ngay Lập Tức'}</h2>
         <p className="text-muted text-lg mb-6">Các tình trạng dưới đây đòi hỏi xử lý trong phút — không phải giờ.</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {EMERGENCY_GROUPS.map((g, i) => (
@@ -693,7 +696,7 @@ export default function HealthRedFlagsPage() {
 
       {/* Soon signs */}
       <RevealBlock delay={2} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>Cần Đi Khám Sớm</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.rf_s2_h2 || 'Cần Đi Khám Sớm'}</h2>
         <p className="text-muted text-lg mb-6">Các dấu hiệu này không cần vào cấp cứu ngay nhưng cần đặt lịch khám trong thời gian ngắn. Click để xem chi tiết.</p>
         <div className="space-y-2">
           {SOON_SIGNS.map((s, i) => (
@@ -713,7 +716,7 @@ export default function HealthRedFlagsPage() {
       </RevealBlock>
 
       <RevealBlock delay={3} className="mb-10">
-        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>Chuẩn Bị Sẵn Sàng</h2>
+        <h2 className="text-xl md:text-2xl font-bold mb-1" style={{ color: COLOR }}>{p.rf_s3_h2 || 'Chuẩn Bị Sẵn Sàng'}</h2>
         <p className="text-muted text-sm mb-5">4 việc cần làm ngay — click để xem hướng dẫn chi tiết</p>
         <div className="grid sm:grid-cols-2 gap-3">
           {PREP_ITEMS.map((p, i) => (
@@ -736,7 +739,7 @@ export default function HealthRedFlagsPage() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <p className="text-base text-muted mb-6">⚠ Nội dung chỉ mang tính giáo dục. Không thay thế khám và điều trị y tế.</p>
-      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Kiến Thức Sức Khỏe</Link>
+      <Link to="/pillar/e" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← {p.sub_back_footer || 'Quay lại Kiến Thức Sức Khỏe'}</Link>
 
       {prepModal !== null && (
         <SoonModal

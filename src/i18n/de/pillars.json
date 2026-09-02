@@ -17044,7 +17044,22 @@
         "title": "Gesundheitsbewertung"
       }
     ],
-    "bmi_waist_sub": "· Taille & Gesundheitsrisiken"
+    "bmi_waist_sub": "· Taille & Gesundheitsrisiken",
+    "bmi_calc_title": "BMI & Taille berechnen",
+    "bmi_calc_weight": "Gewicht (kg)",
+    "bmi_calc_height": "Körpergröße (cm)",
+    "bmi_calc_waist_lbl": "Taillenumfang (cm)",
+    "bmi_calc_ph_weight": "z.B. 70",
+    "bmi_calc_ph_height": "z.B. 170",
+    "bmi_calc_ph_waist": "z.B. 85",
+    "bmi_calc_sex": "Geschlecht",
+    "bmi_calc_male": "Mann",
+    "bmi_calc_female": "Frau",
+    "bmi_calc_high_risk": "Hohes Risiko",
+    "bmi_calc_normal": "Normal",
+    "bmi_calc_whr": "Taille-zu-Größe-Verhältnis",
+    "bmi_calc_above": "Über Schwellenwert",
+    "bmi_calc_action_prefix": "Empfohlene Maßnahmen:"
   },
   "pillarF": {
     "id": "f",

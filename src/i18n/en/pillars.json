@@ -17039,7 +17039,22 @@
         "title": "Health Assessment"
       }
     ],
-    "bmi_waist_sub": "· Waist & Health Risks"
+    "bmi_waist_sub": "· Waist & Health Risks",
+    "bmi_calc_title": "Calculate BMI & Waist",
+    "bmi_calc_weight": "Weight (kg)",
+    "bmi_calc_height": "Height (cm)",
+    "bmi_calc_waist_lbl": "Waist (cm)",
+    "bmi_calc_ph_weight": "e.g. 70",
+    "bmi_calc_ph_height": "e.g. 170",
+    "bmi_calc_ph_waist": "e.g. 85",
+    "bmi_calc_sex": "Sex",
+    "bmi_calc_male": "Male",
+    "bmi_calc_female": "Female",
+    "bmi_calc_high_risk": "High risk",
+    "bmi_calc_normal": "Normal",
+    "bmi_calc_whr": "Waist-to-height ratio",
+    "bmi_calc_above": "Above threshold",
+    "bmi_calc_action_prefix": "Action recommendation:"
   },
   "pillarF": {
     "id": "f",

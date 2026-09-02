@@ -502,9 +502,13 @@ function BMICalculator() {
 
   return (
     <div className="rounded-2xl border p-5 space-y-4" style={{ borderColor: `${COLOR}30`, background: `${COLOR}07` }}>
-      <p className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>Tính BMI & Đánh Giá Vòng Eo</p>
+      <p className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>{p.bmi_calc_title || 'Tính BMI & Đánh Giá Vòng Eo'}</p>
       <div className="grid grid-cols-2 gap-3">
-        {[{ l: 'Cân nặng (kg)', v: weight, s: setWeight, ph: 'VD: 70' }, { l: 'Chiều cao (cm)', v: height, s: setHeight, ph: 'VD: 170' }, { l: 'Vòng eo (cm)', v: waist, s: setWaist, ph: 'VD: 85' }].map(f => (
+        {[
+          { l: p.bmi_calc_weight || 'Cân nặng (kg)', v: weight, s: setWeight, ph: p.bmi_calc_ph_weight || 'VD: 70' },
+          { l: p.bmi_calc_height || 'Chiều cao (cm)', v: height, s: setHeight, ph: p.bmi_calc_ph_height || 'VD: 170' },
+          { l: p.bmi_calc_waist_lbl || 'Vòng eo (cm)', v: waist, s: setWaist, ph: p.bmi_calc_ph_waist || 'VD: 85' }
+        ].map(f => (
           <div key={f.l}>
             <label className="text-base text-muted mb-1 block">{f.l}</label>
             <input type="number" placeholder={f.ph} value={f.v} onChange={e => f.s(+e.target.value)}
@@ -512,9 +516,9 @@ function BMICalculator() {
           </div>
         ))}
         <div>
-          <label className="text-base text-muted mb-1 block">Giới tính</label>
+          <label className="text-base text-muted mb-1 block">{p.bmi_calc_sex || 'Giới tính'}</label>
           <div className="flex gap-2">
-            {[{ v: 'male', l: 'Nam' }, { v: 'female', l: 'Nữ' }].map(g => (
+            {[{ v: 'male', l: p.bmi_calc_male || 'Nam' }, { v: 'female', l: p.bmi_calc_female || 'Nữ' }].map(g => (
               <button key={g.v} onClick={() => setSex(g.v)}
                 className="flex-1 py-2 rounded-xl border text-base font-semibold transition-all"
                 style={sex === g.v ? { borderColor: COLOR, background: `${COLOR}20`, color: COLOR } : { borderColor: '#333', color: '#888' }}>
@@ -535,20 +539,20 @@ function BMICalculator() {
             {waist && (
               <div className="rounded-xl border p-3 flex-1 text-center" style={{ borderColor: `${waistRisk ? '#ef4444' : '#10b981'}30`, background: `${waistRisk ? '#ef4444' : '#10b981'}08` }}>
                 <div className="text-4xl font-black" style={{ color: waistRisk ? '#ef4444' : '#10b981' }}>{waist}</div>
-                <div className="text-base font-bold" style={{ color: waistRisk ? '#ef4444' : '#10b981' }}>{waistRisk ? 'Nguy cơ cao' : 'Bình thường'}</div>
-                <div className="text-base text-muted">Vòng eo (cm)</div>
+                <div className="text-base font-bold" style={{ color: waistRisk ? '#ef4444' : '#10b981' }}>{waistRisk ? (p.bmi_calc_high_risk || 'Nguy cơ cao') : (p.bmi_calc_normal || 'Bình thường')}</div>
+                <div className="text-base text-muted">{p.bmi_calc_waist_lbl || 'Vòng eo (cm)'}</div>
               </div>
             )}
             {whr && (
               <div className="rounded-xl border border-border p-3 flex-1 text-center">
                 <div className="text-4xl font-black text-text">{whr}</div>
-                <div className="text-base text-muted">Tỷ lệ eo/chiều cao</div>
-                <div className="text-base" style={{ color: +whr > 0.5 ? '#ef4444' : '#10b981' }}>{+whr > 0.5 ? 'Trên ngưỡng' : 'OK'}</div>
+                <div className="text-base text-muted">{p.bmi_calc_whr || 'Tỷ lệ eo/chiều cao'}</div>
+                <div className="text-base" style={{ color: +whr > 0.5 ? '#ef4444' : '#10b981' }}>{+whr > 0.5 ? (p.bmi_calc_above || 'Trên ngưỡng') : 'OK'}</div>
               </div>
             )}
           </div>
           <div className="rounded-xl p-3" style={{ background: `${cat.color}10`, borderLeft: `3px solid ${cat.color}` }}>
-            <p className="text-base text-muted leading-relaxed"><strong style={{ color: cat.color }}>Gợi ý hành động:</strong> {cat.action}</p>
+            <p className="text-base text-muted leading-relaxed"><strong style={{ color: cat.color }}>{p.bmi_calc_action_prefix || 'Gợi ý hành động:'}</strong> {cat.action}</p>
           </div>
         </div>
       )}

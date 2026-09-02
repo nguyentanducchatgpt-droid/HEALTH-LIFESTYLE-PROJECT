@@ -387,7 +387,7 @@ function BPModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, hasNext }
             <h2 className="font-bold text-2xl md:text-3xl" style={{ color: item.color }}>{item.label}</h2>
           </div>
           <p className="font-semibold text-base mb-2 pl-6" style={{ color: `rgba(${item.rgb},0.7)` }}>
-            Tâm thu: {item.sys} &nbsp;·&nbsp; Tâm trương: {item.dia}
+            {p.bp_sys_label || 'Tâm thu'}: {item.sys} &nbsp;·&nbsp; {p.bp_dia_label || 'Tâm trương'}: {item.dia}
           </p>
           <div className="rounded-2xl px-4 py-3 mb-6 text-sm leading-relaxed" style={{ background: `rgba(${item.rgb},0.08)`, borderLeft: `3px solid ${item.color}` }}>
             {item.keyFact}
@@ -484,7 +484,7 @@ function BPEntryModal({ entry, idx, total, onClose, onPrev, onNext, hasPrev, has
             <span className="font-bold text-xl" style={{ color: cls.color }}>{cls.label}</span>
             <span className="ml-auto text-xs px-3 py-1 rounded-full font-bold uppercase tracking-widest"
               style={{ background: `rgba(${cls.rgb},0.12)`, color: cls.color }}>
-              Tâm thu {cls.sys} · Tâm trương {cls.dia}
+              {p.bp_sys_label || 'Tâm thu'} {cls.sys} · {p.bp_dia_label || 'Tâm trương'} {cls.dia}
             </span>
           </div>
 
@@ -495,7 +495,7 @@ function BPEntryModal({ entry, idx, total, onClose, onPrev, onNext, hasPrev, has
 
           {/* Recommended action */}
           <div className="mb-5">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: cls.color }}>Khuyến nghị</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: cls.color }}>{p.bp_entry_recommend || 'Khuyến nghị'}</p>
             <p className="text-base text-muted leading-relaxed">{cls.action}</p>
           </div>
 
@@ -574,6 +574,8 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 function BPJournal() {
+  const { t } = useTranslation('pillars');
+  const p = t('pillarE', { returnObjects: true }) || {};
   const days = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
   const [entries, setEntries] = useState(() => {
     try { return JSON.parse(localStorage.getItem('healthapp_bp_journal') || '[]'); }
@@ -604,14 +606,14 @@ function BPJournal() {
 
   return (
     <div className="rounded-2xl border border-border bg-surface p-5">
-      <h3 className="font-bold text-text mb-4" style={{ color: COLOR }}>Nhật Ký Huyết Áp 7 Ngày</h3>
+      <h3 className="font-bold text-text mb-4" style={{ color: COLOR }}>{p.bp_journal_section_title || 'Nhật Ký Huyết Áp 7 Ngày'}</h3>
       <div className="flex flex-wrap gap-2 mb-4">
-        <input value={sys} onChange={e => setSys(e.target.value)} placeholder="Tâm thu (mmHg)" type="number" className="flex-1 min-w-[120px] bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
-        <input value={dia} onChange={e => setDia(e.target.value)} placeholder="Tâm trương (mmHg)" type="number" className="flex-1 min-w-[120px] bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
-        <input value={pulse} onChange={e => setPulse(e.target.value)} placeholder="Nhịp tim (bpm)" type="number" className="flex-1 min-w-[100px] bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
-        <button onClick={addEntry} className="px-4 py-2 rounded-xl text-lg font-bold text-white" style={{ background: COLOR }}>+ Thêm</button>
+        <input value={sys} onChange={e => setSys(e.target.value)} placeholder={p.bp_sys_ph || 'Tâm thu (mmHg)'} type="number" className="flex-1 min-w-[120px] bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+        <input value={dia} onChange={e => setDia(e.target.value)} placeholder={p.bp_dia_ph || 'Tâm trương (mmHg)'} type="number" className="flex-1 min-w-[120px] bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+        <input value={pulse} onChange={e => setPulse(e.target.value)} placeholder={p.bp_pulse_ph || 'Nhịp tim (bpm)'} type="number" className="flex-1 min-w-[100px] bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+        <button onClick={addEntry} className="px-4 py-2 rounded-xl text-lg font-bold text-white" style={{ background: COLOR }}>{p.bp_add_btn || '+ Thêm'}</button>
       </div>
-      {entries.length === 0 && <p className="text-muted text-lg text-center py-6">Chưa có dữ liệu. Thêm lần đo đầu tiên.</p>}
+      {entries.length === 0 && <p className="text-muted text-lg text-center py-6">{p.bp_no_data || 'Chưa có dữ liệu. Thêm lần đo đầu tiên.'}</p>}
       <div className="space-y-2 max-h-64 overflow-y-auto">
         {entries.map((e, i) => (
           <div key={i}
@@ -717,7 +719,7 @@ export default function HealthBPPage() {
         <RevealBlock delay={0} className="mb-10">
           <div className="rounded-2xl border p-4 md:p-5" style={{ borderColor: `rgba(${RGB},0.13)`, background: `rgba(${RGB},0.04)` }}>
             <div className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: COLOR }}>{p.sub_profile_label || '✦ Hồ Sơ Của Bạn'}</div>
-            <p className="text-base text-muted">{b0.age} tuổi · {b0.weight}kg — Nên đo huyết áp {b0.age >= 40 ? 'mỗi 3–6 tháng' : 'mỗi năm'} và theo dõi hàng ngày nếu có nguy cơ.</p>
+            <p className="text-base text-muted">{b0.age} {p.bp_profile_age || 'tuổi'} · {b0.weight}kg — {p.bp_profile_check || 'Nên đo huyết áp'} {b0.age >= 40 ? (p.bp_profile_freq_hi || 'mỗi 3–6 tháng') : (p.bp_profile_freq_lo || 'mỗi năm')} {p.bp_profile_note || 'và theo dõi hàng ngày nếu có nguy cơ.'}</p>
           </div>
         </RevealBlock>
       )}
@@ -725,7 +727,7 @@ export default function HealthBPPage() {
       {/* Classification */}
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s1_h2 || 'Phân Loại Huyết Áp (AHA 2017)'}</h2>
-        <p className="text-muted text-lg mb-6">Đơn vị mmHg. Áp dụng cho người lớn ≥ 18 tuổi, không dùng thuốc huyết áp.</p>
+        <p className="text-muted text-lg mb-6">{p.bp_s1_desc || 'Đơn vị mmHg. Áp dụng cho người lớn ≥ 18 tuổi, không dùng thuốc huyết áp.'}</p>
         <div className="space-y-3">
           {bpCats.map((c, i) => (
             <div key={i}
@@ -740,8 +742,8 @@ export default function HealthBPPage() {
                 <span className="font-bold text-lg text-text">{c.label}</span>
               </div>
               <div className="flex gap-4 text-base text-muted sm:w-40 shrink-0">
-                <span>Tâm thu: <strong className="text-text">{c.sys}</strong></span>
-                <span>Tâm trương: <strong className="text-text">{c.dia}</strong></span>
+                <span>{p.bp_sys_label || 'Tâm thu'}: <strong className="text-text">{c.sys}</strong></span>
+                <span>{p.bp_dia_label || 'Tâm trương'}: <strong className="text-text">{c.dia}</strong></span>
               </div>
               <p className="text-base text-muted flex-1">{c.action}</p>
               <span className="text-muted text-base shrink-0">→</span>
@@ -749,14 +751,15 @@ export default function HealthBPPage() {
           ))}
         </div>
         <div className="mt-4 rounded-2xl border p-4 text-lg" style={{ borderColor: `rgba(239,68,68,0.3)`, background: 'rgba(239,68,68,0.06)' }}>
-          <span className="font-bold text-red-400">⚠ Khẩn cấp:</span> <span className="text-muted">HA &gt; 180/120 mmHg kèm đau đầu dữ dội, mờ mắt, đau ngực, khó thở, tê liệt → <strong className="text-text">Gọi 115 hoặc vào cấp cứu ngay.</strong></span>
+          <span className="font-bold text-red-400">⚠ {p.bp_emergency_label || 'Khẩn cấp:'}</span>{' '}
+          <span className="text-muted">{p.bp_emergency_text || 'HA > 180/120 mmHg kèm đau đầu dữ dội, mờ mắt, đau ngực, khó thở, tê liệt → Gọi 115 hoặc vào cấp cứu ngay.'}</span>
         </div>
       </RevealBlock>
 
       {/* Measurement technique */}
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s2_h2 || 'Kỹ Thuật Đo Đúng Chuẩn'}</h2>
-        <p className="text-muted text-lg mb-6">Sai kỹ thuật có thể khiến kết quả lệch 10–20 mmHg.</p>
+        <p className="text-muted text-lg mb-6">{p.bp_s2_desc || 'Sai kỹ thuật có thể khiến kết quả lệch 10–20 mmHg.'}</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {steps.map((s, i) => (
             <div key={i}
@@ -772,14 +775,15 @@ export default function HealthBPPage() {
           ))}
         </div>
         <div className="mt-4 rounded-2xl border border-border bg-surface p-4 text-lg text-muted">
-          <strong className="text-text">Nên đo lúc nào?</strong> Buổi sáng (sau khi thức, trước khi ăn, trước khi uống thuốc) và buổi tối (trước khi ngủ). Ghi lại cả hai lần để có xu hướng chính xác hơn.
+          <strong className="text-text">{p.bp_when_label || 'Nên đo lúc nào?'}</strong>{' '}
+          {p.bp_when_desc || 'Buổi sáng (sau khi thức, trước khi ăn, trước khi uống thuốc) và buổi tối (trước khi ngủ). Ghi lại cả hai lần để có xu hướng chính xác hơn.'}
         </div>
       </RevealBlock>
 
       {/* Lifestyle */}
       <RevealBlock delay={3} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{p.bp_s3_h2 || 'Lối Sống Kiểm Soát Huyết Áp'}</h2>
-        <p className="text-muted text-lg mb-6">Thay đổi lối sống có thể giảm HA 5–20 mmHg mà không cần thuốc.</p>
+        <p className="text-muted text-lg mb-6">{p.bp_s3_desc || 'Thay đổi lối sống có thể giảm HA 5–20 mmHg mà không cần thuốc.'}</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {lifestyle.map((l, i) => (
             <div key={i}
@@ -798,7 +802,7 @@ export default function HealthBPPage() {
 
       {/* Journal */}
       <RevealBlock delay={4} className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Ghi Nhật Ký Huyết Áp</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>{p.bp_journal_title || 'Ghi Nhật Ký Huyết Áp'}</h2>
         <BPJournal />
       </RevealBlock>
 

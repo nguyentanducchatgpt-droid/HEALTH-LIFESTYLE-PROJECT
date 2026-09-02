@@ -15698,37 +15698,261 @@
       {
         "metric": "Körpergewicht",
         "freq": "Wöchentlich",
-        "tip": "Gleiche Uhrzeit, gleiche Bedingungen — morgens nach dem Aufwachen, vor dem Essen"
+        "tip": "Gleiche Uhrzeit, gleiche Bedingungen — morgens nach dem Aufwachen, vor dem Essen",
+        "keyFact": "Das Körpergewicht kann täglich um 1–2 kg schwanken – durch Wasser, Darminhalt und Menstruationszyklus, nicht durch echtes Fett. Nur Trends über 4–8 Wochen sind aussagekräftig. 1–3×/Woche wiegen (nicht täglich) vermeidet unnötige Angst und erfasst dennoch Trends.",
+        "detail": "Morgens nach dem Toilettengang, vor dem Frühstück und ohne schwere Kleidung wiegen – dann befindet sich der Körper im konsistentesten Basiszustand. Wert aufschreiben und Wochendurchschnitt bilden, um Tagesschwankungen herauszurechnen.",
+        "details": [
+          "Warum nicht täglich wiegen: tägliche Schwankungen entstehen durch Natrium (Salz bindet Wasser), Kohlenhydrate (Glykogen bindet 3g Wasser/g), Menstruationszyklus, Atmung und Schwitzen. Auf die Tageszahl zu reagieren führt zu unnötiger Angst und schlechten Ernährungsentscheidungen.",
+          "Optimale Häufigkeit: 1–3×/Woche, immer die gleichen Tage (z.B. Mo/Mi/Fr morgens). Durchschnitt aus 3 Messungen = Wochengewicht. Diese Woche mit letzter Woche vergleichen, nicht heute mit gestern.",
+          "Standardbedingungen bei jeder Messung: nach dem Toilettengang, vor Wasser trinken oder Frühstück, gleiches Gerät, gleicher fester Untergrund. Keine Schuhe, keine schwere Kleidung.",
+          "Trends verstehen: Verlust >0,25 kg/Woche über 4 aufeinanderfolgende Wochen = echter Abwärtstrend. Schwankung ±1 kg zur Vorwoche = keine Veränderung. Zunahme >0,5 kg/Woche über 3–4 Wochen = Ernährung überprüfen.",
+          "Wann nicht wiegen: nach einer großen Mahlzeit, nach einem harten Training (Muskeln speichern Wasser zur Regeneration), kurz vor/nach dem Menstruationszyklus, bei Fieber. In diesen Situationen spiegelt die Zahl nicht die Realität wider.",
+          "Hilfreiche Tracking-Apps: Happy Scale (iOS) oder LibreScale (Android) berechnen einen gleitenden Durchschnitt – so wird der echte Trend sichtbar, auch wenn die Tageszahlen chaotisch wirken. Oder einfaches Spreadsheet: Datum, Gewicht, 7-Tage-Durchschnitt."
+        ],
+        "points": [
+          {
+            "icon": "📅",
+            "label": "1–3×/Woche reicht aus",
+            "note": "Mehr erzeugt Angst – kein zusätzlicher Nutzen"
+          },
+          {
+            "icon": "🌅",
+            "label": "Morgens, nach WC, vor dem Essen",
+            "note": "Konsistentester Basiszustand des Tages"
+          },
+          {
+            "icon": "📊",
+            "label": "Wochendurchschnitt beobachten",
+            "note": "Eliminiert Tagesschwankungen – 4-Wochen-Trend ist entscheidend"
+          },
+          {
+            "icon": "🚫",
+            "label": "Nicht auf eine einzelne Zahl reagieren",
+            "note": "±1–2 kg Schwankung ist normale Physiologie, kein Fett"
+          }
+        ]
       },
       {
         "metric": "Taillenumfang",
         "freq": "Monatlich",
-        "tip": "Wichtiger als Gewicht — zeigt viszerales Fettrisiko an"
+        "tip": "Wichtiger als Gewicht — zeigt viszerales Fettrisiko an",
+        "keyFact": "Der Taillenumfang spiegelt viszerales Fett wider – gefährlicher als das Körpergewicht allein. Gefahrenschwellen für Asiaten: ≥90 cm bei Männern, ≥80 cm bei Frauen (IDF-Asien-Standard). Nur ein Maßband und 30 Sekunden – dies ist der wichtigste Herz-Kreislauf-Wert, den Sie zu Hause selbst messen können.",
+        "detail": "Viszerales Fett (um die Bauchorgane) wirkt anders als subkutanes Fett: Es setzt entzündliche Adipokine und freie Fettsäuren direkt in den Pfortaderkreislauf frei und verursacht Insulinresistenz sowie Atherosklerose. Eine Reduktion des Taillenumfangs um 5–10 cm geht mit einer deutlichen Senkung des Herz-Kreislauf- und Diabetesrisikos einher, selbst wenn sich das Gewicht kaum ändert.",
+        "details": [
+          "Korrekte Messtechnik: gerade stehen, Füße schulterbreit, leicht ausatmen (NICHT einziehen oder vollständig ausatmen), Maßband auf Höhe der Mitte zwischen dem untersten Rippenbogen und dem Beckenkamm anlegen – meist auf Höhe des Nabels oder 1–2 cm darüber. Band nicht zu fest oder zu locker halten. Zweimal messen, Durchschnitt nehmen.",
+          "Einmal pro Woche ist optimal: Der Taillenumfang verändert sich langsamer als das Gewicht (echtes Fett, kein Wasser). Tägliches Messen zeigt keine Veränderung und demotiviert. Trends werden über 4–8 Wochen sichtbar. Immer morgens vor dem Essen unter gleichen Bedingungen.",
+          "Asiatische Schwellenwerte verstehen: Die IDF 2005 setzte niedrigere Schwellen als westliche Standards, da Asiaten bei gleichem BMI mehr viszerales Fett ansammeln. Männer ≥90 cm (Westen 102 cm), Frauen ≥80 cm (Westen 88 cm). Normaler BMI, aber Taillenumfang über dem Schwellenwert = TOFI – metabolisches Risiko wie bei Übergewicht.",
+          "Taillenumfang sinkt vor dem Gewicht: Bei einer gesunden Ernährung und Sport nimmt das viszerale Fett (sichtbar am Taillenumfang) oft ab, bevor die Waage reagiert. Taillenumfang um 2–3 cm kleiner, Gewicht gleich = echter Erfolg – Fett verloren, Muskeln aufgebaut.",
+          "Nicht-diätetische Faktoren, die den Taillenumfang beeinflussen: chronischer Stress (Cortisol fördert Bauchfettansammlung), schlechter Schlaf (<6h führt zu hohem Cortisol), Alkohol (besonders Bierbauch), langfristige Kortikosteroide. Die Reduktion erfordert das Angehen aller Faktoren, nicht nur weniger Essen.",
+          "Wann Sorge angebracht ist: Taillenumfang steigt >3 cm in einem Monat ohne Erklärung, oder steigt zusammen mit Gesichts-/Beinödemen, ungewöhnlicher Müdigkeit oder Kurzatmigkeit → medizinische Abklärung erforderlich (Aszites, Herzinsuffizienz, Nierenversagen ausschließen)."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "Männer <90 cm · Frauen <80 cm",
+            "note": "IDF-Asien-Schwelle – niedriger als im Westen wegen unterschiedlicher Physiologie"
+          },
+          {
+            "icon": "📐",
+            "label": "Korrekt messen: leicht ausatmen, nicht einziehen",
+            "note": "Einziehen oder volles Ausatmen verfälscht das Ergebnis um 3–5 cm"
+          },
+          {
+            "icon": "📉",
+            "label": "Taillenumfang sinkt vor dem Gewicht",
+            "note": "Viszerales Fett reagiert schnell – frühestes Zeichen des Fortschritts"
+          },
+          {
+            "icon": "⚠️",
+            "label": "TOFI: normaler BMI, hoher Taillenumfang",
+            "note": "Metabolisches Risiko trotz Normalgewicht – Messung ist Pflicht"
+          }
+        ]
       },
       {
         "metric": "Blutdruck",
         "freq": "Monatlich*",
-        "tip": "5 Min. sitzend ruhen vor der Messung — beide Arme"
+        "tip": "5 Min. sitzend ruhen vor der Messung — beide Arme",
+        "keyFact": "Bluthochdruck gilt als 'stiller Killer', da er bis zu Komplikationen (Schlaganfall, Herzinfarkt, Nierenversagen) keine klaren Symptome zeigt. Der 7-Tage-Heimmonitor-Durchschnitt (morgens + abends) ist genauer als eine einzelne Arztmessung, da er den Weißkittel-Effekt (durch Arztangst erhöhter Blutdruck) eliminiert.",
+        "detail": "Der Blutdruck ändert sich kontinuierlich im Tagesverlauf: am niedrigsten im Schlaf, steigend von 6–10 Uhr (Morgenanstieg), am höchsten am späten Nachmittag. Eine einzelne Messung kann um 10–20 mmHg vom wahren Wert abweichen. Standardprotokoll: zweimal im Abstand von 1–2 Minuten messen, Durchschnitt bilden, morgens und abends erfassen.",
+        "details": [
+          "Korrekte Vorbereitung: 5 Minuten ruhig sitzen (nicht sprechen, kein Telefon). Kein Kaffee, kein Rauchen, kein Sport in den 30 Minuten davor. Leere Blase (volle Blase erhöht den Blutdruck um 10–15 mmHg). Aufrecht sitzen, Füße flach auf dem Boden, keine Beine übereinanderschlagen.",
+          "Manschetten-Position: Arm auf Herzhöhe (auf einem Tisch, auf Brusthöhe). Die Manschette sollte 80% des Armumfangs bedecken (falsche Größe verursacht ±10 mmHg Fehler). Nicht über dicker Kleidung messen. Mindestens 1 Minute zwischen den Messungen warten, Durchschnitt bilden.",
+          "Messhäufigkeit nach Situation: Gesunde – 2–3×/Woche reicht zur Trenderfassung. Personen mit diagnostiziertem oder vermutetem Bluthochdruck – 7 Tage lang morgens + abends messen, aufschreiben, Ergebnisse zum Arzt mitbringen. Personen, die Medikamente anpassen – Arztanweisung folgen.",
+          "Werte richtig lesen: 120/80 = systolisch/diastolisch. Normal: <120/80. Erhöht: 120–129/<80. Stufe 1 Hypertonie: 130–139/80–89. Stufe 2 Hypertonie: ≥140/90. Hypertensive Krise: >180/>120 → sofort ärztliche Hilfe. Ein einzelner hoher Wert ist keine Diagnose – mehrere Messungen zu verschiedenen Zeiten erforderlich.",
+          "Maskierte und Weißkittel-Hypertonie: zuhause normal, in der Klinik erhöht = Weißkittel-Effekt (25–30% der Patienten). Zuhause erhöht, in der Klinik normal = maskierte Hypertonie (gefährlicher, da unentdeckt). Deshalb ist Heimmessung genauso wichtig wie Klinikkontrolle.",
+          "Wann sofort zum Arzt: Blutdruck ≥180/120 mmHg (auch ohne Symptome), erhöhter Blutdruck mit starkem Hinterkopfschmerz, Sehstörungen, Brustschmerzen, Kurzatmigkeit, plötzlichen Gesichts-/Hand-/Fußödemen oder diastolischem Druck, der plötzlich >20 mmHg über Ihrem Ausgangswert liegt."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "5 Minuten vor der Messung ausruhen",
+            "note": "Aufstehen, Sprechen oder Telefonieren erhöht den Blutdruck um 5–15 mmHg"
+          },
+          {
+            "icon": "📝",
+            "label": "Beide Messungen, beide Sitzungen aufzeichnen",
+            "note": "7-Tage-Morgen- + Abenddurchschnitt genauer als ein Arzttermin"
+          },
+          {
+            "icon": "🎯",
+            "label": "Ziel: <120/80 mmHg",
+            "note": "Stufe 1 Hypertonie: 130–139/80–89 → Lebensstiländerung erforderlich"
+          },
+          {
+            "icon": "🚨",
+            "label": "≥180/120 → sofort ärztliche Hilfe",
+            "note": "Hypertensive Krise – nicht warten, auch ohne Symptome"
+          }
+        ]
       },
       {
         "metric": "Ruheherzfrequenz",
         "freq": "Wöchentlich",
-        "tip": "60s nach dem Aufwachen zählen — Trend über 4 Wochen wichtig"
+        "tip": "60s nach dem Aufwachen zählen — Trend über 4 Wochen wichtig",
+        "keyFact": "Die Ruheherzfrequenz (RHR) ist ein einfacher Indikator für Herz-Kreislauf-Gesundheit und Erholung. Regelmäßig Trainierende haben eine RHR von 45–55 bpm; Sitzende 75–90 bpm. Forschung: Jeder Anstieg der RHR um 10 bpm ist mit 15–18% höherem kardiovaskulärem Sterblichkeitsrisiko verbunden. Ein plötzlicher RHR-Anstieg (>10 bpm über dem Ausgangswert) ist ein Frühzeichen für Krankheit, Stress, schlechten Schlaf oder Übertraining.",
+        "detail": "Die RHR muss unmittelbar nach dem Aufwachen gemessen werden, bevor man sich aufsetzt oder irgendetwas tut – das ist der echte Ruhezustand. Aufsetzen erhöht die RHR um 10–15 bpm, Kaffee um 5–10 bpm, Stress um 5–20 bpm. Ihren persönlichen Ausgangswert zu kennen ist wichtiger als der Vergleich mit allgemeinen Normbereichen.",
+        "details": [
+          "Korrekte Messtechnik: sofort nach dem Aufwachen (Augen eben erst geöffnet), noch ruhig liegend, zwei Finger (Zeige- + Mittelfinger) auf die innere Handgelenkaußenseite (Radialispuls) oder den Hals (Karotis) legen, 60 Sekunden zählen. Oder 30 Sekunden × 2. Eine Smartwatch misst kontinuierlich und bildet einen Nachtdurchschnitt – genauer als eine einzelne manuelle Messung.",
+          "Normalwerte und ihre Bedeutung: 60–100 bpm ist laut AHA 'normal', aber der gesundheitsoptimale Bereich ist 60–80 bpm. Sportler: 40–60 bpm (stärkeres Herz pumpt mehr Blut pro Schlag). RHR >100 bpm dauerhaft = Tachykardie, medizinische Abklärung erforderlich.",
+          "RHR als Erholungsbarometer: RHR 5–7 bpm über dem Ausgangswert nach dem Training = unzureichende Erholung – leicht trainieren oder ruhen. RHR 7–10+ bpm erhöht mit Müdigkeit = mögliche Erkrankung im Anmarsch (Virusinfektionen erhöhen oft die RHR, bevor Symptome auftreten). Garmin/Apple Watch HRV und Recovery Score basieren darauf.",
+          "RHR durch Training verbessern: Zone-2-Cardio (Laufen oder Radfahren in einem Tempo, bei dem man noch gut sprechen kann) für 150 min/Woche ist der effektivste Weg, die RHR langfristig zu senken. Nach 8–12 Wochen regelmäßigem Training kann die RHR um 5–10 bpm sinken. Krafttraining hilft ebenfalls, aber weniger als Cardio.",
+          "Faktoren, die die RHR erhöhen: Dehydratation (RHR steigt bei 1% Körpergewichtsverlust durch Flüssigkeit um 7–8 bpm), Koffein, Stress, Schlafmangel, Alkohol (Anstieg in der betreffenden Nacht), Medikamente (Beipackzettel prüfen). Diese Schwankungen sind normal, wenn die RHR nach 1–2 Tagen wieder auf den Ausgangswert zurückkehrt.",
+          "HRV – ein fortgeschrittenerer Messwert: Die Herzratenvariabilität (Variation zwischen Herzschlägen) spiegelt das Gleichgewicht des autonomen Nervensystems besser wider als die RHR allein. Hohe HRV = gute Erholung, gesundes Herz. Moderne Smartwatches messen HRV jeden Morgen – fällt die HRV mehrere aufeinanderfolgende Tage um mehr als 20% unter Ihren Ausgangswert, signalisiert das Erholungsbedarf."
+        ],
+        "points": [
+          {
+            "icon": "🛌",
+            "label": "Beim Aufwachen messen, bevor man aufsteht",
+            "note": "Aufstehen addiert sofort 10–15 bpm – Ausgangswert geht verloren"
+          },
+          {
+            "icon": "📈",
+            "label": "+5–7 bpm über Ausgangswert = nicht erholt",
+            "note": "Leicht trainieren oder pausieren – besonders bei Müdigkeit"
+          },
+          {
+            "icon": "🏃",
+            "label": "Zone-2-Cardio senkt die RHR",
+            "note": "150 min/Woche → RHR sinkt nach 8–12 Wochen um 5–10 bpm"
+          },
+          {
+            "icon": "💧",
+            "label": "Dehydratation erhöht RHR um 7–8 bpm",
+            "note": "Beim Aufwachen Wasser trinken, bevor die nächste Messung erfolgt"
+          }
+        ]
       },
       {
         "metric": "Schlaf",
         "freq": "Täglich",
-        "tip": "Schlafpunktzahl + Aufwachanzahl + Morgenernergie (1–10)"
+        "tip": "Schlafpunktzahl + Aufwachanzahl + Morgenernergie (1–10)",
+        "keyFact": "Schlaf beeinflusst nahezu jedes Organsystem. Chronischer Schlafmangel (<7 Stunden/Nacht) ist mit 89% höherem Adipositas-Risiko (bei Kindern), Typ-2-Diabetes, Bluthochdruck, Depression, kognitivem Abbau und frühem Tod verbunden. Matthew Walker (Why We Sleep): 'Es gibt kein Organ, das nicht von ausreichend Schlaf profitiert, und keine Krankheit, die sich durch Schlafmangel nicht verschlechtert.'",
+        "detail": "Das tägliche Aufzeichnen des Schlafs hilft, Muster zu erkennen: Schlafen Sie nach Sport besser? Nach einem frühen Abendessen? Korreliert es mit der Stimmung am nächsten Tag? Personalisierte Daten verbessern die Schlafqualität wirksamer als jeder allgemeine Ratschlag.",
+        "details": [
+          "Was aufgezeichnet werden sollte: Zubettgehzeit, geschätzte Einschlafzeit, Anzahl nächtlicher Aufwachphasen, Aufwachzeit, Gefühl beim Aufwachen (Skala 1–5: 1=sehr müde, 5=erfrischt). Gesamtschlafdauer + Qualität (Gefühl beim Aufwachen) = die zwei wichtigsten Messwerte.",
+          "Tracking-Tools: Smartwatches (Apple Watch, Garmin, Fitbit) verfolgen automatisch Schlafphasen (Leicht-/Tief-/REM-Schlaf). Apps wie Sleep Cycle oder Oura Ring analysieren die Qualität. Minimalisten-Ansatz: ein Schlaftagebuch mit 3 Werten (Einschlafzeit, Aufwachzeit, Qualitätspunkt 1–5) dauert morgens 10 Sekunden.",
+          "Zirkadianer Rhythmus: Der Körper hat eine 24-Stunden-Innenuhr, die Melatonin, Cortisol und Körpertemperatur steuert. Jeden Tag zur gleichen Zeit ins Bett gehen und aufwachen (auch am Wochenende) ist der wichtigste Einzelfaktor für Schlafqualität – wichtiger als die konkrete Uhrzeit. Ein >1-Stunden-Unterschied zwischen Arbeits- und Wochenendschlaf (sozialer Jetlag) erhöht das Adipositas- und Herz-Kreislauf-Risiko.",
+          "Tief- und REM-Schlaf: Tiefschlaf (N3) ist entscheidend für körperliche Erholung, Immunsystem und Wachstumshormon. REM ist entscheidend für emotionales Gedächtnis, Kreativität und Stressverarbeitung. Tiefschlaf konzentriert sich im ersten Nachtdrittel, REM im letzten. Alkohol unterdrückt REM stark – 8 Stunden schlafen nach Alkohol, aber REM verpassen = keine echte Erholung.",
+          "Häufige Schlafstörer: Bildschirme vor dem Schlafen (Blaulicht unterdrückt Melatonin für 2–3 Stunden), zu warmes Zimmer (ideal 18–20°C), Koffein nach 14 Uhr (Halbwertszeit 5–6h – 25% noch um Mitternacht im Blut), abends viel Wasser trinken, Ausschlafen am Wochenende.",
+          "Wenn das Tracking Muster zeigt: dauerhaft <6h/Nacht für >1 Woche → Schlafverbesserung vor allen anderen Gesundheitszielen priorisieren. Qualität ≤2/5 trotz ausreichender Stunden → Schlafapnoe prüfen (besonders bei Schnarchen, hohem BMI, dickem Hals). Häufiges Aufwachen um 2–3 Uhr → hohes Cortisol/Stress/Angst, das angegangen werden muss."
+        ],
+        "points": [
+          {
+            "icon": "🕐",
+            "label": "Gleiche Schlaf-/Aufwachzeit die ganze Woche",
+            "note": "Stabiler Tagesrhythmus wichtiger als die konkrete Uhrzeit"
+          },
+          {
+            "icon": "📵",
+            "label": "Keine Bildschirme 1h vor dem Schlafen",
+            "note": "Blaulicht unterdrückt Melatonin 2–3 Stunden – verzögert das Einschlafen"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Zimmer 18–20°C für Tiefschlaf",
+            "note": "Körperkerntemperatur sinkt beim Tiefschlaf – kühles Zimmer hilft"
+          },
+          {
+            "icon": "🍺",
+            "label": "Alkohol stört REM trotz ausreichender Stunden",
+            "note": "8h Schlaf nach Alkohol = fehlender Erholungsschlaf"
+          }
+        ]
       },
       {
         "metric": "Stresslevel",
         "freq": "Täglich",
-        "tip": "Skala 1–10 — beachten, an welchen Tagen Stress steigt"
+        "tip": "Skala 1–10 — beachten, an welchen Tagen Stress steigt",
+        "keyFact": "Chronischer Stress (der Wochen oder Monate anhält) hat echte physiologische Auswirkungen: dauerhaft hohes Cortisol erhöht den Blutdruck, unterdrückt das Immunsystem, verursacht Insulinresistenz, fördert die Ansammlung von Bauchfett und lässt den Hippocampus (Hirnregion für das Gedächtnis) schrumpfen. Das tägliche Aufzeichnen des Stresslevels hilft, Auslöser, Muster und die Wirksamkeit von Maßnahmen (Meditation, Sport, Schlaf) zu erkennen.",
+        "detail": "Eine einfache 1–10-Skala ist bei konsequentem Tracking wirksam. Der absolute Wert ist weniger wichtig als der Trend: Stress auf 6/10 jeden Tag über 2 Wochen ist gefährlicher als Stress auf 8/10 an einem einzelnen Tag. Abends vor dem Schlafen eintragen – zu diesem Zeitpunkt spiegelt der Wert den gesamten Tag wider.",
+        "details": [
+          "Verwendung der 1–10-Skala: 1–3 = entspannt, kein nennenswerter Druck. 4–5 = leichter normaler Stress, beherrschbar. 6–7 = deutlicher Stress, beeinträchtigt Konzentration und Stimmung. 8–9 = sehr gestresst, kaum kontrollierbar. 10 = extrem, Krise. Optional: ein Wort zur Hauptursache notieren (Arbeit, Familie, Gesundheit, Finanzen).",
+          "Häufige Muster beim Tracking: hoher Stress jeden Montag (antizipatorischer Stress), niedrigerer Stress nach Sport (Endorphin-Effekt in den Daten sichtbar), Stressanstieg korreliert mit 2 aufeinanderfolgenden Nächten schlechten Schlafs, Stressrückgang nach >4 Wochen regelmäßiger Meditation. Diese personalisierten Daten sind wirksamer als jeder allgemeine Ratschlag.",
+          "Physiologischer vs. wahrgenommener Stress: HRV (Herzratenvariabilität) ist ein physiologischer Indikator für Stress des autonomen Nervensystems – niedrig = hoher Stress, auch wenn man sich gut fühlt. Die Kombination von HRV (Smartwatch) mit der subjektiven Stressskala ergibt ein vollständigeres Bild. Viele Menschen 'fühlen keinen Stress', haben aber dauerhaft niedrige HRV = hohe allostatische Last.",
+          "Evidenzbasierte Maßnahmen: (1) 30 Minuten moderate Bewegung – senkt Cortisol, erhöht BDNF und Endorphine. (2) 4–7–8 oder Box-Breathing – aktiviert das Parasympathikusnervensystem sofort. (3) Achtsamkeitsmeditation >8 Wochen – reduziert die Amygdala-Größe, erhöht die graue Substanz im präfrontalen Kortex (Meta-Analyse Holzel 2011). (4) Ausreichend Schlaf – Cortisol fällt nachts während des Tiefschlafs.",
+          "Allostatische Last – langfristige Stressbelastung: Der Körper kann kurzfristig hohen Stress bewältigen (akuter Stress ist sogar nützlich). Das Problem ist anhaltender Stress ohne Erholung. 7-Tage-Durchschnitt tracken: wenn dauerhaft ≥6/10 für >2 Wochen → aktive Maßnahmen erforderlich, nicht nur 'noch mehr anstrengen'.",
+          "Soziale Verbundenheit – oft übersehen: Einsamkeit und soziale Isolation haben eine Gesundheitswirkung, die dem Rauchen von 15 Zigaretten täglich entspricht (Holt-Lunstad 2015). Soziale Verbundenheit parallel zum Stress tracken – oft ist hoher Stress auf Einsamkeit zurückzuführen, nicht auf Arbeit. Ein echtes Gespräch mit einer nahestehenden Person senkt Cortisol wirksam."
+        ],
+        "points": [
+          {
+            "icon": "📝",
+            "label": "Abends eintragen, Hauptursache notieren",
+            "note": "7-Tage-Trend wichtiger als ein einzelner Tageswert"
+          },
+          {
+            "icon": "🏃",
+            "label": "30-Min.-Training senkt Cortisol schnell",
+            "note": "Endorphine + BDNF – schnellste und wirksamste Stressmaßnahme"
+          },
+          {
+            "icon": "🫁",
+            "label": "Box-Breathing aktiviert Parasympathikus",
+            "note": "4 Sek. einatmen – 4 Sek. halten – 4 Sek. ausatmen – 4× wiederholen"
+          },
+          {
+            "icon": "⚠️",
+            "label": "≥6/10 über >2 Wochen = Maßnahme nötig",
+            "note": "Allostatische Last – Körper erholt sich nicht, wenn Stress nicht nachlässt"
+          }
+        ]
       },
       {
         "metric": "Tagesschritte",
         "freq": "Täglich",
-        "tip": "Ziel 7.000–10.000 Schritte/Tag — jede Bewegung zählt"
+        "tip": "Ziel 7.000–10.000 Schritte/Tag — jede Bewegung zählt",
+        "keyFact": "Die 10.000-Schritte-Empfehlung stammt aus einer japanischen Marketingkampagne von 1965, nicht aus wissenschaftlicher Forschung. JAMA-Studie 2019 (>16.000 Frauen): Nutzen beginnt bei 4.400 Schritten/Tag und steigt bis ~7.500 Schritte/Tag – dann Plateau. 7.000–8.000 Schritte ist ein realistisches, evidenzbasiertes Ziel für die meisten Erwachsenen.",
+        "detail": "Die Schrittzahl ist ein Stellvertreter für NEAT (Non-Exercise Activity Thermogenesis) – Kalorien, die durch alltägliche Aktivität außerhalb des strukturierten Sports verbrannt werden. NEAT kann zwischen aktiven und sesshaften Personen um bis zu 2.000 kcal/Tag variieren. Tägliche Schritte zu erhöhen ist nachhaltiger als Fitnessstudio-Besuche und kann einen größeren wöchentlichen Gesamtkalorienverbrauch bewirken.",
+        "details": [
+          "Evidenz zu optimalen Schwellenwerten: JAMA Internal Medicine 2021 (2.110 Personen mittleren Alters): 7.000+ Schritte/Tag reduzierten das kardiovaskuläre Sterblichkeitsrisiko um 50–70% gegenüber <5.000 Schritten. Über 10.000 Schritte ist der zusätzliche Nutzen minimal. Lancet 2022: Optimale Schwelle 6.000–8.000 für Erwachsene >60, 8.000–10.000 für Jüngere.",
+          "Schritte vs. strukturierter Sport: 10.000 Schritte/Tag entsprechen ca. 5–7 km Spaziergang und 300–400 kcal. Die Kombination aus hoher Schrittzahl (NEAT) und strukturiertem Sport (Gym/Cardio) ist besser als nur Gym, wenn man den Rest des Tages sitzt (der aktive Couchpotatoe-Effekt – Forschung bestätigt: 60 Min. Sport/Tag gleicht 8–12h ununterbrochenes Sitzen nicht aus).",
+          "Wie man Schritte ohne Aufwand hinzufügt: Treppen statt Aufzug, 1–2 Haltestellen früher aussteigen, beim Telefonieren gehen, Steh- oder Walking-Meetings, weiter weg parken. Diese kleinen Änderungen summieren sich auf 2.000–3.000 zusätzliche Schritte/Tag ohne Zeitaufwand.",
+          "Intensität spielt ebenfalls eine Rolle: 100 Schritte/Minute = normales Gehtempo. 130+ Schritte/Minute = zügiges Gehen (leichtes Cardio). Eine kontinuierliche 10-minütige Einheit mit zügigem Gehen bietet zusätzliche Herz-Kreislauf-Vorteile über die Gesamtschrittzahl hinaus. WHO empfiehlt 150 Min. moderate Aktivität/Woche, das entspricht ca. 10 Min. zügigem Gehen an 5 Tagen/Woche.",
+          "Tracking-Tools: Das Smartphone (eingebauter Beschleunigungsmesser, Health/Google Fit nutzen) ist für den Alltag genau genug – ca. 5–10% Fehler. Eine Smartwatch ist genauer. Ein einfacher Schrittzähler (5–10 Euro) funktioniert ebenfalls. Wichtig: Konsistenz mit einem Tool ist wichtiger als absolute Genauigkeit.",
+          "Warnschwellen: <3.000 Schritte/Tag dauerhaft über viele Wochen = sitzender Lebensstil mit klaren Gesundheitsrisiken. Wenn der Beruf langes Sitzen erfordert (>6h/Tag), reduziert ein 5-minütiger Spaziergang jede Stunde (insgesamt 40 Min.) das Herz-Kreislauf-Risiko so stark wie 1.000 zusätzliche Schritte/Tag."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "7.000–8.000 Schritte = realistisches Ziel",
+            "note": "JAMA 2019: Nutzen Plateau bei ~7.500 – 10.000 ist Marketing"
+          },
+          {
+            "icon": "🏢",
+            "label": "NEAT > eine lange Gym-Einheit",
+            "note": "8h Sitzen trotz 1h Gym ist noch immer sedentär – NEAT den ganzen Tag erhöhen"
+          },
+          {
+            "icon": "⚡",
+            "label": "10 Min. zügiges Gehen = Bonus-Cardio",
+            "note": "130+ Schritte/Min. anhaltend bringt zusätzliche Herz-Kreislauf-Vorteile"
+          },
+          {
+            "icon": "📱",
+            "label": "Smartphone ist genau genug zum Tracken",
+            "note": "Konsistenz wichtiger als Präzision – ein Tool konsequent verwenden"
+          }
+        ]
       }
     ],
     "e_daily_checks": [

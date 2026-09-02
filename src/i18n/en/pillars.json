@@ -15693,37 +15693,261 @@
       {
         "metric": "Weight",
         "freq": "Weekly",
-        "tip": "Same time, same conditions — morning after waking, before eating"
+        "tip": "Same time, same conditions — morning after waking, before eating",
+        "keyFact": "Weight can fluctuate 1–2 kg daily due to water, gut contents, and menstrual cycle — not actual fat. Only trends over 4–8 weeks are meaningful. Weighing 1–3×/week (not daily) avoids unnecessary anxiety while still capturing trends.",
+        "detail": "Weigh in the morning after using the bathroom, before breakfast, without heavy clothing — this is when the body is in its most consistent baseline state. Record the number and take a weekly average to eliminate daily noise.",
+        "details": [
+          "Why not daily weighing: daily fluctuations come from sodium (salt retains water), carbohydrates (glycogen holds 3g water/g), menstrual cycle, breathing, sweating. Reacting to a daily number is the source of unnecessary anxiety and poor food decisions.",
+          "Optimal frequency: 1–3×/week, same days (e.g. Mon/Wed/Fri morning). Average of 3 = weekly weight. Compare this week to last, not today to yesterday.",
+          "Standard conditions each time: after using the toilet (urination), before drinking water or eating breakfast, same device, same flat hard floor. No shoes, no heavy clothing.",
+          "Understanding trends: loss >0.25 kg/week for 4 consecutive weeks = true downward trend. Fluctuations within ±1 kg vs last week = no change. Gain >0.5 kg/week for 3–4 weeks = review diet.",
+          "When not to weigh: after a large meal, after a heavy workout (muscles retain water for recovery), just before/after menstrual cycle, when ill with fever. At these times the number does not reflect reality.",
+          "Useful tracking apps: Happy Scale (iOS) or LibreScale (Android) compute a moving average and remove noise — showing the true trend when daily numbers look chaotic. Or use a simple spreadsheet: date, weight, 7-day average."
+        ],
+        "points": [
+          {
+            "icon": "📅",
+            "label": "1–3×/week is enough",
+            "note": "More creates anxiety — no added useful information"
+          },
+          {
+            "icon": "🌅",
+            "label": "Morning, after bathroom, before eating",
+            "note": "Most consistent baseline of the day"
+          },
+          {
+            "icon": "📊",
+            "label": "Look at the weekly average",
+            "note": "Removes daily noise — 4-week trend is what matters"
+          },
+          {
+            "icon": "🚫",
+            "label": "Don't react to a single number",
+            "note": "±1–2 kg fluctuation is normal physiology, not fat"
+          }
+        ]
       },
       {
         "metric": "Waist",
         "freq": "Monthly",
-        "tip": "More important than weight — reflects visceral fat risk"
+        "tip": "More important than weight — reflects visceral fat risk",
+        "keyFact": "Waist circumference reflects visceral fat — more dangerous than body weight alone. Danger thresholds for Asians: ≥90 cm for men, ≥80 cm for women (IDF Asia standard). Just a tape measure and 30 seconds — this is the most important cardiovascular metric you can self-measure at home.",
+        "detail": "Visceral fat (around abdominal organs) acts differently from subcutaneous fat: it secretes inflammatory adipokines and free fatty acids directly into the portal circulation, causing insulin resistance and atherosclerosis. A 5–10 cm waist reduction is linked to significant cardiovascular and diabetes risk reduction, even when weight changes little.",
+        "details": [
+          "How to measure correctly: stand straight, feet shoulder-width apart, exhale gently (do NOT suck in or exhale fully), measure at the midpoint between the bottom of the last rib and the top of the iliac crest — usually level with or 1–2 cm above the navel. Do not pull the tape too tight or leave it loose. Measure twice, take the average.",
+          "Once a week is optimal: waist changes more slowly than weight (this is actual fat, not water). Daily measuring shows no change and discourages. Trends become clear over 4–8 weeks. Same morning before eating, same conditions.",
+          "Understanding Asian thresholds: IDF 2005 set lower thresholds than Western standards because Asians accumulate more visceral fat at the same BMI. Men ≥90 cm (Western 102 cm), women ≥80 cm (Western 88 cm). Normal BMI but waist above threshold = TOFI — metabolic risk equivalent to overweight.",
+          "Waist shrinks before weight: when starting a healthy diet and exercise, visceral fat (reflected in waist) often decreases before the scale moves significantly. Waist down 2–3 cm while weight unchanged = true success — losing fat and gaining muscle.",
+          "Non-dietary factors affecting waist: chronic stress (cortisol drives abdominal fat accumulation), poor sleep (<6h causes high cortisol), alcohol (especially beer belly), long-term corticosteroids. Reducing waist requires addressing all these factors, not just eating less.",
+          "When to be concerned: waist increases >3 cm in 1 month without explanation, or increases with facial/leg swelling, unusual fatigue, shortness of breath → medical evaluation needed (rule out ascites, heart failure, kidney failure)."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "Men <90 cm · Women <80 cm",
+            "note": "IDF Asia threshold — lower than Western due to different physiology"
+          },
+          {
+            "icon": "📐",
+            "label": "Measure correctly: gentle exhale, no sucking in",
+            "note": "Sucking in or full exhale skews results by 3–5 cm"
+          },
+          {
+            "icon": "📉",
+            "label": "Waist shrinks before weight",
+            "note": "Visceral fat responds quickly — earliest sign of progress"
+          },
+          {
+            "icon": "⚠️",
+            "label": "TOFI: normal BMI but high waist",
+            "note": "Metabolic risk despite normal weight — waist measurement is mandatory"
+          }
+        ]
       },
       {
         "metric": "Blood Pressure",
         "freq": "Monthly*",
-        "tip": "5 min sitting rest before measuring — both arms"
+        "tip": "5 min sitting rest before measuring — both arms",
+        "keyFact": "Hypertension is called the 'silent killer' because it has no clear symptoms until complications arise (stroke, heart attack, kidney failure). Seven-day home monitoring averages (morning + evening) are more accurate than a single clinic reading because they eliminate white-coat hypertension (BP elevated by anxiety at the doctor).",
+        "detail": "Blood pressure changes continuously throughout the day: lowest during sleep, rising from 6–10 am (morning surge), highest in late afternoon. A single reading can be 10–20 mmHg off from the true value. Standard protocol: measure twice, 1–2 minutes apart, average both, record both morning and evening.",
+        "details": [
+          "Correct preparation before measuring: sit quietly for 5 minutes (no talking, no phone). No coffee, no smoking, no exercise in the 30 minutes before. Empty bladder (full bladder raises BP 10–15 mmHg). Sit up straight, feet flat on the floor, do not cross legs.",
+          "Cuff position: arm at heart level (on a table, at chest height). Cuff should cover 80% of arm circumference (wrong size causes ±10 mmHg error). Do not measure over thick clothing. Rest at least 1 minute between readings, average both.",
+          "Measurement frequency by situation: healthy individuals — 2–3×/week is enough to detect trends. Those with diagnosed or suspected high BP — measure morning + evening daily for 7 days, record, bring results to doctor. Those adjusting medication — follow doctor's guidance.",
+          "Reading numbers correctly: 120/80 = systolic/diastolic. Normal: <120/80. Elevated: 120–129/<80. Stage 1 HTN: 130–139/80–89. Stage 2 HTN: ≥140/90. Hypertensive crisis: >180/>120 → seek care immediately. One high reading is not a diagnosis — multiple readings on different occasions are needed.",
+          "Masked and white-coat hypertension: normal BP at home but high at clinic = white-coat (25–30% of patients). High BP at home but normal at clinic = masked hypertension (more dangerous because it goes undetected). This is why home monitoring matters as much as clinic readings.",
+          "When to seek immediate care: BP ≥180/120 mmHg (even without symptoms), elevated BP with severe headache at back of head, blurred vision, chest pain, shortness of breath, sudden facial/hand/foot swelling, or diastolic BP suddenly >20 mmHg above your baseline."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "Rest 5 minutes before measuring",
+            "note": "Standing, talking, or using phone raises BP by 5–15 mmHg"
+          },
+          {
+            "icon": "📝",
+            "label": "Record both readings, both sessions",
+            "note": "7-day morning + evening average is more accurate than one clinic visit"
+          },
+          {
+            "icon": "🎯",
+            "label": "Target: <120/80 mmHg",
+            "note": "Stage 1 HTN: 130–139/80–89 → lifestyle changes needed"
+          },
+          {
+            "icon": "🚨",
+            "label": "≥180/120 → seek care immediately",
+            "note": "Hypertensive crisis — do not wait even without symptoms"
+          }
+        ]
       },
       {
         "metric": "Resting Heart Rate",
         "freq": "Weekly",
-        "tip": "Count 60s after waking — trend over 4 weeks matters"
+        "tip": "Count 60s after waking — trend over 4 weeks matters",
+        "keyFact": "Resting heart rate (RHR) is a simple metric reflecting cardiovascular health and recovery level. Regular exercisers have RHR 45–55 bpm; sedentary individuals 75–90 bpm. Research: every 10 bpm increase in RHR is associated with 15–18% higher cardiovascular mortality risk. A sudden RHR spike (>10 bpm above baseline) is an early sign of illness, stress, poor sleep, or overtraining.",
+        "detail": "RHR must be measured immediately after waking, before sitting up or doing anything — this is the true resting state. Sitting up raises RHR 10–15 bpm, coffee raises it 5–10 bpm, stress raises it 5–20 bpm. Tracking your personal baseline matters more than comparing to generic normal ranges.",
+        "details": [
+          "How to measure accurately: immediately upon waking (eyes just open), still lying still, place 2 fingers (index + middle) on the inner wrist (radial pulse) or neck (carotid), count for 60 seconds. Or 30 seconds × 2. A smartwatch measures continuously and averages overnight — more accurate than a single manual reading.",
+          "Normal ranges and their meaning: 60–100 bpm is normal per AHA, but the optimal range for health is 60–80 bpm. Athletes: 40–60 bpm (stronger heart pumping more blood per beat). RHR >100 bpm consistently = tachycardia, needs medical evaluation.",
+          "RHR as a recovery barometer: RHR 5–7 bpm above baseline after training = insufficient recovery — train light or rest that day. RHR 7–10+ bpm elevated with fatigue = possible illness coming (viral infection commonly raises RHR before symptoms appear). Garmin/Apple Watch HRV and Recovery Score are based on this.",
+          "Improving RHR through training: Zone 2 cardio (running or cycling at a pace where you can still hold a conversation) for 150 min/week is the most effective way to lower RHR long-term. After 8–12 weeks of consistent training, RHR can drop 5–10 bpm. Resistance training also helps but less than cardio.",
+          "Factors that raise RHR: dehydration (RHR rises 7–8 bpm with 1% body weight fluid loss), caffeine, stress, sleep deprivation, alcohol (spikes during that night), medications (check instructions). These fluctuations are normal if RHR returns to baseline after 1–2 days.",
+          "HRV — a more advanced metric: Heart Rate Variability (variation between heartbeats) reflects autonomic nervous system balance better than RHR alone. High HRV = good recovery, healthy heart. Modern smartwatches measure HRV each morning — if HRV drops more than 20% below your baseline for multiple consecutive days, this signals your body needs rest."
+        ],
+        "points": [
+          {
+            "icon": "🛌",
+            "label": "Measure on waking, before sitting up",
+            "note": "Sitting up immediately adds 10–15 bpm — baseline value is lost"
+          },
+          {
+            "icon": "📈",
+            "label": "+5–7 bpm above baseline = under-recovered",
+            "note": "Train light or rest — especially if accompanied by fatigue"
+          },
+          {
+            "icon": "🏃",
+            "label": "Zone 2 cardio lowers RHR",
+            "note": "150 min/week → RHR drops 5–10 bpm after 8–12 weeks"
+          },
+          {
+            "icon": "💧",
+            "label": "Dehydration raises RHR by 7–8 bpm",
+            "note": "Drink water upon waking before the next measurement"
+          }
+        ]
       },
       {
         "metric": "Sleep",
         "freq": "Daily",
-        "tip": "Sleep score + wake count + morning energy (1–10)"
+        "tip": "Sleep score + wake count + morning energy (1–10)",
+        "keyFact": "Sleep affects nearly every organ system. Chronic sleep deprivation (<7 hours/night) is linked to 89% higher obesity risk (in children), type 2 diabetes, hypertension, depression, cognitive decline, and early death. Matthew Walker (Why We Sleep): 'There is no organ in the body that does not benefit from sleep, and no disease that does not worsen with sleep deprivation.'",
+        "detail": "Tracking sleep daily helps you recognize patterns: do you sleep better after exercise? After eating dinner early? Does it correlate with next-day mood? Personalized data drives improvement more effectively than any generic advice.",
+        "details": [
+          "What to record: bedtime, estimated time to fall asleep, number of night wakings, wake-up time, how you feel on waking (scale 1–5: 1=very tired, 5=refreshed). Total sleep duration + quality (feeling on waking) = the two most important metrics.",
+          "Tracking tools: smartwatches (Apple Watch, Garmin, Fitbit) automatically track sleep stages (light/deep/REM). Apps like Sleep Cycle or Oura Ring analyze quality. Minimalist approach: a sleep journal with 3 metrics (bedtime, wake time, quality score 1–5) takes 10 seconds each morning.",
+          "Circadian rhythm: the body has a 24-hour internal clock controlling melatonin, cortisol, and body temperature. Going to bed and waking at the same time every day (including weekends) is the single most important factor for sleep quality — more important than the specific bedtime. A >1-hour difference between weekday and weekend schedules (social jet lag) raises obesity and cardiovascular risk.",
+          "Deep sleep and REM: deep sleep (N3) is critical for physical recovery, immunity, and growth hormone release. REM is critical for emotional memory, creativity, and stress processing. Deep sleep is concentrated in the first third of the night; REM in the final third. Alcohol suppresses REM strongly — sleeping 8 hours after drinking but missing REM = no real recovery.",
+          "Common sleep disruptors: screens before bed (blue light suppresses melatonin for 2–3 hours), room too warm (ideal 18–20°C), caffeine after 2 pm (half-life 5–6h — 25% remains in blood at midnight), drinking a lot of water in the evening, catching up on sleep at weekends.",
+          "When tracking reveals patterns: consistently <6h/night for >1 week → prioritize sleep above all other health goals. Quality ≤2/5 despite adequate hours → consider sleep apnea (especially if snoring, high BMI, thick neck). Frequent 2–3 am wakings → high cortisol/stress/anxiety that needs addressing."
+        ],
+        "points": [
+          {
+            "icon": "🕐",
+            "label": "Same sleep/wake time all week",
+            "note": "Stable circadian rhythm matters more than the specific hour"
+          },
+          {
+            "icon": "📵",
+            "label": "No screens 1h before bed",
+            "note": "Blue light suppresses melatonin for 2–3 hours — delays sleep onset"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Room at 18–20°C for deep sleep",
+            "note": "Core temperature drops during deep sleep — a cool room supports this"
+          },
+          {
+            "icon": "🍺",
+            "label": "Alcohol disrupts REM even with enough hours",
+            "note": "8h sleep after alcohol = missing restorative sleep"
+          }
+        ]
       },
       {
         "metric": "Stress Level",
         "freq": "Daily",
-        "tip": "Scale 1–10 — notice what days stress spikes"
+        "tip": "Scale 1–10 — notice what days stress spikes",
+        "keyFact": "Chronic stress (lasting weeks/months) has real physiological effects: persistently high cortisol raises blood pressure, suppresses the immune system, causes insulin resistance, accumulates abdominal fat, and shrinks the hippocampus (brain region critical for memory). Tracking daily stress helps you recognize triggers, patterns, and the effectiveness of interventions (meditation, exercise, sleep).",
+        "detail": "A simple 1–10 subjective scale is effective when tracked consistently. Absolute score matters less than trends: stress at 6/10 every day for 2 weeks is more dangerous than stress at 8/10 for a single day. Record in the evening before sleep — this time reflects the full day.",
+        "details": [
+          "How to use the 1–10 scale: 1–3 = relaxed, no significant pressure. 4–5 = mild normal stress, manageable. 6–7 = significant stress, affecting focus and mood. 8–9 = very stressed, hard to control. 10 = extreme, crisis. Optionally note 1 word about the main cause (work, family, health, finances).",
+          "Common patterns when tracking: high stress every Monday (anticipatory stress), lower stress after exercise (endorphin effect visible in data), stress increases correlating with 2 consecutive nights of poor sleep, stress decreases after >4 weeks of consistent meditation. This personalized data outperforms any generic advice.",
+          "Physiological vs perceived stress: HRV (heart rate variability) is a physiological metric reflecting autonomic stress — low = high stress even if you feel fine. Combining HRV from a smartwatch with a subjective stress scale gives a fuller picture. Many people do not feel stressed but have consistently low HRV = high allostatic load.",
+          "Most evidence-based interventions: (1) 30-minute moderate exercise — lowers cortisol, raises BDNF and endorphins. (2) 4–7–8 or box breathing — activates the parasympathetic system immediately. (3) Mindfulness meditation >8 weeks — reduces amygdala size, increases prefrontal cortex grey matter (meta-analysis Holzel 2011). (4) Adequate sleep — nighttime cortisol drops during deep sleep.",
+          "Allostatic load — total long-term stress burden: the body can handle short bursts of acute stress (actually beneficial). The problem is unrelenting stress without recovery. Track your 7-day average: if consistently ≥6/10 for >2 weeks → active intervention is needed, not just trying harder.",
+          "Social connection — often overlooked: loneliness and social isolation have a health impact equivalent to smoking 15 cigarettes a day (Holt-Lunstad 2015). Track social connection alongside stress — often high stress stems from loneliness, not workload. One genuine conversation with a loved one lowers cortisol effectively."
+        ],
+        "points": [
+          {
+            "icon": "📝",
+            "label": "Record in evening, note main cause",
+            "note": "7-day trend matters more than a single day's score"
+          },
+          {
+            "icon": "🏃",
+            "label": "30-min workout lowers cortisol fast",
+            "note": "Endorphins + BDNF — fastest and most effective stress intervention"
+          },
+          {
+            "icon": "🫁",
+            "label": "Box breathing activates parasympathetic",
+            "note": "4 sec inhale — 4 sec hold — 4 sec exhale — repeat 4 times"
+          },
+          {
+            "icon": "⚠️",
+            "label": "≥6/10 for >2 weeks = intervention needed",
+            "note": "Allostatic load — body cannot recover when stress is unrelenting"
+          }
+        ]
       },
       {
         "metric": "Daily Steps",
         "freq": "Daily",
-        "tip": "Target 7,000–10,000 steps/day — any movement counts"
+        "tip": "Target 7,000–10,000 steps/day — any movement counts",
+        "keyFact": "The 10,000 steps/day figure comes from a 1965 Japanese marketing campaign, not scientific research. JAMA 2019 study (>16,000 women): benefit starts at 4,400 steps/day and increases up to ~7,500 steps/day — then plateaus. 7,000–8,000 steps is a realistic, evidence-based target for most adults.",
+        "detail": "Step count is a proxy for NEAT (Non-Exercise Activity Thermogenesis) — calories burned through daily activity outside structured exercise. NEAT can vary by up to 2,000 kcal/day between active and sedentary individuals. Increasing daily steps is easier to sustain than gym attendance and can have a larger total weekly calorie impact.",
+        "details": [
+          "Evidence on optimal thresholds: JAMA Internal Medicine 2021 (2,110 middle-aged adults): 7,000+ steps/day reduced cardiovascular mortality risk by 50–70% vs <5,000 steps. Beyond 10,000 steps, additional benefit is minimal. Lancet 2022: optimal threshold is 6,000–8,000 for adults >60, and 8,000–10,000 for younger adults.",
+          "Steps vs structured exercise: 10,000 steps/day ≈ 5–7 km walking ≈ 300–400 kcal. Combining high steps (NEAT) + structured exercise (gym/cardio) is better than gym alone while sitting the rest of the day (the active couch potato effect — research confirms 60 min/day of exercise does not offset 8–12h of continuous sitting).",
+          "How to add steps without trying: take stairs instead of the elevator, get off the bus 1–2 stops early, walk while on phone calls, use walking meetings, park farther away. These small changes accumulate 2,000–3,000 extra steps/day without extra time.",
+          "Intensity matters too: 100 steps/minute = normal walking pace. 130+ steps/minute = brisk walk (light cardio). A continuous 10-minute brisk walking bout provides additional cardiovascular benefits beyond total step count. WHO recommends 150 min moderate activity/week = ~10 min brisk walk × 5 days/week.",
+          "Tracking tools: your phone (built-in accelerometer, use Health/Google Fit) is accurate enough for everyday tracking — about 5–10% error. A smartwatch is more accurate. A simple pedometer ($5–10) also works. Key: consistency with one tool matters more than absolute accuracy.",
+          "Warning thresholds: <3,000 steps/day consistently for many weeks = sedentary lifestyle with clear health risks. If your job requires prolonged sitting (>6h/day), adding a 5-minute walk every hour (40 min total) reduces cardiovascular risk as much as adding 1,000 steps/day."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "7,000–8,000 steps = realistic target",
+            "note": "JAMA 2019: benefit plateaus at ~7,500 — 10,000 is marketing"
+          },
+          {
+            "icon": "🏢",
+            "label": "NEAT > one long gym session",
+            "note": "Sitting 8h despite a 1h gym session is still sedentary — raise NEAT all day"
+          },
+          {
+            "icon": "⚡",
+            "label": "10-min brisk walk = bonus cardio",
+            "note": "130+ steps/min sustained has additional cardiovascular benefits"
+          },
+          {
+            "icon": "📱",
+            "label": "Phone is accurate enough for tracking",
+            "note": "Consistency matters more than precision — use one tool consistently"
+          }
+        ]
       }
     ],
     "e_daily_checks": [

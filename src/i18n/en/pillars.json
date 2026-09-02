@@ -15747,41 +15747,166 @@
       {
         "cat": "Cardiovascular",
         "signs": [
-          "Severe chest pain, squeezing, radiating to left arm/jaw/back",
+          "Severe crushing chest pain radiating to left arm, jaw, or back",
           "Sudden shortness of breath",
-          "Unexplained fainting",
-          "Palpitations with dizziness, chest pain, or shortness of breath",
+          "Sudden fainting",
+          "Palpitations with dizziness, chest pain, or difficulty breathing",
           "Very high blood pressure with chest pain, weakness, or confusion"
+        ],
+        "keyFact": "Heart attack (MI) and acute heart failure are the two most common cardiovascular emergencies. With MI: each minute without reperfusion ≈ 2 million heart muscle cells die. \"Time is muscle\" — time from symptom onset to vessel opening (door-to-balloon <90 min) directly determines permanent heart damage and mortality.",
+        "detail": "Cardiac chest pain is typically described as \"crushing,\" \"squeezing,\" or \"a heavy weight on the chest\" — not necessarily sharp. 25–30% of MIs are atypical (especially in women, diabetics): only fatigue, nausea, shortness of breath, or jaw/neck pain. Do not wait and see — call 115 immediately.",
+        "details": [
+          "Recognizing MI: crushing chest pain lasting >20 min radiating to the left shoulder, arm (or both), jaw, or mid-back. With cold sweats, nausea, vomiting, dizziness, or sense of impending doom. Does not ease with rest or nitroglycerin. Women often present atypically: extreme fatigue, nausea, or shortness of breath only.",
+          "Recognizing acute heart failure: sudden severe shortness of breath — especially when lying down (must sit upright to breathe), pink frothy sputum, rapid leg swelling, rapid abdominal distension, distended neck veins. Often triggered by acute MI, severe arrhythmia, or decompensated chronic heart failure.",
+          "Dangerous arrhythmias: palpitations with dizziness, syncope, or chest pain = potentially life-threatening rhythm (VT, VF, fast AF, complete heart block). Sudden unexplained loss of consciousness in a patient with known heart disease = suspect arrhythmia until proven otherwise.",
+          "Correct action when MI is suspected: (1) Call 115 immediately — do not self-drive. (2) Chew (do not swallow whole) Aspirin 300 mg if not allergic and available. (3) Lie still, relax, avoid exertion. (4) Unlock the door for the ambulance. (5) If cardiac arrest + loss of consciousness: CPR 30 chest compressions : 2 rescue breaths continuously until help arrives.",
+          "Stable vs unstable angina: stable angina = occurs with exertion, resolves within 5–10 min of rest or nitroglycerin — needs follow-up but is NOT an emergency. Unstable angina = new onset, increasing frequency, occurs at rest, does not respond to nitroglycerin → go to ER immediately (may be a forming MI).",
+          "Hypertensive crisis: BP >180/>120 with chest pain, shortness of breath, confusion, blurred vision, one-sided weakness, or seizures → emergency (end-organ damage). BP >180/>120 alone with no symptoms = hypertensive urgency — needs treatment within hours but is less immediately life-threatening."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "Every minute = 2 million heart cells lost",
+            "note": "Time is muscle — call 115, do not wait, do not self-drive to hospital"
+          },
+          {
+            "icon": "💊",
+            "label": "Chew Aspirin 300 mg if available",
+            "note": "Reduces clot formation — do this while waiting for the ambulance"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Women/diabetics: atypical symptoms",
+            "note": "Extreme fatigue, nausea, shortness of breath — chest pain not always present"
+          },
+          {
+            "icon": "🫀",
+            "label": "Pain at rest + no response to NTG",
+            "note": "This is unstable angina/forming MI — emergency now"
+          }
         ]
       },
       {
-        "cat": "Neurological",
+        "cat": "Neurological (suspected stroke)",
         "signs": [
-          "Sudden face drooping on one side",
-          "Sudden arm or leg weakness — especially one-sided",
-          "Sudden speech difficulty or slurred speech",
-          "Sudden severe headache — 'worst of my life'",
-          "Sudden vision loss or double vision in one or both eyes"
+          "Sudden facial drooping",
+          "Sudden one-sided arm or leg weakness",
+          "Sudden slurred or garbled speech",
+          "Sudden severe headache",
+          "Sudden seizures or confusion"
+        ],
+        "keyFact": "Stroke is the 2nd leading cause of death and #1 cause of disability worldwide. Each minute of untreated stroke: 1.9 million brain cells die, 14 billion synapses lost. Treatment window for thrombolysis (tPA): 4.5 hours from symptom onset. Every minute saved = 1.9 million brain cells preserved. Use BE-FAST to recognize it quickly.",
+        "detail": "BE-FAST (Balance-Eyes-Face-Arm-Speech-Time): Loss of Balance (B) + Vision loss (E) + Facial droop (F) + Arm weakness (A) + Slurred speech (S) → Call 115 immediately (T). Hemorrhagic stroke (ruptured vessel) typically starts with a sudden thunderclap headache — treatment differs from ischemic stroke.",
+        "details": [
+          "Recognize with BE-FAST: Balance (sudden loss of balance, staggering gait), Eyes (sudden blurred or lost vision in one eye or half the visual field), Face (facial droop when smiling — ask patient to smile, one side does not lift), Arm (arm weakness — raise both arms, one drifts down), Speech (slurred, garbled, or failing to understand simple questions), Time (call 115 immediately).",
+          "TIA (Transient Ischemic Attack) — do not ignore: stroke symptoms that resolve on their own within <1h (usually <5–15 min). 15% of full strokes occur within 48h after a TIA. This is NOT a sign \"all is fine\" — go to the ER immediately after a TIA, even if symptoms have resolved.",
+          "Hemorrhagic vs ischemic stroke: hemorrhagic (20%): sudden worst-ever headache (\"thunderclap\"), nausea, vomiting, loss of consciousness. Ischemic (80%): focal neurological deficits (one-sided face, body, speech) often without severe headache. Both require emergency care — do not try to distinguish at home.",
+          "Treatment time windows: tPA (thrombolysis): 0–4.5h from onset. Mechanical thrombectomy: 0–24h in selected cases. Treatment in the first hour (\"golden hour\"): near-complete recovery in 30–50% of patients. Every 30-minute delay = 10% reduction in chance of good outcome.",
+          "Modifiable stroke risk factors: hypertension (risk factor #1, accounts for 50% of strokes), atrial fibrillation (5× increased risk), diabetes, smoking, high cholesterol, obesity. Good blood pressure control alone reduces stroke risk by 40%. Aspirin 81 mg/day is not recommended for primary prevention without another indication.",
+          "Post-stroke recovery: begin physical therapy within 24–48h (if stable) — neuroplasticity is highest in the first 3–6 months. 30% recover nearly fully, 30% have mild disability, 30% have severe disability. Key determinants: time to treatment + intensity of early rehabilitation."
+        ],
+        "points": [
+          {
+            "icon": "🅱️",
+            "label": "BE-FAST: 6 signs to remember",
+            "note": "Balance · Eyes · Face · Arm · Speech · Time (call 115)"
+          },
+          {
+            "icon": "⏰",
+            "label": "4.5-hour window for tPA",
+            "note": "Every minute = 1.9 million brain cells — do not wait or \"observe further\""
+          },
+          {
+            "icon": "🚨",
+            "label": "TIA that resolves: still go to ER",
+            "note": "15% of full strokes occur within 48h after TIA"
+          },
+          {
+            "icon": "❤️",
+            "label": "BP control = 40% less stroke",
+            "note": "Hypertension is risk factor #1 — monitoring and treatment is best prevention"
+          }
         ]
       },
       {
         "cat": "Digestive & Metabolic",
         "signs": [
-          "Vomiting blood or black tarry stools",
-          "Severe abdominal pain — knife-like, constant",
-          "Jaundice (yellowing skin/eyes) with dark urine and fever",
-          "Diabetic hypoglycemia: cold sweat, confusion, shaking — blood sugar <3.0 mmol/L",
-          "Sudden severe vomiting + diarrhea + high fever + confusion"
+          "Severe abdominal pain",
+          "Vomiting blood or passing black tarry stools",
+          "Very high blood sugar with drowsiness and deep rapid breathing",
+          "Very low blood sugar with sweating, trembling, and drowsiness"
+        ],
+        "keyFact": "Digestive and metabolic emergencies are varied and easy to overlook because symptoms can be vague. Upper GI bleeding (vomiting blood/black stools) causes rapid blood loss with 10% mortality if untreated. Severe hypoglycemia (<50 mg/dL) causes irreversible brain damage within 5–10 minutes without correction. Diabetic ketoacidosis (DKA) is a life-threatening complication with 1–5% mortality.",
+        "detail": "Distinguishing emergency abdominal pain from routine pain: emergency when pain is sudden and severe, abdomen is rigid (peritonitis), accompanied by high fever with chills, pain does not ease after 30–60 min or worsens. Abdominal pain with shock (low BP, rapid pulse, cold clammy skin) = absolute emergency.",
+        "details": [
+          "Upper GI bleeding — rapid recognition: vomiting bright red blood (active heavy bleeding) or coffee-ground material (partially digested blood). Black tarry stool with a fetid smell (melena) = blood passed through the gut, source is esophagus/stomach/duodenum. 150–200 mL of blood is enough to cause melena. Causes: peptic ulcer, ruptured esophageal varices (cirrhosis), Mallory-Weiss tear.",
+          "Acute hypoglycemia (<70 mg/dL with symptoms): trembling, sweating, intense hunger, rapid heartbeat, anxiety — early signs when still conscious and able to self-treat: take 15–20g fast sugar (4 glucose tablets, 150 mL fruit juice, 1 tsp honey), recheck after 15 min. Severe: confusion, seizures, loss of consciousness → inject glucagon (if available) and call 115 immediately.",
+          "DKA (Diabetic ketoacidosis): blood sugar >300 mg/dL + nausea/vomiting/abdominal pain + fruity/acetone breath odor + deep rapid breathing (Kussmaul) + drowsiness. Usually in type 1 or type 2 diabetes under stress, infection, or medication non-compliance. Requires IV fluids and insulin urgently at hospital — do not self-treat at home.",
+          "Appendicitis — recognition: pain typically starts around the navel then moves to the right lower quadrant, worsens with movement, low-grade fever. If ruptured: pain spreads across abdomen, rigid abdomen, high fever — surgical emergency. Atypical in children, elderly, or pregnant women: pain may be in different location.",
+          "Bowel obstruction: cramping intermittent abdominal pain, bloating, nausea/vomiting, no passing gas or stool. Complete obstruction is an emergency — bowel can become ischemic and necrose within hours. Adhesion obstruction (after previous abdominal surgery) is most common in adults.",
+          "When abdominal pain needs immediate ER: sudden severe pain (especially \"tearing\" in back/abdomen → suspect ruptured aortic aneurysm), rigid abdomen on palpation, shock signs (rapid pulse, low BP, cold skin), bloody vomit or black stools, pain not easing after 1–2h or worsening, fever >38.5°C with chills."
+        ],
+        "points": [
+          {
+            "icon": "🩸",
+            "label": "Black tarry stool = upper GI bleed",
+            "note": "150 mL blood causes melena — source above the duodenum"
+          },
+          {
+            "icon": "🍬",
+            "label": "Mild hypoglycemia: 15–20g fast sugar",
+            "note": "Trembling + sweating but conscious → self-treat, recheck after 15 min"
+          },
+          {
+            "icon": "💨",
+            "label": "Fruity breath + deep rapid breathing = DKA",
+            "note": "Ketoacidosis — call 115, do not adjust insulin at home"
+          },
+          {
+            "icon": "🚑",
+            "label": "Rigid abdomen + shock = absolute emergency",
+            "note": "Peritonitis, organ rupture — urgent surgery, no delay"
+          }
         ]
       },
       {
         "cat": "Musculoskeletal",
         "signs": [
-          "Sudden severe joint pain + fever + swelling (septic arthritis)",
-          "Limb fracture after fall — deformity, can't bear weight",
-          "Back pain after injury with leg numbness/weakness (spinal cord)",
-          "Sudden inability to walk after trauma",
-          "Severe muscle pain + dark brown urine after extreme exercise (rhabdomyolysis)"
+          "Pain after trauma with limb deformity",
+          "Back pain with leg weakness, urinary retention, or saddle numbness",
+          "Unable to bear weight after injury"
+        ],
+        "keyFact": "Musculoskeletal emergencies rarely cause death but can lead to permanent disability if treated late. Cauda equina syndrome (spinal cord tail compression) with leg weakness + urinary retention/incontinence + perineal numbness is a surgical emergency — delay >6–12h can cause permanent loss of bladder/bowel control. Cervical spine fracture after trauma not properly immobilized may cause permanent quadriplegia.",
+        "detail": "Pain after trauma with limb deformity is almost always a fracture until proven otherwise by X-ray. Do not try to straighten the limb, do not allow the patient to stand or walk. Immobilize with a temporary splint in the current position and transport safely. Note: fractures can cause significant blood loss (femur: 1–2 L, pelvis: 3–5 L).",
+        "details": [
+          "Recognizing fracture: severe pain at the injury site, rapid swelling, obvious deformity (protruding bone, shortened or angulated limb), inability to bear weight, cracking sensation at time of injury. Open fracture (bone penetrating skin) = emergency due to risk of serious infection — requires antibiotics and treatment within 6–8h.",
+          "Cauda equina syndrome — surgical emergency: massive lumbar disc herniation compressing the cauda equina causes: low back pain + bilateral leg weakness + saddle numbness (perineum, genitals, inner thighs) + sphincter dysfunction (urinary retention/incontinence, severe constipation or fecal incontinence). Decompression surgery within 24–48h = good prognosis; delay = permanent nerve damage.",
+          "Cervical spine fracture after trauma: strong head/neck trauma (motor vehicle accident, horse riding fall, diving head-first) with neck pain = treat as cervical fracture until CT rules it out. Do not freely move the head/neck. Requires a rigid cervical collar and flat board transport. Improper movement = permanent quadriplegia from spinal cord injury.",
+          "Compartment syndrome: after fracture/crush/burn — pressure within a fascial compartment rises, cutting off blood supply → severe unexplained pain, pain worsened by passive muscle stretching, tense compartment, distal numbness. Treatment window: 6h — delay causes irreversible muscle necrosis (rhabdomyolysis).",
+          "Dislocations — do not reduce at scene: shoulder (most common), hip, knee, elbow dislocations. Severe pain, limb in abnormal position, no movement. Do not reduce at home — fracture may coexist or vascular/nerve damage may be present. Check distal pulse, sensation, and movement. Go to ER for X-ray before reduction.",
+          "When back pain needs immediate ER: routine back pain (<6 weeks, no limb weakness, no sphincter dysfunction) is not an emergency. GO TO ER IMMEDIATELY when back pain is accompanied by: rapidly progressive bilateral leg weakness, urinary retention or incontinence, saddle numbness (cauda equina), high fever with chills (suspected vertebral osteomyelitis), history of cancer (suspected spinal metastasis), severe trauma."
+        ],
+        "points": [
+          {
+            "icon": "🦴",
+            "label": "Limb deformity after trauma = fracture",
+            "note": "Immobilize in place, do not straighten, do not allow standing — go to ER"
+          },
+          {
+            "icon": "🚨",
+            "label": "Saddle numbness + urinary retention = cauda equina",
+            "note": "Surgery within 24–48h — delay = permanent loss of bladder control"
+          },
+          {
+            "icon": "🏊",
+            "label": "Neck pain after head trauma = collar needed",
+            "note": "Cervical fracture until CT rules it out — improper movement = quadriplegia"
+          },
+          {
+            "icon": "⏰",
+            "label": "Compartment syndrome: 6-hour window",
+            "note": "Severe pain + tense compartment after fracture — delay >6h = muscle necrosis"
+          }
         ]
       }
     ],
@@ -17054,7 +17179,112 @@
     "bmi_calc_normal": "Normal",
     "bmi_calc_whr": "Waist-to-height ratio",
     "bmi_calc_above": "Above threshold",
-    "bmi_calc_action_prefix": "Action recommendation:"
+    "bmi_calc_action_prefix": "Action recommendation:",
+    "e_metrics_tr": [
+      {
+        "t": "BMI",
+        "d": "Body Mass Index = Weight (kg) / Height² (m). Risk screening indicator. Does not distinguish fat from muscle.",
+        "ranges": [
+          {
+            "n": "Underweight"
+          },
+          {
+            "n": "Normal"
+          },
+          {
+            "n": "Overweight"
+          },
+          {
+            "n": "Obese"
+          }
+        ]
+      },
+      {
+        "t": "Waist",
+        "d": "Reflects visceral abdominal fat — a more important cardiovascular and metabolic risk indicator than weight alone.",
+        "ranges": [
+          {
+            "l": "Male <90cm",
+            "n": "OK"
+          },
+          {
+            "l": "Male ≥90cm",
+            "n": "At Risk"
+          },
+          {
+            "l": "Female <80cm",
+            "n": "OK"
+          },
+          {
+            "l": "Female ≥80cm",
+            "n": "At Risk"
+          }
+        ]
+      },
+      {
+        "t": "Blood Pressure",
+        "d": "Normal: <120/80 mmHg. No symptoms when elevated — regular monitoring required.",
+        "ranges": [
+          {
+            "n": "Normal"
+          },
+          {
+            "n": "Stage 1"
+          },
+          {
+            "n": "Stage 2"
+          }
+        ]
+      },
+      {
+        "t": "Fasting Blood Sugar",
+        "d": "Glucose concentration after ≥8h fasting. Reflects resting blood sugar control.",
+        "ranges": [
+          {
+            "n": "Normal"
+          },
+          {
+            "n": "Pre-DM"
+          },
+          {
+            "n": "DM*"
+          }
+        ]
+      },
+      {
+        "t": "HbA1c",
+        "d": "2–3 month average blood sugar. No fasting required. Evaluates long-term control.",
+        "ranges": [
+          {
+            "n": "Normal"
+          },
+          {
+            "n": "Pre-DM"
+          },
+          {
+            "n": "DM*"
+          }
+        ]
+      },
+      {
+        "t": "Blood Lipids",
+        "d": "LDL-C, HDL-C, Triglycerides, Total Cholesterol. Related to atherosclerosis.",
+        "ranges": [
+          {
+            "n": "Ideal"
+          },
+          {
+            "n": "Protective"
+          },
+          {
+            "n": "High"
+          }
+        ]
+      }
+    ],
+    "e_metrics_footnote": "* Requires confirmation in an appropriate medical context. Do not self-diagnose.",
+    "e_emerg_freq": "Emergency — act now",
+    "e_emerg_tip": "Call 115 — do not attempt self-treatment"
   },
   "pillarF": {
     "id": "f",

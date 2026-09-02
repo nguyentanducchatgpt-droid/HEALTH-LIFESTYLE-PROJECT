@@ -15752,41 +15752,166 @@
       {
         "cat": "Herz-Kreislauf",
         "signs": [
-          "Starke Brustschmerzen, drückend, ausstrahlend in linken Arm/Kiefer/Rücken",
+          "Starke drückende Brustschmerzen, die in den linken Arm, Kiefer oder Rücken ausstrahlen",
           "Plötzliche Atemnot",
-          "Unerwartete Ohnmacht",
+          "Plötzlicher Bewusstseins­verlust",
           "Herzrasen mit Schwindel, Brustschmerzen oder Atemnot",
-          "Sehr hoher Blutdruck mit Brustschmerzen, Schwäche oder Verwirrung"
+          "Sehr hoher Blutdruck mit Brustschmerzen, Schwäche oder Verwirrtheit"
+        ],
+        "keyFact": "Herzinfarkt (MI) und akute Herzinsuffizienz sind die beiden häufigsten Herz-Kreislauf-Notfälle. Bei MI: Jede Minute ohne Reperfusion sterben ca. 2 Millionen Herzmuskelzellen. \"Time is muscle\" — die Zeit vom Symptombeginn bis zur Gefäßöffnung (Door-to-balloon <90 min) entscheidet direkt über dauerhaften Herzschaden und Sterblichkeit.",
+        "detail": "Herzschmerzen werden typischerweise als \"drückend\", \"zusammenpressend\" oder \"schweres Gewicht auf der Brust\" beschrieben — nicht unbedingt stechend. 25–30 % der Herzinfarkte verlaufen atypisch (besonders bei Frauen und Diabetikern): nur Müdigkeit, Übelkeit, Atemnot oder Kiefer-/Nackenschmerzen. Nicht abwarten — sofort 112 anrufen.",
+        "details": [
+          "Herzinfarkt erkennen: drückende Brustschmerzen >20 Min., die in die linke Schulter, den Arm (oder beide), Kiefer oder oberen Rücken ausstrahlen. Mit kaltem Schweiß, Übelkeit, Erbrechen, Schwindel oder Todesangst. Bessert sich nicht durch Ruhe oder Nitroglyzerin. Frauen oft atypisch: extreme Erschöpfung, Übelkeit oder nur Atemnot.",
+          "Akute Herzinsuffizienz erkennen: plötzliche schwere Atemnot — besonders im Liegen (muss aufrecht sitzen), rosafarbener schaumiger Auswurf, schnelle Beinschwellung, rasches Bauchwachstum, gestaute Halsvenen. Häufig ausgelöst durch akuten Herzinfarkt, schwere Arrhythmie oder dekompensierte chronische Herzinsuffizienz.",
+          "Gefährliche Arrhythmien: Herzrasen mit Schwindel, Ohnmacht oder Brustschmerzen = potenziell lebensbedrohliche Herzrhythmusstörung (VT, VF, schnelles VHF, totaler AV-Block). Plötzlicher unerklärlicher Bewusstseinsverlust bei bekannter Herzerkrankung = Arrhythmie bis zum Ausschluss anderer Ursachen.",
+          "Richtiges Vorgehen bei Verdacht auf Herzinfarkt: (1) Sofort 112 anrufen — nicht selbst fahren. (2) Aspirin 300 mg kauen (nicht ganz schlucken), falls nicht allergisch und verfügbar. (3) Ruhig liegen, entspannen, keine Anstrengung. (4) Tür für Rettungswagen aufschließen. (5) Bei Herzstillstand + Bewusstlosigkeit: CPR 30 Herzdruckmassagen : 2 Beatmungen bis Hilfe eintrifft.",
+          "Stabile vs. instabile Angina: stabile Angina = tritt bei Belastung auf, klingt nach 5–10 Min. Ruhe oder Nitroglyzerin ab — Nachsorgetermin, kein Notfall. Instabile Angina = neu aufgetreten, zunehmende Häufigkeit, tritt in Ruhe auf, spricht nicht auf Nitroglyzerin an → sofort in die Notaufnahme (möglicherweise beginnender Herzinfarkt).",
+          "Hypertensive Krise: RR >180/>120 mit Brustschmerzen, Atemnot, Verwirrtheit, Sehstörungen, einseitiger Schwäche oder Krampfanfall → Notfall (Organschaden). RR >180/>120 allein ohne Symptome = hypertensiver Dringlichkeitsfall — Behandlung innerhalb von Stunden, aber weniger akut lebensbedrohlich."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "Jede Minute = 2 Mio. Herzmuskelzellen",
+            "note": "Time is muscle — 112 anrufen, nicht warten, nicht selbst fahren"
+          },
+          {
+            "icon": "💊",
+            "label": "Aspirin 300 mg kauen, falls verfügbar",
+            "note": "Reduziert Gerinnselbildung — während auf den Rettungswagen gewartet wird"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Frauen/Diabetiker: atypische Symptome",
+            "note": "Extreme Müdigkeit, Übelkeit, Atemnot — Brustschmerz nicht zwingend"
+          },
+          {
+            "icon": "🫀",
+            "label": "Ruhe-Schmerz + kein Ansprechen auf NTG",
+            "note": "Instabile Angina/beginnender Herzinfarkt — sofort Notfall"
+          }
         ]
       },
       {
-        "cat": "Neurologisch",
+        "cat": "Neurologisch (Schlaganfall-Verdacht)",
         "signs": [
-          "Plötzliche einseitige Gesichtslähmung",
-          "Plötzliche Arm- oder Beinschwäche — besonders einseitig",
-          "Plötzliche Sprechschwierigkeiten oder verwaschene Sprache",
-          "Plötzlich starke Kopfschmerzen — 'schlimmste meines Lebens'",
-          "Plötzlicher Sehverlust oder Doppelbilder auf einem oder beiden Augen"
+          "Plötzliche Gesichtslähmung",
+          "Plötzliche einseitige Arm- oder Beinschwäche",
+          "Plötzliche verwaschene oder unverständliche Sprache",
+          "Plötzlicher starker Kopfschmerz",
+          "Plötzliche Krampfanfälle oder Verwirrtheit"
+        ],
+        "keyFact": "Schlaganfall ist die 2. häufigste Todesursache und die häufigste Ursache dauerhafter Behinderung weltweit. Jede Minute unbehandelter Schlaganfall: 1,9 Millionen Gehirnzellen sterben, 14 Milliarden Synapsen verloren. Behandlungsfenster für Thrombolyse (tPA): 4,5 Stunden ab Symptombeginn. Jede gesparte Minute = 1,9 Millionen gerettete Gehirnzellen. BE-FAST nutzen.",
+        "detail": "BE-FAST (Balance-Eyes-Face-Arm-Speech-Time): Gleichgewichtsverlust (B) + Sehverlust (E) + Gesichtslähmung (F) + Armschwäche (A) + Sprachstörung (S) → Sofort 112 anrufen (T). Hämorrhagischer Schlaganfall (gerissenes Gefäß) beginnt typischerweise mit einem plötzlichen \"Donnerschlag\"-Kopfschmerz — Behandlung unterscheidet sich vom ischämischen Schlaganfall.",
+        "details": [
+          "BE-FAST erkennen: Balance (plötzlicher Gleichgewichtsverlust, taumelnder Gang), Eyes (plötzlicher Sehverlust oder Doppelbilder in einem Auge oder halben Gesichtsfeld), Face (Gesichtslähmung beim Lächeln — eine Seite zieht nicht hoch), Arm (Armschwäche — beide Arme heben, einer sinkt ab), Speech (verwaschene oder unverständliche Sprache), Time (sofort 112 anrufen).",
+          "TIA (Transitorische ischämische Attacke) �� nicht ignorieren: Schlaganfall-Symptome, die sich von selbst innerhalb <1h erholen (meist <5–15 Min.). 15 % der vollständigen Schlaganfälle treten innerhalb von 48h nach einer TIA auf. Dies ist KEIN Zeichen, dass alles in Ordnung ist — sofort in die Notaufnahme, auch wenn die Symptome abgeklungen sind.",
+          "Hämorrhagischer vs. ischämischer Schlaganfall: hämorrhagisch (20 %): schwerster Kopfschmerz des Lebens (\"Donnerschlag\"), Übelkeit, Erbrechen, Bewusstlosigkeit. Ischämisch (80 %): fokale neurologische Ausfälle (einseitig Gesicht, Körper, Sprache) oft ohne starken Kopfschmerz. Beide erfordern sofortige Notaufnahme — keine Unterscheidung zu Hause.",
+          "Behandlungszeitfenster: tPA (Thrombolyse): 0–4,5h ab Symptombeginn. Mechanische Thrombektomie: 0–24h in ausgewählten Fällen. Behandlung in der ersten Stunde (\"Golden Hour\"): nahezu vollständige Erholung bei 30–50 % der Patienten. Jede 30-Minuten-Verzögerung = 10 % weniger Chance auf gutes Ergebnis.",
+          "Beeinflussbare Schlaganfall-Risikofaktoren: Bluthochdruck (Risikofaktor Nr. 1, verursacht 50 % der Schlaganfälle), Vorhofflimmern (5-fach erhöhtes Risiko), Diabetes, Rauchen, hohe Blutfette, Übergewicht. Gute Blutdruckkontrolle allein reduziert Schlaganfallrisiko um 40 %. Aspirin 81 mg/Tag nicht empfohlen zur Primärprävention ohne weitere Indikation.",
+          "Erholung nach Schlaganfall: Physiotherapie innerhalb von 24–48h beginnen (wenn stabil) — Neuroplastizität ist in den ersten 3–6 Monaten am höchsten. 30 % erholen sich nahezu vollständig, 30 % leichte Behinderung, 30 % schwere Behinderung. Entscheidende Faktoren: Behandlungszeit + Intensität der frühen Rehabilitation."
+        ],
+        "points": [
+          {
+            "icon": "🅱️",
+            "label": "BE-FAST: 6 Zeichen merken",
+            "note": "Balance · Eyes · Face · Arm · Speech · Time (112 anrufen)"
+          },
+          {
+            "icon": "⏰",
+            "label": "4,5-Stunden-Fenster für tPA",
+            "note": "Jede Minute = 1,9 Mio. Gehirnzellen — nicht warten, nicht \"abwarten\""
+          },
+          {
+            "icon": "🚨",
+            "label": "TIA selbst aufgelöst: trotzdem Notaufnahme",
+            "note": "15 % der vollständigen Schlaganfälle in 48h nach TIA"
+          },
+          {
+            "icon": "❤️",
+            "label": "Blutdruckkontrolle = 40 % weniger Schlaganfall",
+            "note": "Bluthochdruck ist Risikofaktor Nr. 1 — Monitoring und Behandlung ist beste Prävention"
+          }
         ]
       },
       {
         "cat": "Verdauung & Stoffwechsel",
         "signs": [
-          "Bluterbrechen oder schwarzer Teerstuhl",
-          "Starke Bauchschmerzen — messerartig, anhaltend",
-          "Gelbsucht (gelbe Haut/Augen) mit dunklem Urin und Fieber",
-          "Diabetische Hypoglykämie: Kaltschweißigkeit, Verwirrung, Zittern — Blutzucker <3,0 mmol/L",
-          "Plötzlich starkes Erbrechen + Durchfall + hohes Fieber + Verwirrung"
+          "Starke Bauchschmerzen",
+          "Blut erbrechen oder schwarzen, teerartigen Stuhl",
+          "Sehr hoher Blutzucker mit Benommenheit und tiefer, schneller Atmung",
+          "Sehr niedriger Blutzucker mit Schwitzen, Zittern und Benommenheit"
+        ],
+        "keyFact": "Notfälle im Bereich Verdauung und Stoffwechsel sind vielfältig und leicht zu übersehen, da Symptome vage sein können. Obere GI-Blutung (Blut erbrechen/schwarzer Stuhl) verursacht raschen Blutverlust mit 10 % Sterblichkeit ohne Behandlung. Schwere Hypoglykämie (<50 mg/dL) verursacht innerhalb von 5–10 Minuten irreversible Hirnschäden. Diabetische Ketoazidose (DKA) ist eine lebensbedrohliche Komplikation mit 1–5 % Sterblichkeit.",
+        "detail": "Unterschied zwischen Notfall- und gewöhnlichen Bauchschmerzen: Notfall bei plötzlich starken Schmerzen, brettharter Bauch (Peritonitis), hohem Fieber mit Schüttelfrost, Schmerzen die nach 30–60 Min. nicht nachlassen oder schlimmer werden. Bauchschmerzen mit Schock (niedriger RR, schneller Puls, kalte feuchte Haut) = absoluter Notfall.",
+        "details": [
+          "Obere GI-Blutung schnell erkennen: Erbrechen von hellrotem Blut (aktive starke Blutung) oder kaffeesatzartigem Material (teilweise verdautes Blut). Schwarzer teerstuhl mit charakteristischem Geruch (Meläna) = Blut durch den Darm geleitet, Quelle ist Speiseröhre/Magen/Zwölffingerdarm. 150–200 mL Blut reichen für Meläna. Ursachen: Magengeschwür, gerissene Ösophagusvarizen (Zirrhose), Mallory-Weiss-Riss.",
+          "Akute Hypoglykämie (<70 mg/dL mit Symptomen): Zittern, Schwitzen, starker Hunger, schneller Herzschlag, Angst — Frühzeichen bei Bewusstsein und Selbstbehandlung möglich: 15–20 g schnellen Zucker nehmen (4 Glukose-Tabletten, 150 ml Fruchtsaft, 1 TL Honig), nach 15 Min. kontrollieren. Schwer: Verwirrtheit, Krampfanfälle, Bewusstlosigkeit → Glukagon spritzen (falls vorhanden) und sofort 112 anrufen.",
+          "DKA (Diabetische Ketoazidose): Blutzucker >300 mg/dL + Übelkeit/Erbrechen/Bauchschmerzen + fruchtiger/Aceton-Atemgeruch + tiefe schnelle Atmung (Kussmaul) + Benommenheit. Meist bei Typ-1- oder Typ-2-Diabetes unter Stress, Infektion oder Medikamentenmissachtung. Benötigt IV-Flüssigkeit und Insulin dringend im Krankenhaus — keine Selbstbehandlung zu Hause.",
+          "Appendizitis erkennen: Schmerz beginnt typischerweise um den Nabel, wandert dann in den rechten Unterbauch, verstärkt sich bei Bewegung, leichtes Fieber. Bei Perforation: Schmerz breitet sich über den Bauch aus, brettharter Bauch, hohes Fieber — chirurgischer Notfall. Atypisch bei Kindern, Älteren oder Schwangeren: Schmerz kann an anderer Stelle sein.",
+          "Darmverschluss: krampfartige intermittierende Bauchschmerzen, Blähungen, Übelkeit/Erbrechen, kein Abgang von Winden oder Stuhl. Vollständiger Verschluss ist ein Notfall — Darm kann innerhalb von Stunden ischämisch werden und absterben. Adhäsionsverschluss (nach früherer Bauchoperation) ist bei Erwachsenen am häufigsten.",
+          "Wann Bauchschmerzen sofortige Notaufnahme erfordern: plötzlich starke Schmerzen (besonders \"reißend\" im Rücken/Bauch → Verdacht auf gerissenes Bauchaortenaneurysma), brettharter Bauch bei Palpation, Schockzeichen (schneller Puls, niedriger RR, kalte Haut), blutiges Erbrechen oder schwarzer Stuhl, Schmerzen die nach 1–2h nicht nachlassen oder schlimmer werden, Fieber >38,5 °C mit Schüttelfrost."
+        ],
+        "points": [
+          {
+            "icon": "🩸",
+            "label": "Schwarzer Teerstuhl = obere GI-Blutung",
+            "note": "150 mL Blut verursachen Meläna — Quelle oberhalb des Zwölffingerdarms"
+          },
+          {
+            "icon": "🍬",
+            "label": "Leichte Hypoglykämie: 15–20 g Schnellzucker",
+            "note": "Zittern + Schwitzen aber bewusst → Selbstbehandlung, nach 15 Min. kontrollieren"
+          },
+          {
+            "icon": "💨",
+            "label": "Fruchtatem + tiefe schnelle Atmung = DKA",
+            "note": "Ketoazidose — 112 anrufen, kein Insulin zu Hause anpassen"
+          },
+          {
+            "icon": "🚑",
+            "label": "Brettharter Bauch + Schock = absoluter Notfall",
+            "note": "Peritonitis, Organruptur — Notoperation, keine Verzögerung"
+          }
         ]
       },
       {
-        "cat": "Muskel-Skelett",
+        "cat": "Muskuloskeletal",
         "signs": [
-          "Plötzlicher starker Gelenkschmerz + Fieber + Schwellung (septische Arthritis)",
-          "Gliedmaßenbruch nach Sturz — Verformung, Belastung unmöglich",
-          "Rückenschmerzen nach Verletzung mit Beintaubheit/-schwäche (Rückenmark)",
-          "Plötzliche Gehunfähigkeit nach Trauma",
-          "Starke Muskelschmerzen + dunkelbrauner Urin nach extremer Belastung (Rhabdomyolyse)"
+          "Schmerzen nach Trauma mit Gliedmaßendeformität",
+          "Rückenschmerzen mit Beinschwäche, Harnverhalt oder Sattelan��sthesie",
+          "Belastungsunfähigkeit nach Verletzung"
+        ],
+        "keyFact": "Muskuloskelettale Notfälle verursachen selten den Tod, können aber zu dauerhafter Behinderung führen, wenn sie spät behandelt werden. Cauda-equina-Syndrom (Kompression des Rückenmarks-Endsegments) mit Beinschwäche + Harnverhalt/-inkontinenz + Perinealtaubheit ist ein chirurgischer Notfall — Verzögerung >6–12h kann zu dauerhaftem Verlust der Blasen-/Darmkontrolle führen. Halswirbelsäulenfraktur nach Trauma ohne korrekte Immobilisation kann permanente Tetraplegie verursachen.",
+        "detail": "Schmerzen nach Trauma mit Gliedmaßendeformität sind fast immer eine Fraktur, bis das Röntgenbild das Gegenteil beweist. Nicht versuchen, die Gliedmaße zu begradigen, Patienten nicht gehen oder stehen lassen. Mit provisorischer Schiene in der aktuellen Position immobilisieren und sicher transportieren. Beachte: Frakturen können erheblichen Blutverlust verursachen (Oberschenkel: 1–2 L, Becken: 3–5 L).",
+        "details": [
+          "Fraktur erkennen: starke Schmerzen an der Verletzungsstelle, schnelle Schwellung, offensichtliche Deformität (vorstehender Knochen, verkürzte oder abgewinkelte Gliedmaße), Unfähigkeit zur Belastung, Knackgeräusch beim Verletzungszeitpunkt. Offene Fraktur (Knochen durchbricht die Haut) = Notfall wegen schwerer Infektionsgefahr — Antibiotika und Behandlung innerhalb von 6–8h erforderlich.",
+          "Cauda-equina-Syndrom — chirurgischer Notfall: massive lumbale Bandscheibenvorfall komprimiert das Cauda equina: Kreuzschmerzen + beidseitige Beinschwäche + Sattelanästhesie (Damm, Genitalien, innere Oberschenkel) + Sphinkterdysfunktion (Harnverhalt/-inkontinenz, schwere Verstopfung oder Stuhlinkontinenz). Dekompressionsoperation innerhalb von 24–48h = gute Prognose; Verzögerung = permanenter Nervenschaden.",
+          "Halswirbelsäulenfraktur nach Trauma: starkes Kopf-/Halstrauma (Verkehrsunfall, Reitfall, Kopfsprung) mit Nackenschmerzen = als HWS-Fraktur behandeln bis CT sie ausschließt. Kopf/Hals nicht frei bewegen. Starre Halskrause und Flachbrett-Transport erforderlich. Falsche Bewegung = permanente Tetraplegie durch Rückenmarksverletzung.",
+          "Kompartmentsyndrom: nach Fraktur/Quetschung/Verbrennung — Druck in der Faszienloge steigt, schneidet Blutversorgung ab → starke unerklärliche Schmerzen, Schmerz verstärkt durch passive Muskeldehnung, angespanntes Kompartment, distale Taubheit. Behandlungsfenster: 6h — Verzögerung verursacht irreversible Muskelnekrose (Rhabdomyolyse).",
+          "Luxationen — nicht am Unfallort einrenken: Schulter- (häufigste), Hüft-, Knie-, Ellbogenluxationen. Starke Schmerzen, Gliedmaße in abnormaler Position, keine Bewegung. Nicht zu Hause einrenken — Fraktur kann gleichzeitig vorliegen oder Gefäß-/Nervenschaden. Distalen Puls, Sensibilität und Motorik prüfen. Zur Notaufnahme für Röntgen vor dem Einrenken.",
+          "Wann Rückenschmerzen sofortige Notaufnahme erfordern: gewöhnliche Rückenschmerzen (<6 Wochen, keine Gliedmaßenschwäche, keine Sphinkterdysfunktion) sind kein Notfall. SOFORT IN DIE NOTAUFNAHME wenn Rückenschmerzen begleitet werden von: schnell fortschreitender beidseitiger Beinschwäche, Harnverhalt oder Harninkontinenz, Sattelanästhesie (Cauda equina), hohem Fieber mit Schüttelfrost (Verdacht auf Wirbelkörperosteomyelitis), Krebsvorgeschichte (Verdacht auf Wirbelsäulenmetastasen), schwerem Trauma."
+        ],
+        "points": [
+          {
+            "icon": "🦴",
+            "label": "Deformität nach Trauma = Fraktur",
+            "note": "Immobilisieren, nicht begradigen, nicht aufstehen lassen — Notaufnahme"
+          },
+          {
+            "icon": "🚨",
+            "label": "Sattelanästhesie + Harnverhalt = Cauda equina",
+            "note": "OP innerhalb 24–48h — Verzögerung = dauerhafter Kontrollverlust der Blase"
+          },
+          {
+            "icon": "🏊",
+            "label": "Nackenschmerz nach Kopftrauma = Halskrause",
+            "note": "HWS-Fraktur bis CT ausgeschlossen — falsche Bewegung = Tetraplegie"
+          },
+          {
+            "icon": "⏰",
+            "label": "Kompartmentsyndrom: 6-Stunden-Fenster",
+            "note": "Starke Schmerzen + angespanntes Kompartment nach Fraktur — >6h = Muskelnekrose"
+          }
         ]
       }
     ],
@@ -17059,7 +17184,112 @@
     "bmi_calc_normal": "Normal",
     "bmi_calc_whr": "Taille-zu-Größe-Verhältnis",
     "bmi_calc_above": "Über Schwellenwert",
-    "bmi_calc_action_prefix": "Empfohlene Maßnahmen:"
+    "bmi_calc_action_prefix": "Empfohlene Maßnahmen:",
+    "e_metrics_tr": [
+      {
+        "t": "BMI",
+        "d": "Body-Mass-Index = Gewicht (kg) / Körpergröße² (m). Risiko-Screeningindikator. Unterscheidet nicht zwischen Fett und Muskeln.",
+        "ranges": [
+          {
+            "n": "Untergewicht"
+          },
+          {
+            "n": "Normal"
+          },
+          {
+            "n": "Übergewicht"
+          },
+          {
+            "n": "Adipositas"
+          }
+        ]
+      },
+      {
+        "t": "Taillenumfang",
+        "d": "Spiegelt viszerales Bauchfett wider — ein wichtigerer Risikofaktor für Herz-Kreislauf und Stoffwechsel als Gewicht allein.",
+        "ranges": [
+          {
+            "l": "Mann <90cm",
+            "n": "OK"
+          },
+          {
+            "l": "Mann ≥90cm",
+            "n": "Risiko"
+          },
+          {
+            "l": "Frau <80cm",
+            "n": "OK"
+          },
+          {
+            "l": "Frau ≥80cm",
+            "n": "Risiko"
+          }
+        ]
+      },
+      {
+        "t": "Blutdruck",
+        "d": "Normal: <120/80 mmHg. Keine Symptome bei erhöhtem Wert — regelmäßige Kontrolle erforderlich.",
+        "ranges": [
+          {
+            "n": "Normal"
+          },
+          {
+            "n": "Grad 1"
+          },
+          {
+            "n": "Grad 2"
+          }
+        ]
+      },
+      {
+        "t": "Nüchternblutzucker",
+        "d": "Glukosekonzentration nach ≥8h Fasten. Reflektiert Blutzuckerkontrolle im Ruhezustand.",
+        "ranges": [
+          {
+            "n": "Normal"
+          },
+          {
+            "n": "Prä-DM"
+          },
+          {
+            "n": "DM*"
+          }
+        ]
+      },
+      {
+        "t": "HbA1c",
+        "d": "Durchschnittlicher Blutzucker über 2–3 Monate. Kein Fasten erforderlich. Bewertet Langzeitkontrolle.",
+        "ranges": [
+          {
+            "n": "Normal"
+          },
+          {
+            "n": "Prä-DM"
+          },
+          {
+            "n": "DM*"
+          }
+        ]
+      },
+      {
+        "t": "Blutfette",
+        "d": "LDL-C, HDL-C, Triglyzeride, Gesamtcholesterin. Zusammenhang mit Atherosklerose.",
+        "ranges": [
+          {
+            "n": "Ideal"
+          },
+          {
+            "n": "Schützend"
+          },
+          {
+            "n": "Hoch"
+          }
+        ]
+      }
+    ],
+    "e_metrics_footnote": "* Erfordert Bestätigung im geeigneten medizinischen Kontext. Keine Selbstdiagnose.",
+    "e_emerg_freq": "Notfall — sofort handeln",
+    "e_emerg_tip": "Notruf 112 — keine Selbstbehandlung"
   },
   "pillarF": {
     "id": "f",

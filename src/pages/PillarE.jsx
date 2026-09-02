@@ -182,7 +182,8 @@ function TabE0() {
 }
 
 function TabE1() {
-  const METRICS = [
+  const { t: tP } = useTranslation('pillars');
+  const METRICS_BASE = [
     { icon: '⚖️', t: 'BMI', d: 'Chỉ số khối cơ thể = Cân nặng (kg) / Chiều cao² (m). Sàng lọc nguy cơ. Không phân biệt mỡ và cơ.', ranges: [{ l: '< 18.5', n: 'Thiếu cân', c: '#f59e0b' }, { l: '18.5–24.9', n: 'Bình thường', c: '#10b981' }, { l: '25–29.9', n: 'Thừa cân', c: '#f59e0b' }, { l: '≥ 30', n: 'Béo phì', c: '#ef4444' }], link: '/pillar/e/bmi' },
     { icon: '📏', t: 'Vòng Eo', d: 'Phản ánh mỡ bụng nội tạng — nguy cơ tim mạch và chuyển hóa quan trọng hơn cân nặng.', ranges: [{ l: 'Nam <90cm', n: 'OK', c: '#10b981' }, { l: 'Nam ≥90cm', n: 'Nguy cơ', c: '#ef4444' }, { l: 'Nữ <80cm', n: 'OK', c: '#10b981' }, { l: 'Nữ ≥80cm', n: 'Nguy cơ', c: '#ef4444' }], link: '/pillar/e/bmi' },
     { icon: '❤️', t: 'Huyết Áp', d: 'Bình thường: <120/80 mmHg. Không triệu chứng khi cao — cần đo định kỳ.', ranges: [{ l: '<120/80', n: 'Bình thường', c: '#10b981' }, { l: '130–139/80–89', n: 'Gđ 1', c: '#f59e0b' }, { l: '≥140/90', n: 'Gđ 2', c: '#ef4444' }], link: '/pillar/e/blood-pressure' },
@@ -190,10 +191,21 @@ function TabE1() {
     { icon: '🧪', t: 'HbA1c', d: 'Đường huyết trung bình 2–3 tháng. Không cần nhịn ăn. Đánh giá kiểm soát lâu dài.', ranges: [{ l: '<5.7%', n: 'Bình thường', c: '#10b981' }, { l: '5.7–6.4%', n: 'Tiền ĐTĐ', c: '#f59e0b' }, { l: '≥6.5%', n: 'ĐTĐ*', c: '#ef4444' }], link: '/pillar/e/blood-sugar' },
     { icon: '🫀', t: 'Mỡ Máu', d: 'LDL-C, HDL-C, Triglyceride, Cholesterol TP. Liên quan xơ vữa động mạch.', ranges: [{ l: 'LDL<100', n: 'Lý tưởng', c: '#10b981' }, { l: 'HDL>60', n: 'Bảo vệ', c: '#10b981' }, { l: 'TG≥200', n: 'Cao', c: '#ef4444' }], link: '/pillar/e/lipids' },
   ];
+  const METRICS = METRICS_BASE.map((m, i) => ({
+    ...m,
+    t: tP(`pillarE.e_metrics_tr.${i}.t`, { defaultValue: m.t }),
+    d: tP(`pillarE.e_metrics_tr.${i}.d`, { defaultValue: m.d }),
+    ranges: m.ranges.map((r, ri) => ({
+      ...r,
+      l: tP(`pillarE.e_metrics_tr.${i}.ranges.${ri}.l`, { defaultValue: r.l }),
+      n: tP(`pillarE.e_metrics_tr.${i}.ranges.${ri}.n`, { defaultValue: r.n }),
+    })),
+  }));
+  const footnote = tP('pillarE.e_metrics_footnote', { defaultValue: '* Cần xác nhận lại trong bối cảnh y tế phù hợp, không tự kết luận.' });
   return (
     <div className="space-y-3">
       {METRICS.map(m => (
-        <Link to={m.link} key={m.t} className="block rounded-2xl border border-border bg-surface/60 p-4 hover:border-blue-500/30 transition-colors group">
+        <Link to={m.link} key={m.link} className="block rounded-2xl border border-border bg-surface/60 p-4 hover:border-blue-500/30 transition-colors group">
           <div className="flex items-center gap-3 mb-2">
             <span className="text-2xl">{m.icon}</span>
             <span className="font-bold text-text group-hover:text-blue-400 transition-colors text-lg">{m.t}</span>
@@ -207,7 +219,7 @@ function TabE1() {
           </div>
         </Link>
       ))}
-      <p className="text-base text-muted">* Cần xác nhận lại trong bối cảnh y tế phù hợp, không tự kết luận.</p>
+      <p className="text-base text-muted">{footnote}</p>
     </div>
   );
 }
@@ -947,7 +959,7 @@ function TabE3() {
       </div>
       {emergModal !== null && (
         <ScheduleModal
-          item={{ ...EMERG[emergModal], metric: EMERG[emergModal].cat, freq: 'Cấp cứu ngay', tip: 'Gọi 115 — không tự xử trí' }}
+          item={{ ...EMERG[emergModal], metric: EMERG[emergModal].cat, freq: tP('pillarE.e_emerg_freq', { defaultValue: 'Cấp cứu ngay' }), tip: tP('pillarE.e_emerg_tip', { defaultValue: 'Gọi 115 — không tự xử trí' }) }}
           idx={emergModal} total={EMERG.length}
           onClose={() => setEmergModal(null)}
           onPrev={() => setEmergModal(i => Math.max(0, i - 1))}

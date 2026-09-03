@@ -866,16 +866,16 @@ function F2WorkoutLog() {
     <div className="space-y-4">
       <div className="rounded-2xl border border-border bg-surface p-4 space-y-3">
         <h3 className="font-bold text-text text-lg">{tPillarsF2('pillarF.f2_log_heading') || 'Ghi Buổi Tập Mới'}</h3>
-        <input value={form.exercise} onChange={e => setForm(p => ({ ...p, exercise: e.target.value }))} placeholder="Bài tập (vd: Full body 20 phút)" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+        <input value={form.exercise} onChange={e => setForm(p => ({ ...p, exercise: e.target.value }))} placeholder={tPillarsF2('pillarF.f2_ph_exercise') || 'Bài tập (vd: Full body 20 phút)'} className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
         <div className="grid grid-cols-2 gap-2">
-          <input value={form.duration} onChange={e => setForm(p => ({ ...p, duration: e.target.value }))} placeholder="Thời lượng (vd: 25 phút)" className="bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
-          <input value={form.feeling} onChange={e => setForm(p => ({ ...p, feeling: e.target.value }))} placeholder="Cảm giác (vd: Hơi mệt)" className="bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+          <input value={form.duration} onChange={e => setForm(p => ({ ...p, duration: e.target.value }))} placeholder={tPillarsF2('pillarF.f2_ph_duration') || 'Thời lượng (vd: 25 phút)'} className="bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+          <input value={form.feeling} onChange={e => setForm(p => ({ ...p, feeling: e.target.value }))} placeholder={tPillarsF2('pillarF.f2_ph_feeling') || 'Cảm giác (vd: Hơi mệt)'} className="bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
         </div>
         <div className="flex items-center gap-3">
           <span className="text-base text-muted shrink-0">RPE: <strong style={{ color: RPE_COLORS[form.rpe] }}>{form.rpe}/10</strong></span>
           <input type="range" min={1} max={10} value={form.rpe} onChange={e => setForm(p => ({ ...p, rpe: +e.target.value }))} className="flex-1" />
         </div>
-        <input value={form.next} onChange={e => setForm(p => ({ ...p, next: e.target.value }))} placeholder="Lần sau (vd: Tăng 2 lần squat)" className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
+        <input value={form.next} onChange={e => setForm(p => ({ ...p, next: e.target.value }))} placeholder={tPillarsF2('pillarF.f2_ph_next') || 'Lần sau (vd: Tăng 2 lần squat)'} className="w-full bg-bg border border-border rounded-xl px-3 py-2 text-lg text-text placeholder-muted" />
         <button onClick={add} className="w-full py-2 rounded-xl text-lg font-bold text-white" style={{ background: COLOR }}>{tPillarsF2('pillarF.f2_save_btn') || '+ Lưu Buổi Tập'}</button>
       </div>
       {entries.length === 0 && <p className="text-center text-muted text-lg py-6">{tPillarsF2('pillarF.f2_empty_state') || 'Chưa có nhật ký. Ghi buổi tập đầu tiên.'}</p>}
@@ -1235,6 +1235,7 @@ function MealCard({ item, idx, onOpen }) {
 // --- MealModal ---
 function MealModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const { t: tCommon } = useTranslation('common');
+  const { t: tPillarsF3 } = useTranslation('pillars');
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1266,8 +1267,8 @@ function MealModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
         </div>
         {/* Content */}
         <div className="p-6 md:p-8">
-          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>Bữa {item.meal}</h2>
-          <p className="font-semibold text-base mb-6" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.formula} · Vd: {item.eg}</p>
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: item.color }}>{tPillarsF3('pillarF.f3_meal_prefix') || 'Bữa'} {item.meal}</h2>
+          <p className="font-semibold text-base mb-6" style={{ color: `rgba(${item.rgb},0.7)` }}>{item.formula} · {tPillarsF3('pillarF.f3_eg_prefix') || 'Vd:'} {item.eg}</p>
           <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
           </div>
@@ -1997,7 +1998,7 @@ function F6Test() {
         ))}
       </div>
       <button onClick={save} className="w-full py-2 rounded-xl text-lg font-bold text-white transition-all" style={{ background: saved ? '#22c55e' : COLOR }}>
-        {saved ? '✓ Đã lưu!' : 'Lưu Kết Quả Test'}
+        {saved ? (tPillarsF6('pillarF.f6_saved') || '✓ Đã lưu!') : (tPillarsF6('pillarF.f6_save_btn') || 'Lưu Kết Quả Test')}
       </button>
       <Link to="/pillar/f/progress-test" className="block text-center text-base" style={{ color: COLOR }}>{tPillarsF6('pillarF.f6_compare_link') || 'Xem bảng so sánh 4 tuần →'}</Link>
       {testModal !== null && (

@@ -724,6 +724,10 @@ export default function HealthCheckupPage() {
     localStorage.setItem('healthapp_checkup_done', JSON.stringify(updated));
   }
 
+  const basicItems = BASIC_PACKAGE.map((item, i) => ({ ...item, ...(p.chk_basic_tr?.[i] || {}) }));
+  const extItems = EXTENDED_PACKAGES.map((item, i) => ({ ...item, ...(p.chk_extended_tr?.[i] || {}) }));
+  const prepItems = PREP_TIPS.map((item, i) => ({ ...item, ...(p.chk_prep_tr?.[i] || {}) }));
+
   const doneCount = checked.filter(c => c < BASIC_PACKAGE.length).length;
   const pct = Math.round((doneCount / BASIC_PACKAGE.length) * 100);
 
@@ -796,7 +800,7 @@ export default function HealthCheckupPage() {
           <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, background: COLOR }} />
         </div>
         <div className="space-y-2">
-          {BASIC_PACKAGE.map((item, i) => (
+          {basicItems.map((item, i) => (
             <CheckupCard key={i} item={item} idx={i} checked={checked} onToggle={toggle} onOpen={setCheckupModal} />
           ))}
         </div>
@@ -807,7 +811,7 @@ export default function HealthCheckupPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.chk_s2_h2 || 'Gói Mở Rộng Theo Nguy Cơ'}</h2>
         <p className="text-muted text-lg mb-6">Trao đổi với bác sĩ về gói khám phù hợp với hồ sơ nguy cơ cá nhân của bạn. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {EXTENDED_PACKAGES.map((pkg, i) => (
+          {extItems.map((pkg, i) => (
             <ExtendedCard key={i} item={pkg} onClick={() => setExtendedModal(i)} />
           ))}
         </div>
@@ -817,7 +821,7 @@ export default function HealthCheckupPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.chk_s3_h2 || 'Chuẩn Bị Trước Khi Đi Khám'}</h2>
         <p className="text-muted text-lg mb-6">4 bước chuẩn bị giúp mỗi lần đi khám đều có kết quả chính xác và hiệu quả nhất. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
-          {PREP_TIPS.map((tip, i) => (
+          {prepItems.map((tip, i) => (
             <ExtendedCard key={i} item={tip} onClick={() => setPrepModal(i)} />
           ))}
         </div>
@@ -828,35 +832,35 @@ export default function HealthCheckupPage() {
 
       {checkupModal !== null && (
         <CheckupModal
-          item={BASIC_PACKAGE[checkupModal]}
-          total={BASIC_PACKAGE.length}
+          item={basicItems[checkupModal]}
+          total={basicItems.length}
           onClose={() => setCheckupModal(null)}
           onPrev={() => setCheckupModal(i => Math.max(0, i - 1))}
-          onNext={() => setCheckupModal(i => Math.min(BASIC_PACKAGE.length - 1, i + 1))}
+          onNext={() => setCheckupModal(i => Math.min(basicItems.length - 1, i + 1))}
           hasPrev={checkupModal > 0}
-          hasNext={checkupModal < BASIC_PACKAGE.length - 1}
+          hasNext={checkupModal < basicItems.length - 1}
         />
       )}
       {extendedModal !== null && (
         <ExtendedModal
-          item={EXTENDED_PACKAGES[extendedModal]}
-          total={EXTENDED_PACKAGES.length}
+          item={extItems[extendedModal]}
+          total={extItems.length}
           onClose={() => setExtendedModal(null)}
           onPrev={() => setExtendedModal(i => Math.max(0, i - 1))}
-          onNext={() => setExtendedModal(i => Math.min(EXTENDED_PACKAGES.length - 1, i + 1))}
+          onNext={() => setExtendedModal(i => Math.min(extItems.length - 1, i + 1))}
           hasPrev={extendedModal > 0}
-          hasNext={extendedModal < EXTENDED_PACKAGES.length - 1}
+          hasNext={extendedModal < extItems.length - 1}
         />
       )}
       {prepModal !== null && (
         <ExtendedModal
-          item={PREP_TIPS[prepModal]}
-          total={PREP_TIPS.length}
+          item={prepItems[prepModal]}
+          total={prepItems.length}
           onClose={() => setPrepModal(null)}
           onPrev={() => setPrepModal(i => Math.max(0, i - 1))}
-          onNext={() => setPrepModal(i => Math.min(PREP_TIPS.length - 1, i + 1))}
+          onNext={() => setPrepModal(i => Math.min(prepItems.length - 1, i + 1))}
           hasPrev={prepModal > 0}
-          hasNext={prepModal < PREP_TIPS.length - 1}
+          hasNext={prepModal < prepItems.length - 1}
         />
       )}
     </div>

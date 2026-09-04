@@ -16649,7 +16649,9 @@
             "label": "Resistance training raises testosterone naturally",
             "note": "Compound movements (squat, deadlift) are most effective"
           }
-        ]
+        ],
+        "low": "< 90 cm",
+        "high": "≥ 90 cm"
       },
       {
         "group": "Female",
@@ -16686,7 +16688,9 @@
             "label": "Mediterranean diet reduces waist",
             "note": "PREDIMED: more effective than low-fat diet for abdominal fat in women"
           }
-        ]
+        ],
+        "low": "< 80 cm",
+        "high": "≥ 80 cm"
       }
     ],
     "trend_items_tr": [
@@ -17015,10 +17019,11 @@
             "label": "Psychological relaxation",
             "note": "Anxiety causes spuriously elevated readings"
           }
-        ]
+        ],
+        "desc": "Sit still and do not talk. Avoid physical activity for at least 5 minutes before measuring."
       },
       {
-        "title": "Sit Correctly",
+        "title": "Avoid Coffee & Tobacco",
         "keyFact": "💡 Caffeine temporarily raises BP by 5–10 mmHg for 30–60 minutes. Nicotine from tobacco raises BP by 5–10 mmHg and sustains this for 15–30 minutes after each cigarette.",
         "detail": "Stimulants act directly on the cardiovascular system and autonomic nervous system — measuring BP after coffee or tobacco yields results that do not reflect the underlying true state.",
         "details": [
@@ -17050,10 +17055,11 @@
             "label": "Measure early in the morning",
             "note": "Before eating and before coffee — most accurate"
           }
-        ]
+        ],
+        "desc": "Do not consume coffee, tobacco, or stimulants at least 30 minutes before measuring. These can raise blood pressure artificially."
       },
       {
-        "title": "Position the Cuff Correctly",
+        "title": "Correct Posture",
         "keyFact": "💡 Positioning the arm below heart level raises the BP reading by 5–10 mmHg above the true value. Crossing the legs during measurement raises systolic BP by a further 2–8 mmHg.",
         "detail": "Measurement posture can account for up to 10–15 mmHg in the result — incorrect posture is the most common source of error in home BP measurement.",
         "details": [
@@ -17085,10 +17091,11 @@
             "label": "Measure both arms initially",
             "note": "A difference > 10 mmHg needs evaluation"
           }
-        ]
+        ],
+        "desc": "Sit upright with your back supported, feet flat on the floor, and the cuff arm at heart level. Do not cross your legs."
       },
       {
-        "title": "Measure Twice",
+        "title": "Correct Cuff Size",
         "keyFact": "💡 A cuff that is too small (where the arm circumference exceeds the cuff size) can overestimate BP by 5–8 mmHg. Measuring over thick clothing can add 10–50 mmHg of error.",
         "detail": "Cuff size and application technique affect the result more than most people appreciate — this is the most common source of error in home BP measurement.",
         "details": [
@@ -17120,10 +17127,11 @@
             "label": "Wrist monitors are less accurate",
             "note": "Upper arm = gold standard for monitoring"
           }
-        ]
+        ],
+        "desc": "The cuff should fit snugly but allow one finger underneath. Use the arm where pressure is consistently higher."
       },
       {
-        "title": "Record the Results",
+        "title": "Measure Twice in a Row",
         "keyFact": "💡 The first reading is typically 5–10 mmHg higher than the second due to the alerting response. Always average at least two readings.",
         "detail": "A single measurement is not sufficiently reliable to support a clinical decision — the natural variability of BP requires at least 2–3 readings to obtain a representative value.",
         "details": [
@@ -17155,7 +17163,8 @@
             "label": "One high reading ≠ hypertension",
             "note": "Multiple confirmatory readings are required"
           }
-        ]
+        ],
+        "desc": "Rest 1–2 minutes between readings. Record both values and take the average as your result."
       }
     ],
     "bp_lifestyle_tr": [
@@ -17192,7 +17201,8 @@
             "label": "Replace with herbs and lemon",
             "note": "Potassium in vegetables counteracts sodium"
           }
-        ]
+        ],
+        "desc": "Aim for less than 5 g of salt per day (about 1 teaspoon). Read food labels — processed foods often contain hidden sodium."
       },
       {
         "title": "Exercise Regularly",
@@ -17227,7 +17237,8 @@
             "label": "DASH + low sodium",
             "note": "Reduces by 11–16 mmHg — the strongest effect"
           }
-        ]
+        ],
+        "desc": "The DASH diet (rich in fruits, vegetables, whole grains, low-fat dairy) can lower systolic pressure by 8–14 mmHg."
       },
       {
         "title": "Maintain Healthy Weight",
@@ -17262,7 +17273,8 @@
             "label": "BP > 180: control first",
             "note": "Stabilise with medication before increasing intensity"
           }
-        ]
+        ],
+        "desc": "150 minutes of moderate aerobic exercise per week — walking, swimming, cycling — can reduce systolic BP by 5–8 mmHg."
       },
       {
         "title": "Limit Alcohol",
@@ -17297,7 +17309,8 @@
             "label": "Avoid yo-yo dieting",
             "note": "Weight fluctuation damages blood vessel walls"
           }
-        ]
+        ],
+        "desc": "Losing just 1 kg of body weight can lower blood pressure by approximately 1 mmHg. Even modest weight loss makes a measurable difference."
       },
       {
         "title": "No Smoking",
@@ -17332,7 +17345,8 @@
             "label": "Effective cessation support",
             "note": "Patch/gum/Champix doubles or triples success rates"
           }
-        ]
+        ],
+        "desc": "Quitting smoking restores vascular elasticity within weeks and significantly reduces cardiovascular risk over time."
       },
       {
         "title": "Manage Stress",
@@ -17367,7 +17381,8 @@
             "label": "Screen for sleep apnoea",
             "note": "Loud snoring + daytime sleepiness → investigate"
           }
-        ]
+        ],
+        "desc": "Diaphragmatic breathing, meditation, or yoga activates the parasympathetic nervous system and helps lower resting blood pressure."
       }
     ],
     "bs_cats_tr": [
@@ -17405,7 +17420,8 @@
             "label": "< 40 mg/dL: call emergency",
             "note": "Do not wait to see if it improves"
           }
-        ]
+        ],
+        "range": "< 70 mg/dL"
       },
       {
         "label": "Normal (fasting)",
@@ -17441,7 +17457,8 @@
             "label": "150 min/week",
             "note": "Exercise increases glucose uptake in muscles"
           }
-        ]
+        ],
+        "range": "70–99 mg/dL"
       },
       {
         "label": "Pre-diabetes (fasting)",
@@ -17477,7 +17494,8 @@
             "label": "Retest in 3–6 months",
             "note": "Assess effectiveness of lifestyle changes"
           }
-        ]
+        ],
+        "range": "100–125 mg/dL"
       },
       {
         "label": "Diabetes (fasting)",
@@ -17513,7 +17531,8 @@
             "label": "HbA1c target < 7%",
             "note": "Reduces microvascular complications by 25–35%"
           }
-        ]
+        ],
+        "range": "≥ 126 mg/dL"
       },
       {
         "label": "Post-meal 2h — Normal",
@@ -17549,7 +17568,8 @@
             "label": "Walk 10–15 min after meals",
             "note": "Reduces post-meal glucose by 20–30%"
           }
-        ]
+        ],
+        "range": "< 140 mg/dL"
       },
       {
         "label": "Post-meal 2h — Pre-diabetes",
@@ -17585,7 +17605,8 @@
             "label": "Retest in 3 months",
             "note": "Assess effectiveness of lifestyle changes"
           }
-        ]
+        ],
+        "range": "140–199 mg/dL"
       },
       {
         "keyFact": "💡 Per ADA 2023: any blood glucose ≥ 200 mg/dL + classic symptoms (excessive thirst, frequent urination, weight loss) = diagnostic criteria for diabetes met — no additional fasting test needed.",
@@ -17619,7 +17640,8 @@
             "label": "Do not self-treat",
             "note": "Herbal remedies do not replace diabetes medication"
           }
-        ]
+        ],
+        "range": "≥ 200 mg/dL"
       }
     ],
     "hbac_cats_tr": [
@@ -17949,7 +17971,8 @@
             "label": "Do not transport by motorbike",
             "note": "Vibration can worsen hemorrhagic bleeding"
           }
-        ]
+        ],
+        "note": "Remember the FAST rule — Face drooping · Arm weakness · Speech difficulty · Time to call 115."
       },
       {
         "title": "Heart Attack",
@@ -17985,7 +18008,8 @@
             "label": "Door-to-balloon < 90 minutes",
             "note": "Every minute of delay = more heart muscle death"
           }
-        ]
+        ],
+        "note": "Women may not experience typical chest pain. Symptoms can include jaw pain, nausea, or unusual fatigue. Do not dismiss these signs."
       },
       {
         "title": "Severe Infection / Septic Shock",
@@ -18021,7 +18045,8 @@
             "label": "Drowsiness + fever = danger",
             "note": "Altered consciousness is a sepsis marker — not just \"high fever\""
           }
-        ]
+        ],
+        "note": "Septic shock is life-threatening and progresses rapidly. Early antibiotic therapy and IV fluids are critical — every hour without treatment worsens outcomes."
       },
       {
         "title": "Acute Shortness of Breath",
@@ -18057,7 +18082,8 @@
             "label": "Breathlessness after prolonged sitting = suspect PE",
             "note": "Pulmonary embolism may give no prior warning"
           }
-        ]
+        ],
+        "note": "Pulmonary embolism can cause sudden breathlessness, pleuritic chest pain, and low oxygen saturation. Risk increases after prolonged immobility or surgery."
       }
     ],
     "rf_soon_tr": [
@@ -18521,7 +18547,8 @@
             "label": "Ask your doctor instead of self-adjusting",
             "note": "Doctors will adjust if you explain your reason"
           }
-        ]
+        ],
+        "desc": "Do not substitute prescription medications with supplements, herbs, or over-the-counter alternatives without consulting your doctor. Active ingredients differ significantly."
       },
       {
         "title": "Take at the correct time and in the correct way",
@@ -18555,7 +18582,8 @@
             "label": "Take with at least 200 ml of water",
             "note": "Not with milk, orange juice, or coffee — affects absorption"
           }
-        ]
+        ],
+        "desc": "Some medications must be taken before meals (on an empty stomach) to be absorbed properly; others must be taken after meals to avoid stomach irritation. Always follow the label."
       },
       {
         "title": "Be aware of food-drug interactions",
@@ -18589,7 +18617,8 @@
             "label": "Vitamin K + warfarin: stay consistent",
             "note": "No need to avoid green vegetables — just eat them consistently"
           }
-        ]
+        ],
+        "desc": "Grapefruit inhibits the CYP3A4 enzyme responsible for metabolising many drugs (statins, blood pressure meds, some antibiotics), causing dangerously high blood concentrations."
       },
       {
         "title": "Never share prescription medications",
@@ -18623,7 +18652,8 @@
             "label": "Vietnam: top antibiotic resistance globally",
             "note": "Consequence of widespread over-the-counter antibiotic use"
           }
-        ]
+        ],
+        "desc": "Medication prescribed for another person — even if symptoms seem similar — may be inappropriate for your condition, weight, or other medications you take. Never share prescriptions."
       },
       {
         "title": "Store medications correctly",
@@ -18657,7 +18687,8 @@
             "label": "Do not flush expired medications",
             "note": "Return to a pharmacy or medical facility for proper disposal"
           }
-        ]
+        ],
+        "desc": "Most medications should be stored in a cool, dry place away from sunlight. Humidity and heat (e.g. bathroom cabinets) accelerate degradation and reduce effectiveness."
       }
     ],
     "med_danger_tr": [
@@ -20096,7 +20127,692 @@
     "bp_profile_check": "Recommended BP check:",
     "bp_profile_freq_hi": "every 3–6 months",
     "bp_profile_freq_lo": "annually",
-    "bp_profile_note": "and daily monitoring if at risk."
+    "bp_profile_note": "and daily monitoring if at risk.",
+    "sm_metrics_tr": [
+      {
+        "label": "Body Weight",
+        "freq": "Weekly",
+        "when": "Morning, after using the bathroom, before eating",
+        "tool": "Body weight scale",
+        "note": "Weigh under the same conditions each time. Daily fluctuations of 1–2 kg are normal due to water retention.",
+        "keyFact": "Weight trend matters more than any single reading",
+        "details": [
+          "Use a digital scale on a hard, flat surface. Weigh at the same time each week for consistency.",
+          "Normal daily variation is 1–2 kg due to hydration, food volume, and hormonal cycles.",
+          "Track the weekly average rather than daily numbers to see true fat-loss or gain progress.",
+          "Sudden gains of 2–3 kg overnight indicate water retention, not fat. Look at 4-week trends.",
+          "Morning fasted weight before any food or drink is the most reproducible measurement."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "Frequency",
+            "note": "Same day and time weekly"
+          },
+          {
+            "icon": "📊",
+            "label": "Track trends",
+            "note": "Compare 4-week averages"
+          },
+          {
+            "icon": "💧",
+            "label": "Hydration effect",
+            "note": "±1–2 kg daily is normal"
+          },
+          {
+            "icon": "🎯",
+            "label": "Goal",
+            "note": "Gradual change 0.5–1 kg/week"
+          }
+        ]
+      },
+      {
+        "label": "Blood Pressure",
+        "freq": "Daily (if problematic) or weekly",
+        "when": "Morning and evening, after 5 minutes of rest",
+        "tool": "Automatic blood pressure monitor",
+        "note": "Record both readings. A 7-day average reflects your true blood pressure more accurately than a single measurement.",
+        "keyFact": "Measure twice; use the average of both readings",
+        "details": [
+          "Sit quietly for 5 minutes before measuring. Do not talk or move during the reading.",
+          "Measure at the same time each day — morning before medication and evening before bed.",
+          "Record both systolic and diastolic values along with pulse rate.",
+          "A 7-day average is more clinically meaningful than any single reading.",
+          "Bring your log to doctor appointments — home readings often differ from clinic measurements."
+        ],
+        "points": [
+          {
+            "icon": "🕐",
+            "label": "Best time",
+            "note": "Morning & evening consistently"
+          },
+          {
+            "icon": "📋",
+            "label": "Log it",
+            "note": "Track date, time, and both values"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Seek help if",
+            "note": "≥ 140/90 mmHg repeatedly"
+          },
+          {
+            "icon": "💊",
+            "label": "On medication",
+            "note": "Measure before taking pills"
+          }
+        ]
+      },
+      {
+        "label": "Blood Sugar",
+        "freq": "Daily (diabetes) or monthly",
+        "when": "Fasting and 2 hours after meals",
+        "tool": "Glucometer",
+        "note": "Tracking trends is more important than any single value.",
+        "keyFact": "Fasting glucose < 100 mg/dL is the healthy target",
+        "details": [
+          "Fasting blood sugar is measured after at least 8 hours without food or drink (water is allowed).",
+          "Post-meal glucose (2 hours after eating) shows how your body handles carbohydrates.",
+          "For non-diabetic individuals, monthly fasting checks are sufficient for trend monitoring.",
+          "Keep a log with meal descriptions to identify which foods cause spikes.",
+          "Consistent readings above 100 mg/dL (fasting) warrant a conversation with your doctor."
+        ],
+        "points": [
+          {
+            "icon": "🍽️",
+            "label": "Fasting check",
+            "note": "8+ hours without food"
+          },
+          {
+            "icon": "⏰",
+            "label": "Post-meal",
+            "note": "Test 2 hours after eating"
+          },
+          {
+            "icon": "📈",
+            "label": "Target (fasting)",
+            "note": "< 100 mg/dL"
+          },
+          {
+            "icon": "🔍",
+            "label": "Watch for",
+            "note": "Consistent values ≥ 100 mg/dL"
+          }
+        ]
+      },
+      {
+        "label": "Resting Heart Rate",
+        "freq": "Weekly",
+        "when": "Immediately upon waking, before getting out of bed",
+        "tool": "Smart watch or manual count (15 s × 4)",
+        "note": "60–100 bpm is normal. Regular exercise gradually lowers resting heart rate over weeks.",
+        "keyFact": "Elite athletes often have resting HR of 40–60 bpm",
+        "details": [
+          "Measure immediately upon waking before any movement, coffee, or stimulation.",
+          "Count for 15 seconds and multiply by 4, or use a smart watch with continuous HR monitoring.",
+          "Normal resting heart rate is 60–100 bpm for adults.",
+          "Consistent aerobic training can lower resting HR by 5–10 bpm over several months.",
+          "Sudden unexplained spikes in resting HR may indicate illness, overtraining, or stress."
+        ],
+        "points": [
+          {
+            "icon": "❤️",
+            "label": "Normal range",
+            "note": "60–100 bpm"
+          },
+          {
+            "icon": "🏃",
+            "label": "Training effect",
+            "note": "Exercise lowers HR over time"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Alert",
+            "note": "Sudden spike may indicate illness"
+          },
+          {
+            "icon": "📱",
+            "label": "Tool tip",
+            "note": "Smart watch gives 24/7 tracking"
+          }
+        ]
+      },
+      {
+        "label": "Sleep Quality",
+        "freq": "Daily",
+        "when": "Immediately upon waking",
+        "tool": "Sleep tracking app or sleep journal",
+        "note": "Assess: total sleep time, number of night awakenings, and how refreshed you feel upon waking.",
+        "keyFact": "7–9 hours of sleep per night is optimal for most adults",
+        "details": [
+          "Rate sleep quality 1–10 each morning along with total hours slept.",
+          "Note number of night awakenings — more than 2 per night is worth investigating.",
+          "Track how you feel upon waking: refreshed, groggy, or fatigued.",
+          "Patterns over 2–4 weeks reveal connections between sleep and diet, exercise, or stress.",
+          "Consistent poor sleep (< 6 hours) is associated with increased risk of obesity, diabetes, and cardiovascular disease."
+        ],
+        "points": [
+          {
+            "icon": "🌙",
+            "label": "Target",
+            "note": "7–9 hours per night"
+          },
+          {
+            "icon": "📊",
+            "label": "Track patterns",
+            "note": "Link sleep to diet & exercise"
+          },
+          {
+            "icon": "💤",
+            "label": "Sleep quality",
+            "note": "Feel refreshed upon waking"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Concern",
+            "note": "Regularly < 6 hours needs attention"
+          }
+        ]
+      },
+      {
+        "label": "Waist Circumference",
+        "freq": "Monthly",
+        "when": "Morning, after a normal exhale",
+        "tool": "Flexible measuring tape",
+        "note": "Measure at the navel. Men: < 90 cm; Women: < 80 cm is the health target.",
+        "keyFact": "Waist circumference predicts metabolic risk better than BMI alone",
+        "details": [
+          "Measure horizontally at the level of the navel after breathing out normally.",
+          "Stand relaxed — do not suck in your stomach or hold your breath.",
+          "Abdominal fat is a stronger predictor of cardiovascular and metabolic disease than overall BMI.",
+          "Target values: Men < 90 cm, Women < 80 cm (WHO guidelines for Asian populations).",
+          "A reduction of 5–10 cm in waist circumference significantly reduces metabolic risk."
+        ],
+        "points": [
+          {
+            "icon": "📏",
+            "label": "Men target",
+            "note": "< 90 cm"
+          },
+          {
+            "icon": "📏",
+            "label": "Women target",
+            "note": "< 80 cm"
+          },
+          {
+            "icon": "⚠️",
+            "label": "High risk",
+            "note": "Men ≥ 90 cm, Women ≥ 80 cm"
+          },
+          {
+            "icon": "🎯",
+            "label": "Why it matters",
+            "note": "Predicts metabolic syndrome"
+          }
+        ]
+      },
+      {
+        "label": "Energy Level",
+        "freq": "Daily",
+        "when": "Mid-morning and mid-afternoon",
+        "tool": "Scale of 1–10 or emoji journal",
+        "note": "Track with numbers or emojis. Helps identify patterns related to diet, sleep, and activity.",
+        "keyFact": "Consistent low energy is a sign worth investigating with a doctor",
+        "details": [
+          "Rate your energy on a 1–10 scale at mid-morning (around 10 am) and mid-afternoon (around 3 pm).",
+          "Over 2–4 weeks, patterns emerge linking energy to meals, sleep quality, hydration, and exercise.",
+          "Low energy after lunch (post-meal dip) is normal; severe crashes warrant dietary review.",
+          "Chronically low energy (< 5 most days) may indicate nutritional deficiency, thyroid issues, or burnout.",
+          "Tracking emojis (😴😐😊⚡) is equally valid — choose whichever you will consistently maintain."
+        ],
+        "points": [
+          {
+            "icon": "⚡",
+            "label": "Rate 1–10",
+            "note": "Mid-morning and mid-afternoon"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Food link",
+            "note": "Note what you ate before low dips"
+          },
+          {
+            "icon": "😴",
+            "label": "Sleep link",
+            "note": "Poor sleep → low energy next day"
+          },
+          {
+            "icon": "🔍",
+            "label": "Consistently low",
+            "note": "Discuss with doctor if < 5 daily"
+          }
+        ]
+      }
+    ],
+    "chk_basic_tr": [
+      {
+        "title": "Comprehensive Clinical Examination",
+        "subtitle": "Height · Weight · Blood Pressure · Heart Rate",
+        "freq": "Annual",
+        "keyFact": "Baseline vitals catch trends before symptoms appear",
+        "points": [
+          {
+            "icon": "⚖️",
+            "label": "BMI & weight trend",
+            "note": "Compared year over year"
+          },
+          {
+            "icon": "🩺",
+            "label": "Blood pressure",
+            "note": "Systolic and diastolic recorded"
+          },
+          {
+            "icon": "❤️",
+            "label": "Resting heart rate",
+            "note": "Cardiovascular fitness indicator"
+          },
+          {
+            "icon": "📏",
+            "label": "Waist circumference",
+            "note": "Metabolic risk assessment"
+          }
+        ]
+      },
+      {
+        "title": "Basic Blood Test: CBC",
+        "subtitle": "Complete Blood Count · Full Blood Panel",
+        "freq": "Annual",
+        "keyFact": "CBC detects anaemia, infection, and blood disorders early",
+        "points": [
+          {
+            "icon": "🩸",
+            "label": "Red blood cells",
+            "note": "Detects anaemia and oxygen capacity"
+          },
+          {
+            "icon": "🛡️",
+            "label": "White blood cells",
+            "note": "Immunity and infection markers"
+          },
+          {
+            "icon": "🔬",
+            "label": "Platelets",
+            "note": "Clotting function assessment"
+          },
+          {
+            "icon": "📊",
+            "label": "Haemoglobin",
+            "note": "Key anaemia screening value"
+          }
+        ]
+      },
+      {
+        "title": "Comprehensive Blood Chemistry",
+        "subtitle": "Fasting Glucose · HbA1c · Full Lipid Panel (Cholesterol, LDL, HDL, TG)",
+        "freq": "Annual",
+        "keyFact": "HbA1c reflects 3-month average blood sugar — more reliable than fasting glucose alone",
+        "points": [
+          {
+            "icon": "🍬",
+            "label": "Fasting glucose",
+            "note": "Target < 100 mg/dL"
+          },
+          {
+            "icon": "📉",
+            "label": "HbA1c",
+            "note": "Target < 5.7% for non-diabetics"
+          },
+          {
+            "icon": "💛",
+            "label": "LDL cholesterol",
+            "note": "Target < 130 mg/dL (< 100 with risk factors)"
+          },
+          {
+            "icon": "💚",
+            "label": "HDL cholesterol",
+            "note": "Higher is better; target > 40 (M) / > 50 (F)"
+          }
+        ]
+      },
+      {
+        "title": "Liver Function Tests",
+        "subtitle": "AST · ALT · GGT · Bilirubin",
+        "freq": "Annual",
+        "keyFact": "Elevated ALT is often the first sign of fatty liver disease",
+        "points": [
+          {
+            "icon": "🫁",
+            "label": "ALT / AST",
+            "note": "Liver cell damage markers"
+          },
+          {
+            "icon": "🍺",
+            "label": "GGT",
+            "note": "Elevated with alcohol use or bile duct issues"
+          },
+          {
+            "icon": "🟡",
+            "label": "Bilirubin",
+            "note": "Jaundice and liver function indicator"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Key concern",
+            "note": "Fatty liver is reversible if caught early"
+          }
+        ]
+      },
+      {
+        "title": "Kidney Function Tests",
+        "subtitle": "Creatinine · Urea · eGFR · Uric Acid",
+        "freq": "Annual",
+        "keyFact": "eGFR below 60 for 3+ months indicates chronic kidney disease",
+        "points": [
+          {
+            "icon": "🫘",
+            "label": "eGFR",
+            "note": "Estimated glomerular filtration rate"
+          },
+          {
+            "icon": "🔴",
+            "label": "Creatinine",
+            "note": "Rises when kidneys struggle to filter"
+          },
+          {
+            "icon": "💧",
+            "label": "Urea / BUN",
+            "note": "Protein metabolism waste product"
+          },
+          {
+            "icon": "🎯",
+            "label": "Uric acid",
+            "note": "Elevated = gout and kidney stone risk"
+          }
+        ]
+      },
+      {
+        "title": "Complete Urinalysis",
+        "subtitle": "Urinalysis · Early Detection of Kidney, Diabetes, Infection",
+        "freq": "Annual",
+        "keyFact": "Protein or blood in urine can be the first clue to kidney disease",
+        "points": [
+          {
+            "icon": "🔍",
+            "label": "Protein in urine",
+            "note": "Early kidney damage marker"
+          },
+          {
+            "icon": "🩸",
+            "label": "Blood in urine",
+            "note": "Kidney stones, infection, or tumour"
+          },
+          {
+            "icon": "🍬",
+            "label": "Glucose in urine",
+            "note": "Possible undiagnosed diabetes"
+          },
+          {
+            "icon": "🦠",
+            "label": "Bacteria",
+            "note": "Urinary tract infection detection"
+          }
+        ]
+      },
+      {
+        "title": "Electrocardiogram (ECG)",
+        "subtitle": "Electrocardiogram · Electrical Heart Assessment",
+        "freq": "Annual (from age 35)",
+        "keyFact": "ECG can detect arrhythmias and silent ischaemia before symptoms appear",
+        "points": [
+          {
+            "icon": "💓",
+            "label": "Heart rhythm",
+            "note": "Detects atrial fibrillation and arrhythmias"
+          },
+          {
+            "icon": "⚡",
+            "label": "Conduction",
+            "note": "Identifies electrical pathway issues"
+          },
+          {
+            "icon": "🩺",
+            "label": "Ischaemia",
+            "note": "Signs of reduced coronary blood flow"
+          },
+          {
+            "icon": "📅",
+            "label": "Start age",
+            "note": "Recommended annually from age 35"
+          }
+        ]
+      },
+      {
+        "title": "General Abdominal Ultrasound",
+        "subtitle": "Liver · Gallbladder · Pancreas · Spleen · Kidneys · Bladder",
+        "freq": "Annual",
+        "keyFact": "Ultrasound detects fatty liver, gallstones, and cysts before they cause symptoms",
+        "points": [
+          {
+            "icon": "🫀",
+            "label": "Liver & gallbladder",
+            "note": "Fatty liver, gallstones, polyps"
+          },
+          {
+            "icon": "🫘",
+            "label": "Kidneys",
+            "note": "Stones, cysts, size changes"
+          },
+          {
+            "icon": "🔍",
+            "label": "Pancreas & spleen",
+            "note": "Masses and structural changes"
+          },
+          {
+            "icon": "✅",
+            "label": "Non-invasive",
+            "note": "Safe, no radiation, repeatable"
+          }
+        ]
+      },
+      {
+        "title": "Chest X-ray",
+        "subtitle": "Heart · Lungs · Chest · Thoracic Spine",
+        "freq": "Every 2 years",
+        "keyFact": "Chest X-ray can detect lung nodules, cardiomegaly, and pleural effusion",
+        "points": [
+          {
+            "icon": "🫁",
+            "label": "Lung fields",
+            "note": "Nodules, infiltrates, effusion"
+          },
+          {
+            "icon": "❤️",
+            "label": "Heart silhouette",
+            "note": "Enlargement or abnormal shape"
+          },
+          {
+            "icon": "🦴",
+            "label": "Thoracic spine",
+            "note": "Degenerative changes and alignment"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Radiation note",
+            "note": "Low dose; benefits outweigh risk at 2-year interval"
+          }
+        ]
+      },
+      {
+        "title": "Eye Examination",
+        "subtitle": "Visual Acuity · Intraocular Pressure · Fundus · Glaucoma",
+        "freq": "Every 2 years",
+        "keyFact": "Glaucoma causes irreversible blindness but is treatable if caught early",
+        "points": [
+          {
+            "icon": "👁️",
+            "label": "Visual acuity",
+            "note": "Current prescription accuracy"
+          },
+          {
+            "icon": "💧",
+            "label": "Intraocular pressure",
+            "note": "Glaucoma risk screening"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fundus exam",
+            "note": "Retinal health and diabetic eye changes"
+          },
+          {
+            "icon": "📅",
+            "label": "Frequency",
+            "note": "Every 2 years; annually with diabetes"
+          }
+        ]
+      },
+      {
+        "title": "Dental Check-up",
+        "subtitle": "Screening · Tartar Removal · Dental X-ray",
+        "freq": "Every 6 months",
+        "keyFact": "Periodontal disease is independently linked to cardiovascular disease risk",
+        "points": [
+          {
+            "icon": "🦷",
+            "label": "Cavity screening",
+            "note": "Early decay is painless and reversible"
+          },
+          {
+            "icon": "🧹",
+            "label": "Tartar removal",
+            "note": "Prevents gum disease progression"
+          },
+          {
+            "icon": "📸",
+            "label": "Dental X-ray",
+            "note": "Detects problems invisible to the eye"
+          },
+          {
+            "icon": "❤️",
+            "label": "Systemic link",
+            "note": "Gum disease raises cardiovascular risk"
+          }
+        ]
+      }
+    ],
+    "chk_extended_tr": [
+      {
+        "title": "Cardiovascular Risk Package",
+        "subtitle": "Echocardiogram · Stress ECG · hs-CRP · Homocysteine",
+        "triggers": "Smoking, high blood pressure, diabetes, high cholesterol, obesity, family history of early cardiovascular disease",
+        "keyFact": "hs-CRP detects vascular inflammation years before a cardiac event",
+        "points": [
+          {
+            "icon": "🫀",
+            "label": "Echocardiogram",
+            "note": "Heart structure and valve function"
+          },
+          {
+            "icon": "🏃",
+            "label": "Stress ECG",
+            "note": "Ischaemia detected under exercise load"
+          },
+          {
+            "icon": "🔥",
+            "label": "hs-CRP",
+            "note": "Inflammatory marker for arterial plaque risk"
+          },
+          {
+            "icon": "🧬",
+            "label": "Homocysteine",
+            "note": "Elevated = increased stroke and CVD risk"
+          }
+        ]
+      },
+      {
+        "title": "Women > 40 Package",
+        "subtitle": "Breast Ultrasound · Mammogram · Pap Smear / HPV · DEXA Scan",
+        "triggers": "All women from age 40, or earlier with risk factors (family history of breast cancer, BRCA+)",
+        "keyFact": "Mammography reduces breast cancer mortality by up to 30% through early detection",
+        "points": [
+          {
+            "icon": "🎗️",
+            "label": "Mammogram",
+            "note": "Gold standard for early breast cancer detection"
+          },
+          {
+            "icon": "🔬",
+            "label": "Pap smear / HPV",
+            "note": "Cervical cancer prevention"
+          },
+          {
+            "icon": "🦴",
+            "label": "DEXA scan",
+            "note": "Bone density — osteoporosis screening"
+          },
+          {
+            "icon": "🩺",
+            "label": "Breast ultrasound",
+            "note": "Complements mammogram for dense tissue"
+          }
+        ]
+      },
+      {
+        "title": "Men > 40 Package",
+        "subtitle": "PSA · Testosterone · Prostate Ultrasound · Colorectal Cancer Screening",
+        "triggers": "All men from age 40, or earlier with family history of prostate or colorectal cancer",
+        "keyFact": "PSA screening enables prostate cancer detection at a curative stage",
+        "points": [
+          {
+            "icon": "🔵",
+            "label": "PSA blood test",
+            "note": "Prostate cancer risk marker"
+          },
+          {
+            "icon": "💪",
+            "label": "Testosterone",
+            "note": "Hormonal health and energy assessment"
+          },
+          {
+            "icon": "🫘",
+            "label": "Prostate ultrasound",
+            "note": "Size and structural changes"
+          },
+          {
+            "icon": "🔍",
+            "label": "Colorectal screening",
+            "note": "Colonoscopy or stool occult blood test"
+          }
+        ]
+      },
+      {
+        "title": "Family Cancer History Package",
+        "subtitle": "Colonoscopy · BRCA Testing · Gastroscopy · Genetic Counselling",
+        "triggers": "Parent or sibling with colorectal, breast, ovarian, or stomach cancer, or ≥ 2 relatives with the same cancer type",
+        "keyFact": "Colonoscopy can prevent colorectal cancer by removing polyps before they become malignant",
+        "points": [
+          {
+            "icon": "🔭",
+            "label": "Colonoscopy",
+            "note": "Polyp removal prevents colorectal cancer"
+          },
+          {
+            "icon": "🧬",
+            "label": "BRCA testing",
+            "note": "Hereditary breast and ovarian cancer gene"
+          },
+          {
+            "icon": "🫁",
+            "label": "Gastroscopy",
+            "note": "Stomach and oesophagus cancer screening"
+          },
+          {
+            "icon": "👨‍⚕️",
+            "label": "Genetic counselling",
+            "note": "Risk interpretation and prevention planning"
+          }
+        ]
+      }
+    ]
   },
   "pillarF": {
     "id": "f",

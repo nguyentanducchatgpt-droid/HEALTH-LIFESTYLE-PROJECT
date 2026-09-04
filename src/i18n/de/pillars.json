@@ -16654,7 +16654,9 @@
             "label": "Krafttraining erhöht Testosteron natürlich",
             "note": "Mehrgelenkübungen (Kniebeuge, Kreuzheben) am effektivsten"
           }
-        ]
+        ],
+        "low": "< 90 cm",
+        "high": "≥ 90 cm"
       },
       {
         "group": "Frauen",
@@ -16691,7 +16693,9 @@
             "label": "Mediterrane Ernährung reduziert Taillenumfang",
             "note": "PREDIMED: wirksamer als Low-Fat-Diät für Bauchfett bei Frauen"
           }
-        ]
+        ],
+        "low": "< 80 cm",
+        "high": "≥ 80 cm"
       }
     ],
     "trend_items_tr": [
@@ -17020,10 +17024,11 @@
             "label": "Psychische Entspannung",
             "note": "Aufregung → falsch erhöhte Messwerte"
           }
-        ]
+        ],
+        "desc": "Ruhig sitzen und nicht sprechen. Mindestens 5 Minuten vor der Messung keine körperliche Aktivität."
       },
       {
-        "title": "Richtig hinsetzen",
+        "title": "Koffein & Tabak meiden",
         "keyFact": "💡 Koffein erhöht den Blutdruck vorübergehend um 5–10 mmHg für 30–60 Minuten. Nikotin aus Tabak hebt den Blutdruck um 5–10 mmHg an und hält diesen Effekt 15–30 Minuten nach jeder Zigarette aufrecht.",
         "detail": "Stimulanzien wirken direkt auf das Herz-Kreislauf-System und das vegetative Nervensystem – eine Blutdruckmessung nach Kaffee oder Tabak ergibt Werte, die den wahren Zustand nicht widerspiegeln.",
         "details": [
@@ -17055,10 +17060,11 @@
             "label": "Morgendliche Messung bevorzugen",
             "note": "Vor dem Essen und vor dem Kaffee – am genauesten"
           }
-        ]
+        ],
+        "desc": "Mindestens 30 Minuten vor der Messung keinen Kaffee, Tabak oder Stimulanzien konsumieren. Diese können den Blutdruck künstlich erhöhen."
       },
       {
-        "title": "Manschette korrekt anlegen",
+        "title": "Richtige Körperhaltung",
         "keyFact": "💡 Eine Armposition unterhalb des Herzens erhöht den Messwert um 5–10 mmHg. Überkreuzen der Beine während der Messung erhöht den systolischen Blutdruck um weitere 2–8 mmHg.",
         "detail": "Die Messkörperhaltung kann bis zu 10–15 mmHg Einfluss auf das Ergebnis haben – eine falsche Haltung ist die häufigste Fehlerquelle bei der häuslichen Blutdruckmessung.",
         "details": [
@@ -17090,10 +17096,11 @@
             "label": "Beide Arme beim Erstmessung",
             "note": "Differenz > 10 mmHg erfordert Abklärung"
           }
-        ]
+        ],
+        "desc": "Aufrecht sitzen mit gestütztem Rücken, Füße flach auf dem Boden, der Manschettenarm auf Herzhöhe. Die Beine nicht überkreuzen."
       },
       {
-        "title": "Zweimal messen",
+        "title": "Korrekte Manschettengröße",
         "keyFact": "💡 Eine zu kleine Manschette (Oberarmumfang größer als Manschettenbreite) kann den Blutdruck um 5–8 mmHg überschätzen. Messen über dicker Kleidung kann Fehler von 10–50 mmHg verursachen.",
         "detail": "Manschettengröße und Anlegetechnik beeinflussen das Ergebnis stärker als die meisten Menschen vermuten – dies ist die häufigste Fehlerquelle bei der häuslichen Blutdruckmessung.",
         "details": [
@@ -17125,10 +17132,11 @@
             "label": "Handgelenk weniger genau",
             "note": "Oberarm = Goldstandard für Verlaufskontrolle"
           }
-        ]
+        ],
+        "desc": "Die Manschette sollte eng anliegen, aber einen Finger darunter erlauben. Verwenden Sie den Arm, an dem der Druck konsistent höher ist."
       },
       {
-        "title": "Ergebnisse aufzeichnen",
+        "title": "Zweimal hintereinander messen",
         "keyFact": "💡 Die erste Messung liegt typischerweise 5–10 mmHg über der zweiten, bedingt durch die Orientierungsreaktion (Alerting Response). Stets den Mittelwert aus mindestens zwei Messungen verwenden.",
         "detail": "Eine einzige Messung ist für klinische Entscheidungen nicht ausreichend verlässlich – die natürliche Variabilität des Blutdrucks erfordert mindestens 2–3 Messungen für einen repräsentativen Wert.",
         "details": [
@@ -17160,7 +17168,8 @@
             "label": "Ein erhöhter Wert ≠ Bluthochdruck",
             "note": "Mehrere Bestätigungsmessungen erforderlich"
           }
-        ]
+        ],
+        "desc": "Zwischen den Messungen 1–2 Minuten Pause einlegen. Beide Werte notieren und den Durchschnitt als Ergebnis verwenden."
       }
     ],
     "bp_lifestyle_tr": [
@@ -17197,7 +17206,8 @@
             "label": "Durch Kräuter und Zitrone ersetzen",
             "note": "Kalium aus Gemüse wirkt Natrium entgegen"
           }
-        ]
+        ],
+        "desc": "Täglich weniger als 5 g Salz anstreben (etwa 1 Teelöffel). Lebensmitteletiketten lesen — verarbeitete Lebensmittel enthalten oft verstecktes Natrium."
       },
       {
         "title": "Regelmäßig Sport",
@@ -17232,7 +17242,8 @@
             "label": "DASH + Natriumreduktion",
             "note": "Senkt RR um 11–16 mmHg – stärkste Wirkung"
           }
-        ]
+        ],
+        "desc": "Die DASH-Diät (reich an Obst, Gemüse, Vollkornprodukten, fettarmen Milchprodukten) kann den systolischen Druck um 8–14 mmHg senken."
       },
       {
         "title": "Gesundes Gewicht halten",
@@ -17267,7 +17278,8 @@
             "label": "RR > 180: zuerst kontrollieren",
             "note": "Mit Medikamenten stabilisieren, dann Intensität steigern"
           }
-        ]
+        ],
+        "desc": "150 Minuten moderates Ausdauertraining pro Woche — Gehen, Schwimmen, Radfahren — kann den systolischen Blutdruck um 5–8 mmHg senken."
       },
       {
         "title": "Alkohol einschränken",
@@ -17302,7 +17314,8 @@
             "label": "Jo-Jo-Diät vermeiden",
             "note": "Gewichtsschwankungen schädigen Gefäßwand"
           }
-        ]
+        ],
+        "desc": "Bereits 1 kg Körpergewicht verlieren kann den Blutdruck um etwa 1 mmHg senken. Selbst bescheidener Gewichtsverlust macht einen messbaren Unterschied."
       },
       {
         "title": "Nicht rauchen",
@@ -17337,7 +17350,8 @@
             "label": "Effektive Entwöhnungshilfe",
             "note": "Pflaster/Kaugummi/Champix verdoppeln/verdreifachen Erfolgsrate"
           }
-        ]
+        ],
+        "desc": "Das Aufhören mit dem Rauchen stellt innerhalb von Wochen die Gefäßelastizität wieder her und reduziert das Herz-Kreislauf-Risiko langfristig erheblich."
       },
       {
         "title": "Stress bewältigen",
@@ -17372,7 +17386,8 @@
             "label": "Schlafapnoe abklären",
             "note": "Lautes Schnarchen + Tagesschläfrigkeit → untersuchen"
           }
-        ]
+        ],
+        "desc": "Zwerchfellatmung, Meditation oder Yoga aktiviert das parasympathische Nervensystem und hilft, den Ruheblutdruck zu senken."
       }
     ],
     "bs_cats_tr": [
@@ -17410,7 +17425,8 @@
             "label": "< 40 mg/dl: Notruf rufen",
             "note": "Nicht abwarten, ob Besserung eintritt"
           }
-        ]
+        ],
+        "range": "< 70 mg/dL"
       },
       {
         "label": "Normal (nüchtern)",
@@ -17446,7 +17462,8 @@
             "label": "150 Min./Woche",
             "note": "Bewegung erhöht Glukoseaufnahme in Muskeln"
           }
-        ]
+        ],
+        "range": "70–99 mg/dL"
       },
       {
         "label": "Prädiabetes (nüchtern)",
@@ -17482,7 +17499,8 @@
             "label": "Kontrolluntersuchung in 3–6 Monaten",
             "note": "Effektivität der Lebensstiländerungen prüfen"
           }
-        ]
+        ],
+        "range": "100–125 mg/dL"
       },
       {
         "label": "Diabetes (nüchtern)",
@@ -17518,7 +17536,8 @@
             "label": "HbA1c-Ziel < 7 %",
             "note": "Reduziert mikrovaskuläre Komplikationen um 25–35 %"
           }
-        ]
+        ],
+        "range": "≥ 126 mg/dL"
       },
       {
         "label": "Nach dem Essen 2h — Normal",
@@ -17554,7 +17573,8 @@
             "label": "10–15 Min. nach dem Essen gehen",
             "note": "Senkt postprandialen Blutzucker um 20–30 %"
           }
-        ]
+        ],
+        "range": "< 140 mg/dL"
       },
       {
         "label": "Nach dem Essen 2h — Prädiabetes",
@@ -17590,7 +17610,8 @@
             "label": "Kontrolluntersuchung in 3 Monaten",
             "note": "Effektivität der Lebensstiländerungen prüfen"
           }
-        ]
+        ],
+        "range": "140–199 mg/dL"
       },
       {
         "keyFact": "💡 Gemäß ADA 2023: Jeder Blutzucker ≥ 200 mg/dl + klassische Symptome (übermäßiger Durst, häufiges Wasserlassen, Gewichtsverlust) = Diagnosekriterien für Diabetes erfüllt — kein zusätzlicher Nüchterntest erforderlich.",
@@ -17624,7 +17645,8 @@
             "label": "Keine Selbstbehandlung",
             "note": "Kräuterpräparate ersetzen keine Diabetesmedikamente"
           }
-        ]
+        ],
+        "range": "≥ 200 mg/dL"
       }
     ],
     "hbac_cats_tr": [
@@ -17954,7 +17976,8 @@
             "label": "Kein Transport auf dem Motorrad",
             "note": "Erschütterungen können Blutung verschlimmern"
           }
-        ]
+        ],
+        "note": "FAST-Regel merken — Gesicht hängend · Armlähmung · Sprachprobleme · Telefon: 115 anrufen."
       },
       {
         "title": "Herzinfarkt",
@@ -17990,7 +18013,8 @@
             "label": "Door-to-balloon < 90 Minuten",
             "note": "Jede Minute Verzögerung = mehr Herzmuskelsterben"
           }
-        ]
+        ],
+        "note": "Frauen haben möglicherweise keinen typischen Brustschmerz. Symptome können Kieferschmerzen, Übelkeit oder ungewöhnliche Müdigkeit umfassen. Diese Zeichen nicht ignorieren."
       },
       {
         "title": "Schwere Infektion / Septischer Schock",
@@ -18026,7 +18050,8 @@
             "label": "Benommenheit + Fieber = Gefahr",
             "note": "Bewusstseinsveränderung ist ein Sepsis-Marker — nicht nur \"hohes Fieber\""
           }
-        ]
+        ],
+        "note": "Septischer Schock ist lebensbedrohlich und schreitet schnell voran. Frühzeitige Antibiotikatherapie und intravenöse Flüssigkeiten sind entscheidend — jede Stunde ohne Behandlung verschlechtert die Prognose."
       },
       {
         "title": "Akute Atemnot",
@@ -18062,7 +18087,8 @@
             "label": "Atemnot nach langem Sitzen = LE-Verdacht",
             "note": "Lungenembolie kann ohne Vorwarnung auftreten"
           }
-        ]
+        ],
+        "note": "Lungenembolie kann plötzliche Atemnot, pleuritischen Brustschmerz und niedrige Sauerstoffsättigung verursachen. Das Risiko steigt nach längerer Immobilität oder Operationen."
       }
     ],
     "rf_soon_tr": [
@@ -18526,7 +18552,8 @@
             "label": "Arzt fragen statt selbst anpassen",
             "note": "Ärzte passen an, wenn Sie den Grund erklären"
           }
-        ]
+        ],
+        "desc": "Verschreibungspflichtige Medikamente nicht ohne Rücksprache mit dem Arzt durch Nahrungsergänzungsmittel, Kräuter oder rezeptfreie Alternativen ersetzen. Wirkstoffe unterscheiden sich erheblich."
       },
       {
         "title": "Zur richtigen Zeit und auf richtige Weise einnehmen",
@@ -18560,7 +18587,8 @@
             "label": "Mit mindestens 200 ml Wasser einnehmen",
             "note": "Nicht mit Milch, Orangensaft oder Kaffee — beeinträchtigt Absorption"
           }
-        ]
+        ],
+        "desc": "Einige Medikamente müssen vor den Mahlzeiten (nüchtern) eingenommen werden, um richtig absorbiert zu werden; andere nach den Mahlzeiten, um Magenreizungen zu vermeiden. Immer die Packungsbeilage beachten."
       },
       {
         "title": "Wechselwirkungen zwischen Medikamenten und Lebensmitteln beachten",
@@ -18594,7 +18622,8 @@
             "label": "Vitamin K + Warfarin: konstant bleiben",
             "note": "Kein Verzicht auf Gemüse — aber gleichmäßig essen, keine plötzlichen Änderungen"
           }
-        ]
+        ],
+        "desc": "Grapefruit hemmt das CYP3A4-Enzym, das für den Metabolismus vieler Medikamente verantwortlich ist (Statine, Blutdruckmittel, einige Antibiotika), was zu gefährlich hohen Blutspiegeln führt."
       },
       {
         "title": "Verschreibungspflichtige Medikamente nicht teilen",
@@ -18628,7 +18657,8 @@
             "label": "Vietnam: weltweit höchste Antibiotikaresistenz",
             "note": "Folge weit verbreiteten nicht verschreibungspflichtigen Antibiotikamissbrauchs"
           }
-        ]
+        ],
+        "desc": "Ein für eine andere Person verschriebenes Medikament — auch wenn die Symptome ähnlich erscheinen — ist möglicherweise für Ihren Zustand, Ihr Gewicht oder Ihre anderen Medikamente ungeeignet. Rezepte niemals teilen."
       },
       {
         "title": "Medikamente richtig lagern",
@@ -18662,7 +18692,8 @@
             "label": "Abgelaufene Medikamente nicht in die Toilette spülen",
             "note": "In die Apotheke oder medizinische Einrichtung zur richtigen Entsorgung bringen"
           }
-        ]
+        ],
+        "desc": "Die meisten Medikamente sollten kühl, trocken und vor Sonnenlicht geschützt aufbewahrt werden. Feuchtigkeit und Wärme (z. B. Badezimmerschränke) beschleunigen den Abbau und verringern die Wirksamkeit."
       }
     ],
     "med_danger_tr": [
@@ -20101,7 +20132,692 @@
     "bp_profile_check": "Empfohlene Blutdruckkontrolle:",
     "bp_profile_freq_hi": "alle 3–6 Monate",
     "bp_profile_freq_lo": "jährlich",
-    "bp_profile_note": "und tägliche Überwachung bei Risikofaktoren."
+    "bp_profile_note": "und tägliche Überwachung bei Risikofaktoren.",
+    "sm_metrics_tr": [
+      {
+        "label": "Körpergewicht",
+        "freq": "Wöchentlich",
+        "when": "Morgens, nach dem Toilettengang, vor dem Frühstück",
+        "tool": "Personenwaage",
+        "note": "Unter gleichen Bedingungen wöchentlich wiegen. Tägliche Schwankungen von 1–2 kg sind normal (Wasserhaushalt).",
+        "keyFact": "Der Gewichtsverlauf zählt mehr als ein Einzelwert",
+        "details": [
+          "Digitale Waage auf hartem, ebenem Untergrund verwenden. Immer zur gleichen Wochentageszeit wiegen.",
+          "Normale tägliche Schwankung beträgt 1–2 kg durch Wasserhaushalt, Nahrungsvolumen und Hormonschwankungen.",
+          "Den Wochendurchschnitt statt täglicher Werte verfolgen, um echten Fett- oder Muskelzuwachs zu sehen.",
+          "Plötzliche Zunahmen von 2–3 kg über Nacht deuten auf Wassereinlagerungen hin, nicht auf Fett.",
+          "Nüchternes Morgengewicht vor jeglicher Nahrung oder Flüssigkeit ist die reproduzierbarste Messung."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "Häufigkeit",
+            "note": "Gleicher Tag und Uhrzeit wöchentlich"
+          },
+          {
+            "icon": "📊",
+            "label": "Trends verfolgen",
+            "note": "4-Wochen-Durchschnitte vergleichen"
+          },
+          {
+            "icon": "💧",
+            "label": "Wassereffekt",
+            "note": "±1–2 kg täglich ist normal"
+          },
+          {
+            "icon": "🎯",
+            "label": "Ziel",
+            "note": "Schrittweise Änderung 0,5–1 kg/Woche"
+          }
+        ]
+      },
+      {
+        "label": "Blutdruck",
+        "freq": "Täglich (bei Problemen) oder wöchentlich",
+        "when": "Morgens und abends, nach 5 Minuten Ruhe",
+        "tool": "Automatisches Blutdruckmessgerät",
+        "note": "Beide Messungen notieren. Ein 7-Tage-Durchschnitt spiegelt Ihren wahren Blutdruck genauer wider als eine Einzelmessung.",
+        "keyFact": "Zweimal messen; Durchschnitt beider Werte verwenden",
+        "details": [
+          "Vor der Messung 5 Minuten ruhig sitzen. Während der Messung nicht sprechen oder bewegen.",
+          "Täglich zur gleichen Zeit messen — morgens vor der Medikamenteneinnahme und abends vor dem Schlafengehen.",
+          "Sowohl systolische als auch diastolische Werte zusammen mit dem Puls aufzeichnen.",
+          "Ein 7-Tage-Durchschnitt ist klinisch aussagekräftiger als jede Einzelmessung.",
+          "Das Messprotokoll zum Arzttermin mitbringen — Heimwerte unterscheiden sich oft von Praxismessungen."
+        ],
+        "points": [
+          {
+            "icon": "🕐",
+            "label": "Beste Zeit",
+            "note": "Morgens & abends konsistent"
+          },
+          {
+            "icon": "📋",
+            "label": "Dokumentieren",
+            "note": "Datum, Uhrzeit und beide Werte"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Hilfe suchen wenn",
+            "note": "≥ 140/90 mmHg wiederholt"
+          },
+          {
+            "icon": "💊",
+            "label": "Bei Medikamenten",
+            "note": "Vor der Einnahme messen"
+          }
+        ]
+      },
+      {
+        "label": "Blutzucker",
+        "freq": "Täglich (Diabetes) oder monatlich",
+        "when": "Nüchtern und 2 Stunden nach den Mahlzeiten",
+        "tool": "Blutzuckermessgerät",
+        "note": "Das Verfolgen von Trends ist wichtiger als ein einzelner Wert.",
+        "keyFact": "Nüchternglukose < 100 mg/dL ist der gesunde Zielwert",
+        "details": [
+          "Nüchternblutzucker wird nach mindestens 8 Stunden ohne Essen oder Trinken gemessen (Wasser erlaubt).",
+          "Postprandialer Blutzucker (2 Stunden nach dem Essen) zeigt, wie Ihr Körper Kohlenhydrate verarbeitet.",
+          "Für Nichtdiabetiker sind monatliche Nüchternkontrollen zur Trendüberwachung ausreichend.",
+          "Ein Protokoll mit Mahlzeitenbeschreibungen hilft, zu identifizieren, welche Lebensmittel Spitzen verursachen.",
+          "Konsistente Werte über 100 mg/dL (nüchtern) erfordern ein Gespräch mit dem Arzt."
+        ],
+        "points": [
+          {
+            "icon": "🍽️",
+            "label": "Nüchternmessung",
+            "note": "8+ Stunden ohne Nahrung"
+          },
+          {
+            "icon": "⏰",
+            "label": "Nach der Mahlzeit",
+            "note": "2 Stunden nach dem Essen messen"
+          },
+          {
+            "icon": "📈",
+            "label": "Zielwert (nüchtern)",
+            "note": "< 100 mg/dL"
+          },
+          {
+            "icon": "🔍",
+            "label": "Beobachten",
+            "note": "Konsistente Werte ≥ 100 mg/dL"
+          }
+        ]
+      },
+      {
+        "label": "Ruhepuls",
+        "freq": "Wöchentlich",
+        "when": "Sofort nach dem Aufwachen, vor dem Aufstehen",
+        "tool": "Smartwatch oder manuelle Zählung (15 s × 4)",
+        "note": "60–100 Schläge/Minute sind normal. Regelmäßiger Sport senkt den Ruhepuls schrittweise über Wochen.",
+        "keyFact": "Ausdauersportler haben oft einen Ruhepuls von 40–60 Schlägen/Minute",
+        "details": [
+          "Sofort nach dem Aufwachen messen, vor jeder Bewegung, Kaffee oder Stimulation.",
+          "15 Sekunden zählen und mit 4 multiplizieren oder eine Smartwatch mit kontinuierlichem HF-Monitoring verwenden.",
+          "Normaler Ruhepuls bei Erwachsenen: 60–100 Schläge/Minute.",
+          "Regelmäßiges Ausdauertraining kann den Ruhepuls über mehrere Monate um 5–10 Schläge/Minute senken.",
+          "Plötzliche ungeklärte Anstiege des Ruhepulses können auf Krankheit, Übertraining oder Stress hinweisen."
+        ],
+        "points": [
+          {
+            "icon": "❤️",
+            "label": "Normalbereich",
+            "note": "60–100 Schläge/Minute"
+          },
+          {
+            "icon": "🏃",
+            "label": "Trainingseffekt",
+            "note": "Sport senkt den Puls langfristig"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Alarm",
+            "note": "Plötzlicher Anstieg kann Krankheit anzeigen"
+          },
+          {
+            "icon": "📱",
+            "label": "Gerätetipp",
+            "note": "Smartwatch ermöglicht 24/7-Tracking"
+          }
+        ]
+      },
+      {
+        "label": "Schlafqualität",
+        "freq": "Täglich",
+        "when": "Sofort nach dem Aufwachen",
+        "tool": "Schlaf-Tracking-App oder Schlaftagebuch",
+        "note": "Bewerten: Gesamtschlafzeit, Anzahl der Aufwachphasen und Erholungsgefühl beim Aufwachen.",
+        "keyFact": "7–9 Stunden Schlaf pro Nacht sind für die meisten Erwachsenen optimal",
+        "details": [
+          "Schlafqualität jeden Morgen auf einer Skala von 1–10 zusammen mit der Gesamtschlafdauer bewerten.",
+          "Anzahl der Aufwachphasen notieren — mehr als 2 pro Nacht ist untersuchungswürdig.",
+          "Notieren, wie man sich beim Aufwachen fühlt: erholt, benommen oder müde.",
+          "Muster über 2–4 Wochen zeigen Zusammenhänge zwischen Schlaf und Ernährung, Sport oder Stress.",
+          "Anhaltend schlechter Schlaf (< 6 Stunden) ist mit erhöhtem Risiko für Adipositas, Diabetes und Herz-Kreislauf-Erkrankungen verbunden."
+        ],
+        "points": [
+          {
+            "icon": "🌙",
+            "label": "Ziel",
+            "note": "7–9 Stunden pro Nacht"
+          },
+          {
+            "icon": "📊",
+            "label": "Muster verfolgen",
+            "note": "Schlaf mit Ernährung & Sport verknüpfen"
+          },
+          {
+            "icon": "💤",
+            "label": "Schlafqualität",
+            "note": "Erholt aufwachen als Ziel"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Bedenken",
+            "note": "Regelmäßig < 6 Stunden erfordert Aufmerksamkeit"
+          }
+        ]
+      },
+      {
+        "label": "Taillenumfang",
+        "freq": "Monatlich",
+        "when": "Morgens, nach normalem Ausatmen",
+        "tool": "Flexibles Maßband",
+        "note": "Auf Nabelhöhe messen. Männer: < 90 cm; Frauen: < 80 cm ist das Gesundheitsziel.",
+        "keyFact": "Taillenumfang sagt metabolisches Risiko besser voraus als BMI allein",
+        "details": [
+          "Horizontal auf Nabelhöhe nach normalem Ausatmen messen.",
+          "Entspannt stehen — nicht den Bauch einziehen oder den Atem anhalten.",
+          "Bauchfett ist ein stärkerer Prädiktor für Herz-Kreislauf- und Stoffwechselerkrankungen als der Gesamt-BMI.",
+          "Zielwerte: Männer < 90 cm, Frauen < 80 cm (WHO-Leitlinien für asiatische Bevölkerungen).",
+          "Eine Reduzierung des Taillenumfangs um 5–10 cm verringert das metabolische Risiko erheblich."
+        ],
+        "points": [
+          {
+            "icon": "📏",
+            "label": "Ziel Männer",
+            "note": "< 90 cm"
+          },
+          {
+            "icon": "📏",
+            "label": "Ziel Frauen",
+            "note": "< 80 cm"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Hohes Risiko",
+            "note": "Männer ≥ 90 cm, Frauen ≥ 80 cm"
+          },
+          {
+            "icon": "🎯",
+            "label": "Warum wichtig",
+            "note": "Metabolisches Syndrom vorhersagen"
+          }
+        ]
+      },
+      {
+        "label": "Energieniveau",
+        "freq": "Täglich",
+        "when": "Mitte des Morgens und des Nachmittags",
+        "tool": "Skala 1–10 oder Emoji-Tagebuch",
+        "note": "Mit Zahlen oder Emojis verfolgen. Hilft, Muster im Zusammenhang mit Ernährung, Schlaf und Aktivität zu erkennen.",
+        "keyFact": "Anhaltend niedriges Energieniveau ist ein Zeichen, das mit dem Arzt besprochen werden sollte",
+        "details": [
+          "Energie morgens (ca. 10 Uhr) und nachmittags (ca. 15 Uhr) auf einer Skala von 1–10 bewerten.",
+          "Über 2–4 Wochen entstehen Muster, die Energie mit Mahlzeiten, Schlafqualität, Hydration und Sport verknüpfen.",
+          "Ein Leistungsabfall nach dem Mittagessen ist normal; starke Einbrüche erfordern eine Ernährungsüberprüfung.",
+          "Chronisch niedriges Energieniveau (< 5 an den meisten Tagen) kann auf Nährstoffmangel, Schilddrüsenprobleme oder Burnout hinweisen.",
+          "Emoji-Tracking (😴😐😊⚡) ist genauso gültig — wählen Sie die Methode, die Sie konsequent beibehalten."
+        ],
+        "points": [
+          {
+            "icon": "⚡",
+            "label": "Bewertung 1–10",
+            "note": "Mitte Morgen und Nachmittag"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Nahrungslink",
+            "note": "Was gegessen wurde vor Einbrüchen notieren"
+          },
+          {
+            "icon": "😴",
+            "label": "Schlaflink",
+            "note": "Schlechter Schlaf → niedriges Energieniveau"
+          },
+          {
+            "icon": "🔍",
+            "label": "Anhaltend niedrig",
+            "note": "Arzt aufsuchen wenn täglich < 5"
+          }
+        ]
+      }
+    ],
+    "chk_basic_tr": [
+      {
+        "title": "Umfassende klinische Untersuchung",
+        "subtitle": "Körpergröße · Gewicht · Blutdruck · Herzfrequenz",
+        "freq": "Jährlich",
+        "keyFact": "Basis-Vitalparameter erfassen Trends, bevor Symptome auftreten",
+        "points": [
+          {
+            "icon": "⚖️",
+            "label": "BMI & Gewichtsverlauf",
+            "note": "Jahresvergleich"
+          },
+          {
+            "icon": "🩺",
+            "label": "Blutdruck",
+            "note": "Systolisch und diastolisch erfasst"
+          },
+          {
+            "icon": "❤️",
+            "label": "Ruheherzfrequenz",
+            "note": "Indikator für kardiovaskuläre Fitness"
+          },
+          {
+            "icon": "📏",
+            "label": "Taillenumfang",
+            "note": "Metabolische Risikobewertung"
+          }
+        ]
+      },
+      {
+        "title": "Blutbild (CBC)",
+        "subtitle": "Kleines Blutbild · Großes Blutbild",
+        "freq": "Jährlich",
+        "keyFact": "CBC erkennt früh Anämie, Infektionen und Blutkrankheiten",
+        "points": [
+          {
+            "icon": "🩸",
+            "label": "Rote Blutkörperchen",
+            "note": "Erkennt Anämie und Sauerstoffkapazität"
+          },
+          {
+            "icon": "🛡️",
+            "label": "Weiße Blutkörperchen",
+            "note": "Immun- und Infektionsmarker"
+          },
+          {
+            "icon": "🔬",
+            "label": "Thrombozyten",
+            "note": "Beurteilung der Blutgerinnungsfunktion"
+          },
+          {
+            "icon": "📊",
+            "label": "Hämoglobin",
+            "note": "Wichtigster Anämie-Screeningwert"
+          }
+        ]
+      },
+      {
+        "title": "Umfassende Blutchemie",
+        "subtitle": "Nüchternglukose · HbA1c · Vollständiges Lipidpanel (Cholesterin, LDL, HDL, TG)",
+        "freq": "Jährlich",
+        "keyFact": "HbA1c spiegelt den 3-Monats-Durchschnitt des Blutzuckers wider — zuverlässiger als Nüchternglukose allein",
+        "points": [
+          {
+            "icon": "🍬",
+            "label": "Nüchternglukose",
+            "note": "Ziel < 100 mg/dL"
+          },
+          {
+            "icon": "📉",
+            "label": "HbA1c",
+            "note": "Ziel < 5,7% für Nichtdiabetiker"
+          },
+          {
+            "icon": "💛",
+            "label": "LDL-Cholesterin",
+            "note": "Ziel < 130 mg/dL (< 100 bei Risikofaktoren)"
+          },
+          {
+            "icon": "💚",
+            "label": "HDL-Cholesterin",
+            "note": "Höher ist besser; Ziel > 40 (M) / > 50 (F)"
+          }
+        ]
+      },
+      {
+        "title": "Leberfunktionstest",
+        "subtitle": "AST · ALT · GGT · Bilirubin",
+        "freq": "Jährlich",
+        "keyFact": "Erhöhtes ALT ist oft das erste Zeichen einer Fettlebererkrankung",
+        "points": [
+          {
+            "icon": "🫁",
+            "label": "ALT / AST",
+            "note": "Marker für Leberzellschäden"
+          },
+          {
+            "icon": "🍺",
+            "label": "GGT",
+            "note": "Erhöht bei Alkoholkonsum oder Gallenwegsproblemen"
+          },
+          {
+            "icon": "🟡",
+            "label": "Bilirubin",
+            "note": "Indikator für Gelbsucht und Leberfunktion"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Hauptanliegen",
+            "note": "Fettleber ist umkehrbar, wenn früh erkannt"
+          }
+        ]
+      },
+      {
+        "title": "Nierenfunktionstest",
+        "subtitle": "Kreatinin · Harnstoff · eGFR · Harnsäure",
+        "freq": "Jährlich",
+        "keyFact": "eGFR unter 60 für 3+ Monate zeigt eine chronische Nierenerkrankung an",
+        "points": [
+          {
+            "icon": "🫘",
+            "label": "eGFR",
+            "note": "Geschätzte glomeruläre Filtrationsrate"
+          },
+          {
+            "icon": "🔴",
+            "label": "Kreatinin",
+            "note": "Steigt, wenn Nieren Schwierigkeiten beim Filtern haben"
+          },
+          {
+            "icon": "💧",
+            "label": "Harnstoff / BUN",
+            "note": "Abbauprodukt des Proteinstoffwechsels"
+          },
+          {
+            "icon": "🎯",
+            "label": "Harnsäure",
+            "note": "Erhöht = Gicht- und Nierensteinrisiko"
+          }
+        ]
+      },
+      {
+        "title": "Vollständige Urinanalyse",
+        "subtitle": "Urinanalyse · Frühzeitige Erkennung von Nieren-, Diabetes- und Infektionskrankheiten",
+        "freq": "Jährlich",
+        "keyFact": "Protein oder Blut im Urin kann der erste Hinweis auf eine Nierenerkrankung sein",
+        "points": [
+          {
+            "icon": "🔍",
+            "label": "Protein im Urin",
+            "note": "Frühindikator für Nierenschäden"
+          },
+          {
+            "icon": "🩸",
+            "label": "Blut im Urin",
+            "note": "Nierensteine, Infektion oder Tumor"
+          },
+          {
+            "icon": "🍬",
+            "label": "Glukose im Urin",
+            "note": "Möglicher unentdeckter Diabetes"
+          },
+          {
+            "icon": "🦠",
+            "label": "Bakterien",
+            "note": "Erkennung von Harnwegsinfektionen"
+          }
+        ]
+      },
+      {
+        "title": "Elektrokardiogramm (EKG)",
+        "subtitle": "Elektrokardiogramm · Elektrische Herzbeurteilung",
+        "freq": "Jährlich (ab 35 Jahren)",
+        "keyFact": "EKG kann Arrhythmien und stille Ischämie erkennen, bevor Symptome auftreten",
+        "points": [
+          {
+            "icon": "💓",
+            "label": "Herzrhythmus",
+            "note": "Erkennt Vorhofflimmern und Arrhythmien"
+          },
+          {
+            "icon": "⚡",
+            "label": "Leitung",
+            "note": "Identifiziert Probleme im Reizleitungssystem"
+          },
+          {
+            "icon": "🩺",
+            "label": "Ischämie",
+            "note": "Zeichen reduzierter koronarer Durchblutung"
+          },
+          {
+            "icon": "📅",
+            "label": "Startalter",
+            "note": "Empfohlen jährlich ab 35 Jahren"
+          }
+        ]
+      },
+      {
+        "title": "Allgemeine Bauchultraschalluntersuchung",
+        "subtitle": "Leber · Gallenblase · Pankreas · Milz · Nieren · Blase",
+        "freq": "Jährlich",
+        "keyFact": "Ultraschall erkennt Fettleber, Gallensteine und Zysten, bevor sie Symptome verursachen",
+        "points": [
+          {
+            "icon": "🫀",
+            "label": "Leber & Gallenblase",
+            "note": "Fettleber, Gallensteine, Polypen"
+          },
+          {
+            "icon": "🫘",
+            "label": "Nieren",
+            "note": "Steine, Zysten, Größenveränderungen"
+          },
+          {
+            "icon": "🔍",
+            "label": "Pankreas & Milz",
+            "note": "Raumforderungen und strukturelle Veränderungen"
+          },
+          {
+            "icon": "✅",
+            "label": "Nicht-invasiv",
+            "note": "Sicher, keine Strahlung, wiederholbar"
+          }
+        ]
+      },
+      {
+        "title": "Röntgen des Brustkorbs",
+        "subtitle": "Herz · Lunge · Brustkorb · Brustwirbelsäule",
+        "freq": "Alle 2 Jahre",
+        "keyFact": "Röntgen des Brustkorbs kann Lungenknoten, Kardiomegalie und Pleuraerguss erkennen",
+        "points": [
+          {
+            "icon": "🫁",
+            "label": "Lungenfelder",
+            "note": "Knoten, Infiltrate, Erguss"
+          },
+          {
+            "icon": "❤️",
+            "label": "Herzsilhouette",
+            "note": "Vergrößerung oder abnorme Form"
+          },
+          {
+            "icon": "🦴",
+            "label": "Brustwirbelsäule",
+            "note": "Degenerative Veränderungen und Ausrichtung"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Strahlenhinweis",
+            "note": "Niedrige Dosis; Nutzen überwiegt das Risiko bei 2-jährigem Intervall"
+          }
+        ]
+      },
+      {
+        "title": "Augenuntersuchung",
+        "subtitle": "Sehschärfe · Augeninnendruck · Fundus · Glaukom",
+        "freq": "Alle 2 Jahre",
+        "keyFact": "Glaukom verursacht irreversible Blindheit, ist aber behandelbar, wenn früh erkannt",
+        "points": [
+          {
+            "icon": "👁️",
+            "label": "Sehschärfe",
+            "note": "Aktuelle Verschreibungsgenauigkeit"
+          },
+          {
+            "icon": "💧",
+            "label": "Augeninnendruck",
+            "note": "Glaukom-Risiko-Screening"
+          },
+          {
+            "icon": "🔬",
+            "label": "Fundusuntersuchung",
+            "note": "Netzhautgesundheit und diabetische Augenveränderungen"
+          },
+          {
+            "icon": "📅",
+            "label": "Häufigkeit",
+            "note": "Alle 2 Jahre; jährlich bei Diabetes"
+          }
+        ]
+      },
+      {
+        "title": "Zahnarzttermin",
+        "subtitle": "Screening · Zahnsteinentfernung · Zahnröntgen",
+        "freq": "Alle 6 Monate",
+        "keyFact": "Parodontitis ist unabhängig mit dem Herz-Kreislauf-Erkrankungsrisiko verbunden",
+        "points": [
+          {
+            "icon": "🦷",
+            "label": "Kariesscreening",
+            "note": "Frühes Zahnfäule ist schmerzlos und reversibel"
+          },
+          {
+            "icon": "🧹",
+            "label": "Zahnsteinentfernung",
+            "note": "Verhindert Fortschreiten der Zahnfleischerkrankung"
+          },
+          {
+            "icon": "📸",
+            "label": "Zahnröntgen",
+            "note": "Erkennt unsichtbare Probleme"
+          },
+          {
+            "icon": "❤️",
+            "label": "Systemischer Zusammenhang",
+            "note": "Zahnfleischerkrankung erhöht Herzrisiko"
+          }
+        ]
+      }
+    ],
+    "chk_extended_tr": [
+      {
+        "title": "Herz-Kreislauf-Risiko-Paket",
+        "subtitle": "Echokardiogramm · Belastungs-EKG · hs-CRP · Homocystein",
+        "triggers": "Rauchen, Bluthochdruck, Diabetes, hohes Cholesterin, Adipositas, Familiengeschichte früher Herz-Kreislauf-Erkrankungen",
+        "keyFact": "hs-CRP erkennt Gefäßentzündungen Jahre vor einem Herzereigenis",
+        "points": [
+          {
+            "icon": "🫀",
+            "label": "Echokardiogramm",
+            "note": "Herzstruktur und Klappenfunktion"
+          },
+          {
+            "icon": "🏃",
+            "label": "Belastungs-EKG",
+            "note": "Ischämie unter körperlicher Belastung erkannt"
+          },
+          {
+            "icon": "🔥",
+            "label": "hs-CRP",
+            "note": "Entzündungsmarker für arterielles Plaquerisiko"
+          },
+          {
+            "icon": "🧬",
+            "label": "Homocystein",
+            "note": "Erhöht = erhöhtes Schlaganfall- und HKE-Risiko"
+          }
+        ]
+      },
+      {
+        "title": "Frauen > 40 Paket",
+        "subtitle": "Brustultraschall · Mammographie · Pap-Abstrich / HPV · DEXA-Scan",
+        "triggers": "Alle Frauen ab 40 Jahren oder früher mit Risikofaktoren (Familiengeschichte Brustkrebs, BRCA+)",
+        "keyFact": "Mammographie reduziert die Brustkrebssterblichkeit durch Früherkennung um bis zu 30%",
+        "points": [
+          {
+            "icon": "🎗️",
+            "label": "Mammographie",
+            "note": "Goldstandard für die Früherkennung von Brustkrebs"
+          },
+          {
+            "icon": "🔬",
+            "label": "Pap-Abstrich / HPV",
+            "note": "Gebärmutterhalskrebsprävention"
+          },
+          {
+            "icon": "🦴",
+            "label": "DEXA-Scan",
+            "note": "Knochendichte — Osteoporose-Screening"
+          },
+          {
+            "icon": "🩺",
+            "label": "Brustultraschall",
+            "note": "Ergänzt Mammographie bei dichtem Gewebe"
+          }
+        ]
+      },
+      {
+        "title": "Männer > 40 Paket",
+        "subtitle": "PSA · Testosteron · Prostata-Ultraschall · Dickdarmkrebs-Screening",
+        "triggers": "Alle Männer ab 40 Jahren oder früher mit Familiengeschichte von Prostata- oder Darmkrebs",
+        "keyFact": "PSA-Screening ermöglicht die Erkennung von Prostatakrebs in einem heilbaren Stadium",
+        "points": [
+          {
+            "icon": "🔵",
+            "label": "PSA-Bluttest",
+            "note": "Prostatakrebs-Risikomarker"
+          },
+          {
+            "icon": "💪",
+            "label": "Testosteron",
+            "note": "Hormonelle Gesundheit und Energiebewertung"
+          },
+          {
+            "icon": "🫘",
+            "label": "Prostata-Ultraschall",
+            "note": "Größe und strukturelle Veränderungen"
+          },
+          {
+            "icon": "🔍",
+            "label": "Darmkrebsscreening",
+            "note": "Koloskopie oder Stuhlbluttest"
+          }
+        ]
+      },
+      {
+        "title": "Familiäres Krebsgeschichte-Paket",
+        "subtitle": "Koloskopie · BRCA-Test · Gastroskopie · Genetische Beratung",
+        "triggers": "Elternteil oder Geschwister mit Darm-, Brust-, Eierstock- oder Magenkrebs, oder ≥ 2 Verwandte mit demselben Krebstyp",
+        "keyFact": "Koloskopie kann Darmkrebs verhindern, indem Polypen entfernt werden, bevor sie bösartig werden",
+        "points": [
+          {
+            "icon": "🔭",
+            "label": "Koloskopie",
+            "note": "Polypentfernung verhindert Darmkrebs"
+          },
+          {
+            "icon": "🧬",
+            "label": "BRCA-Test",
+            "note": "Hereditäres Brust- und Eierstockkrebs-Gen"
+          },
+          {
+            "icon": "🫁",
+            "label": "Gastroskopie",
+            "note": "Magen- und Speiseröhrenkrebs-Screening"
+          },
+          {
+            "icon": "👨‍⚕️",
+            "label": "Genetische Beratung",
+            "note": "Risikoauswertung und Präventionsplanung"
+          }
+        ]
+      }
+    ]
   },
   "pillarF": {
     "id": "f",

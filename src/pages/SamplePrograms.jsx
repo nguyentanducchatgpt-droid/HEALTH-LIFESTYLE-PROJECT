@@ -147,7 +147,7 @@ function DailyBlockModal({ block, onClose }) {
               {block.icon}
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: block.color }}>{block.time || 'CHI TIẾT'}</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: block.color }}>{block.time || t('modal.chi_tiet') || 'CHI TIẾT'}</p>
               <h2 className="font-bold text-white text-lg leading-tight max-w-xs">{block.name}</h2>
             </div>
           </div>

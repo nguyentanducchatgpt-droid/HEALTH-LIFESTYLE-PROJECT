@@ -16,7 +16,8 @@
     "p24w": "24-Wochen-Fortgeschritten",
     "psample": "Musterplan",
     "contact": "Kontakt",
-    "donate": "Unterstützen"
+    "donate": "Unterstützen",
+    "see_all_pillars": "↓ Alle Säulen auf der Startseite sehen"
   },
   "brand": {
     "part1": "Gesundheit",
@@ -6149,7 +6150,8 @@
     "practice_title": "Übungsdetails",
     "see_detail_label": "Details ansehen",
     "steps_heading": "Schritt-für-Schritt-Anleitung",
-    "science_heading": "Wissenschaftliche Details"
+    "science_heading": "Wissenschaftliche Details",
+    "chi_tiet": "DETAILS"
   },
   "f_bottom_disclaimer": "Alle Daten werden lokal auf Ihrem Gerät gespeichert und nie an Server übertragen. Diese Tools ersetzen keinen professionellen medizinischen Rat.",
   "ui": {
@@ -6170,11 +6172,15 @@
     "postworkout_note": "innerhalb 2h nach Training",
     "params": "Parameter",
     "analysis": "Analyse",
+    "evaluation": "Bewertung",
     "suggestions": "Empfehlungen",
     "pros": "Vorteile",
     "cons": "Nachteile",
     "detail_btn": "Details →",
-    "source_prefix": "← Berechnet aus"
+    "source_prefix": "← Berechnet aus",
+    "pillar_prefix": "Säule",
+    "yes": "Ja",
+    "not_yet": "Noch nicht"
   },
   "b5": {
     "weight_chart_title": "Gewichtsdiagramm — 12 Wochen",

@@ -555,7 +555,7 @@ function DailyMinModal({ item, idx, total, onClose, onPrev, onNext, hasPrev, has
         </div>
         {/* Content */}
         <div className="p-6 md:p-8">
-          <span className="text-xs font-bold px-2 py-0.5 rounded-full inline-block mb-2" style={{ color: '#0a0a0a', background: color }}>Trụ Cột {item.cat}</span>
+          <span className="text-xs font-bold px-2 py-0.5 rounded-full inline-block mb-2" style={{ color: '#0a0a0a', background: color }}>{tCommon('ui.pillar_prefix') || 'Trụ Cột'} {item.cat}</span>
           <h2 className="font-bold text-2xl md:text-3xl mb-4" style={{ color }}>{item.label}</h2>
           <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: color, background: `rgba(${rgb},0.06)` }}>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
@@ -982,6 +982,7 @@ const NUTRI_LOG_ITEMS = [
 
 // --- NutriLogCard: dual-zone (toggle Có/Chưa + open modal) ---
 function NutriLogCard({ item, value, onToggle, onOpen }) {
+  const { t: tNutri } = useTranslation('common');
   const [hovered, setHovered] = useState(false);
   const isDone = value === 'Có';
   const isNo = value === 'Chưa';
@@ -991,13 +992,13 @@ function NutriLogCard({ item, value, onToggle, onOpen }) {
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       {/* Toggle zone */}
       <div className="flex gap-1.5 shrink-0">
-        {['Có', 'Chưa'].map(opt => (
-          <button key={opt} onClick={() => onToggle(item.key, opt)}
+        {[{ val: 'Có', label: tNutri('ui.yes') || 'Có' }, { val: 'Chưa', label: tNutri('ui.not_yet') || 'Chưa' }].map(opt => (
+          <button key={opt.val} onClick={() => onToggle(item.key, opt.val)}
             className="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all duration-200"
-            style={value === opt
-              ? { background: opt === 'Có' ? item.color : '#ef4444', color: 'white', borderColor: opt === 'Có' ? item.color : '#ef4444' }
+            style={value === opt.val
+              ? { background: opt.val === 'Có' ? item.color : '#ef4444', color: 'white', borderColor: opt.val === 'Có' ? item.color : '#ef4444' }
               : { borderColor: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.35)', background: 'transparent' }}>
-            {opt}
+            {opt.label}
           </button>
         ))}
       </div>
@@ -1313,7 +1314,7 @@ function MealModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 // --- F3 Meal Plan tab ---
 function F3MealPlan() {
   const { t: tPillarsF3 } = useTranslation('pillars');
-  const PLATE_PARTS = [
+  const PLATE_PARTS_VI = [
     { label: '½ đĩa — Rau, canh, salad, trái cây ít ngọt', color: '#22c55e', pct: 50 },
     { label: '¼ đĩa — Đạm: thịt, cá, trứng, đậu', color: '#f97316', pct: 25 },
     { label: '¼ đĩa — Tinh bột: cơm, bún, khoai, yến mạch', color: '#eab308', pct: 25 },
@@ -1328,6 +1329,9 @@ function F3MealPlan() {
   const [mealModal, setMealModal] = useState(null);
   const [nutriModal, setNutriModal] = useState(null);
   const pillarFTr = tPillarsF3('pillarF', { returnObjects: true });
+  const PLATE_PARTS = Array.isArray(pillarFTr?.plate_parts) && pillarFTr.plate_parts.length
+    ? PLATE_PARTS_VI.map((p, i) => ({ ...p, label: pillarFTr.plate_parts[i]?.label || p.label }))
+    : PLATE_PARTS_VI;
   const mealItemsTr = Array.isArray(pillarFTr?.meal_items) ? pillarFTr.meal_items : [];
   const mergedMealItems = MEAL_ITEMS.map((m, i) => ({
     ...m,
@@ -1365,7 +1369,7 @@ function F3MealPlan() {
             </div>
           ))}
         </div>
-        <p className="text-base text-muted">+ Một lượng nhỏ chất béo tốt: dầu olive, bơ, các loại hạt.</p>
+        <p className="text-base text-muted">{tPillarsF3('pillarF.f3_fat_note') || '+ Một lượng nhỏ chất béo tốt: dầu olive, bơ, các loại hạt.'}</p>
       </div>
       <div className="rounded-2xl border border-border bg-surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2.5 border-b border-border">
@@ -1711,8 +1715,16 @@ const MIND_ITEMS = {
 // --- MindModal ---
 function MindModal({ itemKey, onClose, onPrev, onNext, hasPrev, hasNext, keys }) {
   const { t: tCommon } = useTranslation('common');
+  const { t: tPillarsF5 } = useTranslation('pillars');
   const item = MIND_ITEMS[itemKey];
   const idx = keys.indexOf(itemKey);
+  const mindTr = tPillarsF5('pillarF.mind_items', { returnObjects: true });
+  const itemTr = (mindTr && typeof mindTr === 'object') ? (mindTr[itemKey] || {}) : {};
+  const keyFact = itemTr.keyFact || item.keyFact;
+  const details = Array.isArray(itemTr.details) && itemTr.details.length ? itemTr.details : item.details;
+  const points = Array.isArray(itemTr.points) && itemTr.points.length
+    ? itemTr.points.map((pt, i) => ({ ...item.points[i], ...pt }))
+    : item.points;
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -1744,10 +1756,10 @@ function MindModal({ itemKey, onClose, onPrev, onNext, hasPrev, hasNext, keys })
         <div className="p-6 md:p-8">
           <h2 className="font-bold text-2xl md:text-3xl mb-4" style={{ color: item.color }}>{item.icon} {item.label}</h2>
           <div className="border-l-2 pl-4 py-2 mb-6 rounded-r-xl" style={{ borderColor: item.color, background: `rgba(${item.rgb},0.06)` }}>
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{item.keyFact}</p>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,231,235,0.88)' }}>{keyFact}</p>
           </div>
           <ul className="space-y-3 mb-8">
-            {item.details.map((d, di) => (
+            {details.map((d, di) => (
               <li key={di} className="flex gap-3 text-sm leading-relaxed">
                 <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold"
                   style={{ background: `rgba(${item.rgb},0.14)`, color: item.color }}>{di + 1}</span>
@@ -1756,7 +1768,7 @@ function MindModal({ itemKey, onClose, onPrev, onNext, hasPrev, hasNext, keys })
             ))}
           </ul>
           <div className="grid grid-cols-2 gap-3 mb-6">
-            {item.points.map((pt, pi) => (
+            {points.map((pt, pi) => (
               <div key={pi} className="flex items-start gap-3 rounded-2xl p-4"
                 style={{ background: `rgba(${item.rgb},0.06)`, border: `1px solid rgba(${item.rgb},0.15)` }}>
                 <span className="text-2xl shrink-0 mt-0.5">{pt.icon}</span>

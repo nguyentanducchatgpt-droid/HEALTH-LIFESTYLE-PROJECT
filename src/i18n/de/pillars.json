@@ -5956,6 +5956,7 @@
     "assessment_breadcrumb": "← Gesunder Lebensstil",
     "assessment_title": "Lebensstil-Bewertung",
     "assessment_desc": "Bewerte deinen aktuellen Lebensstil in 7 wichtigen Bereichen. Die Ergebnisse zeigen, in welchem Track du dich befindest, und schlagen prioritäre Maßnahmen vor.",
+    "neat_rule_badge": "NEAT-Regel",
     "c3_standup_title": "⏱ Die 2-Minuten-Aufsteh-Regel",
     "c3_standup_desc": "Alle 45–60 Minuten Sitzen aufstehen für 2 Minuten. Wasser holen, Schultern kreisen, dehnen, Wadenheben. Nicht warten, bis Schmerzen kommen.",
     "c3_neat_checklist_heading": "NEAT Checkliste",
@@ -22728,6 +22729,12 @@
     "f1_msg_start": "→ Schritt für Schritt",
     "f2_log_heading": "Neue Einheit eintragen",
     "f3_plate_heading": "Gesundes Teller-Template",
+    "f3_fat_note": "+ Eine kleine Menge gesunder Fette: Olivenöl, Avocado, Nüsse.",
+    "plate_parts": [
+      { "label": "½ Teller — Gemüse, Suppe, Salat, zuckerarmes Obst" },
+      { "label": "¼ Teller — Protein: Fleisch, Fisch, Eier, Hülsenfrüchte" },
+      { "label": "¼ Teller — Kohlenhydrate: Reis, Nudeln, Kartoffeln, Haferflocken" }
+    ],
     "f6_intro": "Führe den Eingangstest durch und wiederhole alle 4 Wochen, um den umfassenden Fortschritt zu messen.",
     "f7_intro": "Prinzip: Auch 5 Minuten reichen. Nicht komplett auslassen — einfach die kürzere Version wählen.",
     "f2_save_btn": "+ Training speichern",
@@ -22742,6 +22749,76 @@
     "f6_saved": "✓ Gespeichert!",
     "f6_compare_link": "4-Wochen-Vergleich anzeigen →",
     "f7_library_link": "Vollständige Schnell-Workout-Bibliothek →",
+    "mind_items": {
+      "stress": {
+        "keyFact": "Kurzfristiger Stress ist nützlich – er steigert Leistung, Aufmerksamkeit und Lernfähigkeit. Die Gefahr ist chronischer Stress (>7/10 über viele Tage): dauerhaft erhöhtes Kortisol schädigt Immunsystem, Gedächtnis und Herzgesundheit.",
+        "details": [
+          "Chronischer Stress (erhöhtes Kortisol): schrumpft den Hippocampus (Gedächtnis), schwächt den präfrontalen Kortex (Entscheidungsfindung) und erhöht die Amygdala-Aktivität (Angstreaktionen). Er verändert buchstäblich die Gehirnstruktur.",
+          "Stresslevel 7–8/10 über mehr als 3 aufeinanderfolgende Tage = ein Signal zum sofortigen Handeln. Warte nicht auf einen Burnout – Burnout braucht 3–6 Monate zur vollständigen Erholung.",
+          "'Stressinokulierung': kontrollierte Exposition gegenüber kleinen Stressoren (hartes Training, kalte Duschen, vernünftige Fristen) baut Resilienz auf – wie ein Impfstoff für das Gehirn.",
+          "Schnellste bewährte Technik: länger ausatmen als einatmen (4 ein – 6 aus). Aktiviert den Vagusnerv → parasympathisches System innerhalb von 60–90 Sekunden. Funktioniert überall und jederzeit.",
+          "Häufig übersehene Stressursachen: Schlafentzug (6h Schlaf erhöht Kortisol um 37%), übermäßiger Koffeinkonsum (>400mg/Tag), Zucker und hochverarbeitete Lebensmittel sowie Bewegungsmangel.",
+          "Über Stress zu schreiben reduziert sofort seine Intensität: Schreiben externalisiert Sorgen aus der mentalen Schleife und befreit das Arbeitsgedächtnis für reale Probleme."
+        ],
+        "points": [
+          { "label": "Kurzer Stress = Nützlich", "note": "Akuter Stress steigert Leistung – chronischer ist die Gefahr" },
+          { "label": "Verändert Gehirnstruktur", "note": "Hoher Kortisol schrumpft tatsächlich den Hippocampus" },
+          { "label": "Länger ausatmen", "note": "4 ein – 6 aus — Vagusnerv beruhigt in 60–90 Sekunden" },
+          { "label": "Schlafentzug = +37% Kortisol", "note": "Ausreichend Schlaf ist die wichtigste Anti-Stress-Maßnahme" }
+        ]
+      },
+      "mood": {
+        "keyFact": "Stimmung unterscheidet sich von Emotion: Emotionen dauern Sekunden bis Minuten, Stimmung Stunden bis Tage. Tägliches Stimmungs-Tracking hilft, Muster zu erkennen und frühzeitig einzugreifen, bevor sie chronisch werden.",
+        "details": [
+          "21 Tage Stimmungs-Tracking in Folge: Studien zeigen, dass Nutzer von Stimmungs-Trackern 'Frühwarnsignale' für schlechte Stimmung 1–2 Tage im Voraus erkennen und präventive Maßnahmen ergreifen können.",
+          "Stimmung wird stark beeinflusst von: natürlichem Licht (Mangel → niedriger Serotoninspiegel), Bewegung (10-Minuten-Spaziergang hebt sofort die Stimmung), sozialer Verbindung (ein biologisches Bedürfnis) und Ernährung (Darm produziert 90% des Serotonins).",
+          "Verhaltensaktivierung: Bei schlechter Stimmung reduzieren Menschen ihre Aktivität → Stimmung fällt weiter → noch weniger Aktivität (Abwärtsspirale). Durchbreche sie mit einer kleinen Handlung, auch ohne Motivation – die Stimmung hebt sich danach meist.",
+          "Gegenteil-Handlungs-Technik: Wenn du dich isolieren möchtest, melde dich bei jemandem; wenn du Sport auslassen willst, mach 5 Minuten – gegenteilige Handlungen unterbrechen automatische Niedrigestimmungsmuster.",
+          "Essen und Stimmung: Die Darm-Hirn-Achse bedeutet, dass die Ernährung die psychische Verfassung direkt beeinflusst. Omega-3 (Fisch, Leinsamen), fermentierte Lebensmittel (Joghurt, Kimchi) und Polyphenole (Beeren, dunkle Schokolade) unterstützen die Serotoninproduktion.",
+          "Schlaf und Stimmung: Schon eine Nacht schlechter Schlaf reduziert die emotionale Regulierung um 60%. Stimmungs-Tracking und Schlafprotokoll zusammen enthüllen Muster, derer sich die meisten Menschen nicht bewusst sind."
+        ],
+        "points": [
+          { "label": "Stimmung vs. Emotion", "note": "Emotionen dauern Minuten; Stimmung Stunden bis Tage" },
+          { "label": "Bewegung = Sofortige Verbesserung", "note": "10-Minuten-Spaziergang hebt Stimmung – schneller als viele Medikamente" },
+          { "label": "Verhaltensaktivierung", "note": "Tu eine kleine Sache – die Stimmung folgt der Handlung meist" },
+          { "label": "Darm-Hirn-Achse", "note": "90% des Serotonins im Darm produziert – Ernährung ist wichtig" }
+        ]
+      },
+      "calm": {
+        "keyFact": "5 Minuten tägliche Ruhepraktik reduziert Kortisol nach 4 konsistenten Wochen um 15–20% (Harvard Medical School). Du musst nicht 'perfekt' meditieren – jede Aktivität, die das parasympathische System aktiviert, zählt.",
+        "details": [
+          "Ruhepraktik ist jede Aktivität, die dich in den 'Ruhe-und-Verdauungs'-Modus versetzt: langsames bewusstes Atmen, Spazierengehen ohne Handy, Journaling, Meditation, sanftes Yoga, Lesen, ein warmes Bad oder achtsames Musikhören.",
+          "Box-Atmung (4-4-4-4): 4s einatmen → 4s halten → 4s ausatmen → 4s halten. 4–6 Runden wiederholen = 1,5–2,5 Minuten. Navy SEALs nutzen sie, um unter extremem Druck ruhig zu bleiben – sie funktioniert auch für dich.",
+          "Konsistenz schlägt Dauer: 5 Min/Tag jeden Tag ist effektiver als 30 Min/Woche am Wochenende. Das Gehirn lernt, das Entspannungssignal bei regelmäßiger Praxis besser aufzunehmen.",
+          "Default Mode Network (DMN): Wenn das Gehirn 'ruht', ohne sich auf Aufgaben zu konzentrieren, aktiviert sich das DMN – es verarbeitet Emotionen, festigt Erinnerungen und stellt kreative Verbindungen her. Ruhepraktik lässt das DMN laufen.",
+          "10 Minuten spazieren ohne Handy: erhöht Schritte, aktiviert den Ruhezustand und lässt das DMN arbeiten – eine Aktivität, die drei Ziele gleichzeitig erreicht.",
+          "3-Satz-Journaling: 'Wofür bin ich heute dankbar?', 'Was beschäftigt mich?', 'Was möchte ich morgen besser machen?' – 5 Minuten, große Auswirkung auf Klarheit und Stimmung."
+        ],
+        "points": [
+          { "label": "5 Minuten reichen", "note": "Konsistenz vor Dauer – über 4 Wochen aufbauen" },
+          { "label": "Box-Atmung", "note": "4-4-4-4 — Navy SEALs nutzen sie, du auch" },
+          { "label": "Ohne Handy spazieren", "note": "10 Min: Schritte + Ruhe + DMN – drei in einem" },
+          { "label": "3-Satz-Journaling", "note": "Dankbarkeit + Sorgen + Verbesserung – 5 Min Klarheit" }
+        ]
+      },
+      "journal": {
+        "keyFact": "Expressives Schreiben (über Emotionen und Gedanken schreiben) 15–20 Min/Tag × 3–4 aufeinanderfolgende Tage reduziert Angst, verbessert die Immunfunktion und verringert Arztbesuche (James Pennebaker, UT Austin). Effekte halten 4–6 Wochen an.",
+        "details": [
+          "Schreiben externalisiert Sorgen aus der mentalen Schleife im Kopf. Das Gehirn muss diese Informationen nicht mehr im Arbeitsgedächtnis 'halten' → kognitive Kapazität für anderes wird frei.",
+          "'Eine schnelle Zeile schreiben' reicht, um die Gewohnheit aufzubauen: minimale Schwelle (1 Satz, 10–15 Wörter). Einmal begonnen, schreiben 70% der Menschen dank Momentum mehr. Setzt anfangs keine hohen Ziele.",
+          "Morgendlicher Gehirn-Dump: Schreibe gleich nach dem Aufwachen 3 Seiten über alles, was dir im Kopf ist (Morning Pages – Julia Cameron). Keine Qualität oder Logik nötig – das Ziel ist, 'mentalen Ballast' zu klären, bevor der Tag beginnt.",
+          "Dankbarkeits-Journaling: Das Gehirn kann Angst und Dankbarkeit nicht gleichzeitig fühlen. 3 spezifische (nicht wiederholte) Dinge, für die du täglich dankbar bist, verdrahten kognitive neuronale Netzwerke nach 3–4 Wochen ins Positive um.",
+          "Lösungsorientiertes Journaling: Statt nur Probleme zu beschreiben, füge hinzu: 'Was ist ein kleiner Schritt, den ich heute unternehmen kann?' – trainiert das Gehirn, vom Bedrohungs- in den Ressourcenmodus zu wechseln.",
+          "Digitales Journaling ist gleich effektiv: Apps wie Day One oder Notion funktionieren genauso wie Papier. Der Schlüssel ist regelmäßiges Schreiben, nicht das Medium. Wähle, was die Einstiegshürde am meisten senkt."
+        ],
+        "points": [
+          { "label": "Externalisiert mentale Schleifen", "note": "Schreiben befreit das Arbeitsgedächtnis von sich wiederholenden Sorgen" },
+          { "label": "Mit einer Zeile beginnen", "note": "Niedrige Schwelle führt zu konsequenter Gewohnheit – keine hohen Ziele" },
+          { "label": "Dankbarkeit verdrahtet das Gehirn um", "note": "3 spezifische dankbare Dinge täglich – 3–4 Wochen bis zur Wirkung" },
+          { "label": "Lösungsfokus", "note": "Frage 'einen kleinen Schritt' – wechselt von Bedrohungs- zu Ressourcenmodus" }
+        ]
+      }
+    },
     "quick_wo": [
       {
         "dur": "5 Min",

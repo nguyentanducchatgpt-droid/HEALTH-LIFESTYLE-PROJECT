@@ -5950,6 +5950,7 @@
     "assessment_breadcrumb": "← Healthy Lifestyle",
     "assessment_title": "Lifestyle Assessment",
     "assessment_desc": "Assess your current lifestyle across 7 important dimensions. Your results will identify which Track you're on and suggest priority actions suited to you.",
+    "neat_rule_badge": "NEAT Rule",
     "c3_standup_title": "⏱ The 2-Minute Stand-Up Rule",
     "c3_standup_desc": "Every 45–60 minutes of sitting, stand up for 2 minutes. Get water, roll your shoulders, stretch, do calf raises. Don't wait until you're in pain to stand up.",
     "c3_neat_checklist_heading": "NEAT Checklist",
@@ -15682,6 +15683,122 @@
     "d_teaser_s4": "Tracking & Roadmap",
     "d0_safety_label": "Safety rule: ",
     "d0_safety_body": "Pillar D is general health education only. If anxiety or low mood persists for weeks, severe insomnia, recurring panic attacks, or thoughts of self-harm — please seek professional support.",
+    "d0_card_modals": [
+      {
+        "title": "D1 – Understanding Stress",
+        "keyFact": "Stress is not the enemy — it is a signal that the body needs wiser action.",
+        "detail": "Stress occurs at 3 layers: body (racing heart, tense shoulders), emotion (anxiety, frustration), behavior (scrolling, snacking). Identifying which layer is triggered helps you choose the right coping tool.",
+        "details": [
+          "Acute stress (short-term) is actually beneficial: it sharpens focus, speeds up reactions, and temporarily boosts performance — a survival reflex evolved over millions of years.",
+          "Chronic stress (lasting weeks) is harmful: sustained high cortisol weakens the immune system, causes insomnia, and increases cardiovascular risk.",
+          "The anxiety–habit loop: Trigger → automatic thought → emotion → compensating behavior (scrolling, snacking) → Trigger unresolved, repeating.",
+          "Early detection at the body layer (tight shoulders, shallow breathing) allows inserting a 'pause point' before stress escalates to emotion then behavior.",
+          "Naming emotions (affect labeling) reduces anxiety intensity — the frontal lobe activates, the amygdala (fear center) calms down via neurological mechanisms.",
+          "The goal is not to 'eliminate stress' but to 'recognize it early and choose a wiser response instead of automatic compensating reactions'."
+        ],
+        "points": [
+          { "icon": "💪", "label": "Body Layer", "note": "Racing heart, shallow breathing, tense shoulders" },
+          { "icon": "😤", "label": "Emotional Layer", "note": "Easily irritated, anxious, frustrated" },
+          { "icon": "🔄", "label": "Behavioral Layer", "note": "Snacking, scrolling, procrastinating" },
+          { "icon": "🔧", "label": "Pause Point", "note": "Breathe → name it → next small step" }
+        ]
+      },
+      {
+        "title": "D2 – Breathe & Slow Down",
+        "keyFact": "Intentional breathing is the only way to consciously control the autonomic nervous system — no equipment needed, no time required.",
+        "detail": "The parasympathetic nervous system (rest & digest) is activated by slow, deep breathing. Just 4–5 diaphragmatic breaths are enough to lower heart rate and reduce measurable cortisol.",
+        "details": [
+          "The autonomic nervous system has 2 branches: sympathetic (fight-or-flight — raises heart rate, cortisol) and parasympathetic (rest & digest — lowers heart rate, promotes recovery). Slow breathing activates the parasympathetic branch.",
+          "Diaphragmatic breathing increases O₂/CO₂ exchange amplitude, stimulates the vagus nerve, and helps lower blood pressure and heart rate within 1–3 minutes.",
+          "Box breathing (4-4-4-4) is used by Navy SEALs to control mental state in extremely stressful situations — fully applicable to everyday life.",
+          "4-7-8 breathing extends the hold (7 seconds), temporarily increasing blood CO₂, triggering a deep relaxation reflex — especially effective 20 minutes before sleep.",
+          "The 2-minute reset (5 breaths + relaxing shoulders–jaw–hands) is enough to shift from reactive to responsive mode.",
+          "Regular diaphragmatic breathing for 10 min/day can reduce systolic blood pressure by 5–10 mmHg after 4 weeks — equivalent to light aerobic exercise."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Diaphragmatic", "note": "Foundation — use anytime" },
+          { "icon": "⬜", "label": "Box 4-4-4-4", "note": "Focus & calm quickly" },
+          { "icon": "🌊", "label": "4-7-8 Breathing", "note": "Prepare for sleep" },
+          { "icon": "⚡", "label": "2-Minute Reset", "note": "Use immediately when overloaded" }
+        ]
+      },
+      {
+        "title": "D3 – Meditation & Mindfulness",
+        "keyFact": "8 weeks of meditation physically changes brain structure — hippocampus thickens, amygdala shrinks.",
+        "detail": "Meditation is not 'thinking nothing'. It is noticing you've been carried away and gently returning. Each time the mind wanders and comes back is one rep of attention training.",
+        "details": [
+          "Harvard study (Sara Lazar, 2011): 8 weeks of mindfulness meditation thickens the prefrontal cortex (emotional control and decision-making) and shrinks the amygdala (anxiety center).",
+          "Mindfulness meditation reduces symptoms of mild-to-moderate anxiety and depression, with effectiveness comparable to cognitive behavioral therapy (CBT) in some randomized controlled trials.",
+          "5-minute body scan before sleep powerfully activates the parasympathetic system and reduces cortisol — people who practice body scan fall asleep faster and wake less during the night.",
+          "Mindful eating reduces emotional eating and improves satiety signals — the brain takes 20 minutes to receive fullness signals, and mindfulness helps 'wait' long enough.",
+          "Mindful walking (no headphones, feeling each step) combines light aerobic exercise with meditation — two parallel benefits in the same 10–15 minutes a day.",
+          "Meditation doesn't require sitting still for an hour or lotus position. 3 minutes a day is enough to build the habit and notice clear improvements after 2–3 weeks."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Healthier Brain", "note": "Hippocampus thickens after 8 weeks" },
+          { "icon": "😌", "label": "Reduced Anxiety", "note": "Comparable to mild–moderate CBT" },
+          { "icon": "😴", "label": "Better Sleep", "note": "5-min body scan before sleep" },
+          { "icon": "🔄", "label": "Start with 3 Minutes", "note": "Wandering → returning = training" }
+        ]
+      },
+      {
+        "title": "D4 – Journaling in 5 Lines",
+        "keyFact": "Writing down thoughts reduces anxiety because the brain no longer needs to 'hold' them — called cognitive offloading.",
+        "detail": "Journaling is not a story diary. 5 structured questions each evening help the brain process emotions, identify the real problem, and prepare for the next day more lightly.",
+        "details": [
+          "James Pennebaker (UT Austin, since 1986): writing about thoughts and difficult emotions (expressive writing) reduces anxiety, boosts the immune system, and improves sleep — measurable effects after 3–4 consecutive days of writing.",
+          "Cognitive offloading: the brain doesn't need to 'hold' unresolved tasks when written down — reducing the cycle of repetitive thoughts (rumination) consuming cognitive bandwidth.",
+          "The question 'How am I feeling today?' triggers affect labeling — the brain names the emotion rather than vaguely experiencing it, reducing amygdala activity measured on fMRI.",
+          "Journal after a bad day: writing 'What went wrong? What did I learn?' converts failure into a clear lesson, reducing pointless self-blame and increasing willingness to try again.",
+          "Just 5–8 minutes each evening. No need for perfect writing, correct grammar, or complete sentences. Write freely.",
+          "'One kind word to yourself' at the end of each journal session is a scientifically-grounded self-compassion practice — not self-praise but acknowledgment that you're making an effort."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Brain Dump", "note": "Clear mental clutter" },
+          { "icon": "😌", "label": "Process Emotions", "note": "Naming = amygdala calms" },
+          { "icon": "📈", "label": "Extract Lessons", "note": "Journal after a bad day" },
+          { "icon": "💙", "label": "Kind to Yourself", "note": "Daily self-compassion" }
+        ]
+      },
+      {
+        "title": "D5 – Digital Detox",
+        "keyFact": "Screen use before sleep suppresses melatonin by up to 23% — delaying average sleep onset by 1.5 hours.",
+        "detail": "The problem is not the phone but unconscious scrolling when the brain is tired. Digital detox is about redesigning your digital environment to give the brain breathing room — not forcing yourself to completely give up your phone.",
+        "details": [
+          "Blue light (420–480nm) from phone screens stimulates ipRGC cells in the retina, suppressing melatonin production. Using screens 2 hours before sleep delays average sleep onset by 1.5 hours.",
+          "Social media feeds are designed using 'variable reward' principles — the same mechanism as slot machines — triggering dopamine and creating unconscious scrolling.",
+          "Continuous notifications fragment attention (cognitive fragmentation) — each interrupt takes an average of 23 minutes for the brain to return to deep focus.",
+          "The first 30 minutes of the day phone-free creates a 'cognitive clearing' — the brain isn't in reactive mode from the moment you wake up.",
+          "A replacement menu is more effective than pure willpower: when you want to scroll, replace it with 5 breaths, a 2-minute walk, water, or writing one thought down.",
+          "Digital environment design: addictive apps on screen 2 or in a hard-to-find folder, phone in another room during sleep — reduces automatic scrolling by 80% without needing willpower."
+        ],
+        "points": [
+          { "icon": "😴", "label": "Better Sleep", "note": "Turn off screen 20min before sleep" },
+          { "icon": "🎯", "label": "Deep Focus", "note": "Turn off notifications during work" },
+          { "icon": "🧘", "label": "Mental Space", "note": "10 min/day screen-free" },
+          { "icon": "🏠", "label": "Digital Environment", "note": "Addictive apps on screen 2" }
+        ]
+      },
+      {
+        "title": "D6 – Gentle Discipline",
+        "keyFact": "Willpower is a finite resource. Small systems and self-compassion create lasting habits.",
+        "detail": "Gentle discipline is not indulgence — it's the way to return after a day off track without self-blame. No double catch-up. No quitting. Just the smallest version.",
+        "details": [
+          "Willpower works like a muscle — it fatigues with use (ego depletion). Decisions at end of day are typically worse than morning decisions. Small systems replacing willpower are more sustainable.",
+          "The 'never miss twice in a row' rule (James Clear, Atomic Habits) is more realistic than 'never miss' — because life always has imperfect days.",
+          "The 1% rule: training 1 minute is still better than 0 minutes. The smallest version maintains the identity of 'someone who trains/meditates' — that identity matters more than the actual minutes.",
+          "Self-criticism after a bad day triggers more stress — counterproductive, it actually increases the probability of quitting entirely compared to those who are gentler with themselves.",
+          "Self-compassion (Kristen Neff, UT Austin): being kind to yourself after failure increases the likelihood of trying again and persisting — contrary to the fear that self-compassion makes people lazy.",
+          "Habit stacking: linking a new habit after an existing one ('After brushing teeth, I meditate 3 minutes') reduces startup friction and increases maintenance rates according to BJ Fogg's behavioral research."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "1% Rule", "note": "Smallest version is still a win" },
+          { "icon": "💙", "label": "No Self-Blame", "note": "Self-compassion increases persistence" },
+          { "icon": "🔗", "label": "Habit Stacking", "note": "Attach to existing habits" },
+          { "icon": "🏗️", "label": "Small Systems", "note": "Design over willpower" }
+        ]
+      }
+    ],
     "d2_tech_modals": [
       {
         "modalTitle": "Diaphragmatic Breathing",
@@ -22700,6 +22817,12 @@
     "f1_msg_start": "→ One step at a time",
     "f2_log_heading": "Log New Session",
     "f3_plate_heading": "Healthy Plate Template",
+    "f3_fat_note": "+ A small amount of healthy fats: olive oil, avocado, nuts.",
+    "plate_parts": [
+      { "label": "½ plate — Vegetables, soup, salad, low-sugar fruit" },
+      { "label": "¼ plate — Protein: meat, fish, eggs, legumes" },
+      { "label": "¼ plate — Carbs: rice, noodles, potato, oats" }
+    ],
     "f6_intro": "Do the baseline test and repeat every 4 weeks to measure comprehensive progress.",
     "f7_intro": "Rule: Even 5 minutes works. Don't skip entirely — just pick a shorter version.",
     "f2_save_btn": "+ Save Workout",
@@ -22714,6 +22837,76 @@
     "f6_saved": "✓ Saved!",
     "f6_compare_link": "View 4-week comparison →",
     "f7_library_link": "View full quick workout library →",
+    "mind_items": {
+      "stress": {
+        "keyFact": "Short-term stress is beneficial — it enhances performance, alertness, and learning. The danger is chronic stress (>7/10 for many days): persistently high cortisol breaks down the immune system, memory, and cardiovascular health.",
+        "details": [
+          "Chronic stress (elevated cortisol): shrinks the hippocampus (memory), weakens the prefrontal cortex (decision-making), and increases amygdala activity (fear responses). It literally changes brain structure.",
+          "Stress level 7–8/10 for more than 3 consecutive days = a signal for immediate action. Don't wait until burnout — burnout takes 3–6 months to fully recover.",
+          "'Stress inoculation': controlled exposure to small stressors (tough workouts, cold showers, reasonable deadlines) builds resilience — like a vaccine for the brain.",
+          "Fastest proven technique: exhale longer than you inhale (4 in – 6 out). Activates the vagus nerve → parasympathetic system within 60–90 seconds. Works anywhere, anytime.",
+          "Often-overlooked stress causes: sleep deprivation (6h sleep raises cortisol 37%), excess caffeine (>400mg/day), sugar and ultra-processed foods, and lack of physical activity.",
+          "Journaling about stress immediately reduces its intensity: writing externalizes worry from the mental loop, freeing working memory to tackle real problems."
+        ],
+        "points": [
+          { "label": "Short Stress = Beneficial", "note": "Acute stress boosts performance — chronic is the danger" },
+          { "label": "Changes Brain Structure", "note": "High cortisol actually shrinks the hippocampus" },
+          { "label": "Exhale Longer", "note": "4 in – 6 out — vagus nerve calms in 60–90 seconds" },
+          { "label": "Sleep Deprivation = +37% Cortisol", "note": "Adequate sleep is the #1 anti-stress measure" }
+        ]
+      },
+      "mood": {
+        "keyFact": "Mood differs from emotion: emotions last seconds to minutes, mood lasts hours to days. Tracking daily mood helps identify patterns and enables early intervention before it becomes chronic.",
+        "details": [
+          "Tracking mood for 21 consecutive days: research shows mood-tracker users identify 'early warning signs' of low mood 1–2 days in advance, enabling preventive action.",
+          "Mood is strongly influenced by: natural light (lack → low serotonin), movement (10-min walk boosts mood immediately), social connection (a biological need), and diet (gut produces 90% of serotonin).",
+          "Behavioral activation: when mood is low, people reduce activity → mood drops further → even less activity (a downward spiral). Break it with one small action even when unmotivated — mood usually lifts afterward.",
+          "Opposite action technique: when you feel like isolating, reach out to someone; when you want to skip exercise, do 5 minutes — opposite actions interrupt automatic low-mood patterns.",
+          "Food and mood: gut-brain axis means diet directly affects mental state. Omega-3 (fish, flaxseed), fermented foods (yogurt, kimchi), and polyphenols (berries, dark chocolate) support serotonin production.",
+          "Sleep and mood: just one night of poor sleep reduces emotional regulation by 60%. Mood tracking and sleep logs together reveal patterns most people are unaware of."
+        ],
+        "points": [
+          { "label": "Mood vs. Emotion", "note": "Emotions last minutes; mood lasts hours to days" },
+          { "label": "Movement = Immediate Boost", "note": "10-min walk raises mood — faster than many medications" },
+          { "label": "Behavioral Activation", "note": "Do one small thing — mood usually follows action" },
+          { "label": "Gut–Brain Axis", "note": "90% of serotonin produced in the gut — food matters" }
+        ]
+      },
+      "calm": {
+        "keyFact": "5 minutes of calm practice daily reduces cortisol 15–20% after 4 consistent weeks (Harvard Medical School). You don't need to meditate 'perfectly' — any activity that activates the parasympathetic system counts.",
+        "details": [
+          "Calm practice is any activity that puts you into 'rest and digest' mode: slow intentional breathing, walking without your phone, journaling, meditation, gentle yoga, reading, a warm bath, or mindful listening to music.",
+          "Box breathing (4-4-4-4): inhale 4s → hold 4s → exhale 4s → hold 4s. Repeat 4–6 rounds = 1.5–2.5 minutes. Navy SEALs use it to stay calm under extreme pressure — it works for you too.",
+          "Consistency beats duration: 5 min/day every day is more effective than 30 min/week on weekends. The brain learns to receive the relaxation signal better with regular practice.",
+          "Default Mode Network (DMN): when the brain 'rests' without focusing on tasks, DMN activates — processing emotions, consolidating memories, and making creative connections. Calm practice lets DMN run.",
+          "Walking without your phone for 10 minutes: increases steps, activates calm state, and lets DMN operate — one activity achieving three goals simultaneously.",
+          "3-sentence journaling: 'What am I grateful for today?', 'What is occupying my mind?', 'What do I want to do better tomorrow?' — 5 minutes, major impact on clarity and mood."
+        ],
+        "points": [
+          { "label": "5 Minutes Is Enough", "note": "Consistency over duration — build up over 4 weeks" },
+          { "label": "Box Breathing", "note": "4-4-4-4 — Navy SEALs use it, and so can you" },
+          { "label": "Walk Without Your Phone", "note": "10 min: steps + calm + DMN — three in one" },
+          { "label": "3-Sentence Journaling", "note": "Gratitude + worry + improvement — 5 min of clarity" }
+        ]
+      },
+      "journal": {
+        "keyFact": "Expressive writing (writing about emotions and thoughts) 15–20 min/day × 3–4 consecutive days reduces anxiety, improves immune function, and decreases doctor visits (James Pennebaker, UT Austin). Effects last 4–6 weeks.",
+        "details": [
+          "Writing externalizes worry from the mental loop inside your head. The brain no longer needs to 'hold' that information in working memory → freeing cognitive capacity for other things.",
+          "'Write one quick line' is enough to build the habit: minimal threshold (1 sentence, 10–15 words). Once started, 70% of people continue writing more thanks to momentum. Don't set high targets at first.",
+          "Morning brain dump: write 3 pages of anything in your head right after waking (Morning Pages — Julia Cameron). No need for quality or logic — the goal is clearing 'mental clutter' before the day begins.",
+          "Gratitude journaling: the brain cannot feel anxiety and gratitude simultaneously. 3 specific (non-repeated) things you're grateful for daily rewires cognitive neural networks toward the positive after 3–4 weeks.",
+          "Solution-focused journaling: instead of only describing problems, add 'What's one small step I can take today?' — trains the brain to shift from threat mode to resource mode.",
+          "Digital journaling is equally effective: apps like Day One or Notion work the same as paper. The key is writing regularly, not the medium. Choose whatever lowers friction to start."
+        ],
+        "points": [
+          { "label": "Externalizes Mental Loops", "note": "Writing frees working memory from repetitive worry" },
+          { "label": "Start with One Line", "note": "Low threshold leads to consistent habit — don't set high targets" },
+          { "label": "Gratitude Rewires the Brain", "note": "3 specific grateful things daily — 3–4 weeks to see change" },
+          { "label": "Solution Focus", "note": "Ask 'one small step' — shifts from threat to resource mode" }
+        ]
+      }
+    },
     "score_items": [
       {
         "label": "Movement / exercise"

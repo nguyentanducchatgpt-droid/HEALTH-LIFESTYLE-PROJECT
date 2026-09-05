@@ -1582,14 +1582,14 @@ export default function PillarD() {
     title: d0CardsTr[i]?.title || c.title,
     desc: d0CardsTr[i]?.desc || c.desc,
   }));
-  const d0ModalsTr = Array.isArray(pillar?.d0_cards) ? pillar.d0_cards : [];
+  const d0ModalsTr = Array.isArray(pillar?.d0_card_modals) ? pillar.d0_card_modals : [];
   const mergedD0CardModals = D0_CARD_MODALS.map((m, i) => ({
     ...m,
     modalTitle: d0ModalsTr[i]?.title || m.modalTitle,
-    keyFact: m.keyFact,
-    detail: m.detail,
-    details: m.details,
-    points: m.points,
+    keyFact: d0ModalsTr[i]?.keyFact || m.keyFact,
+    detail: d0ModalsTr[i]?.detail || m.detail,
+    details: Array.isArray(d0ModalsTr[i]?.details) && d0ModalsTr[i].details.length ? d0ModalsTr[i].details : m.details,
+    points: Array.isArray(d0ModalsTr[i]?.points) && d0ModalsTr[i].points.length ? d0ModalsTr[i].points.map((pt, pi) => ({ ...m.points[pi], label: pt.label || m.points[pi]?.label, note: pt.note || m.points[pi]?.note })) : m.points,
   }));
   const d1ModalsTr = Array.isArray(pillar?.d1_modals) ? pillar.d1_modals : [];
   const mergedD1LayerModals = D1_LAYER_MODALS.map((m, i) => ({

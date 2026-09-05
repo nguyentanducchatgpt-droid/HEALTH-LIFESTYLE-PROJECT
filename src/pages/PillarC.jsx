@@ -2008,6 +2008,7 @@ const STANDUP_DATA  = {
 
 function StandUpModal({ onClose }) {
   const { t: tCommon } = useTranslation('common');
+  const { t: tPillars } = useTranslation('pillars');
   const d = STANDUP_DATA;
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -2036,7 +2037,7 @@ function StandUpModal({ onClose }) {
               style={{ background: `rgba(${STANDUP_RGB},0.18)`, border: `2px solid rgba(${STANDUP_RGB},0.45)` }}>⏱</div>
             <span className="text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full"
               style={{ color: STANDUP_COLOR, background: `rgba(${STANDUP_RGB},0.2)`, border: `1px solid rgba(${STANDUP_RGB},0.35)` }}>
-              Quy tắc NEAT
+              {tPillars('pillarC.neat_rule_badge') || 'Quy tắc NEAT'}
             </span>
           </div>
           <button onClick={onClose}
@@ -2045,7 +2046,7 @@ function StandUpModal({ onClose }) {
         </div>
 
         <div className="p-6 md:p-8">
-          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: STANDUP_COLOR }}>Quy Tắc Đứng Dậy 2 Phút</h2>
+          <h2 className="font-bold text-2xl md:text-3xl mb-1" style={{ color: STANDUP_COLOR }}>{tPillars('pillarC.c3_standup_title') || 'Quy Tắc Đứng Dậy 2 Phút'}</h2>
           <p className="text-sm mb-4" style={{ color: `rgba(${STANDUP_RGB},0.7)` }}>{d.detail}</p>
 
           <div className="rounded-2xl px-4 py-3 mb-6 flex items-start gap-3"

@@ -153,7 +153,7 @@ export const PROGRAM_PHASES = {
   ],
   busy: [
     {
-      range: [1, 4], icon: '⚡', name: 'Bắt nhịp', tag: 'Không đứt chuỗi',
+      range: [1, 4], icon: '⚡', name: 'Bắt nhịp', tag: 'No Break',
       desc: '10 phút/ngày — "thắng bằng sự đều đặn, không cần hoành tráng".',
       intensity: 'RPE 5–7/10',
       focus: '2\' warm-up + 6\' circuit (squat 30s, push 30s, plank 30s) + 2\' thở',

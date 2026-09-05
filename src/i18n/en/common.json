@@ -16,7 +16,8 @@
     "p24w": "24-Week Advanced",
     "psample": "Sample Roadmap",
     "contact": "Contact",
-    "donate": "Support"
+    "donate": "Support",
+    "see_all_pillars": "↓ See all pillars on homepage"
   },
   "brand": {
     "part1": "Health",
@@ -6149,7 +6150,8 @@
     "practice_title": "Practice Details",
     "see_detail_label": "View details",
     "steps_heading": "Step-by-step guide",
-    "science_heading": "Scientific details"
+    "science_heading": "Scientific details",
+    "chi_tiet": "DETAILS"
   },
   "f_bottom_disclaimer": "All data is stored locally on your device and never sent to any server. These tools are not a substitute for professional medical advice.",
   "ui": {
@@ -6170,11 +6172,15 @@
     "postworkout_note": "within 2h post-workout",
     "params": "Parameters",
     "analysis": "Analysis",
+    "evaluation": "Evaluation",
     "suggestions": "Suggestions",
     "pros": "Pros",
     "cons": "Cons",
     "detail_btn": "Details →",
-    "source_prefix": "← Calculated from"
+    "source_prefix": "← Calculated from",
+    "pillar_prefix": "Pillar",
+    "yes": "Yes",
+    "not_yet": "Not yet"
   },
   "b5": {
     "weight_chart_title": "Weight Chart — 12 Weeks",

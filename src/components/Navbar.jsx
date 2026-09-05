@@ -196,7 +196,7 @@ export default function Navbar() {
                     onClick={() => setPillarsOpen(false)}
                     className="text-base text-muted hover:text-accent transition-colors duration-150"
                   >
-                    ↓ Xem tất cả trụ cột trên trang chủ
+                    {t('nav.see_all_pillars')}
                   </Link>
                 </div>
               </div>

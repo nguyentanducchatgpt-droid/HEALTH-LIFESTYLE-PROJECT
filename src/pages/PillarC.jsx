@@ -2197,6 +2197,18 @@ export default function PillarC() {
     ...(Array.isArray(c3LevelsTr) && c3LevelsTr[i] ? c3LevelsTr[i] : {}),
   }));
 
+  const c3NeatChecklistTr = tPillars('pillarC.c3_neat_checklist', { returnObjects: true });
+  const localC3NeatChecklist = C3_NEAT_CHECKLIST.map((item, i) => ({
+    ...item,
+    ...(Array.isArray(c3NeatChecklistTr) && c3NeatChecklistTr[i] ? c3NeatChecklistTr[i] : {}),
+  }));
+
+  const c3IdeasTr = tPillars('pillarC.c3_ideas', { returnObjects: true });
+  const localC3Ideas = C3_IDEAS.map((item, i) => ({
+    ...item,
+    ...(Array.isArray(c3IdeasTr) && c3IdeasTr[i] ? c3IdeasTr[i] : {}),
+  }));
+
   const c0ItemsTr = tPillars('pillarC.c0_items', { returnObjects: true });
   const localC0Items = C0_ITEMS.map((item, i) => ({
     ...item,
@@ -2733,7 +2745,7 @@ export default function PillarC() {
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>{tPillars('pillarC.c3_neat_checklist_heading', { defaultValue: 'NEAT Checklist' })}</h3>
                 <div className="space-y-1.5 mb-4">
-                  {C3_NEAT_CHECKLIST.map((item, i) => (
+                  {localC3NeatChecklist.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 rounded-xl group transition-all"
                       style={{
                         border: '1px solid',
@@ -2778,7 +2790,7 @@ export default function PillarC() {
                 </div>
                 <h3 className="font-bold text-lg mb-3" style={{ color: '#10b981' }}>{tPillars('pillarC.c3_ideas_heading', { defaultValue: 'Ý tưởng tăng NEAT' })}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {C3_IDEAS.map((idea, i) => (
+                  {localC3Ideas.map((idea, i) => (
                     <button key={i} onClick={() => setNeatIdeaModal(i)}
                       className="flex items-center gap-2 text-base text-left p-2.5 rounded-lg group cursor-pointer transition-all hover:bg-white/5"
                       style={{
@@ -3320,26 +3332,26 @@ export default function PillarC() {
       {/* ── C3 NEAT ideas modal ── */}
       {neatIdeaModal !== null && (
         <C0ItemModal
-          item={C3_IDEAS[neatIdeaModal]}
+          item={localC3Ideas[neatIdeaModal]}
           idx={neatIdeaModal}
           onClose={() => setNeatIdeaModal(null)}
           onPrev={() => setNeatIdeaModal(i => Math.max(0, i - 1))}
-          onNext={() => setNeatIdeaModal(i => Math.min(C3_IDEAS.length - 1, i + 1))}
+          onNext={() => setNeatIdeaModal(i => Math.min(localC3Ideas.length - 1, i + 1))}
           hasPrev={neatIdeaModal > 0}
-          hasNext={neatIdeaModal < C3_IDEAS.length - 1}
+          hasNext={neatIdeaModal < localC3Ideas.length - 1}
         />
       )}
 
       {/* ── C3 NEAT checklist modal ── */}
       {neatChecklistModal !== null && (
         <C0ItemModal
-          item={C3_NEAT_CHECKLIST[neatChecklistModal]}
+          item={localC3NeatChecklist[neatChecklistModal]}
           idx={neatChecklistModal}
           onClose={() => setNeatChecklistModal(null)}
           onPrev={() => setNeatChecklistModal(i => Math.max(0, i - 1))}
-          onNext={() => setNeatChecklistModal(i => Math.min(C3_NEAT_CHECKLIST.length - 1, i + 1))}
+          onNext={() => setNeatChecklistModal(i => Math.min(localC3NeatChecklist.length - 1, i + 1))}
           hasPrev={neatChecklistModal > 0}
-          hasNext={neatChecklistModal < C3_NEAT_CHECKLIST.length - 1}
+          hasNext={neatChecklistModal < localC3NeatChecklist.length - 1}
         />
       )}
 

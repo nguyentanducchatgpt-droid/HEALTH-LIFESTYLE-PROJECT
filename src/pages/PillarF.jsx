@@ -1327,6 +1327,25 @@ function F3MealPlan() {
   });
   const [mealModal, setMealModal] = useState(null);
   const [nutriModal, setNutriModal] = useState(null);
+  const pillarFTr = tPillarsF3('pillarF', { returnObjects: true });
+  const mealItemsTr = Array.isArray(pillarFTr?.meal_items) ? pillarFTr.meal_items : [];
+  const mergedMealItems = MEAL_ITEMS.map((m, i) => ({
+    ...m,
+    meal: mealItemsTr[i]?.meal || m.meal,
+    formula: mealItemsTr[i]?.formula || m.formula,
+    eg: mealItemsTr[i]?.eg || m.eg,
+    keyFact: mealItemsTr[i]?.keyFact || m.keyFact,
+    details: Array.isArray(mealItemsTr[i]?.details) && mealItemsTr[i].details.length ? mealItemsTr[i].details : m.details,
+    points: Array.isArray(mealItemsTr[i]?.points) && mealItemsTr[i].points.length ? mealItemsTr[i].points : m.points,
+  }));
+  const nutriLogItemsTr = Array.isArray(pillarFTr?.nutri_log_items) ? pillarFTr.nutri_log_items : [];
+  const mergedNutriLogItems = NUTRI_LOG_ITEMS.map((m, i) => ({
+    ...m,
+    label: nutriLogItemsTr[i]?.label || m.label,
+    keyFact: nutriLogItemsTr[i]?.keyFact || m.keyFact,
+    details: Array.isArray(nutriLogItemsTr[i]?.details) && nutriLogItemsTr[i].details.length ? nutriLogItemsTr[i].details : m.details,
+    points: Array.isArray(nutriLogItemsTr[i]?.points) && nutriLogItemsTr[i].points.length ? nutriLogItemsTr[i].points : m.points,
+  }));
 
   function setVal(key, val) {
     const u = { ...log, [key]: val };
@@ -1353,17 +1372,17 @@ function F3MealPlan() {
           <span className="text-base font-bold uppercase tracking-widest" style={{ color: COLOR }}>{tPillarsF3('pillarF.f3_meal_section') || 'Thực Đơn Theo Bữa'}</span>
           <span className="text-xs text-muted">{tPillarsF3('pillarF.f3_click_detail') || 'Nhấn để xem chi tiết'}</span>
         </div>
-        {MEAL_ITEMS.map((m, i) => (
+        {mergedMealItems.map((m, i) => (
           <MealCard key={i} item={m} idx={i} onOpen={setMealModal} />
         ))}
       </div>
       {mealModal !== null && (
         <MealModal
-          item={MEAL_ITEMS[mealModal]} idx={mealModal}
+          item={mergedMealItems[mealModal]} idx={mealModal}
           onClose={() => setMealModal(null)}
           onPrev={() => setMealModal(i => Math.max(0, i - 1))}
-          onNext={() => setMealModal(i => Math.min(MEAL_ITEMS.length - 1, i + 1))}
-          hasPrev={mealModal > 0} hasNext={mealModal < MEAL_ITEMS.length - 1}
+          onNext={() => setMealModal(i => Math.min(mergedMealItems.length - 1, i + 1))}
+          hasPrev={mealModal > 0} hasNext={mealModal < mergedMealItems.length - 1}
         />
       )}
       <div className="rounded-2xl border border-border bg-surface overflow-hidden">
@@ -1372,21 +1391,21 @@ function F3MealPlan() {
           <span className="text-xs text-muted">{tPillarsF3('pillarF.f3_click_detail') || 'Nhấn để xem chi tiết'}</span>
         </div>
         <div className="divide-y divide-white/5">
-          {NUTRI_LOG_ITEMS.map((item) => (
+          {mergedNutriLogItems.map((item) => (
             <NutriLogCard key={item.key} item={item} value={log[item.key]} onToggle={setVal} onOpen={() => setNutriModal(item.key)} />
           ))}
         </div>
       </div>
       {nutriModal !== null && (() => {
-        const item = NUTRI_LOG_ITEMS.find(x => x.key === nutriModal);
-        const idx = NUTRI_LOG_ITEMS.findIndex(x => x.key === nutriModal);
+        const item = mergedNutriLogItems.find(x => x.key === nutriModal);
+        const idx = mergedNutriLogItems.findIndex(x => x.key === nutriModal);
         return (
           <NutriLogModal
             item={item} idx={idx}
             onClose={() => setNutriModal(null)}
-            onPrev={() => setNutriModal(NUTRI_LOG_ITEMS[Math.max(0, idx - 1)].key)}
-            onNext={() => setNutriModal(NUTRI_LOG_ITEMS[Math.min(NUTRI_LOG_ITEMS.length - 1, idx + 1)].key)}
-            hasPrev={idx > 0} hasNext={idx < NUTRI_LOG_ITEMS.length - 1}
+            onPrev={() => setNutriModal(mergedNutriLogItems[Math.max(0, idx - 1)].key)}
+            onNext={() => setNutriModal(mergedNutriLogItems[Math.min(mergedNutriLogItems.length - 1, idx + 1)].key)}
+            hasPrev={idx > 0} hasNext={idx < mergedNutriLogItems.length - 1}
           />
         );
       })()}
@@ -1541,6 +1560,7 @@ function LifestyleModal({ item, idx, onClose, onPrev, onNext, hasPrev, hasNext }
 // --- F4 Lifestyle tab ---
 function F4Lifestyle() {
   const { t: tCommon } = useTranslation('common');
+  const { t: tPillarsF4 } = useTranslation('pillars');
   const [data, setData] = useState(() => {
     try {
       const s = JSON.parse(localStorage.getItem('healthapp_f_lifestyle') || '{}');
@@ -1549,6 +1569,15 @@ function F4Lifestyle() {
     } catch { return { sleep: 7, steps: 5000, energy: 7 }; }
   });
   const [lifestyleModal, setLifestyleModal] = useState(null);
+  const pillarF4Tr = tPillarsF4('pillarF', { returnObjects: true });
+  const lifestyleItemsTr = Array.isArray(pillarF4Tr?.lifestyle_items) ? pillarF4Tr.lifestyle_items : [];
+  const mergedLifestyleItems = LIFESTYLE_ITEMS.map((m, i) => ({
+    ...m,
+    label: lifestyleItemsTr[i]?.label || m.label,
+    keyFact: lifestyleItemsTr[i]?.keyFact || m.keyFact,
+    details: Array.isArray(lifestyleItemsTr[i]?.details) && lifestyleItemsTr[i].details.length ? lifestyleItemsTr[i].details : m.details,
+    points: Array.isArray(lifestyleItemsTr[i]?.points) && lifestyleItemsTr[i].points.length ? lifestyleItemsTr[i].points : m.points,
+  }));
 
   function set(k, v) {
     const u = { ...data, [k]: v };
@@ -1558,7 +1587,7 @@ function F4Lifestyle() {
 
   return (
     <div className="space-y-4">
-      {LIFESTYLE_ITEMS.map((item, i) => {
+      {mergedLifestyleItems.map((item, i) => {
         const val = data[item.key];
         const valColor = item.good(val);
         return (
@@ -1581,15 +1610,15 @@ function F4Lifestyle() {
       })}
       {lifestyleModal !== null && (
         <LifestyleModal
-          item={LIFESTYLE_ITEMS[lifestyleModal]} idx={lifestyleModal}
+          item={mergedLifestyleItems[lifestyleModal]} idx={lifestyleModal}
           onClose={() => setLifestyleModal(null)}
           onPrev={() => setLifestyleModal(i => Math.max(0, i - 1))}
-          onNext={() => setLifestyleModal(i => Math.min(LIFESTYLE_ITEMS.length - 1, i + 1))}
-          hasPrev={lifestyleModal > 0} hasNext={lifestyleModal < LIFESTYLE_ITEMS.length - 1}
+          onNext={() => setLifestyleModal(i => Math.min(mergedLifestyleItems.length - 1, i + 1))}
+          hasPrev={lifestyleModal > 0} hasNext={lifestyleModal < mergedLifestyleItems.length - 1}
         />
       )}
       <div className="rounded-2xl border p-3 text-base text-muted" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.04)` }}>
-        {tPillarsF3('pillarF.f3_data_note') || 'Dữ liệu lưu theo ngày trong thiết bị của bạn.'} <Link to="/pillar/f/lifestyle-tracker" className="underline" style={{ color: COLOR }}>Xem lịch sử →</Link>
+        {tPillarsF4('pillarF.f3_data_note') || 'Dữ liệu lưu theo ngày trong thiết bị của bạn.'} <Link to="/pillar/f/lifestyle-tracker" className="underline" style={{ color: COLOR }}>Xem lịch sử →</Link>
       </div>
     </div>
   );

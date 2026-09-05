@@ -6519,6 +6519,430 @@
     "c3_desc": "NEAT is all movement outside your workout: walking, standing up, housework. For busy people, NEAT is as important as gym sessions.",
     "c3_levels_heading": "Step targets by level",
     "c3_ideas_heading": "Ideas to increase NEAT",
+    "c3_neat_checklist": [
+      {
+        "label": "Stand up every 45–60 minutes of sitting",
+        "detail": "Sitting continuously for more than 60 minutes suppresses the fat-burning enzyme LPL — standing up for just 2 minutes every hour is enough to reverse most of this harm.",
+        "keyFact": "After 60 minutes of sitting, lipoprotein lipase (LPL) activity — the main fat-burning enzyme in muscles — drops by 90%. Standing up and moving for just 2 minutes reactivates LPL within seconds.",
+        "details": [
+          "Biological mechanism: sitting keeps leg muscles inactive, prolonging the 'off' state of LPL. This is independent of fitness level — even regular gym-goers are affected if they sit continuously afterwards.",
+          "The 45–60 minute rule (not 90 minutes): Levine 2009 research shows negative effects become measurable after 60 minutes. 45 minutes is a safer preventive threshold.",
+          "Just 2 minutes is enough: no long stretching or exercise required — simply standing up, taking a few steps, or standing in place for 2 minutes reactivates LPL and improves circulation.",
+          "Reminder tools: set a 50-minute timer (Pomodoro + stand up) or use a standing reminder app. Some people place a small glass (200ml) of water nearby to naturally prompt more frequent standing.",
+          "A standing desk alone is not enough: standing still is also worse than alternating sit-stand. You need both: posture alternation AND small movements while standing (foot shifts, weight transfers, mini squats).",
+          "Especially important after meals: sitting immediately after eating prolongs the glucose and insulin peak. 10 minutes of standing or light walking after lunch improves afternoon insulin sensitivity equivalent to a separate 15–20 minute walk."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "45–50 min timer",
+            "note": "Pomodoro combined with standing"
+          },
+          {
+            "icon": "💧",
+            "label": "Small water glass",
+            "note": "Forces natural standing breaks"
+          },
+          {
+            "icon": "🔄",
+            "label": "Sit ↔ Stand",
+            "note": "Alternating beats a standing desk alone"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Stand after meals",
+            "note": "10 min = equivalent to 15–20 min separate walk"
+          }
+        ]
+      },
+      {
+        "label": "Walk after at least 1 meal",
+        "detail": "Walking after a meal is one of the most effective NEAT interventions: it reduces post-meal glucose spikes, increases insulin sensitivity, and improves digestion — just 10–15 minutes.",
+        "keyFact": "A 10-minute post-meal walk reduces blood glucose peaks by an average of 30–50% compared to sitting — more effective than a separate 30-minute walk away from mealtimes for glucose management.",
+        "details": [
+          "Mechanism: in the 30–90 minutes after eating, glucose from digestion floods the bloodstream. Contracting muscles (walking) absorb glucose directly via GLUT-4 transporters without needing insulin — 'pulling' glucose out of the blood mechanically, independent of hormones.",
+          "Only 10 minutes needed: a comfortable walking pace (not brisk) is sufficient. The key is timing — within 30 minutes of finishing the meal while glucose is still rising.",
+          "Post-lunch walking has a compound effect: it lowers the afternoon glucose dip that causes drowsiness, helping you stay alert and focused in the afternoon without needing caffeine.",
+          "Which meal to choose: post-dinner walking is most accessible (easiest to build into routine after work) and has the greatest effect on overnight metabolic health.",
+          "Combining with mindfulness: walking without the phone, focusing on breathing and surroundings — turns movement into a dual benefit of glucose management and mental decompression.",
+          "Long-term: people who consistently walk after meals have significantly lower HbA1c (3-month average blood sugar) than those who walk the same total distance but at separate times."
+        ],
+        "points": [
+          {
+            "icon": "🍽️",
+            "label": "Within 30 min of eating",
+            "note": "While glucose is still rising"
+          },
+          {
+            "icon": "⏱️",
+            "label": "Just 10 minutes",
+            "note": "Comfortable pace is enough"
+          },
+          {
+            "icon": "📉",
+            "label": "30–50% lower glucose peak",
+            "note": "Better than a separate walk"
+          },
+          {
+            "icon": "😴",
+            "label": "Reduces afternoon slump",
+            "note": "Stay alert without caffeine"
+          }
+        ]
+      },
+      {
+        "label": "Reach your personal step goal",
+        "detail": "A personalised daily step target turns movement into a measurable game — research shows having a specific goal increases daily steps by 26% compared to vague intentions to 'move more'.",
+        "keyFact": "7,000–8,000 steps per day is the scientifically validated sweet spot for longevity benefits — benefits plateau above 10,000 steps in most adult populations.",
+        "details": [
+          "The 10,000-step myth: this number came from a 1960s Japanese marketing campaign (万歩計 pedometer), not science. Meta-analyses show mortality risk drops steeply up to 7,000–8,000 steps, then flattens.",
+          "NEAT steps vs exercise steps: most daily steps come from incidental movement (NEAT) — walking to the bathroom, kitchen, car. Formal exercise sessions add steps but NEAT steps matter most for metabolic health.",
+          "Personalise your baseline: if you currently walk 3,000 steps/day, a goal of 10,000 is discouraging. Start with +2,000 from baseline and increase 500 steps every 2 weeks.",
+          "Tracking tools: smartphone health apps track steps automatically (no extra device needed). Smartwatches add heart rate and active minutes — both show the same basic step count.",
+          "Walking speed matters: brisk walking (>100 steps/min, or about 5 km/h) has additional cardiovascular benefits beyond step count. Even 10 minutes of brisk walking within your daily total makes a difference.",
+          "Streak psychology: hitting your step goal 7 days in a row has a stronger behavioural reinforcement effect than any single high-step day. Consistency over intensity."
+        ],
+        "points": [
+          {
+            "icon": "👣",
+            "label": "7,000–8,000 steps",
+            "note": "Science-backed longevity target"
+          },
+          {
+            "icon": "📱",
+            "label": "Track automatically",
+            "note": "Smartphone health app — no extra device"
+          },
+          {
+            "icon": "🔄",
+            "label": "+2,000 from baseline",
+            "note": "Sustainable increase, not a leap"
+          },
+          {
+            "icon": "⚡",
+            "label": "Brisk pace bonus",
+            "note": ">100 steps/min for cardio benefit"
+          }
+        ]
+      },
+      {
+        "label": "1–2 short movement breaks during work hours",
+        "detail": "Planned micro-movement breaks of 2–5 minutes during the workday accumulate into significant NEAT and break the sedentary pattern that office work creates.",
+        "keyFact": "2 planned movement breaks of 5 minutes each during an 8-hour workday — if done consistently 5 days a week — equals 43+ hours of extra movement per year.",
+        "details": [
+          "Micro-break options: 10 squats, calf raises at the desk, shoulder rolls, a short walk to the water cooler, or a 2-minute stretch — all count. The key is standing up and changing posture.",
+          "Cognitive benefit: a 5-minute movement break improves attention and working memory for the next 20–30 minutes — more effective than checking social media as a 'rest'.",
+          "Scheduling strategy: build breaks into existing cues (after each video call ends, before lunch, after sending a report). Linking movement to existing habits increases compliance dramatically.",
+          "Visible cue: place resistance bands, a small foam roller, or a reminder card on your desk. Visual cues trigger the habit without relying on memory.",
+          "Social normalisation: if colleagues see you doing calf raises or a quick stretch, it normalises the behaviour. Some teams establish 'movement break' routines together.",
+          "Not about fitness — about breaking the pattern: the goal isn't cardiovascular training. It's interrupting the metabolic damage of prolonged sitting. Even standing up and sitting back down 10 times counts."
+        ],
+        "points": [
+          {
+            "icon": "🔔",
+            "label": "After each video call",
+            "note": "Existing cue as trigger"
+          },
+          {
+            "icon": "🧠",
+            "label": "Focus +20–30 min",
+            "note": "Cognitive benefit post-movement"
+          },
+          {
+            "icon": "💪",
+            "label": "10 squats or calf raises",
+            "note": "No space or equipment needed"
+          },
+          {
+            "icon": "📅",
+            "label": "43+ extra hours/year",
+            "note": "From 2 × 5 min breaks daily"
+          }
+        ]
+      }
+    ],
+    "c3_ideas": [
+      {
+        "label": "Take stairs instead of lift for 1–2 floors",
+        "detail": "Stairs are one of the simplest and most effective NEAT interventions — combining footsteps and climbing elevates heart rate and burns 3× more calories than flat walking.",
+        "keyFact": "2 minutes of stair climbing burns the equivalent of 15–20 minutes of light walking in relative energy terms — and is enough to raise heart rate into the light cardio zone.",
+        "details": [
+          "Stairs burn approximately 8–11 kcal/minute (vs 3–4 kcal/minute for flat walking) — the same time slot burns 2–3× more calories due to the force applied to glutes, quads, and calves.",
+          "1–2 floors is the threshold that avoids sweating and adds no meaningful time. No need to change clothes or wear trainers — just exit the lift one button earlier.",
+          "Cumulative effect: 4 stair trips of 2 floors per day = ~5–8 minutes of stair climbing daily = ~150–200 extra kcal/week from one simple habit. Over a year: equivalent to ~8,000 kcal or nearly 1 kg of fat.",
+          "Cardiorespiratory fitness: research shows regular stair climbing improves VO2max and quad strength in sedentary individuals — equivalent to a light cardio programme.",
+          "Psychology: no separate 'workout time' needed — this is movement integrated into daily life. No feeling of 'having to exercise', just 'choosing stairs over the lift'.",
+          "Start small: if the office is on floor 10, take the lift to floor 8 and climb 2 floors. No need to do all of it immediately — add one floor per week."
+        ],
+        "points": [
+          {
+            "icon": "🔥",
+            "label": "8–11 kcal/min",
+            "note": "2–3× more than flat walking"
+          },
+          {
+            "icon": "🏗️",
+            "label": "1–2 floors",
+            "note": "No sweat, no extra time"
+          },
+          {
+            "icon": "📈",
+            "label": "VO2max improves",
+            "note": "Light cardio integrated into the day"
+          },
+          {
+            "icon": "🗓️",
+            "label": "~1 kg/year",
+            "note": "From 4 stair trips daily"
+          }
+        ]
+      },
+      {
+        "label": "Park further away when commuting",
+        "detail": "Parking 200–300m further away generates 400–600 extra steps per day (round trip) — adds no meaningful time and is almost 'free' NEAT.",
+        "keyFact": "Parking 300m further each way = 600 extra steps × 5 days = 3,000 steps/week = ~156,000 steps/year — equivalent to 75 km of extra walking without any 'workout'.",
+        "details": [
+          "300m further each way takes only 3–4 minutes of walking — most people don't experience this as 'exercise' but simply as walking to work. This is the essence of NEAT: movement integrated into daily life.",
+          "Habit psychology: when the decision to 'park further' is made once each morning, there's no need to reconsider daily. A clear habit cue (arriving at work → park further) supports long-term maintenance.",
+          "Morning light bonus: walking outdoors in the morning both increases NEAT and provides natural light to reset the circadian clock — two benefits from one decision.",
+          "Variations: get off the bus/train one stop early, park on the top floor of a car park (extra stair climb), or walk from home to the parking spot instead of driving right to the entrance.",
+          "Rainy/hot days: still park further but walk faster — 3 minutes of brisk walking still has NEAT value and is better than nothing. Keep an umbrella or cap in the car.",
+          "Combined with stairs: parking further + 2 flights of stairs daily = ~700–800 extra steps + a mini cardio boost each morning. Two small habits, compounding effect."
+        ],
+        "points": [
+          {
+            "icon": "📍",
+            "label": "300m further = 600 steps",
+            "note": "Round trip nearly free"
+          },
+          {
+            "icon": "☀️",
+            "label": "Morning light",
+            "note": "NEAT + circadian benefit together"
+          },
+          {
+            "icon": "🧠",
+            "label": "One-time decision",
+            "note": "No daily willpower needed"
+          },
+          {
+            "icon": "📅",
+            "label": "75 km/year",
+            "note": "From a 3–4 min morning habit"
+          }
+        ]
+      },
+      {
+        "label": "Take phone calls standing or walking",
+        "detail": "Phone calls are a completely free movement opportunity — you don't need to look at a screen, just put in earphones and stand up.",
+        "keyFact": "People who regularly stand or walk during phone calls burn an average of 300–500 extra kcal/day compared to those who sit for everything — from this one change alone.",
+        "details": [
+          "Why phone calls are a golden opportunity: you don't look at a screen during a call and your hands don't need to type — you can walk around freely without affecting call quality.",
+          "Walking vs standing: walking is better than standing still because it increases step count, activates more muscles, boosts cerebral blood flow for clearer thinking, and actually improves listening and information retention.",
+          "Stanford 2014 walking meetings research: walking while brainstorming increases creative thinking by 81% compared to sitting — Apple, Facebook, and Twitter have walking 1:1 cultures.",
+          "Practical setup: place wireless earphones charging next to your phone — when a call comes in, plug in and stand up as an automatic reflex. No extra decisions needed.",
+          "At home: you can walk around the living room, step onto the balcony, or stand near a window. No large space required — 10m² is enough for 50–100 steps during a 5-minute call.",
+          "Cognitive benefit: light standing and movement during conversation increases cerebral blood flow, helping you think more clearly and respond faster — you also communicate better."
+        ],
+        "points": [
+          {
+            "icon": "🎧",
+            "label": "Wireless earphones",
+            "note": "Keep beside phone — automate the habit"
+          },
+          {
+            "icon": "🧠",
+            "label": "+81% creativity",
+            "note": "Walking brainstorm (Stanford 2014)"
+          },
+          {
+            "icon": "🚶",
+            "label": "Walking > standing",
+            "note": "More muscles, better thinking"
+          },
+          {
+            "icon": "⚡",
+            "label": "300–500 kcal/day",
+            "note": "From standing/walking during calls"
+          }
+        ]
+      },
+      {
+        "label": "Hold short meetings as walking meetings",
+        "detail": "Walking meetings are a format growing in popularity in modern company culture — suited for 1:1s, brainstorming, and informal feedback that doesn't require a screen.",
+        "keyFact": "Standing meetings reduce average meeting time by 25% and walking meetings increase participants' focus and energy levels compared to sitting in a closed room.",
+        "details": [
+          "Best suited for: 1:1 catch-ups, short check-ins, informal feedback, idea brainstorming, and daily standups. Not suited for: slide presentations, contract signing, complex note-taking.",
+          "Psychological benefit: open space and physical movement breaks the 'power dynamic' of a traditional meeting room — people are more open and honest walking side by side than face to face.",
+          "How to suggest: 'Shall we walk around the building while we talk?' or simply 'Walking meeting?' — more people are willing than you'd expect, especially for informal meetings.",
+          "Outdoor vs indoor: walking outdoors adds natural light and fresh air benefits — but indoor (corridor, lobby) works fine in bad weather.",
+          "Note-taking: use voice memos or a short recording instead of writing on paper or phone. Or summarise by email immediately after — memory is freshest in the first 5 minutes.",
+          "Cumulative: 2 walking meetings of 20 minutes per week = 40 extra minutes of walking per week entirely within work hours, without cutting break time or adding extra time."
+        ],
+        "points": [
+          {
+            "icon": "✅",
+            "label": "1:1s and brainstorms",
+            "note": "Most suitable meeting format"
+          },
+          {
+            "icon": "💬",
+            "label": "More openness",
+            "note": "Side by side → more honesty"
+          },
+          {
+            "icon": "⏱️",
+            "label": "25% shorter meetings",
+            "note": "Standing/walking meetings run faster"
+          },
+          {
+            "icon": "📅",
+            "label": "40 min walking/week",
+            "note": "From 2 × 20 min walking meetings"
+          }
+        ]
+      },
+      {
+        "label": "Place water bottle away from desk",
+        "detail": "Designing the environment to force movement — placing a water bottle away from your desk creates 'beneficial friction', making each drink a reason to stand up and walk.",
+        "keyFact": "Drinking enough water (2–2.5L/day) combined with a small bottle (500ml) = 4–5 forced standing breaks per day — automatically creating sitting interruptions without timers or reminders.",
+        "details": [
+          "The 'environment design' principle: instead of relying on willpower to remember to stand up, create a physical structure that forces the behaviour to happen automatically. James Clear (Atomic Habits) calls this 'environment design'.",
+          "500ml bottle (not 1L): forces 4–5 trips to refill instead of 2. Each trip is 20–50 steps and 1–2 minutes standing — enough to reactivate LPL and break the sitting chain.",
+          "How far is far enough: 10–20m is ideal — far enough to require standing up and a few steps, not so far it becomes an inconvenience. Kitchen, hallway water cooler, or another room.",
+          "Bonus: standing up to get water is also an opportunity to do calf raises while waiting for the bottle to fill, stretch the shoulders, or drop by a colleague's desk for a quick exchange instead of messaging.",
+          "Combine with a micro-exercise: after each drink, do 10 squats or calf raises. Small enough to require no clothing change, sufficient to wake up leg muscles after prolonged sitting.",
+          "Adequate hydration is also a direct benefit: losing just 1–2% body water reduces concentration by 15–20% and increases fatigue. A distant bottle forces more consistent hydration than a large cup sitting right beside you."
+        ],
+        "points": [
+          {
+            "icon": "🏗️",
+            "label": "Environment design",
+            "note": "No willpower — automatic structure"
+          },
+          {
+            "icon": "🥤",
+            "label": "500ml bottle",
+            "note": "4–5 forced standing breaks daily"
+          },
+          {
+            "icon": "🧠",
+            "label": "Focus +20%",
+            "note": "Adequate hydration reduces fatigue"
+          },
+          {
+            "icon": "🦵",
+            "label": "10 squats after drinking",
+            "note": "Naturally integrated micro-workout"
+          }
+        ]
+      },
+      {
+        "label": "Walk 5 minutes before entering home after work",
+        "detail": "A transition buffer from 'work mode' to 'relaxation mode' — 5 minutes of walking before entering the house helps cortisol drop and the mind disengage from work more effectively than going straight home.",
+        "keyFact": "A 'transition ritual' reduces work-stress spillover into home life. Just 5 minutes of walking is enough for a measurable cortisol drop and a 'mental switch' to occur.",
+        "details": [
+          "Work-life spillover: without a transition ritual, the brain stays in 'work mode' at home — continuing to process work problems subconsciously, making relaxation difficult, causing evening tension and poor sleep.",
+          "5 minutes of outdoor walking is a 'decompression ritual': breathing naturally deepens, heart rate drops slightly, cortisol begins to fall. The brain shifts from sympathetic (fight/flight) to parasympathetic (rest/digest).",
+          "No distance needed: walk around the block, collect the post and keep going, or get off the bus/train a few stops early. The important part is outdoor movement without looking at the phone for those 5 minutes.",
+          "Combine with mindfulness: during the 5-minute walk, pay attention to what you see, hear, and feel instead of thinking about unanswered emails. This is the simplest form of mindful walking.",
+          "'Bookend ritual': morning (10 minutes outdoor light after waking) + evening (5-minute walk before entering home) creates a clear daily structure for the nervous system — regulating cortisol across the whole day.",
+          "Extra NEAT: 5-minute walk × 5 days = 25 extra minutes/week at no time cost — this is 'dead time' (sitting in a car, waiting for a train) converted into movement."
+        ],
+        "points": [
+          {
+            "icon": "🧘",
+            "label": "Decompression ritual",
+            "note": "Shift from work mode → home mode"
+          },
+          {
+            "icon": "📵",
+            "label": "No phone",
+            "note": "5 minutes for the brain to truly rest"
+          },
+          {
+            "icon": "🌇",
+            "label": "Outdoors",
+            "note": "Natural light supports cortisol drop"
+          },
+          {
+            "icon": "📚",
+            "label": "Bookend ritual",
+            "note": "Morning + evening = clear daily structure"
+          }
+        ]
+      },
+      {
+        "label": "Tidy up for 10 minutes — that's movement too!",
+        "detail": "Tidying is the highest-NEAT household activity — standing, walking, bending, reaching, light carrying — engaging multiple muscle groups and movement planes.",
+        "keyFact": "10 minutes of tidying burns 40–60 kcal depending on intensity — equivalent to 15–20 minutes of light walking. And a clean space afterwards has a positive impact on mood and focus.",
+        "details": [
+          "NEAT from tidying includes: sustained standing, walking between rooms, bending to pick things up (light hip hinge), reaching overhead (shoulder mobility), and light carrying (arm and core muscles).",
+          "10 minutes doesn't mean cleaning the whole house: one room or one area — kitchen, bedroom, desk. Breaking it into 10-minute 'micro-tidy' sessions makes it easy to start without feeling overwhelmed.",
+          "Optimal habit stacking: tidy for 10 minutes right after dinner — this increases post-meal NEAT (reducing glucose), and creates a clean space before beginning the evening routine.",
+          "Environmental psychology: cluttered spaces increase cortisol and reduce focus (Princeton Neuroscience research). Tidying isn't just NEAT — it's an investment in the quality of evening rest.",
+          "Intensity adjustment: 'vigorous' like vacuuming and mopping = 50–60 kcal/10 min; 'light' like sorting and organising = 30–40 kcal/10 min. Both have value.",
+          "'It's movement too' is the most important mindset: erasing the boundary between 'exercise' and 'daily living'. Any activity that requires muscles is valuable movement."
+        ],
+        "points": [
+          {
+            "icon": "🧹",
+            "label": "Multiple muscle groups",
+            "note": "Standing, bending, reaching, carrying"
+          },
+          {
+            "icon": "⏱️",
+            "label": "10-min micro-tidy",
+            "note": "Easy to start, no overwhelm"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Stack after dinner",
+            "note": "NEAT + glucose reduction together"
+          },
+          {
+            "icon": "🧠",
+            "label": "Clean space = clear mind",
+            "note": "Cortisol down, focus up"
+          }
+        ]
+      },
+      {
+        "label": "Stretch while watching TV",
+        "detail": "The evening TV/screen time is an unavoidable sedentary block for most people — but it can be converted into an active recovery session without reducing enjoyment.",
+        "keyFact": "Replacing passive sitting with light stretching or yoga during 30 minutes of TV time adds 100–150 kcal of energy expenditure and 30+ minutes of flexibility work per day — without any extra time.",
+        "details": [
+          "NEAT while watching TV: seated forward folds, lying hamstring stretches, hip openers, shoulder rolls, ankle rotations — all doable on a yoga mat in front of the TV without missing anything.",
+          "Floor sitting vs sofa: switching from sofa to sitting on the floor (cross-legged, legs extended, kneeling) naturally incorporates hip and ankle mobility work that most adults have lost from prolonged chair use.",
+          "Foam roller during ads: use commercial breaks to roll out the thoracic spine, IT band, or calves. Each ad break = 2–3 minutes of self-myofascial release that reduces soreness and improves recovery.",
+          "Light bodyweight work: crunches, glute bridges, leg raises, and calf raises can all be done lying on the floor in front of the TV. Even 3 sets of 10 reps each adds meaningful muscle stimulus.",
+          "The mindset shift: instead of 'I need to watch TV', reframe as 'this is my flexibility and recovery time'. The TV becomes a reward and timer for mobility work, not a distraction from it.",
+          "Long-term benefit: 30 minutes of daily stretching/mobility work accumulates to 180+ hours per year — significantly improving joint health, posture, and injury resistance at zero time cost."
+        ],
+        "points": [
+          {
+            "icon": "📺",
+            "label": "TV → flexibility time",
+            "note": "No extra time, same enjoyment"
+          },
+          {
+            "icon": "🧘",
+            "label": "Floor sitting",
+            "note": "Passive hip and ankle mobility"
+          },
+          {
+            "icon": "🔄",
+            "label": "Foam roller during ads",
+            "note": "2–3 min self-release each break"
+          },
+          {
+            "icon": "📅",
+            "label": "180+ hours/year",
+            "note": "Of mobility work at zero time cost"
+          }
+        ]
+      }
+    ],
     "c4_heading": "Active Recovery",
     "c4_desc": "A recovery day is part of the program, not a failure. Recover through gentle action, not just lying down.",
     "c4_routine_heading": "10-Minute Recovery Routine",
@@ -15243,7 +15667,787 @@
     "d_teaser_s3": "Mind Management",
     "d_teaser_s4": "Tracking & Roadmap",
     "d0_safety_label": "Safety rule: ",
-    "d0_safety_body": "Pillar D is general health education only. If anxiety or low mood persists for weeks, severe insomnia, recurring panic attacks, or thoughts of self-harm — please seek professional support."
+    "d0_safety_body": "Pillar D is general health education only. If anxiety or low mood persists for weeks, severe insomnia, recurring panic attacks, or thoughts of self-harm — please seek professional support.",
+    "d2_tech_modals": [
+      {
+        "modalTitle": "Diaphragmatic Breathing",
+        "keyFact": "Diaphragmatic breathing is the foundation of all breathing techniques — 70% of breathing power comes from this muscle, yet most modern people have forgotten it due to chronic stress.",
+        "detail": "The diaphragm is the primary breathing muscle, located just below the lungs. When breathing correctly, the belly expands on the inhale (diaphragm descends). Most urban people breathe from the chest — using only 1/3 of lung capacity.",
+        "details": [
+          "The diaphragm handles 70–80% of breathing work at rest, but chronic stress and poor posture habits cause many people to shift to chest breathing.",
+          "Chest breathing uses only 1/3 of lung capacity, leading to mild hyperventilation — fluctuating CO₂ activates the sympathetic nervous system and creates unexplained anxiety.",
+          "Diaphragmatic breathing stimulates the vagus nerve running through the diaphragm — a direct \"highway\" that activates the parasympathetic system (rest & digest).",
+          "Just 5 minutes of diaphragmatic breathing is enough to lower heart rate by 5–10 bpm and reduce systolic blood pressure by 5–8 mmHg — measurable in controlled trials.",
+          "The diaphragm, pelvic floor, lumbar muscles, and deep abdominals work as a system — correct diaphragmatic breathing improves posture, reduces back pain, and increases spinal stability.",
+          "Quick test: place one hand on your chest, one on your belly. Inhale — if the belly hand rises more than the chest hand, you're doing it right. Most beginners find their chest hand rises more."
+        ],
+        "points": [
+          {
+            "icon": "🫁",
+            "label": "Breathing Muscle",
+            "note": "70% of daily breathing work"
+          },
+          {
+            "icon": "⚡",
+            "label": "Vagus Nerve",
+            "note": "Activates rest & digest"
+          },
+          {
+            "icon": "❤️",
+            "label": "Lowers Heart Rate",
+            "note": "5–10 bpm after 5 minutes"
+          },
+          {
+            "icon": "✅",
+            "label": "Quick Test",
+            "note": "One hand on chest, one on belly"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Box Breathing 4-4-4-4",
+        "keyFact": "Box breathing balances the autonomic nervous system with a symmetrical rhythm — the technique Navy SEALs use to maintain clear thinking in life-threatening situations.",
+        "detail": "Four equal phases (4-4-4-4) create a symmetrical \"box\" of breath. This rhythm activates high HRV (Heart Rate Variability) — a sign of a flexible and healthy nervous system.",
+        "details": [
+          "Box breathing was popularized by Mark Divine in Navy SEAL training — used to control adrenaline, reduce fear, and maintain clear thinking under extreme pressure.",
+          "The \"hold\" phase temporarily increases lung pressure, stimulating baroreceptors on the aorta, sending \"safe\" signals to the brain and reducing amygdala activity.",
+          "HRV (Heart Rate Variability) increases with regular box breathing practice. High HRV is associated with better resilience, emotional regulation, and cognitive performance.",
+          "Box breathing reduces cortisol faster than natural breathing in some RCTs because the intentional structure forces complete brain focus on the breath — no bandwidth left for anxiety.",
+          "Most effective in 3 situations: before important tasks (boost focus), when frustrated (lower reactivity threshold), and mid-day when concentration fades (cognitive reset).",
+          "The timer on this D2 page allows immediate practice: 4 rounds × 16 seconds = 64 seconds is enough to feel the clear effect — try it right after closing this modal."
+        ],
+        "points": [
+          {
+            "icon": "🎖️",
+            "label": "Navy SEALs",
+            "note": "Used in extreme stress situations"
+          },
+          {
+            "icon": "❤️",
+            "label": "Boosts HRV",
+            "note": "More flexible nervous system"
+          },
+          {
+            "icon": "🧠",
+            "label": "Cognitive Reset",
+            "note": "64 seconds = 4 complete rounds"
+          },
+          {
+            "icon": "⬜",
+            "label": "4-4-4-4",
+            "note": "Symmetry = optimal balance"
+          }
+        ]
+      },
+      {
+        "modalTitle": "4-7-8 Breathing",
+        "keyFact": "Dr. Andrew Weil's 4-7-8 breathing is called a \"natural tranquilizer\" — the 7-second hold creates a deep relaxation reflex that cannot be achieved through normal breathing.",
+        "detail": "The 1:2 ratio (inhale : exhale) is the most optimal ratio to activate the parasympathetic system. 4-7-8 pushes this ratio to the maximum (4:8) with an additional hold phase to amplify the effect.",
+        "details": [
+          "Dr. Andrew Weil (Harvard Medical School) developed the 4-7-8 technique based on pranayama yoga and HRV research. He calls it \"the single most powerful relaxation tool\" in his medical practice.",
+          "The 7-second hold temporarily increases CO₂ in the blood (mild hypercapnia), stimulating chemoreceptors in the brainstem to create a deep relaxation reflex — similar to the \"breath hold\" mechanism in freediving.",
+          "The 8-second exhale (double the inhale) activates the parasympathetic reflex more powerfully than any other ratio in autonomic nervous system research — the brain reads a long exhale as \"I am safe.\"",
+          "Particularly effective before sleep: slows heart rate, lowers blood pressure, and reduces body temperature — 3 physiological factors needed for the body to transition from waking to sleep.",
+          "Unlike box breathing (both relaxing and alerting), 4-7-8 tends toward deep relaxation — do not use before tasks requiring high concentration or driving.",
+          "Start with 3–4 rounds. If you feel dizzy (CO₂ fluctuation), reduce to a 3-5-6 ratio before practicing the full 4-7-8."
+        ],
+        "points": [
+          {
+            "icon": "🌊",
+            "label": "1:2 Ratio",
+            "note": "Optimal inhale-to-exhale ratio"
+          },
+          {
+            "icon": "💤",
+            "label": "Before Sleep",
+            "note": "Lowers heart rate & body temperature"
+          },
+          {
+            "icon": "🧬",
+            "label": "CO₂ Technique",
+            "note": "7s hold creates deep reflex"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Note",
+            "note": "Do not use before tasks requiring focus"
+          }
+        ]
+      },
+      {
+        "modalTitle": "2-Minute Reset",
+        "keyFact": "The 2-minute reset is not meditation — it is a \"pattern interrupt\" that breaks the automatic reaction chain, giving the brain 120 seconds to shift from reactive to responsive.",
+        "detail": "When overloaded, the brain is in fight-or-flight and cannot think clearly. The 2-minute reset creates a gap between stimulus and response — and in that gap you regain control.",
+        "details": [
+          "Pattern interrupt is a technique in NLP and CBT: breaking an automatic thought/behavior chain with an intentional action strong enough to shift the brain from automatic reaction to conscious awareness.",
+          "Stopping for 10 seconds without picking up the phone is the hardest step — the phone is the \"default behavior\" when the brain is tired and has nothing to do. Breaking this habit is the entire purpose of step 1.",
+          "Releasing tension in shoulders–jaw–hands targets 3 body areas that hold stress most people don't notice: shoulders tend to rise under stress, jaw clenches with anxiety, hands grip tight when tense.",
+          "The anchor phrase \"The next small step is...\" forces the brain to shift from overwhelm to action — any small action (drink water, stand up) breaks the state of paralysis.",
+          "The 2-minute reset is most effective done IMMEDIATELY when you notice the first stress signal — not after 20 minutes of being reactive. Early recognition is the key.",
+          "Unlike meditation (needs a quiet environment), the 2-minute reset works anywhere: office restroom, waiting for the elevator, between two meetings, stuck in traffic."
+        ],
+        "points": [
+          {
+            "icon": "🔄",
+            "label": "Pattern Interrupt",
+            "note": "Breaks the automatic reflex chain"
+          },
+          {
+            "icon": "💪",
+            "label": "Release Shoulders–Jaw–Hands",
+            "note": "3 areas that hold stress"
+          },
+          {
+            "icon": "🎯",
+            "label": "Anchor Phrase",
+            "note": "\"The next small step is...\""
+          },
+          {
+            "icon": "⏱️",
+            "label": "Use Anywhere",
+            "note": "No special environment needed"
+          }
+        ]
+      }
+    ],
+    "d3_mode_modals": [
+      {
+        "modalTitle": "3-Minute Meditation",
+        "keyFact": "3 minutes of meditation a day is not less than needed — it is the \"minimum viable dose\" sufficient to build a lasting habit.",
+        "detail": "Consistency matters more than duration. 3 minutes daily for 30 days is more effective than 30 minutes once a week — the brain learns through repetition, not intensity.",
+        "details": [
+          "Harvard study (Sara Lazar, 2011): 8 weeks × 27 minutes/day is enough to see structural brain changes. More recent research shows functional changes appear earlier — after a few weeks of 5–10 min/day practice.",
+          "3-minute mindfulness breath meditation activates the PFC (prefrontal cortex) — the brain region controlling attention and emotional regulation — enough to create a \"neurological imprint\" after each short session.",
+          "\"Noticing you've drifted and returning\" is the actual training REP. Each time the mind wanders and returns to the breath, the prefrontal cortex practices attention control — just like weight training for muscles.",
+          "No need for lotus position or a quiet room. Any posture keeping the back relatively straight — in a chair, on the floor, even on a bus — works equally well.",
+          "Headspace research (n > 1 million users): just 10 days × 10 minutes is enough to increase compassion by 23%, reduce aggression and improve focus — benefits continue growing with longer practice.",
+          "\"Bad\" meditation (sitting while constantly distracted) is still better than no meditation. Noticing you're distracted and returning is exactly what meditation trains — you don't need to achieve a \"completely empty\" state."
+        ],
+        "points": [
+          {
+            "icon": "🔄",
+            "label": "Every Rep Counts",
+            "note": "Wandering → returning = 1 rep"
+          },
+          {
+            "icon": "📅",
+            "label": "Consistency Over Intensity",
+            "note": "3 min/day > 30 min/week"
+          },
+          {
+            "icon": "🧠",
+            "label": "PFC Training",
+            "note": "Attention muscle being trained"
+          },
+          {
+            "icon": "✅",
+            "label": "No Need for Perfection",
+            "note": "\"Bad\" meditation is better than none"
+          }
+        ]
+      },
+      {
+        "modalTitle": "5-Minute Pre-Sleep Meditation",
+        "keyFact": "Pre-sleep body scan reduces cortisol and activates the parasympathetic system — a first-line insomnia treatment recommended by the ACP before sleep medication.",
+        "detail": "Many people experience \"wired but tired\" — the body is exhausted but the brain keeps running. A 5-minute body scan isn't meditation to \"clear the mind\" — it's a guided technique to switch off the sympathetic nervous system.",
+        "details": [
+          "Cortisol naturally decreases in the evening to allow sleep. But chronic stress or phone screens before bed keep cortisol high — body scan helps actively suppress cortisol rather than waiting for it to drop.",
+          "Body scan is the core technique in CBT-I (Cognitive Behavioral Therapy for Insomnia) — the first-line treatment for chronic insomnia recommended by the American College of Physicians, more effective than sleep medication long-term.",
+          "\"Scan from forehead → shoulders → chest → belly → legs\": focus on each body area in sequence → notice tense areas → exhale to release. This process disperses self-referential thinking (the \"worry I won't sleep\" loop).",
+          "\"Today was enough, I'll continue tomorrow\" — this self-reminder activates self-compassion and switches off the threat detection system. The brain cannot simultaneously be in threat alert and rest & digest.",
+          "In insomnia research, the body scan group fell asleep an average of 13 minutes faster and woke up during the night 2 fewer times than the control group — after 8 weeks of practice.",
+          "If still too alert: start with 4-7-8 breathing (2–3 rounds) to lower heart rate first, then transition to body scan — combining the two techniques is more effective than either alone."
+        ],
+        "points": [
+          {
+            "icon": "😴",
+            "label": "Treats Insomnia",
+            "note": "CBT-I first-line before medication"
+          },
+          {
+            "icon": "💉",
+            "label": "Lowers Cortisol",
+            "note": "Actively switches off sympathetic system"
+          },
+          {
+            "icon": "🔍",
+            "label": "Scan Each Area",
+            "note": "Forehead → shoulders → chest → belly → legs"
+          },
+          {
+            "icon": "💙",
+            "label": "Self-Compassion",
+            "note": "\"Today was enough\" switches off threat alert"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Mindful Walking",
+        "keyFact": "Mindful walking combines 2 benefits in 1: light aerobic exercise boosts BDNF + present-moment meditation reduces rumination — two of the most powerful interventions for brain health.",
+        "detail": "Many people struggle to sit still for meditation but can meditate while moving. No special place needed — an office hallway, the path from parking to home, or a supermarket all work fine.",
+        "details": [
+          "Light aerobic walking increases BDNF (Brain-Derived Neurotrophic Factor) — the brain's \"fertilizer\" that helps form new neural connections and protects the hippocampus from shrinkage due to chronic stress.",
+          "\"Feeling each footstep touching the ground\" is an effective mindfulness anchor while moving — the natural walking rhythm provides just enough stimulation to keep the brain from drifting into rumination (repetitive negative thinking).",
+          "No earphones is the key factor — listening to podcasts or music keeps the Default Mode Network (DMN) active (brain wandering to future/past). Noticing surrounding sounds activates present-moment awareness.",
+          "Observing light, trees, and sky activates the \"awe response\" — experiencing wonder/awe reduces self-focus and increases a sense of connection. Awe response is linked to reduced IL-6 (inflammation marker).",
+          "Stanford RCT: 90 minutes of nature walking reduced rumination and subgenual PFC activity (associated with depression) significantly more than urban walking of the same length.",
+          "Don't count achievements (no need for 10,000 steps, no need to track pace): mindfulness requires \"process mode\" — attending to present experience. \"Goal mode\" (counting steps) is the opposing thinking mode."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "Boosts BDNF",
+            "note": "Brain \"fertilizer\" from light aerobic activity"
+          },
+          {
+            "icon": "🎧",
+            "label": "No Earphones",
+            "note": "Present-moment awareness"
+          },
+          {
+            "icon": "🌿",
+            "label": "Awe Response",
+            "note": "Reduces rumination & inflammation"
+          },
+          {
+            "icon": "🚫",
+            "label": "Don't Count Steps",
+            "note": "Process mode, not goal mode"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Mindful Eating",
+        "keyFact": "The brain needs 20 minutes after starting to eat to receive fullness signals from the stomach — eating fast and eating while watching screens always leads to overeating before that signal arrives.",
+        "detail": "Mindful eating is not \"eat slowly for better digestion\" — it's a technique to synchronize eating behavior with the body's biological signals, addressing the root cause of emotional eating.",
+        "details": [
+          "CCK (cholecystokinin), leptin, and peptide YY — the 3 main satiety hormones — need 15–20 minutes to rise sufficiently in the blood and cross the blood-brain barrier to signal the hypothalamus \"that's enough.\" Eating fast always finishes before the signal arrives.",
+          "\"Turn off screens while eating\" reduces distracted eating — when attention is on a screen, the ability to notice fullness/hunger decreases by 30–40%. The brain processes eating and screen content competing for cognitive bandwidth.",
+          "Chewing more thoroughly (20–30 times per bite) starts digestion in the mouth — amylase in saliva breaks down starches immediately. Food chewed more thoroughly also creates earlier fullness because taste receptors are in contact longer.",
+          "\"Pause 10 seconds before taking more food\" is a pattern interrupt for automatic eating behavior — many instances of taking more food are a habit loop (see food → hand reaches out) rather than actual hunger.",
+          "Mindful eating is particularly effective for binge eating and emotional eating — two of the most common weight-related issues. Mindful eating reduces binge eating episodes by 60–70% in some RCTs.",
+          "Not every meal needs to be fully mindful — just dinner (when you have the most time and tend to eat the most) is enough to build the habit and recognize emotional eating patterns."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "20-Minute Rule",
+            "note": "Brain needs 20 min to receive fullness signal"
+          },
+          {
+            "icon": "📵",
+            "label": "Turn Off Screens",
+            "note": "Reduces fullness awareness by 30–40%"
+          },
+          {
+            "icon": "🦷",
+            "label": "Chew Thoroughly",
+            "note": "Digestion starts in the mouth"
+          },
+          {
+            "icon": "🛑",
+            "label": "Pause 10 Seconds",
+            "note": "Interrupt habit loop before taking more"
+          }
+        ]
+      }
+    ],
+    "d4_prompt_modals": [
+      {
+        "modalTitle": "What Am I Feeling Today?",
+        "keyFact": "Naming emotions (affect labeling) measurably reduces amygdala activity on fMRI — writing \"I am anxious\" changes the physiological state of the brain, not just self-soothing.",
+        "detail": "The simplest but most important question. Many people only feel \"tired\" or \"frustrated\" without knowing exactly what they are feeling. Accurate recognition is the first step to processing — you can't solve what you haven't seen.",
+        "details": [
+          "Research by Lieberman et al. (UCLA, 2007): labeling emotions with language activates the prefrontal cortex while simultaneously reducing amygdala activity measurable on fMRI — a physical change in the brain, not just \"feeling better.\"",
+          "Emotional granularity — the ability to distinguish subtle emotions (anxiety vs. fear; sadness vs. disappointment) — is linked to better mental health and higher emotional regulation capacity, according to Lisa Feldman Barrett.",
+          "Writing about difficult emotions for just 3–4 days × 15–20 minutes is enough to improve mood and reduce anxiety for many weeks afterward — the effect is documented even without a therapist or guidance.",
+          "When only \"thinking\" in the head, the brain is prone to rumination (repetitive thought loops) — writing creates \"distance\" between you and your emotions, helping you observe rather than be swept away.",
+          "No need to name it \"correctly\" — even writing \"I don't know what I'm feeling, just feel heavy\" begins activating the cognitive-emotional processing process in the brain.",
+          "Daily practice increases emotional vocabulary — the more words you have to describe emotions, the more \"tools\" the brain has to handle difficult situations in flexible ways."
+        ],
+        "points": [
+          {
+            "icon": "🏷️",
+            "label": "Affect Labeling",
+            "note": "Naming = amygdala calms down"
+          },
+          {
+            "icon": "🔬",
+            "label": "Brain Change",
+            "note": "Measurable on fMRI"
+          },
+          {
+            "icon": "🔍",
+            "label": "Clarity",
+            "note": "Can't solve what you haven't seen"
+          },
+          {
+            "icon": "📏",
+            "label": "Distance",
+            "note": "Observe rather than be swept away"
+          }
+        ]
+      },
+      {
+        "modalTitle": "What Is Stressing Me Most?",
+        "keyFact": "The brain defaults to magnifying severity when worrying in the head — writing it down forces the brain to make stress concrete and often self-discovers the problem isn't as big as imagined.",
+        "detail": "Cognitive offloading: the brain uses much energy to \"hold\" unresolved things in working memory. Writing them out frees that energy and forces the problem to become concrete — vague is scary, concrete is solvable.",
+        "details": [
+          "Zeigarnik effect: the brain prioritizes holding unfinished things in memory — creating \"open loops\" that continuously consume cognitive bandwidth. Writing closes that loop, the brain no longer needs to hold it and energy is freed.",
+          "James Pennebaker (UT Austin, 1986–2010s): expressive writing about the main stressor measurably reduces cortisol, improves the immune system, and reduces sick days — effects are strongest when writing about specific sources of stress.",
+          "Writing \"what's stressing me most\" forces the brain to shift from diffuse worry (vague anxiety) to focused problem (specific issue) — diffuse worry can't be solved, focused problems can be acted upon.",
+          "After identifying the main source of stress, the brain can categorize: controllable / uncontrollable. Only act on the controllable part, release the rest.",
+          "Many people discover \"what stresses them most\" is not a deadline or work, but a relationship or an unmade decision — this insight doesn't emerge when only worrying in the head.",
+          "Regular writing about stress helps recognize patterns: what type of situation consistently stresses you most? Recognizing the pattern is the first step to changing how you respond to it."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "Cognitive Offload",
+            "note": "Frees working memory"
+          },
+          {
+            "icon": "🎯",
+            "label": "Make It Concrete",
+            "note": "Vague is scary, concrete is solvable"
+          },
+          {
+            "icon": "🔄",
+            "label": "Zeigarnik Effect",
+            "note": "Writing closes the \"open loop\""
+          },
+          {
+            "icon": "🗺️",
+            "label": "Recognize Patterns",
+            "note": "Recognize to change your response"
+          }
+        ]
+      },
+      {
+        "modalTitle": "What Did I Do Well Today?",
+        "keyFact": "The brain has a natural negativity bias — remembering bad things 3–5 times more than good. Actively noting small good things daily is direct \"counter-training\" for this bias.",
+        "detail": "Not self-praise or self-satisfaction. This is a statistical adjustment technique — the brain automatically remembers more negative things. Writing at least 1 good thing daily rebalances that ratio over time.",
+        "details": [
+          "Negativity bias (Roy Baumeister et al.): the brain processes negative information more deeply and remembers it longer than positive information — an evolutionary mechanism to avoid danger, but in modern life creates an overly negative self-narrative.",
+          "Barbara Fredrickson (Broaden-and-Build Theory): positive emotions expand thinking and build long-term resources — the opposite of negative emotions that narrow focus to survival.",
+          "Recognizing \"small things done well\" matters more than waiting for \"big achievements\" — the brain needs small, regular dopamine hits from small progress to maintain motivation and a sense of agency (control over one's life).",
+          "Self-efficacy (Bandura): recognizing that you accomplished something small increases confidence in your ability to do harder things — accumulating evidence for the picture \"I am someone who can.\"",
+          "Writing \"even if small\" turns off perfectionism standards — accepting small progress as worthy of noting, reducing all-or-nothing thinking (\"today wasn't perfect so nothing counts\").",
+          "Research by Martin Seligman: writing \"3 good things each day + why\" for 1 week improved happiness and reduced depressive symptoms — the effect lasted 6 months after stopping the exercise."
+        ],
+        "points": [
+          {
+            "icon": "⚖️",
+            "label": "Counter-Training",
+            "note": "Balances the natural negativity bias"
+          },
+          {
+            "icon": "✨",
+            "label": "Small Still Matters",
+            "note": "Brain needs dopamine from small progress"
+          },
+          {
+            "icon": "💪",
+            "label": "Self-Efficacy",
+            "note": "Accumulate evidence \"I can\""
+          },
+          {
+            "icon": "😊",
+            "label": "Seligman 3-Good",
+            "note": "Improves mood for 6 months"
+          }
+        ]
+      },
+      {
+        "modalTitle": "What's the 1 Thing I Need to Do Tomorrow?",
+        "keyFact": "Implementation intention (\"When I do X, I will do Y\") increases goal completion rates 2–3 times — but only works when the goal is specific enough and there is only 1 goal.",
+        "detail": "Identifying 1 important task the night before creates a \"pre-commitment\" — the brain already has a clear plan and doesn't need to decide in the morning when willpower is at its lowest. Eliminates decision fatigue and procrastination at the start of the day.",
+        "details": [
+          "Peter Gollwitzer (NYU): implementation intention — \"When I do X, I will do Y\" — increases goal completion from ~22% to 62–91% depending on the study. Mechanism: creates automatic triggers in the brain, no willpower needed each time.",
+          "Decision fatigue: every decision consumes glucose and willpower. The morning brain hasn't fully recovered — deciding the night before on the most important task is smart willpower management.",
+          "\"1 important task\" resists the multi-tasking illusion — research consistently shows multi-tasking reduces productivity by 20–40%. The brain can only truly focus on 1 thing at a time.",
+          "Choosing \"the most important task\" forces prioritization — distinguishing between urgent (pressing) and important. Most urgent things aren't important; the most important things are usually not urgent but create long-term results.",
+          "If you don't achieve that 1 task, it's still easy to adjust — knowing clearly what you intended to do and didn't is easier to return to than having a list of 10 vague things not knowing where to start.",
+          "Combine with \"next small step\" (GTD mindset by David Allen): break \"the important task\" into the first specific action — not \"write a report\" but \"open the report file and write the first sentence.\""
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "Implementation Intention",
+            "note": "Increases completion 2–3 times"
+          },
+          {
+            "icon": "⚡",
+            "label": "Save Willpower",
+            "note": "Decide at night, not morning"
+          },
+          {
+            "icon": "1️⃣",
+            "label": "Only 1 Task",
+            "note": "Multi-tasking reduces 20–40% productivity"
+          },
+          {
+            "icon": "🔑",
+            "label": "Important vs Urgent",
+            "note": "Important ≠ pressing"
+          }
+        ]
+      },
+      {
+        "modalTitle": "One Kind Sentence for Myself",
+        "keyFact": "Self-compassion increases the ability to try again and persist after failure — the opposite of concerns that self-compassion makes people lazier.",
+        "detail": "A kind sentence to yourself is not praise or pride — it is acknowledging that you are trying under real conditions, and that is enough. The mechanism is similar to talking to a friend who is struggling.",
+        "details": [
+          "Kristen Neff (UT Austin): self-compassion has 3 components — self-kindness, common humanity (recognizing that suffering is part of human experience), mindfulness (non-judgmental awareness). All three working together create the effect.",
+          "Self-compassion is NOT self-pity. Self-pity focuses on the self; self-compassion recognizes that everyone struggles — creating connection instead of isolation.",
+          "Counterintuitively: people who practice self-compassion have higher accountability and find it easier to admit mistakes than self-critical people — because they're not afraid to face failure, they can look at problems more directly.",
+          "Lower cortisol and higher oxytocin when practicing self-compassion — oxytocin (the connection hormone) is stimulated when treating yourself with warmth similar to receiving care from others.",
+          "A kind sentence should be \"realistic enough\" — not \"I am wonderful\" (the brain knows it's wrong and rejects it). Correct example: \"Today was hard, but I kept trying\" or \"I'm good enough to keep going tomorrow.\"",
+          "Daily practice changes long-term self-talk patterns — people who talk to themselves in a kind voice have significantly higher resilience after failure according to longitudinal research data."
+        ],
+        "points": [
+          {
+            "icon": "💙",
+            "label": "Self-Compassion",
+            "note": "Increases persistence after failure"
+          },
+          {
+            "icon": "🔬",
+            "label": "Oxytocin",
+            "note": "Connection hormone when treating self warmly"
+          },
+          {
+            "icon": "🎯",
+            "label": "Accountability",
+            "note": "Easier to admit mistakes than self-criticism"
+          },
+          {
+            "icon": "🔄",
+            "label": "Self-Talk",
+            "note": "Changes long-term patterns"
+          }
+        ]
+      }
+    ],
+    "d5_level_modals": [
+      {
+        "modalTitle": "Level 1 – Starter Detox",
+        "keyFact": "Blue light from phones suppresses melatonin by up to 23% and delays sleep time an average of 1.5 hours — just turning off screens 20 minutes before bed leads to deeper sleep on the very first night.",
+        "detail": "4 small changes in Level 1 target exactly 4 common \"leak points\": morning (opening social media right on waking), throughout the day (constant notifications), in bed (phone by the pillow), and evening (bright screens before sleep).",
+        "details": [
+          "Blue light (460–480nm) from screens stimulates ipRGC cells in the retina, suppressing melatonin from the pineal gland. Harvard Medical School: 2 hours of screens before bed reduces melatonin by 23% and delays sleep by 1.5 hours.",
+          "Opening your phone in the first 10 minutes after waking puts the brain into \"reactive mode\" — processing notifications, news, comments. Morning cortisol (cortisol awakening response) is already at its daily peak; adding self-comparison from social media increases stress at the start of the day.",
+          "Constant notifications fragment concentration (cognitive fragmentation) — Gloria Mark (UC Irvine): it takes an average of 23 minutes for the brain to return to deep focus after each interrupt. 10 notifications/day = losing 3–4 hours of potential focus.",
+          "Having a phone in bed has 2 harms: light from late-night scrolling suppresses melatonin, and the proximity effect — just knowing the phone is there increases arousal and reduces sleep quality (Ward et al. 2017).",
+          "4 Level 1 changes don't require high willpower — just changing the physical environment: phone out of the bedroom, turn off notifications in Settings, use an alarm clock instead of your phone.",
+          "Level 1 typically creates effects within the first week: deeper sleep (because melatonin isn't suppressed), more proactive mornings (not reactive), and reduced \"phone anxiety\" when away from the phone."
+        ],
+        "points": [
+          {
+            "icon": "😴",
+            "label": "Melatonin",
+            "note": "Turn off screens 20 min → deeper sleep"
+          },
+          {
+            "icon": "🌅",
+            "label": "Proactive Morning",
+            "note": "Not reactive from the start of the day"
+          },
+          {
+            "icon": "🔕",
+            "label": "Notifications",
+            "note": "Turn off = +3–4h focus/day"
+          },
+          {
+            "icon": "🛏️",
+            "label": "Bedroom",
+            "note": "Keep phone in another room"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Level 2 – Standard Detox",
+        "keyFact": "Social media feeds are designed on \"variable reward\" principles — the same mechanism as slot machines, activating dopamine in random cycles. Just 30 minutes without social media in the morning is enough to keep the brain from being in reactive mode all day.",
+        "detail": "Level 2 addresses the root cause: the brain is being \"exploited\" by the attention economy. It's not your fault you can't stop scrolling — it's intentional design. Level 2 creates space so the brain isn't in a constantly reactive state.",
+        "details": [
+          "Variable reward schedule (B.F. Skinner): random rewards (scrolling down without knowing what you'll see) activate dopamine more strongly than fixed rewards. Social media feeds apply this exact mechanism — designed by engineers who know the impact.",
+          "Tristan Harris (former Google engineer, \"The Social Dilemma\"): every \"Like\" or \"Comment\" notification is held and released in cycles to create maximum dopamine burst — not accidental.",
+          "\"30 minutes without social media at the start of the day\" creates \"cognitive white space\" — the brain isn't in threat detection and comparison mode right from waking. Start the day on your own agenda, not someone else's.",
+          "Eating without a phone has 2 benefits: (1) the brain receives fullness signals better when not distracted (mindful eating), (2) prevents associating \"eating = screen\" — eliminating the trigger for mindless scrolling while eating.",
+          "\"10 minutes of empty space\" during the day allows the Default Mode Network (DMN) to operate — DMN needs \"task-free\" time to process memories, solve problems implicitly, and reduce accumulated cognitive overload.",
+          "30 minutes before bed without scrolling feeds helps the brain transition from processing social information (stimulating) to winding down — beyond the melatonin effect, it also reduces the \"comparison loop\" and FOMO before sleep."
+        ],
+        "points": [
+          {
+            "icon": "🎰",
+            "label": "Variable Reward",
+            "note": "Slot machine mechanism in the app"
+          },
+          {
+            "icon": "🌅",
+            "label": "Different Morning",
+            "note": "30 min without social = your own agenda"
+          },
+          {
+            "icon": "🧠",
+            "label": "DMN Rest",
+            "note": "10 min empty = brain processes implicitly"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Eat Without Screen",
+            "note": "Better fullness signal recognition"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Level 3 – Advanced Detox",
+        "keyFact": "The Default Mode Network (DMN) needs \"empty\" time to process memories, creativity, and emotions. Constant screens prevent DMN from working — losing creativity, reducing long-term memory, and increasing a sense of emptiness despite being busy.",
+        "detail": "Level 3 is not extreme — it's restoring long-term cognitive bandwidth. Deep work, creativity, and real feelings of connection all require the brain to be screen-free long enough for DMN and the parasympathetic nervous system to work.",
+        "details": [
+          "Default Mode Network (Buckner & DiNicola, 2019): the brain network that activates when \"doing nothing\" — actually processing memories, imagining the future, processing emotions, and empathy. Constant screens don't let DMN enter this state.",
+          "Cal Newport (\"Deep Work\"): cognitively demanding work requires 90–120 uninterrupted minutes to reach flow state. One screen-free evening per week trains the ability to focus deeply for the whole week.",
+          "Walking without earphones or phone combines light aerobic exercise (BDNF) + DMN activation + present-moment awareness — 3 parallel brain benefits in the same 10–15 minutes, unachievable while wearing earphones.",
+          "Csikszentmihalyi (Flow): the \"flow state\" — highest productivity and happiness — requires just-right challenge and no interrupts. \"Deep life\" on weekends (cooking, reading, family) is a natural environment that creates flow.",
+          "Stanford RCT (Bratman et al., 2015): 90 minutes of nature walking reduced rumination and subgenual PFC activity (linked to depression) significantly more than urban walking — no need for wilderness, a park is enough.",
+          "Moving addictive apps off the home screen reduces consumption by 80% without willpower — according to internal data from some apps. Small friction (needing to search in a folder) is enough to break automatic behavior."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "DMN Recovery",
+            "note": "Creativity & memory need idle time"
+          },
+          {
+            "icon": "🌊",
+            "label": "Flow State",
+            "note": "Deep work 90 min uninterrupted"
+          },
+          {
+            "icon": "🌿",
+            "label": "Nature",
+            "note": "Reduces rumination and stress"
+          },
+          {
+            "icon": "📱",
+            "label": "Friction Design",
+            "note": "App on screen 2 = 80% less scrolling"
+          }
+        ]
+      }
+    ],
+    "d6_habit_modals": [
+      {
+        "modalTitle": "Stressed → Breathe for 1 Minute",
+        "keyFact": "1 minute of diaphragmatic breathing is enough to lower heart rate by 5–8 bpm and measurably reduce cortisol — short enough that there is no reason not to do it right when stressed.",
+        "detail": "Breathing is the only tool that controls the autonomic nervous system consciously. When stressed, the brain is in fight-or-flight and cannot think clearly. 1 minute of slow breathing activates the parasympathetic system enough to change state.",
+        "details": [
+          "The parasympathetic system (rest & digest) activates when breathing slowly through the vagus nerve mechanism — the vagal nerve running from the brain through the diaphragm sends \"safe\" signals to the brainstem in 30–60 seconds.",
+          "Research by Zaccaro et al. (2018): slow breathing at 6 breaths/minute (10 seconds/breath) creates the highest HRV — a nervous system flexibility index linked to better emotional control and stress recovery.",
+          "Simplest technique: inhale for 4 seconds, exhale for 6–8 seconds. The longer exhale than inhale is the key — activating baroreceptors on the aorta, sending \"lower rate\" signals to the brain.",
+          "\"1 minute\" is not an arbitrary number — just 4–5 deep breaths (about 60 seconds at 1 breath per 12–15 seconds) is enough for cortisol to start decreasing in controlled studies with salivary measurement.",
+          "1 minute breathing is most effective done IMMEDIATELY when you notice the first stress signal — not after 30 minutes of being reactive. Stiff shoulders, shallow breathing, fast heart rate are the signals — that's the moment.",
+          "Works anywhere: office restroom, elevator, stuck in traffic, between two meetings. No quiet environment needed. This is why \"1 minute breathing\" is more effective than \"20 minute meditation\" when busy — friction is nearly zero."
+        ],
+        "points": [
+          {
+            "icon": "⚡",
+            "label": "Vagus Nerve",
+            "note": "Activates rest & digest in 60s"
+          },
+          {
+            "icon": "❤️",
+            "label": "Lowers Heart Rate",
+            "note": "5–8 bpm after 4–5 deep breaths"
+          },
+          {
+            "icon": "⏱️",
+            "label": "1 Minute",
+            "note": "Enough for cortisol to start decreasing"
+          },
+          {
+            "icon": "📍",
+            "label": "Use Anywhere",
+            "note": "No special environment needed"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Overloaded → Brain Dump 5 Lines",
+        "keyFact": "The brain can't process the current task well when still \"holding\" an unfinished task list in working memory — writing out 5 lines frees brain RAM for what you're doing.",
+        "detail": "Cognitive overload isn't from too many tasks — it's because the brain is trying to hold too many things at once. Working memory has a limit of ~7 units. When full, the brain can't process more and the feeling of \"paralysis\" appears.",
+        "details": [
+          "Working memory has a limit of ~7 ± 2 \"chunks\" according to Miller (1956). When overflow, the brain can't add new information or process effectively — causing feelings of overwhelm and paralysis.",
+          "Zeigarnik effect: the brain prioritizes \"holding\" unfinished things over completed things — open tasks continuously consume working memory, even when you're working on something else.",
+          "\"Brain dump 5 lines\" = GTD (Getting Things Done, David Allen) minimalist version: write everything out of your head. Brain doesn't need to hold it → working memory freed → better focus on 1 current task.",
+          "No need for 5 perfect or structured lines. Write anything occupying \"space\" in your head: things to do, worries, things waiting on others, random ideas. The brain doesn't care about format.",
+          "After writing, simple categorization: \"do now\" / \"schedule later\" / \"waiting for others\" / \"let go — can't control.\" This categorization prevents the brain from continuing to hold things it can't act on.",
+          "\"5 lines\" is enough for most everyday overload — no need for a 2-page brain dump. Research on note-taking: shorter is often more effective because it reduces the cognitive load of the writing process itself."
+        ],
+        "points": [
+          {
+            "icon": "💾",
+            "label": "Free RAM",
+            "note": "Working memory has a limit of ~7 chunks"
+          },
+          {
+            "icon": "🔄",
+            "label": "Zeigarnik Effect",
+            "note": "Brain holds unfinished things — writing closes the loop"
+          },
+          {
+            "icon": "✍️",
+            "label": "5 Lines",
+            "note": "Minimal GTD, no structure needed"
+          },
+          {
+            "icon": "🗂️",
+            "label": "Categorize",
+            "note": "Do / Schedule / Wait / Let go"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Before Sleep → Turn Off Screens",
+        "keyFact": "20 minutes without screens before bed is enough for cortisol to start decreasing and melatonin to start rising — the two physiological conditions needed for deep sleep and full recovery.",
+        "detail": "Sleep is when the brain \"does maintenance\" — processing memories, removing neural waste (glymphatic system), and resetting emotions. Screens before bed don't just delay sleep time but also reduce sleep quality even when you've slept enough hours.",
+        "details": [
+          "Blue light from screens stimulates ipRGC cells in the retina, suppressing melatonin from the pineal gland. Harvard: 2 hours of screens before bed reduces melatonin by 23% and delays sleep an average of 1.5 hours.",
+          "Cortisol needs to drop to a low threshold for the brain to enter a sleep-ready state. Scrolling feeds activates social comparison and FOMO — both increase cortisol and keep the sympathetic nervous system active.",
+          "The glymphatic system — the brain's cleaning system — operates mainly during deep sleep (slow-wave sleep). Amyloid beta and tau proteins (linked to Alzheimer's) are removed during this phase. Chronic poor sleep accumulates these waste products.",
+          "REM sleep — the emotional processing phase — is shortened when sleeping late due to screens. Less REM → less emotionally stable the next day, more reactive, and reduced empathy capacity (Walker, \"Why We Sleep\").",
+          "Effective replacement habits: reading a paper book (warm light, no blue light), listening to soft music, body scan, or journaling 5 lines — any activity without a screen creates conditions for melatonin to rise.",
+          "\"10–20 minutes\" is the minimum threshold — research on pre-sleep routines shows behavioral changes before bed only need 10–15 minutes to start showing clear effects in the first week."
+        ],
+        "points": [
+          {
+            "icon": "🌙",
+            "label": "Melatonin",
+            "note": "Rises after 20 min without screens"
+          },
+          {
+            "icon": "🧹",
+            "label": "Glymphatic",
+            "note": "Brain cleans waste during deep sleep"
+          },
+          {
+            "icon": "😊",
+            "label": "REM Sleep",
+            "note": "Processes emotions for the next day"
+          },
+          {
+            "icon": "📖",
+            "label": "Replace With",
+            "note": "Paper book, journal, body scan"
+          }
+        ]
+      },
+      {
+        "modalTitle": "After Failure → Write 1 Comeback Sentence",
+        "keyFact": "People who practice self-compassion after failure have higher rates of trying again than those who self-criticize — paradoxically, being kind to yourself creates higher accountability, not lower.",
+        "detail": "\"Write 1 comeback sentence\" breaks the rumination loop and shifts the brain from threat mode (self-blame, self-judgment) to action mode (next smallest step). Not self-comforting — it's the most effective way to recover.",
+        "details": [
+          "James Clear (\"Atomic Habits\"): the rule \"never miss twice in a row\" is more realistic than \"never miss.\" After a fail day, the smallest action the next day maintains the identity of \"someone who practices\" — that identity matters more than the streak.",
+          "Self-criticism after failure activates more cortisol and threat response — the brain enters a defensive state, not a learning state. Research by Neff et al.: self-criticism increases the probability of abandoning the goal, not increasing motivation.",
+          "Kristen Neff (UT Austin): self-compassion after failure — not self-pity but acknowledging \"this is hard and I am trying\" — increases accountability and the rate of trying again in longitudinal data.",
+          "\"Writing 1 sentence\" is more concrete than \"forgiving yourself\" — the brain needs a specific action, not a vague emotion. Correct example: \"Yesterday I skipped training. Tonight I'll train for 10 minutes.\" One sentence is enough to shift from rumination to intention.",
+          "Growth mindset (Carol Dweck): failure is data, not a conclusion about the person. \"I don't know how yet\" instead of \"I can't.\" 1 comeback sentence is how to practice growth mindset in 10 seconds.",
+          "Habit identity repair: after a day without meditation, writing \"Tomorrow I'll meditate for 3 minutes\" maintains the narrative \"I am someone who meditates\" — this identity matters more than a consecutive streak according to habit formation research."
+        ],
+        "points": [
+          {
+            "icon": "🔄",
+            "label": "Never Miss Twice",
+            "note": "James Clear's rule"
+          },
+          {
+            "icon": "💙",
+            "label": "Self-Compassion",
+            "note": "Increases try-again rate, doesn't reduce it"
+          },
+          {
+            "icon": "✍️",
+            "label": "1 Concrete Sentence",
+            "note": "Action > vague emotion"
+          },
+          {
+            "icon": "🌱",
+            "label": "Identity Repair",
+            "note": "Maintain the narrative about yourself"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Want to Snack → Pause 10 Seconds",
+        "keyFact": "80% of the time we feel \"hungry\" shortly after a meal is actually stress, boredom, or habit — not real hunger. A 10-second check distinguishes the two and breaks the automatic behavior.",
+        "detail": "Emotional snacking isn't a lack of willpower — it's a neural loop reinforced over years: uncomfortable emotion → seek food → short dopamine → temporary relief → loop repeats. 10 seconds creates a gap to break that loop.",
+        "details": [
+          "Sugar and fat activate the nucleus accumbens (the brain's reward center), creating a short dopamine burst. But blood sugar spikes then crashes quickly 30–60 minutes later, lowering mood further and creating the next craving — a self-reinforcing loop.",
+          "Distinguishing real hunger vs. emotional hunger: real hunger appears gradually, any food is appealing, comes with physical sensations (stomach growling). Emotional hunger appears suddenly, wants something specific (sweet/crunchy/fatty), usually after an emotional trigger.",
+          "The 10-second pause is a \"pattern interrupt\" — breaking the automatic cue → routine chain with a conscious gap. Asking \"Am I hungry or tired?\" forces the prefrontal cortex to participate instead of letting the amygdala run on autopilot.",
+          "A replacement menu is more effective than pure willpower: once you determine it's stress/tiredness (not real hunger), replace with 5 slow breaths, drinking water, going outside for 2 minutes, or writing 1 sentence about the current emotion. The brain needs a behavior replacement, not a gap.",
+          "Mindful eating research: pausing before taking more food reduces binge eating by 60–70% in some RCTs — you don't need to not eat, just create a conscious pause before continuing.",
+          "Long-term: a diary noting snacking triggers (situation, emotion) helps recognize patterns — what type of situation triggers emotional eating? Recognizing the pattern is the first step to changing the cue rather than just fighting the craving."
+        ],
+        "points": [
+          {
+            "icon": "🔍",
+            "label": "Real vs Emotional Hunger",
+            "note": "Sudden + specific = emotional"
+          },
+          {
+            "icon": "⏸️",
+            "label": "Pattern Interrupt",
+            "note": "10s breaks the automatic chain"
+          },
+          {
+            "icon": "🔄",
+            "label": "Replace",
+            "note": "Different behavior, don't leave a gap"
+          },
+          {
+            "icon": "📊",
+            "label": "Recognize Patterns",
+            "note": "Note triggers to change the cue"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Lost Motivation → Do 2 Minutes",
+        "keyFact": "Motivation doesn't come before action — it comes AFTER you've started. 2 minutes is a low enough threshold that the brain doesn't resist but sufficient to activate momentum and often naturally extends to more.",
+        "detail": "\"Do the minimum 2 minutes\" is not a real workout — it's a way to trick the brain's activation energy. Neuroscience: once a behavior has begun, there's no real reason to stop after exactly 2 minutes.",
+        "details": [
+          "Activation energy: the brain needs energy to start a new behavior, especially when motivation is low. \"2 minutes\" reduces activation energy to nearly zero — no one truly \"doesn't have 2 minutes.\" Low friction = high start rate.",
+          "James Clear (\"Atomic Habits\"): \"2-minute rule\" — shrink any habit to its 2-minute version to start. \"Go to the gym\" → \"put on gym clothes.\" \"Read a book\" → \"open the book and read 1 page.\" The goal is to start, not to finish.",
+          "Reverse Zeigarnik effect: once you've started a task, the brain creates an \"open loop\" wanting to complete — stopping early creates cognitive dissonance. In practice, 70–80% of people who \"do 2 minutes\" continue longer after having started.",
+          "Motivation follows action, not the other way around — this is one of the most consistent findings in behavioral psychology. Waiting for inspiration to start is backward causation. Start first, inspiration comes after.",
+          "Identity anchoring: \"Exercising for 2 minutes\" still maintains the identity of \"someone who exercises\" — more important than the actual number of minutes. Identity is built through repeated actions, however small. \"I am someone who exercises daily\" > \"I train 30 minutes.\"",
+          "BJ Fogg (Stanford, \"Tiny Habits\"): the smallest possible habit creates an emotional win — each completion however brief creates small dopamine, reinforcing the habit loop. Celebrate immediately afterward so the brain learns faster."
+        ],
+        "points": [
+          {
+            "icon": "⚡",
+            "label": "Activation Energy",
+            "note": "2 min = threshold brain won't resist"
+          },
+          {
+            "icon": "🌊",
+            "label": "Momentum",
+            "note": "70–80% continue after starting"
+          },
+          {
+            "icon": "🎭",
+            "label": "Motivation Follows",
+            "note": "Action first, inspiration after"
+          },
+          {
+            "icon": "🏷️",
+            "label": "Identity",
+            "note": "Small still maintains identity"
+          }
+        ]
+      }
+    ]
   },
   "pillarE": {
     "id": "e",
@@ -21836,6 +23040,430 @@
               "Week 7–12: personalize & optimize"
             ],
             "cta": "View roadmap →"
+          }
+        ]
+      }
+    ],
+    "meal_items": [
+      {
+        "meal": "Breakfast",
+        "formula": "Protein + good carbs + fruit/veg",
+        "eg": "Eggs + oats + banana",
+        "keyFact": "A protein-rich breakfast (≥20g) reduces hunger throughout the day and stabilises blood sugar. Columbia University study: skipping breakfast increases cardiovascular disease risk by 27%.",
+        "details": [
+          "Breakfast protein is the top priority: eggs (6g/egg), Greek yoghurt (15–20g/tub), tofu, fresh cheese. Keeps you full until lunch and helps manage morning cortisol.",
+          "Choose complex carbs for breakfast: oats, wholemeal bread, sweet potato. Avoid pastries and high-sugar cereals — they spike blood sugar and cause a 10 am energy crash.",
+          "Fruit in the morning is ideal: natural sugars + fibre + vitamins. Banana for quick energy, apple for lasting fullness, berries for strong antioxidants.",
+          "Drink 1–2 glasses of water before breakfast — after 7–8 hours of sleep the body is dehydrated. Drinking before eating aids digestion and prevents overeating.",
+          "No time? 3 quick options: fried/boiled eggs + banana (5 min), yoghurt + fruit (2 min), protein smoothie + oats (3 min blender).",
+          "Best timing: 30–60 minutes after waking, aligned with peak morning cortisol (8–9 am). Don't eat while still half-asleep — wait until fully awake."
+        ],
+        "points": [
+          {
+            "icon": "🥚",
+            "label": "Prioritise Protein",
+            "note": "≥20g protein — lasting fullness, less hunger all day"
+          },
+          {
+            "icon": "🌾",
+            "label": "Complex Carbs",
+            "note": "Oats / wholemeal bread — no sudden blood sugar spike"
+          },
+          {
+            "icon": "🍌",
+            "label": "Fresh Fruit",
+            "note": "Fibre + vitamins — best in the morning"
+          },
+          {
+            "icon": "💧",
+            "label": "Water First",
+            "note": "Hydrate after 7–8h without drinking — improves digestion"
+          }
+        ]
+      },
+      {
+        "meal": "Lunch",
+        "formula": "½ veg + ¼ protein + ¼ carbs",
+        "eg": "Rice + fish + steamed vegetables",
+        "keyFact": "A balanced lunch following the Harvard Plate (½ veg + ¼ protein + ¼ carbs) sustains stable energy in the afternoon. A carb-heavy lunch reduces work performance by 15–20% within 2 hours.",
+        "details": [
+          "½ plate veg/soup is the foundation: stir-fried veg, vegetable soup, salad — no limit. Fibre slows digestion, stabilises blood sugar, and builds a healthy gut.",
+          "¼ plate protein: fish (best), chicken breast, lean meat, eggs, tofu. Lunch is when the body absorbs protein most efficiently — don't skip the protein source.",
+          "¼ plate carbs: white rice, vermicelli, noodles are all fine — just keep it at ¼ instead of ½ or more. Brown rice or sweet potato is better but not mandatory.",
+          "Broth/soup is a bonus: provides water, electrolytes, and water-soluble micronutrients. The Vietnamese tradition of having soup with every meal is very scientifically sound.",
+          "Avoid: lunch with no clear protein, deep-fried foods (heavy afternoon digestion), skipping lunch (raises cortisol, stronger hunger in the evening).",
+          "Meal-prep lunch: cook once for 2–3 days. Rice + protein + veg keeps 3 days in the fridge. Reheat in the morning and add fresh veg if desired."
+        ],
+        "points": [
+          {
+            "icon": "🥦",
+            "label": "½ Plate Is Veg",
+            "note": "No limit — the more veg the better"
+          },
+          {
+            "icon": "🐟",
+            "label": "¼ Plate Protein",
+            "note": "Fish is ideal — omega-3 good for afternoon brain"
+          },
+          {
+            "icon": "🍚",
+            "label": "¼ Plate Carbs",
+            "note": "Keep the ratio — not restricting, just balancing"
+          },
+          {
+            "icon": "🍵",
+            "label": "Soup Is a Bonus",
+            "note": "Hydration + micronutrients — very scientific Vietnamese tradition"
+          }
+        ]
+      },
+      {
+        "meal": "Snack",
+        "formula": "Light protein or fruit",
+        "eg": "Yoghurt + fruit",
+        "keyFact": "A healthy snack (100–200 kcal) sustains stable energy for 3–4 hours after lunch, preventing the 4–5 pm hunger that often leads to unhealthy snacking.",
+        "details": [
+          "Ideal timing: 2.5–3 hours after lunch (usually 3–4 pm). This is when blood sugar starts to drop, the brain needs glucose, and cravings for sweets or coffee arise.",
+          "Best options: Greek yoghurt (high protein + probiotics), fresh fruit (banana/apple/orange), a small handful of nuts (almonds/walnuts), fresh cheese, boiled egg.",
+          "Snacks to avoid: pastries, packaged snacks, fried foods, soft drinks, instant noodles — these cause a rapid blood sugar spike then crash, leaving you more tired than before.",
+          "Right size: 100–200 kcal, not a full meal. If not truly hungry (empty stomach, not just mouth craving) — you can skip.",
+          "Drink water before deciding to snack: 20% of \"hunger\" is actually thirst. Drink a glass of water, wait 10 minutes — only eat if still hungry.",
+          "For people who train: afternoon snack can be a light pre-workout if exercising 5–7 pm. Banana + protein (yoghurt/shake) 60–90 minutes before training."
+        ],
+        "points": [
+          {
+            "icon": "⏰",
+            "label": "Right Timing",
+            "note": "3–4 pm — prevents extreme hunger leading to overeating at dinner"
+          },
+          {
+            "icon": "🥛",
+            "label": "Yoghurt Is Ideal",
+            "note": "Protein + probiotics + calcium in one choice"
+          },
+          {
+            "icon": "💧",
+            "label": "Water First",
+            "note": "20% of \"hunger\" is actually thirst — try water for 10 min first"
+          },
+          {
+            "icon": "🥜",
+            "label": "Small Nuts Are Good",
+            "note": "Almonds / walnuts — healthy fat + protein + lasting fullness"
+          }
+        ]
+      },
+      {
+        "meal": "Dinner",
+        "formula": "Protein + plenty of veg + moderate carbs",
+        "eg": "Chicken/fish + salad + sweet potato",
+        "keyFact": "Dinner determines sleep quality and recovery. Eating too full, too late (after 9 pm), or with lots of refined carbs raises blood sugar during sleep — affecting growth hormone secretion at 11 pm–1 am.",
+        "details": [
+          "Dinner protein is important for overnight recovery: the body synthesises and repairs tissue during sleep. Salmon, chicken breast, eggs, tofu — easier to digest than red meat in the evening.",
+          "More veg the better: salads, steamed veg, vegetable soup — provide fibre and micronutrients without many calories. Plenty of veg at dinner aids overnight digestion.",
+          "Evening carbs: halve compared to lunch but no need to cut completely. Sweet potato is better than white rice in the evening (lower GI, higher fibre).",
+          "Dinner timing: ideally 6–7:30 pm, finishing at least 2–3 hours before sleep. Eating late → stomach active during sleep → poor sleep, acid reflux.",
+          "Avoid: excess alcohol (suppresses REM sleep), heavily fried food (hard to digest), excess refined sugar and carbs (raises blood sugar during sleep).",
+          "After-dinner walk: 10–15 minutes of light walking after dinner reduces post-meal blood sugar by 25–30% — no intense exercise needed, just gentle movement."
+        ],
+        "points": [
+          {
+            "icon": "🕕",
+            "label": "Eat Before 8 pm",
+            "note": "Finish 2–3h before sleep — good for sleep and digestion"
+          },
+          {
+            "icon": "🥗",
+            "label": "Veg Is Priority",
+            "note": "No limit — fibre + micronutrients, low calorie"
+          },
+          {
+            "icon": "🍠",
+            "label": "Sweet Potato Better",
+            "note": "Lower GI than white rice — stable blood sugar during sleep"
+          },
+          {
+            "icon": "🚶",
+            "label": "10–15 Min Walk",
+            "note": "After eating — lowers blood sugar 25–30% without heavy exercise"
+          }
+        ]
+      },
+      {
+        "meal": "Post-workout",
+        "formula": "Fast protein + easy-digest carbs",
+        "eg": "Milk/whey + banana",
+        "keyFact": "In the \"anabolic window\" 30–60 minutes after training: protein maximises muscle synthesis, fast carbs replenish glycogen. Skipping post-workout nutrition = wasting up to 50% of the session's benefits.",
+        "details": [
+          "\"Anabolic window\": 30–60 minutes after training is when muscles are most sensitive to insulin and protein. Muscle protein synthesis peaks in this window.",
+          "Post-workout protein: 20–40g is sufficient. Whey absorbs fastest (15–20 min), followed by eggs, fresh milk, Greek yoghurt, chicken breast. What matters is having protein.",
+          "Post-workout carbs: banana, white bread, white rice, fruit juice — simple/fast carbs to replenish glycogen. This is one of the rare times fast carbs are needed.",
+          "Water and electrolytes: replace lost sweat (~500 ml/hour of training). Add a pinch of salt or sports drink if training longer than 60 minutes with heavy sweating.",
+          "No post-workout meal needed if: workout < 30 light minutes, eating a main meal within 2 hours of training, or goal is strict calorie deficit for fat loss.",
+          "Beware of \"compensating\" after training: many people eat more than they burned. Post-workout nutrition is for recovery — not a reward for unrestricted eating."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "Within 30–60 Min",
+            "note": "Anabolic window — peak muscle synthesis in this window"
+          },
+          {
+            "icon": "🥛",
+            "label": "Protein 20–40g",
+            "note": "Whey/eggs/milk — fast absorption, suitable post-training"
+          },
+          {
+            "icon": "🍌",
+            "label": "Fast Carbs OK",
+            "note": "Banana / white rice — replenish glycogen right after training"
+          },
+          {
+            "icon": "💧",
+            "label": "Rehydrate",
+            "note": "~500 ml/hour training — prioritise water before food"
+          }
+        ]
+      }
+    ],
+    "nutri_log_items": [
+      {
+        "label": "Enough protein?",
+        "keyFact": "Protein is the only macronutrient the body cannot store — it must be replenished evenly through each meal. 20–30g protein per meal is the optimal threshold for muscle synthesis, lasting fullness, and stable blood sugar.",
+        "details": [
+          "Each main meal should include a clear protein source: chicken breast (~25g/100g), salmon (~20g/100g), eggs (~6g/egg), beef (~25g/100g), firm tofu (~8g/100g), lentils (~9g/100g).",
+          "Protein keeps you full longer due to the highest thermic effect — the body burns 20–30% of protein calories just to digest it. Supports natural weight management without counting calories.",
+          "Spread evenly across 3 meals is better than loading up at dinner: the body absorbs and uses protein more effectively for muscle synthesis and recovery (protein timing research).",
+          "Plant and animal protein are both valuable. Combining 2 plant sources (rice + legumes) gives a complete amino acid profile equivalent to meat — no need for meat at every meal.",
+          "Signs of protein deficiency: persistent fatigue, weak hair and nails, slow wound healing, sweet cravings after meals (body seeking quick energy as substitute).",
+          "Simple rule: look at your plate — if there is no clear protein source, add 1 egg or 1 Greek yoghurt. Easiest change, immediate impact."
+        ],
+        "points": [
+          {
+            "icon": "🥚",
+            "label": "20–30g / Meal",
+            "note": "Optimal threshold for muscle synthesis and lasting fullness"
+          },
+          {
+            "icon": "🐟",
+            "label": "Diverse Sources",
+            "note": "Meat/fish/eggs/legumes — rotate for complete amino acids"
+          },
+          {
+            "icon": "⏰",
+            "label": "Spread Across 3 Meals",
+            "note": "Don't load dinner — better absorption and use"
+          },
+          {
+            "icon": "💪",
+            "label": "Preserve Muscle",
+            "note": "Important after 30 — muscle auto-degrades ~1%/year"
+          }
+        ]
+      },
+      {
+        "label": "Enough veg?",
+        "keyFact": "WHO recommends ≥5 servings (400g) of fruit and vegetables per day. Each additional serving reduces cardiovascular risk by 4% and cancer risk by 3% (analysis of 95 studies, 2019). 2 servings is a realistic starting threshold.",
+        "details": [
+          "1 serving = 1 cupped hand (~80g): 1 banana, 1 handful of greens, 3 tablespoons of cooked veg, 1 small bowl of salad. No need to weigh — estimate with your own hand.",
+          "Colours = different micronutrients: red (lycopene - heart), orange/yellow (beta-carotene - eyes), dark green (chlorophyll - liver), purple (anthocyanin - brain), white (allicin - immunity).",
+          "Raw and cooked veg have different benefits. Combining both throughout the day is ideal — no need to be complicated, just vary colours and preparation methods.",
+          "Fibre from fruit and veg feeds beneficial gut bacteria (prebiotics), lowers LDL, slows sugar absorption, and creates lasting fullness. No supplement can replace real veg.",
+          "Easiest tip: add 1 handful of veg to any meal; fruit as a snack; morning veg/fruit smoothie (5 minutes, no complex preparation).",
+          "Frozen veg is not inferior nutritionally — often frozen right after harvest when nutrients are at their peak. More convenient and less wasteful than fresh."
+        ],
+        "points": [
+          {
+            "icon": "🥦",
+            "label": "1 Cupped Hand = 1 Serving",
+            "note": "~80g — estimate with your own hand, no need to weigh"
+          },
+          {
+            "icon": "🌈",
+            "label": "Eat a Rainbow",
+            "note": "Each colour = different phytochemicals protecting health"
+          },
+          {
+            "icon": "🦠",
+            "label": "Feed the Gut",
+            "note": "Fibre feeds beneficial bacteria — supplements can't replace it"
+          },
+          {
+            "icon": "❄️",
+            "label": "Frozen Is Fine",
+            "note": "Nutrition equal to fresh — convenient and less wasteful"
+          }
+        ]
+      },
+      {
+        "label": "Enough water?",
+        "keyFact": "Losing just 1–2% of body weight in water reduces cognitive performance by 10–15% and physical performance by 20–30%. Thirst is a sign of mild dehydration — don't wait until thirsty.",
+        "details": [
+          "Personal formula: body weight (kg) × 35 ml = daily baseline. 60 kg → 2,100 ml; 70 kg → 2,450 ml; 80 kg → 2,800 ml. Add ~500 ml/hour of intense exercise or hot weather.",
+          "Plain water is best. Unsweetened green tea, moderate coffee, and soup also count. Sweetened drinks and sugary juice do NOT count — they contain empty calories and hydrate poorly.",
+          "Spread evenly: 1 glass on waking, 1 glass before each meal, 1 glass every 2 hours while working, 1 small glass before bed (not too much to avoid waking at night).",
+          "Urine colour is the best measure: pale yellow like straw = adequate. Dark yellow or orange = drink more immediately. Clear = possibly drinking too much.",
+          "Drinking too much (>4 L/day for low-activity people) can cause hyponatraemia — rare but dangerous. The goal is to drink ENOUGH, not as much as possible.",
+          "Needs increase when: fever (+500 ml), high salt/protein intake, many hours in air conditioning (dry air), pregnancy (+300 ml), high-intensity training."
+        ],
+        "points": [
+          {
+            "icon": "📐",
+            "label": "Personal Formula",
+            "note": "Weight (kg) × 35 ml = your specific goal"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Check Urine Colour",
+            "note": "Pale yellow = adequate. Dark yellow = drink more immediately"
+          },
+          {
+            "icon": "⏰",
+            "label": "Spread Through the Day",
+            "note": "Drinking all at once is less effective — kidneys process ~1 L/hour"
+          },
+          {
+            "icon": "🚫",
+            "label": "Don't Wait for Thirst",
+            "note": "Thirst = already mildly dehydrated — drink before thirsty"
+          }
+        ]
+      },
+      {
+        "label": "Less sugar?",
+        "keyFact": "WHO recommends free sugars < 10% of total daily calories (~50g for 2000 kcal), ideally < 5% (~25g). The average Vietnamese person consumes 46g of sugar/day — near the maximum limit.",
+        "details": [
+          "Free sugars include: sugars added to food (cane sugar, honey, syrup), soft drinks, packaged fruit juice, and processed products. Does not include natural sugars in whole fruit.",
+          "1 can of soft drink (~40g sugar) already nearly hits the daily recommended limit. Bubble tea, sweet coffee, pastries, instant noodles — hidden sugar in most processed foods.",
+          "Sugar causes addiction via a dopamine mechanism similar to some stimulants — the brain receives an immediate reward signal, leading to craving more sugar after each intake.",
+          "Gradually reducing sugar is more effective than cutting abruptly: replace progressively — less sweet tea → unsweetened, soft drink → sparkling water → plain water. Taste adapts in 2–4 weeks.",
+          "Fresh fruit has natural sugars but comes with fibre and micronutrients — no need to restrict like free sugar. Fibre slows absorption, preventing sudden blood sugar spikes.",
+          "Food labels: look for \"added sugars\" — different from \"total sugars\" which includes natural sugars. Hidden names: glucose, fructose, corn syrup, maltose, dextrose."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "<25g / Day Is Ideal",
+            "note": "WHO: under 5% of total calories — about 6 teaspoons"
+          },
+          {
+            "icon": "🥤",
+            "label": "Soft Drinks Are the Biggest Source",
+            "note": "1 can = ~40g — nearly the whole day's limit"
+          },
+          {
+            "icon": "🧠",
+            "label": "Sugar Causes More Cravings",
+            "note": "Dopamine mechanism — brain wants more after each intake"
+          },
+          {
+            "icon": "🍊",
+            "label": "Whole Fruit Not Counted",
+            "note": "Accompanying fibre prevents sudden blood sugar spike"
+          }
+        ]
+      }
+    ],
+    "lifestyle_items": [
+      {
+        "label": "Last night's sleep",
+        "keyFact": "Sleeping 7–9 hours is not just rest — the brain is \"maintaining the system\": clearing amyloid-beta toxins (Alzheimer's risk), consolidating memory, regenerating growth hormone and immune cells.",
+        "details": [
+          "7–9 hours is the National Sleep Foundation recommendation for adults. Under 6 hours continuously for 2 weeks = cognitive performance equivalent to being awake for 24 hours straight.",
+          "REM phase (20–25% of total sleep, mainly after 5–6h): the brain processes emotions, consolidates long-term memory, creates creative connections. Cutting sleep short = losing REM.",
+          "One week of sufficient sleep: testosterone rises as if 10 years younger (men); cortisol drops 15%; leptin (fullness hormone) rises, ghrelin (hunger hormone) falls — naturally supports weight control.",
+          "Sleep debt cannot be fully repaid by weekend catch-up sleep. Catching up 1–2 hours helps, but doesn't fully restore cognitive performance and hormones affected during the week.",
+          "Quality matters more than hours: 7 hours of uninterrupted sleep is better than 9 hours of fitful sleep. Assess by feeling alert 15–20 minutes after waking.",
+          "Room temperature 18–20°C is the most impactful environmental factor. The body needs to lower core temperature ~1°C to enter deep sleep — a cool room supports this process effectively."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "7–9 Hours Is Standard",
+            "note": "<6 hours = performance like being awake 24h straight"
+          },
+          {
+            "icon": "🌙",
+            "label": "REM Is Key",
+            "note": "Appears after 5–6h — cutting sleep short means losing REM"
+          },
+          {
+            "icon": "💉",
+            "label": "Hormones Regenerate",
+            "note": "GH, testosterone, leptin recover during deep sleep"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Cool Room 18–20°C",
+            "note": "The most impactful environmental factor for sleep quality"
+          }
+        ]
+      },
+      {
+        "label": "Steps today",
+        "keyFact": "JAMA 2019 study on 16,000 people: every additional 1,000 steps reduces early mortality risk by 15%. Benefits increase up to 7,500 steps/day — then plateau. You don't need 10,000 for benefits.",
+        "details": [
+          "10,000 steps/day is a marketing figure from a 1965 Japanese pedometer — no specific scientific basis. Modern research shows optimal benefits at 7,000–8,000 steps/day.",
+          "NEAT (Non-Exercise Activity Thermogenesis): non-exercise activities — walking, standing, fidgeting — account for 15–50% of total daily calories burned. Increasing NEAT is more effective than 1 hour of gym followed by sitting all day.",
+          "Danger threshold: under 5,000 steps/day correlates with increased risk of type 2 diabetes, cardiovascular disease, and early mortality. This is the threshold to cross first.",
+          "Walking 10–15 minutes after a meal: reduces post-meal blood sugar by 25–30%, improves insulin sensitivity, reduces the heavy and sleepy feeling after eating. Most effective within 30 minutes of eating.",
+          "Step hacks: park 200m further, take stairs instead of elevator, walk while on phone calls, get off the bus 1–2 stops early. Easy to add 2,000–3,000 steps without changing your schedule.",
+          "Intensity also matters: brisk walking (>100 steps/min, >5 km/h) is better than slow walking for the same number of steps. Able to talk but slightly breathless = ideal intensity."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "7,000–8,000 Is Enough",
+            "note": "10,000 is marketing — optimal benefits at 7–8k"
+          },
+          {
+            "icon": "🔥",
+            "label": "NEAT Matters",
+            "note": "Daily movement burns more calories than you think"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Walk After Meals",
+            "note": "10–15 min after eating — lowers blood sugar 25–30%"
+          },
+          {
+            "icon": "⚡",
+            "label": "Faster Is Better",
+            "note": ">100 steps/min = light cardio zone, more effective"
+          }
+        ]
+      },
+      {
+        "label": "Energy level",
+        "keyFact": "Energy is a composite indicator reflecting sleep quality, nutrition, hydration, stress, and movement. Persistently low energy (≤5/10 for more than 3 consecutive days) is a signal to adjust the system.",
+        "details": [
+          "Most common causes: sleep deprivation (fastest compounding), mild dehydration (just 1–2% already reduces performance by 20%), skipping breakfast, low protein intake, and prolonged sitting without movement.",
+          "Natural energy cycle (ultradian rhythm): every ~90–120 minutes there is 1 cycle of high focus → lower energy → short rest → recovery. Working with this cycle is more effective.",
+          "\"2:30 pm slump\": due to blood sugar dropping after lunch combined with circadian rhythm. Fix: walk 10 min + drink water + natural light — no need for coffee or sweets.",
+          "Exercise boosts energy immediately: 10–20 minutes of moderate training raises norepinephrine and dopamine, lasting 2–4 hours. The opposite of feeling more tired, which many people worry about before training.",
+          "Meditation/breathing for 5 minutes recovers faster than caffeine: activates the parasympathetic nervous system in 60–90 seconds, reduces cortisol, increases focus without a later crash.",
+          "Track patterns: note which days have high/low energy and relate to sleep, food, movement, stress. After 2–3 weeks patterns become clear enough to optimise."
+        ],
+        "points": [
+          {
+            "icon": "😴",
+            "label": "Sleep Is Fastest",
+            "note": "Sleep deprivation = most common cause of low energy"
+          },
+          {
+            "icon": "💧",
+            "label": "Check Hydration",
+            "note": "1–2% dehydration drops performance 20% — drink now"
+          },
+          {
+            "icon": "🏃",
+            "label": "Exercise = More Energy",
+            "note": "10–20 min light training — norepinephrine lasts 2–4h"
+          },
+          {
+            "icon": "📊",
+            "label": "Track Patterns",
+            "note": "2–3 weeks of notes → clear cause of low energy"
           }
         ]
       }

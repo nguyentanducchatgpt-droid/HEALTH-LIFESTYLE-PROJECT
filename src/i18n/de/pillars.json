@@ -6525,6 +6525,430 @@
     "c3_desc": "NEAT umfasst alle Bewegungen außerhalb des Trainings: Gehen, Aufstehen, Hausarbeit. Für vielbeschäftigte Menschen ist NEAT genauso wichtig wie Gym-Einheiten.",
     "c3_levels_heading": "Schrittziele nach Level",
     "c3_ideas_heading": "Ideen zur Steigerung von NEAT",
+    "c3_neat_checklist": [
+      {
+        "label": "Nach jedem 45–60 Minuten Sitzen aufstehen",
+        "detail": "Kontinuierliches Sitzen über 60 Minuten unterdrückt das fetverbrennende Enzym LPL — schon 2 Minuten Aufstehen pro Stunde reichen aus, um den größten Teil des Schadens rückgängig zu machen.",
+        "keyFact": "Nach 60 Minuten Sitzen sinkt die Lipoproteinlipase (LPL) — das wichtigste Fettverbrennungsenzym in Muskeln — um 90%. Aufstehen und sich 2 Minuten bewegen aktiviert LPL innerhalb von Sekunden wieder.",
+        "details": [
+          "Biologischer Mechanismus: Sitzen hält die Beinmuskeln inaktiv und verlängert den 'Aus'-Zustand der LPL. Dies ist unabhängig vom Fitnessniveau — selbst regelmäßige Sportler sind betroffen, wenn sie danach lange sitzen.",
+          "Die 45–60-Minuten-Regel (nicht 90 Minuten): Levines Forschung 2009 zeigt, dass negative Effekte nach 60 Minuten messbar werden. 45 Minuten ist eine sicherere Präventionsschwelle.",
+          "Nur 2 Minuten reichen: kein langes Dehnen oder Training erforderlich — einfach aufstehen, ein paar Schritte gehen oder 2 Minuten stehen bleiben reicht aus, um LPL zu reaktivieren.",
+          "Erinnerungshilfen: 50-Minuten-Timer stellen (Pomodoro + Aufstehen) oder eine Steh-Erinnerungs-App nutzen. Manche stellen ein kleines Glas Wasser (200ml) auf, um häufiger aufstehen zu müssen.",
+          "Ein Stehpult reicht nicht: ruhiges Stehen ist auch schlimmer als abwechselndes Sitzen-Stehen. Beides wird benötigt: Haltungswechsel UND kleine Bewegungen im Stehen.",
+          "Besonders wichtig nach Mahlzeiten: sofortiges Sitzen nach dem Essen verlängert den Glukose- und Insulinpeak. 10 Minuten Stehen oder leichtes Gehen nach dem Mittagessen verbessert die Insulinsensitivität am Nachmittag."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "45–50 Min Timer",
+            "note": "Pomodoro kombiniert mit Aufstehen"
+          },
+          {
+            "icon": "💧",
+            "label": "Kleines Wasserglas",
+            "note": "Erzwingt natürliche Stehpausen"
+          },
+          {
+            "icon": "🔄",
+            "label": "Sitzen ↔ Stehen",
+            "note": "Abwechslung schlägt Stehpult allein"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Nach Mahlzeiten stehen",
+            "note": "10 Min = 15–20 Min separates Gehen"
+          }
+        ]
+      },
+      {
+        "label": "Nach mindestens 1 Mahlzeit gehen",
+        "detail": "Gehen nach einer Mahlzeit ist eine der effektivsten NEAT-Maßnahmen: reduziert Blutzuckerspitzen, erhöht die Insulinsensitivität und verbessert die Verdauung — nur 10–15 Minuten.",
+        "keyFact": "10 Minuten Gehen nach dem Essen senkt den Blutzuckerpeak um durchschnittlich 30–50% im Vergleich zum Sitzen — wirksamer als 30 Minuten separates Gehen weit von der Mahlzeit entfernt.",
+        "details": [
+          "Mechanismus: In den 30–90 Minuten nach dem Essen strömt Glukose aus der Verdauung ins Blut. Aktive Muskeln (Gehen) nehmen Glukose direkt über GLUT-4-Transporter ohne Insulin auf — mechanische Glukoseaufnahme.",
+          "Nur 10 Minuten nötig: ein gemütliches Gehtempo (kein Schnellgehen) ist ausreichend. Der Zeitpunkt ist entscheidend — innerhalb von 30 Minuten nach dem Essen, während der Blutzucker noch ansteigt.",
+          "Post-Mittagessen-Gehen hat Kaskadeneffekt: senkt den Nachmittags-Glukoseabfall, der Schläfrigkeit verursacht, und hilft, nachmittags ohne Koffein wach zu bleiben.",
+          "Welche Mahlzeit wählen: Spaziergang nach dem Abendessen ist am leichtesten in die Routine zu integrieren und hat den größten Effekt auf die nächtliche Stoffwechselgesundheit.",
+          "Kombinierbar mit Achtsamkeit: Gehen ohne Telefon, Fokus auf Atmung und Umgebung — doppelter Nutzen: Glukosekontrolle und mentale Entspannung.",
+          "Langfristig: Menschen, die regelmäßig nach Mahlzeiten gehen, haben deutlich niedrigere HbA1c-Werte als jene, die die gleiche Gesamtstrecke zu anderen Zeiten zurücklegen."
+        ],
+        "points": [
+          {
+            "icon": "🍽️",
+            "label": "Innerhalb 30 Min nach dem Essen",
+            "note": "Während der Blutzucker noch steigt"
+          },
+          {
+            "icon": "⏱️",
+            "label": "Nur 10 Minuten",
+            "note": "Gemütliches Tempo reicht"
+          },
+          {
+            "icon": "📉",
+            "label": "30–50% niedrigerer Glukosepeak",
+            "note": "Effektiver als separates Gehen"
+          },
+          {
+            "icon": "😴",
+            "label": "Reduktion Nachmittagstief",
+            "note": "Koffeinfreis Wachbleiben"
+          }
+        ]
+      },
+      {
+        "label": "Persönliches Schrittziel erreichen",
+        "detail": "Ein persönliches Tagesschrittziel verwandelt Bewegung in ein messbares Spiel — Forschung zeigt, dass ein konkretes Ziel die täglichen Schritte um 26% steigert.",
+        "keyFact": "7.000–8.000 Schritte pro Tag ist der wissenschaftlich validierte Bereich für Langlebigkeitsvorteile — Vorteile plateauieren oberhalb von 10.000 Schritten bei den meisten Erwachsenen.",
+        "details": [
+          "Der 10.000-Schritte-Mythos: Diese Zahl stammt aus einer japanischen Marketingkampagne der 1960er Jahre, nicht aus der Wissenschaft. Meta-Analysen zeigen, dass das Sterberisiko bis 7.000–8.000 Schritte stark sinkt, dann abflacht.",
+          "NEAT-Schritte vs. Trainingsschritte: Die meisten täglichen Schritte entstehen durch beiläufige Bewegung (NEAT). Formelles Training fügt Schritte hinzu, aber NEAT-Schritte sind für die Stoffwechselgesundheit entscheidender.",
+          "Baseline personalisieren: bei aktuell 3.000 Schritten/Tag ist ein Ziel von 10.000 entmutigend. Mit +2.000 vom Ausgangswert beginnen und alle 2 Wochen 500 Schritte steigern.",
+          "Tracking-Tools: Smartphone-Gesundheits-Apps erfassen Schritte automatisch. Smartwatches ergänzen mit Herzfrequenz und aktiven Minuten.",
+          "Gehtempo wichtig: zügiges Gehen (>100 Schritte/Min, ca. 5 km/h) hat zusätzliche kardiovaskuläre Vorteile. Schon 10 Minuten zügiges Gehen täglich machen einen Unterschied.",
+          "Streak-Psychologie: das Schrittziel 7 Tage in Folge zu erreichen, hat eine stärkere Verhaltensreinforcement-Wirkung als ein einzelner Hochschritttag."
+        ],
+        "points": [
+          {
+            "icon": "👣",
+            "label": "7.000–8.000 Schritte",
+            "note": "Wissenschaftlich fundiertes Ziel"
+          },
+          {
+            "icon": "📱",
+            "label": "Automatisch tracken",
+            "note": "Smartphone-Gesundheits-App"
+          },
+          {
+            "icon": "🔄",
+            "label": "+2.000 vom Ausgangswert",
+            "note": "Nachhaltige Steigerung"
+          },
+          {
+            "icon": "⚡",
+            "label": "Zügiges Tempo als Bonus",
+            "note": ">100 Schritte/Min für Herzgesundheit"
+          }
+        ]
+      },
+      {
+        "label": "1–2 kurze Bewegungspausen während der Arbeitszeit",
+        "detail": "Geplante Mikropausen von 2–5 Minuten am Arbeitstag addieren sich zu bedeutsamen NEAT-Leistungen und unterbrechen das Sitzmuster, das Büroarbeit schafft.",
+        "keyFact": "2 geplante Bewegungspausen von je 5 Minuten an einem 8-Stunden-Arbeitstag ergeben — bei konsequenter Durchführung 5 Tage/Woche — über 43 zusätzliche Stunden Bewegung pro Jahr.",
+        "details": [
+          "Mikropausen-Optionen: 10 Kniebeugen, Wadenheben am Schreibtisch, Schulterrollen, kurzer Gang zum Wasserspender oder 2 Minuten Dehnen — alles zählt. Der Schlüssel ist Aufstehen und Haltung wechseln.",
+          "Kognitive Vorteile: eine 5-minütige Bewegungspause verbessert Aufmerksamkeit und Arbeitsgedächtnis für die nächsten 20–30 Minuten — effektiver als Social-Media-Checken als 'Erholung'.",
+          "Planungsstrategie: Pausen in bestehende Cues einbauen (nach jedem Videoanruf, vor dem Mittagessen, nach dem Absenden eines Berichts). Bewegung an bestehende Gewohnheiten knüpfen.",
+          "Sichtbarer Hinweis: Widerstandsbänder, eine kleine Schaumstoffrolle oder eine Erinnerungskarte auf dem Schreibtisch platzieren. Visuelle Cues lösen die Gewohnheit ohne Gedächtnis aus.",
+          "Soziale Normalisierung: wenn Kollegen Wadenheben oder Dehnen sehen, normalisiert sich das Verhalten. Manche Teams etablieren gemeinsame 'Bewegungspausen'.",
+          "Nicht ums Fitness-Training — ums Muster unterbrechen: das Ziel ist nicht kardiovaskuläres Training. Es geht darum, den Stoffwechselschaden des langen Sitzens zu unterbrechen."
+        ],
+        "points": [
+          {
+            "icon": "🔔",
+            "label": "Nach jedem Videoanruf",
+            "note": "Bestehender Cue als Auslöser"
+          },
+          {
+            "icon": "🧠",
+            "label": "Fokus +20–30 Min",
+            "note": "Kognitive Vorteile nach Bewegung"
+          },
+          {
+            "icon": "💪",
+            "label": "10 Kniebeugen oder Wadenheben",
+            "note": "Kein Platz, kein Equipment nötig"
+          },
+          {
+            "icon": "📅",
+            "label": "43+ Extra-Stunden/Jahr",
+            "note": "Aus 2 × 5 Min Pausen täglich"
+          }
+        ]
+      }
+    ],
+    "c3_ideas": [
+      {
+        "label": "Treppen statt Aufzug für 1–2 Stockwerke",
+        "detail": "Treppen sind eine der einfachsten und effektivsten NEAT-Maßnahmen — Schritte und Steigen kombiniert erhöhen die Herzfrequenz und verbrennen 3× mehr Kalorien als ebenes Gehen.",
+        "keyFact": "2 Minuten Treppensteigen verbrennt in relativen Energiebegriffen das Äquivalent von 15–20 Minuten leichtem Gehen — und reicht, um die Herzfrequenz in die leichte Kardiozone zu bringen.",
+        "details": [
+          "Treppen verbrennen ca. 8–11 kcal/Minute (vs. 3–4 kcal/Minute beim ebenen Gehen) — 2–3× mehr Kalorien in derselben Zeit durch die auf Gesäß, Oberschenkel und Waden ausgeübte Kraft.",
+          "1–2 Stockwerke ist die Schwelle, die kein Schwitzen verursacht und keine nennenswerte Zeit kostet. Kein Kleidungswechsel, keine Sportschuhe nötig — einfach einen Knopf früher aus dem Aufzug steigen.",
+          "Kumulativeffekt: 4 Treppenfahrten à 2 Stockwerke täglich = ~5–8 Minuten Treppensteigen/Tag = ~150–200 Extra-kcal/Woche aus einer einfachen Gewohnheit. Nach einem Jahr: ~8.000 kcal oder fast 1 kg Fett.",
+          "Kardiorespiratorische Fitness: Forschung zeigt, dass regelmäßiges Treppensteigen VO2max und Oberschenkelkraft bei bewegungsarmen Personen verbessert — gleichwertig mit einem leichten Kardio-Programm.",
+          "Psychologie: keine separate 'Trainingszeit' nötig — das ist Bewegung, die in den Alltag integriert ist. Kein Gefühl 'trainieren zu müssen'.",
+          "Klein anfangen: wenn das Büro in der 10. Etage ist, bis Etage 8 fahren und 2 Stockwerke steigen. Keine Notwendigkeit, sofort alles zu ersteigen — wöchentlich ein Stockwerk mehr."
+        ],
+        "points": [
+          {
+            "icon": "🔥",
+            "label": "8–11 kcal/Min",
+            "note": "2–3× mehr als ebenes Gehen"
+          },
+          {
+            "icon": "🏗️",
+            "label": "1–2 Stockwerke",
+            "note": "Kein Schwitzen, kein Zeitverlust"
+          },
+          {
+            "icon": "📈",
+            "label": "VO2max verbessert sich",
+            "note": "Leichtes Kardio im Alltag"
+          },
+          {
+            "icon": "🗓️",
+            "label": "~1 kg/Jahr",
+            "note": "Aus 4 Treppenfahrten täglich"
+          }
+        ]
+      },
+      {
+        "label": "Auto weiter weg parken beim Pendeln",
+        "detail": "200–300m weiter parken schafft 400–600 Extra-Schritte täglich (Hin- und Rückweg) — kaum mehr Zeit und fast 'kostenlose' NEAT.",
+        "keyFact": "300m weiter parken auf jeder Seite = 600 Extra-Schritte × 5 Tage = 3.000 Schritte/Woche = ~156.000 Schritte/Jahr — entspricht 75 km Extra-Gehen ohne 'Training'.",
+        "details": [
+          "300m weiter dauert nur 3–4 Minuten — die meisten erleben das nicht als 'Sport', sondern einfach als Weg zur Arbeit. Das ist das Wesen von NEAT: in den Alltag integrierte Bewegung.",
+          "Gewohnheitspsychologie: wenn die Entscheidung 'weiter parken' einmal pro Morgen getroffen wird, braucht es täglich keine Überlegung. Klarer Habit-Cue (Ankunft → weiter parken) unterstützt Langzeiteinhaltung.",
+          "Morgenlichtvorteil: Outdoor-Gehen am Morgen erhöht NEAT und liefert natürliches Licht zur Resynchronisation der circadianen Uhr — zwei Vorteile aus einer Entscheidung.",
+          "Varianten: Bus/Bahn eine Haltestelle früher verlassen, im obersten Parkdeck parken (Extra-Treppensteigen), oder vom Haus zur Parkstelle gehen statt bis zum Eingang fahren.",
+          "Bei Regen/Hitze: trotzdem weiter parken, aber schneller gehen — 3 Minuten zügiges Gehen hat NEAT-Wert und ist besser als nichts. Regenschirm oder Mütze im Auto bereithalten.",
+          "Kombiniert mit Treppen: weiter parken + 2 Stockwerke Treppen täglich = ~700–800 Extra-Schritte + Mini-Kardio-Boost jeden Morgen. Zwei kleine Gewohnheiten, synergistischer Effekt."
+        ],
+        "points": [
+          {
+            "icon": "📍",
+            "label": "300m weiter = 600 Schritte",
+            "note": "Hin- und Rückweg fast kostenlos"
+          },
+          {
+            "icon": "☀️",
+            "label": "Morgenlicht",
+            "note": "NEAT + circadianer Vorteil zusammen"
+          },
+          {
+            "icon": "🧠",
+            "label": "Einmal-Entscheidung",
+            "note": "Kein täglicher Willensaufwand"
+          },
+          {
+            "icon": "📅",
+            "label": "75 km/Jahr",
+            "note": "Aus einer 3–4 Min Morgengewohnheit"
+          }
+        ]
+      },
+      {
+        "label": "Telefonate im Stehen oder Gehen führen",
+        "detail": "Telefonate sind eine völlig kostenlose Bewegungsmöglichkeit — kein Bildschirmblick nötig, einfach Ohrhörer einsetzen und aufstehen.",
+        "keyFact": "Menschen, die regelmäßig bei Telefonaten stehen oder gehen, verbrennen durchschnittlich 300–500 kcal/Tag mehr als sitzende Personen — allein durch diese eine Änderung.",
+        "details": [
+          "Warum Telefonate eine goldene Gelegenheit sind: beim Telefonieren schaut man nicht auf den Bildschirm, die Hände müssen nicht tippen — man kann umherlaufen, ohne die Gesprächsqualität zu beeinträchtigen.",
+          "Gehen vs. Stehen: Gehen ist besser als ruhiges Stehen, weil es mehr Schritte generiert, mehr Muskeln aktiviert, die Hirndurchblutung für klareres Denken erhöht und tatsächlich Zuhören und Informationsgedächtnis verbessert.",
+          "Stanford-2014-Walking-Meetings-Forschung: Gehen während des Brainstormings steigert kreatives Denken um 81% im Vergleich zum Sitzen — Apple, Facebook und Twitter haben Walking-1:1-Kulturen.",
+          "Praktische Einrichtung: kabellose Ohrhörer neben dem Telefon aufladen — wenn ein Anruf kommt, einstecken und als automatischen Reflex aufstehen. Keine zusätzlichen Entscheidungen nötig.",
+          "Zu Hause: im Wohnzimmer umherlaufen, auf den Balkon gehen oder in der Nähe eines Fensters stehen. Kein großer Raum nötig — 10m² reichen für 50–100 Schritte in einem 5-Minuten-Gespräch.",
+          "Kognitive Vorteile: leichtes Stehen und Bewegen während des Gesprächs erhöht die Hirndurchblutung, hilft klarer zu denken und schneller zu reagieren — man kommuniziert auch besser."
+        ],
+        "points": [
+          {
+            "icon": "🎧",
+            "label": "Kabellose Ohrhörer",
+            "note": "Neben Telefon lagern — automatisieren"
+          },
+          {
+            "icon": "🧠",
+            "label": "+81% Kreativität",
+            "note": "Walking Brainstorm (Stanford 2014)"
+          },
+          {
+            "icon": "🚶",
+            "label": "Gehen > Stehen",
+            "note": "Mehr Muskeln, besseres Denken"
+          },
+          {
+            "icon": "⚡",
+            "label": "300–500 kcal/Tag",
+            "note": "Aus Stehen/Gehen bei Anrufen"
+          }
+        ]
+      },
+      {
+        "label": "Kurze Meetings als Spaziergangs-Meetings",
+        "detail": "Walking Meetings sind ein in moderner Unternehmenskultur wachsendes Format — geeignet für 1:1s, Brainstorming und informelles Feedback ohne Bildschirm.",
+        "keyFact": "Steh-Meetings reduzieren die durchschnittliche Meetingdauer um 25%, und Walking Meetings erhöhen Fokus und Energieniveau der Teilnehmer im Vergleich zu sitzenden Meetings.",
+        "details": [
+          "Am besten geeignet für: 1:1-Catchups, kurze Check-ins, informelles Feedback, Ideenfindung und tägliche Standups. Nicht geeignet für: Präsentationen, Vertragsunterzeichnungen, komplexes Protokollieren.",
+          "Psychologischer Vorteil: offener Raum und physische Bewegung durchbrechen die 'Machtdynamik' eines traditionellen Besprechungsraums — Menschen sind offener und ehrlicher, wenn sie nebeneinander gehen statt sich gegenüberzusitzen.",
+          "Vorschlag: 'Sollen wir beim Reden ums Gebäude gehen?' oder einfach 'Walking Meeting?' — mehr Menschen sind bereit, als man denkt, besonders bei informellen Treffen.",
+          "Draußen vs. drinnen: Outdoor-Gehen ergänzt Vorteile von natürlichem Licht und frischer Luft — aber drinnen (Flur, Lobby) funktioniert bei schlechtem Wetter genauso gut.",
+          "Notizen machen: Sprachmemos oder kurze Aufnahmen statt Notizen auf Papier oder Telefon. Oder sofort nach Ende zusammenfassen per E-Mail — Gedächtnis ist in den ersten 5 Minuten am frischesten.",
+          "Kumulativ: 2 Walking Meetings à 20 Minuten/Woche = 40 Extra-Minuten Gehen/Woche vollständig in der Arbeitszeit, ohne Pausenzeit zu kürzen oder Zeit hinzuzufügen."
+        ],
+        "points": [
+          {
+            "icon": "✅",
+            "label": "1:1s und Brainstorming",
+            "note": "Geeignetstes Meeting-Format"
+          },
+          {
+            "icon": "💬",
+            "label": "Mehr Offenheit",
+            "note": "Nebeneinander → ehrlicher"
+          },
+          {
+            "icon": "⏱️",
+            "label": "25% kürzere Meetings",
+            "note": "Steh-/Walking-Meetings sind kürzer"
+          },
+          {
+            "icon": "📅",
+            "label": "40 Min Gehen/Woche",
+            "note": "Aus 2 × 20 Min Walking Meetings"
+          }
+        ]
+      },
+      {
+        "label": "Wasserflasche weit vom Schreibtisch platzieren",
+        "detail": "Die Umgebung so gestalten, dass Bewegung erzwungen wird — eine weit entfernte Wasserflasche schafft 'nützliche Reibung', die jedes Trinken zu einem Grund fürs Aufstehen macht.",
+        "keyFact": "Genug Wasser trinken (2–2,5L/Tag) kombiniert mit einer kleinen Flasche (500ml) = 4–5 erzwungene Stehpausen täglich — automatisch Sitzunterbrechungen ohne Timer.",
+        "details": [
+          "Das 'Umgebungsdesign'-Prinzip: statt auf Willenskraft zu setzen, um ans Aufstehen zu denken, eine physische Struktur schaffen, die das Verhalten automatisch erzwingt. James Clear nennt dies 'environment design'.",
+          "500ml-Flasche (nicht 1L): zwingt zu 4–5 Nachfüllfahrten statt 2. Jede Fahrt sind 20–50 Schritte und 1–2 Minuten Stehen — genug, um LPL zu reaktivieren.",
+          "Wie weit ist weit genug: 10–20m ist ideal — weit genug zum Aufstehen und ein paar Schritte gehen, nicht so weit, dass es unbequem wird. Küche, Flur-Wasserspender oder ein anderer Raum.",
+          "Bonus: Aufstehen für Wasser ist auch eine Gelegenheit für Wadenheben während des Wartens, Schulterstretch oder kurzen Austausch mit Kollegen statt Nachrichten schreiben.",
+          "Mit Micro-Übung kombinieren: nach jedem Trinken 10 Kniebeugen oder Wadenheben. Klein genug, um keinen Kleidungswechsel zu erfordern, ausreichend, um Beinmuskeln nach langem Sitzen aufzuwecken.",
+          "Ausreichende Flüssigkeitszufuhr ist auch ein direkter Vorteil: nur 1–2% Wasserverlust reduziert die Konzentration um 15–20% und erhöht Müdigkeit. Eine weit entfernte Flasche erzwingt gleichmäßigeres Trinken."
+        ],
+        "points": [
+          {
+            "icon": "🏗️",
+            "label": "Umgebungsdesign",
+            "note": "Kein Willensaufwand — automatische Struktur"
+          },
+          {
+            "icon": "🥤",
+            "label": "500ml-Flasche",
+            "note": "4–5 erzwungene Stehpausen täglich"
+          },
+          {
+            "icon": "🧠",
+            "label": "Fokus +20%",
+            "note": "Ausreichend Wasser reduziert Müdigkeit"
+          },
+          {
+            "icon": "🦵",
+            "label": "10 Kniebeugen nach Trinken",
+            "note": "Natürlich integriertes Micro-Workout"
+          }
+        ]
+      },
+      {
+        "label": "5 Minuten gehen vor dem Betreten des Hauses nach der Arbeit",
+        "detail": "Ein Übergangs-Buffer vom 'Arbeitsmodus' zum 'Entspannungsmodus' — 5 Minuten Gehen vor dem Betreten des Hauses hilft Cortisol zu senken und den Geist effektiver von der Arbeit zu lösen.",
+        "keyFact": "Ein 'Übergangsritual' reduziert den Spillover von Arbeitsstress ins Privatleben. Schon 5 Minuten Gehen reichen für einen messbaren Cortisolabfall und einen 'mentalen Switch'.",
+        "details": [
+          "Work-Life-Spillover: ohne Übergangsritual bleibt das Gehirn zu Hause im 'Arbeitsmodus' — verarbeitet Arbeitsprobleme unbewusst weiter, erschwert Entspannung, verursacht abendliche Anspannung und schlechten Schlaf.",
+          "5 Minuten Outdoor-Gehen ist ein 'Dekompressionsritual': die Atmung vertieft sich natürlich, die Herzfrequenz sinkt leicht, Cortisol beginnt zu fallen. Das Gehirn wechselt vom Sympathikus (Kampf/Flucht) zum Parasympathikus (Ruhe).",
+          "Keine Distanz nötig: um den Block gehen, Post holen und weitergehen, oder ein paar Haltestellen früher aussteigen. Wichtig ist Outdoor-Bewegung ohne Telefon für diese 5 Minuten.",
+          "Mit Achtsamkeit kombinieren: während der 5 Minuten auf das Gesehene, Gehörte und Gefühlte achten statt an unbeantwortete E-Mails zu denken. Einfachste Form des achtsamen Gehens.",
+          "'Buchenden-Ritual': morgens (10 Minuten Outdoor-Licht nach dem Aufwachen) + abends (5 Minuten Gehen vor dem Betreten des Hauses) schafft eine klare Tagesstruktur für das Nervensystem.",
+          "Extra NEAT: 5 Minuten Gehen × 5 Tage = 25 Extra-Minuten/Woche ohne Zeitkosten — 'tote Zeit' (im Auto sitzen, auf die Bahn warten) wird in Bewegung umgewandelt."
+        ],
+        "points": [
+          {
+            "icon": "🧘",
+            "label": "Dekompressionsritual",
+            "note": "Wechsel von Arbeitsmodus → Heimatmodus"
+          },
+          {
+            "icon": "📵",
+            "label": "Kein Telefon",
+            "note": "5 Minuten für echte Gehirnerholung"
+          },
+          {
+            "icon": "🌇",
+            "label": "Draußen",
+            "note": "Natürliches Licht unterstützt Cortisolsenkung"
+          },
+          {
+            "icon": "📚",
+            "label": "Buchenden-Ritual",
+            "note": "Morgen + Abend = klare Tagesstruktur"
+          }
+        ]
+      },
+      {
+        "label": "10 Minuten aufräumen — das ist auch Bewegung!",
+        "detail": "Aufräumen ist die NEAT-intensivste Haushaltsaktivität — Stehen, Umherlaufen, Bücken, Greifen, leichtes Tragen — aktiviert mehrere Muskelgruppen.",
+        "keyFact": "10 Minuten Aufräumen verbrennt 40–60 kcal je nach Intensität — äquivalent zu 15–20 Minuten leichtem Gehen. Ein sauberer Raum hat zudem positive Auswirkungen auf Stimmung und Konzentration.",
+        "details": [
+          "NEAT beim Aufräumen umfasst: dauerhaftes Stehen, Gehen zwischen Zimmern, Bücken zum Aufheben (leichtes Hip-Hinge), Greifen nach oben (Schultermobilität), leichtes Tragen (Arm- und Rumpfmuskeln).",
+          "10 Minuten bedeutet nicht, das ganze Haus zu reinigen: ein Zimmer oder ein Bereich — Küche, Schlafzimmer, Schreibtisch. In 10-minütige 'Micro-Aufräumen'-Sessions aufteilen.",
+          "Optimales Habit Stacking: direkt nach dem Abendessen 10 Minuten aufräumen — erhöht post-mahlzeitliches NEAT (Glukosereduktion) und schafft sauberen Raum vor der Abendroutine.",
+          "Umgebungspsychologie: unordentliche Umgebungen erhöhen Cortisol und reduzieren Konzentration (Princeton-Neuroscience-Forschung). Aufräumen ist nicht nur NEAT, sondern Investition in Erholungsqualität.",
+          "Intensität anpassbar: 'intensiv' wie Staubsaugen und Wischen = 50–60 kcal/10 Min; 'leicht' wie Sortieren und Organisieren = 30–40 kcal/10 Min. Beides hat Wert.",
+          "'Auch Bewegung' ist die wichtigste Einstellung: die Grenze zwischen 'Training' und 'Alltagsleben' verwischen. Jede Aktivität, die Muskeln erfordert, ist wertvolle Bewegung."
+        ],
+        "points": [
+          {
+            "icon": "🧹",
+            "label": "Mehrere Muskelgruppen",
+            "note": "Stehen, Bücken, Greifen, Tragen"
+          },
+          {
+            "icon": "⏱️",
+            "label": "10-Min Micro-Aufräumen",
+            "note": "Leicht zu starten, kein Übergewältigtsein"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Nach dem Abendessen einplanen",
+            "note": "NEAT + Glukosereduktion zusammen"
+          },
+          {
+            "icon": "🧠",
+            "label": "Sauberer Raum = klarer Kopf",
+            "note": "Cortisol runter, Fokus rauf"
+          }
+        ]
+      },
+      {
+        "label": "Dehnen beim Fernsehen",
+        "detail": "Die abendliche TV-/Bildschirmzeit ist für die meisten Menschen ein unvermeidbarer Sitzblock — aber er kann in eine aktive Erholungssession umgewandelt werden, ohne den Genuss zu reduzieren.",
+        "keyFact": "Passives Sitzen durch leichtes Dehnen oder Yoga während 30 Minuten TV-Zeit zu ersetzen, addiert 100–150 kcal Energieverbrauch und 30+ Minuten Flexibilitätsarbeit täglich — ohne extra Zeit.",
+        "details": [
+          "NEAT beim Fernsehen: sitzende Vorwärtsbeugen, liegende Hamstring-Dehnungen, Hüftöffner, Schulterrollen, Knöchelrotationen — alles auf einer Yogamatte vor dem TV möglich.",
+          "Bodenhocker vs. Sofa: vom Sofa auf den Boden wechseln (Schneidersitz, ausgestreckte Beine, Knien) integriert natürlich Hüft- und Knöchelmobilität, die viele Erwachsene durch langes Sitzen verloren haben.",
+          "Schaumstoffrolle in der Werbepause: Werbepausen nutzen, um die Brustwirbelsäule, IT-Band oder Waden zu rollen. Jede Werbepause = 2–3 Minuten Selbst-Myofaszial-Release.",
+          "Leichte Körpergewichtsübungen: Crunches, Gesäßbrücken, Beinheben und Wadenheben können liegend vor dem TV durchgeführt werden. Selbst 3 Sätze à 10 Wiederholungen jeder Übung addieren bedeutsamen Muskelreiz.",
+          "Die Denkumschwung: statt 'ich schaue TV' umformulieren zu 'das ist meine Flexibilitäts- und Erholungszeit'. Das TV wird zu Belohnung und Timer für Mobilitätsarbeit.",
+          "Langfristiger Vorteil: 30 Minuten tägliches Dehnen/Mobilitätsarbeit summiert sich auf 180+ Stunden pro Jahr — verbessert Gelenkgesundheit, Haltung und Verletzungsresistenz bei null Zeitkosten."
+        ],
+        "points": [
+          {
+            "icon": "📺",
+            "label": "TV → Flexibilitätszeit",
+            "note": "Keine Extra-Zeit, gleicher Genuss"
+          },
+          {
+            "icon": "🧘",
+            "label": "Bodenhocker",
+            "note": "Passive Hüft- und Knöchelmobilität"
+          },
+          {
+            "icon": "🔄",
+            "label": "Schaumstoffrolle in Werbepausen",
+            "note": "2–3 Min Selbst-Release pro Pause"
+          },
+          {
+            "icon": "📅",
+            "label": "180+ Stunden/Jahr",
+            "note": "Mobilitätsarbeit bei null Zeitkosten"
+          }
+        ]
+      }
+    ],
     "c4_heading": "Aktive Erholung",
     "c4_desc": "Ein Erholungstag ist Teil des Programms, kein Versagen. Erhol dich durch sanfte Aktivität, nicht nur durch Hinlegen.",
     "c4_routine_heading": "10-Minuten-Erholungsroutine",
@@ -15248,7 +15672,787 @@
     "d_teaser_s3": "Gedanken-Management",
     "d_teaser_s4": "Tracking & Roadmap",
     "d0_safety_label": "Sicherheitsregel: ",
-    "d0_safety_body": "Säule D ist allgemeine Gesundheitsbildung. Wenn Angst oder niedergedrückte Stimmung wochenlang anhält, bei schwerem Schlafmangel, wiederkehrenden Panikattacken oder Gedanken zur Selbstverletzung — bitte professionelle Unterstützung suchen."
+    "d0_safety_body": "Säule D ist allgemeine Gesundheitsbildung. Wenn Angst oder niedergedrückte Stimmung wochenlang anhält, bei schwerem Schlafmangel, wiederkehrenden Panikattacken oder Gedanken zur Selbstverletzung — bitte professionelle Unterstützung suchen.",
+    "d2_tech_modals": [
+      {
+        "modalTitle": "Zwerchfellatmung",
+        "keyFact": "Die Zwerchfellatmung ist die Grundlage aller Atemtechniken – 70 % der Atemkraft kommt von diesem Muskel, doch die meisten modernen Menschen haben ihn durch chronischen Stress verlernt.",
+        "detail": "Das Zwerchfell ist der wichtigste Atemmuskel, direkt unterhalb der Lungen. Bei richtiger Atmung wölbt sich der Bauch beim Einatmen (Zwerchfell senkt sich). Die meisten Stadtmenschen atmen mit der Brust – sie nutzen nur 1/3 der Lungenkapazität.",
+        "details": [
+          "Das Zwerchfell übernimmt in Ruhe 70–80 % der Atemarbeit, doch chronischer Stress und schlechte Sitzhaltung verleiten viele zur Brustatmung.",
+          "Brustatmung nutzt nur 1/3 der Lungenkapazität und führt zu leichter Hyperventilation – CO₂-Schwankungen aktivieren das sympathische Nervensystem und erzeugen unerklärliche Angst.",
+          "Zwerchfellatmung stimuliert den Vagusnerv, der durch das Zwerchfell verläuft – eine direkte \"Autobahn\" zur Aktivierung des Parasympathikus (Ruhe & Verdauung).",
+          "Schon 5 Minuten Zwerchfellatmung reichen, um den Herzschlag um 5–10 bpm zu senken und den systolischen Blutdruck um 5–8 mmHg zu reduzieren.",
+          "Zwerchfell, Beckenboden, Lendenmuskel und tiefe Bauchmuskeln arbeiten als System – richtige Zwerchfellatmung verbessert die Haltung und verringert Rückenschmerzen.",
+          "Schnelltest: eine Hand auf die Brust, eine auf den Bauch legen. Einatmen – hebt sich die Bauchhand mehr als die Brusthand, ist es richtig."
+        ],
+        "points": [
+          {
+            "icon": "🫁",
+            "label": "Atemmuskel",
+            "note": "70 % der täglichen Atemarbeit"
+          },
+          {
+            "icon": "⚡",
+            "label": "Vagusnerv",
+            "note": "Aktiviert Ruhe & Verdauung"
+          },
+          {
+            "icon": "❤️",
+            "label": "Herzfrequenz senken",
+            "note": "5–10 bpm nach 5 Minuten"
+          },
+          {
+            "icon": "✅",
+            "label": "Schnelltest",
+            "note": "Eine Hand Brust, eine Hand Bauch"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Box Breathing 4-4-4-4",
+        "keyFact": "Box Breathing balanciert das autonome Nervensystem durch einen symmetrischen Rhythmus – die Technik, die Navy SEALs zur Aufrechterhaltung klaren Denkens in lebensgefährlichen Situationen verwenden.",
+        "detail": "Vier gleiche Phasen (4-4-4-4) bilden ein symmetrisches Atemquadrat. Dieser Rhythmus aktiviert hohe HRV – ein Zeichen für ein flexibles und gesundes Nervensystem.",
+        "details": [
+          "Box Breathing wurde von Mark Divine im Navy SEAL-Training bekannt gemacht – zur Kontrolle von Adrenalin und Aufrechterhaltung klaren Denkens unter extremem Druck.",
+          "Die Haltephase erhöht vorübergehend den Lungeninnendruck, stimuliert Barorezeptoren an der Aorta und sendet dem Gehirn \"Sicher\"-Signale.",
+          "HRV (Herzratenvariabilität) steigt bei regelmäßigem Box Breathing. Hohe HRV hängt mit besserer Resilienz, Emotionsregulation und kognitiver Leistung zusammen.",
+          "Box Breathing reduziert Cortisol in manchen RCTs schneller als natürliche Atmung, da die bewusste Struktur die volle Gehirnaufmerksamkeit auf den Atem lenkt.",
+          "Am effektivsten in 3 Situationen: vor wichtigen Aufgaben, wenn frustriert, und wenn die Konzentration tagsüber nachlässt.",
+          "Der Timer auf der D2-Seite ermöglicht sofortiges Üben: 4 Runden × 16 Sekunden = 64 Sekunden – genug, um den Effekt deutlich zu spüren."
+        ],
+        "points": [
+          {
+            "icon": "🎖️",
+            "label": "Navy SEALs",
+            "note": "In extremen Stresssituationen verwendet"
+          },
+          {
+            "icon": "❤️",
+            "label": "HRV steigern",
+            "note": "Flexibleres Nervensystem"
+          },
+          {
+            "icon": "🧠",
+            "label": "Kognitive Rücksetzung",
+            "note": "64 Sekunden = 4 vollständige Runden"
+          },
+          {
+            "icon": "⬜",
+            "label": "4-4-4-4",
+            "note": "Symmetrie = optimales Gleichgewicht"
+          }
+        ]
+      },
+      {
+        "modalTitle": "4-7-8 Atmung",
+        "keyFact": "Dr. Andrew Weils 4-7-8-Atmung wird \"natürliches Beruhigungsmittel\" genannt – das 7-sekündige Halten erzeugt einen tiefen Entspannungsreflex, den normale Atmung nicht erreichen kann.",
+        "detail": "Das Verhältnis 1:2 (Einatmen : Ausatmen) ist das optimale Verhältnis zur Aktivierung des Parasympathikus. 4-7-8 treibt dieses Verhältnis auf das Maximum (4:8) mit einer zusätzlichen Haltephase.",
+        "details": [
+          "Dr. Andrew Weil (Harvard Medical School) entwickelte die 4-7-8-Technik basierend auf Pranayama-Yoga und HRV-Forschung.",
+          "Das 7-sekündige Halten erhöht vorübergehend CO₂ im Blut (milde Hyperkapnie) und stimuliert Chemorezeptoren im Hirnstamm zu einem tiefen Entspannungsreflex.",
+          "Das 8-sekündige Ausatmen aktiviert den Parasympathikusreflex stärker als jedes andere Verhältnis – das Gehirn liest langes Ausatmen als \"ich bin sicher\".",
+          "Besonders wirksam vor dem Schlafen: verlangsamt Herzfrequenz, senkt Blutdruck und Körpertemperatur – 3 physiologische Faktoren für den Schlaf-Übergang.",
+          "Anders als Box Breathing (entspannend und weckend) tendiert 4-7-8 zur Tiefenentspannung – nicht vor Aufgaben verwenden, die hohe Konzentration erfordern.",
+          "Mit 3–4 Runden beginnen. Bei Schwindel auf Verhältnis 3-5-6 reduzieren, bevor das vollständige 4-7-8 geübt wird."
+        ],
+        "points": [
+          {
+            "icon": "🌊",
+            "label": "1:2 Verhältnis",
+            "note": "Optimales Ein-/Ausatemverhältnis"
+          },
+          {
+            "icon": "💤",
+            "label": "Vor dem Schlafen",
+            "note": "Senkt Herzfrequenz & Körpertemperatur"
+          },
+          {
+            "icon": "🧬",
+            "label": "CO₂-Technik",
+            "note": "7s Halten erzeugt tiefen Reflex"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Hinweis",
+            "note": "Nicht vor Konzentrationaufgaben"
+          }
+        ]
+      },
+      {
+        "modalTitle": "2-Minuten-Reset",
+        "keyFact": "Der 2-Minuten-Reset ist keine Meditation – er ist ein \"Pattern Interrupt\", der die automatische Reaktionskette unterbricht und dem Gehirn 120 Sekunden gibt, von reaktiv zu responsiv zu wechseln.",
+        "detail": "Bei Überlastung befindet sich das Gehirn im Kampf-oder-Flucht-Modus und kann nicht klar denken. Der 2-Minuten-Reset schafft eine Lücke zwischen Reiz und Reaktion – in dieser Lücke gewinnt man die Kontrolle zurück.",
+        "details": [
+          "Pattern Interrupt ist eine Technik aus NLP und KVT: Unterbrechung einer automatischen Gedanken-/Verhaltenskette durch eine bewusste Handlung, die das Gehirn von automatischer Reaktion auf bewusstes Wahrnehmen umschaltet.",
+          "10 Sekunden ohne Smartphone ist der schwierigste Schritt – das Telefon ist das \"Standardverhalten\", wenn das Gehirn müde ist. Diese Gewohnheit zu unterbrechen ist der gesamte Zweck von Schritt 1.",
+          "Schultern–Kiefer–Hände loslassen richtet sich an 3 Körperbereiche, die Stress halten: Schultern heben sich unter Stress, Kiefer verkrampft bei Angst, Hände greifen bei Anspannung.",
+          "Der Ankersatz \"Der nächste kleine Schritt ist...\" zwingt das Gehirn, von Überwältigung zu Handlung zu wechseln – jede kleine Handlung bricht den Lähmungszustand.",
+          "Am effektivsten sofort beim ersten Stresssignal angewendet – nicht nach 20 Minuten Reaktivität. Steife Schultern, flache Atmung, schneller Herzschlag sind die Signale.",
+          "Funktioniert überall: Bürorestroom, beim Warten auf den Aufzug, zwischen zwei Besprechungen, im Stau."
+        ],
+        "points": [
+          {
+            "icon": "🔄",
+            "label": "Pattern Interrupt",
+            "note": "Unterbricht die automatische Reflexkette"
+          },
+          {
+            "icon": "💪",
+            "label": "Schultern–Kiefer–Hände",
+            "note": "3 Bereiche, die Stress halten"
+          },
+          {
+            "icon": "🎯",
+            "label": "Ankersatz",
+            "note": "\"Der nächste kleine Schritt ist...\""
+          },
+          {
+            "icon": "⏱️",
+            "label": "Überall anwenden",
+            "note": "Keine besondere Umgebung nötig"
+          }
+        ]
+      }
+    ],
+    "d3_mode_modals": [
+      {
+        "modalTitle": "3-Minuten-Meditation",
+        "keyFact": "3 Minuten Meditation täglich sind nicht weniger als nötig – es ist die \"minimale wirksame Dosis\", die ausreicht, um eine nachhaltige Gewohnheit aufzubauen.",
+        "detail": "Konsistenz ist wichtiger als Dauer. 3 Minuten täglich über 30 Tage ist effektiver als 30 Minuten einmal pro Woche – das Gehirn lernt durch Wiederholung, nicht durch Intensität.",
+        "details": [
+          "Harvard-Studie (Sara Lazar, 2011): 8 Wochen × 27 Minuten/Tag reichen für strukturelle Gehirnveränderungen. Neuere Forschungen zeigen, dass funktionelle Veränderungen früher auftreten.",
+          "3-minütige Atemachtsamkeitsmeditation aktiviert den PFC (präfrontaler Kortex) – die Hirnregion, die Aufmerksamkeit und Emotionsregulation steuert.",
+          "\"Bemerken, dass man abgelenkt ist, und zurückkehren\" ist die eigentliche Trainingswiederholung. Jedes Mal, wenn der Geist wandert und zur Atmung zurückkehrt, trainiert der Präfrontalkortex die Aufmerksamkeitskontrolle.",
+          "Kein Schneidersitz oder ruhiger Raum nötig. Jede Haltung, die den Rücken relativ gerade hält, funktioniert gleich gut.",
+          "Headspace-Forschung: nur 10 Tage × 10 Minuten reichen, um Mitgefühl um 23 % zu steigern, Aggressionen zu reduzieren und die Konzentration zu verbessern.",
+          "\"Schlechte\" Meditation (sitzen, aber ständig abgelenkt) ist immer noch besser als keine Meditation."
+        ],
+        "points": [
+          {
+            "icon": "🔄",
+            "label": "Jede Wiederholung zählt",
+            "note": "Wandern → Zurückkehren = 1 Wiederholung"
+          },
+          {
+            "icon": "📅",
+            "label": "Konsistenz vor Intensität",
+            "note": "3 Min/Tag > 30 Min/Woche"
+          },
+          {
+            "icon": "🧠",
+            "label": "PFC-Training",
+            "note": "Aufmerksamkeitsmuskel wird trainiert"
+          },
+          {
+            "icon": "✅",
+            "label": "Keine Perfektion nötig",
+            "note": "\"Schlechte\" Meditation besser als keine"
+          }
+        ]
+      },
+      {
+        "modalTitle": "5-Minuten-Meditation vor dem Schlafen",
+        "keyFact": "Body Scan vor dem Schlafen reduziert Cortisol und aktiviert das parasympathische Nervensystem – eine Erstlinienbehandlung bei Schlaflosigkeit, die von der ACP vor Schlafmitteln empfohlen wird.",
+        "detail": "Viele erleben \"wired but tired\" – der Körper ist erschöpft, aber das Gehirn läuft weiter. Ein 5-minütiger Body Scan ist keine Meditation zum \"Gedanken leeren\" – es ist eine angeleitete Technik zum Abschalten des Sympathikus.",
+        "details": [
+          "Cortisol sinkt natürlich am Abend, um Schlaf zu ermöglichen. Chronischer Stress oder Bildschirme vor dem Schlafen halten Cortisol hoch – der Body Scan hilft, Cortisol aktiv zu unterdrücken.",
+          "Der Body Scan ist die Kerntechnik in CBT-I (Kognitive Verhaltenstherapie bei Schlaflosigkeit) – die Erstlinienbehandlung für chronische Schlaflosigkeit, langfristig wirksamer als Schlafmittel.",
+          "\"Scan von Stirn → Schultern → Brust → Bauch → Beine\": Aufmerksamkeit nacheinander auf jeden Körperbereich richten, angespannte Bereiche bemerken, beim Ausatmen loslassen.",
+          "\"Heute war genug, ich mache morgen weiter\" – diese Selbsterinnerung aktiviert Selbstmitgefühl und schaltet das Bedrohungserkennungssystem ab.",
+          "In Schlaflosigkeitsforschung schlief die Body-Scan-Gruppe durchschnittlich 13 Minuten schneller ein und wachte nachts 2-mal weniger auf – nach 8 Wochen Praxis.",
+          "Bei zu viel Wachheit: mit 4-7-8-Atmung (2–3 Runden) beginnen, dann zum Body Scan wechseln."
+        ],
+        "points": [
+          {
+            "icon": "😴",
+            "label": "Behandelt Schlaflosigkeit",
+            "note": "CBT-I Erstlinie vor Medikamenten"
+          },
+          {
+            "icon": "💉",
+            "label": "Cortisol senken",
+            "note": "Sympathikus aktiv abschalten"
+          },
+          {
+            "icon": "🔍",
+            "label": "Jeden Bereich scannen",
+            "note": "Stirn → Schultern → Brust → Bauch → Beine"
+          },
+          {
+            "icon": "💙",
+            "label": "Selbstmitgefühl",
+            "note": "\"Heute war genug\" schaltet Bedrohungsalarm ab"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Achtsames Gehen",
+        "keyFact": "Achtsames Gehen kombiniert 2 Vorteile in 1: leichte Aerobic steigert BDNF + Gegenwartsbewusstsein reduziert Rumination – zwei der wirksamsten Interventionen für die Gehirngesundheit.",
+        "detail": "Viele Menschen finden es schwer, still zu sitzen und zu meditieren, können aber beim Gehen meditieren. Kein besonderer Ort nötig – ein Büroflur, der Weg vom Parkplatz nach Hause oder ein Supermarkt genügen.",
+        "details": [
+          "Leichtes aerobes Gehen steigert BDNF (Brain-Derived Neurotrophic Factor) – den \"Dünger\" des Gehirns, der neue neuronale Verbindungen fördert und den Hippocampus schützt.",
+          "\"Jeden Schritt beim Auftreten spüren\" ist ein wirksamer Achtsamkeitsanker beim Gehen – der natürliche Gehrhythmus verhindert Rumination (sich wiederholende negative Gedanken).",
+          "Kein Kopfhörer ist der entscheidende Faktor – Podcasts oder Musik lassen das Default Mode Network aktiv. Umgebungsgeräusche wahrnehmen aktiviert Gegenwartsbewusstsein.",
+          "Licht, Bäume und Himmel beobachten aktiviert die \"Ehrfurchtsreaktion\" – Staunen und Bewunderung reduzieren Selbstfokus und steigern das Gefühl der Verbundenheit.",
+          "Stanford-RCT: 90 Minuten Naturspaziergang reduzierten Rumination und Aktivität des subgenualen PFC deutlich mehr als Stadtgehen.",
+          "Keine Schritte zählen (keine 10.000 Schritte nötig): Achtsamkeit erfordert den \"Prozessmodus\" – aktuelle Erfahrungen beachten, nicht Ziele verfolgen."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "BDNF steigern",
+            "note": "Gehirn-\"Dünger\" durch leichte Aerobic"
+          },
+          {
+            "icon": "🎧",
+            "label": "Keine Kopfhörer",
+            "note": "Gegenwartsbewusstsein"
+          },
+          {
+            "icon": "🌿",
+            "label": "Ehrfurchtsreaktion",
+            "note": "Reduziert Rumination & Entzündung"
+          },
+          {
+            "icon": "🚫",
+            "label": "Keine Schritte zählen",
+            "note": "Prozessmodus, nicht Zielmodus"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Achtsames Essen",
+        "keyFact": "Das Gehirn braucht 20 Minuten nach Essensbeginn, um Sättigungssignale aus dem Magen zu empfangen – schnelles Essen und Essen vor Bildschirmen führt immer zu Überessen, bevor dieses Signal ankommt.",
+        "detail": "Achtsames Essen ist nicht \"langsam essen für bessere Verdauung\" – es ist eine Technik zur Synchronisierung des Essverhaltens mit den biologischen Signalen des Körpers.",
+        "details": [
+          "CCK, Leptin und Peptid YY – die 3 Hauptsättigungshormone – benötigen 15–20 Minuten, um ausreichend anzusteigen und dem Hypothalamus zu signalisieren \"genug\". Schnelles Essen endet immer vor diesem Signal.",
+          "\"Bildschirm beim Essen ausschalten\" reduziert ablenkungsbedingte Überernährung – bei Bildschirmaufmerksamkeit sinkt die Sättigungswahrnehmung um 30–40 %.",
+          "Gründlicheres Kauen (20–30 Mal pro Bissen) beginnt die Verdauung im Mund und erzeugt frühere Sättigung durch längeren Kontakt mit Geschmacksrezeptoren.",
+          "\"10 Sekunden vor dem Nachnehmen pausieren\" ist ein Pattern Interrupt für automatisches Essverhalten.",
+          "Achtsames Essen ist besonders wirksam bei Binge Eating und emotionalem Essen und reduziert Episoden um 60–70 % in manchen RCTs.",
+          "Nicht jede Mahlzeit muss vollständig achtsam sein – nur das Abendessen (mit der meisten Zeit und größten Mengen) reicht aus."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "20-Minuten-Regel",
+            "note": "Gehirn braucht 20 Min für Sättigungssignal"
+          },
+          {
+            "icon": "📵",
+            "label": "Bildschirm ausschalten",
+            "note": "Reduziert Sättigungswahrnehmung um 30–40 %"
+          },
+          {
+            "icon": "🦷",
+            "label": "Gründlich kauen",
+            "note": "Verdauung beginnt im Mund"
+          },
+          {
+            "icon": "🛑",
+            "label": "10 Sekunden pausieren",
+            "note": "Gewohnheitsschleife unterbrechen"
+          }
+        ]
+      }
+    ],
+    "d4_prompt_modals": [
+      {
+        "modalTitle": "Was fühle ich heute?",
+        "keyFact": "Emotionen benennen (Affect Labeling) reduziert messbar die Amygdala-Aktivität im fMRT – \"Ich bin ängstlich\" zu schreiben verändert den physiologischen Zustand des Gehirns.",
+        "detail": "Die einfachste, aber wichtigste Frage. Viele Menschen fühlen nur \"müde\" oder \"genervt\", ohne genau zu wissen, was sie fühlen. Genaues Erkennen ist der erste Schritt zur Verarbeitung.",
+        "details": [
+          "Forschung von Lieberman et al. (UCLA, 2007): Emotionen sprachlich benennen aktiviert den präfrontalen Kortex und reduziert gleichzeitig die Amygdala-Aktivität – eine physische Veränderung im Gehirn.",
+          "Emotionale Granularität – die Fähigkeit, subtile Emotionen zu unterscheiden – hängt mit besserer psychischer Gesundheit und höherer Emotionsregulation zusammen.",
+          "Über schwierige Gefühle schreiben – auch nur 3–4 Tage × 15–20 Minuten – reicht aus, um Stimmung und Angst über viele Wochen zu verbessern.",
+          "Wenn nur \"im Kopf gedacht\" wird, neigt das Gehirn zur Rumination – Schreiben schafft \"Distanz\" zwischen dir und deinen Emotionen.",
+          "Es muss nicht \"richtig\" benannt werden – sogar \"Ich weiß nicht, was ich fühle, bin nur schwer\" beginnt den Verarbeitungsprozess.",
+          "Tägliche Praxis erweitert das emotionale Vokabular – je mehr Worte, desto mehr \"Werkzeuge\" hat das Gehirn für schwierige Situationen."
+        ],
+        "points": [
+          {
+            "icon": "🏷️",
+            "label": "Affect Labeling",
+            "note": "Benennen = Amygdala beruhigt sich"
+          },
+          {
+            "icon": "🔬",
+            "label": "Gehirnveränderung",
+            "note": "Im fMRT messbar"
+          },
+          {
+            "icon": "🔍",
+            "label": "Klarheit",
+            "note": "Man kann nicht lösen, was man nicht gesehen hat"
+          },
+          {
+            "icon": "📏",
+            "label": "Distanz",
+            "note": "Beobachten statt mitgerissen werden"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Was belastet mich am meisten?",
+        "keyFact": "Das Gehirn übertreibt standardmäßig den Schweregrad, wenn es im Kopf grübelt – Aufschreiben zwingt das Gehirn, Stress zu konkretisieren, und oft entdeckt es selbst, dass das Problem nicht so groß ist.",
+        "detail": "Kognitives Auslagern: Das Gehirn verbraucht viel Energie, um ungelöste Dinge im Arbeitsgedächtnis zu \"halten\". Aufschreiben befreit diese Energie.",
+        "details": [
+          "Zeigarnik-Effekt: Das Gehirn priorisiert das \"Festhalten\" unvollendeter Dinge und erschafft \"offene Schleifen\", die kontinuierlich kognitive Bandbreite verbrauchen.",
+          "James Pennebaker (UT Austin): Expressives Schreiben über den Hauptstressor reduziert Cortisol messbar und verbessert das Immunsystem.",
+          "\"Was belastet mich am meisten?\" schreiben zwingt das Gehirn, von diffuser Sorge zu einem konkreten Problem zu wechseln.",
+          "Nach dem Identifizieren kann das Gehirn kategorisieren: kontrollierbar / unkontrollierbar.",
+          "Viele Menschen entdecken, dass \"was sie am meisten belastet\" keine Deadline oder Arbeit ist, sondern eine Beziehung oder eine ungetroffene Entscheidung.",
+          "Regelmäßiges Schreiben hilft, Muster zu erkennen: Welche Situation stresst dich am häufigsten?"
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "Kognitives Auslagern",
+            "note": "Befreit das Arbeitsgedächtnis"
+          },
+          {
+            "icon": "🎯",
+            "label": "Konkretisieren",
+            "note": "Vage ist beängstigend, konkret ist lösbar"
+          },
+          {
+            "icon": "🔄",
+            "label": "Zeigarnik-Effekt",
+            "note": "Schreiben schließt die \"offene Schleife\""
+          },
+          {
+            "icon": "🗺️",
+            "label": "Muster erkennen",
+            "note": "Erkennen, um die Reaktion zu ändern"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Was habe ich heute gut gemacht?",
+        "keyFact": "Das Gehirn hat einen natürlichen Negativitätsbias – es erinnert sich 3–5-mal stärker an Schlechtes als an Gutes. Täglich kleine gute Dinge aktiv wahrzunehmen ist direktes \"Gegentraining\".",
+        "detail": "Kein Selbstlob oder Selbstzufriedenheit. Dies ist eine statistische Anpassungstechnik – das Gehirn erinnert sich automatisch mehr an Negatives.",
+        "details": [
+          "Negativitätsbias (Roy Baumeister et al.): Das Gehirn verarbeitet negative Informationen tiefer und erinnert sich länger daran – ein evolutionärer Mechanismus, der in der modernen Welt eine zu negative Selbsterzählung erzeugt.",
+          "Barbara Fredrickson (Broaden-and-Build-Theorie): Positive Emotionen erweitern das Denken und bauen langfristige Ressourcen auf.",
+          "\"Kleine gut gemachte Dinge\" wahrzunehmen ist wichtiger als auf \"große Leistungen\" zu warten – das Gehirn braucht kleine, regelmäßige Dopaminschübe von kleinen Fortschritten.",
+          "Selbstwirksamkeit (Bandura): Das Erkennen kleiner Erfolge steigert das Vertrauen in die Fähigkeit, schwierigere Dinge zu tun.",
+          "\"Auch wenn klein\" schreiben schaltet Perfektionsmaßstäbe ab – kleinen Fortschritt als aufzeichnenswert akzeptieren.",
+          "Forschung von Martin Seligman: \"3 gute Dinge täglich + Warum\" für 1 Woche schreiben verbesserte die Stimmung 6 Monate lang."
+        ],
+        "points": [
+          {
+            "icon": "⚖️",
+            "label": "Gegentraining",
+            "note": "Balanciert den natürlichen Negativitätsbias"
+          },
+          {
+            "icon": "✨",
+            "label": "Kleines zählt noch",
+            "note": "Gehirn braucht Dopamin aus kleinem Fortschritt"
+          },
+          {
+            "icon": "💪",
+            "label": "Selbstwirksamkeit",
+            "note": "Beweise sammeln \"Ich kann\""
+          },
+          {
+            "icon": "😊",
+            "label": "Seligman 3 Gutes",
+            "note": "Verbessert Stimmung 6 Monate lang"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Was ist die 1 Sache, die ich morgen tun muss?",
+        "keyFact": "Umsetzungsintention (\"Wenn ich X tue, werde ich Y tun\") erhöht die Zielerreichungsrate um das 2–3-Fache – funktioniert aber nur, wenn das Ziel spezifisch genug ist und es nur 1 Ziel gibt.",
+        "detail": "Das Identifizieren von 1 wichtigen Aufgabe am Vorabend schafft eine \"Vorverpflichtung\" – das Gehirn hat bereits einen klaren Plan und muss morgens keine Entscheidung treffen, wenn die Willenskraft am niedrigsten ist.",
+        "details": [
+          "Peter Gollwitzer (NYU): Umsetzungsintention erhöht die Zielerreichung von ~22 % auf 62–91 % in verschiedenen Studien.",
+          "Entscheidungsermüdung: Jede Entscheidung verbraucht Glukose und Willenskraft. Das Gehirn am Morgen hat sich noch nicht vollständig erholt.",
+          "\"1 wichtige Aufgabe\" widersteht der Multi-Tasking-Illusion – Forschung zeigt konsistent, dass Multi-Tasking die Produktivität um 20–40 % reduziert.",
+          "Die \"wichtigste Aufgabe\" auswählen erzwingt Priorisierung – zwischen dringend und wichtig unterscheiden.",
+          "Wenn man diese 1 Aufgabe nicht erreicht, ist es einfacher anzupassen als mit 10 vagen Aufgaben.",
+          "Mit \"nächstem kleinen Schritt\" kombinieren (GTD-Mindset von David Allen): \"Bericht schreiben\" → \"Berichtsdatei öffnen und ersten Satz schreiben\"."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "Umsetzungsintention",
+            "note": "Erhöht Erfolg um das 2–3-Fache"
+          },
+          {
+            "icon": "⚡",
+            "label": "Willenskraft sparen",
+            "note": "Abends entscheiden, nicht morgens"
+          },
+          {
+            "icon": "1️⃣",
+            "label": "Nur 1 Aufgabe",
+            "note": "Multi-Tasking reduziert 20–40 % Produktivität"
+          },
+          {
+            "icon": "🔑",
+            "label": "Wichtig vs. Dringend",
+            "note": "Wichtig ≠ dringend"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Ein freundlicher Satz zu mir selbst",
+        "keyFact": "Selbstmitgefühl steigert die Fähigkeit, nach dem Scheitern wieder zu versuchen – entgegen der Befürchtung, dass Selbstmitgefühl Menschen fauler macht.",
+        "detail": "Ein freundlicher Satz zu sich selbst ist kein Lob oder Stolz – es ist das Anerkennen, dass man unter realen Bedingungen versucht, und das reicht.",
+        "details": [
+          "Kristen Neff (UT Austin): Selbstmitgefühl hat 3 Komponenten – Selbstfreundlichkeit, gemeinsame Menschlichkeit und Achtsamkeit. Alle drei zusammen erzeugen die Wirkung.",
+          "Selbstmitgefühl ist NICHT Selbstmitleid. Selbstmitleid konzentriert sich auf das Ich; Selbstmitgefühl erkennt, dass alle Menschen kämpfen.",
+          "Kontraintuitiv: Menschen, die Selbstmitgefühl üben, haben höhere Verantwortlichkeit und geben Fehler leichter zu als Selbstkritiker.",
+          "Niedrigeres Cortisol und höheres Oxytocin bei der Praxis von Selbstmitgefühl.",
+          "Der freundliche Satz sollte \"realistisch genug\" sein – nicht \"Ich bin wunderbar\". Richtig: \"Heute war schwer, aber ich habe weitergemacht\" oder \"Ich bin gut genug, um morgen weiterzumachen\".",
+          "Tägliche Praxis verändert langfristige Selbstgesprächsmuster."
+        ],
+        "points": [
+          {
+            "icon": "💙",
+            "label": "Selbstmitgefühl",
+            "note": "Steigert Ausdauer nach Scheitern"
+          },
+          {
+            "icon": "🔬",
+            "label": "Oxytocin",
+            "note": "Verbindungshormon bei Selbstfreundlichkeit"
+          },
+          {
+            "icon": "🎯",
+            "label": "Verantwortlichkeit",
+            "note": "Fehler leichter zugeben als bei Selbstkritik"
+          },
+          {
+            "icon": "🔄",
+            "label": "Selbstgespräch",
+            "note": "Verändert langfristige Muster"
+          }
+        ]
+      }
+    ],
+    "d5_level_modals": [
+      {
+        "modalTitle": "Stufe 1 – Einstiegs-Detox",
+        "keyFact": "Blaues Licht von Smartphones unterdrückt Melatonin um bis zu 23 % und verzögert die Schlafzeit durchschnittlich um 1,5 Stunden – nur das Ausschalten des Bildschirms 20 Minuten vor dem Schlafen führt schon in der ersten Nacht zu tieferem Schlaf.",
+        "detail": "4 kleine Änderungen in Stufe 1 zielen genau auf 4 häufige \"Leckstellen\": morgens (sofort Social Media öffnen), tagsüber (ständige Benachrichtigungen), im Bett (Telefon am Kopfkissen) und abends (helle Bildschirme vor dem Schlafen).",
+        "details": [
+          "Blaues Licht (460–480 nm) stimuliert ipRGC-Zellen in der Netzhaut und unterdrückt die Melatoninausschüttung der Zirbeldrüse. Harvard: 2 Stunden Bildschirm vor dem Schlafen reduziert Melatonin um 23 %.",
+          "Smartphone in den ersten 10 Minuten nach dem Aufwachen öffnen versetzt das Gehirn in den \"reaktiven Modus\".",
+          "Ständige Benachrichtigungen fragmentieren die Konzentration – Gloria Mark (UC Irvine): 23 Minuten dauert es, bis das Gehirn nach jedem Interrupt wieder tief fokussiert ist.",
+          "Telefon im Bett hat zwei Nachteile: Licht unterdrückt Melatonin und der Näheeffekt erhöht die Erregung.",
+          "4 Stufe-1-Änderungen erfordern keine hohe Willenskraft – nur die physische Umgebung ändern: Telefon aus dem Schlafzimmer, Benachrichtigungen in Einstellungen ausschalten.",
+          "Stufe 1 zeigt oft schon in der ersten Woche Wirkung: tieferer Schlaf, proaktivere Morgen, reduzierte \"Telefon-Angst\"."
+        ],
+        "points": [
+          {
+            "icon": "😴",
+            "label": "Melatonin",
+            "note": "Bildschirm 20 Min aus → tieferer Schlaf"
+          },
+          {
+            "icon": "🌅",
+            "label": "Proaktiver Morgen",
+            "note": "Nicht reaktiv von Tagesbeginn an"
+          },
+          {
+            "icon": "🔕",
+            "label": "Benachrichtigungen",
+            "note": "Aus = +3–4 Std. Fokus/Tag"
+          },
+          {
+            "icon": "🛏️",
+            "label": "Schlafzimmer",
+            "note": "Telefon in anderem Zimmer lassen"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Stufe 2 – Standard-Detox",
+        "keyFact": "Social-Media-Feeds sind nach dem \"Variable Reward\"-Prinzip gestaltet – dem gleichen Mechanismus wie Spielautomaten. Nur 30 Minuten ohne Social Media am Morgen genügen, damit das Gehirn nicht den ganzen Tag im reaktiven Modus bleibt.",
+        "detail": "Stufe 2 adressiert die Ursache: Das Gehirn wird von der Aufmerksamkeitswirtschaft \"ausgebeutet\". Es ist nicht deine Schuld, dass du nicht aufhören kannst zu scrollen – es ist absichtliches Design.",
+        "details": [
+          "Variable Reward Schedule (B.F. Skinner): Zufällige Belohnungen (Scrollen, ohne zu wissen, was man sieht) aktivieren Dopamin stärker als feste Belohnungen.",
+          "Tristan Harris (ehemaliger Google-Ingenieur): Jede \"Gefällt mir\"- oder \"Kommentar\"-Benachrichtigung wird gehalten und in Zyklen gesendet, um maximale Dopaminschübe zu erzeugen.",
+          "\"30 Minuten ohne Social Media am Anfang des Tages\" schafft \"kognitiven Weißraum\" – das Gehirn ist nicht im Bedrohungserkennungs- und Vergleichsmodus.",
+          "Essen ohne Telefon hat 2 Vorteile: Sättigungssignale werden besser wahrgenommen, Assoziation \"Essen = Bildschirm\" wird verhindert.",
+          "\"10 Minuten Leerraum\" ermöglichen dem Default Mode Network zu arbeiten – Erinnerungen zu verarbeiten und kognitiven Überlastung zu reduzieren.",
+          "30 Minuten vor dem Schlafen ohne Feed-Scrollen hilft dem Gehirn beim Abschalten."
+        ],
+        "points": [
+          {
+            "icon": "🎰",
+            "label": "Variable Belohnung",
+            "note": "Spielautomatenmechanismus in der App"
+          },
+          {
+            "icon": "🌅",
+            "label": "Anderer Morgen",
+            "note": "30 Min ohne Social = eigene Agenda"
+          },
+          {
+            "icon": "🧠",
+            "label": "DMN-Ruhe",
+            "note": "10 Min leer = Gehirn verarbeitet implizit"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Essen ohne Bildschirm",
+            "note": "Bessere Sättigungswahrnehmung"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Stufe 3 – Erweiterter Detox",
+        "keyFact": "Das Default Mode Network (DMN) braucht \"leere\" Zeit, um Erinnerungen, Kreativität und Emotionen zu verarbeiten. Ständige Bildschirme verhindern, dass DMN arbeitet.",
+        "detail": "Stufe 3 ist nicht extrem – es geht um die langfristige Wiederherstellung kognitiver Bandbreite. Tiefes Arbeiten, Kreativität und echte Verbundenheit erfordern bildschirmfreie Zeit.",
+        "details": [
+          "Default Mode Network (Buckner & DiNicola, 2019): Das Gehirnnetzwerk, das aktiv ist, wenn \"nichts getan wird\" – es verarbeitet Erinnerungen, imaginiert die Zukunft, verarbeitet Emotionen und Empathie.",
+          "Cal Newport (\"Deep Work\"): Kognitiv anspruchsvolle Arbeit braucht 90–120 ununterbrochene Minuten für den Flow-Zustand. Ein bildschirmfreier Abend pro Woche trainiert die Tiefenfokussierungsfähigkeit.",
+          "Gehen ohne Kopfhörer und Telefon kombiniert leichte Aerobic (BDNF) + DMN-Aktivierung + Gegenwartsbewusstsein – 3 Gehirnvorteile parallel in 10–15 Minuten.",
+          "Csikszentmihalyi (Flow): Der \"Flow-Zustand\" erfordert genau die richtige Herausforderung und keine Unterbrechungen.",
+          "Stanford-RCT (Bratman et al., 2015): 90 Minuten Naturspaziergang reduzierte Rumination deutlich mehr als Stadtgehen.",
+          "Sucht-Apps vom Startbildschirm entfernen reduziert den Konsum laut internen App-Daten um 80 % ohne Willenskraft."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "DMN-Erholung",
+            "note": "Kreativität & Gedächtnis brauchen Leerlaufzeit"
+          },
+          {
+            "icon": "🌊",
+            "label": "Flow-Zustand",
+            "note": "90 Min ununterbrochene Tiefarbeit"
+          },
+          {
+            "icon": "🌿",
+            "label": "Natur",
+            "note": "Reduziert Rumination und Stress"
+          },
+          {
+            "icon": "📱",
+            "label": "Reibungsdesign",
+            "note": "App auf Bildschirm 2 = 80 % weniger Scrollen"
+          }
+        ]
+      }
+    ],
+    "d6_habit_modals": [
+      {
+        "modalTitle": "Stress → 1 Minute atmen",
+        "keyFact": "1 Minute Zwerchfellatmung reicht aus, um die Herzfrequenz um 5–8 bpm zu senken und Cortisol messbar zu reduzieren – kurz genug, dass es keinen Grund gibt, es bei Stress nicht sofort zu tun.",
+        "detail": "Atmung ist das einzige Werkzeug, das das autonome Nervensystem bewusst steuert. Bei Stress ist das Gehirn im Kampf-oder-Flucht-Modus. 1 Minute langsame Atmung aktiviert den Parasympathikus.",
+        "details": [
+          "Das parasympathische System aktiviert sich bei langsamer Atmung über den Vagusnervmechanismus – in 30–60 Sekunden.",
+          "Forschung von Zaccaro et al. (2018): Langsame Atmung mit 6 Atemzügen/Minute erzeugt die höchste HRV.",
+          "Einfachste Technik: 4 Sekunden einatmen, 6–8 Sekunden ausatmen.",
+          "\"1 Minute\" ist keine willkürliche Zahl – nur 4–5 tiefe Atemzüge reichen aus, damit Cortisol anfängt zu sinken.",
+          "Am effektivsten sofort beim ersten Stresssignal angewendet.",
+          "Überall verwendbar: Bürorestroom, Aufzug, Stau, zwischen Besprechungen."
+        ],
+        "points": [
+          {
+            "icon": "⚡",
+            "label": "Vagusnerv",
+            "note": "Aktiviert Ruhe & Verdauung in 60s"
+          },
+          {
+            "icon": "❤️",
+            "label": "Herzfrequenz senken",
+            "note": "5–8 bpm nach 4–5 tiefen Atemzügen"
+          },
+          {
+            "icon": "⏱️",
+            "label": "1 Minute",
+            "note": "Reicht aus, damit Cortisol sinkt"
+          },
+          {
+            "icon": "📍",
+            "label": "Überall anwenden",
+            "note": "Keine besondere Umgebung nötig"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Überlastet → Gehirn auf 5 Zeilen entleeren",
+        "keyFact": "Das Gehirn kann die aktuelle Aufgabe nicht gut verarbeiten, wenn es noch eine Liste unerledigter Aufgaben im Arbeitsgedächtnis \"hält\" – 5 Zeilen schreiben befreit Gehirn-RAM.",
+        "detail": "Kognitive Überlastung entsteht nicht durch zu viele Aufgaben – sondern weil das Gehirn zu viele Dinge gleichzeitig hält. Das Arbeitsgedächtnis hat ein Limit von ~7 Einheiten.",
+        "details": [
+          "Arbeitsgedächtnis hat ein Limit von ~7 ± 2 \"Chunks\" nach Miller (1956). Bei Überlauf kann das Gehirn keine neuen Informationen hinzufügen – Überwältigungsgefühl entsteht.",
+          "Zeigarnik-Effekt: Das Gehirn priorisiert das \"Festhalten\" unerledigter Dinge – offene Aufgaben verbrauchen kontinuierlich Arbeitsgedächtnis.",
+          "\"Gehirn auf 5 Zeilen entleeren\" = GTD (Getting Things Done) in der minimalistischen Version.",
+          "Keine perfekten oder strukturierten 5 Zeilen nötig. Alles aufschreiben, was \"Platz\" im Kopf einnimmt.",
+          "Nach dem Aufschreiben einfach kategorisieren: \"Jetzt erledigen\" / \"Später planen\" / \"Warten auf andere\" / \"Loslassen\".",
+          "\"5 Zeilen\" reichen für die meisten alltäglichen Überlastungssituationen."
+        ],
+        "points": [
+          {
+            "icon": "💾",
+            "label": "RAM freigeben",
+            "note": "Arbeitsgedächtnis hat ~7 Chunks Limit"
+          },
+          {
+            "icon": "🔄",
+            "label": "Zeigarnik-Effekt",
+            "note": "Gehirn hält Unerledigtes – Schreiben schließt die Schleife"
+          },
+          {
+            "icon": "✍️",
+            "label": "5 Zeilen",
+            "note": "Minimales GTD, keine Struktur nötig"
+          },
+          {
+            "icon": "🗂️",
+            "label": "Kategorisieren",
+            "note": "Erledigen / Planen / Warten / Loslassen"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Vor dem Schlafen → Bildschirm ausschalten",
+        "keyFact": "20 Minuten ohne Bildschirm vor dem Schlafen reichen aus, damit Cortisol anfängt zu sinken und Melatonin zu steigen – die beiden physiologischen Bedingungen für Tiefschlaf und vollständige Erholung.",
+        "detail": "Schlaf ist die Zeit, in der das Gehirn \"Wartung durchführt\" – Erinnerungen verarbeitet, Neuroabfall entfernt (Glymphatisches System) und Emotionen zurücksetzt.",
+        "details": [
+          "Blaues Licht von Bildschirmen stimuliert ipRGC-Zellen und unterdrückt Melatonin. Harvard: 2 Stunden Bildschirm vor dem Schlafen reduziert Melatonin um 23 %.",
+          "Cortisol muss auf einen niedrigen Schwellenwert sinken, damit das Gehirn in den schlafbereiten Zustand wechselt. Feed-Scrollen aktiviert sozialen Vergleich und FOMO.",
+          "Das glymphatische System – das Reinigungssystem des Gehirns – arbeitet hauptsächlich im Tiefschlaf. Amyloid-Beta und Tau-Proteine werden entfernt.",
+          "REM-Schlaf – die Emotionsverarbeitungsphase – wird verkürzt, wenn man wegen Bildschirmen spät schläft.",
+          "Wirksame Ersatzgewohnheiten: Papierbuch lesen, leise Musik hören, Body Scan, 5-Zeilen-Tagebuch.",
+          "\"10–20 Minuten\" ist der Mindestschwellenwert – Verhaltensänderungen vor dem Schlafen brauchen nur 10–15 Minuten, um in der ersten Woche Wirkung zu zeigen."
+        ],
+        "points": [
+          {
+            "icon": "🌙",
+            "label": "Melatonin",
+            "note": "Steigt nach 20 Min ohne Bildschirm"
+          },
+          {
+            "icon": "🧹",
+            "label": "Glymphatisch",
+            "note": "Gehirn reinigt Abfallstoffe im Tiefschlaf"
+          },
+          {
+            "icon": "😊",
+            "label": "REM-Schlaf",
+            "note": "Verarbeitet Emotionen für den nächsten Tag"
+          },
+          {
+            "icon": "📖",
+            "label": "Ersetzen mit",
+            "note": "Papierbuch, Tagebuch, Body Scan"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Nach Scheitern → 1 Rückkehrsatz schreiben",
+        "keyFact": "Menschen, die nach dem Scheitern Selbstmitgefühl üben, versuchen häufiger erneut als Selbstkritiker – Selbstfreundlichkeit erzeugt paradoxerweise höhere Verantwortlichkeit.",
+        "detail": "\"1 Rückkehrsatz schreiben\" unterbricht die Ruminations-Schleife und verlagert das Gehirn vom Bedrohungsmodus (Selbstvorwürfe) in den Handlungsmodus.",
+        "details": [
+          "James Clear (\"Atomic Habits\"): Die Regel \"nie zweimal hintereinander auslassen\" ist realistischer als \"nie auslassen\".",
+          "Selbstkritik nach dem Scheitern aktiviert mehr Cortisol und Bedrohungsreaktion – Forschung von Neff et al.: Selbstkritik erhöht die Wahrscheinlichkeit, das Ziel aufzugeben.",
+          "Kristen Neff (UT Austin): Selbstmitgefühl nach dem Scheitern steigert Verantwortlichkeit und die Rate des Wiederversuchens.",
+          "\"1 Satz schreiben\" ist konkreter als \"sich selbst vergeben\". Richtig: \"Gestern Training ausgelassen. Heute Abend 10 Minuten trainieren.\"",
+          "Wachstumsmentalität (Carol Dweck): Scheitern ist Daten, keine Schlussfolgerung über die Person.",
+          "Gewohnheitsidentitätsreparatur: \"Morgen meditiere ich 3 Minuten\" nach einem meditationsfreien Tag bewahrt die Erzählung \"Ich bin jemand, der meditiert\"."
+        ],
+        "points": [
+          {
+            "icon": "🔄",
+            "label": "Nie zweimal auslassen",
+            "note": "James Clears Regel"
+          },
+          {
+            "icon": "💙",
+            "label": "Selbstmitgefühl",
+            "note": "Erhöht Wiederversuchsrate, reduziert sie nicht"
+          },
+          {
+            "icon": "✍️",
+            "label": "1 konkreter Satz",
+            "note": "Handlung > vage Emotion"
+          },
+          {
+            "icon": "🌱",
+            "label": "Identitätsreparatur",
+            "note": "Eigene Erzählung aufrechterhalten"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Naschen wollen → 10 Sekunden pausieren",
+        "keyFact": "80 % der Fälle, in denen wir kurz nach einer Mahlzeit \"hungrig\" sind, sind tatsächlich Stress, Langeweile oder Gewohnheit – keine echte Hunger. Eine 10-sekündige Überprüfung unterscheidet beides.",
+        "detail": "Emotionales Naschen ist kein Willkürsmangel – es ist eine neuronale Schleife, die über Jahre verstärkt wurde.",
+        "details": [
+          "Zucker und Fett aktivieren den Nucleus Accumbens und erzeugen einen kurzen Dopaminschub – aber Blutzucker steigt dann schnell ab, was die Stimmung senkt und das nächste Verlangen erzeugt.",
+          "Echten Hunger vs. emotionalen Hunger unterscheiden: Echter Hunger erscheint allmählich, jedes Essen ist attraktiv. Emotionaler Hunger erscheint plötzlich, will etwas Bestimmtes.",
+          "Die 10-Sekunden-Pause ist ein \"Pattern Interrupt\" – die automatische Cue-Routine-Kette unterbrechen.",
+          "Ein Ersatzmenü ist effektiver als reine Willenskraft: 5 langsame Atemzüge, Wasser trinken, 2 Minuten nach draußen gehen.",
+          "Achtsames Essen reduziert Binge-Eating in manchen RCTs um 60–70 %.",
+          "Langfristig: Ein Tagebuch mit Nasch-Triggern führen, um Muster zu erkennen."
+        ],
+        "points": [
+          {
+            "icon": "🔍",
+            "label": "Echter vs. emotionaler Hunger",
+            "note": "Plötzlich + spezifisch = emotional"
+          },
+          {
+            "icon": "⏸️",
+            "label": "Pattern Interrupt",
+            "note": "10s unterbricht die automatische Kette"
+          },
+          {
+            "icon": "🔄",
+            "label": "Ersetzen",
+            "note": "Anderes Verhalten, keine Lücke lassen"
+          },
+          {
+            "icon": "📊",
+            "label": "Muster erkennen",
+            "note": "Trigger notieren, um den Cue zu ändern"
+          }
+        ]
+      },
+      {
+        "modalTitle": "Motivation verloren → 2 Minuten machen",
+        "keyFact": "Motivation kommt nicht vor der Handlung – sie kommt NACHDEM man begonnen hat. 2 Minuten sind eine niedrige Schwelle, die das Gehirn nicht widerstehen kann, aber ausreichen, um Momentum zu aktivieren.",
+        "detail": "\"Das Minimum 2 Minuten machen\" ist kein echtes Training – es ist ein Weg, die Aktivierungsenergie des Gehirns zu überlisten.",
+        "details": [
+          "Aktivierungsenergie: Das Gehirn braucht Energie, um ein neues Verhalten zu starten, besonders bei niedriger Motivation. \"2 Minuten\" reduziert dies auf fast null.",
+          "James Clear (\"Atomic Habits\"): \"2-Minuten-Regel\" – jede Gewohnheit auf 2 Minuten verkleinern, um zu beginnen.",
+          "Umgekehrter Zeigarnik-Effekt: Wenn eine Aufgabe einmal begonnen ist, erzeugt das Gehirn eine \"offene Schleife\", die abgeschlossen werden möchte. 70–80 % der Menschen, die \"2 Minuten machen\", machen weiter.",
+          "Motivation folgt der Handlung, nicht umgekehrt – eines der konsistentesten Ergebnisse in der Verhaltenspsychologie.",
+          "Identitätsverankerung: \"2 Minuten trainieren\" erhält noch die Identität \"jemand, der trainiert\".",
+          "BJ Fogg (Stanford, \"Tiny Habits\"): Die kleinste mögliche Gewohnheit erzeugt einen emotionalen Gewinn – jede Vollendung, auch kurz, erzeugt kleines Dopamin."
+        ],
+        "points": [
+          {
+            "icon": "⚡",
+            "label": "Aktivierungsenergie",
+            "note": "2 Min = Schwelle, die das Gehirn nicht widerstehen kann"
+          },
+          {
+            "icon": "🌊",
+            "label": "Momentum",
+            "note": "70–80 % machen nach dem Start weiter"
+          },
+          {
+            "icon": "🎭",
+            "label": "Motivation folgt",
+            "note": "Handlung zuerst, Inspiration danach"
+          },
+          {
+            "icon": "🏷️",
+            "label": "Identität",
+            "note": "Klein bewahrt noch die Identität"
+          }
+        ]
+      }
+    ]
   },
   "pillarE": {
     "id": "e",
@@ -21841,6 +23045,430 @@
               "Woche 7–12: Personalisieren & optimieren"
             ],
             "cta": "Roadmap ansehen →"
+          }
+        ]
+      }
+    ],
+    "meal_items": [
+      {
+        "meal": "Frühstück",
+        "formula": "Eiweiß + gute Kohlenhydrate + Obst/Gemüse",
+        "eg": "Eier + Haferflocken + Banane",
+        "keyFact": "Ein proteinreiches Frühstück (≥20g) reduziert das Hungergefühl den ganzen Tag und stabilisiert den Blutzucker. Columbia-Universität: Frühstück auslassen erhöht das Herzerkrankungsrisiko um 27 %.",
+        "details": [
+          "Frühstücksprotein hat höchste Priorität: Eier (6g/Stück), griechischer Joghurt (15–20g/Becher), Tofu, Frischkäse. Hält bis zum Mittagessen satt.",
+          "Komplexe Kohlenhydrate wählen: Haferflocken, Vollkornbrot, Süßkartoffel. Pasteten und zuckerreiche Cerealien meiden.",
+          "Obst am Morgen ist ideal: natürliche Zucker + Ballaststoffe + Vitamine.",
+          "Vor dem Frühstück 1–2 Gläser Wasser trinken – nach 7–8h Schlaf ist der Körper dehydriert.",
+          "Keine Zeit? 3 schnelle Optionen: Eier + Banane (5 Min), Joghurt + Obst (2 Min), Protein-Smoothie + Haferflocken (3 Min).",
+          "Beste Zeit: 30–60 Minuten nach dem Aufwachen, abgestimmt auf den Cortisol-Morgenpeak."
+        ],
+        "points": [
+          {
+            "icon": "🥚",
+            "label": "Protein priorisieren",
+            "note": "≥20g Protein — lange Sättigung, weniger Hunger"
+          },
+          {
+            "icon": "🌾",
+            "label": "Komplexe Kohlenhydrate",
+            "note": "Haferflocken / Vollkorn — kein Blutzuckerspike"
+          },
+          {
+            "icon": "🍌",
+            "label": "Frisches Obst",
+            "note": "Ballaststoffe + Vitamine — morgens am besten"
+          },
+          {
+            "icon": "💧",
+            "label": "Wasser zuerst",
+            "note": "Hydratation nach 7–8h — verbessert Verdauung"
+          }
+        ]
+      },
+      {
+        "meal": "Mittagessen",
+        "formula": "½ Gemüse + ¼ Eiweiß + ¼ Kohlenhydrate",
+        "eg": "Reis + Fisch + gedämpftes Gemüse",
+        "keyFact": "Ein ausgewogenes Mittagessen nach dem Harvard-Teller (½ Gemüse + ¼ Eiweiß + ¼ Kohlenhydrate) erhält die Energie stabil. Ein kohlenhydratreiches Mittagessen reduziert die Arbeitsleistung um 15–20 % nach 2 Stunden.",
+        "details": [
+          "½ Teller Gemüse/Suppe ist die Grundlage: Ballaststoffe stabilisieren den Blutzucker und bauen eine gesunde Darmflora auf.",
+          "¼ Teller Eiweiß: Fisch (am besten), Hühnerbrust, mageres Fleisch, Eier, Tofu.",
+          "¼ Teller Kohlenhydrate: weißer Reis, Nudeln sind alle in Ordnung – nur das Verhältnis ¼ einhalten.",
+          "Brühe/Suppe ist ein Bonus: liefert Wasser, Elektrolyte und wasserlösliche Mikronährstoffe.",
+          "Vermeiden: Mittagessen ohne klares Eiweiß, frittiertes Essen, Mittagessen auslassen.",
+          "Meal-Prep: einmal für 2–3 Tage kochen."
+        ],
+        "points": [
+          {
+            "icon": "🥦",
+            "label": "½ Teller Gemüse",
+            "note": "Kein Limit — je mehr Gemüse desto besser"
+          },
+          {
+            "icon": "🐟",
+            "label": "¼ Teller Eiweiß",
+            "note": "Fisch ideal — Omega-3 gut für das Gehirn"
+          },
+          {
+            "icon": "🍚",
+            "label": "¼ Teller Kohlenhydrate",
+            "note": "Verhältnis halten — nicht verbieten, nur ausgleichen"
+          },
+          {
+            "icon": "🍵",
+            "label": "Suppe als Bonus",
+            "note": "Hydratation + Mikronährstoffe"
+          }
+        ]
+      },
+      {
+        "meal": "Snack",
+        "formula": "Leichtes Eiweiß oder Obst",
+        "eg": "Joghurt + Obst",
+        "keyFact": "Ein gesunder Snack (100–200 kcal) hält die Energie 3–4 Stunden nach dem Mittagessen stabil und verhindert den 4–5-Uhr-Hunger.",
+        "details": [
+          "Idealer Zeitpunkt: 2,5–3 Stunden nach dem Mittagessen (meist 15–16 Uhr).",
+          "Beste Optionen: griechischer Joghurt, frisches Obst, eine kleine Handvoll Nüsse, Frischkäse, hartgekochtes Ei.",
+          "Zu vermeidende Snacks: Süßgebäck, verpackte Snacks, frittiertes Essen, Softdrinks.",
+          "Richtige Größe: 100–200 kcal, keine vollständige Mahlzeit.",
+          "Vor dem Snack Wasser trinken: 20 % des \"Hungers\" ist tatsächlich Durst.",
+          "Für Trainierende: nachmittäglicher Snack kann ein leichtes Pre-Workout sein."
+        ],
+        "points": [
+          {
+            "icon": "⏰",
+            "label": "Richtiger Zeitpunkt",
+            "note": "15–16 Uhr — verhindert extremen Hunger am Abend"
+          },
+          {
+            "icon": "🥛",
+            "label": "Joghurt ist ideal",
+            "note": "Protein + Probiotika + Kalzium in einer Wahl"
+          },
+          {
+            "icon": "💧",
+            "label": "Erst Wasser",
+            "note": "20 % des \"Hungers\" ist Durst — erst Wasser versuchen"
+          },
+          {
+            "icon": "🥜",
+            "label": "Nüsse sind gut",
+            "note": "Mandeln/Walnüsse — gesundes Fett + Protein + Sättigung"
+          }
+        ]
+      },
+      {
+        "meal": "Abendessen",
+        "formula": "Eiweiß + viel Gemüse + moderate Kohlenhydrate",
+        "eg": "Hähnchen/Fisch + Salat + Süßkartoffel",
+        "keyFact": "Das Abendessen bestimmt die Schlafqualität. Zu viel essen, zu spät (nach 21 Uhr) oder viele raffinierte Kohlenhydrate erhöhen den Blutzucker während des Schlafs.",
+        "details": [
+          "Abendessen-Eiweiß ist wichtig für die nächtliche Erholung: Lachs, Hühnerbrust, Eier, Tofu — leichter verdaulich als rotes Fleisch am Abend.",
+          "Je mehr Gemüse desto besser: Salate, gedämpftes Gemüse, Gemüsesuppe.",
+          "Abendliche Kohlenhydrate: im Vergleich zum Mittagessen halbieren, aber nicht vollständig weglassen.",
+          "Essenszeit: idealerweise 18–19:30 Uhr, mindestens 2–3 Stunden vor dem Schlafen beenden.",
+          "Vermeiden: übermäßigen Alkohol, frittiertes Essen, übermäßig raffinierte Zucker.",
+          "Nach-Abendessen-Spaziergang: 10–15 Minuten leichtes Gehen nach dem Abendessen senkt den Blutzucker nach dem Essen um 25–30 %."
+        ],
+        "points": [
+          {
+            "icon": "🕕",
+            "label": "Vor 20 Uhr essen",
+            "note": "2–3h vor dem Schlafen beenden — gut für Schlaf und Verdauung"
+          },
+          {
+            "icon": "🥗",
+            "label": "Gemüse hat Priorität",
+            "note": "Kein Limit — Ballaststoffe + Mikronährstoffe, wenig Kalorien"
+          },
+          {
+            "icon": "🍠",
+            "label": "Süßkartoffel besser",
+            "note": "Niedrigerer GI als weißer Reis — stabiler Blutzucker im Schlaf"
+          },
+          {
+            "icon": "🚶",
+            "label": "10–15 Min spazieren",
+            "note": "Nach dem Essen — Blutzucker um 25–30 % senken"
+          }
+        ]
+      },
+      {
+        "meal": "Nach dem Training",
+        "formula": "Schnelles Eiweiß + leicht verdauliche Kohlenhydrate",
+        "eg": "Milch/Whey + Banane",
+        "keyFact": "Im \"anabolen Fenster\" 30–60 Minuten nach dem Training: Protein maximiert die Muskelsynthese, schnelle Kohlenhydrate füllen Glykogen auf. Mahlzeit auslassen = bis zu 50 % der Trainingsvorteile verloren.",
+        "details": [
+          "\"Anaboles Fenster\": 30–60 Minuten nach dem Training ist die Zeit höchster Muskelempfindlichkeit gegenüber Insulin und Protein.",
+          "Post-Workout-Protein: 20–40g reichen. Whey wird am schnellsten absorbiert (15–20 Min), gefolgt von Eiern, frischer Milch, griechischem Joghurt.",
+          "Post-Workout-Kohlenhydrate: Banane, Weißbrot, weißer Reis, Fruchtsaft — einfache Zucker zur Glykogenauffüllung.",
+          "Wasser und Elektrolyte: verlorenen Schweiß ersetzen (~500 ml/Trainingsstunde).",
+          "Keine Post-Workout-Mahlzeit nötig wenn: Training < 30 Min leicht, Hauptmahlzeit innerhalb von 2h nach dem Training.",
+          "Vorsicht vor \"Kompensation\" nach dem Training."
+        ],
+        "points": [
+          {
+            "icon": "⏱️",
+            "label": "Innerhalb 30–60 Min",
+            "note": "Anaboles Fenster — maximale Muskelsynthese"
+          },
+          {
+            "icon": "🥛",
+            "label": "Protein 20–40g",
+            "note": "Whey/Eier/Milch — schnelle Absorption nach Training"
+          },
+          {
+            "icon": "🍌",
+            "label": "Schnelle Kohlenhydrate OK",
+            "note": "Banane / weißer Reis — sofortige Glykogenauffüllung"
+          },
+          {
+            "icon": "💧",
+            "label": "Ausreichend rehydrieren",
+            "note": "~500 ml/Trainingsstunde — Wasser vor Essen priorisieren"
+          }
+        ]
+      }
+    ],
+    "nutri_log_items": [
+      {
+        "label": "Genug Protein?",
+        "keyFact": "Protein ist das einzige Makronährstoff, den der Körper nicht speichern kann — es muss gleichmäßig über jede Mahlzeit aufgefüllt werden. 20–30g Protein pro Mahlzeit ist der optimale Schwellenwert.",
+        "details": [
+          "Jede Hauptmahlzeit sollte eine klare Proteinquelle haben: Hühnerbrust (~25g/100g), Lachs (~20g/100g), Eier (~6g/Stück), Rindfleisch (~25g/100g), fester Tofu (~8g/100g).",
+          "Protein hält länger satt durch den höchsten thermischen Effekt — der Körper verbrennt 20–30 % der Proteinkalorien nur zur Verdauung.",
+          "Gleichmäßige Verteilung auf 3 Mahlzeiten ist besser als Häufung am Abend.",
+          "Pflanzliche und tierische Proteine sind beide wertvoll. Kombination von 2 pflanzlichen Quellen (Reis + Hülsenfrüchte) gibt ein vollständiges Aminosäureprofil.",
+          "Zeichen von Proteinmangel: anhaltende Müdigkeit, schwache Haare und Nägel, langsame Wundheilung.",
+          "Einfache Regel: auf den Teller schauen — keine klare Proteinquelle? Ein Ei oder griechischen Joghurt hinzufügen."
+        ],
+        "points": [
+          {
+            "icon": "🥚",
+            "label": "20–30g / Mahlzeit",
+            "note": "Optimaler Schwellenwert für Muskelsynthese und Sättigung"
+          },
+          {
+            "icon": "🐟",
+            "label": "Diverse Quellen",
+            "note": "Fleisch/Fisch/Eier/Hülsenfrüchte — für vollständige Aminosäuren rotieren"
+          },
+          {
+            "icon": "⏰",
+            "label": "Auf 3 Mahlzeiten verteilen",
+            "note": "Nicht am Abend häufen — bessere Absorption"
+          },
+          {
+            "icon": "💪",
+            "label": "Muskeln erhalten",
+            "note": "Nach 30 wichtig — Muskeln degenerieren ~1%/Jahr"
+          }
+        ]
+      },
+      {
+        "label": "Genug Gemüse?",
+        "keyFact": "WHO empfiehlt ≥5 Portionen (400g) Obst und Gemüse täglich. Jede zusätzliche Portion reduziert das Herzkreislaufrisiko um 4 % und das Krebsrisiko um 3 % (Analyse von 95 Studien, 2019).",
+        "details": [
+          "1 Portion = 1 Handvoll (~80g). Keine Waage nötig — mit der eigenen Hand abschätzen.",
+          "Farben = verschiedene Mikronährstoffe: Rot (Lycopin - Herz), Orange/Gelb (Beta-Carotin - Augen), Dunkelgrün (Chlorophyll - Leber), Lila (Anthocyan - Gehirn).",
+          "Rohes und gekochtes Gemüse haben unterschiedliche Vorteile. Kombination beider ist ideal.",
+          "Ballaststoffe aus Obst und Gemüse ernähren nützliche Darmbakterien, senken LDL und verlangsamen die Zuckeraufnahme.",
+          "Einfachster Tipp: zu jeder Mahlzeit eine Handvoll Gemüse hinzufügen; Obst als Snack.",
+          "Tiefkühlgemüse ist ernährungsmäßig nicht schlechter — oft direkt nach der Ernte eingefroren."
+        ],
+        "points": [
+          {
+            "icon": "🥦",
+            "label": "1 Handvoll = 1 Portion",
+            "note": "~80g — mit eigener Hand schätzen, keine Waage nötig"
+          },
+          {
+            "icon": "🌈",
+            "label": "Bunt essen",
+            "note": "Jede Farbe = andere gesundheitsschützende Phytochemikalien"
+          },
+          {
+            "icon": "🦠",
+            "label": "Darm nähren",
+            "note": "Ballaststoffe nähren nützliche Bakterien — Nahrungsergänzung kann nicht ersetzen"
+          },
+          {
+            "icon": "❄️",
+            "label": "Tiefkühl ist OK",
+            "note": "Gleiche Nährstoffe wie frisch — praktischer und weniger Verschwendung"
+          }
+        ]
+      },
+      {
+        "label": "Genug Wasser?",
+        "keyFact": "Nur 1–2 % Wasserverlust des Körpergewichts reduziert die kognitive Leistung um 10–15 % und die körperliche Leistung um 20–30 %. Durst ist ein Zeichen leichter Dehydration.",
+        "details": [
+          "Persönliche Formel: Körpergewicht (kg) × 35 ml = täglicher Grundbedarf.",
+          "Wasser ist am besten. Ungesüßter grüner Tee, moderater Kaffee und Suppe zählen auch. Gezuckerte Getränke zählen NICHT.",
+          "Gleichmäßig verteilen: 1 Glas beim Aufwachen, 1 Glas vor jeder Mahlzeit, 1 Glas alle 2 Stunden bei der Arbeit.",
+          "Urinfarbe ist das beste Maß: hellgelb wie Stroh = ausreichend. Dunkelgelb oder orange = sofort mehr trinken.",
+          "Zu viel trinken (>4L/Tag bei wenig aktiven Menschen) kann Hyponatriämie verursachen.",
+          "Bedarf steigt bei: Fieber, hoher Salz-/Proteinaufnahme, Klimaanlage, Schwangerschaft, intensivem Training."
+        ],
+        "points": [
+          {
+            "icon": "📐",
+            "label": "Persönliche Formel",
+            "note": "Gewicht (kg) × 35 ml = individuelles Ziel"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Urinfarbe prüfen",
+            "note": "Hellgelb = ausreichend. Dunkelgelb = sofort mehr trinken"
+          },
+          {
+            "icon": "⏰",
+            "label": "Gleichmäßig trinken",
+            "note": "Auf einmal trinken ist weniger effektiv"
+          },
+          {
+            "icon": "🚫",
+            "label": "Nicht auf Durst warten",
+            "note": "Durst = schon leicht dehydriert — vorher trinken"
+          }
+        ]
+      },
+      {
+        "label": "Weniger Zucker?",
+        "keyFact": "WHO empfiehlt freie Zucker < 10 % der Gesamtkalorien täglich (~50g bei 2000 kcal), idealerweise < 5 % (~25g).",
+        "details": [
+          "Freie Zucker umfassen: dem Essen zugesetzter Zucker, Softdrinks, verpackte Fruchtsäfte. Nicht natürliche Zucker in frischen Früchten.",
+          "1 Dose Softdrink (~40g Zucker) überschreitet fast schon die Tagesempfehlung.",
+          "Zucker verursacht Sucht über einen Dopaminmechanismus ähnlich wie bei einigen Stimulanzien.",
+          "Zucker schrittweise reduzieren ist effektiver als plötzliches Absetzen.",
+          "Frisches Obst hat natürliche Zucker, kommt aber mit Ballaststoffen und Mikronährstoffen — muss nicht eingeschränkt werden.",
+          "Lebensmitteletiketten: \"zugesetzte Zucker\" suchen. Versteckte Namen: Glukose, Fruktose, Maissirup, Maltose, Dextrose."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "<25g / Tag ist ideal",
+            "note": "WHO: unter 5 % der Gesamtkalorien — ca. 6 Teelöffel"
+          },
+          {
+            "icon": "🥤",
+            "label": "Softdrinks sind die größte Quelle",
+            "note": "1 Dose = ~40g — fast das Tageslimit"
+          },
+          {
+            "icon": "🧠",
+            "label": "Zucker erzeugt mehr Verlangen",
+            "note": "Dopaminmechanismus — Gehirn will nach jeder Einnahme mehr"
+          },
+          {
+            "icon": "🍊",
+            "label": "Frisches Obst zählt nicht",
+            "note": "Begleitende Ballaststoffe verhindern plötzliche Blutzuckerspikes"
+          }
+        ]
+      }
+    ],
+    "lifestyle_items": [
+      {
+        "label": "Schlaf letzte Nacht",
+        "keyFact": "7–9 Stunden Schlaf ist nicht nur Ruhe — das Gehirn \"wartet das System\": entfernt Amyloid-Beta-Toxine, festigt Erinnerungen, regeneriert Wachstumshormone und Immunzellen.",
+        "details": [
+          "7–9 Stunden ist die Empfehlung der National Sleep Foundation für Erwachsene. Unter 6 Stunden kontinuierlich für 2 Wochen = kognitive Leistung äquivalent zu 24 Stunden ohne Schlaf.",
+          "REM-Phase (20–25 % des Schlafs, hauptsächlich nach 5–6h): das Gehirn verarbeitet Emotionen, festigt Langzeitgedächtnis. Kurzen Schlaf abschneiden = REM verlieren.",
+          "Eine Woche ausreichend schlafen: Testosteron steigt wie 10 Jahre jünger (Männer); Cortisol sinkt 15%.",
+          "Schlafschulden können durch Wochenendschlaf nicht vollständig zurückgezahlt werden.",
+          "Qualität wichtiger als Stunden: 7 Stunden ununterbrochener Schlaf besser als 9 Stunden unruhiger Schlaf.",
+          "Raumtemperatur 18–20°C ist der wirkungsvollste Umgebungsfaktor."
+        ],
+        "points": [
+          {
+            "icon": "🧠",
+            "label": "7–9 Stunden ist Standard",
+            "note": "<6 Stunden = Leistung wie 24h wach"
+          },
+          {
+            "icon": "🌙",
+            "label": "REM ist entscheidend",
+            "note": "Erscheint nach 5–6h — kurzen Schlaf abschneiden verliert REM"
+          },
+          {
+            "icon": "💉",
+            "label": "Hormone regenerieren",
+            "note": "WH, Testosteron, Leptin erholen sich im Tiefschlaf"
+          },
+          {
+            "icon": "🌡️",
+            "label": "Kühles Zimmer 18–20°C",
+            "note": "Der wirkungsvollste Umgebungsfaktor für Schlafqualität"
+          }
+        ]
+      },
+      {
+        "label": "Schritte heute",
+        "keyFact": "JAMA-Studie 2019 an 16.000 Menschen: Jede zusätzliche 1.000 Schritte reduziert das Frühsterblichkeitsrisiko um 15 %. Vorteile steigen bis 7.500 Schritte/Tag. Keine 10.000 nötig.",
+        "details": [
+          "10.000 Schritte/Tag ist eine Marketingzahl aus einem japanischen Schrittzähler von 1965 — keine wissenschaftliche Grundlage. Moderne Forschung zeigt optimale Vorteile bei 7.000–8.000.",
+          "NEAT (Non-Exercise Activity Thermogenesis): Nicht-Training-Aktivitäten machen 15–50 % der täglich verbrannten Kalorien aus.",
+          "Gefährliche Schwelle: unter 5.000 Schritte/Tag korreliert mit erhöhtem Risiko für Typ-2-Diabetes.",
+          "10–15 Minuten nach einer Mahlzeit gehen: senkt den Blutzucker nach dem Essen um 25–30 %.",
+          "Schritt-Hacks: 200m weiter parken, Treppen statt Aufzug nehmen, beim Telefonieren gehen.",
+          "Intensität ist auch wichtig: schnelles Gehen (>100 Schritte/Min) ist besser als langsames Gehen."
+        ],
+        "points": [
+          {
+            "icon": "🎯",
+            "label": "7.000–8.000 reichen",
+            "note": "10.000 ist Marketing — optimale Vorteile bei 7–8k"
+          },
+          {
+            "icon": "🔥",
+            "label": "NEAT ist wichtig",
+            "note": "Tägliche Bewegung verbrennt mehr Kalorien als gedacht"
+          },
+          {
+            "icon": "🍽️",
+            "label": "Nach dem Essen gehen",
+            "note": "10–15 Min nach dem Essen — Blutzucker um 25–30 % senken"
+          },
+          {
+            "icon": "⚡",
+            "label": "Schneller ist besser",
+            "note": ">100 Schritte/Min = leichte Kardiozone"
+          }
+        ]
+      },
+      {
+        "label": "Energieniveau",
+        "keyFact": "Energie ist ein zusammengesetzter Indikator, der Schlafqualität, Ernährung, Hydratation, Stress und Bewegung widerspiegelt. Anhaltend niedrige Energie (≤5/10 für mehr als 3 Tage) ist ein Signal zur Systemanpassung.",
+        "details": [
+          "Häufigste Ursachen: Schlafmangel, leichte Dehydration (schon 1–2 % reduziert Leistung um 20 %), Frühstück auslassen, niedrige Proteinaufnahme und langes Sitzen ohne Bewegung.",
+          "Natürlicher Energiezyklus (ultradian Rhythmus): alle ~90–120 Minuten ein Zyklus hoher Fokus → niedrigere Energie → kurze Ruhe → Erholung.",
+          "\"2:30 Uhr nachmittags Einbruch\": aufgrund sinkenden Blutzuckers nach dem Mittagessen. Fix: 10 Min spazieren + Wasser + natürliches Licht.",
+          "Sport steigert Energie sofort: 10–20 Minuten moderates Training erhöht Noradrenalin und Dopamin für 2–4 Stunden.",
+          "Meditation/Atmung für 5 Minuten erholt schneller als Koffein.",
+          "Muster verfolgen: welche Tage haben hohe/niedrige Energie und in Zusammenhang mit Schlaf, Essen, Bewegung, Stress bringen."
+        ],
+        "points": [
+          {
+            "icon": "😴",
+            "label": "Schlaf ist am schnellsten",
+            "note": "Schlafmangel = häufigste Ursache für niedrige Energie"
+          },
+          {
+            "icon": "💧",
+            "label": "Hydratation prüfen",
+            "note": "1–2 % Dehydration senkt Leistung 20 % — jetzt trinken"
+          },
+          {
+            "icon": "🏃",
+            "label": "Sport = mehr Energie",
+            "note": "10–20 Min leichtes Training — Noradrenalin hält 2–4h"
+          },
+          {
+            "icon": "📊",
+            "label": "Muster verfolgen",
+            "note": "2–3 Wochen Notizen → klare Ursache für niedrige Energie"
           }
         ]
       }

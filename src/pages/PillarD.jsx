@@ -1575,6 +1575,51 @@ export default function PillarD() {
     details: Array.isArray(d7ModalsTr[i]?.details) && d7ModalsTr[i].details.length ? d7ModalsTr[i].details : m.details,
     points: Array.isArray(d7ModalsTr[i]?.points) && d7ModalsTr[i].points.length ? d7ModalsTr[i].points : m.points,
   }));
+  const d2TechModalsTr = Array.isArray(pillar?.d2_tech_modals) ? pillar.d2_tech_modals : [];
+  const mergedD2TechModals = D2_TECH_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: d2TechModalsTr[i]?.modalTitle || m.modalTitle,
+    keyFact: d2TechModalsTr[i]?.keyFact || m.keyFact,
+    detail: d2TechModalsTr[i]?.detail || m.detail,
+    details: Array.isArray(d2TechModalsTr[i]?.details) && d2TechModalsTr[i].details.length ? d2TechModalsTr[i].details : m.details,
+    points: Array.isArray(d2TechModalsTr[i]?.points) && d2TechModalsTr[i].points.length ? d2TechModalsTr[i].points : m.points,
+  }));
+  const d3ModeModalsTr = Array.isArray(pillar?.d3_mode_modals) ? pillar.d3_mode_modals : [];
+  const mergedD3ModeModals = D3_MODE_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: d3ModeModalsTr[i]?.modalTitle || m.modalTitle,
+    keyFact: d3ModeModalsTr[i]?.keyFact || m.keyFact,
+    detail: d3ModeModalsTr[i]?.detail || m.detail,
+    details: Array.isArray(d3ModeModalsTr[i]?.details) && d3ModeModalsTr[i].details.length ? d3ModeModalsTr[i].details : m.details,
+    points: Array.isArray(d3ModeModalsTr[i]?.points) && d3ModeModalsTr[i].points.length ? d3ModeModalsTr[i].points : m.points,
+  }));
+  const d4PromptModalsTr = Array.isArray(pillar?.d4_prompt_modals) ? pillar.d4_prompt_modals : [];
+  const mergedD4PromptModals = D4_PROMPT_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: d4PromptModalsTr[i]?.modalTitle || m.modalTitle,
+    keyFact: d4PromptModalsTr[i]?.keyFact || m.keyFact,
+    detail: d4PromptModalsTr[i]?.detail || m.detail,
+    details: Array.isArray(d4PromptModalsTr[i]?.details) && d4PromptModalsTr[i].details.length ? d4PromptModalsTr[i].details : m.details,
+    points: Array.isArray(d4PromptModalsTr[i]?.points) && d4PromptModalsTr[i].points.length ? d4PromptModalsTr[i].points : m.points,
+  }));
+  const d5LevelModalsTr = Array.isArray(pillar?.d5_level_modals) ? pillar.d5_level_modals : [];
+  const mergedD5LevelModals = D5_LEVEL_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: d5LevelModalsTr[i]?.modalTitle || m.modalTitle,
+    keyFact: d5LevelModalsTr[i]?.keyFact || m.keyFact,
+    detail: d5LevelModalsTr[i]?.detail || m.detail,
+    details: Array.isArray(d5LevelModalsTr[i]?.details) && d5LevelModalsTr[i].details.length ? d5LevelModalsTr[i].details : m.details,
+    points: Array.isArray(d5LevelModalsTr[i]?.points) && d5LevelModalsTr[i].points.length ? d5LevelModalsTr[i].points : m.points,
+  }));
+  const d6HabitModalsTr = Array.isArray(pillar?.d6_habit_modals) ? pillar.d6_habit_modals : [];
+  const mergedD6HabitModals = D6_HABIT_MODALS.map((m, i) => ({
+    ...m,
+    modalTitle: d6HabitModalsTr[i]?.modalTitle || m.modalTitle,
+    keyFact: d6HabitModalsTr[i]?.keyFact || m.keyFact,
+    detail: d6HabitModalsTr[i]?.detail || m.detail,
+    details: Array.isArray(d6HabitModalsTr[i]?.details) && d6HabitModalsTr[i].details.length ? d6HabitModalsTr[i].details : m.details,
+    points: Array.isArray(d6HabitModalsTr[i]?.points) && d6HabitModalsTr[i].points.length ? d6HabitModalsTr[i].points : m.points,
+  }));
 
   const heroStatLabels = Array.isArray(pillar?.d_hero_stat_labels) ? pillar.d_hero_stat_labels : null;
   const HERO_STATS = [
@@ -1751,65 +1796,65 @@ export default function PillarD() {
 
       {d2Modal !== null && (
         <CardModal
-          item={D2_TECH_MODALS[d2Modal]}
+          item={mergedD2TechModals[d2Modal]}
           onClose={() => setD2Modal(null)}
           onPrev={() => setD2Modal(i => Math.max(0, i - 1))}
-          onNext={() => setD2Modal(i => Math.min(D2_TECH_MODALS.length - 1, i + 1))}
+          onNext={() => setD2Modal(i => Math.min(mergedD2TechModals.length - 1, i + 1))}
           hasPrev={d2Modal > 0}
-          hasNext={d2Modal < D2_TECH_MODALS.length - 1}
-          total={D2_TECH_MODALS.length}
+          hasNext={d2Modal < mergedD2TechModals.length - 1}
+          total={mergedD2TechModals.length}
           idx={d2Modal}
         />
       )}
 
       {d3Modal !== null && (
         <CardModal
-          item={D3_MODE_MODALS[d3Modal]}
+          item={mergedD3ModeModals[d3Modal]}
           onClose={() => setD3Modal(null)}
           onPrev={() => setD3Modal(i => Math.max(0, i - 1))}
-          onNext={() => setD3Modal(i => Math.min(D3_MODE_MODALS.length - 1, i + 1))}
+          onNext={() => setD3Modal(i => Math.min(mergedD3ModeModals.length - 1, i + 1))}
           hasPrev={d3Modal > 0}
-          hasNext={d3Modal < D3_MODE_MODALS.length - 1}
-          total={D3_MODE_MODALS.length}
+          hasNext={d3Modal < mergedD3ModeModals.length - 1}
+          total={mergedD3ModeModals.length}
           idx={d3Modal}
         />
       )}
 
       {d4Modal !== null && (
         <CardModal
-          item={D4_PROMPT_MODALS[d4Modal]}
+          item={mergedD4PromptModals[d4Modal]}
           onClose={() => setD4Modal(null)}
           onPrev={() => setD4Modal(i => Math.max(0, i - 1))}
-          onNext={() => setD4Modal(i => Math.min(D4_PROMPT_MODALS.length - 1, i + 1))}
+          onNext={() => setD4Modal(i => Math.min(mergedD4PromptModals.length - 1, i + 1))}
           hasPrev={d4Modal > 0}
-          hasNext={d4Modal < D4_PROMPT_MODALS.length - 1}
-          total={D4_PROMPT_MODALS.length}
+          hasNext={d4Modal < mergedD4PromptModals.length - 1}
+          total={mergedD4PromptModals.length}
           idx={d4Modal}
         />
       )}
 
       {d5Modal !== null && (
         <CardModal
-          item={D5_LEVEL_MODALS[d5Modal]}
+          item={mergedD5LevelModals[d5Modal]}
           onClose={() => setD5Modal(null)}
           onPrev={() => setD5Modal(i => Math.max(0, i - 1))}
-          onNext={() => setD5Modal(i => Math.min(D5_LEVEL_MODALS.length - 1, i + 1))}
+          onNext={() => setD5Modal(i => Math.min(mergedD5LevelModals.length - 1, i + 1))}
           hasPrev={d5Modal > 0}
-          hasNext={d5Modal < D5_LEVEL_MODALS.length - 1}
-          total={D5_LEVEL_MODALS.length}
+          hasNext={d5Modal < mergedD5LevelModals.length - 1}
+          total={mergedD5LevelModals.length}
           idx={d5Modal}
         />
       )}
 
       {d6Modal !== null && (
         <CardModal
-          item={D6_HABIT_MODALS[d6Modal]}
+          item={mergedD6HabitModals[d6Modal]}
           onClose={() => setD6Modal(null)}
           onPrev={() => setD6Modal(i => Math.max(0, i - 1))}
-          onNext={() => setD6Modal(i => Math.min(D6_HABIT_MODALS.length - 1, i + 1))}
+          onNext={() => setD6Modal(i => Math.min(mergedD6HabitModals.length - 1, i + 1))}
           hasPrev={d6Modal > 0}
-          hasNext={d6Modal < D6_HABIT_MODALS.length - 1}
-          total={D6_HABIT_MODALS.length}
+          hasNext={d6Modal < mergedD6HabitModals.length - 1}
+          total={mergedD6HabitModals.length}
           idx={d6Modal}
         />
       )}

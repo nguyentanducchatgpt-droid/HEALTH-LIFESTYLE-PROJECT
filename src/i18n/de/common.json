@@ -6172,7 +6172,9 @@
     "analysis": "Analyse",
     "suggestions": "Empfehlungen",
     "pros": "Vorteile",
-    "cons": "Nachteile"
+    "cons": "Nachteile",
+    "detail_btn": "Details →",
+    "source_prefix": "← Berechnet aus"
   },
   "b5": {
     "weight_chart_title": "Gewichtsdiagramm — 12 Wochen",

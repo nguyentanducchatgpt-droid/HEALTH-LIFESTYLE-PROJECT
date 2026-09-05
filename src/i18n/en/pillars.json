@@ -2502,7 +2502,15 @@
           "swap": "Pumpkin / kohlrabi",
           "note": "Naturally sweet, low GI"
         }
-      ]
+      ],
+      "meal_protein_label": "Protein/meal",
+      "meal_protein_note_unit": "chicken breast",
+      "meal_carb_label": "Carb/meal",
+      "meal_carb_note_unit": "rice",
+      "meal_fat_label": "Fat/meal",
+      "meal_fat_note_unit": "ml oil",
+      "meal_kcal_label": "Kcal/meal",
+      "meal_kcal_note_unit": "kcal"
     },
     "b3": {
       "col_calo": "Cals",
@@ -14986,7 +14994,13 @@
     },
     "c_bottom_link": "← Healthy Lifestyle 360",
     "c_quote": "You don't need to live perfectly. Just live with rhythm, with recovery, and with the ability to return.",
-    "c_quote_cite": "— Pillar C Philosophy"
+    "c_quote_cite": "— Pillar C Philosophy",
+    "c2_full_link": "Full circadian rhythm guide →",
+    "c3_full_link": "Full NEAT guide →",
+    "c4_full_link": "Full active recovery guide →",
+    "c5_full_link": "Full deload guide →",
+    "c6_full_link": "Full breathing guide →",
+    "c7_full_link": "Full environment design guide →"
   },
   "pillarD": {
     "id": "d",
@@ -16446,6 +16460,238 @@
             "note": "Small still maintains identity"
           }
         ]
+      }
+    ],
+    "d1_layers": [
+      {
+        "label": "Physical",
+        "signs": [
+          "Fast heartbeat",
+          "Neck & shoulder tension",
+          "Shallow breathing",
+          "Insomnia"
+        ]
+      },
+      {
+        "label": "Emotional",
+        "signs": [
+          "Irritable",
+          "Anxious",
+          "Frustrated",
+          "Impatient"
+        ]
+      },
+      {
+        "label": "Behavioral",
+        "signs": [
+          "Stress eating",
+          "Phone scrolling",
+          "Procrastinating",
+          "Skipping exercise"
+        ]
+      }
+    ],
+    "d1_loops": [
+      {
+        "trigger": "Boss sends urgent message",
+        "thought": "\"I must have done something wrong\"",
+        "emotion": "Anxious, heart racing",
+        "behavior": "Constantly checking phone",
+        "result": "Tired, lower performance"
+      },
+      {
+        "trigger": "Seeing others succeed",
+        "thought": "\"I'm not good enough\"",
+        "emotion": "Insecure, dejected",
+        "behavior": "Scrolling social media more",
+        "result": "More comparison, more exhaustion"
+      },
+      {
+        "trigger": "Tight deadline",
+        "thought": "\"I can't get this done\"",
+        "emotion": "Anxious, paralyzed",
+        "behavior": "Procrastinating, doing other things",
+        "result": "Deadline closer, panic grows"
+      }
+    ],
+    "d_teaser_cards": [
+      {
+        "category": "Foundation",
+        "title": "Understanding Stress & Anxiety Loops",
+        "accent": "3 layers · Trigger · Habit loop",
+        "desc": "Stress isn't the enemy. Understand the mechanism to recognize it early and insert a pause point into the anxiety–habit loop.",
+        "features": [
+          "3 layers: physical, emotional, behavioral",
+          "Trigger → Behavior → Consequence model",
+          "Labeling technique for automatic thoughts"
+        ],
+        "cta": "Understand stress →",
+        "stat1_l": "Layers",
+        "stat2_l": "Triggers"
+      },
+      {
+        "category": "Assessment",
+        "title": "Mind & Calm Assessment",
+        "accent": "7 questions · 3 Tracks",
+        "desc": "Assess your current mental state across 7 dimensions. Identify your Track and priority actions.",
+        "features": [
+          "Initial Mind & Calm score",
+          "Identify Track 1–3",
+          "Personalized action suggestions"
+        ],
+        "cta": "Take assessment →",
+        "stat1_l": "Questions",
+        "stat2_l": "Tracks"
+      },
+      {
+        "category": "Practice",
+        "title": "Breathing Techniques",
+        "accent": "4 techniques · Interactive timer",
+        "desc": "Diaphragmatic breathing, box breathing 4-4-4-4, 4-7-8 breathing and 2-min reset — each for a specific situation.",
+        "features": [
+          "Diaphragm breathing: foundation",
+          "Box breathing: focus & calm",
+          "4-7-8 breathing: sleep prep",
+          "2-min reset: use when overwhelmed"
+        ],
+        "cta": "See techniques →",
+        "stat1_l": "Techniques",
+        "stat2_l": "Minimum"
+      },
+      {
+        "category": "Practice",
+        "title": "Short Meditation & Mindfulness",
+        "accent": "3 min · Body scan · Mindful walking",
+        "desc": "Meditation doesn't require an hour. 3-min breath observation, 5-min body scan before sleep, mindful eating and walking.",
+        "features": [
+          "3-min meditation for beginners",
+          "5-min body scan before sleep",
+          "Mindful eating & walking",
+          "Progressive 3→10 min roadmap"
+        ],
+        "cta": "Practice now →",
+        "stat1_l": "Start",
+        "stat2_l": "Techniques"
+      },
+      {
+        "category": "Practice",
+        "title": "Body Scan",
+        "accent": "10 min · Deep recovery",
+        "desc": "10-minute body scan from head to toe. Best meditation tool for insomnia and muscle tension.",
+        "features": [
+          "Zone-by-zone guided body scan",
+          "Progressive muscle relaxation",
+          "Use after heavy training or before sleep",
+          "Step-by-step audio guidance"
+        ],
+        "cta": "Start scan →",
+        "stat1_l": "Duration",
+        "stat2_l": "Zones"
+      },
+      {
+        "category": "Practice",
+        "title": "5-Line Journaling",
+        "accent": "5 min · Every evening",
+        "desc": "5 questions every evening to clear mental clutter, recognize emotions and prepare for a lighter tomorrow.",
+        "features": [
+          "Basic 5-line journal template",
+          "Journal for emotional eating",
+          "Journal after a fail day",
+          "Printable templates"
+        ],
+        "cta": "See template →",
+        "stat1_l": "Questions",
+        "stat2_l": "Every evening"
+      },
+      {
+        "category": "Tool",
+        "title": "Brain Dump & Clear Your Head",
+        "accent": "Brain dump · Circle of control",
+        "desc": "When your head is overloaded, write everything down then sort: do now, plan it, or let go for now.",
+        "features": [
+          "5-minute brain dump technique",
+          "Circle of control: what can I control?",
+          "Sort: do now / plan / let go",
+          "Worry list"
+        ],
+        "cta": "Dump it out →",
+        "stat1_l": "Brain dump",
+        "stat2_l": "Groups"
+      },
+      {
+        "category": "Tool",
+        "title": "Digital Detox",
+        "accent": "3 levels · Not extreme",
+        "desc": "Reduce screen time — not quitting your phone entirely, but designing your digital environment so your brain can breathe.",
+        "features": [
+          "3 levels: Easy → Standard → Advanced",
+          "Phone-scrolling alternative menu",
+          "Digital environment design",
+          "7-day digital detox plan"
+        ],
+        "cta": "Start detox →",
+        "stat1_l": "Levels",
+        "stat2_l": "Day plan"
+      },
+      {
+        "category": "Mindset",
+        "title": "Gentle Discipline",
+        "accent": "1% rule · No self-blame",
+        "desc": "Gentle discipline is how you maintain habits without burning yourself out. Return with the smallest version after each off day.",
+        "features": [
+          "1% rule: return after a fail day",
+          "Minimum version for every habit",
+          "Handling emotional eating",
+          "Simplify goals: 1–2 changes per phase"
+        ],
+        "cta": "Learn gentle discipline →",
+        "stat1_l": "Return",
+        "stat2_l": "Situations"
+      },
+      {
+        "category": "Mindset",
+        "title": "Small Sustainable Habits",
+        "accent": "Habit stacking · 3 min/day",
+        "desc": "Good habits don't come from willpower — but from small repeated systems. Stack new habits onto existing anchors.",
+        "features": [
+          "Habit stacking: attach to existing habits",
+          "Cue → Routine → Reward",
+          "7 small Mind & Calm habits",
+          "Integrated streak tracker"
+        ],
+        "cta": "Build habits →",
+        "stat1_l": "Habits",
+        "stat2_l": "Days to form"
+      },
+      {
+        "category": "Tool",
+        "title": "Daily Calm Checklist",
+        "accent": "6 items · Calm Score · Streak",
+        "desc": "Daily checklist with 6 Mind & Calm actions. Track your score, streak and daily mood.",
+        "features": [
+          "6 Mind & Calm checklist items",
+          "Calm Score 100 pts/day",
+          "Mood tracker 😣→😄",
+          "Consecutive day streak"
+        ],
+        "cta": "Open checklist →",
+        "stat1_l": "Daily items",
+        "stat2_l": "Max score"
+      },
+      {
+        "category": "Roadmap",
+        "title": "12-Week Mind & Calm Roadmap",
+        "accent": "6 phases · 3–10 min/day",
+        "desc": "From stress recognition → breathing → journaling → digital detox → gentle discipline → personalized routine. Just 3–10 min daily.",
+        "features": [
+          "Weeks 1–2: Stress recognition & reset",
+          "Weeks 3–4: Intentional breathing",
+          "Weeks 5–6: Journaling & brain dump",
+          "Weeks 7–12: Detox, discipline, personalize"
+        ],
+        "cta": "See roadmap →",
+        "stat1_l": "Weeks",
+        "stat2_l": "Phases"
       }
     ]
   },

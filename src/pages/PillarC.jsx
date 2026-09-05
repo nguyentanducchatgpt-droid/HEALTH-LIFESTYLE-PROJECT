@@ -2694,7 +2694,7 @@ export default function PillarC() {
               </div>
             </div>
             <Link to="/pillar/c/circadian" className="inline-flex items-center gap-2 text-lg font-semibold" style={{ color: '#06b6d4' }}>
-              Xem nhịp sinh học đầy đủ →
+              {tPillars('pillarC.c2_full_link', { defaultValue: 'Xem nhịp sinh học đầy đủ →' })}
             </Link>
           </RevealBlock>
         )}
@@ -2810,7 +2810,7 @@ export default function PillarC() {
               </div>
             </div>
             <Link to="/pillar/c/neat" className="inline-flex items-center gap-2 text-lg font-semibold" style={{ color: '#10b981' }}>
-              Xem hướng dẫn NEAT đầy đủ →
+              {tPillars('pillarC.c3_full_link', { defaultValue: 'Xem hướng dẫn NEAT đầy đủ →' })}
             </Link>
           </RevealBlock>
         )}
@@ -2873,7 +2873,7 @@ export default function PillarC() {
               </div>
             </div>
             <Link to="/pillar/c/recovery" className="inline-flex items-center gap-2 text-lg font-semibold" style={{ color: '#a78bfa' }}>
-              Xem phục hồi chủ động đầy đủ →
+              {tPillars('pillarC.c4_full_link', { defaultValue: 'Xem phục hồi chủ động đầy đủ →' })}
             </Link>
           </RevealBlock>
         )}
@@ -2936,7 +2936,7 @@ export default function PillarC() {
               </div>
             </div>
             <Link to="/pillar/c/deload" className="inline-flex items-center gap-2 text-lg font-semibold" style={{ color: '#f97316' }}>
-              Xem hướng dẫn deload đầy đủ →
+              {tPillars('pillarC.c5_full_link', { defaultValue: 'Xem hướng dẫn deload đầy đủ →' })}
             </Link>
           </RevealBlock>
         )}
@@ -3000,7 +3000,7 @@ export default function PillarC() {
               </div>
             </div>
             <Link to="/pillar/c/breathing" className="inline-flex items-center gap-2 text-lg font-semibold" style={{ color: '#0ea5e9' }}>
-              Xem kỹ thuật thở đầy đủ →
+              {tPillars('pillarC.c6_full_link', { defaultValue: 'Xem kỹ thuật thở đầy đủ →' })}
             </Link>
           </RevealBlock>
         )}
@@ -3037,7 +3037,7 @@ export default function PillarC() {
               </div>
             </div>
             <Link to="/pillar/c/environment" className="inline-flex items-center gap-2 text-lg font-semibold" style={{ color: '#f43f5e' }}>
-              Xem thiết kế môi trường đầy đủ →
+              {tPillars('pillarC.c7_full_link', { defaultValue: 'Xem thiết kế môi trường đầy đủ →' })}
             </Link>
           </RevealBlock>
         )}

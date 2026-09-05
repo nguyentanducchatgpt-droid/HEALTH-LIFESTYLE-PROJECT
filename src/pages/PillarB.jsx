@@ -1661,7 +1661,7 @@ function PersonalizedBar({ items, color = '#84cc16', label = 'Dựa trên thông
     <div className="rounded-xl border mb-6 px-4 py-3.5" style={{ borderColor: `${color}22`, background: `${color}07` }}>
       <div className="flex items-center justify-between mb-3">
         <p className="text-[9px] font-bold uppercase tracking-[0.18em]" style={{ color: `${color}80` }}>{label}</p>
-        {source && <p className="text-[9px] text-muted/40 font-medium">← Tính từ {source}</p>}
+        {source && <p className="text-[9px] text-muted/40 font-medium">{t('ui.source_prefix') || '← Tính từ'} {source}</p>}
       </div>
       <div className="flex flex-wrap gap-x-5 gap-y-3">
         {items.map((item, i) => {
@@ -2329,10 +2329,10 @@ function PlatePanel({ s }) {
       <PersonalizedBar panelId="b2" color="#22c55e" source="B0 + B1 (TDEE & Macros)" label={b2tr.based_on || 'Dựa trên thông số của bạn'}
         selectedKey={selectedMetric} onSelect={setSelectedMetric}
         items={[
-        { key: 'meal_protein', label: 'Protein/bữa', value: `${s.perMealProteinG}g`, note: `≈${s.chickenG}g ức gà`, tip: `${s.proteinG}g protein/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealProteinG}g/bữa.` },
-        { key: 'meal_carb',    label: 'Carb/bữa', value: `${s.perMealCarbG}g`, note: `≈${s.riceG}g cơm`, tip: `${s.carbG}g carb/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealCarbG}g/bữa.` },
-        { key: 'meal_fat',     label: 'Fat/bữa', value: `${s.perMealFatG}g`, note: `≈${s.oliveOilMl}ml dầu`, tip: `${s.fatG}g fat/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealFatG}g/bữa.` },
-        { key: 'meal_kcal',    label: 'Kcal/bữa', value: `${s.perMealKcal}`, note: 'kcal', tip: `${s.targetKcal.toLocaleString()} kcal/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealKcal} kcal/bữa.` },
+        { key: 'meal_protein', label: b2tr.meal_protein_label || 'Protein/bữa', value: `${s.perMealProteinG}g`, note: `≈${s.chickenG}g ${b2tr.meal_protein_note_unit || 'ức gà'}`, tip: `${s.proteinG}g protein/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealProteinG}g/bữa.` },
+        { key: 'meal_carb',    label: b2tr.meal_carb_label || 'Carb/bữa', value: `${s.perMealCarbG}g`, note: `≈${s.riceG}g ${b2tr.meal_carb_note_unit || 'cơm'}`, tip: `${s.carbG}g carb/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealCarbG}g/bữa.` },
+        { key: 'meal_fat',     label: b2tr.meal_fat_label || 'Fat/bữa', value: `${s.perMealFatG}g`, note: `≈${s.oliveOilMl}${b2tr.meal_fat_note_unit || 'ml dầu'}`, tip: `${s.fatG}g fat/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealFatG}g/bữa.` },
+        { key: 'meal_kcal',    label: b2tr.meal_kcal_label || 'Kcal/bữa', value: `${s.perMealKcal}`, note: b2tr.meal_kcal_note_unit || 'kcal', tip: `${s.targetKcal.toLocaleString()} kcal/ngày ÷ ${s.mealsPerDay} bữa = ${s.perMealKcal} kcal/bữa.` },
       ]} />
       {detail && <MetricDetailCard detail={detail} color="#22c55e" onClose={() => setSelectedMetric(null)} />}
 

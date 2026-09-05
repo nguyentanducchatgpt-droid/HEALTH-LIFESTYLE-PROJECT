@@ -307,7 +307,7 @@ function CalmScore({ color, onItemClick }) {
                 className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/item:opacity-100 transition-opacity cursor-pointer"
                 style={{ color: '#f59e0b', borderColor: 'rgba(245,158,11,0.35)', background: 'rgba(245,158,11,0.08)' }}
               >
-                chi tiết →
+                {tCommon('ui.detail_btn') || 'chi tiết →'}
               </span>
             )}
           </button>
@@ -560,16 +560,34 @@ const D1_LAYER_MODALS = [
 function D1Panel({ color, onLayerClick }) {
   const { t: tPD1 } = useTranslation('pillars');
   const [openLoop, setOpenLoop] = useState(null);
-  const D1_LAYERS = [
+  const D1_LAYERS_VI = [
     { icon: '💪', label: 'Cơ Thể', signs: ['Tim đập nhanh', 'Căng vai gáy', 'Thở nông', 'Khó ngủ'] },
     { icon: '😤', label: 'Cảm Xúc', signs: ['Dễ cáu', 'Lo lắng', 'Buồn bực', 'Mất kiên nhẫn'] },
     { icon: '🔄', label: 'Hành Vi', signs: ['Ăn vặt', 'Lướt điện thoại', 'Trì hoãn', 'Bỏ tập'] },
   ];
-  const LOOPS = [
+  const d1LayersTr = tPD1('pillarD.d1_layers', { returnObjects: true });
+  const D1_LAYERS = Array.isArray(d1LayersTr)
+    ? D1_LAYERS_VI.map((l, i) => ({
+        ...l,
+        label: d1LayersTr[i]?.label || l.label,
+        signs: Array.isArray(d1LayersTr[i]?.signs) && d1LayersTr[i].signs.length ? d1LayersTr[i].signs : l.signs,
+      }))
+    : D1_LAYERS_VI;
+  const LOOPS_VI = [
     { trigger: 'Sếp nhắn tin gấp', thought: '"Chắc mình làm sai"', emotion: 'Lo, tim đập nhanh', behavior: 'Mở điện thoại liên tục', result: 'Mệt, làm việc kém hơn' },
     { trigger: 'Thấy người khác thành công', thought: '"Mình không bằng ai"', emotion: 'Tự ti, chán nản', behavior: 'Lướt mạng xã hội nhiều hơn', result: 'Càng so sánh, càng mệt' },
     { trigger: 'Deadline gấp', thought: '"Không xong được đâu"', emotion: 'Lo lắng, tê liệt', behavior: 'Trì hoãn, làm việc khác', result: 'Deadline càng gần, panic càng tăng' },
   ];
+  const d1LoopsTr = tPD1('pillarD.d1_loops', { returnObjects: true });
+  const LOOPS = Array.isArray(d1LoopsTr)
+    ? LOOPS_VI.map((l, i) => ({
+        trigger: d1LoopsTr[i]?.trigger || l.trigger,
+        thought: d1LoopsTr[i]?.thought || l.thought,
+        emotion: d1LoopsTr[i]?.emotion || l.emotion,
+        behavior: d1LoopsTr[i]?.behavior || l.behavior,
+        result: d1LoopsTr[i]?.result || l.result,
+      }))
+    : LOOPS_VI;
   return (
     <div className="space-y-5">
       <div>
@@ -1466,6 +1484,22 @@ function TeaserCard({ to, color, rgb, icon, category, title, accent, desc, featu
   );
 }
 
+// ─── TeaserCard base data (12 cards) ─────────────────────────────────────────
+const D_TEASER_CARDS_VI = [
+  { to: '/pillar/d/stress',            color: '#8b5cf6', rgb: '139,92,246', icon: '🌪️', category: 'Nền Tảng', title: 'Hiểu Stress & Vòng Lặp Lo Âu', accent: '3 tầng · Trigger · Vòng lặp', desc: 'Stress không phải kẻ thù. Hiểu cơ chế để nhận diện sớm và chèn điểm dừng vào vòng lặp lo âu–thói quen.', features: ['3 tầng: cơ thể, cảm xúc, hành vi', 'Mô hình Trigger → Hành vi → Hậu quả', 'Kỹ thuật đặt tên cho suy nghĩ'], stats: [{ v: '3', l: 'Tầng' }, { v: '5', l: 'Trigger' }], image: 'https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80', imageAlt: 'Stress', cta: 'Hiểu stress →' },
+  { to: '/pillar/d/assessment',        color: '#a855f7', rgb: '168,85,247', icon: '📋', category: 'Đánh Giá', title: 'Mind & Calm Assessment', accent: '7 câu hỏi · 3 Track', desc: 'Đánh giá trạng thái tinh thần hiện tại qua 7 khía cạnh. Xác định Track phù hợp và hành động ưu tiên.', features: ['Điểm Mind & Calm ban đầu', 'Xác định Track 1–3', 'Đề xuất hành động cá nhân hóa'], stats: [{ v: '7', l: 'Câu hỏi' }, { v: '3', l: 'Tracks' }], image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80', imageAlt: 'Assessment', cta: 'Đánh giá ngay →' },
+  { to: '/pillar/d/breathing',         color: '#6366f1', rgb: '99,102,241', icon: '🫁', category: 'Thực Hành', title: 'Kỹ Thuật Thở', accent: '4 kỹ thuật · Timer tương tác', desc: 'Thở cơ hoành, box breathing 4-4-4-4, thở 4-7-8 và reset 2 phút — mỗi kỹ thuật cho một tình huống cụ thể.', features: ['Thở cơ hoành: nền tảng', 'Box breathing: tập trung & bình tĩnh', 'Thở 4-7-8: chuẩn bị ngủ', 'Reset 2 phút: dùng ngay khi quá tải'], stats: [{ v: '4', l: 'Kỹ thuật' }, { v: '2ph', l: 'Tối thiểu' }], image: 'https://images.unsplash.com/photo-1518609571773-39b7d303a87b?w=800&q=80', imageAlt: 'Breathing', cta: 'Xem kỹ thuật →' },
+  { to: '/pillar/d/meditation',        color: '#d946ef', rgb: '217,70,239', icon: '🧘', category: 'Thực Hành', title: 'Thiền Ngắn & Chánh Niệm', accent: '3 phút · Body scan · Mindful walking', desc: 'Thiền không cần ngồi 1 tiếng. 3 phút quan sát hơi thở, 5 phút body scan trước ngủ, chánh niệm khi ăn và đi bộ.', features: ['Thiền 3 phút cho người mới', 'Body scan 5 phút trước ngủ', 'Chánh niệm khi ăn & đi bộ', 'Lộ trình tăng dần 3→10 phút'], stats: [{ v: '3ph', l: 'Bắt đầu' }, { v: '4', l: 'Kiểu thiền' }], image: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80', imageAlt: 'Meditation', cta: 'Thực hành →' },
+  { to: '/pillar/d/body-scan',         color: '#ec4899', rgb: '236,72,153', icon: '🔍', category: 'Thực Hành', title: 'Body Scan', accent: '10 phút · Phục hồi sâu', desc: 'Body scan 10 phút từng vùng cơ thể — từ trán đến ngón chân. Công cụ thiền tốt nhất cho người khó ngủ và căng cơ.', features: ['Scan từng vùng cơ thể có hướng dẫn', 'Progressive muscle relaxation', 'Dùng sau tập nặng hoặc trước ngủ', 'Audio guidance từng bước'], stats: [{ v: '10ph', l: 'Thời gian' }, { v: '8', l: 'Vùng scan' }], image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80', imageAlt: 'Body Scan', cta: 'Bắt đầu scan →' },
+  { to: '/pillar/d/journaling',        color: '#ec4899', rgb: '236,72,153', icon: '📓', category: 'Thực Hành', title: 'Journaling 5 Dòng', accent: '5 phút · Mỗi tối', desc: '5 câu hỏi mỗi tối giúp dọn rác trong đầu, nhận ra cảm xúc và chuẩn bị cho ngày mai nhẹ nhàng hơn.', features: ['Mẫu journal 5 dòng cơ bản', 'Journal khi ăn theo cảm xúc', 'Journal sau ngày fail', 'Template in & dùng'], stats: [{ v: '5', l: 'Câu hỏi' }, { v: '5ph', l: 'Mỗi tối' }], image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80', imageAlt: 'Journaling', cta: 'Xem template →' },
+  { to: '/pillar/d/brain-dump',        color: '#0ea5e9', rgb: '14,165,233', icon: '🧠', category: 'Công Cụ', title: 'Xả Não & Brain Dump', accent: 'Brain dump · Vòng tròn kiểm soát', desc: 'Khi đầu quá nhiều việc, viết tất cả ra giấy rồi phân loại: làm ngay, lên kế hoạch, hoặc buông tạm.', features: ['Kỹ thuật Brain Dump 5 phút', 'Vòng tròn kiểm soát: tôi kiểm soát được gì?', 'Phân loại: làm ngay / kế hoạch / buông', 'Danh sách lo âu'], stats: [{ v: '5ph', l: 'Brain dump' }, { v: '3', l: 'Nhóm việc' }], image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80', imageAlt: 'Brain Dump', cta: 'Xả não ngay →' },
+  { to: '/pillar/d/digital-detox',     color: '#0ea5e9', rgb: '14,165,233', icon: '📵', category: 'Công Cụ', title: 'Digital Detox', accent: '3 mức · Không cực đoan', desc: 'Giảm màn hình thông minh — không ép bỏ điện thoại hoàn toàn mà thiết kế môi trường số giúp não có khoảng thở.', features: ['3 mức: Dễ → Chuẩn → Nâng cao', 'Menu thay thế cho lướt điện thoại', 'Thiết kế môi trường số', '7-day digital detox plan'], stats: [{ v: '3', l: 'Mức độ' }, { v: '7', l: 'Ngày plan' }], image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80', imageAlt: 'Digital Detox', cta: 'Bắt đầu detox →' },
+  { to: '/pillar/d/gentle-discipline', color: '#10b981', rgb: '16,185,129', icon: '🌱', category: 'Tư Duy', title: 'Kỷ Luật Mềm', accent: 'Quy tắc 1% · Không tự trách', desc: 'Kỷ luật mềm là cách duy trì thói quen mà không tự làm mình kiệt sức. Quay lại bằng bản nhỏ nhất sau mỗi ngày lệch.', features: ['Quy tắc 1% quay lại sau ngày fail', 'Bản tối thiểu cho mọi thói quen', 'Xử lý ăn uống cảm xúc', 'Tối giản mục tiêu: 1–2 thay đổi/giai đoạn'], stats: [{ v: '1%', l: 'Quay lại' }, { v: '6', l: 'Tình huống' }], image: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80', imageAlt: 'Gentle Discipline', cta: 'Học kỷ luật mềm →' },
+  { to: '/pillar/d/habits',            color: '#10b981', rgb: '16,185,129', icon: '🔗', category: 'Tư Duy', title: 'Thói Quen Nhỏ Bền Vững', accent: 'Habit stacking · 3 phút/ngày', desc: 'Thói quen tốt không đến từ ý chí mạnh — mà từ hệ thống nhỏ lặp lại. Ghép thói quen mới vào điểm neo hiện có.', features: ['Habit stacking: ghép vào thói quen cũ', 'Cue → Routine → Reward', '7 thói quen nhỏ Mind & Calm', 'Streak tracker tích hợp'], stats: [{ v: '7', l: 'Thói quen' }, { v: '21', l: 'Ngày hình thành' }], image: 'https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=800&q=80', imageAlt: 'Habits', cta: 'Xây thói quen →' },
+  { to: '/pillar/d/checklist',         color: '#f59e0b', rgb: '245,158,11', icon: '✅', category: 'Công Cụ', title: 'Daily Calm Checklist', accent: '6 mục · Calm Score · Streak', desc: 'Checklist hằng ngày với 6 hành động Mind & Calm. Theo dõi điểm số, chuỗi ngày liên tiếp và mood từng ngày.', features: ['6 mục checklist Mind & Calm', 'Calm Score 100 điểm/ngày', 'Mood tracker 😣→😄', 'Streak ngày liên tiếp'], stats: [{ v: '6', l: 'Mục hàng ngày' }, { v: '100', l: 'Điểm tối đa' }], image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80', imageAlt: 'Checklist', cta: 'Mở checklist →' },
+  { to: '/pillar/d/roadmap',           color: '#a855f7', rgb: '168,85,247', icon: '🗺️', category: 'Lộ Trình', title: 'Lộ Trình 12 Tuần Mind & Calm', accent: '6 giai đoạn · 3–10 phút/ngày', desc: 'Từ nhận diện stress → thở → journaling → digital detox → kỷ luật mềm → cá nhân hóa routine. Mỗi ngày chỉ cần 3–10 phút.', features: ['Tuần 1–2: Nhận diện stress & reset', 'Tuần 3–4: Thở có chủ ý', 'Tuần 5–6: Journaling & xả não', 'Tuần 7–12: Detox, kỷ luật, cá nhân hóa'], stats: [{ v: '12', l: 'Tuần' }, { v: '6', l: 'Giai đoạn' }], image: 'https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=800&q=80', imageAlt: 'Roadmap', cta: 'Xem lộ trình →' },
+];
+
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function PillarD() {
   const { t: tPillars } = useTranslation('pillars');
@@ -1620,6 +1654,20 @@ export default function PillarD() {
     details: Array.isArray(d6HabitModalsTr[i]?.details) && d6HabitModalsTr[i].details.length ? d6HabitModalsTr[i].details : m.details,
     points: Array.isArray(d6HabitModalsTr[i]?.points) && d6HabitModalsTr[i].points.length ? d6HabitModalsTr[i].points : m.points,
   }));
+  const dTeaserCardsTr = Array.isArray(pillar?.d_teaser_cards) ? pillar.d_teaser_cards : [];
+  const mergedDTeaserCards = D_TEASER_CARDS_VI.map((c, i) => {
+    const tr = dTeaserCardsTr[i] || {};
+    return {
+      ...c,
+      category: tr.category || c.category,
+      title: tr.title || c.title,
+      accent: tr.accent || c.accent,
+      desc: tr.desc || c.desc,
+      features: Array.isArray(tr.features) && tr.features.length ? tr.features : c.features,
+      cta: tr.cta || c.cta,
+      stats: c.stats.map((s, si) => ({ ...s, l: tr[`stat${si + 1}_l`] || s.l })),
+    };
+  });
 
   const heroStatLabels = Array.isArray(pillar?.d_hero_stat_labels) ? pillar.d_hero_stat_labels : null;
   const HERO_STATS = [
@@ -1744,27 +1792,19 @@ export default function PillarD() {
         <p className="text-muted text-lg mb-10">{pillar?.d_explore_sub || '12 trang chuyên sâu — từ nền tảng đến thực hành và công cụ theo dõi.'}</p>
 
         <TeaserSection title={pillar?.d_teaser_s1 || 'Nền Tảng & Nhận Diện'}>
-          <TeaserCard to="/pillar/d/stress" color="#8b5cf6" rgb="139,92,246" icon="🌪️" category="Nền Tảng" title="Hiểu Stress & Vòng Lặp Lo Âu" accent="3 tầng · Trigger · Vòng lặp" desc="Stress không phải kẻ thù. Hiểu cơ chế để nhận diện sớm và chèn điểm dừng vào vòng lặp lo âu–thói quen." features={['3 tầng: cơ thể, cảm xúc, hành vi', 'Mô hình Trigger → Hành vi → Hậu quả', 'Kỹ thuật đặt tên cho suy nghĩ']} stats={[{ v: '3', l: 'Tầng' }, { v: '5', l: 'Trigger' }]} image="https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80" imageAlt="Stress" cta="Hiểu stress →" />
-          <TeaserCard to="/pillar/d/assessment" color="#a855f7" rgb="168,85,247" icon="📋" category="Đánh Giá" title="Mind & Calm Assessment" accent="7 câu hỏi · 3 Track" desc="Đánh giá trạng thái tinh thần hiện tại qua 7 khía cạnh. Xác định Track phù hợp và hành động ưu tiên." features={['Điểm Mind & Calm ban đầu', 'Xác định Track 1–3', 'Đề xuất hành động cá nhân hóa']} stats={[{ v: '7', l: 'Câu hỏi' }, { v: '3', l: 'Tracks' }]} image="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80" imageAlt="Assessment" cta="Đánh giá ngay →" />
+          {mergedDTeaserCards.slice(0, 2).map(c => <TeaserCard key={c.to} {...c} />)}
         </TeaserSection>
 
         <TeaserSection title={pillar?.d_teaser_s2 || 'Công Cụ Thực Hành'}>
-          <TeaserCard to="/pillar/d/breathing" color="#6366f1" rgb="99,102,241" icon="🫁" category="Thực Hành" title="Kỹ Thuật Thở" accent="4 kỹ thuật · Timer tương tác" desc="Thở cơ hoành, box breathing 4-4-4-4, thở 4-7-8 và reset 2 phút — mỗi kỹ thuật cho một tình huống cụ thể." features={['Thở cơ hoành: nền tảng', 'Box breathing: tập trung & bình tĩnh', 'Thở 4-7-8: chuẩn bị ngủ', 'Reset 2 phút: dùng ngay khi quá tải']} stats={[{ v: '4', l: 'Kỹ thuật' }, { v: '2ph', l: 'Tối thiểu' }]} image="https://images.unsplash.com/photo-1518609571773-39b7d303a87b?w=800&q=80" imageAlt="Breathing" cta="Xem kỹ thuật →" />
-          <TeaserCard to="/pillar/d/meditation" color="#d946ef" rgb="217,70,239" icon="🧘" category="Thực Hành" title="Thiền Ngắn & Chánh Niệm" accent="3 phút · Body scan · Mindful walking" desc="Thiền không cần ngồi 1 tiếng. 3 phút quan sát hơi thở, 5 phút body scan trước ngủ, chánh niệm khi ăn và đi bộ." features={['Thiền 3 phút cho người mới', 'Body scan 5 phút trước ngủ', 'Chánh niệm khi ăn & đi bộ', 'Lộ trình tăng dần 3→10 phút']} stats={[{ v: '3ph', l: 'Bắt đầu' }, { v: '4', l: 'Kiểu thiền' }]} image="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80" imageAlt="Meditation" cta="Thực hành →" />
-          <TeaserCard to="/pillar/d/body-scan" color="#ec4899" rgb="236,72,153" icon="🔍" category="Thực Hành" title="Body Scan" accent="10 phút · Phục hồi sâu" desc="Body scan 10 phút từng vùng cơ thể — từ trán đến ngón chân. Công cụ thiền tốt nhất cho người khó ngủ và căng cơ." features={['Scan từng vùng cơ thể có hướng dẫn', 'Progressive muscle relaxation', 'Dùng sau tập nặng hoặc trước ngủ', 'Audio guidance từng bước']} stats={[{ v: '10ph', l: 'Thời gian' }, { v: '8', l: 'Vùng scan' }]} image="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80" imageAlt="Body Scan" cta="Bắt đầu scan →" />
-          <TeaserCard to="/pillar/d/journaling" color="#ec4899" rgb="236,72,153" icon="📓" category="Thực Hành" title="Journaling 5 Dòng" accent="5 phút · Mỗi tối" desc="5 câu hỏi mỗi tối giúp dọn rác trong đầu, nhận ra cảm xúc và chuẩn bị cho ngày mai nhẹ nhàng hơn." features={['Mẫu journal 5 dòng cơ bản', 'Journal khi ăn theo cảm xúc', 'Journal sau ngày fail', 'Template in & dùng']} stats={[{ v: '5', l: 'Câu hỏi' }, { v: '5ph', l: 'Mỗi tối' }]} image="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80" imageAlt="Journaling" cta="Xem template →" />
+          {mergedDTeaserCards.slice(2, 6).map(c => <TeaserCard key={c.to} {...c} />)}
         </TeaserSection>
 
         <TeaserSection title={pillar?.d_teaser_s3 || 'Quản Lý Tâm Trí'}>
-          <TeaserCard to="/pillar/d/brain-dump" color="#0ea5e9" rgb="14,165,233" icon="🧠" category="Công Cụ" title="Xả Não & Brain Dump" accent="Brain dump · Vòng tròn kiểm soát" desc="Khi đầu quá nhiều việc, viết tất cả ra giấy rồi phân loại: làm ngay, lên kế hoạch, hoặc buông tạm." features={['Kỹ thuật Brain Dump 5 phút', 'Vòng tròn kiểm soát: tôi kiểm soát được gì?', 'Phân loại: làm ngay / kế hoạch / buông', 'Danh sách lo âu']} stats={[{ v: '5ph', l: 'Brain dump' }, { v: '3', l: 'Nhóm việc' }]} image="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80" imageAlt="Brain Dump" cta="Xả não ngay →" />
-          <TeaserCard to="/pillar/d/digital-detox" color="#0ea5e9" rgb="14,165,233" icon="📵" category="Công Cụ" title="Digital Detox" accent="3 mức · Không cực đoan" desc="Giảm màn hình thông minh — không ép bỏ điện thoại hoàn toàn mà thiết kế môi trường số giúp não có khoảng thở." features={['3 mức: Dễ → Chuẩn → Nâng cao', 'Menu thay thế cho lướt điện thoại', 'Thiết kế môi trường số', '7-day digital detox plan']} stats={[{ v: '3', l: 'Mức độ' }, { v: '7', l: 'Ngày plan' }]} image="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" imageAlt="Digital Detox" cta="Bắt đầu detox →" />
-          <TeaserCard to="/pillar/d/gentle-discipline" color="#10b981" rgb="16,185,129" icon="🌱" category="Tư Duy" title="Kỷ Luật Mềm" accent="Quy tắc 1% · Không tự trách" desc="Kỷ luật mềm là cách duy trì thói quen mà không tự làm mình kiệt sức. Quay lại bằng bản nhỏ nhất sau mỗi ngày lệch." features={['Quy tắc 1% quay lại sau ngày fail', 'Bản tối thiểu cho mọi thói quen', 'Xử lý ăn uống cảm xúc', 'Tối giản mục tiêu: 1–2 thay đổi/giai đoạn']} stats={[{ v: '1%', l: 'Quay lại' }, { v: '6', l: 'Tình huống' }]} image="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80" imageAlt="Gentle Discipline" cta="Học kỷ luật mềm →" />
-          <TeaserCard to="/pillar/d/habits" color="#10b981" rgb="16,185,129" icon="🔗" category="Tư Duy" title="Thói Quen Nhỏ Bền Vững" accent="Habit stacking · 3 phút/ngày" desc="Thói quen tốt không đến từ ý chí mạnh — mà từ hệ thống nhỏ lặp lại. Ghép thói quen mới vào điểm neo hiện có." features={['Habit stacking: ghép vào thói quen cũ', 'Cue → Routine → Reward', '7 thói quen nhỏ Mind & Calm', 'Streak tracker tích hợp']} stats={[{ v: '7', l: 'Thói quen' }, { v: '21', l: 'Ngày hình thành' }]} image="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=800&q=80" imageAlt="Habits" cta="Xây thói quen →" />
+          {mergedDTeaserCards.slice(6, 10).map(c => <TeaserCard key={c.to} {...c} />)}
         </TeaserSection>
 
         <TeaserSection title={pillar?.d_teaser_s4 || 'Theo Dõi & Lộ Trình'}>
-          <TeaserCard to="/pillar/d/checklist" color="#f59e0b" rgb="245,158,11" icon="✅" category="Công Cụ" title="Daily Calm Checklist" accent="6 mục · Calm Score · Streak" desc="Checklist hằng ngày với 6 hành động Mind & Calm. Theo dõi điểm số, chuỗi ngày liên tiếp và mood từng ngày." features={['6 mục checklist Mind & Calm', 'Calm Score 100 điểm/ngày', 'Mood tracker 😣→😄', 'Streak ngày liên tiếp']} stats={[{ v: '6', l: 'Mục hàng ngày' }, { v: '100', l: 'Điểm tối đa' }]} image="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80" imageAlt="Checklist" cta="Mở checklist →" />
-          <TeaserCard to="/pillar/d/roadmap" color="#a855f7" rgb="168,85,247" icon="🗺️" category="Lộ Trình" title="Lộ Trình 12 Tuần Mind & Calm" accent="6 giai đoạn · 3–10 phút/ngày" desc="Từ nhận diện stress → thở → journaling → digital detox → kỷ luật mềm → cá nhân hóa routine. Mỗi ngày chỉ cần 3–10 phút." features={['Tuần 1–2: Nhận diện stress & reset', 'Tuần 3–4: Thở có chủ ý', 'Tuần 5–6: Journaling & xả não', 'Tuần 7–12: Detox, kỷ luật, cá nhân hóa']} stats={[{ v: '12', l: 'Tuần' }, { v: '6', l: 'Giai đoạn' }]} image="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=800&q=80" imageAlt="Roadmap" cta="Xem lộ trình →" />
+          {mergedDTeaserCards.slice(10, 12).map(c => <TeaserCard key={c.to} {...c} />)}
         </TeaserSection>
       </RevealBlock>
 

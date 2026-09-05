@@ -6172,7 +6172,9 @@
     "analysis": "Analysis",
     "suggestions": "Suggestions",
     "pros": "Pros",
-    "cons": "Cons"
+    "cons": "Cons",
+    "detail_btn": "Details →",
+    "source_prefix": "← Calculated from"
   },
   "b5": {
     "weight_chart_title": "Weight Chart — 12 Weeks",

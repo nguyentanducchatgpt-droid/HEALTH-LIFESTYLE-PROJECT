@@ -2502,7 +2502,15 @@
           "swap": "Kürbis / Kohlrabi",
           "note": "Natürlich süß, niedriger GI"
         }
-      ]
+      ],
+      "meal_protein_label": "Protein/Mahlzeit",
+      "meal_protein_note_unit": "Hühnerbrust",
+      "meal_carb_label": "Kohlenhydrate/Mahlzeit",
+      "meal_carb_note_unit": "Reis",
+      "meal_fat_label": "Fett/Mahlzeit",
+      "meal_fat_note_unit": "ml Öl",
+      "meal_kcal_label": "kcal/Mahlzeit",
+      "meal_kcal_note_unit": "kcal"
     },
     "b3": {
       "col_calo": "Kkal",
@@ -14991,7 +14999,13 @@
     },
     "c_bottom_link": "← Gesunder Lebensstil 360",
     "c_quote": "Du musst nicht perfekt leben. Lebe einfach mit Rhythmus, mit Erholung und mit der Fähigkeit zurückzukommen.",
-    "c_quote_cite": "— Philosophie Säule C"
+    "c_quote_cite": "— Philosophie Säule C",
+    "c2_full_link": "Vollständiger Leitfaden zum zirkadianen Rhythmus →",
+    "c3_full_link": "Vollständiger NEAT-Leitfaden →",
+    "c4_full_link": "Vollständiger Leitfaden zur aktiven Erholung →",
+    "c5_full_link": "Vollständiger Deload-Leitfaden →",
+    "c6_full_link": "Vollständiger Atemtechnik-Leitfaden →",
+    "c7_full_link": "Vollständiger Umgebungsgestaltungs-Leitfaden →"
   },
   "pillarD": {
     "id": "d",
@@ -16451,6 +16465,238 @@
             "note": "Klein bewahrt noch die Identität"
           }
         ]
+      }
+    ],
+    "d1_layers": [
+      {
+        "label": "Körperlich",
+        "signs": [
+          "Schneller Herzschlag",
+          "Nacken- und Schulverspannung",
+          "Flaches Atmen",
+          "Schlaflosigkeit"
+        ]
+      },
+      {
+        "label": "Emotional",
+        "signs": [
+          "Reizbar",
+          "Ängstlich",
+          "Frustriert",
+          "Ungeduldig"
+        ]
+      },
+      {
+        "label": "Verhalten",
+        "signs": [
+          "Stressessen",
+          "Handy-Scrollen",
+          "Aufschieben",
+          "Training auslassen"
+        ]
+      }
+    ],
+    "d1_loops": [
+      {
+        "trigger": "Chef schickt dringende Nachricht",
+        "thought": "\"Ich muss etwas falsch gemacht haben\"",
+        "emotion": "Ängstlich, Herzklopfen",
+        "behavior": "Ständig aufs Handy schauen",
+        "result": "Müde, schlechtere Leistung"
+      },
+      {
+        "trigger": "Andere erfolgreich sehen",
+        "thought": "\"Ich bin nicht gut genug\"",
+        "emotion": "Unsicher, niedergeschlagen",
+        "behavior": "Mehr Social Media scrollen",
+        "result": "Mehr Vergleiche, mehr Erschöpfung"
+      },
+      {
+        "trigger": "Enger Abgabetermin",
+        "thought": "\"Das schaffe ich nicht\"",
+        "emotion": "Ängstlich, gelähmt",
+        "behavior": "Aufschieben, andere Dinge tun",
+        "result": "Deadline näher, Panik wächst"
+      }
+    ],
+    "d_teaser_cards": [
+      {
+        "category": "Grundlagen",
+        "title": "Stress & Angstschleifen verstehen",
+        "accent": "3 Ebenen · Auslöser · Gewohnheitsschleife",
+        "desc": "Stress ist kein Feind. Verstehe den Mechanismus, erkenne ihn früh und setze einen Pausenpunkt in die Angst–Gewohnheits-Schleife.",
+        "features": [
+          "3 Ebenen: körperlich, emotional, Verhalten",
+          "Auslöser → Verhalten → Konsequenz-Modell",
+          "Technik zum Benennen automatischer Gedanken"
+        ],
+        "cta": "Stress verstehen →",
+        "stat1_l": "Ebenen",
+        "stat2_l": "Auslöser"
+      },
+      {
+        "category": "Bewertung",
+        "title": "Mind & Calm Selbsttest",
+        "accent": "7 Fragen · 3 Tracks",
+        "desc": "Bewerte deinen aktuellen Geisteszustand in 7 Dimensionen. Identifiziere deinen Track und Prioritätsmaßnahmen.",
+        "features": [
+          "Erster Mind & Calm Score",
+          "Track 1–3 bestimmen",
+          "Personalisierte Handlungsvorschläge"
+        ],
+        "cta": "Test starten →",
+        "stat1_l": "Fragen",
+        "stat2_l": "Tracks"
+      },
+      {
+        "category": "Praxis",
+        "title": "Atemtechniken",
+        "accent": "4 Techniken · Interaktiver Timer",
+        "desc": "Zwerchfellatmung, Box Breathing 4-4-4-4, 4-7-8 Atmung und 2-Min-Reset — jede Technik für eine bestimmte Situation.",
+        "features": [
+          "Zwerchfellatmung: Grundlage",
+          "Box Breathing: Fokus & Ruhe",
+          "4-7-8 Atmung: Schlafvorbereitung",
+          "2-Min-Reset: bei Überwältigung"
+        ],
+        "cta": "Techniken sehen →",
+        "stat1_l": "Techniken",
+        "stat2_l": "Minimum"
+      },
+      {
+        "category": "Praxis",
+        "title": "Kurze Meditation & Achtsamkeit",
+        "accent": "3 Min · Body-Scan · Gehmeditation",
+        "desc": "Meditation erfordert keine Stunde. 3-Min-Atembeobachtung, 5-Min-Body-Scan vor dem Schlafen, achtsames Essen und Gehen.",
+        "features": [
+          "3-Min-Meditation für Anfänger",
+          "5-Min-Body-Scan vor dem Schlafen",
+          "Achtsames Essen & Gehen",
+          "Stufenweise 3→10 Min"
+        ],
+        "cta": "Jetzt üben →",
+        "stat1_l": "Start",
+        "stat2_l": "Techniken"
+      },
+      {
+        "category": "Praxis",
+        "title": "Body Scan",
+        "accent": "10 Min · Tiefe Erholung",
+        "desc": "10-Minuten Body-Scan von Kopf bis Fuß. Bestes Meditationswerkzeug bei Schlaflosigkeit und Muskelverspannungen.",
+        "features": [
+          "Zonenweiser geführter Body-Scan",
+          "Progressive Muskelentspannung",
+          "Nach hartem Training oder vor dem Schlafen",
+          "Schritt-für-Schritt-Anleitung"
+        ],
+        "cta": "Scan starten →",
+        "stat1_l": "Dauer",
+        "stat2_l": "Zonen"
+      },
+      {
+        "category": "Praxis",
+        "title": "5-Zeilen-Journaling",
+        "accent": "5 Min · Jeden Abend",
+        "desc": "5 Fragen jeden Abend, um den Kopf freizubekommen, Emotionen zu erkennen und sich auf einen leichteren Morgen vorzubereiten.",
+        "features": [
+          "Basis 5-Zeilen-Journal-Vorlage",
+          "Journaling bei emotionalem Essen",
+          "Journaling nach einem schlechten Tag",
+          "Druckbare Vorlagen"
+        ],
+        "cta": "Vorlage sehen →",
+        "stat1_l": "Fragen",
+        "stat2_l": "Jeden Abend"
+      },
+      {
+        "category": "Werkzeug",
+        "title": "Brain Dump & Kopf leeren",
+        "accent": "Brain Dump · Kontrollkreis",
+        "desc": "Wenn der Kopf überlastet ist, alles aufschreiben und sortieren: jetzt erledigen, planen oder loslassen.",
+        "features": [
+          "5-Minuten Brain-Dump-Technik",
+          "Kontrollkreis: Was kann ich kontrollieren?",
+          "Sortieren: jetzt / planen / loslassen",
+          "Sorgen-Liste"
+        ],
+        "cta": "Jetzt rauslassen →",
+        "stat1_l": "Brain Dump",
+        "stat2_l": "Gruppen"
+      },
+      {
+        "category": "Werkzeug",
+        "title": "Digitaler Detox",
+        "accent": "3 Stufen · Nicht extrem",
+        "desc": "Bildschirmzeit reduzieren — nicht das Handy aufgeben, sondern die digitale Umgebung so gestalten, dass das Gehirn atmen kann.",
+        "features": [
+          "3 Stufen: Einfach → Standard → Fortgeschritten",
+          "Alternativen zum Scrollen",
+          "Digitales Umgebungsdesign",
+          "7-Tage Detox-Plan"
+        ],
+        "cta": "Detox starten →",
+        "stat1_l": "Stufen",
+        "stat2_l": "Tage-Plan"
+      },
+      {
+        "category": "Denkweise",
+        "title": "Sanfte Disziplin",
+        "accent": "1%-Regel · Kein Selbstvorwurf",
+        "desc": "Sanfte Disziplin ist, wie du Gewohnheiten beibehältst, ohne dich auszubrennen. Kehre mit der kleinsten Version nach jedem Ausrutscher zurück.",
+        "features": [
+          "1%-Regel: Nach einem schlechten Tag zurück",
+          "Minimalversion für jede Gewohnheit",
+          "Emotionales Essen bewältigen",
+          "Ziele vereinfachen: 1–2 Änderungen pro Phase"
+        ],
+        "cta": "Sanfte Disziplin lernen →",
+        "stat1_l": "Rückkehr",
+        "stat2_l": "Situationen"
+      },
+      {
+        "category": "Denkweise",
+        "title": "Kleine nachhaltige Gewohnheiten",
+        "accent": "Habit Stacking · 3 Min/Tag",
+        "desc": "Gute Gewohnheiten kommen nicht aus Willenskraft — sondern aus kleinen, sich wiederholenden Systemen. Neue Gewohnheiten an bestehende ankern.",
+        "features": [
+          "Habit Stacking: an bestehende Gewohnheiten koppeln",
+          "Cue → Routine → Belohnung",
+          "7 kleine Mind & Calm-Gewohnheiten",
+          "Integrierter Streak-Tracker"
+        ],
+        "cta": "Gewohnheiten aufbauen →",
+        "stat1_l": "Gewohnheiten",
+        "stat2_l": "Tage zur Bildung"
+      },
+      {
+        "category": "Werkzeug",
+        "title": "Tägliche Calm-Checkliste",
+        "accent": "6 Punkte · Calm Score · Streak",
+        "desc": "Tägliche Checkliste mit 6 Mind & Calm-Aktionen. Verfolge deinen Score, Streak und tägliche Stimmung.",
+        "features": [
+          "6 Mind & Calm Checklistenpunkte",
+          "Calm Score 100 Pkt/Tag",
+          "Stimmungs-Tracker 😣→😄",
+          "Aufeinanderfolgender Tage-Streak"
+        ],
+        "cta": "Checkliste öffnen →",
+        "stat1_l": "Tägliche Punkte",
+        "stat2_l": "Maximale Punkte"
+      },
+      {
+        "category": "Fahrplan",
+        "title": "12-Wochen Mind & Calm Fahrplan",
+        "accent": "6 Phasen · 3–10 Min/Tag",
+        "desc": "Von Stresserkennung → Atmen → Journaling → Detox → sanfte Disziplin → personalisierte Routine. Nur 3–10 Min täglich.",
+        "features": [
+          "Woche 1–2: Stresserkennung & Reset",
+          "Woche 3–4: Bewusstes Atmen",
+          "Woche 5–6: Journaling & Brain Dump",
+          "Woche 7–12: Detox, Disziplin, Personalisierung"
+        ],
+        "cta": "Fahrplan ansehen →",
+        "stat1_l": "Wochen",
+        "stat2_l": "Phasen"
       }
     ]
   },

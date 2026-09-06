@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#ec4899';
 const RGB = '236,72,153';
@@ -566,6 +567,7 @@ function JournalWriter({ template }) {
 }
 
 export default function MindJournalingPage() {
+  const { t: tM } = useTranslation('mind');
   const [active, setActive] = useState('daily');
   const [benefitModal, setBenefitModal] = useState(null);
   const [templateModal, setTemplateModal] = useState(null);
@@ -600,16 +602,16 @@ export default function MindJournalingPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
-        <span>←</span><span>Tâm Trí An Nhiên</span>
+        <span>←</span><span>{tM('breadcrumb')}</span>
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `${COLOR}08` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>📓</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Journaling &amp; Nhật Ký Tâm Trí</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D4 · Viết Để Giải Phóng</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">Viết nhật ký là công cụ đơn giản nhất để giải phóng tâm trí — không phán xét, không cần hoàn hảo, chỉ cần viết ra những gì đang diễn ra bên trong.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{tM('journaling.title')}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>{tM('journaling.badge')}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{tM('journaling.desc')}</p>
         </div>
       </div>
 
@@ -618,7 +620,7 @@ export default function MindJournalingPage() {
           <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop" alt="Journaling" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>5 phút · Mỗi ngày</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>{tM('journaling.img_caption')}</span>
           </div>
         </div>
       </div>
@@ -715,7 +717,7 @@ export default function MindJournalingPage() {
       </RevealBlock>
 
       <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
-        <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
+        <span>←</span><span>{tM('breadcrumb_back')}</span>
       </Link>
 
       {benefitModal !== null && (

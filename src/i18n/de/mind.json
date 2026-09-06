@@ -1,0 +1,76 @@
+{
+  "breadcrumb": "Gelassener Geist",
+  "breadcrumb_back": "Zurück zu Gelassener Geist",
+  "assessment": {
+    "badge": "D0 · Eingangstest",
+    "title": "Mentale Gesundheitsbewertung",
+    "desc": "Eine 15-Fragen-Bewertung, die dir hilft, dein aktuelles mentales Gesundheitsniveau zu verstehen und personalisierte Empfehlungen zu erhalten, worauf du zuerst fokussieren solltest.",
+    "img_caption": "15 Fragen · ~5 Minuten"
+  },
+  "stress": {
+    "badge": "D1 · Grundlagen",
+    "title": "Stress & Angstschleifen verstehen",
+    "desc": "Stress ist nicht schlecht. Stress hilft dir, dich zu konzentrieren und zu handeln. Probleme entstehen nur, wenn Stress anhält, nicht abgebaut wird und Angst–Gewohnheitsschleifen bildet. Den Mechanismus zu verstehen ist der erste Schritt, ihn zu durchbrechen.",
+    "img_caption": "3 Stressebenen · Angstschleifen · Durchbrechungstechniken"
+  },
+  "breathing": {
+    "badge": "D2 · Atemarbeit & Ruhe",
+    "title": "Atemtechniken",
+    "desc": "Atmen ist ein kostenloses Werkzeug, immer verfügbar, kein Equipment nötig. 4 Techniken für 4 verschiedene Situationen — von der täglichen Grundlage bis zum Notfall-Reset in 2 Minuten.",
+    "img_caption": "4 Techniken · Interaktiver Timer · Richtige Situation wählen"
+  },
+  "meditation": {
+    "badge": "D3 · Meditation & Achtsamkeit",
+    "title": "Kurzmeditation & Achtsamkeit",
+    "desc": "Meditation bedeutet nicht \"nicht denken\". Es geht darum zu bemerken, wenn man abgelenkt wurde, und sanft zurückzukehren. Jede Rückkehr ist eine Übung — Perfektion ist nicht nötig.",
+    "img_caption": "4 Meditationsarten · Interaktiver Timer · Ab 3 Minuten"
+  },
+  "brain_dump": {
+    "badge": "D4 · Mentale Aufräumtechnik",
+    "title": "Brain Dump — Mentale Entlastung",
+    "desc": "Wenn der Geist überlastet ist — zu viele Dinge zu erinnern, zu viel Angst — ist ein Brain Dump der schnellste Weg, das mentale RAM zu leeren und Klarheit zurückzugewinnen.",
+    "img_caption": "10 Minuten · Bei Überlastung"
+  },
+  "journaling": {
+    "badge": "D4 · Schreiben zur Befreiung",
+    "title": "Journaling & Gedankentagebuch",
+    "desc": "Tagebuch schreiben ist das einfachste Werkzeug zur Befreiung des Geistes — ohne Urteil, ohne Perfektionsbedarf, einfach aufschreiben, was innen vorgeht.",
+    "img_caption": "5 Minuten · Jeden Tag"
+  },
+  "digital_detox": {
+    "badge": "D5 · Digitale Welt managen",
+    "title": "Digital Detox — Digitale Auszeit",
+    "desc": "Das Gehirn braucht Zeit ohne Stimulation, um sich zu erholen und kreativ zu sein. Digital Detox bedeutet nicht, Technologie aufzugeben — sondern die Kontrolle darüber zurückzugewinnen.",
+    "img_caption": "7–21 Tage Herausforderung"
+  },
+  "gentle_discipline": {
+    "badge": "D6 · Selbstmitgefühl & Disziplin",
+    "title": "Sanfte Disziplin",
+    "desc": "Nachhaltige Disziplin kommt nicht aus Härte gegen sich selbst, sondern aus Freundlichkeit und Selbstverständnis. Sanfte Disziplin ist die Kunst, beständig zu sein ohne Selbstbestrafung.",
+    "img_caption": "6 Prinzipien · Tägliche Praxis"
+  },
+  "habits": {
+    "badge": "D6 · Gewohnheitsbildungswissenschaft",
+    "title": "Nachhaltige Gewohnheiten aufbauen",
+    "desc": "40% deiner täglichen Handlungen sind automatische Gewohnheiten — keine bewussten Entscheidungen. Den Gewohnheitsbildungsmechanismus zu verstehen ist der effektivste Weg, dein Leben zu verändern.",
+    "img_caption": "Durchschnittlich 66 Tage zur Gewohnheitsbildung"
+  },
+  "roadmap": {
+    "badge": "D7 · Schritt-für-Schritt-Reise",
+    "title": "12-Wochen-Fahrplan für einen gelassenen Geist",
+    "desc": "Ein schrittweiser Weg zur nachhaltigen mentalen Gesundheit — von der Stresserkennung bis hin zu einem vollständigen, personalisierten mentalen Werkzeugkasten.",
+    "img_caption": "4 Phasen · 12 Wochen"
+  },
+  "checklist": {
+    "badge": "D7 · Fortschritt verfolgen",
+    "title": "Tägliche Geist-Checkliste",
+    "desc": "Eine einfache Checkliste zur Verfolgung der wichtigsten mentalen und gesundheitlichen Gewohnheiten jeden Tag und jede Woche. Automatisch auf deinem Gerät gespeichert.",
+    "img_caption": "10 Punkte · Täglich / 9 Punkte · Wöchentlich"
+  },
+  "body_scan": {
+    "badge": "D3b · Tiefe Erholung",
+    "title": "Body Scan",
+    "desc": "Ein Body Scan ist eine Ganzkörpermeditation — jede Zone von Kopf bis Fuß wird gescannt. Das beste Werkzeug für Menschen mit Schlafproblemen, Muskelkater nach dem Training oder unbewusstem Stress.",
+    "img_caption": "8 Körperzonen · ~8 Minuten · Geführter Timer"
+  }
+}

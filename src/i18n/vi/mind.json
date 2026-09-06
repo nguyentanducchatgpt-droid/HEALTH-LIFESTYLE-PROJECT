@@ -1,0 +1,76 @@
+{
+  "breadcrumb": "Tâm Trí An Nhiên",
+  "breadcrumb_back": "Quay lại Tâm Trí An Nhiên",
+  "assessment": {
+    "badge": "D0 · Bài Test Nhập Môn",
+    "title": "Đánh Giá Sức Khỏe Tâm Trí",
+    "desc": "Bài đánh giá 15 câu hỏi giúp bạn hiểu mức độ sức khỏe tâm trí hiện tại và nhận gợi ý cá nhân hóa về nên tập trung vào đâu trước.",
+    "img_caption": "15 câu · ~5 phút"
+  },
+  "stress": {
+    "badge": "D1 · Nền Tảng",
+    "title": "Hiểu Stress & Vòng Lặp Lo Âu",
+    "desc": "Stress không xấu. Stress giúp bạn tập trung và hành động. Vấn đề chỉ xảy ra khi stress kéo dài, không được xả và hình thành vòng lặp lo âu–thói quen. Hiểu cơ chế là bước đầu để phá vỡ vòng lặp đó.",
+    "img_caption": "3 tầng stress · Vòng lặp lo âu · Kỹ thuật phá vỡ"
+  },
+  "breathing": {
+    "badge": "D2 · Thở & Hạ Nhịp",
+    "title": "Kỹ Thuật Thở",
+    "desc": "Thở là công cụ miễn phí, luôn sẵn sàng, không cần dụng cụ. 4 kỹ thuật cho 4 tình huống khác nhau — từ nền tảng hằng ngày đến emergency reset trong 2 phút.",
+    "img_caption": "4 kỹ thuật · Timer tương tác · Chọn đúng tình huống"
+  },
+  "meditation": {
+    "badge": "D3 · Thiền & Chánh Niệm",
+    "title": "Thiền Ngắn & Chánh Niệm",
+    "desc": "Thiền không phải là \"không suy nghĩ\". Thiền là nhận ra mình đang bị cuốn đi và quay lại nhẹ nhàng. Mỗi lần quay lại là một lần tập — không cần hoàn hảo.",
+    "img_caption": "4 kiểu thiền · Timer tương tác · Từ 3 phút"
+  },
+  "brain_dump": {
+    "badge": "D4 · Kỹ Thuật Dọn Dẹp Đầu Óc",
+    "title": "Brain Dump — Xả Tải Tâm Trí",
+    "desc": "Khi đầu óc quá tải — quá nhiều việc cần nhớ, quá nhiều lo âu — Brain Dump là cách nhanh nhất để làm trống \"RAM não bộ\" và lấy lại sự rõ ràng.",
+    "img_caption": "10 phút · Khi não quá tải"
+  },
+  "journaling": {
+    "badge": "D4 · Viết Để Giải Phóng",
+    "title": "Journaling & Nhật Ký Tâm Trí",
+    "desc": "Viết nhật ký là công cụ đơn giản nhất để giải phóng tâm trí — không phán xét, không cần hoàn hảo, chỉ cần viết ra những gì đang diễn ra bên trong.",
+    "img_caption": "5 phút · Mỗi ngày"
+  },
+  "digital_detox": {
+    "badge": "D5 · Quản Lý Thế Giới Số",
+    "title": "Digital Detox — Nghỉ Ngơi Số",
+    "desc": "Não bộ cần thời gian không có kích thích để phục hồi và sáng tạo. Digital detox không phải từ bỏ công nghệ — mà là lấy lại quyền kiểm soát với nó.",
+    "img_caption": "7–21 ngày thử thách"
+  },
+  "gentle_discipline": {
+    "badge": "D6 · Tự Trắc Ẩn & Kỷ Luật",
+    "title": "Kỷ Luật Mềm — Gentle Discipline",
+    "desc": "Kỷ luật bền vững không đến từ sự khắc nghiệt với bản thân, mà từ sự tử tế và hiểu mình. Gentle discipline là nghệ thuật kiên định mà không tự trừng phạt.",
+    "img_caption": "6 Nguyên Tắc · Thực Hành Mỗi Ngày"
+  },
+  "habits": {
+    "badge": "D6 · Habit Formation Science",
+    "title": "Xây Thói Quen Bền Vững",
+    "desc": "40% hành động của bạn mỗi ngày là thói quen tự động — không phải quyết định có ý thức. Hiểu cơ chế hình thành thói quen là cách thay đổi cuộc sống hiệu quả nhất.",
+    "img_caption": "66 ngày trung bình để hình thành thói quen"
+  },
+  "roadmap": {
+    "badge": "D7 · Hành Trình Từng Bước",
+    "title": "Lộ Trình 12 Tuần Tâm Trí An Nhiên",
+    "desc": "Lộ trình từng bước để xây dựng sức khỏe tâm trí bền vững — từ nhận diện stress đến có một \"bộ công cụ tâm trí\" hoàn chỉnh cá nhân hóa cho bạn.",
+    "img_caption": "4 Giai Đoạn · 12 Tuần"
+  },
+  "checklist": {
+    "badge": "D7 · Theo Dõi Tiến Trình",
+    "title": "Checklist Tâm Trí Hằng Ngày",
+    "desc": "Checklist đơn giản để theo dõi những thói quen tâm trí và sức khỏe quan trọng nhất mỗi ngày và mỗi tuần. Lưu tự động trên thiết bị.",
+    "img_caption": "10 mục · Ngày / 9 mục · Tuần"
+  },
+  "body_scan": {
+    "badge": "D3b · Phục Hồi Sâu",
+    "title": "Body Scan",
+    "desc": "Body scan là bài thiền quét toàn thân — từng vùng từ đầu đến chân. Công cụ tốt nhất cho người khó ngủ, căng cơ sau tập, hoặc giữ stress trong người mà không biết.",
+    "img_caption": "8 vùng cơ thể · ~8 phút · Guided timer"
+  }
+}

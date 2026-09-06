@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#d946ef';
 const RGB = '217,70,239';
@@ -404,6 +405,7 @@ function MeditationTimer({ color }) {
 }
 
 export default function MindMeditationPage() {
+  const { t: tM } = useTranslation('mind');
   const [active, setActive] = useState('3min');
   const [mythModal, setMythModal] = useState(null);
   const [practiceModal, setPracticeModal] = useState(null);
@@ -436,16 +438,16 @@ export default function MindMeditationPage() {
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/d" className="inline-flex items-center gap-2 text-base text-muted hover:text-purple-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
-        Tâm Trí An Nhiên
+        {tM('breadcrumb')}
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>🧘</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Thiền Ngắn & Chánh Niệm</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>D3 · Thiền & Chánh Niệm</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">Thiền không phải là "không suy nghĩ". Thiền là nhận ra mình đang bị cuốn đi và quay lại nhẹ nhàng. Mỗi lần quay lại là một lần tập — không cần hoàn hảo.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{tM('meditation.title')}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>{tM('meditation.badge')}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{tM('meditation.desc')}</p>
         </div>
       </div>
 
@@ -454,7 +456,7 @@ export default function MindMeditationPage() {
           <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80&auto=format&fit=crop" alt="Meditation" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>4 kiểu thiền · Timer tương tác · Từ 3 phút</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(0,0,0,0.6)', borderColor: `rgba(${RGB},0.2)` }}>{tM('meditation.img_caption')}</span>
           </div>
         </div>
       </div>
@@ -549,7 +551,7 @@ export default function MindMeditationPage() {
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           Kỹ Thuật Thở
         </Link>
-        <Link to="/pillar/d" className="text-lg text-muted hover:text-purple-400 transition-colors text-center">Tâm Trí An Nhiên →</Link>
+        <Link to="/pillar/d" className="text-lg text-muted hover:text-purple-400 transition-colors text-center">{tM('breadcrumb')} →</Link>
         <Link to="/pillar/d/body-scan" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
           Body Scan
           <span className="group-hover:translate-x-1 transition-transform">→</span>

@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#a855f7';
 const RGB = '168,85,247';
@@ -313,6 +314,7 @@ function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx
 }
 
 export default function MindRoadmapPage() {
+  const { t: tM } = useTranslation('mind');
   const [activePhase, setActivePhase] = useState(0);
   const [phaseModal, setPhaseModal] = useState(null);
   const [dailyModal, setDailyModal] = useState(null);
@@ -345,16 +347,16 @@ export default function MindRoadmapPage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
-        <span>←</span><span>Tâm Trí An Nhiên</span>
+        <span>←</span><span>{tM('breadcrumb')}</span>
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `${COLOR}08` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🗺️</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Lộ Trình 12 Tuần Tâm Trí An Nhiên</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D7 · Hành Trình Từng Bước</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">Lộ trình từng bước để xây dựng sức khỏe tâm trí bền vững — từ nhận diện stress đến có một "bộ công cụ tâm trí" hoàn chỉnh cá nhân hóa cho bạn.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{tM('roadmap.title')}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>{tM('roadmap.badge')}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{tM('roadmap.desc')}</p>
         </div>
       </div>
 
@@ -363,7 +365,7 @@ export default function MindRoadmapPage() {
           <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop" alt="Roadmap" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>4 Giai Đoạn · 12 Tuần</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>{tM('roadmap.img_caption')}</span>
           </div>
         </div>
       </div>
@@ -495,7 +497,7 @@ export default function MindRoadmapPage() {
       </RevealBlock>
 
       <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
-        <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
+        <span>←</span><span>{tM('breadcrumb_back')}</span>
       </Link>
 
       {dailyModal !== null && (

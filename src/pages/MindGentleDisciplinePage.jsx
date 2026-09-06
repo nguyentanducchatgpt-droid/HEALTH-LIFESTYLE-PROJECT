@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#10b981';
 const RGB = '16,185,129';
@@ -91,6 +92,7 @@ function SelfTalkTool() {
 }
 
 export default function MindGentleDisciplinePage() {
+  const { t: tM } = useTranslation('mind');
   useEffect(() => {
     const id = ORBIT_ID;
     if (document.getElementById(id)) return;
@@ -117,16 +119,16 @@ export default function MindGentleDisciplinePage() {
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">
-        <span>←</span><span>Tâm Trí An Nhiên</span>
+        <span>←</span><span>{tM('breadcrumb')}</span>
       </Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `${COLOR}08` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `${COLOR}30` }}>🌿</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">Kỷ Luật Mềm — Gentle Discipline</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>D6 · Tự Trắc Ẩn &amp; Kỷ Luật</span>
-          <p className="text-muted text-lg leading-relaxed max-w-2xl">Kỷ luật bền vững không đến từ sự khắc nghiệt với bản thân, mà từ sự tử tế và hiểu mình. Gentle discipline là nghệ thuật kiên định mà không tự trừng phạt.</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{tM('gentle_discipline.title')}</h1>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `${COLOR}15`, borderColor: `${COLOR}30` }}>{tM('gentle_discipline.badge')}</span>
+          <p className="text-muted text-lg leading-relaxed max-w-2xl">{tM('gentle_discipline.desc')}</p>
         </div>
       </div>
 
@@ -135,7 +137,7 @@ export default function MindGentleDisciplinePage() {
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop" alt="Gentle Discipline" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <div className="absolute bottom-4 left-6">
-            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>6 Nguyên Tắc · Thực Hành Mỗi Ngày</span>
+            <span className="text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `${COLOR}30` }}>{tM('gentle_discipline.img_caption')}</span>
           </div>
         </div>
       </div>
@@ -209,7 +211,7 @@ export default function MindGentleDisciplinePage() {
       </RevealBlock>
 
       <Link to="/pillar/d" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">
-        <span>←</span><span>Quay lại Tâm Trí An Nhiên</span>
+        <span>←</span><span>{tM('breadcrumb_back')}</span>
       </Link>
     </div>
   );

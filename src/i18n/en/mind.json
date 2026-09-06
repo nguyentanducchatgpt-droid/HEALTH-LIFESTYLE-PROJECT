@@ -1,0 +1,76 @@
+{
+  "breadcrumb": "Peaceful Mind",
+  "breadcrumb_back": "Back to Peaceful Mind",
+  "assessment": {
+    "badge": "D0 · Entry Assessment",
+    "title": "Mental Health Assessment",
+    "desc": "A 15-question assessment to help you understand your current mental health level and receive personalized suggestions on what to focus on first.",
+    "img_caption": "15 questions · ~5 minutes"
+  },
+  "stress": {
+    "badge": "D1 · Foundation",
+    "title": "Understanding Stress & Anxiety Loops",
+    "desc": "Stress isn't bad. Stress helps you focus and act. Problems only arise when stress persists, isn't released, and forms anxiety–habit loops. Understanding the mechanism is the first step to breaking it.",
+    "img_caption": "3 stress layers · Anxiety loops · Breaking techniques"
+  },
+  "breathing": {
+    "badge": "D2 · Breathwork & Calm",
+    "title": "Breathing Techniques",
+    "desc": "Breathing is a free tool, always available, no equipment needed. 4 techniques for 4 different situations — from daily foundation to an emergency reset in 2 minutes.",
+    "img_caption": "4 techniques · Interactive timer · Choose the right situation"
+  },
+  "meditation": {
+    "badge": "D3 · Meditation & Mindfulness",
+    "title": "Short Meditation & Mindfulness",
+    "desc": "Meditation isn't about \"not thinking\". It's about noticing when you've been carried away and gently returning. Each return is a rep — no perfection needed.",
+    "img_caption": "4 meditation types · Interactive timer · From 3 minutes"
+  },
+  "brain_dump": {
+    "badge": "D4 · Mental Declutter Technique",
+    "title": "Brain Dump — Mental Unload",
+    "desc": "When your mind is overloaded — too many things to remember, too much anxiety — a Brain Dump is the fastest way to clear your mental RAM and regain clarity.",
+    "img_caption": "10 minutes · When mind is overloaded"
+  },
+  "journaling": {
+    "badge": "D4 · Write to Release",
+    "title": "Journaling & Mental Diary",
+    "desc": "Journaling is the simplest tool to free your mind — no judgment, no need for perfection, just write down what's happening inside.",
+    "img_caption": "5 minutes · Every day"
+  },
+  "digital_detox": {
+    "badge": "D5 · Managing the Digital World",
+    "title": "Digital Detox — Digital Rest",
+    "desc": "The brain needs time without stimulation to recover and create. Digital detox isn't about abandoning technology — it's about reclaiming control over it.",
+    "img_caption": "7–21 day challenge"
+  },
+  "gentle_discipline": {
+    "badge": "D6 · Self-Compassion & Discipline",
+    "title": "Gentle Discipline",
+    "desc": "Lasting discipline doesn't come from being harsh with yourself, but from kindness and self-understanding. Gentle discipline is the art of being consistent without self-punishment.",
+    "img_caption": "6 Principles · Daily Practice"
+  },
+  "habits": {
+    "badge": "D6 · Habit Formation Science",
+    "title": "Building Lasting Habits",
+    "desc": "40% of your daily actions are automatic habits — not conscious decisions. Understanding the habit formation mechanism is the most effective way to change your life.",
+    "img_caption": "66 days on average to form a habit"
+  },
+  "roadmap": {
+    "badge": "D7 · Step-by-Step Journey",
+    "title": "12-Week Peaceful Mind Roadmap",
+    "desc": "A step-by-step path to build sustainable mental health — from recognizing stress to having a complete, personalized mental toolkit.",
+    "img_caption": "4 Phases · 12 Weeks"
+  },
+  "checklist": {
+    "badge": "D7 · Track Progress",
+    "title": "Daily Mind Checklist",
+    "desc": "A simple checklist to track the most important mental and health habits each day and week. Automatically saved on your device.",
+    "img_caption": "10 items · Daily / 9 items · Weekly"
+  },
+  "body_scan": {
+    "badge": "D3b · Deep Recovery",
+    "title": "Body Scan",
+    "desc": "Body scan is a full-body meditation — scanning each zone from head to toe. The best tool for those who struggle to sleep, have sore muscles after exercise, or hold stress without knowing it.",
+    "img_caption": "8 body zones · ~8 minutes · Guided timer"
+  }
+}

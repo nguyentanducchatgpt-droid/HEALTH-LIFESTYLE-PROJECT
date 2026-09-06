@@ -1,6 +1,7 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#f97316';
 const RGB = '249,115,22';
@@ -261,6 +262,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 export default function ToolsHealthScorePage() {
+  const { t: tT } = useTranslation('tools');
   const today = new Date().toISOString().slice(0, 10);
   const [scores, setScores] = useState(() => {
     try { const d = JSON.parse(localStorage.getItem(LS_KEY) || '{}'); return d[today] || {}; } catch { return {}; }
@@ -317,18 +319,18 @@ export default function ToolsHealthScorePage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">{tT('breadcrumb')}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>💯</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Daily Health Score</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{tT('health_score.title')}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            100 điểm · 7 nhóm hành vi · Xu hướng 7 ngày
+            {tT('health_score.badge')}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Chấm điểm sức khỏe toàn diện mỗi ngày theo 7 nhóm hành vi. Không phải để phán xét — mà để biết tuần này đang đi đúng hướng không.
+            {tT('health_score.desc')}
           </p>
         </div>
       </div>
@@ -338,7 +340,7 @@ export default function ToolsHealthScorePage() {
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop" alt="Health score" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            đo lường để cải thiện · không để tự trách
+            {tT('health_score.img_caption')}
           </span>
         </div>
       </div>
@@ -428,7 +430,7 @@ export default function ToolsHealthScorePage() {
       )}
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">{tT('breadcrumb_back')}</Link>
 
       {scoreModal !== null && (
         <ScoreModal

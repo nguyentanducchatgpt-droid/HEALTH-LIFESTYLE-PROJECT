@@ -1,0 +1,70 @@
+{
+  "breadcrumb": "← Werkzeuge & Ressourcen",
+  "breadcrumb_back": "← Zurück zu Werkzeuge & Ressourcen",
+  "roadmap": {
+    "title": "12-Wochen-Fahrplan",
+    "badge": "4 Phasen · Einstieg → Optimierung → Selbstständigkeit",
+    "desc": "Ein System, das dich von der Eingewöhnung in die Werkzeuge über Fortschrittsmessung und Personalisierung bis hin zur eigenständigen Routine führt. 12 Wochen für einen aktiven Lebensstil.",
+    "img_caption": "12 Wochen · von Werkzeugen → Gewohnheiten → Selbstständigkeit"
+  },
+  "checklist": {
+    "title": "Tages- & Wochen-Checkliste",
+    "badge": "6 tägliche Punkte · 6 wöchentliche Ziele · Wochenend-Review",
+    "desc": "Eine minimalistische Checkliste zur Aufrechterhaltung der 6 wichtigsten täglichen Verhaltensweisen. Jedes Häkchen ist ein kleiner Schritt zum Aufbau nachhaltiger Gewohnheiten.",
+    "img_caption": "6 Verhaltensweisen · jeden Tag · unter 5 Minuten abhaken"
+  },
+  "workout_log": {
+    "title": "Trainingstagebuch",
+    "badge": "RPE · Progression · 30 Tage Verlauf",
+    "desc": "Dokumentiere Übungen, Sätze/Wiederholungen, Gewicht und das subjektive Belastungsempfinden (RPE). Überprüfe, wie du nächste Woche steigern solltest.",
+    "img_caption": "klare Aufzeichnungen → systematischer Fortschritt"
+  },
+  "meal_plan": {
+    "title": "Ernährungsplan-Vorlage",
+    "badge": "Teller-Modell · Ernährungstagebuch · Vietnamesische Mahlzeiten",
+    "desc": "Ein gesundes Teller-Modell mit ½ Gemüse – ¼ Protein – ¼ Kohlenhydrate. Führe täglich ein einfaches Ernährungstagebuch, um Ernährungsbewusstsein aufzubauen.",
+    "img_caption": "½ Gemüse · ¼ Protein · ¼ Kohlenhydrate · einfach bei jeder Mahlzeit"
+  },
+  "lifestyle_tracker": {
+    "title": "Lifestyle-Tracker",
+    "badge": "Schlaf · Schritte · Energie · 7-Tage-Trend",
+    "desc": "Verfolge Schlaf, Schrittzahl und Energieniveau täglich. Nach 1 Woche erkennst du klare Muster, die dein Wohlbefinden beeinflussen.",
+    "img_caption": "besser schlafen → mehr Energie → bessere Ergebnisse"
+  },
+  "mind_tracker": {
+    "title": "Mind & Calm Tracker",
+    "badge": "Stress · Stimmung · Entspannungsübungen · Journaling",
+    "desc": "Verfolge Stress, Stimmung und tägliche Entspannungsübungen. Erkenne Überlastungszeichen bevor du ausbrennst — warte nicht, bis du zusammenbrichst.",
+    "img_caption": "erkennen → anpassen → durchhalten"
+  },
+  "health_score": {
+    "title": "Täglicher Gesundheits-Score",
+    "badge": "100 Punkte · 7 Verhaltensgruppen · 7-Tage-Trend",
+    "desc": "Bewerte deine Gesundheit täglich in 7 Verhaltensgruppen. Nicht zur Selbstkritik — sondern um zu wissen, ob diese Woche in die richtige Richtung geht.",
+    "img_caption": "messen um zu verbessern · nicht um sich zu tadeln"
+  },
+  "meal_prep": {
+    "title": "3-Tage Meal Prep",
+    "badge": "30–45 Min · 5 Zutaten · Nie langweilig",
+    "desc": "Einmal kochen für 2–3 Tage. Konsistente Tellerstruktur mit flexiblen Geschmacksvariationen. Eine praktische Lösung für Beschäftigte, die trotzdem gesund essen wollen.",
+    "img_caption": "einmal kochen · 3 Tage kein Stress ums Essen"
+  },
+  "reset_protocol": {
+    "title": "Reset-Protokoll",
+    "badge": "Nach dem Aussteigen · Richtig zurückfinden · Ohne Selbstvorwürfe",
+    "desc": "Jeder macht mal eine Pause. Wichtig ist, wie man zurückfindet. Hier ist ein konkretes System für jede Situation — kein Urteil, nur der nächste Schritt.",
+    "img_caption": "Aussteigen ist normal · Zurückkommen ist das Entscheidende"
+  },
+  "progress_test": {
+    "title": "4-Wochen-Fortschrittstest",
+    "badge": "8 Kennzahlen · Alle 4 Wochen · Mehr als nur Gewicht",
+    "desc": "Messe Fortschritt über Gewicht hinaus. 8 Kennzahlen zeigen ein vollständigeres Bild: Fitness, Erholung, Geist und Lebensstil. Ehrlich und ausgewogen mit dir selbst sein.",
+    "img_caption": "ganzheitliche Messung · nicht nur Körpergewicht"
+  },
+  "quick_workouts": {
+    "title": "Schnelles Workout-Archiv",
+    "badge": "5 · 10 · 20 · 30 Min · Kein Equipment nötig",
+    "desc": "Workouts von 5–30 Minuten für jede Situation. Zu beschäftigt, zu müde oder brauchst einen Reset — es gibt immer eine passende Option. Keine Ausrede ist gut genug, um komplett aufzuhören.",
+    "img_caption": "es gibt immer 5 Minuten — es gibt immer eine Wahl"
+  }
+}

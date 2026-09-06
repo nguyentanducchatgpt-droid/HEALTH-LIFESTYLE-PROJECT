@@ -1,0 +1,70 @@
+{
+  "breadcrumb": "← Công Cụ & Tài Nguyên",
+  "breadcrumb_back": "← Quay lại Công Cụ & Tài Nguyên",
+  "roadmap": {
+    "title": "Lộ Trình 12 Tuần",
+    "badge": "4 giai đoạn · Làm quen → Tối ưu → Tự vận hành",
+    "desc": "Hệ thống dẫn dắt từ việc làm quen công cụ, đo tiến bộ, cá nhân hóa theo mình, đến tự vận hành không cần ai nhắc. 12 tuần xây dựng lối sống chủ động.",
+    "img_caption": "12 tuần · từ công cụ → thói quen → tự vận hành"
+  },
+  "checklist": {
+    "title": "Checklist Ngày & Tuần",
+    "badge": "6 mục hàng ngày · 6 chỉ tiêu hàng tuần · Review cuối tuần",
+    "desc": "Checklist tối giản giúp bạn duy trì 6 hành vi quan trọng nhất mỗi ngày. Mỗi tick là một bước nhỏ xây dựng thói quen bền vững.",
+    "img_caption": "6 hành vi · mỗi ngày · không quá 5 phút để tick"
+  },
+  "workout_log": {
+    "title": "Nhật Ký Tập Luyện",
+    "badge": "RPE · Tăng tiến · 30 ngày lịch sử",
+    "desc": "Ghi lại bài tập, số set/reps, cân nặng và cảm giác gắng sức (RPE). Xem lại để biết nên tăng tiến thế nào tuần sau.",
+    "img_caption": "ghi chép rõ ràng → tiến bộ có hệ thống"
+  },
+  "meal_plan": {
+    "title": "Template Thực Đơn",
+    "badge": "Đĩa ăn chuẩn · Nhật ký dinh dưỡng · Gợi ý bữa ăn Việt",
+    "desc": "Mô hình đĩa ăn lành mạnh theo tỷ lệ ½ rau – ¼ đạm – ¼ tinh bột. Ghi nhật ký ăn uống đơn giản mỗi ngày để xây dựng ý thức dinh dưỡng.",
+    "img_caption": "½ rau · ¼ đạm · ¼ tinh bột · đơn giản mỗi bữa"
+  },
+  "lifestyle_tracker": {
+    "title": "Lifestyle Tracker",
+    "badge": "Ngủ · Bước chân · Năng lượng · 7 ngày trend",
+    "desc": "Theo dõi giấc ngủ, số bước chân và mức năng lượng mỗi ngày. Sau 1 tuần bạn sẽ thấy pattern rõ ràng ảnh hưởng cảm giác của mình.",
+    "img_caption": "ngủ tốt → năng lượng tốt → kết quả tốt"
+  },
+  "mind_tracker": {
+    "title": "Mind & Calm Tracker",
+    "badge": "Stress · Mood · Calm practice · Journaling",
+    "desc": "Theo dõi stress, tâm trạng và thực hành calm mỗi ngày. Nhận ra dấu hiệu cần giảm tải trước khi kiệt sức — không cần chờ đến khi vỡ vụn.",
+    "img_caption": "nhận ra → điều chỉnh → bền vững"
+  },
+  "health_score": {
+    "title": "Daily Health Score",
+    "badge": "100 điểm · 7 nhóm hành vi · Xu hướng 7 ngày",
+    "desc": "Chấm điểm sức khỏe toàn diện mỗi ngày theo 7 nhóm hành vi. Không phải để phán xét — mà để biết tuần này đang đi đúng hướng không.",
+    "img_caption": "đo lường để cải thiện · không để tự trách"
+  },
+  "meal_prep": {
+    "title": "Meal Prep 3 Ngày",
+    "badge": "30–45 phút · 5 thành phần · Không ngán",
+    "desc": "Một lần nấu cho 2–3 ngày. Cấu trúc đĩa ăn nhất quán nhưng đổi vị linh hoạt. Giải pháp thực tế cho người bận mà vẫn muốn ăn lành mạnh.",
+    "img_caption": "1 lần nấu · 3 ngày không lo ăn gì"
+  },
+  "reset_protocol": {
+    "title": "Reset Protocol",
+    "badge": "Sau lỡ nhịp · Quay lại đúng cách · Không tự trách",
+    "desc": "Ai cũng lỡ nhịp. Điều quan trọng là quay lại như thế nào. Đây là hệ thống cụ thể cho từng tình huống — không phán xét, chỉ hành động tiếp theo.",
+    "img_caption": "lỡ nhịp là bình thường · quay lại mới quan trọng"
+  },
+  "progress_test": {
+    "title": "Bộ Test Tiến Bộ 4 Tuần",
+    "badge": "8 chỉ số · Mỗi 4 tuần · Toàn diện hơn cân nặng",
+    "desc": "Đo tiến bộ không chỉ bằng cân nặng. 8 chỉ số phản ánh đầy đủ hơn: thể lực, phục hồi, tâm trí và lối sống. Cân bằng và trung thực với chính mình.",
+    "img_caption": "đo lường toàn diện · không chỉ là cân nặng"
+  },
+  "quick_workouts": {
+    "title": "Thư Viện Bài Nhanh",
+    "badge": "5 · 10 · 20 · 30 phút · Không cần thiết bị",
+    "desc": "Bài tập 5–30 phút cho mọi tình huống. Quá bận, quá mệt, hay chỉ cần reset — luôn có lựa chọn phù hợp. Không có lý do nào đủ để bỏ hoàn toàn.",
+    "img_caption": "luôn có 5 phút — luôn có lựa chọn"
+  }
+}

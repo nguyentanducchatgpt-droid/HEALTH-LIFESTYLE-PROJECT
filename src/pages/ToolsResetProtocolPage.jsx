@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#0ea5e9';
 const RGB = '14,165,233';
@@ -380,6 +381,7 @@ function ResetModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 }
 
 export default function ToolsResetProtocolPage() {
+  const { t: tT } = useTranslation('tools');
   const [open, setOpen] = useState(null);
   const [resetModal, setResetModal] = useState(null);
   const [quickModal, setQuickModal] = useState(null);
@@ -407,18 +409,18 @@ export default function ToolsResetProtocolPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">{tT('breadcrumb')}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🔄</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Reset Protocol</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{tT('reset_protocol.title')}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            Sau lỡ nhịp · Quay lại đúng cách · Không tự trách
+            {tT('reset_protocol.badge')}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Ai cũng lỡ nhịp. Điều quan trọng là quay lại như thế nào. Đây là hệ thống cụ thể cho từng tình huống — không phán xét, chỉ hành động tiếp theo.
+            {tT('reset_protocol.desc')}
           </p>
         </div>
       </div>
@@ -428,7 +430,7 @@ export default function ToolsResetProtocolPage() {
           <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&q=80&auto=format&fit=crop" alt="Reset protocol" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            lỡ nhịp là bình thường · quay lại mới quan trọng
+            {tT('reset_protocol.img_caption')}
           </span>
         </div>
       </div>
@@ -520,7 +522,7 @@ export default function ToolsResetProtocolPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">{tT('breadcrumb_back')}</Link>
 
       {quickModal !== null && (
         <QuickModal

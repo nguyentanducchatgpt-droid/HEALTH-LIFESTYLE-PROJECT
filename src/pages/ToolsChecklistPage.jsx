@@ -1,6 +1,7 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#f97316';
 const RGB = '249,115,22';
@@ -790,6 +791,7 @@ function TipsModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 }
 
 export default function ToolsChecklistPage() {
+  const { t: tT } = useTranslation('tools');
   const today = new Date().toISOString().slice(0, 10);
   const [daily, setDaily] = useState(() => {
     try { const s = JSON.parse(localStorage.getItem(LS_DAILY) || '{}'); return s[today] || []; } catch { return []; }
@@ -851,18 +853,18 @@ export default function ToolsChecklistPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">{tT('breadcrumb')}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>✅</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Checklist Ngày &amp; Tuần</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{tT('checklist.title')}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            6 mục hàng ngày · 6 chỉ tiêu hàng tuần · Review cuối tuần
+            {tT('checklist.badge')}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Checklist tối giản giúp bạn duy trì 6 hành vi quan trọng nhất mỗi ngày. Mỗi tick là một bước nhỏ xây dựng thói quen bền vững.
+            {tT('checklist.desc')}
           </p>
         </div>
       </div>
@@ -872,7 +874,7 @@ export default function ToolsChecklistPage() {
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80&auto=format&fit=crop" alt="Checklist" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            6 hành vi · mỗi ngày · không quá 5 phút để tick
+            {tT('checklist.img_caption')}
           </span>
         </div>
       </div>
@@ -1010,7 +1012,7 @@ export default function ToolsChecklistPage() {
       </RevealBlock>
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">{tT('breadcrumb_back')}</Link>
 
       {dailyModal !== null && (
         <DailyModal

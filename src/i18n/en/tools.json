@@ -1,0 +1,70 @@
+{
+  "breadcrumb": "← Tools & Resources",
+  "breadcrumb_back": "← Back to Tools & Resources",
+  "roadmap": {
+    "title": "12-Week Roadmap",
+    "badge": "4 phases · Getting started → Optimizing → Self-sustaining",
+    "desc": "A system guiding you from getting familiar with tools, tracking progress, personalizing to your needs, to running autonomously without reminders. 12 weeks building an active lifestyle.",
+    "img_caption": "12 weeks · from tools → habits → self-sustaining"
+  },
+  "checklist": {
+    "title": "Daily & Weekly Checklist",
+    "badge": "6 daily items · 6 weekly targets · Weekend review",
+    "desc": "A minimal checklist to maintain the 6 most important daily behaviors. Each tick is a small step building lasting habits.",
+    "img_caption": "6 behaviors · every day · under 5 minutes to tick"
+  },
+  "workout_log": {
+    "title": "Workout Log",
+    "badge": "RPE · Progression · 30-day history",
+    "desc": "Log your exercises, sets/reps, weight, and rate of perceived exertion (RPE). Review to know how to progress next week.",
+    "img_caption": "clear records → systematic progress"
+  },
+  "meal_plan": {
+    "title": "Meal Plan Template",
+    "badge": "Standard plate · Nutrition diary · Vietnamese meal ideas",
+    "desc": "A healthy plate model with ½ vegetables – ¼ protein – ¼ carbs. Keep a simple daily food diary to build nutritional awareness.",
+    "img_caption": "½ veg · ¼ protein · ¼ carbs · simple every meal"
+  },
+  "lifestyle_tracker": {
+    "title": "Lifestyle Tracker",
+    "badge": "Sleep · Steps · Energy · 7-day trend",
+    "desc": "Track sleep, step count, and energy level every day. After 1 week you'll see clear patterns affecting how you feel.",
+    "img_caption": "better sleep → better energy → better results"
+  },
+  "mind_tracker": {
+    "title": "Mind & Calm Tracker",
+    "badge": "Stress · Mood · Calm practice · Journaling",
+    "desc": "Track stress, mood, and calm practices daily. Recognize signs of overload before burnout — no need to wait until you break down.",
+    "img_caption": "notice → adjust → sustain"
+  },
+  "health_score": {
+    "title": "Daily Health Score",
+    "badge": "100 points · 7 behavior groups · 7-day trend",
+    "desc": "Score your overall health daily across 7 behavior groups. Not to judge — but to know whether this week is heading in the right direction.",
+    "img_caption": "measure to improve · not to blame yourself"
+  },
+  "meal_prep": {
+    "title": "3-Day Meal Prep",
+    "badge": "30–45 min · 5 ingredients · Never boring",
+    "desc": "Cook once for 2–3 days. Consistent plate structure with flexible flavor variations. A practical solution for busy people who still want to eat healthy.",
+    "img_caption": "cook once · 3 days without worrying what to eat"
+  },
+  "reset_protocol": {
+    "title": "Reset Protocol",
+    "badge": "After falling off · Get back right · No self-blame",
+    "desc": "Everyone falls off. What matters is how you get back. This is a concrete system for each situation — no judgment, just the next action.",
+    "img_caption": "falling off is normal · getting back is what matters"
+  },
+  "progress_test": {
+    "title": "4-Week Progress Test",
+    "badge": "8 metrics · Every 4 weeks · More than just weight",
+    "desc": "Measure progress beyond weight. 8 metrics reflect a fuller picture: fitness, recovery, mind, and lifestyle. Be balanced and honest with yourself.",
+    "img_caption": "holistic measurement · not just body weight"
+  },
+  "quick_workouts": {
+    "title": "Quick Workout Library",
+    "badge": "5 · 10 · 20 · 30 min · No equipment needed",
+    "desc": "Workouts from 5–30 minutes for every situation. Too busy, too tired, or just need a reset — there's always a suitable option. No excuse is good enough to skip entirely.",
+    "img_caption": "there's always 5 minutes — there's always a choice"
+  }
+}

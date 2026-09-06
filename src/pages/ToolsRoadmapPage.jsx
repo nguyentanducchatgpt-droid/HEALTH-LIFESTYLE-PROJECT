@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const COLOR = '#a855f7';
 const RGB = '168,85,247';
@@ -234,6 +235,7 @@ function PhaseModal({ idx, onClose, onPrev, onNext, hasPrev, hasNext }) {
 }
 
 export default function ToolsRoadmapPage() {
+  const { t: tT } = useTranslation('tools');
   const [openPhase, setOpenPhase] = useState(0);
   const [phaseModal, setPhaseModal] = useState(null);
 
@@ -260,18 +262,18 @@ export default function ToolsRoadmapPage() {
 
   return (
     <div className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">← Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text mb-8 transition-colors">{tT('breadcrumb')}</Link>
 
       <div className="flex items-start gap-6 mb-10 relative">
         <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: `rgba(${RGB},0.05)` }} />
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0" style={{ borderColor: `rgba(${RGB},0.2)`, animation: 'float 3s ease-in-out infinite' }}>🗺️</div>
         <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">Lộ Trình 12 Tuần</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight">{tT('roadmap.title')}</h1>
           <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>
-            4 giai đoạn · Làm quen → Tối ưu → Tự vận hành
+            {tT('roadmap.badge')}
           </span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">
-            Hệ thống dẫn dắt từ việc làm quen công cụ, đo tiến bộ, cá nhân hóa theo mình, đến tự vận hành không cần ai nhắc. 12 tuần xây dựng lối sống chủ động.
+            {tT('roadmap.desc')}
           </p>
         </div>
       </div>
@@ -281,7 +283,7 @@ export default function ToolsRoadmapPage() {
           <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80&auto=format&fit=crop" alt="Roadmap" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/30 to-transparent" />
           <span className="absolute bottom-4 left-6 text-base font-bold uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: COLOR, background: 'rgba(10,10,10,0.6)', borderColor: `rgba(${RGB},0.2)` }}>
-            12 tuần · từ công cụ → thói quen → tự vận hành
+            {tT('roadmap.img_caption')}
           </span>
         </div>
       </div>
@@ -373,7 +375,7 @@ export default function ToolsRoadmapPage() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
       <p className="text-base text-muted mb-6">⚠ Lộ trình mang tính hướng dẫn. Điều chỉnh tùy theo nhịp sống và mục tiêu cá nhân của bạn.</p>
-      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">← Quay lại Công Cụ &amp; Tài Nguyên</Link>
+      <Link to="/pillar/f" className="inline-flex items-center gap-2 text-lg text-muted hover:text-text transition-colors">{tT('breadcrumb_back')}</Link>
 
       {phaseModal !== null && (
         <PhaseModal

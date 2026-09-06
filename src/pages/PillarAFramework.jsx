@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import WorkoutFramework from '../components/WorkoutFramework';
 
 const MS = {
@@ -547,6 +548,8 @@ function StepModal({ item, onClose, onPrev, onNext, hasPrev, hasNext }) {
 }
 
 export default function PillarAFramework() {
+  const { t: tPillars } = useTranslation('pillars');
+  const { t } = useTranslation('common');
   const [activeDayBlock, setActiveDayBlock] = useState(0);
   const [stepModal, setStepModal] = useState(null);
 
@@ -570,25 +573,24 @@ export default function PillarAFramework() {
 
         <div className="relative z-10 px-4 md:px-8 pt-10 pb-8 animate-fade-in-up">
           <nav className="flex items-center gap-1.5 text-base text-muted mb-5 flex-wrap">
-            <Link to="/" className="hover:text-accent transition-colors">Trang chủ</Link>
+            <Link to="/" className="hover:text-accent transition-colors">{t('nav.home')}</Link>
             <span className="text-border/60">/</span>
-            <Link to="/pillar/a" className="hover:text-accent transition-colors">Vận Động & Tập Luyện</Link>
+            <Link to="/pillar/a" className="hover:text-accent transition-colors">{tPillars('pillarA.title')}</Link>
             <span className="text-border/60">/</span>
-            <span className="text-orange-400 font-medium">Khung Ngày & Thời Gian</span>
+            <span className="text-orange-400 font-medium">{tPillars('pillarA.sub_framework_name')}</span>
           </nav>
 
           <div className="inline-flex items-center gap-2 bg-orange-500/8 border border-orange-500/20 text-orange-400 text-base font-bold px-4 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse shrink-0" />
-            2 / 4 · Khung Ngày & Thời Gian
+            2 / 4 · {tPillars('pillarA.sub_framework_name')}
           </div>
 
           <h1 className="text-4xl md:text-5xl font-black text-text leading-tight mb-3">
-            Khung Ngày Tập 20–40 Phút &amp;<br />
-            <span className="text-orange-400">Chọn Khung Thời Gian Luyện Tập</span>
+            {tPillars('pillarA.sub_framework_h1_main')} &amp;<br />
+            <span className="text-orange-400">{tPillars('pillarA.sub_framework_h1_accent')}</span>
           </h1>
           <p className="text-muted text-lg leading-relaxed max-w-xl">
-            4 khối thời gian trong ngày và 8 mức thời gian từ 20 đến 180 phút — tìm lịch phù hợp
-            với cuộc sống và mức độ hiện tại của bạn.
+            {tPillars('pillarA.sub_framework_desc')}
           </p>
 
           <div className="flex flex-wrap gap-3 mt-6">
@@ -755,7 +757,7 @@ export default function PillarAFramework() {
           className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          <span>Vận Động & Khởi Động</span>
+          <span>{tPillars('pillarA.sub_movements_name')}</span>
         </Link>
         <Link
           to="/pillar/a"
@@ -768,7 +770,7 @@ export default function PillarAFramework() {
           to="/pillar/a/weekly"
           className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
-          <span>Nhịp Tuần & Mục Tiêu</span>
+          <span>{tPillars('pillarA.sub_weekly_name')}</span>
           <span className="group-hover:translate-x-0.5 transition-transform">→</span>
         </Link>
       </div>

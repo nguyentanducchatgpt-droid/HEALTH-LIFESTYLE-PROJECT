@@ -1,8 +1,11 @@
 ﻿import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import WeeklyRhythm from '../components/WeeklyRhythm';
 import WorkoutPlans from '../components/WorkoutPlans';
 
 export default function PillarAWeekly() {
+  const { t: tPillars } = useTranslation('pillars');
+  const { t } = useTranslation('common');
   return (
     <div className="max-w-5xl mx-auto -mt-4">
 
@@ -25,26 +28,25 @@ export default function PillarAWeekly() {
         <div className="relative z-10 px-4 md:px-8 pt-10 pb-8 animate-fade-in-up">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-base text-muted mb-5 flex-wrap">
-            <Link to="/" className="hover:text-accent transition-colors">Trang chủ</Link>
+            <Link to="/" className="hover:text-accent transition-colors">{t('nav.home')}</Link>
             <span className="text-border/60">/</span>
-            <Link to="/pillar/a" className="hover:text-accent transition-colors">Vận Động & Tập Luyện</Link>
+            <Link to="/pillar/a" className="hover:text-accent transition-colors">{tPillars('pillarA.title')}</Link>
             <span className="text-border/60">/</span>
-            <span className="text-teal-400 font-medium">Nhịp Tuần & Mục Tiêu</span>
+            <span className="text-teal-400 font-medium">{tPillars('pillarA.sub_weekly_name')}</span>
           </nav>
 
           {/* Step badge */}
           <div className="inline-flex items-center gap-2 bg-teal-500/8 border border-teal-500/20 text-teal-400 text-base font-bold px-4 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse shrink-0" />
-            3 / 4 · Nhịp Tuần & Mục Tiêu
+            3 / 4 · {tPillars('pillarA.sub_weekly_name')}
           </div>
 
           <h1 className="text-4xl md:text-5xl font-black text-text leading-tight mb-3">
-            Nhịp Tuần Gợi Ý &amp;<br />
-            <span className="text-teal-400">Buổi Tập Theo Mục Tiêu</span>
+            {tPillars('pillarA.sub_weekly_h1_main')} &amp;<br />
+            <span className="text-teal-400">{tPillars('pillarA.sub_weekly_h1_accent')}</span>
           </h1>
           <p className="text-muted text-lg leading-relaxed max-w-xl">
-            3 giai đoạn nhịp tuần linh hoạt kết hợp 6 lộ trình tập luyện được cá nhân hóa từ
-            người mới bắt đầu đến vận động viên nâng cao.
+            {tPillars('pillarA.sub_weekly_desc')}
           </p>
 
           {/* Mini stats */}
@@ -75,7 +77,7 @@ export default function PillarAWeekly() {
           className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          <span>Khung Ngày & Thời Gian</span>
+          <span>{tPillars('pillarA.sub_framework_name')}</span>
         </Link>
         <Link
           to="/pillar/a"
@@ -88,7 +90,7 @@ export default function PillarAWeekly() {
           to="/pillar/a/progress"
           className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
-          <span>Bậc Thang & Kiểm Tra</span>
+          <span>{tPillars('pillarA.sub_progress_name')}</span>
           <span className="group-hover:translate-x-0.5 transition-transform">→</span>
         </Link>
       </div>

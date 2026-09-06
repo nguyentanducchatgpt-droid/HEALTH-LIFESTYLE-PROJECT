@@ -1,8 +1,11 @@
 ﻿import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ProgressionStaircase from '../components/ProgressionStaircase';
 import MonthlyProgressCheck from '../components/MonthlyProgressCheck';
 
 export default function PillarAProgress() {
+  const { t: tPillars } = useTranslation('pillars');
+  const { t } = useTranslation('common');
   return (
     <div className="max-w-5xl mx-auto -mt-4">
 
@@ -25,26 +28,25 @@ export default function PillarAProgress() {
         <div className="relative z-10 px-4 md:px-8 pt-10 pb-8 animate-fade-in-up">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-base text-muted mb-5 flex-wrap">
-            <Link to="/" className="hover:text-accent transition-colors">Trang chủ</Link>
+            <Link to="/" className="hover:text-accent transition-colors">{t('nav.home')}</Link>
             <span className="text-border/60">/</span>
-            <Link to="/pillar/a" className="hover:text-accent transition-colors">Vận Động & Tập Luyện</Link>
+            <Link to="/pillar/a" className="hover:text-accent transition-colors">{tPillars('pillarA.title')}</Link>
             <span className="text-border/60">/</span>
-            <span className="text-purple-400 font-medium">Bậc Thang & Kiểm Tra</span>
+            <span className="text-purple-400 font-medium">{tPillars('pillarA.sub_progress_name')}</span>
           </nav>
 
           {/* Step badge */}
           <div className="inline-flex items-center gap-2 bg-purple-500/8 border border-purple-500/20 text-purple-400 text-base font-bold px-4 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse shrink-0" />
-            4 / 4 · Bậc Thang & Kiểm Tra
+            4 / 4 · {tPillars('pillarA.sub_progress_name')}
           </div>
 
           <h1 className="text-4xl md:text-5xl font-black text-text leading-tight mb-3">
-            Bậc Thang Tiến Bộ &amp;<br />
-            <span className="text-purple-400">Kiểm Tra Hàng Tháng</span>
+            {tPillars('pillarA.sub_progress_h1_main')} &amp;<br />
+            <span className="text-purple-400">{tPillars('pillarA.sub_progress_h1_accent')}</span>
           </h1>
           <p className="text-muted text-lg leading-relaxed max-w-xl">
-            6 lộ trình tiến bộ theo mục tiêu cá nhân, test kiểm tra định kỳ và radar chart trực quan
-            để theo dõi sự phát triển toàn diện theo thời gian.
+            {tPillars('pillarA.sub_progress_desc')}
           </p>
 
           {/* Mini stats */}
@@ -75,7 +77,7 @@ export default function PillarAProgress() {
           className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-          <span>Nhịp Tuần & Mục Tiêu</span>
+          <span>{tPillars('pillarA.sub_weekly_name')}</span>
         </Link>
         <Link
           to="/pillar/a"

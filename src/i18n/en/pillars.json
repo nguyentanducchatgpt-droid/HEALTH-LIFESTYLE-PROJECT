@@ -1728,7 +1728,23 @@
           }
         ]
       }
-    ]
+    ],
+    "sub_movements_name": "Movement & Warm-Up",
+    "sub_movements_h1_main": "6 Foundational Movement Patterns",
+    "sub_movements_h1_accent": "Warm-Up & Cool-Down",
+    "sub_movements_desc": "Learn 6 foundational movements with detailed video demonstrations, proper warm-up before training, and correct cool-down for optimal recovery.",
+    "sub_framework_name": "Daily Framework & Timing",
+    "sub_framework_h1_main": "20–40 Minute Daily Training Framework",
+    "sub_framework_h1_accent": "Choose Your Training Schedule",
+    "sub_framework_desc": "4 time blocks in your day and 8 duration levels from 20 to 180 minutes — find the schedule that fits your life and current fitness level.",
+    "sub_weekly_name": "Weekly Rhythm & Goals",
+    "sub_weekly_h1_main": "Suggested Weekly Rhythm",
+    "sub_weekly_h1_accent": "Goal-Based Training Sessions",
+    "sub_weekly_desc": "3 flexible weekly rhythm phases combined with 6 personalized training plans from beginner to advanced athlete.",
+    "sub_progress_name": "Progression & Progress Checks",
+    "sub_progress_h1_main": "Progression Staircase",
+    "sub_progress_h1_accent": "Monthly Progress Checks",
+    "sub_progress_desc": "6 goal-based progression pathways, regular progress checks, and a visual radar chart to track comprehensive development over time."
   },
   "pillarB": {
     "id": "b",

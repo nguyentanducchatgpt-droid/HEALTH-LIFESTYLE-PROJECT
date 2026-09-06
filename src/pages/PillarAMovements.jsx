@@ -834,6 +834,7 @@ function MovementVideoPlayer({ videoKey, s }) {
 
 export default function PillarAMovements() {
   const { t: tPillars } = useTranslation('pillars');
+  const { t } = useTranslation('common');
 
   const movementsDetail = tPillars('pillarA.movements_detail', { returnObjects: true });
   const warmupI18n      = tPillars('pillarA.warmup',           { returnObjects: true });
@@ -867,25 +868,24 @@ export default function PillarAMovements() {
 
         <div className="relative z-10 px-4 md:px-8 pt-10 pb-8 animate-fade-in-up">
           <nav className="flex items-center gap-1.5 text-base text-muted mb-5 flex-wrap">
-            <Link to="/" className="hover:text-accent transition-colors">Trang chủ</Link>
+            <Link to="/" className="hover:text-accent transition-colors">{t('nav.home')}</Link>
             <span className="text-border/60">/</span>
-            <Link to="/pillar/a" className="hover:text-accent transition-colors">Vận Động & Tập Luyện</Link>
+            <Link to="/pillar/a" className="hover:text-accent transition-colors">{tPillars('pillarA.title')}</Link>
             <span className="text-border/60">/</span>
-            <span className="text-green-400 font-medium">Vận Động & Khởi Động</span>
+            <span className="text-green-400 font-medium">{tPillars('pillarA.sub_movements_name')}</span>
           </nav>
 
           <div className="inline-flex items-center gap-2 bg-green-500/8 border border-green-500/20 text-green-400 text-base font-bold px-4 py-1.5 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shrink-0" />
-            1 / 4 · Vận Động & Khởi Động
+            1 / 4 · {tPillars('pillarA.sub_movements_name')}
           </div>
 
           <h1 className="text-4xl md:text-5xl font-black text-text leading-tight mb-3">
-            6 Mẫu Vận Động Nền Tảng &amp;<br />
-            <span className="text-green-400">Khởi Động & Giãn Cơ Sau Tập</span>
+            {tPillars('pillarA.sub_movements_h1_main')} &amp;<br />
+            <span className="text-green-400">{tPillars('pillarA.sub_movements_h1_accent')}</span>
           </h1>
           <p className="text-muted text-lg leading-relaxed max-w-xl">
-            Học 6 chuyển động nền tảng với video minh họa chi tiết, khởi động chuẩn trước khi tập
-            và giãn cơ đúng cách để tối ưu phục hồi.
+            {tPillars('pillarA.sub_movements_desc')}
           </p>
 
           <div className="flex flex-wrap gap-3 mt-6">
@@ -1150,7 +1150,7 @@ export default function PillarAMovements() {
           to="/pillar/a/framework"
           className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group"
         >
-          <span>Khung Ngày & Thời Gian</span>
+          <span>{tPillars('pillarA.sub_framework_name')}</span>
           <span className="group-hover:translate-x-0.5 transition-transform">→</span>
         </Link>
       </div>

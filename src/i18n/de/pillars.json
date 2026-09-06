@@ -1728,7 +1728,23 @@
           }
         ]
       }
-    ]
+    ],
+    "sub_movements_name": "Bewegungen & Aufwärmen",
+    "sub_movements_h1_main": "6 Grundlegende Bewegungsmuster",
+    "sub_movements_h1_accent": "Aufwärmen & Abkühlen",
+    "sub_movements_desc": "Lerne 6 grundlegende Bewegungen mit detaillierten Video-Demos, richtiges Aufwärmen vor dem Training und korrektes Abkühlen für optimale Erholung.",
+    "sub_framework_name": "Tagesrahmen & Zeitplanung",
+    "sub_framework_h1_main": "20–40 Minuten Tages-Trainingsrahmen",
+    "sub_framework_h1_accent": "Wähle deinen Trainingsplan",
+    "sub_framework_desc": "4 Zeitblöcke im Tagesablauf und 8 Intensitätsstufen von 20 bis 180 Minuten — finde den Plan, der zu deinem Leben und deinem aktuellen Fitnesslevel passt.",
+    "sub_weekly_name": "Wochenrhythmus & Ziele",
+    "sub_weekly_h1_main": "Empfohlener Wochenrhythmus",
+    "sub_weekly_h1_accent": "Zielorientierte Trainingseinheiten",
+    "sub_weekly_desc": "3 flexible Wochenrhythmus-Phasen kombiniert mit 6 personalisierten Trainingsplänen — vom Anfänger bis zum fortgeschrittenen Athleten.",
+    "sub_progress_name": "Fortschrittsstufen & Überprüfungen",
+    "sub_progress_h1_main": "Fortschrittstreppe",
+    "sub_progress_h1_accent": "Monatliche Fortschrittschecks",
+    "sub_progress_desc": "6 zielorientierte Fortschrittspfade, regelmäßige Fortschrittschecks und ein visuelles Radar-Diagramm zur Verfolgung der umfassenden Entwicklung über die Zeit."
   },
   "pillarB": {
     "id": "b",

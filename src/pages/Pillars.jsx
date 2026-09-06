@@ -175,6 +175,7 @@ export default function Pillars() {
   const { t: tPillars } = useTranslation('pillars');
   const [activeTab, setActiveTab] = useState(0);
   const [activeSection, setActiveSection] = useState(null);
+  const pillarImgAlts = tPillars('pillar_img_alts', { returnObjects: true });
 
   const pillars = PILLAR_META.map(meta => ({
     meta,
@@ -312,7 +313,7 @@ export default function Pillars() {
             <div className="relative md:col-span-2 h-56 md:h-auto overflow-hidden">
               <img
                 src={m.image}
-                alt={m.imgAlt}
+                alt={(Array.isArray(pillarImgAlts) && pillarImgAlts[activeTab]) ? pillarImgAlts[activeTab] : m.imgAlt}
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />

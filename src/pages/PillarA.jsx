@@ -1215,7 +1215,7 @@ export default function PillarA() {
       quote:            tr.quote            || t.quote,
       quoteContext:     tr.quoteContext     || t.quoteContext,
       details:          tr.details          || t.details,
-      tabStats:         t.tabStats.map((s, j) => ({ ...s, label: tr.tabStats?.[j]?.label || s.label })),
+      tabStats:         t.tabStats.map((s, j) => ({ ...s, label: tr.tabStats?.[j]?.label || s.label, tooltip: tr.tabStats?.[j]?.tooltip || s.tooltip })),
       previewItems:     tr.previewItems     || t.previewItems,
       cta:              tr.cta              || t.cta,
       highlights_label: pillar?.highlights_label || 'Điểm nổi bật',

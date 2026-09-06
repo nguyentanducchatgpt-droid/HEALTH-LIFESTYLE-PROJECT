@@ -2214,6 +2214,7 @@ export default function PillarE() {
   const { t: tPillars } = useTranslation('pillars');
   const { t: tCommon } = useTranslation('common');
   const pillar = tPillars('pillarE', { returnObjects: true });
+  const heroTipsTr = Array.isArray(pillar?.hero_tips) ? pillar.hero_tips : [];
   const [activeTab, setActiveTab] = useState('e0');
   const tabsTr = Array.isArray(pillar?.hub_tabs) ? pillar.hub_tabs : [];
   const mergedTabs = TABS.map((t, i) => ({ ...t, label: tabsTr[i]?.label || t.label }));
@@ -2286,7 +2287,7 @@ export default function PillarE() {
             {(Array.isArray(pillar?.e_hero_stats) ? pillar.e_hero_stats : ['8 Module', '12 Tuần', '5 Chỉ số', '100 điểm']).map((label, i) => (
               <div key={label} className="group/stat relative">
                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 z-50 pointer-events-none opacity-0 group-hover/stat:opacity-100 scale-90 group-hover/stat:scale-100 -translate-y-1 group-hover/stat:translate-y-0 transition-all duration-200 origin-bottom">
-                  <ThoughtBubble text={HERO_TIPS[i]} idx={`hero-e-${i}`} color={COLOR} />
+                  <ThoughtBubble text={(heroTipsTr[i]) ? heroTipsTr[i] : HERO_TIPS[i]} idx={`hero-e-${i}`} color={COLOR} />
                 </div>
                 <div className="text-xl font-black" style={{ color: COLOR }}>{label}</div>
               </div>

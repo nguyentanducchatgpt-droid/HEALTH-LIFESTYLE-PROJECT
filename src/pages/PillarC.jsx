@@ -2091,6 +2091,8 @@ export default function PillarC() {
   const { t: tPillars } = useTranslation('pillars');
   const { t: tCommon } = useTranslation('common');
   const pillar = tPillars('pillarC', { returnObjects: true });
+  const c0TracksTr = Array.isArray(pillar?.c0_tracks) ? pillar.c0_tracks : [];
+  const localC0Tracks = C0_TRACKS.map((tr, i) => ({ ...tr, ...(c0TracksTr[i] || {}) }));
   const [activeTab, setActiveTab] = useState('c1');
   const [c0Idx, setC0Idx] = useState(null);
   const [c1Idx, setC1Idx] = useState(null);
@@ -2531,7 +2533,7 @@ export default function PillarC() {
                 <div className="p-4 rounded-xl" style={{ background: `rgba(${TEAL_RGB},0.08)`, border: `1px solid rgba(${TEAL_RGB},0.2)` }}>
                   <p className="text-lg font-semibold mb-3" style={{ color: TEAL }}>{tPillars('pillarC.c0_tracks_heading', { defaultValue: 'Chọn track phù hợp với bạn:' })}</p>
                   <div className="grid gap-2">
-                    {C0_TRACKS.map((tr, i) => (
+                    {localC0Tracks.map((tr, i) => (
                       <button key={i} onClick={() => setTrackModalIdx(i)}
                         className="w-full p-2 rounded-lg text-lg text-left group cursor-pointer transition-all hover:bg-white/5"
                         style={{ background: `rgba(${tr.rgb},0.06)`, border: `1px solid rgba(${tr.rgb},0.15)`, transition: 'border-color 0.2s, background 0.2s' }}>
@@ -3385,13 +3387,13 @@ export default function PillarC() {
       {/* ── C0 track modal ── */}
       {trackModalIdx !== null && (
         <C0ItemModal
-          item={C0_TRACKS[trackModalIdx]}
+          item={localC0Tracks[trackModalIdx]}
           idx={trackModalIdx}
           onClose={() => setTrackModalIdx(null)}
           onPrev={() => setTrackModalIdx(i => Math.max(0, i - 1))}
-          onNext={() => setTrackModalIdx(i => Math.min(C0_TRACKS.length - 1, i + 1))}
+          onNext={() => setTrackModalIdx(i => Math.min(localC0Tracks.length - 1, i + 1))}
           hasPrev={trackModalIdx > 0}
-          hasNext={trackModalIdx < C0_TRACKS.length - 1}
+          hasNext={trackModalIdx < localC0Tracks.length - 1}
         />
       )}
 

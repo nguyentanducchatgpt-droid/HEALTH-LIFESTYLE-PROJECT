@@ -564,13 +564,16 @@
         ],
         "tabStats": [
           {
-            "label": "Übungen"
+            "label": "Übungen",
+            "tooltip": "6 grundlegende Bewegungsmuster (Kniebeuge, Hüftangel, Drücken, Ziehen, Core, Atmen) decken 95% aller Übungen ab, die du im Leben je brauchen wirst."
           },
           {
-            "label": "Stufen/Üb."
+            "label": "Stufen/Üb.",
+            "tooltip": "Jede Übung hat 3 Stufen: Anfänger, Mittel, Fortgeschritten. Klein anfangen, schrittweise steigern — kein kompliziertes Equipment nötig."
           },
           {
-            "label": "Warm+Cool"
+            "label": "Warm+Cool",
+            "tooltip": "5–8 Min. Aufwärmen reduziert das Verletzungsrisiko; 5–10 Min. Abkühlen danach beschleunigt die Erholung um 20–30%."
           }
         ],
         "previewItems": [
@@ -627,13 +630,16 @@
         ],
         "tabStats": [
           {
-            "label": "Blöcke/Tag"
+            "label": "Blöcke/Tag",
+            "tooltip": "4 Standardblöcke: Aufwärmen → Haupttraining → Abkühlen → Entspannung. Diese Struktur funktioniert bei 20 Minuten genauso wie bei 3 Stunden."
           },
           {
-            "label": "Zeit-Stufen"
+            "label": "Zeit-Stufen",
+            "tooltip": "8 Einheitslängen von 20 Min. (sehr beschäftigt) bis 3 Stunden (intensiv) — jede Minute ist geplant, nichts wird verschwendet."
           },
           {
-            "label": "Min. Einheit"
+            "label": "Min. Einheit",
+            "tooltip": "20 Minuten reichen für ein sinnvolles Training. Das Gehirn braucht Struktur, keine Länge."
           }
         ],
         "previewItems": [
@@ -688,13 +694,16 @@
         ],
         "tabStats": [
           {
-            "label": "Phasen"
+            "label": "Phasen",
+            "tooltip": "Phase 1 (Wochen 1–2): 3 Einheiten/Woche Grundlagen. Phase 2 (Wochen 3–6): 4 Einheiten für den Aufbau. Phase 3 (Woche 7+): 5–6 Einheiten, nach Ziel personalisiert."
           },
           {
-            "label": "Programme"
+            "label": "Programme",
+            "tooltip": "6 zielorientierte Programme: Anfänger · Fettabbau · Muskelaufbau · Ausdauer · Sportler · sehr beschäftigt. Wähle das, das zu deiner Situation passt."
           },
           {
-            "label": "Tage/Woche"
+            "label": "Tage/Woche",
+            "tooltip": "7 Tage = 3 Krafteinheiten + 2 Ausdauereinheiten + 2 Erholungstage. Erholung ist wesentlich, keine Faulheit."
           }
         ],
         "previewItems": [
@@ -751,13 +760,16 @@
         ],
         "tabStats": [
           {
-            "label": "Programme"
+            "label": "Programme",
+            "tooltip": "6 Programme von 2 Einheiten/Woche (sehr beschäftigt) bis 6/Woche (Sportler). Der beste Rhythmus ist nicht der höchste — sondern der, den du 12 Wochen lang hältst."
           },
           {
-            "label": "Stufen"
+            "label": "Stufen",
+            "tooltip": "5 Stufen von Grundaktivität bis Leistungssportler. Jede Stufe hat klare Kriterien: Übungen, Wiederholungen/Sätze, Erholungszeit."
           },
           {
-            "label": "Dimensionen"
+            "label": "Dimensionen",
+            "tooltip": "4-dimensionales Radardiagramm: Kraft · Ausdauer · Flexibilität · Erholung. Zeigt versteckte Schwächen, die ein einzelner Messwert nicht offenbaren kann."
           }
         ],
         "previewItems": [
@@ -4858,6 +4870,68 @@
     "c0_score_msg_good": "✦ Gut — weiter so!",
     "c0_score_msg_start": "💪 Fang an, täglich Punkte zu sammeln",
     "c0_tracks_heading": "Wähle den passenden Track für dich:",
+    "c0_tracks": [
+      {
+        "label": "Basis-Track",
+        "desc": "Schlechter Schlaf, wenig Energie, kaum Bewegung",
+        "detail": "Für Menschen, die ganz von vorne anfangen — keine stabilen Gesundheitsgewohnheiten, niedrige Energie oder chronischer Schlafmangel.",
+        "keyFact": "Studien zeigen: Eine Schlüsselgewohnheit ändern (zu einer festen Zeit schlafen gehen) kann automatisch 3–4 weitere Gewohnheiten verbessern, ohne zusätzliche Anstrengung — der Dominoeffekt von Schlüsselgewohnheiten.",
+        "details": [
+          "Für wen: regelmäßig nach Mitternacht einschlafen, morgens müde aufwachen, wenig Bewegung (unter 5.000 Schritte/Tag), starke Energieschwankungen im Tagesverlauf oder gerade erst anfangen, sich um die Gesundheit zu kümmern.",
+          "Priorität #1: feste Aufwachzeit etablieren — das ist die einfachste Einzelmaßnahme mit dem größten Effekt. Kein Fitnessstudio, keine Diät — nur jeden Tag zur gleichen Zeit aufstehen, 7 Tage die Woche, 2 Wochen lang.",
+          "Wochen 1–2: nur eine Sache tun — jeden Morgen nach dem Aufwachen 10 Minuten nach draußen gehen. Die Kombination aus Licht + sanfter Bewegung + Außenluft reicht, um den circadianen Rhythmus neu zu kalibrieren.",
+          "Wochen 3–4: die Regel 'keine Bildschirme 30 Minuten vor dem Schlafen' einführen. Ein Papierbuch lesen, leicht meditieren oder ruhige Audioaufnahmen hören — alles, was kein blaues Licht ins Auge strahlt.",
+          "Wochen 5–8: Schrittzahl schrittweise erhöhen (vom Ausgangswert +1.000 Schritte/Woche), 10 Minuten Dehnen vor dem Schlafen hinzufügen. Nicht mehr als 1 neue Gewohnheit alle 2 Wochen, um Überforderung zu vermeiden.",
+          "Zeichen, dass du bereit für den Busy-Track bist: 7+ Stunden Schlaf an ≥5 Nächten/Woche, manchmal ohne Wecker aufwachen, Morgenenergie deutlich besser als zuvor."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Feste Aufwachzeit", "note": "Erst eine einzige Sache ändern" },
+          { "icon": "☀️", "label": "10 Min. draußen", "note": "Morgenlicht — der erste Schritt" },
+          { "icon": "📵", "label": "Keine Bildschirme 30 Min. vor dem Schlafen", "note": "Wochen 3–4" },
+          { "icon": "🌱", "label": "1 Gewohnheit pro 2 Wochen", "note": "Nicht zu viele auf einmal" }
+        ]
+      },
+      {
+        "label": "Busy-Track",
+        "desc": "Wenig Zeit, hohe Arbeitsbelastung, langes Sitzen",
+        "detail": "Für Menschen mit dichtem Arbeitsplan — maximale Effizienz, kurze aber wirkungsvolle Maßnahmen, die in bestehende Routinen integriert werden statt neue Lasten hinzuzufügen.",
+        "keyFact": "Micro-Habits (2–5 Minuten) integriert in bestehende Abläufe haben eine um 80% höhere Durchhalterate als neue Gewohnheiten, die separate Zeit erfordern — laut Forschung zur Gewohnheitsbildung.",
+        "details": [
+          "Für wen: 8–12 Stunden/Tag arbeiten, größtenteils am Schreibtisch, schwer Fitnesszeiten einzuplanen, Mahlzeiten oft überspringen oder hetzen, gute Energie aber schlechte Erholung.",
+          "Kernstrategie: 'Habit Stacking' — Gesundheitsgewohnheiten an bestehende Aktivitäten knüpfen. Stehbesprechungen, Gehen beim Telefonieren, Kniebeugen beim Warten auf den Kaffee — kein zusätzlicher Zeitaufwand, nur eine andere Art, Dinge zu tun.",
+          "Die essentielle 60-Minuten-Regel: ein Timer, der dich jede Stunde daran erinnert, 2–3 Minuten aufzustehen — das ist die #1-Priorität für Schreibtischarbeiter. Einfachste Umsetzung und höchster Stoffwechseleffekt pro investierter Stunde.",
+          "Mahlzeiten-Optimierung: das morgige Mittagessen heute Abend vorbereiten (5 Minuten), gesunde Snacks griffbereit halten, Flüssigkeitszufuhr durch eine große Wasserflasche auf dem Schreibtisch statt eines kleinen Glases.",
+          "Kurze, aber qualitativ hochwertige Erholung: 5 Minuten Box-Atmung nach einem stressigen Meeting, 10 Minuten Gehen nach dem Mittagessen, Nacken- und Schulterdehnungen beim E-Mail-Lesen.",
+          "Koffein-Protokoll für Vielbeschäftigte: nicht innerhalb von 90 Minuten nach dem Aufwachen (Cortisol ist dann natürlich am höchsten — Koffein ist zu diesem Zeitpunkt weniger wirksam), Cut-off um 13 Uhr, max. 400mg/Tag (2–4 Kaffees)."
+        ],
+        "points": [
+          { "icon": "🔗", "label": "Habit Stacking", "note": "Gewohnheiten an bestehende Routinen knüpfen" },
+          { "icon": "⏱️", "label": "60-Min.-Timer", "note": "Aufstehen — Priorität #1 für Schreibtischarbeiter" },
+          { "icon": "🧘", "label": "5 Min. Box-Atmung", "note": "Nach einem stressigen Meeting" },
+          { "icon": "☕", "label": "Koffein 90 Min. nach dem Aufwachen", "note": "Wirksamer als sofort nach dem Aufstehen" }
+        ]
+      },
+      {
+        "label": "Viel-Training-Track",
+        "desc": "Häufiges Gym/Laufen/Radfahren/Schwimmen, braucht bessere Erholung",
+        "detail": "Für Menschen, die regelmäßig intensiv trainieren — das Problem ist nicht mangelnde Bewegung, sondern unzureichende Erholung, was zu Plateaus oder Verletzungen führt.",
+        "keyFact": "Erholung ist nicht 'nichts tun' — es ist ein aktiver Prozess. Menschen, die viel trainieren, aber nicht in die Erholung investieren, erreichen früher ein Plateau und verlieren Leistungsgewinne schneller als solche, die weniger, aber besser erholen.",
+        "details": [
+          "Für wen: ≥4 Trainingseinheiten/Woche im Fitnessstudio, regelmäßiges Laufen/Radfahren/Schwimmen, Wettkampfteilnahme, steigendes Volumen/Intensität, oder das Gefühl, dass hartes Training keine Fortschritte bringt.",
+          "Schlaf ist der Ort, wo 80% der Muskelregeneration stattfindet: Wachstumshormon (GH) erreicht seinen Höhepunkt im Tiefschlaf (N3-Phase), Cortisol ist während des Schlafs am niedrigsten für die Muskelresynthese — Schlafmangel reduziert Muskelzuwächse um 30–60%.",
+          "HRV-Monitoring: Heart Rate Variability jeden Morgen messen (vor dem Aufstehen) — 3 aufeinanderfolgende niedrige Tage sind ein Zeichen für Übertraining. An diesem Tag leicht trainieren oder aktiv erholen, statt einen PR zu erzwingen.",
+          "Protein-Timing für Hochfrequenz-Trainierende: 0,4g/kg pro Mahlzeit (nicht unbedingt innerhalb von 30 Min. nach dem Training — das anabole Fenster dauert 3–4 Stunden, wenn vorher gegessen wurde). Tagesgesamt: 1,6–2,2g/kg.",
+          "Aktives Deloading: alle 4–6 Wochen intensivem Training das Volumen für 1 Woche um 40–50% reduzieren (Gewichte und Sätze) — nicht pausieren, nur leichter trainieren. Deloads verbessern die Leistung danach mehr als pausenloses Training.",
+          "Minimales Erholungs-Toolkit für Hochfrequenz-Trainierende: 10 Min. Foam-Rolling nach dem Training, 5 Min. Atemübung vor dem Schlafen, 7–9 Stunden Schlaf (Trainierende brauchen mehr als Nicht-Trainierende), und 1 Tag aktive Erholung pro Woche."
+        ],
+        "points": [
+          { "icon": "😴", "label": "7–9h Schlaf", "note": "80% der Muskelregeneration erfolgt im Tiefschlaf" },
+          { "icon": "📊", "label": "HRV-Monitoring", "note": "Nervensystem-Erholung jeden Morgen messen" },
+          { "icon": "🗓️", "label": "Deload alle 4–6 Wochen", "note": "Volumen 1 Woche um 40–50% reduzieren" },
+          { "icon": "🥩", "label": "Protein 1,6–2,2g/kg", "note": "Auf 4–5 Mahlzeiten verteilen" }
+        ]
+      }
+    ],
     "c0_full_link": "Vollständige Bewertung ansehen →",
     "c0_items": [
       {
@@ -15701,6 +15775,122 @@
     "d_teaser_s4": "Tracking & Roadmap",
     "d0_safety_label": "Sicherheitsregel: ",
     "d0_safety_body": "Säule D ist allgemeine Gesundheitsbildung. Wenn Angst oder niedergedrückte Stimmung wochenlang anhält, bei schwerem Schlafmangel, wiederkehrenden Panikattacken oder Gedanken zur Selbstverletzung — bitte professionelle Unterstützung suchen.",
+    "d0_card_modals": [
+      {
+        "title": "D1 – Stress Verstehen",
+        "keyFact": "Stress ist nicht der Feind — er ist ein Signal, dass der Körper klügere Maßnahmen braucht.",
+        "detail": "Stress tritt auf 3 Ebenen auf: Körper (Herzrasen, verspannte Schultern), Emotion (Angst, Frustration), Verhalten (Scrollen, Naschen). Die Ebene zu erkennen, die ausgelöst wurde, hilft dir, das richtige Bewältigungsmittel zu wählen.",
+        "details": [
+          "Akuter Stress (kurzfristig) ist tatsächlich nützlich: Er schärft die Konzentration, beschleunigt Reaktionen und steigert vorübergehend die Leistung — ein Überlebensreflex, der sich über Millionen von Jahren entwickelt hat.",
+          "Chronischer Stress (wochenlang anhaltend) ist schädlich: dauerhaft hoher Cortisol schwächt das Immunsystem, verursacht Schlaflosigkeit und erhöht das kardiovaskuläre Risiko.",
+          "Die Angst-Gewohnheits-Schleife: Auslöser → automatischer Gedanke → Emotion → Kompensationsverhalten (Scrollen, Naschen) → Auslöser ungelöst, wiederholt sich.",
+          "Früherkennung auf der Körperebene (verspannte Schultern, flache Atmung) ermöglicht das Einfügen eines 'Pausenpunkts', bevor Stress zur Emotion und dann zum Verhalten eskaliert.",
+          "Emotionen benennen (Affect Labeling) reduziert die Angstintensität — der Frontallappen aktiviert sich, die Amygdala (Angstzentrum) beruhigt sich durch neurobiologische Mechanismen.",
+          "Das Ziel ist nicht, 'Stress zu eliminieren', sondern 'ihn früh zu erkennen und eine klügere Reaktion statt automatischer Kompensationsreaktionen zu wählen'."
+        ],
+        "points": [
+          { "icon": "💪", "label": "Körperebene", "note": "Herzrasen, flache Atmung, verspannte Schultern" },
+          { "icon": "😤", "label": "Emotionsebene", "note": "Leicht reizbar, ängstlich, frustriert" },
+          { "icon": "🔄", "label": "Verhaltensebene", "note": "Naschen, Scrollen, Aufschieben" },
+          { "icon": "🔧", "label": "Pausenpunkt", "note": "Atmen → benennen → nächster kleiner Schritt" }
+        ]
+      },
+      {
+        "title": "D2 – Atmen & Entschleunigen",
+        "keyFact": "Bewusstes Atmen ist der einzige Weg, das autonome Nervensystem bewusst zu steuern — kein Equipment, keine Zeit erforderlich.",
+        "detail": "Das parasympathische Nervensystem (Ruhe & Verdauung) wird durch langsames, tiefes Atmen aktiviert. Nur 4–5 Zwerchfellatmungen reichen aus, um die Herzfrequenz zu senken und messbares Cortisol zu reduzieren.",
+        "details": [
+          "Das autonome Nervensystem hat 2 Äste: Sympathikus (Kampf-oder-Flucht — erhöht Herzfrequenz, Cortisol) und Parasympathikus (Ruhe & Verdauung — senkt Herzfrequenz, fördert Erholung). Langsames Atmen aktiviert den Parasympathikus.",
+          "Zwerchfellatmung erhöht den O₂/CO₂-Austausch, stimuliert den Vagusnerv und hilft, Blutdruck und Herzfrequenz innerhalb von 1–3 Minuten zu senken.",
+          "Box-Atmung (4-4-4-4) wird von Navy SEALs genutzt, um den Geisteszustand in extremen Stresssituationen zu kontrollieren — vollständig auf den Alltag übertragbar.",
+          "Die 4-7-8-Atmung verlängert die Haltephase (7 Sekunden), erhöht vorübergehend den CO₂-Gehalt im Blut und löst einen tiefen Entspannungsreflex aus — besonders wirksam 20 Minuten vor dem Schlafen.",
+          "Der 2-Minuten-Reset (5 Atemzüge + Schultern–Kiefer–Hände lockern) reicht aus, um vom reaktiven in den responsiven Modus zu wechseln.",
+          "Regelmäßige Zwerchfellatmung 10 Min./Tag kann den systolischen Blutdruck nach 4 Wochen um 5–10 mmHg senken — vergleichbar mit leichtem Ausdauertraining."
+        ],
+        "points": [
+          { "icon": "🫁", "label": "Zwerchfell", "note": "Grundlage — jederzeit anwendbar" },
+          { "icon": "⬜", "label": "Box 4-4-4-4", "note": "Fokus & schnelle Beruhigung" },
+          { "icon": "🌊", "label": "4-7-8-Atmung", "note": "Auf den Schlaf vorbereiten" },
+          { "icon": "⚡", "label": "2-Minuten-Reset", "note": "Sofort bei Überlastung anwenden" }
+        ]
+      },
+      {
+        "title": "D3 – Meditation & Achtsamkeit",
+        "keyFact": "8 Wochen Meditation verändern die Hirnstruktur physisch — Hippocampus verdickt sich, Amygdala schrumpft.",
+        "detail": "Meditation bedeutet nicht 'an nichts denken'. Es bedeutet zu bemerken, dass man abgelenkt wurde, und sanft zurückzukehren. Jedes Mal, wenn der Geist wandert und zurückkommt, ist eine Wiederholung des Aufmerksamkeitstrainings.",
+        "details": [
+          "Harvard-Studie (Sara Lazar, 2011): 8 Wochen Achtsamkeitsmeditation verdicken den präfrontalen Kortex (Emotionskontrolle und Entscheidungsfindung) und lassen die Amygdala schrumpfen (Angstzentrum).",
+          "Achtsamkeitsmeditation reduziert Symptome leichter bis mittelschwerer Angst und Depression, mit einer Wirksamkeit vergleichbar mit kognitiver Verhaltenstherapie (KVT) in einigen randomisierten kontrollierten Studien.",
+          "Ein 5-minütiger Body-Scan vor dem Schlafen aktiviert das parasympathische System und reduziert Cortisol kräftig — Menschen, die Body-Scan praktizieren, schlafen schneller ein und wachen weniger oft auf.",
+          "Achtsames Essen reduziert emotionales Essen und verbessert Sättigungssignale — das Gehirn braucht 20 Minuten, um Sättigungssignale zu empfangen, und Achtsamkeit hilft, lange genug zu 'warten'.",
+          "Achtsames Gehen (ohne Kopfhörer, jeden Schritt spüren) kombiniert leichtes Ausdauertraining mit Meditation — zwei parallele Vorteile in denselben 10–15 Minuten täglich.",
+          "Meditation erfordert keine stundenlange Sitzung oder Lotus-Stellung. 3 Minuten täglich reichen, um die Gewohnheit aufzubauen und nach 2–3 Wochen klare Verbesserungen zu spüren."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Gesünderes Gehirn", "note": "Hippocampus verdickt sich nach 8 Wochen" },
+          { "icon": "😌", "label": "Weniger Angst", "note": "Vergleichbar mit leichter bis mittlerer KVT" },
+          { "icon": "😴", "label": "Besserer Schlaf", "note": "5-min Body-Scan vor dem Schlafen" },
+          { "icon": "🔄", "label": "Mit 3 Minuten beginnen", "note": "Wandern → Zurückkehren = Training" }
+        ]
+      },
+      {
+        "title": "D4 – Journaling in 5 Zeilen",
+        "keyFact": "Gedanken aufschreiben reduziert Angst, weil das Gehirn sie nicht mehr 'festhalten' muss — kognitives Auslagern (Cognitive Offloading).",
+        "detail": "Journaling ist kein Geschichtstagebuch. 5 strukturierte Fragen jeden Abend helfen dem Gehirn, Emotionen zu verarbeiten, das eigentliche Problem zu erkennen und leichter in den nächsten Tag zu gehen.",
+        "details": [
+          "James Pennebaker (UT Austin, seit 1986): Über Gedanken und schwierige Gefühle schreiben (expressives Schreiben) reduziert Angst, stärkt das Immunsystem und verbessert den Schlaf — messbare Effekte nach 3–4 aufeinanderfolgenden Schreibtagen.",
+          "Kognitives Auslagern: Das Gehirn muss unerledigte Aufgaben nicht mehr 'festhalten', wenn sie aufgeschrieben sind — reduziert den Kreislauf repetitiver Gedanken (Grübeln), der kognitive Ressourcen verbraucht.",
+          "Die Frage 'Wie fühle ich mich heute?' löst Affect Labeling aus — das Gehirn benennt die Emotion statt sie vage zu erleben, was Amygdala-Aktivität im fMRI reduziert.",
+          "Journal nach einem schlechten Tag: 'Was lief schief? Was habe ich gelernt?' schreiben verwandelt Misserfolg in eine klare Lektion, reduziert sinnlose Selbstvorwürfe und erhöht die Bereitschaft, es erneut zu versuchen.",
+          "Nur 5–8 Minuten jeden Abend. Kein perfektes Schreiben, keine korrekte Grammatik, keine vollständigen Sätze nötig. Frei schreiben.",
+          "'Ein freundliches Wort an dich selbst' am Ende jeder Journal-Sitzung ist eine wissenschaftlich fundierte Selbstmitgefühlspraxis — kein Eigenlob, sondern Anerkennung, dass du dich bemühst."
+        ],
+        "points": [
+          { "icon": "🧠", "label": "Gedanken entleeren", "note": "Geistigen Ballast loslassen" },
+          { "icon": "😌", "label": "Emotionen verarbeiten", "note": "Benennen = Amygdala beruhigt sich" },
+          { "icon": "📈", "label": "Lektionen ziehen", "note": "Nach einem schlechten Tag journalen" },
+          { "icon": "💙", "label": "Freundlich zu dir selbst", "note": "Tägliches Selbstmitgefühl" }
+        ]
+      },
+      {
+        "title": "D5 – Digitales Detox",
+        "keyFact": "Bildschirmnutzung vor dem Schlafen unterdrückt Melatonin um bis zu 23% — verzögert den Schlafbeginn im Schnitt um 1,5 Stunden.",
+        "detail": "Das Problem ist nicht das Telefon, sondern unbewusstes Scrollen, wenn das Gehirn müde ist. Digitales Detox bedeutet, die digitale Umgebung so zu gestalten, dass das Gehirn Raum zum Atmen bekommt — nicht die Selbstaufgabe des Telefons.",
+        "details": [
+          "Blaues Licht (420–480nm) von Telefondisplays stimuliert ipRGC-Zellen in der Netzhaut und unterdrückt die Melatoninproduktion. Bildschirmnutzung 2 Stunden vor dem Schlafen verzögert den Schlafbeginn im Schnitt um 1,5 Stunden.",
+          "Social-Media-Feeds sind nach dem Prinzip 'variabler Belohnung' gestaltet — demselben Mechanismus wie Spielautomaten — was Dopamin auslöst und unbewusstes Scrollen erzeugt.",
+          "Ständige Benachrichtigungen fragmentieren die Aufmerksamkeit (kognitive Fragmentierung) — jede Unterbrechung kostet das Gehirn im Schnitt 23 Minuten, um zur Tiefenkonzentration zurückzufinden.",
+          "Die ersten 30 Minuten des Tages telefonfrei erzeugen ein 'kognitives Aufräumen' — das Gehirn ist vom Aufwachen an nicht im reaktiven Modus.",
+          "Ein Ersatzmenü ist wirksamer als reine Willenskraft: wenn du scrollen möchtest, ersetze es durch 5 Atemzüge, einen 2-minütigen Spaziergang, Wasser oder einen Gedanken aufschreiben.",
+          "Gestaltung der digitalen Umgebung: süchtig machende Apps auf Bildschirm 2 oder in einem schwer zugänglichen Ordner, Telefon nachts im anderen Zimmer — reduziert automatisches Scrollen um 80% ohne Willenskraft."
+        ],
+        "points": [
+          { "icon": "😴", "label": "Besserer Schlaf", "note": "Bildschirm 20 Min. vor dem Schlafen ausschalten" },
+          { "icon": "🎯", "label": "Tiefe Konzentration", "note": "Benachrichtigungen während der Arbeit ausschalten" },
+          { "icon": "🧘", "label": "Mentaler Freiraum", "note": "10 Min./Tag ohne Bildschirm" },
+          { "icon": "🏠", "label": "Digitale Umgebung", "note": "Süchtig machende Apps auf Bildschirm 2" }
+        ]
+      },
+      {
+        "title": "D6 – Sanfte Disziplin",
+        "keyFact": "Willenskraft ist eine begrenzte Ressource. Kleine Systeme und Selbstmitgefühl schaffen dauerhafte Gewohnheiten.",
+        "detail": "Sanfte Disziplin ist keine Nachsicht — es ist der Weg, nach einem schlechten Tag zurückzukehren, ohne sich selbst die Schuld zu geben. Kein doppeltes Aufholen. Kein Aufgeben. Nur die kleinste Version.",
+        "details": [
+          "Willenskraft funktioniert wie ein Muskel — sie ermüdet bei Gebrauch (Ego-Depletion). Entscheidungen am Tagesende sind typischerweise schlechter als Morgenentscheidungen. Kleine Systeme, die Willenskraft ersetzen, sind nachhaltiger.",
+          "Die 'Nie zweimal in Folge auslassen'-Regel (James Clear, Atomic Habits) ist realistischer als 'niemals auslassen' — weil das Leben immer unvollkommene Tage hat.",
+          "Die 1%-Regel: 1 Minute trainieren ist immer noch besser als 0 Minuten. Die kleinste Version bewahrt die Identität von 'jemand, der trainiert/meditiert' — diese Identität ist wichtiger als die tatsächlichen Minuten.",
+          "Selbstkritik nach einem schlechten Tag löst mehr Stress aus — kontraproduktiv, sie erhöht tatsächlich die Wahrscheinlichkeit, komplett aufzugeben, verglichen mit denen, die milder mit sich umgehen.",
+          "Selbstmitgefühl (Kristen Neff, UT Austin): freundlich zu sich selbst nach Misserfolgen zu sein erhöht die Wahrscheinlichkeit, es erneut zu versuchen und durchzuhalten — entgegen der Sorge, dass Selbstmitgefühl faul macht.",
+          "Habit Stacking: eine neue Gewohnheit nach einer bestehenden verknüpfen ('Nach dem Zähneputzen meditiere ich 3 Minuten') reduziert den Startwiderstand und erhöht die Aufrechterhaltunsrate laut BJ Foggs Verhaltensforschung."
+        ],
+        "points": [
+          { "icon": "🔄", "label": "1%-Regel", "note": "Die kleinste Version ist immer noch ein Gewinn" },
+          { "icon": "💙", "label": "Keine Selbstvorwürfe", "note": "Selbstmitgefühl erhöht die Ausdauer" },
+          { "icon": "🔗", "label": "Habit Stacking", "note": "An bestehende Gewohnheiten knüpfen" },
+          { "icon": "🏗️", "label": "Kleine Systeme", "note": "Gestalten statt Willenskraft" }
+        ]
+      }
+    ],
     "d2_tech_modals": [
       {
         "modalTitle": "Zwerchfellatmung",
@@ -16848,6 +17038,12 @@
       "12 Wochen",
       "5 Kennzahlen",
       "100 Punkte"
+    ],
+    "hero_tips": [
+      "8 Wissensmodule von Grundlagen bis Fortgeschritten — einschließlich Biomarker, Warnsignale, Krankheitsprävention und Informationskompetenz",
+      "12-Wochen-Fahrplan vom Gesundheitslaien bis zur selbstständigen Verwaltung eigener Biomarker und proaktiver Krankheitsprävention",
+      "Die 5 wichtigsten Gesundheitsindikatoren: BMI, Taillenumfang, Blutdruck, Blutzucker, Blutfette",
+      "Health-Literacy-Score von 100 Punkten — bewerte dein persönliches Gesundheitswissen"
     ],
     "e_explore_title": "Tiefer Erkunden",
     "e_explore_sub": "12 Themen zu allgemeinem Gesundheitswissen",
@@ -24089,5 +24285,13 @@
         ]
       }
     ]
-  }
+  },
+  "pillar_img_alts": [
+    "Person beim Sport",
+    "Bunte vielfältige gesunde Lebensmittel",
+    "Friedliche Morgenmeditation",
+    "Ruhiger meditativer Geist",
+    "Medizinisches Gesundheitswissen",
+    "Gesundheitstracking-Tools und Planung"
+  ]
 }

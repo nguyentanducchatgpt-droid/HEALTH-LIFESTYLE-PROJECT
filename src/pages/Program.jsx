@@ -2232,6 +2232,7 @@ function PhaseCard({ phase, idx, expanded, onToggle, onPillarClick, onKpiClick, 
 // ── Main Component ───────────────────────────────────────────────────────────
 export default function Program() {
   const { t, i18n } = useTranslation();
+  const { t: tProg } = useTranslation('programs');
   const location = useLocation();
   const contentRef = useRef(null);
   const initTab = new URLSearchParams(location.search).get('tab') || '7d';
@@ -2329,6 +2330,10 @@ export default function Program() {
     const tT = Array.isArray(tSuccessTips) ? tSuccessTips[i] : null;
     return tT ? { ...tip, ...tT } : tip;
   });
+
+  // Adjust tips translation
+  const tAdjustTips = tProg('adjust_tips', { returnObjects: true });
+  const localAdjustTips = ADJUST_TIPS_DATA.map((tip, i) => ({ ...tip, ...(Array.isArray(tAdjustTips) ? tAdjustTips[i] || {} : {}) }));
 
   // Progress rows translation
   const tProgressRows = t('program.progress_rows', { returnObjects: true });
@@ -2962,7 +2967,7 @@ export default function Program() {
                   <RevealBlock delay={200} className="p-4 rounded-2xl border border-blue-500/15 bg-blue-500/4 mt-4">
                     <h3 className="text-base font-bold uppercase tracking-widest text-blue-400 mb-3">📌 {t('program.adjust_schedule_title', 'Điều Chỉnh Cho Lịch Của Bạn')}</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {ADJUST_TIPS_DATA.map((tip, i) => (
+                      {localAdjustTips.map((tip, i) => (
                         <button key={i}
                           className="flex items-start gap-2 text-left px-3 py-2.5 rounded-xl group/adj transition-all duration-150 hover:-translate-y-0.5 cursor-pointer"
                           style={{ background: `rgba(${tip.rgb},0.04)`, border: `1px solid rgba(${tip.rgb},0.12)` }}

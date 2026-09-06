@@ -564,13 +564,16 @@
         ],
         "tabStats": [
           {
-            "label": "Exercises"
+            "label": "Exercises",
+            "tooltip": "6 fundamental movement patterns (Squat, Hinge, Push, Pull, Core, Breathe) cover 95% of all exercises you'll ever need in life."
           },
           {
-            "label": "Levels/Ex."
+            "label": "Levels/Ex.",
+            "tooltip": "Each exercise has 3 levels: beginner, intermediate, advanced. Start easy, progress gradually — no complex equipment required."
           },
           {
-            "label": "Warm+Cool"
+            "label": "Warm+Cool",
+            "tooltip": "5–8 min warm-up before training reduces injury risk; 5–10 min cool-down afterward speeds recovery by 20–30%."
           }
         ],
         "previewItems": [
@@ -627,13 +630,16 @@
         ],
         "tabStats": [
           {
-            "label": "Blocks/day"
+            "label": "Blocks/day",
+            "tooltip": "4 standard blocks: Warm-Up → Main Workout → Cool-Down → Mind Reset. This structure works whether your session is 20 minutes or 3 hours."
           },
           {
-            "label": "Time levels"
+            "label": "Time levels",
+            "tooltip": "8 session lengths from 20 min (super busy) to 3 hours (intensive) — every minute has a clear plan so nothing is wasted."
           },
           {
-            "label": "Min. session"
+            "label": "Min. session",
+            "tooltip": "20 minutes is enough for a meaningful workout. The brain needs structure, not length."
           }
         ],
         "previewItems": [
@@ -688,13 +694,16 @@
         ],
         "tabStats": [
           {
-            "label": "Phases"
+            "label": "Phases",
+            "tooltip": "Phase 1 (weeks 1–2): 3 sessions/week basics. Phase 2 (weeks 3–6): 4 sessions to build a base. Phase 3 (week 7+): 5–6 sessions, personalized by goal."
           },
           {
-            "label": "Programs"
+            "label": "Programs",
+            "tooltip": "6 goal-based programs: beginner · fat loss · muscle gain · endurance · athlete · super busy. Pick the one that fits your situation."
           },
           {
-            "label": "Days/week"
+            "label": "Days/week",
+            "tooltip": "7 days = 3 strength sessions + 2 cardio sessions + 2 rest/recovery days. Rest is essential, not laziness."
           }
         ],
         "previewItems": [
@@ -751,13 +760,16 @@
         ],
         "tabStats": [
           {
-            "label": "Programs"
+            "label": "Programs",
+            "tooltip": "6 programs from 2 sessions/week (super busy) to 6/week (athlete). The best rhythm isn't the highest — it's the one you sustain for 12 weeks."
           },
           {
-            "label": "Levels"
+            "label": "Levels",
+            "tooltip": "5 levels from Basic Activity to Athlete. Each level has clear criteria: exercises, reps/sets, recovery time."
           },
           {
-            "label": "Dimensions"
+            "label": "Dimensions",
+            "tooltip": "4-dimension radar chart: Strength · Endurance · Flexibility · Recovery. Reveals hidden weaknesses that a single metric cannot show."
           }
         ],
         "previewItems": [
@@ -4852,6 +4864,68 @@
     "c0_score_msg_good": "✦ Good — keep it up!",
     "c0_score_msg_start": "💪 Start earning points day by day",
     "c0_tracks_heading": "Choose the track that fits you:",
+    "c0_tracks": [
+      {
+        "label": "Basic Track",
+        "desc": "Poor sleep, low energy, little physical activity",
+        "detail": "For people starting from scratch — no stable health habits, low energy or chronic sleep deprivation.",
+        "keyFact": "Research shows changing 1 keystone habit (sleeping at a consistent time) can automatically improve 3–4 other habits without extra effort — the domino effect of keystone habits.",
+        "details": [
+          "Who it's for: regularly sleeping past midnight, waking up tired, little movement (under 5,000 steps/day), large energy swings throughout the day, or just starting to care about health.",
+          "Priority #1: fix your wake-up time — this is the simplest single change with the biggest impact. No gym, no diet — just wake up at the same time 7 days a week for 2 weeks.",
+          "Weeks 1–2: do just one thing — go outside for 10 minutes each morning after waking. The combination of light + gentle movement + outdoor air is enough to start resetting your circadian rhythm.",
+          "Weeks 3–4: add the rule 'no screens 30 minutes before sleep'. Read a paper book, light meditation, or listen to calm audio — anything that doesn't shine blue light into your eyes.",
+          "Weeks 5–8: gradually increase step count (from baseline +1,000 steps/week), add 10 minutes of stretching before sleep. Don't add more than 1 new habit every 2 weeks to avoid overwhelm.",
+          "Signs you're ready to move to the Busy Track: sleeping 7+ hours ≥5 nights/week, sometimes waking without an alarm, morning energy noticeably improved compared to before."
+        ],
+        "points": [
+          { "icon": "⏰", "label": "Fixed wake time", "note": "Change just 1 thing first" },
+          { "icon": "☀️", "label": "10 min outdoors", "note": "Morning light — the first step" },
+          { "icon": "📵", "label": "No screens 30 min before bed", "note": "Weeks 3–4" },
+          { "icon": "🌱", "label": "1 habit per 2 weeks", "note": "Don't add too many at once" }
+        ]
+      },
+      {
+        "label": "Busy Track",
+        "desc": "Short on time, heavy workload, long hours sitting",
+        "detail": "For people with a packed work schedule — maximize efficiency, short but high-impact interventions, integrate into existing routines rather than adding more burdens.",
+        "keyFact": "Micro-habits (2–5 minute habits) integrated into existing schedules have an 80% higher maintenance rate than new habits requiring separate time — according to habit formation research.",
+        "details": [
+          "Who it's for: working 8–12 hours/day, mostly desk-bound, hard to schedule gym time, often skipping or rushing meals, good energy but poor recovery.",
+          "Core strategy: 'habit stacking' — attach health habits onto what you're already doing. Standing meetings, walking while on calls, squats while waiting for coffee — no extra time, just a different way of doing things.",
+          "The essential 60-minute rule: a timer that nudges you to stand for 2–3 minutes every hour — this is the #1 priority for desk workers. Easiest to implement and highest metabolic impact per hour invested.",
+          "Meal optimization: prep tomorrow's lunch tonight (5 minutes), keep healthy snacks within reach, stay hydrated by putting a large water bottle on your desk instead of a small glass.",
+          "Short but quality recovery: 5 minutes of box breathing after a stressful meeting, 10 minutes walking after lunch, neck and shoulder stretches while reading email.",
+          "Caffeine protocol for busy people: not within 90 minutes of waking (cortisol is naturally highest — caffeine at this time is less effective), cut-off at 1pm, no more than 400mg/day (2–4 coffees)."
+        ],
+        "points": [
+          { "icon": "🔗", "label": "Habit stacking", "note": "Attach habits to existing routines" },
+          { "icon": "⏱️", "label": "60-min timer", "note": "Stand up — desk worker priority #1" },
+          { "icon": "🧘", "label": "5 min box breathing", "note": "After a stressful meeting" },
+          { "icon": "☕", "label": "Caffeine 90 min after waking", "note": "More effective than right after waking" }
+        ]
+      },
+      {
+        "label": "High-Training Track",
+        "desc": "Frequent gym/running/cycling/swimming, need better recovery",
+        "detail": "For people who train at high intensity regularly — the issue isn't lack of movement but insufficient recovery, leading to plateaus or injury.",
+        "keyFact": "Recovery is not 'doing nothing' — it is an active process. People who train a lot but don't invest in recovery typically plateau earlier and lose gains faster than those who train less but recover well.",
+        "details": [
+          "Who it's for: training at the gym ≥4 sessions/week, regular running/cycling/swimming, competing in events, increasing volume/intensity, or feeling like training hard isn't producing progress.",
+          "Sleep is where 80% of muscle recovery happens: growth hormone (GH) peaks during deep sleep (N3 stage), cortisol hits its lowest while sleeping for muscle resynthesis — insufficient sleep reduces muscle gains by 30–60%.",
+          "HRV monitoring: track Heart Rate Variability each morning (before getting up) — 3 consecutive low days signals overtraining. That day, train light or do active recovery instead of pushing for a PR.",
+          "Protein timing for high-frequency trainers: 0.4g/kg per meal (not necessarily within 30 min post-workout — the anabolic window lasts 3–4 hours after training if you ate beforehand). Daily total: 1.6–2.2g/kg.",
+          "Active deload: every 4–6 weeks of heavy training, reduce volume by 40–50% (weight and sets) for 1 week — don't skip training, just train lighter. Deloads produce better performance afterward than training without breaks.",
+          "Minimum recovery toolkit for high-frequency trainers: 10 min foam rolling post-session, 5 min breathing protocol before sleep, 7–9 hours sleep (trainers need more than non-trainers), and 1 active recovery day per week."
+        ],
+        "points": [
+          { "icon": "😴", "label": "7–9h sleep", "note": "80% of muscle recovery happens during deep sleep" },
+          { "icon": "📊", "label": "HRV monitoring", "note": "Measure nervous system recovery each morning" },
+          { "icon": "🗓️", "label": "Deload every 4–6 weeks", "note": "Reduce volume 40–50% for 1 week" },
+          { "icon": "🥩", "label": "Protein 1.6–2.2g/kg", "note": "Spread across 4–5 meals" }
+        ]
+      }
+    ],
     "c0_full_link": "View full assessment →",
     "c0_items": [
       {
@@ -16960,6 +17034,12 @@
       "5 Key Metrics",
       "100 Points"
     ],
+    "hero_tips": [
+      "8 knowledge modules from basics to advanced — including biomarkers, warning signs, disease prevention, and information literacy",
+      "12-week roadmap from health novice to self-managing your own biomarkers and proactive disease prevention",
+      "The 5 most important health indicators: BMI, waist circumference, blood pressure, blood glucose, blood lipids",
+      "Health Literacy Score out of 100 — evaluate your personal health knowledge level"
+    ],
     "e_explore_title": "Explore Deeper",
     "e_explore_sub": "12 in-depth topics on general health knowledge",
     "e_teaser_s1": "Metrics & Measurement",
@@ -24200,5 +24280,13 @@
         ]
       }
     ]
-  }
+  },
+  "pillar_img_alts": [
+    "Person exercising",
+    "Colorful diverse healthy foods",
+    "Peaceful morning meditation",
+    "Calm meditative mind",
+    "Medical health knowledge",
+    "Health tracking tools and planning"
+  ]
 }

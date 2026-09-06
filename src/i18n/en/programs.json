@@ -797,6 +797,84 @@
   "days": {
     "T2": "MON", "T3": "TUE", "T4": "WED", "T5": "THU", "T6": "FRI", "T7": "SAT", "CN": "SUN"
   },
+  "adjust_tips": [
+    {
+      "name": "Super busy: Mon/Wed/Sun — 3 sessions/week",
+      "time": "OPTION",
+      "details": [
+        "3 sessions/week on alternating days (Mon/Wed/Sat or Mon/Wed/Sun) is the minimum schedule to maintain and develop strength. Research shows 3 sessions/week achieves 80–85% of the results of 5 sessions/week.",
+        "Full-body 3×/week is more effective than a 5–6× split for beginners and intermediates: each muscle group is stimulated 3 times/week instead of once — frequency beats volume for newcomers.",
+        "When super busy: prioritize a correct 20-minute session over canceling entirely. Three consistent 20-minute sessions/week is far better than two irregular 1-hour sessions."
+      ],
+      "points": [
+        { "icon": "📊", "label": "3 sessions = 80–85% of 5-session results", "note": "Best time efficiency" },
+        { "icon": "🔄", "label": "Full-body beats split", "note": "Each muscle group 3×/week is better than 1×" },
+        { "icon": "⏱️", "label": "20 minutes is enough", "note": "Consistency beats duration" },
+        { "icon": "📅", "label": "Mon/Wed/Sun suggested", "note": "Any 3 alternating days works" }
+      ],
+      "links": [
+        { "icon": "📅", "label": "Weekly Rhythm", "to": "/pillar/a/weekly" },
+        { "icon": "⚡", "label": "Quick Workouts", "to": "/pillar/f/quick-workouts" }
+      ]
+    },
+    {
+      "name": "Shift workers: flexible days",
+      "time": "OPTION",
+      "details": [
+        "Shift work doesn't mean you can't train — it means you need a more flexible schedule. The rule: maintain 3–4 sessions/week without locking in specific days.",
+        "Training before or after a shift both work — what matters is the gap from sleep time: avoid heavy training within 2 hours of when you need to sleep (raises cortisol, harder to fall asleep).",
+        "Night shifts specifically: light training before the shift (warm up the body), strength training after the shift (when the body is 'awake') + sleep right after. Avoid intense cardio right before sleep."
+      ],
+      "points": [
+        { "icon": "📅", "label": "3–4 sessions/week", "note": "No need to fix Mon/Wed/Fri" },
+        { "icon": "😴", "label": "Avoid heavy training 2h before sleep", "note": "High cortisol → harder to sleep" },
+        { "icon": "🌙", "label": "Night shift: light training before shift", "note": "Warm up the body for long working hours" },
+        { "icon": "⚙️", "label": "Adjust weekly", "note": "Check work schedule first · plan after" }
+      ],
+      "links": [
+        { "icon": "📅", "label": "Weekly Rhythm", "to": "/pillar/a/weekly" },
+        { "icon": "🌀", "label": "Circadian Rhythm", "to": "/pillar/c/circadian" }
+      ]
+    },
+    {
+      "name": "Beginners: 3 sessions/week × 20–25 min",
+      "time": "OPTION",
+      "details": [
+        "New to training: start with less than you think you need. 3 sessions × 20 minutes with bodyweight is enough to build the habit, provide neuromuscular stimulus, and avoid overtraining.",
+        "Weeks 1–2: form before everything else. No increasing load, no increasing reps — just repeat until muscles and nerves get used to the movement. Feeling 'too easy' is normal and good.",
+        "Weeks 3–4: when all exercises feel well-controlled, add 1 set. Week 5+: increase reps or light load. Slow progress = sustainable progress."
+      ],
+      "points": [
+        { "icon": "🐌", "label": "Less than you think", "note": "Starting small = easier to make a habit" },
+        { "icon": "🧠", "label": "Weeks 1–2: only learn form", "note": "Neuromuscular system needs time to 'learn'" },
+        { "icon": "📈", "label": "Increase from week 3+", "note": "Feel in control first, then progress" },
+        { "icon": "💡", "label": "Easy = progressing", "note": "Feeling easy means muscles are adapting" }
+      ],
+      "links": [
+        { "icon": "🏃", "label": "6 Movement Patterns", "to": "/pillar/a/movements" },
+        { "icon": "📐", "label": "Daily Training Framework", "to": "/pillar/a/framework" }
+      ]
+    },
+    {
+      "name": "Light cardio: walking to work = NEAT",
+      "time": "OPTION",
+      "details": [
+        "Integrating cardio into daily movement = automatic NEAT with no extra time needed. Parking 500m away, walking 10 minutes to the bus stop, taking the stairs = 30–45 minutes of free 'cardio'.",
+        "NEAT contributes 15–30% of total calories burned for active people — equivalent to one gym session per week. People who stand/walk a lot in their work have a TDEE 500–700 kcal higher than those who sit.",
+        "No gym clothes needed, no gym required, no special time required. Just one small decision each time: stairs or elevator?"
+      ],
+      "points": [
+        { "icon": "🔄", "label": "Automatic NEAT", "note": "Change movement habits · no extra time" },
+        { "icon": "📊", "label": "500–700 kcal/day", "note": "High NEAT vs. low NEAT — same body weight" },
+        { "icon": "💰", "label": "Completely free", "note": "No gym fees · no equipment" },
+        { "icon": "🧗", "label": "Always take the stairs", "note": "Simplest rule to boost NEAT" }
+      ],
+      "links": [
+        { "icon": "🌀", "label": "NEAT & Lifestyle", "to": "/pillar/c/neat" },
+        { "icon": "🌿", "label": "Lifestyle", "to": "/pillar/c" }
+      ]
+    }
+  ],
   "cta": {
     "heading": "Ready to Start?",
     "desc": "View the full 12-week roadmap, daily framework, weekly rhythm and progress test kit.",

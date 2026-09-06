@@ -797,6 +797,84 @@
   "days": {
     "T2": "MO", "T3": "DI", "T4": "MI", "T5": "DO", "T6": "FR", "T7": "SA", "CN": "SO"
   },
+  "adjust_tips": [
+    {
+      "name": "Sehr beschäftigt: Mo/Mi/So — 3 Einheiten/Woche",
+      "time": "OPTION",
+      "details": [
+        "3 Einheiten/Woche an alternierenden Tagen (Mo/Mi/Sa oder Mo/Mi/So) ist der Mindestplan, um Kraft zu erhalten und aufzubauen. Studien zeigen, dass 3 Einheiten/Woche 80–85% der Ergebnisse von 5 Einheiten/Woche erzielen.",
+        "Ganzkörper 3×/Woche ist effektiver als ein 5–6×-Split für Anfänger und Fortgeschrittene: jede Muskelgruppe wird 3-mal pro Woche statt einmal stimuliert — Frequenz schlägt Volumen für Einsteiger.",
+        "Bei extremem Zeitmangel: eine korrekte 20-Minuten-Einheit dem vollständigen Absagen vorziehen. Drei konsistente 20-Minuten-Einheiten/Woche sind weit besser als zwei unregelmäßige 1-Stunden-Einheiten."
+      ],
+      "points": [
+        { "icon": "📊", "label": "3 Einheiten = 80–85% von 5-Einheiten-Ergebnissen", "note": "Beste Zeiteffizienz" },
+        { "icon": "🔄", "label": "Ganzkörper schlägt Split", "note": "Jede Muskelgruppe 3×/Woche ist besser als 1×" },
+        { "icon": "⏱️", "label": "20 Minuten reichen", "note": "Konsistenz schlägt Dauer" },
+        { "icon": "📅", "label": "Mo/Mi/So empfohlen", "note": "Beliebige 3 alternierende Tage funktionieren" }
+      ],
+      "links": [
+        { "icon": "📅", "label": "Wochenrhythmus", "to": "/pillar/a/weekly" },
+        { "icon": "⚡", "label": "Quick Workouts", "to": "/pillar/f/quick-workouts" }
+      ]
+    },
+    {
+      "name": "Schichtarbeit: flexible Tage",
+      "time": "OPTION",
+      "details": [
+        "Schichtarbeit bedeutet nicht, dass man nicht trainieren kann — sondern dass man einen flexibleren Plan braucht. Die Regel: 3–4 Einheiten/Woche beibehalten, ohne bestimmte Tage festzulegen.",
+        "Training vor oder nach einer Schicht funktioniert beides — entscheidend ist der Abstand zur Schlafzeit: schweres Training innerhalb von 2 Stunden vor dem Schlafen vermeiden (erhöht Cortisol, schwerer einzuschlafen).",
+        "Nachtschichten besonders: leichtes Training vor der Schicht (Körper aufwärmen), Krafttraining nach der Schicht (wenn der Körper 'wach' ist) + direkt danach schlafen. Intensives Cardio direkt vor dem Schlafen vermeiden."
+      ],
+      "points": [
+        { "icon": "📅", "label": "3–4 Einheiten/Woche", "note": "Keine festen Mo/Mi/Fr nötig" },
+        { "icon": "😴", "label": "Schweres Training 2h vor Schlaf vermeiden", "note": "Hohes Cortisol → schlechter Schlaf" },
+        { "icon": "🌙", "label": "Nachtschicht: leichtes Training vor der Schicht", "note": "Körper für lange Arbeitszeit aufwärmen" },
+        { "icon": "⚙️", "label": "Wöchentlich anpassen", "note": "Erst Arbeitsplan prüfen · dann planen" }
+      ],
+      "links": [
+        { "icon": "📅", "label": "Wochenrhythmus", "to": "/pillar/a/weekly" },
+        { "icon": "🌀", "label": "Zirkadianer Rhythmus", "to": "/pillar/c/circadian" }
+      ]
+    },
+    {
+      "name": "Anfänger: 3 Einheiten/Woche × 20–25 Min.",
+      "time": "OPTION",
+      "details": [
+        "Neu im Training: mit weniger anfangen, als du glaubst zu brauchen. 3 Einheiten × 20 Minuten mit Körpergewicht reichen, um die Gewohnheit aufzubauen, neuromuskulären Reiz zu setzen und Übertraining zu vermeiden.",
+        "Wochen 1–2: Technik vor allem anderen. Kein Erhöhen von Last oder Wiederholungen — nur wiederholen, bis Muskeln und Nerven sich an die Bewegung gewöhnt haben. Das Gefühl 'zu einfach' ist normal und gut.",
+        "Wochen 3–4: wenn alle Übungen gut kontrolliert wirken, 1 Satz hinzufügen. Woche 5+: Wiederholungen oder Last leicht erhöhen. Langsamer Fortschritt = nachhaltiger Fortschritt."
+      ],
+      "points": [
+        { "icon": "🐌", "label": "Weniger als du denkst", "note": "Klein anfangen = leichter zur Gewohnheit" },
+        { "icon": "🧠", "label": "Wochen 1–2: nur Technik lernen", "note": "Neuromuskuläres System braucht Zeit zum Lernen" },
+        { "icon": "📈", "label": "Ab Woche 3+ steigern", "note": "Erst kontrollierten Ablauf fühlen, dann steigern" },
+        { "icon": "💡", "label": "Einfach = Fortschritt", "note": "Einfach fühlen bedeutet, Muskeln passen sich an" }
+      ],
+      "links": [
+        { "icon": "🏃", "label": "6 Bewegungsmuster", "to": "/pillar/a/movements" },
+        { "icon": "📐", "label": "Tages-Trainingsrahmen", "to": "/pillar/a/framework" }
+      ]
+    },
+    {
+      "name": "Leichtes Cardio: zu Fuß zur Arbeit = NEAT",
+      "time": "OPTION",
+      "details": [
+        "Cardio in die tägliche Bewegung integrieren = automatisches NEAT ohne zusätzlichen Zeitaufwand. 500m weiter parken, 10 Minuten zur Bushaltestelle laufen, Treppen steigen = 30–45 Minuten kostenloses Cardio.",
+        "NEAT trägt 15–30% zum Gesamtkalorienverbrauch aktiver Menschen bei — entspricht einer Fitnessstudio-Einheit pro Woche. Menschen, die bei der Arbeit viel stehen/gehen, haben einen um 500–700 kcal höheren TDEE als Sitzende.",
+        "Keine Sportkleidung nötig, kein Fitnessstudio, keine besondere Zeit erforderlich. Nur eine kleine Entscheidung jedes Mal: Treppe oder Aufzug?"
+      ],
+      "points": [
+        { "icon": "🔄", "label": "Automatisches NEAT", "note": "Bewegungsgewohnheiten ändern · keine extra Zeit" },
+        { "icon": "📊", "label": "500–700 kcal/Tag", "note": "Hohes NEAT vs. niedriges NEAT — gleiches Körpergewicht" },
+        { "icon": "💰", "label": "Völlig kostenlos", "note": "Keine Studiogebühren · kein Equipment" },
+        { "icon": "🧗", "label": "Immer die Treppe", "note": "Einfachste Regel zur NEAT-Steigerung" }
+      ],
+      "links": [
+        { "icon": "🌀", "label": "NEAT & Lebensstil", "to": "/pillar/c/neat" },
+        { "icon": "🌿", "label": "Lebensstil", "to": "/pillar/c" }
+      ]
+    }
+  ],
   "cta": {
     "heading": "Bereit anzufangen?",
     "desc": "Sieh den vollständigen 12-Wochen-Fahrplan, den Tagesrahmen, den Wochenrhythmus und das Fortschrittstest-Set.",

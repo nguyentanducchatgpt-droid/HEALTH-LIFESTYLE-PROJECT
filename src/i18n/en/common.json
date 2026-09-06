@@ -6180,7 +6180,9 @@
     "source_prefix": "← Calculated from",
     "pillar_prefix": "Pillar",
     "yes": "Yes",
-    "not_yet": "Not yet"
+    "not_yet": "Not yet",
+    "unmark": "Unmark",
+    "mark_done": "Mark as done"
   },
   "b5": {
     "weight_chart_title": "Weight Chart — 12 Weeks",
@@ -6205,7 +6207,16 @@
     "golden_rule_note": "Weight fluctuates ±1–2 kg/day from salt & water — this is normal",
     "protocol_title": "Standard Measurement Protocol",
     "results_title": "Interpreting Results",
-    "hover_hint": "Hover over a card to see the explanation"
+    "hover_hint": "Hover over a card to see the explanation",
+    "zone_stable": "stable",
+    "zone_ideal": "ideal",
+    "zone_warning": "warning",
+    "charts_heading": "Illustrative Charts",
+    "test4w_title": "4-Week Test — Assess Real Progress",
+    "body_comp_warn_title": "Why do you lose muscle when cutting too aggressively?",
+    "body_comp_warn_body": "When the deficit exceeds 600 kcal/day, the body breaks down muscle protein (gluconeogenesis) to produce glucose. This is why protein ≥1.8g/kg and strength-maintenance training are MANDATORY when losing fat.",
+    "chart_days": ["MON","TUE","WED","THU","FRI","SAT","SUN"],
+    "compliance_axis_label": "% Plan compliance"
   },
   "program_page": {
     "progress_save_note": "💾 Results are auto-saved to your browser. Click any cell to enter — the Flexibility metric toggles Yes/No on click.",

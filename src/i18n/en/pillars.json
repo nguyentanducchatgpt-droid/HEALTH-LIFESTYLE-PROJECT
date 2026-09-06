@@ -3390,6 +3390,12 @@
           "unit": "meals/day",
           "example": "Spread evenly beats 1–2 large portions"
         }
+      ],
+      "weekly_protocol": [
+        { "title": "Same day, same time", "text": "Weigh once a week in the morning, after bathroom, before breakfast. Same day each week (e.g. Monday)." },
+        { "title": "Average 3 mornings", "text": "Measure 3 consecutive mornings (Mon, Tue, Wed) → take the average. Reduces noise from salt/water retention." },
+        { "title": "Measure waist at the right point", "text": "At navel level, exhale gently, don't suck in. Measure twice and average. Waist change is more reliable than the scale." },
+        { "title": "Record in one fixed place", "text": "Notes app / Google Sheets / notebook. Record: weight + waist + energy 1–10 + hours slept." }
       ]
     },
     "b6": {
@@ -3441,6 +3447,13 @@
         "Vegetables",
         "Fruits",
         "Healthy Fats"
+      ],
+      "shopping_items": [
+        ["10–14 eggs (~1 tray)", "Chicken breast / boneless thigh (400–500g)", "Basa / mackerel / salmon (400g)", "Lean pork or beef (300g)", "Fresh shrimp (200g, optional)", "Tofu 2 blocks", "Unsweetened yogurt 4 cups (400g)", "Unsweetened fresh milk (500ml)"],
+        ["White rice / brown rice (1kg)", "Sweet potatoes 4–6 small (~600g)", "Rolled oats (250g)", "1 loaf whole-wheat bread", "Noodles / rice noodles / glass noodles (as needed)"],
+        ["Bok choy, water spinach (3 bunches)", "4 cucumbers, 5–6 tomatoes", "1 small pumpkin, 2–3 carrots", "Mixed mushrooms (200g)", "Fresh herbs, spring onions, bean sprouts"],
+        ["1 bunch bananas (~8 pieces)", "4–5 apples", "4–5 oranges / tangerines", "3–4 guavas", "Dragon fruit / papaya (1 small)"],
+        ["Cashews / almonds (100g)", "Olive oil or soybean oil (250ml, lasts 3–4 weeks)", "Low-sugar peanut butter (1 small jar)", "Sesame seeds (50g)"]
       ],
       "meal_prep_steps": [
         {
@@ -17248,6 +17261,7 @@
     "e_tab2_hint1": "Click each metric for detailed guidance and science",
     "e_tab2_hint2": "Tick to check · Click \"Details\" for science and guidance",
     "e_tab2_note": "Measure to understand, not to obsess. 4–12 week trends matter more than a single number.",
+    "e2_bp_footnote": "* Only when at risk for hypertension or recommended by a doctor.",
     "e_tab3_note": "When you see these signs: don't self-treat, call emergency services or go to the nearest medical facility.",
     "e_tab3_hint": "Click each group for details and how to respond",
     "e_tab3_hint2": "Click each item for details and response guidance",
@@ -17893,6 +17907,285 @@
     "e7_intro": "With the explosion of TikTok, YouTube, and health influencer content, filtering health information is a critical life skill.",
     "e7_danger_heading": "❌ Dangerous phrases",
     "e7_safe_heading": "✓ Safe language",
+    "e7_info_filter": [
+      {
+        "metric": "Who says it?",
+        "freq": "Verify source credibility",
+        "tip": "Real medical expertise? Credentials, reputable organisation?",
+        "keyFact": "💡 A high follower count ≠ medical expertise. Always verify actual credentials.",
+        "detail": "Anyone sharing health information should have verifiable professional grounding — not just personal experience or high view counts.",
+        "details": [
+          "Licensed doctors, pharmacists, and registered dietitians are credible sources — ask for specific credentials if unsure.",
+          "Trusted health organisations: WHO, Ministry of Health, Vietnam Medical Association, Mayo Clinic, and WebMD are reliable sources.",
+          "Influencers sharing 'personal journeys' may be inspirational but are not medical advice — clearly distinguish between the two.",
+          "Verify by searching the person's name plus 'qualifications', 'professional licence', or check official government websites.",
+          "Be cautious with self-proclaimed titles: 'expert' or 'Dr' without a named institution cannot be verified.",
+          "A YouTube or TikTok channel with millions of followers does not validate medical accuracy — popularity does not equal truth."
+        ],
+        "points": [
+          { "icon": "🎓", "label": "Real credentials", "note": "Specific institution verifiable online" },
+          { "icon": "🏥", "label": "Reputable organisation", "note": "WHO, Ministry of Health, Medical Association" },
+          { "icon": "⚠️", "label": "Self-proclaimed titles", "note": "'Expert' with no traceable institution" },
+          { "icon": "🔍", "label": "How to check", "note": "Name + qualification + professional licence" }
+        ]
+      },
+      {
+        "metric": "Based on what?",
+        "freq": "Verify scientific evidence",
+        "tip": "Study or personal experience? Sources cited?",
+        "keyFact": "💡 'I tried it and it worked' is anecdote, not scientific evidence. Controlled studies are needed.",
+        "detail": "Evidence quality determines the reliability of health information — the gap between personal opinion and a clinical trial is vast.",
+        "details": [
+          "Evidence hierarchy (strongest to weakest): systematic review → RCT → cohort study → case report → expert opinion → personal experience.",
+          "When reviewing a health claim, look for citations: which journal, how many participants, how long was follow-up.",
+          "Animal or in-vitro studies do not automatically apply to humans — clinical trials in humans are needed to confirm findings.",
+          "Correlation ≠ causation: 'people who eat X live longer' does not prove X is the cause — there may be confounding factors.",
+          "Small samples (n<50), no control group, self-reported outcomes — signs of weak research requiring caution.",
+          "Google Scholar and PubMed are free tools anyone can use to verify cited research."
+        ],
+        "points": [
+          { "icon": "📊", "label": "RCT = gold standard", "note": "Randomised controlled trial with a control group" },
+          { "icon": "🐭", "label": "Animal studies ≠ human evidence", "note": "Human trials needed to confirm" },
+          { "icon": "🔗", "label": "Specific citations", "note": "Author name, journal, year of publication" },
+          { "icon": "🔎", "label": "Self-verify", "note": "PubMed.gov — free to search" }
+        ]
+      },
+      {
+        "metric": "Excessive promises?",
+        "freq": "Spot language red flags",
+        "tip": "'100%', 'Cures', 'For everyone' — are red flags.",
+        "keyFact": "💡 Evidence-based medicine never uses absolute language. 'Always effective' and 'no side effects' are warning signs.",
+        "detail": "Health marketing uses emotional language to create false trust — recognising these patterns is an essential self-protection skill.",
+        "details": [
+          "Common red flags: '100% natural', 'no side effects', 'cures completely', 'works for everyone', 'what doctors don't want you to know'.",
+          "'Natural' does not mean safe — arsenic and opioids are natural but highly toxic; many synthetic medicines save lives.",
+          "Medicine uses probabilistic language: 'may reduce risk', 'supports treatment', 'needs further study' — never absolute.",
+          "'Secret cures that pharmaceutical companies are hiding' is a classic conspiracy framing with no factual basis.",
+          "Testimonials from a few people cannot replace statistical data from thousands of participants in a study.",
+          "When a claim sounds too good to be true — it usually isn't. The 'too good to be true' effect is especially common in health."
+        ],
+        "points": [
+          { "icon": "🚩", "label": "'100%' and 'Always'", "note": "Absolute language — does not exist in medicine" },
+          { "icon": "🌿", "label": "'Natural' ≠ safe", "note": "Many natural substances are toxic" },
+          { "icon": "👥", "label": "Testimonial ≠ evidence", "note": "Personal stories cannot replace data" },
+          { "icon": "🤫", "label": "'Hidden secrets'", "note": "Classic sign of conspiracy framing" }
+        ]
+      },
+      {
+        "metric": "Selling right after?",
+        "freq": "Spot manipulation tactics",
+        "tip": "Fear → expert → solution → sell = manipulation formula.",
+        "keyFact": "💡 The FASO formula (Fear → Authority → Solution → Offer) is the structure behind thousands of health livestreams. Recognising it helps you avoid manipulation.",
+        "detail": "Genuine health content aims to educate, not to sell immediately. When education and selling are intertwined, question the creator's motivation.",
+        "details": [
+          "FASO formula: Fear (create fear about disease) → Authority (pose as expert) → Solution (introduce remedy) → Offer (sell product) — appears in thousands of livestreams.",
+          "'Your liver is being damaged without you knowing… Fortunately there's this product' — a textbook example of the FASO sequence.",
+          "Legitimate health education does not require immediate purchase links or flash sales, and does not create time pressure ('only 10 spots left').",
+          "Conflict of interest: a supplement seller cannot objectively evaluate that same supplement — financial interest distorts information.",
+          "Affiliate links and referral codes do not automatically make information wrong — but know the financial motivation of the sharer.",
+          "Simple test: 'Would this person share the information even if I bought nothing?' — helps assess true motivation."
+        ],
+        "points": [
+          { "icon": "😱", "label": "Fear-based hook", "note": "Creates fear to manufacture demand" },
+          { "icon": "⏰", "label": "Time pressure", "note": "'Only X spots left' — a sales tactic" },
+          { "icon": "💰", "label": "Conflict of interest", "note": "The seller cannot be objective" },
+          { "icon": "🎓", "label": "Education vs. selling", "note": "Real content needs no immediate call-to-action" }
+        ]
+      },
+      {
+        "metric": "Advising to quit treatment?",
+        "freq": "Most dangerous warning sign",
+        "tip": "'Stop medication' — extremely dangerous for chronic patients.",
+        "keyFact": "💡 Abruptly stopping treatment can be life-threatening for heart disease, diabetes, schizophrenia, and epilepsy. Never do this without a doctor's guidance.",
+        "detail": "Advising people to quit conventional medical treatment is the most serious red line — consequences may be irreversible for many chronic conditions.",
+        "details": [
+          "Highest-risk groups when stopping medication abruptly: cardiovascular disease (heart attack, heart failure), diabetes (diabetic coma), epilepsy (continuous seizures), schizophrenia (acute relapse).",
+          "'Western medicine has side effects' is true — but not taking medication for serious illness is far more dangerous. Doctors weigh benefit vs. risk for each individual.",
+          "No one has the right to advise stopping your medication except your treating physician — this is a clear legal and ethical boundary.",
+          "'Complementary treatments' (herbs, acupuncture, psychotherapy) may be used ALONGSIDE medical treatment, not INSTEAD of it — this is called integrative medicine.",
+          "If you wish to change your treatment regimen, do it with your doctor: taper gradually, monitor indicators, have a contingency plan — never stop abruptly.",
+          "Report to health authorities when encountering content advising treatment cessation: this violates health advertising regulations and may be subject to criminal penalties."
+        ],
+        "points": [
+          { "icon": "🚫", "label": "Never stop medication alone", "note": "Always have a doctor's guidance" },
+          { "icon": "⚕️", "label": "Integrative ≠ replacement", "note": "Complementary alongside medication, not instead" },
+          { "icon": "⚡", "label": "Immediate danger", "note": "Heart, diabetes, epilepsy — risk is immediate" },
+          { "icon": "📢", "label": "Report violations", "note": "Health authorities can act on such content" }
+        ]
+      }
+    ],
+    "e7_danger_phrases": [
+      {
+        "metric": "\"Stop taking medication\"",
+        "freq": "Extremely dangerous",
+        "tip": "Abruptly stopping medication can be life-threatening with chronic diseases.",
+        "keyFact": "💡 Stopping blood pressure, cardiac, or diabetes medication abruptly can cause stroke, heart attack, or coma within hours.",
+        "detail": "This is the most dangerous advice in the online health world — it sounds natural but can cause irreversible consequences.",
+        "details": [
+          "Medications for chronic conditions (hypertension, diabetes, cardiovascular disease, epilepsy) cannot be stopped abruptly — the body has adapted and doses must be tapered under medical guidance.",
+          "Abruptly stopping blood pressure medication: risk of rebound hypertension — blood pressure spikes higher than pre-treatment levels, potentially causing stroke within 24–48 hours.",
+          "Stopping anti-epileptic drugs: seizure rebound can occur even in patients with good control for many years — status epilepticus is a medical emergency.",
+          "Abruptly stopping corticosteroids: acute adrenal insufficiency (Addisonian crisis) — shock, hypotension, life-threatening.",
+          "'Western medicines have side effects' is true — but doctors have weighed benefits against risks. To make changes, work with your doctor, do not self-stop.",
+          "If you genuinely want to reduce medication: positive lifestyle changes (diet, exercise) can support this — but done ALONGSIDE treatment, not REPLACING it, and under medical supervision."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Immediate danger", "note": "Blood pressure, heart, epilepsy — hours matter" },
+          { "icon": "📉", "label": "Rebound effect", "note": "Condition flares more severely after stopping" },
+          { "icon": "👨‍⚕️", "label": "Only the doctor decides", "note": "No one else has the right to advise stopping medication" },
+          { "icon": "🔄", "label": "Taper if needed", "note": "Must follow a specific protocol — never abruptly" }
+        ]
+      },
+      {
+        "metric": "\"7-day liver detox\"",
+        "freq": "Popular pseudoscience",
+        "tip": "The liver does not need 'detoxing' — it is the body's best self-cleaning organ.",
+        "keyFact": "💡 No scientific evidence supports commercial 'liver detox'. The liver is an extraordinarily efficient filtration organ — if real 'detoxification' is needed, you require hospitalisation, not herbal tea.",
+        "detail": "The concept of 'liver detox' in medicine means something entirely different from commercial products — this is one of the most widespread health misconceptions.",
+        "details": [
+          "The liver processes 1.5 litres of blood per minute, removing toxins 24/7 — it does not need 'rest' or 'stimulation' from herbal teas or supplements.",
+          "In medicine, real 'liver detoxification' is ICU treatment: plasmapheresis, emergency liver transplant for acute liver failure from severe poisoning.",
+          "Many commercial 'liver detox' products contain insufficiently researched ingredients — paradoxically, they may cause liver damage themselves (DILI — drug-induced liver injury).",
+          "Celery juice, artichoke tea, and silymarin (milk thistle) have limited data — they cannot 'detox' or reverse pre-existing liver damage.",
+          "How to truly protect your liver: avoid alcohol, maintain healthy weight, get hepatitis B vaccination, do not self-medicate with high-dose herbs.",
+          "If concerned about liver health: test AST, ALT, GGT, bilirubin — real results, no money wasted on unproven products."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "Liver self-filters 24/7", "note": "1.5L blood/min — no 'detox' needed" },
+          { "icon": "⚠️", "label": "DILI is a real risk", "note": "High-dose herbs → liver damage" },
+          { "icon": "🏥", "label": "Real detox = ICU", "note": "Not tea or supplements" },
+          { "icon": "🧪", "label": "Test reality", "note": "AST/ALT/GGT give accurate numbers" }
+        ]
+      },
+      {
+        "metric": "\"Suitable for everyone\"",
+        "freq": "False claim about personalised medicine",
+        "tip": "No drug or supplement is suitable for all people.",
+        "keyFact": "💡 Modern medicine is moving towards precision medicine — the same drug may save one person but harm another, depending on genetics, underlying conditions, and drug interactions.",
+        "detail": "The claim 'suitable for everyone' violates fundamental pharmacology and medicine principles — each person has a unique physiological profile, underlying conditions, and drug response.",
+        "details": [
+          "The same medication: fast metabolisers (extensive metabolisers) need higher doses than slow metabolisers (poor metabolisers) — due to CYP450 enzyme genetic polymorphisms.",
+          "Commonly overlooked contraindications: iron not with haemochromatosis; calcium not ideal for calcium oxalate kidney stone patients; high-dose omega-3 with anticoagulants.",
+          "Pregnant women: most 'natural' herbs have no safety data in pregnancy — caution is the default principle.",
+          "Children are not miniature adults: doses, formulations, and safety profiles differ entirely — adult products are not automatically safe for children.",
+          "Chronic kidney disease (CKD): many supplements accumulate when kidneys lose filtering capacity — potassium, phosphorus, fat-soluble vitamins (A, D, E, K) need tight control.",
+          "Herb-drug interactions: St. John's Wort reduces efficacy of oral contraceptives, anti-rejection drugs, and HIV medications — 'natural' does not mean non-interacting."
+        ],
+        "points": [
+          { "icon": "🧬", "label": "Genetics determine response", "note": "Pharmacogenomics — every person differs" },
+          { "icon": "🤰", "label": "Pregnancy = caution", "note": "Default: no safety data available" },
+          { "icon": "🫘", "label": "Kidney/liver disease need screening", "note": "Substances accumulate when kidneys/liver are impaired" },
+          { "icon": "💊", "label": "Herb-drug interactions", "note": "St. John's Wort + prescription drugs = dangerous" }
+        ]
+      },
+      {
+        "metric": "\"Clean blood vessels\"",
+        "freq": "Cardiovascular pseudoscience",
+        "tip": "No product can 'clean' blood vessels as commercial advertising implies.",
+        "keyFact": "💡 Atherosclerosis is a chronic process requiring serious medical treatment (statins, lifestyle change). No supplement can 'rinse away' plaque that has already formed.",
+        "detail": "The concept of 'cleaning blood vessels' in advertising has no correspondence to any scientifically confirmed physiological mechanism — this is popular cardiovascular pseudoscience.",
+        "details": [
+          "Atherosclerosis is the formation of lipid + inflammatory cell + calcium plaques inside vessel walls — it develops over decades and cannot be 'washed away' by supplements.",
+          "Real atherosclerosis treatment: statins (reduce LDL, stabilise plaque), aspirin (anti-platelet), blood pressure control, smoking cessation — all require medical monitoring.",
+          "Garlic, omega-3, coenzyme Q10, vitamin E: have some data on supporting cardiovascular health — but none of these 'clean' blood vessels with established plaque.",
+          "Assessing vascular health realistically: lipid panel (LDL, HDL, triglycerides), carotid Doppler ultrasound, coronary CT calcium score.",
+          "'Unblocking blood vessels' in traditional medicine advertising usually implies improving circulation — entirely different from evidence-based atherosclerosis treatment.",
+          "If concerned about cardiovascular health: regular blood pressure checks, lipid panel, blood sugar control, no smoking — these are the evidence-based measures."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "Plaque cannot be 'rinsed'", "note": "Requires specialist medical intervention" },
+          { "icon": "💊", "label": "Statins are real treatment", "note": "Strongest evidence for atherosclerosis" },
+          { "icon": "🧪", "label": "Measure blood lipids", "note": "LDL/HDL/triglycerides — real numbers" },
+          { "icon": "🏃", "label": "Lifestyle > supplements", "note": "Exercise + diet have higher evidence than pills" }
+        ]
+      }
+    ],
+    "e7_safe_phrases": [
+      {
+        "metric": "\"Supports monitoring\"",
+        "freq": "Standard medical language",
+        "tip": "Acknowledges product limits — supports only, does not replace treatment.",
+        "keyFact": "💡 'Supports' in medicine means it supplements the primary treatment, not replaces it. This phrase reflects honesty about the product's role.",
+        "detail": "The language 'supports monitoring' accurately reflects the position of many health products — they have a complementary role but are not treatment tools.",
+        "details": [
+          "'Supports monitoring' acknowledges that the product does not cure disease — this is necessary honesty in health communication.",
+          "Valid example: a heart rate monitor supports monitoring — it needs a doctor to interpret results and make treatment decisions.",
+          "Clear distinction: 'supports blood glucose monitoring' (a meter) is different from 'treating diabetes' (medication + insulin + lifestyle change).",
+          "This language helps users set appropriate expectations — not believing that monitoring alone is sufficient; primary treatment is still needed.",
+          "Good monitoring tools (apps, wearables, meters) have real value when used alongside medical care, not as a substitute for it.",
+          "When you see this phrase, the next question is: 'What is being monitored? How often? When should results be reported to a doctor?' — to know how to use it correctly."
+        ],
+        "points": [
+          { "icon": "✅", "label": "Acknowledges limits", "note": "Honest about complementary role" },
+          { "icon": "🔗", "label": "Alongside primary treatment", "note": "Supplements, does not replace" },
+          { "icon": "📱", "label": "Monitoring tools", "note": "Wearables, apps — valuable when used correctly" },
+          { "icon": "❓", "label": "Ask specifically", "note": "What to monitor? When to report to doctor?" }
+        ]
+      },
+      {
+        "metric": "\"Needs personalisation\"",
+        "freq": "Standard medical language",
+        "tip": "Acknowledges no one-size-fits-all solution — reflects real medical practice.",
+        "keyFact": "💡 Precision medicine — the direction of modern medicine — is built on this principle: each person needs an individualised protocol based on genetics, lifestyle, and underlying conditions.",
+        "detail": "Personalisation is a core principle of modern medicine — this phrase reflects scientific thinking, not avoiding commitment.",
+        "details": [
+          "Protein needs: 0.8–2.2 g/kg depending on goal (weight loss, muscle gain, kidney disease), age, activity level — no single number fits everyone.",
+          "Vitamin D dose: depends on current 25-OH vitamin D level, sun exposure, skin colour, BMI — test first, then supplement.",
+          "Exercise plan: someone with knee pain needs different exercises than a healthy person; older adults need to prioritise balance and fall prevention over strength.",
+          "Diet: people with IBS need low-FODMAP; diabetics need GI control; kidney failure patients need potassium and phosphorus restriction.",
+          "When a product or service says 'needs personalisation', this is a positive signal — they do not overpromise and acknowledge you need individual assessment.",
+          "Next step when hearing this phrase: 'Personalised based on what information? Who evaluates? Are tests needed?' — to understand the specific process."
+        ],
+        "points": [
+          { "icon": "🧬", "label": "Precision medicine", "note": "Modern medicine based on genetics + lifestyle" },
+          { "icon": "⚖️", "label": "No overpromising", "note": "Acknowledges no universal solution" },
+          { "icon": "📋", "label": "Specific assessment needed", "note": "Tests, history, personal goals" },
+          { "icon": "✅", "label": "Sign of honesty", "note": "The speaker understands their information's limits" }
+        ]
+      },
+      {
+        "metric": "\"Consult a doctor\"",
+        "freq": "Standard medical disclaimer",
+        "tip": "Correct recommendation — recognises personal limits and redirects to a professional.",
+        "keyFact": "💡 This phrase is not avoiding responsibility — it is the most accurate advice possible when insufficient personal information is known to make a specific recommendation.",
+        "detail": "The advice 'consult a doctor' is often seen as avoidance, but it actually demonstrates honesty and responsibility in health communication.",
+        "details": [
+          "A doctor can ask direct questions, review medical history, perform a physical examination, read test results — all things online content cannot do.",
+          "Online health content provides general information, not medical advice — these two concepts differ legally and ethically.",
+          "In many countries, only licensed physicians may provide personalised 'medical advice' — this regulation protects patients.",
+          "When someone says 'consult a doctor', treat it as a sign they understand their own limits — not avoidance but responsibility.",
+          "This phrase is especially important for: pregnant women, children, elderly people, those with underlying conditions, those taking multiple medications simultaneously.",
+          "How to make good use of it: note what you've read, prepare specific questions for your doctor at the next appointment — online content and doctors complement each other."
+        ],
+        "points": [
+          { "icon": "🩺", "label": "Doctor knows you specifically", "note": "History, medications, test results" },
+          { "icon": "⚖️", "label": "Info ≠ medical advice", "note": "Two legally distinct concepts" },
+          { "icon": "✅", "label": "Sign of honesty", "note": "The speaker knows their limits" },
+          { "icon": "📝", "label": "Use it wisely", "note": "Write questions → ask doctor next appointment" }
+        ]
+      },
+      {
+        "metric": "\"Does not replace treatment\"",
+        "freq": "Most important disclaimer",
+        "tip": "Clearly states product role — complementary, not replacing treatment.",
+        "keyFact": "💡 Integrative medicine (combining conventional and complementary therapies) always emphasises: complementary therapies do not replace core treatment.",
+        "detail": "This is the most honest and important disclaimer in health communication — the product clearly knows its role in the healthcare ecosystem.",
+        "details": [
+          "A product can complement medical treatment: reduce side effects, improve quality of life, support recovery — but not as a dose replacement.",
+          "Example: ginger supports reducing nausea during chemotherapy — has some scientific evidence, but does not replace the oncologist's chemotherapy protocol.",
+          "When a product says 'does not replace treatment', this is honesty about its limits — do not see it as a weakness but as a sign of trustworthiness.",
+          "Integrative medicine at major hospitals (MD Anderson, Mayo Clinic) uses yoga, meditation, acupuncture — ALONGSIDE cancer treatment, not replacing it.",
+          "Danger arises when patients decide to replace treatment with 'natural' alternatives — usually due to misinformation or advertising manipulation.",
+          "The right question: 'Does this complementary therapy interact with my treatment medication?' — ask your doctor and pharmacist before adding anything."
+        ],
+        "points": [
+          { "icon": "🔗", "label": "Complementary, not replacement", "note": "Integrative medicine — always keep primary treatment" },
+          { "icon": "✅", "label": "Sign of honesty", "note": "Product knows its place in care" },
+          { "icon": "⚠️", "label": "Ask about interactions", "note": "Supplement + medication may conflict" },
+          { "icon": "🏥", "label": "Integrative medicine", "note": "Properly combined at major hospitals" }
+        ]
+      }
+    ],
     "e_detail_btn": "Details →",
     "e_prev_btn": "← Prev",
     "e_next_btn": "Next →",

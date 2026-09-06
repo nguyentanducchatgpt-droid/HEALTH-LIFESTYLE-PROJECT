@@ -2470,7 +2470,7 @@ export default function PillarC() {
                         onClick={() => setScoreChecks(p => ({ ...p, [i]: !p[i] }))}
                         className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl transition-all"
                         style={{ cursor: 'pointer' }}
-                        aria-label={scoreChecks[i] ? 'Bỏ đánh dấu' : 'Đánh dấu hoàn thành'}
+                        aria-label={scoreChecks[i] ? tCommon('ui.unmark') || 'Bỏ đánh dấu' : tCommon('ui.mark_done') || 'Đánh dấu hoàn thành'}
                       >
                         <div className="w-5 h-5 rounded-md flex items-center justify-center border-2 transition-all"
                           style={{
@@ -2597,7 +2597,7 @@ export default function PillarC() {
                       {/* Checkbox */}
                       <button onClick={() => setSleepChecks(p => ({ ...p, [i]: !p[i] }))}
                         className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl"
-                        aria-label={sleepChecks[i] ? 'Bỏ đánh dấu' : 'Đánh dấu hoàn thành'}>
+                        aria-label={sleepChecks[i] ? tCommon('ui.unmark') || 'Bỏ đánh dấu' : tCommon('ui.mark_done') || 'Đánh dấu hoàn thành'}>
                         <div className="w-5 h-5 rounded-md flex items-center justify-center border-2 transition-all"
                           style={{
                             borderColor: sleepChecks[i] ? item.color : 'rgba(255,255,255,0.25)',
@@ -2757,7 +2757,7 @@ export default function PillarC() {
                       {/* Checkbox */}
                       <button onClick={() => setNeatChecks(p => ({ ...p, [i]: !p[i] }))}
                         className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl"
-                        aria-label={neatChecks[i] ? 'Bỏ đánh dấu' : 'Đánh dấu hoàn thành'}>
+                        aria-label={neatChecks[i] ? tCommon('ui.unmark') || 'Bỏ đánh dấu' : tCommon('ui.mark_done') || 'Đánh dấu hoàn thành'}>
                         <div className="w-5 h-5 rounded-md flex items-center justify-center border-2 transition-all"
                           style={{
                             borderColor: neatChecks[i] ? item.color : 'rgba(255,255,255,0.25)',

@@ -591,7 +591,7 @@ function TabE2() {
             </div>
           ))}
         </div>
-        <p className="text-base text-muted mt-2">* Chỉ khi có nguy cơ tăng huyết áp hoặc được bác sĩ khuyến nghị.</p>
+        <p className="text-base text-muted mt-2">{pillarE?.e2_bp_footnote || '* Chỉ khi có nguy cơ tăng huyết áp hoặc được bác sĩ khuyến nghị.'}</p>
       </div>
       <div>
         <h3 className="font-bold text-text text-lg mb-1">{pillarE?.e_tab2_h2 || '5 Câu Hỏi Self-Check Mỗi Ngày'}</h3>
@@ -2107,6 +2107,13 @@ const INFO_FILTER = [
 
 function TabE7() {
   const { t: tE7 } = useTranslation('pillars');
+  const pillarE = tE7('pillarE', { returnObjects: true });
+  const infoFilterTr = Array.isArray(pillarE?.e7_info_filter) ? pillarE.e7_info_filter : [];
+  const dangerPhrasesTr = Array.isArray(pillarE?.e7_danger_phrases) ? pillarE.e7_danger_phrases : [];
+  const safePhrasesTr = Array.isArray(pillarE?.e7_safe_phrases) ? pillarE.e7_safe_phrases : [];
+  const localInfoFilter = INFO_FILTER.map((item, i) => ({ ...item, ...(infoFilterTr[i] || {}) }));
+  const localDangerPhrases = DANGER_PHRASES.map((item, i) => ({ ...item, ...(dangerPhrasesTr[i] || {}) }));
+  const localSafePhrases = SAFE_PHRASES.map((item, i) => ({ ...item, ...(safePhrasesTr[i] || {}) }));
   const [filterModal, setFilterModal] = useState(null);
   const [dangerModal, setDangerModal] = useState(null);
   const [safeModal, setSafeModal] = useState(null);
@@ -2114,7 +2121,7 @@ function TabE7() {
     <div className="space-y-4">
       <p className="text-base text-muted">{tE7('pillarE.e7_intro') || 'Với sự bùng nổ của TikTok, YouTube và livestream bán hàng, lọc thông tin sức khỏe là kỹ năng sống quan trọng.'}</p>
       <div className="space-y-2">
-        {INFO_FILTER.map((q, i) => (
+        {localInfoFilter.map((q, i) => (
           <div
             key={q.num}
             onClick={() => setFilterModal(i)}
@@ -2133,7 +2140,7 @@ function TabE7() {
         <div className="rounded-xl border border-red-500/20 bg-red-500/06 p-4">
           <p className="text-base font-bold text-red-400 mb-2">{tE7('pillarE.e7_danger_heading') || '❌ Cụm từ nguy hiểm'}</p>
           <ul className="space-y-1">
-            {DANGER_PHRASES.map((p, i) => (
+            {localDangerPhrases.map((p, i) => (
               <li
                 key={p.num}
                 onClick={() => setDangerModal(i)}
@@ -2148,7 +2155,7 @@ function TabE7() {
         <div className="rounded-xl border border-green-500/20 bg-green-500/06 p-4">
           <p className="text-base font-bold text-green-400 mb-2">{tE7('pillarE.e7_safe_heading') || '✓ Ngôn ngữ an toàn'}</p>
           <ul className="space-y-1">
-            {SAFE_PHRASES.map((p, i) => (
+            {localSafePhrases.map((p, i) => (
               <li
                 key={p.num}
                 onClick={() => setSafeModal(i)}
@@ -2163,38 +2170,38 @@ function TabE7() {
       </div>
       {filterModal !== null && (
         <ScheduleModal
-          item={INFO_FILTER[filterModal]}
+          item={localInfoFilter[filterModal]}
           idx={filterModal}
-          total={INFO_FILTER.length}
+          total={localInfoFilter.length}
           onClose={() => setFilterModal(null)}
           onPrev={() => setFilterModal(i => Math.max(0, i - 1))}
-          onNext={() => setFilterModal(i => Math.min(INFO_FILTER.length - 1, i + 1))}
+          onNext={() => setFilterModal(i => Math.min(localInfoFilter.length - 1, i + 1))}
           hasPrev={filterModal > 0}
-          hasNext={filterModal < INFO_FILTER.length - 1}
+          hasNext={filterModal < localInfoFilter.length - 1}
         />
       )}
       {dangerModal !== null && (
         <ScheduleModal
-          item={DANGER_PHRASES[dangerModal]}
+          item={localDangerPhrases[dangerModal]}
           idx={dangerModal}
-          total={DANGER_PHRASES.length}
+          total={localDangerPhrases.length}
           onClose={() => setDangerModal(null)}
           onPrev={() => setDangerModal(i => Math.max(0, i - 1))}
-          onNext={() => setDangerModal(i => Math.min(DANGER_PHRASES.length - 1, i + 1))}
+          onNext={() => setDangerModal(i => Math.min(localDangerPhrases.length - 1, i + 1))}
           hasPrev={dangerModal > 0}
-          hasNext={dangerModal < DANGER_PHRASES.length - 1}
+          hasNext={dangerModal < localDangerPhrases.length - 1}
         />
       )}
       {safeModal !== null && (
         <ScheduleModal
-          item={SAFE_PHRASES[safeModal]}
+          item={localSafePhrases[safeModal]}
           idx={safeModal}
-          total={SAFE_PHRASES.length}
+          total={localSafePhrases.length}
           onClose={() => setSafeModal(null)}
           onPrev={() => setSafeModal(i => Math.max(0, i - 1))}
-          onNext={() => setSafeModal(i => Math.min(SAFE_PHRASES.length - 1, i + 1))}
+          onNext={() => setSafeModal(i => Math.min(localSafePhrases.length - 1, i + 1))}
           hasPrev={safeModal > 0}
-          hasNext={safeModal < SAFE_PHRASES.length - 1}
+          hasNext={safeModal < localSafePhrases.length - 1}
         />
       )}
     </div>

@@ -3391,6 +3391,12 @@
           "unit": "Mahlzeiten/Tag",
           "example": "Gleichmäßig verteilen statt 1–2 große Portionen"
         }
+      ],
+      "weekly_protocol": [
+        { "title": "Gleicher Tag, gleiche Zeit", "text": "Einmal pro Woche morgens wiegen, nach dem Bad, vor dem Frühstück. Gleicher Wochentag (z. B. Montag)." },
+        { "title": "Durchschnitt von 3 Morgen", "text": "3 aufeinanderfolgende Morgen messen (Mo, Di, Mi) → Durchschnitt nehmen. Reduziert Salz-/Wasserrauschen." },
+        { "title": "Taillenumfang richtig messen", "text": "Auf Nabelhöhe, sanft ausatmen, nicht einziehen. Zweimal messen und mitteln. Taillenwert ist verlässlicher als die Waage." },
+        { "title": "An einem festen Ort aufzeichnen", "text": "Notizen-App / Google Sheets / Notizbuch. Notiere: Gewicht + Taille + Energie 1–10 + Stunden Schlaf." }
       ]
     },
     "b6": {
@@ -3441,6 +3447,13 @@
         "🥦 Gemüse & Obst",
         "🥑 Gesunde Fette",
         "🧂 Gewürze & Sonstiges"
+      ],
+      "shopping_items": [
+        ["10–14 Eier (~1 Packung)", "Hähnchenbrust / knochenlose Keule (400–500g)", "Basa / Makrele / Lachs (400g)", "Mageres Schweine- oder Rindfleisch (300g)", "Frische Garnelen (200g, optional)", "Tofu 2 Blöcke", "Ungesüßter Joghurt 4 Becher (400g)", "Ungesüßte Frischmilch (500ml)"],
+        ["Weißer Reis / Vollkornreis (1kg)", "Süßkartoffeln 4–6 kleine (~600g)", "Haferflocken (250g)", "1 Laib Vollkornbrot", "Nudeln / Reisnudeln / Glasnudeln (nach Bedarf)"],
+        ["Pak Choi, Spinat (3 Bund)", "4 Gurken, 5–6 Tomaten", "1 kleiner Kürbis, 2–3 Karotten", "Pilze gemischt (200g)", "Frische Kräuter, Frühlingszwiebeln, Sojasprossen"],
+        ["1 Bund Bananen (~8 Stück)", "4–5 Äpfel", "4–5 Orangen / Mandarinen", "3–4 Guaven", "Drachenfrucht / Papaya (1 kleine)"],
+        ["Cashews / Mandeln (100g)", "Olivenöl oder Sojaöl (250ml, hält 3–4 Wochen)", "Erdnussbutter zuckerarm (1 kleines Glas)", "Sesamsamen (50g)"]
       ],
       "meal_prep_steps_title": "Wochenend-Meal-Prep — 6 Schritte",
       "meal_prep_steps": [
@@ -17137,6 +17150,7 @@
     "e_tab2_hint1": "Klicken Sie auf jeden Messwert für detaillierte Anleitungen und Wissenschaft",
     "e_tab2_hint2": "Abhaken zum Prüfen · Klicken Sie auf \"Details\" für Wissenschaft und Anleitungen",
     "e_tab2_note": "Messen zum Verstehen, nicht zum Besessensein. 4–12-Wochen-Trends sind wichtiger als eine einzelne Zahl.",
+    "e2_bp_footnote": "* Nur bei Hypertonie-Risiko oder auf Empfehlung eines Arztes.",
     "e_tab3_note": "Bei diesen Zeichen: nicht selbst behandeln, Notarzt rufen oder die nächste medizinische Einrichtung aufsuchen.",
     "e_tab3_hint": "Klicken Sie auf jede Gruppe für Details und Reaktionsmaßnahmen",
     "e_tab3_hint2": "Klicken Sie auf jeden Eintrag für Details und Reaktionsanleitungen",
@@ -17782,6 +17796,285 @@
     "e7_intro": "Mit der Explosion von TikTok, YouTube und Gesundheits-Influencern ist das Filtern von Gesundheitsinformationen eine wichtige Lebenskompetenz.",
     "e7_danger_heading": "❌ Gefährliche Phrasen",
     "e7_safe_heading": "✓ Sichere Sprache",
+    "e7_info_filter": [
+      {
+        "metric": "Wer sagt es?",
+        "freq": "Glaubwürdigkeit der Quelle prüfen",
+        "tip": "Echte medizinische Fachkenntnisse? Qualifikationen, seriöse Organisation?",
+        "keyFact": "💡 Viele Follower ≠ medizinisches Fachwissen. Überprüfe immer die tatsächlichen Qualifikationen.",
+        "detail": "Wer Gesundheitsinformationen teilt, sollte nachweisbare Fachkenntnisse haben — nicht nur persönliche Erfahrung oder hohe Klickzahlen.",
+        "details": [
+          "Zugelassene Ärzte, Apotheker und Ernährungsberater sind glaubwürdige Quellen — frag nach spezifischen Qualifikationen, wenn du unsicher bist.",
+          "Vertrauenswürdige Organisationen: WHO, Bundesgesundheitsministerium, Deutsche Ärztegesellschaft, Mayo Clinic und WebMD sind zuverlässige Quellen.",
+          "Influencer, die 'persönliche Erfahrungen' teilen, können inspirieren, geben aber keine medizinischen Ratschläge — unterscheide klar zwischen beiden.",
+          "Überprüfen: Name der Person + 'Qualifikation', 'Berufslizenz' suchen oder auf offiziellen Behördenseiten nachschlagen.",
+          "Vorsicht bei Selbsttiteln: 'Experte' oder 'Dr.' ohne genannte Institution ist nicht überprüfbar.",
+          "Ein YouTube- oder TikTok-Kanal mit Millionen Followern validiert keine medizinische Korrektheit — Popularität ist kein Wahrheitsbeweis."
+        ],
+        "points": [
+          { "icon": "🎓", "label": "Echte Qualifikationen", "note": "Spezifische Institution online überprüfbar" },
+          { "icon": "🏥", "label": "Seriöse Organisation", "note": "WHO, Bundesgesundheitsministerium, Ärztegesellschaft" },
+          { "icon": "⚠️", "label": "Selbsternannte Titel", "note": "'Experte' ohne rückverfolgbare Institution" },
+          { "icon": "🔍", "label": "Prüfmethode", "note": "Name + Qualifikation + Berufslizenz" }
+        ]
+      },
+      {
+        "metric": "Worauf basiert das?",
+        "freq": "Wissenschaftliche Belege prüfen",
+        "tip": "Studie oder persönliche Erfahrung? Werden Quellen zitiert?",
+        "keyFact": "💡 'Ich habe es versucht und es hat gewirkt' ist anekdotisch, kein wissenschaftlicher Beweis. Kontrollierte Studien sind erforderlich.",
+        "detail": "Die Qualität der Belege bestimmt die Zuverlässigkeit von Gesundheitsinformationen — der Abstand zwischen persönlicher Meinung und einer klinischen Studie ist enorm.",
+        "details": [
+          "Beweishierarchie (stärkste bis schwächste): systematische Übersicht → RCT → Kohortenstudie → Fallbericht → Expertenmeinung → persönliche Erfahrung.",
+          "Bei einer Gesundheitsbehauptung: Zitate suchen — in welcher Zeitschrift, wie viele Teilnehmer, wie lange Nachbeobachtung.",
+          "Tier- oder In-vitro-Studien sind nicht automatisch auf Menschen übertragbar — klinische Studien am Menschen sind zur Bestätigung erforderlich.",
+          "Korrelation ≠ Kausalität: 'Menschen, die X essen, leben länger' beweist nicht, dass X die Ursache ist — es kann störende Faktoren geben.",
+          "Kleine Stichproben (n<50), keine Kontrollgruppe, selbst berichtete Ergebnisse — Zeichen schwacher Forschung, die Vorsicht erfordert.",
+          "Google Scholar und PubMed sind kostenlose Tools, mit denen jeder zitierte Forschung überprüfen kann."
+        ],
+        "points": [
+          { "icon": "📊", "label": "RCT = Goldstandard", "note": "Randomisierte kontrollierte Studie mit Kontrollgruppe" },
+          { "icon": "🐭", "label": "Tierstudien ≠ menschliche Belege", "note": "Humanstudien zur Bestätigung erforderlich" },
+          { "icon": "🔗", "label": "Spezifische Zitate", "note": "Autorenname, Zeitschrift, Erscheinungsjahr" },
+          { "icon": "🔎", "label": "Selbst überprüfen", "note": "PubMed.gov — kostenlose Suche" }
+        ]
+      },
+      {
+        "metric": "Übertriebene Versprechen?",
+        "freq": "Sprachliche Warnsignale erkennen",
+        "tip": "'100%', 'Heilt', 'Für alle' — sind rote Flaggen.",
+        "keyFact": "💡 Evidenzbasierte Medizin verwendet nie absolute Sprache. 'Immer wirksam' und 'keine Nebenwirkungen' sind Warnsignale.",
+        "detail": "Gesundheitsmarketing verwendet emotionale Sprache, um falsches Vertrauen zu schaffen — diese Muster zu erkennen ist eine wichtige Selbstschutzfähigkeit.",
+        "details": [
+          "Häufige rote Flaggen: '100% natürlich', 'keine Nebenwirkungen', 'heilt vollständig', 'wirkt bei jedem', 'was Ärzte nicht möchten, dass du das weißt'.",
+          "'Natürlich' bedeutet nicht sicher — Arsen und Opiate sind natürlich, aber hochtoxisch; viele synthetische Medikamente retten Leben.",
+          "Medizin verwendet probabilistische Sprache: 'kann das Risiko verringern', 'unterstützt die Behandlung', 'braucht weitere Forschung' — nie absolut.",
+          "'Geheimheilmittel, die Pharmakonzerne verbergen' ist klassisches Verschwörungsdenken ohne sachliche Grundlage.",
+          "Erfahrungsberichte von wenigen Personen können keine statistischen Daten aus tausenden Studienteilnehmern ersetzen.",
+          "Wenn ein Anspruch zu gut klingt, um wahr zu sein — ist er es meist nicht. Der 'Zu-gut-um-wahr'-Effekt ist im Gesundheitsbereich besonders häufig."
+        ],
+        "points": [
+          { "icon": "🚩", "label": "'100%' und 'Immer'", "note": "Absolute Sprache — existiert in der Medizin nicht" },
+          { "icon": "🌿", "label": "'Natürlich' ≠ sicher", "note": "Viele natürliche Substanzen sind giftig" },
+          { "icon": "👥", "label": "Erfahrungsbericht ≠ Beweis", "note": "Persönliche Geschichten können keine Daten ersetzen" },
+          { "icon": "🤫", "label": "'Versteckte Geheimnisse'", "note": "Klassisches Zeichen von Verschwörungsdenken" }
+        ]
+      },
+      {
+        "metric": "Wird danach sofort verkauft?",
+        "freq": "Manipulationstaktiken erkennen",
+        "tip": "Angst → Experte → Lösung → Verkauf = Manipulationsformel.",
+        "keyFact": "💡 Die FASO-Formel (Fear → Authority → Solution → Offer) ist die Struktur hinter tausenden Gesundheits-Livestreams. Sie zu erkennen schützt vor Manipulation.",
+        "detail": "Echter Gesundheitsinhalt zielt auf Aufklärung, nicht sofortigen Verkauf. Wenn Aufklärung und Verkauf vermischt werden, ist die Motivation des Erstellers zu hinterfragen.",
+        "details": [
+          "FASO-Formel: Fear (Angst vor Krankheit erzeugen) → Authority (als Experte auftreten) → Solution (Lösung vorstellen) → Offer (Produkt verkaufen) — in tausenden Livestreams.",
+          "'Deine Leber wird beschädigt, ohne dass du es weißt… Zum Glück gibt es dieses Produkt' — ein Schulbeispiel der FASO-Sequenz.",
+          "Seriöse Gesundheitsaufklärung benötigt keine sofortigen Kauflinks oder Flash-Sales und erzeugt keinen Zeitdruck ('nur noch 10 Plätze').",
+          "Interessenkonflikt: Ein Nahrungsergänzungsmittel-Verkäufer kann dasselbe Produkt nicht objektiv bewerten — finanzielles Interesse verzerrt Informationen.",
+          "Affiliate-Links und Empfehlungscodes machen Informationen nicht automatisch falsch — aber kenne die finanziellen Motive des Teilers.",
+          "Einfacher Test: 'Würde diese Person die Information teilen, auch wenn ich nichts kaufe?' — hilft, die wahre Motivation einzuschätzen."
+        ],
+        "points": [
+          { "icon": "😱", "label": "Angst-basierter Einstieg", "note": "Erzeugt Angst, um Bedarf zu schaffen" },
+          { "icon": "⏰", "label": "Zeitdruck", "note": "'Nur noch X Plätze' — Verkaufstaktik" },
+          { "icon": "💰", "label": "Interessenkonflikt", "note": "Der Verkäufer kann nicht objektiv sein" },
+          { "icon": "🎓", "label": "Aufklärung vs. Verkauf", "note": "Echter Inhalt braucht keinen sofortigen CTA" }
+        ]
+      },
+      {
+        "metric": "Empfiehlt es, die Behandlung abzubrechen?",
+        "freq": "Gefährlichstes Warnsignal",
+        "tip": "'Medikamente absetzen' — extrem gefährlich für chronisch Kranke.",
+        "keyFact": "💡 Das abrupte Absetzen der Behandlung kann bei Herzerkrankungen, Diabetes, Schizophrenie und Epilepsie lebensbedrohlich sein. Niemals ohne ärztliche Anleitung tun.",
+        "detail": "Die Empfehlung, konventionelle medizinische Behandlung abzubrechen, ist die schwerwiegendste rote Linie — die Folgen können bei vielen chronischen Erkrankungen irreversibel sein.",
+        "details": [
+          "Höchste Risikogruppen beim abrupten Absetzen von Medikamenten: Herzkreislauferkrankungen (Herzinfarkt, Herzversagen), Diabetes (diabetisches Koma), Epilepsie (Status epilepticus), Schizophrenie (akuter Rückfall).",
+          "'Westliche Medikamente haben Nebenwirkungen' ist wahr — aber keine Medikamente bei schweren Erkrankungen ist viel gefährlicher. Ärzte wägen Nutzen und Risiko für jeden Einzelnen ab.",
+          "Niemand außer deinem behandelnden Arzt hat das Recht, dir zu empfehlen, deine Medikamente abzusetzen — dies ist eine klare rechtliche und ethische Grenze.",
+          "'Komplementäre Behandlungen' (Kräuter, Akupunktur, Psychotherapie) können NEBEN der Medizin angewendet werden, nicht ANSTELLE — das nennt sich Integrative Medizin.",
+          "Wenn du dein Behandlungsregime ändern möchtest, tue es mit deinem Arzt: schrittweise reduzieren, Werte überwachen, Notfallplan haben — niemals abrupt absetzen.",
+          "Bei inhaltserstattenden Empfehlungen zum Behandlungsabbruch: an Gesundheitsbehörden melden — Verstoß gegen Vorschriften zur Gesundheitswerbung, möglicherweise strafrechtlich verfolgbar."
+        ],
+        "points": [
+          { "icon": "🚫", "label": "Niemals Medikamente allein absetzen", "note": "Immer ärztliche Anleitung einholen" },
+          { "icon": "⚕️", "label": "Integrativ ≠ Ersatz", "note": "Ergänzend neben Medikamenten, nicht stattdessen" },
+          { "icon": "⚡", "label": "Unmittelbare Gefahr", "note": "Herz, Diabetes, Epilepsie — Risiko ist sofort" },
+          { "icon": "📢", "label": "Verstöße melden", "note": "Gesundheitsbehörden können gegen solche Inhalte vorgehen" }
+        ]
+      }
+    ],
+    "e7_danger_phrases": [
+      {
+        "metric": "\"Medikamente absetzen\"",
+        "freq": "Extrem gefährlich",
+        "tip": "Medikamente abrupt abzusetzen kann bei chronischen Erkrankungen lebensbedrohlich sein.",
+        "keyFact": "💡 Das abrupte Absetzen von Blutdruck-, Herz- oder Diabetesmedikamenten kann innerhalb von Stunden Schlaganfall, Herzinfarkt oder Koma verursachen.",
+        "detail": "Dies ist der gefährlichste Rat in der Online-Gesundheitswelt — er klingt natürlich, kann aber irreversible Folgen haben.",
+        "details": [
+          "Medikamente zur Behandlung chronischer Erkrankungen können nicht abrupt abgesetzt werden — der Körper hat sich angepasst, und Dosen müssen unter ärztlicher Aufsicht schrittweise reduziert werden.",
+          "Abruptes Absetzen von Blutdruckmitteln: Risiko eines Rebound-Hypertonus — Blutdruck schnellt höher als vor der Behandlung, kann innerhalb von 24–48 Stunden einen Schlaganfall verursachen.",
+          "Antiepileptika absetzen: Rebound-Anfälle können auch bei Patienten mit jahrelanger guter Kontrolle auftreten — Status epilepticus ist ein medizinischer Notfall.",
+          "Kortikosteroide abrupt absetzen: akute Nebenniereninsuffizienz (Addison-Krise) — Schock, Hypotonie, lebensbedrohlich.",
+          "'Westliche Medikamente haben Nebenwirkungen' ist wahr — Ärzte haben jedoch Nutzen und Risiken abgewogen. Für Änderungen mit dem Arzt zusammenarbeiten, nicht selbst absetzen.",
+          "Wenn du wirklich Medikamente reduzieren möchtest: positive Lebensstiländerungen können unterstützen — aber ZUSAMMEN mit der Behandlung, nicht ALS ERSATZ, und unter medizinischer Aufsicht."
+        ],
+        "points": [
+          { "icon": "⚡", "label": "Unmittelbare Gefahr", "note": "Blutdruck, Herz, Epilepsie — Stunden entscheiden" },
+          { "icon": "📉", "label": "Rebound-Effekt", "note": "Erkrankung flammt nach Absetzen stärker auf" },
+          { "icon": "👨‍⚕️", "label": "Nur der Arzt entscheidet", "note": "Niemand sonst hat das Recht, Absetzung zu empfehlen" },
+          { "icon": "🔄", "label": "Bei Bedarf schrittweise", "note": "Muss spezifischem Protokoll folgen — nie abrupt" }
+        ]
+      },
+      {
+        "metric": "\"7-Tage-Leberentgiftung\"",
+        "freq": "Populäre Pseudowissenschaft",
+        "tip": "Die Leber braucht keine 'Entgiftung' — sie ist das beste selbstreinigende Organ des Körpers.",
+        "keyFact": "💡 Es gibt keine wissenschaftlichen Belege für kommerzielle 'Leberentgiftung'. Die Leber ist ein äußerst effizienter Filtrationsapparat — wenn eine echte 'Entgiftung' nötig wäre, braucht man Krankenhausbehandlung, keinen Kräutertee.",
+        "detail": "Der Begriff 'Leberentgiftung' bedeutet in der Medizin etwas völlig anderes als kommerzielle Produkte — dies ist eine der verbreitetsten Gesundheitsmissverständnisse.",
+        "details": [
+          "Die Leber verarbeitet 1,5 Liter Blut pro Minute, entfernt Giftstoffe rund um die Uhr — sie braucht keine 'Ruhepausen' oder 'Anregung' durch Kräutertees oder Nahrungsergänzungsmittel.",
+          "In der Medizin ist 'echte Leberentgiftung' eine ICU-Behandlung: Plasmapherese, Notfall-Lebertransplantation bei akutem Leberversagen durch schwere Vergiftung.",
+          "Viele kommerzielle 'Leberentgiftungs'-Produkte enthalten unzureichend erforschte Inhaltsstoffe — paradoxerweise können sie selbst Leberschäden verursachen (DILI — medikamentös induzierte Leberschädigung).",
+          "Sellerie-Saft, Artischockentee und Silymarin (Mariendistel) haben begrenzte Daten — sie können keine 'Entgiftung' oder Rückgängigmachung bestehender Leberschäden bewirken.",
+          "Wie man die Leber wirklich schützt: kein Alkohol, Normalgewicht halten, Hepatitis-B-Impfung, keine Selbstmedikation mit hochdosierten Kräutern.",
+          "Bei Bedenken zur Lebergesundheit: AST, ALT, GGT, Bilirubin testen — echte Ergebnisse, kein Geld für unbewiesen Produkte verschwenden."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "Leber filtert 24/7 selbst", "note": "1,5 L Blut/Min — keine 'Entgiftung' nötig" },
+          { "icon": "⚠️", "label": "DILI ist ein echtes Risiko", "note": "Hochdosierte Kräuter → Leberschäden" },
+          { "icon": "🏥", "label": "Echte Entgiftung = ICU", "note": "Kein Tee oder Nahrungsergänzungsmittel" },
+          { "icon": "🧪", "label": "Realität testen", "note": "AST/ALT/GGT liefern genaue Zahlen" }
+        ]
+      },
+      {
+        "metric": "\"Für jeden geeignet\"",
+        "freq": "Falsche Behauptung über personalisierte Medizin",
+        "tip": "Kein Medikament oder Nahrungsergänzungsmittel ist für alle Menschen geeignet.",
+        "keyFact": "💡 Moderne Medizin entwickelt sich zur Präzisionsmedizin — dasselbe Medikament kann einen Menschen retten, einem anderen schaden, abhängig von Genetik, Vorerkrankungen und Wechselwirkungen.",
+        "detail": "Die Behauptung 'für jeden geeignet' verstößt gegen grundlegende Pharmakologie- und Medizinprinzipien — jeder Mensch hat ein einzigartiges physiologisches Profil.",
+        "details": [
+          "Dasselbe Medikament: Schnellmetabolisierer (extensive metaboliser) brauchen höhere Dosen als Langsammetabolisierer — aufgrund genetischer CYP450-Enzympolymorphismen.",
+          "Häufig übersehene Kontraindikationen: Eisen nicht bei Hämochromatose; Kalzium nicht ideal für Kalziumoxalat-Nierensteinpatienten; hochdosiertes Omega-3 mit Antikoagulantien.",
+          "Schwangere Frauen: die meisten 'natürlichen' Kräuter haben keine Sicherheitsdaten in der Schwangerschaft — Vorsicht ist der Standardgrundsatz.",
+          "Kinder sind keine kleinen Erwachsenen: Dosierung, Darreichungsformen und Sicherheitsprofile unterscheiden sich völlig — Erwachsenenprodukte sind nicht automatisch für Kinder sicher.",
+          "Chronische Nierenerkrankung (CKD): viele Nahrungsergänzungsmittel reichern sich an, wenn die Nierenfiltration abnimmt — Kalium, Phosphor, fettlösliche Vitamine (A, D, E, K) müssen streng kontrolliert werden.",
+          "Kräuter-Arzneimittel-Wechselwirkungen: Johanniskraut reduziert die Wirksamkeit von Verhütungsmitteln, Abstoßungsmedikamenten und HIV-Medikamenten — 'natürlich' bedeutet nicht wechselwirkungsfrei."
+        ],
+        "points": [
+          { "icon": "🧬", "label": "Genetik bestimmt die Reaktion", "note": "Pharmakogenomik — jeder Mensch ist anders" },
+          { "icon": "🤰", "label": "Schwangerschaft = Vorsicht", "note": "Standard: keine Sicherheitsdaten verfügbar" },
+          { "icon": "🫘", "label": "Nieren-/Lebererkrankung braucht Kontrolle", "note": "Stoffe reichern sich bei eingeschränkter Funktion an" },
+          { "icon": "💊", "label": "Kräuter-Arzneimittel-Wechselwirkungen", "note": "Johanniskraut + Rezeptpflichtige Medikamente = gefährlich" }
+        ]
+      },
+      {
+        "metric": "\"Blutgefäße reinigen\"",
+        "freq": "Kardiovaskuläre Pseudowissenschaft",
+        "tip": "Kein Produkt kann Blutgefäße 'reinigen', wie Werbung impliziert.",
+        "keyFact": "💡 Arteriosklerose ist ein chronischer Prozess, der ernsthafte medizinische Behandlung erfordert (Statine, Lebensstiländerung). Kein Nahrungsergänzungsmittel kann bereits gebildete Plaques 'wegspülen'.",
+        "detail": "Das Konzept 'Blutgefäße reinigen' in der Werbung entspricht keinem wissenschaftlich bestätigten physiologischen Mechanismus — dies ist populäre kardiovaskuläre Pseudowissenschaft.",
+        "details": [
+          "Arteriosklerose ist die Bildung von Lipid- + Entzündungszell- + Kalk-Plaques in Gefäßwänden — entwickelt sich über Jahrzehnte, kann nicht durch Nahrungsergänzungsmittel 'weggespült' werden.",
+          "Echte Arteriosklerose-Behandlung: Statine (LDL senken, Plaques stabilisieren), Aspirin (Thrombozytenaggregationshemmer), Blutdruckkontrolle, Rauchstopp — alles unter medizinischer Aufsicht.",
+          "Knoblauch, Omega-3, Coenzym Q10, Vitamin E: haben begrenzte Daten zur Unterstützung der Herzgesundheit — können aber keine bereits gebildeten Plaques 'reinigen'.",
+          "Gefäßgesundheit realistisch beurteilen: Lipidpanel (LDL, HDL, Triglyzeride), Doppler-Ultraschall der Karotis, koronarer CT-Kalzium-Score.",
+          "'Gefäßentstauung' in traditioneller Medizin-Werbung impliziert meist Verbesserung der Durchblutung — völlig verschieden von evidenzbasierter Arteriosklerose-Behandlung.",
+          "Bei Bedenken zur Herzgesundheit: regelmäßige Blutdruckmessung, Lipidpanel, Blutzuckerkontrolle, kein Rauchen — dies sind die evidenzbasierten Maßnahmen."
+        ],
+        "points": [
+          { "icon": "🔬", "label": "Plaques können nicht 'weggespült' werden", "note": "Erfordert spezialisierte medizinische Intervention" },
+          { "icon": "💊", "label": "Statine sind echte Behandlung", "note": "Stärkste Belege für Arteriosklerose" },
+          { "icon": "🧪", "label": "Blutfette messen", "note": "LDL/HDL/Triglyzeride — echte Zahlen" },
+          { "icon": "🏃", "label": "Lebensstil > Nahrungsergänzung", "note": "Sport + Ernährung haben höhere Evidenz als Pillen" }
+        ]
+      }
+    ],
+    "e7_safe_phrases": [
+      {
+        "metric": "\"Unterstützt die Überwachung\"",
+        "freq": "Standardmedizinische Sprache",
+        "tip": "Erkennt Produktgrenzen an — nur unterstützend, ersetzt keine Behandlung.",
+        "keyFact": "💡 'Unterstützt' in der Medizin bedeutet Ergänzung der Primärbehandlung, nicht Ersatz. Diese Formulierung spiegelt Ehrlichkeit über die Produktrolle wider.",
+        "detail": "Die Formulierung 'unterstützt die Überwachung' spiegelt die Position vieler Gesundheitsprodukte korrekt wider — sie haben eine ergänzende Rolle, sind aber keine Behandlungswerkzeuge.",
+        "details": [
+          "'Unterstützt die Überwachung' gibt zu, dass das Produkt keine Krankheit heilt — dies ist die notwendige Ehrlichkeit in der Gesundheitskommunikation.",
+          "Gültiges Beispiel: Ein Herzfrequenzmessgerät unterstützt die Überwachung — ein Arzt ist nötig, um Ergebnisse zu interpretieren und Behandlungsentscheidungen zu treffen.",
+          "Klare Unterscheidung: 'unterstützt Blutzuckerüberwachung' (ein Messgerät) ist verschieden von 'Diabetes behandeln' (Medikamente + Insulin + Lebensstiländerung).",
+          "Diese Sprache hilft Nutzern, realistische Erwartungen zu setzen — zu glauben, dass Überwachung allein ausreicht, wäre falsch; Primärbehandlung ist weiterhin nötig.",
+          "Gute Monitoring-Tools (Apps, Wearables, Messgeräte) haben echten Wert, wenn sie zusammen mit medizinischer Versorgung eingesetzt werden.",
+          "Wenn du diese Formulierung siehst, ist die nächste Frage: 'Was wird überwacht? Wie oft? Wann sollten Ergebnisse dem Arzt gemeldet werden?' — um es korrekt einzusetzen."
+        ],
+        "points": [
+          { "icon": "✅", "label": "Erkennt Grenzen an", "note": "Ehrlich über ergänzende Rolle" },
+          { "icon": "🔗", "label": "Neben Primärbehandlung", "note": "Ergänzt, ersetzt nicht" },
+          { "icon": "📱", "label": "Monitoring-Tools", "note": "Wearables, Apps — wertvoll bei korrekter Anwendung" },
+          { "icon": "❓", "label": "Konkret nachfragen", "note": "Was überwachen? Wann Arzt informieren?" }
+        ]
+      },
+      {
+        "metric": "\"Braucht Personalisierung\"",
+        "freq": "Standardmedizinische Sprache",
+        "tip": "Erkennt an, dass es keine Einheitslösung gibt — spiegelt echte medizinische Praxis wider.",
+        "keyFact": "💡 Präzisionsmedizin — die Richtung moderner Medizin — basiert auf diesem Prinzip: Jeder Mensch braucht ein individualisiertes Protokoll auf Basis von Genetik, Lebensstil und Vorerkrankungen.",
+        "detail": "Personalisierung ist ein Kernprinzip moderner Medizin — diese Formulierung spiegelt wissenschaftliches Denken wider, kein Ausweichen vor Verpflichtungen.",
+        "details": [
+          "Proteinbedarf: 0,8–2,2 g/kg je nach Ziel (Gewichtsabnahme, Muskelaufbau, Nierenerkrankung), Alter, Aktivitätslevel — keine einzige Zahl gilt für alle.",
+          "Vitamin-D-Dosis: hängt vom aktuellen 25-OH-Vitamin-D-Spiegel, Sonnenlichtexposition, Hautfarbe, BMI ab — erst testen, dann ergänzen.",
+          "Trainingsplan: Jemand mit Knieschmerzen braucht andere Übungen als ein gesunder Mensch; Ältere brauchen Gleichgewicht und Sturzprophylaxe mehr als Kraft.",
+          "Ernährung: Menschen mit Reizdarmsyndrom brauchen Low-FODMAP; Diabetiker brauchen GI-Kontrolle; Nierenversagen-Patienten brauchen Kalium- und Phosphorbeschränkung.",
+          "Wenn ein Produkt oder eine Dienstleistung 'braucht Personalisierung' sagt, ist das ein positives Signal — sie versprechen nichts Übertriebenes und erkennen individuelle Beurteilung an.",
+          "Nächster Schritt: 'Personalisiert basierend auf welchen Informationen? Wer bewertet? Sind Tests nötig?' — um den spezifischen Prozess zu verstehen."
+        ],
+        "points": [
+          { "icon": "🧬", "label": "Präzisionsmedizin", "note": "Moderne Medizin basierend auf Genetik + Lebensstil" },
+          { "icon": "⚖️", "label": "Kein Overpromising", "note": "Erkennt keine Universallösung an" },
+          { "icon": "📋", "label": "Spezifische Beurteilung nötig", "note": "Tests, Anamnese, persönliche Ziele" },
+          { "icon": "✅", "label": "Zeichen von Ehrlichkeit", "note": "Der Sprecher kennt die Grenzen seiner Informationen" }
+        ]
+      },
+      {
+        "metric": "\"Einen Arzt konsultieren\"",
+        "freq": "Standard-Haftungsausschluss in der Medizin",
+        "tip": "Korrekte Empfehlung — erkennt persönliche Grenzen an und verweist an Fachleute.",
+        "keyFact": "💡 Diese Formulierung vermeidet keine Verantwortung — sie ist der genaueste Rat, den man geben kann, wenn nicht genug persönliche Informationen für eine spezifische Empfehlung vorliegen.",
+        "detail": "Der Rat 'einen Arzt konsultieren' wird oft als Ausweichen gesehen, zeigt aber tatsächlich Ehrlichkeit und Verantwortung in der Gesundheitskommunikation.",
+        "details": [
+          "Ein Arzt kann direkte Fragen stellen, die Krankengeschichte prüfen, eine körperliche Untersuchung durchführen, Testergebnisse lesen — alles, was Online-Inhalte nicht leisten können.",
+          "Online-Gesundheitsinhalte liefern allgemeine Informationen, keine medizinischen Ratschläge — diese zwei Konzepte unterscheiden sich rechtlich und ethisch.",
+          "In vielen Ländern dürfen nur zugelassene Ärzte personalisierte 'medizinische Ratschläge' geben — diese Regelung schützt Patienten.",
+          "Wenn jemand 'einen Arzt konsultieren' sagt, behandle es als Zeichen, dass er seine eigenen Grenzen versteht — kein Ausweichen, sondern Verantwortung.",
+          "Diese Formulierung ist besonders wichtig für: Schwangere, Kinder, ältere Menschen, Personen mit Vorerkrankungen, Personen mit mehreren gleichzeitigen Medikamenten.",
+          "Wie man es gut nutzt: Notizen aus dem Gelesenen machen, spezifische Fragen für den nächsten Arzttermin vorbereiten — Online-Inhalte und Arzt ergänzen sich."
+        ],
+        "points": [
+          { "icon": "🩺", "label": "Arzt kennt dich spezifisch", "note": "Anamnese, Medikamente, Testergebnisse" },
+          { "icon": "⚖️", "label": "Info ≠ medizinischer Rat", "note": "Zwei rechtlich unterschiedliche Konzepte" },
+          { "icon": "✅", "label": "Zeichen von Ehrlichkeit", "note": "Der Sprecher kennt seine Grenzen" },
+          { "icon": "📝", "label": "Klug nutzen", "note": "Fragen aufschreiben → beim nächsten Termin stellen" }
+        ]
+      },
+      {
+        "metric": "\"Ersetzt keine Behandlung\"",
+        "freq": "Wichtigster Haftungsausschluss",
+        "tip": "Stellt Produktrolle klar — ergänzend, nicht behandlungsersetzend.",
+        "keyFact": "💡 Integrative Medizin (Kombination konventioneller und komplementärer Therapien) betont stets: Komplementärtherapien ersetzen keine Kernbehandlung.",
+        "detail": "Dies ist der ehrlichste und wichtigste Haftungsausschluss in der Gesundheitskommunikation — das Produkt kennt klar seine Rolle im Gesundheitssystem.",
+        "details": [
+          "Ein Produkt kann die medizinische Behandlung ergänzen: Nebenwirkungen reduzieren, Lebensqualität verbessern, Genesung unterstützen — aber nicht als Dosisersatz.",
+          "Beispiel: Ingwer unterstützt die Reduktion von Übelkeit bei Chemotherapie — hat begrenzte wissenschaftliche Belege, ersetzt aber nicht das Chemotherapieprotokoll des Onkologen.",
+          "Wenn ein Produkt 'ersetzt keine Behandlung' sagt, ist das Ehrlichkeit über seine Grenzen — sieh es nicht als Schwäche, sondern als Vertrauenssignal.",
+          "Integrative Medizin an großen Krankenhäusern (MD Anderson, Mayo Clinic) nutzt Yoga, Meditation, Akupunktur — ZUSAMMEN mit Krebsbehandlung, nicht als Ersatz dafür.",
+          "Gefahr entsteht, wenn Patienten selbst entscheiden, die Behandlung durch 'natürliche' Alternativen zu ersetzen — meist aufgrund von Fehlinformationen oder Werbungsmanipulation.",
+          "Die richtige Frage: 'Wechselwirkt diese Komplementärtherapie mit meinen Behandlungsmedikamenten?' — Arzt und Apotheker fragen, bevor man etwas hinzufügt."
+        ],
+        "points": [
+          { "icon": "🔗", "label": "Ergänzend, nicht ersetzend", "note": "Integrative Medizin — immer Primärbehandlung behalten" },
+          { "icon": "✅", "label": "Zeichen von Ehrlichkeit", "note": "Produkt kennt seinen Platz in der Versorgung" },
+          { "icon": "⚠️", "label": "Auf Wechselwirkungen achten", "note": "Nahrungsergänzung + Medikamente können konfligieren" },
+          { "icon": "🏥", "label": "Integrative Medizin", "note": "Korrekt kombiniert an großen Krankenhäusern" }
+        ]
+      }
+    ],
     "e_detail_btn": "Details →",
     "e_prev_btn": "← Zurück",
     "e_next_btn": "Weiter →",

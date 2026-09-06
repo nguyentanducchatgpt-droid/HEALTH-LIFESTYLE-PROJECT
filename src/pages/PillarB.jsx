@@ -4110,7 +4110,8 @@ function EnergyBarChart() {
   const W = 500, H = 190;
   const PL = 32, PR = 48, PT = 26, PB = 32;
   const cw = W - PL - PR, ch = H - PT - PB;
-  const days   = ['T2','T3','T4','T5','T6','T7','CN'];
+  const chartDaysTr = tB5('b5.chart_days', { returnObjects: true });
+  const days = Array.isArray(chartDaysTr) && chartDaysTr.length === 7 ? chartDaysTr : ['T2','T3','T4','T5','T6','T7','CN'];
   const values = [7, 4, 9, 6, 8, 9, 5];
   const notes  = [
     'Ổn định — ngủ đủ giấc, ăn đúng giờ',
@@ -4402,8 +4403,8 @@ function BodyCompositionChart() {
       </div>
       <div className="mt-2 rounded-xl border border-orange-500/15 bg-orange-500/4 px-3 py-2">
         <p className="text-[9px] text-muted leading-relaxed">
-          <span className="text-orange-400 font-bold">Tại sao mất cơ khi cắt quá mạnh? </span>
-          Khi thiếu hụt &gt;600 kcal/ngày, cơ thể phân giải protein cơ bắp (gluconeogenesis) để tạo glucose. Đây là lý do protein ≥1.8g/kg và tập luyện duy trì sức mạnh là BẮT BUỘC khi giảm mỡ.
+          <span className="text-orange-400 font-bold">{tB5('b5.body_comp_warn_title') || 'Tại sao mất cơ khi cắt quá mạnh?'} </span>
+          {tB5('b5.body_comp_warn_body') || 'Khi thiếu hụt >600 kcal/ngày, cơ thể phân giải protein cơ bắp (gluconeogenesis) để tạo glucose. Đây là lý do protein ≥1.8g/kg và tập luyện duy trì sức mạnh là BẮT BUỘC khi giảm mỡ.'}
         </p>
       </div>
     </div>
@@ -4462,7 +4463,7 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
       <div>
         <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-3">{tB5('b5.protocol_title') || 'Giao Thức Đo Chuẩn'}</p>
         <div className="grid sm:grid-cols-2 gap-2">
-          {WEEKLY_PROTOCOL.map((p, i) => (
+          {localWeeklyProtocol.map((p, i) => (
             <div key={i} className="flex items-start gap-3 p-3.5 rounded-xl border"
               style={{ borderColor: `${p.color}22`, background: `${p.color}05` }}>
               <div className="w-7 h-7 rounded-xl flex items-center justify-center text-lg font-black shrink-0"
@@ -4514,9 +4515,9 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
                   <div className="flex-1 rounded-r-full opacity-60" style={{ background: t.warn.color }} />
                 </div>
                 <div className="flex justify-between mt-0.5">
-                  <span className="text-[8px] text-muted/50">ổn định</span>
-                  <span className="text-[8px] font-bold" style={{ color: t.good.color }}>lý tưởng</span>
-                  <span className="text-[8px] text-muted/50">cảnh báo</span>
+                  <span className="text-[8px] text-muted/50">{tB5('b5.zone_stable') || 'ổn định'}</span>
+                  <span className="text-[8px] font-bold" style={{ color: t.good.color }}>{tB5('b5.zone_ideal') || 'lý tưởng'}</span>
+                  <span className="text-[8px] text-muted/50">{tB5('b5.zone_warning') || 'cảnh báo'}</span>
                 </div>
               </div>
 
@@ -4591,7 +4592,7 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
       <div className="rounded-2xl border border-yellow-500/20 bg-yellow-500/4 p-4">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xl">🧪</span>
-          <p className="text-lg font-bold text-yellow-300">Test 4 Tuần — Đánh Giá Tiến Bộ Thực Sự</p>
+          <p className="text-lg font-bold text-yellow-300">{tB5('b5.test4w_title') || 'Test 4 Tuần — Đánh Giá Tiến Bộ Thực Sự'}</p>
         </div>
         <div className="grid sm:grid-cols-2 gap-2 text-[10px] text-muted">
           {[
@@ -4612,7 +4613,7 @@ function WeeklyMetricsContent({ activeGoal = 'fat-loss' }) {
 
       {/* ── Charts ── */}
       <div>
-        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Biểu Đồ Minh Họa</p>
+        <p className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">{tB5('b5.charts_heading') || 'Biểu Đồ Minh Họa'}</p>
         <div className="space-y-6">
           <ProgressLineChart />
           <EnergyBarChart />
@@ -4830,6 +4831,8 @@ function b5MetricDetail(key, s) {
 function TrackingPanel({ s, activeGoal = 'fat-loss' }) {
   const { t: tPillars } = useTranslation('pillars');
   const b5tr = tPillars('pillarB.b5', { returnObjects: true }) || {};
+  const weeklyProtocolTr = Array.isArray(b5tr.weekly_protocol) ? b5tr.weekly_protocol : [];
+  const localWeeklyProtocol = WEEKLY_PROTOCOL.map((p, i) => ({ ...p, ...(weeklyProtocolTr[i] || {}) }));
   const [activeSection, setActiveSection] = useState(0);
   const [checked, setChecked] = useState({});
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -6004,6 +6007,11 @@ function b6MetricDetail(key, s) {
 function SevenDayPanel({ s }) {
   const { t: tPillars } = useTranslation('pillars');
   const b6tr = tPillars('pillarB.b6', { returnObjects: true }) || {};
+  const shoppingItemsTr = Array.isArray(b6tr.shopping_items) ? b6tr.shopping_items : [];
+  const localShoppingGroups = SHOPPING_GROUPS.map((g, gi) => ({
+    ...g,
+    items: Array.isArray(shoppingItemsTr[gi]) && shoppingItemsTr[gi].length ? shoppingItemsTr[gi] : g.items,
+  }));
   const [activeDay, setActiveDay]       = useState(0);
   const [showShopping, setShowShopping] = useState(false);
   const [selectedMetric, setSelectedMetric] = useState(null);
@@ -6217,7 +6225,7 @@ function SevenDayPanel({ s }) {
         </button>
         {showShopping && (
           <div className="mt-3 grid sm:grid-cols-2 gap-3 animate-fade-in-up">
-            {SHOPPING_GROUPS.map((g, gi) => (
+            {localShoppingGroups.map((g, gi) => (
               <div key={g.name} className="rounded-2xl border p-4" style={{ borderColor: `${g.color}25`, background: `${g.color}06` }}>
                 <div className="flex items-center justify-between mb-3">
                   <p className="text-lg font-bold" style={{ color: g.color }}>{b6tr.shopping_groups?.[gi] || g.name}</p>
@@ -7247,6 +7255,7 @@ const ROADMAP_PHASES = [
 ];
 
 function RoadmapComplianceChart({ showAll }) {
+  const { t: tB5 } = useTranslation('common');
   const phases = showAll ? ROADMAP_PHASES : ROADMAP_PHASES.slice(0, 4);
   const totalWeeks = phases.reduce((a, p) => a + p.weekCount, 0);
   const W = 520, H = 130, PL = 30, PR = 12, PT = 14, PB = 32;
@@ -7304,7 +7313,7 @@ function RoadmapComplianceChart({ showAll }) {
       {points.filter(p => [2, 4, 8, 12, 18, 24].includes(p.w) && p.w <= totalWeeks).map(p => (
         <circle key={p.w} cx={xOf(p.w)} cy={yOf(p.c)} r="3.5" fill={p.color} stroke={`${p.color}40`} strokeWidth="4" />
       ))}
-      <text x={W - PR} y={PT - 4} textAnchor="end" fontSize="7" fill="#4b5563">% Tuân thủ kế hoạch</text>
+      <text x={W - PR} y={PT - 4} textAnchor="end" fontSize="7" fill="#4b5563">{tB5('b5.compliance_axis_label') || '% Tuân thủ kế hoạch'}</text>
     </svg>
   );
 }

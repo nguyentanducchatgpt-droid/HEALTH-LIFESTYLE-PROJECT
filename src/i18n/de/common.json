@@ -6180,7 +6180,9 @@
     "source_prefix": "← Berechnet aus",
     "pillar_prefix": "Säule",
     "yes": "Ja",
-    "not_yet": "Noch nicht"
+    "not_yet": "Noch nicht",
+    "unmark": "Markierung entfernen",
+    "mark_done": "Als erledigt markieren"
   },
   "b5": {
     "weight_chart_title": "Gewichtsdiagramm — 12 Wochen",
@@ -6205,7 +6207,16 @@
     "golden_rule_note": "Gewichtsschwankungen ±1–2 kg/Tag durch Salz & Wasser sind normal",
     "protocol_title": "Standard-Messprotokoll",
     "results_title": "Ergebnisse interpretieren",
-    "hover_hint": "Hovere über eine Karte für die Erklärung"
+    "hover_hint": "Hovere über eine Karte für die Erklärung",
+    "zone_stable": "stabil",
+    "zone_ideal": "ideal",
+    "zone_warning": "Warnung",
+    "charts_heading": "Illustrative Diagramme",
+    "test4w_title": "4-Wochen-Test — Echten Fortschritt bewerten",
+    "body_comp_warn_title": "Warum verliert man Muskeln beim zu aggressiven Kaloriendefizit?",
+    "body_comp_warn_body": "Wenn das Defizit 600 kcal/Tag übersteigt, baut der Körper Muskelprotein ab (Glukoneogenese), um Glukose zu erzeugen. Deshalb sind Protein ≥1,8g/kg und muskelerhaltiges Training PFLICHT beim Fettabbau.",
+    "chart_days": ["MO","DI","MI","DO","FR","SA","SO"],
+    "compliance_axis_label": "% Plan-Compliance"
   },
   "program_page": {
     "progress_save_note": "💾 Ergebnisse werden automatisch im Browser gespeichert. Zum Eingeben auf eine Zelle klicken — der Flexibilitätswert wechselt per Klick zwischen Ja/Nein.",

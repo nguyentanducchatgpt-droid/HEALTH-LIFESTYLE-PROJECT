@@ -1744,7 +1744,8 @@
     "sub_progress_name": "Progression & Progress Checks",
     "sub_progress_h1_main": "Progression Staircase",
     "sub_progress_h1_accent": "Monthly Progress Checks",
-    "sub_progress_desc": "6 goal-based progression pathways, regular progress checks, and a visual radar chart to track comprehensive development over time."
+    "sub_progress_desc": "6 goal-based progression pathways, regular progress checks, and a visual radar chart to track comprehensive development over time.",
+    "sub_back_overview": "Back to Overview"
   },
   "pillarB": {
     "id": "b",
@@ -3421,10 +3422,22 @@
         }
       ],
       "weekly_protocol": [
-        { "title": "Same day, same time", "text": "Weigh once a week in the morning, after bathroom, before breakfast. Same day each week (e.g. Monday)." },
-        { "title": "Average 3 mornings", "text": "Measure 3 consecutive mornings (Mon, Tue, Wed) → take the average. Reduces noise from salt/water retention." },
-        { "title": "Measure waist at the right point", "text": "At navel level, exhale gently, don't suck in. Measure twice and average. Waist change is more reliable than the scale." },
-        { "title": "Record in one fixed place", "text": "Notes app / Google Sheets / notebook. Record: weight + waist + energy 1–10 + hours slept." }
+        {
+          "title": "Same day, same time",
+          "text": "Weigh once a week in the morning, after bathroom, before breakfast. Same day each week (e.g. Monday)."
+        },
+        {
+          "title": "Average 3 mornings",
+          "text": "Measure 3 consecutive mornings (Mon, Tue, Wed) → take the average. Reduces noise from salt/water retention."
+        },
+        {
+          "title": "Measure waist at the right point",
+          "text": "At navel level, exhale gently, don't suck in. Measure twice and average. Waist change is more reliable than the scale."
+        },
+        {
+          "title": "Record in one fixed place",
+          "text": "Notes app / Google Sheets / notebook. Record: weight + waist + energy 1–10 + hours slept."
+        }
       ]
     },
     "b6": {
@@ -3478,11 +3491,43 @@
         "Healthy Fats"
       ],
       "shopping_items": [
-        ["10–14 eggs (~1 tray)", "Chicken breast / boneless thigh (400–500g)", "Basa / mackerel / salmon (400g)", "Lean pork or beef (300g)", "Fresh shrimp (200g, optional)", "Tofu 2 blocks", "Unsweetened yogurt 4 cups (400g)", "Unsweetened fresh milk (500ml)"],
-        ["White rice / brown rice (1kg)", "Sweet potatoes 4–6 small (~600g)", "Rolled oats (250g)", "1 loaf whole-wheat bread", "Noodles / rice noodles / glass noodles (as needed)"],
-        ["Bok choy, water spinach (3 bunches)", "4 cucumbers, 5–6 tomatoes", "1 small pumpkin, 2–3 carrots", "Mixed mushrooms (200g)", "Fresh herbs, spring onions, bean sprouts"],
-        ["1 bunch bananas (~8 pieces)", "4–5 apples", "4–5 oranges / tangerines", "3–4 guavas", "Dragon fruit / papaya (1 small)"],
-        ["Cashews / almonds (100g)", "Olive oil or soybean oil (250ml, lasts 3–4 weeks)", "Low-sugar peanut butter (1 small jar)", "Sesame seeds (50g)"]
+        [
+          "10–14 eggs (~1 tray)",
+          "Chicken breast / boneless thigh (400–500g)",
+          "Basa / mackerel / salmon (400g)",
+          "Lean pork or beef (300g)",
+          "Fresh shrimp (200g, optional)",
+          "Tofu 2 blocks",
+          "Unsweetened yogurt 4 cups (400g)",
+          "Unsweetened fresh milk (500ml)"
+        ],
+        [
+          "White rice / brown rice (1kg)",
+          "Sweet potatoes 4–6 small (~600g)",
+          "Rolled oats (250g)",
+          "1 loaf whole-wheat bread",
+          "Noodles / rice noodles / glass noodles (as needed)"
+        ],
+        [
+          "Bok choy, water spinach (3 bunches)",
+          "4 cucumbers, 5–6 tomatoes",
+          "1 small pumpkin, 2–3 carrots",
+          "Mixed mushrooms (200g)",
+          "Fresh herbs, spring onions, bean sprouts"
+        ],
+        [
+          "1 bunch bananas (~8 pieces)",
+          "4–5 apples",
+          "4–5 oranges / tangerines",
+          "3–4 guavas",
+          "Dragon fruit / papaya (1 small)"
+        ],
+        [
+          "Cashews / almonds (100g)",
+          "Olive oil or soybean oil (250ml, lasts 3–4 weeks)",
+          "Low-sugar peanut butter (1 small jar)",
+          "Sesame seeds (50g)"
+        ]
       ],
       "meal_prep_steps": [
         {
@@ -4724,7 +4769,10 @@
         ],
         "cta": "View 24-Week Roadmap"
       }
-    ]
+    ],
+    "nav_prev": "← Previous",
+    "nav_home": "Back to main",
+    "nav_next": "Next →"
   },
   "pillarC": {
     "id": "c",
@@ -4896,10 +4944,26 @@
           "Signs you're ready to move to the Busy Track: sleeping 7+ hours ≥5 nights/week, sometimes waking without an alarm, morning energy noticeably improved compared to before."
         ],
         "points": [
-          { "icon": "⏰", "label": "Fixed wake time", "note": "Change just 1 thing first" },
-          { "icon": "☀️", "label": "10 min outdoors", "note": "Morning light — the first step" },
-          { "icon": "📵", "label": "No screens 30 min before bed", "note": "Weeks 3–4" },
-          { "icon": "🌱", "label": "1 habit per 2 weeks", "note": "Don't add too many at once" }
+          {
+            "icon": "⏰",
+            "label": "Fixed wake time",
+            "note": "Change just 1 thing first"
+          },
+          {
+            "icon": "☀️",
+            "label": "10 min outdoors",
+            "note": "Morning light — the first step"
+          },
+          {
+            "icon": "📵",
+            "label": "No screens 30 min before bed",
+            "note": "Weeks 3–4"
+          },
+          {
+            "icon": "🌱",
+            "label": "1 habit per 2 weeks",
+            "note": "Don't add too many at once"
+          }
         ]
       },
       {
@@ -4916,10 +4980,26 @@
           "Caffeine protocol for busy people: not within 90 minutes of waking (cortisol is naturally highest — caffeine at this time is less effective), cut-off at 1pm, no more than 400mg/day (2–4 coffees)."
         ],
         "points": [
-          { "icon": "🔗", "label": "Habit stacking", "note": "Attach habits to existing routines" },
-          { "icon": "⏱️", "label": "60-min timer", "note": "Stand up — desk worker priority #1" },
-          { "icon": "🧘", "label": "5 min box breathing", "note": "After a stressful meeting" },
-          { "icon": "☕", "label": "Caffeine 90 min after waking", "note": "More effective than right after waking" }
+          {
+            "icon": "🔗",
+            "label": "Habit stacking",
+            "note": "Attach habits to existing routines"
+          },
+          {
+            "icon": "⏱️",
+            "label": "60-min timer",
+            "note": "Stand up — desk worker priority #1"
+          },
+          {
+            "icon": "🧘",
+            "label": "5 min box breathing",
+            "note": "After a stressful meeting"
+          },
+          {
+            "icon": "☕",
+            "label": "Caffeine 90 min after waking",
+            "note": "More effective than right after waking"
+          }
         ]
       },
       {
@@ -4936,10 +5016,26 @@
           "Minimum recovery toolkit for high-frequency trainers: 10 min foam rolling post-session, 5 min breathing protocol before sleep, 7–9 hours sleep (trainers need more than non-trainers), and 1 active recovery day per week."
         ],
         "points": [
-          { "icon": "😴", "label": "7–9h sleep", "note": "80% of muscle recovery happens during deep sleep" },
-          { "icon": "📊", "label": "HRV monitoring", "note": "Measure nervous system recovery each morning" },
-          { "icon": "🗓️", "label": "Deload every 4–6 weeks", "note": "Reduce volume 40–50% for 1 week" },
-          { "icon": "🥩", "label": "Protein 1.6–2.2g/kg", "note": "Spread across 4–5 meals" }
+          {
+            "icon": "😴",
+            "label": "7–9h sleep",
+            "note": "80% of muscle recovery happens during deep sleep"
+          },
+          {
+            "icon": "📊",
+            "label": "HRV monitoring",
+            "note": "Measure nervous system recovery each morning"
+          },
+          {
+            "icon": "🗓️",
+            "label": "Deload every 4–6 weeks",
+            "note": "Reduce volume 40–50% for 1 week"
+          },
+          {
+            "icon": "🥩",
+            "label": "Protein 1.6–2.2g/kg",
+            "note": "Spread across 4–5 meals"
+          }
         ]
       }
     ],
@@ -15105,7 +15201,8 @@
     "c4_full_link": "Full active recovery guide →",
     "c5_full_link": "Full deload guide →",
     "c6_full_link": "Full breathing guide →",
-    "c7_full_link": "Full environment design guide →"
+    "c7_full_link": "Full environment design guide →",
+    "assessment_badge": "C0 · Lifestyle Assessment"
   },
   "pillarD": {
     "id": "d",
@@ -15801,10 +15898,26 @@
           "The goal is not to 'eliminate stress' but to 'recognize it early and choose a wiser response instead of automatic compensating reactions'."
         ],
         "points": [
-          { "icon": "💪", "label": "Body Layer", "note": "Racing heart, shallow breathing, tense shoulders" },
-          { "icon": "😤", "label": "Emotional Layer", "note": "Easily irritated, anxious, frustrated" },
-          { "icon": "🔄", "label": "Behavioral Layer", "note": "Snacking, scrolling, procrastinating" },
-          { "icon": "🔧", "label": "Pause Point", "note": "Breathe → name it → next small step" }
+          {
+            "icon": "💪",
+            "label": "Body Layer",
+            "note": "Racing heart, shallow breathing, tense shoulders"
+          },
+          {
+            "icon": "😤",
+            "label": "Emotional Layer",
+            "note": "Easily irritated, anxious, frustrated"
+          },
+          {
+            "icon": "🔄",
+            "label": "Behavioral Layer",
+            "note": "Snacking, scrolling, procrastinating"
+          },
+          {
+            "icon": "🔧",
+            "label": "Pause Point",
+            "note": "Breathe → name it → next small step"
+          }
         ]
       },
       {
@@ -15820,10 +15933,26 @@
           "Regular diaphragmatic breathing for 10 min/day can reduce systolic blood pressure by 5–10 mmHg after 4 weeks — equivalent to light aerobic exercise."
         ],
         "points": [
-          { "icon": "🫁", "label": "Diaphragmatic", "note": "Foundation — use anytime" },
-          { "icon": "⬜", "label": "Box 4-4-4-4", "note": "Focus & calm quickly" },
-          { "icon": "🌊", "label": "4-7-8 Breathing", "note": "Prepare for sleep" },
-          { "icon": "⚡", "label": "2-Minute Reset", "note": "Use immediately when overloaded" }
+          {
+            "icon": "🫁",
+            "label": "Diaphragmatic",
+            "note": "Foundation — use anytime"
+          },
+          {
+            "icon": "⬜",
+            "label": "Box 4-4-4-4",
+            "note": "Focus & calm quickly"
+          },
+          {
+            "icon": "🌊",
+            "label": "4-7-8 Breathing",
+            "note": "Prepare for sleep"
+          },
+          {
+            "icon": "⚡",
+            "label": "2-Minute Reset",
+            "note": "Use immediately when overloaded"
+          }
         ]
       },
       {
@@ -15839,10 +15968,26 @@
           "Meditation doesn't require sitting still for an hour or lotus position. 3 minutes a day is enough to build the habit and notice clear improvements after 2–3 weeks."
         ],
         "points": [
-          { "icon": "🧠", "label": "Healthier Brain", "note": "Hippocampus thickens after 8 weeks" },
-          { "icon": "😌", "label": "Reduced Anxiety", "note": "Comparable to mild–moderate CBT" },
-          { "icon": "😴", "label": "Better Sleep", "note": "5-min body scan before sleep" },
-          { "icon": "🔄", "label": "Start with 3 Minutes", "note": "Wandering → returning = training" }
+          {
+            "icon": "🧠",
+            "label": "Healthier Brain",
+            "note": "Hippocampus thickens after 8 weeks"
+          },
+          {
+            "icon": "😌",
+            "label": "Reduced Anxiety",
+            "note": "Comparable to mild–moderate CBT"
+          },
+          {
+            "icon": "😴",
+            "label": "Better Sleep",
+            "note": "5-min body scan before sleep"
+          },
+          {
+            "icon": "🔄",
+            "label": "Start with 3 Minutes",
+            "note": "Wandering → returning = training"
+          }
         ]
       },
       {
@@ -15858,10 +16003,26 @@
           "'One kind word to yourself' at the end of each journal session is a scientifically-grounded self-compassion practice — not self-praise but acknowledgment that you're making an effort."
         ],
         "points": [
-          { "icon": "🧠", "label": "Brain Dump", "note": "Clear mental clutter" },
-          { "icon": "😌", "label": "Process Emotions", "note": "Naming = amygdala calms" },
-          { "icon": "📈", "label": "Extract Lessons", "note": "Journal after a bad day" },
-          { "icon": "💙", "label": "Kind to Yourself", "note": "Daily self-compassion" }
+          {
+            "icon": "🧠",
+            "label": "Brain Dump",
+            "note": "Clear mental clutter"
+          },
+          {
+            "icon": "😌",
+            "label": "Process Emotions",
+            "note": "Naming = amygdala calms"
+          },
+          {
+            "icon": "📈",
+            "label": "Extract Lessons",
+            "note": "Journal after a bad day"
+          },
+          {
+            "icon": "💙",
+            "label": "Kind to Yourself",
+            "note": "Daily self-compassion"
+          }
         ]
       },
       {
@@ -15877,10 +16038,26 @@
           "Digital environment design: addictive apps on screen 2 or in a hard-to-find folder, phone in another room during sleep — reduces automatic scrolling by 80% without needing willpower."
         ],
         "points": [
-          { "icon": "😴", "label": "Better Sleep", "note": "Turn off screen 20min before sleep" },
-          { "icon": "🎯", "label": "Deep Focus", "note": "Turn off notifications during work" },
-          { "icon": "🧘", "label": "Mental Space", "note": "10 min/day screen-free" },
-          { "icon": "🏠", "label": "Digital Environment", "note": "Addictive apps on screen 2" }
+          {
+            "icon": "😴",
+            "label": "Better Sleep",
+            "note": "Turn off screen 20min before sleep"
+          },
+          {
+            "icon": "🎯",
+            "label": "Deep Focus",
+            "note": "Turn off notifications during work"
+          },
+          {
+            "icon": "🧘",
+            "label": "Mental Space",
+            "note": "10 min/day screen-free"
+          },
+          {
+            "icon": "🏠",
+            "label": "Digital Environment",
+            "note": "Addictive apps on screen 2"
+          }
         ]
       },
       {
@@ -15896,10 +16073,26 @@
           "Habit stacking: linking a new habit after an existing one ('After brushing teeth, I meditate 3 minutes') reduces startup friction and increases maintenance rates according to BJ Fogg's behavioral research."
         ],
         "points": [
-          { "icon": "🔄", "label": "1% Rule", "note": "Smallest version is still a win" },
-          { "icon": "💙", "label": "No Self-Blame", "note": "Self-compassion increases persistence" },
-          { "icon": "🔗", "label": "Habit Stacking", "note": "Attach to existing habits" },
-          { "icon": "🏗️", "label": "Small Systems", "note": "Design over willpower" }
+          {
+            "icon": "🔄",
+            "label": "1% Rule",
+            "note": "Smallest version is still a win"
+          },
+          {
+            "icon": "💙",
+            "label": "No Self-Blame",
+            "note": "Self-compassion increases persistence"
+          },
+          {
+            "icon": "🔗",
+            "label": "Habit Stacking",
+            "note": "Attach to existing habits"
+          },
+          {
+            "icon": "🏗️",
+            "label": "Small Systems",
+            "note": "Design over willpower"
+          }
         ]
       }
     ],
@@ -18020,10 +18213,26 @@
           "A YouTube or TikTok channel with millions of followers does not validate medical accuracy — popularity does not equal truth."
         ],
         "points": [
-          { "icon": "🎓", "label": "Real credentials", "note": "Specific institution verifiable online" },
-          { "icon": "🏥", "label": "Reputable organisation", "note": "WHO, Ministry of Health, Medical Association" },
-          { "icon": "⚠️", "label": "Self-proclaimed titles", "note": "'Expert' with no traceable institution" },
-          { "icon": "🔍", "label": "How to check", "note": "Name + qualification + professional licence" }
+          {
+            "icon": "🎓",
+            "label": "Real credentials",
+            "note": "Specific institution verifiable online"
+          },
+          {
+            "icon": "🏥",
+            "label": "Reputable organisation",
+            "note": "WHO, Ministry of Health, Medical Association"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Self-proclaimed titles",
+            "note": "'Expert' with no traceable institution"
+          },
+          {
+            "icon": "🔍",
+            "label": "How to check",
+            "note": "Name + qualification + professional licence"
+          }
         ]
       },
       {
@@ -18041,10 +18250,26 @@
           "Google Scholar and PubMed are free tools anyone can use to verify cited research."
         ],
         "points": [
-          { "icon": "📊", "label": "RCT = gold standard", "note": "Randomised controlled trial with a control group" },
-          { "icon": "🐭", "label": "Animal studies ≠ human evidence", "note": "Human trials needed to confirm" },
-          { "icon": "🔗", "label": "Specific citations", "note": "Author name, journal, year of publication" },
-          { "icon": "🔎", "label": "Self-verify", "note": "PubMed.gov — free to search" }
+          {
+            "icon": "📊",
+            "label": "RCT = gold standard",
+            "note": "Randomised controlled trial with a control group"
+          },
+          {
+            "icon": "🐭",
+            "label": "Animal studies ≠ human evidence",
+            "note": "Human trials needed to confirm"
+          },
+          {
+            "icon": "🔗",
+            "label": "Specific citations",
+            "note": "Author name, journal, year of publication"
+          },
+          {
+            "icon": "🔎",
+            "label": "Self-verify",
+            "note": "PubMed.gov — free to search"
+          }
         ]
       },
       {
@@ -18062,10 +18287,26 @@
           "When a claim sounds too good to be true — it usually isn't. The 'too good to be true' effect is especially common in health."
         ],
         "points": [
-          { "icon": "🚩", "label": "'100%' and 'Always'", "note": "Absolute language — does not exist in medicine" },
-          { "icon": "🌿", "label": "'Natural' ≠ safe", "note": "Many natural substances are toxic" },
-          { "icon": "👥", "label": "Testimonial ≠ evidence", "note": "Personal stories cannot replace data" },
-          { "icon": "🤫", "label": "'Hidden secrets'", "note": "Classic sign of conspiracy framing" }
+          {
+            "icon": "🚩",
+            "label": "'100%' and 'Always'",
+            "note": "Absolute language — does not exist in medicine"
+          },
+          {
+            "icon": "🌿",
+            "label": "'Natural' ≠ safe",
+            "note": "Many natural substances are toxic"
+          },
+          {
+            "icon": "👥",
+            "label": "Testimonial ≠ evidence",
+            "note": "Personal stories cannot replace data"
+          },
+          {
+            "icon": "🤫",
+            "label": "'Hidden secrets'",
+            "note": "Classic sign of conspiracy framing"
+          }
         ]
       },
       {
@@ -18083,10 +18324,26 @@
           "Simple test: 'Would this person share the information even if I bought nothing?' — helps assess true motivation."
         ],
         "points": [
-          { "icon": "😱", "label": "Fear-based hook", "note": "Creates fear to manufacture demand" },
-          { "icon": "⏰", "label": "Time pressure", "note": "'Only X spots left' — a sales tactic" },
-          { "icon": "💰", "label": "Conflict of interest", "note": "The seller cannot be objective" },
-          { "icon": "🎓", "label": "Education vs. selling", "note": "Real content needs no immediate call-to-action" }
+          {
+            "icon": "😱",
+            "label": "Fear-based hook",
+            "note": "Creates fear to manufacture demand"
+          },
+          {
+            "icon": "⏰",
+            "label": "Time pressure",
+            "note": "'Only X spots left' — a sales tactic"
+          },
+          {
+            "icon": "💰",
+            "label": "Conflict of interest",
+            "note": "The seller cannot be objective"
+          },
+          {
+            "icon": "🎓",
+            "label": "Education vs. selling",
+            "note": "Real content needs no immediate call-to-action"
+          }
         ]
       },
       {
@@ -18104,10 +18361,26 @@
           "Report to health authorities when encountering content advising treatment cessation: this violates health advertising regulations and may be subject to criminal penalties."
         ],
         "points": [
-          { "icon": "🚫", "label": "Never stop medication alone", "note": "Always have a doctor's guidance" },
-          { "icon": "⚕️", "label": "Integrative ≠ replacement", "note": "Complementary alongside medication, not instead" },
-          { "icon": "⚡", "label": "Immediate danger", "note": "Heart, diabetes, epilepsy — risk is immediate" },
-          { "icon": "📢", "label": "Report violations", "note": "Health authorities can act on such content" }
+          {
+            "icon": "🚫",
+            "label": "Never stop medication alone",
+            "note": "Always have a doctor's guidance"
+          },
+          {
+            "icon": "⚕️",
+            "label": "Integrative ≠ replacement",
+            "note": "Complementary alongside medication, not instead"
+          },
+          {
+            "icon": "⚡",
+            "label": "Immediate danger",
+            "note": "Heart, diabetes, epilepsy — risk is immediate"
+          },
+          {
+            "icon": "📢",
+            "label": "Report violations",
+            "note": "Health authorities can act on such content"
+          }
         ]
       }
     ],
@@ -18127,10 +18400,26 @@
           "If you genuinely want to reduce medication: positive lifestyle changes (diet, exercise) can support this — but done ALONGSIDE treatment, not REPLACING it, and under medical supervision."
         ],
         "points": [
-          { "icon": "⚡", "label": "Immediate danger", "note": "Blood pressure, heart, epilepsy — hours matter" },
-          { "icon": "📉", "label": "Rebound effect", "note": "Condition flares more severely after stopping" },
-          { "icon": "👨‍⚕️", "label": "Only the doctor decides", "note": "No one else has the right to advise stopping medication" },
-          { "icon": "🔄", "label": "Taper if needed", "note": "Must follow a specific protocol — never abruptly" }
+          {
+            "icon": "⚡",
+            "label": "Immediate danger",
+            "note": "Blood pressure, heart, epilepsy — hours matter"
+          },
+          {
+            "icon": "📉",
+            "label": "Rebound effect",
+            "note": "Condition flares more severely after stopping"
+          },
+          {
+            "icon": "👨‍⚕️",
+            "label": "Only the doctor decides",
+            "note": "No one else has the right to advise stopping medication"
+          },
+          {
+            "icon": "🔄",
+            "label": "Taper if needed",
+            "note": "Must follow a specific protocol — never abruptly"
+          }
         ]
       },
       {
@@ -18148,10 +18437,26 @@
           "If concerned about liver health: test AST, ALT, GGT, bilirubin — real results, no money wasted on unproven products."
         ],
         "points": [
-          { "icon": "🔬", "label": "Liver self-filters 24/7", "note": "1.5L blood/min — no 'detox' needed" },
-          { "icon": "⚠️", "label": "DILI is a real risk", "note": "High-dose herbs → liver damage" },
-          { "icon": "🏥", "label": "Real detox = ICU", "note": "Not tea or supplements" },
-          { "icon": "🧪", "label": "Test reality", "note": "AST/ALT/GGT give accurate numbers" }
+          {
+            "icon": "🔬",
+            "label": "Liver self-filters 24/7",
+            "note": "1.5L blood/min — no 'detox' needed"
+          },
+          {
+            "icon": "⚠️",
+            "label": "DILI is a real risk",
+            "note": "High-dose herbs → liver damage"
+          },
+          {
+            "icon": "🏥",
+            "label": "Real detox = ICU",
+            "note": "Not tea or supplements"
+          },
+          {
+            "icon": "🧪",
+            "label": "Test reality",
+            "note": "AST/ALT/GGT give accurate numbers"
+          }
         ]
       },
       {
@@ -18169,10 +18474,26 @@
           "Herb-drug interactions: St. John's Wort reduces efficacy of oral contraceptives, anti-rejection drugs, and HIV medications — 'natural' does not mean non-interacting."
         ],
         "points": [
-          { "icon": "🧬", "label": "Genetics determine response", "note": "Pharmacogenomics — every person differs" },
-          { "icon": "🤰", "label": "Pregnancy = caution", "note": "Default: no safety data available" },
-          { "icon": "🫘", "label": "Kidney/liver disease need screening", "note": "Substances accumulate when kidneys/liver are impaired" },
-          { "icon": "💊", "label": "Herb-drug interactions", "note": "St. John's Wort + prescription drugs = dangerous" }
+          {
+            "icon": "🧬",
+            "label": "Genetics determine response",
+            "note": "Pharmacogenomics — every person differs"
+          },
+          {
+            "icon": "🤰",
+            "label": "Pregnancy = caution",
+            "note": "Default: no safety data available"
+          },
+          {
+            "icon": "🫘",
+            "label": "Kidney/liver disease need screening",
+            "note": "Substances accumulate when kidneys/liver are impaired"
+          },
+          {
+            "icon": "💊",
+            "label": "Herb-drug interactions",
+            "note": "St. John's Wort + prescription drugs = dangerous"
+          }
         ]
       },
       {
@@ -18190,10 +18511,26 @@
           "If concerned about cardiovascular health: regular blood pressure checks, lipid panel, blood sugar control, no smoking — these are the evidence-based measures."
         ],
         "points": [
-          { "icon": "🔬", "label": "Plaque cannot be 'rinsed'", "note": "Requires specialist medical intervention" },
-          { "icon": "💊", "label": "Statins are real treatment", "note": "Strongest evidence for atherosclerosis" },
-          { "icon": "🧪", "label": "Measure blood lipids", "note": "LDL/HDL/triglycerides — real numbers" },
-          { "icon": "🏃", "label": "Lifestyle > supplements", "note": "Exercise + diet have higher evidence than pills" }
+          {
+            "icon": "🔬",
+            "label": "Plaque cannot be 'rinsed'",
+            "note": "Requires specialist medical intervention"
+          },
+          {
+            "icon": "💊",
+            "label": "Statins are real treatment",
+            "note": "Strongest evidence for atherosclerosis"
+          },
+          {
+            "icon": "🧪",
+            "label": "Measure blood lipids",
+            "note": "LDL/HDL/triglycerides — real numbers"
+          },
+          {
+            "icon": "🏃",
+            "label": "Lifestyle > supplements",
+            "note": "Exercise + diet have higher evidence than pills"
+          }
         ]
       }
     ],
@@ -18213,10 +18550,26 @@
           "When you see this phrase, the next question is: 'What is being monitored? How often? When should results be reported to a doctor?' — to know how to use it correctly."
         ],
         "points": [
-          { "icon": "✅", "label": "Acknowledges limits", "note": "Honest about complementary role" },
-          { "icon": "🔗", "label": "Alongside primary treatment", "note": "Supplements, does not replace" },
-          { "icon": "📱", "label": "Monitoring tools", "note": "Wearables, apps — valuable when used correctly" },
-          { "icon": "❓", "label": "Ask specifically", "note": "What to monitor? When to report to doctor?" }
+          {
+            "icon": "✅",
+            "label": "Acknowledges limits",
+            "note": "Honest about complementary role"
+          },
+          {
+            "icon": "🔗",
+            "label": "Alongside primary treatment",
+            "note": "Supplements, does not replace"
+          },
+          {
+            "icon": "📱",
+            "label": "Monitoring tools",
+            "note": "Wearables, apps — valuable when used correctly"
+          },
+          {
+            "icon": "❓",
+            "label": "Ask specifically",
+            "note": "What to monitor? When to report to doctor?"
+          }
         ]
       },
       {
@@ -18234,10 +18587,26 @@
           "Next step when hearing this phrase: 'Personalised based on what information? Who evaluates? Are tests needed?' — to understand the specific process."
         ],
         "points": [
-          { "icon": "🧬", "label": "Precision medicine", "note": "Modern medicine based on genetics + lifestyle" },
-          { "icon": "⚖️", "label": "No overpromising", "note": "Acknowledges no universal solution" },
-          { "icon": "📋", "label": "Specific assessment needed", "note": "Tests, history, personal goals" },
-          { "icon": "✅", "label": "Sign of honesty", "note": "The speaker understands their information's limits" }
+          {
+            "icon": "🧬",
+            "label": "Precision medicine",
+            "note": "Modern medicine based on genetics + lifestyle"
+          },
+          {
+            "icon": "⚖️",
+            "label": "No overpromising",
+            "note": "Acknowledges no universal solution"
+          },
+          {
+            "icon": "📋",
+            "label": "Specific assessment needed",
+            "note": "Tests, history, personal goals"
+          },
+          {
+            "icon": "✅",
+            "label": "Sign of honesty",
+            "note": "The speaker understands their information's limits"
+          }
         ]
       },
       {
@@ -18255,10 +18624,26 @@
           "How to make good use of it: note what you've read, prepare specific questions for your doctor at the next appointment — online content and doctors complement each other."
         ],
         "points": [
-          { "icon": "🩺", "label": "Doctor knows you specifically", "note": "History, medications, test results" },
-          { "icon": "⚖️", "label": "Info ≠ medical advice", "note": "Two legally distinct concepts" },
-          { "icon": "✅", "label": "Sign of honesty", "note": "The speaker knows their limits" },
-          { "icon": "📝", "label": "Use it wisely", "note": "Write questions → ask doctor next appointment" }
+          {
+            "icon": "🩺",
+            "label": "Doctor knows you specifically",
+            "note": "History, medications, test results"
+          },
+          {
+            "icon": "⚖️",
+            "label": "Info ≠ medical advice",
+            "note": "Two legally distinct concepts"
+          },
+          {
+            "icon": "✅",
+            "label": "Sign of honesty",
+            "note": "The speaker knows their limits"
+          },
+          {
+            "icon": "📝",
+            "label": "Use it wisely",
+            "note": "Write questions → ask doctor next appointment"
+          }
         ]
       },
       {
@@ -18276,10 +18661,26 @@
           "The right question: 'Does this complementary therapy interact with my treatment medication?' — ask your doctor and pharmacist before adding anything."
         ],
         "points": [
-          { "icon": "🔗", "label": "Complementary, not replacement", "note": "Integrative medicine — always keep primary treatment" },
-          { "icon": "✅", "label": "Sign of honesty", "note": "Product knows its place in care" },
-          { "icon": "⚠️", "label": "Ask about interactions", "note": "Supplement + medication may conflict" },
-          { "icon": "🏥", "label": "Integrative medicine", "note": "Properly combined at major hospitals" }
+          {
+            "icon": "🔗",
+            "label": "Complementary, not replacement",
+            "note": "Integrative medicine — always keep primary treatment"
+          },
+          {
+            "icon": "✅",
+            "label": "Sign of honesty",
+            "note": "Product knows its place in care"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Ask about interactions",
+            "note": "Supplement + medication may conflict"
+          },
+          {
+            "icon": "🏥",
+            "label": "Integrative medicine",
+            "note": "Properly combined at major hospitals"
+          }
         ]
       }
     ],
@@ -23209,9 +23610,15 @@
     "f3_plate_heading": "Healthy Plate Template",
     "f3_fat_note": "+ A small amount of healthy fats: olive oil, avocado, nuts.",
     "plate_parts": [
-      { "label": "½ plate — Vegetables, soup, salad, low-sugar fruit" },
-      { "label": "¼ plate — Protein: meat, fish, eggs, legumes" },
-      { "label": "¼ plate — Carbs: rice, noodles, potato, oats" }
+      {
+        "label": "½ plate — Vegetables, soup, salad, low-sugar fruit"
+      },
+      {
+        "label": "¼ plate — Protein: meat, fish, eggs, legumes"
+      },
+      {
+        "label": "¼ plate — Carbs: rice, noodles, potato, oats"
+      }
     ],
     "f6_intro": "Do the baseline test and repeat every 4 weeks to measure comprehensive progress.",
     "f7_intro": "Rule: Even 5 minutes works. Don't skip entirely — just pick a shorter version.",
@@ -23239,10 +23646,22 @@
           "Journaling about stress immediately reduces its intensity: writing externalizes worry from the mental loop, freeing working memory to tackle real problems."
         ],
         "points": [
-          { "label": "Short Stress = Beneficial", "note": "Acute stress boosts performance — chronic is the danger" },
-          { "label": "Changes Brain Structure", "note": "High cortisol actually shrinks the hippocampus" },
-          { "label": "Exhale Longer", "note": "4 in – 6 out — vagus nerve calms in 60–90 seconds" },
-          { "label": "Sleep Deprivation = +37% Cortisol", "note": "Adequate sleep is the #1 anti-stress measure" }
+          {
+            "label": "Short Stress = Beneficial",
+            "note": "Acute stress boosts performance — chronic is the danger"
+          },
+          {
+            "label": "Changes Brain Structure",
+            "note": "High cortisol actually shrinks the hippocampus"
+          },
+          {
+            "label": "Exhale Longer",
+            "note": "4 in – 6 out — vagus nerve calms in 60–90 seconds"
+          },
+          {
+            "label": "Sleep Deprivation = +37% Cortisol",
+            "note": "Adequate sleep is the #1 anti-stress measure"
+          }
         ]
       },
       "mood": {
@@ -23256,10 +23675,22 @@
           "Sleep and mood: just one night of poor sleep reduces emotional regulation by 60%. Mood tracking and sleep logs together reveal patterns most people are unaware of."
         ],
         "points": [
-          { "label": "Mood vs. Emotion", "note": "Emotions last minutes; mood lasts hours to days" },
-          { "label": "Movement = Immediate Boost", "note": "10-min walk raises mood — faster than many medications" },
-          { "label": "Behavioral Activation", "note": "Do one small thing — mood usually follows action" },
-          { "label": "Gut–Brain Axis", "note": "90% of serotonin produced in the gut — food matters" }
+          {
+            "label": "Mood vs. Emotion",
+            "note": "Emotions last minutes; mood lasts hours to days"
+          },
+          {
+            "label": "Movement = Immediate Boost",
+            "note": "10-min walk raises mood — faster than many medications"
+          },
+          {
+            "label": "Behavioral Activation",
+            "note": "Do one small thing — mood usually follows action"
+          },
+          {
+            "label": "Gut–Brain Axis",
+            "note": "90% of serotonin produced in the gut — food matters"
+          }
         ]
       },
       "calm": {
@@ -23273,10 +23704,22 @@
           "3-sentence journaling: 'What am I grateful for today?', 'What is occupying my mind?', 'What do I want to do better tomorrow?' — 5 minutes, major impact on clarity and mood."
         ],
         "points": [
-          { "label": "5 Minutes Is Enough", "note": "Consistency over duration — build up over 4 weeks" },
-          { "label": "Box Breathing", "note": "4-4-4-4 — Navy SEALs use it, and so can you" },
-          { "label": "Walk Without Your Phone", "note": "10 min: steps + calm + DMN — three in one" },
-          { "label": "3-Sentence Journaling", "note": "Gratitude + worry + improvement — 5 min of clarity" }
+          {
+            "label": "5 Minutes Is Enough",
+            "note": "Consistency over duration — build up over 4 weeks"
+          },
+          {
+            "label": "Box Breathing",
+            "note": "4-4-4-4 — Navy SEALs use it, and so can you"
+          },
+          {
+            "label": "Walk Without Your Phone",
+            "note": "10 min: steps + calm + DMN — three in one"
+          },
+          {
+            "label": "3-Sentence Journaling",
+            "note": "Gratitude + worry + improvement — 5 min of clarity"
+          }
         ]
       },
       "journal": {
@@ -23290,10 +23733,22 @@
           "Digital journaling is equally effective: apps like Day One or Notion work the same as paper. The key is writing regularly, not the medium. Choose whatever lowers friction to start."
         ],
         "points": [
-          { "label": "Externalizes Mental Loops", "note": "Writing frees working memory from repetitive worry" },
-          { "label": "Start with One Line", "note": "Low threshold leads to consistent habit — don't set high targets" },
-          { "label": "Gratitude Rewires the Brain", "note": "3 specific grateful things daily — 3–4 weeks to see change" },
-          { "label": "Solution Focus", "note": "Ask 'one small step' — shifts from threat to resource mode" }
+          {
+            "label": "Externalizes Mental Loops",
+            "note": "Writing frees working memory from repetitive worry"
+          },
+          {
+            "label": "Start with One Line",
+            "note": "Low threshold leads to consistent habit — don't set high targets"
+          },
+          {
+            "label": "Gratitude Rewires the Brain",
+            "note": "3 specific grateful things daily — 3–4 weeks to see change"
+          },
+          {
+            "label": "Solution Focus",
+            "note": "Ask 'one small step' — shifts from threat to resource mode"
+          }
         ]
       }
     },

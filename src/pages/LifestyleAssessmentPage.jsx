@@ -404,7 +404,7 @@ export default function LifestyleAssessmentPage() {
         <div className="w-20 h-20 rounded-3xl text-6xl bg-surface border flex items-center justify-center shrink-0 animate-float" style={{ borderColor: `rgba(${RGB},0.2)` }}>📋</div>
         <div>
           <h1 className="text-5xl md:text-6xl font-bold text-text leading-tight animate-fade-in-up">{tPillars('pillarC.assessment_title', { defaultValue: 'Đánh Giá Lối Sống' })}</h1>
-          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>C0 · Lifestyle Assessment</span>
+          <span className="inline-block text-base font-bold uppercase tracking-widest mt-3 mb-4 px-3 py-1 rounded-full border" style={{ color: COLOR, background: `rgba(${RGB},0.1)`, borderColor: `rgba(${RGB},0.2)` }}>{tPillars('pillarC.assessment_badge')}</span>
           <p className="text-muted text-lg leading-relaxed max-w-2xl">{tPillars('pillarC.assessment_desc', { defaultValue: 'Đánh giá lối sống hiện tại của bạn qua 7 khía cạnh quan trọng. Kết quả sẽ xác định bạn đang ở Track nào và đề xuất hành động ưu tiên phù hợp.' })}</p>
         </div>
       </div>

@@ -1744,7 +1744,8 @@
     "sub_progress_name": "Fortschrittsstufen & Überprüfungen",
     "sub_progress_h1_main": "Fortschrittstreppe",
     "sub_progress_h1_accent": "Monatliche Fortschrittschecks",
-    "sub_progress_desc": "6 zielorientierte Fortschrittspfade, regelmäßige Fortschrittschecks und ein visuelles Radar-Diagramm zur Verfolgung der umfassenden Entwicklung über die Zeit."
+    "sub_progress_desc": "6 zielorientierte Fortschrittspfade, regelmäßige Fortschrittschecks und ein visuelles Radar-Diagramm zur Verfolgung der umfassenden Entwicklung über die Zeit.",
+    "sub_back_overview": "Zurück zur Übersicht"
   },
   "pillarB": {
     "id": "b",
@@ -3422,10 +3423,22 @@
         }
       ],
       "weekly_protocol": [
-        { "title": "Gleicher Tag, gleiche Zeit", "text": "Einmal pro Woche morgens wiegen, nach dem Bad, vor dem Frühstück. Gleicher Wochentag (z. B. Montag)." },
-        { "title": "Durchschnitt von 3 Morgen", "text": "3 aufeinanderfolgende Morgen messen (Mo, Di, Mi) → Durchschnitt nehmen. Reduziert Salz-/Wasserrauschen." },
-        { "title": "Taillenumfang richtig messen", "text": "Auf Nabelhöhe, sanft ausatmen, nicht einziehen. Zweimal messen und mitteln. Taillenwert ist verlässlicher als die Waage." },
-        { "title": "An einem festen Ort aufzeichnen", "text": "Notizen-App / Google Sheets / Notizbuch. Notiere: Gewicht + Taille + Energie 1–10 + Stunden Schlaf." }
+        {
+          "title": "Gleicher Tag, gleiche Zeit",
+          "text": "Einmal pro Woche morgens wiegen, nach dem Bad, vor dem Frühstück. Gleicher Wochentag (z. B. Montag)."
+        },
+        {
+          "title": "Durchschnitt von 3 Morgen",
+          "text": "3 aufeinanderfolgende Morgen messen (Mo, Di, Mi) → Durchschnitt nehmen. Reduziert Salz-/Wasserrauschen."
+        },
+        {
+          "title": "Taillenumfang richtig messen",
+          "text": "Auf Nabelhöhe, sanft ausatmen, nicht einziehen. Zweimal messen und mitteln. Taillenwert ist verlässlicher als die Waage."
+        },
+        {
+          "title": "An einem festen Ort aufzeichnen",
+          "text": "Notizen-App / Google Sheets / Notizbuch. Notiere: Gewicht + Taille + Energie 1–10 + Stunden Schlaf."
+        }
       ]
     },
     "b6": {
@@ -3478,11 +3491,43 @@
         "🧂 Gewürze & Sonstiges"
       ],
       "shopping_items": [
-        ["10–14 Eier (~1 Packung)", "Hähnchenbrust / knochenlose Keule (400–500g)", "Basa / Makrele / Lachs (400g)", "Mageres Schweine- oder Rindfleisch (300g)", "Frische Garnelen (200g, optional)", "Tofu 2 Blöcke", "Ungesüßter Joghurt 4 Becher (400g)", "Ungesüßte Frischmilch (500ml)"],
-        ["Weißer Reis / Vollkornreis (1kg)", "Süßkartoffeln 4–6 kleine (~600g)", "Haferflocken (250g)", "1 Laib Vollkornbrot", "Nudeln / Reisnudeln / Glasnudeln (nach Bedarf)"],
-        ["Pak Choi, Spinat (3 Bund)", "4 Gurken, 5–6 Tomaten", "1 kleiner Kürbis, 2–3 Karotten", "Pilze gemischt (200g)", "Frische Kräuter, Frühlingszwiebeln, Sojasprossen"],
-        ["1 Bund Bananen (~8 Stück)", "4–5 Äpfel", "4–5 Orangen / Mandarinen", "3–4 Guaven", "Drachenfrucht / Papaya (1 kleine)"],
-        ["Cashews / Mandeln (100g)", "Olivenöl oder Sojaöl (250ml, hält 3–4 Wochen)", "Erdnussbutter zuckerarm (1 kleines Glas)", "Sesamsamen (50g)"]
+        [
+          "10–14 Eier (~1 Packung)",
+          "Hähnchenbrust / knochenlose Keule (400–500g)",
+          "Basa / Makrele / Lachs (400g)",
+          "Mageres Schweine- oder Rindfleisch (300g)",
+          "Frische Garnelen (200g, optional)",
+          "Tofu 2 Blöcke",
+          "Ungesüßter Joghurt 4 Becher (400g)",
+          "Ungesüßte Frischmilch (500ml)"
+        ],
+        [
+          "Weißer Reis / Vollkornreis (1kg)",
+          "Süßkartoffeln 4–6 kleine (~600g)",
+          "Haferflocken (250g)",
+          "1 Laib Vollkornbrot",
+          "Nudeln / Reisnudeln / Glasnudeln (nach Bedarf)"
+        ],
+        [
+          "Pak Choi, Spinat (3 Bund)",
+          "4 Gurken, 5–6 Tomaten",
+          "1 kleiner Kürbis, 2–3 Karotten",
+          "Pilze gemischt (200g)",
+          "Frische Kräuter, Frühlingszwiebeln, Sojasprossen"
+        ],
+        [
+          "1 Bund Bananen (~8 Stück)",
+          "4–5 Äpfel",
+          "4–5 Orangen / Mandarinen",
+          "3–4 Guaven",
+          "Drachenfrucht / Papaya (1 kleine)"
+        ],
+        [
+          "Cashews / Mandeln (100g)",
+          "Olivenöl oder Sojaöl (250ml, hält 3–4 Wochen)",
+          "Erdnussbutter zuckerarm (1 kleines Glas)",
+          "Sesamsamen (50g)"
+        ]
       ],
       "meal_prep_steps_title": "Wochenend-Meal-Prep — 6 Schritte",
       "meal_prep_steps": [
@@ -4730,7 +4775,10 @@
         ],
         "cta": "24-Wochen-Roadmap ansehen"
       }
-    ]
+    ],
+    "nav_prev": "← Zurück",
+    "nav_home": "Zur Hauptseite",
+    "nav_next": "Weiter →"
   },
   "pillarC": {
     "id": "c",
@@ -4902,10 +4950,26 @@
           "Zeichen, dass du bereit für den Busy-Track bist: 7+ Stunden Schlaf an ≥5 Nächten/Woche, manchmal ohne Wecker aufwachen, Morgenenergie deutlich besser als zuvor."
         ],
         "points": [
-          { "icon": "⏰", "label": "Feste Aufwachzeit", "note": "Erst eine einzige Sache ändern" },
-          { "icon": "☀️", "label": "10 Min. draußen", "note": "Morgenlicht — der erste Schritt" },
-          { "icon": "📵", "label": "Keine Bildschirme 30 Min. vor dem Schlafen", "note": "Wochen 3–4" },
-          { "icon": "🌱", "label": "1 Gewohnheit pro 2 Wochen", "note": "Nicht zu viele auf einmal" }
+          {
+            "icon": "⏰",
+            "label": "Feste Aufwachzeit",
+            "note": "Erst eine einzige Sache ändern"
+          },
+          {
+            "icon": "☀️",
+            "label": "10 Min. draußen",
+            "note": "Morgenlicht — der erste Schritt"
+          },
+          {
+            "icon": "📵",
+            "label": "Keine Bildschirme 30 Min. vor dem Schlafen",
+            "note": "Wochen 3–4"
+          },
+          {
+            "icon": "🌱",
+            "label": "1 Gewohnheit pro 2 Wochen",
+            "note": "Nicht zu viele auf einmal"
+          }
         ]
       },
       {
@@ -4922,10 +4986,26 @@
           "Koffein-Protokoll für Vielbeschäftigte: nicht innerhalb von 90 Minuten nach dem Aufwachen (Cortisol ist dann natürlich am höchsten — Koffein ist zu diesem Zeitpunkt weniger wirksam), Cut-off um 13 Uhr, max. 400mg/Tag (2–4 Kaffees)."
         ],
         "points": [
-          { "icon": "🔗", "label": "Habit Stacking", "note": "Gewohnheiten an bestehende Routinen knüpfen" },
-          { "icon": "⏱️", "label": "60-Min.-Timer", "note": "Aufstehen — Priorität #1 für Schreibtischarbeiter" },
-          { "icon": "🧘", "label": "5 Min. Box-Atmung", "note": "Nach einem stressigen Meeting" },
-          { "icon": "☕", "label": "Koffein 90 Min. nach dem Aufwachen", "note": "Wirksamer als sofort nach dem Aufstehen" }
+          {
+            "icon": "🔗",
+            "label": "Habit Stacking",
+            "note": "Gewohnheiten an bestehende Routinen knüpfen"
+          },
+          {
+            "icon": "⏱️",
+            "label": "60-Min.-Timer",
+            "note": "Aufstehen — Priorität #1 für Schreibtischarbeiter"
+          },
+          {
+            "icon": "🧘",
+            "label": "5 Min. Box-Atmung",
+            "note": "Nach einem stressigen Meeting"
+          },
+          {
+            "icon": "☕",
+            "label": "Koffein 90 Min. nach dem Aufwachen",
+            "note": "Wirksamer als sofort nach dem Aufstehen"
+          }
         ]
       },
       {
@@ -4942,10 +5022,26 @@
           "Minimales Erholungs-Toolkit für Hochfrequenz-Trainierende: 10 Min. Foam-Rolling nach dem Training, 5 Min. Atemübung vor dem Schlafen, 7–9 Stunden Schlaf (Trainierende brauchen mehr als Nicht-Trainierende), und 1 Tag aktive Erholung pro Woche."
         ],
         "points": [
-          { "icon": "😴", "label": "7–9h Schlaf", "note": "80% der Muskelregeneration erfolgt im Tiefschlaf" },
-          { "icon": "📊", "label": "HRV-Monitoring", "note": "Nervensystem-Erholung jeden Morgen messen" },
-          { "icon": "🗓️", "label": "Deload alle 4–6 Wochen", "note": "Volumen 1 Woche um 40–50% reduzieren" },
-          { "icon": "🥩", "label": "Protein 1,6–2,2g/kg", "note": "Auf 4–5 Mahlzeiten verteilen" }
+          {
+            "icon": "😴",
+            "label": "7–9h Schlaf",
+            "note": "80% der Muskelregeneration erfolgt im Tiefschlaf"
+          },
+          {
+            "icon": "📊",
+            "label": "HRV-Monitoring",
+            "note": "Nervensystem-Erholung jeden Morgen messen"
+          },
+          {
+            "icon": "🗓️",
+            "label": "Deload alle 4–6 Wochen",
+            "note": "Volumen 1 Woche um 40–50% reduzieren"
+          },
+          {
+            "icon": "🥩",
+            "label": "Protein 1,6–2,2g/kg",
+            "note": "Auf 4–5 Mahlzeiten verteilen"
+          }
         ]
       }
     ],
@@ -15110,7 +15206,8 @@
     "c4_full_link": "Vollständiger Leitfaden zur aktiven Erholung →",
     "c5_full_link": "Vollständiger Deload-Leitfaden →",
     "c6_full_link": "Vollständiger Atemtechnik-Leitfaden →",
-    "c7_full_link": "Vollständiger Umgebungsgestaltungs-Leitfaden →"
+    "c7_full_link": "Vollständiger Umgebungsgestaltungs-Leitfaden →",
+    "assessment_badge": "C0 · Lebensstilbewertung"
   },
   "pillarD": {
     "id": "d",
@@ -15806,10 +15903,26 @@
           "Das Ziel ist nicht, 'Stress zu eliminieren', sondern 'ihn früh zu erkennen und eine klügere Reaktion statt automatischer Kompensationsreaktionen zu wählen'."
         ],
         "points": [
-          { "icon": "💪", "label": "Körperebene", "note": "Herzrasen, flache Atmung, verspannte Schultern" },
-          { "icon": "😤", "label": "Emotionsebene", "note": "Leicht reizbar, ängstlich, frustriert" },
-          { "icon": "🔄", "label": "Verhaltensebene", "note": "Naschen, Scrollen, Aufschieben" },
-          { "icon": "🔧", "label": "Pausenpunkt", "note": "Atmen → benennen → nächster kleiner Schritt" }
+          {
+            "icon": "💪",
+            "label": "Körperebene",
+            "note": "Herzrasen, flache Atmung, verspannte Schultern"
+          },
+          {
+            "icon": "😤",
+            "label": "Emotionsebene",
+            "note": "Leicht reizbar, ängstlich, frustriert"
+          },
+          {
+            "icon": "🔄",
+            "label": "Verhaltensebene",
+            "note": "Naschen, Scrollen, Aufschieben"
+          },
+          {
+            "icon": "🔧",
+            "label": "Pausenpunkt",
+            "note": "Atmen → benennen → nächster kleiner Schritt"
+          }
         ]
       },
       {
@@ -15825,10 +15938,26 @@
           "Regelmäßige Zwerchfellatmung 10 Min./Tag kann den systolischen Blutdruck nach 4 Wochen um 5–10 mmHg senken — vergleichbar mit leichtem Ausdauertraining."
         ],
         "points": [
-          { "icon": "🫁", "label": "Zwerchfell", "note": "Grundlage — jederzeit anwendbar" },
-          { "icon": "⬜", "label": "Box 4-4-4-4", "note": "Fokus & schnelle Beruhigung" },
-          { "icon": "🌊", "label": "4-7-8-Atmung", "note": "Auf den Schlaf vorbereiten" },
-          { "icon": "⚡", "label": "2-Minuten-Reset", "note": "Sofort bei Überlastung anwenden" }
+          {
+            "icon": "🫁",
+            "label": "Zwerchfell",
+            "note": "Grundlage — jederzeit anwendbar"
+          },
+          {
+            "icon": "⬜",
+            "label": "Box 4-4-4-4",
+            "note": "Fokus & schnelle Beruhigung"
+          },
+          {
+            "icon": "🌊",
+            "label": "4-7-8-Atmung",
+            "note": "Auf den Schlaf vorbereiten"
+          },
+          {
+            "icon": "⚡",
+            "label": "2-Minuten-Reset",
+            "note": "Sofort bei Überlastung anwenden"
+          }
         ]
       },
       {
@@ -15844,10 +15973,26 @@
           "Meditation erfordert keine stundenlange Sitzung oder Lotus-Stellung. 3 Minuten täglich reichen, um die Gewohnheit aufzubauen und nach 2–3 Wochen klare Verbesserungen zu spüren."
         ],
         "points": [
-          { "icon": "🧠", "label": "Gesünderes Gehirn", "note": "Hippocampus verdickt sich nach 8 Wochen" },
-          { "icon": "😌", "label": "Weniger Angst", "note": "Vergleichbar mit leichter bis mittlerer KVT" },
-          { "icon": "😴", "label": "Besserer Schlaf", "note": "5-min Body-Scan vor dem Schlafen" },
-          { "icon": "🔄", "label": "Mit 3 Minuten beginnen", "note": "Wandern → Zurückkehren = Training" }
+          {
+            "icon": "🧠",
+            "label": "Gesünderes Gehirn",
+            "note": "Hippocampus verdickt sich nach 8 Wochen"
+          },
+          {
+            "icon": "😌",
+            "label": "Weniger Angst",
+            "note": "Vergleichbar mit leichter bis mittlerer KVT"
+          },
+          {
+            "icon": "😴",
+            "label": "Besserer Schlaf",
+            "note": "5-min Body-Scan vor dem Schlafen"
+          },
+          {
+            "icon": "🔄",
+            "label": "Mit 3 Minuten beginnen",
+            "note": "Wandern → Zurückkehren = Training"
+          }
         ]
       },
       {
@@ -15863,10 +16008,26 @@
           "'Ein freundliches Wort an dich selbst' am Ende jeder Journal-Sitzung ist eine wissenschaftlich fundierte Selbstmitgefühlspraxis — kein Eigenlob, sondern Anerkennung, dass du dich bemühst."
         ],
         "points": [
-          { "icon": "🧠", "label": "Gedanken entleeren", "note": "Geistigen Ballast loslassen" },
-          { "icon": "😌", "label": "Emotionen verarbeiten", "note": "Benennen = Amygdala beruhigt sich" },
-          { "icon": "📈", "label": "Lektionen ziehen", "note": "Nach einem schlechten Tag journalen" },
-          { "icon": "💙", "label": "Freundlich zu dir selbst", "note": "Tägliches Selbstmitgefühl" }
+          {
+            "icon": "🧠",
+            "label": "Gedanken entleeren",
+            "note": "Geistigen Ballast loslassen"
+          },
+          {
+            "icon": "😌",
+            "label": "Emotionen verarbeiten",
+            "note": "Benennen = Amygdala beruhigt sich"
+          },
+          {
+            "icon": "📈",
+            "label": "Lektionen ziehen",
+            "note": "Nach einem schlechten Tag journalen"
+          },
+          {
+            "icon": "💙",
+            "label": "Freundlich zu dir selbst",
+            "note": "Tägliches Selbstmitgefühl"
+          }
         ]
       },
       {
@@ -15882,10 +16043,26 @@
           "Gestaltung der digitalen Umgebung: süchtig machende Apps auf Bildschirm 2 oder in einem schwer zugänglichen Ordner, Telefon nachts im anderen Zimmer — reduziert automatisches Scrollen um 80% ohne Willenskraft."
         ],
         "points": [
-          { "icon": "😴", "label": "Besserer Schlaf", "note": "Bildschirm 20 Min. vor dem Schlafen ausschalten" },
-          { "icon": "🎯", "label": "Tiefe Konzentration", "note": "Benachrichtigungen während der Arbeit ausschalten" },
-          { "icon": "🧘", "label": "Mentaler Freiraum", "note": "10 Min./Tag ohne Bildschirm" },
-          { "icon": "🏠", "label": "Digitale Umgebung", "note": "Süchtig machende Apps auf Bildschirm 2" }
+          {
+            "icon": "😴",
+            "label": "Besserer Schlaf",
+            "note": "Bildschirm 20 Min. vor dem Schlafen ausschalten"
+          },
+          {
+            "icon": "🎯",
+            "label": "Tiefe Konzentration",
+            "note": "Benachrichtigungen während der Arbeit ausschalten"
+          },
+          {
+            "icon": "🧘",
+            "label": "Mentaler Freiraum",
+            "note": "10 Min./Tag ohne Bildschirm"
+          },
+          {
+            "icon": "🏠",
+            "label": "Digitale Umgebung",
+            "note": "Süchtig machende Apps auf Bildschirm 2"
+          }
         ]
       },
       {
@@ -15901,10 +16078,26 @@
           "Habit Stacking: eine neue Gewohnheit nach einer bestehenden verknüpfen ('Nach dem Zähneputzen meditiere ich 3 Minuten') reduziert den Startwiderstand und erhöht die Aufrechterhaltunsrate laut BJ Foggs Verhaltensforschung."
         ],
         "points": [
-          { "icon": "🔄", "label": "1%-Regel", "note": "Die kleinste Version ist immer noch ein Gewinn" },
-          { "icon": "💙", "label": "Keine Selbstvorwürfe", "note": "Selbstmitgefühl erhöht die Ausdauer" },
-          { "icon": "🔗", "label": "Habit Stacking", "note": "An bestehende Gewohnheiten knüpfen" },
-          { "icon": "🏗️", "label": "Kleine Systeme", "note": "Gestalten statt Willenskraft" }
+          {
+            "icon": "🔄",
+            "label": "1%-Regel",
+            "note": "Die kleinste Version ist immer noch ein Gewinn"
+          },
+          {
+            "icon": "💙",
+            "label": "Keine Selbstvorwürfe",
+            "note": "Selbstmitgefühl erhöht die Ausdauer"
+          },
+          {
+            "icon": "🔗",
+            "label": "Habit Stacking",
+            "note": "An bestehende Gewohnheiten knüpfen"
+          },
+          {
+            "icon": "🏗️",
+            "label": "Kleine Systeme",
+            "note": "Gestalten statt Willenskraft"
+          }
         ]
       }
     ],
@@ -18025,10 +18218,26 @@
           "Ein YouTube- oder TikTok-Kanal mit Millionen Followern validiert keine medizinische Korrektheit — Popularität ist kein Wahrheitsbeweis."
         ],
         "points": [
-          { "icon": "🎓", "label": "Echte Qualifikationen", "note": "Spezifische Institution online überprüfbar" },
-          { "icon": "🏥", "label": "Seriöse Organisation", "note": "WHO, Bundesgesundheitsministerium, Ärztegesellschaft" },
-          { "icon": "⚠️", "label": "Selbsternannte Titel", "note": "'Experte' ohne rückverfolgbare Institution" },
-          { "icon": "🔍", "label": "Prüfmethode", "note": "Name + Qualifikation + Berufslizenz" }
+          {
+            "icon": "🎓",
+            "label": "Echte Qualifikationen",
+            "note": "Spezifische Institution online überprüfbar"
+          },
+          {
+            "icon": "🏥",
+            "label": "Seriöse Organisation",
+            "note": "WHO, Bundesgesundheitsministerium, Ärztegesellschaft"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Selbsternannte Titel",
+            "note": "'Experte' ohne rückverfolgbare Institution"
+          },
+          {
+            "icon": "🔍",
+            "label": "Prüfmethode",
+            "note": "Name + Qualifikation + Berufslizenz"
+          }
         ]
       },
       {
@@ -18046,10 +18255,26 @@
           "Google Scholar und PubMed sind kostenlose Tools, mit denen jeder zitierte Forschung überprüfen kann."
         ],
         "points": [
-          { "icon": "📊", "label": "RCT = Goldstandard", "note": "Randomisierte kontrollierte Studie mit Kontrollgruppe" },
-          { "icon": "🐭", "label": "Tierstudien ≠ menschliche Belege", "note": "Humanstudien zur Bestätigung erforderlich" },
-          { "icon": "🔗", "label": "Spezifische Zitate", "note": "Autorenname, Zeitschrift, Erscheinungsjahr" },
-          { "icon": "🔎", "label": "Selbst überprüfen", "note": "PubMed.gov — kostenlose Suche" }
+          {
+            "icon": "📊",
+            "label": "RCT = Goldstandard",
+            "note": "Randomisierte kontrollierte Studie mit Kontrollgruppe"
+          },
+          {
+            "icon": "🐭",
+            "label": "Tierstudien ≠ menschliche Belege",
+            "note": "Humanstudien zur Bestätigung erforderlich"
+          },
+          {
+            "icon": "🔗",
+            "label": "Spezifische Zitate",
+            "note": "Autorenname, Zeitschrift, Erscheinungsjahr"
+          },
+          {
+            "icon": "🔎",
+            "label": "Selbst überprüfen",
+            "note": "PubMed.gov — kostenlose Suche"
+          }
         ]
       },
       {
@@ -18067,10 +18292,26 @@
           "Wenn ein Anspruch zu gut klingt, um wahr zu sein — ist er es meist nicht. Der 'Zu-gut-um-wahr'-Effekt ist im Gesundheitsbereich besonders häufig."
         ],
         "points": [
-          { "icon": "🚩", "label": "'100%' und 'Immer'", "note": "Absolute Sprache — existiert in der Medizin nicht" },
-          { "icon": "🌿", "label": "'Natürlich' ≠ sicher", "note": "Viele natürliche Substanzen sind giftig" },
-          { "icon": "👥", "label": "Erfahrungsbericht ≠ Beweis", "note": "Persönliche Geschichten können keine Daten ersetzen" },
-          { "icon": "🤫", "label": "'Versteckte Geheimnisse'", "note": "Klassisches Zeichen von Verschwörungsdenken" }
+          {
+            "icon": "🚩",
+            "label": "'100%' und 'Immer'",
+            "note": "Absolute Sprache — existiert in der Medizin nicht"
+          },
+          {
+            "icon": "🌿",
+            "label": "'Natürlich' ≠ sicher",
+            "note": "Viele natürliche Substanzen sind giftig"
+          },
+          {
+            "icon": "👥",
+            "label": "Erfahrungsbericht ≠ Beweis",
+            "note": "Persönliche Geschichten können keine Daten ersetzen"
+          },
+          {
+            "icon": "🤫",
+            "label": "'Versteckte Geheimnisse'",
+            "note": "Klassisches Zeichen von Verschwörungsdenken"
+          }
         ]
       },
       {
@@ -18088,10 +18329,26 @@
           "Einfacher Test: 'Würde diese Person die Information teilen, auch wenn ich nichts kaufe?' — hilft, die wahre Motivation einzuschätzen."
         ],
         "points": [
-          { "icon": "😱", "label": "Angst-basierter Einstieg", "note": "Erzeugt Angst, um Bedarf zu schaffen" },
-          { "icon": "⏰", "label": "Zeitdruck", "note": "'Nur noch X Plätze' — Verkaufstaktik" },
-          { "icon": "💰", "label": "Interessenkonflikt", "note": "Der Verkäufer kann nicht objektiv sein" },
-          { "icon": "🎓", "label": "Aufklärung vs. Verkauf", "note": "Echter Inhalt braucht keinen sofortigen CTA" }
+          {
+            "icon": "😱",
+            "label": "Angst-basierter Einstieg",
+            "note": "Erzeugt Angst, um Bedarf zu schaffen"
+          },
+          {
+            "icon": "⏰",
+            "label": "Zeitdruck",
+            "note": "'Nur noch X Plätze' — Verkaufstaktik"
+          },
+          {
+            "icon": "💰",
+            "label": "Interessenkonflikt",
+            "note": "Der Verkäufer kann nicht objektiv sein"
+          },
+          {
+            "icon": "🎓",
+            "label": "Aufklärung vs. Verkauf",
+            "note": "Echter Inhalt braucht keinen sofortigen CTA"
+          }
         ]
       },
       {
@@ -18109,10 +18366,26 @@
           "Bei inhaltserstattenden Empfehlungen zum Behandlungsabbruch: an Gesundheitsbehörden melden — Verstoß gegen Vorschriften zur Gesundheitswerbung, möglicherweise strafrechtlich verfolgbar."
         ],
         "points": [
-          { "icon": "🚫", "label": "Niemals Medikamente allein absetzen", "note": "Immer ärztliche Anleitung einholen" },
-          { "icon": "⚕️", "label": "Integrativ ≠ Ersatz", "note": "Ergänzend neben Medikamenten, nicht stattdessen" },
-          { "icon": "⚡", "label": "Unmittelbare Gefahr", "note": "Herz, Diabetes, Epilepsie — Risiko ist sofort" },
-          { "icon": "📢", "label": "Verstöße melden", "note": "Gesundheitsbehörden können gegen solche Inhalte vorgehen" }
+          {
+            "icon": "🚫",
+            "label": "Niemals Medikamente allein absetzen",
+            "note": "Immer ärztliche Anleitung einholen"
+          },
+          {
+            "icon": "⚕️",
+            "label": "Integrativ ≠ Ersatz",
+            "note": "Ergänzend neben Medikamenten, nicht stattdessen"
+          },
+          {
+            "icon": "⚡",
+            "label": "Unmittelbare Gefahr",
+            "note": "Herz, Diabetes, Epilepsie — Risiko ist sofort"
+          },
+          {
+            "icon": "📢",
+            "label": "Verstöße melden",
+            "note": "Gesundheitsbehörden können gegen solche Inhalte vorgehen"
+          }
         ]
       }
     ],
@@ -18132,10 +18405,26 @@
           "Wenn du wirklich Medikamente reduzieren möchtest: positive Lebensstiländerungen können unterstützen — aber ZUSAMMEN mit der Behandlung, nicht ALS ERSATZ, und unter medizinischer Aufsicht."
         ],
         "points": [
-          { "icon": "⚡", "label": "Unmittelbare Gefahr", "note": "Blutdruck, Herz, Epilepsie — Stunden entscheiden" },
-          { "icon": "📉", "label": "Rebound-Effekt", "note": "Erkrankung flammt nach Absetzen stärker auf" },
-          { "icon": "👨‍⚕️", "label": "Nur der Arzt entscheidet", "note": "Niemand sonst hat das Recht, Absetzung zu empfehlen" },
-          { "icon": "🔄", "label": "Bei Bedarf schrittweise", "note": "Muss spezifischem Protokoll folgen — nie abrupt" }
+          {
+            "icon": "⚡",
+            "label": "Unmittelbare Gefahr",
+            "note": "Blutdruck, Herz, Epilepsie — Stunden entscheiden"
+          },
+          {
+            "icon": "📉",
+            "label": "Rebound-Effekt",
+            "note": "Erkrankung flammt nach Absetzen stärker auf"
+          },
+          {
+            "icon": "👨‍⚕️",
+            "label": "Nur der Arzt entscheidet",
+            "note": "Niemand sonst hat das Recht, Absetzung zu empfehlen"
+          },
+          {
+            "icon": "🔄",
+            "label": "Bei Bedarf schrittweise",
+            "note": "Muss spezifischem Protokoll folgen — nie abrupt"
+          }
         ]
       },
       {
@@ -18153,10 +18442,26 @@
           "Bei Bedenken zur Lebergesundheit: AST, ALT, GGT, Bilirubin testen — echte Ergebnisse, kein Geld für unbewiesen Produkte verschwenden."
         ],
         "points": [
-          { "icon": "🔬", "label": "Leber filtert 24/7 selbst", "note": "1,5 L Blut/Min — keine 'Entgiftung' nötig" },
-          { "icon": "⚠️", "label": "DILI ist ein echtes Risiko", "note": "Hochdosierte Kräuter → Leberschäden" },
-          { "icon": "🏥", "label": "Echte Entgiftung = ICU", "note": "Kein Tee oder Nahrungsergänzungsmittel" },
-          { "icon": "🧪", "label": "Realität testen", "note": "AST/ALT/GGT liefern genaue Zahlen" }
+          {
+            "icon": "🔬",
+            "label": "Leber filtert 24/7 selbst",
+            "note": "1,5 L Blut/Min — keine 'Entgiftung' nötig"
+          },
+          {
+            "icon": "⚠️",
+            "label": "DILI ist ein echtes Risiko",
+            "note": "Hochdosierte Kräuter → Leberschäden"
+          },
+          {
+            "icon": "🏥",
+            "label": "Echte Entgiftung = ICU",
+            "note": "Kein Tee oder Nahrungsergänzungsmittel"
+          },
+          {
+            "icon": "🧪",
+            "label": "Realität testen",
+            "note": "AST/ALT/GGT liefern genaue Zahlen"
+          }
         ]
       },
       {
@@ -18174,10 +18479,26 @@
           "Kräuter-Arzneimittel-Wechselwirkungen: Johanniskraut reduziert die Wirksamkeit von Verhütungsmitteln, Abstoßungsmedikamenten und HIV-Medikamenten — 'natürlich' bedeutet nicht wechselwirkungsfrei."
         ],
         "points": [
-          { "icon": "🧬", "label": "Genetik bestimmt die Reaktion", "note": "Pharmakogenomik — jeder Mensch ist anders" },
-          { "icon": "🤰", "label": "Schwangerschaft = Vorsicht", "note": "Standard: keine Sicherheitsdaten verfügbar" },
-          { "icon": "🫘", "label": "Nieren-/Lebererkrankung braucht Kontrolle", "note": "Stoffe reichern sich bei eingeschränkter Funktion an" },
-          { "icon": "💊", "label": "Kräuter-Arzneimittel-Wechselwirkungen", "note": "Johanniskraut + Rezeptpflichtige Medikamente = gefährlich" }
+          {
+            "icon": "🧬",
+            "label": "Genetik bestimmt die Reaktion",
+            "note": "Pharmakogenomik — jeder Mensch ist anders"
+          },
+          {
+            "icon": "🤰",
+            "label": "Schwangerschaft = Vorsicht",
+            "note": "Standard: keine Sicherheitsdaten verfügbar"
+          },
+          {
+            "icon": "🫘",
+            "label": "Nieren-/Lebererkrankung braucht Kontrolle",
+            "note": "Stoffe reichern sich bei eingeschränkter Funktion an"
+          },
+          {
+            "icon": "💊",
+            "label": "Kräuter-Arzneimittel-Wechselwirkungen",
+            "note": "Johanniskraut + Rezeptpflichtige Medikamente = gefährlich"
+          }
         ]
       },
       {
@@ -18195,10 +18516,26 @@
           "Bei Bedenken zur Herzgesundheit: regelmäßige Blutdruckmessung, Lipidpanel, Blutzuckerkontrolle, kein Rauchen — dies sind die evidenzbasierten Maßnahmen."
         ],
         "points": [
-          { "icon": "🔬", "label": "Plaques können nicht 'weggespült' werden", "note": "Erfordert spezialisierte medizinische Intervention" },
-          { "icon": "💊", "label": "Statine sind echte Behandlung", "note": "Stärkste Belege für Arteriosklerose" },
-          { "icon": "🧪", "label": "Blutfette messen", "note": "LDL/HDL/Triglyzeride — echte Zahlen" },
-          { "icon": "🏃", "label": "Lebensstil > Nahrungsergänzung", "note": "Sport + Ernährung haben höhere Evidenz als Pillen" }
+          {
+            "icon": "🔬",
+            "label": "Plaques können nicht 'weggespült' werden",
+            "note": "Erfordert spezialisierte medizinische Intervention"
+          },
+          {
+            "icon": "💊",
+            "label": "Statine sind echte Behandlung",
+            "note": "Stärkste Belege für Arteriosklerose"
+          },
+          {
+            "icon": "🧪",
+            "label": "Blutfette messen",
+            "note": "LDL/HDL/Triglyzeride — echte Zahlen"
+          },
+          {
+            "icon": "🏃",
+            "label": "Lebensstil > Nahrungsergänzung",
+            "note": "Sport + Ernährung haben höhere Evidenz als Pillen"
+          }
         ]
       }
     ],
@@ -18218,10 +18555,26 @@
           "Wenn du diese Formulierung siehst, ist die nächste Frage: 'Was wird überwacht? Wie oft? Wann sollten Ergebnisse dem Arzt gemeldet werden?' — um es korrekt einzusetzen."
         ],
         "points": [
-          { "icon": "✅", "label": "Erkennt Grenzen an", "note": "Ehrlich über ergänzende Rolle" },
-          { "icon": "🔗", "label": "Neben Primärbehandlung", "note": "Ergänzt, ersetzt nicht" },
-          { "icon": "📱", "label": "Monitoring-Tools", "note": "Wearables, Apps — wertvoll bei korrekter Anwendung" },
-          { "icon": "❓", "label": "Konkret nachfragen", "note": "Was überwachen? Wann Arzt informieren?" }
+          {
+            "icon": "✅",
+            "label": "Erkennt Grenzen an",
+            "note": "Ehrlich über ergänzende Rolle"
+          },
+          {
+            "icon": "🔗",
+            "label": "Neben Primärbehandlung",
+            "note": "Ergänzt, ersetzt nicht"
+          },
+          {
+            "icon": "📱",
+            "label": "Monitoring-Tools",
+            "note": "Wearables, Apps — wertvoll bei korrekter Anwendung"
+          },
+          {
+            "icon": "❓",
+            "label": "Konkret nachfragen",
+            "note": "Was überwachen? Wann Arzt informieren?"
+          }
         ]
       },
       {
@@ -18239,10 +18592,26 @@
           "Nächster Schritt: 'Personalisiert basierend auf welchen Informationen? Wer bewertet? Sind Tests nötig?' — um den spezifischen Prozess zu verstehen."
         ],
         "points": [
-          { "icon": "🧬", "label": "Präzisionsmedizin", "note": "Moderne Medizin basierend auf Genetik + Lebensstil" },
-          { "icon": "⚖️", "label": "Kein Overpromising", "note": "Erkennt keine Universallösung an" },
-          { "icon": "📋", "label": "Spezifische Beurteilung nötig", "note": "Tests, Anamnese, persönliche Ziele" },
-          { "icon": "✅", "label": "Zeichen von Ehrlichkeit", "note": "Der Sprecher kennt die Grenzen seiner Informationen" }
+          {
+            "icon": "🧬",
+            "label": "Präzisionsmedizin",
+            "note": "Moderne Medizin basierend auf Genetik + Lebensstil"
+          },
+          {
+            "icon": "⚖️",
+            "label": "Kein Overpromising",
+            "note": "Erkennt keine Universallösung an"
+          },
+          {
+            "icon": "📋",
+            "label": "Spezifische Beurteilung nötig",
+            "note": "Tests, Anamnese, persönliche Ziele"
+          },
+          {
+            "icon": "✅",
+            "label": "Zeichen von Ehrlichkeit",
+            "note": "Der Sprecher kennt die Grenzen seiner Informationen"
+          }
         ]
       },
       {
@@ -18260,10 +18629,26 @@
           "Wie man es gut nutzt: Notizen aus dem Gelesenen machen, spezifische Fragen für den nächsten Arzttermin vorbereiten — Online-Inhalte und Arzt ergänzen sich."
         ],
         "points": [
-          { "icon": "🩺", "label": "Arzt kennt dich spezifisch", "note": "Anamnese, Medikamente, Testergebnisse" },
-          { "icon": "⚖️", "label": "Info ≠ medizinischer Rat", "note": "Zwei rechtlich unterschiedliche Konzepte" },
-          { "icon": "✅", "label": "Zeichen von Ehrlichkeit", "note": "Der Sprecher kennt seine Grenzen" },
-          { "icon": "📝", "label": "Klug nutzen", "note": "Fragen aufschreiben → beim nächsten Termin stellen" }
+          {
+            "icon": "🩺",
+            "label": "Arzt kennt dich spezifisch",
+            "note": "Anamnese, Medikamente, Testergebnisse"
+          },
+          {
+            "icon": "⚖️",
+            "label": "Info ≠ medizinischer Rat",
+            "note": "Zwei rechtlich unterschiedliche Konzepte"
+          },
+          {
+            "icon": "✅",
+            "label": "Zeichen von Ehrlichkeit",
+            "note": "Der Sprecher kennt seine Grenzen"
+          },
+          {
+            "icon": "📝",
+            "label": "Klug nutzen",
+            "note": "Fragen aufschreiben → beim nächsten Termin stellen"
+          }
         ]
       },
       {
@@ -18281,10 +18666,26 @@
           "Die richtige Frage: 'Wechselwirkt diese Komplementärtherapie mit meinen Behandlungsmedikamenten?' — Arzt und Apotheker fragen, bevor man etwas hinzufügt."
         ],
         "points": [
-          { "icon": "🔗", "label": "Ergänzend, nicht ersetzend", "note": "Integrative Medizin — immer Primärbehandlung behalten" },
-          { "icon": "✅", "label": "Zeichen von Ehrlichkeit", "note": "Produkt kennt seinen Platz in der Versorgung" },
-          { "icon": "⚠️", "label": "Auf Wechselwirkungen achten", "note": "Nahrungsergänzung + Medikamente können konfligieren" },
-          { "icon": "🏥", "label": "Integrative Medizin", "note": "Korrekt kombiniert an großen Krankenhäusern" }
+          {
+            "icon": "🔗",
+            "label": "Ergänzend, nicht ersetzend",
+            "note": "Integrative Medizin — immer Primärbehandlung behalten"
+          },
+          {
+            "icon": "✅",
+            "label": "Zeichen von Ehrlichkeit",
+            "note": "Produkt kennt seinen Platz in der Versorgung"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Auf Wechselwirkungen achten",
+            "note": "Nahrungsergänzung + Medikamente können konfligieren"
+          },
+          {
+            "icon": "🏥",
+            "label": "Integrative Medizin",
+            "note": "Korrekt kombiniert an großen Krankenhäusern"
+          }
         ]
       }
     ],
@@ -23237,9 +23638,15 @@
     "f3_plate_heading": "Gesundes Teller-Template",
     "f3_fat_note": "+ Eine kleine Menge gesunder Fette: Olivenöl, Avocado, Nüsse.",
     "plate_parts": [
-      { "label": "½ Teller — Gemüse, Suppe, Salat, zuckerarmes Obst" },
-      { "label": "¼ Teller — Protein: Fleisch, Fisch, Eier, Hülsenfrüchte" },
-      { "label": "¼ Teller — Kohlenhydrate: Reis, Nudeln, Kartoffeln, Haferflocken" }
+      {
+        "label": "½ Teller — Gemüse, Suppe, Salat, zuckerarmes Obst"
+      },
+      {
+        "label": "¼ Teller — Protein: Fleisch, Fisch, Eier, Hülsenfrüchte"
+      },
+      {
+        "label": "¼ Teller — Kohlenhydrate: Reis, Nudeln, Kartoffeln, Haferflocken"
+      }
     ],
     "f6_intro": "Führe den Eingangstest durch und wiederhole alle 4 Wochen, um den umfassenden Fortschritt zu messen.",
     "f7_intro": "Prinzip: Auch 5 Minuten reichen. Nicht komplett auslassen — einfach die kürzere Version wählen.",
@@ -23267,10 +23674,22 @@
           "Über Stress zu schreiben reduziert sofort seine Intensität: Schreiben externalisiert Sorgen aus der mentalen Schleife und befreit das Arbeitsgedächtnis für reale Probleme."
         ],
         "points": [
-          { "label": "Kurzer Stress = Nützlich", "note": "Akuter Stress steigert Leistung – chronischer ist die Gefahr" },
-          { "label": "Verändert Gehirnstruktur", "note": "Hoher Kortisol schrumpft tatsächlich den Hippocampus" },
-          { "label": "Länger ausatmen", "note": "4 ein – 6 aus — Vagusnerv beruhigt in 60–90 Sekunden" },
-          { "label": "Schlafentzug = +37% Kortisol", "note": "Ausreichend Schlaf ist die wichtigste Anti-Stress-Maßnahme" }
+          {
+            "label": "Kurzer Stress = Nützlich",
+            "note": "Akuter Stress steigert Leistung – chronischer ist die Gefahr"
+          },
+          {
+            "label": "Verändert Gehirnstruktur",
+            "note": "Hoher Kortisol schrumpft tatsächlich den Hippocampus"
+          },
+          {
+            "label": "Länger ausatmen",
+            "note": "4 ein – 6 aus — Vagusnerv beruhigt in 60–90 Sekunden"
+          },
+          {
+            "label": "Schlafentzug = +37% Kortisol",
+            "note": "Ausreichend Schlaf ist die wichtigste Anti-Stress-Maßnahme"
+          }
         ]
       },
       "mood": {
@@ -23284,10 +23703,22 @@
           "Schlaf und Stimmung: Schon eine Nacht schlechter Schlaf reduziert die emotionale Regulierung um 60%. Stimmungs-Tracking und Schlafprotokoll zusammen enthüllen Muster, derer sich die meisten Menschen nicht bewusst sind."
         ],
         "points": [
-          { "label": "Stimmung vs. Emotion", "note": "Emotionen dauern Minuten; Stimmung Stunden bis Tage" },
-          { "label": "Bewegung = Sofortige Verbesserung", "note": "10-Minuten-Spaziergang hebt Stimmung – schneller als viele Medikamente" },
-          { "label": "Verhaltensaktivierung", "note": "Tu eine kleine Sache – die Stimmung folgt der Handlung meist" },
-          { "label": "Darm-Hirn-Achse", "note": "90% des Serotonins im Darm produziert – Ernährung ist wichtig" }
+          {
+            "label": "Stimmung vs. Emotion",
+            "note": "Emotionen dauern Minuten; Stimmung Stunden bis Tage"
+          },
+          {
+            "label": "Bewegung = Sofortige Verbesserung",
+            "note": "10-Minuten-Spaziergang hebt Stimmung – schneller als viele Medikamente"
+          },
+          {
+            "label": "Verhaltensaktivierung",
+            "note": "Tu eine kleine Sache – die Stimmung folgt der Handlung meist"
+          },
+          {
+            "label": "Darm-Hirn-Achse",
+            "note": "90% des Serotonins im Darm produziert – Ernährung ist wichtig"
+          }
         ]
       },
       "calm": {
@@ -23301,10 +23732,22 @@
           "3-Satz-Journaling: 'Wofür bin ich heute dankbar?', 'Was beschäftigt mich?', 'Was möchte ich morgen besser machen?' – 5 Minuten, große Auswirkung auf Klarheit und Stimmung."
         ],
         "points": [
-          { "label": "5 Minuten reichen", "note": "Konsistenz vor Dauer – über 4 Wochen aufbauen" },
-          { "label": "Box-Atmung", "note": "4-4-4-4 — Navy SEALs nutzen sie, du auch" },
-          { "label": "Ohne Handy spazieren", "note": "10 Min: Schritte + Ruhe + DMN – drei in einem" },
-          { "label": "3-Satz-Journaling", "note": "Dankbarkeit + Sorgen + Verbesserung – 5 Min Klarheit" }
+          {
+            "label": "5 Minuten reichen",
+            "note": "Konsistenz vor Dauer – über 4 Wochen aufbauen"
+          },
+          {
+            "label": "Box-Atmung",
+            "note": "4-4-4-4 — Navy SEALs nutzen sie, du auch"
+          },
+          {
+            "label": "Ohne Handy spazieren",
+            "note": "10 Min: Schritte + Ruhe + DMN – drei in einem"
+          },
+          {
+            "label": "3-Satz-Journaling",
+            "note": "Dankbarkeit + Sorgen + Verbesserung – 5 Min Klarheit"
+          }
         ]
       },
       "journal": {
@@ -23318,10 +23761,22 @@
           "Digitales Journaling ist gleich effektiv: Apps wie Day One oder Notion funktionieren genauso wie Papier. Der Schlüssel ist regelmäßiges Schreiben, nicht das Medium. Wähle, was die Einstiegshürde am meisten senkt."
         ],
         "points": [
-          { "label": "Externalisiert mentale Schleifen", "note": "Schreiben befreit das Arbeitsgedächtnis von sich wiederholenden Sorgen" },
-          { "label": "Mit einer Zeile beginnen", "note": "Niedrige Schwelle führt zu konsequenter Gewohnheit – keine hohen Ziele" },
-          { "label": "Dankbarkeit verdrahtet das Gehirn um", "note": "3 spezifische dankbare Dinge täglich – 3–4 Wochen bis zur Wirkung" },
-          { "label": "Lösungsfokus", "note": "Frage 'einen kleinen Schritt' – wechselt von Bedrohungs- zu Ressourcenmodus" }
+          {
+            "label": "Externalisiert mentale Schleifen",
+            "note": "Schreiben befreit das Arbeitsgedächtnis von sich wiederholenden Sorgen"
+          },
+          {
+            "label": "Mit einer Zeile beginnen",
+            "note": "Niedrige Schwelle führt zu konsequenter Gewohnheit – keine hohen Ziele"
+          },
+          {
+            "label": "Dankbarkeit verdrahtet das Gehirn um",
+            "note": "3 spezifische dankbare Dinge täglich – 3–4 Wochen bis zur Wirkung"
+          },
+          {
+            "label": "Lösungsfokus",
+            "note": "Frage 'einen kleinen Schritt' – wechselt von Bedrohungs- zu Ressourcenmodus"
+          }
         ]
       }
     },

@@ -764,7 +764,7 @@ export default function PillarAFramework() {
           className="flex items-center gap-2 text-base bg-surface border border-border rounded-xl px-4 py-2 text-muted hover:text-text hover:border-orange-500/30 transition-all"
         >
           <span>↩</span>
-          <span>Về tổng quan</span>
+          <span>{tPillars('pillarA.sub_back_overview')}</span>
         </Link>
         <Link
           to="/pillar/a/weekly"

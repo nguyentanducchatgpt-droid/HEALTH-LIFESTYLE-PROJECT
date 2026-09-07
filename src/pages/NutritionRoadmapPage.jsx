@@ -907,7 +907,7 @@ export default function NutritionRoadmapPage() {
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link to="/pillar/b" className="flex items-center gap-1.5 text-[10px] font-bold text-muted hover:text-lime-400 transition-colors">
             <span>←</span>
-            <span>Dinh Dưỡng & Thực Đơn</span>
+            <span>{tPillars('pillarB.title')}</span>
           </Link>
           {scrolled && (
             <p className="text-[10px] font-bold text-lime-400">Lộ Trình {showAll ? '24' : '12'} Tuần</p>

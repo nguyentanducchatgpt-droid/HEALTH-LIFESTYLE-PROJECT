@@ -943,15 +943,15 @@ export default function NutritionProteinPage() {
       <RevealBlock className="mb-8">
         <div className="grid md:grid-cols-3 gap-4">
           <Link to="/pillar/b/formula" className="group rounded-2xl border border-green-500/20 bg-green-500/4 p-4 hover:border-green-500/40 transition-all">
-            <p className="text-[9px] text-muted mb-1">← Xem trước</p>
+            <p className="text-[9px] text-muted mb-1">{tPillars('pillarB.nav_prev')}</p>
             <p className="text-base font-bold text-green-400">Công Thức Meal Plan</p>
           </Link>
           <Link to="/pillar/b" className="group rounded-2xl border border-lime-500/20 bg-lime-500/4 p-4 hover:border-lime-500/40 transition-all text-center">
-            <p className="text-[9px] text-muted mb-1">Về trang chính</p>
-            <p className="text-base font-bold text-lime-400">Dinh Dưỡng & Thực Đơn</p>
+            <p className="text-[9px] text-muted mb-1">{tPillars('pillarB.nav_home')}</p>
+            <p className="text-base font-bold text-lime-400">{tPillars('pillarB.title')}</p>
           </Link>
           <Link to="/pillar/b/data" className="group rounded-2xl border border-purple-500/20 bg-purple-500/4 p-4 hover:border-purple-500/40 transition-all text-right">
-            <p className="text-[9px] text-muted mb-1">Xem tiếp →</p>
+            <p className="text-[9px] text-muted mb-1">{tPillars('pillarB.nav_next')}</p>
             <p className="text-base font-bold text-purple-400">Cấu Trúc Dữ Liệu</p>
           </Link>
         </div>

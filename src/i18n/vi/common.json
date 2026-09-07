@@ -16,7 +16,8 @@
     "p24w": "24 Tuần Nâng Cao",
     "psample": "Lộ Trình Mẫu",
     "contact": "Liên Hệ",
-    "donate": "Ủng Hộ"
+    "donate": "Ủng Hộ",
+    "see_all_pillars": "↓ Xem tất cả trụ cột trên trang chủ"
   },
   "brand": {
     "part1": "Sức Khỏe",
@@ -115,10 +116,26 @@
           "Cập nhật định kỳ theo bằng chứng mới — không cứng nhắc theo một lý thuyết cũ."
         ],
         "points": [
-          { "icon": "🔬", "label": "PubMed & WHO", "note": "Nguồn tài liệu tham khảo chính" },
-          { "icon": "📊", "label": "RCT & Meta-analysis", "note": "Ưu tiên bằng chứng mạnh nhất" },
-          { "icon": "🔄", "label": "Cập nhật liên tục", "note": "Theo kịp nghiên cứu mới nhất" },
-          { "icon": "🎓", "label": "Harvard Medical", "note": "Và các đại học hàng đầu thế giới" }
+          {
+            "icon": "🔬",
+            "label": "PubMed & WHO",
+            "note": "Nguồn tài liệu tham khảo chính"
+          },
+          {
+            "icon": "📊",
+            "label": "RCT & Meta-analysis",
+            "note": "Ưu tiên bằng chứng mạnh nhất"
+          },
+          {
+            "icon": "🔄",
+            "label": "Cập nhật liên tục",
+            "note": "Theo kịp nghiên cứu mới nhất"
+          },
+          {
+            "icon": "🎓",
+            "label": "Harvard Medical",
+            "note": "Và các đại học hàng đầu thế giới"
+          }
         ]
       },
       {
@@ -134,10 +151,26 @@
           "Triết lý \"không áp lực\": bỏ 1 ngày thì tiếp tục hôm sau — không cần bắt đầu lại từ đầu."
         ],
         "points": [
-          { "icon": "⏱️", "label": "25–35 phút/ngày", "note": "Đủ để thay đổi cuộc sống" },
-          { "icon": "🏠", "label": "Tại nhà, không gym", "note": "Không cần dụng cụ đặc biệt" },
-          { "icon": "🔗", "label": "Habit Stacking", "note": "Gắn vào thói quen sẵn có" },
-          { "icon": "🎒", "label": "Mọi lịch trình", "note": "Linh hoạt với người bận nhất" }
+          {
+            "icon": "⏱️",
+            "label": "25–35 phút/ngày",
+            "note": "Đủ để thay đổi cuộc sống"
+          },
+          {
+            "icon": "🏠",
+            "label": "Tại nhà, không gym",
+            "note": "Không cần dụng cụ đặc biệt"
+          },
+          {
+            "icon": "🔗",
+            "label": "Habit Stacking",
+            "note": "Gắn vào thói quen sẵn có"
+          },
+          {
+            "icon": "🎒",
+            "label": "Mọi lịch trình",
+            "note": "Linh hoạt với người bận nhất"
+          }
         ]
       },
       {
@@ -153,10 +186,26 @@
           "Nếu bỏ lỡ 1 ngày, chỉ cần tiếp tục hôm sau — không phải restart lại toàn bộ hành trình."
         ],
         "points": [
-          { "icon": "🌱", "label": "7 ngày", "note": "Khởi động & xây thói quen nền" },
-          { "icon": "💪", "label": "12 tuần", "note": "Tăng nền & củng cố hệ thống" },
-          { "icon": "🚀", "label": "24 tuần", "note": "Cá nhân hóa & làm chủ hoàn toàn" },
-          { "icon": "✅", "label": "Checklist tuần", "note": "Biết mình đang ở đâu" }
+          {
+            "icon": "🌱",
+            "label": "7 ngày",
+            "note": "Khởi động & xây thói quen nền"
+          },
+          {
+            "icon": "💪",
+            "label": "12 tuần",
+            "note": "Tăng nền & củng cố hệ thống"
+          },
+          {
+            "icon": "🚀",
+            "label": "24 tuần",
+            "note": "Cá nhân hóa & làm chủ hoàn toàn"
+          },
+          {
+            "icon": "✅",
+            "label": "Checklist tuần",
+            "note": "Biết mình đang ở đâu"
+          }
         ]
       },
       {
@@ -173,10 +222,26 @@
           "🛠️ Công cụ & Tài nguyên: Checklist ngày/tuần, template ăn uống, test đánh giá 4 tuần — dùng ngay, không cần cài app."
         ],
         "points": [
-          { "icon": "🏃", "label": "Vận động", "note": "Daily Core & Weekly Rhythm" },
-          { "icon": "🥗", "label": "Dinh dưỡng", "note": "TDEE & thực đơn cá nhân" },
-          { "icon": "🧘", "label": "Tâm trí", "note": "Thiền & quản lý stress" },
-          { "icon": "🛠️", "label": "Công cụ", "note": "Checklist & template thực dụng" }
+          {
+            "icon": "🏃",
+            "label": "Vận động",
+            "note": "Daily Core & Weekly Rhythm"
+          },
+          {
+            "icon": "🥗",
+            "label": "Dinh dưỡng",
+            "note": "TDEE & thực đơn cá nhân"
+          },
+          {
+            "icon": "🧘",
+            "label": "Tâm trí",
+            "note": "Thiền & quản lý stress"
+          },
+          {
+            "icon": "🛠️",
+            "label": "Công cụ",
+            "note": "Checklist & template thực dụng"
+          }
         ]
       }
     ],
@@ -550,29 +615,72 @@
     "journey_cta": "Xem lộ trình này →",
     "principle_tag": "NGUYÊN TẮC",
     "kpi_points": [
-      { "label": "Cách đo lường", "note": "Dùng Workout Log hoặc Checklist hàng ngày" },
-      { "label": "Tần suất kiểm tra", "note": "Cuối mỗi tuần — không kiểm tra từng ngày" },
-      { "label": "Khi chưa đạt", "note": "Ghi chú nguyên nhân → điều chỉnh plan" },
-      { "label": "Mục đích thật sự", "note": "Xây thói quen — không chỉ đạt con số" }
+      {
+        "label": "Cách đo lường",
+        "note": "Dùng Workout Log hoặc Checklist hàng ngày"
+      },
+      {
+        "label": "Tần suất kiểm tra",
+        "note": "Cuối mỗi tuần — không kiểm tra từng ngày"
+      },
+      {
+        "label": "Khi chưa đạt",
+        "note": "Ghi chú nguyên nhân → điều chỉnh plan"
+      },
+      {
+        "label": "Mục đích thật sự",
+        "note": "Xây thói quen — không chỉ đạt con số"
+      }
     ],
     "milestone_points": [
-      { "label": "Ý nghĩa thật", "note": "Vượt qua giai đoạn khó nhất — tiếp tục thôi" },
-      { "label": "Ghi vào nhật ký", "note": "Document lại ngày đạt — để nhìn lại sau" },
-      { "label": "Bước tiếp theo", "note": "Cột mốc tiếp theo đang chờ — giữ đà" },
-      { "label": "Chia sẻ với ai đó", "note": "Accountability tăng 65% tỷ lệ tiếp tục" }
+      {
+        "label": "Ý nghĩa thật",
+        "note": "Vượt qua giai đoạn khó nhất — tiếp tục thôi"
+      },
+      {
+        "label": "Ghi vào nhật ký",
+        "note": "Document lại ngày đạt — để nhìn lại sau"
+      },
+      {
+        "label": "Bước tiếp theo",
+        "note": "Cột mốc tiếp theo đang chờ — giữ đà"
+      },
+      {
+        "label": "Chia sẻ với ai đó",
+        "note": "Accountability tăng 65% tỷ lệ tiếp tục"
+      }
     ],
     "kpi_links": [
-      { "label": "Test Tiến Bộ" },
-      { "label": "Nhật Ký Tập" },
-      { "label": "Checklist Ngày" },
-      { "label": "Điểm Sức Khỏe" }
+      {
+        "label": "Test Tiến Bộ"
+      },
+      {
+        "label": "Nhật Ký Tập"
+      },
+      {
+        "label": "Checklist Ngày"
+      },
+      {
+        "label": "Điểm Sức Khỏe"
+      }
     ],
     "milestone_links": [
-      { "label": "Test Tiến Bộ" },
-      { "label": "Lộ Trình 12 Tuần" },
-      { "label": "Chương Trình Mẫu" },
-      { "label": "Khám Phá 6 Trụ Cột" }
-    ]
+      {
+        "label": "Test Tiến Bộ"
+      },
+      {
+        "label": "Lộ Trình 12 Tuần"
+      },
+      {
+        "label": "Chương Trình Mẫu"
+      },
+      {
+        "label": "Khám Phá 6 Trụ Cột"
+      }
+    ],
+    "pillar_explore_header": "Khám Phá Chi Tiết",
+    "pillar_phase_intro_prefix": "Nội dung trọng tâm của trụ cột",
+    "pillar_phase_intro_middle": "trong giai đoạn"
   },
   "contact": {
     "title": "Liên Hệ",
@@ -992,7 +1100,8 @@
     "analysis": "Phân Tích",
     "suggestions": "Gợi Ý",
     "pros": "Ưu Điểm",
-    "cons": "Hạn Chế"
+    "cons": "Hạn Chế",
+    "detail_btn": "Chi Tiết →"
   },
   "b5": {
     "weight_chart_title": "Biểu Đồ Cân Nặng — 12 Tuần",

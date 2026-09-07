@@ -1750,6 +1750,7 @@
     "id": "b",
     "title": "Ernährung & Mahlzeiten",
     "subtitle": "Nutrition",
+    "breadcrumb_back": "← Ernährung & Mahlzeiten",
     "description": "Richtig, ausreichend und ausgewogen essen — kein extremes Fasten oder Diäten nötig.",
     "icon": "🥗",
     "color": "lime",

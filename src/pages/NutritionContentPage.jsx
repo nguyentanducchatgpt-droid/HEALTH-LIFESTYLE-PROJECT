@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -402,6 +403,8 @@ function FormulaStep({ step, title, color, children, formula }) {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function NutritionContentPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const { t } = useTranslation('common');
   const [inputs, setInputs] = useState(DEFAULT_INPUTS);
   const [inputOpen, setInputOpen] = useState(false);
   const [activeModule, setActiveModule] = useState(null);
@@ -455,7 +458,7 @@ export default function NutritionContentPage() {
       {/* Sticky bar */}
       <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-bg/90 backdrop-blur-md border-b border-border/20' : 'bg-transparent'}`}>
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link to="/pillar/b" className="text-[10px] font-bold text-muted hover:text-lime-400 transition-colors">← Dinh Dưỡng & Thực Đơn</Link>
+          <Link to="/pillar/b" className="text-[10px] font-bold text-muted hover:text-lime-400 transition-colors">{tPillars('pillarB.breadcrumb_back')}</Link>
           {scrolled && <p className="text-[10px] font-bold text-lime-400">Cấu Trúc Module Nutrition</p>}
         </div>
       </div>
@@ -467,8 +470,8 @@ export default function NutritionContentPage() {
         <div className="absolute top-20 right-12 w-64 h-64 rounded-full blur-[120px]" style={{ background: 'rgba(132,204,22,0.1)' }} />
         <div className="relative pt-20 pb-14 px-4 max-w-5xl mx-auto">
           <div className="flex items-center gap-2 text-[9px] text-muted/60 mb-5">
-            <Link to="/" className="hover:text-muted">Trang Chủ</Link><span>/</span>
-            <Link to="/pillar/b" className="hover:text-lime-400">Dinh Dưỡng</Link><span>/</span>
+            <Link to="/" className="hover:text-muted">{t('nav.home')}</Link><span>/</span>
+            <Link to="/pillar/b" className="hover:text-lime-400">{tPillars('pillarB.title')}</Link><span>/</span>
             <span className="text-lime-400">Cấu Trúc Module</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end gap-8">
@@ -1027,7 +1030,7 @@ export default function NutritionContentPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link to="/pillar/b" className="px-5 py-2.5 rounded-xl border border-lime-500/30 bg-lime-500/10 text-[10px] font-bold text-lime-400 hover:bg-lime-500/20 transition-all">
-                ← Về Dinh Dưỡng & Thực Đơn
+                {tPillars('pillarB.breadcrumb_back')}
               </Link>
               <Link to="/pillar/b/roadmap" className="px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-opacity" style={{ background: 'linear-gradient(135deg, #22c55e, #84cc16)' }}>
                 Xem Lộ Trình 12/24 Tuần →

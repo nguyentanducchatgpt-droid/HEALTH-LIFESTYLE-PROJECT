@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 /* ── orbit ring ── */
 const ORBIT_ID = 'mp-orbit-kf';
@@ -213,6 +214,7 @@ const CHECKLIST_GROUPS = [
 
 /* ── main ── */
 export default function NutritionMealPrepPage() {
+  const { t: tPillars } = useTranslation('pillars');
   const C = '#6366f1';
 
   useEffect(() => {
@@ -1095,7 +1097,7 @@ export default function NutritionMealPrepPage() {
 
         <div className="text-center">
           <Link to="/pillar/b" className="inline-flex items-center gap-2 text-base text-muted hover:text-indigo-400 transition-colors">
-            ← Quay lại Nutrition &amp; Meal Plans
+            {tPillars('pillarB.breadcrumb_back')}
           </Link>
         </div>
       </div>

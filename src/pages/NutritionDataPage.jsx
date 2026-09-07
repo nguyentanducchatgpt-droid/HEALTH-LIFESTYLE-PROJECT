@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 const TEAL = '#06b6d4';
@@ -278,6 +279,7 @@ function DataFlowDiagram() {
 }
 
 export default function NutritionDataPage() {
+  const { t: tPillars } = useTranslation('pillars');
   const [inputs, setInputs] = useState(() => {
     try {
       const raw = localStorage.getItem(LS_INPUTS);
@@ -351,7 +353,7 @@ export default function NutritionDataPage() {
       {/* Breadcrumb */}
       <div className="mb-8">
         <Link to="/pillar/b" className="text-lg text-muted hover:text-cyan-400 transition-colors">
-          ← Dinh Dưỡng
+          {tPillars('pillarB.breadcrumb_back')}
         </Link>
       </div>
 

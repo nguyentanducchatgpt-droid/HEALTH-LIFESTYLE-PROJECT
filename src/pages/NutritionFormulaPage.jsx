@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const LIME = '#84cc16';
 const GREEN = '#22c55e';
@@ -286,6 +287,7 @@ function FormulaCard({ label, formula, result, color = GREEN }) {
 }
 
 export default function NutritionFormulaPage() {
+  const { t: tPillars } = useTranslation('pillars');
   const [inputs, setInputs] = useState(() => {
     try {
       const saved = JSON.parse(localStorage.getItem(LS_INPUTS) || '{}');
@@ -1053,7 +1055,7 @@ export default function NutritionFormulaPage() {
     <div className="max-w-5xl mx-auto px-4 md:px-6 py-10">
       <Link to="/pillar/b" className="inline-flex items-center gap-2 text-base text-muted hover:text-lime-400 transition-colors mb-8 group">
         <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-        <span>Dinh Dưỡng</span>
+        <span>{tPillars('pillarB.title')}</span>
       </Link>
 
       {/* Hero */}

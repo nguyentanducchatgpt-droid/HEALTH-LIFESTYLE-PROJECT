@@ -1,5 +1,6 @@
 ﻿import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 /* ─── Orbit-ring CSS ─── */
 function useOrbitRing() {
@@ -381,6 +382,7 @@ function CarbCyclingChart({ macros }) {
 
 /* ─── Main Page ─── */
 export default function NutritionAdvancedPlanPage() {
+  const { t: tPillars } = useTranslation('pillars');
   useOrbitRing();
 
   const [b0, setB0] = useState({ w: 77, h: 175, a: 1.9, sx: 'male', age: 35 });
@@ -415,7 +417,7 @@ export default function NutritionAdvancedPlanPage() {
 
         {/* ── Breadcrumb ── */}
         <Link to="/pillar/b" className="inline-flex items-center gap-2 text-lg text-[#84cc16] hover:opacity-80 transition-opacity mb-8">
-          ← Dinh Dưỡng
+          {tPillars('pillarB.breadcrumb_back')}
         </Link>
 
         {/* ── SECTION 1: Hero ── */}
@@ -1058,7 +1060,7 @@ export default function NutritionAdvancedPlanPage() {
               <Link to="/pillar/b"
                 className="px-6 py-3 rounded-2xl font-bold text-lg transition-all duration-200 border"
                 style={{ color: '#84cc16', borderColor: 'rgba(132,204,22,0.4)', background: 'rgba(132,204,22,0.08)' }}>
-                ← Về Dinh Dưỡng
+                {tPillars('pillarB.breadcrumb_back')}
               </Link>
               <Link to="/pillar/b/7day"
                 className="px-6 py-3 rounded-2xl font-bold text-lg transition-all duration-200"

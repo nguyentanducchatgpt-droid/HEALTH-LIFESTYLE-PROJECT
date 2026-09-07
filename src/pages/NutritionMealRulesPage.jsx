@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // ─── Theme constants ───────────────────────────────────────────────────────────
 const LIME = '#84cc16';
@@ -427,6 +428,7 @@ function PlateDiagram({ activeSlice, onSliceClick }) {
 
 // ─── Main component ────────────────────────────────────────────────────────────
 export default function NutritionMealRulesPage() {
+  const { t: tPillars } = useTranslation('pillars');
   useOrbitRing();
 
   const [b0, setB0] = useState({ w: 65, h: 170, a: 1.55, sx: 'male', goal: 'recomp' });
@@ -1180,7 +1182,7 @@ export default function NutritionMealRulesPage() {
             className="flex items-center gap-2 text-lg font-medium transition-colors"
             style={{ color: LIME }}
           >
-            ← Quay lại Dinh Dưỡng
+            {tPillars('pillarB.breadcrumb_back')}
           </Link>
           <div className="flex gap-3">
             <Link

@@ -1750,6 +1750,7 @@
     "id": "b",
     "title": "Nutrition & Meal Plans",
     "subtitle": "Nutrition",
+    "breadcrumb_back": "← Nutrition & Meal Plans",
     "description": "Eat right, enough, balanced — no extreme fasting or dieting needed.",
     "icon": "🥗",
     "color": "lime",

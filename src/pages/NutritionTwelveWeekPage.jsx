@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -691,6 +692,7 @@ function WeekDetail({ week }) {
 // ─── Main Export ──────────────────────────────────────────────────────────────
 
 export default function NutritionTwelveWeekPage() {
+  const { t: tPillars } = useTranslation('pillars');
   // ── Orbit ring injection
   useEffect(() => {
     if (document.getElementById('tw-orbit-kf')) return;
@@ -773,7 +775,7 @@ export default function NutritionTwelveWeekPage() {
         to="/pillar/b"
         className="inline-flex items-center gap-1.5 text-lg text-muted hover:text-teal-400 transition-colors mb-8"
       >
-        ← Dinh Dưỡng
+        {tPillars('pillarB.breadcrumb_back')}
       </Link>
 
       {/* ── Hero Row ─────────────────────────────────────────────────────────── */}

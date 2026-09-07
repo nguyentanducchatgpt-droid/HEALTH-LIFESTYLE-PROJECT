@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -823,6 +824,8 @@ function FAQSection() {
 const DEFAULT_INPUTS = { weight: 70, height: 170, age: 30, sex: 'male', activityKey: 'moderate', goalKey: 'recomp' };
 
 export default function NutritionRoadmapPage() {
+  const { t: tPillars } = useTranslation('pillars');
+  const { t } = useTranslation('common');
   const [inputs, setInputs] = useState(DEFAULT_INPUTS);
   const [showAll, setShowAll] = useState(false);
   const [activePhase, setActivePhase] = useState(0);
@@ -931,9 +934,9 @@ export default function NutritionRoadmapPage() {
         <div className="relative pt-20 pb-14 px-4 max-w-5xl mx-auto">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-[9px] text-muted/60 mb-6">
-            <Link to="/" className="hover:text-muted transition-colors">Trang Chủ</Link>
+            <Link to="/" className="hover:text-muted transition-colors">{t('nav.home')}</Link>
             <span>/</span>
-            <Link to="/pillar/b" className="hover:text-lime-400 transition-colors">Dinh Dưỡng</Link>
+            <Link to="/pillar/b" className="hover:text-lime-400 transition-colors">{tPillars('pillarB.title')}</Link>
             <span>/</span>
             <span className="text-lime-400">Lộ Trình</span>
           </div>
@@ -1129,7 +1132,7 @@ export default function NutritionRoadmapPage() {
             <div className="flex flex-wrap justify-center gap-3">
               <Link to="/pillar/b"
                 className="px-5 py-2.5 rounded-xl border border-lime-500/30 bg-lime-500/10 text-[10px] font-bold text-lime-400 hover:bg-lime-500/20 transition-all">
-                ← Về Dinh Dưỡng & Thực Đơn
+                {tPillars('pillarB.breadcrumb_back')}
               </Link>
               <button onClick={() => { setActivePhase(0); window.scrollTo({ top: 400, behavior: 'smooth' }); }}
                 className="px-5 py-2.5 rounded-xl text-[10px] font-bold text-bg hover:opacity-90 transition-opacity"

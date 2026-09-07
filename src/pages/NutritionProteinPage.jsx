@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const GREEN = '#22c55e';
 const LIME = '#84cc16';
@@ -183,6 +184,7 @@ function SourceBar({ item, portion, active }) {
 
 /* ─── Main page ─── */
 export default function NutritionProteinPage() {
+  const { t: tPillars } = useTranslation('pillars');
   const [inputs, setInputs] = useState({
     weight: 70, height: 170, age: 30, sex: 'male',
     activityKey: 'moderate', goalKey: 'gain',
@@ -281,7 +283,7 @@ export default function NutritionProteinPage() {
       {/* ── Breadcrumb ── */}
       <Link to="/pillar/b" className="inline-flex items-center gap-1.5 text-[10px] text-muted hover:text-green-400 transition-colors mb-8">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3"><polyline points="15 18 9 12 15 6"/></svg>
-        Dinh dưỡng & Thực đơn
+        {tPillars('pillarB.title')}
       </Link>
 
       {/* ── Hero ── */}

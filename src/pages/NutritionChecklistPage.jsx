@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThoughtBubble from '../components/ThoughtBubble';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -234,6 +235,7 @@ function ScoreGauge({ score }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function NutritionChecklistPage() {
+  const { t: tPillars } = useTranslation('pillars');
   const b0 = computeB0();
 
   // CSS injection
@@ -337,7 +339,7 @@ export default function NutritionChecklistPage() {
 
       {/* Breadcrumb */}
       <Link to="/pillar/b" className="inline-flex items-center gap-1.5 text-base text-muted hover:text-emerald-400 transition-colors mb-8">
-        ← Dinh Dưỡng
+        {tPillars('pillarB.breadcrumb_back')}
       </Link>
 
       {/* Hero Row */}

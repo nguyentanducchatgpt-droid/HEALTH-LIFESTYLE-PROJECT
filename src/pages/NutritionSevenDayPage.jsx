@@ -1,5 +1,6 @@
 ﻿import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 /* ─── Orbit-ring CSS ─── */
 function useOrbitRing() {
@@ -326,6 +327,7 @@ function WeeklyChart({ targetKcal }) {
 
 /* ─── Main Page ─── */
 export default function NutritionSevenDayPage() {
+  const { t: tPillars } = useTranslation('pillars');
   useOrbitRing();
 
   const [b0Raw, setB0Raw] = useState({ w: 65, h: 170, a: 1.55, sx: 'male', goal: 'healthy' });
@@ -896,7 +898,7 @@ export default function NutritionSevenDayPage() {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-lg transition-all duration-200"
               style={{ background: 'rgba(132,204,22,0.12)', color: '#84cc16', border: '1px solid rgba(132,204,22,0.3)' }}
             >
-              ← Quay lại Dinh Dưỡng
+              {tPillars('pillarB.breadcrumb_back')}
             </Link>
             <Link
               to="/pillar/b/meals"

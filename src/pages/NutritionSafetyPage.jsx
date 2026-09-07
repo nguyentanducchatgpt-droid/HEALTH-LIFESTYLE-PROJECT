@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 /* ── constants ── */
 const C = '#0ea5e9';
@@ -336,6 +337,7 @@ function WeeklyChecklist() {
 
 /* ── main page ── */
 export default function NutritionSafetyPage() {
+  const { t: tPillars } = useTranslation('pillars');
   const [activeTier, setActiveTier] = useState('green');
   const [flipMsg, setFlipMsg] = useState(null);
 
@@ -374,7 +376,7 @@ export default function NutritionSafetyPage() {
     <main className="px-4 md:px-6 max-w-4xl mx-auto pt-28 md:pt-32 pb-24">
       {/* breadcrumb */}
       <Link to="/pillar/b" className="inline-flex items-center gap-1 text-lg text-gray-400 hover:text-sky-400 transition-colors mb-8">
-        ← Dinh dưỡng & Thực đơn
+        {tPillars('pillarB.breadcrumb_back')}
       </Link>
 
       {/* hero */}
@@ -816,7 +818,7 @@ export default function NutritionSafetyPage() {
               📋 Template Meal Plan
             </Link>
             <Link to="/pillar/b" className="px-5 py-2.5 rounded-full text-lg font-bold text-gray-400 border border-white/10 hover:text-white transition-all">
-              ← Về Dinh Dưỡng
+              {tPillars('pillarB.breadcrumb_back')}
             </Link>
           </div>
         </div>

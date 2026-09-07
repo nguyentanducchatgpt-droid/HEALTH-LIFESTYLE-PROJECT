@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 /* ── orbit ring ── */
 const ORBIT_ID = 'tm-orbit-kf';
@@ -181,6 +182,7 @@ const CRITERIA_10 = [
 
 /* ── main component ── */
 export default function NutritionTemplatePage() {
+  const { t: tPillars } = useTranslation('pillars');
   const C = '#f43f5e';
 
   /* orbit ring */
@@ -991,7 +993,7 @@ export default function NutritionTemplatePage() {
 
         <div className="text-center">
           <Link to="/pillar/b" className="inline-flex items-center gap-2 text-base text-muted hover:text-rose-400 transition-colors">
-            ← Quay lại Nutrition &amp; Meal Plans
+            {tPillars('pillarB.breadcrumb_back')}
           </Link>
         </div>
       </div>

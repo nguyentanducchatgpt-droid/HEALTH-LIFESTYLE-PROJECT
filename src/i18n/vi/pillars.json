@@ -398,6 +398,7 @@
     "id": "b",
     "title": "Dinh Dưỡng & Thực Đơn",
     "subtitle": "Dinh Dưỡng",
+    "breadcrumb_back": "← Dinh Dưỡng & Thực Đơn",
     "description": "Ăn đúng, đủ, cân bằng — không cần nhịn hay ăn kiêng cực đoan.",
     "icon": "🥗",
     "color": "lime",

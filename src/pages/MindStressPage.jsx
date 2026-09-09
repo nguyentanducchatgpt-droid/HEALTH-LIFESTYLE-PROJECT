@@ -271,6 +271,7 @@ const STRESS_LEVEL_MODALS = [
 const LAYER_MODALS = [
   {
     icon: '💪', color: '#f97316', rgb: '249,115,22',
+    modalTitleKey: 'stress.layer_body_modal_title',
     modalTitle: 'Tầng Cơ Thể — Triệu Chứng & Cơ Chế',
     img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Cơ thể là "cảnh báo sớm" của stress — các triệu chứng thực thể xuất hiện TRƯỚC khi bạn nhận ra mình đang stress. Nhận diện ở tầng này giúp can thiệp sớm nhất.',
@@ -292,6 +293,7 @@ const LAYER_MODALS = [
   },
   {
     icon: '😤', color: '#ec4899', rgb: '236,72,153',
+    modalTitleKey: 'stress.layer_emotion_modal_title',
     modalTitle: 'Tầng Cảm Xúc — Từ Kích Động Đến Quá Tải',
     img: 'https://images.unsplash.com/photo-1620228885847-9eab2a1adddc?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Amygdala "chiếm quyền" vỏ não khi stress cao — đây là lý do bạn dễ cáu, mất kiên nhẫn và không thể suy nghĩ rõ ràng dù bình thường vẫn làm được.',
@@ -313,6 +315,7 @@ const LAYER_MODALS = [
   },
   {
     icon: '🔄', color: '#6366f1', rgb: '99,102,241',
+    modalTitleKey: 'stress.layer_behavior_modal_title',
     modalTitle: 'Tầng Hành Vi — Bù Đắp Và Né Tránh',
     img: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Các hành vi bù đắp không phải sự yếu đuối — đó là não tự tìm nguồn dopamine nhanh vì stress đã làm cạn kiệt dopamine từ các hoạt động có ý nghĩa.',
@@ -337,6 +340,7 @@ const LAYER_MODALS = [
 const STRESS_TYPE_MODALS = [
   {
     icon: '✅', color: '#10b981', rgb: '16,185,129', titleKey: 'type_eustress',
+    modalTitleKey: 'stress.eustress_modal_title',
     modalTitle: 'Stress Tích Cực (Eustress)',
     img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Eustress là nhiên liệu hiệu suất — não và cơ thể được thiết kế để phát huy tốt nhất khi có mức thách thức vừa phải, đủ để kích hoạt nhưng không đủ để làm tê liệt.',
@@ -358,6 +362,7 @@ const STRESS_TYPE_MODALS = [
   },
   {
     icon: '⚠️', color: '#8b5cf6', rgb: '139,92,246', titleKey: 'type_distress',
+    modalTitleKey: 'stress.distress_modal_title',
     modalTitle: 'Stress Mãn Tính (Distress)',
     img: 'https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Distress không phải về cường độ mà về thời gian — không phải bao nhiêu áp lực mà là kéo dài bao lâu mà không có điểm kết thúc và không được xả.',
@@ -468,6 +473,39 @@ export default function MindStressPage() {
   const [techniqueModal, setTechniqueModal] = useState(null);
   const [stressLevelModal, setStressLevelModal] = useState(null);
 
+  const eustressSigns = tM('stress.eustress_signs', { returnObjects: true });
+  const distressSigns = tM('stress.distress_signs', { returnObjects: true });
+  const stressLevelTitles = tM('stress.stress_level_modal_titles', { returnObjects: true });
+  const stressLevels = (() => {
+    const colors = ['#10b981', '#84cc16', '#f59e0b', '#f97316', '#ef4444'];
+    const lvls = tM('stress.stress_levels', { returnObjects: true });
+    return Array.isArray(lvls) ? lvls.map((l, i) => ({ ...l, color: colors[i] })) : [
+      { range: '0–2', label: 'Bình thường', desc: 'Cơ thể và tâm trí ổn định. Tiếp tục duy trì.', color: '#10b981' },
+      { range: '3–4', label: 'Nhẹ', desc: 'Có áp lực nhưng kiểm soát được. Dùng Reset 2 phút.', color: '#84cc16' },
+      { range: '5–6', label: 'Trung bình', desc: 'Ảnh hưởng tập trung. Nên dùng box breathing + journal.', color: '#f59e0b' },
+      { range: '7–8', label: 'Cao', desc: 'Căng thẳng rõ ràng. Ưu tiên nghỉ ngơi, giảm kỳ vọng.', color: '#f97316' },
+      { range: '9–10', label: 'Nguy hiểm', desc: 'Không tự xử lý được. Hỏi người thân hoặc chuyên gia.', color: '#ef4444' },
+    ];
+  })();
+  const translatedLayers = LAYERS.map(l => {
+    const signs = tM('stress.' + l.titleKey + '_signs', { returnObjects: true });
+    return { ...l, signs: Array.isArray(signs) ? signs : l.signs };
+  });
+  const translatedLoops = LOOPS.map(loop => {
+    const trSteps = tM('stress.' + loop.titleKey + '_steps', { returnObjects: true });
+    const trBreakpoint = tM('stress.' + loop.titleKey + '_breakpoint');
+    return {
+      ...loop,
+      steps: Array.isArray(trSteps) ? loop.steps.map((s, i) => ({ ...s, ...(trSteps[i] || {}) })) : loop.steps,
+      breakpoint: trBreakpoint || loop.breakpoint,
+    };
+  });
+  const translatedTechniques = TECHNIQUES.map(tech => ({
+    ...tech,
+    desc: tM('stress.' + tech.titleKey + '_desc') || tech.desc,
+    example: tM('stress.' + tech.titleKey + '_example') || tech.example,
+  }));
+
   useEffect(() => {
     const style = document.createElement('style');
     style.id = ORBIT_ID;
@@ -521,7 +559,7 @@ export default function MindStressPage() {
       {/* Good vs bad stress */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s1_title')}</h2>
-        <p className="text-muted text-lg mb-6">Không phải stress nào cũng cần loại bỏ.</p>
+        <p className="text-muted text-lg mb-6">{tM('stress.s1_desc')}</p>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="group/card rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:border-emerald-500/50 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)]"
             style={{ borderColor: 'rgba(16,185,129,0.3)', background: 'rgba(16,185,129,0.05)' }}
@@ -534,7 +572,7 @@ export default function MindStressPage() {
               </span>
             </div>
             <ul className="space-y-2">
-              {['Giúp tập trung cao độ khi cần', 'Thúc đẩy hoàn thành deadline', 'Cảm giác hứng khởi trước thử thách', 'Kéo dài ngắn, kết thúc rõ ràng'].map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span className="text-green-400">→</span>{s}</li>)}
+              {(Array.isArray(eustressSigns) ? eustressSigns : ['Giúp tập trung cao độ khi cần', 'Thúc đẩy hoàn thành deadline', 'Cảm giác hứng khởi trước thử thách', 'Kéo dài ngắn, kết thúc rõ ràng']).map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span className="text-green-400">→</span>{s}</li>)}
             </ul>
           </div>
           <div className="group/card rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:border-violet-500/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.1)]"
@@ -548,7 +586,7 @@ export default function MindStressPage() {
               </span>
             </div>
             <ul className="space-y-2">
-              {['Kéo dài nhiều ngày, không được xả', 'Ảnh hưởng ngủ, ăn, tập luyện', 'Cảm xúc không ổn định', 'Hình thành vòng lặp lo âu–thói quen'].map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span style={{ color: COLOR }}>→</span>{s}</li>)}
+              {(Array.isArray(distressSigns) ? distressSigns : ['Kéo dài nhiều ngày, không được xả', 'Ảnh hưởng ngủ, ăn, tập luyện', 'Cảm xúc không ổn định', 'Hình thành vòng lặp lo âu–thói quen']).map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span style={{ color: COLOR }}>→</span>{s}</li>)}
             </ul>
           </div>
         </div>
@@ -557,9 +595,9 @@ export default function MindStressPage() {
       {/* 3 layers */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s2_title')}</h2>
-        <p className="text-muted text-lg mb-6">Stress biểu hiện ở cả 3 tầng cùng lúc — nhận diện tầng nào đang ảnh hưởng bạn nhiều nhất.</p>
+        <p className="text-muted text-lg mb-6">{tM('stress.s2_desc')}</p>
         <div className="grid md:grid-cols-3 gap-4">
-          {LAYERS.map((l, i) => (
+          {translatedLayers.map((l, i) => (
             <div key={l.title}
               className="group/card rounded-2xl border border-border bg-surface p-5 cursor-pointer transition-all duration-200 hover:bg-white/[0.03]"
               style={{ '--hover-color': l.color }}
@@ -583,9 +621,9 @@ export default function MindStressPage() {
       {/* Anxiety loops */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s3_title')}</h2>
-        <p className="text-muted text-lg mb-6">Mục tiêu không phải xóa sạch lo âu — mà là chèn một điểm dừng nhỏ vào vòng lặp.</p>
+        <p className="text-muted text-lg mb-6">{tM('stress.s3_desc')}</p>
         <div className="space-y-3">
-          {LOOPS.map((loop, i) => (
+          {translatedLoops.map((loop, i) => (
             <div key={i} className="rounded-2xl border border-border overflow-hidden">
               <button onClick={() => setOpenLoop(openLoop === i ? null : i)} className="w-full flex items-center gap-3 p-4 hover:bg-white/5 transition-colors text-left">
                 <span className="text-lg font-medium text-text flex-1">{tM('stress.' + loop.titleKey)}</span>
@@ -606,7 +644,7 @@ export default function MindStressPage() {
                     ))}
                   </div>
                   <div className="rounded-xl p-3 text-base border" style={{ borderColor: `rgba(${RGB},0.2)`, background: `rgba(${RGB},0.06)` }}>
-                    🔧 <strong style={{ color: COLOR }}>Điểm dừng:</strong> {loop.breakpoint}
+                    🔧 <strong style={{ color: COLOR }}>{tM('stress.loop_breakpoint_label')}</strong> {loop.breakpoint}
                   </div>
                 </div>
               )}
@@ -618,9 +656,9 @@ export default function MindStressPage() {
       {/* Techniques */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s4_title')}</h2>
-        <p className="text-muted text-lg mb-6">Công cụ nhận thức giúp tạo khoảng cách giữa bạn và phản ứng tự động.</p>
+        <p className="text-muted text-lg mb-6">{tM('stress.s4_desc')}</p>
         <div className="grid md:grid-cols-2 gap-4">
-          {TECHNIQUES.map((tech, i) => (
+          {translatedTechniques.map((tech, i) => (
             <div key={tech.title}
               className="group/card rounded-2xl border border-border bg-surface p-5 cursor-pointer transition-all duration-200 hover:border-violet-500/30 hover:bg-white/[0.03]"
               onClick={() => setTechniqueModal(i)}>
@@ -642,15 +680,9 @@ export default function MindStressPage() {
       {/* Stress levels */}
       <RevealBlock className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s5_title')}</h2>
-        <p className="text-muted text-lg mb-6">Chấm điểm mỗi ngày để nhận diện xu hướng trước khi stress leo thang.</p>
+        <p className="text-muted text-lg mb-6">{tM('stress.s5_desc')}</p>
         <div className="space-y-2">
-          {[
-            { range: '0–2', label: 'Bình thường', desc: 'Cơ thể và tâm trí ổn định. Tiếp tục duy trì.', color: '#10b981' },
-            { range: '3–4', label: 'Nhẹ', desc: 'Có áp lực nhưng kiểm soát được. Dùng Reset 2 phút.', color: '#84cc16' },
-            { range: '5–6', label: 'Trung bình', desc: 'Ảnh hưởng tập trung. Nên dùng box breathing + journal.', color: '#f59e0b' },
-            { range: '7–8', label: 'Cao', desc: 'Căng thẳng rõ ràng. Ưu tiên nghỉ ngơi, giảm kỳ vọng.', color: '#f97316' },
-            { range: '9–10', label: 'Nguy hiểm', desc: 'Không tự xử lý được. Hỏi người thân hoặc chuyên gia.', color: '#ef4444' },
-          ].map((s, i) => (
+          {stressLevels.map((s, i) => (
             <div key={s.range}
               className="group/row flex items-center gap-4 p-3 rounded-xl border border-border bg-surface cursor-pointer transition-all duration-200 hover:bg-white/[0.03]"
               style={{ '--hc': s.color }}
@@ -674,14 +706,14 @@ export default function MindStressPage() {
           {tM('breadcrumb')}
         </Link>
         <Link to="/pillar/d/breathing" className="flex items-center gap-2 text-lg text-muted hover:text-text transition-colors group justify-end">
-          Kỹ Thuật Thở
+          {tM('stress.nav_next')}
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </div>
 
       {stressModal !== null && (
         <CardModal
-          item={STRESS_TYPE_MODALS[stressModal]}
+          item={{ ...STRESS_TYPE_MODALS[stressModal], modalTitle: tM(STRESS_TYPE_MODALS[stressModal].modalTitleKey) }}
           onClose={() => setStressModal(null)}
           onPrev={() => setStressModal(i => Math.max(0, i - 1))}
           onNext={() => setStressModal(i => Math.min(STRESS_TYPE_MODALS.length - 1, i + 1))}
@@ -694,7 +726,7 @@ export default function MindStressPage() {
 
       {layerModal !== null && (
         <CardModal
-          item={LAYER_MODALS[layerModal]}
+          item={{ ...LAYER_MODALS[layerModal], modalTitle: tM(LAYER_MODALS[layerModal].modalTitleKey) }}
           onClose={() => setLayerModal(null)}
           onPrev={() => setLayerModal(i => Math.max(0, i - 1))}
           onNext={() => setLayerModal(i => Math.min(LAYER_MODALS.length - 1, i + 1))}
@@ -720,7 +752,7 @@ export default function MindStressPage() {
 
       {stressLevelModal !== null && (
         <CardModal
-          item={STRESS_LEVEL_MODALS[stressLevelModal]}
+          item={{ ...STRESS_LEVEL_MODALS[stressLevelModal], modalTitle: (Array.isArray(stressLevelTitles) ? stressLevelTitles[stressLevelModal] : null) || STRESS_LEVEL_MODALS[stressLevelModal].modalTitle }}
           onClose={() => setStressLevelModal(null)}
           onPrev={() => setStressLevelModal(i => Math.max(0, i - 1))}
           onNext={() => setStressLevelModal(i => Math.min(STRESS_LEVEL_MODALS.length - 1, i + 1))}

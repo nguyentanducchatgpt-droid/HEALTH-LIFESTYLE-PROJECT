@@ -27,7 +27,7 @@ const PHASES = [
   {
     phase: 'Giai Đoạn 1',
     weeks: 'Tuần 1–2',
-    title: 'Nhận Diện & Nền Tảng',
+    title: 'Nhận Diện & Nền Tảng', titleKey: 'phase_foundation',
     color: '#6366f1',
     icon: '🔍',
     goals: ['Làm bài đánh giá ban đầu', 'Học nhận diện 3 loại stress', 'Thực hành thở bụng 5 phút/ngày', 'Bắt đầu nhật ký 5 dòng mỗi tối'],
@@ -37,7 +37,7 @@ const PHASES = [
   {
     phase: 'Giai Đoạn 2',
     weeks: 'Tuần 3–4',
-    title: 'Xây Công Cụ Cốt Lõi',
+    title: 'Xây Công Cụ Cốt Lõi', titleKey: 'phase_core',
     color: '#8b5cf6',
     icon: '🛠️',
     goals: ['Thiền 3 phút mỗi sáng', 'Học kỹ thuật Box Breathing', 'Brain dump 1 lần/tuần khi cảm thấy quá tải', 'Thiết lập 1 phone-free zone'],
@@ -47,7 +47,7 @@ const PHASES = [
   {
     phase: 'Giai Đoạn 3',
     weeks: 'Tuần 5–8',
-    title: 'Mở Rộng Thực Hành',
+    title: 'Mở Rộng Thực Hành', titleKey: 'phase_expand',
     color: '#a855f7',
     icon: '🌱',
     goals: ['Thiền 5–10 phút mỗi ngày', 'Body scan 1 lần/tuần', 'Thử Journaling theo 2 mẫu khác nhau', 'Xây 1 thói quen mới theo habit loop', 'Giới hạn social media 30ph/ngày'],
@@ -57,7 +57,7 @@ const PHASES = [
   {
     phase: 'Giai Đoạn 4',
     weeks: 'Tuần 9–12',
-    title: 'Cá Nhân Hóa & Ổn Định',
+    title: 'Cá Nhân Hóa & Ổn Định', titleKey: 'phase_personal',
     color: '#d946ef',
     icon: '⭐',
     goals: ['Chọn 3–5 thực hành phù hợp nhất với bản thân', 'Làm lại bài đánh giá — so sánh trước/sau', 'Xây "Mental Wellness Stack" cá nhân', 'Chia sẻ hoặc hướng dẫn 1 người khác'],
@@ -315,6 +315,7 @@ function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx
 
 export default function MindRoadmapPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [activePhase, setActivePhase] = useState(0);
   const [phaseModal, setPhaseModal] = useState(null);
   const [dailyModal, setDailyModal] = useState(null);
@@ -373,7 +374,7 @@ export default function MindRoadmapPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Giai Đoạn Phát Triển</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('roadmap.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">Click vào từng giai đoạn để xem chi tiết</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
           {PHASES.map((ph, i) => (
@@ -384,12 +385,12 @@ export default function MindRoadmapPage() {
               onClick={() => setActivePhase(i)}>
               <div className="text-3xl mb-2">{ph.icon}</div>
               <div className="text-base font-bold uppercase tracking-wide mb-1" style={{ color: ph.color }}>{ph.weeks}</div>
-              <div className="text-lg font-semibold text-text">{ph.title}</div>
+              <div className="text-lg font-semibold text-text">{tM('roadmap.' + ph.titleKey)}</div>
               <span
                 className="absolute top-2 right-2 text-[9px] font-bold px-1.5 py-0.5 rounded-full border opacity-0 group-hover/phase:opacity-100 transition-opacity"
                 style={{ color: ph.color, borderColor: `${ph.color}55`, background: `${ph.color}12` }}
                 onClick={e => { e.stopPropagation(); setPhaseModal(i); }}>
-                chi tiết →
+                {t('ui.detail_btn')}
               </span>
             </div>
           ))}
@@ -400,7 +401,7 @@ export default function MindRoadmapPage() {
               <span className="text-3xl">{p.icon}</span>
               <div>
                 <div className="text-base font-bold uppercase tracking-widest" style={{ color: p.color }}>{p.phase} · {p.weeks} · {p.time}</div>
-                <div className="text-xl font-bold text-text">{p.title}</div>
+                <div className="text-xl font-bold text-text">{tM('roadmap.' + p.titleKey)}</div>
               </div>
             </div>
             <button onClick={() => setPhaseModal(activePhase)}
@@ -435,7 +436,7 @@ export default function MindRoadmapPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mental Wellness Stack Hằng Ngày</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('roadmap.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">25 phút mỗi ngày chia ra 3 buổi — không cần làm tất cả cùng lúc</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {DAILY_STACK.map((s, i) => (
@@ -467,7 +468,7 @@ export default function MindRoadmapPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tất Cả Công Cụ Của Bạn</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('roadmap.s3_title')}</h2>
         <p className="text-muted text-lg mb-6">Truy cập nhanh vào mọi module trong lộ trình</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {LINKS.map(l => (

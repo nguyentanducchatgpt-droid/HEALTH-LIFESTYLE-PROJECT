@@ -28,7 +28,7 @@ const TECHNIQUES = [
   {
     id: 'diaphragm',
     icon: '🫁',
-    title: 'Thở Cơ Hoành',
+    title: 'Thở Cơ Hoành', titleKey: 'tech_diaphragm',
     subtitle: 'Nền tảng — dùng hằng ngày',
     color: '#10b981',
     formula: 'Bụng phồng khi hít → bụng xẹp khi thở',
@@ -47,7 +47,7 @@ const TECHNIQUES = [
   {
     id: 'box',
     icon: '⬜',
-    title: 'Box Breathing',
+    title: 'Box Breathing', titleKey: 'tech_box',
     subtitle: '4-4-4-4 — Navy SEALs technique',
     color: COLOR,
     formula: 'Hít 4 → Giữ 4 → Thở 4 → Giữ 4',
@@ -66,7 +66,7 @@ const TECHNIQUES = [
   {
     id: '478',
     icon: '🌊',
-    title: 'Thở 4-7-8',
+    title: 'Thở 4-7-8', titleKey: 'tech_478',
     subtitle: 'Extended exhale — chuẩn bị ngủ',
     color: '#d946ef',
     formula: 'Hít 4 → Giữ 7 → Thở 8',
@@ -85,7 +85,7 @@ const TECHNIQUES = [
   {
     id: 'reset2',
     icon: '⚡',
-    title: 'Reset 2 Phút',
+    title: 'Reset 2 Phút', titleKey: 'tech_reset',
     subtitle: 'Emergency tool — dùng ngay khi quá tải',
     color: '#f59e0b',
     formula: 'Dừng → Thở → Thả lỏng → Neo',
@@ -409,6 +409,7 @@ function BoxBreathingTimer({ color }) {
 
 export default function MindBreathingPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [activeTech, setActiveTech] = useState('box');
   const [sitModal, setSitModal] = useState(null);
   const [dailyModal, setDailyModal] = useState(null);
@@ -434,7 +435,7 @@ export default function MindBreathingPage() {
     return () => document.getElementById(ORBIT_ID)?.remove();
   }, []);
 
-  const tech = TECHNIQUES.find(t => t.id === activeTech);
+  const tech = TECHNIQUES.find(tc => tc.id === activeTech);
   const activeTechIdx = TECHNIQUES.findIndex(t => t.id === activeTech);
 
   return (
@@ -484,7 +485,7 @@ export default function MindBreathingPage() {
                     {tech2}
                     <span className="ml-2 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/row:opacity-100 transition-opacity"
                       style={{ color: SITUATION_MODALS[i].color, borderColor: `rgba(${SITUATION_MODALS[i].rgb},0.35)`, background: `rgba(${SITUATION_MODALS[i].rgb},0.08)` }}>
-                      chi tiết →
+                      {t('ui.detail_btn')}
                     </span>
                   </td>
                 </tr>
@@ -496,12 +497,12 @@ export default function MindBreathingPage() {
 
       {/* Techniques */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kỹ Thuật Chi Tiết</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('breathing.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">Chọn kỹ thuật để xem hướng dẫn từng bước.</p>
         <div className="flex gap-2 flex-wrap mb-6">
-          {TECHNIQUES.map(t => (
-            <button key={t.id} onClick={() => setActiveTech(t.id)} className={`flex items-center gap-2 px-3 py-2 rounded-full text-base font-medium transition-all border ${activeTech === t.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: activeTech === t.id ? t.color : undefined, borderColor: activeTech === t.id ? t.color : undefined }}>
-              {t.icon} {t.title}
+          {TECHNIQUES.map(tc => (
+            <button key={tc.id} onClick={() => setActiveTech(tc.id)} className={`flex items-center gap-2 px-3 py-2 rounded-full text-base font-medium transition-all border ${activeTech === tc.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: activeTech === tc.id ? tc.color : undefined, borderColor: activeTech === tc.id ? tc.color : undefined }}>
+              {tc.icon} {tM('breathing.' + tc.titleKey)}
             </button>
           ))}
         </div>
@@ -511,11 +512,11 @@ export default function MindBreathingPage() {
               <span className="text-5xl">{tech.icon}</span>
               <div className="flex-1">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="text-xl font-bold text-text">{tech.title}</div>
+                  <div className="text-xl font-bold text-text">{tM('breathing.' + tech.titleKey)}</div>
                   <button onClick={() => setSitModal(activeTechIdx)}
                     className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/tech:opacity-100 transition-opacity cursor-pointer"
                     style={{ color: tech.color, borderColor: `rgba(${SITUATION_MODALS[activeTechIdx]?.rgb},0.35)`, background: `rgba(${SITUATION_MODALS[activeTechIdx]?.rgb},0.08)` }}>
-                    chi tiết →
+                    {t('ui.detail_btn')}
                   </button>
                 </div>
                 <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: tech.color }}>{tech.subtitle}</div>
@@ -556,7 +557,7 @@ export default function MindBreathingPage() {
 
       {/* Daily plan */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Lịch Thở Hằng Ngày</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('breathing.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">Tích hợp vào 4 điểm trong ngày — không cần thêm thời gian riêng.</p>
         <div className="space-y-3">
           {[
@@ -572,7 +573,7 @@ export default function MindBreathingPage() {
                   <span className="text-base font-bold" style={{ color: DAILY_MODALS[i].color }}>{item.tech}</span>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/daily:opacity-100 transition-opacity"
                     style={{ color: DAILY_MODALS[i].color, borderColor: `rgba(${DAILY_MODALS[i].rgb},0.35)`, background: `rgba(${DAILY_MODALS[i].rgb},0.08)` }}>
-                    chi tiết →
+                    {t('ui.detail_btn')}
                   </span>
                 </div>
                 <div className="text-base text-muted">{item.tip}</div>

@@ -443,6 +443,7 @@ function BodyScanTimer({ color }) {
 
 export default function MindBodyScanPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [zoneModal, setZoneModal] = useState(null);
   const [whenModal, setWhenModal] = useState(null);
 
@@ -498,14 +499,14 @@ export default function MindBodyScanPage() {
 
       {/* Guided timer */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Body Scan Có Hướng Dẫn</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('body_scan.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">Nằm thoải mái, bắt đầu — timer sẽ dẫn qua từng vùng.</p>
         <BodyScanTimer color={COLOR} />
       </RevealBlock>
 
       {/* Zone guide */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>8 Vùng Cơ Thể</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('body_scan.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">Nhấn vào từng vùng để xem hướng dẫn chi tiết.</p>
         <div className="space-y-2">
           {BODY_ZONES.map((z, i) => (
@@ -515,7 +516,7 @@ export default function MindBodyScanPage() {
                 <span className="flex-1 text-lg font-medium text-text">{z.name}</span>
                 <span className="text-base text-muted mr-2">{z.time}</span>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/zone:opacity-100 transition-opacity"
-                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>{t('ui.detail_btn')}</span>
               </div>
             </div>
           ))}
@@ -524,14 +525,14 @@ export default function MindBodyScanPage() {
 
       {/* When to use */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Khi Nào Dùng Body Scan</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('body_scan.s3_title')}</h2>
         <div className="grid md:grid-cols-2 gap-3">
           {WHEN_MODALS.map((u, i) => (
             <div key={u.modalTitle} className="group/when rounded-xl border border-border bg-surface p-4 hover:border-pink-500/20 transition-colors cursor-pointer" onClick={() => setWhenModal(i)}>
               <div className="flex items-start justify-between gap-2 mb-2">
                 <span className="text-3xl">{u.icon}</span>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/when:opacity-100 transition-opacity self-start mt-1"
-                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>{t('ui.detail_btn')}</span>
               </div>
               <div className="text-lg font-bold text-text mb-1">{u.modalTitle.split(' — ')[0]}</div>
               <div className="text-base text-muted leading-relaxed">{u.detail.split('.')[0]}.</div>

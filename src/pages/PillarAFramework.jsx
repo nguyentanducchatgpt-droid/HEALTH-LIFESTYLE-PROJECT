@@ -717,7 +717,7 @@ export default function PillarAFramework() {
                           <div className="flex items-center gap-2 shrink-0 mt-0.5">
                             {hasModal && (
                               <span className={`text-[10px] font-bold opacity-0 group-hover/step:opacity-60 transition-opacity duration-150 ${s.text}`}>
-                                chi tiết →
+                                {t('ui.detail_btn')}
                               </span>
                             )}
                             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border whitespace-nowrap ${s.bg} ${s.border} ${s.text}`}>{step.duration}</span>

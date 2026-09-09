@@ -568,13 +568,14 @@ function JournalWriter({ template }) {
 
 export default function MindJournalingPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [active, setActive] = useState('daily');
   const [benefitModal, setBenefitModal] = useState(null);
   const [templateModal, setTemplateModal] = useState(null);
   const [tipModal, setTipModal] = useState(null);
   const [roadmapModal, setRoadmapModal] = useState(null);
-  const tmpl = TEMPLATES.find(t => t.id === active);
-  const tmplIdx = TEMPLATES.findIndex(t => t.id === active);
+  const tmpl = TEMPLATES.find(tmplItem => tmplItem.id === active);
+  const tmplIdx = TEMPLATES.findIndex(tmplItem => tmplItem.id === active);
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -628,7 +629,7 @@ export default function MindJournalingPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tại Sao Nên Viết Nhật Ký?</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('journaling.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">3 lợi ích được nghiên cứu khoa học xác nhận</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {BENEFIT_MODALS.map((c, i) => (
@@ -636,7 +637,7 @@ export default function MindJournalingPage() {
               <div className="flex items-start justify-between gap-2 mb-3">
                 <span className="text-4xl">{c.icon}</span>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/benefit:opacity-100 transition-opacity self-start mt-1"
-                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>{t('ui.detail_btn')}</span>
               </div>
               <div className="font-bold text-text mb-2">{c.modalTitle.split(' — ')[0]}</div>
               <p className="text-muted text-lg leading-relaxed">{c.detail.split('.')[0]}.</p>
@@ -646,19 +647,19 @@ export default function MindJournalingPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>5 Mẫu Nhật Ký Thực Hành</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('journaling.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">Chọn mẫu phù hợp với tâm trạng hôm nay</p>
         <div className="flex flex-wrap gap-2 mb-6">
-          {TEMPLATES.map(t => (
+          {TEMPLATES.map(tmplItem => (
             <button
-              key={t.id}
-              onClick={() => setActive(t.id)}
+              key={tmplItem.id}
+              onClick={() => setActive(tmplItem.id)}
               className="px-4 py-2 rounded-full text-lg font-semibold border transition-all"
-              style={active === t.id
-                ? { background: t.color, color: '#fff', borderColor: t.color }
+              style={active === tmplItem.id
+                ? { background: tmplItem.color, color: '#fff', borderColor: tmplItem.color }
                 : { background: 'transparent', color: '#888', borderColor: '#333' }}
             >
-              {t.icon} {t.label}
+              {tmplItem.icon} {tmplItem.label}
             </button>
           ))}
         </div>
@@ -681,16 +682,16 @@ export default function MindJournalingPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Mẹo Để Duy Trì Thói Quen</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('journaling.s3_title')}</h2>
         <p className="text-muted text-lg mb-6">Biến việc viết nhật ký thành nghi thức hằng ngày</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {TIPS.map((t, i) => (
-            <div key={t.tip} className="group/tip flex items-start gap-3 rounded-xl border border-border bg-surface p-4 hover:border-pink-500/20 transition-colors cursor-pointer" onClick={() => setTipModal(i)}>
-              <span className="text-2xl shrink-0">{t.icon}</span>
+          {TIPS.map((tip, i) => (
+            <div key={tip.tip} className="group/tip flex items-start gap-3 rounded-xl border border-border bg-surface p-4 hover:border-pink-500/20 transition-colors cursor-pointer" onClick={() => setTipModal(i)}>
+              <span className="text-2xl shrink-0">{tip.icon}</span>
               <div className="flex-1 flex items-start justify-between gap-2">
-                <p className="text-lg text-muted leading-relaxed">{t.tip}</p>
+                <p className="text-lg text-muted leading-relaxed">{tip.tip}</p>
                 <span className="shrink-0 self-start text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/tip:opacity-100 transition-opacity"
-                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>{t('ui.detail_btn')}</span>
               </div>
             </div>
           ))}
@@ -698,7 +699,7 @@ export default function MindJournalingPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Lộ Trình 4 Tuần</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>{tM('journaling.s4_title')}</h2>
         <div className="space-y-3">
           {ROADMAP_MODALS.map((r, i) => (
             <div key={i} className="group/roadmap flex gap-4 rounded-2xl border border-border bg-surface p-4 hover:border-pink-500/20 transition-colors cursor-pointer" onClick={() => setRoadmapModal(i)}>
@@ -709,7 +710,7 @@ export default function MindJournalingPage() {
                   <p className="text-muted text-lg">{r.detail.split('.')[0]}.</p>
                 </div>
                 <span className="shrink-0 self-start text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/roadmap:opacity-100 transition-opacity mt-0.5"
-                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>{t('ui.detail_btn')}</span>
               </div>
             </div>
           ))}

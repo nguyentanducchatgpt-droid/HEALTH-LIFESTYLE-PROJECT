@@ -778,6 +778,7 @@ function MisinfoChecker() {
 
 export default function HealthMediaLiteracyPage() {
   const { t } = useTranslation('pillars');
+  const { t: tC } = useTranslation('common');
   const p = t('pillarE', { returnObjects: true }) || {};
   const filterQuestions = FILTER_QUESTIONS.map((fq, i) => { const tr = p.ml_filters_tr?.[i] || {}; return { ...fq, ...tr, ...(tr.title ? { q: tr.title } : {}), ...(tr.sub ? { good: tr.sub } : {}) }; });
   const [filterModal, setFilterModal] = useState(null);
@@ -837,7 +838,7 @@ export default function HealthMediaLiteracyPage() {
 
       <RevealBlock delay={0} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.ml_s1_h2 || '5 Câu Hỏi Để Lọc Thông Tin'}</h2>
-        <p className="text-muted text-lg mb-6">Áp dụng mỗi khi đọc thông tin y tế trên mạng xã hội, group sức khỏe, hoặc từ người thân. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Áp dụng mỗi khi đọc thông tin y tế trên mạng xã hội, group sức khỏe, hoặc từ người thân. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="space-y-4">
           {filterQuestions.map((fq, i) => (
             <FilterCard key={i} item={fq} onClick={() => setFilterModal(i)} />
@@ -847,7 +848,7 @@ export default function HealthMediaLiteracyPage() {
 
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.ml_s2_h2 || 'Nhận Biết Thông Tin Sai Lệch'}</h2>
-        <p className="text-muted text-lg mb-6">6 pattern phổ biến nhất trong thông tin y tế sai lệch trên mạng. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">6 pattern phổ biến nhất trong thông tin y tế sai lệch trên mạng. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="space-y-3">
           {DANGEROUS_PATTERNS.map((d, i) => (
             <PatternCard key={i} item={d} onClick={() => setPatternModal(i)} />
@@ -862,7 +863,7 @@ export default function HealthMediaLiteracyPage() {
 
       <RevealBlock delay={3} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.ml_s3_h2 || 'Nguồn Thông Tin Đáng Tin Cậy'}</h2>
-        <p className="text-muted text-lg mb-5">Bookmark những nguồn này để tra cứu khi cần. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-5">Bookmark những nguồn này để tra cứu khi cần. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {TRUSTED_SOURCES.map((s, i) => (
             <SourceCard key={i} item={s} onClick={() => setSourceModal(i)} />

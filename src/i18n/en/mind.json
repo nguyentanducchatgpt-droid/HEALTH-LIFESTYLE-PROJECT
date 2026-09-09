@@ -5,72 +5,135 @@
     "badge": "D0 · Entry Assessment",
     "title": "Mental Health Assessment",
     "desc": "A 15-question assessment to help you understand your current mental health level and receive personalized suggestions on what to focus on first.",
-    "img_caption": "15 questions · ~5 minutes"
+    "img_caption": "15 questions · ~5 minutes",
+    "s1_title": "Assessment"
   },
   "stress": {
     "badge": "D1 · Foundation",
     "title": "Understanding Stress & Anxiety Loops",
     "desc": "Stress isn't bad. Stress helps you focus and act. Problems only arise when stress persists, isn't released, and forms anxiety–habit loops. Understanding the mechanism is the first step to breaking it.",
-    "img_caption": "3 stress layers · Anxiety loops · Breaking techniques"
+    "img_caption": "3 stress layers · Anxiety loops · Breaking techniques",
+    "s1_title": "Good Stress vs Bad Stress",
+    "s2_title": "3 Levels of Stress",
+    "s3_title": "Anxiety–Habit Loops",
+    "s4_title": "4 Loop-Breaking Techniques",
+    "s5_title": "Stress Scale 0–10",
+    "layer_body": "Physical Layer",
+    "layer_emotion": "Emotional Layer",
+    "layer_behavior": "Behavioral Layer",
+    "loop_work": "Work Loop",
+    "loop_social": "Social Media Loop",
+    "loop_food": "Eating Loop",
+    "tech_naming": "Name Your Thoughts",
+    "tech_circle": "Circle of Control",
+    "tech_evidence": "Find Evidence",
+    "tech_pause": "Small Pause Point",
+    "type_eustress": "Positive Stress (Eustress)",
+    "type_distress": "Chronic Stress (Distress)"
   },
   "breathing": {
     "badge": "D2 · Breathwork & Calm",
     "title": "Breathing Techniques",
     "desc": "Breathing is a free tool, always available, no equipment needed. 4 techniques for 4 different situations — from daily foundation to an emergency reset in 2 minutes.",
-    "img_caption": "4 techniques · Interactive timer · Choose the right situation"
+    "img_caption": "4 techniques · Interactive timer · Choose the right situation",
+    "s1_title": "4 Detailed Techniques",
+    "s2_title": "Daily Breathing Schedule",
+    "tech_diaphragm": "Diaphragmatic Breathing",
+    "tech_box": "Box Breathing",
+    "tech_478": "4-7-8 Breathing",
+    "tech_reset": "2-Minute Reset"
   },
   "meditation": {
     "badge": "D3 · Meditation & Mindfulness",
     "title": "Short Meditation & Mindfulness",
     "desc": "Meditation isn't about \"not thinking\". It's about noticing when you've been carried away and gently returning. Each return is a rep — no perfection needed.",
-    "img_caption": "4 meditation types · Interactive timer · From 3 minutes"
+    "img_caption": "4 meditation types · Interactive timer · From 3 minutes",
+    "s1_title": "Understanding Meditation Correctly",
+    "s2_title": "4 Core Meditation Types",
+    "s3_title": "Meditation Timer",
+    "s4_title": "Progressive Roadmap",
+    "practice_3min": "3-Minute Meditation",
+    "practice_sleep": "5-Minute Pre-Sleep Meditation",
+    "practice_walk": "Walking Meditation",
+    "practice_eat": "Mindful Eating"
   },
   "brain_dump": {
     "badge": "D4 · Mental Declutter Technique",
     "title": "Brain Dump — Mental Unload",
     "desc": "When your mind is overloaded — too many things to remember, too much anxiety — a Brain Dump is the fastest way to clear your mental RAM and regain clarity.",
-    "img_caption": "10 minutes · When mind is overloaded"
+    "img_caption": "10 minutes · When mind is overloaded",
+    "s1_title": "6 Brain Dump Steps",
+    "s2_title": "Try Brain Dump Now",
+    "s3_title": "4 Classification Groups",
+    "s4_title": "When Should You Brain Dump?"
   },
   "journaling": {
     "badge": "D4 · Write to Release",
     "title": "Journaling & Mental Diary",
     "desc": "Journaling is the simplest tool to free your mind — no judgment, no need for perfection, just write down what's happening inside.",
-    "img_caption": "5 minutes · Every day"
+    "img_caption": "5 minutes · Every day",
+    "s1_title": "Why Keep a Journal?",
+    "s2_title": "5 Practical Journal Templates",
+    "s3_title": "Tips to Maintain the Habit",
+    "s4_title": "4-Week Roadmap"
   },
   "digital_detox": {
     "badge": "D5 · Managing the Digital World",
     "title": "Digital Detox — Digital Rest",
     "desc": "The brain needs time without stimulation to recover and create. Digital detox isn't about abandoning technology — it's about reclaiming control over it.",
-    "img_caption": "7–21 day challenge"
+    "img_caption": "7–21 day challenge",
+    "s1_title": "Are You Addicted to Screens?",
+    "s2_title": "Calculate Screen Time",
+    "s3_title": "6 Digital Detox Rules",
+    "s4_title": "4 Detox Levels"
   },
   "gentle_discipline": {
     "badge": "D6 · Self-Compassion & Discipline",
     "title": "Gentle Discipline",
     "desc": "Lasting discipline doesn't come from being harsh with yourself, but from kindness and self-understanding. Gentle discipline is the art of being consistent without self-punishment.",
-    "img_caption": "6 Principles · Daily Practice"
+    "img_caption": "6 Principles · Daily Practice",
+    "s1_title": "6 Principles of Gentle Discipline",
+    "s2_title": "Gentle vs Harsh Discipline",
+    "s3_title": "Reframing Practice",
+    "s4_title": "3-Session Practice Framework"
   },
   "habits": {
     "badge": "D6 · Habit Formation Science",
     "title": "Building Lasting Habits",
     "desc": "40% of your daily actions are automatic habits — not conscious decisions. Understanding the habit formation mechanism is the most effective way to change your life.",
-    "img_caption": "66 days on average to form a habit"
+    "img_caption": "66 days on average to form a habit",
+    "s1_title": "The Habit Loop",
+    "s2_title": "4 Habit-Building Techniques",
+    "s3_title": "This Week's Habit Tracker",
+    "s4_title": "Breaking Bad Habits"
   },
   "roadmap": {
     "badge": "D7 · Step-by-Step Journey",
     "title": "12-Week Peaceful Mind Roadmap",
     "desc": "A step-by-step path to build sustainable mental health — from recognizing stress to having a complete, personalized mental toolkit.",
-    "img_caption": "4 Phases · 12 Weeks"
+    "img_caption": "4 Phases · 12 Weeks",
+    "s1_title": "4 Development Phases",
+    "s2_title": "Daily Mental Wellness Stack",
+    "s3_title": "All Your Tools",
+    "phase_foundation": "Recognition & Foundation",
+    "phase_core": "Building Core Tools",
+    "phase_expand": "Expanding Practice",
+    "phase_personal": "Personalize & Stabilize"
   },
   "checklist": {
     "badge": "D7 · Track Progress",
     "title": "Daily Mind Checklist",
     "desc": "A simple checklist to track the most important mental and health habits each day and week. Automatically saved on your device.",
-    "img_caption": "10 items · Daily / 9 items · Weekly"
+    "img_caption": "10 items · Daily / 9 items · Weekly",
+    "s1_title": "How to Use"
   },
   "body_scan": {
     "badge": "D3b · Deep Recovery",
     "title": "Body Scan",
     "desc": "Body scan is a full-body meditation — scanning each zone from head to toe. The best tool for those who struggle to sleep, have sore muscles after exercise, or hold stress without knowing it.",
-    "img_caption": "8 body zones · ~8 minutes · Guided timer"
+    "img_caption": "8 body zones · ~8 minutes · Guided timer",
+    "s1_title": "Guided Body Scan",
+    "s2_title": "8 Body Zones",
+    "s3_title": "When to Use Body Scan"
   }
 }

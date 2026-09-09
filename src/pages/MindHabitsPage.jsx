@@ -93,6 +93,7 @@ function HabitTracker() {
 
 export default function MindHabitsPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   useEffect(() => {
     const id = ORBIT_ID;
     if (document.getElementById(id)) return;
@@ -145,7 +146,7 @@ export default function MindHabitsPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vòng Lặp Thói Quen (Habit Loop)</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('habits.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">4 yếu tố cấu thành mọi thói quen theo khoa học thần kinh</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {LOOP_STEPS.map(s => (
@@ -160,7 +161,7 @@ export default function MindHabitsPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kỹ Thuật Xây Thói Quen</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('habits.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">Những chiến lược được khoa học chứng minh hiệu quả nhất</p>
         <div className="space-y-4">
           {STACKING.map(s => (
@@ -176,7 +177,7 @@ export default function MindHabitsPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Habit Tracker Tuần Này</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('habits.s3_title')}</h2>
         <p className="text-muted text-lg mb-6">Click vào ô để đánh dấu đã hoàn thành</p>
         <div className="rounded-2xl border border-border bg-surface p-5">
           <HabitTracker />
@@ -184,7 +185,7 @@ export default function MindHabitsPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Phá Thói Quen Xấu</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>{tM('habits.s4_title')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
             { t: 'Làm cho Cue vô hình hơn', d: 'Xóa app mạng xã hội khỏi màn hình chính. Để đồ ăn vặt ở chỗ khó lấy.' },

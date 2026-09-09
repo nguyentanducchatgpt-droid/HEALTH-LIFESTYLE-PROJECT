@@ -568,6 +568,7 @@ function DailyCheckForm() {
 
 export default function HealthSelfMonitoringPage() {
   const { t } = useTranslation('pillars');
+  const { t: tC } = useTranslation('common');
   const p = t('pillarE', { returnObjects: true }) || {};
   const metrics = METRICS.map((m, i) => ({ ...m, ...(p.sm_metrics_tr?.[i] || {}) }));
   const principles = PRINCIPLES.map((pr, i) => ({ ...pr, ...(p.sm_principles_tr?.[i] || {}) }));
@@ -637,7 +638,7 @@ export default function HealthSelfMonitoringPage() {
 
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.sm_s1_h2 || '7 Chỉ Số Cần Theo Dõi'}</h2>
-        <p className="text-muted text-lg mb-6">Không nhất thiết theo dõi tất cả mỗi ngày — mỗi chỉ số có tần suất phù hợp riêng. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Không nhất thiết theo dõi tất cả mỗi ngày — mỗi chỉ số có tần suất phù hợp riêng. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {metrics.map((m, i) => (
             <MetricCard key={i} item={m} onClick={() => setMetricModal(i)} />
@@ -653,7 +654,7 @@ export default function HealthSelfMonitoringPage() {
 
       <RevealBlock delay={3} className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.sm_s2_h2 || 'Nguyên Tắc Theo Dõi Hiệu Quả'}</h2>
-        <p className="text-muted text-lg mb-6">4 nguyên tắc cốt lõi để dữ liệu bạn thu thập thực sự có ý nghĩa. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">4 nguyên tắc cốt lõi để dữ liệu bạn thu thập thực sự có ý nghĩa. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {principles.map((pr, i) => (
             <PrincipleCard key={i} item={pr} onClick={() => setPrincipleModal(i)} />

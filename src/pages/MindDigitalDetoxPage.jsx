@@ -83,6 +83,7 @@ function ScreenTimeCalculator() {
 
 export default function MindDigitalDetoxPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [checked, setChecked] = useState({});
   const toggle = k => setChecked(p => ({ ...p, [k]: !p[k] }));
   const score = Object.values(checked).filter(Boolean).length;
@@ -139,7 +140,7 @@ export default function MindDigitalDetoxPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Bạn Có Đang Bị Nghiện Màn Hình?</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('digital_detox.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">Tick vào những dấu hiệu bạn nhận ra ở bản thân ({score}/6)</p>
         <div className="space-y-2">
           {SYMPTOMS.map((s, i) => (
@@ -163,13 +164,13 @@ export default function MindDigitalDetoxPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Tính Toán Screen Time</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('digital_detox.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">Hiểu rõ chi phí của việc dùng quá nhiều màn hình</p>
         <ScreenTimeCalculator />
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>6 Quy Tắc Digital Detox</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('digital_detox.s3_title')}</h2>
         <p className="text-muted text-lg mb-6">Chọn 2-3 quy tắc để bắt đầu, đừng làm tất cả cùng lúc</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {RULES.map(r => (
@@ -183,7 +184,7 @@ export default function MindDigitalDetoxPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Cấp Độ Detox</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('digital_detox.s4_title')}</h2>
         <p className="text-muted text-lg mb-6">Tăng dần từ nhẹ đến mạnh theo tuần</p>
         <div className="space-y-3">
           {LEVELS.map(lv => (

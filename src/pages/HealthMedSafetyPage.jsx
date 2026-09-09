@@ -910,6 +910,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 export default function HealthMedSafetyPage() {
   const { t } = useTranslation('pillars');
+  const { t: tC } = useTranslation('common');
   const p = t('pillarE', { returnObjects: true }) || {};
   const medRules = MED_RULES.map((r, i) => ({...r, ...(p.med_rules_tr?.[i] || {})}));
   const dangerPhrases = DANGER_PHRASES.map((d, i) => ({...d, ...(p.med_danger_tr?.[i] || {})}));
@@ -971,7 +972,7 @@ export default function HealthMedSafetyPage() {
 
       <RevealBlock delay={0} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s1_h2 || '5 Quy Tắc An Toàn Thuốc'}</h2>
-        <p className="text-muted text-lg mb-6">Áp dụng mỗi khi bắt đầu một loại thuốc mới. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Áp dụng mỗi khi bắt đầu một loại thuốc mới. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="space-y-4">
           {medRules.map((r, i) => (
             <MedCard key={i} rule={r} onClick={() => setMedModal(i)} />
@@ -981,7 +982,7 @@ export default function HealthMedSafetyPage() {
 
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s2_h2 || 'Những Câu Nguy Hiểm Cần Nhớ'}</h2>
-        <p className="text-muted text-lg mb-6">Những quan niệm phổ biến nhưng sai — và tại sao chúng nguy hiểm. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Những quan niệm phổ biến nhưng sai — và tại sao chúng nguy hiểm. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="space-y-3">
           {dangerPhrases.map((d, i) => (
             <DangerCard key={i} item={d} onClick={() => setDangerModal(i)} />
@@ -991,7 +992,7 @@ export default function HealthMedSafetyPage() {
 
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s3_h2 || 'Hướng Dẫn Bổ Sung Thực Phẩm Chức Năng'}</h2>
-        <p className="text-muted text-lg mb-6">TPCN không phải thuốc nhưng cũng cần dùng đúng cách. Luôn thông báo cho bác sĩ tất cả TPCN đang dùng. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">TPCN không phải thuốc nhưng cũng cần dùng đúng cách. Luôn thông báo cho bác sĩ tất cả TPCN đang dùng. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {SUPPLEMENT_CHECK.map((s, i) => (
             <SupplementCard key={i} item={s} onClick={() => setSuppModal(i)} />
@@ -1001,7 +1002,7 @@ export default function HealthMedSafetyPage() {
 
       <RevealBlock delay={3} className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.med_s4_h2 || 'Luôn Nói Với Bác Sĩ / Dược Sĩ'}</h2>
-        <p className="text-muted text-lg mb-6">Bốn thông tin bác sĩ cần biết để kê thuốc an toàn cho bạn. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Bốn thông tin bác sĩ cần biết để kê thuốc an toàn cho bạn. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {DOCTOR_ITEMS.map((d, i) => (
             <DoctorCard key={i} item={d} onClick={() => setDoctorModal(i)} />

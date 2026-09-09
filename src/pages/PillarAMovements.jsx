@@ -992,7 +992,7 @@ export default function PillarAMovements() {
                                 <span className="text-lg text-text flex-1">{lvl.exercise}</span>
                                 {hasModal && (
                                   <span className="text-[10px] font-bold text-muted opacity-0 group-hover/lvl:opacity-60 transition-opacity duration-150 shrink-0">
-                                    chi tiết →
+                                    {t('ui.detail_btn')}
                                   </span>
                                 )}
                               </div>
@@ -1113,7 +1113,7 @@ export default function PillarAMovements() {
                         <div className="flex items-center gap-2 mr-3 shrink-0">
                           {hasModal && (
                             <span className={`text-[10px] font-bold opacity-0 group-hover/step:opacity-60 transition-opacity duration-150 ${s.text}`}>
-                              chi tiết →
+                              {t('ui.detail_btn')}
                             </span>
                           )}
                           <span className={`text-[10px] font-bold px-3 py-1.5 rounded-full border whitespace-nowrap ${s.bg} ${s.border} ${s.text}`}>

@@ -711,6 +711,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 export default function HealthCheckupPage() {
   const { t } = useTranslation('pillars');
+  const { t: tC } = useTranslation('common');
   const p = t('pillarE', { returnObjects: true }) || {};
   const [b0] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_e0_profile') || '{}'); } catch { return {}; } });
   const [checked, setChecked] = useState(() => { try { return JSON.parse(localStorage.getItem('healthapp_checkup_done') || '[]'); } catch { return []; } });
@@ -809,7 +810,7 @@ export default function HealthCheckupPage() {
 
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.chk_s2_h2 || 'Gói Mở Rộng Theo Nguy Cơ'}</h2>
-        <p className="text-muted text-lg mb-6">Trao đổi với bác sĩ về gói khám phù hợp với hồ sơ nguy cơ cá nhân của bạn. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Trao đổi với bác sĩ về gói khám phù hợp với hồ sơ nguy cơ cá nhân của bạn. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {extItems.map((pkg, i) => (
             <ExtendedCard key={i} item={pkg} onClick={() => setExtendedModal(i)} />
@@ -819,7 +820,7 @@ export default function HealthCheckupPage() {
 
       <RevealBlock delay={3} className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.chk_s3_h2 || 'Chuẩn Bị Trước Khi Đi Khám'}</h2>
-        <p className="text-muted text-lg mb-6">4 bước chuẩn bị giúp mỗi lần đi khám đều có kết quả chính xác và hiệu quả nhất. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">4 bước chuẩn bị giúp mỗi lần đi khám đều có kết quả chính xác và hiệu quả nhất. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {prepItems.map((tip, i) => (
             <ExtendedCard key={i} item={tip} onClick={() => setPrepModal(i)} />

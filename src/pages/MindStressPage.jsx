@@ -25,14 +25,14 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 }
 
 const LAYERS = [
-  { icon: '💪', title: 'Tầng Cơ Thể', color: '#f97316', signs: ['Tim đập nhanh, hồi hộp', 'Căng cổ vai gáy', 'Thở nông, thở nhanh', 'Đau đầu, khó ngủ', 'Mệt mỏi không rõ nguyên nhân'] },
-  { icon: '😤', title: 'Tầng Cảm Xúc', color: '#ec4899', signs: ['Dễ cáu bẳn, mất kiên nhẫn', 'Lo lắng, bất an', 'Buồn bực, chán nản', 'Cảm giác quá tải', 'Khó tập trung, đãng trí'] },
-  { icon: '🔄', title: 'Tầng Hành Vi', color: '#6366f1', signs: ['Ăn vặt nhiều hơn', 'Lướt điện thoại vô thức', 'Trì hoãn việc quan trọng', 'Bỏ tập, bỏ thói quen', 'Thức khuya, ngủ nướng'] },
+  { icon: '💪', title: 'Tầng Cơ Thể', titleKey: 'layer_body', color: '#f97316', signs: ['Tim đập nhanh, hồi hộp', 'Căng cổ vai gáy', 'Thở nông, thở nhanh', 'Đau đầu, khó ngủ', 'Mệt mỏi không rõ nguyên nhân'] },
+  { icon: '😤', title: 'Tầng Cảm Xúc', titleKey: 'layer_emotion', color: '#ec4899', signs: ['Dễ cáu bẳn, mất kiên nhẫn', 'Lo lắng, bất an', 'Buồn bực, chán nản', 'Cảm giác quá tải', 'Khó tập trung, đãng trí'] },
+  { icon: '🔄', title: 'Tầng Hành Vi', titleKey: 'layer_behavior', color: '#6366f1', signs: ['Ăn vặt nhiều hơn', 'Lướt điện thoại vô thức', 'Trì hoãn việc quan trọng', 'Bỏ tập, bỏ thói quen', 'Thức khuya, ngủ nướng'] },
 ];
 
 const LOOPS = [
   {
-    title: 'Vòng lặp công việc',
+    title: 'Vòng lặp công việc', titleKey: 'loop_work',
     steps: [
       { icon: '⚡', label: 'Trigger', text: 'Deadline gấp, sếp hối' },
       { icon: '💭', label: 'Suy nghĩ', text: '"Không xong được đâu"' },
@@ -43,7 +43,7 @@ const LOOPS = [
     breakpoint: 'Thở 4 vòng → viết "việc nhỏ tiếp theo là..."',
   },
   {
-    title: 'Vòng lặp mạng xã hội',
+    title: 'Vòng lặp mạng xã hội', titleKey: 'loop_social',
     steps: [
       { icon: '⚡', label: 'Trigger', text: 'Buồn chán, rảnh rỗi' },
       { icon: '💭', label: 'Suy nghĩ', text: '"Xem 5 phút thôi"' },
@@ -54,7 +54,7 @@ const LOOPS = [
     breakpoint: 'Tắt màn hình → đi bộ 5 phút → uống nước',
   },
   {
-    title: 'Vòng lặp ăn uống',
+    title: 'Vòng lặp ăn uống', titleKey: 'loop_food',
     steps: [
       { icon: '⚡', label: 'Trigger', text: 'Stress, buồn, bắt buộc' },
       { icon: '💭', label: 'Suy nghĩ', text: '"Ăn cho khuây"' },
@@ -67,10 +67,10 @@ const LOOPS = [
 ];
 
 const TECHNIQUES = [
-  { icon: '🏷️', title: 'Đặt tên cho suy nghĩ', desc: 'Thay vì "Tôi thất bại rồi" → đổi thành "Tôi đang có suy nghĩ rằng mình thất bại." Tạo khoảng cách giữa bạn và suy nghĩ.', example: '"Mình đang bận tâm về X" thay vì "X là sự thật"' },
-  { icon: '🔵', title: 'Vòng tròn kiểm soát', desc: 'Chia lo âu thành 2 nhóm: Tôi kiểm soát được (giờ ngủ, bữa ăn, cách phản ứng) vs Tôi không kiểm soát được (ý kiến người khác, kết quả tuyệt đối). Chỉ hành động với nhóm đầu.', example: 'Viết 2 cột, tập trung hành động vào cột trái' },
-  { icon: '🔍', title: 'Tìm bằng chứng', desc: 'Khi có suy nghĩ tiêu cực, hỏi: "Có bằng chứng chắc chắn không? Có cách diễn giải khác không?" Não thường phóng đại mối nguy.', example: '"Mình mắc lỗi" → "Mình mắc lỗi một lần, không có nghĩa mình luôn mắc lỗi"' },
-  { icon: '⏸️', title: 'Điểm dừng nhỏ', desc: 'Mục tiêu của Trụ cột D không phải xóa sạch lo âu, mà là chèn một điểm dừng nhỏ vào vòng lặp. Điểm dừng có thể là: thở 1 phút, viết 5 dòng, đi bộ 5 phút, tắt màn hình 10 phút.', example: 'Khi cảm thấy căng: dừng → thở → gọi tên cảm xúc → chọn việc nhỏ tiếp theo' },
+  { icon: '🏷️', title: 'Đặt tên cho suy nghĩ', titleKey: 'tech_naming', desc: 'Thay vì "Tôi thất bại rồi" → đổi thành "Tôi đang có suy nghĩ rằng mình thất bại." Tạo khoảng cách giữa bạn và suy nghĩ.', example: '"Mình đang bận tâm về X" thay vì "X là sự thật"' },
+  { icon: '🔵', title: 'Vòng tròn kiểm soát', titleKey: 'tech_circle', desc: 'Chia lo âu thành 2 nhóm: Tôi kiểm soát được (giờ ngủ, bữa ăn, cách phản ứng) vs Tôi không kiểm soát được (ý kiến người khác, kết quả tuyệt đối). Chỉ hành động với nhóm đầu.', example: 'Viết 2 cột, tập trung hành động vào cột trái' },
+  { icon: '🔍', title: 'Tìm bằng chứng', titleKey: 'tech_evidence', desc: 'Khi có suy nghĩ tiêu cực, hỏi: "Có bằng chứng chắc chắn không? Có cách diễn giải khác không?" Não thường phóng đại mối nguy.', example: '"Mình mắc lỗi" → "Mình mắc lỗi một lần, không có nghĩa mình luôn mắc lỗi"' },
+  { icon: '⏸️', title: 'Điểm dừng nhỏ', titleKey: 'tech_pause', desc: 'Mục tiêu của Trụ cột D không phải xóa sạch lo âu, mà là chèn một điểm dừng nhỏ vào vòng lặp. Điểm dừng có thể là: thở 1 phút, viết 5 dòng, đi bộ 5 phút, tắt màn hình 10 phút.', example: 'Khi cảm thấy căng: dừng → thở → gọi tên cảm xúc → chọn việc nhỏ tiếp theo' },
 ];
 
 const TECHNIQUE_MODALS = [
@@ -336,7 +336,7 @@ const LAYER_MODALS = [
 
 const STRESS_TYPE_MODALS = [
   {
-    icon: '✅', color: '#10b981', rgb: '16,185,129',
+    icon: '✅', color: '#10b981', rgb: '16,185,129', titleKey: 'type_eustress',
     modalTitle: 'Stress Tích Cực (Eustress)',
     img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Eustress là nhiên liệu hiệu suất — não và cơ thể được thiết kế để phát huy tốt nhất khi có mức thách thức vừa phải, đủ để kích hoạt nhưng không đủ để làm tê liệt.',
@@ -357,7 +357,7 @@ const STRESS_TYPE_MODALS = [
     ],
   },
   {
-    icon: '⚠️', color: '#8b5cf6', rgb: '139,92,246',
+    icon: '⚠️', color: '#8b5cf6', rgb: '139,92,246', titleKey: 'type_distress',
     modalTitle: 'Stress Mãn Tính (Distress)',
     img: 'https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80&auto=format&fit=crop',
     keyFact: 'Distress không phải về cường độ mà về thời gian — không phải bao nhiêu áp lực mà là kéo dài bao lâu mà không có điểm kết thúc và không được xả.',
@@ -461,6 +461,7 @@ function CardModal({ item, onClose, onPrev, onNext, hasPrev, hasNext, total, idx
 
 export default function MindStressPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [openLoop, setOpenLoop] = useState(null);
   const [stressModal, setStressModal] = useState(null);
   const [layerModal, setLayerModal] = useState(null);
@@ -519,17 +520,17 @@ export default function MindStressPage() {
 
       {/* Good vs bad stress */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Stress Tốt vs Stress Xấu</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">Không phải stress nào cũng cần loại bỏ.</p>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="group/card rounded-2xl border p-5 cursor-pointer transition-all duration-200 hover:border-emerald-500/50 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)]"
             style={{ borderColor: 'rgba(16,185,129,0.3)', background: 'rgba(16,185,129,0.05)' }}
             onClick={() => setStressModal(0)}>
             <div className="flex items-center justify-between mb-3">
-              <div className="text-lg font-bold text-text">✅ Stress tích cực (Eustress)</div>
+              <div className="text-lg font-bold text-text">✅ {tM('stress.type_eustress')}</div>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/card:opacity-100 transition-opacity"
                 style={{ color: '#10b981', borderColor: 'rgba(16,185,129,0.35)', background: 'rgba(16,185,129,0.08)' }}>
-                chi tiết →
+                {t('ui.detail_btn')}
               </span>
             </div>
             <ul className="space-y-2">
@@ -540,10 +541,10 @@ export default function MindStressPage() {
             style={{ borderColor: `rgba(${RGB},0.3)`, background: `rgba(${RGB},0.05)` }}
             onClick={() => setStressModal(1)}>
             <div className="flex items-center justify-between mb-3">
-              <div className="text-lg font-bold text-text">⚠️ Stress mãn tính (Distress)</div>
+              <div className="text-lg font-bold text-text">⚠️ {tM('stress.type_distress')}</div>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/card:opacity-100 transition-opacity"
                 style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>
-                chi tiết →
+                {t('ui.detail_btn')}
               </span>
             </div>
             <ul className="space-y-2">
@@ -555,7 +556,7 @@ export default function MindStressPage() {
 
       {/* 3 layers */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>3 Tầng Của Stress</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">Stress biểu hiện ở cả 3 tầng cùng lúc — nhận diện tầng nào đang ảnh hưởng bạn nhiều nhất.</p>
         <div className="grid md:grid-cols-3 gap-4">
           {LAYERS.map((l, i) => (
@@ -567,10 +568,10 @@ export default function MindStressPage() {
                 <div className="text-4xl">{l.icon}</div>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/card:opacity-100 transition-opacity shrink-0"
                   style={{ color: l.color, borderColor: `rgba(${LAYER_MODALS[i].rgb},0.35)`, background: `rgba(${LAYER_MODALS[i].rgb},0.08)` }}>
-                  chi tiết →
+                  {t('ui.detail_btn')}
                 </span>
               </div>
-              <div className="text-lg font-bold mb-3" style={{ color: l.color }}>{l.title}</div>
+              <div className="text-lg font-bold mb-3" style={{ color: l.color }}>{tM('stress.' + l.titleKey)}</div>
               <ul className="space-y-1">
                 {l.signs.map(s => <li key={s} className="text-base text-muted flex items-start gap-2"><span style={{ color: l.color }}>·</span>{s}</li>)}
               </ul>
@@ -581,13 +582,13 @@ export default function MindStressPage() {
 
       {/* Anxiety loops */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Vòng Lặp Lo Âu – Thói Quen</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s3_title')}</h2>
         <p className="text-muted text-lg mb-6">Mục tiêu không phải xóa sạch lo âu — mà là chèn một điểm dừng nhỏ vào vòng lặp.</p>
         <div className="space-y-3">
           {LOOPS.map((loop, i) => (
             <div key={i} className="rounded-2xl border border-border overflow-hidden">
               <button onClick={() => setOpenLoop(openLoop === i ? null : i)} className="w-full flex items-center gap-3 p-4 hover:bg-white/5 transition-colors text-left">
-                <span className="text-lg font-medium text-text flex-1">{loop.title}</span>
+                <span className="text-lg font-medium text-text flex-1">{tM('stress.' + loop.titleKey)}</span>
                 <span className="text-muted text-base">{openLoop === i ? '▲' : '▼'}</span>
               </button>
               {openLoop === i && (
@@ -616,23 +617,23 @@ export default function MindStressPage() {
 
       {/* Techniques */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kỹ Thuật Phá Vòng Lặp</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s4_title')}</h2>
         <p className="text-muted text-lg mb-6">Công cụ nhận thức giúp tạo khoảng cách giữa bạn và phản ứng tự động.</p>
         <div className="grid md:grid-cols-2 gap-4">
-          {TECHNIQUES.map((t, i) => (
-            <div key={t.title}
+          {TECHNIQUES.map((tech, i) => (
+            <div key={tech.title}
               className="group/card rounded-2xl border border-border bg-surface p-5 cursor-pointer transition-all duration-200 hover:border-violet-500/30 hover:bg-white/[0.03]"
               onClick={() => setTechniqueModal(i)}>
               <div className="flex items-start justify-between mb-3">
-                <div className="text-3xl">{t.icon}</div>
+                <div className="text-3xl">{tech.icon}</div>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-30 group-hover/card:opacity-100 transition-opacity shrink-0"
                   style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>
-                  chi tiết →
+                  {t('ui.detail_btn')}
                 </span>
               </div>
-              <div className="text-lg font-bold text-text mb-2">{t.title}</div>
-              <p className="text-base text-muted leading-relaxed mb-3">{t.desc}</p>
-              <div className="rounded-lg p-2 text-base italic text-muted border border-border">💡 {t.example}</div>
+              <div className="text-lg font-bold text-text mb-2">{tM('stress.' + tech.titleKey)}</div>
+              <p className="text-base text-muted leading-relaxed mb-3">{tech.desc}</p>
+              <div className="rounded-lg p-2 text-base italic text-muted border border-border">💡 {tech.example}</div>
             </div>
           ))}
         </div>
@@ -640,7 +641,7 @@ export default function MindStressPage() {
 
       {/* Stress levels */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thang Đo Stress 0–10</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('stress.s5_title')}</h2>
         <p className="text-muted text-lg mb-6">Chấm điểm mỗi ngày để nhận diện xu hướng trước khi stress leo thang.</p>
         <div className="space-y-2">
           {[
@@ -659,7 +660,7 @@ export default function MindStressPage() {
               <div className="text-base text-muted flex-1">{s.desc}</div>
               <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/row:opacity-100 transition-opacity"
                 style={{ color: s.color, borderColor: `${s.color}55`, background: `${s.color}14` }}>
-                chi tiết →
+                {t('ui.detail_btn')}
               </span>
             </div>
           ))}

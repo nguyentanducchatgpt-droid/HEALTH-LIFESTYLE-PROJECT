@@ -116,6 +116,7 @@ function Checklist({ items, storageKey }) {
 export default function MindChecklistPage() {
   const { t: tM } = useTranslation('mind');
   const [tab, setTab] = useState('daily');
+  // t not needed here but imported for future use
 
   useEffect(() => {
     const id = ORBIT_ID;
@@ -190,7 +191,7 @@ export default function MindChecklistPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Hướng Dẫn Sử Dụng</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('checklist.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">Để checklist này thực sự hiệu quả</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[

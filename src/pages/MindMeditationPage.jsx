@@ -196,7 +196,7 @@ const PRACTICE_TYPES = [
   {
     id: '3min',
     icon: '⏱️',
-    title: 'Thiền 3 Phút',
+    title: 'Thiền 3 Phút', titleKey: 'practice_3min',
     subtitle: 'Dành cho người mới — bắt đầu từ đây',
     color: COLOR,
     steps: [
@@ -209,7 +209,7 @@ const PRACTICE_TYPES = [
   {
     id: '5min',
     icon: '🌙',
-    title: 'Thiền 5 Phút Trước Ngủ',
+    title: 'Thiền 5 Phút Trước Ngủ', titleKey: 'practice_sleep',
     subtitle: 'Thư giãn sâu — chuyển sang trạng thái ngủ',
     color: '#8b5cf6',
     steps: [
@@ -223,7 +223,7 @@ const PRACTICE_TYPES = [
   {
     id: 'walking',
     icon: '🚶',
-    title: 'Thiền Đi Bộ',
+    title: 'Thiền Đi Bộ', titleKey: 'practice_walk',
     subtitle: 'Cho người khó ngồi yên — thiền động',
     color: '#10b981',
     steps: [
@@ -237,7 +237,7 @@ const PRACTICE_TYPES = [
   {
     id: 'eating',
     icon: '🍽️',
-    title: 'Chánh Niệm Khi Ăn',
+    title: 'Chánh Niệm Khi Ăn', titleKey: 'practice_eat',
     subtitle: 'Kết nối với Trụ Cột B — nhận biết no-đói',
     color: '#f59e0b',
     steps: [
@@ -406,6 +406,7 @@ function MeditationTimer({ color }) {
 
 export default function MindMeditationPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [active, setActive] = useState('3min');
   const [mythModal, setMythModal] = useState(null);
   const [practiceModal, setPracticeModal] = useState(null);
@@ -465,7 +466,7 @@ export default function MindMeditationPage() {
 
       {/* Myths */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Hiểu Đúng Về Thiền</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('meditation.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">4 hiểu lầm phổ biến khiến người mới bỏ cuộc trước khi bắt đầu.</p>
         <div className="space-y-3">
           {MYTHS.map((m, i) => (
@@ -474,7 +475,7 @@ export default function MindMeditationPage() {
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-start gap-2"><span className="text-lg shrink-0" style={{ color: COLOR }}>✓</span><div className="text-lg text-text">{m.truth}</div></div>
                 <span className="shrink-0 self-start text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/myth:opacity-100 transition-opacity"
-                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>{t('ui.detail_btn')}</span>
               </div>
             </div>
           ))}
@@ -483,12 +484,12 @@ export default function MindMeditationPage() {
 
       {/* Practice types */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Kiểu Thiền Cốt Lõi</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('meditation.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">Chọn kiểu phù hợp với hoàn cảnh và sở thích của bạn.</p>
         <div className="flex gap-2 flex-wrap mb-6">
           {PRACTICE_TYPES.map(p => (
             <button key={p.id} onClick={() => setActive(p.id)} className={`flex items-center gap-2 px-3 py-2 rounded-full text-base font-medium transition-all border ${active === p.id ? 'text-white' : 'text-muted border-border'}`} style={{ background: active === p.id ? p.color : undefined, borderColor: active === p.id ? p.color : undefined }}>
-              {p.icon} {p.title}
+              {p.icon} {tM('meditation.' + p.titleKey)}
             </button>
           ))}
         </div>
@@ -498,9 +499,9 @@ export default function MindMeditationPage() {
               <span className="text-5xl">{practice.icon}</span>
               <div className="flex-1">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="text-xl font-bold text-text">{practice.title}</div>
+                  <div className="text-xl font-bold text-text">{tM('meditation.' + practice.titleKey)}</div>
                   <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/practice:opacity-100 transition-opacity"
-                    style={{ color: practice.color, borderColor: `rgba(${PRACTICE_MODALS[practiceIdx].rgb},0.35)`, background: `rgba(${PRACTICE_MODALS[practiceIdx].rgb},0.08)` }}>chi tiết →</span>
+                    style={{ color: practice.color, borderColor: `rgba(${PRACTICE_MODALS[practiceIdx].rgb},0.35)`, background: `rgba(${PRACTICE_MODALS[practiceIdx].rgb},0.08)` }}>{t('ui.detail_btn')}</span>
                 </div>
                 <div className="text-base font-bold uppercase tracking-widest mt-0.5" style={{ color: practice.color }}>{practice.subtitle}</div>
               </div>
@@ -522,14 +523,14 @@ export default function MindMeditationPage() {
 
       {/* Timer */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Meditation Timer</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('meditation.s3_title')}</h2>
         <p className="text-muted text-lg mb-6">Thực hành ngay — chọn thời lượng và bắt đầu thiền.</p>
         <MeditationTimer color={COLOR} />
       </RevealBlock>
 
       {/* Week plan */}
       <RevealBlock className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Lộ Trình Tăng Dần</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('meditation.s4_title')}</h2>
         <p className="text-muted text-lg mb-6">Bắt đầu từ 3 phút, tăng dần trong 7 ngày.</p>
         <div className="grid grid-cols-4 md:grid-cols-7 gap-2">
           {[

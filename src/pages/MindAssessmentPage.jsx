@@ -461,6 +461,7 @@ function getLevel(score) {
 
 export default function MindAssessmentPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [qModal, setQModal] = useState(null);
@@ -534,7 +535,7 @@ export default function MindAssessmentPage() {
       {!submitted ? (
         <RevealBlock className="mb-10">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>Bài Kiểm Tra</h2>
+            <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>{tM('assessment.s1_title')}</h2>
             <span className="text-lg text-muted">{answered}/{QUESTIONS.length} câu</span>
           </div>
           <div className="w-full h-1.5 rounded-full bg-surface border border-border mb-8 overflow-hidden">
@@ -551,7 +552,7 @@ export default function MindAssessmentPage() {
                         <p className="text-lg text-text leading-relaxed">{i + 1}. {q.q}</p>
                         <button onClick={() => setQModal(QUESTIONS.indexOf(q))}
                           className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/card:opacity-100 transition-opacity cursor-pointer"
-                          style={{ color: QM_COLOR, borderColor: 'rgba(168,85,247,0.35)', background: 'rgba(168,85,247,0.08)' }}>chi tiết →</button>
+                          style={{ color: QM_COLOR, borderColor: 'rgba(168,85,247,0.35)', background: 'rgba(168,85,247,0.08)' }}>{t('ui.detail_btn')}</button>
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {OPTIONS.map(o => (

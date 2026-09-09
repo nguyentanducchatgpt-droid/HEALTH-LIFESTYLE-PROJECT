@@ -728,6 +728,7 @@ function RevealBlock({ children, delay = 0, className = '' }) {
 
 export default function HealthPreventionPage() {
   const { t } = useTranslation('pillars');
+  const { t: tC } = useTranslation('common');
   const p = t('pillarE', { returnObjects: true }) || {};
   const vaccineSchedule = VACCINE_SCHEDULE.map((v, i) => ({ ...v, ...(p.prev_vaccines_tr?.[i] || {}) }));
   const cancerScreening = CANCER_SCREENING.map((s, i) => ({ ...s, ...(p.prev_cancer_tr?.[i] || {}) }));
@@ -798,7 +799,7 @@ export default function HealthPreventionPage() {
 
       <RevealBlock delay={1} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.prev_s1_h2 || '5 Trụ Cột Phòng Bệnh'}</h2>
-        <p className="text-muted text-lg mb-6">Click vào từng trụ cột để xem chi tiết và bằng chứng khoa học. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Click vào từng trụ cột để xem chi tiết và bằng chứng khoa học. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="space-y-3">
           {PREVENTION_PILLARS.map((p, i) => (
             <PillarCard key={i} item={p} onClick={() => setPillarModal(i)} />
@@ -808,7 +809,7 @@ export default function HealthPreventionPage() {
 
       <RevealBlock delay={2} className="mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.prev_s2_h2 || 'Lịch Tiêm Vaccine Người Lớn'}</h2>
-        <p className="text-muted text-lg mb-6">Vaccine không chỉ dành cho trẻ em — người lớn cũng cần cập nhật lịch tiêm định kỳ. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Vaccine không chỉ dành cho trẻ em — người lớn cũng cần cập nhật lịch tiêm định kỳ. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {vaccineSchedule.map((v, i) => (
             <VaccineCard key={i} item={v} onClick={() => setVaccineModal(i)} />
@@ -818,7 +819,7 @@ export default function HealthPreventionPage() {
 
       <RevealBlock delay={3} className="mb-10">
         <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: COLOR }}>{p.prev_s3_h2 || 'Tầm Soát Ung Thư Theo Tuổi'}</h2>
-        <p className="text-muted text-lg mb-6">Phát hiện sớm là sự khác biệt giữa chữa khỏi và không chữa được. <span className="text-xs opacity-60">Click để xem chi tiết →</span></p>
+        <p className="text-muted text-lg mb-6">Phát hiện sớm là sự khác biệt giữa chữa khỏi và không chữa được. <span className="text-xs opacity-60">{tC('ui.detail_btn')}</span></p>
         <div className="grid sm:grid-cols-2 gap-3">
           {cancerScreening.map((s, i) => (
             <ScreeningCard key={i} item={s} onClick={() => setScreeningModal(i)} />

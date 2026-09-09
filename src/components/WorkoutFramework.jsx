@@ -1,4 +1,5 @@
 ﻿import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // ─── Color palette ─────────────────────────────────────────────────────────────
 const S = {
@@ -229,6 +230,7 @@ const FRAMEWORKS = [
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 export default function WorkoutFramework() {
+  const { t } = useTranslation('common');
   const [activeDur,   setActiveDur]   = useState(0);
   const [activeBlock, setActiveBlock] = useState(null);
   const [modalBlock,  setModalBlock]  = useState(null);
@@ -447,7 +449,7 @@ export default function WorkoutFramework() {
                       )}
                     </div>
 
-                    <p className={`mt-2.5 text-[9px] ${cs.text} opacity-50`}>Nhấn để xem chi tiết →</p>
+                    <p className={`mt-2.5 text-[9px] ${cs.text} opacity-50`}>{t('ui.detail_btn')}</p>
                   </div>
                 </div>
               );

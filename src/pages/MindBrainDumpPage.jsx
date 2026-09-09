@@ -510,6 +510,7 @@ function BrainDumpTool() {
 
 export default function MindBrainDumpPage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   const [stepModal, setStepModal] = useState(null);
   const [categoryModal, setCategoryModal] = useState(null);
   const [whenModal, setWhenModal] = useState(null);
@@ -574,7 +575,7 @@ export default function MindBrainDumpPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>6 Bước Brain Dump</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('brain_dump.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">Quy trình 10 phút để làm trống đầu óc</p>
         <div className="space-y-3">
           {STEPS.map((s, i) => (
@@ -586,7 +587,7 @@ export default function MindBrainDumpPage() {
                   <p className="text-muted text-lg">{s.d}</p>
                 </div>
                 <span className="shrink-0 self-start text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/step:opacity-100 transition-opacity mt-0.5"
-                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                  style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>{t('ui.detail_btn')}</span>
               </div>
             </div>
           ))}
@@ -595,7 +596,7 @@ export default function MindBrainDumpPage() {
 
       <RevealBlock className="mb-10">
         <div className="flex items-center justify-between mb-1">
-          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>Thử Brain Dump Ngay</h2>
+          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: COLOR }}>{tM('brain_dump.s2_title')}</h2>
           <button onClick={() => setToolModal(true)}
             className="text-[11px] font-bold px-3 py-1 rounded-full border transition-colors hover:opacity-80"
             style={{ color: COLOR, borderColor: `${COLOR}40`, background: `${COLOR}12` }}>
@@ -607,7 +608,7 @@ export default function MindBrainDumpPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>4 Nhóm Phân Loại</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('brain_dump.s3_title')}</h2>
         <p className="text-muted text-lg mb-6">Sau brain dump, phân loại để biết phải làm gì tiếp</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {CATEGORIES.map((c, i) => (
@@ -615,7 +616,7 @@ export default function MindBrainDumpPage() {
               <div className="flex items-start justify-between mb-2">
                 <div className="text-3xl">{c.icon}</div>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/cat:opacity-100 transition-opacity"
-                  style={{ color: c.color, borderColor: `${c.color}55`, background: `${c.color}12` }}>chi tiết →</span>
+                  style={{ color: c.color, borderColor: `${c.color}55`, background: `${c.color}12` }}>{t('ui.detail_btn')}</span>
               </div>
               <div className="font-bold mb-1" style={{ color: c.color }}>{c.label}</div>
               <p className="text-lg text-muted">{c.desc}</p>
@@ -625,7 +626,7 @@ export default function MindBrainDumpPage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>Khi Nào Nên Brain Dump?</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: COLOR }}>{tM('brain_dump.s4_title')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {WHEN_MODALS.map((c, i) => (
             <div key={c.modalTitle} className="group/when rounded-2xl border border-border bg-surface p-5 text-center hover:border-sky-500/20 transition-colors cursor-pointer" onClick={() => setWhenModal(i)}>
@@ -633,7 +634,7 @@ export default function MindBrainDumpPage() {
               <div className="font-semibold text-text mb-1">{c.modalTitle.split(' — ')[0]}</div>
               <p className="text-lg text-muted mb-3">{c.detail.split('.')[0]}.</p>
               <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full border opacity-0 group-hover/when:opacity-100 transition-opacity"
-                style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>chi tiết →</span>
+                style={{ color: COLOR, borderColor: `rgba(${RGB},0.35)`, background: `rgba(${RGB},0.08)` }}>{t('ui.detail_btn')}</span>
             </div>
           ))}
         </div>

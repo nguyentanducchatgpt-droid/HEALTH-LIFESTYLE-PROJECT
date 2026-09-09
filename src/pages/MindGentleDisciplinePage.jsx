@@ -93,6 +93,7 @@ function SelfTalkTool() {
 
 export default function MindGentleDisciplinePage() {
   const { t: tM } = useTranslation('mind');
+  const { t } = useTranslation('common');
   useEffect(() => {
     const id = ORBIT_ID;
     if (document.getElementById(id)) return;
@@ -152,7 +153,7 @@ export default function MindGentleDisciplinePage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>6 Nguyên Tắc Kỷ Luật Mềm</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('gentle_discipline.s1_title')}</h2>
         <p className="text-muted text-lg mb-6">Xây dựng kỷ luật dựa trên sức mạnh nội tâm, không phải nỗi sợ</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {PRINCIPLES.map(p => (
@@ -166,7 +167,7 @@ export default function MindGentleDisciplinePage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Kỷ Luật Mềm vs Khắc Nghiệt</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('gentle_discipline.s2_title')}</h2>
         <p className="text-muted text-lg mb-6">Thay thế ngôn ngữ tự phán xét bằng tự trắc ẩn</p>
         <div className="space-y-3">
           {VS.map((v, i) => (
@@ -185,13 +186,13 @@ export default function MindGentleDisciplinePage() {
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Thực Hành Tái Khung</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('gentle_discipline.s3_title')}</h2>
         <p className="text-muted text-lg mb-6">Luyện tập nói chuyện tử tế với bản thân</p>
         <SelfTalkTool />
       </RevealBlock>
 
       <RevealBlock className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>Khung Thực Hành 3 Buổi</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: COLOR }}>{tM('gentle_discipline.s4_title')}</h2>
         <p className="text-muted text-lg mb-6">Micro-habits trong ngày để xây kỷ luật bền vững</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {PRACTICES.map(p => (
